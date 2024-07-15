@@ -1,0 +1,19 @@
+https://github.com/intel/gmmlib/pull/68
+Index: Source/GmmLib/inc/External/Linux/GmmResourceInfoLinExt.h
+--- Source/GmmLib/inc/External/Linux/GmmResourceInfoLinExt.h.orig
++++ Source/GmmLib/inc/External/Linux/GmmResourceInfoLinExt.h
+@@ -21,7 +21,7 @@ OTHER DEALINGS IN THE SOFTWARE.
+ ============================================================================*/
+ #pragma once
+ 
+-#ifdef __linux__
++#ifndef _WIN32
+ 
+ #ifdef __cplusplus
+ extern "C" {
+@@ -93,4 +93,4 @@ typedef struct GMM_UMD_SYNCCONTEXT_REC
+ }
+ #endif /*__cplusplus*/
+ 
+-#endif /*__linux__*/
++#endif /*!_WIN32*/

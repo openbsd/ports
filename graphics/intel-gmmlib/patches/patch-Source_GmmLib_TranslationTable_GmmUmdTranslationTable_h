@@ -1,0 +1,36 @@
+https://github.com/intel/gmmlib/pull/68
+Index: Source/GmmLib/TranslationTable/GmmUmdTranslationTable.h
+--- Source/GmmLib/TranslationTable/GmmUmdTranslationTable.h.orig
++++ Source/GmmLib/TranslationTable/GmmUmdTranslationTable.h
+@@ -27,7 +27,7 @@ Description: This file contains the class definitions 
+ #pragma once
+ #include "External/Common/GmmPageTableMgr.h"
+ 
+-#ifdef __linux__
++#ifndef _WIN32
+ #include <pthread.h>
+ #include <string.h>
+ 
+@@ -60,12 +60,7 @@ static inline int _BitScanForward(uint32_t *index, uin
+ {
+     int i;
+ 
+-#ifdef __ANDROID__
+-    i = ffs(mask);
+-#else
+-    i = ffsl(mask);
+-#endif
+-
++    i = __builtin_ffsl(mask);
+     if(i > 0)
+     {
+         *index = (uint32_t)(i - 1);
+@@ -448,7 +443,7 @@ namespace GmmLib
+     public:
+ #ifdef _WIN32
+         CRITICAL_SECTION    TTLock;                  //synchronized access of PageTable obj
+-#elif defined __linux__
++#else
+         pthread_mutex_t TTLock;
+ #endif
+ 

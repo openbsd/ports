@@ -1,0 +1,13 @@
+https://github.com/intel/gmmlib/pull/68
+Index: Source/util/gfxDebug.h
+--- Source/util/gfxDebug.h.orig
++++ Source/util/gfxDebug.h
+@@ -124,7 +124,7 @@ OTHER DEALINGS IN THE SOFTWARE.
+ 
+ #else
+ 
+-#ifndef __linux__
++#ifdef _WIN32
+     #include "igdKrnlEtwMacros.h"
+ #endif
+ 

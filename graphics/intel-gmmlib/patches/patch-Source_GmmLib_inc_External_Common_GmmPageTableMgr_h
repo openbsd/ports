@@ -1,0 +1,31 @@
+https://github.com/intel/gmmlib/pull/68
+Index: Source/GmmLib/inc/External/Common/GmmPageTableMgr.h
+--- Source/GmmLib/inc/External/Common/GmmPageTableMgr.h.orig
++++ Source/GmmLib/inc/External/Common/GmmPageTableMgr.h
+@@ -28,7 +28,7 @@ Description: This file contains the class definitions 
+ #pragma once
+ #include "GmmHw.h"
+ 
+-#ifdef __linux__
++#ifndef _WIN32
+ #include <pthread.h>
+ #endif
+ 
+@@ -108,7 +108,7 @@ namespace GmmLib
+         GmmClientContext    *pClientContext;    ///< ClientContext of the client creating this Object
+ 
+          //OS-specific defn
+-#if defined  __linux__
++#ifndef _WIN32
+ 	pthread_mutex_t PoolLock;
+ #endif
+     public:
+@@ -134,7 +134,7 @@ namespace GmmLib
+         GMM_VIRTUAL GMM_PAGETABLEPool * __GetFreePoolNode(uint32_t * FreePoolNodeIdx, POOL_TYPE PoolType);
+ 
+ 
+-#if defined __linux__
++#ifndef _WIN32
+         //returns number of BOs for indicated TTs = NumNodePoolElements+1 BOs for root table and pools
+         GMM_VIRTUAL int GetNumOfPageTableBOs(uint8_t TTFlags);
+         //returns BO* list for indicated TT in client allocated memory

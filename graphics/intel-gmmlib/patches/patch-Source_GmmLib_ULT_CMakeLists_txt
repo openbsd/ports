@@ -1,0 +1,13 @@
+https://github.com/intel/gmmlib/pull/68
+Index: Source/GmmLib/ULT/CMakeLists.txt
+--- Source/GmmLib/ULT/CMakeLists.txt.orig
++++ Source/GmmLib/ULT/CMakeLists.txt
+@@ -160,7 +160,7 @@ target_link_libraries(${EXE_NAME} igfx_gmmumd_dll)
+ 
+ target_link_libraries(${EXE_NAME}
+     pthread
+-    dl
++    ${CMAKE_DL_LIBS}
+ )
+ 
+ add_custom_target(Run_ULT ALL DEPENDS GMMULT)

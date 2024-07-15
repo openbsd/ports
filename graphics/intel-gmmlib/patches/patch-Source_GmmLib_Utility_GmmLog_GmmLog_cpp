@@ -1,0 +1,26 @@
+https://github.com/intel/gmmlib/pull/68
+Index: Source/GmmLib/Utility/GmmLog/GmmLog.cpp
+--- Source/GmmLib/Utility/GmmLog/GmmLog.cpp.orig
++++ Source/GmmLib/Utility/GmmLog/GmmLog.cpp
+@@ -34,7 +34,6 @@ OTHER DEALINGS IN THE SOFTWARE.
+ #include <sys/stat.h>
+ #include <unistd.h>
+ #include <fstream>
+-#include <linux/limits.h>
+ #endif
+ 
+ /// Logger instance shared by all of GmmLib within a process
+@@ -197,12 +196,9 @@ bool GmmLib::Logger::GmmLogInit()
+ #elif defined(__ANDROID__)
+             // Log to logcat
+             SpdLogger   = spdlog::android_logger(GMM_LOGGER_NAME, GMM_LOG_TAG);
+-#elif defined(__linux__)
++#else
+             // Log to syslog
+             SpdLogger = spdlog::syslog_logger(GMM_LOGGER_NAME, GMM_LOG_TAG, 1 /*Log Pid*/);
+-#else
+-            __GMM_ASSERT(0);
+-            return false;
+ #endif
+         }
+     }

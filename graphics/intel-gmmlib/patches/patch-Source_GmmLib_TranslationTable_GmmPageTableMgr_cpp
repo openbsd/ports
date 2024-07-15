@@ -1,0 +1,31 @@
+https://github.com/intel/gmmlib/pull/68
+Index: Source/GmmLib/TranslationTable/GmmPageTableMgr.cpp
+--- Source/GmmLib/TranslationTable/GmmPageTableMgr.cpp.orig
++++ Source/GmmLib/TranslationTable/GmmPageTableMgr.cpp
+@@ -28,7 +28,7 @@ Description: UMD-TT manager (manages both TR-TT and AU
+ #include "../TranslationTable/GmmUmdTranslationTable.h"
+ #include "External/Common/GmmClientContext.h"
+ 
+-#if defined(__linux__)
++#if !defined(_WIN32)
+ #include "Internal/Linux/GmmResourceInfoLinInt.h"
+ #endif
+ 
+@@ -44,7 +44,7 @@ Description: UMD-TT manager (manages both TR-TT and AU
+         LeaveCriticalSection(&PoolLock); \
+     }
+ extern GMM_MA_LIB_CONTEXT *pGmmMALibContext;
+-#if defined(__linux__)
++#if !defined(_WIN32)
+ GMM_STATUS GmmLib::__GmmDeviceAlloc(GmmClientContext *        pClientContext,
+                                     GMM_DEVICE_CALLBACKS_INT *pDeviceCbInt,
+                                     GMM_DEVICE_ALLOC *        pAlloc)
+@@ -608,7 +608,7 @@ GMM_STATUS GmmLib::GmmPageTableMgr::UpdateAuxTable(con
+     return GMM_SUCCESS;
+ }
+ 
+-#if defined(__linux__) && !_WIN32
++#if !defined(_WIN32)
+ /////////////////////////////////////////////////////////////////////////////////////
+ /// Gets size of PageTable buffer object (BOs) list
+ ///

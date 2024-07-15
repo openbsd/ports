@@ -1,0 +1,31 @@
+https://github.com/intel/gmmlib/pull/67
+
+Index: Source/GmmLib/CMakeLists.txt
+--- Source/GmmLib/CMakeLists.txt.orig
++++ Source/GmmLib/CMakeLists.txt
+@@ -458,13 +458,13 @@ include(Linux.cmake)
+ # create dll library
+ ###################################################################################
+ add_library( ${GMM_LIB_DLL_NAME} SHARED igdgmm.rc ${UMD_SOURCES} ${UMD_HEADERS})
++GmmLibSetTargetConfig( ${GMM_LIB_DLL_NAME} )
+ 
+ if(MSVC)
+ 
+ set_target_properties(${GMM_LIB_DLL_NAME} PROPERTIES OUTPUT_NAME "igdgmm${GMMLIB_ARCH}")
+ 
+ bs_set_wdk(${GMM_LIB_DLL_NAME})
+-GmmLibSetTargetConfig( ${GMM_LIB_DLL_NAME} )
+ 
+ set_target_properties(${GMM_LIB_DLL_NAME} PROPERTIES VS_GLOBAL_DriverTargetPlatform Universal)
+ set_target_properties(${GMM_LIB_DLL_NAME} PROPERTIES VS_PLATFORM_TOOLSET WindowsApplicationForDrivers10.0)
+@@ -504,10 +504,6 @@ bs_set_extra_target_properties(${GMM_LIB_DLL_NAME}
+ 	  __UMD
+ 	  GMM_UNIFY_DAF_API
+ 	  )
+-
+-if(CMAKE_BUILD_TYPE STREQUAL "ReleaseInternal")
+-	bs_set_extra_target_properties(${GMM_LIB_DLL_NAME} _RELEASE_INTERNAL)
+-endif()
+ 
+ target_include_directories(${GMM_LIB_DLL_NAME} INTERFACE
+         ${BS_DIR_GMMLIB}/inc

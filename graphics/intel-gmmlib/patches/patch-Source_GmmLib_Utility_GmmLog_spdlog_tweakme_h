@@ -1,0 +1,13 @@
+https://github.com/intel/gmmlib/pull/68
+Index: Source/GmmLib/Utility/GmmLog/spdlog/tweakme.h
+--- Source/GmmLib/Utility/GmmLog/spdlog/tweakme.h.orig
++++ Source/GmmLib/Utility/GmmLog/spdlog/tweakme.h
+@@ -97,7 +97,7 @@
+ ///////////////////////////////////////////////////////////////////////////////
+ // Uncomment to enable syslog (disabled by default)
+ //
+-#if __linux__
++#ifndef _WIN32
+ #define SPDLOG_ENABLE_SYSLOG
+ #endif
+ ///////////////////////////////////////////////////////////////////////////////

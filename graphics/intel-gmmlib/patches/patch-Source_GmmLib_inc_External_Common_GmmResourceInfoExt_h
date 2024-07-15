@@ -1,0 +1,13 @@
+https://github.com/intel/gmmlib/pull/68
+Index: Source/GmmLib/inc/External/Common/GmmResourceInfoExt.h
+--- Source/GmmLib/inc/External/Common/GmmResourceInfoExt.h.orig
++++ Source/GmmLib/inc/External/Common/GmmResourceInfoExt.h
+@@ -189,7 +189,7 @@ typedef struct GmmLibContext GMM_LIB_CONTEXT;
+ // Place holder for GMM_RESOURCE_FLAG definition.
+ //---------------------------------------------------------------------------
+ #include "GmmResourceFlags.h"
+-#if defined __linux__
++#ifndef _WIN32
+     #include "External/Linux/GmmResourceInfoLinExt.h"
+ #endif
+ 

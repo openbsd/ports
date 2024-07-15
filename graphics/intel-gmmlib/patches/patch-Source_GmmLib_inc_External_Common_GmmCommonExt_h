@@ -1,0 +1,13 @@
+https://github.com/intel/gmmlib/pull/68
+Index: Source/GmmLib/inc/External/Common/GmmCommonExt.h
+--- Source/GmmLib/inc/External/Common/GmmCommonExt.h.orig
++++ Source/GmmLib/inc/External/Common/GmmCommonExt.h
+@@ -85,7 +85,7 @@ extern const SWIZZLE_DESCRIPTOR INTEL_64KB_UNDEFINED_6
+ #define GMM_NO_FENCE_REG        0xDEADBEEF
+ #define GMM_MAX_DISPLAYS        3
+ 
+-#if defined __linux__
++#ifndef _WIN32
+ typedef void* HANDLE;
+ #endif
+ 

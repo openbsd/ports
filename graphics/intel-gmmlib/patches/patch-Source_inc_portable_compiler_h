@@ -1,0 +1,14 @@
+https://github.com/intel/gmmlib/pull/68
+Index: Source/inc/portable_compiler.h
+--- Source/inc/portable_compiler.h.orig
++++ Source/inc/portable_compiler.h
+@@ -30,6 +30,9 @@ OTHER DEALINGS IN THE SOFTWARE.
+     #endif
+ 
+     #define __noop
++    #ifdef __fastcall
++        #undef __fastcall
++    #endif
+     #define __fastcall
+     #if defined __x86_64__
+         #define __stdcall       // deprecated for x86-64

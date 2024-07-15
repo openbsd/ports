@@ -1,0 +1,19 @@
+https://github.com/intel/gmmlib/pull/68
+Index: Source/GmmLib/inc/Internal/Linux/GmmResourceInfoLinInt.h
+--- Source/GmmLib/inc/Internal/Linux/GmmResourceInfoLinInt.h.orig
++++ Source/GmmLib/inc/Internal/Linux/GmmResourceInfoLinInt.h
+@@ -22,7 +22,7 @@ OTHER DEALINGS IN THE SOFTWARE.
+ 
+ #pragma once
+ 
+-#if defined(__linux__) && !LHDM
++#if !defined(_WIN32) && !LHDM
+ 
+ // GMM Lib Client Exports
+ #include "External/Common/GmmCommonExt.h"
+@@ -68,4 +68,4 @@ int GmmCheckForNullDevCbPfn(GMM_CLIENT ClientType, GMM
+ 
+ extern GMM_TRANSLATIONTABLE_CALLBACKS DummyTTCB;
+ 
+-#endif /*__linux__*/
++#endif /*!_WIN32*/

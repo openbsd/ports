@@ -1,0 +1,13 @@
+https://github.com/intel/gmmlib/pull/68
+Index: Source/GmmLib/TranslationTable/GmmUmdTranslationTable.cpp
+--- Source/GmmLib/TranslationTable/GmmUmdTranslationTable.cpp.orig
++++ Source/GmmLib/TranslationTable/GmmUmdTranslationTable.cpp
+@@ -31,7 +31,7 @@ Description: Contains functions of internal classes 
+ 
+ #if !defined(__GMM_KMD)
+ 
+-#if defined(__linux__)
++#if !defined(_WIN32)
+ #include "Internal/Linux/GmmResourceInfoLinInt.h"
+ 
+ #define _aligned_free(ptr) free(ptr)

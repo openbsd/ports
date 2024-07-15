@@ -1,0 +1,13 @@
+https://github.com/intel/gmmlib/pull/68
+Index: Source/GmmLib/Texture/GmmTextureAlloc.cpp
+--- Source/GmmLib/Texture/GmmTextureAlloc.cpp.orig
++++ Source/GmmLib/Texture/GmmTextureAlloc.cpp
+@@ -823,7 +823,7 @@ GMM_STATUS GmmLib::GmmTextureCalc::FillTexPitchAndSize
+         }
+         else
+         {
+-#if defined(__GMM_KMD__) || defined(__linux__)
++#if defined(__GMM_KMD__) || !defined(_WIN32)
+             GMM_ASSERTDPF(0, "Surface too large!");
+ #endif
+             Status = GMM_ERROR;
