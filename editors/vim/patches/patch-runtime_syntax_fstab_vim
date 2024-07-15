@@ -12,7 +12,7 @@ Index: runtime/syntax/fstab.vim
  syn cluster fsDeviceCluster contains=fsOperator,fsDeviceKeyword,fsDeviceError
 -syn match fsDeviceError /\%([^a-zA-Z0-9_\/#@:\.-]\|^\w\{-}\ze\W\)/ contained
 +"syn match fsDeviceError /\%([^a-zA-Z0-9_\/#@:\.-]\|^\w\{-}\ze\W\)/ contained
- syn keyword fsDeviceKeyword contained none proc linproc tmpfs devpts devtmpfs sysfs usbfs
+ syn keyword fsDeviceKeyword contained none proc linproc tmpfs devpts devtmpfs sysfs usbfs tracefs overlay
  syn keyword fsDeviceKeyword contained LABEL nextgroup=fsDeviceLabel
  syn keyword fsDeviceKeyword contained UUID nextgroup=fsDeviceUUID
 @@ -221,7 +221,7 @@ syn match fsOptionsKeywords contained /\<\%(prjjquota\
