@@ -148,6 +148,8 @@ lib/python${MODPY_VERSION}/site-packages/pypdf/generic/${MODPY_PYCACHE}_data_str
 lib/python${MODPY_VERSION}/site-packages/pypdf/generic/${MODPY_PYCACHE}_data_structures.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypdf/generic/${MODPY_PYCACHE}_fit.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pypdf/generic/${MODPY_PYCACHE}_fit.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pypdf/generic/${MODPY_PYCACHE}_image_inline.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pypdf/generic/${MODPY_PYCACHE}_image_inline.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypdf/generic/${MODPY_PYCACHE}_outline.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pypdf/generic/${MODPY_PYCACHE}_outline.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pypdf/generic/${MODPY_PYCACHE}_rectangle.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -159,6 +161,7 @@ lib/python${MODPY_VERSION}/site-packages/pypdf/generic/${MODPY_PYCACHE}_viewerpr
 lib/python${MODPY_VERSION}/site-packages/pypdf/generic/_base.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/generic/_data_structures.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/generic/_fit.py
+lib/python${MODPY_VERSION}/site-packages/pypdf/generic/_image_inline.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/generic/_outline.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/generic/_rectangle.py
 lib/python${MODPY_VERSION}/site-packages/pypdf/generic/_utils.py

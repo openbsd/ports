@@ -1,9 +1,8 @@
 COMMENT=		Python library for manipulating pages of PDF files
 
-MODPY_EGG_VERSION=	4.2.0
+MODPY_EGG_VERSION=	4.3.0
 DISTNAME=		pypdf-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		2
 
 CATEGORIES=		print graphics
 
