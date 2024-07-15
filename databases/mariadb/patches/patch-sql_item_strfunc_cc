@@ -1,13 +1,31 @@
-[PATCH] MDEV-31963 Fix libfmt usage in SFORMAT
+- [PATCH] MDEV-31963 Fix libfmt usage in SFORMAT
 
-`fmt::detail::make_arg` does not accept temporaries. Make it happy by
-storing the format arg values in a temporary array first.
+  `fmt::detail::make_arg` does not accept temporaries. Make it happy by
+  storing the format arg values in a temporary array first.
 
-cd5808eb8da13c5626d4bdeb452cef6ada29cb1d
+  cd5808eb8da13c5626d4bdeb452cef6ada29cb1d
+
+- MDEV-34206 compile failure: fmt use incompatible with libfmt-10.2.[2]+
+
+  Upstream libfmt commit fmtlib/fmt@d707292
+  now requires the format function to be const.
+
+  Adjust the function prototype so it is const and can compile.
+
+  4375245d5d9f01cabb6e3fd6c637535e724eae38
 
 Index: sql/item_strfunc.cc
 --- sql/item_strfunc.cc.orig
 +++ sql/item_strfunc.cc
+@@ -1367,7 +1367,7 @@ bool Item_func_sformat::fix_length_and_dec(THD *thd)
+ namespace fmt {
+   template <> struct formatter<String>: formatter<string_view> {
+     template <typename FormatContext>
+-    auto format(String c, FormatContext& ctx) -> decltype(ctx.out()) {
++    auto format(String c, FormatContext& ctx) const -> decltype(ctx.out()) {
+       string_view name = { c.ptr(), c.length() };
+       return formatter<string_view>::format(name, ctx);
+     };
 @@ -1382,11 +1382,24 @@ namespace fmt {
  */
  String *Item_func_sformat::val_str(String *res)
