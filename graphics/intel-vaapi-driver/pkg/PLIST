@@ -1,0 +1,4 @@
+lib/xorg/
+lib/xorg/modules/
+@so lib/xorg/modules/i965_drv_video.so
+@sample ${X11BASE}/lib/modules/drivers/i965_drv_video.so

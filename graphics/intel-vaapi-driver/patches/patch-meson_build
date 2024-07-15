@@ -1,0 +1,12 @@
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -19,7 +19,7 @@ if version_arr.length() == 4
+ endif
+ 
+ cc = meson.get_compiler('c')
+-dl_dep = cc.find_library('dl')
++#dl_dep = cc.find_library('dl')
+ mathlib_dep = cc.find_library('m', required : false)
+ 
+ git = find_program('git', required : false)

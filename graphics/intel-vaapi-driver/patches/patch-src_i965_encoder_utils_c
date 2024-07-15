@@ -1,0 +1,19 @@
+Index: src/i965_encoder_utils.c
+--- src/i965_encoder_utils.c.orig
++++ src/i965_encoder_utils.c
+@@ -82,6 +82,7 @@ struct __avc_bitstream {
+ 
+ typedef struct __avc_bitstream avc_bitstream;
+ 
++#ifndef __BSD_VISIBLE
+ static unsigned int
+ swap32(unsigned int val)
+ {
+@@ -92,6 +93,7 @@ swap32(unsigned int val)
+             (pval[2] << 8)      |
+             (pval[3] << 0));
+ }
++#endif
+ 
+ static void
+ avc_bitstream_start(avc_bitstream *bs)

@@ -1,0 +1,11 @@
+Index: src/meson.build
+--- src/meson.build.orig
++++ src/meson.build
+@@ -215,7 +215,6 @@ if thread_dep.found()
+ endif
+ 
+ shared_deps = [
+-  dl_dep,
+   mathlib_dep,
+   thread_dep,
+   libdrm_dep,
