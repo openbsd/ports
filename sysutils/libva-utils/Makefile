@@ -1,11 +1,14 @@
 BUILD_UNLINKED = libva
+
+ONLY_FOR_ARCHS =	amd64
+
 COMMENT =	collection of tests for VA-API
 
-GH_ACCOUNT = intel
-GH_PROJECT = libva-utils
-GH_TAGNAME = 2.22.0
+GH_ACCOUNT =	intel
+GH_PROJECT =	libva-utils
+GH_TAGNAME =	2.22.0
 
-CATEGORIES = sysutils graphics
+CATEGORIES =	sysutils graphics
 
 WANTLIB += ${COMPILER_LIBCXX} X11 c drm m va va-drm va-x11
 

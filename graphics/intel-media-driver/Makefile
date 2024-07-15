@@ -11,7 +11,7 @@ GH_TAGNAME =	intel-media-${VERSION}
 
 DISTNAME =	intel-media-driver-${VERSION}
 
-CATEGORIES = graphics multimedia
+CATEGORIES =	graphics multimedia
 
 # MIT & BSD-3-Clause
 PERMIT_PACKAGE=	Yes
@@ -22,7 +22,7 @@ MODULES =	devel/cmake
 
 COMPILER =	base-clang ports-gcc
 
-LIB_DEPENDS =	devel/intel-gmmlib
+LIB_DEPENDS =	graphics/intel-gmmlib
 
 # XXX Unbundle googletest
 CONFIGURE_ARGS =	-DMEDIA_RUN_TEST_SUITE=ON

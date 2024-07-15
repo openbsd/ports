@@ -8,10 +8,10 @@ GH_ACCOUNT =	intel
 GH_PROJECT =	intel-vaapi-driver
 GH_TAGNAME =	2.4.1
 
-CATEGORIES = graphics multimedia
+CATEGORIES =	graphics multimedia
 
 # MIT & BSD-3-Clause
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE = Yes
 
 WANTLIB += drm drm_intel m
 

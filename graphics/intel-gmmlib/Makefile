@@ -1,4 +1,7 @@
 BUILD_UNLINKED = libva
+
+ONLY_FOR_ARCHS =	amd64
+
 COMMENT =	Intel Graphics Memory Management Library
 
 VERSION =	22.3.19
@@ -12,7 +15,7 @@ SHARED_LIBS +=  igdgmm                    0.0 # 0.0
 
 HOMEPAGE =	https://01.org/intel-media-for-linux
 
-CATEGORIES = devel graphics multimedia
+CATEGORIES =	graphics multimedia
 
 WANTLIB += ${COMPILER_LIBCXX} m
 
