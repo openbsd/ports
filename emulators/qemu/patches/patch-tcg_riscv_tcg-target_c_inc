@@ -1,12 +1,21 @@
+util/cpuinfo-riscv: Support OpenBSD signal frame
+adc028428a6da5ea8d6a688085966a33be4c97c7
+
 Index: tcg/riscv/tcg-target.c.inc
 --- tcg/riscv/tcg-target.c.inc.orig
 +++ tcg/riscv/tcg-target.c.inc
-@@ -2116,7 +2116,7 @@ static void sigill_handler(int signo, siginfo_t *si, v
+@@ -2116,7 +2116,14 @@ static void sigill_handler(int signo, siginfo_t *si, v
  {
      /* Skip the faulty instruction */
      ucontext_t *uc = (ucontext_t *)data;
--    uc->uc_mcontext.__gregs[REG_PC] += 4;
++
++#ifdef __linux__
+     uc->uc_mcontext.__gregs[REG_PC] += 4;
++#elif defined(__OpenBSD__)
 +    uc->sc_sepc += 4;
++#else
++# error Unsupported OS
++#endif
  
      got_sigill = 1;
  }
