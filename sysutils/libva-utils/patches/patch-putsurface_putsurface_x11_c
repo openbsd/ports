@@ -1,0 +1,12 @@
+Index: putsurface/putsurface_x11.c
+--- putsurface/putsurface_x11.c.orig
++++ putsurface/putsurface_x11.c
+@@ -26,6 +26,8 @@
+ #include <X11/Xutil.h>
+ #include <va/va_x11.h>
+ 
++#include <pthread.h>
++
+ static  Window window_thread0, window_thread1;
+ static  GC context_thread0, context_thread1;
+ static  pthread_mutex_t gmutex;

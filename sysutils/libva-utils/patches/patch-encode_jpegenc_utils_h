@@ -1,0 +1,19 @@
+Index: encode/jpegenc_utils.h
+--- encode/jpegenc_utils.h.orig
++++ encode/jpegenc_utils.h
+@@ -49,6 +49,7 @@ struct __bitstream {
+ 
+ typedef struct __bitstream bitstream;
+ 
++#ifndef __BSD_VISIBLE
+ static unsigned int
+ swap32(unsigned int val)
+ {
+@@ -59,6 +60,7 @@ swap32(unsigned int val)
+             (pval[2] << 8)      |
+             (pval[3] << 0));
+ }
++#endif
+ 
+ static void
+ bitstream_start(bitstream *bs)

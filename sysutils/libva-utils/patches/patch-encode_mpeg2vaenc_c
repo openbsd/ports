@@ -1,0 +1,30 @@
+Index: encode/mpeg2vaenc.c
+--- encode/mpeg2vaenc.c.orig
++++ encode/mpeg2vaenc.c
+@@ -169,7 +169,7 @@ struct __bitstream {
+ typedef struct __bitstream bitstream;
+ 
+ static unsigned int
+-swap32(unsigned int val)
++va_swap32(unsigned int val)
+ {
+     unsigned char *pval = (unsigned char *)&val;
+ 
+@@ -196,7 +196,7 @@ bitstream_end(bitstream *bs)
+     int bit_left = 32 - bit_offset;
+ 
+     if (bit_offset) {
+-        bs->buffer[pos] = swap32((bs->buffer[pos] << bit_left));
++        bs->buffer[pos] = va_swap32((bs->buffer[pos] << bit_left));
+     }
+ }
+ 
+@@ -220,7 +220,7 @@ bitstream_put_ui(bitstream *bs, unsigned int val, int 
+     } else {
+         size_in_bits -= bit_left;
+         bs->buffer[pos] = (bs->buffer[pos] << bit_left) | (val >> size_in_bits);
+-        bs->buffer[pos] = swap32(bs->buffer[pos]);
++        bs->buffer[pos] = va_swap32(bs->buffer[pos]);
+ 
+         if (pos + 1 == bs->max_size_in_dword) {
+             bs->max_size_in_dword += BITSTREAM_ALLOCATE_STEPPING;
