@@ -2,6 +2,7 @@ BROKEN-hppa =		no atomic ops
 COMMENT =		Music Player Daemon
 VER =			0.23.15
 DISTNAME =		mpd-${VER}
+REVISION =		0
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		audio
 HOMEPAGE =		https://www.musicpd.org/

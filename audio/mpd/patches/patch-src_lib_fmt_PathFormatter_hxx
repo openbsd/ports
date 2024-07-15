@@ -1,0 +1,15 @@
+lib/fmt: support build with libfmt-11.0.0
+1402869715e3efca87942d79c3173a6b21a6925d
+
+Index: src/lib/fmt/PathFormatter.hxx
+--- src/lib/fmt/PathFormatter.hxx.orig
++++ src/lib/fmt/PathFormatter.hxx
+@@ -29,7 +29,7 @@ template<>
+ struct fmt::formatter<Path> : formatter<string_view>
+ {
+ 	template<typename FormatContext>
+-	auto format(Path path, FormatContext &ctx) {
++	auto format(Path path, FormatContext &ctx) const {
+ 		return formatter<string_view>::format(path.ToUTF8(), ctx);
+ 	}
+ };

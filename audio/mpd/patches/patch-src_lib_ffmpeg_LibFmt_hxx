@@ -1,0 +1,15 @@
+lib/fmt: support build with libfmt-11.0.0
+1402869715e3efca87942d79c3173a6b21a6925d
+
+Index: src/lib/ffmpeg/LibFmt.hxx
+--- src/lib/ffmpeg/LibFmt.hxx.orig
++++ src/lib/ffmpeg/LibFmt.hxx
+@@ -29,7 +29,7 @@ template<>
+ struct fmt::formatter<AVSampleFormat> : formatter<string_view>
+ {
+ 	template<typename FormatContext>
+-	auto format(const AVSampleFormat format, FormatContext &ctx) {
++	auto format(const AVSampleFormat format, FormatContext &ctx) const {
+ 		const char *name = av_get_sample_fmt_name(format);
+ 		if (name == nullptr)
+ 			name = "?";
