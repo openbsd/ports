@@ -1,0 +1,6 @@
+libnfc is a library and set of tools allowing userspace application
+access to NFC devices.
+
+The library currently supports modulations for ISO/IEC 14443 A and B,
+FeliCa, Jewel/Topaz tags and Data Exchange Protocol (P2P) as target
+and as initiator.

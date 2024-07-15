@@ -1,0 +1,54 @@
+@bin bin/nfc-anticol
+@bin bin/nfc-barcode
+@bin bin/nfc-dep-initiator
+@bin bin/nfc-dep-target
+@bin bin/nfc-emulate-forum-tag2
+@bin bin/nfc-emulate-forum-tag4
+@bin bin/nfc-emulate-tag
+@bin bin/nfc-emulate-uid
+@bin bin/nfc-jewel
+@bin bin/nfc-list
+@bin bin/nfc-mfclassic
+@bin bin/nfc-mfsetuid
+@bin bin/nfc-mfultralight
+@bin bin/nfc-poll
+@bin bin/nfc-read-forum-tag3
+@bin bin/nfc-relay
+@bin bin/nfc-relay-picc
+@bin bin/nfc-scan-device
+@bin bin/pn53x-diagnose
+@bin bin/pn53x-sam
+@bin bin/pn53x-tamashell
+include/nfc/
+include/nfc/nfc-emulation.h
+include/nfc/nfc-types.h
+include/nfc/nfc.h
+@static-lib lib/libnfc.a
+lib/libnfc.la
+@lib lib/libnfc.so.${LIBnfc_VERSION}
+lib/pkgconfig/libnfc.pc
+@man man/man1/nfc-anticol.1
+@man man/man1/nfc-barcode.1
+@man man/man1/nfc-dep-initiator.1
+@man man/man1/nfc-dep-target.1
+@man man/man1/nfc-emulate-forum-tag2.1
+@man man/man1/nfc-emulate-forum-tag4.1
+@man man/man1/nfc-emulate-tag.1
+@man man/man1/nfc-emulate-uid.1
+@man man/man1/nfc-jewel.1
+@man man/man1/nfc-list.1
+@man man/man1/nfc-mfclassic.1
+@man man/man1/nfc-mfsetuid.1
+@man man/man1/nfc-mfultralight.1
+@man man/man1/nfc-poll.1
+@man man/man1/nfc-read-forum-tag3.1
+@man man/man1/nfc-relay-picc.1
+@man man/man1/nfc-relay.1
+@man man/man1/nfc-scan-device.1
+@man man/man1/pn53x-diagnose.1
+@man man/man1/pn53x-sam.1
+@man man/man1/pn53x-tamashell.1
+share/examples/libnfc/
+@sample ${SYSCONFDIR}/nfc/
+share/examples/libnfc/libnfc.conf.sample
+@sample ${SYSCONFDIR}/nfc/libnfc.conf
