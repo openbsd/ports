@@ -3,7 +3,6 @@ include/ares_build.h
 include/ares_dns.h
 include/ares_dns_record.h
 include/ares_nameser.h
-include/ares_rules.h
 include/ares_version.h
 lib/cmake/
 lib/cmake/c-ares/
@@ -34,6 +33,7 @@ lib/pkgconfig/libcares.pc
 @man man/man3/ares_dns_rcode_tostr.3
 @man man/man3/ares_dns_rec_type_fromstr.3
 @man man/man3/ares_dns_rec_type_t.3
+@man man/man3/ares_dns_rec_type_tostr.3
 @man man/man3/ares_dns_record.3
 @man man/man3/ares_dns_record_create.3
 @man man/man3/ares_dns_record_destroy.3
@@ -53,6 +53,10 @@ lib/pkgconfig/libcares.pc
 @man man/man3/ares_dns_record_rr_get.3
 @man man/man3/ares_dns_record_rr_get_const.3
 @man man/man3/ares_dns_rr.3
+@man man/man3/ares_dns_rr_add_abin.3
+@man man/man3/ares_dns_rr_del_abin.3
+@man man/man3/ares_dns_rr_get_abin.3
+@man man/man3/ares_dns_rr_get_abin_cnt.3
 @man man/man3/ares_dns_rr_get_addr.3
 @man man/man3/ares_dns_rr_get_addr6.3
 @man man/man3/ares_dns_rr_get_bin.3
