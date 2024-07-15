@@ -107,6 +107,9 @@
      SUBDIR += imv
      SUBDIR += indexpage
      SUBDIR += inkscape
+     SUBDIR += intel-gmmlib
+     SUBDIR += intel-media-driver
+     SUBDIR += intel-vaapi-driver
      SUBDIR += ipe
      SUBDIR += iview
      SUBDIR += jasper
