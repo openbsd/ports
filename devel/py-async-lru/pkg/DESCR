@@ -1,0 +1,2 @@
+This package is a port of Python's built-in functools.lru_cache for
+asyncio.
