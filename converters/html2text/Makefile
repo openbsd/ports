@@ -1,40 +1,21 @@
-PORTROACH=		skipv:1.3.2
+COMMENT=	advanced HTML-to-text converter
 
-COMMENT=		advanced HTML-to-text converter
+V=		2.2.3
+DISTNAME=	html2text-$V
+SITES=		https://github.com/grobian/html2text/releases/download/v$V/
 
-DISTNAME=		html2text-1.3.2a
-REVISION =		5
-CATEGORIES=		converters textproc
+CATEGORIES=	converters textproc
 
+HOMEPAGE=	https://github.com/grobian/html2text
 
-HOMEPAGE=		http://www.mbayer.de/html2text/
-
-# GPL
+# GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c m ${COMPILER_LIBCXX}
+WANTLIB += c iconv m ${COMPILER_LIBCXX}
 
-SITES=			http://www.mbayer.de/html2text/downloads/ \
-			ftp://ftp.ibiblio.org/pub/linux/apps/www/converters/
+COMPILER=	base-clang ports-gcc base-gcc
+LIB_DEPENDS=	converters/libiconv
 
-COMPILER =		base-clang ports-gcc base-gcc
-
-CONFIGURE_STYLE=	simple
-CONFIGURE_ENV=		CXX="${CXX}"
-
-MAKE_FLAGS=	PREFIX="${PREFIX}" \
-		CXXFLAGS="-DVERSION=1.3.2a -DAUTO_PTR_BROKEN ${CXXFLAGS}"
-
-NO_TEST=	Yes
-
-post-extract:
-	gunzip ${WRKSRC}/{html2text.1,html2textrc.5}.gz
-
-do-install:
-	${INSTALL_PROGRAM} ${WRKSRC}/html2text ${PREFIX}/bin/
-	${INSTALL_MAN} ${WRKSRC}/html2text.1 ${PREFIX}/man/man1
-	${INSTALL_MAN} ${WRKSRC}/html2textrc.5 ${PREFIX}/man/man5
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/html2text
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/html2text
+CONFIGURE_STYLE= gnu
 
 .include <bsd.port.mk>

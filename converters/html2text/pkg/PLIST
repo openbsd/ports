@@ -1,5 +1,3 @@
 @bin bin/html2text
 @man man/man1/html2text.1
 @man man/man5/html2textrc.5
-share/doc/html2text/
-share/doc/html2text/README
