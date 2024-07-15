@@ -187,6 +187,7 @@
      SUBDIR += libsmraw
      SUBDIR += libstatgrab
      SUBDIR += libudev-openbsd
+     SUBDIR += libva-utils
      SUBDIR += libvhdi
      SUBDIR += libvirt
      SUBDIR += libvirt-python
