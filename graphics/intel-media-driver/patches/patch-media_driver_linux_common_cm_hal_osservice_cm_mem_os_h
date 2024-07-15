@@ -1,0 +1,14 @@
+https://github.com/intel/media-driver/pull/1785
+Index: media_driver/linux/common/cm/hal/osservice/cm_mem_os.h
+--- media_driver/linux/common/cm/hal/osservice/cm_mem_os.h.orig
++++ media_driver/linux/common/cm/hal/osservice/cm_mem_os.h
+@@ -30,6 +30,9 @@
+ #include <smmintrin.h>
+ 
+ typedef uintptr_t           UINT_PTR;
++#ifdef __fastcall
++    #undef __fastcall
++#endif
+ #define __fastcall
+ #define __noop
+ 

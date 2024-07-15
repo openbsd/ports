@@ -1,0 +1,19 @@
+https://github.com/intel/media-driver/pull/1785
+Index: media_softlet/agnostic/common/os/mos_utilities_next.cpp
+--- media_softlet/agnostic/common/os/mos_utilities_next.cpp.orig
++++ media_softlet/agnostic/common/os/mos_utilities_next.cpp
+@@ -27,6 +27,7 @@
+ 
+ #include <fcntl.h>
+ #include <math.h>
++#include <cstdlib>
+ #include "mos_os.h"
+ #include "mos_utilities_specific.h"
+ 
+@@ -958,4 +959,4 @@ std::string PerfUtility::getDashString(uint32_t num)
+     ss.fill('-');
+     ss << std::left << "" << std::endl;
+     return ss.str();
+-}
+\ No newline at end of file
++}

@@ -1,0 +1,13 @@
+https://github.com/intel/media-driver/pull/1785
+Index: cmrtlib/linux/CMakeLists.txt
+--- cmrtlib/linux/CMakeLists.txt.orig
++++ cmrtlib/linux/CMakeLists.txt
+@@ -101,7 +101,7 @@ set(CMRT_VERSION ${CMRT_VERSION_MAJOR}.${CMRT_VERSION_
+ 
+ set_target_properties(igfxcmrt PROPERTIES VERSION ${CMRT_VERSION})
+ set_target_properties(igfxcmrt PROPERTIES SOVERSION ${CMRT_VERSION_MAJOR})
+-target_link_libraries( igfxcmrt dl va rt ${GCC_SECURE_LINK_FLAGS})
++target_link_libraries( igfxcmrt ${CMAKE_DL_LIBS} va ${GCC_SECURE_LINK_FLAGS})
+ 
+ include(GNUInstallDirs)
+ 

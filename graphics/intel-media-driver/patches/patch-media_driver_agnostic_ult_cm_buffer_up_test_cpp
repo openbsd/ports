@@ -1,0 +1,12 @@
+https://github.com/intel/media-driver/pull/1785
+Index: media_driver/agnostic/ult/cm/buffer_up_test.cpp
+--- media_driver/agnostic/ult/cm/buffer_up_test.cpp.orig
++++ media_driver/agnostic/ult/cm/buffer_up_test.cpp
+@@ -21,7 +21,6 @@
+ */
+ 
+ #include "cm_test.h"
+-#include <malloc.h>
+ 
+ class BufferUPTest: public CmTest
+ {

@@ -1,0 +1,13 @@
+https://github.com/intel/media-driver/pull/1785
+Index: media_driver/linux/common/ddi/media_libva.cpp
+--- media_driver/linux/common/ddi/media_libva.cpp.orig
++++ media_driver/linux/common/ddi/media_libva.cpp
+@@ -36,8 +36,6 @@
+ #include <X11/Xutil.h>
+ #endif
+ 
+-#include <linux/fb.h>
+-
+ #include "media_libva.h"
+ 
+ #include "media_libva_util.h"

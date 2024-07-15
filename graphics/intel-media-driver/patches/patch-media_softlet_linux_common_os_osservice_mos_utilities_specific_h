@@ -1,0 +1,31 @@
+https://github.com/intel/media-driver/pull/1785
+Index: media_softlet/linux/common/os/osservice/mos_utilities_specific.h
+--- media_softlet/linux/common/os/osservice/mos_utilities_specific.h.orig
++++ media_softlet/linux/common/os/osservice/mos_utilities_specific.h
+@@ -26,16 +26,24 @@
+ #ifndef __MOS_UTILITIES_SPECIFIC_H__
+ #define __MOS_UTILITIES_SPECIFIC_H__
+ 
++#include <cstdlib>
+ #include <map>
+-#include <malloc.h>
+ #include "mos_defs.h"
+ #include "media_class_trace.h"
+ 
++
+ #define LINUX_OS_VERSION_FILE                "/proc/version"
+ 
+ #define NOT_FOUND            -1
+ 
+-#define _aligned_malloc(size, alignment)  memalign(alignment, size)
++#ifndef _aligned_malloc
++#if defined(__STDC_VERSION__) && __STDC_VERSION__ >= 201112L
++#define _aligned_malloc(size, alignment) aligned_alloc(alignment, size)
++#else
++#define _aligned_malloc(size, alignment) ({ void* ptr; posix_memalign(&ptr, alignment, size) ? NULL : ptr; })
++#endif
++#endif
++
+ #define _aligned_free(ptr)                free(ptr)
+ 
+ typedef void (*MOS_UserFeatureCallback)( void*, bool);

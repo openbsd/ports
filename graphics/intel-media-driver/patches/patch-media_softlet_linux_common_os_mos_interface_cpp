@@ -1,0 +1,13 @@
+https://github.com/intel/media-driver/pull/1785
+Index: media_softlet/linux/common/os/mos_interface.cpp
+--- media_softlet/linux/common/os/mos_interface.cpp.orig
++++ media_softlet/linux/common/os/mos_interface.cpp
+@@ -34,7 +34,7 @@
+ #include "mos_os_virtualengine_scalability_specific_next.h"
+ #include "mos_graphicsresource_specific_next.h"
+ #include "mos_bufmgr_priv.h"
+-#include "drm_device.h"
++#include "xf86drm.h"
+ #include "media_fourcc.h"
+ #include "mos_oca_rtlog_mgr.h"
+ 

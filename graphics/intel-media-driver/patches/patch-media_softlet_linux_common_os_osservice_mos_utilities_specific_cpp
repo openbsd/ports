@@ -1,0 +1,13 @@
+https://github.com/intel/media-driver/pull/1785
+Index: media_softlet/linux/common/os/osservice/mos_utilities_specific.cpp
+--- media_softlet/linux/common/os/osservice/mos_utilities_specific.cpp.orig
++++ media_softlet/linux/common/os/osservice/mos_utilities_specific.cpp
+@@ -2170,7 +2170,7 @@ uint32_t MosUtilities::MosGetThreadId(
+ 
+ uint32_t MosUtilities::MosGetCurrentThreadId()
+ {
+-    return (uint32_t)pthread_self();
++    return (uintptr_t)pthread_self();
+ }
+ 
+ MOS_STATUS MosUtilities::MosWaitThread(

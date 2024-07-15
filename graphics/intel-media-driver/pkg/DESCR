@@ -1,0 +1,25 @@
+VA-API (Video Acceleration API) user mode driver for Intel GEN Graphics family
+
+VA-API is an open-source library and API specification, which provides access to
+graphics hardware acceleration capabilities for video processing. It consists of
+a main library and driver-specific acceleration backends for each supported
+hardware vendor.
+
+The current video driver backend provides a bridge to the GEN GPUs through the
+packaging of buffers and commands to be sent to the i915 driver for exercising
+both hardware and shader functionality for video decode, encode, and processing.
+
+Supported Platforms
+
+- BDW (Broadwell)
+- SKL (Skylake)
+- BXTx (BXT: Broxton, APL: Apollo Lake, GLK: Gemini Lake)
+- KBLx (KBL: Kaby Lake, CFL: Coffee Lake, WHL: Whiskey Lake, CML: Comet Lake,
+        AML: Amber Lake)
+- ICL (Ice Lake)
+- JSL (Jasper Lake) / EHL (Elkhart Lake)
+- TGLx (TGL: Tiger Lake, RKL: Rocket Lake, ADL-S/P/N: Alder Lake, RPL-S/P:
+        Raptor Lake)
+- DG1/SG1
+- Alchemist(DG2)/ATSM
+- MTLx (MTL: Meteor Lake, ARL-S/H: Arrow Lake)
