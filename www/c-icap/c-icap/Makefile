@@ -3,7 +3,7 @@ COMMENT-main=	ICAP server for use with web proxies
 COMMENT-db=	Berkeley DB module for c-icap
 COMMENT-ldap=	LDAP module for c-icap
 
-V=		0.5.12
+V=		0.5.13
 DISTNAME=	c_icap-$V
 PKGNAME-main=	c-icap-$V
 PKGNAME-db=	c-icap-db-$V
@@ -11,7 +11,7 @@ PKGNAME-ldap=	c-icap-ldap-$V
 
 SHARED_LIBS +=	icapapi                   2.1 # 5.2
 
-WANTLIB += brotlicommon brotlidec brotlienc bz2 pcre pthread z
+WANTLIB += brotlicommon brotlidec brotlienc bz2 pcre pthread z zstd
 
 # override ../Makefile.inc
 CONFIGURE_STYLE=  autoconf
@@ -34,6 +34,7 @@ RUN_DEPENDS$i = ${BASE_PKGPATH}
 .endfor
 
 LIB_DEPENDS=	archivers/brotli \
+		archivers/zstd \
 		devel/pcre
 
 WANTLIB-main=	${WANTLIB} c m

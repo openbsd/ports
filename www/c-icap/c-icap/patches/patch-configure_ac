@@ -1,7 +1,7 @@
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -831,7 +831,7 @@ AC_COMPILE_IFELSE(
+@@ -866,7 +866,7 @@ AC_COMPILE_IFELSE(
  #include <sys/types.h>
  #include <sys/ipc.h>
  #include <sys/sem.h>
