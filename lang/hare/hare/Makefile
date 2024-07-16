@@ -1,4 +1,4 @@
-V =		0.24.0
+V =		0.24.2
 DISTNAME =	hare-${V}
 DISTFILES =	hare-{hare/archive/}${V}${EXTRACT_SUFX}
 
