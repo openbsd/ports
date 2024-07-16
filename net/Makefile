@@ -1,6 +1,5 @@
      SUBDIR =
      SUBDIR += adns
-     SUBDIR += adsuck
      SUBDIR += aggregate
      SUBDIR += aggregate6
      SUBDIR += amfora

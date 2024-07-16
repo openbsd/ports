@@ -1,6 +1,0 @@
---- files/regex.orig	Tue Aug 16 11:05:50 2011
-+++ files/regex	Tue Aug 16 11:05:53 2011
-@@ -1,2 +1,2 @@
- # example regex expression
--banner|ads|stat[^i][^c]|track|[^u]click|adx|2o7|hitbox|count|meter
-+#banner|ads|stat[^i][^c]|track|[^u]click|adx|2o7|hitbox|count|meter

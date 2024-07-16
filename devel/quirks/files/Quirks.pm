@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1647 2024/07/14 14:00:48 thfr Exp $
+# $OpenBSD: Quirks.pm,v 1.1648 2024/07/16 20:25:49 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1970,6 +1970,7 @@ setup_obsolete_reason(
 	3 => 'gnome-screenshot',
 	3 => 'libgnome-keyring',
 	1 => 'fnaify',
+	68 => 'adsuck',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -2054,6 +2055,7 @@ my $obsolete_message = {
 	65 => "superseded by goldendict-ng",
 	66 => "superseded by opensmtpd-table-*",
 	67 => "unmaintained upstream, outdated for decades, only supports old crypto, expected dhclient",
+	68 => "unmaintained upstream, outdated for decades, does not work, expected dhclient, use unwind.conf(5) 'block list file' instead",
 };
 
 # ->is_base_system($handle, $state):
