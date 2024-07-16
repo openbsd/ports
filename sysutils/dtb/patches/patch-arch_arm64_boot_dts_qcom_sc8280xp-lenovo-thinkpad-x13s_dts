@@ -1,7 +1,7 @@
 Index: arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts
 --- arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts.orig
 +++ arch/arm64/boot/dts/qcom/sc8280xp-lenovo-thinkpad-x13s.dts
-@@ -709,14 +709,14 @@
+@@ -747,14 +747,14 @@
  	pinctrl-names = "default";
  	pinctrl-0 = <&pcie3a_default>;
  
