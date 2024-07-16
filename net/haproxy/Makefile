@@ -1,13 +1,12 @@
 COMMENT =	reliable, high performance TCP/HTTP load balancer
 
-DISTNAME =	haproxy-3.0.0
+DISTNAME =	haproxy-3.0.3
 CATEGORIES =	net www
 HOMEPAGE =	https://www.haproxy.org/
 MAINTAINER =	Lucas Gabriel Vuotto <lucas@sexy.is>
-REVISION =	0
 
 # GPLv2
-PERMIT_PACKAGE =		Yes
+PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c crypto pcre2-8 pcre2-posix pthread ssl z
 
@@ -30,8 +29,8 @@ LIB_DEPENDS =	devel/pcre2
 
 # Fix undefined reference to __atomic_*
 .if ${MACHINE_ARCH} == "hppa"
-LDFLAGS +=		"-latomic"
-WANTLIB +=		atomic
+LDFLAGS +=	"-latomic"
+WANTLIB +=	atomic
 .endif
 
 NO_TEST =	Yes
