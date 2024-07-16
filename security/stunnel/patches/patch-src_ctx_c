@@ -55,3 +55,13 @@ Index: src/ctx.c
          OSSL_HANDSHAKE_STATE state=SSL_get_state(ssl);
  #else
          int state=SSL_get_state((SSL *)ssl);
+@@ -1574,8 +1574,7 @@ NOEXPORT void info_callback(const SSL *ssl, int where,
+ #ifndef SSL3_ST_SR_CLNT_HELLO_A
+             if(state==TLS_ST_SR_CLNT_HELLO) {
+ #else
+-            if(state==SSL3_ST_SR_CLNT_HELLO_A
+-                    || state==SSL23_ST_SR_CLNT_HELLO_A) {
++            if(state==SSL3_ST_SR_CLNT_HELLO_A) {
+ #endif
+                 /* client hello received after initial handshake,
+                  * this means renegotiation -> mark it */
