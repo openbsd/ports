@@ -1351,6 +1351,7 @@
      SUBDIR += py-astroid,python3
      SUBDIR += py-asttokens,python3
      SUBDIR += py-astunparse,python3
+     SUBDIR += py-async-lru,python3
      SUBDIR += py-async-timeout,python3
      SUBDIR += py-atomicwrites,python3
      SUBDIR += py-attrs,python3
@@ -1463,6 +1464,7 @@
      SUBDIR += py-greenlet,python3
      SUBDIR += py-hamcrest,python3
      SUBDIR += py-hatch-fancy-pypi-readme,python3
+     SUBDIR += py-hatch-jupyter-builder,python3
      SUBDIR += py-hatch-nodejs-version,python3
      SUBDIR += py-hatch-vcs,python3
      SUBDIR += py-hatchling,python3
@@ -1545,6 +1547,7 @@
      SUBDIR += py-openbsd,python3
      SUBDIR += py-ordered-set,python3
      SUBDIR += py-outcome,python3
+     SUBDIR += py-overrides,python3
      SUBDIR += py-parallel,python3
      SUBDIR += py-parameterized,python3
      SUBDIR += py-parse,python3
@@ -1652,6 +1655,7 @@
      SUBDIR += py-test-astropy-header,python3
      SUBDIR += py-test-asyncio,python3
      SUBDIR += py-test-benchmark,python3
+     SUBDIR += py-test-console-scripts,python3
      SUBDIR += py-test-cov,python3
      SUBDIR += py-test-datafiles,python3
      SUBDIR += py-test-doctestplus,python3
