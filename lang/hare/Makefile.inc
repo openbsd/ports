@@ -6,6 +6,8 @@ CATEGORIES ?=	lang devel
 
 HOMEPAGE ?=	https://harelang.org/
 MAINTAINER ?=	Lorenz (xha) <me@xha.li>
+V ?=		0.24.2
+REVISION ?=	0
 
 # Compiler: GPLv3 only
 # Runtime: MPL 2.0

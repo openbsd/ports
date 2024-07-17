@@ -1,4 +1,3 @@
-V =		0.24.2
 DISTNAME =	harec-${V}
 DISTFILES =	harec-{harec/archive/}${V}${EXTRACT_SUFX}
 

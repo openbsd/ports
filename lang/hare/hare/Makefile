@@ -1,4 +1,3 @@
-V =		0.24.2
 DISTNAME =	hare-${V}
 DISTFILES =	hare-{hare/archive/}${V}${EXTRACT_SUFX}
 
@@ -7,7 +6,7 @@ WANTLIB += c
 BUILD_DEPENDS =	${RUN_DEPENDS} \
 		textproc/scdoc
 
-RUN_DEPENDS =	lang/hare/harec
+RUN_DEPENDS =	lang/hare/harec=${V}
 
 MAKE_FLAGS =	MANDIR="${PREFIX}/man"
 
