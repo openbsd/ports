@@ -1,6 +1,6 @@
 COMMENT =		collection of routines useful for queries to NCBI databases
 
-DISTNAME =		Bio-DB-NCBIHelper-1.7.7
+DISTNAME =		Bio-DB-NCBIHelper-1.7.8
 
 CATEGORIES =		biology
 
