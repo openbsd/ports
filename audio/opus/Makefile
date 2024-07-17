@@ -2,6 +2,7 @@ COMMENT=	IETF audio codec
 
 VERSION=	1.5.2
 DISTNAME=	opus-${VERSION}
+REVISION=	0
 SHARED_LIBS=	opus		1.5	# 10.1
 CATEGORIES=	audio
 
