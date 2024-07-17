@@ -1,9 +1,8 @@
 COMMENT=	slender monospaced font with a large x-height
 HOMEPAGE=	https://rubjo.github.io/victor-mono/
-MAINTAINER=	Ashlen <dev@anthes.is>
 
 MODFONT_FAMILY=		victor-mono
-MODFONT_VERSION=	1.5.5
+MODFONT_VERSION=	1.5.6
 
 SITES=		https://github.com/rubjo/victor-mono/raw/v${MODFONT_VERSION}/public/
 DISTFILES=	victor-mono-${MODFONT_VERSION}{VictorMonoAll}${EXTRACT_SUFX}
