@@ -1,7 +1,22 @@
+- openbsd doesn't have libcrypt
+- pull in headers from contrib/fmt/include before /usr/local/include
+to avoid mismatch
+
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -355,7 +355,7 @@ IF (LIBCRYPT_LIBRARY_PATH)
+@@ -129,6 +129,10 @@ INCLUDE_DIRECTORIES("${CMAKE_SOURCE_DIR}/"
+         "${CMAKE_BINARY_DIR}/src" #Stored in the binary dir
+         "${CMAKE_BINARY_DIR}/src/libcryptobox")
+ 
++IF (SYSTEM_FMT MATCHES "OFF")
++    INCLUDE_DIRECTORIES("${CMAKE_SOURCE_DIR}/contrib/fmt/include")
++ENDIF ()
++
+ SET(TAR "tar")
+ INCLUDE(OSDep)
+ 
+@@ -358,7 +362,7 @@ IF (LIBCRYPT_LIBRARY_PATH)
      SET(CMAKE_REQUIRED_LIBRARIES "${CMAKE_REQUIRED_LIBRARIES};-L${LIBCRYPT_LIBRARY_PATH};${LIBCRYPT_LIBRARY}")
      SET(CMAKE_REQUIRED_LIBRARIES "${CMAKE_REQUIRED_LIBRARIES};-L${LIBSSL_LIBRARY_PATH};${LIBSSL_LIBRARY}")
  ELSE ()
@@ -10,3 +25,14 @@ Index: CMakeLists.txt
  ENDIF ()
  
  CHECK_SYMBOL_EXISTS(SSL_set_tlsext_host_name "openssl/ssl.h" HAVE_SSL_TLSEXT_HOSTNAME)
+@@ -644,9 +648,7 @@ IF (BACKWARD_LIBRARIES)
+     message(STATUS "Backward-cpp libraries: ${BACKWARD_LIBRARIES}")
+ ENDIF ()
+ 
+-IF (SYSTEM_FMT MATCHES "OFF")
+-    INCLUDE_DIRECTORIES("${CMAKE_SOURCE_DIR}/contrib/fmt/include")
+-ELSE ()
++IF (NOT SYSTEM_FMT MATCHES "OFF")
+     find_package(fmt)
+ ENDIF ()
+ IF (SYSTEM_DOCTEST MATCHES "OFF")

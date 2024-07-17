@@ -2,8 +2,7 @@ COMMENT=	event-driven spam filtering system in C/Lua
 
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
-GH_TAGNAME=	3.8.4
-REVISION=	2
+GH_TAGNAME=	3.9.0
 
 CATEGORIES=	mail
 
@@ -15,7 +14,7 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += c crypto glib-2.0 icudata icui18n icuio icuuc
+WANTLIB += archive c crypto glib-2.0 icudata icui18n icuio icuuc
 WANTLIB += intl m pcre2-8 sodium sqlite3 ssl util xxhash z zstd
 
 FLAVORS=	hyperscan
@@ -33,7 +32,8 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 MODPY_BUILDDEP=	No
 MODPY_RUNDEP=	No
 
-LIB_DEPENDS=	archivers/zstd \
+LIB_DEPENDS=	archivers/libarchive \
+		archivers/zstd \
 		databases/sqlite3 \
 		devel/gettext,-runtime \
 		devel/glib2 \
@@ -43,11 +43,10 @@ LIB_DEPENDS=	archivers/zstd \
 		textproc/icu4c
 RUN_DEPENDS=	databases/redis
 
-BUILD_DEPENDS+=	devel/fmt>=10.2.1 \
-		devel/ragel
+BUILD_DEPENDS=	devel/ragel
 # /var/rspamd needs to exist for tests to run
-TEST_DEPENDS=	${FULLPKGNAME}:${FULLPKGPATH}
-TEST_DEPENDS+=	databases/redis \
+TEST_DEPENDS=	${FULLPKGNAME}:${FULLPKGPATH} \
+		databases/redis \
 		devel/py-robotframework${MODPY_FLAVOR} \
 		sysutils/py-psutil${MODPY_FLAVOR}
 
@@ -60,7 +59,12 @@ CONFIGURE_ARGS+= -DOPENBSD_BUILD=1 \
 		-DRUNDIR="${LOCALSTATEDIR}/run/rspamd" \
 		-DRSPAMD_USER="_rspamd"
 
-CONFIGURE_ARGS+= -DSYSTEM_FMT=ON \
+# fmt in ports is not new enough yet; requires 11+
+#BUILD_DEPENDS+=	devel/fmt>=11
+#CONFIGURE_ARGS+= -DSYSTEM_FMT=ON
+CONFIGURE_ARGS+= -DSYSTEM_FMT=OFF
+
+CONFIGURE_ARGS+= \
 		-DSYSTEM_XXHASH=ON \
 		-DSYSTEM_ZSTD=ON \
 		-DENABLE_JEMALLOC=OFF
