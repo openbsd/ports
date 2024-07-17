@@ -1,0 +1,12 @@
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -59,7 +59,7 @@ docs = [
+ path = "jupyter_server_terminals/_version.py"
+ 
+ [tool.hatch.build.targets.wheel.shared-data]
+-"jupyter-config" = "etc/jupyter/jupyter_server_config.d"
++"jupyter-config" = "share/examples/jupyter/jupyter_server_config.d"
+ 
+ [tool.hatch.envs.docs]
+ features = ["docs"]

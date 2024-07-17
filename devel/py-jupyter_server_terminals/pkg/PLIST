@@ -1,0 +1,37 @@
+lib/python${MODPY_VERSION}/site-packages/jupyter_server_terminals/
+lib/python${MODPY_VERSION}/site-packages/jupyter_server_terminals-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/jupyter_server_terminals-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/jupyter_server_terminals-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/jupyter_server_terminals-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/jupyter_server_terminals-${MODPY_EGG_VERSION}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/jupyter_server_terminals-${MODPY_EGG_VERSION}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/jupyter_server_terminals/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jupyter_server_terminals/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jupyter_server_terminals/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/jupyter_server_terminals/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jupyter_server_terminals/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/jupyter_server_terminals/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jupyter_server_terminals/${MODPY_PYCACHE}api_handlers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/jupyter_server_terminals/${MODPY_PYCACHE}api_handlers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jupyter_server_terminals/${MODPY_PYCACHE}app.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/jupyter_server_terminals/${MODPY_PYCACHE}app.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jupyter_server_terminals/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/jupyter_server_terminals/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jupyter_server_terminals/${MODPY_PYCACHE}handlers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/jupyter_server_terminals/${MODPY_PYCACHE}handlers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jupyter_server_terminals/${MODPY_PYCACHE}terminalmanager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/jupyter_server_terminals/${MODPY_PYCACHE}terminalmanager.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jupyter_server_terminals/_version.py
+lib/python${MODPY_VERSION}/site-packages/jupyter_server_terminals/api_handlers.py
+lib/python${MODPY_VERSION}/site-packages/jupyter_server_terminals/app.py
+lib/python${MODPY_VERSION}/site-packages/jupyter_server_terminals/base.py
+lib/python${MODPY_VERSION}/site-packages/jupyter_server_terminals/handlers.py
+lib/python${MODPY_VERSION}/site-packages/jupyter_server_terminals/py.typed
+lib/python${MODPY_VERSION}/site-packages/jupyter_server_terminals/rest-api.yml
+lib/python${MODPY_VERSION}/site-packages/jupyter_server_terminals/terminalmanager.py
+share/examples/jupyter/
+@sample ${SYSCONFDIR}/jupyter/
+share/examples/jupyter/jupyter_server_config.d/
+@sample ${SYSCONFDIR}/jupyter/jupyter_server_config.d/
+share/examples/jupyter/jupyter_server_config.d/jupyter_server_terminals.json
+@sample ${SYSCONFDIR}/jupyter/jupyter_server_config.d/jupyter_server_terminals.json
