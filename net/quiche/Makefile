@@ -3,12 +3,11 @@ COMMENT	=		library implementing QUIC and HTTP/3
 # ring-v0.17 does not support this arch
 NOT_FOR_ARCHS =		sparc64
 
-VERSION =		0.21.0
+VERSION =		0.22.0
 GH_ACCOUNT =		cloudflare
 GH_PROJECT =		quiche
 GH_TAGNAME =		${VERSION}
 CATEGORIES =		net
-REVISION =		0
 
 MAINTAINER =		Otto Moerbeek <otto@drijf.net>
 
