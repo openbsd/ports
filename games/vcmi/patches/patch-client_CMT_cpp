@@ -1,7 +1,7 @@
 Index: client/CMT.cpp
 --- client/CMT.cpp.orig
 +++ client/CMT.cpp
-@@ -433,7 +433,7 @@ static void mainLoop()
+@@ -440,7 +440,7 @@ static void mainLoop()
  	// destruction of locked mutexes (fails an assertion), even in third-party libraries (as well as native libs on Android)
  	// Android - std::quick_exit is available only starting from API level 21
  	// Mingw, macOS and iOS - std::quick_exit is unavailable (at least in current version of CI)
