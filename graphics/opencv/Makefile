@@ -11,6 +11,8 @@ GH_TAGNAME =		${V}
 
 PKGNAME-main =		opencv-${V}
 PKGNAME-java =		opencv-java-${V}
+REVISION-java =		0
+REVISION-main =		0
 
 HOMEPAGE =		https://www.opencv.org/
 
@@ -90,6 +92,7 @@ CONFIGURE_ARGS =	-DBUILD_DOCS=OFF \
 			-DOPENCV_SKIP_PYTHON_WARNING=ON \
 			-DPYTHON_DEFAULT_EXECUTABLE=${MODPY_BIN} \
 			-DWITH_1394=OFF \
+			-DWITH_VA=OFF \
 			-DWITH_ADE=OFF \
 			-DWITH_CUDA=OFF \
 			-DWITH_EIGEN=OFF \
