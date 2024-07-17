@@ -16,6 +16,7 @@ MODGO_MODULES =	\
 	github.com/cespare/xxhash/v2				 v2.1.1 \
 	github.com/circonus-labs/circonus-gometrics		 v2.3.1+incompatible \
 	github.com/circonus-labs/circonusllhist			 v0.1.3 \
+	github.com/coreos/go-systemd/v22			 v22.5.0 \
 	github.com/davecgh/go-spew				 v1.1.2-0.20180830191138-d8f796af33cc \
 	github.com/docker/go-units				 v0.5.0 \
 	github.com/fatih/color					 v1.17.0 \
@@ -25,6 +26,7 @@ MODGO_MODULES =	\
 	github.com/go-logfmt/logfmt				 v0.4.0 \
 	github.com/go-stack/stack				 v1.8.0 \
 	github.com/go-test/deep					 v1.0.2 \
+	github.com/godbus/dbus/v5				 v5.0.4 \
 	github.com/gogo/protobuf				 v1.1.1 \
 	github.com/golang/protobuf				 v1.5.4 \
 	github.com/google/btree					 v1.0.1 \
@@ -43,7 +45,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-immutable-radix			 v1.3.1 \
 	github.com/hashicorp/go-msgpack				 v0.5.5 \
 	github.com/hashicorp/go-multierror			 v1.1.1 \
-	github.com/hashicorp/go-retryablehttp			 v0.7.2 \
+	github.com/hashicorp/go-retryablehttp			 v0.7.7 \
 	github.com/hashicorp/go-rootcerts			 v1.0.2 \
 	github.com/hashicorp/go-secure-stdlib/parseutil		 v0.1.7 \
 	github.com/hashicorp/go-secure-stdlib/strutil		 v0.1.2 \

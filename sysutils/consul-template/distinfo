@@ -1,4 +1,4 @@
-SHA256 (consul-template-v0.39.0.zip) = dznMkWTuzKtvDxt0NHcJ6HL5vtxtQkeg96Pa8X+n0GA=
+SHA256 (consul-template-v0.39.1.zip) = +tmj2NEPJei6KCCkcrT692XAtv2FWFwV4J97J+l2Ih0=
 SHA256 (go_modules/dario.cat/mergo/@v/v1.0.0.mod) = 4jxLgDpsbm5FdHlG6H0kcEzXd1bMSEvf0XtXIjvzINY=
 SHA256 (go_modules/dario.cat/mergo/@v/v1.0.0.zip) = Gn7zlnCcWDUha7R7qSGN1ECsUwdYPGnReYzp5FfxMR0=
 SHA256 (go_modules/github.com/!burnt!sushi/toml/@v/v1.3.2.mod) = JnfIL+dPIDdyiJpagBr7Mp2VF1UId92ssXIZFpurPt0=
@@ -42,6 +42,8 @@ SHA256 (go_modules/github.com/circonus-labs/circonus-gometrics/@v/v2.3.1+incompa
 SHA256 (go_modules/github.com/circonus-labs/circonus-gometrics/@v/v2.3.1+incompatible.zip) = 2AgRQUl+PNNIRN9mrwFseQDVizJPtonhfle8BT2Rybo=
 SHA256 (go_modules/github.com/circonus-labs/circonusllhist/@v/v0.1.3.mod) = Qzl8mGOe7faSzE3o3QaNJV4koA766KV4HCcIcFnYYfM=
 SHA256 (go_modules/github.com/circonus-labs/circonusllhist/@v/v0.1.3.zip) = TcgF2XNd2cqbiHXArSMSartbyWnFpAxhtbyJGAjb3LY=
+SHA256 (go_modules/github.com/coreos/go-systemd/v22/@v/v22.5.0.mod) = 3pM5X+kwhvgFU4INFASJ4x6Tv+BFfhtN48dyVW1TSEA=
+SHA256 (go_modules/github.com/coreos/go-systemd/v22/@v/v22.5.0.zip) = TETjprhN5Ns5PjQVN8cSQDH6mNX5iGCtMbMrSJDyI0w=
 SHA256 (go_modules/github.com/davecgh/go-spew/@v/v1.1.0.mod) = vLKTkyUSN7eaF7bBm/KRNPQ+j0OMMZiYj81GGhzfBcw=
 SHA256 (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.mod) = vLKTkyUSN7eaF7bBm/KRNPQ+j0OMMZiYj81GGhzfBcw=
 SHA256 (go_modules/github.com/davecgh/go-spew/@v/v1.1.2-0.20180830191138-d8f796af33cc.mod) = vLKTkyUSN7eaF7bBm/KRNPQ+j0OMMZiYj81GGhzfBcw=
@@ -69,6 +71,8 @@ SHA256 (go_modules/github.com/go-stack/stack/@v/v1.8.0.mod) = WRVSp8pfQ1HZvva4aP
 SHA256 (go_modules/github.com/go-stack/stack/@v/v1.8.0.zip) = eMJmfHEPgRMHA4Y0/6Q69EJhms/q8e+1k6pODe2d9I8=
 SHA256 (go_modules/github.com/go-test/deep/@v/v1.0.2.mod) = 0YeeHw1NlnutLx2jeCtglPNpeTVhVXW+l9FxaVwdSq4=
 SHA256 (go_modules/github.com/go-test/deep/@v/v1.0.2.zip) = xhTmcTy3toS8s0MPyWnmekNbDE0v8Bi+JPMN6Pnn1n4=
+SHA256 (go_modules/github.com/godbus/dbus/v5/@v/v5.0.4.mod) = h0Pqcv7SHMFDxKBnQI4h93h2EOZi/b6NWUMxLqiuiBY=
+SHA256 (go_modules/github.com/godbus/dbus/v5/@v/v5.0.4.zip) = I6I/CL6kjm5JpGpAFbZK27FpLcbd8Ng8LwwgJ8uOMcg=
 SHA256 (go_modules/github.com/gogo/protobuf/@v/v1.1.1.mod) = /8FAk16hS+ckXwXMggbkkzpGIJZafuEQjSU1ZPmEAmo=
 SHA256 (go_modules/github.com/gogo/protobuf/@v/v1.1.1.zip) = kY3OlvG1yJfssV55x0HTCIq/DEgcoIS2aGEJo59T9S4=
 SHA256 (go_modules/github.com/golang/protobuf/@v/v1.2.0.mod) = wKIDG/J3CHdJ2MzEMkSfaxN1eH6shkHdL5MAdCMar7Q=
@@ -128,8 +132,8 @@ SHA256 (go_modules/github.com/hashicorp/go-multierror/@v/v1.1.1.mod) = a0THuM+MX
 SHA256 (go_modules/github.com/hashicorp/go-multierror/@v/v1.1.1.zip) = lyzYQe5R/erGnFowHlf46ieuvxX93X9iHVwkDyjDAAw=
 SHA256 (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.5.3.mod) = ZglByC2MOvy8MHvbeZ+mJsprcIJSNDyZnR3KHJn07fs=
 SHA256 (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.6.6.mod) = UjzeAp4LRWnIhHDCozb3d6ZERLkm4XNagdX5aQ8grE4=
-SHA256 (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.7.2.mod) = xjZcmWZKgniQRqAjUTow55779TfaRFk9R52+j4EmIR4=
-SHA256 (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.7.2.zip) = sSjIdJAL5C6VLZ6a1eCjgODO0fnVBGW0EpAGvXTxsFs=
+SHA256 (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.7.7.mod) = EIAKwHT/lU7l7L5Rczj0E3MKQqLEfBzYGrZQ0b08VPg=
+SHA256 (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.7.7.zip) = Kfo2VavQp8kfOh6xhtMJ7CS1gK+xDTmjzfqM3g6Z4Kk=
 SHA256 (go_modules/github.com/hashicorp/go-rootcerts/@v/v1.0.2.mod) = NaHPdeJMsG8rYBPBb9+7E7dAqN0on8MyFLDAOymXZRM=
 SHA256 (go_modules/github.com/hashicorp/go-rootcerts/@v/v1.0.2.zip) = hkpI5kLoeic/te9guzV1vXSnCQUQ+TFDFj+mcAvjGUg=
 SHA256 (go_modules/github.com/hashicorp/go-secure-stdlib/parseutil/@v/v0.1.6.mod) = lIShOa4ZSPnUD3rkZwEniawTxMTFJuphl6zq54qotf0=
@@ -455,7 +459,7 @@ SHA256 (go_modules/gopkg.in/yaml.v2/@v/v2.4.0.zip) = 7eSeJ8TMps3S7HGa7Y6k02NxDM6
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SIZE (consul-template-v0.39.0.zip) = 412675
+SIZE (consul-template-v0.39.1.zip) = 413831
 SIZE (go_modules/dario.cat/mergo/@v/v1.0.0.mod) = 65
 SIZE (go_modules/dario.cat/mergo/@v/v1.0.0.zip) = 49320
 SIZE (go_modules/github.com/!burnt!sushi/toml/@v/v1.3.2.mod) = 43
@@ -499,6 +503,8 @@ SIZE (go_modules/github.com/circonus-labs/circonus-gometrics/@v/v2.3.1+incompati
 SIZE (go_modules/github.com/circonus-labs/circonus-gometrics/@v/v2.3.1+incompatible.zip) = 148431
 SIZE (go_modules/github.com/circonus-labs/circonusllhist/@v/v0.1.3.mod) = 47
 SIZE (go_modules/github.com/circonus-labs/circonusllhist/@v/v0.1.3.zip) = 10851
+SIZE (go_modules/github.com/coreos/go-systemd/v22/@v/v22.5.0.mod) = 91
+SIZE (go_modules/github.com/coreos/go-systemd/v22/@v/v22.5.0.zip) = 126112
 SIZE (go_modules/github.com/davecgh/go-spew/@v/v1.1.0.mod) = 34
 SIZE (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.mod) = 34
 SIZE (go_modules/github.com/davecgh/go-spew/@v/v1.1.2-0.20180830191138-d8f796af33cc.mod) = 34
@@ -526,6 +532,8 @@ SIZE (go_modules/github.com/go-stack/stack/@v/v1.8.0.mod) = 33
 SIZE (go_modules/github.com/go-stack/stack/@v/v1.8.0.zip) = 10204
 SIZE (go_modules/github.com/go-test/deep/@v/v1.0.2.mod) = 31
 SIZE (go_modules/github.com/go-test/deep/@v/v1.0.2.zip) = 9917
+SIZE (go_modules/github.com/godbus/dbus/v5/@v/v5.0.4.mod) = 42
+SIZE (go_modules/github.com/godbus/dbus/v5/@v/v5.0.4.zip) = 99582
 SIZE (go_modules/github.com/gogo/protobuf/@v/v1.1.1.mod) = 32
 SIZE (go_modules/github.com/gogo/protobuf/@v/v1.1.1.zip) = 2461758
 SIZE (go_modules/github.com/golang/protobuf/@v/v1.2.0.mod) = 34
@@ -585,8 +593,8 @@ SIZE (go_modules/github.com/hashicorp/go-multierror/@v/v1.1.1.mod) = 96
 SIZE (go_modules/github.com/hashicorp/go-multierror/@v/v1.1.1.zip) = 19419
 SIZE (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.5.3.mod) = 95
 SIZE (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.6.6.mod) = 147
-SIZE (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.7.2.mod) = 147
-SIZE (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.7.2.zip) = 25205
+SIZE (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.7.7.mod) = 341
+SIZE (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.7.7.zip) = 32348
 SIZE (go_modules/github.com/hashicorp/go-rootcerts/@v/v1.0.2.mod) = 98
 SIZE (go_modules/github.com/hashicorp/go-rootcerts/@v/v1.0.2.zip) = 15463
 SIZE (go_modules/github.com/hashicorp/go-secure-stdlib/parseutil/@v/v0.1.6.mod) = 250
