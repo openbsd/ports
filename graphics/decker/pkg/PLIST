@@ -43,6 +43,7 @@ share/doc/decker/lilquickref.html
 share/doc/decker/lilt.html
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/decker/
+share/examples/decker/bignums.deck
 share/examples/decker/brushes.deck
 share/examples/decker/chickenwave.deck
 share/examples/decker/chip8.deck
@@ -76,6 +77,7 @@ share/examples/decker/sound.deck
 share/examples/decker/tour.deck
 share/examples/decker/transit.deck
 share/examples/decker/utena.deck
+share/examples/decker/wigglykit.deck
 share/examples/decker/zazz.deck
 share/pixmaps/
 share/pixmaps/decker.png
