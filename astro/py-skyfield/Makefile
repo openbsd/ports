@@ -1,10 +1,9 @@
 COMMENT=	computes positions for the stars, planets, and satellites
 
-MODPY_EGG_VERSION=	1.48
+MODPY_EGG_VERSION =	1.49
 
 DISTNAME=	skyfield-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	astro
 
