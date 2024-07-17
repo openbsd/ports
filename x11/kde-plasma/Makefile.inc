@@ -18,7 +18,7 @@ MODULES :=		devel/kf6 \
 PERMIT_PACKAGE ?=	Yes
 
 # XXX Keep in-sync with meta/kde
-VERSION ?=		6.1.2
+VERSION ?=		6.1.3
 
 SITES ?=		${SITE_KDE:=stable/plasma/${VERSION}/}
 EXTRACT_SUFX ?=		.tar.xz

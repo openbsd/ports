@@ -78,6 +78,7 @@ LIB_DEPENDS =	audio/libcanberra \
 		devel/sdl2 \
 		net/libaccounts-qt,qt6 \
 		wayland/wayland \
+		textproc/icu4c \
 		x11/kde-applications/kf6-kaccounts-integration \
 		x11/kde-plasma/libksysguard>=${VERSION} \
 		x11/kde-plasma/libplasma>=${VERSION} \

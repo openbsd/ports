@@ -107,6 +107,7 @@ LIB_DEPENDS =	audio/libcanberra \
 		multimedia/phonon,qt6 \
 		sysutils/libudev-openbsd \
 		wayland/wayland \
+		textproc/icu4c \
 		x11/kde-applications/kf6-libkexiv2 \
 		x11/kde-plasma/kscreenlocker>=${VERSION} \
 		x11/kde-plasma/kwayland>=${VERSION} \

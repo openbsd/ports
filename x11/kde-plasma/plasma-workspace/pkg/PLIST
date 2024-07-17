@@ -4571,6 +4571,7 @@ share/locale/nn/LC_MESSAGES/plasma_engine_powermanagement.mo
 share/locale/nn/LC_MESSAGES/plasma_engine_soliddevice.mo
 share/locale/nn/LC_MESSAGES/plasma_engine_time.mo
 share/locale/nn/LC_MESSAGES/plasma_engine_weather.mo
+share/locale/nn/LC_MESSAGES/plasma_interactiveconsole.mo
 share/locale/nn/LC_MESSAGES/plasma_lookandfeel_org.kde.lookandfeel.mo
 share/locale/nn/LC_MESSAGES/plasma_runner_appstream.mo
 share/locale/nn/LC_MESSAGES/plasma_runner_baloosearch.mo

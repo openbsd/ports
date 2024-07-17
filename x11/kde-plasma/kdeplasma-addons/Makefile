@@ -53,6 +53,7 @@ LIB_DEPENDS =	devel/kf6/kcmutils \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \
 		devel/kf6/sonnet \
+		textproc/icu4c \
 		x11/kde-plasma/libplasma>=${VERSION} \
 		x11/kde-plasma/plasma5support>=${VERSION} \
 		x11/qt6/qtdeclarative \
