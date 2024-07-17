@@ -1,4 +1,4 @@
-BUILD_UNLINKED = libva
+UNLINKED = libva
 
 ONLY_FOR_ARCHS =	amd64
 
