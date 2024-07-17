@@ -9,6 +9,7 @@ lib/audacity/
 @so lib/audacity/lib-components.so
 @so lib/audacity/lib-concurrency.so
 @so lib/audacity/lib-crypto.so
+@so lib/audacity/lib-dynamic-range-processor.so
 @so lib/audacity/lib-effects.so
 @so lib/audacity/lib-exceptions.so
 @so lib/audacity/lib-export-ui.so
@@ -28,6 +29,7 @@ lib/audacity/
 @so lib/audacity/lib-note-track.so
 @so lib/audacity/lib-numeric-formats.so
 @so lib/audacity/lib-playable-track.so
+@so lib/audacity/lib-preference-pages.so
 @so lib/audacity/lib-preferences.so
 @so lib/audacity/lib-project-file-io.so
 @so lib/audacity/lib-project-history.so
@@ -56,6 +58,7 @@ lib/audacity/
 @so lib/audacity/lib-uuid.so
 @so lib/audacity/lib-viewport.so
 @so lib/audacity/lib-vst.so
+@so lib/audacity/lib-wave-track-paint.so
 @so lib/audacity/lib-wave-track.so
 @so lib/audacity/lib-wx-init.so
 @so lib/audacity/lib-wx-wrappers.so

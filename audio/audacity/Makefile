@@ -4,11 +4,9 @@ COMMENT=	free audio editor
 # so can't be fetched automatically
 GH_ACCOUNT=	audacity
 GH_PROJECT=	audacity
-GH_TAGNAME=	Audacity-3.5.1
+GH_TAGNAME=	Audacity-3.6.0
 DISTNAME=	${GH_TAGNAME:L}
 CATEGORIES=	audio
-
-REVISION=	3
 
 HOMEPAGE=	https://www.audacityteam.org/
 
@@ -77,7 +75,6 @@ CONFIGURE_ARGS=	-Daudacity_lib_preference:STRING=system \
 		-Daudacity_use_lame:STRING=system \
 		-Daudacity_use_libflac:STRING=system \
 		-Daudacity_use_libid3tag:STRING=system \
-		-Daudacity_use_libmad:STRING=system \
 		-Daudacity_use_libogg:STRING=system \
 		-Daudacity_use_libsndfile:STRING=system \
 		-Daudacity_use_libvorbis:STRING=system \
@@ -93,10 +90,6 @@ CONFIGURE_ARGS=	-Daudacity_lib_preference:STRING=system \
 		-Daudacity_use_vamp:STRING=system \
 		-Daudacity_has_vst3:STRING=off \
 		-Daudacity_use_wxwidgets:STRING=system
-
-# audacity can use libmad or mpg123; we are already linking to mpg123 through
-# libsndfile and pcaudiolib, so prefer it
-CONFIGURE_ARGS +=	-Daudacity_use_libmad:STRING=off
 
 # don't use conan (no port available)
 CONFIGURE_ARGS +=	-Daudacity_conan_enabled:BOOL=OFF
