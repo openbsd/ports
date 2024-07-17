@@ -1,10 +1,9 @@
 COMMENT =		sensible unix password cracker
 
-V =			2.9.11
+V =			2.10.0
 DISTNAME =		cracklib-${V}
-SHARED_LIBS =		crack	0.4	# 11.0
+SHARED_LIBS =		crack	0.5	# 11.0
 CATEGORIES =		security
-REVISION =		0
 
 HOMEPAGE =		https://sourceforge.net/projects/cracklib/
 
