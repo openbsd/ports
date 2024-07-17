@@ -3,7 +3,7 @@ COMMENT =		Mozilla e-mail, calendar, rss and usenet client
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
-MOZILLA_VERSION =	115.12.1
+MOZILLA_VERSION =	115.13.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	comm/mail
@@ -71,8 +71,8 @@ MAKE_ENV +=		BUILD_VERBOSE_LOG="1" CARGOFLAGS="-j${MAKE_JOBS}"
 
 # detected by configure & dlopened
 BUILD_DEPENDS +=	security/rnp
-# #1830858
-RUN_DEPENDS +=	security/rnp>=0.17.0
+# #1885353
+RUN_DEPENDS +=	security/rnp>=0.17.1
 LIB_DEPENDS +=	devel/libffi
 
 WANTLIB +=	Xrandr Xtst ffi

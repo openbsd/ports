@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS =	amd64 aarch64
 
 PKG_ARCH =	*
 
-FV =		115.12.1
+FV =		115.13.0
 V =		${FV:C/b.$//}
 NAME =		thunderbird-i18n
 
@@ -19,9 +19,9 @@ PERMIT_PACKAGE =	Yes
 SITES =		https://ftp.mozilla.org/pub/thunderbird/releases/${FV}/linux-x86_64/xpi/ \
 		http://releases.mozilla.org/pub/thunderbird/releases/${FV}/linux-x86_64/xpi/
 
-LANGUAGES =	ar ast be bg br ca cs cy da de dsb el en-GB en-US es-AR es-ES et eu \
-		fi fr fy-NL ga-IE gd gl he hr hsb hu hy-AM id is it ja ko lt nb-NO nl nn-NO \
-		pa-IN pl pt-BR pt-PT rm ro ru sk sl sq sr sv-SE tr uk vi \
+LANGUAGES =	af ar ast be bg br ca cak cs cy da de dsb el en-CA en-GB en-US es-AR es-ES es-MX et eu \
+		fi fr fy-NL ga-IE gd gl he hr hsb hu hy-AM id is it ja ka kab kk ko lt lv ms nb-NO nl nn-NO \
+		pa-IN pl pt-BR pt-PT rm ro ru sk sl sq sr sv-SE th tr uk uz vi \
 		zh-CN zh-TW
 
 BUILD_DEPENDS =	archivers/unzip
