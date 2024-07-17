@@ -5,6 +5,7 @@ DISTNAME =	ghostscript-${VERSION}
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	lang print
 SHARED_LIBS =	gs 18.2
+REVISION =	0
 
 SITES =		https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${VERSION:S/.//g}/
 
@@ -14,7 +15,7 @@ HOMEPAGE =	https://ghostscript.com/
 
 MAINTAINER =	Volker Schlecht <openbsd-ports@schlecht.dev>
 
-FLAVORS =	a4 gtk no_x11
+FLAVORS =	gtk
 FLAVOR?=
 
 FLAVOR_STRING =	${FLAVOR_EXT:S/-/,/g}
@@ -64,28 +65,21 @@ CONFIGURE_ARGS +=	--with-fontpath=${LOCALBASE}/share/fonts
 CONFIGURE_ARGS +=	--with-drivers=FILES,PRINTERS,X11
 CONFIGURE_ARGS +=	--mandir=${LOCALBASE}/man
 
-.if ${FLAVOR:Mgtk} && ${FLAVOR:Mno_x11}
-ERRORS +=	"Fatal: Conflicting flavors: ${FLAVOR}"
-.elif ${FLAVOR:Mgtk}
+.if ${FLAVOR:Mgtk}
 LIB_DEPENDS +=	x11/gtk+3
 WANTLIB +=	ICE SM X11 Xext Xt
 WANTLIB +=	atk-1.0 cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB +=	glib-2.0 gobject-2.0 gtk-3 harfbuzz intl pango-1.0
 WANTLIB +=	pangocairo-1.0
 CONFIGURE_ARGS +=	--enable-gtk
-.elif ${FLAVOR:Mno_x11}
-CONFIGURE_ARGS +=	--disable-dbus
-CONFIGURE_ARGS +=	--disable-gtk
-CONFIGURE_ARGS +=	--without-x
 .else
 WANTLIB +=	ICE SM X11 Xext Xt
 CONFIGURE_ARGS +=	--disable-gtk
 CONFIGURE_ARGS +=	--disable-dbus
 CONFIGURE_ARGS +=	--with-x
 .endif
-.if ${FLAVOR:Ma4}
+
 CFLAGS +=	-DA4
-.endif
 
 # Needed to make the configure script detect libiconv
 CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
