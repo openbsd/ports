@@ -8,7 +8,7 @@ SHA256 (cargo/autocfg-1.2.0.tar.gz) = 8f2rx3VpSVk/5g8w7IGXS2EzV96FaYd1JjHeoeM5TI
 SHA256 (cargo/bitflags-1.3.2.tar.gz) = vvONRRY8Lx3eCUp9/TPM9ZXJKQXI+PT9wY0G+xA3cYo=
 SHA256 (cargo/bitflags-2.5.0.tar.gz) = z0udapRPdn+OXg2wGFcGI8hfPZJaxxjbTgbQGHrbIcE=
 SHA256 (cargo/bitvec-1.0.1.tar.gz) = G8KDLCQjmwFB1WdLuRdPnWiotbPydTMRknwXLKRvfpw=
-SHA256 (cargo/bytemuck-1.15.0.tar.gz) = XW1oxXI1o6CBGGmQ7KKGc1RyZlD0L3UWylDCjWKB/RU=
+SHA256 (cargo/bytemuck-1.16.1.tar.gz) = sjb8kjAsl+11s42h9JF7XN2kmEdFdA8VOl0wWeSNcl4=
 SHA256 (cargo/byteorder-1.5.0.tar.gz) = H9DyWEFG9vLvSAhQUIhqzzU77/cwXr0a5pUA4nxn9ks=
 SHA256 (cargo/cc-1.0.92.tar.gz) = Jniy40SUdelbCqb5tQaijmGz3ImWWSuYNpXo67WKi0E=
 SHA256 (cargo/cfg-if-1.0.0.tar.gz) = uvHeQzl2FYi8Bhnjy8ASDuWC67dLU7Tvv3kRe9LaQP0=
@@ -47,7 +47,7 @@ SHA256 (cargo/radium-0.7.0.tar.gz) = 3DP/LUlz1RjYI9YaojkBSDHlIcddpY499IQNP0d0nQk
 SHA256 (cargo/rayon-1.10.0.tar.gz) = tBimAVRRDKGgAqdSypcUmE4h5CQegE0yVVJR+vi3j/o=
 SHA256 (cargo/rayon-core-1.12.1.tar.gz) = FGWHOj39qornyxS0ODZXyqsLPooKqa6OBLBEhUyN/OI=
 SHA256 (cargo/redox_syscall-0.4.1.tar.gz) = RyLXaO/0a3WYndE05cNT8NYpblqqMTLndsvbVr53Mao=
-SHA256 (cargo/rgb-0.8.37.tar.gz) = BaqoAEtk/Vc/ydAC9OYy1RrU8CbCtbqV/LbC8ywsR9g=
+SHA256 (cargo/rgb-0.8.44.tar.gz) = Gu6D3CgdWjIA03spms0TuBBm6hJqfxbw6ucPya7SQdk=
 SHA256 (cargo/roff-0.2.1.tar.gz) = uDPY0DTqCUsepoqm1cdA4NBLrZ0WVo0Ium92gjoRQxY=
 SHA256 (cargo/rustc-hash-1.1.0.tar.gz) = CNQ/eqawjUnzgs3mp5ggR8NCbblJsUJLxLfsmuEsbOI=
 SHA256 (cargo/rustc_version-0.4.0.tar.gz) = v6D1hSJtLmgJfU+V0ROxW4OoLoGaslcX7AWQ2VhO82Y=
@@ -80,7 +80,7 @@ SHA256 (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 7ZT85hVxpABoUrc4mgY6uYPALrG7N
 SHA256 (cargo/windows_x86_64_msvc-0.52.5.tar.gz) = vsR+W/0b/w7q9ti0hcwQdIkaGXq0Il1QTLehq4iwK/A=
 SHA256 (cargo/wyz-0.5.1.tar.gz) = BfNg/AskKWMpx4/ahSoemugt6c97J9rkt/YvEY93ue0=
 SHA256 (cargo/zopfli-0.8.0.tar.gz) = XB9I81CKOj8vruAWKVZEALwSJg9iFKBW0Go6qqbvBzY=
-SHA256 (oxipng-9.1.1.tar.gz) = 9Q25DH75XAlk3JgPZZa4IfNi4V1tS6skfx60qrdVTbg=
+SHA256 (oxipng-9.1.2.tar.gz) = jq4T5apvUAsjG00Vuf79619sxWbdq5Wbm3oDoAuzpSA=
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/anstream-0.6.13.tar.gz) = 30928
 SIZE (cargo/anstyle-1.0.6.tar.gz) = 14604
@@ -91,7 +91,7 @@ SIZE (cargo/autocfg-1.2.0.tar.gz) = 14808
 SIZE (cargo/bitflags-1.3.2.tar.gz) = 23021
 SIZE (cargo/bitflags-2.5.0.tar.gz) = 43821
 SIZE (cargo/bitvec-1.0.1.tar.gz) = 224375
-SIZE (cargo/bytemuck-1.15.0.tar.gz) = 47672
+SIZE (cargo/bytemuck-1.16.1.tar.gz) = 48321
 SIZE (cargo/byteorder-1.5.0.tar.gz) = 23288
 SIZE (cargo/cc-1.0.92.tar.gz) = 76130
 SIZE (cargo/cfg-if-1.0.0.tar.gz) = 7934
@@ -130,7 +130,7 @@ SIZE (cargo/radium-0.7.0.tar.gz) = 10906
 SIZE (cargo/rayon-1.10.0.tar.gz) = 180155
 SIZE (cargo/rayon-core-1.12.1.tar.gz) = 70701
 SIZE (cargo/redox_syscall-0.4.1.tar.gz) = 24858
-SIZE (cargo/rgb-0.8.37.tar.gz) = 16644
+SIZE (cargo/rgb-0.8.44.tar.gz) = 20389
 SIZE (cargo/roff-0.2.1.tar.gz) = 10605
 SIZE (cargo/rustc-hash-1.1.0.tar.gz) = 9331
 SIZE (cargo/rustc_version-0.4.0.tar.gz) = 12175
@@ -163,4 +163,4 @@ SIZE (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 798412
 SIZE (cargo/windows_x86_64_msvc-0.52.5.tar.gz) = 827905
 SIZE (cargo/wyz-0.5.1.tar.gz) = 18790
 SIZE (cargo/zopfli-0.8.0.tar.gz) = 54234
-SIZE (oxipng-9.1.1.tar.gz) = 20939414
+SIZE (oxipng-9.1.2.tar.gz) = 20940722
