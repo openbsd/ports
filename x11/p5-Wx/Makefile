@@ -33,9 +33,6 @@ WANTLIB += wx_gtk3u_xrc-3.2
 BUILD_DEPENDS =		devel/p5-Alien-wxWidgets \
 			devel/p5-ExtUtils-XSpp
 
-# see post-extract; needed for Fedora patches to apply
-BUILD_DEPENDS +=	converters/dos2unix
-
 RUN_DEPENDS =		devel/p5-ExtUtils-XSpp
 
 LIB_DEPENDS =		x11/wxWidgets,-media
@@ -44,8 +41,10 @@ CONFIGURE_ARGS=		--wx-unicode \
 			--wx-toolkit=gtk \
 			--wx-version=$$(wx-config --version | cut -d . -f 1-2)
 
+# needed for Fedora patches to apply
+# FIX_CRLF_FILES is only run after patching
 post-extract:
-	${LOCALBASE}/bin/dos2unix ${WRKSRC}/{MANIFEST,typemap}
+	perl -i -pe 's/\r$$//' ${WRKSRC}/MANIFEST ${WRKSRC}/typemap
 
 # XXX Can't exec "gcc":
 # No such file or directory at /usr/libdata/perl5/ExtUtils/CBuilder/Base.pm line 342.
