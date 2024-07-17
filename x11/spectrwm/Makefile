@@ -1,10 +1,10 @@
 COMMENT=		small tiling window manager
 
-V=			3.5.1
+V=			3.6.0
 DIST_TUPLE=		github conformal spectrwm SPECTRWM_${V:S/./_/g} /
 DISTNAME=		spectrwm-${V}
 
-SHARED_LIBS=		swmhack 1.0
+SHARED_LIBS=		swmhack	2.0
 
 CATEGORIES=		x11
 

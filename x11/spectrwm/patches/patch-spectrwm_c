@@ -1,7 +1,7 @@
 Index: spectrwm.c
 --- spectrwm.c.orig
 +++ spectrwm.c
-@@ -379,7 +379,7 @@ uint32_t		swm_debug = 0
+@@ -380,7 +380,7 @@ uint32_t		swm_debug = 0
  #define SWM_CONF_WHITESPACE	" \t\n"
  
  #ifndef SWM_LIB

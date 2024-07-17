@@ -1,7 +1,7 @@
 Index: spectrwm.1
 --- spectrwm.1.orig
 +++ spectrwm.1
-@@ -1990,7 +1990,7 @@ via
+@@ -2295,7 +2295,7 @@ via
  .Pa LD_PRELOAD
  must be specified.
  .Bd -literal -offset indent
