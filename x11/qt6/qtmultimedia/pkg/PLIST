@@ -322,7 +322,6 @@ lib/qt6/qml/QtMultimedia/Video.qml
 @so lib/qt6/qml/QtMultimedia/libquickmultimediaplugin.so
 lib/qt6/qml/QtMultimedia/plugins.qmltypes
 lib/qt6/qml/QtMultimedia/qmldir
-lib/qt6/qml/QtQuick3D/
 lib/qt6/qml/QtQuick3D/SpatialAudio/
 @so lib/qt6/qml/QtQuick3D/SpatialAudio/libquick3dspatialaudioplugin.so
 lib/qt6/qml/QtQuick3D/SpatialAudio/plugins.qmltypes
