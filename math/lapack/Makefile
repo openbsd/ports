@@ -8,7 +8,7 @@ REVISION=	2
 SHARED_LIBS=	lapack 7.1
 
 CATEGORIES=	math
-DISTFILES=	${DISTNAME}.tar.gz 
+DISTFILES=	${DISTNAME}.tar.gz
 DISTFILES.doc =	manpages.tgz
 
 
@@ -76,7 +76,7 @@ post-install:
 		grep -v ilaver.f | \
 		grep -v slamch.f | \
 		grep -v lsame.f | \
-	 	grep -v xerbla.f | \
+		grep -v xerbla.f | \
 		grep -v xerbla_array.f` ; do \
 		${INSTALL_MAN} `basename $${m%.f}.3f` ${PREFIX}/man/man3f ; done
 
