@@ -40,6 +40,7 @@
      SUBDIR += libvidstab
      SUBDIR += libvpx
      SUBDIR += lsdvd
+     SUBDIR += mat2
      SUBDIR += mediainfo
      SUBDIR += minidlna
      SUBDIR += mjpegtools
