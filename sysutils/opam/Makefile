@@ -2,10 +2,10 @@ COMMENT =		OCaml source-based package manager
 
 CATEGORIES =		sysutils devel
 
-V =			2.0.10
+V =			2.2.0
 PKGNAME =		opam-${V}
 DISTNAME =		opam-full-${V}
-REVISION =		1
+DISTFILES =		${DISTNAME}-2${EXTRACT_SUFX} #remove on next update
 
 SITES =			https://github.com/ocaml/opam/releases/download/${V}/
 
@@ -18,12 +18,10 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		${COMPILER_LIBCXX} c m
 
+COMPILER =		base-clang ports-gcc
+
 BUILD_DEPENDS =		lang/ocaml \
-			sysutils/findlib \
-			devel/dune \
-			devel/ocaml-cppo \
-			archivers/bzip2 \
-			net/curl
+			archivers/bzip2
 
 RUN_DEPENDS =		archivers/unzip \
 			archivers/bzip2 \
@@ -32,11 +30,18 @@ RUN_DEPENDS =		archivers/unzip \
 			devel/gmake \
 			net/curl
 
+TEST_DEPENDS =		textproc/gdiff \
+			archivers/gtar \
+			net/wget
+
 USE_GMAKE =		Yes
 
 CONFIGURE_ENV +=	CFLAGS="${CFLAGS}" \
 			LDFLAGS="${LDFLAGS}"
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	gnu autoreconf no-autoheader
+CONFIGURE_ARGS =	--with-vendored-deps
+AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.16
 
 ALL_TARGET =		lib-ext all
 INSTALL_TARGET =	install
@@ -52,5 +57,9 @@ post-install:
 		${docdir}/
 	${INSTALL_DATA_DIR} ${docdir}/pages
 	${INSTALL_DATA} ${WRKSRC}/doc/pages/*.md ${docdir}/pages
+
+pre-test:
+	ln -fs ${LOCALBASE}/bin/gdiff ${WRKDIR}/bin/diff
+	ln -fs ${LOCALBASE}/bin/gtar ${WRKDIR}/bin/tar
 
 .include <bsd.port.mk>

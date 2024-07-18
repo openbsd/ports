@@ -1,0 +1,13 @@
+don't use system wide installed ocaml packages
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -272,7 +272,6 @@ AS_IF([test "x${enable_certificate_check}" = "xno"], [
+ 
+ AC_CHECK_PROGS(FETCH,[curl wget],no)
+ 
+-AC_CHECK_TOOL(DUNE,dune)
+ AC_CHECK_TOOL(PATCH,patch)
+ AC_CHECK_TOOL(BUNZIP2,bunzip2)
+ 

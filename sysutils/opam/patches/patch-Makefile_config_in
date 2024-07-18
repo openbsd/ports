@@ -1,0 +1,13 @@
+don't use system wide installed ocaml packages
+
+Index: Makefile.config.in
+--- Makefile.config.in.orig
++++ Makefile.config.in
+@@ -14,7 +14,6 @@ OCAMLFIND = @OCAMLFIND@
+ OCAML = @OCAML@
+ OCAMLC = @OCAMLC@
+ OCAMLOPT = @OCAMLOPT@
+-DUNE = @DUNE@
+ DUNE_SECONDARY = @DUNE_SECONDARY@
+ LN_S = @LN_S@
+ 
