@@ -1,6 +1,6 @@
 COMMENT =	data visualization and analysis software
 
-DISTNAME =	labplot-2.11.0
+DISTNAME =	labplot-2.11.1
 
 CATEGORIES =	math x11
 
@@ -40,16 +40,19 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 BUILD_DEPENDS =	devel/bison \
 		math/eigen3 \
 		devel/desktop-file-utils \
+		misc/shared-mime-info \
+		devel/kf6/knewstuff \
 		devel/gettext,-tools \
 		devel/kf6/kdoctools
 
 LIB_DEPENDS =	archivers/lz4 \
 		devel/gsl \
 		devel/kf6/karchive \
+		devel/kf6/kbookmarks \
+		devel/kf6/kcolorscheme \
 		devel/kf6/kcompletion \
 		devel/kf6/kconfig \
 		devel/kf6/kconfigwidgets \
-		devel/kf6/purpose \
 		devel/kf6/kcoreaddons \
 		devel/kf6/kcrash \
 		devel/kf6/ki18n \
@@ -61,15 +64,16 @@ LIB_DEPENDS =	archivers/lz4 \
 		devel/kf6/ktextwidgets \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
+		devel/kf6/purpose \
 		devel/kf6/solid \
 		devel/kf6/sonnet \
 		math/cfitsio \
-		math/fftw3 \
+		math/fftw3,double \
 		print/poppler,-qt6 \
 		textproc/discount \
-		x11/qtadvanceddocking \
 		x11/qt6/qtserialport \
-		x11/qt6/qtsvg
+		x11/qt6/qtsvg \
+		x11/qtadvanceddocking
 
 # OPTIONAL packages
 LIB_DEPENDS +=	devel/kf6/syntax-highlighting \
