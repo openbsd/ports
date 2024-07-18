@@ -7,7 +7,7 @@ GNOME_PROJECT=		libxml2
 PKGNAME-main=		libxml-${GNOME_VERSION}
 PKGNAME-python=		py3-libxml-${GNOME_VERSION}
 
-REVISION-main=		2
+REVISION-main=		3
 REVISION-python=	0
 
 SHARED_LIBS +=  xml2                 21.0     # 15.2
@@ -30,7 +30,7 @@ LIB_DEPENDS=		archivers/xz \
 			converters/libiconv
 
 CONFIGURE_STYLE=	autoreconf
-AUTOCONF_VERSION=	2.69
+AUTOCONF_VERSION=	2.72
 AUTOMAKE_VERSION=	1.16
 CONFIGURE_ARGS=		--enable-static \
 			--with-legacy \
