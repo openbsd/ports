@@ -2642,7 +2642,7 @@ SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRe
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 8ikTVRI4fWZj4fCZmkkiq3CN7UvcgExxzpPj1gK6ld0=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = L8eybun2ctl7QvpvJfWxWlWYK7usaZYdduux0DbRUAE=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.zip) = qsiNpVHCpRK2Qss1ZYvz3IYllaNWa9hA6/GOSALx/Mk=
-SHA256 (terragrunt-v0.62.2.zip) = oncf2dzVigU5A+kdnzIR+no9SwhekL/nVqRJ85qAMAI=
+SHA256 (terragrunt-v0.62.3.zip) = /gNR/RP5y4j4Sbgv2IzLaFlW4f2SqaqLP/kaTeZWe4Y=
 SIZE (go_modules/cel.dev/expr/@v/v0.15.0.mod) = 156
 SIZE (go_modules/cel.dev/expr/@v/v0.15.0.zip) = 190386
 SIZE (go_modules/cloud.google.com/go/@v/v0.100.2.mod) = 531
@@ -5287,4 +5287,4 @@ SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = 24
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.zip) = 21567
-SIZE (terragrunt-v0.62.2.zip) = 4976828
+SIZE (terragrunt-v0.62.3.zip) = 4977176
