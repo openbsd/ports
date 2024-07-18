@@ -1,0 +1,20 @@
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -153,11 +153,11 @@ if d.found()
+     if d.found()
+       spice_gtk_deps += d
+     endif
+-    d = dependency('libva-x11', required: false)
+-    if d.found()
+-      spice_gtk_deps += d
+-      spice_gtk_config_data.set('HAVE_LIBVA', '1')
+-    endif
++    #d = dependency('libva-x11', required: false)
++    #if d.found()
++    #  spice_gtk_deps += d
++    #  spice_gtk_config_data.set('HAVE_LIBVA', '1')
++    #endif
+   endif
+   spice_gtk_has_gtk = true
+ endif
