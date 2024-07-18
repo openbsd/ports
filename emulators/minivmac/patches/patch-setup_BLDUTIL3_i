@@ -1,0 +1,14 @@
+- replace hardcoded gcc with cc
+
+Index: setup/BLDUTIL3.i
+--- setup/BLDUTIL3.i.orig
++++ setup/BLDUTIL3.i
+@@ -1068,7 +1068,7 @@ LOCALPROC WriteCompileCExec(void)
+ 		case gbk_ide_mvc:
+ 		case gbk_ide_cyg:
+ 		case gbk_ide_xcd:
+-			WriteCStrToDestFile("gcc");
++			WriteCStrToDestFile("cc");
+ 			break;
+ 		case gbk_ide_snc:
+ 		case gbk_ide_ccc:

@@ -1,0 +1,23 @@
+- add help page
+- add maintainer
+
+Index: setup/CNFGDLFT.i
+--- setup/CNFGDLFT.i.orig
++++ setup/CNFGDLFT.i
+@@ -19,14 +19,13 @@
+ 	set default values for things not set in CONFIGUR.i
+ */
+ 
+-
+ #ifndef kMaintainerName
+-#define kMaintainerName "unknown"
++#define kMaintainerName "OpenBSD"
+ #endif
+ 
+ 
+ #ifndef kStrHomePage
+-#define kStrHomePage "(unknown)"
++#define kStrHomePage "https://www.gryphel.com/c/minivmac/"
+ #endif
+ 
+ 

@@ -1,0 +1,36 @@
+- replace hardcoded gcc with cc
+
+Index: setup/WRMVCFLS.i
+--- setup/WRMVCFLS.i.orig
++++ setup/WRMVCFLS.i
+@@ -182,7 +182,7 @@ LOCALPROC DoMVCSrcFileMakeCompileBody(void)
+ 
+ 	WriteBgnDestFileLn();
+ 
+-	WriteCStrToDestFile("$(my_prefix)gcc -S");
++	WriteCStrToDestFile("$(my_prefix)cc -S");
+ 	WritePathArgInMakeCmnd(WriteSrcFileFilePath);
+ 	WriteCStrToDestFile(" -o");
+ 	WritePathArgInMakeCmnd(WriteMVCSrcFileAsmPath);
+@@ -204,7 +204,7 @@ LOCALPROC DoMVCSrcFileMakeAsmBody(void)
+ {
+ 	WriteBgnDestFileLn();
+ 
+-	WriteCStrToDestFile("$(my_prefix)gcc -c");
++	WriteCStrToDestFile("$(my_prefix)cc -c");
+ 	WritePathArgInMakeCmnd(WriteMVCSrcFileAsmPath);
+ 	WriteCStrToDestFile(" -o");
+ 	WritePathArgInMakeCmnd(WriteSrcFileObjPath);
+@@ -429,10 +429,10 @@ LOCALPROC WriteMVCMakeFile(void)
+ 			case gbk_targ_mx11:
+ 			case gbk_targ_mi11:
+ 			case gbk_targ_mx64:
+-				WriteCStrToDestFile("gcc");
++				WriteCStrToDestFile("cc");
+ 				break;
+ 			default:
+-				WriteCStrToDestFile("$(my_prefix)gcc");
++				WriteCStrToDestFile("$(my_prefix)cc");
+ 				break;
+ 		}
+ 		WriteCStrToDestFile(" \\");

@@ -1,0 +1,9 @@
+[Desktop Entry]
+GenericName=Macintosh Emulator
+Name=Mini vMac
+Comment=Early Macintosh emulator
+Exec=minivmac
+Terminal=false
+Type=Application
+Categories=Emulator;Graphics;
+Icon=minivmac

@@ -1,0 +1,19 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Mini vMac can emulate the Macintosh Plus.
+
+Mini vMac requires a correct ROM for the Mac model to emulate, named
+"vMac.ROM".  This can be in the current directory before executing the
+"minivmac" command.
+
+Mini vMac can boot an image file (such as an OS). This can be named
+"disk1.dsk" and if placed in the current directory before executing
+"minivmac" it will be loaded.
+
+Mini vMac does not support sound emulation on OpenBSD.
+
+For more information on additonal configuration and other options see:
+
+${HOMEPAGE}
