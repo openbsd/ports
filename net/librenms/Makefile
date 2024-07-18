@@ -3,7 +3,7 @@ COMMENT=	auto-discovering network management/monitoring system
 # changelogs at https://github.com/librenms/librenms/releases
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
-GH_TAGNAME=	24.6.0
+GH_TAGNAME=	24.7.0
 
 DISTFILES.dep=	librenms-${GH_TAGNAME}-vendor.tar.xz
 EPOCH=		0
@@ -80,7 +80,8 @@ pre-configure:
 
 do-install:
 	${INSTALL_DATA_DIR} ${INSTDIR} \
-	    ${WRKINST}/${LOCALBASE}/share/bash-completion/completions/
+	    ${WRKINST}/${LOCALBASE}/share/bash-completion/completions \
+	    ${WRKINST}/${LOCALBASE}/share/doc
 	cd ${WRKSRC}; pax -rw . ${INSTDIR}
 	find ${INSTDIR} -name '*${PATCHORIG}' -delete
 	mkdir -p ${INSTDIR}/{rrd,logs}
@@ -89,6 +90,7 @@ do-install:
 	rm -rf ${INSTDIR}/tests \
 	    ${INSTDIR}/vendor/tecnickcom/tcpdf/examples \
 	    ${INSTDIR}/vendor/easybook/geshi/docs
+	mv ${INSTDIR}/doc ${WRKINST}/${LOCALBASE}/share/doc/librenms
 	find ${INSTDIR} -type f -and \( -name '.git*' -or -name '*.beforesubst' \) -delete
 	find ${INSTDIR} -type d -and -name '.github' -exec rm -rf {} +
 	ln -s /var/www/librenms/lnms ${WRKINST}/${LOCALBASE}/bin/

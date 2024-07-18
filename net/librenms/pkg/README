@@ -7,8 +7,6 @@ Standard upgrades
 Run daily.sh manually (doas -u _librenms /var/www/librenms/daily.sh)
 after upgrading to process database schema changes.
 
-See below if upgrading from 1.39 or earlier.
-
 
 Introduction
 ============
@@ -124,7 +122,7 @@ of LibreNMS.
 Set database access details in the .env file:
 
 # cd /var/www/librenms
-# $EDITOR .env
+# vi .env
 
 and generate an APP_KEY:
 
@@ -132,27 +130,11 @@ and generate an APP_KEY:
 # doas -u _librenms php artisan key:generate
 # chown root .env
 
-The next steps can either be done from the CLI, or by using the web-based
-installer which carries out additional checks. Choose *one* of the following:
-
-Option 1: Web-based
--------------------
-In order to use the web-based installer (normally preferable), you must
-first remove the default configuration file:
+Remove the default configuration file:
 
 rm ${INSTDIR}/config.php
 
-Then open /install.php in a web browser (e.g. http://localhost/install.php).
-
-Option 2: CLI
--------------
-cd ${INSTDIR}
-$EDITOR config.php   # set database username/password etc.
-doas -u _librenms php ./includes/sql-schema/update.php
-doas -u _librenms ./adduser.php <name> <pass> 10	# 10=admin priv
-doas -u _librenms ./addhost.php localhost public v2c
-doas -u _librenms ./discovery.php -h all
-doas -u _librenms ./poller.php -h all
+Then open /install in a web browser (e.g. http://localhost/install).
 
 Periodic tasks
 ==============
@@ -180,31 +162,14 @@ Rotate LibreNMS' logs in newsyslog.conf, e.g.:
 /var/www/librenms/logs/librenms.log     644  7     250  *     Z
 /var/www/librenms/logs/daily.log        644  7     250  *     Z
 
-Upstream documentation is present in ${INSTDIR}/doc and also online at
-http://docs.librenms.org/.
+Upstream documentation is at http://docs.librenms.org/.
 
-Updating from 1.39 or earlier
-=============================
-As of 1.40, LibreNMS now uses the Laravel framework which requires some
-additional setup. Upstream has code to copy this across from an existing
-configuration initially, but it's not functional in this packaged
-environment. Until this is done you will see a page with a red block
-with white "Whoops, looks like something went wrong" text.
-
-Make sure that you have the required PHP modules enabled via symlinks in
-${SYSCONFDIR}/php-${MODPHP_VERSION}.sample as described in "Webserver
-configuration" above. In particular, pdo_mysql is now required.
-
-It may also be necessary to raise max_connections in ${SYSCONFDIR}/my.cnf;
-see https://community.librenms.org/t/new-requirements-for-1-40/4057
-
-Set database access details in the .env file:
-
-# cd /var/www/librenms
-# $EDITOR .env
-
-and generate an APP_KEY:
-
-# chown _librenms .env
-# doas -u _librenms ./artisan key:generate
-# chown root .env
+Cheat sheet for one-off CLI commands
+====================================
+doas -u _librenms lnms user:add --role=admin <username>
+doas -u _librenms lnms user:add --role=user <username>
+doas -u _librenms lnms device:add --v2c --community=<comm> <hostname>
+doas -u _librenms lnms device:add --v3 -u <user> -a AES -x SHA \
+    -A <authpass> -X <privpass> <hostname>
+doas -u _librenms lnms poller:discovery <devicename>
+doas -u _librenms lnms device:poll <devicename>
