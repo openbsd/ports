@@ -121,6 +121,7 @@
      SUBDIR += tcl
      SUBDIR += tcltutor
      SUBDIR += tinyscheme
+     SUBDIR += typescript
      SUBDIR += ucblogo
      SUBDIR += unicon
      SUBDIR += v
