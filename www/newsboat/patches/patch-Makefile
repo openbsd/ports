@@ -1,9 +1,13 @@
+- Remove hardcoded flags.
+- Revert upstream commit e146a596ab6f070305256de8e58874d20ad5f97b, it
+  breaks the install-docs target.
+
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
 @@ -22,10 +22,10 @@ CXX_FOR_BUILD?=$(CXX)
  # compiler and linker flags
- DEFINES=-DLOCALEDIR='"$(localedir)"'
+ DEFINES=-DLOCALEDIR='"$(localedir)"' -DCATCH_AMALGAMATED_CUSTOM_MAIN
  
 -WARNFLAGS=-Werror -Wall -Wextra -Wunreachable-code
 +WARNFLAGS=-Wall -Wextra -Wunreachable-code
@@ -32,3 +36,37 @@ Index: Makefile
  
  TEST_SRCS:=$(wildcard test/*.cpp test/test_helpers/*.cpp)
  TEST_OBJS:=$(patsubst %.cpp,%.o,$(TEST_SRCS))
+@@ -121,7 +121,6 @@ CLANG_TIDY?=clang-tidy
+ 
+ TEXTCONV=./txt2h
+ RM=rm -f
+-CP=cp -f
+ 
+ all: doc $(NEWSBOAT) $(PODBOAT) mo-files
+ 
+@@ -351,9 +350,22 @@ install-docs: doc
+ 	$(MKDIR) $(DESTDIR)$(docdir)
+ 	$(INSTALL) -m 644 doc/xhtml/* $(DESTDIR)$(docdir)
+ 	$(INSTALL) -m 644 CHANGELOG.md $(DESTDIR)$(docdir)
+-	find contrib/ -type d -print0 | xargs -0 -I@ mkdir -p $(DESTDIR)$(docdir)/@
+-	find contrib/ -type f -perm /0111 -print0 | xargs -0 -I@ install -m 755 @ $(DESTDIR)$(docdir)/@
+-	find contrib/ -type f ! -perm /0111 -print0 | xargs -0 -I@ install -m 644 @ $(DESTDIR)$(docdir)/@
++	$(MKDIR) $(DESTDIR)$(docdir)/contrib
++	$(INSTALL) -m 644 contrib/README.md $(DESTDIR)$(docdir)/contrib
++	$(INSTALL) -m 755 contrib/*.sh $(DESTDIR)$(docdir)/contrib
++	$(INSTALL) -m 755 contrib/*.rb $(DESTDIR)$(docdir)/contrib
++	$(INSTALL) -m 755 contrib/*.pl $(DESTDIR)$(docdir)/contrib
++	$(INSTALL) -m 755 contrib/*.py $(DESTDIR)$(docdir)/contrib
++	$(MKDIR) $(DESTDIR)$(docdir)/contrib/colorschemes
++	$(INSTALL) -m 644 contrib/colorschemes/* $(DESTDIR)$(docdir)/contrib/colorschemes
++	$(MKDIR) $(DESTDIR)$(docdir)/contrib/getpocket.com
++	$(INSTALL) -m 755 contrib/getpocket.com/*.sh $(DESTDIR)$(docdir)/contrib/getpocket.com
++	$(INSTALL) -m 644 contrib/getpocket.com/*.md $(DESTDIR)$(docdir)/contrib/getpocket.com
++	$(MKDIR) $(DESTDIR)$(docdir)/contrib/image-preview
++	$(INSTALL) -m 755 contrib/image-preview/vifmimg $(DESTDIR)$(docdir)/contrib/image-preview
++	$(INSTALL) -m 755 contrib/image-preview/nbrun $(DESTDIR)$(docdir)/contrib/image-preview
++	$(INSTALL) -m 755 contrib/image-preview/nbparser $(DESTDIR)$(docdir)/contrib/image-preview
++	$(INSTALL) -m 644 contrib/image-preview/README.org $(DESTDIR)$(docdir)/contrib/image-preview
+ 	$(MKDIR) $(DESTDIR)$(mandir)/man1
+ 	$(INSTALL) -m 644 doc/$(NEWSBOAT).1 $(DESTDIR)$(mandir)/man1
+ 	$(INSTALL) -m 644 doc/$(PODBOAT).1 $(DESTDIR)$(mandir)/man1
