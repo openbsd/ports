@@ -3,7 +3,7 @@ COMMENT=	audio/video converter and streamer
 V=		4.4.4
 DISTNAME=	ffmpeg-${V}
 EPOCH=		1
-REVISION=	3
+REVISION=	4
 CATEGORIES=	graphics multimedia
 SITES=		https://ffmpeg.org/releases/
 EXTRACT_SUFX=	.tar.xz
@@ -95,6 +95,7 @@ CONFIGURE_ARGS+=--enable-shared \
 		--disable-stripping \
 		--disable-indev=jack \
 		--disable-outdev=sdl2 \
+		--disable-vaapi \
 		--enable-fontconfig \
 		--enable-frei0r \
 		--enable-gpl \
