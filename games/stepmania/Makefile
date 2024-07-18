@@ -9,7 +9,7 @@ HOMEPAGE =	http://www.stepmania.com
 GH_ACCOUNT =	stepmania
 GH_PROJECT =	stepmania
 GH_TAGNAME =	v5.0.12
-REVISION =	1
+REVISION =	2
 EPOCH =		0
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 # Code base is mostly BSD, with a few tidbits GPL
@@ -58,6 +58,7 @@ D = 	Announcers BGAnimations BackgroundEffects BackgroundTransitions \
 SUBST_VARS = DATADIR
 FIX_CRLF_FILES =	extern/lua-5.1/src/loadlib.c src/ProfileManager.cpp
 
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Va=On
 
 post-install:
 	cd ${PREFIX}/bin && ln -s ../$(DATADIR)/stepmania
