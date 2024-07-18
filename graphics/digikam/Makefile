@@ -8,7 +8,7 @@ V =		8.3.0
 PKGNAME =	digikam-${V}
 DISTNAME =	digiKam-${V}-1
 CATEGORIES =	graphics
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://www.digikam.org/
 
@@ -124,7 +124,7 @@ CONFIGURE_ARGS +=	-DENABLE_KFILEMETADATASUPPORT=ON \
 # Some unit tests require data from the external "Digikam Test Data" git
 # repository
 CONFIGURE_ARGS +=	-DBUILD_TESTING=OFF
-CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Git=On
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_VAAPI=On
 
 .if ${FLAVOR:Mmysql}
 BUILD_DEPENDS +=	databases/mariadb
