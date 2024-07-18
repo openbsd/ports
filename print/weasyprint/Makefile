@@ -33,6 +33,6 @@ RUN_DEPENDS +=		devel/pango \
 TEST_DEPENDS +=		devel/py-test-flake8${MODPY_FLAVOR} \
 			devel/py-test-isort${MODPY_FLAVOR} \
 			devel/py-test-xdist${MODPY_FLAVOR} \
-			print/ghostscript/gnu,no_x11
+			print/ghostscript/gnu
 
 .include <bsd.port.mk>

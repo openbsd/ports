@@ -3,6 +3,7 @@
 COMMENT=	library for rendering Postscript documents
 
 DISTNAME=	libspectre-0.2.12
+REVISION=	0
 
 CATEGORIES=	print
 
@@ -22,10 +23,8 @@ WANTLIB += pthread ssl tiff xcb z zstd
 
 SITES=		http://libspectre.freedesktop.org/releases/
 
-# we want the 'display' device from ghostscript, which is not available
-# in the no_x11 FLAVOR
 LIB_DEPENDS=	devel/gettext,-runtime \
-		ghostscript-*-!no_x11:print/ghostscript/gnu
+		print/ghostscript/gnu
 
 CONFIGURE_STYLE=gnu
 
