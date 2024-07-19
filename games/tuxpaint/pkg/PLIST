@@ -18,6 +18,7 @@ lib/tuxpaint/plugins/
 @so lib/tuxpaint/plugins/colorsep.so
 @so lib/tuxpaint/plugins/confetti.so
 @so lib/tuxpaint/plugins/distortion.so
+@so lib/tuxpaint/plugins/dither.so
 @so lib/tuxpaint/plugins/emboss.so
 @so lib/tuxpaint/plugins/fade_darken.so
 @so lib/tuxpaint/plugins/fisheye.so
@@ -35,7 +36,7 @@ lib/tuxpaint/plugins/
 @so lib/tuxpaint/plugins/lightning.so
 @so lib/tuxpaint/plugins/maze.so
 @so lib/tuxpaint/plugins/metalpaint.so
-@so lib/tuxpaint/plugins/mirror_flip.so
+@so lib/tuxpaint/plugins/mirror_f.so
 @so lib/tuxpaint/plugins/mosaic.so
 @so lib/tuxpaint/plugins/mosaic_shaped.so
 @so lib/tuxpaint/plugins/n_pt_persp.so
@@ -43,6 +44,7 @@ lib/tuxpaint/plugins/
 @so lib/tuxpaint/plugins/noise.so
 @so lib/tuxpaint/plugins/perspective.so
 @so lib/tuxpaint/plugins/pixels.so
+@so lib/tuxpaint/plugins/polyfill.so
 @so lib/tuxpaint/plugins/puzzle.so
 @so lib/tuxpaint/plugins/rails.so
 @so lib/tuxpaint/plugins/rain.so
@@ -152,6 +154,8 @@ share/doc/tuxpaint/en/magic-docs/desaturate.txt
 share/doc/tuxpaint/en/magic-docs/dimetric_draw.txt
 share/doc/tuxpaint/en/magic-docs/dimetric_select.txt
 share/doc/tuxpaint/en/magic-docs/distortion.txt
+share/doc/tuxpaint/en/magic-docs/dither.txt
+share/doc/tuxpaint/en/magic-docs/dither_keep_colors.txt
 share/doc/tuxpaint/en/magic-docs/doublevision.txt
 share/doc/tuxpaint/en/magic-docs/drip.txt
 share/doc/tuxpaint/en/magic-docs/edges.txt
@@ -161,6 +165,7 @@ share/doc/tuxpaint/en/magic-docs/epitrochoid_edge.txt
 share/doc/tuxpaint/en/magic-docs/epitrochoid_inside.txt
 share/doc/tuxpaint/en/magic-docs/epitrochoid_outside.txt
 share/doc/tuxpaint/en/magic-docs/fill.txt
+share/doc/tuxpaint/en/magic-docs/filled_polygon.txt
 share/doc/tuxpaint/en/magic-docs/fisheye.txt
 share/doc/tuxpaint/en/magic-docs/flip.txt
 share/doc/tuxpaint/en/magic-docs/flower.txt
@@ -201,6 +206,8 @@ share/doc/tuxpaint/en/magic-docs/html/desaturate.html
 share/doc/tuxpaint/en/magic-docs/html/dimetric_draw.html
 share/doc/tuxpaint/en/magic-docs/html/dimetric_select.html
 share/doc/tuxpaint/en/magic-docs/html/distortion.html
+share/doc/tuxpaint/en/magic-docs/html/dither.html
+share/doc/tuxpaint/en/magic-docs/html/dither_keep_colors.html
 share/doc/tuxpaint/en/magic-docs/html/doublevision.html
 share/doc/tuxpaint/en/magic-docs/html/drip.html
 share/doc/tuxpaint/en/magic-docs/html/edges.html
@@ -210,6 +217,7 @@ share/doc/tuxpaint/en/magic-docs/html/epitrochoid_edge.html
 share/doc/tuxpaint/en/magic-docs/html/epitrochoid_inside.html
 share/doc/tuxpaint/en/magic-docs/html/epitrochoid_outside.html
 share/doc/tuxpaint/en/magic-docs/html/fill.html
+share/doc/tuxpaint/en/magic-docs/html/filled_polygon.html
 share/doc/tuxpaint/en/magic-docs/html/fisheye.html
 share/doc/tuxpaint/en/magic-docs/html/flip.html
 share/doc/tuxpaint/en/magic-docs/html/flower.html
@@ -424,6 +432,8 @@ share/doc/tuxpaint/es_ES.UTF-8/magic-docs/desaturate.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/dimetric_draw.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/dimetric_select.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/distortion.txt
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/dither.txt
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/dither_keep_colors.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/doublevision.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/drip.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/edges.txt
@@ -432,6 +442,7 @@ share/doc/tuxpaint/es_ES.UTF-8/magic-docs/epitrochoid.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/epitrochoid_edge.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/epitrochoid_inside.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/epitrochoid_outside.txt
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/filled_polygon.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/fisheye.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/flip.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/flower.txt
@@ -472,6 +483,8 @@ share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/desaturate.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/dimetric_draw.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/dimetric_select.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/distortion.html
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/dither.html
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/dither_keep_colors.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/doublevision.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/drip.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/edges.html
@@ -480,6 +493,7 @@ share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/epitrochoid.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/epitrochoid_edge.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/epitrochoid_inside.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/epitrochoid_outside.html
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/filled_polygon.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/fisheye.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/flip.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/flower.html
@@ -711,6 +725,8 @@ share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/desaturate.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/dimetric_draw.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/dimetric_select.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/distortion.txt
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/dither.txt
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/dither_keep_colors.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/doublevision.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/drip.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/edges.txt
@@ -719,6 +735,7 @@ share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/epitrochoid.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/epitrochoid_edge.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/epitrochoid_inside.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/epitrochoid_outside.txt
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/filled_polygon.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/fisheye.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/flip.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/flower.txt
@@ -759,6 +776,8 @@ share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/desaturate.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/dimetric_draw.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/dimetric_select.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/distortion.html
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/dither.html
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/dither_keep_colors.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/doublevision.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/drip.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/edges.html
@@ -767,6 +786,7 @@ share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/epitrochoid.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/epitrochoid_edge.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/epitrochoid_inside.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/epitrochoid_outside.html
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/filled_polygon.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/fisheye.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/flip.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/flower.html
@@ -1019,6 +1039,8 @@ share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/desaturate.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/dimetric_draw.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/dimetric_select.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/distortion.txt
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/dither.txt
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/dither_keep_colors.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/doublevision.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/drip.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/edges.txt
@@ -1027,6 +1049,7 @@ share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/epitrochoid.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/epitrochoid_edge.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/epitrochoid_inside.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/epitrochoid_outside.txt
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/filled_polygon.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/fisheye.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/flip.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/flower.txt
@@ -1067,6 +1090,8 @@ share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/desaturate.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/dimetric_draw.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/dimetric_select.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/distortion.html
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/dither.html
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/dither_keep_colors.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/doublevision.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/drip.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/edges.html
@@ -1075,6 +1100,7 @@ share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/epitrochoid.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/epitrochoid_edge.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/epitrochoid_inside.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/epitrochoid_outside.html
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/filled_polygon.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/fisheye.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/flip.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/flower.html
@@ -1283,6 +1309,8 @@ share/doc/tuxpaint/html/images/magic_examples/darken.png
 share/doc/tuxpaint/html/images/magic_examples/desaturate.png
 share/doc/tuxpaint/html/images/magic_examples/dimetric_draw.png
 share/doc/tuxpaint/html/images/magic_examples/distortion.png
+share/doc/tuxpaint/html/images/magic_examples/dither.png
+share/doc/tuxpaint/html/images/magic_examples/dither_keep_colors.png
 share/doc/tuxpaint/html/images/magic_examples/doublevision.png
 share/doc/tuxpaint/html/images/magic_examples/drip.png
 share/doc/tuxpaint/html/images/magic_examples/edges.png
@@ -1291,6 +1319,7 @@ share/doc/tuxpaint/html/images/magic_examples/epitrochoid.png
 share/doc/tuxpaint/html/images/magic_examples/epitrochoid_edge.png
 share/doc/tuxpaint/html/images/magic_examples/epitrochoid_inside.png
 share/doc/tuxpaint/html/images/magic_examples/epitrochoid_outside.png
+share/doc/tuxpaint/html/images/magic_examples/filled_polygon.png
 share/doc/tuxpaint/html/images/magic_examples/fisheye.png
 share/doc/tuxpaint/html/images/magic_examples/flip.png
 share/doc/tuxpaint/html/images/magic_examples/flower.png
@@ -1388,6 +1417,7 @@ share/doc/tuxpaint/html/images/smear-wide.png
 share/doc/tuxpaint/html/images/stamp_edit.png
 share/doc/tuxpaint/html/images/tips.jpg
 share/doc/tuxpaint/html/images/tool_eraser.png
+share/doc/tuxpaint/html/images/tool_eraser_erasers.png
 share/doc/tuxpaint/html/images/tool_fill.png
 share/doc/tuxpaint/html/images/tool_lines.png
 share/doc/tuxpaint/html/images/tool_magic.png
@@ -1465,6 +1495,8 @@ share/doc/tuxpaint/is_IS.UTF-8/magic-docs/desaturate.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/dimetric_draw.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/dimetric_select.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/distortion.txt
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/dither.txt
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/dither_keep_colors.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/doublevision.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/drip.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/edges.txt
@@ -1473,6 +1505,7 @@ share/doc/tuxpaint/is_IS.UTF-8/magic-docs/epitrochoid.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/epitrochoid_edge.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/epitrochoid_inside.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/epitrochoid_outside.txt
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/filled_polygon.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/fisheye.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/flip.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/flower.txt
@@ -1513,6 +1546,8 @@ share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/desaturate.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/dimetric_draw.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/dimetric_select.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/distortion.html
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/dither.html
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/dither_keep_colors.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/doublevision.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/drip.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/edges.html
@@ -1521,6 +1556,7 @@ share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/epitrochoid.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/epitrochoid_edge.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/epitrochoid_inside.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/epitrochoid_outside.html
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/filled_polygon.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/fisheye.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/flip.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/flower.html
@@ -1735,6 +1771,8 @@ share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/desaturate.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/dimetric_draw.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/dimetric_select.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/distortion.txt
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/dither.txt
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/dither_keep_colors.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/doublevision.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/drip.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/edges.txt
@@ -1743,6 +1781,7 @@ share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/epitrochoid.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/epitrochoid_edge.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/epitrochoid_inside.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/epitrochoid_outside.txt
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/filled_polygon.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/fisheye.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/flip.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/flower.txt
@@ -1783,6 +1822,8 @@ share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/desaturate.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/dimetric_draw.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/dimetric_select.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/distortion.html
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/dither.html
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/dither_keep_colors.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/doublevision.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/drip.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/edges.html
@@ -1791,6 +1832,7 @@ share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/epitrochoid.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/epitrochoid_edge.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/epitrochoid_inside.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/epitrochoid_outside.html
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/filled_polygon.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/fisheye.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/flip.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/flower.html
@@ -2009,6 +2051,8 @@ share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/desaturate.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/dimetric_draw.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/dimetric_select.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/distortion.txt
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/dither.txt
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/dither_keep_colors.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/doublevision.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/drip.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/edges.txt
@@ -2017,6 +2061,7 @@ share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/epitrochoid.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/epitrochoid_edge.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/epitrochoid_inside.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/epitrochoid_outside.txt
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/filled_polygon.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/fisheye.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/flip.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/flower.txt
@@ -2057,6 +2102,8 @@ share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/desaturate.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/dimetric_draw.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/dimetric_select.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/distortion.html
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/dither.html
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/dither_keep_colors.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/doublevision.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/drip.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/edges.html
@@ -2065,6 +2112,7 @@ share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/epitrochoid.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/epitrochoid_edge.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/epitrochoid_inside.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/epitrochoid_outside.html
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/filled_polygon.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/fisheye.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/flip.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/flower.html
@@ -2319,8 +2367,6 @@ share/locale/iu/LC_MESSAGES/
 share/locale/iu/LC_MESSAGES/tuxpaint.mo
 share/locale/ja/LC_MESSAGES/tuxpaint.mo
 share/locale/ka/LC_MESSAGES/tuxpaint.mo
-share/locale/kab/
-share/locale/kab/LC_MESSAGES/
 share/locale/kab/LC_MESSAGES/tuxpaint.mo
 share/locale/km/LC_MESSAGES/tuxpaint.mo
 share/locale/kn/LC_MESSAGES/tuxpaint.mo
@@ -2466,17 +2512,29 @@ share/tuxpaint/brushes/aa_round_fuzz.png
 share/tuxpaint/brushes/aa_round_seethru.png
 share/tuxpaint/brushes/aa_round_seethru_05.png
 share/tuxpaint/brushes/aa_round_seethru_10.png
+share/tuxpaint/brushes/acrylic.dat
+share/tuxpaint/brushes/acrylic.png
+share/tuxpaint/brushes/acrylic.txt
 share/tuxpaint/brushes/arrow.dat
 share/tuxpaint/brushes/arrow.png
+share/tuxpaint/brushes/arrow.txt
 share/tuxpaint/brushes/arrow_triangles.dat
 share/tuxpaint/brushes/arrow_triangles.png
+share/tuxpaint/brushes/arrow_triangles.txt
 share/tuxpaint/brushes/blob.png
 share/tuxpaint/brushes/chisle.png
+share/tuxpaint/brushes/critter_dog.dat
+share/tuxpaint/brushes/critter_dog.png
+share/tuxpaint/brushes/critter_dog.txt
+share/tuxpaint/brushes/critter_kuroneko.dat
+share/tuxpaint/brushes/critter_kuroneko.png
+share/tuxpaint/brushes/critter_kuroneko.txt
+share/tuxpaint/brushes/critter_squirrel.dat
+share/tuxpaint/brushes/critter_squirrel.png
+share/tuxpaint/brushes/critter_squirrel.txt
 share/tuxpaint/brushes/cutout_square_diamond.png
 share/tuxpaint/brushes/cutout_star_circle.png
 share/tuxpaint/brushes/diamond.png
-share/tuxpaint/brushes/dog.dat
-share/tuxpaint/brushes/dog.png
 share/tuxpaint/brushes/flower_5.dat
 share/tuxpaint/brushes/flower_5.png
 share/tuxpaint/brushes/flower_5_small.dat
@@ -2487,23 +2545,32 @@ share/tuxpaint/brushes/flower_6_small.dat
 share/tuxpaint/brushes/flower_6_small.png
 share/tuxpaint/brushes/flower_7.dat
 share/tuxpaint/brushes/flower_7.png
+share/tuxpaint/brushes/fluff.dat
+share/tuxpaint/brushes/fluff.png
+share/tuxpaint/brushes/fluff.txt
 share/tuxpaint/brushes/footprints-human-shoes.dat
 share/tuxpaint/brushes/footprints-human-shoes.png
+share/tuxpaint/brushes/footprints-human-shoes.txt
 share/tuxpaint/brushes/footprints-human.dat
 share/tuxpaint/brushes/footprints-human.png
+share/tuxpaint/brushes/footprints-human.txt
 share/tuxpaint/brushes/footprints-paws.dat
 share/tuxpaint/brushes/footprints-paws.png
+share/tuxpaint/brushes/footprints-paws.txt
 share/tuxpaint/brushes/heart.dat
 share/tuxpaint/brushes/heart.png
 share/tuxpaint/brushes/hexagon.png
 share/tuxpaint/brushes/inksplat.dat
 share/tuxpaint/brushes/inksplat.png
-share/tuxpaint/brushes/kuroneko.dat
-share/tuxpaint/brushes/kuroneko.png
+share/tuxpaint/brushes/inksplat.txt
 share/tuxpaint/brushes/lines-angled.dat
 share/tuxpaint/brushes/lines-angled.png
+share/tuxpaint/brushes/lines-angled.txt
 share/tuxpaint/brushes/lozenge.png
 share/tuxpaint/brushes/oval.png
+share/tuxpaint/brushes/pencil.dat
+share/tuxpaint/brushes/pencil.png
+share/tuxpaint/brushes/pencil.txt
 share/tuxpaint/brushes/pentagon.png
 share/tuxpaint/brushes/rotating_dash.dat
 share/tuxpaint/brushes/rotating_dash.png
@@ -2515,28 +2582,32 @@ share/tuxpaint/brushes/slash_20_lt.png
 share/tuxpaint/brushes/slash_20_rt.png
 share/tuxpaint/brushes/sparkles.dat
 share/tuxpaint/brushes/sparkles.png
+share/tuxpaint/brushes/sparkles.txt
 share/tuxpaint/brushes/sphere.dat
 share/tuxpaint/brushes/sphere.png
 share/tuxpaint/brushes/spiral.dat
 share/tuxpaint/brushes/spiral.png
+share/tuxpaint/brushes/spiral.txt
+share/tuxpaint/brushes/splat.dat
 share/tuxpaint/brushes/splat.png
 share/tuxpaint/brushes/spray.dat
 share/tuxpaint/brushes/spray.png
+share/tuxpaint/brushes/spray.txt
 share/tuxpaint/brushes/square_06.png
 share/tuxpaint/brushes/square_12.png
 share/tuxpaint/brushes/square_24.png
 share/tuxpaint/brushes/square_36.png
 share/tuxpaint/brushes/square_fuzz.png
 share/tuxpaint/brushes/square_seethru.png
-share/tuxpaint/brushes/squirrel.dat
-share/tuxpaint/brushes/squirrel.png
 share/tuxpaint/brushes/star.dat
 share/tuxpaint/brushes/star.png
 share/tuxpaint/brushes/tiny.png
+share/tuxpaint/brushes/tiny.txt
 share/tuxpaint/brushes/triangle_down.png
 share/tuxpaint/brushes/triangle_up.png
 share/tuxpaint/brushes/vine.dat
 share/tuxpaint/brushes/vine.png
+share/tuxpaint/brushes/vine.txt
 share/tuxpaint/brushes/x.png
 share/tuxpaint/fonts/
 share/tuxpaint/fonts/FreeMono.ttf
@@ -2661,6 +2732,8 @@ share/tuxpaint/images/magic/desaturate.png
 share/tuxpaint/images/magic/dimetric_draw.png
 share/tuxpaint/images/magic/dimetric_select.png
 share/tuxpaint/images/magic/distortion.png
+share/tuxpaint/images/magic/dither.png
+share/tuxpaint/images/magic/dither_keep_color.png
 share/tuxpaint/images/magic/doublevision.png
 share/tuxpaint/images/magic/drip.png
 share/tuxpaint/images/magic/edges.png
@@ -2724,6 +2797,7 @@ share/tuxpaint/images/magic/panels.png
 share/tuxpaint/images/magic/perspective.png
 share/tuxpaint/images/magic/picasso.png
 share/tuxpaint/images/magic/pixels.png
+share/tuxpaint/images/magic/polyfill.png
 share/tuxpaint/images/magic/puzzle.png
 share/tuxpaint/images/magic/rails.png
 share/tuxpaint/images/magic/rails_corner.png
@@ -2967,6 +3041,8 @@ share/tuxpaint/sounds/magic/confetti.ogg
 share/tuxpaint/sounds/magic/darken.wav
 share/tuxpaint/sounds/magic/desaturate.ogg
 share/tuxpaint/sounds/magic/distortion.ogg
+share/tuxpaint/sounds/magic/dither.ogg
+share/tuxpaint/sounds/magic/dither_keep_color.ogg
 share/tuxpaint/sounds/magic/doublevision.ogg
 share/tuxpaint/sounds/magic/drip.wav
 share/tuxpaint/sounds/magic/edges.ogg
@@ -3010,6 +3086,11 @@ share/tuxpaint/sounds/magic/noise.ogg
 share/tuxpaint/sounds/magic/perspective.ogg
 share/tuxpaint/sounds/magic/picasso.ogg
 share/tuxpaint/sounds/magic/pixels.ogg
+share/tuxpaint/sounds/magic/polyfill_finish.ogg
+share/tuxpaint/sounds/magic/polyfill_move.ogg
+share/tuxpaint/sounds/magic/polyfill_nearby.ogg
+share/tuxpaint/sounds/magic/polyfill_place.ogg
+share/tuxpaint/sounds/magic/polyfill_remove.ogg
 share/tuxpaint/sounds/magic/puzzle.wav
 share/tuxpaint/sounds/magic/rails.wav
 share/tuxpaint/sounds/magic/rain.ogg
