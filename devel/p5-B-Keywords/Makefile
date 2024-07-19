@@ -1,6 +1,6 @@
 COMMENT =	lists of Perl reserved barewords and symbol names
 
-DISTNAME =	B-Keywords-1.26
+DISTNAME =	B-Keywords-1.27
 
 CATEGORIES =	devel
 
