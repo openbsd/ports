@@ -11,3 +11,8 @@ Index: lldb/source/Plugins/Process/CMakeLists.txt
  elseif (CMAKE_SYSTEM_NAME MATCHES "Windows")
    add_subdirectory(Windows/Common)
  elseif (CMAKE_SYSTEM_NAME MATCHES "Darwin")
+@@ -19,3 +22,4 @@ add_subdirectory(elf-core)
+ add_subdirectory(mach-core)
+ add_subdirectory(minidump)
+ add_subdirectory(FreeBSDKernel)
++add_subdirectory(OpenBSDKernel)
