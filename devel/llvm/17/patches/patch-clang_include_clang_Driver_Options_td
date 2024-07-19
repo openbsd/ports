@@ -1,7 +1,17 @@
 Index: clang/include/clang/Driver/Options.td
 --- clang/include/clang/Driver/Options.td.orig
 +++ clang/include/clang/Driver/Options.td
-@@ -3032,6 +3032,16 @@ def ftrivial_auto_var_init : Joined<["-"], "ftrivial-a
+@@ -3026,12 +3026,26 @@ def fstack_protector : Flag<["-"], "fstack-protector">
+            "stack frame such that a buffer overflow from a vulnerable variable will "
+            "overwrite the guard value before overwriting the function's return "
+            "address. The reference stack guard value is stored in a global variable.">;
++def fno_ret_clean : Flag<["-"], "fno-ret-clean">, Group<f_Group>, Flags<[CoreOption]>,
++  HelpText<"Disable ret-clean pass">;
++def fret_clean : Flag<["-"], "fret-clean">, Group<f_Group>, Flags<[CoreOption]>,
++  HelpText<"Clean return address from stack after call">;
+ def ftrivial_auto_var_init : Joined<["-"], "ftrivial-auto-var-init=">, Group<f_Group>,
+   Flags<[CC1Option, CoreOption]>, HelpText<"Initialize trivial automatic stack variables. Defaults to 'uninitialized'">,
+   Values<"uninitialized,zero,pattern">,
    NormalizedValuesScope<"LangOptions::TrivialAutoVarInitKind">,
    NormalizedValues<["Uninitialized", "Zero", "Pattern"]>,
    MarshallingInfoEnum<LangOpts<"TrivialAutoVarInit">, "Uninitialized">;
@@ -18,7 +28,7 @@ Index: clang/include/clang/Driver/Options.td
  def ftrivial_auto_var_init_stop_after : Joined<["-"], "ftrivial-auto-var-init-stop-after=">, Group<f_Group>,
    Flags<[CC1Option, CoreOption]>, HelpText<"Stop initializing trivial automatic stack variables after the specified number of instances">,
    MarshallingInfoInt<LangOpts<"TrivialAutoVarInitStopAfter">>;
-@@ -4217,6 +4227,8 @@ def mno_check_zero_division : Flag<["-"], "mno-check-z
+@@ -4217,6 +4231,8 @@ def mno_check_zero_division : Flag<["-"], "mno-check-z
  def mfix4300 : Flag<["-"], "mfix4300">, Group<m_mips_Features_Group>;
  def mcompact_branches_EQ : Joined<["-"], "mcompact-branches=">,
                             Group<m_mips_Features_Group>;
@@ -27,7 +37,7 @@ Index: clang/include/clang/Driver/Options.td
  } // let Flags = [TargetSpecific]
  def mbranch_likely : Flag<["-"], "mbranch-likely">, Group<m_Group>,
    IgnoredGCCCompat;
-@@ -4416,9 +4428,13 @@ def pedantic_errors : Flag<["-", "--"], "pedantic-erro
+@@ -4416,9 +4432,13 @@ def pedantic_errors : Flag<["-", "--"], "pedantic-erro
    MarshallingInfoFlag<DiagnosticOpts<"PedanticErrors">>;
  def pedantic : Flag<["-", "--"], "pedantic">, Group<pedantic_Group>, Flags<[CC1Option,FlangOption,FC1Option]>,
    HelpText<"Warn on language extensions">, MarshallingInfoFlag<DiagnosticOpts<"Pedantic">>;
@@ -42,7 +52,7 @@ Index: clang/include/clang/Driver/Options.td
  def pipe : Flag<["-", "--"], "pipe">,
    HelpText<"Use pipes between commands, when possible">;
  def prebind__all__twolevel__modules : Flag<["-"], "prebind_all_twolevel_modules">;
-@@ -5090,6 +5106,8 @@ def mshstk : Flag<["-"], "mshstk">, Group<m_x86_Featur
+@@ -5090,6 +5110,8 @@ def mshstk : Flag<["-"], "mshstk">, Group<m_x86_Featur
  def mno_shstk : Flag<["-"], "mno-shstk">, Group<m_x86_Features_Group>;
  def mretpoline_external_thunk : Flag<["-"], "mretpoline-external-thunk">, Group<m_x86_Features_Group>;
  def mno_retpoline_external_thunk : Flag<["-"], "mno-retpoline-external-thunk">, Group<m_x86_Features_Group>;
