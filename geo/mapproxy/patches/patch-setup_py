@@ -1,0 +1,14 @@
+https://github.com/mapproxy/mapproxy/pull/957
+
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -9,7 +9,7 @@ install_requires = [
+     'future',
+     'pyproj>=2',
+     'jsonschema>=4',
+-    'importlib_resources',
++    'importlib_resources;python_version<="3.8"',
+     'werkzeug==1.0.1'
+ ]
+ 
