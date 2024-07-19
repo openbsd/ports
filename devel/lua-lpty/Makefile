@@ -1,9 +1,10 @@
-COMMENT=	This is a simple wrapper around unix PTYs.
+COMMENT=	simple wrapper around UNIX PTYs for lua
 
 V=		1.2.2
 SITES=		https://codeberg.org/gnarz/lpty/archive/
 PKGNAME=	lua-lpty-${V}
 DISTFILES=	lua-lpty{version_}${V}${EXTRACT_SUFX}
+REVISION=	0
 
 CATEGORIES=	devel
 HOMEPAGE=	https://www.tset.de/lpty/
