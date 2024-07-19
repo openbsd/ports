@@ -194,7 +194,7 @@ do-test:
 diff-to-base: ${_PATCH_COOKIE}
 .for _subdir in clang lld lldb llvm
 	@_d=/tmp/llvm${LLVM_MAJOR}_${_subdir}.diff && echo "Creating $${_d} ..." && \
-		diff -ruN -x CVS -x test -x '*${PATCHORIG}' -x '*.beforesubst' \
+		diff -ruN -x CVS -x test -x unittests -x '*${PATCHORIG}' -x '*.beforesubst' \
 		${BSDSRCDIR}/gnu/llvm/${_subdir} ${WRKDIST}/${_subdir} \
 		> $${_d} || true
 .endfor
