@@ -2,8 +2,7 @@ COMMENT =		various utility functions
 
 MODULES =		cpan
 PKG_ARCH =		*
-DISTNAME =		Data-Munge-0.10
-PKGNAME =		p5-Data-Munge-0.100
+DISTNAME =		Data-Munge-0.111
 CATEGORIES =		devel
 
 # Perl
