@@ -1,13 +1,17 @@
 Index: llvm/lib/Target/X86/X86.h
 --- llvm/lib/Target/X86/X86.h.orig
 +++ llvm/lib/Target/X86/X86.h
-@@ -128,6 +128,10 @@ FunctionPass *createX86FixupBWInsts();
+@@ -128,6 +128,14 @@ FunctionPass *createX86FixupBWInsts();
  /// to another, when profitable.
  FunctionPass *createX86DomainReassignmentPass();
  
 +/// Return a Machine Function pass that attempts to replace
 +/// ROP friendly instructions with alternatives.
 +FunctionPass *createX86FixupGadgetsPass();
++
++/// Return a Machine Function pass that attempts to replace
++/// RET instructions with a cleaning sequence
++FunctionPass *createX86RetCleanPass();
 +
  /// This pass replaces EVEX encoded of AVX-512 instructiosn by VEX
  /// encoding when possible in order to reduce code size.

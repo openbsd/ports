@@ -74,7 +74,7 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
  
    if (Arg *A = Args.getLastArg(options::OPT_freroll_loops,
                                 options::OPT_fno_reroll_loops))
-@@ -6342,7 +6360,48 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -6342,7 +6360,58 @@ void Clang::ConstructJob(Compilation &C, const JobActi
    Args.addOptInFlag(CmdArgs, options::OPT_mspeculative_load_hardening,
                      options::OPT_mno_speculative_load_hardening);
  
@@ -121,10 +121,20 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
 +      CmdArgs.push_back(Args.MakeArgString(Twine("-x86-fixup-gadgets=true")));
 +  }
 +
++  // -ret-clean
++  if (Arg *A = Args.getLastArg(options::OPT_fno_ret_clean,
++                               options::OPT_fret_clean)) {
++    CmdArgs.push_back(Args.MakeArgString(Twine("-mllvm")));
++    if (A->getOption().matches(options::OPT_fno_ret_clean))
++      CmdArgs.push_back(Args.MakeArgString(Twine("-x86-ret-clean=false")));
++    else if (A->getOption().matches(options::OPT_fret_clean))
++      CmdArgs.push_back(Args.MakeArgString(Twine("-x86-ret-clean=true")));
++  }
++
    RenderSCPOptions(TC, Args, CmdArgs);
    RenderTrivialAutoVarInitOptions(D, TC, Args, CmdArgs);
  
-@@ -6417,6 +6476,11 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -6417,6 +6486,11 @@ void Clang::ConstructJob(Compilation &C, const JobActi
    if (Arg *A = Args.getLastArg(options::OPT_fcf_protection_EQ)) {
      CmdArgs.push_back(
          Args.MakeArgString(Twine("-fcf-protection=") + A->getValue()));
@@ -136,7 +146,7 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
    }
  
    if (Arg *A = Args.getLastArg(options::OPT_mfunction_return_EQ))
-@@ -6895,6 +6959,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -6895,6 +6969,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                                       options::OPT_fno_rewrite_imports, false);
    if (RewriteImports)
      CmdArgs.push_back("-frewrite-imports");
