@@ -7,6 +7,7 @@ bin/digitaglinktree
 include/digikam/
 include/digikam/batchtool.h
 include/digikam/bcgcontainer.h
+include/digikam/bqminfoiface.h
 include/digikam/captionvalues.h
 include/digikam/coredbaccess.h
 include/digikam/coredbalbuminfo.h
@@ -20,11 +21,13 @@ include/digikam/dbengineconfig.h
 include/digikam/dbengineconfigsettings.h
 include/digikam/dbengineerrorhandler.h
 include/digikam/dbengineparameters.h
+include/digikam/dbinfoiface.h
 include/digikam/dcolor.h
 include/digikam/dcolorblend.h
 include/digikam/dcolorcomposer.h
 include/digikam/dcolorpixelaccess.h
 include/digikam/dcolorselector.h
+include/digikam/dexpanderbox.h
 include/digikam/dhistoryview.h
 include/digikam/digikam_config.h
 include/digikam/digikam_core_export.h
@@ -44,6 +47,7 @@ include/digikam/dimgthreadedanalyser.h
 include/digikam/dimgthreadedfilter.h
 include/digikam/dinfointerface.h
 include/digikam/ditemslist.h
+include/digikam/ditemtooltip.h
 include/digikam/dmessagebox.h
 include/digikam/dmetainfoiface.h
 include/digikam/dplugin.h
@@ -65,6 +69,7 @@ include/digikam/drawdecodersettings.h
 include/digikam/drawdecoding.h
 include/digikam/drawinfo.h
 include/digikam/dsavesettingswidget.h
+include/digikam/dtextedit.h
 include/digikam/dwizarddlg.h
 include/digikam/dwizardpage.h
 include/digikam/dynamicthread.h
@@ -80,6 +85,7 @@ include/digikam/graphicsdimgview.h
 include/digikam/historyimageid.h
 include/digikam/iccprofile.h
 include/digikam/icctransform.h
+include/digikam/imagecurves.h
 include/digikam/imagedialog.h
 include/digikam/imageiface.h
 include/digikam/imageregionwidget.h
@@ -87,12 +93,14 @@ include/digikam/imagezoomsettings.h
 include/digikam/iofilesettings.h
 include/digikam/iteminfo.h
 include/digikam/iteminfolist.h
+include/digikam/iteminfoset.h
 include/digikam/loadingdescription.h
 include/digikam/loadsavethread.h
 include/digikam/managedloadsavethread.h
 include/digikam/metadatainfo.h
 include/digikam/metaengine.h
 include/digikam/metaengine_data.h
+include/digikam/modelcompleter.h
 include/digikam/photoinfocontainer.h
 include/digikam/previewlayout.h
 include/digikam/previewloadthread.h
@@ -100,6 +108,8 @@ include/digikam/previewsettings.h
 include/digikam/previewtoolbar.h
 include/digikam/queuesettings.h
 include/digikam/rginfo.h
+include/digikam/searchtextbar.h
+include/digikam/statesavingobject.h
 include/digikam/thumbnailinfo.h
 include/digikam/thumbnailloadthread.h
 include/digikam/wbcontainer.h
@@ -126,174 +136,173 @@ lib/cmake/DigikamPlugin/DigikamPluginConfig.cmake
 @lib lib/libdigikamcore.so.${LIBdigikamcore_VERSION}
 @lib lib/libdigikamdatabase.so.${LIBdigikamdatabase_VERSION}
 @lib lib/libdigikamgui.so.${LIBdigikamgui_VERSION}
-lib/qt5/plugins/digikam/
-lib/qt5/plugins/digikam/bqm/
-@so lib/qt5/plugins/digikam/bqm/Bqm_AntiVignetting_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_ApplyMetadata_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_AssignLabels_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_AssignTags_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_AssignTemplate_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_Assigncaptions_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_AutoCorrection_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_BWconvert_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_BcgCorrection_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_Blur_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_Border_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_ChannelMixer_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_ColorBalance_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_ColorFX_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_Convert16To8_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_Convert8To16_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_ConvertToAVIF_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_ConvertToDNG_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_ConvertToHEIF_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_ConvertToJP2lugin_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_ConvertToJPEG_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_ConvertToJXL_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_ConvertToPGF_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_ConvertToPNG_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_ConvertToTIFF_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_ConvertToWEBP_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_Crop_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_CurvesAdjust_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_FilmGrain_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_Flip_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_HotPixels_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_HslCorrection_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_IccConvert_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_Invert_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_LensAutoFix_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_LocalContrast_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_NoiseReduction_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_QualitySort_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_RedEyeCorrection_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_RemoveMetadata_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_Resize_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_Restoration_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_Rotate_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_Sharpen_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_Texture_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_TimeAdjust_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_Translate_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_UserScript_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_WaterMark_Plugin.so
-@so lib/qt5/plugins/digikam/bqm/Bqm_WhiteBalance_Plugin.so
-lib/qt5/plugins/digikam/dimg/
-@so lib/qt5/plugins/digikam/dimg/DImg_HEIF_Plugin.so
-@so lib/qt5/plugins/digikam/dimg/DImg_ImageMagick_Plugin.so
-@so lib/qt5/plugins/digikam/dimg/DImg_JPEG2000_Plugin.so
-@so lib/qt5/plugins/digikam/dimg/DImg_JPEG_Plugin.so
-@so lib/qt5/plugins/digikam/dimg/DImg_PGF_Plugin.so
-@so lib/qt5/plugins/digikam/dimg/DImg_PNG_Plugin.so
-@so lib/qt5/plugins/digikam/dimg/DImg_QImage_Plugin.so
-@so lib/qt5/plugins/digikam/dimg/DImg_RAW_Plugin.so
-@so lib/qt5/plugins/digikam/dimg/DImg_TIFF_Plugin.so
-lib/qt5/plugins/digikam/editor/
-@so lib/qt5/plugins/digikam/editor/Editor_AdjustCurvesTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_AdjustLevelsTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_AntivignettingTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_AutoCorrectionTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_AutoCropTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_BWSepiaTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_BcgTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_BlurFxTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_BlurTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_BorderTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_CBTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_ChannelMixerTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_CharcoalTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_ColorFxTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_ContentAwareResizeTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_Convert16To8Tool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_Convert8To16Tool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_DistortionFxTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_EmbossTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_FilmGrainTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_FilmTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_FreeRotationTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_HSLTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_HealingCloneTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_HotpixelsTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_InsertTextTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_InvertTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_LensAutoFixTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_LensDistortionTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_LocalContrastTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_NoiseReductionTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_OilPaintTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_PerspectiveTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_PrintTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_ProfileConversionTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_RainDropTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_RatioCropTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_RedEyeTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_ResizeTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_RestorationTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_SharpenTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_ShearTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_TextureTool_Plugin.so
-@so lib/qt5/plugins/digikam/editor/Editor_WhiteBalanceTool_Plugin.so
-lib/qt5/plugins/digikam/generic/
-@so lib/qt5/plugins/digikam/generic/Generic_Box_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_Calendar_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_DNGConverter_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_DigitalScanner_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_DropBox_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_ExpoBlending_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_FileCopy_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_FileTransfer_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_Flickr_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_GeolocationEdit_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_Google_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_HtmlGallery_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_ImageShack_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_ImgUr_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_JAlbum_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_MediaServer_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_MediaWiki_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_MetadataEdit_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_MjpegStream_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_OneDrive_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_Panorama_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_Pinterest_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_Piwigo_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_Presentation_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_PrintCreator_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_Rajce_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_SendByMail_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_SlideShow_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_SmugMug_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_TextConverter_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_TimeAdjust_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_Twitter_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_VideoSlideShow_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_Wallpaper_Plugin.so
-@so lib/qt5/plugins/digikam/generic/Generic_iNaturalist_Plugin.so
-lib/qt5/plugins/digikam/marble/
-@so lib/qt5/plugins/digikam/marble/AtmospherePlugin.so
-@so lib/qt5/plugins/digikam/marble/CachePlugin.so
-@so lib/qt5/plugins/digikam/marble/CompassFloatItem.so
-@so lib/qt5/plugins/digikam/marble/CrosshairsPlugin.so
-@so lib/qt5/plugins/digikam/marble/GpsbabelPlugin.so
-@so lib/qt5/plugins/digikam/marble/GpxPlugin.so
-@so lib/qt5/plugins/digikam/marble/GraticulePlugin.so
-@so lib/qt5/plugins/digikam/marble/JsonPlugin.so
-@so lib/qt5/plugins/digikam/marble/KmlPlugin.so
-@so lib/qt5/plugins/digikam/marble/MapScaleFloatItem.so
-@so lib/qt5/plugins/digikam/marble/MeasureTool.so
-@so lib/qt5/plugins/digikam/marble/NavigationFloatItem.so
-@so lib/qt5/plugins/digikam/marble/NominatimReverseGeocodingPlugin.so
-@so lib/qt5/plugins/digikam/marble/OsmPlugin.so
-@so lib/qt5/plugins/digikam/marble/OverviewMap.so
-@so lib/qt5/plugins/digikam/marble/Pn2Plugin.so
-@so lib/qt5/plugins/digikam/marble/PntPlugin.so
-@so lib/qt5/plugins/digikam/marble/ProgressFloatItem.so
-lib/qt5/plugins/digikam/rawimport/
-@so lib/qt5/plugins/digikam/rawimport/RawImport_ART_Plugin.so
-@so lib/qt5/plugins/digikam/rawimport/RawImport_DarkTable_Plugin.so
-@so lib/qt5/plugins/digikam/rawimport/RawImport_Native_Plugin.so
-@so lib/qt5/plugins/digikam/rawimport/RawImport_RawTherapee_Plugin.so
-@so lib/qt5/plugins/digikam/rawimport/RawImport_UFRaw_Plugin.so
+lib/qt6/plugins/digikam/
+lib/qt6/plugins/digikam/bqm/
+@so lib/qt6/plugins/digikam/bqm/Bqm_AntiVignetting_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_ApplyMetadata_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_AssignLabels_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_AssignTags_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_AssignTemplate_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_Assigncaptions_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_AutoCorrection_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_BWconvert_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_BcgCorrection_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_Blur_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_Border_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_ChannelMixer_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_ColorBalance_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_ColorFX_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_Convert16To8_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_Convert8To16_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_ConvertToAVIF_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_ConvertToDNG_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_ConvertToHEIF_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_ConvertToJP2lugin_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_ConvertToJPEG_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_ConvertToJXL_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_ConvertToPGF_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_ConvertToPNG_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_ConvertToTIFF_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_ConvertToWEBP_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_Crop_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_CurvesAdjust_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_FilmGrain_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_Flip_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_HotPixels_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_HslCorrection_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_IccConvert_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_Invert_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_LensAutoFix_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_LocalContrast_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_NoiseReduction_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_QualitySort_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_RedEyeCorrection_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_RemoveMetadata_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_Resize_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_Restoration_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_Rotate_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_Sharpen_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_Texture_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_TimeAdjust_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_Translate_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_UserScript_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_WaterMark_Plugin.so
+@so lib/qt6/plugins/digikam/bqm/Bqm_WhiteBalance_Plugin.so
+lib/qt6/plugins/digikam/dimg/
+@so lib/qt6/plugins/digikam/dimg/DImg_HEIF_Plugin.so
+@so lib/qt6/plugins/digikam/dimg/DImg_ImageMagick_Plugin.so
+@so lib/qt6/plugins/digikam/dimg/DImg_JPEG2000_Plugin.so
+@so lib/qt6/plugins/digikam/dimg/DImg_JPEG_Plugin.so
+@so lib/qt6/plugins/digikam/dimg/DImg_PGF_Plugin.so
+@so lib/qt6/plugins/digikam/dimg/DImg_PNG_Plugin.so
+@so lib/qt6/plugins/digikam/dimg/DImg_QImage_Plugin.so
+@so lib/qt6/plugins/digikam/dimg/DImg_RAW_Plugin.so
+@so lib/qt6/plugins/digikam/dimg/DImg_TIFF_Plugin.so
+lib/qt6/plugins/digikam/editor/
+@so lib/qt6/plugins/digikam/editor/Editor_AdjustCurvesTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_AdjustLevelsTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_AntivignettingTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_AutoCorrectionTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_AutoCropTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_BWSepiaTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_BcgTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_BlurFxTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_BlurTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_BorderTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_CBTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_ChannelMixerTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_CharcoalTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_ColorFxTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_ContentAwareResizeTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_Convert16To8Tool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_Convert8To16Tool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_DistortionFxTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_EmbossTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_FilmGrainTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_FilmTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_FreeRotationTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_HSLTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_HealingCloneTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_HotpixelsTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_InsertTextTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_InvertTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_LensAutoFixTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_LensDistortionTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_LocalContrastTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_NoiseReductionTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_OilPaintTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_PerspectiveTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_PrintTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_ProfileConversionTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_RainDropTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_RatioCropTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_RedEyeTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_ResizeTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_RestorationTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_SharpenTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_ShearTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_TextureTool_Plugin.so
+@so lib/qt6/plugins/digikam/editor/Editor_WhiteBalanceTool_Plugin.so
+lib/qt6/plugins/digikam/generic/
+@so lib/qt6/plugins/digikam/generic/Generic_Box_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_Calendar_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_DNGConverter_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_DropBox_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_ExpoBlending_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_FileCopy_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_FileTransfer_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_Flickr_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_GLViewer_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_GeolocationEdit_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_Google_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_HtmlGallery_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_ImageShack_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_ImgUr_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_JAlbum_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_MediaServer_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_MediaWiki_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_MetadataEdit_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_MjpegStream_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_OneDrive_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_Panorama_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_Pinterest_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_Piwigo_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_Presentation_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_PrintCreator_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_SendByMail_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_SlideShow_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_SmugMug_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_TextConverter_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_TimeAdjust_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_Twitter_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_VideoSlideShow_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_Wallpaper_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_iNaturalist_Plugin.so
+lib/qt6/plugins/digikam/marble/
+@so lib/qt6/plugins/digikam/marble/AtmospherePlugin.so
+@so lib/qt6/plugins/digikam/marble/CachePlugin.so
+@so lib/qt6/plugins/digikam/marble/CompassFloatItem.so
+@so lib/qt6/plugins/digikam/marble/CrosshairsPlugin.so
+@so lib/qt6/plugins/digikam/marble/GpsbabelPlugin.so
+@so lib/qt6/plugins/digikam/marble/GpxPlugin.so
+@so lib/qt6/plugins/digikam/marble/GraticulePlugin.so
+@so lib/qt6/plugins/digikam/marble/JsonPlugin.so
+@so lib/qt6/plugins/digikam/marble/KmlPlugin.so
+@so lib/qt6/plugins/digikam/marble/MapScaleFloatItem.so
+@so lib/qt6/plugins/digikam/marble/MeasureTool.so
+@so lib/qt6/plugins/digikam/marble/NavigationFloatItem.so
+@so lib/qt6/plugins/digikam/marble/NominatimReverseGeocodingPlugin.so
+@so lib/qt6/plugins/digikam/marble/OsmPlugin.so
+@so lib/qt6/plugins/digikam/marble/OverviewMap.so
+@so lib/qt6/plugins/digikam/marble/Pn2Plugin.so
+@so lib/qt6/plugins/digikam/marble/PntPlugin.so
+@so lib/qt6/plugins/digikam/marble/ProgressFloatItem.so
+lib/qt6/plugins/digikam/rawimport/
+@so lib/qt6/plugins/digikam/rawimport/RawImport_ART_Plugin.so
+@so lib/qt6/plugins/digikam/rawimport/RawImport_DarkTable_Plugin.so
+@so lib/qt6/plugins/digikam/rawimport/RawImport_Native_Plugin.so
+@so lib/qt6/plugins/digikam/rawimport/RawImport_RawTherapee_Plugin.so
+@so lib/qt6/plugins/digikam/rawimport/RawImport_UFRaw_Plugin.so
 @man man/man1/cleanup_digikamdb.1
 @man man/man1/digitaglinktree.1
 share/applications/org.kde.digikam.desktop
@@ -2018,7 +2027,6 @@ share/icons/hicolor/16x16/apps/dk-mediawiki.png
 share/icons/hicolor/16x16/apps/dk-onedrive.png
 share/icons/hicolor/16x16/apps/dk-pinterest.png
 share/icons/hicolor/16x16/apps/dk-piwigo.png
-share/icons/hicolor/16x16/apps/dk-rajce.png
 share/icons/hicolor/16x16/apps/dk-smugmug.png
 share/icons/hicolor/16x16/apps/expoblending.png
 share/icons/hicolor/16x16/apps/panorama.png
@@ -2037,7 +2045,6 @@ share/icons/hicolor/22x22/apps/dk-mediawiki.png
 share/icons/hicolor/22x22/apps/dk-onedrive.png
 share/icons/hicolor/22x22/apps/dk-pinterest.png
 share/icons/hicolor/22x22/apps/dk-piwigo.png
-share/icons/hicolor/22x22/apps/dk-rajce.png
 share/icons/hicolor/22x22/apps/dk-smugmug.png
 share/icons/hicolor/22x22/apps/expoblending.png
 share/icons/hicolor/22x22/apps/panorama.png
@@ -2077,7 +2084,6 @@ share/icons/hicolor/32x32/apps/dk-mediawiki.png
 share/icons/hicolor/32x32/apps/dk-onedrive.png
 share/icons/hicolor/32x32/apps/dk-pinterest.png
 share/icons/hicolor/32x32/apps/dk-piwigo.png
-share/icons/hicolor/32x32/apps/dk-rajce.png
 share/icons/hicolor/32x32/apps/dk-smugmug.png
 share/icons/hicolor/32x32/apps/expoblending.png
 share/icons/hicolor/32x32/apps/panorama.png
@@ -2096,7 +2102,6 @@ share/icons/hicolor/48x48/apps/dk-mediawiki.png
 share/icons/hicolor/48x48/apps/dk-onedrive.png
 share/icons/hicolor/48x48/apps/dk-pinterest.png
 share/icons/hicolor/48x48/apps/dk-piwigo.png
-share/icons/hicolor/48x48/apps/dk-rajce.png
 share/icons/hicolor/48x48/apps/dk-smugmug.png
 share/icons/hicolor/48x48/apps/expoblending.png
 share/icons/hicolor/48x48/apps/panorama.png
@@ -2116,7 +2121,8 @@ share/icons/hicolor/scalable/apps/dk-piwigo.svgz
 share/icons/hicolor/scalable/apps/dk-smugmug.svgz
 share/icons/hicolor/scalable/apps/panorama.svgz
 share/icons/hicolor/scalable/apps/showfoto.svgz
-share/knotifications5/digikam.notifyrc
+share/knotifications6/digikam.notifyrc
+share/kxmlgui5/
 share/kxmlgui5/digikam/
 share/kxmlgui5/digikam/digikamui5.rc
 share/kxmlgui5/digikam/imageeditorui5.rc
@@ -2186,6 +2192,7 @@ share/locale/uk/LC_MESSAGES/digikam.mo
 share/locale/vi/LC_MESSAGES/digikam.mo
 share/locale/zh_CN/LC_MESSAGES/digikam.mo
 share/locale/zh_TW/LC_MESSAGES/digikam.mo
+share/metainfo/
 share/metainfo/org.kde.digikam.appdata.xml
 share/metainfo/org.kde.showfoto.appdata.xml
 share/showfoto/

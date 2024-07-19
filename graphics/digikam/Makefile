@@ -4,11 +4,10 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	KDE digital photo and video management utility
 
-V =		8.3.0
+V =		8.4.0
 PKGNAME =	digikam-${V}
-DISTNAME =	digiKam-${V}-1
+DISTNAME =	digiKam-${V}
 CATEGORIES =	graphics
-REVISION =	1
 
 HOMEPAGE =	https://www.digikam.org/
 
@@ -21,73 +20,73 @@ SHARED_LIBS +=  digikamgui                6.0 # 8.0
 # LGPL, GPL and many others
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ICE KF5Auth KF5AuthCore KF5CalendarCore
-WANTLIB += KF5Codecs KF5Completion KF5ConfigCore KF5ConfigGui
-WANTLIB += KF5ConfigWidgets KF5CoreAddons KF5FileMetaData KF5I18n
-WANTLIB += KF5IconThemes KF5JobWidgets KF5KIOCore KF5KIOGui KF5KIOWidgets
-WANTLIB += KF5Notifications KF5NotifyConfig KF5Sane KF5Service
-WANTLIB += KF5Solid KF5SonnetCore KF5SonnetUi KF5ThreadWeaver
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Magick++-6.Q16
-WANTLIB += MagickCore-6.Q16 MagickWand-6.Q16 Qt5Concurrent Qt5Core
-WANTLIB += Qt5DBus Qt5Gui Qt5Multimedia Qt5MultimediaWidgets Qt5Network
-WANTLIB += Qt5NetworkAuth Qt5Positioning Qt5PrintSupport Qt5Qml
-WANTLIB += Qt5QmlModels Qt5Quick Qt5Sql Qt5Svg Qt5WebChannel Qt5WebEngineCore
-WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5X11Extras Qt5Xml
-WANTLIB += Qt5XmlPatterns SM X11 Xext avcodec avdevice avfilter
-WANTLIB += avformat avutil c exiv2 expat exslt glib-2.0 gphoto2
-WANTLIB += gphoto2_port heif jasper jpeg lcms2 lensfun m opencv_calib3d
-WANTLIB += opencv_core opencv_dnn opencv_features2d opencv_flann
-WANTLIB += opencv_imgcodecs opencv_imgproc opencv_ml opencv_objdetect
-WANTLIB += png swresample swscale tiff usb-1.0 x265 xml2 xslt
-WANTLIB += z
+WANTLIB += ${COMPILER_LIBCXX} GL GLU ICE KF6CalendarCore KF6ColorScheme
+WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
+WANTLIB += KF6CoreAddons KF6FileMetaData KF6I18n KF6IconThemes
+WANTLIB += KF6IconWidgets KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets
+WANTLIB += KF6Notifications KF6NotifyConfig KF6Service KF6Solid
+WANTLIB += KF6SonnetCore KF6SonnetUi KF6ThreadWeaver KF6WidgetsAddons
+WANTLIB += KF6WindowSystem KF6XmlGui Magick++-6.Q16 MagickCore-6.Q16
+WANTLIB += MagickWand-6.Q16 Qt6Concurrent Qt6Core Qt6DBus Qt6Gui
+WANTLIB += Qt6Multimedia Qt6MultimediaWidgets Qt6Network Qt6NetworkAuth
+WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Positioning Qt6PrintSupport
+WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6Sql Qt6StateMachine
+WANTLIB += Qt6Svg Qt6SvgWidgets Qt6WebChannel Qt6WebEngineCore
+WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml SM X11 Xext avcodec
+WANTLIB += avdevice avfilter avformat avutil c exiv2 expat exslt
+WANTLIB += glib-2.0 gphoto2 gphoto2_port heif jasper jpeg jxl
+WANTLIB += jxl_threads lcms2 lensfun m opencv_calib3d opencv_core
+WANTLIB += opencv_dnn opencv_features2d opencv_flann opencv_imgcodecs
+WANTLIB += opencv_imgproc opencv_ml opencv_objdetect png swresample
+WANTLIB += swscale tiff usb-1.0 x265 xml2 xslt z
 
 SITES =		${SITE_KDE:=stable/digikam/${V}/}
+EXTRACT_SUFX ?=		.tar.xz
 
 FLAVORS =	mysql
 FLAVOR ?=
 
-MODULES =	devel/kf5
+MODULES =	devel/kf6
 
 BUILD_DEPENDS =	devel/bison \
 		devel/boost \
 		devel/gettext,-tools \
 		devel/git \
-		devel/kf5/kdoctools \
+		devel/kf6/kdoctools \
 		math/eigen3 \
 		misc/shared-desktop-ontologies \
-		x11/qt5/qtwebview
+		x11/kde-applications/kf6-ksanecore \
+		x11/qt6/qtwebview
 
 RUN_DEPENDS =	databases/sqlite3 \
 		devel/desktop-file-utils \
-		devel/kf5/kdoctools \
+		devel/kf6/kdoctools \
 		x11/gtk+4,-guic \
-		x11/qt5/qtwebview
+		x11/qt6/qtwebview
 
 # Depends on exiftool
 RUN_DEPENDS +=	graphics/p5-Image-ExifTool
 
 LIB_DEPENDS =	devel/glib2 \
-		devel/kf5/kauth \
-		devel/kf5/kcalendarcore \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kfilemetadata \
-		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
-		devel/kf5/kio \
-		devel/kf5/kjobwidgets \
-		devel/kf5/knotifications \
-		devel/kf5/knotifyconfig \
-		devel/kf5/kservice \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kwindowsystem \
-		devel/kf5/kxmlgui \
-		devel/kf5/solid \
-		devel/kf5/sonnet \
-		devel/kf5/threadweaver \
+		devel/kf6/kcalendarcore \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kfilemetadata \
+		devel/kf6/ki18n \
+		devel/kf6/kiconthemes \
+		devel/kf6/kio \
+		devel/kf6/kjobwidgets \
+		devel/kf6/knotifications \
+		devel/kf6/knotifyconfig \
+		devel/kf6/kservice \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kwindowsystem \
+		devel/kf6/kxmlgui \
+		devel/kf6/solid \
+		devel/kf6/sonnet \
+		devel/kf6/threadweaver \
 		devel/libusb1 \
 		graphics/ImageMagick \
 		graphics/exiv2 \
@@ -96,6 +95,7 @@ LIB_DEPENDS =	devel/glib2 \
 		graphics/jpeg \
 		graphics/lcms2 \
 		graphics/lensfun \
+		graphics/libjxl \
 		graphics/libgphoto2 \
 		graphics/opencv \
 		graphics/png \
@@ -104,18 +104,17 @@ LIB_DEPENDS =	devel/glib2 \
 		multimedia/x265 \
 		textproc/libxml \
 		textproc/libxslt \
-		x11/kde-applications/libksane \
-		x11/qt5/qtdeclarative \
-		x11/qt5/qtlocation \
-		x11/qt5/qtmultimedia \
-		x11/qt5/qtnetworkauth \
-		x11/qt5/qtsvg \
-		x11/qt5/qtwebchannel \
-		x11/qt5/qtwebengine \
-		x11/qt5/qtx11extras \
-		x11/qt5/qtxmlpatterns
+		x11/qt6/qtdeclarative \
+		x11/qt6/qtmultimedia \
+		x11/qt6/qtnetworkauth \
+		x11/qt6/qtsvg \
+		x11/qt6/qtscxml \
+		x11/qt6/qtwebchannel \
+		x11/qt6/qtwebengine
 
 WRKDIST =		${WRKDIR}/${PKGNAME}
+
+CONFIGURE_ARGS +=	-DBUILD_WITH_QT6=ON
 
 CONFIGURE_ARGS +=	-DENABLE_KFILEMETADATASUPPORT=ON \
 			-DENABLE_INTERNALMYSQL=OFF \
