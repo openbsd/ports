@@ -1,7 +1,7 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -25,7 +25,6 @@ endif
+@@ -30,7 +30,6 @@ endif
  
  # Where to install things:
  
@@ -9,7 +9,7 @@ Index: Makefile
  
  
  # Program:
-@@ -47,20 +46,13 @@ TUXPAINT_DATA_PREFIX=$(PREFIX)/share/tuxpaint
+@@ -52,20 +51,13 @@ TUXPAINT_DATA_PREFIX=$(PREFIX)/share/tuxpaint
  # Docs and man page:
  
  DOC_PREFIX=$(PREFIX)/share/doc/tuxpaint-config/
@@ -32,7 +32,7 @@ Index: Makefile
  # Icons and launchers:
  
  ICON_PREFIX=$(PREFIX)/share/pixmaps/
-@@ -70,7 +62,7 @@ NEWICON_PREFIX:=$(PREFIX)/share/icons/hicolor
+@@ -75,7 +67,7 @@ NEWICON_PREFIX:=$(PREFIX)/share/icons/hicolor
  
  # Locale files
  
@@ -41,7 +41,7 @@ Index: Makefile
  
  
  # Libraries, paths, and flags:
-@@ -87,7 +79,6 @@ UNIBREAK_CFLAGS=`pkg-config --cflags libunibreak`
+@@ -92,7 +84,6 @@ UNIBREAK_CFLAGS=`pkg-config --cflags libunibreak`
  UNIBREAK_LIB=`pkg-config --libs libunibreak`
  
  # Default CFLAGS:
@@ -49,7 +49,7 @@ Index: Makefile
  
  # The entire set of CFLAGS:
  ALL_CFLAGS=$(CFLAGS) $(FLTK_CFLAGS) $(UNIBREAK_CFLAGS) \
-@@ -212,15 +203,8 @@ install-win32:
+@@ -217,15 +208,8 @@ install-win32:
  # (depending on the *PREFIX variables at the top, you probably need
  # to do this as superuser ("root"))
  
@@ -66,7 +66,7 @@ Index: Makefile
  
  
  # "make clean" deletes the program, the compiled objects and the
-@@ -255,32 +239,23 @@ uninstall:
+@@ -260,32 +244,23 @@ uninstall:
  # and the 24-color 32x32 XPM (for other Window managers):
  
  install-icon:
@@ -111,7 +111,7 @@ Index: Makefile
  
  
  # Install the data (sound, graphics, fonts):
-@@ -296,29 +271,15 @@ install-data:
+@@ -301,29 +276,15 @@ install-data:
  # Install the text documentation:
  
  install-doc:
@@ -145,7 +145,7 @@ Index: Makefile
  
  
  # Build the program!
-@@ -326,14 +287,14 @@ install-man:
+@@ -331,14 +292,14 @@ install-man:
  tuxpaint-config:	obj/tuxpaint-config.o obj/tuxpaint-config2.o	\
  			obj/defaults.o $(ARCH_LIBS)
  	@echo Linking
@@ -162,7 +162,7 @@ Index: Makefile
  	@echo Compiling tuxpaint-config.cxx
  	$(CXX) $(ALL_CFLAGS) -c src/tuxpaint-config.cxx -o obj/tuxpaint-config.o
  
-@@ -341,7 +302,7 @@ obj/tuxpaint-config2.o:	src/tuxpaint-config2.cxx src/t
+@@ -346,7 +307,7 @@ obj/tuxpaint-config2.o:	src/tuxpaint-config2.cxx src/t
  	@echo Compiling tuxpaint-config2.cxx
  	$(CXX) $(ALL_CFLAGS) $(PANGO_CFLAGS) -c src/tuxpaint-config2.cxx -o obj/tuxpaint-config2.o
  

@@ -1,6 +1,6 @@
 COMMENT=	graphical tool to change Tux Paint settings
 
-DISTNAME=	tuxpaint-config-0.0.23
+DISTNAME=	tuxpaint-config-0.0.24
 
 CATEGORIES=	games graphics
 
