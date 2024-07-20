@@ -1,4 +1,4 @@
-V=		6.0.3.1
+V=		6.1.0.243
 
 # jdk 11 preferred, but should still run with 1.8 for now (unsure about
 # support for newer versions at this point). tomcat v10 is a big change
