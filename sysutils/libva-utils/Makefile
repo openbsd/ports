@@ -1,7 +1,3 @@
-UNLINKED = libva
-
-ONLY_FOR_ARCHS =	amd64
-
 COMMENT =	collection of tests for VA-API
 
 GH_ACCOUNT =	intel
