@@ -332,6 +332,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/parallel/
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/parallel/async_executor.rs
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/parallel/job_token.rs
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/parallel/mod.rs
+share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/parallel/once_lock.rs
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/parallel/stderr.rs
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/target_info.rs
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/tempfile.rs
