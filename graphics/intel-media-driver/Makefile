@@ -1,6 +1,4 @@
-UNLINKED = libva
-
-ONLY_FOR_ARCHS =	amd64
+ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =	VAAPI driver for Intel HD 5000 (Gen8) or newer
 

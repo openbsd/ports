@@ -1,6 +1,4 @@
-UNLINKED = libva
-
-ONLY_FOR_ARCHS =	amd64
+ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =	VAAPI legacy driver for Intel GMA 4500 to UHD 630
 
