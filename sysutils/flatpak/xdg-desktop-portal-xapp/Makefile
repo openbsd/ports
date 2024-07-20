@@ -2,7 +2,7 @@ PORTROACH=		skipv:master.lmde6,master.mint22
 
 COMMENT=		MATE/Xfce4 backend implementation for xdg-desktop-portal
 
-DIST_TUPLE=		github linuxmint xdg-desktop-portal-xapp 1.0.7 .
+DIST_TUPLE=		github linuxmint xdg-desktop-portal-xapp 1.0.8 .
 
 CATEGORIES=		x11
 
