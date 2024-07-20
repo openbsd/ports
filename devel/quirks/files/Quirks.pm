@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1648 2024/07/16 20:25:49 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1649 2024/07/20 08:57:11 fcambus Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1971,6 +1971,8 @@ setup_obsolete_reason(
 	3 => 'libgnome-keyring',
 	1 => 'fnaify',
 	68 => 'adsuck',
+	6 => 'p5-Net-ICQ2000',
+	6 => 'vicq',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
