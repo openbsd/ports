@@ -1,10 +1,9 @@
 COMMENT=	HTTP server for pytest
 
-MODPY_EGG_VERSION=	1.0.8
+MODPY_EGG_VERSION=	1.0.11
 DISTNAME=	pytest_httpserver-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:S/pytest_/py-test-/}
 CATEGORIES=	devel
-REVISION=	0
 
 # MIT
 PERMIT_PACKAGE=	Yes

@@ -11,11 +11,14 @@ lib/python${MODPY_VERSION}/site-packages/pytest_httpserver/${MODPY_PYCACHE}__ini
 lib/python${MODPY_VERSION}/site-packages/pytest_httpserver/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_httpserver/${MODPY_PYCACHE}blocking_httpserver.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pytest_httpserver/${MODPY_PYCACHE}blocking_httpserver.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pytest_httpserver/${MODPY_PYCACHE}hooks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pytest_httpserver/${MODPY_PYCACHE}hooks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_httpserver/${MODPY_PYCACHE}httpserver.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pytest_httpserver/${MODPY_PYCACHE}httpserver.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_httpserver/${MODPY_PYCACHE}pytest_plugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pytest_httpserver/${MODPY_PYCACHE}pytest_plugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_httpserver/blocking_httpserver.py
+lib/python${MODPY_VERSION}/site-packages/pytest_httpserver/hooks.py
 lib/python${MODPY_VERSION}/site-packages/pytest_httpserver/httpserver.py
 lib/python${MODPY_VERSION}/site-packages/pytest_httpserver/py.typed
 lib/python${MODPY_VERSION}/site-packages/pytest_httpserver/pytest_plugin.py
