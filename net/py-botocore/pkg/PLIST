@@ -1405,6 +1405,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/ivschat/2020-07-14/endpoi
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ivschat/2020-07-14/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ivschat/2020-07-14/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ivschat/2020-07-14/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/ivschat/2020-07-14/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kafka/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kafka/2018-11-14/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kafka/2018-11-14/endpoint-rule-set-1.json
