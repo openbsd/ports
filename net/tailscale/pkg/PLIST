@@ -35,3 +35,4 @@
 @comment bin/tsconnect
 @bin bin/tsidp
 @comment bin/viewer
+@comment bin/xdpderper
