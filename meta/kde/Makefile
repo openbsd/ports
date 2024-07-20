@@ -12,6 +12,10 @@ COMMENT-pim =		KDE PIM personal information managemen applications
 COMMENT-development =	KDE development applications
 COMMENT-utils =		KDE utilities
 
+REVISION-games =	0
+REVISION-network =	0
+REVISION-main =	0
+
 COMMENT-plasma =	KDE Plasma desktop meta-package (base installation)
 COMMENT-plasma-extras =	KDE Plasma desktop meta-package (full installation)
 
@@ -124,7 +128,6 @@ RUN_DEPENDS-games = \
 	x11/kde-applications/bomber \
 	x11/kde-applications/bovo \
 	x11/kde-applications/granatier \
-	x11/kde-applications/kajongg \
 	x11/kde-applications/kapman \
 	x11/kde-applications/katomic \
 	x11/kde-applications/kblackbox \
@@ -160,6 +163,8 @@ RUN_DEPENDS-games = \
 	x11/kde-applications/lskat \
 	x11/kde-applications/palapeli \
 	x11/kde-applications/picmi
+
+# XXX x11/kde-applications/kajongg
 
 
 WANTLIB-development =
@@ -201,8 +206,9 @@ RUN_DEPENDS-network = \
 	x11/kde-applications/kio-extras \
 	x11/kde-applications/kmailtransport \
 	x11/kde-applications/krdc \
-	x11/kde-applications/krfb \
 	x11/kde-applications/tokodon
+
+# XXX x11/kde-applications/krfb
 
 # Not yet ported
 #x11/kde-applications/kopete
@@ -353,7 +359,6 @@ RUN_DEPENDS-main = \
 	${BUILD_PKGPATH},-games=${MODKDE_VERSION} \
 	${BUILD_PKGPATH},-graphics=${MODKDE_VERSION} \
 	${BUILD_PKGPATH},-multimedia=${MODKDE_VERSION} \
-	${BUILD_PKGPATH},-network=${MODKDE_VERSION} \
 	${BUILD_PKGPATH},-network=${MODKDE_VERSION} \
 	${BUILD_PKGPATH},-pim=${MODKDE_VERSION} \
 	${BUILD_PKGPATH},-utils=${MODKDE_VERSION}
