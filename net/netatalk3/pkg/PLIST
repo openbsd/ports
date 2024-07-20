@@ -2,7 +2,6 @@
 @conflict jday-*
 @rcscript ${RCDIR}/netatalk
 @bin bin/ad
-@bin bin/afpldaptest
 @mode 4755
 @owner root
 @bin bin/afppasswd
@@ -20,7 +19,6 @@ include/atalk/adouble.h
 include/atalk/afp.h
 include/atalk/bstrlib.h
 include/atalk/cnid.h
-include/atalk/compat.h
 include/atalk/dictionary.h
 include/atalk/ea.h
 include/atalk/globals.h
@@ -38,7 +36,6 @@ include/atalk/util.h
 include/atalk/vfs.h
 include/atalk/volume.h
 @static-lib lib/libatalk.a
-lib/libatalk.la
 @lib lib/libatalk.so.${LIBatalk_VERSION}
 lib/netatalk/
 @so lib/netatalk/uams_clrtxt.so
@@ -70,7 +67,6 @@ lib/netatalk/
 @bin sbin/cnid_dbd
 @bin sbin/cnid_metad
 @bin sbin/netatalk
-share/aclocal/netatalk.m4
 share/examples/netatalk/
 share/examples/netatalk/dbus-1/
 share/examples/netatalk/dbus-1/system.d/
