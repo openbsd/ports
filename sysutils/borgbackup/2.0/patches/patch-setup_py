@@ -1,7 +1,7 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -128,8 +128,8 @@ if not on_rtd:
+@@ -139,8 +139,8 @@ if not on_rtd:
          # Use openssl (not libressl) because we need AES-OCB via EVP api. Link
          # it statically to avoid conflicting with shared libcrypto from the base
          # OS pulled in via dependencies.
