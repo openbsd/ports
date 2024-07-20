@@ -3319,6 +3319,7 @@ share/qgis/python/qgis/processing/__init__.py
 share/qgis/python/qgis/processing/algfactory.py
 share/qgis/python/qgis/server/
 share/qgis/python/qgis/server/__init__.py
+share/qgis/python/qgis/sipify.yaml
 share/qgis/python/qgis/testing/
 share/qgis/python/qgis/testing/__init__.py
 share/qgis/python/qgis/testing/mocked.py
