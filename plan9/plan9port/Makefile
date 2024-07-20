@@ -1,4 +1,5 @@
 ONLY_FOR_ARCHS =	aarch64 amd64 i386 powerpc powerpc64
+BROKEN-aarch64 =	random build failures
 
 COMMENT =		Plan 9 from user space
 
