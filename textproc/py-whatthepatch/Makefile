@@ -1,11 +1,12 @@
 COMMENT =		high-performance diff and patch library
 
-MODPY_EGG_VERSION =	1.0.5
+MODPY_EGG_VERSION =	1.0.6
 DISTNAME =		whatthepatch-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		textproc
+
+MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
