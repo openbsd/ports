@@ -11,8 +11,7 @@ MOZILLA_CODENAME =	browser
 EXTRACT_SUFX =		.tar.xz
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION:S/a/alpha/}
-DISTNAME =		src-firefox-tor-browser-115.12.0esr-13.5-1-build3
-REVISION =		1
+DISTNAME =		src-firefox-tor-browser-115.13.0esr-13.5-1-build2
 
 FIX_EXTRACT_PERMISSIONS	= Yes
 DISTFILES +=		${DISTNAME}.tar.xz \
