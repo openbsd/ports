@@ -1,5 +1,5 @@
 MODGO_MODULES =	\
-	github.com/charlievieth/fastwalk	 v1.0.7-0.20240703190418-87029d931815 \
+	github.com/charlievieth/fastwalk	 v1.0.8 \
 	github.com/gdamore/encoding		 v1.0.0 \
 	github.com/gdamore/tcell/v2		 v2.7.4 \
 	github.com/lucasb-eyer/go-colorful	 v1.2.0 \
