@@ -3,7 +3,7 @@ cope with openbsd ancient nameser.h
 Index: res/res_rtp_asterisk.c
 --- res/res_rtp_asterisk.c.orig
 +++ res/res_rtp_asterisk.c
-@@ -9540,7 +9540,7 @@ static int store_stunaddr_resolved(const struct ast_dn
+@@ -9568,7 +9568,7 @@ static int store_stunaddr_resolved(const struct ast_dn
  		const unsigned char *data = (unsigned char *)ast_dns_record_get_data(record);
  		const int rr_type = ast_dns_record_get_rr_type(record);
  
