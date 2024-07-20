@@ -1,10 +1,9 @@
 COMMENT =		version numbering for anarchists and software realists
 
-MODPY_EGG_VERSION =	1.1.2
+MODPY_EGG_VERSION =	1.3.0
 
 DISTNAME =		looseversion-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 
@@ -20,5 +19,6 @@ FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		hatchling
+MODPY_PYTEST_ARGS =	tests.py
 
 .include <bsd.port.mk>
