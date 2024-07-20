@@ -3,6 +3,7 @@ COMMENT =		IPython kernel for Jupyter
 MODPY_EGG_VERSION =	6.29.5
 DISTNAME =		ipykernel-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 PORTROACH=		limit:^6
 
@@ -41,7 +42,7 @@ RUN_DEPENDS =		devel/py-comm${MODPY_FLAVOR}>=0.1.1 \
 			www/py-tornado${MODPY_FLAVOR}>=6.1
 
 # needs ipyparallel
-TEST_DEPENDS =		devel/pre-commit${MODPY_FLAVOR} \
+TEST_DEPENDS =		devel/pre-commit \
 			devel/py-flaky${MODPY_FLAVOR} \
 			devel/py-test-asyncio${MODPY_FLAVOR} \
 			devel/py-test-cov${MODPY_FLAVOR} \

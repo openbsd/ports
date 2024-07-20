@@ -3,7 +3,7 @@ COMMENT =		Jupyter core package
 MODPY_EGG_VERSION =	5.7.2
 DISTNAME =		jupyter_core-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -25,7 +25,7 @@ MODPY_PYBUILD =		hatchling
 RUN_DEPENDS =		devel/py-traitlets${MODPY_FLAVOR} \
 			sysutils/py-platformdirs${MODPY_FLAVOR}
 
-TEST_DEPENDS =		devel/pre-commit${MODPY_FLAVOR} \
+TEST_DEPENDS =		devel/pre-commit \
 			devel/py-ipykernel${MODPY_FLAVOR} \
 			devel/py-test-cov${MODPY_FLAVOR} \
 			devel/py-test-timeout${MODPY_FLAVOR}

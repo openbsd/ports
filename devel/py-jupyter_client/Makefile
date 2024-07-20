@@ -3,6 +3,7 @@ COMMENT =		Jupyter protocol implementation and client libraries
 MODPY_EGG_VERSION =	8.6.2
 DISTNAME =		jupyter_client-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -29,7 +30,7 @@ RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR}>=2.8.2 \
 			www/py-tornado${MODPY_FLAVOR}>=6.2
 
 TEST_DEPENDS =		devel/ipython${MODPY_FLAVOR} \
-			devel/pre-commit${MODPY_FLAVOR} \
+			devel/pre-commit \
 			devel/py-coverage${MODPY_FLAVOR} \
 			devel/py-ipykernel${MODPY_FLAVOR}>=6.14 \
 			devel/py-mypy${MODPY_FLAVOR} \

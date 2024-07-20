@@ -1,7 +1,7 @@
 COMMENT =	web outside of browsers
 
 MODPY_EGG_VERSION =	3.6
-REVISION =	1
+REVISION =	2
 DISTNAME =	woob-${MODPY_EGG_VERSION}
 
 CATEGORIES =	www
@@ -59,7 +59,7 @@ TEST_DEPENDS +=	devel/py-asttokens${MODPY_FLAVOR} \
 		devel/py-test${MODPY_FLAVOR} \
 		textproc/sphinx \
 		devel/py-virtualenv${MODPY_FLAVOR} \
-		devel/pre-commit${MODPY_FLAVOR}
+		devel/pre-commit
 # missing
 #  xunitparser
 #  commitizen

@@ -1,3 +1,4 @@
+@pkgpath devel/pre-commit,python3
 bin/pre-commit
 lib/python${MODPY_VERSION}/site-packages/pre_commit/
 lib/python${MODPY_VERSION}/site-packages/pre_commit-${MODPY_EGG_VERSION}.dist-info/

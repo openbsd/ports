@@ -3,6 +3,7 @@ COMMENT =		backend for Jupyter web applications
 MODPY_EGG_VERSION =	2.14.2
 DISTNAME =		jupyter_server-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -42,7 +43,7 @@ RUN_DEPENDS =		devel/py-jupyter_client${MODPY_FLAVOR}>=7.4.4 \
 			www/py-terminado${MODPY_FLAVOR}>=0.8.3 \
 			www/py-tornado${MODPY_FLAVOR}>=6.2.0
 
-TEST_DEPENDS =		devel/pre-commit${MODPY_FLAVOR} \
+TEST_DEPENDS =		devel/pre-commit \
 			devel/py-coverage${MODPY_FLAVOR} \
 			devel/py-flaky${MODPY_FLAVOR} \
 			devel/py-ipykernel${MODPY_FLAVOR} \
