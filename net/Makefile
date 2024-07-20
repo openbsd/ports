@@ -411,7 +411,6 @@
      SUBDIR += p5-Net-Frame-Layer-IPv6
      SUBDIR += p5-Net-Google
      SUBDIR += p5-Net-HTTP
-     SUBDIR += p5-Net-ICQ2000
      SUBDIR += p5-Net-ICal
      SUBDIR += p5-Net-IMP
      SUBDIR += p5-Net-IMP-HTTP
@@ -756,7 +755,6 @@
      SUBDIR += validns
      SUBDIR += vf1
      SUBDIR += vger
-     SUBDIR += vicq
      SUBDIR += vncsnapshot
      SUBDIR += vnstat
      SUBDIR += vpnc-scripts

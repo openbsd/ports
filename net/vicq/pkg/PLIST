@@ -1,6 +1,0 @@
-bin/vicq
-${P5SITE}/Net/
-${P5SITE}/Net/install.pl
-${P5SITE}/Net/vICQ.pm
-share/examples/vicq/
-share/examples/vicq/vicqrc.example
