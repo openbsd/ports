@@ -1,6 +1,6 @@
 COMMENT =	test fallback behaviour in absence of modules
 
-DISTNAME =	Test-Without-Module-0.21
+DISTNAME =	Test-Without-Module-0.23
 
 CATEGORIES =	devel
 
