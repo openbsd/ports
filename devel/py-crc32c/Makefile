@@ -1,10 +1,9 @@
 COMMENT=	implemention of the crc32c algorithm in hardware
 
-MODPY_EGG_VERSION=	2.4
+MODPY_EGG_VERSION =	2.4.1
 
 DISTNAME=	crc32c-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	devel
 
