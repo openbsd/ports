@@ -1,6 +1,6 @@
 COMMENT =		CLI program to mass download images from various websites
 
-MODPY_EGG_VERSION =	1.26.7
+MODPY_EGG_VERSION =	1.27.1
 DISTNAME =		gallery_dl-${MODPY_EGG_VERSION}
 PKGNAME = 		${DISTNAME:S/_/-/}
 CATEGORIES =		www
