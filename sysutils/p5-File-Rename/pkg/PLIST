@@ -7,6 +7,6 @@ ${P5SITE}/File/Rename/Options.pm
 ${P5SITE}/File/Rename/Unicode.pm
 @man man/man1/prename.1
 @man man/man1/unsafe-rename.1
-@man man/man3p/File::Rename.3p
-@man man/man3p/File::Rename::Options.3p
-@man man/man3p/File::Rename::Unicode.3p
+@man man/man3p/File::File::Rename.3p
+@man man/man3p/File::File::Rename::Options.3p
+@man man/man3p/File::File::Rename::Unicode.3p
