@@ -1,6 +1,6 @@
 COMMENT =	provide non blocking randomness
 
-DISTNAME =	Crypt-URandom-0.39
+DISTNAME =	Crypt-URandom-0.40
 
 CATEGORIES =	security
 
