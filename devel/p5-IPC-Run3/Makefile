@@ -2,9 +2,8 @@ COMMENT=	run a subprocess in batch mode
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	IPC-Run3-0.048
+DISTNAME =	IPC-Run3-0.049
 CATEGORIES=	devel
-REVISION=	0
 
 PERMIT_PACKAGE=	Yes
 
