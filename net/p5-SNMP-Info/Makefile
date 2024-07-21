@@ -3,7 +3,7 @@ COMMENT =	perl5 interface to network devices and MIBs through SNMP
 MODULES =	cpan
 PKG_ARCH =	*
 
-DISTNAME =	SNMP-Info-3.95
+DISTNAME =	SNMP-Info-3.97
 CATEGORIES =	net
 
 # BSD
