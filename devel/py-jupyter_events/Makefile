@@ -28,7 +28,7 @@ RUN_DEPENDS =		devel/py-jsonschema${MODPY_FLAVOR}>=4.18.0 \
 			textproc/py-yaml${MODPY_FLAVOR}>=5.3
 
 TEST_DEPENDS =		${FULLPKGNAME}:${FULLPKGPATH} \
-			devel/pre-commit${MODPY_FLAVOR} \
+			devel/pre-commit \
 			devel/py-click${MODPY_FLAVOR} \
 			devel/py-test-asyncio${MODPY_FLAVOR} \
 			devel/py-test-console-scripts${MODPY_FLAVOR}
