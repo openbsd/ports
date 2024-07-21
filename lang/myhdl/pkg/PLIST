@@ -113,8 +113,6 @@ lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/${MODPY_PYCACHE}_toVHD
 lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/${MODPY_PYCACHE}_toVHDLPackage.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/${MODPY_PYCACHE}_toVerilog.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/${MODPY_PYCACHE}_toVerilog.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/${MODPY_PYCACHE}_toVerilog_ansi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/${MODPY_PYCACHE}_toVerilog_ansi.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/${MODPY_PYCACHE}_verify.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/${MODPY_PYCACHE}_verify.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/_analyze.py
@@ -122,7 +120,6 @@ lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/_misc.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/_toVHDL.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/_toVHDLPackage.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/_toVerilog.py
-lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/_toVerilog_ansi.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/conversion/_verify.py
 lib/python${MODPY_VERSION}/site-packages/myhdl/debug.py
 share/examples/myhdl/
