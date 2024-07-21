@@ -1,6 +1,6 @@
 COMMENT =	fail if tests warn
 
-DISTNAME =	Test2-Plugin-NoWarnings-0.09
+DISTNAME =	Test2-Plugin-NoWarnings-0.10
 CPAN_AUTHOR =	DROLSKY
 
 CATEGORIES =	devel
