@@ -1,6 +1,6 @@
 COMMENT=	read images/metadiff and store numpy arrays in TIFF files
 
-MODPY_EGG_VERSION=	2024.6.18
+MODPY_EGG_VERSION=	2024.7.21
 
 DISTNAME=	tifffile-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
