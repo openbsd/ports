@@ -1,8 +1,7 @@
 COMMENT=		measure readability of English text
 
-DISTNAME =		Lingua-EN-Fathom-1.22
+DISTNAME =		Lingua-EN-Fathom-1.27
 CATEGORIES=		textproc
-REVISION =		0
 
 MODULES=		cpan
 PKG_ARCH=		*
