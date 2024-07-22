@@ -90,6 +90,8 @@ lib/python${MODPY_VERSION}/site-packages/lark/parsers/${MODPY_PYCACHE}lalr_inter
 lib/python${MODPY_VERSION}/site-packages/lark/parsers/${MODPY_PYCACHE}lalr_interactive_parser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lark/parsers/${MODPY_PYCACHE}lalr_parser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/lark/parsers/${MODPY_PYCACHE}lalr_parser.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/lark/parsers/${MODPY_PYCACHE}lalr_parser_state.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/lark/parsers/${MODPY_PYCACHE}lalr_parser_state.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lark/parsers/${MODPY_PYCACHE}xearley.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/lark/parsers/${MODPY_PYCACHE}xearley.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lark/parsers/cyk.py
@@ -100,6 +102,7 @@ lib/python${MODPY_VERSION}/site-packages/lark/parsers/grammar_analysis.py
 lib/python${MODPY_VERSION}/site-packages/lark/parsers/lalr_analysis.py
 lib/python${MODPY_VERSION}/site-packages/lark/parsers/lalr_interactive_parser.py
 lib/python${MODPY_VERSION}/site-packages/lark/parsers/lalr_parser.py
+lib/python${MODPY_VERSION}/site-packages/lark/parsers/lalr_parser_state.py
 lib/python${MODPY_VERSION}/site-packages/lark/parsers/xearley.py
 lib/python${MODPY_VERSION}/site-packages/lark/py.typed
 lib/python${MODPY_VERSION}/site-packages/lark/reconstruct.py
