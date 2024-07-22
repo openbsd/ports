@@ -1,8 +1,8 @@
 Index: lib/Makefile
 --- lib/Makefile.orig
 +++ lib/Makefile
-@@ -195,8 +195,6 @@ install: lib liblz4.pc
- 	$(INSTALL_PROGRAM) dll/$(LIBLZ4_EXP) $(DESTDIR)$(libdir)
+@@ -212,8 +212,6 @@ install: lib liblz4.pc
+ 	$(INSTALL_PROGRAM) $(LIBLZ4_EXP) $(DESTDIR)$(libdir)
      else
  	$(INSTALL_PROGRAM) liblz4.$(SHARED_EXT_VER) $(DESTDIR)$(libdir)
 -	$(LN_SF) liblz4.$(SHARED_EXT_VER) $(DESTDIR)$(libdir)/liblz4.$(SHARED_EXT_MAJOR)

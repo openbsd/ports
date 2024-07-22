@@ -2,9 +2,9 @@ COMMENT=	fast BSD-licensed data compression
 
 GH_ACCOUNT=	lz4
 GH_PROJECT=	lz4
-GH_TAGNAME=	v1.9.4
+GH_TAGNAME=	v1.10.0
 
-SHARED_LIBS=	lz4                       3.2
+SHARED_LIBS=	lz4                       3.3
 
 CATEGORIES=	archivers
 
@@ -15,7 +15,7 @@ MAINTAINER=	Bjorn Ketelaars <bket@openbsd.org>
 # library: BSD, tools: GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c
+WANTLIB=	c pthread
 
 MAKE_FLAGS=	CC="${CC}" \
 		CFLAGS="${CFLAGS} -DLZ4_FORCE_MEMORY_ACCESS=1" \
