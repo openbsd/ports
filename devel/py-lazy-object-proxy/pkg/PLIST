@@ -22,12 +22,10 @@ lib/python${MODPY_VERSION}/site-packages/lazy_object_proxy/${MODPY_PYCACHE}slots
 lib/python${MODPY_VERSION}/site-packages/lazy_object_proxy/${MODPY_PYCACHE}slots.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lazy_object_proxy/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/lazy_object_proxy/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/lazy_object_proxy/${MODPY_PYCACHE}utils_py3.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/lazy_object_proxy/${MODPY_PYCACHE}utils_py3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/lazy_object_proxy/_version.py
+lib/python${MODPY_VERSION}/site-packages/lazy_object_proxy/cext.c
 @so lib/python${MODPY_VERSION}/site-packages/lazy_object_proxy/cext.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/lazy_object_proxy/compat.py
 lib/python${MODPY_VERSION}/site-packages/lazy_object_proxy/simple.py
 lib/python${MODPY_VERSION}/site-packages/lazy_object_proxy/slots.py
 lib/python${MODPY_VERSION}/site-packages/lazy_object_proxy/utils.py
-lib/python${MODPY_VERSION}/site-packages/lazy_object_proxy/utils_py3.py
