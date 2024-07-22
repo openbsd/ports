@@ -1,25 +1,24 @@
-COMMENT =	small personal collection of python utility functions
+COMMENT=	small personal collection of python utility functions
 
-MODPY_EGG_VERSION =	0.2.2
+MODPY_EGG_VERSION=	0.2.4
 
-DISTNAME =	littleutils-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME}
-REVISION =	2
+DISTNAME=	littleutils-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =	devel
+CATEGORIES=	devel
 
-HOMEPAGE =	https://github.com/alexmojaki/littleutils
+HOMEPAGE=	https://github.com/alexmojaki/littleutils
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
-NO_TEST =		Yes
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
+NO_TEST=	Yes
 
-FLAVORS =		python3
-FLAVOR =		python3
+FLAVORS=	python3
+FLAVOR=		python3
 
 .include <bsd.port.mk>
