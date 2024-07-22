@@ -10,6 +10,8 @@ lib/python${MODPY_VERSION}/site-packages/pytest_doctestplus/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pytest_doctestplus/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pytest_doctestplus/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pytest_doctestplus/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pytest_doctestplus/${MODPY_PYCACHE}newhooks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pytest_doctestplus/${MODPY_PYCACHE}newhooks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_doctestplus/${MODPY_PYCACHE}output_checker.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pytest_doctestplus/${MODPY_PYCACHE}output_checker.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_doctestplus/${MODPY_PYCACHE}plugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -18,6 +20,7 @@ lib/python${MODPY_VERSION}/site-packages/pytest_doctestplus/${MODPY_PYCACHE}util
 lib/python${MODPY_VERSION}/site-packages/pytest_doctestplus/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_doctestplus/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pytest_doctestplus/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pytest_doctestplus/newhooks.py
 lib/python${MODPY_VERSION}/site-packages/pytest_doctestplus/output_checker.py
 lib/python${MODPY_VERSION}/site-packages/pytest_doctestplus/plugin.py
 lib/python${MODPY_VERSION}/site-packages/pytest_doctestplus/sphinx/

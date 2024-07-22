@@ -1,10 +1,9 @@
 COMMENT=	pytest plugin with advanced doctest features
 
-MODPY_EGG_VERSION=	0.12.1
+MODPY_EGG_VERSION=	1.2.1
 
 DISTNAME=	pytest-doctestplus-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:S/py/py-/}
-REVISION=	1
 
 CATEGORIES=	devel
 
@@ -13,7 +12,7 @@ HOMEPAGE=	https://github.com/astropy/pytest-doctestplus
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MODULES=		lang/python
+MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
