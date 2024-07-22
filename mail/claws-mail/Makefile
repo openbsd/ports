@@ -3,7 +3,7 @@ COMMENT-bogofilter=	bogofilter plugin
 COMMENT-spamassassin=	spamassassin plugin
 COMMENT-pdfviewer=	pdfviewer plugin
 
-V=			4.2.0
+V=			4.3.0
 DISTNAME=		claws-mail-${V}
 
 CATEGORIES=		mail news
@@ -15,10 +15,10 @@ PERMIT_PACKAGE=	Yes
 
 SITES=			https://www.claws-mail.org/releases/
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =		base-clang ports-gcc
 
 MULTI_PACKAGES=		-main -bogofilter -spamassassin -pdfviewer
-FLAVORS=		jpilot ldap
+FLAVORS=		ldap
 FLAVOR?=
 
 FLAVOR_STRING=		${FLAVOR_EXT:S/-/,/g}
@@ -31,23 +31,24 @@ RUN_DEPENDS-spamassassin=${BUILD_PKGPATH} \
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
-WANTLIB += atk-bridge-2.0 atspi cairo cairo-gobject dbus-1 epoll-shim
-WANTLIB += epoxy execinfo expat ffi fontconfig freetype fribidi
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gtk-3 harfbuzz iconv intl jpeg m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png wayland-client
-WANTLIB += wayland-cursor wayland-egl xcb xcb-render xcb-shm xkbcommon z
+WANTLIB += atk-bridge-2.0 atspi cairo cairo-gobject
+WANTLIB += dbus-1 epoll-shim epoxy execinfo expat ffi fontconfig freetype
+WANTLIB += fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 graphite2 gtk-3 harfbuzz iconv intl jpeg m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png
+WANTLIB += wayland-client wayland-cursor wayland-egl xcb xcb-render xcb-shm
+WANTLIB += xkbcommon z
 
 WANTLIB-bogofilter = ${WANTLIB}
 
 WANTLIB-main = ${WANTLIB}
-WANTLIB-main += ICE SM X11-xcb archive aspell assuan b2 brotlidec brotlienc
+WANTLIB-main += ICE SM X11-xcb archive aspell assuan b2
 WANTLIB-main += bz2 c canberra canberra-gtk3 crypto curl db db_cxx
 WANTLIB-main += dbus-glib-1 enchant-2 etpan gmp gnutls gpg-error gpgme
 WANTLIB-main += gthread-2.0 gumbo hogweed ical icalss icalvcal icudata
 WANTLIB-main += icui18n icuuc idn2 ltdl lz4 lzma nettle nghttp2 nghttp3
-WANTLIB-main += ngtcp2 ngtcp2_crypto_quictls notify ogg p11-kit perl
-WANTLIB-main += rsvg-2 sasl2 ssl startup-notification-1 tasn1 unistring
+WANTLIB-main += ngtcp2 ngtcp2_crypto_quictls notify ogg p11-kit perl rsvg-2
+WANTLIB-main += sasl2 ssl startup-notification-1 tasn1 unistring
 WANTLIB-main += vorbis vorbisfile xcb-util xml2 zstd
 
 WANTLIB-pdfviewer = ${WANTLIB}
@@ -77,9 +78,11 @@ LIB_DEPENDS-main=	${LIB_DEPENDS} \
 			security/libnettle \
 			textproc/enchant2 \
 			textproc/libical \
+			textproc/libxml \
 			www/gumbo \
 			x11/dbus-glib \
-			x11/gnome/at-spi2-core
+			x11/gnome/at-spi2-core \
+			x11/gnome/librsvg
 
 LIB_DEPENDS-pdfviewer=	${LIB_DEPENDS} \
 			print/poppler
@@ -87,6 +90,7 @@ LIB_DEPENDS-pdfviewer=	${LIB_DEPENDS} \
 CONFIGURE_ARGS+=	--disable-acpi_notifier-plugin \
 			--disable-compface \
 			--disable-fancy-plugin \
+			--disable-jpilot \
 			--disable-python-plugin \
 			--disable-tnef_parse-plugin \
 			--disable-bsfilter-plugin \
@@ -97,16 +101,8 @@ LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_STYLE=	autoconf
 
 AUTOCONF_VERSION=	2.71
-CONFIGURE_ENV+=		CPPFLAGS="-I${X11BASE}/include" \
-			LDFLAGS="-L${X11BASE}/lib"
-
-.if ${FLAVOR:Mjpilot}
-LIB_DEPENDS-main+=	comms/pilot-link
-WANTLIB-main +=		pisock
-RUN_DEPENDS-main+=	comms/jpilot
-.else
-CONFIGURE_ARGS+=	--disable-jpilot
-.endif
+CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 .if ${FLAVOR:Mldap}
 WANTLIB-main+=		lber ldap
@@ -153,13 +149,17 @@ pre-build:
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/48x48/apps
-	${INSTALL_DATA} ${WRKSRC}/claws-mail.png ${PREFIX}/share/icons/hicolor/48x48/apps/claws-mail.png
+	${INSTALL_DATA} ${WRKSRC}/claws-mail.png \
+		${PREFIX}/share/icons/hicolor/48x48/apps/claws-mail.png
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/64x64/apps
-	${INSTALL_DATA} ${WRKSRC}/claws-mail-64x64.png ${PREFIX}/share/icons/hicolor/64x64/apps/claws-mail.png
+	${INSTALL_DATA} ${WRKSRC}/claws-mail-64x64.png \
+		${PREFIX}/share/icons/hicolor/64x64/apps/claws-mail.png
 	${INSTALL_DATA_DIR} ${PREFIX}/share/icons/hicolor/128x128/apps
-	${INSTALL_DATA} ${WRKSRC}/claws-mail-128x128.png ${PREFIX}/share/icons/hicolor/128x128/apps/claws-mail.png
+	${INSTALL_DATA} ${WRKSRC}/claws-mail-128x128.png \
+		${PREFIX}/share/icons/hicolor/128x128/apps/claws-mail.png
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
-	${INSTALL_DATA} ${WRKSRC}/claws-mail.desktop ${PREFIX}/share/applications/claws-mail.desktop
+	${INSTALL_DATA} ${WRKSRC}/claws-mail.desktop \
+		${PREFIX}/share/applications/claws-mail.desktop
 	${INSTALL_DATA_DIR} ${PREFIX}/share/claws-mail/tools/kdeservicemenu
 .for i in ${TOOLS}
 	${INSTALL_DATA} ${WRKSRC}/tools/${i} \
