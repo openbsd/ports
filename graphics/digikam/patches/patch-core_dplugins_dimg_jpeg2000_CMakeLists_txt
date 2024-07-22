@@ -1,0 +1,14 @@
+Index: core/dplugins/dimg/jpeg2000/CMakeLists.txt
+--- core/dplugins/dimg/jpeg2000/CMakeLists.txt.orig
++++ core/dplugins/dimg/jpeg2000/CMakeLists.txt
+@@ -28,3 +28,10 @@ DIGIKAM_ADD_DIMG_PLUGIN(NAME    JPEG2000
+                         SOURCES ${dimgjpeg2000plugin_SRCS}
+                         DEPENDS ${JASPER_LIBRARIES}
+ )
++
++if (CMAKE_CXX_COMPILER_ID STREQUAL "Clang")
++    target_compile_options(DImg_JPEG2000_Plugin PRIVATE
++        -Wno-undef
++        -Wno-pedantic
++    )
++endif()

@@ -8,6 +8,7 @@ V =		8.4.0
 PKGNAME =	digikam-${V}
 DISTNAME =	digiKam-${V}
 CATEGORIES =	graphics
+REVISION =	0
 
 HOMEPAGE =	https://www.digikam.org/
 
