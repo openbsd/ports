@@ -1,6 +1,6 @@
 COMMENT=	Template Toolkit views for Catalyst
 
-DISTNAME=	Catalyst-View-TT-0.45
+DISTNAME =	Catalyst-View-TT-0.46
 CATEGORIES=	textproc
 
 # Perl
