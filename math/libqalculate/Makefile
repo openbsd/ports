@@ -28,8 +28,7 @@ LIB_DEPENDS =	devel/gettext,-runtime \
 		textproc/libxml
 
 CONFIGURE_STYLE =	autoconf
-# should be 2.72
-AUTOCONF_VERSION =	2.71
+AUTOCONF_VERSION =	2.72
 USE_GMAKE =		Yes
 
 CONFIGURE_ARGS =	--with-readline=ereadline
