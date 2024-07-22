@@ -7,6 +7,7 @@ share/rust-openssl-tests/.gitignore
 share/rust-openssl-tests/Cargo.toml
 share/rust-openssl-tests/README.md
 share/rust-openssl-tests/THIRD_PARTY
+share/rust-openssl-tests/clippy.toml
 share/rust-openssl-tests/modcargo-crates/
 share/rust-openssl-tests/modcargo-crates/${VER_aho-corasick}/
 share/rust-openssl-tests/modcargo-crates/${VER_aho-corasick}/.cargo-checksum.json
