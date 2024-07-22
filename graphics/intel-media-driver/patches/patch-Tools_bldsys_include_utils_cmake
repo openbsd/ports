@@ -1,0 +1,24 @@
+Don't use "-Wl,--no-undefined" when linking";
+OpenBSD does not link libc into shared-libraries by default to avoid binding
+libraries to specific libc majors, so those options have always suffered
+false positives.
+
+Index: Tools/bldsys/include/utils.cmake
+--- Tools/bldsys/include/utils.cmake.orig
++++ Tools/bldsys/include/utils.cmake
+@@ -76,7 +76,6 @@ macro(bs_ufo_link_libraries TARGET_NAME INTERNAL_LIBS 
+     target_link_libraries(
+         ${TARGET_NAME}
+         -Wl,-Bsymbolic
+-        -Wl,--no-undefined
+     )
+ 
+     foreach(lib ${INTERNAL_LIBS_LIST})
+@@ -105,7 +104,6 @@ macro(bs_ufo_link_libraries_noBsymbolic TARGET_NAME IN
+ 
+     target_link_libraries(
+         ${TARGET_NAME}
+-        -Wl,--no-undefined
+     )
+ 
+     foreach(lib ${INTERNAL_LIBS_LIST})

@@ -6,6 +6,7 @@ VERSION =	24.1.5
 GH_ACCOUNT =	intel
 GH_PROJECT =	media-driver
 GH_TAGNAME =	intel-media-${VERSION}
+REVISION =	0
 
 DISTNAME =	intel-media-driver-${VERSION}
 
@@ -14,7 +15,7 @@ CATEGORIES =	graphics multimedia
 # MIT & BSD-3-Clause
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c drm execinfo igdgmm m
+WANTLIB += ${COMPILER_LIBCXX} drm execinfo igdgmm m
 
 MODULES =	devel/cmake
 
@@ -31,7 +32,7 @@ CONFIGURE_ARGS +=	-DMEDIA_BUILD_FATAL_WARNINGS=OFF \
 CONFIGURE_ARGS +=	-DLIBVA_DRIVERS_PATH="${LOCALBASE}/lib/xorg/modules"
 
 # build dependency on libva
-MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib -lc
+MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 CXXFLAGS =		-I${X11BASE}/include
 
 pre-fake:
