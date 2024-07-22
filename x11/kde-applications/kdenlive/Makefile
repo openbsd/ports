@@ -4,6 +4,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	non-linear video editor for KDE
 DISTNAME =	kdenlive-${VERSION}
 CATEGORIES =	multimedia
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLU KF6Archive KF6Attica KF6Bookmarks
 WANTLIB += KF6Codecs KF6ColorScheme KF6Completion KF6ConfigCore
@@ -27,6 +28,7 @@ MODKDE_DOCS = yes
 MODULES +=	lang/python
 
 RUN_DEPENDS =	devel/kf6/breeze-icons \
+		devel/kf6/qqc2-desktop-style \
 		graphics/ffmpeg \
 		misc/shared-mime-info \
 		multimedia/dvdauthor \
