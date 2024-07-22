@@ -1,6 +1,6 @@
 COMMENT=	pure Python implementation of magic file detection
 
-MODPY_EGG_VERSION=	1.25
+MODPY_EGG_VERSION=	1.26
 
 DISTNAME=	puremagic-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
