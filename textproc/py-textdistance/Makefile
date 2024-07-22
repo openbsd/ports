@@ -1,6 +1,6 @@
 COMMENT=	compute distance between texts
 
-MODPY_EGG_VERSION=	4.6.2
+MODPY_EGG_VERSION=	4.6.3
 DISTNAME=	textdistance-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
