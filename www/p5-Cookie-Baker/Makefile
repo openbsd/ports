@@ -2,9 +2,8 @@ COMMENT =		cookie string generator / parser
 
 MODULES =		cpan
 PKG_ARCH =		*
-DISTNAME =		Cookie-Baker-0.11
+DISTNAME =		Cookie-Baker-0.12
 CATEGORIES =		www
-REVISION =		0
 
 # Perl
 PERMIT_PACKAGE =	Yes
