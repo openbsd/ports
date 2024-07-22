@@ -1,6 +1,6 @@
 COMMENT=	tool for manipulating IPv6 addresses
 
-DIST_TUPLE =	github	pbiering	ipv6calc	4.1.0	.
+DIST_TUPLE =	github	pbiering	ipv6calc	4.2.0	.
 CATEGORIES=	net
 
 HOMEPAGE=	https://www.deepspace6.net/projects/ipv6calc.html
@@ -15,6 +15,7 @@ BUILD_DEPENDS=	shells/bash
 CONFIGURE_STYLE=gnu
 USE_GMAKE=	Yes
 MAKE_FLAGS=	DEFAULT_CFLAGS=
+FAKE_FLAGS=	DESTDIR=${WRKINST}/ datadir=${PREFIX}/share
 
 TEST_TARGET=	test
 TEST_DEPENDS=	shells/bash \
