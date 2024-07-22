@@ -2,9 +2,8 @@ COMMENT=	lightweight, 'relaxed' RSS (and XML-ish) parser
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	XML-RSSLite-0.15
+DISTNAME =	XML-RSSLite-0.17
 CATEGORIES=	textproc
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE=	Yes
