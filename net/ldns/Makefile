@@ -4,13 +4,12 @@ COMMENT-main=	DNS library modelled after Net::DNS
 COMMENT-drill=	DNS debugger
 COMMENT-utils=	LDNS utilities
 
-V=		1.8.3
+V=		1.8.4
 DISTNAME=	ldns-$V
 PKGNAME-main=	libldns-$V
 PKGNAME-drill=	drill-$V
-REVISION=	1
 
-SHARED_LIBS +=	ldns                 8.0      # 7.0
+SHARED_LIBS +=	ldns                 9.0      # 9.0
 
 CATEGORIES=	net
 
@@ -22,8 +21,8 @@ PERMIT_PACKAGE=	Yes
 
 # ssl included as ssl.h has been used.
 WANTLIB-main=	crypto ssl
-WANTLIB-drill=	c crypto ldns>=6.1
-WANTLIB-utils=	c crypto ldns>=6.1 pcap ssl
+WANTLIB-drill=	c crypto ldns
+WANTLIB-utils=	c crypto ldns pcap ssl
 
 LIB_DEPENDS=	${FULLPKGPATH-main}=$V
 LIB_DEPENDS-main=	# empty
