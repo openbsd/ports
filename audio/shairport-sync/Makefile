@@ -1,6 +1,6 @@
 COMMENT =	AirPlay audio player
 
-DIST_TUPLE =	github	mikebrady	shairport-sync	4.3.3	.
+DIST_TUPLE =	github	mikebrady	shairport-sync	4.3.4	.
 CATEGORIES =	audio net
 
 MAINTAINER =	Klemens Nanni <kn@openbsd.org>
