@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 
 MODPY_PI=	Yes
-MODPY_PYBUILD=	setuptools
+MODPY_PYBUILD=	setuptools_scm
 NO_TEST=	Yes
 
 FLAVORS=	python3
