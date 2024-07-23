@@ -52,6 +52,10 @@ CONFIGURE_ENV+=		ac_cv_lib_pam_pam_start=no
 
 MAKE_ENV=		${CONFIGURE_ENV}
 
+CFLAGS+=		${CFLAGS_${MACHINE_ARCH}}
+# enable CRC32 intrinsics, instruction set support is detected at runtime
+CFLAGS_aarch64=		-march=armv8-a+crc
+
 CONFIGURE_ARGS+=	--disable-rpath \
 			--disable-static \
 			--enable-shared \

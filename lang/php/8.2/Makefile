@@ -3,7 +3,7 @@ PHP_PKGSPEC=	>=8.2,<8.3
 
 # keep above 7.5-stable
 REVISION=	0
-REVISION-main=	1
+REVISION-main=	2
 
 DEFAULT_PHP=	Yes
 

@@ -3,6 +3,7 @@ PHP_PKGSPEC=	>=8.3,<8.4
 
 # keep above 7.5-stable
 REVISION=	0
+REVISION-main=	1
 
 # no PORTROACH marker for the highest branch, to allow finding new branches
 PORTROACH=
