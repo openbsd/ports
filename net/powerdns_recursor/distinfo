@@ -35,7 +35,7 @@ SHA256 (cargo/windows_i686_msvc-0.52.5.tar.gz) = 2zwr89E9W2WL5zRjKE6vEoMKyaJqkMc
 SHA256 (cargo/windows_x86_64_gnu-0.52.5.tar.gz) = TkJG92ve/wnrSIdaD9Pir2qtp51AnTMBGIbT4VgVF9k=
 SHA256 (cargo/windows_x86_64_gnullvm-0.52.5.tar.gz) = hSKY5ILNZ8NW3dlXA4bihitWc8hb1fiN+atoArM0xZY=
 SHA256 (cargo/windows_x86_64_msvc-0.52.5.tar.gz) = vsR+W/0b/w7q9ti0hcwQdIkaGXq0Il1QTLehq4iwK/A=
-SHA256 (pdns-recursor-5.1.0.tar.bz2) = JeFhQCL3foHws1mwtyua5HYauWaB8B8wFo+Q+iu74VI=
+SHA256 (pdns-recursor-5.1.1.tar.bz2) = W3q3k6zoIilKPzgJL+cu5kdI/wy7ilKD3Hf0B4BgWuk=
 SIZE (cargo/base64-0.21.7.tar.gz) = 82576
 SIZE (cargo/cc-1.0.98.tar.gz) = 76780
 SIZE (cargo/codespan-reporting-0.11.1.tar.gz) = 48963
@@ -73,4 +73,4 @@ SIZE (cargo/windows_i686_msvc-0.52.5.tar.gz) = 895404
 SIZE (cargo/windows_x86_64_gnu-0.52.5.tar.gz) = 831539
 SIZE (cargo/windows_x86_64_gnullvm-0.52.5.tar.gz) = 433246
 SIZE (cargo/windows_x86_64_msvc-0.52.5.tar.gz) = 827905
-SIZE (pdns-recursor-5.1.0.tar.bz2) = 1704677
+SIZE (pdns-recursor-5.1.1.tar.bz2) = 1709091
