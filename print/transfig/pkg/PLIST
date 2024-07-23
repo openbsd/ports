@@ -1,3 +1,4 @@
+@pkgpath print/transfig,a4
 @bin bin/fig2dev
 bin/fig2ps2tex
 bin/pic2tpic
@@ -8,9 +9,6 @@ bin/pic2tpic
 @man man/man1/transfig.1
 share/fig2dev/
 share/fig2dev/i18n/
-share/fig2dev/i18n/cs_CZ.ps
-share/fig2dev/i18n/hr_HR.ps
-share/fig2dev/i18n/hu_HU.ps
 share/fig2dev/i18n/ja.ps
 share/fig2dev/i18n/ja_JP.EUC.ps
 share/fig2dev/i18n/ja_JP.eucJP.ps
@@ -22,10 +20,3 @@ share/fig2dev/i18n/ko_KR.EUC.ps
 share/fig2dev/i18n/ko_KR.eucKR.ps
 share/fig2dev/i18n/ko_KR.ps
 share/fig2dev/i18n/korean.ps
-share/fig2dev/i18n/pl_PL.ps
-share/fig2dev/i18n/ro_RO.ps
-share/fig2dev/i18n/ru_RU.CP1251.ps
-share/fig2dev/i18n/ru_RU.KOI8-R.ps
-share/fig2dev/i18n/sk_SK.ps
-share/fig2dev/i18n/sl_SI.ps
-share/fig2dev/i18n/uk_UA.KOI8-U.ps
