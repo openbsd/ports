@@ -6,7 +6,7 @@ COMMENT-php=	PHP Mapscript extension
 COMMENT-perl=	Perl Mapscript binding
 COMMENT-python=	Python Mapscript binding
 
-V=		8.2.0
+V=		8.2.1
 DISTNAME=	mapserver-${V}
 PKGNAME-main=	mapserver-${V:S/-//}
 PKGNAME-utils=	mapserver-utils-${V:S/-//}
