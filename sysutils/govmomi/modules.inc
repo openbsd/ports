@@ -15,6 +15,10 @@ MODGO_MODULES =	\
 	github.com/stretchr/testify	 v1.9.0 \
 	github.com/vmware/vmw-guestinfo	 v0.0.0-20170707015358-25eff159a728 \
 	github.com/xlab/treeprint	 v1.2.0 \
+	golang.org/x/mod		 v0.17.0 \
+	golang.org/x/sync		 v0.7.0 \
+	golang.org/x/text		 v0.16.0 \
+	golang.org/x/tools		 v0.21.1-0.20240508182429-e35e4ccd0d2d \
 	gopkg.in/check.v1		 v1.0.0-20180628173108-788fd7840127 \
 	gopkg.in/errgo.v2		 v2.1.0 \
 	gopkg.in/yaml.v3		 v3.0.1

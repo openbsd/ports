@@ -35,6 +35,14 @@ SHA256 (go_modules/github.com/vmware/vmw-guestinfo/@v/v0.0.0-20170707015358-25ef
 SHA256 (go_modules/github.com/vmware/vmw-guestinfo/@v/v0.0.0-20170707015358-25eff159a728.zip) = Kcc7pErDFUYWQHl9br/aLZBsKNviHCBlbG5fofUV8iA=
 SHA256 (go_modules/github.com/xlab/treeprint/@v/v1.2.0.mod) = PX0YnQXhji4F/CZMYLLZKRz2I4bBj+TvI3dIJFwYIWw=
 SHA256 (go_modules/github.com/xlab/treeprint/@v/v1.2.0.zip) = MnC8HiT8LiAw98UhRDlXPBLAenJQY1Nxo9Kw7hSyKg4=
+SHA256 (go_modules/golang.org/x/mod/@v/v0.17.0.mod) = XErAMQolMwdXA5zPOpjnX+/by31ETd0EkjAAOkSUW94=
+SHA256 (go_modules/golang.org/x/mod/@v/v0.17.0.zip) = py/lt5VUqJk9+VEtBeI3kI060LSAAcGrkrf6Uzns9EA=
+SHA256 (go_modules/golang.org/x/sync/@v/v0.7.0.mod) = cA5dsA3SaqGaF9zl/FUkNtYPaMVgbIW4IfJMPWByoVE=
+SHA256 (go_modules/golang.org/x/sync/@v/v0.7.0.zip) = ILAQhSQOZhv/x/WTg/IbkPES1ml4QiDG5ZyAEkMhbSI=
+SHA256 (go_modules/golang.org/x/text/@v/v0.16.0.mod) = ChicdviH/nAsHxkZtDLcIejiMbXDI6N6Cz9yMB6QZsU=
+SHA256 (go_modules/golang.org/x/text/@v/v0.16.0.zip) = m3wFdciUIkvH+F36LvsO+T19VK6WLNlcjekM7LQH3pQ=
+SHA256 (go_modules/golang.org/x/tools/@v/v0.21.1-0.20240508182429-e35e4ccd0d2d.mod) = RSXa1PVyPR5An2o5jBrn/V4sY31DpcrrSYRAd7kcnus=
+SHA256 (go_modules/golang.org/x/tools/@v/v0.21.1-0.20240508182429-e35e4ccd0d2d.zip) = gL7sZroSTW0JesTud+VNsOzUfsyb80dKBMgfTo/S3Uo=
 SHA256 (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.mod) = XDBuDWM81moRtA4uX7vG2kIRDbfXLqPBUkzrRe5Awz8=
 SHA256 (go_modules/gopkg.in/check.v1/@v/v1.0.0-20180628173108-788fd7840127.mod) = XDBuDWM81moRtA4uX7vG2kIRDbfXLqPBUkzrRe5Awz8=
 SHA256 (go_modules/gopkg.in/check.v1/@v/v1.0.0-20180628173108-788fd7840127.zip) = S8U17SqsSKIxr4tgBaC19gadrauaPWWx6fH+kcdNjmE=
@@ -43,7 +51,7 @@ SHA256 (go_modules/gopkg.in/errgo.v2/@v/v2.1.0.zip) = a4lUgZog7FKYKiBv0+uUYp/1PF
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SHA256 (govmomi-v0.38.0.zip) = 6Psk1Ita5ijXHgLO6GLlT/TcZhH0UBPTYsOG5UGIfaI=
+SHA256 (govmomi-v0.39.0.zip) = eltKDxqS6YDDNAH4Uo/IqCsCqd9ptZtmgmYNOiyvQ1k=
 SIZE (go_modules/github.com/a8m/tree/@v/v0.0.0-20210115125333-10a5fd5b637d.mod) = 27
 SIZE (go_modules/github.com/a8m/tree/@v/v0.0.0-20210115125333-10a5fd5b637d.zip) = 18668
 SIZE (go_modules/github.com/creack/pty/@v/v1.1.9.mod) = 39
@@ -81,6 +89,14 @@ SIZE (go_modules/github.com/vmware/vmw-guestinfo/@v/v0.0.0-20170707015358-25eff1
 SIZE (go_modules/github.com/vmware/vmw-guestinfo/@v/v0.0.0-20170707015358-25eff159a728.zip) = 28602
 SIZE (go_modules/github.com/xlab/treeprint/@v/v1.2.0.mod) = 86
 SIZE (go_modules/github.com/xlab/treeprint/@v/v1.2.0.zip) = 11028
+SIZE (go_modules/golang.org/x/mod/@v/v0.17.0.mod) = 84
+SIZE (go_modules/golang.org/x/mod/@v/v0.17.0.zip) = 165172
+SIZE (go_modules/golang.org/x/sync/@v/v0.7.0.mod) = 34
+SIZE (go_modules/golang.org/x/sync/@v/v0.7.0.zip) = 26990
+SIZE (go_modules/golang.org/x/text/@v/v0.16.0.mod) = 220
+SIZE (go_modules/golang.org/x/text/@v/v0.16.0.zip) = 9235305
+SIZE (go_modules/golang.org/x/tools/@v/v0.21.1-0.20240508182429-e35e4ccd0d2d.mod) = 339
+SIZE (go_modules/golang.org/x/tools/@v/v0.21.1-0.20240508182429-e35e4ccd0d2d.zip) = 3236577
 SIZE (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.mod) = 25
 SIZE (go_modules/gopkg.in/check.v1/@v/v1.0.0-20180628173108-788fd7840127.mod) = 25
 SIZE (go_modules/gopkg.in/check.v1/@v/v1.0.0-20180628173108-788fd7840127.zip) = 41465
@@ -89,4 +105,4 @@ SIZE (go_modules/gopkg.in/errgo.v2/@v/v2.1.0.zip) = 15087
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
-SIZE (govmomi-v0.38.0.zip) = 3530300
+SIZE (govmomi-v0.39.0.zip) = 3555131
