@@ -6,6 +6,7 @@
 @man man/man1/gh-alias.1
 @man man/man1/gh-api.1
 @man man/man1/gh-attestation-download.1
+@man man/man1/gh-attestation-trusted-root.1
 @man man/man1/gh-attestation-verify.1
 @man man/man1/gh-attestation.1
 @man man/man1/gh-auth-login.1
@@ -102,6 +103,7 @@
 @man man/man1/gh-pr-review.1
 @man man/man1/gh-pr-status.1
 @man man/man1/gh-pr-unlock.1
+@man man/man1/gh-pr-update-branch.1
 @man man/man1/gh-pr-view.1
 @man man/man1/gh-pr.1
 @man man/man1/gh-project-close.1
