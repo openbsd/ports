@@ -3,7 +3,7 @@ Patch to use pledge on OpenBSD.
 Index: lib/isc/netmgr/netmgr.c
 --- lib/isc/netmgr/netmgr.c.orig
 +++ lib/isc/netmgr/netmgr.c
-@@ -3307,7 +3307,8 @@ isc__nm_socket_disable_pmtud(uv_os_sock_t fd, sa_famil
+@@ -3360,7 +3360,8 @@ isc__nm_socket_disable_pmtud(uv_os_sock_t fd, sa_famil
  	 * Disable the Path MTU Discovery on IP packets
  	 */
  	if (sa_family == AF_INET6) {
@@ -13,7 +13,7 @@ Index: lib/isc/netmgr/netmgr.c
  		if (setsockopt_off(fd, IPPROTO_IPV6, IPV6_DONTFRAG) == -1) {
  			return (ISC_R_FAILURE);
  		} else {
-@@ -3325,7 +3326,12 @@ isc__nm_socket_disable_pmtud(uv_os_sock_t fd, sa_famil
+@@ -3378,7 +3379,12 @@ isc__nm_socket_disable_pmtud(uv_os_sock_t fd, sa_famil
  		UNUSED(fd);
  #endif
  	} else if (sa_family == AF_INET) {
@@ -27,7 +27,7 @@ Index: lib/isc/netmgr/netmgr.c
  		if (setsockopt_off(fd, IPPROTO_IP, IP_DONTFRAG) == -1) {
  			return (ISC_R_FAILURE);
  		} else {
-@@ -3355,7 +3361,11 @@ isc__nm_socket_v6only(uv_os_sock_t fd, sa_family_t sa_
+@@ -3408,7 +3414,11 @@ isc__nm_socket_v6only(uv_os_sock_t fd, sa_family_t sa_
  	 * Enable the IPv6-only option on IPv6 sockets
  	 */
  	if (sa_family == AF_INET6) {
