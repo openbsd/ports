@@ -2,9 +2,8 @@ COMMENT =	check syntax, presence of use strict; and test coverage
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Test-Strict-0.52
+DISTNAME =	Test-Strict-0.53
 CATEGORIES =	devel
-REVISION =	0
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
