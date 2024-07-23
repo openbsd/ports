@@ -10,6 +10,7 @@ nextcloud/.user.ini
 nextcloud/3rdparty/
 nextcloud/3rdparty/.patches/
 nextcloud/3rdparty/.patches/fix-cache-for-node.diff
+nextcloud/3rdparty/.patches/mp3info-check-array-key.diff
 nextcloud/3rdparty/LICENSE INFO
 nextcloud/3rdparty/autoload.php
 nextcloud/3rdparty/aws/
@@ -7788,6 +7789,7 @@ nextcloud/3rdparty/thecodingmachine/safe/lib/special_cases.php
 nextcloud/3rdparty/wapmorgan/
 nextcloud/3rdparty/wapmorgan/mp3info/
 nextcloud/3rdparty/wapmorgan/mp3info/LICENSE
+nextcloud/3rdparty/wapmorgan/mp3info/PATCHES.txt
 nextcloud/3rdparty/wapmorgan/mp3info/data/
 nextcloud/3rdparty/wapmorgan/mp3info/data/bitRateTable.php
 nextcloud/3rdparty/wapmorgan/mp3info/data/sampleRateTable.php
@@ -10279,6 +10281,8 @@ nextcloud/apps/dav/lib/CalDAV/Trashbin/DeletedCalendarObjectsCollection.php
 nextcloud/apps/dav/lib/CalDAV/Trashbin/Plugin.php
 nextcloud/apps/dav/lib/CalDAV/Trashbin/RestoreTarget.php
 nextcloud/apps/dav/lib/CalDAV/Trashbin/TrashbinHome.php
+nextcloud/apps/dav/lib/CalDAV/Validation/
+nextcloud/apps/dav/lib/CalDAV/Validation/CalDavValidatePlugin.php
 nextcloud/apps/dav/lib/CalDAV/WebcalCaching/
 nextcloud/apps/dav/lib/CalDAV/WebcalCaching/Plugin.php
 nextcloud/apps/dav/lib/CalDAV/WebcalCaching/RefreshWebcalService.php
@@ -10312,6 +10316,8 @@ nextcloud/apps/dav/lib/CardDAV/Security/CardDavRateLimitingPlugin.php
 nextcloud/apps/dav/lib/CardDAV/SyncService.php
 nextcloud/apps/dav/lib/CardDAV/SystemAddressbook.php
 nextcloud/apps/dav/lib/CardDAV/UserAddressBooks.php
+nextcloud/apps/dav/lib/CardDAV/Validation/
+nextcloud/apps/dav/lib/CardDAV/Validation/CardDavValidatePlugin.php
 nextcloud/apps/dav/lib/CardDAV/Xml/
 nextcloud/apps/dav/lib/CardDAV/Xml/Groups.php
 nextcloud/apps/dav/lib/Command/
@@ -20515,6 +20521,8 @@ nextcloud/apps/text/l10n/kab.js
 nextcloud/apps/text/l10n/kab.json
 nextcloud/apps/text/l10n/km.js
 nextcloud/apps/text/l10n/km.json
+nextcloud/apps/text/l10n/kn.js
+nextcloud/apps/text/l10n/kn.json
 nextcloud/apps/text/l10n/ko.js
 nextcloud/apps/text/l10n/ko.json
 nextcloud/apps/text/l10n/lb.js
@@ -22561,6 +22569,8 @@ nextcloud/apps/weather_status/l10n/tr.js
 nextcloud/apps/weather_status/l10n/tr.json
 nextcloud/apps/weather_status/l10n/uk.js
 nextcloud/apps/weather_status/l10n/uk.json
+nextcloud/apps/weather_status/l10n/vi.js
+nextcloud/apps/weather_status/l10n/vi.json
 nextcloud/apps/weather_status/l10n/zh_CN.js
 nextcloud/apps/weather_status/l10n/zh_CN.json
 nextcloud/apps/weather_status/l10n/zh_HK.js
@@ -24437,22 +24447,20 @@ nextcloud/core/vendor/zxcvbn/dist/
 nextcloud/core/vendor/zxcvbn/dist/zxcvbn.js
 nextcloud/cron.php
 nextcloud/dist/
-nextcloud/dist/1110-1110.js
-nextcloud/dist/1110-1110.js.LICENSE.txt
-nextcloud/dist/1110-1110.js.map
 nextcloud/dist/2913-2913.js
 nextcloud/dist/2913-2913.js.map
 nextcloud/dist/3777-3777.js
 nextcloud/dist/3777-3777.js.map
+nextcloud/dist/4065-4065.js
+nextcloud/dist/4065-4065.js.map
+nextcloud/dist/4234-4234.js
+nextcloud/dist/4234-4234.js.LICENSE.txt
+nextcloud/dist/4234-4234.js.map
+nextcloud/dist/4254-4254.js
+nextcloud/dist/4254-4254.js.map
 nextcloud/dist/5528-5528.js
-nextcloud/dist/5552-5552.js
-nextcloud/dist/5552-5552.js.LICENSE.txt
-nextcloud/dist/5552-5552.js.map
 nextcloud/dist/5632-5632.js
 nextcloud/dist/5632-5632.js.map
-nextcloud/dist/5929-5929.js
-nextcloud/dist/5929-5929.js.LICENSE.txt
-nextcloud/dist/5929-5929.js.map
 nextcloud/dist/6075-6075.js
 nextcloud/dist/6075-6075.js.map
 nextcloud/dist/7462-7462.js
@@ -24463,9 +24471,9 @@ nextcloud/dist/7883-7883.js.LICENSE.txt
 nextcloud/dist/7883-7883.js.map
 nextcloud/dist/857-857.js
 nextcloud/dist/857-857.js.map
-nextcloud/dist/8902-8902.js
-nextcloud/dist/8902-8902.js.LICENSE.txt
-nextcloud/dist/8902-8902.js.map
+nextcloud/dist/9647-9647.js
+nextcloud/dist/9647-9647.js.LICENSE.txt
+nextcloud/dist/9647-9647.js.map
 nextcloud/dist/comments-comments-app.js
 nextcloud/dist/comments-comments-app.js.LICENSE.txt
 nextcloud/dist/comments-comments-app.js.map
@@ -24551,7 +24559,6 @@ nextcloud/dist/files-sidebar.js
 nextcloud/dist/files-sidebar.js.LICENSE.txt
 nextcloud/dist/files-sidebar.js.map
 nextcloud/dist/files_external-init.js
-nextcloud/dist/files_external-init.js.LICENSE.txt
 nextcloud/dist/files_external-init.js.map
 nextcloud/dist/files_reminders-init.js
 nextcloud/dist/files_reminders-init.js.LICENSE.txt
@@ -24573,9 +24580,9 @@ nextcloud/dist/files_sharing-main.js.map
 nextcloud/dist/files_sharing-personal-settings.js
 nextcloud/dist/files_sharing-personal-settings.js.LICENSE.txt
 nextcloud/dist/files_sharing-personal-settings.js.map
-nextcloud/dist/files_trashbin-main.js
-nextcloud/dist/files_trashbin-main.js.LICENSE.txt
-nextcloud/dist/files_trashbin-main.js.map
+nextcloud/dist/files_trashbin-init.js
+nextcloud/dist/files_trashbin-init.js.LICENSE.txt
+nextcloud/dist/files_trashbin-init.js.map
 nextcloud/dist/files_versions-files_versions.js
 nextcloud/dist/files_versions-files_versions.js.LICENSE.txt
 nextcloud/dist/files_versions-files_versions.js.map
