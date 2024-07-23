@@ -9,6 +9,7 @@ share/ibus-typing-booster/data/
 share/ibus-typing-booster/data/UnicodeData.txt
 share/ibus-typing-booster/data/annotations/
 share/ibus-typing-booster/data/annotations/af.xml
+share/ibus-typing-booster/data/annotations/ak.xml
 share/ibus-typing-booster/data/annotations/am.xml
 share/ibus-typing-booster/data/annotations/ar.xml
 share/ibus-typing-booster/data/annotations/ar_SA.xml
@@ -19,10 +20,13 @@ share/ibus-typing-booster/data/annotations/be.xml
 share/ibus-typing-booster/data/annotations/bew.xml
 share/ibus-typing-booster/data/annotations/bg.xml
 share/ibus-typing-booster/data/annotations/bgn.xml
+share/ibus-typing-booster/data/annotations/blo.xml
 share/ibus-typing-booster/data/annotations/bn.xml
 share/ibus-typing-booster/data/annotations/br.xml
 share/ibus-typing-booster/data/annotations/bs.xml
 share/ibus-typing-booster/data/annotations/ca.xml
+share/ibus-typing-booster/data/annotations/ca_ES.xml
+share/ibus-typing-booster/data/annotations/ca_ES_VALENCIA.xml
 share/ibus-typing-booster/data/annotations/ccp.xml
 share/ibus-typing-booster/data/annotations/ceb.xml
 share/ibus-typing-booster/data/annotations/chr.xml
@@ -56,6 +60,7 @@ share/ibus-typing-booster/data/annotations/fil.xml
 share/ibus-typing-booster/data/annotations/fo.xml
 share/ibus-typing-booster/data/annotations/fr.xml
 share/ibus-typing-booster/data/annotations/fr_CA.xml
+share/ibus-typing-booster/data/annotations/frr.xml
 share/ibus-typing-booster/data/annotations/ga.xml
 share/ibus-typing-booster/data/annotations/gd.xml
 share/ibus-typing-booster/data/annotations/gl.xml
@@ -79,6 +84,7 @@ share/ibus-typing-booster/data/annotations/jv.xml
 share/ibus-typing-booster/data/annotations/ka.xml
 share/ibus-typing-booster/data/annotations/kab.xml
 share/ibus-typing-booster/data/annotations/kk.xml
+share/ibus-typing-booster/data/annotations/kk_Arab.xml
 share/ibus-typing-booster/data/annotations/kl.xml
 share/ibus-typing-booster/data/annotations/km.xml
 share/ibus-typing-booster/data/annotations/kn.xml
@@ -112,6 +118,7 @@ share/ibus-typing-booster/data/annotations/om.xml
 share/ibus-typing-booster/data/annotations/or.xml
 share/ibus-typing-booster/data/annotations/pa.xml
 share/ibus-typing-booster/data/annotations/pa_Arab.xml
+share/ibus-typing-booster/data/annotations/pap.xml
 share/ibus-typing-booster/data/annotations/pcm.xml
 share/ibus-typing-booster/data/annotations/pl.xml
 share/ibus-typing-booster/data/annotations/ps.xml
@@ -157,6 +164,7 @@ share/ibus-typing-booster/data/annotations/ug.xml
 share/ibus-typing-booster/data/annotations/uk.xml
 share/ibus-typing-booster/data/annotations/ur.xml
 share/ibus-typing-booster/data/annotations/uz.xml
+share/ibus-typing-booster/data/annotations/vec.xml
 share/ibus-typing-booster/data/annotations/vi.xml
 share/ibus-typing-booster/data/annotations/wo.xml
 share/ibus-typing-booster/data/annotations/xh.xml
