@@ -8,6 +8,9 @@ PORTROACH=	limitw:1,even
 EXTRACT_SUFX=	.tar.xz
 EPOCH=		3
 
+# keep abkve 7.5-stable
+REVISION=	0
+
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
 
