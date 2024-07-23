@@ -1,14 +1,16 @@
 Index: config/opensearch_dashboards.yml
 --- config/opensearch_dashboards.yml.orig
 +++ config/opensearch_dashboards.yml
-@@ -101,13 +101,13 @@
+@@ -101,7 +101,7 @@
  # pid.file: /var/run/opensearchDashboards.pid
  
  # Enables you to specify a file where OpenSearch Dashboards stores log output.
 -# logging.dest: stdout
 +logging.dest: /var/log/opensearch-dashboards/opensearch-dashboards.log
  
- # Set the value of this setting to true to suppress all logging output.
+ # 2.15 Ignore 'ENOSPC' error for logging stream.
+ # When set to true, the 'ENOSPC' error message will not cause the OpenSearch Dashboards process to crash. Otherwise,
+@@ -112,7 +112,7 @@
  # logging.silent: false
  
  # Set the value of this setting to true to suppress all logging output other than error messages.
