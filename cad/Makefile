@@ -8,6 +8,7 @@
      SUBDIR += gnucap
      SUBDIR += graywolf
      SUBDIR += gtkwave
+     SUBDIR += horizon-eda
      SUBDIR += kicad
      SUBDIR += kicad-share
      SUBDIR += lepton-eda
