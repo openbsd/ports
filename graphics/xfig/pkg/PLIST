@@ -2771,7 +2771,6 @@ share/doc/xfig/html/i18n.html
 share/doc/xfig/html/images/
 share/doc/xfig/html/images/3dhouse.png
 share/doc/xfig/html/images/3dhouse_sm.png
-share/doc/xfig/html/images/a-umlaut.png
 share/doc/xfig/html/images/add-arrow-button.png
 share/doc/xfig/html/images/add-point-button.png
 share/doc/xfig/html/images/add-tangent-button.png
@@ -2843,7 +2842,6 @@ share/doc/xfig/html/images/but_frm_object_libraries.gif
 share/doc/xfig/html/images/but_frm_options.gif
 share/doc/xfig/html/images/but_frm_panning.gif
 share/doc/xfig/html/images/but_frm_printing.gif
-share/doc/xfig/html/images/c-cedilla.png
 share/doc/xfig/html/images/cap-style-butt.png
 share/doc/xfig/html/images/cap-style-button.png
 share/doc/xfig/html/images/cap-style-example.png
