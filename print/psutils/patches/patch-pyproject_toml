@@ -1,0 +1,21 @@
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -11,7 +11,7 @@ urls = {Homepage = "https://github.com/rrthomas/psutil
+ requires-python = ">= 3.9"
+ dependencies = [
+     "puremagic >= 1.26",
+-    "pypdf ~= 4.2.0",
++    "pypdf",
+ ]
+ classifiers = [
+     "Environment :: Console",
+@@ -35,7 +35,7 @@ requires = [
+     "setuptools >= 60; python_version >= \"3.12\"",
+     "pytest-datafiles",
+     "puremagic >= 1.26",
+-    "pypdf ~= 4.2.0",
++    "pypdf",
+     "Wand",
+ ]
+ 
