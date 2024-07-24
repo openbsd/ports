@@ -1,3 +1,0 @@
-@conflict nagios-plugins-samba-*
-@pkgpath net/nagios/plugins,-samba
-libexec/nagios/check_disk_smb

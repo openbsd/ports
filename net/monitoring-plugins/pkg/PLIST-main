@@ -1,5 +1,9 @@
+@conflict monitoring-plugins-samba-*
 @conflict nagios-plugins-*
 @conflict nagios-plugins-ntp-*
+@conflict nagios-plugins-samba-*
+@pkgpath net/monitoring-plugins,-samba
+@pkgpath net/nagios/plugins,-samba
 @pkgpath net/nagios/plugins
 @pkgpath net/nagios/plugins,-ntp
 @pkgpath net/nagios/plugins,-main
@@ -13,6 +17,7 @@ libexec/nagios/check_clamd
 @bin libexec/nagios/check_dhcp
 @bin libexec/nagios/check_dig
 @bin libexec/nagios/check_disk
+libexec/nagios/check_disk_smb
 @bin libexec/nagios/check_dns
 @bin libexec/nagios/check_dummy
 libexec/nagios/check_file_age
@@ -64,5 +69,3 @@ libexec/nagios/check_wave
 @bin libexec/nagios/urlize
 libexec/nagios/utils.pm
 libexec/nagios/utils.sh
-share/locale/de/LC_MESSAGES/monitoring-plugins.mo
-share/locale/fr/LC_MESSAGES/monitoring-plugins.mo

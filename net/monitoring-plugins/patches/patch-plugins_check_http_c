@@ -1,10 +1,7 @@
-#1: avoid segfault with SSL errors, seen when connecting to an
-IIS host that only allowed SNI-based connections
-
 Index: plugins/check_http.c
 --- plugins/check_http.c.orig
 +++ plugins/check_http.c
-@@ -988,7 +988,7 @@ check_http (void)
+@@ -997,7 +997,7 @@ check_http (void)
      result = np_net_ssl_init_with_hostname_version_and_cert(sd, (use_sni ? host_name : NULL), ssl_version, client_cert, client_privkey);
      if (verbose) printf ("SSL initialized\n");
      if (result != STATE_OK)

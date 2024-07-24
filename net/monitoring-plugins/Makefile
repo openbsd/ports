@@ -5,12 +5,10 @@ COMMENT-game=	gameserver monitoring plugin
 COMMENT-ldap=	ldap monitoring plugin
 COMMENT-mysql=	mysql monitoring plugin
 COMMENT-pgsql=	postgresql monitoring plugin
-COMMENT-samba=	samba monitoring plugin
 COMMENT-snmp=	monitoring plugins using snmp
 COMMENT-radius=	RADIUS monitoring plugin
 
-V=		2.3.5
-REVISION-main=	1
+V=		2.4.0
 
 DISTNAME=	monitoring-plugins-$V
 PKGNAME-main=	monitoring-plugins-$V
@@ -20,7 +18,6 @@ PKGNAME-game=	monitoring-plugins-game-$V
 PKGNAME-ldap=	monitoring-plugins-ldap-$V
 PKGNAME-mysql=	monitoring-plugins-mysql-$V
 PKGNAME-pgsql=	monitoring-plugins-pgsql-$V
-PKGNAME-samba=	monitoring-plugins-samba-$V
 PKGNAME-snmp=	monitoring-plugins-snmp-$V
 PKGNAME-radius=	monitoring-plugins-radius-$V
 
@@ -36,7 +33,6 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=	c iconv intl pthread
 
 COMPILER=	base-clang ports-gcc base-gcc
-DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 SITES=		https://www.monitoring-plugins.org/download/
 
@@ -49,7 +45,7 @@ LIB_DEPENDS-main= ${LIB_DEPENDS} \
 		www/uriparser
 
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.69
+AUTOCONF_VERSION= 2.71
 CONFIGURE_ENV+= LDFLAGS="-L${LOCALBASE}/lib"
 FAKE_FLAGS=	setuid_root_mode=0555
 
@@ -78,7 +74,7 @@ CONFIGURE_ARGS+= \
 PSEUDO_FLAVORS=	no_db
 FLAVOR?=
 
-MULTI_PACKAGES= -main -fping -game -samba -snmp -dbi -ldap -mysql -pgsql -radius
+MULTI_PACKAGES= -main -fping -game -snmp -dbi -ldap -mysql -pgsql -radius
 
 # many broken tests, but...
 TEST_IS_INTERACTIVE=Yes
@@ -95,10 +91,6 @@ BUILD_DEPENDS+=		net/p5-Net-SNMP
 
 RUN_DEPENDS-fping=	${RUN_DEPENDS} net/fping
 RUN_DEPENDS-game=	${RUN_DEPENDS} games/qstat
-
-LIB_DEPENDS-samba=
-WANTLIB-samba=
-RUN_DEPENDS-samba=	net/samba
 
 RUN_DEPENDS-snmp=	${RUN_DEPENDS} \
 			net/net-snmp \
