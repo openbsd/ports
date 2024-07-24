@@ -82,6 +82,12 @@ lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/AES/OF
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/AES/README.txt
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/AES/gcmDecrypt128.rsp
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/AES/gcmEncryptExtIV128.rsp
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/AES/test-vector-1-nonce104.txt
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/AES/test-vector-1-nonce112.txt
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/AES/test-vector-1-nonce120.txt
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/AES/test-vector-2-nonce104.txt
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/AES/test-vector-2-nonce112.txt
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/AES/test-vector-2-nonce120.txt
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/TDES/
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/TDES/README.txt
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Cipher/TDES/TCBCMMT2.rsp
@@ -186,7 +192,17 @@ lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Hash/keccak/r
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Hash/wycheproof/
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Hash/wycheproof/aes_cmac_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/KAS_ECC_CDH_PrimitiveTest.txt
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/KDF_SP800_108_COUNTER.txt
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/ecdh_secp224r1_ecpoint_test.json
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/ecdh_secp224r1_test.json
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/ecdh_secp256r1_ecpoint_test.json
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/ecdh_secp256r1_test.json
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/ecdh_secp384r1_ecpoint_test.json
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/ecdh_secp384r1_test.json
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/ecdh_secp521r1_ecpoint_test.json
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/ecdh_secp521r1_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/hkdf_sha1_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/hkdf_sha256_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/hkdf_sha384_test.json
@@ -204,6 +220,7 @@ lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_ed25519_private_openssh_pwd.pem
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_ed25519_private_p8.der
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_ed25519_private_p8.pem
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_ed25519_private_p8_2.der
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_ed25519_public.der
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_ed25519_public.pem
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_ed25519_public_openssh.txt
@@ -218,6 +235,7 @@ lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_ed448_private_enc_des3.pem
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_ed448_private_p8.der
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_ed448_private_p8.pem
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_ed448_private_p8_2.der
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_ed448_public.der
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_ed448_public.pem
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_ed448_x509.der
@@ -232,6 +250,7 @@ lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p192_private_enc_des3.pem
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p192_private_p8.der
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p192_private_p8.pem
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p192_private_p8_2.der
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p192_private_p8_clear.der
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p192_private_p8_clear.pem
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p192_public.der
@@ -250,6 +269,7 @@ lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p224_private_enc_des3.pem
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p224_private_p8.der
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p224_private_p8.pem
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p224_private_p8_2.der
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p224_private_p8_clear.der
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p224_private_p8_clear.pem
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p224_public.der
@@ -273,6 +293,7 @@ lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p256_private_openssh_pwd_old.pem
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p256_private_p8.der
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p256_private_p8.pem
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p256_private_p8_2.der
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p256_private_p8_clear.der
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p256_private_p8_clear.pem
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p256_public.der
@@ -296,6 +317,7 @@ lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p384_private_openssh_pwd_old.pem
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p384_private_p8.der
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p384_private_p8.pem
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p384_private_p8_2.der
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p384_private_p8_clear.der
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p384_private_p8_clear.pem
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p384_public.der
@@ -319,6 +341,7 @@ lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p521_private_openssh_pwd_old.pem
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p521_private_p8.der
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p521_private_p8.pem
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p521_private_p8_2.der
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p521_private_p8_clear.der
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p521_private_p8_clear.pem
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_p521_public.der
@@ -355,6 +378,7 @@ lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/RSA
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/RSA/rsa2048_private_openssh_old.pem
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/RSA/rsa2048_private_openssh_pwd.pem
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/RSA/rsa2048_private_openssh_pwd_old.pem
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/RSA/rsa2048_private_p8.der
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/RSA/rsa2048_public_openssh.txt
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Signature/
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Signature/DSA/
