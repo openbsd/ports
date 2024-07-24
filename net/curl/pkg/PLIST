@@ -18,6 +18,7 @@ include/curl/websockets.h
 lib/libcurl.la
 @lib lib/libcurl.so.${LIBcurl_VERSION}
 lib/pkgconfig/libcurl.pc
+@man man/man1/curl-config.1
 @man man/man1/curl.1
 @man man/man1/mk-ca-bundle.1
 @man man/man3/CURLINFO_ACTIVESOCKET.3
@@ -378,6 +379,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLOPT_SUPPRESS_CONNECT_HEADERS.3
 @man man/man3/CURLOPT_TCP_FASTOPEN.3
 @man man/man3/CURLOPT_TCP_KEEPALIVE.3
+@man man/man3/CURLOPT_TCP_KEEPCNT.3
 @man man/man3/CURLOPT_TCP_KEEPIDLE.3
 @man man/man3/CURLOPT_TCP_KEEPINTVL.3
 @man man/man3/CURLOPT_TCP_NODELAY.3

@@ -9,7 +9,7 @@ Do not override optimization flags in CFLAGS.
 Index: m4/curl-compilers.m4
 --- m4/curl-compilers.m4.orig
 +++ m4/curl-compilers.m4
-@@ -694,7 +694,7 @@ AC_DEFUN([CURL_SET_COMPILER_OPTIMIZE_OPTS], [
+@@ -699,7 +699,7 @@ AC_DEFUN([CURL_SET_COMPILER_OPTIMIZE_OPTS], [
      tmp_options=""
      tmp_CFLAGS="$CFLAGS"
      tmp_CPPFLAGS="$CPPFLAGS"
