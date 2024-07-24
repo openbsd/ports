@@ -660,7 +660,6 @@ SHA256 (go_modules/github.com/grpc-ecosystem/grpc-gateway/@v/v1.16.0.mod) = mSpR
 SHA256 (go_modules/github.com/grpc-ecosystem/grpc-gateway/@v/v1.16.0.zip) = N3sDrvKIs07YlESdPdukDVJd1/tV3m55BFzfSZ5/5WU=
 SHA256 (go_modules/github.com/hashicorp/go-cleanhttp/@v/v0.5.2.mod) = XwLShnLRvAyOofyVaZWCx1lUlbT4YGvVUVkc6+PaoBE=
 SHA256 (go_modules/github.com/hashicorp/go-cleanhttp/@v/v0.5.2.zip) = 6fPc/LMxcrpJm0+OiIFpJS1/HgcgghghJKbiBTUj998=
-SHA256 (go_modules/github.com/hashicorp/go-getter/@v/v1.7.4.mod) = zD8THy+EJwSvDTVK8aEuJYNMdaozws9xWYyG58EYdBQ=
 SHA256 (go_modules/github.com/hashicorp/go-getter/@v/v1.7.5.mod) = zD8THy+EJwSvDTVK8aEuJYNMdaozws9xWYyG58EYdBQ=
 SHA256 (go_modules/github.com/hashicorp/go-getter/@v/v1.7.5.zip) = 8LpMLDtXqCAnvY6yAo/1pCvGuwy6zaZ5GPqpeFWR5Xg=
 SHA256 (go_modules/github.com/hashicorp/go-hclog/@v/v0.14.1.mod) = 3pL8xvJiE8j+T+bD+ruqxhAfceLaC/i8nDqlQgOMvLo=
@@ -783,8 +782,8 @@ SHA256 (go_modules/github.com/stretchr/testify/@v/v1.8.4.mod) = BeJs0GkoWjPPKvRv
 SHA256 (go_modules/github.com/stretchr/testify/@v/v1.8.4.zip) = 4gbart4L0D3gYL3765hKwsSbgwWHU//8k/4MIg6odTI=
 SHA256 (go_modules/github.com/terraform-linters/tflint-plugin-sdk/@v/v0.20.0.mod) = LlAara05iaH54+mCYaCxKe2jQBtY+yfD7SJ01D/UOb4=
 SHA256 (go_modules/github.com/terraform-linters/tflint-plugin-sdk/@v/v0.20.0.zip) = 9CXI3tzjHi6tkcbry7B/qP0+Yqc1bRKuRxAQwVznjfY=
-SHA256 (go_modules/github.com/terraform-linters/tflint-ruleset-terraform/@v/v0.7.0.mod) = G9I7zXcoDskqZbRDed5xWgzB2HowGZRc0xnBlKacgkY=
-SHA256 (go_modules/github.com/terraform-linters/tflint-ruleset-terraform/@v/v0.7.0.zip) = s75tw/pnbAKOfwoG0qovmVG5Ab6DVDaWfpWc1N3E/4M=
+SHA256 (go_modules/github.com/terraform-linters/tflint-ruleset-terraform/@v/v0.8.0.mod) = B7idX+qHPI3Nus9Dt0MGeAsqkHG++5mbe2GbYIYpc1w=
+SHA256 (go_modules/github.com/terraform-linters/tflint-ruleset-terraform/@v/v0.8.0.zip) = mPaCzBSTmFMRG8u40k1OBkKXIwMYzuhY4oRbBUNzfCI=
 SHA256 (go_modules/github.com/ulikunitz/xz/@v/v0.5.10.mod) = OTh2BG1j2Q818hwbtGUbCYXnbY8UpIpyef+Ue5aVbns=
 SHA256 (go_modules/github.com/ulikunitz/xz/@v/v0.5.10.zip) = wZUTZo3cSboPlDRGSGGdR9HBuNV5Oaw3yMuQGMYUTMc=
 SHA256 (go_modules/github.com/vmihailenco/msgpack/v4/@v/v4.3.12.mod) = LIDah2TON8JwC2yT3I7lPROceagqQKB1mAD3k4O8/cY=
@@ -1490,7 +1489,7 @@ SHA256 (go_modules/rsc.io/quote/v3/@v/v3.1.0.mod) = shHZ8WtVQpcPA6LmJJ30UDgwSjeh
 SHA256 (go_modules/rsc.io/quote/v3/@v/v3.1.0.zip) = tDTLv8MsF7UijQsO3erqib707JvZC1yPxVtk+M4T7rk=
 SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = oq5uhUCkC4XldwPMYYuZxbEHU4bZWOiZmg4tTALzpwU=
 SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 2iArDagDqyZhq5imgLuk9kEjoyblQMJVgrbNu53BFKo=
-SHA256 (tflint-v0.51.2.zip) = DM86mRWeeB7wgtr5kzJZzqLtlrTSzrUUnEh0vEXY8Jo=
+SHA256 (tflint-v0.52.0.zip) = gTFCuUqoxbfmcM/U3X0oLD7VqG2ng520CM5bOgWQ4rA=
 SIZE (go_modules/cloud.google.com/go/@v/v0.100.2.mod) = 531
 SIZE (go_modules/cloud.google.com/go/@v/v0.102.0.mod) = 568
 SIZE (go_modules/cloud.google.com/go/@v/v0.102.1.mod) = 568
@@ -2153,7 +2152,6 @@ SIZE (go_modules/github.com/grpc-ecosystem/grpc-gateway/@v/v1.16.0.mod) = 588
 SIZE (go_modules/github.com/grpc-ecosystem/grpc-gateway/@v/v1.16.0.zip) = 685854
 SIZE (go_modules/github.com/hashicorp/go-cleanhttp/@v/v0.5.2.mod) = 50
 SIZE (go_modules/github.com/hashicorp/go-cleanhttp/@v/v0.5.2.zip) = 9586
-SIZE (go_modules/github.com/hashicorp/go-getter/@v/v1.7.4.mod) = 1055
 SIZE (go_modules/github.com/hashicorp/go-getter/@v/v1.7.5.mod) = 1055
 SIZE (go_modules/github.com/hashicorp/go-getter/@v/v1.7.5.zip) = 184167
 SIZE (go_modules/github.com/hashicorp/go-hclog/@v/v0.14.1.mod) = 297
@@ -2276,8 +2274,8 @@ SIZE (go_modules/github.com/stretchr/testify/@v/v1.8.4.mod) = 188
 SIZE (go_modules/github.com/stretchr/testify/@v/v1.8.4.zip) = 120537
 SIZE (go_modules/github.com/terraform-linters/tflint-plugin-sdk/@v/v0.20.0.mod) = 1392
 SIZE (go_modules/github.com/terraform-linters/tflint-plugin-sdk/@v/v0.20.0.zip) = 154736
-SIZE (go_modules/github.com/terraform-linters/tflint-ruleset-terraform/@v/v0.7.0.mod) = 3497
-SIZE (go_modules/github.com/terraform-linters/tflint-ruleset-terraform/@v/v0.7.0.zip) = 127138
+SIZE (go_modules/github.com/terraform-linters/tflint-ruleset-terraform/@v/v0.8.0.mod) = 3497
+SIZE (go_modules/github.com/terraform-linters/tflint-ruleset-terraform/@v/v0.8.0.zip) = 128790
 SIZE (go_modules/github.com/ulikunitz/xz/@v/v0.5.10.mod) = 40
 SIZE (go_modules/github.com/ulikunitz/xz/@v/v0.5.10.zip) = 514051
 SIZE (go_modules/github.com/vmihailenco/msgpack/v4/@v/v4.3.12.mod) = 382
@@ -2983,4 +2981,4 @@ SIZE (go_modules/rsc.io/quote/v3/@v/v3.1.0.mod) = 55
 SIZE (go_modules/rsc.io/quote/v3/@v/v3.1.0.zip) = 2223
 SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = 88
 SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 14308
-SIZE (tflint-v0.51.2.zip) = 1563100
+SIZE (tflint-v0.52.0.zip) = 1577101

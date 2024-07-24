@@ -228,7 +228,7 @@ MODGO_MODULES =	\
 	github.com/stretchr/objx							 v0.5.0 \
 	github.com/stretchr/testify							 v1.8.4 \
 	github.com/terraform-linters/tflint-plugin-sdk					 v0.20.0 \
-	github.com/terraform-linters/tflint-ruleset-terraform				 v0.7.0 \
+	github.com/terraform-linters/tflint-ruleset-terraform				 v0.8.0 \
 	github.com/ulikunitz/xz								 v0.5.10 \
 	github.com/vmihailenco/msgpack/v4						 v4.3.12 \
 	github.com/vmihailenco/msgpack/v5						 v5.3.5 \
@@ -581,7 +581,6 @@ MODGO_MODFILES =	\
 	github.com/googleapis/gax-go/v2							 v2.4.0 \
 	github.com/googleapis/gax-go/v2							 v2.5.1 \
 	github.com/googleapis/gax-go/v2							 v2.6.0 \
-	github.com/hashicorp/go-getter							 v1.7.4 \
 	github.com/hashicorp/go-hclog							 v0.14.1 \
 	github.com/hashicorp/go-plugin							 v1.6.0 \
 	github.com/hashicorp/go-version							 v1.6.0 \
