@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1649 2024/07/20 08:57:11 fcambus Exp $
+# $OpenBSD: Quirks.pm,v 1.1650 2024/07/24 11:47:42 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -835,6 +835,7 @@ my $stem_extensions = {
 	'kdeplasma-addons-kf5' => 'kf6-kdeplasma-addons',
 	'kaccounts-integration' => 'kf6-kaccounts-integration',
 	'apertium-en-es' => 'apertium-eng-spa',
+	'monitoring-plugins-samba' => 'monitoring-plugins',
 };
 
 my $obsolete_reason = {};
