@@ -1,9 +1,8 @@
 COMMENT =		NetBox API client library
 
-MODPY_EGG_VERSION =	7.3.3
+MODPY_EGG_VERSION =	7.3.4
 DISTNAME =		pynetbox-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		sysutils net
 
