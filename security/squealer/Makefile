@@ -1,7 +1,7 @@
 COMMENT =		filesystem secrets scanner
 
 MODGO_MODNAME =		github.com/owenrumney/squealer
-MODGO_VERSION =		v1.2.2
+MODGO_VERSION =		v1.2.3
 
 DISTNAME =		squealer-${MODGO_VERSION}
 

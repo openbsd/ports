@@ -1,22 +1,22 @@
 MODGO_MODULES =	\
 	dario.cat/mergo					 v1.0.0 \
 	github.com/!microsoft/go-winio			 v0.6.1 \
-	github.com/!proton!mail/go-crypto		 v0.0.0-20230828082145-3c4c8a2d2371 \
+	github.com/!proton!mail/go-crypto		 v1.0.0 \
 	github.com/anmitsu/go-shlex			 v0.0.0-20200514113438-38f4b401e2be \
 	github.com/apparentlymart/go-textseg/v13	 v13.0.0 \
 	github.com/armon/go-socks5			 v0.0.0-20160902184237-e75332964ef5 \
 	github.com/bwesterb/go-ristretto		 v1.2.3 \
-	github.com/cloudflare/circl			 v1.3.3 \
-	github.com/cpuguy83/go-md2man/v2		 v2.0.3 \
+	github.com/cloudflare/circl			 v1.3.7 \
+	github.com/cpuguy83/go-md2man/v2		 v2.0.4 \
 	github.com/cyphar/filepath-securejoin		 v0.2.4 \
 	github.com/davecgh/go-spew			 v1.1.1 \
 	github.com/elazarl/goproxy			 v0.0.0-20230808193330-2592e75ae04a \
 	github.com/emirpasic/gods			 v1.18.1 \
-	github.com/gliderlabs/ssh			 v0.3.5 \
+	github.com/gliderlabs/ssh			 v0.3.7 \
 	github.com/go-git/gcfg				 v1.5.1-0.20230307220236-3a3c6141e376 \
 	github.com/go-git/go-billy/v5			 v5.5.0 \
 	github.com/go-git/go-git-fixtures/v4		 v4.3.2-0.20231010084843-55a94097c399 \
-	github.com/go-git/go-git/v5			 v5.11.0 \
+	github.com/go-git/go-git/v5			 v5.12.0 \
 	github.com/golang/groupcache			 v0.0.0-20210331224755-41bb18bfe9da \
 	github.com/golang/protobuf			 v1.3.4 \
 	github.com/google/go-cmp			 v0.6.0 \
@@ -26,7 +26,7 @@ MODGO_MODULES =	\
 	github.com/kr/pretty				 v0.3.1 \
 	github.com/kr/pty				 v1.1.1 \
 	github.com/kr/text				 v0.2.0 \
-	github.com/liamg/tml				 v0.6.1 \
+	github.com/liamg/tml				 v0.7.0 \
 	github.com/mmcloughlin/avo			 v0.5.0 \
 	github.com/onsi/gomega				 v1.27.10 \
 	github.com/owenrumney/go-sarif			 v1.1.1 \
@@ -35,24 +35,24 @@ MODGO_MODULES =	\
 	github.com/pmezard/go-difflib			 v1.0.0 \
 	github.com/rogpeppe/go-internal			 v1.11.0 \
 	github.com/russross/blackfriday/v2		 v2.1.0 \
-	github.com/sergi/go-diff			 v1.1.0 \
+	github.com/sergi/go-diff			 v1.3.2-0.20230802210424-5b0b94c5c0d3 \
 	github.com/sirupsen/logrus			 v1.9.3 \
-	github.com/skeema/knownhosts			 v1.2.1 \
-	github.com/spf13/cobra				 v1.8.0 \
+	github.com/skeema/knownhosts			 v1.2.2 \
+	github.com/spf13/cobra				 v1.8.1 \
 	github.com/spf13/pflag				 v1.0.5 \
-	github.com/stretchr/objx			 v0.5.0 \
-	github.com/stretchr/testify			 v1.8.4 \
+	github.com/stretchr/objx			 v0.5.2 \
+	github.com/stretchr/testify			 v1.9.0 \
 	github.com/vmihailenco/msgpack/v4		 v4.3.12 \
 	github.com/vmihailenco/tagparser		 v0.1.1 \
 	github.com/xanzy/ssh-agent			 v0.3.3 \
 	github.com/yuin/goldmark			 v1.4.13 \
 	github.com/zclconf/go-cty			 v1.10.0 \
-	golang.org/x/crypto				 v0.16.0 \
+	golang.org/x/crypto				 v0.21.0 \
 	golang.org/x/mod				 v0.12.0 \
-	golang.org/x/net				 v0.19.0 \
+	golang.org/x/net				 v0.22.0 \
 	golang.org/x/sync				 v0.3.0 \
-	golang.org/x/sys				 v0.15.0 \
-	golang.org/x/term				 v0.15.0 \
+	golang.org/x/sys				 v0.18.0 \
+	golang.org/x/term				 v0.18.0 \
 	golang.org/x/text				 v0.14.0 \
 	golang.org/x/tools				 v0.13.0 \
 	golang.org/x/xerrors				 v0.0.0-20190717185122-a985d3407aa7 \
@@ -64,6 +64,7 @@ MODGO_MODULES =	\
 
 MODGO_MODFILES =	\
 	github.com/!microsoft/go-winio	 v0.5.2 \
+	github.com/cloudflare/circl	 v1.3.3 \
 	github.com/davecgh/go-spew	 v1.1.0 \
 	github.com/golang/protobuf	 v1.3.1 \
 	github.com/google/go-cmp	 v0.3.1 \
@@ -81,6 +82,7 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto		 v0.0.0-20210921155107-089bfa567519 \
 	golang.org/x/crypto		 v0.0.0-20220622213112-05595931fe9d \
 	golang.org/x/crypto		 v0.13.0 \
+	golang.org/x/crypto		 v0.17.0 \
 	golang.org/x/crypto		 v0.3.1-0.20221117191849-2c476679df9a \
 	golang.org/x/crypto		 v0.7.0 \
 	golang.org/x/mod		 v0.6.0 \
@@ -92,9 +94,9 @@ MODGO_MODFILES =	\
 	golang.org/x/net		 v0.0.0-20210226172049-e18ecbb05110 \
 	golang.org/x/net		 v0.0.0-20211112202133-69e39bad7dc2 \
 	golang.org/x/net		 v0.0.0-20220722155237-a158d28d115b \
-	golang.org/x/net		 v0.10.0 \
 	golang.org/x/net		 v0.15.0 \
 	golang.org/x/net		 v0.2.0 \
+	golang.org/x/net		 v0.21.0 \
 	golang.org/x/net		 v0.6.0 \
 	golang.org/x/net		 v0.8.0 \
 	golang.org/x/sync		 v0.0.0-20190423024810-112230192c58 \
@@ -111,6 +113,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys		 v0.0.0-20220722155257-8c9f86f7a55f \
 	golang.org/x/sys		 v0.1.0 \
 	golang.org/x/sys		 v0.12.0 \
+	golang.org/x/sys		 v0.15.0 \
 	golang.org/x/sys		 v0.2.0 \
 	golang.org/x/sys		 v0.3.0 \
 	golang.org/x/sys		 v0.5.0 \
@@ -139,5 +142,4 @@ MODGO_MODFILES =	\
 	gopkg.in/check.v1		 v1.0.0-20180628173108-788fd7840127 \
 	gopkg.in/check.v1		 v1.0.0-20190902080502-41f04d3bba15 \
 	gopkg.in/yaml.v2		 v2.2.2 \
-	gopkg.in/yaml.v2		 v2.2.4 \
 	gopkg.in/yaml.v3		 v3.0.0-20200313102051-9f266ea9e77c
