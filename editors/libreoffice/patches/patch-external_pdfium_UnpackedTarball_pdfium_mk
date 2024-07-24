@@ -1,9 +1,9 @@
 Index: external/pdfium/UnpackedTarball_pdfium.mk
 --- external/pdfium/UnpackedTarball_pdfium.mk.orig
 +++ external/pdfium/UnpackedTarball_pdfium.mk
-@@ -16,6 +16,8 @@ pdfium_patches += c++20-comparison.patch
+@@ -18,6 +18,8 @@ pdfium_patches += constexpr-template.patch
  
- pdfium_patches += constexpr-template.patch
+ pdfium_patches += annot.patch.1
  
 +pdfium_patches += pdfium-openbsd.patch
 +
