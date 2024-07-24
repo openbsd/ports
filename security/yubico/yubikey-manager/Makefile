@@ -1,6 +1,6 @@
 COMMENT=	library and CLI tool (ykman) for configuring a YubiKey
 
-MODPY_EGG_VERSION=	5.5.0
+MODPY_EGG_VERSION=	5.5.1
 
 DISTNAME=	yubikey_manager-${MODPY_EGG_VERSION}
 PKGNAME=	yubikey-manager-${MODPY_EGG_VERSION}
