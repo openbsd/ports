@@ -1,0 +1,42 @@
+- enable sndio on OpenBSD
+
+Index: setup/SPBLDOPT.i
+--- setup/SPBLDOPT.i.orig
++++ setup/SPBLDOPT.i
+@@ -542,7 +542,8 @@ LOCALFUNC blnr dfo_SoundEnabled(void)
+ 		|| ((gbk_apifam_xwn == gbo_apifam)
+ 			&& ((gbo_targfam == gbk_targfam_linx)
+ 				|| (gbo_targfam == gbk_targfam_fbsd)
+-				|| (gbo_targfam == gbk_targfam_nbsd)));
++				|| (gbo_targfam == gbk_targfam_nbsd)
++				|| (gbo_targfam == gbk_targfam_obsd)));
+ 
+ 	return v;
+ }
+@@ -568,6 +569,7 @@ enum {
+ 	gbk_sndapi_none,
+ 	gbk_sndapi_alsa,
+ 	gbk_sndapi_ddsp,
++	gbk_sndapi_sndio,
+ 	kNumSndApiLevels
+ };
+ 
+@@ -594,6 +596,9 @@ LOCALFUNC char * GetSndApiName(int i)
+ 		case gbk_sndapi_ddsp:
+ 			s = "ddsp";
+ 			break;
++		case gbk_sndapi_sndio:
++			s = "sndio";
++			break;
+ 		default:
+ 			s = "(unknown sound api)";
+ 			break;
+@@ -617,6 +622,8 @@ LOCALFUNC int dfo_sndapi(void)
+ 		v = gbk_sndapi_none;
+ 	} else if (gbo_targfam == gbk_targfam_linx) {
+ 		v = gbk_sndapi_alsa;
++	} else if (gbo_targfam == gbk_targfam_obsd) {
++		v = gbk_sndapi_sndio;
+ 	} else {
+ 		v = gbk_sndapi_ddsp;
+ 	}

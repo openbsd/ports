@@ -1,0 +1,15 @@
+- add sndio
+
+Index: setup/WRCNFGAP.i
+--- setup/WRCNFGAP.i.orig
++++ setup/WRCNFGAP.i
+@@ -194,6 +194,9 @@ LOCALPROC WriteCommonCNFGRAPIContents(void)
+ 						WriteDestFileLn("#include <sys/soundcard.h>");
+ 					}
+ 					break;
++				case gbk_sndapi_sndio:
++					WriteDestFileLn("#include <sndio.h>");
++					break;
+ 				default:
+ 					break;
+ 			}

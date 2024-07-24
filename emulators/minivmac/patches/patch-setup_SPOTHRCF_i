@@ -1,0 +1,15 @@
+- add sndio
+
+Index: setup/SPOTHRCF.i
+--- setup/SPOTHRCF.i.orig
++++ setup/SPOTHRCF.i
+@@ -555,6 +555,9 @@ LOCALPROC WriteAppSOUNDGLUcontents(void)
+ 		case gbk_sndapi_ddsp:
+ 			s = "DDSP";
+ 			break;
++		case gbk_sndapi_sndio:
++			s = "SNIO";
++			break;
+ 		default:
+ 			s = "???";
+ 			break;

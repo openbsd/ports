@@ -2,6 +2,7 @@ ONLY_FOR_ARCHS =	i386 amd64 powerpc
 
 COMMENT =		early macintosh emulator
 V =			36.04
+REVISION =		0
 DISTNAME =		minivmac-${V}
 
 CATEGORIES =		emulators
@@ -10,7 +11,7 @@ HOMEPAGE = 		https://gryphel.com/c/minivmac/
 
 MAINTAINER =		Jag Talon <jag@aangat.lahat.computer>
 
-WANTLIB =		X11 c
+WANTLIB =		X11 c sndio
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
@@ -31,6 +32,9 @@ ALL_TARGET =		minivmac
 SETUP_FLAGS-amd64 = 	-t ob64
 SETUP_FLAGS-i386 = 	-t obsd
 SETUP_FLAGS-powerpc = 	-t obsd -cpu ppc
+
+post-extract:
+	cp ${FILESDIR}/SGLUSNIO.h ${WRKSRC}/src
 
 do-gen:
 	cd ${WRKSRC}; cc setup/tool.c -o setup_t && \

@@ -1,0 +1,15 @@
+- add sndio
+
+Index: setup/SPFILDEF.i
+--- setup/SPFILDEF.i.orig
++++ setup/SPFILDEF.i
+@@ -88,6 +88,9 @@ static void DoMYOSGLUEdepends(tDoOneDepends p)
+ 				case gbk_sndapi_ddsp:
+ 					s = "SGLUDDSP.h";
+ 					break;
++				case gbk_sndapi_sndio:
++					s = "SGLUSNIO.h";
++					break;
+ 			}
+ 
+ 			if (nullpr != s) {

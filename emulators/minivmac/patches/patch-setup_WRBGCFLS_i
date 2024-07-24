@@ -1,0 +1,14 @@
+- add sndio
+
+Index: setup/WRBGCFLS.i
+--- setup/WRBGCFLS.i.orig
++++ setup/WRBGCFLS.i
+@@ -357,6 +357,8 @@ LOCALPROC WriteBashGccMakeFile(void)
+ 					{
+ 						WriteCStrToDestFile(" -lossaudio");
+ 					}
++				} else if (gbk_sndapi_sndio == gbo_sndapi) {
++					WriteCStrToDestFile(" -lsndio");
+ 				}
+ #endif
+ #if 0
