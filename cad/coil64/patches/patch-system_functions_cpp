@@ -3,7 +3,7 @@ Get our user's home directory
 Index: system_functions.cpp
 --- system_functions.cpp.orig
 +++ system_functions.cpp
-@@ -413,18 +413,18 @@ bool isAppPortable(){
+@@ -419,18 +419,18 @@ bool isAppPortable(){
  }
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
  void defineAppSettings(QSettings *&settings){
@@ -26,7 +26,7 @@ Index: system_functions.cpp
  #endif
  }
  //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-@@ -434,7 +434,7 @@ QString defineSavePath(){
+@@ -440,7 +440,7 @@ QString defineSavePath(){
      settings->beginGroup( "GUI" );
      QString savePath;
      if (isAppPortable())

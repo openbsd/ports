@@ -3,8 +3,8 @@ Set appropriate home directory location
 Index: definitions.h
 --- definitions.h.orig
 +++ definitions.h
-@@ -25,7 +25,7 @@ along with this program.  If not, see <https://www.gnu
- #define CLEAR_CHAR 0x274C
+@@ -26,7 +26,7 @@ along with this program.  If not, see <https://www.gnu
+ #define LIST_SEPARATOR "$"
  #define AWG_REG_EX "([0]{1,4})|([1-3]{1}[0-9]{1})|(40)|([1-9]{1})"
  #define MAX_DOUBLE 1.79769e+308
 -#define PORTABLE_SAVE_LOCATION "/Save"
