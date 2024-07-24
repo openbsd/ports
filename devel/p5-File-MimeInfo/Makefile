@@ -1,6 +1,6 @@
 COMMENT =	determine file types
 
-DISTNAME =	File-MimeInfo-0.34
+DISTNAME =	File-MimeInfo-0.35
 
 CATEGORIES =	devel
 
