@@ -5,7 +5,7 @@ COMMENT =	alternative private front-end to Reddit
 
 GH_ACCOUNT =	redlib-org
 GH_PROJECT =	redlib
-GH_TAGNAME =	v0.31.2
+GH_TAGNAME =	v0.35.1
 
 CATEGORIES =	www
 
