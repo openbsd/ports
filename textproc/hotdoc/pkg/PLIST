@@ -1,5 +1,13 @@
 bin/hotdoc
 bin/hotdoc_dep_printer
+lib/python${MODPY_VERSION}/site-packages/backports/
+lib/python${MODPY_VERSION}/site-packages/backports/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/backports/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/backports/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/backports/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/backports/${MODPY_PYCACHE}entry_points_selectable.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/backports/${MODPY_PYCACHE}entry_points_selectable.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/backports/entry_points_selectable.py
 lib/python${MODPY_VERSION}/site-packages/hotdoc/
 lib/python${MODPY_VERSION}/site-packages/hotdoc-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/hotdoc-${MODPY_EGG_VERSION}.dist-info/COPYING
