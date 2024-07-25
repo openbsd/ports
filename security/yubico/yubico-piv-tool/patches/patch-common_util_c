@@ -3,7 +3,7 @@ Do not reach into X509_ALGOR.
 Index: common/util.c
 --- common/util.c.orig
 +++ common/util.c
-@@ -372,6 +372,7 @@ bool set_component(unsigned char *in_ptr, const BIGNUM
+@@ -383,6 +383,7 @@ bool set_component(unsigned char *in_ptr, const BIGNUM
  bool prepare_rsa_signature(const unsigned char *in, unsigned int in_len, unsigned char *out, unsigned int *out_len, int nid) {
    X509_SIG *digestInfo;
    X509_ALGOR *algor;
@@ -11,7 +11,7 @@ Index: common/util.c
    ASN1_OCTET_STRING *digest;
    unsigned char data[1024] = {0};
  
-@@ -382,8 +383,8 @@ bool prepare_rsa_signature(const unsigned char *in, un
+@@ -393,8 +394,8 @@ bool prepare_rsa_signature(const unsigned char *in, un
  
    digestInfo = X509_SIG_new();
    X509_SIG_getm(digestInfo, &algor, &digest);
