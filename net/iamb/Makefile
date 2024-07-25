@@ -7,7 +7,7 @@ COMMENT =		matrix client for vim addicts
 GH_ACCOUNT =		ulyssa
 GH_PROJECT =		iamb
 GH_TAGNAME =		v0.0.9
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =		https://iamb.chat
 
@@ -24,6 +24,11 @@ CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 WANTLIB =		${MODCARGO_WANTLIB} m
 MODCARGO_CRATES_KEEP +=  libsqlite3-sys
+MODCARGO_CRATES_UPDATE +=	time time-macros deranged
+# deps for time crate
+MODCARGO_CRATES +=	num-conv 0.1.0 # MIT OR Apache-2.0
+MODCARGO_CRATES +=	powerfmt 0.2.0 # MIT OR Apache-2.0
+#prod upstrean to upgrade to 0.17
 BUILD_DEPENDS =		security/rust-ring \
 			textproc/oniguruma
 RUN_DEPENDS +=	x11/gtk+4,-guic \
