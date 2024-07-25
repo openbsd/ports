@@ -172,6 +172,7 @@ MODGO_MODULES =	\
 	github.com/aliyun/alibaba-cloud-sdk-go						 v0.0.0-20190329064014-6e358769c32a \
 	github.com/aliyun/aliyun-oss-go-sdk						 v0.0.0-20190103054945-8205d1f41e70 \
 	github.com/aliyun/aliyun-tablestore-go-sdk					 v4.1.2+incompatible \
+	github.com/andybalholm/brotli							 v1.0.1 \
 	github.com/antchfx/xpath							 v0.0.0-20190129040759-c8489ed3251e \
 	github.com/antchfx/xquery							 v0.0.0-20180515051857-ad5b8c7a47b0 \
 	github.com/antihax/optional							 v1.0.0 \
@@ -271,6 +272,8 @@ MODGO_MODULES =	\
 	github.com/docker/go-connections						 v0.4.0 \
 	github.com/docker/go-units							 v0.5.0 \
 	github.com/docker/spdystream							 v0.0.0-20160310174837-449fdfce4d96 \
+	github.com/dsnet/compress							 v0.0.2-0.20210315054119-f66993602bf5 \
+	github.com/dsnet/golib								 v0.0.0-20171103203638-1ea166775780 \
 	github.com/dustin/go-humanize							 v1.0.1 \
 	github.com/dylanmei/iso8601							 v0.1.0 \
 	github.com/dylanmei/winrmtest							 v0.0.0-20190225150635-99b7fe2fddf1 \
@@ -422,7 +425,9 @@ MODGO_MODULES =	\
 	github.com/kisielk/errcheck							 v1.2.0 \
 	github.com/kisielk/gotool							 v1.0.0 \
 	github.com/klauspost/compress							 v1.17.7 \
+	github.com/klauspost/cpuid							 v1.2.0 \
 	github.com/klauspost/cpuid/v2							 v2.0.12 \
+	github.com/klauspost/pgzip							 v1.2.5 \
 	github.com/konsorten/go-windows-terminal-sequences				 v1.0.1 \
 	github.com/kr/fs								 v0.1.0 \
 	github.com/kr/logfmt								 v0.0.0-20140226030751-b84e30acd515 \
@@ -450,6 +455,7 @@ MODGO_MODULES =	\
 	github.com/mattn/go-zglob							 v0.0.3 \
 	github.com/matttproud/golang_protobuf_extensions				 v1.0.1 \
 	github.com/mgutz/ansi								 v0.0.0-20170206155736-9520e82c474b \
+	github.com/mholt/archiver/v3							 v3.5.1 \
 	github.com/microcosm-cc/bluemonday						 v1.0.21 \
 	github.com/miekg/dns								 v1.1.31 \
 	github.com/mitchellh/cli							 v1.1.2 \
@@ -482,6 +488,7 @@ MODGO_MODULES =	\
 	github.com/mwitkow/go-conntrack							 v0.0.0-20161129095857-cc309e4a2223 \
 	github.com/mxk/go-flowrate							 v0.0.0-20140419014527-cca7078d478f \
 	github.com/nu7hatch/gouuid							 v0.0.0-20131221200532-179d4d0c4d8d \
+	github.com/nwaples/rardecode							 v1.1.0 \
 	github.com/oklog/run								 v1.1.0 \
 	github.com/olekukonko/tablewriter						 v0.0.5 \
 	github.com/onsi/ginkgo								 v1.8.0 \
@@ -496,6 +503,7 @@ MODGO_MODULES =	\
 	github.com/owenrumney/go-sarif							 v1.1.1 \
 	github.com/packer-community/winrmcp						 v0.0.0-20180921211025-c76d91c1e7db \
 	github.com/pascaldekloe/goe							 v0.0.0-20180627143212-57f6aae5913c \
+	github.com/pierrec/lz4/v4							 v4.1.2 \
 	github.com/pkg/browser								 v0.0.0-20240102092130-5ac0b6a4141c \
 	github.com/pkg/errors								 v0.9.1 \
 	github.com/pkg/sftp								 v1.13.1 \
@@ -563,6 +571,7 @@ MODGO_MODULES =	\
 	github.com/xeipuuv/gojsonpointer						 v0.0.0-20190905194746-02993c407bfb \
 	github.com/xeipuuv/gojsonreference						 v0.0.0-20180127040603-bd5ef7bd5415 \
 	github.com/xeipuuv/gojsonschema							 v1.2.0 \
+	github.com/xi2/xz								 v0.0.0-20171230120015-48954b6210f8 \
 	github.com/xiang90/probing							 v0.0.0-20160813154853-07dd2e8dfe18 \
 	github.com/xlab/treeprint							 v0.0.0-20161029104018-1d6e34225557 \
 	github.com/xo/terminfo								 v0.0.0-20210125001918-ca9a967f8778 \
@@ -997,6 +1006,7 @@ MODGO_MODFILES =	\
 	github.com/golang/protobuf							 v1.5.1 \
 	github.com/golang/protobuf							 v1.5.2 \
 	github.com/golang/protobuf							 v1.5.3 \
+	github.com/golang/snappy							 v0.0.2 \
 	github.com/golang/snappy							 v0.0.3 \
 	github.com/google/btree								 v0.0.0-20180813153112-4030bb1f1f0c \
 	github.com/google/go-cmp							 v0.2.0 \
@@ -1120,8 +1130,10 @@ MODGO_MODFILES =	\
 	github.com/jstemmer/go-junit-report						 v0.0.0-20190106144839-af01ea7f8024 \
 	github.com/jstemmer/go-junit-report						 v0.9.1 \
 	github.com/klauspost/compress							 v1.11.2 \
+	github.com/klauspost/compress							 v1.11.4 \
 	github.com/klauspost/compress							 v1.13.0 \
 	github.com/klauspost/compress							 v1.15.11 \
+	github.com/klauspost/compress							 v1.4.1 \
 	github.com/klauspost/cpuid/v2							 v2.0.10 \
 	github.com/klauspost/cpuid/v2							 v2.0.9 \
 	github.com/kr/pretty								 v0.1.0 \
@@ -1241,6 +1253,7 @@ MODGO_MODFILES =	\
 	github.com/stretchr/testify							 v1.8.4 \
 	github.com/ulikunitz/xz								 v0.5.10 \
 	github.com/ulikunitz/xz								 v0.5.8 \
+	github.com/ulikunitz/xz								 v0.5.9 \
 	github.com/urfave/cli								 v1.22.1 \
 	github.com/urfave/cli								 v1.22.2 \
 	github.com/urfave/cli/v2							 v2.10.3 \
