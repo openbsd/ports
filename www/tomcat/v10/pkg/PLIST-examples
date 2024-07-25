@@ -849,6 +849,7 @@ webapps/docs/api/org/apache/catalina/util/ContextName.html
 webapps/docs/api/org/apache/catalina/util/CustomObjectInputStream.html
 webapps/docs/api/org/apache/catalina/util/DOMWriter.html
 webapps/docs/api/org/apache/catalina/util/ErrorPageSupport.html
+webapps/docs/api/org/apache/catalina/util/FilterUtil.html
 webapps/docs/api/org/apache/catalina/util/IOTools.html
 webapps/docs/api/org/apache/catalina/util/Introspection.html
 webapps/docs/api/org/apache/catalina/util/LifecycleBase.html
@@ -2160,6 +2161,8 @@ webapps/docs/architecture/requestProcess/authentication-process.png
 webapps/docs/architecture/requestProcess/request-process.png
 webapps/docs/architecture/startup/
 webapps/docs/architecture/startup.html
+webapps/docs/architecture/startup/1_overview.png
+webapps/docs/architecture/startup/1_overview.vpd
 webapps/docs/architecture/startup/serverStartup.pdf
 webapps/docs/architecture/startup/serverStartup.txt
 webapps/docs/balancer-howto.html
