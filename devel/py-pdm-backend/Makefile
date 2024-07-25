@@ -3,7 +3,7 @@ COMMENT =		PEP 517 compatible backend for pdm
 MODPY_EGG_VERSION =	2.0.0
 DISTNAME =		pdm-backend-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -18,7 +18,7 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		other
 
 TEST_DEPENDS =		devel/py-editables${MODPY_FLAVOR}
 
