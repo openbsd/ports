@@ -14,7 +14,7 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 
 BUILD_DEPENDS =	devel/boost \
-		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION}
+		x11/kde-applications/kpimtextedit>=${MODKDE_GEAR_VERSION}
 
 LIB_DEPENDS =	devel/kf6/kcodecs \
 		devel/kf6/kcolorscheme \

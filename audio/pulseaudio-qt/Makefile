@@ -19,8 +19,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6DBus Qt6Gui glib-2.0
 WANTLIB += intl m
 
-MODULES =	x11/kde-applications \
-		devel/kf6
+MODULES =	x11/kde
 
 BUILD_DEPENDS =	audio/pulseaudio
 

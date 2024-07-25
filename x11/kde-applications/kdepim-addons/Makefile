@@ -85,34 +85,34 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		security/libassuan \
 		textproc/discount \
 		textproc/ktextaddons \
-		x11/kde-applications/akonadi-calendar>=${MODKDE_VERSION} \
-		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
-		x11/kde-applications/akonadi-import-wizard>=${MODKDE_VERSION} \
-		x11/kde-applications/akonadi-mime>=${MODKDE_VERSION} \
-		x11/kde-applications/akonadi-notes>=${MODKDE_VERSION} \
-		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
-		x11/kde-applications/calendarsupport>=${MODKDE_VERSION} \
-		x11/kde-applications/eventviews>=${MODKDE_VERSION} \
-		x11/kde-applications/grantleetheme>=${MODKDE_VERSION} \
-		x11/kde-applications/incidenceeditor>=${MODKDE_VERSION} \
-		x11/kde-applications/kaddressbook>=${MODKDE_VERSION} \
-		x11/kde-applications/kcalutils>=${MODKDE_VERSION} \
-		x11/kde-applications/kidentitymanagement>=${MODKDE_VERSION} \
-		x11/kde-applications/kimap>=${MODKDE_VERSION} \
-		x11/kde-applications/kitinerary>=${MODKDE_VERSION} \
-		x11/kde-applications/kmailtransport>=${MODKDE_VERSION} \
-		x11/kde-applications/kmime>=${MODKDE_VERSION} \
-		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION} \
-		x11/kde-applications/kpkpass>=${MODKDE_VERSION} \
-		x11/kde-applications/ktnef>=${MODKDE_VERSION} \
-		x11/kde-applications/libgravatar>=${MODKDE_VERSION} \
-		x11/kde-applications/libkdepim>=${MODKDE_VERSION} \
-		x11/kde-applications/libkleo>=${MODKDE_VERSION} \
-		x11/kde-applications/libksieve>=${MODKDE_VERSION} \
-		x11/kde-applications/mailcommon>=${MODKDE_VERSION} \
-		x11/kde-applications/mailimporter>=${MODKDE_VERSION} \
-		x11/kde-applications/messagelib>=${MODKDE_VERSION} \
-		x11/kde-applications/pimcommon>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-calendar>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/akonadi-contacts>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/akonadi-import-wizard>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/akonadi-mime>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/akonadi-notes>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/akonadi>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/calendarsupport>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/eventviews>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/grantleetheme>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/incidenceeditor>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kaddressbook>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kcalutils>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kidentitymanagement>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kimap>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kitinerary>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kmailtransport>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kmime>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kpimtextedit>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kpkpass>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/ktnef>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/libgravatar>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/libkdepim>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/libkleo>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/libksieve>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/mailcommon>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/mailimporter>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/messagelib>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/pimcommon>=${MODKDE_GEAR_VERSION} \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtpositioning \
 		x11/qt6/qtwebchannel \

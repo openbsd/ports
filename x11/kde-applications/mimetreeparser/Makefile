@@ -24,9 +24,9 @@ LIB_DEPENDS =	devel/kf6/kcalendarcore \
 		devel/kf6/kwidgetsaddons \
 		security/gpgme,-qt \
 		security/libassuan \
-		x11/kde-applications/kmbox>=${MODKDE_VERSION} \
-		x11/kde-applications/kmime>=${MODKDE_VERSION} \
-		x11/kde-applications/libkleo>=${MODKDE_VERSION} \
+		x11/kde-applications/kmbox>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kmime>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/libkleo>=${MODKDE_GEAR_VERSION} \
 		x11/qt6/qtdeclarative
 
 TEST_IS_INTERACTIVE =	X11

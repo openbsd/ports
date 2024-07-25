@@ -34,9 +34,9 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/kxmlgui \
 		security/qtkeychain,qt6 \
 		textproc/ktextaddons \
-		x11/kde-applications/kmailtransport>=${MODKDE_VERSION} \
-		x11/kde-applications/libksieve>=${MODKDE_VERSION} \
-		x11/kde-applications/pimcommon>=${MODKDE_VERSION}
+		x11/kde-applications/kmailtransport>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/libksieve>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/pimcommon>=${MODKDE_GEAR_VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 

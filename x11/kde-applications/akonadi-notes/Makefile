@@ -12,7 +12,7 @@ MODKDE_TRANSLATIONS = yes
 BUILD_DEPENDS =	devel/kf6/kcodecs
 
 LIB_DEPENDS =	devel/kf6/ki18n \
-		x11/kde-applications/kmime>=${MODKDE_VERSION}
+		x11/kde-applications/kmime>=${MODKDE_GEAR_VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 

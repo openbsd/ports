@@ -27,11 +27,11 @@ MODKDE_DOCS = yes
 MODKF5_L10N_CONFLICT = yes
 
 BUILD_DEPENDS =	devel/boost \
-		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-contacts>=${MODKDE_GEAR_VERSION} \
 		devel/kf6/kitemmodels
 
-RUN_DEPENDS =	x11/kde-applications/kdepim-runtime>=${MODKDE_VERSION} \
-		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
+RUN_DEPENDS =	x11/kde-applications/kdepim-runtime>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/akonadi-contacts>=${MODKDE_GEAR_VERSION} \
 		devel/kf6/kitemmodels
 
 LIB_DEPENDS =	devel/kf6/kcmutils \
@@ -53,10 +53,10 @@ LIB_DEPENDS =	devel/kf6/kcmutils \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \
 		textproc/ktextaddons \
-		x11/kde-applications/grantleetheme>=${MODKDE_VERSION} \
-		x11/kde-applications/kontactinterface>=${MODKDE_VERSION} \
-		x11/kde-applications/libkdepim>=${MODKDE_VERSION} \
-		x11/kde-applications/pimcommon>=${MODKDE_VERSION} \
+		x11/kde-applications/grantleetheme>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kontactinterface>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/libkdepim>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/pimcommon>=${MODKDE_GEAR_VERSION} \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtpositioning \
 		x11/qt6/qtwebchannel \

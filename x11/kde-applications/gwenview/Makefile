@@ -29,9 +29,9 @@ BUILD_DEPENDS =	wayland/wayland-protocols \
 		wayland/plasma-wayland-protocols
 
 RUN_DEPENDS =	devel/kf6/kfilemetadata \
-		x11/kde-applications/ffmpegthumbs>=${MODKDE_VERSION} \
-		x11/kde-applications/kdesdk-thumbnailers>=${MODKDE_VERSION} \
-		x11/kde-applications/kf6-kio-extras>=${MODKDE_VERSION}
+		x11/kde-applications/ffmpegthumbs>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kdesdk-thumbnailers>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kf6-kio-extras>=${MODKDE_GEAR_VERSION}
 
 LIB_DEPENDS =	devel/kf6/baloo \
 		devel/kf6/kbookmarks \
@@ -65,7 +65,7 @@ LIB_DEPENDS =	devel/kf6/baloo \
 		math/cfitsio \
 		multimedia/phonon,qt6 \
 		wayland/wayland \
-		x11/kde-applications/kf6-libkdcraw>=${MODKDE_VERSION} \
+		x11/kde-applications/kf6-libkdcraw>=${MODKDE_GEAR_VERSION} \
 		x11/kde-plasma/plasma-activities \
 		x11/qt6/qtsvg \
 		x11/qt6/qtwayland \

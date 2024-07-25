@@ -29,8 +29,8 @@ LIB_DEPENDS =	audio/cdparanoia \
 		devel/kf6/ki18n \
 		devel/kf6/kio \
 		devel/kf6/kwidgetsaddons \
-		x11/kde-applications/kf6-libkcddb>=${MODKDE_VERSION} \
-		x11/kde-applications/kf6-libkcompactdisc>=${MODKDE_VERSION} \
+		x11/kde-applications/kf6-libkcddb>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kf6-libkcompactdisc>=${MODKDE_GEAR_VERSION} \
 		x11/qt6/qtdeclarative
 
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib

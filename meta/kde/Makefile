@@ -1,4 +1,4 @@
-PKGNAME =		kde-${MODKDE_VERSION}
+PKGNAME =		kde-${MODKDE_GEAR_VERSION}
 
 COMMENT-accessibility =	KDE accessibility applications
 COMMENT-admin =		KDE system administrator tools
@@ -19,21 +19,20 @@ REVISION-main =	0
 COMMENT-plasma =	KDE Plasma desktop meta-package (base installation)
 COMMENT-plasma-extras =	KDE Plasma desktop meta-package (full installation)
 
-PKGNAME-accessibility =	kde-accessibility-${MODKDE_VERSION}
-PKGNAME-admin =		kde-admin-${MODKDE_VERSION}
-PKGNAME-education =	kde-education-${MODKDE_VERSION}
-PKGNAME-games =		kde-games-${MODKDE_VERSION}
-PKGNAME-graphics =	kde-graphics-${MODKDE_VERSION}
-PKGNAME-main =		kde-${MODKDE_VERSION}
-PKGNAME-multimedia =	kde-multimedia-${MODKDE_VERSION}
-PKGNAME-network =	kde-network-${MODKDE_VERSION}
-PKGNAME-pim =		kde-pim-${MODKDE_VERSION}
-PKGNAME-development =	kde-development-${MODKDE_VERSION}
-PKGNAME-utils =		kde-utils-${MODKDE_VERSION}
+PKGNAME-accessibility =	kde-accessibility-${MODKDE_GEAR_VERSION}
+PKGNAME-admin =		kde-admin-${MODKDE_GEAR_VERSION}
+PKGNAME-education =	kde-education-${MODKDE_GEAR_VERSION}
+PKGNAME-games =		kde-games-${MODKDE_GEAR_VERSION}
+PKGNAME-graphics =	kde-graphics-${MODKDE_GEAR_VERSION}
+PKGNAME-main =		kde-${MODKDE_GEAR_VERSION}
+PKGNAME-multimedia =	kde-multimedia-${MODKDE_GEAR_VERSION}
+PKGNAME-network =	kde-network-${MODKDE_GEAR_VERSION}
+PKGNAME-pim =		kde-pim-${MODKDE_GEAR_VERSION}
+PKGNAME-development =	kde-development-${MODKDE_GEAR_VERSION}
+PKGNAME-utils =		kde-utils-${MODKDE_GEAR_VERSION}
 
-PLASMA_VERSION =	6.1.3
-PKGNAME-plasma =	kde-plasma-${PLASMA_VERSION}
-PKGNAME-plasma-extras =	kde-plasma-extras-${PLASMA_VERSION}
+PKGNAME-plasma =	kde-plasma-${MODKDE_PLASMA_VERSION}
+PKGNAME-plasma-extras =	kde-plasma-extras-${MODKDE_PLASMA_VERSION}
 
 MULTI_PACKAGES +=	-main \
 			-games \
@@ -52,7 +51,9 @@ MULTI_PACKAGES +=	-plasma \
 
 HOMEPAGE =	https://kde.org
 
-MODULES =	x11/kde-applications
+MODULES =	x11/kde
+
+CONFIGURE_STYLE = none
 
 WANTLIB-accessibility =
 LIB_DEPENDS-accessibility =
@@ -352,16 +353,16 @@ RUN_DEPENDS-main = \
 	x11/kde-applications/kipi-plugins \
 	x11/kde-applications/konqueror \
 	x11/kde-applications/konsole \
-	${BUILD_PKGPATH},-accessibility=${MODKDE_VERSION} \
-	${BUILD_PKGPATH},-admin=${MODKDE_VERSION} \
-	${BUILD_PKGPATH},-development=${MODKDE_VERSION} \
-	${BUILD_PKGPATH},-education=${MODKDE_VERSION} \
-	${BUILD_PKGPATH},-games=${MODKDE_VERSION} \
-	${BUILD_PKGPATH},-graphics=${MODKDE_VERSION} \
-	${BUILD_PKGPATH},-multimedia=${MODKDE_VERSION} \
-	${BUILD_PKGPATH},-network=${MODKDE_VERSION} \
-	${BUILD_PKGPATH},-pim=${MODKDE_VERSION} \
-	${BUILD_PKGPATH},-utils=${MODKDE_VERSION}
+	${BUILD_PKGPATH},-accessibility=${MODKDE_GEAR_VERSION} \
+	${BUILD_PKGPATH},-admin=${MODKDE_GEAR_VERSION} \
+	${BUILD_PKGPATH},-development=${MODKDE_GEAR_VERSION} \
+	${BUILD_PKGPATH},-education=${MODKDE_GEAR_VERSION} \
+	${BUILD_PKGPATH},-games=${MODKDE_GEAR_VERSION} \
+	${BUILD_PKGPATH},-graphics=${MODKDE_GEAR_VERSION} \
+	${BUILD_PKGPATH},-multimedia=${MODKDE_GEAR_VERSION} \
+	${BUILD_PKGPATH},-network=${MODKDE_GEAR_VERSION} \
+	${BUILD_PKGPATH},-pim=${MODKDE_GEAR_VERSION} \
+	${BUILD_PKGPATH},-utils=${MODKDE_GEAR_VERSION}
 
 WANTLIB-plasma =
 LIB_DEPENDS-plasma =
@@ -414,7 +415,7 @@ RUN_DEPENDS-plasma += \
 
 # extra apps
 RUN_DEPENDS-plasma-extras += \
-		${BUILD_PKGPATH},-plasma=${PLASMA_VERSION} \
+		${BUILD_PKGPATH},-plasma=${MODKDE_PLASMA_VERSION} \
 		net/kdeconnect-kde \
 		x11/kde-applications/ark \
 		x11/kde-applications/gwenview \

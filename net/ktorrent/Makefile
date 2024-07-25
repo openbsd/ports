@@ -2,7 +2,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	BitTorrent Client
 
-DISTNAME =	ktorrent-${MODKDE_VERSION}
+DISTNAME =	ktorrent-${MODKDE_GEAR_VERSION}
 
 SHARED_LIBS +=  ktcore                    3.0 # 0.0
 
@@ -31,11 +31,10 @@ WANTLIB += Qt6Quick Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
 WANTLIB += Qt6Widgets Qt6Xml X11 c gcrypt gmp m maxminddb phonon4qt6
 WANTLIB += tag
 
-SITES =		${SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
+SITES =		${SITE_KDE:=stable/release-service/${MODKDE_GEAR_VERSION}/src/}
 EXTRACT_SUFX =	.tar.xz
 
-MODULES =		x11/kde-applications \
-			devel/kf6
+MODULES =		x11/kde
 
 BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/boost
@@ -76,7 +75,7 @@ LIB_DEPENDS =		audio/taglib \
 			devel/kf6/sonnet \
 			devel/kf6/syndication \
 			multimedia/phonon,qt6 \
-			net/libktorrent>=${MODKDE_VERSION} \
+			net/libktorrent>=${MODKDE_GEAR_VERSION} \
 			net/libmaxminddb \
 			security/libgcrypt \
 			x11/qt6/qt5compat \

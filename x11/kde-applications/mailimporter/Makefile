@@ -29,10 +29,10 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kio \
 		devel/kf6/kwidgetsaddons \
 		textproc/ktextaddons \
-		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
-		x11/kde-applications/akonadi-mime>=${MODKDE_VERSION} \
-		x11/kde-applications/kmime>=${MODKDE_VERSION} \
-		x11/kde-applications/pimcommon>=${MODKDE_VERSION}
+		x11/kde-applications/akonadi>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/akonadi-mime>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kmime>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/pimcommon>=${MODKDE_GEAR_VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 

@@ -14,7 +14,7 @@ LIB_DEPENDS =	devel/kf6/kcalendarcore \
 		devel/kf6/kcontacts \
 		devel/kf6/kcoreaddons \
 		devel/kf6/ki18n \
-		x11/kde-applications/kcalutils>=${MODKDE_VERSION}
+		x11/kde-applications/kcalutils>=${MODKDE_GEAR_VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 

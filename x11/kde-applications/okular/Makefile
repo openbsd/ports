@@ -65,8 +65,8 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		print/poppler,-qt6>=23.05.0 \
 		textproc/discount \
 		textproc/ebook-tools \
-		x11/kde-applications/kf6-kdegraphics-mobipocket>=${MODKDE_VERSION} \
-		x11/kde-applications/kf6-libkexiv2>=${MODKDE_VERSION} \
+		x11/kde-applications/kf6-kdegraphics-mobipocket>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kf6-libkexiv2>=${MODKDE_GEAR_VERSION} \
 		x11/kde-plasma/plasma-activities \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtmultimedia \

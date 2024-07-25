@@ -3,7 +3,7 @@ USE_WXNEEDED =		Yes
 COMMENT =	IDE for C, C++, Python, QML/JavaScript and PHP
 
 CATEGORIES =	devel x11
-DISTNAME =	kdevelop-${MODKDE_VERSION}
+DISTNAME =	kdevelop-${MODKDE_GEAR_VERSION}
 REVISION =	0
 
 HOMEPAGE =	https://www.kdevelop.org/
@@ -51,10 +51,9 @@ WANTLIB += svn_subr-1 svn_wc-1
 
 WANTLIB += llvm${MODCLANG_VERSION}/lib/clang
 
-SITES =	${SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
+SITES =	${SITE_KDE:=stable/release-service/${MODKDE_GEAR_VERSION}/src/}
 
-MODULES =	x11/kde-applications \
-		devel/kf5 \
+MODULES =	x11/kde \
 		lang/clang \
 		lang/python
 
@@ -125,7 +124,7 @@ LIB_DEPENDS =	${MODCLANG_LIB_DEPENDS} \
 		devel/kf5/threadweaver \
 		devel/subversion \
 		x11/grantlee-qt5>=5.3 \
-		x11/kde-applications/libkomparediff2>=${MODKDE_VERSION} \
+		x11/kde-applications/libkomparediff2>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/okteta>=0.26.1v0 \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtlocation \

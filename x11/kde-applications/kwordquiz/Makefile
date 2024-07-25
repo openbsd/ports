@@ -29,7 +29,7 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/ki18n \
 		devel/kf6/knewstuff \
 		devel/kf6/kdbusaddons \
-		x11/kde-applications/libkeduvocdocument>=${MODKDE_VERSION} \
+		x11/kde-applications/libkeduvocdocument>=${MODKDE_GEAR_VERSION} \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtmultimedia \
 		x11/qt6/qtsvg

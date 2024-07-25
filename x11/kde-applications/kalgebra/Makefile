@@ -41,7 +41,7 @@ LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
 		devel/readline \
-		x11/kde-applications/analitza>=${MODKDE_VERSION} \
+		x11/kde-applications/analitza>=${MODKDE_GEAR_VERSION} \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtpositioning \
 		x11/qt6/qtwebchannel \

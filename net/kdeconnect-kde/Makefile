@@ -1,6 +1,6 @@
 COMMENT =	KDE app that allows your devices to communicate
 
-DISTNAME =	kdeconnect-kde-${MODKDE_VERSION}
+DISTNAME =	kdeconnect-kde-${MODKDE_GEAR_VERSION}
 
 SHARED_LIBS +=	kdeconnectcore		6.0 # 1.4
 SHARED_LIBS +=	kdeconnectpluginkcm	1.0 # 1.4
@@ -27,11 +27,10 @@ WANTLIB += Qt6WaylandClient Qt6Widgets Qt6Xml SM X11 Xext Xtst
 WANTLIB += c crypto dbus-1 fakekey m wayland-client wayland-cursor
 WANTLIB += xkbcommon
 
-SITES =		${SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
+SITES =		${SITE_KDE:=stable/release-service/${MODKDE_GEAR_VERSION}/src/}
 EXTRACT_SUFX =		.tar.xz
 
-MODULES =	x11/kde-applications \
-		devel/kf6 \
+MODULES =	x11/kde \
 		lang/python
 
 MODPY_RUNDEP =	No

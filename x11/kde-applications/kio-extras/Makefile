@@ -64,7 +64,7 @@ LIB_DEPENDS =	audio/taglib \
 		net/kdsoap \
 		net/samba \
 		security/libssh \
-		x11/kde-applications/libkexiv2>=${MODKDE_VERSION} \
+		x11/kde-applications/libkexiv2>=${MODKDE_GEAR_VERSION} \
 		x11/qt5/qtsvg
 
 # Use internal, ports version is qt6 only

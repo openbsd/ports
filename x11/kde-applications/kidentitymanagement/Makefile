@@ -32,7 +32,7 @@ LIB_DEPENDS =	devel/kf6/kcodecs \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \
 		textproc/ktextaddons \
-		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION} \
+		x11/kde-applications/kpimtextedit>=${MODKDE_GEAR_VERSION} \
 		x11/qt6/qtdeclarative
 
 TEST_IS_INTERACTIVE =	X11

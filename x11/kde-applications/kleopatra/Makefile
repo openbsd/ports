@@ -56,13 +56,13 @@ LIB_DEPENDS =	devel/kf6/kcodecs \
 		security/gpgme,-qt \
 		security/libassuan \
 		security/libgpg-error \
-		x11/kde-applications/akonadi-mime>=${MODKDE_VERSION} \
-		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
-		x11/kde-applications/kidentitymanagement>=${MODKDE_VERSION} \
-		x11/kde-applications/kmailtransport>=${MODKDE_VERSION} \
-		x11/kde-applications/kmbox>=${MODKDE_VERSION} \
-		x11/kde-applications/kmime>=${MODKDE_VERSION} \
-		x11/kde-applications/libkleo>=${MODKDE_VERSION} \
-		x11/kde-applications/mimetreeparser>=${MODKDE_VERSION}
+		x11/kde-applications/akonadi-mime>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/akonadi>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kidentitymanagement>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kmailtransport>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kmbox>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kmime>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/libkleo>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/mimetreeparser>=${MODKDE_GEAR_VERSION}
 
 .include <bsd.port.mk>

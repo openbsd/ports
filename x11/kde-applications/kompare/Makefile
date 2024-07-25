@@ -43,7 +43,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/solid \
 		devel/kf5/sonnet \
 		devel/kf5/syntax-highlighting \
-		x11/kde-applications/libkomparediff2>=${MODKDE_VERSION}
+		x11/kde-applications/libkomparediff2>=${MODKDE_GEAR_VERSION}
 
 # XXX Checkn libkomparediff2
 

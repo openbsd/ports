@@ -6,6 +6,6 @@ SHARED_LIBS +=	KPim6Mbox                 0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} KPim6Mime Qt6Core m
 
-LIB_DEPENDS =	x11/kde-applications/kmime>=${MODKDE_VERSION}
+LIB_DEPENDS =	x11/kde-applications/kmime>=${MODKDE_GEAR_VERSION}
 
 .include <bsd.port.mk>

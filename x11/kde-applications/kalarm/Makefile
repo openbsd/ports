@@ -30,11 +30,11 @@ WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets Qt6Xml
 WANTLIB += X11 c canberra m
 
 BUILD_DEPENDS =	devel/boost \
-		x11/kde-applications/mailcommon>=${MODKDE_VERSION}
+		x11/kde-applications/mailcommon>=${MODKDE_GEAR_VERSION}
 
 RUN_DEPENDS =	x11/dbus,-suid \
-		x11/kde-applications/kdepim-runtime>=${MODKDE_VERSION} \
-		x11/kde-applications/mailcommon>=${MODKDE_VERSION}
+		x11/kde-applications/kdepim-runtime>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/mailcommon>=${MODKDE_GEAR_VERSION}
 
 LIB_DEPENDS =	audio/libcanberra \
 		devel/kf6/kauth \
@@ -69,14 +69,14 @@ LIB_DEPENDS =	audio/libcanberra \
 		devel/kf6/solid \
 		devel/kf6/sonnet \
 		textproc/ktextaddons \
-		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
-		x11/kde-applications/akonadi-mime>=${MODKDE_VERSION} \
-		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
-		x11/kde-applications/grantleetheme>=${MODKDE_VERSION} \
-		x11/kde-applications/kcalutils>=${MODKDE_VERSION} \
-		x11/kde-applications/kidentitymanagement>=${MODKDE_VERSION} \
-		x11/kde-applications/kmailtransport>=${MODKDE_VERSION} \
-		x11/kde-applications/kmime>=${MODKDE_VERSION} \
-		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION}
+		x11/kde-applications/akonadi-contacts>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/akonadi-mime>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/akonadi>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/grantleetheme>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kcalutils>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kidentitymanagement>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kmailtransport>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kmime>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kpimtextedit>=${MODKDE_GEAR_VERSION}
 
 .include <bsd.port.mk>

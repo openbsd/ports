@@ -9,16 +9,14 @@ MAINTAINER ?=		Rafael Sadowski <rsadowski@openbsd.org>
 # module port, and breaks build.
 CONFIGURE_STYLE ?=	cmake
 
-MODULES :=		devel/kf6 \
-			x11/kde-applications \
+MODULES :=		x11/kde \
 			${MODULES}
 
 # usual KDE rules:
 # LGPLv2.1+, GPLv2+, GPLv3
 PERMIT_PACKAGE ?=	Yes
 
-# XXX Keep in-sync with meta/kde
-VERSION ?=		6.1.3
+VERSION ?=		${MODKDE_PLASMA_VERSION}
 
 SITES ?=		${SITE_KDE:=stable/plasma/${VERSION}/}
 EXTRACT_SUFX ?=		.tar.xz

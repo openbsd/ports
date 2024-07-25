@@ -27,6 +27,6 @@ LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kxmlgui \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtsvg \
-		x11/kde-applications/libkdegames>=${MODKDE_VERSION}
+		x11/kde-applications/libkdegames>=${MODKDE_GEAR_VERSION}
 
 .include <bsd.port.mk>

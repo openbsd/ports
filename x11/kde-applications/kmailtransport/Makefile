@@ -36,8 +36,8 @@ LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/solid \
 		security/qtkeychain,qt6 \
-		x11/kde-applications/ksmtp>=${MODKDE_VERSION} \
-		x11/kde-applications/libkgapi>=${MODKDE_VERSION}
+		x11/kde-applications/ksmtp>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/libkgapi>=${MODKDE_GEAR_VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 

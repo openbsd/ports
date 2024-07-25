@@ -1,6 +1,18 @@
-MODKDE_VERSION ?=		24.05.2
+MODKDE_GEAR_VERSION ?=		24.05.2
+MODKDE_PLASMA_VERSION ?=	6.1.3
 
 MODKDE_KF5 ?=			No
+
+.if empty(CONFIGURE_STYLE)
+CONFIGURE_STYLE =      cmake
+.endif
+
+.if defined(MODKDE_KF5) && ${MODKDE_KF5:L} == "yes"
+MODULES +=		devel/kf5
+.else
+CONFIGURE_ARGS +=	-DBUILD_WITH_QT6=ON
+MODULES +=		devel/kf6
+.endif
 
 # Set to 'yes' if there are .desktop files under share/release-service/.
 .if defined(MODKDE_DESKTOP_FILE) && ${MODKDE_DESKTOP_FILE:L} == "yes"

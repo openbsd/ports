@@ -23,7 +23,7 @@ LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/sonnet \
 		textproc/ktextaddons \
-		x11/kde-applications/pimcommon>=${MODKDE_VERSION}
+		x11/kde-applications/pimcommon>=${MODKDE_GEAR_VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 

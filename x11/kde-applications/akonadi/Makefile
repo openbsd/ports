@@ -57,7 +57,7 @@ LIB_DEPENDS =		archivers/xz \
 			devel/kf6/kxmlgui \
 			net/libaccounts-qt,qt6 \
 			textproc/libxml \
-			x11/kde-applications/kf6-kaccounts-integration>=${MODKDE_VERSION}
+			x11/kde-applications/kf6-kaccounts-integration>=${MODKDE_GEAR_VERSION}
 
 CONFIGURE_ARGS =	-DDATABASE_BACKEND=SQLITE
 

@@ -33,7 +33,7 @@ BUILD_DEPENDS =	databases/sqlite3 \
 
 RUN_DEPENDS =	databases/sqlite3 \
 		devel/kf6/kitemmodels \
-		x11/kde-applications/kf6-kio-extras>=${MODKDE_VERSION}
+		x11/kde-applications/kf6-kio-extras>=${MODKDE_GEAR_VERSION}
 
 LIB_DEPENDS =	devel/gmp \
 		devel/kf6/karchive \

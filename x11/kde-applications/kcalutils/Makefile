@@ -18,7 +18,7 @@ LIB_DEPENDS +=	devel/kf6/kcalendarcore \
 		devel/kf6/kiconthemes \
 		devel/kf6/ktexttemplate \
 		devel/kf6/kwidgetsaddons \
-		x11/kde-applications/kidentitymanagement>=${MODKDE_VERSION}
+		x11/kde-applications/kidentitymanagement>=${MODKDE_GEAR_VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 

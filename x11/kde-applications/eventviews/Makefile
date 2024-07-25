@@ -19,7 +19,7 @@ MODKF5_L10N_CONFLICT = yes
 BUILD_DEPENDS =	textproc/libxslt \
 		devel/boost
 
-RUN_DEPENDS =	x11/kde-applications/kdepim-runtime>=${MODKDE_VERSION}
+RUN_DEPENDS =	x11/kde-applications/kdepim-runtime>=${MODKDE_GEAR_VERSION}
 
 LIB_DEPENDS =	devel/kf6/kcalendarcore \
 		devel/kf6/kcodecs \
@@ -37,12 +37,12 @@ LIB_DEPENDS =	devel/kf6/kcalendarcore \
 		devel/kf6/kservice \
 		devel/kf6/kwidgetsaddons \
 		graphics/kdiagram-qt6 \
-		x11/kde-applications/akonadi-calendar>=${MODKDE_VERSION} \
-		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
-		x11/kde-applications/calendarsupport>=${MODKDE_VERSION} \
-		x11/kde-applications/kcalutils>=${MODKDE_VERSION} \
-		x11/kde-applications/kidentitymanagement>=${MODKDE_VERSION} \
-		x11/kde-applications/kmime>=${MODKDE_VERSION} \
-		x11/kde-applications/libkdepim>=${MODKDE_VERSION}
+		x11/kde-applications/akonadi-calendar>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/akonadi>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/calendarsupport>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kcalutils>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kidentitymanagement>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kmime>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/libkdepim>=${MODKDE_GEAR_VERSION}
 
 .include <bsd.port.mk>

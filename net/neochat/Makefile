@@ -1,8 +1,8 @@
 COMMENT =	client for Matrix chat
-DISTNAME =	neochat-${MODKDE_VERSION}
+DISTNAME =	neochat-${MODKDE_GEAR_VERSION}
 CATEGORIES=	net
 
-SITES =		${SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
+SITES =		${SITE_KDE:=stable/release-service/${MODKDE_GEAR_VERSION}/src/}
 EXTRACT_SUFX =	.tar.xz
 
 HOMEPAGE =	https://apps.kde.org/de/neochat/
@@ -21,8 +21,7 @@ WANTLIB += Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickControls2
 WANTLIB += Qt6Sql Qt6WebView Qt6Widgets QuotientQt6 X11 c cmark
 WANTLIB += icuuc m olm qt6keychain
 
-MODULES =	x11/kde-applications \
-		devel/kf6
+MODULES =	x11/kde
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/kf6/kitemmodels \

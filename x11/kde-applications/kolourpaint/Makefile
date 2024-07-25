@@ -36,6 +36,6 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \
 		devel/kf6/sonnet \
-		x11/kde-applications/libksane>=${MODKDE_VERSION}
+		x11/kde-applications/libksane>=${MODKDE_GEAR_VERSION}
 
 .include <bsd.port.mk>

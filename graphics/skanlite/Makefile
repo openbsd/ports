@@ -1,12 +1,12 @@
 COMMENT =	scanning application for KDE
 
-DISTNAME =	skanlite-${MODKDE_VERSION}
+DISTNAME =	skanlite-${MODKDE_GEAR_VERSION}
 
 CATEGORIES =	graphics
 
 HOMEPAGE =	https://kde.org/applications/graphics/org.kde.skanlite
 
-SITES =		${SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
+SITES =		${SITE_KDE:=stable/release-service/${MODKDE_GEAR_VERSION}/src/}
 EXTRACT_SUFX =	.tar.xz
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
@@ -21,8 +21,7 @@ WANTLIB += KF5Sane KF5Service KF5Solid KF5WidgetsAddons KF5WindowSystem
 WANTLIB += KF5XmlGui Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network
 WANTLIB += Qt5Widgets Qt5Xml X11 c m
 
-MODULES =	x11/kde-applications \
-		devel/kf5
+MODULES =	x11/kde
 
 MODEKDE_KF5 =	Yes
 
@@ -46,7 +45,7 @@ LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \
 		devel/kf5/solid \
-		x11/kde-applications/libksane>=${MODKDE_VERSION}
+		x11/kde-applications/libksane>=${MODKDE_GEAR_VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 

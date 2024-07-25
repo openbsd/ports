@@ -3,7 +3,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	distraction-free Markdown editor
 
-DISTNAME =	ghostwriter-${MODKDE_VERSION}
+DISTNAME =	ghostwriter-${MODKDE_GEAR_VERSION}
 
 CATEGORIES =	editors
 
@@ -20,10 +20,9 @@ WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5Svg Qt5WebChannel Qt5WebEngineCore
 WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml c hunspell-1.7
 WANTLIB += m
 
-SITES =	${SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
+SITES =	${SITE_KDE:=stable/release-service/${MODKDE_GEAR_VERSION}/src/}
 
-MODULES =		x11/kde-applications \
-			devel/kf5
+MODULES =		x11/kde
 
 MODKDE_KF5 =		Yes
 

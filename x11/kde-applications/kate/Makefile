@@ -24,8 +24,8 @@ MODKDE_TRANSLATIONS = yes
 MODKDE_DOCS = yes
 
 RUN_DEPENDS =	devel/kf6/sonnet,-aspell \
-		x11/kde-applications/kf6-kio-extras>=${MODKDE_VERSION} \
-		x11/kde-applications/konsole>=${MODKDE_VERSION}
+		x11/kde-applications/kf6-kio-extras>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/konsole>=${MODKDE_GEAR_VERSION}
 
 LIB_DEPENDS =	devel/kf6/attica \
 		devel/gettext,-runtime \

@@ -42,20 +42,20 @@ LIB_DEPENDS =	devel/kf6/kcalendarcore \
 		security/gpgme,-qt \
 		security/libassuan \
 		textproc/ktextaddons \
-		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
-		x11/kde-applications/akonadi-mime>=${MODKDE_VERSION} \
-		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
-		x11/kde-applications/grantleetheme>=${MODKDE_VERSION} \
-		x11/kde-applications/kcalutils>=${MODKDE_VERSION} \
-		x11/kde-applications/kidentitymanagement>=${MODKDE_VERSION} \
-		x11/kde-applications/kimap>=${MODKDE_VERSION} \
-		x11/kde-applications/kmailtransport>=${MODKDE_VERSION} \
-		x11/kde-applications/kmime>=${MODKDE_VERSION} \
-		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION} \
-		x11/kde-applications/libkdepim>=${MODKDE_VERSION} \
-		x11/kde-applications/libkleo>=${MODKDE_VERSION} \
-		x11/kde-applications/messagelib>=${MODKDE_VERSION} \
-		x11/kde-applications/pimcommon>=${MODKDE_VERSION}
+		x11/kde-applications/akonadi-contacts>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/akonadi-mime>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/akonadi>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/grantleetheme>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kcalutils>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kidentitymanagement>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kimap>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kmailtransport>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kmime>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kpimtextedit>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/libkdepim>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/libkleo>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/messagelib>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/pimcommon>=${MODKDE_GEAR_VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 

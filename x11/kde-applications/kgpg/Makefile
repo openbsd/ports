@@ -52,8 +52,8 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \
 		devel/kf6/sonnet \
-		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
-		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-contacts>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/akonadi>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/grantleetheme
 
 TEST_IS_INTERACTIVE =	X11

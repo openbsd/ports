@@ -33,6 +33,6 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/solid \
 		devel/kf6/sonnet \
 		devel/kf6/syntax-highlighting \
-		x11/kde-applications/dolphin>=${MODKDE_VERSION}
+		x11/kde-applications/dolphin>=${MODKDE_GEAR_VERSION}
 
 .include <bsd.port.mk>

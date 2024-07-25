@@ -77,20 +77,20 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		security/qca-qt6 \
 		security/qtkeychain,qt6 \
 		textproc/ktextaddons \
-		x11/kde-applications/akonadi-calendar>=${MODKDE_VERSION} \
-		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
-		x11/kde-applications/akonadi-mime>=${MODKDE_VERSION} \
-		x11/kde-applications/akonadi-notes>=${MODKDE_VERSION} \
-		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
-		x11/kde-applications/grantleetheme>=${MODKDE_VERSION} \
-		x11/kde-applications/kidentitymanagement>=${MODKDE_VERSION} \
-		x11/kde-applications/kimap>=${MODKDE_VERSION} \
-		x11/kde-applications/kldap>=${MODKDE_VERSION} \
-		x11/kde-applications/kmailtransport>=${MODKDE_VERSION} \
-		x11/kde-applications/kmbox>=${MODKDE_VERSION} \
-		x11/kde-applications/kmime>=${MODKDE_VERSION} \
-		x11/kde-applications/libkdepim>=${MODKDE_VERSION} \
-		x11/kde-applications/libkgapi>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-calendar>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/akonadi-contacts>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/akonadi-mime>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/akonadi-notes>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/akonadi>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/grantleetheme>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kidentitymanagement>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kimap>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kldap>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kmailtransport>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kmbox>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kmime>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/libkdepim>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/libkgapi>=${MODKDE_GEAR_VERSION} \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtmultimedia \
 		x11/qt6/qtnetworkauth \

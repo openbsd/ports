@@ -19,7 +19,7 @@ MODKDE_TRANSLATIONS = yes
 MODKDE_DOCS = yes
 
 #KQtQuickCharts, QtQuick plugin to render beautiful and interactive charts
-RUN_DEPENDS =	x11/kde-applications/kqtquickcharts>=${MODKDE_VERSION} \
+RUN_DEPENDS =	x11/kde-applications/kqtquickcharts>=${MODKDE_GEAR_VERSION} \
 		x11/qt5/qtgraphicaleffects
 
 LIB_DEPENDS =	devel/kf5/kcmutils \

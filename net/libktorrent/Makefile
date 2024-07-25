@@ -1,6 +1,6 @@
 COMMENT =	KTorrent engine
 
-DISTNAME =	libktorrent-${MODKDE_VERSION}
+DISTNAME =	libktorrent-${MODKDE_GEAR_VERSION}
 
 CATEGORIES =	net
 
@@ -16,11 +16,10 @@ WANTLIB += Qt6Xml gcrypt gmp m
 # LGPLv2.1+, GPLv2+, GPLv3
 PERMIT_PACKAGE =	Yes
 
-SITES =		${SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
+SITES =		${SITE_KDE:=stable/release-service/${MODKDE_GEAR_VERSION}/src/}
 EXTRACT_SUFX =	.tar.xz
 
-MODULES =	x11/kde-applications \
-		devel/kf6
+MODULES =	x11/kde
 
 BUILD_DEPENDS =	devel/boost \
 		devel/gettext,-tools \

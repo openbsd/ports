@@ -15,7 +15,7 @@ MODKDE_KF5 = yes
 BUILD_DEPENDS =	graphics/png \
 		graphics/jpeg \
 		graphics/tiff \
-		x11/kde-applications/libkexiv2>=${MODKDE_VERSION}
+		x11/kde-applications/libkexiv2>=${MODKDE_GEAR_VERSION}
 
 LIB_DEPENDS =	devel/kf5/kauth \
 		devel/kf5/kcodecs \

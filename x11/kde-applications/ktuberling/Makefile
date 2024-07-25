@@ -39,7 +39,7 @@ LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kio \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
-		x11/kde-applications/libkdegames>=${MODKDE_VERSION} \
+		x11/kde-applications/libkdegames>=${MODKDE_GEAR_VERSION} \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtmultimedia \
 		x11/qt6/qtsvg

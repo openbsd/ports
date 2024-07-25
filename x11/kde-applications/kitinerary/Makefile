@@ -27,8 +27,8 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		productivity/libphonenumber \
 		textproc/libxml \
 		graphics/zxing-cpp \
-		x11/kde-applications/kmime>=${MODKDE_VERSION} \
-		x11/kde-applications/kpkpass>=${MODKDE_VERSION} \
+		x11/kde-applications/kmime>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kpkpass>=${MODKDE_GEAR_VERSION} \
 		x11/qt6/qtdeclarative
 
 TEST_IS_INTERACTIVE =	X11

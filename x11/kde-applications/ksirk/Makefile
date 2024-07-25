@@ -32,7 +32,7 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/kdbusaddons \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
-		x11/kde-applications/libkdegames>=${MODKDE_VERSION} \
+		x11/kde-applications/libkdegames>=${MODKDE_GEAR_VERSION} \
 		x11/qt6/qt5compat \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtmultimedia \

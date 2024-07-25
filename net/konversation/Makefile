@@ -1,6 +1,6 @@
 COMMENT =	IRC client for KDE
 
-DISTNAME =	konversation-${MODKDE_VERSION}
+DISTNAME =	konversation-${MODKDE_GEAR_VERSION}
 
 CATEGORIES =	net
 
@@ -22,11 +22,10 @@ WANTLIB += Qt6Network Qt6Widgets Qt6Xml X11 c m qca-qt6
 # LGPLv2.1+, GPLv2+, GPLv3
 PERMIT_PACKAGE =	Yes
 
-SITES =		${SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
+SITES =		${SITE_KDE:=stable/release-service/${MODKDE_GEAR_VERSION}/src/}
 EXTRACT_SUFX =	.tar.xz
 
-MODULES =	x11/kde-applications \
-		devel/kf6 \
+MODULES =	x11/kde \
 		lang/python
 
 BUILD_DEPENDS =	devel/gettext,-tools \

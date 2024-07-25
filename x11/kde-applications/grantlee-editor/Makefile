@@ -30,7 +30,7 @@ MODKF5_I18N_CONFLICT = yes
 BUILD_DEPENDS =	devel/boost \
 		devel/kf6/ktexteditor
 
-RUN_DEPENDS =	x11/kde-applications/kdepim-runtime>=${MODKDE_VERSION}
+RUN_DEPENDS =	x11/kde-applications/kdepim-runtime>=${MODKDE_GEAR_VERSION}
 
 LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kcolorscheme \
@@ -54,15 +54,15 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		security/gpgme,-qt \
 		security/libassuan \
 		textproc/ktextaddons \
-		x11/kde-applications/akonadi-contacts>=${MODKDE_VERSION} \
-		x11/kde-applications/akonadi-mime>=${MODKDE_VERSION} \
-		x11/kde-applications/akonadi>=${MODKDE_VERSION} \
-		x11/kde-applications/grantleetheme>=${MODKDE_VERSION} \
-		x11/kde-applications/kmime>=${MODKDE_VERSION} \
-		x11/kde-applications/kpimtextedit>=${MODKDE_VERSION} \
-		x11/kde-applications/libkleo>=${MODKDE_VERSION} \
-		x11/kde-applications/messagelib>=${MODKDE_VERSION} \
-		x11/kde-applications/pimcommon>=${MODKDE_VERSION} \
+		x11/kde-applications/akonadi-contacts>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/akonadi-mime>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/akonadi>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/grantleetheme>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kmime>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kpimtextedit>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/libkleo>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/messagelib>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/pimcommon>=${MODKDE_GEAR_VERSION} \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtpositioning \
 		x11/qt6/qtwebchannel \

@@ -85,7 +85,7 @@ LIB_DEPENDS =	devel/gettext,-runtime \
 LIB_DEPENDS +=	math/R
 WANTLIB += lib/R/lib/R lib/R/lib/Rblas lib/R/lib/Rlapack
 
-#x11/kde-applications/analitza>=${MODKDE_VERSION}
+#x11/kde-applications/analitza>=${MODKDE_GEAR_VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 

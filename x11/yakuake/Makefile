@@ -1,13 +1,13 @@
 COMMENT =	drop-down terminal emulator based on KDE Konsole
 
-DISTNAME =	yakuake-${MODKDE_VERSION}
+DISTNAME =	yakuake-${MODKDE_GEAR_VERSION}
 EPOCH =		0
 
 CATEGORIES =	x11 sysutils
 
 HOMEPAGE =	https://kde.org/applications/system/org.kde.yakuake
 
-SITES =		${SITE_KDE:=stable/release-service/${MODKDE_VERSION}/src/}
+SITES =		${SITE_KDE:=stable/release-service/${MODKDE_GEAR_VERSION}/src/}
 EXTRACT_SUFX =	.tar.xz
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
@@ -24,8 +24,7 @@ WANTLIB += KF6NotifyConfig KF6Parts KF6StatusNotifierItem KF6WidgetsAddons
 WANTLIB += KF6WindowSystem KF6XmlGui KWaylandClient Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Network Qt6Widgets Qt6Xml X11 c m xkbcommon
 
-MODULES =	x11/kde-applications \
-		devel/kf6
+MODULES =	x11/kde
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf6/kdoctools
