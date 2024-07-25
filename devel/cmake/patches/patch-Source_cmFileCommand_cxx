@@ -15,7 +15,7 @@ Index: Source/cmFileCommand.cxx
    long timeout = 0;
    long inactivity_timeout = 0;
    std::string logVar;
-@@ -2326,6 +2333,12 @@ bool HandleUploadCommand(std::vector<std::string> cons
+@@ -2327,6 +2334,12 @@ bool HandleUploadCommand(std::vector<std::string> cons
                           cmExecutionStatus& status)
  {
  #if !defined(CMAKE_BOOTSTRAP)
