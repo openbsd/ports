@@ -61,6 +61,7 @@ share/openssl-ruby-tests/ext/openssl/ossl_x509store.c
 share/openssl-ruby-tests/lib/
 share/openssl-ruby-tests/lib/openssl/
 share/openssl-ruby-tests/lib/openssl.rb
+share/openssl-ruby-tests/lib/openssl/asn1.rb
 share/openssl-ruby-tests/lib/openssl/bn.rb
 share/openssl-ruby-tests/lib/openssl/buffering.rb
 share/openssl-ruby-tests/lib/openssl/cipher.rb
