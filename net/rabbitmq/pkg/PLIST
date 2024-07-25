@@ -423,6 +423,7 @@ lib/rabbitmq/plugins/${RABBIT_KHEPRI}/ebin/khepri_evf.beam
 lib/rabbitmq/plugins/${RABBIT_KHEPRI}/ebin/khepri_export_erlang.beam
 lib/rabbitmq/plugins/${RABBIT_KHEPRI}/ebin/khepri_import_export.beam
 lib/rabbitmq/plugins/${RABBIT_KHEPRI}/ebin/khepri_machine.beam
+lib/rabbitmq/plugins/${RABBIT_KHEPRI}/ebin/khepri_machine_v0.beam
 lib/rabbitmq/plugins/${RABBIT_KHEPRI}/ebin/khepri_path.beam
 lib/rabbitmq/plugins/${RABBIT_KHEPRI}/ebin/khepri_pattern_tree.beam
 lib/rabbitmq/plugins/${RABBIT_KHEPRI}/ebin/khepri_payload.beam
