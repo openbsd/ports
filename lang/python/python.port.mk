@@ -173,20 +173,22 @@ DPB_PROPERTIES +=	nojunk
 .elif ${MODPY_PYBUILD:L} != no
 BUILD_DEPENDS +=	devel/py-build${MODPY_FLAVOR} \
 			devel/py-installer${MODPY_FLAVOR}
+.  elif ${MODPY_PYBUILD} == flit
+BUILD_DEPENDS +=	devel/py-flit${MODPY_FLAVOR}
 .  if ${MODPY_PYBUILD} == flit_core
 BUILD_DEPENDS +=	devel/py-flit_core${MODPY_FLAVOR}
 .  elif ${MODPY_PYBUILD} == flit_scm
 BUILD_DEPENDS +=	devel/py-flit_scm${MODPY_FLAVOR}
-.  elif ${MODPY_PYBUILD} == flit
-BUILD_DEPENDS +=	devel/py-flit${MODPY_FLAVOR}
-.  elif ${MODPY_PYBUILD} == hatchling
-BUILD_DEPENDS +=	devel/py-hatchling${MODPY_FLAVOR}
 .  elif ${MODPY_PYBUILD} == hatch-vcs
 BUILD_DEPENDS +=	devel/py-hatch-vcs${MODPY_FLAVOR}
+.  elif ${MODPY_PYBUILD} == hatchling
+BUILD_DEPENDS +=	devel/py-hatchling${MODPY_FLAVOR}
 .  elif ${MODPY_PYBUILD} == jupyter_packaging
 BUILD_DEPENDS +=	devel/py-jupyter_packaging${MODPY_FLAVOR}
 .  elif ${MODPY_PYBUILD} == maturin
 BUILD_DEPENDS +=	devel/maturin
+.  elif ${MODPY_PYBUILD} == pdm
+BUILD_DEPENDS +=	devel/py-pdm-backend${MODPY_FLAVOR}
 .  elif ${MODPY_PYBUILD} == poetry-core
 BUILD_DEPENDS +=	devel/py-poetry-core${MODPY_FLAVOR}
 .  elif ${MODPY_PYBUILD} == setuptools || ${MODPY_PYBUILD} == setuptools_scm
@@ -196,7 +198,7 @@ BUILD_DEPENDS +=	devel/py-setuptools${MODPY_FLAVOR} \
 BUILD_DEPENDS +=	devel/py-setuptools_scm${MODPY_FLAVOR}
 .    endif
 .  elif !${MODPY_PYBUILD:L:Mother}
-ERRORS +=		"Fatal: unknown MODPY_PYBUILD value (flit_core, flit_scm, flit, hatchling, hatch-vcs, jupyter_packaging, maturin, other, poetry-core, setuptools, setuptools_scm)"
+ERRORS +=		"Fatal: unknown MODPY_PYBUILD value (flit, flit_core, flit_scm, hatch-vcs, hatchling, jupyter_packaging, pdm, maturin, other, poetry-core, setuptools, setuptools_scm)"
 .  endif
 .else
 # Try to detect the case where a port will build regardless of setuptools
