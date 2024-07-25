@@ -1339,6 +1339,7 @@
      SUBDIR += py-algorithm-munkres,python3
      SUBDIR += py-altgraph,python3
      SUBDIR += py-ana,python3
+     SUBDIR += py-annotated_types,python3
      SUBDIR += py-anytree,python3
      SUBDIR += py-apipkg,python3
      SUBDIR += py-appdirs,python3
