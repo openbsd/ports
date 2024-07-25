@@ -20,9 +20,7 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =		other
-
-BUILD_DEPENDS =		devel/py-pdm-backend${MODPY_FLAVOR}
+MODPY_PYBUILD =		pdm
 
 RUN_DEPENDS =		devel/py-click${MODPY_FLAVOR}>=8.0.0 \
 			devel/py-typing-extensions${MODPY_FLAVOR}>=3.7.4.3
