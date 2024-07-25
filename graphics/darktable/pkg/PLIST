@@ -50,6 +50,7 @@ lib/darktable/plugins/imageio/storage/
 @so lib/darktable/plugins/libcolorchecker.so
 @so lib/darktable/plugins/libcolorcontrast.so
 @so lib/darktable/plugins/libcolorcorrection.so
+@so lib/darktable/plugins/libcolorequal.so
 @so lib/darktable/plugins/libcolorin.so
 @so lib/darktable/plugins/libcolorize.so
 @so lib/darktable/plugins/libcolormapping.so
@@ -63,6 +64,7 @@ lib/darktable/plugins/imageio/storage/
 @so lib/darktable/plugins/libdenoiseprofile.so
 @so lib/darktable/plugins/libdiffuse.so
 @so lib/darktable/plugins/libdither.so
+@so lib/darktable/plugins/libenlargecanvas.so
 @so lib/darktable/plugins/libequalizer.so
 @so lib/darktable/plugins/libexposure.so
 @so lib/darktable/plugins/libfilmic.so
@@ -89,6 +91,7 @@ lib/darktable/plugins/imageio/storage/
 @so lib/darktable/plugins/libnegadoctor.so
 @so lib/darktable/plugins/libnlmeans.so
 @so lib/darktable/plugins/liboverexposed.so
+@so lib/darktable/plugins/liboverlay.so
 @so lib/darktable/plugins/libprimaries.so
 @so lib/darktable/plugins/libprofile_gamma.so
 @so lib/darktable/plugins/librawdenoise.so
@@ -160,7 +163,6 @@ lib/darktable/plugins/lighttable/
 @so lib/darktable/plugins/lighttable/libviewswitcher.so
 lib/darktable/views/
 @so lib/darktable/views/libdarkroom.so
-@so lib/darktable/views/libknight.so
 @so lib/darktable/views/liblighttable.so
 @so lib/darktable/views/libprint.so
 @so lib/darktable/views/libslideshow.so
@@ -393,7 +395,6 @@ share/locale/pt_BR/LC_MESSAGES/darktable.mo
 share/locale/ru/LC_MESSAGES/darktable.mo
 share/locale/sl/LC_MESSAGES/darktable.mo
 share/locale/sq/LC_MESSAGES/darktable.mo
-share/locale/tr/LC_MESSAGES/darktable.mo
 share/locale/uk/LC_MESSAGES/darktable.mo
 share/locale/zh_CN/LC_MESSAGES/darktable.mo
 share/locale/zh_TW/LC_MESSAGES/darktable.mo
