@@ -1,10 +1,9 @@
 COMMENT=	cross-platform tool to add locations to the user's PATH
 
-MODPY_EGG_VERSION=	1.9.1
+MODPY_EGG_VERSION =	1.9.2
 DISTNAME=	userpath-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	sysutils
-REVISION=	0
 
 HOMEPAGE=	https://github.com/ofek/userpath
 
