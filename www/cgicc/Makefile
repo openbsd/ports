@@ -1,7 +1,6 @@
 COMMENT=	c++ compliant CGI applications libraries
 
-DISTNAME =	cgicc-3.2.19
-REVISION =	0
+DISTNAME =	cgicc-3.2.20
 
 CATEGORIES=	www devel
 SHARED_LIBS=	cgicc	5.0
