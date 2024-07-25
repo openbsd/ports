@@ -173,9 +173,9 @@ DPB_PROPERTIES +=	nojunk
 .elif ${MODPY_PYBUILD:L} != no
 BUILD_DEPENDS +=	devel/py-build${MODPY_FLAVOR} \
 			devel/py-installer${MODPY_FLAVOR}
-.  elif ${MODPY_PYBUILD} == flit
+.  if ${MODPY_PYBUILD} == flit
 BUILD_DEPENDS +=	devel/py-flit${MODPY_FLAVOR}
-.  if ${MODPY_PYBUILD} == flit_core
+.  elif ${MODPY_PYBUILD} == flit_core
 BUILD_DEPENDS +=	devel/py-flit_core${MODPY_FLAVOR}
 .  elif ${MODPY_PYBUILD} == flit_scm
 BUILD_DEPENDS +=	devel/py-flit_scm${MODPY_FLAVOR}
