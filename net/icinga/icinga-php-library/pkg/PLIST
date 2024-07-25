@@ -434,6 +434,11 @@ icinga-php/ipl/vendor/ipl/sql/src/OrderByInterface.php
 icinga-php/ipl/vendor/ipl/sql/src/QueryBuilder.php
 icinga-php/ipl/vendor/ipl/sql/src/Select.php
 icinga-php/ipl/vendor/ipl/sql/src/Sql.php
+icinga-php/ipl/vendor/ipl/sql/src/Test/
+icinga-php/ipl/vendor/ipl/sql/src/Test/Databases.php
+icinga-php/ipl/vendor/ipl/sql/src/Test/SqlAssertions.php
+icinga-php/ipl/vendor/ipl/sql/src/Test/TestAdapter.php
+icinga-php/ipl/vendor/ipl/sql/src/Test/TestConnection.php
 icinga-php/ipl/vendor/ipl/sql/src/Update.php
 icinga-php/ipl/vendor/ipl/sql/src/Where.php
 icinga-php/ipl/vendor/ipl/sql/src/WhereInterface.php
