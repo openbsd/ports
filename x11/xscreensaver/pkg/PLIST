@@ -128,6 +128,7 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/hexadrop
 @bin libexec/xscreensaver/hexstrut
 @bin libexec/xscreensaver/hextrail
+@bin libexec/xscreensaver/highvoltage
 @bin libexec/xscreensaver/hilbert
 @bin libexec/xscreensaver/hopalong
 @bin libexec/xscreensaver/hydrostat
@@ -144,6 +145,7 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/julia
 @bin libexec/xscreensaver/kaleidescope
 @bin libexec/xscreensaver/kaleidocycle
+@bin libexec/xscreensaver/kallisti
 @bin libexec/xscreensaver/klein
 @bin libexec/xscreensaver/kumppa
 @bin libexec/xscreensaver/lament
@@ -392,6 +394,7 @@ libexec/xscreensaver/xscreensaver-text
 @man man/man6/hexadrop.6
 @man man/man6/hexstrut.6
 @man man/man6/hextrail.6
+@man man/man6/highvoltage.6
 @man man/man6/hilbert.6
 @man man/man6/hopalong.6
 @man man/man6/hydrostat.6
@@ -408,6 +411,7 @@ libexec/xscreensaver/xscreensaver-text
 @man man/man6/julia.6
 @man man/man6/kaleidescope.6
 @man man/man6/kaleidocycle.6
+@man man/man6/kallisti.6
 @man man/man6/klein.6
 @man man/man6/kumppa.6
 @man man/man6/lament.6
@@ -415,6 +419,7 @@ libexec/xscreensaver/xscreensaver-text
 @man man/man6/lcdscrub.6
 @man man/man6/lockward.6
 @man man/man6/loop.6
+@man man/man6/m6502.6
 @man man/man6/mapscroller.6
 @man man/man6/marbling.6
 @man man/man6/maze.6
@@ -451,6 +456,7 @@ libexec/xscreensaver/xscreensaver-text
 @man man/man6/polyominoes.6
 @man man/man6/polytopes.6
 @man man/man6/pong.6
+@man man/man6/popsquares.6
 @man man/man6/projectiveplane.6
 @man man/man6/providence.6
 @man man/man6/pulsar.6
@@ -660,6 +666,7 @@ share/applications/screensavers/helix.desktop
 share/applications/screensavers/hexadrop.desktop
 share/applications/screensavers/hexstrut.desktop
 share/applications/screensavers/hextrail.desktop
+share/applications/screensavers/highvoltage.desktop
 share/applications/screensavers/hilbert.desktop
 share/applications/screensavers/hopalong.desktop
 share/applications/screensavers/hydrostat.desktop
@@ -679,6 +686,7 @@ share/applications/screensavers/juggler3d.desktop
 share/applications/screensavers/julia.desktop
 share/applications/screensavers/kaleidescope.desktop
 share/applications/screensavers/kaleidocycle.desktop
+share/applications/screensavers/kallisti.desktop
 share/applications/screensavers/klein.desktop
 share/applications/screensavers/kumppa.desktop
 share/applications/screensavers/lament.desktop
@@ -943,6 +951,7 @@ share/xscreensaver/config/helix.xml
 share/xscreensaver/config/hexadrop.xml
 share/xscreensaver/config/hexstrut.xml
 share/xscreensaver/config/hextrail.xml
+share/xscreensaver/config/highvoltage.xml
 share/xscreensaver/config/hilbert.xml
 share/xscreensaver/config/hopalong.xml
 share/xscreensaver/config/hydrostat.xml
@@ -959,6 +968,7 @@ share/xscreensaver/config/juggler3d.xml
 share/xscreensaver/config/julia.xml
 share/xscreensaver/config/kaleidescope.xml
 share/xscreensaver/config/kaleidocycle.xml
+share/xscreensaver/config/kallisti.xml
 share/xscreensaver/config/klein.xml
 share/xscreensaver/config/kumppa.xml
 share/xscreensaver/config/lament.xml

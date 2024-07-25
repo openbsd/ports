@@ -14,7 +14,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -2827,11 +2827,6 @@ ac_config_headers="$ac_config_headers config.h"
+@@ -2855,11 +2855,6 @@ ac_config_headers="$ac_config_headers config.h"
  echo "current directory: `pwd`"
  echo "command line was: $0 $@"
  
@@ -26,7 +26,7 @@ Index: configure
  ###############################################################################
  #
  #       Autoheader stuff
-@@ -14862,9 +14857,9 @@ fi
+@@ -15261,9 +15256,9 @@ fi
  
  # Check for the various Gnome help and URL loading programs.
  #
@@ -38,7 +38,7 @@ Index: configure
  do
    # Extract the first word of "$ac_prog", so it can be a program name with args.
  set dummy $ac_prog; ac_word=$2
-@@ -19947,7 +19942,7 @@ fi
+@@ -20652,7 +20647,7 @@ fi
  fi
  
  have_ffmpeg=no
@@ -47,7 +47,7 @@ Index: configure
          "$have_avcodec" = yes -a \
          "$have_avutil" = yes -a \
          "$have_swscale" = yes -a \
-@@ -22081,7 +22076,6 @@ else
+@@ -22816,7 +22811,6 @@ else
      warn2 "The errors are:"
      echo ''
      echo "$pkgerr" | sed 's/^/             > /g'
@@ -55,7 +55,7 @@ Index: configure
    fi
  fi
  
-@@ -22370,7 +22364,6 @@ elif test "$have_pam" = no -a "$enable_locking" = yes 
+@@ -23105,7 +23099,6 @@ elif test "$have_pam" = no -a "$enable_locking" = yes 
    if test -d /etc/pam.d -o -f /etc/pam.conf ; then
      warn  "Your system seems to have PAM, but PAM is not being used."
      warn2 "That is probably not going to work out well."
