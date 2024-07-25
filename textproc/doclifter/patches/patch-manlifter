@@ -1,12 +1,11 @@
-Index: manlifter
---- manlifter.orig
-+++ manlifter
-@@ -88,7 +88,7 @@ def fetch_page(file, localcopy, patch):
-         return (1, output + "manlifter: copy failed, status %d", cstat)
+--- manlifter.orig.port	Thu Feb 15 17:27:47 2024
++++ manlifter	Thu Jul 25 11:12:19 2024
+@@ -96,7 +96,7 @@
      if os.path.exists(patch):
          stem = os.path.basename(localcopy)
--        patch = getoutput("patch -d%s --version-control=never <%s" % (outdir, patch,))
-+        patch = getoutput("patch -d%s <%s" % (outdir, patch,))
-         os.system("rm -f %s/%s.orig %s/%s.rej" % (outdir, stem, outdir, stem))
-         if patch:
-             output += patch + "\n"
+         patch = getoutput(
+-            "patch -d%s --version-control=never <%s"
++            "patch -d%s <%s"
+             % (
+                 outdir,
+                 patch,
