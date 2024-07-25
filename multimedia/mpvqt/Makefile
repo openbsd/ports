@@ -23,7 +23,8 @@ EXTRACT_SUFX =	.tar.xz
 MODULES =		devel/cmake \
 			x11/qt6
 
-BUILD_DEPENDS =		devel/kf6/extra-cmake-modules
+BUILD_DEPENDS =		devel/kf6/extra-cmake-modules \
+			x11/qt6/qtquick3d
 
 LIB_DEPENDS =		multimedia/mpv \
 			x11/qt6/qtdeclarative

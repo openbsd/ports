@@ -5,7 +5,6 @@ include/MpvQt/mpvabstractitem.h
 include/MpvQt/mpvcontroller.h
 include/MpvQt/mpvqt_export.h
 include/MpvQt/mpvqt_version.h
-lib/cmake/
 lib/cmake/MpvQt/
 lib/cmake/MpvQt/FindLibmpv.cmake
 lib/cmake/MpvQt/MpvQtConfig.cmake
