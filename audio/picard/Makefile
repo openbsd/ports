@@ -1,8 +1,7 @@
 COMMENT =	automatic audio files tagger using the MusicBrainz database
 
-MODPY_EGG_VERSION =	2.11
+MODPY_EGG_VERSION =	2.12
 DISTNAME =		picard-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		audio
 
@@ -25,6 +24,7 @@ RUN_DEPENDS =		audio/chromaprint \
 			audio/py-mutagen${MODPY_FLAVOR} \
 			devel/desktop-file-utils \
 			devel/py-fasteners${MODPY_FLAVOR} \
+			textproc/py-charset-normalizer${MODPY_FLAVOR} \
 			textproc/py-markdown${MODPY_FLAVOR} \
 			textproc/py-yaml${MODPY_FLAVOR} \
 			x11/gtk+4,-guic \
