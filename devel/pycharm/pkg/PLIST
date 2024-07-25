@@ -28,12 +28,15 @@ pycharm/lib/annotations.jar
 pycharm/lib/app-client.jar
 pycharm/lib/app.jar
 pycharm/lib/bouncy-castle.jar
-pycharm/lib/build-marker-PC-241.14494.241
+pycharm/lib/build-marker-PC-241.18034.82
 pycharm/lib/cds/
 pycharm/lib/cds/classesLogAgent.jar
 pycharm/lib/external-system-rt.jar
 pycharm/lib/externalProcess-rt.jar
 pycharm/lib/forms_rt.jar
+pycharm/lib/frontend/
+pycharm/lib/frontend/frontend-customization.jar
+pycharm/lib/frontend/frontend.jar
 pycharm/lib/groovy.jar
 pycharm/lib/grpc.jar
 pycharm/lib/intellij-coverage-agent-1.0.744.jar
@@ -134,6 +137,9 @@ pycharm/plugins/grazie/lib/grazie.jar
 pycharm/plugins/indexing-shared/
 pycharm/plugins/indexing-shared/lib/
 pycharm/plugins/indexing-shared/lib/indexing-shared.jar
+pycharm/plugins/llmInstaller/
+pycharm/plugins/llmInstaller/lib/
+pycharm/plugins/llmInstaller/lib/llmInstaller.jar
 pycharm/plugins/markdown/
 pycharm/plugins/markdown/lib/
 pycharm/plugins/markdown/lib/markdown.jar
@@ -175,8 +181,8 @@ pycharm/plugins/pycharm-community-sharedIndexes-bundled/
 pycharm/plugins/pycharm-community-sharedIndexes-bundled/lib/
 pycharm/plugins/pycharm-community-sharedIndexes-bundled/lib/pycharm-community-sharedIndexes-bundled.jar
 pycharm/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/
-pycharm/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-0509580d9d50-746f403e7f0c.ijx
-pycharm/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-0509580d9d50-746f403e7f0c.txt
+pycharm/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-975db3bf15a3-31b6be0877a2.ijx
+pycharm/plugins/pycharm-community-sharedIndexes-bundled/python-sdk/python-sdk-975db3bf15a3-31b6be0877a2.txt
 pycharm/plugins/python-ce/
 pycharm/plugins/python-ce/helpers/
 pycharm/plugins/python-ce/helpers/.gitignore
@@ -1178,7 +1184,6 @@ pycharm/plugins/python-ce/helpers/pydev/_pydevd_bundle/pydevd_custom_frames.py
 pycharm/plugins/python-ce/helpers/pydev/_pydevd_bundle/pydevd_cython.c
 pycharm/plugins/python-ce/helpers/pydev/_pydevd_bundle/pydevd_cython.pxd
 pycharm/plugins/python-ce/helpers/pydev/_pydevd_bundle/pydevd_cython.pyx
-pycharm/plugins/python-ce/helpers/pydev/_pydevd_bundle/pydevd_cython_312.c
 pycharm/plugins/python-ce/helpers/pydev/_pydevd_bundle/pydevd_cython_win32_27_32.pyd
 pycharm/plugins/python-ce/helpers/pydev/_pydevd_bundle/pydevd_cython_win32_27_64.pyd
 pycharm/plugins/python-ce/helpers/pydev/_pydevd_bundle/pydevd_cython_win32_310_32.cp310-win32.pyd
