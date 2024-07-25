@@ -31,12 +31,15 @@ intellij/lib/annotations.jar
 intellij/lib/app-client.jar
 intellij/lib/app.jar
 intellij/lib/bouncy-castle.jar
-intellij/lib/build-marker-IC-241.14494.240
+intellij/lib/build-marker-IC-241.18034.62
 intellij/lib/cds/
 intellij/lib/cds/classesLogAgent.jar
 intellij/lib/external-system-rt.jar
 intellij/lib/externalProcess-rt.jar
 intellij/lib/forms_rt.jar
+intellij/lib/frontend/
+intellij/lib/frontend/frontend-customization.jar
+intellij/lib/frontend/frontend.jar
 intellij/lib/groovy.jar
 intellij/lib/grpc.jar
 intellij/lib/idea_rt.jar
@@ -51,7 +54,7 @@ intellij/lib/lib.jar
 intellij/lib/modules.jar
 intellij/lib/opentelemetry.jar
 intellij/lib/platform-loader.jar
-intellij/lib/product-client.jar
+intellij/lib/product.jar
 intellij/lib/protobuf.jar
 intellij/lib/rd.jar
 intellij/lib/stats.jar
@@ -417,6 +420,9 @@ intellij/plugins/keymap-netbeans/lib/keymap-netbeans.jar
 intellij/plugins/keymap-visualStudio/
 intellij/plugins/keymap-visualStudio/lib/
 intellij/plugins/keymap-visualStudio/lib/keymap-visualStudio.jar
+intellij/plugins/llmInstaller/
+intellij/plugins/llmInstaller/lib/
+intellij/plugins/llmInstaller/lib/llmInstaller.jar
 intellij/plugins/markdown/
 intellij/plugins/markdown/lib/
 intellij/plugins/markdown/lib/markdown.jar
