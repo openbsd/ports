@@ -3,8 +3,8 @@ add pledge(2) to "mutool draw"
 Index: source/tools/mudraw.c
 --- source/tools/mudraw.c.orig
 +++ source/tools/mudraw.c
-@@ -34,6 +34,8 @@
- #include "mupdf/helpers/mu-threads.h"
+@@ -38,6 +38,8 @@
+ #include "sodochandler.h"
  #endif
  
 +#include <errno.h>
@@ -12,7 +12,7 @@ Index: source/tools/mudraw.c
  #include <string.h>
  #include <limits.h>
  #include <stdlib.h>
-@@ -2143,6 +2145,12 @@ int mudraw_main(int argc, char **argv)
+@@ -2147,6 +2149,12 @@ int mudraw_main(int argc, char **argv)
  
  	if (fz_optind == argc)
  		return usage();
