@@ -1,4 +1,2 @@
-lib/xorg/
-lib/xorg/modules/
-@so lib/xorg/modules/iHD_drv_video.so
-@sample ${X11BASE}/lib/modules/drivers/iHD_drv_video.so
+lib/dri/
+@so lib/dri/iHD_drv_video.so
