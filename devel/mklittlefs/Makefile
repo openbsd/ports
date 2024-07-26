@@ -2,7 +2,7 @@ COMMENT =		tool to build and unpack littlefs images
 
 GH_ACCOUNT =		earlephilhower
 GH_PROJECT =		mklittlefs
-GH_TAGNAME =		3.0.0
+GH_TAGNAME =		4.0.0
 
 CATEGORIES =		devel
 
