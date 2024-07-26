@@ -1,7 +1,7 @@
 COMMENT =		KDE safe desktop-wide storage for passwords
 DISTNAME =		kwallet-${VERSION}
 PKGNAME =		kf5-kwallet-${VERSION}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS =		KF5Wallet		7.0
 SHARED_LIBS +=		kwalletbackend5		6.1
@@ -11,6 +11,7 @@ WANTLIB += Qt5DBus Qt5Gui Qt5Widgets X11 m
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf5/ki18n>=${MODKF5_VERSION} \
+		devel/kf5/kcoreaddons>=${MODKF5_VERSION} \
 		devel/kf5/kdoctools>=${MODKF5_VERSION}
 
 RUN_DEPENDS =	devel/kf5/kdoctools>=${MODKF5_VERSION} \
