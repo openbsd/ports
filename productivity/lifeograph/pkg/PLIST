@@ -18,6 +18,7 @@ share/icons/hicolor/scalable/apps/net.sourceforge.Lifeograph.svg
 share/icons/hicolor/symbolic/apps/net.sourceforge.Lifeograph-symbolic.svg
 share/locale/ar/LC_MESSAGES/net.sourceforge.Lifeograph.mo
 share/locale/cs/LC_MESSAGES/net.sourceforge.Lifeograph.mo
+share/locale/da/LC_MESSAGES/net.sourceforge.Lifeograph.mo
 share/locale/de/LC_MESSAGES/net.sourceforge.Lifeograph.mo
 share/locale/es/LC_MESSAGES/net.sourceforge.Lifeograph.mo
 share/locale/eu/LC_MESSAGES/net.sourceforge.Lifeograph.mo
@@ -40,8 +41,7 @@ share/locale/uk/LC_MESSAGES/net.sourceforge.Lifeograph.mo
 share/locale/zh_CN/LC_MESSAGES/net.sourceforge.Lifeograph.mo
 share/metainfo/
 share/metainfo/net.sourceforge.Lifeograph.metainfo.xml
-share/mime/applications/
-share/mime/applications/x-lifeographdiary.xml
+share/mime/packages/x-lifeographdiary.xml
 share/net.sourceforge.Lifeograph/
 share/net.sourceforge.Lifeograph/backgrounds/
 share/net.sourceforge.Lifeograph/backgrounds/cloister.jpg
@@ -105,7 +105,8 @@ share/net.sourceforge.Lifeograph/ui/lifeograph.ui
 share/net.sourceforge.Lifeograph/ui/map.ui
 share/net.sourceforge.Lifeograph/ui/preferences.ui
 share/net.sourceforge.Lifeograph/ui/print.ui
-@tag update-desktop-database
-@tag gtk-update-icon-cache %D/share/icons/hicolor
 share/net.sourceforge.Lifeograph/ui/table.ui
 share/net.sourceforge.Lifeograph/ui/tv_diary.ui
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-mime-database

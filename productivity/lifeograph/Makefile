@@ -4,9 +4,8 @@ CATEGORIES=	productivity
 
 HOMEPAGE=	https://lifeograph.sourceforge.net
 
-V=		2.0.2
+V=		2.0.3
 DISTNAME=	lifeograph-${V}
-REVISION=	4
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
@@ -26,8 +25,8 @@ MODULES=	devel/meson
 
 BUILD_DEPENDS=	devel/gettext,-tools
 
-RUN_DEPENDS=	www/webkitgtk4 \
-		devel/desktop-file-utils \
+RUN_DEPENDS=	devel/desktop-file-utils \
+		misc/shared-mime-info \
 		x11/gtk+4,-guic
 
 LIB_DEPENDS=	geo/libchamplain \
