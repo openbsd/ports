@@ -1,6 +1,6 @@
 COMMENT=	filesystem benchmark
 
-DISTNAME=	blogbench-1.1
+DISTNAME=	blogbench-1.2
 CATEGORIES=	benchmarks
 
 HOMEPAGE=	http://www.pureftpd.org/project/blogbench
