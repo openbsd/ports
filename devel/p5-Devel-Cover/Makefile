@@ -1,7 +1,6 @@
 COMMENT =	code coverage metrics for Perl
 
-DISTNAME =	Devel-Cover-1.40
-REVISION =	0
+DISTNAME =	Devel-Cover-1.44
 
 CATEGORIES =	devel
 
