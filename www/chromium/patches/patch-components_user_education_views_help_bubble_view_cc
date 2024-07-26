@@ -9,4 +9,4 @@ Index: components/user_education/views/help_bubble_view.cc
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    // Help bubbles anchored to menus may be clipped to their anchors' bounds,
    // resulting in visual errors, unless they use accelerated rendering. See
-   // crbug.com/1445770 for details.
+   // crbug.com/1445770 for details. This also applies to bubbles anchored to

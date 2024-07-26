@@ -1,7 +1,7 @@
 Index: net/dns/address_sorter_posix.cc
 --- net/dns/address_sorter_posix.cc.orig
 +++ net/dns/address_sorter_posix.cc
-@@ -27,6 +27,7 @@
+@@ -32,6 +32,7 @@
  #include "net/dns/netinet_in_var_ios.h"
  #else
  #include <netinet/in_var.h>

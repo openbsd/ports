@@ -9,8 +9,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser
 
-V=			126.0.6478.182
-REVISION=		0
+V=			127.0.6533.72
 
 DISTNAME=		chromium-${V}
 
@@ -78,6 +77,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		audio/pulseaudio \
 		devel/gperf \
 		devel/bison \
+		devel/rust-bindgen \
 		lang/node \
 		lang/rust \
 		shells/bash \
@@ -110,7 +110,7 @@ USE_GMAKE=	Yes
 # Set BUILDTYPE to Release
 BUILDTYPE=	Release
 
-SUBST_VARS+=	WRKSRC WRKDIR DEBUGFLAG
+SUBST_VARS+=	WRKSRC WRKDIR DEBUGFLAG MODCLANG_VERSION
 
 ALL_TARGET=		chrome chromedriver
 TEST_TARGET=		base_unittests \
@@ -269,7 +269,9 @@ pre-configure:
 .endfor
 	@mkdir -p ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin
 	@ln -sf ${TRUEPREFIX}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
-	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py ${WRKSRC}/v8/tools/run.py \
+	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py \
+		${WRKSRC}/build/rust/rust_bindgen.gni \
+		${WRKSRC}/v8/tools/run.py \
 		${WRKSRC}/tools/protoc_wrapper/protoc_wrapper.py \
 		${WRKSRC}/third_party/blink/renderer/build/scripts/run_with_pythonpath.py
 

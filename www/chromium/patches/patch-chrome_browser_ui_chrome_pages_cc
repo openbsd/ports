@@ -10,7 +10,16 @@ Index: chrome/browser/ui/chrome_pages.cc
  #include "chrome/browser/web_applications/web_app_utils.h"
  #endif
  
-@@ -719,7 +719,7 @@ void ShowShortcutCustomizationApp(Profile* profile,
+@@ -379,7 +379,7 @@ void ShowChromeTips(Browser* browser) {
+   ShowSingletonTab(browser, GURL(kChromeTipsURL));
+ }
+ 
+-#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ void ShowChromeWhatsNew(Browser* browser) {
+   ShowSingletonTab(browser, GURL(kChromeUIWhatsNewURL));
+ }
+@@ -721,7 +721,7 @@ void ShowShortcutCustomizationApp(Profile* profile,
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  }
  

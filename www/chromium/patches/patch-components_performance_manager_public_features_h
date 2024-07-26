@@ -1,7 +1,7 @@
 Index: components/performance_manager/public/features.h
 --- components/performance_manager/public/features.h.orig
 +++ components/performance_manager/public/features.h
-@@ -28,7 +28,7 @@ BASE_DECLARE_FEATURE(kRunOnMainThreadSync);
+@@ -21,7 +21,7 @@ BASE_DECLARE_FEATURE(kRunOnMainThreadSync);
  
  #if !BUILDFLAG(IS_ANDROID)
  

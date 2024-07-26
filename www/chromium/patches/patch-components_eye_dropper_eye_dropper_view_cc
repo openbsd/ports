@@ -9,4 +9,4 @@ Index: components/eye_dropper/eye_dropper_view.cc
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    // Use TYPE_MENU for Linux to ensure that the eye dropper view is displayed
    // above the color picker.
-   views::Widget::InitParams params(views::Widget::InitParams::TYPE_MENU);
+   views::Widget::InitParams params(

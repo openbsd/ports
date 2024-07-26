@@ -25,5 +25,5 @@ Index: v8/src/base/platform/platform-openbsd.cc
 +  return reinterpret_cast<uint8_t*>(base) + ss.ss_size;
 +}
  
- std::vector<OS::MemoryRange> OS::GetFreeMemoryRangesWithin(
+ std::optional<OS::MemoryRange> OS::GetFirstFreeMemoryRangeWithin(
      OS::Address boundary_start, OS::Address boundary_end, size_t minimum_size,

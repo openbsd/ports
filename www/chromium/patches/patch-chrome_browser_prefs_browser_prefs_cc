@@ -32,7 +32,7 @@ Index: chrome/browser/prefs/browser_prefs.cc
  #include "ui/color/system_theme.h"
  #endif
  
-@@ -1861,7 +1861,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
+@@ -1953,7 +1953,7 @@ void RegisterLocalState(PrefRegistrySimple* registry) 
                                  true);
  #endif  // BUILDFLAG(ENABLE_PDF)
  
@@ -41,7 +41,7 @@ Index: chrome/browser/prefs/browser_prefs.cc
    registry->RegisterBooleanPref(prefs::kChromeForTestingAllowed, true);
  #endif
  
-@@ -2213,12 +2213,12 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
+@@ -2309,12 +2309,12 @@ void RegisterProfilePrefs(user_prefs::PrefRegistrySync
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
