@@ -2,7 +2,7 @@ COMMENT=	catalyst documentation
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	Catalyst-Manual-5.9011
+DISTNAME =	Catalyst-Manual-5.9013
 CATEGORIES=	devel
 
 # there was a version with six digits behind the dot
