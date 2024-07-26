@@ -2,7 +2,7 @@ COMMENT=		802.11 WEP and WPA-PSK keys cracking program
 
 VER=			1.7
 DISTNAME=		aircrack-ng-${VER}
-REVISION=		0
+REVISION=		1
 CATEGORIES=		security
 
 HOMEPAGE=		https://www.aircrack-ng.org/

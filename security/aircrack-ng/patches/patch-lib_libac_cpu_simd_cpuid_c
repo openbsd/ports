@@ -1,0 +1,119 @@
+Index: lib/libac/cpu/simd_cpuid.c
+--- lib/libac/cpu/simd_cpuid.c.orig
++++ lib/libac/cpu/simd_cpuid.c
+@@ -35,16 +35,20 @@
+ #elif defined(__arm__) || defined(__aarch64__)
+ #ifdef HAS_AUXV
+ #include <sys/auxv.h>
++#ifdef __linux__
+ #include <asm/hwcap.h>
+ #endif
++#endif
+ #endif /* __arm__ */
+ #ifdef __linux__
+ #include <fcntl.h>
+ #include <sys/stat.h>
+ #include <linux/sysctl.h>
+ #endif
+-#if defined(__FreeBSD__) || defined(__OpenBSD__)
++#if defined(__FreeBSD__)
+ #include <sys/user.h>
++#endif
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ #include <sys/sysctl.h>
+ #endif
+ #include <dirent.h>
+@@ -135,7 +139,8 @@ int cpuid_simdsize(int viewmax)
+ 	if (edx & (1 << 26)) // SSE2
+ 		return 4;
+ 
+-#elif (defined(__arm__) || defined(__aarch64__)) && defined(HAS_AUXV)
++#elif (defined(__arm__) || defined(__aarch64__)) && defined(__linux__) && \
++    defined(HAS_AUXV)
+ 	long hwcaps = getauxval(AT_HWCAP);
+ 
+ 	if (hwcaps & (1 << 12)) // NEON
+@@ -144,6 +149,19 @@ int cpuid_simdsize(int viewmax)
+ 	if (hwcaps & (1 << 1)) // ASIMD
+ 		return 4;
+ #endif
++#elif (defined(__arm__) || defined(__aarch64__)) && \
++    (defined(__FreeBSD__) || defined(__OpenBSD__)) && defined(HAS_AUXV)
++	long hwcaps = 0;
++	elf_aux_info(AT_HWCAP, &hwcaps, sizeof(hwcaps));
++
++#if defined(__arm__)
++	if (hwcaps & HWCAP_NEON) // NEON
++		return 4;
++#endif
++#if defined(__aarch64__)
++	if (hwcaps & HWCAP_ASIMD) // ASIMD
++		return 4;
++#endif
+ #elif defined(__aarch64__) && !defined(HAS_AUXV)
+ 	return 4; // ASIMD is required on AARCH64
+ #endif
+@@ -244,7 +262,8 @@ static char * cpuid_featureflags(void)
+ 		if (ebx & (1 << 16)) // AVX512F
+ 			sprintcat((char *) &flags, "AVX512F", sizeof(flags));
+ 	}
+-#elif (defined(__arm__) || defined(__aarch64__)) && defined(HAS_AUXV)
++#elif (defined(__arm__) || defined(__aarch64__)) && defined(__linux__) && \
++    defined(HAS_AUXV)
+ 	long hwcaps = getauxval(AT_HWCAP);
+ 
+ #if defined(__aarch64__)
+@@ -275,6 +294,35 @@ static char * cpuid_featureflags(void)
+ 	if ((hwcaps & (1 << 17)) || (hwcaps & (1 << 18)))
+ 		sprintcat((char *) &flags, "IDIV", sizeof(flags));
+ #endif
++#elif (defined(__arm__) || defined(__aarch64__)) && \
++    (defined(__FreeBSD__) || defined(__OpenBSD__)) && defined(HAS_AUXV)
++	long hwcaps = 0;
++	elf_aux_info(AT_HWCAP, &hwcaps, sizeof(hwcaps));
++
++#if defined(__aarch64__)
++	if (hwcaps & HWCAP_ASIMD) sprintcat((char *) &flags, "ASIMD", sizeof(flags));
++#else
++	if (hwcaps & HWCAP_NEON) sprintcat((char *) &flags, "NEON", sizeof(flags));
++
++	if (hwcaps & HWCAP_HALF) sprintcat((char *) &flags, "HALF", sizeof(flags));
++
++	if (hwcaps & HWCAP_THUMB) sprintcat((char *) &flags, "THUMB", sizeof(flags));
++
++	if (hwcaps & HWCAP_THUMBEE)
++		sprintcat((char *) &flags, "THUMBEE", sizeof(flags));
++
++	if (hwcaps & HWCAP_VFP) sprintcat((char *) &flags, "VFP", sizeof(flags));
++
++	if ((hwcaps & HWCAP_VFPv3) || (hwcaps & HWCAP_VFPv3D16))
++		sprintcat((char *) &flags, "VFPv3", sizeof(flags));
++
++	if (hwcaps & HWCAP_VFPv4) sprintcat((char *) &flags, "VFPv4", sizeof(flags));
++
++	if (hwcaps & HWCAP_TLS) sprintcat((char *) &flags, "TLS", sizeof(flags));
++
++	if ((hwcaps & HWCAP_IDIVA) || (hwcaps & HWCAP_IDIVT))
++		sprintcat((char *) &flags, "IDIV", sizeof(flags));
++#endif
+ #elif defined(__aarch64__) && !defined(HAS_AUXV)
+ 	sprintcat((char *) &flags, "ASIMD", sizeof(flags));
+ #endif
+@@ -424,7 +472,7 @@ static char * cpuid_modelinfo(void)
+ 	char *line = NULL, *token = NULL;
+ 	size_t linecap = 0;
+ 	ssize_t linelen;
+-#elif __FreeBSD__ /* ARM support for FreeBSD */
++#elif defined(__FreeBSD__) || defined(__OpenBSD__) /* ARM support for FreeBSD / OpenBSD */
+ 	int mib[] = {CTL_HW, HW_MODEL};
+ 	char modelbuf[64];
+ 	size_t len = sizeof(modelbuf);
+@@ -485,7 +533,7 @@ static char * cpuid_modelinfo(void)
+ 	fclose(cfd);
+ 
+ 	if (pm == NULL) return NULL;
+-#elif __FreeBSD__
++#elif defined(__FreeBSD__) || defined(__OpenBSD__)
+ 	if (sysctl(mib, 2, modelbuf, &len, NULL, 0))
+ 		snprintf(modelbuf, sizeof(modelbuf), "Unknown");
+ 
