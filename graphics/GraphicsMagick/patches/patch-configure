@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -28663,7 +28663,7 @@ done
+@@ -30112,7 +30112,7 @@ done
  #
  
  # Subdirectory under lib to place GraphicsMagick lib files
@@ -10,7 +10,7 @@ Index: configure
  
  cat >>confdefs.h <<_ACEOF
  #define MagickLibSubdir "$MagickLibSubdir"
-@@ -28767,7 +28767,7 @@ _ACEOF
+@@ -30216,7 +30216,7 @@ _ACEOF
  
  #
  # Path to GraphicsMagick share files

@@ -352,6 +352,8 @@ share/doc/GraphicsMagick/ChangeLog.2017
 share/doc/GraphicsMagick/ChangeLog.2018
 share/doc/GraphicsMagick/ChangeLog.2019
 share/doc/GraphicsMagick/ChangeLog.2020
+share/doc/GraphicsMagick/ChangeLog.2021
+share/doc/GraphicsMagick/ChangeLog.2022
 share/doc/GraphicsMagick/Copyright.txt
 share/doc/GraphicsMagick/NEWS.txt
 share/doc/GraphicsMagick/www/
@@ -377,7 +379,8 @@ share/doc/GraphicsMagick/www/ChangeLog-2019.html
 share/doc/GraphicsMagick/www/ChangeLog-2020.html
 share/doc/GraphicsMagick/www/ChangeLog-2021.html
 share/doc/GraphicsMagick/www/ChangeLog-2022.html
-share/doc/GraphicsMagick/www/Changelog.html
+share/doc/GraphicsMagick/www/ChangeLog-2023.html
+share/doc/GraphicsMagick/www/ChangeLog.html
 share/doc/GraphicsMagick/www/Changes.html
 share/doc/GraphicsMagick/www/Copyright.html
 share/doc/GraphicsMagick/www/FAQ.html
