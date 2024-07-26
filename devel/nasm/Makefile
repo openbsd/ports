@@ -1,6 +1,6 @@
 COMMENT=	general-purpose multi-platform x86 assembler
 
-VERSION=	2.16.01
+VERSION=	2.16.03
 DISTNAME=	nasm-${VERSION}
 CATEGORIES=	devel lang
 SITES=		${HOMEPAGE}/pub/nasm/releasebuilds/${VERSION}/

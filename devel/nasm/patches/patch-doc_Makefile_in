@@ -18,8 +18,8 @@ Index: doc/Makefile.in
 +OUT		= html nasmdoc.txt # nasmdoc.pdf $(XZFILES)
  XZOUT           = nasmdoc.pdf.xz
  
- .SUFFIXES:
-@@ -103,7 +103,6 @@ nasmdoc.pdf.xz: nasmdoc-raw.pdf
+ # Don't delete intermediate files
+@@ -109,7 +109,6 @@ nasmdoc.pdf.xz: nasmdoc-raw.pdf
  	$(XZ) -9e < $< > $@
  
  clean:
@@ -27,7 +27,7 @@ Index: doc/Makefile.in
  	-$(RM_F) *.aux *.cp *.fn *.ky *.pg *.log *.toc *.tp *.vr
  	-$(RM_F) inslist.src version.src fontpath Fontmap
  	-$(RM_F) nasmdoc*.ps nasmdoc-raw.pdf
-@@ -116,7 +115,7 @@ install: all
+@@ -122,7 +121,7 @@ install: all
  	$(MKDIR_P) $(DESTDIR)$(htmldir)
  	$(INSTALL_DATA) html/* $(DESTDIR)$(htmldir)
  	$(MKDIR_P) $(DESTDIR)$(docdir)
