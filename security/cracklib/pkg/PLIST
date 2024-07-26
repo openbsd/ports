@@ -7,6 +7,7 @@ lib/libcrack.la
 @man man/man8/cracklib-check.8
 @man man/man8/cracklib-format.8
 @man man/man8/cracklib-update.8
+@man man/man8/create-cracklib-dict.8
 @bin sbin/cracklib-check
 sbin/cracklib-format
 @bin sbin/cracklib-packer
