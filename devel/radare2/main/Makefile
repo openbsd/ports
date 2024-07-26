@@ -3,7 +3,7 @@
 COMMENT =		libre and portable reverse engineering framework
 
 V =			5.8.8
-REVISION =		0
+REVISION =		1
 SUBST_VARS +=		V
 
 GH_PROJECT =		radare2
