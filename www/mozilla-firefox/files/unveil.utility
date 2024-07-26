@@ -1,3 +1,6 @@
 /usr/lib r
 /usr/local/lib r
 /tmp rwc
+
+# required to unbreak various sites when va-api is enabled in ffmpeg
+/usr/X11R6/lib r
