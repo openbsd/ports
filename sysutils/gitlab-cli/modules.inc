@@ -96,7 +96,7 @@ MODGO_MODULES =	\
 	github.com/mailru/easyjson							 v0.7.7 \
 	github.com/mattn/go-colorable							 v0.1.13 \
 	github.com/mattn/go-isatty							 v0.0.20 \
-	github.com/mattn/go-runewidth							 v0.0.15 \
+	github.com/mattn/go-runewidth							 v0.0.16 \
 	github.com/mgutz/ansi								 v0.0.0-20200706080929-d51e80ef957d \
 	github.com/microcosm-cc/bluemonday						 v1.0.25 \
 	github.com/mitchellh/go-homedir							 v1.1.0 \
@@ -221,6 +221,7 @@ MODGO_MODFILES =	\
 	github.com/mattn/go-isatty			 v0.0.8 \
 	github.com/mattn/go-runewidth			 v0.0.12 \
 	github.com/mattn/go-runewidth			 v0.0.14 \
+	github.com/mattn/go-runewidth			 v0.0.15 \
 	github.com/mattn/go-runewidth			 v0.0.9 \
 	github.com/mgutz/ansi				 v0.0.0-20170206155736-9520e82c474b \
 	github.com/modern-go/concurrent			 v0.0.0-20180228061459-e0a39a4cb421 \

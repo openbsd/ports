@@ -1,4 +1,4 @@
-SHA256 (cli-v1.44.0.zip) = 7gsqqVhmVEZkSbwwmX47BFdtXfizO+Et1ppTXOaH/RE=
+SHA256 (cli-v1.44.1.zip) = kTtBvawb6brbl5DDeTGmtOSsGS3d9Em/hPXs0hG6Ryw=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.110.10.mod) = NYagpvj1XJrKsc5QbeBFAKXdHh9xg/Q1yHBvDEDfIWY=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.112.1.mod) = K3ub9aRj+HBW2ayMf4tSefsHIMERWAOeSGmOvFegpPs=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.112.1.zip) = 5mxI/EmT2sqY/gLF/OcE7UKwDS1VPU4Zw7/P42E+9EA=
@@ -223,7 +223,8 @@ SHA256 (go_modules/github.com/mattn/go-isatty/@v/v0.0.8.mod) = T3daib6agBiagm7yL
 SHA256 (go_modules/github.com/mattn/go-runewidth/@v/v0.0.12.mod) = QTaqoj/LMXaikoIvKoqYzMey/eOKWZIsFSsAb1nVlpU=
 SHA256 (go_modules/github.com/mattn/go-runewidth/@v/v0.0.14.mod) = IWyT0ZMQYSyB1cdBAkmJ+DiX0jM8Op+We1ixMXWH9Rk=
 SHA256 (go_modules/github.com/mattn/go-runewidth/@v/v0.0.15.mod) = IWyT0ZMQYSyB1cdBAkmJ+DiX0jM8Op+We1ixMXWH9Rk=
-SHA256 (go_modules/github.com/mattn/go-runewidth/@v/v0.0.15.zip) = 2XxPBmehSVdWnJMqjiSI8cQ3V7TczjE4l6oAHwfRSbA=
+SHA256 (go_modules/github.com/mattn/go-runewidth/@v/v0.0.16.mod) = IWyT0ZMQYSyB1cdBAkmJ+DiX0jM8Op+We1ixMXWH9Rk=
+SHA256 (go_modules/github.com/mattn/go-runewidth/@v/v0.0.16.zip) = F50tkAx27jVg++2mDQI3o75qy3NNDLdCO1XlzLDO28o=
 SHA256 (go_modules/github.com/mattn/go-runewidth/@v/v0.0.9.mod) = h9IheU+rSqxoFLv0KqEKpLdpPIMpT9GCb1gSJCh4Vwk=
 SHA256 (go_modules/github.com/mgutz/ansi/@v/v0.0.0-20170206155736-9520e82c474b.mod) = EuFLl+pgTx/Ln3/Mhe6T2bp/hYoDRp7inpKaB9VdCk0=
 SHA256 (go_modules/github.com/mgutz/ansi/@v/v0.0.0-20200706080929-d51e80ef957d.mod) = EuFLl+pgTx/Ln3/Mhe6T2bp/hYoDRp7inpKaB9VdCk0=
@@ -530,7 +531,7 @@ SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.4.1.mod) = ZRhD0lm
 SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.4.1.zip) = zoD3u+yp+QDo7DEXRAB812TGeezI06aqpqvxIj3ekfI=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = L8eybun2ctl7QvpvJfWxWlWYK7usaZYdduux0DbRUAE=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.zip) = qsiNpVHCpRK2Qss1ZYvz3IYllaNWa9hA6/GOSALx/Mk=
-SIZE (cli-v1.44.0.zip) = 17153333
+SIZE (cli-v1.44.1.zip) = 17153374
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.10.mod) = 1349
 SIZE (go_modules/cloud.google.com/go/@v/v0.112.1.mod) = 1812
 SIZE (go_modules/cloud.google.com/go/@v/v0.112.1.zip) = 318714
@@ -755,7 +756,8 @@ SIZE (go_modules/github.com/mattn/go-isatty/@v/v0.0.8.mod) = 95
 SIZE (go_modules/github.com/mattn/go-runewidth/@v/v0.0.12.mod) = 84
 SIZE (go_modules/github.com/mattn/go-runewidth/@v/v0.0.14.mod) = 84
 SIZE (go_modules/github.com/mattn/go-runewidth/@v/v0.0.15.mod) = 84
-SIZE (go_modules/github.com/mattn/go-runewidth/@v/v0.0.15.zip) = 21768
+SIZE (go_modules/github.com/mattn/go-runewidth/@v/v0.0.16.mod) = 84
+SIZE (go_modules/github.com/mattn/go-runewidth/@v/v0.0.16.zip) = 22002
 SIZE (go_modules/github.com/mattn/go-runewidth/@v/v0.0.9.mod) = 45
 SIZE (go_modules/github.com/mgutz/ansi/@v/v0.0.0-20170206155736-9520e82c474b.mod) = 29
 SIZE (go_modules/github.com/mgutz/ansi/@v/v0.0.0-20200706080929-d51e80ef957d.mod) = 29
