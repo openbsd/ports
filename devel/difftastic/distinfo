@@ -8,7 +8,7 @@ SHA256 (cargo/bitflags-1.3.2.tar.gz) = vvONRRY8Lx3eCUp9/TPM9ZXJKQXI+PT9wY0G+xA3c
 SHA256 (cargo/bitflags-2.5.0.tar.gz) = z0udapRPdn+OXg2wGFcGI8hfPZJaxxjbTgbQGHrbIcE=
 SHA256 (cargo/bstr-1.9.1.tar.gz) = Be/Fz9kRDIQW5HHfDpZwLVhpAXjiBuYbcXNwZnPJNwY=
 SHA256 (cargo/bumpalo-3.14.0.tar.gz) = fzDnR2Uh9vivGhxMC4zJTwvuN9kXY9DKJmXymbbNiuw=
-SHA256 (cargo/cc-1.0.90.tar.gz) = jNZgSoKs8wOfEUT1S46zTpH/umIgURiecbeBgi1e4fU=
+SHA256 (cargo/cc-1.1.5.tar.gz) = Mkx08hVWU8kLBPJbKkeopjE2DLkI+Sp3JpX0MMfjEFI=
 SHA256 (cargo/cfg-if-1.0.0.tar.gz) = uvHeQzl2FYi8Bhnjy8ASDuWC67dLU7Tvv3kRe9LaQP0=
 SHA256 (cargo/clap-3.2.25.tar.gz) = TqGBv1ZvccuaXRelnhhxr2OBgKGPsANckq5itwUgcSM=
 SHA256 (cargo/clap_lex-0.2.4.tar.gz) = KFDy9agsv0N91a9NSYSPvfwnwVfD0BA0V3b5UnZSYcU=
@@ -48,7 +48,7 @@ SHA256 (cargo/itertools-0.10.5.tar.gz) = sP0iYOgpvd9MtuqAIoneL4bWp6aQGS++kbP0bg8
 SHA256 (cargo/itertools-0.11.0.tar.gz) = scFzpWhs6L+lUbNWPQwhcL8kykTamcfKS/2rVBjD/lc=
 SHA256 (cargo/itoa-1.0.10.tar.gz) = saRtGhcdhlql+D+SaVdlyqBHqbTLriy/N9vWE6eT/Uw=
 SHA256 (cargo/lazy_static-1.4.0.tar.gz) = 4qutI/vEKzcA8vJ5hE3IMq2ysusGmy35GPRVxOGMxkY=
-SHA256 (cargo/libc-0.2.153.tar.gz) = nBmPkXKKgigaZOH0+e6yXYLLMqXeJRxr0bUVTWOo570=
+SHA256 (cargo/libc-0.2.155.tar.gz) = l7OIikrs936BEUXK327vWQH0eCxTiGGRsvaT8kdhhHw=
 SHA256 (cargo/libm-0.2.8.tar.gz) = TsKoYhNNKn0y15g93N0cSSNTCDPJ8uoaRPxfpHOYkFg=
 SHA256 (cargo/libmimalloc-sys-0.1.24.tar.gz) = dwX8QPbtST9zWEq7syTnT5azWP9g3+Vlmg+PwSxZCmk=
 SHA256 (cargo/line-numbers-0.3.0.tar.gz) = eyX1BohTgF+qPBn0TQxAFEbk6z9HzICPozHuww8Lo1w=
@@ -79,12 +79,10 @@ SHA256 (cargo/radix-heap-0.4.2.tar.gz) = Wf/snfRkATKVtJkpiBHmo94xv4EoCSE1gmUX2xL
 SHA256 (cargo/rayon-1.10.0.tar.gz) = tBimAVRRDKGgAqdSypcUmE4h5CQegE0yVVJR+vi3j/o=
 SHA256 (cargo/rayon-core-1.12.1.tar.gz) = FGWHOj39qornyxS0ODZXyqsLPooKqa6OBLBEhUyN/OI=
 SHA256 (cargo/redox_syscall-0.4.1.tar.gz) = RyLXaO/0a3WYndE05cNT8NYpblqqMTLndsvbVr53Mao=
-SHA256 (cargo/regex-1.9.6.tar.gz) = 6+4gFAVAbb9Si4tnIQSubW1j5tEYyxDk1Rq7x7WARP8=
-SHA256 (cargo/regex-automata-0.3.9.tar.gz) = WbI+ku5DGIk/o/4+b7NlJY77/mrGqzDwkM3Lt6o376k=
+SHA256 (cargo/regex-1.10.4.tar.gz) = wRfb396cgwiXW2oY1x8/OFyJRh97P7BUKI7PKiBYukw=
 SHA256 (cargo/regex-automata-0.4.6.tar.gz) = hrg7i5hH+b+V72ivsLjmzbgPSYRC9ReaKfrUSPzB6uo=
-SHA256 (cargo/regex-syntax-0.7.5.tar.gz) = 27X7Gs2KGhiz3VvmLSVIXrdw4Fr7QIqWJ9FNRRuuEto=
 SHA256 (cargo/regex-syntax-0.8.2.tar.gz) = wIx05iBHuy3k/0h7JR5KkuJPSHRWSEUWNc7H1ZEWLZ8=
-SHA256 (cargo/rustc-hash-1.1.0.tar.gz) = CNQ/eqawjUnzgs3mp5ggR8NCbblJsUJLxLfsmuEsbOI=
+SHA256 (cargo/rustc-hash-2.0.0.tar.gz) = WDA0/XM3QVbmZ5ftjlsNVpBAnJImsi2Hy38ZghwF0VI=
 SHA256 (cargo/rustix-0.37.27.tar.gz) = /qjKNno6Af415pQ8QArd9EPA9XZw5uxRGW9xpLh2LdI=
 SHA256 (cargo/rustversion-1.0.14.tar.gz) = f/wYOhC0R40Ey7v8ltCHMhnZYt1azK/y/71M6334N/Q=
 SHA256 (cargo/ryu-1.0.17.tar.gz) = 6GaXyRYBmoWIyZtfrDzq107AtLgZcHpoL9TSP6DOG6E=
@@ -142,7 +140,7 @@ SHA256 (cargo/wu-diff-0.1.2.tar.gz) = jj5nNfzeBkMocNuNydfjqxuTcnwU6u8ymWlCYpnyiJ
 SHA256 (cargo/yansi-0.5.1.tar.gz) = CQQc2Qz4X3+LLfYMZG+FO39TXOaPhSROtnMc+J+kmOw=
 SHA256 (cargo/zerocopy-0.7.32.tar.gz) = dNTTlh5T+kyaJahjf8K/ryWVs9OuNIdVaKXPZHh3Fr4=
 SHA256 (cargo/zerocopy-derive-0.7.32.tar.gz) = nOGxjM2Oc6kyEYb5fkb58Et3iFEXdWexl1EJ0moI0qY=
-SHA256 (difftastic-0.58.0.tar.gz) = LxgP806WmIBhOjzc1vL+tTrzEBgIFwdRmWkASNbiOvY=
+SHA256 (difftastic-0.59.0.tar.gz) = IpjsDEgKPsmHmez7BlQD4T+iJfjtb8qFj9+MTv2w3Gk=
 SIZE (cargo/ahash-0.8.11.tar.gz) = 43607
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
 SIZE (cargo/allocator-api2-0.2.16.tar.gz) = 59025
@@ -153,7 +151,7 @@ SIZE (cargo/bitflags-1.3.2.tar.gz) = 23021
 SIZE (cargo/bitflags-2.5.0.tar.gz) = 43821
 SIZE (cargo/bstr-1.9.1.tar.gz) = 380305
 SIZE (cargo/bumpalo-3.14.0.tar.gz) = 82400
-SIZE (cargo/cc-1.0.90.tar.gz) = 73954
+SIZE (cargo/cc-1.1.5.tar.gz) = 81493
 SIZE (cargo/cfg-if-1.0.0.tar.gz) = 7934
 SIZE (cargo/clap-3.2.25.tar.gz) = 219403
 SIZE (cargo/clap_lex-0.2.4.tar.gz) = 9652
@@ -193,7 +191,7 @@ SIZE (cargo/itertools-0.10.5.tar.gz) = 115354
 SIZE (cargo/itertools-0.11.0.tar.gz) = 125074
 SIZE (cargo/itoa-1.0.10.tar.gz) = 10534
 SIZE (cargo/lazy_static-1.4.0.tar.gz) = 10443
-SIZE (cargo/libc-0.2.153.tar.gz) = 740614
+SIZE (cargo/libc-0.2.155.tar.gz) = 743539
 SIZE (cargo/libm-0.2.8.tar.gz) = 113450
 SIZE (cargo/libmimalloc-sys-0.1.24.tar.gz) = 1119801
 SIZE (cargo/line-numbers-0.3.0.tar.gz) = 5185
@@ -224,12 +222,10 @@ SIZE (cargo/radix-heap-0.4.2.tar.gz) = 9323
 SIZE (cargo/rayon-1.10.0.tar.gz) = 180155
 SIZE (cargo/rayon-core-1.12.1.tar.gz) = 70701
 SIZE (cargo/redox_syscall-0.4.1.tar.gz) = 24858
-SIZE (cargo/regex-1.9.6.tar.gz) = 254981
-SIZE (cargo/regex-automata-0.3.9.tar.gz) = 610489
+SIZE (cargo/regex-1.10.4.tar.gz) = 253191
 SIZE (cargo/regex-automata-0.4.6.tar.gz) = 617565
-SIZE (cargo/regex-syntax-0.7.5.tar.gz) = 343366
 SIZE (cargo/regex-syntax-0.8.2.tar.gz) = 347228
-SIZE (cargo/rustc-hash-1.1.0.tar.gz) = 9331
+SIZE (cargo/rustc-hash-2.0.0.tar.gz) = 12691
 SIZE (cargo/rustix-0.37.27.tar.gz) = 324534
 SIZE (cargo/rustversion-1.0.14.tar.gz) = 17261
 SIZE (cargo/ryu-1.0.17.tar.gz) = 47537
@@ -287,4 +283,4 @@ SIZE (cargo/wu-diff-0.1.2.tar.gz) = 33439
 SIZE (cargo/yansi-0.5.1.tar.gz) = 16525
 SIZE (cargo/zerocopy-0.7.32.tar.gz) = 151096
 SIZE (cargo/zerocopy-derive-0.7.32.tar.gz) = 37623
-SIZE (difftastic-0.58.0.tar.gz) = 42962336
+SIZE (difftastic-0.59.0.tar.gz) = 43984897
