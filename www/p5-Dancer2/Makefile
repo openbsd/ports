@@ -1,6 +1,6 @@
 COMMENT =	lightweight yet powerful web application framework
 
-DISTNAME =	Dancer2-1.1.0
+DISTNAME =	Dancer2-1.1.1
 
 CATEGORIES =	www
 
