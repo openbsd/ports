@@ -1,7 +1,7 @@
 Index: deps/ada/ada.cpp
 --- deps/ada/ada.cpp.orig
 +++ deps/ada/ada.cpp
-@@ -10485,7 +10485,7 @@ ada_unused std::string get_state(ada::state s) {
+@@ -10488,7 +10488,7 @@ ada_unused std::string get_state(ada::state s) {
        return "Special Authority Slashes";
      case ada::state::SPECIAL_RELATIVE_OR_AUTHORITY:
        return "Special Relative or Authority";

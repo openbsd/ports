@@ -1,12 +1,12 @@
 Index: deps/ada/ada.h
 --- deps/ada/ada.h.orig
 +++ deps/ada/ada.h
-@@ -1229,7 +1229,7 @@ enum class state {
-   SPECIAL_AUTHORITY_IGNORE_SLASHES,
-   SPECIAL_AUTHORITY_SLASHES,
-   SPECIAL_RELATIVE_OR_AUTHORITY,
+@@ -1292,7 +1292,7 @@ enum class state {
+   /**
+    * @see https://url.spec.whatwg.org/#query-state
+    */
 -  QUERY,
 +  ADAQUERY,
-   PATH,
-   PATH_START,
-   OPAQUE_PATH,
+ 
+   /**
+    * @see https://url.spec.whatwg.org/#path-state
