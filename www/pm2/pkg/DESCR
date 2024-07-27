@@ -1,0 +1,3 @@
+PM2 is a daemon process manager that helps manage and keep applications
+online. PM2 comes with an inbuilt load balancer, code refresh
+functionality and support for multiple languages for deploying code.
