@@ -3,7 +3,7 @@ COMMENT=	audio/video converter and streamer
 V=		4.4.4
 DISTNAME=	ffmpeg-${V}
 EPOCH=		1
-REVISION=	5
+REVISION=	6
 CATEGORIES=	graphics multimedia
 SITES=		https://ffmpeg.org/releases/
 EXTRACT_SUFX=	.tar.xz
@@ -26,11 +26,11 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # LGPLv2.1 and GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB+=	SDL2 X11 Xext Xv aom ass bz2 c crypto dav1d fontconfig
-WANTLIB+=	freetype fribidi gsm iconv lzma m mp3lame opus
-WANTLIB+=	pthread sndio speex ssl theoradec theoraenc v4l2
-WANTLIB+=	vorbis vorbisenc vpx x264 x265 xcb xcb-shape xcb-shm
-WANTLIB+=	xcb-xfixes xml2 xvidcore vidstab z zimg
+WANTLIB += SDL2 X11 Xext Xv aom ass bz2 c crypto dav1d fontconfig
+WANTLIB += freetype fribidi gsm iconv lzma m mp3lame opus pthread
+WANTLIB += sndio speex ssl theoradec theoraenc v4l2 va va-drm
+WANTLIB += va-x11 vidstab vorbis vorbisenc vpx x264 x265 xcb xcb-shape
+WANTLIB += xcb-shm xcb-xfixes xml2 xvidcore z zimg
 
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
@@ -66,11 +66,18 @@ LIB_DEPENDS=	archivers/bzip2 \
 		textproc/libxml
 
 # inter-library dependencies for the current configuration
-LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -laom -ldav1d -lgsm -liconv -llzma -lmp3lame -lopus -lspeex -ltheoradec -ltheoraenc -lvorbis -lvorbisenc -lvpx -lx264 -lx265 -lxvidcore -lm -lz -pthread
-LIBavdevice_EXTRALIBS=-L${LOCALBASE}/lib -L${X11BASE}/lib -lX11 -lXext -lXv -lxcb-shape -lxcb-shm -lxcb-xfixes -lxcb -lsndio -lv4l2 -lm
-LIBavfilter_EXTRALIBS=-L${LOCALBASE}/lib -L${X11BASE}/lib -lass -lfontconfig -lfreetype -lfribidi -lvidstab -lm -lz -lzimg -pthread
+LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -L${X11BASE}/lib -laom -ldav1d -lgsm -liconv -llzma
+LIBavcodec_EXTRALIBS+=-lmp3lame -lopus -lspeex -ltheoradec -ltheoraenc -lvorbis
+LIBavcodec_EXTRALIBS+=-lvorbisenc -lvpx -lx264 -lx265 -lxvidcore -lm -lz -pthread
+LIBavcodec_EXTRALIBS+=-lva -lva-drm
+
+LIBavdevice_EXTRALIBS=-L${LOCALBASE}/lib -L${X11BASE}/lib -lX11 -lXext -lXv
+LIBavdevice_EXTRALIBS+=-lxcb-shape -lxcb-shm -lxcb-xfixes -lxcb -lsndio -lv4l2 -lm
+
+LIBavfilter_EXTRALIBS=-L${LOCALBASE}/lib -L${X11BASE}/lib -lass -lfontconfig
+LIBavfilter_EXTRALIBS+=-lfreetype -lfribidi -lvidstab -lm -lz -lzimg -pthread -lva
 LIBavformat_EXTRALIBS=-L${LOCALBASE}/lib -lbz2 -lxml2 -lssl -lcrypto -lm -lz
-LIBavutil_EXTRALIBS=-lm -pthread
+LIBavutil_EXTRALIBS=-L${X11BASE}/lib -lva -lva-drm -lva-x11 -lm -pthread
 LIBpostproc_EXTRALIBS=-lm
 LIBswresample_EXTRALIBS=-lm
 LIBswscale_EXTRALIBS=-lm
@@ -95,7 +102,7 @@ CONFIGURE_ARGS+=--enable-shared \
 		--disable-stripping \
 		--disable-indev=jack \
 		--disable-outdev=sdl2 \
-		--disable-vaapi \
+		--enable-vaapi \
 		--enable-fontconfig \
 		--enable-frei0r \
 		--enable-gpl \
