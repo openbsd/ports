@@ -74,6 +74,7 @@ SHA256 (cargo/memoffset-0.9.0.tar.gz) = WmNLHGGpVYW9FWB8arDE5bIm5pX/KAC6DNzN3yCM
 SHA256 (cargo/natord-1.0.9.tar.gz) = MI2W243rxyfD/ZdEqsUXUSQ0IORu30AQEJCNp/jV5Xw=
 SHA256 (cargo/normalize-line-endings-0.3.0.tar.gz) = YYB/d4Av8wl14B9PBxyLoQwCIFL5izKUEZ8+YV0T5b4=
 SHA256 (cargo/nu-ansi-term-0.50.0.tar.gz) = 3SgA4VIL3JZnghaKYnql0a2S4zuYS/fHYV0xKAyD/xQ=
+SHA256 (cargo/num-conv-0.1.0.tar.gz) = UdUV0y+xgu43zaLM3LkpUNajwok6ooDlQGccLNDzsdk=
 SHA256 (cargo/num-traits-0.2.14.tar.gz) = mmSx7FzaJYbihHIkhtgCrPH329xiPiv8V+Zcoc0JkpA=
 SHA256 (cargo/number_prefix-0.4.0.tar.gz) = gwskag5fIK+HFBslwXPNG2Cb13eaRhfW7FgquvkIcPM=
 SHA256 (cargo/once_cell-1.19.0.tar.gz) = P9sSskdrWV+TWMUWGqRnwkOIWcqhNt7IbCb90u/he5I=
@@ -128,8 +129,10 @@ SHA256 (cargo/terminal_size-0.3.0.tar.gz) = Ib6/K3yeClFfbg+MUdwPjkaWOR5vH/MDeVWf
 SHA256 (cargo/thiserror-1.0.48.tar.gz) = nW16dAuKZmp+go3QDanA3CkN/1MVTqd6wQkoHekFibc=
 SHA256 (cargo/thiserror-impl-1.0.48.tar.gz) = SZIuyuZsyKJJt35o0dBiPBssUU8AYMJ83Gi9YqEhnTU=
 SHA256 (cargo/time-0.3.30.tar.gz) = xKNKswDy3ublYsEKBG/AXjWLKfm/kid/MMPI2CJ19vU=
+SHA256 (cargo/time-0.3.36.tar.gz) = Xf2I5WNGRobJFsfkbmI+Ug3cbXn6ZkE5Dy4/qG6D6IU=
 SHA256 (cargo/time-core-0.1.2.tar.gz) = 75J8p1r7gIpNZN03TwCirfjQ/P+OexhK+IbDyH7Eo/M=
 SHA256 (cargo/time-macros-0.2.15.tar.gz) = StcNaNup4fis7aeqZxGWXf7Byshp8xGlG9CLOizLziA=
+SHA256 (cargo/time-macros-0.2.18.tar.gz) = PyUqaFQP3jo4d67qVSuDK0CrmmnjGO/QeHdKAd3uHM8=
 SHA256 (cargo/timeago-0.4.2.tar.gz) = oXEOWJ3gp2qvKVzUemaZ9kBXN9v9PPK3XJLQALVI0OY=
 SHA256 (cargo/tinytemplate-1.2.1.tar.gz) = vk1rXxn/dmToyY0D4hOctRDbmwpgtV+Ohwm2idk5trw=
 SHA256 (cargo/tinyvec-1.2.0.tar.gz) = W1Ig8Fu33n8/U8fAZeEZmzFyaW/i25+cTYrZtO50w0I=
@@ -256,6 +259,7 @@ SIZE (cargo/memoffset-0.9.0.tar.gz) = 9033
 SIZE (cargo/natord-1.0.9.tar.gz) = 3866
 SIZE (cargo/normalize-line-endings-0.3.0.tar.gz) = 5737
 SIZE (cargo/nu-ansi-term-0.50.0.tar.gz) = 28482
+SIZE (cargo/num-conv-0.1.0.tar.gz) = 7444
 SIZE (cargo/num-traits-0.2.14.tar.gz) = 45476
 SIZE (cargo/number_prefix-0.4.0.tar.gz) = 6922
 SIZE (cargo/once_cell-1.19.0.tar.gz) = 33046
@@ -310,8 +314,10 @@ SIZE (cargo/terminal_size-0.3.0.tar.gz) = 10096
 SIZE (cargo/thiserror-1.0.48.tar.gz) = 18862
 SIZE (cargo/thiserror-impl-1.0.48.tar.gz) = 15096
 SIZE (cargo/time-0.3.30.tar.gz) = 120289
+SIZE (cargo/time-0.3.36.tar.gz) = 119805
 SIZE (cargo/time-core-0.1.2.tar.gz) = 7191
 SIZE (cargo/time-macros-0.2.15.tar.gz) = 23568
+SIZE (cargo/time-macros-0.2.18.tar.gz) = 24361
 SIZE (cargo/timeago-0.4.2.tar.gz) = 18821
 SIZE (cargo/tinytemplate-1.2.1.tar.gz) = 26490
 SIZE (cargo/tinyvec-1.2.0.tar.gz) = 41625
