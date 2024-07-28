@@ -1,0 +1,14 @@
+Unbreak build if py3-cython is installed
+
+Index: setup-wxsvg.py
+--- setup-wxsvg.py.orig
++++ setup-wxsvg.py
+@@ -15,7 +15,7 @@ import textwrap
+ from setuptools import setup, Extension
+ try:
+     from Cython.Build import cythonize
+-    have_cython = True
++    have_cython = False
+ except ImportError:
+     have_cython = False
+ 
