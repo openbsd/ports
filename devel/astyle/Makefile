@@ -1,5 +1,5 @@
 COMMENT=		indenter and formatter of C/C++/Java source files
-DISTNAME=		astyle-3.5.1
+DISTNAME=		astyle-3.5.2
 EXTRACT_SUFX =		.tar.bz2
 CATEGORIES=		devel
 
