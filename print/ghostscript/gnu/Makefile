@@ -1,11 +1,15 @@
 COMMENT =	PostScript and PDF interpreter
 
 VERSION =	10.03.1
-DISTNAME =	ghostscript-${VERSION}
+DISTNAME =	ghostpdl-${VERSION}
+PKGNAME =	ghostscript-${VERSION}
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	lang print
-SHARED_LIBS =	gs 18.2
-REVISION =	0
+SHARED_LIBS =	gs	18.2
+SHARED_LIBS +=	gpcl6	18.2
+SHARED_LIBS +=	gpdl	18.2
+SHARED_LIBS +=	gxps	18.2
+REVISION =	1
 
 SITES =		https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${VERSION:S/.//g}/
 
@@ -54,6 +58,9 @@ CONFIGURE_STYLE =	simple
 
 CONFIGURE_ARGS =	--prefix=${PREFIX}
 CONFIGURE_ARGS +=	--with-gs=gs
+CONFIGURE_ARGS +=	--with-pcl=gpcl6
+CONFIGURE_ARGS +=	--with-xps=gxps
+CONFIGURE_ARGS +=	--with-gpdl=gpdl
 CONFIGURE_ARGS +=	--enable-fontconfig
 CONFIGURE_ARGS +=	--enable-openjpeg
 CONFIGURE_ARGS +=	--without-tesseract
@@ -105,7 +112,11 @@ post-install:
 .if !${FLAVOR:Mgtk}
 	rm -f ${PREFIX}/bin/gsx
 .endif
-# rename the dynamic binary
-	mv ${PREFIX}/bin/{gsc,gs}
+# rename the dynamic binaries
+	mv ${PREFIX}/bin/gs{c,}
+	mv ${PREFIX}/bin/gpcl6{c,}
+	mv ${PREFIX}/bin/gpdl{c,}
+	mv ${PREFIX}/bin/gxps{c,}
+ 
 
 .include <bsd.port.mk>
