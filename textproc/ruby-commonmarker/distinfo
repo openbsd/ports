@@ -59,6 +59,7 @@ SHA256 (cargo/memchr-2.6.4.tar.gz) = 9mXuQLxKPFWQr7HpZ323SlCGWd/XHhJkINqCdJCaAWc
 SHA256 (cargo/minimal-lexical-0.2.1.tar.gz) = aDVMXGvTbXP/P+zrBe+lm2rLdiZhf0livjIqgl5h95o=
 SHA256 (cargo/miniz_oxide-0.7.1.tar.gz) = 54EOC+VbQoraQQQcQfMsnxpCgXkBtMz0X6PUtlYedMc=
 SHA256 (cargo/nom-7.1.3.tar.gz) = 0nOYPFplenCj6PKgEymCLzuMgXK3OCZBGlV1HkBKCko=
+SHA256 (cargo/num-conv-0.1.0.tar.gz) = UdUV0y+xgu43zaLM3LkpUNajwok6ooDlQGccLNDzsdk=
 SHA256 (cargo/once_cell-1.19.0.tar.gz) = P9sSskdrWV+TWMUWGqRnwkOIWcqhNt7IbCb90u/he5I=
 SHA256 (cargo/onig-6.4.0.tar.gz) = jEsxyHIq2RccbXfTVX2weMqyvVCvzJ0JyLMVxZ34yk8=
 SHA256 (cargo/onig_sys-69.8.1.tar.gz) = e4KePX6cx0x+MV7o7bGFv0GQ2lrN50r9f8WcNbHwhuc=
@@ -99,8 +100,10 @@ SHA256 (cargo/terminal_size-0.3.0.tar.gz) = Ib6/K3yeClFfbg+MUdwPjkaWOR5vH/MDeVWf
 SHA256 (cargo/thiserror-1.0.52.tar.gz) = g6SP2UawLApSay6UgcjioXdV5HA5FkqGxAcERuOkYU0=
 SHA256 (cargo/thiserror-impl-1.0.52.tar.gz) = 5/vptZTWVopqFEMlCn5n2At04elvbRcV4eIcwYiCkdM=
 SHA256 (cargo/time-0.3.31.tar.gz) = 9le6QsP4bnaA5TyM06+Ku+VrVJF5C0biLhnA1XRjWD4=
+SHA256 (cargo/time-0.3.36.tar.gz) = Xf2I5WNGRobJFsfkbmI+Ug3cbXn6ZkE5Dy4/qG6D6IU=
 SHA256 (cargo/time-core-0.1.2.tar.gz) = 75J8p1r7gIpNZN03TwCirfjQ/P+OexhK+IbDyH7Eo/M=
 SHA256 (cargo/time-macros-0.2.16.tar.gz) = Jhl+M0ICRK63DD6MeDdspGVxvE5wHkeRws2fV9yzpD8=
+SHA256 (cargo/time-macros-0.2.18.tar.gz) = PyUqaFQP3jo4d67qVSuDK0CrmmnjGO/QeHdKAd3uHM8=
 SHA256 (cargo/typed-arena-2.0.2.tar.gz) = avauIBZ6ns5Ly0GvW4D4ofHfmB9jkRic4A/SV68EEmo=
 SHA256 (cargo/unicode-ident-1.0.12.tar.gz) = M1S5rD+uH/Z1XLbbU2g622YWNPZ1V5Qt6k+s6+wP7ks=
 SHA256 (cargo/unicode_categories-0.1.1.tar.gz) = OewksxIdl2kG7OY8narSW4WWlkdoLu4xPLV3n91p4U4=
@@ -197,6 +200,7 @@ SIZE (cargo/memchr-2.6.4.tar.gz) = 94439
 SIZE (cargo/minimal-lexical-0.2.1.tar.gz) = 94841
 SIZE (cargo/miniz_oxide-0.7.1.tar.gz) = 55194
 SIZE (cargo/nom-7.1.3.tar.gz) = 117570
+SIZE (cargo/num-conv-0.1.0.tar.gz) = 7444
 SIZE (cargo/once_cell-1.19.0.tar.gz) = 33046
 SIZE (cargo/onig-6.4.0.tar.gz) = 32616
 SIZE (cargo/onig_sys-69.8.1.tar.gz) = 638216
@@ -237,8 +241,10 @@ SIZE (cargo/terminal_size-0.3.0.tar.gz) = 10096
 SIZE (cargo/thiserror-1.0.52.tar.gz) = 20115
 SIZE (cargo/thiserror-impl-1.0.52.tar.gz) = 15371
 SIZE (cargo/time-0.3.31.tar.gz) = 121762
+SIZE (cargo/time-0.3.36.tar.gz) = 119805
 SIZE (cargo/time-core-0.1.2.tar.gz) = 7191
 SIZE (cargo/time-macros-0.2.16.tar.gz) = 24356
+SIZE (cargo/time-macros-0.2.18.tar.gz) = 24361
 SIZE (cargo/typed-arena-2.0.2.tar.gz) = 11848
 SIZE (cargo/unicode-ident-1.0.12.tar.gz) = 42168
 SIZE (cargo/unicode_categories-0.1.1.tar.gz) = 87298

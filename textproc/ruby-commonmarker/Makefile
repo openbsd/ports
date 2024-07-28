@@ -3,7 +3,7 @@ COMMENT =	ruby wrapper for comrak rust crate
 DISTNAME =	commonmarker-1.0.3
 CATEGORIES =	textproc
 HOMEPAGE =	https://github.com/gjtorikian/commonmarker
-REVISION =	0
+REVISION =	1
 
 # MIT License
 PERMIT_PACKAGE =	Yes
@@ -19,6 +19,11 @@ LIB_DEPENDS =	textproc/oniguruma
 RUN_DEPENDS =	devel/ruby-rb_sys,${MODRUBY_FLAVOR}>=0.9
 
 CONFIGURE_STYLE = ruby gem ext cargo
+
+MODCARGO_CRATES_UPDATE +=	time
+MODCARGO_CRATES +=	time		0.3.36
+MODCARGO_CRATES +=	time-macros	0.2.18
+MODCARGO_CRATES +=	num-conv	0.1.0
 
 MODCARGO_VENDOR_DIR = ${WRKDIR}/modcargo-crates
 MODCARGO_BUILD = No
