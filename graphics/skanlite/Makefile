@@ -23,7 +23,7 @@ WANTLIB += Qt5Widgets Qt5Xml X11 c m
 
 MODULES =	x11/kde
 
-MODEKDE_KF5 =	Yes
+MODKDE_KF5 =	Yes
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
