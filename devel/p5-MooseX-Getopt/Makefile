@@ -2,7 +2,7 @@ COMMENT=		Moose role for processing command line options
 
 MODULES=		cpan
 PKG_ARCH=		*
-DISTNAME=		MooseX-Getopt-0.75
+DISTNAME =		MooseX-Getopt-0.76
 CATEGORIES=		devel
 
 FIX_EXTRACT_PERMISSIONS=Yes
