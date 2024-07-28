@@ -1,0 +1,12 @@
+Index: video/out/drm_common.c
+--- video/out/drm_common.c.orig
++++ video/out/drm_common.c
+@@ -30,7 +30,7 @@
+ #include "config.h"
+ 
+ #if HAVE_CONSIO_H
+-#include <sys/consio.h>
++#include <dev/wscons/wsdisplay_usl_io.h>
+ #else
+ #include <sys/vt.h>
+ #endif

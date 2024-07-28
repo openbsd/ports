@@ -4,6 +4,7 @@ GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
 GH_TAGNAME =		v0.38.0
 USE_NOBTCFI =		Yes
+REVISION =		0
 
 SHARED_LIBS +=		mpv		2.0
 
@@ -14,11 +15,11 @@ HOMEPAGE =		https://mpv.io/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${MODLUA_WANTLIB}
-WANTLIB += EGL SDL2 X11 Xext Xpresent Xrandr Xss Xv archive
-WANTLIB += ass avcodec avdevice avfilter avformat avutil bluray
-WANTLIB += c cdio cdio_cdda cdio_paranoia dvdnav iconv jpeg lcms2
-WANTLIB += m placebo pthread sndio swresample swscale vulkan z zimg
+WANTLIB += ${MODLUA_WANTLIB} EGL SDL2 X11 Xext Xpresent Xrandr
+WANTLIB += Xss Xv archive ass avcodec avdevice avfilter avformat
+WANTLIB += avutil bluray c cdio cdio_cdda cdio_paranoia drm dvdnav
+WANTLIB += iconv jpeg lcms2 m placebo pthread sndio swresample
+WANTLIB += swscale va va-drm va-x11 vulkan z zimg
 
 MODULES =		devel/meson \
 			lang/lua \
@@ -37,7 +38,7 @@ LIB_DEPENDS =		archivers/libarchive \
 			audio/libcdio-paranoia \
 			converters/libiconv \
 			devel/sdl2 \
-			graphics/ffmpeg \
+			graphics/ffmpeg>=4.4.4p6 \
 			graphics/jpeg \
 			graphics/lcms2 \
 			graphics/libplacebo \
@@ -68,7 +69,7 @@ CONFIGURE_ARGS =	-Dalsa=disabled \
 			-Dd3d9-hwaccel=disabled \
 			-Ddirect3d=disabled \
 			-Ddmabuf-wayland=disabled \
-			-Ddrm=disabled \
+			-Ddrm=enabled \
 			-Ddvbin=disabled \
 			-Ddvdnav=enabled \
 			-Degl-android=disabled \
@@ -77,11 +78,13 @@ CONFIGURE_ARGS =	-Dalsa=disabled \
 			-Degl-angle=disabled  \
 			-Degl-drm=disabled \
 			-Degl-wayland=disabled \
+			-Degl=enabled \
 			-Dgbm=disabled \
 			-Dgl-cocoa=disabled \
 			-Dgl-dxinterop-d3d9=disabled \
 			-Dgl-dxinterop=disabled \
 			-Dgl-win32=disabled \
+			-Dgl-x11=disabled \
 			-Dios-gl=disabled \
 			-Djack=disabled \
 			-Djavascript=disabled \
@@ -105,11 +108,11 @@ CONFIGURE_ARGS =	-Dalsa=disabled \
 			-Dswift-build=disabled \
 			-Dswift-flags=disabled \
 			-Duchardet=disabled \
-			-Dvaapi-drm=disabled \
+			-Dvaapi-drm=enabled \
 			-Dvaapi-wayland=disabled \
 			-Dvaapi-win32=disabled \
-			-Dvaapi-x11=disabled \
-			-Dvaapi=disabled \
+			-Dvaapi-x11=enabled \
+			-Dvaapi=enabled \
 			-Dvapoursynth=disabled \
 			-Dvdpau-gl-x11=disabled \
 			-Dvdpau=disabled \
@@ -121,11 +124,11 @@ CONFIGURE_ARGS =	-Dalsa=disabled \
 			-Dwayland=disabled \
 			-Dwin32-threads=disabled
 
-CFLAGS +=		-I${LOCALBASE}/include
-LDFLAGS +=		-L${LOCALBASE}/lib
+CFLAGS +=		-I${LOCALBASE}/include -I${X11BASE}/include
+LDFLAGS +=		-L${LOCALBASE}/lib -L${X11BASE}/lib
 
 MODMESON_CONFIGURE_ENV +=	CFLAGS="${CFLAGS}" \
-					LDFLAGS="${LDFLAGS}"
+				LDFLAGS="${LDFLAGS}"
 
 NO_TEST =		Yes
 

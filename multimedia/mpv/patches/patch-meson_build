@@ -25,3 +25,12 @@ Index: meson.build
  
  cplugins = get_option('cplugins').require(
      win32 or (features['libdl'] and cc.has_link_argument('-rdynamic')),
+@@ -525,7 +537,7 @@ features += {'glob': features['glob-posix'] or feature
+ 
+ features += {'vt.h': cc.has_header_symbol('sys/vt.h', 'VT_GETMODE')}
+ 
+-features += {'consio.h': not features['vt.h'] and cc.has_header_symbol('sys/consio.h', 'VT_GETMODE')}
++features += {'consio.h': not features['vt.h'] and cc.has_header_symbol('dev/wscons/wsdisplay_usl_io.h', 'VT_GETMODE', prefix: '#include <sys/param.h>')}
+ 
+ # macOS's pthread_setname_np is a special snowflake and differs from literally every other platform.
+ features += {'mac-thread-name': darwin}
