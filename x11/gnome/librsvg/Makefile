@@ -19,6 +19,7 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 ### stable
 .if ${PROPERTIES:Mrust}
+REVISION =		0
 SHARED_LIBS +=  rsvg-2               41.0     # 52.0
 GNOME_VERSION=		${STABLE_VERSION}
 MODULES +=		devel/cargo \
@@ -32,6 +33,10 @@ PKG_ARGS=		-Dold=0 -Dstable=1
 MAKE_ENV +=		${MODCARGO_ENV}
 MAKE_FLAGS +=		V=1
 WANTLIB += ${MODCARGO_WANTLIB} ${COMPILER_LIBCXX} Xau Xdmcp cairo-gobject jpeg
+
+MODCARGO_CRATES_UPDATE +=	time
+MODCARGO_CRATES +=	time		0.3.36
+MODCARGO_CRATES +=	time-macros	0.2.18
 .else
 ### old
 REVISION=		6
