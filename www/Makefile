@@ -581,6 +581,7 @@
      SUBDIR += tor-browser
      SUBDIR += trac
      SUBDIR += ttyd
+     SUBDIR += tuba
      SUBDIR += tuir
      SUBDIR += twill
      SUBDIR += uget
