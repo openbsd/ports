@@ -257,8 +257,10 @@ SHA256 (cargo/termcolor-1.4.1.tar.gz) = BnlPj2xciYsyda6++muKHLJM0sbHk5erFXdIN6C8
 SHA256 (cargo/thiserror-1.0.57.tar.gz) = HkW8vo7Sl3XyKAlcryzWevekzPdW6/8jowa/PotHsks=
 SHA256 (cargo/thiserror-impl-1.0.57.tar.gz) = qVPLJlvvN12uPeZmPaTTgE7uloLqgNjiVCUptzxTHIE=
 SHA256 (cargo/time-0.3.34.tar.gz) = yCSLZSG7FLxFtAZxWbm2rXkuLW11TWxB+1Din+/jh0k=
+SHA256 (cargo/time-0.3.36.tar.gz) = Xf2I5WNGRobJFsfkbmI+Ug3cbXn6ZkE5Dy4/qG6D6IU=
 SHA256 (cargo/time-core-0.1.2.tar.gz) = 75J8p1r7gIpNZN03TwCirfjQ/P+OexhK+IbDyH7Eo/M=
 SHA256 (cargo/time-macros-0.2.17.tar.gz) = e6Oj70HmZyovDwATkrtdzT/wqZktYYynYaEcMSFUd3Q=
+SHA256 (cargo/time-macros-0.2.18.tar.gz) = PyUqaFQP3jo4d67qVSuDK0CrmmnjGO/QeHdKAd3uHM8=
 SHA256 (cargo/tiny-skia-0.11.4.tar.gz) = g9EzlNRNrjIHtSoybAyFqL+H8VQfI7DRQ4EQiEl7Cas=
 SHA256 (cargo/tiny-skia-path-0.11.4.tar.gz) = nJ5/wMLoajCxF9BGKqJhtyt6mbfr196zoUztqVxb3JM=
 SHA256 (cargo/tinystr-0.7.5.tar.gz) = g8Ar88U4qzK6kTQIIkMjkV9O+abWHA6F1JPzVZIcDs4=
@@ -612,8 +614,10 @@ SIZE (cargo/termcolor-1.4.1.tar.gz) = 18773
 SIZE (cargo/thiserror-1.0.57.tar.gz) = 20993
 SIZE (cargo/thiserror-impl-1.0.57.tar.gz) = 15639
 SIZE (cargo/time-0.3.34.tar.gz) = 118430
+SIZE (cargo/time-0.3.36.tar.gz) = 119805
 SIZE (cargo/time-core-0.1.2.tar.gz) = 7191
 SIZE (cargo/time-macros-0.2.17.tar.gz) = 24443
+SIZE (cargo/time-macros-0.2.18.tar.gz) = 24361
 SIZE (cargo/tiny-skia-0.11.4.tar.gz) = 201082
 SIZE (cargo/tiny-skia-path-0.11.4.tar.gz) = 47764
 SIZE (cargo/tinystr-0.7.5.tar.gz) = 16366
