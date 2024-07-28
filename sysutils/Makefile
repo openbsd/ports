@@ -354,6 +354,7 @@
      SUBDIR += rdiff-backup
      SUBDIR += reed-alert
      SUBDIR += remotebox
+     SUBDIR += repology
      SUBDIR += reposync
      SUBDIR += resmon
      SUBDIR += restic
