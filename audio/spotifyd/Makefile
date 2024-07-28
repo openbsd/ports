@@ -7,6 +7,7 @@ HEAD_COMMIT =		ff2f7a06e54bf05afd57a0243dc9f67abc15f040
 DIST_TUPLE =		github	spotifyd	spotifyd	${HEAD_COMMIT}	.
 WRKDIST =		${WRKDIR}/spotifyd-${HEAD_COMMIT}
 DISTNAME =		spotifyd-0.3.5pl2
+REVISION =		0
 CATEGORIES =		audio net
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
@@ -26,6 +27,14 @@ LIB_DEPENDS =		audio/portaudio-svn \
 
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
+
+MODCARGO_CRATES_UPDATE +=	time@0.3.28
+MODCARGO_CRATES +=	time		0.3.36
+MODCARGO_CRATES +=	time-core	0.1.2
+MODCARGO_CRATES +=	time-macros	0.2.18
+MODCARGO_CRATES +=	deranged	0.3.9
+MODCARGO_CRATES +=	num-conv	0.1.0
+MODCARGO_CRATES +=	powerfmt	0.2.0
 
 MODCARGO_NO_DEFAULT_FEATURES =	Yes
 MODCARGO_FEATURES =	dbus_keyring \
