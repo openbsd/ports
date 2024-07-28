@@ -2,7 +2,7 @@ COMMENT= 	unified interface to mail representations
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	Email-Abstract-3.009
+DISTNAME =	Email-Abstract-3.010
 CATEGORIES=	mail
 
 # Perl
