@@ -99,6 +99,7 @@ lib/python${MODPY_VERSION}/site-packages/laspy/lasmmap.py
 lib/python${MODPY_VERSION}/site-packages/laspy/lasreader.py
 lib/python${MODPY_VERSION}/site-packages/laspy/laswriter.py
 lib/python${MODPY_VERSION}/site-packages/laspy/lib.py
+lib/python${MODPY_VERSION}/site-packages/laspy/lib.pyi
 lib/python${MODPY_VERSION}/site-packages/laspy/point/
 lib/python${MODPY_VERSION}/site-packages/laspy/point/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/laspy/point/${MODPY_PYCACHE}/
