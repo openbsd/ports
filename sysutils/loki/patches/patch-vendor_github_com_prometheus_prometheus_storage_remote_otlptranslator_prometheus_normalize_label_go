@@ -1,0 +1,14 @@
+Backport: https://github.com/prometheus/prometheus/pull/13759
+
+Index: vendor/github.com/prometheus/prometheus/storage/remote/otlptranslator/prometheus/normalize_label.go
+--- vendor/github.com/prometheus/prometheus/storage/remote/otlptranslator/prometheus/normalize_label.go.orig
++++ vendor/github.com/prometheus/prometheus/storage/remote/otlptranslator/prometheus/normalize_label.go
+@@ -3,7 +3,7 @@
+ // Copyright The OpenTelemetry Authors
+ // SPDX-License-Identifier: Apache-2.0
+ 
+-package prometheus // import "github.com/open-telemetry/opentelemetry-collector-contrib/pkg/translator/prometheus"
++package prometheus // import "github.com/prometheus/prometheus/storage/remote/otlptranslator/prometheus"
+ 
+ import (
+ 	"strings"
