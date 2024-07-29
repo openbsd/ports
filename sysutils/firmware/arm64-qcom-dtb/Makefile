@@ -1,5 +1,5 @@
 FW_DRIVER=	arm64-qcom-dtb
-FW_VER=		1.7
+FW_VER=		1.8
 
 WRKDIST=	${WRKDIR}
 DISTFILES=
@@ -9,9 +9,11 @@ DISTFILES=
 PERMIT_PACKAGE=	  firmware
 PERMIT_DISTFILES= Yes
 
-BUILD_DEPENDS=	sysutils/dtb>=6.10
+BUILD_DEPENDS=	sysutils/dtb>=6.10p0
 
-DTBS=	sc8280xp-lenovo-thinkpad-x13s.dtb
+DTBS=	sc8280xp-lenovo-thinkpad-x13s.dtb \
+	x1e80100-asus-vivobook-s15.dtb \
+	x1e80100-lenovo-yoga-slim7x.dtb
 
 do-install:
 	mkdir -p ${PREFIX}/firmware/dtb/qcom
