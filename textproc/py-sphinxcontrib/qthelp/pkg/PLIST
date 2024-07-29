@@ -200,11 +200,11 @@ lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/qthelp/locales/zh_TW/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/qthelp/locales/zh_TW/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/qthelp/locales/zh_TW/LC_MESSAGES/sphinxcontrib.qthelp.mo
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/qthelp/locales/zh_TW/LC_MESSAGES/sphinxcontrib.qthelp.po
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/qthelp/py.typed
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/qthelp/templates/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/qthelp/templates/project.qhcp
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/qthelp/templates/project.qhp
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_qthelp-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_qthelp-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_qthelp-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_qthelp-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_qthelp-${MODPY_EGG_VERSION}.dist-info/WHEEL

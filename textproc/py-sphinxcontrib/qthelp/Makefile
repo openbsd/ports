@@ -1,5 +1,4 @@
 COMMENT=	sphinx extension to output QtHelp documents
-VERSION=	1.0.8
-MODPY_PYBUILD=	flit_core
+VERSION=	2.0.0
 
 .include <bsd.port.mk>
