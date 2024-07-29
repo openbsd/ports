@@ -20,5 +20,6 @@ lib/python${MODPY_VERSION}/site-packages/alabaster/relations.html
 lib/python${MODPY_VERSION}/site-packages/alabaster/static/
 lib/python${MODPY_VERSION}/site-packages/alabaster/static/alabaster.css_t
 lib/python${MODPY_VERSION}/site-packages/alabaster/static/custom.css
+lib/python${MODPY_VERSION}/site-packages/alabaster/static/github-banner.svg
 lib/python${MODPY_VERSION}/site-packages/alabaster/support.py
 lib/python${MODPY_VERSION}/site-packages/alabaster/theme.conf
