@@ -1,9 +1,8 @@
 COMMENT =		pure Python parser implementation of OGC filtering standards
 
-MODPY_EGG_VERSION =	0.2.1
+MODPY_EGG_VERSION =	0.2.4
 DISTNAME =		pygeofilter-${MODPY_EGG_VERSION}
 PKGNAME =		py-geofilter-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		geo devel
 

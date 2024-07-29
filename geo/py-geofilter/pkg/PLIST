@@ -57,6 +57,12 @@ lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/native/${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/native/${MODPY_PYCACHE}evaluate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/native/evaluate.py
 lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/optimize.py
+lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/oraclesql/
+lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/oraclesql/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/oraclesql/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/oraclesql/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/oraclesql/${MODPY_PYCACHE}evaluate.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/oraclesql/evaluate.py
 lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/sql/
 lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/sql/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygeofilter/backends/sql/${MODPY_PYCACHE}/
