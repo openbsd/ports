@@ -3281,8 +3281,6 @@ share/scribus/profiles/sRGB.icm
 share/scribus/profiles/sRGB_icc22.icm
 share/scribus/profiles/sRGB_icc22.txt
 share/scribus/profiles/srgb.license
-share/scribus/qml/
-share/scribus/qml/qtq_test1.qml
 share/scribus/samples/
 share/scribus/samples/3columnA4.py
 share/scribus/samples/3columnUSLTR.py
