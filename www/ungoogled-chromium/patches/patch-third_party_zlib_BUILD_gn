@@ -21,7 +21,7 @@ Index: third_party/zlib/BUILD.gn
      } else {
        assert(false, "Unsupported ARM OS")
      }
-@@ -407,7 +411,7 @@ static_library("minizip") {
+@@ -413,7 +417,7 @@ static_library("minizip") {
      ]
    }
  

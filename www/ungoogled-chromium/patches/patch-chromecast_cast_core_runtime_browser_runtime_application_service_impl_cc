@@ -1,7 +1,7 @@
 Index: chromecast/cast_core/runtime/browser/runtime_application_service_impl.cc
 --- chromecast/cast_core/runtime/browser/runtime_application_service_impl.cc.orig
 +++ chromecast/cast_core/runtime/browser/runtime_application_service_impl.cc
-@@ -335,7 +335,7 @@ CastWebView::Scoped RuntimeApplicationServiceImpl::Cre
+@@ -336,7 +336,7 @@ CastWebView::Scoped RuntimeApplicationServiceImpl::Cre
        GetFlagEntry(feature::kCastCoreIsRemoteControlMode,
                     config_.extra_features(), /*default_value=*/false);
    params->enabled_for_dev = IsEnabledForDev();

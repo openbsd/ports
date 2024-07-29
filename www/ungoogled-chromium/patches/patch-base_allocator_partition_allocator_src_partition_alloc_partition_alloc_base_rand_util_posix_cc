@@ -5,7 +5,7 @@ Index: base/allocator/partition_allocator/src/partition_alloc/partition_alloc_ba
    if (getentropy(output, output_length) == 0) {
      return;
    }
-+#elif BUILDFLAG(IS_BSD)
++#elif PA_BUILDFLAG(IS_BSD)
 +  if (getentropy(output, output_length) == 0) {
 +    return;
 +  }

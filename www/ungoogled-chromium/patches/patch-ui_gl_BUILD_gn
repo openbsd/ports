@@ -18,7 +18,7 @@ Index: ui/gl/BUILD.gn
      "//ui/events/platform",
      "//ui/gfx",
      "//ui/gfx/geometry",
-@@ -378,7 +375,6 @@ component("gl") {
+@@ -374,7 +371,6 @@ component("gl") {
      data_deps += [
        "//third_party/angle:libEGL",
        "//third_party/angle:libGLESv2",
@@ -26,7 +26,7 @@ Index: ui/gl/BUILD.gn
      ]
      if (enable_swiftshader) {
        data_deps += [
-@@ -578,7 +574,6 @@ test("gl_unittests") {
+@@ -573,7 +569,6 @@ test("gl_unittests") {
  
    data_deps = [
      "//testing/buildbot/filters:gl_unittests_filters",

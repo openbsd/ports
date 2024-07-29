@@ -1,7 +1,7 @@
 Index: build/config/rust.gni
 --- build/config/rust.gni.orig
 +++ build/config/rust.gni
-@@ -272,6 +272,10 @@ if (is_linux || is_chromeos) {
+@@ -270,6 +270,10 @@ if (is_linux || is_chromeos) {
    }
  }
  

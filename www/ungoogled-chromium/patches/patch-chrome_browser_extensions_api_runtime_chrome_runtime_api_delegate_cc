@@ -10,5 +10,5 @@ Index: chrome/browser/extensions/api/runtime/chrome_runtime_api_delegate.cc
 +  } else if (strcmp(os, "freebsd") == 0) {
 +    info->os = extensions::api::runtime::PlatformOs::kLinux;
    } else {
-     NOTREACHED() << "Platform not supported: " << os;
+     NOTREACHED_IN_MIGRATION() << "Platform not supported: " << os;
      return false;

@@ -10,7 +10,7 @@ Index: gpu/config/gpu_control_list.cc
    return kGLTypeGL;
  #elif BUILDFLAG(IS_MAC)
    return kGLTypeGL;
-@@ -811,7 +811,7 @@ GpuControlList::OsType GpuControlList::GetOsType() {
+@@ -810,7 +810,7 @@ GpuControlList::OsType GpuControlList::GetOsType() {
    return kOsAndroid;
  #elif BUILDFLAG(IS_FUCHSIA)
    return kOsFuchsia;

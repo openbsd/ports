@@ -9,4 +9,4 @@ Index: chrome/browser/device_identity/device_oauth2_token_service_factory.cc
 +    (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)) || BUILDFLAG(IS_BSD)
    return std::make_unique<DeviceOAuth2TokenStoreDesktop>(local_state);
  #else
-   NOTREACHED();
+   NOTREACHED_IN_MIGRATION();

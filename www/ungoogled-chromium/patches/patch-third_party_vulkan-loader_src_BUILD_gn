@@ -1,6 +1,6 @@
-Index: third_party/vulkan-deps/vulkan-loader/src/BUILD.gn
---- third_party/vulkan-deps/vulkan-loader/src/BUILD.gn.orig
-+++ third_party/vulkan-deps/vulkan-loader/src/BUILD.gn
+Index: third_party/vulkan-loader/src/BUILD.gn
+--- third_party/vulkan-loader/src/BUILD.gn.orig
++++ third_party/vulkan-loader/src/BUILD.gn
 @@ -59,7 +59,7 @@ config("vulkan_internal_config") {
      defines += [
        "SYSCONFDIR=\"/etc\"",

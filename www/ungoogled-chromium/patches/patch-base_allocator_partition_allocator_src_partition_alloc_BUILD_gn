@@ -1,8 +1,8 @@
 Index: base/allocator/partition_allocator/src/partition_alloc/BUILD.gn
 --- base/allocator/partition_allocator/src/partition_alloc/BUILD.gn.orig
 +++ base/allocator/partition_allocator/src/partition_alloc/BUILD.gn
-@@ -884,7 +884,7 @@ if (is_clang_or_gcc) {
-         configs -= [ "//build/config/compiler:enable_arc" ]
+@@ -863,7 +863,7 @@ if (is_clang_or_gcc) {
+         configs -= [ partition_alloc_enable_arc_config ]
        }
      }
 -    if (is_chromeos || is_linux) {

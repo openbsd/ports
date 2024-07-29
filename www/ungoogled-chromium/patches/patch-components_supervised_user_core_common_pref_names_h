@@ -1,7 +1,7 @@
 Index: components/supervised_user/core/common/pref_names.h
 --- components/supervised_user/core/common/pref_names.h.orig
 +++ components/supervised_user/core/common/pref_names.h
-@@ -136,7 +136,7 @@ inline constexpr char kFirstTimeInterstitialBannerStat
+@@ -137,7 +137,7 @@ inline constexpr char kFirstTimeInterstitialBannerStat
      "profile.managed.banner_state";
  
  #if BUILDFLAG(ENABLE_EXTENSIONS)

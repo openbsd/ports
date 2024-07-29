@@ -1,7 +1,7 @@
 Index: ui/aura/screen_ozone.cc
 --- ui/aura/screen_ozone.cc.orig
 +++ ui/aura/screen_ozone.cc
-@@ -106,7 +106,7 @@ display::Display ScreenOzone::GetPrimaryDisplay() cons
+@@ -107,7 +107,7 @@ display::Display ScreenOzone::GetPrimaryDisplay() cons
    return platform_screen_->GetPrimaryDisplay();
  }
  

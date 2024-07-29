@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/browser.h
 --- chrome/browser/ui/browser.h.orig
 +++ chrome/browser/ui/browser.h
-@@ -330,7 +330,7 @@ class Browser : public TabStripModelObserver,
+@@ -340,7 +340,7 @@ class Browser : public TabStripModelObserver,
      std::optional<int64_t> display_id;
  #endif
  

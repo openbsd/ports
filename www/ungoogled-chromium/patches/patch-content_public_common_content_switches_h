@@ -9,7 +9,7 @@ Index: content/public/common/content_switches.h
  CONTENT_EXPORT extern const char kEnableNetworkInformationDownlinkMax[];
  CONTENT_EXPORT extern const char kEnableCanvas2DLayers[];
  CONTENT_EXPORT extern const char kEnablePluginPlaceholderTesting[];
-@@ -268,7 +269,7 @@ CONTENT_EXPORT extern const char kPreventResizingConte
+@@ -270,7 +271,7 @@ CONTENT_EXPORT extern const char kPreventResizingConte
  
  // TODO(crbug.com/40118868): Revisit the macro expression once build flag switch
  // of lacros-chrome is complete.

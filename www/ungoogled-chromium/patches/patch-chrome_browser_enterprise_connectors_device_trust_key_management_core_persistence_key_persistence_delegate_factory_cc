@@ -18,4 +18,4 @@ Index: chrome/browser/enterprise/connectors/device_trust/key_management/core/per
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    return std::make_unique<LinuxKeyPersistenceDelegate>();
  #else
-   NOTREACHED();
+   NOTREACHED_IN_MIGRATION();
