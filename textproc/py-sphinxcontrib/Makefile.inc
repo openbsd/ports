@@ -16,4 +16,4 @@ MODPY_PI=	Yes
 FLAVORS=	python3
 FLAVOR=		python3
 
-MODPY_PYBUILD?=	setuptools
+MODPY_PYBUILD?=	flit_core
