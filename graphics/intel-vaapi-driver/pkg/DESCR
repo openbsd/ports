@@ -1,11 +1,12 @@
-VA-API (Video Acceleration API) user mode driver for Intel GEN Graphics family
+VA-API (Video Acceleration API) user mode driver for Intel GEN Graphics
+family.
 
-VA-API is an open-source library and API specification, which provides access to
-graphics hardware acceleration capabilities for video processing. It consists of
-a main library and driver-specific acceleration backends for each supported
-hardware vendor.
+VA-API is an open-source library and API specification, which
+provides access to graphics hardware acceleration capabilities for
+video processing. It consists of a main library and driver-specific
+acceleration backends for each supported hardware vendor.
 
-The current video driver backend provides a bridge to the GEN GPUs through the
-packaging of buffers and commands to be sent to the i915 driver for exercising
-both hardware and shader functionality for video decode, encode, and processing.
-
+The current video driver backend provides a bridge to the GEN GPUs
+through the packaging of buffers and commands to be sent to the i915
+driver for exercising both hardware and shader functionality for video
+decode, encode, and processing.
