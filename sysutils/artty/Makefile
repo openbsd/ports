@@ -1,7 +1,7 @@
 COMMENT =	art for your TTY
 
 MODGO_MODNAME =	github.com/mjwhitta/artty
-MODGO_VERSION =	v1.4.8
+MODGO_VERSION =	v1.4.10
 
 DISTNAME =	artty-${MODGO_VERSION}
 
