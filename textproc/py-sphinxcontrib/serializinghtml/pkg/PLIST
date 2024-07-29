@@ -227,8 +227,8 @@ lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/z
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/zh_TW/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/zh_TW/LC_MESSAGES/sphinxcontrib.serializinghtml.mo
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/zh_TW/LC_MESSAGES/sphinxcontrib.serializinghtml.po
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/py.typed
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_serializinghtml-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_serializinghtml-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_serializinghtml-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_serializinghtml-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_serializinghtml-${MODPY_EGG_VERSION}.dist-info/WHEEL
