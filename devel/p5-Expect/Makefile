@@ -1,11 +1,10 @@
 COMMENT =		talk to other applications
 
-V =			1.35
+V =			1.38
 MODULES =		cpan
 PKG_ARCH =		*
 DISTNAME =		Expect-${V}
 CATEGORIES =		devel
-REVISION =		0
 
 # Perl
 PERMIT_PACKAGE =	Yes
