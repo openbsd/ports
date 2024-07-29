@@ -2,7 +2,7 @@ COMMENT=		parse, analyze and manipulate Perl
 
 MODULES=		cpan
 PKG_ARCH=		*
-DISTNAME=		PPI-1.277
+DISTNAME =		PPI-1.278
 CATEGORIES=		textproc
 
 # perl
