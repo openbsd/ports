@@ -201,7 +201,6 @@ lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/devhelp/locales/zh_TW/LC_
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/devhelp/locales/zh_TW/LC_MESSAGES/sphinxcontrib.devhelp.mo
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/devhelp/locales/zh_TW/LC_MESSAGES/sphinxcontrib.devhelp.po
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_devhelp-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_devhelp-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_devhelp-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_devhelp-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_devhelp-${MODPY_EGG_VERSION}.dist-info/WHEEL
