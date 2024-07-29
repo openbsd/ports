@@ -27,6 +27,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/files/down.png
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/files/up-pressed.png
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/files/up.png
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/files/websupport.js
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/py.typed
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/search/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/search/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/search/${MODPY_PYCACHE}/
@@ -60,7 +61,6 @@ lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/templates/sear
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/utils.py
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/websupport/writer.py
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_websupport-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_websupport-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_websupport-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_websupport-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_websupport-${MODPY_EGG_VERSION}.dist-info/WHEEL
