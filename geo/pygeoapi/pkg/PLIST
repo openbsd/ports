@@ -11,7 +11,6 @@ lib/python${MODPY_VERSION}/site-packages/pygeoapi/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygeoapi/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/${MODPY_PYCACHE}admin.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pygeoapi/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/${MODPY_PYCACHE}django_app.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/${MODPY_PYCACHE}error.${MODPY_PYC_MAGIC_TAG}pyc
@@ -24,7 +23,24 @@ lib/python${MODPY_VERSION}/site-packages/pygeoapi/${MODPY_PYCACHE}plugin.${MODPY
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/${MODPY_PYCACHE}starlette_app.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/admin.py
-lib/python${MODPY_VERSION}/site-packages/pygeoapi/api.py
+lib/python${MODPY_VERSION}/site-packages/pygeoapi/api/
+lib/python${MODPY_VERSION}/site-packages/pygeoapi/api/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygeoapi/api/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pygeoapi/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygeoapi/api/${MODPY_PYCACHE}coverages.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygeoapi/api/${MODPY_PYCACHE}environmental_data_retrieval.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygeoapi/api/${MODPY_PYCACHE}itemtypes.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygeoapi/api/${MODPY_PYCACHE}maps.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygeoapi/api/${MODPY_PYCACHE}processes.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygeoapi/api/${MODPY_PYCACHE}stac.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygeoapi/api/${MODPY_PYCACHE}tiles.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygeoapi/api/coverages.py
+lib/python${MODPY_VERSION}/site-packages/pygeoapi/api/environmental_data_retrieval.py
+lib/python${MODPY_VERSION}/site-packages/pygeoapi/api/itemtypes.py
+lib/python${MODPY_VERSION}/site-packages/pygeoapi/api/maps.py
+lib/python${MODPY_VERSION}/site-packages/pygeoapi/api/processes.py
+lib/python${MODPY_VERSION}/site-packages/pygeoapi/api/stac.py
+lib/python${MODPY_VERSION}/site-packages/pygeoapi/api/tiles.py
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/config.py
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/django_/
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/django_/__init__.py
@@ -79,6 +95,7 @@ lib/python${MODPY_VERSION}/site-packages/pygeoapi/process/${MODPY_PYCACHE}__init
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/process/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/process/${MODPY_PYCACHE}echo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/process/${MODPY_PYCACHE}hello_world.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygeoapi/process/${MODPY_PYCACHE}shapely_functions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/process/base.py
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/process/echo.py
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/process/hello_world.py
@@ -94,6 +111,7 @@ lib/python${MODPY_VERSION}/site-packages/pygeoapi/process/manager/base.py
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/process/manager/dummy.py
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/process/manager/mongodb_.py
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/process/manager/tinydb_.py
+lib/python${MODPY_VERSION}/site-packages/pygeoapi/process/shapely_functions.py
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}/
@@ -115,7 +133,6 @@ lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}mongo
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}mvt_elastic.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}mvt_proxy.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}mvt_tippecanoe.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}my_edr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}ogr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}oracle.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/${MODPY_PYCACHE}postgresql.${MODPY_PYC_MAGIC_TAG}pyc
@@ -146,7 +163,6 @@ lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/mongo.py
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/mvt_elastic.py
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/mvt_proxy.py
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/mvt_tippecanoe.py
-lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/my_edr.py
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/ogr.py
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/oracle.py
 lib/python${MODPY_VERSION}/site-packages/pygeoapi/provider/postgresql.py
