@@ -1,8 +1,7 @@
 COMMENT =	Mind-mapping application
 
-DIST_TUPLE =	github phase1geo Minder 1.16.3 .
+DIST_TUPLE =	github phase1geo Minder 1.16.4 .
 PKGNAME =	${DISTNAME:L}
-REVISION =	0
 
 CATEGORIES =	productivity
 
