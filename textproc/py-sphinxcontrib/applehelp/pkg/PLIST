@@ -208,10 +208,10 @@ lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/applehelp/locales/zh_TW/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/applehelp/locales/zh_TW/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/applehelp/locales/zh_TW/LC_MESSAGES/sphinxcontrib.applehelp.mo
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/applehelp/locales/zh_TW/LC_MESSAGES/sphinxcontrib.applehelp.po
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/applehelp/py.typed
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/applehelp/templates/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/applehelp/templates/_access.html_t
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_applehelp-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_applehelp-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_applehelp-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_applehelp-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_applehelp-${MODPY_EGG_VERSION}.dist-info/WHEEL
