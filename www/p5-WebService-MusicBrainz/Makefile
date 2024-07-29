@@ -1,7 +1,6 @@
 COMMENT=		interface to the MusicBrainz v2.0 API
-DISTNAME=		WebService-MusicBrainz-1.0.5
+DISTNAME =		WebService-MusicBrainz-1.0.7
 CATEGORIES=		www
-REVISION=		1
 
 # perl
 PERMIT_PACKAGE=	Yes
