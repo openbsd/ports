@@ -3,6 +3,8 @@ bin/ttree
 ${P5ARCH}/
 ${P5ARCH}/Template/
 ${P5ARCH}/Template.pm
+${P5ARCH}/Template/App/
+${P5ARCH}/Template/App/ttree.pm
 ${P5ARCH}/Template/Base.pm
 ${P5ARCH}/Template/Config.pm
 ${P5ARCH}/Template/Constants.pm
@@ -80,6 +82,7 @@ ${P5ARCH}/auto/Template/Stash/XS/
 @man man/man1/tpage.1
 @man man/man1/ttree.1
 @man man/man3p/Template.3p
+@man man/man3p/Template::App::ttree.3p
 @man man/man3p/Template::Base.3p
 @man man/man3p/Template::Config.3p
 @man man/man3p/Template::Constants.3p

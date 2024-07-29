@@ -1,6 +1,6 @@
 COMMENT =	template processing system
 
-VERSION =	3.101
+VERSION =	3.102
 DISTNAME =	Template-Toolkit-${VERSION}
 PKGNAME =	p5-Template-${VERSION}
 
