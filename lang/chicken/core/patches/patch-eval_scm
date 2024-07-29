@@ -1,7 +1,7 @@
 Index: eval.scm
 --- eval.scm.orig
 +++ eval.scm
-@@ -1115,8 +1115,7 @@
+@@ -1131,8 +1131,7 @@
  	 (if uses-soname?
  	     (string-append
  	      load-library-extension

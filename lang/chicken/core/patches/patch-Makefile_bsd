@@ -1,7 +1,7 @@
 Index: Makefile.bsd
 --- Makefile.bsd.orig
 +++ Makefile.bsd
-@@ -45,7 +45,7 @@ endif
+@@ -48,7 +48,7 @@ endif
  LINKER_LINK_SHARED_LIBRARY_OPTIONS = -shared
  LINKER_LINK_SHARED_DLOADABLE_OPTIONS = -shared -Wl,-rpath="$(RUNTIME_LINKER_PATH)" -Wl,-L.
  LINKER_LINK_SHARED_PROGRAM_OPTIONS = -Wl,-rpath="$(RUNTIME_LINKER_PATH)"

@@ -13,7 +13,7 @@ Index: defaults.make
  VARDIR ?= $(LIBDIR)
  MAN1DIR ?= $(MANDIR)/man1
  CHICKENLIBDIR ?= $(VARDIR)/$(PROGRAM_PREFIX)chicken$(PROGRAM_SUFFIX)
-@@ -190,8 +190,8 @@ ifeq ($(PLATFORM),cygwin)
+@@ -191,8 +191,8 @@ ifeq ($(PLATFORM),cygwin)
  PRIMARY_LIBCHICKEN = cyg$(PROGRAM_PREFIX)chicken$(PROGRAM_SUFFIX)-0.dll
  LIBCHICKEN_SO_FILE = cyg$(PROGRAM_PREFIX)chicken$(PROGRAM_SUFFIX)-0.dll
  else
@@ -24,7 +24,7 @@ Index: defaults.make
  endif
  endif
  LIBCHICKEN_SO_LIBRARIES ?= $(LIBRARIES)
-@@ -280,8 +280,8 @@ DYNAMIC_CHICKEN_UNIT_IMPORT_LIBRARIES = continuation e
+@@ -281,8 +281,8 @@ DYNAMIC_CHICKEN_UNIT_IMPORT_LIBRARIES = continuation e
  # targets
  
  CHICKEN_PROGRAM = $(PROGRAM_PREFIX)chicken$(PROGRAM_SUFFIX)

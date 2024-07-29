@@ -1,6 +1,6 @@
 COMMENT=	practical and portable Scheme system
 
-V=		5.3.0
+V=		5.4.0
 DISTNAME=	chicken-${V}
 
 MAINTAINER=	Timo Myyra <timo.myyra@bittivirhe.fi>
