@@ -1,6 +1,6 @@
 COMMENT =	package manager for lua ${MODLUA_VERSION}
 
-V =		3.11.0
+V =		3.11.1
 DISTNAME =	luarocks-${V}
 FULLPKGNAME =	luarocks-${FLAVOR}-${V}
 CATEGORIES =	devel
