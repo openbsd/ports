@@ -224,12 +224,12 @@ lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/zh_TW/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/zh_TW/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/zh_TW/LC_MESSAGES/sphinxcontrib.htmlhelp.mo
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/locales/zh_TW/LC_MESSAGES/sphinxcontrib.htmlhelp.po
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/py.typed
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/templates/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/templates/project.hhc
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/templates/project.hhp
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/htmlhelp/templates/project.stp
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_htmlhelp-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_htmlhelp-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_htmlhelp-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_htmlhelp-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_htmlhelp-${MODPY_EGG_VERSION}.dist-info/WHEEL
