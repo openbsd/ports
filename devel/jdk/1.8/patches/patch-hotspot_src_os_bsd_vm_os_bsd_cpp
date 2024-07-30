@@ -1,4 +1,6 @@
 Use the correct number of cpus when hw.smt=0
+Use os::sleep instead of sched_yield to workaround a livelock issue
+on sparc64
 
 Index: hotspot/src/os/bsd/vm/os_bsd.cpp
 --- hotspot/src/os/bsd/vm/os_bsd.cpp.orig
@@ -15,3 +17,33 @@ Index: hotspot/src/os/bsd/vm/os_bsd.cpp
    len = sizeof(cpu_val);
    if (sysctl(mib, 2, &cpu_val, &len, NULL, 0) != -1 && cpu_val >= 1) {
         assert(len == sizeof(cpu_val), "unexpected data size");
+@@ -2916,16 +2920,29 @@ bool os::dont_yield() {
+ }
+ 
+ void os::yield() {
++#ifndef __OpenBSD__
+   sched_yield();
++#else
++  os::sleep(Thread::current(), 1, false);
++#endif
+ }
+ 
+ os::YieldResult os::NakedYield() { sched_yield(); return os::YIELD_UNKNOWN ;}
+ 
+ void os::yield_all(int attempts) {
+   // Yields to all threads, including threads with lower priorities
++#ifndef __OpenBSD__
+   // Threads on Bsd are all with same priority. The Solaris style
+   // os::yield_all() with nanosleep(1ms) is not necessary.
+   sched_yield();
++#else
++  int iterations = attempts % 30;
++  if (iterations < 25) {
++    os::sleep(Thread::current(), 1, false);
++  } else {
++    os::sleep(Thread::current(), 10, false);
++  }
++#endif
+ }
+ 
+ // Called from the tight loops to possibly influence time-sharing heuristics
