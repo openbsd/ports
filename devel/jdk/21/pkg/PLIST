@@ -248,6 +248,7 @@ jdk-21/legal/java.base/c-libutl.md
 jdk-21/legal/java.base/cldr.md
 jdk-21/legal/java.base/icu.md
 jdk-21/legal/java.base/public_suffix.md
+jdk-21/legal/java.base/siphash.md
 jdk-21/legal/java.base/unicode.md
 jdk-21/legal/java.compiler/
 jdk-21/legal/java.compiler/ADDITIONAL_LICENSE_INFO
