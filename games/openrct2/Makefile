@@ -1,9 +1,9 @@
 # "#error Unknown endianess!" in src/openrct2/common.h
 NOT_FOR_ARCHS =	${BE_ARCHS}
 
-V =		0.4.11
+V =		0.4.12
 TITLE_V =	0.4.6
-OBJECTS_V =	1.4.4
+OBJECTS_V =	1.4.6
 OPENSFX_V =	1.0.5
 OPENMSX_V =	1.5
 REPLAYS_V =	0.0.79
@@ -15,7 +15,6 @@ DISTFILES.c = 	opensfx-${OPENSFX_V}{opensound}.zip
 DISTFILES.d =	openmsx-${OPENMSX_V}{openmusic}.zip
 DISTFILES.e = 	replays-${REPLAYS_V}{replays}.zip
 PKGNAME =	openrct2-${V}
-REVISION =	0
 CATEGORIES =	games x11
 
 HOMEPAGE =	https://openrct2.org/
