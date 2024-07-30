@@ -1,7 +1,7 @@
 COMMENT=	Python documentation generator
 
 MODPY_EGG_VERSION=	7.4.7
-REVISION=	0
+REVISION=	1
 DISTNAME=	sphinx-${MODPY_EGG_VERSION}
 PKGNAME=	py-sphinx-${MODPY_EGG_VERSION}
 
