@@ -1,6 +1,7 @@
 COMMENT =	YouTube/Invidious player
 DISTNAME =	plasmatube-${VERSION}
 CATEGORIES =	multimedia net x11
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ConfigCore KF6ConfigGui KF6CoreAddons
 WANTLIB += KF6DBusAddons KF6I18n KF6WindowSystem MpvQt Qt6Concurrent
@@ -13,9 +14,13 @@ MODKDE_ICON_CACHE =	Yes
 MODKDE_TRANSLATIONS =	Yes
 
 BUILD_DEPENDS =	devel/kf6/kirigami \
+		devel/kf6/purpose \
+		devel/kf6/qqc2-desktop-style \
 		graphics/kirigami-addons
 
 RUN_DEPENDS =	devel/kf6/kirigami \
+		devel/kf6/purpose \
+		devel/kf6/qqc2-desktop-style \
 		graphics/kirigami-addons
 
 LIB_DEPENDS =	devel/kf6/kconfig \
