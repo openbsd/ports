@@ -300,6 +300,7 @@ jdk-17/legal/java.base/c-libutl.md
 jdk-17/legal/java.base/cldr.md
 jdk-17/legal/java.base/icu.md
 jdk-17/legal/java.base/public_suffix.md
+jdk-17/legal/java.base/siphash.md
 jdk-17/legal/java.base/unicode.md
 jdk-17/legal/java.compiler/
 jdk-17/legal/java.compiler/ADDITIONAL_LICENSE_INFO
