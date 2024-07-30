@@ -4,6 +4,7 @@ COMMENT =	desktop sync client for Nextcloud
 
 V =		3.13.2
 DISTNAME =	nextcloudclient-${V}
+REVISION =	0
 
 GH_ACCOUNT =	nextcloud
 GH_PROJECT =	desktop
@@ -22,12 +23,16 @@ MAINTAINER =	Adriano Barbosa <barbosa.aob@gmail.com>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} lib/inotify/inotify KF5Archive
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning
-WANTLIB += Qt5PrintSupport Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2
-WANTLIB += Qt5Svg Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
-WANTLIB += Qt5WebSockets Qt5Widgets Qt5Xml c crypto m qt5keychain
-WANTLIB += cloudproviders gio-2.0 glib-2.0 gobject-2.0 intl sqlite3 ssl z
+WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5GuiAddons Qt5Concurrent
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
+WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2 Qt5QuickWidgets
+WANTLIB += Qt5Sql Qt5Svg Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
+WANTLIB += Qt5WebSockets Qt5Widgets Qt5Xml c cloudproviders crypto
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 intl m qt5keychain sqlite3
+WANTLIB += ssl z
+
+WANTLIB += lib/inotify/inotify
+
 
 MODULES =		devel/cmake \
 			x11/qt5
@@ -50,12 +55,16 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/qt5/qtquickcontrols
 
 LIB_DEPENDS =		databases/sqlite3 \
-			devel/libinotify \
 			devel/kf5/karchive \
+			devel/kf5/kguiaddons \
+			devel/libinotify \
 			security/qtkeychain \
 			x11/gnome/libcloudproviders \
-			x11/qt5/qtsvg \
+			x11/qt5/qtdeclarative \
+			x11/qt5/qtlocation \
 			x11/qt5/qtquickcontrols2 \
+			x11/qt5/qtsvg \
+			x11/qt5/qtwebchannel \
 			x11/qt5/qtwebengine \
 			x11/qt5/qtwebsockets
 
