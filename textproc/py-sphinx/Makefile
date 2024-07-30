@@ -1,6 +1,7 @@
 COMMENT=	Python documentation generator
 
 MODPY_EGG_VERSION=	7.4.7
+REVISION=	0
 DISTNAME=	sphinx-${MODPY_EGG_VERSION}
 PKGNAME=	py-sphinx-${MODPY_EGG_VERSION}
 
@@ -31,7 +32,7 @@ RUN_DEPENDS+=	textproc/py-sphinxcontrib/applehelp${MODPY_FLAVOR} \
 		textproc/py-docutils${MODPY_FLAVOR}<0.22 \
 		textproc/py-snowballstemmer${MODPY_FLAVOR} \
 		devel/py-babel${MODPY_FLAVOR} \
-		textproc/py-alabaster${MODPY_FLAVOR}<0.8 \
+		textproc/py-alabaster${MODPY_FLAVOR} \
 		graphics/py-imagesize${MODPY_FLAVOR} \
 		www/py-requests${MODPY_FLAVOR} \
 		sysutils/py-packaging${MODPY_FLAVOR}
