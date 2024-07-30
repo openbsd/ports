@@ -49,15 +49,14 @@ By default, traccar will listen on many network ports. Each tracker protocol
 requires its own open port, which requires a large number of file descriptors
 and may conflict with other software.
 
-The list of protocols can be seen in ${SYSCONFDIR}/traccar/default.xml, along
-with various other settings, but do not edit defalut.xml. Instead, you can
-list the specific protocols to enable in ${SYSCONFDIR}/traccar/traccar.xml.
-For examply, to allow only teltonika and osmand protocols, add this:
+There used to be a default.xml file, but there is no more. Although it will
+still work if you still have it. But now, you need to put all your
+configuration in ${SYSCONFDIR}/traccar/traccar.xml.
+
+For example, to allow only teltonika and osmand protocols, add this:
 
  <entry key='protocols.enable'>teltonika,osmand</entry>
 
-You may like to override other settings from default.xml - again, change
-traccar.xml instead by copying the entry to override. For example, to
-avoid sending positions to a network-based reverse geocoder service:
+To avoid sending positions to a network-based reverse geocoder service:
 
   <entry key='geocoder.enable'>false</entry>
