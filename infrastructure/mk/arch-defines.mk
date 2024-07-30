@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.107 2024/06/25 13:48:24 jsing Exp $
+# $OpenBSD: arch-defines.mk,v 1.108 2024/07/30 15:08:14 sthen Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -12,7 +12,7 @@
 ARCH ?!= uname -m
 
 ALL_ARCHS = aarch64 alpha amd64 arm arm64 armv7 hppa i386 landisk loongson \
-	luna88k m88k macppc mips64 mips64el octeon powerpc64 riscv64 sgi \
+	luna88k m88k macppc mips64 mips64el octeon powerpc powerpc64 riscv64 sgi \
 	sh sparc64
 # normally only list MACHINE_ARCH (uname -p) names in these variables,
 # but not all powerpc have apm(4), hence the use of macppc
