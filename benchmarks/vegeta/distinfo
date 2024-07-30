@@ -498,7 +498,7 @@ SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.4.1.mod) = ZRhD0lm
 SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.4.1.zip) = zoD3u+yp+QDo7DEXRAB812TGeezI06aqpqvxIj3ekfI=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = L8eybun2ctl7QvpvJfWxWlWYK7usaZYdduux0DbRUAE=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.zip) = qsiNpVHCpRK2Qss1ZYvz3IYllaNWa9hA6/GOSALx/Mk=
-SHA256 (vegeta-v12.11.3.zip) = KNp9DE/lwyJq22Q2ETt6mZ2C2F2hwe8uO1U9pnPIbLU=
+SHA256 (vegeta-v12.12.0.zip) = lIKA+i+Vh0ydkO2+76joQ7UqyQKFHuUJYklzWkQUW7E=
 SIZE (go_modules/cloud.google.com/go/auth/@v/v0.5.1.mod) = 768
 SIZE (go_modules/cloud.google.com/go/auth/@v/v0.5.1.zip) = 257709
 SIZE (go_modules/cloud.google.com/go/auth/oauth2adapt/@v/v0.2.2.mod) = 313
@@ -999,4 +999,4 @@ SIZE (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.4.1.mod) = 294
 SIZE (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.4.1.zip) = 329350
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.zip) = 21567
-SIZE (vegeta-v12.11.3.zip) = 918761
+SIZE (vegeta-v12.12.0.zip) = 919991
