@@ -56,14 +56,17 @@ share/examples/decker/ease.deck
 share/examples/decker/enchilada.deck
 share/examples/decker/fastlife.lil
 share/examples/decker/fontedit.deck
+share/examples/decker/forbidden.deck
 share/examples/decker/gif.lil
 share/examples/decker/graphpad.deck
 share/examples/decker/guis.deck
 share/examples/decker/kobolds.deck
 share/examples/decker/life.deck
 share/examples/decker/life.lil
+share/examples/decker/loveletter.deck
 share/examples/decker/mandel.lil
 share/examples/decker/maze.lil
+share/examples/decker/mines.lil
 share/examples/decker/ovum.deck
 share/examples/decker/palimport.deck
 share/examples/decker/patedit.deck
