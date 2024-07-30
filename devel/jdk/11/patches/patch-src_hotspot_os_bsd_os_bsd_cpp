@@ -1,0 +1,17 @@
+Workaround a livelock issue on sparc64
+
+Index: src/hotspot/os/bsd/os_bsd.cpp
+--- src/hotspot/os/bsd/os_bsd.cpp.orig
++++ src/hotspot/os/bsd/os_bsd.cpp
+@@ -2657,7 +2657,11 @@ bool os::dont_yield() {
+ }
+ 
+ void os::naked_yield() {
++#ifndef __OpenBSD__
+   sched_yield();
++#else
++  os::naked_short_nanosleep(512);
++#endif
+ }
+ 
+ ////////////////////////////////////////////////////////////////////////////////
