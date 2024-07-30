@@ -1,4 +1,4 @@
-# $OpenBSD: config.site,v 1.33 2023/11/03 05:50:25 tb Exp $
+# $OpenBSD: config.site,v 1.34 2024/07/30 14:58:32 sthen Exp $
 # Quick start macros for autoconf.
 # XXX kludge for a function we don't actually have.
 #ac_cv_func_getservbyname_r=${ac_cv_func_getservbyname_r=no}
@@ -714,7 +714,6 @@ ac_cv_header_netinet_ip_var_h=${ac_cv_header_netinet_ip_var_h=yes}
 ac_cv_header_netinet_tcp_fsm_h=${ac_cv_header_netinet_tcp_fsm_h=yes}	
 ac_cv_header_netinet_tcp_h=${ac_cv_header_netinet_tcp_h=yes}
 ac_cv_header_netinet_tcp_timer_h=${ac_cv_header_netinet_tcp_timer_h=yes}	
-ac_cv_header_netinet_tcp_var_h=${ac_cv_header_netinet_tcp_var_h=yes}	
 ac_cv_header_netinet_udp_h=${ac_cv_header_netinet_udp_h=yes}	
 ac_cv_header_netinet_udp_var_h=${ac_cv_header_netinet_udp_var_h=yes}	
 ac_cv_header_nl_types_h=${ac_cv_header_nl_types_h=yes}
