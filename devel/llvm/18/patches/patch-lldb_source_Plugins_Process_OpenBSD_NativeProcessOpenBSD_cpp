@@ -1,7 +1,7 @@
 Index: lldb/source/Plugins/Process/OpenBSD/NativeProcessOpenBSD.cpp
 --- lldb/source/Plugins/Process/OpenBSD/NativeProcessOpenBSD.cpp.orig
 +++ lldb/source/Plugins/Process/OpenBSD/NativeProcessOpenBSD.cpp
-@@ -0,0 +1,586 @@
+@@ -0,0 +1,587 @@
 +//===-- NativeProcessOpenBSD.cpp ------------------------------- -*- C++ -*-===//
 +//
 +//                     The LLVM Compiler Infrastructure
@@ -106,7 +106,7 @@ Index: lldb/source/Plugins/Process/OpenBSD/NativeProcessOpenBSD.cpp
 +
 +  std::unique_ptr<NativeProcessOpenBSD> process_up(new NativeProcessOpenBSD(
 +      pid, launch_info.GetPTY().ReleasePrimaryFileDescriptor(), native_delegate,
-+      Info.GetArchitecture()));
++      Info.GetArchitecture(), m_mainloop));
 +
 +  status = process_up->ReinitializeThreads();
 +  if (status.Fail())
@@ -134,7 +134,7 @@ Index: lldb/source/Plugins/Process/OpenBSD/NativeProcessOpenBSD.cpp
 +  }
 +
 +  std::unique_ptr<NativeProcessOpenBSD> process_up(new NativeProcessOpenBSD(
-+      pid, -1, native_delegate, Info.GetArchitecture()));
++      pid, -1, native_delegate, Info.GetArchitecture(), m_mainloop));
 +
 +  Status status = process_up->Attach();
 +  if (!status.Success())
@@ -156,17 +156,18 @@ Index: lldb/source/Plugins/Process/OpenBSD/NativeProcessOpenBSD.cpp
 +
 +NativeProcessOpenBSD::NativeProcessOpenBSD(::pid_t pid, int terminal_fd,
 +                                         NativeDelegate &delegate,
-+                                         const ArchSpec &arch)
-+    : NativeProcessProtocol(pid, terminal_fd, delegate), m_arch(arch) {
++                                         const ArchSpec &arch,
++					 MainLoop &mainloop)
++    : NativeProcessProtocol(pid, terminal_fd, delegate), m_arch(arch),
++      m_main_loop(mainloop) {
 +  if (m_terminal_fd != -1) {
 +    Status status = EnsureFDFlags(m_terminal_fd, O_NONBLOCK);
 +    assert(status.Success());
 +  }
 +
 +  Status status;
-+// XXX
-+//  m_sigchld_handle = mainloop.RegisterSignal(
-+//      SIGCHLD, [this](MainLoopBase &) { SigchldHandler(); }, status);
++  m_sigchld_handle = mainloop.RegisterSignal(
++      SIGCHLD, [this](MainLoopBase &) { SigchldHandler(); }, status);
 +  assert(m_sigchld_handle && status.Success());
 +}
 +

@@ -1,7 +1,7 @@
 Index: lldb/source/Plugins/Process/OpenBSD/NativeProcessOpenBSD.h
 --- lldb/source/Plugins/Process/OpenBSD/NativeProcessOpenBSD.h.orig
 +++ lldb/source/Plugins/Process/OpenBSD/NativeProcessOpenBSD.h
-@@ -0,0 +1,125 @@
+@@ -0,0 +1,126 @@
 +//===-- NativeProcessOpenBSD.h --------------------------------- -*- C++ -*-===//
 +//
 +//                     The LLVM Compiler Infrastructure
@@ -34,7 +34,7 @@ Index: lldb/source/Plugins/Process/OpenBSD/NativeProcessOpenBSD.h
 +public:
 +  class Manager : public NativeProcessProtocol::Manager {
 +  public:
-+    Manager(MainLoop &mainloop);
++    using NativeProcessProtocol::Manager::Manager;
 +
 +    llvm::Expected<std::unique_ptr<NativeProcessProtocol>>
 +    Launch(ProcessLaunchInfo &launch_info,
@@ -99,13 +99,14 @@ Index: lldb/source/Plugins/Process/OpenBSD/NativeProcessOpenBSD.h
 +private:
 +  MainLoop::SignalHandleUP m_sigchld_handle;
 +  ArchSpec m_arch;
++  MainLoop& m_main_loop;
 +  std::vector<std::pair<MemoryRegionInfo, FileSpec>> m_mem_region_cache;
 +
 +  // ---------------------------------------------------------------------
 +  // Private Instance Methods
 +  // ---------------------------------------------------------------------
 +  NativeProcessOpenBSD(::pid_t pid, int terminal_fd, NativeDelegate &delegate,
-+                      const ArchSpec &arch);
++                      const ArchSpec &arch, MainLoop &mainloop);
 +
 +  bool HasThreadNoLock(lldb::tid_t thread_id);
 +
