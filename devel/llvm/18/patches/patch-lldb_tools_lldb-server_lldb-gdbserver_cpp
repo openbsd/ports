@@ -15,7 +15,7 @@ Index: lldb/tools/lldb-server/lldb-gdbserver.cpp
  #elif defined(__NetBSD__)
  typedef process_netbsd::NativeProcessNetBSD::Manager NativeProcessManager;
 +#elif defined(__OpenBSD__)
-+typedef process_openbsd::NativeProcessOpenBSD::Factory NativeProcessFactory;
++typedef process_openbsd::NativeProcessOpenBSD::Manager NativeProcessManager;
  #elif defined(_WIN32)
  typedef NativeProcessWindows::Manager NativeProcessManager;
  #else
