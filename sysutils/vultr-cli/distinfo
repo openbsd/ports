@@ -21,8 +21,8 @@ SHA256 (go_modules/github.com/coreos/go-semver/@v/v0.3.0.mod) = 7lARLbikHJ18hSy4
 SHA256 (go_modules/github.com/coreos/go-semver/@v/v0.3.0.zip) = svwHU5X/w0z/S5ZGgdCuPNIgls/K3Slw7qqHdZbOshA=
 SHA256 (go_modules/github.com/coreos/go-systemd/v22/@v/v22.3.2.mod) = 3pM5X+kwhvgFU4INFASJ4x6Tv+BFfhtN48dyVW1TSEA=
 SHA256 (go_modules/github.com/coreos/go-systemd/v22/@v/v22.3.2.zip) = ARNK6Jv0qRwX7rH4Ql4QZPm95kzzzgyc9Uap+h7iXmQ=
-SHA256 (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.3.mod) = FMOvou9iNVXBtINNH4ixTfd1Sa/uheV1DBkQJGW3iro=
-SHA256 (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.3.zip) = qoaihq2pVZmpyOKXYj0SxNTrbsYzTHnW3IszU6dI8Q0=
+SHA256 (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.4.mod) = FMOvou9iNVXBtINNH4ixTfd1Sa/uheV1DBkQJGW3iro=
+SHA256 (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.4.zip) = mtuqF/F9vjauRk2AYqy7+5z4U7/r7UJENag0orC+2RA=
 SHA256 (go_modules/github.com/davecgh/go-spew/@v/v1.1.0.mod) = vLKTkyUSN7eaF7bBm/KRNPQ+j0OMMZiYj81GGhzfBcw=
 SHA256 (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.mod) = vLKTkyUSN7eaF7bBm/KRNPQ+j0OMMZiYj81GGhzfBcw=
 SHA256 (go_modules/github.com/davecgh/go-spew/@v/v1.1.2-0.20180830191138-d8f796af33cc.mod) = vLKTkyUSN7eaF7bBm/KRNPQ+j0OMMZiYj81GGhzfBcw=
@@ -149,8 +149,8 @@ SHA256 (go_modules/github.com/spf13/afero/@v/v1.11.0.mod) = GG/9JhTq3WWVc9uX18P3
 SHA256 (go_modules/github.com/spf13/afero/@v/v1.11.0.zip) = cK5ZCG22v7ZLUJ9ZfI7/PXq1b48AUvlH9ntoiZ2jSRw=
 SHA256 (go_modules/github.com/spf13/cast/@v/v1.6.0.mod) = fS9qAbV2r5L4o1xYIUXclBN5Zu6IN4tKOmEUV9cQQhE=
 SHA256 (go_modules/github.com/spf13/cast/@v/v1.6.0.zip) = 7pONR5wZxMrMXhvr1x+lpNALhPTXHuUnqWqK234HNug=
-SHA256 (go_modules/github.com/spf13/cobra/@v/v1.8.0.mod) = 0Lr/kPXMU4Lv1ARYqg4JFzar5McJS3kdyjxC6oJ8Yb8=
-SHA256 (go_modules/github.com/spf13/cobra/@v/v1.8.0.zip) = uhKSS7+bQMPfrd7kX7lxpDkI63P+D/u/f9nmWeKFyZw=
+SHA256 (go_modules/github.com/spf13/cobra/@v/v1.8.1.mod) = aL1N5xFXnGSzgnftGo9MXpeks8jkgWBMHx4hyvvpSag=
+SHA256 (go_modules/github.com/spf13/cobra/@v/v1.8.1.zip) = vyeidvhyV8k7wFcwnfMCZaGb7vw9X8iHy9j8ma01Rmo=
 SHA256 (go_modules/github.com/spf13/pflag/@v/v1.0.5.mod) = FsbfwOtY6zyRE84ZfUYMZyXGR+RoisJtMcjtafHrvGg=
 SHA256 (go_modules/github.com/spf13/pflag/@v/v1.0.5.zip) = /G5wTy9qhN3Nzm3gQE5TQPogyGdhgb9dOBsXiIEHuoQ=
 SHA256 (go_modules/github.com/spf13/viper/@v/v1.19.0.mod) = gt4hLIYeye5IJuvziSeC2+yB4sCzM6QcPrCEuHLaEaI=
@@ -266,7 +266,7 @@ SHA256 (go_modules/gopkg.in/ini.v1/@v/v1.67.0.zip) = vYRd/HYqh6VuWjKgd3Dcg+hpdtt
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SHA256 (vultr-cli-v3.3.0.zip) = k4tFzbvdGjuxkDjxRIFLENvrABWdblSgRwpfpKLlsQ0=
+SHA256 (vultr-cli-v3.3.1.zip) = 57++X7br7hNcz6DlO4e/E5YyvnMqbXfO4ZQqdiv90kc=
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.10.mod) = 1349
 SIZE (go_modules/cloud.google.com/go/@v/v0.112.1.mod) = 1812
 SIZE (go_modules/cloud.google.com/go/@v/v0.112.1.zip) = 318714
@@ -290,8 +290,8 @@ SIZE (go_modules/github.com/coreos/go-semver/@v/v0.3.0.mod) = 35
 SIZE (go_modules/github.com/coreos/go-semver/@v/v0.3.0.zip) = 13848
 SIZE (go_modules/github.com/coreos/go-systemd/v22/@v/v22.3.2.mod) = 91
 SIZE (go_modules/github.com/coreos/go-systemd/v22/@v/v22.3.2.zip) = 120397
-SIZE (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.3.mod) = 100
-SIZE (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.3.zip) = 13309
+SIZE (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.4.mod) = 100
+SIZE (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.4.zip) = 13136
 SIZE (go_modules/github.com/davecgh/go-spew/@v/v1.1.0.mod) = 34
 SIZE (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.mod) = 34
 SIZE (go_modules/github.com/davecgh/go-spew/@v/v1.1.2-0.20180830191138-d8f796af33cc.mod) = 34
@@ -418,8 +418,8 @@ SIZE (go_modules/github.com/spf13/afero/@v/v1.11.0.mod) = 1550
 SIZE (go_modules/github.com/spf13/afero/@v/v1.11.0.zip) = 122472
 SIZE (go_modules/github.com/spf13/cast/@v/v1.6.0.mod) = 275
 SIZE (go_modules/github.com/spf13/cast/@v/v1.6.0.zip) = 18029
-SIZE (go_modules/github.com/spf13/cobra/@v/v1.8.0.mod) = 194
-SIZE (go_modules/github.com/spf13/cobra/@v/v1.8.0.zip) = 229194
+SIZE (go_modules/github.com/spf13/cobra/@v/v1.8.1.mod) = 194
+SIZE (go_modules/github.com/spf13/cobra/@v/v1.8.1.zip) = 231907
 SIZE (go_modules/github.com/spf13/pflag/@v/v1.0.5.mod) = 39
 SIZE (go_modules/github.com/spf13/pflag/@v/v1.0.5.zip) = 88931
 SIZE (go_modules/github.com/spf13/viper/@v/v1.19.0.mod) = 4210
@@ -535,4 +535,4 @@ SIZE (go_modules/gopkg.in/ini.v1/@v/v1.67.0.zip) = 71817
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
-SIZE (vultr-cli-v3.3.0.zip) = 161928
+SIZE (vultr-cli-v3.3.1.zip) = 161985

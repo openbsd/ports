@@ -9,7 +9,7 @@ MODGO_MODULES =	\
 	github.com/armon/go-metrics							 v0.4.1 \
 	github.com/coreos/go-semver							 v0.3.0 \
 	github.com/coreos/go-systemd/v22						 v22.3.2 \
-	github.com/cpuguy83/go-md2man/v2						 v2.0.3 \
+	github.com/cpuguy83/go-md2man/v2						 v2.0.4 \
 	github.com/davecgh/go-spew							 v1.1.2-0.20180830191138-d8f796af33cc \
 	github.com/fatih/color								 v1.16.0 \
 	github.com/felixge/httpsnoop							 v1.0.4 \
@@ -67,7 +67,7 @@ MODGO_MODULES =	\
 	github.com/sourcegraph/conc							 v0.3.0 \
 	github.com/spf13/afero								 v1.11.0 \
 	github.com/spf13/cast								 v1.6.0 \
-	github.com/spf13/cobra								 v1.8.0 \
+	github.com/spf13/cobra								 v1.8.1 \
 	github.com/spf13/pflag								 v1.0.5 \
 	github.com/spf13/viper								 v1.19.0 \
 	github.com/stretchr/objx							 v0.5.2 \
