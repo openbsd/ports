@@ -38,6 +38,7 @@ lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/${MODPY_PYCACHE}ordered
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/${MODPY_PYCACHE}progress_report.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/${MODPY_PYCACHE}rsa.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/${MODPY_PYCACHE}statics.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/${MODPY_PYCACHE}stats.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/_ordered_dict.py
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/lists.py
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/log.py
@@ -45,11 +46,14 @@ lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/ordered_dict.py
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/progress_report.py
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/rsa.py
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/statics.py
+lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/utils/stats.py
 share/tlsfuzzer/
 share/tlsfuzzer/scripts/
 ${MODPY_COMMENT}share/tlsfuzzer/scripts/${MODPY_PYCACHE}/
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}marvin-ciphertext-generator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}marvin-ciphertext-generator.${MODPY_PYC_MAGIC_TAG}pyc
+share/tlsfuzzer/scripts/${MODPY_PYCACHE}rsa-keys-generator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/tlsfuzzer/scripts/${MODPY_PYCACHE}rsa-keys-generator.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-SSLv3-padding.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-SSLv3-padding.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-TLSv1_2-rejected-without-TLSv1_2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -300,6 +304,8 @@ share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-legacy-version.${MODPY_PYC_MA
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-legacy-version.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-lengths.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-lengths.${MODPY_PYC_MAGIC_TAG}pyc
+share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-minerva.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-minerva.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-multiple-ccs-messages.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-multiple-ccs-messages.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-nociphers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -359,6 +365,7 @@ share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-x25519.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-zero-length-data.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-zero-length-data.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/marvin-ciphertext-generator.py
+share/tlsfuzzer/scripts/rsa-keys-generator.py
 share/tlsfuzzer/scripts/test-SSLv3-padding.py
 share/tlsfuzzer/scripts/test-TLSv1_2-rejected-without-TLSv1_2.py
 share/tlsfuzzer/scripts/test-aes-gcm-nonces.py
@@ -484,6 +491,7 @@ share/tlsfuzzer/scripts/test-tls13-keyupdate.py
 share/tlsfuzzer/scripts/test-tls13-large-number-of-extensions.py
 share/tlsfuzzer/scripts/test-tls13-legacy-version.py
 share/tlsfuzzer/scripts/test-tls13-lengths.py
+share/tlsfuzzer/scripts/test-tls13-minerva.py
 share/tlsfuzzer/scripts/test-tls13-multiple-ccs-messages.py
 share/tlsfuzzer/scripts/test-tls13-nociphers.py
 share/tlsfuzzer/scripts/test-tls13-non-support.py
