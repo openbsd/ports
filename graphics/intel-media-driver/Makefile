@@ -1,4 +1,5 @@
 ONLY_FOR_ARCHS =	amd64 i386
+BROKEN-i386 =	ld: error: [...] is incompatible with /usr/lib/crtbeginS.o
 
 COMMENT =	VAAPI driver for Intel HD 5000 (Gen8) or newer
 
