@@ -1,3 +1,5 @@
+BROKEN-riscv64 =	...error "Unknown CPU architecture"
+
 COMMENT =		classic Minecraft client written in C
 
 V =			1.3.6
