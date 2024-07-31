@@ -2,7 +2,7 @@ COMMENT =	authentication plugin for the Mojolicious Perl framework
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Mojolicious-Plugin-Authentication-1.37
+DISTNAME =	Mojolicious-Plugin-Authentication-1.39
 CATEGORIES =	security
 
 # Perl
