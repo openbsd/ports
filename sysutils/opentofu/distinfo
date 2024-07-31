@@ -740,7 +740,8 @@ SHA256 (go_modules/github.com/evanphx/json-patch/@v/v4.12.0+incompatible.mod) = 
 SHA256 (go_modules/github.com/evanphx/json-patch/@v/v4.12.0+incompatible.zip) = 3Yc7iuoKlUauKt9l3REogt3Ab2woqanuo1Ett9/qNJY=
 SHA256 (go_modules/github.com/fatih/color/@v/v1.13.0.mod) = 8KxJ/fh41LNolwJb+xhjni/mfYhM6o4yTlwZFWl/ixw=
 SHA256 (go_modules/github.com/fatih/color/@v/v1.15.0.mod) = X05lNdvzPRxJVxjs69ydzVSmtUCt8a1KKzrghw3im4k=
-SHA256 (go_modules/github.com/fatih/color/@v/v1.15.0.zip) = WqfHxeDxL+u+s/T1f7yhPqvxbKoc1aiTFee44YdlKtk=
+SHA256 (go_modules/github.com/fatih/color/@v/v1.16.0.mod) = 4rsgJoIc75aeB43l/nW4y6KDQa4dTtnDeMO3fj2cfBU=
+SHA256 (go_modules/github.com/fatih/color/@v/v1.16.0.zip) = hxnz9UQ9OHVGMW6YEFtXk9nDeNvbn01gcorER31a6t8=
 SHA256 (go_modules/github.com/fatih/color/@v/v1.7.0.mod) = TDlJ5lwSok4Luy1SEYvASOaYDCm8SUAsWWWK3gNRmKM=
 SHA256 (go_modules/github.com/fatih/color/@v/v1.9.0.mod) = wTrSDdHM3RY+QkwbXGyjaB7TfCooANLSVza191W0MO0=
 SHA256 (go_modules/github.com/fatih/structs/@v/v1.1.0.mod) = wgPzwY7oavBdsGkYVZac/u0U9aOMQkwLV/vIlConfCg=
@@ -992,8 +993,8 @@ SHA256 (go_modules/github.com/hashicorp/go-cleanhttp/@v/v0.5.2.mod) = XwLShnLRvA
 SHA256 (go_modules/github.com/hashicorp/go-cleanhttp/@v/v0.5.2.zip) = 6fPc/LMxcrpJm0+OiIFpJS1/HgcgghghJKbiBTUj998=
 SHA256 (go_modules/github.com/hashicorp/go-cty/@v/v1.4.1-0.20200414143053-d3edf31b6320.mod) = 3i0K2NB9u+xqJ2MfyrJ5YE1tf9Nk9iEk5AXN5FJNdQY=
 SHA256 (go_modules/github.com/hashicorp/go-cty/@v/v1.4.1-0.20200414143053-d3edf31b6320.zip) = a1z3pP8d86m4uWKC3IcKhOekF9Ln2BrFt1O04bJp9sI=
-SHA256 (go_modules/github.com/hashicorp/go-getter/@v/v1.7.4.mod) = zD8THy+EJwSvDTVK8aEuJYNMdaozws9xWYyG58EYdBQ=
-SHA256 (go_modules/github.com/hashicorp/go-getter/@v/v1.7.4.zip) = AtQjUGkuhYqDTxV2iMWuvaDAj/oC3eCRWl70HELgNzM=
+SHA256 (go_modules/github.com/hashicorp/go-getter/@v/v1.7.5.mod) = zD8THy+EJwSvDTVK8aEuJYNMdaozws9xWYyG58EYdBQ=
+SHA256 (go_modules/github.com/hashicorp/go-getter/@v/v1.7.5.zip) = 8LpMLDtXqCAnvY6yAo/1pCvGuwy6zaZ5GPqpeFWR5Xg=
 SHA256 (go_modules/github.com/hashicorp/go-hclog/@v/v0.0.0-20180709165350-ff2cf002a8dd.mod) = TAx31XtV7KhfGW2t3FYkS51Xb3Tm/XJ6HAqAQIC2qcQ=
 SHA256 (go_modules/github.com/hashicorp/go-hclog/@v/v0.12.0.mod) = 3pL8xvJiE8j+T+bD+ruqxhAfceLaC/i8nDqlQgOMvLo=
 SHA256 (go_modules/github.com/hashicorp/go-hclog/@v/v0.14.1.mod) = 3pL8xvJiE8j+T+bD+ruqxhAfceLaC/i8nDqlQgOMvLo=
@@ -1020,7 +1021,8 @@ SHA256 (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.5.4.mod) = ZglByC
 SHA256 (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.6.6.mod) = UjzeAp4LRWnIhHDCozb3d6ZERLkm4XNagdX5aQ8grE4=
 SHA256 (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.7.0.mod) = UjzeAp4LRWnIhHDCozb3d6ZERLkm4XNagdX5aQ8grE4=
 SHA256 (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.7.4.mod) = xjZcmWZKgniQRqAjUTow55779TfaRFk9R52+j4EmIR4=
-SHA256 (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.7.4.zip) = APbYXFyLMn9W1JrUjvHS35Sv/qNAykbOgnQVunXbRxI=
+SHA256 (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.7.7.mod) = EIAKwHT/lU7l7L5Rczj0E3MKQqLEfBzYGrZQ0b08VPg=
+SHA256 (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.7.7.zip) = Kfo2VavQp8kfOh6xhtMJ7CS1gK+xDTmjzfqM3g6Z4Kk=
 SHA256 (go_modules/github.com/hashicorp/go-rootcerts/@v/v1.0.1.mod) = NaHPdeJMsG8rYBPBb9+7E7dAqN0on8MyFLDAOymXZRM=
 SHA256 (go_modules/github.com/hashicorp/go-rootcerts/@v/v1.0.2.mod) = NaHPdeJMsG8rYBPBb9+7E7dAqN0on8MyFLDAOymXZRM=
 SHA256 (go_modules/github.com/hashicorp/go-rootcerts/@v/v1.0.2.zip) = hkpI5kLoeic/te9guzV1vXSnCQUQ+TFDFj+mcAvjGUg=
@@ -1201,7 +1203,8 @@ SHA256 (go_modules/github.com/mattn/go-isatty/@v/v0.0.12.mod) = GgYuVsAmbQBL6lER
 SHA256 (go_modules/github.com/mattn/go-isatty/@v/v0.0.14.mod) = 6SmRM81yQ+wmZ6oloEstrGAJI0rkwc2k7bRXSZcNrp8=
 SHA256 (go_modules/github.com/mattn/go-isatty/@v/v0.0.16.mod) = cUdm7ILWfbiVreiva4BUrUMMPOpeFbOoiPI+0vPhuGM=
 SHA256 (go_modules/github.com/mattn/go-isatty/@v/v0.0.17.mod) = cUdm7ILWfbiVreiva4BUrUMMPOpeFbOoiPI+0vPhuGM=
-SHA256 (go_modules/github.com/mattn/go-isatty/@v/v0.0.17.zip) = 7YqYSnkx1hi2d7b9a8yTxYu1fme0swBcQBKohRtJQow=
+SHA256 (go_modules/github.com/mattn/go-isatty/@v/v0.0.20.mod) = Huq+8bTZjbc8bCBzKJFjZJvJoERVKsqGudWS/oTqocg=
+SHA256 (go_modules/github.com/mattn/go-isatty/@v/v0.0.20.zip) = 8tX4nKRRV34XRkubtZbcDQ7OzsteqmNiLEG1fNC3uMw=
 SHA256 (go_modules/github.com/mattn/go-isatty/@v/v0.0.3.mod) = fPaZQoQQ5Q1cTPCMVMCR/cO0aAmhjkcau4z/BgTXpVA=
 SHA256 (go_modules/github.com/mattn/go-isatty/@v/v0.0.4.mod) = fPaZQoQQ5Q1cTPCMVMCR/cO0aAmhjkcau4z/BgTXpVA=
 SHA256 (go_modules/github.com/mattn/go-isatty/@v/v0.0.8.mod) = T3daib6agBiagm7yLcMD44lVfFWPFL/UC3W17yhF5W8=
@@ -1857,8 +1860,9 @@ SHA256 (go_modules/golang.org/x/sys/@v/v0.15.0.mod) = 0iezJfYh9OvijTm6dz6pm4cPOT
 SHA256 (go_modules/golang.org/x/sys/@v/v0.16.0.mod) = 0iezJfYh9OvijTm6dz6pm4cPOTt8CcNFksNlsW3VYN4=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.17.0.mod) = 0iezJfYh9OvijTm6dz6pm4cPOTt8CcNFksNlsW3VYN4=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.18.0.mod) = 0iezJfYh9OvijTm6dz6pm4cPOTt8CcNFksNlsW3VYN4=
-SHA256 (go_modules/golang.org/x/sys/@v/v0.18.0.zip) = luOxaxWn0ZPJ2yl020yr7SmzerS7CfY+36RBGZ3m/fg=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.2.0.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7/nc5E0BFvDt85KUCQ=
+SHA256 (go_modules/golang.org/x/sys/@v/v0.20.0.mod) = 0iezJfYh9OvijTm6dz6pm4cPOTt8CcNFksNlsW3VYN4=
+SHA256 (go_modules/golang.org/x/sys/@v/v0.20.0.zip) = P4JrGR6rHr2pJf61UdM0434bWGXRqnkPreRlmIEaixo=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.3.0.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7/nc5E0BFvDt85KUCQ=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.5.0.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7/nc5E0BFvDt85KUCQ=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.6.0.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7/nc5E0BFvDt85KUCQ=
@@ -2322,7 +2326,7 @@ SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.2.1.mod) = MZI3y2a
 SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.2.1.zip) = 9L7QuayfT9ekxDVbSACgzs8kQ0ISmRJM7oZtb4J54Lc=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 8ikTVRI4fWZj4fCZmkkiq3CN7UvcgExxzpPj1gK6ld0=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = Ve0Ixd9EigM79+LCkS1NqoW4VqBchUsMh8zIXH8/v8c=
-SHA256 (opentofu-v1.7.2.zip) = hBs5FFKsWsFBVWcupIwqP45yV6hQp5UiTxpVI8EOgis=
+SHA256 (opentofu-v1.8.0.zip) = 7Sed4hSBN5L7CrQ6CTjN1T6wFvCZVPTcrYb5ZqFoBJc=
 SIZE (go_modules/cloud.google.com/go/@v/v0.100.2.mod) = 531
 SIZE (go_modules/cloud.google.com/go/@v/v0.102.0.mod) = 568
 SIZE (go_modules/cloud.google.com/go/@v/v0.102.1.mod) = 568
@@ -3065,7 +3069,8 @@ SIZE (go_modules/github.com/evanphx/json-patch/@v/v4.12.0+incompatible.mod) = 37
 SIZE (go_modules/github.com/evanphx/json-patch/@v/v4.12.0+incompatible.zip) = 21308
 SIZE (go_modules/github.com/fatih/color/@v/v1.13.0.mod) = 126
 SIZE (go_modules/github.com/fatih/color/@v/v1.15.0.mod) = 160
-SIZE (go_modules/github.com/fatih/color/@v/v1.15.0.zip) = 13617
+SIZE (go_modules/github.com/fatih/color/@v/v1.16.0.mod) = 161
+SIZE (go_modules/github.com/fatih/color/@v/v1.16.0.zip) = 14444
 SIZE (go_modules/github.com/fatih/color/@v/v1.7.0.mod) = 30
 SIZE (go_modules/github.com/fatih/color/@v/v1.9.0.mod) = 126
 SIZE (go_modules/github.com/fatih/structs/@v/v1.1.0.mod) = 32
@@ -3317,8 +3322,8 @@ SIZE (go_modules/github.com/hashicorp/go-cleanhttp/@v/v0.5.2.mod) = 50
 SIZE (go_modules/github.com/hashicorp/go-cleanhttp/@v/v0.5.2.zip) = 9586
 SIZE (go_modules/github.com/hashicorp/go-cty/@v/v1.4.1-0.20200414143053-d3edf31b6320.mod) = 551
 SIZE (go_modules/github.com/hashicorp/go-cty/@v/v1.4.1-0.20200414143053-d3edf31b6320.zip) = 255432
-SIZE (go_modules/github.com/hashicorp/go-getter/@v/v1.7.4.mod) = 1055
-SIZE (go_modules/github.com/hashicorp/go-getter/@v/v1.7.4.zip) = 183476
+SIZE (go_modules/github.com/hashicorp/go-getter/@v/v1.7.5.mod) = 1055
+SIZE (go_modules/github.com/hashicorp/go-getter/@v/v1.7.5.zip) = 184167
 SIZE (go_modules/github.com/hashicorp/go-hclog/@v/v0.0.0-20180709165350-ff2cf002a8dd.mod) = 37
 SIZE (go_modules/github.com/hashicorp/go-hclog/@v/v0.12.0.mod) = 297
 SIZE (go_modules/github.com/hashicorp/go-hclog/@v/v0.14.1.mod) = 297
@@ -3345,7 +3350,8 @@ SIZE (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.5.4.mod) = 95
 SIZE (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.6.6.mod) = 147
 SIZE (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.7.0.mod) = 147
 SIZE (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.7.4.mod) = 147
-SIZE (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.7.4.zip) = 27183
+SIZE (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.7.7.mod) = 341
+SIZE (go_modules/github.com/hashicorp/go-retryablehttp/@v/v0.7.7.zip) = 32348
 SIZE (go_modules/github.com/hashicorp/go-rootcerts/@v/v1.0.1.mod) = 98
 SIZE (go_modules/github.com/hashicorp/go-rootcerts/@v/v1.0.2.mod) = 98
 SIZE (go_modules/github.com/hashicorp/go-rootcerts/@v/v1.0.2.zip) = 15463
@@ -3526,7 +3532,8 @@ SIZE (go_modules/github.com/mattn/go-isatty/@v/v0.0.12.mod) = 104
 SIZE (go_modules/github.com/mattn/go-isatty/@v/v0.0.14.mod) = 104
 SIZE (go_modules/github.com/mattn/go-isatty/@v/v0.0.16.mod) = 104
 SIZE (go_modules/github.com/mattn/go-isatty/@v/v0.0.17.mod) = 104
-SIZE (go_modules/github.com/mattn/go-isatty/@v/v0.0.17.zip) = 8935
+SIZE (go_modules/github.com/mattn/go-isatty/@v/v0.0.20.mod) = 76
+SIZE (go_modules/github.com/mattn/go-isatty/@v/v0.0.20.zip) = 8936
 SIZE (go_modules/github.com/mattn/go-isatty/@v/v0.0.3.mod) = 34
 SIZE (go_modules/github.com/mattn/go-isatty/@v/v0.0.4.mod) = 34
 SIZE (go_modules/github.com/mattn/go-isatty/@v/v0.0.8.mod) = 95
@@ -4182,8 +4189,9 @@ SIZE (go_modules/golang.org/x/sys/@v/v0.15.0.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.16.0.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.17.0.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.18.0.mod) = 33
-SIZE (go_modules/golang.org/x/sys/@v/v0.18.0.zip) = 1907063
 SIZE (go_modules/golang.org/x/sys/@v/v0.2.0.mod) = 33
+SIZE (go_modules/golang.org/x/sys/@v/v0.20.0.mod) = 33
+SIZE (go_modules/golang.org/x/sys/@v/v0.20.0.zip) = 1956163
 SIZE (go_modules/golang.org/x/sys/@v/v0.3.0.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.5.0.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.6.0.mod) = 33
@@ -4647,4 +4655,4 @@ SIZE (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.2.1.mod) = 346
 SIZE (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.2.1.zip) = 239376
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = 20937
-SIZE (opentofu-v1.7.2.zip) = 5917513
+SIZE (opentofu-v1.8.0.zip) = 6069322

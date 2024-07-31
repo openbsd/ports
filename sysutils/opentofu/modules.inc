@@ -239,7 +239,7 @@ MODGO_MODULES =	\
 	github.com/envoyproxy/go-control-plane							 v0.12.0 \
 	github.com/envoyproxy/protoc-gen-validate						 v1.0.4 \
 	github.com/evanphx/json-patch								 v4.12.0+incompatible \
-	github.com/fatih/color									 v1.15.0 \
+	github.com/fatih/color									 v1.16.0 \
 	github.com/fatih/structs								 v1.1.0 \
 	github.com/felixge/httpsnoop								 v1.0.4 \
 	github.com/form3tech-oss/jwt-go								 v3.2.3+incompatible \
@@ -308,13 +308,13 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-azure-helpers							 v0.43.0 \
 	github.com/hashicorp/go-cleanhttp							 v0.5.2 \
 	github.com/hashicorp/go-cty								 v1.4.1-0.20200414143053-d3edf31b6320 \
-	github.com/hashicorp/go-getter								 v1.7.4 \
+	github.com/hashicorp/go-getter								 v1.7.5 \
 	github.com/hashicorp/go-hclog								 v1.6.3 \
 	github.com/hashicorp/go-immutable-radix							 v1.0.0 \
 	github.com/hashicorp/go-msgpack								 v0.5.4 \
 	github.com/hashicorp/go-multierror							 v1.1.1 \
 	github.com/hashicorp/go-plugin								 v1.4.3 \
-	github.com/hashicorp/go-retryablehttp							 v0.7.4 \
+	github.com/hashicorp/go-retryablehttp							 v0.7.7 \
 	github.com/hashicorp/go-rootcerts							 v1.0.2 \
 	github.com/hashicorp/go-safetemp							 v1.0.0 \
 	github.com/hashicorp/go-secure-stdlib/parseutil						 v0.1.6 \
@@ -382,7 +382,7 @@ MODGO_MODULES =	\
 	github.com/masterzen/simplexml								 v0.0.0-20190410153822-31eea3082786 \
 	github.com/masterzen/winrm								 v0.0.0-20200615185753-c42b5136ff88 \
 	github.com/mattn/go-colorable								 v0.1.13 \
-	github.com/mattn/go-isatty								 v0.0.17 \
+	github.com/mattn/go-isatty								 v0.0.20 \
 	github.com/mattn/go-runewidth								 v0.0.13 \
 	github.com/mattn/go-shellwords								 v1.0.4 \
 	github.com/matttproud/golang_protobuf_extensions					 v1.0.1 \
@@ -514,7 +514,7 @@ MODGO_MODULES =	\
 	golang.org/x/net									 v0.23.0 \
 	golang.org/x/oauth2									 v0.16.0 \
 	golang.org/x/sync									 v0.6.0 \
-	golang.org/x/sys									 v0.18.0 \
+	golang.org/x/sys									 v0.20.0 \
 	golang.org/x/term									 v0.18.0 \
 	golang.org/x/text									 v0.14.0 \
 	golang.org/x/time									 v0.5.0 \
@@ -819,6 +819,7 @@ MODGO_MODFILES =	\
 	github.com/envoyproxy/protoc-gen-validate				 v0.1.0 \
 	github.com/envoyproxy/protoc-gen-validate				 v1.0.2 \
 	github.com/fatih/color							 v1.13.0 \
+	github.com/fatih/color							 v1.15.0 \
 	github.com/fatih/color							 v1.7.0 \
 	github.com/fatih/color							 v1.9.0 \
 	github.com/form3tech-oss/jwt-go						 v3.2.2+incompatible \
@@ -949,6 +950,7 @@ MODGO_MODFILES =	\
 	github.com/hashicorp/go-retryablehttp					 v0.5.4 \
 	github.com/hashicorp/go-retryablehttp					 v0.6.6 \
 	github.com/hashicorp/go-retryablehttp					 v0.7.0 \
+	github.com/hashicorp/go-retryablehttp					 v0.7.4 \
 	github.com/hashicorp/go-rootcerts					 v1.0.1 \
 	github.com/hashicorp/go-secure-stdlib/strutil				 v0.1.1 \
 	github.com/hashicorp/go-sockaddr					 v1.0.0 \
@@ -994,6 +996,7 @@ MODGO_MODFILES =	\
 	github.com/mattn/go-isatty						 v0.0.12 \
 	github.com/mattn/go-isatty						 v0.0.14 \
 	github.com/mattn/go-isatty						 v0.0.16 \
+	github.com/mattn/go-isatty						 v0.0.17 \
 	github.com/mattn/go-isatty						 v0.0.3 \
 	github.com/mattn/go-isatty						 v0.0.4 \
 	github.com/mattn/go-isatty						 v0.0.8 \
@@ -1386,6 +1389,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys							 v0.15.0 \
 	golang.org/x/sys							 v0.16.0 \
 	golang.org/x/sys							 v0.17.0 \
+	golang.org/x/sys							 v0.18.0 \
 	golang.org/x/sys							 v0.2.0 \
 	golang.org/x/sys							 v0.3.0 \
 	golang.org/x/sys							 v0.5.0 \
