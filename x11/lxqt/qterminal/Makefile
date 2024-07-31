@@ -4,9 +4,10 @@ NAME =		qterminal
 VERSION =	2.0.1
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6DBus Qt6Gui Qt6Widgets
-WANTLIB += X11 c canberra m qtermwidget6 util
+WANTLIB += X11 c canberra m qtermwidget6 util LayerShellQtInterface
 
 LIB_DEPENDS =	x11/lxqt/qtermwidget>=2.0.1 \
+		x11/kde-plasma/layer-shell-qt \
 		audio/libcanberra
 
 BUILD_DEPENDS =	x11/lxqt/build-tools2
