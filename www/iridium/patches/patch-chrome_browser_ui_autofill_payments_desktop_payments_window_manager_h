@@ -28,7 +28,7 @@ Index: chrome/browser/ui/autofill/payments/desktop_payments_window_manager.h
    // BrowserListObserver:
    void OnBrowserSetLastActive(Browser* browser) override;
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS_LACROS)
-@@ -132,7 +132,7 @@ class DesktopPaymentsWindowManager : public PaymentsWi
+@@ -136,7 +136,7 @@ class DesktopPaymentsWindowManager : public PaymentsWi
    std::unique_ptr<PaymentsWindowUserConsentDialogControllerImpl>
        payments_window_user_consent_dialog_controller_;
  

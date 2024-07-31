@@ -25,7 +25,7 @@ Index: chrome/browser/ui/webui/settings/accessibility_main_handler.cc
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
-   if (features::IsPdfOcrEnabled()) {
+   if (features::IsPdfOcrEnabled() || features::IsMainNodeAnnotationsEnabled()) {
      CHECK(!component_ready_observer_.IsObserving());
      component_ready_observer_.Observe(
 @@ -70,14 +70,14 @@ void AccessibilityMainHandler::OnJavascriptDisallowed(
@@ -34,7 +34,7 @@ Index: chrome/browser/ui/webui/settings/accessibility_main_handler.cc
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
-   if (features::IsPdfOcrEnabled()) {
+   if (features::IsPdfOcrEnabled() || features::IsMainNodeAnnotationsEnabled()) {
      component_ready_observer_.Reset();
    }
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)

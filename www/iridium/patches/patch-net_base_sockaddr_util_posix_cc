@@ -1,7 +1,7 @@
 Index: net/base/sockaddr_util_posix.cc
 --- net/base/sockaddr_util_posix.cc.orig
 +++ net/base/sockaddr_util_posix.cc
-@@ -41,7 +41,8 @@ bool FillUnixAddress(const std::string& socket_path,
+@@ -46,7 +46,8 @@ bool FillUnixAddress(const std::string& socket_path,
      return true;
    }
  

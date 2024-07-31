@@ -22,7 +22,7 @@ Index: third_party/blink/renderer/platform/wtf/stack_util.cc
  #elif BUILDFLAG(IS_APPLE)
    // pthread_get_stacksize_np() returns too low a value for the main thread on
    // OSX 10.9,
-@@ -149,6 +156,13 @@ void* GetStackStart() {
+@@ -150,6 +157,13 @@ void* GetStackStart() {
    ::GetCurrentThreadStackLimits(&lowLimit, &highLimit);
    return reinterpret_cast<void*>(highLimit);
  #endif

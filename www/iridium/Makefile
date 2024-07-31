@@ -10,8 +10,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Iridium browser
 
-V=			2024.06.126.2
-REVISION=		2
+V=			2024.07.127
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
@@ -70,6 +69,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		audio/pulseaudio \
 		devel/gperf \
 		devel/bison \
+		devel/rust-bindgen \
 		lang/node \
 		lang/rust \
 		shells/bash \
@@ -102,7 +102,7 @@ USE_GMAKE=	Yes
 # Set BUILDTYPE to Release
 BUILDTYPE=	Release
 
-SUBST_VARS+=	WRKSRC WRKDIR DEBUGFLAG
+SUBST_VARS+=	WRKSRC WRKDIR DEBUGFLAG MODCLANG_VERSION
 
 ALL_TARGET=		chrome
 TEST_TARGET=		base_unittests
@@ -243,7 +243,9 @@ pre-configure:
 .endfor
 	@mkdir -p ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin
 	@ln -sf ${TRUEPREFIX}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
-	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py ${WRKSRC}/v8/tools/run.py \
+	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py \
+		${WRKSRC}/build/rust/rust_bindgen.gni \
+		${WRKSRC}/v8/tools/run.py \
 		${WRKSRC}/tools/protoc_wrapper/protoc_wrapper.py \
 		${WRKSRC}/third_party/blink/renderer/build/scripts/run_with_pythonpath.py
 
