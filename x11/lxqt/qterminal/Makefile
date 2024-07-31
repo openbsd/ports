@@ -1,11 +1,12 @@
 COMMENT =	lightweight Qt terminal emulator based on QTermWidget
 
 NAME =		qterminal
+VERSION =	2.0.1
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6DBus Qt6Gui Qt6Widgets
 WANTLIB += X11 c canberra m qtermwidget6 util
 
-LIB_DEPENDS =	x11/lxqt/qtermwidget>=2.0.0 \
+LIB_DEPENDS =	x11/lxqt/qtermwidget>=2.0.1 \
 		audio/libcanberra
 
 BUILD_DEPENDS =	x11/lxqt/build-tools2
