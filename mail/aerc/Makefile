@@ -4,16 +4,16 @@ ONLY_FOR_ARCHS = aarch64 arm amd64 i386 mips64
 COMMENT =	terminal email client
 
 MODGO_MODNAME =	git.sr.ht/~rjarry/aerc
-MODGO_VERSION =	v0.0.0-20240201001117-6ea74eb30457
+MODGO_VERSION =	v0.0.0-20240729220005-e037c095a049
 
-V =		0.17.0
+V =		0.18.2
 DISTNAME =	aerc-$V
 
 CATEGORIES =	mail
 
 HOMEPAGE =	https://aerc-mail.org
 
-MAINTAINER =	Thim Cederlund <thim@cederlund.de>
+MAINTAINER =	Johannes Thyssen Tishman <ports@thyssentishman.com>
 
 # MIT
 PERMIT_PACKAGE = Yes

@@ -34,6 +34,7 @@ share/aerc/stylesets/
 share/aerc/stylesets/blue
 share/aerc/stylesets/default
 share/aerc/stylesets/dracula
+share/aerc/stylesets/monochrome
 share/aerc/stylesets/nord
 share/aerc/stylesets/pink
 share/aerc/stylesets/solarized
