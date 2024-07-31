@@ -8,7 +8,7 @@ Index: src/etc/rust-lldb
  RUST_LLDB="$RUSTC_SYSROOT/lib/rustlib/$host/bin/lldb"
  
 -lldb=lldb
-+lldb=lldb-16
++lldb=lldb-17
  if [ -f "$RUST_LLDB" ]; then
      lldb="$RUST_LLDB"
  else
