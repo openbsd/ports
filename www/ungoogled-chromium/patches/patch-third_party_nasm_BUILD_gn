@@ -7,7 +7,7 @@ Index: third_party/nasm/BUILD.gn
  
 +  _string_h_lines =
 +        read_file("/usr/include/string.h", "list lines")
-+  _mempcpy = filter_include(_string_h_lines, [ "*\*mempcpy*" ])
++  _mempcpy = filter_include(_string_h_lines, [ "*mempcpy*" ])
 +  if (_mempcpy != []) {
 +    defines += [ "HAVE_MEMPCPY=1" ]
 +  }
