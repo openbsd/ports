@@ -1,6 +1,6 @@
 COMMENT =	open network for secure, decentralized communication
 
-MODPY_EGG_VERSION =	1.109.0
+MODPY_EGG_VERSION =	1.112.0
 
 GH_ACCOUNT =	element-hq
 GH_PROJECT =	synapse
@@ -59,7 +59,8 @@ RUN_DEPENDS =	devel/py-jsonschema${MODPY_FLAVOR}>=3.0.0 \
 		textproc/py-ijson${MODPY_FLAVOR} \
 		devel/py-matrix-common${MODPY_FLAVOR}>=1.3.0,<2.0.0 \
 		sysutils/py-packaging${MODPY_FLAVOR} \
-		devel/py-pydantic-compat${MODPY_FLAVOR}
+		devel/py-pydantic-compat${MODPY_FLAVOR} \
+		www/py-multipart${MODPY_FLAVOR}
 # still relying on pkg_resources, see comments in
 # https://github.com/matrix-org/synapse/pull/12542
 RUN_DEPENDS +=	devel/py-setuptools${MODPY_FLAVOR}
