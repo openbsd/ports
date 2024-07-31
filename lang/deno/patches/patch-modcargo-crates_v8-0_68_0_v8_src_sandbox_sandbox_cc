@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-0.93.1/v8/src/sandbox/sandbox.cc
---- modcargo-crates/v8-0.93.1/v8/src/sandbox/sandbox.cc.orig
-+++ modcargo-crates/v8-0.93.1/v8/src/sandbox/sandbox.cc
+Index: modcargo-crates/v8-0.99.0/v8/src/sandbox/sandbox.cc
+--- modcargo-crates/v8-0.99.0/v8/src/sandbox/sandbox.cc.orig
++++ modcargo-crates/v8-0.99.0/v8/src/sandbox/sandbox.cc
 @@ -47,7 +47,7 @@ static Address DetermineAddressSpaceLimit() {
    }
  #endif  // V8_TARGET_ARCH_X64

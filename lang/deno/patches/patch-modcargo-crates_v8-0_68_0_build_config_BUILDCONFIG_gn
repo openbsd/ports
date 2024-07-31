@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-0.93.1/build/config/BUILDCONFIG.gn
---- modcargo-crates/v8-0.93.1/build/config/BUILDCONFIG.gn.orig
-+++ modcargo-crates/v8-0.93.1/build/config/BUILDCONFIG.gn
+Index: modcargo-crates/v8-0.99.0/build/config/BUILDCONFIG.gn
+--- modcargo-crates/v8-0.99.0/build/config/BUILDCONFIG.gn.orig
++++ modcargo-crates/v8-0.99.0/build/config/BUILDCONFIG.gn
 @@ -196,8 +196,8 @@ if (host_toolchain == "") {
    # TODO(dpranke): Add some sort of assert here that verifies that
    # no toolchain omitted host_toolchain from its toolchain_args().

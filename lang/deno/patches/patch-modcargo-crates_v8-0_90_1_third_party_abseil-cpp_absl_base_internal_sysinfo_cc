@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-0.93.1/third_party/abseil-cpp/absl/base/internal/sysinfo.cc
---- modcargo-crates/v8-0.93.1/third_party/abseil-cpp/absl/base/internal/sysinfo.cc.orig
-+++ modcargo-crates/v8-0.93.1/third_party/abseil-cpp/absl/base/internal/sysinfo.cc
+Index: modcargo-crates/v8-0.99.0/third_party/abseil-cpp/absl/base/internal/sysinfo.cc
+--- modcargo-crates/v8-0.99.0/third_party/abseil-cpp/absl/base/internal/sysinfo.cc.orig
++++ modcargo-crates/v8-0.99.0/third_party/abseil-cpp/absl/base/internal/sysinfo.cc
 @@ -30,7 +30,7 @@
  #include <sys/syscall.h>
  #endif

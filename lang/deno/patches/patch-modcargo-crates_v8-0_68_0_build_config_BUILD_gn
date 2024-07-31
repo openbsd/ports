@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-0.93.1/build/config/BUILD.gn
---- modcargo-crates/v8-0.93.1/build/config/BUILD.gn.orig
-+++ modcargo-crates/v8-0.93.1/build/config/BUILD.gn
+Index: modcargo-crates/v8-0.99.0/build/config/BUILD.gn
+--- modcargo-crates/v8-0.99.0/build/config/BUILD.gn.orig
++++ modcargo-crates/v8-0.99.0/build/config/BUILD.gn
 @@ -121,7 +121,7 @@ config("debug") {
        # builds, and we have to tell it to turn it off.
        defines += [ "_HAS_ITERATOR_DEBUGGING=0" ]

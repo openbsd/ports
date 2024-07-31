@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-0.93.1/build/config/compiler/BUILD.gn
---- modcargo-crates/v8-0.93.1/build/config/compiler/BUILD.gn.orig
-+++ modcargo-crates/v8-0.93.1/build/config/compiler/BUILD.gn
+Index: modcargo-crates/v8-0.99.0/build/config/compiler/BUILD.gn
+--- modcargo-crates/v8-0.99.0/build/config/compiler/BUILD.gn.orig
++++ modcargo-crates/v8-0.99.0/build/config/compiler/BUILD.gn
 @@ -251,13 +251,16 @@ config("default_include_dirs") {
  # Compiler instrumentation can introduce dependencies in DSOs to symbols in
  # the executable they are loaded into, so they are unresolved at link-time.

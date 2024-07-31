@@ -1,21 +1,21 @@
 Index: cli/standalone/mod.rs
 --- cli/standalone/mod.rs.orig
 +++ cli/standalone/mod.rs
-@@ -60,6 +60,7 @@ use deno_runtime::WorkerExecutionMode;
- use deno_runtime::WorkerLogLevel;
- use deno_semver::npm::NpmPackageReqReference;
- use import_map::parse_from_json;
+@@ -38,6 +38,7 @@ use import_map::parse_from_json;
+ use node_resolver::analyze::NodeCodeTranslator;
+ use node_resolver::NodeResolutionMode;
+ use std::borrow::Cow;
 +use std::path::PathBuf;
  use std::rc::Rc;
  use std::sync::Arc;
  
-@@ -325,7 +326,8 @@ pub async fn run(
+@@ -423,7 +424,8 @@ pub async fn run(
+   mut eszip: eszip::EszipV2,
    metadata: Metadata,
  ) -> Result<i32, AnyError> {
-   let main_module = &metadata.entrypoint;
 -  let current_exe_path = std::env::current_exe().unwrap();
 +  let current_exe_path =
 +    std::env::current_exe().unwrap_or(PathBuf::from("${PREFIX}/bin/deno"));
    let current_exe_name =
      current_exe_path.file_name().unwrap().to_string_lossy();
-   let deno_dir_provider = Arc::new(DenoDirProvider::new(None));
+   let maybe_cwd = std::env::current_dir().ok();

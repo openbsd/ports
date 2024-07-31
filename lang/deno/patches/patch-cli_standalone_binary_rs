@@ -1,7 +1,7 @@
 Index: cli/standalone/binary.rs
 --- cli/standalone/binary.rs.orig
 +++ cli/standalone/binary.rs
-@@ -148,7 +148,7 @@ pub struct Metadata {
+@@ -106,7 +106,7 @@ pub struct Metadata {
  }
  
  pub fn load_npm_vfs(root_dir_path: PathBuf) -> Result<FileBackedVfs, AnyError> {
@@ -10,7 +10,7 @@ Index: cli/standalone/binary.rs
    let mut file = std::fs::File::open(file_path)?;
    file.seek(SeekFrom::End(-(TRAILER_SIZE as i64)))?;
    let mut trailer = [0; TRAILER_SIZE];
-@@ -543,7 +543,7 @@ impl<'a> DenoCompileBinaryWriter<'a> {
+@@ -501,7 +501,7 @@ impl<'a> DenoCompileBinaryWriter<'a> {
      let bytes = match maybe_bytes {
        Some(bytes) => bytes,
        None => {

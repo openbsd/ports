@@ -1,7 +1,7 @@
-Index: modcargo-crates/v8-0.93.1/build.rs
---- modcargo-crates/v8-0.93.1/build.rs.orig
-+++ modcargo-crates/v8-0.93.1/build.rs
-@@ -200,16 +200,10 @@ fn build_v8(is_asan: bool) {
+Index: modcargo-crates/v8-0.99.0/build.rs
+--- modcargo-crates/v8-0.99.0/build.rs.orig
++++ modcargo-crates/v8-0.99.0/build.rs
+@@ -245,16 +245,10 @@ fn build_v8(is_asan: bool) {
    // cross-compilation setup
    if target_arch == "aarch64" {
      gn_args.push(r#"target_cpu="arm64""#.to_string());
@@ -18,7 +18,7 @@ Index: modcargo-crates/v8-0.93.1/build.rs
    }
  
    let target_triple = env::var("TARGET").unwrap();
-@@ -229,7 +223,6 @@ fn build_v8(is_asan: bool) {
+@@ -274,7 +268,6 @@ fn build_v8(is_asan: bool) {
      gn_args.push(format!(r#"target_cpu="{}""#, arch).to_string());
      gn_args.push(r#"target_os="android""#.to_string());
      gn_args.push("treat_warnings_as_errors=false".to_string());
@@ -26,7 +26,7 @@ Index: modcargo-crates/v8-0.93.1/build.rs
  
      // NDK 23 and above removes libgcc entirely.
      // https://github.com/rust-lang/rust/pull/85806
-@@ -320,7 +313,9 @@ fn maybe_install_sysroot(arch: &str) {
+@@ -363,7 +356,9 @@ fn maybe_install_sysroot(arch: &str) {
  }
  
  fn host_platform() -> String {

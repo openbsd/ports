@@ -6,7 +6,7 @@ DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
 
-VERSION =		1.44.4
+VERSION =		1.45.4
 HOMEPAGE =		https://deno.com/runtime
 
 DISTNAME =		deno-${VERSION}
@@ -20,7 +20,7 @@ CATEGORIES =		lang
 # MIT
 PERMIT_PACKAGE =	Yes
 
-MODULES =		devel/cargo
+MODULES =		devel/cargo lang/clang
 MODCARGO_CRATES_KEEP +=	libsqlite3-sys \
 			libz-sys
 
@@ -28,7 +28,8 @@ MODCARGO_ENV +=		V8_FROM_SOURCE=1 \
 			GN=${LOCALBASE}/bin/gn \
 			NINJA=${LOCALBASE}/bin/ninja \
 			CLANG_BASE_PATH=/usr \
-			HOME=${PORTHOME}
+			HOME=${PORTHOME} \
+			LIBCLANG_PATH=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
 
 # Makes the build look more alive while compiling v8
 MODCARGO_BUILD_ARGS +=	-vv
@@ -59,8 +60,8 @@ DOCDIR =		${PREFIX}/share/doc/deno
 WRKDIST =		${WRKDIR}/deno
 PORTHOME =		${WRKSRC}
 
-DENO_TS_V =		0.16.1
-V8_CARGO_V =		0.93.1
+DENO_TS_V =		0.17.0
+V8_CARGO_V =		0.99.0
 
 V8_DISTDIR =		${MODCARGO_VENDOR_DIR}/v8-${V8_CARGO_V}
 V8_BPGO_DIR =		${V8_DISTDIR}/v8/tools/builtins-pgo

@@ -1,7 +1,7 @@
-Index: modcargo-crates/v8-0.93.1/v8/gni/v8.gni
---- modcargo-crates/v8-0.93.1/v8/gni/v8.gni.orig
-+++ modcargo-crates/v8-0.93.1/v8/gni/v8.gni
-@@ -167,7 +167,7 @@ declare_args() {
+Index: modcargo-crates/v8-0.99.0/v8/gni/v8.gni
+--- modcargo-crates/v8-0.99.0/v8/gni/v8.gni.orig
++++ modcargo-crates/v8-0.99.0/v8/gni/v8.gni
+@@ -171,7 +171,7 @@ declare_args() {
    v8_enable_cet_shadow_stack = false
  
    # Emit CET IBT landing pad instructions in JIT generated code (experimental).

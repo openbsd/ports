@@ -1,7 +1,7 @@
 Index: ext/node/ops/os/cpus.rs
 --- ext/node/ops/os/cpus.rs.orig
 +++ ext/node/ops/os/cpus.rs
-@@ -293,6 +293,11 @@ pub fn cpu_info() -> Option<Vec<CpuInfo>> {
+@@ -294,6 +294,11 @@ pub fn cpu_info() -> Option<Vec<CpuInfo>> {
    Some(cpus)
  }
  
