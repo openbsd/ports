@@ -1,3 +1,4 @@
+@ask-update traccar-<6.3 Note, default.xml is no longer available - config changes need to be merged
 @newgroup _traccar:824
 @newuser _traccar:824:_traccar::Traccar user:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/traccar
