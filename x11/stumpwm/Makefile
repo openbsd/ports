@@ -2,7 +2,7 @@ COMMENT=		easily hackable Common LISP window manager
 
 VERSION=		23.11
 DISTNAME=		stumpwm-${VERSION}
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		x11
 
@@ -17,12 +17,12 @@ WANTLIB += c m pthread util zstd
 
 SITES=		https://github.com/stumpwm/stumpwm/archive/
 SITES.a=	https://github.com/edicl/cl-ppcre/archive/
-SITES.b=	https://beta.quicklisp.org/archive/clx/2022-07-07/
+SITES.b=	https://github.com/sharplispers/clx/archive/refs/tags/
 SITES.c=	https://beta.quicklisp.org/archive/alexandria/2022-07-07/
 
 DISTFILES=	${DISTNAME}{${VERSION}}${EXTRACT_SUFX}
 DISTFILES.a= 	cl-ppcre-2.1.1{v2.1.1}.tar.gz
-DISTFILES.b= 	clx-20220707-git.tgz
+DISTFILES.b= 	clx-0.7.6{0.7.6}.tar.gz
 DISTFILES.c= 	alexandria-20220707-git.tgz
 
 BUILD_DEPENDS=		lang/sbcl \
