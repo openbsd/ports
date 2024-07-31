@@ -464,6 +464,7 @@
      SUBDIR += py-meld3,python3
      SUBDIR += py-metallum,python3
      SUBDIR += py-multidict,python3
+     SUBDIR += py-multipart,python3
      SUBDIR += py-ndg-httpsclient,python3
      SUBDIR += py-openapi-core,python3
      SUBDIR += py-qtwebengine,python3
