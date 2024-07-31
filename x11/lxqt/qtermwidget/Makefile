@@ -1,6 +1,7 @@
 COMMENT =	the terminal widget for QTerminal
 
 NAME =		qtermwidget
+VERSION =	2.0.1
 
 SHARED_LIBS +=  qtermwidget6 0.0
 
