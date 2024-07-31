@@ -35,7 +35,14 @@ WANTLIB +=	${COMPILER_LIBCXX} c edit execinfo m z
 SITES =		https://github.com/llvm/llvm-project/releases/download/llvmorg-${LLVM_VERSION}/
 EXTRACT_SUFX =	.tar.xz
 
+# BUILD_LLDB is defined by /usr/share/mk/bsd.own.mk
+.if ${BUILD_LLDB:L} == yes
 MULTI_PACKAGES ?=	-main -python -lldb
+PROJECTS ?=		clang;lld;lldb
+.else
+MULTI_PACKAGES ?=	-main -python
+PROJECTS ?=		clang;lld
+.endif
 
 .for i in ${MULTI_PACKAGES:S/-//g}
 DESCR-${i} =	${.CURDIR}/../files/DESCR-${i}
@@ -57,8 +64,6 @@ BUILD_DEPENDS +=	devel/swig \
 .if !${PROPERTIES:Mclang}
 RUN_DEPENDS +=	lang/gcc/${MODGCC4_VERSION},-c++
 .endif
-
-PROJECTS ?=	clang;lld;lldb
 
 CONFIGURE_STYLE +=	cmake
 CONFIGURE_ARGS +=	\

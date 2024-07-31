@@ -17,6 +17,7 @@ COMMENT-src =		Rust source component
 
 V =			1.79.0
 DISTNAME =		rustc-${V}-src
+REVISION-gdb =		0
 
 # rustc bootstrap version
 BV-aarch64 =		1.79.0
@@ -156,8 +157,11 @@ LIB_DEPENDS-main +=	${LIB_DEPENDS} \
 			security/libssh2
 
 RUN_DEPENDS-gdb +=	lang/rust,-main \
-			devel/gdb \
-			devel/llvm/17,-lldb
+			devel/gdb
+# BUILD_LLDB is defined by /usr/share/mk/bsd.own.mk
+.if ${BUILD_LLDB:L} == yes
+RUN_DEPENDS-gdb +=	devel/llvm/17,-lldb
+.endif
 RUN_DEPENDS-clippy +=	lang/rust,-main
 RUN_DEPENDS-rustfmt +=	lang/rust,-main
 RUN_DEPENDS-src +=	lang/rust,-main
