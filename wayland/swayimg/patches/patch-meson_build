@@ -3,7 +3,7 @@ OpenBSD doesnt have librt
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -40,7 +40,7 @@ xkb = dependency('xkbcommon')
+@@ -41,7 +41,7 @@ xkb = dependency('xkbcommon')
  fontconfig = dependency('fontconfig')
  freetype = dependency('freetype2')
  threads = dependency('threads')
@@ -11,8 +11,8 @@ Index: meson.build
 +# rt = cc.find_library('rt')
  # optional dependencies: file formats support
  exr = dependency('OpenEXR', version: '>=3.1', required: get_option('exr'))
- gif = cc.find_library('gif', required: get_option('gif'))
-@@ -203,7 +203,7 @@ executable(
+ heif = dependency('libheif', required: get_option('heif'))
+@@ -215,7 +215,7 @@ executable(
    sources,
    dependencies: [
      # runtime
