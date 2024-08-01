@@ -1,6 +1,6 @@
 COMMENT=		fast and secure postfix graylisting policy server
 
-DISTNAME=		s-postgray-0.8.1
+DISTNAME=		s-postgray-0.8.3
 CATEGORIES=		mail
 HOMEPAGE=		https://www.sdaoden.eu/code.html\#s-postgray
 
@@ -22,8 +22,7 @@ MAKE_FILE=		makefile
 MAKE_FLAGS=		MANDIR="${DESTDIR}${PREFIX}"/man/man8 \
 			VAL_STORE_PATH=/tmp
 
-# get rid of hardcoded -O2
-MAKE_FLAGS+=		SUFOPT="-DNDEBUG -I./include"
+MAKE_FLAGS+=		SUFOPT=" "
 
 do-test:
 	cd ${WRKBUILD} && ./s-postgray-test.sh
