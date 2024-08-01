@@ -1,0 +1,18 @@
+LibreSSL does not support SSL_CONF_cmd.
+This is already present in rsyslog master and will most likely ship
+with a future version.
+https://github.com/rsyslog/rsyslog/commit/b79fd513271bdd02d8a37fa4197d2f293aaf6d11
+
+Index: runtime/net_ossl.h
+--- runtime/net_ossl.h.orig
++++ runtime/net_ossl.h
+@@ -88,7 +88,9 @@ BEGINinterface(net_ossl) /* name must also be changed 
+ 	rsRetVal (*osslPeerfingerprint)(net_ossl_t *pThis, X509* certpeer, uchar *fromHostIP);
+ 	X509* (*osslGetpeercert)(net_ossl_t *pThis, SSL *ssl, uchar *fromHostIP);
+ 	rsRetVal (*osslChkpeercertvalidity)(net_ossl_t *pThis, SSL *ssl, uchar *fromHostIP);
++#if OPENSSL_VERSION_NUMBER >= 0x10002000L && !defined(LIBRESSL_VERSION_NUMBER)
+ 	rsRetVal (*osslApplyTlscgfcmd)(net_ossl_t *pThis, uchar *tlscfgcmd);
++#endif // OPENSSL_VERSION_NUMBER >= 0x10002000L
+ 	void (*osslSetBioCallback)(BIO *conn);
+ 	void (*osslSetCtxVerifyCallback)(SSL_CTX *pCtx, int flags);
+ 	void (*osslSetSslVerifyCallback)(SSL *pSsl, int flags);

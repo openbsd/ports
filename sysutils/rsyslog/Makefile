@@ -6,7 +6,7 @@ COMMENT-elasticsearch =	Elasticsearch plugin for rsyslog
 
 MULTI_PACKAGES =	-main -mysql -normalize -pgsql -elasticsearch
 
-V =			8.2208.0
+V =			8.2404.0
 DISTNAME =		rsyslog-$V
 PKGNAME-main =		rsyslog-$V
 PKGNAME-mysql =		rsyslog-mysql-$V
@@ -14,15 +14,8 @@ PKGNAME-normalize =	rsyslog-normalize-$V
 PKGNAME-pgsql =		rsyslog-pgsql-$V
 PKGNAME-elasticsearch =	rsyslog-elasticsearch-$V
 CATEGORIES =		sysutils
-REVISION-elasticsearch =0
-REVISION-main =		0
-REVISION-mysql =	0
-REVISION-normalize =	0
-REVISION-pgsql =	0
 
 HOMEPAGE =		https://www.rsyslog.com/
-
-MAINTAINER =		Remi Locherer <remi@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
@@ -32,7 +25,7 @@ COMPILER =		base-clang ports-gcc base-gcc
 WANTLIB-main +=		c crypto curl estr fastjson gcrypt gmp gnutls
 WANTLIB-main +=		gpg-error hogweed iconv idn2 intl m nettle nghttp2
 WANTLIB-main +=		p11-kit pthread relp ssl tasn1 unistring uuid z
-WANTLIB-main +=		brotlidec brotlienc execinfo zstd
+WANTLIB-main +=		execinfo nghttp3 ngtcp2 ngtcp2_crypto_quictls
 
 WANTLIB-mysql +=	crypto m mariadb pthread ssl z
 
@@ -41,6 +34,7 @@ WANTLIB-normalize +=	estr fastjson lognorm pthread
 WANTLIB-pgsql +=	crypto m pq pthread ssl
 
 WANTLIB-elasticsearch +=	crypto curl m nghttp2 pthread ssl z
+WANTLIB-elasticsearch +=	nghttp3 ngtcp2 ngtcp2_crypto_quictls
 
 LIB_DEPENDS-main =	devel/libfastjson \
 			devel/libestr \
