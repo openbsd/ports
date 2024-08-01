@@ -10,4 +10,4 @@ Index: src/pipewire/impl-node.c
 +#endif
  #include <limits.h>
  
- #include <spa/support/system.h>
+ #include "config.h"

@@ -154,6 +154,7 @@ lib/spa-0.2/videotestsrc/
 @man man/man7/pipewire-pulse-module-device-manager.7
 @man man/man7/pipewire-pulse-module-device-restore.7
 @man man/man7/pipewire-pulse-module-echo-cancel.7
+@man man/man7/pipewire-pulse-module-gsettings.7
 @man man/man7/pipewire-pulse-module-jackdbus-detect.7
 @man man/man7/pipewire-pulse-module-ladspa-sink.7
 @man man/man7/pipewire-pulse-module-ladspa-source.7
@@ -180,6 +181,7 @@ lib/spa-0.2/videotestsrc/
 @man man/man7/pipewire-pulse-module-x11-bell.7
 @man man/man7/pipewire-pulse-module-zeroconf-discover.7
 @man man/man7/pipewire-pulse-modules.7
+share/glib-2.0/schemas/org.freedesktop.pulseaudio.gschema.xml
 share/locale/af/LC_MESSAGES/pipewire.mo
 share/locale/as/LC_MESSAGES/pipewire.mo
 share/locale/be/LC_MESSAGES/pipewire.mo
@@ -273,3 +275,4 @@ share/pipewire/pipewire.conf.avail/20-upmix.conf
 @sample ${SYSCONFDIR}/pipewire/pipewire-avb.conf.d/
 @sample ${SYSCONFDIR}/pipewire/pipewire-pulse.conf.d/
 @sample ${SYSCONFDIR}/pipewire/pipewire.conf.d/
+@tag glib-compile-schemas

@@ -12,7 +12,7 @@ Index: src/modules/module-netjack2-manager.c
  static void reset_volume(struct volume *vol, uint32_t n_volumes)
  {
  	uint32_t i;
-@@ -814,9 +818,9 @@ static int make_announce_socket(struct sockaddr_storag
+@@ -816,9 +820,9 @@ static int make_announce_socket(struct sockaddr_storag
  	spa_zero(req);
  	if (ifname) {
  		snprintf(req.ifr_name, sizeof(req.ifr_name), "%s", ifname);

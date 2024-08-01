@@ -2,20 +2,22 @@ COMMENT-main=		low-level multimedia framework - client & server
 COMMENT-libs=		low-level multimedia framework - libraries
 
 PW_PROJECT=		pipewire
-PW_VERSION=		1.2.1
+PW_VERSION=		1.2.2
 PKGNAME-libs=		lib${PW_PROJECT}-${PW_VERSION}
 
 SHARED_LIBS += pipewire-0.3              0.2 # 0.1201.0
 
 MULTI_PACKAGES=		-main -libs
 
-WANTLIB-main += X11 Xfixes c canberra curses dbus-1 glib-2.0 gobject-2.0
-WANTLIB-main += gstallocators-1.0 gstaudio-1.0 gstbase-1.0 gstreamer-1.0
-WANTLIB-main += gstvideo-1.0 m opus pipewire-0.3 pthread readline sndfile
+WANTLIB-main += X11 Xfixes c canberra curses dbus-1 gio-2.0 glib-2.0
+WANTLIB-main += gobject-2.0 gstallocators-1.0 gstaudio-1.0 gstbase-1.0
+WANTLIB-main += gstreamer-1.0 gstvideo-1.0 m opus pipewire-0.3 pthread
+WANTLIB-main += readline sndfile
 
 WANTLIB-libs += intl pthread
 
-MODULES=		devel/meson \
+MODULES=		devel/dconf \
+			devel/meson \
 			lang/python
 
 MODPY_RUNDEP=		No
@@ -32,8 +34,12 @@ LIB_DEPENDS-main=	${BASE_PKGPATH},-libs \
 
 LIB_DEPENDS-libs=	devel/gettext,-runtime
 
+RUN_DEPENDS-main=	${MODDCONF_RUN_DEPENDS}
+
 # needs a pipewire-session-manager; see patch-src_daemon_pipewire_conf_in
 RUN_DEPENDS-main +=	multimedia/pipewire/wireplumber
+
+RUN_DEPENDS-libs=	# empty
 
 # libintl
 CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
