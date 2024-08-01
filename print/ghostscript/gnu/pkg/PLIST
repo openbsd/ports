@@ -4,7 +4,6 @@
 bin/dvipdf
 bin/eps2eps
 @bin bin/gpcl6
-@bin bin/gpdl
 @bin bin/gs
 bin/gsbj
 bin/gsdj
@@ -12,7 +11,6 @@ bin/gsdj500
 bin/gslj
 bin/gslp
 bin/gsnd
-@bin bin/gxps
 bin/lprsetup.sh
 bin/pdf2dsc
 bin/pdf2ps
@@ -36,16 +34,10 @@ include/ghostscript/gserrors.h
 include/ghostscript/iapi.h
 include/ghostscript/ierrors.h
 include/ghostscript/plapi.h
-@so lib/libgpcl6.so
-lib/libgpcl6.so.18
+@comment @so lib/libgpcl6.so
+@comment lib/libgpcl6.so.18
 @lib lib/libgpcl6.so.${LIBgpcl6_VERSION}
-@so lib/libgpdl.so
-lib/libgpdl.so.18
-@lib lib/libgpdl.so.${LIBgpdl_VERSION}
 @lib lib/libgs.so.${LIBgs_VERSION}
-@so lib/libgxps.so
-lib/libgxps.so.18
-@lib lib/libgxps.so.${LIBgxps_VERSION}
 @man man/man1/dvipdf.1
 @man man/man1/eps2eps.1
 @man man/man1/gs.1

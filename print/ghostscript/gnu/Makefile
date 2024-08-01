@@ -7,9 +7,7 @@ EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	lang print
 SHARED_LIBS =	gs	18.2
 SHARED_LIBS +=	gpcl6	18.2
-SHARED_LIBS +=	gpdl	18.2
-SHARED_LIBS +=	gxps	18.2
-REVISION =	1
+REVISION =	2
 
 SITES =		https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${VERSION:S/.//g}/
 
@@ -59,8 +57,6 @@ CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	--prefix=${PREFIX}
 CONFIGURE_ARGS +=	--with-gs=gs
 CONFIGURE_ARGS +=	--with-pcl=gpcl6
-CONFIGURE_ARGS +=	--with-xps=gxps
-CONFIGURE_ARGS +=	--with-gpdl=gpdl
 CONFIGURE_ARGS +=	--enable-fontconfig
 CONFIGURE_ARGS +=	--enable-openjpeg
 CONFIGURE_ARGS +=	--without-tesseract
@@ -105,6 +101,7 @@ pre-configure:
 	rm -rf ${WRKSRC}/openjpeg && \
 	rm -rf ${WRKSRC}/tesseract && \
 	rm -rf ${WRKSRC}/tiff && \
+	rm -rf ${WRKSRC}/xps && \
 	rm -rf ${WRKSRC}/zlib
 
 post-install:
@@ -115,8 +112,5 @@ post-install:
 # rename the dynamic binaries
 	mv ${PREFIX}/bin/gs{c,}
 	mv ${PREFIX}/bin/gpcl6{c,}
-	mv ${PREFIX}/bin/gpdl{c,}
-	mv ${PREFIX}/bin/gxps{c,}
- 
 
 .include <bsd.port.mk>
