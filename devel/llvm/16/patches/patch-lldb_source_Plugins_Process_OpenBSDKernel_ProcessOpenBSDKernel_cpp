@@ -1,7 +1,7 @@
 Index: lldb/source/Plugins/Process/OpenBSDKernel/ProcessOpenBSDKernel.cpp
 --- lldb/source/Plugins/Process/OpenBSDKernel/ProcessOpenBSDKernel.cpp.orig
 +++ lldb/source/Plugins/Process/OpenBSDKernel/ProcessOpenBSDKernel.cpp
-@@ -0,0 +1,223 @@
+@@ -0,0 +1,232 @@
 +//===-- ProcessOpenBSDKernel.cpp ------------------------------------------===//
 +//
 +// Part of the LLVM Project, under the Apache License v2.0 with LLVM Exceptions.
@@ -23,6 +23,7 @@ Index: lldb/source/Plugins/Process/OpenBSDKernel/ProcessOpenBSDKernel.cpp
 +#define _KERNEL
 +#include <machine/cpu.h>
 +#include <sys/proc.h>
++#include <sys/exec_elf.h>
 +#undef _KERNEL
 +#endif
 +
@@ -64,6 +65,14 @@ Index: lldb/source/Plugins/Process/OpenBSDKernel/ProcessOpenBSDKernel.cpp
 +  ModuleSP executable = target_sp->GetExecutableModule();
 +  if (crash_file && !can_connect && executable) {
 +#if defined(__OpenBSD__)
++    char buf[4];
++    FILE *fp = fopen(crash_file->GetPath().c_str(), "r");
++    if (fp == NULL)
++      return nullptr;
++    size_t r = fread(buf, 1, sizeof(buf), fp);
++    fclose(fp);
++    if (r != sizeof(buf) || memcmp(buf, ELFMAG, sizeof(buf)) == 0)
++      return nullptr;
 +    kvm_t *kvm =
 +	kvm_open(executable->GetFileSpec().GetPath().c_str(),
 +		 crash_file->GetPath().c_str(), nullptr, O_RDONLY, nullptr);
