@@ -1,6 +1,6 @@
 COMMENT=	library for WWW access in Perl
 
-DISTNAME=	libwww-perl-6.72
+DISTNAME=	libwww-perl-6.77
 PKGNAME=	p5-${DISTNAME:S/-perl-/-/}
 CATEGORIES=	www
 
@@ -26,7 +26,8 @@ RUN_DEPENDS=	devel/p5-File-Listing>=6.0 \
 
 TEST_DEPENDS =	devel/p5-Test-Fatal \
 		devel/p5-Test-Needs \
-		devel/p5-Test-RequiresInternet
+		devel/p5-Test-RequiresInternet \
+		www/p5-HTTP-CookieJar
 
 PKG_ARCH=	*
 
