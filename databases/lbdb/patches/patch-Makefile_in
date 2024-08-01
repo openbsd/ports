@@ -1,7 +1,15 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -197,6 +197,6 @@ Makefile: Makefile.in
+@@ -55,7 +55,6 @@ testinstalled:
+ 
+ test_perl:
+ 	[ "$(PERL)" = "no" ] || perl -wc nodelist2lbdb
+-	[ "$(PERL)" = "no" ] || perl -wc palm_lsaddr
+ 	[ "$(PERL)" = "no" ] || perl -wc mutt_ldap_query
+ 	[ "$(PERL)" = "no" ] || perl -wc vcquery
+ 
+@@ -194,6 +193,6 @@ Makefile: Makefile.in
  	    -e 's!@''dotlock@!$(DOTLOCKBASE)!' $@.in > $@
  
  %.o: %.c

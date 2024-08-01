@@ -1,7 +1,7 @@
 COMMENT-main =		"little brother's database", email address query tools
 COMMENT-ldap =		LDAP support for lbdb
 
-DISTNAME =		lbdb-0.52.1
+DISTNAME =		lbdb-0.54
 
 CATEGORIES =		databases mail
 
@@ -30,7 +30,7 @@ WANTLIB-ldap =
 
 MAKE_ENV =		install_prefix=${WRKINST}
 
-NO_TEST =		Yes
+TEST_TARGET =		test
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 

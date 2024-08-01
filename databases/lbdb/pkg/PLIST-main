@@ -15,15 +15,17 @@ lib/lbdb/m_getent
 lib/lbdb/m_gnomecard
 lib/lbdb/m_inmail
 lib/lbdb/m_muttalias
-lib/lbdb/m_palm
+@comment lib/lbdb/m_palm
 lib/lbdb/m_passwd
 lib/lbdb/m_pine
+lib/lbdb/m_vcf
 lib/lbdb/m_wanderlust
 lib/lbdb/m_yppasswd
 lib/lbdb/munge
-lib/lbdb/palm_lsaddr
+@comment lib/lbdb/palm_lsaddr
 @bin lib/lbdb/qpto8bit
 lib/lbdb/tac
+lib/lbdb/vcquery
 @man man/man1/lbdb-fetchaddr.1
 @man man/man1/lbdb_dotlock.1
 @man man/man1/lbdbq.1
