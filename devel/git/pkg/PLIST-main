@@ -134,6 +134,7 @@ libexec/git/git-quiltimport
 @bin libexec/git/git-rebase
 @bin libexec/git/git-receive-pack
 @bin libexec/git/git-reflog
+@bin libexec/git/git-refs
 @bin libexec/git/git-remote
 @bin libexec/git/git-remote-ext
 @bin libexec/git/git-remote-fd
@@ -321,6 +322,7 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-rebase.1
 @man man/man1/git-receive-pack.1
 @man man/man1/git-reflog.1
+@man man/man1/git-refs.1
 @man man/man1/git-remote-ext.1
 @man man/man1/git-remote-fd.1
 @man man/man1/git-remote.1
@@ -402,6 +404,7 @@ libexec/git/mergetools/xxdiff
 @man man/man7/gitfaq.7
 @man man/man7/gitglossary.7
 @man man/man7/gitnamespaces.7
+@man man/man7/gitpacking.7
 @man man/man7/gitremote-helpers.7
 @man man/man7/gitrevisions.7
 @man man/man7/gitsubmodules.7
