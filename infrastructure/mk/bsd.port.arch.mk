@@ -1,4 +1,4 @@
-# $OpenBSD: bsd.port.arch.mk,v 1.14 2020/04/16 19:33:29 espie Exp $
+# $OpenBSD: bsd.port.arch.mk,v 1.15 2024/08/01 07:35:14 sthen Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -53,6 +53,11 @@ FLAVOR := ${FLAVOR:N$f}
 # build the actual list of subpackages we want
 BUILD_PACKAGES =
 
+# compute pattern for identifying bad variables
+.for A in ${ALL_ARCHS}
+_arch_check := ${_arch_check}:N${A}
+.endfor
+
 .for _s in ${MULTI_PACKAGES}
 
 # ONLY_FOR_ARCHS/NOT_FOR_ARCHS are special:
@@ -72,8 +77,13 @@ IGNORE${_s} += "Ignored as FLAVOR contains ${FLAVOR:M${_T}}"
 .    endif
 .  endfor
 
-# compute _ARCH_OK for ignore
 .  if defined(ONLY_FOR_ARCHS${_s})
+# validate against full architecture list
+.    for _m in ${_arch_check}
+.      if !empty(ONLY_FOR_ARCHS${_m})
+ERRORS += "Fatal: unrecognized architecture ${ONLY_FOR_ARCHS${_m}} in ONLY_FOR_ARCHS${_s}"
+.      endif
+.    endfor
 .    for A B in ${MACHINE_ARCH} ${ARCH}
 .      if empty(ONLY_FOR_ARCHS${_s}:M$A) && empty(ONLY_FOR_ARCHS${_s}:M$B)
 .        if ${MACHINE_ARCH} == "${ARCH}"
@@ -85,6 +95,12 @@ IGNORE${_s} += "is only for ${ONLY_FOR_ARCHS${_s}}, not ${MACHINE_ARCH} \(${ARCH
 .    endfor
 .  endif
 .  if defined(NOT_FOR_ARCHS${_s})
+# validate against full architecture list
+.    for _m in ${_arch_check}
+.      if !empty(NOT_FOR_ARCHS${_m})
+ERRORS += "Fatal: unrecognized architecture ${NOT_FOR_ARCHS${_m}} in NOT_FOR_ARCHS${_s}"
+.      endif
+.    endfor
 .    for A B in ${MACHINE_ARCH} ${ARCH}
 .      if !empty(NOT_FOR_ARCHS${_s}:M$A) || !empty(NOT_FOR_ARCHS${_s}:M$B)
 IGNORE${_s} += "is not for ${NOT_FOR_ARCHS${_s}}"
