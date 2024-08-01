@@ -10,6 +10,8 @@ DISTNAME=	gromox-${V}
 PKGNAME-main=	gromox-core-${V}
 PKGNAME-mapi=	gromox-mapi-${V}
 
+REVISION=	0
+
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	gromox
 GH_COMMIT=	f0a485f5498dbe843f1b101807dd063edce02036
@@ -81,7 +83,7 @@ LIB_DEPENDS-main= 	archivers/zstd \
 			devel/fmt \
 			devel/jsoncpp \
 			devel/libHX \
-			devel/libvmime>=0.9.4 \
+			devel/libvmime>=20240611p0 \
 			net/curl \
 			sysutils/xxhash \
 			textproc/libxml \
