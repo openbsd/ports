@@ -1,0 +1,14 @@
+Use sio_flush() instead of sio_stop() to improve controls responsiveness.
+
+Index: modules/audio_output/sndio.c
+--- modules/audio_output/sndio.c.orig
++++ modules/audio_output/sndio.c
+@@ -245,7 +245,7 @@ static void Flush (audio_output_t *aout, bool wait)
+ {
+     aout_sys_t *sys = aout->sys;
+ 
+-    sio_stop (sys->hdl);
++    sio_flush (sys->hdl);
+     sys->started = 0;
+     sys->delay = 0;
+     sio_start (sys->hdl);
