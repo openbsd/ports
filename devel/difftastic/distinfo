@@ -140,7 +140,7 @@ SHA256 (cargo/wu-diff-0.1.2.tar.gz) = jj5nNfzeBkMocNuNydfjqxuTcnwU6u8ymWlCYpnyiJ
 SHA256 (cargo/yansi-0.5.1.tar.gz) = CQQc2Qz4X3+LLfYMZG+FO39TXOaPhSROtnMc+J+kmOw=
 SHA256 (cargo/zerocopy-0.7.32.tar.gz) = dNTTlh5T+kyaJahjf8K/ryWVs9OuNIdVaKXPZHh3Fr4=
 SHA256 (cargo/zerocopy-derive-0.7.32.tar.gz) = nOGxjM2Oc6kyEYb5fkb58Et3iFEXdWexl1EJ0moI0qY=
-SHA256 (difftastic-0.59.0.tar.gz) = IpjsDEgKPsmHmez7BlQD4T+iJfjtb8qFj9+MTv2w3Gk=
+SHA256 (difftastic-0.60.0.tar.gz) = Q0ayaSQPO+/xU3WNCiMTrMx5ZF7iGzbPzHGsD8pdm10=
 SIZE (cargo/ahash-0.8.11.tar.gz) = 43607
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
 SIZE (cargo/allocator-api2-0.2.16.tar.gz) = 59025
@@ -283,4 +283,4 @@ SIZE (cargo/wu-diff-0.1.2.tar.gz) = 33439
 SIZE (cargo/yansi-0.5.1.tar.gz) = 16525
 SIZE (cargo/zerocopy-0.7.32.tar.gz) = 151096
 SIZE (cargo/zerocopy-derive-0.7.32.tar.gz) = 37623
-SIZE (difftastic-0.59.0.tar.gz) = 43984897
+SIZE (difftastic-0.60.0.tar.gz) = 44037544
