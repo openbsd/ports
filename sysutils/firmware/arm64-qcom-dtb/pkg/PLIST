@@ -3,3 +3,4 @@ firmware/dtb/qcom/
 firmware/dtb/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb
 firmware/dtb/qcom/x1e80100-asus-vivobook-s15.dtb
 firmware/dtb/qcom/x1e80100-lenovo-yoga-slim7x.dtb
+firmware/dtb/qcom/x1e80100-samsung-galaxy-book4-edge.dtb
