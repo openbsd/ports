@@ -2,6 +2,7 @@ COMMENT=		GNOME document viewer
 
 GNOME_PROJECT=		evince
 GNOME_VERSION=		46.3.1
+REVISION=		0
 
 MAJ_V=			3.0
 SUBST_VARS=		MAJ_V

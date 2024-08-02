@@ -1,6 +1,6 @@
 USE_WXNEEDED=		Yes
 
-REVISION=		0
+REVISION=		1
 
 COMMENT=		document viewer for the MATE desktop
 
