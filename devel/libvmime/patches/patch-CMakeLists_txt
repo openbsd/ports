@@ -25,7 +25,34 @@ Index: CMakeLists.txt
  # Source files
  FILE(
  	GLOB_RECURSE
-@@ -741,20 +758,7 @@ ENDIF(VMIME_HAVE_TLS_SUPPORT)
+@@ -657,13 +674,6 @@ ENDIF()
+ ##############################################################################
+ # SSL/TLS support
+ 
+-INCLUDE(FindGnuTLS)
+-INCLUDE(FindOpenSSL)
+-
+-SET(CMAKE_REQUIRED_LIBRARIES "${GNUTLS_LIBRARY}")
+-CHECK_FUNCTION_EXISTS(gnutls_priority_set_direct VMIME_HAVE_GNUTLS_PRIORITY_FUNCS)
+-
+-
+ OPTION(
+ 	VMIME_HAVE_TLS_SUPPORT
+ 	"SSL/TLS support (requires either GNU TLS or OpenSSL library)"
+@@ -685,7 +695,12 @@ SET_PROPERTY(
+ 
+ 
+ IF(VMIME_HAVE_TLS_SUPPORT)
++	INCLUDE(FindGnuTLS)
++	INCLUDE(FindOpenSSL)
+ 
++	SET(CMAKE_REQUIRED_LIBRARIES "${GNUTLS_LIBRARY}")
++	CHECK_FUNCTION_EXISTS(gnutls_priority_set_direct VMIME_HAVE_GNUTLS_PRIORITY_FUNCS)
++
+ 	IF(VMIME_TLS_SUPPORT_LIB STREQUAL "gnutls")
+ 
+ 		INCLUDE_DIRECTORIES(
+@@ -741,20 +756,7 @@ ENDIF(VMIME_HAVE_TLS_SUPPORT)
  
  
  ##############################################################################
