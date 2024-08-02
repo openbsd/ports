@@ -1,6 +1,6 @@
 COMMENT =		Python library for approximate and phonetic string matching
 
-MODPY_EGG_VERSION =	1.0.4
+MODPY_EGG_VERSION =	1.1.0
 DISTNAME =		jellyfish-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/_/-/g}
 
@@ -10,7 +10,7 @@ HOMEPAGE =		https://jamesturk.github.io/jellyfish/
 
 MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
-# BSD
+# MIT
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODCARGO_WANTLIB}
