@@ -19,21 +19,12 @@ Index: src/shared/quickjs/quickjs.c
      || defined(__APPLE__)
  #include <xlocale.h>
  #else
-@@ -1735,6 +1737,8 @@ static inline size_t js_def_malloc_usable_size(void *p
-     return malloc_size(ptr);
+@@ -1762,6 +1764,8 @@ static size_t js_def_malloc_usable_size(const void *pt
  #elif defined(_WIN32)
-     return _msize(ptr);
-+#elif defined(__OpenBSD__)
-+    return 0;
+     return _msize((void *)ptr);
  #elif defined(EMSCRIPTEN)
++    return 0;
++#elif defined(__OpenBSD__)
      return 0;
  #elif defined(__linux__)
-@@ -1809,6 +1813,8 @@ static const JSMallocFunctions def_malloc_funcs = {
-     malloc_size,
- #elif defined(_WIN32)
-     (size_t (*)(const void *))_msize,
-+#elif defined(__OpenBSD__)
-+    NULL,
- #elif defined(EMSCRIPTEN)
-     NULL,
- #elif defined(__linux__)
+     return malloc_usable_size((void *)ptr);
