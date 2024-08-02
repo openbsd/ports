@@ -35,7 +35,6 @@ include/atalk/unix.h
 include/atalk/util.h
 include/atalk/vfs.h
 include/atalk/volume.h
-@static-lib lib/libatalk.a
 @lib lib/libatalk.so.${LIBatalk_VERSION}
 lib/netatalk/
 @so lib/netatalk/uams_clrtxt.so

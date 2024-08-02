@@ -1,6 +1,6 @@
 COMMENT=		Apple Filing Protocol file server over TCP/IP
 
-V=			3.2.4
+V=			3.2.5
 DISTNAME=		netatalk-${V}
 EXTRACT_SUFX=		.tar.xz
 PKGSPEC=		netatalk->=3,<4
@@ -38,6 +38,7 @@ RUN_DEPENDS=		net/avahi
 RUN_DEPENDS +=		net/p5-Net-DBus
 
 CONFIGURE_ARGS=		-Dwith-acls=false \
+			-Dwith-cnid-mysql-backend=false \
 			-Dwith-dtrace=false \
 			-Dwith-gssapi=false \
 			-Dwith-kerberos=false \
@@ -58,7 +59,6 @@ CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 post-install:
-	rm ${PREFIX}/lib/netatalk/*.a
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/netatalk/${LOCALSTATEDIR}
 	mv ${WRKINST}${SYSCONFDIR}/{dbus-1,netatalk} \
 		${PREFIX}/share/examples/netatalk/
