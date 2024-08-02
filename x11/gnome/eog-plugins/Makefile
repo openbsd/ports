@@ -1,8 +1,7 @@
 COMMENT=		plugins for EOG
 
 GNOME_PROJECT=		eog-plugins
-GNOME_VERSION=		44.0
-REVISION=		0
+GNOME_VERSION=		44.1
 
 CATEGORIES=		graphics
 
