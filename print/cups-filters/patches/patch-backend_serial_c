@@ -1,4 +1,7 @@
-https://github.com/OpenPrinting/cups-filters/pull/548
+From edc599855af0c7cc2af8b2e292f845779c395ff9 Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@bsdfrog.org>
+Date: Fri, 2 Aug 2024 22:29:28 +0200
+Subject: [PATCH] serial backend: unbreak build on BSD (#548)
 
 Index: backend/serial.c
 --- backend/serial.c.orig
