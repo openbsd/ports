@@ -1,9 +1,8 @@
 COMMENT =		client-side and server-side support for OpenAPI Spec v3
 
-MODPY_EGG_VERSION =	0.16.5
+MODPY_EGG_VERSION =	0.19.2
 DISTNAME =		openapi_core-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/_/-/}
-REVISION =		0
 
 CATEGORIES =		www
 
@@ -16,6 +15,7 @@ MODULES =		lang/python
 
 RUN_DEPENDS =		devel/py-isodate${MODPY_FLAVOR} \
 			devel/py-jsonschema-spec${MODPY_FLAVOR} \
+			devel/py-jsonschema-path${MODPY_FLAVOR} \
 			devel/py-more-itertools${MODPY_FLAVOR} \
 			devel/py-openapi-schema-validator${MODPY_FLAVOR} \
 			devel/py-openapi-spec-validator${MODPY_FLAVOR} \
