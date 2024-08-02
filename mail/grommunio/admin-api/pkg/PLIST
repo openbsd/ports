@@ -18,6 +18,7 @@
 @man man/man1/grommunio-admin-ldap.1
 @man man/man1/grommunio-admin-mconf.1
 @man man/man1/grommunio-admin-mlist.1
+@man man/man1/grommunio-admin-org.1
 @man man/man1/grommunio-admin-passwd.1
 @man man/man1/grommunio-admin-run.1
 @man man/man1/grommunio-admin-server.1
@@ -94,6 +95,8 @@ share/grommunio-admin-api/cli/${MODPY_PYCACHE}misc.${MODPY_PYC_MAGIC_TAG}${MODPY
 share/grommunio-admin-api/cli/${MODPY_PYCACHE}misc.${MODPY_PYC_MAGIC_TAG}pyc
 share/grommunio-admin-api/cli/${MODPY_PYCACHE}mlist.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/grommunio-admin-api/cli/${MODPY_PYCACHE}mlist.${MODPY_PYC_MAGIC_TAG}pyc
+share/grommunio-admin-api/cli/${MODPY_PYCACHE}org.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/grommunio-admin-api/cli/${MODPY_PYCACHE}org.${MODPY_PYC_MAGIC_TAG}pyc
 share/grommunio-admin-api/cli/${MODPY_PYCACHE}remote.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/grommunio-admin-api/cli/${MODPY_PYCACHE}remote.${MODPY_PYC_MAGIC_TAG}pyc
 share/grommunio-admin-api/cli/${MODPY_PYCACHE}server.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -114,6 +117,7 @@ share/grommunio-admin-api/cli/ldap.py
 share/grommunio-admin-api/cli/mconf.py
 share/grommunio-admin-api/cli/misc.py
 share/grommunio-admin-api/cli/mlist.py
+share/grommunio-admin-api/cli/org.py
 share/grommunio-admin-api/cli/remote.py
 share/grommunio-admin-api/cli/server.py
 share/grommunio-admin-api/cli/services.py

@@ -22,7 +22,7 @@ Index: data/config.yaml.in
    ldapPath: '/etc/gromox/ldap_adaptor.cfg'
    authmgrPath: '/etc/gromox/authmgr.cfg'
 -  fileUid: 'grommunio'
--  fileGid: 'gromox'
+-  fileGid: 'gromoxcf'
 +  fileUid: '_grommunio'
 +  fileGid: '_gromox'
  logs:

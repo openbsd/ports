@@ -16,7 +16,7 @@ Index: tools/config.py
              "exmdbHost": "::1",
              "exmdbPort": "5000",
              "domainStorageLevels": 1,
-@@ -89,8 +89,8 @@ def _defaultConfig():
+@@ -87,8 +87,8 @@ def _defaultConfig():
              "updateSkriptPath": "/usr/sbin/grommunio-update",
              },
          "security": {
