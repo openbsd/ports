@@ -3,23 +3,27 @@ OpenBSD console support
 Index: common/terminal.c
 --- common/terminal.c.orig
 +++ common/terminal.c
-@@ -21,7 +21,7 @@
+@@ -26,6 +26,12 @@
  #define K_ENABLE  K_XLATE
  #define K_DISABLE K_RAW
- #define FRSIG     SIGIO
--#elif defined(__NetBSD__)
-+#elif defined(__NetBSD__) || defined(__OpenBSD__)
- #include <dev/wscons/wsdisplay_usl_io.h>
- #define K_ENABLE  K_XLATE
- #define K_DISABLE K_RAW
-@@ -147,6 +147,14 @@ static int get_tty_path(int tty, char path[static TTYP
+ #define FRSIG     0 // unimplemented
++#elif defined(__OpenBSD__)
++#include <dev/wscons/wsconsio.h>
++#include <dev/wscons/wsdisplay_usl_io.h>
++#define K_ENABLE  K_XLATE
++#define K_DISABLE K_RAW
++#define FRSIG     SIGUSR2
+ #else
+ #error Unsupported platform
+ #endif
+@@ -147,12 +153,25 @@ static int get_tty_path(int tty, char path[static TTYP
  	}
  	return 0;
  }
 +#elif defined(__OpenBSD__)
 +static int get_tty_path(int tty, char path[static TTYPATHLEN]) {
 +	assert(tty >= 0);
-+	if (snprintf(path, TTYPATHLEN, "/dev/ttyC%d", tty) == -1) {
++	if (snprintf(path, TTYPATHLEN, "/dev/ttyC%d", tty - 1) == -1) {
 +		return -1;
 +	}
 +	return 0;
@@ -27,12 +31,130 @@ Index: common/terminal.c
  #else
  #error Unsupported platform
  #endif
-@@ -175,7 +183,7 @@ int terminal_current_vt(int fd) {
+ 
+ int terminal_open(int vt) {
+ 	char path[TTYPATHLEN];
++#ifdef __OpenBSD__
++	if (vt == 0) {
++		snprintf(path, sizeof(path), "/dev/ttyC0");
++	} else
++#endif
+ 	if (get_tty_path(vt, path) == -1) {
+ 		log_errorf("Could not generate tty path: %s", strerror(errno));
  		return -1;
- 	}
- 	return st.v_active;
--#elif defined(__FreeBSD__)
-+#elif defined(__FreeBSD__) || defined(__OpenBSD__)
+@@ -166,10 +185,9 @@ int terminal_open(int vt) {
+ }
+ 
+ int terminal_current_vt(int fd) {
+-#if defined(__linux__) || defined(__NetBSD__)
++#if defined(__linux__) || defined(__NetBSD__) || defined(__OpenBSD__)
+ 	struct vt_stat st;
+ 	int res = ioctl(fd, VT_GETSTATE, &st);
+-	close(fd);
+ 	if (res == -1) {
+ 		log_errorf("Could not retrieve VT state: %s", strerror(errno));
+ 		return -1;
+@@ -178,7 +196,6 @@ int terminal_current_vt(int fd) {
+ #elif defined(__FreeBSD__)
  	int vt;
  	int res = ioctl(fd, VT_GETACTIVE, &vt);
- 	close(fd);
+-	close(fd);
+ 	if (res == -1) {
+ 		log_errorf("Could not retrieve VT state: %s", strerror(errno));
+ 		return -1;
+@@ -195,7 +212,6 @@ int terminal_current_vt(int fd) {
+ }
+ 
+ int terminal_set_process_switching(int fd, bool enable) {
+-	log_debugf("Setting process switching to %d", enable);
+ 	struct vt_mode mode = {
+ 		.mode = enable ? VT_PROCESS : VT_AUTO,
+ 		.waitv = 0,
+@@ -203,7 +219,19 @@ int terminal_set_process_switching(int fd, bool enable
+ 		.acqsig = enable ? SIGUSR2 : 0,
+ 		.frsig = FRSIG,
+ 	};
+-
++	struct vt_mode current_mode;
++	if (ioctl(fd, VT_GETMODE, &current_mode) == -1) {
++		log_errorf("Could not query VT mode for %d: %s",
++		    fd, strerror(errno));
++		return -1;
++	}
++	if (current_mode.mode == mode.mode &&
++	    current_mode.relsig == mode.relsig &&
++	    current_mode.acqsig == mode.acqsig &&
++	    current_mode.frsig == mode.frsig) {
++		log_debugf("%s: %d already in mode %d", __func__, fd, enable);
++		return 0;
++	}
+ 	if (ioctl(fd, VT_SETMODE, &mode) == -1) {
+ 		log_errorf("Could not set VT mode to %s process switching: %s",
+ 			   enable ? "enable" : "disable", strerror(errno));
+@@ -213,7 +241,6 @@ int terminal_set_process_switching(int fd, bool enable
+ }
+ 
+ int terminal_switch_vt(int fd, int vt) {
+-	log_debugf("Switching to VT %d", vt);
+ 	if (ioctl(fd, VT_ACTIVATE, vt) == -1) {
+ 		log_errorf("Could not activate VT %d: %s", vt, strerror(errno));
+ 		return -1;
+@@ -223,7 +250,6 @@ int terminal_switch_vt(int fd, int vt) {
+ }
+ 
+ int terminal_ack_release(int fd) {
+-	log_debug("Acking VT release");
+ 	if (ioctl(fd, VT_RELDISP, 1) == -1) {
+ 		log_errorf("Could not ack VT release: %s", strerror(errno));
+ 		return -1;
+@@ -233,7 +259,6 @@ int terminal_ack_release(int fd) {
+ }
+ 
+ int terminal_ack_acquire(int fd) {
+-	log_debug("Acking VT acquire");
+ 	if (ioctl(fd, VT_RELDISP, VT_ACKACQ) == -1) {
+ 		log_errorf("Could not ack VT acquire: %s", strerror(errno));
+ 		return -1;
+@@ -243,12 +268,20 @@ int terminal_ack_acquire(int fd) {
+ }
+ 
+ int terminal_set_keyboard(int fd, bool enable) {
+-	log_debugf("Setting KD keyboard state to %d", enable);
++#ifndef __OpenBSD__
+ 	if (ioctl(fd, KDSKBMODE, enable ? K_ENABLE : K_DISABLE) == -1) {
+ 		log_errorf("Could not set KD keyboard mode to %s: %s",
+ 			   enable ? "enabled" : "disabled", strerror(errno));
+ 		return -1;
+ 	}
++#else
++	int mode = enable ? WSKBD_RAW : WSKBD_TRANSLATED;
++	if (ioctl(fd, WSKBDIO_SETMODE, &mode) == -1) {
++		log_errorf("Could not set keyboard mode to %s: %s",
++		    enable ? "translated" : "raw", strerror(errno));
++		return -1;
++	}
++#endif
+ #if defined(__FreeBSD__)
+ 	struct termios tios;
+ 	if (tcgetattr(fd, &tios) == -1) {
+@@ -270,11 +303,19 @@ int terminal_set_keyboard(int fd, bool enable) {
+ }
+ 
+ int terminal_set_graphics(int fd, bool enable) {
+-	log_debugf("Setting KD graphics state to %d", enable);
++#ifndef __OpenBSD__
+ 	if (ioctl(fd, KDSETMODE, enable ? KD_GRAPHICS : KD_TEXT) == -1) {
+ 		log_errorf("Could not set KD graphics mode to %s: %s", enable ? "graphics" : "text",
+ 			   strerror(errno));
+ 		return -1;
+ 	}
++#else
++	int mode = enable ? WSDISPLAYIO_MODE_MAPPED : WSDISPLAYIO_MODE_EMUL;
++	if (ioctl(fd, WSDISPLAYIO_SMODE, &mode) == -1) {
++		log_errorf("Could not set graphics mode to %s: %s",
++		    enable ? "mapped" : "emul", strerror(errno));
++		return -1;
++	}
++#endif
+ 	return 0;
+ }
