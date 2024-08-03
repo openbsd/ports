@@ -1,4 +1,3 @@
-- configure: use pkg-config for sndio
 - configure: add initial RISC-V support
 - Fix broken libatomic test
 
@@ -43,7 +42,7 @@ Index: configure
      s390)
          check_64bit s390 s390x
          enabled shared && enable_weak pic
-@@ -5378,7 +5386,6 @@ case $target_os in
+@@ -5379,7 +5387,6 @@ case $target_os in
          enable section_data_rel_ro
          striptype=""
          SHFLAGS='-shared'
@@ -51,7 +50,7 @@ Index: configure
          SLIB_INSTALL_LINKS=
          oss_indev_extralibs="-lossaudio"
          oss_outdev_extralibs="-lossaudio"
-@@ -5734,7 +5741,7 @@ set_default libdir
+@@ -5736,7 +5743,7 @@ set_default libdir
  set_default $PATHS_LIST
  set_default nm
  
@@ -60,7 +59,7 @@ Index: configure
  
  enable_weak_pic() {
      disabled pic && return
-@@ -6189,7 +6196,7 @@ check_headers asm/types.h
+@@ -6191,7 +6198,7 @@ check_headers asm/types.h
  #
  # some configurations also require linking to libatomic, so try
  # both with -latomic and without
@@ -69,13 +68,3 @@ Index: configure
      check_builtin stdatomic stdatomic.h                                                 \
          "atomic_int foo, bar = ATOMIC_VAR_INIT(-1); atomic_store(&foo, 0); foo += bar"  \
          $LATOMIC && eval stdatomic_extralibs="\$LATOMIC" && break
-@@ -6657,7 +6664,8 @@ enabled alsa && { check_pkg_config alsa alsa "alsa/aso
- enabled libjack &&
-     require_pkg_config libjack jack jack/jack.h jack_port_get_latency_range
- 
--enabled sndio && check_lib sndio sndio.h sio_open -lsndio
-+enabled sndio && { check_pkg_config sndio sndio "sndio.h" sio_open ||
-+                   check_lib sndio sndio.h sio_open -lsndio; }
- 
- if enabled libcdio; then
-     check_pkg_config libcdio libcdio_paranoia "cdio/cdda.h cdio/paranoia.h" cdio_cddap_open ||

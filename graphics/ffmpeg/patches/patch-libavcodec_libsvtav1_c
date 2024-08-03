@@ -13,7 +13,6 @@
 - avcodec/libsvtav1: update avctx bit rate according to RC mode
 - avcodec/libsvtav1: signal CPB properties through side data
 - avcodec/libsvtav1: properly initialize the flush EbBufferHeaderType struct
-- avcodec/libsvtav1: remove compressed_ten_bit_format and simplify alloc_buffer
 - avcodec/libsvtav1: replace vbv_bufsize with maximum_buffer_size_ms
 - avcodec/libsvtav1: only set max_buf_sz if both bitrate and rc_buf_sz is set
 - avcodec/libsvtav1: don't force a default value for deprecated options
@@ -45,27 +44,7 @@ Index: libavcodec/libsvtav1.c
  } SvtContext;
  
  static const struct {
-@@ -120,16 +123,12 @@ static int svt_print_error(void *log_ctx, EbErrorType 
- 
- static int alloc_buffer(EbSvtAv1EncConfiguration *config, SvtContext *svt_enc)
- {
--    const int    pack_mode_10bit =
--        (config->encoder_bit_depth > 8) && (config->compressed_ten_bit_format == 0) ? 1 : 0;
--    const size_t luma_size_8bit  =
--        config->source_width * config->source_height * (1 << pack_mode_10bit);
--    const size_t luma_size_10bit =
--        (config->encoder_bit_depth > 8 && pack_mode_10bit == 0) ? luma_size_8bit : 0;
-+    const size_t luma_size = config->source_width * config->source_height *
-+        (config->encoder_bit_depth > 8 ? 2 : 1);
- 
-     EbSvtIOFormat *in_data;
- 
--    svt_enc->raw_size = (luma_size_8bit + luma_size_10bit) * 3 / 2;
-+    svt_enc->raw_size = luma_size * 3 / 2;
- 
-     // allocate buffer for in and out
-     svt_enc->in_buf           = av_mallocz(sizeof(*svt_enc->in_buf));
-@@ -151,11 +150,132 @@ static int config_enc_params(EbSvtAv1EncConfiguration 
+@@ -147,11 +150,132 @@ static int config_enc_params(EbSvtAv1EncConfiguration 
  {
      SvtContext *svt_enc = avctx->priv_data;
      const AVPixFmtDescriptor *desc;
@@ -199,7 +178,7 @@ Index: libavcodec/libsvtav1.c
      param->encoder_bit_depth = desc->comp[0].depth;
  
      if (desc->log2_chroma_w == 1 && desc->log2_chroma_h == 1)
-@@ -169,12 +289,6 @@ static int config_enc_params(EbSvtAv1EncConfiguration 
+@@ -165,12 +289,6 @@ static int config_enc_params(EbSvtAv1EncConfiguration 
          return AVERROR(EINVAL);
      }
  
@@ -212,7 +191,7 @@ Index: libavcodec/libsvtav1.c
      if ((param->encoder_color_format == EB_YUV422 || param->encoder_bit_depth > 10)
           && param->profile != FF_PROFILE_AV1_PROFESSIONAL ) {
          av_log(avctx, AV_LOG_WARNING, "Forcing Professional profile\n");
-@@ -184,40 +298,21 @@ static int config_enc_params(EbSvtAv1EncConfiguration 
+@@ -180,40 +298,21 @@ static int config_enc_params(EbSvtAv1EncConfiguration 
          param->profile = FF_PROFILE_AV1_HIGH;
      }
  
@@ -264,7 +243,7 @@ Index: libavcodec/libsvtav1.c
      return 0;
  }
  
-@@ -330,11 +425,8 @@ static int eb_send_frame(AVCodecContext *avctx, const 
+@@ -326,11 +425,8 @@ static int eb_send_frame(AVCodecContext *avctx, const 
          if (svt_enc->eos_flag == EOS_SENT)
              return 0;
  
@@ -278,7 +257,7 @@ Index: libavcodec/libsvtav1.c
          headerPtrLast.flags         = EB_BUFFERFLAG_EOS;
  
          svt_av1_enc_send_picture(svt_enc->svt_handle, &headerPtrLast);
-@@ -350,6 +442,16 @@ static int eb_send_frame(AVCodecContext *avctx, const 
+@@ -346,6 +442,16 @@ static int eb_send_frame(AVCodecContext *avctx, const 
      headerPtr->p_app_private = NULL;
      headerPtr->pts           = frame->pts;
  
@@ -295,7 +274,7 @@ Index: libavcodec/libsvtav1.c
      svt_av1_enc_send_picture(svt_enc->svt_handle, headerPtr);
  
      return 0;
-@@ -472,21 +574,22 @@ static av_cold int eb_enc_close(AVCodecContext *avctx)
+@@ -468,21 +574,22 @@ static av_cold int eb_enc_close(AVCodecContext *avctx)
  #define OFFSET(x) offsetof(SvtContext, x)
  #define VE AV_OPT_FLAG_VIDEO_PARAM | AV_OPT_FLAG_ENCODING_PARAM
  static const AVOption options[] = {
@@ -327,7 +306,7 @@ Index: libavcodec/libsvtav1.c
  
      FF_AV1_PROFILE_OPTS
  
-@@ -518,21 +621,20 @@ static const AVOption options[] = {
+@@ -514,21 +621,20 @@ static const AVOption options[] = {
          { LEVEL("7.3", 73) },
  #undef LEVEL
  
@@ -360,7 +339,7 @@ Index: libavcodec/libsvtav1.c
      {NULL},
  };
  
-@@ -544,9 +646,10 @@ static const AVClass class = {
+@@ -540,9 +646,10 @@ static const AVClass class = {
  };
  
  static const AVCodecDefault eb_enc_defaults[] = {
@@ -373,7 +352,7 @@ Index: libavcodec/libsvtav1.c
      { "qmax",      "63"    },
      { NULL },
  };
-@@ -561,12 +664,11 @@ AVCodec ff_libsvtav1_encoder = {
+@@ -557,12 +664,11 @@ AVCodec ff_libsvtav1_encoder = {
      .receive_packet = eb_receive_packet,
      .close          = eb_enc_close,
      .capabilities   = AV_CODEC_CAP_DELAY | AV_CODEC_CAP_OTHER_THREADS,
