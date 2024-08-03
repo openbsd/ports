@@ -1,4 +1,4 @@
-VERSION =		4.20.2
+VERSION =		4.20.3
 DISTNAME =		samba-${VERSION}
 EPOCH =			0
 
@@ -57,6 +57,9 @@ WANTLIB-docs =
 
 SITES =			https://download.samba.org/pub/samba/stable/ \
 			https://download.samba.org/pub/samba/old-versions/
+
+# XXX 0640 on Makefile breaks update-patches with PORTS_PRIVSEP=Yes
+FIX_EXTRACT_PERMISSIONS =	Yes
 
 MULTI_PACKAGES =	-main -docs
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
