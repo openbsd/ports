@@ -1,6 +1,6 @@
 COMMENT =	launch independent games
 
-V =		0.1
+V =		0.2
 DISTNAME =	IndieRunner-v${V}
 PKGNAME =	indierunner-${V}
 

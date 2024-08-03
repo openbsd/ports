@@ -4,6 +4,7 @@ ${P5SITE}/IndieRunner.pm
 ${P5SITE}/IndieRunner/Cmdline.pm
 ${P5SITE}/IndieRunner/Engine/
 ${P5SITE}/IndieRunner/Engine.pm
+${P5SITE}/IndieRunner/Engine/DosBox.pm
 ${P5SITE}/IndieRunner/Engine/FNA.pm
 ${P5SITE}/IndieRunner/Engine/GZDoom.pm
 ${P5SITE}/IndieRunner/Engine/Godot.pm
@@ -40,6 +41,8 @@ ${P5SITE}/auto/share/dist/IndieRunner/LICENSE
 ${P5SITE}/auto/share/dist/IndieRunner/Status-Tracker.md
 ${P5SITE}/auto/share/dist/IndieRunner/config/
 ${P5SITE}/auto/share/dist/IndieRunner/config/dllmap.config
+${P5SITE}/auto/share/dist/IndieRunner/doc/
+${P5SITE}/auto/share/dist/IndieRunner/doc/Adding-Engine-Modules.md
 @man man/man1/indierunner.1
 @man man/man3p/IndieRunner.3p
 @man man/man3p/IndieRunner::Cmdline.3p
