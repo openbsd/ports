@@ -1,7 +1,7 @@
 COMMENT =	terminal file manager
 
 MODGO_MODNAME = github.com/antonmedv/walk
-MODGO_VERSION = v1.7.0
+MODGO_VERSION = v1.10.0
 
 DISTNAME =	walk-${MODGO_VERSION}
 
@@ -9,8 +9,7 @@ CATEGORIES =	sysutils
 
 HOMEPAGE =	https://github.com/antonmedv/walk
 
-MAINTAINER =	Gonzalo L. Rodriguez <gonzalo@openbsd.org> \
-		Omar Polo <op@openbsd.org>
+MAINTAINER =	Gonzalo L. Rodriguez <gonzalo@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
