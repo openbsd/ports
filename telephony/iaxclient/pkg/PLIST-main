@@ -1,7 +1,0 @@
-@sample ${SYSCONFDIR}/iaxmodem/
-@bin bin/testcall
-include/iaxclient.h
-lib/libiaxclient.a
-lib/libiaxclient.la
-@lib lib/libiaxclient.so.${LIBiaxclient_VERSION}
-lib/pkgconfig/iaxclient.pc

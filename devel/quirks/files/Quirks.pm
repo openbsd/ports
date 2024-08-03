@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1651 2024/07/28 07:07:04 landry Exp $
+# $OpenBSD: Quirks.pm,v 1.1652 2024/08/03 17:42:53 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1975,6 +1975,8 @@ setup_obsolete_reason(
 	68 => 'adsuck',
 	6 => 'p5-Net-ICQ2000',
 	6 => 'vicq',
+	3 => 'iaxclient',
+	3 => 'iaxclient-tcl',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
