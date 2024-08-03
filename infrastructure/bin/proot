@@ -1,6 +1,6 @@
 #! /usr/bin/perl
 # ex:ts=8 sw=4:
-# $OpenBSD: proot,v 1.74 2023/05/06 05:21:15 espie Exp $
+# $OpenBSD: proot,v 1.75 2024/08/03 15:24:34 sthen Exp $
 #
 # Copyright (c) 2016 Marc Espie <espie@openbsd.org>
 #
@@ -151,12 +151,16 @@ sub do_parm($state, $k, $v)
 		    $state->{PACKAGE_REPOSITORY} = File::Spec->canonpath($v);
 	    }, PLIST_REPOSITORY => sub() {
 		    $state->{PLIST_REPOSITORY} = File::Spec->canonpath($v);
+	    }, BULK_COOKIES_DIR => sub() {
+		    $state->{BULK_COOKIES_DIR} = File::Spec->canonpath($v);
 	    }, NFSDIR => sub() {
 		    $state->{DISTDIR} = File::Spec->canonpath("$v/distfiles");
 		    $state->{PACKAGE_REPOSITORY} = 
 			File::Spec->canonpath("$v/packages");
 		    $state->{PLIST_REPOSITORY} =
 		    	File::Spec->canonpath("$v/plist");
+		    $state->{BULK_COOKIES_DIR} =
+			File::Spec->canonpath("$v/bulk");
 	    }, LOCALDIR => sub() {
 		    $state->{WRKOBJDIR} = File::Spec->canonpath("$v/pobj");
 		    $state->{LOCKDIR} = File::Spec->canonpath("$v/locks");
@@ -325,7 +329,7 @@ sub handle_options($state)
 	if ($< != 0) {
 		$state->fatal("Must be root");
 	}
-	for my $i (qw(PORTSDIR DISTDIR WRKOBJDIR PACKAGE_REPOSITORY PLIST_REPOSITORY LOCKDIR LOGDIR FETCH_USER BUILD_USER)) {
+	for my $i (qw(PORTSDIR DISTDIR WRKOBJDIR PACKAGE_REPOSITORY PLIST_REPOSITORY BULK_COOKIES_DIR LOCKDIR LOGDIR FETCH_USER BUILD_USER)) {
 		if (defined $state->{$i}) {
 			$state->{write}{$i} = 1;
 		}
@@ -340,8 +344,9 @@ sub handle_options($state)
 	$state->{loguser} //= $state->{builduser};
 	$state->{PACKAGE_REPOSITORY} //= join('/', $state->{PORTSDIR}, 'packages');
 	$state->{PLIST_REPOSITORY} //= join('/', $state->{PORTSDIR}, 'plist');
+	$state->{BULK_COOKIES_DIR} //= join('/', $state->{PORTSDIR}, 'bulk');
 	$state->{sysdir} //= '/usr/src/sys';
-	for my $dir (qw(DISTDIR WRKOBJDIR LOGDIR PACKAGE_REPOSITORY PLIST_REPOSITORY LOCKDIR)) {
+	for my $dir (qw(DISTDIR WRKOBJDIR LOGDIR PACKAGE_REPOSITORY PLIST_REPOSITORY BULK_COOKIES_DIR LOCKDIR)) {
 		$state->{$dir} = $state->canonical_dir($state->{$dir});
 		$state->add_preserved($state->{$dir});
 	}
@@ -357,7 +362,7 @@ sub handle_options($state)
 	}
 	for my $i (qw(chroot srcroot 
 	    PORTSDIR DISTDIR WRKOBJDIR LOCKDIR LOGDIR 
-	    PACKAGE_REPOSITORY PLIST_REPOSITORY)) {
+	    PACKAGE_REPOSITORY PLIST_REPOSITORY BULK_COOKIES_DIR)) {
 		if (defined $state->{$i}) {
 			$state->say("#1=#2", $i, $state->{$i});
 		}
@@ -687,6 +692,9 @@ sub best_user($state, $path)
 		return $state->{loguser};
 	}
 	if (m/^\Q$state->{PLIST_REPOSITORY}\E/) {
+		return $state->{builduser};
+	}
+	if (m/^\Q$state->{BULK_COOKIES_DIR}\E/) {
 		return $state->{builduser};
 	}
 	if (m/^\Q$state->{PACKAGE_REPOSITORY}\E/) {
@@ -1062,6 +1070,7 @@ sub make_ports_subdirs($state)
 		$state->build_dir(WHINE|MKPATH , "builduser", "WRKOBJDIR");
 		$state->build_dir(0, "builduser", "PACKAGE_REPOSITORY");
 		$state->build_dir(0, "builduser", "PLIST_REPOSITORY");
+		$state->build_dir(0, "builduser", "BULK_COOKIES_DIR");
 		$state->build_dir(WHINE, "builduser", "LOCKDIR");
 	    });
 }
