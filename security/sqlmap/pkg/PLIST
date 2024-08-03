@@ -56,6 +56,7 @@ share/sqlmap/data/txt/common-files.txt
 share/sqlmap/data/txt/common-outputs.txt
 share/sqlmap/data/txt/common-tables.txt
 share/sqlmap/data/txt/keywords.txt
+share/sqlmap/data/txt/sha256sums.txt
 share/sqlmap/data/txt/smalldict.txt
 share/sqlmap/data/txt/user-agents.txt
 share/sqlmap/data/txt/wordlist.tx_
