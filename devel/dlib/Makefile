@@ -1,8 +1,11 @@
 COMMENT =		C++ toolkit for machine learning and data analysis
 
-DISTNAME =		dlib-19.24
+VERSION =		19.24.5
+DISTNAME =		dlib-${VERSION}
 
-SHARED_LIBS +=  dlib                      5.1 # 19.24
+DIST_TUPLE +=	github davisking dlib v${VERSION} .
+
+SHARED_LIBS +=  dlib                      6.0 # 19.24
 
 CATEGORIES =		devel
 
@@ -13,20 +16,21 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 # MIT-like (Boost)
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xext gif jpeg m png sqlite3
-WANTLIB += webp z
-
-SITES =			http://dlib.net/files/
-EXTRACT_SUFX =		.tar.bz2
+WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xext avcodec avdevice
+WANTLIB += avfilter avformat avutil gif jpeg m png sqlite3 swresample
+WANTLIB += swscale z
 
 MODULES =		devel/cmake
 
 COMPILER =		base-clang ports-clang ports-gcc
 
+BUILD_DEPENDS =		graphics/libwebp \
+			graphics/libjxl
+
 LIB_DEPENDS =		graphics/jpeg \
 			graphics/png \
 			graphics/giflib \
-			graphics/libwebp \
+			graphics/ffmpeg \
 			databases/sqlite3
 
 # XXX Disable searching for blas (cblas lacks)
@@ -41,8 +45,8 @@ TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
 pre-test:
 	test -d ${WRKBUILD}/dlib/test || mkdir ${WRKBUILD}/dlib/test \
 	&& cd ${WRKBUILD}/dlib/test && \
-	${SETENV} CC="${CC}" CFLAGS="${CFLAGS}" \
-	CXX="${CXX}" CXXFLAGS="${CXXFLAGS}" \
+	${SETENV} CC="${CC}" CFLAGS="${CFLAGS} -I${X11BASE}/include" \
+	CXX="${CXX}" CXXFLAGS="${CXXFLAGS} -I${X11BASE}/include" \
 	${CONFIGURE_ENV} ${LOCALBASE}/bin/cmake \
 	-DCMAKE_SKIP_INSTALL_ALL_DEPENDENCY=True \
 	-DCMAKE_VERBOSE_MAKEFILE=ON \
