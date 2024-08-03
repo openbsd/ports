@@ -22,10 +22,10 @@ CATEGORIES =	x11 wayland
 
 GH_ACCOUNT =	sizeofvoid
 GH_PROJECT =	libopeninput
-GH_COMMIT =	ba8406afbc815993b01c00c52f5e9eadb43db8e3
+GH_COMMIT =	1fcdd91f71263417a62d1adff59ca36ddc7c83c5
 
 DISTNAME =	libinput-openbsd-1.24.0
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS =	input	0.0
 
