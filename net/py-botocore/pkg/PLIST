@@ -772,6 +772,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/controlcatalog/2018-05-10
 lib/python${MODPY_VERSION}/site-packages/botocore/data/controlcatalog/2018-05-10/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/controlcatalog/2018-05-10/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/controlcatalog/2018-05-10/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/controlcatalog/2018-05-10/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/controltower/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/controltower/2018-05-10/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/controltower/2018-05-10/endpoint-rule-set-1.json
@@ -2376,6 +2377,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/ssm-incidents/2018-05-10/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ssm-incidents/2018-05-10/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ssm-incidents/2018-05-10/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ssm-incidents/2018-05-10/waiters-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/ssm-quicksetup/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/ssm-quicksetup/2018-05-10/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/ssm-quicksetup/2018-05-10/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/ssm-quicksetup/2018-05-10/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/ssm-quicksetup/2018-05-10/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ssm-sap/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ssm-sap/2018-05-10/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/ssm-sap/2018-05-10/endpoint-rule-set-1.json
