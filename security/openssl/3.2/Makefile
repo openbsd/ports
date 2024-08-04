@@ -34,6 +34,11 @@ CONFIGURE_ARGS+=	--prefix=${PREFIX} \
 CONFIGURE_ARGS+=	no-asm
 .endif
 
+# Assembly assumes it is on arm v8, which is not the case
+.if ${MACHINE_ARCH} == arm
+CONFIGURE_ARGS+=	no-asm
+.endif
+
 INSTALL_TARGET=		install_sw install_ssldirs install_man_docs
 
 SUBST_VARS+=		SHLIBVER
