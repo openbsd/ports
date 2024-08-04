@@ -1,7 +1,7 @@
 Index: salt/returners/zabbix_return.py
 --- salt/returners/zabbix_return.py.orig
 +++ salt/returners/zabbix_return.py
-@@ -36,10 +36,10 @@ def zbx():
+@@ -35,10 +35,10 @@ def zbx():
          zabbix_sender = "/usr/local/zabbix/bin/zabbix_sender"
          zabbix_config = "/usr/local/zabbix/etc/zabbix_agentd.conf"
          return {"sender": zabbix_sender, "config": zabbix_config}

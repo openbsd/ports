@@ -4,16 +4,18 @@ https://github.com/saltstack/salt/pull/57984
 Index: salt/modules/vmctl.py
 --- salt/modules/vmctl.py.orig
 +++ salt/modules/vmctl.py
-@@ -60,7 +60,7 @@ def create_disk(name, size):
+@@ -59,8 +59,9 @@ def create_disk(name, size):
          salt '*' vmctl.create_disk /path/to/disk.img size=10G
      """
      ret = False
--    cmd = "vmctl create {} -s {}".format(name, size)
-+    cmd = "vmctl create -s {} {}".format(size, name)
+-    cmd = f"vmctl create {name} -s {size}"
++    cmd = f"vmctl create -s {size} {name}"
  
++
      result = __salt__["cmd.run_all"](cmd, output_loglevel="trace", python_shell=False)
  
-@@ -220,12 +220,7 @@ def start(
+     if result["retcode"] == 0:
+@@ -219,12 +220,7 @@ def start(
  
      if not (name or id):
          raise SaltInvocationError('Must provide either "name" or "id"')
@@ -25,9 +27,9 @@ Index: salt/modules/vmctl.py
 -
 +    
      if nics > 0:
-         cmd.append("-i {}".format(nics))
+         cmd.append(f"-i {nics}")
  
-@@ -251,6 +246,13 @@ def start(
+@@ -250,6 +246,13 @@ def start(
  
      if disks:
          cmd.extend(["-d", x] for x in disks)

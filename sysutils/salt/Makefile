@@ -15,10 +15,8 @@
 
 COMMENT =		remote execution and configuration management system
 
-MODPY_EGG_VERSION =	3006.7
+MODPY_EGG_VERSION =	3006.9
 DISTNAME =		salt-${MODPY_EGG_VERSION}
-
-REVISION =		1
 
 CATEGORIES =		sysutils net devel
 

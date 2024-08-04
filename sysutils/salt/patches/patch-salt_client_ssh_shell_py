@@ -3,21 +3,21 @@ ssh(1) on OpenBSD doesn't support GSSAPI
 Index: salt/client/ssh/shell.py
 --- salt/client/ssh/shell.py.orig
 +++ salt/client/ssh/shell.py
-@@ -127,8 +127,6 @@ class Shell:
+@@ -132,8 +132,6 @@ class Shell:
              options.append("PasswordAuthentication=yes")
          else:
              options.append("PasswordAuthentication=no")
 -        if self.opts.get("_ssh_version", (0,)) > (4, 9):
 -            options.append("GSSAPIAuthentication=no")
-         options.append("ConnectTimeout={}".format(self.timeout))
+         options.append(f"ConnectTimeout={self.timeout}")
          if self.opts.get("ignore_host_keys"):
              options.append("StrictHostKeyChecking=no")
-@@ -162,8 +160,6 @@ class Shell:
+@@ -167,8 +165,6 @@ class Shell:
              "ControlMaster=auto",
              "StrictHostKeyChecking=no",
          ]
 -        if self.opts["_ssh_version"] > (4, 9):
 -            options.append("GSSAPIAuthentication=no")
-         options.append("ConnectTimeout={}".format(self.timeout))
+         options.append(f"ConnectTimeout={self.timeout}")
          if self.opts.get("ignore_host_keys"):
              options.append("StrictHostKeyChecking=no")
