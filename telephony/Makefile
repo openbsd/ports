@@ -9,7 +9,6 @@
      SUBDIR += coturn
      SUBDIR += fobbit
      SUBDIR += gsutil
-     SUBDIR += iaxclient
      SUBDIR += iaxmodem
      SUBDIR += kamailio
      SUBDIR += libosip2
