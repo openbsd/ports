@@ -414,6 +414,8 @@ SHA256 (go_modules/github.com/bep/gowebp/@v/v0.3.0.mod) = CUyxa9YRxRQxgsBa/1G/Ws
 SHA256 (go_modules/github.com/bep/gowebp/@v/v0.3.0.zip) = 88P6JB4SwtBFrwvI7szNQ+MqfaiGT54YMFxC8MZetwM=
 SHA256 (go_modules/github.com/bep/helpers/@v/v0.4.0.mod) = 6f9vZcmK0e5cu246+zq7wnxGKc1vd4SuPtKJdNFw/Uk=
 SHA256 (go_modules/github.com/bep/helpers/@v/v0.4.0.zip) = Cddo3sfVNFj+tBu86jZA2/MofY05/x1HE0IzxpoxTEY=
+SHA256 (go_modules/github.com/bep/imagemeta/@v/v0.7.4.mod) = zlyTFJ3mJ+5Ct9RiO05nE29BgneUALYojSVd0cCXFLU=
+SHA256 (go_modules/github.com/bep/imagemeta/@v/v0.7.4.zip) = feo07fjW3GIlOmsflRdnj2EQTMfCq08kuBJ/A8KBMIc=
 SHA256 (go_modules/github.com/bep/lazycache/@v/v0.4.0.mod) = u5E0SGqui/DIx46ja1uUviVJMJsF3xlv99UaqhkcA6M=
 SHA256 (go_modules/github.com/bep/lazycache/@v/v0.4.0.zip) = R62a32kUEXQhXma74yoNFobsZmhkJYaocjyJBYfGuCY=
 SHA256 (go_modules/github.com/bep/logg/@v/v0.4.0.mod) = QVjQvc9oWMHc8EokNHCc9OHQeSCniQAFswTLTugxKC4=
@@ -497,6 +499,7 @@ SHA256 (go_modules/github.com/fortytw2/leaktest/@v/v1.3.0.zip) = hn5tExUQdRumBVx
 SHA256 (go_modules/github.com/frankban/quicktest/@v/v1.13.0.mod) = gpT7PNEbChmUhA5erMpNSC45WwWl67I0LwpIgkr5fUI=
 SHA256 (go_modules/github.com/frankban/quicktest/@v/v1.14.2.mod) = +e59KMX1SXjrR2GdVklcjNPLjI5u8UZ2iGDlLO7pMro=
 SHA256 (go_modules/github.com/frankban/quicktest/@v/v1.14.3.mod) = +e59KMX1SXjrR2GdVklcjNPLjI5u8UZ2iGDlLO7pMro=
+SHA256 (go_modules/github.com/frankban/quicktest/@v/v1.14.5.mod) = aLKthKInPSO6xKV0F3Wj+llKB9KnH4DoR6fWPFOlvZ8=
 SHA256 (go_modules/github.com/frankban/quicktest/@v/v1.14.6.mod) = aLKthKInPSO6xKV0F3Wj+llKB9KnH4DoR6fWPFOlvZ8=
 SHA256 (go_modules/github.com/frankban/quicktest/@v/v1.14.6.zip) = jHN3AjUjeAsqZQjzwGvTu+/T3aBkUzrW/2ckmGI0mI0=
 SHA256 (go_modules/github.com/frankban/quicktest/@v/v1.4.1.mod) = r/MFK6hN0VEHm7ezZTVhYjbhQpt0vjIQoSuTnGtaskU=
@@ -769,6 +772,7 @@ SHA256 (go_modules/github.com/prometheus/client_model/@v/v0.0.0-20190812154241-1
 SHA256 (go_modules/github.com/prometheus/client_model/@v/v0.0.0-20190812154241-14fe0d1b01d4.zip) = XUcZvkf09pq1vzagTHXrB4oPabQ6M19ADC1oisnmF5U=
 SHA256 (go_modules/github.com/prometheus/prometheus/@v/v0.48.0.mod) = zq2pelKh33Hcc92rulWN37a+MFXRWhDcciJ/Ntjsfmw=
 SHA256 (go_modules/github.com/prometheus/prometheus/@v/v0.48.0.zip) = V6wLBsBdpdQvgx5SJQ87xj0vxnhc2fIcp5U08ZAK6xk=
+SHA256 (go_modules/github.com/rogpeppe/go-internal/@v/v1.10.0.mod) = ddufBjI3Ckrz4bglzekbNJzpLpm6JuGwXxaUv28JQds=
 SHA256 (go_modules/github.com/rogpeppe/go-internal/@v/v1.12.0.mod) = e/5bA6stTZVNm3TqzbLMv2ve9jQgGwALl/mg0gIx3H4=
 SHA256 (go_modules/github.com/rogpeppe/go-internal/@v/v1.12.0.zip) = 1FOecWwrfygkWE5MShf2TFCL1uU1kQakBqfiPncQnN4=
 SHA256 (go_modules/github.com/rogpeppe/go-internal/@v/v1.3.0.mod) = M7Veg5sHVCg8Pu7B8z4WzGZDLf+4uKltJPU20B5RSVs=
@@ -1301,7 +1305,7 @@ SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = oq5uhUCkC4XldwPMYYuZxbEHU4bZW
 SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 2iArDagDqyZhq5imgLuk9kEjoyblQMJVgrbNu53BFKo=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.mod) = ycxHNZ55+c2ONOTeypncJ5t0zinSW0a1T86Qmw5wOm8=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.zip) = qse6k1xBU6O0e8ObNvLorTJD8DNJwRy33Mlt2fMWn6Y=
-SHA256 (hugo-v0.129.0.zip) = yIN+sr9+jIhfAZIvvDHHmsGke/wA9RukXyhm36HZdXA=
+SHA256 (hugo-v0.130.0.zip) = qQWRibZBXXbokSXqca4Qg1G5C0yze2+DYt58V6yArVA=
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.10.mod) = 1349
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.10.zip) = 309004
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.8.mod) = 1308
@@ -1718,6 +1722,8 @@ SIZE (go_modules/github.com/bep/gowebp/@v/v0.3.0.mod) = 113
 SIZE (go_modules/github.com/bep/gowebp/@v/v0.3.0.zip) = 4500722
 SIZE (go_modules/github.com/bep/helpers/@v/v0.4.0.mod) = 276
 SIZE (go_modules/github.com/bep/helpers/@v/v0.4.0.zip) = 12205
+SIZE (go_modules/github.com/bep/imagemeta/@v/v0.7.4.mod) = 363
+SIZE (go_modules/github.com/bep/imagemeta/@v/v0.7.4.zip) = 12475485
 SIZE (go_modules/github.com/bep/lazycache/@v/v0.4.0.mod) = 395
 SIZE (go_modules/github.com/bep/lazycache/@v/v0.4.0.zip) = 9373
 SIZE (go_modules/github.com/bep/logg/@v/v0.4.0.mod) = 522
@@ -1801,6 +1807,7 @@ SIZE (go_modules/github.com/fortytw2/leaktest/@v/v1.3.0.zip) = 6665
 SIZE (go_modules/github.com/frankban/quicktest/@v/v1.13.0.mod) = 121
 SIZE (go_modules/github.com/frankban/quicktest/@v/v1.14.2.mod) = 121
 SIZE (go_modules/github.com/frankban/quicktest/@v/v1.14.3.mod) = 121
+SIZE (go_modules/github.com/frankban/quicktest/@v/v1.14.5.mod) = 121
 SIZE (go_modules/github.com/frankban/quicktest/@v/v1.14.6.mod) = 121
 SIZE (go_modules/github.com/frankban/quicktest/@v/v1.14.6.zip) = 56279
 SIZE (go_modules/github.com/frankban/quicktest/@v/v1.4.1.mod) = 112
@@ -2073,6 +2080,7 @@ SIZE (go_modules/github.com/prometheus/client_model/@v/v0.0.0-20190812154241-14f
 SIZE (go_modules/github.com/prometheus/client_model/@v/v0.0.0-20190812154241-14fe0d1b01d4.zip) = 69219
 SIZE (go_modules/github.com/prometheus/prometheus/@v/v0.48.0.mod) = 9323
 SIZE (go_modules/github.com/prometheus/prometheus/@v/v0.48.0.zip) = 4958834
+SIZE (go_modules/github.com/rogpeppe/go-internal/@v/v1.10.0.mod) = 48
 SIZE (go_modules/github.com/rogpeppe/go-internal/@v/v1.12.0.mod) = 167
 SIZE (go_modules/github.com/rogpeppe/go-internal/@v/v1.12.0.zip) = 190596
 SIZE (go_modules/github.com/rogpeppe/go-internal/@v/v1.3.0.mod) = 73
@@ -2605,4 +2613,4 @@ SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = 88
 SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 14308
 SIZE (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.mod) = 127
 SIZE (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.zip) = 36374
-SIZE (hugo-v0.129.0.zip) = 6670458
+SIZE (hugo-v0.130.0.zip) = 6745434

@@ -178,6 +178,7 @@ MODGO_MODULES =	\
 	github.com/bep/golibsass							 v1.1.1 \
 	github.com/bep/gowebp								 v0.3.0 \
 	github.com/bep/helpers								 v0.4.0 \
+	github.com/bep/imagemeta							 v0.7.4 \
 	github.com/bep/lazycache							 v0.4.0 \
 	github.com/bep/logg								 v0.4.0 \
 	github.com/bep/mclib								 v1.20400.20402 \
@@ -445,6 +446,7 @@ MODGO_MODFILES =	\
 	github.com/frankban/quicktest					 v1.13.0 \
 	github.com/frankban/quicktest					 v1.14.2 \
 	github.com/frankban/quicktest					 v1.14.3 \
+	github.com/frankban/quicktest					 v1.14.5 \
 	github.com/frankban/quicktest					 v1.4.1 \
 	github.com/frankban/quicktest					 v1.7.2 \
 	github.com/go-gl/glfw/v3.3/glfw					 v0.0.0-20191125211704-12ad95a8df72 \
@@ -525,6 +527,7 @@ MODGO_MODFILES =	\
 	github.com/montanaflynn/stats					 v0.6.3 \
 	github.com/pkg/sftp						 v1.13.1 \
 	github.com/pmezard/go-difflib					 v0.0.0-20151028094244-d8ed2627bdf0 \
+	github.com/rogpeppe/go-internal					 v1.10.0 \
 	github.com/rogpeppe/go-internal					 v1.3.0 \
 	github.com/rogpeppe/go-internal					 v1.6.1 \
 	github.com/rogpeppe/go-internal					 v1.8.1 \
