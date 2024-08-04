@@ -268,6 +268,8 @@ lib/vlc/plugins/codec/
 @so lib/vlc/plugins/codec/libtextst_plugin.so
 @so lib/vlc/plugins/codec/libttml_plugin.so
 @so lib/vlc/plugins/codec/libuleaddvaudio_plugin.so
+@so lib/vlc/plugins/codec/libvaapi_drm_plugin.so
+@so lib/vlc/plugins/codec/libvaapi_plugin.so
 @so lib/vlc/plugins/codec/libvorbis_plugin.so
 @so lib/vlc/plugins/codec/libwebvtt_plugin.so
 @so lib/vlc/plugins/codec/libx26410b_plugin.so
@@ -435,6 +437,8 @@ lib/vlc/plugins/stream_out/
 lib/vlc/plugins/text_renderer/
 @so lib/vlc/plugins/text_renderer/libfreetype_plugin.so
 @so lib/vlc/plugins/text_renderer/libtdummy_plugin.so
+lib/vlc/plugins/vaapi/
+@so lib/vlc/plugins/vaapi/libvaapi_filters_plugin.so
 lib/vlc/plugins/video_chroma/
 @so lib/vlc/plugins/video_chroma/libchain_plugin.so
 @so lib/vlc/plugins/video_chroma/libgrey_yuv_plugin.so
@@ -495,6 +499,8 @@ lib/vlc/plugins/video_output/
 @so lib/vlc/plugins/video_output/libegl_x11_plugin.so
 @so lib/vlc/plugins/video_output/libflaschen_plugin.so
 @so lib/vlc/plugins/video_output/libgl_plugin.so
+@so lib/vlc/plugins/video_output/libglconv_vaapi_drm_plugin.so
+@so lib/vlc/plugins/video_output/libglconv_vaapi_x11_plugin.so
 @so lib/vlc/plugins/video_output/libglx_plugin.so
 @so lib/vlc/plugins/video_output/libvdummy_plugin.so
 @so lib/vlc/plugins/video_output/libvmem_plugin.so

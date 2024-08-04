@@ -8,7 +8,7 @@ PKGNAME-jack=	vlc-jack-${V}
 CATEGORIES=	x11
 SITES=		https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
-REVISION-main=	2
+REVISION-main=	3
 
 USE_NOBTCFI=	Yes
 
@@ -52,11 +52,11 @@ WANTLIB-main += absl_strerror absl_string_view absl_strings absl_strings_interna
 WANTLIB-main += absl_symbolize absl_synchronization absl_throw_delegate
 WANTLIB-main += absl_time absl_time_zone absl_vlog_config_internal
 WANTLIB-main += aom archive ass atk-1.0 atk-bridge-2.0 atspi avahi-client
-WANTLIB-main += avahi-common avcodec avformat avutil b2 bluray brotlidec
-WANTLIB-main += brotlienc bz2 c cairo cairo-gobject cddb crypto dav1d
-WANTLIB-main += double-conversion drm dvbpsi dvdnav dvdread ebml epoll-shim
-WANTLIB-main += epoxy execinfo expat ffi fontconfig freetype fribidi
-WANTLIB-main += gbm gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0
+WANTLIB-main += avahi-common avcodec avformat avutil b2 bluray bz2 c
+WANTLIB-main += cairo cairo-gobject cddb crypto dav1d double-conversion
+WANTLIB-main += drm dvbpsi dvdnav dvdread ebml epoll-shim epoxy
+WANTLIB-main += execinfo expat ffi fontconfig freetype fribidi gbm
+WANTLIB-main += gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0
 WANTLIB-main += gmodule-2.0 gmp gnutls gobject-2.0 gpg-error graphite2
 WANTLIB-main += gsm gthread-2.0 gtk-3 harfbuzz hogweed icudata icui18n
 WANTLIB-main += icuuc idn2 jpeg lz4 lzma matroska mp3lame nettle nfs
@@ -65,9 +65,9 @@ WANTLIB-main += pcre2-16 pcre2-8 pixman-1 png postproc protobuf-lite
 WANTLIB-main += rsvg-2 sharpyuv smb2 sndio soxr speex speexdsp ssl
 WANTLIB-main += swresample swscale tag tar tasn1 theoradec theoraenc
 WANTLIB-main += tiff udfread unibreak unistring usbhid utf8_range utf8_validity
-WANTLIB-main += vorbis vorbisenc vpx wayland-client wayland-cursor
-WANTLIB-main += wayland-egl webp x264 x265 xcb xcb-composite xcb-dri2
-WANTLIB-main += xcb-dri3 xcb-glx xcb-keysyms xcb-present xcb-randr
+WANTLIB-main += va va-drm va-x11 vorbis vorbisenc vpx wayland-client
+WANTLIB-main += wayland-cursor wayland-egl webp x264 x265 xcb xcb-composite
+WANTLIB-main += xcb-dri2 xcb-dri3 xcb-glx xcb-keysyms xcb-present xcb-randr
 WANTLIB-main += xcb-render xcb-shm xcb-sync xcb-xfixes xcb-xv xkbcommon
 WANTLIB-main += xml2 xshmfence xvidcore z zstd
 # v4l2 is dlopen'd
@@ -175,7 +175,6 @@ CONFIGURE_ARGS+=--disable-a52 \
 		--disable-kwallet \
 		--disable-libmpeg2 \
 		--disable-libplacebo \
-		--disable-libva \
 		--disable-linsys \
 		--disable-live555 \
 		--disable-mad \
