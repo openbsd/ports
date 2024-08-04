@@ -1,9 +1,9 @@
 COMMENT=		JSON-RPC library for GLib
 
 GNOME_PROJECT=		jsonrpc-glib
-GNOME_VERSION=		3.44.0
+GNOME_VERSION=		3.44.1
 
-SHARED_LIBS += jsonrpc-glib-1.0          0.1 # 1.4400.0
+SHARED_LIBS += jsonrpc-glib-1.0          0.1 # 1.4400.1
 
 CATEGORIES=		devel
 
