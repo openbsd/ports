@@ -1,0 +1,15 @@
+
+revert 6e11c9c9f817ee37da4ccfa5f50d2cca71de949e Make default context thread_local (#286)
+
+Index: src/vmime/parsingContext.cpp
+--- src/vmime/parsingContext.cpp.orig
++++ src/vmime/parsingContext.cpp
+@@ -42,7 +42,7 @@ parsingContext::parsingContext(const parsingContext& c
+ 
+ parsingContext& parsingContext::getDefaultContext() {
+ 
+-	static thread_local parsingContext ctx;
++	static parsingContext ctx;
+ 	return ctx;
+ }
+ 
