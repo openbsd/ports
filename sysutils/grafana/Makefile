@@ -7,6 +7,7 @@ EXTRACT_SUFX =	.tar.zst
 PKGNAME =	grafana-$V
 # running into the too long filenames now
 TAR =		${LOCALBASE}/bin/gtar
+REVISION =	0
 
 MAINTAINER = Lucas Raab <tuftedocelot@fastmail.fm>
 
