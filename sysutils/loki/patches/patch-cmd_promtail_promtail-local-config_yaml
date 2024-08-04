@@ -1,7 +1,7 @@
 Index: clients/cmd/promtail/promtail-local-config.yaml
 --- clients/cmd/promtail/promtail-local-config.yaml.orig
 +++ clients/cmd/promtail/promtail-local-config.yaml
-@@ -3,16 +3,16 @@ server:
+@@ -3,17 +3,17 @@ server:
    grpc_listen_port: 0
  
  positions:
@@ -19,6 +19,7 @@ Index: clients/cmd/promtail/promtail-local-config.yaml
 -    labels:
 -      job: varlogs
 -      __path__: /var/log/*log
+-      stream: stdout
 +#scrape_configs:
 +#- job_name: system
 +#  static_configs:
@@ -27,3 +28,4 @@ Index: clients/cmd/promtail/promtail-local-config.yaml
 +#    labels:
 +#      job: varlogs
 +#      __path__: /var/log/*log
++#      stream: stdout
