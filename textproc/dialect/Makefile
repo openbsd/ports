@@ -1,5 +1,5 @@
 COMMENT =		translation app for GNOME
-V =			2.4.1
+V =			2.4.2
 DIST_TUPLE =		github	dialect-app	dialect	${V}	. \
 			github	dialect-app	po	${V}	po
 CATEGORIES =		textproc x11
