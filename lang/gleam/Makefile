@@ -5,8 +5,7 @@ NOT_FOR_ARCHS =		sparc64
 
 GH_ACCOUNT =		gleam-lang
 GH_PROJECT =		gleam
-GH_TAGNAME =		v1.3.2
-REVISION =		0
+GH_TAGNAME =		v1.4.0
 
 HOMEPAGE =		https://gleam.run
 
@@ -23,10 +22,6 @@ COMPILER =		base-clang ports-gcc
 WANTLIB += 		${MODCARGO_WANTLIB} m
 
 CONFIGURE_STYLE =	cargo
-
-MODCARGO_CRATES_UPDATE +=	time
-MODCARGO_CRATES +=	time		0.3.36
-MODCARGO_CRATES +=	time-macros	0.2.18
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/compiler-core/src/build/package_compiler.rs \
