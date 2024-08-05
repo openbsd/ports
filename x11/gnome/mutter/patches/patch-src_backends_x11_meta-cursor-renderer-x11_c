@@ -1,0 +1,28 @@
+From 847f0150175990015c43959c9d1295642c7f6723 Mon Sep 17 00:00:00 2001
+From: Daniel van Vugt <daniel.van.vugt@canonical.com>
+Date: Tue, 23 Apr 2024 15:22:12 +0800
+Subject: [PATCH] backends/x11: Avoid defining (and freeing!) nonexistent
+ cursors
+
+Index: src/backends/x11/meta-cursor-renderer-x11.c
+--- src/backends/x11/meta-cursor-renderer-x11.c.orig
++++ src/backends/x11/meta-cursor-renderer-x11.c
+@@ -70,11 +70,14 @@ meta_cursor_renderer_x11_update_cursor (MetaCursorRend
+           Cursor xcursor;
+ 
+           xcursor = meta_create_x_cursor (xdisplay, cursor);
+-          XDefineCursor (xdisplay, xwindow, xcursor);
+-          XFlush (xdisplay);
+-          XFreeCursor (xdisplay, xcursor);
++          if (xcursor)
++            {
++              XDefineCursor (xdisplay, xwindow, xcursor);
++              XFlush (xdisplay);
++              XFreeCursor (xdisplay, xcursor);
+ 
+-          has_server_cursor = TRUE;
++              has_server_cursor = TRUE;
++            }
+         }
+     }
+ 
