@@ -1,6 +1,6 @@
 COMMENT =	software version control visualization tool
 
-DISTNAME =	gource-0.54
+DISTNAME =	gource-0.55
 CATEGORIES =	sysutils graphics
 HOMEPAGE =	https://gource.io/
 
