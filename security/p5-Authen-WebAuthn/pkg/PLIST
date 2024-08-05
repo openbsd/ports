@@ -2,6 +2,6 @@ ${P5SITE}/Authen/
 ${P5SITE}/Authen/WebAuthn/
 ${P5SITE}/Authen/WebAuthn.pm
 ${P5SITE}/Authen/WebAuthn.pod
+${P5SITE}/Authen/WebAuthn/SSLeayChainVerifier.pm
 ${P5SITE}/Authen/WebAuthn/Test.pm
 @man man/man3p/Authen::WebAuthn.3p
-@man man/man3p/Authen::WebAuthn::Test.3p
