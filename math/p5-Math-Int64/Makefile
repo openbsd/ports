@@ -1,7 +1,6 @@
 COMMENT =	manipulate 64 bits integers in Perl
 
-DISTNAME =	Math-Int64-0.54
-REVISION =	1
+DISTNAME =	Math-Int64-0.57
 
 CATEGORIES =	math
 

@@ -8,7 +8,7 @@ ${P5ARCH}/Math/UInt64.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Math/
 ${P5ARCH}/auto/Math/Int64/
-${P5ARCH}/auto/Math/Int64/Int64.so
+@so ${P5ARCH}/auto/Math/Int64/Int64.so
 @man man/man3p/Math::Int64.3p
 @man man/man3p/Math::Int64::die_on_overflow.3p
 @man man/man3p/Math::Int64::native_if_available.3p
