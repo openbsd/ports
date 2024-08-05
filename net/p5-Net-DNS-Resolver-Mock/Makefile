@@ -1,6 +1,6 @@
 COMMENT =	DNS Resolver object for testing
 
-DISTNAME =	Net-DNS-Resolver-Mock-1.20200215
+DISTNAME =	Net-DNS-Resolver-Mock-1.20230216
 
 CATEGORIES =	net
 
