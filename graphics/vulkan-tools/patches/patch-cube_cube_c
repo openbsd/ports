@@ -3,7 +3,7 @@ fix unsafe functions sprintf and strcat
 Index: cube/cube.c
 --- cube/cube.c.orig
 +++ cube/cube.c
-@@ -451,7 +451,8 @@ VKAPI_ATTR VkBool32 VKAPI_CALL debug_messenger_callbac
+@@ -453,7 +453,8 @@ VKAPI_ATTR VkBool32 VKAPI_CALL debug_messenger_callbac
                                                          const VkDebugUtilsMessengerCallbackDataEXT *pCallbackData,
                                                          void *pUserData) {
      char prefix[64] = "";
@@ -13,7 +13,7 @@ Index: cube/cube.c
      assert(message);
      struct demo *demo = (struct demo *)pUserData;
  
-@@ -464,68 +465,68 @@ VKAPI_ATTR VkBool32 VKAPI_CALL debug_messenger_callbac
+@@ -466,68 +467,68 @@ VKAPI_ATTR VkBool32 VKAPI_CALL debug_messenger_callbac
      }
  
      if (messageSeverity & VK_DEBUG_UTILS_MESSAGE_SEVERITY_VERBOSE_BIT_EXT) {

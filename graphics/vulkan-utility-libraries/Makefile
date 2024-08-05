@@ -1,6 +1,6 @@
 COMMENT =	Vulkan Utility Libraries
 
-V =		1.3.283.0
+V =		1.3.290.0
 PKGNAME =	vulkan-utility-libraries-${V}
 DIST_TUPLE =	github KhronosGroup Vulkan-Utility-Libraries vulkan-sdk-${V} .
 
@@ -24,7 +24,5 @@ BUILD_DEPENDS =	graphics/vulkan-headers
 
 # -DBUILD_TESTS=ON depends on magic_enum
 NO_TEST =	Yes
-
-WRKDIST =	${WRKDIR}/Vulkan-Utility-Libraries-vulkan-sdk-${V}
 
 .include <bsd.port.mk>

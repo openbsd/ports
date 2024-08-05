@@ -1,9 +1,0 @@
-Index: registry/cgenerator.py
---- registry/cgenerator.py.orig
-+++ registry/cgenerator.py
-@@ -1,4 +1,4 @@
--#!/usr/bin/python3 -i
-+#!/usr/bin/env python3 -i
- #
- # Copyright 2013-2024 The Khronos Group Inc.
- #

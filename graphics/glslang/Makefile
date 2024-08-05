@@ -2,13 +2,13 @@ PORTROACH =	limit:^[0-9]
 
 COMMENT =	reference front-end for GLSL and ESSL
 
-GH_TAGNAME =	14.2.0
+GH_TAGNAME =	14.3.0
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	glslang
 
-SHARED_LIBS +=	glslang				5.0 # 14.0
+SHARED_LIBS +=	glslang				5.1 # 14.3
 SHARED_LIBS +=	glslang-default-resource-limits 0.0 # 14.0
-SHARED_LIBS +=	SPIRV				4.0 # 14.0
+SHARED_LIBS +=	SPIRV				5.0 # 14.3
 SHARED_LIBS +=	SPVRemapper			1.0 # 13.0
 
 CATEGORIES =	devel graphics
