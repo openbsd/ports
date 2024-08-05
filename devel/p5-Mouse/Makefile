@@ -1,10 +1,9 @@
 COMMENT =	Moose minus the antlers
 
 MODULES =	cpan
-DISTNAME =	Mouse-v2.5.10
+DISTNAME =	Mouse-v2.5.11
 PKGNAME =	p5-${DISTNAME:S/-v/-/}
 CATEGORIES =	devel
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =		Yes
@@ -31,5 +30,3 @@ TEST_DEPENDS =	devel/p5-Declare-Constraints-Simple \
 		www/p5-libwww
 
 .include <bsd.port.mk>
-
-

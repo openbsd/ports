@@ -38,7 +38,7 @@ ${P5ARCH}/Test/Mouse.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Mouse/
 ${P5ARCH}/auto/Mouse/Mouse.bs
-${P5ARCH}/auto/Mouse/Mouse.so
+@so ${P5ARCH}/auto/Mouse/Mouse.so
 ${P5ARCH}/ouse.pm
 @man man/man3p/Mouse.3p
 @man man/man3p/Mouse::Exporter.3p
