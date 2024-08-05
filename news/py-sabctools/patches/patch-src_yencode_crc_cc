@@ -1,0 +1,12 @@
+Index: src/yencode/crc.cc
+--- src/yencode/crc.cc.orig
++++ src/yencode/crc.cc
+@@ -206,7 +206,7 @@ namespace RapidYenc {
+ # elif defined(__has_include)
+ #  if __has_include(<sys/auxv.h>)
+ #   include <sys/auxv.h>
+-#   ifdef __FreeBSD__
++#   if __FreeBSD__ || __OpenBSD__
+ static unsigned long getauxval(unsigned long cap) {
+ 	unsigned long ret;
+ 	elf_aux_info(cap, &ret, sizeof(ret));

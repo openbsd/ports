@@ -1,0 +1,21 @@
+Index: src/yencode/platform.cc
+--- src/yencode/platform.cc.orig
++++ src/yencode/platform.cc
+@@ -19,7 +19,7 @@
+ # endif
+ bool RapidYenc::cpu_supports_neon() {
+ # if defined(AT_HWCAP)
+-#  ifdef __FreeBSD__
++#  if __FreeBSD__ || __OpenBSD__
+ 	unsigned long supported;
+ 	elf_aux_info(AT_HWCAP, &supported, sizeof(supported));
+ #   ifdef __aarch64__
+@@ -204,7 +204,7 @@ int RapidYenc::cpu_supports_crc_isa() {
+ bool RapidYenc::cpu_supports_rvv() {
+ # if defined(AT_HWCAP)
+ 	unsigned long ret;
+-#  ifdef __FreeBSD__
++#  if __FreeBSD__ || __OpenBSD__
+ 	elf_aux_info(AT_HWCAP, &ret, sizeof(ret));
+ #  else
+ 	ret = getauxval(AT_HWCAP);
