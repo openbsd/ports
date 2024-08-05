@@ -307,7 +307,7 @@ SHA256 (cargo/xattr-1.3.1.tar.gz) = jahPGiWTmyf2gg2SrtEI+D/5IP3xGnsZNmwnxM2oHU8=
 SHA256 (cargo/xxhash-rust-0.8.12.tar.gz) = aly/dQQAlYgZ+2F46qg77lzZwpompAzCQd+McP3UaYQ=
 SHA256 (cargo/yansi-0.5.1.tar.gz) = CQQc2Qz4X3+LLfYMZG+FO39TXOaPhSROtnMc+J+kmOw=
 SHA256 (cargo/zeroize-1.7.0.tar.gz) = UltOwULGtootEPAfe79nVVmco/gepTuEMbfdNI9f2y0=
-SHA256 (gleam-1.4.0.tar.gz) = rIiaLzRIlg2XMy8kUxpBpQz2kwVuV41QHSTuOBJRdgc=
+SHA256 (gleam-1.4.1.tar.gz) = Gjgm0tNvVEK+NOx0mJWwPtFTjvKOWbATT/QAFGjwlfc=
 SIZE (cargo/addr2line-0.22.0.tar.gz) = 39156
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
@@ -617,4 +617,4 @@ SIZE (cargo/xattr-1.3.1.tar.gz) = 12580
 SIZE (cargo/xxhash-rust-0.8.12.tar.gz) = 21329
 SIZE (cargo/yansi-0.5.1.tar.gz) = 16525
 SIZE (cargo/zeroize-1.7.0.tar.gz) = 19039
-SIZE (gleam-1.4.0.tar.gz) = 1024520
+SIZE (gleam-1.4.1.tar.gz) = 1024265
