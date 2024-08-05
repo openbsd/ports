@@ -23,7 +23,7 @@ USE_GMAKE =	Yes
 # since we disable git
 CFLAGS +=	-DBRANDY_RELEASE
 
-CFLAGS +=	`sdl-config --cflags` -DDEFAULT_IGNORE -DBRANDY_NOVERCHECK -Wall
+CFLAGS +=	`sdl-config --cflags` -DDEFAULT_IGNORE -Wall
 LDFLAGS +=	`sdl-config --libs` -lm -pthread -L${X11BASE}/lib/ -lX11
 
 MAKE_FLAGS =	CC="${CC}" LD="${CC}" LIBS="${LDFLAGS}" CFLAGS="${CFLAGS}"
