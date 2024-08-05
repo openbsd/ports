@@ -16,18 +16,16 @@
 @extraunexec rm -rf ${LOCALSTATEDIR}/nzbget/nzb/*
 @extraunexec rm -rf ${LOCALSTATEDIR}/nzbget/tmp/*
 @extraunexec rm -rf ${LOCALSTATEDIR}/nzbget/queue/*
-share/doc/nzbget/
-share/doc/nzbget/COPYING
-share/doc/nzbget/ChangeLog.md
-share/doc/nzbget/INSTALLATION.md
-share/examples/nzbget/
-share/examples/nzbget/nzbget.conf
+share/nzbget/
+share/nzbget/doc/
+share/nzbget/doc/COPYING
+share/nzbget/doc/ChangeLog.md
+share/nzbget/nzbget.conf
 @mode 640
 @owner _nzbget
 @sample ${SYSCONFDIR}/nzbget.conf
 @mode
 @owner
-share/nzbget/
 share/nzbget/webui/
 share/nzbget/webui/config.js
 share/nzbget/webui/dark-theme.css
@@ -37,6 +35,7 @@ share/nzbget/webui/fasttable.js
 share/nzbget/webui/feed.js
 share/nzbget/webui/history.js
 share/nzbget/webui/img/
+share/nzbget/webui/img/download-16.ico
 share/nzbget/webui/img/download-anim-green-2x.png
 share/nzbget/webui/img/download-anim-orange-2x.png
 share/nzbget/webui/img/favicon-256x256-opaque.png
@@ -64,5 +63,6 @@ share/nzbget/webui/light-theme.css
 share/nzbget/webui/messages.js
 share/nzbget/webui/status.js
 share/nzbget/webui/style.css
+share/nzbget/webui/system-info.js
 share/nzbget/webui/upload.js
 share/nzbget/webui/util.js

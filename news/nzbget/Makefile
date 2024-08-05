@@ -1,6 +1,6 @@
 COMMENT =	binary newsreader supporting NZB files
 
-DIST_TUPLE =	github nzbgetcom nzbget v24.1 .
+DIST_TUPLE =	github nzbgetcom nzbget v24.2 .
 
 CATEGORIES =	news
 
@@ -11,35 +11,28 @@ MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =	${COMPILER_LIBCXX} boost_json c crypto curses m ssl xml2 z
+WANTLIB +=	${COMPILER_LIBCXX} boost_container-mt boost_json-mt
+WANTLIB +=	c crypto curses form m ssl xml2 z
 
-# C++14
+# C++17
 COMPILER =	base-clang ports-gcc
+
+MODULES =	devel/cmake
+.if DEBUG
+MODCMAKE_DEBUG =	Yes
+.endif
 
 RUN_DEPENDS =	archivers/p7zip \
 		archivers/unrar
 LIB_DEPENDS =	devel/boost \
 		textproc/libxml
+TEST_DEPENDS =	archivers/unrar
 
-MAKE_FLAGS =	MAKE=${MAKE_PROGRAM}
-FAKE_FLAGS =	exampleconfdir=${PREFIX}/share/examples/nzbget \
-		scriptsdir=${PREFIX}/share/examples/nzbget
+# Network test (SystemInfoTest) fails with PORTS_PRIVSEP
+CONFIGURE_ARGS =	-DENABLE_TESTS=ON
 
-SEPARATE_BUILD =	Yes
-USE_GMAKE =		Yes
-
-CONFIGURE_STYLE =	autoreconf
-CONFIGURE_ARGS =	--with-libcurses-includes=/usr/include \
-			--with-libcurses-libraries=/usr/lib
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
-
-AUTOCONF_VERSION =	2.65
-AUTOMAKE_VERSION =	1.16
-
-NO_TEST =	Yes
-
-pre-configure:
+post-install:
 	${SUBST_CMD} ${WRKSRC}/nzbget.conf
+	${INSTALL_DATA} ${WRKSRC}/nzbget.conf ${PREFIX}/share/nzbget/
 
 .include <bsd.port.mk>
