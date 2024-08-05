@@ -2,7 +2,7 @@ LLVM_MAJOR =	13
 LLVM_VERSION =	${LLVM_MAJOR}.0.0
 LLVM_PKGSPEC =	>=13,<14
 
-REVISION-main =		29
+REVISION-main =		30
 REVISION-python =	6
 
 MULTI_PACKAGES =	-main -python
