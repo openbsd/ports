@@ -36,6 +36,8 @@ lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}proto_b
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}proto_builder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}reflection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}reflection.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}runtime_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}runtime_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}service.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}service.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}service_reflection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -141,6 +143,7 @@ lib/python${MODPY_VERSION}/site-packages/google/protobuf/pyext/${MODPY_PYCACHE}c
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/pyext/${MODPY_PYCACHE}cpp_message.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/pyext/cpp_message.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/reflection.py
+lib/python${MODPY_VERSION}/site-packages/google/protobuf/runtime_version.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/service.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/service_reflection.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/source_context_pb2.py

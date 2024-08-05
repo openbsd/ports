@@ -1,7 +1,7 @@
 COMMENT=		Google data interchange format (protocol buffers)
 
 PYMAJOR=		5
-PROTOBUF_VERSION=	26.1
+PROTOBUF_VERSION=	27.3
 
 V=			${PYMAJOR}.${PROTOBUF_VERSION}
 MODPY_EGG_VERSION=	${V:S/-//g}
@@ -13,7 +13,6 @@ COMPILER_LANGS=		c
 
 DISTNAME=		protobuf-${MODPY_EGG_VERSION}
 PKGNAME=		py-protobuf-${MODPY_EGG_VERSION}
-REVISION=		0
 
 FIX_EXTRACT_PERMISSIONS= Yes
 
