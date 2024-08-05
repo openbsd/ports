@@ -4,8 +4,7 @@ SHARED_LIBS +=  scamperctrl               2.1 # 3.3
 COMMENT=	parallel internet measurement utility
 
 # https://mailman.caida.org/pipermail/scamper-announce/
-V=		20240716
-REVISION=	0
+V=		20240725
 DISTNAME=	scamper-cvs-$V
 PKGNAME=	scamper-$V
 
