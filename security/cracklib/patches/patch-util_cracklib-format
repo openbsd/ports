@@ -1,11 +1,12 @@
---- util/cracklib-format.old	Fri Jan 22 16:58:14 2021
-+++ util/cracklib-format	Tue Sep  6 21:16:55 2022
-@@ -11,7 +11,7 @@
- # cracklib-packer will generate "skipping line" warnings otherwise.
- #
+Index: util/cracklib-format
+--- util/cracklib-format.orig
++++ util/cracklib-format
+@@ -13,7 +13,7 @@
+ LC_ALL=C
+ export LC_ALL
  gzip -cdf "$@" |
 -    grep -a -v '^#' |
 +    grep -a -v '^\(#\|$\)' |
      tr '[A-Z]' '[a-z]' |
-     tr -cd '\012[a-z][0-9]' |
+     tr -cd '\n[:graph:]' |
      cut -c 1-1022 |
