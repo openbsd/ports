@@ -1,11 +1,25 @@
---- makefile.orig	Sat Mar 18 21:34:08 2017
-+++ makefile	Sat Mar 18 21:35:05 2017
-@@ -3,7 +3,7 @@
- CC = gcc
- LD = gcc
+- remove git.mk since we're not in a git repo
+- show commands ran by make
+
+Index: makefile
+--- makefile.orig
++++ makefile
+@@ -5,8 +5,6 @@ LD = gcc
+ STRIP = strip
+ ADDFLAGS = ${BRANDY_BUILD_FLAGS}
  
--CFLAGS += -g -DDEBUG -I/usr/include/SDL -DUSE_SDL
-+CFLAGS += -DUSE_SDL
- CFLAGS2 = -O2 -I/usr/include/SDL -DUSE_SDL
+-include build/git.mk
+-
+ #CFLAGS = -g -DDEBUG $(shell sdl-config --cflags)  -I/usr/local/include/SDL -DUSE_SDL -DDEFAULT_IGNORE -Wall $(GITFLAGS) $(ADDFLAGS)
+ #CFLAGS = -g $(shell sdl-config --cflags)  -I/usr/local/include/SDL -DUSE_SDL -DDEFAULT_IGNORE -Wall $(GITFLAGS) $(ADDFLAGS)
+ CFLAGS = -O3 -fPIE $(shell sdl-config --cflags) -DUSE_SDL -DDEFAULT_IGNORE -Wall $(GITFLAGS) $(ADDFLAGS)
+@@ -78,8 +76,7 @@ brandy:	$(OBJ)
  
- LDFLAGS +=
+ include build/depends.mk
+ 
+-.c.o:; 	@echo -n "$@ "
+-	@$(CC) $(CFLAGS) $< -c -o $@ >/dev/null
++.c.o:; 	$(CC) $(CFLAGS) $< -c -o $@
+ 
+ recompile:
+ 	$(CC) $(CFLAGS) $(SRC) $(LIBS) -o brandy

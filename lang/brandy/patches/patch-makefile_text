@@ -1,11 +1,25 @@
---- makefile.text.orig	Thu Jun 27 14:56:55 2013
-+++ makefile.text	Tue Mar 14 22:53:59 2017
-@@ -3,7 +3,7 @@
- CC = gcc
- LD = gcc
+- remove git.mk since we're not in a git repo
+- show commands ran by make
+
+Index: makefile.text
+--- makefile.text.orig
++++ makefile.text
+@@ -5,8 +5,6 @@ LD = gcc
+ STRIP = strip
+ ADDFLAGS = ${BRANDY_BUILD_FLAGS}
  
--CFLAGS += -g -DDEBUG -DNO_SDL
-+CFLAGS += -DNO_SDL
- CFLAGS2 = -O2 -DNO_SDL
+-include build/git.mk
+-
+ #CFLAGS = -g -DDEBUG -I/usr/include/SDL -DNO_SDL -DDEFAULT_IGNORE -Wall $(GITFLAGS) $(ADDFLAGS)
+ #CFLAGS = -g -I/usr/include/SDL -DNO_SDL -DDEFAULT_IGNORE -Wall $(GITFLAGS) $(ADDFLAGS)
+ CFLAGS = -O3 -fPIE -I/usr/include/SDL -DNO_SDL -DDEFAULT_IGNORE -Wall $(GITFLAGS) $(ADDFLAGS)
+@@ -57,8 +55,7 @@ sbrandy:	$(OBJ) $(SIMPLETEXTOBJ)
+ include build/depends.mk
  
- LDFLAGS =
+ .c.o:
+-	@echo -n "$@ "
+-	@$(CC) $(CFLAGS) $< -c -o $@
++	$(CC) $(CFLAGS) $< -c -o $@
+ 
+ trecompile:
+ 	$(CC) $(CFLAGS) $(SRC) $(TEXTONLYSRC) $(LIBS) -o tbrandy
