@@ -1,6 +1,6 @@
 COMMENT =		client lib to access B2 cloud storage
 
-MODPY_EGG_VERSION =	2.4.1
+MODPY_EGG_VERSION =	2.5.0
 DISTNAME =		b2sdk-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel net
