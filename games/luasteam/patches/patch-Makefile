@@ -3,7 +3,7 @@ honor CXXFLAGS/LDFLAGS
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -30,6 +30,9 @@ linux32:
+@@ -33,6 +33,9 @@ linux32:
  linux64:
  	$(CXX) $(SRC) $(CPP_FLAGS) ${STEAM_LIB}/linux64/libsteam_api.so -o $(GNU_OUT) -shared -fPIC $(GNU_FLAGS)
  

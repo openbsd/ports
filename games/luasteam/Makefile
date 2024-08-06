@@ -1,12 +1,11 @@
 USE_NOBTCFI =	Yes
 
 COMMENT =	Lua bindings for Steam API
-V =		2.0.0
+V =		3.2.1
 DISTNAME =	${GH_PROJECT}-${V}
 GH_ACCOUNT =	uspgamedev
 GH_PROJECT =	luasteam
-GH_TAGNAME =	v${V}+fix
-REVISION =	0
+GH_TAGNAME =	v${V}
 
 CATEGORIES =	games
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
@@ -27,7 +26,6 @@ LDFLAGS +=	-L/usr/local/lib -lsteam_api
 MAKE_FLAGS =	CXXFLAGS="${CXXFLAGS} ${INCL}" LDFLAGS="${LDFLAGS}"
 USE_GMAKE =	Yes
 NO_TEST =	Yes
-WRKDIST =	${WRKDIR}/${DISTNAME}-fix
 ALL_TARGET =	openbsd
 
 do-install:
