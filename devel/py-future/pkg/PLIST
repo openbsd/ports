@@ -259,6 +259,8 @@ lib/python${MODPY_VERSION}/site-packages/future/moves/${MODPY_PYCACHE}copyreg.${
 lib/python${MODPY_VERSION}/site-packages/future/moves/${MODPY_PYCACHE}copyreg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/future/moves/${MODPY_PYCACHE}itertools.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/future/moves/${MODPY_PYCACHE}itertools.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/future/moves/${MODPY_PYCACHE}multiprocessing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/future/moves/${MODPY_PYCACHE}multiprocessing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/future/moves/${MODPY_PYCACHE}pickle.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/future/moves/${MODPY_PYCACHE}pickle.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/future/moves/${MODPY_PYCACHE}queue.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -323,6 +325,7 @@ lib/python${MODPY_VERSION}/site-packages/future/moves/http/cookiejar.py
 lib/python${MODPY_VERSION}/site-packages/future/moves/http/cookies.py
 lib/python${MODPY_VERSION}/site-packages/future/moves/http/server.py
 lib/python${MODPY_VERSION}/site-packages/future/moves/itertools.py
+lib/python${MODPY_VERSION}/site-packages/future/moves/multiprocessing.py
 lib/python${MODPY_VERSION}/site-packages/future/moves/pickle.py
 lib/python${MODPY_VERSION}/site-packages/future/moves/queue.py
 lib/python${MODPY_VERSION}/site-packages/future/moves/reprlib.py
