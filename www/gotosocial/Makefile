@@ -2,12 +2,10 @@
 # but did not with an earlier version.
 ONLY_FOR_ARCHS = amd64 aarch64
 
-BROKEN =	fails at runtime with lang/go syscall removal patches (go-1.21.3p1) due to problems in modernc.org/libc
-
 COMMENT =	ActivityPub social network server
 
 MODGO_MODNAME =	github.com/superseriousbusiness/gotosocial
-MODGO_VERSION =	v0.12.2
+MODGO_VERSION =	v0.16.0
 
 DISTNAME =	gotosocial-${MODGO_VERSION}
 
@@ -32,6 +30,12 @@ WRKDIST =	${WRKSRC}
 
 MODGO_LDFLAGS += -X 'main.Version=${MODGO_VERSION:S/v//}'
 MODGO_FLAGS	+= -mod=mod
+
+# disable https://go.dev/doc/go1.23#linker to unbreak with go-1.23rc2.
+# remove either if codeberg.org/gruf/go-fastcopy is fixed, or "existing
+# usages of //go:linkname found in a large open-source code corpus
+# remain supported" is extended.
+#MODGO_LDFLAGS += -checklinkname=0
 
 TEST_ENV +=	GTS_DB_ADDRESS=":memory:" \
 		GTS_DB_TYPE="sqlite"
