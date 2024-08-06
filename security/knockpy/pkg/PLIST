@@ -9,10 +9,10 @@ lib/python${MODPY_VERSION}/site-packages/knock/${MODPY_PYCACHE}knockpy.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/knock/knockpy.py
 lib/python${MODPY_VERSION}/site-packages/knock/wordlist/
 lib/python${MODPY_VERSION}/site-packages/knock/wordlist/wordlist.txt
-lib/python${MODPY_VERSION}/site-packages/knockpy-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/knockpy-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/knockpy-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/knockpy-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/knockpy-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/knockpy-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/knockpy-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/knock_subdomains-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/knock_subdomains-${MODPY_EGG_VERSION}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/knock_subdomains-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/knock_subdomains-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/knock_subdomains-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/knock_subdomains-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/knock_subdomains-${MODPY_EGG_VERSION}.dist-info/top_level.txt
