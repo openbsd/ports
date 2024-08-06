@@ -4,15 +4,14 @@ COMMENT=		GNOME settings
 
 GNOME_PROJECT=		gnome-control-center
 # !!! sync MAJOR_VERSION (from meson.build) with meta/gnome "V" variable
-GNOME_VERSION=		46.3
-REVISION=		0
+GNOME_VERSION=		46.4
 
 CATEGORIES=		x11
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += X11 accountsservice adwaita-1 c cairo colord colord-gtk4
+WANTLIB += X11 Xi accountsservice adwaita-1 c cairo colord colord-gtk4
 WANTLIB += cups epoxy fontconfig gcr-4 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gnome-bg-4 gnome-desktop-4 gnome-rr-4 gnutls
 WANTLIB += goa-1.0 goa-backend-1.0 gobject-2.0 gsound gtk-4 gtop-2.0
