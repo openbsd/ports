@@ -211,8 +211,6 @@ webapps/docs/api/org/apache/catalina/authenticator/SingleSignOn.html
 webapps/docs/api/org/apache/catalina/authenticator/SingleSignOnEntry.html
 webapps/docs/api/org/apache/catalina/authenticator/SingleSignOnListener.html
 webapps/docs/api/org/apache/catalina/authenticator/SingleSignOnSessionKey.html
-webapps/docs/api/org/apache/catalina/authenticator/SpnegoAuthenticator.AcceptAction.html
-webapps/docs/api/org/apache/catalina/authenticator/SpnegoAuthenticator.AuthenticateAction.html
 webapps/docs/api/org/apache/catalina/authenticator/SpnegoAuthenticator.SpnegoTokenFixer.html
 webapps/docs/api/org/apache/catalina/authenticator/SpnegoAuthenticator.html
 webapps/docs/api/org/apache/catalina/authenticator/jaspic/
@@ -275,6 +273,7 @@ webapps/docs/api/org/apache/catalina/core/FrameworkListener.html
 webapps/docs/api/org/apache/catalina/core/JniLifecycleListener.html
 webapps/docs/api/org/apache/catalina/core/JreMemoryLeakPreventionListener.html
 webapps/docs/api/org/apache/catalina/core/NamingContextListener.html
+webapps/docs/api/org/apache/catalina/core/OpenSSLLifecycleListener.html
 webapps/docs/api/org/apache/catalina/core/PropertiesRoleMappingListener.html
 webapps/docs/api/org/apache/catalina/core/StandardContext.html
 webapps/docs/api/org/apache/catalina/core/StandardEngine.AccessLogListener.html
@@ -1527,6 +1526,7 @@ webapps/docs/api/org/apache/tomcat/jdbc/pool/PoolUtilities.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/PooledConnection.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/PooledConnectionMBean.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/ProxyConnection.html
+webapps/docs/api/org/apache/tomcat/jdbc/pool/StatementFacade.ResultSetProxy.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/StatementFacade.StatementProxy.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/StatementFacade.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/TrapException.html
@@ -2008,6 +2008,7 @@ webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLEngine.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLImplementation.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLSessionContext.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLSessionStats.html
+webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLStatus.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLUtil.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/ciphers/
 webapps/docs/api/org/apache/tomcat/util/net/openssl/ciphers/Authentication.html
@@ -2210,6 +2211,8 @@ webapps/docs/architecture/requestProcess/authentication-process.png
 webapps/docs/architecture/requestProcess/request-process.png
 webapps/docs/architecture/startup/
 webapps/docs/architecture/startup.html
+webapps/docs/architecture/startup/1_overview.png
+webapps/docs/architecture/startup/1_overview.vpd
 webapps/docs/architecture/startup/serverStartup.pdf
 webapps/docs/architecture/startup/serverStartup.txt
 webapps/docs/balancer-howto.html

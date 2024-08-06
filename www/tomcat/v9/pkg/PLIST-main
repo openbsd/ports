@@ -106,6 +106,7 @@ tomcat/lib/jaspic-api.jar
 tomcat/lib/jsp-api.jar
 tomcat/lib/servlet-api.jar
 tomcat/lib/tomcat-api.jar
+tomcat/lib/tomcat-coyote-ffm.jar
 tomcat/lib/tomcat-coyote.jar
 tomcat/lib/tomcat-dbcp.jar
 tomcat/lib/tomcat-i18n-cs.jar
