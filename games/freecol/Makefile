@@ -1,5 +1,5 @@
 COMMENT =	free Colonization clone
-DISTNAME =	freecol-1.0.0
+DISTNAME =	freecol-1.1.0
 EXTRACT_SUFX =	.zip
 CATEGORIES =	games java x11
 
