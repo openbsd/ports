@@ -1,18 +1,17 @@
 COMMENT =	advanced drawing and image manipulation
 
-VERSION =	5.2.2
+VERSION =	5.2.3
 DISTNAME =	krita-${VERSION}
-REVISION =	1
 
 SHARED_LIBS +=  kritabasicflakes          4.1 # 16.0
 SHARED_LIBS +=  kritacolord               2.0 # 16.0
-SHARED_LIBS +=  kritaflake                11.0 # 16.0
+SHARED_LIBS +=  kritaflake                11.1 # 16.0
 SHARED_LIBS +=  kritapigment              9.0 # 16.0
 SHARED_LIBS +=  kritaplugin               3.0 # 16.0
 SHARED_LIBS +=  kritastore                4.0 # 16.0
-SHARED_LIBS +=  kritaversion              1.0 # 16.0
-SHARED_LIBS +=  kritawidgets              8.0 # 16.0
-SHARED_LIBS +=  kritawidgetutils          8.0 # 16.0
+SHARED_LIBS +=  kritaversion              1.1 # 16.0
+SHARED_LIBS +=  kritawidgets              9.0 # 16.0
+SHARED_LIBS +=  kritawidgetutils          9.0 # 16.0
 SHARED_LIBS +=  kritacommand              5.0 # 16.0
 SHARED_LIBS +=  kritaimpex                2.1 # 16.0
 SHARED_LIBS +=  kritalibkis               4.0 # 16.0
@@ -25,15 +24,15 @@ SHARED_LIBS +=  kritaresourcewidgets      1.0 # 17.0
 SHARED_LIBS +=  kritapsdutils             1.0 # 0.0
 SHARED_LIBS +=  kritatiffpsd              0.0 # 0.0
 SHARED_LIBS +=  kritaexifcommon           0.0 # 0.0
-SHARED_LIBS +=  kritamultiarch            0.0 # 0.0
+SHARED_LIBS +=  kritamultiarch            0.1 # 0.0
 # XXX Version numbers from editors/calligra 2.x port
 SHARED_LIBS +=  kritapsd                  5.0 # 14.0
 SHARED_LIBS +=  kritacolor                3.0 # 14.0
-SHARED_LIBS +=  kritaglobal               6.0 # 14.0
-SHARED_LIBS +=  kritaimage                65.0 # 0.0
+SHARED_LIBS +=  kritaglobal               6.1 # 14.0
+SHARED_LIBS +=  kritaimage                66.0 # 0.0
 SHARED_LIBS +=  kritalibbrush             59.1 # 0.0
 SHARED_LIBS +=  kritalibpaintop           59.0 # 0.0
-SHARED_LIBS +=  kritaui                   69.0 # 0.0
+SHARED_LIBS +=  kritaui                   70.0 # 0.0
 
 CATEGORIES =	graphics
 
@@ -51,12 +50,11 @@ WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5CoreAddons
 WANTLIB += KF5Crash KF5GuiAddons KF5I18n KF5ItemViews KF5KDcraw
 WANTLIB += KF5WidgetsAddons KF5WindowSystem OpenColorIO OpenEXR-3_2
 WANTLIB += OpenEXRCore-3_2 Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
-WANTLIB += Qt5Network Qt5PrintSupport Qt5Qml Qt5QmlModels Qt5Quick
-WANTLIB += Qt5QuickWidgets Qt5Sql Qt5Svg Qt5Widgets Qt5X11Extras
-WANTLIB += Qt5Xml SDL2 SM X11 Xext Xi bz2 c exiv2 fftw3 fontconfig
-WANTLIB += freetype fribidi gif glib-2.0 gobject-2.0 gsl gslcblas
-WANTLIB += harfbuzz heif intl jpeg json-c jxl jxl_threads lcms2
-WANTLIB += m mlt++-7 mlt-7 mypaint openjp2 png poppler poppler-qt5
+WANTLIB += Qt5Network Qt5PrintSupport Qt5Sql Qt5Svg Qt5Widgets
+WANTLIB += Qt5X11Extras Qt5Xml SDL2 SM X11 Xext Xi bz2 c exiv2
+WANTLIB += fftw3 fontconfig freetype fribidi gif glib-2.0 gobject-2.0
+WANTLIB += gsl gslcblas harfbuzz heif intl jpeg json-c jxl jxl_threads
+WANTLIB += lcms2 m mlt++-7 mlt-7 mypaint openjp2 png poppler poppler-qt5
 WANTLIB += quazip1-qt5 tiff turbojpeg unibreak webp webpdemux
 WANTLIB += webpmux z
 
@@ -84,7 +82,11 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 			net/curl
 
 LIB_DEPENDS =		archivers/quazip \
+			archivers/bzip2 \
+			devel/fribidi \
 			devel/gsl \
+			devel/harfbuzz \
+			devel/json-c \
 			devel/kf5/kcompletion \
 			devel/kf5/kconfig \
 			devel/kf5/kcoreaddons \
@@ -94,6 +96,7 @@ LIB_DEPENDS =		archivers/quazip \
 			devel/kf5/kitemviews \
 			devel/kf5/kwidgetsaddons \
 			devel/kf5/kwindowsystem \
+			devel/sdl2 \
 			graphics/exiv2 \
 			graphics/giflib \
 			graphics/jpeg \
@@ -106,13 +109,14 @@ LIB_DEPENDS =		archivers/quazip \
 			graphics/openjp2 \
 			graphics/png \
 			graphics/tiff \
-			math/fftw3 \
+			math/fftw3,-main,double \
+			math/imath \
 			multimedia/libheif \
 			multimedia/mlt7 \
 			print/poppler \
 			print/poppler,-qt5 \
+			textproc/libunibreak \
 			x11/kde-applications/libkdcraw \
-			x11/qt5/qtdeclarative \
 			x11/qt5/qtsvg \
 			x11/qt5/qtx11extras
 
