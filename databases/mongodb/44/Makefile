@@ -10,6 +10,7 @@ WANTLIB += c crypto curl execinfo icudata icui18n icuuc kvm m
 WANTLIB += pcre pcrecpp snappy ssl stemmer yaml-cpp z zstd
 
 MODSCONS_ENV +=	  PREFIX="${PREFIX}"
+MODSCONS_FLAGS += --disable-warnings-as-errors
 MODSCONS_FLAGS += --use-system-zstd
 
 ALL_TARGET =	install-core

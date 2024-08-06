@@ -18,6 +18,7 @@ PATCH_LIST =	patch-* python3-*
 
 CXXFLAGS +=	-Wno-c++17-extensions
 
+MODSCONS_FLAGS += --disable-warnings-as-errors
 MODSCONS_FLAGS += --prefix="${PREFIX}"
 
 ALL_TARGET =	core tools
