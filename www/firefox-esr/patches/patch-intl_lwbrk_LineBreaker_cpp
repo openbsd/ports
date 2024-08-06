@@ -1,10 +1,12 @@
 https://bugzilla.mozilla.org/show_bug.cgi?id=1862601
-https://hg.mozilla.org/try/rev/d5f3b0c4f08a426ce00a153c04e177eecb6820e2
+https://bugzilla.mozilla.org/show_bug.cgi?id=1859752
+https://hg.mozilla.org/integration/autoland/rev/0e7eefda2425
+ICU 74 backed out from 121 cf https://bugzilla.mozilla.org/show_bug.cgi?id=1864612
 
 Index: intl/lwbrk/LineBreaker.cpp
 --- intl/lwbrk/LineBreaker.cpp.orig
 +++ intl/lwbrk/LineBreaker.cpp
-@@ -434,7 +434,13 @@ static int8_t GetClass(uint32_t u, LineBreakRule aLeve
+@@ -448,7 +448,13 @@ static int8_t GetClass(uint32_t u, LineBreakRule aLeve
        /* REGIONAL_INDICATOR = 39,           [RI] */ CLASS_CHARACTER,
        /* E_BASE = 40,                       [EB] */ CLASS_BREAKABLE,
        /* E_MODIFIER = 41,                   [EM] */ CLASS_CHARACTER,

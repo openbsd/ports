@@ -4,7 +4,7 @@ was previously in patch-toolkit_components_downloads_DownloadUIHelper_jsm
 Index: toolkit/components/downloads/DownloadIntegration.sys.mjs
 --- toolkit/components/downloads/DownloadIntegration.sys.mjs.orig
 +++ toolkit/components/downloads/DownloadIntegration.sys.mjs
-@@ -870,7 +870,7 @@ export var DownloadIntegration = {
+@@ -866,7 +866,7 @@ export var DownloadIntegration = {
      // displayed in the user interface.
      let directoryPath = PathUtils.join(
        this._getDirectory(aName),

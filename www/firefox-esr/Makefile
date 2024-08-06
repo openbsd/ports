@@ -1,8 +1,7 @@
 COMMENT =	Firefox web browser, Extended Support Release
-ONLY_FOR_ARCHS =	amd64 aarch64
+ONLY_FOR_ARCHS =	amd64 aarch64 riscv64
 
-MOZILLA_VERSION =	115.13.0esr
-MOZILLA_PROFDATA_TASKID=JNbIYiILTC2-Xwn5Tuus6g
+MOZILLA_VERSION =	128.1.0esr
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox-esr
 MOZILLA_CODENAME =	browser
@@ -11,8 +10,8 @@ MOZILLA_DIST =		firefox
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/esr//}
 HOMEPAGE =	https://www.mozilla.org/firefox/organizations/
 PKGNAME =	${MOZILLA_PROJECT}-${MOZILLA_VERSION:S/esr//}
-SO_VERSION =	10.0
-MOZILLA_LIBS =	xul clearkey lgpllibs mozavcodec mozavutil mozgtk mozsqlite3 mozwayland ipcclientcerts
+SO_VERSION =	11.0
+MOZILLA_LIBS =	mozavcodec mozavutil mozgtk mozwayland xul clearkey gkcodecs lgpllibs mozsqlite3 ipcclientcerts
 
 CATEGORIES =	www
 
@@ -57,15 +56,25 @@ CONFIGURE_ARGS +=	--with-app-name=${MOZILLA_PROJECT}
 CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
 CONFIGURE_ARGS +=	--enable-forkserver
-CONFIGURE_ARGS +=	--enable-lto=thin
 CONFIGURE_ARGS +=	--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
 CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
+# LTO eats too much RAM on riscv64
+.if ${MACHINE_ARCH} != riscv64
+CONFIGURE_ARGS +=	--enable-lto=thin
+.endif
 
 # XXX badly formed debug
 DWZ = :
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
 			--disable-install-strip
+
+# not built on riscv64
+COMMENT_FFVPX ?=
+.if ${MACHINE_ARCH} == riscv64
+COMMENT_FFVPX =		@comment # needs a trailing space
+.endif
+SUBST_VARS +=		COMMENT_FFVPX
 
 post-install:
 	# install prefs
