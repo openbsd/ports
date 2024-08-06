@@ -5,11 +5,10 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			5.2.3
+V =			5.3.2
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
-REVISION =		0
 
 DPB_PROPERTIES =	parallel
 
@@ -37,11 +36,11 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} KF6CoreAddons Qt6Core Qt6Gui Qt6Network
 WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Qml Qt6Quick Qt6QuickWidgets
 WANTLIB += Qt6Svg Qt6WaylandCompositor Qt6Widgets absl_strings
-WANTLIB += avcodec avfilter avformat avutil c crypto dispatch
+WANTLIB += ada avcodec avfilter avformat avutil c crypto dispatch
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 hunspell-1.7 jpeg lz4
-WANTLIB += m openal opus protobuf-lite qrcodegencpp rnnoise swresample
-WANTLIB += swscale tg_owt xcb xcb-keysyms xcb-record xcb-screensaver
-WANTLIB += xxhash z
+WANTLIB += m openal opus qrcodegencpp rnnoise swresample swscale
+WANTLIB += tg_owt xcb xcb-keysyms xcb-record xcb-screensaver xxhash
+WANTLIB += z
 
 # C++20
 COMPILER =		base-clang ports-gcc
@@ -80,9 +79,10 @@ LIB_DEPENDS =		archivers/lz4 \
 			graphics/ffmpeg \
 			graphics/jpeg \
 			graphics/qr-code-generator>=1.7.0p1 \
-			net/tg_owt>=0.0.0.20240518 \
+			net/tg_owt>=0.0.0.20240804 \
 			sysutils/xxhash \
 			textproc/hunspell \
+			www/ada \
 			x11/qt6/qtdeclarative \
 			x11/qt6/qtsvg \
 			x11/qt6/qtwayland
