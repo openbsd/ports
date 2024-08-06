@@ -1,7 +1,7 @@
 Index: runtime/syntax/make.vim
 --- runtime/syntax/make.vim.orig
 +++ runtime/syntax/make.vim
-@@ -54,10 +54,10 @@ syn match makeTarget           "^[~A-Za-z0-9_./$(){}%*
+@@ -59,10 +59,10 @@ syn match makeTarget           "^[~A-Za-z0-9_./$(){}%*
  	\ skipnl nextgroup=makeCommands,makeCommandError
  
  syn region makeSpecTarget	transparent matchgroup=makeSpecTarget
@@ -14,7 +14,7 @@ Index: runtime/syntax/make.vim
  	\ contains=makeIdent,makeComment
  	\ skipnl nextgroup=makeCommands,makeCommandError
  
-@@ -74,6 +74,9 @@ syn match makeInclude	"^ *[-s]\=include\s.*$"
+@@ -79,6 +79,9 @@ syn match makeInclude	"^ *[-s]\=include\s.*$"
  syn match makeStatement	"^ *vpath"
  syn match makeExport    "^ *\(export\|unexport\)\>"
  syn match makeOverride	"^ *override\>"

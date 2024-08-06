@@ -71,6 +71,7 @@ share/vim/${P}/autoload/syntaxcomplete.vim
 share/vim/${P}/autoload/tar.vim
 share/vim/${P}/autoload/tohtml.vim
 share/vim/${P}/autoload/typeset.vim
+share/vim/${P}/autoload/typst.vim
 share/vim/${P}/autoload/vimball.vim
 share/vim/${P}/autoload/xml/
 share/vim/${P}/autoload/xml/html32.vim
@@ -247,6 +248,7 @@ share/vim/${P}/compiler/tidy.vim
 share/vim/${P}/compiler/ts-node.vim
 share/vim/${P}/compiler/tsc.vim
 share/vim/${P}/compiler/typedoc.vim
+share/vim/${P}/compiler/typst.vim
 share/vim/${P}/compiler/vimdoc.vim
 share/vim/${P}/compiler/xbuild.vim
 share/vim/${P}/compiler/xmllint.vim
@@ -440,6 +442,8 @@ share/vim/${P}/ftplugin/asciidoc.vim
 share/vim/${P}/ftplugin/asm.vim
 share/vim/${P}/ftplugin/aspvbs.vim
 share/vim/${P}/ftplugin/astro.vim
+share/vim/${P}/ftplugin/asy.vim
+share/vim/${P}/ftplugin/autohotkey.vim
 share/vim/${P}/ftplugin/automake.vim
 share/vim/${P}/ftplugin/awk.vim
 share/vim/${P}/ftplugin/bash.vim
@@ -533,6 +537,7 @@ share/vim/${P}/ftplugin/gitignore.vim
 share/vim/${P}/ftplugin/gitrebase.vim
 share/vim/${P}/ftplugin/gitsendemail.vim
 share/vim/${P}/ftplugin/go.vim
+share/vim/${P}/ftplugin/goaccess.vim
 share/vim/${P}/ftplugin/gomod.vim
 share/vim/${P}/ftplugin/gpg.vim
 share/vim/${P}/ftplugin/gprof.vim
@@ -614,6 +619,7 @@ share/vim/${P}/ftplugin/manconf.vim
 share/vim/${P}/ftplugin/markdown.vim
 share/vim/${P}/ftplugin/masm.vim
 share/vim/${P}/ftplugin/matlab.vim
+share/vim/${P}/ftplugin/mediawiki.vim
 share/vim/${P}/ftplugin/mermaid.vim
 share/vim/${P}/ftplugin/meson.vim
 share/vim/${P}/ftplugin/mf.vim
@@ -742,6 +748,7 @@ share/vim/${P}/ftplugin/terraform.vim
 share/vim/${P}/ftplugin/tex.vim
 share/vim/${P}/ftplugin/text.vim
 share/vim/${P}/ftplugin/tf.vim
+share/vim/${P}/ftplugin/thrift.vim
 share/vim/${P}/ftplugin/tidy.vim
 share/vim/${P}/ftplugin/tmux.vim
 share/vim/${P}/ftplugin/toml.vim
@@ -848,6 +855,7 @@ share/vim/${P}/indent/freebasic.vim
 share/vim/${P}/indent/gdscript.vim
 share/vim/${P}/indent/gitconfig.vim
 share/vim/${P}/indent/gitolite.vim
+share/vim/${P}/indent/glsl.vim
 share/vim/${P}/indent/go.vim
 share/vim/${P}/indent/gyp.vim
 share/vim/${P}/indent/haml.vim
@@ -939,10 +947,12 @@ share/vim/${P}/indent/tcsh.vim
 share/vim/${P}/indent/teraterm.vim
 share/vim/${P}/indent/tex.vim
 share/vim/${P}/indent/tf.vim
+share/vim/${P}/indent/thrift.vim
 share/vim/${P}/indent/tilde.vim
 share/vim/${P}/indent/treetop.vim
 share/vim/${P}/indent/typescript.vim
 share/vim/${P}/indent/typescriptreact.vim
+share/vim/${P}/indent/typst.vim
 share/vim/${P}/indent/vb.vim
 share/vim/${P}/indent/verilog.vim
 share/vim/${P}/indent/vhdl.vim
@@ -1252,6 +1262,7 @@ share/vim/${P}/syntax/aspvbs.vim
 share/vim/${P}/syntax/asterisk.vim
 share/vim/${P}/syntax/asteriskvm.vim
 share/vim/${P}/syntax/astro.vim
+share/vim/${P}/syntax/asy.vim
 share/vim/${P}/syntax/atlas.vim
 share/vim/${P}/syntax/autodoc.vim
 share/vim/${P}/syntax/autohotkey.vim
@@ -1434,9 +1445,11 @@ share/vim/${P}/syntax/gitolite.vim
 share/vim/${P}/syntax/gitrebase.vim
 share/vim/${P}/syntax/gitsendemail.vim
 share/vim/${P}/syntax/gkrellmrc.vim
+share/vim/${P}/syntax/glsl.vim
 share/vim/${P}/syntax/gnash.vim
 share/vim/${P}/syntax/gnuplot.vim
 share/vim/${P}/syntax/go.vim
+share/vim/${P}/syntax/goaccess.vim
 share/vim/${P}/syntax/godoc.vim
 share/vim/${P}/syntax/gp.vim
 share/vim/${P}/syntax/gpg.vim
@@ -1569,6 +1582,7 @@ share/vim/${P}/syntax/mason.vim
 share/vim/${P}/syntax/master.vim
 share/vim/${P}/syntax/matlab.vim
 share/vim/${P}/syntax/maxima.vim
+share/vim/${P}/syntax/mediawiki.vim
 share/vim/${P}/syntax/mel.vim
 share/vim/${P}/syntax/mermaid.vim
 share/vim/${P}/syntax/meson.vim
@@ -1852,6 +1866,7 @@ share/vim/${P}/syntax/tex.vim
 share/vim/${P}/syntax/texinfo.vim
 share/vim/${P}/syntax/texmf.vim
 share/vim/${P}/syntax/tf.vim
+share/vim/${P}/syntax/thrift.vim
 share/vim/${P}/syntax/tidy.vim
 share/vim/${P}/syntax/tilde.vim
 share/vim/${P}/syntax/tli.vim
@@ -1865,11 +1880,13 @@ share/vim/${P}/syntax/tsalt.vim
 share/vim/${P}/syntax/tsscl.vim
 share/vim/${P}/syntax/tssgm.vim
 share/vim/${P}/syntax/tssop.vim
+share/vim/${P}/syntax/tsv.vim
 share/vim/${P}/syntax/tt2.vim
 share/vim/${P}/syntax/tt2html.vim
 share/vim/${P}/syntax/tt2js.vim
 share/vim/${P}/syntax/typescript.vim
 share/vim/${P}/syntax/typescriptreact.vim
+share/vim/${P}/syntax/typst.vim
 share/vim/${P}/syntax/uc.vim
 share/vim/${P}/syntax/uci.vim
 share/vim/${P}/syntax/udevconf.vim
