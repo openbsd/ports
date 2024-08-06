@@ -502,6 +502,7 @@ icinga-web2/modules/icingadb/test/php/library/Icingadb/Model/CustomvarFlatTest.p
 icinga-web2/modules/icingadb/test/php/library/Icingadb/Util/
 icinga-web2/modules/icingadb/test/php/library/Icingadb/Util/PerfdataSetTest.php
 icinga-web2/modules/icingadb/test/php/library/Icingadb/Util/PerfdataTest.php
+icinga-web2/modules/icingadb/test/php/library/Icingadb/Util/PluginOutputTest.php
 icinga-web2/modules/icingadb/test/php/library/Icingadb/Util/ThresholdRangeTest.php
 @cwd ${LOCALBASE}
 share/doc/pkg-readmes/${PKGSTEM}

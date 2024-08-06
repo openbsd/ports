@@ -17,6 +17,6 @@ You should have a list something like this:
   icingadb       1.1.2     enabled   Icinga DB Web
 
 Then follow the instructions in the documentation in
-${PREFIX}/icinga-web2/modules/icingadb-web/doc/03-Configuration.md
+${PREFIX}/icinga-web2/modules/icingadb/doc/03-Configuration.md
 or online under
 https://icinga.com/docs/icinga-db-web/latest/doc/03-Configuration/
