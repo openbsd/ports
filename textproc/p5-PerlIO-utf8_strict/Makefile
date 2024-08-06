@@ -1,7 +1,6 @@
 COMMENT =	fast and correct UTF-8 IO
 
-DISTNAME =	PerlIO-utf8_strict-0.007
-REVISION =	1
+DISTNAME =	PerlIO-utf8_strict-0.010
 
 CATEGORIES =	textproc
 

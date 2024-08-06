@@ -4,5 +4,5 @@ ${P5ARCH}/PerlIO/utf8_strict.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/PerlIO/
 ${P5ARCH}/auto/PerlIO/utf8_strict/
-${P5ARCH}/auto/PerlIO/utf8_strict/utf8_strict.so
+@so ${P5ARCH}/auto/PerlIO/utf8_strict/utf8_strict.so
 @man man/man3p/PerlIO::utf8_strict.3p
