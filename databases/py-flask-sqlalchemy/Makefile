@@ -1,9 +1,9 @@
 COMMENT =	sqlalchemy support for flask
 
-MODPY_EGG_VERSION = 2.5.1
-DISTNAME =	Flask-SQLAlchemy-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME:L}
-REVISION =	2
+# 3.1.1 needs sqlalchemy 2.x
+MODPY_EGG_VERSION = 3.0.5
+DISTNAME =	flask_sqlalchemy-${MODPY_EGG_VERSION}
+PKGNAME =	py-${DISTNAME:S/_/-/}
 
 CATEGORIES =	databases www
 
@@ -13,7 +13,7 @@ HOMEPAGE =	https://flask-sqlalchemy.palletsprojects.com/
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
-MODPY_PYBUILD =	setuptools
+MODPY_PYBUILD =	flit_core
 MODPY_PI =	Yes
 
 FLAVORS =	python3
