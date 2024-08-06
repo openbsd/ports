@@ -1,4 +1,4 @@
-V =			0.5.6
+V =			0.5.8
 COMMENT =		document viewer for PDF and other formats with a vi-like UI
 DISTNAME =		zathura-${V}
 CATEGORIES =		textproc x11
@@ -30,6 +30,7 @@ COMPILER_LANGS = c
 CONFIGURE_ENV +=	LDFLAGS=-L${LOCALBASE}/lib
 CONFIGURE_ARGS +=	-Dsynctex=enabled \
 			-Dseccomp=disabled \
+			-Dlandlock=disabled \
 			-Dtests=disabled
 
 TEST_DEPENDS =	devel/check

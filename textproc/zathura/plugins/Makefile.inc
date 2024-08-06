@@ -17,3 +17,4 @@ NO_TEST ?=		Yes
 
 COMPILER ?=		base-clang ports-gcc
 COMPILER_LANGS ?=	c
+CONFIGURE_ARGS ?=	-Dtests=disabled # needs appstream-glib

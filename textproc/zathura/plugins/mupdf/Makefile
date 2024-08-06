@@ -1,4 +1,4 @@
-V =		0.4.3
+V =		0.4.4
 COMMENT =	mupdf pdf plugin for zathura
 PROJECT =	zathura-pdf-mupdf
 
