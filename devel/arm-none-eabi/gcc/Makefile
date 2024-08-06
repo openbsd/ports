@@ -1,4 +1,5 @@
 BROKEN-powerpc64 = fails to apply patches/vecstep-*
+BROKEN-arm =	spins CPU more than 12h building gcc-12.2.0/libgcc/libgcc2.c
 
 COMMENT=	gcc for ${CONFIG} cross-development
 

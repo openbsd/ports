@@ -1,4 +1,5 @@
 BROKEN-sparc64=	'build/genmddeps /usr/ports/pobj/xtensa-elf-gcc-6.3.0/gcc-6.3.0/gcc/common.md /usr/ports/pobj/xtensa-elf-gcc-6.3.0/gcc-6.3.0/gcc/config/xtensa/xtensa.md > tmp-mddeps' 'Illegal instruction (core dumped)'
+BROKEN-arm =	spins CPU more than 12h building gcc-6.3.0/libgcc/libgcc2.c
 
 COMMENT=	gcc for xtensa-elf cross-development
 

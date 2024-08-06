@@ -1,3 +1,5 @@
+BROKEN-arm =	spins CPU more than 12h building gcc-12.3.0/libgcc/libgcc2.c
+
 COMMENT=	gcc for or1k-elf cross-development
 
 VERSION=	12.3.0
