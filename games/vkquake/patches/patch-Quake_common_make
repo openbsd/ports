@@ -5,7 +5,7 @@ remove unsupported flags -fweb and -frename-registers
 Index: Quake/common.make
 --- Quake/common.make.orig
 +++ Quake/common.make
-@@ -1,15 +1,15 @@
+@@ -1,16 +1,16 @@
 -CC = gcc
 +CC = cc
  # HOST_CC is for bintoc which is run on the host OS, not
@@ -14,6 +14,7 @@ Index: Quake/common.make
 +HOST_CC = cc
  LINKER = $(CC)
  STRIP ?= strip
+ WINDRES ?= windres
  GLSLANG = glslangValidator
  DEBUG ?= 0
  
@@ -25,14 +26,14 @@ Index: Quake/common.make
  CFLAGS += -D_FILE_OFFSET_BITS=64 
  CFLAGS += $(CPUFLAGS)
  ifneq ($(DEBUG),0)
-@@ -18,9 +18,7 @@ CFLAGS += -g
+@@ -19,10 +19,7 @@ CFLAGS += -g
  DO_STRIP=
  else
  DFLAGS += -DNDEBUG
--CFLAGS += -O3 -flto
+-CFLAGS += -O3
+ CFLAGS += $(call CHECK_GCC,-flto=auto,)
 -CFLAGS += $(call CHECK_GCC,-fweb,)
 -CFLAGS += $(call CHECK_GCC,-frename-registers,)
-+CFLAGS += -flto
  CFLAGS += $(call CHECK_GCC,-fno-asynchronous-unwind-tables,)
  CFLAGS += $(call CHECK_GCC,-fno-ident,)
  CMD_STRIP=$(STRIP) $(1)
