@@ -1,4 +1,5 @@
      SUBDIR =
+     SUBDIR += ada
      SUBDIR += analog
      SUBDIR += ap2-mod_dnssd
      SUBDIR += ap2-mod_jk
