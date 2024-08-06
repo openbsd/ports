@@ -1,0 +1,12 @@
+Index: dyncall/dyncall_call_arm32_arm.S
+--- dyncall/dyncall_call_arm32_arm.S.orig
++++ dyncall/dyncall_call_arm32_arm.S
+@@ -71,7 +71,7 @@ pushArgs:
+ 	bne	pushArgs
+ 
+ call:
+-				/* 'blx %r4' workaround for ARMv4t: */
++				/* 'blx r4' workaround for ARMv4t: */
+ 	mov	r14, r15	/*   Branch return address(r15) -> link register (r14) -- r15 always points to address of current + 2 instructions (= Epilog code). */ 
+ 	bx	r4		/*   Call (ARM/THUMB), available for ARMv4t. */
+ 
