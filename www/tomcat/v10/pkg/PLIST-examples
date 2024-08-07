@@ -216,8 +216,6 @@ webapps/docs/api/org/apache/catalina/authenticator/SingleSignOn.html
 webapps/docs/api/org/apache/catalina/authenticator/SingleSignOnEntry.html
 webapps/docs/api/org/apache/catalina/authenticator/SingleSignOnListener.html
 webapps/docs/api/org/apache/catalina/authenticator/SingleSignOnSessionKey.html
-webapps/docs/api/org/apache/catalina/authenticator/SpnegoAuthenticator.AcceptAction.html
-webapps/docs/api/org/apache/catalina/authenticator/SpnegoAuthenticator.AuthenticateAction.html
 webapps/docs/api/org/apache/catalina/authenticator/SpnegoAuthenticator.SpnegoTokenFixer.html
 webapps/docs/api/org/apache/catalina/authenticator/SpnegoAuthenticator.html
 webapps/docs/api/org/apache/catalina/authenticator/jaspic/
@@ -1515,6 +1513,7 @@ webapps/docs/api/org/apache/tomcat/jdbc/pool/PoolUtilities.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/PooledConnection.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/PooledConnectionMBean.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/ProxyConnection.html
+webapps/docs/api/org/apache/tomcat/jdbc/pool/StatementFacade.ResultSetProxy.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/StatementFacade.StatementProxy.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/StatementFacade.html
 webapps/docs/api/org/apache/tomcat/jdbc/pool/TrapException.html
