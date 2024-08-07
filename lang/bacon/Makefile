@@ -38,6 +38,9 @@ CONFIGURE_ENV =		CPPFLAGS="`fltk-config --cxxflags`" \
 			LDFLAGS="-L. `fltk-config --ldflags`" \
 			CC=${CC} CXX=${CXX}
 
+# Avoid interactive questions during build
+MAKE_ENV=		BACON_IN_DOCKER=true
+
 NO_TEST =		Yes
 
 # The man page is broken.
