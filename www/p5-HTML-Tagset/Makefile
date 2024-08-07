@@ -2,8 +2,7 @@ COMMENT=	data tables useful for parsing HTML
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	HTML-Tagset-3.20
-REVISION=	2
+DISTNAME =	HTML-Tagset-3.24
 CATEGORIES=	www
 
 # GPL
