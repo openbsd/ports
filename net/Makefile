@@ -643,7 +643,7 @@
      SUBDIR += rrdtool
      SUBDIR += rsnapshot
      SUBDIR += rsync
-     SUBDIR += rsync,iconv
+     SUBDIR += rsync,minimal
      SUBDIR += rtg
      SUBDIR += rtmpdump
      SUBDIR += rtorrent
