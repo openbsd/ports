@@ -404,6 +404,9 @@ MODGO_MODULES =	\
 	github.com/hinshun/vt10x							 v0.0.0-20220119200601-820417d04eec \
 	github.com/homeport/dyff							 v1.6.0 \
 	github.com/hpcloud/tail								 v1.0.0 \
+	github.com/huandu/go-assert							 v1.1.5 \
+	github.com/huandu/go-clone							 v1.6.0 \
+	github.com/huandu/go-clone/generic						 v1.7.2 \
 	github.com/huandu/xstrings							 v1.3.3 \
 	github.com/ianlancetaylor/demangle						 v0.0.0-20200824232613-28f6c0f3b639 \
 	github.com/imdario/mergo							 v0.3.12 \
