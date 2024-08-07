@@ -11,3 +11,4 @@ bin/rsync-ssl
 share/doc/rsync/
 share/doc/rsync/tech_report.tex
 @extra ${SYSCONFDIR}/rsyncd.conf
+!%%minimal%%

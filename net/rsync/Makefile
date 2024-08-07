@@ -3,9 +3,9 @@ COMMENT =	mirroring/synchronization over low bandwidth links
 DISTNAME =	rsync-3.3.0
 CATEGORIES =	net
 HOMEPAGE =	https://rsync.samba.org/
-REVISION =	0
+REVISION =	1
 
-FLAVORS =	iconv
+FLAVORS =	minimal
 FLAVOR ?=
 
 # GPLv3
@@ -43,10 +43,14 @@ CONFIGURE_ENV +=CPPFLAGS="-I${LOCALBASE}/include -DXXH_INLINE_ALL=1" \
 CONFIGURE_ARGS +=--enable-md5-asm
 .endif
 
-.if ${FLAVOR:Miconv}
+.if !${FLAVOR:Mminimal}
+CONFIGURE_ARGS +=--enable-lz4 \
+		--enable-zstd
 CONFIGURE_ENV +=LDFLAGS='-L${LOCALBASE}/lib'
-LIB_DEPENDS +=	converters/libiconv
-WANTLIB +=	iconv
+LIB_DEPENDS +=	archivers/lz4 \
+		archivers/zstd \
+		converters/libiconv
+WANTLIB +=	iconv lz4 zstd
 .endif
 
 DOCDIR =	${PREFIX}/share/doc/rsync

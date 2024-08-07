@@ -7,11 +7,12 @@ its delta-transfer algorithm, which reduces the amount of data sent
 over the network by sending only the differences between the source
 files and the existing files in the destination. Rsync is widely
 used for backups and mirroring and as an improved copy command for
-everyday use.
+everyday use. This also includes options for lz4 and zstd compression
+as well as iconv for people wanting to bring files from other OSes 
+with more versatile filenames.
 
-Flavor: iconv
-    extra dependency, for people wanting to bring files from other OSes with
-    more versatile filenames.
+Flavor: minimal
+    without any extra dependencies of iconv, lz4, and zstd.
 
 To use the rrsync wrapper, python3 should be installed.
 
