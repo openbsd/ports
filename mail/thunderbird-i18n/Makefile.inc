@@ -25,7 +25,7 @@ LANGUAGES =	af ar ast be bg br ca cak cs cy da de dsb el en-CA en-GB en-US es-AR
 		zh-CN zh-TW
 
 BUILD_DEPENDS =	archivers/unzip
-RUN_DEPENDS =	thunderbird->=${FV:S/b/beta/}:mail/mozilla-thunderbird
+RUN_DEPENDS =	thunderbird->=${FV:S/b/beta/:S/esr//}:mail/mozilla-thunderbird
 
 DIST_SUBDIR =	mozilla/${NAME}-${FV}
 NO_BUILD =	Yes
@@ -36,7 +36,7 @@ EXTRACT_ONLY =
 SUPDISTFILES +=	$i.xpi
 .endfor
 
-PKGNAME =	${NAME}-$L-${FV:S/b/beta/}
+PKGNAME =	${NAME}-$L-${FV:S/b/beta/:S/esr//}
 COMMENT =	$L language pack for Thunderbird
 DISTFILES =	$L.xpi
 
