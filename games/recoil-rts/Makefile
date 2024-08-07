@@ -13,6 +13,7 @@ MN =			1.1
 BLD =			2572
 HASH =			g7e87fc1
 V =			${MJ}.${MN}pl${BLD}
+REVISION =		0
 # ${IN_ENGINE_V} is what recoil uses/displays internally
 IN_ENGINE_V =		"${MJ}.${MN}-${BLD}-${HASH} BAR${MJ}"
 

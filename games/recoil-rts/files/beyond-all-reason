@@ -47,4 +47,4 @@ ${TRUEPREFIX}/bin/pr-downloader \
 # start
 ${TRUEPREFIX}/bin/spring --write-dir ${GAME_DIR} \
 	--isolation --isolation-dir ${TRUEPREFIX}/share/games/spring/ \
-	--menu rapid://byar-chobby:test
+	--menu rapid://byar-chobby:test "$@"
