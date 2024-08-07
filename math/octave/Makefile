@@ -2,7 +2,7 @@ COMMENT =      Scientific Programming Language
 
 VERSION =	7.3.0
 DISTNAME =	octave-${VERSION}
-REVISION =	6
+REVISION =	7
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	math
 
