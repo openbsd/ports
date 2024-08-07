@@ -53,14 +53,8 @@ BUILD_DEPENDS +=	devel/swig \
 			textproc/py-sphinx${MODPY_FLAVOR} \
 			textproc/py-recommonmark${MODPY_FLAVOR}
 
-.if ${MACHINE_ARCH} == "amd64"
-GCC_CONFIG =		x86_64-unknown-openbsd${OSREV}
-.else
-GCC_CONFIG =		${MACHINE_ARCH}-unknown-openbsd${OSREV}
-.endif
-
 CLANG_INCLUDE_PATH =	${LLVM_BASE}/lib/clang/16/include
-SUBST_VARS +=		CLANG_INCLUDE_PATH LLVM_V GCC_CONFIG
+SUBST_VARS +=		CLANG_INCLUDE_PATH LLVM_V
 
 CONFIGURE_ARGS +=	-DLLVM_ENABLE_BACKTRACES=OFF \
 			-DLLVM_ENABLE_FFI=OFF \
