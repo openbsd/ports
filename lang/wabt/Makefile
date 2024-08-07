@@ -1,7 +1,7 @@
 COMMENT =	WebAssembly binary toolkit
 
 DISTNAME =	wabt-${V}
-V =		1.0.35
+V =		1.0.36
 
 CATEGORIES =	lang
 
