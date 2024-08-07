@@ -7,4 +7,9 @@ Features:
  - TLS/SSL
  - Multiple IRCv3 features such as SASL auth mechanism
  - Themes
+ - DCC
+ - Identd
+ - Nicklist
+ - SOCKS 5 proxy
+ - Spell checking
  - And more...
