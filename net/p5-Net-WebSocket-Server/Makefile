@@ -1,8 +1,7 @@
 COMMENT =	straightforward Perl WebSocket server
 
-DISTNAME =	Net-WebSocket-Server-0.003004
+DISTNAME =	Net-WebSocket-Server-0.004000
 CATEGORIES =	net
-REVISION =	0
 
 # perl
 PERMIT_PACKAGE =	Yes
