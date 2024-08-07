@@ -8,6 +8,7 @@ COMMENT =	semi-automatic OSINT framework and package manager
 GH_ACCOUNT =	kpcyrd
 GH_PROJECT =	sn0int
 GH_TAGNAME =	v0.26.0
+REVISION =	0
 
 CATEGORIES =	security
 
@@ -29,6 +30,14 @@ BUILD_DEPENDS =		security/rust-ring \
 			textproc/py-sphinx,python3
 RUN_DEPENDS =		net/libmaxminddb,-asn \
 			net/libmaxminddb,-city
+
+MODCARGO_CRATES_UPDATE +=	time@0.3.28
+MODCARGO_CRATES +=	time		0.3.36
+MODCARGO_CRATES +=	time-core	0.1.2
+MODCARGO_CRATES +=	time-macros	0.2.18
+MODCARGO_CRATES +=	deranged	0.3.9
+MODCARGO_CRATES +=	num-conv	0.1.0
+MODCARGO_CRATES +=	powerfmt	0.2.0
 
 .include "crates.inc"
 
