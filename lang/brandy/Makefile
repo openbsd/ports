@@ -1,9 +1,10 @@
 COMMENT =	interpreter for BBC Basic (Basic VI)
 
-V =		1.23.2
+V =		1.23.3
 DISTNAME =	MatrixBrandy-${V}
 PKGNAME =	brandy-${V}
 EXTRACT_SUFX =	.tar.xz
+SITES =	http://brandy.matrixnetwork.co.uk/releases/
 
 CATEGORIES =	lang
 
@@ -15,13 +16,14 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += SDL X11 c m pthread
 
-SITES =		http://brandy.matrixnetwork.co.uk/releases/
-
 LIB_DEPENDS +=	devel/sdl
 USE_GMAKE =	Yes
 
 # since we disable git
 CFLAGS +=	-DBRANDY_RELEASE
+
+# disable version checking at startup
+CFLAGS +=	-DBRANDY_NOVERCHECK
 
 CFLAGS +=	`sdl-config --cflags` -DDEFAULT_IGNORE -Wall
 LDFLAGS +=	`sdl-config --libs` -lm -pthread -L${X11BASE}/lib/ -lX11
