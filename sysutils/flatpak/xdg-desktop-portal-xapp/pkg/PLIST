@@ -4,5 +4,6 @@ share/applications/xdg-desktop-portal-xapp.desktop
 share/dbus-1/services/org.freedesktop.impl.portal.desktop.xapp.service
 share/xdg-desktop-portal/
 share/xdg-desktop-portal/portals/
+share/xdg-desktop-portal/portals/xapp-gnome-keyring.portal
 share/xdg-desktop-portal/portals/xapp.portal
 @tag update-desktop-database
