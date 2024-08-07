@@ -1,7 +1,7 @@
 Index: tests/ui/sse2.rs
 --- tests/ui/sse2.rs.orig
 +++ tests/ui/sse2.rs
-@@ -9,7 +9,7 @@ fn main() {
+@@ -10,7 +10,7 @@ fn main() {
      match env::var("TARGET") {
          Ok(s) => {
              // Skip this tests on i586-unknown-linux-gnu where sse2 is disabled

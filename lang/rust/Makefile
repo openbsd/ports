@@ -15,17 +15,16 @@ COMMENT-rustfmt =	Rust code formatter
 COMMENT-bootstrap =	Rust binary bootstrap
 COMMENT-src =		Rust source component
 
-V =			1.79.0
+V =			1.80.0
 DISTNAME =		rustc-${V}-src
-REVISION-gdb =		0
 
 # rustc bootstrap version
 BV-aarch64 =		1.79.0
-BV-amd64 =		1.79.0
-BV-i386 =		1.79.0
+BV-amd64 =		1.80.0
+BV-i386 =		1.80.0
 BV-powerpc64 =		1.65.0-20221213
-BV-riscv64 =		1.78.0
-BV-sparc64 =		1.78.0
+BV-riscv64 =		1.79.0
+BV-sparc64 =		1.79.0
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -203,7 +202,7 @@ pre-configure:
 
 # - generate config.toml file
 do-configure:
-	echo 'change-id = 118703' >${WRKBUILD}/config.toml
+	echo 'change-id = 125535' >${WRKBUILD}/config.toml
 	echo '[build]' >>${WRKBUILD}/config.toml
 .if ${FLAVOR} == native_bootstrap
 	echo 'rustc = "${LOCALBASE}/bin/rustc"' >>${WRKBUILD}/config.toml
