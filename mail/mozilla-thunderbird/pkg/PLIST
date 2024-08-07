@@ -38,9 +38,10 @@ lib/${MOZILLA_PROJECT}/isp/DSPAM.sfd
 lib/${MOZILLA_PROJECT}/isp/POPFile.sfd
 lib/${MOZILLA_PROJECT}/isp/SpamAssassin.sfd
 lib/${MOZILLA_PROJECT}/isp/SpamPal.sfd
+@lib lib/${MOZILLA_PROJECT}/libgkcodecs.so.${LIBgkcodecs_VERSION}
 @lib lib/${MOZILLA_PROJECT}/liblgpllibs.so.${LIBlgpllibs_VERSION}
-@lib lib/${MOZILLA_PROJECT}/libmozavcodec.so.${LIBmozavcodec_VERSION}
-@lib lib/${MOZILLA_PROJECT}/libmozavutil.so.${LIBmozavutil_VERSION}
+${COMMENT_FFVPX}@lib lib/${MOZILLA_PROJECT}/libmozavcodec.so.${LIBmozavcodec_VERSION}
+${COMMENT_FFVPX}@lib lib/${MOZILLA_PROJECT}/libmozavutil.so.${LIBmozavutil_VERSION}
 @lib lib/${MOZILLA_PROJECT}/libmozgtk.so.${LIBmozgtk_VERSION}
 @lib lib/${MOZILLA_PROJECT}/libmozsqlite3.so.${LIBmozsqlite3_VERSION}
 @lib lib/${MOZILLA_PROJECT}/libmozwayland.so.${LIBmozwayland_VERSION}
@@ -48,10 +49,10 @@ lib/${MOZILLA_PROJECT}/isp/SpamPal.sfd
 lib/${MOZILLA_PROJECT}/omni.ja
 @bin lib/${MOZILLA_PROJECT}/pingsender
 lib/${MOZILLA_PROJECT}/platform.ini
-@bin lib/${MOZILLA_PROJECT}/plugin-container
 lib/${MOZILLA_PROJECT}/removed-files
 @bin lib/${MOZILLA_PROJECT}/${MOZILLA_PROJECT}
 @bin lib/${MOZILLA_PROJECT}/${MOZILLA_PROJECT}-bin
+@bin lib/${MOZILLA_PROJECT}/vaapitest
 share/applications/${MOZILLA_PROJECT}.desktop
 share/doc/pkg-readmes/${PKGSTEM}
 share/icons/hicolor/128x128/apps/org.mozilla.${MOZILLA_PROJECT}.png

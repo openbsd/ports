@@ -1,14 +1,15 @@
-ONLY_FOR_ARCHS =	amd64 aarch64
+ONLY_FOR_ARCHS =	amd64 aarch64 riscv64
 COMMENT =		Mozilla e-mail, calendar, rss and usenet client
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
-MOZILLA_VERSION =	115.13.0
+MOZILLA_VERSION =	128.1.0esr
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	comm/mail
 EXTRACT_SUFX =		.tar.xz
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
+PKGNAME =	${MOZILLA_PROJECT}-${MOZILLA_VERSION:S/esr//}
 
 # XXX badly formed debug in libxul ?
 DWZ = :
@@ -19,7 +20,7 @@ SO_VERSION =	38.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 
-MOZILLA_LIBS = lgpllibs mozavcodec mozavutil mozgtk mozsqlite3 mozwayland xul
+MOZILLA_LIBS = gkcodecs lgpllibs mozavcodec mozavutil mozgtk mozsqlite3 mozwayland xul
 
 CATEGORIES=	mail news
 
@@ -30,7 +31,7 @@ MODULES =	www/mozilla lang/python
 MODPY_RUNDEP =	No
 
 COMPILER =	ports-clang
-MODCLANG_ARCHS =	amd64 aarch64
+MODCLANG_ARCHS =	amd64 aarch64 riscv64
 
 # 63 requires node because why not #1483595
 BUILD_DEPENDS +=	lang/node
@@ -48,7 +49,7 @@ BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt \
 # mach uses pkg_resources
 BUILD_DEPENDS +=	devel/py-setuptools${MODPY_FLAVOR}
 
-WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
+WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//:C/esr//}
 
 NO_TEST =	Yes
 
@@ -75,13 +76,16 @@ BUILD_DEPENDS +=	security/rnp
 RUN_DEPENDS +=	security/rnp>=0.17.1
 LIB_DEPENDS +=	devel/libffi
 
-WANTLIB +=	Xrandr Xtst ffi
+WANTLIB +=	Xrandr ffi
 
 ALL_TARGET =	default
 
-post-patch:
-	sed -i 's/"files":{[^}]*}/"files":{}/' \
-		${WRKSRC}/third_party/rust/mp4parse/.cargo-checksum.json
+# not built on riscv64
+COMMENT_FFVPX ?=
+.if ${MACHINE_ARCH} == riscv64
+COMMENT_FFVPX =	@comment # needs a trailing space
+.endif
+SUBST_VARS +=	COMMENT_FFVPX
 
 post-install:
 	# install prefs
