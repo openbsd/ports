@@ -22,6 +22,11 @@ LIB_DEPENDS +=	textproc/oniguruma
 
 MODULES =	devel/cargo
 
+MODCARGO_CRATES_UPDATE +=	time
+MODCARGO_CRATES +=	time		0.3.36
+MODCARGO_CRATES +=	time-macros	0.2.18
+MODCARGO_CRATES +=	num-conv	0.1.0
+
 CONFIGURE_STYLE =	cargo
 
 SEPARATE_BUILD =	Yes

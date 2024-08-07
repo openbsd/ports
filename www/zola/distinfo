@@ -221,6 +221,7 @@ SHA256 (cargo/nom-tracable-0.9.0.tar.gz) = Fgdnzh7tLNrcIlYBWm3FHZYyIm6gLg8M5FkLk
 SHA256 (cargo/nom-tracable-macros-0.9.0.tar.gz) = p6xoHqDD1GiwA73r46ZdFjLjQDAkUvlcP/rfUVcExI0=
 SHA256 (cargo/nom_locate-4.2.0.tar.gz) = HjyDwFOwcT2mDFuN5H/o5JT+Ps5SZ7LyMJCgegU7qPM=
 SHA256 (cargo/notify-4.0.17.tar.gz) = rgPIyFPbp7/SPlcf8M/3vJ3OtApM1oTNFoGCQYP0Ulc=
+SHA256 (cargo/num-conv-0.1.0.tar.gz) = UdUV0y+xgu43zaLM3LkpUNajwok6ooDlQGccLNDzsdk=
 SHA256 (cargo/num-format-0.4.4.tar.gz) = plLZdxpjcR/Tw962cKz75cMKQHLmZNejv1qeEFascsM=
 SHA256 (cargo/num-integer-0.1.45.tar.gz) = Il0zifs1CaJMk/XCnra94lhrmNnwFmNt/1jXxvdWnNk=
 SHA256 (cargo/num-rational-0.4.1.tar.gz) = BjihydCjwJFBWBRbx2z/Nzp1pifm7L+3HL5vRTpaGbA=
@@ -353,8 +354,10 @@ SHA256 (cargo/thiserror-1.0.51.tar.gz) = 8RwhfhQW1vA2uHDxTgQT1IDb8o7b7h+HerrwIGr
 SHA256 (cargo/thiserror-impl-1.0.51.tar.gz) = AXQil3h1E7ec+OKdEFbt4TE+JCC3s7FdCnaLSSH1Sd8=
 SHA256 (cargo/tiff-0.9.0.tar.gz) = bRcrD00/uhe6iYEYWLnT2X+SiuzoRkdbvaB2ykZzYhE=
 SHA256 (cargo/time-0.3.30.tar.gz) = xKNKswDy3ublYsEKBG/AXjWLKfm/kid/MMPI2CJ19vU=
+SHA256 (cargo/time-0.3.36.tar.gz) = Xf2I5WNGRobJFsfkbmI+Ug3cbXn6ZkE5Dy4/qG6D6IU=
 SHA256 (cargo/time-core-0.1.2.tar.gz) = 75J8p1r7gIpNZN03TwCirfjQ/P+OexhK+IbDyH7Eo/M=
 SHA256 (cargo/time-macros-0.2.15.tar.gz) = StcNaNup4fis7aeqZxGWXf7Byshp8xGlG9CLOizLziA=
+SHA256 (cargo/time-macros-0.2.18.tar.gz) = PyUqaFQP3jo4d67qVSuDK0CrmmnjGO/QeHdKAd3uHM8=
 SHA256 (cargo/tinystr-0.7.5.tar.gz) = g8Ar88U4qzK6kTQIIkMjkV9O+abWHA6F1JPzVZIcDs4=
 SHA256 (cargo/tinyvec-1.6.0.tar.gz) = h8xc6zh1uyDCiQAFpOImpGUSZKXHXtskIbUoYaCgy1A=
 SHA256 (cargo/tinyvec_macros-0.1.1.tar.gz) = HzzLrDEf6gX4b2GQS0YrVfs9+IN6Nm38YBoBYdBTLyA=
@@ -676,6 +679,7 @@ SIZE (cargo/nom-tracable-0.9.0.tar.gz) = 7806
 SIZE (cargo/nom-tracable-macros-0.9.0.tar.gz) = 1544
 SIZE (cargo/nom_locate-4.2.0.tar.gz) = 19013
 SIZE (cargo/notify-4.0.17.tar.gz) = 54419
+SIZE (cargo/num-conv-0.1.0.tar.gz) = 7444
 SIZE (cargo/num-format-0.4.4.tar.gz) = 61509
 SIZE (cargo/num-integer-0.1.45.tar.gz) = 22529
 SIZE (cargo/num-rational-0.4.1.tar.gz) = 27889
@@ -808,8 +812,10 @@ SIZE (cargo/thiserror-1.0.51.tar.gz) = 20045
 SIZE (cargo/thiserror-impl-1.0.51.tar.gz) = 15372
 SIZE (cargo/tiff-0.9.0.tar.gz) = 1418215
 SIZE (cargo/time-0.3.30.tar.gz) = 120289
+SIZE (cargo/time-0.3.36.tar.gz) = 119805
 SIZE (cargo/time-core-0.1.2.tar.gz) = 7191
 SIZE (cargo/time-macros-0.2.15.tar.gz) = 23568
+SIZE (cargo/time-macros-0.2.18.tar.gz) = 24361
 SIZE (cargo/tinystr-0.7.5.tar.gz) = 16366
 SIZE (cargo/tinyvec-1.6.0.tar.gz) = 45991
 SIZE (cargo/tinyvec_macros-0.1.1.tar.gz) = 5865
