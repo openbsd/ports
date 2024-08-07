@@ -1,6 +1,6 @@
 COMMENT=	mailfilter to identify and mark spam
 
-DISTNAME=	mimedefang-3.4
+DISTNAME=	mimedefang-3.5
 
 CATEGORIES=	mail
 
@@ -46,11 +46,13 @@ post-extract:
 		${WRKSRC}/examples/mimedefang-filter-openbsd-ports
 
 post-install:
-	${INSTALL_DATA} ${WRKSRC}/SpamAssassin/spamassassin.cf \
-		${PREFIX}/share/examples/mimedefang/mail/sa-mimedefang.cf
 	${INSTALL_DATA} ${WRKSRC}/examples/mimedefang-filter-openbsd-ports \
-		${PREFIX}/share/examples/mimedefang/mail
+		${PREFIX}/share/examples/mimedefang/
+	${INSTALL_DATA_DIR} ${WRKSRC}/contrib \
+		${PREFIX}/share/examples/mimedefang/contrib
+	cd ${WRKSRC}/contrib; tar cf - fang.pl greylisting munin | \
+		tar xf - -C ${PREFIX}/share/examples/mimedefang/contrib/
 	${INSTALL_SCRIPT} ${WRKSRC}/gen-ip-validator.pl \
-		${PREFIX}/share/examples
+		${PREFIX}/share/examples/mimedefang
 
 .include <bsd.port.mk>

@@ -26,6 +26,7 @@ libdata/perl5/site_perl/Mail/MIMEDefang/MIME.pm
 libdata/perl5/site_perl/Mail/MIMEDefang/Mail.pm
 libdata/perl5/site_perl/Mail/MIMEDefang/Net.pm
 libdata/perl5/site_perl/Mail/MIMEDefang/RFC2822.pm
+libdata/perl5/site_perl/Mail/MIMEDefang/SPF.pm
 libdata/perl5/site_perl/Mail/MIMEDefang/Unit.pm
 libdata/perl5/site_perl/Mail/MIMEDefang/Utils.pm
 @man man/man1/mimedefang-util.1
@@ -40,6 +41,7 @@ libdata/perl5/site_perl/Mail/MIMEDefang/Utils.pm
 @man man/man3/Mail::MIMEDefang::Mail.3
 @man man/man3/Mail::MIMEDefang::Net.3
 @man man/man3/Mail::MIMEDefang::RFC2822.3
+@man man/man3/Mail::MIMEDefang::SPF.3
 @man man/man3/Mail::MIMEDefang::Unit.3
 @man man/man3/Mail::MIMEDefang::Utils.3
 @man man/man5/mimedefang-filter.5
@@ -53,21 +55,28 @@ libdata/perl5/site_perl/Mail/MIMEDefang/Utils.pm
 @man man/man8/watch-mimedefang.8
 @man man/man8/watch-multiple-mimedefangs.8
 share/doc/pkg-readmes/${PKGSTEM}
-share/examples/gen-ip-validator.pl
 share/examples/mimedefang/
+share/examples/mimedefang/contrib/
+share/examples/mimedefang/contrib/fang.pl
+share/examples/mimedefang/contrib/greylisting/
+share/examples/mimedefang/contrib/greylisting/greylist-mysql.sql
+share/examples/mimedefang/contrib/greylisting/greylist-pgsql.sql
+share/examples/mimedefang/contrib/greylisting/greylist-sqlite.sql
+share/examples/mimedefang/contrib/greylisting/mimedefang-filter
+share/examples/mimedefang/contrib/munin/
+share/examples/mimedefang/contrib/munin/mimedefang_munin_plugin
+share/examples/mimedefang/gen-ip-validator.pl
 share/examples/mimedefang/mail/
 share/examples/mimedefang/mail/mimedefang-filter
-share/examples/mimedefang/mail/mimedefang-filter-openbsd-ports
-@sample ${SYSCONFDIR}/mail/mimedefang-filter
-@mode 0400
-@owner _mdefang
-share/examples/mimedefang/mail/mimedefang-ip-key
-@mode
-@owner
 share/examples/mimedefang/mail/sa-mimedefang.cf
 @sample ${SYSCONFDIR}/mail/sa-mimedefang.cf
+share/examples/mimedefang/mimedefang-filter-openbsd-ports
+@sample ${SYSCONFDIR}/mail/mimedefang-filter
 @mode 0750
 @owner _mdefang
 @group _mdefang
 @sample /var/spool/MD-Quarantine/
 @sample /var/spool/MIMEDefang/
+@mode 0400
+share/examples/mimedefang/mail/mimedefang-ip-key
+@sample ${SYSCONFDIR}/mail/mimedefang-ip-key
