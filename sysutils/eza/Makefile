@@ -2,8 +2,7 @@ COMMENT =		ls alternative written in Rust (fork of exa)
 
 GH_ACCOUNT =		eza-community
 GH_PROJECT =		eza
-GH_TAGNAME =		v0.18.23
-REVISION =		0
+GH_TAGNAME =		v0.19.0
 
 HOMEPAGE =		https://eza.rocks/
 
@@ -15,11 +14,6 @@ CATEGORIES =		sysutils
 PERMIT_PACKAGE =	Yes
 
 MODULES =		devel/cargo
-
-MODCARGO_CRATES_UPDATE +=	time
-MODCARGO_CRATES +=	time		0.3.36
-MODCARGO_CRATES +=	time-macros	0.2.18
-MODCARGO_CRATES +=	num-conv	0.1.0
 
 .include "crates.inc"
 

@@ -128,10 +128,8 @@ SHA256 (cargo/tempfile-3.8.0.tar.gz) = y5TS88xTavccqsa2/Ov2WGCzR+fODMnr6PcNPlIQV
 SHA256 (cargo/terminal_size-0.3.0.tar.gz) = Ib6/K3yeClFfbg+MUdwPjkaWOR5vH/MDeVWfg2X7Dfc=
 SHA256 (cargo/thiserror-1.0.48.tar.gz) = nW16dAuKZmp+go3QDanA3CkN/1MVTqd6wQkoHekFibc=
 SHA256 (cargo/thiserror-impl-1.0.48.tar.gz) = SZIuyuZsyKJJt35o0dBiPBssUU8AYMJ83Gi9YqEhnTU=
-SHA256 (cargo/time-0.3.30.tar.gz) = xKNKswDy3ublYsEKBG/AXjWLKfm/kid/MMPI2CJ19vU=
 SHA256 (cargo/time-0.3.36.tar.gz) = Xf2I5WNGRobJFsfkbmI+Ug3cbXn6ZkE5Dy4/qG6D6IU=
 SHA256 (cargo/time-core-0.1.2.tar.gz) = 75J8p1r7gIpNZN03TwCirfjQ/P+OexhK+IbDyH7Eo/M=
-SHA256 (cargo/time-macros-0.2.15.tar.gz) = StcNaNup4fis7aeqZxGWXf7Byshp8xGlG9CLOizLziA=
 SHA256 (cargo/time-macros-0.2.18.tar.gz) = PyUqaFQP3jo4d67qVSuDK0CrmmnjGO/QeHdKAd3uHM8=
 SHA256 (cargo/timeago-0.4.2.tar.gz) = oXEOWJ3gp2qvKVzUemaZ9kBXN9v9PPK3XJLQALVI0OY=
 SHA256 (cargo/tinytemplate-1.2.1.tar.gz) = vk1rXxn/dmToyY0D4hOctRDbmwpgtV+Ohwm2idk5trw=
@@ -182,7 +180,7 @@ SHA256 (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 7ZT85hVxpABoUrc4mgY6uYPALrG7N
 SHA256 (cargo/windows_x86_64_msvc-0.52.0.tar.gz) = 3/lkHRzUvo0aBw2vnjdzxfZ+eLTZ1CJjAgwFdwZ2XAQ=
 SHA256 (cargo/winnow-0.5.40.tar.gz) = 9ZOpU5hzeu7VPkiceF3xPzYY5B281nGMat2/E5WqaHY=
 SHA256 (cargo/zoneinfo_compiled-0.5.1.tar.gz) = ZPvr5l6JlTD0O9dgsj/ajxQRGPTbSZUrApmMvQkHpd4=
-SHA256 (eza-0.18.23.tar.gz) = NLDoppmsGoowhEj0F/DAE3pn6jTiYf1vEG6L6f1btUw=
+SHA256 (eza-0.19.0.tar.gz) = RA//CTwjY118GplV1CSJovXFg5oOhaA+Odrso56dv4Q=
 SIZE (cargo/aho-corasick-1.0.5.tar.gz) = 172064
 SIZE (cargo/android-tzdata-0.1.1.tar.gz) = 7674
 SIZE (cargo/android_system_properties-0.1.5.tar.gz) = 5243
@@ -313,10 +311,8 @@ SIZE (cargo/tempfile-3.8.0.tar.gz) = 31720
 SIZE (cargo/terminal_size-0.3.0.tar.gz) = 10096
 SIZE (cargo/thiserror-1.0.48.tar.gz) = 18862
 SIZE (cargo/thiserror-impl-1.0.48.tar.gz) = 15096
-SIZE (cargo/time-0.3.30.tar.gz) = 120289
 SIZE (cargo/time-0.3.36.tar.gz) = 119805
 SIZE (cargo/time-core-0.1.2.tar.gz) = 7191
-SIZE (cargo/time-macros-0.2.15.tar.gz) = 23568
 SIZE (cargo/time-macros-0.2.18.tar.gz) = 24361
 SIZE (cargo/timeago-0.4.2.tar.gz) = 18821
 SIZE (cargo/tinytemplate-1.2.1.tar.gz) = 26490
@@ -367,4 +363,4 @@ SIZE (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 798412
 SIZE (cargo/windows_x86_64_msvc-0.52.0.tar.gz) = 821600
 SIZE (cargo/winnow-0.5.40.tar.gz) = 159316
 SIZE (cargo/zoneinfo_compiled-0.5.1.tar.gz) = 8837
-SIZE (eza-0.18.23.tar.gz) = 1385587
+SIZE (eza-0.19.0.tar.gz) = 1385560
