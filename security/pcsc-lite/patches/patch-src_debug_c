@@ -3,7 +3,7 @@ Disable colors by default.
 Index: src/debug.c
 --- src/debug.c.orig
 +++ src/debug.c
-@@ -73,6 +73,7 @@ static void log_init(void)
+@@ -74,6 +74,7 @@ static void log_init(void)
  	if (e)
  		LogLevel = atoi(e);
  
@@ -11,7 +11,7 @@ Index: src/debug.c
  	/* log to stderr and stderr is a tty? */
  	if (isatty(fileno(stderr)))
  	{
-@@ -96,6 +97,7 @@ static void log_init(void)
+@@ -97,6 +98,7 @@ static void log_init(void)
  			}
  		}
  	}

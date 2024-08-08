@@ -1,0 +1,60 @@
+- -Dpolkit=false only makes it optional;  it was always used when found.
+  Hide detection behind the option, being required when enabled as already
+  done for libusb.
+- Omit setup_spy.sh
+- Ignore Doxygen
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -111,15 +111,18 @@ endif
+ 
+ cc = meson.get_compiler('c')
+ dl_deps = cc.find_library('dl', required: false)
++pcscd_dep += dl_deps
+ 
+-polkit_dep = dependency('polkit-gobject-1', required : get_option('polkit'))
+-if polkit_dep.found()
++if get_option('polkit')
++  polkit_dep = dependency('polkit-gobject-1')
++  pcscd_dep += polkit_dep
+   conf_data.set('HAVE_POLKIT', true)
+   features += 'polkit'
+ endif
+ 
+-systemd_dep = dependency('libsystemd', required : get_option('libsystemd'))
+-if systemd_dep.found()
++if get_option('libsystemd')
++  systemd_dep = dependency('libsystemd')
++  pcscd_dep += systemd_dep
+   conf_data.set('USE_LIBSYSTEMD', true)
+   features += 'systemd'
+ endif
+@@ -134,8 +137,6 @@ if pcsc_arch == 'Darwin'
+ endif
+ conf_data.set_quoted('PCSC_ARCH', pcsc_arch)
+ 
+-pcscd_dep += [polkit_dep, systemd_dep, dl_deps]
+-
+ features +=  pcsc_arch
+ features += target_machine.cpu()
+ features += 'ipcdir=' + get_option('ipcdir')
+@@ -200,9 +201,6 @@ library('pcscspy',
+ install_data('src/spy/pcsc-spy',
+   install_dir : get_option('bindir'))
+ 
+-install_data('src/spy/setup_spy.sh',
+-  install_dir : 'share/doc/pcsc-lite')
+-
+ run_command('pod2man',
+   ['--date=2024-01-01', 'src/spy/pcsc-spy.pod', 'pcsc-spy.1'],
+   check : true)
+@@ -290,7 +288,7 @@ configure_file(output : 'doxygen.conf',
+   input : 'doc/doxygen.conf.in',
+   configuration : confgen_data)
+ doxygen = find_program('doxygen', required : false)
+-if doxygen.found()
++if false and doxygen.found()
+   message('Doxygen found')
+   run_target('doc', command : [doxygen, 'doxygen.conf'])
+ else

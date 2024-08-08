@@ -3,7 +3,7 @@ Disable colors by default.
 Index: src/debuglog.c
 --- src/debuglog.c.orig
 +++ src/debuglog.c
-@@ -264,7 +264,7 @@ static void log_line(const int priority, const char *D
+@@ -262,7 +262,7 @@ static void log_line(const int priority, const char *D
  					break;
  			}
  
@@ -12,7 +12,7 @@ Index: src/debuglog.c
  #define THREAD_FORMAT "%p"
  #else
  #define THREAD_FORMAT "%lu"
-@@ -350,6 +350,9 @@ void DebugLogSetLogType(const int dbgtype)
+@@ -348,6 +348,9 @@ void DebugLogSetLogType(const int dbgtype)
  			LogMsgType = DEBUGLOG_STDOUT_DEBUG;
  	}
  
@@ -22,7 +22,7 @@ Index: src/debuglog.c
  	/* log to stdout and stdout is a tty? */
  	if ((DEBUGLOG_STDOUT_DEBUG == LogMsgType && isatty(fileno(stdout)))
  		|| (DEBUGLOG_STDOUT_COLOR_DEBUG == LogMsgType))
-@@ -374,6 +377,7 @@ void DebugLogSetLogType(const int dbgtype)
+@@ -372,6 +375,7 @@ void DebugLogSetLogType(const int dbgtype)
  			}
  		}
  	}

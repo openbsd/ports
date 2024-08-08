@@ -7,11 +7,8 @@ include/PCSC/pcsclite.h
 include/PCSC/reader.h
 include/PCSC/winscard.h
 include/PCSC/wintypes.h
-@static-lib lib/libpcsclite.a
-lib/libpcsclite.la
 @lib lib/libpcsclite.so.${LIBpcsclite_VERSION}
-@static-lib lib/libpcscspy.a
-lib/libpcscspy.la
+@lib lib/libpcsclite_real.so.${LIBpcsclite_real_VERSION}
 @lib lib/libpcscspy.so.${LIBpcscspy_VERSION}
 lib/pkgconfig/libpcsclite.pc
 @man man/man1/pcsc-spy.1

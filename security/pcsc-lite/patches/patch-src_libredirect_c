@@ -1,0 +1,14 @@
+Leave dlopen()ed .so version to CFLAGS
+
+Index: src/libredirect.c
+--- src/libredirect.c.orig
++++ src/libredirect.c
+@@ -127,8 +127,6 @@ static void log_line(const char *fmt, ...)
+ 
+ static LONG load_lib(void)
+ {
+-#define LIBPCSC "libpcsclite_real.so.1"
+-
+ 	const char *lib;
+ 
+ 	lib = SYS_GetEnv("LIBPCSCLITE_DELEGATE");
