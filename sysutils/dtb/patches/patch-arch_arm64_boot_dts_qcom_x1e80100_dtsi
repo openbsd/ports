@@ -9,6 +9,42 @@ Index: arch/arm64/boot/dts/qcom/x1e80100.dtsi
  #include <dt-bindings/clock/qcom,x1e80100-tcsr.h>
  #include <dt-bindings/dma/qcom-gpi.h>
  #include <dt-bindings/interconnect/qcom,icc.h>
+@@ -744,7 +745,7 @@
+ 				 <&sleep_clk>,
+ 				 <0>,
+ 				 <&pcie4_phy>,
+-				 <0>,
++				 <&pcie5_phy>,
+ 				 <&pcie6a_phy>,
+ 				 <0>,
+ 				 <&usb_1_ss0_qmpphy QMP_USB43DP_USB3_PIPE_CLK>,
+@@ -1978,7 +1979,7 @@
+ 
+ 			i2c0: i2c@b80000 {
+ 				compatible = "qcom,geni-i2c";
+-				reg = <0 0xb80000 0 0x4000>;
++				reg = <0 0x00b80000 0 0x4000>;
+ 
+ 				interrupts = <GIC_SPI 373 IRQ_TYPE_LEVEL_HIGH>;
+ 
+@@ -2143,7 +2144,7 @@
+ 
+ 			spi2: spi@b88000 {
+ 				compatible = "qcom,geni-spi";
+-				reg = <0 0xb88000 0 0x4000>;
++				reg = <0 0x00b88000 0 0x4000>;
+ 
+ 				interrupts = <GIC_SPI 584 IRQ_TYPE_LEVEL_HIGH>;
+ 
+@@ -2242,7 +2243,7 @@
+ 
+ 			i2c4: i2c@b90000 {
+ 				compatible = "qcom,geni-i2c";
+-				reg = <0 0xb90000 0 0x4000>;
++				reg = <0 0x00b90000 0 0x4000>;
+ 
+ 				interrupts = <GIC_SPI 586 IRQ_TYPE_LEVEL_HIGH>;
+ 
 @@ -2505,6 +2506,66 @@
  			};
  		};
@@ -146,7 +182,7 @@ Index: arch/arm64/boot/dts/qcom/x1e80100.dtsi
  		};
  
  		usb_1_ss2_hsphy: phy@fde000 {
-@@ -2623,6 +2740,34 @@
+@@ -2623,11 +2740,39 @@
  			#phy-cells = <1>;
  
  			status = "disabled";
@@ -181,7 +217,111 @@ Index: arch/arm64/boot/dts/qcom/x1e80100.dtsi
  		};
  
  		cnoc_main: interconnect@1500000 {
-@@ -2733,6 +2878,77 @@
+ 			compatible = "qcom,x1e80100-cnoc-main";
+-			reg = <0 0x1500000 0 0x14400>;
++			reg = <0 0x01500000 0 0x14400>;
+ 
+ 			qcom,bcm-voters = <&apps_bcm_voter>;
+ 
+@@ -2636,7 +2781,7 @@
+ 
+ 		config_noc: interconnect@1600000 {
+ 			compatible = "qcom,x1e80100-cnoc-cfg";
+-			reg = <0 0x1600000 0 0x6600>;
++			reg = <0 0x01600000 0 0x6600>;
+ 
+ 			qcom,bcm-voters = <&apps_bcm_voter>;
+ 
+@@ -2645,7 +2790,7 @@
+ 
+ 		system_noc: interconnect@1680000 {
+ 			compatible = "qcom,x1e80100-system-noc";
+-			reg = <0 0x1680000 0 0x1c080>;
++			reg = <0 0x01680000 0 0x1c080>;
+ 
+ 			qcom,bcm-voters = <&apps_bcm_voter>;
+ 
+@@ -2654,7 +2799,7 @@
+ 
+ 		pcie_south_anoc: interconnect@16c0000 {
+ 			compatible = "qcom,x1e80100-pcie-south-anoc";
+-			reg = <0 0x16c0000 0 0xd080>;
++			reg = <0 0x016c0000 0 0xd080>;
+ 
+ 			qcom,bcm-voters = <&apps_bcm_voter>;
+ 
+@@ -2663,7 +2808,7 @@
+ 
+ 		pcie_center_anoc: interconnect@16d0000 {
+ 			compatible = "qcom,x1e80100-pcie-center-anoc";
+-			reg = <0 0x16d0000 0 0x7000>;
++			reg = <0 0x016d0000 0 0x7000>;
+ 
+ 			qcom,bcm-voters = <&apps_bcm_voter>;
+ 
+@@ -2672,7 +2817,7 @@
+ 
+ 		aggre1_noc: interconnect@16e0000 {
+ 			compatible = "qcom,x1e80100-aggre1-noc";
+-			reg = <0 0x16E0000 0 0x14400>;
++			reg = <0 0x016e0000 0 0x14400>;
+ 
+ 			qcom,bcm-voters = <&apps_bcm_voter>;
+ 
+@@ -2681,7 +2826,7 @@
+ 
+ 		aggre2_noc: interconnect@1700000 {
+ 			compatible = "qcom,x1e80100-aggre2-noc";
+-			reg = <0 0x1700000 0 0x1c400>;
++			reg = <0 0x01700000 0 0x1c400>;
+ 
+ 			qcom,bcm-voters = <&apps_bcm_voter>;
+ 
+@@ -2690,7 +2835,7 @@
+ 
+ 		pcie_north_anoc: interconnect@1740000 {
+ 			compatible = "qcom,x1e80100-pcie-north-anoc";
+-			reg = <0 0x1740000 0 0x9080>;
++			reg = <0 0x01740000 0 0x9080>;
+ 
+ 			qcom,bcm-voters = <&apps_bcm_voter>;
+ 
+@@ -2699,7 +2844,7 @@
+ 
+ 		usb_center_anoc: interconnect@1750000 {
+ 			compatible = "qcom,x1e80100-usb-center-anoc";
+-			reg = <0 0x1750000 0 0x8800>;
++			reg = <0 0x01750000 0 0x8800>;
+ 
+ 			qcom,bcm-voters = <&apps_bcm_voter>;
+ 
+@@ -2708,7 +2853,7 @@
+ 
+ 		usb_north_anoc: interconnect@1760000 {
+ 			compatible = "qcom,x1e80100-usb-north-anoc";
+-			reg = <0 0x1760000 0 0x7080>;
++			reg = <0 0x01760000 0 0x7080>;
+ 
+ 			qcom,bcm-voters = <&apps_bcm_voter>;
+ 
+@@ -2717,7 +2862,7 @@
+ 
+ 		usb_south_anoc: interconnect@1770000 {
+ 			compatible = "qcom,x1e80100-usb-south-anoc";
+-			reg = <0 0x1770000 0 0xf080>;
++			reg = <0 0x01770000 0 0xf080>;
+ 
+ 			qcom,bcm-voters = <&apps_bcm_voter>;
+ 
+@@ -2726,13 +2871,84 @@
+ 
+ 		mmss_noc: interconnect@1780000 {
+ 			compatible = "qcom,x1e80100-mmss-noc";
+-			reg = <0 0x1780000 0 0x5B800>;
++			reg = <0 0x01780000 0 0x5B800>;
+ 
+ 			qcom,bcm-voters = <&apps_bcm_voter>;
+ 
  			#interconnect-cells = <2>;
  		};
  
@@ -259,7 +399,183 @@ Index: arch/arm64/boot/dts/qcom/x1e80100.dtsi
  		pcie6a: pci@1bf8000 {
  			device_type = "pci";
  			compatible = "qcom,pcie-x1e80100";
-@@ -2987,6 +3203,200 @@
+@@ -2756,7 +2972,7 @@
+ 
+ 			dma-coherent;
+ 
+-			linux,pci-domain = <7>;
++			linux,pci-domain = <6>;
+ 			num-lanes = <2>;
+ 
+ 			interrupts = <GIC_SPI 773 IRQ_TYPE_LEVEL_HIGH>,
+@@ -2814,6 +3030,7 @@
+ 				      "link_down";
+ 
+ 			power-domains = <&gcc GCC_PCIE_6A_GDSC>;
++			required-opps = <&rpmhpd_opp_nom>;
+ 
+ 			phys = <&pcie6a_phy>;
+ 			phy-names = "pciephy";
+@@ -2854,6 +3071,126 @@
+ 			status = "disabled";
+ 		};
+ 
++		pcie5: pci@1c00000 {
++			device_type = "pci";
++			compatible = "qcom,pcie-x1e80100";
++			reg = <0 0x01c00000 0 0x3000>,
++			      <0 0x7e000000 0 0xf1d>,
++			      <0 0x7e000f40 0 0xa8>,
++			      <0 0x7e001000 0 0x1000>,
++			      <0 0x7e100000 0 0x100000>,
++			      <0 0x01c03000 0 0x1000>;
++			reg-names = "parf",
++				    "dbi",
++				    "elbi",
++				    "atu",
++				    "config",
++				    "mhi";
++			#address-cells = <3>;
++			#size-cells = <2>;
++			ranges = <0x01000000 0x0 0x00000000 0x0 0x7e200000 0x0 0x100000>,
++				 <0x02000000 0x0 0x7e300000 0x0 0x7e300000 0x0 0x1d00000>;
++			bus-range = <0x00 0xff>;
++
++			dma-coherent;
++
++			linux,pci-domain = <5>;
++			num-lanes = <2>;
++
++			interrupts = <GIC_SPI 94 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 95 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 96 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 89 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 86 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 82 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 77 IRQ_TYPE_LEVEL_HIGH>,
++				     <GIC_SPI 78 IRQ_TYPE_LEVEL_HIGH>;
++			interrupt-names = "msi0",
++					  "msi1",
++					  "msi2",
++					  "msi3",
++					  "msi4",
++					  "msi5",
++					  "msi6",
++					  "msi7";
++
++			#interrupt-cells = <1>;
++			interrupt-map-mask = <0 0 0 0x7>;
++			interrupt-map = <0 0 0 1 &intc 0 0 0 70 IRQ_TYPE_LEVEL_HIGH>,
++					<0 0 0 2 &intc 0 0 0 71 IRQ_TYPE_LEVEL_HIGH>,
++					<0 0 0 3 &intc 0 0 0 72 IRQ_TYPE_LEVEL_HIGH>,
++					<0 0 0 4 &intc 0 0 0 73 IRQ_TYPE_LEVEL_HIGH>;
++
++			clocks = <&gcc GCC_PCIE_5_AUX_CLK>,
++				 <&gcc GCC_PCIE_5_CFG_AHB_CLK>,
++				 <&gcc GCC_PCIE_5_MSTR_AXI_CLK>,
++				 <&gcc GCC_PCIE_5_SLV_AXI_CLK>,
++				 <&gcc GCC_PCIE_5_SLV_Q2A_AXI_CLK>,
++				 <&gcc GCC_CFG_NOC_PCIE_ANOC_NORTH_AHB_CLK>,
++				 <&gcc GCC_CNOC_PCIE_NORTH_SF_AXI_CLK>;
++			clock-names = "aux",
++				      "cfg",
++				      "bus_master",
++				      "bus_slave",
++				      "slave_q2a",
++				      "noc_aggr",
++				      "cnoc_sf_axi";
++
++			assigned-clocks = <&gcc GCC_PCIE_5_AUX_CLK>;
++			assigned-clock-rates = <19200000>;
++
++			interconnects = <&pcie_south_anoc MASTER_PCIE_5 QCOM_ICC_TAG_ALWAYS
++					 &mc_virt SLAVE_EBI1 QCOM_ICC_TAG_ALWAYS>,
++					<&gem_noc MASTER_APPSS_PROC QCOM_ICC_TAG_ALWAYS
++					 &cnoc_main SLAVE_PCIE_5 QCOM_ICC_TAG_ALWAYS>;
++			interconnect-names = "pcie-mem",
++					     "cpu-pcie";
++
++			resets = <&gcc GCC_PCIE_5_BCR>,
++				 <&gcc GCC_PCIE_5_LINK_DOWN_BCR>;
++			reset-names = "pci",
++				      "link_down";
++
++			power-domains = <&gcc GCC_PCIE_5_GDSC>;
++			required-opps = <&rpmhpd_opp_nom>;
++
++			phys = <&pcie5_phy>;
++			phy-names = "pciephy";
++
++			status = "disabled";
++		};
++
++		pcie5_phy: phy@1c06000 {
++			compatible = "qcom,x1e80100-qmp-gen3x2-pcie-phy";
++			reg = <0 0x01c06000 0 0x2000>;
++
++			clocks = <&gcc GCC_PCIE_5_AUX_CLK>,
++				 <&gcc GCC_PCIE_5_CFG_AHB_CLK>,
++				 <&rpmhcc RPMH_CXO_CLK>,
++				 <&gcc GCC_PCIE_5_PHY_RCHNG_CLK>,
++				 <&gcc GCC_PCIE_5_PIPE_CLK>;
++			clock-names = "aux",
++				      "cfg_ahb",
++				      "ref",
++				      "rchng",
++				      "pipe";
++
++			resets = <&gcc GCC_PCIE_5_PHY_BCR>;
++			reset-names = "phy";
++
++			assigned-clocks = <&gcc GCC_PCIE_5_PHY_RCHNG_CLK>;
++			assigned-clock-rates = <100000000>;
++
++			power-domains = <&gcc GCC_PCIE_5_PHY_GDSC>;
++
++			#clock-cells = <0>;
++			clock-output-names = "pcie5_pipe_clk";
++
++			#phy-cells = <0>;
++
++			status = "disabled";
++		};
++
+ 		pcie4: pci@1c08000 {
+ 			device_type = "pci";
+ 			compatible = "qcom,pcie-x1e80100";
+@@ -2877,7 +3214,7 @@
+ 
+ 			dma-coherent;
+ 
+-			linux,pci-domain = <5>;
++			linux,pci-domain = <4>;
+ 			num-lanes = <2>;
+ 
+ 			interrupts = <GIC_SPI 141 IRQ_TYPE_LEVEL_HIGH>,
+@@ -2935,11 +3272,22 @@
+ 				      "link_down";
+ 
+ 			power-domains = <&gcc GCC_PCIE_4_GDSC>;
++			required-opps = <&rpmhpd_opp_nom>;
+ 
+ 			phys = <&pcie4_phy>;
+ 			phy-names = "pciephy";
+ 
+ 			status = "disabled";
++
++			pcie4_port0: pcie@0 {
++				device_type = "pci";
++				reg = <0x0 0x0 0x0 0x0 0x0>;
++				bus-range = <0x01 0xff>;
++
++				#address-cells = <3>;
++				#size-cells = <2>;
++				ranges;
++			};
+ 		};
+ 
+ 		pcie4_phy: phy@1c0e000 {
+@@ -2987,6 +3335,200 @@
  			#reset-cells = <1>;
  		};
  
@@ -460,7 +776,43 @@ Index: arch/arm64/boot/dts/qcom/x1e80100.dtsi
  		gem_noc: interconnect@26400000 {
  			compatible = "qcom,x1e80100-gem-noc";
  			reg = <0 0x26400000 0 0x311200>;
-@@ -3447,9 +3857,24 @@
+@@ -2998,7 +3540,7 @@
+ 
+ 		nsp_noc: interconnect@320c0000 {
+ 			compatible = "qcom,x1e80100-nsp-noc";
+-			reg = <0 0x320C0000 0 0xE080>;
++			reg = <0 0x320C0000 0 0xe080>;
+ 
+ 			qcom,bcm-voters = <&apps_bcm_voter>;
+ 
+@@ -3332,7 +3874,7 @@
+ 
+ 		lpass_ag_noc: interconnect@7e40000 {
+ 			compatible = "qcom,x1e80100-lpass-ag-noc";
+-			reg = <0 0x7e40000 0 0xE080>;
++			reg = <0 0x07e40000 0 0xe080>;
+ 
+ 			qcom,bcm-voters = <&apps_bcm_voter>;
+ 
+@@ -3341,7 +3883,7 @@
+ 
+ 		lpass_lpiaon_noc: interconnect@7400000 {
+ 			compatible = "qcom,x1e80100-lpass-lpiaon-noc";
+-			reg = <0 0x7400000 0 0x19080>;
++			reg = <0 0x07400000 0 0x19080>;
+ 
+ 			qcom,bcm-voters = <&apps_bcm_voter>;
+ 
+@@ -3350,7 +3892,7 @@
+ 
+ 		lpass_lpicx_noc: interconnect@7430000 {
+ 			compatible = "qcom,x1e80100-lpass-lpicx-noc";
+-			reg = <0 0x7430000 0 0x3A200>;
++			reg = <0 0x07430000 0 0x3A200>;
+ 
+ 			qcom,bcm-voters = <&apps_bcm_voter>;
+ 
+@@ -3447,9 +3989,24 @@
  
  				dma-coherent;
  
@@ -487,7 +839,7 @@ Index: arch/arm64/boot/dts/qcom/x1e80100.dtsi
  				};
  			};
  		};
-@@ -3516,8 +3941,15 @@
+@@ -3516,8 +4073,15 @@
  				phy-names = "usb2-phy";
  				maximum-speed = "high-speed";
  
@@ -505,7 +857,7 @@ Index: arch/arm64/boot/dts/qcom/x1e80100.dtsi
  					};
  				};
  			};
-@@ -3592,9 +4024,24 @@
+@@ -3592,9 +4156,24 @@
  
  				dma-coherent;
  
@@ -532,7 +884,7 @@ Index: arch/arm64/boot/dts/qcom/x1e80100.dtsi
  				};
  			};
  		};
-@@ -3675,9 +4122,24 @@
+@@ -3675,9 +4254,24 @@
  
  				dma-coherent;
  
@@ -559,7 +911,24 @@ Index: arch/arm64/boot/dts/qcom/x1e80100.dtsi
  				};
  			};
  		};
-@@ -3862,6 +4324,7 @@
+@@ -3811,11 +4405,11 @@
+ 
+ 			mdss_dp0: displayport-controller@ae90000 {
+ 				compatible = "qcom,x1e80100-dp";
+-				reg = <0 0xae90000 0 0x200>,
+-				      <0 0xae90200 0 0x200>,
+-				      <0 0xae90400 0 0x600>,
+-				      <0 0xae91000 0 0x400>,
+-				      <0 0xae91400 0 0x400>;
++				reg = <0 0x0ae90000 0 0x200>,
++				      <0 0x0ae90200 0 0x200>,
++				      <0 0x0ae90400 0 0x600>,
++				      <0 0x0ae91000 0 0x400>,
++				      <0 0x0ae91400 0 0x400>;
+ 
+ 				interrupts-extended = <&mdss 12>;
+ 
+@@ -3862,6 +4456,7 @@
  						reg = <1>;
  
  						mdss_dp0_out: endpoint {
@@ -567,7 +936,24 @@ Index: arch/arm64/boot/dts/qcom/x1e80100.dtsi
  						};
  					};
  				};
-@@ -3944,6 +4407,7 @@
+@@ -3893,11 +4488,11 @@
+ 
+ 			mdss_dp1: displayport-controller@ae98000 {
+ 				compatible = "qcom,x1e80100-dp";
+-				reg = <0 0xae98000 0 0x200>,
+-				      <0 0xae98200 0 0x200>,
+-				      <0 0xae98400 0 0x600>,
+-				      <0 0xae99000 0 0x400>,
+-				      <0 0xae99400 0 0x400>;
++				reg = <0 0x0ae98000 0 0x200>,
++				      <0 0x0ae98200 0 0x200>,
++				      <0 0x0ae98400 0 0x600>,
++				      <0 0x0ae99000 0 0x400>,
++				      <0 0x0ae99400 0 0x400>;
+ 
+ 				interrupts-extended = <&mdss 13>;
+ 
+@@ -3944,6 +4539,7 @@
  						reg = <1>;
  
  						mdss_dp1_out: endpoint {
@@ -575,7 +961,24 @@ Index: arch/arm64/boot/dts/qcom/x1e80100.dtsi
  						};
  					};
  				};
-@@ -4023,6 +4487,10 @@
+@@ -3975,11 +4571,11 @@
+ 
+ 			mdss_dp2: displayport-controller@ae9a000 {
+ 				compatible = "qcom,x1e80100-dp";
+-				reg = <0 0xae9a000 0 0x200>,
+-				      <0 0xae9a200 0 0x200>,
+-				      <0 0xae9a400 0 0x600>,
+-				      <0 0xae9b000 0 0x400>,
+-				      <0 0xae9b400 0 0x400>;
++				reg = <0 0x0ae9a000 0 0x200>,
++				      <0 0x0ae9a200 0 0x200>,
++				      <0 0x0ae9a400 0 0x600>,
++				      <0 0x0ae9b000 0 0x400>,
++				      <0 0x0ae9b400 0 0x400>;
+ 
+ 				interrupts-extended = <&mdss 14>;
+ 
+@@ -4023,6 +4619,10 @@
  
  					port@1 {
  						reg = <1>;
@@ -586,7 +989,36 @@ Index: arch/arm64/boot/dts/qcom/x1e80100.dtsi
  					};
  				};
  
-@@ -5157,6 +5625,129 @@
+@@ -4053,11 +4653,11 @@
+ 
+ 			mdss_dp3: displayport-controller@aea0000 {
+ 				compatible = "qcom,x1e80100-dp";
+-				reg = <0 0xaea0000 0 0x200>,
+-				      <0 0xaea0200 0 0x200>,
+-				      <0 0xaea0400 0 0x600>,
+-				      <0 0xaea1000 0 0x400>,
+-				      <0 0xaea1400 0 0x400>;
++				reg = <0 0x0aea0000 0 0x200>,
++				      <0 0x0aea0200 0 0x200>,
++				      <0 0x0aea0400 0 0x600>,
++				      <0 0x0aea1000 0 0x400>,
++				      <0 0x0aea1400 0 0x400>;
+ 
+ 				interrupts-extended = <&mdss 15>;
+ 
+@@ -4221,6 +4821,11 @@
+ 			#clock-cells = <0>;
+ 		};
+ 
++		sram@c3f0000 {
++			compatible = "qcom,rpmh-stats";
++			reg = <0 0x0c3f0000 0 0x400>;
++		};
++
+ 		spmi: arbiter@c400000 {
+ 			compatible = "qcom,x1e80100-spmi-pmic-arb";
+ 			reg = <0 0x0c400000 0 0x3000>,
+@@ -5157,6 +5762,129 @@
  			};
  		};
  
@@ -716,7 +1148,7 @@ Index: arch/arm64/boot/dts/qcom/x1e80100.dtsi
  		system-cache-controller@25000000 {
  			compatible = "qcom,x1e80100-llcc";
  			reg = <0 0x25000000 0 0x200000>,
-@@ -5226,6 +5817,55 @@
+@@ -5226,6 +5954,55 @@
  				label = "lpass";
  				qcom,remote-pid = <2>;
  
@@ -772,7 +1204,7 @@ Index: arch/arm64/boot/dts/qcom/x1e80100.dtsi
  				gpr {
  					compatible = "qcom,gpr";
  					qcom,glink-channels = "adsp_apps";
-@@ -5315,6 +5955,101 @@
+@@ -5315,6 +6092,101 @@
  
  				label = "cdsp";
  				qcom,remote-pid = <5>;
@@ -874,7 +1306,7 @@ Index: arch/arm64/boot/dts/qcom/x1e80100.dtsi
  			};
  		};
  	};
-@@ -5326,5 +6061,1159 @@
+@@ -5326,5 +6198,1159 @@
  			     <GIC_PPI 14 IRQ_TYPE_LEVEL_LOW>,
  			     <GIC_PPI 11 IRQ_TYPE_LEVEL_LOW>,
  			     <GIC_PPI 10 IRQ_TYPE_LEVEL_LOW>;

@@ -2443,6 +2443,7 @@ share/dtb/arm64/qcom/sm8550-qrd.dtb
 share/dtb/arm64/qcom/sm8550-sony-xperia-yodo-pdx234.dtb
 share/dtb/arm64/qcom/sm8650-mtp.dtb
 share/dtb/arm64/qcom/sm8650-qrd.dtb
+share/dtb/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dtb
 share/dtb/arm64/qcom/x1e80100-asus-vivobook-s15.dtb
 share/dtb/arm64/qcom/x1e80100-crd.dtb
 share/dtb/arm64/qcom/x1e80100-lenovo-yoga-slim7x.dtb

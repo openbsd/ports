@@ -1,5 +1,5 @@
 FW_DRIVER=	arm64-qcom-dtb
-FW_VER=		1.9
+FW_VER=		2.0
 
 WRKDIST=	${WRKDIR}
 DISTFILES=
@@ -9,9 +9,10 @@ DISTFILES=
 PERMIT_PACKAGE=	  firmware
 PERMIT_DISTFILES= Yes
 
-BUILD_DEPENDS=	sysutils/dtb>=6.10p1
+BUILD_DEPENDS=	sysutils/dtb>=6.10p2
 
 DTBS=	sc8280xp-lenovo-thinkpad-x13s.dtb \
+	x1e78100-lenovo-thinkpad-t14s.dtb \
 	x1e80100-asus-vivobook-s15.dtb \
 	x1e80100-lenovo-yoga-slim7x.dtb \
 	x1e80100-samsung-galaxy-book4-edge.dtb

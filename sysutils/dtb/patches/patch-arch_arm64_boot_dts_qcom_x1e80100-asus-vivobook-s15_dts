@@ -1,7 +1,7 @@
 Index: arch/arm64/boot/dts/qcom/x1e80100-asus-vivobook-s15.dts
 --- arch/arm64/boot/dts/qcom/x1e80100-asus-vivobook-s15.dts.orig
 +++ arch/arm64/boot/dts/qcom/x1e80100-asus-vivobook-s15.dts
-@@ -0,0 +1,616 @@
+@@ -0,0 +1,648 @@
 +// SPDX-License-Identifier: BSD-3-Clause
 +/*
 + * Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
@@ -282,6 +282,13 @@ Index: arch/arm64/boot/dts/qcom/x1e80100-asus-vivobook-s15.dts
 +		vdd-l3-supply = <&vreg_s1f_0p7>;
 +		vdd-s1-supply = <&vph_pwr>;
 +		vdd-s2-supply = <&vph_pwr>;
++
++		vreg_l3i_0p8: ldo3 {
++			regulator-name = "vreg_l3i_0p8";
++			regulator-min-microvolt = <880000>;
++			regulator-max-microvolt = <920000>;
++			regulator-initial-mode = <RPMH_REGULATOR_MODE_HPM>;
++		};
 +	};
 +
 +	regulators-7 {
@@ -427,11 +434,17 @@ Index: arch/arm64/boot/dts/qcom/x1e80100-asus-vivobook-s15.dts
 +};
 +
 +&pcie4 {
++	perst-gpios = <&tlmm 146 GPIO_ACTIVE_LOW>;
++	wake-gpios = <&tlmm 148 GPIO_ACTIVE_LOW>;
++
++	pinctrl-0 = <&pcie4_default>;
++	pinctrl-names = "default";
++
 +	status = "okay";
 +};
 +
 +&pcie4_phy {
-+	vdda-phy-supply = <&vreg_l3j_0p8>;
++	vdda-phy-supply = <&vreg_l3i_0p8>;
 +	vdda-pll-supply = <&vreg_l3e_1p2>;
 +
 +	status = "okay";
@@ -492,10 +505,6 @@ Index: arch/arm64/boot/dts/qcom/x1e80100-asus-vivobook-s15.dts
 +	vdd3-supply = <&vreg_l14b_3p0>;
 +};
 +
-+&smb2360_2 {
-+	status = "disabled";
-+};
-+
 +&tlmm {
 +	gpio-reserved-ranges = <34 2>, /* Unused */
 +			       <44 4>, /* SPI (TPM) */
@@ -521,7 +530,30 @@ Index: arch/arm64/boot/dts/qcom/x1e80100-asus-vivobook-s15.dts
 +		bias-disable;
 +	};
 +
-+	pcie6a_default: pcie2a-default-state {
++	pcie4_default: pcie4-default-state {
++		clkreq-n-pins {
++			pins = "gpio147";
++			function = "pcie4_clk";
++			drive-strength = <2>;
++			bias-pull-up;
++		};
++
++		perst-n-pins {
++			pins = "gpio146";
++			function = "gpio";
++			drive-strength = <2>;
++			bias-disable;
++		};
++
++		wake-n-pins {
++			pins = "gpio148";
++			function = "gpio";
++			drive-strength = <2>;
++			bias-pull-up;
++		};
++	};
++
++	pcie6a_default: pcie6a-default-state {
 +		clkreq-n-pins {
 +			pins = "gpio153";
 +			function = "pcie6a_clk";
@@ -533,7 +565,7 @@ Index: arch/arm64/boot/dts/qcom/x1e80100-asus-vivobook-s15.dts
 +			pins = "gpio152";
 +			function = "gpio";
 +			drive-strength = <2>;
-+			bias-pull-down;
++			bias-disable;
 +		};
 +
 +		wake-n-pins {

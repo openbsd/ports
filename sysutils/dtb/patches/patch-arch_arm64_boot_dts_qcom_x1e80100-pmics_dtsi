@@ -481,9 +481,12 @@ Index: arch/arm64/boot/dts/qcom/x1e80100-pmics.dtsi
  &spmi_bus1 {
  	smb2360_0: pmic@7 {
  		compatible = "qcom,smb2360", "qcom,spmi-pmic";
-@@ -43,6 +510,21 @@
+@@ -42,7 +509,24 @@
+ 		#address-cells = <1>;
  		#size-cells = <0>;
  
++		status = "disabled";
++
  		smb2360_2_eusb2_repeater: phy@fd00 {
 +			compatible = "qcom,smb2360-eusb2-repeater";
 +			reg = <0xfd00>;
