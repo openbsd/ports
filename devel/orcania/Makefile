@@ -2,7 +2,7 @@ COMMENT =	potluck with different functions for different purposes
 
 GH_ACCOUNT =	babelouest
 GH_PROJECT =	orcania
-GH_TAGNAME =	v2.3.2
+GH_TAGNAME =	v2.3.3
 
 SHARED_LIBS =	orcania		1.0
 
