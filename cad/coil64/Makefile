@@ -2,7 +2,7 @@ COMMENT =		inductance coil calculator
 
 GH_ACCOUNT =		radioacoustick
 GH_PROJECT =		Coil64
-GH_TAGNAME =		v2.2.32
+GH_TAGNAME =		v2.2.33
 
 CATEGORIES =		cad
 
@@ -20,6 +20,8 @@ MODULES =		devel/qmake \
 CONFIGURE_STYLE =	qmake
 
 INSTALLDIR =		${PREFIX}/bin/coil64
+
+NO_TEST =		Yes
 
 # qmake install directive screws all of this up, so roll it by hand
 do-install:
