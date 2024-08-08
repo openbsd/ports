@@ -2,9 +2,9 @@ COMMENT =	HTTP Framework for REST Applications in C
 
 GH_ACCOUNT =	babelouest
 GH_PROJECT =	ulfius
-GH_TAGNAME =	v2.7.13
+GH_TAGNAME =	v2.7.15
 
-SHARED_LIBS =	ulfius	0.0
+SHARED_LIBS =	ulfius	0.1
 
 CATEGORIES =	www
 
@@ -19,7 +19,7 @@ MODULES =		devel/cmake
 
 LIB_DEPENDS +=		devel/jansson \
 			devel/orcania \
-			devel/yder \
+			devel/yder>=1.4.20 \
 			net/curl \
 			security/gnutls \
 			www/libmicrohttpd
