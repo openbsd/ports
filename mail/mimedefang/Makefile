@@ -46,6 +46,8 @@ post-extract:
 		${WRKSRC}/examples/mimedefang-filter-openbsd-ports
 
 post-install:
+	${INSTALL_DATA} ${WRKSRC}/SpamAssassin/spamassassin.cf \
+		${PREFIX}/share/examples/mimedefang/mail/sa-mimedefang.cf
 	${INSTALL_DATA} ${WRKSRC}/examples/mimedefang-filter-openbsd-ports \
 		${PREFIX}/share/examples/mimedefang/
 	${INSTALL_DATA_DIR} ${WRKSRC}/contrib \
