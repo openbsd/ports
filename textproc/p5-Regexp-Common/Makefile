@@ -1,7 +1,7 @@
 COMMENT =	provide commonly requested regular expressions
 
-DISTNAME =	Regexp-Common-2017060201
-REVISION =	0
+DISTNAME =	Regexp-Common-2024080801
+FIX_EXTRACT_PERMISSIONS =	Yes
 
 CATEGORIES =	textproc
 
