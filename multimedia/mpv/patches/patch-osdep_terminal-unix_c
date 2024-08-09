@@ -1,3 +1,5 @@
+https://github.com/mpv-player/mpv/pull/14654
+
 Index: osdep/terminal-unix.c
 --- osdep/terminal-unix.c.orig
 +++ osdep/terminal-unix.c
