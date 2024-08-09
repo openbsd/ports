@@ -1,11 +1,10 @@
 COMMENT=	library for Emulated Input
 
-V=		1.2.1
+V=		1.3.0
 DISTNAME=	libei-${V}
-REVISION=	0
 
-SHARED_LIBS += ei                        0.0 # 1.2.1
-SHARED_LIBS += eis                       0.0 # 1.2.1
+SHARED_LIBS += ei                        0.0 # 1.3.0
+SHARED_LIBS += eis                       0.0 # 1.3.0
 
 CATEGORIES=	wayland devel
 
