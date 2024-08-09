@@ -3,7 +3,7 @@ No -march=native, please.
 Index: configure
 --- configure.orig
 +++ configure
-@@ -9014,7 +9014,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.b
+@@ -9016,7 +9016,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.b
              SIMD_FLAGS="-mfpu=neon -DHAVE_NEON"
            else
              # this part is a bit iffy,,,
@@ -12,7 +12,7 @@ Index: configure
              cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  #include <arm_neon.h>
-@@ -9035,7 +9035,7 @@ esac
+@@ -9037,7 +9037,7 @@ esac
  fi
  rm -f core conftest.err conftest.$ac_objext conftest.beam conftest.$ac_ext
              if test "x$mneon_ok" = "xyes"; then
@@ -21,7 +21,7 @@ Index: configure
              fi
            fi
            CXXFLAGS=$save_CXXFLAGS
-@@ -9256,7 +9256,7 @@ fi
+@@ -9258,7 +9258,7 @@ fi
          if test "x$mneon_ok" = "xyes"; then
            SIMD_FLAGS="-mfpu=neon -DHAVE_NEON"
          else
@@ -30,7 +30,7 @@ Index: configure
            if test "$cross_compiling" = yes
  then :
    { { printf "%s\n" "$as_me:${as_lineno-$LINENO}: error: in '$ac_pwd':" >&5
-@@ -9288,7 +9288,7 @@ esac
+@@ -9290,7 +9290,7 @@ esac
  fi
  
            if test "x$mneon_ok" = "xyes"; then
