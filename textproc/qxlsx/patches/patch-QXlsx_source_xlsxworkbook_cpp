@@ -1,0 +1,35 @@
+From 11bafef83286e79a95f17773926b62253ba53cab Mon Sep 17 00:00:00 2001
+From: Daniel Nicoletti <dantti12@gmail.com>
+Date: Thu, 8 Aug 2024 15:50:08 -0300
+Subject: [PATCH] Fix broken build
+
+Index: QXlsx/source/xlsxworkbook.cpp
+--- QXlsx/source/xlsxworkbook.cpp.orig
++++ QXlsx/source/xlsxworkbook.cpp
+@@ -607,19 +607,18 @@ bool Workbook::loadFromXmlFile(QIODevice *device)
+ 
+                 AbstractSheet *sheet = addSheet(name, sheetId, type);
+                 sheet->setSheetState(state);
+-                if (relationship.target.startsWith("/")) {
++                if (relationship.target.startsWith(u'/')) {
+                     QString fullPath = QDir::cleanPath(relationship.target.mid(1));
+ 
+                     sheet->setFilePath(fullPath);
+-                }else{                    
++                } else {
+                     QString strFilePath = filePath();
+-    
+-                    // const QString fullPath = QDir::cleanPath(splitPath(strFilePath).constFirst() +
+-                    // QLatin1String("/") + relationship.target);
++
++                    // const QString fullPath = QDir::cleanPath(splitPath(strFilePath).constFirst()
++                    // + QLatin1String("/") + relationship.target);
+                     const auto parts = splitPath(strFilePath);
+-                    QString fullPath =
+-                        QDir::cleanPath(parts.first() + QLatin1String("/") + relationship.target);
+-    
++                    QString fullPath = QDir::cleanPath(parts.first() + u'/' + relationship.target);
++
+                     sheet->setFilePath(fullPath);
+                 }
+             } else if (reader.name() == QLatin1String("workbookPr")) {
