@@ -44,6 +44,8 @@ lib/python${MODPY_VERSION}/site-packages/wormhole/${MODPY_PYCACHE}_rlcompleter.$
 lib/python${MODPY_VERSION}/site-packages/wormhole/${MODPY_PYCACHE}_rlcompleter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wormhole/${MODPY_PYCACHE}_send.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wormhole/${MODPY_PYCACHE}_send.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wormhole/${MODPY_PYCACHE}_status.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/wormhole/${MODPY_PYCACHE}_status.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wormhole/${MODPY_PYCACHE}_terminator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wormhole/${MODPY_PYCACHE}_terminator.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wormhole/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -119,6 +121,7 @@ lib/python${MODPY_VERSION}/site-packages/wormhole/_receive.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/_rendezvous.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/_rlcompleter.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/_send.py
+lib/python${MODPY_VERSION}/site-packages/wormhole/_status.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/_terminator.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/_version.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/_wordlist.py
@@ -189,6 +192,8 @@ lib/python${MODPY_VERSION}/site-packages/wormhole/test/${MODPY_PYCACHE}test_tran
 lib/python${MODPY_VERSION}/site-packages/wormhole/test/${MODPY_PYCACHE}test_transit.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wormhole/test/${MODPY_PYCACHE}test_util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wormhole/test/${MODPY_PYCACHE}test_util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wormhole/test/${MODPY_PYCACHE}test_util_attrs_zope.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/wormhole/test/${MODPY_PYCACHE}test_util_attrs_zope.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wormhole/test/${MODPY_PYCACHE}test_wordlist.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wormhole/test/${MODPY_PYCACHE}test_wordlist.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wormhole/test/${MODPY_PYCACHE}test_wormhole.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -259,6 +264,7 @@ lib/python${MODPY_VERSION}/site-packages/wormhole/test/test_ssh.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/test/test_tor_manager.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/test/test_transit.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/test/test_util.py
+lib/python${MODPY_VERSION}/site-packages/wormhole/test/test_util_attrs_zope.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/test/test_wordlist.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/test/test_wormhole.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/test/test_xfer_util.py

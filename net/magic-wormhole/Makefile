@@ -1,8 +1,7 @@
 COMMENT =		securely transfer data between computers
 
-MODPY_EGG_VERSION =	0.14.0
+MODPY_EGG_VERSION =	0.15.0
 DISTNAME =		magic-wormhole-${MODPY_EGG_VERSION}
-REVISION =		1
 
 HOMEPAGE =		https://magic-wormhole.readthedocs.io
 
