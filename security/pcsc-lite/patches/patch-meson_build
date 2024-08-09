@@ -49,6 +49,15 @@ Index: meson.build
  run_command('pod2man',
    ['--date=2024-01-01', 'src/spy/pcsc-spy.pod', 'pcsc-spy.1'],
    check : true)
+@@ -275,7 +273,7 @@ endif
+ pkg = import('pkgconfig')
+ pkg.generate(
+   libraries : '-L${libdir} -lpcsclite',
+-  libraries_private : '-pthread',
++  extra_cflags : '-pthread',
+   subdirs : 'PCSC',
+   version : meson.project_version(),
+   name : 'PCSC Lite',
 @@ -290,7 +288,7 @@ configure_file(output : 'doxygen.conf',
    input : 'doc/doxygen.conf.in',
    configuration : confgen_data)

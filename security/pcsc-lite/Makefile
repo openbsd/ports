@@ -3,6 +3,7 @@ COMMENT=	resource manager for PC/SC
 V=		2.2.3
 DISTNAME=	pcsc-lite-${V}
 CATEGORIES=	security
+REVISION=	0
 
 SHARED_LIBS+=	pcsclite_real	0.0 # 1.0.0
 SHARED_LIBS+=	pcsclite	1.0 # 1.0.0
