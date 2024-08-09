@@ -1,14 +1,13 @@
 COMMENT=		framework for granting privileged operations to users
 
-V=			124
-DISTNAME=		polkit-${V}
+GH_ACCOUNT=		polkit-org
+GH_PROJECT=		polkit
+GH_TAGNAME=		125
 
 SHARED_LIBS += polkit-gobject-1          2.0 # 0.0.0
 SHARED_LIBS += polkit-agent-1            2.0 # 0.0.0
 
 CATEGORIES=		sysutils security
-
-HOMEPAGE=		http://www.freedesktop.org/wiki/Software/polkit
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -16,8 +15,6 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c duktape expat gio-2.0 glib-2.0 gobject-2.0 intl pthread
-
-SITES=		https://gitlab.freedesktop.org/polkit/polkit/-/archive/${V}/
 
 MODULES=		devel/meson \
 			lang/python
@@ -71,5 +68,6 @@ pre-configure:
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/polkit
 	mv ${WRKINST}${SYSCONFDIR}/polkit-1 ${PREFIX}/share/examples/polkit
+	rm -r ${WRKINST}/usr/lib/{systemd,sysusers.d,tmpfiles.d}
 
 .include <bsd.port.mk>
