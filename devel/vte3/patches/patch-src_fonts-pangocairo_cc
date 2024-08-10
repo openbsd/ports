@@ -1,0 +1,17 @@
+From 41b19080b5594300afc010e1ef7d838ab120603a Mon Sep 17 00:00:00 2001
+From: Christian Hergert <chergert@redhat.com>
+Date: Mon, 10 Jun 2024 12:41:35 -0700
+Subject: [PATCH] fonts: ensure ref of font from glyph item analysis
+
+Index: src/fonts-pangocairo.cc
+--- src/fonts-pangocairo.cc.orig
++++ src/fonts-pangocairo.cc
+@@ -560,7 +560,7 @@ FontInfo::get_unistr_info(vteunistr c)
+ 
+                 uinfo->set_coverage(UnistrInfo::Coverage::USE_PANGO_GLYPH_STRING);
+ 
+-                ufi->using_pango_glyph_string.font = glyph_item->item->analysis.font;
++		ufi->using_pango_glyph_string.font = glyph_item->item->analysis.font ? g_object_ref (glyph_item->item->analysis.font) : nullptr;
+                 ufi->using_pango_glyph_string.glyph_string = pango_glyph_string_copy (glyph_string);
+         }
+ #endif
