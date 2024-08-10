@@ -1,4 +1,4 @@
-# requires /dev/efi
+# requires efi(4)
 ONLY_FOR_ARCHS =	amd64 arm64
 
 # The project is Linux-oriented, using fork with BSD-specific changes so that
@@ -10,6 +10,7 @@ DISTNAME =		efivar-38
 GH_ACCOUNT =		3mdeb
 GH_PROJECT =		efivar
 GH_TAGNAME =		bsd-v1
+REVISION =		0
 
 COMMENT =		tools and libraries to work with EFI
 
@@ -26,6 +27,8 @@ MAINTAINER =		Sergii Dmytruk <sergii.dmytruk@3mdeb.com>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 USE_GMAKE =		Yes
 MAKE_FLAGS =		CC=${CC}
