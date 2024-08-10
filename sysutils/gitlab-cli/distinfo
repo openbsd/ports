@@ -1,4 +1,4 @@
-SHA256 (cli-v1.44.1.zip) = kTtBvawb6brbl5DDeTGmtOSsGS3d9Em/hPXs0hG6Ryw=
+SHA256 (cli-v1.45.0.zip) = vGWDOF4xDcs1HeBeqq9Cp92dob6cHjVYX+s5A0duq7E=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.110.10.mod) = NYagpvj1XJrKsc5QbeBFAKXdHh9xg/Q1yHBvDEDfIWY=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.112.1.mod) = K3ub9aRj+HBW2ayMf4tSefsHIMERWAOeSGmOvFegpPs=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.112.1.zip) = 5mxI/EmT2sqY/gLF/OcE7UKwDS1VPU4Zw7/P42E+9EA=
@@ -531,7 +531,7 @@ SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.4.1.mod) = ZRhD0lm
 SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.4.1.zip) = zoD3u+yp+QDo7DEXRAB812TGeezI06aqpqvxIj3ekfI=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = L8eybun2ctl7QvpvJfWxWlWYK7usaZYdduux0DbRUAE=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.zip) = qsiNpVHCpRK2Qss1ZYvz3IYllaNWa9hA6/GOSALx/Mk=
-SIZE (cli-v1.44.1.zip) = 17153374
+SIZE (cli-v1.45.0.zip) = 17153610
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.10.mod) = 1349
 SIZE (go_modules/cloud.google.com/go/@v/v0.112.1.mod) = 1812
 SIZE (go_modules/cloud.google.com/go/@v/v0.112.1.zip) = 318714
