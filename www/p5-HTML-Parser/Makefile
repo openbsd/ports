@@ -1,6 +1,6 @@
 COMMENT =	modules to parse and extract information from HTML
 
-DISTNAME =	HTML-Parser-3.81
+DISTNAME =	HTML-Parser-3.83
 
 CATEGORIES =	www
 
