@@ -1,6 +1,7 @@
 COMMENT=	transfer files with FTP, HTTP, HTTPS, etc.
 
 DISTNAME=	curl-8.9.1
+REVISION=	0
 SHARED_LIBS=	curl                 26.27    # 12.0
 CATEGORIES=	net
 HOMEPAGE=	https://curl.se/
