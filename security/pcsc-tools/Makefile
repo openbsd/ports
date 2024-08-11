@@ -1,6 +1,6 @@
 COMMENT=	tools for use with PC/SC drivers, cards, readers
 
-DISTNAME=	pcsc-tools-1.7.1
+DISTNAME=	pcsc-tools-1.7.2
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	security sysutils
