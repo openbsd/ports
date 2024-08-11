@@ -2,7 +2,7 @@ COMMENT=	easy MIME message handling
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	Email-MIME-1.953
+DISTNAME =	Email-MIME-1.954
 CATEGORIES=	mail
 
 # Same as Perl
