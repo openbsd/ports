@@ -1,7 +1,7 @@
 COMMENT =	routines for accessing the OpenSSL prng
 
 MODULES =	cpan
-DISTNAME =	Crypt-OpenSSL-Random-0.15
+DISTNAME =	Crypt-OpenSSL-Random-0.17
 CATEGORIES =	security
 CPAN_AUTHOR =	RURBAN
 
