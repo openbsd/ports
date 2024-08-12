@@ -1,0 +1,12 @@
+Index: xembed-sni-proxy/sniproxy.cpp
+--- xembed-sni-proxy/sniproxy.cpp.orig
++++ xembed-sni-proxy/sniproxy.cpp
+@@ -21,6 +21,8 @@
+ #include <KWindowSystem>
+ #include <netwm.h>
+ 
++#include <span>
++
+ #include "statusnotifieritemadaptor.h"
+ #include "statusnotifierwatcher_interface.h"
+ 

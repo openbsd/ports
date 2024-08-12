@@ -2373,6 +2373,7 @@ share/locale/id/LC_MESSAGES/kcmmouse.mo
 share/locale/id/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/id/LC_MESSAGES/knetattach.mo
 share/locale/id/LC_MESSAGES/org.kde.plasma.emojier.mo
+share/locale/id/LC_MESSAGES/plasma-desktop-sddm-theme.mo
 share/locale/id/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/id/LC_MESSAGES/plasma_applet_org.kde.panel.mo
 share/locale/id/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardlayout.mo
