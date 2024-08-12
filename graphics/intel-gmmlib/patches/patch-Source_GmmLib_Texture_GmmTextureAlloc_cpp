@@ -2,7 +2,7 @@ https://github.com/intel/gmmlib/pull/68
 Index: Source/GmmLib/Texture/GmmTextureAlloc.cpp
 --- Source/GmmLib/Texture/GmmTextureAlloc.cpp.orig
 +++ Source/GmmLib/Texture/GmmTextureAlloc.cpp
-@@ -823,7 +823,7 @@ GMM_STATUS GmmLib::GmmTextureCalc::FillTexPitchAndSize
+@@ -812,7 +812,7 @@ GMM_STATUS GmmLib::GmmTextureCalc::FillTexPitchAndSize
          }
          else
          {
