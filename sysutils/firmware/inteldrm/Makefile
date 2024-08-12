@@ -1,5 +1,5 @@
 FW_DRIVER=	inteldrm
-FW_VER=		20240610
+FW_VER=		20240811
 DISTNAME=	linux-firmware-${FW_VER}
 EXTRACT_SUFX=	.tar.xz
 EXTRACT_FILES=	${DISTNAME}/{LICENSE.\*,i915}
@@ -64,6 +64,7 @@ FIRMWARE=	adlp_dmc.bin \
 		skl_huc_2.0.0.bin \
 		tgl_huc.bin \
 		tgl_huc_7.9.3.bin \
+		mtl_gsc_1.bin \
 		${FW61}
 
 do-install:

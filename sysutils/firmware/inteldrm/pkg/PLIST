@@ -30,6 +30,7 @@ firmware/i915/kbl_dmc_ver1_04.bin
 firmware/i915/kbl_guc_70.1.1.bin
 firmware/i915/kbl_huc_4.0.0.bin
 firmware/i915/mtl_dmc.bin
+firmware/i915/mtl_gsc_1.bin
 firmware/i915/mtl_guc_70.bin
 firmware/i915/mtl_huc_gsc.bin
 firmware/i915/rkl_dmc_ver2_03.bin
