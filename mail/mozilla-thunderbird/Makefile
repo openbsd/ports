@@ -4,6 +4,7 @@ COMMENT =		Mozilla e-mail, calendar, rss and usenet client
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
 MOZILLA_VERSION =	128.1.0esr
+REVISION =	0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	comm/mail
@@ -69,6 +70,8 @@ CONFIGURE_ARGS +=	--disable-debug-symbols
 DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
 			--disable-install-strip
 MAKE_ENV +=		BUILD_VERBOSE_LOG="1" CARGOFLAGS="-j${MAKE_JOBS}"
+CONFIGURE_ENV +=	CPPFLAGS=-Wno-backend-plugin
+CONFIGURE_ENV +=	LDFLAGS="-Wl,--threads=${MAKE_JOBS} --ld-path=${WRKDIR}/bin/ld"
 
 # detected by configure & dlopened
 BUILD_DEPENDS +=	security/rnp
