@@ -37,7 +37,6 @@ share/i2p/certificates/plugin/
 share/i2p/certificates/plugin/backup_at_mail.i2p.crt
 share/i2p/certificates/plugin/cacapo_at_mail.i2p.crt
 share/i2p/certificates/plugin/hankhill19580_at_gmail.com.crt
-share/i2p/certificates/plugin/str4d_at_mail.i2p.crt
 share/i2p/certificates/plugin/zzz-plugin_at_mail.i2p.crt
 share/i2p/certificates/reseed/
 share/i2p/certificates/reseed/admin_at_stormycloud.org.crt
