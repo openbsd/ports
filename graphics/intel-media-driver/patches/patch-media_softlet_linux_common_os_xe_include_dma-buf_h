@@ -1,0 +1,15 @@
+Index: media_softlet/linux/common/os/xe/include/dma-buf.h
+--- media_softlet/linux/common/os/xe/include/dma-buf.h.orig
++++ media_softlet/linux/common/os/xe/include/dma-buf.h
+@@ -20,7 +20,10 @@
+ #ifndef _DMA_BUF_UAPI_H_
+ #define _DMA_BUF_UAPI_H_
+ 
+-#include <linux/types.h>
++#include <sys/types.h>
++typedef int32_t  __s32;
++typedef uint32_t __u32;
++typedef uint64_t __u64;
+ 
+ /**
+  * struct dma_buf_sync - Synchronize with CPU access.

@@ -1,0 +1,13 @@
+https://github.com/intel/media-driver/issues/1840
+Index: media_softlet/linux/common/os/mos_gpucontext_specific_next.cpp
+--- media_softlet/linux/common/os/mos_gpucontext_specific_next.cpp.orig
++++ media_softlet/linux/common/os/mos_gpucontext_specific_next.cpp
+@@ -1974,7 +1974,7 @@ PMOS_RESOURCE GpuContextSpecificNext::GetOcaRTLogResou
+     // than 2 video processors, the value may be overwritten and wrong allocation Index in array may be used.
+     // To avoid this, use duplicate MOS_RESOURCE instance in GPU Context to ensure differnt iAllocationIndex
+     // array of OcaRTLogResources being used for different GPU Context.
+-    if (!m_ocaRtLogResInited)
++    if (!m_ocaRtLogResInited && globalInst)
+     {
+         m_ocaRtLogResource = *globalInst;
+         m_ocaRtLogResInited = true;
