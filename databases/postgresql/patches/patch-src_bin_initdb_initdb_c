@@ -4,7 +4,7 @@ script handles.
 Index: src/bin/initdb/initdb.c
 --- src/bin/initdb/initdb.c.orig
 +++ src/bin/initdb/initdb.c
-@@ -3411,6 +3411,16 @@ main(int argc, char *argv[])
+@@ -3416,6 +3416,16 @@ main(int argc, char *argv[])
  
  	if (!noinstructions)
  	{
@@ -21,7 +21,7 @@ Index: src/bin/initdb/initdb.c
  		/*
  		 * Build up a shell command to tell the user how to start the server
  		 */
-@@ -3442,6 +3452,7 @@ main(int argc, char *argv[])
+@@ -3447,6 +3457,7 @@ main(int argc, char *argv[])
  			   start_db_cmd->data);
  
  		destroyPQExpBuffer(start_db_cmd);
