@@ -12,7 +12,7 @@ Index: meson.build
  # optional dependencies: file formats support
  exr = dependency('OpenEXR', version: '>=3.1', required: get_option('exr'))
  heif = dependency('libheif', required: get_option('heif'))
-@@ -215,7 +215,7 @@ executable(
+@@ -219,7 +219,7 @@ executable(
    sources,
    dependencies: [
      # runtime

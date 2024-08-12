@@ -2,7 +2,7 @@ COMMENT =	image display utility for Wayland
 
 GH_ACCOUNT =	artemsen
 GH_PROJECT =	swayimg
-GH_TAGNAME =	v3.0
+GH_TAGNAME =	v3.1
 
 CATEGORIES =	wayland
 

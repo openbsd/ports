@@ -3,6 +3,8 @@
 @man man/man5/swayimgrc.5
 share/applications/swayimg.desktop
 share/bash-completion/completions/swayimg
+share/icons/hicolor/128x128/apps/swayimg.png
+share/icons/hicolor/256x256/apps/swayimg.png
 share/icons/hicolor/64x64/apps/swayimg.png
 share/swayimg/
 share/swayimg/swayimgrc
