@@ -4,7 +4,7 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -793,6 +793,7 @@ talloc = dependency('talloc', required: false)
+@@ -780,6 +780,7 @@ talloc = dependency('talloc', required: false)
  
  tracker_manager = ''
  tracker_prefix = get_option('with-tracker-prefix')
@@ -12,7 +12,7 @@ Index: meson.build
  
  if not get_option('with-spotlight')
      have_spotlight = false
-@@ -804,11 +805,12 @@ else
+@@ -791,11 +792,12 @@ else
      foreach version : tracker_sparql_version
          tracker_sparql = dependency('tracker-sparql-' + version, required: false)
          if tracker_sparql.found()
@@ -26,7 +26,7 @@ Index: meson.build
          warning('tracker SPARQL not found (required for Spotlight support)')
      else
          # Check for tracker
-@@ -885,7 +887,7 @@ else
+@@ -872,7 +874,7 @@ else
  endif
  
  have_spotlight = (
@@ -35,7 +35,7 @@ Index: meson.build
      and tracker_found
      and talloc.found()
      and flex.found()
-@@ -1592,6 +1594,7 @@ uams_options = ''
+@@ -1579,6 +1581,7 @@ uams_options = ''
  
  if not enable_pam
      have_pam = false
