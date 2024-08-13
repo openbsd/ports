@@ -3,7 +3,7 @@ allow custom SDL GetPlatform name with env var SDL_PLATFORM
 Index: src/SDL.c
 --- src/SDL.c.orig
 +++ src/SDL.c
-@@ -566,6 +566,10 @@ int SDL_GetRevisionNumber(void)
+@@ -576,6 +576,10 @@ int SDL_GetRevisionNumber(void)
  /* Get the name of the platform */
  const char *SDL_GetPlatform(void)
  {
