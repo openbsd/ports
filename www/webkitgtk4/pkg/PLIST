@@ -21,6 +21,7 @@ include/webkitgtk-${API}/webkit/WebKitBackForwardList.h
 include/webkitgtk-${API}/webkit/WebKitBackForwardListItem.h
 include/webkitgtk-${API}/webkit/WebKitClipboardPermissionRequest.h
 include/webkitgtk-${API}/webkit/WebKitColorChooserRequest.h
+include/webkitgtk-${API}/webkit/WebKitConsoleMessage.h
 include/webkitgtk-${API}/webkit/WebKitContextMenu.h
 include/webkitgtk-${API}/webkit/WebKitContextMenuActions.h
 include/webkitgtk-${API}/webkit/WebKitContextMenuItem.h
@@ -299,5 +300,16 @@ share/doc/javascriptcoregtk-${API}/struct.ClassVTable.html
 share/doc/javascriptcoregtk-${API}/style.css
 share/doc/javascriptcoregtk-${API}/type_func.Context.get_current.html
 share/doc/javascriptcoregtk-${API}/urlmap.js
+share/doc/webkitgtk-web-process-extension-${API}/enum.ConsoleMessageLevel.html
+share/doc/webkitgtk-web-process-extension-${API}/enum.ConsoleMessageSource.html
+share/doc/webkitgtk-web-process-extension-${API}/method.ConsoleMessage.copy.html
+share/doc/webkitgtk-web-process-extension-${API}/method.ConsoleMessage.free.html
+share/doc/webkitgtk-web-process-extension-${API}/method.ConsoleMessage.get_level.html
+share/doc/webkitgtk-web-process-extension-${API}/method.ConsoleMessage.get_line.html
+share/doc/webkitgtk-web-process-extension-${API}/method.ConsoleMessage.get_source.html
+share/doc/webkitgtk-web-process-extension-${API}/method.ConsoleMessage.get_source_id.html
+share/doc/webkitgtk-web-process-extension-${API}/method.ConsoleMessage.get_text.html
+share/doc/webkitgtk-web-process-extension-${API}/signal.WebPage.console-message-sent.html
+share/doc/webkitgtk-web-process-extension-${API}/struct.ConsoleMessage.html
 share/gir-1.0/JavaScriptCore-${API}.gir
 %%webkitgtk60%%
