@@ -5,8 +5,8 @@ CATEGORIES =	devel mail
 
 SHARED_LIBS +=  KF6CalendarCore           0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network ical
-WANTLIB += icalss icalvcal m
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6Qml
+WANTLIB += ical icalss icalvcal m
 
 BUILD_DEPENDS =	devel/bison
 

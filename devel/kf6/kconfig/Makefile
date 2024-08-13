@@ -6,7 +6,7 @@ SHARED_LIBS +=  KF6ConfigGui              0.0 # 0.0
 SHARED_LIBS +=  KF6ConfigQml              0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6Qml Qt6Xml c m
+WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick Qt6Xml c m
 
 LIB_DEPENDS =	x11/qt6/qtdeclarative
 
