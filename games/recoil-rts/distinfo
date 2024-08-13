@@ -1,6 +1,6 @@
 SHA256 (USCiLab-cereal-d1fcec807b372f04e4c1041b3058e11c12853e6e.tar.gz) = 1Es3qUX8IoNvYuZiUmm4ZfP8BZu3jSXXWqucH4r/Mmc=
 SHA256 (beyond-all-reason-pr-downloader-bdac30330eccb5ec73da299922491f3f4ee8debe.tar.gz) = gwxe0bl/0tEFJV/f/OWaB5rkQhN1UXomLOccEUFb660=
-SHA256 (beyond-all-reason-spring-spring_bar_%7BBAR105%7D.1.1-2572-g7e87fc1.tar.gz) = UpWLAi7eLMQ/9iUMcA09OANib+gijbkEtvcIA0hlYtU=
+SHA256 (beyond-all-reason-spring-spring_bar_%7BBAR105%7D.1.1-2577-g77272e9.tar.gz) = GIhADDf+KspMkgkL0cn932bsjmW5dEicJA91NJbRgrw=
 SHA256 (cameron314-readerwriterqueue-8e7627d18c2108aca178888d88514179899a044f.tar.gz) = zOGtadLg/b/tn6tvYPYrvR9SExfgr14gUVngVtjPR80=
 SHA256 (gflags-gflags-f8a0efe03aa69b3336d8e228b37d4ccb17324b88.tar.gz) = TSIvq48e3kcJzf9BfRWhM2+GLXM0qBq/dtCcFez5rNE=
 SHA256 (rlcevg-CircuitAI-3dee671176bdae7e6b1dd46a3c6c2c0d03c48755.tar.gz) = anC1SjlVT3uMkIP4JtYPR3W1r/GjAW9XPrviyVOPPJ0=
@@ -10,7 +10,7 @@ SHA256 (spring-SpringMapConvNG-0ddd86eaa8871dc0833c69f931f55cd856c5009d.tar.gz) 
 SHA256 (wolfpld-tracy-5a1f5371b792c12aea324213e1dc738b2923ae21.tar.gz) = ZJdi2a7Yha8LBWJdrdB0Jrn8/Y/5ASrs8FG2VsBm7NM=
 SIZE (USCiLab-cereal-d1fcec807b372f04e4c1041b3058e11c12853e6e.tar.gz) = 386786
 SIZE (beyond-all-reason-pr-downloader-bdac30330eccb5ec73da299922491f3f4ee8debe.tar.gz) = 342401
-SIZE (beyond-all-reason-spring-spring_bar_%7BBAR105%7D.1.1-2572-g7e87fc1.tar.gz) = 23030112
+SIZE (beyond-all-reason-spring-spring_bar_%7BBAR105%7D.1.1-2577-g77272e9.tar.gz) = 23028435
 SIZE (cameron314-readerwriterqueue-8e7627d18c2108aca178888d88514179899a044f.tar.gz) = 41260
 SIZE (gflags-gflags-f8a0efe03aa69b3336d8e228b37d4ccb17324b88.tar.gz) = 96474
 SIZE (rlcevg-CircuitAI-3dee671176bdae7e6b1dd46a3c6c2c0d03c48755.tar.gz) = 1564925

@@ -18,11 +18,13 @@ if [ $(ulimit -Sd) -lt ${DATASIZE} ]; then
 fi
 
 # setup
+# XXX: empty server address to disallow multiplayer while desyncs
+#      once solved, set address to "server4.beyondallreason.info"
 [[ -d ${GAME_DIR} ]] || mkdir -p ${GAME_DIR}
 [[ -f ${CONFIG_FILE} ]] || cat > ${CONFIG_FILE} <<EOF
 {
   "server": {
-    "address": "server4.beyondallreason.info",
+    "address": "",
     "port": 8200,
     "protocol": "spring",
     "serverName": "BAR"

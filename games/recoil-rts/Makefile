@@ -10,10 +10,9 @@ COMMENT =		real-time strategy game engine for Beyond All Reason
 MJ =			105
 # don't reduce ${MN} to just single digit to avoid update-plist going berserk
 MN =			1.1
-BLD =			2572
-HASH =			g7e87fc1
+BLD =			2577
+HASH =			g77272e9
 V =			${MJ}.${MN}pl${BLD}
-REVISION =		0
 # ${IN_ENGINE_V} is what recoil uses/displays internally
 IN_ENGINE_V =		"${MJ}.${MN}-${BLD}-${HASH} BAR${MJ}"
 
