@@ -3,6 +3,9 @@ NOT_FOR_ARCHS =		sparc64
 
 BROKEN-i386 =		raw-cpuid-10.2.0/src/lib.rs:80:37 "could not find `arch` in `self`"
 
+# The mysqlclient-sys crate bundles bindings for arm64 and x86 only
+# See below the restriction for the mysql FLAVOR
+
 COMMENT =		unofficial bitwarden compatible server
 
 DIST_TUPLE =		github dani-garcia vaultwarden 1.32.0 .
@@ -33,6 +36,7 @@ FLAVOR ?=
 MODCARGO_FEATURES +=	mysql
 WANTLIB +=		mariadb
 LIB_DEPENDS +=		databases/mariadb
+ONLY_FOR_ARCHS =	amd64 aarch64 i386
 .endif
 .if ${FLAVOR:Mpostgresql}
 MODCARGO_FEATURES +=	postgresql
