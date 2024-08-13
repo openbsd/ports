@@ -1,6 +1,7 @@
 COMMENT =	KDE Plasma add-ons
 DISTNAME =	kdeplasma-addons-${VERSION}
 PKGNAME =	kf6-kdeplasma-addons-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  plasmapotdprovidercore    1.0 # 0.0
 
@@ -27,7 +28,8 @@ BUILD_DEPENDS =	archivers/gtar \
 		graphics/kirigami-addons>=1.0.0
 
 RUN_DEPENDS =	devel/kf6/kitemmodels \
-		graphics/kirigami-addons>=1.0.0
+		graphics/kirigami-addons>=1.0.0 \
+		x11/dbus,-suid
 
 LIB_DEPENDS =	devel/kf6/kcmutils \
 		devel/kf6/kcolorscheme \
