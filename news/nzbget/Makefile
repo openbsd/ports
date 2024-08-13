@@ -1,6 +1,7 @@
 COMMENT =	binary newsreader supporting NZB files
 
 DIST_TUPLE =	github nzbgetcom nzbget v24.2 .
+REVISION =	0
 
 CATEGORIES =	news
 
@@ -32,7 +33,7 @@ TEST_DEPENDS =	archivers/unrar
 CONFIGURE_ARGS =	-DENABLE_TESTS=ON
 
 post-install:
-	${SUBST_CMD} ${WRKSRC}/nzbget.conf
-	${INSTALL_DATA} ${WRKSRC}/nzbget.conf ${PREFIX}/share/nzbget/
+	${SUBST_CMD} ${WRKBUILD}/nzbget.conf
+	${INSTALL_DATA} ${WRKBUILD}/nzbget.conf ${PREFIX}/share/nzbget/
 
 .include <bsd.port.mk>
