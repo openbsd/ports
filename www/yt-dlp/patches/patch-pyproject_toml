@@ -1,7 +1,7 @@
 Index: pyproject.toml
 --- pyproject.toml.orig
 +++ pyproject.toml
-@@ -113,7 +113,7 @@ artifacts = ["/yt_dlp/extractor/lazy_extractors.py"]
+@@ -130,7 +130,7 @@ artifacts = ["/yt_dlp/extractor/lazy_extractors.py"]
  "completions/zsh/_yt-dlp" = "share/zsh/site-functions/_yt-dlp"
  "completions/fish/yt-dlp.fish" = "share/fish/vendor_completions.d/yt-dlp.fish"
  "README.txt" = "share/doc/yt_dlp/README.txt"
