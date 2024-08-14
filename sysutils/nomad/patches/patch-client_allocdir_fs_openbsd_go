@@ -3,7 +3,10 @@ Copied from fs_freebsd.ogo (verbatim).
 Index: client/allocdir/fs_openbsd.go
 --- client/allocdir/fs_openbsd.go.orig
 +++ client/allocdir/fs_openbsd.go
-@@ -0,0 +1,26 @@
+@@ -0,0 +1,29 @@
++// Copyright (c) HashiCorp, Inc.
++// SPDX-License-Identifier: BUSL-1.1
++
 +package allocdir
 +
 +import (
@@ -22,8 +25,8 @@ Index: client/allocdir/fs_openbsd.go
 +}
 +
 +// createSecretDir creates the secrets dir folder at the given path
-+func createSecretDir(dir string) error {
-+	return os.MkdirAll(dir, 0777)
++func createSecretDir(dir string, _ int) error {
++	return os.MkdirAll(dir, fileMode777)
 +}
 +
 +// removeSecretDir removes the secrets dir folder
