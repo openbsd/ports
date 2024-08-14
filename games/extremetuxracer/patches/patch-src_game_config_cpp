@@ -9,4 +9,4 @@ Index: src/game_config.cpp
 +	param.fullscreen = false;
  	param.res_type = 0; // 0=auto / 1=800x600 / 2=1024x768 ...
  	param.perf_level = 3;	// detail level
- 	param.language = string::npos; // If language is set to npos, ETR will try to load default system language
+ 	param.language = std::string::npos; // If language is set to npos, ETR will try to load default system language

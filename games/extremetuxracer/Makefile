@@ -2,7 +2,7 @@ COMMENT =		downhill racing game
 BROKEN-alpha =		cc1plus: error: unrecognized command line option '-std=c++11'
 BROKEN-hppa =		cc1plus: error: unrecognized command line option '-std=c++11'
 
-V =			0.8.3
+V =			0.8.4
 DISTNAME =		etr-$V
 PKGNAME =		extremetuxracer-$V
 
