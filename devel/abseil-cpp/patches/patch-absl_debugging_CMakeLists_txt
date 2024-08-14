@@ -23,7 +23,7 @@ Index: absl/debugging/CMakeLists.txt
  
  # Internal-only target, do not depend on directly.
  absl_cc_library(
-@@ -223,6 +225,7 @@ absl_cc_test(
+@@ -335,6 +337,7 @@ absl_cc_test(
      GTest::gmock_main
  )
  
@@ -31,7 +31,7 @@ Index: absl/debugging/CMakeLists.txt
  absl_cc_library(
    NAME
      leak_check
-@@ -253,6 +256,7 @@ absl_cc_test(
+@@ -365,6 +368,7 @@ absl_cc_test(
      absl::log
      GTest::gmock_main
  )
@@ -39,7 +39,7 @@ Index: absl/debugging/CMakeLists.txt
  
  # Internal-only target, do not depend on directly.
  absl_cc_library(
-@@ -271,6 +275,7 @@ absl_cc_library(
+@@ -383,6 +387,7 @@ absl_cc_library(
    TESTONLY
  )
  
@@ -47,7 +47,7 @@ Index: absl/debugging/CMakeLists.txt
  absl_cc_test(
    NAME
      stack_consumption_test
-@@ -296,3 +301,4 @@ absl_cc_library(
+@@ -408,3 +413,4 @@ absl_cc_library(
      absl::leak_check
    PUBLIC
  )

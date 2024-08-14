@@ -20,7 +20,7 @@ Index: absl/container/CMakeLists.txt
  
  absl_cc_library(
    NAME
-@@ -294,6 +296,7 @@ absl_cc_library(
+@@ -296,6 +298,7 @@ absl_cc_library(
    PUBLIC
  )
  
@@ -28,7 +28,7 @@ Index: absl/container/CMakeLists.txt
  absl_cc_test(
    NAME
      flat_hash_map_test
-@@ -313,6 +316,7 @@ absl_cc_test(
+@@ -318,6 +321,7 @@ absl_cc_test(
      absl::unordered_map_modifiers_test
      GTest::gmock_main
  )
