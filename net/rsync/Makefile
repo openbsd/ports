@@ -3,7 +3,7 @@ COMMENT =	mirroring/synchronization over low bandwidth links
 DISTNAME =	rsync-3.3.0
 CATEGORIES =	net
 HOMEPAGE =	https://rsync.samba.org/
-REVISION =	1
+REVISION =	2
 
 FLAVORS =	minimal
 FLAVOR ?=
@@ -16,16 +16,11 @@ WANTLIB =	c crypto
 SITES =		https://rsync.samba.org/ftp/rsync/src/ \
 		https://ftp.funet.fi/pub/mirrors/samba.org/pub/rsync/src/
 
-MODULES =	lang/python
+BUILD_DEPENDS =	sysutils/xxhash
 
-MODPY_RUNDEP =	No
-
-BUILD_DEPENDS =	textproc/py-commonmark${MODPY_FLAVOR} \
-		sysutils/xxhash
-
-SEPARATE_BUILD =Yes
 CONFIGURE_STYLE =gnu
-CONFIGURE_ARGS =--disable-lz4 \
+CONFIGURE_ARGS =--disable-md2man \
+		--disable-lz4 \
 		--disable-zstd \
 		--with-included-popt \
 		--with-included-zlib \

@@ -1,0 +1,12 @@
+Index: rsync.1
+--- rsync.1.orig
++++ rsync.1
+@@ -4949,7 +4949,7 @@ does \fBnot\fP supply a password to a remote shell tra
+ .IP "\fBUSER\fP or \fBLOGNAME\fP"
+ The USER or LOGNAME environment variables are used to determine the default
+ username sent to an rsync daemon.  If neither is set, the username defaults
+-to "nobody".  If both are set, \fBUSER\fP takes precedence.
++to "_rsync".  If both are set, \fBUSER\fP takes precedence.
+ .IP "\fBRSYNC_PARTIAL_DIR\fP"
+ This environment variable specifies the directory to use for a
+ \fB\-\-partial\fP transfer without implying that partial transfers be
