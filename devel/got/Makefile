@@ -3,9 +3,8 @@ COMMENT-server =	game of trees repository server
 COMMENT-webd =		game of trees repository fast-cgi server
 COMMENT-gitwrapper =	invoke an appropriate Git repository server
 
-V =			0.101
+V =			0.102
 DISTNAME =		got-${V}
-REVISION-main =		0
 PKGNAME-server =	gotd-${V}
 PKGNAME-webd =		gotwebd-${V}
 PKGNAME-gitwrapper =	gitwrapper-${V}
