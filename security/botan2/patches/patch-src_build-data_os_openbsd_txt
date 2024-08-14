@@ -1,3 +1,7 @@
+Use OpenBSD numbering for shared library.
+
+Enable elf_aux_info() support.
+
 Index: src/build-data/os/openbsd.txt
 --- src/build-data/os/openbsd.txt.orig
 +++ src/build-data/os/openbsd.txt
@@ -11,3 +15,11 @@ Index: src/build-data/os/openbsd.txt
  
  shared_lib_symlinks no
  
+@@ -13,6 +13,7 @@ posix_mlock
+ clock_gettime
+ dev_random
+ arc4random
++elf_aux_info
+ getentropy
+ explicit_bzero
+ pledge
