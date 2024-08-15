@@ -1,7 +1,7 @@
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -1068,7 +1068,7 @@ uninstall-man: uninstall-man1
+@@ -858,7 +858,7 @@ uninstall-man: uninstall-man1
  
  
  .1.html:
