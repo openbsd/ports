@@ -1,8 +1,9 @@
 COMMENT=		GNU Transport Layer Security library
 
-V=			3.8.6
+V=			3.8.7.1
 DISTNAME=		gnutls-${V}
 EXTRACT_SUFX=		.tar.xz
+WRKDIST=		${WRKDIR}/gnutls-3.8.7
 
 CATEGORIES=		security
 
@@ -36,11 +37,9 @@ LIB_DEPENDS=		converters/libunistring \
 			security/libnettle \
 			security/p11-kit
 
-# dlopen(); see patch-lib_compress_c
+# dlopen()
 WANTLIB += brotlidec brotlienc z zstd
-BUILD_DEPENDS +=	archivers/brotli \
-			archivers/zstd
-RUN_DEPENDS +=		archivers/brotli \
+LIB_DEPENDS +=		archivers/brotli \
 			archivers/zstd
 
 USE_GMAKE=		Yes
