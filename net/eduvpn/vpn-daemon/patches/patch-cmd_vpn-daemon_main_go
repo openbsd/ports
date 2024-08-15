@@ -1,12 +1,14 @@
 Index: cmd/vpn-daemon/main.go
 --- cmd/vpn-daemon/main.go.orig
 +++ cmd/vpn-daemon/main.go
-@@ -27,7 +27,7 @@ import (
+@@ -26,8 +26,8 @@ import (
  )
  
  var credDirEnvVar = "CREDENTIALS_DIRECTORY"
 -var socketDir = "/run/openvpn-server"
+-var maintenanceModePath = "/run/vpn-daemon/maintenance-mode"
 +var socketDir = "/var/run/openvpn-server"
++var maintenanceModePath = "/var/run/vpn-daemon/maintenance-mode"
  
  type NodeInfo struct {
- 	RelLoadAverage []int     `json:"rel_load_average"`
+ 	RelLoadAverage  []int     `json:"rel_load_average"`

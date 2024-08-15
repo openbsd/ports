@@ -2,10 +2,8 @@ COMMENT=	OpenVPN and WireGuard Management Daemon
 
 BROKEN-i386=	unix.SOCK_CLOEXEC/unix.SOCK_NONBLOCK aren't listed in golang.org/x/sys/unix for openbsd_386
 
-V=		3.0.2
+V=		3.2.0
 DISTNAME=	vpn-daemon-$V
-
-REVISION=	0
 
 # MIT
 PERMIT_PACKAGE=	Yes
