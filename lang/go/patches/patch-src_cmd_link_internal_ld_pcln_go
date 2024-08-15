@@ -1,7 +1,7 @@
 Index: src/cmd/link/internal/ld/pcln.go
 --- src/cmd/link/internal/ld/pcln.go.orig
 +++ src/cmd/link/internal/ld/pcln.go
-@@ -144,9 +144,13 @@ func computeDeferReturn(ctxt *Link, deferReturnSym, s 
+@@ -143,9 +143,13 @@ func computeDeferReturn(ctxt *Link, deferReturnSym, s 
  				// instruction).
  				deferreturn = uint32(r.Off())
  				switch target.Arch.Family {

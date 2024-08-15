@@ -10,7 +10,7 @@ Index: src/cmd/internal/obj/arm64/asm7.go
  
  	/* encryption instructions */
  	{AAESD, C_VREG, C_NONE, C_NONE, C_VREG, C_NONE, 26, 4, 0, 0, 0}, // for compatibility with old code
-@@ -3009,6 +3011,7 @@ func buildop(ctxt *obj.Link) {
+@@ -3003,6 +3005,7 @@ func buildop(ctxt *obj.Link) {
  			ABL,
  			AWORD,
  			ADWORD,
@@ -18,7 +18,7 @@ Index: src/cmd/internal/obj/arm64/asm7.go
  			obj.ARET,
  			obj.ATEXT:
  			break
-@@ -5904,6 +5907,22 @@ func (c *ctxt7) asmout(p *obj.Prog, o *Optab, out []ui
+@@ -5899,6 +5902,22 @@ func (c *ctxt7) asmout(p *obj.Prog, o *Optab, out []ui
  			o1 |= uint32(0x1F)
  		}
  		o1 |= uint32(SYSARG4(int(op.op1), int(op.cn), int(op.cm), int(op.op2)))
@@ -41,7 +41,7 @@ Index: src/cmd/internal/obj/arm64/asm7.go
  	}
  	out[0] = o1
  	out[1] = o2
-@@ -6778,7 +6797,7 @@ func (c *ctxt7) opirr(p *obj.Prog, a obj.As) uint32 {
+@@ -6773,7 +6792,7 @@ func (c *ctxt7) opirr(p *obj.Prog, a obj.As) uint32 {
  		return SYSOP(0, 0, 3, 3, 0, 6, 0x1F)
  
  	case AHINT:
