@@ -1,8 +1,7 @@
 COMMENT=		OpenPrinting CUPS filters
 
-V=			2.0.0
+V=			2.0.1
 DISTNAME=		cups-filters-${V}
-REVISION=		0
 
 CATEGORIES=		print
 
@@ -13,11 +12,11 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv3 - LGPLv2 - GPLv2+ - MIT
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += avahi-client avahi-common brotlidec brotlienc c crypto
-WANTLIB += cups cupsfilters dbus-1 execinfo exif expat fontconfig
-WANTLIB += freetype gmp hogweed iconv idn2 intl jpeg lcms2 lzma
-WANTLIB += m nettle p11-kit png poppler-cpp ppd pthread qpdf ssl
-WANTLIB += tasn1 tiff unistring z zstd
+WANTLIB += avahi-client avahi-common c crypto cups cupsfilters
+WANTLIB += dbus-1 execinfo exif expat fontconfig freetype gmp
+WANTLIB += hogweed iconv idn2 intl jpeg lcms2 m nettle p11-kit
+WANTLIB += png poppler-cpp ppd pthread qpdf ssl tasn1 tiff unistring
+WANTLIB += z
 
 SITES=	https://github.com/OpenPrinting/cups-filters/releases/download/${V}/
 
@@ -26,7 +25,7 @@ COMPILER=		base-clang ports-gcc
 
 USE_GMAKE=		Yes
 
-LIB_DEPENDS=		print/libcupsfilters>=2.0.0 \
+LIB_DEPENDS=		print/libcupsfilters \
 			print/libppd \
 			print/qpdf
 
