@@ -1189,6 +1189,8 @@ share/doc/webkitgtk-web-process-extension-${API}/ctor.ScriptWorld.new_with_name.
 share/doc/webkitgtk-web-process-extension-${API}/ctor.URIRequest.new.html
 share/doc/webkitgtk-web-process-extension-${API}/ctor.UserMessage.new.html
 share/doc/webkitgtk-web-process-extension-${API}/ctor.UserMessage.new_with_fd_list.html
+share/doc/webkitgtk-web-process-extension-${API}/enum.ConsoleMessageLevel.html
+share/doc/webkitgtk-web-process-extension-${API}/enum.ConsoleMessageSource.html
 share/doc/webkitgtk-web-process-extension-${API}/enum.ContextMenuAction.html
 share/doc/webkitgtk-web-process-extension-${API}/enum.UserMessageError.html
 share/doc/webkitgtk-web-process-extension-${API}/flags.HitTestResultContext.html
@@ -1199,6 +1201,13 @@ share/doc/webkitgtk-web-process-extension-${API}/gtk4-urlmap.js
 share/doc/webkitgtk-web-process-extension-${API}/index.html
 share/doc/webkitgtk-web-process-extension-${API}/index.json
 share/doc/webkitgtk-web-process-extension-${API}/main.js
+share/doc/webkitgtk-web-process-extension-${API}/method.ConsoleMessage.copy.html
+share/doc/webkitgtk-web-process-extension-${API}/method.ConsoleMessage.free.html
+share/doc/webkitgtk-web-process-extension-${API}/method.ConsoleMessage.get_level.html
+share/doc/webkitgtk-web-process-extension-${API}/method.ConsoleMessage.get_line.html
+share/doc/webkitgtk-web-process-extension-${API}/method.ConsoleMessage.get_source.html
+share/doc/webkitgtk-web-process-extension-${API}/method.ConsoleMessage.get_source_id.html
+share/doc/webkitgtk-web-process-extension-${API}/method.ConsoleMessage.get_text.html
 share/doc/webkitgtk-web-process-extension-${API}/method.ContextMenu.append.html
 share/doc/webkitgtk-web-process-extension-${API}/method.ContextMenu.first.html
 share/doc/webkitgtk-web-process-extension-${API}/method.ContextMenu.get_event.html
@@ -1297,6 +1306,7 @@ share/doc/webkitgtk-web-process-extension-${API}/signal.WebEditor.selection-chan
 share/doc/webkitgtk-web-process-extension-${API}/signal.WebFormManager.form-controls-associated.html
 share/doc/webkitgtk-web-process-extension-${API}/signal.WebFormManager.will-send-submit-event.html
 share/doc/webkitgtk-web-process-extension-${API}/signal.WebFormManager.will-submit-form.html
+share/doc/webkitgtk-web-process-extension-${API}/signal.WebPage.console-message-sent.html
 share/doc/webkitgtk-web-process-extension-${API}/signal.WebPage.context-menu.html
 share/doc/webkitgtk-web-process-extension-${API}/signal.WebPage.document-loaded.html
 share/doc/webkitgtk-web-process-extension-${API}/signal.WebPage.send-request.html
@@ -1305,6 +1315,7 @@ share/doc/webkitgtk-web-process-extension-${API}/signal.WebProcessExtension.page
 share/doc/webkitgtk-web-process-extension-${API}/signal.WebProcessExtension.user-message-received.html
 share/doc/webkitgtk-web-process-extension-${API}/solarized-dark.css
 share/doc/webkitgtk-web-process-extension-${API}/solarized-light.css
+share/doc/webkitgtk-web-process-extension-${API}/struct.ConsoleMessage.html
 share/doc/webkitgtk-web-process-extension-${API}/style.css
 share/doc/webkitgtk-web-process-extension-${API}/type_func.ScriptWorld.get_default.html
 share/doc/webkitgtk-web-process-extension-${API}/type_func.UserMessage.error_quark.html

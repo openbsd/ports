@@ -300,16 +300,5 @@ share/doc/javascriptcoregtk-${API}/struct.ClassVTable.html
 share/doc/javascriptcoregtk-${API}/style.css
 share/doc/javascriptcoregtk-${API}/type_func.Context.get_current.html
 share/doc/javascriptcoregtk-${API}/urlmap.js
-share/doc/webkitgtk-web-process-extension-${API}/enum.ConsoleMessageLevel.html
-share/doc/webkitgtk-web-process-extension-${API}/enum.ConsoleMessageSource.html
-share/doc/webkitgtk-web-process-extension-${API}/method.ConsoleMessage.copy.html
-share/doc/webkitgtk-web-process-extension-${API}/method.ConsoleMessage.free.html
-share/doc/webkitgtk-web-process-extension-${API}/method.ConsoleMessage.get_level.html
-share/doc/webkitgtk-web-process-extension-${API}/method.ConsoleMessage.get_line.html
-share/doc/webkitgtk-web-process-extension-${API}/method.ConsoleMessage.get_source.html
-share/doc/webkitgtk-web-process-extension-${API}/method.ConsoleMessage.get_source_id.html
-share/doc/webkitgtk-web-process-extension-${API}/method.ConsoleMessage.get_text.html
-share/doc/webkitgtk-web-process-extension-${API}/signal.WebPage.console-message-sent.html
-share/doc/webkitgtk-web-process-extension-${API}/struct.ConsoleMessage.html
 share/gir-1.0/JavaScriptCore-${API}.gir
 %%webkitgtk60%%

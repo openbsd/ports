@@ -8,7 +8,6 @@ include/webkitgtk-${API}/JavaScriptCore/JSValueRef.h
 include/webkitgtk-${API}/JavaScriptCore/JavaScript.h
 include/webkitgtk-${API}/JavaScriptCore/WebKitAvailability.h
 include/webkitgtk-${API}/jsc/JSCAutocleanups.h
-include/webkitgtk-${API}/webkit/WebKitConsoleMessage.h
 include/webkitgtk-${API}/webkit/WebKitJavascriptResult.h
 include/webkitgtk-${API}/webkit/WebKitMimeInfo.h
 include/webkitgtk-${API}/webkit/WebKitPlugin.h
