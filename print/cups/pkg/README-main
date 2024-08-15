@@ -84,6 +84,8 @@ the avahi daemon.
 On the client side, "avahi-daemon" (from the avahi package) and
 "cups-browsed" (from the cups-browsed package) must be running by
 adding "avahi_daemon" and "cups_browsed" to pkg_scripts in rc.conf.local(8).
+cups-browsed is a daemon that browses the network for remote CUPS queues and IPP
+network printers and automatically create local queues pointing to them.
 
 One the server side, "avahi-daemon" must be running by adding
 "avahi_daemon" to pkg_scripts in rc.conf.local(8). Then

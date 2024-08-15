@@ -12,6 +12,8 @@ GH_ACCOUNT=		OpenPrinting
 GH_PROJECT=		cups
 GH_TAGNAME=		v2.4.10
 
+REVISION-main=		0
+
 CATEGORIES=		print sysutils
 
 # config-scripts/cups-sharedlibs.m4
