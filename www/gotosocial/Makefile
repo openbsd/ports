@@ -35,7 +35,7 @@ MODGO_FLAGS	+= -mod=mod
 # remove either if codeberg.org/gruf/go-fastcopy is fixed, or "existing
 # usages of //go:linkname found in a large open-source code corpus
 # remain supported" is extended.
-#MODGO_LDFLAGS += -checklinkname=0
+MODGO_LDFLAGS += -checklinkname=0
 
 TEST_ENV +=	GTS_DB_ADDRESS=":memory:" \
 		GTS_DB_TYPE="sqlite"

@@ -18,6 +18,11 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/go
 
+# disable https://go.dev/doc/go1.23#linker to unbreak with go-1.23.
+# remove once upstream unhibernates and updates the outdated x/net
+# or once we can finally patch go ports.
+MODGO_LDFLAGS += -checklinkname=0
+
 post-extract:
 	rm -rf ${WRKSRC}/vendor
 

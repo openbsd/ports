@@ -24,6 +24,10 @@ MODULES =		lang/go
 MODGO_LDFLAGS +=	-X ${MODGO_MODNAME}/cmd/headscale/cli.Version=$\
 			${MODGO_VERSION:S/v//}
 
+# disable https://go.dev/doc/go1.23#linker to unbreak with go-1.23.
+# XXX check if this is still needed in future updates
+MODGO_LDFLAGS += -checklinkname=0
+
 # for patches to apply
 WRKDIST =	${WRKSRC}
 
