@@ -3,6 +3,7 @@ COMMENT =	C++ library to parse/format/validate phone numbers
 GH_ACCOUNT =	google
 GH_PROJECT =	libphonenumber
 GH_TAGNAME =	v8.13.43
+REVISION =	0
 
 SHARED_LIBS +=  geocoding                 0.0 # 8.12
 SHARED_LIBS +=  phonenumber               0.0 # 8.12
@@ -18,16 +19,17 @@ WANTLIB += ${COMPILER_LIBCXX} absl_bad_optional_access absl_bad_variant_access
 WANTLIB += absl_base absl_city absl_civil_time absl_cord absl_cord_internal
 WANTLIB += absl_cordz_functions absl_cordz_handle absl_cordz_info
 WANTLIB += absl_crc32c absl_crc_cord_state absl_crc_cpu_detect
-WANTLIB += absl_crc_internal absl_debugging_internal absl_demangle_internal
-WANTLIB += absl_exponential_biased absl_graphcycles_internal absl_hash
-WANTLIB += absl_hashtablez_sampler absl_int128 absl_kernel_timeout_internal
-WANTLIB += absl_log_severity absl_low_level_hash absl_malloc_internal
-WANTLIB += absl_raw_hash_set absl_raw_logging_internal absl_spinlock_wait
-WANTLIB += absl_stacktrace absl_str_format_internal absl_string_view
-WANTLIB += absl_strings absl_strings_internal absl_symbolize absl_synchronization
-WANTLIB += absl_throw_delegate absl_time absl_time_zone boost_atomic-mt
-WANTLIB += boost_chrono-mt boost_date_time-mt boost_system-mt
-WANTLIB += boost_thread-mt icui18n icuuc m protobuf
+WANTLIB += absl_crc_internal absl_debugging_internal absl_decode_rust_punycode
+WANTLIB += absl_demangle_internal absl_demangle_rust absl_exponential_biased
+WANTLIB += absl_graphcycles_internal absl_hash absl_hashtablez_sampler
+WANTLIB += absl_int128 absl_kernel_timeout_internal absl_log_severity
+WANTLIB += absl_low_level_hash absl_malloc_internal absl_raw_hash_set
+WANTLIB += absl_raw_logging_internal absl_spinlock_wait absl_stacktrace
+WANTLIB += absl_str_format_internal absl_string_view absl_strings
+WANTLIB += absl_strings_internal absl_symbolize absl_synchronization
+WANTLIB += absl_throw_delegate absl_time absl_time_zone absl_utf8_for_code_point
+WANTLIB += boost_atomic-mt boost_chrono-mt boost_date_time-mt
+WANTLIB += boost_system-mt boost_thread-mt icui18n icuuc m protobuf
 
 MODULES =		devel/cmake
 

@@ -13,7 +13,7 @@ COMMENT =		WebRTC build for Telegram
 DIST_TUPLE =		github	desktop-app	tg_owt	\
 			dc17143230b5519f3c1a8da0079e00566bd4c5a8	.
 PKGNAME =		tg_owt-0.0.0.20240804
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 
@@ -49,21 +49,21 @@ WANTLIB += Xrandr Xrender Xtst absl_bad_optional_access absl_bad_variant_access
 WANTLIB += absl_base absl_city absl_civil_time absl_cord absl_cord_internal
 WANTLIB += absl_cordz_functions absl_cordz_handle absl_cordz_info
 WANTLIB += absl_crc32c absl_crc_cord_state absl_crc_cpu_detect
-WANTLIB += absl_crc_internal absl_debugging_internal absl_demangle_internal
-WANTLIB += absl_exponential_biased absl_flags_commandlineflag
-WANTLIB += absl_flags_commandlineflag_internal absl_flags_config
-WANTLIB += absl_flags_internal absl_flags_marshalling absl_flags_parse
-WANTLIB += absl_flags_private_handle_accessor absl_flags_program_name
-WANTLIB += absl_flags_reflection absl_flags_usage absl_flags_usage_internal
-WANTLIB += absl_graphcycles_internal absl_hash absl_hashtablez_sampler
-WANTLIB += absl_int128 absl_kernel_timeout_internal absl_log_severity
-WANTLIB += absl_low_level_hash absl_malloc_internal absl_raw_hash_set
-WANTLIB += absl_raw_logging_internal absl_spinlock_wait absl_stacktrace
-WANTLIB += absl_str_format_internal absl_string_view absl_strings
-WANTLIB += absl_strings_internal absl_symbolize absl_synchronization
-WANTLIB += absl_throw_delegate absl_time absl_time_zone avcodec
-WANTLIB += avformat avutil crc32c crypto jpeg m openh264 opus
-WANTLIB += srtp2 ssl swresample swscale vpx
+WANTLIB += absl_crc_internal absl_debugging_internal absl_decode_rust_punycode
+WANTLIB += absl_demangle_internal absl_demangle_rust absl_exponential_biased
+WANTLIB += absl_flags_commandlineflag absl_flags_commandlineflag_internal
+WANTLIB += absl_flags_config absl_flags_internal absl_flags_marshalling
+WANTLIB += absl_flags_parse absl_flags_private_handle_accessor
+WANTLIB += absl_flags_program_name absl_flags_reflection absl_flags_usage
+WANTLIB += absl_flags_usage_internal absl_graphcycles_internal
+WANTLIB += absl_hash absl_hashtablez_sampler absl_int128 absl_kernel_timeout_internal
+WANTLIB += absl_log_severity absl_low_level_hash absl_malloc_internal
+WANTLIB += absl_raw_hash_set absl_raw_logging_internal absl_spinlock_wait
+WANTLIB += absl_stacktrace absl_str_format_internal absl_string_view
+WANTLIB += absl_strings absl_strings_internal absl_symbolize absl_synchronization
+WANTLIB += absl_throw_delegate absl_time absl_time_zone absl_utf8_for_code_point
+WANTLIB += avcodec avformat avutil crc32c crypto jpeg m openh264
+WANTLIB += opus srtp2 ssl swresample swscale vpx
 
 # C++20
 COMPILER =		base-clang ports-gcc

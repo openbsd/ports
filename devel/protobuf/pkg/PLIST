@@ -421,6 +421,7 @@ include/upb_generator/
 include/upb_generator/mangle.h
 include/utf8_range.h
 include/utf8_validity.h
+lib/cmake/
 lib/cmake/protobuf/
 lib/cmake/protobuf/protobuf-config-version.cmake
 lib/cmake/protobuf/protobuf-config.cmake

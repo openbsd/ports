@@ -1,3 +1,4 @@
+include/X11/qt6/
 include/X11/qt6/QtGrpc/
 include/X11/qt6/QtGrpc/${VERSION}/
 include/X11/qt6/QtGrpc/${VERSION}/QtGrpc/
@@ -101,10 +102,14 @@ include/X11/qt6/QtProtobufWellKnownTypes/qprotobufanysupport.h
 include/X11/qt6/QtProtobufWellKnownTypes/qtprotobufwellknowntypesexports.h
 include/X11/qt6/QtProtobufWellKnownTypes/qtprotobufwellknowntypesglobal.h
 include/X11/qt6/QtProtobufWellKnownTypes/qtprotobufwellknowntypesversion.h
+lib/cmake/
+lib/cmake/Qt6/
 lib/cmake/Qt6/FindWrapProtobuf.cmake
 lib/cmake/Qt6/FindWrapProtoc.cmake
 lib/cmake/Qt6/FindWrapgRPC.cmake
 lib/cmake/Qt6/FindWrapgRPCPlugin.cmake
+lib/cmake/Qt6BuildInternals/
+lib/cmake/Qt6BuildInternals/StandaloneTests/
 lib/cmake/Qt6BuildInternals/StandaloneTests/QtGrpcTestsConfig.cmake
 lib/cmake/Qt6Grpc/
 lib/cmake/Qt6Grpc/Qt6GrpcAdditionalTargetInfo.cmake
@@ -192,13 +197,18 @@ lib/pkgconfig/Qt6Protobuf.pc
 lib/pkgconfig/Qt6ProtobufQtCoreTypes.pc
 lib/pkgconfig/Qt6ProtobufQtGuiTypes.pc
 lib/pkgconfig/Qt6ProtobufWellKnownTypes.pc
+lib/qt6/
+lib/qt6/libexec/
 @bin lib/qt6/libexec/qtgrpcgen
 @bin lib/qt6/libexec/qtprotobufgen
+lib/qt6/metatypes/
 lib/qt6/metatypes/qt6grpc_release_metatypes.json
 lib/qt6/metatypes/qt6protobuf_release_metatypes.json
 lib/qt6/metatypes/qt6protobufqtcoretypes_release_metatypes.json
 lib/qt6/metatypes/qt6protobufqtguitypes_release_metatypes.json
 lib/qt6/metatypes/qt6protobufwellknowntypes_release_metatypes.json
+lib/qt6/mkspecs/
+lib/qt6/mkspecs/modules/
 lib/qt6/mkspecs/modules/qt_lib_grpc.pri
 lib/qt6/mkspecs/modules/qt_lib_grpc_private.pri
 lib/qt6/mkspecs/modules/qt_lib_protobuf.pri
@@ -209,6 +219,7 @@ lib/qt6/mkspecs/modules/qt_lib_protobufqtguitypes.pri
 lib/qt6/mkspecs/modules/qt_lib_protobufqtguitypes_private.pri
 lib/qt6/mkspecs/modules/qt_lib_protobufwellknowntypes.pri
 lib/qt6/mkspecs/modules/qt_lib_protobufwellknowntypes_private.pri
+lib/qt6/modules/
 lib/qt6/modules/Grpc.json
 lib/qt6/modules/Protobuf.json
 lib/qt6/modules/ProtobufQtCoreTypes.json

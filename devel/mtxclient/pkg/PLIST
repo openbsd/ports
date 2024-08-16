@@ -95,6 +95,7 @@ include/mtxclient/http/client.hpp
 include/mtxclient/http/client_impl.hpp
 include/mtxclient/http/errors.hpp
 include/mtxclient/utils.hpp
+lib/cmake/
 lib/cmake/MatrixClient/
 lib/cmake/MatrixClient/MatrixClientConfig.cmake
 lib/cmake/MatrixClient/MatrixClientConfigVersion.cmake

@@ -8,7 +8,7 @@ PKGNAME-jack=	vlc-jack-${V}
 CATEGORIES=	x11
 SITES=		https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
-REVISION-main=	3
+REVISION-main=	4
 
 USE_NOBTCFI=	Yes
 
@@ -24,7 +24,9 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB-common=	dbus-1 iconv idn intl m pthread
+
 WANTLIB-main += ${WANTLIB-common} ${MODLUA_WANTLIB}
+
 WANTLIB-main += EGL GL ICE Qt5Core Qt5Gui Qt5Svg Qt5Widgets Qt5X11Extras
 WANTLIB-main += SDL SDL_image SM X11 X11-xcb Xau Xcomposite Xcursor
 WANTLIB-main += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xpm Xrandr Xrender
@@ -32,31 +34,35 @@ WANTLIB-main += Xxf86vm absl_bad_optional_access absl_bad_variant_access
 WANTLIB-main += absl_base absl_city absl_civil_time absl_cord absl_cord_internal
 WANTLIB-main += absl_cordz_functions absl_cordz_handle absl_cordz_info
 WANTLIB-main += absl_crc32c absl_crc_cord_state absl_crc_cpu_detect
-WANTLIB-main += absl_crc_internal absl_debugging_internal absl_demangle_internal
-WANTLIB-main += absl_die_if_null absl_examine_stack absl_exponential_biased
-WANTLIB-main += absl_flags_commandlineflag absl_flags_commandlineflag_internal
-WANTLIB-main += absl_flags_config absl_flags_internal absl_flags_marshalling
-WANTLIB-main += absl_flags_private_handle_accessor absl_flags_program_name
-WANTLIB-main += absl_flags_reflection absl_graphcycles_internal absl_hash
-WANTLIB-main += absl_hashtablez_sampler absl_int128 absl_kernel_timeout_internal
+WANTLIB-main += absl_crc_internal absl_debugging_internal absl_decode_rust_punycode
+WANTLIB-main += absl_demangle_internal absl_demangle_rust absl_die_if_null
+WANTLIB-main += absl_examine_stack absl_exponential_biased absl_flags_commandlineflag
+WANTLIB-main += absl_flags_commandlineflag_internal absl_flags_config
+WANTLIB-main += absl_flags_internal absl_flags_marshalling absl_flags_private_handle_accessor
+WANTLIB-main += absl_flags_program_name absl_flags_reflection absl_graphcycles_internal
+WANTLIB-main += absl_hash absl_hashtablez_sampler absl_int128 absl_kernel_timeout_internal
 WANTLIB-main += absl_log_entry absl_log_globals absl_log_initialize
 WANTLIB-main += absl_log_internal_check_op absl_log_internal_conditions
 WANTLIB-main += absl_log_internal_fnmatch absl_log_internal_format
 WANTLIB-main += absl_log_internal_globals absl_log_internal_log_sink_set
 WANTLIB-main += absl_log_internal_message absl_log_internal_nullguard
 WANTLIB-main += absl_log_internal_proto absl_log_severity absl_log_sink
-WANTLIB-main += absl_low_level_hash absl_malloc_internal absl_raw_hash_set
-WANTLIB-main += absl_raw_logging_internal absl_spinlock_wait absl_stacktrace
-WANTLIB-main += absl_status absl_statusor absl_str_format_internal
-WANTLIB-main += absl_strerror absl_string_view absl_strings absl_strings_internal
-WANTLIB-main += absl_symbolize absl_synchronization absl_throw_delegate
-WANTLIB-main += absl_time absl_time_zone absl_vlog_config_internal
-WANTLIB-main += aom archive ass atk-1.0 atk-bridge-2.0 atspi avahi-client
-WANTLIB-main += avahi-common avcodec avformat avutil b2 bluray bz2 c
-WANTLIB-main += cairo cairo-gobject cddb crypto dav1d double-conversion
-WANTLIB-main += drm dvbpsi dvdnav dvdread ebml epoll-shim epoxy
-WANTLIB-main += execinfo expat ffi fontconfig freetype fribidi gbm
-WANTLIB-main += gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0
+WANTLIB-main += absl_low_level_hash absl_malloc_internal absl_random_distributions
+WANTLIB-main += absl_random_internal_platform absl_random_internal_pool_urbg
+WANTLIB-main += absl_random_internal_randen absl_random_internal_randen_hwaes
+WANTLIB-main += absl_random_internal_randen_hwaes_impl absl_random_internal_randen_slow
+WANTLIB-main += absl_random_internal_seed_material absl_random_seed_gen_exception
+WANTLIB-main += absl_random_seed_sequences absl_raw_hash_set absl_raw_logging_internal
+WANTLIB-main += absl_spinlock_wait absl_stacktrace absl_status absl_statusor
+WANTLIB-main += absl_str_format_internal absl_strerror absl_string_view
+WANTLIB-main += absl_strings absl_strings_internal absl_symbolize absl_synchronization
+WANTLIB-main += absl_throw_delegate absl_time absl_time_zone absl_utf8_for_code_point
+WANTLIB-main += absl_vlog_config_internal aom archive ass atk-1.0 atk-bridge-2.0
+WANTLIB-main += atspi avahi-client avahi-common avcodec avformat avutil
+WANTLIB-main += b2 bluray bz2 c cairo cairo-gobject cddb crypto dav1d
+WANTLIB-main += double-conversion drm dvbpsi dvdnav dvdread ebml epoll-shim
+WANTLIB-main += epoxy execinfo expat ffi fontconfig freetype fribidi
+WANTLIB-main += gbm gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glapi glib-2.0
 WANTLIB-main += gmodule-2.0 gmp gnutls gobject-2.0 gpg-error graphite2
 WANTLIB-main += gsm gthread-2.0 gtk-3 harfbuzz hogweed icudata icui18n
 WANTLIB-main += icuuc idn2 jpeg lz4 lzma matroska mp3lame nettle nfs
@@ -70,6 +76,7 @@ WANTLIB-main += wayland-cursor wayland-egl webp x264 x265 xcb xcb-composite
 WANTLIB-main += xcb-dri2 xcb-dri3 xcb-glx xcb-keysyms xcb-present xcb-randr
 WANTLIB-main += xcb-render xcb-shm xcb-sync xcb-xfixes xcb-xv xkbcommon
 WANTLIB-main += xml2 xshmfence xvidcore z zstd
+
 # v4l2 is dlopen'd
 WANTLIB-main+=	v4l2
 

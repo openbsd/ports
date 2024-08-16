@@ -37,6 +37,7 @@ include/phonenumbers/shortnumberinfo.h
 include/phonenumbers/unicodestring.h
 include/phonenumbers/utf/
 include/phonenumbers/utf/unicodetext.h
+lib/cmake/
 lib/cmake/libphonenumber/
 lib/cmake/libphonenumber/libphonenumber-config-version.cmake
 lib/cmake/libphonenumber/libphonenumber-config.cmake
