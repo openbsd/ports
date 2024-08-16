@@ -3,7 +3,7 @@ use NSIG for signal table
 Index: main.c
 --- main.c.orig
 +++ main.c
-@@ -168,7 +168,7 @@ sanitize_signals(void)
+@@ -167,7 +167,7 @@ sanitize_signals(void)
      struct sigaction dfl = {.sa_handler = SIG_DFL};
      sigemptyset(&dfl.sa_mask);
  
