@@ -128,14 +128,13 @@ share/doc/clamav/html/highlight.js
 share/doc/clamav/html/images/
 share/doc/clamav/html/images/change-fork-name.png
 share/doc/clamav/html/images/cisco.png
+share/doc/clamav/html/images/clamav-git-workflow.png
 share/doc/clamav/html/images/clone-your-fork.png
 share/doc/clamav/html/images/create-a-fork.png
 share/doc/clamav/html/images/demon.png
 share/doc/clamav/html/images/flamegraph.svg
 share/doc/clamav/html/images/fork-is-behind.png
 share/doc/clamav/html/images/logo.png
-share/doc/clamav/html/images/new-git-workflow.png
-share/doc/clamav/html/images/old-git-workflow.png
 share/doc/clamav/html/index.html
 share/doc/clamav/html/manual/
 share/doc/clamav/html/manual/Development/
@@ -186,6 +185,7 @@ share/doc/clamav/html/manual/Usage/ReportABug.html
 share/doc/clamav/html/manual/Usage/Scanning.html
 share/doc/clamav/html/manual/Usage/Services.html
 share/doc/clamav/html/manual/Usage/SignatureManagement.html
+share/doc/clamav/html/manual/cisco-talos.gpg
 share/doc/clamav/html/mark.min.js
 share/doc/clamav/html/mode-rust.js
 share/doc/clamav/html/print.html
