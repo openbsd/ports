@@ -11,8 +11,8 @@ GH_TAGNAME =		${V}
 
 PKGNAME-main =		opencv-${V}
 PKGNAME-java =		opencv-java-${V}
+REVISION-main =		1
 REVISION-java =		0
-REVISION-main =		0
 
 HOMEPAGE =		https://www.opencv.org/
 
@@ -29,8 +29,8 @@ WANTLIB-main += ${COMPILER_LIBCXX} OpenEXR-3_2 absl_hash absl_log_internal_messa
 WANTLIB-main += absl_log_internal_nullguard absl_spinlock_wait avcodec
 WANTLIB-main += avformat avutil c cairo gdk-3 gdk_pixbuf-2.0 glib-2.0
 WANTLIB-main += gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstpbutils-1.0
-WANTLIB-main += gstreamer-1.0 gstriff-1.0 gstvideo-1.0 gtk-3 jpeg lapack
-WANTLIB-main += m openjp2 png protobuf swscale tiff webp z
+WANTLIB-main += gstreamer-1.0 gstriff-1.0 gstvideo-1.0 gtk-3 jpeg m
+WANTLIB-main += openjp2 png protobuf swscale tiff webp z
 
 WANTLIB-java += ${COMPILER_LIBCXX} opencv_calib3d opencv_core opencv_dnn
 WANTLIB-java += opencv_features2d opencv_flann opencv_imgcodecs opencv_imgproc

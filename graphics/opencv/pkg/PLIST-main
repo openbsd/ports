@@ -296,6 +296,7 @@ include/opencv4/opencv2/videoio/legacy/constants_c.h
 include/opencv4/opencv2/videoio/registry.hpp
 include/opencv4/opencv2/videoio/videoio.hpp
 include/opencv4/opencv2/videoio/videoio_c.h
+lib/cmake/
 lib/cmake/opencv4/
 lib/cmake/opencv4/OpenCVConfig-version.cmake
 lib/cmake/opencv4/OpenCVConfig.cmake
@@ -354,6 +355,7 @@ lib/python${MODPY_VERSION}/site-packages/cv2/utils/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cv2/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cv2/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cv2/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+share/licenses/
 share/licenses/opencv4/
 share/licenses/opencv4/SoftFloat-COPYING.txt
 share/licenses/opencv4/flatbuffers-LICENSE.txt
