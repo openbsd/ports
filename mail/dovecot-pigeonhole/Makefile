@@ -1,6 +1,6 @@
 COMMENT=	Sieve mail filtering for Dovecot
 
-V_SIEVE=	0.5.21
+V_SIEVE=	0.5.21.1
 V_DOVECOT=	2.3
 
 DISTNAME=	dovecot-${V_DOVECOT}-pigeonhole-${V_SIEVE}
