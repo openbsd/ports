@@ -762,6 +762,8 @@ share/rust-openssl-tests/modcargo-crates/${VER_lazycell}/src/serde_impl.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/.cargo-checksum.json
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/.gitignore
+share/rust-openssl-tests/modcargo-crates/${VER_libc}/.release-plz.toml
+share/rust-openssl-tests/modcargo-crates/${VER_libc}/CHANGELOG.md
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/CONTRIBUTING.md
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/Cargo.toml
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/Cargo.toml.orig
@@ -779,10 +781,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/fuchsia/mod.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/fuchsia/no_align.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/fuchsia/riscv64.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/fuchsia/x86_64.rs
-share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/hermit/
-share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/hermit/aarch64.rs
-share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/hermit/mod.rs
-share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/hermit/x86_64.rs
+share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/hermit.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/lib.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/macros.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/psp.rs
