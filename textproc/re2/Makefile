@@ -1,13 +1,14 @@
 COMMENT =		non-backtracking regular expression engine
-GH_ACCOUNT =		google
-GH_PROJECT =		re2
-GH_TAGNAME =		2024-07-02
-PKGNAME =		${GH_PROJECT}-${GH_TAGNAME:S/-//g}
+V =			2024-07-02
+DISTNAME =		re2-${V}
+PKGNAME =		re2-${V:S/-//g}
 REVISION =		0
 
 SHARED_LIBS =		re2	1.0	# 10.0.0
 
 CATEGORIES =		textproc devel
+
+SITES =			https://github.com/google/re2/releases/download/${V}/
 
 # BSD
 PERMIT_PACKAGE =	Yes
