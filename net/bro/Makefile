@@ -4,9 +4,8 @@ BROKEN-powerpc64 =	vec_mule and vec_rl calls are ambiguous in highwayhash
 
 COMMENT=		network analysis and security monitoring framework
 
-V=			6.0.4
+V=			6.0.5
 DISTNAME=		zeek-${V}
-REVISION=		3
 
 SHARED_LIBS +=	binpac                    3.0
 SHARED_LIBS +=  broccoli                  10.0
@@ -18,8 +17,6 @@ SHARED_LIBS +=  caf_core                  4.0
 CATEGORIES=		net security
 
 HOMEPAGE=		https://www.zeek.org/
-
-MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes
@@ -94,7 +91,8 @@ CONFIGURE_ARGS=		--prefix=${PREFIX} \
 			--spooldir=${LOCALSTATEDIR}/spool/zeek \
 			--logdir=${LOCALSTATEDIR}/log/zeek \
 			--with-python=${MODPY_BIN} \
-			--binary-package
+			--binary-package \
+			-D CMAKE_VERBOSE_MAKEFILE=ON
 
 # XXX CMake Error at auxil/spicy/spicy/cmake/Util.cmake:85 (message):
 # Need Flex version >= 2.6, found 2.5.39
