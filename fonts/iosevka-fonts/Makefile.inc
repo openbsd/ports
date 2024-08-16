@@ -1,4 +1,4 @@
-V =		29.0.5
+V =		31.1.0
 CATEGORIES =	fonts x11
 HOMEPAGE =	https://github.com/be5invis/Iosevka
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
