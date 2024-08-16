@@ -1,6 +1,7 @@
 COMMENT =		mobile shell
 
-DISTNAME =		mosh-1.4.0
+V =			1.4.0
+DISTNAME =		mosh-${V}
 REVISION =		2
 
 CATEGORIES =		net
@@ -38,7 +39,7 @@ WANTLIB += absl_throw_delegate absl_time absl_time_zone absl_vlog_config_interna
 WANTLIB += curses execinfo m protobuf ssl utf8_range utf8_validity
 WANTLIB += util z
 
-SITES =			${HOMEPAGE}
+SITES =			https://github.com/mobile-shell/mosh/releases/download/mosh-${V}/
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
