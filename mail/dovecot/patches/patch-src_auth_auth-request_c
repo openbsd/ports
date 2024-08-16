@@ -5,7 +5,7 @@ mechanisms/username_filter
 Index: src/auth/auth-request.c
 --- src/auth/auth-request.c.orig
 +++ src/auth/auth-request.c
-@@ -553,8 +553,8 @@ auth_request_want_skip_passdb(struct auth_request *req
+@@ -560,8 +560,8 @@ auth_request_want_skip_passdb(struct auth_request *req
  			      struct auth_passdb *passdb)
  {
  	/* if mechanism is not supported, skip */
@@ -16,7 +16,7 @@ Index: src/auth/auth-request.c
  	const char *username;
  
  	username = request->fields.user;
-@@ -567,7 +567,7 @@ auth_request_want_skip_passdb(struct auth_request *req
+@@ -574,7 +574,7 @@ auth_request_want_skip_passdb(struct auth_request *req
  		return TRUE;
  	}
  
