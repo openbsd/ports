@@ -9,6 +9,7 @@ V =			5.3.2
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
+REVISION =		0
 
 DPB_PROPERTIES =	parallel
 
@@ -40,7 +41,7 @@ WANTLIB += ada avcodec avfilter avformat avutil c crypto dispatch
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 hunspell-1.7 jpeg lz4
 WANTLIB += m openal opus qrcodegencpp rnnoise swresample swscale
 WANTLIB += tg_owt xcb xcb-keysyms xcb-record xcb-screensaver xxhash
-WANTLIB += z
+WANTLIB += z protobuf-lite
 
 # C++20
 COMPILER =		base-clang ports-gcc
@@ -65,8 +66,7 @@ BUILD_DEPENDS =		devel/boost,-main \
 #
 # This should probably be patched out upstream so that libtgvoip builds with
 # OpenAL alone...
-BUILD_DEPENDS +=	audio/pulseaudio \
-			devel/protobuf
+BUILD_DEPENDS +=	audio/pulseaudio
 
 LIB_DEPENDS =		archivers/lz4 \
 			audio/openal \
@@ -76,6 +76,7 @@ LIB_DEPENDS =		archivers/lz4 \
 			devel/glib2>=2.78.0 \
 			devel/kf6/kcoreaddons \
 			devel/libdispatch \
+			devel/protobuf \
 			graphics/ffmpeg \
 			graphics/jpeg \
 			graphics/qr-code-generator>=1.7.0p1 \
