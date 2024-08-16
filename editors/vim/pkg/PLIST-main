@@ -908,6 +908,7 @@ share/vim/${P}/indent/php.vim
 share/vim/${P}/indent/postscr.vim
 share/vim/${P}/indent/pov.vim
 share/vim/${P}/indent/prolog.vim
+share/vim/${P}/indent/proto.vim
 share/vim/${P}/indent/ps1.vim
 share/vim/${P}/indent/pyrex.vim
 share/vim/${P}/indent/python.vim
