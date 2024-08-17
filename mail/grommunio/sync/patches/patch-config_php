@@ -1,7 +1,7 @@
 Index: config.php
 --- config.php.orig
 +++ config.php
-@@ -79,7 +79,7 @@ define('LOGUSERLEVEL', LOGLEVEL_DEVICEID);
+@@ -78,7 +78,7 @@ define('LOGUSERLEVEL', LOGLEVEL_DEVICEID);
  $specialLogUsers = [];
  
  // Filelog settings

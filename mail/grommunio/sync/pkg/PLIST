@@ -1,5 +1,6 @@
 grommunio-sync/
 grommunio-sync/.phpcs
+grommunio-sync/.scrutinizer.yml
 grommunio-sync/LICENSE
 grommunio-sync/README.rst
 grommunio-sync/autoload.php
