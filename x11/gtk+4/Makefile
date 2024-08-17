@@ -7,7 +7,7 @@ COMMENT-guic=		gtk+ icon theme caching utility
 COMMENT-media=		gtk+ media engine
 
 GNOME_PROJECT=		gtk
-GNOME_VERSION=		4.14.4
+GNOME_VERSION=		4.14.5
 
 PKGNAME-main=		gtk+4-${GNOME_VERSION}
 PKGNAME-cups=		gtk+4-cups-${GNOME_VERSION}
@@ -15,15 +15,9 @@ PKGNAME-demos=		gtk+4-demos-${GNOME_VERSION}
 PKGNAME-guic=		gtk4-update-icon-cache-${GNOME_VERSION}
 PKGNAME-media=		gtk+4-media-${GNOME_VERSION}
 
-REVISION-cups=		0
-REVISION-demos=		0
-REVISION-guic=		1
-REVISION-main=		0
-REVISION-media=		0
-
 CATEGORIES=		x11 devel
 
-SHARED_LIBS += gtk-4                     5.2 # 1.1400.4
+SHARED_LIBS += gtk-4                     5.2 # 1.1400.5
 
 HOMEPAGE=		http://www.gtk.org/
 
