@@ -2,13 +2,13 @@ COMMENT=	C++ implementation of the exmdb wire protocol for grommunio
 
 V=		1.11
 DISTNAME=	libexmdbpp-${V}
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS+=	exmdbpp	0.0 # 0.0
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	libexmdbpp
-GH_COMMIT=	cea6069bbe00f096ec48a19953a041d749ce0811
+GH_COMMIT=	259948fbdc7559d364c4ae4894774f0fa9908b6e
 
 CATEGORIES=	mail www productivity
 
