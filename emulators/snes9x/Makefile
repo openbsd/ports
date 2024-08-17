@@ -42,7 +42,7 @@ MODULES +=	devel/cmake \
 		textproc/intltool
 
 # C++17
-COMPILER =	base-clang ports-gcc
+COMPILER =	base-clang
 
 CONFIGURE_ARGS +=	-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 			-DCMAKE_INSTALL_DATAROOTDIR="share" \
