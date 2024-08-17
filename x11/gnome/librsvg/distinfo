@@ -20,7 +20,7 @@ SHA256 (gnome/../cargo/bitflags-2.4.2.tar.gz) = 7VcJNEBusWQ4pOl2sbRQB3QJnBO4y5bu
 SHA256 (gnome/../cargo/block-0.1.6.tar.gz) = DYwf72kJQdPneI0yhRdZH+zGhMCECEcC1v8WQemTaZo=
 SHA256 (gnome/../cargo/bstr-1.9.0.tar.gz) = xI8AUaS0xeC202XNBK9TrqognjzBXsLNtp5zzIf70Nw=
 SHA256 (gnome/../cargo/bumpalo-3.14.0.tar.gz) = fzDnR2Uh9vivGhxMC4zJTwvuN9kXY9DKJmXymbbNiuw=
-SHA256 (gnome/../cargo/bytemuck-1.14.2.tar.gz) = 6jHWm9pJScHBViwebwQqHK76yYzciimCYKL/QcHi1Cs=
+SHA256 (gnome/../cargo/bytemuck-1.16.3.tar.gz) = ECCH4oa0Z3hi6lbPj8WLss36hyXED/uA/joAjrfy/IM=
 SHA256 (gnome/../cargo/byteorder-1.5.0.tar.gz) = H9DyWEFG9vLvSAhQUIhqzzU77/cwXr0a5pUA4nxn9ks=
 SHA256 (gnome/../cargo/cairo-rs-0.19.1.tar.gz) = vBxBW3CIOBxTxXVCCJnDTJ5jEt9axd79BWFCEOn9bhs=
 SHA256 (gnome/../cargo/cairo-sys-rs-0.19.1.tar.gz) = dbal/vzi6tuDM+PGBKyWS6ZXPsTyi90X9nAyxKKDGDE=
@@ -39,7 +39,6 @@ SHA256 (gnome/../cargo/clap_derive-4.4.7.tar.gz) = z5gEr6r1mpHnWwIqMPtyKaeQH2DHV
 SHA256 (gnome/../cargo/clap_lex-0.6.0.tar.gz) = cC/HLrJOWh5IzlgCemdbwk7dUgltU5fUrqfG3Z7KC9E=
 SHA256 (gnome/../cargo/color_quant-1.1.0.tar.gz) = PXuJT1QRc3t4Z/SCeVWSTXwlT8n02RpqrWsJeASxAYs=
 SHA256 (gnome/../cargo/colorchoice-1.0.0.tar.gz) = rL8a8VX5ue9kfkLNwVjbS2Shth90NikiX95vPgvip8c=
-SHA256 (gnome/../cargo/const-cstr-0.3.0.tar.gz) = 7T0LX/MGRaaPNezozqRVbKFO+KFlFFX3iaCZoFE1MqY=
 SHA256 (gnome/../cargo/core-foundation-sys-0.8.6.tar.gz) = Buorm8kr48K6qTNKMj68otbwdP+FLNHXsRBkA1zTho8=
 SHA256 (gnome/../cargo/crc32fast-1.3.2.tar.gz) = tUC9i8gQ04hcbqkeIBgwL2i6uiEpqz6I8yOJ7pNwiA0=
 SHA256 (gnome/../cargo/criterion-0.5.1.tar.gz) = 8rEtAXqSlgPYDbGDHNOiQIL4E3zhnGnmRH9U9fyNaS8=
@@ -279,10 +278,10 @@ SHA256 (gnome/../cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 7ZT85hVxpABoUrc4mgY6
 SHA256 (gnome/../cargo/windows_x86_64_msvc-0.52.0.tar.gz) = 3/lkHRzUvo0aBw2vnjdzxfZ+eLTZ1CJjAgwFdwZ2XAQ=
 SHA256 (gnome/../cargo/winnow-0.5.39.tar.gz) = U4mhVLAWg9KMd/j2j0nep18KTaMlV6WPaO5R67pHLSk=
 SHA256 (gnome/../cargo/xml5ever-0.17.0.tar.gz) = QDTh0Fr5i1GtchRSdzBibwGWgteXuji1FokhIRjY5lA=
-SHA256 (gnome/../cargo/yeslogic-fontconfig-sys-4.0.1.tar.gz) = 7GV/0yu8vq71x7yOELPblbFD+rjbClAHl3Pb+Tb9T3M=
+SHA256 (gnome/../cargo/yeslogic-fontconfig-sys-5.0.0.tar.gz) = /7ayOZmosamXv0fHu00ZrUApwzJ7szhuvgpf9YSzPHo=
 SHA256 (gnome/../cargo/zune-inflate-0.2.54.tar.gz) = c6szL+L2aABo81grFqJPkK1wltXTm5dNHAr/ASURbwI=
 SHA256 (gnome/librsvg-2.40.21.tar.xz) = 92KJBfHK2oTofisUiD7VfYCU3KMoHVvLJOzkJ56akro=
-SHA256 (gnome/librsvg-2.58.2.tar.xz) = GOnXDAjPJfUNYQ1tWvVxVh1nz0F5+WLgQmZHXfbi4iQ=
+SHA256 (gnome/librsvg-2.58.3.tar.xz) = SfKaCpL0wtGaLLQelqsvzn61veQYUMipFPz2VeMRCUQ=
 SIZE (gnome/../cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (gnome/../cargo/aho-corasick-1.1.2.tar.gz) = 183136
 SIZE (gnome/../cargo/android-tzdata-0.1.1.tar.gz) = 7674
@@ -305,7 +304,7 @@ SIZE (gnome/../cargo/bitflags-2.4.2.tar.gz) = 42602
 SIZE (gnome/../cargo/block-0.1.6.tar.gz) = 4077
 SIZE (gnome/../cargo/bstr-1.9.0.tar.gz) = 380170
 SIZE (gnome/../cargo/bumpalo-3.14.0.tar.gz) = 82400
-SIZE (gnome/../cargo/bytemuck-1.14.2.tar.gz) = 46935
+SIZE (gnome/../cargo/bytemuck-1.16.3.tar.gz) = 49539
 SIZE (gnome/../cargo/byteorder-1.5.0.tar.gz) = 23288
 SIZE (gnome/../cargo/cairo-rs-0.19.1.tar.gz) = 52239
 SIZE (gnome/../cargo/cairo-sys-rs-0.19.1.tar.gz) = 11790
@@ -324,7 +323,6 @@ SIZE (gnome/../cargo/clap_derive-4.4.7.tar.gz) = 29046
 SIZE (gnome/../cargo/clap_lex-0.6.0.tar.gz) = 12272
 SIZE (gnome/../cargo/color_quant-1.1.0.tar.gz) = 6649
 SIZE (gnome/../cargo/colorchoice-1.0.0.tar.gz) = 6857
-SIZE (gnome/../cargo/const-cstr-0.3.0.tar.gz) = 7497
 SIZE (gnome/../cargo/core-foundation-sys-0.8.6.tar.gz) = 37629
 SIZE (gnome/../cargo/crc32fast-1.3.2.tar.gz) = 38661
 SIZE (gnome/../cargo/criterion-0.5.1.tar.gz) = 110088
@@ -564,7 +562,7 @@ SIZE (gnome/../cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 798412
 SIZE (gnome/../cargo/windows_x86_64_msvc-0.52.0.tar.gz) = 821600
 SIZE (gnome/../cargo/winnow-0.5.39.tar.gz) = 159300
 SIZE (gnome/../cargo/xml5ever-0.17.0.tar.gz) = 41208
-SIZE (gnome/../cargo/yeslogic-fontconfig-sys-4.0.1.tar.gz) = 6694
+SIZE (gnome/../cargo/yeslogic-fontconfig-sys-5.0.0.tar.gz) = 6718
 SIZE (gnome/../cargo/zune-inflate-0.2.54.tar.gz) = 37973
 SIZE (gnome/librsvg-2.40.21.tar.xz) = 1655860
-SIZE (gnome/librsvg-2.58.2.tar.xz) = 6218136
+SIZE (gnome/librsvg-2.58.3.tar.xz) = 6193336

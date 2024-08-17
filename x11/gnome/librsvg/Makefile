@@ -5,7 +5,7 @@ COMMENT=		SAX-based render library for SVG files
 # !!! /!\ make sure both distinfo are updated on version change:
 # make makesum && make RUST_ARCHS= makesum
 GNOME_PROJECT=		librsvg
-STABLE_VERSION=		2.58.2
+STABLE_VERSION=		2.58.3
 OLD_VERSION=		2.40.21
 DISTFILES.stable=	librsvg-${STABLE_VERSION}${EXTRACT_SUFX}
 DISTFILES.old= 		librsvg-${OLD_VERSION}${EXTRACT_SUFX}
@@ -19,7 +19,6 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 ### stable
 .if ${PROPERTIES:Mrust}
-REVISION =		0
 SHARED_LIBS +=  rsvg-2               41.0     # 52.0
 GNOME_VERSION=		${STABLE_VERSION}
 MODULES +=		devel/cargo \
