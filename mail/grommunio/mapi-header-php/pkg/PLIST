@@ -4,6 +4,7 @@ grommunio-mapi-header-php/Makefile
 grommunio-mapi-header-php/README.rst
 @comment grommunio-mapi-header-php/apparmor/
 @comment grommunio-mapi-header-php/apparmor/usr.sbin.php-fpm
+grommunio-mapi-header-php/bootstrap.php
 grommunio-mapi-header-php/changelog.rst
 grommunio-mapi-header-php/class.baseexception.php
 grommunio-mapi-header-php/class.baserecurrence.php
@@ -15,6 +16,9 @@ grommunio-mapi-header-php/class.recurrence.php
 grommunio-mapi-header-php/class.taskrecurrence.php
 grommunio-mapi-header-php/class.taskrequest.php
 grommunio-mapi-header-php/class.token.php
+grommunio-mapi-header-php/dev/
+grommunio-mapi-header-php/dev/generate_php-mapi-stub.php
+grommunio-mapi-header-php/dev/php-mapi-stub.php
 grommunio-mapi-header-php/mapi.util.php
 grommunio-mapi-header-php/mapidefs.php
 grommunio-mapi-header-php/mapiguid.php
