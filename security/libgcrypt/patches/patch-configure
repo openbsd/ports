@@ -1,18 +1,29 @@
-https://dev.gnupg.org/T6442
+- powerpc and powerpc64: add -mpower8-vector to fix
+  ./sha256-ppc.c:294:8: warning: call to undeclared function 'vec_mergeo'
+- getrandom: https://dev.gnupg.org/T6442
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -20021,6 +20021,12 @@ if test "$gcry_cv_gcc_inline_asm_ppc_altivec" = "yes" 
- printf "%s\n" "#define HAVE_GCC_INLINE_ASM_PPC_ALTIVEC 1" >>confdefs.h
- 
+@@ -19906,7 +19906,7 @@ printf "%s\n" "#define HAVE_COMPATIBLE_CC_PPC_ALTIVEC 
  fi
+ 
+ _gcc_cflags_save=$CFLAGS
+-CFLAGS="$CFLAGS -O2 -maltivec -mvsx -mcrypto"
++CFLAGS="$CFLAGS -O2 -maltivec -mvsx -mcrypto -mpower8-vector"
+ 
+ if test "$gcry_cv_cc_ppc_altivec" = "no" &&
+    test "$mpi_cpu_arch" = "ppc" &&
+@@ -20019,6 +20019,12 @@ printf "%s\n" "$gcry_cv_gcc_inline_asm_ppc_altivec" >&
+ if test "$gcry_cv_gcc_inline_asm_ppc_altivec" = "yes" ; then
+ 
+ printf "%s\n" "#define HAVE_GCC_INLINE_ASM_PPC_ALTIVEC 1" >>confdefs.h
++
++fi
 +ac_fn_c_check_func "$LINENO" "getrandom" "ac_cv_func_getrandom"
 +if test "x$ac_cv_func_getrandom" = xyes
 +then :
 +  printf "%s\n" "#define HAVE_GETRANDOM 1" >>confdefs.h
-+
-+fi
  
+ fi
  
- #

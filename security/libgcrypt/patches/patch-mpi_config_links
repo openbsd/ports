@@ -1,0 +1,36 @@
+- For OpenBSD/powerpc64, don't pick powerpc32 asm.
+
+Index: mpi/config.links
+--- mpi/config.links.orig
++++ mpi/config.links
+@@ -272,15 +272,6 @@ case "${host}" in
+        mpi_cpu_arch="ppc"
+        ;;
+ 
+-    powerpc*-*-netbsd* | powerpc*-*-openbsd*)
+-       echo '/* configured {Open,Net}BSD on powerpc */' >>./mpi/asm-syntax.h
+-       echo '#define ELF_SYNTAX'                 >>./mpi/asm-syntax.h
+-       cat   $srcdir/mpi/powerpc32/syntax.h	 >>./mpi/asm-syntax.h
+-       mpi_sflags="-Wa,-mppc"
+-       path="powerpc32"
+-       mpi_cpu_arch="ppc"
+-       ;;
+-
+     ppc620-*-*	    | \
+     powerpc64*-*-*)
+ 	mpi_sflags="-Wa,-mppc"
+@@ -294,6 +285,14 @@ case "${host}" in
+ 	path="powerpc32"
+ 	mpi_cpu_arch="ppc"
+ 	;;
++    powerpc*-*-netbsd* | powerpc*-*-openbsd*)
++       echo '/* configured {Open,Net}BSD on powerpc */' >>./mpi/asm-syntax.h
++       echo '#define ELF_SYNTAX'                 >>./mpi/asm-syntax.h
++       cat   $srcdir/mpi/powerpc32/syntax.h	 >>./mpi/asm-syntax.h
++       mpi_sflags="-Wa,-mppc"
++       path="powerpc32"
++       mpi_cpu_arch="ppc"
++       ;;
+ 
+     rs6000-*-aix[456789]*    | \
+     rs6000-*-aix3.2.[456789])
