@@ -1,9 +1,11 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -25,4 +25,4 @@ if(LOGGING_TRACE)
+@@ -26,5 +26,5 @@ if(LOGGING_TRACE)
  endif()
  
  install(TARGETS grommunio-index RUNTIME)
 -install(FILES grommunio-index.service grommunio-index.timer DESTINATION ${UNITDIR})
+-install(FILES system-user-groindex.conf DESTINATION ${SYSUSERDIR})
 +#install(FILES grommunio-index.service grommunio-index.timer DESTINATION ${UNITDIR})
++#install(FILES system-user-groindex.conf DESTINATION ${SYSUSERDIR})

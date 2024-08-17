@@ -1,16 +1,16 @@
 Index: grommunio-index.cpp
 --- grommunio-index.cpp.orig
 +++ grommunio-index.cpp
-@@ -1062,7 +1062,7 @@ int main(int argc, char **argv) try
+@@ -1046,7 +1046,7 @@ int main(int argc, char **argv) try
  		return single_mode();
  
  	if (geteuid() == 0) {
--		auto ret = HXproc_switch_user("grommunio", "groweb");
+-		auto ret = HXproc_switch_user("groindex", "groweb");
 +		auto ret = HXproc_switch_user("www", "daemon");
  		if (static_cast<int>(ret) < 0) {
  			fprintf(stderr, "switch_user grommunio/groweb: %s\n", strerror(errno));
  			return EXIT_FAILURE;
-@@ -1071,7 +1071,7 @@ int main(int argc, char **argv) try
+@@ -1055,7 +1055,7 @@ int main(int argc, char **argv) try
  		execv(argv[0], argv);
  	}
  	int bigret = EXIT_SUCCESS;
