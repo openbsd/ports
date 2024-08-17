@@ -38,11 +38,12 @@ password, and create a launcher executing 'doas shutdown -p' (or doas halt -p).
 
 Power management
 ================
-If you use KDE Plasma on a laptop, you can install the powerdevil package,
-which will provide battery levels/information, and will allow to configure
-actions upon low battery level or AC plugging. For proper function, it requires
-messagebus and upowerd running. If using consolekit2 and polkit-kde-agent, it
-will also allow you to suspend the laptop from the logout dialog.
+If you use KDE Plasma on a laptop, make sure that the powerdevil package
+is installed, which will provide battery levels/information, and will
+allow to configure actions upon low battery level or AC plugging. For
+proper function, it requires messagebus and upowerd running. If using
+consolekit2 and polkit-kde-agent, it will also allow you to suspend the
+laptop from the logout dialog.
 
 Screen compositor
 =================
@@ -83,7 +84,8 @@ fi
 #export QT_QPA_PLATFORM=wayland
 #export XDG_SESSION_TYPE=wayland
 
-${LOCALBASE}/bin/ck-launch-session dbus-run-session ${LOCALBASE}/bin/startplasma-wayland
+${LOCALBASE}/bin/ck-launch-session dbus-run-session \
+ ${LOCALBASE}/bin/startplasma-wayland
 
 Known issues
 ============

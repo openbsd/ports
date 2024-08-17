@@ -1,2 +1,3 @@
-The KDE applications, full installation.
-
+The KDE applications (also known as the KDE Gear bundle), full
+installation includes all application categories except the desktop
+environment KDE Plasma. For this, install the kde-plasma packages

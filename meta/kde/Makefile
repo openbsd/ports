@@ -14,10 +14,12 @@ COMMENT-utils =		KDE utilities
 
 REVISION-games =	0
 REVISION-network =	0
-REVISION-main =	0
+REVISION-main =		1
+REVISION-plasma =	0
+REVISION-plasma-extras =	0
 
 COMMENT-plasma =	KDE Plasma desktop meta-package (base installation)
-COMMENT-plasma-extras =	KDE Plasma desktop meta-package (full installation)
+COMMENT-plasma-extras =	KDE Plasma desktop meta-package (base additional apps)
 
 PKGNAME-accessibility =	kde-accessibility-${MODKDE_GEAR_VERSION}
 PKGNAME-admin =		kde-admin-${MODKDE_GEAR_VERSION}
@@ -166,18 +168,6 @@ RUN_DEPENDS-games = \
 	x11/kde-applications/picmi
 
 # XXX x11/kde-applications/kajongg
-
-
-WANTLIB-development =
-LIB_DEPENDS-development =
-RUN_DEPENDS-development = \
-	x11/kde-applications/kf6-libkexiv2 \
-	x11/kde-applications/kf6-ksanecore \
-	x11/kde-applications/kf6-libkdcraw \
-	x11/kde-applications/kf6-kio-extras \
-	x11/kde-applications/kf6-libkcompactdisc \
-	x11/kde-applications/kf6-libkcddb \
-	x11/kde-applications/kf6-kdegraphics-mobipocket
 
 # Not yet ported
 #x11/kde-applications/kpatience
@@ -331,6 +321,15 @@ RUN_DEPENDS-development = \
 	x11/kde-applications/pimcommon \
 	x11/kde-applications/umbrello \
 	x11/kde-applications/kimagemapeditor
+
+RUN_DEPENDS-development += \
+	x11/kde-applications/kf6-libkexiv2 \
+	x11/kde-applications/kf6-ksanecore \
+	x11/kde-applications/kf6-libkdcraw \
+	x11/kde-applications/kf6-kio-extras \
+	x11/kde-applications/kf6-libkcompactdisc \
+	x11/kde-applications/kf6-libkcddb \
+	x11/kde-applications/kf6-kdegraphics-mobipocket
 
 RUN_DEPENDS-development += \
 	x11/kde-applications/okteta \
