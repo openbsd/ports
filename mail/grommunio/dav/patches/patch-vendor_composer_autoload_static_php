@@ -1,7 +1,7 @@
 Index: vendor/composer/autoload_static.php
 --- vendor/composer/autoload_static.php.orig
 +++ vendor/composer/autoload_static.php
-@@ -16,10 +16,10 @@ class ComposerStaticInit53d6378ad30e67efb30882afe69c57
+@@ -16,10 +16,10 @@ class ComposerStaticInit8d44bfa54223056069c233d8145363
          'ebdb698ed4152ae445614b69b5e4bb6a' => __DIR__ . '/..' . '/sabre/http/lib/functions.php',
          '777dc149d682152f9ab0caaeffcdbb27' => __DIR__ . '/../..' . '/config.php',
          '32a4f751fbcde8755e5f28bd96eed397' => __DIR__ . '/../..' . '/version.php',
@@ -16,7 +16,7 @@ Index: vendor/composer/autoload_static.php
      );
  
      public static $prefixLengthsPsr4 = array (
-@@ -101,17 +101,17 @@ class ComposerStaticInit53d6378ad30e67efb30882afe69c57
+@@ -101,17 +101,17 @@ class ComposerStaticInit8d44bfa54223056069c233d8145363
      );
  
      public static $classMap = array (

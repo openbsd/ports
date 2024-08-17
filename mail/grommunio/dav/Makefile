@@ -5,9 +5,9 @@ DISTNAME=	grommunio-dav-${V}
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	grommunio-dav
-GH_COMMIT=	8133bc4a8d1a15011bc3d5c8de9a7a4a66191c3a
+GH_COMMIT=	546c95fcadac6b6e2d39d5cc745217b3cd875d74
 
-REVISION=	3
+REVISION=	4
 
 DISTFILES=	${GH_DISTFILE}
 DISTFILES.a = 	${GH_PROJECT}-${GH_COMMIT}-vendor.tar.gz

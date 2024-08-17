@@ -1,7 +1,7 @@
 Index: composer.json
 --- composer.json.orig
 +++ composer.json
-@@ -21,8 +21,8 @@
+@@ -23,8 +23,8 @@
          "psr-4": {
              "grommunio\\DAV\\" : "lib/"
          },
