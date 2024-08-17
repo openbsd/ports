@@ -203,6 +203,7 @@ sbin/gromox-exm2vcf
 sbin/gromox-ical2mt
 @bin sbin/gromox-kdb2mt
 @bin sbin/gromox-mailq
+@bin sbin/gromox-mbck
 @bin sbin/gromox-mbop
 sbin/gromox-mbox2mt
 @bin sbin/gromox-mkmidb
@@ -215,6 +216,8 @@ share/examples/gromox/
 @sample ${SYSCONFDIR}/gromox/
 share/examples/gromox/http.cfg
 @sample ${SYSCONFDIR}/gromox/http.cfg
+share/examples/gromox/mime.types
+@sample ${SYSCONFDIR}/gromox/mime.types
 share/examples/gromox/mysql_adaptor.cfg
 @sample ${SYSCONFDIR}/gromox/mysql_adaptor.cfg
 share/examples/gromox/smtp.cfg
