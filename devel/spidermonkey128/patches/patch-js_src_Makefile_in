@@ -1,0 +1,11 @@
+Index: js/src/Makefile.in
+--- js/src/Makefile.in.orig
++++ js/src/Makefile.in
+@@ -89,7 +89,6 @@ endif
+ 
+ install::
+ 	$(MAKE) -C build install
+-	$(MAKE) -C shell install
+ 
+ ifdef HAVE_DTRACE
+ javascript-trace.h: $(srcdir)/devtools/javascript-trace.d

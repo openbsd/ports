@@ -1,0 +1,13 @@
+Support riscv64gc-unknown-openbsd
+
+Index: third_party/rust/cc/src/lib.rs
+--- third_party/rust/cc/src/lib.rs.orig
++++ third_party/rust/cc/src/lib.rs
+@@ -2171,6 +2171,7 @@ impl Build {
+                             if target.contains("linux")
+                                 | target.contains("freebsd")
+                                 | target.contains("netbsd")
++                                | target.contains("openbsd")
+                                 | target.contains("linux")
+                             {
+                                 cmd.args.push(("-march=rv64gc").into());

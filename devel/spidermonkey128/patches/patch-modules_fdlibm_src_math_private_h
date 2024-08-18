@@ -1,0 +1,21 @@
+Index: modules/fdlibm/src/math_private.h
+--- modules/fdlibm/src/math_private.h.orig
++++ modules/fdlibm/src/math_private.h
+@@ -30,9 +30,17 @@
+  * Adapted from https://github.com/freebsd/freebsd-src/search?q=__double_t
+  */
+ 
++#ifdef __i386__
++typedef long double __double_t;
++#else
+ typedef double      __double_t;
++#endif
+ typedef __double_t  double_t;
++#ifdef __i386__
++typedef long double __float_t;
++#else
+ typedef float       __float_t;
++#endif
+ 
+ /*
+  * The original fdlibm code used statements like:
