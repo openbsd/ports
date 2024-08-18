@@ -1,0 +1,28 @@
+Fix aarch64/armv7/ppc64 feature detection for systems with AT_HWCAP != 16
+c0697e73a19b46fb389aeb5fe14a92b2275b5301
+
+Index: src/lib/utils/cpuid/cpuid_arm.cpp
+--- src/lib/utils/cpuid/cpuid_arm.cpp.orig
++++ src/lib/utils/cpuid/cpuid_arm.cpp
+@@ -153,7 +153,7 @@ uint64_t CPUID::CPUID_Data::detect_cpu_features(size_t
+       *cache_line_size = static_cast<size_t>(dcache_line);
+ #endif
+ 
+-   const unsigned long hwcap_neon = OS::get_auxval(ARM_hwcap_bit::ARCH_hwcap_neon);
++   const unsigned long hwcap_neon = OS::get_auxval(OS::auxval_hwcap());
+    if(hwcap_neon & ARM_hwcap_bit::NEON_bit)
+       detected_features |= CPUID::CPUID_ARM_NEON_BIT;
+ 
+@@ -162,7 +162,11 @@ uint64_t CPUID::CPUID_Data::detect_cpu_features(size_t
+    It doesn't seem worth optimizing this out, since getauxval is
+    just reading a field in the ELF header.
+    */
+-   const unsigned long hwcap_crypto = OS::get_auxval(ARM_hwcap_bit::ARCH_hwcap_crypto);
++#if defined(BOTAN_TARGET_ARCH_IS_ARM32)
++   const unsigned long hwcap_crypto = OS::get_auxval(OS::auxval_hwcap2());
++#elif defined(BOTAN_TARGET_ARCH_IS_ARM64)
++   const unsigned long hwcap_crypto = OS::get_auxval(OS::auxval_hwcap());
++#endif
+    if(hwcap_crypto & ARM_hwcap_bit::AES_bit)
+       detected_features |= CPUID::CPUID_ARM_AES_BIT;
+    if(hwcap_crypto & ARM_hwcap_bit::PMULL_bit)

@@ -1,0 +1,27 @@
+Fix aarch64/armv7/ppc64 feature detection for systems with AT_HWCAP != 16
+c0697e73a19b46fb389aeb5fe14a92b2275b5301
+
+Index: src/lib/utils/os_utils.h
+--- src/lib/utils/os_utils.h.orig
++++ src/lib/utils/os_utils.h
+@@ -54,6 +54,20 @@ size_t BOTAN_TEST_API get_cpu_total();
+ size_t BOTAN_TEST_API get_cpu_available();
+ 
+ /**
++* If get_auxval is supported, returns the relevant value for AT_HWCAP
++*
++* If get_auxval is not supported on this system, arbitrarily returns 0
++*/
++unsigned long auxval_hwcap();
++
++/**
++* If get_auxval is supported, returns the relevant value for AT_HWCAP2
++*
++* If get_auxval is not supported on this system, arbitrarily returns 0
++*/
++unsigned long auxval_hwcap2();
++
++/**
+ * Return the ELF auxiliary vector cooresponding to the given ID.
+ * This only makes sense on Unix-like systems and is currently
+ * only supported on Linux, Android, and FreeBSD.

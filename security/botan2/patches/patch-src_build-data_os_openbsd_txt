@@ -1,6 +1,7 @@
 Use OpenBSD numbering for shared library.
 
-Enable elf_aux_info() support.
+Provides auxiliary vector support for OpenBSD
+69ad604ff8ba35860cfb22be3ed4e763ea07ba2c
 
 Index: src/build-data/os/openbsd.txt
 --- src/build-data/os/openbsd.txt.orig
