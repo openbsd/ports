@@ -1,0 +1,38 @@
+Index: piv-certs.c
+--- piv-certs.c.orig
++++ piv-certs.c
+@@ -16,6 +16,7 @@
+ #include <strings.h>
+ #include <assert.h>
+ #include <unistd.h>
++#include <inttypes.h>
+ #include <stdint.h>
+ #include <stddef.h>
+ #include <errno.h>
+@@ -1376,7 +1377,7 @@ gen_sid_ext(struct cert_var_scope *cs, X509_EXTENSION 
+ 		}
+ 		idauth = v64 & ((1ULL << 48) - 1);
+ 
+-		rc = sshbuf_putf(sbuf, "S-1-%lu", idauth);
++		rc = sshbuf_putf(sbuf, "S-1-%" PRIu64, idauth);
+ 		if (rc != 0) {
+ 			err = ssherrf("sshbuf_putf", rc);
+ 			goto out;
+@@ -1971,7 +1972,7 @@ populate_ca(struct cert_var_scope *cs, X509 *cert)
+ 	char *eku = NULL;
+ 	CONF *config = NULL;
+ 
+-	OPENSSL_load_builtin_modules();
++	OPENSSL_config(NULL);
+ 
+ 	err = load_ossl_config("piv_ca", cs, &config);
+ 	if (err != ERRF_OK) {
+@@ -2484,7 +2485,7 @@ rpopulate_ca(struct cert_var_scope *cs, X509_REQ *req)
+ 	exts = sk_X509_EXTENSION_new_null();
+ 	VERIFY(exts != NULL);
+ 
+-	OPENSSL_load_builtin_modules();
++	OPENSSL_config(NULL);
+ 
+ 	err = load_ossl_config("piv_ca", cs, &config);
+ 	if (err != ERRF_OK)
