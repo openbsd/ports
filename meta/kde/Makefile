@@ -17,6 +17,7 @@ REVISION-network =	0
 REVISION-main =		1
 REVISION-plasma =	0
 REVISION-plasma-extras =	0
+REVISION-development =	0
 
 COMMENT-plasma =	KDE Plasma desktop meta-package (base installation)
 COMMENT-plasma-extras =	KDE Plasma desktop meta-package (base additional apps)
