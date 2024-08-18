@@ -468,6 +468,7 @@
      SUBDIR += udfclient
      SUBDIR += uefitool
      SUBDIR += ugrep
+     SUBDIR += unbound_exporter
      SUBDIR += unionfs-fuse
      SUBDIR += upower
      SUBDIR += uptimed
