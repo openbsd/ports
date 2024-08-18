@@ -1,24 +1,20 @@
 COMMENT=	pager/text-based web browser
 
-V=		0.5.3
-P=		20230121
-
-DISTNAME=	w3m_$V+git$P
-PKGNAME=	w3m-$Vpl$P
-WRKDIST=	${WRKDIR}/w3m-$V+git$P
-EXTRACT_SUFX=	.orig.tar.xz
-REVISION=	1
+C=		5ae3ef7cb20cd2209629ac0508c05206fd0d0b00
+DIST_TUPLE=	srht rkta w3m $C .
+WRKDIST=	${WRKDIR}/w3m-$C
+DISTNAME=	w3m-0.5.3pl20240810
 
 CATEGORIES=	www
 
-HOMEPAGE=	https://w3m.sourceforge.net/
+HOMEPAGE=	https://sr.ht/~rkta/w3m
+# forked from https://github.com/tats/w3m, which is itself forked from
+# https://w3m.sourceforge.net/
 
 # BSD-like
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c crypto curses gc iconv intl m ssl z
-
-SITES=		${SITE_DEBIAN:=main/w/w3m/}
 
 BUILD_DEPENDS=	devel/gettext,-tools
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
