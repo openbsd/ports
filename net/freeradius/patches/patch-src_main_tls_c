@@ -1,7 +1,7 @@
 Index: src/main/tls.c
 --- src/main/tls.c.orig
 +++ src/main/tls.c
-@@ -699,7 +699,7 @@ tls_session_t *tls_new_session(TALLOC_CTX *ctx, fr_tls
+@@ -701,7 +701,7 @@ tls_session_t *tls_new_session(TALLOC_CTX *ctx, fr_tls
  				/*
  				 * Swap empty store with the old one.
  				 */
@@ -10,7 +10,7 @@ Index: src/main/tls.c
  				conf->old_x509_store = SSL_CTX_get_cert_store(conf->ctx);
  				/* Bump refcnt so the store is kept allocated till next store replacement */
  				X509_STORE_up_ref(conf->old_x509_store);
-@@ -2050,7 +2050,7 @@ done:
+@@ -2069,7 +2069,7 @@ done:
  	return 0;
  }
  
@@ -19,7 +19,7 @@ Index: src/main/tls.c
  static SSL_SESSION *cbtls_get_session(SSL *ssl, unsigned char *data, int len, int *copy)
  #else
  static SSL_SESSION *cbtls_get_session(SSL *ssl, const unsigned char *data, int len, int *copy)
-@@ -2434,7 +2434,7 @@ static int cbtls_cache_refresh(SSL *ssl, SSL_SESSION *
+@@ -2453,7 +2453,7 @@ static int cbtls_cache_refresh(SSL *ssl, SSL_SESSION *
  	return 0;
  }
  
@@ -28,7 +28,7 @@ Index: src/main/tls.c
  static SSL_SESSION *cbtls_cache_load(SSL *ssl, unsigned char *data, int len, int *copy)
  #else
  static SSL_SESSION *cbtls_cache_load(SSL *ssl, const unsigned char *data, int len, int *copy)
-@@ -2970,7 +2970,7 @@ int cbtls_verify(int ok, X509_STORE_CTX *ctx)
+@@ -2985,7 +2985,7 @@ int cbtls_verify(int ok, X509_STORE_CTX *ctx)
  	char		cn_str[1024];
  	char		buf[64];
  	X509		*client_cert;
@@ -37,7 +37,7 @@ Index: src/main/tls.c
  	const STACK_OF(X509_EXTENSION) *ext_list;
  #else
  	STACK_OF(X509_EXTENSION) *ext_list;
-@@ -3205,7 +3205,7 @@ int cbtls_verify(int ok, X509_STORE_CTX *ctx)
+@@ -3220,7 +3220,7 @@ int cbtls_verify(int ok, X509_STORE_CTX *ctx)
  	}
  
  	if (lookup == 0) {
@@ -46,7 +46,7 @@ Index: src/main/tls.c
  		ext_list = X509_get0_extensions(client_cert);
  #else
  		X509_CINF	*client_inf;
-@@ -3258,7 +3258,7 @@ int cbtls_verify(int ok, X509_STORE_CTX *ctx)
+@@ -3273,7 +3273,7 @@ int cbtls_verify(int ok, X509_STORE_CTX *ctx)
  				value[0] = '0';
  				value[1] = 'x';
  				const unsigned char *srcp;
@@ -55,7 +55,7 @@ Index: src/main/tls.c
  				const ASN1_STRING *srcasn1p;
  				srcasn1p = X509_EXTENSION_get_data(ext);
  				srcp = ASN1_STRING_get0_data(srcasn1p);
-@@ -4319,7 +4319,7 @@ post_ca:
+@@ -4346,7 +4346,7 @@ post_ca:
  		}
  	}
  

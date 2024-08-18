@@ -7,7 +7,7 @@ COMMENT-mysql=	freeradius mysql rlm addon
 COMMENT-pgsql=	freeradius pgsql rlm addon
 COMMENT-python3= freeradius python3 rlm addon
 
-V=		3.2.3
+V=		3.2.5
 DISTNAME=	freeradius-server-$V
 EXTRACT_SUFX=	.tar.bz2
 
@@ -19,15 +19,6 @@ PKGNAME-memcached= freeradius-memcached-$V
 PKGNAME-mysql=	freeradius-mysql-$V
 PKGNAME-pgsql=	freeradius-pgsql-$V
 PKGNAME-python3= freeradius-python3-$V
-
-REVISION-main=	  1
-REVISION-python3= 1
-REVISION-freetds=0
-REVISION-iodbc=	0
-REVISION-ldap=	0
-REVISION-memcached=0
-REVISION-mysql=	0
-REVISION-pgsql=	0
 
 CATEGORIES=	net security
 
@@ -53,6 +44,7 @@ CONFIGURE_ENV=	ac_cv_path_LOCATE= \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="${LDFLAGS} -L${LOCALBASE}/lib"
 CONFIGURE_ARGS=	--libdir=${PREFIX}/lib/freeradius \
+		--without-rlm_eap_teap \
 		--without-rlm_mongo \
 		--without-rlm_oracle \
 		--without-rlm_pam \

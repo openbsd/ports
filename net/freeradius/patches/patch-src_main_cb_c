@@ -1,7 +1,7 @@
 Index: src/main/cb.c
 --- src/main/cb.c.orig
 +++ src/main/cb.c
-@@ -64,7 +64,7 @@ void cbtls_info(SSL const *s, int where, int ret)
+@@ -65,7 +65,7 @@ void cbtls_info(SSL const *s, int where, int ret)
  			/*
  			 *	After a ClientHello, list all the proposed ciphers from the client
  			 */
@@ -10,7 +10,7 @@ Index: src/main/cb.c
  			if (SSL_get_state(s) == TLS_ST_SR_CLNT_HELLO) {
  				int i;
  				int num_ciphers;
-@@ -201,7 +201,7 @@ void cbtls_msg(int write_p, int msg_version, int conte
+@@ -206,7 +206,7 @@ void cbtls_msg(int write_p, int msg_version, int conte
  		state->info.alert_level = 0x00;
  		state->info.alert_description = 0x00;
  

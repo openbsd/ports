@@ -10,7 +10,7 @@ Index: raddb/radiusd.conf.in
  
  #  pidfile: Where to place the PID of the RADIUS server.
  #
-@@ -510,8 +510,8 @@ security {
+@@ -541,8 +541,8 @@ security {
  	#  member.  This can allow for some finer-grained access
  	#  controls.
  	#

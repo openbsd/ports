@@ -13,6 +13,7 @@ bin/rad_counter
 bin/radcrypt
 @bin bin/radeapclient
 bin/radlast
+bin/radsecret
 @bin bin/radsniff
 bin/radsqlrelay
 bin/radtest
@@ -110,6 +111,7 @@ lib/freeradius/
 @so lib/freeradius/rlm_detail.so
 @so lib/freeradius/rlm_dhcp.so
 @so lib/freeradius/rlm_digest.so
+@so lib/freeradius/rlm_dpsk.so
 @so lib/freeradius/rlm_dynamic_clients.so
 @so lib/freeradius/rlm_eap.so
 @so lib/freeradius/rlm_eap_fast.so
@@ -119,6 +121,7 @@ lib/freeradius/
 @so lib/freeradius/rlm_eap_peap.so
 @so lib/freeradius/rlm_eap_pwd.so
 @so lib/freeradius/rlm_eap_sim.so
+@so lib/freeradius/rlm_eap_teap.so
 @so lib/freeradius/rlm_eap_tls.so
 @so lib/freeradius/rlm_eap_ttls.so
 @so lib/freeradius/rlm_exec.so
@@ -370,6 +373,10 @@ share/examples/freeradius/certs/client.cnf
 @sample ${FREERADIUS_ETC}/certs/client.cnf
 share/examples/freeradius/certs/inner-server.cnf
 @sample ${FREERADIUS_ETC}/certs/inner-server.cnf
+share/examples/freeradius/certs/realms/
+@sample ${FREERADIUS_ETC}/certs/realms/
+share/examples/freeradius/certs/realms/README.md
+@sample ${FREERADIUS_ETC}/certs/realms/README.md
 share/examples/freeradius/certs/server.cnf
 @sample ${FREERADIUS_ETC}/certs/server.cnf
 share/examples/freeradius/certs/xpextensions
@@ -426,6 +433,8 @@ share/examples/freeradius/mods-available/dhcp_sqlippool
 @sample ${FREERADIUS_ETC}/mods-available/dhcp_sqlippool
 share/examples/freeradius/mods-available/digest
 @sample ${FREERADIUS_ETC}/mods-available/digest
+share/examples/freeradius/mods-available/dpsk
+@sample ${FREERADIUS_ETC}/mods-available/dpsk
 share/examples/freeradius/mods-available/dynamic_clients
 @sample ${FREERADIUS_ETC}/mods-available/dynamic_clients
 share/examples/freeradius/mods-available/eap
@@ -792,6 +801,7 @@ share/freeradius/dictionary.alcatel
 share/freeradius/dictionary.alcatel-lucent.aaa
 share/freeradius/dictionary.alcatel.esam
 share/freeradius/dictionary.alcatel.sr
+share/freeradius/dictionary.alphion
 share/freeradius/dictionary.alteon
 share/freeradius/dictionary.altiga
 share/freeradius/dictionary.alvarion
@@ -833,6 +843,7 @@ share/freeradius/dictionary.cisco.bbsm
 share/freeradius/dictionary.cisco.vpn3000
 share/freeradius/dictionary.cisco.vpn5000
 share/freeradius/dictionary.citrix
+share/freeradius/dictionary.ckey
 share/freeradius/dictionary.clavister
 share/freeradius/dictionary.cnergee
 share/freeradius/dictionary.colubris
@@ -916,6 +927,7 @@ share/freeradius/dictionary.nomadix
 share/freeradius/dictionary.nortel
 share/freeradius/dictionary.ntua
 share/freeradius/dictionary.openser
+share/freeradius/dictionary.openwifi
 share/freeradius/dictionary.packeteer
 share/freeradius/dictionary.paloalto
 share/freeradius/dictionary.patton
@@ -975,6 +987,7 @@ share/freeradius/dictionary.shasta
 share/freeradius/dictionary.shiva
 share/freeradius/dictionary.siemens
 share/freeradius/dictionary.slipstream
+share/freeradius/dictionary.smartsharesystems
 share/freeradius/dictionary.sofaware
 share/freeradius/dictionary.softbank
 share/freeradius/dictionary.sonicwall
@@ -988,6 +1001,7 @@ share/freeradius/dictionary.telebit
 share/freeradius/dictionary.telkom
 share/freeradius/dictionary.telrad
 share/freeradius/dictionary.terena
+share/freeradius/dictionary.tplink
 share/freeradius/dictionary.trapeze
 share/freeradius/dictionary.travelping
 share/freeradius/dictionary.tripplite
