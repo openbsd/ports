@@ -51,7 +51,7 @@ SHA256 (go_modules/gopkg.in/errgo.v2/@v/v2.1.0.zip) = a4lUgZog7FKYKiBv0+uUYp/1PF
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SHA256 (govmomi-v0.41.0.zip) = wVENPAMFWpw28SMvtGHYxrStgY1pH8vkPJ2wB+EyXds=
+SHA256 (govmomi-v0.42.0.zip) = sYNJbKzvKUhXOl0H3ijffaLgXcWJm4y3y/uojJ9LBUE=
 SIZE (go_modules/github.com/a8m/tree/@v/v0.0.0-20210115125333-10a5fd5b637d.mod) = 27
 SIZE (go_modules/github.com/a8m/tree/@v/v0.0.0-20210115125333-10a5fd5b637d.zip) = 18668
 SIZE (go_modules/github.com/creack/pty/@v/v1.1.9.mod) = 39
@@ -105,4 +105,4 @@ SIZE (go_modules/gopkg.in/errgo.v2/@v/v2.1.0.zip) = 15087
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
-SIZE (govmomi-v0.41.0.zip) = 3582363
+SIZE (govmomi-v0.42.0.zip) = 3582808
