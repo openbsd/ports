@@ -1,0 +1,4 @@
+@newgroup _unboundexporter:522
+@newuser _unboundexporter:522:_unbound::Prometheus unbound_exporter:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/unbound_exporter
+@bin bin/unbound_exporter
