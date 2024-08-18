@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.446 2024/07/16 20:25:49 kn Exp $
+$OpenBSD: user.list,v 1.447 2024/08/18 05:04:27 pascal Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -30,7 +30,7 @@ id  user		group		port
 519 _news		_news		news/leafnode
 520 _majordomo		_majordomo	mail/majordomo
 521 _exim		_exim		mail/exim
-#522 _xcept		_xcept		comms/xcept
+522 _unboundexporter			sysutils/unbound_exporter
 523 _ffproxy		_ffproxy	www/ffproxy
 #524			_mail		mail/openwebmail
 525 _quagga		_quagga		net/quagga
