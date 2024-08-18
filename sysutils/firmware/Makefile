@@ -35,6 +35,7 @@
      SUBDIR += pgt
      SUBDIR += qcpas
      SUBDIR += qwx
+     SUBDIR += qwz
      SUBDIR += radeondrm
      SUBDIR += uath
      SUBDIR += ulpt
