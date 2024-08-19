@@ -1,14 +1,15 @@
 ONLY_FOR_ARCHS =	i386 amd64 powerpc
 
 COMMENT =		early macintosh emulator
+
 V =			36.04
-REVISION =		0
+REVISION =		1
+
 DISTNAME =		minivmac-${V}
 
 CATEGORIES =		emulators
 
 HOMEPAGE = 		https://gryphel.com/c/minivmac/
-
 MAINTAINER =		Jag Talon <jag@aangat.lahat.computer>
 
 WANTLIB =		X11 c sndio
@@ -33,24 +34,36 @@ SETUP_FLAGS-amd64 = 	-t ob64
 SETUP_FLAGS-i386 = 	-t obsd
 SETUP_FLAGS-powerpc = 	-t obsd -cpu ppc
 
+FLAVORS = 		ii
+FLAVOR ?=		
+
+MODEL = 		-m Plus
+.if ${FLAVOR:Mii}
+MODEL = 		-m II
+SUFFIX = 		-${FLAVOR}
+.endif
+
+FULLPKGNAME =		minivmac${SUFFIX}-${V}
+SUBST_VARS =		SUFFIX
+
 post-extract:
 	cp ${FILESDIR}/SGLUSNIO.h ${WRKSRC}/src
 
 do-gen:
 	cd ${WRKSRC}; cc setup/tool.c -o setup_t && \
-		./setup_t ${SETUP_FLAGS-${MACHINE_ARCH}} > gen && \
+		./setup_t ${SETUP_FLAGS-${MACHINE_ARCH}} ${MODEL} > gen && \
 		sh ./gen
 
 do-install:
-	${INSTALL_SCRIPT} ${WRKSRC}/minivmac ${PREFIX}/bin/minivmac
+	${INSTALL_SCRIPT} ${WRKSRC}/minivmac ${PREFIX}/bin/minivmac${SUFFIX}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/
-	${INSTALL_DATA} ${FILESDIR}/minivmac.png \
-		${PREFIX}/share/pixmaps/
+	${INSTALL_DATA} ${WRKSRC}/src/ICONAPPW.ico \
+		${PREFIX}/share/pixmaps/minivmac${SUFFIX}.ico
 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
-	${INSTALL_DATA} ${FILESDIR}/minivmac.desktop \
-		${PREFIX}/share/applications/
+	${INSTALL_DATA} ${FILESDIR}/minivmac${SUFFIX}.desktop \
+		${PREFIX}/share/applications/minivmac${SUFFIX}.desktop
 
 .include <bsd.port.mk>

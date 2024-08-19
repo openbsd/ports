@@ -1,1 +1,6 @@
-Macintosh Plus emulator.
+Mini vMac is an emulator for computers that Apple sold from 1984 to 1996
+based on Motorola's 680x0 microprocessors.
+
+Flavors:
+	default	- Emulate the Macintosh Plus ("minivmac" package) 
+	ii	- Emulate the Macintosh II ("minivmac-ii" package)

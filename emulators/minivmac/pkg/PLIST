@@ -1,6 +1,6 @@
-@bin bin/minivmac
-share/applications/minivmac.desktop
+@bin bin/minivmac${SUFFIX}
+share/applications/minivmac${SUFFIX}.desktop
 share/doc/pkg-readmes/${PKGSTEM}
 share/pixmaps/
 @tag update-desktop-database
-share/pixmaps/minivmac.png
+share/pixmaps/minivmac${SUFFIX}.ico

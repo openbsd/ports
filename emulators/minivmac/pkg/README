@@ -2,11 +2,12 @@
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
-Mini vMac can emulate the Macintosh Plus.
+Mini vMac can emulate early Macintoshes. The Macintosh Plus (minivmac)
+and the Macintosh II (minivmac-ii) are supported on OpenBSD.
 
-Mini vMac requires a correct ROM for the Mac model to emulate, named
-"vMac.ROM". This can be in the current directory before executing the
-"minivmac" command.
+Mini vMac requires a correct ROM for the Mac model to emulate, named either
+"vMac.ROM" or "MacII.ROM". This can be in the current directory before
+executing the "minivmac" command.
 
 Mini vMac can boot an image file (such as an OS). This can be named
 "disk1.dsk" and if placed in the current directory before executing

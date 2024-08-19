@@ -1,9 +1,9 @@
 [Desktop Entry]
 GenericName=Macintosh Emulator
-Name=Mini vMac (Plus)
+Name=Mini vMac (II)
 Comment=Early Macintosh emulator
-Exec=minivmac
+Exec=minivmac-ii
 Terminal=false
 Type=Application
 Categories=Emulator;Graphics;
-Icon=/usr/local/share/pixmaps/minivmac.ico
+Icon=/usr/local/share/pixmaps/minivmac-ii.ico
