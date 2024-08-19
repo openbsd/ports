@@ -1,3 +1,5 @@
+Accept DNS responses that have the AD bit set.
+
 Index: src/core/ngx_resolver.c
 --- src/core/ngx_resolver.c.orig
 +++ src/core/ngx_resolver.c
