@@ -151,6 +151,12 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/amzn/os/distro/description.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/amzn/os/distro/id.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/amzn/os/distro/release.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/amzn/os/release.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/archlinux/
+${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/archlinux/os/
+${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/archlinux/os/release.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/azurelinux/
+${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/azurelinux/os/
+${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/azurelinux/os/release.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/bsd/
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/bsd/kernelmajversion.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/bsd/kernelversion.rb
@@ -404,6 +410,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/linux/processor.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/linux/processors/
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/linux/processors/cores.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/linux/processors/count.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/linux/processors/extensions.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/linux/processors/isa.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/linux/processors/models.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/facts/linux/processors/physicalcount.rb
@@ -1121,6 +1128,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/facter/util/file_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/util/linux/
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/util/linux/dhcp.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/util/linux/if_inet6.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/facter/util/linux/proc.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/util/linux/routing_table.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/util/linux/socket_parser.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/facter/util/macosx/
