@@ -1,11 +1,13 @@
 COMMENT=	software project management and comprehension tool
 
-V=		3.9.7
+V=		3.9.9
 DISTNAME=	apache-maven-$V
 PKGNAME=	${DISTNAME:S/apache-//}
 CATEGORIES=	devel
 
 HOMEPAGE=	https://maven.apache.org/
+
+MAINTAINER=	Kirill A. Korinsky <kirill@korins.ky>
 
 # Apache Software License 2.0
 PERMIT_PACKAGE=	Yes
