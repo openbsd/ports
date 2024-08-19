@@ -3253,6 +3253,7 @@ share/qgis/python/pyplugin_installer/version_compare.py
 share/qgis/python/qgis/
 share/qgis/python/qgis/3d/
 share/qgis/python/qgis/3d/__init__.py
+share/qgis/python/qgis/3d/class_map.yaml
 share/qgis/python/qgis/PyQt/
 share/qgis/python/qgis/PyQt/Qsci.py
 share/qgis/python/qgis/PyQt/Qt.py
@@ -3291,6 +3292,7 @@ share/qgis/python/qgis/_server.pyi
 @so share/qgis/python/qgis/_server.so
 share/qgis/python/qgis/analysis/
 share/qgis/python/qgis/analysis/__init__.py
+share/qgis/python/qgis/analysis/class_map.yaml
 share/qgis/python/qgis/core/
 share/qgis/python/qgis/core/__init__.py
 share/qgis/python/qgis/core/additions/
@@ -3311,15 +3313,17 @@ share/qgis/python/qgis/core/additions/ranges.py
 share/qgis/python/qgis/core/additions/readwritecontextentercategory.py
 share/qgis/python/qgis/core/additions/runtimeprofiler.py
 share/qgis/python/qgis/core/additions/validitycheck.py
+share/qgis/python/qgis/core/class_map.yaml
 share/qgis/python/qgis/core/contextmanagers.py
 share/qgis/python/qgis/gui/
 share/qgis/python/qgis/gui/__init__.py
+share/qgis/python/qgis/gui/class_map.yaml
 share/qgis/python/qgis/processing/
 share/qgis/python/qgis/processing/__init__.py
 share/qgis/python/qgis/processing/algfactory.py
 share/qgis/python/qgis/server/
 share/qgis/python/qgis/server/__init__.py
-share/qgis/python/qgis/sipify.yaml
+share/qgis/python/qgis/server/class_map.yaml
 share/qgis/python/qgis/testing/
 share/qgis/python/qgis/testing/__init__.py
 share/qgis/python/qgis/testing/mocked.py

@@ -6,14 +6,14 @@ COMMENT =	desktop geographical information system
 
 DPB_PROPERTIES =	parallel
 
-DISTNAME =	qgis-3.38.1
+DISTNAME =	qgis-3.38.2
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}
 
-SHARED_LIBS =	qgis_core	76.0 \
+SHARED_LIBS =	qgis_core	77.0 \
 		qgis_app	50.0 \
-		qgis_gui	57.1 \
+		qgis_gui	57.2 \
 		qgis_analysis	25.0 \
 		qgis_server	20.0 \
 		qgispython	6.0 \
@@ -114,6 +114,12 @@ WANTLIB += absl_str_format_internal absl_strerror absl_string_view
 WANTLIB += absl_strings absl_strings_internal absl_symbolize absl_synchronization
 WANTLIB += absl_throw_delegate absl_time absl_time_zone
 WANTLIB += absl_log_internal_fnmatch absl_vlog_config_internal
+WANTLIB += absl_decode_rust_punycode absl_demangle_rust absl_random_distributions
+WANTLIB += absl_random_internal_platform absl_random_internal_pool_urbg
+WANTLIB += absl_random_internal_randen absl_random_internal_randen_hwaes
+WANTLIB += absl_random_internal_randen_hwaes_impl absl_random_internal_randen_slow
+WANTLIB += absl_random_internal_seed_material absl_random_seed_gen_exception
+WANTLIB += absl_random_seed_sequences absl_utf8_for_code_point
 
 CONFIGURE_ENV+=	VERBOSE=1
 CONFIGURE_ARGS =-DPYTHON_EXECUTABLE=${MODPY_BIN} \
