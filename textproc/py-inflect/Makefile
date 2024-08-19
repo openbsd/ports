@@ -1,9 +1,8 @@
 COMMENT=	correctly generate plurals, singular nouns, ordinals, etc
 
-MODPY_EGG_VERSION=	6.0.4
+MODPY_EGG_VERSION=	7.3.1
 DISTNAME=	inflect-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	textproc
 
@@ -17,7 +16,8 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
-RUN_DEPENDS=	devel/py-pydantic${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-more-itertools${MODPY_FLAVOR} \
+		devel/py-typeguard${MODPY_FLAVOR}
 
 FLAVORS=	python3
 FLAVOR=		python3

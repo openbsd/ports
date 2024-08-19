@@ -9,4 +9,12 @@ lib/python${MODPY_VERSION}/site-packages/inflect/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/inflect/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/inflect/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/inflect/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/inflect/compat/
+lib/python${MODPY_VERSION}/site-packages/inflect/compat/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/inflect/compat/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/inflect/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/inflect/compat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/inflect/compat/${MODPY_PYCACHE}py38.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/inflect/compat/${MODPY_PYCACHE}py38.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/inflect/compat/py38.py
 lib/python${MODPY_VERSION}/site-packages/inflect/py.typed
