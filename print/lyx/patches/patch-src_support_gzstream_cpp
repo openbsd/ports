@@ -1,0 +1,23 @@
+fix backwards memcpy
+
+Index: src/support/gzstream.cpp
+--- src/support/gzstream.cpp.orig
++++ src/support/gzstream.cpp
+@@ -32,7 +32,7 @@
+ 
+ #include <iostream>
+ #ifdef HAVE_STRING_H
+-# include <string.h> // for memcpy
++# include <string.h> // for memmove
+ #endif
+ 
+ using namespace std;
+@@ -92,7 +92,7 @@ int gzstreambuf::underflow() { // used for input buffe
+     int n_putback = gptr() - eback();
+     if ( n_putback > 4)
+         n_putback = 4;
+-    memcpy( buffer + (4 - n_putback), gptr() - n_putback, n_putback);
++    memmove( buffer + (4 - n_putback), gptr() - n_putback, n_putback);
+ 
+     int num = gzread( file, buffer+4, bufferSize-4);
+     if (num <= 0) // ERROR or EOF

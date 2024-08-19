@@ -1,6 +1,7 @@
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
 DISTNAME=	lyx-2.4.1
+REVISION=	0
 
 CATEGORIES=	print editors
 
