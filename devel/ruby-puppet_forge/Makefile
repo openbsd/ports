@@ -1,6 +1,6 @@
 COMMENT =	tools to access the Puppet Forge API
 
-DISTNAME =	puppet_forge-5.0.3
+DISTNAME =	puppet_forge-5.0.4
 CATEGORIES =	devel
 HOMEPAGE =	https://github.com/puppetlabs/forge-ruby
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
