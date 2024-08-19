@@ -1,9 +1,8 @@
 COMMENT =		Python bindings for Rust's persistent data structures (rpds)
 
-MODPY_EGG_VERSION =	0.18.0
+MODPY_EGG_VERSION =	0.20.0
 DISTNAME =		rpds_py-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/_/-/g}
-REVISION =		1
 
 CATEGORIES =		devel
 
@@ -24,8 +23,7 @@ MODPY_PYBUILD =		maturin
 MODCARGO_CARGO_BIN =	maturin
 CONFIGURE_STYLE =	cargo
 
-BUILD_DEPENDS =		devel/maturin \
-			devel/py-pip${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-pip${MODPY_FLAVOR}
 
 do-build:
 	${MODCARGO_CARGO_RUN} build \
@@ -35,10 +33,8 @@ do-build:
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/target/release/librpds.so ${PREFIX}/lib
-	pip${MODPY_VERSION} install --no-cache-dir --isolated \
-		--root=${WRKINST} \
-		--ignore-installed \
-		--no-deps ${WRKSRC}/target/wheels/*.whl
+	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_LIBDIR}
+	${MODPY_BIN} -m installer -d ${WRKINST} ${WRKSRC}/target/wheels/*.whl
 
 do-test:
 	pip${MODPY_VERSION} install --no-cache-dir --isolated \
