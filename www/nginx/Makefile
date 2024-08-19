@@ -3,46 +3,44 @@ PORTROACH=	limitw:1,even
 BROKEN-hppa=	src/core/ngx_rwlock.c:116:2: error: \#error ngx_atomic_cmp_set() is not defined!
 
 COMMENT-main=		robust and small HTTP server and mail proxy server
-COMMENT-image_filter=	nginx image filter module
+COMMENT-cache_purge=	nginx module which adds ability to purge cache content
 COMMENT-geoip2=		nginx GeoIP2 module
-COMMENT-xslt=		nginx XSLT filter module
-COMMENT-mailproxy=	nginx mail proxy module
-COMMENT-stream=		nginx TCP/UDP proxy module
-COMMENT-naxsi=		nginx web application firewall module
+COMMENT-headers_more=	nginx module for setting/adding/clearing headers
+COMMENT-image_filter=	nginx image filter module
 COMMENT-ldap_auth=	nginx LDAP authentication module
 COMMENT-lua=		nginx lua scripting (lua-nginx-module and ngx_devel_kit)
-COMMENT-headers_more=	nginx module for setting/adding/clearing headers
-COMMENT-perl=		nginx perl scripting module
+COMMENT-mailproxy=	nginx mail proxy module
+COMMENT-naxsi=		nginx web application firewall module
 COMMENT-njs=		nginx javascript scripting module
 COMMENT-passenger=	nginx passenger (ruby/python/nodejs) integration module
+COMMENT-perl=		nginx perl scripting module
 COMMENT-rtmp=		nginx module for RTMP streaming
 COMMENT-securelink=	nginx HMAC secure link module
+COMMENT-stream=		nginx TCP/UDP proxy module
+COMMENT-xslt=		nginx XSLT filter module
 
 VERSION=	1.26.1
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
-REVISION-geoip2= 0
-REVISION-lua=	0
-REVISION-main=	1
-REVISION-njs=	0
-REVISION-passenger= 0
-REVISION-rtmp=	0
+REVISION-main=	2
+REVISION=	1
 
 PKGNAME-main=		${DISTNAME}
-PKGNAME-image_filter=	nginx-image_filter-${VERSION}
+PKGNAME-cache_purge=	nginx-cache_purge-${VERSION}
 PKGNAME-geoip2=		nginx-geoip2-${VERSION}
-PKGNAME-xslt=		nginx-xslt-${VERSION}
-PKGNAME-mailproxy=	nginx-mailproxy-${VERSION}
-PKGNAME-stream=		nginx-stream-${VERSION}
-PKGNAME-naxsi=		nginx-naxsi-${VERSION}
+PKGNAME-headers_more=	nginx-headers-more-${VERSION}
+PKGNAME-image_filter=	nginx-image_filter-${VERSION}
 PKGNAME-ldap_auth=	nginx-ldap_auth-${VERSION}
 PKGNAME-lua=		nginx-lua-${VERSION}
-PKGNAME-headers_more=	nginx-headers-more-${VERSION}
-PKGNAME-perl=		nginx-perl-${VERSION}
+PKGNAME-mailproxy=	nginx-mailproxy-${VERSION}
+PKGNAME-naxsi=		nginx-naxsi-${VERSION}
 PKGNAME-njs=		nginx-njs-${VERSION}
 PKGNAME-passenger=	nginx-passenger-${VERSION}
+PKGNAME-perl=		nginx-perl-${VERSION}
 PKGNAME-rtmp=		nginx-rtmp-${VERSION}
 PKGNAME-securelink=	nginx-securelink-${VERSION}
+PKGNAME-stream=		nginx-stream-${VERSION}
+PKGNAME-xslt=		nginx-xslt-${VERSION}
 
 ONLY_FOR_ARCHS-passenger= aarch64 amd64 arm i386
 
@@ -51,17 +49,29 @@ SITES.p=https://raw.githubusercontent.com/rnagy/nginx_chroot_patch/master/ \
 	https://raw.githubusercontent.com/sthen/nginx_chroot_patch/add_1.20.1/
 
 DIST_TUPLE=	\
-	github openresty headers-more-nginx-module v0.34 headers-more-nginx-module \
-	github openresty lua-nginx-module v0.10.11 lua-nginx-module \
-	github nbs-system naxsi d714f1636ea49a9a9f4f06dba14aee003e970834 naxsi \
-	github kvspb nginx-auth-ldap 83c059b73566c2ee9cbda920d91b66657cf120b7 nginx-auth-ldap \
-	github arut nginx-rtmp-module v1.2.2 nginx-rtmp-module \
-	github nginx njs 0.8.4 njs \
-	github vision5 ngx_devel_kit v0.3.3 ngx_devel_kit \
+	github FRiCKLE ngx_cache_purge 2.3 ngx_cache_purge \
 	github leev ngx_http_geoip2_module 3.4 ngx_http_geoip2_module \
-	github nginx-modules ngx_http_hmac_secure_link_module 48c4625fbbf51ed5a95bfec23fa444f6c3702e50 ngx_http_hmac_secure_link_module
+	github openresty headers-more-nginx-module v0.34 headers-more-nginx-module \
+	github kvspb nginx-auth-ldap 83c059b73566c2ee9cbda920d91b66657cf120b7 nginx-auth-ldap \
+	github openresty lua-nginx-module v0.10.11 lua-nginx-module \
+	github vision5 ngx_devel_kit v0.3.3 ngx_devel_kit \
+	github nbs-system naxsi d714f1636ea49a9a9f4f06dba14aee003e970834 naxsi \
+	github nginx njs 0.8.4 njs \
+	github arut nginx-rtmp-module v1.2.2 nginx-rtmp-module \
+	github nginx-modules ngx_http_hmac_secure_link_module 48c4625fbbf51ed5a95bfec23fa444f6c3702e50 ngx_http_hmac_secure_link_module \
 
 HOMEPAGE=	https://nginx.org/
+
+HOMEPAGE-cache_purge=	https://github.com/FRiCKLE/ngx_cache_purge
+HOMEPAGE-geoip2=	https://github.com/leev/ngx_http_geoip2_module
+HOMEPAGE-headers_more=	https://github.com/openresty/headers-more-nginx-module
+HOMEPAGE-ldap_auth=	https://github.com/kvspb/nginx-auth-ldap
+HOMEPAGE-lua=		https://github.com/openresty/lua-nginx-module
+HOMEPAGE-naxsi=		https://github.com/wargio/naxsi
+HOMEPAGE-njs=		https://github.com/nginx/njs
+HOMEPAGE-passenger=	https://www.phusionpassenger.com/
+HOMEPAGE-rtmp=		https://github.com/arut/nginx-rtmp-module
+HOMEPAGE-securelink=	https://github.com/nginx-modules/ngx_http_hmac_secure_link_module
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
@@ -70,9 +80,10 @@ PERMIT_PACKAGE=	Yes
 
 MULTI_PACKAGES =	-main -naxsi -perl ${MODULE_PACKAGES}
 
-MODULE_PACKAGES =	-image_filter -geoip2 -xslt -mailproxy -stream \
-			-passenger -headers_more -ldap_auth -lua -njs \
-			-rtmp -securelink
+MODULE_PACKAGES =	-cache_purge -geoip2 -headers_more \
+			-image_filter -ldap_auth -lua -mailproxy \
+			-njs -passenger -rtmp -securelink -stream \
+			-xslt
 
 FLAVOR ?=
 PSEUDO_FLAVORS =	no_lua no_njs no_passenger
@@ -82,34 +93,36 @@ COMPILER =		base-clang ports-gcc base-gcc
 .include <bsd.port.arch.mk>
 
 WANTLIB-main=		c crypto pcre2-8 ssl z
-WANTLIB-mailproxy=
-WANTLIB-stream=
-WANTLIB-image_filter=	gd
+WANTLIB-cache_purge=
 WANTLIB-geoip2=		maxminddb
-WANTLIB-rtmp=
-WANTLIB-njs=		exslt m xml2 xslt
-WANTLIB-xslt=		exslt xml2 xslt
-WANTLIB-naxsi=
+WANTLIB-headers_more=
+WANTLIB-image_filter=	gd
 WANTLIB-ldap_auth=	ldap
 WANTLIB-lua=		${MODLUA_WANTLIB} m pcre
-WANTLIB-headers_more=
-WANTLIB-perl=		c m perl
+WANTLIB-mailproxy=
+WANTLIB-naxsi=
+WANTLIB-njs=		exslt m xml2 xslt
 WANTLIB-passenger=	m pthread ${COMPILER_LIBCXX}
+WANTLIB-perl=		c m perl
+WANTLIB-rtmp=
 WANTLIB-securelink=	crypto
+WANTLIB-stream=
+WANTLIB-xslt=		exslt xml2 xslt
 
 LIB_DEPENDS-main=	devel/pcre2
-LIB_DEPENDS-xslt=	textproc/libxml \
-			textproc/libxslt
-LIB_DEPENDS-image_filter=graphics/gd
+LIB_DEPENDS-cache_purge=
 LIB_DEPENDS-geoip2=	net/libmaxminddb
+LIB_DEPENDS-image_filter=graphics/gd
 LIB_DEPENDS-ldap_auth=	databases/openldap
 LIB_DEPENDS-lua=	${MODLUA_LIB_DEPENDS} \
 			devel/pcre
-LIB_DEPENDS-rtmp=
-LIB_DEPENDS-securelink=
 LIB_DEPENDS-njs=	devel/pcre2 \
 			textproc/libxslt \
 			textproc/libxml
+LIB_DEPENDS-rtmp=
+LIB_DEPENDS-securelink=
+LIB_DEPENDS-xslt=	textproc/libxml \
+			textproc/libxslt
 
 MODLUA_RUNDEP=		No
 RUN_DEPENDS=		www/nginx,-main=${VERSION}
@@ -198,7 +211,8 @@ CONFIGURE_ARGS+=	--prefix=${NGINX_DIR} \
 			--add-dynamic-module=${WRKSRC}/headers-more-nginx-module \
 			--add-dynamic-module=${WRKSRC}/nginx-auth-ldap \
 			--add-dynamic-module=${WRKSRC}/ngx_http_geoip2_module \
-			--add-dynamic-module=${WRKSRC}/ngx_http_hmac_secure_link_module
+			--add-dynamic-module=${WRKSRC}/ngx_http_hmac_secure_link_module \
+			--add-dynamic-module=${WRKSRC}/ngx_cache_purge
 
 SUBSTFILES=		conf/nginx.conf */config
 

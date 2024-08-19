@@ -1,0 +1,6 @@
+ngx_cache_purge is nginx module which adds ability to purge content from
+FastCGI, proxy, SCGI and uWSGI caches.
+
+It is built as a separate dynamic module and should be loaded with:
+
+  load_module modules/ngx_http_cache_purge_module.so;

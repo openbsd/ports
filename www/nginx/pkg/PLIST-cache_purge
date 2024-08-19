@@ -1,0 +1,1 @@
+@so ngx_http_cache_purge_module.so
