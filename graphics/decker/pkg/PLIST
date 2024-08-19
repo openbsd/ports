@@ -70,6 +70,7 @@ share/examples/decker/mines.lil
 share/examples/decker/ovum.deck
 share/examples/decker/palimport.deck
 share/examples/decker/patedit.deck
+share/examples/decker/path.deck
 share/examples/decker/pdf.deck
 share/examples/decker/plot.deck
 share/examples/decker/podcasts.lil
