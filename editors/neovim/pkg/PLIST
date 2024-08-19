@@ -515,6 +515,7 @@ share/nvim/runtime/ftplugin/gitconfig.vim
 share/nvim/runtime/ftplugin/gitignore.vim
 share/nvim/runtime/ftplugin/gitrebase.vim
 share/nvim/runtime/ftplugin/gitsendemail.vim
+share/nvim/runtime/ftplugin/glsl.lua
 share/nvim/runtime/ftplugin/go.vim
 share/nvim/runtime/ftplugin/gpg.vim
 share/nvim/runtime/ftplugin/gprof.vim
@@ -1204,10 +1205,6 @@ share/nvim/runtime/plugin/tohtml.lua
 share/nvim/runtime/plugin/tutor.vim
 share/nvim/runtime/plugin/zipPlugin.vim
 share/nvim/runtime/queries/
-share/nvim/runtime/queries/bash/
-share/nvim/runtime/queries/bash/folds.scm
-share/nvim/runtime/queries/bash/highlights.scm
-share/nvim/runtime/queries/bash/injections.scm
 share/nvim/runtime/queries/c/
 share/nvim/runtime/queries/c/folds.scm
 share/nvim/runtime/queries/c/highlights.scm
@@ -1223,9 +1220,6 @@ share/nvim/runtime/queries/markdown/injections.scm
 share/nvim/runtime/queries/markdown_inline/
 share/nvim/runtime/queries/markdown_inline/highlights.scm
 share/nvim/runtime/queries/markdown_inline/injections.scm
-share/nvim/runtime/queries/python/
-share/nvim/runtime/queries/python/folds.scm
-share/nvim/runtime/queries/python/highlights.scm
 share/nvim/runtime/queries/query/
 share/nvim/runtime/queries/query/folds.scm
 share/nvim/runtime/queries/query/highlights.scm

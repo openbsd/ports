@@ -11,8 +11,7 @@ EMBED_LUAJIT =	No
 
 COMMENT =	continuation and extension of Vim
 
-DIST_TUPLE =	github neovim neovim v0.10.0 .
-REVISION = 0
+DIST_TUPLE =	github neovim neovim v0.10.1 .
 
 # embedded luajit
 USE_NOBTCFI =	Yes
