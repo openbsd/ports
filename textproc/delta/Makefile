@@ -2,8 +2,7 @@ COMMENT =		viewer for git and diff output
 
 GH_ACCOUNT =		dandavison
 GH_PROJECT =		delta
-GH_TAGNAME =		0.17.0
-REVISION =		1
+GH_TAGNAME =		0.18.0
 
 CATEGORIES =		textproc
 
@@ -18,11 +17,6 @@ COMPILER =		base-clang ports-gcc
 WANTLIB +=		${MODCARGO_WANTLIB} m git2 onig
 
 MODULES =		devel/cargo
-
-MODCARGO_CRATES_UPDATE +=	time
-MODCARGO_CRATES +=	time		0.3.36
-MODCARGO_CRATES +=	time-macros	0.2.18
-MODCARGO_CRATES +=	num-conv	0.1.0
 
 LIB_DEPENDS +=		devel/libgit2/libgit2 \
 			textproc/oniguruma
