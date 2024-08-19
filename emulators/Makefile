@@ -40,6 +40,8 @@
      SUBDIR += mednaffe
      SUBDIR += melonds
      SUBDIR += mgba
+     SUBDIR += minivmac
+     SUBDIR += minivmac,ii
      SUBDIR += mupen64plus
      SUBDIR += nestopia
      SUBDIR += nono
