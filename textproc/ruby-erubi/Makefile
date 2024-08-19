@@ -1,6 +1,6 @@
 COMMENT =		simplified fork of Erubis
 
-DISTNAME =		erubi-1.12.0
+DISTNAME =		erubi-1.13.0
 CATEGORIES =		textproc
 
 HOMEPAGE =		https://github.com/jeremyevans/erubi

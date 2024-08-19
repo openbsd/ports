@@ -7,5 +7,6 @@ ${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/erubi/
 ${GEM_LIB}/gems/${DISTNAME}/lib/erubi.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/erubi/capture_block.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/erubi/capture_end.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
