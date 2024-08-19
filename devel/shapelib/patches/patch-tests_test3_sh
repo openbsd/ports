@@ -1,9 +1,0 @@
-Index: tests/test3.sh
---- tests/test3.sh.orig
-+++ tests/test3.sh
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/bin/sh
- 
- #
- #	Use example programs to create a very simple dataset that

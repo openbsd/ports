@@ -1,9 +1,0 @@
-Index: contrib/tests/shpproj.sh
---- contrib/tests/shpproj.sh.orig
-+++ contrib/tests/shpproj.sh
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/bin/sh
- 
- testdir="$(dirname "$(readlink -f $0)")"
- 

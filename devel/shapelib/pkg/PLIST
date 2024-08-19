@@ -19,9 +19,8 @@
 @bin bin/shptreedump
 @bin bin/shpwkb
 include/shapefil.h
-include/shapelib/
-include/shapelib/shapefil.h
 @lib lib/libshp.so.${LIBshp_VERSION}
+lib/pkgconfig/shapelib.pc
 share/shapelib/
 share/shapelib/shapelib-config-version.cmake
 share/shapelib/shapelib-config.cmake

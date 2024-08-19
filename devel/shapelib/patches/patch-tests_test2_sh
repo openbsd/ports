@@ -1,9 +1,0 @@
-Index: tests/test2.sh
---- tests/test2.sh.orig
-+++ tests/test2.sh
-@@ -1,4 +1,4 @@
--#!/bin/bash
-+#!/bin/sh
- 
- testdir="$(dirname "$(readlink -f $0)")"
- 
