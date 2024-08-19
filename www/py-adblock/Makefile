@@ -25,7 +25,6 @@ MODPY_PYBUILD=		maturin
 MODCARGO_CARGO_BIN=	maturin
 CONFIGURE_STYLE=	cargo
 
-BUILD_DEPENDS=		devel/py-installer${MODPY_FLAVOR}
 TEST_DEPENDS=		devel/py-pip${MODPY_FLAVOR} \
 			textproc/py-toml${MODPY_FLAVOR}
 
