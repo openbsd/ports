@@ -1,0 +1,10 @@
+@newgroup _hopm:665
+@newuser _hopm:665:_hopm::HOPM user:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/hopm
+@bin bin/hopm
+share/examples/hopm/
+share/examples/hopm/reference.conf
+@sample ${SYSCONFDIR}/hopm.conf
+@owner _hopm
+@group _hopm
+@sample /var/log/hopm/

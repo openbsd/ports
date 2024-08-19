@@ -1,0 +1,14 @@
+HOPM (Hybrid Open Proxy Monitor) is an open-proxy monitoring bot
+designed to monitor an individual server (all servers on the network
+have to run their own bot if the IRCd does not support the "far
+connect" user mode) with a local operator {} block and monitor
+connections. When a client connects to a server, HOPM will scan the
+connection for insecure proxies. Insecure proxies are determined
+by attempting to connect the proxy back to another host (usually
+the IRC server in question).
+
+HOPM is written ground-up in C language and it is an improved fork
+of BOPM (blitzed open proxy monitor), which is a concept derived
+from wgmon. It improves on wgmon with HTTP support, faster scanning
+(it can scan clients simultaneously), better layout (scalability)
+and DNSBL support.

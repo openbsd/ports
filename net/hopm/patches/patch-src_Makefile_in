@@ -1,0 +1,14 @@
+adjust HOPM_LOGDIR
+
+Index: src/Makefile.in
+--- src/Makefile.in.orig
++++ src/Makefile.in
+@@ -384,7 +384,7 @@ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ SUBDIRS = libopm
+-AM_CPPFLAGS = -DHOPM_PREFIX="\"$(prefix)\"" -DHOPM_ETCDIR="\"$(sysconfdir)\"" -DHOPM_LOGDIR="\"$(localstatedir)/log\"" -DHOPM_BINPATH="\"$(bindir)/hopm\"" -I$(top_srcdir)/src/libopm/src/
++AM_CPPFLAGS = -DHOPM_PREFIX="\"$(prefix)\"" -DHOPM_ETCDIR="\"$(sysconfdir)\"" -DHOPM_LOGDIR="\"$(localstatedir)/log/hopm\"" -DHOPM_BINPATH="\"$(bindir)/hopm\"" -I$(top_srcdir)/src/libopm/src/
+ AM_YFLAGS = -d
+ hopm_SOURCES = compat.c        \
+                compat.h        \

@@ -1,0 +1,16 @@
+cast time_t to long long and use %lld for *printf(3)
+
+Index: src/negcache.c
+--- src/negcache.c.orig
++++ src/negcache.c
+@@ -115,8 +115,8 @@ negcache_rebuild(void)
+     if (n->seen + OptionsItem.negcache < present)
+     {
+       if (OPT_DEBUG >= 2)
+-        log_printf("NEGCACHE -> Deleting expired negcache node for %s added at %lu",
+-                   patricia_prefix_toa(pnode->prefix, 0), n->seen);
++        log_printf("NEGCACHE -> Deleting expired negcache node for %s added at %lld",
++                   patricia_prefix_toa(pnode->prefix, 0), (long long)n->seen);
+ 
+       list_remove(&n->node, &negcache_list);
+ 

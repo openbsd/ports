@@ -1,0 +1,21 @@
+Index: doc/reference.conf
+--- doc/reference.conf.orig
++++ doc/reference.conf
+@@ -30,7 +30,7 @@ options {
+ 	 * Full path and filename for storing the process ID of the running
+ 	 * HOPM.
+ 	 */
+-	pidfile = "var/run/hopm.pid";
++	pidfile = "/var/run/hopm/hopm.pid";
+ 
+ 	/*
+ 	 * Maximum commands to queue. Set to 0 if you don't want HOPM
+@@ -92,7 +92,7 @@ options {
+ 	 * the scan in question can be useful. Leave commented for no
+ 	 * logging.
+ 	 */
+-#	scanlog = "var/log/scan.log";
++#	scanlog = "/var/log/hopm/scan.log";
+ };
+ 
+ 
