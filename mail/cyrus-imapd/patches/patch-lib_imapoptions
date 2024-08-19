@@ -1,7 +1,7 @@
 Index: lib/imapoptions
 --- lib/imapoptions.orig
 +++ lib/imapoptions
-@@ -807,7 +807,7 @@ Blank lines and lines beginning with ``#'' are ignored
+@@ -812,7 +812,7 @@ Blank lines and lines beginning with ``#'' are ignored
     is a C format string that gets 3 options: the first is the name of the
     executable (as specified in the cmd parameter in cyrus.conf). The second
     is the pid (integer) and the third is the service ID.
@@ -10,7 +10,7 @@ Index: lib/imapoptions
  
  { "debug_log_sync_partition_choice", 0, SWITCH, "3.8.0" }
  /* If enabled, replication will log which partition it chose for staging.
-@@ -2504,7 +2504,7 @@ If all partitions are over that limit, this feature is
+@@ -2540,7 +2540,7 @@ If all partitions are over that limit, this feature is
  { "seenstate_db", "twoskip", STRINGLIST("flat", "skiplist", "twoskip", "zeroskip"), "3.1.6" }
  /* The cyrusdb backend to use for the seen state. */
  
@@ -19,7 +19,7 @@ Index: lib/imapoptions
  /* The pathname of the sendmail executable.  Sieve invokes sendmail
     for sending rejections, redirects and vacation responses. */
  
-@@ -2643,7 +2643,7 @@ product version in the capabilities
+@@ -2679,7 +2679,7 @@ product version in the capabilities
     For backward compatibility, if no unit is specified, seconds is
     assumed. */
  

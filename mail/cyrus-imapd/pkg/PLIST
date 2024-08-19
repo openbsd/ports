@@ -184,6 +184,7 @@ include/cyrus/mpool.h
 include/cyrus/murmurhash2.h
 include/cyrus/nonblock.h
 include/cyrus/parseaddr.h
+include/cyrus/proc.h
 include/cyrus/procinfo.h
 include/cyrus/retry.h
 include/cyrus/rfc822tok.h
@@ -202,6 +203,7 @@ include/cyrus/tok.h
 include/cyrus/vparse.h
 include/cyrus/wildmat.h
 include/cyrus/xmalloc.h
+include/cyrus/xunlink.h
 @static-lib lib/libcyrus.a
 lib/libcyrus.la
 @lib lib/libcyrus.so.${LIBcyrus_VERSION}
@@ -332,10 +334,12 @@ share/doc/cyrus-imapd/html/imap/developer/jmap.html
 share/doc/cyrus-imapd/html/imap/developer/libraries/
 share/doc/cyrus-imapd/html/imap/developer/libraries.html
 share/doc/cyrus-imapd/html/imap/developer/libraries/imclient.html
+share/doc/cyrus-imapd/html/imap/developer/major-releasing.html
 share/doc/cyrus-imapd/html/imap/developer/namespaces.html
 share/doc/cyrus-imapd/html/imap/developer/overview.html
 share/doc/cyrus-imapd/html/imap/developer/process.html
 share/doc/cyrus-imapd/html/imap/developer/releasing.html
+share/doc/cyrus-imapd/html/imap/developer/snapshot-releasing.html
 share/doc/cyrus-imapd/html/imap/developer/thoughts/
 share/doc/cyrus-imapd/html/imap/developer/thoughts.html
 share/doc/cyrus-imapd/html/imap/developer/thoughts/backup.html
@@ -504,6 +508,17 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/3.1/x/3.1.6.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.1/x/3.1.7.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.1/x/3.1.8.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.1/x/3.1.9.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.10/
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.10/index.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.10/x/
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.10/x/3.10.0-alpha0.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.10/x/3.10.0-beta1.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.10/x/3.10.0-beta2.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.10/x/3.10.0-rc1.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.10/x/3.10.0-rc2.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.10/x/3.10.0.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.11/
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.11/index.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/index.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/x/

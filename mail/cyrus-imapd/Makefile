@@ -2,7 +2,7 @@ PORTROACH=		limitw:1,even
 
 COMMENT=		Cyrus IMAP server
 
-V=			3.8.4
+V=			3.10.0
 DISTNAME=		cyrus-imapd-${V}
 
 SHARED_LIBS +=  cyrus_min            0.0      # unknown
@@ -20,8 +20,8 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c com_err crypto execinfo icudata
-WANTLIB += icui18n icuuc jansson m pcre pcreposix perl sasl2 sqlite3
-WANTLIB += srs2 ssl uuid z
+WANTLIB += icui18n icuuc jansson m pcre2-8 pcre2-posix perl sasl2
+WANTLIB += sqlite3 srs2 ssl uuid z
 
 SITES=			https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-${V}/
 
@@ -35,7 +35,7 @@ BUILD_DEPENDS +=	textproc/libical
 
 LIB_DEPENDS=		databases/sqlite3 \
 			devel/jansson \
-			devel/pcre \
+			devel/pcre2 \
 			mail/libsrs2 \
 			security/cyrus-sasl2 \
 			sysutils/e2fsprogs \
