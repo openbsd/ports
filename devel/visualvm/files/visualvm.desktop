@@ -1,0 +1,9 @@
+[Desktop Entry]
+Name=VisualVM
+Comment=Profiler for Java
+Exec=visualvm 
+Terminal=false
+Type=Application
+Encoding=UTF-8
+Categories=Development;
+Keywords=java;profiler;performance;
