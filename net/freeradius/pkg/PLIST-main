@@ -121,7 +121,6 @@ lib/freeradius/
 @so lib/freeradius/rlm_eap_peap.so
 @so lib/freeradius/rlm_eap_pwd.so
 @so lib/freeradius/rlm_eap_sim.so
-@so lib/freeradius/rlm_eap_teap.so
 @so lib/freeradius/rlm_eap_tls.so
 @so lib/freeradius/rlm_eap_ttls.so
 @so lib/freeradius/rlm_exec.so
@@ -249,6 +248,7 @@ share/doc/freeradius/modules/rlm_expiration
 @comment share/doc/freeradius/modules/rlm_krb5
 @comment share/doc/freeradius/modules/rlm_pam
 share/doc/freeradius/modules/rlm_passwd
+@comment share/doc/freeradius/modules/rlm_python
 share/doc/freeradius/modules/rlm_soh
 share/doc/freeradius/modules/rlm_sql
 share/doc/freeradius/modules/rlm_sqlcounter
@@ -486,6 +486,8 @@ share/examples/freeradius/mods-available/perl
 @sample ${FREERADIUS_ETC}/mods-available/perl
 share/examples/freeradius/mods-available/preprocess
 @sample ${FREERADIUS_ETC}/mods-available/preprocess
+@comment share/examples/freeradius/mods-available/python
+@comment @sample ${FREERADIUS_ETC}/mods-available/python
 share/examples/freeradius/mods-available/radutmp
 @sample ${FREERADIUS_ETC}/mods-available/radutmp
 share/examples/freeradius/mods-available/realm
