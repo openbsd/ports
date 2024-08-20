@@ -17,5 +17,7 @@ WANTLIB += ${COMPILER_LIBCXX} c m
 SITES=		https://download.osgeo.org/shapelib/
 
 MODULES =	devel/cmake
+# fetches gtest from the network
+CONFIGURE_ARGS +=	-DBUILD_TESTING=OFF
 
 .include <bsd.port.mk>
