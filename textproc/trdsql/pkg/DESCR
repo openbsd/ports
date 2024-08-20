@@ -1,0 +1,8 @@
+trdsql is a CLI tool that can execute SQL queries on CSV, LTSV, JSON,
+YAML and TBLN files.
+
+This tool is similar to others such as q and textql, with a key
+distinction: it allows the use of PostgreSQL or MySQL syntax.
+
+For more information, see ${PREFIX}/share/doc/trdsql/README.md
+or https://pkg.go.dev/github.com/noborus/trdsql

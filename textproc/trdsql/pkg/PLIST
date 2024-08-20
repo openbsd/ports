@@ -1,0 +1,3 @@
+@bin bin/trdsql
+share/doc/trdsql/
+share/doc/trdsql/README.md
