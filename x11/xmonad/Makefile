@@ -1,8 +1,7 @@
 COMMENT =		tiling window manager
 
 MODCABAL_STEM =		xmonad
-MODCABAL_VERSION =	0.17.2
-REVISION =		0
+MODCABAL_VERSION =	0.18.0
 
 PKGNAME =		${DISTNAME}
 CATEGORIES =		x11
@@ -11,14 +10,14 @@ HOMEPAGE =		https://www.xmonad.org/
 # BSD3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		X11 Xext Xinerama Xrandr Xss c charset ffi gmp \
+WANTLIB =		X11 Xext Xinerama Xrandr Xss c ffi gmp \
 			m iconv pthread util
 
 MODULES =		devel/cabal
 MODCABAL_MANIFEST = \
 	X11	1.10.3	0	\
 	data-default-class	0.1.2.0	0	\
-	hsc2hs	0.68.10	1
+	hsc2hs	0.68.10	2
 
 LIB_DEPENDS =		converters/libiconv \
 			devel/gmp \
