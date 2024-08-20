@@ -1,0 +1,36 @@
+disable fetching gtest, use the ports one
+
+Index: tests/CMakeLists.txt
+--- tests/CMakeLists.txt.orig
++++ tests/CMakeLists.txt
+@@ -2,28 +2,10 @@
+ 
+ project(${CMAKE_PROJECT_NAME}Tests CXX)
+ 
+-# Set up GoogleTest
+-include(FetchContent)
+-
+-FetchContent_Declare(
+-  googletest
+-  GIT_REPOSITORY https://github.com/google/googletest.git
+-  GIT_TAG v1.15.2
+-)
+-
+-# For Windows: Prevent overriding the parent project's compiler/linker settings
+-set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+-
+-# Disable building GMock
+-set(BUILD_GMOCK OFF CACHE BOOL "" FORCE)
+-
+-# Do not install GTest 
+-set(INSTALL_GTEST OFF CACHE BOOL "" FORCE)
+-
+-FetchContent_MakeAvailable(googletest)
+-
+ foreach(executable dbf_test sbn_test shp_test)
+   add_executable(${executable} ${PROJECT_SOURCE_DIR}/${executable}.cc)
++  target_include_directories(${executable} PRIVATE /usr/local/include)
++  target_link_directories(${executable} PRIVATE /usr/local/lib)
+   target_link_libraries(${executable} PRIVATE ${PACKAGE} gtest)
+   add_test(
+     NAME ${executable}
