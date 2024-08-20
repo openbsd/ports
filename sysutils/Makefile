@@ -302,6 +302,7 @@
      SUBDIR += pv
      SUBDIR += py-analyzemft,python3
      SUBDIR += py-ansible-compat,python3
+     SUBDIR += py-ansible-libssh,python3
      SUBDIR += py-apscheduler,python3
      SUBDIR += py-augeas,python3
      SUBDIR += py-blessed,python3
@@ -315,7 +316,7 @@
      SUBDIR += py-distro,python3
      SUBDIR += py-dotenv,python3
      SUBDIR += py-elasticsearch-curator	# unflavoured (standalone?) but uses python3
-     SUBDIR += py-expandvars
+     SUBDIR += py-expandvars,python3
      SUBDIR += py-filelock,python3
      SUBDIR += py-find,python3
      SUBDIR += py-ghmi,python3
