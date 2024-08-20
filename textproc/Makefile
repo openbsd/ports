@@ -573,6 +573,7 @@
      SUBDIR += syrics
      SUBDIR += tcpdf
      SUBDIR += tdom
+     SUBDIR += trdsql
      SUBDIR += terraform-docs
      SUBDIR += texi2html
      SUBDIR += texi2mdoc
