@@ -34,5 +34,7 @@
 @comment bin/testwrapper
 @comment bin/tsconnect
 @bin bin/tsidp
+@comment bin/tta
 @comment bin/viewer
+@comment bin/vnet
 @comment bin/xdpderper
