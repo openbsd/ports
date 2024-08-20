@@ -1,0 +1,11 @@
+Ansible-libssh is a new LibSSH Connection Plugin for Ansible Network
+that replaces Paramiko.  Since most network appliances don't support
+or have limited capability for the local execution of a third party
+software, the Ansible network modules are not copied to the remote
+host unlike linux hosts; instead, they run on the control node
+itself. Hence, Ansible network can't use the typical Ansible SSH
+connection plugin that is used with linux host. Furthermore, due
+to this behavior, performance of the underlying SSH subsystem is
+critical. Not only is the new LibSSH connection plugin enabling
+FIPS readiness, but it was also designed to be more performant than
+the existing Paramiko SSH subsystem.
