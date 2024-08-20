@@ -1421,6 +1421,7 @@
      SUBDIR += py-deprecation,python3
      SUBDIR += py-derange,python3
      SUBDIR += py-dill,python3
+     SUBDIR += py-dirty-equals,python3
      SUBDIR += py-dispatcher,python3
      SUBDIR += py-distutils-extra,python3
      SUBDIR += py-docopt,python3
