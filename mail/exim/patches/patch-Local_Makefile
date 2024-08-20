@@ -1,7 +1,7 @@
 Index: Local/Makefile
 --- Local/Makefile.orig
 +++ Local/Makefile
-@@ -101,7 +101,7 @@
+@@ -103,7 +103,7 @@
  # /usr/local/sbin. The installation script will try to create this directory,
  # and any superior directories, if they do not exist.
  
@@ -10,7 +10,7 @@ Index: Local/Makefile
  
  
  #------------------------------------------------------------------------------
-@@ -117,7 +117,7 @@ BIN_DIRECTORY=/usr/exim/bin
+@@ -119,7 +119,7 @@ BIN_DIRECTORY=/usr/exim/bin
  # don't exist. It will also install a default runtime configuration if this
  # file does not exist.
  
@@ -19,7 +19,7 @@ Index: Local/Makefile
  
  # It is possible to specify a colon-separated list of files for CONFIGURE_FILE.
  # In this case, Exim will use the first of them that exists when it is run.
-@@ -134,7 +134,7 @@ CONFIGURE_FILE=/usr/exim/configure
+@@ -136,7 +136,7 @@ CONFIGURE_FILE=/usr/exim/configure
  # deliveries. (Local deliveries run as various non-root users, typically as the
  # owner of a local mailbox.) Specifying these values as root is not supported.
  
@@ -28,7 +28,7 @@ Index: Local/Makefile
  
  # If you specify EXIM_USER as a name, this is looked up at build time, and the
  # uid number is built into the binary. However, you can specify that this
-@@ -212,11 +212,11 @@ SPOOL_DIRECTORY=/var/spool/exim
+@@ -214,11 +214,11 @@ SPOOL_DIRECTORY=/var/spool/exim
  # If you are building with TLS, the library configuration must be done:
  
  # Uncomment this if you are using OpenSSL
@@ -42,7 +42,7 @@ Index: Local/Makefile
  # TLS_LIBS=-L/usr/local/openssl/lib -lssl -lcrypto
  
  # Uncomment this if you are using GnuTLS
-@@ -342,7 +342,7 @@ TRANSPORT_SMTP=yes
+@@ -344,7 +344,7 @@ TRANSPORT_SMTP=yes
  # This one is special-purpose, and commonly not required, so it is not
  # included by default.
  
@@ -51,7 +51,7 @@ Index: Local/Makefile
  
  
  #------------------------------------------------------------------------------
-@@ -351,9 +351,9 @@ TRANSPORT_SMTP=yes
+@@ -353,9 +353,9 @@ TRANSPORT_SMTP=yes
  # MBX, is included only when requested. If you do not know what this is about,
  # leave these settings commented out.
  
@@ -64,7 +64,7 @@ Index: Local/Makefile
  
  
  #------------------------------------------------------------------------------
-@@ -411,8 +411,8 @@ LOOKUP_DBM=yes
+@@ -413,8 +413,8 @@ LOOKUP_DBM=yes
  LOOKUP_LSEARCH=yes
  LOOKUP_DNSDB=yes
  
@@ -75,7 +75,7 @@ Index: Local/Makefile
  # LOOKUP_IBASE=yes
  # LOOKUP_JSON=yes
  # LOOKUP_LDAP=yes
-@@ -420,10 +420,10 @@ LOOKUP_DNSDB=yes
+@@ -422,10 +422,10 @@ LOOKUP_DNSDB=yes
  
  # LOOKUP_MYSQL=yes
  # LOOKUP_MYSQL_PC=mariadb
@@ -88,7 +88,7 @@ Index: Local/Makefile
  # LOOKUP_PGSQL=yes
  # LOOKUP_REDIS=yes
  # LOOKUP_SQLITE=yes
-@@ -523,7 +523,7 @@ SUPPORT_DANE=yes
+@@ -525,7 +525,7 @@ SUPPORT_DANE=yes
  # and the MIME ACL. Please read the documentation to learn more about these
  # features.
  
@@ -97,7 +97,7 @@ Index: Local/Makefile
  
  # If you have content scanning you may wish to only include some of the scanner
  # interfaces.  Uncomment any of these lines to remove that code.
-@@ -564,7 +564,7 @@ DISABLE_MAL_MKS=yes
+@@ -566,7 +566,7 @@ DISABLE_MAL_MKS=yes
  # from Exim.  Note it can only be supported when built with
  # GnuTLS 3.1.3 or later, or OpenSSL
  
@@ -106,7 +106,7 @@ Index: Local/Makefile
  
  #------------------------------------------------------------------------------
  # By default, Exim has support for checking the AD bit in a DNS response, to
-@@ -785,18 +785,18 @@ FIXED_NEVER_USERS=root
+@@ -794,18 +794,18 @@ FIXED_NEVER_USERS=root
  # included in the Exim binary. You will then need to set up the run time
  # configuration to make use of the mechanism(s) selected.
  
@@ -129,7 +129,7 @@ Index: Local/Makefile
  
  # Heimdal through 1.5 required pkg-config 'heimdal-gssapi'; Heimdal 7.1
  # requires multiple pkg-config files to work with Exim, so the second example
-@@ -843,7 +843,7 @@ HEADERS_CHARSET="ISO-8859-1"
+@@ -852,7 +852,7 @@ HEADERS_CHARSET="ISO-8859-1"
  # the Sieve filter support. For those OS where iconv() is known to be installed
  # as standard, the file in OS/Makefile-xxxx contains
  #
@@ -138,7 +138,7 @@ Index: Local/Makefile
  #
  # If you are not using one of those systems, but have installed iconv(), you
  # need to uncomment that line above. In some cases, you may find that iconv()
-@@ -932,7 +932,7 @@ HEADERS_CHARSET="ISO-8859-1"
+@@ -941,7 +941,7 @@ HEADERS_CHARSET="ISO-8859-1"
  # %s. This will be replaced by one of the strings "main", "panic", or "reject"
  # to form the final file names. Some installations may want something like this:
  
@@ -147,7 +147,7 @@ Index: Local/Makefile
  
  # which results in files with names /var/log/exim_mainlog, etc. The directory
  # in which the log files are placed must exist; Exim does not try to create
-@@ -1004,7 +1004,7 @@ ZCAT_COMMAND=/usr/bin/zcat
+@@ -1013,7 +1013,7 @@ ZCAT_COMMAND=/usr/bin/zcat
  # (version 5.004 or later) installed, set EXIM_PERL to perl.o. Using embedded
  # Perl costs quite a lot of resources. Only do this if you really need it.
  
@@ -156,7 +156,7 @@ Index: Local/Makefile
  
  
  #------------------------------------------------------------------------------
-@@ -1132,7 +1132,7 @@ ZCAT_COMMAND=/usr/bin/zcat
+@@ -1141,7 +1141,7 @@ ZCAT_COMMAND=/usr/bin/zcat
  # group. Once you have installed saslauthd, you should arrange for it to be
  # started by root at boot time.
  
@@ -165,7 +165,7 @@ Index: Local/Makefile
  
  
  #------------------------------------------------------------------------------
-@@ -1180,7 +1180,7 @@ ZCAT_COMMAND=/usr/bin/zcat
+@@ -1189,7 +1189,7 @@ ZCAT_COMMAND=/usr/bin/zcat
  # aliases). The following setting can be changed to specify a different
  # location for the system alias file.
  
@@ -174,7 +174,7 @@ Index: Local/Makefile
  
  
  #------------------------------------------------------------------------------
-@@ -1445,7 +1445,7 @@ EXIM_TMPDIR="/tmp"
+@@ -1454,7 +1454,7 @@ EXIM_TMPDIR="/tmp"
  # (process id) to a file so that it can easily be identified. The path of the
  # file can be specified here. Some installations may want something like this:
  

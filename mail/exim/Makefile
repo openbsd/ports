@@ -7,6 +7,8 @@ PKGNAME-main =		exim-${VERSION}
 FULLPKGNAME-eximon =	exim-eximon-${VERSION}
 FULLPKGPATH-eximon =	${PKGPATH},-eximon
 
+REVISION =		0
+
 CATEGORIES =		mail
 
 HOMEPAGE =		https://www.exim.org/
