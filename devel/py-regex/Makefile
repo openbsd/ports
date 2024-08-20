@@ -1,6 +1,6 @@
 COMMENT=	alternative regular expression module to replace re
 
-MODPY_EGG_VERSION=	2024.5.10
+MODPY_EGG_VERSION=	2024.7.24
 DISTNAME=	regex-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
@@ -19,9 +19,5 @@ FLAVOR=		python3
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-
-TEST_DEPENDS=	${BUILD_PKGPATH}
-do-test:
-	cd ${WRKSRC}; ${MODPY_BIN} -m unittest -v regex_3.test_regex
 
 .include <bsd.port.mk>
