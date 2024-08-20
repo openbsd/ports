@@ -1935,6 +1935,7 @@
      SUBDIR += vanessa
      SUBDIR += vim-command-t
      SUBDIR += vim-taglist
+     SUBDIR += visualvm
      SUBDIR += vtags
      SUBDIR += vtcl
      SUBDIR += vte3
