@@ -1,6 +1,6 @@
 COMMENT =		radically simple IT automation
 
-MODPY_EGG_VERSION =	2.17.2
+MODPY_EGG_VERSION =	2.17.3
 DISTNAME =		ansible_core-${MODPY_EGG_VERSION}
 PKGNAME =		ansible-core-${MODPY_EGG_VERSION}
 
