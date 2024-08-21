@@ -3,21 +3,25 @@ Allow ARM CPU runtime detection code to build on OpenBSD.
 Index: vpx_ports/aarch32_cpudetect.c
 --- vpx_ports/aarch32_cpudetect.c.orig
 +++ vpx_ports/aarch32_cpudetect.c
-@@ -12,7 +12,7 @@
- #include "./vpx_config.h"
- #include "arm_cpudetect.h"
- 
--#if !CONFIG_RUNTIME_CPU_DETECT
-+#if !CONFIG_RUNTIME_CPU_DETECT || defined(__OpenBSD__)
- 
- static int arm_get_cpu_caps(void) {
-   // This function should actually be a no-op. There is no way to adjust any of
-@@ -25,7 +25,7 @@ static int arm_get_cpu_caps(void) {
+@@ -57,7 +57,7 @@ static int arm_get_cpu_caps(void) {
    return flags;
  }
  
--#elif defined(_MSC_VER)  // end !CONFIG_RUNTIME_CPU_DETECT
-+#elif defined(_MSC_VER)  // end !CONFIG_RUNTIME_CPU_DETECT || __OpenBSD__
+-#elif defined(__linux__)  // end defined(AOM_USE_ANDROID_CPU_FEATURES)
++#elif defined(__linux__) || defined(__OpenBSD__)  // end defined(AOM_USE_ANDROID_CPU_FEATURES)
+ 
+ #include <sys/auxv.h>
+ 
+@@ -67,7 +67,12 @@ static int arm_get_cpu_caps(void) {
  
  static int arm_get_cpu_caps(void) {
    int flags = 0;
++#ifdef __OpenBSD__
++  unsigned long hwcap = 0;
++  elf_aux_info(AT_HWCAP, &hwcap, sizeof(hwcap));
++#else
+   unsigned long hwcap = getauxval(AT_HWCAP);
++#endif
+ #if HAVE_NEON || HAVE_NEON_ASM
+   if (hwcap & VPX_AARCH32_HWCAP_NEON) {
+     flags |= HAS_NEON;
