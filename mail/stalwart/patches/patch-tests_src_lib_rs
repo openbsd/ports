@@ -1,13 +1,15 @@
 Index: tests/src/lib.rs
 --- tests/src/lib.rs.orig
 +++ tests/src/lib.rs
-@@ -6,10 +6,10 @@
+@@ -6,12 +6,12 @@
  
  use std::path::PathBuf;
  
 -#[cfg(not(target_env = "msvc"))]
 +#[cfg(not(target_os = "openbsd"))]
  use jemallocator::Jemalloc;
+ #[cfg(test)]
+ use trc::collector::Collector;
  
 -#[cfg(not(target_env = "msvc"))]
 +#[cfg(not(target_os = "openbsd"))]

@@ -1,8 +1,8 @@
 Index: crates/main/src/main.rs
 --- crates/main/src/main.rs.orig
 +++ crates/main/src/main.rs
-@@ -19,10 +19,10 @@ use smtp::core::{SmtpSessionManager, SMTP};
- use tokio::sync::mpsc;
+@@ -16,10 +16,10 @@ use tokio::sync::mpsc;
+ use trc::collector::Collector;
  use utils::wait_for_shutdown;
  
 -#[cfg(not(target_env = "msvc"))]

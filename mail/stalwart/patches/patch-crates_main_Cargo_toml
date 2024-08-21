@@ -1,9 +1,9 @@
 Index: crates/main/Cargo.toml
 --- crates/main/Cargo.toml.orig
 +++ crates/main/Cargo.toml
-@@ -30,7 +30,7 @@ se_common = { path = "../se-common" }
+@@ -30,7 +30,7 @@ utils = { path = "../utils" }
  tokio = { version = "1.23", features = ["full"] }
- tracing = "0.1"
+ 
  
 -[target.'cfg(not(target_env = "msvc"))'.dependencies]
 +[target.'cfg(not(target_os = "openbsd"))'.dependencies]
