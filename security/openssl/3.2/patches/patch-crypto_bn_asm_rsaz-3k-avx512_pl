@@ -1,0 +1,12 @@
+Index: crypto/bn/asm/rsaz-3k-avx512.pl
+--- crypto/bn/asm/rsaz-3k-avx512.pl.orig
++++ crypto/bn/asm/rsaz-3k-avx512.pl
+@@ -485,7 +485,7 @@ $code.=<<___;
+ ___
+ 
+ $code.=<<___;
+-.data
++.rodata
+ .align 32
+ .Lmask52x4:
+     .quad   0xfffffffffffff
