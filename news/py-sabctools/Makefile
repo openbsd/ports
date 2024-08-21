@@ -2,11 +2,10 @@ BROKEN-riscv64 =	needs riscv_vector.h
 
 COMMENT =		C implementations of functions for use within SABnzbd
 
-MODPY_EGG_VERSION =	8.2.3
+MODPY_EGG_VERSION =	8.2.5
 EPOCH =			0
 DISTNAME =		sabctools-${MODPY_EGG_VERSION}
 PKGNAME =		py-sabctools-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		news
 
