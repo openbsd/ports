@@ -1,0 +1,17 @@
+lib/python${MODPY_VERSION}/site-packages/pydantic_core/
+lib/python${MODPY_VERSION}/site-packages/pydantic_core-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pydantic_core-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/pydantic_core-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/pydantic_core-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pydantic_core-${MODPY_EGG_VERSION}.dist-info/license_files/
+lib/python${MODPY_VERSION}/site-packages/pydantic_core-${MODPY_EGG_VERSION}.dist-info/license_files/LICENSE
+lib/python${MODPY_VERSION}/site-packages/pydantic_core/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pydantic_core/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pydantic_core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pydantic_core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pydantic_core/${MODPY_PYCACHE}core_schema.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pydantic_core/${MODPY_PYCACHE}core_schema.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/pydantic_core/_pydantic_core.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/pydantic_core/_pydantic_core.pyi
+lib/python${MODPY_VERSION}/site-packages/pydantic_core/core_schema.py
+lib/python${MODPY_VERSION}/site-packages/pydantic_core/py.typed
