@@ -1587,6 +1587,7 @@
      SUBDIR += py-py,python3
      SUBDIR += py-pybind11,python3
      SUBDIR += py-pydantic,python3
+     SUBDIR += py-pydantic-core,python3
      SUBDIR += py-pydantic-compat,python3
      SUBDIR += py-pydocstyle,python3
      SUBDIR += py-pyinotify,python3
