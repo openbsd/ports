@@ -3,7 +3,7 @@ XXX fix+push upstream
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -41,7 +41,7 @@ prefix = get_option('prefix')
+@@ -47,7 +47,7 @@ prefix = get_option('prefix')
  datadir = prefix / get_option('datadir')
  libexecdir = prefix / get_option('libexecdir')
  
