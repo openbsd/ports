@@ -3,51 +3,33 @@ Add AArch64 CPU feature detection support for OpenBSD.
 Index: aom_ports/aarch64_cpudetect.c
 --- aom_ports/aarch64_cpudetect.c.orig
 +++ aom_ports/aarch64_cpudetect.c
-@@ -178,7 +178,46 @@ static int arm_get_cpu_caps(void) {
+@@ -99,7 +99,7 @@ static int arm_get_cpu_caps(void) {
    return flags;
  }
  
--#else  // end __Fuchsia__
-+#elif defined(__OpenBSD__)  // end __Fuchsia__
-+
-+#include <machine/armreg.h>
-+#include <machine/cpu.h>
-+#include <sys/types.h>
-+#include <sys/sysctl.h>
-+
-+static int arm_get_cpu_caps(void) {
-+  int flags = 0;
-+  int mib[2];
-+  uint64_t isar0;
-+  uint64_t isar1;
-+  size_t len;
-+
-+  flags |= HAS_NEON;  // Neon is mandatory in Armv8.0-A.
-+
-+  mib[0] = CTL_MACHDEP;
-+  mib[1] = CPU_ID_AA64ISAR0;
-+  len = sizeof(isar0);
-+  if (sysctl(mib, 2, &isar0, &len, NULL, 0) != -1) {
-+    if (ID_AA64ISAR0_CRC32(isar0) >= ID_AA64ISAR0_CRC32_BASE)
-+      flags |= HAS_ARM_CRC32;
-+    if (ID_AA64ISAR0_DP(isar0) >= ID_AA64ISAR0_DP_IMPL)
-+      flags |= HAS_NEON_DOTPROD;
-+  }
-+
-+  mib[0] = CTL_MACHDEP;
-+  mib[1] = CPU_ID_AA64ISAR1;
-+  len = sizeof(isar1);
-+  if (sysctl(mib, 2, &isar1, &len, NULL, 0) != -1) {
-+#ifdef ID_AA64ISAR1_I8MM_IMPL
-+    if (ID_AA64ISAR1_I8MM(isar1) >= ID_AA64ISAR1_I8MM_IMPL)
-+      flags |= HAS_NEON_I8MM;
+-#elif defined(__linux__)  // end defined(AOM_USE_ANDROID_CPU_FEATURES)
++#elif defined(__linux__) || defined(__OpenBSD__)  // end defined(AOM_USE_ANDROID_CPU_FEATURES)
+ 
+ #include <sys/auxv.h>
+ 
+@@ -114,10 +114,20 @@ static int arm_get_cpu_caps(void) {
+ static int arm_get_cpu_caps(void) {
+   int flags = 0;
+ #if HAVE_ARM_CRC32 || HAVE_NEON_DOTPROD || HAVE_SVE
++#ifdef __OpenBSD__
++  unsigned long hwcap = 0;
++  elf_aux_info(AT_HWCAP, &hwcap, sizeof(hwcap));
++#else
+   unsigned long hwcap = getauxval(AT_HWCAP);
+ #endif
 +#endif
-+  }
-+
-+  return flags;
-+}
-+
-+#else  // end __OpenBSD__
- #error \
-     "Runtime CPU detection selected, but no CPU detection method " \
- "available for your platform. Rerun cmake with -DCONFIG_RUNTIME_CPU_DETECT=0."
+ #if HAVE_NEON_I8MM || HAVE_SVE2
++#ifdef __OpenBSD__
++  unsigned long hwcap2 = 0;
++  elf_aux_info(AT_HWCAP2, &hwcap2, sizeof(hwcap2));
++#else
+   unsigned long hwcap2 = getauxval(AT_HWCAP2);
++#endif
+ #endif
+ 
+ #if HAVE_NEON
