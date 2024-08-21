@@ -1,0 +1,20 @@
+https://github.com/geopython/pygeoapi/pull/1353
+
+Index: requirements.txt
+--- requirements.txt.orig
++++ requirements.txt
+@@ -4,7 +4,7 @@ filelock
+ Flask
+ jinja2
+ jsonschema
+-pydantic<2.0
++pydantic
+ pygeofilter
+ pygeoif
+ pyproj
+@@ -16,4 +16,5 @@ requests
+ shapely
+ SQLAlchemy<2.0.0
+ tinydb
++typing-extensions
+ unicodecsv

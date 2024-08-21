@@ -2,6 +2,7 @@ COMMENT =		OGC API server implementation
 
 MODPY_EGG_VERSION =	0.17.0
 DISTNAME =		pygeoapi-${MODPY_EGG_VERSION}
+REVISION =	0
 
 CATEGORIES =		geo devel
 
@@ -17,12 +18,15 @@ MODPY_PI =		Yes
 NO_TEST =	Yes
 #MODPY_PYTEST =	Yes
 #TEST_DEPENDS =	${RUN_DEPENDS} \
+#		www/py-starlette${MODPY_FLAVOR} \
+#		geo/py-owslib${MODPY_FLAVOR} \
 #		databases/py-mongo${MODPY_FLAVOR}
 RUN_DEPENDS =	devel/py-babel${MODPY_FLAVOR} \
 		devel/py-click${MODPY_FLAVOR} \
 		devel/py-dateutil${MODPY_FLAVOR} \
 		devel/py-jsonschema${MODPY_FLAVOR} \
 		devel/py-pydantic${MODPY_FLAVOR} \
+		devel/py-typing-extensions${MODPY_FLAVOR} \
 		devel/py-tz${MODPY_FLAVOR} \
 		geo/mapserver,-python \
 		geo/py-geofilter${MODPY_FLAVOR} \
