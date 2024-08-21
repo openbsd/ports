@@ -2,11 +2,11 @@ COMMENT =	powerful batch file renamer
 
 VERSION =	5.0.2
 DISTNAME =	krename-${VERSION}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	sysutils x11
 
-HOMEPAGE =	https://kde.org/applications/utilities/org.kde.krename
+HOMEPAGE =	https://apps.kde.org/krename/
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
