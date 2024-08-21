@@ -1,9 +1,9 @@
 COMMENT =	terminal file manager inspired by ranger written in Go
 
 MODGO_MODNAME =	github.com/gokcehan/lf
-MODGO_VERSION =	v0.0.0-20220402215443-50f11ad3dee6
+MODGO_VERSION =	v0.0.0-20240331195418-d26eb0108a63
 
-R =		27
+R =		32
 DISTNAME =	lf-${R}
 
 CATEGORIES =	sysutils
