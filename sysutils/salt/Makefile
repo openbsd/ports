@@ -17,6 +17,7 @@ COMMENT =		remote execution and configuration management system
 
 MODPY_EGG_VERSION =	3006.9
 DISTNAME =		salt-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		sysutils net devel
 
@@ -40,6 +41,7 @@ BUILD_DEPENDS =		textproc/py-yaml${MODPY_FLAVOR} \
 RUN_DEPENDS =		devel/py-looseversion${MODPY_FLAVOR} \
 			devel/py-jmespath${MODPY_FLAVOR} \
 			net/py-msgpack${MODPY_FLAVOR}>=0.6.2v0 \
+			security/py-cryptography${MODPY_FLAVOR} \
 			textproc/py-MarkupSafe${MODPY_FLAVOR} \
 			textproc/py-yaml${MODPY_FLAVOR} \
 			www/py-jinja2${MODPY_FLAVOR} \
