@@ -58,6 +58,8 @@ eboringssl/include/openssl/lhash.h
 eboringssl/include/openssl/md4.h
 eboringssl/include/openssl/md5.h
 eboringssl/include/openssl/mem.h
+eboringssl/include/openssl/mldsa.h
+eboringssl/include/openssl/mlkem.h
 eboringssl/include/openssl/nid.h
 eboringssl/include/openssl/obj.h
 eboringssl/include/openssl/obj_mac.h
