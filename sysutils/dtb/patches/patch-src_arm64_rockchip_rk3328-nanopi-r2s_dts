@@ -1,0 +1,12 @@
+Index: src/arm64/rockchip/rk3328-nanopi-r2s.dts
+--- src/arm64/rockchip/rk3328-nanopi-r2s.dts.orig
++++ src/arm64/rockchip/rk3328-nanopi-r2s.dts
+@@ -20,7 +20,7 @@
+ 	};
+ 
+ 	chosen {
+-		stdout-path = "serial2:1500000n8";
++		stdout-path = "serial2:115200n8";
+ 	};
+ 
+ 	gmac_clk: gmac-clock {

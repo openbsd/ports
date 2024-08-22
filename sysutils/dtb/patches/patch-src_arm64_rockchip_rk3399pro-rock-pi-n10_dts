@@ -1,0 +1,11 @@
+Index: src/arm64/rockchip/rk3399pro-rock-pi-n10.dts
+--- src/arm64/rockchip/rk3399pro-rock-pi-n10.dts.orig
++++ src/arm64/rockchip/rk3399pro-rock-pi-n10.dts
+@@ -17,6 +17,6 @@
+ 		     "rockchip,rk3399pro";
+ 
+ 	chosen {
+-		stdout-path = "serial2:1500000n8";
++		stdout-path = "serial2:115200n8";
+ 	};
+ };

@@ -1,6 +1,6 @@
-Index: arch/arm/boot/dts/ti/omap/am335x-icev2.dts
---- arch/arm/boot/dts/ti/omap/am335x-icev2.dts.orig
-+++ arch/arm/boot/dts/ti/omap/am335x-icev2.dts
+Index: src/arm/ti/omap/am335x-icev2.dts
+--- src/arm/ti/omap/am335x-icev2.dts.orig
++++ src/arm/ti/omap/am335x-icev2.dts
 @@ -474,29 +474,31 @@
  	};
  };

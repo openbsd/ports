@@ -1,6 +1,6 @@
-Index: arch/arm/boot/dts/ti/omap/am335x-evmsk.dts
---- arch/arm/boot/dts/ti/omap/am335x-evmsk.dts.orig
-+++ arch/arm/boot/dts/ti/omap/am335x-evmsk.dts
+Index: src/arm/ti/omap/am335x-evmsk.dts
+--- src/arm/ti/omap/am335x-evmsk.dts.orig
++++ src/arm/ti/omap/am335x-evmsk.dts
 @@ -596,17 +596,19 @@
  	};
  };

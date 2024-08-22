@@ -1,6 +1,6 @@
-Index: arch/arm/boot/dts/ti/omap/am335x-sancloud-bbe-common.dtsi
---- arch/arm/boot/dts/ti/omap/am335x-sancloud-bbe-common.dtsi.orig
-+++ arch/arm/boot/dts/ti/omap/am335x-sancloud-bbe-common.dtsi
+Index: src/arm/ti/omap/am335x-sancloud-bbe-common.dtsi
+--- src/arm/ti/omap/am335x-sancloud-bbe-common.dtsi.orig
++++ src/arm/ti/omap/am335x-sancloud-bbe-common.dtsi
 @@ -40,6 +40,22 @@
  		>;
  	};

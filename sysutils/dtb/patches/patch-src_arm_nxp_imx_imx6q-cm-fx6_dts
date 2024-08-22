@@ -1,0 +1,14 @@
+Index: src/arm/nxp/imx/imx6q-cm-fx6.dts
+--- src/arm/nxp/imx/imx6q-cm-fx6.dts.orig
++++ src/arm/nxp/imx/imx6q-cm-fx6.dts
+@@ -55,6 +55,10 @@
+ 		reg = <0x10000000 0x80000000>;
+ 	};
+ 
++	chosen {
++		stdout-path = &uart4;
++	};
++
+ 	leds {
+ 		compatible = "gpio-leds";
+ 

@@ -1,0 +1,12 @@
+Index: src/arm64/rockchip/rk3399-nanopi4.dtsi
+--- src/arm64/rockchip/rk3399-nanopi4.dtsi.orig
++++ src/arm64/rockchip/rk3399-nanopi4.dtsi
+@@ -25,7 +25,7 @@
+ 	};
+ 
+ 	chosen {
+-		stdout-path = "serial2:1500000n8";
++		stdout-path = "serial2:115200n8";
+ 	};
+ 
+ 	clkin_gmac: external-gmac-clock {

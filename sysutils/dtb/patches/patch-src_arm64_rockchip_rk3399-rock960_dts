@@ -1,6 +1,6 @@
-Index: arch/arm64/boot/dts/rockchip/rk3399-rock960.dts
---- arch/arm64/boot/dts/rockchip/rk3399-rock960.dts.orig
-+++ arch/arm64/boot/dts/rockchip/rk3399-rock960.dts
+Index: src/arm64/rockchip/rk3399-rock960.dts
+--- src/arm64/rockchip/rk3399-rock960.dts.orig
++++ src/arm64/rockchip/rk3399-rock960.dts
 @@ -11,7 +11,7 @@
  	compatible = "vamrs,rock960", "rockchip,rk3399";
  

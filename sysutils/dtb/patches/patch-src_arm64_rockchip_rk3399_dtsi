@@ -1,6 +1,6 @@
-Index: arch/arm64/boot/dts/rockchip/rk3399.dtsi
---- arch/arm64/boot/dts/rockchip/rk3399.dtsi.orig
-+++ arch/arm64/boot/dts/rockchip/rk3399.dtsi
+Index: src/arm64/rockchip/rk3399.dtsi
+--- src/arm64/rockchip/rk3399.dtsi.orig
++++ src/arm64/rockchip/rk3399.dtsi
 @@ -1011,6 +1011,11 @@
  		status = "disabled";
  	};

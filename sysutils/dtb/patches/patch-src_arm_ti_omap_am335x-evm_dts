@@ -1,28 +1,17 @@
-Index: arch/arm/boot/dts/ti/omap/am335x-bone-common.dtsi
---- arch/arm/boot/dts/ti/omap/am335x-bone-common.dtsi.orig
-+++ arch/arm/boot/dts/ti/omap/am335x-bone-common.dtsi
-@@ -358,27 +358,24 @@
+Index: src/arm/ti/omap/am335x-evm.dts
+--- src/arm/ti/omap/am335x-evm.dts.orig
++++ src/arm/ti/omap/am335x-evm.dts
+@@ -682,31 +682,28 @@
  	};
  };
  
--&cpsw_port1 {
-+&cpsw_emac0 {
- 	phy-handle = <&ethphy0>;
- 	phy-mode = "mii";
--	ti,dual-emac-pvid = <1>;
- };
- 
--&cpsw_port2 {
--	status = "disabled";
--};
--
 -&mac_sw {
 +&mac {
-+	slaves = <1>;
  	pinctrl-names = "default", "sleep";
  	pinctrl-0 = <&cpsw_default>;
  	pinctrl-1 = <&cpsw_sleep>;
  	status = "okay";
++	slaves = <1>;
  };
  
 -&davinci_mdio_sw {
@@ -34,3 +23,18 @@ Index: arch/arm/boot/dts/ti/omap/am335x-bone-common.dtsi
  
  	ethphy0: ethernet-phy@0 {
  		reg = <0>;
+ 	};
+ };
+ 
+-&cpsw_port1 {
++&cpsw_emac0 {
+ 	phy-handle = <&ethphy0>;
+ 	phy-mode = "rgmii-id";
+-	ti,dual-emac-pvid = <1>;
+-};
+-
+-&cpsw_port2 {
+-	 status = "disabled";
+ };
+ 
+ &tscadc {

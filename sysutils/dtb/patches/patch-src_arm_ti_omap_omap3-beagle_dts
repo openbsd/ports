@@ -1,6 +1,6 @@
-Index: arch/arm/boot/dts/ti/omap/omap3-beagle.dts
---- arch/arm/boot/dts/ti/omap/omap3-beagle.dts.orig
-+++ arch/arm/boot/dts/ti/omap/omap3-beagle.dts
+Index: src/arm/ti/omap/omap3-beagle.dts
+--- src/arm/ti/omap/omap3-beagle.dts.orig
++++ src/arm/ti/omap/omap3-beagle.dts
 @@ -21,6 +21,10 @@
  		reg = <0x80000000 0x10000000>; /* 256 MB */
  	};

@@ -1,0 +1,12 @@
+Index: src/arm64/rockchip/rk3399-firefly.dts
+--- src/arm64/rockchip/rk3399-firefly.dts.orig
++++ src/arm64/rockchip/rk3399-firefly.dts
+@@ -23,7 +23,7 @@
+ 	};
+ 
+ 	chosen {
+-		stdout-path = "serial2:1500000n8";
++		stdout-path = "serial2:115200n8";
+ 	};
+ 
+ 	backlight: backlight {

@@ -1,0 +1,12 @@
+Index: src/arm/ti/omap/am335x-boneblack-wireless.dts
+--- src/arm/ti/omap/am335x-boneblack-wireless.dts.orig
++++ src/arm/ti/omap/am335x-boneblack-wireless.dts
+@@ -63,7 +63,7 @@
+ 	};
+ };
+ 
+-&mac_sw {
++&mac {
+ 	status = "disabled";
+ };
+ 

@@ -1,0 +1,12 @@
+Index: src/arm64/rockchip/rk3399-pinebook-pro.dts
+--- src/arm64/rockchip/rk3399-pinebook-pro.dts.orig
++++ src/arm64/rockchip/rk3399-pinebook-pro.dts
+@@ -26,7 +26,7 @@
+ 	};
+ 
+ 	chosen {
+-		stdout-path = "serial2:1500000n8";
++		stdout-path = "serial2:115200n8";
+ 	};
+ 
+ 	backlight: edp-backlight {
