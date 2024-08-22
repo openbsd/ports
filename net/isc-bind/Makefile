@@ -2,13 +2,13 @@ COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
 # Second digits: odd numbers devel, even numbers stable,
 # ESV branched occasionally.  9.18.x is ESV.
-V=		9.18.28
+V=		9.18.29
 SUBST_VARS+=	V
 PORTROACH=	limitw:1,even
 EXTRACT_SUFX=	.tar.xz
 EPOCH=		3
 
-# keep abkve 7.5-stable
+# keep above 7.5-stable
 REVISION=	0
 
 DISTNAME=	bind-$V
