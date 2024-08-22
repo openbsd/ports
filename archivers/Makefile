@@ -59,14 +59,17 @@
      SUBDIR += pigz
      SUBDIR += pixz
      SUBDIR += py-brotli,python3
+     SUBDIR += py-brotlicffi,python3
      SUBDIR += py-compressed_rtf,python3
      SUBDIR += py-libarchive-c,python3
+     SUBDIR += py-lsqpack,python3
      SUBDIR += py-lz4,python3
      SUBDIR += py-lzo,python3
      SUBDIR += py-rarfile,python3
      SUBDIR += py-vpk,python3
      SUBDIR += py-zipstream-ng,python3
      SUBDIR += py-zopfli,python3
+     SUBDIR += py-zstandard,python3
      SUBDIR += quazip
      SUBDIR += ripole
      SUBDIR += ruby-minitar
