@@ -81,10 +81,13 @@ SUBST_VARS +=	VERSION LOG4J_V SNAPPY_S SNAPPY_V
 
 pre-extract:
 .if ${FETCH_PACKAGES:L} == no
-	@if ! [ -r ${LOCALBASE}/bin/mongo ]; then echo; \
+	@needpkgs=false; \
+	if ! [ -r ${LOCALBASE}/bin/mongo ]; then needpkgs=true; echo "- mongodb not installed"; fi; \
+	if ! [ -r ${LOCALBASE}/jdk-${MODJAVA_VER}*/bin/java ]; then needpkgs=true; echo "- jdk-${MODJAVA_VER} not installed"; fi; \
+	if $$$needpkgs; then \
 	    echo "*** To avoid long jdk/mongodb builds, it is recommended that you"; sleep .7; \
 	    echo "*** use 'make FETCH_PACKAGES= install' to fetch binary packages"; sleep .7; \
-	    echo "*** for the dependencies."; echo; sleep 5; \
+	    echo "*** for the dependencies. Hit ^C now to interrupt the build."; echo; sleep 5; \
 	fi
 .endif
 
