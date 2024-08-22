@@ -1,0 +1,15 @@
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -1,8 +1,8 @@
+ [build-system]
+ requires = [
+-    "cffi==1.16.0",
+-    "setuptools==68.2.2",
+-    "wheel==0.41.2",
++    "cffi",
++    "setuptools",
++    "wheel",
+ ]
+ # Need to use legacy backend because setup_zstd.py breaks build isolation.
+ build-backend = "setuptools.build_meta:__legacy__"
