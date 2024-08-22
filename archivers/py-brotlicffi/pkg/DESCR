@@ -1,0 +1,3 @@
+This library contains Python CFFI bindings for the reference Brotli
+encoder/decoder, available as brotli port. This allows Python software
+to use the Brotli compression algorithm directly from Python code.
