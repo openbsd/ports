@@ -3,7 +3,7 @@ Patch to use pledge on OpenBSD.
 Index: lib/isc/net.c
 --- lib/isc/net.c.orig
 +++ lib/isc/net.c
-@@ -212,6 +212,13 @@ isc_net_probeunix(void) {
+@@ -204,6 +204,13 @@ isc_net_probeipv6(void) {
  
  static void
  try_ipv6only(void) {

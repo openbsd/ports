@@ -12,6 +12,7 @@
 @bin bin/dnssec-importkey
 @bin bin/dnssec-keyfromlabel
 @bin bin/dnssec-keygen
+@bin bin/dnssec-ksr
 @bin bin/dnssec-revoke
 @bin bin/dnssec-settime
 @bin bin/dnssec-signzone
@@ -29,9 +30,6 @@ bin/enslookup
 @bin bin/nsec3hash
 @bin bin/nslookup
 @bin bin/nsupdate
-include/bind9/
-include/bind9/check.h
-include/bind9/getaddresses.h
 include/dns/
 include/dns/acl.h
 include/dns/adb.h
@@ -62,7 +60,6 @@ include/dns/ecs.h
 include/dns/edns.h
 include/dns/enumclass.h
 include/dns/enumtype.h
-include/dns/events.h
 include/dns/fixedname.h
 include/dns/forward.h
 include/dns/geoip.h
@@ -73,15 +70,16 @@ include/dns/kasp.h
 include/dns/keydata.h
 include/dns/keyflags.h
 include/dns/keymgr.h
+include/dns/keystore.h
 include/dns/keytable.h
 include/dns/keyvalues.h
 include/dns/librpz.h
 include/dns/log.h
-include/dns/lookup.h
 include/dns/master.h
 include/dns/masterdump.h
 include/dns/message.h
 include/dns/name.h
+include/dns/nametree.h
 include/dns/ncache.h
 include/dns/nsec.h
 include/dns/nsec3.h
@@ -90,6 +88,7 @@ include/dns/opcode.h
 include/dns/order.h
 include/dns/peer.h
 include/dns/private.h
+include/dns/qp.h
 include/dns/rbt.h
 include/dns/rcode.h
 include/dns/rdata.h
@@ -100,6 +99,7 @@ include/dns/rdatasetiter.h
 include/dns/rdataslab.h
 include/dns/rdatastruct.h
 include/dns/rdatatype.h
+include/dns/remote.h
 include/dns/request.h
 include/dns/resolver.h
 include/dns/result.h
@@ -107,7 +107,6 @@ include/dns/rootns.h
 include/dns/rpz.h
 include/dns/rriterator.h
 include/dns/rrl.h
-include/dns/sdb.h
 include/dns/sdlz.h
 include/dns/secalg.h
 include/dns/secproto.h
@@ -116,8 +115,8 @@ include/dns/ssu.h
 include/dns/stats.h
 include/dns/time.h
 include/dns/tkey.h
+include/dns/trace.h
 include/dns/transport.h
-include/dns/tsec.h
 include/dns/tsig.h
 include/dns/ttl.h
 include/dns/types.h
@@ -135,11 +134,9 @@ include/dst/gssapi.h
 include/irs/
 include/irs/resconf.h
 include/isc/
-include/isc/aes.h
-include/isc/align.h
-include/isc/app.h
+include/isc/ascii.h
 include/isc/assertions.h
-include/isc/astack.h
+include/isc/async.h
 include/isc/atomic.h
 include/isc/attributes.h
 include/isc/backtrace.h
@@ -147,34 +144,37 @@ include/isc/barrier.h
 include/isc/base32.h
 include/isc/base64.h
 include/isc/buffer.h
-include/isc/cmocka.h
 include/isc/commandline.h
 include/isc/condition.h
 include/isc/counter.h
 include/isc/crc64.h
-include/isc/deprecated.h
 include/isc/dir.h
+include/isc/dnsstream.h
 include/isc/endian.h
+include/isc/entropy.h
 include/isc/errno.h
 include/isc/error.h
-include/isc/event.h
-include/isc/eventclass.h
 include/isc/file.h
+include/isc/fips.h
 include/isc/formatcheck.h
 include/isc/fuzz.h
-include/isc/glob.h
+include/isc/getaddresses.h
 include/isc/hash.h
+include/isc/hashmap.h
 include/isc/heap.h
 include/isc/hex.h
+include/isc/histo.h
 include/isc/hmac.h
 include/isc/ht.h
 include/isc/httpd.h
 include/isc/interfaceiter.h
 include/isc/iterated_hash.h
+include/isc/job.h
 include/isc/lang.h
 include/isc/lex.h
 include/isc/list.h
 include/isc/log.h
+include/isc/loop.h
 include/isc/magic.h
 include/isc/managers.h
 include/isc/md.h
@@ -184,17 +184,17 @@ include/isc/mutex.h
 include/isc/mutexblock.h
 include/isc/net.h
 include/isc/netaddr.h
-include/isc/netdb.h
 include/isc/netmgr.h
 include/isc/netscope.h
 include/isc/nonce.h
-include/isc/offset.h
 include/isc/once.h
 include/isc/os.h
+include/isc/overflow.h
 include/isc/parseint.h
-include/isc/pool.h
+include/isc/pause.h
 include/isc/portset.h
-include/isc/print.h
+include/isc/proxy2.h
+include/isc/queue.h
 include/isc/quota.h
 include/isc/radix.h
 include/isc/random.h
@@ -202,39 +202,40 @@ include/isc/ratelimiter.h
 include/isc/refcount.h
 include/isc/regex.h
 include/isc/region.h
-include/isc/resource.h
 include/isc/result.h
 include/isc/rwlock.h
 include/isc/safe.h
 include/isc/serial.h
+include/isc/signal.h
 include/isc/siphash.h
 include/isc/sockaddr.h
-include/isc/stat.h
+include/isc/spinlock.h
 include/isc/stats.h
-include/isc/stdatomic.h
 include/isc/stdio.h
 include/isc/stdtime.h
 include/isc/strerr.h
 include/isc/string.h
 include/isc/symtab.h
 include/isc/syslog.h
-include/isc/task.h
-include/isc/taskpool.h
 include/isc/thread.h
+include/isc/tid.h
 include/isc/time.h
 include/isc/timer.h
 include/isc/tls.h
 include/isc/tm.h
 include/isc/types.h
+include/isc/urcu.h
 include/isc/url.h
 include/isc/utf8.h
 include/isc/util.h
+include/isc/uv.h
+include/isc/work.h
+include/isc/xml.h
 include/isccc/
 include/isccc/alist.h
 include/isccc/base64.h
 include/isccc/cc.h
 include/isccc/ccmsg.h
-include/isccc/events.h
 include/isccc/sexpr.h
 include/isccc/symtab.h
 include/isccc/symtype.h
@@ -243,6 +244,7 @@ include/isccc/util.h
 include/isccfg/
 include/isccfg/aclconf.h
 include/isccfg/cfg.h
+include/isccfg/check.h
 include/isccfg/duration.h
 include/isccfg/grammar.h
 include/isccfg/kaspconf.h
@@ -250,7 +252,6 @@ include/isccfg/log.h
 include/isccfg/namedconf.h
 include/ns/
 include/ns/client.h
-include/ns/events.h
 include/ns/hooks.h
 include/ns/interfacemgr.h
 include/ns/listenlist.h
@@ -268,15 +269,9 @@ lib/bind/filter-a.la
 @so lib/bind/filter-a.so
 lib/bind/filter-aaaa.la
 @so lib/bind/filter-aaaa.so
-@so lib/libbind9-${V}.so
-lib/libbind9.la
-@so lib/libbind9.so
 @so lib/libdns-${V}.so
 lib/libdns.la
 @so lib/libdns.so
-@so lib/libirs-${V}.so
-lib/libirs.la
-@so lib/libirs.so
 @so lib/libisc-${V}.so
 lib/libisc.la
 @so lib/libisc.so
@@ -297,6 +292,7 @@ lib/libns.la
 @man man/man1/dnssec-importkey.1
 @man man/man1/dnssec-keyfromlabel.1
 @man man/man1/dnssec-keygen.1
+@man man/man1/dnssec-ksr.1
 @man man/man1/dnssec-revoke.1
 @man man/man1/dnssec-settime.1
 @man man/man1/dnssec-signzone.1
@@ -337,7 +333,6 @@ lib/libns.la
 @mode
 @group
 share/examples/bind9/
-share/examples/bind9/bind.keys
 share/examples/bind9/named.conf
 @mode 640
 @group _bind

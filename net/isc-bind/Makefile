@@ -2,14 +2,11 @@ COMMENT=	Berkeley Internet Name Daemon: DNS server and tools
 
 # Second digits: odd numbers devel, even numbers stable,
 # ESV branched occasionally.  9.18.x is ESV.
-V=		9.18.29
+V=		9.20.1
 SUBST_VARS+=	V
 PORTROACH=	limitw:1,even
 EXTRACT_SUFX=	.tar.xz
 EPOCH=		3
-
-# keep above 7.5-stable
-REVISION=	0
 
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
@@ -24,7 +21,8 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto execinfo iconv idn2 json-c lzma m nghttp2
-WANTLIB += pthread ssl unistring uv xml2 z
+WANTLIB += pthread ssl unistring urcu urcu-cds urcu-common uv
+WANTLIB += xml2 z
 
 FLAVORS=	geoip
 FLAVOR?=
@@ -38,6 +36,7 @@ BUILD_DEPENDS=	textproc/py-sphinx${MODPY_FLAVOR}
 LIB_DEPENDS=	converters/libiconv \
 		devel/json-c \
 		devel/libidn2 \
+		devel/liburcu \
 		devel/libuv \
 		textproc/libxml \
 		www/nghttp2
@@ -89,6 +88,7 @@ post-install:
 .for i in dig nslookup host
 	ln -fs $i ${PREFIX}/bin/e$i; ln -fs $i.1 ${PREFIX}/man/man1/e$i.1
 .endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/bind9/
 	${INSTALL_DATA} ${FILESDIR}/named.conf ${PREFIX}/share/examples/bind9/
 
 .include <bsd.port.mk>

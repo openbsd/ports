@@ -4,9 +4,9 @@ locale is needed for idn2.
 Index: bin/dig/nslookup.c
 --- bin/dig/nslookup.c.orig
 +++ bin/dig/nslookup.c
-@@ -942,6 +942,15 @@ main(int argc, char **argv) {
- 	result = isc_app_start();
- 	check_result(result, "isc_app_start");
+@@ -948,6 +948,15 @@ main(int argc, char **argv) {
+ 	dighost_trying = trying;
+ 	dighost_shutdown = start_next_command;
  
 +	/*
 +	 * unix: needed for startup check, isc_net_probeunix.
@@ -20,7 +20,7 @@ Index: bin/dig/nslookup.c
  	setup_libs();
  	progname = argv[0];
  
-@@ -952,6 +961,21 @@ main(int argc, char **argv) {
+@@ -958,6 +967,21 @@ main(int argc, char **argv) {
  	} else if (keysecret[0] != 0) {
  		setup_text_key();
  	}

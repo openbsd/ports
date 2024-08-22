@@ -1,7 +1,7 @@
 Index: bin/named/include/named/globals.h
 --- bin/named/include/named/globals.h.orig
 +++ bin/named/include/named/globals.h
-@@ -138,7 +138,7 @@ EXTERN const char *named_g_defaultpidfile INIT(NAMED_L
+@@ -127,7 +127,7 @@ EXTERN const char *named_g_defaultpidfile INIT(NAMED_L
  								   "named.pid");
  #endif /* if NAMED_RUN_PID_DIR */
  

@@ -10,9 +10,9 @@ Index: bin/dig/host.c
  #include <stdlib.h>
 +#include <unistd.h>
  
- #include <isc/app.h>
  #include <isc/attributes.h>
-@@ -909,6 +910,15 @@ main(int argc, char **argv) {
+ #include <isc/commandline.h>
+@@ -899,6 +900,15 @@ main(int argc, char **argv) {
  	dighost_trying = trying;
  	dighost_shutdown = host_shutdown;
  
@@ -28,10 +28,11 @@ Index: bin/dig/host.c
  	debug("main()");
  	progname = argv[0];
  	pre_parse_args(argc, argv);
-@@ -922,6 +932,21 @@ main(int argc, char **argv) {
+@@ -909,6 +919,20 @@ main(int argc, char **argv) {
+ 		setup_file_key();
  	} else if (keysecret[0] != 0) {
  		setup_text_key();
- 	}
++	}
 +
 +	if (unveil("/usr/share/locale", "r") == -1) {
 +		perror("unveil /usr/share/locale");
@@ -45,8 +46,6 @@ Index: bin/dig/host.c
 +	if (pledge("stdio rpath inet dns", NULL) == -1) {
 +		perror("pledge");
 +		exit(1);
-+	}
-+
- 	result = isc_app_onrun(mctx, global_task, onrun_callback, NULL);
- 	check_result(result, "isc_app_onrun");
- 	isc_app_run();
+ 	}
+ 
+ 	isc_loopmgr_setup(loopmgr, run_loop, NULL);
