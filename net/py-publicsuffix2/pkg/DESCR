@@ -1,0 +1,15 @@
+This module allows you to get the public suffix, as well as the
+registrable domain, of a domain name using the Public Suffix List from
+http://publicsuffix.org
+
+A public suffix is a domain suffix under which you can register domain
+names, or under which the suffix owner does not control the subdomains.
+Some examples of public suffixes in the former example are ".com",
+".co.uk" and "pvt.k12.wy.us"; examples of the latter case are
+"github.io" and "blogspot.com". The public suffix is sometimes referred
+to as the effective or extended TLD (eTLD). Accurately knowing the
+public suffix of a domain is useful when handling web browser cookies,
+highlighting the most important part of a domain name in a user
+interface or sorting URLs by web site. It is also used in a wide range
+of research and applications that leverages Domain Name System (DNS)
+data.
