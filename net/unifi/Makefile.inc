@@ -87,7 +87,7 @@ pre-extract:
 	if $$$needpkgs; then \
 	    echo "*** To avoid long jdk/mongodb builds, it is recommended that you"; sleep .7; \
 	    echo "*** use 'make FETCH_PACKAGES= install' to fetch binary packages"; sleep .7; \
-	    echo "*** for the dependencies. Hit ^C now to interrupt the build."; echo; sleep 5; \
+	    echo "*** for the dependencies. Hit ^C now to interrupt the build."; echo; sleep 3; \
 	fi
 .endif
 
