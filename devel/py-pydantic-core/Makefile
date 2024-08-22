@@ -23,6 +23,7 @@ CONFIGURE_STYLE =       cargo
 
 MAKE_ENV +=		${MODCARGO_ENV}
 
+BUILD_DEPENDS =		devel/py-typing-extensions${MODPY_FLAVOR}
 RUN_DEPENDS =		devel/py-typing-extensions${MODPY_FLAVOR}
 TEST_DEPENDS =		devel/py-test-mock${MODPY_FLAVOR} \
 			devel/py-pip${MODPY_FLAVOR} \
