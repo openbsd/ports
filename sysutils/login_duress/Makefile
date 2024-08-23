@@ -2,8 +2,7 @@ COMMENT=		BSD authentication module for duress passwords
 
 GH_ACCOUNT=		jcs
 GH_PROJECT=		login_duress
-GH_TAGNAME=		v1.1
-REVISION=		0
+GH_TAGNAME=		v1.2
 
 CATEGORIES=		sysutils security
 
