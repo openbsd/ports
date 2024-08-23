@@ -89,7 +89,7 @@ MODGO_MODULES =	\
 	github.com/coreos/go-semver							 v0.3.1 \
 	github.com/coreos/go-systemd/v22						 v22.5.0 \
 	github.com/cpuguy83/go-md2man/v2						 v2.0.4 \
-	github.com/creack/pty								 v1.1.21 \
+	github.com/creack/pty								 v1.1.23 \
 	github.com/cyberphone/json-canonicalization					 v0.0.0-20220623050100-57a0ce2678a7 \
 	github.com/danieljoos/wincred							 v1.2.1 \
 	github.com/davecgh/go-spew							 v1.1.2-0.20180830191138-d8f796af33cc \
@@ -98,9 +98,9 @@ MODGO_MODULES =	\
 	github.com/digitorus/timestamp							 v0.0.0-20231217203849-220c5c2851b7 \
 	github.com/distribution/reference						 v0.5.0 \
 	github.com/dlclark/regexp2							 v1.4.0 \
-	github.com/docker/cli								 v24.0.0+incompatible \
+	github.com/docker/cli								 v27.1.1+incompatible \
 	github.com/docker/distribution							 v2.8.2+incompatible \
-	github.com/docker/docker							 v24.0.9+incompatible \
+	github.com/docker/docker							 v24.0.0+incompatible \
 	github.com/docker/docker-credential-helpers					 v0.7.0 \
 	github.com/docker/go-connections						 v0.4.0 \
 	github.com/docker/go-units							 v0.5.0 \
@@ -153,7 +153,7 @@ MODGO_MODULES =	\
 	github.com/google/btree								 v1.1.2 \
 	github.com/google/certificate-transparency-go					 v1.2.1 \
 	github.com/google/go-cmp							 v0.6.0 \
-	github.com/google/go-containerregistry						 v0.20.1 \
+	github.com/google/go-containerregistry						 v0.20.2 \
 	github.com/google/gofuzz							 v1.2.0 \
 	github.com/google/pprof								 v0.0.0-20231023181126-ff6d637d2a7b \
 	github.com/google/rpmpack							 v0.6.0 \
@@ -473,7 +473,6 @@ MODGO_MODFILES =	\
 	github.com/davecgh/go-spew							 v1.1.0 \
 	github.com/davecgh/go-spew							 v1.1.1 \
 	github.com/digitorus/pkcs7							 v0.0.0-20230713084857-e76b763bdc49 \
-	github.com/docker/docker							 v24.0.0+incompatible \
 	github.com/fatih/color								 v1.14.1 \
 	github.com/fatih/color								 v1.7.0 \
 	github.com/fsnotify/fsnotify							 v1.6.0 \
