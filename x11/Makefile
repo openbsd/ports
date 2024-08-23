@@ -59,6 +59,7 @@
      SUBDIR += ede
      SUBDIR += elementary
      SUBDIR += emelfm2
+     SUBDIR += emwm
      SUBDIR += enlightenment
      SUBDIR += eterm
      SUBDIR += eterm,kanji
