@@ -1,6 +1,6 @@
 COMMENT=		filtering proxy for D-Bus connections
 
-V=			0.1.5
+V=			0.1.6
 DISTNAME=		xdg-dbus-proxy-${V}
 
 CATEGORIES=		x11
