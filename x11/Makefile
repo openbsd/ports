@@ -60,6 +60,7 @@
      SUBDIR += elementary
      SUBDIR += emelfm2
      SUBDIR += emwm
+     SUBDIR += emwm-utils
      SUBDIR += enlightenment
      SUBDIR += eterm
      SUBDIR += eterm,kanji
