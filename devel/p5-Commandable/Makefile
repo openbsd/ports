@@ -1,6 +1,6 @@
 COMMENT =	utilities for commandline-based programs
 
-DISTNAME =	Commandable-0.11
+DISTNAME =	Commandable-0.12
 CPAN_AUTHOR =	PEVANS
 
 CATEGORIES =	devel
@@ -13,8 +13,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		cpan
 
 RUN_DEPENDS =		devel/p5-Module-Pluggable
-TEST_DEPENDS =		devel/p5-Test-NoWarnings \
-			devel/p5-Test2-Suite
+TEST_DEPENDS =		devel/p5-Test2-Suite
 
 CONFIGURE_STYLE =	modbuild
 

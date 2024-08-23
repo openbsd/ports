@@ -16,5 +16,6 @@ ${P5SITE}/Commandable/Output.pm
 @man man/man3p/Commandable::Finder::MethodAttributes.3p
 @man man/man3p/Commandable::Finder::Packages.3p
 @man man/man3p/Commandable::Finder::SubAttributes.3p
+@man man/man3p/Commandable::Finder::SubAttributes::Attrs.3p
 @man man/man3p/Commandable::Invocation.3p
 @man man/man3p/Commandable::Output.3p
