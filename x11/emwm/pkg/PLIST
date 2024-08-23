@@ -1,0 +1,5 @@
+@bin bin/emwm
+lib/X11/app-defaults/Emwm
+lib/X11/system.emwmrc
+@man man/man1/emwm.1
+@man man/man4/emwmrc.4
