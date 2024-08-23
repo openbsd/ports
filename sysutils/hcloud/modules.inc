@@ -57,7 +57,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/golang-lru							 v0.5.4 \
 	github.com/hashicorp/hcl							 v1.0.0 \
 	github.com/hashicorp/serf							 v0.10.1 \
-	github.com/hetznercloud/hcloud-go/v2						 v2.10.2 \
+	github.com/hetznercloud/hcloud-go/v2						 v2.12.0 \
 	github.com/inconshreveable/mousetrap						 v1.1.0 \
 	github.com/jedib0t/go-pretty/v6							 v6.5.9 \
 	github.com/jessevdk/go-flags							 v1.4.1-0.20181029123624-5de817a9aa20 \
@@ -125,7 +125,7 @@ MODGO_MODULES =	\
 	golang.org/x/crypto								 v0.25.0 \
 	golang.org/x/exp								 v0.0.0-20230905200255-921286631fa9 \
 	golang.org/x/mod								 v0.17.0 \
-	golang.org/x/net								 v0.26.0 \
+	golang.org/x/net								 v0.27.0 \
 	golang.org/x/oauth2								 v0.18.0 \
 	golang.org/x/sync								 v0.7.0 \
 	golang.org/x/sys								 v0.22.0 \
@@ -188,7 +188,6 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto				 v0.0.0-20191011191535-87dc89f01550 \
 	golang.org/x/crypto				 v0.16.0 \
 	golang.org/x/crypto				 v0.21.0 \
-	golang.org/x/crypto				 v0.24.0 \
 	golang.org/x/crypto				 v0.7.0 \
 	golang.org/x/mod				 v0.12.0 \
 	golang.org/x/mod				 v0.2.0 \
@@ -222,12 +221,10 @@ MODGO_MODFILES =	\
 	golang.org/x/sys				 v0.17.0 \
 	golang.org/x/sys				 v0.18.0 \
 	golang.org/x/sys				 v0.20.0 \
-	golang.org/x/sys				 v0.21.0 \
 	golang.org/x/sys				 v0.4.0 \
 	golang.org/x/sys				 v0.6.0 \
 	golang.org/x/term				 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/term				 v0.17.0 \
-	golang.org/x/term				 v0.21.0 \
 	golang.org/x/text				 v0.12.0 \
 	golang.org/x/text				 v0.14.0 \
 	golang.org/x/text				 v0.3.0 \
