@@ -53,6 +53,7 @@ lib/python${MODPY_VERSION}/site-packages/tlslite/integration/${MODPY_PYCACHE}ima
 lib/python${MODPY_VERSION}/site-packages/tlslite/integration/${MODPY_PYCACHE}pop3_tls.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlslite/integration/${MODPY_PYCACHE}smtp_tls.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlslite/integration/${MODPY_PYCACHE}tlsasyncdispatchermixin.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tlslite/integration/${MODPY_PYCACHE}tlsasynciodispatchermixin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlslite/integration/${MODPY_PYCACHE}tlssocketservermixin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlslite/integration/${MODPY_PYCACHE}xmlrpcserver.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlslite/integration/${MODPY_PYCACHE}xmlrpctransport.${MODPY_PYC_MAGIC_TAG}pyc
@@ -63,6 +64,7 @@ lib/python${MODPY_VERSION}/site-packages/tlslite/integration/imap4_tls.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/integration/pop3_tls.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/integration/smtp_tls.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/integration/tlsasyncdispatchermixin.py
+lib/python${MODPY_VERSION}/site-packages/tlslite/integration/tlsasynciodispatchermixin.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/integration/tlssocketservermixin.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/integration/xmlrpcserver.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/integration/xmlrpctransport.py
