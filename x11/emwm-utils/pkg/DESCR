@@ -1,0 +1,10 @@
+xmsm is simple session manager that provides session configuration
+and screen locking and also launches the window manager and the
+toolbox.
+
+xmtoolbox is an application launcher/menu configured with a simple
+text file. It also communicates with the session manager to provide
+lock, log out, and shutdown commands.
+
+An example toolbox configuration file can be copied from
+${PREFIX}/lib/X11/toolboxrc.
