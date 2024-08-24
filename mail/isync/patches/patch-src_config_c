@@ -1,0 +1,36 @@
+Neuter printf(3) %n
+
+Index: src/config.c
+--- src/config.c.orig
++++ src/config.c
+@@ -446,11 +446,15 @@ load_config( const char *where )
+ 	if (!where) {
+ 		int path_len, path_len2;
+ 		const char *config_home = getenv( "XDG_CONFIG_HOME" );
+-		if (config_home)
+-			nfsnprintf( path, sizeof(path), "%s/%nisyncrc", config_home, &path_len );
+-		else
+-			nfsnprintf( path, sizeof(path), "%s/.config/%nisyncrc", Home, &path_len );
+-		nfsnprintf( path2, sizeof(path2), "%s/%n.mbsyncrc", Home, &path_len2 );
++		if (config_home) {
++			nfsnprintf( path, sizeof(path), "%s/isyncrc", config_home );
++			path_len = strlen( config_home ) + strlen( "/" );
++		} else {
++			nfsnprintf( path, sizeof(path), "%s/.config/isyncrc", Home );
++			path_len = strlen( Home ) + strlen( "/.config/" );
++		}
++		nfsnprintf( path2, sizeof(path2), "%s/.mbsyncrc", Home );
++		path_len2 = strlen( Home ) + strlen( "/" );
+ 		struct stat st;
+ 		int ex = !lstat( path, &st );
+ 		int ex2 = !lstat( path2, &st );
+@@ -466,7 +470,8 @@ load_config( const char *where )
+ 	} else {
+ 		const char *sl = strrchr( where, '/' );
+ 		if (!sl) {
+-			nfsnprintf( path, sizeof(path), "./%n%s", &cfile.path_len, where );
++			nfsnprintf( path, sizeof(path), "./%s", where );
++			cfile.path_len = strlen( "./" );
+ 			cfile.file = path;
+ 		} else {
+ 			cfile.path_len = sl - where + 1;

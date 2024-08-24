@@ -3,7 +3,7 @@ Use pledge.
 Index: src/drv_imap.c
 --- src/drv_imap.c.orig
 +++ src/drv_imap.c
-@@ -45,6 +45,8 @@
+@@ -22,6 +22,8 @@
  # include <Security/Security.h>
  #endif
  
@@ -12,9 +12,9 @@ Index: src/drv_imap.c
  #ifdef HAVE_LIBSSL
  enum { SSL_None, SSL_STARTTLS, SSL_IMAPS };
  #endif
-@@ -3768,6 +3770,8 @@ imap_parse_store( conffile_t *cfg, store_conf_t **stor
- #endif
+@@ -3984,6 +3986,8 @@ imap_parse_store( conffile_t *cfg, store_conf_t **stor
  				143;
+ 		}
  	}
 +	if (server->sconf.tunnel || server->user_cmd || server->pass_cmd)
 +		needs_proc_exec = 1;

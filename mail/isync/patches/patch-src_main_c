@@ -3,16 +3,16 @@ Use pledge.
 Index: src/main.c
 --- src/main.c.orig
 +++ src/main.c
-@@ -125,6 +125,8 @@ PACKAGE " " VERSION " - mailbox synchronizer\n"
- 	exit( code );
- }
+@@ -14,6 +14,8 @@
+ # include <sys/prctl.h>
+ #endif
  
 +int needs_proc_exec = 0;
 +
- static void ATTR_PRINTFLIKE(1, 2)
- debug( const char *msg, ... )
+ static void ATTR_NORETURN
+ version( void )
  {
-@@ -757,6 +759,36 @@ main( int argc, char **argv )
+@@ -560,6 +562,36 @@ main( int argc, char **argv )
  
  	if (load_config( config ))
  		return 1;
@@ -47,5 +47,5 @@ Index: src/main.c
 +		}
 +	}
  
- 	if (!channels) {
- 		fputs( "No channels defined. Try 'man " EXE "'\n", stderr );
+ 	signal( SIGPIPE, SIG_IGN );
+ 

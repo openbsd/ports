@@ -1,0 +1,14 @@
+Remove hardcoded optimization level
+
+Index: src/common.h
+--- src/common.h.orig
++++ src/common.h
+@@ -96,7 +96,7 @@ typedef unsigned long ulong;
+ # define ATTR_UNUSED __attribute__((unused))
+ # define ATTR_NORETURN __attribute__((noreturn))
+ # define ATTR_PRINTFLIKE(fmt,var) __attribute__((format(printf,fmt,var)))
+-# define ATTR_OPTIMIZE __attribute__((optimize("2")))
++# define ATTR_OPTIMIZE
+ #else
+ # define ATTR_UNUSED
+ # define ATTR_NORETURN

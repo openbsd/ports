@@ -1,2 +1,4 @@
-SHA256 (isync-1.4.4.tar.gz) = fDJziU8i6YMwozAFHp2UL9n/vAK5GVLC8YlqXDfnAP8=
-SIZE (isync-1.4.4.tar.gz) = 340544
+SHA256 (ec50c55c36887b86b0143a265acae4b22d117fe9.patch) = IKdVbQZaW81x3MlvdxGlHB4+SAuk5w/u36xtwSkpC8U=
+SHA256 (isync-1.5.0.tar.gz) = oMgeEJOHvyedoWFFMQM5nneUav7PXFH5QTxedzVX940=
+SIZE (ec50c55c36887b86b0143a265acae4b22d117fe9.patch) = 12430
+SIZE (isync-1.5.0.tar.gz) = 412925
