@@ -1,0 +1,15 @@
+Unbreak building on OpenBSD. Taken from
+https://github.com/rustic-rs/rustic_core/pull/245
+
+Index: modcargo-crates/rustic_core-0.3.0/src/backend/ignore.rs
+--- modcargo-crates/rustic_core-0.3.0/src/backend/ignore.rs.orig
++++ modcargo-crates/rustic_core-0.3.0/src/backend/ignore.rs
+@@ -20,7 +20,7 @@ use log::warn;
+ #[cfg(not(windows))]
+ use nix::unistd::{Gid, Group, Uid, User};
+ 
+-#[cfg(not(any(windows, target_os = "openbsd")))]
++#[cfg(not(windows))]
+ use crate::backend::node::ExtendedAttribute;
+ 
+ use crate::{
