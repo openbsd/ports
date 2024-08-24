@@ -679,7 +679,6 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/codepipeline/2015-07-09/e
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codepipeline/2015-07-09/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codepipeline/2015-07-09/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codepipeline/2015-07-09/service-2.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/codestar/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codestar-connections/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codestar-connections/2019-12-01/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codestar-connections/2019-12-01/endpoint-rule-set-1.json
@@ -692,11 +691,6 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/codestar-notifications/20
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codestar-notifications/2019-10-15/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codestar-notifications/2019-10-15/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/codestar-notifications/2019-10-15/service-2.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/codestar/2017-04-19/
-lib/python${MODPY_VERSION}/site-packages/botocore/data/codestar/2017-04-19/endpoint-rule-set-1.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/codestar/2017-04-19/examples-1.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/codestar/2017-04-19/paginators-1.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/codestar/2017-04-19/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cognito-identity/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cognito-identity/2014-06-30/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/cognito-identity/2014-06-30/endpoint-rule-set-1.json
