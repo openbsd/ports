@@ -1,6 +1,6 @@
 COMMENT=	Python client library for InfluxDB 2.x and Flux
 
-MODPY_EGG_VERSION=	1.44.0
+MODPY_EGG_VERSION=	1.45.0
 DISTNAME=	influxdb_client-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
