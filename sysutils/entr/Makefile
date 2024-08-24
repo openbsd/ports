@@ -22,7 +22,8 @@ FAKE_FLAGS =	DESTDIR=""
 TEST_DEPENDS =	devel/git \
 		editors/vim
 
-post-test:
-	cd ${WRKSRC}; HOME=${WRKDIR} ./system_test.sh
+PORTHOME =	${WRKDIR}
+
+TEST_TARGET =	test check
 
 .include <bsd.port.mk>
