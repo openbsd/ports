@@ -13,7 +13,7 @@ GH_PROJECT =		mail-server
 CATEGORIES =		mail
 # AGPLv3
 PERMIT_PACKAGE =	Yes
-GH_TAGNAME =		v0.9.1
+GH_TAGNAME =		v0.9.2
 PKGNAME =		stalwart-mail-${GH_TAGNAME:S/v//}
 
 HOMEPAGE =	https://stalw.art/
@@ -45,6 +45,8 @@ LIB_DEPENDS +=	archivers/zstd \
 WANTLIB +=	${COMPILER_LIBCXX} bz2 c m zstd
 
 MODCARGO_INSTALL_TARGET_PATHS =	crates/cli crates/main
+
+# tests fail to build because it doesnt build/find libfdb_c.so from foundationdb-sys crate
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/stalwart/

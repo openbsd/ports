@@ -2,7 +2,7 @@ Index: crates/main/src/main.rs
 --- crates/main/src/main.rs.orig
 +++ crates/main/src/main.rs
 @@ -16,10 +16,10 @@ use tokio::sync::mpsc;
- use trc::collector::Collector;
+ use trc::Collector;
  use utils::wait_for_shutdown;
  
 -#[cfg(not(target_env = "msvc"))]

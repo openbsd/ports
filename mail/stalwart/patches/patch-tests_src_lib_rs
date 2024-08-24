@@ -9,7 +9,7 @@ Index: tests/src/lib.rs
 +#[cfg(not(target_os = "openbsd"))]
  use jemallocator::Jemalloc;
  #[cfg(test)]
- use trc::collector::Collector;
+ use trc::Collector;
  
 -#[cfg(not(target_env = "msvc"))]
 +#[cfg(not(target_os = "openbsd"))]
