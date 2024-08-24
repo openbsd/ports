@@ -28,6 +28,7 @@ include/ecl/object.h
 include/ecl/page.h
 include/ecl/stack-resize.h
 include/ecl/stacks.h
+include/ecl/threads.h
 lib/ecl/
 lib/ecl/COPYING
 lib/ecl/LICENSE

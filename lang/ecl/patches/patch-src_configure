@@ -1,21 +1,26 @@
 Index: src/configure
 --- src/configure.orig
 +++ src/configure
-@@ -5240,7 +5240,7 @@ LSP_FEATURES="(cons :android ${LSP_FEATURES})"
+@@ -6194,7 +6194,7 @@ LSP_FEATURES="(cons :android ${LSP_FEATURES})"
                  BUNDLE_LDFLAGS="-shared ${LDFLAGS}"
                  ECL_LDRPATH="-Wl,--rpath,~A"
-                 clibs="-lpthread ${clibs}"
+ 		GC_CFLAGS="-DGC_PTHREAD_SIGMASK_NEEDED"                 clibs="-lpthread ${clibs}"
 -                SONAME="${SHAREDPREFIX}ecl.${SHAREDEXT}.SOVERSION"
 +                SONAME="${SHAREDPREFIX}ecl.${SHAREDEXT}.${ECLLIB_VERSION}"
                  SONAME_LDFLAGS="-Wl,-soname,SONAME"
                  ;;
          solaris*)
-@@ -9910,7 +9910,7 @@ if test ${enable_shared} = "yes"; then
+@@ -11339,7 +11339,7 @@ if test ${enable_shared} = "yes"; then
  
- $as_echo "#define ENABLE_DLOPEN 1" >>confdefs.h
+ printf "%s\n" "#define ENABLE_DLOPEN 1" >>confdefs.h
  
 -  LSP_LIBRARIES="${SHAREDPREFIX}ecl.${SHAREDEXT}"
 +  LSP_LIBRARIES="${SHAREDPREFIX}ecl.${SHAREDEXT}.${ECLLIB_VERSION}"
  
  
  LSP_FEATURES="(cons :wants-dlopen ${LSP_FEATURES})"
+@@ -12859,4 +12859,3 @@ fi
+ 
+ 
+ for i in $srcdir/c/*/; do mkdir -p c/`basename $i`; done
+-

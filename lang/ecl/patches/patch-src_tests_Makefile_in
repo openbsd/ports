@@ -1,0 +1,12 @@
+Index: src/tests/Makefile.in
+--- src/tests/Makefile.in.orig
++++ src/tests/Makefile.in
+@@ -2,7 +2,7 @@
+ # vim: set filetype=makefile tabstop=8 shiftwidth=4 expandtab:
+ 
+ ECL=@prefix@/@bindir@/ecl@EXEEXT@
+-SHELL=/bin/bash -o pipefail
++SHELL=/bin/ksh -o pipefail
+ 
+ .PHONY: all check ansi-test
+ 

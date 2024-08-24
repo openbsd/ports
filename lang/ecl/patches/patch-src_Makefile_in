@@ -1,7 +1,7 @@
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -213,29 +213,13 @@ install:
+@@ -201,29 +201,13 @@ install:
  	  $(INSTALL_DATA) ecl/$$i $(DESTDIR)$(includedir)/ecl/$$i; \
  	done
  	$(INSTALL_SCRIPT) bin/ecl-config $(DESTDIR)$(bindir)
