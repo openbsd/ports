@@ -631,8 +631,6 @@ lib/python${MODPY_VERSION}/site-packages/picard/util/${MODPY_PYCACHE}lrucache.${
 lib/python${MODPY_VERSION}/site-packages/picard/util/${MODPY_PYCACHE}lrucache.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/picard/util/${MODPY_PYCACHE}mbserver.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/picard/util/${MODPY_PYCACHE}mbserver.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/picard/util/${MODPY_PYCACHE}natsort.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/picard/util/${MODPY_PYCACHE}natsort.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/picard/util/${MODPY_PYCACHE}periodictouch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/picard/util/${MODPY_PYCACHE}periodictouch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/picard/util/${MODPY_PYCACHE}pipe.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -676,7 +674,6 @@ lib/python${MODPY_VERSION}/site-packages/picard/util/imageinfo.py
 lib/python${MODPY_VERSION}/site-packages/picard/util/imagelist.py
 lib/python${MODPY_VERSION}/site-packages/picard/util/lrucache.py
 lib/python${MODPY_VERSION}/site-packages/picard/util/mbserver.py
-lib/python${MODPY_VERSION}/site-packages/picard/util/natsort.py
 lib/python${MODPY_VERSION}/site-packages/picard/util/periodictouch.py
 lib/python${MODPY_VERSION}/site-packages/picard/util/pipe.py
 lib/python${MODPY_VERSION}/site-packages/picard/util/preservedtags.py
