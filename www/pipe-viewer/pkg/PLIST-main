@@ -18,6 +18,9 @@ ${P5SITE}/WWW/PipeViewer/Utils.pm
 ${P5SITE}/WWW/PipeViewer/VideoCategories.pm
 ${P5SITE}/WWW/PipeViewer/Videos.pm
 ${P5SITE}/WWW/PipeViewer/Worker.pm
+${P5SITE}/auto/
+${P5SITE}/auto/share/
+${P5SITE}/auto/share/dist/
 ${P5SITE}/auto/share/dist/WWW-PipeViewer/icons/left_arrow.png
 ${P5SITE}/auto/share/dist/WWW-PipeViewer/icons/right_arrow.png
 @man man/man1/pipe-viewer.1
