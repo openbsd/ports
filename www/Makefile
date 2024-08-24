@@ -18,6 +18,7 @@
      SUBDIR += bozohttpd
      SUBDIR += buku
      SUBDIR += c-icap
+     SUBDIR += caddy
      SUBDIR += calamaris
      SUBDIR += castor
      SUBDIR += cgicc
