@@ -1,0 +1,16 @@
+Index: src/cmp/cmpbackend-cxx/cmpbackend-cxx.lsp
+--- src/cmp/cmpbackend-cxx/cmpbackend-cxx.lsp.orig
++++ src/cmp/cmpbackend-cxx/cmpbackend-cxx.lsp
+@@ -278,11 +278,7 @@ the environment variable TMPDIR to a different value."
+ 
+ (defun ecl-library-directory ()
+   "Finds the directory in which the ECL core library was installed."
+-  (cond ((and *ecl-library-directory*
+-              (probe-file (merge-pathnames (compile-file-pathname "ecl" :type
+-                                            #+dlopen :shared-library
+-                                            #-dlopen :static-library)
+-                                           *ecl-library-directory*)))
++  (cond (*ecl-library-directory*
+          *ecl-library-directory*)
+         ((probe-file "SYS:BUILD-STAMP")
+          (setf *ecl-library-directory* (namestring (translate-logical-pathname "SYS:"))))
