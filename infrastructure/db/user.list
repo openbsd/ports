@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.448 2024/08/19 13:43:56 op Exp $
+$OpenBSD: user.list,v 1.449 2024/08/24 16:48:14 semarie Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -32,7 +32,7 @@ id  user		group		port
 521 _exim		_exim		mail/exim
 522 _unboundexporter			sysutils/unbound_exporter
 523 _ffproxy		_ffproxy	www/ffproxy
-#524			_mail		mail/openwebmail
+524 _caddy		_caddy		www/caddy
 525 _quagga		_quagga		net/quagga
 526 _tomcat		_tomcat		www/tomcat
 527 _milter-regex	_milter-regex	mail/milter-regex
