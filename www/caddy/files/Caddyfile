@@ -1,0 +1,11 @@
+# see https://caddyserver.com/docs/
+{
+	default_bind localhost
+	http_port 8080
+	https_port 8443
+}
+
+localhost {
+	root * /var/www/htdocs
+	file_server
+}

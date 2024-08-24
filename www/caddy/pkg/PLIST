@@ -1,0 +1,15 @@
+@newgroup _caddy:524
+@newuser _caddy:524:_caddy::Caddy Account:/var/caddy:/sbin/nologin
+@rcscript ${RCDIR}/caddy
+@mode 750
+@owner _caddy
+@group _caddy
+@sample /var/caddy/
+@mode
+@owner
+@group
+@bin bin/caddy
+share/examples/caddy/
+@sample ${SYSCONFDIR}/caddy/
+share/examples/caddy/Caddyfile
+@sample ${SYSCONFDIR}/caddy/Caddyfile

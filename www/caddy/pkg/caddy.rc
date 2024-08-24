@@ -1,0 +1,20 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/caddy"
+daemon_flags="--config /etc/caddy/Caddyfile"
+daemon_user="_caddy"
+
+. /etc/rc.d/rc.subr
+
+pexp="${daemon} run ${daemon_flags}"
+rc_bg=YES
+
+rc_start() {
+	rc_exec "${daemon} run ${daemon_flags}"
+}
+
+rc_reload() {
+	rc_exec "${daemon} reload --force ${daemon_flags}"
+}
+
+rc_cmd $1
