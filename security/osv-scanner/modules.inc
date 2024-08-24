@@ -3,10 +3,10 @@ MODGO_MODULES =	\
 	cloud.google.com/go/compute				 v1.19.3 \
 	cloud.google.com/go/compute/metadata			 v0.3.0 \
 	dario.cat/mergo						 v1.0.0 \
-	deps.dev/api/v3						 v3.0.0-20240701054435-542fb1833d6b \
-	deps.dev/util/maven					 v0.0.0-20240701054435-542fb1833d6b \
-	deps.dev/util/resolve					 v0.0.0-20240701054435-542fb1833d6b \
-	deps.dev/util/semver					 v0.0.0-20240701054435-542fb1833d6b \
+	deps.dev/api/v3						 v3.0.0-20240730004939-e80e6658c33b \
+	deps.dev/util/maven					 v0.0.0-20240730004939-e80e6658c33b \
+	deps.dev/util/resolve					 v0.0.0-20240730004939-e80e6658c33b \
+	deps.dev/util/semver					 v0.0.0-20240730004939-e80e6658c33b \
 	github.com/!burnt!sushi/toml				 v1.4.0 \
 	github.com/!cyclone!d!x/cyclonedx-go			 v0.9.0 \
 	github.com/!microsoft/go-winio				 v0.6.1 \
@@ -22,6 +22,7 @@ MODGO_MODULES =	\
 	github.com/armon/go-socks5				 v0.0.0-20160902184237-e75332964ef5 \
 	github.com/atotto/clipboard				 v0.1.4 \
 	github.com/aymanbagabas/go-osc52/v2			 v2.0.1 \
+	github.com/aymanbagabas/go-udiff			 v0.2.0 \
 	github.com/aymerick/douceur				 v0.2.0 \
 	github.com/bradleyjkemp/cupaloy/v2			 v2.8.0 \
 	github.com/bwesterb/go-ristretto			 v1.2.3 \
@@ -31,8 +32,8 @@ MODGO_MODULES =	\
 	github.com/charmbracelet/bubbletea			 v0.26.6 \
 	github.com/charmbracelet/glamour			 v0.7.0 \
 	github.com/charmbracelet/harmonica			 v0.2.0 \
-	github.com/charmbracelet/lipgloss			 v0.11.0 \
-	github.com/charmbracelet/x/ansi				 v0.1.2 \
+	github.com/charmbracelet/lipgloss			 v0.12.1 \
+	github.com/charmbracelet/x/ansi				 v0.1.4 \
 	github.com/charmbracelet/x/input			 v0.1.0 \
 	github.com/charmbracelet/x/term				 v0.1.1 \
 	github.com/charmbracelet/x/windows			 v0.1.0 \
@@ -49,7 +50,7 @@ MODGO_MODULES =	\
 	github.com/dlclark/regexp2				 v1.11.0 \
 	github.com/docker/cli					 v25.0.3+incompatible \
 	github.com/docker/distribution				 v2.8.3+incompatible \
-	github.com/docker/docker				 v25.0.5+incompatible \
+	github.com/docker/docker				 v27.1.1+incompatible \
 	github.com/docker/docker-credential-helpers		 v0.8.1 \
 	github.com/docker/go-connections			 v0.4.0 \
 	github.com/docker/go-units				 v0.5.0 \
@@ -63,7 +64,7 @@ MODGO_MODULES =	\
 	github.com/felixge/fgprof				 v0.9.3 \
 	github.com/gkampitakis/ciinfo				 v0.3.0 \
 	github.com/gkampitakis/go-diff				 v1.3.2 \
-	github.com/gkampitakis/go-snaps				 v0.5.4 \
+	github.com/gkampitakis/go-snaps				 v0.5.7 \
 	github.com/gliderlabs/ssh				 v0.3.7 \
 	github.com/go-git/gcfg					 v1.5.1-0.20230307220236-3a3c6141e376 \
 	github.com/go-git/go-billy/v5				 v5.5.0 \
@@ -75,7 +76,7 @@ MODGO_MODULES =	\
 	github.com/golang/protobuf				 v1.5.4 \
 	github.com/google/go-cmdtest				 v0.4.1-0.20220921163831-55ab3332a786 \
 	github.com/google/go-cmp				 v0.6.0 \
-	github.com/google/go-containerregistry			 v0.19.2 \
+	github.com/google/go-containerregistry			 v0.20.1 \
 	github.com/google/pprof					 v0.0.0-20211214055906-6f57359322fd \
 	github.com/google/renameio				 v0.1.0 \
 	github.com/google/uuid					 v1.6.0 \
@@ -112,7 +113,7 @@ MODGO_MODULES =	\
 	github.com/opencontainers/go-digest			 v1.0.0 \
 	github.com/opencontainers/image-spec			 v1.1.0-rc3 \
 	github.com/owenrumney/go-sarif				 v1.1.1 \
-	github.com/owenrumney/go-sarif/v2			 v2.3.2 \
+	github.com/owenrumney/go-sarif/v2			 v2.3.3 \
 	github.com/package-url/packageurl-go			 v0.1.3 \
 	github.com/pandatix/go-cvss				 v0.6.2 \
 	github.com/pjbgf/sha1cd					 v0.3.0 \
@@ -135,12 +136,12 @@ MODGO_MODULES =	\
 	github.com/stretchr/objx				 v0.5.2 \
 	github.com/stretchr/testify				 v1.9.0 \
 	github.com/terminalstatic/go-xsd-validate		 v0.1.5 \
-	github.com/tidwall/gjson				 v1.17.1 \
+	github.com/tidwall/gjson				 v1.17.3 \
 	github.com/tidwall/match				 v1.1.1 \
 	github.com/tidwall/pretty				 v1.2.1 \
 	github.com/tidwall/sjson				 v1.2.5 \
 	github.com/urfave/cli					 v1.22.12 \
-	github.com/urfave/cli/v2				 v2.27.2 \
+	github.com/urfave/cli/v2				 v2.27.3 \
 	github.com/vbatts/tar-split				 v0.11.5 \
 	github.com/vmihailenco/msgpack/v4			 v4.3.12 \
 	github.com/vmihailenco/tagparser			 v0.1.1 \
@@ -149,16 +150,16 @@ MODGO_MODULES =	\
 	github.com/xeipuuv/gojsonreference			 v0.0.0-20180127040603-bd5ef7bd5415 \
 	github.com/xeipuuv/gojsonschema				 v1.2.0 \
 	github.com/xo/terminfo					 v0.0.0-20220910002029-abceb7e1c41e \
-	github.com/xrash/smetrics				 v0.0.0-20240312152122-5f08fbb34913 \
+	github.com/xrash/smetrics				 v0.0.0-20240521201337-686a1a2994c1 \
 	github.com/yuin/goldmark				 v1.7.0 \
 	github.com/yuin/goldmark-emoji				 v1.0.2 \
 	github.com/zclconf/go-cty				 v1.10.0 \
 	golang.org/x/crypto					 v0.25.0 \
-	golang.org/x/exp					 v0.0.0-20240707233637-46b078467d37 \
-	golang.org/x/mod					 v0.19.0 \
+	golang.org/x/exp					 v0.0.0-20240719175910-8a7402abbf56 \
+	golang.org/x/mod					 v0.20.0 \
 	golang.org/x/net					 v0.27.0 \
 	golang.org/x/oauth2					 v0.20.0 \
-	golang.org/x/sync					 v0.7.0 \
+	golang.org/x/sync					 v0.8.0 \
 	golang.org/x/sys					 v0.22.0 \
 	golang.org/x/telemetry					 v0.0.0-20240521205824-bda55230c457 \
 	golang.org/x/term					 v0.22.0 \
@@ -193,7 +194,7 @@ MODGO_MODFILES =	\
 	github.com/charmbracelet/bubbletea			 v0.25.0 \
 	github.com/charmbracelet/lipgloss			 v0.9.1 \
 	github.com/charmbracelet/x/ansi				 v0.1.0 \
-	github.com/charmbracelet/x/ansi				 v0.1.1 \
+	github.com/charmbracelet/x/ansi				 v0.1.2 \
 	github.com/cloudflare/circl				 v1.3.3 \
 	github.com/containerd/stargz-snapshotter/estargz	 v0.14.3 \
 	github.com/cpuguy83/go-md2man/v2			 v2.0.2 \
@@ -263,6 +264,7 @@ MODGO_MODFILES =	\
 	golang.org/x/mod					 v0.12.0 \
 	golang.org/x/mod					 v0.14.0 \
 	golang.org/x/mod					 v0.17.0 \
+	golang.org/x/mod					 v0.19.0 \
 	golang.org/x/mod					 v0.6.0 \
 	golang.org/x/mod					 v0.6.0-dev.0.20220419223038-86c51ed26bb4 \
 	golang.org/x/mod					 v0.8.0 \
@@ -289,6 +291,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sync					 v0.2.0 \
 	golang.org/x/sync					 v0.4.0 \
 	golang.org/x/sync					 v0.6.0 \
+	golang.org/x/sync					 v0.7.0 \
 	golang.org/x/sys					 v0.0.0-20190215142949-d0b11bdaac8a \
 	golang.org/x/sys					 v0.0.0-20191026070338-33540a1f6037 \
 	golang.org/x/sys					 v0.0.0-20201119102817-f84b799fce68 \
