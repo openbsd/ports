@@ -22,8 +22,11 @@ FAKE_FLAGS =	DESTDIR=""
 TEST_DEPENDS =	devel/git \
 		editors/vim
 
-PORTHOME =	${WRKDIR}
+# scripts are executed from there, default /tmp may be mounted "noexec"
+TEST_ENV =	TMPDIR=${WRKDIR}
 
 TEST_TARGET =	test check
+
+PORTHOME =	${WRKDIR}
 
 .include <bsd.port.mk>
