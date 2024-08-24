@@ -1,8 +1,8 @@
 COMMENT =	Prusa Block & Binary G-code reader / writer / converter
 
-COMMIT =	6f43cb004ef3d3bda37dde49f6235e24d2717629
+COMMIT =	8ae75bd0eea622f0e34cae311b3bd065b55eae9b
 DISTNAME =	libbgcode-${COMMIT}
-PKGNAME =	libbgcode-20240122
+PKGNAME =	libbgcode-20240328
 
 DIST_TUPLE =	github prusa3d libbgcode ${COMMIT} .
 
