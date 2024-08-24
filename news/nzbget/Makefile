@@ -1,7 +1,7 @@
 COMMENT =	binary newsreader supporting NZB files
 
 DIST_TUPLE =	github nzbgetcom nzbget v24.2 .
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	news
 

@@ -10,15 +10,6 @@ Index: nzbget.conf
  
  # Destination directory for downloaded files.
  #
-@@ -98,7 +98,7 @@ LogFile=${MainDir}/nzbget.log
- # /usr/local/share/nzbget/nzbget.conf).
- #
- # Example: /usr/local/share/nzbget/nzbget.conf.
--ConfigTemplate=
-+ConfigTemplate=${TRUEPREFIX}/share/nzbget/nzbget.conf
- 
- # Required directories.
- #
 @@ -303,7 +303,7 @@ Server1.Notes=
  # NOTE: NZBGet also supports listening on Unix domain sockets instead of TCP/IP
  # sockets. To activate this mode set option <ControlIP> to a local path
