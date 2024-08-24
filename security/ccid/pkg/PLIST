@@ -7,7 +7,7 @@ lib/pcsc/drivers/ifd-ccid.bundle/Contents/OpenBSD/
 @so lib/pcsc/drivers/ifd-ccid.bundle/Contents/OpenBSD/libccid.so
 lib/pcsc/drivers/serial/
 @so lib/pcsc/drivers/serial/libccidtwin.so
-share/examples/ccid/
-@sample ${SYSCONFDIR}/ccid/
-share/examples/ccid/libccidtwin
-@sample ${SYSCONFDIR}/ccid/libccidtwin
+share/examples/reader.conf.d/
+@sample ${SYSCONFDIR}/reader.conf.d/
+share/examples/reader.conf.d/libccidtwin
+@sample ${SYSCONFDIR}/reader.conf.d/libccidtwin
