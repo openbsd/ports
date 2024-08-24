@@ -20,6 +20,7 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		www/py-requests${MODPY_FLAVOR}
+BUILD_DEPENDS =		www/py-requests${MODPY_FLAVOR}
 
 # pypi artifact hasn't got any tests
 NO_TEST =		YES
