@@ -1,0 +1,14 @@
+acos(3) returns -nan instead of nan
+
+Index: test/parser.fnl
+--- test/parser.fnl.orig
++++ test/parser.fnl
+@@ -48,7 +48,7 @@
+        (fennel.view (fennel.eval ".inf")))
+   (t.= "-.inf"
+        (fennel.view (fennel.eval "-.inf")))
+-  (t.= ".nan"
++  (t.= "-.nan"
+        (fennel.view (fennel.eval "(math.acos 2)")))
+   (t.= ".nan"
+        (fennel.view (fennel.eval ".nan")))
