@@ -22,8 +22,10 @@ FAKE_FLAGS =	DESTDIR=""
 TEST_DEPENDS =	devel/git \
 		editors/vim
 
-# scripts are executed from there, default /tmp may be mounted "noexec"
-TEST_ENV =	TMPDIR=${WRKDIR}
+# Scripts are executed from there, default /tmp may be mounted "noexec".
+# tmux(1) requires a shell to start, _pbuild's nologin(8) won't work.
+TEST_ENV =	TMPDIR=${WRKDIR} \
+		SHELL=/bin/sh
 
 TEST_TARGET =	test check
 
