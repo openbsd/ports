@@ -2,7 +2,7 @@ COMMENT =	web files for Jitsi Meet
 
 CATEGORIES =	net www
 
-VERSION =	1.0.7008
+VERSION =	1.0.8140
 SITES =		https://download.jitsi.org/jitsi-meet/src/
 DISTNAME =	jitsi-meet-${VERSION}
 EXTRACT_SUFX =	.tar.bz2
