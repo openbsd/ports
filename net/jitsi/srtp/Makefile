@@ -2,14 +2,12 @@ COMMENT =	native libraries to speed up jitsi-srtp
 
 CATEGORIES =	net
 
-VERSION =	1.1pl20220605
+VERSION =	1.1pl20240606
 DISTNAME =	jitsi-srtp-${VERSION}
 
 GH_ACCOUNT =	jitsi
 GH_PROJECT =	jitsi-srtp
-GH_COMMIT =	d9bbebfe367820ab358d2d92f5aa563d3fde403a
-
-REVISION =	0
+GH_COMMIT =	98e4c5de78c5dd186d906cf175cdfb6060f36475
 
 DISTFILES +=	${GH_DISTFILE}
 
@@ -46,6 +44,11 @@ do-test:
 	cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} LD_LIBRARY_PATH=${WRKBUILD} \
 			mvn ${MAVEN_REPO} ${MAVEN_ARGS} test
+
+
+post-test:
+	cd ${WRKDIR} && \
+		tar czf jitsi-srtp-deps-${VERSION}.tgz m2
 
 
 .include <bsd.port.mk>
