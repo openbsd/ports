@@ -19,7 +19,7 @@ Index: chrome/browser/enterprise/connectors/device_trust/device_trust_connector_
    return true;
  #else
    return false;
-@@ -79,7 +79,7 @@ DeviceTrustConnectorServiceFactory::BuildServiceInstan
+@@ -84,7 +84,7 @@ DeviceTrustConnectorServiceFactory::BuildServiceInstan
    std::unique_ptr<DeviceTrustConnectorService> service =
        std::make_unique<DeviceTrustConnectorService>(profile->GetPrefs());
  

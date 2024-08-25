@@ -1,7 +1,7 @@
 Index: chrome/browser/enterprise/connectors/reporting/crash_reporting_context.cc
 --- chrome/browser/enterprise/connectors/reporting/crash_reporting_context.cc.orig
 +++ chrome/browser/enterprise/connectors/reporting/crash_reporting_context.cc
-@@ -18,7 +18,7 @@
+@@ -19,7 +19,7 @@
  
  namespace enterprise_connectors {
  

@@ -1,7 +1,7 @@
 Index: base/profiler/stack_sampling_profiler_unittest.cc
 --- base/profiler/stack_sampling_profiler_unittest.cc.orig
 +++ base/profiler/stack_sampling_profiler_unittest.cc
-@@ -43,7 +43,7 @@
+@@ -45,7 +45,7 @@
  
  #include <intrin.h>
  #include <malloc.h>

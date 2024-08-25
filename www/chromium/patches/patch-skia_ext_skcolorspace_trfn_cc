@@ -1,9 +1,9 @@
 Index: skia/ext/skcolorspace_trfn.cc
 --- skia/ext/skcolorspace_trfn.cc.orig
 +++ skia/ext/skcolorspace_trfn.cc
-@@ -2,6 +2,8 @@
- // Use of this source code is governed by a BSD-style license that can be
- // found in the LICENSE file.
+@@ -7,6 +7,8 @@
+ #pragma allow_unsafe_buffers
+ #endif
  
 +#include <cmath>
 +

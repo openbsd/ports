@@ -1,7 +1,7 @@
 Index: net/disk_cache/simple/simple_file_tracker.cc
 --- net/disk_cache/simple/simple_file_tracker.cc.orig
 +++ net/disk_cache/simple/simple_file_tracker.cc
-@@ -34,7 +34,17 @@ void RecordFileDescripterLimiterOp(FileDescriptorLimit
+@@ -35,7 +35,17 @@ void RecordFileDescripterLimiterOp(FileDescriptorLimit
  }  // namespace
  
  SimpleFileTracker::SimpleFileTracker(int file_limit)

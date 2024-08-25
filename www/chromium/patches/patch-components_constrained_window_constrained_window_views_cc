@@ -1,7 +1,7 @@
 Index: components/constrained_window/constrained_window_views.cc
 --- components/constrained_window/constrained_window_views.cc.orig
 +++ components/constrained_window/constrained_window_views.cc
-@@ -360,7 +360,7 @@ bool SupportsGlobalScreenCoordinates() {
+@@ -369,7 +369,7 @@ bool SupportsGlobalScreenCoordinates() {
  }
  
  bool PlatformClipsChildrenToViewport() {

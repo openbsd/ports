@@ -13,7 +13,7 @@ Index: base/features.cc
  #include "base/message_loop/message_pump_libevent.h"
  #endif
  
-@@ -97,9 +99,11 @@ void Init(EmitThreadControllerProfilerMetadata
+@@ -116,9 +118,11 @@ void Init(EmitThreadControllerProfilerMetadata
    sequence_manager::internal::ThreadController::InitializeFeatures(
        emit_thread_controller_profiler_metadata);
  
