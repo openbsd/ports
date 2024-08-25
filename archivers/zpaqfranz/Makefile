@@ -1,7 +1,7 @@
 BROKEN-sparc64 = SIGBUS due to unaligned access when running tests
 
 COMMENT =	journaling archiver for incremental backup, fork of ZPAQ
-DIST_TUPLE =	github fcorbelli zpaqfranz 60.5 .
+DIST_TUPLE =	github fcorbelli zpaqfranz 60.6 .
 CATEGORIES =	archivers
 MAINTAINER =	tux0r <tux0r@rosaelefanten.org>
 
