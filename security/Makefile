@@ -121,6 +121,7 @@
      SUBDIR += mcrypt
      SUBDIR += mhash
      SUBDIR += minisign
+     SUBDIR += mitmproxy
      SUBDIR += netpgp
      SUBDIR += nfsshell
      SUBDIR += nikto
