@@ -1,6 +1,6 @@
 COMMENT=	cross-platform gettext catalogs (PO-files) editor
 
-V=		3.4.2
+V=		3.4.4
 DISTNAME=	poedit-${V}
 CATEGORIES=	devel textproc
 
@@ -13,13 +13,12 @@ SITES=		https://github.com/vslavik/poedit/releases/download/v${V}-oss/
 # MIT
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c m pthread ${COMPILER_LIBCXX}
-WANTLIB += atk-1.0 boost_regex-mt boost_system boost_thread-mt
-WANTLIB += cairo cairo-gobject enchant-2 gdk-3 gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 gtkspell3-3 harfbuzz icudata
-WANTLIB += icui18n icuuc intl lucene++ pango-1.0 pangocairo-1.0 pugixml
-WANTLIB += wx_baseu-3.2 wx_baseu_net-3.2 wx_baseu_xml-3.2
-WANTLIB += wx_gtk3u_core-3.2 wx_gtk3u_xrc-3.2 wx_gtk3u_webview-3.2
+WANTLIB += ${COMPILER_LIBCXX} atk-1.0 boost_system boost_thread-mt
+WANTLIB += c cairo cairo-gobject enchant-2 gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 gtk-3 gtkspell3-3 harfbuzz
+WANTLIB += icudata icui18n icuuc intl lucene++ m pango-1.0 pangocairo-1.0
+WANTLIB += pugixml wx_baseu-3.2 wx_baseu_net-3.2 wx_baseu_xml-3.2
+WANTLIB += wx_gtk3u_core-3.2 wx_gtk3u_webview-3.2 wx_gtk3u_xrc-3.2
 
 # C++17
 COMPILER=	base-clang ports-gcc
