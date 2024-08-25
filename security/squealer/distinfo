@@ -202,7 +202,7 @@ SHA256 (go_modules/gopkg.in/yaml.v2/@v/v2.4.0.zip) = 7eSeJ8TMps3S7HGa7Y6k02NxDM6
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SHA256 (squealer-v1.2.3.zip) = JJrU5+AXtjfyHu880zuqW3PKLiGqlq60l9Nzu2hv/k0=
+SHA256 (squealer-v1.2.4.zip) = zckpoJ8PQmy7RytdW0xPeFu2LN4LnUPfdNa3zxT76YI=
 SIZE (go_modules/dario.cat/mergo/@v/v1.0.0.mod) = 65
 SIZE (go_modules/dario.cat/mergo/@v/v1.0.0.zip) = 49320
 SIZE (go_modules/github.com/!microsoft/go-winio/@v/v0.5.2.mod) = 147
@@ -407,4 +407,4 @@ SIZE (go_modules/gopkg.in/yaml.v2/@v/v2.4.0.zip) = 81183
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
-SIZE (squealer-v1.2.3.zip) = 46017779
+SIZE (squealer-v1.2.4.zip) = 46017781
