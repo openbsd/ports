@@ -1716,6 +1716,7 @@
      SUBDIR += py-unique-log-filter,python3
      SUBDIR += py-untangle,python3
      SUBDIR += py-urwid,python3
+     SUBDIR += py-uvloop,python3
      SUBDIR += py-validators,python3
      SUBDIR += py-vcversioner,python3
      SUBDIR += py-versioneer,python3
