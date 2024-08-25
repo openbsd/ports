@@ -1,9 +1,8 @@
 COMMENT =		library for building CLI applications
 
-MODPY_EGG_VERSION =	0.12.3
+MODPY_EGG_VERSION =	0.12.5
 DISTNAME =		typer-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		devel
 
@@ -32,6 +31,7 @@ TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR}>=6.2 \
 			shells/fish \
 			shells/zsh
 
+MODPY_TEST_LIBDIR =	.:typer
 PORTHOME =		${WRKDIR}
 
 .include <bsd.port.mk>
