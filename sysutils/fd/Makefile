@@ -2,7 +2,7 @@ COMMENT =		simple, fast and user-friendly alternative to 'find'
 
 GH_ACCOUNT =		sharkdp
 GH_PROJECT =		fd
-GH_TAGNAME =		v10.1.0
+GH_TAGNAME =		v10.2.0
 
 CATEGORIES =		sysutils
 
