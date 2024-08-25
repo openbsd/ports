@@ -31,7 +31,7 @@ BUILD_DEPENDS =		devel/maven
 CONFIGURE_ARGS+= -DCMAKE_INSTALL_PREFIX=${PREFIX}/lib \
 		 -DJITSI_SRTP_LIBSSL_VERSION=1.1
 
-MAVEN_ARGS=	-offline -DskipTests=false -Dassembly.skipAssembly=false
+MAVEN_ARGS=	--offline -DskipTests=false -Dassembly.skipAssembly=false
 MAVEN_REPO=	-Dmaven.repo.local=${WRKDIR}/m2
 
 
