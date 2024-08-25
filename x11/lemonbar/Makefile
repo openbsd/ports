@@ -1,6 +1,6 @@
 COMMENT =	featherweight lemon-scented bar
 
-VERSION =	1.4
+VERSION =	1.5
 
 PKGNAME =	lemonbar-${VERSION}
 
@@ -9,8 +9,6 @@ GH_PROJECT =	bar
 GH_TAGNAME =	v${VERSION}
 
 CATEGORIES =	x11
-
-MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 
 # MIT
 PERMIT_PACKAGE =	Yes
