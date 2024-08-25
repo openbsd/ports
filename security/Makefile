@@ -293,6 +293,7 @@
      SUBDIR += py-keyring,python3
      SUBDIR += py-libnacl,python3
      SUBDIR += py-miasm,python3
+     SUBDIR += py-mitmproxy_rs,python3
      SUBDIR += py-oauthlib,python3
      SUBDIR += py-openssl,python3
      SUBDIR += py-paramiko,python3
