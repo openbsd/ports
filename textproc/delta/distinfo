@@ -212,7 +212,7 @@ SHA256 (cargo/windows_x86_64_msvc-0.52.0.tar.gz) = 3/lkHRzUvo0aBw2vnjdzxfZ+eLTZ1
 SHA256 (cargo/winnow-0.5.40.tar.gz) = 9ZOpU5hzeu7VPkiceF3xPzYY5B281nGMat2/E5WqaHY=
 SHA256 (cargo/xdg-2.5.2.tar.gz) = ITtzJDNrU9JBSy24U35WVE2YGAMTkVWvqE927uu3pUY=
 SHA256 (cargo/yaml-rust-0.4.5.tar.gz) = VsGTbEzHocmrIaHrtgLrlCuoaMvUSpnLfNxYkjNeHIU=
-SHA256 (delta-0.18.0.tar.gz) = HN1hNzs0zW0goBhO/J5EWTn3Q9krK4moPseHtM+T9aQ=
+SHA256 (delta-0.18.1.tar.gz) = 71WODuTJoQBG8vji5ZzxvtuxjChxMGt3LT2bjjskK5w=
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/aho-corasick-1.1.2.tar.gz) = 183136
 SIZE (cargo/android-tzdata-0.1.1.tar.gz) = 7674
@@ -427,4 +427,4 @@ SIZE (cargo/windows_x86_64_msvc-0.52.0.tar.gz) = 821600
 SIZE (cargo/winnow-0.5.40.tar.gz) = 159316
 SIZE (cargo/xdg-2.5.2.tar.gz) = 14394
 SIZE (cargo/yaml-rust-0.4.5.tar.gz) = 47783
-SIZE (delta-0.18.0.tar.gz) = 529906
+SIZE (delta-0.18.1.tar.gz) = 531491
