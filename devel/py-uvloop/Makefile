@@ -1,6 +1,7 @@
 COMMENT =		fast, drop-in replacement for asyncio event loop
 
 MODPY_EGG_VERSION =	0.20.0
+REVISION =		0
 DISTNAME =		uvloop-${MODPY_EGG_VERSION}
 PKGNAME =		py-uvloop-${MODPY_EGG_VERSION}
 
@@ -8,6 +9,8 @@ CATEGORIES=		devel net
 
 # Apache-2.0 or MIT
 PERMIT_PACKAGE =	Yes
+
+MAINTAINER =		Aisha Tammy <aisha@openbsd.org>
 
 MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
