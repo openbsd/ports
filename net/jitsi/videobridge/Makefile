@@ -2,12 +2,12 @@ COMMENT =	WebRTC compatible video router for jitsi
 
 CATEGORIES =	net
 
-VERSION =	2.0.8319
+VERSION =	2.0.9646
 DISTNAME =	jitsi-videobridge-${VERSION}
 
 GH_ACCOUNT =	jitsi
 GH_PROJECT =	jitsi-videobridge
-GH_COMMIT =	f6426ea01d6d4426149dd2bf658d388f447b9f5d
+GH_COMMIT =	97a1f15bc5f396c417b3550ced3cbedf54bf4c3b
 
 DISTFILES +=	${GH_DISTFILE}
 
@@ -37,6 +37,10 @@ do-build:
 	cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} mvn ${MAVEN_REPO} ${MAVEN_ARGS} package
 
+post-build:
+	cd ${WRKDIR} && \
+		tar czf jitsi-videobridge-deps-${VERSION}.tgz m2
+
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/bin ${PREFIX}/share/jvb/lib/ ${MODJAVA_JAR_DIR}
 	${SUBST_PROGRAM} ${FILESDIR}/jvb.sh ${PREFIX}/bin/jvb
@@ -44,6 +48,6 @@ do-install:
 	    ${FILESDIR}/jvb.conf ${PREFIX}/share/jvb/jvb.conf.sample \
 	    ${FILESDIR}/sip-communicator.properties ${PREFIX}/share/jvb/lib/sip-communicator.properties.sample
 	${INSTALL_DATA} ${WRKSRC}/jvb/lib/logging.properties ${PREFIX}/share/jvb/lib/logging.properties.sample
-	${INSTALL_DATA} ${WRKSRC}/jvb/target/jitsi-videobridge-2.1-SNAPSHOT-jar-with-dependencies.jar ${MODJAVA_JAR_DIR}/jitsi-videobridge.jar
+	${INSTALL_DATA} ${WRKSRC}/jvb/target/jitsi-videobridge-2.3-SNAPSHOT-jar-with-dependencies.jar ${MODJAVA_JAR_DIR}/jitsi-videobridge.jar
 
 .include <bsd.port.mk>
