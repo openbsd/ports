@@ -1,0 +1,21 @@
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -43,7 +43,7 @@ test = [
+     'pycodestyle~=2.9.0',
+     'pyOpenSSL~=23.0.0',
+     'mypy>=0.800',
+-    'Cython(>=0.29.36,<0.30.0)',
++    'Cython>=0.29.36',
+ ]
+ docs = [
+     'Sphinx~=4.1.2',
+@@ -55,7 +55,7 @@ docs = [
+ requires = [
+     "setuptools>=60",
+     "wheel",
+-    "Cython(>=0.29.36,<0.30.0)",
++    "Cython>=0.29.36",
+ ]
+ build-backend = "setuptools.build_meta"
+ 

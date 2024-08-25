@@ -1,0 +1,10 @@
+Index: setup.cfg
+--- setup.cfg.orig
++++ setup.cfg
+@@ -2,3 +2,6 @@
+ tag_build = 
+ tag_date = 0
+ 
++[build_ext]
++use_system_libuv=True
++cython_always=True

@@ -1,0 +1,52 @@
+Index: uvloop/loop.pxd
+--- uvloop/loop.pxd.orig
++++ uvloop/loop.pxd
+@@ -1,15 +1,35 @@
+ # cython: language_level=3
+ 
++cdef extern from *:
++    '''
++    enum { UV_STREAM_RECV_BUF_SIZE = 256000,
++           SSL_READ_MAX_SIZE = 256 * 1024,  // 250kb
++          };
++    const float SSL_HANDSHAKE_TIMEOUT = 60.0; // Number of seconds to wait for SSL handshake to complete The default timeout matches that of Nginx.
++    const float SSL_SHUTDOWN_TIMEOUT  = 30.0; // Number of seconds to wait for SSL shutdown to complete The default timeout mimics lingering_time
++    '''
++    const bint UV_STREAM_RECV_BUF_SIZE
++    const bint SSL_READ_MAX_SIZE
+ 
+-from .includes cimport uv
+-from .includes cimport system
++    const float SSL_HANDSHAKE_TIMEOUT
++    const float SSL_SHUTDOWN_TIMEOUT
+ 
+-from libc.stdint cimport uint64_t, uint32_t, int64_t
++cdef enum:
++    FLOW_CONTROL_HIGH_WATER = 64  # KiB
++    FLOW_CONTROL_HIGH_WATER_SSL_READ = 256  # KiB
++    FLOW_CONTROL_HIGH_WATER_SSL_WRITE = 512  # KiB
+ 
++    DNS_PYADDR_TO_SOCKADDR_CACHE_SIZE = 2048
++    DEBUG_STACK_DEPTH = 10
++    __PROCESS_DEBUG_SLEEP_AFTER_FORK = 1
++    LOG_THRESHOLD_FOR_CONNLOST_WRITES = 5
+ 
+-include "includes/consts.pxi"
+ 
++from .includes cimport uv
++from .includes cimport system
+ 
++from libc.stdint cimport uint64_t, uint32_t, int64_t
++
+ cdef extern from *:
+     ctypedef int vint "volatile int"
+ 
+@@ -200,7 +220,7 @@ cdef class Loop:
+     cdef inline _ceval_process_signals(self)
+     cdef _invoke_signals(self, bytes data)
+ 
+-    cdef _set_coroutine_debug(self, bint enabled)
++    cpdef _set_coroutine_debug(self, bint enabled)
+ 
+     cdef _print_debug_info(self)
+ 
