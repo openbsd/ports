@@ -2,32 +2,20 @@ bin/accerciser
 lib/python${MODPY_VERSION}/site-packages/accerciser/
 lib/python${MODPY_VERSION}/site-packages/accerciser/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}about_dialog.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}about_dialog.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}accerciser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}accerciser.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}accessible_treeview.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}accessible_treeview.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}bookmarks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}bookmarks.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}hotkey_manager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}hotkey_manager.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}i18n.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}i18n.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}icons.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}icons.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}main_window.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}main_window.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}node.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}menus.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}node.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}prefs_dialog.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}prefs_dialog.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}tools.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}tools.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}ui_manager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}ui_manager.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/accerciser/${MODPY_PYCACHE}window_manager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/accerciser/about_dialog.py
 lib/python${MODPY_VERSION}/site-packages/accerciser/accerciser.py
 lib/python${MODPY_VERSION}/site-packages/accerciser/accessible_treeview.py
@@ -36,19 +24,15 @@ lib/python${MODPY_VERSION}/site-packages/accerciser/hotkey_manager.py
 lib/python${MODPY_VERSION}/site-packages/accerciser/i18n.py
 lib/python${MODPY_VERSION}/site-packages/accerciser/icons.py
 lib/python${MODPY_VERSION}/site-packages/accerciser/main_window.py
+lib/python${MODPY_VERSION}/site-packages/accerciser/menus.py
 lib/python${MODPY_VERSION}/site-packages/accerciser/node.py
 lib/python${MODPY_VERSION}/site-packages/accerciser/plugin/
 lib/python${MODPY_VERSION}/site-packages/accerciser/plugin/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/accerciser/plugin/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/accerciser/plugin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/accerciser/plugin/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/accerciser/plugin/${MODPY_PYCACHE}base_plugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/accerciser/plugin/${MODPY_PYCACHE}base_plugin.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/accerciser/plugin/${MODPY_PYCACHE}message.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/accerciser/plugin/${MODPY_PYCACHE}message.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/accerciser/plugin/${MODPY_PYCACHE}plugin_manager.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/accerciser/plugin/${MODPY_PYCACHE}plugin_manager.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/accerciser/plugin/${MODPY_PYCACHE}view.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/accerciser/plugin/${MODPY_PYCACHE}view.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/accerciser/plugin/base_plugin.py
 lib/python${MODPY_VERSION}/site-packages/accerciser/plugin/message.py
@@ -56,9 +40,13 @@ lib/python${MODPY_VERSION}/site-packages/accerciser/plugin/plugin_manager.py
 lib/python${MODPY_VERSION}/site-packages/accerciser/plugin/view.py
 lib/python${MODPY_VERSION}/site-packages/accerciser/prefs_dialog.py
 lib/python${MODPY_VERSION}/site-packages/accerciser/tools.py
-lib/python${MODPY_VERSION}/site-packages/accerciser/ui_manager.py
+lib/python${MODPY_VERSION}/site-packages/accerciser/window_manager.py
 @man man/man1/accerciser.1
 share/accerciser/
+share/accerciser/kwin-scripts/
+share/accerciser/kwin-scripts/kwin-retrieve-mouse-pointer-pos.js
+share/accerciser/kwin-scripts/kwin5-retrieve-window-infos.js
+share/accerciser/kwin-scripts/kwin6-retrieve-window-infos.js
 share/accerciser/pixmaps/
 share/accerciser/pixmaps/hicolor/
 share/accerciser/pixmaps/hicolor/22x22/
@@ -158,6 +146,11 @@ share/accerciser/plugins/validate.py
 share/accerciser/plugins/validate.ui
 share/applications/accerciser.desktop
 share/glib-2.0/schemas/org.a11y.Accerciser.gschema.xml
+share/gnome-shell/
+share/gnome-shell/extensions/
+share/gnome-shell/extensions/accerciser@accerciser.gnome.org/
+share/gnome-shell/extensions/accerciser@accerciser.gnome.org/extension.js
+share/gnome-shell/extensions/accerciser@accerciser.gnome.org/metadata.json
 share/help/
 share/help/C/
 share/help/C/accerciser/
@@ -654,7 +647,7 @@ share/locale/vi/LC_MESSAGES/accerciser.mo
 share/locale/zh_CN/LC_MESSAGES/accerciser.mo
 share/locale/zh_HK/LC_MESSAGES/accerciser.mo
 share/locale/zh_TW/LC_MESSAGES/accerciser.mo
-share/metainfo/accerciser.appdata.xml
+share/metainfo/org.gtk.accerciser.metainfo.xml
 @tag glib-compile-schemas
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
