@@ -1,10 +1,8 @@
 COMMENT =		yet another URL library
 
-# 1.9.3+ requires expandvars
-MODPY_EGG_VERSION =	1.9.2
+MODPY_EGG_VERSION =	1.9.4
 DISTNAME =		yarl-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		www devel
 
@@ -24,6 +22,8 @@ FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
+
+BUILD_DEPENDS =		sysutils/py-expandvars${MODPY_FLAVOR}
 
 RUN_DEPENDS =		net/py-idna${MODPY_FLAVOR}>=2.0 \
 			www/py-multidict${MODPY_FLAVOR}>=4.0
