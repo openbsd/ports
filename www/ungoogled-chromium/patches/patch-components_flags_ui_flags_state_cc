@@ -1,7 +1,7 @@
 Index: components/flags_ui/flags_state.cc
 --- components/flags_ui/flags_state.cc.orig
 +++ components/flags_ui/flags_state.cc
-@@ -758,7 +758,7 @@ unsigned short FlagsState::GetCurrentPlatform() {
+@@ -759,7 +759,7 @@ unsigned short FlagsState::GetCurrentPlatform() {
    return kOsCrOS;
  #elif BUILDFLAG(IS_CHROMEOS_LACROS)
    return kOsLacros;

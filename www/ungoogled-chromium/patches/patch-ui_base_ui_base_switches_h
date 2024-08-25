@@ -13,5 +13,5 @@ Index: ui/base/ui_base_switches.h
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  COMPONENT_EXPORT(UI_BASE) extern const char kUiToolkitFlag[];
+ COMPONENT_EXPORT(UI_BASE) extern const char kDisableGtkIme[];
  #endif
- 

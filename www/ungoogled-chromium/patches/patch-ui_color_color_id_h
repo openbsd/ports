@@ -1,7 +1,7 @@
 Index: ui/color/color_id.h
 --- ui/color/color_id.h.orig
 +++ ui/color/color_id.h
-@@ -624,7 +624,7 @@
+@@ -621,7 +621,7 @@
    \
    E_CPONLY(kColorCrosSysPositive) \
    E_CPONLY(kColorCrosSysComplementVariant)

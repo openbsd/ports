@@ -1,7 +1,7 @@
 Index: third_party/node/node.gni
 --- third_party/node/node.gni.orig
 +++ third_party/node/node.gni
-@@ -19,7 +19,7 @@ template("node") {
+@@ -22,7 +22,7 @@ template("node") {
  
      # When use_remoteexec=true, node actions may run on remote
      # Linux worker. So it should include linux node binary in inputs.

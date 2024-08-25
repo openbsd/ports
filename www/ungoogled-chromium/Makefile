@@ -10,7 +10,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			127.0.6533.119
+V=			128.0.6613.84
 UGV=			${V}-1
 
 DISTNAME=		ungoogled-chromium-${V}
@@ -276,17 +276,10 @@ pre-patch:
 		utils/domain_substitution.py apply -r domain_regex.list -f \
 		domain_substitution.list -c ${WRKSRC}/domsubcache.tar.gz ${WRKSRC}
 
-pre-configure:
+post-patch:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 	@ln -sf ${MODQT5_MOC} ${WRKDIR}/bin/moc
 	@ln -sf ${LOCALBASE}/bin/llvm-ar-${MODCLANG_VERSION} ${WRKDIR}/bin/ar
-	cd ${WRKSRC}/media/ffmpeg && \
-		${MODPY_BIN} scripts/build_ffmpeg.py openbsd ${FFMPEG_TARGET} --config-only --branding=${FFMPEG_BRAND}
-	cd ${FFMPEG_BDIR} && ${GMAKE} ffversion.h
-	${INSTALL_DATA_DIR} ${FFMPEG_CDIR}
-.for _e in config.h config.asm config_components.h libavcodec libavformat libavutil
-	-cp -pR ${FFMPEG_BDIR}/${_e} ${FFMPEG_CDIR}
-.endfor
 	@mkdir -p ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin
 	@ln -sf ${TRUEPREFIX}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
 	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py \
@@ -302,10 +295,17 @@ pre-configure:
 do-configure:
 	# Regenerate build and perlasm files (force json to not overwrite our local gn patches)
 	# @cd ${WRKSRC}/third_party/boringssl && ${MODPY_BIN} src/util/generate_build_files.py json
+	cd ${WRKSRC}/media/ffmpeg && \
+		${MODPY_BIN} scripts/build_ffmpeg.py openbsd ${FFMPEG_TARGET} --config-only --branding=${FFMPEG_BRAND}
+	cd ${FFMPEG_BDIR} && ${GMAKE} ffversion.h
+	${INSTALL_DATA_DIR} ${FFMPEG_CDIR}
+.for _e in config.h config.asm config_components.h libavcodec libavformat libavutil
+	-cp -pR ${FFMPEG_BDIR}/${_e} ${FFMPEG_CDIR}
+.endfor
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} build/linux/unbundle/replace_gn_files.py \
 		--system-libraries ${GN_SYSTEM_LIBS}
 	@cd ${WRKSRC}/tools/gn && env -i ${MAKE_ENV} LDFLAGS=-L${LOCALBASE}/lib ${MODPY_BIN} bootstrap/bootstrap.py \
-		--no-clean -s --gn-gen-args "${GN_ARGS}"
+		--no-clean -s --skip-generate-buildfiles
 	@cd ${WRKSRC} && env -i ${CONFIGURE_ENV} ${WRKSRC}/out/${BUILDTYPE}/gn \
 		gen --args="${GN_ARGS}" out/${BUILDTYPE}
 

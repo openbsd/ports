@@ -44,7 +44,7 @@ Index: ui/ozone/platform/wayland/ozone_platform_wayland.cc
        // TODO(crbug.com/40800718): Revisit (and maybe remove) once proper
        // support, probably backed by org.freedesktop.portal.Screenshot.PickColor
        // API is implemented. Note: this is restricted to Linux Desktop as Lacros
-@@ -536,7 +536,7 @@ class OzonePlatformWayland : public OzonePlatform,
+@@ -538,7 +538,7 @@ class OzonePlatformWayland : public OzonePlatform,
    DrmRenderNodePathFinder path_finder_;
  #endif
  
