@@ -2,12 +2,12 @@ COMMENT =	server-side focus component used in Jitsi Meet conferences
 
 CATEGORIES =	net
 
-VERSION =	2.0.8319
+VERSION =	2.0.9646
 PKGNAME =	jicofo-${VERSION}
 
 GH_ACCOUNT =	jitsi
 GH_PROJECT =	jicofo
-GH_TAGNAME =	jitsi-meet_8319
+GH_TAGNAME =	jitsi-meet_9646
 
 DISTFILES +=	${GH_DISTFILE}
 
@@ -36,6 +36,10 @@ MAVEN_REPO=	-Dmaven.repo.local=${WRKDIR}/m2
 do-build:
 	cd ${WRKSRC} && \
 		${SETENV} ${MAKE_ENV} mvn ${MAVEN_REPO} ${MAVEN_ARGS} package
+
+post-build:
+	cd ${WRKDIR} && \
+		tar czf jicofo-deps-${VERSION}.tgz m2
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/bin ${PREFIX}/share/jicofo/lib ${MODJAVA_JAR_DIR}
