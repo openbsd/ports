@@ -34,7 +34,7 @@ Azorius at https://azorius.example.com
 Database Upgrade
 ================
 
-If you are upgrading from a version before 0.3.2, you will need to upgrade
+If you are upgrading from a version before 0.3.4, you will need to upgrade
 the database format:
 
 Stop the old azorius process.
