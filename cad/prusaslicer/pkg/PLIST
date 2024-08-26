@@ -61,6 +61,7 @@ share/PrusaSlicer/icons/check_on_focused.svg
 share/PrusaSlicer/icons/checked.svg
 share/PrusaSlicer/icons/cog.svg
 share/PrusaSlicer/icons/cog_.svg
+share/PrusaSlicer/icons/cog_f.svg
 share/PrusaSlicer/icons/cog_go.png
 share/PrusaSlicer/icons/collapse.svg
 share/PrusaSlicer/icons/collapse_btn.svg
@@ -70,6 +71,8 @@ share/PrusaSlicer/icons/colorchange_add_m.svg
 share/PrusaSlicer/icons/colorchange_del.svg
 share/PrusaSlicer/icons/colorchange_del_f.svg
 share/PrusaSlicer/icons/compare.svg
+share/PrusaSlicer/icons/connect_gcode.svg
+share/PrusaSlicer/icons/connect_status.svg
 share/PrusaSlicer/icons/convert_file.svg
 share/PrusaSlicer/icons/cooling.svg
 share/PrusaSlicer/icons/copy.svg
@@ -133,6 +136,8 @@ share/PrusaSlicer/icons/fuzzy_skin.svg
 share/PrusaSlicer/icons/gcode.icns
 share/PrusaSlicer/icons/hollow.svg
 share/PrusaSlicer/icons/hollowing.svg
+share/PrusaSlicer/icons/horizontal_hide.svg
+share/PrusaSlicer/icons/horizontal_show.svg
 share/PrusaSlicer/icons/import_config.svg
 share/PrusaSlicer/icons/import_config_bundle.svg
 share/PrusaSlicer/icons/import_plater.svg
@@ -162,6 +167,8 @@ share/PrusaSlicer/icons/lock_closed_white.svg
 share/PrusaSlicer/icons/lock_open.svg
 share/PrusaSlicer/icons/lock_open_f.svg
 share/PrusaSlicer/icons/lock_open_sys.svg
+share/PrusaSlicer/icons/login.svg
+share/PrusaSlicer/icons/logout.svg
 share/PrusaSlicer/icons/make_bold.svg
 share/PrusaSlicer/icons/make_italic.svg
 share/PrusaSlicer/icons/make_unbold.svg
@@ -222,6 +229,9 @@ share/PrusaSlicer/icons/plug.svg
 share/PrusaSlicer/icons/preview.svg
 share/PrusaSlicer/icons/preview_menu.svg
 share/PrusaSlicer/icons/printer.svg
+share/PrusaSlicer/icons/printer_available.svg
+share/PrusaSlicer/icons/printer_busy.svg
+share/PrusaSlicer/icons/printer_offline.svg
 share/PrusaSlicer/icons/printer_placeholder.png
 share/PrusaSlicer/icons/printer_white.svg
 share/PrusaSlicer/icons/question.svg
@@ -253,6 +263,9 @@ share/PrusaSlicer/icons/shape_gallery.svg
 share/PrusaSlicer/icons/sinking.svg
 share/PrusaSlicer/icons/skirt+brim.svg
 share/PrusaSlicer/icons/sla_printer.svg
+share/PrusaSlicer/icons/sla_printer_available.svg
+share/PrusaSlicer/icons/sla_printer_busy.svg
+share/PrusaSlicer/icons/sla_printer_offline.svg
 share/PrusaSlicer/icons/sla_supports.svg
 share/PrusaSlicer/icons/sla_view_original.svg
 share/PrusaSlicer/icons/sla_view_processed.svg
@@ -291,9 +304,12 @@ share/PrusaSlicer/icons/toolbar_arrow.svg
 share/PrusaSlicer/icons/toolbar_arrow_2.svg
 share/PrusaSlicer/icons/toolbar_background.png
 share/PrusaSlicer/icons/undo.svg
+share/PrusaSlicer/icons/undo_f.svg
 share/PrusaSlicer/icons/undo_menu.svg
 share/PrusaSlicer/icons/undo_toolbar.svg
 share/PrusaSlicer/icons/upload_queue.svg
+share/PrusaSlicer/icons/user.svg
+share/PrusaSlicer/icons/user_mask.svg
 share/PrusaSlicer/icons/vector_filament_param.svg
 share/PrusaSlicer/icons/vector_param.svg
 share/PrusaSlicer/icons/wrench.svg
@@ -455,6 +471,14 @@ share/PrusaSlicer/profiles/Anycubic/i3megas.svg
 share/PrusaSlicer/profiles/Anycubic/i3megas_bed.stl
 share/PrusaSlicer/profiles/Anycubic/mega0.svg
 share/PrusaSlicer/profiles/Anycubic/mega0_bed.stl
+share/PrusaSlicer/profiles/AnycubicSLA/
+share/PrusaSlicer/profiles/AnycubicSLA.idx
+share/PrusaSlicer/profiles/AnycubicSLA.ini
+share/PrusaSlicer/profiles/AnycubicSLA/PHOTON MONO SE_thumbnail.png
+share/PrusaSlicer/profiles/AnycubicSLA/PHOTON MONO X 6K_thumbnail.png
+share/PrusaSlicer/profiles/AnycubicSLA/PHOTON MONO X_thumbnail.png
+share/PrusaSlicer/profiles/AnycubicSLA/PHOTON MONO_thumbnail.png
+share/PrusaSlicer/profiles/ArchiveRepositoryManifest.json
 share/PrusaSlicer/profiles/Artillery/
 share/PrusaSlicer/profiles/Artillery.idx
 share/PrusaSlicer/profiles/Artillery.ini
@@ -650,6 +674,15 @@ share/PrusaSlicer/profiles/Geeetech/MizarS_thumbnail.png
 share/PrusaSlicer/profiles/Geeetech/Mizar_thumbnail.png
 share/PrusaSlicer/profiles/Geeetech/ThunderPro_thumbnail.png
 share/PrusaSlicer/profiles/Geeetech/Thunder_thumbnail.png
+share/PrusaSlicer/profiles/HartSmartProducts/
+share/PrusaSlicer/profiles/HartSmartProducts.idx
+share/PrusaSlicer/profiles/HartSmartProducts.ini
+share/PrusaSlicer/profiles/HartSmartProducts/HSP1-I Duplicator Mode_thumbnail.png
+share/PrusaSlicer/profiles/HartSmartProducts/HSP1-I_thumbnail.png
+share/PrusaSlicer/profiles/HartSmartProducts/hsp1_i.svg
+share/PrusaSlicer/profiles/HartSmartProducts/hsp1_i_bed.stl
+share/PrusaSlicer/profiles/HartSmartProducts/hsp1_i_duplicator.svg
+share/PrusaSlicer/profiles/HartSmartProducts/hsp1_i_duplicator_bed.stl
 share/PrusaSlicer/profiles/INAT/
 share/PrusaSlicer/profiles/INAT.idx
 share/PrusaSlicer/profiles/INAT.ini
@@ -747,8 +780,6 @@ share/PrusaSlicer/profiles/PrusaResearch/MK4ISMMU3_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/MK4IS_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/MK4IS_thumbnail_v2.png
 share/PrusaSlicer/profiles/PrusaResearch/MK4_thumbnail.png
-share/PrusaSlicer/profiles/PrusaResearch/SL1S_thumbnail.png
-share/PrusaSlicer/profiles/PrusaResearch/SL1_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/XL2IS_alpha_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/XL2IS_beta_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/XL2IS_thumbnail.png
@@ -774,14 +805,19 @@ share/PrusaSlicer/profiles/PrusaResearch/mk3_bed.stl
 share/PrusaSlicer/profiles/PrusaResearch/mk4.svg
 share/PrusaSlicer/profiles/PrusaResearch/mk4_bed.stl
 share/PrusaSlicer/profiles/PrusaResearch/mk4is.svg
-share/PrusaSlicer/profiles/PrusaResearch/sl1.svg
-share/PrusaSlicer/profiles/PrusaResearch/sl1_bed.stl
-share/PrusaSlicer/profiles/PrusaResearch/sl1s.svg
-share/PrusaSlicer/profiles/PrusaResearch/sl1s_bed.stl
 share/PrusaSlicer/profiles/PrusaResearch/xl.svg
 share/PrusaSlicer/profiles/PrusaResearch/xl_bed.stl
 share/PrusaSlicer/profiles/PrusaResearch/xlis_alpha.svg
 share/PrusaSlicer/profiles/PrusaResearch/xlis_beta.svg
+share/PrusaSlicer/profiles/PrusaResearchSLA/
+share/PrusaSlicer/profiles/PrusaResearchSLA.idx
+share/PrusaSlicer/profiles/PrusaResearchSLA.ini
+share/PrusaSlicer/profiles/PrusaResearchSLA/SL1S_thumbnail.png
+share/PrusaSlicer/profiles/PrusaResearchSLA/SL1_thumbnail.png
+share/PrusaSlicer/profiles/PrusaResearchSLA/sl1.svg
+share/PrusaSlicer/profiles/PrusaResearchSLA/sl1_bed.stl
+share/PrusaSlicer/profiles/PrusaResearchSLA/sl1s.svg
+share/PrusaSlicer/profiles/PrusaResearchSLA/sl1s_bed.stl
 share/PrusaSlicer/profiles/RatRig/
 share/PrusaSlicer/profiles/RatRig.idx
 share/PrusaSlicer/profiles/RatRig.ini
@@ -797,6 +833,8 @@ share/PrusaSlicer/profiles/RatRig/rr-vc-500.stl
 share/PrusaSlicer/profiles/RatRig/rr-vc-500.svg
 share/PrusaSlicer/profiles/RatRig/rr-vminion.stl
 share/PrusaSlicer/profiles/RatRig/rr-vminion.svg
+share/PrusaSlicer/profiles/RatRig/vc4-corexy.png
+share/PrusaSlicer/profiles/RatRig/vc4-hybrid.png
 share/PrusaSlicer/profiles/Rigid3D/
 share/PrusaSlicer/profiles/Rigid3D.idx
 share/PrusaSlicer/profiles/Rigid3D.ini
@@ -1083,6 +1121,10 @@ share/PrusaSlicer/shapes/torus.png
 share/PrusaSlicer/shapes/torus.stl
 share/PrusaSlicer/shapes/universal wall mount hole.png
 share/PrusaSlicer/shapes/universal wall mount hole.stl
+share/PrusaSlicer/web/
+share/PrusaSlicer/web/connect_loading.html
+share/PrusaSlicer/web/connection_failed.html
+share/PrusaSlicer/web/loading.html
 share/applications/PrusaGcodeviewer.desktop
 share/applications/PrusaSlicer.desktop
 share/icons/hicolor/128x128/apps/PrusaSlicer-gcodeviewer.png

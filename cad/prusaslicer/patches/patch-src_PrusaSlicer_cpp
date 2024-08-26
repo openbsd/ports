@@ -1,7 +1,7 @@
 Index: src/PrusaSlicer.cpp
 --- src/PrusaSlicer.cpp.orig
 +++ src/PrusaSlicer.cpp
-@@ -770,8 +770,8 @@ bool CLI::setup(int argc, char **argv)
+@@ -803,8 +803,8 @@ bool CLI::setup(int argc, char **argv)
  #endif
  
      // See Invoking prusa-slicer from $PATH environment variable crashes #5542

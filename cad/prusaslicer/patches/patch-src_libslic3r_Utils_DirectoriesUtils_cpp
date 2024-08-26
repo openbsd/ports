@@ -1,0 +1,12 @@
+Index: src/libslic3r/Utils/DirectoriesUtils.cpp
+--- src/libslic3r/Utils/DirectoriesUtils.cpp.orig
++++ src/libslic3r/Utils/DirectoriesUtils.cpp
+@@ -46,7 +46,7 @@ static std::string GetDataDir()
+     return  boost::nowide::narrow(buffer);
+ }
+ 
+-#elif defined(__linux__)
++#elif defined(__linux__) || defined(__OpenBSD__)
+ 
+ #include <stdlib.h>
+ #include <pwd.h>

@@ -10,7 +10,7 @@ Index: src/slic3r/GUI/InstanceCheck.cpp
  #include <dbus/dbus.h> /* Pull in all of D-Bus headers. */
  #endif //__linux__
  
-@@ -226,7 +226,7 @@ namespace instance_check_internal
+@@ -229,7 +229,7 @@ namespace instance_check_internal
  		return false;
  	}
  
