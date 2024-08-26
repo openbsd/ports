@@ -1,15 +1,12 @@
 COMMENT =	firewall knock operator
 
-DISTNAME =	fwknop-2.6.10
-REVISION =	1
+DISTNAME =	fwknop-2.6.11
 
 SHARED_LIBS +=	fko	0.0 # 3.0
 
 CATEGORIES =	security
 
 HOMEPAGE =	https://www.cipherdyne.org/fwknop/
-
-MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
