@@ -73,6 +73,8 @@ share/examples/honk/views/chatter.html
 @sample ${LOCALSTATEDIR}/honk/views/chatter.html
 share/examples/honk/views/combos.html
 @sample ${LOCALSTATEDIR}/honk/views/combos.html
+share/examples/honk/views/common.js
+@sample ${LOCALSTATEDIR}/honk/views/common.js
 share/examples/honk/views/emus.html
 @sample ${LOCALSTATEDIR}/honk/views/emus.html
 share/examples/honk/views/funzone.html
