@@ -2,7 +2,7 @@ COMMENT-main=	database interface library for Lua (including SQLite3)
 COMMENT-mysql=	MySQL driver for luadbi
 COMMENT-pgsql=	PostgreSQL driver for luadbi
 
-V=		0.7.2
+V=		0.7.3
 GH_ACCOUNT=	mwild1
 GH_PROJECT=	luadbi
 GH_TAGNAME=	v${V}
@@ -42,13 +42,13 @@ RUN_DEPENDS-pgsql=	${BASE_PKGPATH},-main
 USE_GMAKE=		Yes
 ALL_TARGET=		free # == sqlite3 mysql postgresql
 INSTALL_TARGET=		install_free
-# requires luarocks
+# requires busted
 NO_TEST=		Yes
 
 MAKE_FLAGS=	CC="${CC}" \
 		COMMON_LDFLAGS="-L${LOCALBASE}/lib" \
 		LUA_INC="-I${MODLUA_INCL_DIR}" \
-		MYSQL_INC="-I${LOCALBASE}/include/mysql" \
+		MYSQL_INC="-I${LOCALBASE}/include" \
 		SQLITE3_INC="-I${LOCALBASE}/include" \
 		PSQL_INC="-I${LOCALBASE}/include/postgresql"
 
