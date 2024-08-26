@@ -1,10 +1,8 @@
 COMMENT =		simple disk I/O latency measuring tool
 
-VERSION =		1.2
+VERSION =		1.3
 
 CATEGORIES =		sysutils
-
-MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
