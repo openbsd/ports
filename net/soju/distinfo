@@ -17,6 +17,8 @@ SHA256 (go_modules/github.com/beorn7/perks/@v/v1.0.1.zip) = Jb2eLZSsp3Dm28H1NyX4
 SHA256 (go_modules/github.com/cespare/xxhash/v2/@v/v2.2.0.mod) = oJD46q9ZzCrfFjKZ6+/nl+Hco/at0sjoimo7kLpTiwI=
 SHA256 (go_modules/github.com/cespare/xxhash/v2/@v/v2.3.0.mod) = oJD46q9ZzCrfFjKZ6+/nl+Hco/at0sjoimo7kLpTiwI=
 SHA256 (go_modules/github.com/cespare/xxhash/v2/@v/v2.3.0.zip) = FFomzcfEnbVmAXuAfEmJ7n993rVpQj6cuZ+ZX6w2IdM=
+SHA256 (go_modules/github.com/coder/websocket/@v/v1.8.12.mod) = YdYNzsq9JOGdH9micX/q5XC0Ww5hmsySxKpUODjRYNk=
+SHA256 (go_modules/github.com/coder/websocket/@v/v1.8.12.zip) = rY0yOXDARnn0Vm7n25iUZQjDfN0hpGqHXVJX1jGp6ZA=
 SHA256 (go_modules/github.com/davecgh/go-spew/@v/v1.1.0.mod) = vLKTkyUSN7eaF7bBm/KRNPQ+j0OMMZiYj81GGhzfBcw=
 SHA256 (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.mod) = vLKTkyUSN7eaF7bBm/KRNPQ+j0OMMZiYj81GGhzfBcw=
 SHA256 (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.zip) = a0SoQ5UfNxtwEMdU7MPKvv6BXVztHFuUCfstaX6KiQ0=
@@ -224,9 +226,7 @@ SHA256 (go_modules/modernc.org/strutil/@v/v1.2.0.mod) = sny24PKwv0CoCbIONHXso6sh
 SHA256 (go_modules/modernc.org/strutil/@v/v1.2.0.zip) = HqILgc8/1u+tS7G3kSVcwv1IYRHV6fLLDlUenTmqP48=
 SHA256 (go_modules/modernc.org/token/@v/v1.1.0.mod) = evOzXO1S6tSw7Q4iEB2VvABh0g4T3Q2aoHFhZKj12xw=
 SHA256 (go_modules/modernc.org/token/@v/v1.1.0.zip) = Pvqknp+xBWnangnnhfojDNXA9Q/PYF87VDnfzWFXfFg=
-SHA256 (go_modules/nhooyr.io/websocket/@v/v1.8.11.mod) = F+PgStSBHA7oYzCir0dxL3i8RhOs+HTLT3q2albCjGI=
-SHA256 (go_modules/nhooyr.io/websocket/@v/v1.8.11.zip) = aFy9/8yb2VUkIjnncR9rHIlc8GC0ZEBLRei2gZJBA70=
-SHA256 (soju-v0.8.1.zip) = XBmuAzpz4XEVe2nFjyO1x2RmYI8s+hlSwiZsWG6V/zA=
+SHA256 (soju-v0.8.2.zip) = UxvBVV4yItNeOWAEVy97mcd2hz0U5I4X4Mc79O8/hZQ=
 SIZE (go_modules/git.sr.ht/~emersion/go-scfg/@v/v0.0.0-20240128091534-2ae16e782082.mod) = 87
 SIZE (go_modules/git.sr.ht/~emersion/go-scfg/@v/v0.0.0-20240128091534-2ae16e782082.zip) = 12971
 SIZE (go_modules/git.sr.ht/~emersion/go-sqlite3-fts5/@v/v0.0.0-20240124102820-f3a72e8b79b1.mod) = 98
@@ -246,6 +246,8 @@ SIZE (go_modules/github.com/beorn7/perks/@v/v1.0.1.zip) = 14678
 SIZE (go_modules/github.com/cespare/xxhash/v2/@v/v2.2.0.mod) = 45
 SIZE (go_modules/github.com/cespare/xxhash/v2/@v/v2.3.0.mod) = 45
 SIZE (go_modules/github.com/cespare/xxhash/v2/@v/v2.3.0.zip) = 17573
+SIZE (go_modules/github.com/coder/websocket/@v/v1.8.12.mod) = 43
+SIZE (go_modules/github.com/coder/websocket/@v/v1.8.12.zip) = 69725
 SIZE (go_modules/github.com/davecgh/go-spew/@v/v1.1.0.mod) = 34
 SIZE (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.mod) = 34
 SIZE (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.zip) = 60320
@@ -453,6 +455,4 @@ SIZE (go_modules/modernc.org/strutil/@v/v1.2.0.mod) = 162
 SIZE (go_modules/modernc.org/strutil/@v/v1.2.0.zip) = 11620
 SIZE (go_modules/modernc.org/token/@v/v1.1.0.mod) = 25
 SIZE (go_modules/modernc.org/token/@v/v1.1.0.zip) = 6860
-SIZE (go_modules/nhooyr.io/websocket/@v/v1.8.11.mod) = 36
-SIZE (go_modules/nhooyr.io/websocket/@v/v1.8.11.zip) = 68663
-SIZE (soju-v0.8.1.zip) = 187131
+SIZE (soju-v0.8.2.zip) = 187213

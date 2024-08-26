@@ -8,6 +8,7 @@ MODGO_MODULES =	\
 	github.com/alecthomas/units			 v0.0.0-20211218093645-b94a6e3cc137 \
 	github.com/beorn7/perks				 v1.0.1 \
 	github.com/cespare/xxhash/v2			 v2.3.0 \
+	github.com/coder/websocket			 v1.8.12 \
 	github.com/davecgh/go-spew			 v1.1.1 \
 	github.com/dustin/go-humanize			 v1.0.1 \
 	github.com/emersion/go-sasl			 v0.0.0-20231106173351-e73c9f7bad43 \
@@ -78,8 +79,7 @@ MODGO_MODULES =	\
 	modernc.org/sortutil				 v1.2.0 \
 	modernc.org/sqlite				 v1.29.10 \
 	modernc.org/strutil				 v1.2.0 \
-	modernc.org/token				 v1.1.0 \
-	nhooyr.io/websocket				 v1.8.11
+	modernc.org/token				 v1.1.0
 
 MODGO_MODFILES =	\
 	github.com/cespare/xxhash/v2		 v2.2.0 \
