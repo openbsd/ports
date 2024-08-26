@@ -4,6 +4,7 @@ NOT_FOR_ARCHS =		sparc64
 COMMENT =		fast, encrypted, deduplicated backups
 
 DIST_TUPLE =		github rustic-rs rustic v0.8.0 .
+REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -22,9 +23,6 @@ LIB_DEPENDS =		archivers/zstd
 CONFIGURE_STYLE =	cargo
 
 SEPARATE_BUILD =	Yes
-
-post-patch:
-	${SUBST_CMD} ${WRKSRC}/modcargo-crates/canonical-path-2.0.2/src/lib.rs
 
 post-build:
 .for s in bash fish zsh
