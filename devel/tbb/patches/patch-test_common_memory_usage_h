@@ -1,0 +1,52 @@
+Index: test/common/memory_usage.h
+--- test/common/memory_usage.h.orig
++++ test/common/memory_usage.h
+@@ -86,7 +86,7 @@ namespace utils {
+     /* Returns 0 if not implemented on platform. */
+     std::size_t GetMemoryUsage(MemoryStatType stat = currentUsage) {
+         utils::suppress_unused_warning(stat);
+-#if __TBB_WIN8UI_SUPPORT || defined(WINAPI_FAMILY)
++#if __TBB_WIN8UI_SUPPORT || defined(WINAPI_FAMILY) || __OpenBSD__
+         return 0;
+ #elif _WIN32
+         PROCESS_MEMORY_COUNTERS mem;
+@@ -141,6 +141,9 @@ namespace utils {
+ #if __unix__
+ 
+     inline bool isTHPEnabledOnMachine() {
++#if __OpenBSD__
++        return false;
++#else
+         long long thpPresent = 'n';
+         long long hugePageSize = -1;
+ 
+@@ -155,20 +158,29 @@ namespace utils {
+         } else {
+             return false;
+         }
++#endif
+     }
+     inline long long getSystemTHPAllocatedSize() {
++#if __OpenBSD__
++        return 0;
++#else
+         long long anonHugePagesSize = 0;
+         parseFileItem meminfoItems[] = {
+             { "AnonHugePages: %lld kB", anonHugePagesSize } };
+         parseFile</*BUFF_SIZE=*/100>("/proc/meminfo", meminfoItems);
+         return anonHugePagesSize;
++#endif
+     }
+     inline long long getSystemTHPCount() {
++#if __OpenBSD__
++        return 0;
++#else
+         long long anonHugePages = 0;
+         parseFileItem vmstatItems[] = {
+             { "nr_anon_transparent_hugepages %lld", anonHugePages } };
+         parseFile</*BUFF_SIZE=*/100>("/proc/vmstat", vmstatItems);
+         return anonHugePages;
++#endif
+     }
+ 
+ #endif // __unix__
