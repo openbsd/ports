@@ -77,6 +77,14 @@ TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH} \
 do-configure:
 	@${MODCARGO_configure}
 
+# this symlink makes sure that the rust library is found, since by default the source is used to run the tests
+# another option would be to rm -Rf ${WRKSRC}/synapse/ to make sure the one under build/ is used
+pre-test:
+	ln -sf ${WRKSRC}/build/lib.openbsd-${OSREV}-${ARCH}-cpython-${MODPY_MAJORMINOR}/synapse/synapse_rust.abi3.so ${WRKSRC}/synapse/
+
+do-test:
+	cd ${MODPY_TEST_DIR} && ${SETENV} ${ALL_TEST_ENV} ${MODPY_BIN} -m twisted.trial tests
+
 # to generate rust modules.inc:
 #  make modcargo-gen-crates and modcargo-gen-crates-licenses
 .include "modules.inc"
