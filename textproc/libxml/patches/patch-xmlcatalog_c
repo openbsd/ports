@@ -1,3 +1,8 @@
+From 208a4d026cf7c90aad4957f5d8523d29480cddfc Mon Sep 17 00:00:00 2001
+From: Nick Wellnhofer <wellnhofer@aevum.de>
+Date: Mon, 19 Aug 2024 20:02:47 +0200
+Subject: [PATCH] xmlcatalog: Improved fix for #699
+
 Index: xmlcatalog.c
 --- xmlcatalog.c.orig
 +++ xmlcatalog.c
@@ -10,3 +15,17 @@ Index: xmlcatalog.c
  #endif
  
  /************************************************************************
+@@ -401,6 +401,13 @@ int main(int argc, char **argv) {
+ 	    if ((ret < 0) && (create)) {
+ 		xmlCatalogAdd(BAD_CAST "catalog", BAD_CAST argv[i], NULL);
+ 	    }
++
++            /*
++             * Catalogs are loaded lazily. Make sure that dumping works
++             * by the issuing a dummy request that forces the catalog to
++             * be loaded.
++             */
++            xmlCatalogResolvePublic(BAD_CAST "");
+ 	}
+ 	break;
+     }

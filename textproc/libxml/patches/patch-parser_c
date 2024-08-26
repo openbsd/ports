@@ -1,0 +1,17 @@
+From 3a648d11a3b9c7e19affd47edd05ce3713de9add Mon Sep 17 00:00:00 2001
+From: Nick Wellnhofer <wellnhofer@aevum.de>
+Date: Thu, 25 Jul 2024 17:07:18 +0200
+Subject: [PATCH] parser: Make xmlParseChunk return an error if parser was stopped
+
+Index: parser.c
+--- parser.c.orig
++++ parser.c
+@@ -11575,7 +11575,7 @@ xmlParseChunk(xmlParserCtxtPtr ctxt, const char *chunk
+         xmlHaltParser(ctxt);
+     }
+ 
+-    if ((ctxt->errNo != XML_ERR_OK) && (ctxt->disableSAX == 1))
++    if ((ctxt->errNo != XML_ERR_OK) && (ctxt->disableSAX != 0))
+         return(ctxt->errNo);
+ 
+     if ((end_in_lf == 1) && (ctxt->input != NULL) &&

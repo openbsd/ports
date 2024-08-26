@@ -1,0 +1,26 @@
+From 3a95572408151b5dfd9049e8b13871a941e2a7f7 Mon Sep 17 00:00:00 2001
+From: Nick Wellnhofer <wellnhofer@aevum.de>
+Date: Mon, 12 Aug 2024 21:38:50 +0200
+Subject: [PATCH] tree: Restore return value of xmlNodeListGetString with NULL list
+
+Index: xmlreader.c
+--- xmlreader.c.orig
++++ xmlreader.c
+@@ -2340,6 +2340,8 @@ xmlTextReaderGetAttributeNo(xmlTextReaderPtr reader, i
+     }
+     /* TODO walk the DTD if present */
+ 
++    if (cur->children == NULL)
++        return(NULL);
+     ret = xmlNodeListGetString(reader->node->doc, cur->children, 1);
+     if (ret == NULL)
+         xmlTextReaderErrMemory(reader);
+@@ -3585,6 +3587,8 @@ xmlTextReaderValue(xmlTextReaderPtr reader) {
+             xmlDocPtr doc = NULL;
+             xmlChar *ret;
+ 
++            if (attr->children == NULL)
++                return(NULL);
+ 	    if (attr->parent != NULL)
+                 doc = attr->parent->doc;
+ 	    ret = xmlNodeListGetString(doc, attr->children, 1);

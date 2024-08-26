@@ -1,0 +1,20 @@
+From 3a95572408151b5dfd9049e8b13871a941e2a7f7 Mon Sep 17 00:00:00 2001
+From: Nick Wellnhofer <wellnhofer@aevum.de>
+Date: Mon, 12 Aug 2024 21:38:50 +0200
+Subject: [PATCH] tree: Restore return value of xmlNodeListGetString with NULL list
+
+Index: valid.c
+--- valid.c.orig
++++ valid.c
+@@ -6224,7 +6224,10 @@ xmlValidateElement(xmlValidCtxtPtr ctxt, xmlDocPtr doc
+         if (elem->type == XML_ELEMENT_NODE) {
+             attr = elem->properties;
+             while (attr != NULL) {
+-                value = xmlNodeListGetString(doc, attr->children, 0);
++                if (attr->children == NULL)
++                    value = xmlStrdup(BAD_CAST "");
++                else
++                    value = xmlNodeListGetString(doc, attr->children, 0);
+                 if (value == NULL) {
+                     xmlVErrMemory(ctxt);
+                     ret = 0;

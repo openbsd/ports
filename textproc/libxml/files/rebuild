@@ -6,7 +6,7 @@ PREFIX=@PREFIX@
 dir=$PREFIX/share/libxml2
 catalog=/var/db/xmlcatalog
 cmd=$PREFIX/bin/xmlcatalog
-$cmd --create --noout $catalog 2>/dev/null
+$cmd --create --noout $catalog
 for i in $dir/*.spec
 do
     # protect against no spec

@@ -1,0 +1,80 @@
+From b93d4e708736196aca2252f07ff9488d6081bd16 Mon Sep 17 00:00:00 2001
+From: Nick Wellnhofer <wellnhofer@aevum.de>
+Date: Tue, 13 Aug 2024 14:38:07 +0200
+Subject: [PATCH] io: Add missing calls to xmlInitParser
+
+Index: xmlIO.c
+--- xmlIO.c.orig
++++ xmlIO.c
+@@ -1572,6 +1572,8 @@ xmlParserInputBufferCreateFilenameInt(const char *URI,
+     int ret;
+     int i;
+ 
++    xmlInitParser();
++
+     *out = NULL;
+     if (URI == NULL)
+         return(XML_ERR_ARGUMENT);
+@@ -1679,6 +1681,8 @@ __xmlOutputBufferCreateFilename(const char *URI,
+     int i = 0;
+     char *unescaped = NULL;
+ 
++    xmlInitParser();
++
+     if (URI == NULL)
+         return(NULL);
+ 
+@@ -2978,6 +2982,8 @@ int
+ xmlRegisterInputCallbacks(xmlInputMatchCallback matchFunc,
+ 	xmlInputOpenCallback openFunc, xmlInputReadCallback readFunc,
+ 	xmlInputCloseCallback closeFunc) {
++    xmlInitParser();
++
+     if (xmlInputCallbackNr >= MAX_INPUT_CALLBACK) {
+ 	return(-1);
+     }
+@@ -3009,6 +3015,8 @@ xmlRegisterDefaultInputCallbacks(void) {
+ int
+ xmlPopInputCallbacks(void)
+ {
++    xmlInitParser();
++
+     if (xmlInputCallbackNr <= 0)
+         return(-1);
+ 
+@@ -3026,6 +3034,8 @@ xmlPopInputCallbacks(void)
+ void
+ xmlCleanupInputCallbacks(void)
+ {
++    xmlInitParser();
++
+     xmlInputCallbackNr = 0;
+ }
+ 
+@@ -3045,6 +3055,8 @@ int
+ xmlRegisterOutputCallbacks(xmlOutputMatchCallback matchFunc,
+ 	xmlOutputOpenCallback openFunc, xmlOutputWriteCallback writeFunc,
+ 	xmlOutputCloseCallback closeFunc) {
++    xmlInitParser();
++
+     if (xmlOutputCallbackNr >= MAX_OUTPUT_CALLBACK) {
+ 	return(-1);
+     }
+@@ -3076,6 +3088,8 @@ xmlRegisterDefaultOutputCallbacks (void) {
+ int
+ xmlPopOutputCallbacks(void)
+ {
++    xmlInitParser();
++
+     if (xmlOutputCallbackNr <= 0)
+         return(-1);
+ 
+@@ -3093,6 +3107,8 @@ xmlPopOutputCallbacks(void)
+ void
+ xmlCleanupOutputCallbacks(void)
+ {
++    xmlInitParser();
++
+     xmlOutputCallbackNr = 0;
+ }
+ 
