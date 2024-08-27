@@ -3,6 +3,7 @@ COMMENT=	PostgreSQL RDBMS (previous version, for pg_upgrade)
 VERSION=	15.4
 DISTNAME=	postgresql-${VERSION}
 PKGNAME=	postgresql-previous-${VERSION}
+REVISION=	0
 
 CATEGORIES=	databases
 SHARED_LIBS=	ecpg		7.10 \
@@ -27,6 +28,8 @@ MAKE_FILE=	GNUmakefile
 SUBST_VARS=	VERSION
 
 USE_GMAKE=	Yes
+
+DEBUG_PACKAGES= ${BUILD_PACKAGES}
 
 CONFIGURE_STYLE=gnu
 
