@@ -1,7 +1,7 @@
 Index: components/visited_url_ranking/public/url_visit_util.cc
 --- components/visited_url_ranking/public/url_visit_util.cc.orig
 +++ components/visited_url_ranking/public/url_visit_util.cc
-@@ -54,7 +54,7 @@ PlatformType GetPlatformInput() {
+@@ -62,7 +62,7 @@ PlatformType GetPlatformInput() {
    return PlatformType::kWindows;
  #elif BUILDFLAG(IS_MAC)
    return PlatformType::kMac;

@@ -10,7 +10,7 @@ Index: ui/views/widget/widget.cc
  #include "ui/linux/linux_ui.h"
  #endif
  
-@@ -2172,7 +2172,7 @@ const ui::NativeTheme* Widget::GetNativeTheme() const 
+@@ -2182,7 +2182,7 @@ const ui::NativeTheme* Widget::GetNativeTheme() const 
    if (parent_)
      return parent_->GetNativeTheme();
  

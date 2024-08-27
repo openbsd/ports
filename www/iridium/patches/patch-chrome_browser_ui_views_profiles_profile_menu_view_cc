@@ -10,7 +10,7 @@ Index: chrome/browser/ui/views/profiles/profile_menu_view.cc
  #include "chrome/browser/enterprise/signin/enterprise_signin_prefs.h"
  #endif
  
-@@ -577,7 +577,7 @@ void ProfileMenuView::BuildIdentity() {
+@@ -568,7 +568,7 @@ void ProfileMenuView::BuildIdentity() {
          badge_image_model, menu_title_, menu_subtitle_, management_label);
    } else {
      std::string profile_user_display_name, profile_user_email;

@@ -1,7 +1,7 @@
 Index: chrome/browser/enterprise/connectors/reporting/browser_crash_event_router.cc
 --- chrome/browser/enterprise/connectors/reporting/browser_crash_event_router.cc.orig
 +++ chrome/browser/enterprise/connectors/reporting/browser_crash_event_router.cc
-@@ -11,7 +11,7 @@ namespace enterprise_connectors {
+@@ -13,7 +13,7 @@ namespace enterprise_connectors {
  
  BrowserCrashEventRouter::BrowserCrashEventRouter(
      content::BrowserContext* context) {
@@ -10,7 +10,7 @@ Index: chrome/browser/enterprise/connectors/reporting/browser_crash_event_router
    CrashReportingContext* crash_reporting_context =
        CrashReportingContext::GetInstance();
    Profile* profile = Profile::FromBrowserContext(context);
-@@ -21,7 +21,7 @@ BrowserCrashEventRouter::BrowserCrashEventRouter(
+@@ -23,7 +23,7 @@ BrowserCrashEventRouter::BrowserCrashEventRouter(
  }
  
  BrowserCrashEventRouter::~BrowserCrashEventRouter() {

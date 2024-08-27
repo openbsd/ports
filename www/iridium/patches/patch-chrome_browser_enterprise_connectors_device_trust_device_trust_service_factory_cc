@@ -19,7 +19,7 @@ Index: chrome/browser/enterprise/connectors/device_trust/device_trust_service_fa
  policy::CloudPolicyStore* GetUserCloudPolicyStore(Profile* profile) {
    policy::CloudPolicyManager* user_policy_manager =
        profile->GetCloudPolicyManager();
-@@ -101,7 +101,7 @@ DeviceTrustServiceFactory::DeviceTrustServiceFactory()
+@@ -106,7 +106,7 @@ DeviceTrustServiceFactory::DeviceTrustServiceFactory()
    DependsOn(DeviceTrustConnectorServiceFactory::GetInstance());
    DependsOn(policy::ManagementServiceFactory::GetInstance());
  
