@@ -190,6 +190,7 @@ share/doc/libsoup-${API_VERSION}/func.DEPRECATED_FOR.html
 share/doc/libsoup-${API_VERSION}/func.DEPRECATED_IN_3_0_FOR.html
 share/doc/libsoup-${API_VERSION}/func.DEPRECATED_IN_3_2_FOR.html
 share/doc/libsoup-${API_VERSION}/func.DEPRECATED_IN_3_4_FOR.html
+share/doc/libsoup-${API_VERSION}/func.DEPRECATED_IN_3_6_FOR.html
 share/doc/libsoup-${API_VERSION}/func.UNAVAILABLE.html
 share/doc/libsoup-${API_VERSION}/func.check_version.html
 share/doc/libsoup-${API_VERSION}/func.cookies_free.html
@@ -542,6 +543,7 @@ share/doc/libsoup-${API_VERSION}/method.WebsocketConnection.get_connection_type.
 share/doc/libsoup-${API_VERSION}/method.WebsocketConnection.get_extensions.html
 share/doc/libsoup-${API_VERSION}/method.WebsocketConnection.get_io_stream.html
 share/doc/libsoup-${API_VERSION}/method.WebsocketConnection.get_keepalive_interval.html
+share/doc/libsoup-${API_VERSION}/method.WebsocketConnection.get_keepalive_pong_timeout.html
 share/doc/libsoup-${API_VERSION}/method.WebsocketConnection.get_max_incoming_payload_size.html
 share/doc/libsoup-${API_VERSION}/method.WebsocketConnection.get_origin.html
 share/doc/libsoup-${API_VERSION}/method.WebsocketConnection.get_protocol.html
@@ -551,6 +553,7 @@ share/doc/libsoup-${API_VERSION}/method.WebsocketConnection.send_binary.html
 share/doc/libsoup-${API_VERSION}/method.WebsocketConnection.send_message.html
 share/doc/libsoup-${API_VERSION}/method.WebsocketConnection.send_text.html
 share/doc/libsoup-${API_VERSION}/method.WebsocketConnection.set_keepalive_interval.html
+share/doc/libsoup-${API_VERSION}/method.WebsocketConnection.set_keepalive_pong_timeout.html
 share/doc/libsoup-${API_VERSION}/method.WebsocketConnection.set_max_incoming_payload_size.html
 share/doc/libsoup-${API_VERSION}/method.WebsocketExtension.configure.html
 share/doc/libsoup-${API_VERSION}/method.WebsocketExtension.get_request_params.html
@@ -626,6 +629,7 @@ share/doc/libsoup-${API_VERSION}/property.WebsocketConnection.connection-type.ht
 share/doc/libsoup-${API_VERSION}/property.WebsocketConnection.extensions.html
 share/doc/libsoup-${API_VERSION}/property.WebsocketConnection.io-stream.html
 share/doc/libsoup-${API_VERSION}/property.WebsocketConnection.keepalive-interval.html
+share/doc/libsoup-${API_VERSION}/property.WebsocketConnection.keepalive-pong-timeout.html
 share/doc/libsoup-${API_VERSION}/property.WebsocketConnection.max-incoming-payload-size.html
 share/doc/libsoup-${API_VERSION}/property.WebsocketConnection.origin.html
 share/doc/libsoup-${API_VERSION}/property.WebsocketConnection.protocol.html
@@ -757,6 +761,7 @@ share/locale/id/LC_MESSAGES/libsoup-${API_VERSION}.mo
 share/locale/it/LC_MESSAGES/libsoup-${API_VERSION}.mo
 share/locale/ja/LC_MESSAGES/libsoup-${API_VERSION}.mo
 share/locale/ka/LC_MESSAGES/libsoup-${API_VERSION}.mo
+share/locale/kab/LC_MESSAGES/libsoup-${API_VERSION}.mo
 share/locale/kn/LC_MESSAGES/libsoup-${API_VERSION}.mo
 share/locale/ko/LC_MESSAGES/libsoup-${API_VERSION}.mo
 share/locale/lt/LC_MESSAGES/libsoup-${API_VERSION}.mo
