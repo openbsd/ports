@@ -1,6 +1,6 @@
 COMMENT =	modular and extensible wayland compositor
 
-V =		0.8.1
+V =		0.9.0
 DISTNAME =	wayfire-${V}
 
 SHARED_LIBS +=	wf-utils 0.0 # 0.0
@@ -26,6 +26,7 @@ RUN_DEPENDS +=	graphics/glm
 
 CONFIGURE_ARGS =-Duse_system_wfconfig=enabled \
 		-Duse_system_wlroots=enabled \
+		-Denable_openmp=false \
 		-Dtests=disabled
 
 LIB_DEPENDS =	devel/pango \

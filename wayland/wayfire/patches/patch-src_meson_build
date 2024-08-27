@@ -9,10 +9,10 @@ Index: src/meson.build
  wayfire_dependencies = [wayland_server, wlroots, xkbcommon, libinput,
 -                       pixman, drm, egl, glesv2, glm, wf_protos, libdl,
 +                       pixman, drm, egl, glesv2, glm, wf_protos,
-                        wfconfig, libinotify, backtrace, wfutils, xcb, wftouch]
+                        wfconfig, libinotify, backtrace, wfutils, xcb, wftouch, json]
  
  if conf_data.get('BUILD_WITH_IMAGEIO')
-@@ -131,6 +131,7 @@ shared_module('default-config-backend', 'default-confi
+@@ -134,6 +134,7 @@ shared_module('default-config-backend', 'default-confi
      dependencies: wayfire_dependencies,
      include_directories: [wayfire_conf_inc, wayfire_api_inc],
      cpp_args: debug_arguments,
