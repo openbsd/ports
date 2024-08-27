@@ -1151,6 +1151,7 @@ lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_quorum_queue_r
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_quorum_queue_replicas_delete_member.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_quorum_queue_replicas_grow.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_quorum_queue_replicas_shrink.beam
+lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_quorum_queue_status.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_rebalance_queues.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_redirect.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_reset.beam
@@ -1474,7 +1475,8 @@ lib/rabbitmq/plugins/rabbitmq_shovel-${V}/include/logging.hrl
 lib/rabbitmq/plugins/rabbitmq_shovel-${V}/include/rabbit_shovel.hrl
 lib/rabbitmq/plugins/rabbitmq_shovel_management-${V}/
 lib/rabbitmq/plugins/rabbitmq_shovel_management-${V}/ebin/
-lib/rabbitmq/plugins/rabbitmq_shovel_management-${V}/ebin/rabbit_shovel_mgmt.beam
+lib/rabbitmq/plugins/rabbitmq_shovel_management-${V}/ebin/rabbit_shovel_mgmt_shovel.beam
+lib/rabbitmq/plugins/rabbitmq_shovel_management-${V}/ebin/rabbit_shovel_mgmt_shovels.beam
 lib/rabbitmq/plugins/rabbitmq_shovel_management-${V}/ebin/rabbit_shovel_mgmt_util.beam
 lib/rabbitmq/plugins/rabbitmq_shovel_management-${V}/ebin/rabbitmq_shovel_management.app
 lib/rabbitmq/plugins/rabbitmq_shovel_management-${V}/priv/
