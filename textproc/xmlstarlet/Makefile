@@ -1,13 +1,11 @@
 COMMENT =	command line XML toolkit
 
 DISTNAME =	xmlstarlet-1.6.1
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	textproc
 
 HOMEPAGE =	https://xmlstar.sourceforge.net/
-
-MAINTAINER =	Ingo Feinerer <feinerer@logic.at>
 
 # MIT
 PERMIT_PACKAGE =	Yes

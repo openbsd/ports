@@ -3,13 +3,11 @@ COMMENT =	PDF parser and analyzer
 MODPY_EGG_VERSION =	20221105
 DISTNAME =		pdfminer.six-${MODPY_EGG_VERSION}
 PKGNAME =		py-pdfminer-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =	textproc
 
 HOMEPAGE =	https://pdfminersix.readthedocs.io/
-
-MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 
 # MIT
 PERMIT_PACKAGE =	Yes

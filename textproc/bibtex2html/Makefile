@@ -1,12 +1,10 @@
 COMMENT =		collection of tools for translating from BibTeX to HTML
 
 DISTNAME =		bibtex2html-1.99
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		textproc
 HOMEPAGE =		https://www.lri.fr/~filliatr/bibtex2html/
-
-MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 
 # GPLv2 only
 PERMIT_PACKAGE =	Yes

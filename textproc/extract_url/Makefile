@@ -3,12 +3,11 @@ COMMENT =		extract URLs from MIME email messages or plain text
 GH_ACCOUNT =		m3m0ryh0l3
 GH_PROJECT =		extracturl
 GH_TAGNAME =		v1.6.2
+REVISION =		0
 
 CATEGORIES =		textproc
 
 HOMEPAGE =		http://www.memoryhole.net/~kyle/extract_url/
-
-MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 
 # BSD
 PERMIT_PACKAGE =	Yes
