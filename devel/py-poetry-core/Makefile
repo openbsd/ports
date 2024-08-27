@@ -1,10 +1,9 @@
 COMMENT =	PEP517 build backend
 
-MODPY_EGG_VERSION =	1.3.2
+MODPY_EGG_VERSION =	1.9.0
 
-DISTNAME =	poetry-core-${MODPY_EGG_VERSION}
-PKGNAME =	py-${DISTNAME}
-REVISION =	1
+DISTNAME =	poetry_core-${MODPY_EGG_VERSION}
+PKGNAME =	py-${DISTNAME:S/_/-/}
 
 CATEGORIES =	devel
 
@@ -20,6 +19,10 @@ FLAVOR =	python3
 FLAVORS =	python3
 
 MODPY_PYBUILD =	other
+
+TEST_DEPENDS =	devel/py-virtualenv${MODPY_FLAVOR} \
+		devel/py-test-mock${MODPY_FLAVOR} \
+		textproc/py-tomli_w${MODPY_FLAVOR}
 
 pre-build:
 	@if [ -d ${MODPY_SITEPKG}/poetry/core ]; then \
