@@ -1,7 +1,9 @@
+Print build commands
+
 Index: build.go
 --- build.go.orig
 +++ build.go
-@@ -569,7 +569,7 @@ func appendParameters(args []string, tags []string, pk
+@@ -567,7 +567,7 @@ func appendParameters(args []string, tags []string, pk
  
  	if !debugBinary {
  		// Regular binaries get version tagged and skip some debug symbols
