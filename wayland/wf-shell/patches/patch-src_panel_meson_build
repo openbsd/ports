@@ -1,7 +1,7 @@
 Index: src/panel/meson.build
 --- src/panel/meson.build.orig
 +++ src/panel/meson.build
-@@ -16,7 +16,7 @@ widget_sources = ['widgets/battery.cpp',
+@@ -17,7 +17,7 @@ widget_sources = ['widgets/battery.cpp',
                    'widgets/tray/item.cpp',
                    'widgets/tray/host.cpp']
  
@@ -10,7 +10,7 @@ Index: src/panel/meson.build
  
  if libpulse.found()
    widget_sources += 'widgets/volume.cpp'
-@@ -25,4 +25,5 @@ endif
+@@ -26,4 +26,5 @@ endif
  
  executable('wf-panel', ['panel.cpp'] + widget_sources,
          dependencies: deps,

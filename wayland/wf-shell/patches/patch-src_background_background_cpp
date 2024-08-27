@@ -6,7 +6,7 @@ Index: src/background/background.cpp
  #include <glibmm/main.h>
  #include <gtkmm/drawingarea.h>
  #include <gtkmm/window.h>
-@@ -124,24 +123,9 @@ bool WayfireBackground::change_background()
+@@ -167,24 +166,9 @@ bool WayfireBackground::change_background()
  
  bool WayfireBackground::load_images_from_dir(std::string path)
  {
@@ -32,7 +32,7 @@ Index: src/background/background.cpp
          return false;
      }
  
-@@ -155,7 +139,7 @@ bool WayfireBackground::load_images_from_dir(std::stri
+@@ -198,7 +182,7 @@ bool WayfireBackground::load_images_from_dir(std::stri
              continue;
          }
  
@@ -41,7 +41,7 @@ Index: src/background/background.cpp
  
          struct stat next;
          if (stat(fullpath.c_str(), &next) == 0)
-@@ -170,8 +154,6 @@ bool WayfireBackground::load_images_from_dir(std::stri
+@@ -213,8 +197,6 @@ bool WayfireBackground::load_images_from_dir(std::stri
              }
          }
      }
