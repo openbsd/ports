@@ -1,2 +1,4 @@
-SHA256 (libavif-1.0.4.tar.gz) = 3FZwjIOkuTSoryt49n+Ga6L7VoYFx8+UMSrPUe5X0UY=
-SIZE (libavif-1.0.4.tar.gz) = 10575992
+SHA256 (AOMediaCodec-libavif-v1.1.0.tar.gz) = 7bMZUQBdehQ74XJPJIJYCVmaSDIHOt1Q6vmHcz3vtcg=
+SHA256 (lemenkov-libyuv-a6a2ec654b1be1166b376476a7555c89eca0c275.tar.gz) = +5dXKi3B2Ok3bmGzPrSHCMzPs0Egb8m02atl9Asyb7M=
+SIZE (AOMediaCodec-libavif-v1.1.0.tar.gz) = 13642536
+SIZE (lemenkov-libyuv-a6a2ec654b1be1166b376476a7555c89eca0c275.tar.gz) = 570482

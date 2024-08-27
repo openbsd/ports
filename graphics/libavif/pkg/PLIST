@@ -2,6 +2,7 @@
 @bin bin/avifenc
 include/avif/
 include/avif/avif.h
+include/avif/avif_cxx.h
 lib/cmake/libavif/
 lib/cmake/libavif/libavif-config${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/libavif/libavif-config-version.cmake
