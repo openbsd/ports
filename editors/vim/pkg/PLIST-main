@@ -443,6 +443,7 @@ share/vim/${P}/ftplugin/asm.vim
 share/vim/${P}/ftplugin/aspvbs.vim
 share/vim/${P}/ftplugin/astro.vim
 share/vim/${P}/ftplugin/asy.vim
+share/vim/${P}/ftplugin/autohotkey.vim
 share/vim/${P}/ftplugin/automake.vim
 share/vim/${P}/ftplugin/awk.vim
 share/vim/${P}/ftplugin/bash.vim
@@ -536,6 +537,7 @@ share/vim/${P}/ftplugin/gitignore.vim
 share/vim/${P}/ftplugin/gitrebase.vim
 share/vim/${P}/ftplugin/gitsendemail.vim
 share/vim/${P}/ftplugin/go.vim
+share/vim/${P}/ftplugin/goaccess.vim
 share/vim/${P}/ftplugin/gomod.vim
 share/vim/${P}/ftplugin/gpg.vim
 share/vim/${P}/ftplugin/gprof.vim
@@ -746,6 +748,7 @@ share/vim/${P}/ftplugin/terraform.vim
 share/vim/${P}/ftplugin/tex.vim
 share/vim/${P}/ftplugin/text.vim
 share/vim/${P}/ftplugin/tf.vim
+share/vim/${P}/ftplugin/thrift.vim
 share/vim/${P}/ftplugin/tidy.vim
 share/vim/${P}/ftplugin/tmux.vim
 share/vim/${P}/ftplugin/toml.vim
@@ -852,6 +855,7 @@ share/vim/${P}/indent/freebasic.vim
 share/vim/${P}/indent/gdscript.vim
 share/vim/${P}/indent/gitconfig.vim
 share/vim/${P}/indent/gitolite.vim
+share/vim/${P}/indent/glsl.vim
 share/vim/${P}/indent/go.vim
 share/vim/${P}/indent/gyp.vim
 share/vim/${P}/indent/haml.vim
@@ -904,6 +908,7 @@ share/vim/${P}/indent/php.vim
 share/vim/${P}/indent/postscr.vim
 share/vim/${P}/indent/pov.vim
 share/vim/${P}/indent/prolog.vim
+share/vim/${P}/indent/proto.vim
 share/vim/${P}/indent/ps1.vim
 share/vim/${P}/indent/pyrex.vim
 share/vim/${P}/indent/python.vim
@@ -943,6 +948,7 @@ share/vim/${P}/indent/tcsh.vim
 share/vim/${P}/indent/teraterm.vim
 share/vim/${P}/indent/tex.vim
 share/vim/${P}/indent/tf.vim
+share/vim/${P}/indent/thrift.vim
 share/vim/${P}/indent/tilde.vim
 share/vim/${P}/indent/treetop.vim
 share/vim/${P}/indent/typescript.vim
@@ -1440,9 +1446,11 @@ share/vim/${P}/syntax/gitolite.vim
 share/vim/${P}/syntax/gitrebase.vim
 share/vim/${P}/syntax/gitsendemail.vim
 share/vim/${P}/syntax/gkrellmrc.vim
+share/vim/${P}/syntax/glsl.vim
 share/vim/${P}/syntax/gnash.vim
 share/vim/${P}/syntax/gnuplot.vim
 share/vim/${P}/syntax/go.vim
+share/vim/${P}/syntax/goaccess.vim
 share/vim/${P}/syntax/godoc.vim
 share/vim/${P}/syntax/gp.vim
 share/vim/${P}/syntax/gpg.vim
@@ -1477,6 +1485,7 @@ share/vim/${P}/syntax/hollywood.vim
 share/vim/${P}/syntax/hostconf.vim
 share/vim/${P}/syntax/hostsaccess.vim
 share/vim/${P}/syntax/html.vim
+share/vim/${P}/syntax/htmlangular.vim
 share/vim/${P}/syntax/htmlcheetah.vim
 share/vim/${P}/syntax/htmldjango.vim
 share/vim/${P}/syntax/htmlm4.vim
@@ -1859,6 +1868,7 @@ share/vim/${P}/syntax/tex.vim
 share/vim/${P}/syntax/texinfo.vim
 share/vim/${P}/syntax/texmf.vim
 share/vim/${P}/syntax/tf.vim
+share/vim/${P}/syntax/thrift.vim
 share/vim/${P}/syntax/tidy.vim
 share/vim/${P}/syntax/tilde.vim
 share/vim/${P}/syntax/tli.vim
