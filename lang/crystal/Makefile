@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS=	amd64
 
 USE_NOBTCFI =	Yes
 
-V =		1.13.1
+V =		1.13.2
 V_SHARDS =	0.18.0
 V_MOLINILLO =	0.2.0
 COMMENT =	statically typed object oriented language
@@ -35,7 +35,7 @@ SITES.a =	https://jcs.org/distfiles/
 SITES.b =	https://github.com/crystal-lang/shards/archive/
 SITES.c =	https://github.com/crystal-lang/crystal-molinillo/archive/
 DISTFILES =	crystal-${V}{${V}}.tar.gz
-DISTFILES.a = 	crystal-${V}-OpenBSD7.5.tar.gz
+DISTFILES.a = 	crystal-${V}-OpenBSD7.6.tar.gz
 DISTFILES.b = 	shards-${V}{v${V_SHARDS}}.tar.gz
 DISTFILES.c =	crystal-molinillo-${V}{v${V_MOLINILLO}}.tar.gz
 
