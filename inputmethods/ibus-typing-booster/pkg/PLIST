@@ -178,6 +178,7 @@ share/ibus-typing-booster/data/annotations/zh_Hant_HK.xml
 share/ibus-typing-booster/data/annotations/zu.xml
 share/ibus-typing-booster/data/annotationsDerived/
 share/ibus-typing-booster/data/annotationsDerived/af.xml
+share/ibus-typing-booster/data/annotationsDerived/ak.xml
 share/ibus-typing-booster/data/annotationsDerived/am.xml
 share/ibus-typing-booster/data/annotationsDerived/ar.xml
 share/ibus-typing-booster/data/annotationsDerived/ar_SA.xml
@@ -188,10 +189,13 @@ share/ibus-typing-booster/data/annotationsDerived/be.xml
 share/ibus-typing-booster/data/annotationsDerived/bew.xml
 share/ibus-typing-booster/data/annotationsDerived/bg.xml
 share/ibus-typing-booster/data/annotationsDerived/bgn.xml
+share/ibus-typing-booster/data/annotationsDerived/blo.xml
 share/ibus-typing-booster/data/annotationsDerived/bn.xml
 share/ibus-typing-booster/data/annotationsDerived/br.xml
 share/ibus-typing-booster/data/annotationsDerived/bs.xml
 share/ibus-typing-booster/data/annotationsDerived/ca.xml
+share/ibus-typing-booster/data/annotationsDerived/ca_ES.xml
+share/ibus-typing-booster/data/annotationsDerived/ca_ES_VALENCIA.xml
 share/ibus-typing-booster/data/annotationsDerived/ccp.xml
 share/ibus-typing-booster/data/annotationsDerived/ceb.xml
 share/ibus-typing-booster/data/annotationsDerived/chr.xml
@@ -225,11 +229,13 @@ share/ibus-typing-booster/data/annotationsDerived/fil.xml
 share/ibus-typing-booster/data/annotationsDerived/fo.xml
 share/ibus-typing-booster/data/annotationsDerived/fr.xml
 share/ibus-typing-booster/data/annotationsDerived/fr_CA.xml
+share/ibus-typing-booster/data/annotationsDerived/frr.xml
 share/ibus-typing-booster/data/annotationsDerived/ga.xml
 share/ibus-typing-booster/data/annotationsDerived/gd.xml
 share/ibus-typing-booster/data/annotationsDerived/gl.xml
 share/ibus-typing-booster/data/annotationsDerived/gu.xml
 share/ibus-typing-booster/data/annotationsDerived/ha.xml
+share/ibus-typing-booster/data/annotationsDerived/ha_NE.xml
 share/ibus-typing-booster/data/annotationsDerived/he.xml
 share/ibus-typing-booster/data/annotationsDerived/hi.xml
 share/ibus-typing-booster/data/annotationsDerived/hi_Latn.xml
@@ -247,6 +253,7 @@ share/ibus-typing-booster/data/annotationsDerived/jv.xml
 share/ibus-typing-booster/data/annotationsDerived/ka.xml
 share/ibus-typing-booster/data/annotationsDerived/kab.xml
 share/ibus-typing-booster/data/annotationsDerived/kk.xml
+share/ibus-typing-booster/data/annotationsDerived/kk_Arab.xml
 share/ibus-typing-booster/data/annotationsDerived/kl.xml
 share/ibus-typing-booster/data/annotationsDerived/km.xml
 share/ibus-typing-booster/data/annotationsDerived/kn.xml
@@ -275,9 +282,11 @@ share/ibus-typing-booster/data/annotationsDerived/nn.xml
 share/ibus-typing-booster/data/annotationsDerived/no.xml
 share/ibus-typing-booster/data/annotationsDerived/nso.xml
 share/ibus-typing-booster/data/annotationsDerived/oc.xml
+share/ibus-typing-booster/data/annotationsDerived/om.xml
 share/ibus-typing-booster/data/annotationsDerived/or.xml
 share/ibus-typing-booster/data/annotationsDerived/pa.xml
 share/ibus-typing-booster/data/annotationsDerived/pa_Arab.xml
+share/ibus-typing-booster/data/annotationsDerived/pap.xml
 share/ibus-typing-booster/data/annotationsDerived/pcm.xml
 share/ibus-typing-booster/data/annotationsDerived/pl.xml
 share/ibus-typing-booster/data/annotationsDerived/ps.xml
@@ -323,6 +332,7 @@ share/ibus-typing-booster/data/annotationsDerived/ug.xml
 share/ibus-typing-booster/data/annotationsDerived/uk.xml
 share/ibus-typing-booster/data/annotationsDerived/ur.xml
 share/ibus-typing-booster/data/annotationsDerived/uz.xml
+share/ibus-typing-booster/data/annotationsDerived/vec.xml
 share/ibus-typing-booster/data/annotationsDerived/vi.xml
 share/ibus-typing-booster/data/annotationsDerived/wo.xml
 share/ibus-typing-booster/data/annotationsDerived/xh.xml
