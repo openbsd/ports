@@ -10,9 +10,9 @@ lib/python${MODPY_VERSION}/site-packages/autorandr-${MODPY_EGG_VERSION}.dist-inf
 lib/python${MODPY_VERSION}/site-packages/autorandr-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/autorandr.py
 @man man/man1/autorandr.1
-share/bash_completion/
-share/bash_completion/completions/
-share/bash_completion/completions/autorandr
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/autorandr
 share/fish/
 share/fish/vendor_completions.d/
 share/fish/vendor_completions.d/autorandr.fish
