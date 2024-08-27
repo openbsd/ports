@@ -1,9 +1,8 @@
 COMMENT =	wayfire graphical configuration manager
 
-V =		0.8.0
+V =		0.9.0
 DISTNAME =	wcm-${V}
 
-SHARED_LIBS +=	wf-wcm 0.0 # 0.0
 CATEGORIES =	wayland
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
@@ -16,7 +15,7 @@ EXTRACT_SUFX =	.tar.xz
 MODULES =	devel/meson
 
 BUILD_DEPENDS =	wayland/wayland-protocols\
-		wayland/wayfire \
+		wayland/wayfire>=0.9.0 \
 		wayland/wf-shell \
 
 LIB_DEPENDS =	wayland/wayland \

@@ -1,15 +1,15 @@
 Index: src/wcm.cpp
 --- src/wcm.cpp.orig
 +++ src/wcm.cpp
-@@ -6,7 +6,6 @@
- #include <wayfire/config/compound-option.hpp>
+@@ -7,7 +7,6 @@
  #include <wayfire/config/types.hpp>
  #include <wayfire/config/xml.hpp>
+ #include <wayfire/util/duration.hpp>
 -#include <wordexp.h>
  
  #define OUTPUT_CONFIG_PROGRAM "wdisplays"
  
-@@ -1507,15 +1506,6 @@ void WCM::open_page(Plugin *plugin)
+@@ -1604,15 +1603,6 @@ void WCM::open_page(Plugin *plugin)
      current_plugin = plugin;
  }
  
@@ -25,7 +25,7 @@ Index: src/wcm.cpp
  void WCM::load_config_files()
  {
      const char *wf_config_file_override = getenv("WAYFIRE_CONFIG_FILE");
-@@ -1523,7 +1513,7 @@ void WCM::load_config_files()
+@@ -1620,7 +1610,7 @@ void WCM::load_config_files()
  
      if (wf_config_file.empty())
      {
@@ -34,7 +34,7 @@ Index: src/wcm.cpp
      }
  
      std::vector<std::string> wayfire_xmldirs;
-@@ -1546,8 +1536,7 @@ void WCM::load_config_files()
+@@ -1643,8 +1633,7 @@ void WCM::load_config_files()
  
      if (wf_shell_config_file.empty())
      {
