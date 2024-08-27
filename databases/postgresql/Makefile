@@ -9,6 +9,7 @@ VERSION=	16.4
 PREV_MAJOR=	15
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
+REVISION=	0
 
 DPB_PROPERTIES=	parallel
 
@@ -38,6 +39,8 @@ SUBST_VARS=	VERSION V_MAJOR PREV_MAJOR
 UPDATE_PLIST_ARGS=	-i V_MAJOR
 
 USE_GMAKE=	Yes
+
+DEBUG_PACKAGES= ${BUILD_PACKAGES}
 
 CONFIGURE_STYLE=gnu
 
@@ -116,17 +119,6 @@ MAKE_ENV=	LIBpq_MAJOR=${LIBpq_VERSION:R} \
 		LIBecpg_compat_MINOR=${LIBecpg_compat_VERSION:E} \
 		LIBpgtypes_MAJOR=${LIBpgtypes_VERSION:R} \
 		LIBpgtypes_MINOR=${LIBpgtypes_VERSION:E}
-
-# Regression tests must be done manually and not as root. Successful
-# runs have been achieved on the i386 using the following:
-#
-#	$ ulimit -p 128
-#	$ ulimit -n 1024
-#	$ make test NO_TEST=No
-#
-# Note, you may also need to change a variety of SYSV IPC parameters.
-# See pkg/README-server for more details
-NO_TEST=	Yes
 
 DOCS=	${WRKSRC}/COPYRIGHT ${WRKSRC}/HISTORY \
 	${WRKSRC}/INSTALL ${WRKSRC}/README \
