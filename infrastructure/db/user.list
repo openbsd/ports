@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.449 2024/08/24 16:48:14 semarie Exp $
+$OpenBSD: user.list,v 1.450 2024/08/28 23:11:36 aisha Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -113,7 +113,7 @@ id  user		group		port
 602 _havp		_havp		www/havp
 603 _argus		_argus		net/argus
 604 _haproxy		_haproxy	net/haproxy
-#605 _hudson		_hudson		devel/hudson
+605 _pm2		_pm2		www/pm2
 606 _ladvd		_ladvd		net/ladvd
 607 _gkrellmd		_gkrellmd	sysutils/gkrellm/gkrellm
 #608 _cherokee		_cherokee	www/cherokee
