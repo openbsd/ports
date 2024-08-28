@@ -4,6 +4,8 @@ GH_ACCOUNT =		Unitech
 GH_PROJECT =		pm2
 GH_TAGNAME =		v5.4.2
 
+REVISION =		0
+
 CATEGORIES =		www
 
 HOMEPAGE =		https://pm2.keymetrics.io/
@@ -41,5 +43,7 @@ do-install:
 	cp -a ${WRKSRC} ${PREFIX}/libexec/pm2
 	rm -r ${PREFIX}/libexec/pm2/test
 	ln -sf ${TRUEPREFIX}/libexec/pm2/bin/pm2 ${PREFIX}/bin/pm2
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/pm2
+	${INSTALL_DATA} ${FILESDIR}/ecosystem.config.js ${PREFIX}/share/doc/pm2/
 
 .include <bsd.port.mk>

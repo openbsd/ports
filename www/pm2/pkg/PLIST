@@ -1,3 +1,14 @@
+@newgroup _pm2:605
+@newuser _pm2:605:605::PM2:${LOCALSTATEDIR}/db/pm2:/sbin/nologin
+@mode 750
+@owner _pm2
+@group _pm2
+@sample ${LOCALSTATEDIR}/db/pm2/
+@owner
+@sample ${SYSCONFDIR}/pm2/
+@mode
+@group
+@rcscript ${RCDIR}/pm2
 bin/pm2
 libexec/pm2/
 libexec/pm2/.editorconfig
@@ -5430,3 +5441,8 @@ libexec/pm2/pres/vitals.png
 libexec/pm2/types/
 libexec/pm2/types/index.d.ts
 libexec/pm2/types/tsconfig.json
+share/doc/pm2/
+share/doc/pm2/ecosystem.config.js
+@mode 640
+@group _pm2
+@sample ${SYSCONFDIR}/pm2/ecosystem.config.js
