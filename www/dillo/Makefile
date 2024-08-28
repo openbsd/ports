@@ -3,7 +3,7 @@ COMMENT =		fast and light graphical web browser
 CATEGORIES =		www
 
 DIST_TUPLE +=		github dillo-browser dillo v3.1.1 .
-REVISION =		0
+REVISION =		2
 
 HOMEPAGE =		https://dillo-browser.github.io/
 
