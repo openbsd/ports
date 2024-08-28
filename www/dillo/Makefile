@@ -3,6 +3,7 @@ COMMENT =		fast and light graphical web browser
 CATEGORIES =		www
 
 DIST_TUPLE +=		github dillo-browser dillo v3.1.1 .
+REVISION =		0
 
 HOMEPAGE =		https://dillo-browser.github.io/
 
@@ -14,6 +15,7 @@ WANTLIB += fltk fontconfig iconv jpeg m png pthread ssl ${COMPILER_LIBCXX} z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 EXTRACT_SUFX =	.tar.bz2
 
