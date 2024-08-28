@@ -26,6 +26,8 @@ CONFIGURE_ARGS +=	--program-suffix=${SUFFIX}
 CONFIGURE_ENV ?=	CPPFLAGS='-I${LOCALBASE}/include' \
 			LDFLAGS='-L${LOCALBASE}/lib'
 
+DEBUG_PACKAGES ?=	${BUILD_PACKAGES}
+
 USE_LUAJIT ?=		Yes
 .if ${MODULES:Mlang/lua}
 .if ${USE_LUAJIT:L} == "yes" && ${PROPERTIES:Mluajit}
