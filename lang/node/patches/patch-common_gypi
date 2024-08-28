@@ -1,7 +1,7 @@
 Index: common.gypi
 --- common.gypi.orig
 +++ common.gypi
-@@ -189,7 +189,6 @@
+@@ -190,7 +190,6 @@
              }],
            ],
          },
@@ -9,7 +9,7 @@ Index: common.gypi
          'conditions': [
            ['enable_lto=="true"', {
              'cflags': ['<(lto)'],
-@@ -473,7 +472,9 @@
+@@ -474,7 +473,9 @@
            }],
            ['OS=="openbsd"', {
              'cflags': [ '-I/usr/local/include' ],
@@ -20,7 +20,7 @@ Index: common.gypi
            }],
            ['_toolset=="host"', {
              'conditions': [
-@@ -490,7 +491,7 @@
+@@ -491,7 +492,7 @@
                  'ldflags': [ '-m32' ],
                }],
                [ 'host_arch=="ppc64" and OS not in "aix os400"', {
@@ -29,7 +29,7 @@ Index: common.gypi
                  'ldflags': [ '-m64' ],
                }],
                [ 'host_arch=="s390x" and OS=="linux"', {
-@@ -514,7 +515,7 @@
+@@ -515,7 +516,7 @@
                  'ldflags': [ '-m32' ],
                }],
                [ 'target_arch=="ppc64" and OS not in "aix os400"', {

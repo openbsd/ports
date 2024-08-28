@@ -1,7 +1,7 @@
 Index: include/node/common.gypi
 --- include/node/common.gypi.orig
 +++ include/node/common.gypi
-@@ -189,7 +189,6 @@
+@@ -190,7 +190,6 @@
              }],
            ],
          },
@@ -9,7 +9,7 @@ Index: include/node/common.gypi
          'conditions': [
            ['enable_lto=="true"', {
              'cflags': ['<(lto)'],
-@@ -490,7 +489,7 @@
+@@ -491,7 +490,7 @@
                  'ldflags': [ '-m32' ],
                }],
                [ 'host_arch=="ppc64" and OS not in "aix os400"', {
@@ -18,7 +18,7 @@ Index: include/node/common.gypi
                  'ldflags': [ '-m64' ],
                }],
                [ 'host_arch=="s390x" and OS=="linux"', {
-@@ -514,7 +513,7 @@
+@@ -515,7 +514,7 @@
                  'ldflags': [ '-m32' ],
                }],
                [ 'target_arch=="ppc64" and OS not in "aix os400"', {

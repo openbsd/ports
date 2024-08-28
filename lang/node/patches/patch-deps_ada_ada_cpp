@@ -1,7 +1,7 @@
 Index: deps/ada/ada.cpp
 --- deps/ada/ada.cpp.orig
 +++ deps/ada/ada.cpp
-@@ -10488,7 +10488,7 @@ ada_unused std::string get_state(ada::state s) {
+@@ -10486,7 +10486,7 @@ ada_unused std::string get_state(ada::state s) {
        return "Special Authority Slashes";
      case ada::state::SPECIAL_RELATIVE_OR_AUTHORITY:
        return "Special Relative or Authority";
@@ -10,7 +10,7 @@ Index: deps/ada/ada.cpp
        return "Query";
      case ada::state::PATH:
        return "Path";
-@@ -12573,7 +12573,7 @@ result_type parse_url(std::string_view user_input,
+@@ -12575,7 +12575,7 @@ result_type parse_url_impl(std::string_view user_input
            // state to query state.
            if ((input_position != input_size) &&
                (url_data[input_position] == '?')) {
@@ -19,16 +19,16 @@ Index: deps/ada/ada.cpp
            }
            // Otherwise, if c is not the EOF code point:
            else if (input_position != input_size) {
-@@ -12668,7 +12668,7 @@ result_type parse_url(std::string_view user_input,
+@@ -12670,7 +12670,7 @@ result_type parse_url_impl(std::string_view user_input
  
          break;
        }
 -      case ada::state::QUERY: {
 +      case ada::state::ADAQUERY: {
          ada_log("QUERY ", helpers::substring(url_data, input_position));
-         // Let queryPercentEncodeSet be the special-query percent-encode set if
-         // url is special; otherwise the query percent-encode set.
-@@ -12750,7 +12750,7 @@ result_type parse_url(std::string_view user_input,
+         if constexpr (store_values) {
+           // Let queryPercentEncodeSet be the special-query percent-encode set
+@@ -12755,7 +12755,7 @@ result_type parse_url_impl(std::string_view user_input
          size_t location = view.find('?');
          if (location != std::string_view::npos) {
            view.remove_suffix(view.size() - location);
@@ -37,7 +37,7 @@ Index: deps/ada/ada.cpp
            input_position += location + 1;
          } else {
            input_position = input_size + 1;
-@@ -12803,7 +12803,7 @@ result_type parse_url(std::string_view user_input,
+@@ -12810,7 +12810,7 @@ result_type parse_url_impl(std::string_view user_input
          // set url's query to the empty string and state to query state.
          else if ((input_position != input_size) &&
                   (url_data[input_position] == '?')) {
@@ -46,7 +46,7 @@ Index: deps/ada/ada.cpp
          }
          // Otherwise, if c is not the EOF code point:
          else if (input_position != input_size) {
-@@ -12827,7 +12827,7 @@ result_type parse_url(std::string_view user_input,
+@@ -12834,7 +12834,7 @@ result_type parse_url_impl(std::string_view user_input
          // Furthermore, we can immediately locate the '?'.
          size_t locofquestionmark = view.find('?');
          if (locofquestionmark != std::string_view::npos) {
@@ -55,7 +55,7 @@ Index: deps/ada/ada.cpp
            view.remove_suffix(view.size() - locofquestionmark);
            input_position += locofquestionmark + 1;
          } else {
-@@ -12987,7 +12987,7 @@ result_type parse_url(std::string_view user_input,
+@@ -12996,7 +12996,7 @@ result_type parse_url_impl(std::string_view user_input
            // If c is U+003F (?), then set url's query to the empty string and
            // state to query state.
            if (input_position != input_size && url_data[input_position] == '?') {
