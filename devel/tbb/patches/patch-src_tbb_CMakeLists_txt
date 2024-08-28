@@ -1,0 +1,12 @@
+Index: src/tbb/CMakeLists.txt
+--- src/tbb/CMakeLists.txt.orig
++++ src/tbb/CMakeLists.txt
+@@ -168,7 +168,7 @@ if (TBB_INSTALL)
+     if (CMAKE_SIZEOF_VOID_P EQUAL 8)
+         set(TBB_PC_NAME tbb)
+     else()
+-        set(TBB_PC_NAME tbb32)
++        set(TBB_PC_NAME tbb)
+     endif()
+ 
+     set(_prefix_for_pc_file "${CMAKE_INSTALL_PREFIX}")

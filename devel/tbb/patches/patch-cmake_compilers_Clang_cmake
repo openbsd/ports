@@ -1,0 +1,12 @@
+Index: cmake/compilers/Clang.cmake
+--- cmake/compilers/Clang.cmake.orig
++++ cmake/compilers/Clang.cmake
+@@ -35,7 +35,7 @@ elseif (MSVC)
+     return()
+ else()
+     set(TBB_LINK_DEF_FILE_FLAG -Wl,--version-script=)
+-    set(TBB_DEF_FILE_PREFIX lin${TBB_ARCH})
++    set(TBB_DEF_FILE_PREFIX lin64)
+     set(TBB_TEST_COMPILE_FLAGS ${TBB_TEST_COMPILE_FLAGS} $<$<NOT:$<VERSION_LESS:${CMAKE_CXX_COMPILER_VERSION},10.0>>:-ffp-model=precise>)
+ endif()
+ 
