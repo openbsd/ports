@@ -1,0 +1,23 @@
+allow to relax body line length limit; backport of
+https://git.vuxu.org/mblaze/commit/?id=e951b0ba27f878e4daa09c59a89e8f5196e31e07
+
+Index: mmime.c
+--- mmime.c.orig
++++ mmime.c
+@@ -517,6 +517,7 @@ check()
+ 	off_t linelen = 0;
+ 	off_t maxheadlinelen = 0;
+ 	off_t maxbodylinelen = 0;
++	off_t bodylinelenlimit = getenv("MBLAZE_RELAXED_MIME") ? 998 : 78;
+ 
+ 	int c;
+ 	int l = -1;
+@@ -554,7 +555,7 @@ check()
+ 	}
+ 
+ 	if (bitlow == 0 && bithigh == 0 &&
+-	    maxheadlinelen < 998 && maxbodylinelen <= 78 &&
++	    maxheadlinelen < 998 && maxbodylinelen <= bodylinelenlimit &&
+ 	    l == '\n')
+ 		return 0;
+ 	else

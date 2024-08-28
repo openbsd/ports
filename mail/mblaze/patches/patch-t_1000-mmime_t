@@ -1,0 +1,29 @@
+allow to relax body line length limit; backport of
+https://git.vuxu.org/mblaze/commit/?id=e951b0ba27f878e4daa09c59a89e8f5196e31e07
+
+Index: t/1000-mmime.t
+--- t/1000-mmime.t.orig
++++ t/1000-mmime.t
+@@ -2,7 +2,7 @@
+ cd ${0%/*}
+ . ./lib.sh
+ 
+-plan 17
++plan 19
+ 
+ cat <<EOF >tmp
+ References: <aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa@a> <bbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbbb@b> <ccccccccccccccccccccccccccccccc@c>
+@@ -124,3 +124,13 @@ Subject: inclusion without further content
+ EOF
+ 
+ check 'no empty parts are generated after inclusion lines' '! mmime <tmp2 | mshow -t - | grep -q size=0'
++
++cat <<EOF >tmp2
++Subject: Strict mode
++
++Body with lines longer than 78 characters
++aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
++EOF
++
++check 'body lines longer than 78 characters needs MIME formatting' '! mmime -c <tmp2'
++check 'MBLAZE_RELAXED_MIME allows body lines longer than 78 characters' 'MBLAZE_RELAXED_MIME= mmime -c <tmp2'

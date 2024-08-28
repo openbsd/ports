@@ -1,0 +1,20 @@
+allow to relax body line length limit; backport of
+https://git.vuxu.org/mblaze/commit/?id=e951b0ba27f878e4daa09c59a89e8f5196e31e07
+
+Index: man/mmime.1
+--- man/mmime.1.orig
++++ man/mmime.1
+@@ -46,6 +46,13 @@ Override Content-Type for the toplevel part.
+ Defaults to
+ .Sq Li multipart/mixed .
+ .El
++.Sh ENVIRONMENT
++.Bl -tag -width Ds
++.It Ev MBLAZE_RELAXED_MIME
++If set,
++.Ic Nm Fl c
++will relax the body line length check and only consider bodies with lines
++longer than 998 characters need to be MIME formatted.
+ .Sh EXIT STATUS
+ .Ex -std
+ .Sh SEE ALSO
