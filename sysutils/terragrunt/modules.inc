@@ -406,7 +406,6 @@ MODGO_MODULES =	\
 	github.com/hpcloud/tail								 v1.0.0 \
 	github.com/huandu/go-assert							 v1.1.5 \
 	github.com/huandu/go-clone							 v1.6.0 \
-	github.com/huandu/go-clone/generic						 v1.7.2 \
 	github.com/huandu/xstrings							 v1.3.3 \
 	github.com/ianlancetaylor/demangle						 v0.0.0-20200824232613-28f6c0f3b639 \
 	github.com/imdario/mergo							 v0.3.12 \
@@ -516,6 +515,7 @@ MODGO_MODULES =	\
 	github.com/prometheus/common							 v0.2.0 \
 	github.com/prometheus/procfs							 v0.0.0-20190117184657-bf6a532e95b1 \
 	github.com/pterm/pterm								 v0.12.41 \
+	github.com/puzpuzpuz/xsync/v3							 v3.4.0 \
 	github.com/rivo/uniseg								 v0.2.0 \
 	github.com/rogpeppe/fastuuid							 v1.2.0 \
 	github.com/rogpeppe/go-internal							 v1.12.0 \

@@ -1299,8 +1299,6 @@ SHA256 (go_modules/github.com/huandu/go-assert/@v/v1.1.5.mod) = ooTVGdLHPSmLKBB4
 SHA256 (go_modules/github.com/huandu/go-assert/@v/v1.1.5.zip) = MgD5cWi7nEd94YZqACyh3+KPyCISWR5kN/Eq/vmy5WQ=
 SHA256 (go_modules/github.com/huandu/go-clone/@v/v1.6.0.mod) = c9yCysputXiByoEO7z+a4pdHqMKuHJ18e9i+cUpOoyA=
 SHA256 (go_modules/github.com/huandu/go-clone/@v/v1.6.0.zip) = Swct6zTuoZ2MTsGG6zMKZAadwIbKyl9xrOp7i4Oucuw=
-SHA256 (go_modules/github.com/huandu/go-clone/generic/@v/v1.7.2.mod) = cOjRP2P2dqBDa8CcB0eYpClkWRdm4V8TnEADNAoySIE=
-SHA256 (go_modules/github.com/huandu/go-clone/generic/@v/v1.7.2.zip) = oy0IdGLZkz+DZW10vdrn4+NXeKV0xdSyWnjFUNgbXL0=
 SHA256 (go_modules/github.com/huandu/xstrings/@v/v1.3.2.mod) = M8emz6SDptLD2lK/hwRpxxb+WUi7wxd4aMcm59c7ugA=
 SHA256 (go_modules/github.com/huandu/xstrings/@v/v1.3.3.mod) = M8emz6SDptLD2lK/hwRpxxb+WUi7wxd4aMcm59c7ugA=
 SHA256 (go_modules/github.com/huandu/xstrings/@v/v1.3.3.zip) = fWo2ncFJRq6TrUppShEZZSYdZVD8OWW+YriHYF6hQfU=
@@ -1615,6 +1613,8 @@ SHA256 (go_modules/github.com/pterm/pterm/@v/v0.12.36.mod) = k26xnhvWjeA6YXBiPCf
 SHA256 (go_modules/github.com/pterm/pterm/@v/v0.12.40.mod) = UQ5xhry7XNOxEsFY/3X/CG679QrJBr6Bx7EUzsNSUOM=
 SHA256 (go_modules/github.com/pterm/pterm/@v/v0.12.41.mod) = +rMw7osM+YBZJHt6D2bPu9UaAdiWEtK3N9zFEw0hOPY=
 SHA256 (go_modules/github.com/pterm/pterm/@v/v0.12.41.zip) = trGqY0sA7NlFjji1goOAHzFz2BqQliEUzJSXKaDZSpw=
+SHA256 (go_modules/github.com/puzpuzpuz/xsync/v3/@v/v3.4.0.mod) = X54pbFUgbyz8bdjgF+kFdEyK4+t99NAH6/Xt7f3ea48=
+SHA256 (go_modules/github.com/puzpuzpuz/xsync/v3/@v/v3.4.0.zip) = c2nmhUGS3tNEKXHoholt3oczwd5ZXFA7hadXznzqgLM=
 SHA256 (go_modules/github.com/rivo/uniseg/@v/v0.1.0.mod) = bHMYonqNVHOo62YedfsAUoF24O/FkxDtJ3yhO9EqU/E=
 SHA256 (go_modules/github.com/rivo/uniseg/@v/v0.2.0.mod) = bHMYonqNVHOo62YedfsAUoF24O/FkxDtJ3yhO9EqU/E=
 SHA256 (go_modules/github.com/rivo/uniseg/@v/v0.2.0.zip) = MZnZS+UChBQiIGYso7AOGd3R3r5OgN3HRf9CA+y2AcA=
@@ -2650,7 +2650,7 @@ SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRe
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 8ikTVRI4fWZj4fCZmkkiq3CN7UvcgExxzpPj1gK6ld0=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = L8eybun2ctl7QvpvJfWxWlWYK7usaZYdduux0DbRUAE=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.zip) = qsiNpVHCpRK2Qss1ZYvz3IYllaNWa9hA6/GOSALx/Mk=
-SHA256 (terragrunt-v0.66.9.zip) = CjjGGZ/nbeTCee7r9Oss6w+i1vGAvv50tXjuKj3cM8E=
+SHA256 (terragrunt-v0.67.0.zip) = buSKt4+MTBwj5ocLRGD1s9fyyGt8i7C/MjzLjoMGd5A=
 SIZE (go_modules/c2sp.org/!c!c!t!v/age/@v/v0.0.0-20240306222714-3ec4d716e805.mod) = 115
 SIZE (go_modules/c2sp.org/!c!c!t!v/age/@v/v0.0.0-20240306222714-3ec4d716e805.zip) = 1536469
 SIZE (go_modules/cel.dev/expr/@v/v0.15.0.mod) = 156
@@ -3952,8 +3952,6 @@ SIZE (go_modules/github.com/huandu/go-assert/@v/v1.1.5.mod) = 128
 SIZE (go_modules/github.com/huandu/go-assert/@v/v1.1.5.zip) = 17809
 SIZE (go_modules/github.com/huandu/go-clone/@v/v1.6.0.mod) = 87
 SIZE (go_modules/github.com/huandu/go-clone/@v/v1.6.0.zip) = 38985
-SIZE (go_modules/github.com/huandu/go-clone/generic/@v/v1.7.2.mod) = 190
-SIZE (go_modules/github.com/huandu/go-clone/generic/@v/v1.7.2.zip) = 7245
 SIZE (go_modules/github.com/huandu/xstrings/@v/v1.3.2.mod) = 43
 SIZE (go_modules/github.com/huandu/xstrings/@v/v1.3.3.mod) = 43
 SIZE (go_modules/github.com/huandu/xstrings/@v/v1.3.3.zip) = 25517
@@ -4268,6 +4266,8 @@ SIZE (go_modules/github.com/pterm/pterm/@v/v0.12.36.mod) = 252
 SIZE (go_modules/github.com/pterm/pterm/@v/v0.12.40.mod) = 367
 SIZE (go_modules/github.com/pterm/pterm/@v/v0.12.41.mod) = 251
 SIZE (go_modules/github.com/pterm/pterm/@v/v0.12.41.zip) = 315326
+SIZE (go_modules/github.com/puzpuzpuz/xsync/v3/@v/v3.4.0.mod) = 46
+SIZE (go_modules/github.com/puzpuzpuz/xsync/v3/@v/v3.4.0.zip) = 57651
 SIZE (go_modules/github.com/rivo/uniseg/@v/v0.1.0.mod) = 39
 SIZE (go_modules/github.com/rivo/uniseg/@v/v0.2.0.mod) = 39
 SIZE (go_modules/github.com/rivo/uniseg/@v/v0.2.0.zip) = 45731
@@ -5303,4 +5303,4 @@ SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = 24
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.zip) = 21567
-SIZE (terragrunt-v0.66.9.zip) = 5015412
+SIZE (terragrunt-v0.67.0.zip) = 5029219
