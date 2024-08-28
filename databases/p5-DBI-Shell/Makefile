@@ -2,7 +2,7 @@ COMMENT=	interactive command shell for the DBI
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	DBI-Shell-11.97
+DISTNAME =	DBI-Shell-11.98
 CATEGORIES=	databases
 
 # perl
