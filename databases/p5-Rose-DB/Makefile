@@ -1,10 +1,11 @@
-COMMENT =	DBI wrapper and abstraction layer
+COMMENT =		DBI wrapper and abstraction layer
 
 
-DISTNAME =	Rose-DB-0.785
+DISTNAME =		Rose-DB-0.786
+
 FIX_EXTRACT_PERMISSIONS =	Yes
 
-CATEGORIES =	databases
+CATEGORIES =		databases
 
 # Perl
 PERMIT_PACKAGE =	Yes
