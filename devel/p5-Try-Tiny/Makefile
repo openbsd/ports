@@ -1,6 +1,6 @@
 COMMENT =	minimal try/catch with proper preservation of $$@
 
-DISTNAME =	Try-Tiny-0.31
+DISTNAME =	Try-Tiny-0.32
 CPAN_AUTHOR =	ETHER
 FIX_EXTRACT_PERMISSIONS =	Yes
 
