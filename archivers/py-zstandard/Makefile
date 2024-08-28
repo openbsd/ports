@@ -1,6 +1,6 @@
 COMMENT =		Python bindings to the Zstandard compression library
 
-MODPY_EGG_VERSION =	0.22.0
+MODPY_EGG_VERSION =	0.23.0
 DISTNAME =		zstandard-${MODPY_EGG_VERSION}
 PKGNAME =		py-zstandard-${MODPY_EGG_VERSION}
 CATEGORIES =		archivers
