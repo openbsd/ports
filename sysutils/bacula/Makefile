@@ -19,6 +19,7 @@ PKGNAME-sqlite3=	bacula-sqlite3-$V
 
 REVISION-main=		0
 REVISION-server=	0
+REVISION-pgsql=		0
 
 CATEGORIES=		sysutils
 
@@ -113,6 +114,7 @@ LIB_DEPENDS-server=	${LIB_DEPENDS} \
 WANTLIB-pgsql += pq m ${COMPILER_LIBCXX}
 LIB_DEPENDS-pgsql +=	${MODGCC4_CPPLIBDEP} \
 			databases/postgresql
+RUN_DEPENDS-pgsql +=	databases/postgresql,-contrib
 
 WANTLIB-mysql += m mariadb ${COMPILER_LIBCXX}
 LIB_DEPENDS-mysql +=	${MODGCC4_CPPLIBDEP} \
