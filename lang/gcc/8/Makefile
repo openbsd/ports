@@ -1,3 +1,5 @@
+USE_NOBTCFI-aarch64 =	Yes
+
 ONLY_FOR_ARCHS = aarch64 alpha amd64 arm hppa i386 mips64 mips64el \
 	powerpc powerpc64 riscv64 sparc64
 
@@ -23,8 +25,7 @@ USE_NOEXECONLY = Yes
 V = 8.4.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
-REVISION = 23
-REVISION-c++ = 24
+REVISION = 25
 
 ADASTRAP-amd64 = adastrap-amd64-$V-3.tar.xz
 ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
