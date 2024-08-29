@@ -1,0 +1,12 @@
+Index: bindings/python/demo/outline_demo_jp.py
+--- bindings/python/demo/outline_demo_jp.py.orig
++++ bindings/python/demo/outline_demo_jp.py
+@@ -33,7 +33,7 @@ from haru.hpdf_errorcode import *
+ 
+ for i in dir():
+     if 'CreateOutLine' in i:
+-        print i
++        print(i)
+ 
+ 
+ @HPDF_Error_Handler(None, HPDF_UINT, HPDF_UINT, c_void_p)
