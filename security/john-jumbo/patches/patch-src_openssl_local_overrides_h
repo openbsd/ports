@@ -1,0 +1,10 @@
+Index: src/openssl_local_overrides.h
+--- src/openssl_local_overrides.h.orig
++++ src/openssl_local_overrides.h
+@@ -10,5 +10,5 @@
+  * we may split this up in the end, but right now it is oSSL or generic for SHA2.
+  */
+ 
+-/* #define HAVE_NO_SSL_WHIRLPOOL		1 */
++#define HAVE_NO_SSL_WHIRLPOOL		1
+ /* #define FORCE_GENERIC_SHA2			1 */
