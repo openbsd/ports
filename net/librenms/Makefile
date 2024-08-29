@@ -3,9 +3,9 @@ COMMENT=	auto-discovering network management/monitoring system
 # changelogs at https://github.com/librenms/librenms/releases
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
-GH_TAGNAME=	24.8.0
+GH_TAGNAME=	24.8.1
 
-DISTFILES.dep=	librenms-${GH_TAGNAME}-vendor.tar.xz
+DISTFILES.dep=	librenms-${GH_TAGNAME:R}-vendor.tar.xz
 EPOCH=		0
 
 CATEGORIES=	net www
@@ -105,7 +105,7 @@ COMPOSER=	${MODPHP_BIN} \
 # maintainer convenience target
 dist: ${FULLDISTDIR}/${GH_DISTFILE}
 	@set -x; t=`mktemp -d /tmp/librenms.XXXXXXXXXX`; \
-	f=$$t/${DISTNAME}-vendor.tar.xz; \
+		f=$$t/librenms-${GH_TAGNAME:R}-vendor.tar.xz; \
 	cd $$t; \
 	tar xzf ${FULLDISTDIR}/${GH_DISTFILE:C,\{.*,,}; \
 	cd ${WRKDIST:C,^.*/,,}; \
