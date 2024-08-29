@@ -1,0 +1,14 @@
+Shim out EVP_PKEY_check()
+
+Index: lib/openssl_compat.h
+--- lib/openssl_compat.h.orig
++++ lib/openssl_compat.h
+@@ -35,4 +35,8 @@ EVP_DigestVerify(EVP_MD_CTX *ctx, const unsigned char 
+ }
+ #endif
+ 
++#if defined(LIBRESSL_VERSION_NUMBER) && LIBRESSL_VERSION_NUMBER >= 0x4000000fL
++#define EVP_PKEY_check(ctx) (-2)
++#endif
++
+ #endif
