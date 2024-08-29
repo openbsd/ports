@@ -1,0 +1,14 @@
+1.26.4 has removed numpy.distutils but tests still reference it
+
+Index: numpy/typing/tests/test_isfile.py
+--- numpy/typing/tests/test_isfile.py.orig
++++ numpy/typing/tests/test_isfile.py
+@@ -21,7 +21,7 @@ FILES = [
+     ROOT / "random" / "__init__.pyi",
+     ROOT / "testing" / "__init__.pyi",
+ ]
+-if sys.version_info < (3, 12):
++if sys.version_info < (3, 11):
+     FILES += [ROOT / "distutils" / "__init__.pyi"]
+ 
+ 

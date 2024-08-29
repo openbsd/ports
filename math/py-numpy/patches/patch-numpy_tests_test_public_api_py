@@ -1,0 +1,41 @@
+1.26.4 has removed numpy.distutils but tests still reference it
+
+Index: numpy/tests/test_public_api.py
+--- numpy/tests/test_public_api.py.orig
++++ numpy/tests/test_public_api.py
+@@ -159,7 +159,7 @@ PUBLIC_MODULES = ['numpy.' + s for s in [
+     "typing.mypy_plugin",
+     "version"  # Should be removed for NumPy 2.0
+ ]]
+-if sys.version_info < (3, 12):
++if sys.version_info < (3, 11):
+     PUBLIC_MODULES += [
+         'numpy.' + s for s in [
+             "distutils",
+@@ -240,7 +240,7 @@ PRIVATE_BUT_PRESENT_MODULES = ['numpy.' + s for s in [
+     "random.bit_generator",
+     "testing.print_coercion_tables",
+ ]]
+-if sys.version_info < (3, 12):
++if sys.version_info < (3, 11):
+     PRIVATE_BUT_PRESENT_MODULES += [
+         'numpy.' + s for s in [
+             "distutils.armccompiler",
+@@ -335,7 +335,7 @@ SKIP_LIST = [
+     "numpy.core.generate_numpy_api",
+     "numpy.core.umath_tests",
+ ]
+-if sys.version_info < (3, 12):
++if sys.version_info < (3, 11):
+     SKIP_LIST += ["numpy.distutils.msvc9compiler"]
+ 
+ 
+@@ -380,7 +380,7 @@ SKIP_LIST_2 = [
+     'numpy.matlib.ctypeslib',
+     'numpy.matlib.ma',
+ ]
+-if sys.version_info < (3, 12):
++if sys.version_info < (3, 11):
+     SKIP_LIST_2 += [
+         'numpy.distutils.log.sys',
+         'numpy.distutils.log.logging',

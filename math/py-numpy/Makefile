@@ -1,13 +1,12 @@
 COMMENT=		fast array and numeric programming library for Python
 
-MODPY_EGG_VERSION=	1.25.2
+MODPY_EGG_VERSION=	1.26.4
 DISTNAME=		numpy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
 
 CATEGORIES=		math devel
 
-HOMEPAGE=		https://www.numpy.org/
+HOMEPAGE=		https://numpy.org/
 
 # BSD
 PERMIT_PACKAGE=		Yes
@@ -22,13 +21,18 @@ MODULES=		lang/python
 FLAVORS=		python3
 FLAVOR=			python3
 
+# Disable dwz: it fails on DWARF 5 symbols due to 128-bit arithmetic in _pcg64.
+# Alternative is CFLAGS += -D PCG_FORCE_EMULATED_128BIT_MATH
+DWZ=			:
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 MODPY_PI=		Yes
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD=		other
 
 BUILD_DEPENDS=		devel/gas \
+			devel/meson-python \
 			lang/cython${MODPY_FLAVOR}
+
 TEST_DEPENDS=		${FULLPKGNAME}:${FULLPKGPATH} \
 			devel/py-hypothesis${MODPY_FLAVOR} \
 			devel/py-test${MODPY_FLAVOR} \
@@ -45,8 +49,28 @@ LIB_DEPENDS+=		${MODFORTRAN_LIB_DEPENDS} \
 			math/cblas \
 			math/lapack
 WANTLIB+=		${MODFORTRAN_WANTLIB} blas cblas lapack
-MODPY_DISTUTILS_BUILDARGS+= --fcompiler=gnu95
 .endif
+
+# Cython up to 0.28.4 used the discouraged __attribute__((optimize("Os")))
+# which caused runtime breakage on at least macppc.
+# -- see: https://marc.info/?l=openbsd-ports&m=153312266209561&w=2
+#
+# Some related Cython issues:
+#   https://github.com/cython/cython/issues/2102
+#   https://github.com/cython/cython/issues/2235
+#   https://github.com/cython/cython/issues/2494
+#
+# Cython 0.28.5 and newer switched to __attribute__((cold)).
+# Leave this disabled on macppc unless someone retests on that
+# platform.
+#
+.if ${MACHINE_ARCH} == powerpc
+CFLAGS +=	-D CYTHON_SMALL_CODE=
+.endif
+
+pre-build:
+	cp -f ${WRKSRC}/numpy/distutils/site.cfg ${WRKSRC}/site.cfg
+	ln -sf ${LOCALBASE}/bin/gas ${WRKDIR}/bin/as
 
 # cpu optimizations (where supported) are runtime detected, but there's
 # some problem on i386 where they trigger segfaults in numpy's regression
@@ -56,29 +80,11 @@ MODPY_DISTUTILS_BUILDARGS+= --fcompiler=gnu95
 # 1.19.5) but at least some normal runtime seems ok (makehuman builds).
 # https://github.com/numpy/numpy/issues/20799
 .if ${MACHINE_ARCH} == i386
-MODPY_DISTUTILS_BUILDARGS+= --disable-optimization
+	sed -i '/^option.*disable-optim/ s/false/true/' ${WRKSRC}/meson_options.txt
 .endif
-
-# Cython 0.28.* uses __attribute__((optimize("Os"))) which
-# leads to breakage at runtime on at least macppc.
-# -- see: https://marc.info/?l=openbsd-ports&m=153312266209561&w=2
-#
-# gcc docs also explicitly say that the optimize attribute "is not suitable in production code".
-# So let's disable to be safe.
-# -- see: https://gcc.gnu.org/onlinedocs/gcc-8.2.0/gcc/Common-Function-Attributes.html
-#
-# Some related Cython issues:
-#   https://github.com/cython/cython/issues/2102
-#   https://github.com/cython/cython/issues/2235
-#   https://github.com/cython/cython/issues/2494
-CFLAGS +=	-D CYTHON_SMALL_CODE=
-
-pre-build:
-	cp -f ${WRKSRC}/numpy/distutils/site.cfg ${WRKSRC}/site.cfg
-	ln -sf ${LOCALBASE}/bin/gas ${WRKDIR}/bin/as
 
 do-test:
 	cd ${WRKDIR} && ${MAKE_ENV} ${MODPY_BIN} -c \
-	    'import numpy ; numpy.test()'
+	    'import numpy ; numpy.test(verbose=2)'
 
 .include <bsd.port.mk>

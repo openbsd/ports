@@ -1,0 +1,14 @@
+1.26.4 has removed numpy.distutils but tests still reference it
+
+Index: numpy/_pytesttester.py
+--- numpy/_pytesttester.py.orig
++++ numpy/_pytesttester.py
+@@ -135,7 +135,7 @@ class PytestTester:
+         # offset verbosity. The "-q" cancels a "-v".
+         pytest_args += ["-q"]
+ 
+-        if sys.version_info < (3, 12):
++        if sys.version_info < (3, 11):
+             with warnings.catch_warnings():
+                 warnings.simplefilter("always")
+                 # Filter out distutils cpu warnings (could be localized to
