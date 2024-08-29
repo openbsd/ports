@@ -3,7 +3,7 @@ Don't hide command lines.
 Index: scripts/libtool.mk
 --- scripts/libtool.mk.orig
 +++ scripts/libtool.mk
-@@ -74,11 +74,11 @@ clean: .libs_clean
+@@ -65,11 +65,11 @@ clean: .libs_clean
  # Re-define compilers and linkers
  #
  OBJ_EXT = lo

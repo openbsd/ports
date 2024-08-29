@@ -7,7 +7,7 @@ COMMENT-mysql=	freeradius mysql rlm addon
 COMMENT-pgsql=	freeradius pgsql rlm addon
 COMMENT-python3= freeradius python3 rlm addon
 
-V=		3.2.5
+V=		3.2.6
 DISTNAME=	freeradius-server-$V
 EXTRACT_SUFX=	.tar.bz2
 
@@ -188,6 +188,7 @@ post-install:
 	rm -r \
 	    ${PREFIX}/share/examples/freeradius/mods-config/sql/*/oracle \
 	    ${PREFIX}/share/examples/freeradius/mods-config/sql/*/mongo \
+	    ${PREFIX}/share/examples/freeradius/mods-available/python \
 	    ${PREFIX}/share/doc/freeradius/antora
 	chmod -R u+rwX,og+rX ${PREFIX}/share/examples/freeradius/
 	${SUBST_CMD} -c -m 555 ${FILESDIR}/freeradius-enable.sh \

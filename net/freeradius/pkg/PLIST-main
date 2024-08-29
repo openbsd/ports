@@ -486,8 +486,6 @@ share/examples/freeradius/mods-available/perl
 @sample ${FREERADIUS_ETC}/mods-available/perl
 share/examples/freeradius/mods-available/preprocess
 @sample ${FREERADIUS_ETC}/mods-available/preprocess
-@comment share/examples/freeradius/mods-available/python
-@comment @sample ${FREERADIUS_ETC}/mods-available/python
 share/examples/freeradius/mods-available/radutmp
 @sample ${FREERADIUS_ETC}/mods-available/radutmp
 share/examples/freeradius/mods-available/realm
