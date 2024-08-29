@@ -258,6 +258,7 @@ lib/python${MODPY_VERSION}/site-packages/mapproxy/service/templates/demo/static/
 lib/python${MODPY_VERSION}/site-packages/mapproxy/service/templates/demo/tms_demo.html
 lib/python${MODPY_VERSION}/site-packages/mapproxy/service/templates/demo/wms_demo.html
 lib/python${MODPY_VERSION}/site-packages/mapproxy/service/templates/demo/wmts_demo.html
+lib/python${MODPY_VERSION}/site-packages/mapproxy/service/templates/ows_exception.xml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/service/templates/tms_capabilities.xml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/service/templates/tms_exception.xml
 lib/python${MODPY_VERSION}/site-packages/mapproxy/service/templates/tms_root_resource.xml
