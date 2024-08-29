@@ -10,6 +10,7 @@ SITES=		${SITE_GNU:=datamash/}
 
 # GPLv3
 PERMIT_PACKAGE=	Yes
+FIX_EXTRACT_PERMISSIONS= Yes
 
 # uses pledge()
 WANTLIB=	c m iconv intl
