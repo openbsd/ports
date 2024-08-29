@@ -1,37 +1,28 @@
-COMMENT =	PDF creation library
+COMMENT =		PDF creation library
 
-VERSION =	2_3_0
-GH_ACCOUNT =	libharu
-GH_PROJECT =	libharu
-GH_TAGNAME =	RELEASE_${VERSION}
-DISTNAME =	${GH_PROJECT}-${VERSION:S/_/./g}
-SHARED_LIBS=	hpdf 0.1 #2.3
-CATEGORIES =	print
+DIST_TUPLE +=		github libharu libharu v2.4.4 .
 
-HOMEPAGE =	http://libharu.org/
+SHARED_LIBS=		hpdf	1.0 #2.4.4
+
+CATEGORIES =		print
+HOMEPAGE =		http://libharu.org/
 
 # ZLIB/PNG
 PERMIT_PACKAGE =	Yes
 
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.14
+WANTLIB =		m png z
 
-CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--with-png=${LOCALBASE}
+MODULES =		devel/cmake \
+			lang/python
 
-#  for libtoolize
-BUILD_DEPENDS =	devel/libtool \
-		${MODGNU_AUTOCONF_DEPENDS} \
-		${MODGNU_AUTOMAKE_DEPENDS}
+LIB_DEPENDS =		graphics/png
 
-LIB_DEPENDS =	graphics/png
-WANTLIB =	m png z
+FIX_CRLF_FILES =	bindings/python/c_func.py \
+			bindings/python/demo/outline_demo_jp.py
 
-WRKDIST =	${WRKDIR}/libharu-RELEASE_${VERSION}
-
-pre-configure:
-	cd ${WRKSRC} && ${MAKE_PROGRAM} LIBTOOLIZE=libtoolize \
-		AUTOMAKE_VERSION=${AUTOMAKE_VERSION} \
-		AUTOCONF_VERSION=${AUTOCONF_VERSION} -f build.mk
+post-install:
+	${MODPY_COMPILEALL} \
+		${PREFIX}/share/libharu/bindings/python/ \
+		${PREFIX}/share/libharu/bindings/python/demo/
 
 .include <bsd.port.mk>
