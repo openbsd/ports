@@ -4,11 +4,9 @@ MODPY_EGG_VERSION =	0.4.1
 POST =			2
 DISTNAME =		python-axolotl-curve25519-${MODPY_EGG_VERSION}.post${POST}
 PKGNAME =		py-axolotl-curve25519-${MODPY_EGG_VERSION}pl${POST}
-REVISION =		8
+REVISION =		9
 
 CATEGORIES =		security
-
-MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes

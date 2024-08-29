@@ -3,11 +3,9 @@ COMMENT =		tools to compute hashes recursively
 GH_ACCOUNT =		jessek
 GH_PROJECT =		hashdeep
 GH_TAGNAME =		v4.4
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		security
-
-MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 
 # Public domain, and the code for Tiger is GPLv2.
 PERMIT_PACKAGE =	Yes

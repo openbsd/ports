@@ -3,11 +3,9 @@ COMMENT =		Python port of libaxolotl
 MODPY_EGG_VERSION =	0.2.3
 DISTNAME =		python-axolotl-${MODPY_EGG_VERSION}
 PKGNAME =		py-axolotl-${MODPY_EGG_VERSION}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		security
-
-MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
