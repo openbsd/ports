@@ -2,8 +2,9 @@ Calligra is an integrated suite of KDE applications that cover office,
 creative and management needs.
 
 Office productivity:
-- Words for text processing;
-- Sheets for computations;
+- Calligra Words: Word Processor
+- Calligra Sheets: Spreadsheet Application
+- Calligra Stage: Presentation Application
 
 Graphics:
-- Karbon for vector graphics.
+- Karbon: Vector Graphics Editor

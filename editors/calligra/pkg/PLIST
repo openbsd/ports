@@ -57,10 +57,11 @@
 @pkgpath editors/calligra-l10n/uk
 @pkgpath editors/calligra-l10n/zh_CN
 @pkgpath editors/calligra-l10n/zh_TW
-@bin bin/calligra
+@bin bin/braindump
 @bin bin/calligraconverter
 @bin bin/calligragemini
 @bin bin/calligrageminithumbnailhelper
+@bin bin/calligralauncher
 @bin bin/calligrasheets
 @bin bin/calligrastage
 @bin bin/calligrawords
@@ -69,174 +70,247 @@
 @bin bin/karbon
 @bin bin/visualimagecompare
 @lib lib/libRtfReader.so.${LIBRtfReader_VERSION}
+@lib lib/libautocorrection.so.${LIBautocorrection_VERSION}
 @lib lib/libbasicflakes.so.${LIBbasicflakes_VERSION}
-@lib lib/libcalligrasheetscommon.so.${LIBcalligrasheetscommon_VERSION}
-@lib lib/libcalligrasheetsodf.so.${LIBcalligrasheetsodf_VERSION}
+@lib lib/libbraindumpcore.so.${LIBbraindumpcore_VERSION}
+@lib lib/libcalligrasheetscore.so.${LIBcalligrasheetscore_VERSION}
+@lib lib/libcalligrasheetsengine.so.${LIBcalligrasheetsengine_VERSION}
+@lib lib/libcalligrasheetspartlib.so.${LIBcalligrasheetspartlib_VERSION}
+@lib lib/libcalligrasheetsui.so.${LIBcalligrasheetsui_VERSION}
 @lib lib/libcalligrastageprivate.so.${LIBcalligrastageprivate_VERSION}
 @lib lib/libflake.so.${LIBflake_VERSION}
 @lib lib/libgemini.so.${LIBgemini_VERSION}
 @lib lib/libkarboncommon.so.${LIBkarboncommon_VERSION}
 @lib lib/libkarbonui.so.${LIBkarbonui_VERSION}
-@lib lib/libkdeinit5_calligrasheets.so.${LIBkdeinit5_calligrasheets_VERSION}
-@so lib/libkdeinit5_calligrastage.so
-@lib lib/libkdeinit5_calligrawords.so.${LIBkdeinit5_calligrawords_VERSION}
-@lib lib/libkdeinit5_karbon.so.${LIBkdeinit5_karbon_VERSION}
 @lib lib/libkoformula.so.${LIBkoformula_VERSION}
 @lib lib/libkomain.so.${LIBkomain_VERSION}
 @lib lib/libkomsooxml.so.${LIBkomsooxml_VERSION}
 @lib lib/libkoodf.so.${LIBkoodf_VERSION}
 @lib lib/libkoodf2.so.${LIBkoodf2_VERSION}
 @lib lib/libkoodfreader.so.${LIBkoodfreader_VERSION}
+@lib lib/libkookularGenerator_odp.so.${LIBkookularGenerator_odp_VERSION}
+@lib lib/libkookularGenerator_odt.so.${LIBkookularGenerator_odt_VERSION}
 @lib lib/libkopageapp.so.${LIBkopageapp_VERSION}
 @lib lib/libkoplugin.so.${LIBkoplugin_VERSION}
 @lib lib/libkostore.so.${LIBkostore_VERSION}
 @lib lib/libkotext.so.${LIBkotext_VERSION}
 @lib lib/libkotextlayout.so.${LIBkotextlayout_VERSION}
 @lib lib/libkovectorimage.so.${LIBkovectorimage_VERSION}
-@lib lib/libkoversion.so.${LIBkoversion_VERSION}
 @lib lib/libkowidgets.so.${LIBkowidgets_VERSION}
 @lib lib/libkowidgetutils.so.${LIBkowidgetutils_VERSION}
-@lib lib/libkowv2.so.${LIBkowv2_VERSION}
 @lib lib/libkundo2.so.${LIBkundo2_VERSION}
 @lib lib/libpigmentcms.so.${LIBpigmentcms_VERSION}
 @lib lib/libwordsprivate.so.${LIBwordsprivate_VERSION}
-lib/qt5/plugins/calligra/
-lib/qt5/plugins/calligra/colorspaces/
-@so lib/qt5/plugins/calligra/colorspaces/kolcmsengine.so
-lib/qt5/plugins/calligra/dockers/
-@so lib/qt5/plugins/calligra/dockers/calligra_docker_defaults.so
-@so lib/qt5/plugins/calligra/dockers/calligra_docker_stencils.so
-lib/qt5/plugins/calligra/formatfilters/
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_applixspread2kspread.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_applixword2odt.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_ascii2words.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_csv2sheets.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_dbase2kspread.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_doc2odt.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_docx2odt.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_eps2svgai.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_gnumeric2sheets.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_html2ods.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_karbon1x2karbon.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_karbon2image.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_karbon2svg.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_karbon2wmf.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_kpr2odp.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_kspread2tex.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_odt2ascii.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_odt2docx.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_odt2epub2.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_odt2html.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_odt2mobi.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_odt2wiki.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_opencalc2sheets.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_pdf2odg.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_pdf2svg.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_ppt2odp.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_pptx2odp.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_qpro2sheets.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_rtf2odt.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_sheets2csv.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_sheets2gnumeric.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_sheets2html.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_sheets2opencalc.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_svg2karbon.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_wmf2svg.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_xfig2odg.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_xls2ods.so
-@so lib/qt5/plugins/calligra/formatfilters/calligra_filter_xlsx2ods.so
-lib/qt5/plugins/calligra/pageapptools/
-@so lib/qt5/plugins/calligra/pageapptools/kopabackgroundtool.so
-lib/qt5/plugins/calligra/parts/
-@so lib/qt5/plugins/calligra/parts/calligrasheetspart.so
-@so lib/qt5/plugins/calligra/parts/calligrastagepart.so
-@so lib/qt5/plugins/calligra/parts/calligrawordspart.so
-@so lib/qt5/plugins/calligra/parts/karbonpart.so
-lib/qt5/plugins/calligra/presentationeventactions/
-@so lib/qt5/plugins/calligra/presentationeventactions/calligrastageeventactions.so
-lib/qt5/plugins/calligra/shapefiltereffects/
-@so lib/qt5/plugins/calligra/shapefiltereffects/calligra_filtereffects.so
-lib/qt5/plugins/calligra/shapes/
-@so lib/qt5/plugins/calligra/shapes/calligra_shape_artistictext.so
-@so lib/qt5/plugins/calligra/shapes/calligra_shape_chart.so
-@so lib/qt5/plugins/calligra/shapes/calligra_shape_formula.so
-@so lib/qt5/plugins/calligra/shapes/calligra_shape_music.so
-@so lib/qt5/plugins/calligra/shapes/calligra_shape_paths.so
-@so lib/qt5/plugins/calligra/shapes/calligra_shape_picture.so
-@so lib/qt5/plugins/calligra/shapes/calligra_shape_plugin.so
-@so lib/qt5/plugins/calligra/shapes/calligra_shape_text.so
-@so lib/qt5/plugins/calligra/shapes/calligra_shape_vector.so
-@so lib/qt5/plugins/calligra/shapes/calligra_shape_video.so
-lib/qt5/plugins/calligra/textediting/
-@so lib/qt5/plugins/calligra/textediting/calligra_textediting_autocorrect.so
-@so lib/qt5/plugins/calligra/textediting/calligra_textediting_changecase.so
-@so lib/qt5/plugins/calligra/textediting/calligra_textediting_spellcheck.so
-@so lib/qt5/plugins/calligra/textediting/calligra_textediting_thesaurus.so
-lib/qt5/plugins/calligra/textinlineobjects/
-@so lib/qt5/plugins/calligra/textinlineobjects/calligra_textinlineobject_variables.so
-@so lib/qt5/plugins/calligra/textinlineobjects/kprvariables.so
-lib/qt5/plugins/calligra/tools/
-@so lib/qt5/plugins/calligra/tools/calligra_tool_basicflakes.so
-@so lib/qt5/plugins/calligra/tools/calligra_tool_defaults.so
-@so lib/qt5/plugins/calligra/tools/karbon_tools.so
-@so lib/qt5/plugins/calligradocinfopropspage.so
-@so lib/qt5/plugins/calligraimagethumbnail.so
-lib/qt5/plugins/calligrasheets/
-lib/qt5/plugins/calligrasheets/functions/
-@so lib/qt5/plugins/calligrasheets/functions/kspreadbitopsmodule.so
-@so lib/qt5/plugins/calligrasheets/functions/kspreadconversionmodule.so
-@so lib/qt5/plugins/calligrasheets/functions/kspreaddatabasemodule.so
-@so lib/qt5/plugins/calligrasheets/functions/kspreaddatetimemodule.so
-@so lib/qt5/plugins/calligrasheets/functions/kspreadengineeringmodule.so
-@so lib/qt5/plugins/calligrasheets/functions/kspreadfinancialmodule.so
-@so lib/qt5/plugins/calligrasheets/functions/kspreadinformationmodule.so
-@so lib/qt5/plugins/calligrasheets/functions/kspreadlogicmodule.so
-@so lib/qt5/plugins/calligrasheets/functions/kspreadmathmodule.so
-@so lib/qt5/plugins/calligrasheets/functions/kspreadreferencemodule.so
-@so lib/qt5/plugins/calligrasheets/functions/kspreadstatisticalmodule.so
-@so lib/qt5/plugins/calligrasheets/functions/kspreadtextmodule.so
-@so lib/qt5/plugins/calligrasheets/functions/kspreadtrigonometrymodule.so
-lib/qt5/plugins/calligrastage/
-lib/qt5/plugins/calligrastage/pageeffects/
-@so lib/qt5/plugins/calligrastage/pageeffects/kpr_pageeffect_barwipe.so
-@so lib/qt5/plugins/calligrastage/pageeffects/kpr_pageeffect_clockwipe.so
-@so lib/qt5/plugins/calligrastage/pageeffects/kpr_pageeffect_edgewipe.so
-@so lib/qt5/plugins/calligrastage/pageeffects/kpr_pageeffect_fade.so
-@so lib/qt5/plugins/calligrastage/pageeffects/kpr_pageeffect_iriswipe.so
-@so lib/qt5/plugins/calligrastage/pageeffects/kpr_pageeffect_matrixwipe.so
-@so lib/qt5/plugins/calligrastage/pageeffects/kpr_pageeffect_slidewipe.so
-@so lib/qt5/plugins/calligrastage/pageeffects/kpr_pageeffect_spacerotation.so
-@so lib/qt5/plugins/calligrastage/pageeffects/kpr_pageeffect_swapeffect.so
-lib/qt5/plugins/calligrastage/shapeanimations/
-@so lib/qt5/plugins/calligrastage/shapeanimations/kpr_shapeanimation_example.so
-lib/qt5/plugins/calligrastage/tools/
-@so lib/qt5/plugins/calligrastage/tools/calligrastagetoolanimation.so
-@so lib/qt5/plugins/calligrathumbnail.so
-lib/qt5/plugins/karbon/
-lib/qt5/plugins/karbon/extensions/
-@so lib/qt5/plugins/karbon/extensions/karbon_flattenpath.so
-@so lib/qt5/plugins/karbon/extensions/karbon_refinepath.so
-@so lib/qt5/plugins/karbon/extensions/karbon_roundcorners.so
-@so lib/qt5/plugins/karbon/extensions/karbon_whirlpinch.so
-lib/qt5/qml/Calligra/
-lib/qt5/qml/Calligra/Gemini/
-lib/qt5/qml/Calligra/Gemini/Dropbox/
-@so lib/qt5/qml/Calligra/Gemini/Dropbox/libcalligrageminidropboxplugin.so
-lib/qt5/qml/Calligra/Gemini/Dropbox/qmldir
-lib/qt5/qml/org/kde/calligra/
-@so lib/qt5/qml/org/kde/calligra/libCalligraComponentsPlugin.so
-lib/qt5/qml/org/kde/calligra/qmldir
+lib/qt6/plugins/calligra/
+lib/qt6/plugins/calligra/colorspaces/
+@so lib/qt6/plugins/calligra/colorspaces/kolcmsengine.so
+lib/qt6/plugins/calligra/dockers/
+@so lib/qt6/plugins/calligra/dockers/calligra_docker_defaults.so
+@so lib/qt6/plugins/calligra/dockers/calligra_docker_stencils.so
+lib/qt6/plugins/calligra/formatfilters/
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_applixspread2kspread.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_applixword2odt.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_ascii2words.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_csv2sheets.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_dbase2kspread.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_docx2odt.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_eps2svgai.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_gnumeric2sheets.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_html2ods.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_karbon1x2karbon.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_karbon2image.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_karbon2svg.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_karbon2wmf.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_kpr2odp.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_kspread2tex.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_odt2ascii.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_odt2docx.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_odt2epub2.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_odt2html.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_odt2mobi.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_odt2wiki.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_opencalc2sheets.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_pdf2odg.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_pdf2svg.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_ppt2odp.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_pptx2odp.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_qpro2sheets.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_rtf2odt.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_sheets2csv.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_sheets2gnumeric.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_sheets2html.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_sheets2opencalc.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_svg2karbon.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_wmf2svg.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_xfig2odg.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_xls2ods.so
+@so lib/qt6/plugins/calligra/formatfilters/calligra_filter_xlsx2ods.so
+lib/qt6/plugins/calligra/pageapptools/
+@so lib/qt6/plugins/calligra/pageapptools/kopabackgroundtool.so
+lib/qt6/plugins/calligra/parts/
+@so lib/qt6/plugins/calligra/parts/calligrasheetspart.so
+@so lib/qt6/plugins/calligra/parts/calligrastagepart.so
+@so lib/qt6/plugins/calligra/parts/calligrawordspart.so
+@so lib/qt6/plugins/calligra/parts/karbonpart.so
+lib/qt6/plugins/calligra/presentationeventactions/
+@so lib/qt6/plugins/calligra/presentationeventactions/calligrastageeventactions.so
+lib/qt6/plugins/calligra/shapefiltereffects/
+@so lib/qt6/plugins/calligra/shapefiltereffects/calligra_filtereffects.so
+lib/qt6/plugins/calligra/shapes/
+@so lib/qt6/plugins/calligra/shapes/braindump_shape_state.so
+@so lib/qt6/plugins/calligra/shapes/braindump_shape_web.so
+@so lib/qt6/plugins/calligra/shapes/calligra_shape_artistictext.so
+@so lib/qt6/plugins/calligra/shapes/calligra_shape_chart.so
+@so lib/qt6/plugins/calligra/shapes/calligra_shape_formula.so
+@so lib/qt6/plugins/calligra/shapes/calligra_shape_music.so
+@so lib/qt6/plugins/calligra/shapes/calligra_shape_picture.so
+@so lib/qt6/plugins/calligra/shapes/calligra_shape_plugin.so
+@so lib/qt6/plugins/calligra/shapes/calligra_shape_text.so
+@so lib/qt6/plugins/calligra/shapes/calligra_shape_threed.so
+@so lib/qt6/plugins/calligra/shapes/calligra_shape_vector.so
+@so lib/qt6/plugins/calligra/shapes/calligra_shape_video.so
+@so lib/qt6/plugins/calligra/shapes/libcalligra_shape_paths.so
+lib/qt6/plugins/calligra/textediting/
+@so lib/qt6/plugins/calligra/textediting/calligra_textediting_autocorrect.so
+@so lib/qt6/plugins/calligra/textediting/calligra_textediting_changecase.so
+@so lib/qt6/plugins/calligra/textediting/calligra_textediting_spellcheck.so
+@so lib/qt6/plugins/calligra/textediting/calligra_textediting_thesaurus.so
+lib/qt6/plugins/calligra/textinlineobjects/
+@so lib/qt6/plugins/calligra/textinlineobjects/calligra_textinlineobject_variables.so
+@so lib/qt6/plugins/calligra/textinlineobjects/kprvariables.so
+lib/qt6/plugins/calligra/tools/
+@so lib/qt6/plugins/calligra/tools/calligra_tool_basicflakes.so
+@so lib/qt6/plugins/calligra/tools/calligra_tool_defaults.so
+@so lib/qt6/plugins/calligra/tools/karbon_tools.so
+lib/qt6/plugins/calligrasheets/
+lib/qt6/plugins/calligrasheets/extensions/
+@so lib/qt6/plugins/calligrasheets/extensions/sheetssolver.so
+lib/qt6/plugins/calligrasheets/functions/
+@so lib/qt6/plugins/calligrasheets/functions/kspreadbitopsmodule.so
+@so lib/qt6/plugins/calligrasheets/functions/kspreadconversionmodule.so
+@so lib/qt6/plugins/calligrasheets/functions/kspreaddatabasemodule.so
+@so lib/qt6/plugins/calligrasheets/functions/kspreaddatetimemodule.so
+@so lib/qt6/plugins/calligrasheets/functions/kspreadengineeringmodule.so
+@so lib/qt6/plugins/calligrasheets/functions/kspreadfinancialmodule.so
+@so lib/qt6/plugins/calligrasheets/functions/kspreadinformationmodule.so
+@so lib/qt6/plugins/calligrasheets/functions/kspreadlogicmodule.so
+@so lib/qt6/plugins/calligrasheets/functions/kspreadmathmodule.so
+@so lib/qt6/plugins/calligrasheets/functions/kspreadreferencemodule.so
+@so lib/qt6/plugins/calligrasheets/functions/kspreadstatisticalmodule.so
+@so lib/qt6/plugins/calligrasheets/functions/kspreadtextmodule.so
+@so lib/qt6/plugins/calligrasheets/functions/kspreadtrigonometrymodule.so
+lib/qt6/plugins/calligrastage/
+lib/qt6/plugins/calligrastage/pageeffects/
+@so lib/qt6/plugins/calligrastage/pageeffects/kpr_pageeffect_barwipe.so
+@so lib/qt6/plugins/calligrastage/pageeffects/kpr_pageeffect_clockwipe.so
+@so lib/qt6/plugins/calligrastage/pageeffects/kpr_pageeffect_edgewipe.so
+@so lib/qt6/plugins/calligrastage/pageeffects/kpr_pageeffect_fade.so
+@so lib/qt6/plugins/calligrastage/pageeffects/kpr_pageeffect_iriswipe.so
+@so lib/qt6/plugins/calligrastage/pageeffects/kpr_pageeffect_matrixwipe.so
+@so lib/qt6/plugins/calligrastage/pageeffects/kpr_pageeffect_slidewipe.so
+@so lib/qt6/plugins/calligrastage/pageeffects/kpr_pageeffect_spacerotation.so
+@so lib/qt6/plugins/calligrastage/pageeffects/kpr_pageeffect_swapeffect.so
+lib/qt6/plugins/calligrastage/shapeanimations/
+@so lib/qt6/plugins/calligrastage/shapeanimations/kpr_shapeanimation_example.so
+lib/qt6/plugins/calligrastage/tools/
+@so lib/qt6/plugins/calligrastage/tools/calligrastagetoolanimation.so
+lib/qt6/plugins/karbon/
+lib/qt6/plugins/karbon/extensions/
+@so lib/qt6/plugins/karbon/extensions/karbon_flattenpath.so
+@so lib/qt6/plugins/karbon/extensions/karbon_refinepath.so
+@so lib/qt6/plugins/karbon/extensions/karbon_roundcorners.so
+@so lib/qt6/plugins/karbon/extensions/karbon_whirlpinch.so
+lib/qt6/plugins/kf5/
+lib/qt6/plugins/kf5/propertiesdialog/
+@so lib/qt6/plugins/kf5/propertiesdialog/calligradocinfopropspage.so
+lib/qt6/plugins/kf6/thumbcreator/
+@so lib/qt6/plugins/kf6/thumbcreator/calligraimagethumbnail.so
+@so lib/qt6/plugins/kf6/thumbcreator/calligrathumbnail.so
+lib/qt6/plugins/okular/
+lib/qt6/plugins/okular/generators/
+@so lib/qt6/plugins/okular/generators/okularGenerator_docx_calligra.so
+@so lib/qt6/plugins/okular/generators/okularGenerator_powerpoint_calligra.so
+@so lib/qt6/plugins/okular/generators/okularGenerator_pptx_calligra.so
+@so lib/qt6/plugins/okular/generators/okularGenerator_rtf_calligra.so
+lib/qt6/plugins/okular_generators/
+@so lib/qt6/plugins/okular_generators/okularGenerator_odp_calligra.so
+@so lib/qt6/plugins/okular_generators/okularGenerator_odt_calligra.so
+lib/qt6/qml/Calligra/
+lib/qt6/qml/Calligra/Gemini/
+lib/qt6/qml/Calligra/Gemini/Dropbox/
+@so lib/qt6/qml/Calligra/Gemini/Dropbox/libcalligrageminidropboxplugin.so
+lib/qt6/qml/Calligra/Gemini/Dropbox/qmldir
+lib/qt6/qml/Calligra/Gemini/Git/
+@so lib/qt6/qml/Calligra/Gemini/Git/libcalligrageminigitplugin.so
+lib/qt6/qml/Calligra/Gemini/Git/qmldir
+lib/qt6/qml/org/kde/calligra/
+@so lib/qt6/qml/org/kde/calligra/libCalligraComponentsPlugin.so
+lib/qt6/qml/org/kde/calligra/qmldir
 share/applications/calligra.desktop
-share/applications/org.kde.calligragemini.desktop
-share/applications/org.kde.calligrasheets.desktop
-share/applications/org.kde.calligrastage.desktop
-share/applications/org.kde.calligrawords.desktop
+share/applications/okularApplication_docx_calligra.desktop
+share/applications/okularApplication_odp_calligra.desktop
+share/applications/okularApplication_odt_calligra.desktop
+share/applications/okularApplication_powerpoint_calligra.desktop
+share/applications/okularApplication_pptx_calligra.desktop
+share/applications/okularApplication_rtf_calligra.desktop
+share/applications/org.kde.calligra.braindump.desktop
+share/applications/org.kde.calligra.desktop
+share/applications/org.kde.calligra.gemini.desktop
+share/applications/org.kde.calligra.karbon.desktop
+share/applications/org.kde.calligra.sheets.desktop
+share/applications/org.kde.calligra.stage.desktop
+share/applications/org.kde.calligra.words.desktop
 share/applications/org.kde.calligrawords_ascii.desktop
-share/applications/org.kde.karbon.desktop
 share/calligra/
 share/calligra/autocorrect/
-share/calligra/autocorrect/autocorrect.xml
+share/calligra/autocorrect/af_ZA.xml
+share/calligra/autocorrect/bg_BG.xml
+share/calligra/autocorrect/ca_ES.xml
+share/calligra/autocorrect/cs_CZ.xml
+share/calligra/autocorrect/da_DK.xml
+share/calligra/autocorrect/de.xml
+share/calligra/autocorrect/dsb.xml
+share/calligra/autocorrect/el_GR.xml
+share/calligra/autocorrect/en_AU.xml
+share/calligra/autocorrect/en_GB.xml
 share/calligra/autocorrect/en_US.xml
+share/calligra/autocorrect/en_ZA.xml
+share/calligra/autocorrect/fa_IR.xml
+share/calligra/autocorrect/fi_FI.xml
+share/calligra/autocorrect/ga_IE.xml
+share/calligra/autocorrect/hr_HR.xml
+share/calligra/autocorrect/hsb.xml
+share/calligra/autocorrect/hu_HU.xml
+share/calligra/autocorrect/is_IS.xml
+share/calligra/autocorrect/it.xml
+share/calligra/autocorrect/ja_JP.xml
+share/calligra/autocorrect/ko_KR.xml
+share/calligra/autocorrect/lb_LU.xml
+share/calligra/autocorrect/lt_LT.xml
+share/calligra/autocorrect/mn_MN.xml
+share/calligra/autocorrect/nb.xml
+share/calligra/autocorrect/nl_BE.xml
+share/calligra/autocorrect/nl_NL.xml
+share/calligra/autocorrect/nn.xml
+share/calligra/autocorrect/pl_PL.xml
+share/calligra/autocorrect/pt_BR.xml
+share/calligra/autocorrect/pt_PT.xml
+share/calligra/autocorrect/ro_RO.xml
+share/calligra/autocorrect/ru_RU.xml
+share/calligra/autocorrect/sk_SK.xml
+share/calligra/autocorrect/sl_SI.xml
+share/calligra/autocorrect/sr_CS.xml
+share/calligra/autocorrect/sr_Latn_CS.xml
+share/calligra/autocorrect/sr_Latn_ME.xml
+share/calligra/autocorrect/sr_Latn_RS.xml
+share/calligra/autocorrect/sr_ME.xml
+share/calligra/autocorrect/sr_RS.xml
+share/calligra/autocorrect/sv_SE.xml
+share/calligra/autocorrect/tr_TR.xml
+share/calligra/autocorrect/vi_VN.xml
+share/calligra/autocorrect/vro_EE.xml
+share/calligra/autocorrect/zh_CN.xml
+share/calligra/autocorrect/zh_TW.xml
 share/calligra/calligra_shell.rc
 share/calligra/cursors/
 share/calligra/cursors/cursor_connect.png
@@ -377,6 +451,8 @@ share/calligra/icons/hicolor/22x22/actions/smiley-shape.png
 share/calligra/icons/hicolor/22x22/actions/spiral-shape.png
 share/calligra/icons/hicolor/22x22/actions/sqrt.png
 share/calligra/icons/hicolor/22x22/actions/star-shape.png
+share/calligra/icons/hicolor/22x22/actions/stateshape.png
+share/calligra/icons/hicolor/22x22/actions/statetool.png
 share/calligra/icons/hicolor/22x22/actions/table.png
 share/calligra/icons/hicolor/22x22/actions/text-put-on-path.png
 share/calligra/icons/hicolor/22x22/actions/text-remove-from-path.png
@@ -434,6 +510,7 @@ share/calligra/icons/hicolor/scalable/actions/
 share/calligra/icons/hicolor/scalable/actions/artistictext-tool.svg
 share/calligra/icons/hicolor/scalable/actions/snap-bounding-box.svg
 share/calligra/icons/hicolor/scalable/actions/snap-extension.svg
+share/calligra/icons/hicolor/scalable/actions/stateshape.svg
 share/calligra/icons/hicolor/scalable/actions/table.svgz
 share/calligra/icons/hicolor/scalable/actions/text-put-on-path.svg
 share/calligra/icons/hicolor/scalable/actions/text-remove-from-path.svg
@@ -4336,6 +4413,16 @@ share/calligra/thesaurus/thesaurus.txt
 share/calligra_shape_music/
 share/calligra_shape_music/fonts/
 share/calligra_shape_music/fonts/Emmentaler-14.ttf
+share/calligra_shape_state/
+share/calligra_shape_state/states/
+share/calligra_shape_state/states/checked.svg
+share/calligra_shape_state/states/progress-00.svg
+share/calligra_shape_state/states/progress-100.svg
+share/calligra_shape_state/states/progress-25.svg
+share/calligra_shape_state/states/progress-50.svg
+share/calligra_shape_state/states/progress-75.svg
+share/calligra_shape_state/states/states.xml
+share/calligra_shape_state/states/unchecked.svg
 share/calligragemini/
 share/calligragemini/calligragemini.qml
 share/calligragemini/qml/
@@ -4388,7 +4475,6 @@ share/calligragemini/qml/welcomepages/
 share/calligragemini/qml/welcomepages/CustomDocWords.qml
 share/calligragemini/qml/welcomepages/VariantSelector.qml
 share/calligragemini/qml/welcomepages/WelcomePageCloud.qml
-share/calligragemini/qml/welcomepages/WelcomePageCustom.qml
 share/calligragemini/qml/welcomepages/WelcomePageFilebrowser.qml
 share/calligragemini/qml/welcomepages/WelcomePageRecent.qml
 share/calligragemini/qml/welcomepages/WelcomePageStage.qml
@@ -4804,6 +4890,8 @@ share/calligrasheets/templates/HomeFamily/BMI.desktop
 share/calligrasheets/templates/HomeFamily/CreditCardTracker.desktop
 share/calligrasheets/templates/HomeFamily/MenuPlan.desktop
 share/calligrasheets/templates/HomeFamily/VacationChecklist.desktop
+share/calligrasheets/viewplugins/
+share/calligrasheets/viewplugins/solver.rc
 share/calligrastage/
 share/calligrastage/animations/
 share/calligrastage/animations/animations.xml
@@ -4959,7 +5047,10 @@ share/calligrawords/icons/
 share/calligrawords/icons/hicolor/
 share/calligrawords/icons/hicolor/128x128/
 share/calligrawords/icons/hicolor/128x128/actions/
+share/calligrawords/icons/hicolor/128x128/actions/template_a4.png
 share/calligrawords/icons/hicolor/128x128/actions/template_colorful.png
+share/calligrawords/icons/hicolor/128x128/actions/template_fax.png
+share/calligrawords/icons/hicolor/128x128/actions/template_letter.png
 share/calligrawords/icons/hicolor/22x22/
 share/calligrawords/icons/hicolor/22x22/actions/
 share/calligrawords/icons/hicolor/22x22/actions/tool_pagelayout.png
@@ -4982,11 +5073,8 @@ share/calligrawords/templates/Normal/
 share/calligrawords/templates/Normal/.directory
 share/calligrawords/templates/Normal/.source/
 share/calligrawords/templates/Normal/.source/A4.odt
-share/calligrawords/templates/Normal/.source/ColorfulA4.odt
 share/calligrawords/templates/Normal/.source/ColorfulLetter.odt
-share/calligrawords/templates/Normal/.source/FaxA4.odt
 share/calligrawords/templates/Normal/.source/FaxLetter.odt
-share/calligrawords/templates/Normal/.source/ProfessionalA4.odt
 share/calligrawords/templates/Normal/.source/ProfessionalLetter.odt
 share/calligrawords/templates/Normal/.thumbnail/
 share/calligrawords/templates/Normal/.thumbnail/a4.png
@@ -4994,11 +5082,8 @@ share/calligrawords/templates/Normal/.thumbnail/colorful.png
 share/calligrawords/templates/Normal/.thumbnail/fax.png
 share/calligrawords/templates/Normal/.thumbnail/professional.png
 share/calligrawords/templates/Normal/A4.desktop
-share/calligrawords/templates/Normal/ColorfulA4.desktop
 share/calligrawords/templates/Normal/ColorfulLetter.desktop
-share/calligrawords/templates/Normal/FaxA4.desktop
 share/calligrawords/templates/Normal/FaxLetter.desktop
-share/calligrawords/templates/Normal/ProfessionalA4.desktop
 share/calligrawords/templates/Normal/ProfessionalLetter.desktop
 share/color/
 share/color/icc/
@@ -5097,48 +5182,6 @@ share/color/icc/calligra/sRGB-elle-V4-srgbtrc.icc
 share/color/icc/calligra/scRGB.icm
 share/config.kcfg/
 share/config.kcfg/calligrasheets.kcfg
-share/doc/HTML/ca/calligra/
-share/doc/HTML/ca/calligra/index.cache.bz2
-share/doc/HTML/ca/calligra/index.docbook
-share/doc/HTML/ca/sheets/
-share/doc/HTML/ca/sheets/advanced.docbook
-share/doc/HTML/ca/sheets/basics.docbook
-share/doc/HTML/ca/sheets/commands.docbook
-share/doc/HTML/ca/sheets/config.docbook
-share/doc/HTML/ca/sheets/configdialog.docbook
-share/doc/HTML/ca/sheets/format.docbook
-share/doc/HTML/ca/sheets/functions.docbook
-share/doc/HTML/ca/sheets/index.cache.bz2
-share/doc/HTML/ca/sheets/index.docbook
-share/doc/HTML/ca/stage/
-share/doc/HTML/ca/stage/great-presentations.docbook
-share/doc/HTML/ca/stage/guides.docbook
-share/doc/HTML/ca/stage/index.cache.bz2
-share/doc/HTML/ca/stage/index.docbook
-share/doc/HTML/ca/stage/menus.docbook
-share/doc/HTML/ca/stage/options.docbook
-share/doc/HTML/ca/stage/tutorial.docbook
-share/doc/HTML/de/calligra/
-share/doc/HTML/de/calligra/index.cache.bz2
-share/doc/HTML/de/calligra/index.docbook
-share/doc/HTML/de/sheets/
-share/doc/HTML/de/sheets/advanced.docbook
-share/doc/HTML/de/sheets/basics.docbook
-share/doc/HTML/de/sheets/commands.docbook
-share/doc/HTML/de/sheets/config.docbook
-share/doc/HTML/de/sheets/configdialog.docbook
-share/doc/HTML/de/sheets/format.docbook
-share/doc/HTML/de/sheets/functions.docbook
-share/doc/HTML/de/sheets/index.cache.bz2
-share/doc/HTML/de/sheets/index.docbook
-share/doc/HTML/de/stage/
-share/doc/HTML/de/stage/great-presentations.docbook
-share/doc/HTML/de/stage/guides.docbook
-share/doc/HTML/de/stage/index.cache.bz2
-share/doc/HTML/de/stage/index.docbook
-share/doc/HTML/de/stage/menus.docbook
-share/doc/HTML/de/stage/options.docbook
-share/doc/HTML/de/stage/tutorial.docbook
 share/doc/HTML/en/calligra/
 share/doc/HTML/en/calligra/index.cache.bz2
 share/doc/HTML/en/calligra/index.docbook
@@ -5220,519 +5263,8 @@ share/doc/HTML/en/calligrastage/tut21.png
 share/doc/HTML/en/calligrastage/tut25.png
 share/doc/HTML/en/calligrastage/tut26.png
 share/doc/HTML/en/calligrastage/tutorial.docbook
-share/doc/HTML/es/calligra/
-share/doc/HTML/es/calligra/index.cache.bz2
-share/doc/HTML/es/calligra/index.docbook
-share/doc/HTML/es/sheets/
-share/doc/HTML/es/sheets/advanced.docbook
-share/doc/HTML/es/sheets/basics.docbook
-share/doc/HTML/es/sheets/cellformat0.png
-share/doc/HTML/es/sheets/cellformat1.png
-share/doc/HTML/es/sheets/cellformat2.png
-share/doc/HTML/es/sheets/cellformat3.png
-share/doc/HTML/es/sheets/cellformat4.png
-share/doc/HTML/es/sheets/cellformat5.png
-share/doc/HTML/es/sheets/cellformat6.png
-share/doc/HTML/es/sheets/cellprotection1.png
-share/doc/HTML/es/sheets/cellprotection2.png
-share/doc/HTML/es/sheets/chart1.png
-share/doc/HTML/es/sheets/commands.docbook
-share/doc/HTML/es/sheets/config.docbook
-share/doc/HTML/es/sheets/configdialog.docbook
-share/doc/HTML/es/sheets/configure2.png
-share/doc/HTML/es/sheets/configure3.png
-share/doc/HTML/es/sheets/copy1.png
-share/doc/HTML/es/sheets/decreasedecimal.png
-share/doc/HTML/es/sheets/format.docbook
-share/doc/HTML/es/sheets/functions.docbook
-share/doc/HTML/es/sheets/hideformula1.png
-share/doc/HTML/es/sheets/hideformula2.png
-share/doc/HTML/es/sheets/hideformula3.png
-share/doc/HTML/es/sheets/hideformula4.png
-share/doc/HTML/es/sheets/hideformula5.png
-share/doc/HTML/es/sheets/increasedecimal.png
-share/doc/HTML/es/sheets/index.cache.bz2
-share/doc/HTML/es/sheets/index.docbook
-share/doc/HTML/es/sheets/newdocument.png
-share/doc/HTML/es/sheets/percent.png
-share/doc/HTML/es/sheets/sheetproperties.png
-share/doc/HTML/es/sheets/shortcut1.png
-share/doc/HTML/es/sheets/sort1.png
-share/doc/HTML/es/sheets/starting1.png
-share/doc/HTML/es/stage/
-share/doc/HTML/es/stage/great-presentations.docbook
-share/doc/HTML/es/stage/guides.docbook
-share/doc/HTML/es/stage/index.cache.bz2
-share/doc/HTML/es/stage/index.docbook
-share/doc/HTML/es/stage/menus.docbook
-share/doc/HTML/es/stage/options.docbook
-share/doc/HTML/es/stage/tutorial.docbook
-share/doc/HTML/et/calligra/
-share/doc/HTML/et/calligra/index.cache.bz2
-share/doc/HTML/et/calligra/index.docbook
-share/doc/HTML/fr/calligra/
-share/doc/HTML/fr/calligra/index.cache.bz2
-share/doc/HTML/fr/calligra/index.docbook
-share/doc/HTML/fr/stage/
-share/doc/HTML/fr/stage/barstyle1.png
-share/doc/HTML/fr/stage/configure-document.png
-share/doc/HTML/fr/stage/configure-grid.png
-share/doc/HTML/fr/stage/configure-misc.png
-share/doc/HTML/fr/stage/great-presentations.docbook
-share/doc/HTML/fr/stage/guides.docbook
-share/doc/HTML/fr/stage/htmlshow3.png
-share/doc/HTML/fr/stage/htmlshow9.png
-share/doc/HTML/fr/stage/index.cache.bz2
-share/doc/HTML/fr/stage/index.docbook
-share/doc/HTML/fr/stage/menus.docbook
-share/doc/HTML/fr/stage/options.docbook
-share/doc/HTML/fr/stage/settings03.png
-share/doc/HTML/fr/stage/settings04.png
-share/doc/HTML/fr/stage/template03.png
-share/doc/HTML/fr/stage/template04.png
-share/doc/HTML/fr/stage/tut01.png
-share/doc/HTML/fr/stage/tut03.png
-share/doc/HTML/fr/stage/tut04.png
-share/doc/HTML/fr/stage/tut07.png
-share/doc/HTML/fr/stage/tut09.png
-share/doc/HTML/fr/stage/tut10.png
-share/doc/HTML/fr/stage/tut13.png
-share/doc/HTML/fr/stage/tut19.png
-share/doc/HTML/fr/stage/tut21.png
-share/doc/HTML/fr/stage/tut25.png
-share/doc/HTML/fr/stage/tut26.png
-share/doc/HTML/fr/stage/tutorial.docbook
-share/doc/HTML/id/
-share/doc/HTML/id/calligra/
-share/doc/HTML/id/calligra/index.cache.bz2
-share/doc/HTML/id/calligra/index.docbook
-share/doc/HTML/it/calligra/
-share/doc/HTML/it/calligra/index.cache.bz2
-share/doc/HTML/it/calligra/index.docbook
-share/doc/HTML/it/sheets/
-share/doc/HTML/it/sheets/advanced.docbook
-share/doc/HTML/it/sheets/basics.docbook
-share/doc/HTML/it/sheets/cellformat0.png
-share/doc/HTML/it/sheets/cellformat1.png
-share/doc/HTML/it/sheets/cellformat2.png
-share/doc/HTML/it/sheets/cellformat3.png
-share/doc/HTML/it/sheets/cellformat4.png
-share/doc/HTML/it/sheets/cellformat5.png
-share/doc/HTML/it/sheets/cellformat6.png
-share/doc/HTML/it/sheets/cellprotection1.png
-share/doc/HTML/it/sheets/cellprotection2.png
-share/doc/HTML/it/sheets/chart1.png
-share/doc/HTML/it/sheets/commands.docbook
-share/doc/HTML/it/sheets/config.docbook
-share/doc/HTML/it/sheets/configdialog.docbook
-share/doc/HTML/it/sheets/configure2.png
-share/doc/HTML/it/sheets/configure3.png
-share/doc/HTML/it/sheets/configure4.png
-share/doc/HTML/it/sheets/configure5.png
-share/doc/HTML/it/sheets/configure6.png
-share/doc/HTML/it/sheets/copy1.png
-share/doc/HTML/it/sheets/format.docbook
-share/doc/HTML/it/sheets/functions.docbook
-share/doc/HTML/it/sheets/hideformula1.png
-share/doc/HTML/it/sheets/hideformula2.png
-share/doc/HTML/it/sheets/hideformula3.png
-share/doc/HTML/it/sheets/hideformula4.png
-share/doc/HTML/it/sheets/hideformula5.png
-share/doc/HTML/it/sheets/index.cache.bz2
-share/doc/HTML/it/sheets/index.docbook
-share/doc/HTML/it/sheets/newdocument.png
-share/doc/HTML/it/sheets/pivot1.png
-share/doc/HTML/it/sheets/pivot2.png
-share/doc/HTML/it/sheets/pivot3.png
-share/doc/HTML/it/sheets/pivot4.png
-share/doc/HTML/it/sheets/sheetproperties.png
-share/doc/HTML/it/sheets/shortcut1.png
-share/doc/HTML/it/sheets/sort1.png
-share/doc/HTML/it/sheets/starting1.png
-share/doc/HTML/it/stage/
-share/doc/HTML/it/stage/barstyle1.png
-share/doc/HTML/it/stage/configure-author.png
-share/doc/HTML/it/stage/configure-document.png
-share/doc/HTML/it/stage/configure-grid.png
-share/doc/HTML/it/stage/configure-misc.png
-share/doc/HTML/it/stage/great-presentations.docbook
-share/doc/HTML/it/stage/guides.docbook
-share/doc/HTML/it/stage/htmlshow3.png
-share/doc/HTML/it/stage/htmlshow9.png
-share/doc/HTML/it/stage/index.cache.bz2
-share/doc/HTML/it/stage/index.docbook
-share/doc/HTML/it/stage/menus.docbook
-share/doc/HTML/it/stage/options.docbook
-share/doc/HTML/it/stage/settings03.png
-share/doc/HTML/it/stage/settings04.png
-share/doc/HTML/it/stage/template03.png
-share/doc/HTML/it/stage/template04.png
-share/doc/HTML/it/stage/tut01.png
-share/doc/HTML/it/stage/tut03.png
-share/doc/HTML/it/stage/tut04.png
-share/doc/HTML/it/stage/tut07.png
-share/doc/HTML/it/stage/tut09.png
-share/doc/HTML/it/stage/tut10.png
-share/doc/HTML/it/stage/tut13.png
-share/doc/HTML/it/stage/tut19.png
-share/doc/HTML/it/stage/tut20.png
-share/doc/HTML/it/stage/tut21.png
-share/doc/HTML/it/stage/tut25.png
-share/doc/HTML/it/stage/tut26.png
-share/doc/HTML/it/stage/tutorial.docbook
-share/doc/HTML/nl/calligra/
-share/doc/HTML/nl/calligra/index.cache.bz2
-share/doc/HTML/nl/calligra/index.docbook
-share/doc/HTML/nl/sheets/
-share/doc/HTML/nl/sheets/advanced.docbook
-share/doc/HTML/nl/sheets/basics.docbook
-share/doc/HTML/nl/sheets/celformat0.png
-share/doc/HTML/nl/sheets/celformat1.png
-share/doc/HTML/nl/sheets/celformat2.png
-share/doc/HTML/nl/sheets/celformat3.png
-share/doc/HTML/nl/sheets/celformat4.png
-share/doc/HTML/nl/sheets/celformat5.png
-share/doc/HTML/nl/sheets/chart1.png
-share/doc/HTML/nl/sheets/commands.docbook
-share/doc/HTML/nl/sheets/config.docbook
-share/doc/HTML/nl/sheets/configdialog.docbook
-share/doc/HTML/nl/sheets/copy1.png
-share/doc/HTML/nl/sheets/format.docbook
-share/doc/HTML/nl/sheets/functions.docbook
-share/doc/HTML/nl/sheets/index.cache.bz2
-share/doc/HTML/nl/sheets/index.docbook
-share/doc/HTML/nl/sheets/shortcut1.png
-share/doc/HTML/nl/sheets/shortcut2.png
-share/doc/HTML/nl/sheets/shortcut3.png
-share/doc/HTML/nl/sheets/sort1.png
-share/doc/HTML/nl/sheets/starting1.png
-share/doc/HTML/nl/stage/
-share/doc/HTML/nl/stage/barstyle1.png
-share/doc/HTML/nl/stage/barstyle2.png
-share/doc/HTML/nl/stage/barstyle3.png
-share/doc/HTML/nl/stage/barstyle4.png
-share/doc/HTML/nl/stage/barstyle5.png
-share/doc/HTML/nl/stage/barstyle6.png
-share/doc/HTML/nl/stage/barstyle7.png
-share/doc/HTML/nl/stage/great-presentations.docbook
-share/doc/HTML/nl/stage/guides.docbook
-share/doc/HTML/nl/stage/htmlshow00.png
-share/doc/HTML/nl/stage/htmlshow01.png
-share/doc/HTML/nl/stage/htmlshow02.png
-share/doc/HTML/nl/stage/htmlshow02a.png
-share/doc/HTML/nl/stage/htmlshow03.png
-share/doc/HTML/nl/stage/htmlshow04.png
-share/doc/HTML/nl/stage/htmlshow05.png
-share/doc/HTML/nl/stage/htmlshow07.png
-share/doc/HTML/nl/stage/index.cache.bz2
-share/doc/HTML/nl/stage/index.docbook
-share/doc/HTML/nl/stage/menus.docbook
-share/doc/HTML/nl/stage/msexport1.png
-share/doc/HTML/nl/stage/msexport2.png
-share/doc/HTML/nl/stage/msexport3.png
-share/doc/HTML/nl/stage/msexport4.png
-share/doc/HTML/nl/stage/options.docbook
-share/doc/HTML/nl/stage/settings01.png
-share/doc/HTML/nl/stage/settings03.png
-share/doc/HTML/nl/stage/settings04.png
-share/doc/HTML/nl/stage/settings05.png
-share/doc/HTML/nl/stage/settings06.png
-share/doc/HTML/nl/stage/template02.png
-share/doc/HTML/nl/stage/template03.png
-share/doc/HTML/nl/stage/template04.png
-share/doc/HTML/nl/stage/template05.png
-share/doc/HTML/nl/stage/template06.png
-share/doc/HTML/nl/stage/template07.png
-share/doc/HTML/nl/stage/textmenu01.png
-share/doc/HTML/nl/stage/textmenu02.png
-share/doc/HTML/nl/stage/textmenu03.png
-share/doc/HTML/nl/stage/textmenu03a.png
-share/doc/HTML/nl/stage/textmenu04.png
-share/doc/HTML/nl/stage/toolsmenu01.png
-share/doc/HTML/nl/stage/tut01.png
-share/doc/HTML/nl/stage/tut02.png
-share/doc/HTML/nl/stage/tut03.png
-share/doc/HTML/nl/stage/tut04.png
-share/doc/HTML/nl/stage/tut05.png
-share/doc/HTML/nl/stage/tut06.png
-share/doc/HTML/nl/stage/tut07.png
-share/doc/HTML/nl/stage/tut08.png
-share/doc/HTML/nl/stage/tut09.png
-share/doc/HTML/nl/stage/tut10.png
-share/doc/HTML/nl/stage/tut11.png
-share/doc/HTML/nl/stage/tut12.png
-share/doc/HTML/nl/stage/tut13.png
-share/doc/HTML/nl/stage/tut14.png
-share/doc/HTML/nl/stage/tut15.png
-share/doc/HTML/nl/stage/tut16.png
-share/doc/HTML/nl/stage/tut17.png
-share/doc/HTML/nl/stage/tut18.png
-share/doc/HTML/nl/stage/tut19.png
-share/doc/HTML/nl/stage/tut20.png
-share/doc/HTML/nl/stage/tut21.png
-share/doc/HTML/nl/stage/tut22.png
-share/doc/HTML/nl/stage/tut23.png
-share/doc/HTML/nl/stage/tutorial.docbook
-share/doc/HTML/pt/calligra/
-share/doc/HTML/pt/calligra/index.cache.bz2
-share/doc/HTML/pt/calligra/index.docbook
-share/doc/HTML/pt/sheets/
-share/doc/HTML/pt/sheets/advanced.docbook
-share/doc/HTML/pt/sheets/basics.docbook
-share/doc/HTML/pt/sheets/commands.docbook
-share/doc/HTML/pt/sheets/config.docbook
-share/doc/HTML/pt/sheets/configdialog.docbook
-share/doc/HTML/pt/sheets/format.docbook
-share/doc/HTML/pt/sheets/functions.docbook
-share/doc/HTML/pt/sheets/index.cache.bz2
-share/doc/HTML/pt/sheets/index.docbook
-share/doc/HTML/pt/stage/
-share/doc/HTML/pt/stage/great-presentations.docbook
-share/doc/HTML/pt/stage/guides.docbook
-share/doc/HTML/pt/stage/index.cache.bz2
-share/doc/HTML/pt/stage/index.docbook
-share/doc/HTML/pt/stage/menus.docbook
-share/doc/HTML/pt/stage/options.docbook
-share/doc/HTML/pt/stage/tutorial.docbook
-share/doc/HTML/pt_BR/calligra/
-share/doc/HTML/pt_BR/calligra/index.cache.bz2
-share/doc/HTML/pt_BR/calligra/index.docbook
-share/doc/HTML/pt_BR/sheets/
-share/doc/HTML/pt_BR/sheets/advanced.docbook
-share/doc/HTML/pt_BR/sheets/basics.docbook
-share/doc/HTML/pt_BR/sheets/commands.docbook
-share/doc/HTML/pt_BR/sheets/config.docbook
-share/doc/HTML/pt_BR/sheets/configdialog.docbook
-share/doc/HTML/pt_BR/sheets/format.docbook
-share/doc/HTML/pt_BR/sheets/functions.docbook
-share/doc/HTML/pt_BR/sheets/index.cache.bz2
-share/doc/HTML/pt_BR/sheets/index.docbook
-share/doc/HTML/pt_BR/stage/
-share/doc/HTML/pt_BR/stage/great-presentations.docbook
-share/doc/HTML/pt_BR/stage/guides.docbook
-share/doc/HTML/pt_BR/stage/index.cache.bz2
-share/doc/HTML/pt_BR/stage/index.docbook
-share/doc/HTML/pt_BR/stage/menus.docbook
-share/doc/HTML/pt_BR/stage/options.docbook
-share/doc/HTML/pt_BR/stage/tutorial.docbook
-share/doc/HTML/ru/calligra/
-share/doc/HTML/ru/calligra/index.cache.bz2
-share/doc/HTML/ru/calligra/index.docbook
-share/doc/HTML/ru/sheets/
-share/doc/HTML/ru/sheets/a11y.docbook
-share/doc/HTML/ru/sheets/advanced.docbook
-share/doc/HTML/ru/sheets/basics.docbook
-share/doc/HTML/ru/sheets/commands.docbook
-share/doc/HTML/ru/sheets/config.docbook
-share/doc/HTML/ru/sheets/configdialog.docbook
-share/doc/HTML/ru/sheets/faq.docbook
-share/doc/HTML/ru/sheets/format.docbook
-share/doc/HTML/ru/sheets/importexport.docbook
-share/doc/HTML/ru/sheets/index.cache.bz2
-share/doc/HTML/ru/sheets/index.docbook
-share/doc/HTML/sv/calligra/
-share/doc/HTML/sv/calligra/index.cache.bz2
-share/doc/HTML/sv/calligra/index.docbook
-share/doc/HTML/sv/sheets/
-share/doc/HTML/sv/sheets/advanced.docbook
-share/doc/HTML/sv/sheets/basics.docbook
-share/doc/HTML/sv/sheets/cellformat0.png
-share/doc/HTML/sv/sheets/cellformat1.png
-share/doc/HTML/sv/sheets/cellformat2.png
-share/doc/HTML/sv/sheets/cellformat3.png
-share/doc/HTML/sv/sheets/cellformat4.png
-share/doc/HTML/sv/sheets/cellformat5.png
-share/doc/HTML/sv/sheets/cellformat6.png
-share/doc/HTML/sv/sheets/cellformat7.png
-share/doc/HTML/sv/sheets/cellprotection1.png
-share/doc/HTML/sv/sheets/cellprotection2.png
-share/doc/HTML/sv/sheets/chart1.png
-share/doc/HTML/sv/sheets/commands.docbook
-share/doc/HTML/sv/sheets/config.docbook
-share/doc/HTML/sv/sheets/configdialog.docbook
-share/doc/HTML/sv/sheets/configure1.png
-share/doc/HTML/sv/sheets/configure2.png
-share/doc/HTML/sv/sheets/configure3.png
-share/doc/HTML/sv/sheets/configure4.png
-share/doc/HTML/sv/sheets/configure5.png
-share/doc/HTML/sv/sheets/configure6.png
-share/doc/HTML/sv/sheets/copy1.png
-share/doc/HTML/sv/sheets/format.docbook
-share/doc/HTML/sv/sheets/functions.docbook
-share/doc/HTML/sv/sheets/hideformula1.png
-share/doc/HTML/sv/sheets/hideformula2.png
-share/doc/HTML/sv/sheets/hideformula3.png
-share/doc/HTML/sv/sheets/hideformula4.png
-share/doc/HTML/sv/sheets/hideformula5.png
-share/doc/HTML/sv/sheets/index.cache.bz2
-share/doc/HTML/sv/sheets/index.docbook
-share/doc/HTML/sv/sheets/kbd-focus-ext.png
-share/doc/HTML/sv/sheets/mousenav.png
-share/doc/HTML/sv/sheets/newdocument.png
-share/doc/HTML/sv/sheets/sheetproperties.png
-share/doc/HTML/sv/sheets/shortcut1.png
-share/doc/HTML/sv/sheets/shortcut2.png
-share/doc/HTML/sv/sheets/shortcut3.png
-share/doc/HTML/sv/sheets/sort1.png
-share/doc/HTML/sv/sheets/starting1.png
-share/doc/HTML/sv/sheets/tts.png
-share/doc/HTML/sv/stage/
-share/doc/HTML/sv/stage/autocorrection1.png
-share/doc/HTML/sv/stage/autocorrection2.png
-share/doc/HTML/sv/stage/autocorrection3.png
-share/doc/HTML/sv/stage/autocorrection4.png
-share/doc/HTML/sv/stage/barstyle1.png
-share/doc/HTML/sv/stage/barstyle3.png
-share/doc/HTML/sv/stage/barstyle4.png
-share/doc/HTML/sv/stage/barstyle5.png
-share/doc/HTML/sv/stage/barstyle6.png
-share/doc/HTML/sv/stage/barstyle7.png
-share/doc/HTML/sv/stage/changeformat.png
-share/doc/HTML/sv/stage/completion.png
-share/doc/HTML/sv/stage/configure1.png
-share/doc/HTML/sv/stage/configure2.png
-share/doc/HTML/sv/stage/configure3.png
-share/doc/HTML/sv/stage/configure4.png
-share/doc/HTML/sv/stage/configure5.png
-share/doc/HTML/sv/stage/configure6.png
-share/doc/HTML/sv/stage/configure6b.png
-share/doc/HTML/sv/stage/configure6c.png
-share/doc/HTML/sv/stage/configure6d.png
-share/doc/HTML/sv/stage/configure6e.png
-share/doc/HTML/sv/stage/configure7.png
-share/doc/HTML/sv/stage/great-presentations.docbook
-share/doc/HTML/sv/stage/guides.docbook
-share/doc/HTML/sv/stage/htmlshow1.png
-share/doc/HTML/sv/stage/htmlshow2.png
-share/doc/HTML/sv/stage/htmlshow3.png
-share/doc/HTML/sv/stage/htmlshow4.png
-share/doc/HTML/sv/stage/htmlshow5.png
-share/doc/HTML/sv/stage/htmlshow6.png
-share/doc/HTML/sv/stage/htmlshow7.png
-share/doc/HTML/sv/stage/htmlshow8.png
-share/doc/HTML/sv/stage/index.cache.bz2
-share/doc/HTML/sv/stage/index.docbook
-share/doc/HTML/sv/stage/kbd-focus-ext.png
-share/doc/HTML/sv/stage/menus.docbook
-share/doc/HTML/sv/stage/mousenav.png
-share/doc/HTML/sv/stage/msexport1.png
-share/doc/HTML/sv/stage/msexport2.png
-share/doc/HTML/sv/stage/msexport2b.png
-share/doc/HTML/sv/stage/msexport3.png
-share/doc/HTML/sv/stage/options.docbook
-share/doc/HTML/sv/stage/properties.png
-share/doc/HTML/sv/stage/settings01.png
-share/doc/HTML/sv/stage/settings03.png
-share/doc/HTML/sv/stage/settings04.png
-share/doc/HTML/sv/stage/template02.png
-share/doc/HTML/sv/stage/template03.png
-share/doc/HTML/sv/stage/template04.png
-share/doc/HTML/sv/stage/template05.png
-share/doc/HTML/sv/stage/template06.png
-share/doc/HTML/sv/stage/template07.png
-share/doc/HTML/sv/stage/textmenu1.png
-share/doc/HTML/sv/stage/textmenu2.png
-share/doc/HTML/sv/stage/toolsmenu01.png
-share/doc/HTML/sv/stage/tts.png
-share/doc/HTML/sv/stage/tut01.png
-share/doc/HTML/sv/stage/tut02.png
-share/doc/HTML/sv/stage/tut03.png
-share/doc/HTML/sv/stage/tut04.png
-share/doc/HTML/sv/stage/tut05.png
-share/doc/HTML/sv/stage/tut06.png
-share/doc/HTML/sv/stage/tut07.png
-share/doc/HTML/sv/stage/tut08.png
-share/doc/HTML/sv/stage/tut09.png
-share/doc/HTML/sv/stage/tut10.png
-share/doc/HTML/sv/stage/tut11.png
-share/doc/HTML/sv/stage/tut12.png
-share/doc/HTML/sv/stage/tut13.png
-share/doc/HTML/sv/stage/tut14.png
-share/doc/HTML/sv/stage/tut15.png
-share/doc/HTML/sv/stage/tut16.png
-share/doc/HTML/sv/stage/tut17.png
-share/doc/HTML/sv/stage/tut18.png
-share/doc/HTML/sv/stage/tut19.png
-share/doc/HTML/sv/stage/tut20.png
-share/doc/HTML/sv/stage/tut21.png
-share/doc/HTML/sv/stage/tut22.png
-share/doc/HTML/sv/stage/tut23.png
-share/doc/HTML/sv/stage/tut24.png
-share/doc/HTML/sv/stage/tut26.png
-share/doc/HTML/sv/stage/tutorial.docbook
-share/doc/HTML/uk/calligra/
-share/doc/HTML/uk/calligra/index.cache.bz2
-share/doc/HTML/uk/calligra/index.docbook
-share/doc/HTML/uk/sheets/
-share/doc/HTML/uk/sheets/advanced.docbook
-share/doc/HTML/uk/sheets/basics.docbook
-share/doc/HTML/uk/sheets/cellformat0.png
-share/doc/HTML/uk/sheets/cellformat1.png
-share/doc/HTML/uk/sheets/cellformat2.png
-share/doc/HTML/uk/sheets/cellformat3.png
-share/doc/HTML/uk/sheets/cellformat4.png
-share/doc/HTML/uk/sheets/cellformat5.png
-share/doc/HTML/uk/sheets/cellformat6.png
-share/doc/HTML/uk/sheets/cellprotection1.png
-share/doc/HTML/uk/sheets/cellprotection2.png
-share/doc/HTML/uk/sheets/chart1.png
-share/doc/HTML/uk/sheets/commands.docbook
-share/doc/HTML/uk/sheets/config.docbook
-share/doc/HTML/uk/sheets/configdialog.docbook
-share/doc/HTML/uk/sheets/configure2.png
-share/doc/HTML/uk/sheets/configure3.png
-share/doc/HTML/uk/sheets/configure4.png
-share/doc/HTML/uk/sheets/configure5.png
-share/doc/HTML/uk/sheets/configure6.png
-share/doc/HTML/uk/sheets/copy1.png
-share/doc/HTML/uk/sheets/format.docbook
-share/doc/HTML/uk/sheets/functions.docbook
-share/doc/HTML/uk/sheets/hideformula1.png
-share/doc/HTML/uk/sheets/index.cache.bz2
-share/doc/HTML/uk/sheets/index.docbook
-share/doc/HTML/uk/sheets/newdocument.png
-share/doc/HTML/uk/sheets/pivot1.png
-share/doc/HTML/uk/sheets/pivot2.png
-share/doc/HTML/uk/sheets/pivot3.png
-share/doc/HTML/uk/sheets/pivot4.png
-share/doc/HTML/uk/sheets/sheetproperties.png
-share/doc/HTML/uk/sheets/shortcut1.png
-share/doc/HTML/uk/sheets/sort1.png
-share/doc/HTML/uk/sheets/starting1.png
-share/doc/HTML/uk/stage/
-share/doc/HTML/uk/stage/barstyle1.png
-share/doc/HTML/uk/stage/configure-document.png
-share/doc/HTML/uk/stage/configure-grid.png
-share/doc/HTML/uk/stage/configure-misc.png
-share/doc/HTML/uk/stage/great-presentations.docbook
-share/doc/HTML/uk/stage/guides.docbook
-share/doc/HTML/uk/stage/htmlshow3.png
-share/doc/HTML/uk/stage/htmlshow9.png
-share/doc/HTML/uk/stage/index.cache.bz2
-share/doc/HTML/uk/stage/index.docbook
-share/doc/HTML/uk/stage/menus.docbook
-share/doc/HTML/uk/stage/options.docbook
-share/doc/HTML/uk/stage/settings03.png
-share/doc/HTML/uk/stage/settings04.png
-share/doc/HTML/uk/stage/template03.png
-share/doc/HTML/uk/stage/template04.png
-share/doc/HTML/uk/stage/tut01.png
-share/doc/HTML/uk/stage/tut03.png
-share/doc/HTML/uk/stage/tut04.png
-share/doc/HTML/uk/stage/tut07.png
-share/doc/HTML/uk/stage/tut09.png
-share/doc/HTML/uk/stage/tut10.png
-share/doc/HTML/uk/stage/tut13.png
-share/doc/HTML/uk/stage/tut19.png
-share/doc/HTML/uk/stage/tut20.png
-share/doc/HTML/uk/stage/tut21.png
-share/doc/HTML/uk/stage/tut25.png
-share/doc/HTML/uk/stage/tut26.png
-share/doc/HTML/uk/stage/tutorial.docbook
 share/examples/calligra/
 share/examples/calligra/xdg/
-share/examples/calligra/xdg/calligra_stencils.knsrc
-@sample ${SYSCONFDIR}/xdg/calligra_stencils.knsrc
 share/examples/calligra/xdg/calligrasheetsrc
 @sample ${SYSCONFDIR}/xdg/calligrasheetsrc
 share/examples/calligra/xdg/calligrastagerc
@@ -5743,46 +5275,55 @@ share/examples/calligra/xdg/karbonrc
 @sample ${SYSCONFDIR}/xdg/karbonrc
 share/icons/hicolor/1024x1024/
 share/icons/hicolor/1024x1024/apps/
+share/icons/hicolor/1024x1024/apps/braindump.png
 share/icons/hicolor/1024x1024/apps/calligragemini.png
 share/icons/hicolor/1024x1024/apps/calligrakarbon.png
 share/icons/hicolor/1024x1024/apps/calligrasheets.png
 share/icons/hicolor/1024x1024/apps/calligrastage.png
 share/icons/hicolor/1024x1024/apps/calligrawords.png
+share/icons/hicolor/128x128/apps/braindump.png
 share/icons/hicolor/128x128/apps/calligragemini.png
 share/icons/hicolor/128x128/apps/calligrakarbon.png
 share/icons/hicolor/128x128/apps/calligrasheets.png
 share/icons/hicolor/128x128/apps/calligrastage.png
 share/icons/hicolor/128x128/apps/calligrawords.png
+share/icons/hicolor/16x16/apps/braindump.png
 share/icons/hicolor/16x16/apps/calligragemini.png
 share/icons/hicolor/16x16/apps/calligrakarbon.png
 share/icons/hicolor/16x16/apps/calligrasheets.png
 share/icons/hicolor/16x16/apps/calligrastage.png
 share/icons/hicolor/16x16/apps/calligrawords.png
+share/icons/hicolor/22x22/apps/braindump.png
 share/icons/hicolor/22x22/apps/calligragemini.png
 share/icons/hicolor/22x22/apps/calligrakarbon.png
 share/icons/hicolor/22x22/apps/calligrasheets.png
 share/icons/hicolor/22x22/apps/calligrastage.png
 share/icons/hicolor/22x22/apps/calligrawords.png
+share/icons/hicolor/256x256/apps/braindump.png
 share/icons/hicolor/256x256/apps/calligragemini.png
 share/icons/hicolor/256x256/apps/calligrakarbon.png
 share/icons/hicolor/256x256/apps/calligrasheets.png
 share/icons/hicolor/256x256/apps/calligrastage.png
 share/icons/hicolor/256x256/apps/calligrawords.png
+share/icons/hicolor/32x32/apps/braindump.png
 share/icons/hicolor/32x32/apps/calligragemini.png
 share/icons/hicolor/32x32/apps/calligrakarbon.png
 share/icons/hicolor/32x32/apps/calligrasheets.png
 share/icons/hicolor/32x32/apps/calligrastage.png
 share/icons/hicolor/32x32/apps/calligrawords.png
+share/icons/hicolor/48x48/apps/braindump.png
 share/icons/hicolor/48x48/apps/calligragemini.png
 share/icons/hicolor/48x48/apps/calligrakarbon.png
 share/icons/hicolor/48x48/apps/calligrasheets.png
 share/icons/hicolor/48x48/apps/calligrastage.png
 share/icons/hicolor/48x48/apps/calligrawords.png
+share/icons/hicolor/512x512/apps/braindump.png
 share/icons/hicolor/512x512/apps/calligragemini.png
 share/icons/hicolor/512x512/apps/calligrakarbon.png
 share/icons/hicolor/512x512/apps/calligrasheets.png
 share/icons/hicolor/512x512/apps/calligrastage.png
 share/icons/hicolor/512x512/apps/calligrawords.png
+share/icons/hicolor/64x64/apps/braindump.png
 share/icons/hicolor/64x64/apps/calligragemini.png
 share/icons/hicolor/64x64/apps/calligrakarbon.png
 share/icons/hicolor/64x64/apps/calligrasheets.png
@@ -5791,6 +5332,7 @@ share/icons/hicolor/64x64/apps/calligrawords.png
 share/icons/hicolor/scalable/actions/office-chart-stock-candlestick.svg
 share/icons/hicolor/scalable/actions/office-chart-stock-hlc.svg
 share/icons/hicolor/scalable/actions/office-chart-stock-ohlc.svg
+share/icons/hicolor/scalable/apps/braindump.svgz
 share/icons/hicolor/scalable/apps/calligragemini.svg
 share/icons/hicolor/scalable/apps/calligrakarbon.svgz
 share/icons/hicolor/scalable/apps/calligrasheets.svgz
@@ -5824,29 +5366,16 @@ share/karbon/templates/Basic/.directory
 share/karbon/templates/Basic/.source/
 share/karbon/templates/Basic/.source/empty.odg
 share/karbon/templates/Basic/empty.desktop
-share/kservices5/ServiceMenus/
-share/kservices5/ServiceMenus/calligra/
-share/kservices5/ServiceMenus/calligra/karbon_print.desktop
-share/kservices5/ServiceMenus/calligra/sheets_print.desktop
-share/kservices5/ServiceMenus/calligra/stage_print.desktop
-share/kservices5/ServiceMenus/calligra/words_print.desktop
-share/kservices5/calligra_odg_thumbnail.desktop
-share/kservices5/calligradocinfopropspage.desktop
-share/kservices5/karbon_karbon1x_thumbnail.desktop
-share/kservices5/karbon_wmf_thumbnail.desktop
-share/kservices5/karbon_xfig_thumbnail.desktop
-share/kservices5/sheets_excel_thumbnail.desktop
-share/kservices5/sheets_ods_thumbnail.desktop
-share/kservices5/sheets_xlsx_thumbnail.desktop
-share/kservices5/stage_kpr_thumbnail.desktop
-share/kservices5/stage_odp_thumbnail.desktop
-share/kservices5/stage_powerpoint_thumbnail.desktop
-share/kservices5/stage_pptx_thumbnail.desktop
-share/kservices5/words_docx_thumbnail.desktop
-share/kservices5/words_msword_thumbnail.desktop
-share/kservices5/words_odt_thumbnail.desktop
-share/kservices5/words_rtf_thumbnail.desktop
+share/kio/
+share/kio/servicemenus/
+share/kio/servicemenus/karbon_print.desktop
+share/kio/servicemenus/sheets_print.desktop
+share/kio/servicemenus/stage_print.desktop
+share/kio/servicemenus/words_print.desktop
 share/kxmlgui5/
+share/kxmlgui5/braindump/
+share/kxmlgui5/braindump/braindumpui.rc
+share/kxmlgui5/braindump/braindumpview.rc
 share/kxmlgui5/calligrasheets/
 share/kxmlgui5/calligrasheets/calligrasheets.rc
 share/kxmlgui5/calligrasheets/calligrasheets_readonly.rc
@@ -5890,10 +5419,7 @@ share/locale/ar/LC_MESSAGES/calligrastage.mo
 share/locale/ar/LC_MESSAGES/calligrawords.mo
 share/locale/ar/LC_MESSAGES/karbon.mo
 share/locale/ar/LC_MESSAGES/koconverter.mo
-share/locale/ar/LC_MESSAGES/krossmodulesheets.mo
 share/locale/ar/LC_MESSAGES/okularGenerator_odp.mo
-share/locale/ast/LC_MESSAGES/okularGenerator_odp.mo
-share/locale/ast/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/be/LC_MESSAGES/KarbonFilterEffects.mo
 share/locale/be/LC_MESSAGES/KarbonTools.mo
 share/locale/be/LC_MESSAGES/calligra-dockers.mo
@@ -5914,7 +5440,6 @@ share/locale/be/LC_MESSAGES/calligrastage.mo
 share/locale/be/LC_MESSAGES/calligrawords.mo
 share/locale/be/LC_MESSAGES/karbon.mo
 share/locale/be/LC_MESSAGES/koconverter.mo
-share/locale/be/LC_MESSAGES/krossmodulesheets.mo
 share/locale/bg/LC_MESSAGES/KarbonFilterEffects.mo
 share/locale/bg/LC_MESSAGES/KarbonTools.mo
 share/locale/bg/LC_MESSAGES/braindump.mo
@@ -5922,23 +5447,39 @@ share/locale/bg/LC_MESSAGES/calligra-defaulttools.mo
 share/locale/bg/LC_MESSAGES/calligra-dockers.mo
 share/locale/bg/LC_MESSAGES/calligra-opener.mo
 share/locale/bg/LC_MESSAGES/calligra.mo
+share/locale/bg/LC_MESSAGES/calligra_semanticitem_contact.mo
+share/locale/bg/LC_MESSAGES/calligra_semanticitem_event.mo
+share/locale/bg/LC_MESSAGES/calligra_semanticitem_location.mo
 share/locale/bg/LC_MESSAGES/calligra_shape_artistictext.mo
+share/locale/bg/LC_MESSAGES/calligra_shape_chart.mo
 share/locale/bg/LC_MESSAGES/calligra_shape_comment.mo
+share/locale/bg/LC_MESSAGES/calligra_shape_formula.mo
+share/locale/bg/LC_MESSAGES/calligra_shape_music.mo
+share/locale/bg/LC_MESSAGES/calligra_shape_paths.mo
 share/locale/bg/LC_MESSAGES/calligra_shape_picture.mo
 share/locale/bg/LC_MESSAGES/calligra_shape_plugin.mo
+share/locale/bg/LC_MESSAGES/calligra_shape_spreadsheet.mo
+share/locale/bg/LC_MESSAGES/calligra_shape_template.mo
+share/locale/bg/LC_MESSAGES/calligra_shape_text.mo
+share/locale/bg/LC_MESSAGES/calligra_shape_threed.mo
 share/locale/bg/LC_MESSAGES/calligra_shape_vector.mo
 share/locale/bg/LC_MESSAGES/calligra_shape_video.mo
 share/locale/bg/LC_MESSAGES/calligra_textediting_autocorrect.mo
 share/locale/bg/LC_MESSAGES/calligra_textediting_changecase.mo
+share/locale/bg/LC_MESSAGES/calligra_textediting_spellcheck.mo
 share/locale/bg/LC_MESSAGES/calligra_textediting_thesaurus.mo
+share/locale/bg/LC_MESSAGES/calligra_textinlineobject_variables.mo
 share/locale/bg/LC_MESSAGES/calligrafilters.mo
 share/locale/bg/LC_MESSAGES/calligrasheets.mo
 share/locale/bg/LC_MESSAGES/calligrasheets_calendar.mo
+share/locale/bg/LC_MESSAGES/calligrasheets_solver.mo
 share/locale/bg/LC_MESSAGES/calligrastage.mo
 share/locale/bg/LC_MESSAGES/calligrawords.mo
 share/locale/bg/LC_MESSAGES/karbon.mo
+share/locale/bg/LC_MESSAGES/kocolorspaces.mo
 share/locale/bg/LC_MESSAGES/koconverter.mo
 share/locale/bg/LC_MESSAGES/okularGenerator_odp.mo
+share/locale/bg/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/br/LC_MESSAGES/KarbonFilterEffects.mo
 share/locale/br/LC_MESSAGES/KarbonTools.mo
 share/locale/br/LC_MESSAGES/calligra.mo
@@ -5988,8 +5529,6 @@ share/locale/bs/LC_MESSAGES/calligrawords.mo
 share/locale/bs/LC_MESSAGES/karbon.mo
 share/locale/bs/LC_MESSAGES/kocolorspaces.mo
 share/locale/bs/LC_MESSAGES/koconverter.mo
-share/locale/bs/LC_MESSAGES/krossmodulesheets.mo
-share/locale/bs/LC_MESSAGES/krossmodulewords.mo
 share/locale/bs/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/bs/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/ca/LC_MESSAGES/KarbonFilterEffects.mo
@@ -6030,8 +5569,6 @@ share/locale/ca/LC_MESSAGES/calligrawords.mo
 share/locale/ca/LC_MESSAGES/karbon.mo
 share/locale/ca/LC_MESSAGES/kocolorspaces.mo
 share/locale/ca/LC_MESSAGES/koconverter.mo
-share/locale/ca/LC_MESSAGES/krossmodulesheets.mo
-share/locale/ca/LC_MESSAGES/krossmodulewords.mo
 share/locale/ca/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/ca/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/ca@valencia/LC_MESSAGES/KarbonFilterEffects.mo
@@ -6072,8 +5609,6 @@ share/locale/ca@valencia/LC_MESSAGES/calligrawords.mo
 share/locale/ca@valencia/LC_MESSAGES/karbon.mo
 share/locale/ca@valencia/LC_MESSAGES/kocolorspaces.mo
 share/locale/ca@valencia/LC_MESSAGES/koconverter.mo
-share/locale/ca@valencia/LC_MESSAGES/krossmodulesheets.mo
-share/locale/ca@valencia/LC_MESSAGES/krossmodulewords.mo
 share/locale/ca@valencia/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/ca@valencia/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/cs/LC_MESSAGES/KarbonFilterEffects.mo
@@ -6114,8 +5649,6 @@ share/locale/cs/LC_MESSAGES/calligrawords.mo
 share/locale/cs/LC_MESSAGES/karbon.mo
 share/locale/cs/LC_MESSAGES/kocolorspaces.mo
 share/locale/cs/LC_MESSAGES/koconverter.mo
-share/locale/cs/LC_MESSAGES/krossmodulesheets.mo
-share/locale/cs/LC_MESSAGES/krossmodulewords.mo
 share/locale/cs/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/cs/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/cy/LC_MESSAGES/KarbonFilterEffects.mo
@@ -6167,8 +5700,6 @@ share/locale/da/LC_MESSAGES/calligrawords.mo
 share/locale/da/LC_MESSAGES/karbon.mo
 share/locale/da/LC_MESSAGES/kocolorspaces.mo
 share/locale/da/LC_MESSAGES/koconverter.mo
-share/locale/da/LC_MESSAGES/krossmodulesheets.mo
-share/locale/da/LC_MESSAGES/krossmodulewords.mo
 share/locale/da/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/da/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/de/LC_MESSAGES/KarbonFilterEffects.mo
@@ -6209,8 +5740,6 @@ share/locale/de/LC_MESSAGES/calligrawords.mo
 share/locale/de/LC_MESSAGES/karbon.mo
 share/locale/de/LC_MESSAGES/kocolorspaces.mo
 share/locale/de/LC_MESSAGES/koconverter.mo
-share/locale/de/LC_MESSAGES/krossmodulesheets.mo
-share/locale/de/LC_MESSAGES/krossmodulewords.mo
 share/locale/de/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/de/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/el/LC_MESSAGES/KarbonFilterEffects.mo
@@ -6220,6 +5749,9 @@ share/locale/el/LC_MESSAGES/calligra-defaulttools.mo
 share/locale/el/LC_MESSAGES/calligra-dockers.mo
 share/locale/el/LC_MESSAGES/calligra-opener.mo
 share/locale/el/LC_MESSAGES/calligra.mo
+share/locale/el/LC_MESSAGES/calligra_semanticitem_contact.mo
+share/locale/el/LC_MESSAGES/calligra_semanticitem_event.mo
+share/locale/el/LC_MESSAGES/calligra_semanticitem_location.mo
 share/locale/el/LC_MESSAGES/calligra_shape_artistictext.mo
 share/locale/el/LC_MESSAGES/calligra_shape_chart.mo
 share/locale/el/LC_MESSAGES/calligra_shape_comment.mo
@@ -6248,8 +5780,6 @@ share/locale/el/LC_MESSAGES/calligrawords.mo
 share/locale/el/LC_MESSAGES/karbon.mo
 share/locale/el/LC_MESSAGES/kocolorspaces.mo
 share/locale/el/LC_MESSAGES/koconverter.mo
-share/locale/el/LC_MESSAGES/krossmodulesheets.mo
-share/locale/el/LC_MESSAGES/krossmodulewords.mo
 share/locale/el/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/el/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/en_GB/LC_MESSAGES/KarbonFilterEffects.mo
@@ -6290,24 +5820,30 @@ share/locale/en_GB/LC_MESSAGES/calligrawords.mo
 share/locale/en_GB/LC_MESSAGES/karbon.mo
 share/locale/en_GB/LC_MESSAGES/kocolorspaces.mo
 share/locale/en_GB/LC_MESSAGES/koconverter.mo
-share/locale/en_GB/LC_MESSAGES/krossmodulesheets.mo
-share/locale/en_GB/LC_MESSAGES/krossmodulewords.mo
 share/locale/en_GB/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/en_GB/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/eo/LC_MESSAGES/KarbonFilterEffects.mo
 share/locale/eo/LC_MESSAGES/KarbonTools.mo
+share/locale/eo/LC_MESSAGES/braindump.mo
 share/locale/eo/LC_MESSAGES/calligra-defaulttools.mo
 share/locale/eo/LC_MESSAGES/calligra-dockers.mo
+share/locale/eo/LC_MESSAGES/calligra-opener.mo
 share/locale/eo/LC_MESSAGES/calligra.mo
+share/locale/eo/LC_MESSAGES/calligra_semanticitem_contact.mo
+share/locale/eo/LC_MESSAGES/calligra_semanticitem_event.mo
+share/locale/eo/LC_MESSAGES/calligra_semanticitem_location.mo
 share/locale/eo/LC_MESSAGES/calligra_shape_artistictext.mo
 share/locale/eo/LC_MESSAGES/calligra_shape_chart.mo
+share/locale/eo/LC_MESSAGES/calligra_shape_comment.mo
 share/locale/eo/LC_MESSAGES/calligra_shape_formula.mo
 share/locale/eo/LC_MESSAGES/calligra_shape_music.mo
 share/locale/eo/LC_MESSAGES/calligra_shape_paths.mo
 share/locale/eo/LC_MESSAGES/calligra_shape_picture.mo
 share/locale/eo/LC_MESSAGES/calligra_shape_plugin.mo
 share/locale/eo/LC_MESSAGES/calligra_shape_spreadsheet.mo
+share/locale/eo/LC_MESSAGES/calligra_shape_template.mo
 share/locale/eo/LC_MESSAGES/calligra_shape_text.mo
+share/locale/eo/LC_MESSAGES/calligra_shape_threed.mo
 share/locale/eo/LC_MESSAGES/calligra_shape_vector.mo
 share/locale/eo/LC_MESSAGES/calligra_shape_video.mo
 share/locale/eo/LC_MESSAGES/calligra_textediting_autocorrect.mo
@@ -6324,8 +5860,8 @@ share/locale/eo/LC_MESSAGES/calligrawords.mo
 share/locale/eo/LC_MESSAGES/karbon.mo
 share/locale/eo/LC_MESSAGES/kocolorspaces.mo
 share/locale/eo/LC_MESSAGES/koconverter.mo
-share/locale/eo/LC_MESSAGES/krossmodulesheets.mo
-share/locale/eo/LC_MESSAGES/krossmodulewords.mo
+share/locale/eo/LC_MESSAGES/okularGenerator_odp.mo
+share/locale/eo/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/es/LC_MESSAGES/KarbonFilterEffects.mo
 share/locale/es/LC_MESSAGES/KarbonTools.mo
 share/locale/es/LC_MESSAGES/braindump.mo
@@ -6364,8 +5900,6 @@ share/locale/es/LC_MESSAGES/calligrawords.mo
 share/locale/es/LC_MESSAGES/karbon.mo
 share/locale/es/LC_MESSAGES/kocolorspaces.mo
 share/locale/es/LC_MESSAGES/koconverter.mo
-share/locale/es/LC_MESSAGES/krossmodulesheets.mo
-share/locale/es/LC_MESSAGES/krossmodulewords.mo
 share/locale/es/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/es/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/et/LC_MESSAGES/KarbonFilterEffects.mo
@@ -6406,20 +5940,38 @@ share/locale/et/LC_MESSAGES/calligrawords.mo
 share/locale/et/LC_MESSAGES/karbon.mo
 share/locale/et/LC_MESSAGES/kocolorspaces.mo
 share/locale/et/LC_MESSAGES/koconverter.mo
-share/locale/et/LC_MESSAGES/krossmodulesheets.mo
-share/locale/et/LC_MESSAGES/krossmodulewords.mo
 share/locale/et/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/et/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/eu/LC_MESSAGES/KarbonFilterEffects.mo
 share/locale/eu/LC_MESSAGES/KarbonTools.mo
+share/locale/eu/LC_MESSAGES/braindump.mo
+share/locale/eu/LC_MESSAGES/calligra-dockers.mo
+share/locale/eu/LC_MESSAGES/calligra-opener.mo
 share/locale/eu/LC_MESSAGES/calligra.mo
+share/locale/eu/LC_MESSAGES/calligra_semanticitem_contact.mo
+share/locale/eu/LC_MESSAGES/calligra_semanticitem_event.mo
+share/locale/eu/LC_MESSAGES/calligra_semanticitem_location.mo
+share/locale/eu/LC_MESSAGES/calligra_shape_artistictext.mo
+share/locale/eu/LC_MESSAGES/calligra_shape_chart.mo
+share/locale/eu/LC_MESSAGES/calligra_shape_comment.mo
+share/locale/eu/LC_MESSAGES/calligra_shape_plugin.mo
+share/locale/eu/LC_MESSAGES/calligra_shape_template.mo
+share/locale/eu/LC_MESSAGES/calligra_shape_text.mo
+share/locale/eu/LC_MESSAGES/calligra_shape_threed.mo
+share/locale/eu/LC_MESSAGES/calligra_shape_vector.mo
+share/locale/eu/LC_MESSAGES/calligra_shape_video.mo
+share/locale/eu/LC_MESSAGES/calligra_textediting_autocorrect.mo
+share/locale/eu/LC_MESSAGES/calligra_textediting_changecase.mo
+share/locale/eu/LC_MESSAGES/calligra_textediting_spellcheck.mo
 share/locale/eu/LC_MESSAGES/calligra_textediting_thesaurus.mo
 share/locale/eu/LC_MESSAGES/calligrafilters.mo
 share/locale/eu/LC_MESSAGES/calligrasheets.mo
 share/locale/eu/LC_MESSAGES/calligrasheets_calendar.mo
+share/locale/eu/LC_MESSAGES/calligrasheets_solver.mo
 share/locale/eu/LC_MESSAGES/calligrastage.mo
 share/locale/eu/LC_MESSAGES/calligrawords.mo
 share/locale/eu/LC_MESSAGES/karbon.mo
+share/locale/eu/LC_MESSAGES/kocolorspaces.mo
 share/locale/eu/LC_MESSAGES/koconverter.mo
 share/locale/eu/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/eu/LC_MESSAGES/okularGenerator_odt.mo
@@ -6472,8 +6024,6 @@ share/locale/fi/LC_MESSAGES/calligrawords.mo
 share/locale/fi/LC_MESSAGES/karbon.mo
 share/locale/fi/LC_MESSAGES/kocolorspaces.mo
 share/locale/fi/LC_MESSAGES/koconverter.mo
-share/locale/fi/LC_MESSAGES/krossmodulesheets.mo
-share/locale/fi/LC_MESSAGES/krossmodulewords.mo
 share/locale/fi/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/fi/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/fr/LC_MESSAGES/KarbonFilterEffects.mo
@@ -6514,8 +6064,6 @@ share/locale/fr/LC_MESSAGES/calligrawords.mo
 share/locale/fr/LC_MESSAGES/karbon.mo
 share/locale/fr/LC_MESSAGES/kocolorspaces.mo
 share/locale/fr/LC_MESSAGES/koconverter.mo
-share/locale/fr/LC_MESSAGES/krossmodulesheets.mo
-share/locale/fr/LC_MESSAGES/krossmodulewords.mo
 share/locale/fr/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/fr/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/fy/LC_MESSAGES/KarbonFilterEffects.mo
@@ -6539,7 +6087,6 @@ share/locale/fy/LC_MESSAGES/calligrastage.mo
 share/locale/fy/LC_MESSAGES/calligrawords.mo
 share/locale/fy/LC_MESSAGES/karbon.mo
 share/locale/fy/LC_MESSAGES/koconverter.mo
-share/locale/fy/LC_MESSAGES/krossmodulesheets.mo
 share/locale/ga/LC_MESSAGES/KarbonFilterEffects.mo
 share/locale/ga/LC_MESSAGES/KarbonTools.mo
 share/locale/ga/LC_MESSAGES/braindump.mo
@@ -6575,8 +6122,6 @@ share/locale/ga/LC_MESSAGES/calligrawords.mo
 share/locale/ga/LC_MESSAGES/karbon.mo
 share/locale/ga/LC_MESSAGES/kocolorspaces.mo
 share/locale/ga/LC_MESSAGES/koconverter.mo
-share/locale/ga/LC_MESSAGES/krossmodulesheets.mo
-share/locale/ga/LC_MESSAGES/krossmodulewords.mo
 share/locale/ga/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/gl/LC_MESSAGES/KarbonFilterEffects.mo
 share/locale/gl/LC_MESSAGES/KarbonTools.mo
@@ -6616,23 +6161,46 @@ share/locale/gl/LC_MESSAGES/calligrawords.mo
 share/locale/gl/LC_MESSAGES/karbon.mo
 share/locale/gl/LC_MESSAGES/kocolorspaces.mo
 share/locale/gl/LC_MESSAGES/koconverter.mo
-share/locale/gl/LC_MESSAGES/krossmodulesheets.mo
-share/locale/gl/LC_MESSAGES/krossmodulewords.mo
 share/locale/gl/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/gl/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/he/LC_MESSAGES/KarbonFilterEffects.mo
 share/locale/he/LC_MESSAGES/KarbonTools.mo
+share/locale/he/LC_MESSAGES/braindump.mo
+share/locale/he/LC_MESSAGES/calligra-defaulttools.mo
+share/locale/he/LC_MESSAGES/calligra-dockers.mo
+share/locale/he/LC_MESSAGES/calligra-opener.mo
 share/locale/he/LC_MESSAGES/calligra.mo
+share/locale/he/LC_MESSAGES/calligra_semanticitem_contact.mo
+share/locale/he/LC_MESSAGES/calligra_semanticitem_event.mo
+share/locale/he/LC_MESSAGES/calligra_semanticitem_location.mo
+share/locale/he/LC_MESSAGES/calligra_shape_artistictext.mo
+share/locale/he/LC_MESSAGES/calligra_shape_chart.mo
+share/locale/he/LC_MESSAGES/calligra_shape_comment.mo
+share/locale/he/LC_MESSAGES/calligra_shape_formula.mo
+share/locale/he/LC_MESSAGES/calligra_shape_paths.mo
 share/locale/he/LC_MESSAGES/calligra_shape_picture.mo
+share/locale/he/LC_MESSAGES/calligra_shape_plugin.mo
+share/locale/he/LC_MESSAGES/calligra_shape_spreadsheet.mo
+share/locale/he/LC_MESSAGES/calligra_shape_template.mo
+share/locale/he/LC_MESSAGES/calligra_shape_threed.mo
+share/locale/he/LC_MESSAGES/calligra_shape_vector.mo
+share/locale/he/LC_MESSAGES/calligra_shape_video.mo
+share/locale/he/LC_MESSAGES/calligra_textediting_autocorrect.mo
+share/locale/he/LC_MESSAGES/calligra_textediting_changecase.mo
 share/locale/he/LC_MESSAGES/calligra_textediting_spellcheck.mo
 share/locale/he/LC_MESSAGES/calligra_textediting_thesaurus.mo
+share/locale/he/LC_MESSAGES/calligra_textinlineobject_variables.mo
 share/locale/he/LC_MESSAGES/calligrafilters.mo
 share/locale/he/LC_MESSAGES/calligrasheets.mo
 share/locale/he/LC_MESSAGES/calligrasheets_calendar.mo
+share/locale/he/LC_MESSAGES/calligrasheets_solver.mo
 share/locale/he/LC_MESSAGES/calligrastage.mo
 share/locale/he/LC_MESSAGES/calligrawords.mo
 share/locale/he/LC_MESSAGES/karbon.mo
+share/locale/he/LC_MESSAGES/kocolorspaces.mo
 share/locale/he/LC_MESSAGES/koconverter.mo
+share/locale/he/LC_MESSAGES/okularGenerator_odp.mo
+share/locale/he/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/hi/LC_MESSAGES/KarbonFilterEffects.mo
 share/locale/hi/LC_MESSAGES/KarbonTools.mo
 share/locale/hi/LC_MESSAGES/calligra-dockers.mo
@@ -6654,7 +6222,6 @@ share/locale/hi/LC_MESSAGES/calligrastage.mo
 share/locale/hi/LC_MESSAGES/calligrawords.mo
 share/locale/hi/LC_MESSAGES/karbon.mo
 share/locale/hi/LC_MESSAGES/koconverter.mo
-share/locale/hi/LC_MESSAGES/krossmodulesheets.mo
 share/locale/hne/LC_MESSAGES/KarbonFilterEffects.mo
 share/locale/hne/LC_MESSAGES/KarbonTools.mo
 share/locale/hne/LC_MESSAGES/calligra-dockers.mo
@@ -6675,7 +6242,6 @@ share/locale/hne/LC_MESSAGES/calligrastage.mo
 share/locale/hne/LC_MESSAGES/calligrawords.mo
 share/locale/hne/LC_MESSAGES/karbon.mo
 share/locale/hne/LC_MESSAGES/koconverter.mo
-share/locale/hne/LC_MESSAGES/krossmodulesheets.mo
 share/locale/hr/LC_MESSAGES/KarbonFilterEffects.mo
 share/locale/hr/LC_MESSAGES/KarbonTools.mo
 share/locale/hr/LC_MESSAGES/calligra.mo
@@ -6688,6 +6254,7 @@ share/locale/hr/LC_MESSAGES/calligrastage.mo
 share/locale/hr/LC_MESSAGES/calligrawords.mo
 share/locale/hr/LC_MESSAGES/karbon.mo
 share/locale/hr/LC_MESSAGES/koconverter.mo
+share/locale/hsb/LC_MESSAGES/calligra.mo
 share/locale/hsb/LC_MESSAGES/calligra_textediting_thesaurus.mo
 share/locale/hsb/LC_MESSAGES/calligrafilters.mo
 share/locale/hsb/LC_MESSAGES/calligrastage.mo
@@ -6730,8 +6297,6 @@ share/locale/hu/LC_MESSAGES/calligrawords.mo
 share/locale/hu/LC_MESSAGES/karbon.mo
 share/locale/hu/LC_MESSAGES/kocolorspaces.mo
 share/locale/hu/LC_MESSAGES/koconverter.mo
-share/locale/hu/LC_MESSAGES/krossmodulesheets.mo
-share/locale/hu/LC_MESSAGES/krossmodulewords.mo
 share/locale/hu/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/ia/LC_MESSAGES/KarbonFilterEffects.mo
 share/locale/ia/LC_MESSAGES/KarbonTools.mo
@@ -6771,8 +6336,6 @@ share/locale/ia/LC_MESSAGES/calligrawords.mo
 share/locale/ia/LC_MESSAGES/karbon.mo
 share/locale/ia/LC_MESSAGES/kocolorspaces.mo
 share/locale/ia/LC_MESSAGES/koconverter.mo
-share/locale/ia/LC_MESSAGES/krossmodulesheets.mo
-share/locale/ia/LC_MESSAGES/krossmodulewords.mo
 share/locale/ia/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/ia/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/id/LC_MESSAGES/KarbonFilterEffects.mo
@@ -6813,8 +6376,6 @@ share/locale/id/LC_MESSAGES/calligrawords.mo
 share/locale/id/LC_MESSAGES/karbon.mo
 share/locale/id/LC_MESSAGES/kocolorspaces.mo
 share/locale/id/LC_MESSAGES/koconverter.mo
-share/locale/id/LC_MESSAGES/krossmodulesheets.mo
-share/locale/id/LC_MESSAGES/krossmodulewords.mo
 share/locale/id/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/id/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/is/LC_MESSAGES/calligra.mo
@@ -6862,8 +6423,6 @@ share/locale/it/LC_MESSAGES/calligrawords.mo
 share/locale/it/LC_MESSAGES/karbon.mo
 share/locale/it/LC_MESSAGES/kocolorspaces.mo
 share/locale/it/LC_MESSAGES/koconverter.mo
-share/locale/it/LC_MESSAGES/krossmodulesheets.mo
-share/locale/it/LC_MESSAGES/krossmodulewords.mo
 share/locale/it/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/it/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/ja/LC_MESSAGES/KarbonFilterEffects.mo
@@ -6904,10 +6463,48 @@ share/locale/ja/LC_MESSAGES/calligrawords.mo
 share/locale/ja/LC_MESSAGES/karbon.mo
 share/locale/ja/LC_MESSAGES/kocolorspaces.mo
 share/locale/ja/LC_MESSAGES/koconverter.mo
-share/locale/ja/LC_MESSAGES/krossmodulesheets.mo
-share/locale/ja/LC_MESSAGES/krossmodulewords.mo
 share/locale/ja/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/ja/LC_MESSAGES/okularGenerator_odt.mo
+share/locale/ka/LC_MESSAGES/KarbonFilterEffects.mo
+share/locale/ka/LC_MESSAGES/KarbonTools.mo
+share/locale/ka/LC_MESSAGES/braindump.mo
+share/locale/ka/LC_MESSAGES/calligra-defaulttools.mo
+share/locale/ka/LC_MESSAGES/calligra-dockers.mo
+share/locale/ka/LC_MESSAGES/calligra-opener.mo
+share/locale/ka/LC_MESSAGES/calligra.mo
+share/locale/ka/LC_MESSAGES/calligra_semanticitem_contact.mo
+share/locale/ka/LC_MESSAGES/calligra_semanticitem_event.mo
+share/locale/ka/LC_MESSAGES/calligra_semanticitem_location.mo
+share/locale/ka/LC_MESSAGES/calligra_shape_artistictext.mo
+share/locale/ka/LC_MESSAGES/calligra_shape_chart.mo
+share/locale/ka/LC_MESSAGES/calligra_shape_comment.mo
+share/locale/ka/LC_MESSAGES/calligra_shape_formula.mo
+share/locale/ka/LC_MESSAGES/calligra_shape_music.mo
+share/locale/ka/LC_MESSAGES/calligra_shape_paths.mo
+share/locale/ka/LC_MESSAGES/calligra_shape_picture.mo
+share/locale/ka/LC_MESSAGES/calligra_shape_plugin.mo
+share/locale/ka/LC_MESSAGES/calligra_shape_spreadsheet.mo
+share/locale/ka/LC_MESSAGES/calligra_shape_template.mo
+share/locale/ka/LC_MESSAGES/calligra_shape_text.mo
+share/locale/ka/LC_MESSAGES/calligra_shape_threed.mo
+share/locale/ka/LC_MESSAGES/calligra_shape_vector.mo
+share/locale/ka/LC_MESSAGES/calligra_shape_video.mo
+share/locale/ka/LC_MESSAGES/calligra_textediting_autocorrect.mo
+share/locale/ka/LC_MESSAGES/calligra_textediting_changecase.mo
+share/locale/ka/LC_MESSAGES/calligra_textediting_spellcheck.mo
+share/locale/ka/LC_MESSAGES/calligra_textediting_thesaurus.mo
+share/locale/ka/LC_MESSAGES/calligra_textinlineobject_variables.mo
+share/locale/ka/LC_MESSAGES/calligrafilters.mo
+share/locale/ka/LC_MESSAGES/calligrasheets.mo
+share/locale/ka/LC_MESSAGES/calligrasheets_calendar.mo
+share/locale/ka/LC_MESSAGES/calligrasheets_solver.mo
+share/locale/ka/LC_MESSAGES/calligrastage.mo
+share/locale/ka/LC_MESSAGES/calligrawords.mo
+share/locale/ka/LC_MESSAGES/karbon.mo
+share/locale/ka/LC_MESSAGES/kocolorspaces.mo
+share/locale/ka/LC_MESSAGES/koconverter.mo
+share/locale/ka/LC_MESSAGES/okularGenerator_odp.mo
+share/locale/ka/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/kk/LC_MESSAGES/KarbonFilterEffects.mo
 share/locale/kk/LC_MESSAGES/KarbonTools.mo
 share/locale/kk/LC_MESSAGES/braindump.mo
@@ -6946,12 +6543,12 @@ share/locale/kk/LC_MESSAGES/calligrawords.mo
 share/locale/kk/LC_MESSAGES/karbon.mo
 share/locale/kk/LC_MESSAGES/kocolorspaces.mo
 share/locale/kk/LC_MESSAGES/koconverter.mo
-share/locale/kk/LC_MESSAGES/krossmodulesheets.mo
-share/locale/kk/LC_MESSAGES/krossmodulewords.mo
 share/locale/kk/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/km/LC_MESSAGES/koconverter.mo
 share/locale/ko/LC_MESSAGES/KarbonFilterEffects.mo
 share/locale/ko/LC_MESSAGES/KarbonTools.mo
+share/locale/ko/LC_MESSAGES/braindump.mo
+share/locale/ko/LC_MESSAGES/calligra-defaulttools.mo
 share/locale/ko/LC_MESSAGES/calligra-dockers.mo
 share/locale/ko/LC_MESSAGES/calligra-opener.mo
 share/locale/ko/LC_MESSAGES/calligra.mo
@@ -6962,15 +6559,21 @@ share/locale/ko/LC_MESSAGES/calligra_shape_artistictext.mo
 share/locale/ko/LC_MESSAGES/calligra_shape_chart.mo
 share/locale/ko/LC_MESSAGES/calligra_shape_comment.mo
 share/locale/ko/LC_MESSAGES/calligra_shape_formula.mo
+share/locale/ko/LC_MESSAGES/calligra_shape_music.mo
+share/locale/ko/LC_MESSAGES/calligra_shape_paths.mo
 share/locale/ko/LC_MESSAGES/calligra_shape_picture.mo
 share/locale/ko/LC_MESSAGES/calligra_shape_plugin.mo
 share/locale/ko/LC_MESSAGES/calligra_shape_spreadsheet.mo
 share/locale/ko/LC_MESSAGES/calligra_shape_template.mo
+share/locale/ko/LC_MESSAGES/calligra_shape_text.mo
 share/locale/ko/LC_MESSAGES/calligra_shape_threed.mo
 share/locale/ko/LC_MESSAGES/calligra_shape_vector.mo
 share/locale/ko/LC_MESSAGES/calligra_shape_video.mo
+share/locale/ko/LC_MESSAGES/calligra_textediting_autocorrect.mo
 share/locale/ko/LC_MESSAGES/calligra_textediting_changecase.mo
 share/locale/ko/LC_MESSAGES/calligra_textediting_spellcheck.mo
+share/locale/ko/LC_MESSAGES/calligra_textediting_thesaurus.mo
+share/locale/ko/LC_MESSAGES/calligra_textinlineobject_variables.mo
 share/locale/ko/LC_MESSAGES/calligrafilters.mo
 share/locale/ko/LC_MESSAGES/calligrasheets.mo
 share/locale/ko/LC_MESSAGES/calligrasheets_calendar.mo
@@ -6978,8 +6581,8 @@ share/locale/ko/LC_MESSAGES/calligrasheets_solver.mo
 share/locale/ko/LC_MESSAGES/calligrastage.mo
 share/locale/ko/LC_MESSAGES/calligrawords.mo
 share/locale/ko/LC_MESSAGES/karbon.mo
+share/locale/ko/LC_MESSAGES/kocolorspaces.mo
 share/locale/ko/LC_MESSAGES/koconverter.mo
-share/locale/ko/LC_MESSAGES/krossmodulewords.mo
 share/locale/ko/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/ko/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/lt/LC_MESSAGES/KarbonFilterEffects.mo
@@ -7020,18 +6623,48 @@ share/locale/lt/LC_MESSAGES/calligrawords.mo
 share/locale/lt/LC_MESSAGES/karbon.mo
 share/locale/lt/LC_MESSAGES/kocolorspaces.mo
 share/locale/lt/LC_MESSAGES/koconverter.mo
-share/locale/lt/LC_MESSAGES/krossmodulesheets.mo
-share/locale/lt/LC_MESSAGES/krossmodulewords.mo
 share/locale/lt/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/lt/LC_MESSAGES/okularGenerator_odt.mo
+share/locale/lv/LC_MESSAGES/KarbonFilterEffects.mo
+share/locale/lv/LC_MESSAGES/KarbonTools.mo
+share/locale/lv/LC_MESSAGES/braindump.mo
+share/locale/lv/LC_MESSAGES/calligra-defaulttools.mo
+share/locale/lv/LC_MESSAGES/calligra-dockers.mo
+share/locale/lv/LC_MESSAGES/calligra-opener.mo
 share/locale/lv/LC_MESSAGES/calligra.mo
+share/locale/lv/LC_MESSAGES/calligra_semanticitem_contact.mo
+share/locale/lv/LC_MESSAGES/calligra_semanticitem_event.mo
+share/locale/lv/LC_MESSAGES/calligra_semanticitem_location.mo
 share/locale/lv/LC_MESSAGES/calligra_shape_artistictext.mo
+share/locale/lv/LC_MESSAGES/calligra_shape_chart.mo
+share/locale/lv/LC_MESSAGES/calligra_shape_comment.mo
+share/locale/lv/LC_MESSAGES/calligra_shape_formula.mo
+share/locale/lv/LC_MESSAGES/calligra_shape_music.mo
+share/locale/lv/LC_MESSAGES/calligra_shape_paths.mo
+share/locale/lv/LC_MESSAGES/calligra_shape_picture.mo
+share/locale/lv/LC_MESSAGES/calligra_shape_plugin.mo
+share/locale/lv/LC_MESSAGES/calligra_shape_spreadsheet.mo
+share/locale/lv/LC_MESSAGES/calligra_shape_template.mo
+share/locale/lv/LC_MESSAGES/calligra_shape_text.mo
+share/locale/lv/LC_MESSAGES/calligra_shape_threed.mo
+share/locale/lv/LC_MESSAGES/calligra_shape_vector.mo
+share/locale/lv/LC_MESSAGES/calligra_shape_video.mo
+share/locale/lv/LC_MESSAGES/calligra_textediting_autocorrect.mo
+share/locale/lv/LC_MESSAGES/calligra_textediting_changecase.mo
+share/locale/lv/LC_MESSAGES/calligra_textediting_spellcheck.mo
 share/locale/lv/LC_MESSAGES/calligra_textediting_thesaurus.mo
+share/locale/lv/LC_MESSAGES/calligra_textinlineobject_variables.mo
 share/locale/lv/LC_MESSAGES/calligrafilters.mo
 share/locale/lv/LC_MESSAGES/calligrasheets.mo
+share/locale/lv/LC_MESSAGES/calligrasheets_calendar.mo
+share/locale/lv/LC_MESSAGES/calligrasheets_solver.mo
 share/locale/lv/LC_MESSAGES/calligrastage.mo
 share/locale/lv/LC_MESSAGES/calligrawords.mo
+share/locale/lv/LC_MESSAGES/karbon.mo
+share/locale/lv/LC_MESSAGES/kocolorspaces.mo
 share/locale/lv/LC_MESSAGES/koconverter.mo
+share/locale/lv/LC_MESSAGES/okularGenerator_odp.mo
+share/locale/lv/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/mai/LC_MESSAGES/KarbonFilterEffects.mo
 share/locale/mai/LC_MESSAGES/KarbonTools.mo
 share/locale/mai/LC_MESSAGES/calligra-defaulttools.mo
@@ -7059,8 +6692,6 @@ share/locale/mai/LC_MESSAGES/calligrawords.mo
 share/locale/mai/LC_MESSAGES/karbon.mo
 share/locale/mai/LC_MESSAGES/kocolorspaces.mo
 share/locale/mai/LC_MESSAGES/koconverter.mo
-share/locale/mai/LC_MESSAGES/krossmodulesheets.mo
-share/locale/mai/LC_MESSAGES/krossmodulewords.mo
 share/locale/mk/LC_MESSAGES/calligra.mo
 share/locale/mk/LC_MESSAGES/calligrasheets.mo
 share/locale/mk/LC_MESSAGES/calligrawords.mo
@@ -7100,8 +6731,6 @@ share/locale/mr/LC_MESSAGES/calligrawords.mo
 share/locale/mr/LC_MESSAGES/karbon.mo
 share/locale/mr/LC_MESSAGES/kocolorspaces.mo
 share/locale/mr/LC_MESSAGES/koconverter.mo
-share/locale/mr/LC_MESSAGES/krossmodulesheets.mo
-share/locale/mr/LC_MESSAGES/krossmodulewords.mo
 share/locale/mr/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/ms/LC_MESSAGES/KarbonFilterEffects.mo
 share/locale/ms/LC_MESSAGES/KarbonTools.mo
@@ -7162,8 +6791,6 @@ share/locale/nb/LC_MESSAGES/calligrawords.mo
 share/locale/nb/LC_MESSAGES/karbon.mo
 share/locale/nb/LC_MESSAGES/kocolorspaces.mo
 share/locale/nb/LC_MESSAGES/koconverter.mo
-share/locale/nb/LC_MESSAGES/krossmodulesheets.mo
-share/locale/nb/LC_MESSAGES/krossmodulewords.mo
 share/locale/nb/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/nds/LC_MESSAGES/KarbonFilterEffects.mo
 share/locale/nds/LC_MESSAGES/KarbonTools.mo
@@ -7203,8 +6830,6 @@ share/locale/nds/LC_MESSAGES/calligrawords.mo
 share/locale/nds/LC_MESSAGES/karbon.mo
 share/locale/nds/LC_MESSAGES/kocolorspaces.mo
 share/locale/nds/LC_MESSAGES/koconverter.mo
-share/locale/nds/LC_MESSAGES/krossmodulesheets.mo
-share/locale/nds/LC_MESSAGES/krossmodulewords.mo
 share/locale/nds/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/ne/LC_MESSAGES/KarbonFilterEffects.mo
 share/locale/ne/LC_MESSAGES/KarbonTools.mo
@@ -7255,8 +6880,6 @@ share/locale/nl/LC_MESSAGES/calligrawords.mo
 share/locale/nl/LC_MESSAGES/karbon.mo
 share/locale/nl/LC_MESSAGES/kocolorspaces.mo
 share/locale/nl/LC_MESSAGES/koconverter.mo
-share/locale/nl/LC_MESSAGES/krossmodulesheets.mo
-share/locale/nl/LC_MESSAGES/krossmodulewords.mo
 share/locale/nl/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/nl/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/nn/LC_MESSAGES/KarbonFilterEffects.mo
@@ -7286,8 +6909,8 @@ share/locale/nn/LC_MESSAGES/calligrawords.mo
 share/locale/nn/LC_MESSAGES/karbon.mo
 share/locale/nn/LC_MESSAGES/kocolorspaces.mo
 share/locale/nn/LC_MESSAGES/koconverter.mo
-share/locale/nn/LC_MESSAGES/krossmodulesheets.mo
-share/locale/nn/LC_MESSAGES/krossmodulewords.mo
+share/locale/nn/LC_MESSAGES/okularGenerator_odp.mo
+share/locale/nn/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/oc/LC_MESSAGES/KarbonFilterEffects.mo
 share/locale/oc/LC_MESSAGES/KarbonTools.mo
 share/locale/oc/LC_MESSAGES/calligra-dockers.mo
@@ -7309,7 +6932,6 @@ share/locale/oc/LC_MESSAGES/calligrastage.mo
 share/locale/oc/LC_MESSAGES/calligrawords.mo
 share/locale/oc/LC_MESSAGES/karbon.mo
 share/locale/oc/LC_MESSAGES/koconverter.mo
-share/locale/oc/LC_MESSAGES/krossmodulesheets.mo
 share/locale/pa/LC_MESSAGES/calligra.mo
 share/locale/pa/LC_MESSAGES/calligrasheets.mo
 share/locale/pa/LC_MESSAGES/calligrastage.mo
@@ -7352,8 +6974,6 @@ share/locale/pl/LC_MESSAGES/calligrawords.mo
 share/locale/pl/LC_MESSAGES/karbon.mo
 share/locale/pl/LC_MESSAGES/kocolorspaces.mo
 share/locale/pl/LC_MESSAGES/koconverter.mo
-share/locale/pl/LC_MESSAGES/krossmodulesheets.mo
-share/locale/pl/LC_MESSAGES/krossmodulewords.mo
 share/locale/pl/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/pl/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/pt/LC_MESSAGES/KarbonFilterEffects.mo
@@ -7394,8 +7014,6 @@ share/locale/pt/LC_MESSAGES/calligrawords.mo
 share/locale/pt/LC_MESSAGES/karbon.mo
 share/locale/pt/LC_MESSAGES/kocolorspaces.mo
 share/locale/pt/LC_MESSAGES/koconverter.mo
-share/locale/pt/LC_MESSAGES/krossmodulesheets.mo
-share/locale/pt/LC_MESSAGES/krossmodulewords.mo
 share/locale/pt/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/pt/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/pt_BR/LC_MESSAGES/KarbonFilterEffects.mo
@@ -7436,8 +7054,6 @@ share/locale/pt_BR/LC_MESSAGES/calligrawords.mo
 share/locale/pt_BR/LC_MESSAGES/karbon.mo
 share/locale/pt_BR/LC_MESSAGES/kocolorspaces.mo
 share/locale/pt_BR/LC_MESSAGES/koconverter.mo
-share/locale/pt_BR/LC_MESSAGES/krossmodulesheets.mo
-share/locale/pt_BR/LC_MESSAGES/krossmodulewords.mo
 share/locale/pt_BR/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/pt_BR/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/ro/LC_MESSAGES/KarbonFilterEffects.mo
@@ -7461,7 +7077,6 @@ share/locale/ro/LC_MESSAGES/calligrastage.mo
 share/locale/ro/LC_MESSAGES/calligrawords.mo
 share/locale/ro/LC_MESSAGES/karbon.mo
 share/locale/ro/LC_MESSAGES/koconverter.mo
-share/locale/ro/LC_MESSAGES/krossmodulesheets.mo
 share/locale/ru/LC_MESSAGES/KarbonFilterEffects.mo
 share/locale/ru/LC_MESSAGES/KarbonTools.mo
 share/locale/ru/LC_MESSAGES/braindump.mo
@@ -7500,8 +7115,6 @@ share/locale/ru/LC_MESSAGES/calligrawords.mo
 share/locale/ru/LC_MESSAGES/karbon.mo
 share/locale/ru/LC_MESSAGES/kocolorspaces.mo
 share/locale/ru/LC_MESSAGES/koconverter.mo
-share/locale/ru/LC_MESSAGES/krossmodulesheets.mo
-share/locale/ru/LC_MESSAGES/krossmodulewords.mo
 share/locale/ru/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/ru/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/se/LC_MESSAGES/KarbonFilterEffects.mo
@@ -7555,8 +7168,6 @@ share/locale/sk/LC_MESSAGES/calligrawords.mo
 share/locale/sk/LC_MESSAGES/karbon.mo
 share/locale/sk/LC_MESSAGES/kocolorspaces.mo
 share/locale/sk/LC_MESSAGES/koconverter.mo
-share/locale/sk/LC_MESSAGES/krossmodulesheets.mo
-share/locale/sk/LC_MESSAGES/krossmodulewords.mo
 share/locale/sk/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/sk/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/sl/LC_MESSAGES/KarbonFilterEffects.mo
@@ -7566,7 +7177,9 @@ share/locale/sl/LC_MESSAGES/calligra-defaulttools.mo
 share/locale/sl/LC_MESSAGES/calligra-dockers.mo
 share/locale/sl/LC_MESSAGES/calligra-opener.mo
 share/locale/sl/LC_MESSAGES/calligra.mo
+share/locale/sl/LC_MESSAGES/calligra_semanticitem_contact.mo
 share/locale/sl/LC_MESSAGES/calligra_semanticitem_event.mo
+share/locale/sl/LC_MESSAGES/calligra_semanticitem_location.mo
 share/locale/sl/LC_MESSAGES/calligra_shape_artistictext.mo
 share/locale/sl/LC_MESSAGES/calligra_shape_chart.mo
 share/locale/sl/LC_MESSAGES/calligra_shape_comment.mo
@@ -7595,9 +7208,8 @@ share/locale/sl/LC_MESSAGES/calligrawords.mo
 share/locale/sl/LC_MESSAGES/karbon.mo
 share/locale/sl/LC_MESSAGES/kocolorspaces.mo
 share/locale/sl/LC_MESSAGES/koconverter.mo
-share/locale/sl/LC_MESSAGES/krossmodulesheets.mo
-share/locale/sl/LC_MESSAGES/krossmodulewords.mo
 share/locale/sl/LC_MESSAGES/okularGenerator_odp.mo
+share/locale/sl/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/sq/LC_MESSAGES/KarbonFilterEffects.mo
 share/locale/sq/LC_MESSAGES/calligra_shape_picture.mo
 share/locale/sq/LC_MESSAGES/calligra_shape_video.mo
@@ -7642,8 +7254,6 @@ share/locale/sv/LC_MESSAGES/calligrawords.mo
 share/locale/sv/LC_MESSAGES/karbon.mo
 share/locale/sv/LC_MESSAGES/kocolorspaces.mo
 share/locale/sv/LC_MESSAGES/koconverter.mo
-share/locale/sv/LC_MESSAGES/krossmodulesheets.mo
-share/locale/sv/LC_MESSAGES/krossmodulewords.mo
 share/locale/sv/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/sv/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/ta/LC_MESSAGES/KarbonFilterEffects.mo
@@ -7717,8 +7327,6 @@ share/locale/tr/LC_MESSAGES/calligrawords.mo
 share/locale/tr/LC_MESSAGES/karbon.mo
 share/locale/tr/LC_MESSAGES/kocolorspaces.mo
 share/locale/tr/LC_MESSAGES/koconverter.mo
-share/locale/tr/LC_MESSAGES/krossmodulesheets.mo
-share/locale/tr/LC_MESSAGES/krossmodulewords.mo
 share/locale/tr/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/tr/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/ug/LC_MESSAGES/KarbonFilterEffects.mo
@@ -7756,8 +7364,6 @@ share/locale/ug/LC_MESSAGES/calligrawords.mo
 share/locale/ug/LC_MESSAGES/karbon.mo
 share/locale/ug/LC_MESSAGES/kocolorspaces.mo
 share/locale/ug/LC_MESSAGES/koconverter.mo
-share/locale/ug/LC_MESSAGES/krossmodulesheets.mo
-share/locale/ug/LC_MESSAGES/krossmodulewords.mo
 share/locale/ug/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/uk/LC_MESSAGES/KarbonFilterEffects.mo
 share/locale/uk/LC_MESSAGES/KarbonTools.mo
@@ -7797,8 +7403,6 @@ share/locale/uk/LC_MESSAGES/calligrawords.mo
 share/locale/uk/LC_MESSAGES/karbon.mo
 share/locale/uk/LC_MESSAGES/kocolorspaces.mo
 share/locale/uk/LC_MESSAGES/koconverter.mo
-share/locale/uk/LC_MESSAGES/krossmodulesheets.mo
-share/locale/uk/LC_MESSAGES/krossmodulewords.mo
 share/locale/uk/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/uk/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/uz/LC_MESSAGES/KarbonFilterEffects.mo
@@ -7851,8 +7455,6 @@ share/locale/wa/LC_MESSAGES/calligrawords.mo
 share/locale/wa/LC_MESSAGES/karbon.mo
 share/locale/wa/LC_MESSAGES/kocolorspaces.mo
 share/locale/wa/LC_MESSAGES/koconverter.mo
-share/locale/wa/LC_MESSAGES/krossmodulesheets.mo
-share/locale/wa/LC_MESSAGES/krossmodulewords.mo
 share/locale/xh/LC_MESSAGES/KarbonFilterEffects.mo
 share/locale/xh/LC_MESSAGES/KarbonTools.mo
 share/locale/xh/LC_MESSAGES/calligra.mo
@@ -7901,8 +7503,6 @@ share/locale/zh_CN/LC_MESSAGES/calligrawords.mo
 share/locale/zh_CN/LC_MESSAGES/karbon.mo
 share/locale/zh_CN/LC_MESSAGES/kocolorspaces.mo
 share/locale/zh_CN/LC_MESSAGES/koconverter.mo
-share/locale/zh_CN/LC_MESSAGES/krossmodulesheets.mo
-share/locale/zh_CN/LC_MESSAGES/krossmodulewords.mo
 share/locale/zh_CN/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/zh_CN/LC_MESSAGES/okularGenerator_odt.mo
 share/locale/zh_TW/LC_MESSAGES/KarbonFilterEffects.mo
@@ -7943,16 +7543,16 @@ share/locale/zh_TW/LC_MESSAGES/calligrawords.mo
 share/locale/zh_TW/LC_MESSAGES/karbon.mo
 share/locale/zh_TW/LC_MESSAGES/kocolorspaces.mo
 share/locale/zh_TW/LC_MESSAGES/koconverter.mo
-share/locale/zh_TW/LC_MESSAGES/krossmodulesheets.mo
-share/locale/zh_TW/LC_MESSAGES/krossmodulewords.mo
 share/locale/zh_TW/LC_MESSAGES/okularGenerator_odp.mo
 share/locale/zh_TW/LC_MESSAGES/okularGenerator_odt.mo
 share/metainfo/
-share/metainfo/org.kde.calligragemini.appdata.xml
-share/metainfo/org.kde.calligrasheets.appdata.xml
-share/metainfo/org.kde.calligrastage.appdata.xml
-share/metainfo/org.kde.calligrawords.appdata.xml
-share/metainfo/org.kde.karbon.appdata.xml
+share/metainfo/org.kde.calligra.braindump.metainfo.xml
+share/metainfo/org.kde.calligra.gemini.metainfo.xml
+share/metainfo/org.kde.calligra.karbon.metainfo.xml
+share/metainfo/org.kde.calligra.metainfo.xml
+share/metainfo/org.kde.calligra.sheets.metainfo.xml
+share/metainfo/org.kde.calligra.stage.metainfo.xml
+share/metainfo/org.kde.calligra.words.metainfo.xml
 share/mime/packages/calligra_svm.xml
 share/mime/packages/wiki-format.xml
 share/templates/

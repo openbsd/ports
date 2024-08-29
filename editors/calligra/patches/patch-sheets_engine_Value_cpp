@@ -1,0 +1,18 @@
+Index: sheets/engine/Value.cpp
+--- sheets/engine/Value.cpp.orig
++++ sheets/engine/Value.cpp
+@@ -267,14 +267,6 @@ Value::Value(bool b)
+     d->format = fmt_Boolean;
+ }
+ 
+-// create an integer value
+-Value::Value(int64_t i)
+-    : d(Private::null())
+-{
+-    d->type = Integer;
+-    d->i = i;
+-    d->format = fmt_Number;
+-}
+ 
+ // create an integer value
+ Value::Value(int i)

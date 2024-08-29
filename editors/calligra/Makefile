@@ -1,44 +1,51 @@
 COMMENT =	K Desktop Environment, office suite
 HOMEPAGE =	https://www.calligra.org
-VERSION =	3.2.1
+VERSION =	4.0.0
 DISTNAME =	calligra-${VERSION}
 CATEGORIES =	editors
-REVISION =	14
 
-SHARED_LIBS =   RtfReader                 51.0 # 0.0
-SHARED_LIBS +=  basicflakes               50.0 # 0.0
-SHARED_LIBS +=  calligrasheetscommon      51.0 # 9.0
-SHARED_LIBS +=  calligrasheetsodf         51.0 # 9.0
-SHARED_LIBS +=  calligrastageprivate      51.0 # 0.0
+SHARED_LIBS =   RtfReader                 52.0 # 0.0
+SHARED_LIBS +=  basicflakes               51.0 # 0.0
+SHARED_LIBS +=  calligrasheetscommon      52.0 # 9.0
+SHARED_LIBS +=  calligrasheetsodf         52.0 # 9.0
+SHARED_LIBS +=  calligrastageprivate      52.0 # 0.0
 SHARED_LIBS +=  flake                     52.0 # 0.0
-SHARED_LIBS +=  karboncommon              50.0 # 0.0
-SHARED_LIBS +=  karbonui                  51.0 # 0.0
-SHARED_LIBS +=  komain                    52.0 # 0.0
-SHARED_LIBS +=  komsooxml                 51.0 # 13.0
-SHARED_LIBS +=  koodf                     51.0 # 0.0
-SHARED_LIBS +=  koodf2                    51.0 # 13.0
-SHARED_LIBS +=  koodfreader               50.0 # 13.0
-SHARED_LIBS +=  kopageapp                 51.0 # 0.0
-SHARED_LIBS +=  koplugin                  50.0 # 0.0
-SHARED_LIBS +=  kotext                    52.0 # 0.0
-SHARED_LIBS +=  kotextlayout              51.0 # 13.0
-SHARED_LIBS +=  kovectorimage             51.0 # 13.0
-SHARED_LIBS +=  koversion                 0.0 # 14.0
-SHARED_LIBS +=  kowidgets                 51.0 # 0.0
-SHARED_LIBS +=  kowidgetutils             51.0 # 0.0
-SHARED_LIBS +=  kowv2                     51.0 # 0.0
-SHARED_LIBS +=  kundo2                    52.0 # 0.0
-SHARED_LIBS +=  pigmentcms                50.0 # 0.0
-SHARED_LIBS +=  wordsprivate              15.0 # 1.0
-SHARED_LIBS +=  koformula                 15.0 # 1.0
-SHARED_LIBS +=  kostore                   16.0 # 1.0
-SHARED_LIBS +=  kdeinit5_calligrasheets   0.0 # 0.0
-SHARED_LIBS +=  kdeinit5_calligrawords    0.0 # 0.0
-SHARED_LIBS +=  kdeinit5_karbon           0.0 # 0.0
-SHARED_LIBS +=  gemini                    0.0 # 16.0
+SHARED_LIBS +=  karboncommon              51.0 # 0.0
+SHARED_LIBS +=  karbonui                  52.0 # 0.0
+SHARED_LIBS +=  komain                    53.0 # 0.0
+SHARED_LIBS +=  komsooxml                 52.0 # 13.0
+SHARED_LIBS +=  koodf                     52.0 # 0.0
+SHARED_LIBS +=  koodf2                    52.0 # 13.0
+SHARED_LIBS +=  koodfreader               51.0 # 13.0
+SHARED_LIBS +=  kopageapp                 52.0 # 0.0
+SHARED_LIBS +=  koplugin                  51.0 # 0.0
+SHARED_LIBS +=  kotext                    53.0 # 0.0
+SHARED_LIBS +=  kotextlayout              52.0 # 13.0
+SHARED_LIBS +=  kovectorimage             52.0 # 13.0
+SHARED_LIBS +=  koversion                 1.0 # 14.0
+SHARED_LIBS +=  kowidgets                 52.0 # 0.0
+SHARED_LIBS +=  kowidgetutils             52.0 # 0.0
+SHARED_LIBS +=  kowv2                     52.0 # 0.0
+SHARED_LIBS +=  kundo2                    53.0 # 0.0
+SHARED_LIBS +=  pigmentcms                51.0 # 0.0
+SHARED_LIBS +=  wordsprivate              16.0 # 1.0
+SHARED_LIBS +=  koformula                 16.0 # 1.0
+SHARED_LIBS +=  kostore                   17.0 # 1.0
+SHARED_LIBS +=  gemini                    1.0 # 16.0
+# 4.0.0
+SHARED_LIBS +=  autocorrection            0.0 # 0.0
+SHARED_LIBS +=  braindumpcore             0.0 # 0.0
+SHARED_LIBS +=  calligrasheetscore        0.0 # 0.0
+SHARED_LIBS +=  calligrasheetsengine      0.0 # 0.0
+SHARED_LIBS +=  calligrasheetspartlib     0.0 # 0.0
+SHARED_LIBS +=  calligrasheetsui          0.0 # 0.0
+SHARED_LIBS +=  kookularGenerator_odp     0.0 # 0.0
+SHARED_LIBS +=  kookularGenerator_odt     0.0 # 0.0
 
 DIST_SUBDIR =	kde
-SITES =		${SITE_KDE:=stable/calligra/${VERSION}/}
+
+SITES =		${SITE_KDE:=stable/calligra/}
+EXTRACT_SUFX =		.tar.xz
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
@@ -47,92 +54,89 @@ PERMIT_PACKAGE =	Yes
 
 DPB_PROPERTIES =	parallel
 
-WANTLIB += ${COMPILER_LIBCXX} ICE Imath-3_1 KChart KF5Activities
-WANTLIB += KF5Archive KF5Auth KF5AuthCore KF5Bookmarks KF5Codecs
-WANTLIB += KF5Completion KF5ConfigCore KF5ConfigGui KF5ConfigWidgets
-WANTLIB += KF5CoreAddons KF5Crash KF5DBusAddons KF5GuiAddons KF5I18n
-WANTLIB += KF5IconThemes KF5ItemViews KF5JS KF5JobWidgets KF5KCMUtils
-WANTLIB += KF5KDELibs4Support KF5KHtml KF5KIOCore KF5KIOFileWidgets
-WANTLIB += KF5KIOGui KF5KIOWidgets KF5Notifications KF5NotifyConfig
-WANTLIB += KF5Parts KF5Service KF5Solid KF5SonnetCore KF5SonnetUi
-WANTLIB += KF5TextWidgets KF5UnitConversion KF5Wallet KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5OpenGL Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickWidgets Qt5Sql
-WANTLIB += Qt5Svg Qt5Widgets Qt5X11Extras Qt5Xml SM X11 Xext c
-WANTLIB += fontconfig freetype iconv lcms2 m phonon4qt5 phonon4qt5experimental
-WANTLIB += poppler poppler-qt5 qca-qt5 z
+WANTLIB += ${COMPILER_LIBCXX} GL Imath-3_1 KChart6 KF6Archive
+WANTLIB += KF6Bookmarks KF6ColorScheme KF6Completion KF6ConfigCore
+WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
+WANTLIB += KF6DBusAddons KF6GuiAddons KF6I18n KF6IconThemes KF6IconWidgets
+WANTLIB += KF6ItemViews KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore
+WANTLIB += KF6KCMUtilsQuick KF6KIOCore KF6KIOFileWidgets KF6KIOGui
+WANTLIB += KF6KIOWidgets KF6Notifications KF6NotifyConfig KF6Service
+WANTLIB += KF6Solid KF6SonnetCore KF6SonnetUi KF6TextWidgets KF6WidgetsAddons
+WANTLIB += KF6WindowSystem KF6XmlGui Okular6Core Qt6Core Qt6DBus
+WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning Qt6PrintSupport
+WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickControls2 Qt6QuickWidgets
+WANTLIB += Qt6Sql Qt6Svg Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
+WANTLIB += Qt6Widgets Qt6Xml X11 c crypto fontconfig freetype
+WANTLIB += git2 gsl gslcblas lcms2 m phonon4qt6 phonon4qt6experimental
+WANTLIB += poppler poppler-qt6 qt6keychain ssl z
 
-MODULES =	devel/kf5
+MODULES =	x11/kde
 
 BUILD_DEPENDS =	devel/boost \
 		devel/gettext,-tools \
-		devel/kf5/kdoctools \
-		devel/kf5/kinit \
-		devel/kf5/kross \
-		devel/kf5/threadweaver \
+		devel/kf6/kdoctools \
+		devel/kf6/kparts \
+		devel/kf6/threadweaver \
 		math/eigen3 \
 		productivity/librcps
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/gettext,-runtime \
-		devel/kf5/kinit \
-		devel/kf5/ktexteditor \
+		devel/kf6/ktexteditor \
+		devel/kf6/kparts \
 		misc/shared-mime-info \
 		productivity/librcps \
 		x11/gtk+4,-guic
 
-LIB_DEPENDS =	converters/libiconv \
-		devel/kf5/kactivities \
-		devel/kf5/karchive \
-		devel/kf5/kcmutils \
-		devel/kf5/kcodecs\
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kdbusaddons \
-		devel/kf5/kdelibs4support \
-		devel/kf5/kguiaddons\
-		devel/kf5/khtml \
-		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
-		devel/kf5/kio \
-		devel/kf5/kitemviews \
-		devel/kf5/knotifications \
-		devel/kf5/knotifyconfig \
-		devel/kf5/kparts \
-		devel/kf5/ktextwidgets \
-		devel/kf5/kwallet \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kwindowsystem \
-		devel/kf5/kxmlgui \
-		devel/kf5/sonnet \
-		graphics/kdiagram \
+LIB_DEPENDS =	devel/gsl \
+		devel/kf6/karchive \
+		devel/kf6/kbookmarks \
+		devel/kf6/kcmutils \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/kdbusaddons \
+		devel/kf6/kguiaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kiconthemes \
+		devel/kf6/kio \
+		devel/kf6/kitemviews \
+		devel/kf6/kjobwidgets \
+		devel/kf6/knotifications \
+		devel/kf6/knotifyconfig \
+		devel/kf6/kservice \
+		devel/kf6/ktextwidgets \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kwindowsystem \
+		devel/kf6/kxmlgui \
+		devel/kf6/solid \
+		devel/kf6/sonnet \
+		devel/libgit2/libgit2 \
+		graphics/kdiagram-qt6 \
 		graphics/lcms2 \
 		math/imath \
-		multimedia/phonon \
-		print/poppler,-qt5 \
-		security/qca-qt5 \
-		x11/qt5/qtdeclarative \
-		x11/qt5/qtsvg \
-		x11/qt5/qtx11extras
+		print/poppler,-qt6 \
+		security/qtkeychain,qt6 \
+		x11/kde-applications/okular \
+		x11/qt6/qtdeclarative \
+		x11/qt6/qtpositioning \
+		x11/qt6/qtsvg \
+		x11/qt6/qtwebchannel \
+		x11/qt6/qtwebengine
 
 # Stuff we don't have ATM. Do not bother about CreateResources, it's
 # pure optional run-time dependency.
 CONFIGURE_ARGS +=	-DWITH_Cauchy=OFF \
-			-DWITH_Libgit2=OFF \
 			-DWITH_LibEtonyek=OFF \
 			-DWITH_LibOdfGen=OFF \
 			-DWITH_LibVisio=OFF \
 			-DWITH_LibWpg=OFF \
 			-DWITH_LibWps=OFF \
 			-DWITH_Spnav=OFF \
-			-DCMAKE_DISABLE_FIND_PACKAGE_KF5Akonadi=ON
 
-CXXFLAGS +=		-D_LIBCPP_ENABLE_CXX17_REMOVED_UNARY_BINARY_FUNCTION
-
-# Running D-Bus daemon is required
-TEST_IS_INTERACTIVE =	X11
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_KF6Akonadi=ON
 
 .include <bsd.port.mk>

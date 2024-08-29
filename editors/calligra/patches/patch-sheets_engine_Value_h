@@ -1,0 +1,15 @@
+Index: sheets/engine/Value.h
+--- sheets/engine/Value.h.orig
++++ sheets/engine/Value.h
+@@ -84,11 +84,6 @@ class CALLIGRA_SHEETS_ENGINE_EXPORT Value (public)
+      */
+     explicit Value(bool b);
+ 
+-    /**
+-     * Creates an integer value.
+-     */
+-    explicit Value(int64_t i);
+-
+ #ifndef Q_OS_WIN
+     /**
+      * Creates an integer value.
