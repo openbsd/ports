@@ -2,7 +2,7 @@ COMMENT =	database designed to make SQL scalable for time-series data
 
 GH_ACCOUNT =	timescale
 GH_PROJECT =	timescaledb
-GH_TAGNAME =	2.15.2
+GH_TAGNAME =	2.16.1
 
 EXTRAS_COMMIT =	52443a469a58d3f64a4e049889f468e8a149cc8f
 DIST_TUPLE +=	github timescale timescaledb-extras ${EXTRAS_COMMIT} _extras
@@ -18,7 +18,7 @@ PERMIT_PACKAGE = Yes
 MODULES =	devel/cmake
 SUBST_VARS +=	GH_TAGNAME
 
-WANTLIB =	crypto pq ssl
+WANTLIB =	pq
 
 COMPILER =	base-clang ports-gcc
 
