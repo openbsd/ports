@@ -8,7 +8,6 @@ include/i2pd/BOB.h
 include/i2pd/Base.h
 include/i2pd/Blinding.h
 include/i2pd/CPU.h
-include/i2pd/ChaCha20.h
 include/i2pd/ClientContext.h
 include/i2pd/Config.h
 include/i2pd/Crypto.h
@@ -38,7 +37,6 @@ include/i2pd/Log.h
 include/i2pd/MatchedDestination.h
 include/i2pd/NTCP2.h
 include/i2pd/NetDbRequests.h
-include/i2pd/Poly1305.h
 include/i2pd/Profiling.h
 include/i2pd/Queue.h
 include/i2pd/Reseed.h
@@ -190,12 +188,6 @@ share/examples/i2pd/certificates/reseed/lazygravy_at_mail.i2p.crt
 @owner _i2pd
 @group _i2pd
 @sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/lazygravy_at_mail.i2p.crt
-@owner
-@group
-share/examples/i2pd/certificates/reseed/ls_at_mail.i2p.crt
-@owner _i2pd
-@group _i2pd
-@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/ls_at_mail.i2p.crt
 @owner
 @group
 share/examples/i2pd/certificates/reseed/orignal_at_mail.i2p.crt
