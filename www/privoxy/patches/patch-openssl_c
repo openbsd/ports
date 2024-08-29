@@ -1,0 +1,21 @@
+Index: openssl.c
+--- openssl.c.orig
++++ openssl.c
+@@ -278,6 +278,7 @@ static int ssl_store_cert(struct client_state *csp, X5
+    long l;
+    const ASN1_INTEGER *bs;
+ #if OPENSSL_VERSION_NUMBER > 0x10100000L
++   const ASN1_OBJECT *obj;
+    const X509_ALGOR *tsig_alg;
+ #endif
+    int loc;
+@@ -481,7 +482,8 @@ static int ssl_store_cert(struct client_state *csp, X5
+       goto exit;
+    }
+    tsig_alg = X509_get0_tbs_sigalg(crt);
+-   if (!i2a_ASN1_OBJECT(bio, tsig_alg->algorithm))
++   X509_ALGOR_get0(&obj, NULL, NULL, tsig_alg);
++   if (!i2a_ASN1_OBJECT(bio, obj))
+    {
+       log_ssl_errors(LOG_LEVEL_ERROR, "i2a_ASN1_OBJECT() for signed using failed");
+       ret = -1;
