@@ -1,6 +1,7 @@
 COMMENT =	KDE app that allows your devices to communicate
 
 DISTNAME =	kdeconnect-kde-${MODKDE_GEAR_VERSION}
+REVISION =	0
 
 SHARED_LIBS +=	kdeconnectcore		6.0 # 1.4
 SHARED_LIBS +=	kdeconnectpluginkcm	1.0 # 1.4
@@ -8,8 +9,6 @@ SHARED_LIBS +=	kdeconnectpluginkcm	1.0 # 1.4
 CATEGORIES =	net
 
 HOMEPAGE =	https://kdeconnect.kde.org
-
-MAINTAINER =	Ingo Feinerer <feinerer@logic.at>
 
 # GPLv2+
 PERMIT_PACKAGE = Yes
