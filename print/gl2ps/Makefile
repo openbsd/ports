@@ -1,14 +1,13 @@
 COMMENT =		OpenGL to PostScript printing library
 
 DISTNAME =		gl2ps-1.4.2
+REVISION =		0
 
 SHARED_LIBS =		gl2ps	0.2 # 1.4
 
 CATEGORIES =		print
 
 HOMEPAGE =		http://www.geuz.org/gl2ps/
-
-MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 
 # LGPLv2
 PERMIT_PACKAGE =	Yes
