@@ -3,6 +3,7 @@ COMMENT = pattern matching swiss knife
 DISTNAME = yara-${VERSION}
 
 GH_PROJECT =	yara
+REVISION =	0
 
 WANTLIB += c crypto jansson m magic pthread z
 
