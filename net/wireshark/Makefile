@@ -4,7 +4,7 @@ COMMENT-main =	graphical network protocol analyzer, Qt user-interface
 COMMENT-text =	network protocol analyzer
 
 DPB_PROPERTIES = parallel
-V =		4.2.6
+V =		4.4.0
 PORTROACH =	limitw:1,even
 DISTNAME =	wireshark-$V
 PKGNAME-main =	wireshark-$V
@@ -41,7 +41,7 @@ FLAVOR ?=
 
 COMPILER =	base-clang ports-gcc
 
-MODLUA_VERSION = 5.2
+MODLUA_VERSION = 5.4
 MODULES =	lang/lua \
 		lang/python
 MODLUA_SA =	Yes
@@ -57,8 +57,8 @@ WANTLIB-text += spandsp ssh xml2 z zstd
 
 WANTLIB-main =	${cWANTLIB} ${COMPILER_LIBCXX}
 WANTLIB-main += minizip wireshark wiretap wsutil
-WANTLIB-main += Qt6Core Qt6Core5Compat Qt6Gui Qt6Multimedia
-WANTLIB-main += Qt6PrintSupport Qt6Widgets
+WANTLIB-main += Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui
+WANTLIB-main += Qt6Multimedia Qt6PrintSupport Qt6Widgets
 
 SITES =		https://www.wireshark.org/download/src/all-versions/
 

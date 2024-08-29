@@ -1,0 +1,22 @@
+We don't have O_PATH (Linux api), but also we don't have these desktop
+sandboxing environments like flatpak so the whole block is not useful.
+
+Index: ui/qt/utils/qt_ui_utils.cpp
+--- ui/qt/utils/qt_ui_utils.cpp.orig
++++ ui/qt/utils/qt_ui_utils.cpp
+@@ -245,6 +245,7 @@ void desktop_show_in_folder(const QString file_path)
+ 
+     // If that failed, perhaps we are sandboxed.  Try using Portal Services.
+     // https://flatpak.github.io/xdg-desktop-portal/docs/doc-org.freedesktop.portal.OpenURI.html
++#ifdef O_PATH
+     if (!success) {
+         const int fd = ws_open(QFile::encodeName(file_path), O_CLOEXEC | O_PATH, 0000);
+         if (fd != -1) {
+@@ -261,6 +262,7 @@ void desktop_show_in_folder(const QString file_path)
+             ws_close(fd);
+         }
+     }
++#endif
+ #else
+     // Any other possibilities to highlight the file before falling back to showing the folder?
+ #endif
