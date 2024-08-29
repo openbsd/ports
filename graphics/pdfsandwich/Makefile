@@ -3,13 +3,11 @@ ONLY_FOR_ARCHS =	${OCAML_NATIVE_ARCHS}
 COMMENT =	generator for sandwich OCR pdf files
 
 DISTNAME =	pdfsandwich-0.1.7
-REVISION =	6
+REVISION =	7
 
 CATEGORIES =	graphics
 
 HOMEPAGE =	http://www.tobias-elze.de/pdfsandwich/
-
-MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
