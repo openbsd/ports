@@ -1,10 +1,10 @@
 Index: scripts/postprocess-unix.sh
 --- scripts/postprocess-unix.sh.orig
 +++ scripts/postprocess-unix.sh
-@@ -8,7 +8,7 @@ APPDATADIR="${THISDIR}/unix/appdata"
- TSDIRLC="${LCDIR}/ts"
+@@ -9,7 +9,7 @@ TSDIRLC="${LCDIR}/ts"
  TSDIRPI="${PIDIR}/ts"
  SPTDIR="${LCDIR}/support"
+ DESKTOPDIR="${THISDIR}/desktop"
 -LRELEASE="lrelease"
 +LRELEASE="${MODQT_LRELEASE}"
  

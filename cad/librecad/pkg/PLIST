@@ -3,8 +3,6 @@
 share/applications/librecad.desktop
 share/librecad/
 share/librecad/fonts/
-share/librecad/fonts/OpenGostTypeA-Regular.lff
-share/librecad/fonts/OpenGostTypeB-Regular.lff
 share/librecad/fonts/amiri-regular.lff
 share/librecad/fonts/azomix.lff
 share/librecad/fonts/azomix_i.lff
@@ -29,6 +27,8 @@ share/librecad/fonts/kochimincho.lff
 share/librecad/fonts/kst32b.lff
 share/librecad/fonts/lc_opengost-ar.lff
 share/librecad/fonts/lc_opengost-br.lff
+share/librecad/fonts/opengosttypea-regular.lff
+share/librecad/fonts/opengosttypeb-regular.lff
 share/librecad/fonts/romanc.lff
 share/librecad/fonts/romancs.lff
 share/librecad/fonts/romand.lff
@@ -1434,6 +1434,7 @@ share/librecad/patterns/hound.dxf
 share/librecad/patterns/iso03w100.dxf
 share/librecad/patterns/iso03w100a.dxf
 share/librecad/patterns/kerpele.dxf
+share/librecad/patterns/millstone.dxf
 share/librecad/patterns/misc01.dxf
 share/librecad/patterns/misc02.dxf
 share/librecad/patterns/misc03.dxf
@@ -1447,15 +1448,15 @@ share/librecad/patterns/square.dxf
 share/librecad/patterns/triangle_a.dxf
 share/librecad/patterns/triangle_b.dxf
 share/librecad/plugins/
-share/librecad/plugins/libalign.so
-share/librecad/plugins/libasciifile.so
-share/librecad/plugins/libgear.so
-share/librecad/plugins/libimportshp.so
-share/librecad/plugins/liblist.so
-share/librecad/plugins/libpicfile.so
-share/librecad/plugins/libplotequation.so
-share/librecad/plugins/libsameprop.so
-share/librecad/plugins/libsample.so
+@so share/librecad/plugins/libalign.so
+@so share/librecad/plugins/libasciifile.so
+@so share/librecad/plugins/libdivide.so
+@so share/librecad/plugins/libgear.so
+@so share/librecad/plugins/liblist.so
+@so share/librecad/plugins/libpicfile.so
+@so share/librecad/plugins/libplotequation.so
+@so share/librecad/plugins/libsameprop.so
+@so share/librecad/plugins/libsample.so
 share/librecad/qm/
 share/librecad/qm/librecad_ar.qm
 share/librecad/qm/librecad_ca.qm
@@ -1574,7 +1575,7 @@ share/librecad/qm/plugins_uk.qm
 share/librecad/qm/plugins_zh_cn.qm
 share/librecad/qm/plugins_zh_tw.qm
 share/metainfo/
-share/metainfo/librecad.appdata.xml
+share/metainfo/org.librecad.librecad.appdata.xml
 share/pixmaps/
 share/pixmaps/librecad.png
 @tag update-desktop-database

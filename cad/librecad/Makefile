@@ -2,21 +2,17 @@ COMMENT =	2D CAD program
 
 GH_ACCOUNT =	LibreCAD
 GH_PROJECT =	LibreCAD
-GH_TAGNAME =	2.2.0-rc1
-PKGNAME =	${DISTNAME:L:S/-rc/rc/}
-REVISION =	2
+GH_TAGNAME =	2.2.0.2
 
 CATEGORIES =	cad graphics
 
 HOMEPAGE =	https://librecad.org
 
-MAINTAINER =	Ingo Feinerer <feinerer@logic.at>
-
 # GPLv2 only
 PERMIT_PACKAGE =Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5PrintSupport
-WANTLIB += Qt5Svg Qt5Widgets c freetype m muparser z
+WANTLIB += Qt5Svg Qt5Widgets c freetype m muparser
 
 MODULES =	devel/qmake \
 		x11/qt5
@@ -44,7 +40,7 @@ do-install:
 .endfor
 	cp -Rp ${WRKSRC}/unix/resources/library ${PREFIX}/share/librecad/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/metainfo
-	${INSTALL_DATA} ${WRKSRC}/unix/appdata/librecad.appdata.xml \
+	${INSTALL_DATA} ${WRKSRC}/unix/appdata/org.librecad.librecad.appdata.xml \
 		${PREFIX}/share/metainfo
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${WRKSRC}/desktop/librecad.desktop ${PREFIX}/share/applications
