@@ -1,12 +1,14 @@
 @bin bin/pgmodeler
 @bin bin/pgmodeler-ch
 @bin bin/pgmodeler-cli
+@bin bin/pgmodeler-se
 lib/pgmodeler/
-@lib lib/pgmodeler/libobjrenderer.so.${LIBobjrenderer_VERSION}
+@lib lib/pgmodeler/libcanvas.so.${LIBcanvas_VERSION}
+@lib lib/pgmodeler/libcli.so.${LIBcli_VERSION}
+@lib lib/pgmodeler/libconnector.so.${LIBconnector_VERSION}
+@lib lib/pgmodeler/libcore.so.${LIBcore_VERSION}
+@lib lib/pgmodeler/libgui.so.${LIBgui_VERSION}
 @lib lib/pgmodeler/libparsers.so.${LIBparsers_VERSION}
-@lib lib/pgmodeler/libpgconnector.so.${LIBpgconnector_VERSION}
-@lib lib/pgmodeler/libpgmodeler.so.${LIBpgmodeler_VERSION}
-@lib lib/pgmodeler/libpgmodeler_ui.so.${LIBpgmodeler_ui_VERSION}
 @lib lib/pgmodeler/libutils.so.${LIButils_VERSION}
 lib/pgmodeler/plugins/
 share/doc/pgmodeler/
@@ -16,52 +18,60 @@ share/doc/pgmodeler/README.md
 share/doc/pgmodeler/RELEASENOTES.md
 share/examples/pgmodeler/
 share/examples/pgmodeler/3dcitydb.dbm
+share/examples/pgmodeler/cryptoconcept.dbm
 share/examples/pgmodeler/demo.dbm
-share/examples/pgmodeler/oldsample.dbm
+share/examples/pgmodeler/northwind.dbm
 share/examples/pgmodeler/pagila.dbm
 share/examples/pgmodeler/usda.dbm
 share/pgmodeler/
 share/pgmodeler/conf/
+share/pgmodeler/conf/appearance.conf
 share/pgmodeler/conf/connections.conf
 share/pgmodeler/conf/defaults/
+share/pgmodeler/conf/defaults/appearance.conf
 share/pgmodeler/conf/defaults/connections.conf
 share/pgmodeler/conf/defaults/diff-presets.conf
 share/pgmodeler/conf/defaults/example.dbm
-share/pgmodeler/conf/defaults/objects-style.conf
+share/pgmodeler/conf/defaults/general.conf
 share/pgmodeler/conf/defaults/pattern-highlight.conf
-share/pgmodeler/conf/defaults/pgmodeler.conf
 share/pgmodeler/conf/defaults/relationships.conf
+share/pgmodeler/conf/defaults/sch-highlight.conf
 share/pgmodeler/conf/defaults/snippets.conf
 share/pgmodeler/conf/defaults/sql-highlight.conf
-share/pgmodeler/conf/defaults/ui-style.conf
 share/pgmodeler/conf/defaults/xml-highlight.conf
 share/pgmodeler/conf/diff-presets.conf
 share/pgmodeler/conf/dtd/
+share/pgmodeler/conf/dtd/appearance.dtd
 share/pgmodeler/conf/dtd/connections.dtd
 share/pgmodeler/conf/dtd/diff-presets.dtd
-share/pgmodeler/conf/dtd/objects-style.dtd
-share/pgmodeler/conf/dtd/pgmodeler.dtd
+share/pgmodeler/conf/dtd/general.dtd
 share/pgmodeler/conf/dtd/relationships.dtd
 share/pgmodeler/conf/dtd/snippets.dtd
 share/pgmodeler/conf/dtd/source-code-highlight.dtd
 share/pgmodeler/conf/dtd/sql-history.dtd
 share/pgmodeler/conf/example.dbm
-share/pgmodeler/conf/objects-style.conf
+share/pgmodeler/conf/general.conf
+share/pgmodeler/conf/icons-big.conf
+share/pgmodeler/conf/icons-medium.conf
+share/pgmodeler/conf/icons-small.conf
 share/pgmodeler/conf/pattern-highlight.conf
-share/pgmodeler/conf/pgmodeler.conf
 share/pgmodeler/conf/pgmodeler_dbm.png
 share/pgmodeler/conf/pgmodeler_logo.png
+share/pgmodeler/conf/pgmodeler_sch.png
 share/pgmodeler/conf/relationships.conf
+share/pgmodeler/conf/sch-highlight.conf
 share/pgmodeler/conf/schemas/
+share/pgmodeler/conf/schemas/appearance.sch
 share/pgmodeler/conf/schemas/application-dbm.sch
+share/pgmodeler/conf/schemas/application-sch.sch
 share/pgmodeler/conf/schemas/commands.sch
 share/pgmodeler/conf/schemas/connections.sch
+share/pgmodeler/conf/schemas/desktop-sch.sch
 share/pgmodeler/conf/schemas/desktop.sch
 share/pgmodeler/conf/schemas/diff-presets.sch
 share/pgmodeler/conf/schemas/file.sch
-share/pgmodeler/conf/schemas/objects-style.sch
+share/pgmodeler/conf/schemas/general.sch
 share/pgmodeler/conf/schemas/patterns.sch
-share/pgmodeler/conf/schemas/pgmodeler.sch
 share/pgmodeler/conf/schemas/preset.sch
 share/pgmodeler/conf/schemas/relationships.sch
 share/pgmodeler/conf/schemas/snippet.sch
@@ -70,29 +80,39 @@ share/pgmodeler/conf/schemas/sql-history.sch
 share/pgmodeler/conf/schemas/widget.sch
 share/pgmodeler/conf/snippets.conf
 share/pgmodeler/conf/sql-highlight.conf
+share/pgmodeler/conf/sql-history.conf
+share/pgmodeler/conf/themes/
+share/pgmodeler/conf/themes/dark/
+share/pgmodeler/conf/themes/dark/appearance.conf
+share/pgmodeler/conf/themes/dark/extra-ui-style.conf
+share/pgmodeler/conf/themes/dark/pattern-highlight.conf
+share/pgmodeler/conf/themes/dark/sch-highlight.conf
+share/pgmodeler/conf/themes/dark/sql-highlight.conf
+share/pgmodeler/conf/themes/dark/xml-highlight.conf
+share/pgmodeler/conf/themes/inksaver/
+share/pgmodeler/conf/themes/inksaver/appearance.conf
+share/pgmodeler/conf/themes/inksaver/extra-ui-style.conf
+share/pgmodeler/conf/themes/inksaver/pattern-highlight.conf
+share/pgmodeler/conf/themes/inksaver/sch-highlight.conf
+share/pgmodeler/conf/themes/inksaver/sql-highlight.conf
+share/pgmodeler/conf/themes/inksaver/xml-highlight.conf
+share/pgmodeler/conf/themes/light/
+share/pgmodeler/conf/themes/light/appearance.conf
+share/pgmodeler/conf/themes/light/extra-ui-style.conf
+share/pgmodeler/conf/themes/light/pattern-highlight.conf
+share/pgmodeler/conf/themes/light/sch-highlight.conf
+share/pgmodeler/conf/themes/light/sql-highlight.conf
+share/pgmodeler/conf/themes/light/xml-highlight.conf
 share/pgmodeler/conf/ui-style.conf
 share/pgmodeler/conf/xml-highlight.conf
-share/pgmodeler/lang/
-share/pgmodeler/lang/es_ES.qm
-share/pgmodeler/lang/es_ES.ts
-share/pgmodeler/lang/fr_FR.qm
-share/pgmodeler/lang/fr_FR.ts
-share/pgmodeler/lang/nl_NL.qm
-share/pgmodeler/lang/nl_NL.ts
-share/pgmodeler/lang/pt_BR.qm
-share/pgmodeler/lang/pt_BR.ts
-share/pgmodeler/lang/zh_CN.qm
-share/pgmodeler/lang/zh_CN.ts
 share/pgmodeler/schemas/
 share/pgmodeler/schemas/alter/
-share/pgmodeler/schemas/alter/collation.sch
 share/pgmodeler/schemas/alter/column.sch
-share/pgmodeler/schemas/alter/constraint.sch
+share/pgmodeler/schemas/alter/confparam.sch
 share/pgmodeler/schemas/alter/database.sch
 share/pgmodeler/schemas/alter/diff.sch
 share/pgmodeler/schemas/alter/domain.sch
 share/pgmodeler/schemas/alter/domconstraint.sch
-share/pgmodeler/schemas/alter/eventtrigger.sch
 share/pgmodeler/schemas/alter/extension.sch
 share/pgmodeler/schemas/alter/foreigndatawrapper.sch
 share/pgmodeler/schemas/alter/foreignserver.sch
@@ -106,6 +126,7 @@ share/pgmodeler/schemas/alter/procedure.sch
 share/pgmodeler/schemas/alter/relationship.sch
 share/pgmodeler/schemas/alter/rename.sch
 share/pgmodeler/schemas/alter/role.sch
+share/pgmodeler/schemas/alter/rolemembers.sch
 share/pgmodeler/schemas/alter/schema.sch
 share/pgmodeler/schemas/alter/sequence.sch
 share/pgmodeler/schemas/alter/table.sch
@@ -155,11 +176,15 @@ share/pgmodeler/schemas/datadict/
 share/pgmodeler/schemas/datadict/column.sch
 share/pgmodeler/schemas/datadict/constraint.sch
 share/pgmodeler/schemas/datadict/datadict.sch
+share/pgmodeler/schemas/datadict/datadictidx.sch
 share/pgmodeler/schemas/datadict/index.sch
 share/pgmodeler/schemas/datadict/item.sch
 share/pgmodeler/schemas/datadict/link.sch
+share/pgmodeler/schemas/datadict/objects.sch
+share/pgmodeler/schemas/datadict/sequence.sch
 share/pgmodeler/schemas/datadict/styles.sch
 share/pgmodeler/schemas/datadict/table.sch
+share/pgmodeler/schemas/datadict/trigger.sch
 share/pgmodeler/schemas/datadict/view.sch
 share/pgmodeler/schemas/sql/
 share/pgmodeler/schemas/sql/aggregate.sch
@@ -167,6 +192,7 @@ share/pgmodeler/schemas/sql/cast.sch
 share/pgmodeler/schemas/sql/collation.sch
 share/pgmodeler/schemas/sql/column.sch
 share/pgmodeler/schemas/sql/comment.sch
+share/pgmodeler/schemas/sql/confparam.sch
 share/pgmodeler/schemas/sql/constraint.sch
 share/pgmodeler/schemas/sql/conversion.sch
 share/pgmodeler/schemas/sql/database.sch
@@ -199,6 +225,7 @@ share/pgmodeler/schemas/sql/role.sch
 share/pgmodeler/schemas/sql/rule.sch
 share/pgmodeler/schemas/sql/schema.sch
 share/pgmodeler/schemas/sql/sequence.sch
+share/pgmodeler/schemas/sql/sessionopts.sch
 share/pgmodeler/schemas/sql/table.sch
 share/pgmodeler/schemas/sql/tablespace.sch
 share/pgmodeler/schemas/sql/transform.sch
@@ -216,6 +243,7 @@ share/pgmodeler/schemas/xml/changelog.sch
 share/pgmodeler/schemas/xml/collation.sch
 share/pgmodeler/schemas/xml/column.sch
 share/pgmodeler/schemas/xml/comment.sch
+share/pgmodeler/schemas/xml/confparam.sch
 share/pgmodeler/schemas/xml/constraint.sch
 share/pgmodeler/schemas/xml/conversion.sch
 share/pgmodeler/schemas/xml/customidxs.sch
@@ -257,11 +285,13 @@ share/pgmodeler/schemas/xml/dtd/parameter.dtd
 share/pgmodeler/schemas/xml/dtd/permission.dtd
 share/pgmodeler/schemas/xml/dtd/policy.dtd
 share/pgmodeler/schemas/xml/dtd/procedure.dtd
+share/pgmodeler/schemas/xml/dtd/reference.dtd
 share/pgmodeler/schemas/xml/dtd/relationship.dtd
 share/pgmodeler/schemas/xml/dtd/role.dtd
 share/pgmodeler/schemas/xml/dtd/rule.dtd
 share/pgmodeler/schemas/xml/dtd/schema.dtd
 share/pgmodeler/schemas/xml/dtd/sequence.dtd
+share/pgmodeler/schemas/xml/dtd/simplecol.dtd
 share/pgmodeler/schemas/xml/dtd/table.dtd
 share/pgmodeler/schemas/xml/dtd/tablespace.dtd
 share/pgmodeler/schemas/xml/dtd/tag.dtd
@@ -273,6 +303,7 @@ share/pgmodeler/schemas/xml/dtd/usertype.dtd
 share/pgmodeler/schemas/xml/dtd/view.dtd
 share/pgmodeler/schemas/xml/element.sch
 share/pgmodeler/schemas/xml/entry.sch
+share/pgmodeler/schemas/xml/enumeration.sch
 share/pgmodeler/schemas/xml/eventtrigger.sch
 share/pgmodeler/schemas/xml/excelement.sch
 share/pgmodeler/schemas/xml/extension.sch
@@ -305,6 +336,7 @@ share/pgmodeler/schemas/xml/role.sch
 share/pgmodeler/schemas/xml/rule.sch
 share/pgmodeler/schemas/xml/schema.sch
 share/pgmodeler/schemas/xml/sequence.sch
+share/pgmodeler/schemas/xml/simplecol.sch
 share/pgmodeler/schemas/xml/style.sch
 share/pgmodeler/schemas/xml/table.sch
 share/pgmodeler/schemas/xml/tablespace.sch
