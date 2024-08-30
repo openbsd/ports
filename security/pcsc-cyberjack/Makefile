@@ -1,9 +1,8 @@
 COMMENT =		REINER SCT cyberJack chipcard reader driver
 
 V =			3.99.5
-SP =			15
-DISTNAME =		pcsc-cyberjack_${V}final.SP${SP}
-PKGNAME =		${DISTNAME:S/_/-/}
+SP =			16
+DISTNAME =		pcsc-cyberjack-${V}final.SP${SP}
 
 SHARED_LIBS =		ifd-cyberjack		0.1 # 6.0
 
@@ -37,8 +36,6 @@ CONFIGURE_ARGS +=	--disable-xml2 \
 
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
-
-WRKDIST =		${WRKDIR}/${DISTNAME:S/_/-/}
 
 FIX_CRLF_FILES =	cjeca32/Debug.cpp cjeca32/RSCTCriticalSection.cpp
 
