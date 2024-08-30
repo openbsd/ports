@@ -1,7 +1,7 @@
 COMMENT=	packing and unpacking of shell archives
 
 DISTNAME=	sharutils-4.15.2
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	archivers
 

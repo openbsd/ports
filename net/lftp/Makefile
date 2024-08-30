@@ -1,7 +1,7 @@
 COMMENT=	shell-like command line ftp and sftp client
 
 DISTNAME=	lftp-4.9.2
-REVISION=	1
+REVISION=	2
 CATEGORIES=	net
 
 HOMEPAGE=	https://lftp.tech/

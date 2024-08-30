@@ -5,6 +5,7 @@ PKGNAME=		g${DISTNAME}
 CATEGORIES=		textproc
 SITES=			${SITE_GNU:=sed/}
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 HOMEPAGE=		https://www.gnu.org/software/sed/
 

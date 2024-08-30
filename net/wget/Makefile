@@ -2,7 +2,7 @@ COMMENT =	retrieve files from the web via HTTP, HTTPS and FTP
 
 DISTNAME =	wget-1.21.4
 CATEGORIES =	net
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://www.gnu.org/software/wget/
 MAINTAINER =	Nam Nguyen <namn@openbsd.org>

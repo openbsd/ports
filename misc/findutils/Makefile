@@ -2,6 +2,7 @@ COMMENT=		finds and then operates on files
 
 DISTNAME=		findutils-4.9.0
 CATEGORIES=		misc
+REVISION=		0
 
 HOMEPAGE=		https://www.gnu.org/software/findutils/
 

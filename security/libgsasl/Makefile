@@ -4,6 +4,7 @@ DISTNAME=	libgsasl-1.10.0
 CATEGORIES=	security
 HOMEPAGE=	https://www.gnu.org/software/gsasl/
 SITES=		${SITE_GNU:=gsasl/}
+REVISION=	0
 
 SHARED_LIBS +=  gsasl 0.1 # 17.0
 
