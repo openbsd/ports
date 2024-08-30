@@ -2,13 +2,11 @@ COMMENT =	coturn STUN/TURN server
 
 V =		4.5.2
 DISTNAME =	turnserver-${V}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	telephony
 
 HOMEPAGE =	https://github.com/coturn/coturn
-
-MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 
 # BSD
 PERMIT_PACKAGE =	Yes
