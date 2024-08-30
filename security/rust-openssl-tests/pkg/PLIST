@@ -2404,6 +2404,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_rustc-hash}/src/lib.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustc_version}/
 share/rust-openssl-tests/modcargo-crates/${VER_rustc_version}/.cargo-checksum.json
 share/rust-openssl-tests/modcargo-crates/${VER_rustc_version}/.github/
+share/rust-openssl-tests/modcargo-crates/${VER_rustc_version}/.github/FUNDING.yml
 share/rust-openssl-tests/modcargo-crates/${VER_rustc_version}/.github/dependabot.yml
 share/rust-openssl-tests/modcargo-crates/${VER_rustc_version}/.github/workflows/
 share/rust-openssl-tests/modcargo-crates/${VER_rustc_version}/.github/workflows/rust.yml
@@ -2651,6 +2652,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/check_types.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/clockid.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/cstr.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/event/
+share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/event/epoll.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/event/eventfd.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/event/kqueue.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/event/mod.rs
@@ -2672,6 +2674,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/fs/fcopyfile.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/fs/fd.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/fs/getpath.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/fs/id.rs
+share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/fs/inotify.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/fs/ioctl.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/fs/makedev.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/fs/memfd_create.rs
@@ -2766,6 +2769,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/process/membarrier.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/process/mod.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/process/pidfd.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/process/pidfd_getfd.rs
+share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/process/pivot_root.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/process/prctl.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/process/priority.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/process/procctl.rs
