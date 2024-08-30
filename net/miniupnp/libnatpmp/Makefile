@@ -1,7 +1,7 @@
 COMMENT =	NAT Port Mapping Protocol client library
 
-DIST_TUPLE =	github miniupnp libnatpmp f2433bec24ca3d3f22a8a7840728a3ac177f94ba .
-PKGNAME =	libnatpmp-20240116
+DIST_TUPLE =	github miniupnp libnatpmp 8257134a5dcb077e40db1946554d676e444406e4 .
+PKGNAME =	libnatpmp-20240803
 
 SHARED_LIBS =	natpmp 0.1
 
@@ -12,7 +12,6 @@ CONFIGURE_ARGS = -DBUILD_SHARED_LIBS=TRUE
 MODULES =	devel/cmake
 
 post-install:
-	#${INSTALL_MAN_DIR} ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/natpmpc.1 ${PREFIX}/man/man1/natpmpc.1
 
 .include <bsd.port.mk>

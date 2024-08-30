@@ -3,7 +3,7 @@ https://github.com/miniupnp/libnatpmp/pull/39/commits/e654ac0638fd014d6279bafe64
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -61,7 +61,7 @@ install(TARGETS natpmp natpmpc
+@@ -57,7 +57,7 @@ install(TARGETS natpmp natpmpc
          LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
          ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR})
  
