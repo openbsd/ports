@@ -2,7 +2,7 @@ COMMENT =	GNU binary utilities
 
 DISTNAME =	binutils-2.42
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
@@ -13,10 +13,9 @@ MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c msgpack-c z zstd
+WANTLIB += c z zstd
 
-LIB_DEPENDS +=	archivers/zstd \
-		devel/msgpack
+LIB_DEPENDS +=	archivers/zstd
 
 SITES =		${SITE_GNU:=binutils/}
 
@@ -28,6 +27,7 @@ CONFIGURE_ARGS +=	--disable-gprof \
 			--disable-nls \
 			--disable-install-libbfd \
 			--program-prefix=g \
+			--without-msgpack \
 			--with-system-zlib
 
 USE_GMAKE =	Yes
