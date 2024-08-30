@@ -1,12 +1,8 @@
 COMMENT =	perl implementation of email authentication standards
 
-V =		1.1.0
-DISTNAME =	Mail-Milter-Authentication-v${V}
-PKGNAME =	p5-Mail-Milter-Authentication-${V}
+V =		3.20240701
+DISTNAME =	Mail-Milter-Authentication-${V}
 CATEGORIES =	mail
-REVISION =	3
-
-MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes
@@ -16,6 +12,7 @@ MODULES =		cpan
 SUBST_VARS =		VARBASE
 pre-configure:
 		${SUBST_CMD} ${WRKSRC}/bin/authentication_milter
+		find ${WRKBUILD} -type f -name '*${PATCHORIG}' -delete
 
 CONFIGURE_STYLE =	modinst
 
@@ -27,10 +24,15 @@ RUN_DEPENDS =	devel/p5-List-MoreUtils \
 		mail/p5-Mail-SPF \
 		sysutils/p5-Proc-ProcessTable
 
-TEST_DEPENDS =	devel/p5-Test-CheckManifest \
+TEST_DEPENDS =	converters/p5-JSON-XS \
+		devel/p5-App-Cmd \
+		devel/p5-File-Slurp \
+		devel/p5-Import-Into \
+		devel/p5-Test-CheckManifest \
 		devel/p5-Test-File-Contents \
 		devel/p5-Test-Perl-Critic \
 		devel/p5-Test-Pod \
-		devel/p5-Test-Pod-Coverage
+		devel/p5-Test-Pod-Coverage \
+		devel/p5-TOML
 
 .include <bsd.port.mk>

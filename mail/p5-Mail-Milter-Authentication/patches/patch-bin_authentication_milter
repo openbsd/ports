@@ -1,7 +1,8 @@
---- bin/authentication_milter.orig	Thu Sep 10 05:37:11 2015
-+++ bin/authentication_milter	Wed Apr 27 15:57:09 2016
-@@ -14,7 +14,7 @@ use Module::Load;
- use Pod::Usage;
+Index: bin/authentication_milter
+--- bin/authentication_milter.orig
++++ bin/authentication_milter
+@@ -15,7 +15,7 @@ use Mail::Milter::Authentication::Protocol::Milter;
+ use Mail::Milter::Authentication::Protocol::SMTP;
  
  # CONFIG
 -my $pid_file = '/run/authentication_milter.pid';
@@ -9,8 +10,8 @@
  my $daemon = 0;
  my $help   = 0;
  my $prefix;
-@@ -145,7 +145,7 @@ __END__
- =item -p|--pidfile <file>
+@@ -195,7 +195,7 @@ version 3.20240701
+ =item --pidfile <file>
  
    Write the process PID to the given file.
 -  defaults to /run/authentication_milter.pid

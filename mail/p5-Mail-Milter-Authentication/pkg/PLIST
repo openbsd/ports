@@ -1,32 +1,97 @@
 @newgroup _milter-auth:770
-@newuser _milter-auth:770:_milter-auth::Milter Authentication Daemon:/var/empty:/sbin/nologin
+@newuser _milter-auth:770:_milter-auth::Milter Authentication Daemon:${VARBASE}/empty:/sbin/nologin
+@rcscript ${RCDIR}/mail_milter_authentication
 bin/authentication_milter
+bin/authentication_milter_blocker
 bin/authentication_milter_client
+bin/authentication_milter_log
 ${P5SITE}/Mail/Milter/
 ${P5SITE}/Mail/Milter/Authentication/
 ${P5SITE}/Mail/Milter/Authentication.pm
+${P5SITE}/Mail/Milter/Authentication/App/
+${P5SITE}/Mail/Milter/Authentication/App/Blocker/
+${P5SITE}/Mail/Milter/Authentication/App/Blocker/App/
+${P5SITE}/Mail/Milter/Authentication/App/Blocker/App.pm
+${P5SITE}/Mail/Milter/Authentication/App/Blocker/App/Command/
+${P5SITE}/Mail/Milter/Authentication/App/Blocker/App/Command/add.pm
+${P5SITE}/Mail/Milter/Authentication/App/Blocker/App/Command/delete.pm
+${P5SITE}/Mail/Milter/Authentication/App/Blocker/App/Command/list.pm
+${P5SITE}/Mail/Milter/Authentication/App/ProcessLog/
+${P5SITE}/Mail/Milter/Authentication/App/ProcessLog/App/
+${P5SITE}/Mail/Milter/Authentication/App/ProcessLog/App.pm
+${P5SITE}/Mail/Milter/Authentication/App/ProcessLog/App/Command/
+${P5SITE}/Mail/Milter/Authentication/App/ProcessLog/App/Command/arex.pm
 ${P5SITE}/Mail/Milter/Authentication/Client.pm
 ${P5SITE}/Mail/Milter/Authentication/Config.pm
 ${P5SITE}/Mail/Milter/Authentication/Constants.pm
+${P5SITE}/Mail/Milter/Authentication/Exception.pm
+${P5SITE}/Mail/Milter/Authentication/HTDocs.pm
 ${P5SITE}/Mail/Milter/Authentication/Handler/
 ${P5SITE}/Mail/Milter/Authentication/Handler.pm
+${P5SITE}/Mail/Milter/Authentication/Handler/ARC.pm
+${P5SITE}/Mail/Milter/Authentication/Handler/ARC_metrics.json
+${P5SITE}/Mail/Milter/Authentication/Handler/AbusixDataFeed.pm
 ${P5SITE}/Mail/Milter/Authentication/Handler/AddID.pm
+${P5SITE}/Mail/Milter/Authentication/Handler/AlignedFrom.pm
+${P5SITE}/Mail/Milter/Authentication/Handler/AlignedFrom_metrics.json
 ${P5SITE}/Mail/Milter/Authentication/Handler/Auth.pm
+${P5SITE}/Mail/Milter/Authentication/Handler/Auth_metrics.json
+${P5SITE}/Mail/Milter/Authentication/Handler/BIMI.pm
+${P5SITE}/Mail/Milter/Authentication/Handler/Blocker.pm
 ${P5SITE}/Mail/Milter/Authentication/Handler/DKIM.pm
+${P5SITE}/Mail/Milter/Authentication/Handler/DKIM_metrics.json
 ${P5SITE}/Mail/Milter/Authentication/Handler/DMARC.pm
+${P5SITE}/Mail/Milter/Authentication/Handler/DMARC_metrics.json
 ${P5SITE}/Mail/Milter/Authentication/Handler/IPRev.pm
+${P5SITE}/Mail/Milter/Authentication/Handler/IPRev_metrics.json
 ${P5SITE}/Mail/Milter/Authentication/Handler/LocalIP.pm
+${P5SITE}/Mail/Milter/Authentication/Handler/LocalIP_metrics.json
+${P5SITE}/Mail/Milter/Authentication/Handler/Logger.pm
 ${P5SITE}/Mail/Milter/Authentication/Handler/PTR.pm
+${P5SITE}/Mail/Milter/Authentication/Handler/PTR_metrics.json
+${P5SITE}/Mail/Milter/Authentication/Handler/RBLDNS.pm
 ${P5SITE}/Mail/Milter/Authentication/Handler/ReturnOK.pm
+${P5SITE}/Mail/Milter/Authentication/Handler/ReturnOK_metrics.json
 ${P5SITE}/Mail/Milter/Authentication/Handler/SPF.pm
+${P5SITE}/Mail/Milter/Authentication/Handler/SPF_metrics.json
 ${P5SITE}/Mail/Milter/Authentication/Handler/Sanitize.pm
+${P5SITE}/Mail/Milter/Authentication/Handler/Sanitize_metrics.json
 ${P5SITE}/Mail/Milter/Authentication/Handler/SenderID.pm
+${P5SITE}/Mail/Milter/Authentication/Handler/SenderID_metrics.json
+${P5SITE}/Mail/Milter/Authentication/Handler/Size.pm
+${P5SITE}/Mail/Milter/Authentication/Handler/Size_metrics.json
 ${P5SITE}/Mail/Milter/Authentication/Handler/TLS.pm
+${P5SITE}/Mail/Milter/Authentication/Handler/TLS_metrics.json
+${P5SITE}/Mail/Milter/Authentication/Handler/TestTimeout.pm
 ${P5SITE}/Mail/Milter/Authentication/Handler/TrustedIP.pm
+${P5SITE}/Mail/Milter/Authentication/Handler/TrustedIP_metrics.json
 ${P5SITE}/Mail/Milter/Authentication/Handler/XGoogleDKIM.pm
+${P5SITE}/Mail/Milter/Authentication/Handler/XGoogleDKIM_metrics.json
+${P5SITE}/Mail/Milter/Authentication/Metric/
+${P5SITE}/Mail/Milter/Authentication/Metric.pm
+${P5SITE}/Mail/Milter/Authentication/Metric/Base.json
+${P5SITE}/Mail/Milter/Authentication/Metric/Grafana.pm
+${P5SITE}/Mail/Milter/Authentication/Metric/RowErrors.json
+${P5SITE}/Mail/Milter/Authentication/Metric/RowProcesses.json
+${P5SITE}/Mail/Milter/Authentication/Metric/RowProcessingTime.json
+${P5SITE}/Mail/Milter/Authentication/Metric/RowThroughput.json
+${P5SITE}/Mail/Milter/Authentication/Metric/RowUptime.json
+${P5SITE}/Mail/Milter/Authentication/Net/
+${P5SITE}/Mail/Milter/Authentication/Net/Milter.pm
+${P5SITE}/Mail/Milter/Authentication/Net/ServerPatches.pm
+${P5SITE}/Mail/Milter/Authentication/Pragmas.pm
 ${P5SITE}/Mail/Milter/Authentication/Protocol/
 ${P5SITE}/Mail/Milter/Authentication/Protocol/Milter.pm
 ${P5SITE}/Mail/Milter/Authentication/Protocol/SMTP.pm
+${P5SITE}/Mail/Milter/Authentication/Resolver.pm
+${P5SITE}/Mail/Milter/Authentication/Tester/
+${P5SITE}/Mail/Milter/Authentication/Tester.pm
+${P5SITE}/Mail/Milter/Authentication/Tester/HandlerTester.pm
+${P5SITE}/Mail/Milter/Authentication/htdocs/
+${P5SITE}/Mail/Milter/Authentication/htdocs/css/
+${P5SITE}/Mail/Milter/Authentication/htdocs/css/authmilter.css
+${P5SITE}/Mail/Milter/Authentication/htdocs/css/normalize.css
+${P5SITE}/Mail/Milter/Authentication/htdocs/css/skeleton.css
 ${P5SITE}/auto/share/dist/Mail-Milter-Authentication/
 @comment ${P5SITE}/auto/share/dist/Mail-Milter-Authentication/authentication_milter.init
 ${P5SITE}/auto/share/dist/Mail-Milter-Authentication/authentication_milter.json
@@ -34,26 +99,52 @@ ${P5SITE}/auto/share/dist/Mail-Milter-Authentication/authentication_milter.json
 ${P5SITE}/auto/share/dist/Mail-Milter-Authentication/mail-dmarc.ini
 @sample ${SYSCONFDIR}/mail-dmarc.ini
 @man man/man1/authentication_milter.1
+@man man/man1/authentication_milter_blocker.1
 @man man/man1/authentication_milter_client.1
+@man man/man1/authentication_milter_log.1
 @man man/man3p/Mail::Milter::Authentication.3p
+@man man/man3p/Mail::Milter::Authentication::App::Blocker::App.3p
+@man man/man3p/Mail::Milter::Authentication::App::Blocker::App::Command::add.3p
+@man man/man3p/Mail::Milter::Authentication::App::Blocker::App::Command::delete.3p
+@man man/man3p/Mail::Milter::Authentication::App::Blocker::App::Command::list.3p
+@man man/man3p/Mail::Milter::Authentication::App::ProcessLog::App.3p
+@man man/man3p/Mail::Milter::Authentication::App::ProcessLog::App::Command::arex.3p
 @man man/man3p/Mail::Milter::Authentication::Client.3p
 @man man/man3p/Mail::Milter::Authentication::Config.3p
 @man man/man3p/Mail::Milter::Authentication::Constants.3p
+@man man/man3p/Mail::Milter::Authentication::Exception.3p
+@man man/man3p/Mail::Milter::Authentication::HTDocs.3p
 @man man/man3p/Mail::Milter::Authentication::Handler.3p
+@man man/man3p/Mail::Milter::Authentication::Handler::ARC.3p
+@man man/man3p/Mail::Milter::Authentication::Handler::AbusixDataFeed.3p
 @man man/man3p/Mail::Milter::Authentication::Handler::AddID.3p
+@man man/man3p/Mail::Milter::Authentication::Handler::AlignedFrom.3p
 @man man/man3p/Mail::Milter::Authentication::Handler::Auth.3p
+@man man/man3p/Mail::Milter::Authentication::Handler::BIMI.3p
+@man man/man3p/Mail::Milter::Authentication::Handler::Blocker.3p
 @man man/man3p/Mail::Milter::Authentication::Handler::DKIM.3p
 @man man/man3p/Mail::Milter::Authentication::Handler::DMARC.3p
 @man man/man3p/Mail::Milter::Authentication::Handler::IPRev.3p
 @man man/man3p/Mail::Milter::Authentication::Handler::LocalIP.3p
+@man man/man3p/Mail::Milter::Authentication::Handler::Logger.3p
 @man man/man3p/Mail::Milter::Authentication::Handler::PTR.3p
+@man man/man3p/Mail::Milter::Authentication::Handler::RBLDNS.3p
 @man man/man3p/Mail::Milter::Authentication::Handler::ReturnOK.3p
 @man man/man3p/Mail::Milter::Authentication::Handler::SPF.3p
 @man man/man3p/Mail::Milter::Authentication::Handler::Sanitize.3p
 @man man/man3p/Mail::Milter::Authentication::Handler::SenderID.3p
+@man man/man3p/Mail::Milter::Authentication::Handler::Size.3p
 @man man/man3p/Mail::Milter::Authentication::Handler::TLS.3p
+@man man/man3p/Mail::Milter::Authentication::Handler::TestTimeout.3p
 @man man/man3p/Mail::Milter::Authentication::Handler::TrustedIP.3p
 @man man/man3p/Mail::Milter::Authentication::Handler::XGoogleDKIM.3p
+@man man/man3p/Mail::Milter::Authentication::Metric.3p
+@man man/man3p/Mail::Milter::Authentication::Metric::Grafana.3p
+@man man/man3p/Mail::Milter::Authentication::Net::Milter.3p
+@man man/man3p/Mail::Milter::Authentication::Net::ServerPatches.3p
+@man man/man3p/Mail::Milter::Authentication::Pragmas.3p
 @man man/man3p/Mail::Milter::Authentication::Protocol::Milter.3p
 @man man/man3p/Mail::Milter::Authentication::Protocol::SMTP.3p
-@rcscript ${RCDIR}/mail_milter_authentication
+@man man/man3p/Mail::Milter::Authentication::Resolver.3p
+@man man/man3p/Mail::Milter::Authentication::Tester.3p
+@man man/man3p/Mail::Milter::Authentication::Tester::HandlerTester.3p
