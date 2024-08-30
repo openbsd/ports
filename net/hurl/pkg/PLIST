@@ -1,0 +1,4 @@
+@bin bin/hurl
+@bin bin/hurlfmt
+@man man/man1/hurl.1
+@man man/man1/hurlfmt.1
