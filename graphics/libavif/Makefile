@@ -1,6 +1,6 @@
 COMMENT=	library for encoding and decoding .avif files
 
-DIST_TUPLE+=	github AOMediaCodec libavif v1.1.0 .
+DIST_TUPLE+=	github AOMediaCodec libavif v1.1.1 .
 DIST_TUPLE+=	github lemenkov libyuv \
 		a6a2ec654b1be1166b376476a7555c89eca0c275 ext/libyuv
 CATEGORIES=	graphics
