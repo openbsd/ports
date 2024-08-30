@@ -1,6 +1,6 @@
 COMMENT =		perl oop implementation of Sender Policy Framework
 
-DISTNAME =		Mail-SPF-3.20240617
+DISTNAME =		Mail-SPF-3.20240827
 CATEGORIES =		mail
 
 MAINTAINER =		Giovanni Bechis <giovanni@openbsd.org>

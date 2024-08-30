@@ -36,6 +36,7 @@ ${P5SITE}/Mail/SPF/v2/Record.pm
 @man man/man1/spfquery.1
 @man man/man3p/Mail::SPF.3p
 @man man/man3p/Mail::SPF::Base.3p
+@man man/man3p/Mail::SPF::Exception.3p
 @man man/man3p/Mail::SPF::MacroString.3p
 @man man/man3p/Mail::SPF::Mech.3p
 @man man/man3p/Mail::SPF::Mech::A.3p
