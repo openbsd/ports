@@ -1,0 +1,15 @@
+https://github.com/sfackler/rust-openssl/pull/2287
+
+Index: vendor/openssl-sys-0.9.102/build/cfgs.rs
+--- vendor/openssl-sys-0.9.102/build/cfgs.rs.orig
++++ vendor/openssl-sys-0.9.102/build/cfgs.rs
+@@ -65,6 +65,9 @@ pub fn get(openssl_version: Option<u64>, libressl_vers
+         if libressl_version >= 0x3_09_00_00_0 {
+             cfgs.push("libressl390");
+         }
++        if libressl_version >= 0x4_00_00_00_0 {
++            cfgs.push("libressl400");
++        }
+     } else {
+         let openssl_version = openssl_version.unwrap();
+ 

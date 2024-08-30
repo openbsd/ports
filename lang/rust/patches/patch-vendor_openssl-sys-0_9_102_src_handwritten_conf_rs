@@ -1,0 +1,20 @@
+https://github.com/sfackler/rust-openssl/pull/2287
+
+Index: vendor/openssl-sys-0.9.102/src/handwritten/conf.rs
+--- vendor/openssl-sys-0.9.102/src/handwritten/conf.rs.orig
++++ vendor/openssl-sys-0.9.102/src/handwritten/conf.rs
+@@ -1,7 +1,13 @@
+ use super::super::*;
+ 
++const_ptr_api! {
++    extern "C" {
++        pub fn NCONF_new(meth: #[const_ptr_if(libressl400)] CONF_METHOD) -> *mut CONF;
++    }
++}
++
+ extern "C" {
+-    pub fn NCONF_new(meth: *mut CONF_METHOD) -> *mut CONF;
++    #[cfg(not(libressl400))]
+     pub fn NCONF_default() -> *mut CONF_METHOD;
+     pub fn NCONF_free(conf: *mut CONF);
+ }

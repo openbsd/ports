@@ -1,0 +1,23 @@
+https://github.com/sfackler/rust-openssl/pull/2276
+
+Index: vendor/openssl-sys-0.9.102/src/handwritten/x509_vfy.rs
+--- vendor/openssl-sys-0.9.102/src/handwritten/x509_vfy.rs.orig
++++ vendor/openssl-sys-0.9.102/src/handwritten/x509_vfy.rs
+@@ -9,10 +9,15 @@ extern "C" {
+     pub fn X509_LOOKUP_meth_free(method: *mut X509_LOOKUP_METHOD);
+ }
+ 
++const_ptr_api! {
++    extern "C" {
++        pub fn X509_LOOKUP_hash_dir() -> #[const_ptr_if(libressl400)] X509_LOOKUP_METHOD;
++        pub fn X509_LOOKUP_file() -> #[const_ptr_if(libressl400)] X509_LOOKUP_METHOD;
++    }
++}
++
+ extern "C" {
+     pub fn X509_LOOKUP_free(ctx: *mut X509_LOOKUP);
+-    pub fn X509_LOOKUP_hash_dir() -> *mut X509_LOOKUP_METHOD;
+-    pub fn X509_LOOKUP_file() -> *mut X509_LOOKUP_METHOD;
+     pub fn X509_LOOKUP_ctrl(
+         ctx: *mut X509_LOOKUP,
+         cmd: c_int,

@@ -17,6 +17,7 @@ COMMENT-src =		Rust source component
 
 V =			1.80.1
 DISTNAME =		rustc-${V}-src
+REVISION =		0
 
 # rustc bootstrap version
 BV-aarch64 =		1.79.0

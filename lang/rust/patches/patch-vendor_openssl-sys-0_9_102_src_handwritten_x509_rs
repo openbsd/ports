@@ -1,0 +1,26 @@
+https://github.com/sfackler/rust-openssl/pull/2227
+
+Index: vendor/openssl-sys-0.9.102/src/handwritten/x509.rs
+--- vendor/openssl-sys-0.9.102/src/handwritten/x509.rs.orig
++++ vendor/openssl-sys-0.9.102/src/handwritten/x509.rs
+@@ -1,10 +1,16 @@
+ use super::super::*;
+ use libc::*;
+ 
+-#[repr(C)]
+-pub struct X509_VAL {
+-    pub notBefore: *mut ASN1_TIME,
+-    pub notAfter: *mut ASN1_TIME,
++cfg_if! {
++    if #[cfg(libressl400)] {
++        pub enum X509_VAL {}
++    } else {
++        #[repr(C)]
++        pub struct X509_VAL {
++            pub notBefore: *mut ASN1_TIME,
++            pub notAfter: *mut ASN1_TIME,
++        }
++    }
+ }
+ 
+ pub enum X509_NAME_ENTRY {}

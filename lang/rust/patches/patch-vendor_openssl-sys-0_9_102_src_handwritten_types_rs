@@ -1,0 +1,13 @@
+https://github.com/sfackler/rust-openssl/pull/2287
+
+Index: vendor/openssl-sys-0.9.102/src/handwritten/types.rs
+--- vendor/openssl-sys-0.9.102/src/handwritten/types.rs.orig
++++ vendor/openssl-sys-0.9.102/src/handwritten/types.rs
+@@ -458,6 +458,7 @@ pub struct X509V3_CTX {
+     subject_cert: *mut c_void,
+     subject_req: *mut c_void,
+     crl: *mut c_void,
++    #[cfg(not(libressl400))]
+     db_meth: *mut c_void,
+     db: *mut c_void,
+     #[cfg(ossl300)]
