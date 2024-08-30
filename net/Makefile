@@ -139,6 +139,7 @@
      SUBDIR += hopm
      SUBDIR += hping
      SUBDIR += httptunnel
+     SUBDIR += hurl
      SUBDIR += i2p
      SUBDIR += i2pd
      SUBDIR += iamb
