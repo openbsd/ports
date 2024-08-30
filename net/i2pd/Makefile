@@ -3,6 +3,7 @@ COMMENT =	client for the I2P anonymous network
 GH_ACCOUNT =	PurpleI2P
 GH_PROJECT =	i2pd
 GH_TAGNAME =	2.53.1
+REVISION =	0
 
 CATEGORIES =	net
 HOMEPAGE =	https://i2pd.website
@@ -12,14 +13,17 @@ PERMIT_PACKAGE = Yes
 
 WANTLIB += ${COMPILER_LIBCXX} boost_atomic-mt boost_date_time-mt
 WANTLIB += boost_filesystem-mt boost_program_options-mt boost_system-mt
-WANTLIB += c crypto m ssl z
+WANTLIB += c crypto m miniupnpc ssl z
 
 COMPILER =	base-clang ports-gcc
 MODULES =	devel/cmake
-LIB_DEPENDS =	devel/boost
+LIB_DEPENDS =	devel/boost \
+		net/miniupnp/miniupnpc
 
 # for tests
 USE_GMAKE =	Yes
+
+CONFIGURE_ARGS =	-DWITH_UPNP=ON
 
 WRKSRC =	${WRKDIST}/build
 
