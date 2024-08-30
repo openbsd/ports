@@ -1,0 +1,21 @@
+Index: firedns.c
+--- src/firedns.c.orig
++++ src/firedns.c
+@@ -36,6 +36,7 @@ Foundation, Inc., 59 Temple Place, Suite 330, Boston, MA  02111-1307  USA
+ #include <stdio.h>
+ #include <errno.h>
+ #include <fcntl.h>
++#include <err.h>
+ 
+ #include "compat.h"
+ #include "memory.h"
+@@ -171,6 +172,10 @@ firedns_init(void)
+   memset(servers4, 0, sizeof(servers4));
+   memset(servers6, 0, sizeof(servers6));
+ 
++  if (unveil(FDNS_CONFIG_PREF, "r") == -1) {
++    err(1, "unveil");
++  }
++
+   /* read etc/firedns.conf if we've got it, otherwise parse /etc/resolv.conf */
+   f = fopen(FDNS_CONFIG_PREF, "r");
