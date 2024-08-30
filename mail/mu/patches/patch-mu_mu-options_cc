@@ -2,7 +2,7 @@
 Index: mu/mu-options.cc
 --- mu/mu-options.cc.orig
 +++ mu/mu-options.cc
-@@ -630,8 +630,8 @@ bool
+@@ -746,8 +746,8 @@ bool
  Options::default_no_color()
  {
  	static const auto no_color =

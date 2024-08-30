@@ -1,0 +1,12 @@
+Index: lib/mu-store-worker.hh
+--- lib/mu-store-worker.hh.orig
++++ lib/mu-store-worker.hh
+@@ -159,7 +159,7 @@ class StoreWorker { (private)
+ 	size_t cleanup_orphans();
+ 
+ 	QueueType q_;
+-	Store& store_;;
++	Store& store_;
+ 	std::thread runner_;
+ 	std::atomic<bool> running_{};
+ 	SexpCommandHandler sexp_handler_{};

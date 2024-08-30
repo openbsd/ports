@@ -3,9 +3,9 @@
 Index: mu/mu-cmd-server.cc
 --- mu/mu-cmd-server.cc.orig
 +++ mu/mu-cmd-server.cc
-@@ -125,7 +125,7 @@ Mu::mu_cmd_server(const Mu::Options& opts) try {
- 		  opts.debug ? "yes" : "no",
- 		  have_readline() ? "yes" : "no");
+@@ -120,7 +120,7 @@ Mu::mu_cmd_server(const Mu::Options& opts) try {
+ 		   opts.debug ? "yes" : "no",
+ 		   have_readline() ? "yes" : "no");
  
 -	tty = ::isatty(::fileno(stdout));
 +	tty = ::isatty(fileno(stdout));

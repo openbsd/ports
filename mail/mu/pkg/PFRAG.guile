@@ -1,8 +1,8 @@
 info/mu-guile.info
 @lib lib/guile/3.0/extensions/libguile-mu.so.${LIBguile-mu_VERSION}
 share/guile/site/3.0/mu/
+share/guile/site/3.0/mu.scm
 share/guile/site/3.0/mu/message.scm
-share/guile/site/3.0/mu/mu.scm
 share/guile/site/3.0/mu/plot.scm
 share/guile/site/3.0/mu/script.scm
 share/guile/site/3.0/mu/stats.scm

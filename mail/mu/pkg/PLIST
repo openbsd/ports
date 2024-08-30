@@ -3,13 +3,13 @@
 @man man/man1/mu-add.1
 @man man/man1/mu-cfind.1
 @man man/man1/mu-extract.1
-@man man/man1/mu-fields.1
 @man man/man1/mu-find.1
 @man man/man1/mu-help.1
 @man man/man1/mu-index.1
 @man man/man1/mu-info.1
 @man man/man1/mu-init.1
 @man man/man1/mu-mkdir.1
+@man man/man1/mu-move.1
 @man man/man1/mu-remove.1
 @man man/man1/mu-server.1
 @man man/man1/mu-verify.1
@@ -27,6 +27,7 @@ share/emacs/site-lisp/
 share/emacs/site-lisp/mu4e/
 share/emacs/site-lisp/mu4e/mu4e-actions.el
 share/emacs/site-lisp/mu4e/mu4e-actions.elc
+share/emacs/site-lisp/mu4e/mu4e-autoloads.el
 share/emacs/site-lisp/mu4e/mu4e-bookmarks.el
 share/emacs/site-lisp/mu4e/mu4e-bookmarks.elc
 share/emacs/site-lisp/mu4e/mu4e-compose.el
@@ -56,6 +57,8 @@ share/emacs/site-lisp/mu4e/mu4e-mark.el
 share/emacs/site-lisp/mu4e/mu4e-mark.elc
 share/emacs/site-lisp/mu4e/mu4e-message.el
 share/emacs/site-lisp/mu4e/mu4e-message.elc
+share/emacs/site-lisp/mu4e/mu4e-mime-parts.el
+share/emacs/site-lisp/mu4e/mu4e-mime-parts.elc
 share/emacs/site-lisp/mu4e/mu4e-modeline.el
 share/emacs/site-lisp/mu4e/mu4e-modeline.elc
 share/emacs/site-lisp/mu4e/mu4e-notification.el
@@ -64,6 +67,7 @@ share/emacs/site-lisp/mu4e/mu4e-obsolete.el
 share/emacs/site-lisp/mu4e/mu4e-obsolete.elc
 share/emacs/site-lisp/mu4e/mu4e-org.el
 share/emacs/site-lisp/mu4e/mu4e-org.elc
+share/emacs/site-lisp/mu4e/mu4e-pkg.el
 share/emacs/site-lisp/mu4e/mu4e-query-items.el
 share/emacs/site-lisp/mu4e/mu4e-query-items.elc
 share/emacs/site-lisp/mu4e/mu4e-search.el
@@ -72,6 +76,8 @@ share/emacs/site-lisp/mu4e/mu4e-server.el
 share/emacs/site-lisp/mu4e/mu4e-server.elc
 share/emacs/site-lisp/mu4e/mu4e-speedbar.el
 share/emacs/site-lisp/mu4e/mu4e-speedbar.elc
+share/emacs/site-lisp/mu4e/mu4e-thread.el
+share/emacs/site-lisp/mu4e/mu4e-thread.elc
 share/emacs/site-lisp/mu4e/mu4e-update.el
 share/emacs/site-lisp/mu4e/mu4e-update.elc
 share/emacs/site-lisp/mu4e/mu4e-vars.el

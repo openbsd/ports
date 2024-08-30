@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} c gio-2.0 glib-2.0 gmime-3.0 gobject-2.0
 WANTLIB += m xapian
 
-DIST_TUPLE =	github djcb mu v1.10.8 .
+DIST_TUPLE =	github djcb mu v1.12.6 .
 
 EXTRACT_SUFX =	.tar.xz
 
@@ -41,7 +41,7 @@ CONFIGURE_ARGS +=	-Dguile=disabled
 .endif
 
 # needs readline >= 8.0
-CONFIGURE_ARGS +=	-Dreadline=disabled
+CONFIGURE_ARGS +=	-Dreadline=disabled -Dcld2=disabled
 
 pre-configure:
 	sed -e 's/exec guile/exec guile${GUILE_V}/' -i \
