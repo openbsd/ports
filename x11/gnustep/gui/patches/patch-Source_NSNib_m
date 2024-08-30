@@ -1,0 +1,15 @@
+
+see: https://github.com/gnustep/libs-gui/commit/530dee1e2fa9df6faa76fbc2577e4be082854f0f
+
+Index: Source/NSNib.m
+--- Source/NSNib.m.orig
++++ Source/NSNib.m
+@@ -209,7 +209,7 @@
+   // add the necessary things to the table...
+   [externalNameTable setObject: owner forKey: NSNibOwner];
+ 
+-  if (topLevelObjects != 0)
++  if (topLevelObjects != NULL)
+     {
+       *topLevelObjects = [NSMutableArray array];
+       [externalNameTable setObject: *topLevelObjects
