@@ -244,8 +244,8 @@ CONFIGURE_ARGS+=	--enable-dba=shared \
 COMMENT-enchant=	enchant library extensions for php
 HOMEPAGE-enchant=	https://www.php.net/enchant
 LIB_DEPENDS-enchant=	textproc/enchant2
-WANTLIB-enchant=	aspell enchant-2 glib-2.0 gmodule-2.0 iconv intl \
-			pthread
+WANTLIB-enchant=	aspell enchant-2 gio-2.0 glib-2.0 gmodule-2.0 \
+			gobject-2.0 iconv intl pthread
 .if ${BUILD_PACKAGES:M-enchant}
 CONFIGURE_ARGS+=	--with-enchant=shared,${LOCALBASE}
 .endif
@@ -331,9 +331,8 @@ WANTLIB-pcntl=		pthread
 COMMENT-pdo_dblib=	PDO DB-LIB support for php
 HOMEPAGE-pdo_dblib=	https://www.php.net/pdo_dblib
 LIB_DEPENDS-pdo_dblib=	databases/freetds
-WANTLIB-pdo_dblib=	brotlidec brotlienc gmp gnutls hogweed iconv \
-			idn2 intl nettle p11-kit pthread sybdb tasn1 \
-			unistring z zstd
+WANTLIB-pdo_dblib=	gmp gnutls hogweed iconv idn2 intl nettle p11-kit \
+			pthread sybdb tasn1 unistring
 .if ${BUILD_PACKAGES:M-pdo_dblib}
 CONFIGURE_ARGS+=	--with-pdo-dblib=shared,${LOCALBASE}
 .endif
