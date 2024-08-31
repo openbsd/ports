@@ -70,6 +70,9 @@ lib/spa-0.2/audiotestsrc/
 @so lib/spa-0.2/audiotestsrc/libspa-audiotestsrc.so
 lib/spa-0.2/control/
 @so lib/spa-0.2/control/libspa-control.so
+lib/spa-0.2/support/
+@so lib/spa-0.2/support/libspa-dbus.so
+@so lib/spa-0.2/support/libspa-support.so
 lib/spa-0.2/videoconvert/
 @so lib/spa-0.2/videoconvert/libspa-videoconvert.so
 lib/spa-0.2/videotestsrc/

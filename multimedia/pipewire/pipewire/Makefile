@@ -5,14 +5,16 @@ PW_PROJECT=		pipewire
 PW_VERSION=		1.2.3
 PKGNAME-libs=		lib${PW_PROJECT}-${PW_VERSION}
 
+REVISION-main=		0
+
 SHARED_LIBS += pipewire-0.3              0.2 # 0.1203.0
 
 MULTI_PACKAGES=		-main -libs
 
-WANTLIB-main += X11 Xfixes c canberra curses dbus-1 gio-2.0 glib-2.0
-WANTLIB-main += gobject-2.0 gstallocators-1.0 gstaudio-1.0 gstbase-1.0
-WANTLIB-main += gstreamer-1.0 gstvideo-1.0 m opus pipewire-0.3 pthread
-WANTLIB-main += readline sndfile
+WANTLIB-main += X11 Xfixes c canberra curses dbus-1 epoll-shim gio-2.0
+WANTLIB-main += glib-2.0 gobject-2.0 gstallocators-1.0 gstaudio-1.0
+WANTLIB-main += gstbase-1.0 gstreamer-1.0 gstvideo-1.0 m opus pipewire-0.3
+WANTLIB-main += pthread readline sndfile
 
 WANTLIB-libs += intl pthread
 
@@ -24,11 +26,13 @@ MODPY_RUNDEP=		No
 
 BUILD_DEPENDS=		devel/doxygen \
 			devel/gettext,-tools \
+			devel/libstdthreads \
 			textproc/py-docutils${MODPY_FLAVOR}
 
 LIB_DEPENDS-main=	${BASE_PKGPATH},-libs \
 			audio/libcanberra \
 			audio/libsndfile \
+			devel/epoll-shim \
 			multimedia/gstreamer1/plugins-base \
 			x11/dbus
 
@@ -68,11 +72,6 @@ CONFIGURE_ARGS +=	-Dpipewire-alsa=disabled \
 			-Dlibffado=disabled \
 			-Dlibmysofa=disabled \
 			-Davahi=disabled
-
-# XXX "support" needs threads.h;
-# "tests" don't configure without support: ERROR: Unknown variable "spa_support_dep"
-CONFIGURE_ARGS +=	-Dsupport=disabled \
-			-Dtests=disabled
 
 # PAM limits.d file
 CONFIGURE_ARGS +=	-Drlimits-install=false
