@@ -2,6 +2,7 @@ COMMENT =	Ruby interface to ImageMagick
 
 DISTNAME =	rmagick-6.0.1
 CATEGORIES =	graphics
+REVISION =	0
 
 HOMEPAGE =	https://github.com/rmagick/rmagick
 

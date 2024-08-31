@@ -1,0 +1,14 @@
+Index: ext/RMagick/rmmain.cpp
+--- ext/RMagick/rmmain.cpp.orig
++++ ext/RMagick/rmmain.cpp
+@@ -201,9 +201,7 @@ static inline void managed_memory_enable(VALUE enable)
+ 
+ static void set_managed_memory(void)
+ {
+-    char *disable = getenv("RMAGICK_DISABLE_MANAGED_MEMORY");
+-
+-    if (disable)
++    if (1)
+     {
+         managed_memory_enable(Qfalse);
+         return;
