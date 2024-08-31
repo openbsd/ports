@@ -1,0 +1,13 @@
+Index: bindings/perl/Makefile.am
+--- bindings/perl/Makefile.am.orig
++++ bindings/perl/Makefile.am
+@@ -51,6 +51,9 @@ endif
+ if OS_NETBSD
+ AVOID_VERSION = -avoid-version
+ endif
++if OS_OPENBSD
++AVOID_VERSION = -avoid-version
++endif
+ 
+ clinkgrammar_la_LDFLAGS = -version-info @VERSION_INFO@ $(AVOID_VERSION)\
+ 								  $(PERL_LDFLAGS) -module -no-undefined

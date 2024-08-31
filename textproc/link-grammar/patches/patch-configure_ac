@@ -1,0 +1,40 @@
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -13,13 +13,13 @@ AC_INIT([link-grammar],[5.12.5],[https://github.com/op
+ AC_MSG_CHECKING([whether configure should try to set CFLAGS/CXXFLAGS])
+ AS_IF([test "x${CFLAGS+set}" = "xset" || test "x${CXXFLAGS+set}" = "xset"], [
+     enable_flags_setting=no
+-    : ${CFLAGS="-g -O3"}
+-    : ${CXXFLAGS="-g -O3"}
++    : ${CFLAGS="-g"}
++    : ${CXXFLAGS="-g"}
+   ], [
+     enable_flags_setting=yes
+     dnl Set to -g -O3 here so AC_PROG_CC and AC_PROG_CXX do not add -g -O2
+-    CFLAGS="-g -O3"
+-    CXXFLAGS="-g -O3"
++    CFLAGS="-g"
++    CXXFLAGS="-g"
+   ])
+ AC_MSG_RESULT([${enable_flags_setting}])
+ 
+@@ -150,6 +150,18 @@ case "$host_os" in
+ esac
+ AC_MSG_RESULT([$freebsd])
+ AM_CONDITIONAL(OS_FREEBSD, test "x$freebsd" = "xyes")
++
++AC_MSG_CHECKING([for OpenBSD])
++case "$host_os" in
++  *openbsd*)
++    openbsd=yes
++    ;;
++  *)
++    openbsd=no
++    ;;
++esac
++AC_MSG_RESULT([$openbsd])
++AM_CONDITIONAL(OS_OPENBSD, test "x$openbsd" = "xyes")
+ 
+ HOST_OS="$host_os"
+ AC_SUBST(HOST_OS)

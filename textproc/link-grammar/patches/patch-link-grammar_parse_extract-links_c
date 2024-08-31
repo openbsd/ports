@@ -1,0 +1,18 @@
+Index: link-grammar/parse/extract-links.c
+--- link-grammar/parse/extract-links.c.orig
++++ link-grammar/parse/extract-links.c
+@@ -12,11 +12,13 @@
+ /*************************************************************************/
+ 
+ #include <limits.h>                     // INT_MAX
+-#ifdef __APPLE__
++#if HAVE_MALLOC_TRIM
++#if defined(__APPLE__)
+ #include <malloc/malloc.h>
+ #else
+ #include <malloc.h>                     // malloc_trim
+ #endif
++#endif /* HAVE_MALLOC_TRIM */
+ #include <math.h>                       // log2
+ 
+ #include "connectors.h"

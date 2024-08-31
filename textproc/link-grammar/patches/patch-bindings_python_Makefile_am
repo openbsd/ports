@@ -1,0 +1,13 @@
+Index: bindings/python/Makefile.am
+--- bindings/python/Makefile.am.orig
++++ bindings/python/Makefile.am
+@@ -87,6 +87,9 @@ endif
+ if OS_NETBSD
+ AVOID_VERSION = -avoid-version
+ endif
++if OS_OPENBSD
++AVOID_VERSION = -avoid-version
++endif
+ _clinkgrammar_la_LDFLAGS =                        \
+     -version-info @VERSION_INFO@ $(AVOID_VERSION) \
+     $(PYTHON_LDFLAGS) -module -no-undefined $(PYMODULE_EXT)

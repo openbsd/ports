@@ -5,22 +5,18 @@ COMMENT-main =		syntactic parser of different languages
 COMMENT-java =		Java bindings for link-grammar
 COMMENT-python =	Python bindings for link-grammar
 
-VERSION =		5.12.0
+VERSION =		5.12.5
 DISTNAME =		link-grammar-${VERSION}
-
 PKGNAME-main =		${DISTNAME}
 PKGNAME-java =		link-grammar-java-${VERSION}
 PKGNAME-python =	py3-link-grammar-${VERSION}
-REVISION-java =		0
-REVISION-main =		0
-REVISION-python =	0
 
-SHARED_LIBS +=  link-grammar         10.0      # 15.2
-SHARED_LIBS +=  link-grammar-java    8.0       # 15.2
+SHARED_LIBS +=  link-grammar         11.0      # 17.5
+SHARED_LIBS +=  link-grammar-java    9.0       # 17.5
 
 CATEGORIES =		textproc
 
-HOMEPAGE =		https://www.abisource.com/projects/link-grammar/
+HOMEPAGE =		https://opencog.github.io/link-grammar-website/
 
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes
@@ -34,8 +30,7 @@ WANTLIB-java += ${WANTLIB} link-grammar pthread
 WANTLIB-python += ${WANTLIB} ${MODPY_WANTLIB}
 WANTLIB-python += iconv intl link-grammar pthread util
 
-# XXX no https: TLS handshake failure: certificate verification failed: certificate has expired
-SITES =		http://www.abisource.com/downloads/link-grammar/${VERSION}/
+SITES =			https://www.gnucash.org/link-grammar/downloads/${VERSION}/
 
 MODULES =		lang/python
 
@@ -51,7 +46,8 @@ PSEUDO_FLAVORS =	no_java
 
 .include <bsd.port.arch.mk>
 
-BUILD_DEPENDS =		devel/swig
+BUILD_DEPENDS =		devel/libstdthreads \
+			devel/swig
 
 LIB_DEPENDS=		databases/sqlite3
 
@@ -72,7 +68,10 @@ TEST_DEPENDS =		${BUILD_PKGPATH},-python
 
 SUBST_VARS =		VERSION
 
-CONFIGURE_STYLE =	gnu
+AUTOCONF_VERSION =	2.72
+AUTOMAKE_VERSION =	1.16
+BUILD_DEPENDS +=	devel/autoconf-archive
+CONFIGURE_STYLE =	autoreconf
 
 ADD_CFLAGS =		-I${JAVA_HOME}/include -I${JAVA_HOME}/include/openbsd
 ADD_CFLAGS +=		-I${LOCALBASE}/include
@@ -96,9 +95,6 @@ BUILD_DEPENDS +=	devel/apache-ant
 .else
 CONFIGURE_ARGS +=	--disable-java-bindings
 .endif
-
-pre-configure:
-	sed -i -e 's,-O2,,g;' -e 's,-O3,,g' ${WRKSRC}/configure
 
 post-install:
 	rm ${PREFIX}/libdata/perl5/site_perl/${MACHINE_ARCH}-openbsd/clinkgrammar.{a,la}
