@@ -1899,6 +1899,12 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/pca-connector-scep/2018-0
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pca-connector-scep/2018-05-10/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pca-connector-scep/2018-05-10/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/pca-connector-scep/2018-05-10/waiters-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/pcs/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/pcs/2023-02-10/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/pcs/2023-02-10/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/pcs/2023-02-10/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/pcs/2023-02-10/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/pcs/2023-02-10/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/personalize/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/personalize-events/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/personalize-events/2018-03-22/
