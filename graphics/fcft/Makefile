@@ -1,6 +1,5 @@
 COMMENT = 	small font loading and glyph rasterization library
 
-UNLINKED =	wayland
 DISTNAME =	fcft-$V
 V =		3.1.7
 

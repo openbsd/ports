@@ -1,5 +1,4 @@
 COMMENT = 	fast, lightweight and minimalistic Wayland terminal emulator
-UNLINKED =	wayland
 
 DISTNAME =	foot-${V}
 V =		1.18.0

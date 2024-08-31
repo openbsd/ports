@@ -336,7 +336,7 @@
      SUBDIR += libsoup
      SUBDIR += libsoup3
      SUBDIR += libspectrum
-     #SUBDIR += libstdthreads # wayland
+     SUBDIR += libstdthreads
      SUBDIR += libtalloc
      SUBDIR += libtermkey
      SUBDIR += libtool
