@@ -1,9 +1,8 @@
 COMMENT=	extensible memoizing collections and decorators
 
-MODPY_EGG_VERSION=	5.3.2
+MODPY_EGG_VERSION=	5.5.0
 DISTNAME=	cachetools-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	devel
 
