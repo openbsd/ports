@@ -1,10 +1,9 @@
 COMMENT=	reference implementation for Python's "wheel" package format
 
-MODPY_EGG_VERSION=	0.43.0
+MODPY_EGG_VERSION=	0.44.0
 DISTNAME=	wheel-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	0
 
 # MIT
 PERMIT_PACKAGE=	Yes

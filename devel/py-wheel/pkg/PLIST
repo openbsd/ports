@@ -15,6 +15,8 @@ lib/python${MODPY_VERSION}/site-packages/wheel/${MODPY_PYCACHE}__init__.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/wheel/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wheel/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wheel/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wheel/${MODPY_PYCACHE}_bdist_wheel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/wheel/${MODPY_PYCACHE}_bdist_wheel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wheel/${MODPY_PYCACHE}_setuptools_logging.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wheel/${MODPY_PYCACHE}_setuptools_logging.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wheel/${MODPY_PYCACHE}bdist_wheel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -27,6 +29,7 @@ lib/python${MODPY_VERSION}/site-packages/wheel/${MODPY_PYCACHE}util.${MODPY_PYC_
 lib/python${MODPY_VERSION}/site-packages/wheel/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wheel/${MODPY_PYCACHE}wheelfile.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wheel/${MODPY_PYCACHE}wheelfile.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/wheel/_bdist_wheel.py
 lib/python${MODPY_VERSION}/site-packages/wheel/_setuptools_logging.py
 lib/python${MODPY_VERSION}/site-packages/wheel/bdist_wheel.py
 lib/python${MODPY_VERSION}/site-packages/wheel/cli/
