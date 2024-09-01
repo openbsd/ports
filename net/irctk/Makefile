@@ -25,7 +25,7 @@ FAKE_FLAGS =	PREFIX="${DESTDIR}${PREFIX}"
 NO_TEST =	Yes
 
 # Install the extension in a place where they're not automatically
-# loaded, yet they're convenient to be loaded from the interface.
+# loaded, yet they're convenient to be manually loaded from the interface.
 # Ship the READMEs too but not the Makefiles
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/irctk/
