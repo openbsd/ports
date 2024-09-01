@@ -12,6 +12,7 @@ EXTRACT_SUFX =		.tar.xz
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION:S/a/alpha/}
 DISTNAME =		src-firefox-tor-browser-115.14.0esr-13.5-1-build2
+REVISION =		0
 
 FIX_EXTRACT_PERMISSIONS	= Yes
 DISTFILES +=		${DISTNAME}.tar.xz \
@@ -64,7 +65,7 @@ CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	${MODPY_BIN} ${WRKSRC}/configure.py
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
 MAKE_ENV +=		BUILD_VERBOSE_LOG="1" CARGOFLAGS="-j${MAKE_JOBS}"
-CONFIGURE_ENV +=	LDFLAGS=-Wl,--threads=${MAKE_JOBS}
+CONFIGURE_ENV +=	LDFLAGS="-Wl,--threads=${MAKE_JOBS} --ld-path=${WRKDIR}/bin/ld"
 
 # app-name etc. for tor-browser
 CONFIGURE_ARGS +=	--with-app-name=${BROWSER_NAME}			\
