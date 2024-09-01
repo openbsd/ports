@@ -34,7 +34,6 @@ include/libgedit-gtksourceview-300/gtksourceview/gtksourcesearchsettings.h
 include/libgedit-gtksourceview-300/gtksourceview/gtksourcespacedrawer.h
 include/libgedit-gtksourceview-300/gtksourceview/gtksourcestyle.h
 include/libgedit-gtksourceview-300/gtksourceview/gtksourcestylescheme.h
-include/libgedit-gtksourceview-300/gtksourceview/gtksourcestyleschemechooser.h
 include/libgedit-gtksourceview-300/gtksourceview/gtksourcestyleschememanager.h
 include/libgedit-gtksourceview-300/gtksourceview/gtksourcetag.h
 include/libgedit-gtksourceview-300/gtksourceview/gtksourcetypes.h
@@ -73,7 +72,6 @@ share/gtk-doc/html/libgedit-gtksourceview-300/GtkSourceSearchSettings.html
 share/gtk-doc/html/libgedit-gtksourceview-300/GtkSourceSpaceDrawer.html
 share/gtk-doc/html/libgedit-gtksourceview-300/GtkSourceStyle.html
 share/gtk-doc/html/libgedit-gtksourceview-300/GtkSourceStyleScheme.html
-share/gtk-doc/html/libgedit-gtksourceview-300/GtkSourceStyleSchemeChooser.html
 share/gtk-doc/html/libgedit-gtksourceview-300/GtkSourceStyleSchemeManager.html
 share/gtk-doc/html/libgedit-gtksourceview-300/GtkSourceTag.html
 share/gtk-doc/html/libgedit-gtksourceview-300/GtkSourceUndoManager.html
@@ -120,6 +118,7 @@ share/gtk-doc/html/libgedit-gtksourceview-300/main-classes.html
 share/gtk-doc/html/libgedit-gtksourceview-300/misc.html
 share/gtk-doc/html/libgedit-gtksourceview-300/object-tree.html
 share/gtk-doc/html/libgedit-gtksourceview-300/porting-guide-299-0-to-299-2.html
+share/gtk-doc/html/libgedit-gtksourceview-300/porting-guide-299-2-to-299-4.html
 share/gtk-doc/html/libgedit-gtksourceview-300/porting-guide-3-to-4.html
 share/gtk-doc/html/libgedit-gtksourceview-300/porting-guide-gtksourceview-4-to-libgedit-gtksourceview-299-0.html
 share/gtk-doc/html/libgedit-gtksourceview-300/porting-guides.html
@@ -222,6 +221,7 @@ share/libgedit-gtksourceview-300/language-specs/modelica.lang
 share/libgedit-gtksourceview-300/language-specs/mxml.lang
 share/libgedit-gtksourceview-300/language-specs/nemerle.lang
 share/libgedit-gtksourceview-300/language-specs/netrexx.lang
+share/libgedit-gtksourceview-300/language-specs/nix.lang
 share/libgedit-gtksourceview-300/language-specs/nsis.lang
 share/libgedit-gtksourceview-300/language-specs/objc.lang
 share/libgedit-gtksourceview-300/language-specs/objj.lang

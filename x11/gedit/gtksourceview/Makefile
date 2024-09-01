@@ -1,10 +1,12 @@
 COMMENT=		source code editing widget
 
-LIBGEDIT_PROJECT=	libgedit-gtksourceview
-LIBGEDIT_VERSION=	299.2.1
-REVISION=		0
+GNOME_PROJECT=		libgedit-gtksourceview
+GNOME_VERSION=		299.3.0
 
-SHARED_LIBS += gedit-gtksourceview-300   0.1 # 0
+# XXX
+SITES=			${SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:C/^([0-9]+).*/\1/}/}
+
+SHARED_LIBS += gedit-gtksourceview-300   1.0 # 2
 
 CATEGORIES=		devel
 
