@@ -1,6 +1,6 @@
 COMMENT =		Python SSL and TLS library
 
-MODPY_EGG_VERSION =	0.8.0-beta2
+MODPY_EGG_VERSION =	0.8.0-beta3
 DISTNAME =		tlslite-ng-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/-beta/beta/}
 EPOCH =			0

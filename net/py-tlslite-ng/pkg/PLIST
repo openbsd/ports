@@ -92,6 +92,7 @@ lib/python${MODPY_VERSION}/site-packages/tlslite/utils/${MODPY_PYCACHE}chacha20_
 lib/python${MODPY_VERSION}/site-packages/tlslite/utils/${MODPY_PYCACHE}cipherfactory.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlslite/utils/${MODPY_PYCACHE}codec.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlslite/utils/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tlslite/utils/${MODPY_PYCACHE}compression.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlslite/utils/${MODPY_PYCACHE}constanttime.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlslite/utils/${MODPY_PYCACHE}cryptomath.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tlslite/utils/${MODPY_PYCACHE}datefuncs.${MODPY_PYC_MAGIC_TAG}pyc
@@ -145,6 +146,7 @@ lib/python${MODPY_VERSION}/site-packages/tlslite/utils/chacha20_poly1305.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/utils/cipherfactory.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/utils/codec.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/utils/compat.py
+lib/python${MODPY_VERSION}/site-packages/tlslite/utils/compression.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/utils/constanttime.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/utils/cryptomath.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/utils/datefuncs.py
