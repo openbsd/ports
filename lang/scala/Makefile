@@ -27,11 +27,8 @@ NO_TEST=	Yes
 do-install:
 	${INSTALL_DATA_DIR} ${SCALA_HOME}
 	cd ${WRKSRC} && pax -rw -s '/.*\.bat$$//' . ${SCALA_HOME}
-	# Install the wrapper scripts
 .for s in ${SCALA_SCRIPTS}
-	${INSTALL_SCRIPT} ${FILESDIR}/$s ${PREFIX}/bin/
-	${SUBST_CMD} ${PREFIX}/bin/$s
-	rm ${PREFIX}/bin/$s.beforesubst
+	${SUBST_PROGRAM} ${FILESDIR}/$s ${PREFIX}/bin/$s
 .endfor
 
 .include <bsd.port.mk>
