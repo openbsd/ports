@@ -4,6 +4,7 @@ VERSION =	3.5.0
 DISTNAME=	scala3-${VERSION}
 PKGNAME=	${DISTNAME:S/scala3-/scala-/}
 CATEGORIES=	lang
+REVISION=	0
 
 HOMEPAGE=	http://www.scala-lang.org/
 
@@ -13,7 +14,9 @@ PERMIT_PACKAGE=	Yes
 SITES=		https://github.com/scala/scala3/releases/download/${VERSION}/
 
 MODULES=	java
-MODJAVA_VER=	1.8+
+# Offically scala requires 1.8+, but on OpenBSD it needs 17+
+# https://github.com/scala/scala3/issues/21526
+MODJAVA_VER=	17
 
 RUN_DEPENDS=	java/javaPathHelper \
 		shells/bash
