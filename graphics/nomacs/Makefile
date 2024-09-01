@@ -2,7 +2,7 @@ COMMENT =	small and fast Qt image viewer
 
 GH_ACCOUNT =	nomacs
 GH_PROJECT =	nomacs
-GH_TAGNAME =	3.19.0
+GH_TAGNAME =	3.19.1
 
 CATEGORIES =	graphics
 
@@ -10,7 +10,7 @@ HOMEPAGE =	https://nomacs.org
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
-SHARED_LIBS +=  nomacsCore                7.0
+SHARED_LIBS +=  nomacsCore                8.0
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
@@ -49,3 +49,4 @@ NO_TEST =		Yes
 CXXFLAGS +=		-I${LOCALBASE}/include/QuaZip-qt6/
 
 .include <bsd.port.mk>
+LIB_DEPENDS += archivers/bzip2 x11/qt6/qt5compat 
