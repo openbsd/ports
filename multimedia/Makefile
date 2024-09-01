@@ -16,7 +16,6 @@
      SUBDIR += handbrake
      SUBDIR += hdhomerun
      SUBDIR += imagination
-     SUBDIR += kguitar
      SUBDIR += kid3
      SUBDIR += lebiniou
      SUBDIR += lebiniou-data
