@@ -1,9 +1,12 @@
 COMMENT=		Text Editor Product Line
 
-LIBGEDIT_PROJECT=	libgedit-tepl
-LIBGEDIT_VERSION=	6.10.0
+GNOME_PROJECT=		libgedit-tepl
+GNOME_VERSION=		6.11.0
 
-SHARED_LIBS += gedit-tepl-6              0.0 # 0
+# XXX
+#SITES=			${SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:C/^([0-9]+).*/\1/}/}
+
+SHARED_LIBS += gedit-tepl-6              0.0 # 1
 
 CATEGORIES=		devel
 
