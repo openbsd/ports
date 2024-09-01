@@ -1,9 +1,12 @@
 include/libgedit-gfls-1/
 include/libgedit-gfls-1/gfls/
+include/libgedit-gfls-1/gfls/gfls-attribute-keys.h
 include/libgedit-gfls-1/gfls/gfls-enum-types.h
 include/libgedit-gfls-1/gfls/gfls-init.h
 include/libgedit-gfls-1/gfls/gfls-input-stream.h
 include/libgedit-gfls-1/gfls/gfls-loader-basic.h
+include/libgedit-gfls-1/gfls/gfls-loader-config-simple.h
+include/libgedit-gfls-1/gfls/gfls-loader-config.h
 include/libgedit-gfls-1/gfls/gfls-unsaved-document-titles.h
 include/libgedit-gfls-1/gfls/gfls-utf8.h
 include/libgedit-gfls-1/gfls/gfls.h
@@ -14,10 +17,14 @@ share/gir-1.0/Gfls-1.gir
 share/gtk-doc/
 share/gtk-doc/html/
 share/gtk-doc/html/libgedit-gfls-1/
+share/gtk-doc/html/libgedit-gfls-1/GflsAttributeKeys.html
+share/gtk-doc/html/libgedit-gfls-1/GflsLoaderConfig.html
+share/gtk-doc/html/libgedit-gfls-1/GflsLoaderConfigSimple.html
 share/gtk-doc/html/libgedit-gfls-1/GflsUnsavedDocumentTitles.html
 share/gtk-doc/html/libgedit-gfls-1/annexes.html
 share/gtk-doc/html/libgedit-gfls-1/annotation-glossary.html
 share/gtk-doc/html/libgedit-gfls-1/api-index-0-1.html
+share/gtk-doc/html/libgedit-gfls-1/api-index-0-2.html
 share/gtk-doc/html/libgedit-gfls-1/api-index-full.html
 share/gtk-doc/html/libgedit-gfls-1/api-reference.html
 share/gtk-doc/html/libgedit-gfls-1/home.png

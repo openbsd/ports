@@ -1,9 +1,9 @@
 COMMENT=		file loading and saving module
 
-LIBGEDIT_PROJECT=	libgedit-gfls
-LIBGEDIT_VERSION=	0.1.0
+GNOME_PROJECT=		libgedit-gfls
+GNOME_VERSION=		0.2.0
 
-SHARED_LIBS += gedit-gfls-1              0.0 # 0
+SHARED_LIBS += gedit-gfls-1              0.1 # 0
 
 CATEGORIES=		devel
 
