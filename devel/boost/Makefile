@@ -8,7 +8,7 @@ COMMENT-md=	machine-dependent libraries for boost
 VERSION=	1.84.0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME=	boost-${VERSION}
-REVISION=	3
+REVISION=	4
 EPOCH=		0
 CATEGORIES=	devel
 SITES=		https://boostorg.jfrog.io/artifactory/main/release/${VERSION}/source/
@@ -93,6 +93,7 @@ LIB_DEPENDS-md=	devel/boost
 TOOLSET=	clang
 .else
 TOOLSET=	gcc
+CXXFLAGS+=	-std=gnu++17
 .endif
 
 BJAM_CONFIG=	-sICU_PATH=${LOCALBASE} \
