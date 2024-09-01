@@ -1,10 +1,9 @@
 COMMENT=		Actions, Menus and Toolbars Kit
 
-LIBGEDIT_PROJECT=	libgedit-amtk
-LIBGEDIT_VERSION=	5.8.0
-REVISION=		0
+GNOME_PROJECT=		libgedit-amtk
+GNOME_VERSION=		5.9.0
 
-SHARED_LIBS +=	gedit-amtk-5              0.0 # 0.0
+SHARED_LIBS += gedit-amtk-5              0.0 # 0
 
 CATEGORIES=		devel
 

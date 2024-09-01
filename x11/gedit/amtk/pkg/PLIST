@@ -40,6 +40,7 @@ share/gtk-doc/html/libgedit-amtk-5/api-reference.html
 share/gtk-doc/html/libgedit-amtk-5/gradual-porting.html
 share/gtk-doc/html/libgedit-amtk-5/home.png
 share/gtk-doc/html/libgedit-amtk-5/index.html
+share/gtk-doc/html/libgedit-amtk-5/ix02.html
 share/gtk-doc/html/libgedit-amtk-5/left-insensitive.png
 share/gtk-doc/html/libgedit-amtk-5/left.png
 share/gtk-doc/html/libgedit-amtk-5/libgedit-amtk-5-Amtk-Initialization-and-Finalization.html
@@ -71,6 +72,7 @@ share/locale/hu/LC_MESSAGES/libgedit-amtk-5.mo
 share/locale/id/LC_MESSAGES/libgedit-amtk-5.mo
 share/locale/it/LC_MESSAGES/libgedit-amtk-5.mo
 share/locale/ja/LC_MESSAGES/libgedit-amtk-5.mo
+share/locale/ka/LC_MESSAGES/libgedit-amtk-5.mo
 share/locale/lt/LC_MESSAGES/libgedit-amtk-5.mo
 share/locale/ms/LC_MESSAGES/libgedit-amtk-5.mo
 share/locale/nl/LC_MESSAGES/libgedit-amtk-5.mo
