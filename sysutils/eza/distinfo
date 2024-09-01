@@ -145,7 +145,7 @@ SHA256 (cargo/unicode-width-0.1.13.tar.gz) = AzbVOPeryG0oKkGJYU36qQgQ38LG9kJ+r4j
 SHA256 (cargo/url-2.2.1.tar.gz) = nM2WQRNiLI6TIs+sGesQBKB+Y2xUXzJdoIXVzd5vH4s=
 SHA256 (cargo/utf8parse-0.2.1.tar.gz) = cRuWIK8ZHgzcdGio0U5wnD3NsRWzb4OOYBWDr4AKNwo=
 SHA256 (cargo/uutils_term_grid-0.6.0.tar.gz) = +J3vtK20ulcDpXq8h5+W3dYmOkRMrMRG25C/JhfxQfs=
-SHA256 (cargo/uzers-0.12.0.tar.gz) = fYWHXhbVmzsVSe/Og/+CUaZJI7A775St0KGGKEdEjeQ=
+SHA256 (cargo/uzers-0.12.1.tar.gz) = Tfgf9QTn2CrVPpXtGtW3IQPBElPzkji8wCNbkHaKl90=
 SHA256 (cargo/vcpkg-0.2.12.tar.gz) = y9v/YmaiQSBRhWC13Jgwlu+5hGLlHQ1oFpiVsje+Pl0=
 SHA256 (cargo/wait-timeout-0.2.0.tar.gz) = nyAPWxLrdfjB7WWr1LLbim4bE4og3gCdrO4mWiSY8/Y=
 SHA256 (cargo/walkdir-2.4.0.tar.gz) = 1x2FfchnlMpMKA1hb32gDS2/2M14iEZVmmgT5qpLVO4=
@@ -180,7 +180,7 @@ SHA256 (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 7ZT85hVxpABoUrc4mgY6uYPALrG7N
 SHA256 (cargo/windows_x86_64_msvc-0.52.0.tar.gz) = 3/lkHRzUvo0aBw2vnjdzxfZ+eLTZ1CJjAgwFdwZ2XAQ=
 SHA256 (cargo/winnow-0.5.40.tar.gz) = 9ZOpU5hzeu7VPkiceF3xPzYY5B281nGMat2/E5WqaHY=
 SHA256 (cargo/zoneinfo_compiled-0.5.1.tar.gz) = ZPvr5l6JlTD0O9dgsj/ajxQRGPTbSZUrApmMvQkHpd4=
-SHA256 (eza-0.19.0.tar.gz) = RA//CTwjY118GplV1CSJovXFg5oOhaA+Odrso56dv4Q=
+SHA256 (eza-0.19.1.tar.gz) = olbs25mWkzMAu1ThmmjfYeJzheXfILofeA8uRUp/joo=
 SIZE (cargo/aho-corasick-1.0.5.tar.gz) = 172064
 SIZE (cargo/android-tzdata-0.1.1.tar.gz) = 7674
 SIZE (cargo/android_system_properties-0.1.5.tar.gz) = 5243
@@ -328,7 +328,7 @@ SIZE (cargo/unicode-width-0.1.13.tar.gz) = 457228
 SIZE (cargo/url-2.2.1.tar.gz) = 65434
 SIZE (cargo/utf8parse-0.2.1.tar.gz) = 13435
 SIZE (cargo/uutils_term_grid-0.6.0.tar.gz) = 10904
-SIZE (cargo/uzers-0.12.0.tar.gz) = 29098
+SIZE (cargo/uzers-0.12.1.tar.gz) = 29272
 SIZE (cargo/vcpkg-0.2.12.tar.gz) = 15530
 SIZE (cargo/wait-timeout-0.2.0.tar.gz) = 12441
 SIZE (cargo/walkdir-2.4.0.tar.gz) = 23550
@@ -363,4 +363,4 @@ SIZE (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 798412
 SIZE (cargo/windows_x86_64_msvc-0.52.0.tar.gz) = 821600
 SIZE (cargo/winnow-0.5.40.tar.gz) = 159316
 SIZE (cargo/zoneinfo_compiled-0.5.1.tar.gz) = 8837
-SIZE (eza-0.19.0.tar.gz) = 1385560
+SIZE (eza-0.19.1.tar.gz) = 1385517
