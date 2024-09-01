@@ -2,9 +2,10 @@
 @shell bin/ksh93
 @shell bin/rksh93
 include/ast/
+include/ast/align.h
+include/ast/aso.h
 include/ast/ast.h
 include/ast/ast_api.h
-include/ast/ast_botch.h
 include/ast/ast_ccode.h
 include/ast/ast_common.h
 include/ast/ast_dir.h
@@ -12,14 +13,12 @@ include/ast/ast_dirent.h
 include/ast/ast_fcntl.h
 include/ast/ast_float.h
 include/ast/ast_fs.h
-include/ast/ast_getopt.h
 include/ast/ast_iconv.h
 include/ast/ast_lib.h
 include/ast/ast_limits.h
 include/ast/ast_map.h
 include/ast/ast_mmap.h
 include/ast/ast_mode.h
-include/ast/ast_namval.h
 include/ast/ast_ndbm.h
 include/ast/ast_nl_types.h
 include/ast/ast_param.h
@@ -34,15 +33,82 @@ include/ast/ast_wait.h
 include/ast/ast_wchar.h
 include/ast/ast_wctype.h
 include/ast/ast_windows.h
+include/ast/bytesex.h
+include/ast/ccode.h
 include/ast/cdt.h
+include/ast/cmd.h
+include/ast/cmdarg.h
+include/ast/cmdext.h
+include/ast/cmdlist.h
+include/ast/debug.h
+include/ast/dirent.h
+include/ast/dlldefs.h
+include/ast/endian.h
+include/ast/error.h
+include/ast/find.h
+include/ast/fmtmsg.h
+include/ast/fnmatch.h
+include/ast/fnv.h
+include/ast/fts.h
+include/ast/ftw.h
+include/ast/ftwalk.h
+include/ast/glob.h
+include/ast/hash.h
+include/ast/hashkey.h
+include/ast/hashpart.h
+include/ast/history.h
+include/ast/iconv.h
+include/ast/ip6.h
+include/ast/lc.h
+include/ast/ls.h
+include/ast/magic.h
+include/ast/magicid.h
+include/ast/mc.h
+include/ast/mime.h
+include/ast/mnt.h
+include/ast/modecanon.h
+include/ast/modex.h
+include/ast/namval.h
+include/ast/nl_types.h
 include/ast/nval.h
 include/ast/option.h
+include/ast/proc.h
+include/ast/re_comp.h
+include/ast/recfmt.h
+include/ast/regex.h
+include/ast/regexp.h
+include/ast/releaseflags.h
+include/ast/sfdisc.h
 include/ast/sfio.h
 include/ast/sfio_s.h
+include/ast/sfio_t.h
+include/ast/shcmd.h
 include/ast/shell.h
+include/ast/sig.h
+include/ast/stak.h
+include/ast/stdio.h
+include/ast/stk.h
+include/ast/sum.h
+include/ast/swap.h
+include/ast/tar.h
+include/ast/times.h
+include/ast/tm.h
+include/ast/tmx.h
+include/ast/tok.h
+include/ast/tv.h
+include/ast/vdb.h
+include/ast/wait.h
+include/ast/wchar.h
+include/ast/wctype.h
+include/ast/wordexp.h
 @static-lib lib/libast.a
+@lib lib/libast.so.${LIBast_VERSION}
 @static-lib lib/libcmd.a
+@lib lib/libcmd.so.${LIBcmd_VERSION}
+@static-lib lib/libdll.a
+@lib lib/libdll.so.${LIBdll_VERSION}
 @static-lib lib/libshell.a
+@lib lib/libshell.so.${LIBshell_VERSION}
 @man man/man1/ksh93.1
 @man man/man1/rksh93.1
 @man man/man3/shell.3

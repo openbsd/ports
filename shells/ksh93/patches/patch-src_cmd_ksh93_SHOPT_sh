@@ -1,0 +1,12 @@
+Index: src/cmd/ksh93/SHOPT.sh
+--- src/cmd/ksh93/SHOPT.sh.orig
++++ src/cmd/ksh93/SHOPT.sh
+@@ -37,7 +37,7 @@ SHOPT REMOTE=				# enable --rc if running as a remote 
+ SHOPT SCRIPTONLY=0			# build ksh for running scripts only; compile out the interactive shell
+ SHOPT SPAWN=				# use spawnveg for fork/exec
+ SHOPT STATS=1				# add .sh.stats variable
+-SHOPT SYSRC=				# attempt . /etc/ksh.kshrc if interactive
++SHOPT SYSRC=0				# attempt . /etc/ksh.kshrc if interactive
+ SHOPT TEST_L=				# add 'test -l' as an alias for 'test -L'
+ SHOPT TIMEOUT=				# number of seconds for shell timeout
+ SHOPT VSH=1				# vi edit mode

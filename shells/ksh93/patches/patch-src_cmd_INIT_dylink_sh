@@ -1,0 +1,15 @@
+Index: src/cmd/INIT/dylink.sh
+--- src/cmd/INIT/dylink.sh.orig
++++ src/cmd/INIT/dylink.sh
+@@ -120,6 +120,11 @@ case ${exec_file} in
+ 		;;
+ 	esac
+ 	sym_links="$lib_linkname $prefix$module_name$suffix"
++	case $HOSTTYPE in
++	openbsd.*)	lib_linkname=lib$module_name$suffix.$version
++			sym_links=""
++			;;
++	esac
+ 	# ... remove possible old versions
+ 	(set +o noglob; exec rm -f "$dest_dir/lib/lib$module_name".*)
+ 	# ... execute linker command
