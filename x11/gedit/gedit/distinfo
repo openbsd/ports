@@ -1,2 +1,4 @@
-SHA256 (gedit/gedit-47.0.tar.xz) = +kpZfjTHbUrJFDG1rm4ZHJbGsK8XAuCJmrNRme36G/o=
-SIZE (gedit/gedit-47.0.tar.xz) = 2834664
+SHA256 (gedit/GNOME-libgd-libgd-c7c7ff4e05d3fe82854219091cf116cce6b19de0.tar.gz) = fmOJ1zzgaxlTgc/yz7F+mG6On2CnJVgedp5eTWysUgk=
+SHA256 (gedit/World/gedit-gedit-gedit-52394958cb6db1a4c890e6f41d812e4447fcb313.tar.gz) = A6RMkMS2YGod6mPYJ5iIivqY9PZoOmVJ1u0XlkjbTQg=
+SIZE (gedit/GNOME-libgd-libgd-c7c7ff4e05d3fe82854219091cf116cce6b19de0.tar.gz) = 58318
+SIZE (gedit/World/gedit-gedit-gedit-52394958cb6db1a4c890e6f41d812e4447fcb313.tar.gz) = 5350986

@@ -1,9 +1,10 @@
 COMMENT=		text editor
 
 GNOME_PROJECT=		gedit
-GNOME_VERSION=		47.0
-
-REVISION=		0
+GNOME_VERSION=		47.0.1
+DIST_TUPLE=		gnome World/gedit gedit 52394958cb6db1a4c890e6f41d812e4447fcb313 .
+DIST_TUPLE +=		gnome GNOME libgd c7c7ff4e05d3fe82854219091cf116cce6b19de0 subprojects/libgd
+EXTRACT_SUFX=		.tar.gz
 
 WANTLIB += c cairo gdk-3 gdk_pixbuf-2.0 gedit-amtk-5 gedit-gfls-1
 WANTLIB += gedit-gtksourceview-300 gedit-tepl-6 gio-2.0 girepository-1.0
