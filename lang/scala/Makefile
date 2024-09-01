@@ -24,14 +24,9 @@ SCALA_SCRIPTS=	scala scalac scaladoc
 NO_BUILD=	Yes
 NO_TEST=	Yes
 
-# Remove BAT files which we obviously don't want installed.
-post-extract:
-	rm ${WRKSRC}/bin/*.bat
-
 do-install:
 	${INSTALL_DATA_DIR} ${SCALA_HOME}
-	cd ${WRKSRC} && tar -cf - . | \
-		tar -xf - -C ${SCALA_HOME}
+	cd ${WRKSRC} && pax -rw -s '/.*\.bat$$//' . ${SCALA_HOME}
 	# Install the wrapper scripts
 .for s in ${SCALA_SCRIPTS}
 	${INSTALL_SCRIPT} ${FILESDIR}/$s ${PREFIX}/bin/
