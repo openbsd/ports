@@ -1,6 +1,6 @@
 COMMENT =	write a heap dump file for later analysis
 
-DISTNAME =	Devel-MAT-Dumper-0.48
+DISTNAME =	Devel-MAT-Dumper-0.49
 
 CATEGORIES =	devel
 
