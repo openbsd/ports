@@ -1,6 +1,6 @@
 COMMENT =		command-line tool for controlling Docker
 
-V =			26.1.3
+V =			27.1.2
 
 GH_ACCOUNT =		docker
 GH_PROJECT =		cli
@@ -26,5 +26,8 @@ RUN_DEPENDS =		sysutils/docker-buildx
 
 WRKSRC =		${MODGO_WORKSPACE}/src/${GO_PKGNAME}
 ALL_TARGET =		${GO_PKGNAME}/cmd/docker
+
+# for tests
+PORTHOME =		${WRKDIR}
 
 .include <bsd.port.mk>
