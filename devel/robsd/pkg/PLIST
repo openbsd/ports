@@ -1,3 +1,4 @@
+bin/canvas
 libexec/robsd/
 libexec/robsd/robsd-base.sh
 libexec/robsd/robsd-checkflist.sh
@@ -39,6 +40,8 @@ libexec/robsd/robsd-xrelease.sh
 libexec/robsd/util-ports.sh
 libexec/robsd/util-regress.sh
 libexec/robsd/util.sh
+@man man/man1/canvas.1
+@man man/man5/canvas.conf.5
 @man man/man5/robsd-cross.conf.5
 @man man/man5/robsd-hook.5
 @man man/man5/robsd-ports.conf.5
@@ -61,16 +64,9 @@ libexec/robsd/util.sh
 sbin/robsd
 sbin/robsd-clean
 sbin/robsd-cross
-sbin/robsd-cross-clean
-sbin/robsd-cross-kill
 sbin/robsd-crossenv
 sbin/robsd-kill
 sbin/robsd-ports
-sbin/robsd-ports-clean
-sbin/robsd-ports-kill
-sbin/robsd-ports-rescue
 sbin/robsd-regress
-sbin/robsd-regress-clean
 @bin sbin/robsd-regress-html
-sbin/robsd-regress-kill
 sbin/robsd-rescue
