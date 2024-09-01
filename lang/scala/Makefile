@@ -1,6 +1,6 @@
 COMMENT=	general purpose multi-paradigm programming language
 
-VERSION =	3.4.2
+VERSION =	3.5.0
 DISTNAME=	scala3-${VERSION}
 PKGNAME=	${DISTNAME:S/scala3-/scala-/}
 CATEGORIES=	lang
@@ -30,7 +30,7 @@ post-extract:
 
 do-install:
 	${INSTALL_DATA_DIR} ${SCALA_HOME}
-	cd ${WRKSRC} && tar -cf - bin lib | \
+	cd ${WRKSRC} && tar -cf - . | \
 		tar -xf - -C ${SCALA_HOME}
 	# Install the wrapper scripts
 .for s in ${SCALA_SCRIPTS}
