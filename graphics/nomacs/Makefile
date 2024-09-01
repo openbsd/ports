@@ -27,12 +27,14 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+4,-guic \
 			x11/qt6/qtimageformats
 
-LIB_DEPENDS =		archivers/quazip,qt6 \
+LIB_DEPENDS =		archivers/bzip2 \
+			archivers/quazip,qt6 \
 			graphics/exiv2 \
 			graphics/lcms2 \
 			graphics/libraw \
 			graphics/opencv \
 			graphics/tiff \
+			x11/qt6/qt5compat \
 			x11/qt6/qtsvg
 
 CONFIGURE_ARGS =	-DUSE_SYSTEM_QUAZIP=ON \
@@ -49,4 +51,3 @@ NO_TEST =		Yes
 CXXFLAGS +=		-I${LOCALBASE}/include/QuaZip-qt6/
 
 .include <bsd.port.mk>
-LIB_DEPENDS += archivers/bzip2 x11/qt6/qt5compat 
