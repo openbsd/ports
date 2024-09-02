@@ -4,10 +4,10 @@ COMMENT=	SSL/TLS scanner (identify version, ciphers, etc)
 USE_NOEXECONLY=	Yes
 .endif
 
-#DIST_TUPLE=	github rbsec sslscan 2.1.3 .
 GH_ACCOUNT=	rbsec
 GH_PROJECT=	sslscan
 GH_TAGNAME=	2.1.4
+REVISION=	0
 
 CATEGORIES=	security net
 
@@ -31,13 +31,12 @@ MAKE_FLAGS=	BINDIR=${TRUEPREFIX}/bin \
 		GIT_VERSION="${GH_TAGNAME}" \
 		CC="${CC}"
 
-# OpenSSL used because sslscan wants to enable obsolete protocols for detection
-BUILD_DEPENDS=	security/openssl/1.1:patch
+BUILD_DEPENDS=	security/openssl/3.2:patch
 ALL_TARGET=	static
 CFLAGS+=	-I${WRKSRC}/openssl/include
 
 post-extract:
-	ln -s ${WRKDIR}/security/openssl/1.1/openssl-* ${WRKSRC}/openssl
+	ln -s ${WRKDIR}/security/openssl/*/openssl-* ${WRKSRC}/openssl
 	-mkdir -p ${WRKSRC}/openssl/.git
 	rm -f ${WRKSRC}/openssl/Makefile
 	touch ${WRKSRC}/.openssl.is.fresh
