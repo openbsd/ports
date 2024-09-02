@@ -1,6 +1,6 @@
 COMMENT=	convert memos written in XML to the RFC format
 
-MODPY_EGG_VERSION=	3.18.2
+MODPY_EGG_VERSION=	3.23.0
 DISTNAME=	xml2rfc-${MODPY_EGG_VERSION}
 REVISION=	0
 
@@ -17,7 +17,6 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 MODPY_PYTEST_ARGS= test.py
 
-# setuptools at runtime: still uses pkg_resources as of 3.18.0
 # from requirements.txt
 RUN_DEPENDS=	sysutils/py-platformdirs${MODPY_FLAVOR} \
 		devel/py-configargparse${MODPY_FLAVOR} \
@@ -28,16 +27,14 @@ RUN_DEPENDS=	sysutils/py-platformdirs${MODPY_FLAVOR} \
 		devel/py-country${MODPY_FLAVOR} \
 		textproc/py-yaml${MODPY_FLAVOR} \
 		www/py-requests${MODPY_FLAVOR} \
-		devel/py-setuptools${MODPY_FLAVOR} \
-		devel/py-six${MODPY_FLAVOR} \
 		devel/py-wcwidth${MODPY_FLAVOR}
 
 TEST_DEPENDS+=	devel/py-decorator${MODPY_FLAVOR} \
 		print/py-pypdf${MODPY_FLAVOR} \
 		print/weasyprint${MODPY_FLAVOR} \
 		textproc/py-dict2xml${MODPY_FLAVOR} \
-		fonts/noto/fonts
-# also wants fonts/noto/cjk, but seems to trigger a problem with weasyprint??
+		fonts/noto/fonts \
+		fonts/noto/cjk
 
 # tests also need network access
 PORTHOME=	${WRKDIR}
