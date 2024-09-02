@@ -2,6 +2,7 @@ COMMENT=		GNU Transport Layer Security library
 
 V=			3.8.7.1
 DISTNAME=		gnutls-${V}
+REVISION=		0
 EXTRACT_SUFX=		.tar.xz
 WRKDIST=		${WRKDIR}/gnutls-3.8.7
 
@@ -47,7 +48,9 @@ USE_GMAKE=		Yes
 # regression tests need this
 PORTHOME=		${WRKDIR}
 
-CONFIGURE_STYLE=	gnu
+AUTOCONF_VERSION=	2.71
+
+CONFIGURE_STYLE=	autoconf
 CONFIGURE_ARGS=		--disable-ssl3-support \
 			--disable-valgrind-tests \
 			--with-default-trust-store-file=/etc/ssl/cert.pem \

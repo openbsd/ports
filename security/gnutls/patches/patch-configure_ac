@@ -1,0 +1,15 @@
+accelerated: aarch64: add FreeBSD/aarch64 support
+9578b4ed007ea6a40fd3851308a59c11d87c30c9
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -422,7 +422,7 @@ AC_LINK_IFELSE([AC_LANG_PROGRAM([#include <stdio.h>], 
+ 
+ AM_CONDITIONAL(HAVE_FORK, test "$ac_cv_func_fork" != "no")
+ 
+-AC_CHECK_FUNCS([__register_atfork secure_getenv getauxval],,)
++AC_CHECK_FUNCS([__register_atfork secure_getenv getauxval elf_aux_info],,)
+ 
+ AC_ARG_ENABLE(seccomp-tests,
+   AS_HELP_STRING([--enable-seccomp-tests], [unconditionally enable tests with seccomp]),
