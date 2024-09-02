@@ -1,5 +1,3 @@
-# bump security/sslscan if updating (static linked)
-
 .if ${MACHINE_ARCH} != aarch64 && ${MACHINE_ARCH} != amd64 && ${MACHINE_ARCH} != riscv64
 USE_NOEXECONLY=		Yes
 .endif

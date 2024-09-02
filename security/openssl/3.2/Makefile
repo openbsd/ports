@@ -1,5 +1,5 @@
 # static link, need bump on update:
-# mail/postfix/stable, sysutils/borgbackup/2.0
+# mail/postfix/stable, sysutils/borgbackup/2.0, security/sslscan
 
 .if ${MACHINE_ARCH} != aarch64 && ${MACHINE_ARCH} != amd64 && ${MACHINE_ARCH} != riscv64
 USE_NOEXECONLY =	Yes
