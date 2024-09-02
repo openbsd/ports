@@ -13,6 +13,8 @@ SHARED_LIBS +=  stdthreads                0.0 # 0.0
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =		pthread
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 
 FAKE_FLAGS =		LIBDIR=${TRUEPREFIX}/lib \
 			MANDIR=${TRUEPREFIX}/man/man

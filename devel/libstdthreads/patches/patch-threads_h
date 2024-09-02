@@ -1,0 +1,16 @@
+__has_extension support added in gcc >= 14
+
+Index: threads.h
+--- threads.h.orig
++++ threads.h
+@@ -45,6 +45,10 @@
+  * held.
+  */
+ 
++#ifndef __has_extension
++#define __has_extension(_e)	0
++#endif
++
+ #if __has_extension(c_thread_safety_attributes)
+ #define	__lock_annotate(x)	__attribute__((x))
+ #else
