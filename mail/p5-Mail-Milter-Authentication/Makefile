@@ -16,8 +16,9 @@ pre-configure:
 
 CONFIGURE_STYLE =	modinst
 
+BUILD_DEPENDS =	devel/p5-File-ShareDir-Install
+
 RUN_DEPENDS =	devel/p5-List-MoreUtils \
-		devel/p5-File-ShareDir-Install \
 		converters/p5-JSON \
 		mail/p5-Email-Address \
 		mail/p5-Email-Date-Format \
