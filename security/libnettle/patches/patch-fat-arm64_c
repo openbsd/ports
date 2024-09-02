@@ -1,0 +1,30 @@
+Add support for elf_aux_info() on OpenBSD
+
+Index: fat-arm64.c
+--- fat-arm64.c.orig
++++ fat-arm64.c
+@@ -51,6 +51,8 @@
+ #if USE_GETAUXVAL
+ # include <asm/hwcap.h>
+ # include <sys/auxv.h>
++#elif defined(HAVE_ELF_AUX_INFO)
++# include <sys/auxv.h>
+ #elif defined(__OpenBSD__)
+ # include <sys/sysctl.h>
+ # include <machine/cpu.h>
+@@ -133,8 +135,14 @@ get_arm64_features (struct arm64_features *features)
+       }
+   else
+     {
++#if USE_GETAUXVAL || defined(HAVE_ELF_AUX_INFO)
++      unsigned long hwcap = 0;
+ #if USE_GETAUXVAL
+-      unsigned long hwcap = getauxval(AT_HWCAP);
++      hwcap = getauxval(AT_HWCAP);
++#elif defined(HAVE_ELF_AUX_INFO)
++      elf_aux_info(AT_HWCAP, &hwcap, sizeof(hwcap));
++#endif
++
+       features->have_aes
+ 	= ((hwcap & (HWCAP_ASIMD | HWCAP_AES)) == (HWCAP_ASIMD | HWCAP_AES));
+       features->have_pmull

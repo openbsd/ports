@@ -2,6 +2,7 @@ COMMENT=		cryptographic library
 
 DISTNAME=		nettle-3.10
 PKGNAME=		lib${DISTNAME}
+REVISION=		0
 
 SHARED_LIBS +=  hogweed                   3.1 # 6.7
 SHARED_LIBS +=  nettle                    7.3 # 8.7
@@ -23,17 +24,12 @@ LIB_DEPENDS=		devel/gmp
 
 USE_GMAKE=		Yes
 
-AUTOCONF_VERSION=	2.69
+AUTOCONF_VERSION=	2.71
 AUTOMAKE_VERSION=	1.16
 
 CONFIGURE_STYLE=	autoconf
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
-
-# fix relocation errors
-.if ${MACHINE_ARCH} == "sparc64"
-CONFIGURE_ENV +=	CCPIC=-fPIC
-.endif
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
