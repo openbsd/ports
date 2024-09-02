@@ -8,7 +8,7 @@ GH_ACCOUNT ?=	baresip
 GH_TAGNAME ?=	v3.14.0
 
 # C11
-COMPILER =		base-clang ports-gcc
-COMPILER_LANGS =	c
+COMPILER ?=		base-clang ports-gcc
+COMPILER_LANGS ?=	c
 
 MODULES ?=	devel/cmake
