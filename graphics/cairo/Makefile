@@ -1,14 +1,14 @@
 COMMENT=		vector graphics library
 
 GNOME_PROJECT=		cairo
-GNOME_VERSION=		1.18.0
+GNOME_VERSION=		1.18.2
 
 CATEGORIES=		graphics
 DPB_PROPERTIES=		parallel
 
-SHARED_LIBS += cairo                     13.4 # 2.11800.0
-SHARED_LIBS += cairo-gobject             2.2 # 2.11800.0
-SHARED_LIBS += cairo-script-interpreter  2.2 # 2.11800.0
+SHARED_LIBS += cairo                     13.5 # 2.11802.2
+SHARED_LIBS += cairo-gobject             2.2 # 2.11802.0
+SHARED_LIBS += cairo-script-interpreter  2.2 # 2.11802.0
 
 HOMEPAGE=		http://cairographics.org/
 
