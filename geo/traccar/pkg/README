@@ -60,3 +60,22 @@ For example, to allow only teltonika and osmand protocols, add this:
 To avoid sending positions to a network-based reverse geocoder service:
 
   <entry key='geocoder.enable'>false</entry>
+
+Statistics
+==========
+
+To avoid sending "anonymous" reports to traccar.org, you can set this variable
+  <entry key='server.statistics'>""</entry>
+
+Configuration migration to >=6.2
+================================
+
+If updating from traccar 6.1 or older, note that 6.2 has removed the
+separate default.xml file. Previous versions of the OpenBSD package have
+modified some of the defaults from upstream - you will need to merge
+the log path change into traccar.xml, and you may want to merge the
+other changes:
+
+  <entry key='logger.file'>/var/log/traccar/tracker-server.log</entry>
+  <entry key='web.address'>127.0.0.1</entry>
+  <entry key='server.statistics'>""</entry>
