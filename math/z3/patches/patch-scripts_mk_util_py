@@ -1,7 +1,11 @@
+- Remove hardcoded optimizations
+- Fix .so versioning
+- use -fPIC to build shared libs on all archs
+
 Index: scripts/mk_util.py
 --- scripts/mk_util.py.orig
 +++ scripts/mk_util.py
-@@ -2607,7 +2607,6 @@ def mk_config():
+@@ -2609,7 +2609,6 @@ def mk_config():
              EXAMP_DEBUG_FLAG = '-g'
              CPPFLAGS     = '%s -DZ3DEBUG -D_DEBUG' % CPPFLAGS
          else:
@@ -9,7 +13,7 @@ Index: scripts/mk_util.py
              if GPROF:
                  CXXFLAGS     += '-fomit-frame-pointer'
              CPPFLAGS     = '%s -DNDEBUG -D_EXTERNAL_RELEASE' % CPPFLAGS
-@@ -2632,7 +2631,7 @@ def mk_config():
+@@ -2634,7 +2633,7 @@ def mk_config():
              SO_EXT         = '.so'
              SLIBFLAGS      = '-shared'
          elif sysname == 'OpenBSD':
@@ -18,15 +22,12 @@ Index: scripts/mk_util.py
              SLIBFLAGS      = '-shared'
          elif sysname  == 'SunOS':
              SO_EXT         = '.so'
-@@ -2648,9 +2647,8 @@ def mk_config():
+@@ -2650,7 +2649,7 @@ def mk_config():
              LIB_EXT        = '.lib'
          else:
              raise MKException('Unsupported platform: %s' % sysname)
 -        if is64():
--            if not sysname.startswith('CYGWIN') and not sysname.startswith('MSYS') and not sysname.startswith('MINGW'):
--                CXXFLAGS     = '%s -fPIC' % CXXFLAGS
-+        if not sysname.startswith('CYGWIN') and not sysname.startswith('MSYS') and not sysname.startswith('MINGW'):
-+            CXXFLAGS     = '%s -fPIC' % CXXFLAGS
++        if true:
+             if not sysname.startswith('CYGWIN') and not sysname.startswith('MSYS') and not sysname.startswith('MINGW'):
+                 CXXFLAGS     = '%s -fPIC' % CXXFLAGS
          elif not LINUX_X64:
-             CXXFLAGS     = '%s -m32' % CXXFLAGS
-             LDFLAGS      = '%s -m32' % LDFLAGS

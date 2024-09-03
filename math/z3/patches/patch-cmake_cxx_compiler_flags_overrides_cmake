@@ -1,3 +1,5 @@
+Removed hardcoded optimizations
+
 Index: cmake/cxx_compiler_flags_overrides.cmake
 --- cmake/cxx_compiler_flags_overrides.cmake.orig
 +++ cmake/cxx_compiler_flags_overrides.cmake
