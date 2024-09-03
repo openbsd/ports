@@ -1,7 +1,7 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -597,7 +597,6 @@ install-lib:	lib $(UNBOUND_EVENT_INSTALL)
+@@ -598,7 +598,6 @@ install-lib:	lib $(UNBOUND_EVENT_INSTALL)
  	$(INSTALL) -m 755 -d $(DESTDIR)$(libdir)/pkgconfig
  	$(INSTALL) -m 644 contrib/libunbound.pc $(DESTDIR)$(libdir)/pkgconfig
  	$(LIBTOOL) --mode=install cp libunbound.la $(DESTDIR)$(libdir)
