@@ -512,6 +512,7 @@ share/libvirt/cpu_map/x86_EPYC-IBPB.xml
 share/libvirt/cpu_map/x86_EPYC-Milan.xml
 share/libvirt/cpu_map/x86_EPYC-Rome.xml
 share/libvirt/cpu_map/x86_EPYC.xml
+share/libvirt/cpu_map/x86_GraniteRapids.xml
 share/libvirt/cpu_map/x86_Haswell-IBRS.xml
 share/libvirt/cpu_map/x86_Haswell-noTSX-IBRS.xml
 share/libvirt/cpu_map/x86_Haswell-noTSX.xml
