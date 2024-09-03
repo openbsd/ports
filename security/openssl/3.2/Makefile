@@ -7,11 +7,10 @@ USE_NOEXECONLY =	Yes
 
 # skip PORTROACH limit for newest version
 #PORTROACH=	limit:^3\.2
-V=		3.2.2
+V=		3.2.3
 PKGNAME=	openssl-${V}
 PKGSPEC=	openssl->=3.2v0,<3.3v0
 EPOCH=		0
-REVISION=	4
 
 SHLIBVER=	22.0
 SHARED_LIBS=	crypto ${SHLIBVER} \
