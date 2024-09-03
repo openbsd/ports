@@ -1,0 +1,18 @@
+Respect LDFLAGS
+
+Index: base/unix-dll.mak
+--- base/unix-dll.mak.orig
++++ base/unix-dll.mak
+@@ -212,10 +212,10 @@ $(XPSSOC_XE): gxps-so-links-subtarget $(UNIX_DLL_MAK) 
+ 	$(GLCC) -L$(BINDIR) $(LDFLAGS) $(O_) $(XPSSOC_XE) $(PLOBJ)$(REALMAIN_SRC).$(OBJ) -l$(XPS_SO_BASE)
+ 
+ $(PDFSOC_XE): gpdf-so-links-subtarget $(PLSRC)$(REALMAIN_SRC).c $(UNIX_DLL_MAK) $(MAKEDIRS)
+-	$(GLCC) -g -o $(PDFSOC_XE) $(PLSRC)$(REALMAIN_SRC).c -L$(BINDIR) -l$(PDF_SO_BASE)
++	$(GLCC) -g -o $(PDFSOC_XE) $(PLSRC)$(REALMAIN_SRC).c -L$(BINDIR) $(LDFLAGS) -l$(PDF_SO_BASE)
+ 
+ $(GPDLSOC_XE): gpdl-so-links-subtarget $(PLSRC)$(REALMAIN_SRC).c $(UNIX_DLL_MAK) $(MAKEDIRS)
+-	$(GLCC) -g -o $(GPDLSOC_XE) $(PLSRC)$(REALMAIN_SRC).c -L$(BINDIR) -l$(GPDL_SO_BASE)
++	$(GLCC) -g -o $(GPDLSOC_XE) $(PLSRC)$(REALMAIN_SRC).c -L$(BINDIR) $(LDFLAGS) -l$(GPDL_SO_BASE)
+ 
+ gpcl6-so-loader: $(PCLSOC_XE)
+ 	$(NO_OP)
