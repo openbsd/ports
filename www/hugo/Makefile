@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS =	${GO_ARCHS}
 COMMENT =	fast and flexible static site generator
 
 MODGO_MODNAME =	github.com/gohugoio/hugo
-MODGO_VERSION =	v0.133.0
+MODGO_VERSION =	v0.134.0
 
 DISTNAME =	hugo-${MODGO_VERSION}
 
@@ -40,7 +40,7 @@ MAKE_ENV +=	CGO_CPPFLAGS='-I${LOCALBASE}/include -DUSE_LIBSASS_SRC' CGO_LDFLAGS=
 .endif
 
 post-build:
-	cd ${MODGO_WORKSPACE}/bin/ && ./hugo gen man
+	cd ${MODGO_WORKSPACE}/bin && ./hugo gen man
 
 do-install:
 	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/hugo ${PREFIX}/bin/

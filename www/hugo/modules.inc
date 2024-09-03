@@ -179,10 +179,10 @@ MODGO_MODULES =	\
 	github.com/bep/goat								 v0.5.0 \
 	github.com/bep/godartsass							 v1.2.0 \
 	github.com/bep/godartsass/v2							 v2.1.0 \
-	github.com/bep/golibsass							 v1.1.1 \
+	github.com/bep/golibsass							 v1.2.0 \
 	github.com/bep/gowebp								 v0.3.0 \
 	github.com/bep/helpers								 v0.4.0 \
-	github.com/bep/imagemeta							 v0.8.0 \
+	github.com/bep/imagemeta							 v0.8.1 \
 	github.com/bep/lazycache							 v0.4.0 \
 	github.com/bep/logg								 v0.4.0 \
 	github.com/bep/mclib								 v1.20400.20402 \
@@ -211,7 +211,7 @@ MODGO_MODULES =	\
 	github.com/dustin/go-humanize							 v1.0.1 \
 	github.com/envoyproxy/go-control-plane						 v0.12.0 \
 	github.com/envoyproxy/protoc-gen-validate					 v1.0.4 \
-	github.com/evanw/esbuild							 v0.23.0 \
+	github.com/evanw/esbuild							 v0.23.1 \
 	github.com/fatih/color								 v1.17.0 \
 	github.com/felixge/fgprof							 v0.9.3 \
 	github.com/felixge/httpsnoop							 v1.0.4 \
@@ -302,7 +302,7 @@ MODGO_MODULES =	\
 	github.com/olekukonko/tablewriter						 v0.0.5 \
 	github.com/pbnjay/memory							 v0.0.0-20210728143218-7b4eea64cf58 \
 	github.com/pelletier/go-toml							 v1.9.5 \
-	github.com/pelletier/go-toml/v2							 v2.2.2 \
+	github.com/pelletier/go-toml/v2							 v2.2.3 \
 	github.com/perimeterx/marshmallow						 v1.1.5 \
 	github.com/pkg/browser								 v0.0.0-20240102092130-5ac0b6a4141c \
 	github.com/pkg/diff								 v0.0.0-20210226163009-20ebb0f2a09e \
@@ -323,7 +323,7 @@ MODGO_MODULES =	\
 	github.com/spf13/cobra								 v1.8.1 \
 	github.com/spf13/fsync								 v0.10.1 \
 	github.com/spf13/pflag								 v1.0.5 \
-	github.com/stretchr/objx							 v0.5.2 \
+	github.com/stretchr/objx							 v0.5.0 \
 	github.com/stretchr/testify							 v1.9.0 \
 	github.com/tdewolff/argp							 v0.0.0-20240307141015-960de61a6aa8 \
 	github.com/tdewolff/minify/v2							 v2.20.37 \
@@ -566,7 +566,6 @@ MODGO_MODFILES =	\
 	github.com/spf13/cobra								 v1.8.0 \
 	github.com/stretchr/objx							 v0.1.0 \
 	github.com/stretchr/objx							 v0.4.0 \
-	github.com/stretchr/objx							 v0.5.0 \
 	github.com/stretchr/testify							 v0.0.0-20161117074351-18a02ba4a312 \
 	github.com/stretchr/testify							 v1.4.0 \
 	github.com/stretchr/testify							 v1.5.1 \
