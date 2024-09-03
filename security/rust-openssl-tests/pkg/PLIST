@@ -8245,6 +8245,7 @@ share/rust-openssl-tests/openssl-sys/src/handwritten/sha.rs
 share/rust-openssl-tests/openssl-sys/src/handwritten/srtp.rs
 share/rust-openssl-tests/openssl-sys/src/handwritten/ssl.rs
 share/rust-openssl-tests/openssl-sys/src/handwritten/stack.rs
+share/rust-openssl-tests/openssl-sys/src/handwritten/thread.rs
 share/rust-openssl-tests/openssl-sys/src/handwritten/tls1.rs
 share/rust-openssl-tests/openssl-sys/src/handwritten/types.rs
 share/rust-openssl-tests/openssl-sys/src/handwritten/x509.rs
@@ -8294,6 +8295,7 @@ share/rust-openssl-tests/openssl/src/error.rs
 share/rust-openssl-tests/openssl/src/ex_data.rs
 share/rust-openssl-tests/openssl/src/fips.rs
 share/rust-openssl-tests/openssl/src/hash.rs
+share/rust-openssl-tests/openssl/src/kdf.rs
 share/rust-openssl-tests/openssl/src/lib.rs
 share/rust-openssl-tests/openssl/src/lib_ctx.rs
 share/rust-openssl-tests/openssl/src/macros.rs
