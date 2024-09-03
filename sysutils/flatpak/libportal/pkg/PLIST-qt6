@@ -1,0 +1,4 @@
+include/libportal-qt6/
+include/libportal-qt6/portal-qt6.h
+@lib lib/libportal-qt6.so.${LIBportal-qt6_VERSION}
+lib/pkgconfig/libportal-qt6.pc
