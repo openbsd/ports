@@ -48,6 +48,7 @@
      SUBDIR += coredns
      SUBDIR += cppzmq
      SUBDIR += crawl
+     SUBDIR += crawley
      SUBDIR += ctrace
      SUBDIR += curl
      SUBDIR += czds
