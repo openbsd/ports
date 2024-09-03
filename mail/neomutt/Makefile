@@ -3,6 +3,7 @@ COMMENT=	tty-based e-mail client, forked from Mutt
 GH_ACCOUNT=	neomutt
 GH_PROJECT=	neomutt
 GH_TAGNAME=	20240425
+REVISION=	0
 
 CATEGORIES=	mail
 HOMEPAGE=	https://neomutt.org/
@@ -15,11 +16,12 @@ PERMIT_PACKAGE=	Yes
 COMPILER=	base-clang ports-gcc
 
 # uses pledge()
-WANTLIB+=	c crypto curses iconv idn2 intl ssl tdb z
+WANTLIB+=	c crypto curses iconv idn2 intl pcre2-8 ssl tdb z
 
 LIB_DEPENDS+=	databases/tdb \
 		devel/gettext,-runtime \
-		devel/libidn2
+		devel/libidn2 \
+		devel/pcre2
 BUILD_DEPENDS+=	devel/gettext,-tools \
 		lang/jimtcl \
 		textproc/docbook-xsl \
@@ -35,9 +37,9 @@ CONFIGURE_ARGS+= --mandir="${PREFIX}/man" \
 		--with-ui=ncurses \
 		--docdir="${PREFIX}/share/doc/neomutt" \
 		--with-lock=flock \
-		--idn=0 \
 		--idn2 \
 		--fmemopen \
+		--pcre2 \
 		--ssl \
 		--tdb \
 		--debug
