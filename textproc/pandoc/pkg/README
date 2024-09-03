@@ -28,4 +28,4 @@ html              prince          n/a (commercial/proprietary)
 html              weasyprint      weasyprint
 html              wkhtmltopdf     wkhtmltopdf
 ms                pdfroff         groff
-typst             typst           n/a (not in ports)
+typst             typst           typst
