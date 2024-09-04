@@ -19,3 +19,19 @@ Index: doc/reference.conf
  };
  
  
+@@ -156,13 +156,13 @@ irc {
+ 	 *    chown <ircd-user>.<ircd.group> rsa.key
+ 	 *    chmod 0600 rsa.key
+ 	 */
+-#	rsa_private_key_file = "etc/rsa.key";
++#	rsa_private_key_file = "/etc/hopm/rsa.key";
+ 
+ 	/*
+ 	 * tls_certificate_file: the path to the file containing our
+ 	 * TLS certificate for encrypted client connection.
+ 	 */
+-#	tls_certificate_file = "etc/cert.pem";
++#	tls_certificate_file = "/etc/hopm/cert.pem";
+ 
+ 	/*
+ 	 * Checks if the host name defined above matches the identity in the
