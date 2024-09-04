@@ -2,7 +2,7 @@ COMMENT =      Scientific Programming Language
 
 VERSION =	7.3.0
 DISTNAME =	octave-${VERSION}
-REVISION =	7
+REVISION =	8
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	math
 
@@ -40,6 +40,7 @@ MODULES =	fortran \
 		x11/qt5
 
 BUILD_DEPENDS =	${MODFORTRAN_BUILD_DEPENDS} \
+		devel/libstdthreads \
 		math/gnuplot \
 		print/texinfo \
 		textproc/gsed
