@@ -5,11 +5,10 @@ USE_NOEXECONLY =	Yes
 # skip PORTROACH limit for newest version
 #PORTROACH=	limit:^3\.1
 
-V=		3.1.5
+V=		3.1.7
 DISTNAME=	openssl-${V}-quic1
 WRKDIST=	${WRKDIR}/openssl-${DISTNAME}
 EOPENSSL_V=	qopenssl31
-REVISION=	6
 
 SITES=		https://github.com/quictls/openssl/archive/refs/tags/
 PKGNAME=	quictls-${V}

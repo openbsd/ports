@@ -1,7 +1,7 @@
 Index: Configurations/10-main.conf
 --- Configurations/10-main.conf.orig
 +++ Configurations/10-main.conf
-@@ -1044,6 +1044,7 @@ my %targets = (
+@@ -1051,6 +1051,7 @@ my %targets = (
      },
      "BSD-x86-elf" => {
          inherit_from     => [ "BSD-x86" ],
