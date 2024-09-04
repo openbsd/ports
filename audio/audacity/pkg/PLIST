@@ -143,7 +143,7 @@ share/audacity/plug-ins/delay.ny
 share/audacity/plug-ins/equalabel.ny
 share/audacity/plug-ins/highpass.ny
 share/audacity/plug-ins/label-sounds.ny
-share/audacity/plug-ins/limiter.ny
+share/audacity/plug-ins/legacy-limiter.ny
 share/audacity/plug-ins/lowpass.ny
 share/audacity/plug-ins/noisegate.ny
 share/audacity/plug-ins/notch.ny
