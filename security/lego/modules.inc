@@ -249,7 +249,7 @@ MODGO_MODULES =	\
 	github.com/go-viper/mapstructure/v2							 v2.0.0 \
 	github.com/gobs/pretty									 v0.0.0-20180724170744-09732c25a95b \
 	github.com/goccy/go-json								 v0.10.3 \
-	github.com/gofrs/flock									 v0.8.1 \
+	github.com/gofrs/flock									 v0.10.0 \
 	github.com/gofrs/uuid									 v4.4.0+incompatible \
 	github.com/gogo/protobuf								 v1.2.1 \
 	github.com/goji/httpauth								 v0.0.0-20160601135302-2da839ab0f4d \
@@ -461,7 +461,7 @@ MODGO_MODULES =	\
 	github.com/valyala/fasttemplate								 v1.2.1 \
 	github.com/vinyldns/go-vinyldns								 v0.9.16 \
 	github.com/vmware-labs/yaml-jsonpath							 v0.3.2 \
-	github.com/vultr/govultr/v2								 v2.17.2 \
+	github.com/vultr/govultr/v3								 v3.9.0 \
 	github.com/xeipuuv/gojsonpointer							 v0.0.0-20180127040702-4e3ac2762d5f \
 	github.com/xeipuuv/gojsonreference							 v0.0.0-20180127040603-bd5ef7bd5415 \
 	github.com/xeipuuv/gojsonschema								 v1.2.0 \
@@ -525,6 +525,7 @@ MODGO_MODULES =	\
 	rsc.io/binaryregexp									 v0.2.0 \
 	rsc.io/pdf										 v0.1.1 \
 	software.sslmate.com/src/go-pkcs12							 v0.4.0
+
 MODGO_MODFILES =	\
 	cloud.google.com/go						 v0.26.0 \
 	cloud.google.com/go						 v0.34.0 \
@@ -582,6 +583,7 @@ MODGO_MODFILES =	\
 	github.com/go-playground/validator/v10				 v10.9.0 \
 	github.com/go-task/slim-sprig					 v0.0.0-20210107165309-348f09dbbbc0 \
 	github.com/goccy/go-json					 v0.7.8 \
+	github.com/gofrs/flock						 v0.8.1 \
 	github.com/gogo/protobuf					 v1.1.1 \
 	github.com/golang-jwt/jwt/v4					 v4.0.0 \
 	github.com/golang-jwt/jwt/v4					 v4.1.0 \
@@ -1059,3 +1061,4 @@ MODGO_MODFILES =	\
 	honnef.co/go/tools						 v0.0.0-20190106161140-3f1c8253044a \
 	honnef.co/go/tools						 v0.0.0-20190418001031-e561f6794a2a \
 	honnef.co/go/tools						 v0.0.0-20190523083050-ea95bdfd59fc
+
