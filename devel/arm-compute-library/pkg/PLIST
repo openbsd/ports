@@ -513,6 +513,7 @@ include/arm_compute/runtime/NEON/functions/NEReorgLayer.h
 include/arm_compute/runtime/NEON/functions/NEReshapeLayer.h
 include/arm_compute/runtime/NEON/functions/NEReverse.h
 include/arm_compute/runtime/NEON/functions/NEScale.h
+include/arm_compute/runtime/NEON/functions/NEScatter.h
 include/arm_compute/runtime/NEON/functions/NESelect.h
 include/arm_compute/runtime/NEON/functions/NESlice.h
 include/arm_compute/runtime/NEON/functions/NESoftmaxLayer.h
@@ -544,6 +545,20 @@ include/arm_compute/runtime/common/
 include/arm_compute/runtime/common/LSTMParams.h
 include/arm_compute/runtime/experimental/
 include/arm_compute/runtime/experimental/Types.h
+include/arm_compute/runtime/experimental/low_level/
+include/arm_compute/runtime/experimental/low_level/CpuGemmAssemblyDispatch.h
+include/arm_compute/runtime/experimental/operators/
+include/arm_compute/runtime/experimental/operators/CpuActivation.h
+include/arm_compute/runtime/experimental/operators/CpuAdd.h
+include/arm_compute/runtime/experimental/operators/CpuDepthwiseConv2d.h
+include/arm_compute/runtime/experimental/operators/CpuElementwise.h
+include/arm_compute/runtime/experimental/operators/CpuGemm.h
+include/arm_compute/runtime/experimental/operators/CpuGemmConv2d.h
+include/arm_compute/runtime/experimental/operators/CpuGemmDirectConv2d.h
+include/arm_compute/runtime/experimental/operators/CpuMul.h
+include/arm_compute/runtime/experimental/operators/CpuSub.h
+include/arm_compute/runtime/experimental/operators/CpuTranspose.h
+include/arm_compute/runtime/experimental/operators/CpuWinogradConv2d.h
 include/half/
 include/half/ChangeLog.txt
 include/half/LICENSE.txt
@@ -637,6 +652,7 @@ share/examples/arm-compute-library/graph_yolov3.cpp
 share/examples/arm-compute-library/neon_cnn.cpp
 share/examples/arm-compute-library/neon_copy_objects.cpp
 share/examples/arm-compute-library/neon_gemm_qasymm8.cpp
+share/examples/arm-compute-library/neon_gemm_qasymm8_signed.cpp
 share/examples/arm-compute-library/neon_gemm_s8_f32.cpp
 share/examples/arm-compute-library/neon_permute.cpp
 share/examples/arm-compute-library/neon_scale.cpp
