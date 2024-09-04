@@ -1,7 +1,7 @@
 COMMENT =	unix-way web crawler
 
 MODGO_MODNAME =	github.com/s0rg/crawley
-MODGO_VERSION =	v1.7.8
+MODGO_VERSION =	v1.7.9
 DISTNAME =	crawley-${MODGO_VERSION}
 
 CATEGORIES =	net
