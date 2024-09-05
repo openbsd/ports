@@ -1,6 +1,6 @@
 COMMENT =	verifies XML documents
 
-VERSION =	2.6.2
+VERSION =	2.6.3
 PKGNAME =	xmlwf-${VERSION}
 DISTNAME =	expat-${VERSION}
 SUPDISTFILES =	${DISTFILES}.asc
