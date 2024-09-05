@@ -69,7 +69,8 @@ LIB_DEPENDS-main=	devel/gettext,-runtime \
 			devel/glib2 \
 			devel/pango
 RUN_DEPENDS=		print/ghostscript/gnu
-BUILD_DEPENDS= 		print/mftrace \
+BUILD_DEPENDS= 		print/fontforge \
+			print/t1utils \
 			print/texlive/texmf \
 			devel/bison \
 			devel/gettext,-tools \
