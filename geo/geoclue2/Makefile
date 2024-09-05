@@ -1,9 +1,8 @@
 COMMENT=		modular geoinformation service on top of D-Bus
 
-VERSION=		2.7.1
+VERSION=		2.7.2
 DISTNAME=		geoclue-${VERSION}
 PKGNAME=		geoclue2-${VERSION}
-REVISION=		0
 
 CATEGORIES=		geo devel
 
@@ -16,7 +15,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2
 PERMIT_PACKAGE=	Yes
 
-SITES=	https://gitlab.freedesktop.org/geoclue/geoclue/-/archive/${VERSION}/
+SITES=			https://gitlab.freedesktop.org/geoclue/geoclue/-/archive/${VERSION}/
 EXTRACT_SUFX=		.tar.bz2
 
 WANTLIB += avahi-client avahi-common avahi-glib c gio-2.0 glib-2.0
