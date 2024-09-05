@@ -3,7 +3,7 @@ BROKEN-arm=	libm functions (cabs etc) not detected, fallback code is broken
 COMMENT=	image processing tools
 
 VER=		6.9.13
-DASHVER=	10
+DASHVER=	16
 DISTNAME=	ImageMagick-${VER}-${DASHVER}
 PKGNAME=	ImageMagick-${VER}.${DASHVER}
 PORTROACH=	site:https://imagemagick.org/archive/releases/ limit:6.*
@@ -25,7 +25,7 @@ SITES=		https://imagemagick.org/archive/releases/ \
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xdmcp Xext Xt aom
-WANTLIB += bz2 c dav1d de265 djvulibre expat fontconfig sharpyuv
+WANTLIB += bz2 c de265 djvulibre expat fontconfig sharpyuv
 WANTLIB += freetype heif iconv jasper jbig jpeg lcms2 lzma m openjp2
 WANTLIB += perl png raw_r tiff webp webpdemux webpmux x265 xcb
 WANTLIB += xml2 z zstd
