@@ -2,7 +2,7 @@ COMMENT=	module to obtain financial quotes from exchanges
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	Finance-Quote-1.61
+DISTNAME =	Finance-Quote-1.62
 CATEGORIES=	misc
 
 HOMEPAGE=	https://finance-quote.sourceforge.net

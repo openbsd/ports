@@ -1,5 +1,4 @@
 ${P5SITE}/Finance/
-${P5SITE}/Finance/CONTRIBUTING.pod
 ${P5SITE}/Finance/Quote/
 ${P5SITE}/Finance/Quote.pm
 ${P5SITE}/Finance/Quote/AEX.pm
@@ -9,6 +8,7 @@ ${P5SITE}/Finance/Quote/AlphaVantage.pm
 ${P5SITE}/Finance/Quote/BSEIndia.pm
 ${P5SITE}/Finance/Quote/BVB.pm
 ${P5SITE}/Finance/Quote/Bloomberg.pm
+${P5SITE}/Finance/Quote/BorsaItaliana.pm
 ${P5SITE}/Finance/Quote/Bourso.pm
 ${P5SITE}/Finance/Quote/CSE.pm
 ${P5SITE}/Finance/Quote/Comdirect.pm
@@ -16,6 +16,7 @@ ${P5SITE}/Finance/Quote/Consorsbank.pm
 ${P5SITE}/Finance/Quote/Currencies.pm
 ${P5SITE}/Finance/Quote/CurrencyRates/
 ${P5SITE}/Finance/Quote/CurrencyRates/AlphaVantage.pm
+${P5SITE}/Finance/Quote/CurrencyRates/CurrencyFreaks.pm
 ${P5SITE}/Finance/Quote/CurrencyRates/ECB.pm
 ${P5SITE}/Finance/Quote/CurrencyRates/Fixer.pm
 ${P5SITE}/Finance/Quote/CurrencyRates/OpenExchange.pm
@@ -25,6 +26,7 @@ ${P5SITE}/Finance/Quote/Deka.pm
 ${P5SITE}/Finance/Quote/FTfunds.pm
 ${P5SITE}/Finance/Quote/Finanzpartner.pm
 ${P5SITE}/Finance/Quote/Fondsweb.pm
+${P5SITE}/Finance/Quote/Fool.pm
 ${P5SITE}/Finance/Quote/GoldMoney.pm
 ${P5SITE}/Finance/Quote/GoogleWeb.pm
 ${P5SITE}/Finance/Quote/HU.pm
@@ -42,6 +44,7 @@ ${P5SITE}/Finance/Quote/Oslobors.pm
 ${P5SITE}/Finance/Quote/SEB.pm
 ${P5SITE}/Finance/Quote/SIX.pm
 ${P5SITE}/Finance/Quote/Sinvestor.pm
+${P5SITE}/Finance/Quote/StockData.pm
 ${P5SITE}/Finance/Quote/Stooq.pm
 ${P5SITE}/Finance/Quote/TMX.pm
 ${P5SITE}/Finance/Quote/TSP.pm
@@ -57,7 +60,6 @@ ${P5SITE}/Finance/Quote/XETRA.pm
 ${P5SITE}/Finance/Quote/YahooJSON.pm
 ${P5SITE}/Finance/Quote/YahooWeb.pm
 ${P5SITE}/Finance/Quote/ZA.pm
-@man man/man3p/Finance::CONTRIBUTING.3p
 @man man/man3p/Finance::Quote.3p
 @man man/man3p/Finance::Quote::AEX.3p
 @man man/man3p/Finance::Quote::ASEGR.3p
@@ -66,12 +68,14 @@ ${P5SITE}/Finance/Quote/ZA.pm
 @man man/man3p/Finance::Quote::BSEIndia.3p
 @man man/man3p/Finance::Quote::BVB.3p
 @man man/man3p/Finance::Quote::Bloomberg.3p
+@man man/man3p/Finance::Quote::BorsaItaliana.3p
 @man man/man3p/Finance::Quote::Bourso.3p
 @man man/man3p/Finance::Quote::CSE.3p
 @man man/man3p/Finance::Quote::Comdirect.3p
 @man man/man3p/Finance::Quote::Consorsbank.3p
 @man man/man3p/Finance::Quote::Currencies.3p
 @man man/man3p/Finance::Quote::CurrencyRates::AlphaVantage.3p
+@man man/man3p/Finance::Quote::CurrencyRates::CurrencyFreaks.3p
 @man man/man3p/Finance::Quote::CurrencyRates::ECB.3p
 @man man/man3p/Finance::Quote::CurrencyRates::Fixer.3p
 @man man/man3p/Finance::Quote::CurrencyRates::OpenExchange.3p
@@ -81,6 +85,7 @@ ${P5SITE}/Finance/Quote/ZA.pm
 @man man/man3p/Finance::Quote::FTfunds.3p
 @man man/man3p/Finance::Quote::Finanzpartner.3p
 @man man/man3p/Finance::Quote::Fondsweb.3p
+@man man/man3p/Finance::Quote::Fool.3p
 @man man/man3p/Finance::Quote::GoldMoney.3p
 @man man/man3p/Finance::Quote::GoogleWeb.3p
 @man man/man3p/Finance::Quote::HU.3p
@@ -98,6 +103,7 @@ ${P5SITE}/Finance/Quote/ZA.pm
 @man man/man3p/Finance::Quote::SEB.3p
 @man man/man3p/Finance::Quote::SIX.3p
 @man man/man3p/Finance::Quote::Sinvestor.3p
+@man man/man3p/Finance::Quote::StockData.3p
 @man man/man3p/Finance::Quote::Stooq.3p
 @man man/man3p/Finance::Quote::TMX.3p
 @man man/man3p/Finance::Quote::TSP.3p
