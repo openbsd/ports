@@ -89,6 +89,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/disabling_stub.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/fake_safe_buffer.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/support/faraday_middleware_subclasses.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/helper_methods.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/shared_examples/
 ${GEM_LIB}/gems/${DISTNAME}/spec/support/shared_examples/adapter.rb
