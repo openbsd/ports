@@ -2,14 +2,11 @@ COMMENT-main=		Skyrix Object Publishing Environment
 COMMENT-mysql=		SOPE MySQL adaptor
 COMMENT-postgres=	SOPE PostgreSQL adaptor
 
-VERSION =		5.10.0
+VERSION =		5.11.0
 DISTNAME =		SOPE-${VERSION}
 PKGNAME-main =		sope-${VERSION}
 PKGNAME-mysql =		sope-mysql-${VERSION}
 PKGNAME-postgres =	sope-postgres-${VERSION}
-REVISION-main =		0
-REVISION-mysql =	0
-REVISION-postgres =	0
 
 SO_MAJOR=	6
 SO_MINOR=	0
