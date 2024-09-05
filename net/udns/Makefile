@@ -1,6 +1,6 @@
 COMMENT=		stub DNS resolver library
 
-DISTNAME=		udns-0.5
+DISTNAME=		udns-0.6
 CATEGORIES=		net
 
 SHARED_LIBS+=	udns 1.0
