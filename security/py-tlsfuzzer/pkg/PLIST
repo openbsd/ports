@@ -256,10 +256,14 @@ share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-0rtt-garbage.${MODPY_PYC_MAGI
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-0rtt-garbage.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-ccs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-ccs.${MODPY_PYC_MAGIC_TAG}pyc
+share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-certificate-compression.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-certificate-compression.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-certificate-request.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-certificate-request.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-certificate-verify.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-certificate-verify.${MODPY_PYC_MAGIC_TAG}pyc
+share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-client-certificate-compression.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-client-certificate-compression.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-connection-abort.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-connection-abort.${MODPY_PYC_MAGIC_TAG}pyc
 share/tlsfuzzer/scripts/${MODPY_PYCACHE}test-tls13-conversation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -467,8 +471,10 @@ share/tlsfuzzer/scripts/test-sslv2-force-export-cipher.py
 share/tlsfuzzer/scripts/test-sslv2hello-protocol.py
 share/tlsfuzzer/scripts/test-tls13-0rtt-garbage.py
 share/tlsfuzzer/scripts/test-tls13-ccs.py
+share/tlsfuzzer/scripts/test-tls13-certificate-compression.py
 share/tlsfuzzer/scripts/test-tls13-certificate-request.py
 share/tlsfuzzer/scripts/test-tls13-certificate-verify.py
+share/tlsfuzzer/scripts/test-tls13-client-certificate-compression.py
 share/tlsfuzzer/scripts/test-tls13-connection-abort.py
 share/tlsfuzzer/scripts/test-tls13-conversation.py
 share/tlsfuzzer/scripts/test-tls13-count-tickets.py
