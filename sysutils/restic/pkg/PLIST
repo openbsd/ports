@@ -6,6 +6,7 @@
 @man man/man1/restic-copy.1
 @man man/man1/restic-diff.1
 @man man/man1/restic-dump.1
+@man man/man1/restic-features.1
 @man man/man1/restic-find.1
 @man man/man1/restic-forget.1
 @man man/man1/restic-generate.1
@@ -18,6 +19,7 @@
 @man man/man1/restic-list.1
 @man man/man1/restic-ls.1
 @man man/man1/restic-migrate.1
+@man man/man1/restic-options.1
 @man man/man1/restic-prune.1
 @man man/man1/restic-recover.1
 @man man/man1/restic-repair-index.1
