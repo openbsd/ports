@@ -8,7 +8,7 @@ bin/h5cc
 @bin bin/h5dump
 bin/h5fc
 @bin bin/h5format_convert
-bin/h5fuse.sh
+bin/h5fuse
 @bin bin/h5import
 @bin bin/h5jam
 @bin bin/h5ls
@@ -18,7 +18,6 @@ bin/h5redeploy
 @bin bin/h5repack
 @bin bin/h5repart
 @bin bin/h5stat
-@bin bin/h5tools_test_utils
 @bin bin/h5unjam
 @bin bin/h5watch
 @comment bin/mirror_server
@@ -118,6 +117,7 @@ include/H5VarLenType.h
 include/H5Zdevelop.h
 include/H5Zpublic.h
 include/H5api_adpt.h
+include/H5config_f.inc
 include/H5f90i.h
 include/H5f90i_gen.h
 include/H5overflow.h
@@ -223,19 +223,7 @@ share/examples/hdf5/c/h5_reference_deprec.c
 share/examples/hdf5/c/h5_select.c
 share/examples/hdf5/c/h5_shared_mesg.c
 share/examples/hdf5/c/h5_subset.c
-share/examples/hdf5/c/h5_vds-eiger.c
-share/examples/hdf5/c/h5_vds-exc.c
-share/examples/hdf5/c/h5_vds-exclim.c
-share/examples/hdf5/c/h5_vds-percival-unlim-maxmin.c
-share/examples/hdf5/c/h5_vds-percival-unlim.c
-share/examples/hdf5/c/h5_vds-percival.c
-share/examples/hdf5/c/h5_vds-simpleIO.c
-share/examples/hdf5/c/h5_vds.c
 share/examples/hdf5/c/h5_write.c
-share/examples/hdf5/c/ph5_filtered_writes.c
-share/examples/hdf5/c/ph5_filtered_writes_no_sel.c
-share/examples/hdf5/c/ph5_subfiling.c
-share/examples/hdf5/c/ph5example.c
 share/examples/hdf5/c/run-c-ex.sh
 share/examples/hdf5/fortran/
 share/examples/hdf5/fortran/compound.f90
