@@ -7,6 +7,7 @@ MODGO_MODNAME =	git.sr.ht/~rjarry/aerc
 MODGO_VERSION =	v0.0.0-20240729220005-e037c095a049
 
 V =		0.18.2
+REVISION =	0
 DISTNAME =	aerc-$V
 
 CATEGORIES =	mail

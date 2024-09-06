@@ -1,0 +1,12 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+aerc's Maildir support on BSD uses kqueue(2), which is really intended for
+watching individual files rather than large directories or trees. It requires
+a file handle to be opened for each file in the monitored directories, which
+will soon exceed default limits in the system.
+
+It is therefore recommended to run an IMAP daemon (for example Dovecot,
+courier-imap, imap-uw) and connect over IMAP, even if this is just to the
+local machine.
