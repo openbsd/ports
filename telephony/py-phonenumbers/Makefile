@@ -1,7 +1,7 @@
 COMMENT =	port of Google's libphonenumber library
 #'
 
-MODPY_EGG_VERSION = 8.13.44
+MODPY_EGG_VERSION = 8.13.45
 DISTNAME =	phonenumbers-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
