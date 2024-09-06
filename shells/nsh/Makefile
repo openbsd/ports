@@ -2,10 +2,9 @@ COMMENT =	network switch style shell
 
 CATEGORIES =	shells net
 HOMEPAGE =	https://www.nmedia.net/nsh/
-V =		1.2.1
+V =		1.2.2
 DISTNAME =	nsh-${V}
 SITES =		https://github.com/yellowman/nsh/releases/download/v${V}/
-REVISION =	0
 
 MAINTAINER =	Tom Smyth <tom.smyth@wirelessconnect.eu>
 
@@ -29,10 +28,10 @@ MAKE_ENV =	CC="${CC}" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 LIB_DEPENDS =	databases/sqlite3
 
-FAKE_FLAGS =	PREFIX=${TRUEPREFIX}
+FAKE_FLAGS =	DESTDIR=
 
 .if ${FLAVOR:Mstatic}
-MAKE_FLAGS +=	LDFLAGS="-L${LOCALBASE}/lib -ledit -ltermcap -lsqlite3 -lm -lpthread -static"
+ALL_TARGET =	static
 .endif
 
 NO_TEST=	Yes
@@ -41,9 +40,20 @@ post-install:
 .for i in save-ro.sh save-rw.sh
 	${INSTALL_SCRIPT} ${WRKDIST}/${i} ${PREFIX}/bin
 .endfor
+	rm ${PREFIX}/bin/save.sh
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/nsh
 .for i in README.md COPYRIGHT
 	${INSTALL_DATA} ${WRKDIST}/${i} ${PREFIX}/share/doc/nsh/
+.endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nsh/shell
+.for s in extensive-nsh-openbsd-integrate.sh rc.local-nsh-openbsd-integrate.sh
+	${INSTALL_DATA} ${WRKDIST}/scripts/shell/${s} \
+		${PREFIX}/share/examples/nsh/shell
+.endfor
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/nsh/nshrc
+.for s in enable-sshd.nshrc write-config.nshrc initial-config.nshrc
+	${INSTALL_DATA} ${WRKDIST}/scripts/nshrc/${s} \
+		${PREFIX}/share/examples/nsh/nshrc
 .endfor
 
 .include <bsd.port.mk>

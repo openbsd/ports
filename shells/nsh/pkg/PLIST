@@ -16,3 +16,11 @@ bin/save-rw.sh
 share/doc/nsh/
 share/doc/nsh/COPYRIGHT
 share/doc/nsh/README.md
+share/examples/nsh/
+share/examples/nsh/nshrc/
+share/examples/nsh/nshrc/enable-sshd.nshrc
+share/examples/nsh/nshrc/initial-config.nshrc
+share/examples/nsh/nshrc/write-config.nshrc
+share/examples/nsh/shell/
+share/examples/nsh/shell/extensive-nsh-openbsd-integrate.sh
+share/examples/nsh/shell/rc.local-nsh-openbsd-integrate.sh
