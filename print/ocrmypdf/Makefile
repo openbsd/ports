@@ -14,7 +14,7 @@ PERMIT_PACKAGE=Yes
 
 MODULES=	lang/python
 MODPY_PI=	Yes
-MODPY_PYBUILD=	hatchling
+MODPY_PYBUILD=	hatch-vcs
 
 # python deps:
 RUN_DEPENDS=	graphics/py-Pillow${MODPY_FLAVOR} \
