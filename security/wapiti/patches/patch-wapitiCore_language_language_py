@@ -1,0 +1,10 @@
+Index: wapitiCore/language/language.py
+--- wapitiCore/language/language.py.orig
++++ wapitiCore/language/language.py
+@@ -63,6 +63,5 @@ lan = gettext.translation(
+     "wapiti",
+     LANG_PATH,
+     languages=[lang],
+-    codeset="UTF-8"
+ )
+ _ = lan.gettext

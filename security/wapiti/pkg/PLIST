@@ -9,12 +9,12 @@ lib/python${MODPY_VERSION}/site-packages/wapiti3-${MODPY_EGG_VERSION}-py${MODPY_
 lib/python${MODPY_VERSION}/site-packages/wapiti3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/__init__.py
-lib/python${MODPY_VERSION}/site-packages/wapitiCore/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wapitiCore/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/${MODPY_PYCACHE}moon.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/attack/
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/attack/__init__.py
-lib/python${MODPY_VERSION}/site-packages/wapitiCore/attack/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wapitiCore/attack/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/attack/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/attack/${MODPY_PYCACHE}attack.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/attack/${MODPY_PYCACHE}mod_backup.${MODPY_PYC_MAGIC_TAG}pyc
@@ -79,7 +79,7 @@ lib/python${MODPY_VERSION}/site-packages/wapitiCore/config/vulnerabilities/anoma
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/config/vulnerabilities/vulnerabilities.xml
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/file/
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/file/__init__.py
-lib/python${MODPY_VERSION}/site-packages/wapitiCore/file/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wapitiCore/file/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/file/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/file/${MODPY_PYCACHE}anomalyxmlparser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/file/${MODPY_PYCACHE}reportgeneratorsxmlparser.${MODPY_PYC_MAGIC_TAG}pyc
@@ -89,7 +89,7 @@ lib/python${MODPY_VERSION}/site-packages/wapitiCore/file/reportgeneratorsxmlpars
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/file/vulnerabilityxmlparser.py
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/language/
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/language/__init__.py
-lib/python${MODPY_VERSION}/site-packages/wapitiCore/language/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wapitiCore/language/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/language/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/language/${MODPY_PYCACHE}language.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/language/${MODPY_PYCACHE}logger.${MODPY_PYC_MAGIC_TAG}pyc
@@ -106,7 +106,7 @@ lib/python${MODPY_VERSION}/site-packages/wapitiCore/language_sources/ms.po
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/language_sources/sav_en.po
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/main/
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/main/__init__.py
-lib/python${MODPY_VERSION}/site-packages/wapitiCore/main/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wapitiCore/main/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/main/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/main/${MODPY_PYCACHE}getcookie.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/main/${MODPY_PYCACHE}wapiti.${MODPY_PYC_MAGIC_TAG}pyc
@@ -115,7 +115,7 @@ lib/python${MODPY_VERSION}/site-packages/wapitiCore/main/wapiti.py
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/moon.py
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/net/
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/net/__init__.py
-lib/python${MODPY_VERSION}/site-packages/wapitiCore/net/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wapitiCore/net/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/net/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/net/${MODPY_PYCACHE}crawler.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/net/${MODPY_PYCACHE}jsoncookie.${MODPY_PYC_MAGIC_TAG}pyc
@@ -128,7 +128,7 @@ lib/python${MODPY_VERSION}/site-packages/wapitiCore/net/crawler.py
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/net/jsoncookie.py
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/net/jsparser/
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/net/jsparser/__init__.py
-lib/python${MODPY_VERSION}/site-packages/wapitiCore/net/jsparser/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wapitiCore/net/jsparser/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/net/jsparser/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/net/jsparser/${MODPY_PYCACHE}jsparser3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/net/jsparser/jsparser3.py
@@ -139,7 +139,7 @@ lib/python${MODPY_VERSION}/site-packages/wapitiCore/net/web.py
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/net/xss_utils.py
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/report/
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/report/__init__.py
-lib/python${MODPY_VERSION}/site-packages/wapitiCore/report/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wapitiCore/report/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/report/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/report/${MODPY_PYCACHE}htmlreportgenerator.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/report/${MODPY_PYCACHE}jsonreportgenerator.${MODPY_PYC_MAGIC_TAG}pyc
