@@ -11,13 +11,13 @@ MODGO_MODULES =	\
 	github.com/rogpeppe/go-internal	 v1.12.0 \
 	github.com/yuin/goldmark	 v1.4.13 \
 	golang.org/x/exp/typeparams	 v0.0.0-20221212164502-fae10dda9338 \
-	golang.org/x/mod		 v0.18.0 \
+	golang.org/x/mod		 v0.20.0 \
 	golang.org/x/net		 v0.26.0 \
-	golang.org/x/sync		 v0.7.0 \
-	golang.org/x/sys		 v0.21.0 \
-	golang.org/x/telemetry		 v0.0.0-20240607193123-221703e18637 \
+	golang.org/x/sync		 v0.8.0 \
+	golang.org/x/sys		 v0.23.0 \
+	golang.org/x/telemetry		 v0.0.0-20240829154258-f29ab539cc98 \
 	golang.org/x/text		 v0.16.0 \
-	golang.org/x/tools		 v0.22.1-0.20240628205440-9c895dd76b34 \
+	golang.org/x/tools		 v0.22.1-0.20240829175637-39126e24d653 \
 	golang.org/x/vuln		 v1.0.4 \
 	gopkg.in/check.v1		 v1.0.0-20190902080502-41f04d3bba15 \
 	gopkg.in/yaml.v3		 v3.0.1 \
@@ -35,10 +35,13 @@ MODGO_MODFILES =	\
 	golang.org/x/mod		 v0.12.0 \
 	golang.org/x/mod		 v0.14.0 \
 	golang.org/x/mod		 v0.17.0 \
+	golang.org/x/mod		 v0.18.0 \
 	golang.org/x/sync		 v0.1.0 \
 	golang.org/x/sync		 v0.6.0 \
+	golang.org/x/sync		 v0.7.0 \
 	golang.org/x/sys		 v0.11.0 \
 	golang.org/x/sys		 v0.16.0 \
+	golang.org/x/sys		 v0.21.0 \
 	golang.org/x/telemetry		 v0.0.0-20240521205824-bda55230c457 \
 	golang.org/x/text		 v0.3.3 \
 	golang.org/x/tools		 v0.0.0-20180917221912-90fa682c2a6e \
