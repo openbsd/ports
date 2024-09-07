@@ -11,4 +11,5 @@ lib/python${MODPY_VERSION}/site-packages/cairo/${MODPY_PYCACHE}__init__.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/cairo/include/
 lib/python${MODPY_VERSION}/site-packages/cairo/include/py3cairo.h
 lib/python${MODPY_VERSION}/site-packages/cairo/py.typed
-lib/python${MODPY_VERSION}/site-packages/pycairo-${MODPY_EGG_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/pycairo-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pycairo-${MODPY_EGG_VERSION}.dist-info/METADATA
