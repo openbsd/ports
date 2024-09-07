@@ -1,6 +1,6 @@
 COMMENT =	Scientific PYthon Development EnviRonment
 
-MODPY_EGG_VERSION =	5.5.5
+MODPY_EGG_VERSION =	5.5.6
 DISTNAME =	spyder-${MODPY_EGG_VERSION}
 PKGNAME =	spyder3-${MODPY_EGG_VERSION}
 
@@ -24,7 +24,7 @@ RUN_DEPENDS +=	databases/py-pickleshare${MODPY_FLAVOR}>=0.4 \
 		devel/py-python-lsp-black${MODPY_FLAVOR}>=2.0.0,<3.0.0 \
 		devel/py-pylint_venv${MODPY_FLAVOR}>=3.0.2 \
 		devel/py-pyls-spyder${MODPY_FLAVOR}>=0.4.0 \
-		devel/py-python-lsp-server${MODPY_FLAVOR}>=1.11.0,<1.12.0 \
+		devel/py-python-lsp-server${MODPY_FLAVOR}>=1.12.0,<1.13.0 \
 		devel/py-qdarkstyle${MODPY_FLAVOR}>=3.2.0,<3.3.0 \
 		devel/py-qstylizer${MODPY_FLAVOR}>=0.2.2 \
 		devel/py-rtree${MODPY_FLAVOR}>=0.9.7 \
@@ -48,7 +48,8 @@ RUN_DEPENDS +=	databases/py-pickleshare${MODPY_FLAVOR}>=0.4 \
 		x11/py-qtawesome${MODPY_FLAVOR}>=1.3.1,<1.4.0 \
 		devel/spyder/py-spyder-kernels${MODPY_FLAVOR}>=2.5.2,<2.6.0
 
-TEST_DEPENDS +=	${RUN_DEPENDS}
+TEST_DEPENDS +=	${RUN_DEPENDS} \
+		devel/py-importlib-metadata${MODPY_FLAVOR}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/spyder/__init__.py

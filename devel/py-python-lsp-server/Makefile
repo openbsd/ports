@@ -1,9 +1,8 @@
 COMMENT =		Python Language Server
 
-MODPY_EGG_VERSION =	1.11.0
-DISTNAME =		python-lsp-server-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME}
-REVISION =		1
+MODPY_EGG_VERSION =	1.12.0
+DISTNAME =		python_lsp_server-${MODPY_EGG_VERSION}
+PKGNAME =		py-${DISTNAME:S/_/-/g}
 
 CATEGORIES =		devel
 
@@ -21,10 +20,10 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
 
 RUN_DEPENDS =		devel/autopep8 \
-			devel/flake8>=7.0.0,<8 \
+			devel/flake8>=7.1.0,<8 \
 			devel/pyflakes${MODPY_FLAVOR}>=3.2.0,<3.3.0 \
 			devel/pylint${MODPY_FLAVOR}>=3.1,<4 \
-			devel/py-codestyle${MODPY_FLAVOR}>=2.11.0,<2.12.0 \
+			devel/py-codestyle${MODPY_FLAVOR}>=2.12.0,<2.13.0 \
 			devel/py-docstring-to-markdown${MODPY_FLAVOR} \
 			devel/py-jedi${MODPY_FLAVOR}>=0.17.2,<0.20.0 \
 			devel/py-mccabe${MODPY_FLAVOR}>=0.7.0,<0.8.0 \

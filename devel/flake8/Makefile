@@ -1,8 +1,7 @@
 COMMENT=	modular python code checker wrapping pep8 and pyflakes
 
-MODPY_EGG_VERSION=	7.0.0
+MODPY_EGG_VERSION=	7.1.0
 DISTNAME=	flake8-${MODPY_EGG_VERSION}
-REVISION=	0
 
 CATEGORIES=	devel
 
@@ -19,7 +18,7 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS=	devel/py-codestyle${MODPY_FLAVOR}<2.12.0 \
+RUN_DEPENDS=	devel/py-codestyle${MODPY_FLAVOR}<2.13.0 \
 		devel/py-mccabe${MODPY_FLAVOR}<0.8.0 \
 		devel/pyflakes${MODPY_FLAVOR}<3.3.0
 
