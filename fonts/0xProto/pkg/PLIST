@@ -1,0 +1,11 @@
+share/fonts/
+@fontdir share/fonts/0xProto/
+share/fonts/0xProto/0xProto-Bold.otf
+share/fonts/0xProto/0xProto-Bold.ttf
+share/fonts/0xProto/0xProto-Bold.woff2
+share/fonts/0xProto/0xProto-Italic.otf
+share/fonts/0xProto/0xProto-Italic.ttf
+share/fonts/0xProto/0xProto-Italic.woff2
+share/fonts/0xProto/0xProto-Regular.otf
+share/fonts/0xProto/0xProto-Regular.ttf
+share/fonts/0xProto/0xProto-Regular.woff2
