@@ -1,4 +1,6 @@
 @bin bin/amused
+@bin bin/amused-mpris2
 @bin bin/amused-web
+@man man/man1/amused-mpris2.1
 @man man/man1/amused-web.1
 @man man/man1/amused.1
