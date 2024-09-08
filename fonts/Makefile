@@ -1,4 +1,5 @@
      SUBDIR =
+     SUBDIR += 0xProto
      SUBDIR += abyssinica
      SUBDIR += adobe-fonts
      SUBDIR += alkalami
