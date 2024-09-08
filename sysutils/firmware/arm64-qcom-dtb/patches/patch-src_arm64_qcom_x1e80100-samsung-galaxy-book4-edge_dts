@@ -1,7 +1,7 @@
 Index: src/arm64/qcom/x1e80100-samsung-galaxy-book4-edge.dts
 --- src/arm64/qcom/x1e80100-samsung-galaxy-book4-edge.dts.orig
 +++ src/arm64/qcom/x1e80100-samsung-galaxy-book4-edge.dts
-@@ -0,0 +1,1019 @@
+@@ -0,0 +1,957 @@
 +// SPDX-License-Identifier: BSD-3-Clause
 +/*
 + * Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
@@ -83,35 +83,6 @@ Index: src/arm64/qcom/x1e80100-samsung-galaxy-book4-edge.dts
 +
 +					pmic_glink_ss1_ss_in: endpoint {
 +						remote-endpoint = <&usb_1_ss1_qmpphy_out>;
-+					};
-+				};
-+			};
-+		};
-+
-+		/* Right-side port */
-+		connector@2 {
-+			compatible = "usb-c-connector";
-+			reg = <2>;
-+			power-role = "dual";
-+			data-role = "dual";
-+
-+			ports {
-+				#address-cells = <1>;
-+				#size-cells = <0>;
-+
-+				port@0 {
-+					reg = <0>;
-+
-+					pmic_glink_ss2_hs_in: endpoint {
-+						remote-endpoint = <&usb_1_ss2_dwc3_hs>;
-+					};
-+				};
-+
-+				port@1 {
-+					reg = <1>;
-+
-+					pmic_glink_ss2_ss_in: endpoint {
-+						remote-endpoint = <&usb_1_ss2_qmpphy_out>;
 +					};
 +				};
 +			};
@@ -744,12 +715,7 @@ Index: src/arm64/qcom/x1e80100-samsung-galaxy-book4-edge.dts
 +};
 +
 +&smb2360_2 {
-+	status = "okay";
-+};
-+
-+&smb2360_2_eusb2_repeater {
-+	vdd18-supply = <&vreg_l3d_1p8>;
-+	vdd3-supply = <&vreg_l8b_3p0>;
++	status = "disabled";
 +};
 +
 +&swr0 {
@@ -939,6 +905,8 @@ Index: src/arm64/qcom/x1e80100-samsung-galaxy-book4-edge.dts
 +	vdda-phy-supply = <&vreg_l3e_1p2>;
 +	vdda-pll-supply = <&vreg_l1j_0p8>;
 +
++	orientation-switch;
++
 +	status = "okay";
 +};
 +
@@ -971,6 +939,8 @@ Index: src/arm64/qcom/x1e80100-samsung-galaxy-book4-edge.dts
 +	vdda-phy-supply = <&vreg_l3e_1p2>;
 +	vdda-pll-supply = <&vreg_l2d_0p9>;
 +
++	orientation-switch;
++
 +	status = "okay";
 +};
 +
@@ -988,36 +958,4 @@ Index: src/arm64/qcom/x1e80100-samsung-galaxy-book4-edge.dts
 +
 +&usb_1_ss1_qmpphy_out {
 +	remote-endpoint = <&pmic_glink_ss1_ss_in>;
-+};
-+
-+&usb_1_ss2_hsphy {
-+	vdd-supply = <&vreg_l3j_0p8>;
-+	vdda12-supply = <&vreg_l2j_1p2>;
-+
-+	phys = <&smb2360_2_eusb2_repeater>;
-+
-+	status = "okay";
-+};
-+
-+&usb_1_ss2_qmpphy {
-+	vdda-phy-supply = <&vreg_l3e_1p2>;
-+	vdda-pll-supply = <&vreg_l2d_0p9>;
-+
-+	status = "okay";
-+};
-+
-+&usb_1_ss2 {
-+	status = "okay";
-+};
-+
-+&usb_1_ss2_dwc3 {
-+	dr_mode = "host";
-+};
-+
-+&usb_1_ss2_dwc3_hs {
-+	remote-endpoint = <&pmic_glink_ss2_hs_in>;
-+};
-+
-+&usb_1_ss2_qmpphy_out {
-+	remote-endpoint = <&pmic_glink_ss2_ss_in>;
 +};
