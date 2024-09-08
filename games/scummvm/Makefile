@@ -3,7 +3,7 @@ V=		2.8.1
 DISTNAME=	scummvm-${V}
 CATEGORIES=	games x11 emulators
 SITES=		https://downloads.scummvm.org/frs/scummvm/${V}/
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://www.scummvm.org/
 
@@ -67,10 +67,5 @@ NO_TEST=	Yes
 USE_GMAKE=	Yes
 
 MAKE_ENV+=	CXXFLAGS="${CXXFLAGS}" CXX="${CXX}" VERBOSE_BUILD=1 USE_CURL=
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/scummvm.desktop
-	${INSTALL_DATA} ${WRKSRC}/dists/org.scummvm.scummvm.desktop \
-	    ${PREFIX}/share/applications/scummvm.desktop/
 
 .include <bsd.port.mk>

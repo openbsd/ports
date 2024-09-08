@@ -1,8 +1,6 @@
 @bin bin/scummvm
 @man man/man6/scummvm.6
 share/applications/org.scummvm.scummvm.desktop
-share/applications/scummvm.desktop/
-share/applications/scummvm.desktop/org.scummvm.scummvm.desktop
 share/doc/scummvm/
 share/doc/scummvm/AUTHORS
 share/doc/scummvm/CONTRIBUTING.md
