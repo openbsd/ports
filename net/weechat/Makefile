@@ -3,8 +3,7 @@ COMMENT-lua=	Lua bindings for weechat
 COMMENT-python=	Python bindings for weechat
 COMMENT-ruby=	Ruby bindings for weechat
 COMMENT-tcl=	Tcl bindings for weechat
-
-V=		4.4.1
+V=		4.4.2
 DISTNAME=	weechat-${V}
 
 PKGNAME-main=	weechat-${V}
@@ -21,6 +20,12 @@ MAINTAINER=	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
+WANTLIB-main += aspell c cjson curl curses gcrypt gnutls iconv intl
+WANTLIB-main += m perl pthread z zstd
+WANTLIB-lua += ${MODLUA_WANTLIB} m
+WANTLIB-python += ${MODPY_WANTLIB}
+WANTLIB-tcl += ${MODTCL_WANTLIB}
+
 SITES=		https://www.weechat.org/files/src/
 
 # C++
@@ -28,11 +33,6 @@ COMPILER=	base-clang ports-gcc
 
 MULTI_PACKAGES=	-main -lua -python -ruby -tcl
 
-WANTLIB-main += aspell c cjson curl curses gcrypt gnutls iconv
-WANTLIB-main += intl m perl pthread z zstd
-WANTLIB-lua=	${MODLUA_WANTLIB} m
-WANTLIB-python=	${MODPY_WANTLIB}
-WANTLIB-tcl=	${MODTCL_WANTLIB}
 
 MODULES=	devel/cmake \
 		lang/lua \
