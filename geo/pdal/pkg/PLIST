@@ -75,6 +75,7 @@ include/pdal/filters/ELMFilter.hpp
 include/pdal/filters/EigenvaluesFilter.hpp
 include/pdal/filters/EstimateRankFilter.hpp
 include/pdal/filters/ExpressionFilter.hpp
+include/pdal/filters/ExpressionStatsFilter.hpp
 include/pdal/filters/FaceRasterFilter.hpp
 include/pdal/filters/FarthestPointSamplingFilter.hpp
 include/pdal/filters/FerryFilter.hpp
@@ -94,6 +95,7 @@ include/pdal/filters/IQRFilter.hpp
 include/pdal/filters/InfoFilter.hpp
 include/pdal/filters/IterativeClosestPoint.hpp
 include/pdal/filters/LOFFilter.hpp
+include/pdal/filters/LabelDuplicatesFilter.hpp
 include/pdal/filters/LiTreeFilter.hpp
 include/pdal/filters/LloydKMeansFilter.hpp
 include/pdal/filters/LocateFilter.hpp
