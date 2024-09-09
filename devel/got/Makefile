@@ -3,7 +3,7 @@ COMMENT-server =	game of trees repository server
 COMMENT-webd =		game of trees repository fast-cgi server
 COMMENT-gitwrapper =	invoke an appropriate Git repository server
 
-V =			0.102
+V =			0.103
 DISTNAME =		got-${V}
 PKGNAME-server =	gotd-${V}
 PKGNAME-webd =		gotwebd-${V}
@@ -21,7 +21,7 @@ MULTI_PACKAGES =	-main -server -webd -gitwrapper
 
 # uses pledge()
 WANTLIB-main =		c curses m panel pthread tls util z
-WANTLIB-server =	c event m tls util z
+WANTLIB-server =	c crypto event m tls util z
 WANTLIB-webd =		c event m util z
 WANTLIB-gitwrapper =	c
 
