@@ -1,0 +1,15 @@
+src/af/xap/xp/xap_DialogFactory.h:89:73: error: 'nonnull' attribute is invalid for the implicit this argument
+bool                            _findDialogInTable(XAP_Dialog_Id id, UT_sint32 * pIndex) const ABI_NONNULL(1, 3);
+
+Index: src/af/util/xp/ut_types.h
+--- src/af/util/xp/ut_types.h.orig
++++ src/af/util/xp/ut_types.h
+@@ -94,7 +94,7 @@ typedef UT_uint8 UT_Confidence_t;
+ 
+ #include "ut_export.h" // ABI_EXPORT is defined in there.
+ 
+-#if __GNUC__
++#if 0
+   #define ABI_NORETURN __attribute__((noreturn))
+   #define ABI_PRINTF_FORMAT(f,a) __attribute__ ((format (printf, f, a)))
+ /// Call this way ABI_NONNULL(1,2)

@@ -4,7 +4,7 @@ setlocale(3) isn't supposed to be used this way.
 Index: src/wp/ap/gtk/ap_UnixPrefs.cpp
 --- src/wp/ap/gtk/ap_UnixPrefs.cpp.orig
 +++ src/wp/ap/gtk/ap_UnixPrefs.cpp
-@@ -58,105 +58,5 @@ const char * AP_UnixPrefs::_getPrefsPathname(void) con
+@@ -57,108 +57,5 @@ const char * AP_UnixPrefs::_getPrefsPathname(void) con
  
  void AP_UnixPrefs::overlayEnvironmentPrefs(void)
  {
@@ -22,7 +22,7 @@ Index: src/wp/ap/gtk/ap_UnixPrefs.cpp
 -	// TODO (see .../src/wp/ap/xp/ap_*_Languages.h)
 -
 -        // make a copy of the current locale so we can set it back
--	char *old_locale = g_strdup(setlocale(LC_ALL, NULL));
+-	char *old_locale = g_strdup(setlocale(LC_ALL, nullptr));
 -
 -	// this will set our current locale information
 -	// according to the user's env variables
@@ -39,7 +39,7 @@ Index: src/wp/ap/gtk/ap_UnixPrefs.cpp
 -	const char * szNewLang = "en-US"; // default to US English
 -#if defined (LC_MESSAGES) && defined (UNDEF) // raphael
 -// #if defined (LC_MESSAGES)
--	char * lc_ctype = g_strdup(setlocale(LC_MESSAGES, NULL));
+-	char * lc_ctype = g_strdup(setlocale(LC_MESSAGES, nullptr));
 -#else
 -	char * lc_ctype = getenv("LC_ALL");
 -	if (!lc_ctype || !*lc_ctype) {
@@ -49,8 +49,10 @@ Index: src/wp/ap/gtk/ap_UnixPrefs.cpp
 -			lc_ctype = getenv("LANG");
 -		}
 -	}
--	if (lc_ctype) lc_ctype = g_strdup(lc_ctype);
--	else lc_ctype = g_strdup("en_US");
+-	if (lc_ctype)
+-		lc_ctype = g_strdup(lc_ctype);
+-	else
+-		lc_ctype = g_strdup("en_US");
 -#endif
 -	// locale categories seem to always look like this:
 -	// two letter for language (lowcase) _ two letter country code (upcase)
@@ -59,9 +61,9 @@ Index: src/wp/ap/gtk/ap_UnixPrefs.cpp
 -	// en-US, es-ES, pt-PT
 -
 -	// we'll try this quick conversion
--	if (lc_ctype != NULL && strlen(lc_ctype) >= 5) 
+-	if (lc_ctype != nullptr && strlen(lc_ctype) >= 5)
 -	{
--		char * uscore = strchr(lc_ctype, '_'); 
+-		char * uscore = strchr(lc_ctype, '_');
 -		if (uscore)
 -			*uscore = '-';
 -
@@ -70,7 +72,7 @@ Index: src/wp/ap/gtk/ap_UnixPrefs.cpp
 -		  Temporarily remove modifier field to strip charset.
 -		*/
 -		if (modifier)
--		  *modifier = '\0'; 
+-		  *modifier = '\0';
 -
 -		char* dot = strrchr(lc_ctype,'.');
 -		/*
@@ -79,7 +81,7 @@ Index: src/wp/ap/gtk/ap_UnixPrefs.cpp
 -		  current one (if iconv knows this encoding).
 -		 */
 -		if (dot)
--			*dot = '\0'; 
+-			*dot = '\0';
 -
 -		if (modifier) {
 -			// put modifier (if present) back
@@ -88,22 +90,23 @@ Index: src/wp/ap/gtk/ap_UnixPrefs.cpp
 -			*modifier = '@';
 -			memmove(dest,modifier,strlen(modifier)+1);
 -		}
--		
--		szNewLang = lc_ctype;	
+-
+-		szNewLang = lc_ctype;
 -	}
 -
 -	UT_DEBUGMSG(("Prefs: Using LOCALE info from environment [%s]\n",szNewLang));
 -
 -
--	m_builtinScheme->setValue((gchar*)AP_PREF_KEY_StringSet,
--				  (gchar*)szNewLang);
+-	m_builtinScheme->setValue(AP_PREF_KEY_StringSet,
+-				  szNewLang);
 -
 -	// g_free the language id, if it was allocated
--	if (lc_ctype != NULL) g_free(lc_ctype);
+-	if (lc_ctype)
+-		g_free(lc_ctype);
 -
 -	// change back to the previous locale setting
 -	// although, we might want to leave it in the user's preferred locale?
--	if (old_locale != NULL) {
+-	if (old_locale != nullptr) {
 -	   setlocale(LC_ALL, old_locale);
 -	   g_free(old_locale);
 -	}
