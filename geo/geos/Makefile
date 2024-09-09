@@ -1,18 +1,18 @@
 COMMENT=	2d geometry and topology engine
-DISTNAME=	geos-3.12.2
+DISTNAME=	geos-3.13.0
 
 CATEGORIES=	geo
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
-SHARED_LIBS=	geos	24.0 \
-		geos_c	4.8
+SHARED_LIBS=	geos	25.0 \
+		geos_c	4.9
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-HOMEPAGE=		https://trac.osgeo.org/geos/
-SITES=			http://download.osgeo.org/geos/
+HOMEPAGE=		https://libgeos.org/
+SITES=			https://download.osgeo.org/geos/
 
 EXTRACT_SUFX=		.tar.bz2
 
