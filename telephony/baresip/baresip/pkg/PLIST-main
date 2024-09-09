@@ -30,6 +30,7 @@ lib/baresip/modules/
 @so lib/baresip/modules/httpd.so
 @so lib/baresip/modules/httpreq.so
 @so lib/baresip/modules/ice.so
+@so lib/baresip/modules/in_band_dtmf.so
 @so lib/baresip/modules/l16.so
 @so lib/baresip/modules/menu.so
 @so lib/baresip/modules/mixausrc.so
