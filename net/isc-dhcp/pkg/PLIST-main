@@ -20,9 +20,9 @@ share/examples/isc-dhcp/dhcpd.conf
 @mode 755
 @owner _isc-dhcp
 @group _isc-dhcp
-@sample /var/db/isc-dhcpd/
+@sample /var/db/isc-dhcp/
 @mode
 @owner
 @group
-@extra /var/db/isc-dhcpd/dhcpd.leases
-@extra /var/db/isc-dhcpd/dhcpd6.leases
+@extra /var/db/isc-dhcp/dhcpd.leases
+@extra /var/db/isc-dhcp/dhcpd6.leases
