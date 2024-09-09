@@ -1,6 +1,6 @@
 COMMENT =	reliable, high performance TCP/HTTP load balancer
 
-DISTNAME =	haproxy-3.0.3
+DISTNAME =	haproxy-3.0.4
 CATEGORIES =	net www
 HOMEPAGE =	https://www.haproxy.org/
 MAINTAINER =	Lucas Gabriel Vuotto <lucas@sexy.is>
