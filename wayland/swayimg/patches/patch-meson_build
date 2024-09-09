@@ -9,10 +9,10 @@ Index: meson.build
  threads = dependency('threads')
 -rt = cc.find_library('rt')
 +# rt = cc.find_library('rt')
+ 
  # optional dependencies: file formats support
  exr = dependency('OpenEXR', version: '>=3.1', required: get_option('exr'))
- heif = dependency('libheif', required: get_option('heif'))
-@@ -219,7 +219,7 @@ executable(
+@@ -233,7 +233,7 @@ executable(
    sources,
    dependencies: [
      # runtime

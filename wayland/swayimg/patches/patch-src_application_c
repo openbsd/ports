@@ -3,9 +3,9 @@ required for WEXITSTATUS macro
 Index: src/application.c
 --- src/application.c.orig
 +++ src/application.c
-@@ -26,6 +26,7 @@
+@@ -25,6 +25,7 @@
+ #include <string.h>
  #include <sys/wait.h>
- #include <time.h>
  #include <unistd.h>
 +#include <sys/wait.h>
  
