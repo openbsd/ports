@@ -1,8 +1,15 @@
 # see https://caddyserver.com/docs/
 {
-	default_bind localhost
+	# bind locally-only by default
+	default_bind [::1] 127.0.0.1
 	http_port 8080
 	https_port 8443
+
+	# admin API endpoint on unix socket
+	admin unix//var/caddy/admin.sock|0220
+
+	# don't try to install internal CA to system
+	skip_install_trust
 }
 
 localhost {
