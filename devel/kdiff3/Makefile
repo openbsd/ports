@@ -1,6 +1,6 @@
 COMMENT =	compares and merges multiple files or directories
 
-DISTNAME =	kdiff3-1.11.2
+DISTNAME =	kdiff3-1.11.3
 
 CATEGORIES =	devel
 
