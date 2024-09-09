@@ -7,10 +7,9 @@ DISTNAME =	lemonbar-xft-${VERSION}
 GH_ACCOUNT =	krypt-n
 GH_PROJECT =	bar
 GH_COMMIT =	00a3fe6f3485203896156480e86014136749a221
+REVISION =	0
 
 CATEGORIES =	x11
-
-MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 
 # MIT
 PERMIT_PACKAGE =	Yes
