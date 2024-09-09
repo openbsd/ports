@@ -14,14 +14,16 @@ lib/python${MODPY_VERSION}/site-packages/fiona/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}_path.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}_path.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}_show_versions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}_show_versions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}abc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}abc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}collection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}collection.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}compat.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}crs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}crs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}drvsupport.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}drvsupport.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}enums.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -30,6 +32,8 @@ lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}env.${MODPY_PYC_M
 lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}env.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}features.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}features.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}inspector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}inspector.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}io.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -58,26 +62,31 @@ lib/python${MODPY_VERSION}/site-packages/fiona/_env.pxd
 lib/python${MODPY_VERSION}/site-packages/fiona/_err.pxd
 @so lib/python${MODPY_VERSION}/site-packages/fiona/_geometry.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/fiona/_geometry.pxd
+lib/python${MODPY_VERSION}/site-packages/fiona/_path.py
 lib/python${MODPY_VERSION}/site-packages/fiona/_show_versions.py
 @so lib/python${MODPY_VERSION}/site-packages/fiona/_transform.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/fiona/_vendor/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fiona/_vendor/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/fiona/_vendor/${MODPY_PYCACHE}snuggs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/fiona/_vendor/${MODPY_PYCACHE}snuggs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fiona/_vendor/munch/
 lib/python${MODPY_VERSION}/site-packages/fiona/_vendor/munch/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fiona/_vendor/munch/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fiona/_vendor/munch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fiona/_vendor/munch/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/fiona/_vendor/munch/${MODPY_PYCACHE}python3_compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/fiona/_vendor/munch/${MODPY_PYCACHE}python3_compat.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/fiona/_vendor/munch/python3_compat.py
+lib/python${MODPY_VERSION}/site-packages/fiona/_vendor/snuggs.py
+@so lib/python${MODPY_VERSION}/site-packages/fiona/_vsiopener.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/fiona/_vsiopener.pxd
+lib/python${MODPY_VERSION}/site-packages/fiona/abc.py
 lib/python${MODPY_VERSION}/site-packages/fiona/collection.py
 lib/python${MODPY_VERSION}/site-packages/fiona/compat.py
 @so lib/python${MODPY_VERSION}/site-packages/fiona/crs.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/fiona/crs.pxd
-lib/python${MODPY_VERSION}/site-packages/fiona/crs.py
 lib/python${MODPY_VERSION}/site-packages/fiona/drvsupport.py
 lib/python${MODPY_VERSION}/site-packages/fiona/enums.py
 lib/python${MODPY_VERSION}/site-packages/fiona/env.py
 lib/python${MODPY_VERSION}/site-packages/fiona/errors.py
+lib/python${MODPY_VERSION}/site-packages/fiona/features.py
 lib/python${MODPY_VERSION}/site-packages/fiona/fio/
 lib/python${MODPY_VERSION}/site-packages/fiona/fio/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fiona/fio/${MODPY_PYCACHE}/
@@ -97,8 +106,8 @@ lib/python${MODPY_VERSION}/site-packages/fiona/fio/${MODPY_PYCACHE}dump.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/fiona/fio/${MODPY_PYCACHE}dump.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fiona/fio/${MODPY_PYCACHE}env.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fiona/fio/${MODPY_PYCACHE}env.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/fiona/fio/${MODPY_PYCACHE}filter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/fiona/fio/${MODPY_PYCACHE}filter.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/fiona/fio/${MODPY_PYCACHE}features.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/fiona/fio/${MODPY_PYCACHE}features.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fiona/fio/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fiona/fio/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fiona/fio/${MODPY_PYCACHE}info.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -122,7 +131,7 @@ lib/python${MODPY_VERSION}/site-packages/fiona/fio/collect.py
 lib/python${MODPY_VERSION}/site-packages/fiona/fio/distrib.py
 lib/python${MODPY_VERSION}/site-packages/fiona/fio/dump.py
 lib/python${MODPY_VERSION}/site-packages/fiona/fio/env.py
-lib/python${MODPY_VERSION}/site-packages/fiona/fio/filter.py
+lib/python${MODPY_VERSION}/site-packages/fiona/fio/features.py
 lib/python${MODPY_VERSION}/site-packages/fiona/fio/helpers.py
 lib/python${MODPY_VERSION}/site-packages/fiona/fio/info.py
 lib/python${MODPY_VERSION}/site-packages/fiona/fio/insp.py
