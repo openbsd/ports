@@ -1,7 +1,9 @@
 COMMENT =	K Desktop Environment, office suite
+
 HOMEPAGE =	https://www.calligra.org
-VERSION =	4.0.0
-DISTNAME =	calligra-${VERSION}
+
+DISTNAME =	calligra-4.0.1
+
 CATEGORIES =	editors
 
 SHARED_LIBS =   RtfReader                 52.0 # 0.0
@@ -64,11 +66,11 @@ WANTLIB += KF6KIOWidgets KF6Notifications KF6NotifyConfig KF6Service
 WANTLIB += KF6Solid KF6SonnetCore KF6SonnetUi KF6TextWidgets KF6WidgetsAddons
 WANTLIB += KF6WindowSystem KF6XmlGui Okular6Core Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning Qt6PrintSupport
-WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickControls2 Qt6QuickWidgets
-WANTLIB += Qt6Sql Qt6Svg Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
+WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickControls2 Qt6Sql
+WANTLIB += Qt6Svg Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
 WANTLIB += Qt6Widgets Qt6Xml X11 c crypto fontconfig freetype
-WANTLIB += git2 gsl gslcblas lcms2 m phonon4qt6 phonon4qt6experimental
-WANTLIB += poppler poppler-qt6 qt6keychain ssl z
+WANTLIB += gsl gslcblas lcms2 m phonon4qt6 phonon4qt6experimental
+WANTLIB += poppler-qt6 qt6keychain ssl z
 
 MODULES =	x11/kde
 
@@ -114,7 +116,7 @@ LIB_DEPENDS =	devel/gsl \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \
 		devel/kf6/sonnet \
-		devel/libgit2/libgit2 \
+		multimedia/phonon,qt6 \
 		graphics/kdiagram-qt6 \
 		graphics/lcms2 \
 		math/imath \
