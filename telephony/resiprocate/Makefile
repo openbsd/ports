@@ -4,7 +4,7 @@ COMMENT-return =	reSIProcate STUN/TURN client and server
 
 V =			1.12.0
 DISTNAME =		resiprocate-${V}
-REVISION =		5
+REVISION =		6
 PKGNAME-main =		resiprocate-${V}
 PKGNAME-repro =		resiprocate-repro-${V}
 PKGNAME-return =	resiprocate-return-${V}
@@ -19,8 +19,6 @@ SHARED_LIBS +=	rutil		0.0
 CATEGORIES =		telephony
 
 HOMEPAGE =		https://www.resiprocate.org
-
-MAINTAINER =		Ingo Feinerer <feinerer@logic.at>
 
 # Vovida (BSD like)
 # https://github.com/resiprocate/resiprocate/blob/master/COPYING
@@ -66,11 +64,11 @@ CONFIGURE_ARGS =	--disable-static \
 			--with-postgresql \
 			--with-radcli \
 			--with-ssl
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include \
+CONFIGURE_ENV =		CPPFLAGS="-I${WRKSRC}/contrib/asio/include \
+			-I${WRKSRC}/contrib/cajun/include \
 			-I${LOCALBASE}/include/db4 \
 			-I${LOCALBASE}/include/postgresql \
-			-I${WRKSRC}/contrib/asio/include \
-			-I${WRKSRC}/contrib/cajun/include" \
+			-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${LOCALBASE}/lib/db4"
 
 MULTI_PACKAGES =	-main -repro -return
