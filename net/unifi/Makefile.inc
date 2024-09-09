@@ -84,7 +84,7 @@ pre-extract:
 	@needpkgs=false; \
 	if ! [ -r ${LOCALBASE}/bin/mongo ]; then needpkgs=true; echo "- mongodb not installed"; fi; \
 	if ! [ -r ${LOCALBASE}/jdk-${MODJAVA_VER}*/bin/java ]; then needpkgs=true; echo "- jdk-${MODJAVA_VER} not installed"; fi; \
-	if $$$needpkgs; then \
+	if $$needpkgs; then \
 	    echo "*** To avoid long jdk/mongodb builds, it is recommended that you"; sleep .7; \
 	    echo "*** use 'make FETCH_PACKAGES= install' to fetch binary packages"; sleep .7; \
 	    echo "*** for the dependencies. Hit ^C now to interrupt the build."; echo; sleep 3; \
