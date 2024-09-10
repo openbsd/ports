@@ -3,7 +3,7 @@ COMMENT =	compression utility for large files
 GH_ACCOUNT =	ckolivas
 GH_PROJECT =	lrzip
 GH_TAGNAME =	v0.651
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	archivers
 
@@ -24,7 +24,7 @@ RUN_DEPENDS =	shells/bash
 
 CONFIGURE_STYLE = autoreconf
 CONFIGURE_ARGS = --disable-doc
-CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -DNOJIT" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_prog_ASM_PROG='no '
 # don't pick up archivers/nasm; it breaks build
