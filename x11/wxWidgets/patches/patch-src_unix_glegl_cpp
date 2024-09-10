@@ -1,7 +1,7 @@
 Index: src/unix/glegl.cpp
 --- src/unix/glegl.cpp.orig
 +++ src/unix/glegl.cpp
-@@ -849,6 +849,7 @@ void wxGLCanvasEGL::FreeDefaultConfig()
+@@ -845,6 +845,7 @@ void wxGLCanvasEGL::FreeDefaultConfig()
  
  bool wxGLCanvasEGL::SwapBuffers()
  {
@@ -9,7 +9,7 @@ Index: src/unix/glegl.cpp
      // Before doing anything else, ensure that eglSwapBuffers() doesn't block:
      // under Wayland we don't want it to because we use the surface callback to
      // know when we should draw anyhow and with X11 it blocks for up to a
-@@ -875,6 +876,7 @@ bool wxGLCanvasEGL::SwapBuffers()
+@@ -871,6 +872,7 @@ bool wxGLCanvasEGL::SwapBuffers()
                         this, eglGetError());
          }
      }

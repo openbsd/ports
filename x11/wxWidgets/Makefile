@@ -2,12 +2,11 @@ COMMENT-main =		C++ cross-platform GUI toolkit
 COMMENT-media =		wxMediaCtrl class for wxWidgets
 COMMENT-webview =	wxWebView class for wxWidgets
 
-V =			3.2.5
+V =			3.2.6
 DISTNAME =		wxWidgets-${V}
 PKGNAME-main =		wxWidgets-gtk3-${V}
 PKGNAME-media =		wxWidgets-media-${V}
 PKGNAME-webview =	wxWidgets-webview-${V}
-REVISION-main =		0
 
 CATEGORIES =		x11
 SITES =			https://github.com/wxWidgets/wxWidgets/releases/download/v$V/
