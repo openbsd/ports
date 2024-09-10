@@ -7705,6 +7705,8 @@ go/src/internal/types/testdata/check/go1_19.go
 go/src/internal/types/testdata/check/go1_19_20.go
 go/src/internal/types/testdata/check/go1_20_19.go
 go/src/internal/types/testdata/check/go1_21_19.go
+go/src/internal/types/testdata/check/go1_21_22.go
+go/src/internal/types/testdata/check/go1_22_21.go
 go/src/internal/types/testdata/check/go1_8.go
 go/src/internal/types/testdata/check/go1_xx_19.go
 go/src/internal/types/testdata/check/gotos.go
@@ -7986,6 +7988,8 @@ go/src/internal/types/testdata/fixedbugs/issue67628.go
 go/src/internal/types/testdata/fixedbugs/issue67683.go
 go/src/internal/types/testdata/fixedbugs/issue67872.go
 go/src/internal/types/testdata/fixedbugs/issue67962.go
+go/src/internal/types/testdata/fixedbugs/issue68903.go
+go/src/internal/types/testdata/fixedbugs/issue68935.go
 go/src/internal/types/testdata/fixedbugs/issue6977.go
 go/src/internal/types/testdata/spec/
 go/src/internal/types/testdata/spec/assignability.go

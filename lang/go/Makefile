@@ -7,7 +7,7 @@ COMMENT =		Go programming language
 
 # increment _MODGO_SYSTEM_VERSION in go.port.mk after updating to a new
 # version, to trigger updates of go-compiled ports
-VERSION =		1.23.0
+VERSION =		1.23.1
 DISTNAME =		go${VERSION}.src
 PKGNAME =		go-${VERSION}
 PKGSPEC =		${FULLPKGNAME:S/go-/go-=/}
