@@ -2,6 +2,7 @@
 @pkgpath x11/tellico-kde4
 @bin bin/tellico
 share/applications/org.kde.tellico.desktop
+share/config.kcfg/
 share/config.kcfg/tellico_config.kcfg
 share/doc/HTML/ca/tellico/
 share/doc/HTML/ca/tellico/advanced.docbook
@@ -237,15 +238,13 @@ share/icons/hicolor/48x48/apps/tellico.png
 share/icons/hicolor/48x48/mimetypes/application-x-tellico.png
 share/icons/hicolor/64x64/apps/tellico.png
 share/icons/hicolor/64x64/mimetypes/application-x-tellico.png
+share/kconf_update/
 share/kconf_update/tellico-1-3-update.pl
 share/kconf_update/tellico-3-4-update.pl
 share/kconf_update/tellico-rename.upd
 share/kconf_update/tellico.upd
 share/knsrcfiles/
 share/knsrcfiles/tellico-template.knsrc
-share/kxmlgui5/
-share/kxmlgui5/tellico/
-share/kxmlgui5/tellico/tellicoui.rc
 share/locale/bg/LC_MESSAGES/tellico.mo
 share/locale/bs/LC_MESSAGES/tellico.mo
 share/locale/ca/LC_MESSAGES/tellico.mo
@@ -263,6 +262,7 @@ share/locale/fi/LC_MESSAGES/tellico.mo
 share/locale/fr/LC_MESSAGES/tellico.mo
 share/locale/ga/LC_MESSAGES/tellico.mo
 share/locale/gl/LC_MESSAGES/tellico.mo
+share/locale/he/LC_MESSAGES/tellico.mo
 share/locale/hu/LC_MESSAGES/tellico.mo
 share/locale/ia/LC_MESSAGES/tellico.mo
 share/locale/it/LC_MESSAGES/tellico.mo
@@ -313,12 +313,8 @@ share/tellico/data-sources/
 ${MODPY_COMMENT}share/tellico/data-sources/${MODPY_PYCACHE}/
 share/tellico/data-sources/${MODPY_PYCACHE}dark_horse_comics.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/tellico/data-sources/${MODPY_PYCACHE}dark_horse_comics.${MODPY_PYC_MAGIC_TAG}pyc
-share/tellico/data-sources/${MODPY_PYCACHE}fr.allocine.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-share/tellico/data-sources/${MODPY_PYCACHE}fr.allocine.${MODPY_PYC_MAGIC_TAG}pyc
 share/tellico/data-sources/dark_horse_comics.py
 share/tellico/data-sources/dark_horse_comics.py.spec
-share/tellico/data-sources/fr.allocine.py
-share/tellico/data-sources/fr.allocine.py.spec
 share/tellico/datacrow2tellico.xsl
 share/tellico/dbc2tellico.xsl
 share/tellico/dblp2tellico.xsl
@@ -415,8 +411,6 @@ share/tellico/tellico-by-author.xsl
 share/tellico/tellico-by-title.xsl
 share/tellico/tellico-common.xsl
 share/tellico/tellico-printing.xsl
-share/tellico/tellico.dtd
-share/tellico/tellico.tips
 share/tellico/tellico2gcstar.xsl
 share/tellico/tellico2html.js
 share/tellico/tellico2html.xsl

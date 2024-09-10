@@ -2,7 +2,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	organizer for book/dvd/music collections
 
-DISTNAME =	tellico-3.5.5
+DISTNAME =	tellico-4.0
 
 CATEGORIES =	x11
 
@@ -13,79 +13,77 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Attica KF5Auth KF5AuthCore
-WANTLIB += KF5Bookmarks KF5Cddb KF5Codecs KF5Completion KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
-WANTLIB += KF5FileMetaData KF5GuiAddons KF5I18n KF5IconThemes
-WANTLIB += KF5ItemModels KF5ItemViews KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets KF5NewStuff
-WANTLIB += KF5NewStuffCore KF5NewStuffWidgets KF5Sane KF5Service
-WANTLIB += KF5Solid KF5SonnetCore KF5SonnetUi KF5TextWidgets KF5Wallet
-WANTLIB += KF5WidgetsAddons KF5WindowSystem KF5XmlGui Qt5Charts
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning
-WANTLIB += Qt5PrintSupport Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel
-WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5Xml
-WANTLIB += X11 c cdio exempi exslt iconv iso9660 m poppler poppler-qt5
-WANTLIB += tag xml2 xslt yaz z
+WANTLIB += ${COMPILER_LIBCXX} GL KCddb6 KF6Archive KF6Attica KF6Bookmarks
+WANTLIB += KF6Codecs KF6ColorScheme KF6Completion KF6ConfigCore
+WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
+WANTLIB += KF6FileMetaData KF6GuiAddons KF6I18n KF6IconThemes
+WANTLIB += KF6IconWidgets KF6ItemModels KF6ItemViews KF6JobWidgets
+WANTLIB += KF6KIOCore KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets
+WANTLIB += KF6NewStuffCore KF6NewStuffWidgets KF6Service KF6Solid
+WANTLIB += KF6SonnetCore KF6SonnetUi KF6TextWidgets KF6WidgetsAddons
+WANTLIB += KF6XmlGui Qt6Charts Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Positioning Qt6PrintSupport
+WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6WebChannel Qt6WebEngineCore
+WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml c cdio exempi
+WANTLIB += exslt iconv iso9660 m poppler-qt6 tag xml2 xslt yaz
 
 SITES =		http://tellico-project.org/files/
 EXTRACT_SUFX =	.tar.xz
 
-MODULES +=	devel/kf5 \
+MODULES =	devel/kf6 \
 		lang/python
 
 BUILD_DEPENDS =	devel/gettext,-tools \
-		devel/kf5/kdoctools
+		devel/kf6/kdoctools
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
-		devel/kf5/kdoctools \
+		devel/kf6/kdoctools \
 		x11/gtk+4,-guic
 
 LIB_DEPENDS =	audio/libcdio \
 		audio/taglib \
 		converters/libiconv \
-		devel/kf5/attica \
-		devel/kf5/karchive \
-		devel/kf5/kauth \
-		devel/kf5/kbookmarks \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kcrash \
-		devel/kf5/kfilemetadata \
-		devel/kf5/kguiaddons \
-		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
-		devel/kf5/kio \
-		devel/kf5/kitemmodels \
-		devel/kf5/kitemviews \
-		devel/kf5/kjobwidgets \
-		devel/kf5/knewstuff \
-		devel/kf5/kservice \
-		devel/kf5/ktextwidgets \
-		devel/kf5/kwallet \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kwindowsystem \
-		devel/kf5/kxmlgui \
-		devel/kf5/solid \
-		devel/kf5/sonnet \
+		devel/kf6/attica \
+		devel/kf6/karchive \
+		devel/kf6/kbookmarks \
+		devel/kf6/kcodecs \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/kfilemetadata \
+		devel/kf6/kguiaddons \
+		devel/kf6/ki18n \
+		devel/kf6/kiconthemes \
+		devel/kf6/kio \
+		devel/kf6/kitemmodels \
+		devel/kf6/kitemviews \
+		devel/kf6/kjobwidgets \
+		devel/kf6/knewstuff \
+		devel/kf6/kservice \
+		devel/kf6/ktextwidgets \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kxmlgui \
+		devel/kf6/solid \
+		devel/kf6/sonnet \
 		net/yaz \
-		print/poppler,-qt5 \
+		print/poppler,-qt6 \
 		textproc/exempi \
 		textproc/libxml \
 		textproc/libxslt \
-		x11/kde-applications/libkcddb \
-		x11/kde-applications/libksane \
-		x11/qt5/qtcharts \
-		x11/qt5/qtdeclarative \
-		x11/qt5/qtlocation \
-		x11/qt5/qtwebchannel \
-		x11/qt5/qtwebengine
+		x11/kde-applications/kf6-libkcddb \
+		x11/qt6/qtcharts \
+		x11/qt6/qtdeclarative \
+		x11/qt6/qtpositioning \
+		x11/qt6/qtwebchannel \
+		x11/qt6/qtwebengine \
 
 TEST_IS_INTERACTIVE =	X11
+
+MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 
 post-install:
 	${MODPY_COMPILEALL} \
