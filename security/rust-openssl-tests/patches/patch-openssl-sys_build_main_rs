@@ -1,7 +1,7 @@
 Index: openssl-sys/build/main.rs
 --- openssl-sys/build/main.rs.orig
 +++ openssl-sys/build/main.rs
-@@ -379,6 +379,7 @@ See rust-openssl documentation for more information:
+@@ -380,6 +380,7 @@ See rust-openssl documentation for more information:
              (3, 8, _) => ('3', '8', 'x'),
              (3, 9, 0) => ('3', '9', '0'),
              (3, 9, _) => ('3', '9', 'x'),

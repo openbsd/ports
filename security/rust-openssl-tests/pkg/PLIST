@@ -2904,13 +2904,13 @@ share/rust-openssl-tests/modcargo-crates/${VER_serde}/build.rs
 share/rust-openssl-tests/modcargo-crates/${VER_serde}/crates-io.md
 share/rust-openssl-tests/modcargo-crates/${VER_serde}/src/
 share/rust-openssl-tests/modcargo-crates/${VER_serde}/src/de/
-share/rust-openssl-tests/modcargo-crates/${VER_serde}/src/de/format.rs
 share/rust-openssl-tests/modcargo-crates/${VER_serde}/src/de/ignored_any.rs
 share/rust-openssl-tests/modcargo-crates/${VER_serde}/src/de/impls.rs
 share/rust-openssl-tests/modcargo-crates/${VER_serde}/src/de/mod.rs
 share/rust-openssl-tests/modcargo-crates/${VER_serde}/src/de/seed.rs
 share/rust-openssl-tests/modcargo-crates/${VER_serde}/src/de/size_hint.rs
 share/rust-openssl-tests/modcargo-crates/${VER_serde}/src/de/value.rs
+share/rust-openssl-tests/modcargo-crates/${VER_serde}/src/format.rs
 share/rust-openssl-tests/modcargo-crates/${VER_serde}/src/integer128.rs
 share/rust-openssl-tests/modcargo-crates/${VER_serde}/src/lib.rs
 share/rust-openssl-tests/modcargo-crates/${VER_serde}/src/macros.rs
