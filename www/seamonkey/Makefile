@@ -5,7 +5,7 @@ COMMENT-lightning =	Mozilla Seamonkey calendar extension
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 # version = (TB version - 3) / 100 + 2
-MOZILLA_VERSION =	2.53.18.2
+MOZILLA_VERSION =	2.53.19
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	comm/suite
 SITES =	https://archive.seamonkey-project.org/releases/${MOZILLA_DIST_VERSION}/source/
@@ -20,10 +20,8 @@ PATCH_CASES += *.zip) \
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-5.8.18.2
+PKGNAME-lightning =	lightning-seamonkey-5.8.19
 EPOCH-lightning =	0
-REVISION-lightning =	0
-REVISION-main =		0
 
 HOMEPAGE =	https://www.seamonkey-project.org/
 
