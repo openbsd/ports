@@ -101,6 +101,7 @@ lib/node_modules/typescript/lib/lib.esnext.decorators.d.ts
 lib/node_modules/typescript/lib/lib.esnext.disposable.d.ts
 lib/node_modules/typescript/lib/lib.esnext.full.d.ts
 lib/node_modules/typescript/lib/lib.esnext.intl.d.ts
+lib/node_modules/typescript/lib/lib.esnext.iterator.d.ts
 lib/node_modules/typescript/lib/lib.esnext.object.d.ts
 lib/node_modules/typescript/lib/lib.esnext.promise.d.ts
 lib/node_modules/typescript/lib/lib.esnext.regexp.d.ts
