@@ -9,7 +9,7 @@ Index: configure
  #include <sys/sensors.h>
  int
  main (void)
-@@ -13350,7 +13351,7 @@ if test ${with_libevent+y}
+@@ -13357,7 +13358,7 @@ if test ${with_libevent+y}
  then :
    withval=$with_libevent;
  			if test "x$withval" = "xyes"; then
@@ -18,7 +18,7 @@ Index: configure
  			fi
  
  			LIBEVENT_CFLAGS="-I$withval/include"
-@@ -13421,7 +13422,7 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
+@@ -13428,7 +13429,7 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
  #include <stdlib.h>
@@ -27,7 +27,7 @@ Index: configure
  #include <event2/thread.h>
  
  int
-@@ -18854,16 +18855,16 @@ printf "%s\n" "no" >&6; }
+@@ -18861,16 +18862,16 @@ printf "%s\n" "no" >&6; }
  RANLIB="ranlib"
  
  
