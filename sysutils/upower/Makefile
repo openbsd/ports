@@ -2,7 +2,7 @@ ONLY_FOR_ARCHS =${APM_ARCHS}
 
 COMMENT =	userland power management interface
 
-V =	v1.90.4
+V =	v1.90.5
 DISTNAME =	upower-${V}
 PKGNAME =	upower-${V:S/v//}
 
@@ -18,7 +18,7 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 # uses unveil()
-WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 m
+WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 m polkit-gobject-1
 
 MODULES =	devel/meson
 CONFIGURE_ARGS =-Dintrospection=enabled \
@@ -32,7 +32,8 @@ CONFIGURE_ARGS =-Dintrospection=enabled \
 # gtk-doc is disabled because otherwise xsltproc fetches from net
 CONFIGURE_ARGS +=-Dgtk-doc=false
 
-LIB_DEPENDS =	devel/glib2
+LIB_DEPENDS =	devel/glib2 \
+		sysutils/polkit
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/gobject-introspection \
 		textproc/docbook-xsl \
