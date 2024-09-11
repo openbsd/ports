@@ -1,0 +1,13 @@
+@rcscript ${RCDIR}/reaction
+@bin bin/reaction
+share/examples/reaction/
+share/examples/reaction/activitywatch.jsonnet
+share/examples/reaction/authlog.jsonnet
+@sample ${SYSCONFDIR}/reaction.conf
+share/examples/reaction/example.jsonnet
+share/examples/reaction/heavy-load.yml
+share/examples/reaction/persistence.jsonnet
+share/examples/reaction/reaction.example.service
+share/examples/reaction/server.jsonnet
+share/examples/reaction/test.jsonnet
+@sample /var/reaction/

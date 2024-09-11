@@ -1,0 +1,6 @@
+To block the bots connecting on ssh by default, add the following line early in
+${SYSCONFDIR}/pf.conf:
+
+table <blocked_ssh> persist
+
+block return in quick log from <blocked_ssh>

@@ -1,0 +1,3 @@
+A daemon that scans program outputs for repeated patterns, and takes
+action. A common usage is to scan ssh and webserver logs, and to ban
+hosts that cause multiple authentication errors.
