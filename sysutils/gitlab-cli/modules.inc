@@ -158,15 +158,15 @@ MODGO_MODULES =	\
 	go.uber.org/goleak								 v1.3.0 \
 	go.uber.org/multierr								 v1.9.0 \
 	go.uber.org/zap									 v1.21.0 \
-	golang.org/x/crypto								 v0.26.0 \
+	golang.org/x/crypto								 v0.27.0 \
 	golang.org/x/exp								 v0.0.0-20240416160154-fe59bbe5cc7f \
 	golang.org/x/mod								 v0.17.0 \
 	golang.org/x/net								 v0.27.0 \
 	golang.org/x/oauth2								 v0.21.0 \
 	golang.org/x/sync								 v0.8.0 \
-	golang.org/x/sys								 v0.23.0 \
-	golang.org/x/term								 v0.23.0 \
-	golang.org/x/text								 v0.17.0 \
+	golang.org/x/sys								 v0.25.0 \
+	golang.org/x/term								 v0.24.0 \
+	golang.org/x/text								 v0.18.0 \
 	golang.org/x/time								 v0.5.0 \
 	golang.org/x/tools								 v0.21.1-0.20240508182429-e35e4ccd0d2d \
 	golang.org/x/xerrors								 v0.0.0-20220907171357-04be3eba64a2 \
