@@ -1,12 +1,11 @@
 COMMENT=	microcode update binaries for Intel CPUs
 FW_DRIVER=	intel
 
-FW_VER=		20240814
+FW_VER=		20240910
 EPOCH=		0
 GH_ACCOUNT=	intel
 GH_PROJECT=	Intel-Linux-Processor-Microcode-Data-Files
-#GH_TAGNAME=	microcode-${FW_VER}
-GH_TAGNAME=	microcode-20240813
+GH_TAGNAME=	microcode-${FW_VER}
 
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
