@@ -354,6 +354,7 @@
      SUBDIR += rclone-browser
      SUBDIR += rcm
      SUBDIR += rdiff-backup
+     SUBDIR += reaction
      SUBDIR += reed-alert
      SUBDIR += remotebox
      SUBDIR += repology
