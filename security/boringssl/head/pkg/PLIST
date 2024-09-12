@@ -13,6 +13,7 @@ eboringssl/include/openssl/asn1_mac.h
 eboringssl/include/openssl/asn1t.h
 eboringssl/include/openssl/base.h
 eboringssl/include/openssl/base64.h
+eboringssl/include/openssl/bcm_public.h
 eboringssl/include/openssl/bio.h
 eboringssl/include/openssl/blake2.h
 eboringssl/include/openssl/blowfish.h

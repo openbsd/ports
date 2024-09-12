@@ -1,4 +1,4 @@
-SHA256 (boringssl-20240829-ee79a930.tar.gz) = bCc/2xLkXyS8wUCBOD1XD8HzsZrl9sofLEXch0/MPl0=
+SHA256 (boringssl-20240912-e724ef02.tar.gz) = 1zyV+Z6GimKALeooNKSONhHnoZEoOV3ZQLu6dEeReTA=
 SHA256 (go_modules/filippo.io/mlkem768/@v/v0.0.0-20240821141156-859a9b3f2ff6.mod) = 4Rxj6fq8TwXV82mlNdZyh5WLT5JmOQtoiC8o1nMRpnY=
 SHA256 (go_modules/filippo.io/mlkem768/@v/v0.0.0-20240821141156-859a9b3f2ff6.zip) = k3vwoUdYCjPiqIMbxz7biIlpj56QbHF0Dd9P/7lpHU4=
 SHA256 (go_modules/golang.org/x/crypto/@v/v0.26.0.mod) = XfxmLnqEpsQ1kUwH/KVYWtmNPGDOt9CIrTnOL7LPT4M=
@@ -9,7 +9,7 @@ SHA256 (go_modules/golang.org/x/sys/@v/v0.24.0.mod) = 0iezJfYh9OvijTm6dz6pm4cPOT
 SHA256 (go_modules/golang.org/x/sys/@v/v0.24.0.zip) = +8g92wruI27oXA+ClOfJtvedKHlNIufQlX/NZMolKWA=
 SHA256 (go_modules/golang.org/x/term/@v/v0.23.0.mod) = 1Ez+w2i/FF63F0uUMH278T2c6IHwPeeXw6v1cx+6Hro=
 SHA256 (go_modules/golang.org/x/term/@v/v0.23.0.zip) = JZemK0h7lSwRyJsgAVUa8f4dKcSEOI7Bw/Xjvn/1i6U=
-SIZE (boringssl-20240829-ee79a930.tar.gz) = 45239350
+SIZE (boringssl-20240912-e724ef02.tar.gz) = 45244782
 SIZE (go_modules/filippo.io/mlkem768/@v/v0.0.0-20240821141156-859a9b3f2ff6.mod) = 121
 SIZE (go_modules/filippo.io/mlkem768/@v/v0.0.0-20240821141156-859a9b3f2ff6.zip) = 21003
 SIZE (go_modules/golang.org/x/crypto/@v/v0.26.0.mod) = 190
