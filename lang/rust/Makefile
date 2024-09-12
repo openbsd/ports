@@ -17,6 +17,10 @@ COMMENT-src =		Rust source component
 
 V =			1.81.0
 DISTNAME =		rustc-${V}-src
+REVISION-gdb =		0
+REVISION-clippy =	0
+REVISION-rustfmt =	0
+REVISION-src =		0
 
 # rustc bootstrap version
 BV-aarch64 =		1.80.1
@@ -155,15 +159,15 @@ LIB_DEPENDS-main +=	${LIB_DEPENDS} \
 			net/curl \
 			security/libssh2
 
-RUN_DEPENDS-gdb +=	lang/rust,-main \
+RUN_DEPENDS-gdb +=	${FULLPKGNAME-main}:${FULLPKGPATH-main} \
 			devel/gdb
 # BUILD_LLDB is defined by /usr/share/mk/bsd.own.mk
 .if ${BUILD_LLDB:L} == yes
 RUN_DEPENDS-gdb +=	devel/llvm/17,-lldb
 .endif
-RUN_DEPENDS-clippy +=	lang/rust,-main
-RUN_DEPENDS-rustfmt +=	lang/rust,-main
-RUN_DEPENDS-src +=	lang/rust,-main
+RUN_DEPENDS-clippy +=	${FULLPKGNAME-main}:${FULLPKGPATH-main}
+RUN_DEPENDS-rustfmt +=	${FULLPKGNAME-main}:${FULLPKGPATH-main}
+RUN_DEPENDS-src +=	${FULLPKGNAME-main}:${FULLPKGPATH-main}
 
 PKG_ARCH-src =		*
 
