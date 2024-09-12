@@ -1,7 +1,6 @@
 COMMENT =	symbolic calculations for Perl
-DISTNAME =	Math-Symbolic-0.612
+DISTNAME =	Math-Symbolic-0.613
 CATEGORIES =	math
-REVISION =	0
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
