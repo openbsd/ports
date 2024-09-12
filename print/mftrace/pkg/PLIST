@@ -1,9 +1,0 @@
-@pkgpath fonts/mftrace
-@bin bin/gf2pbm
-bin/mftrace
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}afm.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}tfm.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/afm.py
-lib/python${MODPY_VERSION}/site-packages/tfm.py
-@man man/man1/mftrace.1
