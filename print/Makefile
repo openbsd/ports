@@ -41,7 +41,6 @@
      SUBDIR += lss
      SUBDIR += luametatex
      SUBDIR += lyx
-     SUBDIR += mftrace
      SUBDIR += mpage
      SUBDIR += muttprint
      SUBDIR += ocrmypdf
