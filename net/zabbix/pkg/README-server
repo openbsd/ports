@@ -47,7 +47,7 @@ Connect to MariaDB, and create a user and database for Zabbix;
 
     $ mysql -u root -p
     MariaDB [(none)]> create user zabbix@localhost identified by 'password';
-    MariaDB [(none)]> create database zabbix character set utf8;
+    MariaDB [(none)]> create database zabbix character set utf8mb4 collate utf8mb4_bin;
     MariaDB [(none)]> grant all privileges on zabbix.* to zabbix@localhost;
     MariaDB [(none)]> quit
 
