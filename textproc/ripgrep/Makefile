@@ -2,8 +2,7 @@ COMMENT =		line oriented search tool using Rust's regex library
 
 GH_ACCOUNT =		BurntSushi
 GH_PROJECT =		ripgrep
-GH_TAGNAME =		14.1.0
-REVISION =		2
+GH_TAGNAME =		14.1.1
 
 CATEGORIES =		textproc sysutils
 
@@ -23,7 +22,7 @@ MODCARGO_RUSTFLAGS =	-C debuginfo=0
 
 RELEASE_DIR =		${MODCARGO_TARGET_DIR}/release
 
-# generate manpage ans shell completions
+# generate manpage and shell completions
 # fish completion excluded as it is shipped with shells/fish
 post-build:
 	${RELEASE_DIR}/rg --generate man > ${WRKBUILD}/rg.1
