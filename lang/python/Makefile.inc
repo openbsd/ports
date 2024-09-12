@@ -114,15 +114,16 @@ AUTOCONF_VERSION =	2.69
 
 CONFIGURE_STYLE =	autoconf
 CONFIGURE_ARGS +=	--enable-shared
+CONFIGURE_ARGS +=	--enable-ipv6 \
+			--with-system-expat \
+			--with-system-ffi
+
+.if ${VERSION} == "2.7"
 CONFIGURE_ARGS +=	--with-fpectl \
 			--with-threads \
-			--enable-ipv6 \
-			--with-system-expat \
-			--with-system-ffi \
 			--with-tcltk-includes='-I${MODTCL_INCDIR} -I${MODTK_INCDIR} -I${X11BASE}/include' \
 			--with-tcltk-libs='-L${X11BASE}/lib -l${MODTCL_LIB} -l${MODTK_LIB}'
-
-.if ${VERSION} != "2.7"
+.else
 CONFIGURE_ARGS +=	--enable-loadable-sqlite-extensions
 .  if ${PROPERTIES:Mlld}
 CONFIGURE_ARGS +=	--with-lto
