@@ -11,7 +11,6 @@
      SUBDIR += mate
      SUBDIR += msp430
      SUBDIR += mupen64plus
-     SUBDIR += python3
      SUBDIR += qt5
      SUBDIR += qt6
      SUBDIR += tor-browser

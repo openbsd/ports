@@ -1,7 +1,7 @@
 @option no-default-conflict
 @option is-branch
 @conflict python-${VERSION_SPEC}
-@conflict python->=3,<3.11.9p0
+@conflict python->=3,<3.11.10p0
 @pkgpath lang/python/3.2,-main
 @pkgpath lang/python/3.3,-main
 @pkgpath lang/python/3.4,-main
@@ -12,6 +12,7 @@
 @pkgpath lang/python/3.9,-main
 @pkgpath lang/python/3.10,-main
 @pkgpath lang/python/3.11,-main
+@pkgpath meta/python3
 bin/2to3
 bin/2to3-3.11
 @comment bin/pip3
