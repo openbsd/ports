@@ -13,6 +13,7 @@ share/unicode/ucd/CompositionExclusions.txt
 share/unicode/ucd/DerivedAge.txt
 share/unicode/ucd/DerivedCoreProperties.txt
 share/unicode/ucd/DerivedNormalizationProps.txt
+share/unicode/ucd/DoNotEmit.txt
 share/unicode/ucd/EastAsianWidth.txt
 share/unicode/ucd/EmojiSources.txt
 share/unicode/ucd/EquivalentUnifiedIdeograph.txt
@@ -52,6 +53,7 @@ share/unicode/ucd/Unihan_OtherMappings.txt
 share/unicode/ucd/Unihan_RadicalStrokeCounts.txt
 share/unicode/ucd/Unihan_Readings.txt
 share/unicode/ucd/Unihan_Variants.txt
+share/unicode/ucd/Unikemet.txt
 share/unicode/ucd/VerticalOrientation.txt
 share/unicode/ucd/auxiliary/
 share/unicode/ucd/auxiliary/GraphemeBreakProperty.txt
