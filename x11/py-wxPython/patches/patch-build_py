@@ -1,7 +1,7 @@
 Index: build.py
 --- build.py.orig
 +++ build.py
-@@ -975,7 +975,7 @@ def _doDox(arg):
+@@ -989,7 +989,7 @@ def _doDox(arg):
          os.environ['DOXYGEN'] = doxCmd
          os.environ['WX_SKIP_DOXYGEN_VERSION_CHECK'] = '1'
          pwd = pushDir(posixjoin(wxDir(), 'docs/doxygen'))
