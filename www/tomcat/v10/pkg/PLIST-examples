@@ -1754,6 +1754,7 @@ webapps/docs/api/org/apache/tomcat/util/http/
 webapps/docs/api/org/apache/tomcat/util/http/ConcurrentDateFormat.html
 webapps/docs/api/org/apache/tomcat/util/http/CookieProcessor.html
 webapps/docs/api/org/apache/tomcat/util/http/CookieProcessorBase.html
+webapps/docs/api/org/apache/tomcat/util/http/CookiesWithoutEquals.html
 webapps/docs/api/org/apache/tomcat/util/http/FastHttpDateFormat.html
 webapps/docs/api/org/apache/tomcat/util/http/HeaderUtil.html
 webapps/docs/api/org/apache/tomcat/util/http/MimeHeaders.html
@@ -2161,7 +2162,9 @@ webapps/docs/architecture/requestProcess/request-process.png
 webapps/docs/architecture/startup/
 webapps/docs/architecture/startup.html
 webapps/docs/architecture/startup/1_overview.png
-webapps/docs/architecture/startup/1_overview.vpd
+webapps/docs/architecture/startup/1_overview.uml
+webapps/docs/architecture/startup/2_catalina_init.png
+webapps/docs/architecture/startup/2_catalina_init.uml
 webapps/docs/architecture/startup/serverStartup.pdf
 webapps/docs/architecture/startup/serverStartup.txt
 webapps/docs/balancer-howto.html
