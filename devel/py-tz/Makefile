@@ -1,10 +1,9 @@
 COMMENT=	Python API for dealing with timezones
 
-MODPY_EGG_VERSION=	2024.1
+MODPY_EGG_VERSION=	2024.2
 DISTNAME=	pytz-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:S/^py/py-/}
 CATEGORIES=	devel
-REVISION=	0
 
 HOMEPAGE=	https://pythonhosted.org/pytz/
 
