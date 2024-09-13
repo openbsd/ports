@@ -1,1 +1,21 @@
 @bin bin/sccache
+share/doc/sccache/
+share/doc/sccache/Architecture.md
+share/doc/sccache/Azure.md
+share/doc/sccache/Caching.md
+share/doc/sccache/Configuration.md
+share/doc/sccache/Distributed.md
+share/doc/sccache/DistributedFreeBSD.md
+share/doc/sccache/DistributedQuickstart.md
+share/doc/sccache/GHA.md
+share/doc/sccache/Gcs.md
+share/doc/sccache/Jenkins.md
+share/doc/sccache/Local.md
+share/doc/sccache/Memcached.md
+share/doc/sccache/OSS.md
+share/doc/sccache/Redis.md
+share/doc/sccache/Releasing.md
+share/doc/sccache/ResponseFiles.md
+share/doc/sccache/Rust.md
+share/doc/sccache/S3.md
+share/doc/sccache/Webdav.md
