@@ -160,6 +160,11 @@ share/doc/libshumate-1.0/go-up-symbolic.png
 share/doc/libshumate-1.0/iface.Location.html
 share/doc/libshumate-1.0/index.html
 share/doc/libshumate-1.0/index.json
+share/doc/libshumate-1.0/inspector-collision.png
+share/doc/libshumate-1.0/inspector-overlay.png
+share/doc/libshumate-1.0/inspector-tile-bounds.png
+share/doc/libshumate-1.0/inspector.html
+share/doc/libshumate-1.0/inspector.png
 share/doc/libshumate-1.0/libshumate-1.0.devhelp2
 share/doc/libshumate-1.0/libshumate-r.svg
 share/doc/libshumate-1.0/main.js
