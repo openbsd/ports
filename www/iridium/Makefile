@@ -10,7 +10,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Iridium browser
 
-V=			2024.08.128.2
+V=			2024.08.128.3
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
