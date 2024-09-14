@@ -1,7 +1,7 @@
 COMMENT=	RPKI-To-Router implementation in Go
 
 MODGO_MODNAME=	github.com/bgp/stayrtr
-MODGO_VERSION=	v0.5.1
+MODGO_VERSION=	v0.6.1
 EPOCH=		0
 
 DISTNAME=	stayrtr-${MODGO_VERSION}
