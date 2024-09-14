@@ -1,7 +1,7 @@
 COMMENT =	screen locker for Wayland
 
-DISTNAME =	swaylock-1.7.2
-SITES =		https://github.com/swaywm/swaylock/releases/download/v1.7.2/
+DISTNAME =	swaylock-1.8.0
+SITES =		https://github.com/swaywm/swaylock/releases/download/v1.8.0/
 
 CATEGORIES =	wayland
 

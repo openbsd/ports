@@ -1,9 +1,9 @@
 Index: render.c
 --- render.c.orig
 +++ render.c
-@@ -5,7 +5,9 @@
- #include "background-image.h"
+@@ -6,7 +6,9 @@
  #include "swaylock.h"
+ #include "log.h"
  
 +#ifndef M_PI
  #define M_PI 3.14159265358979323846

@@ -21,7 +21,7 @@ Index: meson.build
  
  git = find_program('git', required: false)
  scdoc = find_program('scdoc', required: get_option('man-pages'))
-@@ -91,7 +92,6 @@ dependencies = [
+@@ -88,7 +89,6 @@ dependencies = [
  	cairo,
  	gdk_pixbuf,
  	math,
@@ -29,7 +29,7 @@ Index: meson.build
  	xkbcommon,
  	wayland_client,
  ]
-@@ -113,12 +113,16 @@ sources = [
+@@ -110,12 +110,16 @@ sources = [
  
  if libpam.found()
  	sources += ['pam.c']
@@ -48,20 +48,3 @@ Index: meson.build
  endif
  
  swaylock_inc = include_directories('include')
-@@ -130,10 +134,12 @@ executable('swaylock',
- 	install: true
- )
- 
--install_data(
--	'pam/swaylock',
--	install_dir: get_option('sysconfdir') / 'pam.d'
--)
-+if libpam.found()
-+	install_data(
-+		'pam/swaylock',
-+		install_dir: get_option('sysconfdir') / 'pam.d'
-+	)
-+endif
- 
- if scdoc.found()
- 	mandir = get_option('mandir')

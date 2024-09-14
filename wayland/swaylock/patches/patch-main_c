@@ -11,7 +11,7 @@ Index: main.c
  #include "background-image.h"
  #include "cairo.h"
  #include "comm.h"
-@@ -410,23 +409,6 @@ static cairo_surface_t *select_image(struct swaylock_s
+@@ -358,23 +357,6 @@ static cairo_surface_t *select_image(struct swaylock_s
  	return default_image;
  }
  
@@ -35,7 +35,7 @@ Index: main.c
  static void load_image(char *arg, struct swaylock_state *state) {
  	// [[<output>]:]<path>
  	struct swaylock_image *image = calloc(1, sizeof(struct swaylock_image));
-@@ -460,21 +442,12 @@ static void load_image(char *arg, struct swaylock_stat
+@@ -408,21 +390,12 @@ static void load_image(char *arg, struct swaylock_stat
  		}
  	}
  
@@ -57,7 +57,7 @@ Index: main.c
  
  	// Load the actual image
  	image->cairo_surface = load_background_image(image->path);
-@@ -1036,32 +1009,57 @@ static bool file_exists(const char *path) {
+@@ -992,32 +965,57 @@ static bool file_exists(const char *path) {
  	return path && access(path, R_OK) != -1;
  }
  
