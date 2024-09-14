@@ -2,11 +2,11 @@ COMMENT =		tool to build and unpack littlefs images
 
 GH_ACCOUNT =		earlephilhower
 GH_PROJECT =		mklittlefs
-GH_TAGNAME =		4.0.0
+GH_TAGNAME =		4.0.1
 
 CATEGORIES =		devel
 
-LFS_V =			1863dc7883d82bd6ca79faa164b65341064d1c16
+LFS_V =			d01280e64934a09ba16cac60cf9d3a37e228bb66
 SITES.e =		https://github.com/littlefs-project/littlefs/archive/
 
 DISTFILES =		${GH_PROJECT}-${GH_TAGNAME}${EXTRACT_SUFX}

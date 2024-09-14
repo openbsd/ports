@@ -1,6 +1,7 @@
---- Makefile.orig.port	Mon Jun  3 21:21:31 2024
-+++ Makefile	Fri Jul 26 10:36:22 2024
-@@ -22,6 +22,9 @@
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -22,6 +22,9 @@ else
  	ifeq ($(UNAME_S),FreeBSD)
  		TARGET_OS := freebsd
  	endif
@@ -10,7 +11,7 @@
  endif
  endif # TARGET_OS
  
-@@ -48,7 +51,6 @@
+@@ -48,7 +51,6 @@ endif
  
  STRIP ?= strip
  
@@ -18,7 +19,7 @@
  LITTLEFS_VERSION := $(shell git -C littlefs describe --tags || echo "unknown")
  BUILD_CONFIG_NAME ?= -generic
  
-@@ -75,8 +77,8 @@
+@@ -75,8 +77,8 @@ override CPPFLAGS := \
  	-D LFS_NAME_MAX=255 \
  	$(CPPFLAGS)
  
