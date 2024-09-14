@@ -1,11 +1,12 @@
+PORTROACH=	limitw:1,even
+
 COMMENT=	WPE Backend for Wayland
 
-DISTNAME=	wpebackend-fdo-1.14.2
-REVISION=	0
+DISTNAME=	wpebackend-fdo-1.14.3
 
 CATEGORIES=	www wayland
 
-SHARED_LIBS +=	WPEBackend-fdo-1.0	0.0 # 0.0
+SHARED_LIBS += WPEBackend-fdo-1.0        0.0 # 1.9.5
 
 HOMEPAGE=	https://wpewebkit.org/
 
