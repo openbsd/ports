@@ -1,6 +1,6 @@
 COMMENT=		VirtualBox client with remote management
 
-DISTNAME=		RemoteBox-3.2
+DISTNAME=		RemoteBox-3.3
 PKGNAME=		${DISTNAME:L}
 EXTRACT_SUFX=		.tar.bz2
 
