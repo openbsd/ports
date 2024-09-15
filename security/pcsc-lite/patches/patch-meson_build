@@ -3,6 +3,7 @@
   done for libusb.
 - Omit setup_spy.sh
 - Ignore Doxygen
+- readd -pthread to .pc file to unbreak consumer builds (pcsc-tools, rdesktop)
 
 Index: meson.build
 --- meson.build.orig
