@@ -9,6 +9,7 @@ lib/aisleriot/guile/3.0/aisleriot/api.go
 lib/aisleriot/guile/3.0/athena.go
 lib/aisleriot/guile/3.0/auld-lang-syne.go
 lib/aisleriot/guile/3.0/aunt-mary.go
+lib/aisleriot/guile/3.0/australian-patience.go
 lib/aisleriot/guile/3.0/backbone.go
 lib/aisleriot/guile/3.0/bakers-dozen.go
 lib/aisleriot/guile/3.0/bakers-game.go
@@ -118,6 +119,7 @@ share/aisleriot/cards/neoclassical_4_color.svgz
 share/aisleriot/cards/ornamental.svgz
 share/aisleriot/cards/paris.svgz
 share/aisleriot/cards/pixelangelo.svgz
+share/aisleriot/cards/pixelangelo_compact.svgz
 share/aisleriot/cards/plastic.svgz
 share/aisleriot/cards/simplistic.svgz
 share/aisleriot/cards/swiss-XVII.svgz
@@ -161,6 +163,7 @@ share/help/C/aisleriot/agnes.xml
 share/help/C/aisleriot/athena.xml
 share/help/C/aisleriot/auld_lang_syne.xml
 share/help/C/aisleriot/aunt_mary.xml
+share/help/C/aisleriot/australian_patience.xml
 share/help/C/aisleriot/backbone.xml
 share/help/C/aisleriot/bakers_dozen.xml
 share/help/C/aisleriot/bakers_game.xml
@@ -259,6 +262,7 @@ share/help/ca/aisleriot/agnes.xml
 share/help/ca/aisleriot/athena.xml
 share/help/ca/aisleriot/auld_lang_syne.xml
 share/help/ca/aisleriot/aunt_mary.xml
+share/help/ca/aisleriot/australian_patience.xml
 share/help/ca/aisleriot/backbone.xml
 share/help/ca/aisleriot/bakers_dozen.xml
 share/help/ca/aisleriot/bakers_game.xml
@@ -357,6 +361,7 @@ share/help/cs/aisleriot/agnes.xml
 share/help/cs/aisleriot/athena.xml
 share/help/cs/aisleriot/auld_lang_syne.xml
 share/help/cs/aisleriot/aunt_mary.xml
+share/help/cs/aisleriot/australian_patience.xml
 share/help/cs/aisleriot/backbone.xml
 share/help/cs/aisleriot/bakers_dozen.xml
 share/help/cs/aisleriot/bakers_game.xml
@@ -455,6 +460,7 @@ share/help/de/aisleriot/agnes.xml
 share/help/de/aisleriot/athena.xml
 share/help/de/aisleriot/auld_lang_syne.xml
 share/help/de/aisleriot/aunt_mary.xml
+share/help/de/aisleriot/australian_patience.xml
 share/help/de/aisleriot/backbone.xml
 share/help/de/aisleriot/bakers_dozen.xml
 share/help/de/aisleriot/bakers_game.xml
@@ -553,6 +559,7 @@ share/help/el/aisleriot/agnes.xml
 share/help/el/aisleriot/athena.xml
 share/help/el/aisleriot/auld_lang_syne.xml
 share/help/el/aisleriot/aunt_mary.xml
+share/help/el/aisleriot/australian_patience.xml
 share/help/el/aisleriot/backbone.xml
 share/help/el/aisleriot/bakers_dozen.xml
 share/help/el/aisleriot/bakers_game.xml
@@ -651,6 +658,7 @@ share/help/en_GB/aisleriot/agnes.xml
 share/help/en_GB/aisleriot/athena.xml
 share/help/en_GB/aisleriot/auld_lang_syne.xml
 share/help/en_GB/aisleriot/aunt_mary.xml
+share/help/en_GB/aisleriot/australian_patience.xml
 share/help/en_GB/aisleriot/backbone.xml
 share/help/en_GB/aisleriot/bakers_dozen.xml
 share/help/en_GB/aisleriot/bakers_game.xml
@@ -749,6 +757,7 @@ share/help/es/aisleriot/agnes.xml
 share/help/es/aisleriot/athena.xml
 share/help/es/aisleriot/auld_lang_syne.xml
 share/help/es/aisleriot/aunt_mary.xml
+share/help/es/aisleriot/australian_patience.xml
 share/help/es/aisleriot/backbone.xml
 share/help/es/aisleriot/bakers_dozen.xml
 share/help/es/aisleriot/bakers_game.xml
@@ -847,6 +856,7 @@ share/help/eu/aisleriot/agnes.xml
 share/help/eu/aisleriot/athena.xml
 share/help/eu/aisleriot/auld_lang_syne.xml
 share/help/eu/aisleriot/aunt_mary.xml
+share/help/eu/aisleriot/australian_patience.xml
 share/help/eu/aisleriot/backbone.xml
 share/help/eu/aisleriot/bakers_dozen.xml
 share/help/eu/aisleriot/bakers_game.xml
@@ -945,6 +955,7 @@ share/help/fr/aisleriot/agnes.xml
 share/help/fr/aisleriot/athena.xml
 share/help/fr/aisleriot/auld_lang_syne.xml
 share/help/fr/aisleriot/aunt_mary.xml
+share/help/fr/aisleriot/australian_patience.xml
 share/help/fr/aisleriot/backbone.xml
 share/help/fr/aisleriot/bakers_dozen.xml
 share/help/fr/aisleriot/bakers_game.xml
@@ -1043,6 +1054,7 @@ share/help/gl/aisleriot/agnes.xml
 share/help/gl/aisleriot/athena.xml
 share/help/gl/aisleriot/auld_lang_syne.xml
 share/help/gl/aisleriot/aunt_mary.xml
+share/help/gl/aisleriot/australian_patience.xml
 share/help/gl/aisleriot/backbone.xml
 share/help/gl/aisleriot/bakers_dozen.xml
 share/help/gl/aisleriot/bakers_game.xml
@@ -1141,6 +1153,7 @@ share/help/hu/aisleriot/agnes.xml
 share/help/hu/aisleriot/athena.xml
 share/help/hu/aisleriot/auld_lang_syne.xml
 share/help/hu/aisleriot/aunt_mary.xml
+share/help/hu/aisleriot/australian_patience.xml
 share/help/hu/aisleriot/backbone.xml
 share/help/hu/aisleriot/bakers_dozen.xml
 share/help/hu/aisleriot/bakers_game.xml
@@ -1239,6 +1252,7 @@ share/help/id/aisleriot/agnes.xml
 share/help/id/aisleriot/athena.xml
 share/help/id/aisleriot/auld_lang_syne.xml
 share/help/id/aisleriot/aunt_mary.xml
+share/help/id/aisleriot/australian_patience.xml
 share/help/id/aisleriot/backbone.xml
 share/help/id/aisleriot/bakers_dozen.xml
 share/help/id/aisleriot/bakers_game.xml
@@ -1337,6 +1351,7 @@ share/help/oc/aisleriot/agnes.xml
 share/help/oc/aisleriot/athena.xml
 share/help/oc/aisleriot/auld_lang_syne.xml
 share/help/oc/aisleriot/aunt_mary.xml
+share/help/oc/aisleriot/australian_patience.xml
 share/help/oc/aisleriot/backbone.xml
 share/help/oc/aisleriot/bakers_dozen.xml
 share/help/oc/aisleriot/bakers_game.xml
@@ -1435,6 +1450,7 @@ share/help/pt_BR/aisleriot/agnes.xml
 share/help/pt_BR/aisleriot/athena.xml
 share/help/pt_BR/aisleriot/auld_lang_syne.xml
 share/help/pt_BR/aisleriot/aunt_mary.xml
+share/help/pt_BR/aisleriot/australian_patience.xml
 share/help/pt_BR/aisleriot/backbone.xml
 share/help/pt_BR/aisleriot/bakers_dozen.xml
 share/help/pt_BR/aisleriot/bakers_game.xml
@@ -1533,6 +1549,7 @@ share/help/ru/aisleriot/agnes.xml
 share/help/ru/aisleriot/athena.xml
 share/help/ru/aisleriot/auld_lang_syne.xml
 share/help/ru/aisleriot/aunt_mary.xml
+share/help/ru/aisleriot/australian_patience.xml
 share/help/ru/aisleriot/backbone.xml
 share/help/ru/aisleriot/bakers_dozen.xml
 share/help/ru/aisleriot/bakers_game.xml
@@ -1631,6 +1648,7 @@ share/help/sl/aisleriot/agnes.xml
 share/help/sl/aisleriot/athena.xml
 share/help/sl/aisleriot/auld_lang_syne.xml
 share/help/sl/aisleriot/aunt_mary.xml
+share/help/sl/aisleriot/australian_patience.xml
 share/help/sl/aisleriot/backbone.xml
 share/help/sl/aisleriot/bakers_dozen.xml
 share/help/sl/aisleriot/bakers_game.xml
@@ -1729,6 +1747,7 @@ share/help/sr/aisleriot/agnes.xml
 share/help/sr/aisleriot/athena.xml
 share/help/sr/aisleriot/auld_lang_syne.xml
 share/help/sr/aisleriot/aunt_mary.xml
+share/help/sr/aisleriot/australian_patience.xml
 share/help/sr/aisleriot/backbone.xml
 share/help/sr/aisleriot/bakers_dozen.xml
 share/help/sr/aisleriot/bakers_game.xml
@@ -1827,6 +1846,7 @@ share/help/sr@latin/aisleriot/agnes.xml
 share/help/sr@latin/aisleriot/athena.xml
 share/help/sr@latin/aisleriot/auld_lang_syne.xml
 share/help/sr@latin/aisleriot/aunt_mary.xml
+share/help/sr@latin/aisleriot/australian_patience.xml
 share/help/sr@latin/aisleriot/backbone.xml
 share/help/sr@latin/aisleriot/bakers_dozen.xml
 share/help/sr@latin/aisleriot/bakers_game.xml
@@ -1925,6 +1945,7 @@ share/help/sv/aisleriot/agnes.xml
 share/help/sv/aisleriot/athena.xml
 share/help/sv/aisleriot/auld_lang_syne.xml
 share/help/sv/aisleriot/aunt_mary.xml
+share/help/sv/aisleriot/australian_patience.xml
 share/help/sv/aisleriot/backbone.xml
 share/help/sv/aisleriot/bakers_dozen.xml
 share/help/sv/aisleriot/bakers_game.xml
@@ -2023,6 +2044,7 @@ share/help/uk/aisleriot/agnes.xml
 share/help/uk/aisleriot/athena.xml
 share/help/uk/aisleriot/auld_lang_syne.xml
 share/help/uk/aisleriot/aunt_mary.xml
+share/help/uk/aisleriot/australian_patience.xml
 share/help/uk/aisleriot/backbone.xml
 share/help/uk/aisleriot/bakers_dozen.xml
 share/help/uk/aisleriot/bakers_game.xml
@@ -2121,6 +2143,7 @@ share/help/zh_CN/aisleriot/agnes.xml
 share/help/zh_CN/aisleriot/athena.xml
 share/help/zh_CN/aisleriot/auld_lang_syne.xml
 share/help/zh_CN/aisleriot/aunt_mary.xml
+share/help/zh_CN/aisleriot/australian_patience.xml
 share/help/zh_CN/aisleriot/backbone.xml
 share/help/zh_CN/aisleriot/bakers_dozen.xml
 share/help/zh_CN/aisleriot/bakers_game.xml
