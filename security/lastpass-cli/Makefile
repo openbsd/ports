@@ -1,6 +1,6 @@
 COMMENT =	LastPass command line interface tool
 
-V =		1.5.0
+V =		1.6.0
 DISTNAME =	lastpass-cli-${V}
 
 CATEGORIES =	security
