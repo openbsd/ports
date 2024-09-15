@@ -1,6 +1,6 @@
 COMMENT =	program for statistical analysis of sampled data
 DISTNAME =	pspp-1.4.1
-REVISION =	5
+REVISION =	6
 CATEGORIES =	math x11
 
 HOMEPAGE =	https://www.gnu.org/software/pspp/
@@ -30,7 +30,6 @@ MODULES =	lang/python
 MODPY_RUNDEP =	No
 
 BUILD_DEPENDS =	devel/gettext,-tools \
-		devel/libstdthreads \
 		print/texinfo
 
 LIB_DEPENDS =	databases/postgresql \

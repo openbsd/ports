@@ -1,0 +1,3 @@
+# $OpenBSD: config.no-stdthreads,v 1.1 2024/09/15 18:15:17 jca Exp $
+# included unless devel/libstdthreads
+ac_cv_header_threads_h=${ac_cv_header_threads_h=no}
