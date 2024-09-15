@@ -1,9 +1,7 @@
 COMMENT=		plugins for Gedit
 
 GNOME_PROJECT=		gedit-plugins
-GNOME_VERSION=		47.1.1
-DIST_TUPLE=		gnome World/gedit gedit-plugins 8657cd13dbfd59e0fe8dd6a22a2ccc39ce0960a8 .
-EXTRACT_SUFX=		.tar.gz
+GNOME_VERSION=		48.0
 
 WANTLIB += gedit-gtksourceview-300 gedit-tepl-6 gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 gtk-3 peas-1.0 peas-gtk-1.0
