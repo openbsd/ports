@@ -58,7 +58,7 @@ COMPILER=	base-clang ports-gcc
 
 UPDATE_PLIST_ARGS+= -i MAJ_V
 ERLANG_V= 	erlang${MAJ_V}
-SUBST_VARS+=	ERLANG_V MAJ_V
+SUBST_VARS+=	ERLANG_V MAJ_V V
 
 # Needed to run tests
 PORTHOME =	${WRKDIST}
