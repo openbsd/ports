@@ -164,7 +164,7 @@ SHA256 (cargo/unicode-bidi-0.3.14.tar.gz) = byUo8nqesrIeaclTGbML0O/YXQnDeXQbD3jq
 SHA256 (cargo/unicode-ident-1.0.12.tar.gz) = M1S5rD+uH/Z1XLbbU2g622YWNPZ1V5Qt6k+s6+wP7ks=
 SHA256 (cargo/unicode-normalization-0.1.22.tar.gz) = XFcT8PxLXbZooqxjzbe7RGnYyf7QR7HQKSzHsM4rqSE=
 SHA256 (cargo/unicode-segmentation-1.10.1.tar.gz) = HdYkCYVniVEYiGYJQxp8O49RbkHTDgZD8D2UWSoUfjY=
-SHA256 (cargo/unicode-width-0.1.11.tar.gz) = 5Rcz8RycT3KqDBYACCRoWeNAsAgHVpoNoOehB5snuoU=
+SHA256 (cargo/unicode-width-0.1.12.tar.gz) = aPXl8xWOz9S4/2/ghtt8hGei39rJf+Qg8rfEqpevZtY=
 SHA256 (cargo/unsafe-libyaml-0.2.10.tar.gz) = q0yQkwuVqC0A3J6awHG0mRkkOQ1Gy9Df5WYUhmdgXks=
 SHA256 (cargo/url-2.5.0.tar.gz) = MeYwLju3U9Rug1FsrlWuGW/AwwlAfPEas1zFGkwqRjM=
 SHA256 (cargo/utf8parse-0.2.1.tar.gz) = cRuWIK8ZHgzcdGio0U5wnD3NsRWzb4OOYBWDr4AKNwo=
@@ -212,7 +212,7 @@ SHA256 (cargo/windows_x86_64_msvc-0.52.0.tar.gz) = 3/lkHRzUvo0aBw2vnjdzxfZ+eLTZ1
 SHA256 (cargo/winnow-0.5.40.tar.gz) = 9ZOpU5hzeu7VPkiceF3xPzYY5B281nGMat2/E5WqaHY=
 SHA256 (cargo/xdg-2.5.2.tar.gz) = ITtzJDNrU9JBSy24U35WVE2YGAMTkVWvqE927uu3pUY=
 SHA256 (cargo/yaml-rust-0.4.5.tar.gz) = VsGTbEzHocmrIaHrtgLrlCuoaMvUSpnLfNxYkjNeHIU=
-SHA256 (delta-0.18.1.tar.gz) = 71WODuTJoQBG8vji5ZzxvtuxjChxMGt3LT2bjjskK5w=
+SHA256 (delta-0.18.2.tar.gz) = ZHF8OzM1tEolK46ZcT4IDL95RDCLliUrwXUxexAATwI=
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/aho-corasick-1.1.2.tar.gz) = 183136
 SIZE (cargo/android-tzdata-0.1.1.tar.gz) = 7674
@@ -379,7 +379,7 @@ SIZE (cargo/unicode-bidi-0.3.14.tar.gz) = 56429
 SIZE (cargo/unicode-ident-1.0.12.tar.gz) = 42168
 SIZE (cargo/unicode-normalization-0.1.22.tar.gz) = 122604
 SIZE (cargo/unicode-segmentation-1.10.1.tar.gz) = 98416
-SIZE (cargo/unicode-width-0.1.11.tar.gz) = 19187
+SIZE (cargo/unicode-width-0.1.12.tar.gz) = 24062
 SIZE (cargo/unsafe-libyaml-0.2.10.tar.gz) = 61964
 SIZE (cargo/url-2.5.0.tar.gz) = 78605
 SIZE (cargo/utf8parse-0.2.1.tar.gz) = 13435
@@ -427,4 +427,4 @@ SIZE (cargo/windows_x86_64_msvc-0.52.0.tar.gz) = 821600
 SIZE (cargo/winnow-0.5.40.tar.gz) = 159316
 SIZE (cargo/xdg-2.5.2.tar.gz) = 14394
 SIZE (cargo/yaml-rust-0.4.5.tar.gz) = 47783
-SIZE (delta-0.18.1.tar.gz) = 531491
+SIZE (delta-0.18.2.tar.gz) = 531261
