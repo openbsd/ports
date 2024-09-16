@@ -2,9 +2,8 @@ COMMENT =	fallbackable module loader
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Best-0.15
+DISTNAME =	Best-0.17
 CATEGORIES =	devel
-REVISION =	0
 
 MAINTAINER =	Benoit Lecocq <benoit@openbsd.org>
 
