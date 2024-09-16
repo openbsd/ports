@@ -1,0 +1,15 @@
+Revert e933cf831f32fd4cf763c64aa60e51dbf025ec94.
+See also https://todo.sr.ht/~rkta/w3m/59
+
+Index: file.c
+--- file.c.orig
++++ file.c
+@@ -2263,8 +2263,6 @@ loadGeneralFile(char *path, ParsedURL *volatile curren
+     }
+     else if (w3m_dump & DUMP_FRAME)
+ 	return NULL;
+-    else
+-	proc = NULL;
+ 
+     if (t_buf == NULL)
+ 	t_buf = newBuffer(INIT_BUFFER_WIDTH);
