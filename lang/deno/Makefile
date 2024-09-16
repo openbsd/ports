@@ -7,6 +7,7 @@ DPB_PROPERTIES =	parallel
 USE_WXNEEDED =		Yes
 
 VERSION =		1.45.5
+REVISION =		0
 HOMEPAGE =		https://deno.com/runtime
 
 DISTNAME =		deno-${VERSION}
@@ -39,18 +40,18 @@ MODCARGO_RUSTFLAGS +=	-L${LOCALBASE}/lib
 MAKE_ENV =		${MODCARGO_ENV}
 
 COMPILER =		base-clang
-WANTLIB +=		${MODCARGO_WANTLIB} ${COMPILER_LIBCXX} m execinfo ffi zstd
+WANTLIB +=		${MODCARGO_WANTLIB} ${COMPILER_LIBCXX} m execinfo ffi onig zstd
 
 BUILD_DEPENDS =		databases/sqlite3 \
 			devel/cmake \
 			devel/gmake \
 			devel/gn \
 			devel/ninja \
-			devel/protobuf-c \
-			textproc/oniguruma
+			devel/protobuf-c
 
 LIB_DEPENDS =		archivers/zstd \
-			devel/libffi
+			devel/libffi \
+			textproc/oniguruma
 
 .include "crates.inc"
 
