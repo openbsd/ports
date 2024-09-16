@@ -5,7 +5,7 @@ write failure: (40) Message too long." when SMP workers are used.
 Index: src/comm.cc
 --- src/comm.cc.orig
 +++ src/comm.cc
-@@ -1721,6 +1721,8 @@ comm_open_uds(int sock_type,
+@@ -1715,6 +1715,8 @@ comm_open_uds(int sock_type,
      // TODO: merge with comm_openex() when Ip::Address becomes NetAddress
  
      int new_socket;
@@ -14,7 +14,7 @@ Index: src/comm.cc
  
      /* Create socket for accepting new connections. */
      ++ statCounter.syscalls.sock.sockets;
-@@ -1751,6 +1753,20 @@ comm_open_uds(int sock_type,
+@@ -1745,6 +1747,20 @@ comm_open_uds(int sock_type,
              debugs(50, DBG_CRITICAL, MYNAME << "socket failure: " << xstrerr(xerrno));
          }
          return -1;

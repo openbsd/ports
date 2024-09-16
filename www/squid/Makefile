@@ -1,7 +1,7 @@
 COMMENT-main=	WWW and FTP proxy cache and accelerator
 COMMENT-ldap=	LDAP authentication/ACL support for Squid
 
-V=		6.10
+V=		6.11
 DISTNAME=	squid-$V
 EXTRACT_SUFX=	.tar.xz
 DPB_PROPERTIES=	parallel
@@ -79,6 +79,7 @@ CONFIGURE_ARGS+= --datadir="${PREFIX}/share/squid" \
 		--enable-forw-via-db \
 		--enable-http-violations \
 		--enable-icap-client \
+		--disable-ident-lookups \
 		--enable-ipv6 \
 		--enable-referer-log \
 		--enable-removal-policies="lru heap" \
