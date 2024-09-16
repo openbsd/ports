@@ -48,9 +48,9 @@ lib/pkgconfig/proj.pc
 @man man/man1/projsync.1
 share/doc/pkg-readmes/${PKGSTEM}
 share/doc/proj/
-share/doc/proj/AUTHORS
+share/doc/proj/AUTHORS.md
 share/doc/proj/COPYING
-share/doc/proj/NEWS
+share/doc/proj/NEWS.md
 share/proj/
 share/proj/BETA2007.gsb
 share/proj/CH
@@ -59,6 +59,7 @@ share/proj/GL27
 share/proj/ITRF2000
 share/proj/ITRF2008
 share/proj/ITRF2014
+share/proj/ITRF2020
 share/proj/MD
 share/proj/TN
 share/proj/WI
