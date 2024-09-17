@@ -14,6 +14,7 @@ MODGO_MODULES =	\
 	dmitri.shuralyov.com/gpu/mtl							 v0.0.0-20190408044501-666a987793e9 \
 	filippo.io/edwards25519								 v1.1.0 \
 	filippo.io/mkcert								 v1.4.4 \
+	fyne.io/systray									 v1.11.0 \
 	github.com/!abirdcfly/dupword							 v0.0.11 \
 	github.com/!alek!si/pointer							 v1.2.0 \
 	github.com/!antonboom/errname							 v0.1.9 \
@@ -25,7 +26,7 @@ MODGO_MODULES =	\
 	github.com/!azure/azure-sdk-for-go/sdk/resourcemanager/compute/armcompute/v5	 v5.4.0 \
 	github.com/!azure/azure-sdk-for-go/sdk/resourcemanager/network/armnetwork/v4	 v4.3.0 \
 	github.com/!azure/go-ansiterm							 v0.0.0-20230124172434-306776ec8161 \
-	github.com/!burnt!sushi/toml							 v1.3.2 \
+	github.com/!burnt!sushi/toml							 v1.4.1-0.20240526193622-a339e1f7089c \
 	github.com/!burnt!sushi/xgb							 v0.0.0-20160522181843-27f122750802 \
 	github.com/!code-!hex/go-generics-cache						 v1.3.1 \
 	github.com/!data!dog/zstd							 v1.4.5 \
@@ -188,6 +189,7 @@ MODGO_MODULES =	\
 	github.com/fatih/structtag							 v1.2.0 \
 	github.com/felixge/httpsnoop							 v1.0.4 \
 	github.com/firefart/nonamedreturns						 v1.0.4 \
+	github.com/fogleman/gg								 v1.3.0 \
 	github.com/frankban/quicktest							 v1.14.6 \
 	github.com/fsnotify/fsnotify							 v1.7.0 \
 	github.com/fxamacker/cbor/v2							 v2.6.0 \
@@ -250,6 +252,7 @@ MODGO_MODULES =	\
 	github.com/gojuno/minimock/v3							 v3.0.8 \
 	github.com/golang-jwt/jwt/v4							 v4.5.0 \
 	github.com/golang-jwt/jwt/v5							 v5.2.0 \
+	github.com/golang/freetype							 v0.0.0-20170609003504-e2365dfdc4a0 \
 	github.com/golang/glog								 v1.1.2 \
 	github.com/golang/groupcache							 v0.0.0-20210331224755-41bb18bfe9da \
 	github.com/golang/mock								 v1.7.0-rc.1 \
@@ -333,7 +336,7 @@ MODGO_MODULES =	\
 	github.com/hugelgupf/vmtest							 v0.0.0-20240102225328-693afabdd27f \
 	github.com/iancoleman/orderedmap						 v0.0.0-20190318233801-ac98e3ecb4b0 \
 	github.com/ianlancetaylor/demangle						 v0.0.0-20240312041847-bd984b5ce465 \
-	github.com/illarion/gonotify							 v1.0.1 \
+	github.com/illarion/gonotify/v2							 v2.0.3 \
 	github.com/imdario/mergo							 v0.3.16 \
 	github.com/inconshreveable/mousetrap						 v1.1.0 \
 	github.com/inetaf/tcpproxy							 v0.0.0-20240214030015-3ce58045626c \
@@ -558,11 +561,11 @@ MODGO_MODULES =	\
 	github.com/tailscale/goupnp							 v1.0.1-0.20210804011211-c64d0f06ea05 \
 	github.com/tailscale/hujson							 v0.0.0-20221223112325-20486734a56a \
 	github.com/tailscale/mkctr							 v0.0.0-20240628074852-17ca944da6ba \
-	github.com/tailscale/netlink							 v1.1.1-0.20211101221916-cabfb018fe85 \
+	github.com/tailscale/netlink							 v1.1.1-0.20240822203006-4d49adab4de7 \
 	github.com/tailscale/peercred							 v0.0.0-20240214030740-b535050b2aa4 \
 	github.com/tailscale/web-client-prebuilt					 v0.0.0-20240226180453-5db17b287bf1 \
 	github.com/tailscale/wf								 v0.0.0-20240214030419-6fbb0a674ee6 \
-	github.com/tailscale/wireguard-go						 v0.0.0-20240731203015-71393c576b98 \
+	github.com/tailscale/wireguard-go						 v0.0.0-20240905161824-799c1978fafc \
 	github.com/tailscale/xnet							 v0.0.0-20240729143630-8497ac4dab2e \
 	github.com/tc-hib/winres							 v0.2.1 \
 	github.com/tcnksm/go-httpstat							 v0.2.0 \
@@ -683,7 +686,7 @@ MODGO_MODULES =	\
 	gopkg.in/yaml.v3								 v3.0.1 \
 	gotest.tools/v3									 v3.4.0 \
 	gvisor.dev/gvisor								 v0.0.0-20240722211153-64c016c92987 \
-	honnef.co/go/tools								 v0.4.6 \
+	honnef.co/go/tools								 v0.5.1 \
 	howett.net/plist								 v1.0.0 \
 	k8s.io/api									 v0.30.3 \
 	k8s.io/apiextensions-apiserver							 v0.30.3 \
@@ -1175,6 +1178,7 @@ MODGO_MODFILES =	\
 	golang.org/x/exp						 v0.0.0-20230127140709-cafedaf64729 \
 	golang.org/x/exp						 v0.0.0-20230224173230-c95f2b4c22f2 \
 	golang.org/x/exp						 v0.0.0-20230725093048-515e97ebf090 \
+	golang.org/x/exp						 v0.0.0-20231110203233-9a3e6036ecaa \
 	golang.org/x/exp						 v0.0.0-20231219180239-dc181d75b848 \
 	golang.org/x/exp/typeparams					 v0.0.0-20220218215828-6cf2b201936e \
 	golang.org/x/exp/typeparams					 v0.0.0-20220428152302-39d4317da171 \
@@ -1183,6 +1187,7 @@ MODGO_MODFILES =	\
 	golang.org/x/exp/typeparams					 v0.0.0-20230203172020-98cc5a0785f9 \
 	golang.org/x/exp/typeparams					 v0.0.0-20230213192124-5e25df0256eb \
 	golang.org/x/exp/typeparams					 v0.0.0-20230224173230-c95f2b4c22f2 \
+	golang.org/x/exp/typeparams					 v0.0.0-20231108232855-2478ac86f678 \
 	golang.org/x/image						 v0.0.0-20190227222117-0694c2d4d067 \
 	golang.org/x/image						 v0.0.0-20190802002840-cff245a6509b \
 	golang.org/x/image						 v0.12.0 \
@@ -1387,6 +1392,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys						 v0.17.0 \
 	golang.org/x/sys						 v0.18.0 \
 	golang.org/x/sys						 v0.2.0 \
+	golang.org/x/sys						 v0.20.0 \
 	golang.org/x/sys						 v0.21.0 \
 	golang.org/x/sys						 v0.3.0 \
 	golang.org/x/sys						 v0.4.0 \
@@ -1504,7 +1510,6 @@ MODGO_MODFILES =	\
 	golang.org/x/tools						 v0.1.8 \
 	golang.org/x/tools						 v0.1.9 \
 	golang.org/x/tools						 v0.11.0 \
-	golang.org/x/tools						 v0.12.1-0.20230825192346-2191a27a6dc5 \
 	golang.org/x/tools						 v0.13.0 \
 	golang.org/x/tools						 v0.16.1 \
 	golang.org/x/tools						 v0.17.0 \
@@ -1512,6 +1517,7 @@ MODGO_MODFILES =	\
 	golang.org/x/tools						 v0.19.0 \
 	golang.org/x/tools						 v0.2.0 \
 	golang.org/x/tools						 v0.21.1-0.20240508182429-e35e4ccd0d2d \
+	golang.org/x/tools						 v0.21.1-0.20240531212143-b6235391adb3 \
 	golang.org/x/tools						 v0.22.0 \
 	golang.org/x/tools						 v0.3.0 \
 	golang.org/x/tools						 v0.4.0 \

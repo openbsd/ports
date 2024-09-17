@@ -28,10 +28,12 @@
 @comment bin/stund
 @comment bin/stunstamp
 @comment bin/sync-containers
+@comment bin/systray
 @bin bin/tailscale
 @bin bin/tailscaled
 @comment bin/testcontrol
 @comment bin/testwrapper
+@comment bin/tl-longchain
 @comment bin/tsconnect
 @bin bin/tsidp
 @comment bin/tta
