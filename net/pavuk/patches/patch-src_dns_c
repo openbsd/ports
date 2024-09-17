@@ -1,3 +1,5 @@
+https://sources.debian.org/patches/pavuk/0.9.35-6.1/14-dns_ipv6.patch/
+
 Index: src/dns.c
 --- src/dns.c.orig
 +++ src/dns.c

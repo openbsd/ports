@@ -1,0 +1,14 @@
+https://sources.debian.org/patches/pavuk/0.9.35-6.1/18-fix-pointer-truncation.patch/
+
+Index: src/gtkmulticol.h
+--- src/gtkmulticol.h.orig
++++ src/gtkmulticol.h
+@@ -41,7 +41,7 @@ extern "C"
+     GtkBoxClass parent_class;
+   };
+ 
+-  guint gtk_multicol_get_type(void);
++  GtkType gtk_multicol_get_type(void);
+   GtkWidget *gtk_multicol_new(gint nrows);
+   void gtk_multicol_set_number_of_rows(GtkMultiCol * multicol, gint nrows);
+   void gtk_multicol_set_spacing(GtkMultiCol * multicol,

@@ -1,0 +1,13 @@
+https://sources.debian.org/patches/pavuk/0.9.35-6.1/13-prottable_declaration.patch/
+
+Index: src/url.h
+--- src/url.h.orig
++++ src/url.h
+@@ -227,6 +227,6 @@ extern int url_redirect_to(url *, url *, int);
+ extern void url_forget_filename(url *);
+ extern void url_set_filename(url *, char *);
+ 
+-extern const protinfo prottable[9];
++extern const protinfo prottable[8];
+ 
+ #endif

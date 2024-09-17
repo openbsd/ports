@@ -1,0 +1,17 @@
+https://sources.debian.org/patches/pavuk/0.9.35-6.1/18-fix-pointer-truncation.patch/
+
+Index: src/gtkmulticol.c
+--- src/gtkmulticol.c.orig
++++ src/gtkmulticol.c
+@@ -48,9 +48,9 @@ static void gtk_multicol_size_request(GtkWidget * widg
+ static void gtk_multicol_size_allocate(GtkWidget * widget,
+   GtkAllocation * allocation);
+ 
+-guint gtk_multicol_get_type()
++GtkType gtk_multicol_get_type()
+ {
+-  static guint multicol_type = 0;
++  static GtkType multicol_type = 0;
+ 
+   if(!multicol_type)
+   {
