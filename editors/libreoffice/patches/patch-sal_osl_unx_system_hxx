@@ -1,15 +1,7 @@
 Index: sal/osl/unx/system.hxx
 --- sal/osl/unx/system.hxx.orig
 +++ sal/osl/unx/system.hxx
-@@ -128,7 +128,6 @@
- #endif
- 
- #ifdef OPENBSD
--#   define  ETIME ETIMEDOUT
- #   include <pthread.h>
- #   include <sys/sem.h>
- #   include <dlfcn.h>
-@@ -138,17 +137,15 @@
+@@ -127,17 +127,15 @@
  #   include <sys/time.h>
  #   include <sys/uio.h>
  #   include <sys/exec.h>
@@ -30,7 +22,7 @@ Index: sal/osl/unx/system.hxx
 +#   define  pthread_testcancel()
 +#   define  NO_PTHREAD_PRIORITY
 +#   define  NO_PTHREAD_RTL
-+#   define  PTHREAD_SIGACTION                       pthread_sigaction
++#   define  PTHREAD_SIGACTION           pthread_sigaction
  #endif
  
  #if defined(DRAGONFLY) || defined(NETBSD)

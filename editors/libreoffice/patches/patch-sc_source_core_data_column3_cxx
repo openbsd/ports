@@ -1,7 +1,7 @@
 Index: sc/source/core/data/column3.cxx
 --- sc/source/core/data/column3.cxx.orig
 +++ sc/source/core/data/column3.cxx
-@@ -57,6 +57,8 @@
+@@ -55,6 +55,8 @@
  
  #include <o3tl/deleter.hxx>
  

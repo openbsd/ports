@@ -421,11 +421,13 @@ lib/libreoffice/help/hu/text/sbasic/shared/calc_functions.html
 lib/libreoffice/help/hu/text/sbasic/shared/classmodule.html
 lib/libreoffice/help/hu/text/sbasic/shared/code-stubs.html
 lib/libreoffice/help/hu/text/sbasic/shared/collection.html
+lib/libreoffice/help/hu/text/sbasic/shared/color_scheme.html
 lib/libreoffice/help/hu/text/sbasic/shared/compatibilitymode.html
 lib/libreoffice/help/hu/text/sbasic/shared/compatible.html
 lib/libreoffice/help/hu/text/sbasic/shared/conventions.html
 lib/libreoffice/help/hu/text/sbasic/shared/doEvents.html
 lib/libreoffice/help/hu/text/sbasic/shared/enum.html
+lib/libreoffice/help/hu/text/sbasic/shared/exportasfixedformat.html
 lib/libreoffice/help/hu/text/sbasic/shared/fragments.html
 lib/libreoffice/help/hu/text/sbasic/shared/is_keyword.html
 lib/libreoffice/help/hu/text/sbasic/shared/keys.html
@@ -456,7 +458,6 @@ lib/libreoffice/help/hu/text/scalc/00/sheet_menu.html
 lib/libreoffice/help/hu/text/scalc/01/
 lib/libreoffice/help/hu/text/scalc/01/01120000.html
 lib/libreoffice/help/hu/text/scalc/01/02110000.html
-lib/libreoffice/help/hu/text/scalc/01/02120000.html
 lib/libreoffice/help/hu/text/scalc/01/02120100.html
 lib/libreoffice/help/hu/text/scalc/01/02140000.html
 lib/libreoffice/help/hu/text/scalc/01/02140100.html
@@ -676,6 +677,7 @@ lib/libreoffice/help/hu/text/scalc/01/func_eastersunday.html
 lib/libreoffice/help/hu/text/scalc/01/func_edate.html
 lib/libreoffice/help/hu/text/scalc/01/func_eomonth.html
 lib/libreoffice/help/hu/text/scalc/01/func_error_type.html
+lib/libreoffice/help/hu/text/scalc/01/func_filter.html
 lib/libreoffice/help/hu/text/scalc/01/func_findb.html
 lib/libreoffice/help/hu/text/scalc/01/func_floor.html
 lib/libreoffice/help/hu/text/scalc/01/func_forecastetsadd.html
@@ -700,6 +702,7 @@ lib/libreoffice/help/hu/text/scalc/01/func_imsinh.html
 lib/libreoffice/help/hu/text/scalc/01/func_imtan.html
 lib/libreoffice/help/hu/text/scalc/01/func_isoweeknum.html
 lib/libreoffice/help/hu/text/scalc/01/func_jis.html
+lib/libreoffice/help/hu/text/scalc/01/func_let.html
 lib/libreoffice/help/hu/text/scalc/01/func_maxifs.html
 lib/libreoffice/help/hu/text/scalc/01/func_minifs.html
 lib/libreoffice/help/hu/text/scalc/01/func_minute.html
@@ -712,6 +715,7 @@ lib/libreoffice/help/hu/text/scalc/01/func_opt_barrier.html
 lib/libreoffice/help/hu/text/scalc/01/func_opt_prob_hit.html
 lib/libreoffice/help/hu/text/scalc/01/func_opt_prob_inmoney.html
 lib/libreoffice/help/hu/text/scalc/01/func_opt_touch.html
+lib/libreoffice/help/hu/text/scalc/01/func_randarray.html
 lib/libreoffice/help/hu/text/scalc/01/func_rawsubtract.html
 lib/libreoffice/help/hu/text/scalc/01/func_regex.html
 lib/libreoffice/help/hu/text/scalc/01/func_replaceb.html
@@ -720,9 +724,13 @@ lib/libreoffice/help/hu/text/scalc/01/func_rounddown.html
 lib/libreoffice/help/hu/text/scalc/01/func_roundsig.html
 lib/libreoffice/help/hu/text/scalc/01/func_searchb.html
 lib/libreoffice/help/hu/text/scalc/01/func_second.html
+lib/libreoffice/help/hu/text/scalc/01/func_sequence.html
 lib/libreoffice/help/hu/text/scalc/01/func_skewp.html
+lib/libreoffice/help/hu/text/scalc/01/func_sort.html
+lib/libreoffice/help/hu/text/scalc/01/func_sortby.html
 lib/libreoffice/help/hu/text/scalc/01/func_style.html
 lib/libreoffice/help/hu/text/scalc/01/func_sum.html
+lib/libreoffice/help/hu/text/scalc/01/func_sumif.html
 lib/libreoffice/help/hu/text/scalc/01/func_sumifs.html
 lib/libreoffice/help/hu/text/scalc/01/func_switch.html
 lib/libreoffice/help/hu/text/scalc/01/func_textjoin.html
@@ -730,6 +738,7 @@ lib/libreoffice/help/hu/text/scalc/01/func_time.html
 lib/libreoffice/help/hu/text/scalc/01/func_timevalue.html
 lib/libreoffice/help/hu/text/scalc/01/func_today.html
 lib/libreoffice/help/hu/text/scalc/01/func_trunc.html
+lib/libreoffice/help/hu/text/scalc/01/func_unique.html
 lib/libreoffice/help/hu/text/scalc/01/func_value.html
 lib/libreoffice/help/hu/text/scalc/01/func_webservice.html
 lib/libreoffice/help/hu/text/scalc/01/func_weekday.html
@@ -738,6 +747,8 @@ lib/libreoffice/help/hu/text/scalc/01/func_weeknum_ooo.html
 lib/libreoffice/help/hu/text/scalc/01/func_weeknumadd.html
 lib/libreoffice/help/hu/text/scalc/01/func_workday.html
 lib/libreoffice/help/hu/text/scalc/01/func_workday.intl.html
+lib/libreoffice/help/hu/text/scalc/01/func_xlookup.html
+lib/libreoffice/help/hu/text/scalc/01/func_xmatch.html
 lib/libreoffice/help/hu/text/scalc/01/func_year.html
 lib/libreoffice/help/hu/text/scalc/01/func_yearfrac.html
 lib/libreoffice/help/hu/text/scalc/01/hide_sheet.html
@@ -888,7 +899,6 @@ lib/libreoffice/help/hu/text/scalc/guide/wildcards.html
 lib/libreoffice/help/hu/text/scalc/guide/year2000.html
 lib/libreoffice/help/hu/text/scalc/main0000.html
 lib/libreoffice/help/hu/text/scalc/main0100.html
-lib/libreoffice/help/hu/text/scalc/main0101.html
 lib/libreoffice/help/hu/text/scalc/main0102.html
 lib/libreoffice/help/hu/text/scalc/main0103.html
 lib/libreoffice/help/hu/text/scalc/main0104.html
@@ -1065,9 +1075,12 @@ lib/libreoffice/help/hu/text/sdraw/00/insert_menu.html
 lib/libreoffice/help/hu/text/sdraw/00/page_menu.html
 lib/libreoffice/help/hu/text/sdraw/01/
 lib/libreoffice/help/hu/text/sdraw/01/3dsettings_toolbar.html
+lib/libreoffice/help/hu/text/sdraw/01/TextAutoFitToSize.html
 lib/libreoffice/help/hu/text/sdraw/01/consolidatetext.html
 lib/libreoffice/help/hu/text/sdraw/01/delete_page.html
 lib/libreoffice/help/hu/text/sdraw/01/duplicate_page.html
+lib/libreoffice/help/hu/text/sdraw/01/equalize_height.html
+lib/libreoffice/help/hu/text/sdraw/01/equalize_width.html
 lib/libreoffice/help/hu/text/sdraw/01/insert_layer.html
 lib/libreoffice/help/hu/text/sdraw/01/navigate_page.html
 lib/libreoffice/help/hu/text/sdraw/01/new_page.html
@@ -1097,7 +1110,6 @@ lib/libreoffice/help/hu/text/sdraw/guide/rotate_object.html
 lib/libreoffice/help/hu/text/sdraw/guide/text_enter.html
 lib/libreoffice/help/hu/text/sdraw/main0000.html
 lib/libreoffice/help/hu/text/sdraw/main0100.html
-lib/libreoffice/help/hu/text/sdraw/main0101.html
 lib/libreoffice/help/hu/text/sdraw/main0103.html
 lib/libreoffice/help/hu/text/sdraw/main0200.html
 lib/libreoffice/help/hu/text/sdraw/main0210.html
@@ -1242,7 +1254,6 @@ lib/libreoffice/help/hu/text/shared/01/05020100.html
 lib/libreoffice/help/hu/text/shared/01/05020200.html
 lib/libreoffice/help/hu/text/shared/01/05020300.html
 lib/libreoffice/help/hu/text/shared/01/05020301.html
-lib/libreoffice/help/hu/text/shared/01/05020400.html
 lib/libreoffice/help/hu/text/shared/01/05020500.html
 lib/libreoffice/help/hu/text/shared/01/05020600.html
 lib/libreoffice/help/hu/text/shared/01/05020700.html
@@ -1408,11 +1419,16 @@ lib/libreoffice/help/hu/text/shared/01/06150210.html
 lib/libreoffice/help/hu/text/shared/01/06200000.html
 lib/libreoffice/help/hu/text/shared/01/06201000.html
 lib/libreoffice/help/hu/text/shared/01/06202000.html
-lib/libreoffice/help/hu/text/shared/01/06990000.html
 lib/libreoffice/help/hu/text/shared/01/07010000.html
 lib/libreoffice/help/hu/text/shared/01/07080000.html
 lib/libreoffice/help/hu/text/shared/01/AutoFormat.html
 lib/libreoffice/help/hu/text/shared/01/AutoRedactDoc.html
+lib/libreoffice/help/hu/text/shared/01/ChangeCaseRotateCase.html
+lib/libreoffice/help/hu/text/shared/01/ChangeCaseToLower.html
+lib/libreoffice/help/hu/text/shared/01/ChangeCaseToSentenceCase.html
+lib/libreoffice/help/hu/text/shared/01/ChangeCaseToTitleCase.html
+lib/libreoffice/help/hu/text/shared/01/ChangeCaseToToggleCase.html
+lib/libreoffice/help/hu/text/shared/01/ChangeCaseToUpper.html
 lib/libreoffice/help/hu/text/shared/01/DeleteColumns.html
 lib/libreoffice/help/hu/text/shared/01/DeleteRows.html
 lib/libreoffice/help/hu/text/shared/01/DeleteTable.html
@@ -1420,18 +1436,24 @@ lib/libreoffice/help/hu/text/shared/01/DrawText.html
 lib/libreoffice/help/hu/text/shared/01/EntireCell.html
 lib/libreoffice/help/hu/text/shared/01/EntireColumn.html
 lib/libreoffice/help/hu/text/shared/01/EntireRow.html
+lib/libreoffice/help/hu/text/shared/01/Grow.html
 lib/libreoffice/help/hu/text/shared/01/InsertColumnsAfter.html
 lib/libreoffice/help/hu/text/shared/01/InsertColumnsBefore.html
 lib/libreoffice/help/hu/text/shared/01/InsertRowsAfter.html
 lib/libreoffice/help/hu/text/shared/01/InsertRowsBefore.html
 lib/libreoffice/help/hu/text/shared/01/OpenRemote.html
+lib/libreoffice/help/hu/text/shared/01/OutlineFont.html
+lib/libreoffice/help/hu/text/shared/01/Overline.html
 lib/libreoffice/help/hu/text/shared/01/Protect.html
 lib/libreoffice/help/hu/text/shared/01/RedactDoc.html
 lib/libreoffice/help/hu/text/shared/01/SaveAsRemote.html
 lib/libreoffice/help/hu/text/shared/01/SelectTable.html
 lib/libreoffice/help/hu/text/shared/01/SetOptimalColumnWidth.html
 lib/libreoffice/help/hu/text/shared/01/SetOptimalRowHeight.html
+lib/libreoffice/help/hu/text/shared/01/Shrink.html
 lib/libreoffice/help/hu/text/shared/01/SignaturesMenu.html
+lib/libreoffice/help/hu/text/shared/01/SmallCaps.html
+lib/libreoffice/help/hu/text/shared/01/SpacePara115.html
 lib/libreoffice/help/hu/text/shared/01/SpellOnline.html
 lib/libreoffice/help/hu/text/shared/01/StyleNewByExample.html
 lib/libreoffice/help/hu/text/shared/01/StyleUpdateByExample.html
@@ -1652,6 +1674,7 @@ lib/libreoffice/help/hu/text/shared/02/basicshapes.html
 lib/libreoffice/help/hu/text/shared/02/blockarrows.html
 lib/libreoffice/help/hu/text/shared/02/callouts.html
 lib/libreoffice/help/hu/text/shared/02/colortoolbar.html
+lib/libreoffice/help/hu/text/shared/02/eliminate_points.html
 lib/libreoffice/help/hu/text/shared/02/flowcharts.html
 lib/libreoffice/help/hu/text/shared/02/fontwork.html
 lib/libreoffice/help/hu/text/shared/02/gridtofront.html
@@ -1816,7 +1839,6 @@ lib/libreoffice/help/hu/text/shared/guide/doc_open.html
 lib/libreoffice/help/hu/text/shared/guide/doc_save.html
 lib/libreoffice/help/hu/text/shared/guide/dragdrop.html
 lib/libreoffice/help/hu/text/shared/guide/dragdrop_beamer.html
-lib/libreoffice/help/hu/text/shared/guide/dragdrop_fromgallery.html
 lib/libreoffice/help/hu/text/shared/guide/dragdrop_gallery.html
 lib/libreoffice/help/hu/text/shared/guide/dragdrop_graphic.html
 lib/libreoffice/help/hu/text/shared/guide/dragdrop_table.html
@@ -1920,6 +1942,7 @@ lib/libreoffice/help/hu/text/shared/main0800.html
 lib/libreoffice/help/hu/text/shared/main_tools.html
 lib/libreoffice/help/hu/text/shared/mediaplay_toolbar.html
 lib/libreoffice/help/hu/text/shared/menu/
+lib/libreoffice/help/hu/text/shared/menu/PickList.html
 lib/libreoffice/help/hu/text/shared/menu/comment_menu.html
 lib/libreoffice/help/hu/text/shared/menu/forms.html
 lib/libreoffice/help/hu/text/shared/menu/insert_form_control.html
@@ -2166,7 +2189,6 @@ lib/libreoffice/help/hu/text/simpress/02/13190000.html
 lib/libreoffice/help/hu/text/simpress/04/
 lib/libreoffice/help/hu/text/simpress/04/01020000.html
 lib/libreoffice/help/hu/text/simpress/04/presenter.html
-lib/libreoffice/help/hu/text/simpress/format_submenu_lists.html
 lib/libreoffice/help/hu/text/simpress/guide/
 lib/libreoffice/help/hu/text/simpress/guide/3d_create.html
 lib/libreoffice/help/hu/text/simpress/guide/animated_gif_create.html
@@ -2202,7 +2224,6 @@ lib/libreoffice/help/hu/text/simpress/guide/text2curve.html
 lib/libreoffice/help/hu/text/simpress/guide/vectorize.html
 lib/libreoffice/help/hu/text/simpress/main0000.html
 lib/libreoffice/help/hu/text/simpress/main0100.html
-lib/libreoffice/help/hu/text/simpress/main0101.html
 lib/libreoffice/help/hu/text/simpress/main0103.html
 lib/libreoffice/help/hu/text/simpress/main0104.html
 lib/libreoffice/help/hu/text/simpress/main0107.html
@@ -2302,7 +2323,6 @@ lib/libreoffice/help/hu/text/smath/guide/parentheses.html
 lib/libreoffice/help/hu/text/smath/guide/text.html
 lib/libreoffice/help/hu/text/smath/main0000.html
 lib/libreoffice/help/hu/text/smath/main0100.html
-lib/libreoffice/help/hu/text/smath/main0101.html
 lib/libreoffice/help/hu/text/smath/main0102.html
 lib/libreoffice/help/hu/text/smath/main0103.html
 lib/libreoffice/help/hu/text/smath/main0105.html
@@ -2471,6 +2491,9 @@ lib/libreoffice/help/hu/text/swriter/01/06990000.html
 lib/libreoffice/help/hu/text/swriter/01/EditStyle.html
 lib/libreoffice/help/hu/text/swriter/01/HeadingRowsRepeat.html
 lib/libreoffice/help/hu/text/swriter/01/RowSplit.html
+lib/libreoffice/help/hu/text/swriter/01/SpotlightCharStyles.html
+lib/libreoffice/help/hu/text/swriter/01/SpotlightMenu.html
+lib/libreoffice/help/hu/text/swriter/01/SpotlightParaStyles.html
 lib/libreoffice/help/hu/text/swriter/01/TableAutoFitMenu.html
 lib/libreoffice/help/hu/text/swriter/01/TableConvertMenu.html
 lib/libreoffice/help/hu/text/swriter/01/TableDeleteMenu.html
@@ -2505,12 +2528,12 @@ lib/libreoffice/help/hu/text/swriter/01/mm_seladdlis.html
 lib/libreoffice/help/hu/text/swriter/01/mm_seltab.html
 lib/libreoffice/help/hu/text/swriter/01/outlinecontent_visibility.html
 lib/libreoffice/help/hu/text/swriter/01/pagenumbering.html
+lib/libreoffice/help/hu/text/swriter/01/paragraph_signature.html
 lib/libreoffice/help/hu/text/swriter/01/protectdocument.html
 lib/libreoffice/help/hu/text/swriter/01/select_text.html
 lib/libreoffice/help/hu/text/swriter/01/selection_mode.html
 lib/libreoffice/help/hu/text/swriter/01/show_whitespace.html
 lib/libreoffice/help/hu/text/swriter/01/spotlight_chars_df.html
-lib/libreoffice/help/hu/text/swriter/01/spotlight_styles.html
 lib/libreoffice/help/hu/text/swriter/01/style_inspector.html
 lib/libreoffice/help/hu/text/swriter/01/title_page.html
 lib/libreoffice/help/hu/text/swriter/01/translate.html
@@ -2567,7 +2590,6 @@ lib/libreoffice/help/hu/text/swriter/02/18130000.html
 lib/libreoffice/help/hu/text/swriter/02/19010000.html
 lib/libreoffice/help/hu/text/swriter/02/19020000.html
 lib/libreoffice/help/hu/text/swriter/02/19030000.html
-lib/libreoffice/help/hu/text/swriter/02/19040000.html
 lib/libreoffice/help/hu/text/swriter/02/19050000.html
 lib/libreoffice/help/hu/text/swriter/02/add_to_list.html
 lib/libreoffice/help/hu/text/swriter/02/word_count_stb.html
@@ -2638,7 +2660,6 @@ lib/libreoffice/help/hu/text/swriter/guide/insert_graphic.html
 lib/libreoffice/help/hu/text/swriter/guide/insert_graphic_dialog.html
 lib/libreoffice/help/hu/text/swriter/guide/insert_graphic_fromchart.html
 lib/libreoffice/help/hu/text/swriter/guide/insert_graphic_fromdraw.html
-lib/libreoffice/help/hu/text/swriter/guide/insert_graphic_gallery.html
 lib/libreoffice/help/hu/text/swriter/guide/insert_graphic_scan.html
 lib/libreoffice/help/hu/text/swriter/guide/insert_tab_innumbering.html
 lib/libreoffice/help/hu/text/swriter/guide/join_numbered_lists.html
@@ -2679,6 +2700,7 @@ lib/libreoffice/help/hu/text/swriter/guide/send2html.html
 lib/libreoffice/help/hu/text/swriter/guide/shortcut_writing.html
 lib/libreoffice/help/hu/text/swriter/guide/smarttags.html
 lib/libreoffice/help/hu/text/swriter/guide/spellcheck_dialog.html
+lib/libreoffice/help/hu/text/swriter/guide/spotlight_styles.html
 lib/libreoffice/help/hu/text/swriter/guide/stylist_fillformat.html
 lib/libreoffice/help/hu/text/swriter/guide/stylist_fromselect.html
 lib/libreoffice/help/hu/text/swriter/guide/stylist_update.html
@@ -2715,7 +2737,6 @@ lib/libreoffice/help/hu/text/swriter/librelogo/LibreLogo.html
 lib/libreoffice/help/hu/text/swriter/mailmergetoolbar.html
 lib/libreoffice/help/hu/text/swriter/main0000.html
 lib/libreoffice/help/hu/text/swriter/main0100.html
-lib/libreoffice/help/hu/text/swriter/main0101.html
 lib/libreoffice/help/hu/text/swriter/main0102.html
 lib/libreoffice/help/hu/text/swriter/main0103.html
 lib/libreoffice/help/hu/text/swriter/main0104.html
@@ -2752,6 +2773,7 @@ lib/libreoffice/help/media/files/scalc/hu/function_fourier.ods
 lib/libreoffice/help/media/files/scalc/hu/functions_ifs.ods
 lib/libreoffice/help/media/files/scalc/hu/imtrigon.ods
 lib/libreoffice/help/media/files/scalc/hu/pivot.ods
+lib/libreoffice/help/media/files/scalc/hu/statistics_data.ods
 lib/libreoffice/help/media/files/scalc/hu/trigon.ods
 lib/libreoffice/help/media/helpimg/hu/
 lib/libreoffice/help/media/helpimg/hu/feldalle.png
@@ -2802,8 +2824,6 @@ lib/libreoffice/help/media/screenshots/cui/ui/opthtmlpage/hu/
 lib/libreoffice/help/media/screenshots/cui/ui/opthtmlpage/hu/OptHtmlPage.png
 lib/libreoffice/help/media/screenshots/cui/ui/optlanguagespage/hu/
 lib/libreoffice/help/media/screenshots/cui/ui/optlanguagespage/hu/OptLanguagesPage.png
-lib/libreoffice/help/media/screenshots/cui/ui/optsavepage/hu/
-lib/libreoffice/help/media/screenshots/cui/ui/optsavepage/hu/OptSavePage.png
 lib/libreoffice/help/media/screenshots/cui/ui/optsecuritypage/hu/
 lib/libreoffice/help/media/screenshots/cui/ui/optsecuritypage/hu/OptSecurityPage.png
 lib/libreoffice/help/media/screenshots/cui/ui/optviewpage/hu/

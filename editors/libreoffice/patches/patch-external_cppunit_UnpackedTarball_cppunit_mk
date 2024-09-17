@@ -1,10 +1,10 @@
 Index: external/cppunit/UnpackedTarball_cppunit.mk
 --- external/cppunit/UnpackedTarball_cppunit.mk.orig
 +++ external/cppunit/UnpackedTarball_cppunit.mk
-@@ -34,6 +34,7 @@ $(eval $(call gb_UnpackedTarball_add_patches,cppunit,\
- 	external/cppunit/propagate-exceptions.patch.0 \
- 	external/cppunit/sprintf.patch.0 \
+@@ -38,6 +38,7 @@ $(eval $(call gb_UnpackedTarball_add_patches,cppunit,\
  	external/cppunit/clang.patch.0 \
+ 	external/cppunit/0001-cid-1546460-COPY_INSTEAD_OF_MOVE.patch.1 \
+ 	external/cppunit/help-msvc-analyzer.patch \
 +	external/cppunit/openbsd-cppunit.patch.0 \
  ))
  ifeq ($(DISABLE_DYNLOADING),TRUE)

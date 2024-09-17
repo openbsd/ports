@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -7033,6 +7033,9 @@ printf "%s\n" "$PTHREAD_LIBS" >&6; }
+@@ -7127,6 +7127,9 @@ printf "%s\n" "$PTHREAD_LIBS" >&6; }
  
  openbsd*)
      using_freetype_fontconfig=yes
@@ -11,7 +11,7 @@ Index: configure
      using_x11=yes
      PTHREAD_CFLAGS="-D_THREAD_SAFE"
      PTHREAD_LIBS="-pthread"
-@@ -15289,6 +15292,11 @@ openbsd*)
+@@ -15375,6 +15378,11 @@ linux-android*)
      P_SEP=:
  
      case "$host_cpu" in
@@ -23,7 +23,7 @@ Index: configure
      i*86)
          CPUNAME=INTEL
          RTL_ARCH=x86
-@@ -21966,9 +21974,6 @@ _ACEOF
+@@ -22210,9 +22218,6 @@ _ACEOF
          rm -fr libconftest*
          { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $gccvisinlineshiddenok" >&5
  printf "%s\n" "$gccvisinlineshiddenok" >&6; }
@@ -33,7 +33,7 @@ Index: configure
      fi
  
     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking if $CXX_BASE has a visibility bug with class-level attributes (GCC bug 26905)" >&5
-@@ -29289,7 +29294,7 @@ then :
+@@ -29552,7 +29557,7 @@ then :
    printf %s "(cached) " >&6
  else $as_nop
  
@@ -42,7 +42,7 @@ Index: configure
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
-@@ -29730,7 +29735,7 @@ then :
+@@ -29993,7 +29998,7 @@ then :
    printf %s "(cached) " >&6
  else $as_nop
  
@@ -51,7 +51,7 @@ Index: configure
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
-@@ -30179,7 +30184,7 @@ then :
+@@ -30442,7 +30447,7 @@ then :
    printf %s "(cached) " >&6
  else $as_nop
  
@@ -60,7 +60,7 @@ Index: configure
  	  test "$am_cv_pathless_PYTHON" = none && break
  	  prog="import sys
  # split strings by '.' and convert to numeric.  Append some zeros
-@@ -38834,7 +38839,7 @@ printf "%s\n" "internal" >&6; }
+@@ -39348,7 +39353,7 @@ printf "%s\n" "internal" >&6; }
      if test "$COM" = "MSC"; then
          HYPHEN_LIB="${WORKDIR}/LinkTarget/StaticLibrary/hyphen.lib"
      else
@@ -69,7 +69,7 @@ Index: configure
      fi
  fi
  
-@@ -39037,7 +39042,7 @@ printf "%s\n" "internal" >&6; }
+@@ -39551,7 +39556,7 @@ printf "%s\n" "internal" >&6; }
      if test "$COM" = "MSC"; then
          MYTHES_LIBS="${WORKDIR}/LinkTarget/StaticLibrary/mythes.lib"
      else
@@ -78,7 +78,7 @@ Index: configure
      fi
  fi
  
-@@ -39885,8 +39890,8 @@ else
+@@ -40399,8 +40404,8 @@ else
      { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking the flex version" >&5
  printf %s "checking the flex version... " >&6; }
      _flex_version=$($FLEX --version | $SED -e 's/^.*\([[:digit:]]\{1,\}\.[[:digit:]]\{1,\}\.[[:digit:]]\{1,\}\).*$/\1/')
@@ -89,7 +89,7 @@ Index: configure
      fi
  fi
  
-@@ -44100,7 +44105,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
+@@ -44599,7 +44604,7 @@ ac_compiler_gnu=$ac_cv_c_compiler_gnu
  printf %s "checking for Qt5 libraries... " >&6; }
      qt5_libdir="no"
      for lib_dir in $qt5_libdirs; do
@@ -98,7 +98,7 @@ Index: configure
              qt5_libdir="$lib_dir"
              break
          fi
-@@ -44827,7 +44832,7 @@ printf "%s\n" "$kf5_incdir" >&6; }
+@@ -45332,7 +45337,7 @@ printf "%s\n" "$kf5_incdir" >&6; }
  printf %s "checking for KF5 libraries... " >&6; }
      kf5_libdir="no"
      for kf5_check in $kf5_libdirs; do
@@ -107,7 +107,7 @@ Index: configure
              kf5_libdir="$kf5_check"
              break
          fi
-@@ -45558,16 +45563,7 @@ if test "$USING_X11" = TRUE; then
+@@ -46055,16 +46060,7 @@ if test "$USING_X11" = TRUE; then
      else
          XINERAMALIB="$x_libraries"
      fi
@@ -125,7 +125,7 @@ Index: configure
          # we have only the dynamic version
          USE_XINERAMA=TRUE
          XINERAMA_LINK=dynamic
-@@ -47001,7 +46997,7 @@ for i in shasum /usr/local/bin/shasum /usr/sfw/bin/sha
+@@ -47509,7 +47505,7 @@ for i in shasum /usr/local/bin/shasum /usr/sfw/bin/sha
  done
  
  if test -z "$SHA256SUM"; then
@@ -134,12 +134,3 @@ Index: configure
          eval "$i --version" > /dev/null 2>&1
          ret=$?
          if test $ret -eq 0; then
-@@ -47692,7 +47688,7 @@ if test $_os = iOS -o $_os = Android; then
- fi
- 
- if test -n "$enable_mergelibs" -a "$enable_mergelibs" != "no"; then
--    if test $_os != Linux -a $_os != WINNT; then
-+    if test $_os != Linux -a $_os != WINNT -a $_os != OpenBSD; then
-         add_warning "--enable-mergelibs is not tested for this platform"
-     fi
-     MERGELIBS="TRUE"

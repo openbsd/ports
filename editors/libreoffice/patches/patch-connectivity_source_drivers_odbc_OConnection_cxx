@@ -1,7 +1,7 @@
 Index: connectivity/source/drivers/odbc/OConnection.cxx
 --- connectivity/source/drivers/odbc/OConnection.cxx.orig
 +++ connectivity/source/drivers/odbc/OConnection.cxx
-@@ -103,7 +103,7 @@ SQLRETURN OConnection::OpenConnection(const OUString& 
+@@ -102,7 +102,7 @@ SQLRETURN OConnection::OpenConnection(const OUString& 
      (void)nTimeOut; /* WaE */
  #endif
  

@@ -3,7 +3,6 @@ lib/libreoffice/program/classes/
 lib/libreoffice/program/classes/ScriptFramework.jar
 lib/libreoffice/program/classes/ScriptProviderForBeanShell.jar
 lib/libreoffice/program/classes/ScriptProviderForJava.jar
-lib/libreoffice/program/classes/ScriptProviderForJavaScript.jar
 lib/libreoffice/program/classes/XMergeBridge.jar
 lib/libreoffice/program/classes/bsh.jar
 lib/libreoffice/program/classes/commonwizards.jar
@@ -12,7 +11,6 @@ lib/libreoffice/program/classes/flute-1.1.6.jar
 lib/libreoffice/program/classes/form.jar
 lib/libreoffice/program/classes/hsqldb.jar
 lib/libreoffice/program/classes/java_uno.jar
-lib/libreoffice/program/classes/js.jar
 lib/libreoffice/program/classes/juh.jar
 lib/libreoffice/program/classes/jurt.jar
 lib/libreoffice/program/classes/libbase-1.1.6.jar
@@ -51,7 +49,6 @@ lib/libreoffice/program/jvmfwk3rc
 @so lib/libreoffice/program/librptuilo.so
 @so lib/libreoffice/program/librptxmllo.so
 lib/libreoffice/program/services/scriptproviderforbeanshell.rdb
-lib/libreoffice/program/services/scriptproviderforjavascript.rdb
 lib/libreoffice/share/Scripts/beanshell/
 lib/libreoffice/share/Scripts/beanshell/Calc/
 lib/libreoffice/share/Scripts/beanshell/Calc/CopyRange.bsh
@@ -97,17 +94,6 @@ lib/libreoffice/share/Scripts/java/MemoryUsage/
 lib/libreoffice/share/Scripts/java/MemoryUsage/MemoryUsage.jar
 lib/libreoffice/share/Scripts/java/MemoryUsage/MemoryUsage.java
 lib/libreoffice/share/Scripts/java/MemoryUsage/parcel-descriptor.xml
-lib/libreoffice/share/Scripts/javascript/
-lib/libreoffice/share/Scripts/javascript/ExportSheetsToHTML/
-lib/libreoffice/share/Scripts/javascript/ExportSheetsToHTML/exportsheetstohtml.js
-lib/libreoffice/share/Scripts/javascript/ExportSheetsToHTML/parcel-descriptor.xml
-lib/libreoffice/share/Scripts/javascript/HelloWorld/
-lib/libreoffice/share/Scripts/javascript/HelloWorld/helloworld.js
-lib/libreoffice/share/Scripts/javascript/HelloWorld/parcel-descriptor.xml
-lib/libreoffice/share/Scripts/javascript/Highlight/
-lib/libreoffice/share/Scripts/javascript/Highlight/ButtonPressHandler.js
-lib/libreoffice/share/Scripts/javascript/Highlight/ShowDialog.js
-lib/libreoffice/share/Scripts/javascript/Highlight/parcel-descriptor.xml
 lib/libreoffice/share/extensions/wiki-publisher/
 lib/libreoffice/share/extensions/wiki-publisher/Addons.xcu
 lib/libreoffice/share/extensions/wiki-publisher/Filter.xcu

@@ -9,7 +9,7 @@ COMMENT-java=	optional integration of LibreOffice java features
 
 SHARED_LIBS +=  etonyek-0.1-lo            1.10 # 1.10
 SHARED_LIBS +=  langtag-lo                5.1 # 5.1
-SHARED_LIBS +=  mwaw-0.3-lo               3.21 # 3.21
+SHARED_LIBS +=  mwaw-0.3-lo               3.22 # 3.22
 SHARED_LIBS +=  odfgen-0.1-lo             1.8 # 1.8
 SHARED_LIBS +=  orcus-0.18                0.0 # 0.0
 SHARED_LIBS +=  orcus-parser-0.18         0.0 # 0.0
@@ -22,8 +22,8 @@ SHARED_LIBS +=  uno_salhelpergcc3         3.0 # 3.0
 SHARED_LIBS +=  wpg-0.3-lo                3.4 # 3.4
 SHARED_LIBS +=  wps-0.4-lo                4.14 # 4.14
 
-BV=		24.2
-VERSION=	${BV}.5.2
+BV=		24.8
+VERSION=	${BV}.1.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 CATEGORIES=	editors productivity
@@ -45,10 +45,6 @@ SITES.a=	http://dev-www.libreoffice.org/src/ \
 		http://download.go-oo.org/extern/ \
 		http://www.numbertext.org/linux/ \
 		http://ooo.itc.hu/oxygenoffice/download/libreoffice/
-SITES.u=	https://nerd.hu/distfiles/
-
-PATCHFILES.u=		libreoffice-icu75.patch
-PATCH_DIST_STRIP=	-p1
 
 TAR=		${LOCALBASE}/bin/gtar
 EDISTFILES=	libreoffice-${VERSION}.tar.xz
@@ -76,29 +72,29 @@ DISTFILES.a += 798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip
 DISTFILES.a += 8ce2fcd72becf06c41f7201d15373ed9-librepository-1.1.6.zip
 DISTFILES.a += 97b2d4dba862397f446b217e2b623e71-libloader-1.1.6.zip
 DISTFILES.a += Amiri-1.000.zip
-DISTFILES.a += Java-WebSocket-1.5.4.tar.gz
-DISTFILES.a += NotoSans-v2.012.zip
+DISTFILES.a += Java-WebSocket-1.5.6.tar.gz
+DISTFILES.a += NotoSans-v2.013.zip
 DISTFILES.a += NotoKufiArabic-v2.109.zip
 DISTFILES.a += NotoSansArabic-v2.010.zip
 DISTFILES.a += NotoSansArmenian-v2.008.zip
-DISTFILES.a += NotoSansGeorgian-v2.003.zip
+DISTFILES.a += NotoSansGeorgian-v2.005.zip
 DISTFILES.a += NotoSansHebrew-v3.001.zip
 DISTFILES.a += NotoSansLao-v2.003.zip
 DISTFILES.a += NotoSansLisu-v2.102.zip
-DISTFILES.a += NotoSerif-v2.012.zip
+DISTFILES.a += NotoSerif-v2.013.zip
 DISTFILES.a += NotoSerifArmenian-v2.008.zip
 DISTFILES.a += NotoSerifGeorgian-v2.003.zip
 DISTFILES.a += NotoSerifHebrew-v2.004.zip
 DISTFILES.a += NotoSerifLao-v2.003.zip
 DISTFILES.a += NotoNaskhArabic-v2.019.zip
-DISTFILES.a += ReemKufi-1.2.zip
+DISTFILES.a += ReemKufi-1.7.zip
 DISTFILES.a += Scheherazade-2.100.zip
 DISTFILES.a += a7983f859eafb2677d7ff386a023bc40-xsltml_2.1.2.zip
 DISTFILES.a += ace6ab49184e329db254e454a010f56d-libxml-1.1.7.zip
 DISTFILES.a += alef-1.001.tar.gz
 DISTFILES.a += ba2930200c9f019c2d93a8c88c651a0f-flow-engine-0.9.4.zip
-DISTFILES.a += beeca87be45ec87d241ddd0e1bad80c1-bsh-2.0b6-src.zip
 DISTFILES.a += box2d-2.4.1.tar.gz
+DISTFILES.a += bsh-2.1.1-src.zip
 DISTFILES.a += c74b7223abe75949b4af367942d96c7a-crosextrafonts-carlito-20130920.tar.gz
 DISTFILES.a += cppunit-1.15.1.tar.gz
 DISTFILES.a += culmus-0.133.tar.gz
@@ -114,17 +110,17 @@ DISTFILES.a += frozen-1.1.1.tar.gz
 DISTFILES.a += language-subtag-registry-2024-06-14.tar.bz2
 DISTFILES.a += libabw-0.1.3.tar.xz
 DISTFILES.a += libcdr-0.1.7.tar.xz
-DISTFILES.a += libcmis-0.6.1.tar.xz
+DISTFILES.a += libcmis-0.6.2.tar.xz
 DISTFILES.a += libe-book-0.1.3.tar.xz
 DISTFILES.a += libepubgen-0.1.1.tar.xz
-DISTFILES.a += liberation-fonts-ttf-2.1.4.tar.gz
+DISTFILES.a += liberation-fonts-ttf-2.1.5.tar.gz
 DISTFILES.a += liberation-narrow-fonts-ttf-1.07.6.tar.gz
 DISTFILES.a += libetonyek-0.1.10.tar.xz
-DISTFILES.a += libexttextcat-3.4.6.tar.xz
+DISTFILES.a += libexttextcat-3.4.7.tar.xz
 DISTFILES.a += libfreehand-0.1.2.tar.xz
 DISTFILES.a += liblangtag-0.6.7.tar.bz2
 DISTFILES.a += libmspub-0.1.4.tar.xz
-DISTFILES.a += libmwaw-0.3.21.tar.xz
+DISTFILES.a += libmwaw-0.3.22.tar.xz
 DISTFILES.a += libnumbertext-1.0.11.tar.xz
 DISTFILES.a += libodfgen-0.1.8.tar.xz
 DISTFILES.a += liborcus-0.19.2.tar.xz
@@ -139,12 +135,12 @@ DISTFILES.a += libzmf-0.0.2.tar.xz
 DISTFILES.a += mdds-2.1.1.tar.xz
 DISTFILES.a += mythes-1.2.5.tar.xz
 DISTFILES.a += noto-fonts-20171024.tar.gz
-DISTFILES.a += pdfium-6179.tar.bz2
+DISTFILES.a += pdfium-6425.tar.bz2
 DISTFILES.a += phc-winner-argon2-20190702.tar.gz
 DISTFILES.a += skia-m116-2ddcf183eb260f63698aa74d1bb380f247ad7ccd.tar.xz
-DISTFILES.a += xmlsec1-1.3.2.tar.gz
+DISTFILES.a += xmlsec1-1.3.5.tar.gz
 DISTFILES.a += zxcvbn-c-2.5.tar.gz
-DISTFILES.a += zxing-cpp-2.1.0.tar.gz
+DISTFILES.a += zxing-cpp-2.2.1.tar.gz
 
 DIST_SUBDIR=	libreoffice
 
@@ -317,6 +313,7 @@ CONFIGURE_ARGS+=\
 		--disable-firebird-sdbc \
 		--disable-dependency-tracking \
 		--disable-online-update \
+		--disable-scripting-javascript \
 		--enable-mergelibs \
 		--enable-gio \
 		--enable-kf5 \

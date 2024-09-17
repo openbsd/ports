@@ -9,4 +9,4 @@ Index: idl/source/objects/types.cxx
 +    rOutStm.WriteOString( "#if !defined(_WIN32) && (defined(DISABLE_DYNLOADING) && (defined(ANDROID) || defined(IOS) || defined(EMSCRIPTEN) || defined(LINUX) || defined(OPENBSD)))" ) << endl;
      rOutStm.WriteOString( "__attribute__((__weak__))" ) << endl;
      rOutStm.WriteOString( "#endif" ) << endl;
-     rOutStm.WriteOString( aTypeName ).WriteOString( aVarName )
+     rOutStm.WriteOString( "constinit const " ).WriteOString( aTypeName ).WriteOString( aVarName )

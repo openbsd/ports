@@ -2,25 +2,25 @@ Index: external/pdfium/pdfium-openbsd.patch
 --- external/pdfium/pdfium-openbsd.patch.orig
 +++ external/pdfium/pdfium-openbsd.patch
 @@ -0,0 +1,22 @@
-+--- core/fxge/cfx_fontmapper.cpp.orig	Fri Feb  3 17:41:17 2023
-++++ core/fxge/cfx_fontmapper.cpp	Fri Feb  3 17:41:30 2023
++--- core/fxge/cfx_fontmapper.cpp.orig	Tue Sep 17 10:47:58 2024
+++++ core/fxge/cfx_fontmapper.cpp	Tue Sep 17 10:48:06 2024
 +@@ -157,7 +157,7 @@
 +     {"ForteMT", "Forte"},
 + };
 + 
 +-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || defined(OS_ASMJS)
-++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || defined(OS_ASMJS) || BUILDFLAG(IS_OPENBSD)
+++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || defined(OS_ASMJS) || defined(IS_OPENBSD)
 + const char kNarrowFamily[] = "LiberationSansNarrow";
 + #elif BUILDFLAG(IS_ANDROID)
 + const char kNarrowFamily[] = "RobotoCondensed";
-+--- core/fxge/linux/fx_linux_impl.cpp.orig	Fri Feb  3 17:41:36 2023
-++++ core/fxge/linux/fx_linux_impl.cpp	Fri Feb  3 17:41:50 2023
-+@@ -18,7 +18,7 @@
-+ #include "third_party/base/check.h"
++--- core/fxge/linux/fx_linux_impl.cpp.orig	Tue Sep 17 10:47:45 2024
+++++ core/fxge/linux/fx_linux_impl.cpp	Tue Sep 17 10:47:55 2024
++@@ -17,7 +17,7 @@
++ #include "core/fxge/fx_font.h"
++ #include "core/fxge/systemfontinfo_iface.h"
 + 
-+ #if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS) && !defined(OS_FUCHSIA) && \
-+-    !defined(OS_ASMJS)
-++    !defined(OS_ASMJS) && !BUILDFLAG(IS_OPENBSD)
++-#if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS) && !defined(OS_ASMJS)
+++#if !BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CHROMEOS) && !defined(OS_ASMJS) && !BUILDFLAG(IS_OPENBSD)
 + #error "Included on the wrong platform"
 + #endif
 + 

@@ -1,10 +1,10 @@
 Index: connectivity/Library_mysqlc.mk
 --- connectivity/Library_mysqlc.mk.orig
 +++ connectivity/Library_mysqlc.mk
-@@ -23,7 +23,7 @@ $(eval $(call gb_Library_set_include,mysqlc,\
- ))
+@@ -24,7 +24,7 @@ $(eval $(call gb_Library_set_include,mysqlc,\
  
  $(eval $(call gb_Library_add_libs,mysqlc,\
+ 	$(if $(WITH_GSSAPI),$(GSSAPI_LIBS)) \
 -	$(if $(filter-out WNT,$(OS)),$(if $(filter HAIKU MACOSX SOLARIS,$(OS)),\
 +	$(if $(filter-out WNT,$(OS)),$(if $(filter OPENBSD HAIKU MACOSX SOLARIS,$(OS)),\
  	-lz -lm,-rdynamic -lz -lcrypt -lm)) \

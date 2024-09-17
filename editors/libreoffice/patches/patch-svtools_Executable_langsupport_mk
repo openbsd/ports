@@ -1,7 +1,7 @@
 Index: svtools/Executable_langsupport.mk
 --- svtools/Executable_langsupport.mk.orig
 +++ svtools/Executable_langsupport.mk
-@@ -37,4 +37,9 @@ $(eval $(call gb_Executable_add_exception_objects,lang
+@@ -36,4 +36,9 @@ $(eval $(call gb_Executable_add_exception_objects,lang
      svtools/langsupport/langsupport \
  ))
  

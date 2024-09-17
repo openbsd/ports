@@ -1,10 +1,10 @@
 Index: external/lpsolve/UnpackedTarball_lpsolve.mk
 --- external/lpsolve/UnpackedTarball_lpsolve.mk.orig
 +++ external/lpsolve/UnpackedTarball_lpsolve.mk
-@@ -24,6 +24,7 @@ else
+@@ -23,6 +23,7 @@ $(eval $(call gb_UnpackedTarball_add_patches,lpsolve,\
+ else
  
  $(eval $(call gb_UnpackedTarball_add_patches,lpsolve,\
- 	external/lpsolve/lp_solve-fixed-warn.patch \
 +	external/lpsolve/lp_solve-timeb.patch \
  	external/lpsolve/lp_solve_5.5.patch \
  	external/lpsolve/lpsolve-ubsan.patch.0 \

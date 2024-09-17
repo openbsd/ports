@@ -1,7 +1,7 @@
 Index: external/pdfium/Library_pdfium.mk
 --- external/pdfium/Library_pdfium.mk.orig
 +++ external/pdfium/Library_pdfium.mk
-@@ -712,7 +712,7 @@ $(eval $(call gb_Library_add_generated_exception_objec
+@@ -714,7 +714,7 @@ $(eval $(call gb_Library_add_generated_exception_objec
  ))
  endif
  
