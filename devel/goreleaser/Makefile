@@ -1,19 +1,19 @@
 COMMENT =	deliver Go binaries as fast and easily as possible
 
 MODGO_MODNAME =	github.com/goreleaser/goreleaser/v2
-MODGO_VERSION =	v2.0.1
+MODGO_VERSION =	v2.3.1
+
+DISTNAME =	goreleaser-${MODGO_VERSION}
 
 # https://github.com/goreleaser/goreleaser
 HOMEPAGE =	https://goreleaser.com/
-
-DISTNAME =	goreleaser-${MODGO_VERSION}
 
 CATEGORIES =	devel
 
 MAINTAINER =	Laurent Cheylus <foxy@free.fr>
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	c pthread
 
@@ -39,6 +39,10 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions/
 	${INSTALL_DATA} ${WRKSRC}/completion.zsh \
 		${PREFIX}/share/zsh/site-functions/_goreleaser
+
+# Some tests fail due to lack of network and WRKSRC is not a Git repository
+do-test:
+	cd ${WRKSRC} && ${MODGO_TEST_CMD} ./...
 
 .include "modules.inc"
 
