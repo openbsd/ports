@@ -1,0 +1,12 @@
+Index: src/dns.c
+--- src/dns.c.orig
++++ src/dns.c
+@@ -673,7 +673,7 @@ char *dns_get_abs_addr_ip(abs_addr * haddr)
+   void *addr;
+   char pom[128];
+   struct in_addr ia4;
+-  struct in6_addr *ia6;
++  struct in6_addr ia6;
+ 
+   switch (haddr->family)
+   {

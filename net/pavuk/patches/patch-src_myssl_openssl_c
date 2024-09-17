@@ -28,6 +28,15 @@ Index: src/myssl_openssl.c
    }
    DEBUG_SSL("]\n");
    return;
+@@ -244,7 +246,7 @@ static int ssl_new_session_cb(SSL * ssl, SSL_SESSION *
+ 
+ }
+ 
+-static SSL_SESSION *ssl_get_session_cb(SSL * ssl, unsigned char *data,
++static SSL_SESSION *ssl_get_session_cb(SSL * ssl, const unsigned char *data,
+   int len, int *copy)
+ {
+   DEBUG_SSL("ssl_get_session_cb()\n");
 @@ -394,10 +396,10 @@ static int my_ssl_verify_callback(int ok, X509_STORE_C
      else
        ok = 0;
@@ -41,6 +50,15 @@ Index: src/myssl_openssl.c
      DEBUG_SSL("Issuer: %s\n", buf);
      break;
    case X509_V_ERR_CERT_NOT_YET_VALID:
+@@ -521,7 +523,7 @@ static ssl_connection *my_ssl_connection_new(void)
+ bufio *my_ssl_do_connect(doc * docp, bufio * socket,
+   ssl_connection * parent_ssl_con)
+ {
+-  SSL_METHOD *method;
++  const SSL_METHOD *method;
+   BIO *bio;
+   ssl_connection *con;
+   int rv;
 @@ -543,12 +545,16 @@ bufio *my_ssl_do_connect(doc * docp, bufio * socket,
  
    switch (cfg.ssl_version)
