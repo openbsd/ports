@@ -45,7 +45,7 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 # on critical path to lang/gcc.  XXX c++ used in libasprintf but seems
 # unused at present; may need to revisit if this changes
-COMPILER =		base-clang base-gcc
+COMPILER =		base-clang base-gcc gcc3
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-csharp \
