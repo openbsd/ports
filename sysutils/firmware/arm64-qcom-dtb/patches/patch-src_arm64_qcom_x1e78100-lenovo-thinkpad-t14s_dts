@@ -1,7 +1,7 @@
 Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
 --- src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts.orig
 +++ src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
-@@ -0,0 +1,807 @@
+@@ -0,0 +1,811 @@
 +// SPDX-License-Identifier: BSD-3-Clause
 +/*
 + * Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
@@ -21,6 +21,7 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
 +/ {
 +	model = "Lenovo ThinkPad T14s Gen 6";
 +	compatible = "lenovo,thinkpad-t14s", "qcom,x1e78100", "qcom,x1e80100";
++	chassis-type = "laptop";
 +
 +	gpio-keys {
 +		compatible = "gpio-keys";
@@ -127,7 +128,6 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
 +		pinctrl-0 = <&edp_reg_en>;
 +		pinctrl-names = "default";
 +
-+		regulator-always-on;
 +		regulator-boot-on;
 +	};
 +
@@ -644,17 +644,32 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
 +			       <72 2>, /* Secure EC I2C connection (?) */
 +			       <238 1>; /* UFS Reset */
 +
-+	edp_reg_en: edp-reg-en-state {
-+		pins = "gpio70";
++	tpad_default: tpad-default-state {
++		pins = "gpio3";
 +		function = "gpio";
-+		drive-strength = <16>;
 +		bias-pull-up;
 +	};
 +
-+	hall_int_n_default: hall-int-n-state {
-+		pins = "gpio92";
++	nvme_reg_en: nvme-reg-en-state {
++		pins = "gpio18";
 +		function = "gpio";
++		drive-strength = <2>;
 +		bias-disable;
++	};
++
++	ts0_default: ts0-default-state {
++		reset-n-pins {
++			pins = "gpio48";
++			function = "gpio";
++			output-high;
++			drive-strength = <16>;
++		};
++
++		int-n-pins {
++			pins = "gpio51";
++			function = "gpio";
++			bias-disable;
++		};
 +	};
 +
 +	kybd_default: kybd-default-state {
@@ -663,10 +678,16 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
 +		bias-disable;
 +	};
 +
-+	nvme_reg_en: nvme-reg-en-state {
-+		pins = "gpio18";
++	edp_reg_en: edp-reg-en-state {
++		pins = "gpio70";
 +		function = "gpio";
-+		drive-strength = <2>;
++		drive-strength = <16>;
++		bias-disable;
++	};
++
++	hall_int_n_default: hall-int-n-state {
++		pins = "gpio92";
++		function = "gpio";
 +		bias-disable;
 +	};
 +
@@ -713,27 +734,6 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
 +			function = "gpio";
 +			drive-strength = <2>;
 +			bias-pull-up;
-+		};
-+	};
-+
-+	tpad_default: tpad-default-state {
-+		pins = "gpio3";
-+		function = "gpio";
-+		bias-pull-up;
-+	};
-+
-+	ts0_default: ts0-default-state {
-+		int-n-pins {
-+			pins = "gpio51";
-+			function = "gpio";
-+			bias-disable;
-+		};
-+
-+		reset-n-pins {
-+			pins = "gpio48";
-+			function = "gpio";
-+			output-high;
-+			drive-strength = <16>;
 +		};
 +	};
 +
@@ -808,4 +808,8 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
 +
 +&usb_1_ss1_qmpphy_out {
 +	remote-endpoint = <&pmic_glink_ss1_ss_in>;
++};
++
++&usb_mp {
++	status = "okay";
 +};

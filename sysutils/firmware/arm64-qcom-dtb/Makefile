@@ -1,8 +1,7 @@
 FW_DRIVER=	arm64-qcom-dtb
-FW_VER=		2.0
-REVISION=	0
+FW_VER=		2.1
 
-DISTNAME=	devicetree-rebasing-6.10-dts
+DISTNAME=	devicetree-rebasing-6.11-dts
 
 # can be redistributed, but shouldn't be in normal packages directory as
 # this is only meant for use with fw_update.
