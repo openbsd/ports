@@ -18,3 +18,12 @@ Index: src/arm64/qcom/sc8280xp-lenovo-thinkpad-x13s.dts
  };
  
  &pcie4 {
+@@ -1299,7 +1299,7 @@
+ };
+ 
+ &usb_2 {
+-	status = "okay";
++	status = "disabled";
+ };
+ 
+ &usb_2_hsphy0 {
