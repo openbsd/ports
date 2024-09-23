@@ -20,6 +20,9 @@ PERMIT_PACKAGE=	Yes
 SITES=			https://cairographics.org/releases/ \
 			https://cairographics.org/snapshots/
 
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
+
 WANTLIB += X11 Xext Xrender fontconfig freetype glib-2.0 gobject-2.0
 WANTLIB += lzo2 m pixman-1 png pthread xcb xcb-render xcb-shm
 WANTLIB += z
