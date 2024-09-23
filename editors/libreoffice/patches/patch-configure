@@ -11,7 +11,7 @@ Index: configure
      using_x11=yes
      PTHREAD_CFLAGS="-D_THREAD_SAFE"
      PTHREAD_LIBS="-pthread"
-@@ -15375,6 +15378,11 @@ linux-android*)
+@@ -15408,6 +15411,11 @@ openbsd*)
      P_SEP=:
  
      case "$host_cpu" in
