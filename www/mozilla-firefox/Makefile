@@ -1,6 +1,8 @@
 COMMENT =	Firefox web browser
 ONLY_FOR_ARCHS =	amd64 aarch64 riscv64
 
+REVISION =		0
+
 # Don't forget to bump www/firefox-i18n after updates.
 
 MOZILLA_VERSION =	130.0.1
@@ -74,6 +76,13 @@ COMMENT_FFVPX ?=
 COMMENT_FFVPX =		@comment # needs a trailing space
 .endif
 SUBST_VARS +=		COMMENT_FFVPX
+
+# vendored copy of dav1d needs patching to avoid these (or changing to the ports
+# version, which already has relevant patches).
+USE_NOBTCFI-aarch64 =	Yes
+.if ${MACHINE_ARCH} == aarch64
+USE_NOEXECONLY =	Yes
+.endif
 
 post-install:
 	${SUBST_MAN} ${FILESDIR}/mozilla-firefox.1 \
