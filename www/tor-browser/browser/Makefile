@@ -8,6 +8,8 @@ MOZILLA_VERSION =	${TB_VERSION}
 MOZILLA_PROJECT =	${BROWSER_NAME}
 MOZILLA_CODENAME =	browser
 
+REVISION =		0
+
 EXTRACT_SUFX =		.tar.xz
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION:S/a/alpha/}
@@ -50,6 +52,14 @@ BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt \
 # mach uses pkg_resources
 BUILD_DEPENDS +=	devel/py-setuptools${MODPY_FLAVOR}
 BUILD_DEPENDS +=	textproc/jq
+
+# vendored copy of dav1d needs patching to avoid these (or changing to the ports
+# version, which already has relevant patches).
+USE_NOBTCFI-aarch64 =	Yes
+.if ${MACHINE_ARCH} == aarch64
+USE_NOEXECONLY =	Yes
+.endif
+
 
 # uses pledge()
 # Extra:  Xcomposite.4 Xcursor.5 Xdamage.4 Xfixes.6 Xi.12 Xrender.6
