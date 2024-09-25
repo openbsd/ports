@@ -11,6 +11,8 @@ COMMENT=		Chromium browser
 
 V=			128.0.6613.137
 
+REVISION=		0
+
 DISTNAME=		chromium-${V}
 
 DISTFILES+=		${CHROMIUM_DISTFILES} \

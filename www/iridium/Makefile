@@ -12,6 +12,8 @@ COMMENT=		Iridium browser
 
 V=			2024.08.128.3
 
+REVISION=		0
+
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
 DISTFILES+=		${IRIDIUM_DISTFILES}
