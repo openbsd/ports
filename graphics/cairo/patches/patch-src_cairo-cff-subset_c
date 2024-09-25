@@ -1,0 +1,23 @@
+cff: Don't fail if no local subs
+https://gitlab.freedesktop.org/cairo/cairo/-/commit/b9eed915f9a67380e7ef9d8746656455c43f67e2
+
+Index: src/cairo-cff-subset.c
+--- src/cairo-cff-subset.c.orig
++++ src/cairo-cff-subset.c
+@@ -952,9 +952,13 @@ cairo_cff_font_read_private_dict (cairo_cff_font_t   *
+ 	 decode_number (operand, nominal_width);
+ 
+     num_subs = _cairo_array_num_elements (local_sub_index);
+-    *local_subs_used = _cairo_calloc_ab (num_subs, sizeof (cairo_bool_t));
+-    if (unlikely (*local_subs_used == NULL))
+-	return _cairo_error (CAIRO_STATUS_NO_MEMORY);
++    if (num_subs > 0) {
++	*local_subs_used = _cairo_calloc_ab (num_subs, sizeof (cairo_bool_t));
++	if (unlikely (*local_subs_used == NULL))
++	    return _cairo_error (CAIRO_STATUS_NO_MEMORY);
++    } else {
++	*local_subs_used = NULL;
++    }
+ 
+     if (num_subs < 1240)
+ 	*local_sub_bias = 107;
