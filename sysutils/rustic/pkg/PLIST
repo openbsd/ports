@@ -5,7 +5,6 @@ share/bash-completion/completions/rustic
 share/examples/rustic/
 share/examples/rustic/README.md
 share/examples/rustic/copy_example.toml
-share/examples/rustic/full-one.toml
 share/examples/rustic/full.toml
 share/examples/rustic/local.toml
 share/examples/rustic/par2.toml
