@@ -342,6 +342,8 @@ lib/python${MODPY_VERSION}/site-packages/tox/util/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tox/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tox/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tox/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tox/util/${MODPY_PYCACHE}ci.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/tox/util/${MODPY_PYCACHE}ci.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tox/util/${MODPY_PYCACHE}cpu.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tox/util/${MODPY_PYCACHE}cpu.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tox/util/${MODPY_PYCACHE}file_view.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -352,6 +354,7 @@ lib/python${MODPY_VERSION}/site-packages/tox/util/${MODPY_PYCACHE}path.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/tox/util/${MODPY_PYCACHE}path.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tox/util/${MODPY_PYCACHE}spinner.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tox/util/${MODPY_PYCACHE}spinner.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tox/util/ci.py
 lib/python${MODPY_VERSION}/site-packages/tox/util/cpu.py
 lib/python${MODPY_VERSION}/site-packages/tox/util/file_view.py
 lib/python${MODPY_VERSION}/site-packages/tox/util/graph.py
