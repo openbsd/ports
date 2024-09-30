@@ -3,7 +3,7 @@ quieten upstream's tar check
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -314,9 +314,9 @@ $(SOURCE_DIST).manifest: $(SOURCE_DIST)
+@@ -324,9 +324,9 @@ $(SOURCE_DIST).manifest: $(SOURCE_DIST)
  	$(gen_verbose) cd $(dir $(SOURCE_DIST)) && \
  		find $(notdir $(SOURCE_DIST)) | LC_COLLATE=C sort > $@
  
