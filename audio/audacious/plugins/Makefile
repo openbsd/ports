@@ -6,9 +6,9 @@ DISTNAME =		audacious-plugins-${VERSION}
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} FLAC GL Qt5Core Qt5Gui Qt5OpenGL
-WANTLIB += Qt5Widgets Qt5X11Extras X11 adplug audcore audqt audtag
-WANTLIB += avcodec avformat avutil binio cddb cdio cdio_cdda cue
-WANTLIB += curl faad gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += Qt5Svg Qt5Widgets Qt5X11Extras X11 adplug audcore audqt
+WANTLIB += audtag avcodec avformat avutil binio cddb cdio cdio_cdda
+WANTLIB += cue curl faad gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += iconv intl m mms modplug mp3lame mpg123 neon notify
 WANTLIB += ogg opusfile samplerate sndfile sndio soxr vorbis vorbisenc
 WANTLIB += vorbisfile wavpack xml2 z

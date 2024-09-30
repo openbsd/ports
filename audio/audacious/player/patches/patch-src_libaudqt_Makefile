@@ -7,4 +7,4 @@ Index: src/libaudqt/Makefile
 +
  LIB_MAJOR = 3
  LIB_MINOR = 0
- 
+ LIB_PATCH = 0

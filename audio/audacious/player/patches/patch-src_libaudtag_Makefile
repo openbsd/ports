@@ -6,4 +6,4 @@ Index: src/libaudtag/Makefile
 +SHARED_LIB = ${LIB_PREFIX}audtag.so.${LIBaudtag_VERSION}
  LIB_MAJOR = 3
  LIB_MINOR = 0
- 
+ LIB_PATCH = 0

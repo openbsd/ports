@@ -14,7 +14,7 @@ Index: configure
  
  
  if test $HAVE_DARWIN = yes ; then
-@@ -17629,6 +17627,8 @@ then :
+@@ -17770,6 +17768,8 @@ then :
  
  fi
  
