@@ -1,7 +1,7 @@
 Index: cmake/install_macros.cmake
 --- cmake/install_macros.cmake.orig
 +++ cmake/install_macros.cmake
-@@ -175,6 +175,36 @@ IF(UNIX)
+@@ -157,6 +157,36 @@ IF(UNIX)
  ENDIF()
  ENDMACRO()
  

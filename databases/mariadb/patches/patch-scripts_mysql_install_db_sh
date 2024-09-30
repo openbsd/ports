@@ -1,7 +1,7 @@
 Index: scripts/mysql_install_db.sh
 --- scripts/mysql_install_db.sh.orig
 +++ scripts/mysql_install_db.sh
-@@ -30,8 +30,8 @@ args=""
+@@ -29,8 +29,8 @@ args=""
  defaults=""
  defaults_group_suffix=""
  mysqld_opt=""
@@ -10,43 +10,9 @@ Index: scripts/mysql_install_db.sh
 +user="_mysql"
 +group="_mysql"
  silent_startup="--silent-startup"
+ log_error=""
  
- force=0
-@@ -341,7 +341,6 @@ then
-   srcpkgdatadir="$srcdir/scripts"
-   buildpkgdatadir="$builddir/scripts"
-   plugindir="$builddir/plugin/auth_socket"
--  pamtooldir="$builddir/plugin/auth_pam"
- elif test -n "$basedir"
- then
-   bindir="$basedir/bin" # only used in the help text
-@@ -370,8 +369,7 @@ then
-     cannot_find_file fill_help_tables.sql @pkgdata_locations@
-     exit 1
-   fi
--  plugindir=`find_in_dirs --dir auth_pam.so $basedir/lib*/plugin $basedir/lib*/mysql/plugin $basedir/lib/*/mariadb19/plugin`
--  pamtooldir=$plugindir
-+  plugindir=`find_in_dirs --dir auth_ed25519.so $basedir/lib*/plugin $basedir/lib*/mysql/plugin $basedir/lib/*/mariadb19/plugin`
- # relative from where the script was run for a relocatable install
- elif test -n "$dirname0" -a -x "$rel_mysqld" -a ! "$rel_mysqld" -ef "@sbindir@/mariadbd"
- then
-@@ -382,7 +380,6 @@ then
-   srcpkgdatadir="$basedir/@INSTALL_MYSQLSHAREDIR@"
-   buildpkgdatadir="$basedir/@INSTALL_MYSQLSHAREDIR@"
-   plugindir="$basedir/@INSTALL_PLUGINDIR@"
--  pamtooldir=$plugindir
- else
-   basedir="@prefix@"
-   bindir="@bindir@"
-@@ -391,7 +388,6 @@ else
-   srcpkgdatadir="@pkgdatadir@"
-   buildpkgdatadir="@pkgdatadir@"
-   plugindir="@pkgplugindir@"
--  pamtooldir="@pkgplugindir@"
- fi
- 
- # Set up paths to SQL scripts required for bootstrap
-@@ -490,13 +486,13 @@ do
+@@ -482,13 +482,13 @@ do
    then
      if test -z "$group"
      then
@@ -63,33 +29,7 @@ Index: scripts/mysql_install_db.sh
        echo "user.  Check that you have the necessary permissions and try again."
        exit 1
      fi
-@@ -505,25 +501,6 @@ done
- 
- if test -n "$user"
- then
--  if test -z "$srcdir" -a "$in_rpm" -eq 0
--  then
--    chown 0 "$pamtooldir/auth_pam_tool_dir/auth_pam_tool" && \
--    chmod 04755 "$pamtooldir/auth_pam_tool_dir/auth_pam_tool"
--    if test $? -ne 0
--    then
--        echo "Couldn't set an owner to '$pamtooldir/auth_pam_tool_dir/auth_pam_tool'."
--        echo "It must be root, the PAM authentication plugin doesn't work otherwise.."
--        echo
--    fi
--    chown $user "$pamtooldir/auth_pam_tool_dir" && \
--    chmod 0700 "$pamtooldir/auth_pam_tool_dir"
--    if test $? -ne 0
--    then
--        echo "Cannot change ownership of the '$pamtooldir/auth_pam_tool_dir' directory"
--        echo "to the '$user' user. Check that you have the necessary permissions and try again."
--        echo
--    fi
--  fi
-   args="$args --user=$user"
- fi
- 
-@@ -641,10 +618,6 @@ fi
+@@ -652,10 +652,6 @@ fi
  # the screen.
  if test "$cross_bootstrap" -eq 0 && test -z "$srcdir"
  then
@@ -100,13 +40,13 @@ Index: scripts/mysql_install_db.sh
    if test "$auth_root_authentication_method" = normal
    then
      echo
-@@ -676,10 +649,7 @@ then
+@@ -687,10 +683,7 @@ then
    then
      echo
      echo "You can start the MariaDB daemon with:"
--    echo "cd '$basedir' ; $bindir/mariadb-safe --datadir='$ldata'"
+-    echo "cd '$basedir' ; $bindir/mariadbd-safe --datadir='$ldata'"
 -    echo
--    echo "You can test the MariaDB daemon with mysql-test-run.pl"
+-    echo "You can test the MariaDB daemon with mariadb-test-run.pl"
 -    echo "cd '$basedir/@INSTALL_MYSQLTESTDIR@' ; perl mariadb-test-run.pl"
 +    echo "/etc/rc.d/mysqld start"
    fi

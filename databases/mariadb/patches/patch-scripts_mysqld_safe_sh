@@ -12,7 +12,7 @@ Index: scripts/mysqld_safe.sh
  pid_file=
  err_log=
  err_log_base=
-@@ -734,7 +734,7 @@ then
+@@ -740,7 +740,7 @@ then
      [ "$user" ] && chown $user $mysql_unix_port_dir
      [ "$group" ] && chgrp $group $mysql_unix_port_dir
    fi

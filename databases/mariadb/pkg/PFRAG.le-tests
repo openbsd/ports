@@ -240,9 +240,7 @@ share/mysql-test/plugin/mroonga/mroonga/storage/r/create_table_index_normalizer_
 share/mysql-test/plugin/mroonga/mroonga/storage/r/create_table_index_normalizer_no_utf8_charset_with_utf8_normalizer.result
 share/mysql-test/plugin/mroonga/mroonga/storage/r/create_table_index_normalizer_none.result
 share/mysql-test/plugin/mroonga/mroonga/storage/r/create_table_index_normalizer_parameter.result
-share/mysql-test/plugin/mroonga/mroonga/storage/r/create_table_index_parser_comment.result
 share/mysql-test/plugin/mroonga/mroonga/storage/r/create_table_index_parser_default.result
-share/mysql-test/plugin/mroonga/mroonga/storage/r/create_table_index_parser_off.result
 share/mysql-test/plugin/mroonga/mroonga/storage/r/create_table_index_token_filters_multiple_token_filters.result
 share/mysql-test/plugin/mroonga/mroonga/storage/r/create_table_index_token_filters_one_token_filter.result
 share/mysql-test/plugin/mroonga/mroonga/storage/r/create_table_index_token_filters_parameter.result
@@ -842,9 +840,7 @@ share/mysql-test/plugin/mroonga/mroonga/storage/t/create_table_index_normalizer_
 share/mysql-test/plugin/mroonga/mroonga/storage/t/create_table_index_normalizer_no_utf8_charset_with_utf8_normalizer.test
 share/mysql-test/plugin/mroonga/mroonga/storage/t/create_table_index_normalizer_none.test
 share/mysql-test/plugin/mroonga/mroonga/storage/t/create_table_index_normalizer_parameter.test
-share/mysql-test/plugin/mroonga/mroonga/storage/t/create_table_index_parser_comment.test
 share/mysql-test/plugin/mroonga/mroonga/storage/t/create_table_index_parser_default.test
-share/mysql-test/plugin/mroonga/mroonga/storage/t/create_table_index_parser_off.test
 share/mysql-test/plugin/mroonga/mroonga/storage/t/create_table_index_token_filters_multiple_token_filters.test
 share/mysql-test/plugin/mroonga/mroonga/storage/t/create_table_index_token_filters_one_token_filter.test
 share/mysql-test/plugin/mroonga/mroonga/storage/t/create_table_index_token_filters_parameter.test
@@ -1318,7 +1314,6 @@ share/mysql-test/plugin/mroonga/mroonga/wrapper/r/create_table_index_flags_with_
 share/mysql-test/plugin/mroonga/mroonga/wrapper/r/create_table_normalizer_comment.result
 share/mysql-test/plugin/mroonga/mroonga/wrapper/r/create_table_normalizer_fulltext_index_bin.result
 share/mysql-test/plugin/mroonga/mroonga/wrapper/r/create_table_normalizer_parameter.result
-share/mysql-test/plugin/mroonga/mroonga/wrapper/r/create_table_parser_comment.result
 share/mysql-test/plugin/mroonga/mroonga/wrapper/r/create_table_token_filters_index_multiple_token_filters.result
 share/mysql-test/plugin/mroonga/mroonga/wrapper/r/create_table_token_filters_index_one_token_filter.result
 share/mysql-test/plugin/mroonga/mroonga/wrapper/r/create_table_token_filters_index_parameter.result
@@ -1449,7 +1444,6 @@ share/mysql-test/plugin/mroonga/mroonga/wrapper/t/create_table_index_flags_with_
 share/mysql-test/plugin/mroonga/mroonga/wrapper/t/create_table_normalizer_comment.test
 share/mysql-test/plugin/mroonga/mroonga/wrapper/t/create_table_normalizer_fulltext_index_bin.test
 share/mysql-test/plugin/mroonga/mroonga/wrapper/t/create_table_normalizer_parameter.test
-share/mysql-test/plugin/mroonga/mroonga/wrapper/t/create_table_parser_comment.test
 share/mysql-test/plugin/mroonga/mroonga/wrapper/t/create_table_token_filters_index_multiple_token_filters.test
 share/mysql-test/plugin/mroonga/mroonga/wrapper/t/create_table_token_filters_index_one_token_filter.test
 share/mysql-test/plugin/mroonga/mroonga/wrapper/t/create_table_token_filters_index_parameter.test

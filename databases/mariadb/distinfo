@@ -1,2 +1,4 @@
-SHA256 (mariadb-10.9.8.tar.gz) = /Nxvc4gkd8IDEOeVoC90blSTSqeos2iQC9ReeKXa9u0=
-SIZE (mariadb-10.9.8.tar.gz) = 99099072
+SHA256 (fmt-11.0.1.zip) = YspFUxgUEJtdbO8M8v0X25LDKjDdIwEpdudoxoVTSBQ=
+SHA256 (mariadb-11.4.3.tar.gz) = bwAXuZAbsYl94O7SHK75/6nWbvVZNFoNim8BEwhBPs4=
+SIZE (fmt-11.0.1.zip) = 1419951
+SIZE (mariadb-11.4.3.tar.gz) = 108166685

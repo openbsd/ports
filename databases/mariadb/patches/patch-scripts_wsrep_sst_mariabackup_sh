@@ -1,7 +1,7 @@
 Index: scripts/wsrep_sst_mariabackup.sh
 --- scripts/wsrep_sst_mariabackup.sh.orig
 +++ scripts/wsrep_sst_mariabackup.sh
-@@ -101,6 +101,12 @@ if [ -z "$BACKUP_BIN" ]; then
+@@ -101,6 +101,18 @@ if [ -z "$BACKUP_BIN" ]; then
      exit 42
  fi
  
@@ -11,33 +11,12 @@ Index: scripts/wsrep_sst_mariabackup.sh
 +    exit 42
 +fi
 +
++GDU_BIN=$(commandex 'gdu')
++if [ -z "$GDU_BIN" ]; then
++    wsrep_log_error 'gdu binary not found in path'
++    exit 42
++fi
++
  DATA="$WSREP_SST_OPT_DATA"
- INFO_FILE='xtrabackup_galera_info'
- IST_FILE='xtrabackup_ist'
-@@ -441,7 +447,7 @@ get_footprint()
-     cd "$DATA_DIR"
-     local payload_data=$(find . \
-         -regex '.*undo[0-9]+$\|.*\.ibd$\|.*\.MYI$\|.*\.MYD$\|.*ibdata1$' \
--        -type f -print0 | du --files0-from=- --block-size=1 -c -s | \
-+        -type f -print0 | xargs -0 du -c -s | \
-         awk 'END { print $1 }')
-     local payload_undo=0
-     if [ -n "$ib_undo_dir" -a "$ib_undo_dir" != '.' -a \
-@@ -449,7 +455,7 @@ get_footprint()
-     then
-         cd "$ib_undo_dir"
-         payload_undo=$(find . -regex '.*undo[0-9]+$' -type f -print0 | \
--            du --files0-from=- --block-size=1 -c -s | awk 'END { print $1 }')
-+            xargs -0 du -c -s | awk 'END { print $1 }')
-     fi
-     cd "$OLD_PWD"
  
-@@ -798,7 +804,7 @@ recv_joiner()
-     local ltcmd="$tcmd"
-     if [ $tmt -gt 0 ]; then
-         if [ -n "$(commandex timeout)" ]; then
--            if timeout --help | grep -qw -F -- '-k'; then
-+            if timeout --help 2>/dev/null | grep -qw -F -- '-k'; then
-                 ltcmd="timeout -k $(( tmt+10 )) $tmt $tcmd"
-             else
-                 ltcmd="timeout -s9 $tmt $tcmd"
+ INFO_FILE='mariadb_backup_galera_info'

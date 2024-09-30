@@ -2,16 +2,18 @@ COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
-VERSION=	10.9.8
+VERSION=	11.4.3
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
-REVISION-server= 1
 EPOCH=		1
 CATEGORIES=	databases
 SITES=		https://downloads.mariadb.com/MariaDB/${DISTNAME}/source/ \
 		https://ftp.osuosl.org/pub/mariadb/${DISTNAME}/source/
 
-LIB_VERSION=	30
+DISTFILES.fmt=	fmt-11.0.1.zip
+SITES.fmt=	https://github.com/fmtlib/fmt/releases/download/11.0.1/
+
+LIB_VERSION=	31
 SHARED_LIBS=	mysqlclient_r	${LIB_VERSION}.0 \
 		mysqlclient	${LIB_VERSION}.0 \
 		mariadb		${LIB_VERSION}.0
@@ -38,12 +40,13 @@ SOCKET_DIR=	/var/run/mysql
 SUBST_VARS=	SOCKET_DIR
 
 MODULES=	devel/cmake
-BUILD_DEPENDS=	devel/bison \
-		devel/fmt
+BUILD_DEPENDS=	devel/bison
 
 LIB_DEPENDS-main=	${LIB_DEPENDS}
-RUN_DEPENDS-server=	${BASE_PKGPATH},-main>=10.9v1,<10.10v1 \
-			databases/p5-DBD-MariaDB
+RUN_DEPENDS-server=	${BASE_PKGPATH},-main>=11.4v1,<11.5v1 \
+			databases/p5-DBD-MariaDB \
+			misc/findutils \
+			sysutils/coreutils
 LIB_DEPENDS-server=	${LIB_DEPENDS} \
 			archivers/bzip2 \
 			archivers/lz4 \
@@ -54,7 +57,7 @@ LIB_DEPENDS-server=	${LIB_DEPENDS} \
 			devel/pcre2 \
 			net/curl \
 			textproc/libxml
-RUN_DEPENDS-tests=	${BASE_PKGPATH},-main>=10.9v1,<10.10v1
+RUN_DEPENDS-tests=	${BASE_PKGPATH},-main>=11.4v1,<11.5v1
 LIB_DEPENDS-tests=	${LIB_DEPENDS} \
 			devel/pcre2
 
@@ -78,6 +81,7 @@ CONFIGURE_ARGS+=-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 		-DCOMPILATION_COMMENT='OpenBSD port: ${FULLPKGNAME-server}' \
 		-DPLUGIN_OQGRAPH=NO \
 		-DWITH_EXTERNAL_ZLIB=On \
+		-DWITH_LIBFMT=bundled \
 		-DWITH_PCRE=system \
 		-DWITH_SSL=system \
 		-DWITH_WSREP=On \
@@ -127,6 +131,8 @@ PKG_ARGS+=	-Drocksdb=0
 .endif
 
 pre-configure:
+	mkdir -p ${WRKBUILD}/extra/libfmt/src
+	cp -f ${DISTDIR}/fmt-11.0.1.zip ${WRKBUILD}/extra/libfmt/src
 	@${SUBST_CMD} ${WRKSRC}/cmake/mysql_version.cmake \
 	    ${WRKSRC}/libmariadb/mariadb_config/mariadb_config.c.in \
 	    ${WRKSRC}/scripts/mysql_config.sh

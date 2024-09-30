@@ -1,32 +1,24 @@
 Index: scripts/wsrep_sst_common.sh
 --- scripts/wsrep_sst_common.sh.orig
 +++ scripts/wsrep_sst_common.sh
-@@ -23,6 +23,11 @@ trap 'exit 3'  INT QUIT TERM
- # Setting the path for some utilities on CentOS
- export PATH="$PATH:/usr/sbin:/usr/bin:/sbin:/bin"
+@@ -39,6 +39,16 @@ if [ -z "$BASH_VERSION" ]; then
+     [ -z "$(commandex printf)" ] && with_printf=0
+ fi
  
 +find()
 +{
 +    gfind "$@"
 +}
 +
++du()
++{
++    gdu "$@"
++}
++
  trim_string()
  {
      if [ -n "$BASH_VERSION" ]; then
-@@ -1166,9 +1171,9 @@ is_local_ip()
-     # the domain name check:
-     if [ "${2:-0}" -eq 0 ]; then
-        # We consider all the names of a given host to be local addresses:
--       [ "$1" = "$(hostname -s)" -o \
--         "$1" = "$(hostname -f)" -o \
--         "$1" = "$(hostname -d)" ] && return 0
-+       [ "$1" = "$(hostname -s 2>/dev/null)" -o \
-+         "$1" = "$(hostname -f 2>/dev/null)" -o \
-+         "$1" = "$(hostname -d 2>/dev/null)" ] && return 0
-     fi
-     # If the address contains anything other than digits
-     # and separators, it is not a local address:
-@@ -1199,14 +1204,17 @@ check_sockets_utils()
+@@ -1207,14 +1217,17 @@ check_sockets_utils()
      lsof_available=0
      sockstat_available=0
      ss_available=0
@@ -45,7 +37,7 @@ Index: scripts/wsrep_sst_common.sh
      then
          wsrep_log_error "Neither lsof, nor sockstat or ss tool was found in" \
                          "the PATH. Make sure you have it installed."
-@@ -1249,6 +1257,8 @@ check_port()
+@@ -1257,6 +1270,8 @@ check_port()
      elif [ $ss_available -ne 0 ]; then
          ss -nlpH "( sport = :$port )" 2>/dev/null | \
          grep -q -E "users:\\(.*\\(\"($utils)[^[:space:]]*\"[^)]*,pid=$pid(,[^)]*)?\\)" && rc=0
