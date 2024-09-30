@@ -513,8 +513,6 @@
      SUBDIR += p5-Zonemaster
      SUBDIR += p5-flowd
      SUBDIR += packetq
-     SUBDIR += pavuk
-     SUBDIR += pavuk,no_x11
      SUBDIR += pbgpp
      SUBDIR += pcapdiff
      SUBDIR += pcapmerge
