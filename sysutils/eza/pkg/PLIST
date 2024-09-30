@@ -9,6 +9,8 @@ share/examples/eza/
 share/examples/eza/completions/
 share/examples/eza/completions/nushell/
 share/examples/eza/completions/nushell/eza.nu
+share/examples/eza/theme/
+share/examples/eza/theme/theme.yml
 share/fish/
 share/fish/completions/
 share/fish/completions/eza.fish
