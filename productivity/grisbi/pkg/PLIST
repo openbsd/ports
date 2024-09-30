@@ -1,6 +1,6 @@
 @bin bin/grisbi
 @man man/man1/grisbi.1
-share/applications/grisbi.desktop
+share/applications/org.grisbi.Grisbi.desktop
 share/doc/grisbi/
 share/doc/grisbi/C/
 share/doc/grisbi/C/contents_motif.gif
@@ -211,22 +211,16 @@ share/grisbi/categories/
 share/grisbi/categories/C/
 share/grisbi/categories/C/00_general.cgsb
 share/grisbi/categories/C/empty.cgsb
-share/grisbi/categories/de_AT/
-share/grisbi/categories/de_AT/keine.cgsb
-share/grisbi/categories/de_AT/kontenplan.cgsb
-share/grisbi/categories/de_AT/minimal.cgsb
-share/grisbi/categories/de_AT/standard.cgsb
-share/grisbi/categories/de_DE/
-share/grisbi/categories/de_DE/keine.cgsb
-share/grisbi/categories/de_DE/minimal.cgsb
-share/grisbi/categories/de_DE/standard.cgsb
+share/grisbi/categories/de/
+share/grisbi/categories/de/keine.cgsb
+share/grisbi/categories/de/minimal.cgsb
+share/grisbi/categories/de/standard.cgsb
 share/grisbi/categories/fr/
 share/grisbi/categories/fr/00_general.cgsb
 share/grisbi/categories/fr/empty.cgsb
 share/grisbi/categories/fr/liberal.cgsb
-share/grisbi/categories/fr_FR/
-share/grisbi/categories/fr_FR/plan-associatif-simplifie.cgsb
-share/grisbi/categories/fr_FR/plan-comptable.cgsb
+share/grisbi/categories/fr/plan-associatif-simplifie.cgsb
+share/grisbi/categories/fr/plan-comptable.cgsb
 share/grisbi/categories/it/
 share/grisbi/categories/it/00_general.cgsb
 share/grisbi/categories/it/empty.cgsb
