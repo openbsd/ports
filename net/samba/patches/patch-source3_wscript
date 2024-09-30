@@ -4,7 +4,7 @@
 Index: source3/wscript
 --- source3/wscript.orig
 +++ source3/wscript
-@@ -101,6 +101,7 @@ def options(opt):
+@@ -96,6 +96,7 @@ def options(opt):
      # default = None means autodetection
      opt.samba_add_onoff_option('spotlight', with_name="enable", without_name="disable", default=None)
      opt.samba_add_onoff_option('wsp', with_name="enable", without_name="disable", default=True)
@@ -12,7 +12,7 @@ Index: source3/wscript
  
  def configure(conf):
      default_static_modules = []
-@@ -109,7 +110,7 @@ def configure(conf):
+@@ -104,7 +105,7 @@ def configure(conf):
      forced_static_modules = []
      forced_shared_modules = []
  
@@ -21,7 +21,7 @@ Index: source3/wscript
          conf.ADD_LDFLAGS("-Wl,--export-dynamic", testflags=True)
  
      # We crash without vfs_default
-@@ -1799,7 +1800,7 @@ int main(void) {
+@@ -1732,7 +1733,7 @@ int main(void) {
          else:
              conf.fatal('AFS headers not available, but --with-fake-kaserver was specified')
  

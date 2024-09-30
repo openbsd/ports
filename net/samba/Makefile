@@ -1,4 +1,4 @@
-VERSION =		4.20.4
+VERSION =		4.21.0
 DISTNAME =		samba-${VERSION}
 EPOCH =			0
 
@@ -14,28 +14,25 @@ SHARED_LIBS =		dcerpc			1.2 \
 			dcerpc-binding		5.0 \
 			dcerpc-samr		1.0 \
 			dcerpc-server-core	3.1 \
-			ldb			2.3 \
+			ldb			2.4 \
 			ndr			3.2 \
 			ndr-krb5pac		1.3 \
 			ndr-nbt			2.1 \
 			ndr-standard		6.0 \
-			netapi			3.3 \
-			samba-credentials	1.6 \
+			netapi			3.4 \
+			samba-credentials	2.0 \
 			samba-errors		2.1 \
-			samba-hostconfig	14.0 \
-			samba-passdb		3.0 \
-			samba-util		10.1 \
-			samdb			3.1 \
+			samba-hostconfig	15.0 \
+			samba-passdb		3.1 \
+			samba-policy		0.0 \
+			samba-util		11.0 \
+			samdb			4.0 \
 			smbclient		6.2 \
-			smbconf			15.0 \
+			smbconf			16.0 \
 			smbldap			1.0 \
 			tevent			2.3 \
 			tevent-util		2.0 \
 			wbclient		5.1
-
-# Those have to be handled specially, see "Python ABI" below.
-SHARED_LIBS +=		pyldb-util.cpython-${MODPY_MAJORMINOR}		1.0
-SHARED_LIBS +=		samba-policy.cpython-${MODPY_MAJORMINOR}	1.0
 
 CATEGORIES =		net sysutils security
 
@@ -57,9 +54,6 @@ WANTLIB-docs =
 
 SITES =			https://download.samba.org/pub/samba/stable/ \
 			https://download.samba.org/pub/samba/old-versions/
-
-# XXX 0640 on Makefile breaks update-patches with PORTS_PRIVSEP=Yes
-FIX_EXTRACT_PERMISSIONS =	Yes
 
 MULTI_PACKAGES =	-main -docs
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
@@ -84,7 +78,7 @@ RUN_DEPENDS-docs =
 LIB_DEPENDS-main =	archivers/libarchive \
 			converters/libiconv \
 			databases/openldap \
-			databases/tdb>=1.4.10 \
+			databases/tdb>=1.4.12 \
 			devel/jansson \
 			devel/libinotify \
 			devel/libtalloc>=2.4.2 \
@@ -149,30 +143,6 @@ MAKE_ENV =		LC_ALL=en_US.UTF-8 \
 .for _l _v in ${SHARED_LIBS}
 MAKE_ENV +=		LIB${_l:S/-/_/g}_VERSION=${_v}
 .endfor
-
-## Python ABI
-# The samba project decided to also encode the python ABI name into shared
-# libraries that link against libpython.  Our ports infrastructure barely
-# copes.
-
-# 1. Those shared libraries names contain a variable whose value is not yet
-# known by the time the .for loop runs
-MAKE_ENV +=		LIBpyldb_util_cpython_${MODPY_MAJORMINOR}_VERSION=${LIBpyldb-util.cpython-${MODPY_MAJORMINOR}_VERSION}
-MAKE_ENV +=		LIBsamba_policy_cpython_${MODPY_MAJORMINOR}_VERSION=${LIBsamba-policy.cpython-${MODPY_MAJORMINOR}_VERSION}
-
-# 2. Said libraries end up as such in pkg/PLIST-foo:
-# @lib lib/libbar.${MODPY_PYC_MAGIC_TAG}so.${LIBbar.cpython-XY_VERSION}
-# We don't want to hardcode the XY version number in the PLIST.
-PYLDB_UTIL_LIBSUFFIX =	cpython-${MODPY_MAJORMINOR}.so.${LIBpyldb-util.cpython-${MODPY_MAJORMINOR}_VERSION}
-SUBST_VARS +=		PYLDB_UTIL_LIBSUFFIX
-SAMBA_POLICY_LIBSUFFIX=	cpython-${MODPY_MAJORMINOR}.so.${LIBsamba-policy.cpython-${MODPY_MAJORMINOR}_VERSION}
-SUBST_VARS +=		SAMBA_POLICY_LIBSUFFIX
-
-# 3. Some samba python extension modules don't follow the same naming
-# pattern as the usual python extension modules.
-SAMBA_PYTHON_MAGIC_TAG=	${MODPY_PYC_MAGIC_TAG:S/./-samba4/}
-SUBST_VARS +=		SAMBA_PYTHON_MAGIC_TAG
-
 
 SAMBA_CONFIG =		${PREFIX}/share/examples/samba/smb.conf.default
 SAMBA_LOGDIR =		${VARBASE}/log/samba

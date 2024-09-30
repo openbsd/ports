@@ -4,7 +4,7 @@ interface used at least by pdbedit.
 Index: source3/wscript_build
 --- source3/wscript_build.orig
 +++ source3/wscript_build
-@@ -134,7 +134,9 @@ ldapsam_pdb_match = ['!priv2ld', '!smbldap_search_doma
+@@ -137,7 +137,9 @@ ldapsam_pdb_match = ['!priv2ld', '!smbldap_search_doma
                       '!get_attr_list']
  private_pdb_match.append('!pdb_nds_*')
  private_pdb_match.append('!pdb_ldapsam_init*')
