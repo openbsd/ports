@@ -1,0 +1,58 @@
+From d681747ebf12602cb426725eb8ce2753211e2477 Mon Sep 17 00:00:00 2001
+From: Zdenek Dohnal <zdohnal@redhat.com>
+Date: Thu, 26 Sep 2024 23:12:14 +0200
+Subject: [PATCH] Prevent PPD generation based on invalid IPP response
+
+Index: ppd/ppd-cache.c
+--- ppd/ppd-cache.c.orig
++++ ppd/ppd-cache.c
+@@ -3413,8 +3413,8 @@ ppdCacheGetBin(
+ 
+   //
+   // Range check input...
+- 
+ 
++
+   if (!pc || !output_bin)
+     return (NULL);
+ 
+@@ -3914,7 +3914,7 @@ ppdCacheGetPageSize(
+       {
+ 	//
+ 	// Check not only the base size (like "A4") but also variants (like
+-        // "A4.Borderless"). We check only the margins and orientation but do 
++        // "A4.Borderless"). We check only the margins and orientation but do
+ 	// not re-check the size.
+ 	//
+ 
+@@ -4711,7 +4711,7 @@ ppdPwgPpdizeName(const char *ipp,	// I - IPP keyword
+ 	*end;				// End of name buffer
+ 
+ 
+-  if (!ipp)
++  if (!ipp || !_ppd_isalnum(*ipp))
+   {
+     *name = '\0';
+     return;
+@@ -4721,13 +4721,19 @@ ppdPwgPpdizeName(const char *ipp,	// I - IPP keyword
+ 
+   for (ptr = name + 1, end = name + namesize - 1; *ipp && ptr < end;)
+   {
+-    if (*ipp == '-' && _ppd_isalnum(ipp[1]))
++    if (*ipp == '-' && isalnum(ipp[1]))
+     {
+       ipp ++;
+       *ptr++ = (char)toupper(*ipp++ & 255);
+     }
+-    else
++    else if (*ipp == '_' || *ipp == '.' || *ipp == '-' || isalnum(*ipp))
++    {
+       *ptr++ = *ipp++;
++    }
++    else
++    {
++      ipp ++;
++    }
+   }
+ 
+   *ptr = '\0';
