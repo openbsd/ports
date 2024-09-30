@@ -1,0 +1,23 @@
+From 95576ec3d20c109332d14672a807353cdc551018 Mon Sep 17 00:00:00 2001
+From: Zdenek Dohnal <zdohnal@redhat.com>
+Date: Thu, 26 Sep 2024 23:09:29 +0200
+Subject: [PATCH] cfGetPrinterAttributes5(): Validate response attributes before return
+
+Index: cupsfilters/ipp.c
+--- cupsfilters/ipp.c.orig
++++ cupsfilters/ipp.c
+@@ -452,6 +452,14 @@ cfGetPrinterAttributes5(http_t *http_printer,
+ 	    ippDelete(response2);
+ 	  }
+ 	}
++
++	// Check if the response is valid
++	if (!ippValidateAttributes(response))
++	{
++	  ippDelete(response);
++	  response = NULL;
++	}
++
+ 	if (have_http == 0) httpClose(http_printer);
+ 	if (uri) free(uri);
+ 	return (response);

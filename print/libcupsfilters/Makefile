@@ -2,7 +2,7 @@ COMMENT=		library for developing printing filters
 
 V=			2.0.0
 DISTNAME=		libcupsfilters-${V}
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  cupsfilters          2.0      # 2.0
 
@@ -17,11 +17,11 @@ PERMIT_PACKAGE=		Yes
 
 SITES=	https://github.com/OpenPrinting/libcupsfilters/releases/download/${V}/
 
-WANTLIB += ${COMPILER_LIBCXX} avahi-client avahi-common brotlidec
-WANTLIB += brotlienc crypto cups dbus-1 execinfo exif expat fontconfig
-WANTLIB += freetype gmp gnutls hogweed iconv idn2 intl jpeg lcms2
-WANTLIB += lzma m nettle openjp2 p11-kit png poppler poppler-cpp
-WANTLIB += qpdf ssl tasn1 tiff unistring z zstd
+WANTLIB += ${COMPILER_LIBCXX} avahi-client avahi-common crypto
+WANTLIB += cups dbus-1 execinfo exif expat fontconfig freetype
+WANTLIB += gmp gnutls hogweed iconv idn2 intl jpeg lcms2 lzma
+WANTLIB += m nettle openjp2 p11-kit png poppler poppler-cpp qpdf
+WANTLIB += ssl tasn1 tiff unistring z zstd
 
 # -std=c++17
 COMPILER=		base-clang ports-gcc
