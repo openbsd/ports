@@ -1,8 +1,8 @@
 COMMENT =	emulator frontend
 
 PKGNAME =	es-de-$V
-V =		3.0.3
-REV =		6cdafbd638c13c6b5258f67dbb34dc5fe292c465
+V =		3.1.0
+REV =		842c9966eb73efb3436a4df2dfdd66063ce7361c
 
 DIST_TUPLE +=	gitlab es-de emulationstation-de v$V .
 
@@ -15,14 +15,15 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL GLU SDL2 avcodec avfilter avformat avutil c curl
-WANTLIB += freeimage freetype git2 m poppler-cpp pugixml
+WANTLIB += freeimage freetype git2 harfbuzz icuuc intl m poppler-cpp pugixml
 
 # c++17
 COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake
 
-BUILD_DEPENDS =		graphics/glm
+BUILD_DEPENDS =		devel/gettext,-tools \
+			graphics/glm
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+4,-guic
 LIB_DEPENDS =		devel/libgit2/libgit2 \
