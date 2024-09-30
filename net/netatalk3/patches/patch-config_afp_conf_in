@@ -1,15 +1,15 @@
-Index: config/afp.conf.tmpl
---- config/afp.conf.tmpl.orig
-+++ config/afp.conf.tmpl
+Index: config/afp.conf.in
+--- config/afp.conf.in.orig
++++ config/afp.conf.in
 @@ -4,6 +4,7 @@
  
  [Global]
  ; Global server settings
 +; mimic model = TimeCapsule6,106
  
- ; [Homes]
- ; basedir regex = /home
-@@ -14,3 +15,4 @@
+ [Homes]
+ basedir regex = @homedir@
+@@ -14,3 +15,4 @@ basedir regex = @homedir@
  ; [My Time Machine Volume]
  ; path = /path/to/backup
  ; time machine = yes
