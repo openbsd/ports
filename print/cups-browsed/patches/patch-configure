@@ -1,0 +1,26 @@
+From 1debe6b140c37e0aa928559add4abcc95ce54aa2 Mon Sep 17 00:00:00 2001
+From: Zdenek Dohnal <zdohnal@redhat.com>
+Date: Thu, 26 Sep 2024 23:03:32 +0200
+Subject: [PATCH] Default BrowseRemoteProtocols should not include "cups" protocol
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -1583,7 +1583,7 @@ Optional Packages:
+ 
+   --with-browseremoteprotocols=value
+                           Set which protocols to listen for in cups-browsed
+-                          (default: dnssd cups)
++                          (default: dnssd)
+   --with-remote-cups-local-queue-naming=DNS-SD|MakeModel|RemoteName
+                           Choose the origin of local queue naming for remote
+                           CUPS queues, default based on DNS-SD ID
+@@ -16272,7 +16272,7 @@ if test ${with_browseremoteprotocols+y}
+ then :
+   withval=$with_browseremoteprotocols; with_browseremoteprotocols="$withval"
+ else $as_nop
+-  with_browseremoteprotocols="dnssd cups"
++  with_browseremoteprotocols="dnssd"
+ 
+ fi
+ 

@@ -2,6 +2,7 @@ COMMENT=		browse network for remote CUPS queues and IPP printers
 
 V=			2.0.1
 DISTNAME=		cups-browsed-${V}
+REVISION=		0
 
 CATEGORIES=		print
 
