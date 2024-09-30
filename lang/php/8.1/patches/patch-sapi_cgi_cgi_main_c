@@ -9,7 +9,7 @@ Index: sapi/cgi/cgi_main.c
  	/* end of temporary locals */
  
  	int max_requests = 500;
-@@ -1777,7 +1778,12 @@ int main(int argc, char *argv[])
+@@ -1776,7 +1777,12 @@ int main(int argc, char *argv[])
  
  	sapi_startup(&cgi_sapi_module);
  	fastcgi = fcgi_is_fastcgi();
