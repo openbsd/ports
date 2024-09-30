@@ -1,0 +1,9 @@
+notmuch-mutt provide integration among the Mutt mail user agent and the Notmuch
+mail indexer.
+
+notmuch-mutt offer two main integration features. The first one is the ability
+of stating a search query interactively and then jump to a fresh Maildir
+containing its search results only. The second one is the ability to
+reconstruct threads on the fly starting from the currently highlighted mail,
+which comes handy when a thread has been split across different maildirs,
+archived, or the like.

@@ -1,0 +1,6 @@
+bin/notmuch-mutt
+@man man/man1/notmuch-mutt.1
+share/examples/notmuch/
+share/examples/notmuch/mutt/
+share/examples/notmuch/mutt/README
+share/examples/notmuch/mutt/notmuch-mutt.rc

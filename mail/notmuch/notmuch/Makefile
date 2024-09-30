@@ -1,14 +1,16 @@
 COMMENT-main =		mail indexer, tagger and threader
 COMMENT-emacs =		Emacs bindings for notmuch
+COMMENT-mutt =		Mutt integration for notmuch
 
 PKGNAME-main =		notmuch-${V}
 PKGNAME-emacs =		notmuch-emacs-${V}
+PKGNAME-mutt =		notmuch-mutt-${V}
 REVISION-emacs =	0
 REVISION-main =		0
 
 SHARED_LIBS +=		notmuch	1.2
 
-MULTI_PACKAGES =	-main -emacs
+MULTI_PACKAGES =	-main -emacs -mutt
 DEBUG_PACKAGES =	-main
 
 COMPILER=		base-clang ports-gcc
@@ -23,6 +25,11 @@ LIB_DEPENDS =		databases/xapian-core \
 RUN_DEPENDS-emacs =	devel/desktop-file-utils \
 			databases/xapian-core \
 			editors/emacs \
+			${FULLPKGNAME-main}:${FULLPKGPATH-main}
+
+RUN_DEPENDS-mutt =	devel/p5-Term-ReadLine-Gnu \
+			mail/p5-Mail-Box \
+			mail/p5-Mail-Tools \
 			${FULLPKGNAME-main}:${FULLPKGPATH-main}
 
 # this builds, though does not currently install, cffi-based Python
@@ -67,9 +74,19 @@ post-extract:
 	cd ${WRKSRC}/test; [ -r test-lib-OPENBSD.sh ] || \
 	    cp test-lib-FREEBSD.sh test-lib-OPENBSD.sh
 
+EXAMPLES_DIR=${PREFIX}/share/examples/notmuch
 post-install:
 	rm ${PREFIX}/man/man1/notmuch-setup.1.gz
 	gunzip ${PREFIX}/man/*/*gz
 	ln -s notmuch.1 ${PREFIX}/man/man1/notmuch-setup.1
+
+	cd ${WRKBUILD}/contrib/notmuch-mutt && \
+		${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
+		${ALL_FAKE_FLAGS} ${FAKE_TARGET}
+	${INSTALL_DATA_DIR} ${EXAMPLES_DIR}/mutt
+	mv ${WRKINST}/etc/Muttrc.d/notmuch-mutt.rc ${EXAMPLES_DIR}/mutt/
+	rmdir ${WRKINST}/etc/Muttrc.d
+	${INSTALL_DATA} ${WRKSRC}/contrib/notmuch-mutt/README \
+		${EXAMPLES_DIR}/mutt/
 
 .include <bsd.port.mk>
