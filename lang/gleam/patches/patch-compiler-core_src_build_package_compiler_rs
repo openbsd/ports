@@ -2,7 +2,7 @@ Consider MODERL_VERSION
 Index: compiler-core/src/build/package_compiler.rs
 --- compiler-core/src/build/package_compiler.rs.orig
 +++ compiler-core/src/build/package_compiler.rs
-@@ -219,7 +219,7 @@ where
+@@ -234,7 +234,7 @@ where
          // Compile Erlang and Elixir modules
          let status = self
              .io

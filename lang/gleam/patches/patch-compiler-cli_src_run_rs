@@ -2,7 +2,7 @@ Consider MODERL_VERSION
 Index: compiler-cli/src/run.rs
 --- compiler-cli/src/run.rs.orig
 +++ compiler-cli/src/run.rs
-@@ -146,7 +146,7 @@ fn run_erlang(
+@@ -165,7 +165,7 @@ fn run_erlang(
          args.push(argument);
      }
  
