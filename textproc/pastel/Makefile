@@ -2,7 +2,7 @@ COMMENT =		command line tool to manipulate colors
 
 GH_ACCOUNT =		sharkdp
 GH_PROJECT =		pastel
-GH_TAGNAME =		v0.9.0
+GH_TAGNAME =		v0.10.0
 
 MAINTAINER =		Volker Schlecht <openbsd-ports@schlecht.dev>
 
