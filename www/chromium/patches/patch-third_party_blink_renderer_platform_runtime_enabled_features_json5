@@ -1,7 +1,7 @@
 Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
 --- third_party/blink/renderer/platform/runtime_enabled_features.json5.orig
 +++ third_party/blink/renderer/platform/runtime_enabled_features.json5
-@@ -344,7 +344,7 @@
+@@ -364,7 +364,7 @@
        name: "AppTitle",
        status: "experimental",
        origin_trial_feature_name: "AppTitle",
@@ -10,7 +10,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
        base_feature: "WebAppEnableAppTitle",
      },
      {
-@@ -1703,7 +1703,7 @@
+@@ -1801,7 +1801,7 @@
        base_feature: "none",
        public: true,
        origin_trial_feature_name: "FedCmMultipleIdentityProviders",
@@ -19,7 +19,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
        origin_trial_allows_third_party: true,
      },
      {
-@@ -3105,7 +3105,7 @@
+@@ -3227,7 +3227,7 @@
        // Tracking bug for the implementation: https://crbug.com/1462930
        name: "PermissionElement",
        origin_trial_feature_name: "PermissionElement",
@@ -28,7 +28,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
        status: "experimental",
        public: true,
        base_feature_status: "enabled",
-@@ -3232,7 +3232,7 @@
+@@ -3366,7 +3366,7 @@
      {
        name: "PrivateNetworkAccessPermissionPrompt",
        origin_trial_feature_name: "PrivateNetworkAccessPermissionPrompt",
@@ -37,7 +37,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
        status: "stable",
        public: true,
        base_feature: "none",
-@@ -4195,7 +4195,7 @@
+@@ -4384,7 +4384,7 @@
        name: "UnrestrictedSharedArrayBuffer",
        base_feature: "none",
        origin_trial_feature_name: "UnrestrictedSharedArrayBuffer",
@@ -46,7 +46,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
      },
      // Enables using policy-controlled feature "usb-unrestricted" to allow
      // isolated context to access protected USB interface classes and to
-@@ -4364,7 +4364,7 @@
+@@ -4564,7 +4564,7 @@
      {
        name: "WebAppScopeExtensions",
        origin_trial_feature_name: "WebAppScopeExtensions",
@@ -55,7 +55,7 @@ Index: third_party/blink/renderer/platform/runtime_enabled_features.json5
        status: "experimental",
        base_feature: "none",
      },
-@@ -4407,7 +4407,7 @@
+@@ -4607,7 +4607,7 @@
        status: "experimental",
        base_feature: "none",
        origin_trial_feature_name: "WebAppUrlHandling",

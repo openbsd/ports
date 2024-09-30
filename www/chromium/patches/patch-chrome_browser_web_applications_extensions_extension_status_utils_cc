@@ -10,8 +10,8 @@ Index: chrome/browser/web_applications/extensions/extension_status_utils.cc
  // TODO(b/268221237): Remove this allow-list.
  const char kDefaultAllowedExtensionIds[] =
      "alhngdkjgnedakdlnamimgfihgkmenbh,"
-@@ -113,7 +113,7 @@ bool ClearExternalExtensionUninstalled(content::Browse
-       extension_id);
+@@ -107,7 +107,7 @@ bool IsExternalExtensionUninstalled(content::BrowserCo
+   return prefs && prefs->IsExternalExtensionUninstalled(extension_id);
  }
  
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)

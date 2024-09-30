@@ -1,12 +1,12 @@
 Index: mojo/core/BUILD.gn
 --- mojo/core/BUILD.gn.orig
 +++ mojo/core/BUILD.gn
-@@ -166,7 +166,7 @@ template("core_impl_source_set") {
-         ]
-       }
+@@ -161,7 +161,7 @@ source_set("impl_for_embedder") {
+       ]
+     }
  
--      if ((is_linux || is_chromeos || is_android) && !is_nacl) {
-+      if ((is_linux || is_chromeos || is_android) && !is_nacl && !is_bsd) {
-         sources += [
-           "channel_linux.cc",
-           "channel_linux.h",
+-    if ((is_linux || is_chromeos || is_android) && !is_nacl) {
++    if ((is_linux || is_chromeos || is_android) && !is_nacl && !is_bsd) {
+       sources += [
+         "channel_linux.cc",
+         "channel_linux.h",

@@ -12,7 +12,7 @@ Index: components/os_crypt/sync/os_crypt.h
  
 @@ -23,7 +23,7 @@ class PrefRegistrySimple;
  class PrefService;
- #endif
+ #endif  // BUILDFLAG(IS_WIN)
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_APPLE)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_APPLE) || BUILDFLAG(IS_BSD)

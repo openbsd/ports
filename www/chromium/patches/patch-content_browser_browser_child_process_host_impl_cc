@@ -1,15 +1,15 @@
 Index: content/browser/browser_child_process_host_impl.cc
 --- content/browser/browser_child_process_host_impl.cc.orig
 +++ content/browser/browser_child_process_host_impl.cc
-@@ -324,6 +324,7 @@ void BrowserChildProcessHostImpl::LaunchWithoutExtraCo
-       switches::kMojoCoreLibraryPath,
+@@ -328,6 +328,7 @@ void BrowserChildProcessHostImpl::LaunchWithoutExtraCo
+       switches::kLogBestEffortTasks,
        switches::kPerfettoDisableInterning,
        switches::kTraceToConsole,
 +      switches::kDisableUnveil,
    };
    cmd_line->CopySwitchesFrom(browser_command_line, kForwardSwitches);
  
-@@ -655,7 +656,7 @@ void BrowserChildProcessHostImpl::OnProcessLaunched() 
+@@ -659,7 +660,7 @@ void BrowserChildProcessHostImpl::OnProcessLaunched() 
            ->child_process());
  #endif
  

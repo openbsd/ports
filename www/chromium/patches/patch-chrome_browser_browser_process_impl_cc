@@ -1,7 +1,7 @@
 Index: chrome/browser/browser_process_impl.cc
 --- chrome/browser/browser_process_impl.cc.orig
 +++ chrome/browser/browser_process_impl.cc
-@@ -227,7 +227,7 @@
+@@ -228,7 +228,7 @@
  #include "chrome/browser/ui/profiles/profile_picker.h"
  #endif
  
@@ -19,7 +19,7 @@ Index: chrome/browser/browser_process_impl.cc
    ChromeJsErrorReportProcessor::Create();
  #endif
  
-@@ -1615,7 +1615,7 @@ void BrowserProcessImpl::Unpin() {
+@@ -1614,7 +1614,7 @@ void BrowserProcessImpl::Unpin() {
  // Mac is currently not supported.
  // TODO(crbug.com/40118868): Revisit once build flag switch of lacros-chrome is
  // complete.
