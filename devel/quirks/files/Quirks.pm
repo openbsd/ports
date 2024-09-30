@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1654 2024/09/12 19:28:43 kili Exp $
+# $OpenBSD: Quirks.pm,v 1.1655 2024/09/30 19:51:06 tb Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1979,6 +1979,8 @@ setup_obsolete_reason(
 	3 => 'iaxclient-tcl',
 	3 => 'kguitar',
 	6 => 'mftrace',
+# 7.7
+	3 => 'pavuk',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
