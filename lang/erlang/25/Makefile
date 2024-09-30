@@ -4,7 +4,7 @@ USE_NOBTCFI=	Yes
 COMMENT-main=	${COMMENT}
 COMMENT-wx=	WxWidgets bindings for Erlang
 
-V=		25.3.2.13
+V=		25.3.2.14
 PORTROACH=	limit:^OTP-25\.
 DISTNAME=	otp_src_$V
 PKGNAME=	erlang-$V
@@ -71,7 +71,7 @@ COMPILER_VSN    8.2.6.4 \
 CRYPTO_VSN      5.1.4.3 \
 DEBUGGER_VSN    5.3.1.3 \
 DIALYZER_VSN    5.0.5 \
-DIAMETER_VSN    2.2.7.1 \
+DIAMETER_VSN    2.2.7.2 \
 EDOC_VSN        1.2 \
 EI_VSN 5.3.2.1 \
 ELDAP_VSN       1.2.11 \
@@ -89,19 +89,19 @@ OBSERVER_VSN    2.14.0.1 \
 ODBC_VSN        2.14 \
 OS_MON_VSN      2.8.2.1 \
 PARSETOOLS_VSN  2.4.1 \
-PUBLIC_KEY_VSN  1.13.3.2 \
+PUBLIC_KEY_VSN  1.13.3.3 \
 RELTOOL_VSN     0.9.1.1 \
 RUNTIME_TOOLS_VSN       1.19 \
 SASL_VSN        4.2 \
 SNMP_VSN        5.13.5 \
-SSH_VSN 4.15.3.5 \
+SSH_VSN 4.15.3.6 \
 SSL_VSN 10.9.1.5 \
 STDLIB_VSN      4.3.1.4 \
 SYNTAX_TOOLS_VSN        3.0.1 \
 TFTP_VSN        1.0.4 \
 TOOLS_VSN       3.5.3 \
 WX_VSN  2.2.2.1 \
-XMERL_VSN       1.3.31.1 \
+XMERL_VSN       1.3.31.2 \
 ERTS_VSN        13.2.2.10
 
 .include <bsd.port.mk>
