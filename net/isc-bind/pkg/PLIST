@@ -110,6 +110,7 @@ include/dns/rrl.h
 include/dns/sdlz.h
 include/dns/secalg.h
 include/dns/secproto.h
+include/dns/skr.h
 include/dns/soa.h
 include/dns/ssu.h
 include/dns/stats.h
