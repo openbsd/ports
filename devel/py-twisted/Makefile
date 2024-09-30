@@ -1,10 +1,9 @@
 COMMENT =		asynchronous networking Python framework
 
-MODPY_EGG_VERSION =	22.10.0
+MODPY_EGG_VERSION =	24.7.0
 
-DISTNAME =		Twisted-${MODPY_EGG_VERSION}
+DISTNAME =		twisted-${MODPY_EGG_VERSION}
 PKGNAME =		py-twisted-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		devel
 
@@ -18,12 +17,12 @@ WANTLIB +=		pthread
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		hatchling
 
-BUILD_DEPENDS =		devel/py-incremental${MODPY_FLAVOR}
+BUILD_DEPENDS =		devel/py-hatch-fancy-pypi-readme${MODPY_FLAVOR} \
+			devel/py-incremental${MODPY_FLAVOR}
 
-RUN_DEPENDS =		devel/py-asn1${MODPY_FLAVOR}		\
-			devel/py-attrs${MODPY_FLAVOR}		\
+RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR}		\
 			devel/py-automat${MODPY_FLAVOR}		\
 			devel/py-constantly${MODPY_FLAVOR}	\
 			devel/py-hamcrest${MODPY_FLAVOR}	\
