@@ -1,13 +1,12 @@
 COMMENT =	PostScript and PDF interpreter
 
-VERSION =	10.03.1
+VERSION =	10.04.0
 DISTNAME =	ghostpdl-${VERSION}
 PKGNAME =	ghostscript-${VERSION}
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	lang print
 SHARED_LIBS =	gs	18.2
 SHARED_LIBS +=	gpcl6	18.2
-REVISION =	2
 
 SITES =		https://github.com/ArtifexSoftware/ghostpdl-downloads/releases/download/gs${VERSION:S/.//g}/
 
@@ -105,6 +104,7 @@ pre-configure:
 	rm -rf ${WRKSRC}/zlib
 
 post-install:
+	rm -f ${PREFIX}/lib/libgpcl6.so{,.${LIBgpcl6_VERSION:R}}
 	rm -f ${PREFIX}/lib/libgs.so{,.${LIBgs_VERSION:R}}
 .if !${FLAVOR:Mgtk}
 	rm -f ${PREFIX}/bin/gsx

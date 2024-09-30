@@ -34,8 +34,6 @@ include/ghostscript/gserrors.h
 include/ghostscript/iapi.h
 include/ghostscript/ierrors.h
 include/ghostscript/plapi.h
-@comment @so lib/libgpcl6.so
-@comment lib/libgpcl6.so.18
 @lib lib/libgpcl6.so.${LIBgpcl6_VERSION}
 @lib lib/libgs.so.${LIBgs_VERSION}
 @man man/man1/dvipdf.1
