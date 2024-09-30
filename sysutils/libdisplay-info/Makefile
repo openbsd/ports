@@ -1,15 +1,17 @@
-COMMENT = EDID and DisplayID library
+COMMENT =	EDID and DisplayID library
 
-V = 		0.1.1
+V = 		0.2.0
 DISTNAME = 	libdisplay-info-$V
 CATEGORIES = 	sysutils
+
+SHARED_LIBS += display-info              0.1 # 0.2.0
 
 # MIT
 PERMIT_PACKAGE = Yes
 
-SHARED_LIBS +=  display-info 0.0 # 0.0
+SITES =		https://gitlab.freedesktop.org/emersion/libdisplay-info/-/archive/$V/
 
-SITES = https://gitlab.freedesktop.org/emersion/libdisplay-info/-/archive/$V/
+WANTLIB += c m
 
 COMPILER = 	base-clang ports-gcc
 COMPILER_LANGS = c
