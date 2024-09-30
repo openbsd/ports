@@ -21,6 +21,7 @@ lib/lfe/ebin/lfe_comp.beam
 lib/lfe/ebin/lfe_docs.beam
 lib/lfe/ebin/lfe_edlin_expand.beam
 lib/lfe/ebin/lfe_env.beam
+lib/lfe/ebin/lfe_error.beam
 lib/lfe/ebin/lfe_eval.beam
 lib/lfe/ebin/lfe_eval_bits.beam
 lib/lfe/ebin/lfe_gen.beam
