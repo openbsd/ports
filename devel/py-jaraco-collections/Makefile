@@ -1,9 +1,8 @@
 COMMENT=	models and classes to supplement stdlib 'collections' module
 
-MODPY_EGG_VERSION=	3.8.0
-DISTNAME=	jaraco.collections-${MODPY_EGG_VERSION}
-PKGNAME=	py-${DISTNAME}
-REVISION=	0
+MODPY_EGG_VERSION=	5.1.0
+DISTNAME=	jaraco_collections-${MODPY_EGG_VERSION}
+PKGNAME=	py-jaraco.collections-${MODPY_EGG_VERSION}
 
 CATEGORIES=	devel
 
