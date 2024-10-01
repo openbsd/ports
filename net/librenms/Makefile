@@ -3,7 +3,7 @@ COMMENT=	auto-discovering network management/monitoring system
 # changelogs at https://github.com/librenms/librenms/releases
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
-GH_TAGNAME=	24.8.1
+GH_TAGNAME=	24.9.1
 
 DISTFILES.dep=	librenms-${GH_TAGNAME:R}-vendor.tar.xz
 EPOCH=		0
