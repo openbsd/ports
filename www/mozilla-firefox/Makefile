@@ -1,18 +1,16 @@
 COMMENT =	Firefox web browser
 ONLY_FOR_ARCHS =	amd64 aarch64 riscv64
 
-REVISION =		0
-
 # Don't forget to bump www/firefox-i18n after updates.
 
-MOZILLA_VERSION =	130.0.1
+MOZILLA_VERSION =	131.0
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
 MOZILLA_CODENAME =	browser
 
 WRKDIST =	${WRKDIR}/${MOZILLA_DIST}-${MOZILLA_DIST_VERSION:C/b[0-9]*//}
 HOMEPAGE =	https://www.mozilla.org/firefox/
-SO_VERSION =	142.0
+SO_VERSION =	143.0
 # NOTE: Must bump minor version if any shlib's are removed from the
 # components dir to avoid pkg_add -r issues.
 MOZILLA_LIBS =	mozavcodec mozavutil mozgtk mozwayland xul clearkey gkcodecs lgpllibs mozsqlite3 ipcclientcerts
@@ -97,7 +95,7 @@ post-install:
 		${PREFIX}/lib/${MOZILLA_PROJECT}/distribution/distribution.ini
 	# install desktop file
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
-	${INSTALL_DATA} ${WRKSRC}/taskcluster/docker/firefox-flatpak/org.mozilla.firefox.desktop \
+	${INSTALL_DATA} ${FILESDIR}/firefox.desktop \
 		${PREFIX}/share/applications/${MOZILLA_PROJECT}.desktop
 
 	# make sure TwemojiMozilla.ttf is found
