@@ -1,0 +1,12 @@
+Index: gdb/doc/gdb.info-2
+--- gdb/doc/gdb.info-2.orig
++++ gdb/doc/gdb.info-2
+@@ -626,7 +626,7 @@ parts of the program:
+ --------------------------
+ 
+ You can customize GDB to use any editor you want (1).  By default, it is
+-'/bin/ex', but you can change this by setting the environment variable
++'/usr/bin/ex', but you can change this by setting the environment variable
+ 'EDITOR' before using GDB.  For example, to configure GDB to use the
+ 'vi' editor, you could use these commands with the 'sh' shell:
+      EDITOR=/usr/bin/vi
