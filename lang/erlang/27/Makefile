@@ -6,14 +6,13 @@ USE_WXNEEDED=	Yes
 COMMENT-main=	${COMMENT}
 COMMENT-wx=	WxWidgets bindings for Erlang
 
-V=		27.0
+V=		27.1.1
 DISTNAME=	otp_src_${V}
 PORTROACH=	limit:^OTP-27\.
 PKGNAME=	erlang-${V}
 PKGNAME-main=	erlang-${V}
 PKGNAME-wx=	erlang-wx-${V}
 EPOCH=		0
-REVISION=	2
 
 VERSION_SPEC=	>=27v0,<28v0
 PKGSPEC-main=	erlang-${VERSION_SPEC}
@@ -30,9 +29,8 @@ CONFIGURE_ARGS+=--disable-silent-rules  \
 		--enable-kernel-poll	\
 		--disable-hipe
 
-MAKE_ENV+=	DOC_TARGETS=chunks
-ALL_TARGET=	all docs
-INSTALL_TARGET=	install install-docs
+ALL_TARGET=	all
+INSTALL_TARGET=	install
 
 MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC}/erts/autoconf
 
@@ -67,43 +65,43 @@ UPDATE_PLIST_ARGS = -i V
 
 # Use the target 'gen-versions' to update this list
 ERL_VERSIONS=	\
-ASN1_VSN        5.3 \
-COMMON_TEST_VSN 1.27 \
-COMPILER_VSN    8.5 \
-CRYPTO_VSN      5.5 \
+ASN1_VSN        5.3.1 \
+COMMON_TEST_VSN 1.27.2 \
+COMPILER_VSN    8.5.2 \
+CRYPTO_VSN      5.5.1 \
 DEBUGGER_VSN    5.4 \
-DIALYZER_VSN    5.2 \
-DIAMETER_VSN    2.4 \
-EDOC_VSN        1.3 \
+DIALYZER_VSN    5.2.1 \
+DIAMETER_VSN    2.4.1 \
+EDOC_VSN        1.3.2 \
 EI_VSN          5.5.2 \
 ELDAP_VSN       1.2.13 \
 EMACS_VSN       2.7.0 \
 ERL_DOCGEN_VSN  1.5.2 \
 ET_VSN          1.7.1 \
 EUNIT_VSN       2.9.1 \
-FTP_VSN         1.2.2 \
-INETS_VSN       9.2 \
+FTP_VSN         1.2.3 \
+INETS_VSN       9.3 \
 JINTERFACE_VSN  1.14 \
-KERNEL_VSN      10.0 \
+KERNEL_VSN      10.1 \
 MEGACO_VSN      4.6 \
 MNESIA_VSN      4.23.2 \
 OBSERVER_VSN    2.16 \
-ODBC_VSN        2.14.2 \
+ODBC_VSN        2.15 \
 OS_MON_VSN      2.10 \
 PARSETOOLS_VSN  2.6 \
-PUBLIC_KEY_VSN  1.16 \
+PUBLIC_KEY_VSN  1.16.3 \
 RELTOOL_VSN     1.0.1 \
-RUNTIME_TOOLS_VSN       2.1 \
+RUNTIME_TOOLS_VSN       2.1.1 \
 SASL_VSN        4.2.2 \
-SNMP_VSN        5.16 \
-SSH_VSN         5.2 \
-SSL_VSN         11.2 \
-STDLIB_VSN      6.0 \
-SYNTAX_TOOLS_VSN        3.2 \
-TFTP_VSN        1.2 \
-TOOLS_VSN       4.0 \
-WX_VSN          2.4.2 \
-XMERL_VSN       2.0 \
-ERTS_VSN        15.0
+SNMP_VSN        5.17 \
+SSH_VSN         5.2.2 \
+SSL_VSN         11.2.3 \
+STDLIB_VSN      6.1.1 \
+SYNTAX_TOOLS_VSN        3.2.1 \
+TFTP_VSN        1.2.1 \
+TOOLS_VSN       4.1 \
+WX_VSN          2.4.3 \
+XMERL_VSN       2.1 \
+ERTS_VSN        15.1.1
 
 .include <bsd.port.mk>

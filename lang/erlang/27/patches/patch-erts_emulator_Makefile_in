@@ -1,7 +1,7 @@
 Index: erts/emulator/Makefile.in
 --- erts/emulator/Makefile.in.orig
 +++ erts/emulator/Makefile.in
-@@ -300,13 +300,7 @@ ifeq (@EMU_LOCK_CHECKING@,yes)
+@@ -301,13 +301,7 @@ ifeq (@EMU_LOCK_CHECKING@,yes)
  NO_INLINE_FUNCTIONS=true
  endif
  
