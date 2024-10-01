@@ -6,7 +6,7 @@ Subject: [PATCH] Revert "catalog: Fetch XML catalog before dumping"
 Index: catalog.c
 --- catalog.c.orig
 +++ catalog.c
-@@ -53,12 +53,15 @@
+@@ -53,10 +53,10 @@
  #define XML_URN_PUBID "urn:publicid:"
  #define XML_CATAL_BREAK ((xmlChar *) -1)
  #ifndef XML_XML_DEFAULT_CATALOG
@@ -18,41 +18,4 @@ Index: catalog.c
 +#define XML_SGML_DEFAULT_CATALOG "file:///var/db/sgmlcatalog"
  #endif
  
-+static xmlChar *xmlCatalogNormalizePublic(const xmlChar *pubID);
-+static int xmlExpandCatalog(xmlCatalogPtr catal, const char *filename);
-+
- /************************************************************************
-  *									*
-  *			Types, all private				*
-@@ -175,21 +178,6 @@ static int xmlCatalogInitialized = 0;
- 
- /************************************************************************
-  *									*
-- *			Forward declarations				*
-- *									*
-- ************************************************************************/
--
--static xmlChar *
--xmlCatalogNormalizePublic(const xmlChar *pubID);
--
--static int
--xmlExpandCatalog(xmlCatalogPtr catal, const char *filename);
--
--static int
--xmlFetchXMLCatalogFile(xmlCatalogEntryPtr catal);
--
--/************************************************************************
-- *									*
-  *			Catalog error handlers				*
-  *									*
-  ************************************************************************/
-@@ -538,9 +526,6 @@ static void xmlDumpXMLCatalogNode(xmlCatalogEntryPtr c
- 	        case XML_CATA_BROKEN_CATALOG:
- 	        case XML_CATA_CATALOG:
- 		    if (cur == catal) {
--                        if (cur->children == NULL) {
--                            xmlFetchXMLCatalogFile(cur);
--                        }
- 			cur = cur->children;
- 		        continue;
- 		    }
+ static xmlChar *xmlCatalogNormalizePublic(const xmlChar *pubID);
