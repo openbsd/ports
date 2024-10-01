@@ -10,10 +10,8 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			128.0.6613.137
+V=			129.0.6668.70
 UGV=			${V}-1
-
-REVISION=		0
 
 DISTNAME=		ungoogled-chromium-${V}
 
@@ -26,8 +24,6 @@ DISTFILES.u=		${UGOOGLE_DISTFILES} \
 CHROMIUM_DISTFILES+=	chromium-${V}${EXTRACT_SUFX}
 UGOOGLE_DISTFILES+=	ungoogled-chromium-${UGV}.tar.gz
 REGRESS_DISTFILES+=	chromium-${V}-testdata${EXTRACT_SUFX}
-
-REGRESS_DISTFILES.u= 	test_fonts-336e775eec536b2d785cc80eff6ac39051931286.tar.gz
 
 EXTRACT_ONLY=		${CHROMIUM_DISTFILES} \
 			${UGOOGLE_DISTFILES}
@@ -376,8 +372,6 @@ pre-test:
 	@case ${_d} in \
 	*testdata*.tar.xz) \
 		xzdec <${FULLDISTDIR}/${_d} | ${TAR} -C ${WRKDIR} -xf -;; \
-	*font*.tar.gz) \
-		${GZIP_CMD} -d <${FULLDISTDIR}/${_d} | ${TAR} -C ${WRKDIST}/third_party/test_fonts -xf -;; \
 	esac;
 .endfor
 

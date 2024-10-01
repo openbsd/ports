@@ -1,7 +1,7 @@
 Index: net/http/http_network_session.cc
 --- net/http/http_network_session.cc.orig
 +++ net/http/http_network_session.cc
-@@ -19,7 +19,9 @@
+@@ -20,7 +20,9 @@
  #include "build/build_config.h"
  #include "net/base/features.h"
  #include "net/dns/host_resolver.h"
@@ -10,4 +10,4 @@ Index: net/http/http_network_session.cc
 +#endif
  #include "net/http/http_response_body_drainer.h"
  #include "net/http/http_stream_factory.h"
- #include "net/http/url_security_manager.h"
+ #include "net/http/http_stream_pool.h"

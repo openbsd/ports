@@ -21,7 +21,7 @@ Index: chrome/browser/profiles/profile_impl.cc
      ProfileManager* profile_manager = g_browser_process->profile_manager();
      ProfileAttributesEntry* entry =
          profile_manager->GetProfileAttributesStorage()
-@@ -888,7 +892,17 @@ void ProfileImpl::DoFinalInit(CreateMode create_mode) 
+@@ -878,7 +882,17 @@ void ProfileImpl::DoFinalInit(CreateMode create_mode) 
  }
  
  base::FilePath ProfileImpl::last_selected_directory() {
