@@ -1,6 +1,6 @@
 COMMENT=	GNU Bourne Again Shell
 
-DISTNAME=	bash-5.2.32
+DISTNAME=	bash-5.2.37
 CATEGORIES=	shells
 HOMEPAGE=	https://www.gnu.org/software/bash/
 
