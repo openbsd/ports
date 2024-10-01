@@ -29,11 +29,10 @@ CREATE EXTENSION
 Run the database migrations.
 
 # su -s/bin/sh - _miniflux
-$ . /etc/miniflux.conf
-$ miniflux -migrate
+$ miniflux -c /etc/miniflux.conf -migrate
 
 Create the initial admin account.
 
-$ miniflux -create-admin
+$ miniflux -c /etc/miniflux.conf -create-admin
 
 Miniflux is now ready to be started via rcctl.
