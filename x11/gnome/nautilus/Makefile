@@ -2,6 +2,7 @@ COMMENT=		GNOME file manager
 
 GNOME_PROJECT=		nautilus
 GNOME_VERSION=		46.2
+REVISION=		0
 
 SHARED_LIBS += nautilus-extension        3.0 # 4
 
@@ -29,6 +30,9 @@ RUN_DEPENDS=		x11/gnome/gvfs \
 
 # needs tracker-miner-fs
 RUN_DEPENDS +=		x11/gnome/tracker3-miners
+
+# create "well known" user directories and default gtk bookmarks
+RUN_DEPENDS +=		x11/xdg-user-dirs-gtk
 
 LIB_DEPENDS=		graphics/libgexiv2 \
 			multimedia/gstreamer1/plugins-base \

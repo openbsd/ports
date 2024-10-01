@@ -8,6 +8,8 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
+REVISION-main=		0
+
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 HOMEPAGE=		https://www.gnome.org/
@@ -24,9 +26,6 @@ RUN_DEPENDS-main +=	x11/gnome/gvfs,-goa,
 RUN_DEPENDS-main +=	x11/gnome/gvfs,-google,
 RUN_DEPENDS-main +=	x11/gnome/gvfs,-onedrive,
 RUN_DEPENDS-main +=	x11/gnome/gvfs,-smb,
-
-# create "well known" user directories and default gtk bookmarks file
-RUN_DEPENDS-main +=	x11/xdg-user-dirs-gtk
 
 # all Avahi dependencies are already fulfilled;
 # add avahi-daemon for convenience as a few GNOME apps can make use of it
