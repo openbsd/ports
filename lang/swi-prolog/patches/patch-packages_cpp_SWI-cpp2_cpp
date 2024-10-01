@@ -1,7 +1,7 @@
 Index: packages/cpp/SWI-cpp2.cpp
 --- packages/cpp/SWI-cpp2.cpp.orig
 +++ packages/cpp/SWI-cpp2.cpp
-@@ -993,6 +993,7 @@ _SWI_CPP2_CPP_check_rc(int, vprintf(const char *fm, va
+@@ -1007,6 +1007,7 @@ _SWI_CPP2_CPP_check_rc(int, vprintf(const char *fm, va
  _SWI_CPP2_CPP_check_rc(int, lock(), Slock(s_))
  _SWI_CPP2_CPP_check_rc(int, tryLock(), StryLock(s_))
  _SWI_CPP2_CPP_check_rc(int, unlock(), Sunlock(s_))

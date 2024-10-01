@@ -1,16 +1,7 @@
 Index: packages/cpp/SWI-cpp2.h
 --- packages/cpp/SWI-cpp2.h.orig
 +++ packages/cpp/SWI-cpp2.h
-@@ -85,7 +85,7 @@ particularly integer conversions.
-   #error "Unexpected value for LONG_MAX"
- #endif
- 
--#if !(defined(__APPLE__) || defined(__FreeBSD__))
-+#if !(defined(__APPLE__) || defined(__FreeBSD__) || defined(__OpenBSD__))
- #include <malloc.h>
- #endif
- 
-@@ -1525,6 +1525,7 @@ class PlStream (public)
+@@ -1667,6 +1667,7 @@ class PlStream (public)
    int lock();
    int tryLock();
    int unlock();

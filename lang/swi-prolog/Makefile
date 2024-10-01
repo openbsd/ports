@@ -3,7 +3,7 @@ BROKEN-sparc64 =	infinite loop or aborts during build
 
 COMMENT =		Prolog for the real world
 
-V =			9.2.3
+V =			9.2.6
 DISTNAME =		swipl-$V
 PKGNAME =		swi-prolog-$V
 CATEGORIES =		lang
@@ -38,7 +38,7 @@ CONFIGURE_ARGS +=	-DSWIPL_INSTALL_MANPAGES=man/man1 \
 #
 # The first line should be enough, but for some reason HAVE_DB4_DB_H doesn't
 # get defined properly in config.h.
-CONFIGURE_ARGS +=	-DBDB_INCLUDE_DIR=${TRUEPREFIX}/include \
+CONFIGURE_ARGS +=	-DBDB_INCLUDE_DIR=${LOCALBASE}/include \
 			-DCMAKE_C_FLAGS=-DHAVE_DB4_DB_H
 
 BUILD_DEPENDS =		${RUN_DEPENDS}

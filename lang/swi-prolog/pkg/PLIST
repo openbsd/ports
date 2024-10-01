@@ -348,6 +348,7 @@ lib/swipl/library/ext/http/http/graphql.pl
 lib/swipl/library/ext/http/http/html_head.pl
 lib/swipl/library/ext/http/http/html_quasiquotations.pl
 lib/swipl/library/ext/http/http/html_write.pl
+lib/swipl/library/ext/http/http/htmx.pl
 lib/swipl/library/ext/http/http/http_authenticate.pl
 lib/swipl/library/ext/http/http/http_client.pl
 lib/swipl/library/ext/http/http/http_cookie.pl
