@@ -12,6 +12,9 @@ SHARED_LIBS +=  shp                       3.1 # 4.0
 # LGPL
 PERMIT_PACKAGE=	Yes
 
+# C++
+COMPILER=	base-clang ports-gcc
+
 WANTLIB += ${COMPILER_LIBCXX} c m
 
 SITES=		https://download.osgeo.org/shapelib/
