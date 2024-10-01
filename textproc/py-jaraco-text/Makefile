@@ -1,9 +1,8 @@
 COMMENT=	handy routines for dealing with text
 
-MODPY_EGG_VERSION=	3.11.1
-DISTNAME=	jaraco.text-${MODPY_EGG_VERSION}
-PKGNAME=	py-${DISTNAME}
-REVISION=	0
+MODPY_EGG_VERSION=	3.12.1
+DISTNAME=	jaraco_text-${MODPY_EGG_VERSION}
+PKGNAME=	py-jaraco.text-${MODPY_EGG_VERSION}
 
 CATEGORIES=	textproc
 
