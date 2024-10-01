@@ -8,7 +8,10 @@ lib/python${MODPY_VERSION}/site-packages/jaraco.functools-${MODPY_EGG_VERSION}.d
 lib/python${MODPY_VERSION}/site-packages/jaraco.functools-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/jaraco.functools-${MODPY_EGG_VERSION}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/jaraco.functools-${MODPY_EGG_VERSION}.dist-info/top_level.txt
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jaraco/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/jaraco/${MODPY_PYCACHE}functools.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/jaraco/${MODPY_PYCACHE}functools.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/jaraco/functools.py
+lib/python${MODPY_VERSION}/site-packages/jaraco/functools/
+lib/python${MODPY_VERSION}/site-packages/jaraco/functools/__init__.py
+lib/python${MODPY_VERSION}/site-packages/jaraco/functools/__init__.pyi
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jaraco/functools/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jaraco/functools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/jaraco/functools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jaraco/functools/py.typed
