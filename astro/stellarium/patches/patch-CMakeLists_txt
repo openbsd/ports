@@ -4,7 +4,7 @@ installed version.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -1040,13 +1040,6 @@ ENDIF()
+@@ -1053,13 +1053,6 @@ ENDIF()
  
  include("cmake/Check-from_chars.cmake")
  IF(NOT FROM_CHARS_WORKS)
