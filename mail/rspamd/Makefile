@@ -2,7 +2,7 @@ COMMENT=	event-driven spam filtering system in C/Lua
 
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
-GH_TAGNAME=	3.9.1
+GH_TAGNAME=	3.10.0
 
 CATEGORIES=	mail
 
