@@ -1,6 +1,6 @@
 COMMENT=	library to write SQL queries
 
-MODPY_EGG_VERSION=	1.5.0
+MODPY_EGG_VERSION=	1.5.2
 DISTNAME=	python_sql-${MODPY_EGG_VERSION}
 PKGNAME=	py-sql-${MODPY_EGG_VERSION}
 
