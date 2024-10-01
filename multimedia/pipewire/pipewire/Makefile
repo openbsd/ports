@@ -2,12 +2,10 @@ COMMENT-main=		low-level multimedia framework - client & server
 COMMENT-libs=		low-level multimedia framework - libraries
 
 PW_PROJECT=		pipewire
-PW_VERSION=		1.2.3
+PW_VERSION=		1.2.4
 PKGNAME-libs=		lib${PW_PROJECT}-${PW_VERSION}
 
-REVISION-main=		0
-
-SHARED_LIBS += pipewire-0.3              0.2 # 0.1203.0
+SHARED_LIBS += pipewire-0.3              0.2 # 0.1204.0
 
 MULTI_PACKAGES=		-main -libs
 
