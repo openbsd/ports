@@ -59,13 +59,5 @@ Index: Makefile
  	fi
 +endif
  
- # Need to build OpenSSL differently on OSX
- ifeq ($(OS), Darwin)
-@@ -159,6 +167,7 @@ openssl/Makefile: .openssl.is.fresh
- else
  openssl/Makefile: .openssl.is.fresh
- 	cd ./openssl; ./config -v -fstack-protector-all -D_FORTIFY_SOURCE=2 -fPIC no-shared enable-weak-ssl-ciphers zlib
-+# XXX had no-cast here
- endif
- 
- openssl/libcrypto.a: openssl/Makefile
+ 	cd ./openssl; ./Configure -v -fstack-protector-all -D_FORTIFY_SOURCE=2 -fPIC no-shared enable-weak-ssl-ciphers zlib
