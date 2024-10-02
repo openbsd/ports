@@ -10,10 +10,7 @@ COMMENT-libs=		CUPS libraries and headers
 VERSION=		${GH_TAGNAME:S/v//:S/op/./}
 GH_ACCOUNT=		OpenPrinting
 GH_PROJECT=		cups
-GH_TAGNAME=		v2.4.10
-
-REVISION-main=		2
-REVISION-libs=		0
+GH_TAGNAME=		v2.4.11
 
 CATEGORIES=		print sysutils
 

@@ -1,8 +1,6 @@
 Increase timeout for the PPD file to be copied so that it doesn't fail
 on low-end configurations.
 
-Last chunk: fix for CVE-2024-47175.
-
 Index: scheduler/ipp.c
 --- scheduler/ipp.c.orig
 +++ scheduler/ipp.c
@@ -24,17 +22,3 @@ Index: scheduler/ipp.c
      timeout.tv_usec = 0;
  
      if ((i = select(maxfd, &input, NULL, NULL, &timeout)) < 0)
-@@ -5415,6 +5415,13 @@ create_local_bg_thread(
-       }
-       ippDelete(response2);
-     }
-+  }
-+
-+  // Validate response from printer...
-+  if (!ippValidateAttributes(response))
-+  {
-+    send_ipp_status(con, IPP_STATUS_ERROR_DEVICE, _("Printer returned invalid data: %s"), cupsLastErrorString());
-+    goto finish_response;
-   }
- 
-   // TODO: Grab printer icon file...
