@@ -1,10 +1,10 @@
 COMMENT =		backported type hints for python >= 3.5
 
-MODPY_EGG_VERSION =	4.11.0
+MODPY_EGG_VERSION =	4.12.2
 DISTNAME =		typing_extensions-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
-HOMEPAGE =		https://github.com/python/typing_extensions/blob/main/README.md
+HOMEPAGE =		https://github.com/python/typing_extensions/
 
 CATEGORIES =		devel
 
@@ -20,6 +20,7 @@ FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		flit_core
+
 # no tests in pypi distfile
 NO_TEST =		Yes
 
