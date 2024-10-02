@@ -26,7 +26,7 @@ Index: crypto/sha/asm/keccak1600-armv8.pl
  	stp	$C[2],x30,[sp,#16]		// 32 bytes on top are mine
  	b	.Loop
  .align	4
-@@ -554,7 +557,8 @@ $code.=<<___;
+@@ -556,7 +559,8 @@ $code.=<<___;
  .align	5
  KeccakF1600_ce:
  	mov	x9,#24

@@ -1,0 +1,12 @@
+Index: crypto/modes/asm/aes-gcm-avx512.pl
+--- crypto/modes/asm/aes-gcm-avx512.pl.orig
++++ crypto/modes/asm/aes-gcm-avx512.pl
+@@ -4812,7 +4812,7 @@ ___
+ }
+ 
+ $code .= <<___;
+-.data
++.rodata
+ .align 16
+ POLY:   .quad     0x0000000000000001, 0xC200000000000000
+ 

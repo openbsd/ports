@@ -1,0 +1,21 @@
+Index: crypto/bn/asm/rsaz-2k-avx512.pl
+--- crypto/bn/asm/rsaz-2k-avx512.pl.orig
++++ crypto/bn/asm/rsaz-2k-avx512.pl
+@@ -393,7 +393,7 @@ $code.=<<___;
+ ___
+ 
+ $code.=<<___;
+-.data
++.rodata
+ .align 32
+ .Lmask52x4:
+     .quad   0xfffffffffffff
+@@ -589,7 +589,7 @@ $code.=<<___;
+ .size   ossl_extract_multiplier_2x20_win5, .-ossl_extract_multiplier_2x20_win5
+ ___
+ $code.=<<___;
+-.data
++.rodata
+ .align 32
+ .Lones:
+     .quad   1,1,1,1

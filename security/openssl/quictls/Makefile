@@ -5,18 +5,18 @@ USE_NOEXECONLY =	Yes
 # skip PORTROACH limit for newest version
 #PORTROACH=	limit:^3\.1
 
-V=		3.1.7
+V=		3.3.0
 DISTNAME=	openssl-${V}-quic1
 WRKDIST=	${WRKDIR}/openssl-${DISTNAME}
-EOPENSSL_V=	qopenssl31
+EOPENSSL_V=	qopenssl33
 
 SITES=		https://github.com/quictls/openssl/archive/refs/tags/
 PKGNAME=	quictls-${V}
-PKGSPEC=	quictls->=3.1,<3.2
+PKGSPEC=	quictls->=3.3,<3.4
 
 HOMEPAGE =	https://quictls.github.io/
 
-SHLIBVER=	0.0
+SHLIBVER=	1.0
 SHARED_LIBS=	crypto ${SHLIBVER} \
 		ssl ${SHLIBVER}
 
@@ -51,10 +51,10 @@ SUBST_VARS+=		EOPENSSL_V SHLIBVER
 # common names like lib/openssl, openssl/lib, etc, *do* get picked up.
 MAKE_FLAGS+=	CC="${CC}" \
 		LDFLAGS="${LDFLAGS}" \
-		LIBDIR="lib/qopenssl31" \
-		MANDIR=${PREFIX}/lib/qopenssl31/man \
+		LIBDIR="lib/qopenssl33" \
+		MANDIR=${PREFIX}/lib/qopenssl33/man \
 		MANSUFFIX=
-LDFLAGS+=	-Wl,-rpath,${TRUEPREFIX}/lib/qopenssl31
+LDFLAGS+=	-Wl,-rpath,${TRUEPREFIX}/lib/qopenssl33
 
 post-patch:
 	sed -i 's,^SHLIB_VERSION=.*,SHLIB_VERSION=${SHLIBVER},' \
@@ -67,16 +67,16 @@ post-configure:
 # include/openssl and pkgconfig files are moved here, doing that in
 # OpenSSL's build infrastructure needs a bunch more patching.
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/include/qopenssl31
-	mv ${WRKINST}/etc/ssl ${PREFIX}/share/qopenssl31
-.for i j in openssl qopenssl31 libssl libqssl31 libcrypto libqcrypto31
-	mv ${PREFIX}/lib/qopenssl31/pkgconfig/$i.pc ${PREFIX}/lib/pkgconfig/$j.pc
+	${INSTALL_DATA_DIR} ${PREFIX}/include/qopenssl33
+	mv ${WRKINST}/etc/ssl ${PREFIX}/share/qopenssl33
+.for i j in openssl qopenssl33 libssl libqssl33 libcrypto libqcrypto33
+	mv ${PREFIX}/lib/qopenssl33/pkgconfig/$i.pc ${PREFIX}/lib/pkgconfig/$j.pc
 .endfor
-	mv ${PREFIX}/include/openssl ${PREFIX}/include/qopenssl31/
-	mv ${PREFIX}/bin/openssl ${PREFIX}/bin/qopenssl31
-	mv ${PREFIX}/bin/c_rehash ${PREFIX}/bin/qc_rehash31
-	rm ${PREFIX}/lib/qopenssl31/lib{crypto,ssl}.so
-	for i in ${PREFIX}/share/qopenssl31/*.dist; do rm $${i%.dist}; done
-	rmdir ${PREFIX}/lib/qopenssl31/pkgconfig
+	mv ${PREFIX}/include/openssl ${PREFIX}/include/qopenssl33/
+	mv ${PREFIX}/bin/openssl ${PREFIX}/bin/qopenssl33
+	mv ${PREFIX}/bin/c_rehash ${PREFIX}/bin/qc_rehash33
+	rm ${PREFIX}/lib/qopenssl33/lib{crypto,ssl}.so
+	for i in ${PREFIX}/share/qopenssl33/*.dist; do rm $${i%.dist}; done
+	rmdir ${PREFIX}/lib/qopenssl33/pkgconfig
 
 .include <bsd.port.mk>
