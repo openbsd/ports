@@ -24,7 +24,8 @@ SITES=			https://github.com/Netatalk/Netatalk/releases/download/netatalk-${V:S/.
 
 MODULES=		devel/meson
 
-BUILD_DEPENDS=		textproc/docbook-xsl
+BUILD_DEPENDS=		textproc/docbook-xsl \
+			textproc/unicode/ucd
 
 LIB_DEPENDS=		databases/db/v4 \
 			devel/glib2 \
@@ -50,6 +51,7 @@ CONFIGURE_ARGS=		-Dwith-acls=false \
 			-Dwith-shadow=false \
 			-Dwith-tcp-wrappers=false \
 			-Dwith-dbus-daemon-path=${LOCALBASE}/bin/dbus-daemon \
+			-Dwith-unicode-data-path=${LOCALBASE}/share/unicode/ucd \
 			-Dwith-init-hooks=false
 
 # needs x11/gnome/tracker3
