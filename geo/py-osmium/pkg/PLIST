@@ -11,12 +11,27 @@ lib/python${MODPY_VERSION}/site-packages/osmium/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/osmium/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/osmium/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/osmium/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/osmium/${MODPY_PYCACHE}back_reference_writer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/osmium/${MODPY_PYCACHE}back_reference_writer.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/osmium/${MODPY_PYCACHE}file_processor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/osmium/${MODPY_PYCACHE}file_processor.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/osmium/${MODPY_PYCACHE}forward_reference_writer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/osmium/${MODPY_PYCACHE}forward_reference_writer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osmium/${MODPY_PYCACHE}helper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/osmium/${MODPY_PYCACHE}helper.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/osmium/${MODPY_PYCACHE}simple_handler.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/osmium/${MODPY_PYCACHE}simple_handler.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osmium/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/osmium/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/osmium/_osmium.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/osmium/_osmium.pyi
+@so lib/python${MODPY_VERSION}/site-packages/osmium/area.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/osmium/area.pyi
+lib/python${MODPY_VERSION}/site-packages/osmium/back_reference_writer.py
+lib/python${MODPY_VERSION}/site-packages/osmium/file_processor.py
+@so lib/python${MODPY_VERSION}/site-packages/osmium/filter.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/osmium/filter.pyi
+lib/python${MODPY_VERSION}/site-packages/osmium/forward_reference_writer.py
 @so lib/python${MODPY_VERSION}/site-packages/osmium/geom.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/osmium/geom.pyi
 lib/python${MODPY_VERSION}/site-packages/osmium/helper.py
@@ -51,4 +66,5 @@ lib/python${MODPY_VERSION}/site-packages/osmium/replication/${MODPY_PYCACHE}util
 lib/python${MODPY_VERSION}/site-packages/osmium/replication/_replication.pyi
 lib/python${MODPY_VERSION}/site-packages/osmium/replication/server.py
 lib/python${MODPY_VERSION}/site-packages/osmium/replication/utils.py
+lib/python${MODPY_VERSION}/site-packages/osmium/simple_handler.py
 lib/python${MODPY_VERSION}/site-packages/osmium/version.py
