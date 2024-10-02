@@ -7,6 +7,7 @@ PKGNAME-emacs =		notmuch-emacs-${V}
 PKGNAME-mutt =		notmuch-mutt-${V}
 REVISION-emacs =	0
 REVISION-main =		0
+REVISION-mutt =		0
 
 SHARED_LIBS +=		notmuch	1.2
 
@@ -30,6 +31,7 @@ RUN_DEPENDS-emacs =	devel/desktop-file-utils \
 RUN_DEPENDS-mutt =	devel/p5-Term-ReadLine-Gnu \
 			mail/p5-Mail-Box \
 			mail/p5-Mail-Tools \
+			devel/p5-Devel-GlobalDestruction \
 			${FULLPKGNAME-main}:${FULLPKGPATH-main}
 
 # this builds, though does not currently install, cffi-based Python
