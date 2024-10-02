@@ -4,10 +4,9 @@ ONLY_FOR_ARCHS =	${LP64_ARCHS}
 
 COMMENT =		OSM data to PostgreSQL converter
 
-GH_TAGNAME =		1.11.0
+GH_TAGNAME =		2.0.0
 GH_PROJECT =		osm2pgsql
 GH_ACCOUNT =		osm2pgsql-dev
-REVISION =		0
 
 CATEGORIES =		geo databases
 
@@ -18,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 
 USE_GMAKE =		Yes
 
-WANTLIB += boost_system-mt boost_filesystem-mt bz2 c expat
+WANTLIB += bz2 c expat
 WANTLIB += m pthread pq proj z ${MODLUA_WANTLIB} ${COMPILER_LIBCXX}
 
 # postgresql needs to be first otherwise tests are done by cmake module

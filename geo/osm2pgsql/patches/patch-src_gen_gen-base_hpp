@@ -1,0 +1,21 @@
+revert https://github.com/osm2pgsql-dev/osm2pgsql/commit/e23dab3a32d91d7ea19e507ba3cdfbf147a92871.patch
+remove when devel/fmt is updated to 11
+
+Index: src/gen/gen-base.hpp
+--- src/gen/gen-base.hpp.orig
++++ src/gen/gen-base.hpp
+@@ -60,11 +60,11 @@ class gen_base_t (public)
+ 
+     std::string context();
+ 
+-    template <typename... TArgs>
+-    void log_gen(fmt::format_string<TArgs...> format_str, TArgs &&...args)
++    template <typename... ARGS>
++    void log_gen(ARGS... args)
+     {
+         if (m_debug) {
+-            log_debug(format_str, std::forward<TArgs>(args)...);
++            log_debug(args...);
+         }
+     }
+ 

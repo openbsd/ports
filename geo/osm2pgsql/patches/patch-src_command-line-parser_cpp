@@ -1,7 +1,7 @@
 Index: src/command-line-parser.cpp
 --- src/command-line-parser.cpp.orig
 +++ src/command-line-parser.cpp
-@@ -502,7 +502,7 @@ options_t parse_command_line(int argc, char *argv[])
+@@ -505,7 +505,7 @@ options_t parse_command_line(int argc, char *argv[])
  
      // --cache
      app.add_option("-C,--cache", options.cache)

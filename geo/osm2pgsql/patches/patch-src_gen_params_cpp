@@ -1,0 +1,15 @@
+revert https://github.com/osm2pgsql-dev/osm2pgsql/commit/e23dab3a32d91d7ea19e507ba3cdfbf147a92871.patch
+remove when devel/fmt is updated to 11
+
+Index: src/gen/params.cpp
+--- src/gen/params.cpp.orig
++++ src/gen/params.cpp
+@@ -118,7 +118,7 @@ void write_to_debug_log(params_t const &params, char c
+     if (!get_logger().debug_enabled()) {
+         return;
+     }
+-    log_debug("{}", message);
++    log_debug(message);
+     for (auto const &[key, value] : params) {
+         log_debug("  {}={}", key, to_string(value));
+     }

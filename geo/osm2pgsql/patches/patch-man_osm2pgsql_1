@@ -8,9 +8,9 @@ Index: man/osm2pgsql.1
 -Defaults to 800.
 +Defaults to 100.
  .TP
- --cache-strategy=STRATEGY
- This deprecated option will be ignored.
-@@ -240,7 +240,7 @@ The style file.
+ -x, --extra-attributes
+ Include attributes of each object in the middle tables and make them
+@@ -216,7 +216,7 @@ The style file.
  This specifies how the data is imported into the database, its format
  depends on the output.
  (For the \f[B]pgsql\f[R] output, the default is
