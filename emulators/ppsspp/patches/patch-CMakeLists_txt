@@ -1,10 +1,25 @@
+- ffmpeg: Improved fix for checking if const AVCodec* is necessary
+  930b7f644d74c74d9e58bf8e5300bf9ea9fb78a9
+- ffmpeg: Fix the HAVE_LIBAVCODEC_CONST_AVCODEC test
+  43b7ca6908c3d33be7a1b6eac4aede49d0541833
+- Minor CMake fix
+  457924128195116216da81a3493b9db8f399807f
+
 - Honor CFLAGS and DEBUG
 - Use system libpng on arm platforms
 
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -385,13 +385,13 @@ if(NOT MSVC)
+@@ -117,6 +117,7 @@ if(NOT IOS)
+ endif()
+ 
+ include(ccache)
++include(CheckCXXSourceCompiles)
+ include(GNUInstallDirs)
+ 
+ add_definitions(-DASSETS_DIR="${CMAKE_INSTALL_FULL_DATADIR}/ppsspp/assets/")
+@@ -385,13 +386,13 @@ if(NOT MSVC)
  		endif()
  	endif()
  
@@ -22,7 +37,32 @@ Index: CMakeLists.txt
  	set(CMAKE_C_FLAGS_RELWITHDEBINFO "${CMAKE_C_FLAGS_RELWITHDEBINFO} -O2 -g -D_NDEBUG")
  
  	# Enable checking printf-like format strings (also works for logging functions)
-@@ -1147,7 +1147,7 @@ else()
+@@ -949,6 +950,24 @@ if(USE_FFMPEG)
+ 	endif()
+ 
+ 	find_package(FFmpeg REQUIRED avcodec avformat avutil swresample swscale)
++	# Check if we need to use avcodec_(alloc|free)_frame instead of av_frame_(alloc|free)
++	# Check if we need to use const AVCodec
++	set(CMAKE_REQUIRED_INCLUDES ${FFmpeg_INCLUDE_avcodec};${FFmpeg_INCLUDE_avformat})
++	set(CMAKE_REQUIRED_LIBRARIES FFmpeg::avcodec;FFmpeg::avformat)
++	set(CMAKE_REQUIRED_FLAGS "-pedantic -Wall -Werror -Wno-unused-variable")
++	check_cxx_source_compiles("extern \"C\" {
++		#include <libavcodec/avcodec.h>
++		#include <libavformat/avformat.h>
++		}
++		static AVCodecContext *s_codec_context = NULL;
++		int main() {
++			const AVCodec *codec = avcodec_find_encoder(s_codec_context->codec_id);
++			return 0;
++		}
++		" HAVE_LIBAVCODEC_CONST_AVCODEC FAIL_REGEX "invalid conversion")
++
++	# Check if we need to use avcodec_alloc_context3 instead of stream->codec
++	# Check if we need to use av_frame_get_buffer instead of avcodec_default_get_buffer
+ endif(USE_FFMPEG)
+ 
+ find_package(ZLIB)
+@@ -1147,7 +1166,7 @@ else()
  endif()
  
  # Arm platforms require at least libpng17.
@@ -31,3 +71,24 @@ Index: CMakeLists.txt
  	set(PNG_REQUIRED_VERSION 1.7)
  else()
  	set(PNG_REQUIRED_VERSION 1.6)
+@@ -2020,6 +2039,7 @@ add_library(${CoreLibName} ${CoreLinkType}
+ 	Core/ELF/PrxDecrypter.h
+ 	Core/ELF/ParamSFO.cpp
+ 	Core/ELF/ParamSFO.h
++	Core/FFMPEGCompat.h
+ 	Core/FileSystems/tlzrc.cpp
+ 	Core/FileSystems/BlobFileSystem.cpp
+ 	Core/FileSystems/BlobFileSystem.h
+@@ -2354,8 +2374,11 @@ target_compile_features(${CoreLibName} PUBLIC cxx_std_
+ 
+ if(FFmpeg_FOUND)
+ 	target_compile_definitions(${CoreLibName} PRIVATE USE_FFMPEG=1)
++	if (HAVE_LIBAVCODEC_CONST_AVCODEC)
++		target_compile_definitions(${CoreLibName} PRIVATE HAVE_LIBAVCODEC_CONST_AVCODEC=1)
++	endif()
+ 	set_target_properties(${CoreLibName} PROPERTIES NO_SYSTEM_FROM_IMPORTED true)
+-	target_include_directories(${CoreLibName} BEFORE PUBLIC ${FFmpeg_INCLUDE_avcodec})
++	target_include_directories(${CoreLibName} BEFORE PUBLIC ${FFmpeg_INCLUDE_avcodec} ${FFmpeg_INCLUDE_avformat})
+ 	target_link_libraries(${CoreLibName}
+ 		FFmpeg::avcodec
+ 		FFmpeg::avformat

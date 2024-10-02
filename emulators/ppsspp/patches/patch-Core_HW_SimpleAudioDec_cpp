@@ -1,0 +1,14 @@
+- ffmpeg: Improved fix for checking if const AVCodec* is necessary
+  930b7f644d74c74d9e58bf8e5300bf9ea9fb78a9
+
+Index: Core/HW/SimpleAudioDec.cpp
+--- Core/HW/SimpleAudioDec.cpp.orig
++++ Core/HW/SimpleAudioDec.cpp
+@@ -33,6 +33,7 @@ extern "C" {
+ #include "libavutil/samplefmt.h"
+ #include "libavcodec/avcodec.h"
+ }
++#include "Core/FFMPEGCompat.h"
+ 
+ #endif  // USE_FFMPEG
+ 

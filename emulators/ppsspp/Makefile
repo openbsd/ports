@@ -5,7 +5,7 @@ COMMENT =	Sony PlayStation Portable emulator
 
 DISTNAME =	ppsspp-$V
 V =		1.17.1
-REVISION =	1
+REVISION =	2
 
 SITES =		https://github.com/hrydgard/ppsspp/releases/download/v$V/
 
