@@ -2,8 +2,7 @@ COMMENT=	tty-based e-mail client, forked from Mutt
 
 GH_ACCOUNT=	neomutt
 GH_PROJECT=	neomutt
-GH_TAGNAME=	20240425
-REVISION=	0
+GH_TAGNAME=	20241002
 
 CATEGORIES=	mail
 HOMEPAGE=	https://neomutt.org/
@@ -28,7 +27,6 @@ BUILD_DEPENDS+=	devel/gettext,-tools \
 		w3m-*|lynx-*:www/lynx
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
-SEPARATE_BUILD=	Yes
 FLAVORS=	gpgme sasl notmuch
 FLAVOR?=
 
