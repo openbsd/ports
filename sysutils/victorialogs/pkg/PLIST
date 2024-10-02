@@ -3,6 +3,7 @@
 @sample ${SYSCONFDIR}/victorialogs/
 @rcscript ${RCDIR}/victorialogs
 @bin bin/victoria-logs
+@bin bin/vlogscli
 @mode 0755
 @owner _victorialogs
 @group _victorialogs
