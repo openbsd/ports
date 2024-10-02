@@ -1,0 +1,17 @@
+From c977b184350479b8c43a0e002eaf2b13b510ba4f Mon Sep 17 00:00:00 2001
+From: Michal Suchanek <msuchanek@suse.de>
+Date: Thu, 13 Oct 2022 22:39:51 +0200
+Subject: [PATCH] libfdt: Fix invalid version warning
+
+Index: scripts/dtc/pylibfdt/Makefile
+--- scripts/dtc/pylibfdt/Makefile.orig
++++ scripts/dtc/pylibfdt/Makefile
+@@ -17,7 +17,7 @@ quiet_cmd_pymod = PYMOD   $@
+       cmd_pymod = unset CROSS_COMPILE; unset CFLAGS; \
+ 		CC="$(HOSTCC)" LDSHARED="$(HOSTCC) -shared " \
+ 		LDFLAGS="$(HOSTLDFLAGS)" \
+-		VERSION="u-boot-$(UBOOTVERSION)" \
++		VERSION="$(UBOOTVERSION)" \
+ 		CPPFLAGS="$(HOSTCFLAGS) -I$(LIBFDT_srcdir)" OBJDIR=$(obj) \
+ 		SOURCES="$(PYLIBFDT_srcs)" \
+ 		SWIG_OPTS="-I$(LIBFDT_srcdir) -I$(LIBFDT_srcdir)/.." \
