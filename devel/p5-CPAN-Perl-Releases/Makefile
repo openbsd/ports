@@ -1,6 +1,6 @@
 COMMENT =	mapping Perl releases to the location of the tarballs
 
-DISTNAME =	CPAN-Perl-Releases-5.20240120
+DISTNAME =	CPAN-Perl-Releases-5.20240920
 
 CATEGORIES =	devel
 
