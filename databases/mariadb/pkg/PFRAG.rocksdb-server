@@ -1,6 +1,9 @@
+@conflict mariadb-client-<11.4.3p0v1
 @bin bin/mariadb-ldb
 bin/myrocks_hotbackup
 bin/mysql_ldb
 @bin bin/sst_dump
 @so lib/mysql/plugin/ha_rocksdb.so
+@man man/man1/mariadb-ldb.1
 @man man/man1/myrocks_hotbackup.1
+@man man/man1/mysql_ldb.1

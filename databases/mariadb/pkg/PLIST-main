@@ -83,7 +83,6 @@ lib/pkgconfig/mariadb.pc
 @man man/man1/mariadb-find-rows.1
 @man man/man1/mariadb-hotcopy.1
 @man man/man1/mariadb-import.1
-@man man/man1/mariadb-ldb.1
 @man man/man1/mariadb-plugin.1
 @man man/man1/mariadb-service-convert.1
 @man man/man1/mariadb-setpermission.1
@@ -99,7 +98,6 @@ lib/pkgconfig/mariadb.pc
 @man man/man1/mysql_config.1
 @man man/man1/mysql_embedded.1
 @man man/man1/mysql_find_rows.1
-@man man/man1/mysql_ldb.1
 @man man/man1/mysql_waitpid.1
 @man man/man1/mysqlaccess.1
 @man man/man1/mysqladmin.1
