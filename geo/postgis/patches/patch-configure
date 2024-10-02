@@ -1,3 +1,5 @@
+to remove once docbook-xsl is updated
+
 Index: configure
 --- configure.orig
 +++ configure
