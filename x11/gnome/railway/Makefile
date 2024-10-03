@@ -4,7 +4,6 @@ GNOME_PROJECT =		railway
 GNOME_VERSION =		2.7.0
 DISTFILES =		diebahn-${GNOME_VERSION}${EXTRACT_SUFX}{download}
 WRKDIST =		${WRKDIR}/diebahn-${GNOME_VERSION}
-EXTRACT_SUFX =		.tar.xz
 SITES =			https://gitlab.com/schmiddi-on-mobile/railway/-/package_files/139774320/
 
 # GPLv3+
