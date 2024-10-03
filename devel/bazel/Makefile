@@ -1,3 +1,5 @@
+BROKEN-sparc64 = libsingle_line_formatter.jar failed: Worker process did not return a WorkResponse:
+
 # ./src/tools/singlejar/mapped_file_posix.inc only supports 64-bit UNIX.
 ONLY_FOR_ARCHS =	${LP64_ARCHS}
 
