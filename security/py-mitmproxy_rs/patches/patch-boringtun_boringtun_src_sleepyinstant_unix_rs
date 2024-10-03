@@ -1,6 +1,6 @@
-Index: mitmproxy-rs/modcargo-crates/boringtun-0.6.0/src/sleepyinstant/unix.rs
---- mitmproxy-rs/modcargo-crates/boringtun-0.6.0/src/sleepyinstant/unix.rs.orig
-+++ mitmproxy-rs/modcargo-crates/boringtun-0.6.0/src/sleepyinstant/unix.rs
+Index: boringtun/boringtun/src/sleepyinstant/unix.rs
+--- boringtun/boringtun/src/sleepyinstant/unix.rs.orig
++++ boringtun/boringtun/src/sleepyinstant/unix.rs
 @@ -3,9 +3,9 @@ use std::time::Duration;
  use nix::sys::time::TimeSpec;
  use nix::time::{clock_gettime, ClockId};

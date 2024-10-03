@@ -1,12 +1,14 @@
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -45,7 +45,7 @@ socket2 = "0.5.7"
+@@ -48,8 +48,8 @@ socket2 = "0.5.7"
  
  [patch.crates-io]
  # tokio = { path = "../tokio/tokio" }
 -smoltcp = { git = 'https://github.com/smoltcp-rs/smoltcp', rev = 'ef67e7b46cabf49783053cbf68d8671ed97ff8d4' }
-+smoltcp = { path = "../smoltcp-ef67e7b46cabf49783053cbf68d8671ed97ff8d4" }
+-boringtun = { git = 'https://github.com/cloudflare/boringtun', rev = 'e3252d9c4f4c8fc628995330f45369effd4660a1' }
++smoltcp = { path = "./smoltcp" }
++boringtun = { path = "./boringtun/boringtun" }
  
  [target.'cfg(windows)'.dependencies.windows]
  version = "0.57.0"
