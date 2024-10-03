@@ -1,10 +1,7 @@
 COMMENT =		command-line tool for controlling Docker
 
-V =			27.1.2
-
-GH_ACCOUNT =		docker
-GH_PROJECT =		cli
-GH_TAGNAME =		v${V}
+V =			27.2.1
+DIST_TUPLE =		github docker cli v${V} .
 PKGNAME =		docker-${DISTNAME}
 
 CATEGORIES =		sysutils
