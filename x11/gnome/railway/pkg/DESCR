@@ -1,0 +1,16 @@
+Railway lets you look up travel information for many different railways,
+all without needing to navigate through different websites.
+
+Features:
+* Search for journeys
+* View the details of a journey including departure, arrivals, delays, platforms
+* Adaptive for small screens
+*  Bookmark a search or a journey
+*  Show more information like prices
+*  Many different search profiles, e.g
+  * DB
+  * BB
+  * BART
+  * ... (many more). For a full list of supported profiles, see
+https://gitlab.com/schmiddi-on-mobile/railway-backend#profiles which is
+used to query the application data.

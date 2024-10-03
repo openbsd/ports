@@ -1,0 +1,36 @@
+@bin bin/diebahn
+bin/railway
+share/applications/de.schmidhuberj.DieBahn.desktop
+share/diebahn/
+share/diebahn/resources.gresource
+share/glib-2.0/schemas/de.schmidhuberj.DieBahn.gschema.xml
+share/icons/hicolor/scalable/apps/de.schmidhuberj.DieBahn.svg
+share/icons/hicolor/symbolic/apps/de.schmidhuberj.DieBahn-symbolic.svg
+share/locale/ar/LC_MESSAGES/diebahn.mo
+share/locale/bg/LC_MESSAGES/diebahn.mo
+share/locale/da/LC_MESSAGES/diebahn.mo
+share/locale/de/LC_MESSAGES/diebahn.mo
+share/locale/es/LC_MESSAGES/diebahn.mo
+share/locale/fi/LC_MESSAGES/diebahn.mo
+share/locale/fr/LC_MESSAGES/diebahn.mo
+share/locale/hi/LC_MESSAGES/diebahn.mo
+share/locale/hr/LC_MESSAGES/diebahn.mo
+share/locale/hu/LC_MESSAGES/diebahn.mo
+share/locale/it/LC_MESSAGES/diebahn.mo
+share/locale/ja/LC_MESSAGES/diebahn.mo
+share/locale/ko/LC_MESSAGES/diebahn.mo
+share/locale/nl/LC_MESSAGES/diebahn.mo
+share/locale/oc/LC_MESSAGES/diebahn.mo
+share/locale/pl/LC_MESSAGES/diebahn.mo
+share/locale/pt/LC_MESSAGES/diebahn.mo
+share/locale/pt_BR/LC_MESSAGES/diebahn.mo
+share/locale/ro/LC_MESSAGES/diebahn.mo
+share/locale/ru/LC_MESSAGES/diebahn.mo
+share/locale/sv/LC_MESSAGES/diebahn.mo
+share/locale/tr/LC_MESSAGES/diebahn.mo
+share/locale/uk/LC_MESSAGES/diebahn.mo
+share/metainfo/de.schmidhuberj.DieBahn.metainfo.xml
+share/metainfo/resources.gresource.xml
+@tag glib-compile-schemas
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

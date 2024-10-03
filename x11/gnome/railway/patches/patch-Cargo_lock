@@ -1,0 +1,13 @@
+libadwaita-rs is patched, null out checksum
+
+Index: Cargo.lock
+--- Cargo.lock.orig
++++ Cargo.lock
+@@ -918,7 +918,6 @@ checksum = "e2abad23fbc42b3700f2f279844dc832adb2b2eb06
+ name = "libadwaita"
+ version = "0.6.0"
+ source = "registry+https://github.com/rust-lang/crates.io-index"
+-checksum = "91b4990248b9e1ec5e72094a2ccaea70ec3809f88f6fd52192f2af306b87c5d9"
+ dependencies = [
+  "gdk-pixbuf",
+  "gdk4",
