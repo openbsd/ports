@@ -109,7 +109,7 @@ Index: print.c
  	if (f_type || (f_typedir && S_ISDIR(sp->st_mode)))
  		chcnt += printtype(sp->st_mode);
  	return (chcnt);
-@@ -345,6 +402,151 @@ printtype(mode_t mode)
+@@ -351,6 +408,151 @@ printtype(mode_t mode)
  	}
  	return (0);
  }
