@@ -29,7 +29,7 @@ MODPY_PYTEST =		Yes
 # cf https://github.com/osmcode/pyosmium/issues/199
 MODPY_PYTEST_ARGS = -v
 
-TEST_DEPENDS +=	devel/py3-test-httpserver${MODPY_FLAVOR}
+TEST_DEPENDS +=	devel/py-test-httpserver${MODPY_FLAVOR}
 LIB_DEPENDS =	archivers/lz4
 WANTLIB +=	${COMPILER_LIBCXX} bz2 expat lz4 m z
 
