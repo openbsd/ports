@@ -77,6 +77,7 @@
      SUBDIR += power-manager
      SUBDIR += py-atspi
      SUBDIR += quadrapassel
+     SUBDIR += railway
      SUBDIR += seahorse
      SUBDIR += secrets
      SUBDIR += session
