@@ -1,0 +1,21 @@
+commit 201f8b863f0769c50dec75afd87d87751d37f39f (master, origin/master)
+from: Eric Radman <ericshane@eradman.com>
+date: Wed Oct  2 05:33:00 2024 UTC
+
+Avoid leaving a NUL character at the end of local execution script
+
+Caught by sh(1) on OpenBSD 7.6 which raises an error if a NUL character
+is read before the end of a file.
+
+Index: input.c
+--- input.c.orig
++++ input.c
+@@ -131,7 +131,7 @@ parse_pln() {
+ 		else if (line[0] == '\t') {
+ 			switch (context) {
+ 				case Local:
+-					if ((write(tfd, line+1, linelen)) == -1)
++					if ((write(tfd, line + 1, linelen - 1)) == -1)
+ 						err(1, "write");
+ 					break;
+ 				case Remote:
