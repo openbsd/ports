@@ -1,0 +1,16 @@
+Fix applying edits via zipnote. From upstream, at least according to
+
+https://www.linuxquestions.org/questions/linux-software-2/problems-with-zipnote-writing-to-files-4175502552/
+
+Index: zipnote.c
+--- zipnote.c.orig
++++ zipnote.c
+@@ -661,7 +661,7 @@ char **argv;            /* command line tokens */
+     if ((r = zipcopy(z)) != ZE_OK)
+       ziperr(r, "was copying an entry");
+   }
+-  fclose(x);
++  fclose(in_file);
+ 
+   /* Write central directory and end of central directory with new comments */
+   if ((c = zftello(y)) == (zoff_t)-1)    /* get start of central */
