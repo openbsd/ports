@@ -1,3 +1,4 @@
+BROKEN-sparc64 = framelimit.h:53 :105: error: no match for operator-
 COMMENT =	top-down shooter RPG
 
 V =		2.0.2
