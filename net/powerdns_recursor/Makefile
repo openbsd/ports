@@ -1,6 +1,6 @@
 COMMENT=		recursive nameserver
 
-V=			5.1.1
+V=			5.1.2
 DISTNAME=		pdns-recursor-${V}
 EXTRACT_SUFX=		.tar.bz2
 PKGNAME=		powerdns-recursor-${V}
