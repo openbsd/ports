@@ -74,6 +74,8 @@ lib/qt6/qml/org/kde/private/desktopcontainment/folder/
 @so lib/qt6/qml/org/kde/private/desktopcontainment/folder/libfolderplugin.so
 lib/qt6/qml/org/kde/private/desktopcontainment/folder/qmldir
 @bin libexec/kf6/kauth/kcmdatetimehelper
+@bin libexec/kimpanel-ibus-panel
+@bin libexec/kimpanel-ibus-panel-launcher
 share/accounts/providers/kde/opendesktop.provider
 share/accounts/services/kde/opendesktop-rating.service
 share/applications/kaccess.desktop
