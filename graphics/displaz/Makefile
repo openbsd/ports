@@ -2,7 +2,7 @@ COMMENT =	viewer for geospatial point clouds
 GH_ACCOUNT =	c42f
 GH_PROJECT =	displaz
 GH_TAGNAME =	v0.4.0
-REVISION =	7
+REVISION =	8
 
 HOMEPAGE =	http://c42f.github.io/displaz/
 
@@ -11,18 +11,18 @@ CATEGORIES =	graphics
 # BSD 3-clause
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL GLEW Iex-3_3 Imath-3_1 Qt5Core
-WANTLIB += Qt5Gui Qt5Network Qt5OpenGL Qt5Widgets c m
+WANTLIB += ${COMPILER_LIBCXX} GL Iex-3_3 Imath-3_1 Qt5Core Qt5Gui
+WANTLIB += Qt5Network Qt5OpenGL Qt5Widgets c m
 
 MODULES =	devel/cmake x11/qt5
-LIB_DEPENDS =	graphics/glew>=2.0 \
-		graphics/openexr
+LIB_DEPENDS =	graphics/openexr
 
-# links with static libLASlib.a
+# links with static libLASlib.a and libGLEW.a
 BUILD_DEPENDS =	textproc/py-docutils,python3 \
-		converters/lastools
+		converters/lastools \
+		graphics/glew
 
-CONFIGURE_ARGS =	-DDISPLAZ_EMBED_GLEW=false \
+CONFIGURE_ARGS =	-DDISPLAZ_EMBED_GLEW=FALSE \
 			-DLASLIB_LIBRARY=${LOCALBASE}/lib/LASlib/libLASlib.a \
 			-DLASLIB_INCLUDE_DIRS=${LOCALBASE}/include/LASlib/ \
 			-DILMBASE_INCLUDE_DIRS=${LOCALBASE}/include
