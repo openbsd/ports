@@ -181,7 +181,7 @@ MODGO_MODULES =	\
 	github.com/bep/godartsass/v2							 v2.1.0 \
 	github.com/bep/golibsass							 v1.2.0 \
 	github.com/bep/gowebp								 v0.3.0 \
-	github.com/bep/helpers								 v0.4.0 \
+	github.com/bep/helpers								 v0.5.0 \
 	github.com/bep/imagemeta							 v0.8.1 \
 	github.com/bep/lazycache							 v0.4.0 \
 	github.com/bep/logg								 v0.4.0 \
@@ -228,7 +228,7 @@ MODGO_MODULES =	\
 	github.com/go-openapi/swag							 v0.22.8 \
 	github.com/go-sql-driver/mysql							 v1.8.1 \
 	github.com/go-test/deep								 v1.0.8 \
-	github.com/gobuffalo/flect							 v1.0.2 \
+	github.com/gobuffalo/flect							 v1.0.3 \
 	github.com/gobwas/glob								 v0.2.3 \
 	github.com/gohugoio/go-i18n/v2							 v2.1.3-0.20230805085216-e63c13218d0e \
 	github.com/gohugoio/hashstructure						 v0.1.0 \
@@ -344,19 +344,19 @@ MODGO_MODULES =	\
 	go.uber.org/multierr								 v1.11.0 \
 	go.uber.org/zap									 v1.27.0 \
 	gocloud.dev									 v0.39.0 \
-	golang.org/x/crypto								 v0.26.0 \
+	golang.org/x/crypto								 v0.27.0 \
 	golang.org/x/exp								 v0.0.0-20221031165847-c99f073a8326 \
-	golang.org/x/image								 v0.19.0 \
+	golang.org/x/image								 v0.20.0 \
 	golang.org/x/lint								 v0.0.0-20201208152925-83fdc39ff7b5 \
 	golang.org/x/mobile								 v0.0.0-20190719004257-d2bd2a29d028 \
-	golang.org/x/mod								 v0.19.0 \
-	golang.org/x/net								 v0.28.0 \
+	golang.org/x/mod								 v0.21.0 \
+	golang.org/x/net								 v0.29.0 \
 	golang.org/x/oauth2								 v0.22.0 \
 	golang.org/x/sync								 v0.8.0 \
-	golang.org/x/sys								 v0.24.0 \
+	golang.org/x/sys								 v0.25.0 \
 	golang.org/x/telemetry								 v0.0.0-20240521205824-bda55230c457 \
-	golang.org/x/term								 v0.23.0 \
-	golang.org/x/text								 v0.17.0 \
+	golang.org/x/term								 v0.24.0 \
+	golang.org/x/text								 v0.18.0 \
 	golang.org/x/time								 v0.6.0 \
 	golang.org/x/tools								 v0.23.0 \
 	golang.org/x/xerrors								 v0.0.0-20240716161551-93cc26a95ae9 \
@@ -452,6 +452,7 @@ MODGO_MODFILES =	\
 	github.com/!azure/azure-sdk-for-go/sdk/internal					 v1.5.2 \
 	github.com/!azure/azure-sdk-for-go/sdk/internal					 v1.8.0 \
 	github.com/alecthomas/chroma/v2							 v2.5.0 \
+	github.com/bep/helpers								 v0.4.0 \
 	github.com/census-instrumentation/opencensus-proto				 v0.2.1 \
 	github.com/cli/safeexec								 v1.0.0 \
 	github.com/cncf/udpa/go								 v0.0.0-20191209042840-269d4d468f6f \
@@ -612,6 +613,7 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto								 v0.23.0 \
 	golang.org/x/crypto								 v0.24.0 \
 	golang.org/x/crypto								 v0.25.0 \
+	golang.org/x/crypto								 v0.26.0 \
 	golang.org/x/exp								 v0.0.0-20190121172915-509febef88a4 \
 	golang.org/x/exp								 v0.0.0-20190306152737-a1d7652674e8 \
 	golang.org/x/exp								 v0.0.0-20190510132918-efd6b22b2522 \
@@ -643,6 +645,7 @@ MODGO_MODFILES =	\
 	golang.org/x/mod								 v0.12.0 \
 	golang.org/x/mod								 v0.14.0 \
 	golang.org/x/mod								 v0.17.0 \
+	golang.org/x/mod								 v0.19.0 \
 	golang.org/x/mod								 v0.2.0 \
 	golang.org/x/mod								 v0.3.0 \
 	golang.org/x/mod								 v0.4.0 \
@@ -697,6 +700,7 @@ MODGO_MODFILES =	\
 	golang.org/x/net								 v0.25.0 \
 	golang.org/x/net								 v0.26.0 \
 	golang.org/x/net								 v0.27.0 \
+	golang.org/x/net								 v0.28.0 \
 	golang.org/x/net								 v0.6.0 \
 	golang.org/x/oauth2								 v0.0.0-20180821212333-d2e6202438be \
 	golang.org/x/oauth2								 v0.0.0-20190226205417-e64efc72b421 \
@@ -779,7 +783,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys								 v0.20.0 \
 	golang.org/x/sys								 v0.21.0 \
 	golang.org/x/sys								 v0.22.0 \
-	golang.org/x/sys								 v0.23.0 \
+	golang.org/x/sys								 v0.24.0 \
 	golang.org/x/sys								 v0.4.0 \
 	golang.org/x/sys								 v0.5.0 \
 	golang.org/x/sys								 v0.6.0 \
@@ -795,6 +799,7 @@ MODGO_MODFILES =	\
 	golang.org/x/text								 v0.14.0 \
 	golang.org/x/text								 v0.15.0 \
 	golang.org/x/text								 v0.16.0 \
+	golang.org/x/text								 v0.17.0 \
 	golang.org/x/text								 v0.3.0 \
 	golang.org/x/text								 v0.3.1-0.20180807135948-17ff2d5776d2 \
 	golang.org/x/text								 v0.3.2 \
