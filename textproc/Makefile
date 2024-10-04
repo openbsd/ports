@@ -454,6 +454,7 @@
      SUBDIR += py-odfpy,python3
      SUBDIR += py-ofxparse,python3
      SUBDIR += py-openpyxl,python3
+     SUBDIR += py-orjson,python3
      SUBDIR += py-pandocfilters,python3
      SUBDIR += py-patiencediff,python3
      SUBDIR += py-pdfminer,python3
