@@ -1,2 +1,2 @@
-bin/loccount
+@bin bin/loccount
 @man man/man1/loccount.1

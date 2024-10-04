@@ -1,9 +1,8 @@
 COMMENT =		count lines of codes in many languages
 
-V =			2.15
+V =			2.16
 DISTNAME =		loccount-${V}
 CATEGORIES =		textproc
-REVISION =		0
 
 HOMEPAGE =		https://gitlab.com/esr/loccount
 
@@ -22,11 +21,14 @@ MODPY_ADJ_FILES =	tablegen.py
 CONFIGURE_STYLE =	XXX: do not execute MODPY_BUILD_TARGET in python.port.mk:250
 
 BUILD_DEPENDS =		lang/go \
-			textproc/asciidoc
+			textproc/asciidoctor
 
 MAKE_ENV =		GOCACHE=${WRKDIR}/go-cache GO111MODULE=off
 ALL_TARGET =		loccount loccount.1
 TEST_TARGET =		check
+
+# uses $(shell ...)
+USE_GMAKE =		Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/loccount-${V} ${PREFIX}/bin/loccount
