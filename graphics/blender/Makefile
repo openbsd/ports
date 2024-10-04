@@ -8,6 +8,8 @@ DPB_PROPERTIES = parallel
 COMMENT =	3D creation software
 
 DISTNAME =	blender-3.3.21
+REVISION =	0
+
 CATEGORIES =	graphics
 
 HOMEPAGE =	https://www.blender.org/
@@ -16,8 +18,8 @@ HOMEPAGE =	https://www.blender.org/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
-WANTLIB += ${COMPILER_LIBCXX} Alembic GL GLEW Iex-3_2 IlmThread-3_2 Imath-3_1
-WANTLIB += OpenColorIO OpenEXR-3_2 OpenEXRCore-3_2 OpenImageIO OpenImageIO_Util
+WANTLIB += ${COMPILER_LIBCXX} Alembic GL GLEW Iex-3_3 IlmThread-3_3 Imath-3_1
+WANTLIB += OpenColorIO OpenEXR-3_3 OpenEXRCore-3_3 OpenImageIO OpenImageIO_Util
 WANTLIB += SDL2 X11 Xfixes Xi Xrender Xxf86vm avcodec avdevice
 WANTLIB += avfilter avformat avutil blosc boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt

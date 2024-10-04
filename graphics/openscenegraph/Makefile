@@ -10,7 +10,7 @@ GH_ACCOUNT =		openscenegraph
 GH_PROJECT =		OpenSceneGraph
 GH_TAGNAME =		OpenSceneGraph-$V
 DISTNAME =		openscenegraph-${V}
-REVISION =		5
+REVISION =		6
 
 SUBST_VARS +=		V
 
@@ -46,12 +46,12 @@ COMPILER =	base-clang ports-gcc
 
 CXXFLAGS_base-clang =	-std=c++14
 
-WANTLIB += ${COMPILER_LIBCXX} GL Iex-3_2 IlmThread-3_2
-WANTLIB += SDL X11 Xinerama Xrandr fontconfig OpenEXRCore-3_2
+WANTLIB += ${COMPILER_LIBCXX} GL Iex-3_3 IlmThread-3_3
+WANTLIB += SDL X11 Xinerama Xrandr fontconfig OpenEXRCore-3_3
 WANTLIB += avcodec avdevice avformat avutil c cairo
 WANTLIB += curl freetype gdal gdk_pixbuf-2.0 gif gio-2.0 glib-2.0
 WANTLIB += gobject-2.0 intl jasper jpeg m png poppler-glib rsvg-2
-WANTLIB += swresample swscale tiff z Imath-3_1 OpenEXR-3_2
+WANTLIB += swresample swscale tiff z Imath-3_1 OpenEXR-3_3
 
 MODULES =		devel/cmake
 LIB_DEPENDS =		devel/sdl \

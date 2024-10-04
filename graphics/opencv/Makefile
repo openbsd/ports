@@ -11,7 +11,7 @@ GH_TAGNAME =		${V}
 
 PKGNAME-main =		opencv-${V}
 PKGNAME-java =		opencv-java-${V}
-REVISION-main =		1
+REVISION-main =		2
 REVISION-java =		0
 
 HOMEPAGE =		https://www.opencv.org/
@@ -25,7 +25,7 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
 SHARED_LIBS += $i 13.0
 .endfor
 
-WANTLIB-main += ${COMPILER_LIBCXX} OpenEXR-3_2 absl_hash absl_log_internal_message
+WANTLIB-main += ${COMPILER_LIBCXX} OpenEXR-3_3 absl_hash absl_log_internal_message
 WANTLIB-main += absl_log_internal_nullguard absl_spinlock_wait avcodec
 WANTLIB-main += avformat avutil c cairo gdk-3 gdk_pixbuf-2.0 glib-2.0
 WANTLIB-main += gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstpbutils-1.0

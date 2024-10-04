@@ -1,12 +1,13 @@
 COMMENT =	extra functionality for kioslaves
 DISTNAME =	kio-extras-${VERSION}
 PKGNAME =	kf6-kio-extras-${VERSION}
+REVISION =	0
 
 CATEGORIES =	productivity net
 
 SHARED_LIBS +=	kioarchive6               0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} GL Iex-3_2 IlmThread-3_2 Imath-3_1
+WANTLIB += ${COMPILER_LIBCXX} GL Iex-3_3 IlmThread-3_3 Imath-3_1
 WANTLIB += KDSoapWSDiscoveryClient KExiv2Qt6 KF6Archive KF6Bookmarks
 WANTLIB += KF6Codecs KF6ColorScheme KF6Completion KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6DBusAddons
@@ -14,7 +15,7 @@ WANTLIB += KF6DNSSD KF6I18n KF6ItemViews KF6JobWidgets KF6KCMUtils
 WANTLIB += KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore KF6KIOFileWidgets
 WANTLIB += KF6KIOGui KF6KIOWidgets KF6Service KF6Solid KF6SonnetUi
 WANTLIB += KF6SyntaxHighlighting KF6TextWidgets KF6WidgetsAddons
-WANTLIB += OpenEXR-3_2 OpenEXRCore-3_2 PlasmaActivities PlasmaActivitiesStats
+WANTLIB += OpenEXR-3_3 OpenEXRCore-3_3 PlasmaActivities PlasmaActivitiesStats
 WANTLIB += QCoro6Core Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6Qml Qt6Sql Qt6Svg Qt6Widgets Qt6Xml Xcursor c kdsoap-qt6
 WANTLIB += m mtp phonon4qt6 phonon4qt6experimental smbclient ssh

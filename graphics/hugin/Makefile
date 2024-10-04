@@ -3,6 +3,8 @@ BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
 COMMENT =	panorama image stitcher
 
 DISTNAME =	hugin-2023.0.0
+REVISION =	0
+
 EXTRACT_SUFX =	.tar.bz2
 
 # not needed for releases, but makes RCs/betas easier to work with
@@ -27,8 +29,8 @@ MAINTAINER =	Kirill Bychkov <kirby@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL GLU Iex-3_2 OpenEXR-3_2
-WANTLIB += IlmThread-3_2 Imath-3_1 X11 boost_filesystem-mt boost_system-mt
+WANTLIB += ${COMPILER_LIBCXX} GL GLU Iex-3_3 OpenEXR-3_3
+WANTLIB += IlmThread-3_3 Imath-3_1 X11 boost_filesystem-mt boost_system-mt
 WANTLIB += c exiv2 epoxy fftw3 jpeg lcms2 m pano13 png ${MODPY_WANTLIB} sqlite3
 WANTLIB += tiff vigraimpex wx_baseu-3.2 wx_baseu_net-3.2 wx_baseu_xml-3.2
 WANTLIB += wx_gtk3u_aui-3.2 wx_gtk3u_core-3.2 wx_gtk3u_gl-3.2

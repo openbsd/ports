@@ -2,7 +2,7 @@ COMMENT =	viewer for geospatial point clouds
 GH_ACCOUNT =	c42f
 GH_PROJECT =	displaz
 GH_TAGNAME =	v0.4.0
-REVISION =	6
+REVISION =	7
 
 HOMEPAGE =	http://c42f.github.io/displaz/
 
@@ -11,7 +11,7 @@ CATEGORIES =	graphics
 # BSD 3-clause
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL GLEW Iex-3_2 Imath-3_1 Qt5Core
+WANTLIB += ${COMPILER_LIBCXX} GL GLEW Iex-3_3 Imath-3_1 Qt5Core
 WANTLIB += Qt5Gui Qt5Network Qt5OpenGL Qt5Widgets c m
 
 MODULES =	devel/cmake x11/qt5

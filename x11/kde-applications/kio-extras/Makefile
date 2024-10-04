@@ -3,19 +3,19 @@ VERSION =	24.02.1
 DISTNAME =	kio-extras-kf5-${VERSION}
 PKGNAME =	kio-extras-${VERSION}
 CATEGORIES =	productivity net
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  kioarchive                4.0 # 5.97
 SHARED_LIBS +=  molletnetwork5            3.0 # 18.08
 
-WANTLIB += ${COMPILER_LIBCXX} Iex-3_2 IlmThread-3_2 Imath-3_1
+WANTLIB += ${COMPILER_LIBCXX} Iex-3_3 IlmThread-3_3 Imath-3_1
 WANTLIB += KF5Activities KF5ActivitiesStats KF5Archive KF5Auth
 WANTLIB += KF5AuthCore KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
 WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5DBusAddons
 WANTLIB += KF5DNSSD KF5I18n KF5ItemViews KF5JobWidgets KF5KExiv2
 WANTLIB += KF5KIOCore KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets
 WANTLIB += KF5Service KF5Solid KF5SyntaxHighlighting KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui OpenEXR-3_2 OpenEXRCore-3_2
+WANTLIB += KF5WindowSystem KF5XmlGui OpenEXR-3_3 OpenEXRCore-3_3
 WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Sql
 WANTLIB += Qt5Svg Qt5Widgets Qt5Xml X11 Xcursor c kdsoap m mtp
 WANTLIB += phonon4qt5 phonon4qt5experimental smbclient ssh tag

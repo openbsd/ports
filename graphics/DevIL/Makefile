@@ -1,7 +1,7 @@
 COMMENT=		library for powerful image loading capabilities
 
 DISTNAME=		DevIL-1.7.8
-REVISION=		21
+REVISION=		22
 
 SHARED_LIBS+=		IL	1.0 # 2.0
 SHARED_LIBS+=		ILU	1.0 # 2.0
@@ -18,8 +18,8 @@ SITES=			${SITE_SOURCEFORGE:=openil/}
 EXTRACT_SUFX=		.zip
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLU ICE Xau Xdmcp lzma xcb-shm zstd
-WANTLIB += Iex-3_2 OpenEXR-3_2 OpenEXRCore-3_2 OpenEXRUtil-3_2
-WANTLIB += IlmThread-3_2 Imath-3_1 SDL SM X11 X11-xcb xcb-randr
+WANTLIB += Iex-3_3 OpenEXR-3_3 OpenEXRCore-3_3 OpenEXRUtil-3_3
+WANTLIB += IlmThread-3_3 Imath-3_1 SDL SM X11 X11-xcb xcb-randr
 WANTLIB += Xext Xfixes Xi Xmu Xrandr Xrender Xt Xxf86vm deflate
 WANTLIB += c drm expat glapi glut iconv jasper jpeg lcms m mng
 WANTLIB += png sndio tiff usbhid xcb xcb-dri2 xcb-dri3 xcb-glx
