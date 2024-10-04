@@ -189,7 +189,6 @@
      SUBDIR += pms
      SUBDIR += portaudio-svn
      SUBDIR += portmidi
-     SUBDIR += potamus
      SUBDIR += puddletag
      SUBDIR += pulseaudio
      SUBDIR += pulseaudio-qt

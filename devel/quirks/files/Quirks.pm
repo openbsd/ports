@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1655 2024/09/30 19:51:06 tb Exp $
+# $OpenBSD: Quirks.pm,v 1.1656 2024/10/04 06:46:08 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1981,6 +1981,7 @@ setup_obsolete_reason(
 	6 => 'mftrace',
 # 7.7
 	3 => 'pavuk',
+	69 => 'potamus',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -2066,6 +2067,7 @@ my $obsolete_message = {
 	66 => "superseded by opensmtpd-table-*",
 	67 => "unmaintained upstream, outdated for decades, only supports old crypto, expected dhclient",
 	68 => "unmaintained upstream, outdated for decades, does not work, expected dhclient, use unwind.conf(5) 'block list file' instead",
+	69 => "upstream is dead, does not support ffmpeg > 6",
 };
 
 # ->is_base_system($handle, $state):
