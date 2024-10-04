@@ -1,13 +1,13 @@
 COMMENT=		tool/library for managing platform virtualization
 
-DISTNAME=		libvirt-10.7.0
+DISTNAME=		libvirt-10.8.0
 
 CATEGORIES=		sysutils devel emulators
 
-SHARED_LIBS += virt                      2.4 # 0.10007.0
-SHARED_LIBS += virt-qemu                 2.3 # 0.10007.0
-SHARED_LIBS += virt-lxc                  2.2 # 0.10007.0
-SHARED_LIBS += virt-admin                2.2 # 0.10007.0
+SHARED_LIBS += virt                      2.4 # 0.10008.0
+SHARED_LIBS += virt-qemu                 2.3 # 0.10008.0
+SHARED_LIBS += virt-lxc                  2.2 # 0.10008.0
+SHARED_LIBS += virt-admin                2.2 # 0.10008.0
 
 HOMEPAGE=		https://libvirt.org/
 
@@ -16,8 +16,8 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c curl gio-2.0 glib-2.0 gnutls gobject-2.0 intl m pthread
-WANTLIB += sasl2 ssh2 util xml2 yajl
+WANTLIB += c curl gio-2.0 glib-2.0 gnutls gobject-2.0 intl json-c
+WANTLIB += m pthread sasl2 ssh2 util xml2
 
 SITES=			https://libvirt.org/sources/
 EXTRACT_SUFX=		.tar.xz
@@ -43,7 +43,7 @@ BUILD_DEPENDS +=	textproc/py-docutils${MODPY_FLAVOR}
 BUILD_DEPENDS +=	textproc/libxslt
 
 LIB_DEPENDS=		devel/glib2 \
-			devel/libyajl \
+			devel/json-c \
 			net/curl \
 			security/cyrus-sasl2 \
 			security/gnutls \
