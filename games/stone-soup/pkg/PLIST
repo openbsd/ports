@@ -10,13 +10,17 @@ share/crawl/dat/clua/kills.lua
 share/crawl/dat/clua/stash.lua
 share/crawl/dat/database/
 share/crawl/dat/database/FAQ.txt
+share/crawl/dat/database/colourname.txt
+share/crawl/dat/database/decorlines.txt
 share/crawl/dat/database/el/
 share/crawl/dat/database/el/monflee.txt
 share/crawl/dat/database/el/rand_all.txt
+share/crawl/dat/database/gizmo.txt
 share/crawl/dat/database/godname.txt
 share/crawl/dat/database/godspeak.txt
 share/crawl/dat/database/help.txt
 share/crawl/dat/database/insult.txt
+share/crawl/dat/database/miscast.txt
 share/crawl/dat/database/miscname.txt
 share/crawl/dat/database/monflee.txt
 share/crawl/dat/database/monname.txt
@@ -43,6 +47,7 @@ share/crawl/dat/database/zh/monflee.txt
 share/crawl/dat/database/zh/monspell.txt
 share/crawl/dat/database/zh/montitle.txt
 share/crawl/dat/database/zh/shout.txt
+share/crawl/dat/database/zh/wpnnoise.txt
 share/crawl/dat/defaults/
 share/crawl/dat/defaults/autopickup_exceptions.txt
 share/crawl/dat/defaults/glyph_colours.txt
@@ -137,6 +142,7 @@ share/crawl/dat/des/portals/
 share/crawl/dat/des/portals/arena.des
 share/crawl/dat/des/portals/bailey.des
 share/crawl/dat/des/portals/bazaar.des
+share/crawl/dat/des/portals/crucible.des
 share/crawl/dat/des/portals/desolation.des
 share/crawl/dat/des/portals/gauntlet.des
 share/crawl/dat/des/portals/icecave.des

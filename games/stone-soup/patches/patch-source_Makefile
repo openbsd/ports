@@ -42,7 +42,7 @@ Index: source/Makefile
  WINARCH := $(shell $(GXX) -dumpmachine | grep -q x64_64 && echo win64 || echo win32)
  
  export SRC_VERSION
-@@ -2092,7 +2078,7 @@ mac-app-console: all
+@@ -2106,7 +2092,7 @@ mac-app-console: all
  # Building the Android package
  #
  

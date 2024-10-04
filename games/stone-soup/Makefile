@@ -2,12 +2,11 @@ BROKEN-hppa =	ICE on dgn-shoals.cc:638
 
 COMMENT = 	dungeon crawl stone soup
 
-VERSION = 	0.31.0
-TAGNAME =	The Alchemy of Forms
+VERSION = 	0.32.0
+TAGNAME =	Gods and Makers
 
 DISTNAME=	stone_soup-${VERSION}-nodeps
 PKGNAME=	stone-soup-${VERSION}
-REVISION=	0
 
 CATEGORIES = 	games
 
