@@ -10,7 +10,7 @@ MODGO_DIST_SUBDIR ?=	go_modules
 
 SITE_ATHENS =		https://proxy.golang.org/
 
-SITES.go ?= 		${SITE_ATHENS}
+SITES.go ?=		${SITE_ATHENS}
 
 MODGO_RUN_DEPENDS =	lang/go
 MODGO_BUILD_DEPENDS =	lang/go
@@ -47,7 +47,7 @@ MODGO_TYPE ?=		bin
 MODGO_WORKSPACE ?=	${WRKDIR}/go
 MODGO_GOCACHE ?=	${WRKDIR}/go-cache
 MODGO_GOPATH ?=		${MODGO_WORKSPACE}:${MODGO_PACKAGE_PATH}
-# We cannot assume that the maching running the built code will have SSE,
+# We cannot assume that the machine running the built code will have SSE,
 # even though the machine building the package has SSE. As such, we need
 # to explicitly disable SSE on i386 builds.
 MAKE_ENV +=		GO386=softfloat
