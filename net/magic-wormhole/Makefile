@@ -1,6 +1,6 @@
 COMMENT =		securely transfer data between computers
 
-MODPY_EGG_VERSION =	0.15.0
+MODPY_EGG_VERSION =	0.16.0
 DISTNAME =		magic-wormhole-${MODPY_EGG_VERSION}
 
 HOMEPAGE =		https://magic-wormhole.readthedocs.io
@@ -29,7 +29,7 @@ RUN_DEPENDS =		archivers/py-zipstream-ng${MODPY_FLAVOR} \
 			security/py-PyNaCl${MODPY_FLAVOR} \
 			security/py-cryptography${MODPY_FLAVOR} \
 			security/py-hkdf${MODPY_FLAVOR} \
-			security/py-spake2${MODPY_FLAVOR} \
+			security/py-spake2${MODPY_FLAVOR}>=0.9 \
 			textproc/py-humanize${MODPY_FLAVOR} \
 			www/py-autobahn${MODPY_FLAVOR}
 
