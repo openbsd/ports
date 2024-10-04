@@ -1,5 +1,3 @@
-BROKEN=			KeyError: 'metadata', ERROR: Unhandled python exception
-
 COMMENT=		look up travel information for many different railways
 
 GNOME_PROJECT=		railway
@@ -33,7 +31,8 @@ pre-configure:
 		${WRKSRC}/.cargo/config \
 		>${WRKBUILD}/.cargo/config ${}
 	# patched crate
-	echo "{'files':{}}" > ${WRKSRC}/vendor/libadwaita/.cargo-checksum.json
+	sed -i 's/"files":{[^}]*}/"files":{}/' \
+		${WRKSRC}/vendor/libadwaita/.cargo-checksum.json
 
 post-install:
 	ln -sf ${PREFIX}/bin/diebahn ${PREFIX}/bin/railway
