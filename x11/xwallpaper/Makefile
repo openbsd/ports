@@ -1,6 +1,6 @@
 COMMENT =	wallpaper setting utility for X
 
-V =		0.7.4
+V =		0.7.5
 DISTNAME =	xwallpaper-${V}
 
 CATEGORIES =	x11 graphics
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 # uses pledge()
 WANTLIB += X11 Xpm c jpeg pixman-1 png xcb xcb-image xcb-randr
-WANTLIB += xcb-shm xcb-util z
+WANTLIB += xcb-shm xcb-util
 
 SITES =	https://github.com/stoeckmann/xwallpaper/releases/download/v${V}/
 
