@@ -1,2 +1,4 @@
 IRCTk is a graphical user interface for IRC that supports the client
 protocol as specified in RFC1459 and a subset of IRCv3.
+
+It includes also ircfossil(1), an IRC bridge for the fossil chat.
