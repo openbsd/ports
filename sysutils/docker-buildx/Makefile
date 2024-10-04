@@ -1,6 +1,6 @@
 COMMENT =		Docker CLI plugin for extended build capabilities
 
-V =			0.16.2
+V =			0.17.1
 GH_ACCOUNT =		docker
 GH_PROJECT =		buildx
 GH_TAGNAME =		v${V}
