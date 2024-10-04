@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -806,7 +806,7 @@ if(BUILD_BUNDLE)
+@@ -844,7 +844,7 @@ if(BUILD_BUNDLE)
      endif()
  else()
      install(FILES "${PROJECT_SOURCE_DIR}/doc/manpage/rawtherapee.1"

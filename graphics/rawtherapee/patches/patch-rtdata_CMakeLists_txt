@@ -1,0 +1,12 @@
+Index: rtdata/CMakeLists.txt
+--- rtdata/CMakeLists.txt.orig
++++ rtdata/CMakeLists.txt
+@@ -42,7 +42,7 @@ install(FILES ${OPTIONSFILE} DESTINATION "${DATADIR}" 
+ 
+ install(DIRECTORY "${PROFILESDIR}" DESTINATION "${DATADIR}" FILES_MATCHING PATTERN "*.pp3")
+ install(DIRECTORY "${THEMEDIR}" DESTINATION "${DATADIR}")
+-install(DIRECTORY "${ICONTHEMEDIR}/rawtherapee" DESTINATION "${DATADIR}/${ICONTHEMEDIR}")
++install(DIRECTORY "${ICONTHEMEDIR}/rawtherapee" DESTINATION "${ICONSDIR}")
+ install(DIRECTORY "${IMAGESDIR}" DESTINATION "${DATADIR}")
+ 
+ if(APPLE)
