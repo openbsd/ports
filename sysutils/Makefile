@@ -121,6 +121,7 @@
      SUBDIR += freedt
      SUBDIR += freeipmi
      SUBDIR += fsstress
+     SUBDIR += fswatch
      SUBDIR += fwa
      SUBDIR += fzf
      SUBDIR += galleon
