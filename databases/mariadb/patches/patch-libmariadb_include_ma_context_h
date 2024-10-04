@@ -1,0 +1,39 @@
+- MDEV-34859: Failed to initialise non-blocking API on OpenBSD arm64
+  d2285fb8304c82fd87de483845d1c12b06927479
+
+Index: libmariadb/include/ma_context.h
+--- libmariadb/include/ma_context.h.orig
++++ libmariadb/include/ma_context.h
+@@ -32,6 +32,8 @@
+ #define MY_CONTEXT_USE_X86_64_GCC_ASM
+ #elif defined(__GNUC__) && __GNUC__ >= 3 && defined(__i386__)
+ #define MY_CONTEXT_USE_I386_GCC_ASM
++#elif defined(__GNUC__) && __GNUC__ >= 3 && defined(__aarch64__)
++#define MY_CONTEXT_USE_AARCH64_GCC_ASM
+ #elif defined(HAVE_UCONTEXT_H)
+ #define MY_CONTEXT_USE_UCONTEXT
+ #else
+@@ -95,6 +97,23 @@ struct my_context {
+ 
+ struct my_context {
+   uint64_t save[7];
++  void *stack_top;
++  void *stack_bot;
++#ifdef HAVE_VALGRIND
++  unsigned int valgrind_stack_id;
++#endif
++#ifndef DBUG_OFF
++  void *dbug_state;
++#endif
++};
++#endif
++
++
++#ifdef MY_CONTEXT_USE_AARCH64_GCC_ASM
++#include <stdint.h>
++
++struct my_context {
++  uint64_t save[22];
+   void *stack_top;
+   void *stack_bot;
+ #ifdef HAVE_VALGRIND
