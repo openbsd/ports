@@ -1,0 +1,11 @@
+Index: src/synfig/string_helper.h
+--- src/synfig/string_helper.h.orig
++++ src/synfig/string_helper.h
+@@ -27,6 +27,7 @@
+ #ifndef SYNFIG_STRING_HELPER_H
+ #define SYNFIG_STRING_HELPER_H
+ 
++#include <cstdarg>
+ #include <string>
+ #include "real.h"
+ 

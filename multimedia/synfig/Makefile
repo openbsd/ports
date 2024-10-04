@@ -3,10 +3,9 @@ BROKEN-powerpc64 =	segfault in multi-threaded mode, synfigstudio can't be built
 
 COMMENT =		2D animation software
 
-V=			1.5.1
+V=			1.5.3
 DISTNAME =		synfig-$V
 API_V =			1.0
-REVISION =		4
 
 SHARED_LIBS +=  synfig                    3.0 # 0.0
 
@@ -31,7 +30,7 @@ WANTLIB += vorbisenc vpx webp webpdemux webpmux x264 x265 xcb
 WANTLIB += xml++-2.6 xml2 xvidcore z deflate
 WANTLIB += X11-xcb Xfixes drm va va-drm va-x11 xcb-dri3
 
-SITES=		https://github.com/synfig/synfig/releases/download/v${V}/
+SITES=			https://github.com/synfig/synfig/releases/download/v${V}/
 
 COMPILER =		base-clang ports-gcc
 CXXFLAGS_base-clang =	-std=gnu++14
@@ -45,6 +44,7 @@ BUILD_DEPENDS =		devel/boost \
 LIB_DEPENDS =		archivers/xz \
 			devel/libtool,-ltdl \
 			graphics/ImageMagick \
+			graphics/ffmpeg \
 			graphics/jasper \
 			graphics/libmng \
 			graphics/libraw \
@@ -59,7 +59,7 @@ USE_GMAKE =		Yes
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_STYLE =	autoconf
-AUTOCONF_VERSION =	2.69
+AUTOCONF_VERSION =	2.71
 CONFIGURE_ARGS =	--without-included-ltdl
 
 FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/synfig
