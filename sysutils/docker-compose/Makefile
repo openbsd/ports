@@ -25,5 +25,8 @@ do-install:
 	${INSTALL_PROGRAM} ${MODGO_WORKSPACE}/bin/cmd \
 		${PREFIX}/libexec/docker/cli-plugins/docker-compose
 
+do-test:
+	cd ${WRKSRC} && ${MODGO_TEST_CMD} ./...
+
 .include "modules.inc"
 .include <bsd.port.mk>
