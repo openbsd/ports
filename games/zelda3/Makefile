@@ -2,6 +2,7 @@ COMMENT =	reimplementation of Zelda - A Link to the Past
 
 V =		0.3
 PKGNAME =	zelda3-${V:S/-//g}
+REVISION =	0
 
 GH_ACCOUNT =	snesrev
 GH_PROJECT =	zelda3

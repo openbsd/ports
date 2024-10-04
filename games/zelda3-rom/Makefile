@@ -6,6 +6,8 @@ DISTFILES =	zelda3.sfc
 
 CATEGORIES =	games
 
+UNLINKED =	zelda3-rom
+
 HOMEPAGE =	https://www.nintendo.com
 
 FETCH_MANUALLY += "zelda3.sfc has sha256 checksum"
