@@ -18,6 +18,8 @@ lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}api.${MODPY_PYC_MA
 lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}auth.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}auth.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}cache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}cache.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}entities.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -32,12 +34,11 @@ lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}output.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}output.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}settings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}settings.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}typing_compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}typing_compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}wcstring.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/toot/${MODPY_PYCACHE}wcstring.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/toot/api.py
 lib/python${MODPY_VERSION}/site-packages/toot/auth.py
+lib/python${MODPY_VERSION}/site-packages/toot/cache.py
 lib/python${MODPY_VERSION}/site-packages/toot/cli/
 lib/python${MODPY_VERSION}/site-packages/toot/cli/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/toot/cli/${MODPY_PYCACHE}/
@@ -47,6 +48,8 @@ lib/python${MODPY_VERSION}/site-packages/toot/cli/${MODPY_PYCACHE}accounts.${MOD
 lib/python${MODPY_VERSION}/site-packages/toot/cli/${MODPY_PYCACHE}accounts.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/toot/cli/${MODPY_PYCACHE}auth.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/toot/cli/${MODPY_PYCACHE}auth.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/toot/cli/${MODPY_PYCACHE}diag.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/toot/cli/${MODPY_PYCACHE}diag.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/toot/cli/${MODPY_PYCACHE}lists.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/toot/cli/${MODPY_PYCACHE}lists.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/toot/cli/${MODPY_PYCACHE}post.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -65,6 +68,7 @@ lib/python${MODPY_VERSION}/site-packages/toot/cli/${MODPY_PYCACHE}validators.${M
 lib/python${MODPY_VERSION}/site-packages/toot/cli/${MODPY_PYCACHE}validators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/toot/cli/accounts.py
 lib/python${MODPY_VERSION}/site-packages/toot/cli/auth.py
+lib/python${MODPY_VERSION}/site-packages/toot/cli/diag.py
 lib/python${MODPY_VERSION}/site-packages/toot/cli/lists.py
 lib/python${MODPY_VERSION}/site-packages/toot/cli/post.py
 lib/python${MODPY_VERSION}/site-packages/toot/cli/read.py
@@ -127,7 +131,6 @@ lib/python${MODPY_VERSION}/site-packages/toot/tui/scroll.py
 lib/python${MODPY_VERSION}/site-packages/toot/tui/timeline.py
 lib/python${MODPY_VERSION}/site-packages/toot/tui/utils.py
 lib/python${MODPY_VERSION}/site-packages/toot/tui/widgets.py
-lib/python${MODPY_VERSION}/site-packages/toot/typing_compat.py
 lib/python${MODPY_VERSION}/site-packages/toot/utils/
 lib/python${MODPY_VERSION}/site-packages/toot/utils/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/toot/utils/${MODPY_PYCACHE}/
