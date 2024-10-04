@@ -5,6 +5,7 @@ COMMENT =	video editor
 GH_ACCOUNT =	mltframework
 GH_PROJECT =	shotcut
 GH_TAGNAME =	v24.04.28
+REVISION =	0
 
 CATEGORIES =	multimedia
 
@@ -14,7 +15,7 @@ HOMEPAGE =	https://www.shotcut.org/
 PERMIT_PACKAGE =	Yes
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Multimedia
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Charts Qt6Core Qt6Gui Qt6Multimedia
 WANTLIB += Qt6Network Qt6OpenGL Qt6OpenGLWidgets Qt6Qml Qt6QmlModels
 WANTLIB += Qt6Quick Qt6QuickControls2 Qt6QuickWidgets Qt6Sql Qt6Widgets
 WANTLIB += Qt6Xml c fftw3 m mlt++-7 mlt-7
