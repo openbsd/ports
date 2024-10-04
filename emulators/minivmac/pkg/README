@@ -5,9 +5,14 @@
 Mini vMac can emulate early Macintoshes. The Macintosh Plus (minivmac)
 and the Macintosh II (minivmac-ii) are supported on OpenBSD.
 
-Mini vMac requires a correct ROM for the Mac model to emulate, named either
-"vMac.ROM" or "MacII.ROM". This can be in the current directory before
-executing the "minivmac" command.
+Mini vMac requires a correct ROM for the Mac model to emulate. It will
+look for the following filenames depending on the build:
+
+- vMac.ROM for minivmac
+- MacII.ROM for minivmac-ii
+- Mac128K.ROM for minivmac-m128k
+
+These need to be in the current directory before executing Mini vMac.
 
 Mini vMac can boot an image file (such as an OS). This can be named
 "disk1.dsk" and if placed in the current directory before executing

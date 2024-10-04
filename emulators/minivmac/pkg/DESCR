@@ -4,3 +4,4 @@ based on Motorola's 680x0 microprocessors.
 Flavors:
 	default	- Emulate the Macintosh Plus ("minivmac" package) 
 	ii	- Emulate the Macintosh II ("minivmac-ii" package)
+	m128k	- Emulate the Macintosh 128k ("minivmac-m128k" package)

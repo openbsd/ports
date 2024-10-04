@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS =	i386 amd64 powerpc
 COMMENT =		early macintosh emulator
 
 V =			36.04
-REVISION =		1
+REVISION =		2
 
 DISTNAME =		minivmac-${V}
 
@@ -34,13 +34,16 @@ SETUP_FLAGS-amd64 = 	-t ob64
 SETUP_FLAGS-i386 = 	-t obsd
 SETUP_FLAGS-powerpc = 	-t obsd -cpu ppc
 
-FLAVORS = 		ii
+FLAVORS = 		ii m128k
 FLAVOR ?=		
 
 MODEL = 		-m Plus
 .if ${FLAVOR:Mii}
 MODEL = 		-m II
 SUFFIX = 		-${FLAVOR}
+.elif ${FLAVOR:Mm128k}
+MODEL =			-m 128K
+SUFFIX =		-${FLAVOR}
 .endif
 
 FULLPKGNAME =		minivmac${SUFFIX}-${V}
