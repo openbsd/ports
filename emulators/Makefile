@@ -42,6 +42,7 @@
      SUBDIR += mgba
      SUBDIR += minivmac
      SUBDIR += minivmac,ii
+     SUBDIR += minivmac,m128k
      SUBDIR += mupen64plus
      SUBDIR += nestopia
      SUBDIR += nono
