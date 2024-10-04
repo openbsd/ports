@@ -1,9 +1,8 @@
 COMMENT=	iCalendar library for Python
 
-MODPY_EGG_VERSION=	0.9.7
+MODPY_EGG_VERSION=	0.9.8
 DISTNAME=	vobject-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	textproc devel
 
