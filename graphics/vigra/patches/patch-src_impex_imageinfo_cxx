@@ -1,0 +1,19 @@
+From d44f2dcb495f9d38ca1f8bb0ee5224ab6a6998b7 Mon Sep 17 00:00:00 2001
+From: Mario Emmenlauer <memmenlauer@biodataanalysis.de>
+Date: Wed, 7 Sep 2022 09:36:29 +0200
+Subject: [PATCH] Minor fixes for c++17/c++20
+
+Index: src/impex/imageinfo.cxx
+--- src/impex/imageinfo.cxx.orig
++++ src/impex/imageinfo.cxx
+@@ -1015,8 +1015,8 @@ VolumeImportInfo::VolumeImportInfo(const std::string &
+ 
+             do
+             {
+-                numEndIt = std::find_if(numBeginIt, filename.rend(),(int (*)(int)) &isdigit);
+-                numBeginIt = std::find_if(numEndIt, filename.rend(), not1(std::ptr_fun((int (*)(int))&isdigit)));
++                numEndIt = std::find_if(numBeginIt, filename.rend(), [](const int x){ return isdigit(x); });
++                numBeginIt = std::find_if(numEndIt, filename.rend(), [](const int x){ return !isdigit(x); });
+ 
+                 if(numEndIt != filename.rend())
+                 {

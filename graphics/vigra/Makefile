@@ -6,6 +6,7 @@ GH_ACCOUNT =		ukoethe
 GH_PROJECT =		vigra
 GH_TAGNAME =		Version-${V}
 DISTNAME =		vigra-${V:S/-/./g}
+REVISION =		0
 
 SHARED_LIBS =		vigraimpex 0.0 # 5.1
 
@@ -18,7 +19,7 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += Iex-3_2 IlmThread-3_2 Imath-3_1 OpenEXR-3_2 OpenEXRCore-3_2
+WANTLIB += Iex-3_3 IlmThread-3_3 Imath-3_1 OpenEXR-3_3 OpenEXRCore-3_3
 WANTLIB += boost_atomic-mt boost_chrono-mt boost_date_time-mt
 WANTLIB += boost_system-mt boost_thread-mt fftw3 jpeg m png tiff
 WANTLIB += z ${COMPILER_LIBCXX}

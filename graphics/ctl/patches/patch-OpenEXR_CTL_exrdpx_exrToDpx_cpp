@@ -1,0 +1,25 @@
+From 8108715a8cbbb0a0a81a00fb7239f228270047c1 Mon Sep 17 00:00:00 2001
+From: Carlo Cabrera <30379873+carlocab@users.noreply.github.com>
+Date: Thu, 3 Oct 2024 13:21:59 +0800
+Subject: [PATCH] Disambiguate `clamp` calls in `exrToDpx.cpp` (#164)
+
+Index: OpenEXR_CTL/exrdpx/exrToDpx.cpp
+--- OpenEXR_CTL/exrdpx/exrToDpx.cpp.orig
++++ OpenEXR_CTL/exrdpx/exrToDpx.cpp
+@@ -169,13 +169,13 @@ writePixels
+ 	    const Rgba &pixel = pixels[y][x];
+ 
+ 	    unsigned int r =
+-		(unsigned int) (clamp (float (pixel.r), 0.0f, 1023.0f) + 0.5f);
++		(unsigned int) (Imath::clamp (float (pixel.r), 0.0f, 1023.0f) + 0.5f);
+ 
+ 	    unsigned int g =
+-		(unsigned int) (clamp (float (pixel.g), 0.0f, 1023.0f) + 0.5f);
++		(unsigned int) (Imath::clamp (float (pixel.g), 0.0f, 1023.0f) + 0.5f);
+ 
+ 	    unsigned int b =
+-		(unsigned int) (clamp (float (pixel.b), 0.0f, 1023.0f) + 0.5f);
++		(unsigned int) (Imath::clamp (float (pixel.b), 0.0f, 1023.0f) + 0.5f);
+ 
+ 	    unsigned int word = (r << 22) | (g << 12) | (b << 2);
+ 
