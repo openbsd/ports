@@ -1,0 +1,53 @@
+@bin bin/fswatch
+include/libfswatch/
+include/libfswatch/c/
+include/libfswatch/c++/
+include/libfswatch/c++/event.hpp
+include/libfswatch/c++/filter.hpp
+include/libfswatch/c++/kqueue_monitor.hpp
+include/libfswatch/c++/libfswatch_exception.hpp
+include/libfswatch/c++/libfswatch_map.hpp
+include/libfswatch/c++/libfswatch_set.hpp
+include/libfswatch/c++/monitor.hpp
+include/libfswatch/c++/monitor_factory.hpp
+include/libfswatch/c++/path_utils.hpp
+include/libfswatch/c++/poll_monitor.hpp
+include/libfswatch/c++/string_utils.hpp
+include/libfswatch/c/cevent.h
+include/libfswatch/c/cfilter.h
+include/libfswatch/c/cmonitor.h
+include/libfswatch/c/error.h
+include/libfswatch/c/libfswatch.h
+include/libfswatch/c/libfswatch_log.h
+include/libfswatch/c/libfswatch_types.h
+@info info/fswatch.info
+@static-lib lib/libfswatch.a
+lib/libfswatch.la
+@lib lib/libfswatch.so.${LIBfswatch_VERSION}
+lib/pkgconfig/libfswatch.pc
+@man man/man7/fswatch.7
+share/doc/fswatch/
+share/doc/fswatch/ABOUT-NLS
+share/doc/fswatch/AUTHORS
+share/doc/fswatch/AUTHORS.libfswatch
+share/doc/fswatch/CONTRIBUTING.md
+share/doc/fswatch/COPYING
+share/doc/fswatch/NEWS
+share/doc/fswatch/NEWS.libfswatch
+share/doc/fswatch/README.bsd
+share/doc/fswatch/README.codestyle
+share/doc/fswatch/README.freebsd
+share/doc/fswatch/README.gnu-build-system
+share/doc/fswatch/README.illumos
+share/doc/fswatch/README.libfswatch.md
+share/doc/fswatch/README.linux
+share/doc/fswatch/README.macos
+share/doc/fswatch/README.md
+share/doc/fswatch/README.smartos
+share/doc/fswatch/README.solaris
+share/doc/fswatch/README.windows
+share/locale/en/LC_MESSAGES/fswatch.mo
+share/locale/en@boldquot/LC_MESSAGES/fswatch.mo
+share/locale/en@quot/LC_MESSAGES/fswatch.mo
+share/locale/es/LC_MESSAGES/fswatch.mo
+share/locale/it/LC_MESSAGES/fswatch.mo
