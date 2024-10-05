@@ -1,0 +1,14 @@
+replicator: fixed infinity loop on sync replication
+https://github.com/dovecot/core/pull/223
+
+Index: src/replication/replicator/replicator-queue.c
+--- src/replication/replicator/replicator-queue.c.orig
++++ src/replication/replicator/replicator-queue.c
+@@ -333,6 +333,7 @@ replicator_queue_handle_sync_lookups(struct replicator
+ 		} else {
+ 			array_push_back(&callbacks, &lookups[i]);
+ 			array_delete(&queue->sync_lookups, i, 1);
++			count--;
+ 		}
+ 	}
+ 
