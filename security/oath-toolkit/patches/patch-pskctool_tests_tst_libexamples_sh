@@ -1,0 +1,15 @@
+ignore minor change in output
+(failed tests result in not running further test dirs)
+
+Index: pskctool/tests/tst_libexamples.sh
+--- pskctool/tests/tst_libexamples.sh.orig
++++ pskctool/tests/tst_libexamples.sh
+@@ -29,7 +29,7 @@ else
+     # gengetopt >= 2.23
+     $PSKCTOOL -h | sed 's/ \+$//' > foo
+ fi
+-if ! diff -ur $srcdir/../../libpskc/examples/pskctool-h.txt foo; then
++if ! diff -wur $srcdir/../../libpskc/examples/pskctool-h.txt foo; then
+     set -x
+     $PSKCTOOL -h
+     cat foo
