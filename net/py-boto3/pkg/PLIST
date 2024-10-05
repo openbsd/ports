@@ -138,6 +138,9 @@ lib/python${MODPY_VERSION}/site-packages/boto3/ec2/${MODPY_PYCACHE}deletetags.${
 lib/python${MODPY_VERSION}/site-packages/boto3/ec2/${MODPY_PYCACHE}deletetags.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/boto3/ec2/createtags.py
 lib/python${MODPY_VERSION}/site-packages/boto3/ec2/deletetags.py
+lib/python${MODPY_VERSION}/site-packages/boto3/examples/
+lib/python${MODPY_VERSION}/site-packages/boto3/examples/cloudfront.rst
+lib/python${MODPY_VERSION}/site-packages/boto3/examples/s3.rst
 lib/python${MODPY_VERSION}/site-packages/boto3/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/boto3/resources/
 lib/python${MODPY_VERSION}/site-packages/boto3/resources/__init__.py
