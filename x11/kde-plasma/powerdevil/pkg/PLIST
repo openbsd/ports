@@ -211,6 +211,7 @@ share/locale/km/LC_MESSAGES/powerdevil.mo
 share/locale/ko/LC_MESSAGES/kcm_powerdevilprofilesconfig.mo
 share/locale/ko/LC_MESSAGES/libpowerdevilcommonconfig.mo
 share/locale/ko/LC_MESSAGES/powerdevil.mo
+share/locale/ko/LC_MESSAGES/powerdevil_osd.mo
 share/locale/ku/LC_MESSAGES/powerdevil.mo
 share/locale/lt/LC_MESSAGES/kcm_powerdevilprofilesconfig.mo
 share/locale/lt/LC_MESSAGES/libpowerdevilcommonconfig.mo

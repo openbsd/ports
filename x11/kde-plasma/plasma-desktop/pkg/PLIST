@@ -2160,6 +2160,7 @@ share/locale/he/LC_MESSAGES/kcmmouse.mo
 share/locale/he/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/he/LC_MESSAGES/knetattach.mo
 share/locale/he/LC_MESSAGES/org.kde.plasma.emojier.mo
+share/locale/he/LC_MESSAGES/plasma-desktop-sddm-theme.mo
 share/locale/he/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/he/LC_MESSAGES/plasma_applet_org.kde.panel.mo
 share/locale/he/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardlayout.mo
@@ -2666,6 +2667,7 @@ share/locale/ko/LC_MESSAGES/kcmmouse.mo
 share/locale/ko/LC_MESSAGES/kcmqtquicksettings.mo
 share/locale/ko/LC_MESSAGES/knetattach.mo
 share/locale/ko/LC_MESSAGES/org.kde.plasma.emojier.mo
+share/locale/ko/LC_MESSAGES/plasma-desktop-sddm-theme.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.desktopcontainment.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.panel.mo
 share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.plasma.keyboardlayout.mo

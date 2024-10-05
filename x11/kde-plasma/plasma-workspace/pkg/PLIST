@@ -2557,11 +2557,13 @@ share/locale/fa/LC_MESSAGES/libkworkspace.mo
 share/locale/fa/LC_MESSAGES/phonon_kde_plugin.mo
 share/locale/fa/LC_MESSAGES/plasma_applet_org.kde.plasma.activitybar.mo
 share/locale/fa/LC_MESSAGES/plasma_applet_org.kde.plasma.analogclock.mo
+share/locale/fa/LC_MESSAGES/plasma_applet_org.kde.plasma.appmenu.mo
 share/locale/fa/LC_MESSAGES/plasma_applet_org.kde.plasma.battery.mo
 share/locale/fa/LC_MESSAGES/plasma_applet_org.kde.plasma.devicenotifier.mo
 share/locale/fa/LC_MESSAGES/plasma_containmentactions_contextmenu.mo
 share/locale/fa/LC_MESSAGES/plasma_runner_locations.mo
 share/locale/fa/LC_MESSAGES/plasma_runner_webshortcuts.mo
+share/locale/fa/LC_MESSAGES/plasma_wallpaper_org.kde.color.mo
 share/locale/fa/LC_MESSAGES/plasmashell.mo
 share/locale/fa/LC_MESSAGES/soliduiserver.mo
 share/locale/fi/LC_MESSAGES/freespacenotifier.mo
