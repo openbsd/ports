@@ -1,7 +1,7 @@
 Index: src/core/worker.cpp
 --- src/core/worker.cpp.orig
 +++ src/core/worker.cpp
-@@ -360,7 +360,7 @@ Worker *Worker::createWorker(const QString &protocol, 
+@@ -355,7 +355,7 @@ Worker *Worker::createWorker(const QString &protocol, 
      const auto useThreads = []() {
          return qgetenv("KIO_ENABLE_WORKER_THREADS") != "0";
      };

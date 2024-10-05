@@ -280,6 +280,10 @@ share/locale/id/LC_MESSAGES/balooshow6.mo
 share/locale/id/LC_MESSAGES/kio6_baloosearch.mo
 share/locale/id/LC_MESSAGES/kio6_tags.mo
 share/locale/id/LC_MESSAGES/kio6_timeline.mo
+share/locale/ie/LC_MESSAGES/baloo_file6.mo
+share/locale/ie/LC_MESSAGES/baloo_file_extractor6.mo
+share/locale/ie/LC_MESSAGES/kio6_baloosearch.mo
+share/locale/ie/LC_MESSAGES/kio6_timeline.mo
 share/locale/it/LC_MESSAGES/baloo_file6.mo
 share/locale/it/LC_MESSAGES/baloo_file_extractor6.mo
 share/locale/it/LC_MESSAGES/balooctl6.mo

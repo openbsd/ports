@@ -80,7 +80,6 @@ lib/cmake/KF6CalendarCore/KF6CalendarCoreTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF6CalendarCore/KF6CalendarCoreTargets.cmake
 @lib lib/libKF6CalendarCore.so.${LIBKF6CalendarCore_VERSION}
 lib/pkgconfig/KF6CalendarCore.pc
-lib/qt6/qml/
 lib/qt6/qml/org/
 lib/qt6/qml/org/kde/
 lib/qt6/qml/org/kde/calendarcore/

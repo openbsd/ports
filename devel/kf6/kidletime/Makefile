@@ -16,3 +16,4 @@ LIB_DEPENDS =	wayland/wayland \
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
+LIB_DEPENDS += inputmethods/xcb-imdkit x11/xcb-util-errors

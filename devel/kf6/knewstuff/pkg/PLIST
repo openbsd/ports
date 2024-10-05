@@ -80,6 +80,10 @@ lib/qt6/qml/org/kde/newstuff/private/entrygriddelegates/
 lib/qt6/qml/org/kde/newstuff/private/entrygriddelegates/BigPreviewDelegate.qml
 lib/qt6/qml/org/kde/newstuff/private/entrygriddelegates/FeedbackOverlay.qml
 lib/qt6/qml/org/kde/newstuff/private/entrygriddelegates/TileDelegate.qml
+lib/qt6/qml/org/kde/newstuff/private/kde-qmlmodule.version
+@so lib/qt6/qml/org/kde/newstuff/private/libnewstuffqmlpluginprivate.so
+lib/qt6/qml/org/kde/newstuff/private/newstuffqmlpluginprivate.qmltypes
+lib/qt6/qml/org/kde/newstuff/private/qmldir
 lib/qt6/qml/org/kde/newstuff/qmldir
 share/applications/org.kde.knewstuff-dialog6.desktop
 share/locale/af/LC_MESSAGES/knewstuff6.mo

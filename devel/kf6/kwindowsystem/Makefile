@@ -17,3 +17,4 @@ LIB_DEPENDS =	wayland/wayland \
 TEST_IS_INTERACTIVE =	X11
 
 .include <bsd.port.mk>
+LIB_DEPENDS += inputmethods/xcb-imdkit x11/xcb-util-errors
