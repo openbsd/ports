@@ -4,7 +4,7 @@ fix build on i386
 Index: src/CellBuffer.cxx
 --- src/CellBuffer.cxx.orig
 +++ src/CellBuffer.cxx
-@@ -212,11 +212,7 @@ class LineVector : public ILineVector { (public)
+@@ -214,11 +214,7 @@ class LineVector : public ILineVector { (public)
  	}
  	void InsertLines(Sci::Line line, const Sci::Position *positions, size_t lines, bool lineStart) override {
  		const POS lineAsPos = pos_cast(line);
