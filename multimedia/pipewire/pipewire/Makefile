@@ -2,17 +2,17 @@ COMMENT-main=		low-level multimedia framework - client & server
 COMMENT-libs=		low-level multimedia framework - libraries
 
 PW_PROJECT=		pipewire
-PW_VERSION=		1.2.4
+PW_VERSION=		1.2.5
 PKGNAME-libs=		lib${PW_PROJECT}-${PW_VERSION}
 
-SHARED_LIBS += pipewire-0.3              0.2 # 0.1204.0
+SHARED_LIBS += pipewire-0.3              0.2 # 0.1205.0
 
 MULTI_PACKAGES=		-main -libs
 
 WANTLIB-main += X11 Xfixes c canberra curses dbus-1 epoll-shim gio-2.0
 WANTLIB-main += glib-2.0 gobject-2.0 gstallocators-1.0 gstaudio-1.0
 WANTLIB-main += gstbase-1.0 gstreamer-1.0 gstvideo-1.0 m opus pipewire-0.3
-WANTLIB-main += pthread readline sndfile
+WANTLIB-main += pthread readline sndfile stdthreads
 
 WANTLIB-libs += intl pthread
 
@@ -24,13 +24,13 @@ MODPY_RUNDEP=		No
 
 BUILD_DEPENDS=		devel/doxygen \
 			devel/gettext,-tools \
-			devel/libstdthreads \
 			textproc/py-docutils${MODPY_FLAVOR}
 
 LIB_DEPENDS-main=	${BASE_PKGPATH},-libs \
 			audio/libcanberra \
 			audio/libsndfile \
 			devel/epoll-shim \
+			devel/libstdthreads \
 			multimedia/gstreamer1/plugins-base \
 			x11/dbus
 
@@ -44,13 +44,14 @@ RUN_DEPENDS-main +=	multimedia/pipewire/wireplumber
 RUN_DEPENDS-libs=	# empty
 
 # libintl
-CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include" \
+CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/libepoll-shim" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 CONFIGURE_ARGS=		-Dman=enabled \
 			-Dsession-managers=[] \
 			-Dsystemd=disabled \
 			-Dsystemd-user-service=disabled \
+			-Dlogind=disabled \
 			-Dudev=disabled \
 			-Dlegacy-rtkit=false \
 			-Dalsa=disabled \

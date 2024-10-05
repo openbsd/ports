@@ -1,16 +1,7 @@
 Index: src/modules/module-rtp-source.c
 --- src/modules/module-rtp-source.c.orig
 +++ src/modules/module-rtp-source.c
-@@ -32,7 +32,7 @@
- #include <module-rtp/stream.h>
- #include "network-utils.h"
- 
--#ifdef __FreeBSD__
-+#if defined(__FreeBSD__) || defined(__OpenBSD__)
- #define ifr_ifindex ifr_index
- #endif
- 
-@@ -231,9 +231,9 @@ static int make_socket(const struct sockaddr* sa, sock
+@@ -227,9 +227,9 @@ static int make_socket(const struct sockaddr* sa, sock
  	spa_zero(req);
  	if (ifname) {
  		snprintf(req.ifr_name, sizeof(req.ifr_name), "%s", ifname);

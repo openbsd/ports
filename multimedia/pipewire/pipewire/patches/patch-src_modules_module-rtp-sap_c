@@ -3,19 +3,7 @@ No SO_PASSCRED on OpenBSD.
 Index: src/modules/module-rtp-sap.c
 --- src/modules/module-rtp-sap.c.orig
 +++ src/modules/module-rtp-sap.c
-@@ -28,8 +28,10 @@
- #include <module-rtp/ptp.h>
- #include "network-utils.h"
- 
--#ifdef __FreeBSD__
-+#if defined (__FreeBSD__) || defined (__OpenBSD__)
- #define ifr_ifindex ifr_index
-+#endif
-+#ifdef __FreeBSD__
- #define SO_PASSCRED LOCAL_CREDS_PERSISTENT
- #endif
- 
-@@ -381,11 +383,13 @@ static int make_unix_socket(const char *path) {
+@@ -380,11 +380,13 @@ static int make_unix_socket(const char *path) {
  		return -1;
  	}
  
@@ -29,7 +17,7 @@ Index: src/modules/module-rtp-sap.c
  
  	spa_zero(addr);
  	addr.sun_family = AF_UNIX;
-@@ -467,9 +471,9 @@ static int make_recv_socket(struct sockaddr_storage *s
+@@ -466,9 +468,9 @@ static int make_recv_socket(struct sockaddr_storage *s
  	spa_zero(req);
  	if (ifname) {
  		snprintf(req.ifr_name, sizeof(req.ifr_name), "%s", ifname);

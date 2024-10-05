@@ -1,7 +1,7 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -314,7 +314,11 @@ cdata.set('HAVE_OPUS', opus_dep.found())
+@@ -318,7 +318,11 @@ cdata.set('HAVE_OPUS', opus_dep.found())
  
  summary({'readline (for pw-cli)': readline_dep.found()}, bool_yn: true, section: 'Misc dependencies')
  cdata.set('HAVE_READLINE', readline_dep.found())
@@ -13,7 +13,7 @@ Index: meson.build
  sndfile_dep = dependency('sndfile', version : '>= 1.0.20', required : get_option('sndfile'))
  summary({'sndfile': sndfile_dep.found()}, bool_yn: true, section: 'pw-cat/pw-play/pw-dump/filter-chain')
  cdata.set('HAVE_SNDFILE', sndfile_dep.found())
-@@ -419,10 +423,13 @@ endif
+@@ -423,10 +427,13 @@ endif
  
  # On FreeBSD and MidnightBSD, epoll-shim library is required for eventfd() and timerfd()
  epoll_shim_dep = (host_machine.system() == 'freebsd' or host_machine.system() == 'midnightbsd'

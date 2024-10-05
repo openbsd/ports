@@ -1,9 +1,9 @@
 Index: test/test-functional.c
 --- test/test-functional.c.orig
 +++ test/test-functional.c
-@@ -2,6 +2,8 @@
- /* SPDX-FileCopyrightText: Copyright © 2019 Wim Taymans */
- /* SPDX-License-Identifier: MIT */
+@@ -4,6 +4,8 @@
+ 
+ #include <sys/wait.h>
  
 +#include <sys/wait.h> /* WEXITSTATUS */
 +
