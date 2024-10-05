@@ -89,9 +89,9 @@ libexec/visualvm/platform/config/Modules/org-openide-nodes.xml
 libexec/visualvm/platform/config/Modules/org-openide-text.xml
 libexec/visualvm/platform/config/Modules/org-openide-windows.xml
 libexec/visualvm/platform/core/
-libexec/visualvm/platform/core/asm-9.5.jar
-libexec/visualvm/platform/core/asm-commons-9.5.jar
-libexec/visualvm/platform/core/asm-tree-9.5.jar
+libexec/visualvm/platform/core/asm-9.7.jar
+libexec/visualvm/platform/core/asm-commons-9.7.jar
+libexec/visualvm/platform/core/asm-tree-9.7.jar
 libexec/visualvm/platform/core/core-base.jar
 libexec/visualvm/platform/core/core.jar
 libexec/visualvm/platform/core/org-netbeans-libs-asm.jar
@@ -105,9 +105,9 @@ libexec/visualvm/platform/lib/org-openide-util-ui.jar
 libexec/visualvm/platform/lib/org-openide-util.jar
 libexec/visualvm/platform/modules/
 libexec/visualvm/platform/modules/ext/
-libexec/visualvm/platform/modules/ext/flatlaf-3.1.jar
-libexec/visualvm/platform/modules/ext/jna-5.12.1.jar
-libexec/visualvm/platform/modules/ext/jna-platform-5.12.1.jar
+libexec/visualvm/platform/modules/ext/flatlaf-3.3.jar
+libexec/visualvm/platform/modules/ext/jna-5.14.0.jar
+libexec/visualvm/platform/modules/ext/jna-platform-5.14.0.jar
 libexec/visualvm/platform/modules/ext/updater.jar
 libexec/visualvm/platform/modules/lib/
 libexec/visualvm/platform/modules/lib/aarch64/
@@ -121,6 +121,8 @@ libexec/visualvm/platform/modules/lib/i386/
 libexec/visualvm/platform/modules/lib/i386/linux/
 libexec/visualvm/platform/modules/lib/i386/linux/libjnidispatch-nb.so
 libexec/visualvm/platform/modules/lib/libflatlaf-linux-x86_64.so
+libexec/visualvm/platform/modules/lib/libflatlaf-macos-arm64.dylib
+libexec/visualvm/platform/modules/lib/libflatlaf-macos-x86_64.dylib
 libexec/visualvm/platform/modules/lib/riscv64/
 libexec/visualvm/platform/modules/lib/riscv64/linux/
 libexec/visualvm/platform/modules/lib/riscv64/linux/libjnidispatch-nb.so

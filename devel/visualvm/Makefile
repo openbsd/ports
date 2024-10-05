@@ -1,6 +1,6 @@
 COMMENT=	visual tool integrating commandline JDK tools and profiling
 
-V=		2.1.9
+V=		2.1.10
 DISTNAME=	visualvm_${V:S/.//g}
 PKGNAME=	visualvm-${V}
 
@@ -38,6 +38,6 @@ do-install:
 		\) -delete
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${INSTALL_DATA} ${FILESDIR}/visualvm.desktop \
-        ${PREFIX}/share/applications/
+		${PREFIX}/share/applications/
 
 .include <bsd.port.mk>
