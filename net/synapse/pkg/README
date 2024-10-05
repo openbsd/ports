@@ -29,7 +29,7 @@ Here is a relayd.conf(5) example:
 
   http protocol synapse {
     match request header append "X-Forwarded-For" value "$REMOTE_ADDR"
-    match request header append "X-Forwaded-By" value "$SERVER_ADDR:$SERVER_PORT"
+    match request header append "X-Forwarded-By" value "$SERVER_ADDR:$SERVER_PORT"
 
     tls keypair "matrix.example.com"
 
