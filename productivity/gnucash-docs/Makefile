@@ -1,7 +1,7 @@
 COMMENT =		user documentation module for GnuCash
 
 GNOME_PROJECT =		gnucash-docs
-GNOME_VERSION =		5.8
+GNOME_VERSION =		5.9
 EXTRACT_SUFX =		.tar.gz
 
 CATEGORIES =		productivity
