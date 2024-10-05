@@ -35,6 +35,6 @@ pre-configure:
 		${WRKSRC}/vendor/libadwaita/.cargo-checksum.json
 
 post-install:
-	ln -sf ${PREFIX}/bin/diebahn ${PREFIX}/bin/railway
+	ln -sf ${TRUEPREFIX}/bin/diebahn ${PREFIX}/bin/railway
 
 .include <bsd.port.mk>
