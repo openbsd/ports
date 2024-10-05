@@ -11,10 +11,7 @@ Usage
 =====
 
 This game requires proprietary assets to run, which can be installed
-using the games/zelda3-data port:
-
-  cd /usr/ports/games/zelda3-data
-  make BUILD_UNLINKED=zelda3-rom install
+using the games/zelda3-data port.
 
 Because this game reads and creates files in the current working
 directory it is recommended to start the game inside a dedicated
