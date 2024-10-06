@@ -27,9 +27,8 @@ share/bash-completion/completions/sway
 share/bash-completion/completions/swaybar
 share/bash-completion/completions/swaymsg
 share/examples/sway/
-share/examples/sway/sway/
 @sample ${SYSCONFDIR}/sway/
-share/examples/sway/sway/config
+share/examples/sway/config
 @sample ${SYSCONFDIR}/sway/config
 share/fish/
 share/fish/vendor_completions.d/

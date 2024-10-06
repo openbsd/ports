@@ -3,6 +3,7 @@ COMMENT =	i3-compatible Wayland compositor
 GH_ACCOUNT =	swaywm
 GH_PROJECT =	sway
 GH_TAGNAME =	1.9
+REVISION =	0
 
 CATEGORIES =	wayland
 
@@ -43,7 +44,7 @@ DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/sway
-	mv ${WRKINST}${SYSCONFDIR}/sway ${PREFIX}/share/examples/sway/
+	cd ${WRKINST}${SYSCONFDIR}/sway/ && pax -rw .  ${PREFIX}/share/examples/sway/
 	${INSTALL_SCRIPT} ${FILESDIR}/startsway.sh ${PREFIX}/bin
 
 .include <bsd.port.mk>
