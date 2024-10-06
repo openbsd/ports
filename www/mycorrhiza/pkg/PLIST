@@ -2,6 +2,7 @@
 @newuser _mycorrhiza:885:_mycorrhiza::Mycorrhiza User:${LOCALSTATEDIR}/mycorrhiza:/sbin/nologin
 @rcscript ${RCDIR}/mycorrhiza
 @bin bin/mycorrhiza
+@man man/man1/mycorrhiza.1
 share/doc/pkg-readmes/${PKGSTEM}
 @mode 0755
 @owner _mycorrhiza
