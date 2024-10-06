@@ -2,6 +2,7 @@
 
 daemon="/usr/local/bin/vault agent"
 daemon_flags="-config=${SYSCONFDIR}/vault/agent.hcl"
+daemon_logger="daemon.info"
 daemon_user="_vault"
 
 . /etc/rc.d/rc.subr
