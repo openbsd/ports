@@ -16,20 +16,15 @@
 @bin bin/bitcoind
 @comment @bin bin/test_bitcoin
 @comment @bin bin/test_bitcoin-qt
-include/bitcoinconsensus.h
 include/secp256k1.h
 include/secp256k1_ellswift.h
 include/secp256k1_extrakeys.h
 include/secp256k1_preallocated.h
 include/secp256k1_recovery.h
 include/secp256k1_schnorrsig.h
-@static-lib lib/libbitcoinconsensus.a
-lib/libbitcoinconsensus.la
-@lib lib/libbitcoinconsensus.so.${LIBbitcoinconsensus_VERSION}
 @static-lib lib/libsecp256k1.a
 lib/libsecp256k1.la
 @lib lib/libsecp256k1.so.${LIBsecp256k1_VERSION}
-lib/pkgconfig/libbitcoinconsensus.pc
 lib/pkgconfig/libsecp256k1.pc
 @man man/man1/bitcoin-cli.1
 @man man/man1/bitcoin-tx.1

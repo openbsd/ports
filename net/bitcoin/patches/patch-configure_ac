@@ -3,7 +3,7 @@ We already uses PIE as default. Unbreak with lld
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -946,7 +946,6 @@ if test "$use_hardening" != "no"; then
+@@ -886,7 +886,6 @@ if test "$use_hardening" != "no"; then
    AX_CHECK_LINK_FLAG([-Wl,-z,relro], [HARDENED_LDFLAGS="$HARDENED_LDFLAGS -Wl,-z,relro"], [], [$LDFLAG_WERROR])
    AX_CHECK_LINK_FLAG([-Wl,-z,now], [HARDENED_LDFLAGS="$HARDENED_LDFLAGS -Wl,-z,now"], [], [$LDFLAG_WERROR])
    AX_CHECK_LINK_FLAG([-Wl,-z,separate-code], [HARDENED_LDFLAGS="$HARDENED_LDFLAGS -Wl,-z,separate-code"], [], [$LDFLAG_WERROR])

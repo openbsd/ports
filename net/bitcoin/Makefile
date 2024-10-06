@@ -4,9 +4,8 @@ COMMENT =		P2P payment system
 
 GH_ACCOUNT =		bitcoin
 GH_PROJECT =		bitcoin
-GH_TAGNAME =		v27.1
+GH_TAGNAME =		v28.0
 
-SHARED_LIBS +=  bitcoinconsensus          6.0 # 0.0
 SHARED_LIBS +=  secp256k1                 0.1 # 0.0
 
 CATEGORIES =		net
@@ -27,7 +26,7 @@ LIB_DEPENDS =		databases/db/v4 \
 
 USE_GMAKE =		Yes
 
-# C++17
+# C++20
 # Undefined reference to boost and db4 with GCC
 COMPILER =		base-clang ports-clang
 
