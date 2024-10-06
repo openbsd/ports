@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1638 2024/02/29 21:20:51 thfr Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1639 2024/10/06 10:24:24 kn Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -110,6 +110,7 @@ NONBINMODE = 644
 
 
 PATCH_CHECK_ONLY ?= No
+PATCH_QUIET ?= No
 EDIT_PATCHES ?= Yes
 REFETCH ?= false
 
@@ -775,6 +776,11 @@ PATCH_DIST_ARGS ?= -z ${DISTORIG} -d ${WRKDIST} -E ${PATCH_DIST_STRIP}
 .if ${PATCH_CHECK_ONLY:L} == "yes"
 PATCH_ARGS += -C
 PATCH_DIST_ARGS += -C
+.endif
+
+.if ${PATCH_QUIET:L} == "yes"
+PATCH_ARGS += -s
+PATCH_DIST_ARGS += -s
 .endif
 
 TAR ?= /bin/tar
