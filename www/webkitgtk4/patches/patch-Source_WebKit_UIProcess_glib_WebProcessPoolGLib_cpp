@@ -1,0 +1,15 @@
+This file only '#include "valgrind.h"' for OS(LINUX) and
+RUNNING_ON_VALGRIND will be left undefined.
+
+Index: Source/WebKit/UIProcess/glib/WebProcessPoolGLib.cpp
+--- Source/WebKit/UIProcess/glib/WebProcessPoolGLib.cpp.orig
++++ Source/WebKit/UIProcess/glib/WebProcessPoolGLib.cpp
+@@ -201,7 +201,7 @@ void WebProcessPool::setSandboxEnabled(bool enabled)
+         return;
+     }
+ 
+-#if !USE(SYSTEM_MALLOC)
++#if !USE(SYSTEM_MALLOC) && OS(LINUX)
+     if (RUNNING_ON_VALGRIND)
+         return;
+ #endif

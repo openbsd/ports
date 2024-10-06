@@ -12,7 +12,7 @@ PORTROACH =		limitw:1,even
 
 COMMENT =		GTK+ port of the WebKit (${API}) rendering engine
 
-V =			2.44.4
+V =			2.46.1
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk${API:S/.//}-${V}
 FULLPKGNAME =		${PKGNAME}
@@ -21,9 +21,9 @@ EXTRACT_SUFX =		.tar.xz
 SUBST_VARS =		API
 DPB_PROPERTIES =	parallel
 
-SHARED_LIBS +=  javascriptcoregtk-${API}     4.1
-SHARED_LIBS +=  webkit2gtk-${API}            4.1
-SHARED_LIBS +=	webkitgtk-6.0                0.3
+SHARED_LIBS +=  javascriptcoregtk-${API}     4.2
+SHARED_LIBS +=  webkit2gtk-${API}            4.2
+SHARED_LIBS +=	webkitgtk-6.0                0.4
 
 CATEGORIES =		www
 
@@ -43,7 +43,7 @@ WANTLIB += gstreamer-1.0 gsttag-1.0 gsttranscoder-1.0 gstvideo-1.0
 WANTLIB += harfbuzz harfbuzz-icu hyphen icudata icui18n icuuc
 WANTLIB += intl jpeg jxl lcms2 m pango-1.0 pangocairo-1.0 png
 WANTLIB += secret-1 sqlite3 tasn1 wayland-client wayland-egl wayland-server
-WANTLIB += webp webpdemux woff2dec xml2 xslt z
+WANTLIB += webp webpdemux webpmux woff2dec xml2 xslt z
 
 SITES =			https://webkitgtk.org/releases/
 
@@ -86,7 +86,9 @@ LIB_DEPENDS =		archivers/woff2 \
 CONFIGURE_ENV =		WK_USE_CCACHE=NO
 CONFIGURE_ARGS =	-DPORT=GTK \
 			-DENABLE_MINIBROWSER=ON \
-			-DENABLE_JOURNALD_LOG=OFF
+			-DENABLE_JOURNALD_LOG=OFF \
+			-DUSE_SYSTEM_SYSPROF_CAPTURE=NO \
+			-DUSE_SYSPROF_CAPTURE=OFF
 
 # XXX revisit at next release if execinfo can be used
 CONFIGURE_ARGS +=	-DUSE_LIBBACKTRACE=OFF

@@ -4,7 +4,7 @@ and mips64.
 Index: Source/WTF/wtf/Compiler.h
 --- Source/WTF/wtf/Compiler.h.orig
 +++ Source/WTF/wtf/Compiler.h
-@@ -321,7 +321,7 @@
+@@ -285,7 +285,7 @@
  /* MUST_TAIL_CALL */
  
  #if !defined(MUST_TAIL_CALL) && defined(__cplusplus) && defined(__has_cpp_attribute)

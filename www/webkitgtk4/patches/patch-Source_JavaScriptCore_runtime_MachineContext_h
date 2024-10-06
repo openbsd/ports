@@ -1,7 +1,7 @@
 Index: Source/JavaScriptCore/runtime/MachineContext.h
 --- Source/JavaScriptCore/runtime/MachineContext.h.orig
 +++ Source/JavaScriptCore/runtime/MachineContext.h
-@@ -193,6 +193,24 @@ static inline void*& stackPointerImpl(mcontext_t& mach
+@@ -194,6 +194,24 @@ static inline void*& stackPointerImpl(mcontext_t& mach
  #error Unknown Architecture
  #endif
  
@@ -26,7 +26,7 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
  #elif OS(FUCHSIA) || OS(LINUX)
  
  #if CPU(X86)
-@@ -338,6 +356,24 @@ static inline void*& framePointerImpl(mcontext_t& mach
+@@ -339,6 +357,24 @@ static inline void*& framePointerImpl(mcontext_t& mach
  #error Unknown Architecture
  #endif
  
@@ -51,7 +51,7 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
  #elif OS(FUCHSIA) || OS(LINUX)
  
  // The following sequence depends on glibc's sys/ucontext.h.
-@@ -505,6 +541,24 @@ static inline void*& instructionPointerImpl(mcontext_t
+@@ -519,6 +555,24 @@ static inline void*& instructionPointerImpl(mcontext_t
  #error Unknown Architecture
  #endif
  
@@ -76,7 +76,7 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
  #elif OS(FUCHSIA) || OS(LINUX)
  
  // The following sequence depends on glibc's sys/ucontext.h.
-@@ -670,6 +724,24 @@ inline void*& argumentPointer<1>(mcontext_t& machineCo
+@@ -684,6 +738,24 @@ inline void*& argumentPointer<1>(mcontext_t& machineCo
  #error Unknown Architecture
  #endif
  
@@ -101,7 +101,7 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
  #elif OS(FUCHSIA) || OS(LINUX)
  
  // The following sequence depends on glibc's sys/ucontext.h.
-@@ -794,6 +866,24 @@ inline void*& llintInstructionPointer(mcontext_t& mach
+@@ -808,6 +880,24 @@ inline void*& llintInstructionPointer(mcontext_t& mach
      return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_gpregs.gp_x[4]);
  #elif CPU(MIPS)
      return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_regs[12]);

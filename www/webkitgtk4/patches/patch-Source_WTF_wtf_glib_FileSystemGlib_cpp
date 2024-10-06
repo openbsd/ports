@@ -1,0 +1,15 @@
+Index: Source/WTF/wtf/glib/FileSystemGlib.cpp
+--- Source/WTF/wtf/glib/FileSystemGlib.cpp.orig
++++ Source/WTF/wtf/glib/FileSystemGlib.cpp
+@@ -73,6 +73,11 @@ CString currentExecutablePath()
+ {
+     return { };
+ }
++#elif OS(OPENBSD)
++CString currentExecutablePath()
++{
++    return { };
++}
+ #elif OS(UNIX)
+ CString currentExecutablePath()
+ {

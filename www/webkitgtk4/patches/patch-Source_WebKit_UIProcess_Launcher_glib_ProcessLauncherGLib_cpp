@@ -1,19 +1,7 @@
-1st chunk: this file only '#include "valgrind.h"' for OS(LINUX) and RUNNING_ON_VALGRIND
-will be left undefined.
-
 Index: Source/WebKit/UIProcess/Launcher/glib/ProcessLauncherGLib.cpp
 --- Source/WebKit/UIProcess/Launcher/glib/ProcessLauncherGLib.cpp.orig
 +++ Source/WebKit/UIProcess/Launcher/glib/ProcessLauncherGLib.cpp
-@@ -91,7 +91,7 @@ static int connectionOptions()
- 
- static bool isSandboxEnabled(const ProcessLauncher::LaunchOptions& launchOptions)
- {
--#if !USE(SYSTEM_MALLOC)
-+#if !USE(SYSTEM_MALLOC) && OS(LINUX)
-     if (RUNNING_ON_VALGRIND)
-         return false;
- #endif
-@@ -175,7 +175,11 @@ void ProcessLauncher::launchProcess()
+@@ -160,7 +160,11 @@ void ProcessLauncher::launchProcess()
      }
  
      realExecutablePath = FileSystem::fileSystemRepresentation(executablePath);
@@ -25,12 +13,12 @@ Index: Source/WebKit/UIProcess/Launcher/glib/ProcessLauncherGLib.cpp
  
  #if ENABLE(DEVELOPER_MODE)
      Vector<CString> prefixArgs;
-@@ -202,7 +206,9 @@ void ProcessLauncher::launchProcess()
+@@ -187,7 +191,9 @@ void ProcessLauncher::launchProcess()
      argv[i++] = const_cast<char*>(realExecutablePath.data());
      argv[i++] = processIdentifier.get();
      argv[i++] = webkitSocket.get();
 +#if OS(LINUX)
-     argv[i++] = pidSocket.get();
+     argv[i++] = pidSocketString.get();
 +#endif
  #if ENABLE(DEVELOPER_MODE)
      if (configureJSCForTesting)

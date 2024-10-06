@@ -1,0 +1,15 @@
+Needs FUTEX_WAIT_BITSET and FUTEX_BITSET_MATCH_ANY.
+
+Index: Source/ThirdParty/ANGLE/src/common/SimpleMutex.h
+--- Source/ThirdParty/ANGLE/src/common/SimpleMutex.h.orig
++++ Source/ThirdParty/ANGLE/src/common/SimpleMutex.h
+@@ -42,6 +42,9 @@
+ // Assume support.
+ #        define ANGLE_USE_FUTEX 1
+ #    endif  // defined(ANGLE_PLATFORM_LINUX) || defined(ANGLE_PLATFORM_ANDROID)
++#    if defined(ANGLE_PLATFORM_OPENBSD)
++#        define ANGLE_USE_FUTEX 0
++#    endif
+ #endif      // !defined(ANGLE_WITH_TSAN)
+ 
+ namespace angle

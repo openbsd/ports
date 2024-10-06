@@ -1,0 +1,20 @@
+In file included from /usr/ports/pobj/webkitgtk60-2.46.1-webkitgtk60/webkitgtk-2.46.1/Source/WebKit/UIProcess/gtk/PointerLockManagerX11.cpp:34:
+In file included from /usr/ports/pobj/webkitgtk60-2.46.1-webkitgtk60/build-amd64-webkitgtk60/WTF/Headers/wtf/TZoneMallocInlines.h:58:
+In file included from /usr/ports/pobj/webkitgtk60-2.46.1-webkitgtk60/build-amd64-webkitgtk60/bmalloc/Headers/bmalloc/IsoHeapInlines.h:31:
+In file included from /usr/ports/pobj/webkitgtk60-2.46.1-webkitgtk60/build-amd64-webkitgtk60/bmalloc/Headers/bmalloc/EligibilityResultInlines.h:28:
+/usr/ports/pobj/webkitgtk60-2.46.1-webkitgtk60/build-amd64-webkitgtk60/bmalloc/Headers/bmalloc/EligibilityResult.h:35:5: error: expected identifier Success
+/usr/X11R6/include/X11/X.h:350:21: note: expanded from macro 'Success'
+#define Success            0    /* everything's okay */
+
+Index: Source/bmalloc/bmalloc/EligibilityResultInlines.h
+--- Source/bmalloc/bmalloc/EligibilityResultInlines.h.orig
++++ Source/bmalloc/bmalloc/EligibilityResultInlines.h
+@@ -39,7 +39,7 @@ EligibilityResult<Config>::EligibilityResult(Eligibili
+ 
+ template<typename Config>
+ EligibilityResult<Config>::EligibilityResult(IsoPage<Config>* page)
+-    : kind(EligibilityKind::Success)
++    : kind(EligibilityKind::BmSuccess)
+     , page(page)
+ {
+ }

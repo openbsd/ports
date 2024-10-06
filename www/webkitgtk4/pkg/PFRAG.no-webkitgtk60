@@ -658,6 +658,7 @@ share/doc/webkit2gtk-${API}/method.SecurityOrigin.is_opaque.html
 share/doc/webkit2gtk-${API}/method.SecurityOrigin.ref.html
 share/doc/webkit2gtk-${API}/method.SecurityOrigin.to_string.html
 share/doc/webkit2gtk-${API}/method.SecurityOrigin.unref.html
+share/doc/webkit2gtk-${API}/method.Settings.apply_from_key_file.html
 share/doc/webkit2gtk-${API}/method.Settings.get_allow_file_access_from_file_urls.html
 share/doc/webkit2gtk-${API}/method.Settings.get_allow_modal_dialogs.html
 share/doc/webkit2gtk-${API}/method.Settings.get_allow_top_navigation_to_data_urls.html
@@ -670,6 +671,7 @@ share/doc/webkit2gtk-${API}/method.Settings.get_default_font_size.html
 share/doc/webkit2gtk-${API}/method.Settings.get_default_monospace_font_size.html
 share/doc/webkit2gtk-${API}/method.Settings.get_disable_web_security.html
 share/doc/webkit2gtk-${API}/method.Settings.get_draw_compositing_indicators.html
+share/doc/webkit2gtk-${API}/method.Settings.get_enable_2d_canvas_acceleration.html
 share/doc/webkit2gtk-${API}/method.Settings.get_enable_accelerated_2d_canvas.html
 share/doc/webkit2gtk-${API}/method.Settings.get_enable_back_forward_navigation_gestures.html
 share/doc/webkit2gtk-${API}/method.Settings.get_enable_caret_browsing.html
@@ -732,6 +734,7 @@ share/doc/webkit2gtk-${API}/method.Settings.set_default_font_size.html
 share/doc/webkit2gtk-${API}/method.Settings.set_default_monospace_font_size.html
 share/doc/webkit2gtk-${API}/method.Settings.set_disable_web_security.html
 share/doc/webkit2gtk-${API}/method.Settings.set_draw_compositing_indicators.html
+share/doc/webkit2gtk-${API}/method.Settings.set_enable_2d_canvas_acceleration.html
 share/doc/webkit2gtk-${API}/method.Settings.set_enable_accelerated_2d_canvas.html
 share/doc/webkit2gtk-${API}/method.Settings.set_enable_back_forward_navigation_gestures.html
 share/doc/webkit2gtk-${API}/method.Settings.set_enable_caret_browsing.html
@@ -1088,6 +1091,7 @@ share/doc/webkit2gtk-${API}/property.Settings.default-font-size.html
 share/doc/webkit2gtk-${API}/property.Settings.default-monospace-font-size.html
 share/doc/webkit2gtk-${API}/property.Settings.disable-web-security.html
 share/doc/webkit2gtk-${API}/property.Settings.draw-compositing-indicators.html
+share/doc/webkit2gtk-${API}/property.Settings.enable-2d-canvas-acceleration.html
 share/doc/webkit2gtk-${API}/property.Settings.enable-accelerated-2d-canvas.html
 share/doc/webkit2gtk-${API}/property.Settings.enable-back-forward-navigation-gestures.html
 share/doc/webkit2gtk-${API}/property.Settings.enable-caret-browsing.html
@@ -1214,6 +1218,7 @@ share/doc/webkit2gtk-${API}/search.js
 share/doc/webkit2gtk-${API}/signal.AuthenticationRequest.authenticated.html
 share/doc/webkit2gtk-${API}/signal.AuthenticationRequest.cancelled.html
 share/doc/webkit2gtk-${API}/signal.AutomationSession.create-web-view.html
+share/doc/webkit2gtk-${API}/signal.AutomationSession.will-close.html
 share/doc/webkit2gtk-${API}/signal.BackForwardList.changed.html
 share/doc/webkit2gtk-${API}/signal.ColorChooserRequest.finished.html
 share/doc/webkit2gtk-${API}/signal.CookieManager.changed.html

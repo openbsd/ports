@@ -1,0 +1,29 @@
+In file included from /usr/ports/pobj/webkitgtk60-2.46.1-webkitgtk60/webkitgtk-2.46.1/Source/WebKit/UIProcess/gtk/PointerLockManagerX11.cpp:34:
+In file included from /usr/ports/pobj/webkitgtk60-2.46.1-webkitgtk60/build-amd64-webkitgtk60/WTF/Headers/wtf/TZoneMallocInlines.h:58:
+In file included from /usr/ports/pobj/webkitgtk60-2.46.1-webkitgtk60/build-amd64-webkitgtk60/bmalloc/Headers/bmalloc/IsoHeapInlines.h:31:
+In file included from /usr/ports/pobj/webkitgtk60-2.46.1-webkitgtk60/build-amd64-webkitgtk60/bmalloc/Headers/bmalloc/EligibilityResultInlines.h:28:
+/usr/ports/pobj/webkitgtk60-2.46.1-webkitgtk60/build-amd64-webkitgtk60/bmalloc/Headers/bmalloc/EligibilityResult.h:35:5: error: expected identifier Success
+/usr/X11R6/include/X11/X.h:350:21: note: expanded from macro 'Success'
+#define Success            0    /* everything's okay */
+
+Index: Source/bmalloc/bmalloc/EligibilityResult.h
+--- Source/bmalloc/bmalloc/EligibilityResult.h.orig
++++ Source/bmalloc/bmalloc/EligibilityResult.h
+@@ -32,7 +32,7 @@
+ namespace bmalloc {
+ 
+ enum class EligibilityKind {
+-    Success,
++    BmSuccess,
+     Full,
+     OutOfMemory
+ };
+@@ -44,7 +44,7 @@ struct EligibilityResult {
+     EligibilityResult(EligibilityKind);
+     EligibilityResult(IsoPage<Config>*);
+     
+-    EligibilityKind kind { EligibilityKind::Success };
++    EligibilityKind kind { EligibilityKind::BmSuccess };
+     IsoPage<Config>* page { nullptr };
+ };
+ 

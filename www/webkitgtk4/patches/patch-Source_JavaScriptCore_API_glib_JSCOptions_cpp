@@ -21,7 +21,7 @@ Index: Source/JavaScriptCore/API/glib/JSCOptions.cpp
  
  static bool valueFromGValue(const GValue* gValue, size_t& value)
  {
-@@ -556,12 +554,10 @@ static JSCOptionType jscOptionsType(int)
+@@ -560,12 +558,10 @@ static JSCOptionType jscOptionsType(int)
      return JSC_OPTION_INT;
  }
  
