@@ -14,7 +14,7 @@ Index: test/broker/Makefile
  	./02-subpub-qos2-pubrec-error.py
  	./02-subpub-qos2-receive-maximum-1.py
  	./02-subpub-qos2-receive-maximum-2.py
-@@ -148,10 +148,10 @@ msg_sequence_test:
+@@ -149,10 +149,10 @@ msg_sequence_test:
  
  08 :
  ifeq ($(WITH_TLS),yes)

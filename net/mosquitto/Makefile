@@ -1,8 +1,7 @@
 COMMENT =		opensource MQTT broker
 
-V =			2.0.18
+V =			2.0.19
 DISTNAME =		mosquitto-$V
-REVISION =		0
 
 SHARED_LIBS +=  mosquitto                 2.1 # 1.5
 SHARED_LIBS +=  mosquittopp               2.0 # 1.5

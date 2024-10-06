@@ -1,5 +1,12 @@
 ignore presence/absence of xsltproc, just use the bundled manuals
-which are included in tarball downloads
+which are included in tarball downloads.
+
+to actually fix, it should use the pre-built manpages directly where
+possible, and only run xsltproc if they don't exist or are outdated, but
+I haven't hit on the right cmake magic to do this.
+
+run the installs unconditionally, they are marked OPTIONAL anyway.
+wrapped in if(TRUE) in this patch to reduce the number of lines touched.
 
 Index: man/CMakeLists.txt
 --- man/CMakeLists.txt.orig
@@ -8,18 +15,31 @@ Index: man/CMakeLists.txt
  # because the install is optional.
  
  find_program(XSLTPROC xsltproc OPTIONAL)
--if(XSLTPROC)
+-if(XSLTPROC AND NOT WIN32)
 +if(FALSE)
  	function(compile_manpage page)
  		add_custom_command(OUTPUT ${PROJECT_SOURCE_DIR}/man/${page}
  			COMMAND xsltproc ${PROJECT_SOURCE_DIR}/man/${page}.xml -o ${PROJECT_SOURCE_DIR}/man/
-@@ -24,7 +24,9 @@ if(XSLTPROC)
+@@ -24,7 +24,11 @@ if(XSLTPROC AND NOT WIN32)
  	compile_manpage("mosquitto-tls.7")
  	compile_manpage("mqtt.7")
  	compile_manpage("mosquitto.8")
++elseif()
++	message(WARNING "xsltproc not found: manpages cannot be built")
 +endif()
  
 +if(TRUE)
  	install(FILES
  		mosquitto_ctrl.1
  		mosquitto_ctrl_dynsec.1
+@@ -39,10 +43,5 @@ if(XSLTPROC AND NOT WIN32)
+ 	install(FILES mosquitto.conf.5 DESTINATION ${CMAKE_INSTALL_MANDIR}/man5 OPTIONAL)
+ 	install(FILES mosquitto-tls.7 mqtt.7 DESTINATION ${CMAKE_INSTALL_MANDIR}/man7 OPTIONAL)
+ 	install(FILES mosquitto.8 DESTINATION ${CMAKE_INSTALL_MANDIR}/man8 OPTIONAL)
+-
+-elseif(WIN32)
+-	message(WARNING "xsltproc not found: manpages cannot be built")
+-else()
+-	message(FATAL_ERROR "xsltproc not found: manpages cannot be built")
+ endif()
+ 
