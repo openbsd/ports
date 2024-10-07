@@ -1,25 +1,25 @@
 Index: src/window.cc
 --- src/window.cc.orig
 +++ src/window.cc
-@@ -189,19 +189,11 @@ static const gchar *html_browsers[] =
- {
+@@ -59,19 +59,11 @@ struct HtmlBrowser {
+ constexpr std::array<HtmlBrowser, 10> html_browsers{{
  	/* Our specific script */
- 	GQ_APPNAME_LC "_html_browser", nullptr,
+ 	{GQ_APPNAME_LC "_html_browser", nullptr},
 -	/* Redhat has a nifty htmlview script to start the user's preferred browser */
--	"htmlview",	nullptr,
+-	{"htmlview",                    nullptr},
 -	/* Debian has even better approach with alternatives */
--	"sensible-browser", nullptr,
+-	{"sensible-browser",            nullptr},
 -	/* GNOME 2 */
--	"gconftool-2",	"gconftool-2 -g /desktop/gnome/url-handlers/http/command",
+-	{"gconftool-2",                 "gconftool-2 -g /desktop/gnome/url-handlers/http/command"},
 -	/* KDE */
--	"kfmclient",	"!kfmclient exec \"%s\"",
+-	{"kfmclient",                   "!kfmclient exec \"%s\""},
 +	/* fd.o */
-+	"xdg-open",	nullptr,
++	{"xdg-open",                    nullptr},
  	/* use fallbacks */
- 	"firefox",	nullptr,
--	"mozilla",	nullptr,
- 	"konqueror",	nullptr,
--	"netscape",	nullptr,
- 	"opera",	"!opera --remote 'openURL(%s,new-page)'",
- 	nullptr,		nullptr
- };
+ 	{"firefox",                     nullptr},
+-	{"mozilla",                     nullptr},
+ 	{"konqueror",                   nullptr},
+-	{"netscape",                    nullptr},
+ 	{"opera",                       "!opera --remote 'openURL(%s,new-page)'"},
+ }};
+ 

@@ -1,12 +1,12 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -133,7 +133,7 @@ desktopdir = join_paths(datadir, meson.project_name(),
+@@ -130,7 +130,7 @@ desktopdir = join_paths(datadir, meson.project_name(),
  helpdir = join_paths(prefix, gq_helpdir)
  htmldir = join_paths(prefix, gq_htmldir)
  icondir = join_paths(datadir, 'pixmaps')
 -mandir1 = join_paths(datadir, 'man', 'man1')
 +mandir1 = join_paths(prefix, 'man', 'man1')
- 
+ completionsdir = join_paths(datadir, 'bash-completion', 'completions')
  podir = join_paths(meson.project_source_root(), 'po')
  scriptsdir = join_paths(meson.project_source_root(), 'scripts')
