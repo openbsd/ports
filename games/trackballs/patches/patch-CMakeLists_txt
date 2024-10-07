@@ -1,0 +1,25 @@
+cpp doesnt pass all include paths, while the default (cc -E) does
+
+2nd chunk should be upstreamed to add OPENGL_INCLUDE_DIR
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -63,7 +63,7 @@ foreach( d ${definitions} )
+     set(defstr "${defstr}" "-D${d}")
+ endforeach()
+ 
+-include_directories(${PROJECT_SOURCE_DIR}/src ${GUILE_INCLUDE_DIRS} ${CMAKE_CURRENT_BINARY_DIR} ${SDL2_INCLUDE_DIR} ${SDL2_IMAGE_INCLUDE_DIR} ${SDL2_MIXER_INCLUDE_DIR} ${SDL2_TTF_INCLUDE_DIR} ${ZLIB_INCLUDE_DIRS} ${GC_INCLUDE_DIRS} ${Intl_INCLUDE_DIRS})
++include_directories(${PROJECT_SOURCE_DIR}/src ${GUILE_INCLUDE_DIRS} ${OPENGL_INCLUDE_DIR}  ${CMAKE_CURRENT_BINARY_DIR} ${SDL2_INCLUDE_DIR} ${SDL2_IMAGE_INCLUDE_DIR} ${SDL2_MIXER_INCLUDE_DIR} ${SDL2_TTF_INCLUDE_DIR} ${ZLIB_INCLUDE_DIRS} ${GC_INCLUDE_DIRS} ${Intl_INCLUDE_DIRS})
+ get_directory_property(includes DIRECTORY  ${CMAKE_SOURCE_DIR} INCLUDE_DIRECTORIES)
+ set(incstr "")
+ foreach( d ${includes} )
+@@ -72,7 +72,7 @@ endforeach()
+ 
+ # cpp is the c++ preprocessor
+ add_custom_command(OUTPUT guile.cc.x
+-                  COMMAND CPP=cpp; ${GUILE_SNARF} -o guile.cc.x ${PROJECT_SOURCE_DIR}/src/guile.cc ${defstr} ${incstr} -D_GNU_SOURCE=1 -D_REENTRANT
++                  COMMAND ${GUILE_SNARF} -o guile.cc.x ${PROJECT_SOURCE_DIR}/src/guile.cc ${defstr} ${incstr} -D_GNU_SOURCE=1 -D_REENTRANT
+                   DEPENDS src/guile.cc
+                   WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR})
+ 
