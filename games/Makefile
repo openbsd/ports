@@ -328,6 +328,7 @@
      SUBDIR += tong
      SUBDIR += toppler
      SUBDIR += tornado
+     SUBDIR += trackballs
      SUBDIR += trader
      SUBDIR += tutris
      SUBDIR += tuxkart
