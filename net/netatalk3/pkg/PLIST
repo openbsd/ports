@@ -12,7 +12,6 @@ bin/apple_dump
 bin/asip-status
 @bin bin/dbd
 bin/macusers
-bin/netatalk-config
 include/atalk/
 include/atalk/acl.h
 include/atalk/adouble.h
@@ -66,7 +65,9 @@ lib/netatalk/
 @man man/man1/getzones.1
 @man man/man1/macusers.1
 @man man/man1/nbp.1
-@man man/man1/netatalk-config.1
+@man man/man1/nbplkup.1
+@man man/man1/nbprgstr.1
+@man man/man1/nbpunrgstr.1
 @man man/man1/pap.1
 @man man/man3/atalk_aton.3
 @man man/man3/nbp_name.3
@@ -126,12 +127,12 @@ share/doc/netatalk/htmldocs/gpl.html
 share/doc/netatalk/htmldocs/index.html
 share/doc/netatalk/htmldocs/installation.html
 share/doc/netatalk/htmldocs/intro.html
+share/doc/netatalk/htmldocs/macipgw.8.html
 share/doc/netatalk/htmldocs/macusers.1.html
 share/doc/netatalk/htmldocs/man-pages.html
 share/doc/netatalk/htmldocs/manual-index.html
 share/doc/netatalk/htmldocs/nbp.1.html
 share/doc/netatalk/htmldocs/nbp_name.3.html
-share/doc/netatalk/htmldocs/netatalk-config.1.html
 share/doc/netatalk/htmldocs/netatalk.8.html
 share/doc/netatalk/htmldocs/netatalk.css
 share/doc/netatalk/htmldocs/pap.1.html
