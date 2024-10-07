@@ -1,6 +1,6 @@
 COMMENT =		fast, cost-effective and scalable time series database
 
-V =			1.103.0
+V =			1.104.0
 
 DIST_TUPLE +=		github VictoriaMetrics VictoriaMetrics v${V} . # Apache License 2.0
 
