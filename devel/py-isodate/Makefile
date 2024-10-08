@@ -1,24 +1,20 @@
-COMMENT =		ISO 8601 date/time/duration parser and formater
+COMMENT=	ISO 8601 date/time/duration parser and formater
 
-MODPY_EGG_VERSION =	0.6.1
-DISTNAME =		isodate-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME}
-REVISION =		2
+MODPY_EGG_VERSION=	0.7.0
+DISTNAME=	isodate-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =		devel
+CATEGORIES=	devel
 
 # BSD
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODPY_PI =		Yes
+MODPY_PI=	Yes
 
-MODULES =		lang/python
-MODPY_PYBUILD =		setuptools
-MODPY_PYTEST_ARGS =	src
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR =		python3
+FLAVORS=	python3
+FLAVOR=		python3
 
 .include <bsd.port.mk>

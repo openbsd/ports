@@ -1,6 +1,7 @@
 @pkgpath devel/py-isodate
 lib/python${MODPY_VERSION}/site-packages/isodate/
 lib/python${MODPY_VERSION}/site-packages/isodate-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/isodate-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/isodate-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/isodate-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/isodate-${MODPY_EGG_VERSION}.dist-info/WHEEL
@@ -27,6 +28,8 @@ lib/python${MODPY_VERSION}/site-packages/isodate/${MODPY_PYCACHE}isotzinfo.${MOD
 lib/python${MODPY_VERSION}/site-packages/isodate/${MODPY_PYCACHE}isotzinfo.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/isodate/${MODPY_PYCACHE}tzinfo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/isodate/${MODPY_PYCACHE}tzinfo.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/isodate/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/isodate/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/isodate/duration.py
 lib/python${MODPY_VERSION}/site-packages/isodate/isodates.py
 lib/python${MODPY_VERSION}/site-packages/isodate/isodatetime.py
@@ -35,27 +38,5 @@ lib/python${MODPY_VERSION}/site-packages/isodate/isoerror.py
 lib/python${MODPY_VERSION}/site-packages/isodate/isostrf.py
 lib/python${MODPY_VERSION}/site-packages/isodate/isotime.py
 lib/python${MODPY_VERSION}/site-packages/isodate/isotzinfo.py
-lib/python${MODPY_VERSION}/site-packages/isodate/tests/
-lib/python${MODPY_VERSION}/site-packages/isodate/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/isodate/tests/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/isodate/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/isodate/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/isodate/tests/${MODPY_PYCACHE}test_date.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/isodate/tests/${MODPY_PYCACHE}test_date.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/isodate/tests/${MODPY_PYCACHE}test_datetime.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/isodate/tests/${MODPY_PYCACHE}test_datetime.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/isodate/tests/${MODPY_PYCACHE}test_duration.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/isodate/tests/${MODPY_PYCACHE}test_duration.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/isodate/tests/${MODPY_PYCACHE}test_pickle.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/isodate/tests/${MODPY_PYCACHE}test_pickle.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/isodate/tests/${MODPY_PYCACHE}test_strf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/isodate/tests/${MODPY_PYCACHE}test_strf.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/isodate/tests/${MODPY_PYCACHE}test_time.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/isodate/tests/${MODPY_PYCACHE}test_time.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/isodate/tests/test_date.py
-lib/python${MODPY_VERSION}/site-packages/isodate/tests/test_datetime.py
-lib/python${MODPY_VERSION}/site-packages/isodate/tests/test_duration.py
-lib/python${MODPY_VERSION}/site-packages/isodate/tests/test_pickle.py
-lib/python${MODPY_VERSION}/site-packages/isodate/tests/test_strf.py
-lib/python${MODPY_VERSION}/site-packages/isodate/tests/test_time.py
 lib/python${MODPY_VERSION}/site-packages/isodate/tzinfo.py
+lib/python${MODPY_VERSION}/site-packages/isodate/version.py
