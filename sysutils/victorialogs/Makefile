@@ -1,6 +1,6 @@
 COMMENT =		fast and easy-to-use, open source logs solution
 
-V =			0.33.0
+V =			0.34.0
 
 DIST_TUPLE +=		github VictoriaMetrics VictoriaMetrics v${V}-victorialogs . # Apache License 2.0
 
