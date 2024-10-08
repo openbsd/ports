@@ -19,3 +19,4 @@ lib/python${MODPY_VERSION}/site-packages/jaraco/classes/${MODPY_PYCACHE}properti
 lib/python${MODPY_VERSION}/site-packages/jaraco/classes/ancestry.py
 lib/python${MODPY_VERSION}/site-packages/jaraco/classes/meta.py
 lib/python${MODPY_VERSION}/site-packages/jaraco/classes/properties.py
+lib/python${MODPY_VERSION}/site-packages/jaraco/classes/py.typed

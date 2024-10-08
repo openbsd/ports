@@ -1,9 +1,8 @@
 COMMENT=	obtain class names of an object and its parent classes
 
-MODPY_EGG_VERSION=	3.2.3
+MODPY_EGG_VERSION=	3.4.0
 DISTNAME=	jaraco.classes-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	devel
 
