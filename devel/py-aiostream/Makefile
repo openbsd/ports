@@ -1,6 +1,6 @@
 COMMENT=	generator-based operators for asynchronous iteration
 
-MODPY_EGG_VERSION=	0.6.2
+MODPY_EGG_VERSION=	0.6.3
 DISTNAME=	aiostream-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
