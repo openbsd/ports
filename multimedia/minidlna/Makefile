@@ -27,7 +27,7 @@ LIB_DEPENDS=		audio/flac \
 CONFIGURE_STYLE=	gnu
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 CONFIGURE_ARGS=		--with-log-path=/var/log/minidlna \
 			--with-db-path=/var/db/minidlna \
