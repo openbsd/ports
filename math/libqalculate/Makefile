@@ -1,3 +1,5 @@
+BROKEN-sparc64 = localpointer.h:561:31: error: 'auto' parameter not permitted in this context
+
 COMMENT =	applied math library and CLI calculator
 CATEGORIES =	math devel
 
