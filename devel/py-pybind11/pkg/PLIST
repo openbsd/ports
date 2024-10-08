@@ -33,7 +33,9 @@ lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/complex.h
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/detail/
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/detail/class.h
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/detail/common.h
+lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/detail/cpp_conduit.h
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/detail/descr.h
+lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/detail/exception_translation.h
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/detail/init.h
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/detail/internals.h
 lib/python${MODPY_VERSION}/site-packages/pybind11/include/pybind11/detail/type_caster_base.h
