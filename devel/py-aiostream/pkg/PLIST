@@ -23,6 +23,7 @@ lib/python${MODPY_VERSION}/site-packages/aiostream/aiter_utils.py
 lib/python${MODPY_VERSION}/site-packages/aiostream/core.py
 lib/python${MODPY_VERSION}/site-packages/aiostream/manager.py
 lib/python${MODPY_VERSION}/site-packages/aiostream/pipe.py
+lib/python${MODPY_VERSION}/site-packages/aiostream/py.typed
 lib/python${MODPY_VERSION}/site-packages/aiostream/stream/
 lib/python${MODPY_VERSION}/site-packages/aiostream/stream/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/aiostream/stream/${MODPY_PYCACHE}/

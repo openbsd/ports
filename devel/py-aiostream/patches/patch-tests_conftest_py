@@ -1,0 +1,21 @@
+missing from pypi distfile
+https://github.com/vxgmichel/aiostream/blob/main/tests/conftest.py
+https://github.com/vxgmichel/aiostream/issues/121
+
+Index: tests/conftest.py
+--- tests/conftest.py.orig
++++ tests/conftest.py
+@@ -0,0 +1,13 @@
++from aiostream.test_utils import (
++    add_resource,
++    assert_run,
++    assert_cleanup,
++    event_loop_policy,
++)
++
++__all__ = [
++    "add_resource",
++    "assert_run",
++    "assert_cleanup",
++    "event_loop_policy",
++]
