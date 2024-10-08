@@ -1,11 +1,10 @@
 COMMENT=	simplified packaging system for Python modules
 
 # py-types-setuptools should have a matching version
-MODPY_EGG_VERSION=	68.0.0
+MODPY_EGG_VERSION=	69.5.1
 DISTNAME=		setuptools-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 EPOCH=			0
-REVISION=		0
 
 CATEGORIES=		devel
 
@@ -31,6 +30,7 @@ FLAVORS=		python3
 FLAVOR=			python3
 
 BUILD_DEPENDS=		devel/py-wheel${MODPY_FLAVOR}
+
 TEST_DEPENDS=		devel/py-jaraco-envs${MODPY_FLAVOR} \
 			devel/py-jaraco-path${MODPY_FLAVOR} \
 			devel/py-path${MODPY_FLAVOR} \
@@ -43,8 +43,5 @@ TEST_DEPENDS=		devel/py-jaraco-envs${MODPY_FLAVOR} \
 			sysutils/py-packaging${MODPY_FLAVOR} \
 			textproc/py-ini2toml${MODPY_FLAVOR} \
 			textproc/py-tomli_w${MODPY_FLAVOR}
-
-# Override automatic py-setuptools depend to avoid recursion
-MODPY_SETUPUTILS_DEPEND=
 
 .include <bsd.port.mk>

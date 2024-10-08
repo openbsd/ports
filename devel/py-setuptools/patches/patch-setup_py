@@ -4,9 +4,9 @@ Index: setup.py
 @@ -15,7 +15,7 @@ package_data = dict(
  )
  
- force_windows_specific_files = (
--    os.environ.get("SETUPTOOLS_INSTALL_WINDOWS_SPECIFIC_FILES", "1").lower()
-+    os.environ.get("SETUPTOOLS_INSTALL_WINDOWS_SPECIFIC_FILES", "0").lower()
-     not in ("", "0", "false", "no")
- )
+ force_windows_specific_files = os.environ.get(
+-    "SETUPTOOLS_INSTALL_WINDOWS_SPECIFIC_FILES", "1"
++    "SETUPTOOLS_INSTALL_WINDOWS_SPECIFIC_FILES", "0"
+ ).lower() not in ("", "0", "false", "no")
  
+ include_windows_files = sys.platform == 'win32' or force_windows_specific_files
