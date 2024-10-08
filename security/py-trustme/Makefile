@@ -1,10 +1,9 @@
 COMMENT=	quality TLS certs while you wait, for the discerning
 
-MODPY_EGG_VERSION=	1.0.0
+MODPY_EGG_VERSION=	1.2.0
 
 DISTNAME=	trustme-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	security devel
 

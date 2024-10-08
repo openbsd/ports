@@ -1,13 +1,13 @@
 @pkgpath security/py-trustme
 lib/python${MODPY_VERSION}/site-packages/trustme/
 lib/python${MODPY_VERSION}/site-packages/trustme-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/trustme-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/trustme-${MODPY_EGG_VERSION}.dist-info/LICENSE.APACHE2
-lib/python${MODPY_VERSION}/site-packages/trustme-${MODPY_EGG_VERSION}.dist-info/LICENSE.MIT
 lib/python${MODPY_VERSION}/site-packages/trustme-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/trustme-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/trustme-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/trustme-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/trustme-${MODPY_EGG_VERSION}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/trustme-${MODPY_EGG_VERSION}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/trustme-${MODPY_EGG_VERSION}.dist-info/licenses/LICENSE.APACHE2
+lib/python${MODPY_VERSION}/site-packages/trustme-${MODPY_EGG_VERSION}.dist-info/licenses/LICENSE.MIT
 lib/python${MODPY_VERSION}/site-packages/trustme/__init__.py
 lib/python${MODPY_VERSION}/site-packages/trustme/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trustme/${MODPY_PYCACHE}/
