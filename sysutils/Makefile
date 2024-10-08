@@ -114,7 +114,6 @@
      SUBDIR += firmware
      SUBDIR += flashrom
      SUBDIR += flatpak
-     SUBDIR += fleetctl
      SUBDIR += flock
      SUBDIR += fprintd
      SUBDIR += free
