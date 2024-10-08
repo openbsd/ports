@@ -3,13 +3,13 @@
 USE_NOEXECONLY=		Yes
 .endif
 
-MODPY_EGG_VERSION =	2.0.0b9
-REVISION =		0
+MODPY_EGG_VERSION =	2.0.0b12
 
 # OpenSSL used for EVP_aes_256_ocb. It is linked statically to avoid conflicting
 # with shared libcrypto from the base OS pulled in via dependencies.
 BUILD_DEPENDS =		security/openssl/3.2
-RUN_DEPENDS =		security/py-argon2-cffi${MODPY_FLAVOR} \
-			sysutils/py-platformdirs${MODPY_FLAVOR}>=3.8.1
+RUN_DEPENDS =		databases/py-borgstore${MODPY_FLAVOR} \
+			security/py-argon2-cffi${MODPY_FLAVOR} \
+			sysutils/py-platformdirs${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
