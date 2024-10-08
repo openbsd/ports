@@ -1,6 +1,6 @@
 COMMENT =	Web vault builds for vaultwarden
 
-VERSION =	2024.6.2b
+VERSION =	2024.6.2c
 DISTNAME =	bw_web_v${VERSION}
 PKGNAME =	vaultwarden-web-${VERSION}
 
