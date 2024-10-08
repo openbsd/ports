@@ -161,6 +161,7 @@
      SUBDIR += puppetdb
      SUBDIR += py-alembic,python3
      SUBDIR += py-apsw,python3
+     SUBDIR += py-borgstore,python3
      SUBDIR += py-bsddb3,python3
      SUBDIR += py-carbon,python3
      SUBDIR += py-flask-sqlalchemy,python3
