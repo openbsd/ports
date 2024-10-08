@@ -26,7 +26,7 @@ LIB_DEPENDS=	audio/faad \
 MAKE_FLAGS=	CFLAGS="-Wall -fPIC ${CFLAGS}" \
 		CPPFLAGS="-I${LOCALBASE}/include" \
 		OPTS="-DLINKALL -DFFMPEG -DRESAMPLE -DPORTAUDIO -DUSE_SSL -DNO_SSLSYM"
-MAKE_ENV=	LDADD="-L${LOCALBASE}/lib -lpthread -lm -lportaudio -lcrypto -lssl"
+MAKE_ENV=	LDADD="-L${LOCALBASE}/lib -L${X11BASE}/lib -lpthread -lm -lportaudio -lcrypto -lssl"
 
 USE_GMAKE=	Yes
 NO_TEST=	Yes
