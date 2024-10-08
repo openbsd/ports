@@ -84,7 +84,6 @@ share/e16/icons/mon.png
 share/e16/icons/pager.png
 share/e16/menus/
 share/e16/menus/desktop.menu
-share/e16/menus/enlightenment.menu
 share/e16/menus/maintenance.menu
 share/e16/menus/settings.menu
 share/e16/menus/winops.menu
