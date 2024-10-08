@@ -2,6 +2,7 @@ BROKEN-i386 =		v8/src/compiler/turboshaft/int64-lowering-reducer.h:295:24: error
 BROKEN-powerpc64 =	Check failed: false. OS architecture not handled. (powerpc64)
 
 USE_WXNEEDED=		Yes
+USE_NOBTCFI=		Yes
 
 DPB_PROPERTIES=		parallel parallel2
 .if ${MACHINE_ARCH:Mi386}
@@ -11,6 +12,7 @@ DPB_PROPERTIES+=	lonesome
 COMMENT=		Chromium browser
 
 V=			129.0.6668.89
+REVISION=		0
 
 DISTNAME=		chromium-${V}
 
@@ -237,7 +239,7 @@ DWZ = :
 GN_ARGS+=	symbol_level=1
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 .else
-GN_ARGS+=	symbol_level=0
+GN_ARGS+=	symbol_level=2
 .endif
 
 .if ${FLAVOR:Mcomponent}
