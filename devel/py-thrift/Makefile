@@ -1,3 +1,4 @@
+BROKEN-sparc64 = compact.h:52:18: error: invalid operands to binary expression
 COMMENT =	Python bindings for the Apache Thrift RPC system
 
 MODPY_EGG_VERSION =	0.16.0
