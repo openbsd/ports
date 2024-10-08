@@ -1,3 +1,5 @@
+BROKEN-sparc64=	fatal error: bit: No such file or directory
+
 COMMENT=	open source clone of the game Transport Tycoon Deluxe
 
 V =		14.1
