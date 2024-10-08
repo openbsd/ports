@@ -29,6 +29,11 @@ WANTLIB += gtk-4 intl m pango-1.0
 MAKE_ENV=		GETTEXT_DIR=${LOCALBASE} \
 			CARGO_BUILD_JOBS=${MAKE_JOBS}
 
+.if ${MACHINE_ARCH:Mi386}
+# Ring requires SSE2 on i386
+MAKE_ENV+=		RUSTFLAGS="-Ctarget-cpu=pentium4"
+.endif
+
 pre-configure:
 	mkdir -p ${WRKBUILD}/.cargo
 	sed -e 's,directory = .*",directory = "${WRKSRC}/vendor",g' \
