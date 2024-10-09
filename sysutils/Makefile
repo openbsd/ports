@@ -102,6 +102,7 @@
      SUBDIR += exfat-fuse
      SUBDIR += exoscale-cli
      SUBDIR += eza
+     SUBDIR += f3
      SUBDIR += fabric
      SUBDIR += facette
      SUBDIR += faubackup
