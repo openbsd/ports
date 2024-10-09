@@ -238,7 +238,7 @@ DWZ = :
 GN_ARGS+=	symbol_level=1
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 .else
-GN_ARGS+=	symbol_level=2
+GN_ARGS+=	symbol_level=0
 .endif
 
 .if ${FLAVOR:Mcomponent}
