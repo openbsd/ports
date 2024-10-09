@@ -6,6 +6,7 @@ share/applications/ibus-setup-typing-booster.desktop
 share/glib-2.0/schemas/org.freedesktop.ibus.engine.typing-booster.gschema.xml
 share/ibus-typing-booster/
 share/ibus-typing-booster/data/
+share/ibus-typing-booster/data/DerivedAge.txt
 share/ibus-typing-booster/data/UnicodeData.txt
 share/ibus-typing-booster/data/annotations/
 share/ibus-typing-booster/data/annotations/af.xml
