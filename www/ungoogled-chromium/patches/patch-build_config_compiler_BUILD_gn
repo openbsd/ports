@@ -28,19 +28,18 @@ Index: build/config/compiler/BUILD.gn
  }
  
  # compiler ---------------------------------------------------------------------
-@@ -505,6 +508,11 @@ config("compiler") {
+@@ -505,6 +508,10 @@ config("compiler") {
      }
    }
  
 +  if (is_openbsd) {
 +    ldflags += [ "-Wl,-z,wxneeded" ]
-+    ldflags += [ "-Wl,-z,nobtcfi" ]
 +  }
 +
    # Linux-specific compiler flags setup.
    # ------------------------------------
    if (use_icf && (!is_apple || use_lld)) {
-@@ -558,7 +566,7 @@ config("compiler") {
+@@ -558,7 +565,7 @@ config("compiler") {
      ldflags += [ "-Wl,-z,keep-text-section-prefix" ]
    }
  
@@ -49,7 +48,7 @@ Index: build/config/compiler/BUILD.gn
      cflags += [ "-fcrash-diagnostics-dir=" + clang_diagnostic_dir ]
      if (save_reproducers_on_lld_crash && use_lld) {
        ldflags += [
-@@ -1212,7 +1220,7 @@ config("compiler_cpu_abi") {
+@@ -1212,7 +1219,7 @@ config("compiler_cpu_abi") {
          ]
        }
      } else if (current_cpu == "arm") {
@@ -58,7 +57,7 @@ Index: build/config/compiler/BUILD.gn
            !(is_chromeos_lacros && is_chromeos_device)) {
          cflags += [ "--target=arm-linux-gnueabihf" ]
          ldflags += [ "--target=arm-linux-gnueabihf" ]
-@@ -1227,7 +1235,7 @@ config("compiler_cpu_abi") {
+@@ -1227,7 +1234,7 @@ config("compiler_cpu_abi") {
          cflags += [ "-mtune=$arm_tune" ]
        }
      } else if (current_cpu == "arm64") {
@@ -67,7 +66,7 @@ Index: build/config/compiler/BUILD.gn
            !(is_chromeos_lacros && is_chromeos_device)) {
          cflags += [ "--target=aarch64-linux-gnu" ]
          ldflags += [ "--target=aarch64-linux-gnu" ]
-@@ -1562,7 +1570,7 @@ config("compiler_deterministic") {
+@@ -1562,7 +1569,7 @@ config("compiler_deterministic") {
      # different build directory like "out/feature_a" and "out/feature_b" if
      # we build same files with same compile flag.
      # Other paths are already given in relative, no need to normalize them.
@@ -76,7 +75,7 @@ Index: build/config/compiler/BUILD.gn
        # TODO(https://crbug.com/1231236): Use -ffile-compilation-dir= here.
        cflags += [
          "-Xclang",
-@@ -1620,7 +1628,7 @@ config("compiler_deterministic") {
+@@ -1620,7 +1627,7 @@ config("compiler_deterministic") {
  }
  
  config("clang_revision") {
@@ -85,7 +84,7 @@ Index: build/config/compiler/BUILD.gn
        current_os != "zos") {
      update_args = [
        "--print-revision",
-@@ -1950,9 +1958,6 @@ config("default_warnings") {
+@@ -1950,9 +1957,6 @@ config("default_warnings") {
  
          # TODO(crbug.com/40286317): Evaluate and possibly enable.
          "-Wno-vla-extension",
@@ -95,7 +94,7 @@ Index: build/config/compiler/BUILD.gn
        ]
  
        cflags_cc += [
-@@ -1960,17 +1965,11 @@ config("default_warnings") {
+@@ -1960,17 +1964,11 @@ config("default_warnings") {
          "-Wenum-compare-conditional",
        ]
  
@@ -114,7 +113,7 @@ Index: build/config/compiler/BUILD.gn
        }
      }
  
-@@ -2699,7 +2698,7 @@ config("afdo_optimize_size") {
+@@ -2699,7 +2697,7 @@ config("afdo_optimize_size") {
  # There are some targeted places that AFDO regresses, so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -123,7 +122,7 @@ Index: build/config/compiler/BUILD.gn
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -2726,7 +2725,7 @@ config("afdo") {
+@@ -2726,7 +2724,7 @@ config("afdo") {
        cflags += [ "-Wno-backend-plugin" ]
        inputs = [ _clang_sample_profile ]
      }
@@ -132,7 +131,7 @@ Index: build/config/compiler/BUILD.gn
      cflags = [ "-fauto-profile=${auto_profile_path}" ]
      inputs = [ auto_profile_path ]
    }
-@@ -2891,7 +2890,7 @@ config("symbols") {
+@@ -2891,7 +2889,7 @@ config("symbols") {
      configs += [ "//build/config:compress_debug_sections" ]
    }
  
