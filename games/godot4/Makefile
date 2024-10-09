@@ -5,7 +5,9 @@ COMMENT-editor=	2D and 3D game engine (with the editor)
 
 V =		4.2.2
 PKGNAME =	godot4-${V}
+REVISION =	0
 DIST_TUPLE +=	github godotengine godot ${V}-stable .
+DIST_TUPLE +=	github GodotSteam GodotSteam v4.3 godotsteam
 
 CATEGORIES =	games
 
@@ -20,9 +22,10 @@ MULTI_PACKAGES =	-main -editor
 
 WANTLIB-main += ${COMPILER_LIBCXX} SPIRV X11 Xau Xcursor Xdmcp Xext
 WANTLIB-main += Xfixes Xi Xinerama Xrandr Xrender c dbus-1 enet execinfo
-WANTLIB-main += expat fontconfig freetype glib-2.0 glslang intl m mbedcrypto
+WANTLIB-main += expat fontconfig freetype glib-2.0 glslang
+WANTLIB-main += glslang-default-resource-limits intl m mbedcrypto
 WANTLIB-main += mbedtls mbedx509 miniupnpc mpcdec ogg pcre2-32 pcre2-8
-WANTLIB-main += sharpyuv sndio speechd theora theoradec usbhid vorbis
+WANTLIB-main += sharpyuv sndio speechd steam_api theora theoradec usbhid vorbis
 WANTLIB-main += vorbisfile webp wslay xcb xkbcommon zstd
 
 WANTLIB-editor = ${WANTLIB-main}
@@ -50,6 +53,7 @@ MODSCONS_FLAGS =	CC="${CC}" \
 			builtin_miniupnpc=no \
 			builtin_pcre2=no \
 			builtin_zstd=no \
+			custom_modules=${WRKSRC}/godotsteam \
 			progress=no \
 			pulseaudio=no \
 			use_sowrap=no \
@@ -92,6 +96,7 @@ LIB_DEPENDS =		archivers/zstd \
 			audio/speech-dispatcher \
 			devel/gettext,-runtime \
 			devel/pcre2 \
+			games/goldberg_emulator \
 			graphics/glslang \
 			graphics/libwebp \
 			multimedia/libtheora \
@@ -113,6 +118,9 @@ DPB_PROPERTIES =	parallel
 LDFLAGS +=     -latomic
 WANTLIB +=     atomic
 .endif
+
+CFLAGS +=	-I${LOCALBASE}/include/goldberg_emulator
+CXXFLAGS +=	-I${LOCALBASE}/include/goldberg_emulator
 
 post-extract:
 	cp -R ${FILESDIR}/sndio ${WRKDIST}/drivers
