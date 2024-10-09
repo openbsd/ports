@@ -1,6 +1,6 @@
 COMMENT=	Python Data Validation for Humans
 
-MODPY_EGG_VERSION=	0.28.3
+MODPY_EGG_VERSION=	0.34.0
 DISTNAME=	validators-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
@@ -13,6 +13,8 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+# needs ["eth-hash[pycryptodome]>=0.7.0"]
+MODPY_PYTEST_ARGS= --ignore tests/crypto_addresses/test_eth_address.py
 
 RUN_DEPENDS=	devel/py-decorator${MODPY_FLAVOR}
 
