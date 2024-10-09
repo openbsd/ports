@@ -3,6 +3,7 @@ COMMENT =		library for creating DigiDoc signature files
 V =			4.0.0
 DISTNAME =		libdigidocpp-${V}
 CATEGORIES =		security
+REVISION =		0
 
 SHARED_LIBS =		digidocpp	5.0	# 0.0
 
