@@ -12,7 +12,7 @@ PERMIT_PACKAGE=	Yes
 MODPY_PI=	Yes
 
 MODULES=	lang/python
-MODPY_PYBUILD=	setuptools
+MODPY_PYBUILD=	setuptools_scm
 
 FLAVORS=	python3
 FLAVOR=		python3
