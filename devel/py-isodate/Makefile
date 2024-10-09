@@ -1,6 +1,6 @@
 COMMENT=	ISO 8601 date/time/duration parser and formater
 
-MODPY_EGG_VERSION=	0.7.0
+MODPY_EGG_VERSION=	0.7.2
 DISTNAME=	isodate-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
