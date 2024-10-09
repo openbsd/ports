@@ -1,10 +1,10 @@
 COMMENT =		library for creating DigiDoc signature files
 
-V =			3.17.1
+V =			4.0.0
 DISTNAME =		libdigidocpp-${V}
 CATEGORIES =		security
 
-SHARED_LIBS =		digidocpp	4.0	# 0.0
+SHARED_LIBS =		digidocpp	5.0	# 0.0
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
@@ -20,8 +20,8 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 # -std=gnu++17
 COMPILER =		base-clang ports-gcc
 
-WANTLIB +=		${COMPILER_LIBCXX} c crypto m ssl
-WANTLIB +=		xerces-c xml-security-c z
+WANTLIB +=		${COMPILER_LIBCXX} c crypto ltdl m minizip ssl xml2
+WANTLIB +=		xmlsec1 xmlsec1-openssl xslt z
 
 MODULES =		devel/cmake
 
@@ -29,8 +29,10 @@ BUILD_DEPENDS =		devel/boost \
 			devel/xsd>=4.0 \
 			editors/vim,-main
 
-LIB_DEPENDS =		security/xml-security-c \
-			textproc/xerces-c
+LIB_DEPENDS =		archivers/minizip \
+			devel/libtool,-ltdl \
+			security/xmlsec \
+			textproc/libxml
 
 RUN_DEPENDS =		# empty
 

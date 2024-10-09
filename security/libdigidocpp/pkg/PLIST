@@ -23,11 +23,7 @@ share/examples/digidocpp/schema/
 @sample ${SYSCONFDIR}/digidocpp/schema/
 share/examples/digidocpp/schema/OpenDocument_dsig.xsd
 @sample ${SYSCONFDIR}/digidocpp/schema/OpenDocument_dsig.xsd
-share/examples/digidocpp/schema/OpenDocument_manifest.xsd
-@sample ${SYSCONFDIR}/digidocpp/schema/OpenDocument_manifest.xsd
 share/examples/digidocpp/schema/OpenDocument_manifest_v1_2.xsd
-share/examples/digidocpp/schema/XAdES01903v132-201601-relaxed.xsd
-@sample ${SYSCONFDIR}/digidocpp/schema/XAdES01903v132-201601-relaxed.xsd
 share/examples/digidocpp/schema/XAdES01903v132-201601.xsd
 @sample ${SYSCONFDIR}/digidocpp/schema/XAdES01903v132-201601.xsd
 share/examples/digidocpp/schema/XAdES01903v141-201601.xsd
@@ -36,13 +32,5 @@ share/examples/digidocpp/schema/conf.xsd
 @sample ${SYSCONFDIR}/digidocpp/schema/conf.xsd
 share/examples/digidocpp/schema/en_31916201v010101.xsd
 @sample ${SYSCONFDIR}/digidocpp/schema/en_31916201v010101.xsd
-share/examples/digidocpp/schema/ts_119612v020101_additionaltypes_xsd.xsd
-@sample ${SYSCONFDIR}/digidocpp/schema/ts_119612v020101_additionaltypes_xsd.xsd
-share/examples/digidocpp/schema/ts_119612v020101_sie_xsd.xsd
-@sample ${SYSCONFDIR}/digidocpp/schema/ts_119612v020101_sie_xsd.xsd
-share/examples/digidocpp/schema/ts_119612v020201_201601xsd.xsd
-@sample ${SYSCONFDIR}/digidocpp/schema/ts_119612v020201_201601xsd.xsd
-share/examples/digidocpp/schema/xml.xsd
-@sample ${SYSCONFDIR}/digidocpp/schema/xml.xsd
 share/examples/digidocpp/schema/xmldsig-core-schema.xsd
 @sample ${SYSCONFDIR}/digidocpp/schema/xmldsig-core-schema.xsd
