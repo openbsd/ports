@@ -1,0 +1,16 @@
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -23,9 +23,9 @@ extra: $(EXTRA_TARGETS)
+ install: all
+ 	$(INSTALL) -d $(DESTDIR)$(PREFIX)/bin
+ 	$(INSTALL) -m755 $(TARGETS) $(DESTDIR)$(PREFIX)/bin
+-	$(INSTALL) -d $(DESTDIR)$(PREFIX)/share/man/man1
+-	$(INSTALL) -m644 f3read.1 $(DESTDIR)$(PREFIX)/share/man/man1
+-	$(LN) -sf f3read.1 $(DESTDIR)$(PREFIX)/share/man/man1/f3write.1
++	$(INSTALL) -d $(DESTDIR)$(PREFIX)/man/man1
++	$(INSTALL) -m644 f3read.1 $(DESTDIR)$(PREFIX)/man/man1
++	$(LN) -sf f3read.1 $(DESTDIR)$(PREFIX)/man/man1/f3write.1
+ 
+ install-extra: extra
+ 	$(INSTALL) -d $(DESTDIR)$(PREFIX)/bin

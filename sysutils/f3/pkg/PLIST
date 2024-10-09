@@ -1,0 +1,4 @@
+@bin bin/f3read
+@bin bin/f3write
+@man man/man1/f3read.1
+@man man/man1/f3write.1
