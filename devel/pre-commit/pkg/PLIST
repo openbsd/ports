@@ -59,6 +59,8 @@ lib/python${MODPY_VERSION}/site-packages/pre_commit/${MODPY_PYCACHE}xargs.${MODP
 lib/python${MODPY_VERSION}/site-packages/pre_commit/${MODPY_PYCACHE}xargs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pre_commit/${MODPY_PYCACHE}yaml.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pre_commit/${MODPY_PYCACHE}yaml.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pre_commit/${MODPY_PYCACHE}yaml_rewrite.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pre_commit/${MODPY_PYCACHE}yaml_rewrite.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pre_commit/all_languages.py
 lib/python${MODPY_VERSION}/site-packages/pre_commit/clientlib.py
 lib/python${MODPY_VERSION}/site-packages/pre_commit/color.py
@@ -227,3 +229,4 @@ lib/python${MODPY_VERSION}/site-packages/pre_commit/store.py
 lib/python${MODPY_VERSION}/site-packages/pre_commit/util.py
 lib/python${MODPY_VERSION}/site-packages/pre_commit/xargs.py
 lib/python${MODPY_VERSION}/site-packages/pre_commit/yaml.py
+lib/python${MODPY_VERSION}/site-packages/pre_commit/yaml_rewrite.py
