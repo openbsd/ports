@@ -1,6 +1,6 @@
 @bin bin/qdigidoc4
 @man man/man1/qdigidoc4.1
-share/applications/qdigidoc4.desktop
+share/applications/ee.ria.qdigidoc4.desktop
 share/icons/Yaru/
 share/icons/Yaru/128x128/
 share/icons/Yaru/128x128/mimetypes/

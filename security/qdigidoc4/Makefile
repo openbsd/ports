@@ -1,6 +1,6 @@
 COMMENT =		DigiDoc4 GUI client for signing and encrypting documents
 
-V =			4.5.1
+V =			4.6.0
 DISTNAME =		qdigidoc4-${V}
 CATEGORIES =		security x11
 
@@ -13,10 +13,13 @@ PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		qdigidoc4
 SITES =			https://github.com/open-eid/DigiDoc4-Client/releases/download/v${V}/
+# .tar.gz asset is an uncompressed tar archive, qdigidoc4_4.6.0.4458-2004.tar.xz
+# is slightly different, at least in (inner directory) name
+# 
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
 
 SITES.eesti =		https://id.eesti.ee/
-CONFIG_NAME =		config-20240418
+CONFIG_NAME =		config-20241002081015Z
 # need to be in sync due to CONFIG_URL handling
 .for _suffix in json pub rsa
 DISTFILES.eesti +=	${CONFIG_NAME}{config}.${_suffix}
@@ -30,9 +33,9 @@ CONFIGURE_ENV +=	TSL_URL=file://${FULLDISTDIR}/eu-lotl-pivot-300.xml
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
-WANTLIB +=		${COMPILER_LIBCXX} GL Qt6Core Qt6Core5Compat Qt6Gui
-WANTLIB +=		Qt6Network Qt6PrintSupport Qt6Svg Qt6SvgWidgets Qt6Widgets
-WANTLIB +=		c crypto digidocpp flatbuffers lber ldap m pcsclite ssl z
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6PrintSupport
+WANTLIB += Qt6Svg Qt6SvgWidgets Qt6Widgets c crypto digidocpp
+WANTLIB += flatbuffers lber ldap m pcsclite ssl z
 
 MODULES =		devel/cmake \
 			x11/qt6
@@ -41,9 +44,8 @@ BUILD_DEPENDS =		devel/gettext,-tools
 
 LIB_DEPENDS =		devel/flatbuffers \
 			databases/openldap,-main \
-			security/libdigidocpp>=3.17.1 \
+			security/libdigidocpp>=4.0.0 \
 			security/pcsc-lite \
-			x11/qt6/qt5compat \
 			x11/qt6/qtsvg
 
 RUN_DEPENDS =		devel/desktop-file-utils \
