@@ -42,6 +42,7 @@
      SUBDIR += xfce4-smartbookmark
      SUBDIR += xfce4-systemload
      SUBDIR += xfce4-time-out
+     SUBDIR += xfce4-timer
      SUBDIR += xfce4-taskmanager
      SUBDIR += xfce4-verve
      SUBDIR += xfce4-wavelan
