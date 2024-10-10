@@ -3,6 +3,7 @@ COMMENT=	docbook XSL modular stylesheet
 VERSION=	1.79.1
 DISTNAME=	docbook-xsl-${VERSION}
 CATEGORIES=	textproc
+REVISION=	0
 
 HOMEPAGE=	https://docbook.sourceforge.net/projects/xsl/
 
@@ -24,7 +25,7 @@ INSTDIR=	${PREFIX}/${DIR}
 CATALOG_DIR=	${LOCALBASE}/${DIR}
 DOCSDIR=	${PREFIX}/share/doc/xsl/docbook
 COPYDIRS=	common fo extensions html htmlhelp images \
-		javahelp lib manpages params template xhtml
+		javahelp lib manpages params template xhtml xhtml5
 
 NO_BUILD=	Yes
 
