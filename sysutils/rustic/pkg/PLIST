@@ -6,6 +6,7 @@ share/examples/rustic/
 share/examples/rustic/README.md
 share/examples/rustic/copy_example.toml
 share/examples/rustic/full.toml
+share/examples/rustic/hooks.toml
 share/examples/rustic/local.toml
 share/examples/rustic/par2.toml
 share/examples/rustic/rustic.toml
