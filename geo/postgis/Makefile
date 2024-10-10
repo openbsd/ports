@@ -2,6 +2,7 @@ V =	3.5.0
 COMMENT=	geographic objects support for PostgreSQL
 DISTNAME=	postgis-${V}
 CATEGORIES=	geo databases
+REVISION=	0
 
 HOMEPAGE=	http://www.postgis.net/
 
@@ -32,7 +33,7 @@ LIB_DEPENDS=	databases/sqlite3 \
 RUN_DEPENDS=	databases/postgresql,-server
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		devel/cunit \
-		textproc/docbook-xsl \
+		textproc/docbook-xsl>=1.79.1p0 \
 		textproc/wdg-sgml-lib \
 		graphics/GraphicsMagick
 TEST_DEPENDS =	devel/cunit
