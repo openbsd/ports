@@ -31,8 +31,4 @@ CXXFLAGS +=		-DOPENSSL_API_COMPAT
 
 NO_TEST =		Yes
 
-pre-fake:
-	[ -f "${WRKSRC}/git-crypt.1" ] && \
-		mv "${WRKSRC}/git-crypt.1" "${WRKSRC}/man/man1/git-crypt.1"
-
 .include <bsd.port.mk>
