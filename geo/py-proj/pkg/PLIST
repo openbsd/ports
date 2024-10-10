@@ -43,14 +43,14 @@ lib/python${MODPY_VERSION}/site-packages/pyproj/${MODPY_PYCACHE}utils.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/pyproj/_compat.pxd
 lib/python${MODPY_VERSION}/site-packages/pyproj/_compat.pyi
 lib/python${MODPY_VERSION}/site-packages/pyproj/_compat.pyx
+@so lib/python${MODPY_VERSION}/site-packages/pyproj/_context.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/pyproj/_context.pxd
+lib/python${MODPY_VERSION}/site-packages/pyproj/_context.pyi
+lib/python${MODPY_VERSION}/site-packages/pyproj/_context.pyx
 @so lib/python${MODPY_VERSION}/site-packages/pyproj/_crs.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/pyproj/_crs.pxd
 lib/python${MODPY_VERSION}/site-packages/pyproj/_crs.pyi
 lib/python${MODPY_VERSION}/site-packages/pyproj/_crs.pyx
-@so lib/python${MODPY_VERSION}/site-packages/pyproj/_datadir.${MODPY_PYC_MAGIC_TAG}so
-lib/python${MODPY_VERSION}/site-packages/pyproj/_datadir.pxd
-lib/python${MODPY_VERSION}/site-packages/pyproj/_datadir.pyi
-lib/python${MODPY_VERSION}/site-packages/pyproj/_datadir.pyx
 @so lib/python${MODPY_VERSION}/site-packages/pyproj/_geod.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/pyproj/_geod.pxd
 lib/python${MODPY_VERSION}/site-packages/pyproj/_geod.pyi
@@ -66,6 +66,9 @@ lib/python${MODPY_VERSION}/site-packages/pyproj/_sync.pyx
 lib/python${MODPY_VERSION}/site-packages/pyproj/_transformer.pxd
 lib/python${MODPY_VERSION}/site-packages/pyproj/_transformer.pyi
 lib/python${MODPY_VERSION}/site-packages/pyproj/_transformer.pyx
+@so lib/python${MODPY_VERSION}/site-packages/pyproj/_version.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/pyproj/_version.pyi
+lib/python${MODPY_VERSION}/site-packages/pyproj/_version.pyx
 lib/python${MODPY_VERSION}/site-packages/pyproj/aoi.py
 lib/python${MODPY_VERSION}/site-packages/pyproj/base.pxi
 lib/python${MODPY_VERSION}/site-packages/pyproj/crs/

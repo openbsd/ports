@@ -1,6 +1,6 @@
 COMMENT =		Pyrex generated python interface to PROJ.4 library
 
-MODPY_EGG_VERSION =	3.6.1
+MODPY_EGG_VERSION =	3.7.0
 DISTNAME =		pyproj-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/:S/.post/pl/}
 
