@@ -12,9 +12,8 @@ Index: requirements.txt
  pygeofilter
  pygeoif
  pyproj
-@@ -16,4 +16,5 @@ requests
+@@ -16,3 +16,4 @@ requests
  shapely
  SQLAlchemy<2.0.0
  tinydb
 +typing-extensions
- unicodecsv
