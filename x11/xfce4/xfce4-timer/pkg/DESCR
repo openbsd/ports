@@ -1,0 +1,9 @@
+Xfce4-timer-plugin is a simple plugin that lets the user run an alarm
+at a specified time or at the end of a specified countdown period.
+
+The icon displays a progress bar showing the percentage of the time
+elapsed. The bar changes color when active from silver to blue.
+
+Left-clicking on the icon opens a menu of available alarms. After
+selecting one, the user can start or stop the timer by selecting the
+'start/stop timer' entry in the same menu.
