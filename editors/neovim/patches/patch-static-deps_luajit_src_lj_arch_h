@@ -5,7 +5,7 @@ ignore the gcc version check ifdef hell for all base-clang arches.
 Index: static-deps/luajit/src/lj_arch.h
 --- static-deps/luajit/src/lj_arch.h.orig
 +++ static-deps/luajit/src/lj_arch.h
-@@ -445,7 +445,7 @@
+@@ -446,7 +446,7 @@
  /* -- Checks for requirements --------------------------------------------- */
  
  /* Check for minimum required compiler versions. */
