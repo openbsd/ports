@@ -3138,6 +3138,7 @@ lib/${ERLANG_V}/lib/${ERL_SSH}/doc/chunks/ssh_cli.chunk
 lib/${ERLANG_V}/lib/${ERL_SSH}/doc/chunks/ssh_client_channel.chunk
 lib/${ERLANG_V}/lib/${ERL_SSH}/doc/chunks/ssh_connection.chunk
 lib/${ERLANG_V}/lib/${ERL_SSH}/doc/chunks/ssh_connection_handler.chunk
+lib/${ERLANG_V}/lib/${ERL_SSH}/doc/chunks/ssh_connection_sup.chunk
 lib/${ERLANG_V}/lib/${ERL_SSH}/doc/chunks/ssh_daemon_channel.chunk
 lib/${ERLANG_V}/lib/${ERL_SSH}/doc/chunks/ssh_dbg.chunk
 lib/${ERLANG_V}/lib/${ERL_SSH}/doc/chunks/ssh_fsm_kexinit.chunk
@@ -3154,7 +3155,6 @@ lib/${ERLANG_V}/lib/${ERL_SSH}/doc/chunks/ssh_sftpd.chunk
 lib/${ERLANG_V}/lib/${ERL_SSH}/doc/chunks/ssh_sftpd_file.chunk
 lib/${ERLANG_V}/lib/${ERL_SSH}/doc/chunks/ssh_sftpd_file_api.chunk
 lib/${ERLANG_V}/lib/${ERL_SSH}/doc/chunks/ssh_shell.chunk
-lib/${ERLANG_V}/lib/${ERL_SSH}/doc/chunks/ssh_subsystem_sup.chunk
 lib/${ERLANG_V}/lib/${ERL_SSH}/doc/chunks/ssh_system_sup.chunk
 lib/${ERLANG_V}/lib/${ERL_SSH}/doc/chunks/ssh_tcpip_forward_acceptor.chunk
 lib/${ERLANG_V}/lib/${ERL_SSH}/doc/chunks/ssh_tcpip_forward_acceptor_sup.chunk
@@ -3179,6 +3179,7 @@ lib/${ERLANG_V}/lib/${ERL_SSH}/ebin/ssh_client_channel.beam
 lib/${ERLANG_V}/lib/${ERL_SSH}/ebin/ssh_client_key_api.beam
 lib/${ERLANG_V}/lib/${ERL_SSH}/ebin/ssh_connection.beam
 lib/${ERLANG_V}/lib/${ERL_SSH}/ebin/ssh_connection_handler.beam
+lib/${ERLANG_V}/lib/${ERL_SSH}/ebin/ssh_connection_sup.beam
 lib/${ERLANG_V}/lib/${ERL_SSH}/ebin/ssh_daemon_channel.beam
 lib/${ERLANG_V}/lib/${ERL_SSH}/ebin/ssh_dbg.beam
 lib/${ERLANG_V}/lib/${ERL_SSH}/ebin/ssh_file.beam
@@ -3198,7 +3199,6 @@ lib/${ERLANG_V}/lib/${ERL_SSH}/ebin/ssh_sftpd.beam
 lib/${ERLANG_V}/lib/${ERL_SSH}/ebin/ssh_sftpd_file.beam
 lib/${ERLANG_V}/lib/${ERL_SSH}/ebin/ssh_sftpd_file_api.beam
 lib/${ERLANG_V}/lib/${ERL_SSH}/ebin/ssh_shell.beam
-lib/${ERLANG_V}/lib/${ERL_SSH}/ebin/ssh_subsystem_sup.beam
 lib/${ERLANG_V}/lib/${ERL_SSH}/ebin/ssh_system_sup.beam
 lib/${ERLANG_V}/lib/${ERL_SSH}/ebin/ssh_tcpip_forward_acceptor.beam
 lib/${ERLANG_V}/lib/${ERL_SSH}/ebin/ssh_tcpip_forward_acceptor_sup.beam
@@ -3227,6 +3227,7 @@ lib/${ERLANG_V}/lib/${ERL_SSH}/src/ssh_client_key_api.erl
 lib/${ERLANG_V}/lib/${ERL_SSH}/src/ssh_connect.hrl
 lib/${ERLANG_V}/lib/${ERL_SSH}/src/ssh_connection.erl
 lib/${ERLANG_V}/lib/${ERL_SSH}/src/ssh_connection_handler.erl
+lib/${ERLANG_V}/lib/${ERL_SSH}/src/ssh_connection_sup.erl
 lib/${ERLANG_V}/lib/${ERL_SSH}/src/ssh_daemon_channel.erl
 lib/${ERLANG_V}/lib/${ERL_SSH}/src/ssh_dbg.erl
 lib/${ERLANG_V}/lib/${ERL_SSH}/src/ssh_file.erl
@@ -3247,7 +3248,6 @@ lib/${ERLANG_V}/lib/${ERL_SSH}/src/ssh_sftpd.erl
 lib/${ERLANG_V}/lib/${ERL_SSH}/src/ssh_sftpd_file.erl
 lib/${ERLANG_V}/lib/${ERL_SSH}/src/ssh_sftpd_file_api.erl
 lib/${ERLANG_V}/lib/${ERL_SSH}/src/ssh_shell.erl
-lib/${ERLANG_V}/lib/${ERL_SSH}/src/ssh_subsystem_sup.erl
 lib/${ERLANG_V}/lib/${ERL_SSH}/src/ssh_system_sup.erl
 lib/${ERLANG_V}/lib/${ERL_SSH}/src/ssh_tcpip_forward_acceptor.erl
 lib/${ERLANG_V}/lib/${ERL_SSH}/src/ssh_tcpip_forward_acceptor_sup.erl
