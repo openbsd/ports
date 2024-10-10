@@ -1,9 +1,9 @@
 Index: tests/Cargo.toml
 --- tests/Cargo.toml.orig
 +++ tests/Cargo.toml
-@@ -62,5 +62,5 @@ async-trait = "0.1.68"
- chrono = "0.4"
- ring = { version = "0.17" }
+@@ -64,5 +64,5 @@ ring = { version = "0.17" }
+ biscuit = "0.7.0"
+ form_urlencoded = "1.1.0"
  
 -[target.'cfg(not(target_env = "msvc"))'.dependencies]
 +[target.'cfg(not(target_os = "openbsd"))'.dependencies]
