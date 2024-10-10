@@ -1,0 +1,12 @@
+Index: src/main.c
+--- src/main.c.orig
++++ src/main.c
+@@ -126,7 +126,7 @@ static void xa_check_available_archivers ()
+ 		}
+ 	}
+ 
+-	cpio = g_find_program_in_path("cpio");
++	cpio = g_find_program_in_path("gcpio");
+ 	lbzip2 = g_find_program_in_path("lbzip2");
+ 	lsar = g_find_program_in_path("lsar");
+ 	pbzip2 = g_find_program_in_path("pbzip2");
