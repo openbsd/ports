@@ -1,6 +1,6 @@
 COMMENT=	validating DNS resolver library
 
-DISTNAME=	unbound-1.21.0
+DISTNAME=	unbound-1.21.1
 PKGNAME=	lib${DISTNAME}
 
 SHARED_LIBS +=  unbound              4.1      # 9.3
