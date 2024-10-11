@@ -1,0 +1,17 @@
+No dma-buf on OpenBSD.
+
+Index: Source/WebKit/UIProcess/gtk/AcceleratedBackingStoreDMABuf.cpp
+--- Source/WebKit/UIProcess/gtk/AcceleratedBackingStoreDMABuf.cpp.orig
++++ Source/WebKit/UIProcess/gtk/AcceleratedBackingStoreDMABuf.cpp
+@@ -71,7 +71,11 @@ OptionSet<DMABufRendererBufferMode> AcceleratedBacking
+     static OptionSet<DMABufRendererBufferMode> mode;
+     static std::once_flag onceFlag;
+     std::call_once(onceFlag, [] {
++#if defined(__OpenBSD__)
++        const char* disableDMABuf = "1";
++#else
+         const char* disableDMABuf = getenv("WEBKIT_DISABLE_DMABUF_RENDERER");
++#endif
+         if (disableDMABuf && strcmp(disableDMABuf, "0"))
+             return;
+ 
