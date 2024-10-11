@@ -1,11 +1,10 @@
 COMMENT=	DNS toolkit for Python
 
 # see net/py2-dnspython for py2 version
-MODPY_EGG_VERSION=	2.6.1
+MODPY_EGG_VERSION=	2.7.0
 DISTNAME=	dnspython-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	net
-REVISION=	0
 
 HOMEPAGE=	https://www.dnspython.org/
 

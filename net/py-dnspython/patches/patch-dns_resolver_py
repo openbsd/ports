@@ -3,7 +3,7 @@ openbsd doesn't support v4mapped
 Index: dns/resolver.py
 --- dns/resolver.py.orig
 +++ dns/resolver.py
-@@ -1841,7 +1841,7 @@ def _getaddrinfo(
+@@ -1840,7 +1840,7 @@ def _getaddrinfo(
          # reasons.  We will also do this short circuit below if we
          # discover that the host is an address literal.
          return _original_getaddrinfo(host, service, family, socktype, proto, flags)

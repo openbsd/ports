@@ -221,6 +221,7 @@ lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/NSEC3PARAM.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/OPENPGPKEY.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/OPT.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/PTR.py
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/RESINFO.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/RP.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/RRSIG.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/RT.py
@@ -233,6 +234,7 @@ lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/TLSA.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/TSIG.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/TXT.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/URI.py
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/WALLET.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/X25.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/ZONEMD.py
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/__init__.py
@@ -303,6 +305,8 @@ lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}OPT.${M
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}OPT.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}PTR.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}PTR.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}RESINFO.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}RESINFO.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}RP.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}RP.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}RRSIG.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -327,6 +331,8 @@ lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}TXT.${M
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}TXT.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}URI.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}URI.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}WALLET.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}WALLET.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}X25.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}X25.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dns/rdtypes/ANY/${MODPY_PYCACHE}ZONEMD.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -452,6 +458,7 @@ share/examples/${MODPY_PY_PREFIX}dnspython/ddr.py
 share/examples/${MODPY_PY_PREFIX}dnspython/doh-json.py
 share/examples/${MODPY_PY_PREFIX}dnspython/doh.py
 share/examples/${MODPY_PY_PREFIX}dnspython/doq.py
+share/examples/${MODPY_PY_PREFIX}dnspython/dot.py
 share/examples/${MODPY_PY_PREFIX}dnspython/e164.py
 share/examples/${MODPY_PY_PREFIX}dnspython/ecs.py
 share/examples/${MODPY_PY_PREFIX}dnspython/edns.py
@@ -463,6 +470,7 @@ share/examples/${MODPY_PY_PREFIX}dnspython/receive_notify.py
 share/examples/${MODPY_PY_PREFIX}dnspython/reverse.py
 share/examples/${MODPY_PY_PREFIX}dnspython/reverse_name.py
 share/examples/${MODPY_PY_PREFIX}dnspython/send_notify.py
+share/examples/${MODPY_PY_PREFIX}dnspython/tsig.py
 share/examples/${MODPY_PY_PREFIX}dnspython/wire_read_tcp.py
 share/examples/${MODPY_PY_PREFIX}dnspython/xfr.py
 share/examples/${MODPY_PY_PREFIX}dnspython/zonediff.py
