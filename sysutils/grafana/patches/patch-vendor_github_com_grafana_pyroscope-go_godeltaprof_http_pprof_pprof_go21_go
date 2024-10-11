@@ -1,0 +1,12 @@
+Index: vendor/github.com/grafana/pyroscope-go/godeltaprof/http/pprof/pprof_go21.go
+--- vendor/github.com/grafana/pyroscope-go/godeltaprof/http/pprof/pprof_go21.go.orig
++++ vendor/github.com/grafana/pyroscope-go/godeltaprof/http/pprof/pprof_go21.go
+@@ -0,0 +1,8 @@
++//go:build !go1.22
++
++package pprof
++
++func routePrefix() string {
++	return ""
++}
++

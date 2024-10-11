@@ -1,7 +1,7 @@
 Index: conf/sample.ini
 --- conf/sample.ini.orig
 +++ conf/sample.ini
-@@ -16,19 +16,19 @@
+@@ -12,19 +12,19 @@
  #################################### Paths ####################################
  [paths]
  # Path to where grafana can store temp files, sessions, and the sqlite3 db (if that is used)
@@ -25,7 +25,7 @@ Index: conf/sample.ini
  
  #################################### Server ####################################
  [server]
-@@ -244,7 +244,7 @@
+@@ -254,7 +254,7 @@
  # No ip addresses are being tracked, only simple counters to track
  # running instances, dashboard and error counts. It is very helpful to us.
  # Change this option to false to disable reporting.
@@ -34,7 +34,7 @@ Index: conf/sample.ini
  
  # The name of the distributor of the Grafana instance. Ex hosted-grafana, grafana-labs
  ;reporting_distributor = grafana-labs
-@@ -254,7 +254,7 @@
+@@ -264,7 +264,7 @@
  # in some UI views to notify that a grafana update exists.
  # This option does not cause any auto updates, nor send any information
  # only a GET request to https://grafana.com/api/grafana/versions/stable to get the latest version.
@@ -43,7 +43,7 @@ Index: conf/sample.ini
  
  # Set to false to disable all checks to https://grafana.com
  # for new versions of plugins. The check is used
-@@ -917,7 +917,7 @@
+@@ -1032,7 +1032,7 @@
  [log]
  # Either "console", "file", "syslog". Default is console and  file
  # Use space to separate multiple modes, e.g. "console file"
