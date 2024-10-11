@@ -1,6 +1,6 @@
 COMMENT=	i2p routing protocol
 
-V =		2.6.1
+V =		2.7.0
 DISTNAME =	i2psource_${V}
 PKGNAME =	i2p-${V}
 
