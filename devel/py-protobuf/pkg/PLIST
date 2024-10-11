@@ -32,8 +32,12 @@ lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}message
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}message.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}message_factory.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}message_factory.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}proto.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}proto.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}proto_builder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}proto_builder.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}proto_json.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}proto_json.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}reflection.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}reflection.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}runtime_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -133,7 +137,9 @@ lib/python${MODPY_VERSION}/site-packages/google/protobuf/internal/wire_format.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/json_format.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/message.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/message_factory.py
+lib/python${MODPY_VERSION}/site-packages/google/protobuf/proto.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/proto_builder.py
+lib/python${MODPY_VERSION}/site-packages/google/protobuf/proto_json.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/pyext/
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/pyext/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/google/protobuf/pyext/${MODPY_PYCACHE}/
