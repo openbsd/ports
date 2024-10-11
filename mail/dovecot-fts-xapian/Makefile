@@ -1,7 +1,6 @@
 COMMENT=	full text search plugin for Dovecot using Xapian
 
-V=		1.7.14
-REVISION=	0
+V=		1.7.16
 DISTNAME=	dovecot-fts-xapian-$V
 SITES=		https://github.com/grosjo/fts-xapian/releases/download/$V/
 WRKDIST=	${WRKDIR}/fts-xapian-$V
