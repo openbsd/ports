@@ -1,7 +1,7 @@
 Index: js/ui/endSessionDialog.js
 --- js/ui/endSessionDialog.js.orig
 +++ js/ui/endSessionDialog.js
-@@ -232,8 +232,6 @@ class EndSessionDialog extends ModalDialog.ModalDialog
+@@ -234,8 +234,6 @@ class EndSessionDialog extends ModalDialog.ModalDialog
          });
  
          this._loginManager = LoginManager.getLoginManager();
@@ -10,7 +10,7 @@ Index: js/ui/endSessionDialog.js
  
          this._userManager = AccountsService.UserManager.get_default();
          this._user = this._userManager.get_user(GLib.get_user_name());
-@@ -451,24 +449,6 @@ class EndSessionDialog extends ModalDialog.ModalDialog
+@@ -453,24 +451,6 @@ class EndSessionDialog extends ModalDialog.ModalDialog
                  },
                  label,
              });

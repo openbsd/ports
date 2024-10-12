@@ -5,7 +5,7 @@ COMMENT=		next generation GNOME shell
 GNOME_PROJECT=		gnome-shell
 # check/fix CONFIGURE_ARGS (-Dgnome_shell_version=XX) in x11/arc-theme on
 # major upgrade;
-GNOME_VERSION=		45.10
+GNOME_VERSION=		46.5
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -13,13 +13,12 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += X11 Xfixes atk-1.0 atk-bridge-2.0 c cairo ecal-2.0
 WANTLIB += edataserver-1.2 gcr-4 gdk_pixbuf-2.0 gio-2.0 girepository-1.0
 WANTLIB += gjs glib-2.0 gnome-autoar-0 gnome-desktop-4 gobject-2.0
-WANTLIB += graphene-1.0 gtk-4 ical-glib intl json-glib-1.0 m mutter-13
-WANTLIB += pango-1.0 pipewire-0.3 polkit-agent-1 polkit-gobject-1
-WANTLIB += pulse pulse-mainloop-glib
-WANTLIB += lib/mutter-13/mutter-clutter-13
-WANTLIB += lib/mutter-13/mutter-cogl-13
-WANTLIB += lib/mutter-13/mutter-cogl-pango-13
-WANTLIB += lib/mutter-13/mutter-mtk-13
+WANTLIB += graphene-1.0 gtk-4 ical-glib intl json-glib-1.0 m mutter-14
+WANTLIB += pango-1.0 polkit-agent-1 polkit-gobject-1 pulse pulse-mainloop-glib
+WANTLIB += lib/mutter-14/mutter-clutter-14
+WANTLIB += lib/mutter-14/mutter-cogl-14
+WANTLIB += lib/mutter-14/mutter-cogl-pango-14
+WANTLIB += lib/mutter-14/mutter-mtk-14
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -39,12 +38,11 @@ RUN_DEPENDS +=		devel/gsettings-desktop-schemas
 
 LIB_DEPENDS=		audio/pulseaudio \
 			databases/evolution-data-server \
-			multimedia/pipewire/pipewire,-libs \
 			sysutils/polkit \
 			x11/gnome/autoar \
 			x11/gnome/gcr4 \
 			x11/gnome/gjs \
-			x11/gnome/mutter \
+			x11/gnome/mutter>=46 \
 			x11/gtk+4
 
 
@@ -66,9 +64,6 @@ RUN_DEPENDS +=		sysutils/consolekit
 
 # gnome-shell-extension-tool, gnome-shell-perf-tool
 RUN_DEPENDS +=		devel/py-gobject3${MODPY_FLAVOR}
-
-# needs libgstpipewire.so for screencast recorder
-RUN_DEPENDS +=		multimedia/pipewire/pipewire
 
 # Don't depend on evolution to lower down the amount of dependencies and
 # because most users want to be able to choose their PIM. Evolution can
@@ -103,6 +98,12 @@ RUN_DEPENDS +=		inputmethods/ibus \
 CONFIGURE_ARGS +=	-Dnetworkmanager=false \
 			-Dsystemd=false \
 			-Dtests=false
+
+# XXX camera monitor& screenscast; needs libcamera support in pipewire
+CONFIGURE_ARGS +=	-Dcamera_monitor=false
+#LIB_DEPENDS +=		multimedia/pipewire/pipewire,-libs \
+# needs libgstpipewire.so for screencast recorder
+#RUN_DEPENDS +=		multimedia/pipewire/pipewire
 
 MODGNOME_LDFLAGS +=	-L${X11BASE}/lib
 

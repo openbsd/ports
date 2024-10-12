@@ -12,15 +12,15 @@ bin/gnome-shell-extension-tool
 bin/gnome-shell-test-tool
 lib/gnome-shell/
 lib/gnome-shell/Gvc-1.0.typelib
-lib/gnome-shell/Shell-13.typelib
-lib/gnome-shell/St-13.typelib
+lib/gnome-shell/Shell-14.typelib
+lib/gnome-shell/St-14.typelib
 lib/gnome-shell/girepository-1.0/
 lib/gnome-shell/girepository-1.0/Shew-0.typelib
 @so lib/gnome-shell/libgnome-shell-menu.so
 @so lib/gnome-shell/libgvc.so
-@so lib/gnome-shell/libshell-13.so
+@so lib/gnome-shell/libshell-14.so
 @so lib/gnome-shell/libshew-0.so
-@so lib/gnome-shell/libst-13.so
+@so lib/gnome-shell/libst-14.so
 @bin libexec/gnome-shell-calendar-server
 @bin libexec/gnome-shell-hotplug-sniffer
 @bin libexec/gnome-shell-perf-helper
@@ -45,13 +45,14 @@ share/dbus-1/services/org.gnome.Shell.HotplugSniffer.service
 share/dbus-1/services/org.gnome.Shell.Notifications.service
 share/dbus-1/services/org.gnome.Shell.Screencast.service
 share/glib-2.0/schemas/00_org.gnome.shell.gschema.override
+share/glib-2.0/schemas/org.gnome.Extensions.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.gschema.xml
 share/gnome-control-center/keybindings/50-gnome-shell-launchers.xml
 share/gnome-control-center/keybindings/50-gnome-shell-screenshots.xml
 share/gnome-control-center/keybindings/50-gnome-shell-system.xml
 share/gnome-shell/Gvc-1.0.gir
-share/gnome-shell/Shell-13.gir
-share/gnome-shell/St-13.gir
+share/gnome-shell/Shell-14.gir
+share/gnome-shell/St-14.gir
 share/gnome-shell/gir-1.0/
 share/gnome-shell/gir-1.0/Shew-0.gir
 share/gnome-shell/gnome-shell-dbus-interfaces.gresource
@@ -166,9 +167,6 @@ share/locale/zh_CN/LC_MESSAGES/gnome-shell.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-shell.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-shell.mo
 share/metainfo/org.gnome.Extensions.metainfo.xml
-share/xdg-desktop-portal/
-share/xdg-desktop-portal/portals/
-share/xdg-desktop-portal/portals/gnome-shell.portal
 @tag glib-compile-schemas
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

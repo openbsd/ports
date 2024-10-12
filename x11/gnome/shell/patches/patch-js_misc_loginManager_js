@@ -1,7 +1,7 @@
 Index: js/misc/loginManager.js
 --- js/misc/loginManager.js.orig
 +++ js/misc/loginManager.js
-@@ -14,6 +14,12 @@ const SystemdLoginManager = Gio.DBusProxy.makeProxyWra
+@@ -15,6 +15,12 @@ const SystemdLoginManager = Gio.DBusProxy.makeProxyWra
  const SystemdLoginSession = Gio.DBusProxy.makeProxyWrapper(SystemdLoginSessionIface);
  const SystemdLoginUser = Gio.DBusProxy.makeProxyWrapper(SystemdLoginUserIface);
  
@@ -14,7 +14,7 @@ Index: js/misc/loginManager.js
  function haveSystemd() {
      return GLib.access('/run/systemd/seats', 0) >= 0;
  }
-@@ -47,7 +53,7 @@ export function canLock() {
+@@ -48,7 +54,7 @@ export function canLock() {
              -1, null);
  
          let version = result.deepUnpack()[0].deepUnpack();
@@ -23,7 +23,7 @@ Index: js/misc/loginManager.js
      } catch (e) {
          return false;
      }
-@@ -83,7 +89,7 @@ export function getLoginManager() {
+@@ -84,7 +90,7 @@ export function getLoginManager() {
          if (haveSystemd())
              _loginManager = new LoginManagerSystemd();
          else
@@ -32,7 +32,7 @@ Index: js/misc/loginManager.js
      }
  
      return _loginManager;
-@@ -208,6 +214,78 @@ class LoginManagerSystemd extends Signals.EventEmitter
+@@ -219,6 +225,82 @@ class LoginManagerSystemd extends Signals.EventEmitter
      }
  }
  
@@ -89,6 +89,10 @@ Index: js/misc/loginManager.js
 +        }
 +    }
 +
++    getSession(objectPath) {
++        return new ConsoleKitSession(Gio.DBus.system, 'org.freedesktop.ConsoleKit', objectPath);
++    }
++
 +    suspend() {
 +        this._proxy.SuspendAsync(true);
 +    }
@@ -111,7 +115,7 @@ Index: js/misc/loginManager.js
  class LoginManagerDummy extends Signals.EventEmitter  {
      getCurrentSessionProxy() {
          // we could return a DummySession object that fakes whatever callers
-@@ -221,16 +299,6 @@ class LoginManagerDummy extends Signals.EventEmitter  
+@@ -232,16 +314,6 @@ class LoginManagerDummy extends Signals.EventEmitter  
              canSuspend: false,
              needsAuth: false,
          }));

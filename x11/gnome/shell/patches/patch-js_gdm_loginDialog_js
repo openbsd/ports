@@ -1,0 +1,32 @@
+No SessionId with ConsoleKit.
+
+Index: js/gdm/loginDialog.js
+--- js/gdm/loginDialog.js.orig
++++ js/gdm/loginDialog.js
+@@ -47,6 +47,10 @@ const _SCROLL_ANIMATION_TIME = 500;
+ const _TIMED_LOGIN_IDLE_THRESHOLD = 5.0;
+ const _CONFLICTING_SESSION_DIALOG_TIMEOUT = 60;
+ 
++function haveSystemd() {
++    return GLib.access('/run/systemd/seats', 0) >= 0;
++}
++
+ export const UserListItem = GObject.registerClass({
+     Signals: {'activate': {}},
+ }, class UserListItem extends St.Button {
+@@ -1139,6 +1143,7 @@ export const LoginDialog = GObject.registerClass({
+     }
+ 
+     async _findConflictingSession(startingSessionId) {
++        if (haveSystemd()) {
+         const loginManager = LoginManager.getLoginManager();
+         const sessions = await loginManager.listSessions();
+         const [, , startingSessionOwner, ,] = sessions.find(([id, , , ,]) => id === startingSessionId);
+@@ -1158,6 +1163,7 @@ export const LoginDialog = GObject.registerClass({
+                 continue;
+ 
+             return sessionProxy;
++        }
+         }
+ 
+         return null;
