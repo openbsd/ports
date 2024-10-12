@@ -3,7 +3,7 @@
 Index: clutter/clutter/clutter-frame-clock.c
 --- clutter/clutter/clutter-frame-clock.c.orig
 +++ clutter/clutter/clutter-frame-clock.c
-@@ -845,7 +845,7 @@ clutter_frame_clock_get_max_render_time_debug_info (Cl
+@@ -1048,7 +1048,7 @@ clutter_frame_clock_get_max_render_time_debug_info (Cl
    GString *string;
  
    string = g_string_new (NULL);
@@ -12,7 +12,7 @@ Index: clutter/clutter/clutter-frame-clock.c
                            clutter_frame_clock_compute_max_render_time_us (frame_clock));
  
    if (frame_clock->got_measurements_last_frame)
-@@ -857,9 +857,9 @@ clutter_frame_clock_get_max_render_time_debug_info (Cl
+@@ -1060,9 +1060,9 @@ clutter_frame_clock_get_max_render_time_debug_info (Cl
      MAX (frame_clock->longterm_max_update_duration_us,
           frame_clock->shortterm_max_update_duration_us);
  

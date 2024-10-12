@@ -1,15 +1,26 @@
 XXX: pkg-config bug:
 Package gsettings-desktop-schemas>=40.alpha was not found in the pkg-config search path
 
+last chunk: XXX push upstream
+
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -26,7 +26,7 @@ uprof_req = '>= 0.3'
- pango_req = '>= 1.46.0'
+@@ -26,7 +26,7 @@ pango_req = '>= 1.46.0'
  cairo_req = '>= 1.10.0'
  pangocairo_req = '>= 1.20'
+ pixman_req = '>= 0.42'
 -gsettings_desktop_schemas_req = '>= 40.alpha'
 +gsettings_desktop_schemas_req = '>= 40'
- json_glib_req = '>= 0.12.0'
  x11_req = '>= 1.7.0'
  xcomposite_req = '>= 0.4'
+ xkbcommon_req = '>= 0.4.3'
+@@ -609,6 +609,8 @@ if have_xwayland
+     cdata.set('HAVE_SYS_RANDOM', 1)
+   elif cc.has_header_symbol('linux/random.h', 'getrandom')
+     cdata.set('HAVE_LINUX_RANDOM', 1)
++  elif cc.has_header_symbol('stdlib.h', 'arc4random_buf')
++    cdata.set('HAVE_ARC4RANDOM_BUF', 1)
+   else
+     error('Required function getrandom not found')
+   endif

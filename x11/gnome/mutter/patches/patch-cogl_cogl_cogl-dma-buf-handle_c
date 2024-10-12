@@ -1,7 +1,7 @@
 Index: cogl/cogl/cogl-dma-buf-handle.c
 --- cogl/cogl/cogl-dma-buf-handle.c.orig
 +++ cogl/cogl/cogl-dma-buf-handle.c
-@@ -37,8 +37,10 @@
+@@ -36,8 +36,10 @@
  #include <errno.h>
  #include <gio/gio.h>
  #include <glib/gstdio.h>
@@ -12,7 +12,7 @@ Index: cogl/cogl/cogl-dma-buf-handle.c
  #include <sys/mman.h>
  #include <unistd.h>
  
-@@ -101,6 +103,7 @@ cogl_dma_buf_handle_free (CoglDmaBufHandle *dmabuf_han
+@@ -100,6 +102,7 @@ cogl_dma_buf_handle_free (CoglDmaBufHandle *dmabuf_han
    g_free (dmabuf_handle);
  }
  
@@ -20,7 +20,7 @@ Index: cogl/cogl/cogl-dma-buf-handle.c
  static gboolean
  sync_read (CoglDmaBufHandle  *dmabuf_handle,
             uint64_t           start_or_end,
-@@ -147,6 +150,7 @@ cogl_dma_buf_handle_sync_read_end (CoglDmaBufHandle  *
+@@ -146,6 +149,7 @@ cogl_dma_buf_handle_sync_read_end (CoglDmaBufHandle  *
  {
    return sync_read (dmabuf_handle, DMA_BUF_SYNC_END, error);
  }

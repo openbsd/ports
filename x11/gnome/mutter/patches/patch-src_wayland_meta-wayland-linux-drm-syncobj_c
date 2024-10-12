@@ -1,0 +1,17 @@
+Needed for drmGetCap (not needed if building with native backend)
+
+Index: src/wayland/meta-wayland-linux-drm-syncobj.c
+--- src/wayland/meta-wayland-linux-drm-syncobj.c.orig
++++ src/wayland/meta-wayland-linux-drm-syncobj.c
+@@ -22,7 +22,11 @@
+ 
+ #include "backends/native/meta-backend-native-types.h"
+ #include "backends/native/meta-device-pool.h"
++#ifdef HAVE_NATIVE_BACKEND
+ #include "backends/native/meta-renderer-native.h"
++#else
++#include <xf86drm.h>
++#endif
+ #include "meta/util.h"
+ #include "wayland/meta-wayland-buffer.h"
+ #include "wayland/meta-wayland-linux-drm-syncobj.h"

@@ -1,0 +1,18 @@
+Needs DMA_BUF_SYNC_READ.
+
+Index: src/wayland/meta-wayland-dma-buf.c
+--- src/wayland/meta-wayland-dma-buf.c.orig
++++ src/wayland/meta-wayland-dma-buf.c
+@@ -37,6 +37,7 @@
+ 
+ #include "wayland/meta-wayland-dma-buf.h"
+ 
++#if 0
+ #include <drm_fourcc.h>
+ #include <glib/gstdio.h>
+ #include <linux/dma-buf.h>
+@@ -1994,3 +1995,4 @@ static void
+ meta_wayland_dma_buf_manager_init (MetaWaylandDmaBufManager *dma_buf)
+ {
+ }
++#endif

@@ -1,0 +1,38 @@
+Last chunk:
+../mutter-46.5/src/core/meta-context-main.c:526:5: error: expected statement
+
+Index: src/core/meta-context-main.c
+--- src/core/meta-context-main.c.orig
++++ src/core/meta-context-main.c
+@@ -26,8 +26,12 @@
+ #include <gio/gio.h>
+ 
+ #ifdef HAVE_WAYLAND
++#ifdef __OpenBSD__
++#include <ConsoleKit/sd-login.h>
++#else
+ #include <systemd/sd-login.h>
+ #endif
++#endif
+ 
+ #include "backends/meta-monitor.h"
+ #include "backends/meta-monitor-manager-private.h"
+@@ -347,8 +351,10 @@ meta_context_main_get_x11_display_policy (MetaContext 
+ #ifdef HAVE_WAYLAND
+       if (context_main->options.no_x11)
+         return META_X11_DISPLAY_POLICY_DISABLED;
++#ifdef HAVE_NATIVE_BACKEND
+       else if (sd_pid_get_user_unit (0, &unit) < 0)
+         return META_X11_DISPLAY_POLICY_MANDATORY;
++#endif
+       else
+         return META_X11_DISPLAY_POLICY_ON_DEMAND;
+ #else /* HAVE_WAYLAND */
+@@ -508,7 +514,6 @@ meta_context_main_create_backend (MetaContext  *contex
+ #ifdef HAVE_X11
+       if (context_main->options.nested)
+         return create_nested_backend (context, error);
+-      else
+ #endif
+ #ifdef HAVE_NATIVE_BACKEND
+       if (context_main->options.headless)

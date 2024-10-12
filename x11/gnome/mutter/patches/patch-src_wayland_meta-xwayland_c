@@ -1,0 +1,54 @@
+XXX push upstream
+
+Index: src/wayland/meta-xwayland.c
+--- src/wayland/meta-xwayland.c.orig
++++ src/wayland/meta-xwayland.c
+@@ -36,6 +36,8 @@
+ #include <sys/random.h>
+ #elif defined(HAVE_LINUX_RANDOM)
+ #include <linux/random.h>
++#elif defined(HAVE_ARC4RANDOM_BUF)
++#include <stdlib.h>
+ #endif
+ #include <unistd.h>
+ #include <X11/extensions/Xrandr.h>
+@@ -598,9 +600,11 @@ open_display_sockets (MetaXWaylandManager  *manager,
+ {
+   int abstract_fd, unix_fd;
+ 
++#ifdef __linux__
+   abstract_fd = bind_to_abstract_socket (display_index, error);
+   if (abstract_fd < 0)
+     return FALSE;
++#endif
+ 
+   unix_fd = bind_to_unix_socket (display_index, error);
+   if (unix_fd < 0)
+@@ -609,6 +613,10 @@ open_display_sockets (MetaXWaylandManager  *manager,
+       return FALSE;
+     }
+ 
++#ifndef __linux__
++  abstract_fd = unix_fd;
++#endif
++
+   *abstract_fd_out = abstract_fd;
+   *unix_fd_out = unix_fd;
+ 
+@@ -684,12 +692,16 @@ prepare_auth_file (MetaXWaylandManager  *manager,
+                                          ".mutter-Xwaylandauth.XXXXXX",
+                                          NULL);
+ 
++#if defined(HAVE_SYS_RANDOM) || defined(HAVE_LINUX_RANDOM)
+   if (getrandom (auth_data, sizeof (auth_data), 0) != sizeof (auth_data))
+     {
+       g_set_error (error, G_IO_ERROR, g_io_error_from_errno (errno),
+                    "Failed to get random data: %s", g_strerror (errno));
+       return FALSE;
+     }
++#else /* HAVE_ARC4RANDOM_BUF */
++  arc4random_buf(auth_data, sizeof (auth_data));
++#endif
+ 
+   auth_entry.family = FamilyLocal;
+   auth_entry.address = (char *) g_get_host_name ();
