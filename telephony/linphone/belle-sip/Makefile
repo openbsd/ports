@@ -10,7 +10,7 @@ CONFIGURE_ARGS += -DENABLE_STRICT=NO
 
 LIB_DEPENDS =	telephony/linphone/bctoolbox \
 		telephony/linphone/belr
-WANTLIB += ${COMPILER_LIBCXX} bctoolbox belr m z
+WANTLIB += ${COMPILER_LIBCXX} bctoolbox bctoolbox-tester belr c m z
 
 #do-test:
 #	${WRKBUILD}/tester/belle_sip_tester --verbose --resource-dir ${WRKSRC}/tester/

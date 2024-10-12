@@ -1,6 +1,6 @@
 COMMENT =	graphical audio and video SIP phone
 
-V =		5.2.4
+V =		5.2.6
 MODULE =	linphone-desktop
 PKGNAME =	linphone-${V}
 
