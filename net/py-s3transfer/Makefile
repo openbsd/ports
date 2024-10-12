@@ -4,7 +4,7 @@
 
 COMMENT=		Amazon S3 transfer manager for Python
 
-MODPY_EGG_VERSION=	0.10.2
+MODPY_EGG_VERSION=	0.10.3
 DISTNAME=		s3transfer-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
