@@ -1,0 +1,3 @@
+PyGitHub is a Python library to access the GitHub REST API. This
+library enables you to manage GitHub resources such as repositories,
+user profiles, and organizations in your Python applications.
