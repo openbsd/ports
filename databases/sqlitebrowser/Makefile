@@ -2,8 +2,7 @@ COMMENT =	graphical interface to sqlite databases
 
 GH_ACCOUNT =	sqlitebrowser
 GH_PROJECT =	sqlitebrowser
-GH_TAGNAME =	v3.12.2
-REVISION =	0
+GH_TAGNAME =	v3.13.0
 
 CATEGORIES =	databases x11
 

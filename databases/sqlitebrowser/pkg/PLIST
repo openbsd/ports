@@ -3,5 +3,6 @@ share/applications/sqlitebrowser.desktop
 share/icons/hicolor/256x256/apps/sqlitebrowser.png
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
+share/icons/hicolor/scalable/apps/sqlitebrowser.svg
 share/metainfo/
 share/metainfo/sqlitebrowser.desktop.appdata.xml

@@ -1,0 +1,12 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -517,7 +517,7 @@ if((NOT WIN32 AND NOT APPLE) OR MINGW)
+     )
+ endif()
+ 
+-if(UNIX)
++if(UNIX AND NOT ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
+     target_link_libraries(${PROJECT_NAME} dl)
+ endif()
+ 
