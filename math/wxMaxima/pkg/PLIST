@@ -1,4 +1,6 @@
 @bin bin/wxmaxima
+@man man/de/man1/wxmaxima.1
+@man man/man1/wxmaxima.1
 share/applications/io.github.wxmaxima_developers.wxMaxima.desktop
 share/bash-completion/completions/wxmaxima
 share/doc/wxmaxima/
@@ -16,7 +18,6 @@ share/doc/wxmaxima/SidePanes.png
 share/doc/wxmaxima/Sidepane-TOC-convert-headings.png
 share/doc/wxmaxima/cell-example.png
 share/doc/wxmaxima/ezUnits.png
-share/doc/wxmaxima/header.html
 share/doc/wxmaxima/horizontal-cursor-between-cells.png
 share/doc/wxmaxima/horizontal-cursor-only.png
 share/doc/wxmaxima/locale-warning.png
@@ -35,6 +36,38 @@ share/doc/wxmaxima/wxmaxima.tr.html
 share/doc/wxmaxima/wxmaxima.uk.html
 share/doc/wxmaxima/wxmaxima.zh_CN.html
 share/doc/wxmaxima/wxsubscripts.png
+share/icons/hicolor/1024x1024/
+share/icons/hicolor/1024x1024/apps/
+share/icons/hicolor/1024x1024/apps/io.github.wxmaxima_developers.wxMaxima.png
+share/icons/hicolor/128x128/apps/io.github.wxmaxima_developers.wxMaxima.png
+share/icons/hicolor/150x150/
+share/icons/hicolor/150x150/apps/
+share/icons/hicolor/150x150/apps/io.github.wxmaxima_developers.wxMaxima.png
+share/icons/hicolor/16x16/apps/io.github.wxmaxima_developers.wxMaxima.png
+share/icons/hicolor/192x192/apps/io.github.wxmaxima_developers.wxMaxima.png
+share/icons/hicolor/22x22/apps/io.github.wxmaxima_developers.wxMaxima.png
+share/icons/hicolor/24x24/apps/io.github.wxmaxima_developers.wxMaxima.png
+share/icons/hicolor/256x256/apps/io.github.wxmaxima_developers.wxMaxima.png
+share/icons/hicolor/310x310/
+share/icons/hicolor/310x310/apps/
+share/icons/hicolor/310x310/apps/io.github.wxmaxima_developers.wxMaxima.png
+share/icons/hicolor/32x32/apps/io.github.wxmaxima_developers.wxMaxima.png
+share/icons/hicolor/36x36/apps/io.github.wxmaxima_developers.wxMaxima.png
+share/icons/hicolor/42x42/
+share/icons/hicolor/42x42/apps/
+share/icons/hicolor/42x42/apps/io.github.wxmaxima_developers.wxMaxima.png
+share/icons/hicolor/44x44/
+share/icons/hicolor/44x44/apps/
+share/icons/hicolor/44x44/apps/io.github.wxmaxima_developers.wxMaxima.png
+share/icons/hicolor/48x48/apps/io.github.wxmaxima_developers.wxMaxima.png
+share/icons/hicolor/512x512/apps/io.github.wxmaxima_developers.wxMaxima.png
+share/icons/hicolor/64x64/apps/io.github.wxmaxima_developers.wxMaxima.png
+share/icons/hicolor/72x72/apps/io.github.wxmaxima_developers.wxMaxima.png
+share/icons/hicolor/8x8/
+share/icons/hicolor/8x8/apps/
+share/icons/hicolor/8x8/apps/io.github.wxmaxima_developers.wxMaxima.png
+share/icons/hicolor/96x96/apps/io.github.wxmaxima_developers.wxMaxima.png
+share/icons/hicolor/scalable/apps/io.github.wxmaxima_developers.wxMaxima.svg
 share/locale/ca/LC_MESSAGES/wxMaxima.mo
 share/locale/cs/LC_MESSAGES/wxMaxima.mo
 share/locale/da/LC_MESSAGES/wxMaxima.mo
@@ -57,12 +90,6 @@ share/locale/tr/LC_MESSAGES/wxMaxima.mo
 share/locale/uk/LC_MESSAGES/wxMaxima.mo
 share/locale/zh_CN/LC_MESSAGES/wxMaxima.mo
 share/locale/zh_TW/LC_MESSAGES/wxMaxima.mo
-@mandir share/man/
-share/man/de/
-share/man/de/man1/
-@man share/man/de/man1/wxmaxima.1
-share/man/man1/
-@man share/man/man1/wxmaxima.1
 share/metainfo/io.github.wxmaxima_developers.wxMaxima.appdata.xml
 share/mime/packages/x-wxmathml.xml
 share/mime/packages/x-wxmaxima-batch.xml
@@ -73,7 +100,8 @@ share/pixmaps/text-x-wxmaxima-batch.svg
 share/pixmaps/wxmaxima-16.xpm
 share/pixmaps/wxmaxima-32.xpm
 share/wxMaxima/
-@tag update-mime-database
-@tag update-desktop-database
 share/wxMaxima/io.github.wxmaxima_developers.wxMaxima.png
 share/wxMaxima/io.github.wxmaxima_developers.wxMaxima.svg
+@tag update-mime-database
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

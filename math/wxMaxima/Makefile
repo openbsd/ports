@@ -1,6 +1,7 @@
 COMMENT =		wxWidgets GUI for the computer algebra system maxima
 
 V =			24.02.1
+REVISION =		0
 GH_ACCOUNT =		wxMaxima-developers
 GH_PROJECT =		wxmaxima
 GH_TAGNAME =		Version-$V
@@ -26,7 +27,9 @@ BUILD_DEPENDS =		devel/gettext,-tools
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			math/gnuplot \
-			math/maxima
+			math/maxima \
+			misc/shared-mime-info \
+			x11/gtk+4,-guic
 
 LIB_DEPENDS =		x11/wxWidgets \
 			x11/wxWidgets,-webview
