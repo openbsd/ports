@@ -1,4 +1,5 @@
 @bin bin/davegnukem
+@man man/man6/davegnukem.6
 share/applications/davegnukem.desktop
 share/davegnukem/
 share/davegnukem/credits.tga
@@ -104,8 +105,5 @@ share/doc/davegnukem-data/README.md
 share/doc/davegnukem/HISTORY.txt
 share/doc/davegnukem/README.md
 share/icons/hicolor/32x32/apps/davegnukem.png
-@mandir share/man/
-share/man/man6/
-@man share/man/man6/davegnukem.6
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

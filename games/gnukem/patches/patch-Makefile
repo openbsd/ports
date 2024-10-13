@@ -40,3 +40,16 @@ Index: Makefile
  	# data
  	mkdir -p $(DESTDIR)$(DATA_DIR)
  	cp -fR data/* $(DESTDIR)$(DATA_DIR)
+@@ -91,9 +91,9 @@ install: 
+ 	cp -f debian/icons/hicolor/32x32/apps/$(BIN).png $(DESTDIR)$(PREFIX)/share/icons/hicolor/32x32/apps
+ 	chmod 644 $(DESTDIR)$(PREFIX)/share/icons/hicolor/32x32/apps/$(BIN).png
+ 	# manual page
+-	mkdir -p $(DESTDIR)$(PREFIX)/share/man/man6
+-	sed 's/VERSION/$(VERSION)/' < debian/$(BIN).6 > $(DESTDIR)$(PREFIX)/share/man/man6/$(BIN).6
+-	chmod 644 $(DESTDIR)$(PREFIX)/share/man/man6/$(BIN).6
++	mkdir -p $(DESTDIR)$(PREFIX)/man/man6
++	sed 's/VERSION/$(VERSION)/' < debian/$(BIN).6 > $(DESTDIR)$(PREFIX)/man/man6/$(BIN).6
++	chmod 644 $(DESTDIR)$(PREFIX)/man/man6/$(BIN).6
+ 
+ uninstall:
+ 	rm -f $(DESTDIR)$(PREFIX)/games/$(BIN) 

@@ -1,4 +1,5 @@
 V =		1.0.3
+REVISION =	0
 COMMENT =	open source retro-style 2D scrolling platform shooter game
 DISTFILES =	davegnukem_${V}.orig.tar.xz \
 		davegnukem_${V}.orig-data.tar.xz
