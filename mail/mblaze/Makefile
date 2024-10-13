@@ -1,12 +1,11 @@
 COMMENT =	set of Maildir utilities
 
-DISTNAME =	mblaze-1.2
-REVISION =	1
+DISTNAME =	mblaze-1.3
 CATEGORIES =	mail
 
 HOMEPAGE =	https://git.vuxu.org/mblaze/
 
-MAINTAINER =	Lucas <lucas@sexy.is>
+MAINTAINER =	Omar Polo <op@openbsd.org>
 
 # Public domain
 PERMIT_PACKAGE =	Yes
