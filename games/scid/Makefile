@@ -1,6 +1,8 @@
 # src/codec_scid5.h:532:40: error: non-constant-expression cannot be narrowed from type 'std::tuple_element<1, std::pair <unsigned char, unsigned long long>>::type' (aka 'unsigned long long') to 'std::basic_string_view::size_type' (aka 'unsigned long') in initializer list [-Wc++11-narrowing]
 ONLY_FOR_ARCHS = ${LP64_ARCHS}
 
+BROKEN-sparc64 = eg++: error: unrecognized command line option '-std=c++20'
+
 V =		5.0.2
 COMMENT =	chess database software
 DISTNAME =	scid_src_${V}
