@@ -1,0 +1,40 @@
+From 3c54d2278eba24fe75ff2c04b74807e118ed7562 Mon Sep 17 00:00:00 2001
+From: Pablo Saavedra <psaavedra@igalia.com>
+Date: Thu, 10 Oct 2024 15:11:47 +0200
+Subject: [PATCH] [JSC] Fix build failure on musl: Add fallback for roundeven
+ and roundevenf https://bugs.webkit.org/show_bug.cgi?id=281216
+
+Modified to remove OS(LINUX) from #if
+
+Index: Source/JavaScriptCore/runtime/MathCommon.cpp
+--- Source/JavaScriptCore/runtime/MathCommon.cpp.orig
++++ Source/JavaScriptCore/runtime/MathCommon.cpp
+@@ -635,6 +635,28 @@ JSC_DEFINE_NOEXCEPT_JIT_OPERATION(f64_nearest, double,
+     return std::nearbyint(operand);
+ }
+ 
++#if !defined(__GLIBC__)
++static inline float roundevenf(float operand)
++{
++    float rounded = roundf(operand);
++    if (fabsf(operand - rounded) == 0.5f) {
++        if (fmod(rounded, 2.0f) != 0.0f)
++            return rounded - copysignf(1.0f, operand);
++    }
++    return rounded;
++}
++
++static inline double roundeven(double operand)
++{
++    double rounded = round(operand);
++    if (fabs(operand - rounded) == 0.5) {
++        if (fmod(rounded, 2.0) != 0.0)
++            return rounded - copysign(1.0, operand);
++    }
++    return rounded;
++}
++#endif
++
+ JSC_DEFINE_NOEXCEPT_JIT_OPERATION(f32_roundeven, float, (float operand)) { return roundevenf(operand); }
+ JSC_DEFINE_NOEXCEPT_JIT_OPERATION(f64_roundeven, double, (double operand)) { return roundeven(operand); }
+ JSC_DEFINE_NOEXCEPT_JIT_OPERATION(f32_trunc, float, (float operand)) { return std::trunc(operand); }
