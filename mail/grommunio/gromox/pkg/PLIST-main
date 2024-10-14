@@ -13,6 +13,12 @@
 @extraunexec rm -rf /var/db/gromox/*
 @extraunexec rm -rf /var/log/gromox/*
 lib/gromox/
+@static-lib lib/libgromox_auth.a
+lib/libgromox_auth.la
+@lib lib/libgromox_auth.so.${LIBgromox_auth_VERSION}
+@static-lib lib/libgromox_authz.a
+lib/libgromox_authz.la
+@lib lib/libgromox_authz.so.${LIBgromox_authz_VERSION}
 @static-lib lib/libgromox_common.a
 lib/libgromox_common.la
 @lib lib/libgromox_common.so.${LIBgromox_common_VERSION}
@@ -64,12 +70,6 @@ lib/libgxp_exchange_nsp.la
 @static-lib lib/libgxp_exchange_rfr.a
 lib/libgxp_exchange_rfr.la
 @lib lib/libgxp_exchange_rfr.so.${LIBgxp_exchange_rfr_VERSION}
-@static-lib lib/libgxs_authmgr.a
-lib/libgxs_authmgr.la
-@lib lib/libgxs_authmgr.so.${LIBgxs_authmgr_VERSION}
-@static-lib lib/libgxs_dnsbl_filter.a
-lib/libgxs_dnsbl_filter.la
-@lib lib/libgxs_dnsbl_filter.so.${LIBgxs_dnsbl_filter_VERSION}
 @static-lib lib/libgxs_event_proxy.a
 lib/libgxs_event_proxy.la
 @lib lib/libgxs_event_proxy.so.${LIBgxs_event_proxy_VERSION}
@@ -79,9 +79,6 @@ lib/libgxs_event_stub.la
 @static-lib lib/libgxs_exmdb_provider.a
 lib/libgxs_exmdb_provider.la
 @lib lib/libgxs_exmdb_provider.so.${LIBgxs_exmdb_provider_VERSION}
-@static-lib lib/libgxs_ldap_adaptor.a
-lib/libgxs_ldap_adaptor.la
-@lib lib/libgxs_ldap_adaptor.so.${LIBgxs_ldap_adaptor_VERSION}
 @static-lib lib/libgxs_midb_agent.a
 lib/libgxs_midb_agent.la
 @lib lib/libgxs_midb_agent.so.${LIBgxs_midb_agent_VERSION}
@@ -94,9 +91,6 @@ lib/libgxs_ruleproc.la
 @static-lib lib/libgxs_timer_agent.a
 lib/libgxs_timer_agent.la
 @lib lib/libgxs_timer_agent.so.${LIBgxs_timer_agent_VERSION}
-@static-lib lib/libgxs_user_filter.a
-lib/libgxs_user_filter.la
-@lib lib/libgxs_user_filter.so.${LIBgxs_user_filter_VERSION}
 lib/systemd/
 lib/systemd/system/
 lib/systemd/system/gromox-delivery-queue.service
@@ -127,6 +121,7 @@ libexec/gromox/kdb-uidextract
 libexec/gromox/kdb-uidextract-limited
 @bin libexec/gromox/midb
 @bin libexec/gromox/pop3
+@bin libexec/gromox/textmapquery
 @bin libexec/gromox/timer
 @bin libexec/gromox/zcore
 man/man4/alias_resolve.4gx
@@ -166,6 +161,7 @@ man/man8/event.8gx
 @man man/man8/gromox-compress.8
 @man man/man8/gromox-dbop.8
 @man man/man8/gromox-dscli.8
+@man man/man8/gromox-e2ghelper.8
 @man man/man8/gromox-eml2mbox.8
 @man man/man8/gromox-eml2mt.8
 @man man/man8/gromox-exm2eml.8

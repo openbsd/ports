@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS=	${LLD_ARCHS}
 COMMENT-main=	groupware server backend with RPC, IMAP, POP3 support
 COMMENT-mapi=	gromox MAPI extensions for PHP
 
-V=		2.31
+V=		2.34
 
 # required for mime.types
 MAILCAP_V=	2-1-54
@@ -16,13 +16,15 @@ PKGNAME-mapi=	gromox-mapi-${V}
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	gromox
-GH_COMMIT=	4d271dcf96555cda18918c19b368ce73d3b92c2e
+GH_COMMIT=	de7ce351742b07c97f3fa61d7c39aa0122445fb8
 
 SITES.a=	https://pagure.io/mailcap/archive/r${MAILCAP_V}/
 DISTFILES.a=	mailcap-r${MAILCAP_V}.tar.gz
 
 CATEGORIES=	mail www productivity
 
+SHARED_LIBS +=  gromox_auth               0.0 # 0.0
+SHARED_LIBS +=  gromox_authz              0.0 # 0.0
 SHARED_LIBS +=  gromox_common             0.0 # 0.0
 SHARED_LIBS +=  gromox_cplus              0.0 # 0.0
 SHARED_LIBS +=  gromox_dbop               0.0 # 0.0
@@ -41,7 +43,6 @@ SHARED_LIBS +=  gxm_exmdb_local           0.0 # 0.0
 SHARED_LIBS +=  gxp_exchange_emsmdb       0.0 # 0.0
 SHARED_LIBS +=  gxp_exchange_nsp          0.0 # 0.0
 SHARED_LIBS +=  gxp_exchange_rfr          0.0 # 0.0
-SHARED_LIBS +=  gxs_authmgr               0.0 # 0.0
 SHARED_LIBS +=  gxs_dnsbl_filter          0.0 # 0.0
 SHARED_LIBS +=  gxs_event_proxy           0.0 # 0.0
 SHARED_LIBS +=  gxs_event_stub            0.0 # 0.0
@@ -51,7 +52,6 @@ SHARED_LIBS +=  gxs_midb_agent            0.0 # 0.0
 SHARED_LIBS +=  gxs_mysql_adaptor         0.0 # 0.0
 SHARED_LIBS +=  gxs_ruleproc              0.0 # 0.0
 SHARED_LIBS +=  gxs_timer_agent           0.0 # 0.0
-SHARED_LIBS +=  gxs_user_filter           0.0 # 0.0
 
 MULTI_PACKAGES=	-main -mapi
 
@@ -94,7 +94,8 @@ LIB_DEPENDS-main= 	archivers/zstd \
 			textproc/libxml \
 			textproc/tinyxml2
 
-WANTLIB-mapi += ${WANTLIB} HX fmt gromox_common m
+WANTLIB-mapi += ${WANTLIB} HX crypto fmt gromox_common gromox_email
+WANTLIB-mapi += gromox_mapi lzma m sqlite3 ssl xml2 z
 
 LIB_DEPENDS-mapi=	${BASE_PKGPATH}>=${V} \
 			archivers/zstd \

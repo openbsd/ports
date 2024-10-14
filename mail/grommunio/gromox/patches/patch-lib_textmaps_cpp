@@ -1,7 +1,7 @@
 Index: lib/textmaps.cpp
 --- lib/textmaps.cpp.orig
 +++ lib/textmaps.cpp
-@@ -260,7 +260,7 @@ void textmaps_init(const char *datapath)
+@@ -319,7 +319,7 @@ void textmaps_init(const char *datapath)
  		mlog(LV_INFO, "textmaps: lang_charset: %zu mappings",
  		        g_lang2cset_map.size());
  		smap_read("mime_extension.txt", datapath, g_ext2mime_map, g_mime2ext_map);
