@@ -2,6 +2,7 @@ COMMENT=	C/C++ compiler front-end to cache compiled object code
 
 V=		4.10.2
 DISTNAME=	ccache-$V
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -20,7 +21,8 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 COMPILER=	base-clang ports-gcc
 
-BUILD_DEPENDS=	textproc/asciidoctor
+BUILD_DEPENDS=	textproc/asciidoctor \
+		devel/tl-expected
 LIB_DEPENDS=	archivers/zstd \
 		databases/libhiredis \
 		devel/fmt \
