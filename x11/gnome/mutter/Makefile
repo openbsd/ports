@@ -36,6 +36,7 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			sysutils/consolekit \
 			wayland/libevdev-openbsd \
 			wayland/libinput-openbsd \
+			wayland/wayland-protocols \
 			x11/gnome/settings-daemon
 
 LIB_DEPENDS=		audio/libcanberra \
