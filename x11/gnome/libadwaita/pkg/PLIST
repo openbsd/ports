@@ -2,6 +2,7 @@
 include/libadwaita-1/
 include/libadwaita-1/adw-about-dialog.h
 include/libadwaita-1/adw-about-window.h
+include/libadwaita-1/adw-accent-color.h
 include/libadwaita-1/adw-action-row.h
 include/libadwaita-1/adw-alert-dialog.h
 include/libadwaita-1/adw-animation-target.h
@@ -12,9 +13,11 @@ include/libadwaita-1/adw-application.h
 include/libadwaita-1/adw-avatar.h
 include/libadwaita-1/adw-banner.h
 include/libadwaita-1/adw-bin.h
+include/libadwaita-1/adw-bottom-sheet.h
 include/libadwaita-1/adw-breakpoint-bin.h
 include/libadwaita-1/adw-breakpoint.h
 include/libadwaita-1/adw-button-content.h
+include/libadwaita-1/adw-button-row.h
 include/libadwaita-1/adw-carousel-indicator-dots.h
 include/libadwaita-1/adw-carousel-indicator-lines.h
 include/libadwaita-1/adw-carousel.h
@@ -31,10 +34,13 @@ include/libadwaita-1/adw-expander-row.h
 include/libadwaita-1/adw-flap.h
 include/libadwaita-1/adw-fold-threshold-policy.h
 include/libadwaita-1/adw-header-bar.h
+include/libadwaita-1/adw-layout-slot.h
+include/libadwaita-1/adw-layout.h
 include/libadwaita-1/adw-leaflet.h
 include/libadwaita-1/adw-length-unit.h
 include/libadwaita-1/adw-main.h
 include/libadwaita-1/adw-message-dialog.h
+include/libadwaita-1/adw-multi-layout-view.h
 include/libadwaita-1/adw-navigation-direction.h
 include/libadwaita-1/adw-navigation-split-view.h
 include/libadwaita-1/adw-navigation-view.h
@@ -46,6 +52,8 @@ include/libadwaita-1/adw-preferences-page.h
 include/libadwaita-1/adw-preferences-row.h
 include/libadwaita-1/adw-preferences-window.h
 include/libadwaita-1/adw-spin-row.h
+include/libadwaita-1/adw-spinner-paintable.h
+include/libadwaita-1/adw-spinner.h
 include/libadwaita-1/adw-split-button.h
 include/libadwaita-1/adw-spring-animation.h
 include/libadwaita-1/adw-spring-params.h
@@ -72,6 +80,7 @@ include/libadwaita-1/adw-window-title.h
 include/libadwaita-1/adw-window.h
 include/libadwaita-1/adwaita.h
 lib/girepository-1.0/Adw-1.typelib
+@lib lib/libadwaita-1-internal.so.${LIBadwaita-1-internal_VERSION}
 @lib lib/libadwaita-1.so.${LIBadwaita-1_VERSION}
 lib/pkgconfig/libadwaita-1.pc
 share/applications/org.gnome.Adwaita1.Demo.desktop
@@ -108,11 +117,11 @@ share/locale/kk/LC_MESSAGES/libadwaita.mo
 share/locale/ko/LC_MESSAGES/libadwaita.mo
 share/locale/lt/LC_MESSAGES/libadwaita.mo
 share/locale/lv/LC_MESSAGES/libadwaita.mo
-share/locale/ml/LC_MESSAGES/libadwaita.mo
 share/locale/nb/LC_MESSAGES/libadwaita.mo
 share/locale/ne/LC_MESSAGES/libadwaita.mo
 share/locale/nl/LC_MESSAGES/libadwaita.mo
 share/locale/oc/LC_MESSAGES/libadwaita.mo
+share/locale/pa/LC_MESSAGES/libadwaita.mo
 share/locale/pl/LC_MESSAGES/libadwaita.mo
 share/locale/pt/LC_MESSAGES/libadwaita.mo
 share/locale/pt_BR/LC_MESSAGES/libadwaita.mo
@@ -122,6 +131,7 @@ share/locale/sk/LC_MESSAGES/libadwaita.mo
 share/locale/sl/LC_MESSAGES/libadwaita.mo
 share/locale/sr/LC_MESSAGES/libadwaita.mo
 share/locale/sv/LC_MESSAGES/libadwaita.mo
+share/locale/th/LC_MESSAGES/libadwaita.mo
 share/locale/tr/LC_MESSAGES/libadwaita.mo
 share/locale/uk/LC_MESSAGES/libadwaita.mo
 share/locale/vi/LC_MESSAGES/libadwaita.mo
