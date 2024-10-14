@@ -1,0 +1,15 @@
+struct arpreq hasn't been used since "rewrite to merge arp and routing tables"
+in CSRG if_ether.c 7.14 (Berkeley) 06/25/91 and will be removed from system headers
+
+Index: src/eui/Eui48.cc
+--- src/eui/Eui48.cc.orig
++++ src/eui/Eui48.cc
+@@ -344,7 +344,7 @@ Eui::Eui48::lookup(const Ip::Address &c)
+         close(tmpSocket);
+     }
+ 
+-#elif _SQUID_FREEBSD_ || _SQUID_NETBSD_ || _SQUID_OPENBSD_ || _SQUID_DRAGONFLY_ || _SQUID_KFREEBSD_
++#elif _SQUID_FREEBSD_ || _SQUID_NETBSD_ || _SQUID_DRAGONFLY_ || _SQUID_KFREEBSD_
+ 
+     int mib[6];
+ 
