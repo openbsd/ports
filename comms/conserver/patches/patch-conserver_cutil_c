@@ -2,6 +2,8 @@ ifr-related hunks: fix unaligned access on strict-alignment 64-bit
 
 first+last hunks: handle usb serial devices via ucomnames
 
+XXX find_ucom() doesn't handle devices 10+ correctly; uses /dev/cuaU10 not /dev/cuaUa
+
 Index: conserver/cutil.c
 --- conserver/cutil.c.orig
 +++ conserver/cutil.c
