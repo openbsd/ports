@@ -7,7 +7,7 @@ COMMENT-guic=		gtk+ icon theme caching utility
 COMMENT-media=		gtk+ media engine
 
 GNOME_PROJECT=		gtk
-GNOME_VERSION=		4.14.5
+GNOME_VERSION=		4.16.3
 
 PKGNAME-main=		gtk+4-${GNOME_VERSION}
 PKGNAME-cups=		gtk+4-cups-${GNOME_VERSION}
@@ -17,7 +17,7 @@ PKGNAME-media=		gtk+4-media-${GNOME_VERSION}
 
 CATEGORIES=		x11 devel
 
-SHARED_LIBS += gtk-4                     5.2 # 1.1400.5
+SHARED_LIBS += gtk-4                     5.3 # 1.1600.3
 
 HOMEPAGE=		http://www.gtk.org/
 
@@ -70,7 +70,7 @@ WANTLIB-main += c cairo cairo-gobject cairo-script-interpreter epoxy
 WANTLIB-main += fontconfig fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB-main += gmodule-2.0 gobject-2.0 graphene-1.0 harfbuzz intl
 WANTLIB-main += jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 png tiff
-WANTLIB-main += wayland-client wayland-egl xkbcommon
+WANTLIB-main += wayland-client wayland-egl xkbcommon harfbuzz-subset
 
 LIB_DEPENDS-cups=	print/cups,-libs \
 			${BASE_PKGPATH},-main=${GNOME_VERSION}

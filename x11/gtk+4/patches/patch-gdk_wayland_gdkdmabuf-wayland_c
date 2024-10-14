@@ -1,0 +1,13 @@
+Index: gdk/wayland/gdkdmabuf-wayland.c
+--- gdk/wayland/gdkdmabuf-wayland.c.orig
++++ gdk/wayland/gdkdmabuf-wayland.c
+@@ -9,7 +9,9 @@
+ 
+ #include <fcntl.h>
+ #include <sys/mman.h>
++#ifdef __linux__
+ #include <sys/sysmacros.h>
++#endif
+ 
+ #include "linux-dmabuf-unstable-v1-client-protocol.h"
+ 

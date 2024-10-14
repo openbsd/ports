@@ -2,6 +2,7 @@
 @pkgpath x11/gtk+4,-cloudprint
 @bin bin/gtk4-builder-tool
 @bin bin/gtk4-encode-symbolic-svg
+@bin bin/gtk4-image-tool
 @bin bin/gtk4-launch
 @bin bin/gtk4-path-tool
 @bin bin/gtk4-query-settings
@@ -14,7 +15,9 @@ include/gtk-4.0/gdk/gdk.h
 include/gtk-4.0/gdk/gdkapplaunchcontext.h
 include/gtk-4.0/gdk/gdkcairo.h
 include/gtk-4.0/gdk/gdkcairocontext.h
+include/gtk-4.0/gdk/gdkcicpparams.h
 include/gtk-4.0/gdk/gdkclipboard.h
+include/gtk-4.0/gdk/gdkcolorstate.h
 include/gtk-4.0/gdk/gdkconfig.h
 include/gtk-4.0/gdk/gdkcontentdeserializer.h
 include/gtk-4.0/gdk/gdkcontentformats.h
@@ -46,6 +49,7 @@ include/gtk-4.0/gdk/gdkgltexturebuilder.h
 include/gtk-4.0/gdk/gdkkeys.h
 include/gtk-4.0/gdk/gdkkeysyms.h
 include/gtk-4.0/gdk/gdkmemorytexture.h
+include/gtk-4.0/gdk/gdkmemorytexturebuilder.h
 include/gtk-4.0/gdk/gdkmonitor.h
 include/gtk-4.0/gdk/gdkpaintable.h
 include/gtk-4.0/gdk/gdkpango.h
@@ -431,6 +435,7 @@ lib/pkgconfig/gtk4.pc
 @man man/man1/gtk4-broadwayd.1
 @man man/man1/gtk4-builder-tool.1
 @man man/man1/gtk4-encode-symbolic-svg.1
+@man man/man1/gtk4-image-tool.1
 @man man/man1/gtk4-launch.1
 @man man/man1/gtk4-path-tool.1
 @man man/man1/gtk4-query-settings.1
