@@ -1,6 +1,6 @@
 COMMENT=	create and manage certificates, CSRs, keys, etc
 
-V=		2.6.0
+V=		2.7.0
 DISTNAME=	xca-$V
 CATEGORIES=	security x11
 
