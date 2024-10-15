@@ -36,7 +36,7 @@ Index: Makefile
  
  TEST_SRCS:=$(wildcard test/*.cpp test/test_helpers/*.cpp)
  TEST_OBJS:=$(patsubst %.cpp,%.o,$(TEST_SRCS))
-@@ -121,7 +121,6 @@ CLANG_TIDY?=clang-tidy
+@@ -123,7 +123,6 @@ CLANG_TIDY?=clang-tidy
  
  TEXTCONV=./txt2h
  RM=rm -f
@@ -44,7 +44,7 @@ Index: Makefile
  
  all: doc $(NEWSBOAT) $(PODBOAT) mo-files
  
-@@ -351,9 +350,22 @@ install-docs: doc
+@@ -361,9 +360,22 @@ install-docs: doc
  	$(MKDIR) $(DESTDIR)$(docdir)
  	$(INSTALL) -m 644 doc/xhtml/* $(DESTDIR)$(docdir)
  	$(INSTALL) -m 644 CHANGELOG.md $(DESTDIR)$(docdir)
