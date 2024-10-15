@@ -1,6 +1,6 @@
 COMMENT=	optional static type checker for Python
 
-MODPY_EGG_VERSION=	1.10.1
+MODPY_EGG_VERSION=	1.12.0
 DISTNAME=	mypy-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 

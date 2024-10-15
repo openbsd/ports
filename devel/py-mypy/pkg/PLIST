@@ -58,6 +58,8 @@ lib/python${MODPY_VERSION}/site-packages/mypy/${MODPY_PYCACHE}dmypy_util.${MODPY
 lib/python${MODPY_VERSION}/site-packages/mypy/${MODPY_PYCACHE}dmypy_util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mypy/${MODPY_PYCACHE}erasetype.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mypy/${MODPY_PYCACHE}erasetype.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mypy/${MODPY_PYCACHE}error_formatter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/mypy/${MODPY_PYCACHE}error_formatter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mypy/${MODPY_PYCACHE}errorcodes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mypy/${MODPY_PYCACHE}errorcodes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mypy/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -259,6 +261,7 @@ lib/python${MODPY_VERSION}/site-packages/mypy/dmypy_os.py
 lib/python${MODPY_VERSION}/site-packages/mypy/dmypy_server.py
 lib/python${MODPY_VERSION}/site-packages/mypy/dmypy_util.py
 lib/python${MODPY_VERSION}/site-packages/mypy/erasetype.py
+lib/python${MODPY_VERSION}/site-packages/mypy/error_formatter.py
 lib/python${MODPY_VERSION}/site-packages/mypy/errorcodes.py
 lib/python${MODPY_VERSION}/site-packages/mypy/errors.py
 lib/python${MODPY_VERSION}/site-packages/mypy/evalexpr.py
@@ -450,6 +453,8 @@ lib/python${MODPY_VERSION}/site-packages/mypy/test/${MODPY_PYCACHE}testmodulefin
 lib/python${MODPY_VERSION}/site-packages/mypy/test/${MODPY_PYCACHE}testmodulefinder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mypy/test/${MODPY_PYCACHE}testmypyc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mypy/test/${MODPY_PYCACHE}testmypyc.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mypy/test/${MODPY_PYCACHE}testoutput.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/mypy/test/${MODPY_PYCACHE}testoutput.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mypy/test/${MODPY_PYCACHE}testparse.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mypy/test/${MODPY_PYCACHE}testparse.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mypy/test/${MODPY_PYCACHE}testpep561.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -525,6 +530,7 @@ lib/python${MODPY_VERSION}/site-packages/mypy/test/testipc.py
 lib/python${MODPY_VERSION}/site-packages/mypy/test/testmerge.py
 lib/python${MODPY_VERSION}/site-packages/mypy/test/testmodulefinder.py
 lib/python${MODPY_VERSION}/site-packages/mypy/test/testmypyc.py
+lib/python${MODPY_VERSION}/site-packages/mypy/test/testoutput.py
 lib/python${MODPY_VERSION}/site-packages/mypy/test/testparse.py
 lib/python${MODPY_VERSION}/site-packages/mypy/test/testpep561.py
 lib/python${MODPY_VERSION}/site-packages/mypy/test/testpythoneval.py
@@ -571,6 +577,9 @@ lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/_dummy_thread.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/_dummy_threading.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/_heapq.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/_imp.pyi
+lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/_interpchannels.pyi
+lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/_interpqueues.pyi
+lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/_interpreters.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/_json.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/_locale.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/_lsprof.pyi
@@ -592,6 +601,7 @@ lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/_tracemalloc.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/_typeshed/
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/_typeshed/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/_typeshed/dbapi.pyi
+lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/_typeshed/importlib.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/_typeshed/wsgi.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/_typeshed/xml.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/_warnings.pyi
@@ -695,6 +705,7 @@ lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/dbm/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/dbm/dumb.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/dbm/gnu.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/dbm/ndbm.pyi
+lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/dbm/sqlite3.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/decimal.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/difflib.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/dis.pyi
@@ -830,9 +841,12 @@ lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/importlib/machiner
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/importlib/metadata/
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/importlib/metadata/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/importlib/metadata/_meta.pyi
+lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/importlib/metadata/diagnose.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/importlib/readers.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/importlib/resources/
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/importlib/resources/__init__.pyi
+lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/importlib/resources/_common.pyi
+lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/importlib/resources/_functional.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/importlib/resources/abc.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/importlib/resources/readers.pyi
 lib/python${MODPY_VERSION}/site-packages/mypy/typeshed/stdlib/importlib/resources/simple.pyi
@@ -1457,6 +1471,7 @@ lib/python${MODPY_VERSION}/site-packages/mypyc/lib-rt/misc_ops.c
 lib/python${MODPY_VERSION}/site-packages/mypyc/lib-rt/module_shim.tmpl
 lib/python${MODPY_VERSION}/site-packages/mypyc/lib-rt/mypyc_util.h
 lib/python${MODPY_VERSION}/site-packages/mypyc/lib-rt/pythoncapi_compat.h
+lib/python${MODPY_VERSION}/site-packages/mypyc/lib-rt/pythonsupport.c
 lib/python${MODPY_VERSION}/site-packages/mypyc/lib-rt/pythonsupport.h
 lib/python${MODPY_VERSION}/site-packages/mypyc/lib-rt/set_ops.c
 lib/python${MODPY_VERSION}/site-packages/mypyc/lib-rt/setup.py
@@ -1608,6 +1623,7 @@ lib/python${MODPY_VERSION}/site-packages/mypyc/test-data/run-misc.test
 lib/python${MODPY_VERSION}/site-packages/mypyc/test-data/run-multimodule.test
 lib/python${MODPY_VERSION}/site-packages/mypyc/test-data/run-mypy-sim.test
 lib/python${MODPY_VERSION}/site-packages/mypyc/test-data/run-primitives.test
+lib/python${MODPY_VERSION}/site-packages/mypyc/test-data/run-python312.test
 lib/python${MODPY_VERSION}/site-packages/mypyc/test-data/run-python37.test
 lib/python${MODPY_VERSION}/site-packages/mypyc/test-data/run-python38.test
 lib/python${MODPY_VERSION}/site-packages/mypyc/test-data/run-sets.test
