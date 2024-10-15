@@ -1,12 +1,12 @@
 COMMENT =		source of the rust-openssl crate for regression testing
 
 # Follows HEAD
-VERSION =		20241007
+VERSION =		20241015
 DISTNAME =		rust-openssl-tests-${VERSION}
 
 GH_ACCOUNT =		sfackler
 GH_PROJECT =		rust-openssl
-GH_COMMIT =		1b51ba5de04b185e9cb2c1063e310bd190e28cad
+GH_COMMIT =		ee3b024a7f0103a0e37c5df7b333e75a30df07da
 
 CATEGORIES =		security devel
 

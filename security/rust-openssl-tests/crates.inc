@@ -1,10 +1,10 @@
 MODCARGO_CRATES +=	aho-corasick	1.1.3	# Unlicense OR MIT
 MODCARGO_CRATES +=	annotate-snippets	0.9.2	# Apache-2.0/MIT
-MODCARGO_CRATES +=	bindgen	0.69.4	# BSD-3-Clause
+MODCARGO_CRATES +=	bindgen	0.69.5	# BSD-3-Clause
 MODCARGO_CRATES +=	bitflags	1.3.2	# MIT/Apache-2.0
 MODCARGO_CRATES +=	bitflags	2.6.0	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	bssl-sys	0.1.0	# MIT
-MODCARGO_CRATES +=	cc	1.1.28	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	cc	1.1.30	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	cexpr	0.6.0	# Apache-2.0/MIT
 MODCARGO_CRATES +=	cfg-if	0.1.10	# MIT/Apache-2.0
 MODCARGO_CRATES +=	cfg-if	1.0.0	# MIT/Apache-2.0
