@@ -2,8 +2,7 @@ COMMENT =	client for the I2P anonymous network
 
 GH_ACCOUNT =	PurpleI2P
 GH_PROJECT =	i2pd
-GH_TAGNAME =	2.53.1
-REVISION =	0
+GH_TAGNAME =	2.54.0
 
 CATEGORIES =	net
 HOMEPAGE =	https://i2pd.website
@@ -43,6 +42,7 @@ post-install:
 
 do-test:
 	cd ${WRKDIST}/tests && ${MAKE_PROGRAM} CXX="${CXX}" \
-		INCFLAGS="-L${LOCALBASE}/lib -I${LOCALBASE}/include ${CFLAGS}"
+		LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}" \
+		INCFLAGS="-I${LOCALBASE}/include -I../libi2pd ${CXXFLAGS}"
 
 .include <bsd.port.mk>
