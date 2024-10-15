@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1658 2024/10/08 07:58:34 tb Exp $
+# $OpenBSD: Quirks.pm,v 1.1659 2024/10/15 10:47:21 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1984,6 +1984,7 @@ setup_obsolete_reason(
 	3 => 'pavuk',
 	69 => 'potamus',
 	3 => 'fleet',
+	70 => 'xml-security-c',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -2070,6 +2071,7 @@ my $obsolete_message = {
 	67 => "unmaintained upstream, outdated for decades, only supports old crypto, expected dhclient",
 	68 => "unmaintained upstream, outdated for decades, does not work, expected dhclient, use unwind.conf(5) 'block list file' instead",
 	69 => "upstream is dead, does not support ffmpeg > 6",
+	70 => "retired upstream, no longer needed, only consumer security/libdigidocpp switched to textproc/libxml + security/xmlsec",
 };
 
 # ->is_base_system($handle, $state):

@@ -408,7 +408,6 @@
      SUBDIR += wpscan
      SUBDIR += wycheproof-testvectors
      SUBDIR += xca
-     SUBDIR += xml-security-c
      SUBDIR += xmlsec
      SUBDIR += yara
      SUBDIR += yubico
