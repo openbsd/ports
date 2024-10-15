@@ -1,9 +1,11 @@
+bin/debugpy
 lib/python${MODPY_VERSION}/site-packages/debugpy/
 lib/python${MODPY_VERSION}/site-packages/debugpy-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/debugpy-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/debugpy-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/debugpy-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/debugpy-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/debugpy-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/debugpy-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/debugpy/ThirdPartyNotices.txt
 lib/python${MODPY_VERSION}/site-packages/debugpy/__init__.py
@@ -179,6 +181,8 @@ lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/${MODPY_PYCACHE}pydevd_breakpoints.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/${MODPY_PYCACHE}pydevd_bytecode_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/${MODPY_PYCACHE}pydevd_bytecode_utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/${MODPY_PYCACHE}pydevd_bytecode_utils_py311.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/${MODPY_PYCACHE}pydevd_bytecode_utils_py311.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/${MODPY_PYCACHE}pydevd_code_to_source.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/${MODPY_PYCACHE}pydevd_code_to_source.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/${MODPY_PYCACHE}pydevd_collect_bytecode_info.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -261,8 +265,6 @@ lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/${MODPY_PYCACHE}pydevd_thread_lifecycle.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/${MODPY_PYCACHE}pydevd_timeout.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/${MODPY_PYCACHE}pydevd_timeout.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/${MODPY_PYCACHE}pydevd_trace_api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/${MODPY_PYCACHE}pydevd_trace_api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/${MODPY_PYCACHE}pydevd_trace_dispatch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/${MODPY_PYCACHE}pydevd_trace_dispatch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/${MODPY_PYCACHE}pydevd_trace_dispatch_regular.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -302,6 +304,7 @@ lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_api.py
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_breakpoints.py
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_bytecode_utils.py
+lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_bytecode_utils_py311.py
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_code_to_source.py
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_collect_bytecode_info.py
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_comm.py
@@ -358,7 +361,6 @@ lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_suspended_frames.py
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_thread_lifecycle.py
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_timeout.py
-lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_trace_api.py
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_trace_dispatch.py
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_trace_dispatch_regular.py
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_bundle/pydevd_traceproperty.py
@@ -398,15 +400,6 @@ lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_frame_
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_frame_eval/vendored/${MODPY_PYCACHE}pydevd_fix_code.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_frame_eval/vendored/${MODPY_PYCACHE}pydevd_fix_code.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_frame_eval/vendored/bytecode/
-lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_frame_eval/vendored/bytecode-0.13.0.dev0.dist-info/
-lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_frame_eval/vendored/bytecode-0.13.0.dev0.dist-info/COPYING
-lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_frame_eval/vendored/bytecode-0.13.0.dev0.dist-info/INSTALLER
-lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_frame_eval/vendored/bytecode-0.13.0.dev0.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_frame_eval/vendored/bytecode-0.13.0.dev0.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_frame_eval/vendored/bytecode-0.13.0.dev0.dist-info/REQUESTED
-lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_frame_eval/vendored/bytecode-0.13.0.dev0.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_frame_eval/vendored/bytecode-0.13.0.dev0.dist-info/direct_url.json
-lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_frame_eval/vendored/bytecode-0.13.0.dev0.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_frame_eval/vendored/bytecode/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_frame_eval/vendored/bytecode/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_frame_eval/vendored/bytecode/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -462,6 +455,17 @@ lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_frame_
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_frame_eval/vendored/bytecode/tests/test_peephole_opt.py
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_frame_eval/vendored/bytecode/tests/util_annotation.py
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_frame_eval/vendored/pydevd_fix_code.py
+lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_sys_monitoring/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_sys_monitoring/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_sys_monitoring/${MODPY_PYCACHE}_pydevd_sys_monitoring.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_sys_monitoring/${MODPY_PYCACHE}_pydevd_sys_monitoring.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_sys_monitoring/${MODPY_PYCACHE}pydevd_sys_monitoring.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_sys_monitoring/${MODPY_PYCACHE}pydevd_sys_monitoring.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_sys_monitoring/_pydevd_sys_monitoring.py
+lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_sys_monitoring/_pydevd_sys_monitoring_cython.c
+lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_sys_monitoring/_pydevd_sys_monitoring_cython.pxd
+lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_sys_monitoring/_pydevd_sys_monitoring_cython.pyx
+lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_sys_monitoring/pydevd_sys_monitoring.py
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/pydev_app_engine_debug_startup.py
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/pydev_coverage.py
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/pydev_ipython/
@@ -484,6 +488,8 @@ lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/pydev_ipython/
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/pydev_ipython/${MODPY_PYCACHE}inputhookqt4.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/pydev_ipython/${MODPY_PYCACHE}inputhookqt5.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/pydev_ipython/${MODPY_PYCACHE}inputhookqt5.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/pydev_ipython/${MODPY_PYCACHE}inputhookqt6.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/pydev_ipython/${MODPY_PYCACHE}inputhookqt6.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/pydev_ipython/${MODPY_PYCACHE}inputhooktk.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/pydev_ipython/${MODPY_PYCACHE}inputhooktk.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/pydev_ipython/${MODPY_PYCACHE}inputhookwx.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -505,6 +511,7 @@ lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/pydev_ipython/
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/pydev_ipython/inputhookpyglet.py
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/pydev_ipython/inputhookqt4.py
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/pydev_ipython/inputhookqt5.py
+lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/pydev_ipython/inputhookqt6.py
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/pydev_ipython/inputhooktk.py
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/pydev_ipython/inputhookwx.py
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/pydev_ipython/matplotlibtools.py

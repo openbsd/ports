@@ -1,11 +1,9 @@
 COMMENT =	Python implementation of the debug adapter protocol
 
-MODPY_EGG_VERSION=	1.8.1
+MODPY_EGG_VERSION=	1.8.6
 DISTNAME=	debugpy-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 EXTRACT_SUFX=	.zip
-
-REVISION=	0
 
 CATEGORIES=	devel
 
