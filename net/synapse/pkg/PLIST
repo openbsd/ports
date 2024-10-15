@@ -440,6 +440,8 @@ lib/python${MODPY_VERSION}/site-packages/synapse/handlers/${MODPY_PYCACHE}cas.${
 lib/python${MODPY_VERSION}/site-packages/synapse/handlers/${MODPY_PYCACHE}cas.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/handlers/${MODPY_PYCACHE}deactivate_account.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/handlers/${MODPY_PYCACHE}deactivate_account.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/synapse/handlers/${MODPY_PYCACHE}delayed_events.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/synapse/handlers/${MODPY_PYCACHE}delayed_events.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/handlers/${MODPY_PYCACHE}device.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/handlers/${MODPY_PYCACHE}device.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/handlers/${MODPY_PYCACHE}devicemessage.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -526,6 +528,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/handlers/appservice.py
 lib/python${MODPY_VERSION}/site-packages/synapse/handlers/auth.py
 lib/python${MODPY_VERSION}/site-packages/synapse/handlers/cas.py
 lib/python${MODPY_VERSION}/site-packages/synapse/handlers/deactivate_account.py
+lib/python${MODPY_VERSION}/site-packages/synapse/handlers/delayed_events.py
 lib/python${MODPY_VERSION}/site-packages/synapse/handlers/device.py
 lib/python${MODPY_VERSION}/site-packages/synapse/handlers/devicemessage.py
 lib/python${MODPY_VERSION}/site-packages/synapse/handlers/directory.py
@@ -802,6 +805,8 @@ lib/python${MODPY_VERSION}/site-packages/synapse/replication/http/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/synapse/replication/http/${MODPY_PYCACHE}_base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/replication/http/${MODPY_PYCACHE}account_data.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/replication/http/${MODPY_PYCACHE}account_data.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/synapse/replication/http/${MODPY_PYCACHE}delayed_events.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/synapse/replication/http/${MODPY_PYCACHE}delayed_events.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/replication/http/${MODPY_PYCACHE}devices.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/replication/http/${MODPY_PYCACHE}devices.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/replication/http/${MODPY_PYCACHE}federation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -826,6 +831,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/replication/http/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/synapse/replication/http/${MODPY_PYCACHE}streams.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/replication/http/_base.py
 lib/python${MODPY_VERSION}/site-packages/synapse/replication/http/account_data.py
+lib/python${MODPY_VERSION}/site-packages/synapse/replication/http/delayed_events.py
 lib/python${MODPY_VERSION}/site-packages/synapse/replication/http/devices.py
 lib/python${MODPY_VERSION}/site-packages/synapse/replication/http/federation.py
 lib/python${MODPY_VERSION}/site-packages/synapse/replication/http/login.py
@@ -1009,6 +1015,8 @@ lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/${MODPY_PYCACHE}aut
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/${MODPY_PYCACHE}auth_issuer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/${MODPY_PYCACHE}capabilities.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/${MODPY_PYCACHE}capabilities.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/${MODPY_PYCACHE}delayed_events.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/${MODPY_PYCACHE}delayed_events.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/${MODPY_PYCACHE}devices.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/${MODPY_PYCACHE}devices.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/${MODPY_PYCACHE}directory.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1091,6 +1099,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/appservice_ping.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/auth.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/auth_issuer.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/capabilities.py
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/delayed_events.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/devices.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/directory.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/events.py
@@ -1361,6 +1370,8 @@ lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/${MODPY_
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/${MODPY_PYCACHE}censor_events.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/${MODPY_PYCACHE}client_ips.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/${MODPY_PYCACHE}client_ips.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/${MODPY_PYCACHE}delayed_events.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/${MODPY_PYCACHE}delayed_events.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/${MODPY_PYCACHE}deviceinbox.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/${MODPY_PYCACHE}deviceinbox.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/${MODPY_PYCACHE}devices.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1454,6 +1465,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/appservi
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/cache.py
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/censor_events.py
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/client_ips.py
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/delayed_events.py
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/deviceinbox.py
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/devices.py
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/main/directory.py
@@ -2100,7 +2112,11 @@ lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/86/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/86/01_authenticate_media.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/86/02_receipts_event_id_index.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/87/
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/87/01_sliding_sync_memberships.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/87/02_per_connection_state.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/87/03_current_state_index.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/88/
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/88/01_add_delayed_events.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/full_schemas/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/full_schemas/72/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/full_schemas/72/full.sql.postgres
@@ -2189,6 +2205,11 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/synapse/types/rest/clie
 lib/python${MODPY_VERSION}/site-packages/synapse/types/rest/client/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/types/rest/client/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/types/state.py
+lib/python${MODPY_VERSION}/site-packages/synapse/types/storage/
+lib/python${MODPY_VERSION}/site-packages/synapse/types/storage/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/synapse/types/storage/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/synapse/types/storage/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/synapse/types/storage/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/util/
 lib/python${MODPY_VERSION}/site-packages/synapse/util/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/synapse/util/${MODPY_PYCACHE}/
