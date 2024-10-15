@@ -1,0 +1,13 @@
+Drop non-english manuals
+
+Index: dist/unix/CMakeLists.txt
+--- dist/unix/CMakeLists.txt.orig
++++ dist/unix/CMakeLists.txt
+@@ -20,7 +20,6 @@ endif()
+ 
+ set(manPageLanguages
+     en
+-    ru
+ )
+ 
+ foreach(manPageLanguage ${manPageLanguages})
