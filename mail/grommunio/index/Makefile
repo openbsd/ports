@@ -3,11 +3,11 @@ COMMENT=	FTS indexer for grommunio-web
 V=		1.0
 DISTNAME=	grommunio-index-${V}
 
-REVISION=	0
+REVISION=	1
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	grommunio-index
-GH_COMMIT=	61c82069e423d79115bf74ab094341d5f1e6e423
+GH_COMMIT=	4e17d7d4227079eb1fdf17e63214d35a6fffbc9e
 
 CATEGORIES=	mail www productivity
 
