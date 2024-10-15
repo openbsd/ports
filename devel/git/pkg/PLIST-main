@@ -213,6 +213,7 @@ libexec/git/mergetools/smerge
 libexec/git/mergetools/tkdiff
 libexec/git/mergetools/tortoisemerge
 libexec/git/mergetools/vimdiff
+libexec/git/mergetools/vscode
 libexec/git/mergetools/winmerge
 libexec/git/mergetools/xxdiff
 @bin libexec/git/scalar
