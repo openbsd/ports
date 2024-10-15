@@ -1,0 +1,17 @@
+blargh.
+
+Index: cmake/Modules/CMakeMacroLibtoolFile.cmake
+--- cmake/Modules/CMakeMacroLibtoolFile.cmake.orig
++++ cmake/Modules/CMakeMacroLibtoolFile.cmake
+@@ -112,6 +112,11 @@ function(libtool_generate_control_file _target)
+           if(NOT FL)
+             find_library(FL ${library} PATHS ${LIBRARY_PATHS})
+           endif()
++          if(NOT FL)
++            string(REPLACE "/usr/lib/" "" library ${library})
++            string(REPLACE "/usr/local/lib/" "" library ${library})
++            find_library(FL ${library} PATHS ${LIBRARY_PATHS})
++          endif()
+ 
+           if(FL)
+             # Found library. Depending on if it's static or not we might

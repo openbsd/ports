@@ -1,16 +1,25 @@
 Index: common/rfb/SSecurityPlain.cxx
 --- common/rfb/SSecurityPlain.cxx.orig
 +++ common/rfb/SSecurityPlain.cxx
-@@ -25,7 +25,7 @@
- #include <rfb/SConnection.h>
+@@ -26,7 +26,7 @@
  #include <rfb/Exception.h>
+ #include <rfb/util.h>
  #include <rdr/InStream.h>
 -#if !defined(WIN32) && !defined(__APPLE__)
 +#if !defined(WIN32) && !defined(__APPLE__) && !defined(__OpenBSD__)
  #include <rfb/UnixPasswordValidator.h>
- #endif
- #ifdef WIN32
-@@ -68,7 +68,7 @@ SSecurityPlain::SSecurityPlain(SConnection* sc) : SSec
+ #include <unistd.h>
+ #include <pwd.h>
+@@ -55,7 +55,7 @@ bool PasswordValidator::validUser(const char* username
+   for (size_t i = 0; i < users.size(); i++) {
+     if (users[i] == "*")
+       return true;
+-#if !defined(WIN32) && !defined(__APPLE__)
++#if !defined(WIN32) && !defined(__APPLE__) && !defined(__OpenBSD__)
+     if (users[i] == "%u") {
+       struct passwd *pw = getpwnam(username);
+       if (pw && pw->pw_uid == getuid())
+@@ -72,7 +72,7 @@ SSecurityPlain::SSecurityPlain(SConnection* sc) : SSec
  {
  #ifdef WIN32
    valid = new WinPasswdValidator();

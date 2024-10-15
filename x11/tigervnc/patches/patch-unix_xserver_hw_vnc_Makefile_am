@@ -5,8 +5,8 @@ Index: unix/xserver/hw/vnc/Makefile.am
  	$(COMMON_LIBS)
  
  Xvnc_DEPENDENCIES = $(LOCAL_LIBS)
--Xvnc_LDADD = $(LOCAL_LIBS) $(XSERVER_SYS_LIBS) $(XVNC_SYS_LIBS) -lX11
-+Xvnc_LDADD = $(LOCAL_LIBS) $(XSERVER_SYS_LIBS) $(XVNC_SYS_LIBS) -lX11 -lgnutls -ljpeg
+-Xvnc_LDADD = $(LOCAL_LIBS) $(XSERVER_SYS_LIBS) $(XVNC_SYS_LIBS)
++Xvnc_LDADD = $(LOCAL_LIBS) $(XSERVER_SYS_LIBS) $(XVNC_SYS_LIBS) -lgnutls -ljpeg
  
  Xvnc_LDFLAGS = $(LD_EXPORT_SYMBOLS_FLAG)
  

@@ -2,10 +2,9 @@ COMMENT=	high performance, multi-platform VNC client and server
 
 GH_ACCOUNT=	TigerVNC
 GH_PROJECT=	tigervnc
-GH_TAGNAME=	v1.13.1
-REVISION=	1
+GH_TAGNAME=	v1.14.0
 
-XORG_V=		21.1.10
+XORG_V=		21.1.13
 
 # update the patch filename in the post-patch target if moving to a new
 # major branch of xorg-server
@@ -135,7 +134,7 @@ post-extract:
 	cp ${FULLDISTDIR}/tigervnc-vncserver-${SCRIPTV}.man ${WRKSRC}/vncserver.man
 
 post-patch:
-	patch -d ${WRKDIST}/unix/xserver/ -p1 < ${WRKDIST}/unix/xserver21.1.1.patch
+	patch -d ${WRKDIST}/unix/xserver/ -p1 < ${WRKDIST}/unix/xserver21.patch
 	cd ${WRKDIST}/unix/xserver; ${AUTOCONF_ENV} autoreconf -fiv -I ${X11BASE}/share/aclocal
 
 post-configure:
