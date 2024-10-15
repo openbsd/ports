@@ -49,9 +49,9 @@ SHA256 (cargo/rand-0.8.5.tar.gz) = NK+NGg4lkkvFt8Q8B5yUIznY8Ki1fDkEm+9YG0YydAQ=
 SHA256 (cargo/rand_chacha-0.3.1.tar.gz) = 5sEKY6D6MiUr5J0h53CdTUuvjSMcLbzh6qgUG5sSfYg=
 SHA256 (cargo/rand_core-0.6.4.tar.gz) = 7AvkeV4vaigGm+wLX/PirJuvyZ5qmn3DVHmWxcgWkiw=
 SHA256 (cargo/redox_syscall-0.5.1.tar.gz) = RpBSiU3LVTQh5IPkIJ7lgaRRANMbQBjeA+WnrYY3Sn4=
-SHA256 (cargo/regex-1.10.6.tar.gz) = QhnXTGtno2VKn768S0GeIhJtE9LzxKB+4Mth/3mnlhk=
-SHA256 (cargo/regex-automata-0.4.6.tar.gz) = hrg7i5hH+b+V72ivsLjmzbgPSYRC9ReaKfrUSPzB6uo=
-SHA256 (cargo/regex-syntax-0.8.3.tar.gz) = ra1E4p5MgGEZSRp/BvA95NGvIsOmgN1H8ebheUOdH1Y=
+SHA256 (cargo/regex-1.11.0.tar.gz) = OCAOXuiJFJdbafZX8IAbb23Mr9RP2TJjAqSq7s+ssdg=
+SHA256 (cargo/regex-automata-0.4.8.tar.gz) = NodY8jJ0cStQSEjp1abwEERcyLh6fNtNfL7mZsEojaM=
+SHA256 (cargo/regex-syntax-0.8.5.tar.gz) = KxXEMYa+Z6T9Y77lDQMDr//O84FJLr4sXYfzJOG4gVw=
 SHA256 (cargo/ryu-1.0.18.tar.gz) = 88tboNxDJCzhfemcGA6W25CyNbip/clUPJbSIJEWvZ8=
 SHA256 (cargo/scopeguard-1.2.0.tar.gz) = lBQ/N3JRCfksJi7Sz15ZvOdJjAG8wVAte5r+Q5pOn0k=
 SHA256 (cargo/serde-1.0.210.tar.gz) = yONZJHIHLm4i4KVNWQTZ/r+FCPZfuFUkmaGrx9EHjDo=
@@ -84,7 +84,7 @@ SHA256 (cargo/windows_i686_msvc-0.52.5.tar.gz) = 2zwr89E9W2WL5zRjKE6vEoMKyaJqkMc
 SHA256 (cargo/windows_x86_64_gnu-0.52.5.tar.gz) = TkJG92ve/wnrSIdaD9Pir2qtp51AnTMBGIbT4VgVF9k=
 SHA256 (cargo/windows_x86_64_gnullvm-0.52.5.tar.gz) = hSKY5ILNZ8NW3dlXA4bihitWc8hb1fiN+atoArM0xZY=
 SHA256 (cargo/windows_x86_64_msvc-0.52.5.tar.gz) = vsR+W/0b/w7q9ti0hcwQdIkaGXq0Il1QTLehq4iwK/A=
-SHA256 (synapse-1.116.0.tar.gz) = b6Cwl0zLd1/wFl7CPnQmOUDRNxZYHHUbscJqaxMuckk=
+SHA256 (synapse-1.117.0.tar.gz) = 94ZcB1oHHnIR96v0KFVid6N42IMcfgbX8s6IXzQdiX4=
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
 SIZE (cargo/anyhow-1.0.89.tar.gz) = 47078
 SIZE (cargo/arc-swap-1.7.1.tar.gz) = 68512
@@ -136,9 +136,9 @@ SIZE (cargo/rand-0.8.5.tar.gz) = 87113
 SIZE (cargo/rand_chacha-0.3.1.tar.gz) = 15251
 SIZE (cargo/rand_core-0.6.4.tar.gz) = 22666
 SIZE (cargo/redox_syscall-0.5.1.tar.gz) = 22536
-SIZE (cargo/regex-1.10.6.tar.gz) = 253894
-SIZE (cargo/regex-automata-0.4.6.tar.gz) = 617565
-SIZE (cargo/regex-syntax-0.8.3.tar.gz) = 347497
+SIZE (cargo/regex-1.11.0.tar.gz) = 254059
+SIZE (cargo/regex-automata-0.4.8.tar.gz) = 617784
+SIZE (cargo/regex-syntax-0.8.5.tar.gz) = 357541
 SIZE (cargo/ryu-1.0.18.tar.gz) = 47713
 SIZE (cargo/scopeguard-1.2.0.tar.gz) = 11619
 SIZE (cargo/serde-1.0.210.tar.gz) = 78338
@@ -171,4 +171,4 @@ SIZE (cargo/windows_i686_msvc-0.52.5.tar.gz) = 895404
 SIZE (cargo/windows_x86_64_gnu-0.52.5.tar.gz) = 831539
 SIZE (cargo/windows_x86_64_gnullvm-0.52.5.tar.gz) = 433246
 SIZE (cargo/windows_x86_64_msvc-0.52.5.tar.gz) = 827905
-SIZE (synapse-1.116.0.tar.gz) = 8783785
+SIZE (synapse-1.117.0.tar.gz) = 8786739
