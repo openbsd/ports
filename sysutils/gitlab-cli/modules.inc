@@ -156,15 +156,17 @@ MODGO_MODULES =	\
 	go.opentelemetry.io/otel/trace							 v1.24.0 \
 	go.uber.org/atomic								 v1.9.0 \
 	go.uber.org/goleak								 v1.3.0 \
+	go.uber.org/mock								 v0.4.0 \
 	go.uber.org/multierr								 v1.9.0 \
 	go.uber.org/zap									 v1.21.0 \
 	golang.org/x/crypto								 v0.27.0 \
 	golang.org/x/exp								 v0.0.0-20240416160154-fe59bbe5cc7f \
 	golang.org/x/mod								 v0.17.0 \
 	golang.org/x/net								 v0.27.0 \
-	golang.org/x/oauth2								 v0.21.0 \
+	golang.org/x/oauth2								 v0.23.0 \
 	golang.org/x/sync								 v0.8.0 \
 	golang.org/x/sys								 v0.25.0 \
+	golang.org/x/telemetry								 v0.0.0-20240228155512-f48c80bd79b2 \
 	golang.org/x/term								 v0.24.0 \
 	golang.org/x/text								 v0.18.0 \
 	golang.org/x/time								 v0.5.0 \
@@ -183,9 +185,9 @@ MODGO_MODULES =	\
 	gopkg.in/ini.v1									 v1.67.0 \
 	gopkg.in/yaml.v2								 v2.4.0 \
 	gopkg.in/yaml.v3								 v3.0.1 \
-	k8s.io/api									 v0.31.0 \
-	k8s.io/apimachinery								 v0.31.0 \
-	k8s.io/client-go								 v0.31.0 \
+	k8s.io/api									 v0.31.1 \
+	k8s.io/apimachinery								 v0.31.1 \
+	k8s.io/client-go								 v0.31.1 \
 	k8s.io/klog/v2									 v2.130.1 \
 	k8s.io/kube-openapi								 v0.0.0-20240228011516-70dd3763d340 \
 	k8s.io/utils									 v0.0.0-20240711033017-18e509b52bc8 \
@@ -257,6 +259,7 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto				 v0.21.0 \
 	golang.org/x/crypto				 v0.25.0 \
 	golang.org/x/exp				 v0.0.0-20230905200255-921286631fa9 \
+	golang.org/x/mod				 v0.11.0 \
 	golang.org/x/mod				 v0.2.0 \
 	golang.org/x/mod				 v0.3.0 \
 	golang.org/x/mod				 v0.6.0-dev.0.20220419223038-86c51ed26bb4 \
@@ -270,11 +273,13 @@ MODGO_MODFILES =	\
 	golang.org/x/net				 v0.19.0 \
 	golang.org/x/net				 v0.21.0 \
 	golang.org/x/net				 v0.23.0 \
+	golang.org/x/net				 v0.25.0 \
 	golang.org/x/net				 v0.26.0 \
 	golang.org/x/net				 v0.6.0 \
 	golang.org/x/net				 v0.8.0 \
 	golang.org/x/oauth2				 v0.15.0 \
 	golang.org/x/oauth2				 v0.18.0 \
+	golang.org/x/oauth2				 v0.21.0 \
 	golang.org/x/oauth2				 v0.6.0 \
 	golang.org/x/sync				 v0.0.0-20190423024810-112230192c58 \
 	golang.org/x/sync				 v0.0.0-20190911185100-cd5d95a43a6e \
@@ -296,6 +301,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys				 v0.0.0-20220715151400-c0bba94af5f8 \
 	golang.org/x/sys				 v0.0.0-20220722155257-8c9f86f7a55f \
 	golang.org/x/sys				 v0.0.0-20220811171246-fbc7d0a398ab \
+	golang.org/x/sys				 v0.1.0 \
 	golang.org/x/sys				 v0.10.0 \
 	golang.org/x/sys				 v0.14.0 \
 	golang.org/x/sys				 v0.15.0 \
@@ -330,6 +336,8 @@ MODGO_MODFILES =	\
 	golang.org/x/tools				 v0.0.0-20200619180055-7c47624df98f \
 	golang.org/x/tools				 v0.0.0-20210106214847-113979e3529a \
 	golang.org/x/tools				 v0.1.12 \
+	golang.org/x/tools				 v0.13.0 \
+	golang.org/x/tools				 v0.2.0 \
 	golang.org/x/tools				 v0.20.0 \
 	golang.org/x/tools				 v0.6.0 \
 	golang.org/x/xerrors				 v0.0.0-20190717185122-a985d3407aa7 \

@@ -24,6 +24,7 @@
 @man man/man1/glab-ci-trigger.1
 @man man/man1/glab-ci-view.1
 @man man/man1/glab-ci.1
+@man man/man1/glab-cluster-agent-bootstrap.1
 @man man/man1/glab-cluster-agent-check_manifest_usage.1
 @man man/man1/glab-cluster-agent-get-token.1
 @man man/man1/glab-cluster-agent-list.1
@@ -118,12 +119,15 @@
 @man man/man1/glab-stack-create.1
 @man man/man1/glab-stack-first.1
 @man man/man1/glab-stack-last.1
+@man man/man1/glab-stack-list.1
 @man man/man1/glab-stack-move.1
 @man man/man1/glab-stack-next.1
 @man man/man1/glab-stack-prev.1
 @man man/man1/glab-stack-save.1
 @man man/man1/glab-stack-sync.1
 @man man/man1/glab-stack.1
+@man man/man1/glab-token-create.1
+@man man/man1/glab-token.1
 @man man/man1/glab-user-events.1
 @man man/man1/glab-user.1
 @man man/man1/glab-variable-delete.1
