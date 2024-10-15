@@ -1,6 +1,7 @@
---- src/Fl_Preferences.cxx.orig	Sat Jun 27 16:40:11 2015
-+++ src/Fl_Preferences.cxx	Sat Jun 27 16:40:51 2015
-@@ -1083,7 +1083,7 @@ Fl_Preferences::RootNode::RootNode( Fl_Preferences *pr
+Index: src/Fl_Preferences.cxx
+--- src/Fl_Preferences.cxx.orig
++++ src/Fl_Preferences.cxx
+@@ -1049,7 +1049,7 @@ Fl_Preferences::RootNode::RootNode( Fl_Preferences *pr
  	break;
        } 
      case SYSTEM:

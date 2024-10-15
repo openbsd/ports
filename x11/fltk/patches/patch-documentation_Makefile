@@ -1,15 +1,16 @@
---- documentation/Makefile.orig	Mon Oct 24 22:17:29 2011
-+++ documentation/Makefile	Fri Mar 22 17:43:11 2013
-@@ -54,7 +54,7 @@ MANPAGES =	$(SRC_DOCDIR)/fltk.$(CAT3EXT) $(SRC_DOCDIR)
+Index: documentation/Makefile
+--- documentation/Makefile.orig
++++ documentation/Makefile
+@@ -52,7 +52,7 @@ MANPAGES =	$(SRC_DOCDIR)/fltk.$(CAT3EXT) $(SRC_DOCDIR)
  		$(SRC_DOCDIR)/fluid.$(CAT1EXT) $(SRC_DOCDIR)/blocks.$(CAT6EXT) \
  		$(SRC_DOCDIR)/checkers.$(CAT6EXT) $(SRC_DOCDIR)/sudoku.$(CAT6EXT)
  
 -all:	$(MANPAGES)
 +all:
  
- # use make dist to create all docs for distribution files
- # you need an installed version of doxygen for this
-@@ -71,9 +71,8 @@ clean:
+ # Use `make docs' to create all docs for distribution files.
+ # You need installed versions of Doxygen and LaTeX for this.
+@@ -73,9 +73,8 @@ clean:
  
  depend:
  
@@ -20,7 +21,7 @@
  	if test -f html/index.html ; then \
  	  for file in html/* ; do \
  		$(INSTALL_DATA) $$file $(DESTDIR)$(docdir); \
-@@ -84,11 +83,6 @@ install: $(MANPAGES)
+@@ -86,11 +85,6 @@ install: $(MANPAGES)
  	  $(INSTALL_DATA) fltk.pdf $(DESTDIR)$(docdir); \
  	fi
  	echo "Installing man pages in $(DESTDIR)$(mandir) ..."
