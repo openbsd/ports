@@ -88,7 +88,7 @@ MODGO_MODULES =	\
 	github.com/coreos/go-oidc/v3							 v3.11.0 \
 	github.com/coreos/go-semver							 v0.3.1 \
 	github.com/coreos/go-systemd/v22						 v22.5.0 \
-	github.com/cpuguy83/go-md2man/v2						 v2.0.4 \
+	github.com/cpuguy83/go-md2man/v2						 v2.0.5 \
 	github.com/creack/pty								 v1.1.23 \
 	github.com/cyberphone/json-canonicalization					 v0.0.0-20220623050100-57a0ce2678a7 \
 	github.com/danieljoos/wincred							 v1.2.1 \
@@ -191,7 +191,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/hcl							 v1.0.0 \
 	github.com/hashicorp/serf							 v0.10.1 \
 	github.com/hashicorp/vault/api							 v1.12.2 \
-	github.com/henvic/httpretty							 v0.1.3 \
+	github.com/henvic/httpretty							 v0.1.4 \
 	github.com/hexops/gotextdiff							 v1.0.3 \
 	github.com/hinshun/vt10x							 v0.0.0-20220119200601-820417d04eec \
 	github.com/howeyc/gopass							 v0.0.0-20210920133722-c8aef6fb66ef \
@@ -316,7 +316,7 @@ MODGO_MODULES =	\
 	github.com/subosito/gotenv							 v1.6.0 \
 	github.com/syndtr/goleveldb							 v1.0.1-0.20220721030215-126854af5e6d \
 	github.com/theupdateframework/go-tuf						 v0.7.0 \
-	github.com/theupdateframework/go-tuf/v2						 v2.0.0 \
+	github.com/theupdateframework/go-tuf/v2						 v2.0.1 \
 	github.com/thlib/go-timezone-local						 v0.0.0-20210907160436-ef149e42d28e \
 	github.com/titanous/rocacheck							 v0.0.0-20171023193734-afe73141d399 \
 	github.com/tmc/grpc-websocket-proxy						 v0.0.0-20220101234140-673ab2c3ae75 \
@@ -468,6 +468,7 @@ MODGO_MODFILES =	\
 	github.com/coreos/go-systemd/v22						 v22.3.2 \
 	github.com/cpuguy83/go-md2man/v2						 v2.0.2 \
 	github.com/cpuguy83/go-md2man/v2						 v2.0.3 \
+	github.com/cpuguy83/go-md2man/v2						 v2.0.4 \
 	github.com/creack/pty								 v1.1.17 \
 	github.com/danieljoos/wincred							 v1.1.2 \
 	github.com/danieljoos/wincred							 v1.2.0 \
@@ -586,6 +587,7 @@ MODGO_MODFILES =	\
 	github.com/stretchr/testify							 v1.8.1 \
 	github.com/stretchr/testify							 v1.8.2 \
 	github.com/stretchr/testify							 v1.8.4 \
+	github.com/theupdateframework/go-tuf/v2						 v2.0.0 \
 	github.com/urfave/cli								 v1.22.12 \
 	github.com/vbatts/tar-split							 v0.11.2 \
 	github.com/yuin/goldmark							 v1.3.7 \

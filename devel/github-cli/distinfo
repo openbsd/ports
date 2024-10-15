@@ -1,4 +1,4 @@
-SHA256 (cli-v2.57.0.zip) = Mp10cOLpgd8Mh9HRzzNVVGPy4kK/toEre5TIVng3OgA=
+SHA256 (cli-v2.58.0.zip) = N7QexlpHaBgpP4P5KS+H4dZ2e/KW24IgZSXNWGG0NTM=
 SHA256 (go_modules/bitbucket.org/creachadair/shell/@v/v0.0.8.mod) = p5DeefOWpGgRzfiXR7IMnJJZnIfIuiXfICeZ+ODldMk=
 SHA256 (go_modules/bitbucket.org/creachadair/shell/@v/v0.0.8.zip) = KW2htHeMHqh5EXGvsVathbPZsI2eiI1Wh66jJt2/wyo=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.110.10.mod) = NYagpvj1XJrKsc5QbeBFAKXdHh9xg/Q1yHBvDEDfIWY=
@@ -233,7 +233,8 @@ SHA256 (go_modules/github.com/coreos/go-systemd/v22/@v/v22.5.0.zip) = TETjprhN5N
 SHA256 (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.2.mod) = FMOvou9iNVXBtINNH4ixTfd1Sa/uheV1DBkQJGW3iro=
 SHA256 (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.3.mod) = FMOvou9iNVXBtINNH4ixTfd1Sa/uheV1DBkQJGW3iro=
 SHA256 (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.4.mod) = FMOvou9iNVXBtINNH4ixTfd1Sa/uheV1DBkQJGW3iro=
-SHA256 (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.4.zip) = mtuqF/F9vjauRk2AYqy7+5z4U7/r7UJENag0orC+2RA=
+SHA256 (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.5.mod) = FMOvou9iNVXBtINNH4ixTfd1Sa/uheV1DBkQJGW3iro=
+SHA256 (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.5.zip) = URkdEwLEhjrEIUO00wtGqpOyiwkz80saqVu3CUujrnY=
 SHA256 (go_modules/github.com/creack/pty/@v/v1.1.17.mod) = BBOkGR3M1sdbDMdMtxrxVkBw8uy/zjq0ujzMnXAf2Cw=
 SHA256 (go_modules/github.com/creack/pty/@v/v1.1.23.mod) = o5ef0ywA810X6zuX0LPMb077BXv3gnE2H6dzUx5gFTE=
 SHA256 (go_modules/github.com/creack/pty/@v/v1.1.23.zip) = IVG3EhAglUhk3oPqz4VGNIZsygo7/jOi6/+i7evCXfM=
@@ -492,8 +493,8 @@ SHA256 (go_modules/github.com/hashicorp/vault/api/@v/v1.10.0.mod) = 7W9VwkvLAAF4
 SHA256 (go_modules/github.com/hashicorp/vault/api/@v/v1.12.2.mod) = 1yFm4m4xf5hHDSvuFvdcVVETPAAmeXExMMA/6pjCuWw=
 SHA256 (go_modules/github.com/hashicorp/vault/api/@v/v1.12.2.zip) = NAd7c8oYDmevros/4jBkNz0lpqUv6n7H9ZPrNSMa+Z8=
 SHA256 (go_modules/github.com/henvic/httpretty/@v/v0.0.6.mod) = jxvClztKGjdiL0pHcBD7vdH9rUwYzTA7WTWeRxLZZoI=
-SHA256 (go_modules/github.com/henvic/httpretty/@v/v0.1.3.mod) = YGSIndEfTS7TKpdw3Zetx20nYAIw88Gta/4dtIERU2s=
-SHA256 (go_modules/github.com/henvic/httpretty/@v/v0.1.3.zip) = DMEUXQQH+UMbTrN4cJlu7fh0RMNPURWAk2v+MCN8m8I=
+SHA256 (go_modules/github.com/henvic/httpretty/@v/v0.1.4.mod) = S3uhvUYPxZ22M042iNvm959MKiVyl7ZRTk9EbNUhblY=
+SHA256 (go_modules/github.com/henvic/httpretty/@v/v0.1.4.zip) = MrR4tT8wz2jGGii6oV3vpXO/88h3ySJQuPWYpqwtSn0=
 SHA256 (go_modules/github.com/hexops/gotextdiff/@v/v1.0.3.mod) = qUfdi3h5PdOY6iCt7h99M8zydn2/juazzXe3Hxnm+5s=
 SHA256 (go_modules/github.com/hexops/gotextdiff/@v/v1.0.3.zip) = oQw5QvCbxRMiaNItS7nQwYSRItUz/ozfZepp2gXOu68=
 SHA256 (go_modules/github.com/hinshun/vt10x/@v/v0.0.0-20220119200601-820417d04eec.mod) = V5Gg7rnXeTt9TEyEKciJ8t6jGWovXorEARc0cb+4yjY=
@@ -807,7 +808,8 @@ SHA256 (go_modules/github.com/syndtr/goleveldb/@v/v1.0.1-0.20220721030215-126854
 SHA256 (go_modules/github.com/theupdateframework/go-tuf/@v/v0.7.0.mod) = l5QWJJVg/83pnUuElKCsI8LlN2v8U9a2sVHDsfE7yjk=
 SHA256 (go_modules/github.com/theupdateframework/go-tuf/@v/v0.7.0.zip) = XCxjGnIOPEIlz/8IW9CArKvUMI0OTmJE5MwYDgGbjqo=
 SHA256 (go_modules/github.com/theupdateframework/go-tuf/v2/@v/v2.0.0.mod) = euXmbAMTWBx5nPRC9blDsQGRQWYeied30hQUjV7SZQ8=
-SHA256 (go_modules/github.com/theupdateframework/go-tuf/v2/@v/v2.0.0.zip) = l6fXr9B8tOq0s1XMM5dXqgAbnu5dsimwD1CUpMBZclE=
+SHA256 (go_modules/github.com/theupdateframework/go-tuf/v2/@v/v2.0.1.mod) = euXmbAMTWBx5nPRC9blDsQGRQWYeied30hQUjV7SZQ8=
+SHA256 (go_modules/github.com/theupdateframework/go-tuf/v2/@v/v2.0.1.zip) = sFN+qKfeZ2wglOqYcDI0WlO9iJLaFMxW4ypdu4MUIJI=
 SHA256 (go_modules/github.com/thlib/go-timezone-local/@v/v0.0.0-20210907160436-ef149e42d28e.mod) = KNC5nRqEYRs5kgvqLCVOAANh4BXliJBTLXWvGmksSgg=
 SHA256 (go_modules/github.com/thlib/go-timezone-local/@v/v0.0.0-20210907160436-ef149e42d28e.zip) = Z6Xe1ItLh8DdqM0dBhNQW3mbCJR91iSJNBa5CH5My3o=
 SHA256 (go_modules/github.com/titanous/rocacheck/@v/v0.0.0-20171023193734-afe73141d399.mod) = FbCbvppl94ip8oDcAg+t6PzmtOLFMEvGCumHyoxCXYg=
@@ -1166,7 +1168,7 @@ SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = CZ2G+OBNET1A9KFSzf4AFxFtfv6
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 7wMf94/5twNuF07vSd+9d0aNxPCvtzpjm2H4qzocxCU=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.4.0.mod) = +/Vbaah9WjkQgv2brl5MdYEEH+Cbi7k7D+Fs3f6FzpU=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.4.0.zip) = VQGaOR5TAqUbpi6YkJ4AYiS4EgeGbakL6vWC7A3uA28=
-SIZE (cli-v2.57.0.zip) = 1514874
+SIZE (cli-v2.58.0.zip) = 1517329
 SIZE (go_modules/bitbucket.org/creachadair/shell/@v/v0.0.8.mod) = 89
 SIZE (go_modules/bitbucket.org/creachadair/shell/@v/v0.0.8.zip) = 8712
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.10.mod) = 1349
@@ -1401,7 +1403,8 @@ SIZE (go_modules/github.com/coreos/go-systemd/v22/@v/v22.5.0.zip) = 126112
 SIZE (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.2.mod) = 100
 SIZE (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.3.mod) = 100
 SIZE (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.4.mod) = 100
-SIZE (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.4.zip) = 13136
+SIZE (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.5.mod) = 100
+SIZE (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.5.zip) = 14655
 SIZE (go_modules/github.com/creack/pty/@v/v1.1.17.mod) = 38
 SIZE (go_modules/github.com/creack/pty/@v/v1.1.23.mod) = 38
 SIZE (go_modules/github.com/creack/pty/@v/v1.1.23.zip) = 38863
@@ -1660,8 +1663,8 @@ SIZE (go_modules/github.com/hashicorp/vault/api/@v/v1.10.0.mod) = 1501
 SIZE (go_modules/github.com/hashicorp/vault/api/@v/v1.12.2.mod) = 1656
 SIZE (go_modules/github.com/hashicorp/vault/api/@v/v1.12.2.zip) = 146064
 SIZE (go_modules/github.com/henvic/httpretty/@v/v0.0.6.mod) = 44
-SIZE (go_modules/github.com/henvic/httpretty/@v/v0.1.3.mod) = 80
-SIZE (go_modules/github.com/henvic/httpretty/@v/v0.1.3.zip) = 59028
+SIZE (go_modules/github.com/henvic/httpretty/@v/v0.1.4.mod) = 80
+SIZE (go_modules/github.com/henvic/httpretty/@v/v0.1.4.zip) = 59973
 SIZE (go_modules/github.com/hexops/gotextdiff/@v/v1.0.3.mod) = 45
 SIZE (go_modules/github.com/hexops/gotextdiff/@v/v1.0.3.zip) = 33608
 SIZE (go_modules/github.com/hinshun/vt10x/@v/v0.0.0-20220119200601-820417d04eec.mod) = 41
@@ -1975,7 +1978,8 @@ SIZE (go_modules/github.com/syndtr/goleveldb/@v/v1.0.1-0.20220721030215-126854af
 SIZE (go_modules/github.com/theupdateframework/go-tuf/@v/v0.7.0.mod) = 780
 SIZE (go_modules/github.com/theupdateframework/go-tuf/@v/v0.7.0.zip) = 1633583
 SIZE (go_modules/github.com/theupdateframework/go-tuf/v2/@v/v2.0.0.mod) = 1078
-SIZE (go_modules/github.com/theupdateframework/go-tuf/v2/@v/v2.0.0.zip) = 160711
+SIZE (go_modules/github.com/theupdateframework/go-tuf/v2/@v/v2.0.1.mod) = 1078
+SIZE (go_modules/github.com/theupdateframework/go-tuf/v2/@v/v2.0.1.zip) = 160939
 SIZE (go_modules/github.com/thlib/go-timezone-local/@v/v0.0.0-20210907160436-ef149e42d28e.mod) = 112
 SIZE (go_modules/github.com/thlib/go-timezone-local/@v/v0.0.0-20210907160436-ef149e42d28e.zip) = 21871
 SIZE (go_modules/github.com/titanous/rocacheck/@v/v0.0.0-20171023193734-afe73141d399.mod) = 37
