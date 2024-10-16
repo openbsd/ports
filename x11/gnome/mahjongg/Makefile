@@ -1,19 +1,19 @@
-COMMENT =	mahjongg game for GNOME
+COMMENT =		mahjongg game for GNOME
 
-GNOME_PROJECT =	gnome-mahjongg
-GNOME_VERSION =	3.40.1
+GNOME_PROJECT =		gnome-mahjongg
+GNOME_VERSION =		47.0
 
-CATEGORIES =	games
+CATEGORIES =		games
 
 # GPLv2
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE=		Yes
 
-MODULES =	devel/dconf \
-		devel/meson \
-		x11/gnome
+WANTLIB += adwaita-1 c cairo gio-2.0 glib-2.0 gobject-2.0 gtk-4
+WANTLIB += intl rsvg-2
 
-WANTLIB += adwaita-1 c cairo gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += gtk-4 intl rsvg-2
+MODULES =		devel/dconf \
+			devel/meson \
+			x11/gnome
 
 BUILD_DEPENDS =		devel/gsettings-desktop-schemas
 
