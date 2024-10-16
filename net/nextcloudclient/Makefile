@@ -2,9 +2,8 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	desktop sync client for Nextcloud
 
-V =		3.13.2
+V =		3.14.1
 DISTNAME =	nextcloudclient-${V}
-REVISION =	0
 
 GH_ACCOUNT =	nextcloud
 GH_PROJECT =	desktop
@@ -14,28 +13,28 @@ CATEGORIES =	net
 
 HOMEPAGE =	https://nextcloud.com
 
-SHARED_LIBS +=  nextcloudsync             19.0  # 3.13.2
-SHARED_LIBS +=  nextcloud_csync           9.0   # 3.13.2
-SHARED_LIBS +=  nextcloudsync_vfs_suffix  3.0   # 3.13.2
+SHARED_LIBS +=  nextcloudsync             20.0  # 3.14.1
+SHARED_LIBS +=  nextcloud_csync           10.0  # 3.14.1
+SHARED_LIBS +=  nextcloudsync_vfs_suffix  4.0   # 3.14.1
 
 MAINTAINER =	Adriano Barbosa <barbosa.aob@gmail.com>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5GuiAddons Qt5Concurrent
-WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5QuickControls2 Qt5QuickWidgets
-WANTLIB += Qt5Sql Qt5Svg Qt5WebChannel Qt5WebEngineCore Qt5WebEngineWidgets
-WANTLIB += Qt5WebSockets Qt5Widgets Qt5Xml c cloudproviders crypto
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 intl m qt5keychain sqlite3
-WANTLIB += ssl z
+WANTLIB += ${COMPILER_LIBCXX} KF6Archive KF6GuiAddons Qt6Concurrent
+WANTLIB += Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
+WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlModels Qt6Quick
+WANTLIB += Qt6QuickControls2 Qt6QuickWidgets Qt6Sql Qt6Svg Qt6WebChannel
+WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6WebSockets Qt6Widgets
+WANTLIB += Qt6Xml c cloudproviders crypto gio-2.0 GL glib-2.0 gobject-2.0
+WANTLIB += intl m qt6keychain sqlite3 ssl xkbcommon z
 
 WANTLIB += lib/inotify/inotify
 
 
 MODULES =		devel/cmake \
-			x11/qt5
+			x11/qt6
 
 BUILD_DEPENDS =		devel/gettext,-tools
 
@@ -50,23 +49,20 @@ BUILD_DEPENDS +=	devel/cmocka
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			misc/shared-mime-info \
-			x11/gtk+4,-guic \
-			x11/qt5/qtgraphicaleffects \
-			x11/qt5/qtquickcontrols
+			x11/gtk+4,-guic
 
 LIB_DEPENDS =		databases/sqlite3 \
-			devel/kf5/karchive \
-			devel/kf5/kguiaddons \
+			devel/kf6/karchive \
+			devel/kf6/kguiaddons \
 			devel/libinotify \
-			security/qtkeychain \
+			security/qtkeychain,qt6 \
 			x11/gnome/libcloudproviders \
-			x11/qt5/qtdeclarative \
-			x11/qt5/qtlocation \
-			x11/qt5/qtquickcontrols2 \
-			x11/qt5/qtsvg \
-			x11/qt5/qtwebchannel \
-			x11/qt5/qtwebengine \
-			x11/qt5/qtwebsockets
+			x11/qt6/qt5compat \
+			x11/qt6/qtdeclarative \
+			x11/qt6/qtsvg \
+			x11/qt6/qtwebchannel \
+			x11/qt6/qtwebengine \
+			x11/qt6/qtwebsockets
 
 CONFIGURE_ARGS =	-DBUILD_SHELL_INTEGRATION_NAUTILUS=OFF \
 			-DBUILD_SHELL_INTEGRATION_DOLPHIN=OFF \
