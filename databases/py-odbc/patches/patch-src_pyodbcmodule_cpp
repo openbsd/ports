@@ -17,7 +17,7 @@ Index: src/pyodbcmodule.cpp
          }
      }
      Py_DECREF(odbcversion);
-@@ -1074,7 +1080,9 @@ static const ConstantDef aConstants[] = {
+@@ -1075,7 +1081,9 @@ static const ConstantDef aConstants[] = {
      MAKECONST(SQL_CONVERT_DECIMAL),
      MAKECONST(SQL_CONVERT_DOUBLE),
      MAKECONST(SQL_CONVERT_FLOAT),
