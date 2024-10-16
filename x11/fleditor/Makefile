@@ -3,7 +3,7 @@ COMMENT=		text editor widget for FLTK
 V=			0.4.5
 DISTNAME=		fl_editor-${V}
 PKGNAME=		fleditor-${V}
-REVISION =		8
+REVISION =		9
 
 SHARED_LIBS=		fleditor 3.0
 CATEGORIES=		x11

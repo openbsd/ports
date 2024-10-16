@@ -15,5 +15,5 @@ include/FL/editvars.h
 include/FL/lists.h
 include/FL/stringsup.h
 include/FL/wstring.h
-lib/libfleditor.a
+@static-lib lib/libfleditor.a
 @lib lib/libfleditor.so.${LIBfleditor_VERSION}
