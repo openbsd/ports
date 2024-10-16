@@ -1,7 +1,7 @@
 Index: src/extension/implementation/script.cpp
 --- src/extension/implementation/script.cpp.orig
 +++ src/extension/implementation/script.cpp
-@@ -91,12 +91,12 @@ const std::map<std::string, Script::interpreter_t> Scr
+@@ -89,12 +89,12 @@ const std::map<std::string, Script::interpreter_t> Scr
      { "perl",    {"perl-interpreter",    {"perl"              }}},
      { "python",  {"python-interpreter",  {"python3"           }}},
  #else

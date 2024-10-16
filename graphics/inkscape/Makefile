@@ -1,8 +1,7 @@
 COMMENT =	SVG vector drawing application
 
-VERSION =	1.3.2
+VERSION =	1.4
 DISTNAME =	inkscape-${VERSION}
-REVISION =	3
 
 CATEGORIES =	graphics
 
@@ -23,7 +22,7 @@ WANTLIB += giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0
 WANTLIB += gsl gslcblas gspell-1 gtk-3 gtkmm-3.0 gtksourceview-4
 WANTLIB += harfbuzz iconv intl jpeg lcms2 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pangomm-1.4 png poppler poppler-glib potrace
-WANTLIB += sigc-2.0 soup-2.4 xml2 xslt z
+WANTLIB += sigc-2.0 xml2 xslt z
 
 SITES =		https://media.inkscape.org/dl/resources/file/
 EXTRACT_SUFX =	.tar.xz
@@ -48,9 +47,8 @@ BUILD_DEPENDS =	devel/gettext,-tools \
 LIB_DEPENDS =	devel/boost \
 		devel/boehm-gc \
 		devel/gsl \
-		devel/libsoup \
 		devel/pango \
-		geo/lib2geom \
+		geo/lib2geom>=1.4 \
 		graphics/ImageMagick \
 		graphics/lcms2 \
 		graphics/png \
@@ -72,7 +70,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		www/py-requests${MODPY_FLAVOR} \
 		x11/gtk+4,-guic
 
-WRKDIST =	${WRKDIR}/inkscape-${VERSION}_2023-11-25_091e20ef0f
+WRKDIST =	${WRKDIR}/inkscape-${VERSION}_2024-10-09_e7c3feb100
 
 SUBST_VARS +=	RUBY MODRUBY_REV
 
