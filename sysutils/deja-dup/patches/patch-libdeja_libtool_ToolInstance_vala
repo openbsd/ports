@@ -1,0 +1,41 @@
+libdeja/libdeja.so.p/libtool/ToolInstance.c:84:7: error: expected member name or ';' after declaration specifiers
+        gint stdout;
+libdeja/libdeja.so.p/libtool/ToolInstance.c:85:7: error: expected member name or ';' after declaration specifiers
+        gint stderr;
+
+Index: libdeja/libtool/ToolInstance.vala
+--- libdeja/libtool/ToolInstance.vala.orig
++++ libdeja/libtool/ToolInstance.vala
+@@ -87,8 +87,8 @@ internal abstract class ToolInstance : Object
+   Pid child_pid;
+   bool process_done;
+   int status;
+-  int stdout;
+-  int stderr;
++  int dd_stdout;
++  int dd_stderr;
+   MainLoop read_loop;
+ 
+   ~ToolInstance()
+@@ -158,7 +158,7 @@ internal abstract class ToolInstance : Object
+                                       // and helps restic with rclone support.
+                                       Posix.setsid();
+                                    },
+-                                   out child_pid, null, out stdout, out stderr);
++                                   out child_pid, null, out dd_stdout, out dd_stderr);
+ 
+     if (verbose)
+       print("Running the following tool (%i) command: %s\n", (int)child_pid, user_cmd);
+@@ -231,10 +231,10 @@ internal abstract class ToolInstance : Object
+     *
+     * Stream initiated either from log file or pipe
+     */
+-    var err_stream = new UnixInputStream(stderr, true);
++    var err_stream = new UnixInputStream(dd_stderr, true);
+     var err_reader = new DataInputStream(err_stream);
+ 
+-    var out_stream = new UnixInputStream(stdout, true);
++    var out_stream = new UnixInputStream(dd_stdout, true);
+     var out_reader = new DataInputStream(out_stream);
+ 
+     // This loop goes on while rest of class is doing its work.  We ref

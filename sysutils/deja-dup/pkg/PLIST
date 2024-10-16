@@ -3,7 +3,6 @@ lib/deja-dup/
 @so lib/deja-dup/libdeja.so
 libexec/deja-dup/
 @bin libexec/deja-dup/deja-dup-monitor
-libexec/deja-dup/restic-dump-to
 @man man/man1/deja-dup.1
 share/applications/org.gnome.DejaDup.desktop
 share/dbus-1/services/org.gnome.DejaDup.service
