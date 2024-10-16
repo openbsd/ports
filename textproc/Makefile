@@ -123,6 +123,7 @@
      SUBDIR += libmarisa
      SUBDIR += libnxml
      SUBDIR += librevenge
+     SUBDIR += libspelling
      SUBDIR += libstemmer
      SUBDIR += libtextcat
      SUBDIR += libtranslate
