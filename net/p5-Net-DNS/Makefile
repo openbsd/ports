@@ -1,7 +1,7 @@
 COMMENT =	perl interface to the domain name system
 
-DISTNAME =	Net-DNS-1.46
-SUPDISTFILES =	${DISTFILES}.asc
+DISTNAME =	Net-DNS-1.47
+SUPDISTFILES =	${DISTFILES}.sig
 
 CATEGORIES =	net
 
