@@ -8,7 +8,7 @@ patch to workaround.
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -607,6 +607,12 @@ class pil_build_ext(build_ext):
+@@ -633,6 +633,12 @@ class pil_build_ext(build_ext):
                      ),
                  )
  
@@ -21,12 +21,12 @@ Index: setup.py
          elif sys.platform.startswith("netbsd"):
              _add_directory(library_dirs, "/usr/pkg/lib")
              _add_directory(include_dirs, "/usr/pkg/include")
-@@ -720,7 +726,7 @@ class pil_build_ext(build_ext):
+@@ -746,6 +752,8 @@ class pil_build_ext(build_ext):
          if feature.want("tiff"):
              _dbg("Looking for tiff")
              if _find_include_file(self, "tiff.h"):
--                if _find_library_file(self, "tiff"):
-+                if sys.platform.startswith("openbsd") or _find_library_file(self, "tiff"):
-                     feature.tiff = "tiff"
++                if sys.platform.startswith("openbsd"):
++                    feature.set("tiff", "tiff")
+                 if _find_library_file(self, "tiff"):
+                     feature.set("tiff", "tiff")
                  if sys.platform in ["win32", "darwin"] and _find_library_file(
-                     self, "libtiff"

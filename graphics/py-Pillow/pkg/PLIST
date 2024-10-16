@@ -73,7 +73,6 @@ lib/python${MODPY_VERSION}/site-packages/PIL/PixarImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/PngImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/PpmImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/PsdImagePlugin.py
-lib/python${MODPY_VERSION}/site-packages/PIL/PyAccess.py
 lib/python${MODPY_VERSION}/site-packages/PIL/QoiImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/SgiImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/SpiderImagePlugin.py
@@ -233,8 +232,6 @@ lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}PpmImagePlugin.${MO
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}PpmImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}PsdImagePlugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}PsdImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}PyAccess.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}PyAccess.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}QoiImagePlugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}QoiImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}SgiImagePlugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -296,6 +293,7 @@ lib/python${MODPY_VERSION}/site-packages/PIL/_imagingmath.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PIL/_imagingmorph.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/PIL/_imagingmorph.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PIL/_imagingtk.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/PIL/_imagingtk.pyi
 lib/python${MODPY_VERSION}/site-packages/PIL/_tkinter_finder.py
 lib/python${MODPY_VERSION}/site-packages/PIL/_typing.py
 lib/python${MODPY_VERSION}/site-packages/PIL/_util.py

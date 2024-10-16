@@ -1,14 +1,17 @@
 COMMENT=	Python Imaging Library (friendly fork of PIL)
 
-MODPY_EGG_VERSION=	10.4.0
+# For Pillow >= 11: if trove-classifiers is installed during build,
+# it must be 2024.10.13/newer (noted here in case of any backports to
+# -stable). Pillow uses a new license type which was only added then;
+# setuptools enforces validation against trove-classifiers iff present.
+MODPY_EGG_VERSION=	11.0.0
 DISTNAME=	pillow-${MODPY_EGG_VERSION}
 PKGNAME=	py-Pillow-${MODPY_EGG_VERSION}
 CATEGORIES=	graphics
 
 HOMEPAGE=	https://python-pillow.org/
 
-# PIL Software License
-# Permission to use, copy, modify and distribute freely.
+# MIT-CMU
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += freetype imagequant jpeg lcms2 openjp2 tiff
