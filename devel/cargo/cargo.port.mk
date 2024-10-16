@@ -1,3 +1,11 @@
+.if ${MACHINE_ARCH:Mi386}
+# i386 has "cargo(39428) in free(): bogus pointer (double free?) 0x7ff80a50"
+# quite often, followed by SIGABRT. This appears to be related to lack of
+# memory, and avoiding scheduling other builds alongside builds of ports using
+# cargo seems to help reduce this.
+DPB_PROPERTIES += lonesome
+.endif
+
 MODULES +=	lang/rust
 
 # List of static dependencies. The format is cratename-version.
