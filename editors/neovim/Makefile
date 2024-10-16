@@ -12,6 +12,7 @@ EMBED_LUAJIT =	No
 COMMENT =	continuation and extension of Vim
 
 DIST_TUPLE =	github neovim neovim v0.10.2 .
+REVISION =	0
 
 # embedded luajit
 USE_NOBTCFI =	Yes
@@ -27,6 +28,18 @@ DIST_TUPLE +=	github LuaJIT LuaJIT 75e92777988017fe47c5eb290998021bbf972d1f \
 		${STATIC_DEPS_WRKSRC}/luajit
 DIST_TUPLE +=	github keplerproject lua-compat-5.3 v0.13 \
 		${STATIC_DEPS_WRKSRC}/lua-compat-5.3
+DIST_TUPLE +=	github tree-sitter tree-sitter-c v0.21.3 \
+ 		${STATIC_DEPS_WRKSRC}/parsers/treesitter_c
+DIST_TUPLE +=	github tree-sitter-grammars tree-sitter-lua v0.1.0 \
+ 		${STATIC_DEPS_WRKSRC}/parsers/treesitter_lua
+DIST_TUPLE +=	github neovim tree-sitter-vim v0.4.0 \
+ 		${STATIC_DEPS_WRKSRC}/parsers/treesitter_vim
+DIST_TUPLE +=	github neovim tree-sitter-vimdoc v3.0.0 \
+ 		${STATIC_DEPS_WRKSRC}/parsers/treesitter_vimdoc
+DIST_TUPLE +=	github tree-sitter-grammars tree-sitter-query v0.4.0 \
+ 		${STATIC_DEPS_WRKSRC}/parsers/treesitter_query
+DIST_TUPLE +=	github MDeiml tree-sitter-markdown v0.2.3 \
+ 		${STATIC_DEPS_WRKSRC}/parsers/treesitter_markdown
 
 # Neovim: Apache 2.0 + Vim License
 # LuaJIT: MIT + public domain
@@ -113,6 +126,7 @@ TEST_DEPENDS =	shells/bash \
 # makes sense to embed it.
 STATIC_DEPS_WRKBUILD=${WRKBUILD}/static-deps-build
 STATIC_DEPS_INST=${WRKBUILD}/static-deps-inst
+PARSERS_WRKBUILD=${STATIC_DEPS_WRKBUILD}/parsers
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mclang}
 LUAJIT_TARGET_LIBS =	"-lc++abi -lpthread"
@@ -164,6 +178,24 @@ pre-configure:
 	cd ${STATIC_DEPS_WRKBUILD}/luv && \
 		${SETENV} ${MAKE_ENV} VERBOSE=1 \
 		${MAKE_PROGRAM} install
+
+	# Build the treesitter parsers.
+	#
+	# For this we borrow a trick from FreeBSD and re-use just the part of
+	# upstream's build system that builds the parsers.
+	mkdir -p ${PARSERS_WRKBUILD}/build/src
+	for i in ${STATIC_DEPS_WRKSRC}/parsers/*; do \
+		cp -r $${i} ${PARSERS_WRKBUILD}/build/src/$$(basename $$i); \
+		done
+	${MAKE_ENV} ${LOCALBASE}/bin/cmake -S ${WRKSRC}/cmake.deps \
+		-B ${PARSERS_WRKBUILD} ${CONFIGURE_ARGS} \
+		-DUSE_BUNDLED_TS_PARSERS=ON \
+		-DUSE_EXISTING_SRC_DIR:BOOL=ON
+	# The following line both builds *and* installs the parsers.
+	${MAKE_ENV} ${LOCALBASE}/bin/cmake --build ${PARSERS_WRKBUILD}
+	mkdir -p ${WRKBUILD}/lib/nvim/parser
+	cp -r ${PARSERS_WRKBUILD}/usr/lib/nvim/parser/*.so \
+		${WRKBUILD}/lib/nvim/parser/
 
 # These are the "old tests". There is also a new suite, but we would need the
 # "busted" test suite for Lua, which is not yet ported.

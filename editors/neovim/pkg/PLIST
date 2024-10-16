@@ -1,5 +1,13 @@
 @bin bin/nvim
 lib/nvim/
+lib/nvim/parser/
+@so lib/nvim/parser/c.so
+@so lib/nvim/parser/lua.so
+@so lib/nvim/parser/markdown.so
+@so lib/nvim/parser/markdown_inline.so
+@so lib/nvim/parser/query.so
+@so lib/nvim/parser/vim.so
+@so lib/nvim/parser/vimdoc.so
 @man man/man1/nvim.1
 share/applications/nvim.desktop
 share/doc/pkg-readmes/${PKGSTEM}
