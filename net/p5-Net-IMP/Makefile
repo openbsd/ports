@@ -1,6 +1,6 @@
 COMMENT =	module for network data inspection and modification
 
-DISTNAME =	Net-IMP-0.635
+DISTNAME =	Net-IMP-0.636
 
 CATEGORIES =	net
 
