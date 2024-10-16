@@ -163,6 +163,7 @@ include/isc/getaddresses.h
 include/isc/hash.h
 include/isc/hashmap.h
 include/isc/heap.h
+include/isc/helper.h
 include/isc/hex.h
 include/isc/histo.h
 include/isc/hmac.h
