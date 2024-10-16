@@ -1,8 +1,7 @@
 COMMENT =	ELF related utils for ELF 32/64 binaries
 
-DISTNAME =	pax-utils-1.3.7
+DISTNAME =	pax-utils-1.3.8
 EXTRACT_SUFX =	.tar.xz
-REVISION =	0
 
 CATEGORIES =	devel
 
