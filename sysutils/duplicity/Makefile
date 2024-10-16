@@ -1,10 +1,10 @@
 COMMENT =		encrypted backup using rsync algorithm
 
-MODPY_EGG_VERSION =	3.0.0
+MODPY_EGG_VERSION =	3.0.2
 DISTNAME =		duplicity-${MODPY_EGG_VERSION}
 
 DIST_TUPLE =		gitlab duplicity duplicity rel.${MODPY_EGG_VERSION} .
-WRKDIST =		${WRKDIR}/duplicity-rel.${MODPY_EGG_VERSION}-37655e4e87da89fffeb4fa424a97867264f95326
+WRKDIST =		${WRKDIR}/duplicity-rel.${MODPY_EGG_VERSION}-00c4d88aae8b765b67203fbe83db55386387ef9c
 
 CATEGORIES =		sysutils
 
