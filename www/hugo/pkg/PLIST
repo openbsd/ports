@@ -1,5 +1,6 @@
 @pkgpath www/hugo,extended
 @bin bin/hugo
+@man man/man1/hugo-build.1
 @man man/man1/hugo-completion-bash.1
 @man man/man1/hugo-completion-fish.1
 @man man/man1/hugo-completion-powershell.1

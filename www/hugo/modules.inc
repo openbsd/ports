@@ -211,7 +211,7 @@ MODGO_MODULES =	\
 	github.com/dustin/go-humanize							 v1.0.1 \
 	github.com/envoyproxy/go-control-plane						 v0.12.0 \
 	github.com/envoyproxy/protoc-gen-validate					 v1.0.4 \
-	github.com/evanw/esbuild							 v0.23.1 \
+	github.com/evanw/esbuild							 v0.24.0 \
 	github.com/fatih/color								 v1.17.0 \
 	github.com/felixge/fgprof							 v0.9.3 \
 	github.com/felixge/httpsnoop							 v1.0.4 \
@@ -262,7 +262,7 @@ MODGO_MODULES =	\
 	github.com/googleapis/google-cloud-go-testing					 v0.0.0-20210719221736-1c9a4c676720 \
 	github.com/gorilla/mux								 v1.8.1 \
 	github.com/gorilla/websocket							 v1.5.3 \
-	github.com/hairyhenderson/go-codeowners						 v0.5.0 \
+	github.com/hairyhenderson/go-codeowners						 v0.6.0 \
 	github.com/hashicorp/golang-lru							 v0.5.1 \
 	github.com/hashicorp/golang-lru/v2						 v2.0.7 \
 	github.com/hexops/gotextdiff							 v1.0.3 \
@@ -313,7 +313,7 @@ MODGO_MODULES =	\
 	github.com/prashantv/gostub							 v1.1.0 \
 	github.com/prometheus/client_model						 v0.0.0-20190812154241-14fe0d1b01d4 \
 	github.com/prometheus/prometheus						 v0.54.0 \
-	github.com/rogpeppe/go-internal							 v1.12.0 \
+	github.com/rogpeppe/go-internal							 v1.13.1 \
 	github.com/russross/blackfriday/v2						 v2.1.0 \
 	github.com/rwcarlsen/goexif							 v0.0.0-20190401172101-9e8deecbddbd \
 	github.com/sanity-io/litter							 v1.5.5 \
@@ -329,10 +329,10 @@ MODGO_MODULES =	\
 	github.com/tdewolff/minify/v2							 v2.20.37 \
 	github.com/tdewolff/parse/v2							 v2.7.15 \
 	github.com/tdewolff/test							 v1.0.11-0.20240106005702-7de5f7df4739 \
-	github.com/tetratelabs/wazero							 v1.8.0 \
+	github.com/tetratelabs/wazero							 v1.8.1 \
 	github.com/ugorji/go/codec							 v1.2.7 \
 	github.com/yuin/goldmark							 v1.7.4 \
-	github.com/yuin/goldmark-emoji							 v1.0.3 \
+	github.com/yuin/goldmark-emoji							 v1.0.4 \
 	go.opencensus.io								 v0.24.0 \
 	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc	 v0.53.0 \
 	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp			 v0.53.0 \
@@ -344,21 +344,21 @@ MODGO_MODULES =	\
 	go.uber.org/multierr								 v1.11.0 \
 	go.uber.org/zap									 v1.27.0 \
 	gocloud.dev									 v0.39.0 \
-	golang.org/x/crypto								 v0.27.0 \
+	golang.org/x/crypto								 v0.28.0 \
 	golang.org/x/exp								 v0.0.0-20221031165847-c99f073a8326 \
-	golang.org/x/image								 v0.20.0 \
+	golang.org/x/image								 v0.21.0 \
 	golang.org/x/lint								 v0.0.0-20201208152925-83fdc39ff7b5 \
 	golang.org/x/mobile								 v0.0.0-20190719004257-d2bd2a29d028 \
 	golang.org/x/mod								 v0.21.0 \
-	golang.org/x/net								 v0.29.0 \
+	golang.org/x/net								 v0.30.0 \
 	golang.org/x/oauth2								 v0.22.0 \
 	golang.org/x/sync								 v0.8.0 \
-	golang.org/x/sys								 v0.25.0 \
+	golang.org/x/sys								 v0.26.0 \
 	golang.org/x/telemetry								 v0.0.0-20240521205824-bda55230c457 \
-	golang.org/x/term								 v0.24.0 \
-	golang.org/x/text								 v0.18.0 \
+	golang.org/x/term								 v0.25.0 \
+	golang.org/x/text								 v0.19.0 \
 	golang.org/x/time								 v0.6.0 \
-	golang.org/x/tools								 v0.23.0 \
+	golang.org/x/tools								 v0.26.0 \
 	golang.org/x/xerrors								 v0.0.0-20240716161551-93cc26a95ae9 \
 	google.golang.org/api								 v0.191.0 \
 	google.golang.org/appengine							 v1.6.8 \
@@ -558,6 +558,7 @@ MODGO_MODFILES =	\
 	github.com/pkg/sftp								 v1.13.1 \
 	github.com/pmezard/go-difflib							 v0.0.0-20151028094244-d8ed2627bdf0 \
 	github.com/rogpeppe/go-internal							 v1.10.0 \
+	github.com/rogpeppe/go-internal							 v1.12.0 \
 	github.com/rogpeppe/go-internal							 v1.3.0 \
 	github.com/rogpeppe/go-internal							 v1.6.1 \
 	github.com/rogpeppe/go-internal							 v1.8.1 \
@@ -645,7 +646,7 @@ MODGO_MODFILES =	\
 	golang.org/x/mod								 v0.12.0 \
 	golang.org/x/mod								 v0.14.0 \
 	golang.org/x/mod								 v0.17.0 \
-	golang.org/x/mod								 v0.19.0 \
+	golang.org/x/mod								 v0.18.0 \
 	golang.org/x/mod								 v0.2.0 \
 	golang.org/x/mod								 v0.3.0 \
 	golang.org/x/mod								 v0.4.0 \
@@ -654,7 +655,6 @@ MODGO_MODFILES =	\
 	golang.org/x/mod								 v0.6.0 \
 	golang.org/x/mod								 v0.6.0-dev.0.20220419223038-86c51ed26bb4 \
 	golang.org/x/mod								 v0.8.0 \
-	golang.org/x/mod								 v0.9.0 \
 	golang.org/x/net								 v0.0.0-20180724234803-3673e40ba225 \
 	golang.org/x/net								 v0.0.0-20180826012351-8a410e7b638d \
 	golang.org/x/net								 v0.0.0-20190108225652-1e06a53dbb7e \
@@ -866,6 +866,7 @@ MODGO_MODFILES =	\
 	golang.org/x/tools								 v0.17.0 \
 	golang.org/x/tools								 v0.2.0 \
 	golang.org/x/tools								 v0.21.1-0.20240508182429-e35e4ccd0d2d \
+	golang.org/x/tools								 v0.22.0 \
 	golang.org/x/tools								 v0.6.0 \
 	golang.org/x/xerrors								 v0.0.0-20190717185122-a985d3407aa7 \
 	golang.org/x/xerrors								 v0.0.0-20191011141410-1b5146add898 \
