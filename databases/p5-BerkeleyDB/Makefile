@@ -1,6 +1,6 @@
 COMMENT =	Berkeley DB module
 
-DISTNAME =	BerkeleyDB-0.65
+DISTNAME =	BerkeleyDB-0.66
 
 CATEGORIES =	databases
 
