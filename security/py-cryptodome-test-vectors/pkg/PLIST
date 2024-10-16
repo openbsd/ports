@@ -211,6 +211,10 @@ lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wych
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/x25519_jwk_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/x25519_pem_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/x25519_test.json
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/x448_asn_test.json
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/x448_jwk_test.json
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/x448_pem_test.json
+lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/Protocol/wycheproof/x448_test.json
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/
 lib/python${MODPY_VERSION}/site-packages/pycryptodome_test_vectors/PublicKey/ECC/ecc_ed25519.txt

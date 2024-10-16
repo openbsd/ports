@@ -1,6 +1,6 @@
 COMMENT=	test vectors for pycryptodome
 
-MODPY_EGG_VERSION=	1.0.18
+MODPY_EGG_VERSION=	1.0.20
 DISTNAME=	pycryptodome-test-vectors-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME:S/py//}
 EXTRACT_SUFX=	.zip
