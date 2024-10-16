@@ -6,4 +6,4 @@ include/FL/Flv_Table.H
 include/FL/Flve_Check_Button.H
 include/FL/Flve_Combo.H
 include/FL/Flve_Input.H
-lib/libflvw.a
+@static-lib lib/libflvw.a
