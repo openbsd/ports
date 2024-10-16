@@ -1,6 +1,6 @@
 COMMENT =	module signature file manipulation
 
-DISTNAME =	Module-Signature-0.88
+DISTNAME =	Module-Signature-0.89
 
 CATEGORIES =	security
 
@@ -10,6 +10,7 @@ MAINTAINER =	Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
+
 BUILD_DEPENDS =		security/gnupg
 RUN_DEPENDS =		textproc/p5-Text-Diff \
 			security/gnupg
@@ -27,7 +28,7 @@ PKG_ARCH =		*
 # together with the source.  It just ensures that the port works fine.
 GNUPGHOME =		${WRKDIR}/gnupg
 CONFIGURE_ENV =		GNUPGHOME=${GNUPGHOME}
-MAKE_ENV =		GNUPGHOME=${GNUPGHOME} TEST_SIGNATURE=1
+MAKE_ENV =		GNUPGHOME=${GNUPGHOME} TEST_SIGNATURE=0
 
 pre-configure:
 	mkdir -p -m 0700 -- ${GNUPGHOME}
