@@ -1,6 +1,6 @@
 COMMENT =		fast NumPy array functions written in C
 
-MODPY_EGG_VERSION =	1.4.0
+MODPY_EGG_VERSION =	1.4.1
 DISTNAME =		bottleneck-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
 CATEGORIES =		math
@@ -34,7 +34,6 @@ TEST_DEPENDS =	devel/py-pluggy${MODPY_FLAVOR} \
 pre-test:
 	@${MODPY_CMD} build_ext --inplace
 
-# also needs data dir from github for one test
 do-test:
 	cd ${WRKSRC} && ${MODPY_BIN} -c "import bottleneck; bottleneck.test()"
 
