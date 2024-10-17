@@ -1,6 +1,6 @@
 COMMENT=	Yamagi Quake II
 N=		yquake2
-V=		8.30
+V=		8.41
 PKGNAME=	${N}-${V}
 DISTNAME=	quake2-${V}
 CATEGORIES=	games
@@ -16,6 +16,7 @@ PERMIT_PACKAGE=	Yes
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
 
+# curl and openal are dlopen()'d
 WANTLIB += GL SDL2 c curl execinfo m openal
 
 # Libraries loaded with dlopen(3)
