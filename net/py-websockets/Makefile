@@ -1,11 +1,9 @@
 COMMENT =	Python library for building WebSocket servers and clients
 
-MODPY_EGG_VERSION =	10.3
+MODPY_EGG_VERSION =	13.1
 
 DISTNAME =		websockets-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-
-REVISION =		2
 
 CATEGORIES =		net
 
@@ -22,6 +20,10 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
+
+# some test-related files are missing from the sdist on pypi; they are
+# present in github and mostly work
+NO_TEST =		Yes
 
 FLAVOR =		python3
 FLAVORS =		python3
