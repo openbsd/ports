@@ -3271,8 +3271,6 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/utils/traversal.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/version.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/webvtt.py
 @man man/man1/yt-dlp.1
-share/bash-completion/
-share/bash-completion/completions/
 share/bash-completion/completions/yt-dlp
 share/doc/yt_dlp/
 share/doc/yt_dlp/README.txt

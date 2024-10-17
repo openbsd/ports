@@ -1,6 +1,6 @@
 COMMENT =	CLI program to download videos from YouTube and other sites
 
-VERSION =	2024.09.27
+VERSION =	2024.10.07
 MODPY_EGG_VERSION =	${VERSION:S/.0/./g}
 
 DISTNAME =	yt-dlp-${VERSION}
@@ -19,7 +19,19 @@ MODULES =	lang/python
 
 MODPY_PYBUILD =	hatchling
 
-TEST_DEPENDS +=	devel/flake8
+# deps are optional, though required for various site extractors
+# or functionality. these ones are quite common and either don't
+# pull in a big chain of other ports, or (in the case of ffmpeg)
+# are strongly recommended.
+RUN_DEPENDS =	audio/py-mutagen${MODPY_FLAVOR} \
+		devel/py-certifi${MODPY_FLAVOR} \
+		graphics/ffmpeg \
+		security/py-cryptodomex${MODPY_FLAVOR} \
+		www/py-requests${MODPY_FLAVOR}
+
+TEST_DEPENDS +=	devel/flake8 \
+		archivers/py-brotlicffi${MODPY_FLAVOR} \
+		net/py-websockets${MODPY_FLAVOR}
 
 WRKDIST =	${WRKDIR}/yt-dlp
 
