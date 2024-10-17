@@ -2,7 +2,7 @@ COMMENT=	event-driven spam filtering system in C/Lua
 
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
-GH_TAGNAME=	3.10.0
+GH_TAGNAME=	3.10.1
 
 CATEGORIES=	mail
 
@@ -50,7 +50,8 @@ TEST_DEPENDS=	${FULLPKGNAME}:${FULLPKGPATH} \
 		devel/py-robotframework${MODPY_FLAVOR} \
 		sysutils/py-psutil${MODPY_FLAVOR}
 
-CONFIGURE_ARGS+= -DOPENBSD_BUILD=1 \
+CONFIGURE_ARGS+= \
+		-DNO_TARGET_VERSIONS=1 \
 		-DCMAKE_C_OPT_FLAGS="${CFLAGS}" \
 		-DCONFDIR="${SYSCONFDIR}/rspamd" \
 		-DDBDIR="${LOCALSTATEDIR}/rspamd" \
