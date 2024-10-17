@@ -1,10 +1,9 @@
 COMMENT =		state machine compiler
 
-DISTNAME =		ragel-6.9
-REVISION =		8
+DISTNAME =		ragel-6.10
 CATEGORIES =		devel
 
-HOMEPAGE =		http://www.colm.net/open-source/ragel/
+HOMEPAGE =		https://www.colm.net/open-source/ragel/
 
 # GPLv2
 PERMIT_PACKAGE = Yes
@@ -13,7 +12,7 @@ WANTLIB += c m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-SITES =			http://www.colm.net/files/ragel/
+SITES =			https://www.colm.net/files/ragel/
 
 MODULES =		lang/ruby
 
