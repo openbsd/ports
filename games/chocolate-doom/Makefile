@@ -1,8 +1,8 @@
 COMMENT =	portable release of Doom, Heretic, Hexen, and Strife
-V =		3.0.1
-DISTNAME =	chocolate-doom-${V}
+V =		3.1.0
+DIST_TUPLE =	github chocolate-doom chocolate-doom chocolate-doom-${V} .
+PKGNAME =	chocolate-doom-${V}
 CATEGORIES =	games x11
-REVISION =	2
 
 HOMEPAGE =	https://www.chocolate-doom.org/
 
@@ -11,25 +11,26 @@ MAINTAINER =	Ryan Freeman <ryan@slipgate.org>
 # GPLv2+
 PERMIT_PACKAGE =		Yes
 
-WANTLIB += SDL2 SDL2_mixer SDL2_net c m png samplerate z
+WANTLIB += SDL2 SDL2_mixer SDL2_net c fluidsynth m png pthread
+WANTLIB += samplerate
 
-LIB_DEPENDS =	devel/sdl2-mixer \
-		devel/sdl2-net \
+LIB_DEPENDS =	audio/fluidsynth \
 		audio/libsamplerate \
+		devel/sdl2-mixer \
+		devel/sdl2-net \
 		graphics/png
-
-SITES =		https://www.chocolate-doom.org/downloads/${V}/
 
 MODULES =	lang/python
 
 MODPY_RUNDEP =		No
 MODPY_ADJ_FILES =	man/{docgen,simplecpp}
 
-RUN_DEPENDS =	devel/desktop-file-utils
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+4,-guic
 
 CONFIGURE_STYLE =	autoreconf
-AUTOMAKE_VERSION =	1.15
-AUTOCONF_VERSION =	2.69
+AUTOMAKE_VERSION =	1.16
+AUTOCONF_VERSION =	2.71
 CONFIGURE_ARGS +=	--mandir="${LOCALBASE}/man"
 
 post-extract:
