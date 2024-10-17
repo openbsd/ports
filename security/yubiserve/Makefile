@@ -5,7 +5,7 @@ GH_PROJECT=	yubikeyedup
 GH_COMMIT=	d5044d3fdc10cc59a5213efd53e0f80b2a1096f9
 DISTNAME=	yubikeyedup-0.20201226
 MODPY_EGG_VERSION=0.1
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	security www
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 MODPY_PYBUILD =	setuptools
 
-RUN_DEPENDS=	security/py-cryptodome${MODPY_FLAVOR}
+RUN_DEPENDS=	security/py-cryptodomex${MODPY_FLAVOR}
 
 NO_TEST=	Yes
 
