@@ -1,0 +1,2 @@
+@so lib/python${MODPY_VERSION}/site-packages/Cryptodome/Cipher/_raw_aesni${MODPY_ABI3SO}.so
+@so lib/python${MODPY_VERSION}/site-packages/Cryptodome/Hash/_ghash_clmul${MODPY_ABI3SO}.so
