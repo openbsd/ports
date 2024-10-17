@@ -5,7 +5,7 @@ MODPY_EGG_VERSION =	4.0.6
 DISTNAME =	pykeepass-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	security
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://github.com/libkeepass/pykeepass
 
@@ -26,7 +26,7 @@ NO_TEST =		Yes
 RUN_DEPENDS =	devel/py-construct${MODPY_FLAVOR} \
 		devel/py-dateutil${MODPY_FLAVOR} \
 		security/py-argon2-cffi${MODPY_FLAVOR} \
-		security/py-cryptodome${MODPY_FLAVOR} \
+		security/py-cryptodomex${MODPY_FLAVOR} \
 		textproc/py-lxml${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
