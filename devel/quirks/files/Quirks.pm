@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1660 2024/10/15 21:04:28 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1661 2024/10/17 08:39:04 landry Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -590,6 +590,10 @@ my $stem_extensions = {
 	'monitoring-plugins-samba' => 'monitoring-plugins',
 	'extra-cmake-modules' => 'kf6-extra-cmake-modules',
 	'breeze-icons' => 'kf6-breeze-icons',
+	'py3-buildbot-react-console-view' => 'py3-buildbot-console-view',
+	'py3-buildbot-react-waterfall-view' => 'py3-buildbot-waterfall-view',
+	'py3-buildbot-react-waterfall-view' => 'py3-buildbot-waterfall-view',
+	'py3-buildbot-www-react' => 'py3-buildbot-www',
 };
 
 my $obsolete_reason = {};
