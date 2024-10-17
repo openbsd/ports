@@ -288,6 +288,26 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/db/builds.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/db/buildsets.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/db/changes.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/db/changesources.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/db/compression/
+lib/python${MODPY_VERSION}/site-packages/buildbot/db/compression/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/buildbot/db/compression/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/buildbot/db/compression/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/buildbot/db/compression/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/db/compression/${MODPY_PYCACHE}brotli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/buildbot/db/compression/${MODPY_PYCACHE}brotli.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/db/compression/${MODPY_PYCACHE}lz4.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/buildbot/db/compression/${MODPY_PYCACHE}lz4.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/db/compression/${MODPY_PYCACHE}native.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/buildbot/db/compression/${MODPY_PYCACHE}native.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/db/compression/${MODPY_PYCACHE}protocol.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/buildbot/db/compression/${MODPY_PYCACHE}protocol.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/db/compression/${MODPY_PYCACHE}zstd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/buildbot/db/compression/${MODPY_PYCACHE}zstd.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/db/compression/brotli.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/db/compression/lz4.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/db/compression/native.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/db/compression/protocol.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/db/compression/zstd.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/db/connector.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/db/dbconfig.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/db/enginestrategy.py
@@ -765,6 +785,8 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/steps/${MODPY_PYCACHE}__init__
 lib/python${MODPY_VERSION}/site-packages/buildbot/steps/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/steps/${MODPY_PYCACHE}cmake.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/buildbot/steps/${MODPY_PYCACHE}cmake.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/steps/${MODPY_PYCACHE}configurable.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/buildbot/steps/${MODPY_PYCACHE}configurable.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/steps/${MODPY_PYCACHE}cppcheck.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/buildbot/steps/${MODPY_PYCACHE}cppcheck.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/steps/${MODPY_PYCACHE}download_secret_to_worker.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -798,6 +820,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/steps/${MODPY_PYCACHE}vstudio.
 lib/python${MODPY_VERSION}/site-packages/buildbot/steps/${MODPY_PYCACHE}worker.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/buildbot/steps/${MODPY_PYCACHE}worker.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/steps/cmake.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/steps/configurable.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/steps/cppcheck.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/steps/download_secret_to_worker.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/steps/gitdiffinfo.py
@@ -1099,6 +1122,8 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/${MODPY_PYCACHE}endp
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/${MODPY_PYCACHE}endpoint.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/${MODPY_PYCACHE}fuzz.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/${MODPY_PYCACHE}fuzz.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/${MODPY_PYCACHE}git_repository.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/${MODPY_PYCACHE}git_repository.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/${MODPY_PYCACHE}integration.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/${MODPY_PYCACHE}integration.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/${MODPY_PYCACHE}interfaces.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1146,6 +1171,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/decorators.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/dirs.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/endpoint.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/fuzz.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/git_repository.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/integration.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/interfaces.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/test/util/logging.py
@@ -1190,6 +1216,8 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}eventual.
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}eventual.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}git.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}git.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}git_credential.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}git_credential.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}giturlparse.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}giturlparse.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/${MODPY_PYCACHE}httpclientservice.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1262,6 +1290,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/util/debounce.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/deferwaiter.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/eventual.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/git.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/util/git_credential.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/giturlparse.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/httpclientservice.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/util/identifiers.py
@@ -1384,6 +1413,8 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/www/${MODPY_PYCACHE}change_hoo
 lib/python${MODPY_VERSION}/site-packages/buildbot/www/${MODPY_PYCACHE}change_hook.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/www/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/buildbot/www/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/buildbot/www/${MODPY_PYCACHE}encoding.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/buildbot/www/${MODPY_PYCACHE}encoding.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/www/${MODPY_PYCACHE}graphql.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/buildbot/www/${MODPY_PYCACHE}graphql.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot/www/${MODPY_PYCACHE}ldapuserinfo.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1420,6 +1451,7 @@ lib/python${MODPY_VERSION}/site-packages/buildbot/www/authz/roles.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/www/avatar.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/www/change_hook.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/www/config.py
+lib/python${MODPY_VERSION}/site-packages/buildbot/www/encoding.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/www/graphql.py
 lib/python${MODPY_VERSION}/site-packages/buildbot/www/hooks/
 lib/python${MODPY_VERSION}/site-packages/buildbot/www/hooks/__init__.py

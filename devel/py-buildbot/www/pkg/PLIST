@@ -1,4 +1,6 @@
 @conflict py-buildbot-www-*
+@conflict py3-buildbot-www-react-*
+@pkgpath devel/py-buildbot/www-react
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/
 lib/python${MODPY_VERSION}/site-packages/buildbot_www-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/buildbot_www-${MODPY_EGG_VERSION}.dist-info/METADATA
@@ -13,8 +15,8 @@ lib/python${MODPY_VERSION}/site-packages/buildbot_www/${MODPY_PYCACHE}__init__.$
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/assets/
-lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/assets/index-C9r7J_PZ.js
-lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/assets/index-Cwdqrn--.css
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/assets/index-C8e-pEak.js
+lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/assets/index-RMiJqufA.css
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/browser-warning-list.js
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/browser-warning.css
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/static/browser-warning.js
