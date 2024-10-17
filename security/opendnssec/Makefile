@@ -95,9 +95,4 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/enforcer/utils/1.4-2.0_db_convert/mysql_convert.sql \
 		${PREFIX}/share/opendnssec/migration/migrate-mysql.sql
 
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS +=	-std=gnu99
-.endif
-
 .include <bsd.port.mk>

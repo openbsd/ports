@@ -24,9 +24,6 @@ LIB_DEPENDS=	devel/popt \
 
 CONFIGURE_ARGS=	-DUSE_LIBB2=ON
 
-# There are C99 initial declarations in for loops, base-gcc needs this flag.
-CFLAGS +=	-std=gnu99
-
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/rdiff.1 ${PREFIX}/man/man1
 	${INSTALL_MAN} ${WRKSRC}/doc/librsync.3 ${PREFIX}/man/man3

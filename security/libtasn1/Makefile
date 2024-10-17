@@ -18,9 +18,6 @@ SITES=			${SITE_GNU:=libtasn1/}
 
 CONFIGURE_STYLE=	gnu
 
-# Allow building with base-gcc
-CFLAGS +=		-std=gnu99
-
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 .include <bsd.port.mk>

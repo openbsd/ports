@@ -23,9 +23,4 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/darkhttpd/
 	${INSTALL_DATA} ${WRKSRC}/README.md ${PREFIX}/share/doc/darkhttpd/README
 
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS +=	-std=gnu99
-.endif
-
 .include <bsd.port.mk>

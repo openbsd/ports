@@ -52,9 +52,4 @@ post-install:
 	rm -Rf ${PREFIX}/share/applications/
 .endif
 
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS +=	-std=gnu99
-.endif
-
 .include <bsd.port.mk>

@@ -23,9 +23,4 @@ LIB_DEPENDS =	converters/libdvdcss>=1.4.3
 CONFIGURE_STYLE = gnu
 CONFIGURE_ARGS =--disable-apidoc
 
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS +=	-std=gnu99
-.endif
-
 .include <bsd.port.mk>

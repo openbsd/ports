@@ -92,11 +92,6 @@ LIB_DEPENDS-main +=	security/cyrus-sasl2
 WANTLIB-main +=		sasl2
 .endif
 
-# Needed to build with base-gcc
-.if !${PROPERTIES:Mclang}
-CFLAGS +=		-std=gnu99
-.endif
-
 EXIM_EXTRA_LIBS +=	-L${LOCALBASE}/lib -liconv
 
 EXIM_MAKECAT +=		"BIN_DIRECTORY=${PREFIX}/bin\n"

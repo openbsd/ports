@@ -47,9 +47,4 @@ post-install:
 	# rm useless manpages that only reference docgen
 	rm ${PREFIX}/man/man6/crispy-{doom,heretic,hexen,strife}-setup.6
 
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS +=	-std=gnu99
-.endif
-
 .include <bsd.port.mk>

@@ -66,11 +66,6 @@ CONFIGURE_ENV +=	ASPELL_LIBS="-L${LOCALBASE}/lib -laspell" \
 CONFIGURE_ARGS+=	--disable-aspell
 .endif
 
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS +=		-std=gnu99
-.endif
-
 pre-test:
 	ln -sf ${LOCALBASE}/bin/gdiff ${WRKDIR}/bin/diff
 	ln -sf ${LOCALBASE}/bin/gsort ${WRKDIR}/bin/sort

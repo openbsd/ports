@@ -121,9 +121,4 @@ post-install:
 		${FILESDIR}/Xsession \
 		${PREFIX}/share/examples/gdm/etc/gdm/Xsession
 
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS +=	-std=gnu99
-.endif
-
 .include <bsd.port.mk>

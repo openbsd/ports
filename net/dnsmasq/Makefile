@@ -28,9 +28,4 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/dnsmasq
 	${INSTALL_DATA} ${WRKSRC}/dnsmasq.conf.example ${PREFIX}/share/examples/dnsmasq
 
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS +=	-std=gnu99
-.endif
-
 .include <bsd.port.mk>

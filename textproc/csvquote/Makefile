@@ -20,9 +20,4 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/csvquote
 	${INSTALL_DATA} ${WRKSRC}/README.md ${PREFIX}/share/doc/csvquote
 
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS +=	-std=gnu99
-.endif
-
 .include <bsd.port.mk>

@@ -44,9 +44,4 @@ MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS+=	--disable-wayland --enable-debug=yes
 
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS +=	-std=gnu99
-.endif
-
 .include <bsd.port.mk>

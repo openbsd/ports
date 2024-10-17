@@ -29,9 +29,4 @@ INSTALL_TARGET =	install install-lib
 post-install:
 	rm ${PREFIX}/man/man7/pcilib.7
 
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS +=	-std=gnu99
-.endif
-
 .include <bsd.port.mk>

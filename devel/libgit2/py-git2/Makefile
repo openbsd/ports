@@ -17,9 +17,4 @@ LIB_DEPENDS=		devel/libgit2/libgit2
 BUILD_DEPENDS=		devel/py-cffi${MODPY_FLAVOR}
 RUN_DEPENDS=		devel/py-cffi${MODPY_FLAVOR}
 
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS +=	-std=gnu99
-.endif
-
 .include <bsd.port.mk>

@@ -24,9 +24,6 @@ MODULES=		devel/meson \
 			security/heimdal \
 			x11/gnome
 
-# Needed to build on base-gcc architectures
-CFLAGS +=		-std=gnu99
-
 LIB_DEPENDS=		audio/gsound \
 			audio/pulseaudio \
 			devel/libgtop2 \

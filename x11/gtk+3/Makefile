@@ -82,11 +82,6 @@ CONFIGURE_ARGS=		-Dprint_backends="cups,file,lpr" \
 # !!! Disable colord until proven useful
 CONFIGURE_ARGS +=	-Dcolord=no
 
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS +=	-std=gnu99
-.endif
-
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gtk+3
 	mv ${WRKINST}${SYSCONFDIR}/gtk-3.0 ${PREFIX}/share/examples/gtk+3

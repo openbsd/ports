@@ -35,11 +35,6 @@ CONFIGURE_ENV=	CPPFLAGS="-Dunix -I${LOCALBASE}/include" \
 PRIVOXYCONF=	${SYSCONFDIR}/privoxy/
 SUBST_VARS=	PRIVOXYCONF
 
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS +=	-std=gnu99
-.endif
-
 pre-configure:
 	@cd ${WRKDIST} && AUTOCONF_VERSION=${AUTOCONF_VERSION} autoheader
 

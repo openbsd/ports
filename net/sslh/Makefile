@@ -40,9 +40,4 @@ do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/$p ${PREFIX}/sbin
 .endfor
 
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS +=	-std=gnu99
-.endif
-
 .include <bsd.port.mk>

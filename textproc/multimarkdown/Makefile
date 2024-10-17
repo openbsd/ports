@@ -21,9 +21,4 @@ post-install:
 	rm ${PREFIX}/{LICENSE.txt,README.txt}
 	mv ${PREFIX}/bin/{mmd,mmd2xhtml} # avoid conflict with mtools
 
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS +=	-std=gnu99
-.endif
-
 .include <bsd.port.mk>

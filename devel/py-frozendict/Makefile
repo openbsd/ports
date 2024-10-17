@@ -22,9 +22,4 @@ MODPY_PI=	Yes
 MODPY_TEST_DIR=		${WRKSRC}/build
 MODPY_PYTEST_ARGS=	..
 
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS +=	-std=gnu99
-.endif
-
 .include <bsd.port.mk>

@@ -20,9 +20,4 @@ LIB_DEPENDS=	devel/libdvdread>=6.1.2
 
 CONFIGURE_STYLE= gnu
 
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS+=	-std=gnu99
-.endif
-
 .include <bsd.port.mk>

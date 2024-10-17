@@ -37,7 +37,4 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV =		LDFLAGS="-L${LOCALBASE}/lib" \
 			CPPFLAGS="-I${LOCALBASE}/include"
 
-# Initial declaration in for loops requires C99 with base-gcc
-CFLAGS +=	-std=gnu99
-
 .include <bsd.port.mk>

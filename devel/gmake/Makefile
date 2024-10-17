@@ -26,9 +26,4 @@ MODGNU_CONFIG_GUESS_DIRS= ${WRKSRC}/build-aux
 
 TEST_ENV=	SHELL=$$SHELL
 
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS+=	-std=gnu99
-.endif
-
 .include <bsd.port.mk>

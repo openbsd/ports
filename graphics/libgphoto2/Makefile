@@ -54,11 +54,6 @@ CONFIGURE_ARGS +=	--with-libusb-1.0=no
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS +=		-std=gnu99
-.endif
-
 # /usr/local/lib/libiconv.a(localcharset.o)(.text+0x0): In function `locale_charset':
 # multiple definition of `locale_charset'
 MAKE_FLAGS=		INTLLIBS='$$(LTLIBINTL)'

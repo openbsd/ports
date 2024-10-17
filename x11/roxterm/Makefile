@@ -24,11 +24,6 @@ LIB_DEPENDS=		devel/vte3 \
 RUN_DEPENDS=		devel/desktop-file-utils \
 			x11/gtk+4,-guic
 
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS +=	-std=gnu99
-.endif
-
 NO_TEST=		Yes
 
 .include <bsd.port.mk>

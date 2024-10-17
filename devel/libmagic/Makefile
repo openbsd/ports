@@ -26,9 +26,4 @@ post-install:
 	mv ${PREFIX}/bin/{,e}file
 	mv ${PREFIX}/man/man1/{,e}file.1
 
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS +=	-std=gnu99
-.endif
-
 .include <bsd.port.mk>

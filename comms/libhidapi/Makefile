@@ -37,9 +37,4 @@ post-install:
 	ln -sf libhidapi-libusb.so.${LIBhidapi-libusb_VERSION} \
 		${PREFIX}/lib/libhidapi.so.${LIBhidapi-libusb_VERSION}
 
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS +=	-std=gnu99
-.endif
-
 .include <bsd.port.mk>

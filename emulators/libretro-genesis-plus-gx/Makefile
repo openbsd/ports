@@ -35,9 +35,4 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/LICENSE.txt \
 		${PREFIX}/share/doc/libretro-genesis-plus-gx
 
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS +=	-std=gnu99
-.endif
-
 .include <bsd.port.mk>

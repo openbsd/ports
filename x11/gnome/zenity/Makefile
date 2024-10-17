@@ -18,9 +18,4 @@ LIB_DEPENDS=		x11/gnome/libadwaita
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache yelp
 
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS +=		-std=gnu99
-.endif
-
 .include <bsd.port.mk>

@@ -23,9 +23,4 @@ CONFIGURE_ARGS +=	-DBUILD_DOCUMENTATION=OFF
 
 NO_TEST =	Yes
 
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS +=	-std=gnu99
-.endif
-
 .include <bsd.port.mk>

@@ -41,10 +41,4 @@ MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC}/build-aux
 pre-build:
 	@${SUBST_CMD} ${WRKSRC}/doc/wget.texi ${WRKSRC}/doc/sample.wgetrc
 
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS +=	-std=gnu99
-.endif
-
-
 .include <bsd.port.mk>

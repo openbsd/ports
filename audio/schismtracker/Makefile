@@ -29,9 +29,4 @@ AUTOMAKE_VERSION =	1.15
 
 CONFIGURE_ARGS =	--without-flac
 
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mclang}
-CFLAGS +=	-std=gnu99
-.endif
-
 .include <bsd.port.mk>

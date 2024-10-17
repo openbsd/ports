@@ -16,8 +16,6 @@ SITES =		http://www.habets.pp.se/synscan/files/
 
 LIB_DEPENDS =	net/libnet/1.1
 
-CFLAGS +=	-std=gnu99
-
 CONFIGURE_STYLE = gnu
 CONFIGURE_ENV = CFLAGS="${CFLAGS} -I${LOCALBASE}/include/libnet-1.1 \
 		`libnet-config-1.1 --defines`" \
