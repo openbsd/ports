@@ -1471,12 +1471,10 @@ grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/psr/log/Psr
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/psr/log/Psr/Log/Test/DummyTest.php
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/psr/log/Psr/Log/Test/LoggerInterfaceTest.php
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/psr/log/Psr/Log/Test/TestLogger.php
-grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/psr/log/README.md
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/psr/log/composer.json
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/dav/
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/dav/LICENSE
-grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/dav/README.md
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/dav/bin/
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/dav/bin/build.php
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/dav/bin/migrateto20.php
@@ -1791,7 +1789,6 @@ grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/event
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/http/
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/http/CHANGELOG.md
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/http/LICENSE
-grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/http/README.md
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/http/composer.json
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/http/lib/
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/http/lib/Auth/
@@ -1826,7 +1823,6 @@ grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/uri/l
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/uri/lib/functions.php
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/vobject/
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/vobject/LICENSE
-grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/vobject/README.md
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/vobject/bin/
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/vobject/bin/bench.php
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/vobject/bin/bench_freebusygenerator.php
@@ -1941,7 +1937,6 @@ grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/vobje
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/vobject/resources/schema/xcard.rng
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/xml/
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/xml/LICENSE
-grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/xml/README.md
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/xml/composer.json
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/xml/lib/
 grommunio-web/plugins/files/php/Files/Backend/Webdav/sabredav/vendor/sabre/xml/lib/ContextStackTrait.php
@@ -2021,7 +2016,6 @@ grommunio-web/plugins/files/php/vendor/phpfastcache/phpfastcache/CHANGELOG.md
 grommunio-web/plugins/files/php/vendor/phpfastcache/phpfastcache/CHANGELOG_API.md
 grommunio-web/plugins/files/php/vendor/phpfastcache/phpfastcache/EXTENSIONS.MD
 grommunio-web/plugins/files/php/vendor/phpfastcache/phpfastcache/LICENCE
-grommunio-web/plugins/files/php/vendor/phpfastcache/phpfastcache/README.md
 grommunio-web/plugins/files/php/vendor/phpfastcache/phpfastcache/SECURITY.md
 grommunio-web/plugins/files/php/vendor/phpfastcache/phpfastcache/composer.json
 grommunio-web/plugins/files/php/vendor/phpfastcache/phpfastcache/docs/
@@ -2220,8 +2214,6 @@ grommunio-web/plugins/files/php/vendor/phpfastcache/phpfastcache/lib/Phpfastcach
 grommunio-web/plugins/files/php/vendor/psr/
 grommunio-web/plugins/files/php/vendor/psr/cache/
 grommunio-web/plugins/files/php/vendor/psr/cache/CHANGELOG.md
-grommunio-web/plugins/files/php/vendor/psr/cache/LICENSE.txt
-grommunio-web/plugins/files/php/vendor/psr/cache/README.md
 grommunio-web/plugins/files/php/vendor/psr/cache/composer.json
 grommunio-web/plugins/files/php/vendor/psr/cache/src/
 grommunio-web/plugins/files/php/vendor/psr/cache/src/CacheException.php
@@ -2230,7 +2222,6 @@ grommunio-web/plugins/files/php/vendor/psr/cache/src/CacheItemPoolInterface.php
 grommunio-web/plugins/files/php/vendor/psr/cache/src/InvalidArgumentException.php
 grommunio-web/plugins/files/php/vendor/psr/simple-cache/
 grommunio-web/plugins/files/php/vendor/psr/simple-cache/LICENSE.md
-grommunio-web/plugins/files/php/vendor/psr/simple-cache/README.md
 grommunio-web/plugins/files/php/vendor/psr/simple-cache/composer.json
 grommunio-web/plugins/files/php/vendor/psr/simple-cache/src/
 grommunio-web/plugins/files/php/vendor/psr/simple-cache/src/CacheException.php

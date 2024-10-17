@@ -7,6 +7,8 @@ GH_ACCOUNT=	grommunio
 GH_PROJECT=	grommunio-web
 GH_COMMIT=	a45cc2e75937e41a3b770b96585b618c2b1f9a88
 
+REVISION=	0
+
 SITES=		https://nerd.hu/distfiles/
 
 CATEGORIES=	mail www

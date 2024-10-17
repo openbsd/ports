@@ -12,7 +12,26 @@ Index: Makefile
  
  # Javascript compiler
  
-@@ -95,14 +97,14 @@ clearartifacts:
+@@ -66,9 +68,9 @@ JSFILES = $(sort $(shell find client/zarafa -name '*.j
+ 
+ .PHONY: deploy server client all
+ 
+-all: deploy
++all: deploy clearartifacts
+ 
+-deploy: node_modules server client plugins css clearartifacts
++deploy: node_modules server client plugins css
+ 
+ build: node_modules deploy
+ 
+@@ -89,20 +91,20 @@ css:
+ svgo: node_modules
+ 	find client plugins -type f -name "*.svg" -exec $(SVGCOMPRESS) --multipass {} \;
+ 
+-clearartifacts:
++clearartifacts: deploy
+ 	find $(DESTDIR) -iname "*readme*" -exec rm -f {} \;
+ 	find $(DESTDIR) -iname "*license*.txt" -exec rm -f {} \;
  	find $(DESTDIR) -iname "*gpl*.txt" -exec rm -f {} \;
  
  js: $(JSDEPLOY)/fingerprint.js $(JSDEPLOY)/resize.js $(JSDEPLOY)/grommunio.js $(JSDEPLOY)/extjs-mod/extjs-mod.js $(JSDEPLOY)/extjs/ext-base-all.js $(DESTDIR)/client/third-party/ux-thirdparty.js $(DEPLOYPURIFYJS) $(JSDEPLOY)/filepreviewer/pdfjs/build/pdf.sandbox.js $(JSDEPLOY)/filepreviewer/pdfjs/build/pdf.worker.js $(JSDEPLOY)/filepreviewer/pdfjs/build/pdf.js $(JSDEPLOY)/filepreviewer/pdfjs/web/viewer.js $(JSDEPLOY)/filepreviewer/ViewerJS/ImageViewerPlugin.js $(JSDEPLOY)/filepreviewer/ViewerJS/MultimediaViewerPlugin.js $(JSDEPLOY)/filepreviewer/ViewerJS/ODFViewerPlugin.js $(JSDEPLOY)/filepreviewer/ViewerJS/UnknownFilePlugin.js $(JSDEPLOY)/filepreviewer/ViewerJS/viewer.js $(JSDEPLOY)/filepreviewer/ViewerJS/video-js/video.js
