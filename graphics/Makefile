@@ -349,6 +349,7 @@
      SUBDIR += xfig
      SUBDIR += xoris
      SUBDIR += xpaint
+     SUBDIR += xpm-pixbuf
      SUBDIR += xsane
      SUBDIR += xsane,gimp
      SUBDIR += xv
