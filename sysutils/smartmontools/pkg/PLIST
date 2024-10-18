@@ -26,4 +26,5 @@ share/examples/smartmontools/Example7
 share/examples/smartmontools/Example8
 share/examples/smartmontools/README
 share/examples/smartmontools/smartd_warning.sh
+@mode 0755
 @sample ${SYSCONFDIR}/smartd_warning.sh
