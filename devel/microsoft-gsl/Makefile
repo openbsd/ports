@@ -19,7 +19,6 @@ TEST_DEPENDS =		devel/gtest
 NO_BUILD =		Yes
 
 pre-test:
-	#
 	${MODCMAKE_BUILD_TARGET}
 
 .include <bsd.port.mk>
