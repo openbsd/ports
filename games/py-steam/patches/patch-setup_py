@@ -1,18 +1,8 @@
-use security/py-cryptodome
 don't limit protobuf version to 3
 
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -15,7 +15,7 @@ with open(path.join(here, 'steam/__init__.py'), encodi
- 
- install_requires = [
-     'six>=1.10',
--    'pycryptodomex>=3.7.0',
-+    'pycryptodome>=3.7.0',
-     'requests>=2.9.1',
-     'urllib3<2',
-     'vdf>=3.3',
 @@ -27,7 +27,7 @@ install_requires = [
  install_extras = {
      'client': [
