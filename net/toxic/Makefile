@@ -1,9 +1,6 @@
 COMMENT =		ncurses-based Tox client
 
-GH_ACCOUNT =		Jfreegman
-GH_PROJECT =		toxic
-GH_TAGNAME =		v0.11.3
-REVISION =		2
+DIST_TUPLE =		github Jfreegman toxic v0.15.1 .
 
 CATEGORIES =		net
 
@@ -20,6 +17,7 @@ LIB_DEPENDS =		audio/freealut \
 			graphics/libqrencode
 
 MAKE_ENV +=		ENABLE_PYTHON=1 \
+			ENABLE_RELEASE=1 \
 			USER_CFLAGS="${CFLAGS}"
 MODULES =		lang/python
 CONFIGURE_STYLE =	none
