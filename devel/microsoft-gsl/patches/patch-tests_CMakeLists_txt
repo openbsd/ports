@@ -1,0 +1,40 @@
+- remove -Werror to unbreak test build
+- fix gtest include and library paths
+
+Index: tests/CMakeLists.txt
+--- tests/CMakeLists.txt.orig
++++ tests/CMakeLists.txt
+@@ -112,7 +112,6 @@ else()
+         -Wcast-align
+         -Wconversion
+         -Wctor-dtor-privacy
+-        -Werror
+         -Wextra
+         -Wpedantic
+         -Wshadow
+@@ -170,7 +169,7 @@ endif(MSVC)
+ 
+ # for tests to find the gtest header
+ target_include_directories(gsl_tests_config SYSTEM INTERFACE
+-    googletest/googletest/include
++    ${GTestMain_INCLUDE_DIRS}
+ )
+ 
+ add_executable(gsl_tests
+@@ -191,7 +190,7 @@ add_executable(gsl_tests
+ target_link_libraries(gsl_tests
+     Microsoft.GSL::GSL
+     gsl_tests_config
+-    ${GTestMain_LIBRARIES}
++    ${GTestMain_LINK_LIBRARIES}
+ )
+ add_test(gsl_tests gsl_tests)
+ 
+@@ -236,7 +235,6 @@ else()
+         -Wcast-align
+         -Wconversion
+         -Wctor-dtor-privacy
+-        -Werror
+         -Wextra
+         -Wpedantic
+         -Wshadow

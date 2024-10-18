@@ -12,15 +12,19 @@ PERMIT_PACKAGE =	Yes
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
-# "ninja: no work to do."
-NO_BUILD =		Yes
 # just header files
 PKG_ARCH =		*
 
 MODULES =		devel/cmake
 
-# fetches gtest via git during configure, needs patching to use our port
-CONFIGURE_ARGS =	-DGSL_TEST=OFF
-NO_TEST =		Yes
+BUILD_DEPENDS =		devel/gtest
+TEST_DEPENDS =		devel/gtest
+
+# build tests only when running them
+NO_BUILD =		Yes
+
+pre-test:
+	#
+	${MODCMAKE_BUILD_TARGET}
 
 .include <bsd.port.mk>
