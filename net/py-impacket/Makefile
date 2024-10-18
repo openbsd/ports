@@ -7,9 +7,9 @@ DISTNAME =		impacket-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 EPOCH =			0
 CATEGORIES =		net security
-REVISION =		2
+REVISION =		3
 
-HOMEPAGE =		https://www.secureauth.com/labs/open-source-tools/impacket
+HOMEPAGE =		https://github.com/fortra/impacket
 
 # Apache modified
 PERMIT_PACKAGE =	Yes
@@ -34,7 +34,7 @@ MODPY_ADJ_FILES =	impacket/ese.py \
 RUN_DEPENDS =		devel/py-asn1${MODPY_FLAVOR} \
 			devel/py-future${MODPY_FLAVOR} \
 			net/py-pcapy${MODPY_FLAVOR} \
-			security/py-cryptodome${MODPY_FLAVOR} \
+			security/py-cryptodomex${MODPY_FLAVOR} \
 			security/py-openssl${MODPY_FLAVOR}
 
 NO_TEST =		Yes
@@ -46,8 +46,6 @@ pre-configure:
 	${SUBST_CMD} ${WRKSRC}/examples/goldenPac.py \
 		${WRKSRC}/examples/nmapAnswerMachine.py \
 		${WRKSRC}/examples/raiseChild.py
-# Adjust Cryptodomex imports
-	find ${WRKSRC} -type f -name \*.py -exec sed -i 's,Cryptodome,Crypto,g' {} +
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${PKGSTEM}
