@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1639 2024/10/06 10:24:24 kn Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1640 2024/10/18 22:39:30 kn Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -2614,11 +2614,11 @@ _internal-checksum: _internal-fetch
 	  exit 1; \
 	fi
 	@cd ${DISTDIR}; OK=true; list=''; files=''; \
+	  set -o pipefail; \
 	  for file in ${CHECKSUMFILES}; do \
 		if set -- $$(grep "^${_CIPHER:U} ($$file)" ${CHECKSUM_FILE}); \
 		then \
-			echo -n '>> '; \
-			if ! echo "$$@" | cksum -c; then \
+			if ! echo "$$@" | cksum -cq | sed 's/^/>> /'; then \
 				list="$$list $$file ${_CIPHER} $$4"; \
 				files="$$files ${DISTDIR}/$$file"; \
 				OK=false; \
@@ -2642,6 +2642,8 @@ _internal-checksum: _internal-fetch
 		  echo "\tmake REFETCH=true [other args]"; \
 		  exit 1; \
 		fi; \
+	  else \
+		  ${ECHO_MSG} ">> (${_CIPHER:U}) all files: OK"; \
 	  fi
 .    endif
 .  endif
