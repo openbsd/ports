@@ -1,9 +1,9 @@
 COMMENT=	arbitrary-precision complex numbers math library
 
-V=		1.1.0
+V=		1.2.1
 DISTNAME=	mpc-${V}
 PKGNAME=	libmpc-${V}
-SHARED_LIBS=	mpc	1.0	# 4.0
+SHARED_LIBS=	mpc	1.1	# 5.1
 
 CATEGORIES=	devel math
 
