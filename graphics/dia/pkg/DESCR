@@ -1,12 +1,9 @@
-Dia is a GTK+ based diagram creation program.
-
-It currently has special objects to help draw entity relationship
-diagrams, UML diagrams, flowcharts, network diagrams (including Cisco
-diagrams), and simple circuits.
-Support for new shapes is sdone by writing simple XML files, using a
-subset of SVG to draw the shape. It can load and save diagrams to a
-custom XML format (gzipped by default, to save space), can export
-diagrams to EPS or SVG formats and can print diagrams (including ones
-that span multiple pages).
-
-More shapes are available at: http://dia-installer.de/shapes/index.html
+Dia is an application to create technical diagrams. It provides various sets of
+diagram building blocks from basic tools (line, polyline, polygon, arc, ellipse,
+curves, boxes and text) as well as special sets for Flowchart, UML, SADT,
+Network diagrams and many more areas.  If you need your own set of diagram
+objects you can create them yourself with the custom shape module.  Diagrams can
+be exported to multiple vector graphics formats e.g. CGM, DXF, HPGL, PDF, SVG,
+VDX, WPG, Xfig and common bitmap formats. There are specialized exporters to
+generate source code from UML diagrams.  Dia can also import graphics from
+vector (DXF, SVG, VDX, WPG, XFig) and bitmap formats.

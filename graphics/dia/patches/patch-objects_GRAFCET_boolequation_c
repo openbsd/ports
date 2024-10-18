@@ -1,0 +1,32 @@
+../dia-434e489858e4eb7bad6a02e0462e3d3ce684d600/objects/GRAFCET/boolequation.c:562:9: error: assigning to 'gchar *' (aka 'char *') from 'const gchar *' (aka 'const char *') discards qualifiers [-Werror,-Wincompatible-pointer-types-discards-qualifiers]   
+
+Index: objects/GRAFCET/boolequation.c
+--- objects/GRAFCET/boolequation.c.orig
++++ objects/GRAFCET/boolequation.c
+@@ -144,7 +144,7 @@ static Block *textblock_create(const gchar **str)
+     gunichar c;
+     gchar *p1;
+     c = g_utf8_get_char(*str);
+-    p1 = g_utf8_next_char(*str);
++    p1 = (gchar *) g_utf8_next_char(*str);
+     if (isspecial(c)) break;
+     *str = p1;
+   }
+@@ -535,7 +535,7 @@ compoundblock_create(const gchar **str)
+     gunichar c;
+     gchar *p;
+     c = g_utf8_get_char(*str);
+-    p = g_utf8_next_char(*str);
++    p = (gchar *) g_utf8_next_char(*str);
+ 
+     inblk = NULL;
+     switch (c) {
+@@ -559,7 +559,7 @@ compoundblock_create(const gchar **str)
+     case '!':
+       *str = p;
+       c = g_utf8_get_char(*str);
+-      p = g_utf8_next_char(*str);
++      p = (gchar *) g_utf8_next_char(*str);
+       if (c == '(') {
+ 	*str = p;
+ 	inblk = overlineblock_create(compoundblock_create(str));

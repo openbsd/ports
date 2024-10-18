@@ -1,8 +1,7 @@
-COMMENT=		technical diagrams drawing tool
+COMMENT=		program for drawing structured diagrams
 
-GNOME_PROJECT=		dia
-GNOME_VERSION=		0.97.3
-REVISION=		10
+DIST_TUPLE=		gnome GNOME dia 434e489858e4eb7bad6a02e0462e3d3ce684d600 .
+PKGNAME=		dia-0.97.3.20241017
 
 CATEGORIES=		graphics
 
@@ -11,36 +10,22 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender art_lgpl_2 atk-1.0 c cairo expat ffi fontconfig
-WANTLIB += freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
-WANTLIB += harfbuzz iconv intl lzma m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png pthread xcb xcb-render xcb-shm
-WANTLIB += xml2 xslt z Xau Xdmcp jpeg
+WANTLIB += ${COMPILER_LIBCXX} c cairo gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphene-1.0 gtk-3
+WANTLIB += intl m pango-1.0 pangocairo-1.0 poppler python3.11
+WANTLIB += xml2 xpm-pixbuf xslt z
 
-MODULES=		x11/gnome
+MODULES=		devel/meson \
+			x11/gnome
 
-LIB_DEPENDS=		x11/gtk+2 \
-			graphics/libart \
-			textproc/libxslt
+LIB_DEPENDS=		graphics/graphene \
+			graphics/xpm-pixbuf \
+			print/poppler \
+			textproc/libxslt \
+			x11/gtk+3
 
 RUN_DEPENDS=		devel/xdg-utils
 
-MODGNOME_TOOLS += desktop-file-utils docbook gtk-update-icon-cache
-
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--without-hardbooks \
-			--without-python \
-			--without-swig \
-			--disable-db2html \
-			--disable-libemf \
-			--disable-gnome
-
-post-install:
-	mv ${PREFIX}/share/man/fr ${PREFIX}/man
-	rmdir ${PREFIX}/share/man
-	rm ${PREFIX}/lib/dia/*.{a,la}
+MODGNOME_TOOLS=		desktop-file-utils docbook gtk-update-icon-cache
 
 .include <bsd.port.mk>
