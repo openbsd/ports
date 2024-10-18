@@ -2,10 +2,10 @@ BROKEN =	needs adjusting for cython 3
 
 COMMENT=		maths, science and engineering modules for Python
 
-MODPY_EGG_VERSION=	1.10.1
+# 1.11.2+ requires switching to mesonpy
+MODPY_EGG_VERSION=	1.11.1
 DISTNAME=		scipy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		1
 
 CATEGORIES=		math devel
 
