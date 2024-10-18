@@ -4,6 +4,7 @@ COMMENT=		Cyrus IMAP server
 
 V=			3.10.0
 DISTNAME=		cyrus-imapd-${V}
+REVISION=		0
 
 SHARED_LIBS +=  cyrus_min            0.0      # unknown
 SHARED_LIBS +=  cyrus                0.0      # unknown
@@ -19,27 +20,36 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # CMU - see COPYING file in package
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c com_err crypto execinfo icudata
-WANTLIB += icui18n icuuc jansson m pcre2-8 pcre2-posix perl sasl2
-WANTLIB += sqlite3 srs2 ssl uuid z
+WANTLIB += ${COMPILER_LIBCXX} brotlicommon brotlienc c com_err
+WANTLIB += crypto db db_cxx execinfo ical icalss icalvcal iconv
+WANTLIB += icudata icui18n icuuc jansson lzma m nghttp2 pcre2-8
+WANTLIB += pcre2-posix perl sasl2 sqlite3 srs2 ssl uuid xapian
+WANTLIB += xml2 z zstd
 
 SITES=			https://github.com/cyrusimap/cyrus-imapd/releases/download/cyrus-imapd-${V}/
 
 COMPILER=		base-clang ports-gcc base-gcc
 USE_GMAKE=		Yes
 
-# XXX shouldn't be needed because we build with --disable-http
-# imap/caldav_alarm.h:51:10: fatal error: 'libical/ical.h' file not found
-# #include <libical/ical.h>
-BUILD_DEPENDS +=	textproc/libical
+# xapian support, needed to for compacting databases
+BUILD_DEPENDS +=	net/rsync
+RUN_DEPENDS +=		net/rsync
 
-LIB_DEPENDS=		databases/sqlite3 \
+# xxd(1), needed for caldav support
+BUILD_DEPENDS +=	editors/vim
+
+LIB_DEPENDS=		archivers/brotli \
+			databases/sqlite3 \
+			databases/xapian-core \
 			devel/jansson \
 			devel/pcre2 \
 			mail/libsrs2 \
 			security/cyrus-sasl2 \
 			sysutils/e2fsprogs \
-			textproc/icu4c
+			textproc/icu4c \
+			textproc/libical \
+			textproc/libxml \
+			www/nghttp2
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
@@ -55,13 +65,20 @@ CONFIGURE_ARGS=		--bindir=${PREFIX}/cyrus/bin \
 			--without-zeroskip \
 			--disable-gssapi \
 			--enable-autocreate \
+			--enable-backup \
+			--enable-calalarmd \
+			--enable-http \
 			--enable-idled \
+			--enable-jmap \
 			--enable-murder \
+			--enable-replication \
 			--enable-srs
 
-# XXX notyet; FLAVOR
-CONFIGURE_ARGS +=	--without-clamav \
-			--disable-http
+# needed for jmap support
+CONFIGURE_ARGS +=	--enable-xapian
+
+# FLAVOR?
+CONFIGURE_ARGS +=	--without-clamav
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 

@@ -1,0 +1,14 @@
+64bit time_t
+
+Index: imap/http_jmap.c
+--- imap/http_jmap.c.orig
++++ imap/http_jmap.c
+@@ -1517,7 +1517,7 @@ static struct prot_waitevent *es_push(struct protstrea
+     int do_close = 0;
+ 
+     xsyslog(LOG_DEBUG, "JMAP eventSource push",
+-            "accountid=<%s>, now=<%ld>, next_poll=<%ld>, next_ping=<%ld>",
++            "accountid=<%s>, now=<%lld>, next_poll=<%lld>, next_ping=<%lld>",
+             jpush->accountid, now, jpush->next_poll, jpush->next_ping);
+ 
+     buf_reset(buf);
