@@ -752,7 +752,6 @@
      SUBDIR += unison
      SUBDIR += unworkable
      SUBDIR += usockets
-     SUBDIR += utox
      SUBDIR += uucp
      SUBDIR += validns
      SUBDIR += vf1
