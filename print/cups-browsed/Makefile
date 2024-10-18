@@ -1,8 +1,7 @@
 COMMENT=		browse network for remote CUPS queues and IPP printers
 
-V=			2.0.1
+V=			2.1.0
 DISTNAME=		cups-browsed-${V}
-REVISION=		0
 
 CATEGORIES=		print
 
@@ -31,8 +30,6 @@ LIB_DEPENDS=		net/avahi,-glib \
 FAKE_FLAGS=		pkgcupsserverrootdir=${PREFIX}/share/examples/cups-filters/cups
 
 CONFIGURE_STYLE=	gnu
-
-CONFIGURE_ARGS=		--disable-ldap
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
