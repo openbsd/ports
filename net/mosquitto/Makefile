@@ -1,11 +1,9 @@
 COMMENT =		opensource MQTT broker
 
-V =			2.0.19
-REVISION =		0
-DISTNAME =		mosquitto-$V
+DISTNAME =		mosquitto-2.0.20
 
-SHARED_LIBS +=  mosquitto                 2.1 # 1.5
-SHARED_LIBS +=  mosquittopp               2.0 # 1.5
+SHARED_LIBS +=  mosquitto                 2.1
+SHARED_LIBS +=  mosquittopp               2.0
 
 CATEGORIES =		net
 HOMEPAGE =		https://mosquitto.org/
@@ -39,7 +37,7 @@ CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib"
 CFLAGS +=		-I${LOCALBASE}/include
 
 TEST_DEPENDS=		${MODPY_RUN_DEPENDS} \
-			${BUILD_PKGPATH}-=$V \
+			${FULLPKGNAME}:${BUILD_PKGPATH} \
 			devel/cunit \
 			devel/gmake \
 			sysutils/py-psutil${MODPY_FLAVOR}
