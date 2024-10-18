@@ -1,0 +1,3 @@
+include/xpm-pixbuf.h
+@lib lib/libxpm-pixbuf.so.${LIBxpm-pixbuf_VERSION}
+lib/pkgconfig/xpm-pixbuf.pc
