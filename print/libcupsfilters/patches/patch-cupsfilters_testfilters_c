@@ -1,0 +1,11 @@
+Index: cupsfilters/testfilters.c
+--- cupsfilters/testfilters.c.orig
++++ cupsfilters/testfilters.c
+@@ -7,6 +7,7 @@
+ #include <signal.h>
+ #include <stdio.h>
+ #include <string.h>
++#include <sys/stat.h> /* S_IRUSR */
+ 
+ /*
+  * 'remove_white_space()' - Remove white spaces from beginning and end of a string
