@@ -1,10 +1,10 @@
 COMMENT =		Tox client library
 
-V =			0.2.18
+V =			0.2.19
 DISTNAME =		c-toxcore-$V
 PKGNAME =		${DISTNAME:S/c-//}
 
-SHARED_LIBS +=		toxcore	3.0
+SHARED_LIBS +=		toxcore	4.0
 
 CATEGORIES =		net telephony
 
@@ -26,5 +26,7 @@ LIB_DEPENDS =		audio/opus \
 			devel/libconfig \
 			multimedia/libvpx \
 			security/libsodium
+
+TEST_DEPENDS =		devel/gtest
 
 .include <bsd.port.mk>
