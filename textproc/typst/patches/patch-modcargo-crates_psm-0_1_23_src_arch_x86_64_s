@@ -1,0 +1,37 @@
+Add some endbr64 instructions: required on amd64 with IBT.
+
+Index: modcargo-crates/psm-0.1.23/src/arch/x86_64.s
+--- modcargo-crates/psm-0.1.23/src/arch/x86_64.s.orig
++++ modcargo-crates/psm-0.1.23/src/arch/x86_64.s
+@@ -26,6 +26,7 @@ TYPE(rust_psm_stack_direction)
+ FUNCTION(rust_psm_stack_direction):
+ /* extern "sysv64" fn() -> u8 (%al) */
+ .cfi_startproc
++    endbr64
+     movb $STACK_DIRECTION_DESCENDING, %al # always descending on x86_64
+     retq
+ END_FUNCTION(rust_psm_stack_direction)
+@@ -38,6 +39,7 @@ TYPE(rust_psm_stack_pointer)
+ FUNCTION(rust_psm_stack_pointer):
+ /* extern "sysv64" fn() -> *mut u8 (%rax) */
+ .cfi_startproc
++    endbr64
+     leaq 8(%rsp), %rax
+     retq
+ .rust_psm_stack_pointer_end:
+@@ -51,6 +53,7 @@ TYPE(rust_psm_replace_stack)
+ FUNCTION(rust_psm_replace_stack):
+ /* extern "sysv64" fn(%rdi: usize, %rsi: extern "sysv64" fn(usize), %rdx: *mut u8) */
+ .cfi_startproc
++    endbr64
+ /*
+     All we gotta do is set the stack pointer to %rdx & tail-call the callback in %rsi.
+ 
+@@ -70,6 +73,7 @@ TYPE(rust_psm_on_stack)
+ FUNCTION(rust_psm_on_stack):
+ /* extern "sysv64" fn(%rdi: usize, %rsi: usize, %rdx: extern "sysv64" fn(usize, usize), %rcx: *mut u8) */
+ .cfi_startproc
++    endbr64
+     pushq %rbp
+     .cfi_def_cfa %rsp, 16
+     .cfi_offset %rbp, -16
