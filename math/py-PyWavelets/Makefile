@@ -3,6 +3,7 @@ COMMENT =		wavelet transform module
 MODPY_EGG_VERSION =	1.5.0
 DISTNAME =		pywavelets-${MODPY_EGG_VERSION}
 PKGNAME =		py-PyWavelets-${MODPY_EGG_VERSION}
+REVISION =		0
 
 CATEGORIES =		math
 
