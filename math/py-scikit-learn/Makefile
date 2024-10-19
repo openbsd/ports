@@ -1,9 +1,9 @@
 COMMENT =	set of python modules for machine learning and data mining
 
 # 1.4.2+ requires numpy 2.x
-MODPY_EGG_VERSION =	1.4.1
-DISTNAME =		scikit-learn-${MODPY_EGG_VERSION}.post1
-PKGNAME =		py-scikit-learn-${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION =	1.4.1.post1
+DISTNAME =		scikit-learn-${MODPY_EGG_VERSION}
+PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		math
 

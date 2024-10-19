@@ -1,10 +1,10 @@
 @pkgpath math/py-scikit-learn
-lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_EGG_VERSION}.post1.dist-info/
-lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_EGG_VERSION}.post1.dist-info/COPYING
-lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_EGG_VERSION}.post1.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_EGG_VERSION}.post1.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_EGG_VERSION}.post1.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_EGG_VERSION}.post1.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_EGG_VERSION}.dist-info/COPYING
+lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/sklearn/
 lib/python${MODPY_VERSION}/site-packages/sklearn/__check_build/
 lib/python${MODPY_VERSION}/site-packages/sklearn/__check_build/__init__.py
