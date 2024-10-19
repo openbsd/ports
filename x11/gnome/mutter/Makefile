@@ -1,7 +1,7 @@
 COMMENT=		window and compositing manager based on Clutter
 
 GNOME_PROJECT=		mutter
-GNOME_VERSION=		46.5
+GNOME_VERSION=		46.6
 
 SHARED_LIBS +=  mutter-14                 0.0 # 0.0
 SHARED_LIBS +=  mutter-clutter-14         0.0 # 0.0
