@@ -71,6 +71,7 @@ lib/python${MODPY_VERSION}/site-packages/parso/python/errors.py
 lib/python${MODPY_VERSION}/site-packages/parso/python/grammar310.txt
 lib/python${MODPY_VERSION}/site-packages/parso/python/grammar311.txt
 lib/python${MODPY_VERSION}/site-packages/parso/python/grammar312.txt
+lib/python${MODPY_VERSION}/site-packages/parso/python/grammar313.txt
 lib/python${MODPY_VERSION}/site-packages/parso/python/grammar36.txt
 lib/python${MODPY_VERSION}/site-packages/parso/python/grammar37.txt
 lib/python${MODPY_VERSION}/site-packages/parso/python/grammar38.txt
