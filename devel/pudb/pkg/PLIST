@@ -1,6 +1,6 @@
 @conflict py-pudb-*
 @pkgpath devel/pudb
-bin/${PUDB_SCRIPT_NAME}
+bin/pudb3
 lib/python${MODPY_VERSION}/site-packages/pudb/
 lib/python${MODPY_VERSION}/site-packages/pudb-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/pudb-${MODPY_EGG_VERSION}.dist-info/LICENSE
@@ -21,12 +21,12 @@ lib/python${MODPY_VERSION}/site-packages/pudb/${MODPY_PYCACHE}b.${MODPY_PYC_MAGI
 lib/python${MODPY_VERSION}/site-packages/pudb/${MODPY_PYCACHE}b.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pudb/${MODPY_PYCACHE}debugger.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pudb/${MODPY_PYCACHE}debugger.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pudb/${MODPY_PYCACHE}forked.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pudb/${MODPY_PYCACHE}forked.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pudb/${MODPY_PYCACHE}ipython.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pudb/${MODPY_PYCACHE}ipython.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pudb/${MODPY_PYCACHE}lowlevel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pudb/${MODPY_PYCACHE}lowlevel.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pudb/${MODPY_PYCACHE}py3compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/pudb/${MODPY_PYCACHE}py3compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pudb/${MODPY_PYCACHE}remote.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pudb/${MODPY_PYCACHE}remote.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pudb/${MODPY_PYCACHE}run.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -45,9 +45,9 @@ lib/python${MODPY_VERSION}/site-packages/pudb/${MODPY_PYCACHE}var_view.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/pudb/${MODPY_PYCACHE}var_view.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pudb/b.py
 lib/python${MODPY_VERSION}/site-packages/pudb/debugger.py
+lib/python${MODPY_VERSION}/site-packages/pudb/forked.py
 lib/python${MODPY_VERSION}/site-packages/pudb/ipython.py
 lib/python${MODPY_VERSION}/site-packages/pudb/lowlevel.py
-lib/python${MODPY_VERSION}/site-packages/pudb/py3compat.py
 lib/python${MODPY_VERSION}/site-packages/pudb/remote.py
 lib/python${MODPY_VERSION}/site-packages/pudb/run.py
 lib/python${MODPY_VERSION}/site-packages/pudb/settings.py
