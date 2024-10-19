@@ -1,0 +1,14 @@
+Index: scipy/meson.build
+--- scipy/meson.build.orig
++++ scipy/meson.build
+@@ -145,8 +145,8 @@ fortranobject_dep = declare_dependency(
+ # For MKL and for auto-detecting one of multiple libs, we'll need a custom
+ # dependency in Meson (like is done for scalapack) - see
+ # https://github.com/mesonbuild/meson/issues/2835
+-blas_name = get_option('blas')
+-lapack_name = get_option('lapack')
++blas_name = 'blas'
++lapack_name = 'lapack'
+ 
+ # First try scipy-openblas, and if found don't look for cblas or lapack, we
+ # know what's inside the scipy-openblas wheels already.

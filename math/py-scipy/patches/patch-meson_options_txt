@@ -1,0 +1,12 @@
+Index: meson_options.txt
+--- meson_options.txt.orig
++++ meson_options.txt
+@@ -1,6 +1,6 @@
+-option('blas', type: 'string', value: 'openblas',
++option('blas', type: 'string', value: 'blas',
+         description: 'option for BLAS library switching')
+-option('lapack', type: 'string', value: 'openblas',
++option('lapack', type: 'string', value: 'lapack',
+         description: 'option for LAPACK library switching')
+ option('use-g77-abi', type: 'boolean', value: false,
+         description: 'If set to true, forces using g77 compatibility wrappers ' +

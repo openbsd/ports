@@ -1,0 +1,21 @@
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -21,7 +21,7 @@ requires = [
+     # The upper bound on Cython is pre-emptive only
+     "Cython>=3.0.8,<3.1.0",  # when updating version, also update check in meson.build
+     # The upper bound on pybind11 is pre-emptive only
+-    "pybind11>=2.12.0,<2.13.0",
++    "pybind11>=2.12.0",
+     # The upper bound on Pythran is pre-emptive only
+     "pythran>=0.14.0,<0.16.0",
+ 
+@@ -35,7 +35,7 @@ requires = [
+     #      and disabling build isolation.
+     #   3. The <2.3 upper bound is for matching the numpy deprecation policy,
+     #      it should not be loosened.
+-    "numpy>=2.0.0rc1,<2.3",
++    "numpy",
+ ]
+ 
+ [project]

@@ -1,9 +1,8 @@
-BROKEN =	needs adjusting for cython 3
+BROKEN =	needs pkg-config support for blas, lapack
 
 COMMENT=		maths, science and engineering modules for Python
 
-# 1.11.2+ requires switching to mesonpy
-MODPY_EGG_VERSION=	1.11.1
+MODPY_EGG_VERSION=	1.13.1
 DISTNAME=		scipy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
@@ -27,12 +26,12 @@ FLAVOR =		python3
 MODFORTRAN_COMPILER =	gfortran
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS=       Yes
-MODPY_DISTUTILS_BUILDARGS = --fcompiler=gnu95
+MODPY_PYBUILD =		setuptools
 
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			${MODFORTRAN_BUILD_DEPENDS} \
-			devel/py-pybind11${MODPY_FLAVOR}>=2.4.3 \
+			devel/meson-python \
+			devel/py-pybind11${MODPY_FLAVOR} \
 			lang/cython${MODPY_FLAVOR} \
 			lang/pythran${MODPY_FLAVOR}
 
@@ -40,22 +39,13 @@ LIB_DEPENDS=		${MODFORTRAN_LIB_DEPENDS} \
 			math/cblas \
 			math/lapack
 
-RUN_DEPENDS=		math/py-numpy${MODPY_FLAVOR}>=1.19.5 \
+RUN_DEPENDS=		math/py-numpy${MODPY_FLAVOR} \
 			devel/swig
-
 
 # XXX: requires py-pooch
 NO_TEST=		Yes
-# TEST_DEPENDS=		devel/py-test${MODPY_FLAVOR} \
+# TEST_DEPENDS=		devel/py-hypothesis${MODPY_FLAVOR} \
 #			devel/py-pooch${MODPY_FLAVOR}
-
-MAKE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include"
-MAKE_ENV+=		LDFLAGS="-shared -L${LOCALBASE}/lib -pthread -lutil"
-
-post-install:
-	${MODPY_COMPILEALL} ${WRKINST}/${MODPY_SITEPKG}/scipy
-
-PORTHOME=	${WRKDIR}
 
 do-test: fake
 	cd ${WRKDIR} && ${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
