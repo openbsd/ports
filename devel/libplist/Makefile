@@ -1,10 +1,10 @@
 COMMENT =		library to handle Apple Property List files
 
-V=			2.5.0
+V=			2.6.0
 DISTNAME =		libplist-${V}
 
-SHARED_LIBS +=  plist-2.0            2.0      # 9.0
-SHARED_LIBS +=  plist++-2.0          1.1      # 9.0
+SHARED_LIBS +=  plist-2.0            2.0      # 10.0
+SHARED_LIBS +=  plist++-2.0          2.0      # 10.0
 
 CATEGORIES =		devel audio
 
@@ -20,7 +20,7 @@ WANTLIB += ${COMPILER_LIBCXX} c m
 
 COMPILER =		base-clang ports-gcc
 
-# lots of bashisms for variable expension (FLAGS += -lfoo)
+# lots of bashisms for variable expansion (FLAGS += -lfoo)
 CONFIGURE_SCRIPT =	${LOCALBASE}/bin/bash configure
 BUILD_DEPENDS +=	shells/bash
 
