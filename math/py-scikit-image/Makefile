@@ -1,12 +1,12 @@
-BROKEN =	needs adjusting for cython 3
+BROKEN =		needs devel/py-lazy_loader to be imported
 
 COMMENT =		image processing routines for SciPy
 
-MODPY_EGG_VERSION =	0.19.3
-DISTNAME =		scikit-image-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME}
+MODPY_EGG_VERSION =	0.23.2
+DISTNAME =		scikit_image-${MODPY_EGG_VERSION}
+PKGNAME =		py-${DISTNAME:S/_/-/}
+
 CATEGORIES =		math
-REVISION =		1
 
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 
@@ -25,6 +25,13 @@ FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
+MODPY_ADJ_FILES =	skimage/_build_utils/*.py
+
+BUILD_DEPENDS =		lang/cython${MODPY_FLAVOR} \
+			lang/pythran${MODPY_FLAVOR} \
+			devel/meson-python \
+			devel/py-wheel${MODPY_FLAVOR} \
+			math/py-numpy${MODPY_FLAVOR}
 
 RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR} \
 			math/py-scipy${MODPY_FLAVOR} \
@@ -33,12 +40,7 @@ RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR} \
 			graphics/py-Pillow${MODPY_FLAVOR} \
 			graphics/py-imageio${MODPY_FLAVOR} \
 			graphics/py-tifffile${MODPY_FLAVOR} \
-			math/py-PyWavelets${MODPY_FLAVOR}
-
-BUILD_DEPENDS =		lang/cython${MODPY_FLAVOR} \
-			lang/pythran${MODPY_FLAVOR} \
-			devel/py-wheel${MODPY_FLAVOR} \
-			math/py-numpy${MODPY_FLAVOR}
+			sysutils/py-packaging${MODPY_FLAVOR}
 
 # needs a bunch of new dependencies
 NO_TEST =		Yes
