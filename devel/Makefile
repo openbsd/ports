@@ -1364,6 +1364,7 @@
      SUBDIR += py-beniget,python3
      SUBDIR += py-binaryornot,python3
      SUBDIR += py-biplist,python3
+     SUBDIR += py-bitarray,python3
      SUBDIR += py-bitcoinlib,python3
      SUBDIR += py-bitstring,python3
      SUBDIR += py-blessings,python3
