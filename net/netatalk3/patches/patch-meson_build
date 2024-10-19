@@ -1,41 +1,27 @@
-../../pobj/netatalk-3.2.4/netatalk-3.2.4/meson.build:881:19: ERROR: Unknown variable "tracker_sparql".
+../../pobj/netatalk-4.0.2/netatalk-4.0.2/meson.build:897:11: ERROR: Unknown variable "sparql".
 ../../pobj/netatalk-3.2.2/netatalk-3.2.2/etc/uams/meson.build:229:30: ERROR: Unknown variable "pam".
 
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -763,6 +763,7 @@ talloc = dependency('talloc', required: false)
- 
- tracker_manager = ''
- tracker_prefix = get_option('with-tracker-prefix')
-+tracker_sparql_found = false
- 
- if not get_option('with-spotlight')
-     have_spotlight = false
-@@ -774,11 +775,12 @@ else
-     foreach version : tracker_sparql_version
-         tracker_sparql = dependency('tracker-sparql-' + version, required: false)
-         if tracker_sparql.found()
-+            tracker_sparql_found = true
-             break
-         endif
-     endforeach
- 
--    if not tracker_sparql.found()
-+    if not tracker_sparql_found
-         warning('tracker SPARQL not found (required for Spotlight support)')
-     else
-         # Check for tracker
-@@ -855,7 +857,7 @@ else
+@@ -893,6 +893,7 @@ else
+     endif
  endif
  
++if have_spotlight
  have_spotlight = (
--    tracker_sparql.found()
-+    tracker_sparql_found
-     and tracker_found
-     and talloc.found()
+     sparql.found()
+     and indexer_found
+@@ -900,6 +901,8 @@ have_spotlight = (
      and flex.found()
-@@ -1568,6 +1570,7 @@ uams_options = ''
+     and bison.found()
+ )
++endif
++
+ if have_spotlight
+     cdata.set('WITH_SPOTLIGHT', 1)
+ endif
+@@ -1601,6 +1604,7 @@ uams_options = ''
  
  if not enable_pam
      have_pam = false
