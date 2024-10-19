@@ -1,0 +1,3 @@
+Bitarray provides an object type which efficiently represents an array of
+booleans. Bitarrays are sequence types and behave very much like usual lists.
+Eight bits are represented by one byte in a contiguous block of memory.

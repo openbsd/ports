@@ -1,0 +1,29 @@
+lib/python${MODPY_VERSION}/site-packages/bitarray/
+lib/python${MODPY_VERSION}/site-packages/bitarray-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/bitarray-${MODPY_EGG_VERSION}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/bitarray-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/bitarray-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/bitarray-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/bitarray-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/bitarray/__init__.py
+lib/python${MODPY_VERSION}/site-packages/bitarray/__init__.pyi
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bitarray/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/bitarray/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/bitarray/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/bitarray/${MODPY_PYCACHE}test_bitarray.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/bitarray/${MODPY_PYCACHE}test_bitarray.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/bitarray/${MODPY_PYCACHE}test_util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/bitarray/${MODPY_PYCACHE}test_util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/bitarray/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/bitarray/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/bitarray/_bitarray.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/bitarray/_util.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/bitarray/bitarray.h
+lib/python${MODPY_VERSION}/site-packages/bitarray/py.typed
+lib/python${MODPY_VERSION}/site-packages/bitarray/pythoncapi_compat.h
+lib/python${MODPY_VERSION}/site-packages/bitarray/test_150.pickle
+lib/python${MODPY_VERSION}/site-packages/bitarray/test_281.pickle
+lib/python${MODPY_VERSION}/site-packages/bitarray/test_bitarray.py
+lib/python${MODPY_VERSION}/site-packages/bitarray/test_util.py
+lib/python${MODPY_VERSION}/site-packages/bitarray/util.py
+lib/python${MODPY_VERSION}/site-packages/bitarray/util.pyi
