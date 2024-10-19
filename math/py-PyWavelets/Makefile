@@ -1,30 +1,28 @@
 COMMENT =		wavelet transform module
 
-MODPY_EGG_VERSION =	1.1.1
-DISTNAME =		PyWavelets-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME}
-CATEGORIES =		math
-REVISION =		7
+MODPY_EGG_VERSION =	1.5.0
+DISTNAME =		pywavelets-${MODPY_EGG_VERSION}
+PKGNAME =		py-PyWavelets-${MODPY_EGG_VERSION}
 
-WANTLIB =  pthread
-MAINTAINER =		Paul Irofti <paul@irofti.net>
+CATEGORIES =		math
 
 # MIT
 PERMIT_PACKAGE =	Yes
+
+WANTLIB += m
 
 MODULES =		lang/python
 
 FLAVORS =		python3
 FLAVOR =		python3
 
-RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR}
+MODPY_PI =		Yes
+MODPY_PYBUILD =		setuptools
 
-BUILD_DEPENDS =		lang/cython${MODPY_FLAVOR} \
+BUILD_DEPENDS =		devel/meson-python \
+			lang/cython${MODPY_FLAVOR} \
 			math/py-numpy${MODPY_FLAVOR}
 
-TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR}
-
-MODPY_PI =		Yes
-MODPY_PYBUILD =	setuptools
+RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR}
 
 .include <bsd.port.mk>

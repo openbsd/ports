@@ -1,11 +1,9 @@
 @pkgpath math/py-PyWavelets
-lib/python${MODPY_VERSION}/site-packages/PyWavelets-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/PyWavelets-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/PyWavelets-${MODPY_EGG_VERSION}.dist-info/LICENSES_bundled.txt
-lib/python${MODPY_VERSION}/site-packages/PyWavelets-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/PyWavelets-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/PyWavelets-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/PyWavelets-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pywavelets-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pywavelets-${MODPY_EGG_VERSION}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/pywavelets-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/pywavelets-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/pywavelets-${MODPY_EGG_VERSION}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/pywt/
 lib/python${MODPY_VERSION}/site-packages/pywt/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pywt/${MODPY_PYCACHE}/
@@ -21,6 +19,8 @@ lib/python${MODPY_VERSION}/site-packages/pywt/${MODPY_PYCACHE}_dwt.${MODPY_PYC_M
 lib/python${MODPY_VERSION}/site-packages/pywt/${MODPY_PYCACHE}_dwt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pywt/${MODPY_PYCACHE}_functions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pywt/${MODPY_PYCACHE}_functions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pywt/${MODPY_PYCACHE}_mra.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pywt/${MODPY_PYCACHE}_mra.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pywt/${MODPY_PYCACHE}_multidim.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pywt/${MODPY_PYCACHE}_multidim.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pywt/${MODPY_PYCACHE}_multilevel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -46,15 +46,12 @@ lib/python${MODPY_VERSION}/site-packages/pywt/_cwt.py
 lib/python${MODPY_VERSION}/site-packages/pywt/_doc_utils.py
 lib/python${MODPY_VERSION}/site-packages/pywt/_dwt.py
 lib/python${MODPY_VERSION}/site-packages/pywt/_extensions/
-lib/python${MODPY_VERSION}/site-packages/pywt/_extensions/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pywt/_extensions/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/pywt/_extensions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/pywt/_extensions/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/pywt/_extensions/_cwt.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/pywt/_extensions/_dwt.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/pywt/_extensions/_pywt.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/pywt/_extensions/_swt.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/pywt/_functions.py
+lib/python${MODPY_VERSION}/site-packages/pywt/_mra.py
 lib/python${MODPY_VERSION}/site-packages/pywt/_multidim.py
 lib/python${MODPY_VERSION}/site-packages/pywt/_multilevel.py
 lib/python${MODPY_VERSION}/site-packages/pywt/_pytest.py
@@ -82,7 +79,7 @@ lib/python${MODPY_VERSION}/site-packages/pywt/data/ascent.npz
 lib/python${MODPY_VERSION}/site-packages/pywt/data/camera.npz
 lib/python${MODPY_VERSION}/site-packages/pywt/data/create_dat.py
 lib/python${MODPY_VERSION}/site-packages/pywt/data/ecg.npy
-lib/python${MODPY_VERSION}/site-packages/pywt/data/sst_nino3.npz
+lib/python${MODPY_VERSION}/site-packages/pywt/data/sst_nino3.npy
 lib/python${MODPY_VERSION}/site-packages/pywt/tests/
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pywt/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pywt/tests/${MODPY_PYCACHE}test__pywt.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -107,6 +104,8 @@ lib/python${MODPY_VERSION}/site-packages/pywt/tests/${MODPY_PYCACHE}test_matlab_
 lib/python${MODPY_VERSION}/site-packages/pywt/tests/${MODPY_PYCACHE}test_matlab_compatibility_cwt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pywt/tests/${MODPY_PYCACHE}test_modes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pywt/tests/${MODPY_PYCACHE}test_modes.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pywt/tests/${MODPY_PYCACHE}test_mra.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pywt/tests/${MODPY_PYCACHE}test_mra.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pywt/tests/${MODPY_PYCACHE}test_multidim.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pywt/tests/${MODPY_PYCACHE}test_multidim.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pywt/tests/${MODPY_PYCACHE}test_multilevel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -123,6 +122,8 @@ lib/python${MODPY_VERSION}/site-packages/pywt/tests/${MODPY_PYCACHE}test_wp.${MO
 lib/python${MODPY_VERSION}/site-packages/pywt/tests/${MODPY_PYCACHE}test_wp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pywt/tests/${MODPY_PYCACHE}test_wp2d.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pywt/tests/${MODPY_PYCACHE}test_wp2d.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pywt/tests/${MODPY_PYCACHE}test_wpnd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pywt/tests/${MODPY_PYCACHE}test_wpnd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pywt/tests/data/
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pywt/tests/data/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pywt/tests/data/${MODPY_PYCACHE}generate_matlab_data.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -145,6 +146,7 @@ lib/python${MODPY_VERSION}/site-packages/pywt/tests/test_functions.py
 lib/python${MODPY_VERSION}/site-packages/pywt/tests/test_matlab_compatibility.py
 lib/python${MODPY_VERSION}/site-packages/pywt/tests/test_matlab_compatibility_cwt.py
 lib/python${MODPY_VERSION}/site-packages/pywt/tests/test_modes.py
+lib/python${MODPY_VERSION}/site-packages/pywt/tests/test_mra.py
 lib/python${MODPY_VERSION}/site-packages/pywt/tests/test_multidim.py
 lib/python${MODPY_VERSION}/site-packages/pywt/tests/test_multilevel.py
 lib/python${MODPY_VERSION}/site-packages/pywt/tests/test_perfect_reconstruction.py
@@ -153,4 +155,5 @@ lib/python${MODPY_VERSION}/site-packages/pywt/tests/test_thresholding.py
 lib/python${MODPY_VERSION}/site-packages/pywt/tests/test_wavelet.py
 lib/python${MODPY_VERSION}/site-packages/pywt/tests/test_wp.py
 lib/python${MODPY_VERSION}/site-packages/pywt/tests/test_wp2d.py
+lib/python${MODPY_VERSION}/site-packages/pywt/tests/test_wpnd.py
 lib/python${MODPY_VERSION}/site-packages/pywt/version.py
