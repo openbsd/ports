@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	0.1.29
 DISTNAME =		dmr_utils3-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
-CATEGORIES =		devel
+CATEGORIES =		comms devel
 
 HOMEPAGE =		https://github.com/jayz28/dmr_utils3
 
