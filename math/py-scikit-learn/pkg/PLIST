@@ -1,10 +1,10 @@
 @pkgpath math/py-scikit-learn
-lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_EGG_VERSION}.dist-info/COPYING
-lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_EGG_VERSION}.post1.dist-info/
+lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_EGG_VERSION}.post1.dist-info/COPYING
+lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_EGG_VERSION}.post1.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_EGG_VERSION}.post1.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_EGG_VERSION}.post1.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/scikit_learn-${MODPY_EGG_VERSION}.post1.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/sklearn/
 lib/python${MODPY_VERSION}/site-packages/sklearn/__check_build/
 lib/python${MODPY_VERSION}/site-packages/sklearn/__check_build/__init__.py
@@ -59,8 +59,14 @@ lib/python${MODPY_VERSION}/site-packages/sklearn/_build_utils/${MODPY_PYCACHE}op
 lib/python${MODPY_VERSION}/site-packages/sklearn/_build_utils/${MODPY_PYCACHE}openmp_helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sklearn/_build_utils/${MODPY_PYCACHE}pre_build_helpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sklearn/_build_utils/${MODPY_PYCACHE}pre_build_helpers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sklearn/_build_utils/${MODPY_PYCACHE}tempita.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/sklearn/_build_utils/${MODPY_PYCACHE}tempita.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sklearn/_build_utils/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/sklearn/_build_utils/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sklearn/_build_utils/openmp_helpers.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/_build_utils/pre_build_helpers.py
+lib/python${MODPY_VERSION}/site-packages/sklearn/_build_utils/tempita.py
+lib/python${MODPY_VERSION}/site-packages/sklearn/_build_utils/version.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/_config.py
 lib/python${MODPY_VERSION}/site-packages/sklearn/_distributor_init.py
 @so lib/python${MODPY_VERSION}/site-packages/sklearn/_isotonic.${MODPY_PYC_MAGIC_TAG}so
@@ -352,6 +358,7 @@ lib/python${MODPY_VERSION}/site-packages/sklearn/datasets/descr/lfw.rst
 lib/python${MODPY_VERSION}/site-packages/sklearn/datasets/descr/linnerud.rst
 lib/python${MODPY_VERSION}/site-packages/sklearn/datasets/descr/olivetti_faces.rst
 lib/python${MODPY_VERSION}/site-packages/sklearn/datasets/descr/rcv1.rst
+lib/python${MODPY_VERSION}/site-packages/sklearn/datasets/descr/species_distributions.rst
 lib/python${MODPY_VERSION}/site-packages/sklearn/datasets/descr/twenty_newsgroups.rst
 lib/python${MODPY_VERSION}/site-packages/sklearn/datasets/descr/wine_data.rst
 lib/python${MODPY_VERSION}/site-packages/sklearn/datasets/images/
