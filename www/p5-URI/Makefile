@@ -1,6 +1,6 @@
 COMMENT =	library to parse Uniform Resource Identifiers
 
-DISTNAME =	URI-5.28
+DISTNAME =	URI-5.30
 
 CATEGORIES =	www
 
@@ -11,7 +11,8 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 
-RUN_DEPENDS =		devel/p5-Regexp-IPv6>=0.03
+RUN_DEPENDS =		devel/p5-Regexp-IPv6>=0.03 \
+			mail/p5-MIME-Base32
 TEST_DEPENDS =		devel/p5-Test-Fatal \
 			devel/p5-Test-Needs \
 			devel/p5-Test-Warnings

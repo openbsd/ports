@@ -28,12 +28,16 @@ ${P5SITE}/URI/file/QNX.pm
 ${P5SITE}/URI/file/Unix.pm
 ${P5SITE}/URI/file/Win32.pm
 ${P5SITE}/URI/ftp.pm
+${P5SITE}/URI/ftpes.pm
+${P5SITE}/URI/ftps.pm
 ${P5SITE}/URI/geo.pm
 ${P5SITE}/URI/gopher.pm
 ${P5SITE}/URI/http.pm
 ${P5SITE}/URI/https.pm
 ${P5SITE}/URI/icap.pm
 ${P5SITE}/URI/icaps.pm
+${P5SITE}/URI/irc.pm
+${P5SITE}/URI/ircs.pm
 ${P5SITE}/URI/ldap.pm
 ${P5SITE}/URI/ldapi.pm
 ${P5SITE}/URI/ldaps.pm
@@ -42,11 +46,13 @@ ${P5SITE}/URI/mms.pm
 ${P5SITE}/URI/news.pm
 ${P5SITE}/URI/nntp.pm
 ${P5SITE}/URI/nntps.pm
+${P5SITE}/URI/otpauth.pm
 ${P5SITE}/URI/pop.pm
 ${P5SITE}/URI/rlogin.pm
 ${P5SITE}/URI/rsync.pm
 ${P5SITE}/URI/rtsp.pm
 ${P5SITE}/URI/rtspu.pm
+${P5SITE}/URI/scp.pm
 ${P5SITE}/URI/sftp.pm
 ${P5SITE}/URI/sip.pm
 ${P5SITE}/URI/sips.pm
@@ -72,3 +78,4 @@ ${P5SITE}/URI/urn/oid.pm
 @man man/man3p/URI::icap.3p
 @man man/man3p/URI::icaps.3p
 @man man/man3p/URI::ldap.3p
+@man man/man3p/URI::otpauth.3p
