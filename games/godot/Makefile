@@ -4,7 +4,7 @@ COMMENT-main =	2D and 3D game engine
 COMMENT-tools=	2D and 3D game engine (with tools)
 COMMENT-sharp=	.NET libs for mono/C# module of Godot
 
-V =		3.5.3
+V =		3.6
 SHARPFILES_V =	3.5.2
 DISTNAME =	godot-${V}-stable
 PKGNAME =	godot-${V}
@@ -13,7 +13,8 @@ CATEGORIES =	games
 
 HOMEPAGE =	https://godotengine.org/
 
-MAINTAINER =	Omar Polo <op@openbsd.org>
+MAINTAINER =	Omar Polo <op@openbsd.org> \
+		Thomas Frohwein <thfr@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

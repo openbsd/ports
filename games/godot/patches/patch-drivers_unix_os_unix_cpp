@@ -1,10 +1,23 @@
 fix get_executable_path on OpenBSD; backport of
 https://github.com/godotengine/godot/pull/61540
+support GDNative modules by falling back on /usr/local/lib/godot/gdnative/
 
 Index: drivers/unix/os_unix.cpp
 --- drivers/unix/os_unix.cpp.orig
 +++ drivers/unix/os_unix.cpp
-@@ -497,12 +497,6 @@ String OS_Unix::get_executable_path() const {
+@@ -405,6 +405,11 @@ Error OS_Unix::open_dynamic_library(const String p_pat
+ 		path = get_executable_path().get_base_dir().plus_file("../lib").plus_file(p_path.get_file());
+ 	}
+ 
++	if (!FileAccess::exists(path)) {
++		//this code exists so gdnative can load .so files from a global system location, e.g. on OpenBSD
++		path = "/usr/local/lib/godot/gdnative/" + p_path.get_file();
++	}
++
+ 	p_library_handle = dlopen(path.utf8().get_data(), RTLD_NOW);
+ 	ERR_FAIL_COND_V_MSG(!p_library_handle, ERR_CANT_OPEN, "Can't open dynamic library: " + p_path + ". Error: " + dlerror());
+ 	return OK;
+@@ -484,12 +489,6 @@ String OS_Unix::get_executable_path() const {
  		return OS::get_executable_path();
  	}
  	return b;
@@ -17,7 +30,7 @@ Index: drivers/unix/os_unix.cpp
  #elif defined(__FreeBSD__)
  	int mib[4] = { CTL_KERN, KERN_PROC, KERN_PROC_PATHNAME, -1 };
  	char buf[MAXPATHLEN];
-@@ -529,7 +523,6 @@ String OS_Unix::get_executable_path() const {
+@@ -516,7 +515,6 @@ String OS_Unix::get_executable_path() const {
  
  	return path;
  #else

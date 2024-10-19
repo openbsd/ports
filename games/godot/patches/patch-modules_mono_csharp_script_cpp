@@ -4,7 +4,7 @@ an rvalue of type 'nullptr_t'
 Index: modules/mono/csharp_script.cpp
 --- modules/mono/csharp_script.cpp.orig
 +++ modules/mono/csharp_script.cpp
-@@ -2310,7 +2310,7 @@ bool CSharpScript::_update_exports(PlaceHolderScriptIn
+@@ -2302,7 +2302,7 @@ bool CSharpScript::_update_exports(PlaceHolderScriptIn
  
  			GDMonoMethod *ctor = script_class->get_method(CACHED_STRING_NAME(dotctor), 0);
  
@@ -13,7 +13,7 @@ Index: modules/mono/csharp_script.cpp
  					"Cannot construct temporary MonoObject because the class does not define a parameterless constructor: '" + get_path() + "'.");
  
  			MonoException *ctor_exc = NULL;
-@@ -2891,10 +2891,10 @@ bool CSharpScript::can_instance() const {
+@@ -2885,10 +2885,10 @@ bool CSharpScript::can_instance() const {
  	if (extra_cond && !script_class) {
  		if (GDMono::get_singleton()->get_project_assembly() == NULL) {
  			// The project assembly is not loaded

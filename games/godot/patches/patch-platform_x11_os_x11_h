@@ -16,7 +16,7 @@ Index: platform/x11/os_x11.h
  #include "main/input_default.h"
  #include "power_x11.h"
  #include "servers/audio_server.h"
-@@ -199,7 +200,7 @@ class OS_X11 : public OS_Unix {
+@@ -203,7 +204,7 @@ class OS_X11 : public OS_Unix {
  	InputDefault *input;
  
  #ifdef JOYDEV_ENABLED
@@ -25,7 +25,7 @@ Index: platform/x11/os_x11.h
  #endif
  
  #ifdef ALSA_ENABLED
-@@ -208,6 +209,10 @@ class OS_X11 : public OS_Unix {
+@@ -212,6 +213,10 @@ class OS_X11 : public OS_Unix {
  
  #ifdef ALSAMIDI_ENABLED
  	MIDIDriverALSAMidi driver_alsamidi;

@@ -3,7 +3,7 @@ when building without tools, don't warn about leaked instances at exit unless '-
 Index: core/object.cpp
 --- core/object.cpp.orig
 +++ core/object.cpp
-@@ -2067,8 +2067,13 @@ RWLock ObjectDB::rw_lock;
+@@ -2071,8 +2071,13 @@ RWLock ObjectDB::rw_lock;
  void ObjectDB::cleanup() {
  	rw_lock.write_lock();
  	if (instances.size()) {

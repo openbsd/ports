@@ -16,7 +16,7 @@ Index: platform/x11/os_x11.cpp
  // ICCCM
  #define WM_NormalState 1L // window normal state
  #define WM_IconicState 3L // window minimized
-@@ -173,7 +177,7 @@ Error OS_X11::initialize(const VideoMode &p_desired, i
+@@ -219,7 +223,7 @@ Error OS_X11::initialize(const VideoMode &p_desired, i
  	int xrandr_minor = 0;
  	int event_base, error_base;
  	xrandr_ext_ok = XRRQueryExtension(x11_display, &event_base, &error_base);
@@ -25,7 +25,7 @@ Index: platform/x11/os_x11.cpp
  	if (!xrandr_handle) {
  		err = dlerror();
  		// For some arcane reason, NetBSD now ships libXrandr.so.3 while the rest of the world has libXrandr.so.2...
-@@ -610,9 +614,13 @@ Error OS_X11::initialize(const VideoMode &p_desired, i
+@@ -664,9 +668,13 @@ Error OS_X11::initialize(const VideoMode &p_desired, i
  
  	window_has_focus = true; // Set focus to true at init
  #ifdef JOYDEV_ENABLED
@@ -40,7 +40,7 @@ Index: platform/x11/os_x11.cpp
  	power_manager = memnew(PowerX11);
  
  	if (p_desired.layered) {
-@@ -4414,6 +4422,11 @@ void OS_X11::update_real_mouse_position() {
+@@ -4474,6 +4482,11 @@ void OS_X11::update_real_mouse_position() {
  }
  
  OS_X11::OS_X11() {

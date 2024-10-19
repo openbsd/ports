@@ -4,7 +4,7 @@ instead
 Index: servers/visual/shader_language.cpp
 --- servers/visual/shader_language.cpp.orig
 +++ servers/visual/shader_language.cpp
-@@ -596,6 +596,7 @@ ShaderLanguage::Token ShaderLanguage::_get_token() {
+@@ -598,6 +598,7 @@ ShaderLanguage::Token ShaderLanguage::_get_token() {
  							}
  						}
  
@@ -12,7 +12,7 @@ Index: servers/visual/shader_language.cpp
  						if (error) {
  							if (hexa_found) {
  								return _make_token(TK_ERROR, "Invalid (hexadecimal) numeric constant");
-@@ -608,6 +609,9 @@ ShaderLanguage::Token ShaderLanguage::_get_token() {
+@@ -610,6 +611,9 @@ ShaderLanguage::Token ShaderLanguage::_get_token() {
  							}
  							return _make_token(TK_ERROR, "Invalid (integer) numeric constant");
  						}
@@ -22,7 +22,7 @@ Index: servers/visual/shader_language.cpp
  						str += symbol;
  						i++;
  					}
-@@ -622,24 +626,40 @@ ShaderLanguage::Token ShaderLanguage::_get_token() {
+@@ -624,24 +628,40 @@ ShaderLanguage::Token ShaderLanguage::_get_token() {
  					} else if (period_found || exponent_found || float_suffix_found) {
  						//floats
  						if (exponent_found && (!_is_number(last_char) && last_char != 'f')) { // checks for eg: "2E", "2E-", "2E+"
@@ -63,7 +63,7 @@ Index: servers/visual/shader_language.cpp
  							}
  						}
  
-@@ -651,7 +671,11 @@ ShaderLanguage::Token ShaderLanguage::_get_token() {
+@@ -653,7 +673,11 @@ ShaderLanguage::Token ShaderLanguage::_get_token() {
  						}
  
  						if (!str.is_valid_float()) {
@@ -75,7 +75,7 @@ Index: servers/visual/shader_language.cpp
  						}
  					} else {
  						//integers
-@@ -661,6 +685,7 @@ ShaderLanguage::Token ShaderLanguage::_get_token() {
+@@ -663,6 +687,7 @@ ShaderLanguage::Token ShaderLanguage::_get_token() {
  							// Compensate reading cursor position.
  							char_idx += 1;
  						}
@@ -83,7 +83,7 @@ Index: servers/visual/shader_language.cpp
  						if (!str.is_valid_integer()) {
  							if (uint_suffix_found) {
  								return _make_token(TK_ERROR, "Invalid (unsigned integer) numeric constant");
-@@ -668,6 +693,9 @@ ShaderLanguage::Token ShaderLanguage::_get_token() {
+@@ -670,6 +695,9 @@ ShaderLanguage::Token ShaderLanguage::_get_token() {
  								return _make_token(TK_ERROR, "Invalid (integer) numeric constant");
  							}
  						}

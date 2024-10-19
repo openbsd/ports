@@ -7,7 +7,7 @@ Backport of https://github.com/embree/embree/pull/379
 Index: thirdparty/embree/common/sys/sysinfo.cpp
 --- thirdparty/embree/common/sys/sysinfo.cpp.orig
 +++ thirdparty/embree/common/sys/sysinfo.cpp
-@@ -572,6 +572,26 @@ namespace embree
+@@ -597,6 +597,26 @@ namespace embree
  
  #endif
  
@@ -34,12 +34,12 @@ Index: thirdparty/embree/common/sys/sysinfo.cpp
  ////////////////////////////////////////////////////////////////////////////////
  /// Mac OS X Platform
  ////////////////////////////////////////////////////////////////////////////////
-@@ -622,7 +642,7 @@ namespace embree
+@@ -649,7 +669,7 @@ namespace embree
+     static int nThreads = -1;
+     if (nThreads != -1) return nThreads;
  
- // -- GODOT start --
- // #if defined(__MACOSX__)
 -#if defined(__MACOSX__) || defined(__ANDROID__)
 +#if defined(__MACOSX__) || defined(__ANDROID__) || defined(__OpenBSD__)
- // -- GODOT end --
      nThreads = sysconf(_SC_NPROCESSORS_ONLN); // does not work in Linux LXC container
      assert(nThreads);
+ #elif defined(__EMSCRIPTEN__)
