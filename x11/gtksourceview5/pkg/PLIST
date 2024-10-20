@@ -122,6 +122,7 @@ share/gtksourceview-5/language-specs/genie.lang
 share/gtksourceview-5/language-specs/glsl.lang
 share/gtksourceview-5/language-specs/go.lang
 share/gtksourceview-5/language-specs/gradle.lang
+share/gtksourceview-5/language-specs/groff.lang
 share/gtksourceview-5/language-specs/groovy.lang
 share/gtksourceview-5/language-specs/gtk-doc.lang
 share/gtksourceview-5/language-specs/gtkrc.lang
