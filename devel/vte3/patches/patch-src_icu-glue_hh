@@ -1,0 +1,16 @@
+From c90b078ecf4382458a9af44d765d710eb46b0453 Mon Sep 17 00:00:00 2001
+From: Khem Raj <raj.khem@gmail.com>
+Date: Mon, 30 Sep 2024 22:36:09 -0700
+Subject: [PATCH] build: Add missing includes
+
+Index: src/icu-glue.hh
+--- src/icu-glue.hh.orig
++++ src/icu-glue.hh
+@@ -20,6 +20,7 @@
+ #include <glib.h>
+ #include <memory>
+ #include <optional>
++#include <string_view>
+ 
+ namespace vte::base {
+ 

@@ -14,6 +14,7 @@ include/vte-2.91/vte/vteregex.h
 include/vte-2.91/vte/vteterminal.h
 include/vte-2.91/vte/vtetypebuiltins-gtk3.h
 include/vte-2.91/vte/vtetypebuiltins.h
+include/vte-2.91/vte/vteuuid.h
 include/vte-2.91/vte/vteversion.h
 lib/girepository-1.0/Vte-2.91.typelib
 @lib lib/libvte-2.91.so.${LIBvte-2.91_VERSION}

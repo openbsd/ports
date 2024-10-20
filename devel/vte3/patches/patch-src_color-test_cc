@@ -1,0 +1,17 @@
+From c8838779d5f8c0e03411cef9775cd8f5a10a6204 Mon Sep 17 00:00:00 2001
+From: Christian Persch <chpe@src.gnome.org>
+Date: Tue, 17 Sep 2024 18:21:32 +0200
+Subject: [PATCH] tests: Remove excessive constrexpr
+
+Index: src/color-test.cc
+--- src/color-test.cc.orig
++++ src/color-test.cc
+@@ -165,7 +165,7 @@ static void
+ test_color_to_string (void)
+ {
+         auto test = [](std::string str,
+-                       bool alpha = false) constexpr noexcept -> void
++                       bool alpha = false) noexcept -> void
+         {
+                 auto const value = parse<rgba>(str);
+                 assert(value);

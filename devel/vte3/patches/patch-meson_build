@@ -1,0 +1,27 @@
+From f6095fca4d1baf950817e7010e6f1e7c313b9e2e Mon Sep 17 00:00:00 2001
+From: Christian Persch <chpe@src.gnome.org>
+Date: Fri, 11 Oct 2024 23:24:17 +0200
+Subject: [PATCH] build: Add fast_float dependency
+
+From d09330585e648b5c9991dffab4a06d1f127bf916 Mon Sep 17 00:00:00 2001
+From: Christian Persch <chpe@src.gnome.org>
+Date: Wed, 16 Oct 2024 21:40:10 +0200
+Subject: [PATCH] build: Use correct path to include fast_float.h
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -657,6 +657,13 @@ endif
+ 
+ config_h.set10('WITH_SYSTEMD', systemd_dep.found())
+ 
++# Try fast_float.h from system headers, else fall back to subproject
++if cxx.has_header('fast_float' / 'fast_float.h')
++  fast_float_dep = dependency('', required: false)
++else
++  fast_float_dep = dependency('fast_float', required: true)
++endif
++
+ # Write config.h
+ 
+ config_sources = [

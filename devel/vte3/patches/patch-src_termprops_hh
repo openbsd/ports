@@ -1,0 +1,49 @@
+From 6c2761f51a0400772f443f12ea23a75576e195d3 Mon Sep 17 00:00:00 2001
+From: Khem Raj <raj.khem@gmail.com>
+Date: Fri, 11 Oct 2024 23:24:17 +0200
+Subject: [PATCH] widget: termprops: Use fast_float
+
+From d09330585e648b5c9991dffab4a06d1f127bf916 Mon Sep 17 00:00:00 2001
+From: Christian Persch <chpe@src.gnome.org>
+Date: Wed, 16 Oct 2024 21:40:10 +0200
+Subject: [PATCH] build: Use correct path to include fast_float.h
+
+Index: src/termprops.hh
+--- src/termprops.hh.orig
++++ src/termprops.hh
+@@ -34,6 +34,8 @@
+ #include <variant>
+ #include <version>
+ 
++#include <fast_float/fast_float.h>
++
+ namespace vte::terminal {
+ 
+ using namespace std::literals::string_literals;
+@@ -355,9 +357,9 @@ inline std::optional<TermpropValue>
+ parse_termprop_integral(std::string_view const& str) noexcept
+ {
+         auto v = T{};
+-        if (auto [ptr, err] = std::from_chars(std::begin(str),
+-                                              std::end(str),
+-                                              v);
++        if (auto [ptr, err] = fast_float::from_chars(std::begin(str),
++                                                     std::end(str),
++                                                     v);
+             err == std::errc() && ptr == std::end(str)) {
+                 if constexpr (std::is_unsigned_v<T>) {
+                         return uint64_t(v);
+@@ -389,10 +391,9 @@ inline std::optional<TermpropValue>
+ parse_termprop_floating(std::string_view const& str) noexcept
+ {
+         auto v = T{};
+-        if (auto [ptr, err] = std::from_chars(std::begin(str),
+-                                              std::end(str),
+-                                              v,
+-                                              std::chars_format::general);
++        if (auto [ptr, err] = fast_float::from_chars(std::begin(str),
++                                                     std::end(str),
++                                                     v);
+             err == std::errc() &&
+             ptr == std::end(str) &&
+             std::isfinite(v)) {

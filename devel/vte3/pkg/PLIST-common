@@ -151,6 +151,9 @@ share/locale/ja/LC_MESSAGES/vte-2.91.mo
 share/locale/ka/
 share/locale/ka/LC_MESSAGES/
 share/locale/ka/LC_MESSAGES/vte-2.91.mo
+share/locale/kab/
+share/locale/kab/LC_MESSAGES/
+share/locale/kab/LC_MESSAGES/vte-2.91.mo
 share/locale/kk/
 share/locale/kk/LC_MESSAGES/
 share/locale/kk/LC_MESSAGES/vte-2.91.mo
