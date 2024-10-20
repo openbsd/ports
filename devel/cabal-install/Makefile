@@ -1,11 +1,10 @@
 COMMENT =	command-line interface for Cabal and Hackage
 
-DISTNAME =	cabal-install-3.10.3.0
+DISTNAME =	cabal-install-3.12.1.0
 CATEGORIES =	devel
 GH_ACCOUNT =	haskell
-GH_TAGNAME =	cabal-install-v3.10.3.0
+GH_TAGNAME =	cabal-install-v3.12.1.0
 GH_PROJECT =	cabal
-REVISION =	0
 
 HOMEPAGE =	https://github.com/haskell/cabal
 
@@ -35,31 +34,36 @@ SITES.hs =		https://hackage.haskell.org/package/
 # for d in sorted(deps, key=lambda p: p['package']):
 #     print(f"\t{d['package']}\t{d['version']}\t{d['revision'] or 0}\t\\")
 _MANIFEST = \
-	Cabal	3.10.3.0	0	\
-	Cabal-syntax	3.10.3.0	0	\
-	HTTP	4000.4.1	3	\
-	async	2.2.4	4	\
+	Cabal	3.12.1.0	0	\
+	Cabal-syntax	3.12.1.0	0	\
+	HTTP	4000.4.1	4	\
+	alex	3.5.1.0	0	\
+	async	2.2.5	1	\
 	base16-bytestring	1.0.2.0	1	\
 	base64-bytestring	1.2.1.0	1	\
-	cabal-install-solver	3.10.2.1	0	\
-	cryptohash-sha256	0.11.102.1	3	\
+	cabal-install-solver	3.12.1.0	0	\
+	cryptohash-sha256	0.11.102.1	4	\
 	echo	0.1.4	0	\
 	ed25519	0.0.5.0	8	\
 	edit-distance	0.2.2.1	1	\
-	hackage-security	0.6.2.3	8	\
-	hashable	1.4.3.0	1	\
-	lukko	0.1.1.3	5	\
-	network	3.1.4.0	1	\
+	hackage-security	0.6.2.6	1	\
+	hashable	1.4.6.0	0	\
+	hsc2hs	0.68.10	2	\
+	lukko	0.1.2	0	\
+	network	3.2.0.0	0	\
 	network-uri	2.6.4.2	1	\
-	random	1.2.1.1	1	\
+	open-browser	0.2.1.0	0	\
+	os-string	2.0.3	0	\
+	random	1.2.1.2	0	\
 	regex-base	0.94.0.2	4	\
 	regex-posix	0.96.0.1	3	\
 	resolv	0.2.0.2	3	\
 	safe-exceptions	0.1.7.4	1	\
-	splitmix	0.1.0.5	0	\
-	tar	0.5.1.1	9	\
-	th-compat	0.1.4	3	\
-	zlib	0.6.3.0	4	\
+	semaphore-compat	1.0.0	3	\
+	splitmix	0.1.0.5	1	\
+	tar	0.6.3.0	0	\
+	th-compat	0.1.5	2	\
+	zlib	0.7.1.0	0	\
 
 .for _package _version _revision in ${_MANIFEST}
 DISTFILES.hs += {${_package}-${_version}/}${_package}-${_version}.tar.gz
