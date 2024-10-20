@@ -2,6 +2,7 @@ COMMENT=		GNOME display manager
 
 GNOME_PROJECT=		gdm
 GNOME_VERSION=		46.2
+REVISION=		0
 
 GH_ACCOUNT=		rnagy
 GH_PROJECT=		gdm
@@ -101,6 +102,7 @@ pre-configure:
 	sed -i -e 's,/usr/local,${LOCALBASE},g' \
 		-e 's,/bin/bash,/bin/ksh,g' \
 		${WRKSRC}/daemon/gdm-session-worker.c
+	${SUBST_CMD} ${WRKSRC}/daemon/gdm-local-display-factory.c
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/pixmaps/
@@ -109,7 +111,6 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/gdm/etc/pam.d
 	${INSTALL_DATA} ${FILESDIR}/gdm-* \
 		${PREFIX}/share/examples/gdm/etc/pam.d
-	${SUBST_CMD} ${WRKSRC}/daemon/gdm-local-display-factory.c
 	${SUBST_CMD} -m 0644 -c -o ${SHAREOWN} -g ${SHAREGRP} \
 		${FILESDIR}/10_org.gnome.login-screen.gschema.override \
 		${PREFIX}/share/glib-2.0/schemas/10_org.gnome.login-screen.gschema.override
