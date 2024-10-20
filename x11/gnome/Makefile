@@ -99,7 +99,6 @@
      SUBDIR += usage
      SUBDIR += user-docs
      SUBDIR += video-effects
-     SUBDIR += vino
      SUBDIR += weather
      SUBDIR += yelp
      SUBDIR += yelp-tools
