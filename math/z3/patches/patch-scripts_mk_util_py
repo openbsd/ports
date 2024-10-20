@@ -5,7 +5,7 @@
 Index: scripts/mk_util.py
 --- scripts/mk_util.py.orig
 +++ scripts/mk_util.py
-@@ -2609,7 +2609,6 @@ def mk_config():
+@@ -2632,7 +2632,6 @@ def mk_config():
              EXAMP_DEBUG_FLAG = '-g'
              CPPFLAGS     = '%s -DZ3DEBUG -D_DEBUG' % CPPFLAGS
          else:
@@ -13,7 +13,7 @@ Index: scripts/mk_util.py
              if GPROF:
                  CXXFLAGS     += '-fomit-frame-pointer'
              CPPFLAGS     = '%s -DNDEBUG -D_EXTERNAL_RELEASE' % CPPFLAGS
-@@ -2634,7 +2633,7 @@ def mk_config():
+@@ -2657,7 +2656,7 @@ def mk_config():
              SO_EXT         = '.so'
              SLIBFLAGS      = '-shared'
          elif sysname == 'OpenBSD':
@@ -22,7 +22,7 @@ Index: scripts/mk_util.py
              SLIBFLAGS      = '-shared'
          elif sysname  == 'SunOS':
              SO_EXT         = '.so'
-@@ -2650,7 +2649,7 @@ def mk_config():
+@@ -2673,7 +2672,7 @@ def mk_config():
              LIB_EXT        = '.lib'
          else:
              raise MKException('Unsupported platform: %s' % sysname)

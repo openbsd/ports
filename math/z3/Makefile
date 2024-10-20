@@ -1,18 +1,20 @@
 COMMENT =	Z3 theorem prover
 
-DIST_TUPLE =	github	Z3Prover	z3	z3-4.13.0	.
+DIST_TUPLE =	github	Z3Prover	z3	z3-4.13.3	.
 PKGNAME =	${DISTNAME:S/z3-//}
 
-SHARED_LIBS =	z3	4.11
+SHARED_LIBS =	z3	4.12
 
 CATEGORIES =	math
 
 WANTLIB +=	c m pthread ${COMPILER_LIBCXX}
 
+MAINTAINER =	Kirill A. Korinsky <kirill@korins.ky>
+
 # MIT
 PERMIT_PACKAGE =	Yes
 
-# C++17
+# C++20
 COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake \
@@ -27,7 +29,7 @@ CONFIGURE_ARGS =	-DZ3_BUILD_PYTHON_BINDINGS=ON \
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-post-extract:
+post-patch:
 	${SUBST_CMD} ${WRKSRC}/scripts/mk_util.py
 
 post-test:
