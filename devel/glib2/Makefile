@@ -1,7 +1,7 @@
 COMMENT=		general-purpose utility library
 
 GNOME_PROJECT=		glib
-GNOME_VERSION=		2.80.5
+GNOME_VERSION=		2.82.2
 PKGNAME=		${DISTNAME:S/glib/glib2/}
 
 CATEGORIES=		devel
@@ -14,12 +14,12 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # would trigger an abort():
 # GLib-GObject:ERROR:gvaluetypes.c:457:_g_value_types_init:
 # assertion failed: (type == G_TYPE_CHAR)
-SHARED_LIBS += glib-2.0                  4201.12 # 0.8000.5
-SHARED_LIBS += gobject-2.0               4200.19 # 0.8000.5
-SHARED_LIBS += gthread-2.0               4200.19 # 0.8000.5
-SHARED_LIBS += gmodule-2.0               4200.19 # 0.8000.5
-SHARED_LIBS += gio-2.0                   4200.19 # 0.8000.5
-SHARED_LIBS += girepository-2.0          0.0 # 0.8000.5
+SHARED_LIBS += glib-2.0                  4201.13 # 0.8200.1
+SHARED_LIBS += gobject-2.0               4200.20 # 0.8200.1
+SHARED_LIBS += gthread-2.0               4200.20 # 0.8200.1
+SHARED_LIBS += gmodule-2.0               4200.20 # 0.8200.1
+SHARED_LIBS += gio-2.0                   4200.20 # 0.8200.1
+SHARED_LIBS += girepository-2.0          0.1 # 0.8200.1
 
 # LGPLv2
 PERMIT_PACKAGE=	Yes
@@ -63,10 +63,16 @@ TEST_DEPENDS=		devel/desktop-file-utils \
 CONFIGURE_ARGS=		-Dselinux=disabled \
 			-Dxattr=false \
 			-Dlibmount=disabled \
+			-Dsysprof=disabled \
 			-Dman-pages=enabled \
 			-Druntime_dir=/var/run
 
-# Don't set G_ENABLE_DEBUG by default
+# systemtap needs dtrace
+CONFIGURE_ARGS +=	-Ddtrace=disabled \
+			-Dsystemtap=disabled \
+
+# Don't set G_ENABLE_DEBUG by default;
+# see https://gitlab.gnome.org/GNOME/glib/-/issues/3421
 CONFIGURE_ARGS +=	-Dglib_debug=disabled
 
 # XXX  handle cyclic dependency: glib2 -> g-o-i -> glib2;
