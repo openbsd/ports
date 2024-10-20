@@ -1,13 +1,13 @@
 COMMENT=		integrated email and PIM software for GNOME
 
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		3.52.4
+GNOME_VERSION=		3.54.1
 
 CATEGORIES=		mail
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-SO_VERSION=		15.11 # 0.0
+SO_VERSION=		15.12 # 0.0
 .for _lib in \
 eabutil econtacteditor econtactlisteditor email-engine essmime \
 evolution-addressbook-importers evolution-calendar-importers \

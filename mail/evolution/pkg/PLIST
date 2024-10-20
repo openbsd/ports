@@ -501,6 +501,7 @@ include/evolution/mail/e-mail-templates-store.h
 include/evolution/mail/e-mail-templates.h
 include/evolution/mail/e-mail-ui-session.h
 include/evolution/mail/e-mail-view.h
+include/evolution/mail/e-mail-viewer.h
 include/evolution/mail/e-mail.h
 include/evolution/mail/em-composer-utils.h
 include/evolution/mail/em-config.h
@@ -1641,6 +1642,7 @@ share/evolution/ui/evolution-calendars.ui
 share/evolution/ui/evolution-composer.ui
 share/evolution/ui/evolution-contacts.ui
 share/evolution/ui/evolution-mail-reader.ui
+share/evolution/ui/evolution-mail-viewer.ui
 share/evolution/ui/evolution-mail.ui
 share/evolution/ui/evolution-memos.ui
 share/evolution/ui/evolution-shell.ui
@@ -6886,6 +6888,7 @@ share/locale/is/LC_MESSAGES/evolution.mo
 share/locale/it/LC_MESSAGES/evolution.mo
 share/locale/ja/LC_MESSAGES/evolution.mo
 share/locale/ka/LC_MESSAGES/evolution.mo
+share/locale/kab/LC_MESSAGES/evolution.mo
 share/locale/kk/LC_MESSAGES/evolution.mo
 share/locale/kn/LC_MESSAGES/evolution.mo
 share/locale/ko/LC_MESSAGES/evolution.mo
