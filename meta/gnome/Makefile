@@ -8,8 +8,8 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
-REVISION-main=		0
-REVISION-extras=	0
+REVISION-main=		1
+REVISION-extras=	1
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -36,7 +36,9 @@ RUN_DEPENDS-main +=	net/avahi
 RUN_DEPENDS-main +=	inputmethods/ibus,-gtk3
 RUN_DEPENDS-main +=	inputmethods/ibus,-gtk4
 
-# elements/core-deps/
+# some elements from:
+# https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core-deps/
+# that are not included in the dependency chain
 RUN_DEPENDS-main +=	sysutils/flatpak/xdg-desktop-portal \
 			sysutils/flatpak/xdg-desktop-portal-gnome \
 			sysutils/flatpak/xdg-desktop-portal-gtk
@@ -75,7 +77,7 @@ RUN_DEPENDS-main +=	devel/gsettings-desktop-schemas \
 			x11/gnome/tour \
 			x11/gnome/user-docs
 
-# https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core/meta-gnome-core-utilities.bst
+# https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core/meta-gnome-core-apps.bst
 RUN_DEPENDS-main +=	x11/gnome/calculator \
 			x11/gnome/calendar \
 			x11/gnome/characters \
@@ -88,18 +90,17 @@ RUN_DEPENDS-main +=	x11/gnome/calculator \
 			x11/gnome/maps \
 			x11/gnome/music \
 			x11/gnome/nautilus \
-			x11/gnome/photos \
 			x11/gnome/system-monitor \
 			x11/gnome/text-editor \
 			x11/gnome/totem \
 			x11/gnome/weather \
 			x11/gnome/yelp
 
+# in -extras to give users an alternative choice
 RUN_DEPENDS-extras +=	graphics/simple-scan \
 			www/epiphany \
 			x11/gnome/baobab \
-			x11/gnome/connections \
-			x11/gnome/system-monitor
+			x11/gnome/connections
 
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core/meta-gnome-core-developer-tools.bst
 RUN_DEPENDS-extras +=	sysutils/dspy \
@@ -107,29 +108,30 @@ RUN_DEPENDS-extras +=	sysutils/dspy \
 			x11/gnome/dconf-editor \
 			x11/gnome/devhelp
 
+# https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core/meta-gnome-core-mobile.bst
+#RUN_DEPENDS-extras +=
+
 ################################################################################
-# https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/world.bst
+# Add a few extras GNOME applications:
+# - from the former elements/world.bst in gnome-build-meta;
+# - from Circle applications at https://apps.gnome.org/
+# - from https://archlinux.org/groups/x86_64/gnome-extra/
 ################################################################################
 
 RUN_DEPENDS-extras +=	devel/glade \
 			mail/evolution \
-			net/gupnp/igd \
 			x11/gnome/cheese \
-			x11/gnome/devel-docs \
 			x11/gnome/dictionary \
 			x11/gnome/endeavour \
-			x11/gnome/file-roller \
+			x11/gnome/file-roller,-nautilus \
 			x11/gnome/ghex \
 			x11/gnome/gitg \
 			x11/gnome/notes \
+			x11/gnome/photos \
 			x11/gnome/polari \
 			x11/gnome/seahorse \
-			x11/gnome/tweaks \
-			x11/gnome/zenity
-
-# nautilus is already in the dependency chain
-RUN_DEPENDS-extras +=	x11/gnome/file-roller,-nautilus
-RUN_DEPENDS-extras +=	x11/gnome/terminal,-nautilus
+			x11/gnome/terminal,-nautilus \
+			x11/gnome/tweaks
 
 # depends on -main
 RUN_DEPENDS-extras +=	STEM-=${V}:${BASE_PKGPATH},-main
