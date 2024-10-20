@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1662 2024/10/18 08:10:15 op Exp $
+# $OpenBSD: Quirks.pm,v 1.1663 2024/10/20 14:58:44 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1186,6 +1186,7 @@ setup_obsolete_reason(
 	3 => 'fleet',
 	70 => 'xml-security-c',
 	3 => 'utox',
+	3 => 'vino',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
