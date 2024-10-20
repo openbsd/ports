@@ -1,7 +1,7 @@
 COMMENT=		C++ bindings for GTK+
 
 GNOME_PROJECT=		gtkmm
-GNOME_VERSION=		4.14.0
+GNOME_VERSION=		4.16.0
 PKGNAME=		gtkmm40-${GNOME_VERSION}
 
 CATEGORIES=		x11 devel

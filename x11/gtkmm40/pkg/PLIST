@@ -4,7 +4,9 @@ include/gtkmm-4.0/gdkmm.h
 include/gtkmm-4.0/gdkmm/applaunchcontext.h
 include/gtkmm-4.0/gdkmm/cairocontext.h
 include/gtkmm-4.0/gdkmm/cairoutils.h
+include/gtkmm-4.0/gdkmm/cicpparams.h
 include/gtkmm-4.0/gdkmm/clipboard.h
+include/gtkmm-4.0/gdkmm/colorstate.h
 include/gtkmm-4.0/gdkmm/contentformats.h
 include/gtkmm-4.0/gdkmm/contentformatsbuilder.h
 include/gtkmm-4.0/gdkmm/contentprovider.h
@@ -36,6 +38,7 @@ include/gtkmm-4.0/gdkmm/graphene_point.h
 include/gtkmm-4.0/gdkmm/graphene_rect.h
 include/gtkmm-4.0/gdkmm/graphene_size.h
 include/gtkmm-4.0/gdkmm/memorytexture.h
+include/gtkmm-4.0/gdkmm/memorytexturebuilder.h
 include/gtkmm-4.0/gdkmm/monitor.h
 include/gtkmm-4.0/gdkmm/paintable.h
 include/gtkmm-4.0/gdkmm/pixbuf.h
@@ -49,7 +52,9 @@ include/gtkmm-4.0/gdkmm/popupsurfaceimpl.h
 include/gtkmm-4.0/gdkmm/private/
 include/gtkmm-4.0/gdkmm/private/applaunchcontext_p.h
 include/gtkmm-4.0/gdkmm/private/cairocontext_p.h
+include/gtkmm-4.0/gdkmm/private/cicpparams_p.h
 include/gtkmm-4.0/gdkmm/private/clipboard_p.h
+include/gtkmm-4.0/gdkmm/private/colorstate_p.h
 include/gtkmm-4.0/gdkmm/private/contentformats_p.h
 include/gtkmm-4.0/gdkmm/private/contentformatsbuilder_p.h
 include/gtkmm-4.0/gdkmm/private/contentprovider_p.h
@@ -78,6 +83,7 @@ include/gtkmm-4.0/gdkmm/private/graphene_point_p.h
 include/gtkmm-4.0/gdkmm/private/graphene_rect_p.h
 include/gtkmm-4.0/gdkmm/private/graphene_size_p.h
 include/gtkmm-4.0/gdkmm/private/memorytexture_p.h
+include/gtkmm-4.0/gdkmm/private/memorytexturebuilder_p.h
 include/gtkmm-4.0/gdkmm/private/monitor_p.h
 include/gtkmm-4.0/gdkmm/private/paintable_p.h
 include/gtkmm-4.0/gdkmm/private/pixbuf_p.h
