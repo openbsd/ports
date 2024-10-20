@@ -1,20 +1,20 @@
 COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
-GNOME_VERSION=		3.52.4
+GNOME_VERSION=		3.54.1
 
 CATEGORIES=		databases productivity
 
-SHARED_LIBS +=  camel-1.2            41.11
-SHARED_LIBS +=  edataserver-1.2      22.11
-SHARED_LIBS +=  ebackend-1.2         8.11
-SHARED_LIBS +=  edataserverui-1.2    4.11
-SHARED_LIBS +=	edataserverui4-1.0   0.3
-SHARED_LIBS +=  ebook-contacts-1.2   5.11
-SHARED_LIBS +=  edata-book-1.2       20.9
-SHARED_LIBS +=  ebook-1.2            23.9
-SHARED_LIBS +=  ecal-2.0             0.9
-SHARED_LIBS +=  edata-cal-2.0        0.9
+SHARED_LIBS +=  camel-1.2            41.12
+SHARED_LIBS +=  edataserver-1.2      22.12
+SHARED_LIBS +=  ebackend-1.2         8.12
+SHARED_LIBS +=  edataserverui-1.2    4.12
+SHARED_LIBS +=	edataserverui4-1.0   0.4
+SHARED_LIBS +=  ebook-contacts-1.2   5.12
+SHARED_LIBS +=  edata-book-1.2       20.10
+SHARED_LIBS +=  ebook-1.2            23.10
+SHARED_LIBS +=  ecal-2.0             0.10
+SHARED_LIBS +=  edata-cal-2.0        0.10
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -28,8 +28,8 @@ WANTLIB += gtk-3 gtk-4 gweather-4 harfbuzz ical ical-glib icalss
 WANTLIB += icalvcal icudata icui18n icuuc intl javascriptcoregtk-4.1
 WANTLIB += javascriptcoregtk-6.0 json-glib-1.0 lber ldap m nspr4
 WANTLIB += nss3 nssutil3 pango-1.0 pangocairo-1.0 phonenumber
-WANTLIB += plc4 plds4 secret-1 smime3 soup-3.0 sqlite3 ssl3 webkit2gtk-4.1
-WANTLIB += webkitgtk-6.0 xml2 z
+WANTLIB += plc4 plds4 secret-1 smime3 soup-3.0 sqlite3 ssl3 uuid
+WANTLIB += webkit2gtk-4.1 webkitgtk-6.0 xml2 z
 
 COMPILER=		base-clang ports-gcc base-gcc
 
@@ -45,6 +45,7 @@ LIB_DEPENDS= 		audio/libcanberra,-gtk3 \
 			databases/openldap \
 			productivity/libphonenumber \
 			security/nss \
+			sysutils/e2fsprogs \
 			textproc/libical,-glib \
 			www/webkitgtk4,webkitgtk41 \
 			www/webkitgtk4,webkitgtk60 \
