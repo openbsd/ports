@@ -2,7 +2,7 @@ COMMENT=	gtk-based git repository viewer
 
 GNOME_VERSION=	0.7
 GNOME_PROJECT=	giggle
-REVISION=	16
+REVISION=	17
 
 CATEGORIES=	devel x11
 
@@ -20,6 +20,8 @@ WANTLIB += graphite2 gthread-2.0 gtk-3 gtksourceview-3.0 harfbuzz iconv
 WANTLIB += intl lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8
 WANTLIB += pixman-1 png pthread vte-2.91 xcb xcb-render xcb-shm xml2 z
 WANTLIB += fribidi ${COMPILER_LIBCXX} Xau Xdmcp execinfo jpeg
+WANTLIB += epoll-shim wayland-client wayland-cursor wayland-egl
+WANTLIB += xkbcommon
 
 MODULES=	x11/gnome
 
