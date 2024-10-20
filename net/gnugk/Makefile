@@ -2,7 +2,7 @@ BROKEN-hppa=		libpt.so.7.0: undefined reference to __sync_fetch_and_or_4
 
 COMMENT=		H.323 gatekeeper
 
-V=			5.12
+V=			5.13
 GH_ACCOUNT=		willamowius
 GH_PROJECT=		gnugk
 GH_TAGNAME=		v${V:S/./_/}
