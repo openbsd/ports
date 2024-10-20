@@ -7,7 +7,8 @@
 include/pygobject-3.0/
 include/pygobject-3.0/pygobject.h
 lib/pkgconfig/pygobject-3.0.pc
-lib/python${MODPY_VERSION}/site-packages/PyGObject-${MODPY_EGG_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/PyGObject-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/PyGObject-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/gi/
 lib/python${MODPY_VERSION}/site-packages/gi/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}/
@@ -20,6 +21,7 @@ lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_ossighelper.${MODPY
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_propertyhelper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_signalhelper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}docstring.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}events.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}importer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}module.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}pygtkcompat.${MODPY_PYC_MAGIC_TAG}pyc
@@ -34,6 +36,7 @@ lib/python${MODPY_VERSION}/site-packages/gi/_ossighelper.py
 lib/python${MODPY_VERSION}/site-packages/gi/_propertyhelper.py
 lib/python${MODPY_VERSION}/site-packages/gi/_signalhelper.py
 lib/python${MODPY_VERSION}/site-packages/gi/docstring.py
+lib/python${MODPY_VERSION}/site-packages/gi/events.py
 lib/python${MODPY_VERSION}/site-packages/gi/importer.py
 lib/python${MODPY_VERSION}/site-packages/gi/module.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/
