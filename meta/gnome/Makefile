@@ -84,7 +84,6 @@ RUN_DEPENDS-main +=	x11/gnome/calculator \
 			x11/gnome/clocks \
 			x11/gnome/console \
 			x11/gnome/contacts \
-			x11/gnome/eog \
 			evince-*-!light:graphics/evince \
 			x11/gnome/font-viewer \
 			x11/gnome/maps \
@@ -95,6 +94,9 @@ RUN_DEPENDS-main +=	x11/gnome/calculator \
 			x11/gnome/totem \
 			x11/gnome/weather \
 			x11/gnome/yelp
+
+# should be "loupe"
+RUN_DEPENDS-main +=	x11/gnome/eog
 
 # in -extras to give users an alternative choice
 RUN_DEPENDS-extras +=	graphics/simple-scan \
