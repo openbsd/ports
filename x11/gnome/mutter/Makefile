@@ -2,6 +2,7 @@ COMMENT=		window and compositing manager based on Clutter
 
 GNOME_PROJECT=		mutter
 GNOME_VERSION=		46.6
+REVISION=		0
 
 SHARED_LIBS +=  mutter-14                 0.0 # 0.0
 SHARED_LIBS +=  mutter-clutter-14         0.0 # 0.0
@@ -51,6 +52,7 @@ LIB_DEPENDS=		audio/libcanberra \
 			x11/xkbcommon
 
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
+			wayland/xwayland \
 			x11/gnome/settings-daemon
 
 CONFIGURE_ARGS +=	-Dopengl_libname=libGL.so \
