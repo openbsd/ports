@@ -6,6 +6,7 @@ GNOME_PROJECT=		gnome-shell
 # check/fix CONFIGURE_ARGS (-Dgnome_shell_version=XX) in x11/arc-theme on
 # major upgrade;
 GNOME_VERSION=		46.6
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -76,10 +77,6 @@ RUN_DEPENDS +=		sysutils/accountsservice
 
 # dateMenu.js
 RUN_DEPENDS +=		x11/gnome/clocks
-
-# js/ui/components/telepathyClient.js
-RUN_DEPENDS +=		net/telepathy/telepathy-glib
-RUN_DEPENDS +=		net/telepathy/telepathy-logger
 
 # weather.js
 RUN_DEPENDS +=		x11/gnome/weather
