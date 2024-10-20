@@ -9,6 +9,7 @@ PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
 REVISION-main=		0
+REVISION-extras=	0
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -113,9 +114,6 @@ RUN_DEPENDS-extras +=	sysutils/dspy \
 RUN_DEPENDS-extras +=	devel/glade \
 			mail/evolution \
 			net/gupnp/igd \
-			net/telepathy/telepathy-glib \
-			net/telepathy/telepathy-logger \
-			net/telepathy/telepathy-mission-control \
 			x11/gnome/cheese \
 			x11/gnome/devel-docs \
 			x11/gnome/dictionary \
