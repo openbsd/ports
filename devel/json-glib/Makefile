@@ -1,9 +1,9 @@
 COMMENT=		JSON parser for GLib-based libraries and applications
 
 GNOME_PROJECT=		json-glib
-GNOME_VERSION=		1.8.0
+GNOME_VERSION=		1.10.0
 
-SHARED_LIBS += json-glib-1.0             6.1 # 0.800.0
+SHARED_LIBS += json-glib-1.0             6.2 # 0.1000.0
 
 CATEGORIES=		devel
 
@@ -16,6 +16,11 @@ WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 intl
 
 MODULES=		devel/meson \
 			x11/gnome
+
+# rst2html5, rts2man
+MODULES +=		lang/python
+MODPY_RUNDEP=		No
+BUILD_DEPENDS +=	textproc/py-docutils${MODPY_FLAVOR}
 
 LIB_DEPENDS=		devel/glib2
 

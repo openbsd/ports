@@ -15,7 +15,6 @@ include/json-glib-1.0/json-glib/json-types.h
 include/json-glib-1.0/json-glib/json-utils.h
 include/json-glib-1.0/json-glib/json-version-macros.h
 include/json-glib-1.0/json-glib/json-version.h
-lib/girepository-1.0/
 lib/girepository-1.0/Json-1.0.typelib
 @lib lib/libjson-glib-1.0.so.${LIBjson-glib-1.0_VERSION}
 lib/pkgconfig/json-glib-1.0.pc
@@ -64,6 +63,7 @@ share/doc/json-glib-1.0/classes_hierarchy.html
 share/doc/json-glib-1.0/const.MAJOR_VERSION.html
 share/doc/json-glib-1.0/const.MICRO_VERSION.html
 share/doc/json-glib-1.0/const.MINOR_VERSION.html
+share/doc/json-glib-1.0/const.PARSER_MAX_RECURSION_DEPTH.html
 share/doc/json-glib-1.0/const.VERSION_S.html
 share/doc/json-glib-1.0/ctor.Array.new.html
 share/doc/json-glib-1.0/ctor.Array.sized_new.html
@@ -118,6 +118,8 @@ share/doc/json-glib-1.0/index.html
 share/doc/json-glib-1.0/index.json
 share/doc/json-glib-1.0/json-gboxed.html
 share/doc/json-glib-1.0/json-glib-1.0.devhelp2
+share/doc/json-glib-1.0/json-glib-format.html
+share/doc/json-glib-1.0/json-glib-validate.html
 share/doc/json-glib-1.0/json-gobject.html
 share/doc/json-glib-1.0/json-gvariant.html
 share/doc/json-glib-1.0/main.js
@@ -169,6 +171,7 @@ share/doc/json-glib-1.0/method.Generator.set_indent.html
 share/doc/json-glib-1.0/method.Generator.set_indent_char.html
 share/doc/json-glib-1.0/method.Generator.set_pretty.html
 share/doc/json-glib-1.0/method.Generator.set_root.html
+share/doc/json-glib-1.0/method.Generator.take_root.html
 share/doc/json-glib-1.0/method.Generator.to_data.html
 share/doc/json-glib-1.0/method.Generator.to_file.html
 share/doc/json-glib-1.0/method.Generator.to_gstring.html
@@ -255,6 +258,7 @@ share/doc/json-glib-1.0/method.ObjectIter.next_ordered.html
 share/doc/json-glib-1.0/method.Parser.get_current_line.html
 share/doc/json-glib-1.0/method.Parser.get_current_pos.html
 share/doc/json-glib-1.0/method.Parser.get_root.html
+share/doc/json-glib-1.0/method.Parser.get_strict.html
 share/doc/json-glib-1.0/method.Parser.has_assignment.html
 share/doc/json-glib-1.0/method.Parser.load_from_data.html
 share/doc/json-glib-1.0/method.Parser.load_from_file.html
@@ -262,6 +266,7 @@ share/doc/json-glib-1.0/method.Parser.load_from_mapped_file.html
 share/doc/json-glib-1.0/method.Parser.load_from_stream.html
 share/doc/json-glib-1.0/method.Parser.load_from_stream_async.html
 share/doc/json-glib-1.0/method.Parser.load_from_stream_finish.html
+share/doc/json-glib-1.0/method.Parser.set_strict.html
 share/doc/json-glib-1.0/method.Parser.steal_root.html
 share/doc/json-glib-1.0/method.Path.compile.html
 share/doc/json-glib-1.0/method.Path.match.html
@@ -299,6 +304,7 @@ share/doc/json-glib-1.0/property.Generator.indent.html
 share/doc/json-glib-1.0/property.Generator.pretty.html
 share/doc/json-glib-1.0/property.Generator.root.html
 share/doc/json-glib-1.0/property.Parser.immutable.html
+share/doc/json-glib-1.0/property.Parser.strict.html
 share/doc/json-glib-1.0/property.Reader.root.html
 share/doc/json-glib-1.0/search.js
 share/doc/json-glib-1.0/signal.Parser.array-element.html
@@ -321,6 +327,7 @@ share/doc/json-glib-1.0/type_func.ParserError.quark.html
 share/doc/json-glib-1.0/type_func.Path.query.html
 share/doc/json-glib-1.0/type_func.PathError.quark.html
 share/doc/json-glib-1.0/type_func.ReaderError.quark.html
+share/doc/json-glib-1.0/urlmap.js
 share/doc/json-glib-1.0/vfunc.Parser.array_element.html
 share/doc/json-glib-1.0/vfunc.Parser.array_end.html
 share/doc/json-glib-1.0/vfunc.Parser.array_start.html
@@ -336,7 +343,6 @@ share/doc/json-glib-1.0/vfunc.Serializable.get_property.html
 share/doc/json-glib-1.0/vfunc.Serializable.list_properties.html
 share/doc/json-glib-1.0/vfunc.Serializable.serialize_property.html
 share/doc/json-glib-1.0/vfunc.Serializable.set_property.html
-share/gir-1.0/
 share/gir-1.0/Json-1.0.gir
 share/locale/ab/LC_MESSAGES/json-glib-1.0.mo
 share/locale/as/LC_MESSAGES/json-glib-1.0.mo
@@ -367,6 +373,7 @@ share/locale/id/LC_MESSAGES/json-glib-1.0.mo
 share/locale/it/LC_MESSAGES/json-glib-1.0.mo
 share/locale/ja/LC_MESSAGES/json-glib-1.0.mo
 share/locale/ka/LC_MESSAGES/json-glib-1.0.mo
+share/locale/kab/LC_MESSAGES/json-glib-1.0.mo
 share/locale/ko/LC_MESSAGES/json-glib-1.0.mo
 share/locale/ky/
 share/locale/ky/LC_MESSAGES/
@@ -393,6 +400,7 @@ share/locale/sr@latin/LC_MESSAGES/json-glib-1.0.mo
 share/locale/sv/LC_MESSAGES/json-glib-1.0.mo
 share/locale/te/LC_MESSAGES/json-glib-1.0.mo
 share/locale/tg/LC_MESSAGES/json-glib-1.0.mo
+share/locale/th/LC_MESSAGES/json-glib-1.0.mo
 share/locale/tr/LC_MESSAGES/json-glib-1.0.mo
 share/locale/ug/LC_MESSAGES/json-glib-1.0.mo
 share/locale/uk/LC_MESSAGES/json-glib-1.0.mo
