@@ -7,7 +7,7 @@ Subject: [PATCH] Drop consolekit backend and hard depend on systemd
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -103,19 +103,56 @@ session_bin_deps = session_deps + [
+@@ -103,19 +103,52 @@ session_bin_deps = session_deps + [
  # Check for session selector GTK+ UI
  enable_session_selector = get_option('session_selector')
  
@@ -49,11 +49,7 @@ Index: meson.build
 +
 +  # Check for ConsoleKit
 +  if enable_consolekit
-+    dbus_glib_dep = dependency('dbus-glib-1', version: '>= 0.76')
-+    assert(dbus_glib_dep.found(), 'ConsoleKit support explicitly required, but dbus-glib not found')
 +    systemd_userunitdir = ''
-+
-+    session_bin_deps += dbus_glib_dep
 +
 +    if enable_systemd
 +      session_tracking += ' (with fallback to ConsoleKit)'
@@ -74,7 +70,7 @@ Index: meson.build
  configure_file(
    output: 'config.h',
    configuration: config_h
-@@ -151,6 +188,7 @@ summary_options = {
+@@ -151,6 +184,7 @@ summary_options = {
   'Build manpages': get_option('man'),
   'Systemd Units Directory': systemd_userunitdir,
   'Session Selector Enabled': enable_session_selector,

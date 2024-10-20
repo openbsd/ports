@@ -2,6 +2,7 @@ COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		46.0
+REVISION=		0
 
 CATEGORIES=		x11
 
@@ -22,9 +23,6 @@ BUILD_DEPENDS=		textproc/xmlto \
 
 LIB_DEPENDS=		devel/json-glib \
 			x11/gtk+3
-
-# needed for ConsoleKit support
-BUILD_DEPENDS +=	x11/dbus-glib
 
 # polkit(8) almost always needs to know the "active" session
 RUN_DEPENDS +=		sysutils/consolekit
