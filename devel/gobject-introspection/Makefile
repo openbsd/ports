@@ -1,8 +1,7 @@
 COMMENT=		GObject Introspection
 
-GNOME_VERSION=		1.80.1
+GNOME_VERSION=		1.82.0
 GNOME_PROJECT=		gobject-introspection
-REVISION=		1
 
 CATEGORIES=		devel
 
