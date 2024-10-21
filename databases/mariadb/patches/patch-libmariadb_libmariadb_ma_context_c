@@ -245,9 +245,9 @@ Index: libmariadb/libmariadb/ma_context.c
 +     /* x19 (aka %[save]) is preserved from my_context_spawn() in this case. */
 +     "ldr x20, [%[save], #8]\n\t"
 +     "ldp x21, x22, [%[save], #16]\n\t"
-+     "ldp x21, x22, [%[save], #32]\n\t"
-+     "ldp x21, x22, [%[save], #48]\n\t"
-+     "ldp x21, x22, [%[save], #64]\n\t"
++     "ldp x23, x24, [%[save], #32]\n\t"
++     "ldp x25, x26, [%[save], #48]\n\t"
++     "ldp x27, x28, [%[save], #64]\n\t"
 +     "ldp x29, x10, [%[save], #80]\n\t"
 +     "mov sp, x10\n\t"
 +     "ldp d8, d9, [%[save], #96]\n\t"
