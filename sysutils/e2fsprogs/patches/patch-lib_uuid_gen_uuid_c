@@ -1,7 +1,7 @@
 Index: lib/uuid/gen_uuid.c
 --- lib/uuid/gen_uuid.c.orig
 +++ lib/uuid/gen_uuid.c
-@@ -167,8 +167,17 @@ static int get_random_fd(void)
+@@ -144,8 +144,17 @@ static int get_random_fd(void)
  	return fd;
  }
  
@@ -20,7 +20,7 @@ Index: lib/uuid/gen_uuid.c
   * Generate a series of random bytes.  Use /dev/urandom if possible,
   * and if not, use srandom/random.
   */
-@@ -213,6 +222,7 @@ static void get_random_bytes(void *buf, int nbytes)
+@@ -201,6 +210,7 @@ static void get_random_bytes(void *buf, int nbytes)
  
  	return;
  }
@@ -28,7 +28,7 @@ Index: lib/uuid/gen_uuid.c
  
  /*
   * Get the ethernet hardware address, if we can find it...
-@@ -679,7 +689,17 @@ void uuid_generate_random(uuid_t out)
+@@ -667,7 +677,17 @@ void uuid_generate_random(uuid_t out)
  }
  
  
@@ -46,7 +46,7 @@ Index: lib/uuid/gen_uuid.c
   * This is the generic front-end to uuid_generate_random and
   * uuid_generate_time.  It uses uuid_generate_random only if
   * /dev/urandom is available, since otherwise we won't have
-@@ -692,3 +712,4 @@ void uuid_generate(uuid_t out)
+@@ -680,3 +700,4 @@ void uuid_generate(uuid_t out)
  	else
  		uuid_generate_time(out);
  }

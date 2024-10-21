@@ -1,14 +1,13 @@
 COMMENT=	utilities to manipulate ext2 filesystems
 
-DISTNAME=	e2fsprogs-1.46.2
-REVISION=	1
+DISTNAME=	e2fsprogs-1.47.1
 CATEGORIES=	sysutils devel
-SHARED_LIBS=	blkid		0.0 \
-		com_err		21.0 \
-		e2p		3.2 \
-		ext2fs		5.0 \
-		ss		3.2 \
-		uuid		14.0
+SHARED_LIBS=	blkid		0.1 \
+		com_err		21.1 \
+		e2p		3.3 \
+		ext2fs		5.1 \
+		ss		3.3 \
+		uuid		14.1
 
 HOMEPAGE=	https://e2fsprogs.sourceforge.net/
 PORTROACH=	site:https://github.com/tytso/e2fsprogs/releases/

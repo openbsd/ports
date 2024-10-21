@@ -1,7 +1,7 @@
 Index: lib/ext2fs/Makefile.in
 --- lib/ext2fs/Makefile.in.orig
 +++ lib/ext2fs/Makefile.in
-@@ -234,8 +234,8 @@ HFILES_IN=  ext2_err.h ext2_types.h
+@@ -239,8 +239,8 @@ HFILES_IN=  ext2_err.h ext2_types.h
  LIBRARY= libext2fs
  LIBDIR= ext2fs
  

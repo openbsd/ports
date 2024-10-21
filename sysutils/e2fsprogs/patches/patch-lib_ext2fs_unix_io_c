@@ -1,11 +1,11 @@
 Index: lib/ext2fs/unix_io.c
 --- lib/ext2fs/unix_io.c.orig
 +++ lib/ext2fs/unix_io.c
-@@ -51,6 +51,7 @@
+@@ -50,6 +50,7 @@
  #include <sys/ioctl.h>
  #endif
  #ifdef HAVE_SYS_MOUNT_H
 +#include <sys/param.h>
  #include <sys/mount.h>
  #endif
- #ifdef HAVE_SYS_PRCTL_H
+ #if HAVE_SYS_STAT_H
