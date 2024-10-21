@@ -5,6 +5,7 @@ COMMENT=		GNOME music playing application
 
 GNOME_PROJECT=		gnome-music
 GNOME_VERSION=		46.1
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -25,7 +26,6 @@ BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
 			x11/gnome/libadwaita \
 			x11/gnome/libdazzle \
 			x11/gnome/libmediaart \
-			x11/gnome/online-accounts \
 			x11/gnome/tracker3
 
 RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
@@ -34,7 +34,6 @@ RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
 			x11/gnome/libadwaita \
 			x11/gnome/libdazzle \
 			x11/gnome/libmediaart \
-			x11/gnome/online-accounts \
 			x11/gnome/tracker3
 
 # org.freedesktop.Tracker3.Miner.Files
