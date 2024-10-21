@@ -1385,7 +1385,7 @@ SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = oq5uhUCkC4XldwPMYYuZxbEHU4bZW
 SHA256 (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 2iArDagDqyZhq5imgLuk9kEjoyblQMJVgrbNu53BFKo=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.mod) = ycxHNZ55+c2ONOTeypncJ5t0zinSW0a1T86Qmw5wOm8=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.zip) = qse6k1xBU6O0e8ObNvLorTJD8DNJwRy33Mlt2fMWn6Y=
-SHA256 (hugo-v0.136.1.zip) = 5GZ5aDrzjGlVamlmkS72DtafYu08eAZhBCwyGGRJw2c=
+SHA256 (hugo-v0.136.3.zip) = j4sp/M8Mohc5FxcXVWmoi08t1QETtIpRzIX3qWCFp9E=
 SIZE (go_modules/cel.dev/expr/@v/v0.15.0.mod) = 156
 SIZE (go_modules/cel.dev/expr/@v/v0.15.0.zip) = 190386
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.10.mod) = 1349
@@ -2773,4 +2773,4 @@ SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.mod) = 88
 SIZE (go_modules/rsc.io/sampler/@v/v1.3.0.zip) = 14308
 SIZE (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.mod) = 127
 SIZE (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.2.0.zip) = 36374
-SIZE (hugo-v0.136.1.zip) = 7648125
+SIZE (hugo-v0.136.3.zip) = 7647849
