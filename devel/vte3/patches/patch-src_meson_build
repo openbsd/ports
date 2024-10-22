@@ -6,7 +6,7 @@ Subject: [PATCH] widget: termprops: Use fast_float
 Index: src/meson.build
 --- src/meson.build.orig
 +++ src/meson.build
-@@ -317,6 +317,7 @@ libvte_common_public_deps = [
+@@ -318,6 +318,7 @@ libvte_common_public_deps = [
  
  libvte_common_deps = libvte_common_public_deps + [
    cairo_gobject_dep,
