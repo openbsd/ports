@@ -9,9 +9,9 @@ Modified to remove OS(LINUX) from #if
 Index: Source/JavaScriptCore/runtime/MathCommon.cpp
 --- Source/JavaScriptCore/runtime/MathCommon.cpp.orig
 +++ Source/JavaScriptCore/runtime/MathCommon.cpp
-@@ -635,6 +635,28 @@ JSC_DEFINE_NOEXCEPT_JIT_OPERATION(f64_nearest, double,
-     return std::nearbyint(operand);
+@@ -657,6 +657,28 @@ static inline double roundeven(double operand)
  }
+ #endif
  
 +#if !defined(__GLIBC__)
 +static inline float roundevenf(float operand)

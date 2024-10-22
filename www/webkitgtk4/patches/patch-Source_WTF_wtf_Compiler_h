@@ -1,15 +1,14 @@
-Disable musttail attribute, not supported by clang on powerpc, powerpc64
-and mips64.
+Disable musttail attribute, not supported by clang on mips64.
 
 Index: Source/WTF/wtf/Compiler.h
 --- Source/WTF/wtf/Compiler.h.orig
 +++ Source/WTF/wtf/Compiler.h
-@@ -285,7 +285,7 @@
- /* MUST_TAIL_CALL */
- 
+@@ -290,7 +290,7 @@
+ #if COMPILER(CLANG)
+ #if __SIZEOF_POINTER__ == 8
  #if !defined(MUST_TAIL_CALL) && defined(__cplusplus) && defined(__has_cpp_attribute)
--#if __has_cpp_attribute(clang::musttail)
-+#if __has_cpp_attribute(clang::musttail) && !defined(__mips__) && !defined(__powerpc__)
+-#if __has_cpp_attribute(clang::musttail) && !defined(__powerpc__)
++#if __has_cpp_attribute(clang::musttail) && !defined(__powerpc__) && !defined(__mips__)
  #define MUST_TAIL_CALL [[clang::musttail]]
  #endif
  #endif
