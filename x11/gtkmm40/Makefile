@@ -3,6 +3,7 @@ COMMENT=		C++ bindings for GTK+
 GNOME_PROJECT=		gtkmm
 GNOME_VERSION=		4.16.0
 PKGNAME=		gtkmm40-${GNOME_VERSION}
+REVISION=		0
 
 CATEGORIES=		x11 devel
 
@@ -25,8 +26,9 @@ MODULES=		devel/meson \
 # c++11
 COMPILER=		base-clang ports-gcc
 
-# optional but prevent dpb(1) from junking it if found at configure time
-BUILD_DEPENDS=		graphics/vulkan-loader
+# gtkmm-4.0.pc:Requires.private: vulkan
+BUILD_DEPENDS +=	graphics/vulkan-loader
+RUN_DEPENDS +=		graphics/vulkan-loader
 
 LIB_DEPENDS=		devel/pangomm248 \
 			x11/gtk+4
