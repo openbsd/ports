@@ -43,8 +43,8 @@ COMPILER =		base-clang ports-clang
 
 DEBUG_PACKAGES =	-main -gtk4
 
-#BUILD_DEPENDS=		devel/fast-float \
-#			devel/gperf
+BUILD_DEPENDS=		devel/fast-float \
+			devel/gperf
 
 # src/box_drawing_generate.sh
 BUILD_DEPENDS+=		shells/bash
