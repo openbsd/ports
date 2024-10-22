@@ -1,9 +1,8 @@
 COMMENT =		deal pysol cards
 
-MODPY_EGG_VERSION =	0.16.0
+MODPY_EGG_VERSION =	0.18.0
 DISTNAME =		pysol_cards-${MODPY_EGG_VERSION}
 PKGNAME =		pysol-cards-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		games
 
@@ -17,8 +16,6 @@ FLAVOR  =		python3
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-
-RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
 
 TEST_DEPENDS =		devel/py-test-cov${MODPY_FLAVOR}
 
