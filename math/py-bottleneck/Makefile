@@ -1,6 +1,6 @@
 COMMENT =		fast NumPy array functions written in C
 
-MODPY_EGG_VERSION =	1.4.1
+MODPY_EGG_VERSION =	1.4.2
 DISTNAME =		bottleneck-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:L}
 CATEGORIES =		math
@@ -9,8 +9,6 @@ MAINTAINER =		Martin Reindl <martin@catai.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
-
-WANTLIB +=		${MODPY_WANTLIB} pthread
 
 # ICE with base-gcc
 COMPILER =		base-clang ports-gcc
