@@ -1,9 +1,8 @@
 COMMENT =		solitaire card games collection
 
-MODPY_EGG_VERSION =	3.0.0
+MODPY_EGG_VERSION =	3.1.0
 DISTNAME =		PySolFC-${MODPY_EGG_VERSION}
 PKGNAME =		pysol-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		games
 
@@ -32,12 +31,8 @@ RUN_DEPENDS =		${MODPY_TKINTER_DEPENDS} \
 			games/pysol-cards${MODPY_FLAVOR} \
 			graphics/py-Pillow${MODPY_FLAVOR}
 
-# needs pycotap (not ported), p5-Moo, py-gtk - and gmake
-NO_TEST =		Yes
-#USE_GMAKE =		Yes
-
-#pre-test:
-#	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
+pre-test:
+	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 
 post-install:
 	mv ${PREFIX}/bin/pysol{.py,}
