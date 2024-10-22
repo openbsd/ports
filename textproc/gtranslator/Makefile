@@ -2,7 +2,7 @@ COMMENT=		gettext(1) files editor for GNOME
 
 GNOME_PROJECT=		gtranslator
 GNOME_VERSION=		42.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		textproc devel
 

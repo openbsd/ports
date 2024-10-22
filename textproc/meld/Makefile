@@ -2,7 +2,7 @@ COMMENT=		graphical diff and merge tool
 
 GNOME_VERSION=		3.22.2
 GNOME_PROJECT=		meld
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		textproc
 

@@ -2,6 +2,7 @@ COMMENT=		text editor
 
 GNOME_PROJECT=		gedit
 GNOME_VERSION=		48.0
+REVISION=		0
 
 WANTLIB += c cairo gdk-3 gdk_pixbuf-2.0 gedit-amtk-5 gedit-gfls-1
 WANTLIB += gedit-gtksourceview-300 gedit-tepl-6 gio-2.0 girepository-1.0

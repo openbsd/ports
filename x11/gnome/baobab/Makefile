@@ -2,6 +2,7 @@ COMMENT=		graphical disk usage analyzer
 
 GNOME_PROJECT=		baobab
 GNOME_VERSION=		46.0
+REVISION=		0
 
 # GPLv2 - GFDLv1.1
 PERMIT_PACKAGE=		Yes

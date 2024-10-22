@@ -2,7 +2,7 @@ COMMENT=		simple note editor
 
 DIST_TUPLE=		gnome GNOME gnome-notes BIJIBEN_${GNOME_VERSION:S/./_/} .
 GNOME_VERSION=		40.1
-REVISION=		8
+REVISION=		9
 
 # GPLv3
 PERMIT_PACKAGE=		Yes

@@ -5,6 +5,7 @@ COMMENT=		Eye of GNOME, image viewing and cataloging program
 
 GNOME_PROJECT=		eog
 GNOME_VERSION=		47.0
+REVISION=		0
 
 CATEGORIES=		graphics
 

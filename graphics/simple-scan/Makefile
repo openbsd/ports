@@ -2,6 +2,7 @@ COMMENT=		simple scanning utility
 
 GNOME_PROJECT=		simple-scan
 GNOME_VERSION=		46.0
+REVISION=		0
 
 CATEGORIES=		graphics
 
