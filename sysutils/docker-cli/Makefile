@@ -1,6 +1,6 @@
 COMMENT =		command-line tool for controlling Docker
 
-V =			27.2.1
+V =			27.3.1
 DIST_TUPLE =		github docker cli v${V} .
 PKGNAME =		docker-${DISTNAME}
 
