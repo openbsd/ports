@@ -1,6 +1,6 @@
 COMMENT =		manage DNS configuration across any number of DNS hosts
 
-MODGO_VERSION =		v4.11.0
+MODGO_VERSION =		v4.14.0
 MODGO_MODNAME =		github.com/StackExchange/dnscontrol/v4
 
 DISTNAME =		dnscontrol-${MODGO_VERSION}
@@ -33,5 +33,4 @@ do-test:
 	cd ${WRKSRC}/integrationTest && ${MODGO_TEST_CMD}
 
 .include "modules.inc"
-
 .include <bsd.port.mk>

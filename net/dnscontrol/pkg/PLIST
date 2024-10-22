@@ -29,6 +29,7 @@ share/doc/dnscontrol/providers/hedns.md
 share/doc/dnscontrol/providers/hetzner.md
 share/doc/dnscontrol/providers/hexonet.md
 share/doc/dnscontrol/providers/hostingde.md
+share/doc/dnscontrol/providers/huaweicloud.md
 share/doc/dnscontrol/providers/internetbs.md
 share/doc/dnscontrol/providers/inwx.md
 share/doc/dnscontrol/providers/linode.md
@@ -50,6 +51,7 @@ share/doc/dnscontrol/providers/powerdns.md
 share/doc/dnscontrol/providers/realtimeregister.md
 share/doc/dnscontrol/providers/route53.md
 share/doc/dnscontrol/providers/rwth.md
+share/doc/dnscontrol/providers/sakuracloud.md
 share/doc/dnscontrol/providers/softlayer.md
 share/doc/dnscontrol/providers/transip.md
 share/doc/dnscontrol/providers/vultr.md
