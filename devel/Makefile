@@ -245,6 +245,7 @@
      SUBDIR += json-glib
      SUBDIR += jsoncpp
      SUBDIR += jsonrpc-glib
+     SUBDIR += jujutsu
      SUBDIR += kainjow-mustache
      SUBDIR += kdevelop
      SUBDIR += kdiff3
