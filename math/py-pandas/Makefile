@@ -1,9 +1,8 @@
 COMMENT =		data analysis and manipulation library
 
-MODPY_EGG_VERSION =	2.2.2
+MODPY_EGG_VERSION =	2.2.3
 DISTNAME =		pandas-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		math
 
