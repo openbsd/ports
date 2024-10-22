@@ -612,6 +612,8 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}pyth
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}python_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}regen_checker.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}regen_checker.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}reprotest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}reprotest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}run_tool.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}run_tool.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}scanbuild.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -650,6 +652,7 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/msgfmthelper.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/pycompile.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/python_info.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/regen_checker.py
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/reprotest.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/run_tool.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/scanbuild.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/symbolextractor.py
