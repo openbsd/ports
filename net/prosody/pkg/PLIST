@@ -270,6 +270,7 @@ lib/prosody/util/xpcall.lua
 lib/prosody/util/xtemplate.lua
 @man man/man1/prosodyctl.1
 sbin/prosody
+sbin/prosody-migrator
 sbin/prosodyctl
 share/doc/pkg-readmes/${PKGSTEM}
 share/doc/prosody/
@@ -282,6 +283,8 @@ share/examples/prosody/certs/Makefile
 @sample ${SYSCONFDIR}/prosody/certs/Makefile
 share/examples/prosody/certs/openssl.cnf
 @sample ${SYSCONFDIR}/prosody/certs/openssl.cnf
+share/examples/prosody/migrator.cfg.lua
+@sample ${SYSCONFDIR}/prosody/migrator.cfg.lua
 share/examples/prosody/prosody.cfg.lua
 @sample ${SYSCONFDIR}/prosody/prosody.cfg.lua
 @mode 770

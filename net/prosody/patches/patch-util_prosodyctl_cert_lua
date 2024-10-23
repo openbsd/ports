@@ -1,0 +1,14 @@
+Use the right default user.
+
+Index: util/prosodyctl/cert.lua
+--- util/prosodyctl/cert.lua.orig
++++ util/prosodyctl/cert.lua
+@@ -216,7 +216,7 @@ function cert_commands.import(arg)
+ 	end
+ 	local owner, group;
+ 	if pposix.getuid() == 0 then -- We need root to change ownership
+-		owner = configmanager.get("*", "prosody_user") or "prosody";
++		owner = configmanager.get("*", "prosody_user") or "_prosody";
+ 		group = configmanager.get("*", "prosody_group") or owner;
+ 	end
+ 	local cm = require "core.certmanager";

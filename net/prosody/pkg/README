@@ -6,7 +6,7 @@ Using Prosody in an OpenBSD environment
 
 1) Prosody documentation is available online at:
 
-   http://prosody.im/doc/configure
+   https://prosody.im/doc/configure
 
    Use this information to edit:
 
@@ -44,3 +44,11 @@ Using Prosody in an OpenBSD environment
    For MySQL/MariaDB, also add the following to /etc/login.conf:
 
    prosody:setenv=LD_PRELOAD=/usr/lib/libpthread.so:tc=daemon:
+
+6) It's possible to copy and convert storage backends with:
+
+   # ${TRUEPREFIX}/sbin/prosody-migrator
+
+   The online documentation can be found at:
+
+   https://prosody.im/doc/migrator

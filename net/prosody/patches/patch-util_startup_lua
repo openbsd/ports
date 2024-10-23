@@ -1,0 +1,14 @@
+Use the right default user.
+
+Index: util/startup.lua
+--- util/startup.lua.orig
++++ util/startup.lua
+@@ -510,7 +510,7 @@ function startup.switch_user()
+ 		local arg_root = prosody.opts.root;
+ 		if prosody.current_uid == 0 and config.get("*", "run_as_root") ~= true and not arg_root then
+ 			-- We haz root!
+-			local desired_user = config.get("*", "prosody_user") or "prosody";
++			local desired_user = config.get("*", "prosody_user") or "_prosody";
+ 			local desired_group = config.get("*", "prosody_group") or desired_user;
+ 			local ok, err = pposix.setgid(desired_group);
+ 			if ok then

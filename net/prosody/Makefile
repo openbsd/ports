@@ -1,6 +1,6 @@
 COMMENT =	communications server for Jabber/XMPP written in Lua
 DISTNAME =	prosody-0.12.4
-REVISION =	0
+REVISION =	1
 CATEGORIES =	net
 HOMEPAGE =	https://prosody.im/
 
@@ -49,10 +49,15 @@ FAKE_FLAGS +=		CONFIG=${DESTDIR}${PREFIX}/share/examples/prosody
 
 pre-configure:
 	cd ${WRKSRC}; sed -i -e 's,^#!/usr/bin/env lua,#!${MODLUA_BIN},' -e \
-		's,^lua ,${MODLUA_BIN} ,' prosody prosodyctl
+		's,^lua ,${MODLUA_BIN} ,' prosody prosodyctl \
+		tools/migration/prosody-migrator.lua
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/util/prosodyctl.lua
+
+post-build:
+	${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
+		-C ${WRKSRC}/tools/migration
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/prosody
@@ -61,6 +66,10 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/certs/makefile \
 		${PREFIX}/share/examples/prosody/certs/Makefile
 	${INSTALL_DATA} ${WRKSRC}/certs/openssl.cnf \
-		 ${PREFIX}/share/examples/prosody/certs
+		${PREFIX}/share/examples/prosody/certs
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/migration/prosody-migrator.install \
+		${PREFIX}/sbin/prosody-migrator
+	${INSTALL_DATA} ${WRKSRC}/tools/migration/migrator.cfg.lua.install \
+		${PREFIX}/share/examples/prosody/migrator.cfg.lua
 
 .include <bsd.port.mk>
