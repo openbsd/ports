@@ -32,6 +32,7 @@ share/gnome-maps/icons/hicolor/16x16/apps/brush-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/build-alt-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/building-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/bus-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/cablecar-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/cafe-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/cat-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/circle-small-symbolic.svg
@@ -51,6 +52,7 @@ share/gnome-maps/icons/hicolor/16x16/apps/exit-symbolic-rtl.svg
 share/gnome-maps/icons/hicolor/16x16/apps/exit-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/explore-symbolic copy.svg
 share/gnome-maps/icons/hicolor/16x16/apps/explore-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/explore2-large-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/eye-open-negative-filled-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/fast-food-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/ferry-symbolic.svg
@@ -69,6 +71,7 @@ share/gnome-maps/icons/hicolor/16x16/apps/gondola-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/graveyard-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/headphones-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/hockey-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/horse-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/hospital-sign-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/hospital-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/icecream-cone-symbolic.svg
@@ -83,6 +86,7 @@ share/gnome-maps/icons/hicolor/16x16/apps/maps-point-end.svg
 share/gnome-maps/icons/hicolor/16x16/apps/maps-point-start-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/maps-point-start.svg
 share/gnome-maps/icons/hicolor/16x16/apps/meeting-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/monorail-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/mountain-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/museum-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/music-note-symbolic.svg
@@ -99,27 +103,14 @@ share/gnome-maps/icons/hicolor/16x16/apps/pharmacy-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/phone-oldschool-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/phonelink2-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/photo-camera-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/playground3-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/police-badge2-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/post-box-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/pub-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/recycling-bin-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/restaurant-symbolic.svg
-share/gnome-maps/icons/hicolor/16x16/apps/route-bike-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/route-button-symbolic.svg
-share/gnome-maps/icons/hicolor/16x16/apps/route-car-symbolic.svg
-share/gnome-maps/icons/hicolor/16x16/apps/route-pedestrian-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/route-reverse-symbolic.svg
-share/gnome-maps/icons/hicolor/16x16/apps/route-transit-airplane-symbolic.svg
-share/gnome-maps/icons/hicolor/16x16/apps/route-transit-bus-symbolic.svg
-share/gnome-maps/icons/hicolor/16x16/apps/route-transit-cablecar-symbolic.svg
-share/gnome-maps/icons/hicolor/16x16/apps/route-transit-ferry-symbolic.svg
-share/gnome-maps/icons/hicolor/16x16/apps/route-transit-funicular-symbolic.svg
-share/gnome-maps/icons/hicolor/16x16/apps/route-transit-gondolalift-symbolic.svg
-share/gnome-maps/icons/hicolor/16x16/apps/route-transit-subway-symbolic.svg
-share/gnome-maps/icons/hicolor/16x16/apps/route-transit-symbolic.svg
-share/gnome-maps/icons/hicolor/16x16/apps/route-transit-tourist-train-symbolic.svg
-share/gnome-maps/icons/hicolor/16x16/apps/route-transit-train-symbolic.svg
-share/gnome-maps/icons/hicolor/16x16/apps/route-transit-tram-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/salami-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/school-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/sentiment-satisfied-symbolic.svg
@@ -127,7 +118,10 @@ share/gnome-maps/icons/hicolor/16x16/apps/share-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/shop-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/shopping-cart-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/smartphone-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/steam-train-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/steps-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/subway-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/taxi-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/tennis-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/theater-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/ticket-special-symbolic.svg
@@ -138,8 +132,10 @@ share/gnome-maps/icons/hicolor/16x16/apps/traffic-lights-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/train-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/tram-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/tree-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/trolley-bus-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/user-trash-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/video-camera-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/walking-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/weight2-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/wheelchair-limited-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/wheelchair-symbolic.svg
