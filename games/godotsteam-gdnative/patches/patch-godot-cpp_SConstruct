@@ -1,0 +1,49 @@
+use linux pathway (same as freebsd overall)
+honor CCFLAGS (for C++ compiler)
+disable hardcoded compiler optimization -Ox and -m32/-m64 flags
+make the target library name machine independent
+build shared library object
+
+Index: godot-cpp/SConstruct
+--- godot-cpp/SConstruct.orig
++++ godot-cpp/SConstruct
+@@ -70,6 +70,8 @@ def add_sources(sources, dir, extension):
+ # This is used if no `platform` argument is passed
+ if sys.platform.startswith("linux"):
+     host_platform = "linux"
++elif sys.platform.startswith("openbsd"):
++    host_platform = "linux"
+ elif sys.platform.startswith("freebsd"):
+     host_platform = "freebsd"
+ elif sys.platform == "darwin":
+@@ -215,18 +217,8 @@ if env["platform"] == "linux" or env["platform"] == "f
+     env.Append(CCFLAGS=["-fPIC", "-Wwrite-strings"])
+     env.Append(LINKFLAGS=["-Wl,-R,'$$ORIGIN'"])
+ 
+-    if env["target"] == "debug":
+-        env.Append(CCFLAGS=["-Og", "-g"])
+-    elif env["target"] == "release":
+-        env.Append(CCFLAGS=["-O3"])
++    env.Append(CCFLAGS=str(os.environ['CXXFLAGS']))
+ 
+-    if env["bits"] == "64":
+-        env.Append(CCFLAGS=["-m64"])
+-        env.Append(LINKFLAGS=["-m64"])
+-    elif env["bits"] == "32":
+-        env.Append(CCFLAGS=["-m32"])
+-        env.Append(LINKFLAGS=["-m32"])
+-
+ elif env["platform"] == "osx":
+     # Use Clang on macOS by default
+     env["CXX"] = "clang++"
+@@ -524,8 +516,9 @@ env["arch_suffix"] = arch_suffix
+ 
+ library = None
+ env["OBJSUFFIX"] = ".{}.{}.{}{}".format(env["platform"], env["target"], arch_suffix, env["OBJSUFFIX"])
+-library_name = "libgodot-cpp.{}.{}.{}{}".format(env["platform"], env["target"], arch_suffix, env["LIBSUFFIX"])
++library_name = "libgodot-cpp{}".format(env["LIBSUFFIX"])
+ 
++env['STATIC_AND_SHARED_OBJECTS_ARE_THE_SAME']=1
+ if env["build_library"]:
+     library = env.StaticLibrary(target=env.File("bin/%s" % library_name), source=sources)
+     Default(library)

@@ -1,0 +1,169 @@
+disable isteamdualsense API which currently isn't in goldberg_emulator
+drop incorrect namespace ISteamHTMLSurface from the values
+add missing macros
+
+Index: godotsteam/godotsteam.h
+--- godotsteam/godotsteam.h.orig
++++ godotsteam/godotsteam.h
+@@ -22,7 +22,7 @@
+ // Include Steamworks API headers
+ #include "steam/steam_api.h"
+ #include "steam/steamnetworkingfakeip.h"
+-#include "steam/isteamdualsense.h"
++//#include "steam/isteamdualsense.h"
+ 
+ // Include Godot headers
+ #include "Godot.hpp"
+@@ -34,6 +34,16 @@
+ #include "IP.hpp"
+ //#include "core/method_bind_ext.gen.inc"
+ 
++/* Add DualSense input class macros */
++
++#define SCE_PAD_TRIGGER_EFFECT_MODE_OFF				0
++#define SCE_PAD_TRIGGER_EFFECT_MODE_FEEDBACK			1
++#define SCE_PAD_TRIGGER_EFFECT_MODE_WEAPON			2
++#define SCE_PAD_TRIGGER_EFFECT_MODE_VIBRATION			3
++#define SCE_PAD_TRIGGER_EFFECT_MODE_MULTIPLE_POSITION_FEEDBACK	4
++#define SCE_PAD_TRIGGER_EFFECT_MODE_SLOPE_FEEDBACK		5
++#define SCE_PAD_TRIGGER_EFFECT_MODE_MULTIPLE_POSITION_VIBRATION	6
++
+ // Include some system headers
+ #include "map"
+ 
+@@ -487,59 +497,59 @@ namespace godot {
+ 
+ 			// HTMLSurface enums
+ 			enum HTMLKeyModifiers {
+-				HTML_KEY_MODIFIER_NONE = ISteamHTMLSurface::k_eHTMLKeyModifier_None,
+-				HTML_KEY_MODIFIER_ALT_DOWN = ISteamHTMLSurface::k_eHTMLKeyModifier_AltDown,
+-				HTML_KEY_MODIFIER_CTRL_DOWN = ISteamHTMLSurface::k_eHTMLKeyModifier_CtrlDown,
+-				HTML_KEY_MODIFIER_SHIFT_DOWN = ISteamHTMLSurface::k_eHTMLKeyModifier_ShiftDown
++				HTML_KEY_MODIFIER_NONE = k_eHTMLKeyModifier_None,
++				HTML_KEY_MODIFIER_ALT_DOWN = k_eHTMLKeyModifier_AltDown,
++				HTML_KEY_MODIFIER_CTRL_DOWN = k_eHTMLKeyModifier_CtrlDown,
++				HTML_KEY_MODIFIER_SHIFT_DOWN = k_eHTMLKeyModifier_ShiftDown
+ 			};
+ 			enum HTMLMouseButton {
+-				HTML_MOUSE_BUTTON_LEFT = ISteamHTMLSurface::eHTMLMouseButton_Left,
+-				HTML_MOUSE_BUTTON_RIGHT = ISteamHTMLSurface::eHTMLMouseButton_Right,
+-				HTML_MOUSE_BUTTON_MIDDLE = ISteamHTMLSurface::eHTMLMouseButton_Middle
++				HTML_MOUSE_BUTTON_LEFT = eHTMLMouseButton_Left,
++				HTML_MOUSE_BUTTON_RIGHT = eHTMLMouseButton_Right,
++				HTML_MOUSE_BUTTON_MIDDLE = eHTMLMouseButton_Middle
+ 			};
+ 			enum MouseCursor {
+-				DC_USER = ISteamHTMLSurface::dc_user,
+-				DC_NONE = ISteamHTMLSurface::dc_none,
+-				DC_ARROW = ISteamHTMLSurface::dc_arrow,
+-				DC_IBEAM = ISteamHTMLSurface::dc_ibeam,
+-				DC_HOUR_GLASS = ISteamHTMLSurface::dc_hourglass,
+-				DC_WAIT_ARROW = ISteamHTMLSurface::dc_waitarrow,
+-				DC_CROSSHAIR = ISteamHTMLSurface::dc_crosshair,
+-				DC_UP = ISteamHTMLSurface::dc_up,
+-				DC_SIZE_NW = ISteamHTMLSurface::dc_sizenw,
+-				DC_SIZE_SE = ISteamHTMLSurface::dc_sizese,
+-				DC_SIZE_NE = ISteamHTMLSurface::dc_sizene,
+-				DC_SIZE_SW = ISteamHTMLSurface::dc_sizesw,
+-				DC_SIZE_W = ISteamHTMLSurface::dc_sizew,
+-				DC_SIZE_E = ISteamHTMLSurface::dc_sizee,
+-				DC_SIZE_N = ISteamHTMLSurface::dc_sizen,
+-				DC_SIZE_S = ISteamHTMLSurface::dc_sizes,
+-				DC_SIZE_WE = ISteamHTMLSurface::dc_sizewe,
+-				DC_SIZE_NS = ISteamHTMLSurface::dc_sizens,
+-				DC_SIZE_ALL = ISteamHTMLSurface::dc_sizeall,
+-				DC_NO = ISteamHTMLSurface::dc_no,
+-				DC_HAND = ISteamHTMLSurface::dc_hand,
+-				DC_BLANK = ISteamHTMLSurface::dc_blank,
+-				DC_MIDDLE_PAN = ISteamHTMLSurface::dc_middle_pan,
+-				DC_NORTH_PAN = ISteamHTMLSurface::dc_north_pan,
+-				DC_NORTH_EAST_PAN = ISteamHTMLSurface::dc_north_east_pan,
+-				DC_EAST_PAN = ISteamHTMLSurface::dc_east_pan,
+-				DC_SOUTH_EAST_PAN = ISteamHTMLSurface::dc_south_east_pan,
+-				DC_SOUTH_PAN = ISteamHTMLSurface::dc_south_pan,
+-				DC_SOUTH_WEST_PAN = ISteamHTMLSurface::dc_south_west_pan,
+-				DC_WEST_PAN = ISteamHTMLSurface::dc_west_pan,
+-				DC_NORTH_WEST_PAN = ISteamHTMLSurface::dc_north_west_pan,
+-				DC_ALIAS = ISteamHTMLSurface::dc_alias,
+-				DC_CELL = ISteamHTMLSurface::dc_cell,
+-				DC_COL_RESIZE = ISteamHTMLSurface::dc_colresize,
+-				DC_COPY_CUR = ISteamHTMLSurface::dc_copycur,
+-				DC_VERTICAL_TEXT = ISteamHTMLSurface::dc_verticaltext,
+-				DC_ROW_RESIZE = ISteamHTMLSurface::dc_rowresize,
+-				DC_ZOOM_IN = ISteamHTMLSurface::dc_zoomin,
+-				DC_ZOOM_OUT = ISteamHTMLSurface::dc_zoomout,
+-				DC_HELP = ISteamHTMLSurface::dc_help,
+-				DC_CUSTOM = ISteamHTMLSurface::dc_custom,
+-				DC_LAST = ISteamHTMLSurface::dc_last
++				DC_USER = dc_user,
++				DC_NONE = dc_none,
++				DC_ARROW = dc_arrow,
++				DC_IBEAM = dc_ibeam,
++				DC_HOUR_GLASS = dc_hourglass,
++				DC_WAIT_ARROW = dc_waitarrow,
++				DC_CROSSHAIR = dc_crosshair,
++				DC_UP = dc_up,
++				DC_SIZE_NW = dc_sizenw,
++				DC_SIZE_SE = dc_sizese,
++				DC_SIZE_NE = dc_sizene,
++				DC_SIZE_SW = dc_sizesw,
++				DC_SIZE_W = dc_sizew,
++				DC_SIZE_E = dc_sizee,
++				DC_SIZE_N = dc_sizen,
++				DC_SIZE_S = dc_sizes,
++				DC_SIZE_WE = dc_sizewe,
++				DC_SIZE_NS = dc_sizens,
++				DC_SIZE_ALL = dc_sizeall,
++				DC_NO = dc_no,
++				DC_HAND = dc_hand,
++				DC_BLANK = dc_blank,
++				DC_MIDDLE_PAN = dc_middle_pan,
++				DC_NORTH_PAN = dc_north_pan,
++				DC_NORTH_EAST_PAN = dc_north_east_pan,
++				DC_EAST_PAN = dc_east_pan,
++				DC_SOUTH_EAST_PAN = dc_south_east_pan,
++				DC_SOUTH_PAN = dc_south_pan,
++				DC_SOUTH_WEST_PAN = dc_south_west_pan,
++				DC_WEST_PAN = dc_west_pan,
++				DC_NORTH_WEST_PAN = dc_north_west_pan,
++				DC_ALIAS = dc_alias,
++				DC_CELL = dc_cell,
++				DC_COL_RESIZE = dc_colresize,
++				DC_COPY_CUR = dc_copycur,
++				DC_VERTICAL_TEXT = dc_verticaltext,
++				DC_ROW_RESIZE = dc_rowresize,
++				DC_ZOOM_IN = dc_zoomin,
++				DC_ZOOM_OUT = dc_zoomout,
++				DC_HELP = dc_help,
++				DC_CUSTOM = dc_custom,
++				DC_LAST = dc_last
+ 			};
+ 
+ 			// HTTP enums
+@@ -1196,9 +1206,9 @@ namespace godot {
+ 			};
+ 			enum P2PSessionError {
+ 				P2P_SESSION_ERROR_NONE = k_EP2PSessionErrorNone,
+-				P2P_SESSION_ERROR_NOT_RUNNING_APP = k_EP2PSessionErrorNotRunningApp_DELETED,
++				P2P_SESSION_ERROR_NOT_RUNNING_APP = k_EP2PSessionErrorNotRunningApp,
+ 				P2P_SESSION_ERROR_NO_RIGHTS_TO_APP = k_EP2PSessionErrorNoRightsToApp,
+-				P2P_SESSION_ERROR_DESTINATION_NOT_LOGGED_ON = k_EP2PSessionErrorDestinationNotLoggedIn_DELETED,
++				P2P_SESSION_ERROR_DESTINATION_NOT_LOGGED_ON = k_EP2PSessionErrorDestinationNotLoggedIn,
+ 				P2P_SESSION_ERROR_TIMEOUT = k_EP2PSessionErrorTimeout,
+ 				P2P_SESSION_ERROR_MAX = k_EP2PSessionErrorMax
+ 			};
+@@ -1737,7 +1747,6 @@ namespace godot {
+ 			~Steam();
+ 
+ 
+-			/////////////////////////////////////////
+ 			// STEAMWORKS FUNCTIONS
+ 			/////////////////////////////////////////
+ 			//
+@@ -2914,4 +2923,4 @@ namespace godot {
+ 	};
+ 
+ }
+-#endif // GODOTSTEAM_H
+\ No newline at end of file
++#endif // GODOTSTEAM_H

@@ -1,0 +1,54 @@
+honor flags
+find correct godot-cpp library
+
+Index: SConstruct
+--- SConstruct.orig
++++ SConstruct
+@@ -71,14 +71,12 @@ if env['platform'] == "osx":
+ 
+ elif env['platform'] in ('linuxbsd', 'linux'):
+     env['target_path'] += 'linuxbsd/'
+-    cpp_library += '.linux'
++    #cpp_library += '.linux'
+     env.Append(CCFLAGS=['-fPIC'])
+     env.Append(CXXFLAGS=['-std=c++17'])
++    env.Append(CXXFLAGS=os.environ['CXXFLAGS'].split())
++    env.Append(LINKFLAGS=os.environ['LDFLAGS'].split())
+     env.Append(RPATH=env.Literal('\\$$ORIGIN'))
+-    if env['target'] in ('debug', 'd'):
+-        env.Append(CCFLAGS=['-g3', '-Og'])
+-    else:
+-        env.Append(CCFLAGS=['-g', '-O3'])
+     # Set correct Steam library
+     steam_lib_path += "/linux64"
+     steamworks_library = 'libsteam_api.so'
+@@ -107,18 +105,18 @@ elif env['platform'] == "windows":
+     if env["CC"] == "cl":
+         env.Append(LINKFLAGS=[ steam_lib ])
+ 
+-if env['target'] in ('debug', 'd'):
+-    cpp_library += '.debug'
+-else:
+-    cpp_library += '.release'
++#if env['target'] in ('debug', 'd'):
++    #cpp_library += '.debug'
++#else:
++    #cpp_library += '.release'
+ 
+-if env['platform'] == 'osx':
+-    if env['macos_arch'] == 'x86_64':
+-        cpp_library += '.' + 'x86_64'
+-    else:
+-        cpp_library += '.' + 'arm64'
+-else:
+-    cpp_library += '.' + str(bits)
++#if env['platform'] == 'osx':
++    #if env['macos_arch'] == 'x86_64':
++        #cpp_library += '.' + 'x86_64'
++    #else:
++        #cpp_library += '.' + 'arm64'
++#else:
++    #cpp_library += '.' + str(bits)
+ 
+ # make sure our binding library is properly includes
+ env.Append(CPPPATH=['.', godot_headers_path, cpp_bindings_path + 'include/', cpp_bindings_path + 'include/core/', cpp_bindings_path + 'include/gen/', 'godotsteam/sdk/public'])

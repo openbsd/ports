@@ -1,0 +1,110 @@
+drop ISteamHTMLSurface namespace where incorrect
+stub dual sense/SCE part and input callbacks
+
+Index: godotsteam/godotsteam.cpp
+--- godotsteam/godotsteam.cpp.orig
++++ godotsteam/godotsteam.cpp
+@@ -1869,7 +1869,7 @@ void Steam::keyChar(uint32 unicode_char, int key_modif
+ 		if(this_handle == 0){
+ 			this_handle = browser_handle;
+ 		}
+-		SteamHTMLSurface()->KeyChar(this_handle, unicode_char, (ISteamHTMLSurface::EHTMLKeyModifiers)key_modifiers);
++		SteamHTMLSurface()->KeyChar(this_handle, unicode_char, (EHTMLKeyModifiers)key_modifiers);
+ 	}
+ }
+ 
+@@ -1880,7 +1880,7 @@ void Steam::keyDown(uint32 native_key_code, int key_mo
+ 		if(this_handle == 0){
+ 			this_handle = browser_handle;
+ 		}
+-		SteamHTMLSurface()->KeyDown(this_handle, native_key_code, (ISteamHTMLSurface::EHTMLKeyModifiers)key_modifiers);
++		SteamHTMLSurface()->KeyDown(this_handle, native_key_code, (EHTMLKeyModifiers)key_modifiers);
+ 	}
+ }
+ 
+@@ -1891,7 +1891,7 @@ void Steam::keyUp(uint32 native_key_code, int key_modi
+ 		if(this_handle == 0){
+ 			this_handle = browser_handle;
+ 		}
+-		SteamHTMLSurface()->KeyUp(this_handle, native_key_code, (ISteamHTMLSurface::EHTMLKeyModifiers)key_modifiers);
++		SteamHTMLSurface()->KeyUp(this_handle, native_key_code, (EHTMLKeyModifiers)key_modifiers);
+ 	}
+ }
+ 
+@@ -1913,7 +1913,7 @@ void Steam::mouseDoubleClick(int mouse_button, uint32 
+ 		if(this_handle == 0){
+ 			this_handle = browser_handle;
+ 		}
+-		SteamHTMLSurface()->MouseDoubleClick(this_handle, (ISteamHTMLSurface::EHTMLMouseButton)mouse_button);
++		SteamHTMLSurface()->MouseDoubleClick(this_handle, (EHTMLMouseButton)mouse_button);
+ 	}
+ }
+ 
+@@ -1924,7 +1924,7 @@ void Steam::mouseDown(int mouse_button, uint32 this_ha
+ 		if(this_handle == 0){
+ 			this_handle = browser_handle;
+ 		}
+-		SteamHTMLSurface()->MouseDown(this_handle, (ISteamHTMLSurface::EHTMLMouseButton)mouse_button);
++		SteamHTMLSurface()->MouseDown(this_handle, (EHTMLMouseButton)mouse_button);
+ 	}
+ }
+ 
+@@ -1946,7 +1946,7 @@ void Steam::mouseUp(int mouse_button, uint32 this_hand
+ 		if(this_handle == 0){
+ 			this_handle = browser_handle;
+ 		}
+-		SteamHTMLSurface()->MouseUp(this_handle, (ISteamHTMLSurface::EHTMLMouseButton)mouse_button);
++		SteamHTMLSurface()->MouseUp(this_handle, (EHTMLMouseButton)mouse_button);
+ 	}
+ }
+ 
+@@ -2695,6 +2695,7 @@ bool Steam::setInputActionManifestFilePath(const Strin
+ 
+ // Set the trigger effect for a DualSense controller
+ void Steam::setDualSenseTriggerEffect(uint64_t input_handle, int parameter_index, int trigger_mask, int effect_mode, int position, int amplitude, int frequency){
++#if 0
+ 	if(SteamInput() != NULL){
+ 		ScePadTriggerEffectParam these_parameters;
+ 		memset(&these_parameters, 0, sizeof(these_parameters));
+@@ -2725,6 +2726,7 @@ void Steam::setDualSenseTriggerEffect(uint64_t input_h
+ 		these_parameters.command[parameter_index].commandData.vibrationParam.frequency = frequency;
+ 		SteamInput()->SetDualSenseTriggerEffect((InputHandle_t)input_handle, &these_parameters);
+ 	}
++#endif
+ }
+ 
+ //! Waits on an IPC event from Steam sent when there is new data to be fetched from the data drop. Returns true when data was recievied before the timeout expires. Useful for games with a dedicated input thread.
+@@ -7861,7 +7863,7 @@ Dictionary Steam::initiateGameConnection(uint64_t serv
+ 		int authSize = 2048;
+ 		auth.resize(authSize);
+ 		CSteamID server = (uint64)server_id;
+-		if(SteamUser()->InitiateGameConnection_DEPRECATED(&auth, authSize, server, server_ip, server_port, secure) > 0){
++		if(SteamUser()->InitiateGameConnection(&auth, authSize, server, server_ip, server_port, secure) > 0){
+ 			connection["auth_blob"] = auth;
+ 			connection["server_id"] = server_id;
+ 			connection["server_ip"] = server_ip;
+@@ -7960,7 +7962,7 @@ void Steam::stopVoiceRecording(){
+ //! Notify the game server that we are disconnecting. NOTE: This is part of the old user authentication API and should not be mixed with the new API.
+ void Steam::terminateGameConnection(uint32 server_ip, uint16 server_port){
+ 	if(SteamUser() != NULL){
+-		SteamUser()->TerminateGameConnection_DEPRECATED(server_ip, server_port);
++		SteamUser()->TerminateGameConnection(server_ip, server_port);
+ 	}
+ }
+ 
+@@ -9436,6 +9438,7 @@ void Steam::http_request_headers_received(HTTPRequestH
+ //
+ // Purpose: when callbacks are enabled this fires each time a controller action state changes
+ void Steam::inputActionEventCallback(SteamInputActionEvent_t* call_data){
++#if 0
+ 	uint64_t input_handle = call_data->controllerHandle;
+ 	int event_type = call_data->eEventType;
+ 	uint64_t analog_handle = call_data->analogAction.actionHandle;
+@@ -9457,6 +9460,7 @@ void Steam::inputActionEventCallback(SteamInputActionE
+ 	action_information["digital_action_handle"] = digital_handle;
+ 	action_information["digital_action_data"] = digital_action;
+ 	emit_signal("input_action_event", input_handle, event_type, action_information);
++#endif
+ }
+ 
+ //! Purpose: called when a new controller has been connected, will fire once per controller if multiple new controllers connect in the same frame
