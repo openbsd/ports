@@ -3,6 +3,7 @@ COMMENT =	launch independent games
 V =		0.2
 DISTNAME =	IndieRunner-v${V}
 PKGNAME =	indierunner-${V}
+REVISION =	0
 
 CATEGORIES =	games
 
@@ -26,6 +27,7 @@ RUN_DEPENDS =	archivers/p7zip \
 		devel/sdl2-mixer \
 		games/fna/fna \
 		games/godot \
+		games/godotsteam-gdnative \
 		games/gzdoom \
 		games/hlsteam \
 		games/libcsteamworks \
