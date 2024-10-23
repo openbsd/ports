@@ -1,13 +1,9 @@
-# XXX: Check _cffi__ hashes of dependent ports if updating.
-# e.g. devel/libgit2/py-git2
-
 COMMENT=		Foreign Function Interface for Python calling C code
 
-MODPY_EGG_VERSION=	1.16.0
+MODPY_EGG_VERSION=	1.17.1
 DISTNAME=		cffi-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
-REVISION=		0
 
 # MIT
 PERMIT_PACKAGE=	Yes
