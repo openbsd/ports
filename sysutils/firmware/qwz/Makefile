@@ -1,6 +1,6 @@
 FW_DRIVER=	qwz
 
-FW_VER=		20240909
+FW_VER=		20241017
 
 DISTNAME=	linux-firmware-${FW_VER}
 EXTRACT_SUFX=	.tar.xz
