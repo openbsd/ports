@@ -6,6 +6,7 @@ DISTNAME =	${GH_PROJECT}-${V}
 GH_ACCOUNT =	uspgamedev
 GH_PROJECT =	luasteam
 GH_TAGNAME =	v${V}
+REVISION =	0
 
 CATEGORIES =	games
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
