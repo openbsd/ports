@@ -726,7 +726,8 @@ share/help/zh_CN/gnome-system-monitor/units.page
 share/icons/hicolor/scalable/apps/org.gnome.SystemMonitor.Devel.svg
 share/icons/hicolor/scalable/apps/org.gnome.SystemMonitor.svg
 share/icons/hicolor/symbolic/apps/org.gnome.SystemMonitor-symbolic.svg
-share/icons/hicolor/symbolic/apps/speedometer-symbolic.svg
+share/icons/hicolor/symbolic/apps/processes-symbolic.svg
+share/icons/hicolor/symbolic/apps/resources-symbolic.svg
 share/locale/ab/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/am/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/an/LC_MESSAGES/gnome-system-monitor.mo
@@ -773,6 +774,7 @@ share/locale/is/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/it/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ja/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ka/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/kab/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/kk/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/km/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/kn/LC_MESSAGES/gnome-system-monitor.mo
@@ -784,8 +786,6 @@ share/locale/lt/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/lv/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/mai/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/mg/LC_MESSAGES/gnome-system-monitor.mo
-share/locale/mjw/
-share/locale/mjw/LC_MESSAGES/
 share/locale/mjw/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/mk/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ml/LC_MESSAGES/gnome-system-monitor.mo
