@@ -103,6 +103,7 @@ lib/python${MODPY_VERSION}/site-packages/pygit2/filter.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/index.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/legacyenums.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/packbuilder.py
+lib/python${MODPY_VERSION}/site-packages/pygit2/py.typed
 lib/python${MODPY_VERSION}/site-packages/pygit2/references.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/refspec.py
 lib/python${MODPY_VERSION}/site-packages/pygit2/remotes.py
