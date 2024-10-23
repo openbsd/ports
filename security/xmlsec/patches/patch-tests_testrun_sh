@@ -13,7 +13,7 @@ Index: tests/testrun.sh
  OS_KERNEL=`uname -s`
  
  #
-@@ -712,7 +712,9 @@ execEncTest() {
+@@ -723,7 +723,9 @@ execEncTest() {
                  cat $tmpfile | $outputTransform > $tmpfile.2
                  mv $tmpfile.2 $tmpfile
              fi
@@ -24,7 +24,7 @@ Index: tests/testrun.sh
              printRes $expected_res $?
          else
              printRes $expected_res $res
-@@ -744,7 +746,9 @@ execEncTest() {
+@@ -755,7 +757,9 @@ execEncTest() {
                  cat $tmpfile.2 | $outputTransform > $tmpfile
                  mv $tmpfile $tmpfile.2
              fi
@@ -35,8 +35,8 @@ Index: tests/testrun.sh
              printRes $res_success $?
          else
              printRes $res_success $res
-@@ -769,7 +773,7 @@ execEncTest() {
- rm -rf $tmpfile $tmpfile.2 tmpfile.3
+@@ -779,7 +783,7 @@ execEncTest() {
+ rm -rf $tmpfile $tmpfile.2 $tmpfile.3
  
  # run tests
 -source "$testfile"

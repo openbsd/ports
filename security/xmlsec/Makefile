@@ -1,7 +1,7 @@
 COMMENT-main=	XML security library
 COMMENT-docs=	XML security library documentation
 
-VERSION=	1.3.3
+VERSION=	1.3.6
 DISTNAME=	xmlsec1-${VERSION}
 PKGNAME-main=	xmlsec-${VERSION}
 PKGNAME-docs=	xmlsec-docs-${VERSION}
@@ -23,7 +23,7 @@ WANTLIB += brotlidec brotlienc c crypto gcrypt gmp gnutls gpg-error
 WANTLIB += hogweed iconv idn2 intl ltdl lzma m nettle p11-kit
 WANTLIB += pthread ssl tasn1 unistring xml2 xslt z zstd
 
-SITES=		${HOMEPAGE}/download/
+SITES=		${HOMEPAGE}download/
 
 MULTI_PACKAGES=	-main -docs
 
