@@ -1,0 +1,12 @@
+Index: test/test_dropbear.py
+--- test/test_dropbear.py.orig
++++ test/test_dropbear.py
+@@ -10,7 +10,7 @@ import queue
+ 
+ import pytest
+ 
+-LOCALADDR="127.0.5.5"
++LOCALADDR="127.0.0.1"
+ 
+ @pytest.fixture(scope="module")
+ def dropbear(request):

@@ -1,0 +1,29 @@
+- fix bashism
+
+- py-cryptography cannot usually be built from source without patches;
+it relies on a rust crate with a restrictive version check. allow using
+it from packages instead.
+
+Index: test/Makefile.in
+--- test/Makefile.in.orig
++++ test/Makefile.in
+@@ -5,16 +5,16 @@ SHELL=bash
+ all: test
+ 
+ test: venv/bin/pytest fakekey
+-	(source ./venv/bin/activate; pytest --hostkey=fakekey --dbclient=../dbclient --dropbear=../dropbear $(srcdir) )
++	(. ./venv/bin/activate; pytest --hostkey=fakekey --dbclient=../dbclient --dropbear=../dropbear $(srcdir) )
+ 
+ one: venv/bin/pytest fakekey
+-	(source ./venv/bin/activate; pytest --hostkey=fakekey --dbclient=../dbclient --dropbear=../dropbear $(srcdir) -k exit)
++	(. ./venv/bin/activate; pytest --hostkey=fakekey --dbclient=../dbclient --dropbear=../dropbear $(srcdir) -k exit)
+ 
+ fakekey:
+ 	../dropbearkey -t ecdsa -f $@
+ 
+ venv/bin/pytest: $(srcdir)/requirements.txt
+-	python3 -m venv init venv
++	python3 -m venv init venv --system-site-packages
+ 	./venv/bin/pip install --upgrade pip
+ 	./venv/bin/pip install -r $(srcdir)/requirements.txt
+ 
