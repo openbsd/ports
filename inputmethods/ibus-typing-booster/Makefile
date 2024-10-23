@@ -1,9 +1,9 @@
 COMMENT =		completion input-method to speed up typing
 
-VERSION =		2.25.19
+VERSION =		2.26.0
 DISTNAME =		ibus-typing-booster-${VERSION}
 
-CATEGORIES =		inputmethods
+CATEGORIES =		inputmethods productivity
 
 HOMEPAGE =		https://mike-fabian.github.io/ibus-typing-booster/
 
