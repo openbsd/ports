@@ -1,4 +1,5 @@
 Fix build on BE architectures
+https://github.com/facebook/watchman/pull/1238/commits/f6bb83ee9c828b1d35d9cf8f3b3027078e9a1a14
 
 Index: modcargo-crates/serde_bser-0.4.0/src/ser/mod.rs
 --- modcargo-crates/serde_bser-0.4.0/src/ser/mod.rs.orig
