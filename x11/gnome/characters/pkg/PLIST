@@ -16,6 +16,7 @@ share/locale/af/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/ar/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/be/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/bg/LC_MESSAGES/org.gnome.Characters.mo
+share/locale/bn/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/ca/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/ca@valencia/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/ckb/LC_MESSAGES/org.gnome.Characters.mo
@@ -65,6 +66,7 @@ share/locale/pt/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/pt_BR/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/ro/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/ru/LC_MESSAGES/org.gnome.Characters.mo
+share/locale/rw/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/sat/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/sk/LC_MESSAGES/org.gnome.Characters.mo
 share/locale/sl/LC_MESSAGES/org.gnome.Characters.mo

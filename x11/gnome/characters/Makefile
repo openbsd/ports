@@ -1,7 +1,7 @@
 COMMENT =		GNOME utility to insert unusual characters
 
 GNOME_PROJECT =		gnome-characters
-GNOME_VERSION =		46.0
+GNOME_VERSION =		47.0
 
 # BSD3/GPLv2
 PERMIT_PACKAGE =	Yes
@@ -17,7 +17,8 @@ LIB_DEPENDS =		devel/glib2
 BUILD_DEPENDS =		x11/gnome/gjs \
 			x11/gnome/libadwaita
 
-RUN_DEPENDS =		x11/gnome/desktop,-gtk4 \
+RUN_DEPENDS =		fonts/noto/emoji \
+			x11/gnome/desktop,-gtk4 \
 			x11/gnome/gjs \
 			x11/gnome/libadwaita
 
