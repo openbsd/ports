@@ -1,6 +1,6 @@
 COMMENT=	display chm files
 
-V=		1.36
+V=		1.37
 DISTNAME=	xchm-$V
 
 CATEGORIES=	devel textproc x11
