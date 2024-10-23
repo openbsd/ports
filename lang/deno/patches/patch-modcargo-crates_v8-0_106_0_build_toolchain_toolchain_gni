@@ -1,0 +1,12 @@
+Index: modcargo-crates/v8-0.106.0/build/toolchain/toolchain.gni
+--- modcargo-crates/v8-0.106.0/build/toolchain/toolchain.gni.orig
++++ modcargo-crates/v8-0.106.0/build/toolchain/toolchain.gni
+@@ -72,7 +72,7 @@ if (host_os == "mac") {
+   host_shlib_extension = ".dylib"
+ } else if (host_os == "win") {
+   host_shlib_extension = ".dll"
+-} else if (host_os == "linux" || host_os == "aix" || host_os == "zos") {
++} else if (host_os == "linux" || host_os == "aix" || host_os == "zos" || host_os == "openbsd") {
+   host_shlib_extension = ".so"
+ } else {
+   assert(false, "Host platform not supported")

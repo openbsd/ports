@@ -1,7 +1,7 @@
-Index: modcargo-crates/v8-0.99.0/v8/BUILD.gn
---- modcargo-crates/v8-0.99.0/v8/BUILD.gn.orig
-+++ modcargo-crates/v8-0.99.0/v8/BUILD.gn
-@@ -876,6 +876,8 @@ external_v8_defines = [
+Index: modcargo-crates/v8-0.106.0/v8/BUILD.gn
+--- modcargo-crates/v8-0.106.0/v8/BUILD.gn.orig
++++ modcargo-crates/v8-0.106.0/v8/BUILD.gn
+@@ -917,6 +917,8 @@ external_v8_defines = [
    "V8_TARGET_OS_MACOS",
    "V8_TARGET_OS_WIN",
    "V8_TARGET_OS_CHROMEOS",
@@ -9,8 +9,8 @@ Index: modcargo-crates/v8-0.99.0/v8/BUILD.gn
 +  "V8_TARGET_OS_BSD",
  ]
  
- enabled_external_v8_defines = []
-@@ -948,6 +950,10 @@ if (target_os == "android") {
+ enabled_external_v8_defines = [
+@@ -993,6 +995,10 @@ if (target_os == "android") {
  } else if (target_os == "chromeos") {
    enabled_external_v8_defines += [ "V8_HAVE_TARGET_OS" ]
    enabled_external_v8_defines += [ "V8_TARGET_OS_CHROMEOS" ]
@@ -21,7 +21,7 @@ Index: modcargo-crates/v8-0.99.0/v8/BUILD.gn
  }
  
  disabled_external_v8_defines = external_v8_defines - enabled_external_v8_defines
-@@ -6490,7 +6496,7 @@ v8_component("v8_libbase") {
+@@ -6641,7 +6647,7 @@ v8_component("v8_libbase") {
      }
    }
  
@@ -30,7 +30,7 @@ Index: modcargo-crates/v8-0.99.0/v8/BUILD.gn
      sources += [
        "src/base/debug/stack_trace_posix.cc",
        "src/base/platform/platform-linux.cc",
-@@ -6501,6 +6507,12 @@ v8_component("v8_libbase") {
+@@ -6652,6 +6658,12 @@ v8_component("v8_libbase") {
        "dl",
        "rt",
      ]

@@ -1,0 +1,13 @@
+Index: modcargo-crates/deno_core-0.314.1/Cargo.toml
+--- modcargo-crates/deno_core-0.314.1/Cargo.toml.orig
++++ modcargo-crates/deno_core-0.314.1/Cargo.toml
+@@ -183,8 +183,7 @@ version = "0"
+ 
+ [features]
+ default = [
+-    "include_icu_data",
+-    "v8_use_custom_libcxx",
++    "include_icu_data"
+ ]
+ include_icu_data = ["deno_core_icudata"]
+ include_js_files_for_snapshotting = []

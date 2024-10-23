@@ -1,12 +1,12 @@
-Index: modcargo-crates/v8-0.99.0/v8/src/snapshot/embedded/platform-embedded-file-writer-base.cc
---- modcargo-crates/v8-0.99.0/v8/src/snapshot/embedded/platform-embedded-file-writer-base.cc.orig
-+++ modcargo-crates/v8-0.99.0/v8/src/snapshot/embedded/platform-embedded-file-writer-base.cc
-@@ -143,6 +143,8 @@ EmbeddedTargetOs ToEmbeddedTargetOs(const char* s) {
+Index: modcargo-crates/v8-0.106.0/v8/src/snapshot/embedded/platform-embedded-file-writer-base.cc
+--- modcargo-crates/v8-0.106.0/v8/src/snapshot/embedded/platform-embedded-file-writer-base.cc.orig
++++ modcargo-crates/v8-0.106.0/v8/src/snapshot/embedded/platform-embedded-file-writer-base.cc
+@@ -146,6 +146,8 @@ EmbeddedTargetOs ToEmbeddedTargetOs(const char* s) {
      return EmbeddedTargetOs::kWin;
    } else if (string == "starboard") {
      return EmbeddedTargetOs::kStarboard;
 +  } else if (string == "openbsd") {
 +    return EmbeddedTargetOs::kOpenBSD;
+   } else if (string == "zos") {
+     return EmbeddedTargetOs::kZOS;
    } else {
-     return EmbeddedTargetOs::kGeneric;
-   }

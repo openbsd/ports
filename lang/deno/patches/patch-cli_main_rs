@@ -1,0 +1,14 @@
+The panic hook replaces a helpful backtrace by a generic and largely
+unhelpful message - disable that.
+Index: cli/main.rs
+--- cli/main.rs.orig
++++ cli/main.rs
+@@ -394,7 +394,7 @@ pub fn main() {
+   #[cfg(feature = "dhat-heap")]
+   let profiler = dhat::Profiler::new_heap();
+ 
+-  setup_panic_hook();
++  // setup_panic_hook();
+ 
+   util::unix::raise_fd_limit();
+   util::windows::ensure_stdio_open();
