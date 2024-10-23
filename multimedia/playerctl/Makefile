@@ -1,8 +1,7 @@
 COMMENT =	MPRIS command-line controller and library
 
-GH_ACCOUNT =		altdesktop
-GH_PROJECT =		playerctl
-GH_TAGNAME =		v2.4.1
+DIST_TUPLE =		github	altdesktop	playerctl	v2.4.1	.
+REVISION =		0
 
 SHARED_LIBS =		playerctl	0.0	# 2.4.1
 
@@ -17,6 +16,9 @@ MODULES =		devel/meson
 BUILD_DEPENDS =		devel/gobject-introspection \
 			textproc/gtk-doc
 LIB_DEPENDS =		devel/glib2
+
+CONFIGURE_ARGS =	-Dbash-completions=true \
+			-Dzsh-completions=true
 
 NO_TEST =		Yes
 

@@ -7,15 +7,14 @@ include/playerctl/playerctl-player-name.h
 include/playerctl/playerctl-player.h
 include/playerctl/playerctl-version.h
 include/playerctl/playerctl.h
-lib/girepository-1.0/
 lib/girepository-1.0/Playerctl-2.0.typelib
 @lib lib/libplayerctl.so.${LIBplayerctl_VERSION}
 lib/pkgconfig/playerctl.pc
 @man man/man1/playerctl.1
+share/bash-completion/completions/playerctl.bash
 share/dbus-1/
 share/dbus-1/services/
 share/dbus-1/services/org.mpris.MediaPlayer2.playerctld.service
-share/gir-1.0/
 share/gir-1.0/Playerctl-2.0.gir
 share/gtk-doc/
 share/gtk-doc/html/
@@ -38,3 +37,6 @@ share/gtk-doc/html/playerctl/right.png
 share/gtk-doc/html/playerctl/style.css
 share/gtk-doc/html/playerctl/up-insensitive.png
 share/gtk-doc/html/playerctl/up.png
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_playerctl
