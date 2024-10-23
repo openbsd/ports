@@ -1,6 +1,6 @@
 COMMENT=		PEP 621 metadata parsing
 
-MODPY_EGG_VERSION=	0.8.0
+MODPY_EGG_VERSION=	0.9.0
 DISTNAME=		pyproject_metadata-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME:S/_/-/}
 
