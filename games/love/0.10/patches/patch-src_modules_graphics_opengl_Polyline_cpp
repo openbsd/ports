@@ -1,0 +1,15 @@
+backport of
+https://github.com/love2d/love/commit/b2785df4373f0af13b0e3d518badae2f2beae8c5.patch
+
+Index: src/modules/graphics/opengl/Polyline.cpp
+--- src/modules/graphics/opengl/Polyline.cpp.orig
++++ src/modules/graphics/opengl/Polyline.cpp
+@@ -104,7 +104,7 @@ void Polyline::render(const float *coords, size_t coun
+ 	}
+ 
+ 	// Add the degenerate triangle strip.
+-	if (extra_vertices)
++	if (extra_vertices && vertex_count > 0)
+ 	{
+ 		vertices[vertex_count + 0] = vertices[vertex_count - 1];
+ 		vertices[vertex_count + 1] = vertices[overdraw_vertex_start];
