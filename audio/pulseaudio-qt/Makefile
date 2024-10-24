@@ -1,11 +1,11 @@
 COMMENT =	Qt bindings for libpulse
 
-VERSION =	1.5.0
+VERSION =	1.6.0
 DISTNAME =	pulseaudio-qt-${VERSION}
 
 CATEGORIES =	audio
 
-SHARED_LIBS +=  KF6PulseAudioQt           0.0 # 0.0
+SHARED_LIBS +=  KF6PulseAudioQt           0.1 # 0.0
 
 SITES =		${SITE_KDE:=stable/pulseaudio-qt/}
 EXTRACT_SUFX =	.tar.xz
@@ -23,7 +23,7 @@ MODULES =	x11/kde
 
 BUILD_DEPENDS =	audio/pulseaudio
 
-LIB_DEPENDS =	devel/gettext \
+LIB_DEPENDS =	devel/gettext,-runtime \
 		devel/glib2
 
 CONFIGURE_ARGS =	-DQT_MAJOR_VERSION=6
