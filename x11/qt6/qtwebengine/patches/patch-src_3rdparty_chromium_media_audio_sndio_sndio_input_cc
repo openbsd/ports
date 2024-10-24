@@ -197,7 +197,7 @@ Index: src/3rdparty/chromium/media/audio/sndio/sndio_input.cc
 +
 +
 +    // invoke callback
-+    callback->OnData(audio_bus.get(), base::TimeTicks::Now() - delay, 1.);
++    callback->OnData(audio_bus.get(), base::TimeTicks::Now() - delay, 1., {});
 +  }
 +}
 +

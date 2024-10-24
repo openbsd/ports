@@ -5,7 +5,7 @@ Index: src/3rdparty/chromium/services/device/time_zone_monitor/time_zone_monitor
      // false positives are harmless, assuming the false positive rate is
      // reasonable.
      const char* const kFilesToWatch[] = {
-+#if defined(OS_BSD)
++#if BUILDFLAG(IS_BSD)
 +        "/etc/localtime",
 +#else
          "/etc/localtime", "/etc/timezone", "/etc/TZ",

@@ -1,7 +1,7 @@
 Index: configure.cmake
 --- configure.cmake.orig
 +++ configure.cmake
-@@ -67,7 +67,7 @@ if(Python3_EXECUTABLE)
+@@ -68,7 +68,7 @@ if(Python3_EXECUTABLE)
  endif()
  
  #### Tests
@@ -10,7 +10,7 @@ Index: configure.cmake
     check_for_ulimit()
  endif()
  
-@@ -174,29 +174,6 @@ int main() {
+@@ -175,29 +175,7 @@ int main() {
  }"
  )
  
@@ -26,7 +26,7 @@ Index: configure.cmake
 -    return 0;
 -}"
 -)
--
+ 
 -qt_config_compile_test(khr
 -    LABEL "khr"
 -    CODE
@@ -40,7 +40,7 @@ Index: configure.cmake
  qt_config_compile_test(libavformat
      LABEL "libavformat"
      LIBRARIES
-@@ -427,7 +404,7 @@ qt_feature("webengine-system-libpci" PRIVATE
+@@ -429,7 +407,7 @@ qt_feature("webengine-system-libpci" PRIVATE
  
  qt_feature("webengine-ozone-x11" PRIVATE
      LABEL "Support GLX on qpa-xcb"
@@ -49,7 +49,7 @@ Index: configure.cmake
          AND TARGET Qt::Gui
          AND QT_FEATURE_xcb
          AND X11_FOUND
-@@ -464,15 +441,15 @@ assertTargets(
+@@ -467,12 +445,12 @@ assertTargets(
  )
  add_check_for_support(
     MODULES QtWebEngine
@@ -59,16 +59,21 @@ Index: configure.cmake
  )
  add_check_for_support(
     MODULES QtPdf
--   CONDITION LINUX OR (WIN32 AND NOT WIN_ARM_64) OR MACOS OR IOS OR (ANDROID AND NOT CMAKE_HOST_WIN32)
-+   CONDITION UNIX OR (WIN32 AND NOT WIN_ARM_64) OR MACOS OR IOS OR (ANDROID AND NOT CMAKE_HOST_WIN32)
-    MESSAGE "Build can be done only on Linux, Windows, macO, iOS and Android(on non-Windows hosts only)."
+-   CONDITION LINUX OR (WIN32 AND NOT WIN_ARM_64) OR MACOS OR IOS OR ANDROID
++   CONDITION UNIX OR (WIN32 AND NOT WIN_ARM_64) OR MACOS OR IOS OR ANDROID
+    MESSAGE "Build can be done only on Linux, Windows, macO, iOS and Android."
  )
--if(LINUX AND CMAKE_CROSSCOMPILING)
-+if(UNIX AND CMAKE_CROSSCOMPILING)
-    set(supportedTargets "arm" "arm64" "armv7-a" "x86_64")
-    add_check_for_support(
-        MODULES QtWebEngine QtPdf
-@@ -525,37 +502,27 @@ add_check_for_support(
+ if(LINUX AND CMAKE_CROSSCOMPILING)
+@@ -496,7 +474,7 @@ add_check_for_support(
+ )
+ add_check_for_support(
+     MODULES QtWebEngine
+-    CONDITION NOT (Nodejs_ARCH STREQUAL "ia32") AND
++    CONDITION NOT (Nodejs_ARCH STREQUAL "i386") AND
+               NOT (Nodejs_ARCH STREQUAL "x86") AND
+               NOT (Nodejs_ARCH STREQUAL "arm")
+     MESSAGE "32bit version of Nodejs is not supported."
+@@ -528,7 +506,7 @@ add_check_for_support(
  )
  add_check_for_support(
     MODULES QtWebEngine QtPdf
@@ -77,16 +82,9 @@ Index: configure.cmake
     MESSAGE "A pkg-config support is required."
  )
  add_check_for_support(
--   MODULES QtWebEngine QtPdf
--   CONDITION NOT LINUX OR TEST_glibc
--   MESSAGE "A suitable version >= 2.17 of glibc is required."
--)
--add_check_for_support(
--   MODULES QtWebEngine QtPdf
--   CONDITION NOT LINUX OR TEST_khr
--   MESSAGE "Build requires Khronos development headers for build - see mesa/libegl1-mesa-dev"
--)
--add_check_for_support(
+@@ -543,22 +521,22 @@ add_check_for_support(
+ )
+ add_check_for_support(
     MODULES QtWebEngine
 -   CONDITION NOT LINUX OR FONTCONFIG_FOUND
 +   CONDITION NOT UNIX OR FONTCONFIG_FOUND
@@ -111,7 +109,7 @@ Index: configure.cmake
      MESSAGE "Unmodified ffmpeg >= 5.0 is not supported."
  )
  # FIXME: This prevents non XCB Linux builds from building:
-@@ -569,15 +536,15 @@ foreach(xs ${xcbSupport})
+@@ -572,15 +550,15 @@ foreach(xs ${xcbSupport})
  endforeach()
  add_check_for_support(
     MODULES QtWebEngine
@@ -130,7 +128,7 @@ Index: configure.cmake
         (MACOS AND CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang")
     MESSAGE
         "${CMAKE_CXX_COMPILER_ID} compiler is not supported."
-@@ -586,8 +553,8 @@ add_check_for_support(
+@@ -589,8 +567,8 @@ add_check_for_support(
  add_check_for_support(
     MODULES QtPdf
     CONDITION MSVC OR

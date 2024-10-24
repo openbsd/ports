@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/chrome/browser/media/webrtc/webrtc_log_uploader.cc
 --- src/3rdparty/chromium/chrome/browser/media/webrtc/webrtc_log_uploader.cc.orig
 +++ src/3rdparty/chromium/chrome/browser/media/webrtc/webrtc_log_uploader.cc
-@@ -365,6 +365,10 @@ void WebRtcLogUploader::SetupMultipart(
+@@ -375,6 +375,10 @@ void WebRtcLogUploader::SetupMultipart(
    const char product[] = "Chrome_ChromeOS";
  #elif BUILDFLAG(IS_FUCHSIA)
    const char product[] = "Chrome_Fuchsia";

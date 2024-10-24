@@ -1,15 +1,36 @@
 Index: src/3rdparty/chromium/content/gpu/gpu_sandbox_hook_linux.cc
 --- src/3rdparty/chromium/content/gpu/gpu_sandbox_hook_linux.cc.orig
 +++ src/3rdparty/chromium/content/gpu/gpu_sandbox_hook_linux.cc
-@@ -126,6 +126,7 @@ void AddStandardChromeOsPermissions(
+@@ -42,8 +42,10 @@
+ #endif
+ 
+ using sandbox::bpf_dsl::Policy;
++#if !defined(OS_BSD)
+ using sandbox::syscall_broker::BrokerFilePermission;
+ using sandbox::syscall_broker::BrokerProcess;
++#endif
+ 
+ namespace content {
+ namespace {
+@@ -97,6 +99,7 @@ static const char kLibTegraPath[] = "/usr/lib/libtegra
+ 
+ constexpr int dlopen_flag = RTLD_NOW | RTLD_GLOBAL | RTLD_NODELETE;
+ 
++#if !defined(OS_BSD)
+ void AddStandardChromeOsPermissions(
+     std::vector<BrokerFilePermission>* permissions) {
+   // For the ANGLE passthrough command decoder.
+@@ -111,7 +114,9 @@ void AddStandardChromeOsPermissions(
+     }
    }
  }
++#endif
  
 +#if !defined(OS_BSD)
  void AddV4L2GpuPermissions(
      std::vector<BrokerFilePermission>* permissions,
      const sandbox::policy::SandboxSeccompBPF::Options& options) {
-@@ -484,8 +485,10 @@ std::vector<BrokerFilePermission> FilePermissionsForGp
+@@ -522,8 +527,10 @@ std::vector<BrokerFilePermission> FilePermissionsForGp
    AddStandardGpuPermissions(&permissions);
    return permissions;
  }
@@ -20,7 +41,7 @@ Index: src/3rdparty/chromium/content/gpu/gpu_sandbox_hook_linux.cc
    // Preload the Mali library.
    if (UseChromecastSandboxAllowlist()) {
      for (const char* path : kAllowedChromecastPaths) {
-@@ -530,6 +533,7 @@ void LoadArmGpuLibraries() {
+@@ -568,6 +575,7 @@ void LoadArmGpuLibraries() {
          dlopen(driver_paths[i], dlopen_flag);
      }
    }
@@ -28,7 +49,7 @@ Index: src/3rdparty/chromium/content/gpu/gpu_sandbox_hook_linux.cc
  }
  
  bool LoadAmdGpuLibraries() {
-@@ -597,12 +601,14 @@ void LoadV4L2Libraries(
+@@ -615,12 +623,14 @@ void LoadVulkanLibraries() {
  }
  
  void LoadChromecastV4L2Libraries() {
@@ -43,7 +64,7 @@ Index: src/3rdparty/chromium/content/gpu/gpu_sandbox_hook_linux.cc
  }
  
  bool LoadLibrariesForGpu(
-@@ -629,6 +635,7 @@ bool LoadLibrariesForGpu(
+@@ -645,6 +655,7 @@ bool LoadLibrariesForGpu(
    return true;
  }
  
@@ -51,7 +72,7 @@ Index: src/3rdparty/chromium/content/gpu/gpu_sandbox_hook_linux.cc
  sandbox::syscall_broker::BrokerCommandSet CommandSetForGPU(
      const sandbox::policy::SandboxLinux::Options& options) {
    sandbox::syscall_broker::BrokerCommandSet command_set;
-@@ -652,13 +659,17 @@ bool BrokerProcessPreSandboxHook(
+@@ -669,13 +680,17 @@ bool BrokerProcessPreSandboxHook(
    SetProcessTitleFromCommandLine(nullptr);
    return true;
  }

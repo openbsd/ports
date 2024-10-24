@@ -26,9 +26,9 @@ Index: src/3rdparty/chromium/third_party/boringssl/src/crypto/rand_extra/arc4ran
 +
 +#include "../fipsmodule/rand/internal.h"
 +
-+void CRYPTO_sysrand_for_seed(uint8_t *out, size_t requested) {                 
++void CRYPTO_sysrand_for_seed(uint8_t *out, size_t requested) {
 +  CRYPTO_sysrand(out, requested);
-+}                                                                              
++}
 +
 +void CRYPTO_sysrand(uint8_t *out, size_t requested) {
 +  arc4random_buf(out, requested);

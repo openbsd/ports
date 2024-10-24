@@ -1,0 +1,11 @@
+Index: src/3rdparty/chromium/third_party/ffmpeg/Makefile
+--- src/3rdparty/chromium/third_party/ffmpeg/Makefile.orig
++++ src/3rdparty/chromium/third_party/ffmpeg/Makefile
+@@ -183,7 +183,6 @@ config:
+ build: all alltools examples testprogs
+ check: all alltools examples testprogs fate
+ 
+-include $(SRC_PATH)/tests/Makefile
+ 
+ $(sort $(OUTDIRS)):
+ 	$(Q)mkdir -p $@

@@ -30,7 +30,7 @@ Index: src/plugins/tls/openssl/qsslcontext_openssl.cpp
  
  #if QT_CONFIG(dtls)
      // DTLS cookies:
-@@ -758,6 +758,7 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
+@@ -760,6 +760,7 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
      }
  #endif // ocsp
  
@@ -38,7 +38,7 @@ Index: src/plugins/tls/openssl/qsslcontext_openssl.cpp
      QSharedPointer<SSL_CONF_CTX> cctx(q_SSL_CONF_CTX_new(), &q_SSL_CONF_CTX_free);
      if (cctx) {
          q_SSL_CONF_CTX_set_ssl_ctx(cctx.data(), sslContext->ctx);
-@@ -804,7 +805,9 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
+@@ -806,7 +807,9 @@ void QSslContext::applyBackendConfig(QSslContext *sslC
              sslContext->errorStr = msgErrorSettingBackendConfig(QSslSocket::tr("SSL_CONF_finish() failed"));
              sslContext->errorCode = QSslError::UnspecifiedError;
          }

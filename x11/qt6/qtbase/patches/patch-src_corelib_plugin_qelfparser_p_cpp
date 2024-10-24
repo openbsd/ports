@@ -3,7 +3,7 @@ error: use of undeclared identifier 'ELFOSABI_AIX'
 Index: src/corelib/plugin/qelfparser_p.cpp
 --- src/corelib/plugin/qelfparser_p.cpp.orig
 +++ src/corelib/plugin/qelfparser_p.cpp
-@@ -337,7 +337,7 @@ Q_DECL_UNUSED Q_DECL_COLD_FUNCTION static QDebug &oper
+@@ -341,7 +341,7 @@ Q_DECL_UNUSED Q_DECL_COLD_FUNCTION static QDebug &oper
      case ELFOSABI_NETBSD:   d << " (NetBSD"; break;
      case ELFOSABI_LINUX:    d << " (GNU/Linux"; break;
      case ELFOSABI_SOLARIS:  d << " (Solaris"; break;

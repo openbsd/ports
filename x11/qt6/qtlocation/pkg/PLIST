@@ -10,6 +10,7 @@ include/X11/qt6/QtLocation/${VERSION}/QtLocation/private/qdeclarativecirclemapit
 include/X11/qt6/QtLocation/${VERSION}/QtLocation/private/qdeclarativecirclemapitem_p_p.h
 include/X11/qt6/QtLocation/${VERSION}/QtLocation/private/qdeclarativecontactdetails_p.h
 include/X11/qt6/QtLocation/${VERSION}/QtLocation/private/qdeclarativegeocodemodel_p.h
+include/X11/qt6/QtLocation/${VERSION}/QtLocation/private/qdeclarativegeojsondata_p.h
 include/X11/qt6/QtLocation/${VERSION}/QtLocation/private/qdeclarativegeomap_p.h
 include/X11/qt6/QtLocation/${VERSION}/QtLocation/private/qdeclarativegeomapcopyrightsnotice_p.h
 include/X11/qt6/QtLocation/${VERSION}/QtLocation/private/qdeclarativegeomapitembase_p.h

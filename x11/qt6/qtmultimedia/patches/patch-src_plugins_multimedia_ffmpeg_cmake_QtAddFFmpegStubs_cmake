@@ -1,0 +1,21 @@
+Index: src/plugins/multimedia/ffmpeg/cmake/QtAddFFmpegStubs.cmake
+--- src/plugins/multimedia/ffmpeg/cmake/QtAddFFmpegStubs.cmake.orig
++++ src/plugins/multimedia/ffmpeg/cmake/QtAddFFmpegStubs.cmake
+@@ -17,7 +17,7 @@ function(qt_internal_multimedia_find_ffmpeg_stubs)
+ endfunction()
+ 
+ function(qt_internal_multimedia_check_ffmpeg_stubs_configuration)
+-    if (NOT LINUX AND NOT ANDROID)
++    if (NOT UNIX AND NOT ANDROID)
+         message(FATAL_ERROR "Currently, stubs are supported on Linux and Android")
+     endif()
+ 
+@@ -66,7 +66,7 @@ macro(qt_internal_multimedia_find_openssl_soversion)
+         set(OPENSSL_INCLUDE_DIR "${OPENSSL_ROOT_DIR}/include")
+     endif()
+ 
+-    if (LINUX)
++    if (UNIX)
+         if (NOT OPENSSL_SSL_LIBRARY)
+             message(FATAL_ERROR "OPENSSL_SSL_LIBRARY is not found")
+         endif()

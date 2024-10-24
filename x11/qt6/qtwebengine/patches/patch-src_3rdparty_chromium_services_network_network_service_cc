@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/services/network/network_service.cc
 --- src/3rdparty/chromium/services/network/network_service.cc.orig
 +++ src/3rdparty/chromium/services/network/network_service.cc
-@@ -92,7 +92,7 @@
+@@ -96,7 +96,7 @@
  #include "third_party/boringssl/src/include/openssl/cpu.h"
  #endif
  
@@ -9,4 +9,33 @@ Index: src/3rdparty/chromium/services/network/network_service.cc
 +#if ((BUILDFLAG(IS_LINUX) && !BUILDFLAG(IS_CASTOS)) || BUILDFLAG(IS_BSD)) || \
      BUILDFLAG(IS_CHROMEOS_LACROS)
  
- #include "components/os_crypt/key_storage_config_linux.h"
+ #include "components/os_crypt/sync/key_storage_config_linux.h"
+@@ -446,8 +446,8 @@ void NetworkService::Initialize(mojom::NetworkServiceP
+   }
+ #endif  // BUILDFLAG(IS_LINUX)
+ 
+-  network_change_manager_ = std::make_unique<NetworkChangeManager>(
+-      std::move(network_change_notifier));
++  // XXX network_change_manager_ = std::make_unique<NetworkChangeManager>(
++  // XXX    std::move(network_change_notifier));
+ 
+   trace_net_log_observer_.WatchForTraceStart(net_log_);
+ 
+@@ -1003,7 +1003,7 @@ void NetworkService::SetExplicitlyAllowedPorts(
+   net::SetExplicitlyAllowedPorts(ports);
+ }
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ void NetworkService::SetGssapiLibraryLoadObserver(
+     mojo::PendingRemote<mojom::GssapiLibraryLoadObserver>
+         gssapi_library_load_observer) {
+@@ -1085,7 +1085,7 @@ NetworkService::CreateHttpAuthHandlerFactory(NetworkCo
+   );
+ }
+ 
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+ void NetworkService::OnBeforeGssapiLibraryLoad() {
+   if (gssapi_library_load_observer_.is_bound()) {
+     gssapi_library_load_observer_->OnBeforeGssapiLibraryLoad();

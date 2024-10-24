@@ -12,7 +12,7 @@ Index: src/3rdparty/chromium/base/profiler/stack_base_address_posix.cc
  #if BUILDFLAG(IS_CHROMEOS)
  extern "C" void* __libc_stack_end;
  #endif
-@@ -45,7 +49,20 @@ absl::optional<uintptr_t> GetAndroidMainThreadStackBas
+@@ -45,7 +49,21 @@ absl::optional<uintptr_t> GetAndroidMainThreadStackBas
  
  #if !BUILDFLAG(IS_LINUX)
  uintptr_t GetThreadStackBaseAddressImpl(pthread_t pthread_id) {
@@ -27,13 +27,14 @@ Index: src/3rdparty/chromium/base/profiler/stack_base_address_posix.cc
 +#else
    pthread_attr_t attr;
 +#if BUILDFLAG(IS_FREEBSD)
++  int result;
 +  pthread_attr_init(&attr);
 +  pthread_attr_get_np(pthread_id, &attr);
 +#else
    // pthread_getattr_np will crash on ChromeOS & Linux if we are in the sandbox
    // and pthread_id refers to a different thread, due to the use of
    // sched_getaffinity().
-@@ -58,12 +75,14 @@ uintptr_t GetThreadStackBaseAddressImpl(pthread_t pthr
+@@ -58,12 +76,14 @@ uintptr_t GetThreadStackBaseAddressImpl(pthread_t pthr
                        << logging::SystemErrorCodeToString(result);
    // See crbug.com/617730 for limitations of this approach on Linux-like
    // systems.

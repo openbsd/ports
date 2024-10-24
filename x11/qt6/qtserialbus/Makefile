@@ -2,7 +2,7 @@ QT6NAME =	QtSerialBus
 COMMENT =	Qt6 API for accessing serial bus devices
 PKGSPEC =	qt6-qtserialbus-${QT6_PKGSPEC}
 
-SHARED_LIBS +=  Qt6SerialBus              1.0 # 6.5
+SHARED_LIBS +=  Qt6SerialBus              1.1 # 6.7
 
 WANTLIB += ${COMPILER_LIBCXX} Qt6Core Qt6Network Qt6SerialPort
 WANTLIB += c m

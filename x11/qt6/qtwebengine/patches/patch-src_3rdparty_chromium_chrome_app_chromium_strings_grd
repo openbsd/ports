@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/chrome/app/chromium_strings.grd
 --- src/3rdparty/chromium/chrome/app/chromium_strings.grd.orig
 +++ src/3rdparty/chromium/chrome/app/chromium_strings.grd
-@@ -296,7 +296,7 @@ If you update this file, be sure also to update google
+@@ -315,7 +315,7 @@ If you update this file, be sure also to update google
            Welcome to Chromium; new browser window opened
          </message>
        </if>
@@ -10,7 +10,7 @@ Index: src/3rdparty/chromium/chrome/app/chromium_strings.grd
          <message name="IDS_FIRST_RUN_DIALOG_WINDOW_TITLE" desc="Window title of First Run dialog on Mac and Linux, displayed in title bar">
            Welcome to Chromium
          </message>
-@@ -425,7 +425,7 @@ If you update this file, be sure also to update google
+@@ -465,7 +465,7 @@ If you update this file, be sure also to update google
                      To get future Chromium updates, you'll need Windows 10 or later. This computer is using Windows 8.1.
          </message>
        </if>

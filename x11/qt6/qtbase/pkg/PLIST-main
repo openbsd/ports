@@ -38,7 +38,6 @@ include/X11/qt6/QtCore/${VERSION}/QtCore/private/qabstractfileengine_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qabstractitemmodel_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qabstractproxymodel_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qanimationgroup_p.h
-include/X11/qt6/QtCore/${VERSION}/QtCore/private/qatomicscopedvaluerollback_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qbytearray_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qbytedata_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qcalendarbackend_p.h
@@ -50,6 +49,7 @@ include/X11/qt6/QtCore/${VERSION}/QtCore/private/qconfig_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qcore_unix_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qcoreapplication_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qcorecmdlineargs_p.h
+include/X11/qt6/QtCore/${VERSION}/QtCore/private/qcoreevent_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qdatastream_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qdataurl_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qdatetime_p.h
@@ -152,6 +152,7 @@ include/X11/qt6/QtCore/${VERSION}/QtCore/private/qsettings_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qsharedmemory_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qsimd_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qsimd_x86_p.h
+include/X11/qt6/QtCore/${VERSION}/QtCore/private/qsingleshottimer_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qspan_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qstorageinfo_p.h
 include/X11/qt6/QtCore/${VERSION}/QtCore/private/qstringalgorithms_p.h
@@ -208,6 +209,7 @@ include/X11/qt6/QtCore/QAssociativeIterator
 include/X11/qt6/QtCore/QAtomicInt
 include/X11/qt6/QtCore/QAtomicInteger
 include/X11/qt6/QtCore/QAtomicPointer
+include/X11/qt6/QtCore/QAtomicScopedValueRollback
 include/X11/qt6/QtCore/QBEInteger
 include/X11/qt6/QtCore/QBaseIterator
 include/X11/qt6/QtCore/QBasicMutex
@@ -260,7 +262,6 @@ include/X11/qt6/QtCore/QDateTime
 include/X11/qt6/QtCore/QDeadlineTimer
 include/X11/qt6/QtCore/QDebug
 include/X11/qt6/QtCore/QDebugStateSaver
-include/X11/qt6/QtCore/QDeferredDeleteEvent
 include/X11/qt6/QtCore/QDir
 include/X11/qt6/QtCore/QDirIterator
 include/X11/qt6/QtCore/QDynamicPropertyChangeEvent
@@ -469,11 +470,13 @@ include/X11/qt6/QtCore/QSizeF
 include/X11/qt6/QtCore/QSocketDescriptor
 include/X11/qt6/QtCore/QSocketNotifier
 include/X11/qt6/QtCore/QSortFilterProxyModel
+include/X11/qt6/QtCore/QSpan
 include/X11/qt6/QtCore/QSpecialInteger
 include/X11/qt6/QtCore/QStack
 include/X11/qt6/QtCore/QStandardPaths
 include/X11/qt6/QtCore/QStaticByteArrayMatcher
 include/X11/qt6/QtCore/QStaticByteArrayMatcherBase
+include/X11/qt6/QtCore/QStaticLatin1StringMatcher
 include/X11/qt6/QtCore/QStaticPlugin
 include/X11/qt6/QtCore/QStorageInfo
 include/X11/qt6/QtCore/QString
@@ -495,6 +498,7 @@ include/X11/qt6/QtCore/QSysInfo
 include/X11/qt6/QtCore/QSystemSemaphore
 include/X11/qt6/QtCore/QTaggedIterator
 include/X11/qt6/QtCore/QTaggedPointer
+include/X11/qt6/QtCore/QTemplatedMetaMethodReturnArgument
 include/X11/qt6/QtCore/QTemporaryDir
 include/X11/qt6/QtCore/QTemporaryFile
 include/X11/qt6/QtCore/QTextBoundaryFinder
@@ -597,8 +601,10 @@ include/X11/qt6/QtCore/q20algorithm.h
 include/X11/qt6/QtCore/q20chrono.h
 include/X11/qt6/QtCore/q20functional.h
 include/X11/qt6/QtCore/q20iterator.h
+include/X11/qt6/QtCore/q20map.h
 include/X11/qt6/QtCore/q20memory.h
 include/X11/qt6/QtCore/q20type_traits.h
+include/X11/qt6/QtCore/q20vector.h
 include/X11/qt6/QtCore/q23functional.h
 include/X11/qt6/QtCore/q23utility.h
 include/X11/qt6/QtCore/qabstractanimation.h
@@ -617,6 +623,7 @@ include/X11/qt6/QtCore/qassert.h
 include/X11/qt6/QtCore/qassociativeiterable.h
 include/X11/qt6/QtCore/qatomic.h
 include/X11/qt6/QtCore/qatomic_cxx11.h
+include/X11/qt6/QtCore/qatomicscopedvaluerollback.h
 include/X11/qt6/QtCore/qbasicatomic.h
 include/X11/qt6/QtCore/qbasictimer.h
 include/X11/qt6/QtCore/qbindingstorage.h
@@ -642,6 +649,7 @@ include/X11/qt6/QtCore/qcommandlineoption.h
 include/X11/qt6/QtCore/qcommandlineparser.h
 include/X11/qt6/QtCore/qcompare.h
 include/X11/qt6/QtCore/qcompare_impl.h
+include/X11/qt6/QtCore/qcomparehelpers.h
 include/X11/qt6/QtCore/qcompilerdetection.h
 include/X11/qt6/QtCore/qconcatenatetablesproxymodel.h
 include/X11/qt6/QtCore/qconfig.h
@@ -773,8 +781,10 @@ include/X11/qt6/QtCore/qsimd.h
 include/X11/qt6/QtCore/qsize.h
 include/X11/qt6/QtCore/qsocketnotifier.h
 include/X11/qt6/QtCore/qsortfilterproxymodel.h
+include/X11/qt6/QtCore/qspan.h
 include/X11/qt6/QtCore/qstack.h
 include/X11/qt6/QtCore/qstandardpaths.h
+include/X11/qt6/QtCore/qstaticlatin1stringmatcher.h
 include/X11/qt6/QtCore/qstorageinfo.h
 include/X11/qt6/QtCore/qstring.h
 include/X11/qt6/QtCore/qstringalgorithms.h
@@ -821,6 +831,7 @@ include/X11/qt6/QtCore/qtranslator.h
 include/X11/qt6/QtCore/qtransposeproxymodel.h
 include/X11/qt6/QtCore/qtresource.h
 include/X11/qt6/QtCore/qtsan_impl.h
+include/X11/qt6/QtCore/qtsymbolmacros.h
 include/X11/qt6/QtCore/qttranslation.h
 include/X11/qt6/QtCore/qttypetraits.h
 include/X11/qt6/QtCore/qtversion.h
@@ -846,6 +857,7 @@ include/X11/qt6/QtCore/qwineventnotifier.h
 include/X11/qt6/QtCore/qxmlstream.h
 include/X11/qt6/QtCore/qxpfunctional.h
 include/X11/qt6/QtCore/qxptype_traits.h
+include/X11/qt6/QtCore/qyieldcpu.h
 include/X11/qt6/QtDBus/
 include/X11/qt6/QtDBus/${VERSION}/
 include/X11/qt6/QtDBus/${VERSION}/QtDBus/
@@ -904,7 +916,6 @@ include/X11/qt6/QtDBus/qdbuscontext.h
 include/X11/qt6/QtDBus/qdbuserror.h
 include/X11/qt6/QtDBus/qdbusextratypes.h
 include/X11/qt6/QtDBus/qdbusinterface.h
-include/X11/qt6/QtDBus/qdbusmacros.h
 include/X11/qt6/QtDBus/qdbusmessage.h
 include/X11/qt6/QtDBus/qdbusmetatype.h
 include/X11/qt6/QtDBus/qdbuspendingcall.h
@@ -1198,6 +1209,7 @@ include/X11/qt6/QtGui/${VERSION}/QtGui/qpa/qplatforminputcontextplugin_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/qpa/qplatformintegration.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/qpa/qplatformintegrationfactory_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/qpa/qplatformintegrationplugin.h
+include/X11/qt6/QtGui/${VERSION}/QtGui/qpa/qplatformkeymapper.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/qpa/qplatformmenu.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/qpa/qplatformmenu_p.h
 include/X11/qt6/QtGui/${VERSION}/QtGui/qpa/qplatformnativeinterface.h
@@ -1262,6 +1274,7 @@ include/X11/qt6/QtGui/QBitmap
 include/X11/qt6/QtGui/QBrush
 include/X11/qt6/QtGui/QBrushData
 include/X11/qt6/QtGui/QBrushDataPointerDeleter
+include/X11/qt6/QtGui/QChildWindowEvent
 include/X11/qt6/QtGui/QClipboard
 include/X11/qt6/QtGui/QCloseEvent
 include/X11/qt6/QtGui/QColor
@@ -1532,6 +1545,7 @@ include/X11/qt6/QtGui/qrgb.h
 include/X11/qt6/QtGui/qrgba64.h
 include/X11/qt6/QtGui/qrgbafloat.h
 include/X11/qt6/QtGui/qscreen.h
+include/X11/qt6/QtGui/qscreen_platform.h
 include/X11/qt6/QtGui/qsessionmanager.h
 include/X11/qt6/QtGui/qshortcut.h
 include/X11/qt6/QtGui/qstandarditemmodel.h
@@ -1602,6 +1616,7 @@ include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qhostaddress_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qhostinfo_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qhsts_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qhstsstore_p.h
+include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qhttp2connection_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qhttp2protocolhandler_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qhttpheaderparser_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qhttpmultipart_p.h
@@ -1639,8 +1654,11 @@ include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qnetworkreplyfileimpl_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qnetworkreplyhttpimpl_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qnetworkreplyimpl_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qnetworkrequest_p.h
+include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qnetworkrequestfactory_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qocsp_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qocspresponse_p.h
+include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qrestaccessmanager_p.h
+include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qrestreply_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qsocks5socketengine_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qssl_p.h
 include/X11/qt6/QtNetwork/${VERSION}/QtNetwork/private/qsslcertificate_p.h
@@ -1673,6 +1691,7 @@ include/X11/qt6/QtNetwork/QHostInfo
 include/X11/qt6/QtNetwork/QHstsPolicy
 include/X11/qt6/QtNetwork/QHttp1Configuration
 include/X11/qt6/QtNetwork/QHttp2Configuration
+include/X11/qt6/QtNetwork/QHttpHeaders
 include/X11/qt6/QtNetwork/QHttpMultiPart
 include/X11/qt6/QtNetwork/QHttpPart
 include/X11/qt6/QtNetwork/QIPv6Address
@@ -1692,8 +1711,11 @@ include/X11/qt6/QtNetwork/QNetworkProxyFactory
 include/X11/qt6/QtNetwork/QNetworkProxyQuery
 include/X11/qt6/QtNetwork/QNetworkReply
 include/X11/qt6/QtNetwork/QNetworkRequest
+include/X11/qt6/QtNetwork/QNetworkRequestFactory
 include/X11/qt6/QtNetwork/QOcspResponse
 include/X11/qt6/QtNetwork/QPasswordDigestor
+include/X11/qt6/QtNetwork/QRestAccessManager
+include/X11/qt6/QtNetwork/QRestReply
 include/X11/qt6/QtNetwork/QSsl
 include/X11/qt6/QtNetwork/QSslCertificate
 include/X11/qt6/QtNetwork/QSslCertificateExtension
@@ -1722,6 +1744,7 @@ include/X11/qt6/QtNetwork/qhostinfo.h
 include/X11/qt6/QtNetwork/qhstspolicy.h
 include/X11/qt6/QtNetwork/qhttp1configuration.h
 include/X11/qt6/QtNetwork/qhttp2configuration.h
+include/X11/qt6/QtNetwork/qhttpheaders.h
 include/X11/qt6/QtNetwork/qhttpmultipart.h
 include/X11/qt6/QtNetwork/qlocalserver.h
 include/X11/qt6/QtNetwork/qlocalsocket.h
@@ -1735,8 +1758,11 @@ include/X11/qt6/QtNetwork/qnetworkinterface.h
 include/X11/qt6/QtNetwork/qnetworkproxy.h
 include/X11/qt6/QtNetwork/qnetworkreply.h
 include/X11/qt6/QtNetwork/qnetworkrequest.h
+include/X11/qt6/QtNetwork/qnetworkrequestfactory.h
 include/X11/qt6/QtNetwork/qocspresponse.h
 include/X11/qt6/QtNetwork/qpassworddigestor.h
+include/X11/qt6/QtNetwork/qrestaccessmanager.h
+include/X11/qt6/QtNetwork/qrestreply.h
 include/X11/qt6/QtNetwork/qssl.h
 include/X11/qt6/QtNetwork/qsslcertificate.h
 include/X11/qt6/QtNetwork/qsslcertificateextension.h
@@ -1956,7 +1982,6 @@ include/X11/qt6/QtSql/QSqlTableModel
 include/X11/qt6/QtSql/QtSql
 include/X11/qt6/QtSql/QtSqlDepends
 include/X11/qt6/QtSql/QtSqlVersion
-include/X11/qt6/QtSql/qsql.h
 include/X11/qt6/QtSql/qsqldatabase.h
 include/X11/qt6/QtSql/qsqldriver.h
 include/X11/qt6/QtSql/qsqldriverplugin.h
@@ -1986,6 +2011,7 @@ include/X11/qt6/QtTest/${VERSION}/QtTest/private/qbenchmarkmeasurement_p.h
 include/X11/qt6/QtTest/${VERSION}/QtTest/private/qbenchmarkmetric_p.h
 include/X11/qt6/QtTest/${VERSION}/QtTest/private/qbenchmarkperfevents_p.h
 include/X11/qt6/QtTest/${VERSION}/QtTest/private/qbenchmarktimemeasurers_p.h
+include/X11/qt6/QtTest/${VERSION}/QtTest/private/qcomparisontesthelper_p.h
 include/X11/qt6/QtTest/${VERSION}/QtTest/private/qcsvbenchmarklogger_p.h
 include/X11/qt6/QtTest/${VERSION}/QtTest/private/qemulationdetector_p.h
 include/X11/qt6/QtTest/${VERSION}/QtTest/private/qjunittestlogger_p.h
@@ -2032,7 +2058,6 @@ include/X11/qt6/QtTest/qbenchmark.h
 include/X11/qt6/QtTest/qbenchmarkmetric.h
 include/X11/qt6/QtTest/qsignalspy.h
 include/X11/qt6/QtTest/qtest.h
-include/X11/qt6/QtTest/qtest_global.h
 include/X11/qt6/QtTest/qtest_gui.h
 include/X11/qt6/QtTest/qtest_network.h
 include/X11/qt6/QtTest/qtest_widgets.h
@@ -2129,6 +2154,7 @@ include/X11/qt6/QtWidgets/${VERSION}/QtWidgets/private/qpixmapstyle_p_p.h
 include/X11/qt6/QtWidgets/${VERSION}/QtWidgets/private/qplaintextedit_p.h
 include/X11/qt6/QtWidgets/${VERSION}/QtWidgets/private/qproxystyle_p.h
 include/X11/qt6/QtWidgets/${VERSION}/QtWidgets/private/qpushbutton_p.h
+include/X11/qt6/QtWidgets/${VERSION}/QtWidgets/private/qrhiwidget_p.h
 include/X11/qt6/QtWidgets/${VERSION}/QtWidgets/private/qscrollarea_p.h
 include/X11/qt6/QtWidgets/${VERSION}/QtWidgets/private/qscrollbar_p.h
 include/X11/qt6/QtWidgets/${VERSION}/QtWidgets/private/qscroller_p.h
@@ -2282,6 +2308,7 @@ include/X11/qt6/QtWidgets/QProgressDialog
 include/X11/qt6/QtWidgets/QProxyStyle
 include/X11/qt6/QtWidgets/QPushButton
 include/X11/qt6/QtWidgets/QRadioButton
+include/X11/qt6/QtWidgets/QRhiWidget
 include/X11/qt6/QtWidgets/QRubberBand
 include/X11/qt6/QtWidgets/QScrollArea
 include/X11/qt6/QtWidgets/QScrollBar
@@ -2446,6 +2473,7 @@ include/X11/qt6/QtWidgets/qprogressdialog.h
 include/X11/qt6/QtWidgets/qproxystyle.h
 include/X11/qt6/QtWidgets/qpushbutton.h
 include/X11/qt6/QtWidgets/qradiobutton.h
+include/X11/qt6/QtWidgets/qrhiwidget.h
 include/X11/qt6/QtWidgets/qrubberband.h
 include/X11/qt6/QtWidgets/qscrollarea.h
 include/X11/qt6/QtWidgets/qscrollbar.h
@@ -2565,6 +2593,7 @@ lib/cmake/Qt6/FindMySQL.cmake
 lib/cmake/Qt6/FindOracle.cmake
 lib/cmake/Qt6/FindPPS.cmake
 lib/cmake/Qt6/FindPostgreSQL.cmake
+lib/cmake/Qt6/FindRenderDoc.cmake
 lib/cmake/Qt6/FindSlog2.cmake
 lib/cmake/Qt6/FindTslib.cmake
 lib/cmake/Qt6/FindWrapAtomic.cmake
@@ -2679,6 +2708,7 @@ lib/cmake/Qt6/QtPrecompiledHeadersHelpers.cmake
 lib/cmake/Qt6/QtPriHelpers.cmake
 lib/cmake/Qt6/QtPrlHelpers.cmake
 lib/cmake/Qt6/QtProcessConfigureArgs.cmake
+lib/cmake/Qt6/QtProperties.cmake
 lib/cmake/Qt6/QtPublicAppleHelpers.cmake
 lib/cmake/Qt6/QtPublicCMakeHelpers.cmake
 lib/cmake/Qt6/QtPublicCMakeVersionHelpers.cmake
@@ -2765,6 +2795,7 @@ lib/cmake/Qt6Core/Qt6CoreConfigureFileTemplate.in
 lib/cmake/Qt6Core/Qt6CoreDependencies.cmake
 lib/cmake/Qt6Core/Qt6CoreDeploySupport.cmake
 lib/cmake/Qt6Core/Qt6CoreMacros.cmake
+lib/cmake/Qt6Core/Qt6CoreResourceInit.in.cpp
 lib/cmake/Qt6Core/Qt6CoreTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Core/Qt6CoreTargets.cmake
 lib/cmake/Qt6Core/Qt6CoreVersionlessTargets.cmake
@@ -3192,8 +3223,9 @@ lib/libQt6Xml.prl
 @lib lib/libQt6Xml.so.${LIBQt6Xml_VERSION}
 lib/objects-Release/
 lib/objects-Release/ExampleIconsPrivate_resources_1/
-lib/objects-Release/ExampleIconsPrivate_resources_1/.rcc/
-lib/objects-Release/ExampleIconsPrivate_resources_1/.rcc/qrc_example_icons.cpp.o
+lib/objects-Release/ExampleIconsPrivate_resources_1/.qt/
+lib/objects-Release/ExampleIconsPrivate_resources_1/.qt/rcc/
+lib/objects-Release/ExampleIconsPrivate_resources_1/.qt/rcc/qrc_example_icons_init.cpp.o
 lib/pkgconfig/Qt6Concurrent.pc
 lib/pkgconfig/Qt6Core.pc
 lib/pkgconfig/Qt6DBus.pc
@@ -3227,7 +3259,6 @@ lib/qt6/libexec/${MODPY_PYCACHE}qt-testrunner.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOE
 lib/qt6/libexec/${MODPY_PYCACHE}qt-testrunner.${MODPY_PYC_MAGIC_TAG}pyc
 lib/qt6/libexec/${MODPY_PYCACHE}sanitizer-testrunner.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/qt6/libexec/${MODPY_PYCACHE}sanitizer-testrunner.${MODPY_PYC_MAGIC_TAG}pyc
-lib/qt6/libexec/android_emulator_launcher.sh
 @bin lib/qt6/libexec/cmake_automoc_parser
 lib/qt6/libexec/ensure_pro_file.cmake
 @bin lib/qt6/libexec/moc
@@ -3235,6 +3266,7 @@ lib/qt6/libexec/ensure_pro_file.cmake
 lib/qt6/libexec/qt-cmake-private
 lib/qt6/libexec/qt-cmake-private-install.cmake
 lib/qt6/libexec/qt-cmake-standalone-test
+lib/qt6/libexec/qt-internal-configure-examples
 lib/qt6/libexec/qt-internal-configure-tests
 lib/qt6/libexec/qt-testrunner.py
 @bin lib/qt6/libexec/qvkgen
@@ -3338,6 +3370,8 @@ lib/qt6/mkspecs/common/uikit/GLES2/gl2.h
 lib/qt6/mkspecs/common/uikit/clang.conf
 lib/qt6/mkspecs/common/uikit/qmake.conf
 lib/qt6/mkspecs/common/unix.conf
+lib/qt6/mkspecs/common/vxworks/
+lib/qt6/mkspecs/common/vxworks/qplatformdefs.h
 lib/qt6/mkspecs/common/wasm/
 lib/qt6/mkspecs/common/wasm/qplatformdefs.h
 lib/qt6/mkspecs/common/wasm/wasm.conf
@@ -3853,6 +3887,8 @@ lib/qt6/mkspecs/unsupported/vxworks-simpentium-dcc/qplatformdefs.h
 lib/qt6/mkspecs/unsupported/vxworks-simpentium-g++/
 lib/qt6/mkspecs/unsupported/vxworks-simpentium-g++/qmake.conf
 lib/qt6/mkspecs/unsupported/vxworks-simpentium-g++/qplatformdefs.h
+lib/qt6/mkspecs/vxworks-clang/
+lib/qt6/mkspecs/vxworks-clang/qplatformdefs.h
 lib/qt6/mkspecs/wasm-emscripten/
 lib/qt6/mkspecs/wasm-emscripten-64/
 lib/qt6/mkspecs/wasm-emscripten-64/qmake.conf

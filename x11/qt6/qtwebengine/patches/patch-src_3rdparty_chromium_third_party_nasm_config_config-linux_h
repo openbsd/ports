@@ -92,3 +92,12 @@ Index: src/3rdparty/chromium/third_party/nasm/config/config-linux.h
  /* Work around a bug in Sun C++: it does not support _Restrict or
     __restrict__, even though the corresponding Sun C compiler ends up with
     "#define restrict _Restrict" or "#define restrict __restrict__" in the
+@@ -637,7 +637,7 @@
+ /* Define if your snprintf function is not named snprintf. */
+ /* #undef snprintf */
+ 
+-/* Define if your typeof operator is not named typeof. */
++/* Define if your typeof operator is not named `typeof'. */
+ #define typeof __typeof
+ 
+ /* Define to the type of an unsigned integer type wide enough to hold a

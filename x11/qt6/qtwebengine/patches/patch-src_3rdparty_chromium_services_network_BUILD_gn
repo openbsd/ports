@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/services/network/BUILD.gn
 --- src/3rdparty/chromium/services/network/BUILD.gn.orig
 +++ src/3rdparty/chromium/services/network/BUILD.gn
-@@ -339,7 +339,6 @@ if (is_linux || is_chromeos) {
+@@ -393,7 +393,6 @@ if (is_linux || is_chromeos) {
      ]
      deps = [
        "//base:base",

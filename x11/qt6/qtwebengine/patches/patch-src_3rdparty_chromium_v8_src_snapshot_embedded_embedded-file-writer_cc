@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/v8/src/snapshot/embedded/embedded-file-writer.cc
 --- src/3rdparty/chromium/v8/src/snapshot/embedded/embedded-file-writer.cc.orig
 +++ src/3rdparty/chromium/v8/src/snapshot/embedded/embedded-file-writer.cc
-@@ -137,7 +137,11 @@ void EmbeddedFileWriter::WriteCodeSection(PlatformEmbe
+@@ -138,7 +138,11 @@ void EmbeddedFileWriter::WriteCodeSection(PlatformEmbe
    w->Comment(
        "The embedded blob code section starts here. It contains the builtin");
    w->Comment("instruction streams.");

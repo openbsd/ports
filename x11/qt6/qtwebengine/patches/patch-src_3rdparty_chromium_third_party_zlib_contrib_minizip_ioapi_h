@@ -10,7 +10,7 @@ Index: src/3rdparty/chromium/third_party/zlib/contrib/minizip/ioapi.h
  #define fopen64 fopen
  #define ftello64 ftello
  #define fseeko64 fseeko
-@@ -142,34 +142,10 @@ typedef long     (ZCALLBACK *tell_file_func)      OF((
+@@ -142,34 +142,9 @@ typedef long     (ZCALLBACK *tell_file_func)      OF((
  typedef long     (ZCALLBACK *seek_file_func)      OF((voidpf opaque, voidpf stream, uLong offset, int origin));
  
  
@@ -26,7 +26,7 @@ Index: src/3rdparty/chromium/third_party/zlib/contrib/minizip/ioapi.h
 -    testerror_file_func zerror_file;
 -    voidpf              opaque;
 -} zlib_filefunc_def;
- 
+-
  typedef ZPOS64_T (ZCALLBACK *tell64_file_func)    OF((voidpf opaque, voidpf stream));
  typedef long     (ZCALLBACK *seek64_file_func)    OF((voidpf opaque, voidpf stream, ZPOS64_T offset, int origin));
  typedef voidpf   (ZCALLBACK *open64_file_func)    OF((voidpf opaque, const void* filename, int mode));

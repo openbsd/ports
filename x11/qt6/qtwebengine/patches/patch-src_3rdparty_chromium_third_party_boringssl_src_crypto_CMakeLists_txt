@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/third_party/boringssl/src/crypto/CMakeLists.txt
 --- src/3rdparty/chromium/third_party/boringssl/src/crypto/CMakeLists.txt.orig
 +++ src/3rdparty/chromium/third_party/boringssl/src/crypto/CMakeLists.txt
-@@ -20,15 +20,11 @@ set(
+@@ -21,15 +21,11 @@ set(
  )
  perlasm(CRYPTO_SOURCES aarch64 chacha/chacha-armv8 chacha/asm/chacha-armv8.pl)
  perlasm(CRYPTO_SOURCES aarch64 cipher_extra/chacha20_poly1305_armv8 cipher_extra/asm/chacha20_poly1305_armv8.pl)

@@ -14,7 +14,28 @@ include/X11/qt6/QtQuickTimeline/QtQuickTimelineVersion
 include/X11/qt6/QtQuickTimeline/qtquicktimelineexports.h
 include/X11/qt6/QtQuickTimeline/qtquicktimelineglobal.h
 include/X11/qt6/QtQuickTimeline/qtquicktimelineversion.h
+include/X11/qt6/QtQuickTimelineBlendTrees/
+include/X11/qt6/QtQuickTimelineBlendTrees/${VERSION}/
+include/X11/qt6/QtQuickTimelineBlendTrees/${VERSION}/QtQuickTimelineBlendTrees/
+include/X11/qt6/QtQuickTimelineBlendTrees/${VERSION}/QtQuickTimelineBlendTrees/private/
+include/X11/qt6/QtQuickTimelineBlendTrees/${VERSION}/QtQuickTimelineBlendTrees/private/qblendanimationnode_p.h
+include/X11/qt6/QtQuickTimelineBlendTrees/${VERSION}/QtQuickTimelineBlendTrees/private/qblendtreenode_p.h
+include/X11/qt6/QtQuickTimelineBlendTrees/${VERSION}/QtQuickTimelineBlendTrees/private/qtimelineanimationnode_p.h
+include/X11/qt6/QtQuickTimelineBlendTrees/${VERSION}/QtQuickTimelineBlendTrees/private/qtquicktimelineblendtreesexports_p.h
+include/X11/qt6/QtQuickTimelineBlendTrees/${VERSION}/QtQuickTimelineBlendTrees/private/qtquicktimelineblendtreesglobal_p.h
+include/X11/qt6/QtQuickTimelineBlendTrees/QtQuickTimelineBlendTrees
+include/X11/qt6/QtQuickTimelineBlendTrees/QtQuickTimelineBlendTreesDepends
+include/X11/qt6/QtQuickTimelineBlendTrees/QtQuickTimelineBlendTreesVersion
+include/X11/qt6/QtQuickTimelineBlendTrees/qtquicktimelineblendtreesexports.h
+include/X11/qt6/QtQuickTimelineBlendTrees/qtquicktimelineblendtreesglobal.h
+include/X11/qt6/QtQuickTimelineBlendTrees/qtquicktimelineblendtreesversion.h
 lib/cmake/Qt6BuildInternals/StandaloneTests/QtQuickTimelineTestsConfig.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelineblendtreespluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelineblendtreespluginConfig.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelineblendtreespluginConfigVersion.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelineblendtreespluginConfigVersionImpl.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelineblendtreespluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelineblendtreespluginTargets.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginConfig.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtquicktimelinepluginConfigVersion.cmake
@@ -30,14 +51,34 @@ lib/cmake/Qt6QuickTimeline/Qt6QuickTimelineDependencies.cmake
 lib/cmake/Qt6QuickTimeline/Qt6QuickTimelineTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6QuickTimeline/Qt6QuickTimelineTargets.cmake
 lib/cmake/Qt6QuickTimeline/Qt6QuickTimelineVersionlessTargets.cmake
+lib/cmake/Qt6QuickTimelineBlendTrees/
+lib/cmake/Qt6QuickTimelineBlendTrees/Qt6QuickTimelineBlendTreesAdditionalTargetInfo.cmake
+lib/cmake/Qt6QuickTimelineBlendTrees/Qt6QuickTimelineBlendTreesConfig.cmake
+lib/cmake/Qt6QuickTimelineBlendTrees/Qt6QuickTimelineBlendTreesConfigVersion.cmake
+lib/cmake/Qt6QuickTimelineBlendTrees/Qt6QuickTimelineBlendTreesConfigVersionImpl.cmake
+lib/cmake/Qt6QuickTimelineBlendTrees/Qt6QuickTimelineBlendTreesDependencies.cmake
+lib/cmake/Qt6QuickTimelineBlendTrees/Qt6QuickTimelineBlendTreesTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6QuickTimelineBlendTrees/Qt6QuickTimelineBlendTreesTargets.cmake
+lib/cmake/Qt6QuickTimelineBlendTrees/Qt6QuickTimelineBlendTreesVersionlessTargets.cmake
 lib/libQt6QuickTimeline.prl
 @lib lib/libQt6QuickTimeline.so.${LIBQt6QuickTimeline_VERSION}
+lib/libQt6QuickTimelineBlendTrees.prl
+@lib lib/libQt6QuickTimelineBlendTrees.so.${LIBQt6QuickTimelineBlendTrees_VERSION}
 lib/pkgconfig/Qt6QuickTimeline.pc
+lib/pkgconfig/Qt6QuickTimelineBlendTrees.pc
 lib/qt6/metatypes/qt6quicktimeline_release_metatypes.json
+lib/qt6/metatypes/qt6quicktimelineblendtrees_release_metatypes.json
 lib/qt6/mkspecs/modules/qt_lib_quicktimeline.pri
 lib/qt6/mkspecs/modules/qt_lib_quicktimeline_private.pri
+lib/qt6/mkspecs/modules/qt_lib_quicktimelineblendtrees.pri
+lib/qt6/mkspecs/modules/qt_lib_quicktimelineblendtrees_private.pri
 lib/qt6/modules/QuickTimeline.json
+lib/qt6/modules/QuickTimelineBlendTrees.json
 lib/qt6/qml/QtQuick/Timeline/
+lib/qt6/qml/QtQuick/Timeline/BlendTrees/
+@so lib/qt6/qml/QtQuick/Timeline/BlendTrees/libqtquicktimelineblendtreesplugin.so
+lib/qt6/qml/QtQuick/Timeline/BlendTrees/plugins.qmltypes
+lib/qt6/qml/QtQuick/Timeline/BlendTrees/qmldir
 @so lib/qt6/qml/QtQuick/Timeline/libqtquicktimelineplugin.so
 lib/qt6/qml/QtQuick/Timeline/plugins.qmltypes
 lib/qt6/qml/QtQuick/Timeline/qmldir

@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/build/toolchain/toolchain.gni
+--- src/3rdparty/chromium/build/toolchain/toolchain.gni.orig
++++ src/3rdparty/chromium/build/toolchain/toolchain.gni
+@@ -67,7 +67,7 @@ if (host_os == "mac") {
+   host_shlib_extension = ".dylib"
+ } else if (host_os == "win") {
+   host_shlib_extension = ".dll"
+-} else if (host_os == "linux" || host_os == "aix") {
++} else if (host_os == "linux" || host_os == "aix" || host_os == "openbsd") {
+   host_shlib_extension = ".so"
+ } else {
+   assert(false, "Host platform not supported")

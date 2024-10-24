@@ -15,7 +15,7 @@ Index: src/3rdparty/chromium/build/toolchain/gcc_toolchain.gni
  # This template defines a toolchain for something that works like gcc
  # (including clang).
  #
-@@ -839,22 +846,12 @@ template("gcc_toolchain") {
+@@ -888,22 +895,12 @@ template("gcc_toolchain") {
  # use_gold too.
  template("clang_toolchain") {
    gcc_toolchain(target_name) {

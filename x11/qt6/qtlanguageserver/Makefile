@@ -1,10 +1,9 @@
 QT6NAME =	QtLanguageServer
 COMMENT =	Language server implementation for Qt6
 PKGSPEC =	qt6-qtlanguageserver-${QT6_PKGSPEC}
-REVISION =	0
 
-SHARED_LIBS +=  Qt6JsonRpc                2.0 # 6.5
-SHARED_LIBS +=  Qt6LanguageServer         2.0 # 6.5
+SHARED_LIBS +=  Qt6JsonRpc                3.0 # 6.7
+SHARED_LIBS +=  Qt6LanguageServer         3.0 # 6.7
 
 WANTLIB += ${COMPILER_LIBCXX} Qt6Core c m
 

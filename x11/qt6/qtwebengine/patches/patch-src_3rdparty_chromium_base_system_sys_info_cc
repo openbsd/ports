@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/base/system/sys_info.cc
 --- src/3rdparty/chromium/base/system/sys_info.cc.orig
 +++ src/3rdparty/chromium/base/system/sys_info.cc
-@@ -106,7 +106,7 @@ std::string SysInfo::HardwareModelName() {
+@@ -166,7 +166,7 @@ std::string SysInfo::HardwareModelName() {
  #endif
  
  void SysInfo::GetHardwareInfo(base::OnceCallback<void(HardwareInfo)> callback) {

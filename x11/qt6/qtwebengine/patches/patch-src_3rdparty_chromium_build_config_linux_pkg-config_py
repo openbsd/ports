@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/build/config/linux/pkg-config.py
 --- src/3rdparty/chromium/build/config/linux/pkg-config.py.orig
 +++ src/3rdparty/chromium/build/config/linux/pkg-config.py
-@@ -108,7 +108,7 @@ def main():
+@@ -113,7 +113,7 @@ def main():
    # If this is run on non-Linux platforms, just return nothing and indicate
    # success. This allows us to "kind of emulate" a Linux build from other
    # platforms.

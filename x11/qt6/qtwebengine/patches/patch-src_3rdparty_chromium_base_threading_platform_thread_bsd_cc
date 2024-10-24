@@ -28,8 +28,8 @@ Index: src/3rdparty/chromium/base/threading/platform_thread_bsd.cc
 +}  // namespace internal
 +
 +// static
-+void PlatformThread::SetName(const std::string& name) {
-+  // XXX FIXME SetNameCommon(name);
++void PlatformThreadBase::SetName(const std::string& name) {
++  SetNameCommon(name);
 +}
 +
 +}  // namespace base

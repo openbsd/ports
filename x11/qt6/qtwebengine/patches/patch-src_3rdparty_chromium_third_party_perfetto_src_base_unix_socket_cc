@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/third_party/perfetto/src/base/unix_socket.cc
 --- src/3rdparty/chromium/third_party/perfetto/src/base/unix_socket.cc.orig
 +++ src/3rdparty/chromium/third_party/perfetto/src/base/unix_socket.cc
-@@ -42,7 +42,7 @@
+@@ -44,7 +44,7 @@
  #include <unistd.h>
  #endif
  
@@ -10,7 +10,7 @@ Index: src/3rdparty/chromium/third_party/perfetto/src/base/unix_socket.cc
  #include <sys/ucred.h>
  #endif
  
-@@ -803,9 +803,13 @@ void UnixSocket::ReadPeerCredentialsPosix() {
+@@ -917,9 +917,13 @@ void UnixSocket::ReadPeerCredentialsPosix() {
      return;
    PERFETTO_CHECK(peer_cred_mode_ != SockPeerCredMode::kIgnore);
  

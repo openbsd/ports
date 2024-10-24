@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/third_party/leveldatabase/env_chromium.cc
 --- src/3rdparty/chromium/third_party/leveldatabase/env_chromium.cc.orig
 +++ src/3rdparty/chromium/third_party/leveldatabase/env_chromium.cc
-@@ -318,7 +318,8 @@ ChromiumWritableFile::ChromiumWritableFile(const std::
+@@ -320,7 +320,8 @@ ChromiumWritableFile::ChromiumWritableFile(const std::
  
  Status ChromiumWritableFile::SyncParent() {
    TRACE_EVENT0("leveldb", "SyncParent");

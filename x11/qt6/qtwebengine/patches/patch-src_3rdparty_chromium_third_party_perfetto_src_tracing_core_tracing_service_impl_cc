@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/third_party/perfetto/src/tracing/core/tracing_service_impl.cc
 --- src/3rdparty/chromium/third_party/perfetto/src/tracing/core/tracing_service_impl.cc.orig
 +++ src/3rdparty/chromium/third_party/perfetto/src/tracing/core/tracing_service_impl.cc
-@@ -3122,7 +3122,8 @@ bool TracingServiceImpl::SnapshotClocks(
+@@ -3213,7 +3213,8 @@ bool TracingServiceImpl::SnapshotClocks(
  
  #if !PERFETTO_BUILDFLAG(PERFETTO_OS_APPLE) && \
      !PERFETTO_BUILDFLAG(PERFETTO_OS_WIN) &&   \

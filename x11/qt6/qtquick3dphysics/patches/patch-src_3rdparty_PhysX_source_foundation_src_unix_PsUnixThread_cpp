@@ -19,7 +19,7 @@ Index: src/3rdparty/PhysX/source/foundation/src/unix/PsUnixThread.cpp
  #include <asm/unistd.h>
  #include <sys/resource.h>
  #endif
-@@ -111,12 +111,13 @@ _ThreadImpl* getThread(ThreadImpl* impl)
+@@ -110,12 +110,13 @@ _ThreadImpl* getThread(ThreadImpl* impl)
  static void setTid(_ThreadImpl& threadImpl)
  {
  // query TID
@@ -30,14 +30,14 @@ Index: src/3rdparty/PhysX/source/foundation/src/unix/PsUnixThread.cpp
 +#elif PX_APPLE_FAMILY && !PX_OPENBSD
  	threadImpl.tid = syscall(SYS_gettid);
 -#elif PX_EMSCRIPTEN
--	threadImpl.tid = pthread_self();
+-	// No thread id for emscripten
 +#elif PX_EMSCRIPTEN || PX_OPENBSD
 +	// XXX set tid
 +	threadImpl.thread = pthread_self();
  #else
  	threadImpl.tid = syscall(__NR_gettid);
  #endif
-@@ -311,7 +312,7 @@ uint32_t ThreadImpl::setAffinityMask(uint32_t mask)
+@@ -324,7 +325,7 @@ uint32_t ThreadImpl::setAffinityMask(uint32_t mask)
  	{
  #if PX_PS4
  		prevMask = setAffinityMaskPS4(getThread(this)->thread, mask);

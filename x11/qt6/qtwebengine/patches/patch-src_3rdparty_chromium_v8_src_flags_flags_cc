@@ -1,5 +1,3 @@
-put the v8_flags into the openbsd.mutable section and call mimmutable(2)
-on it when v8 "freezes" the v8 flags
 Index: src/3rdparty/chromium/v8/src/flags/flags.cc
 --- src/3rdparty/chromium/v8/src/flags/flags.cc.orig
 +++ src/3rdparty/chromium/v8/src/flags/flags.cc
@@ -26,7 +24,7 @@ Index: src/3rdparty/chromium/v8/src/flags/flags.cc
  
  // {v8_flags} needs to be aligned to a memory page, and the size needs to be a
  // multiple of a page size. This is required for memory-protection of the memory
-@@ -822,6 +830,10 @@ void FlagList::FreezeFlags() {
+@@ -824,6 +832,10 @@ void FlagList::FreezeFlags() {
    // Note that for string flags we only protect the pointer itself, but not the
    // string storage. TODO(12887): Fix this.
    base::OS::SetDataReadOnly(&v8_flags, sizeof(v8_flags));

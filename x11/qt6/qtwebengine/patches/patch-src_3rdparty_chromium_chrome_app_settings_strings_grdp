@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/chrome/app/settings_strings.grdp
 --- src/3rdparty/chromium/chrome/app/settings_strings.grdp.orig
 +++ src/3rdparty/chromium/chrome/app/settings_strings.grdp
-@@ -166,7 +166,7 @@
+@@ -222,7 +222,7 @@
        Theme
      </message>
    </if>
@@ -10,7 +10,7 @@ Index: src/3rdparty/chromium/chrome/app/settings_strings.grdp
      <message name="IDS_SETTINGS_GTK_THEME" desc="Text of the label describing the system (GTK) browser theme on Linux">
        GTK
      </message>
-@@ -186,7 +186,7 @@
+@@ -242,7 +242,7 @@
        Use Classic
      </message>
    </if>

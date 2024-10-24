@@ -1,16 +1,17 @@
 Index: src/3rdparty/chromium/base/BUILD.gn
 --- src/3rdparty/chromium/base/BUILD.gn.orig
 +++ src/3rdparty/chromium/base/BUILD.gn
-@@ -59,6 +59,8 @@ declare_args() {
-   # file name) is saved.
-   enable_location_source = true
+@@ -59,6 +59,9 @@ if (is_win) {
+ }
  
+ declare_args() {
++
 +  is_bsd = true
 +
    # Unsafe developer build. Has developer-friendly features that may weaken or
    # disable security measures like sandboxing or ASLR.
    # IMPORTANT: Unsafe developer builds should never be distributed to end users.
-@@ -189,7 +191,7 @@ buildflag_header("ios_cronet_buildflags") {
+@@ -199,7 +202,7 @@ buildflag_header("ios_cronet_buildflags") {
    flags = [ "CRONET_BUILD=$is_cronet_build" ]
  }
  
@@ -19,29 +20,21 @@ Index: src/3rdparty/chromium/base/BUILD.gn
  buildflag_header("message_pump_buildflags") {
    header = "message_pump_buildflags.h"
    header_dir = "base/message_loop"
-@@ -1009,7 +1011,7 @@ jumbo_component("base") {
-       "threading/thread_type_delegate.cc",
-       "threading/thread_type_delegate.h",
-     ]
--    jumbo_excluded_sources += [ "process/memory_linux.cc" ]
-+    #jumbo_excluded_sources += [ "process/memory_linux.cc" ]
-   }
- 
-   if (is_linux || is_chromeos || is_android || is_fuchsia) {
-@@ -1100,11 +1102,22 @@ jumbo_component("base") {
+@@ -1117,11 +1120,23 @@ jumbo_component("base") {
    # Needed for <atomic> if using newer C++ library than sysroot, except if
    # building inside the cros_sdk environment - use host_toolchain as a
    # more robust check for this.
--  if (!use_sysroot && (is_android || is_chromeos || (is_linux && !is_castos && !is_qtwebengine)) &&
+-  if (!use_sysroot && (is_android || is_chromeos || (is_linux && !is_castos)) &&
 +  if (!use_sysroot && (is_android || is_chromeos || (is_linux && !is_castos && !is_bsd)) &&
        host_toolchain != "//build/toolchain/cros:host") {
      libs += [ "atomic" ]
    }
+ 
 +  # *BSD needs libkvm
 +  if (is_bsd) {
 +    libs += [ "kvm" ]
 +  }
- 
++
 +  if (is_freebsd) {
 +    libs += [
 +      "execinfo",
@@ -50,18 +43,9 @@ Index: src/3rdparty/chromium/base/BUILD.gn
 +  }
 +
    if (use_allocator_shim) {
-     sources += [
-       "allocator/partition_allocator/shim/allocator_shim.cc",
-@@ -1132,7 +1145,7 @@ jumbo_component("base") {
-       ]
-       configs += [ "//base/allocator:mac_no_default_new_delete_symbols" ]
-     }
--    if (is_chromeos || is_linux) {
-+    if (is_chromeos || (is_linux && !is_posix)) {
-       sources += [
-         "allocator/partition_allocator/shim/allocator_shim_override_cpp_symbols.h",
-         "allocator/partition_allocator/shim/allocator_shim_override_glibc_weak_symbols.h",
-@@ -1173,7 +1186,7 @@ jumbo_component("base") {
+     if (is_apple) {
+       sources += [ "allocator/early_zone_registration_apple.h" ]
+@@ -1141,7 +1156,7 @@ jumbo_component("base") {
  
    # Allow more direct string conversions on platforms with native utf8
    # strings
@@ -70,32 +54,11 @@ Index: src/3rdparty/chromium/base/BUILD.gn
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -2119,6 +2132,43 @@ jumbo_component("base") {
-     }
+@@ -2091,6 +2106,22 @@ jumbo_component("base") {
+     ]
    }
  
-+  if (is_bsd) {
-+    sources -= [
-+      "files/file_path_watcher_inotify.cc",
-+      "files/scoped_file_linux.cc",
-+      "process/process_linux.cc",
-+      "system/sys_info_linux.cc",
-+      "process/process_iterator_linux.cc",
-+      "process/process_metrics_linux.cc",
-+      "process/process_handle_linux.cc",
-+      "profiler/stack_copier_signal.cc",
-+      "profiler/stack_copier_signal.h",
-+      "profiler/thread_delegate_posix.cc",
-+      "profiler/thread_delegate_posix.h",
-+    ]
-+    sources += [
-+      "files/file_path_watcher_kqueue.cc",
-+      "files/file_path_watcher_kqueue.h",
-+      "files/file_path_watcher_bsd.cc",
-+    ]
-+  }
-+
-+  if (is_bsd) {
++  if (is_openbsd) {
 +    sources += [
 +      "process/process_handle_openbsd.cc",
 +      "process/process_iterator_openbsd.cc",
@@ -114,7 +77,45 @@ Index: src/3rdparty/chromium/base/BUILD.gn
    # iOS
    if (is_ios) {
      sources += [
-@@ -2214,7 +2264,7 @@ jumbo_component("base") {
+@@ -2187,6 +2218,28 @@ jumbo_component("base") {
+     ]
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "files/file_path_watcher_inotify.cc",
++      "files/scoped_file_linux.cc",
++      "process/process_iterator_linux.cc",
++      "process/process_linux.cc",
++      "process/process_metrics_linux.cc",
++      "process/process_handle_linux.cc",
++      "profiler/stack_copier_signal.cc",
++      "profiler/stack_copier_signal.h",
++      "profiler/thread_delegate_posix.cc",
++      "profiler/thread_delegate_posix.h",
++      "threading/platform_thread_linux.cc",
++    ]
++    sources += [
++      "files/file_path_watcher_kqueue.cc",
++      "files/file_path_watcher_kqueue.h",
++      "files/file_path_watcher_bsd.cc",
++      "threading/platform_thread_bsd.cc",
++    ]
++  }
++
+   # Linux.
+   if (is_linux || is_chromeos) {
+     # TODO(brettw) this will need to be parameterized at some point.
+@@ -2197,7 +2250,7 @@ jumbo_component("base") {
+ 
+     configs += linux_configs
+     all_dependent_configs += linux_configs
+-    sources += [ "system/sys_info_linux.cc" ]
++    #sources += [ "system/sys_info_linux.cc" ]
+     if (!is_cronet_build) {
+       # These dependencies are not required on Android, and in the case
+       # of xdg_mime must be excluded due to licensing restrictions.
+@@ -2233,7 +2286,7 @@ jumbo_component("base") {
    }
  
    if (dep_libevent) {
@@ -123,27 +124,25 @@ Index: src/3rdparty/chromium/base/BUILD.gn
    }
  
    if (use_libevent) {
-@@ -3531,18 +3581,26 @@ test("base_unittests") {
+@@ -3607,7 +3660,7 @@ test("base_unittests") {
+     ]
+   }
+ 
+-  if (is_linux || is_chromeos) {
++  if ((is_linux || is_chromeos) && !is_bsd) {
+     sources += [
+       "debug/proc_maps_linux_unittest.cc",
+       "files/scoped_file_linux_unittest.cc",
+@@ -3628,7 +3681,7 @@ test("base_unittests") {
        "posix/file_descriptor_shuffle_unittest.cc",
        "posix/unix_domain_socket_unittest.cc",
      ]
 -    if (!is_nacl && !is_apple) {
-+    if (!is_nacl && !is_apple && !is_posix) {
++    if (!is_nacl && !is_apple && !is_bsd) {
        sources += [
          "profiler/stack_base_address_posix_unittest.cc",
          "profiler/stack_copier_signal_unittest.cc",
-         "profiler/thread_delegate_posix_unittest.cc",
-       ]
-     }
-+
-+    if (is_posix) {
-+      sources += [
-+        "profiler/stack_base_address_posix.cc",
-+        "profiler/stack_base_address_posix.h",
-+        "profiler/stack_sampler_posix.cc",
-+      ]
-+    }
-   }
+@@ -3639,7 +3692,7 @@ test("base_unittests") {
  
    # Allow more direct string conversions on platforms with native utf8
    # strings
@@ -152,12 +151,12 @@ Index: src/3rdparty/chromium/base/BUILD.gn
      defines += [ "SYSTEM_NATIVE_UTF8" ]
    }
  
-@@ -3763,7 +3821,7 @@ test("base_unittests") {
+@@ -3895,7 +3948,7 @@ test("base_unittests") {
      }
    }
  
 -  if (is_fuchsia || is_linux || is_chromeos) {
-+  if ((is_fuchsia || is_linux || is_chromeos) && !is_posix) {
++  if ((is_fuchsia || is_linux || is_chromeos) && !is_bsd) {
      sources += [
        "debug/elf_reader_unittest.cc",
        "debug/test_elf_image_builder.cc",

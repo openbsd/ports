@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/media/media_options.gni
 --- src/3rdparty/chromium/media/media_options.gni.orig
 +++ src/3rdparty/chromium/media/media_options.gni
-@@ -196,12 +196,15 @@ declare_args() {
+@@ -193,12 +193,15 @@ declare_args() {
    # Enables runtime selection of ALSA library for audio.
    use_alsa = false
  
@@ -18,7 +18,7 @@ Index: src/3rdparty/chromium/media/media_options.gni
        (!is_castos || (target_cpu == "x86" || target_cpu == "x64") ||
         is_cast_audio_only)) {
      use_alsa = true
-@@ -217,6 +220,10 @@ declare_args() {
+@@ -214,6 +217,10 @@ declare_args() {
      if (!use_cras && !is_castos && !is_asan && !is_tsan) {
        use_pulseaudio = true
      }

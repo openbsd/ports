@@ -74,6 +74,7 @@ include/X11/qt6/QtWebEngineCore/${VERSION}/QtWebEngineCore/private/qtwebengineco
 include/X11/qt6/QtWebEngineCore/${VERSION}/QtWebEngineCore/private/qtwebenginecoreglobal_p.h
 include/X11/qt6/QtWebEngineCore/${VERSION}/QtWebEngineCore/private/qwebenginecontextmenurequest_p.h
 include/X11/qt6/QtWebEngineCore/${VERSION}/QtWebEngineCore/private/qwebenginecookiestore_p.h
+include/X11/qt6/QtWebEngineCore/${VERSION}/QtWebEngineCore/private/qwebenginedesktopmediarequest_p.h
 include/X11/qt6/QtWebEngineCore/${VERSION}/QtWebEngineCore/private/qwebenginedownloadrequest_p.h
 include/X11/qt6/QtWebEngineCore/${VERSION}/QtWebEngineCore/private/qwebengineglobalsettings_p.h
 include/X11/qt6/QtWebEngineCore/${VERSION}/QtWebEngineCore/private/qwebenginehistory_p.h
@@ -83,11 +84,13 @@ include/X11/qt6/QtWebEngineCore/${VERSION}/QtWebEngineCore/private/qwebenginepag
 include/X11/qt6/QtWebEngineCore/${VERSION}/QtWebEngineCore/private/qwebengineprofile_p.h
 include/X11/qt6/QtWebEngineCore/${VERSION}/QtWebEngineCore/private/qwebenginescriptcollection_p.h
 include/X11/qt6/QtWebEngineCore/${VERSION}/QtWebEngineCore/private/qwebengineurlrequestinfo_p.h
+include/X11/qt6/QtWebEngineCore/${VERSION}/QtWebEngineCore/private/qwebenginewebauthuxrequest_p.h
 include/X11/qt6/QtWebEngineCore/QWebEngineCertificateError
 include/X11/qt6/QtWebEngineCore/QWebEngineClientCertificateSelection
 include/X11/qt6/QtWebEngineCore/QWebEngineClientCertificateStore
 include/X11/qt6/QtWebEngineCore/QWebEngineContextMenuRequest
 include/X11/qt6/QtWebEngineCore/QWebEngineCookieStore
+include/X11/qt6/QtWebEngineCore/QWebEngineDesktopMediaRequest
 include/X11/qt6/QtWebEngineCore/QWebEngineDownloadRequest
 include/X11/qt6/QtWebEngineCore/QWebEngineFileSystemAccessRequest
 include/X11/qt6/QtWebEngineCore/QWebEngineFindTextResult
@@ -113,6 +116,8 @@ include/X11/qt6/QtWebEngineCore/QWebEngineUrlRequestInterceptor
 include/X11/qt6/QtWebEngineCore/QWebEngineUrlRequestJob
 include/X11/qt6/QtWebEngineCore/QWebEngineUrlScheme
 include/X11/qt6/QtWebEngineCore/QWebEngineUrlSchemeHandler
+include/X11/qt6/QtWebEngineCore/QWebEngineWebAuthPinRequest
+include/X11/qt6/QtWebEngineCore/QWebEngineWebAuthUxRequest
 include/X11/qt6/QtWebEngineCore/QtWebEngineCore
 include/X11/qt6/QtWebEngineCore/QtWebEngineCoreDepends
 include/X11/qt6/QtWebEngineCore/QtWebEngineCoreVersion
@@ -124,6 +129,7 @@ include/X11/qt6/QtWebEngineCore/qwebengineclientcertificateselection.h
 include/X11/qt6/QtWebEngineCore/qwebengineclientcertificatestore.h
 include/X11/qt6/QtWebEngineCore/qwebenginecontextmenurequest.h
 include/X11/qt6/QtWebEngineCore/qwebenginecookiestore.h
+include/X11/qt6/QtWebEngineCore/qwebenginedesktopmediarequest.h
 include/X11/qt6/QtWebEngineCore/qwebenginedownloadrequest.h
 include/X11/qt6/QtWebEngineCore/qwebenginefilesystemaccessrequest.h
 include/X11/qt6/QtWebEngineCore/qwebenginefindtextresult.h
@@ -147,10 +153,12 @@ include/X11/qt6/QtWebEngineCore/qwebengineurlrequestinterceptor.h
 include/X11/qt6/QtWebEngineCore/qwebengineurlrequestjob.h
 include/X11/qt6/QtWebEngineCore/qwebengineurlscheme.h
 include/X11/qt6/QtWebEngineCore/qwebengineurlschemehandler.h
+include/X11/qt6/QtWebEngineCore/qwebenginewebauthuxrequest.h
 include/X11/qt6/QtWebEngineQuick/
 include/X11/qt6/QtWebEngineQuick/${VERSION}/
 include/X11/qt6/QtWebEngineQuick/${VERSION}/QtWebEngineQuick/
 include/X11/qt6/QtWebEngineQuick/${VERSION}/QtWebEngineQuick/private/
+include/X11/qt6/QtWebEngineQuick/${VERSION}/QtWebEngineQuick/private/qquickwebengine_accessible_p.h
 include/X11/qt6/QtWebEngineQuick/${VERSION}/QtWebEngineQuick/private/qquickwebengineaction_p.h
 include/X11/qt6/QtWebEngineQuick/${VERSION}/QtWebEngineQuick/private/qquickwebengineaction_p_p.h
 include/X11/qt6/QtWebEngineQuick/${VERSION}/QtWebEngineQuick/private/qquickwebengineclientcertificateselection_p.h
@@ -172,35 +180,32 @@ include/X11/qt6/QtWebEngineQuick/${VERSION}/QtWebEngineQuick/private/qquickweben
 include/X11/qt6/QtWebEngineQuick/${VERSION}/QtWebEngineQuick/private/qquickwebengineview_p_p.h
 include/X11/qt6/QtWebEngineQuick/${VERSION}/QtWebEngineQuick/private/qtwebenginequick-config_p.h
 include/X11/qt6/QtWebEngineQuick/${VERSION}/QtWebEngineQuick/private/qtwebenginequickglobal_p.h
+include/X11/qt6/QtWebEngineQuick/${VERSION}/QtWebEngineQuick/private/render_widget_host_view_qt_delegate_quickwindow_p.h
+include/X11/qt6/QtWebEngineQuick/${VERSION}/QtWebEngineQuick/private/ui_delegates_manager_p.h
 include/X11/qt6/QtWebEngineQuick/QQuickWebEngineProfile
-include/X11/qt6/QtWebEngineQuick/QQuickWebEngineViewAccessible
 include/X11/qt6/QtWebEngineQuick/QtWebEngineQuick
 include/X11/qt6/QtWebEngineQuick/QtWebEngineQuickDepends
 include/X11/qt6/QtWebEngineQuick/QtWebEngineQuickVersion
-include/X11/qt6/QtWebEngineQuick/qquickwebengine_accessible.h
 include/X11/qt6/QtWebEngineQuick/qquickwebengineprofile.h
 include/X11/qt6/QtWebEngineQuick/qtwebenginequick-config.h
 include/X11/qt6/QtWebEngineQuick/qtwebenginequickglobal.h
 include/X11/qt6/QtWebEngineQuick/qtwebenginequickversion.h
-include/X11/qt6/QtWebEngineQuick/render_widget_host_view_qt_delegate_quickwindow.h
-include/X11/qt6/QtWebEngineQuick/ui_delegates_manager.h
 include/X11/qt6/QtWebEngineWidgets/
 include/X11/qt6/QtWebEngineWidgets/${VERSION}/
 include/X11/qt6/QtWebEngineWidgets/${VERSION}/QtWebEngineWidgets/
 include/X11/qt6/QtWebEngineWidgets/${VERSION}/QtWebEngineWidgets/private/
 include/X11/qt6/QtWebEngineWidgets/${VERSION}/QtWebEngineWidgets/private/autofillpopupwidget_p.h
+include/X11/qt6/QtWebEngineWidgets/${VERSION}/QtWebEngineWidgets/private/qwebengine_accessible_p.h
 include/X11/qt6/QtWebEngineWidgets/${VERSION}/QtWebEngineWidgets/private/qwebenginenotificationpresenter_p.h
 include/X11/qt6/QtWebEngineWidgets/${VERSION}/QtWebEngineWidgets/private/qwebengineview_p.h
 include/X11/qt6/QtWebEngineWidgets/${VERSION}/QtWebEngineWidgets/private/touchhandlewidget_p.h
 include/X11/qt6/QtWebEngineWidgets/${VERSION}/QtWebEngineWidgets/private/touchselectionmenuwidget_p.h
 include/X11/qt6/QtWebEngineWidgets/QWebEngineView
-include/X11/qt6/QtWebEngineWidgets/QWebEngineViewAccessible
 include/X11/qt6/QtWebEngineWidgets/QtWebEngineWidgets
 include/X11/qt6/QtWebEngineWidgets/QtWebEngineWidgetsDepends
 include/X11/qt6/QtWebEngineWidgets/QtWebEngineWidgetsVersion
 include/X11/qt6/QtWebEngineWidgets/qtwebenginewidgetsglobal.h
 include/X11/qt6/QtWebEngineWidgets/qtwebenginewidgetsversion.h
-include/X11/qt6/QtWebEngineWidgets/qwebengine_accessible.h
 include/X11/qt6/QtWebEngineWidgets/qwebengineview.h
 lib/cmake/Qt6/FindGPerf.cmake
 lib/cmake/Qt6/FindGn.cmake
@@ -335,6 +340,7 @@ lib/pkgconfig/Qt6WebEngineQuickDelegatesQml.pc
 lib/pkgconfig/Qt6WebEngineWidgets.pc
 @bin lib/qt6/libexec/QtWebEngineProcess
 @bin lib/qt6/libexec/qwebengine_convert_dict
+@bin lib/qt6/libexec/webenginedriver
 lib/qt6/metatypes/qt6pdf_relwithdebinfo_metatypes.json
 lib/qt6/metatypes/qt6pdfquick_relwithdebinfo_metatypes.json
 lib/qt6/metatypes/qt6pdfwidgets_relwithdebinfo_metatypes.json

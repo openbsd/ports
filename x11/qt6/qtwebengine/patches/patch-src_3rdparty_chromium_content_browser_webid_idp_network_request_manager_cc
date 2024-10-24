@@ -1,0 +1,16 @@
+Index: src/3rdparty/chromium/content/browser/webid/idp_network_request_manager.cc
+--- src/3rdparty/chromium/content/browser/webid/idp_network_request_manager.cc.orig
++++ src/3rdparty/chromium/content/browser/webid/idp_network_request_manager.cc
+@@ -606,7 +606,11 @@ void OnTokenRequestParsed(
+     if (response_error) {
+       int error_code = response_error->FindInt(kErrorCodeKey).value_or(0);
+       GURL error_url = ExtractUrl(*response_error, kErrorUrlKey);
+-      token_result.error = TokenError{error_code, error_url};
++#if defined(__clang__) && (__clang_major__ >= 16)
++       token_result.error = TokenError(error_code, error_url);
++#else
++      token_result.error = TokenError(TokenError{error_code, error_url});
++#endif
+     }
+   }
+ 

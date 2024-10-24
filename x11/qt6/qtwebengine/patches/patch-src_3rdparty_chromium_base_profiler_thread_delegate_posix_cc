@@ -19,20 +19,3 @@ Index: src/3rdparty/chromium/base/profiler/thread_delegate_posix.cc
    base_address = thread_token.stack_base_address;
  #else
    base_address =
-@@ -46,6 +46,7 @@ uintptr_t ThreadDelegatePosix::GetStackBaseAddress() c
- 
- std::vector<uintptr_t*> ThreadDelegatePosix::GetRegistersToRewrite(
-     RegisterContext* thread_context) {
-+#if !(BUILDFLAG(IS_BSD))
- #if defined(ARCH_CPU_ARM_FAMILY) && defined(ARCH_CPU_32_BITS)
-   return {
-       reinterpret_cast<uintptr_t*>(&thread_context->arm_r0),
-@@ -100,6 +101,8 @@ std::vector<uintptr_t*> ThreadDelegatePosix::GetRegist
-   };
- #else  // #if defined(ARCH_CPU_ARM_FAMILY) && defined(ARCH_CPU_32_BITS)
-   // Unimplemented for other architectures.
-+  return {};
-+#endif
-   return {};
- #endif
- }

@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/third_party/angle/src/common/vulkan/BUILD.gn
 --- src/3rdparty/chromium/third_party/angle/src/common/vulkan/BUILD.gn.orig
 +++ src/3rdparty/chromium/third_party/angle/src/common/vulkan/BUILD.gn
-@@ -33,7 +33,7 @@ if (angle_enable_vulkan || angle_build_vulkan_system_i
+@@ -41,7 +41,7 @@ if (angle_enable_vulkan || angle_build_vulkan_system_i
      if (angle_shared_libvulkan) {
        defines = [ "ANGLE_SHARED_LIBVULKAN=1" ]
      }

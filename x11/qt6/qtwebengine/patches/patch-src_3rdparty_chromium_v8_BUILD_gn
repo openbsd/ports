@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/v8/BUILD.gn
 --- src/3rdparty/chromium/v8/BUILD.gn.orig
 +++ src/3rdparty/chromium/v8/BUILD.gn
-@@ -1305,6 +1305,14 @@ config("toolchain") {
+@@ -1418,6 +1418,14 @@ config("toolchain") {
    } else if (target_os == "chromeos") {
      defines += [ "V8_HAVE_TARGET_OS" ]
      defines += [ "V8_TARGET_OS_CHROMEOS" ]
@@ -16,20 +16,19 @@ Index: src/3rdparty/chromium/v8/BUILD.gn
    }
  
    # TODO(infra): Support v8_enable_prof on Windows.
-@@ -2215,6 +2223,12 @@ template("run_mksnapshot") {
-       # TODO(crbug.com/v8/13647): Do not fail for invalid profiles
-       # args += [ "--abort-on-bad-builtin-profile-data" ]
-       args += [ "--warn-about-builtin-profile-data" ]
-+
+@@ -2377,6 +2385,11 @@ template("run_mksnapshot") {
+         # list of builtins with incompatible profiles.
+         "--abort-on-bad-builtin-profile-data",
+       ]
 +      if (v8_current_cpu == "x86") {
 +        args -= [
 +          "--abort-on-bad-builtin-profile-data",
 +        ]
 +      }
-     }
  
-     # This is needed to distinguish between generating code for the simulator
-@@ -5777,17 +5791,24 @@ v8_component("v8_libbase") {
+       if (!v8_enable_builtins_profiling && v8_enable_builtins_reordering) {
+         args += [ "--reorder-builtins" ]
+@@ -6173,17 +6186,24 @@ v8_component("v8_libbase") {
      }
    }
  
@@ -48,18 +47,18 @@ Index: src/3rdparty/chromium/v8/BUILD.gn
 +    sources += [
 +      "src/base/debug/stack_trace_posix.cc",
 +      "src/base/platform/platform-openbsd.cc",
-     ]
++     ]
 +    libs = [ "execinfo" ]
 +  } else if (is_freebsd) {
 +    sources += [
 +      "src/base/debug/stack_trace_posix.cc",
 +      "src/base/platform/platform-freebsd.cc",
-+    ]
+     ]
 +    libs = [ "execinfo" ]
    } else if (current_os == "aix") {
      sources += [
        "src/base/debug/stack_trace_posix.cc",
-@@ -5797,10 +5818,6 @@ v8_component("v8_libbase") {
+@@ -6193,10 +6213,6 @@ v8_component("v8_libbase") {
      libs = [ "dl" ]
    } else if (is_android) {
      if (current_toolchain == host_toolchain) {

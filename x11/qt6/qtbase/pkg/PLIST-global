@@ -139,3 +139,4 @@ share/doc/qt6/global/template/style/offline.css
 share/doc/qt6/global/template/style/online.css
 share/doc/qt6/global/template/style/tech_preview.svg
 share/doc/qt6/global/template/style/theqtcompany.png
+share/doc/qt6/global/warninglimit.qdocconf

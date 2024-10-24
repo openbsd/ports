@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/base/process/memory.cc
 --- src/3rdparty/chromium/base/process/memory.cc.orig
 +++ src/3rdparty/chromium/base/process/memory.cc
-@@ -29,7 +29,7 @@ namespace base {
+@@ -28,7 +28,7 @@ namespace base {
  // Defined in memory_mac.mm for macOS + use_partition_alloc_as_malloc=false.
  // In case of use_partition_alloc_as_malloc=true, no need to route the call to
  // the system default calloc of macOS.

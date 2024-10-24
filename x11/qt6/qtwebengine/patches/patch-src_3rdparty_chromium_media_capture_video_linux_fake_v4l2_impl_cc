@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/media/capture/video/linux/fake_v4l2_impl.cc
 --- src/3rdparty/chromium/media/capture/video/linux/fake_v4l2_impl.cc.orig
 +++ src/3rdparty/chromium/media/capture/video/linux/fake_v4l2_impl.cc
-@@ -486,7 +486,7 @@ int FakeV4L2Impl::close(int fd) {
+@@ -560,7 +560,7 @@ int FakeV4L2Impl::close(int fd) {
    return kSuccessReturnValue;
  }
  

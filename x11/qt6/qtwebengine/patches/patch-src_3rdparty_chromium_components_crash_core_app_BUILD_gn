@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/components/crash/core/app/BUILD.gn
 --- src/3rdparty/chromium/components/crash/core/app/BUILD.gn.orig
 +++ src/3rdparty/chromium/components/crash/core/app/BUILD.gn
-@@ -52,7 +52,7 @@ static_library("app") {
+@@ -72,7 +72,7 @@ static_library("app") {
      "crashpad.h",
    ]
  
@@ -10,7 +10,7 @@ Index: src/3rdparty/chromium/components/crash/core/app/BUILD.gn
      sources += [ "crashpad_linux.cc" ]
    }
  
-@@ -65,6 +65,10 @@ static_library("app") {
+@@ -85,6 +85,10 @@ static_library("app") {
      ]
    }
  
@@ -21,7 +21,7 @@ Index: src/3rdparty/chromium/components/crash/core/app/BUILD.gn
    defines = [ "CRASH_IMPLEMENTATION" ]
  
    public_deps = [ ":lib" ]
-@@ -96,7 +100,7 @@ static_library("app") {
+@@ -113,7 +117,7 @@ static_library("app") {
      libs = [ "log" ]
    }
  
@@ -30,7 +30,7 @@ Index: src/3rdparty/chromium/components/crash/core/app/BUILD.gn
      deps += [
        "//base:base_static",
        "//components/crash/core/common",
-@@ -224,11 +228,6 @@ if (is_mac || is_android || is_linux || is_chromeos) {
+@@ -241,11 +245,6 @@ if (is_mac || is_android || is_linux || is_chromeos) {
    # define custom UserStreamDataSources.
    executable("chrome_crashpad_handler") {
      sources = [ "chrome_crashpad_handler.cc" ]

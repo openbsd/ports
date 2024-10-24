@@ -1,0 +1,26 @@
+Index: src/pdf/configure/BUILD.root.gn.in
+--- src/pdf/configure/BUILD.root.gn.in.orig
++++ src/pdf/configure/BUILD.root.gn.in
+@@ -14,14 +14,14 @@ config("qt_harfbuzz_config") {
+     ]
+     include_dirs = [ @GN_HARFBUZZ_INCLUDES@ ]
+ }
+-config("qt_freetype_config") {
+-     visibility = [
+-       "//build/config/freetype:freetype",
+-       "//third_party:freetype_harfbuzz",
+-       "//third_party/harfbuzz-ng:harfbuzz_source",
+-     ]
+-     include_dirs = [ @GN_FREETYPE_INCLUDES@ ]
+-}
++#config("qt_freetype_config") {
++#     visibility = [
++#       "//build/config/freetype:freetype",
++#       "//third_party:freetype_harfbuzz",
++#       "//third_party/harfbuzz-ng:harfbuzz_source",
++#     ]
++#     include_dirs = [ @GN_FREETYPE_INCLUDES@ ]
++#}
+ 
+ config("QtPdf_config") {
+   cflags = [

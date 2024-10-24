@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/chrome/common/webui_url_constants.cc
 --- src/3rdparty/chromium/chrome/common/webui_url_constants.cc.orig
 +++ src/3rdparty/chromium/chrome/common/webui_url_constants.cc
-@@ -514,18 +514,18 @@ const char kOsUIShortcutCustomizationAppURL[] = "os://
+@@ -503,18 +503,18 @@ const char kOsUIShortcutCustomizationAppURL[] = "os://
  const char kOsUIVersionURL[] = "os://version";
  #endif
  
@@ -23,7 +23,7 @@ Index: src/3rdparty/chromium/chrome/common/webui_url_constants.cc
  const char kChromeUIDiscardsHost[] = "discards";
  const char kChromeUIDiscardsURL[] = "chrome://discards/";
  #endif
-@@ -540,14 +540,14 @@ const char kChromeUILinuxProxyConfigHost[] = "linux-pr
+@@ -529,14 +529,14 @@ const char kChromeUILinuxProxyConfigHost[] = "linux-pr
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || \
@@ -40,7 +40,7 @@ Index: src/3rdparty/chromium/chrome/common/webui_url_constants.cc
  const char kChromeUIBrowserSwitchHost[] = "browser-switch";
  const char kChromeUIBrowserSwitchURL[] = "chrome://browser-switch/";
  const char kChromeUIEnterpriseProfileWelcomeHost[] =
-@@ -564,7 +564,7 @@ const char kChromeUIProfilePickerUrl[] = "chrome://pro
+@@ -555,7 +555,7 @@ const char kChromeUIProfilePickerUrl[] = "chrome://pro
  const char kChromeUIProfilePickerStartupQuery[] = "startup";
  #endif
  
@@ -49,7 +49,7 @@ Index: src/3rdparty/chromium/chrome/common/webui_url_constants.cc
       defined(TOOLKIT_VIEWS)) ||                         \
      defined(USE_AURA)
  const char kChromeUITabModalConfirmDialogHost[] = "tab-modal-confirm-dialog";
-@@ -644,7 +644,7 @@ const char kPrivacySandboxSubPagePath[] = "/privacySan
+@@ -637,7 +637,7 @@ const char kPrivacySandboxSubPagePath[] = "/privacySan
  #endif
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -58,7 +58,7 @@ Index: src/3rdparty/chromium/chrome/common/webui_url_constants.cc
  const char kChromeUIWebAppSettingsURL[] = "chrome://app-settings/";
  const char kChromeUIWebAppSettingsHost[] = "app-settings";
  #endif
-@@ -880,7 +880,7 @@ const char* const kChromeDebugURLs[] = {
+@@ -888,7 +888,7 @@ const char* const kChromeDebugURLs[] = {
      blink::kChromeUIGpuJavaCrashURL,
      kChromeUIJavaCrashURL,
  #endif

@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/content/public/common/BUILD.gn
 --- src/3rdparty/chromium/content/public/common/BUILD.gn.orig
 +++ src/3rdparty/chromium/content/public/common/BUILD.gn
-@@ -317,7 +317,7 @@ jumbo_source_set("common_sources") {
+@@ -318,7 +318,7 @@ jumbo_source_set("common_sources") {
      ]
    }
  

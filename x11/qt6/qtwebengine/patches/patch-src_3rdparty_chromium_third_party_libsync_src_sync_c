@@ -1,17 +1,17 @@
 Index: src/3rdparty/chromium/third_party/libsync/src/sync.c
 --- src/3rdparty/chromium/third_party/libsync/src/sync.c.orig
 +++ src/3rdparty/chromium/third_party/libsync/src/sync.c
-@@ -17,7 +17,9 @@
+@@ -17,8 +17,8 @@
   */
  
  #include <fcntl.h>
-+#if !defined(__OpenBSD__)
- #include <malloc.h>
-+#endif
+-#include <malloc.h>
  #include <stdint.h>
++#include <stdlib.h>
  #include <string.h>
  #include <errno.h>
-@@ -29,6 +31,12 @@
+ #include <poll.h>
+@@ -29,6 +29,12 @@
  
  #include <sync/sync.h>
  
@@ -24,21 +24,3 @@ Index: src/3rdparty/chromium/third_party/libsync/src/sync.c
  
  struct sw_sync_create_fence_data {
    __u32 value;
-@@ -106,7 +114,7 @@ struct sync_fence_info_data *sync_fence_info(int fd)
-     struct sync_fence_info *fence_info;
-     int err, num_fences, i;
- 
--    legacy_info = malloc(4096);
-+    legacy_info = (struct sync_fence_info_data *)malloc(4096);
-     if (legacy_info == NULL)
-         return NULL;
- 
-@@ -119,7 +127,7 @@ struct sync_fence_info_data *sync_fence_info(int fd)
-         return legacy_info;
-     }
- 
--    info = calloc(1, sizeof(*info));
-+    info = (struct sync_file_info*)calloc(1, sizeof(*info));
-     if (info == NULL)
-         goto free;
- 

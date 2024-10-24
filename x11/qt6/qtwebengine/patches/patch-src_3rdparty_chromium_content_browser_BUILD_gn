@@ -1,8 +1,8 @@
 Index: src/3rdparty/chromium/content/browser/BUILD.gn
 --- src/3rdparty/chromium/content/browser/BUILD.gn.orig
 +++ src/3rdparty/chromium/content/browser/BUILD.gn
-@@ -2360,6 +2360,13 @@ jumbo_source_set("browser") {
-     ]
+@@ -2467,6 +2467,13 @@ jumbo_source_set("browser") {
+     deps += [ "//media/mojo/mojom/stable:stable_video_decoder" ]
    }
  
 +  if (is_bsd) {

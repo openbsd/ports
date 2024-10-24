@@ -5,13 +5,13 @@ Index: src/pdf/CMakeLists.txt
  #   TOOLCHAIN SETUP
  ##
  
--if(LINUX OR MINGW)
-+if(UNIX OR MINGW)
+-if(LINUX OR MINGW OR ANDROID)
++if(UNIX OR MINGW OR ANDROID)
      setup_toolchains()
  endif()
  
-@@ -134,7 +134,7 @@ foreach(arch ${archs})
-           strip_absolute_paths_from_debug_symbols=false
+@@ -138,7 +138,7 @@ foreach(arch ${archs})
+           v8_enable_webassembly=false
          )
  
 -        if(LINUX OR ANDROID)

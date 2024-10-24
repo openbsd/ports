@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/chrome/common/chrome_switches.h
 --- src/3rdparty/chromium/chrome/common/chrome_switches.h.orig
 +++ src/3rdparty/chromium/chrome/common/chrome_switches.h
-@@ -266,12 +266,12 @@ extern const char kAllowNaClSocketAPI[];
+@@ -269,12 +269,12 @@ extern const char kAllowNaClSocketAPI[];
  #endif
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC) || \
@@ -15,4 +15,4 @@ Index: src/3rdparty/chromium/chrome/common/chrome_switches.h
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
  extern const char kListApps[];
  extern const char kProfileBaseName[];
- #endif
+ extern const char kProfileManagementAttributes[];

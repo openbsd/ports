@@ -31,10 +31,10 @@ Index: src/3rdparty/chromium/third_party/libxml/src/dict.c
 +#  ifdef HAVE_RAND_R
      ret = rand_r(& rand_seed);
 -#else
-+#   else
++#  else
      ret = rand();
 -#endif
-+#   endif
++#  endif
      xmlMutexUnlock(&xmlDictMutex);
 +#endif
      return(ret);

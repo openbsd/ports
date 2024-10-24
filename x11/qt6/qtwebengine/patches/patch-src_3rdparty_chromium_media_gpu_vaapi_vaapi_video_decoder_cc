@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/media/gpu/vaapi/vaapi_video_decoder.cc
 --- src/3rdparty/chromium/media/gpu/vaapi/vaapi_video_decoder.cc.orig
 +++ src/3rdparty/chromium/media/gpu/vaapi/vaapi_video_decoder.cc
-@@ -772,7 +772,7 @@ void VaapiVideoDecoder::ApplyResolutionChangeWithScree
+@@ -782,7 +782,7 @@ void VaapiVideoDecoder::ApplyResolutionChangeWithScree
    const gfx::Size decoder_natural_size =
        aspect_ratio_.GetNaturalSize(decoder_visible_rect);
  

@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/third_party/skia/src/opts/SkRasterPipeline_opts.h
 --- src/3rdparty/chromium/third_party/skia/src/opts/SkRasterPipeline_opts.h.orig
 +++ src/3rdparty/chromium/third_party/skia/src/opts/SkRasterPipeline_opts.h
-@@ -1051,7 +1051,7 @@ SI F approx_powf(F x, F y) {
+@@ -1095,7 +1095,7 @@ SI F approx_powf(F x, F y) {
  SI F from_half(U16 h) {
  #if defined(JUMPER_IS_NEON) && defined(SK_CPU_ARM64) \
      && !defined(SK_BUILD_FOR_GOOGLE3)  // Temporary workaround for some Google3 builds.
@@ -10,7 +10,7 @@ Index: src/3rdparty/chromium/third_party/skia/src/opts/SkRasterPipeline_opts.h
      return vcvt_f32_f16(h);
  #else
      __fp16 fp16;
-@@ -1077,7 +1077,7 @@ SI F from_half(U16 h) {
+@@ -1122,7 +1122,7 @@ SI F from_half(U16 h) {
  SI U16 to_half(F f) {
  #if defined(JUMPER_IS_NEON) && defined(SK_CPU_ARM64) \
      && !defined(SK_BUILD_FOR_GOOGLE3)  // Temporary workaround for some Google3 builds.

@@ -1,15 +1,16 @@
 QT6NAME =	QtgRPC
 COMMENT =	gRPC support for Qt6
 PKGSPEC =	qt6-qtgrpc-${QT6_PKGSPEC}
-REVISION =	0
 
-SHARED_LIBS +=  Qt6Grpc                   1.0 # 0.0
-SHARED_LIBS +=  Qt6Protobuf               0.1 # 0.0
-SHARED_LIBS +=  Qt6ProtobufQtCoreTypes    0.0 # 0.0
-SHARED_LIBS +=  Qt6ProtobufQtGuiTypes     0.0 # 0.0
-SHARED_LIBS +=  Qt6ProtobufWellKnownTypes 0.0 # 0.0
+SHARED_LIBS +=  Qt6Grpc                   2.0 # 0.0
+SHARED_LIBS +=  Qt6Protobuf               1.0 # 0.0
+SHARED_LIBS +=  Qt6ProtobufQtCoreTypes    1.0 # 0.0
+SHARED_LIBS +=  Qt6ProtobufQtGuiTypes     1.0 # 0.0
+SHARED_LIBS +=  Qt6ProtobufWellKnownTypes 1.0 # 0.0
+SHARED_LIBS +=	Qt6GrpcQuick              0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network absl_bad_optional_access
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6OpenGL
+WANTLIB += Qt6Qml Qt6QmlModels Qt6QmlNetwork Qt6Quick absl_bad_optional_access
 WANTLIB += absl_bad_variant_access absl_base absl_city absl_civil_time
 WANTLIB += absl_cord absl_cord_internal absl_cordz_functions absl_cordz_handle
 WANTLIB += absl_cordz_info absl_crc32c absl_crc_cord_state absl_crc_cpu_detect
@@ -41,6 +42,7 @@ WANTLIB += absl_vlog_config_internal c m protobuf protoc
 BUILD_DEPENDS =	graphics/glslang
 
 LIB_DEPENDS =	devel/abseil-cpp \
+		x11/qt6/qtdeclarative \
 		devel/protobuf
 
 .include <bsd.port.mk>

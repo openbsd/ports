@@ -10,7 +10,7 @@ Index: src/3rdparty/chromium/sandbox/policy/BUILD.gn
      sources += [
        "linux/bpf_audio_policy_linux.cc",
        "linux/bpf_audio_policy_linux.h",
-@@ -103,6 +103,27 @@ component("policy") {
+@@ -106,6 +106,27 @@ component("policy") {
        "//sandbox/linux:sandbox_services",
        "//sandbox/linux:seccomp_bpf",
        "//sandbox/linux:suid_sandbox_client",

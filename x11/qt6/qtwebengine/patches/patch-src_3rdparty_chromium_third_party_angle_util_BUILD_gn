@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/third_party/angle/util/BUILD.gn
 --- src/3rdparty/chromium/third_party/angle/util/BUILD.gn.orig
 +++ src/3rdparty/chromium/third_party/angle/util/BUILD.gn
-@@ -292,7 +292,7 @@ foreach(is_shared_library,
+@@ -311,7 +311,7 @@ foreach(is_shared_library,
      ]
      libs = []
  
