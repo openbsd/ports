@@ -2,7 +2,7 @@ COMMENT=	Python bindings for Qt6
 
 DPB_PROPERTIES=	parallel
 
-MODPY_EGG_VERSION= 6.6.1
+MODPY_EGG_VERSION= 6.7.1
 DISTNAME=	PyQt6-${MODPY_EGG_VERSION}
 PKGNAME=	py-qt6-${MODPY_EGG_VERSION}
 
@@ -28,11 +28,12 @@ FLAVORS=	python3
 FLAVOR=		python3
 
 BUILD_DEPENDS=	devel/py-qt-builder${MODPY_FLAVOR} \
+		x11/py-sip-qt6${MODPY_FLAVOR}>=13.8 \
 		x11/dbus-python${MODPY_FLAVOR} \
 		graphics/vulkan-loader
 
 RUN_DEPENDS=	devel/py-sip${MODPY_FLAVOR}>=5.5.0v0 \
-		x11/py-sip-qt6${MODPY_FLAVOR}>=13.6 \
+		x11/py-sip-qt6${MODPY_FLAVOR}>=13.8 \
 		devel/py-ply${MODPY_FLAVOR} \
 		x11/dbus-python${MODPY_FLAVOR}
 

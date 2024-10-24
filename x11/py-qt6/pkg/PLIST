@@ -153,6 +153,7 @@ lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtCore/qpycore_qhash.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtCore/qpycore_qlist.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtCore/qpycore_qmap.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtCore/qpycore_qset.sip
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtCore/qpycore_std_optional.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtCore/qpycore_std_pair.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtCore/qpycore_virtual_error_handler.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtCore/qrandom.sip
@@ -194,6 +195,7 @@ lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtCore/qtipccommon.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtCore/qtranslator.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtCore/qtransposeproxymodel.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtCore/qtversion.sip
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtCore/qtyperevision.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtCore/qtypes.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtCore/qurl.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtCore/qurlquery.sip
@@ -204,6 +206,7 @@ lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtCore/qversionnumber.si
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtCore/qwaitcondition.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtCore/qwineventnotifier.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtCore/qxmlstream.sip
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtCore/qyieldcpu.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtDBus/
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtDBus/QtDBus.toml
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtDBus/QtDBusmod.sip
@@ -382,6 +385,7 @@ lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtMultimedia/qmediatimer
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtMultimedia/qpymultimedia_qlist.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtMultimedia/qscreencapture.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtMultimedia/qsoundeffect.sip
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtMultimedia/qtvideo.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtMultimedia/qvideoframe.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtMultimedia/qvideoframeformat.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtMultimedia/qvideosink.sip
@@ -403,6 +407,7 @@ lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qhostinfo.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qhstspolicy.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qhttp1configuration.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qhttp2configuration.sip
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qhttpheaders.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qhttpmultipart.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qlocalserver.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qlocalsocket.sip
@@ -578,6 +583,7 @@ lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtQuick/qsgrendererinter
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtQuick/qsgrendernode.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtQuick/qsgsimplerectnode.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtQuick/qsgsimpletexturenode.sip
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtQuick/qsgtextnode.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtQuick/qsgtexture.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtQuick/qsgtexture_platform.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtQuick/qsgtexturematerial.sip
@@ -657,6 +663,7 @@ lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtSvg/QtSvg.toml
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtSvg/QtSvgmod.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtSvg/qsvggenerator.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtSvg/qsvgrenderer.sip
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtSvg/qtsvgglobal.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtSvgWidgets/
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtSvgWidgets/QtSvgWidgets.toml
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtSvgWidgets/QtSvgWidgetsmod.sip
@@ -848,6 +855,7 @@ lib/python${MODPY_VERSION}/site-packages/PyQt6/uic/widget-plugins/
 lib/python${MODPY_VERSION}/site-packages/PyQt6/uic/widget-plugins/qaxcontainer.py
 lib/python${MODPY_VERSION}/site-packages/PyQt6/uic/widget-plugins/qscintilla.py
 lib/python${MODPY_VERSION}/site-packages/PyQt6/uic/widget-plugins/qtcharts.py
+lib/python${MODPY_VERSION}/site-packages/PyQt6/uic/widget-plugins/qtopenglwidgets.py
 lib/python${MODPY_VERSION}/site-packages/PyQt6/uic/widget-plugins/qtprintsupport.py
 lib/python${MODPY_VERSION}/site-packages/PyQt6/uic/widget-plugins/qtquickwidgets.py
 lib/python${MODPY_VERSION}/site-packages/PyQt6/uic/widget-plugins/qtwebenginewidgets.py
