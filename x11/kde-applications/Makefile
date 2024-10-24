@@ -170,7 +170,6 @@
      SUBDIR += kleopatra
      SUBDIR += kmail
      SUBDIR += kmail-account-wizard
-     #SUBDIR += knotes # dropped in 24.08
      SUBDIR += kontact
      SUBDIR += korganizer
      SUBDIR += kpimtextedit
@@ -198,7 +197,6 @@
      SUBDIR += kdebugsettings
      SUBDIR += kdf
      SUBDIR += kgpg
-     #SUBDIR += kipi-plugins # dropped in 24.08
      SUBDIR += kteatime
      SUBDIR += ktimer
      SUBDIR += kwalletmanager
@@ -257,7 +255,6 @@
      SUBDIR += libkdegames
      SUBDIR += libkdepim
      SUBDIR += libkeduvocdocument
-     #SUBDIR += libkipi # dropped in 24.08
      SUBDIR += libkleo
      SUBDIR += libkmahjongg
      SUBDIR += libkomparediff2
