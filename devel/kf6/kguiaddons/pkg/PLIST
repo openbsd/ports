@@ -16,6 +16,7 @@ include/KF6/KGuiAddons/KJobWindows
 include/KF6/KGuiAddons/KKeySequenceRecorder
 include/KF6/KGuiAddons/KModifierKeyInfo
 include/KF6/KGuiAddons/KSystemClipboard
+include/KF6/KGuiAddons/KWindowInsetsController
 include/KF6/KGuiAddons/KWordWrap
 include/KF6/KGuiAddons/kcolorcollection.h
 include/KF6/KGuiAddons/kcolormimedata.h
@@ -35,6 +36,7 @@ include/KF6/KGuiAddons/klocalimagecacheimpl.h
 include/KF6/KGuiAddons/kmodifierkeyinfo.h
 include/KF6/KGuiAddons/kmodifierkeyinfoprovider_p.h
 include/KF6/KGuiAddons/ksystemclipboard.h
+include/KF6/KGuiAddons/kwindowinsetscontroller.h
 include/KF6/KGuiAddons/kwordwrap.h
 lib/cmake/KF6GuiAddons/
 lib/cmake/KF6GuiAddons/KF6GuiAddonsConfig.cmake
@@ -43,6 +45,13 @@ lib/cmake/KF6GuiAddons/KF6GuiAddonsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF6GuiAddons/KF6GuiAddonsTargets.cmake
 @lib lib/libKF6GuiAddons.so.${LIBKF6GuiAddons_VERSION}
 lib/pkgconfig/KF6GuiAddons.pc
+lib/qt6/qml/org/
+lib/qt6/qml/org/kde/
+lib/qt6/qml/org/kde/guiaddons/
+lib/qt6/qml/org/kde/guiaddons/kde-qmlmodule.version
+lib/qt6/qml/org/kde/guiaddons/kguiaddonsqml.qmltypes
+@so lib/qt6/qml/org/kde/guiaddons/libkguiaddonsqml.so
+lib/qt6/qml/org/kde/guiaddons/qmldir
 share/applications/google-maps-geo-handler.desktop
 share/applications/openstreetmap-geo-handler.desktop
 share/applications/qwant-maps-geo-handler.desktop

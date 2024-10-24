@@ -8,10 +8,10 @@ WANTLIB += KF6ColorScheme KF6Completion KF6ConfigCore KF6ConfigGui
 WANTLIB += KF6ConfigWidgets KF6CoreAddons KF6GuiAddons KF6I18n
 WANTLIB += KF6ItemViews KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets
 WANTLIB += KF6Parts KF6Service KF6Solid KF6SonnetCore KF6SonnetUi
-WANTLIB += KF6SyntaxHighlighting KF6TextWidgets KF6WidgetsAddons
-WANTLIB += KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Multimedia Qt6Network
-WANTLIB += Qt6PrintSupport Qt6Qml Qt6TextToSpeech Qt6Widgets Qt6Xml
-WANTLIB += c editorconfig m
+WANTLIB += KF6SyntaxHighlighting KF6WidgetsAddons KF6XmlGui Qt6Core
+WANTLIB += Qt6DBus Qt6Gui Qt6Multimedia Qt6Network Qt6PrintSupport
+WANTLIB += Qt6Qml Qt6TextToSpeech Qt6Widgets Qt6Xml c editorconfig
+WANTLIB += m
 
 BUILD_DEPENDS =	archivers/gtar \
 		devel/gettext,-tools

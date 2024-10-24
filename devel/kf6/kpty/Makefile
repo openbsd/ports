@@ -16,4 +16,3 @@ CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_UTEMPTER=ON
 # TODO test stalls
 
 .include <bsd.port.mk>
-LIB_DEPENDS += devel/libtalloc telephony/pjsua
