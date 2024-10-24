@@ -1,7 +1,7 @@
 QT5NAME =		QtMultimedia
 COMMENT-main =		Qt5 multimedia components
 
-KDE_COMMIT =		7514352532f41d9f0f8b8d722e360b1854442731
+KDE_COMMIT =		85fe63b98703ced6c5568c52af77b50e6ddf1edc
 KDE_VERSION =		2
 
 MULTI_PACKAGES =	-main -examples
@@ -10,7 +10,7 @@ SHARED_LIBS +=  Qt5Multimedia             3.0 # 5.9
 SHARED_LIBS +=  Qt5MultimediaWidgets      3.0 # 5.9
 SHARED_LIBS +=  Qt5MultimediaGstTools     0.0 # 5.13
 SHARED_LIBS +=  Qt5MultimediaQuick        0.0 # 5.13
-
+WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB-main += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui Qt5Network Qt5Qml
 WANTLIB-main += Qt5QmlModels Qt5Quick Qt5Widgets drm glib-2.0 gobject-2.0
 WANTLIB-main += gstallocators-1.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0

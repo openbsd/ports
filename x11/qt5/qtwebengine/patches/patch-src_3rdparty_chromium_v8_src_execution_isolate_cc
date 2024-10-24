@@ -12,7 +12,7 @@ Index: src/3rdparty/chromium/v8/src/execution/isolate.cc
  #ifdef V8_ENABLE_CONSERVATIVE_STACK_SCANNING
  #include "src/heap/conservative-stack-visitor.h"
  #endif
-@@ -3323,6 +3327,11 @@ void Isolate::InitializeDefaultEmbeddedBlob() {
+@@ -3335,6 +3339,11 @@ void Isolate::InitializeDefaultEmbeddedBlob() {
        current_embedded_blob_refs_++;
      }
    }

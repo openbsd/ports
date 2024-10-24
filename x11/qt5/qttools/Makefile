@@ -2,8 +2,8 @@ QT5NAME =		QtTools
 
 COMMENT-main =		Qt development tools
 
-KDE_COMMIT =		ba4c633c4a4731ead0c376b908bf5449796f7de1
-KDE_VERSION =		4
+KDE_COMMIT =		0378d3e541f40bc9c5433eac70d3949ddff9cfc4
+KDE_VERSION =		3
 
 DPB_PROPERTIES =	parallel
 

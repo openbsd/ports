@@ -29,12 +29,14 @@ Index: src/3rdparty/gn/build/gen.py
      elif platform.is_darwin():
        min_mac_version_flag = '-mmacosx-version-min=10.9'
        cflags.append(min_mac_version_flag)
-@@ -376,6 +379,9 @@ def WriteGNNinja(path, platform, host, options):
+@@ -376,6 +379,11 @@ def WriteGNNinja(path, platform, host, options):
  
      if platform.is_posix():
        ldflags.append('-pthread')
 +
 +    if platform.is_openbsd():
++      cflags.extend(['-Wno-deprecated-register', '-Wno-parentheses-equality'])
++      ldflags.append('-pthread')
 +      ldflags.append('-lkvm')
  
      if options.use_lto:

@@ -1,33 +1,17 @@
 Index: src/buildtools/config/linking.pri
 --- src/buildtools/config/linking.pri.orig
 +++ src/buildtools/config/linking.pri
-@@ -1,6 +1,10 @@
- include($$QTWEBENGINE_OUT_ROOT/src/buildtools/qtbuildtools-config.pri)
- QT_FOR_CONFIG += buildtools-private
+@@ -3,6 +3,9 @@ QT_FOR_CONFIG += buildtools-private
+ 
+ linking_pri = $$OUT_PWD/$$getConfigDir()/$${TARGET}.pri
  
 +# Do not pass --no-undefined to the linker because of environ(7) usage.
 +openbsd: QMAKE_LFLAGS_NOUNDEF =
 +
-+
- linking_pri = $$OUT_PWD/$$getConfigDir()/$${TARGET}.pri
- 
  !include($$linking_pri) {
-@@ -10,10 +14,10 @@ linking_pri = $$OUT_PWD/$$getConfigDir()/$${TARGET}.pr
- # Do not precompile any headers. We are only interested in the linker step.
- PRECOMPILED_HEADER =
- 
--isEmpty(NINJA_OBJECTS): error("Missing object files from linking pri.")
--isEmpty(NINJA_LFLAGS): error("Missing linker flags from linking pri")
--isEmpty(NINJA_ARCHIVES): error("Missing archive files from linking pri")
--isEmpty(NINJA_LIBS): error("Missing library files from linking pri")
-+#isEmpty(NINJA_OBJECTS): error("Missing object files from linking pri.")
-+#isEmpty(NINJA_LFLAGS): error("Missing linker flags from linking pri")
-+#isEmpty(NINJA_ARCHIVES): error("Missing archive files from linking pri")
-+#isEmpty(NINJA_LIBS): error("Missing library files from linking pri")
- NINJA_OBJECTS = $$eval($$list($$NINJA_OBJECTS))
- # Do manual response file linking for macOS and Linux
- 
-@@ -34,7 +38,7 @@ if(macos|ios) {
+     error("Could not find the linking information that gn should have generated.")
+ }
+@@ -34,7 +37,7 @@ if(macos|ios) {
      }
  }
  
@@ -36,7 +20,13 @@ Index: src/buildtools/config/linking.pri
      !static {
          QMAKE_LFLAGS += @$${RSP_OBJECT_FILE}
          QMAKE_LFLAGS += -Wl,--start-group @$${RSP_ARCHIVE_FILE} -Wl,--end-group
-@@ -60,7 +64,7 @@ LIBS_PRIVATE += $$NINJA_LIB_DIRS $$NINJA_LIBS
+@@ -55,12 +58,12 @@ win32 {
+ }
+ 
+ LIBS_PRIVATE += $$NINJA_LIB_DIRS $$NINJA_LIBS
+-# GN's LFLAGS doesn't always work across all the Linux configurations we support.
++# GN's LFLAGS doesn't always work across all the unix configurations we support.
+ # The Windows and macOS ones from GN does provide a few useful flags however
  
  unix:qtConfig(webengine-noexecstack): \
      QMAKE_LFLAGS += -Wl,-z,noexecstack

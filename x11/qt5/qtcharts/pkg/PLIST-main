@@ -280,6 +280,8 @@ lib/pkgconfig/Qt5Charts.pc
 lib/qt5/cmake/Qt5Charts/
 lib/qt5/cmake/Qt5Charts/Qt5ChartsConfig.cmake
 lib/qt5/cmake/Qt5Charts/Qt5ChartsConfigVersion.cmake
+lib/qt5/examples/charts/audio/apple/
+lib/qt5/examples/charts/audio/apple/Info.qmake.plist
 lib/qt5/libQt5Charts.la
 lib/qt5/libQt5Charts.prl
 @lib lib/qt5/libQt5Charts.so.${LIBQt5Charts_VERSION}

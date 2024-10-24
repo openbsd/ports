@@ -1,8 +1,8 @@
 QT5NAME =		QtImageFormats
 COMMENT =		support for additional image formats in Qt5
 
-KDE_COMMIT =		63ec444cc7b30c45d4c8beb2c1071a1157d689eb
-KDE_VERSION =		7
+KDE_COMMIT =		9f658c2093e81d1dc3333e594cc1aa4b0990e221
+KDE_VERSION =		4
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt5Core Qt5Gui jasper m mng tiff
 WANTLIB += webp webpdemux webpmux

@@ -14,7 +14,7 @@ PKGNAME =		qtwebkit-${VERSION}
 PKGSPEC =		qtwebkit->=${VERSION}v0
 
 EPOCH =			0
-REVISION =		12
+REVISION =		13
 
 SHARED_LIBS +=  Qt5WebKit               3.1 # 5.9
 SHARED_LIBS +=  Qt5WebKitWidgets        3.1 # 5.9
@@ -49,7 +49,7 @@ MODULES =		devel/cmake \
 CONFIGURE_STYLE =	cmake
 
 # Remove default "first" target and build all
-ALL_TARGET =		
+ALL_TARGET =
 
 MODPY_RUNDEP =		No
 MODRUBY_RUNDEP =	No

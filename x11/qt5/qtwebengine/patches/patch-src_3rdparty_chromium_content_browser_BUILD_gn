@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/content/browser/BUILD.gn
 --- src/3rdparty/chromium/content/browser/BUILD.gn.orig
 +++ src/3rdparty/chromium/content/browser/BUILD.gn
-@@ -2169,7 +2169,6 @@ jumbo_static_library("browser") {
+@@ -2170,7 +2170,6 @@ jumbo_static_library("browser") {
    if (!is_android) {
      deps += [
        "//components/vector_icons",
@@ -9,7 +9,7 @@ Index: src/3rdparty/chromium/content/browser/BUILD.gn
      ]
    }
  
-@@ -2802,7 +2801,6 @@ jumbo_static_library("browser") {
+@@ -2803,7 +2802,6 @@ jumbo_static_library("browser") {
      ]
      deps += [
        "//components/speech",

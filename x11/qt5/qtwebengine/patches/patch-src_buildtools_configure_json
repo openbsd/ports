@@ -1,113 +1,56 @@
 Index: src/buildtools/configure.json
 --- src/buildtools/configure.json.orig
 +++ src/buildtools/configure.json
-@@ -122,6 +122,7 @@
-         },
-         "webengine-minizip": {
-             "label": "minizip",
-+            "autoDetect": "false",
-             "sources": [
-                 { "type": "pkgConfig", "args": "minizip" }
-             ]
-@@ -316,9 +317,9 @@
-             "label": "system ninja",
-             "type": "detectNinja"
-         },
--        "webengine-python2": {
--            "label": "python2",
--            "type": "detectPython2",
-+        "webengine-python": {
-+            "label": "python",
-+            "type": "detectPython",
-             "log": "location"
-         },
-         "webengine-winversion": {
-@@ -385,47 +386,12 @@
+@@ -386,7 +386,7 @@
      "features": {
          "webengine-core-support": {
              "label": "Support Qt WebEngine Core",
 -            "condition": "(config.linux || config.win32 || config.macos)
--                         && !config.static
--                         && module.gui
--                         && features.webengine-submodule
--                         && features.webengine-nowhitespace
--                         && !features.webengine-no-platform-support
--                         && features.webengine-arch-support
--                         && features.webengine-gperf
--                         && features.webengine-bison
--                         && features.webengine-flex
--                         && features.webengine-python2
--                         && features.webengine-nodejs
--                         && (!config.sanitizer || features.webengine-sanitizer)
++            "condition": "(config.unix || config.win32 || config.macos)
+                          && !config.static
+                          && module.gui
+                          && features.webengine-submodule
+@@ -399,21 +399,21 @@
+                          && features.webengine-python
+                          && features.webengine-nodejs
+                          && (!config.sanitizer || features.webengine-sanitizer)
 -                         && (!config.linux || features.pkg-config)
 -                         && (!config.linux || features.webengine-host-pkg-config)
--                         && (!config.linux || features.webengine-system-glibc)
--                         && (!config.linux || features.webengine-system-khr)
++                         && (!config.unix || features.pkg-config)
++                         && (!config.unix || features.webengine-host-pkg-config)
+                          && (!config.linux || features.webengine-system-glibc)
+                          && (!config.linux || features.webengine-system-khr)
 -                         && (!config.linux || features.webengine-system-nss)
 -                         && (!config.linux || features.webengine-system-dbus)
 -                         && (!config.linux || features.webengine-system-fontconfig)
 -                         && (!config.linux || !features.pkg-config || !features.xcb || features.webengine-ozone-x11)
--                         && (!config.win32 || features.webengine-win-compiler64)
--                         && (!config.win32 || features.webengine-winversion)",
-+            "condition": "(config.unix || config.win32 || config.macos)",
++                         && (!config.unix || features.webengine-system-nss)
++                         && (!config.unix || features.webengine-system-dbus)
++                         && (!config.unix || features.webengine-system-fontconfig)
++                         && (!config.unix || !features.pkg-config || !features.xcb || features.webengine-ozone-x11)
+                          && (!config.win32 || features.webengine-win-compiler64)
+                          && (!config.win32 || features.webengine-winversion)",
              "output": [ "privateFeature" ]
          },
          "webengine-qtpdf-support": {
              "label": "Support Qt Pdf",
 -            "condition": "(config.linux || config.win32 || config.macos || config.ios)
--                         && module.gui
--                         && features.webengine-submodule
--                         && features.webengine-nowhitespace
--                         && !features.webengine-no-platform-support
--                         && features.webengine-arch-support
--                         && features.webengine-gperf
--                         && features.webengine-bison
--                         && features.webengine-flex
--                         && features.webengine-python2
--                         && (!config.sanitizer || features.webengine-sanitizer)
++            "condition": "(config.liunx || config.win32 || config.macos || config.ios)
+                          && module.gui
+                          && features.webengine-submodule
+                          && features.webengine-nowhitespace
+@@ -424,8 +424,8 @@
+                          && features.webengine-flex
+                          && features.webengine-python
+                          && (!config.sanitizer || features.webengine-sanitizer)
 -                         && (!config.linux || features.pkg-config)
 -                         && (!config.linux || features.webengine-host-pkg-config)
--                         && (!config.win32 || features.webengine-winversion)",
-+            "condition": "(config.win32 || config.macos || config.ios)",
++                         && (!config.unix || features.pkg-config)
++                         && (!config.unix || features.webengine-host-pkg-config)
+                          && (!config.win32 || features.webengine-winversion)",
              "output": [ "privateFeature" ]
          },
-         "build-qtwebengine-core": {
-@@ -444,12 +410,12 @@
-             "autoDetect": "features.private_tests",
-             "output": [ "privateFeature" ]
-         },
--        "webengine-python2": {
--            "label": "python2",
--            "condition": "tests.webengine-python2",
-+        "webengine-python": {
-+            "label": "python",
-+            "condition": "tests.webengine-python",
-             "output": [
-                 "privateFeature",
--                { "type": "varAssign", "name": "QMAKE_PYTHON2", "value": "tests.webengine-python2.location" }
-+                { "type": "varAssign", "name": "QMAKE_PYTHON", "value": "tests.webengine-python.location" }
-             ]
-         },
-         "webengine-gperf": {
-@@ -540,7 +506,7 @@
-         },
-         "webengine-system-glibc": {
-             "label": "glibc",
--            "condition": "config.linux && tests.webengine-glibc",
-+            "condition": "config.unix && tests.webengine-glibc",
-             "output": [ "privateFeature" ]
-         },
-         "webengine-system-x11" : {
-@@ -660,7 +626,7 @@
-         },
-         "webengine-system-ffmpeg": {
-             "label": "ffmpeg",
--            "autoDetect": "false",
-+            "autoDetect": "true",
-             "condition": "libs.webengine-ffmpeg && features.webengine-system-opus && features.webengine-system-libwebp",
-             "output": [ "privateFeature" ]
-         },
-@@ -729,7 +695,7 @@
+@@ -730,7 +730,7 @@
          },
          "webengine-arm-thumb": {
              "label": "Thumb instruction set",

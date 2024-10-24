@@ -4,22 +4,18 @@ FIX_EXTRACT_PERMISSIONS =	Yes
 
 .include "Makefile.version"
 
-# DIST_VERSION should be defined, e.g., when patch distfile gets issued,
-# e.g.: qtbase-everywhere-opensource-src-5.5.1-1.tar.gz
-
 VERSION ?=		${QT5_VERSION}
-DIST_VERSION ?=		${QT5_DIST_VERSION}
 NEXT_VERSION ?=		${QT5_NEXT_VERSION}
 
 .if defined(KDE_VERSION)
-QT5_KDE_VERSION =	${QT5_VERSION}pl${KDE_VERSION}
+QT5_KDE_VERSION =	${VERSION}pl${KDE_VERSION}
 PKGNAME ?=		${QT5NAME:L}-${QT5_KDE_VERSION}
 .else
-DISTNAME ?=		${QT5NAME:L}-everywhere-opensource-src-${DIST_VERSION}
-PKGNAME ?=		${DISTNAME:C/-everywhere-opensource-src//:C/-${DIST_VERSION}/-${VERSION}/}
+DISTNAME ?=		${QT5NAME:L}-everywhere-opensource-src-${VERSION}
+PKGNAME ?=		${DISTNAME:C/-everywhere-opensource-src//:C/-${VERSION}/-${VERSION}/}
 .endif
 
-DISTNAME ?=		${QT5NAME:L}-everywhere-opensource-src-${DIST_VERSION}
+DISTNAME ?=		${QT5NAME:L}-everywhere-opensource-src-${VERSION}
 
 MAINTAINER ?=		Rafael Sadowski <rsadowski@openbsd.org>
 
@@ -51,8 +47,8 @@ PERMIT_PACKAGE ?=	Yes
 .if defined(KDE_VERSION) && defined(KDE_COMMIT)
 DIST_TUPLE +=		kde qt qt/${QT5NAME:L} ${KDE_COMMIT} .
 .else
-SITES ?=		https://download.qt.io/official_releases/qt/${QT5_DIST_VERSION:R}/${QT5_DIST_VERSION}/submodules/ \
-			https://mirrors.ocf.berkeley.edu/qt/official_releases/qt/${QT5_DIST_VERSION:R}/${QT5_DIST_VERSION}/submodules/
+SITES ?=		https://download.qt.io/official_releases/qt/${VERSION:R}/${VERSION}/submodules/ \
+			https://mirrors.ocf.berkeley.edu/qt/official_releases/qt/${VERSION:R}/${VERSION}/submodules/
 .endif
 
 DIST_SUBDIR ?=		qt

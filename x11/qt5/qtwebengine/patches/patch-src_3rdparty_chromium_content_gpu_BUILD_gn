@@ -1,7 +1,15 @@
 Index: src/3rdparty/chromium/content/gpu/BUILD.gn
 --- src/3rdparty/chromium/content/gpu/BUILD.gn.orig
 +++ src/3rdparty/chromium/content/gpu/BUILD.gn
-@@ -114,7 +114,7 @@ target(link_target_type, "gpu_sources") {
+@@ -14,6 +14,7 @@ import("//media/media_options.gni")
+ import("//build/config/deprecated_default_sources_assignment_filter.gni")
+ set_sources_assignment_filter(deprecated_default_sources_assignment_filter)
+ 
++
+ # See //content/BUILD.gn for how this works.
+ group("gpu") {
+   visibility = [ "//content/*" ]  # This is an internal content API.
+@@ -114,7 +115,7 @@ target(link_target_type, "gpu_sources") {
      deps += [ "//components/metal_util" ]
    }
  

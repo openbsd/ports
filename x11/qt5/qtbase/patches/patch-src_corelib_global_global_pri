@@ -1,7 +1,7 @@
 Index: src/corelib/global/global.pri
 --- src/corelib/global/global.pri.orig
 +++ src/corelib/global/global.pri
-@@ -105,6 +105,10 @@ linux:!static {
+@@ -108,6 +108,10 @@ linux:!static {
      HEADERS += global/minimum-linux_p.h
  }
  
