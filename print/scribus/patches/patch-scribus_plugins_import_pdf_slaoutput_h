@@ -1,0 +1,40 @@
+Fix build with poppler-24.10.0. From upstream commits 26325 and 26327.
+
+Index: scribus/plugins/import/pdf/slaoutput.h
+--- scribus/plugins/import/pdf/slaoutput.h.orig
++++ scribus/plugins/import/pdf/slaoutput.h
+@@ -56,9 +56,11 @@ for which a new license (GPL+exception) is in place.
+ #include <poppler/splash/SplashGlyphBitmap.h>
+ 
+ //------------------------------------------------------------------------
+-// LinkSubmitData
++// LinkSubmitForm
+ //------------------------------------------------------------------------
+ 
++#if POPPLER_ENCODED_VERSION < POPPLER_VERSION_ENCODE(24, 10, 0)
++
+ class LinkSubmitForm: public LinkAction
+ {
+ public:
+@@ -68,16 +70,18 @@ class LinkSubmitForm: public LinkAction (public)
+ 	virtual ~LinkSubmitForm();
+ 
+ 	// Was the LinkImportData created successfully?
+-	GBool isOk() POPPLER_CONST override { return fileName != nullptr; }
++	GBool isOk() POPPLER_CONST override { return m_url != nullptr; }
+ 	// Accessors.
+ 	LinkActionKind getKind() POPPLER_CONST override { return actionUnknown; }
+-	GooString *getFileName() { return fileName; }
++	GooString *getFileName() { return m_url; }
+ 	int getFlags() { return m_flags; }
+ 
+ private:
+-	GooString *fileName {nullptr};		// file name
++	GooString *m_url {nullptr};		// URL
+ 	int m_flags {0};
+ };
++
++#endif
+ 
+ //------------------------------------------------------------------------
+ // LinkImportData
