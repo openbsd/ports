@@ -42,7 +42,10 @@ the initial startup of the server will:
 - rewrite its own config file
 
 From that point, you should be able to connect as admin/changeme on the https
-interface to configure the daemon/services.
+interface to configure the daemon/services. The web admin interface uses
+WebAssembly which is switched off by default on Chromium-based browsers. You
+need to enable it by setting ENABLE_WASM=1 in the environment if you want to
+use the admin web interface.
 
 Using stalwart-cli to manage the server
 =======================================
