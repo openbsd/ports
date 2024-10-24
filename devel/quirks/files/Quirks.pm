@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1665 2024/10/24 13:46:04 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1666 2024/10/24 13:51:40 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1189,9 +1189,9 @@ setup_obsolete_reason(
 	70 => 'xml-security-c',
 	3 => 'utox',
 	3 => 'vino',
-	3 => 'kipi-plugins'
-	3 => 'knotes'
-	3 => 'libkipi'
+	3 => 'kipi-plugins',
+	3 => 'knotes',
+	3 => 'libkipi',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
