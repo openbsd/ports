@@ -3,7 +3,7 @@ PKG_ARCH=		*
 COMMENT=		weather application for GNOME
 
 GNOME_PROJECT=		gnome-weather
-GNOME_VERSION=		46.0
+GNOME_VERSION=		47.0
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
