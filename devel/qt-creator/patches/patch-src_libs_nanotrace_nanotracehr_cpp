@@ -1,0 +1,28 @@
+Index: src/libs/nanotrace/nanotracehr.cpp
+--- src/libs/nanotrace/nanotracehr.cpp.orig
++++ src/libs/nanotrace/nanotracehr.cpp
+@@ -17,6 +17,9 @@
+ #ifdef Q_OS_UNIX
+ #  include <pthread.h>
+ #endif
++#ifdef Q_OS_OPENBSD
++#  include <pthread_np.h>
++#endif
+ 
+ namespace NanotraceHR {
+ 
+@@ -104,11 +107,13 @@ std::string getThreadName()
+ {
+     std::array<char, 200> buffer;
+     buffer[0] = 0;
+-#ifdef Q_OS_UNIX
++#if defined(Q_OS_UNIX) && !defined(Q_OS_OPENBSD)
+     auto rc = pthread_getname_np(pthread_self(), buffer.data(), buffer.size());
+     if (rc != 0)
+         return {};
+ 
++#elif defined(Q_OS_OPENBSD)
++    pthread_get_name_np(pthread_self(), buffer.data(), buffer.size());
+ #endif
+ 
+     return buffer.data();

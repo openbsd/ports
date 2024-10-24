@@ -1,7 +1,7 @@
 Index: src/libs/3rdparty/sqlite/sqlite3.c
 --- src/libs/3rdparty/sqlite/sqlite3.c.orig
 +++ src/libs/3rdparty/sqlite/sqlite3.c
-@@ -30664,7 +30664,7 @@ SQLITE_API void sqlite3_str_vappendf(
+@@ -31361,7 +31361,7 @@ SQLITE_API void sqlite3_str_vappendf(
    for(; (c=(*fmt))!=0; ++fmt){
      if( c!='%' ){
        bufpt = (char *)fmt;

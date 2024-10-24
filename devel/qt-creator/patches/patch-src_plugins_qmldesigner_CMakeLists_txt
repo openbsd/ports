@@ -1,7 +1,7 @@
 Index: src/plugins/qmldesigner/CMakeLists.txt
 --- src/plugins/qmldesigner/CMakeLists.txt.orig
 +++ src/plugins/qmldesigner/CMakeLists.txt
-@@ -89,7 +89,7 @@ extend_qtc_library(QmlDesignerCore
+@@ -124,7 +124,7 @@ extend_qtc_library(QmlDesignerCore
    PUBLIC_DEFINES QDS_BUILD_QMLPARSER
  )
  extend_qtc_library(QmlDesignerCore

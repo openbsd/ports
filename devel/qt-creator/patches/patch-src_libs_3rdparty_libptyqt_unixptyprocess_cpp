@@ -10,7 +10,7 @@ Index: src/libs/3rdparty/libptyqt/unixptyprocess.cpp
  #include <utmpx.h>
  #endif
  #include <fcntl.h>
-@@ -322,7 +322,7 @@ void ShellProcess::configChildProcess()
+@@ -323,7 +323,7 @@ void ShellProcess::configChildProcess()
      ioctl(m_handleSlave, TIOCSCTTY, 0);
      tcsetpgrp(m_handleSlave, sid);
  
