@@ -1,10 +1,9 @@
 COMMENT =		python lib to register and instantiate classes
 
-MODPY_EGG_VERSION =	4.0.6
+MODPY_EGG_VERSION =	4.1.0
 DISTNAME =		phx-class-registry-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		0
 
 # MIT
 PERMIT_PACKAGE = 	Yes
