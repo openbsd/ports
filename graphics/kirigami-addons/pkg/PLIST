@@ -1,6 +1,15 @@
+include/KirigamiAddonsStatefulApp/
+include/KirigamiAddonsStatefulApp/AbstractKirigamiApplication
+include/KirigamiAddonsStatefulApp/KirigamiActionCollection
+include/KirigamiAddonsStatefulApp/abstractkirigamiapplication.h
+include/KirigamiAddonsStatefulApp/kirigamiactioncollection.h
+include/KirigamiAddonsStatefulApp/kirigamiaddonsstatefulapp_export.h
 lib/cmake/KF6KirigamiAddons/
 lib/cmake/KF6KirigamiAddons/KF6KirigamiAddonsConfig.cmake
 lib/cmake/KF6KirigamiAddons/KF6KirigamiAddonsConfigVersion.cmake
+lib/cmake/KF6KirigamiAddons/KirigamiAddonsTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF6KirigamiAddons/KirigamiAddonsTargets.cmake
+@lib lib/libKirigamiAddonsStatefulApp.so.${LIBKirigamiAddonsStatefulApp_VERSION}
 lib/qt6/qml/org/kde/kirigamiaddons/
 lib/qt6/qml/org/kde/kirigamiaddons/components/
 lib/qt6/qml/org/kde/kirigamiaddons/components/Avatar.qml
@@ -62,6 +71,7 @@ lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormRadioDelegate.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormSectionText.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormSpinBoxDelegate.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormSwitchDelegate.qml
+lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormTextAreaDelegate.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormTextDelegate.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormTextFieldDelegate.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/formcardplugin.qmltypes
@@ -112,6 +122,26 @@ lib/qt6/qml/org/kde/kirigamiaddons/sounds/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/kirigamiaddons/sounds/libsoundsplugin.so
 lib/qt6/qml/org/kde/kirigamiaddons/sounds/qmldir
 lib/qt6/qml/org/kde/kirigamiaddons/sounds/soundsplugin.qmltypes
+lib/qt6/qml/org/kde/kirigamiaddons/statefulapp/
+lib/qt6/qml/org/kde/kirigamiaddons/statefulapp/KirigamiAddonsStatefulApp.qmltypes
+lib/qt6/qml/org/kde/kirigamiaddons/statefulapp/StatefulWindow.qml
+lib/qt6/qml/org/kde/kirigamiaddons/statefulapp/kde-qmlmodule.version
+lib/qt6/qml/org/kde/kirigamiaddons/statefulapp/labs/
+lib/qt6/qml/org/kde/kirigamiaddons/statefulapp/labs/NativeMenuItem.qml
+lib/qt6/qml/org/kde/kirigamiaddons/statefulapp/labs/kde-qmlmodule.version
+@so lib/qt6/qml/org/kde/kirigamiaddons/statefulapp/labs/libstatefulapplabsplugin.so
+lib/qt6/qml/org/kde/kirigamiaddons/statefulapp/labs/qmldir
+lib/qt6/qml/org/kde/kirigamiaddons/statefulapp/labs/statefulapplabsplugin.qmltypes
+@so lib/qt6/qml/org/kde/kirigamiaddons/statefulapp/libKirigamiAddonsStatefulAppplugin.so
+lib/qt6/qml/org/kde/kirigamiaddons/statefulapp/private/
+lib/qt6/qml/org/kde/kirigamiaddons/statefulapp/private/KQuickCommandBarPage.qml
+lib/qt6/qml/org/kde/kirigamiaddons/statefulapp/private/KeySequenceItem.qml
+lib/qt6/qml/org/kde/kirigamiaddons/statefulapp/private/ShortcutsEditor.qml
+lib/qt6/qml/org/kde/kirigamiaddons/statefulapp/private/kde-qmlmodule.version
+@so lib/qt6/qml/org/kde/kirigamiaddons/statefulapp/private/libstatefulappprivateplugin.so
+lib/qt6/qml/org/kde/kirigamiaddons/statefulapp/private/qmldir
+lib/qt6/qml/org/kde/kirigamiaddons/statefulapp/private/statefulappprivateplugin.qmltypes
+lib/qt6/qml/org/kde/kirigamiaddons/statefulapp/qmldir
 lib/qt6/qml/org/kde/kirigamiaddons/tableview/
 lib/qt6/qml/org/kde/kirigamiaddons/tableview/HeaderComponent.qml
 lib/qt6/qml/org/kde/kirigamiaddons/tableview/KTableView.qml
@@ -136,8 +166,10 @@ lib/qt6/qml/org/kde/kirigamiaddons/treeview/styles/
 lib/qt6/qml/org/kde/kirigamiaddons/treeview/styles/org.kde.desktop/
 lib/qt6/qml/org/kde/kirigamiaddons/treeview/styles/org.kde.desktop/TreeViewDecoration.qml
 lib/qt6/qml/org/kde/kirigamiaddons/treeview/treeviewplugin.qmltypes
+share/kdevappwizard/templates/kirigamiaddons6.tar.bz2
 share/locale/ar/LC_MESSAGES/kirigami-addons6.mo
 share/locale/ast/LC_MESSAGES/kirigami-addons6.mo
+share/locale/bg/LC_MESSAGES/kirigami-addons6.mo
 share/locale/ca/LC_MESSAGES/kirigami-addons6.mo
 share/locale/ca@valencia/LC_MESSAGES/kirigami-addons6.mo
 share/locale/cs/LC_MESSAGES/kirigami-addons6.mo
