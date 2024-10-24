@@ -1,7 +1,7 @@
 Index: src/modules/module-rtp-source.c
 --- src/modules/module-rtp-source.c.orig
 +++ src/modules/module-rtp-source.c
-@@ -227,9 +227,9 @@ static int make_socket(const struct sockaddr* sa, sock
+@@ -229,9 +229,9 @@ static int make_socket(const struct sockaddr* sa, sock
  	spa_zero(req);
  	if (ifname) {
  		snprintf(req.ifr_name, sizeof(req.ifr_name), "%s", ifname);

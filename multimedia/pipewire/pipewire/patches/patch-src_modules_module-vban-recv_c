@@ -1,7 +1,7 @@
 Index: src/modules/module-vban-recv.c
 --- src/modules/module-vban-recv.c.orig
 +++ src/modules/module-vban-recv.c
-@@ -214,9 +214,9 @@ static int make_socket(const struct sockaddr* sa, sock
+@@ -216,9 +216,9 @@ static int make_socket(const struct sockaddr* sa, sock
  	spa_zero(req);
  	if (ifname) {
  		snprintf(req.ifr_name, sizeof(req.ifr_name), "%s", ifname);

@@ -1,7 +1,7 @@
 Index: src/modules/module-rtp-session.c
 --- src/modules/module-rtp-session.c.orig
 +++ src/modules/module-rtp-session.c
-@@ -1089,9 +1089,9 @@ static int make_socket(const struct sockaddr_storage* 
+@@ -1091,9 +1091,9 @@ static int make_socket(const struct sockaddr_storage* 
  	spa_zero(req);
  	if (ifname) {
  		snprintf(req.ifr_name, sizeof(req.ifr_name), "%s", ifname);

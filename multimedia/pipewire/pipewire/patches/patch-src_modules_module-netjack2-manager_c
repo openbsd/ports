@@ -1,7 +1,7 @@
 Index: src/modules/module-netjack2-manager.c
 --- src/modules/module-netjack2-manager.c.orig
 +++ src/modules/module-netjack2-manager.c
-@@ -266,6 +266,10 @@ struct impl {
+@@ -268,6 +268,10 @@ struct impl {
  	unsigned int do_disconnect:1;
  };
  
@@ -12,7 +12,7 @@ Index: src/modules/module-netjack2-manager.c
  static void reset_volume(struct volume *vol, uint32_t n_volumes)
  {
  	uint32_t i;
-@@ -812,9 +816,9 @@ static int make_announce_socket(struct sockaddr_storag
+@@ -814,9 +818,9 @@ static int make_announce_socket(struct sockaddr_storag
  	spa_zero(req);
  	if (ifname) {
  		snprintf(req.ifr_name, sizeof(req.ifr_name), "%s", ifname);

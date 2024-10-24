@@ -149,7 +149,7 @@ lib/spa-0.2/videotestsrc/
 @man man/man7/libpipewire-module-x11-bell.7
 @man man/man7/libpipewire-module-zeroconf-discover.7
 @man man/man7/libpipewire-modules.7
-@man man/man7/pipewire-devices.7
+@man man/man7/pipewire-props.7
 @man man/man7/pipewire-pulse-module-alsa-sink.7
 @man man/man7/pipewire-pulse-module-alsa-source.7
 @man man/man7/pipewire-pulse-module-always-sink.7
