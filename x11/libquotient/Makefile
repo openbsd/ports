@@ -2,10 +2,9 @@ COMMENT =	Qt6 library for writing cross-platform Matrix clients
 
 GH_ACCOUNT =	quotient-im
 GH_PROJECT =	libQuotient
-GH_TAGNAME =	0.8.1.2
-REVISION =	1
+GH_TAGNAME =	0.8.2
 
-SHARED_LIBS +=  QuotientQt6               0.0 # 0.0
+SHARED_LIBS +=  QuotientQt6               1.0 # 0.0
 
 CATEGORIES =	x11 devel
 
@@ -22,8 +21,7 @@ MODULES =	devel/cmake \
 		x11/qt6
 
 LIB_DEPENDS =	devel/olm \
-		security/qtkeychain,,qt6 \
-		x11/qt6/qtmultimedia
+		security/qtkeychain,qt6 \
 
 CONFIGURE_ARGS =	-DBUILD_WITH_QT6=ON \
 			-DBUILD_SHARED_LIBS=ON \

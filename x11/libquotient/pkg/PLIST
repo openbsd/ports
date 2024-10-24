@@ -99,6 +99,7 @@ include/Quotient/csapi/wellknown.h
 include/Quotient/csapi/whoami.h
 include/Quotient/database.h
 include/Quotient/e2ee/
+include/Quotient/e2ee/cryptoutils.h
 include/Quotient/e2ee/e2ee_common.h
 include/Quotient/e2ee/qolmaccount.h
 include/Quotient/e2ee/qolminboundsession.h
@@ -106,6 +107,7 @@ include/Quotient/e2ee/qolmmessage.h
 include/Quotient/e2ee/qolmoutboundsession.h
 include/Quotient/e2ee/qolmsession.h
 include/Quotient/e2ee/qolmutility.h
+include/Quotient/e2ee/sssshandler.h
 include/Quotient/eventitem.h
 include/Quotient/events/
 include/Quotient/events/accountdataevents.h
@@ -159,6 +161,7 @@ include/Quotient/qt_connection_util.h
 include/Quotient/quotient_common.h
 include/Quotient/quotient_export.h
 include/Quotient/room.h
+include/Quotient/roommember.h
 include/Quotient/roomstateview.h
 include/Quotient/settings.h
 include/Quotient/ssosession.h
@@ -167,7 +170,6 @@ include/Quotient/uri.h
 include/Quotient/uriresolver.h
 include/Quotient/user.h
 include/Quotient/util.h
-lib/cmake/
 lib/cmake/QuotientQt6/
 lib/cmake/QuotientQt6/QuotientQt6Config.cmake
 lib/cmake/QuotientQt6/QuotientQt6ConfigVersion.cmake
