@@ -1,9 +1,6 @@
-lib/cmake/
 lib/cmake/KQuickImageEditor/
 lib/cmake/KQuickImageEditor/KQuickImageEditorConfig.cmake
 lib/cmake/KQuickImageEditor/KQuickImageEditorConfigVersion.cmake
-lib/qt6/
-lib/qt6/qml/
 lib/qt6/qml/org/
 lib/qt6/qml/org/kde/
 lib/qt6/qml/org/kde/kquickimageeditor/

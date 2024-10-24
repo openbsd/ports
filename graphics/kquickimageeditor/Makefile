@@ -1,6 +1,6 @@
 COMMENT =	KDE image editing components
 
-DISTNAME =	kquickimageeditor-0.3.0
+DISTNAME =	kquickimageeditor-0.4.0
 
 CATEGORIES =	graphics x11
 
