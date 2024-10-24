@@ -2,8 +2,6 @@ ifr-related hunks: fix unaligned access on strict-alignment 64-bit
 
 first+last hunks: handle usb serial devices via ucomnames
 
-XXX find_ucom() doesn't handle devices 10+ correctly; uses /dev/cuaU10 not /dev/cuaUa
-
 Index: conserver/cutil.c
 --- conserver/cutil.c.orig
 +++ conserver/cutil.c
@@ -88,7 +86,7 @@ Index: conserver/cutil.c
  	    m++;
  	}
      }
-@@ -3101,4 +3102,65 @@ Sleep(useconds_t usec)
+@@ -3101,4 +3102,74 @@ Sleep(useconds_t usec)
  #else
      usleep(usec);
  #endif
@@ -121,7 +119,10 @@ Index: conserver/cutil.c
 +char *
 +find_ucom(const char *usbid, const char *names)
 +{
++	const char *errstr;
++	const char *U;
 +	char *cua, *id, *ucom, *namescopy, *n;
++	uint32_t unit;
 +
 +	if (names == NULL) {
 +		Error("find_ucom(): names is NULL");
@@ -132,6 +133,9 @@ Index: conserver/cutil.c
 +		Error("find_ucom(): strdup");
 +		return NULL;
 +	}
++
++	/* The mapping of ucom[NN] to cuaU[C] is defined in MAKEDEV. */
++	U ="0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ";
 +
 +	/* names is a comma separated list of "ucom<unit#>:<usb id>". */
 +	cua = NULL;
@@ -146,8 +150,11 @@ Index: conserver/cutil.c
 +			continue;
 +		*id++ = '\0';
 +		if (strcasecmp(id, usbid) == 0) {
-+			if (asprintf(&cua, "/dev/cuaU%s", ucom) == -1)
-+				Error("find_ucom(): asprintf(/dev/cuaU%s)", ucom);
++			unit = strtonum(ucom, 0, strlen(U) - 1, &errstr);
++			if (errstr != NULL)
++				continue;
++			if (asprintf(&cua, "/dev/cuaU%c", U[unit]) == -1)
++				Error("find_ucom(): asprintf");
 +			break;
 +		}
 +	}

@@ -3,7 +3,7 @@ COMMENT=	manage remote serial consoles via TCP/IP
 V=		8.2.7
 DISTNAME=	conserver-$V
 CATEGORIES=	comms
-REVISION=	1
+REVISION=	2
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
