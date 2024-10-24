@@ -26,6 +26,7 @@ CXXFLAGS_base-clang =	-std=c++14
 
 MODULES =		devel/cmake
 LIB_DEPENDS =		graphics/openexr \
+			math/imath \
 			graphics/tiff
 
 CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=ON
@@ -35,4 +36,3 @@ CXXFLAGS +=		-I${LOCALBASE}/include/OpenEXR -I${LOCALBASE}/include/Imath
 
 
 .include <bsd.port.mk>
-LIB_DEPENDS += math/imath 
