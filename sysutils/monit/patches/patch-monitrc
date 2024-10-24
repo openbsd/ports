@@ -22,7 +22,7 @@ Index: monitrc
  
  ## Set limits for various tests. The following example shows the default values:
  ##
-@@ -90,7 +88,7 @@ set log syslog
+@@ -91,7 +89,7 @@ set log syslog
  ## available in the back end filesystem).
  #
  # set eventqueue
