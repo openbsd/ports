@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1663 2024/10/20 14:58:44 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1664 2024/10/24 09:04:06 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -594,6 +594,8 @@ my $stem_extensions = {
 	'py3-buildbot-react-waterfall-view' => 'py3-buildbot-waterfall-view',
 	'py3-buildbot-react-waterfall-view' => 'py3-buildbot-waterfall-view',
 	'py3-buildbot-www-react' => 'py3-buildbot-www',
+# 7.7
+	'libkomparediff2-kf5' => 'kf6-libkomparediff2',
 };
 
 my $obsolete_reason = {};
