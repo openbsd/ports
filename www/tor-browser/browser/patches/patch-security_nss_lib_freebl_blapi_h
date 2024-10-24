@@ -3,7 +3,7 @@ Taken from security/nss
 Index: security/nss/lib/freebl/blapi.h
 --- security/nss/lib/freebl/blapi.h.orig
 +++ security/nss/lib/freebl/blapi.h
-@@ -1307,6 +1307,8 @@ extern void SHA1_DestroyContext(SHA1Context *cx, PRBoo
+@@ -1308,6 +1308,8 @@ extern void SHA1_DestroyContext(SHA1Context *cx, PRBoo
  */
  extern void SHA1_Begin(SHA1Context *cx);
  

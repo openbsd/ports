@@ -11,18 +11,19 @@ MOZILLA_CODENAME =	browser
 EXTRACT_SUFX =		.tar.xz
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION:S/a/alpha/}
-DISTNAME =		src-firefox-tor-browser-115.16.0esr-13.5-1-build3
+DISTNAME =		src-firefox-tor-browser-128.3.0esr-14.0-1-build6
 
 FIX_EXTRACT_PERMISSIONS	= Yes
 DISTFILES +=		${DISTNAME}.tar.xz \
 			tor-browser-linux-x86_64-${TB_VERSION}.tar.xz \
 			tor-expert-bundle-linux-x86_64-${TB_VERSION}.tar.gz
 
-SO_VERSION =		9.0
+SO_VERSION =		10.0
 MOZILLA_LIBS =		xul clearkey lgpllibs mozavcodec mozavutil mozgtk mozwayland
 MOZILLA_LIBS +=		freebl3 nss3 nssckbi
 MOZILLA_LIBS +=		nssutil3 smime3 softokn3 ssl3
 MOZILLA_LIBS +=		mozsqlite3 ipcclientcerts
+MOZILLA_LIBS +=		gkcodecs
 
 # mozilla public license for the browser
 PERMIT_PACKAGE=	Yes
@@ -94,14 +95,24 @@ CONFIGURE_ARGS +=	--enable-release #1386371
 CONFIGURE_ARGS +=	--enable-sandbox
 CONFIGURE_ARGS +=	--enable-forkserver
 CONFIGURE_ARGS +=	--with-wasi-sysroot=${LOCALBASE}/share/wasi-sysroot
-CONFIGURE_ARGS +=	--enable-lto=thin
 CONFIGURE_ARGS +=	--with-libclang-path=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
+# LTO eats too much RAM on riscv64
+.if ${MACHINE_ARCH} != riscv64
+CONFIGURE_ARGS +=	--enable-lto=thin
+.endif
 
 # XXX badly formed debug
 DWZ = :
 #DEBUG_PACKAGES =	${BUILD_PACKAGES}
 DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
 			--disable-install-strip
+
+# not built on riscv64
+COMMENT_FFVPX ?=
+.if ${MACHINE_ARCH} == riscv64
+COMMENT_FFVPX =		@comment # needs a trailing space
+.endif
+SUBST_VARS +=		COMMENT_FFVPX
 
 post-extract:
 	mv ${WRKDIR}/tor-browser ${WRKSRC}/tor-browser-linux64/

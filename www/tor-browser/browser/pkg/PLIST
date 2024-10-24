@@ -197,10 +197,11 @@ lib/${BROWSER_NAME}/fonts/Tinos-Regular.ttf
 lib/${BROWSER_NAME}/fonts/TwemojiMozilla.ttf
 @bin lib/${BROWSER_NAME}/glxtest
 @lib lib/${BROWSER_NAME}/libfreebl3.so.${LIBfreebl3_VERSION}
+@lib lib/${BROWSER_NAME}/libgkcodecs.so.${LIBgkcodecs_VERSION}
 @lib lib/${BROWSER_NAME}/libipcclientcerts.so.${LIBipcclientcerts_VERSION}
 @lib lib/${BROWSER_NAME}/liblgpllibs.so.${LIBlgpllibs_VERSION}
-@lib lib/${BROWSER_NAME}/libmozavcodec.so.${LIBmozavcodec_VERSION}
-@lib lib/${BROWSER_NAME}/libmozavutil.so.${LIBmozavutil_VERSION}
+${COMMENT_FFVPX}@lib lib/${BROWSER_NAME}/libmozavcodec.so.${LIBmozavcodec_VERSION}
+${COMMENT_FFVPX}@lib lib/${BROWSER_NAME}/libmozavutil.so.${LIBmozavutil_VERSION}
 @lib lib/${BROWSER_NAME}/libmozgtk.so.${LIBmozgtk_VERSION}
 @lib lib/${BROWSER_NAME}/libmozsqlite3.so.${LIBmozsqlite3_VERSION}
 @lib lib/${BROWSER_NAME}/libmozwayland.so.${LIBmozwayland_VERSION}
@@ -213,7 +214,6 @@ lib/${BROWSER_NAME}/fonts/TwemojiMozilla.ttf
 @lib lib/${BROWSER_NAME}/libxul.so.${LIBxul_VERSION}
 lib/${BROWSER_NAME}/omni.ja
 lib/${BROWSER_NAME}/platform.ini
-@bin lib/${BROWSER_NAME}/plugin-container
 lib/${BROWSER_NAME}/removed-files
 @bin lib/${BROWSER_NAME}/${BROWSER_NAME}
 @bin lib/${BROWSER_NAME}/${BROWSER_NAME}-bin
