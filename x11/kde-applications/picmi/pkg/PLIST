@@ -34,6 +34,9 @@ share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/picmi/
 share/doc/HTML/pt_BR/picmi/index.cache.bz2
 share/doc/HTML/pt_BR/picmi/index.docbook
+share/doc/HTML/sl/picmi/
+share/doc/HTML/sl/picmi/index.cache.bz2
+share/doc/HTML/sl/picmi/index.docbook
 share/doc/HTML/sv/picmi/
 share/doc/HTML/sv/picmi/index.cache.bz2
 share/doc/HTML/sv/picmi/index.docbook
@@ -142,3 +145,4 @@ share/picmi/themes/picmi.png
 @tag update-desktop-database
 share/picmi/themes/picmi.svgz
 share/qlogging-categories6/picmi.categories
+share/qlogging-categories6/picmi.renamecategories

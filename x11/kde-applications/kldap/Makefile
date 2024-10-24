@@ -2,8 +2,8 @@ COMMENT =	LDAP access API for KDE
 DISTNAME =	kldap-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=	KPim6LdapCore             0.0 # 0.0
-SHARED_LIBS +=	KPim6LdapWidgets          0.0 # 0.0
+SHARED_LIBS +=	KPim6LdapCore             1.0 # 0.0
+SHARED_LIBS +=	KPim6LdapWidgets          1.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ConfigCore KF6ConfigGui KF6CoreAddons
 WANTLIB += KF6I18n KF6KIOCore KF6WidgetsAddons Qt6Core Qt6DBus
@@ -21,7 +21,6 @@ LIB_DEPENDS =	databases/openldap \
 		devel/kf6/kio \
 		devel/kf6/kwidgetsaddons \
 		security/qtkeychain,qt6 \
-		security/cyrus-sasl2 \
-		
+		security/cyrus-sasl2
 
 .include <bsd.port.mk>

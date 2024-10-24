@@ -17,17 +17,17 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6AuthCore KF6Bookmarks KF6CalendarCore
 WANTLIB += KF6Codecs KF6ColorScheme KF6Completion KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6Contacts KF6CoreAddons
 WANTLIB += KF6Crash KF6DBusAddons KF6GlobalAccel KF6GuiAddons
-WANTLIB += KF6Holidays KF6I18n KF6ItemModels KF6ItemViews KF6JobWidgets
-WANTLIB += KF6KIOCore KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets
-WANTLIB += KF6Notifications KF6NotifyConfig KF6Service KF6Solid
-WANTLIB += KF6SonnetUi KF6StatusNotifierItem KF6TextEditTextToSpeech
+WANTLIB += KF6Holidays KF6I18n KF6IconThemes KF6ItemModels KF6ItemViews
+WANTLIB += KF6JobWidgets KF6KIOCore KF6KIOFileWidgets KF6KIOGui
+WANTLIB += KF6KIOWidgets KF6Notifications KF6NotifyConfig KF6Service
+WANTLIB += KF6Solid KF6SonnetUi KF6StatusNotifierItem KF6TextEditTextToSpeech
 WANTLIB += KF6TextTemplate KF6TextWidgets KF6WidgetsAddons KF6WindowSystem
 WANTLIB += KF6XmlGui KPim6AkonadiContactCore KPim6AkonadiContactWidgets
 WANTLIB += KPim6AkonadiCore KPim6AkonadiMime KPim6AkonadiWidgets
 WANTLIB += KPim6CalendarUtils KPim6GrantleeTheme KPim6IdentityManagementCore
 WANTLIB += KPim6IdentityManagementWidgets KPim6MailTransport KPim6Mime
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets Qt6Xml
-WANTLIB += X11 c canberra m
+WANTLIB += X11 c m vlc
 
 BUILD_DEPENDS =	devel/boost \
 		x11/kde-applications/mailcommon>=${MODKDE_GEAR_VERSION}
@@ -36,8 +36,7 @@ RUN_DEPENDS =	x11/dbus,-suid \
 		x11/kde-applications/kdepim-runtime>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/mailcommon>=${MODKDE_GEAR_VERSION}
 
-LIB_DEPENDS =	audio/libcanberra \
-		devel/kf6/kauth \
+LIB_DEPENDS =	devel/kf6/kauth \
 		devel/kf6/kbookmarks \
 		devel/kf6/kcalendarcore \
 		devel/kf6/kcodecs \
@@ -69,6 +68,8 @@ LIB_DEPENDS =	audio/libcanberra \
 		devel/kf6/solid \
 		devel/kf6/sonnet \
 		textproc/ktextaddons \
+		devel/kf6/kiconthemes \
+		x11/vlc \
 		x11/kde-applications/akonadi-contacts>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/akonadi-mime>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/akonadi>=${MODKDE_GEAR_VERSION} \

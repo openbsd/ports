@@ -3,8 +3,8 @@ include/kompare/
 include/kompare/kompareinterface.h
 @lib lib/libkomparedialogpages.so.${LIBkomparedialogpages_VERSION}
 @lib lib/libkompareinterface.so.${LIBkompareinterface_VERSION}
-@so lib/qt5/plugins/kf5/parts/komparenavtreepart.so
-@so lib/qt5/plugins/kf5/parts/komparepart.so
+@so lib/qt6/plugins/kf6/parts/komparenavtreepart.so
+@so lib/qt6/plugins/kf6/parts/komparepart.so
 share/applications/org.kde.kompare.desktop
 share/doc/HTML/ca/kompare/
 share/doc/HTML/ca/kompare/index.cache.bz2
@@ -100,6 +100,7 @@ share/locale/fi/LC_MESSAGES/kompare.mo
 share/locale/fr/LC_MESSAGES/kompare.mo
 share/locale/ga/LC_MESSAGES/kompare.mo
 share/locale/gl/LC_MESSAGES/kompare.mo
+share/locale/he/LC_MESSAGES/kompare.mo
 share/locale/hi/LC_MESSAGES/kompare.mo
 share/locale/hne/LC_MESSAGES/kompare.mo
 share/locale/hr/LC_MESSAGES/kompare.mo
@@ -149,4 +150,4 @@ share/locale/zh_TW/LC_MESSAGES/kompare.mo
 share/metainfo/
 share/metainfo/org.kde.kompare.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-share/qlogging-categories5/kompare.categories
+share/qlogging-categories6/kompare.categories

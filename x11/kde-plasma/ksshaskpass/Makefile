@@ -6,6 +6,8 @@ WANTLIB += KF6WidgetsAddons Qt6Core Qt6Gui Qt6Widgets c m
 
 MODKDE_TRANSLATIONS =	Yes
 
+RUN_DEPENDS =	devel/desktop-file-utils
+
 LIB_DEPENDS =	devel/kf6/kcoreaddons \
 		devel/kf6/ki18n \
 		devel/kf6/kwallet \

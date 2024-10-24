@@ -36,6 +36,9 @@ share/doc/HTML/pt_BR/katomic/index.docbook
 share/doc/HTML/ru/katomic/
 share/doc/HTML/ru/katomic/index.cache.bz2
 share/doc/HTML/ru/katomic/index.docbook
+share/doc/HTML/sl/katomic/
+share/doc/HTML/sl/katomic/index.cache.bz2
+share/doc/HTML/sl/katomic/index.docbook
 share/doc/HTML/sv/katomic/
 share/doc/HTML/sv/katomic/index.cache.bz2
 share/doc/HTML/sv/katomic/index.docbook
@@ -139,3 +142,4 @@ share/metainfo/org.kde.katomic.appdata.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 share/qlogging-categories6/katomic.categories
+share/qlogging-categories6/katomic.renamecategories

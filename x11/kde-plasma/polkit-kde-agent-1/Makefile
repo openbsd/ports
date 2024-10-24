@@ -1,4 +1,5 @@
 COMMENT =	daemon providing a Polkit authentication UI for Plasma
+
 DISTNAME =	polkit-kde-agent-1-${VERSION}
 PKGNAME =	polkit-kde-agent-${VERSION}
 

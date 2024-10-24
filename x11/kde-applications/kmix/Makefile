@@ -7,10 +7,11 @@ HOMEPAGE =	https://apps.kde.org/kmix
 SHARED_LIBS +=  kmixcore                3.0 # 5.13.80
 
 WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5DBusAddons
-WANTLIB += KF5GlobalAccel KF5I18n KF5Notifications KF5Solid KF5WidgetsAddons
-WANTLIB += KF5WindowSystem KF5XmlGui Qt5Core Qt5DBus Qt5Gui Qt5Widgets
-WANTLIB += Qt5Xml X11 c canberra m pulse
+WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
+WANTLIB += KF5DBusAddons KF5GlobalAccel KF5I18n KF5Notifications
+WANTLIB += KF5Solid KF5WidgetsAddons KF5WindowSystem KF5XmlGui
+WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Widgets Qt5Xml X11 c canberra
+WANTLIB += m pulse
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes
@@ -35,6 +36,7 @@ LIB_DEPENDS =	audio/libcanberra \
 		devel/kf5/kglobalaccel \
 		devel/kf5/ki18n \
 		devel/kf5/knotifications \
+		devel/kf5/kcrash \
 		devel/kf5/kwidgetsaddons \
 		devel/kf5/kwindowsystem \
 		devel/kf5/kxmlgui \

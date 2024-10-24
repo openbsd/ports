@@ -4,7 +4,7 @@ CATEGORIES =	devel
 
 HOMEPAGE =	https://apps.kde.org/itinerary
 
-SHARED_LIBS +=	KPim6Itinerary            0.0 # 0.0
+SHARED_LIBS +=	KPim6Itinerary            1.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6CalendarCore KF6Codecs
 WANTLIB += KF6Contacts KF6I18n KF6I18nLocaleData KPim6Mime KPim6PkPass

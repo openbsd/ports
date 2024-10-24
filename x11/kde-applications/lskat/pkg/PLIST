@@ -41,6 +41,9 @@ share/doc/HTML/pt_BR/lskat/index.docbook
 share/doc/HTML/ru/lskat/
 share/doc/HTML/ru/lskat/index.cache.bz2
 share/doc/HTML/ru/lskat/index.docbook
+share/doc/HTML/sl/lskat/
+share/doc/HTML/sl/lskat/index.cache.bz2
+share/doc/HTML/sl/lskat/index.docbook
 share/doc/HTML/sv/lskat/
 share/doc/HTML/sv/lskat/index.cache.bz2
 share/doc/HTML/sv/lskat/index.docbook
@@ -142,3 +145,4 @@ share/metainfo/org.kde.lskat.appdata.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 share/qlogging-categories6/lskat.categories
+share/qlogging-categories6/lskat.renamecategories

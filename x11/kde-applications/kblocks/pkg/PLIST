@@ -42,6 +42,9 @@ share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/kblocks/
 share/doc/HTML/pt_BR/kblocks/index.cache.bz2
 share/doc/HTML/pt_BR/kblocks/index.docbook
+share/doc/HTML/sl/kblocks/
+share/doc/HTML/sl/kblocks/index.cache.bz2
+share/doc/HTML/sl/kblocks/index.docbook
 share/doc/HTML/sv/kblocks/
 share/doc/HTML/sv/kblocks/index.cache.bz2
 share/doc/HTML/sv/kblocks/index.docbook
@@ -137,3 +140,4 @@ share/metainfo/org.kde.kblocks.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
 share/qlogging-categories6/kblocks.categories
+share/qlogging-categories6/kblocks.renamecategories

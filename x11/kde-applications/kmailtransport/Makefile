@@ -2,7 +2,7 @@ COMMENT =	mail transport service
 DISTNAME =	kmailtransport-${VERSION}
 CATEGORIES =	mail devel
 
-SHARED_LIBS +=	KPim6MailTransport        0.0 # 0.0
+SHARED_LIBS +=	KPim6MailTransport        1.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons

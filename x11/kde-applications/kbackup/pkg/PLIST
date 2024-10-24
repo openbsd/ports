@@ -21,6 +21,9 @@ share/doc/HTML/it/kbackup/index.docbook
 share/doc/HTML/nl/kbackup/
 share/doc/HTML/nl/kbackup/index.cache.bz2
 share/doc/HTML/nl/kbackup/index.docbook
+share/doc/HTML/sl/kbackup/
+share/doc/HTML/sl/kbackup/index.cache.bz2
+share/doc/HTML/sl/kbackup/index.docbook
 share/doc/HTML/sv/kbackup/
 share/doc/HTML/sv/kbackup/index.cache.bz2
 share/doc/HTML/sv/kbackup/index.docbook
@@ -41,6 +44,7 @@ share/icons/hicolor/32x32/apps/kbackup.png
 share/icons/hicolor/32x32/mimetypes/text-x-kbp.png
 share/locale/ar/LC_MESSAGES/kbackup.mo
 share/locale/ast/LC_MESSAGES/kbackup.mo
+share/locale/bg/LC_MESSAGES/kbackup.mo
 share/locale/ca/LC_MESSAGES/kbackup.mo
 share/locale/ca@valencia/LC_MESSAGES/kbackup.mo
 share/locale/cs/LC_MESSAGES/kbackup.mo
@@ -55,6 +59,7 @@ share/locale/eu/LC_MESSAGES/kbackup.mo
 share/locale/fi/LC_MESSAGES/kbackup.mo
 share/locale/fr/LC_MESSAGES/kbackup.mo
 share/locale/gl/LC_MESSAGES/kbackup.mo
+share/locale/he/LC_MESSAGES/kbackup.mo
 share/locale/ia/LC_MESSAGES/kbackup.mo
 share/locale/ie/LC_MESSAGES/kbackup.mo
 share/locale/is/LC_MESSAGES/kbackup.mo
@@ -63,6 +68,7 @@ share/locale/ja/LC_MESSAGES/kbackup.mo
 share/locale/ka/LC_MESSAGES/kbackup.mo
 share/locale/ko/LC_MESSAGES/kbackup.mo
 share/locale/lt/LC_MESSAGES/kbackup.mo
+share/locale/lv/LC_MESSAGES/kbackup.mo
 share/locale/nl/LC_MESSAGES/kbackup.mo
 share/locale/nn/LC_MESSAGES/kbackup.mo
 share/locale/pl/LC_MESSAGES/kbackup.mo

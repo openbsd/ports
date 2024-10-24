@@ -23,19 +23,9 @@ share/doc/HTML/en/lokalize/tmview.png
 share/doc/HTML/es/lokalize/
 share/doc/HTML/es/lokalize/index.cache.bz2
 share/doc/HTML/es/lokalize/index.docbook
-share/doc/HTML/et/lokalize/
-share/doc/HTML/et/lokalize/index.cache.bz2
-share/doc/HTML/et/lokalize/index.docbook
 share/doc/HTML/fr/lokalize/
 share/doc/HTML/fr/lokalize/index.cache.bz2
 share/doc/HTML/fr/lokalize/index.docbook
-share/doc/HTML/hu/lokalize/
-share/doc/HTML/hu/lokalize/index.cache.bz2
-share/doc/HTML/hu/lokalize/index.docbook
-share/doc/HTML/id/
-share/doc/HTML/id/lokalize/
-share/doc/HTML/id/lokalize/index.cache.bz2
-share/doc/HTML/id/lokalize/index.docbook
 share/doc/HTML/it/lokalize/
 share/doc/HTML/it/lokalize/configure_shortcuts.png
 share/doc/HTML/it/lokalize/configure_toolbar.png
@@ -50,15 +40,9 @@ share/doc/HTML/it/lokalize/tmview.png
 share/doc/HTML/nl/lokalize/
 share/doc/HTML/nl/lokalize/index.cache.bz2
 share/doc/HTML/nl/lokalize/index.docbook
-share/doc/HTML/pt/lokalize/
-share/doc/HTML/pt/lokalize/index.cache.bz2
-share/doc/HTML/pt/lokalize/index.docbook
-share/doc/HTML/pt_BR/lokalize/
-share/doc/HTML/pt_BR/lokalize/index.cache.bz2
-share/doc/HTML/pt_BR/lokalize/index.docbook
-share/doc/HTML/ru/lokalize/
-share/doc/HTML/ru/lokalize/index.cache.bz2
-share/doc/HTML/ru/lokalize/index.docbook
+share/doc/HTML/sl/lokalize/
+share/doc/HTML/sl/lokalize/index.cache.bz2
+share/doc/HTML/sl/lokalize/index.docbook
 share/doc/HTML/sr/lokalize/
 share/doc/HTML/sr/lokalize/glossary.png
 share/doc/HTML/sr/lokalize/index.cache.bz2
@@ -69,9 +53,6 @@ share/doc/HTML/sr/lokalize/tmview.png
 share/doc/HTML/sr@latin/lokalize/
 share/doc/HTML/sr@latin/lokalize/index.cache.bz2
 share/doc/HTML/sr@latin/lokalize/index.docbook
-share/doc/HTML/sv/lokalize/
-share/doc/HTML/sv/lokalize/index.cache.bz2
-share/doc/HTML/sv/lokalize/index.docbook
 share/doc/HTML/uk/lokalize/
 share/doc/HTML/uk/lokalize/configure_shortcuts.png
 share/doc/HTML/uk/lokalize/configure_toolbar.png
@@ -87,7 +68,7 @@ share/icons/hicolor/128x128/apps/lokalize.png
 share/icons/hicolor/32x32/apps/lokalize.png
 share/icons/hicolor/64x64/apps/lokalize.png
 share/icons/hicolor/scalable/apps/lokalize.svgz
-share/knotifications5/lokalize.notifyrc
+share/knotifications6/lokalize.notifyrc
 share/locale/ar/LC_MESSAGES/lokalize.mo
 share/locale/az/LC_MESSAGES/lokalize.mo
 share/locale/be/LC_MESSAGES/lokalize.mo
@@ -331,6 +312,6 @@ share/lokalize/scripts/odf/xliff2odf.rc
 share/lokalize/scripts/odf/xliffmerge.py
 share/metainfo/
 share/metainfo/org.kde.lokalize.appdata.xml
-share/qlogging-categories5/lokalize.categories
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/qlogging-categories6/lokalize.categories

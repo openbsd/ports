@@ -7,10 +7,10 @@ SHARED_LIBS +=  pimdataexporterprivate    1.0 # 0.0
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Bookmarks KF6CalendarCore
 WANTLIB += KF6ColorScheme KF6Completion KF6ConfigCore KF6ConfigGui
 WANTLIB += KF6ConfigWidgets KF6Contacts KF6CoreAddons KF6Crash
-WANTLIB += KF6DBusAddons KF6I18n KF6ItemModels KF6ItemViews KF6JobWidgets
-WANTLIB += KF6KIOCore KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets
-WANTLIB += KF6Notifications KF6Service KF6Solid KF6StatusNotifierItem
-WANTLIB += KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
+WANTLIB += KF6DBusAddons KF6I18n KF6IconThemes KF6ItemModels KF6ItemViews
+WANTLIB += KF6JobWidgets KF6KIOCore KF6KIOFileWidgets KF6KIOGui
+WANTLIB += KF6KIOWidgets KF6Notifications KF6Service KF6Solid
+WANTLIB += KF6StatusNotifierItem KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
 WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6UserFeedbackCore
 WANTLIB += KF6UserFeedbackWidgets KF6WidgetsAddons KF6XmlGui KPim6AkonadiContactCore
 WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiCore KPim6AkonadiMime
@@ -54,6 +54,7 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		security/gpgme,-qt \
 		security/libassuan \
 		textproc/ktextaddons \
+		devel/kf6/kiconthemes \
 		x11/kde-applications/akonadi-contacts>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/akonadi-mime>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/akonadi-notes>=${MODKDE_GEAR_VERSION} \
@@ -71,7 +72,5 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		x11/kde-applications/pimcommon>=${MODKDE_GEAR_VERSION}
 
 TEST_IS_INTERACTIVE =	X11
-
-CXXFLAGS +=	-I${LOCALBASE}/include/KPim5/MessageViewer
 
 .include <bsd.port.mk>

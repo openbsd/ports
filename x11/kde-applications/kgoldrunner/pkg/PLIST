@@ -45,6 +45,9 @@ share/doc/HTML/pt/kgoldrunner/index.docbook
 share/doc/HTML/pt_BR/kgoldrunner/
 share/doc/HTML/pt_BR/kgoldrunner/index.cache.bz2
 share/doc/HTML/pt_BR/kgoldrunner/index.docbook
+share/doc/HTML/sl/kgoldrunner/
+share/doc/HTML/sl/kgoldrunner/index.cache.bz2
+share/doc/HTML/sl/kgoldrunner/index.docbook
 share/doc/HTML/sv/kgoldrunner/
 share/doc/HTML/sv/kgoldrunner/editbar.png
 share/doc/HTML/sv/kgoldrunner/index.cache.bz2
@@ -216,3 +219,4 @@ share/metainfo/org.kde.kgoldrunner.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
 share/qlogging-categories6/kgoldrunner.categories
+share/qlogging-categories6/kgoldrunner.renamecategories

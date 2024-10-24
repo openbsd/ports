@@ -7,21 +7,22 @@ CATEGORIES =	net www
 HOMEPAGE =	https://apps.kde.org/akregator
 
 SHARED_LIBS +=  akregatorinterfaces       2.0 # 5.13.2
-SHARED_LIBS +=  akregatorprivate          3.1 # 5.13.2
+SHARED_LIBS +=  akregatorprivate          4.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Codecs KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6Contacts
-WANTLIB += KF6CoreAddons KF6Crash KF6I18n KF6ItemModels KF6JobWidgets
-WANTLIB += KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore
-WANTLIB += KF6KIOGui KF6KIOWidgets KF6Notifications KF6NotifyConfig
-WANTLIB += KF6Parts KF6Service KF6Solid KF6SonnetUi KF6StatusNotifierItem
-WANTLIB += KF6Syndication KF6TextAddonsWidgets KF6TextAutoCorrectionCore
-WANTLIB += KF6TextAutoCorrectionWidgets KF6TextCustomEditor KF6TextEditTextToSpeech
-WANTLIB += KF6TextTemplate KF6TextUtils KF6TextWidgets KF6UserFeedbackCore
-WANTLIB += KF6UserFeedbackWidgets KF6WidgetsAddons KF6XmlGui KPim6AkonadiCore
-WANTLIB += KPim6AkonadiMime KPim6GrantleeTheme KPim6KontactInterface
-WANTLIB += KPim6Libkdepim KPim6Libkleo KPim6MessageCore KPim6MessageViewer
-WANTLIB += KPim6Mime KPim6MimeTreeParser KPim6PimCommon KPim6WebEngineViewer
+WANTLIB += KF6CoreAddons KF6Crash KF6I18n KF6IconThemes KF6ItemModels
+WANTLIB += KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick
+WANTLIB += KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Notifications
+WANTLIB += KF6NotifyConfig KF6Parts KF6Service KF6Solid KF6SonnetUi
+WANTLIB += KF6StatusNotifierItem KF6Syndication KF6TextAddonsWidgets
+WANTLIB += KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
+WANTLIB += KF6TextCustomEditor KF6TextEditTextToSpeech KF6TextTemplate
+WANTLIB += KF6TextUtils KF6TextWidgets KF6UserFeedbackCore KF6UserFeedbackWidgets
+WANTLIB += KF6WidgetsAddons KF6XmlGui KPim6AkonadiCore KPim6AkonadiMime
+WANTLIB += KPim6GrantleeTheme KPim6KontactInterface KPim6Libkdepim
+WANTLIB += KPim6Libkleo KPim6MessageCore KPim6MessageViewer KPim6Mime
+WANTLIB += KPim6MimeTreeParser KPim6PimCommon KPim6WebEngineViewer
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning
 WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlModels Qt6Quick Qt6WebChannel
 WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets Qt6Xml
@@ -71,6 +72,7 @@ LIB_DEPENDS =	devel/kf6/kcmutils \
 		devel/kf6/ktexttemplate \
 		devel/kf6/ktextwidgets \
 		devel/kf6/kuserfeedback \
+		devel/kf6/kiconthemes \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \
@@ -95,7 +97,5 @@ LIB_DEPENDS =	devel/kf6/kcmutils \
 		x11/qt6/qtwebengine
 
 TEST_IS_INTERACTIVE =	X11
-
-CXXFLAGS +=	-I${LOCALBASE}/include/KPim5/MessageViewer
 
 .include <bsd.port.mk>

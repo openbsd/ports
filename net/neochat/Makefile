@@ -27,7 +27,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/kf6/kitemmodels \
 		devel/kf6/qqc2-desktop-style \
 		devel/kf6/sonnet \
-		graphics/kquickimageeditor>=0.2.0 \
+		graphics/kquickimageeditor>=0.4 \
 		devel/kf6/kquickcharts \
 		graphics/kirigami-addons \
 		x11/gtk+4,-guic
@@ -35,7 +35,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 BUILD_DEPENDS = devel/gettext,-tools \
 		devel/kf6/kitemmodels \
 		devel/kf6/qqc2-desktop-style \
-		graphics/kquickimageeditor>=0.2.0 \
+		graphics/kquickimageeditor>=0.4 \
 		devel/kf6/kquickcharts \
 		graphics/kirigami-addons \
 		x11/qt6/qtlocation \
@@ -66,7 +66,7 @@ LIB_DEPENDS =	devel/kf6/kconfig \
 		security/qtkeychain,qt6 \
 		textproc/icu4c \
 		textproc/cmark \
-		x11/libquotient>=0.7 \
+		x11/libquotient>=0.8.2 \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtmultimedia \
 		x11/qt6/qtwebview

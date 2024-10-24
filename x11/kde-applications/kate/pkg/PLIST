@@ -21,6 +21,7 @@ lib/qt6/plugins/kf6/ktexteditor/
 @so lib/qt6/plugins/kf6/ktexteditor/katereplicodeplugin.so
 @so lib/qt6/plugins/kf6/ktexteditor/katesearchplugin.so
 @so lib/qt6/plugins/kf6/ktexteditor/katesnippetsplugin.so
+@so lib/qt6/plugins/kf6/ktexteditor/katesqlplugin.so
 @so lib/qt6/plugins/kf6/ktexteditor/katesymbolviewerplugin.so
 @so lib/qt6/plugins/kf6/ktexteditor/katexmlcheckplugin.so
 @so lib/qt6/plugins/kf6/ktexteditor/katexmltoolsplugin.so
@@ -569,6 +570,7 @@ share/locale/bg/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/bg/LC_MESSAGES/katebuild-plugin.mo
 share/locale/bg/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/bg/LC_MESSAGES/katecolorpickerplugin.mo
+share/locale/bg/LC_MESSAGES/katecompilerexplorer.mo
 share/locale/bg/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/bg/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/bg/LC_MESSAGES/katefiletree.mo
@@ -586,6 +588,8 @@ share/locale/bg/LC_MESSAGES/katexmlcheck.mo
 share/locale/bg/LC_MESSAGES/katexmltools.mo
 share/locale/bg/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/bg/LC_MESSAGES/lspclient.mo
+share/locale/bg/LC_MESSAGES/rainbowparens.mo
+share/locale/bg/LC_MESSAGES/rbqlplugin.mo
 share/locale/bg/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/br/LC_MESSAGES/kate.mo
 share/locale/br/LC_MESSAGES/katesymbolviewer.mo
@@ -616,6 +620,7 @@ share/locale/ca/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/ca/LC_MESSAGES/katebuild-plugin.mo
 share/locale/ca/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/ca/LC_MESSAGES/katecolorpickerplugin.mo
+share/locale/ca/LC_MESSAGES/katecompilerexplorer.mo
 share/locale/ca/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/ca/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ca/LC_MESSAGES/katefiletree.mo
@@ -644,6 +649,7 @@ share/locale/ca@valencia/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/katebuild-plugin.mo
 share/locale/ca@valencia/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/katecolorpickerplugin.mo
+share/locale/ca@valencia/LC_MESSAGES/katecompilerexplorer.mo
 share/locale/ca@valencia/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ca@valencia/LC_MESSAGES/katefiletree.mo
@@ -672,6 +678,7 @@ share/locale/cs/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/cs/LC_MESSAGES/katebuild-plugin.mo
 share/locale/cs/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/cs/LC_MESSAGES/katecolorpickerplugin.mo
+share/locale/cs/LC_MESSAGES/katecompilerexplorer.mo
 share/locale/cs/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/cs/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/cs/LC_MESSAGES/katefiletree.mo
@@ -727,6 +734,7 @@ share/locale/de/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/de/LC_MESSAGES/katebuild-plugin.mo
 share/locale/de/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/de/LC_MESSAGES/katecolorpickerplugin.mo
+share/locale/de/LC_MESSAGES/katecompilerexplorer.mo
 share/locale/de/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/de/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/de/LC_MESSAGES/katefiletree.mo
@@ -780,6 +788,7 @@ share/locale/en_GB/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/en_GB/LC_MESSAGES/katebuild-plugin.mo
 share/locale/en_GB/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/en_GB/LC_MESSAGES/katecolorpickerplugin.mo
+share/locale/en_GB/LC_MESSAGES/katecompilerexplorer.mo
 share/locale/en_GB/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/en_GB/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/en_GB/LC_MESSAGES/katefiletree.mo
@@ -808,6 +817,7 @@ share/locale/eo/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/eo/LC_MESSAGES/katebuild-plugin.mo
 share/locale/eo/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/eo/LC_MESSAGES/katecolorpickerplugin.mo
+share/locale/eo/LC_MESSAGES/katecompilerexplorer.mo
 share/locale/eo/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/eo/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/eo/LC_MESSAGES/katefiletree.mo
@@ -836,6 +846,7 @@ share/locale/es/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/es/LC_MESSAGES/katebuild-plugin.mo
 share/locale/es/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/es/LC_MESSAGES/katecolorpickerplugin.mo
+share/locale/es/LC_MESSAGES/katecompilerexplorer.mo
 share/locale/es/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/es/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/es/LC_MESSAGES/katefiletree.mo
@@ -886,6 +897,7 @@ share/locale/eu/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/eu/LC_MESSAGES/katebuild-plugin.mo
 share/locale/eu/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/eu/LC_MESSAGES/katecolorpickerplugin.mo
+share/locale/eu/LC_MESSAGES/katecompilerexplorer.mo
 share/locale/eu/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/eu/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/eu/LC_MESSAGES/katefiletree.mo
@@ -952,6 +964,7 @@ share/locale/fr/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/fr/LC_MESSAGES/katebuild-plugin.mo
 share/locale/fr/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/fr/LC_MESSAGES/katecolorpickerplugin.mo
+share/locale/fr/LC_MESSAGES/katecompilerexplorer.mo
 share/locale/fr/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/fr/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/fr/LC_MESSAGES/katefiletree.mo
@@ -998,6 +1011,7 @@ share/locale/gl/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/gl/LC_MESSAGES/katebuild-plugin.mo
 share/locale/gl/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/gl/LC_MESSAGES/katecolorpickerplugin.mo
+share/locale/gl/LC_MESSAGES/katecompilerexplorer.mo
 share/locale/gl/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/gl/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/gl/LC_MESSAGES/katefiletree.mo
@@ -1018,19 +1032,30 @@ share/locale/gl/LC_MESSAGES/lspclient.mo
 share/locale/gl/LC_MESSAGES/rainbowparens.mo
 share/locale/gl/LC_MESSAGES/rbqlplugin.mo
 share/locale/gl/LC_MESSAGES/tabswitcherplugin.mo
+share/locale/he/LC_MESSAGES/formatplugin.mo
 share/locale/he/LC_MESSAGES/kate-ctags-plugin.mo
 share/locale/he/LC_MESSAGES/kate-replicode-plugin.mo
 share/locale/he/LC_MESSAGES/kate.mo
 share/locale/he/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/he/LC_MESSAGES/katebuild-plugin.mo
 share/locale/he/LC_MESSAGES/katecloseexceptplugin.mo
+share/locale/he/LC_MESSAGES/katecolorpickerplugin.mo
 share/locale/he/LC_MESSAGES/katefilebrowserplugin.mo
+share/locale/he/LC_MESSAGES/katefiletree.mo
+share/locale/he/LC_MESSAGES/kategitblameplugin.mo
 share/locale/he/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/he/LC_MESSAGES/kateproject.mo
 share/locale/he/LC_MESSAGES/katesearch.mo
+share/locale/he/LC_MESSAGES/katesnippetsplugin.mo
+share/locale/he/LC_MESSAGES/katesql.mo
 share/locale/he/LC_MESSAGES/katesymbolviewer.mo
 share/locale/he/LC_MESSAGES/katetextfilter.mo
+share/locale/he/LC_MESSAGES/katexmlcheck.mo
 share/locale/he/LC_MESSAGES/katexmltools.mo
+share/locale/he/LC_MESSAGES/ktexteditorpreviewplugin.mo
+share/locale/he/LC_MESSAGES/rainbowparens.mo
+share/locale/he/LC_MESSAGES/rbqlplugin.mo
+share/locale/he/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/hi/LC_MESSAGES/kate.mo
 share/locale/hi/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/hi/LC_MESSAGES/katekonsoleplugin.mo
@@ -1082,6 +1107,7 @@ share/locale/ia/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/ia/LC_MESSAGES/katebuild-plugin.mo
 share/locale/ia/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/ia/LC_MESSAGES/katecolorpickerplugin.mo
+share/locale/ia/LC_MESSAGES/katecompilerexplorer.mo
 share/locale/ia/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/ia/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ia/LC_MESSAGES/katefiletree.mo
@@ -1152,6 +1178,7 @@ share/locale/it/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/it/LC_MESSAGES/katebuild-plugin.mo
 share/locale/it/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/it/LC_MESSAGES/katecolorpickerplugin.mo
+share/locale/it/LC_MESSAGES/katecompilerexplorer.mo
 share/locale/it/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/it/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/it/LC_MESSAGES/katefiletree.mo
@@ -1207,6 +1234,7 @@ share/locale/ka/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/ka/LC_MESSAGES/katebuild-plugin.mo
 share/locale/ka/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/ka/LC_MESSAGES/katecolorpickerplugin.mo
+share/locale/ka/LC_MESSAGES/katecompilerexplorer.mo
 share/locale/ka/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/ka/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ka/LC_MESSAGES/katefiletree.mo
@@ -1262,6 +1290,7 @@ share/locale/ko/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/ko/LC_MESSAGES/katebuild-plugin.mo
 share/locale/ko/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/ko/LC_MESSAGES/katecolorpickerplugin.mo
+share/locale/ko/LC_MESSAGES/katecompilerexplorer.mo
 share/locale/ko/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/ko/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ko/LC_MESSAGES/katefiletree.mo
@@ -1280,6 +1309,7 @@ share/locale/ko/LC_MESSAGES/katexmltools.mo
 share/locale/ko/LC_MESSAGES/ktexteditorpreviewplugin.mo
 share/locale/ko/LC_MESSAGES/lspclient.mo
 share/locale/ko/LC_MESSAGES/rainbowparens.mo
+share/locale/ko/LC_MESSAGES/rbqlplugin.mo
 share/locale/ko/LC_MESSAGES/tabswitcherplugin.mo
 share/locale/ku/LC_MESSAGES/kate.mo
 share/locale/lt/LC_MESSAGES/formatplugin.mo
@@ -1443,6 +1473,7 @@ share/locale/nl/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/nl/LC_MESSAGES/katebuild-plugin.mo
 share/locale/nl/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/nl/LC_MESSAGES/katecolorpickerplugin.mo
+share/locale/nl/LC_MESSAGES/katecompilerexplorer.mo
 share/locale/nl/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/nl/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/nl/LC_MESSAGES/katefiletree.mo
@@ -1470,10 +1501,13 @@ share/locale/nn/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/nn/LC_MESSAGES/katebuild-plugin.mo
 share/locale/nn/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/nn/LC_MESSAGES/katecolorpickerplugin.mo
+share/locale/nn/LC_MESSAGES/katecompilerexplorer.mo
 share/locale/nn/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/nn/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/nn/LC_MESSAGES/katefiletree.mo
 share/locale/nn/LC_MESSAGES/kategdbplugin.mo
+share/locale/nn/LC_MESSAGES/kategitblameplugin.mo
+share/locale/nn/LC_MESSAGES/katekeyboardmacros.mo
 share/locale/nn/LC_MESSAGES/katekonsoleplugin.mo
 share/locale/nn/LC_MESSAGES/kateproject.mo
 share/locale/nn/LC_MESSAGES/katesearch.mo
@@ -1517,6 +1551,7 @@ share/locale/pl/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/pl/LC_MESSAGES/katebuild-plugin.mo
 share/locale/pl/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/pl/LC_MESSAGES/katecolorpickerplugin.mo
+share/locale/pl/LC_MESSAGES/katecompilerexplorer.mo
 share/locale/pl/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/pl/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/pl/LC_MESSAGES/katefiletree.mo
@@ -1616,6 +1651,7 @@ share/locale/ru/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/ru/LC_MESSAGES/katebuild-plugin.mo
 share/locale/ru/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/ru/LC_MESSAGES/katecolorpickerplugin.mo
+share/locale/ru/LC_MESSAGES/katecompilerexplorer.mo
 share/locale/ru/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/ru/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/ru/LC_MESSAGES/katefiletree.mo
@@ -1690,6 +1726,7 @@ share/locale/sl/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/sl/LC_MESSAGES/katebuild-plugin.mo
 share/locale/sl/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/sl/LC_MESSAGES/katecolorpickerplugin.mo
+share/locale/sl/LC_MESSAGES/katecompilerexplorer.mo
 share/locale/sl/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/sl/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/sl/LC_MESSAGES/katefiletree.mo
@@ -1807,6 +1844,7 @@ share/locale/sv/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/sv/LC_MESSAGES/katebuild-plugin.mo
 share/locale/sv/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/sv/LC_MESSAGES/katecolorpickerplugin.mo
+share/locale/sv/LC_MESSAGES/katecompilerexplorer.mo
 share/locale/sv/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/sv/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/sv/LC_MESSAGES/katefiletree.mo
@@ -1871,6 +1909,7 @@ share/locale/tr/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/tr/LC_MESSAGES/katebuild-plugin.mo
 share/locale/tr/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/tr/LC_MESSAGES/katecolorpickerplugin.mo
+share/locale/tr/LC_MESSAGES/katecompilerexplorer.mo
 share/locale/tr/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/tr/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/tr/LC_MESSAGES/katefiletree.mo
@@ -1914,6 +1953,7 @@ share/locale/uk/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/uk/LC_MESSAGES/katebuild-plugin.mo
 share/locale/uk/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/uk/LC_MESSAGES/katecolorpickerplugin.mo
+share/locale/uk/LC_MESSAGES/katecompilerexplorer.mo
 share/locale/uk/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/uk/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/uk/LC_MESSAGES/katefiletree.mo
@@ -1976,6 +2016,7 @@ share/locale/zh_CN/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/zh_CN/LC_MESSAGES/katebuild-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/zh_CN/LC_MESSAGES/katecolorpickerplugin.mo
+share/locale/zh_CN/LC_MESSAGES/katecompilerexplorer.mo
 share/locale/zh_CN/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/zh_CN/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/zh_CN/LC_MESSAGES/katefiletree.mo
@@ -2004,6 +2045,7 @@ share/locale/zh_TW/LC_MESSAGES/katebacktracebrowserplugin.mo
 share/locale/zh_TW/LC_MESSAGES/katebuild-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/katecloseexceptplugin.mo
 share/locale/zh_TW/LC_MESSAGES/katecolorpickerplugin.mo
+share/locale/zh_TW/LC_MESSAGES/katecompilerexplorer.mo
 share/locale/zh_TW/LC_MESSAGES/kateexternaltoolsplugin.mo
 share/locale/zh_TW/LC_MESSAGES/katefilebrowserplugin.mo
 share/locale/zh_TW/LC_MESSAGES/katefiletree.mo

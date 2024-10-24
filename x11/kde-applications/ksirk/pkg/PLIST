@@ -240,6 +240,7 @@ share/locale/ga/LC_MESSAGES/ksirk.mo
 share/locale/ga/LC_MESSAGES/ksirkskineditor.mo
 share/locale/gl/LC_MESSAGES/ksirk.mo
 share/locale/gl/LC_MESSAGES/ksirkskineditor.mo
+share/locale/he/LC_MESSAGES/ksirk.mo
 share/locale/hi/LC_MESSAGES/ksirk.mo
 share/locale/hne/LC_MESSAGES/ksirk.mo
 share/locale/hr/LC_MESSAGES/ksirk.mo
@@ -318,3 +319,4 @@ share/metainfo/
 share/metainfo/org.kde.ksirk.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 share/qlogging-categories6/ksirk.categories
+share/qlogging-categories6/ksirk.renamecategories

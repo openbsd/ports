@@ -7,10 +7,10 @@ SHARED_LIBS +=  kaddressbookprivate          5.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6Contacts
-WANTLIB += KF6CoreAddons KF6Crash KF6I18n KF6ItemModels KF6JobWidgets
-WANTLIB += KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore
-WANTLIB += KF6KIOGui KF6KIOWidgets KF6Parts KF6Service KF6Solid
-WANTLIB += KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
+WANTLIB += KF6CoreAddons KF6Crash KF6I18n KF6IconThemes KF6ItemModels
+WANTLIB += KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick
+WANTLIB += KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Parts KF6Service
+WANTLIB += KF6Solid KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
 WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6UserFeedbackCore
 WANTLIB += KF6UserFeedbackWidgets KF6WidgetsAddons KF6XmlGui KPim6AkonadiContactCore
 WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiCore KPim6AkonadiSearchDebug
@@ -50,6 +50,7 @@ LIB_DEPENDS =	devel/kf6/kcmutils \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \
+		devel/kf6/kiconthemes \
 		textproc/ktextaddons \
 		x11/kde-applications/akonadi-contacts>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/akonadi-search>=${MODKDE_GEAR_VERSION} \

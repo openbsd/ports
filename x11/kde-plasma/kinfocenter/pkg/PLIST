@@ -12,6 +12,7 @@ lib/qt6/plugins/plasma/kcms/kinfocenter/
 @so lib/qt6/plugins/plasma/kcms/kinfocenter/kcm_glx.so
 @so lib/qt6/plugins/plasma/kcms/kinfocenter/kcm_interrupts.so
 @so lib/qt6/plugins/plasma/kcms/kinfocenter/kcm_kwinsupportinfo.so
+@so lib/qt6/plugins/plasma/kcms/kinfocenter/kcm_memory.so
 @so lib/qt6/plugins/plasma/kcms/kinfocenter/kcm_network.so
 @so lib/qt6/plugins/plasma/kcms/kinfocenter/kcm_opencl.so
 @so lib/qt6/plugins/plasma/kcms/kinfocenter/kcm_pci.so
@@ -67,6 +68,9 @@ share/doc/HTML/pt_BR/kinfocenter/kinfocenter.png
 share/doc/HTML/ru/kinfocenter/
 share/doc/HTML/ru/kinfocenter/index.cache.bz2
 share/doc/HTML/ru/kinfocenter/index.docbook
+share/doc/HTML/sl/kinfocenter/
+share/doc/HTML/sl/kinfocenter/index.cache.bz2
+share/doc/HTML/sl/kinfocenter/index.docbook
 share/doc/HTML/sr/kinfocenter/
 share/doc/HTML/sr/kinfocenter/index.cache.bz2
 share/doc/HTML/sr/kinfocenter/index.docbook

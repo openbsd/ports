@@ -64,6 +64,9 @@ share/doc/HTML/ru/kigo/setup-general.png
 share/doc/HTML/ru/kigo/setup-theme.png
 share/doc/HTML/ru/kigo/start-loaded-game.png
 share/doc/HTML/ru/kigo/start-new-game.png
+share/doc/HTML/sl/kigo/
+share/doc/HTML/sl/kigo/index.cache.bz2
+share/doc/HTML/sl/kigo/index.docbook
 share/doc/HTML/sv/kigo/
 share/doc/HTML/sv/kigo/index.cache.bz2
 share/doc/HTML/sv/kigo/index.docbook
@@ -162,3 +165,4 @@ share/metainfo/org.kde.kigo.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
 share/qlogging-categories6/kigo.categories
+share/qlogging-categories6/kigo.renamecategories

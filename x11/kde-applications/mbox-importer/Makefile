@@ -4,8 +4,8 @@ DISTNAME =	mbox-importer-${VERSION}
 CATEGORIES =	devel
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6Contacts
-WANTLIB += KF6CoreAddons KF6Crash KF6I18n KF6ItemModels KF6KIOCore
-WANTLIB += KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
+WANTLIB += KF6CoreAddons KF6Crash KF6I18n KF6IconThemes KF6ItemModels
+WANTLIB += KF6KIOCore KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
 WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6WidgetsAddons
 WANTLIB += KPim6AkonadiContactCore KPim6AkonadiContactWidgets
 WANTLIB += KPim6AkonadiCore KPim6AkonadiMime KPim6AkonadiWidgets
@@ -16,7 +16,6 @@ WANTLIB += KPim6MessageComposer KPim6MessageCore KPim6Mime KPim6PimCommon
 WANTLIB += KPim6PimCommonAkonadi KPim6TextEdit Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Network Qt6Widgets assuan c gpgme gpgmepp
 WANTLIB += m qgpgmeqt6
-
 
 MODKDE_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
@@ -40,6 +39,7 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		security/gpgme,-qt \
 		security/libassuan \
 		textproc/ktextaddons \
+		devel/kf6/kiconthemes \
 		x11/kde-applications/akonadi-contacts>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/akonadi-mime>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/akonadi>=${MODKDE_GEAR_VERSION} \
@@ -56,7 +56,5 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		x11/kde-applications/pimcommon>=${MODKDE_GEAR_VERSION}
 
 TEST_IS_INTERACTIVE =	X11
-
-CXXFLAGS +=	-I${LOCALBASE}/include/KPim5/MessageViewer
 
 .include <bsd.port.mk>

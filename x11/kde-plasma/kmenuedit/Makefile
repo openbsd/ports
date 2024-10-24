@@ -3,7 +3,7 @@ DISTNAME =	kmenuedit-${VERSION}
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
-WANTLIB += KF6DBusAddons KF6GlobalAccel KF6I18n KF6IconThemes
+WANTLIB += KF6Crash KF6DBusAddons KF6GlobalAccel KF6I18n KF6IconThemes
 WANTLIB += KF6IconWidgets KF6ItemViews KF6JobWidgets KF6KIOCore
 WANTLIB += KF6KIOGui KF6KIOWidgets KF6Service KF6Solid KF6SonnetCore
 WANTLIB += KF6SonnetUi KF6WidgetsAddons KF6WindowSystem KF6XmlGui
@@ -16,7 +16,8 @@ MODKDE_ICON_CACHE = Yes
 
 RUN_DEPENDS =	devel/desktop-file-utils
 
-LIB_DEPENDS =	devel/kf6/kcompletion \
+LIB_DEPENDS =	devel/kf6/kcrash \
+		devel/kf6/kcompletion \
 		devel/kf6/kcolorscheme \
 		devel/kf6/kconfig \
 		devel/kf6/kconfigwidgets \

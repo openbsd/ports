@@ -48,6 +48,9 @@ share/doc/HTML/pt_BR/kmines/index.docbook
 share/doc/HTML/ru/kmines/
 share/doc/HTML/ru/kmines/index.cache.bz2
 share/doc/HTML/ru/kmines/index.docbook
+share/doc/HTML/sl/kmines/
+share/doc/HTML/sl/kmines/index.cache.bz2
+share/doc/HTML/sl/kmines/index.docbook
 share/doc/HTML/sv/kmines/
 share/doc/HTML/sv/kmines/index.cache.bz2
 share/doc/HTML/sv/kmines/index.docbook
@@ -165,3 +168,4 @@ share/metainfo/org.kde.kmines.appdata.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 share/qlogging-categories6/kmines.categories
+share/qlogging-categories6/kmines.renamecategories

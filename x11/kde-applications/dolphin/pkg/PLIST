@@ -19,6 +19,7 @@ lib/qt6/plugins/dolphin/
 lib/qt6/plugins/dolphin/kcms/
 @so lib/qt6/plugins/dolphin/kcms/kcm_dolphingeneral.so
 @so lib/qt6/plugins/dolphin/kcms/kcm_dolphinviewmodes.so
+@so lib/qt6/plugins/kf6/kfileitemaction/movetonewfolderitemaction.so
 @so lib/qt6/plugins/kf6/parts/dolphinpart.so
 lib/systemd/user/plasma-dolphin.service
 share/applications/org.kde.dolphin.desktop
@@ -161,6 +162,9 @@ share/doc/HTML/pt_BR/dolphin/viewproperties-dialog.png
 share/doc/HTML/ru/dolphin/
 share/doc/HTML/ru/dolphin/index.cache.bz2
 share/doc/HTML/ru/dolphin/index.docbook
+share/doc/HTML/sl/dolphin/
+share/doc/HTML/sl/dolphin/index.cache.bz2
+share/doc/HTML/sl/dolphin/index.docbook
 share/doc/HTML/sr/dolphin/
 share/doc/HTML/sr/dolphin/index.cache.bz2
 share/doc/HTML/sr/dolphin/index.docbook
@@ -230,6 +234,7 @@ share/kconf_update/dolphin_detailsmodesettings.upd
 share/kconf_update/dolphin_directorysizemode.py
 share/kconf_update/dolphin_directorysizemode.upd
 share/kglobalaccel/org.kde.dolphin.desktop
+share/knsrcfiles/
 share/knsrcfiles/servicemenu.knsrc
 share/locale/ar/LC_MESSAGES/dolphin.mo
 share/locale/ar/LC_MESSAGES/dolphin_servicemenuinstaller.mo

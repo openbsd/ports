@@ -7,7 +7,7 @@ COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${VERSION}
 CATEGORIES =	education math
 
-SHARED_LIBS +=  cantorlibs                54.1 # 17.08
+SHARED_LIBS +=  cantorlibs                55.0 # 17.08
 
 MODKDE_KF5 = 	Yes
 
@@ -23,8 +23,10 @@ WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Help Qt5Network
 WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
 WANTLIB += Qt5Quick Qt5Sql Qt5Svg Qt5WebChannel Qt5WebEngine Qt5WebEngineCore
 WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml Qt5XmlPatterns
-WANTLIB += X11 c intl luajit-5.1 m poppler poppler-qt5 ${MODPY_WANTLIB}
+WANTLIB += X11 c intl luajit-5.1 m poppler poppler-qt5 python3.11
 WANTLIB += qalculate spectre util
+
+WANTLIB += lib/R/lib/R lib/R/lib/Rblas lib/R/lib/Rlapack
 
 MODULES +=	fortran \
 		lang/lua \
@@ -83,7 +85,6 @@ LIB_DEPENDS =	devel/gettext,-runtime \
 		x11/qt5/qtxmlpatterns
 
 LIB_DEPENDS +=	math/R
-WANTLIB += lib/R/lib/R lib/R/lib/Rblas lib/R/lib/Rlapack
 
 #x11/kde-applications/analitza>=${MODKDE_GEAR_VERSION}
 

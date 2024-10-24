@@ -46,6 +46,9 @@ share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/kajongg/
 share/doc/HTML/pt_BR/kajongg/index.cache.bz2
 share/doc/HTML/pt_BR/kajongg/index.docbook
+share/doc/HTML/sl/kajongg/
+share/doc/HTML/sl/kajongg/index.cache.bz2
+share/doc/HTML/sl/kajongg/index.docbook
 share/doc/HTML/sv/kajongg/
 share/doc/HTML/sv/kajongg/index.cache.bz2
 share/doc/HTML/sv/kajongg/index.docbook
@@ -132,8 +135,6 @@ share/kajongg/${MODPY_PYCACHE}login.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/kajongg/${MODPY_PYCACHE}login.${MODPY_PYC_MAGIC_TAG}pyc
 share/kajongg/${MODPY_PYCACHE}mainwindow.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/kajongg/${MODPY_PYCACHE}mainwindow.${MODPY_PYC_MAGIC_TAG}pyc
-share/kajongg/${MODPY_PYCACHE}meld.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-share/kajongg/${MODPY_PYCACHE}meld.${MODPY_PYC_MAGIC_TAG}pyc
 share/kajongg/${MODPY_PYCACHE}message.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/kajongg/${MODPY_PYCACHE}message.${MODPY_PYC_MAGIC_TAG}pyc
 share/kajongg/${MODPY_PYCACHE}mi18n.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -241,7 +242,6 @@ share/kajongg/kdestub.py
 share/kajongg/log.py
 share/kajongg/login.py
 share/kajongg/mainwindow.py
-share/kajongg/meld.py
 share/kajongg/message.py
 share/kajongg/mi18n.py
 share/kajongg/mjresource.py
@@ -659,6 +659,7 @@ share/locale/fi/LC_MESSAGES/kajongg.mo
 share/locale/fr/LC_MESSAGES/kajongg.mo
 share/locale/ga/LC_MESSAGES/kajongg.mo
 share/locale/gl/LC_MESSAGES/kajongg.mo
+share/locale/he/LC_MESSAGES/kajongg.mo
 share/locale/hu/LC_MESSAGES/kajongg.mo
 share/locale/ia/LC_MESSAGES/kajongg.mo
 share/locale/is/LC_MESSAGES/kajongg.mo

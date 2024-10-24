@@ -10,7 +10,7 @@ MODKDE_TRANSLATIONS = yes
 MODKDE_DOCS = yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6Completion
-WANTLIB += KF6ConfigCore KF6ConfigGui KF6CoreAddons KF6DBusAddons
+WANTLIB += KF6ConfigCore KF6ConfigGui KF6CoreAddons KF6Crash KF6DBusAddons
 WANTLIB += KF6I18n KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets
 WANTLIB += KF6Notifications KF6Purpose KF6Service KF6Solid KF6WidgetsAddons
 WANTLIB += KF6WindowSystem Kirigami KirigamiPlatform MpvQt Qt6Core
@@ -40,6 +40,7 @@ LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/purpose \
 		devel/kf6/solid \
 		security/qtkeychain,qt6 \
+		devel/kf6/kcrash \
 		multimedia/mpvqt \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtwebsockets \

@@ -16,13 +16,6 @@ lib/qt6/plugins/pim6/kcms/akregator/
 @so lib/qt6/plugins/pim6/kcms/akregator/akregator_config_userfeedback.so
 lib/qt6/plugins/pim6/kontact/
 @so lib/qt6/plugins/pim6/kontact/kontact_akregatorplugin.so
-share/akregator/
-share/akregator/grantleetheme/
-share/akregator/grantleetheme/5.2/
-share/akregator/grantleetheme/5.2/combinedview.html
-share/akregator/grantleetheme/5.2/defaultnormalvisitfeed.html
-share/akregator/grantleetheme/5.2/defaultnormalvisitfolder.html
-share/akregator/grantleetheme/5.2/normalview.html
 share/applications/org.kde.akregator.desktop
 share/config.kcfg/akregator.kcfg
 share/dbus-1/interfaces/org.kde.akregator.part.xml
@@ -92,6 +85,9 @@ share/doc/HTML/pt_BR/akregator/index.docbook
 share/doc/HTML/ru/akregator/
 share/doc/HTML/ru/akregator/index.cache.bz2
 share/doc/HTML/ru/akregator/index.docbook
+share/doc/HTML/sl/akregator/
+share/doc/HTML/sl/akregator/index.cache.bz2
+share/doc/HTML/sl/akregator/index.docbook
 share/doc/HTML/sv/akregator/
 share/doc/HTML/sv/akregator/index.cache.bz2
 share/doc/HTML/sv/akregator/index.docbook

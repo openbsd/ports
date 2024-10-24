@@ -1,8 +1,44 @@
      SUBDIR =
 
-     # NEW in KDE6
+     # New in KDE Gear/24.12
+     #SUBDIR += calligra
+     #SUBDIR += kunifiedpush
+
+     # New in KDE Gear/24.08
+     #SUBDIR += kgraphviewer
+     #SUBDIR += kweathercore
+     #SUBDIR += massif-visualizer
+
+     # New in KDE Gear/24.05
+     #SUBDIR += accessibility-inspector
+     #SUBDIR += audex
+     #SUBDIR += francis
+     #SUBDIR += skladnik (rejoining after long time, previously called KSokoban)
+     #SUBDIR += kalm
+
+     # New in KDE Gear/24.02
      #SUBDIR += isoimagewriter
      #SUBDIR += khealthcertificate
+
+     # New in KDE Gear/23.04
+     #SUBDIR +=  alligator
+     #SUBDIR +=  angelfish
+     #SUBDIR +=  audiotube
+     #SUBDIR +=  calindori
+     #SUBDIR +=  kalk
+     #SUBDIR +=  kasts
+     #SUBDIR +=  kclock
+     #SUBDIR +=  kde-inotify-survey
+     #SUBDIR +=  keysmith
+     #SUBDIR +=  kio-admin
+     #SUBDIR +=  kjournald
+     #SUBDIR +=  koko
+     #SUBDIR +=  kongress
+     #SUBDIR +=  krecorder
+     #SUBDIR +=  ktrip
+     #SUBDIR +=  kweather
+     #SUBDIR +=  qmlkonsole
+     #SUBDIR +=  telly-skout
 
      # accessibility
      SUBDIR += kmag
@@ -134,7 +170,7 @@
      SUBDIR += kleopatra
      SUBDIR += kmail
      SUBDIR += kmail-account-wizard
-     SUBDIR += knotes
+     #SUBDIR += knotes # dropped in 24.08
      SUBDIR += kontact
      SUBDIR += korganizer
      SUBDIR += kpimtextedit
@@ -162,7 +198,7 @@
      SUBDIR += kdebugsettings
      SUBDIR += kdf
      SUBDIR += kgpg
-     SUBDIR += kipi-plugins
+     #SUBDIR += kipi-plugins # dropped in 24.08
      SUBDIR += kteatime
      SUBDIR += ktimer
      SUBDIR += kwalletmanager
@@ -221,7 +257,7 @@
      SUBDIR += libkdegames
      SUBDIR += libkdepim
      SUBDIR += libkeduvocdocument
-     SUBDIR += libkipi
+     #SUBDIR += libkipi # dropped in 24.08
      SUBDIR += libkleo
      SUBDIR += libkmahjongg
      SUBDIR += libkomparediff2
@@ -257,7 +293,7 @@
      # or 3f293301)
      SUBDIR += libkgapi
 
-     SUBDIR += kio-extras
+     #SUBDIR += kio-extras
      SUBDIR += kf6-kio-extras
 
      # audiocd-kio
@@ -289,25 +325,5 @@
      # kpmcore
      # kpublictransport
      # partitionmanager
-
-     # New in KDE Gear/23.04
-     # alligator
-     # angelfish
-     # audiotube
-     # calindori
-     # kalk
-     # kasts
-     # kclock
-     # kde-inotify-survey
-     # keysmith
-     # kio-admin
-     # kjournald
-     # koko
-     # kongress
-     # krecorder
-     # ktrip
-     # kweather
-     # qmlkonsole
-     # telly-skout
 
 .include <bsd.port.subdir.mk>

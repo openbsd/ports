@@ -206,6 +206,9 @@ share/doc/HTML/ru/kmplot/install.docbook
 share/doc/HTML/ru/kmplot/introduction.docbook
 share/doc/HTML/ru/kmplot/reference.docbook
 share/doc/HTML/ru/kmplot/using.docbook
+share/doc/HTML/sl/kmplot/
+share/doc/HTML/sl/kmplot/index.cache.bz2
+share/doc/HTML/sl/kmplot/index.docbook
 share/doc/HTML/sv/kmplot/
 share/doc/HTML/sv/kmplot/commands.docbook
 share/doc/HTML/sv/kmplot/configuration.docbook
@@ -266,6 +269,7 @@ share/locale/hi/LC_MESSAGES/kmplot.mo
 share/locale/hne/LC_MESSAGES/kmplot.mo
 share/locale/hr/LC_MESSAGES/kmplot.mo
 share/locale/hu/LC_MESSAGES/kmplot.mo
+share/locale/ia/LC_MESSAGES/kmplot.mo
 share/locale/is/LC_MESSAGES/kmplot.mo
 share/locale/it/LC_MESSAGES/kmplot.mo
 share/locale/ja/LC_MESSAGES/kmplot.mo

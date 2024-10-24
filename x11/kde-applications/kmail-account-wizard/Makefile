@@ -1,17 +1,17 @@
 COMMENT =	KMail account wizard
 DISTNAME =	kmail-account-wizard-${VERSION}
 CATEGORIES =	net www
-REVISION =	0
 
 SHARED_LIBS +=  kmailprivate       2.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
-WANTLIB += KF6DBusAddons KF6I18n KF6ItemModels KF6KIOCore KF6WidgetsAddons
-WANTLIB += KPim6AkonadiCore KPim6AkonadiWidgets KPim6IdentityManagementCore
-WANTLIB += KPim6MailTransport KPim6Mime Qt6Core Qt6DBus Qt6Gui
-WANTLIB += Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickControls2
-WANTLIB += Qt6Widgets Qt6Xml c m
+WANTLIB += KF6DBusAddons KF6I18n KF6IconThemes KF6ItemModels KF6KIOCore
+WANTLIB += KF6WidgetsAddons KPim6AkonadiCore KPim6AkonadiWidgets
+WANTLIB += KPim6IdentityManagementCore KPim6MailTransport KPim6Mime
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml
+WANTLIB += Qt6QmlModels Qt6Quick Qt6QuickControls2 Qt6Widgets
+WANTLIB += Qt6Xml c m
 
 MODKDE_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes
@@ -37,6 +37,7 @@ LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kio \
 		devel/kf6/kitemmodels \
 		devel/kf6/kwidgetsaddons \
+		devel/kf6/kiconthemes \
 		x11/kde-applications/akonadi>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/kidentitymanagement>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/kmailtransport>=${MODKDE_GEAR_VERSION} \

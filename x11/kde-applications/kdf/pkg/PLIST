@@ -99,6 +99,13 @@ share/doc/HTML/ru/kcontrol/blockdevices/index.docbook
 share/doc/HTML/ru/kdf/
 share/doc/HTML/ru/kdf/index.cache.bz2
 share/doc/HTML/ru/kdf/index.docbook
+share/doc/HTML/sl/kcontrol/
+share/doc/HTML/sl/kcontrol/blockdevices/
+share/doc/HTML/sl/kcontrol/blockdevices/index.cache.bz2
+share/doc/HTML/sl/kcontrol/blockdevices/index.docbook
+share/doc/HTML/sl/kdf/
+share/doc/HTML/sl/kdf/index.cache.bz2
+share/doc/HTML/sl/kdf/index.docbook
 share/doc/HTML/sr/kcontrol/
 share/doc/HTML/sr/kcontrol/blockdevices/
 share/doc/HTML/sr/kcontrol/blockdevices/index.cache.bz2

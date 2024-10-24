@@ -102,6 +102,9 @@ share/doc/HTML/pt_BR/kgeography/zoom.png
 share/doc/HTML/ru/kgeography/
 share/doc/HTML/ru/kgeography/index.cache.bz2
 share/doc/HTML/ru/kgeography/index.docbook
+share/doc/HTML/sl/kgeography/
+share/doc/HTML/sl/kgeography/index.cache.bz2
+share/doc/HTML/sl/kgeography/index.docbook
 share/doc/HTML/sv/kgeography/
 share/doc/HTML/sv/kgeography/first-start1.png
 share/doc/HTML/sv/kgeography/first-start10.png
@@ -1201,6 +1204,7 @@ share/kgeography/zimbabwe_districts.kgm
 share/kgeography/zimbabwe_districts.png
 share/locale/ar/LC_MESSAGES/kgeography.mo
 share/locale/ast/LC_MESSAGES/kgeography.mo
+share/locale/az/LC_MESSAGES/kgeography.mo
 share/locale/be/LC_MESSAGES/kgeography.mo
 share/locale/bg/LC_MESSAGES/kgeography.mo
 share/locale/br/LC_MESSAGES/kgeography.mo

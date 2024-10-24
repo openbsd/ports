@@ -27,7 +27,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 LIB_DEPENDS =	audio/libcanberra \
 		audio/pulseaudio \
-		audio/pulseaudio-qt>=1.5.0 \
+		audio/pulseaudio-qt>=1.6.0 \
 		devel/gettext,-runtime \
 		devel/glib2 \
 		devel/kf6/kcmutils \

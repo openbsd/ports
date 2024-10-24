@@ -2,12 +2,12 @@ COMMENT =	mail sieve editor
 DISTNAME =	pim-sieve-editor-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=  sieveeditor       4.1 # 5.13.2
+SHARED_LIBS +=  sieveeditor       5.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Bookmarks KF6BookmarksWidgets
 WANTLIB += KF6ColorScheme KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
-WANTLIB += KF6CoreAddons KF6Crash KF6DBusAddons KF6I18n KF6KIOCore
-WANTLIB += KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
+WANTLIB += KF6CoreAddons KF6Crash KF6DBusAddons KF6I18n KF6IconThemes
+WANTLIB += KF6KIOCore KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
 WANTLIB += KF6TextCustomEditor KF6UserFeedbackCore KF6UserFeedbackWidgets
 WANTLIB += KF6WidgetsAddons KF6XmlGui KPim6KManageSieve KPim6KSieve
 WANTLIB += KPim6KSieveCore KPim6KSieveUi KPim6MailTransport KPim6PimCommon
@@ -32,6 +32,7 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/kuserfeedback \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
+		devel/kf6/kiconthemes \
 		security/qtkeychain,qt6 \
 		textproc/ktextaddons \
 		x11/kde-applications/kmailtransport>=${MODKDE_GEAR_VERSION} \

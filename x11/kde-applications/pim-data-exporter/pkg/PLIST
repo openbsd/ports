@@ -35,6 +35,9 @@ share/doc/HTML/pt_BR/pimsettingexporter/index.docbook
 share/doc/HTML/ru/pimsettingexporter/
 share/doc/HTML/ru/pimsettingexporter/index.cache.bz2
 share/doc/HTML/ru/pimsettingexporter/index.docbook
+share/doc/HTML/sl/pimsettingexporter/
+share/doc/HTML/sl/pimsettingexporter/index.cache.bz2
+share/doc/HTML/sl/pimsettingexporter/index.docbook
 share/doc/HTML/sv/pimsettingexporter/
 share/doc/HTML/sv/pimsettingexporter/index.cache.bz2
 share/doc/HTML/sv/pimsettingexporter/index.docbook
@@ -61,6 +64,7 @@ share/locale/fi/LC_MESSAGES/pimdataexporter.mo
 share/locale/fr/LC_MESSAGES/pimdataexporter.mo
 share/locale/ga/LC_MESSAGES/pimdataexporter.mo
 share/locale/gl/LC_MESSAGES/pimdataexporter.mo
+share/locale/he/LC_MESSAGES/pimdataexporter.mo
 share/locale/hu/LC_MESSAGES/pimdataexporter.mo
 share/locale/ia/LC_MESSAGES/pimdataexporter.mo
 share/locale/it/LC_MESSAGES/pimdataexporter.mo

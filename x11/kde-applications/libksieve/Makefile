@@ -4,7 +4,7 @@ CATEGORIES =	devel
 
 SHARED_LIBS +=	KPim6KManageSieve         0.0 # 0.0
 SHARED_LIBS +=	KPim6KSieve               0.0 # 0.0
-SHARED_LIBS +=	KPim6KSieveCore           0.0 # 0.0
+SHARED_LIBS +=	KPim6KSieveCore           1.0 # 0.0
 SHARED_LIBS +=	KPim6KSieveUi             0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Attica KF6ColorScheme

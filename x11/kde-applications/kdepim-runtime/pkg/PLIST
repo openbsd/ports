@@ -17,7 +17,6 @@
 @bin bin/akonadi_notes_resource
 @bin bin/akonadi_openxchange_resource
 @bin bin/akonadi_pop3_resource
-@bin bin/akonadi_tomboynotes_resource
 @bin bin/akonadi_vcard_resource
 @bin bin/akonadi_vcarddir_resource
 @bin bin/gidmigrator
@@ -43,7 +42,6 @@ lib/qt6/plugins/pim6/akonadi/config/
 @so lib/qt6/plugins/pim6/akonadi/config/notesconfig.so
 @so lib/qt6/plugins/pim6/akonadi/config/openxchangeconfig.so
 @so lib/qt6/plugins/pim6/akonadi/config/pop3config.so
-@so lib/qt6/plugins/pim6/akonadi/config/tomboynotesconfig.so
 @so lib/qt6/plugins/pim6/akonadi/config/vcardconfig.so
 @so lib/qt6/plugins/pim6/akonadi/config/vcarddirconfig.so
 lib/qt6/plugins/pim6/kcms/
@@ -69,7 +67,6 @@ share/akonadi/agents/newmailnotifieragent.desktop
 share/akonadi/agents/notesresource.desktop
 share/akonadi/agents/openxchangeresource.desktop
 share/akonadi/agents/pop3resource.desktop
-share/akonadi/agents/tomboynotesresource.desktop
 share/akonadi/agents/vcarddirresource.desktop
 share/akonadi/agents/vcardresource.desktop
 share/akonadi/davgroupware-providers/
@@ -118,6 +115,7 @@ share/icons/hicolor/72x72/apps/akonadi-ews.png
 share/icons/hicolor/96x96/apps/akonadi-ews.png
 share/knotifications6/akonadi_ews_resource.notifyrc
 share/knotifications6/akonadi_google_resource.notifyrc
+share/knotifications6/akonadi_imap_resource.notifyrc
 share/knotifications6/akonadi_maildispatcher_agent.notifyrc
 share/knotifications6/akonadi_newmailnotifier_agent.notifyrc
 share/knotifications6/akonadi_pop3_resource.notifyrc
@@ -140,7 +138,6 @@ share/locale/ar/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/ar/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/ar/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/ar/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/ar/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/ar/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/ar/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/ar/LC_MESSAGES/gid-migrator.mo
@@ -165,7 +162,6 @@ share/locale/ast/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/ast/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/ast/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/ast/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/ast/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/ast/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/ast/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/ast/LC_MESSAGES/gid-migrator.mo
@@ -190,7 +186,6 @@ share/locale/bg/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/bg/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/bg/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/bg/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/bg/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/bg/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/bg/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/bg/LC_MESSAGES/gid-migrator.mo
@@ -237,7 +232,6 @@ share/locale/ca/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/ca/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/ca/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/ca/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/ca/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/ca/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/ca/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/ca/LC_MESSAGES/gid-migrator.mo
@@ -262,7 +256,6 @@ share/locale/ca@valencia/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/ca@valencia/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/ca@valencia/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/ca@valencia/LC_MESSAGES/gid-migrator.mo
@@ -287,7 +280,6 @@ share/locale/cs/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/cs/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/cs/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/cs/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/cs/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/cs/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/cs/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/cs/LC_MESSAGES/gid-migrator.mo
@@ -311,7 +303,6 @@ share/locale/da/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/da/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/da/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/da/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/da/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/da/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/da/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/da/LC_MESSAGES/gid-migrator.mo
@@ -336,7 +327,6 @@ share/locale/de/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/de/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/de/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/de/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/de/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/de/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/de/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/de/LC_MESSAGES/gid-migrator.mo
@@ -359,7 +349,6 @@ share/locale/el/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/el/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/el/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/el/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/el/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/el/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/el/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/el/LC_MESSAGES/gid-migrator.mo
@@ -384,7 +373,6 @@ share/locale/en_GB/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/en_GB/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/en_GB/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/en_GB/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/en_GB/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/en_GB/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/en_GB/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/en_GB/LC_MESSAGES/gid-migrator.mo
@@ -409,7 +397,6 @@ share/locale/eo/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/eo/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/eo/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/eo/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/eo/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/eo/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/eo/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/eo/LC_MESSAGES/gid-migrator.mo
@@ -434,7 +421,6 @@ share/locale/es/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/es/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/es/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/es/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/es/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/es/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/es/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/es/LC_MESSAGES/gid-migrator.mo
@@ -458,7 +444,6 @@ share/locale/et/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/et/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/et/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/et/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/et/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/et/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/et/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/et/LC_MESSAGES/gid-migrator.mo
@@ -483,7 +468,6 @@ share/locale/eu/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/eu/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/eu/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/eu/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/eu/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/eu/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/eu/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/eu/LC_MESSAGES/gid-migrator.mo
@@ -508,7 +492,6 @@ share/locale/fi/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/fi/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/fi/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/fi/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/fi/LC_MESSAGES/gid-migrator.mo
@@ -533,7 +516,6 @@ share/locale/fr/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/fr/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/fr/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/fr/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/fr/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/fr/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/fr/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/fr/LC_MESSAGES/gid-migrator.mo
@@ -577,12 +559,35 @@ share/locale/gl/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/gl/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/gl/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/gl/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/gl/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/gl/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/gl/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/gl/LC_MESSAGES/gid-migrator.mo
 share/locale/gl/LC_MESSAGES/kio_akonadi.mo
 share/locale/gl/LC_MESSAGES/libfolderarchivesettings.mo
+share/locale/he/LC_MESSAGES/akonadi-filestore.mo
+share/locale/he/LC_MESSAGES/akonadi_birthdays_resource.mo
+share/locale/he/LC_MESSAGES/akonadi_contacts_resource.mo
+share/locale/he/LC_MESSAGES/akonadi_davgroupware_resource.mo
+share/locale/he/LC_MESSAGES/akonadi_etesync_resource.mo
+share/locale/he/LC_MESSAGES/akonadi_ews_resource.mo
+share/locale/he/LC_MESSAGES/akonadi_google_resource.mo
+share/locale/he/LC_MESSAGES/akonadi_ical_resource.mo
+share/locale/he/LC_MESSAGES/akonadi_icaldir_resource.mo
+share/locale/he/LC_MESSAGES/akonadi_imap_resource.mo
+share/locale/he/LC_MESSAGES/akonadi_maildir_resource.mo
+share/locale/he/LC_MESSAGES/akonadi_maildispatcher_agent.mo
+share/locale/he/LC_MESSAGES/akonadi_mbox_resource.mo
+share/locale/he/LC_MESSAGES/akonadi_migration_agent.mo
+share/locale/he/LC_MESSAGES/akonadi_mixedmaildir_resource.mo
+share/locale/he/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
+share/locale/he/LC_MESSAGES/akonadi_openxchange_resource.mo
+share/locale/he/LC_MESSAGES/akonadi_pop3_resource.mo
+share/locale/he/LC_MESSAGES/akonadi_singlefile_resource.mo
+share/locale/he/LC_MESSAGES/akonadi_vcard_resource.mo
+share/locale/he/LC_MESSAGES/akonadi_vcarddir_resource.mo
+share/locale/he/LC_MESSAGES/gid-migrator.mo
+share/locale/he/LC_MESSAGES/kio_akonadi.mo
+share/locale/he/LC_MESSAGES/libfolderarchivesettings.mo
 share/locale/hr/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/hr/LC_MESSAGES/akonadi_contacts_resource.mo
 share/locale/hr/LC_MESSAGES/akonadi_pop3_resource.mo
@@ -604,7 +609,6 @@ share/locale/hu/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/hu/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/hu/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/hu/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/hu/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/hu/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/hu/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/hu/LC_MESSAGES/gid-migrator.mo
@@ -629,7 +633,6 @@ share/locale/ia/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/ia/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/ia/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/ia/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/ia/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/ia/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/ia/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/ia/LC_MESSAGES/gid-migrator.mo
@@ -655,7 +658,6 @@ share/locale/it/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/it/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/it/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/it/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/it/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/it/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/it/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/it/LC_MESSAGES/gid-migrator.mo
@@ -680,7 +682,6 @@ share/locale/ja/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/ja/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/ja/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/ja/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/ja/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/ja/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/ja/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/ja/LC_MESSAGES/gid-migrator.mo
@@ -705,7 +706,6 @@ share/locale/ka/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/ka/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/ka/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/ka/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/ka/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/ka/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/ka/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/ka/LC_MESSAGES/gid-migrator.mo
@@ -768,7 +768,6 @@ share/locale/ko/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/ko/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/ko/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/ko/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/ko/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/ko/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/ko/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/ko/LC_MESSAGES/gid-migrator.mo
@@ -793,7 +792,6 @@ share/locale/lt/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/lt/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/lt/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/lt/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/lt/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/lt/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/lt/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/lt/LC_MESSAGES/gid-migrator.mo
@@ -902,7 +900,6 @@ share/locale/nl/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/nl/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/nl/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/nl/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/nl/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/nl/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/nl/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/nl/LC_MESSAGES/gid-migrator.mo
@@ -957,7 +954,6 @@ share/locale/pl/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/pl/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/pl/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/pl/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/pl/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/pl/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/pl/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/pl/LC_MESSAGES/gid-migrator.mo
@@ -982,7 +978,6 @@ share/locale/pt/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/pt/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/pt/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/pt/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/pt/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/pt/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/pt/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/pt/LC_MESSAGES/gid-migrator.mo
@@ -1007,7 +1002,6 @@ share/locale/pt_BR/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/pt_BR/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/pt_BR/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/pt_BR/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/pt_BR/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/pt_BR/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/pt_BR/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/pt_BR/LC_MESSAGES/gid-migrator.mo
@@ -1049,7 +1043,6 @@ share/locale/ru/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/ru/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/ru/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/ru/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/ru/LC_MESSAGES/gid-migrator.mo
@@ -1074,7 +1067,6 @@ share/locale/sk/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/sk/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/sk/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/sk/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/sk/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/sk/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/sk/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/sk/LC_MESSAGES/gid-migrator.mo
@@ -1099,7 +1091,6 @@ share/locale/sl/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/sl/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/sl/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/sl/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/sl/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/sl/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/sl/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/sl/LC_MESSAGES/gid-migrator.mo
@@ -1130,7 +1121,6 @@ share/locale/sr/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/sr/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/sr/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/sr/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/sr/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/sr/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/sr/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/sr/LC_MESSAGES/gid-migrator.mo
@@ -1153,7 +1143,6 @@ share/locale/sr@ijekavian/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/sr@ijekavian/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/sr@ijekavian/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/sr@ijekavian/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/sr@ijekavian/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/sr@ijekavian/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/sr@ijekavian/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/sr@ijekavian/LC_MESSAGES/gid-migrator.mo
@@ -1176,7 +1165,6 @@ share/locale/sr@ijekavianlatin/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/sr@ijekavianlatin/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/sr@ijekavianlatin/LC_MESSAGES/gid-migrator.mo
@@ -1199,7 +1187,6 @@ share/locale/sr@latin/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/sr@latin/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/sr@latin/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/sr@latin/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/sr@latin/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/sr@latin/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/sr@latin/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/sr@latin/LC_MESSAGES/gid-migrator.mo
@@ -1224,12 +1211,15 @@ share/locale/sv/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/sv/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/sv/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/sv/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/sv/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/sv/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/sv/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/sv/LC_MESSAGES/gid-migrator.mo
 share/locale/sv/LC_MESSAGES/kio_akonadi.mo
 share/locale/sv/LC_MESSAGES/libfolderarchivesettings.mo
+share/locale/ta/LC_MESSAGES/akonadi_maildir_resource.mo
+share/locale/ta/LC_MESSAGES/akonadi_maildispatcher_agent.mo
+share/locale/ta/LC_MESSAGES/akonadi_mixedmaildir_resource.mo
+share/locale/ta/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/ta/LC_MESSAGES/libfolderarchivesettings.mo
 share/locale/th/LC_MESSAGES/akonadi_birthdays_resource.mo
 share/locale/th/LC_MESSAGES/akonadi_contacts_resource.mo
@@ -1253,7 +1243,6 @@ share/locale/tr/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/tr/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/tr/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/tr/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/tr/LC_MESSAGES/gid-migrator.mo
@@ -1297,7 +1286,6 @@ share/locale/uk/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/uk/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/uk/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/uk/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/uk/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/uk/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/uk/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/uk/LC_MESSAGES/gid-migrator.mo
@@ -1322,7 +1310,6 @@ share/locale/zh_CN/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/zh_CN/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/zh_CN/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/zh_CN/LC_MESSAGES/gid-migrator.mo
@@ -1347,7 +1334,6 @@ share/locale/zh_TW/LC_MESSAGES/akonadi_newmailnotifier_agent.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_openxchange_resource.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_pop3_resource.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_singlefile_resource.mo
-share/locale/zh_TW/LC_MESSAGES/akonadi_tomboynotes_resource.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_vcard_resource.mo
 share/locale/zh_TW/LC_MESSAGES/akonadi_vcarddir_resource.mo
 share/locale/zh_TW/LC_MESSAGES/gid-migrator.mo

@@ -68,6 +68,4 @@ LIB_DEPENDS =	databases/xapian-core \
 
 TEST_IS_INTERACTIVE =	X11
 
-CXXFLAGS +=	-I${LOCALBASE}/include/KPim5/MessageViewer
-
 .include <bsd.port.mk>

@@ -3,10 +3,13 @@
 @bin bin/merkuro-calendar
 @bin bin/merkuro-contact
 @bin bin/merkuro-mail
+@lib lib/libMerkuroComponents.so.${LIBMerkuroComponents_VERSION}
+@lib lib/libmerkuro_contact.so.${LIBmerkuro_contact_VERSION}
 lib/qt6/qml/org/kde/akonadi/
 lib/qt6/qml/org/kde/akonadi/AgentConfigurationForm.qml
 lib/qt6/qml/org/kde/akonadi/CollectionComboBox.qml
 lib/qt6/qml/org/kde/akonadi/MobileCollectionComboBox.qml
+lib/qt6/qml/org/kde/akonadi/ProgressStatusBar.qml
 lib/qt6/qml/org/kde/akonadi/TagManagerPage.qml
 lib/qt6/qml/org/kde/akonadi/akonadi_quick_plugin.qmltypes
 lib/qt6/qml/org/kde/akonadi/kde-qmlmodule.version
@@ -29,26 +32,25 @@ lib/qt6/qml/org/kde/merkuro/components/ColoredCheckbox.qml
 lib/qt6/qml/org/kde/merkuro/components/EditMenu.qml
 lib/qt6/qml/org/kde/merkuro/components/FileMenu.qml
 lib/qt6/qml/org/kde/merkuro/components/HelpMenu.qml
-lib/qt6/qml/org/kde/merkuro/components/KActionFromAction.qml
-lib/qt6/qml/org/kde/merkuro/components/KQuickCommandBarPage.qml
+lib/qt6/qml/org/kde/merkuro/components/MerkuroComponents.qmltypes
 lib/qt6/qml/org/kde/merkuro/components/NativeEditMenu.qml
 lib/qt6/qml/org/kde/merkuro/components/NativeFileMenu.qml
 lib/qt6/qml/org/kde/merkuro/components/NativeHelpMenu.qml
-lib/qt6/qml/org/kde/merkuro/components/NativeMenuItemFromAction.qml
 lib/qt6/qml/org/kde/merkuro/components/NativeWindowMenu.qml
 lib/qt6/qml/org/kde/merkuro/components/SettingsMenu.qml
-lib/qt6/qml/org/kde/merkuro/components/ViewMenu.qml
 lib/qt6/qml/org/kde/merkuro/components/WindowMenu.qml
 lib/qt6/qml/org/kde/merkuro/components/kde-qmlmodule.version
-@so lib/qt6/qml/org/kde/merkuro/components/libmerkuro_components_plugin.so
-lib/qt6/qml/org/kde/merkuro/components/merkuro_components_plugin.qmltypes
+@so lib/qt6/qml/org/kde/merkuro/components/libMerkuroComponentsplugin.so
 lib/qt6/qml/org/kde/merkuro/components/qmldir
 lib/qt6/qml/org/kde/merkuro/contact/
 lib/qt6/qml/org/kde/merkuro/contact/AddressBookCollectionHandler.qml
 lib/qt6/qml/org/kde/merkuro/contact/ContactChooserPage.qml
+lib/qt6/qml/org/kde/merkuro/contact/ContactListItem.qml
 lib/qt6/qml/org/kde/merkuro/contact/ContactView.qml
 lib/qt6/qml/org/kde/merkuro/contact/GlobalMenuBar.qml
+lib/qt6/qml/org/kde/merkuro/contact/Main.qml
 lib/qt6/qml/org/kde/merkuro/contact/MenuBar.qml
+lib/qt6/qml/org/kde/merkuro/contact/Settings.qml
 lib/qt6/qml/org/kde/merkuro/contact/Sidebar.qml
 lib/qt6/qml/org/kde/merkuro/contact/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/merkuro/contact/libmerkuro_contact_plugin.so
@@ -56,7 +58,6 @@ lib/qt6/qml/org/kde/merkuro/contact/merkuro_contact_plugin.qmltypes
 lib/qt6/qml/org/kde/merkuro/contact/private/
 lib/qt6/qml/org/kde/merkuro/contact/private/AddressBookMenu.qml
 lib/qt6/qml/org/kde/merkuro/contact/private/ContactGroupPage.qml
-lib/qt6/qml/org/kde/merkuro/contact/private/ContactListItem.qml
 lib/qt6/qml/org/kde/merkuro/contact/private/ContactPage.qml
 lib/qt6/qml/org/kde/merkuro/contact/private/ContactsPage.qml
 lib/qt6/qml/org/kde/merkuro/contact/private/DeleteContactAction.qml
@@ -74,29 +75,8 @@ lib/qt6/qml/org/kde/merkuro/contact/private/contact_editor/PersonalInfoEditorCar
 lib/qt6/qml/org/kde/merkuro/contact/private/contact_editor/PhoneEditorCard.qml
 lib/qt6/qml/org/kde/merkuro/contact/private/contact_editor/PhotoEditor.qml
 lib/qt6/qml/org/kde/merkuro/contact/qmldir
-lib/qt6/qml/org/kde/merkuro/mail/
-lib/qt6/qml/org/kde/merkuro/mail/ConversationViewer.qml
-lib/qt6/qml/org/kde/merkuro/mail/FolderView.qml
-lib/qt6/qml/org/kde/merkuro/mail/MailComposer.qml
-lib/qt6/qml/org/kde/merkuro/mail/MailSidebar.qml
-lib/qt6/qml/org/kde/merkuro/mail/actions/
-lib/qt6/qml/org/kde/merkuro/mail/actions/DeleteFolderAction.qml
-lib/qt6/qml/org/kde/merkuro/mail/actions/MailItemMenu.qml
-lib/qt6/qml/org/kde/merkuro/mail/actions/NewFolderAction.qml
-lib/qt6/qml/org/kde/merkuro/mail/desktopactions/
-lib/qt6/qml/org/kde/merkuro/mail/desktopactions/openmbox.qml
-lib/qt6/qml/org/kde/merkuro/mail/kde-qmlmodule.version
-@so lib/qt6/qml/org/kde/merkuro/mail/libmerkuro_mail_plugin.so
-lib/qt6/qml/org/kde/merkuro/mail/mailboxselector/
-lib/qt6/qml/org/kde/merkuro/mail/mailboxselector/MailBoxList.qml
-lib/qt6/qml/org/kde/merkuro/mail/mailboxselector/MailBoxListPage.qml
-lib/qt6/qml/org/kde/merkuro/mail/mailpartview/
-lib/qt6/qml/org/kde/merkuro/mail/mailpartview/ICalPart.qml
-lib/qt6/qml/org/kde/merkuro/mail/merkuro_mail_plugin.qmltypes
-lib/qt6/qml/org/kde/merkuro/mail/private/
-lib/qt6/qml/org/kde/merkuro/mail/private/AttachmentDelegate.qml
-lib/qt6/qml/org/kde/merkuro/mail/private/MailDelegate.qml
-lib/qt6/qml/org/kde/merkuro/mail/qmldir
+lib/qt6/qml/org/kde/merkuro/contact/resources/
+lib/qt6/qml/org/kde/merkuro/contact/resources/fallbackBackground.png
 share/applications/org.kde.merkuro.calendar.desktop
 share/applications/org.kde.merkuro.contact.desktop
 share/applications/org.kde.merkuro.mail.desktop
@@ -115,6 +95,7 @@ share/icons/hicolor/32x32/apps/org.kde.merkuro.mail.png
 share/icons/hicolor/48x48/apps/org.kde.merkuro.calendar.png
 share/icons/hicolor/48x48/apps/org.kde.merkuro.contact.png
 share/icons/hicolor/48x48/apps/org.kde.merkuro.mail.png
+share/knotifications6/merkuro.mail.notifyrc
 share/locale/ar/LC_MESSAGES/merkuro.mo
 share/locale/ar/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
 share/locale/ast/LC_MESSAGES/merkuro.mo
@@ -142,7 +123,10 @@ share/locale/fi/LC_MESSAGES/merkuro.mo
 share/locale/fi/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
 share/locale/fr/LC_MESSAGES/merkuro.mo
 share/locale/fr/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
+share/locale/gl/LC_MESSAGES/merkuro.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
+share/locale/he/LC_MESSAGES/merkuro.mo
+share/locale/he/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
 share/locale/hi/LC_MESSAGES/merkuro.mo
 share/locale/hi/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
 share/locale/hu/LC_MESSAGES/merkuro.mo
@@ -194,6 +178,7 @@ share/metainfo/org.kde.merkuro.calendar.metainfo.xml
 share/metainfo/org.kde.merkuro.contact.appdata.xml
 share/metainfo/org.kde.merkuro.contact.metainfo.xml
 share/metainfo/org.kde.merkuro.mail.metainfo.xml
+share/metainfo/org.kde.merkuro.metainfo.xml
 share/plasma/plasmoids/
 share/plasma/plasmoids/org.kde.merkuro.contact/
 share/plasma/plasmoids/org.kde.merkuro.contact/contents/
@@ -203,7 +188,6 @@ share/plasma/plasmoids/org.kde.merkuro.contact/contents/resources/
 share/plasma/plasmoids/org.kde.merkuro.contact/contents/resources/fallbackBackground.png
 share/plasma/plasmoids/org.kde.merkuro.contact/contents/ui/
 share/plasma/plasmoids/org.kde.merkuro.contact/contents/ui/CompactRepresentation.qml
-share/plasma/plasmoids/org.kde.merkuro.contact/contents/ui/ContactListItem.qml
 share/plasma/plasmoids/org.kde.merkuro.contact/contents/ui/ContactPage.qml
 share/plasma/plasmoids/org.kde.merkuro.contact/contents/ui/ContactsPage.qml
 share/plasma/plasmoids/org.kde.merkuro.contact/contents/ui/Header.qml

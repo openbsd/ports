@@ -12,8 +12,7 @@ WANTLIB += KF6ItemModels KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets
 WANTLIB += KF6Notifications KF6Service KF6Solid KF6SonnetUi KF6StatusNotifierItem
 WANTLIB += KF6TextWidgets KF6WidgetsAddons KF6WindowSystem KF6XmlGui
 WANTLIB += KPim6AkonadiCore KPim6AkonadiMime KPim6IdentityManagementCore
-WANTLIB += KPim6Libkleo KPim6MailTransport KPim6Mbox KPim6Mime
-WANTLIB += KPim6MimeTreeParserCore KPim6MimeTreeParserWidgets
+WANTLIB += KPim6Libkleo KPim6MailTransport KPim6Mime KPim6MimeTreeParserWidgets
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6PrintSupport Qt6Widgets
 WANTLIB += Qt6Xml X11 assuan c gpg-error gpgme gpgmepp m qgpgmeqt6
 

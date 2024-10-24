@@ -112,6 +112,7 @@ share/locale/fi/LC_MESSAGES/palapeli.mo
 share/locale/fr/LC_MESSAGES/palapeli.mo
 share/locale/ga/LC_MESSAGES/palapeli.mo
 share/locale/gl/LC_MESSAGES/palapeli.mo
+share/locale/he/LC_MESSAGES/palapeli.mo
 share/locale/hr/LC_MESSAGES/palapeli.mo
 share/locale/hsb/LC_MESSAGES/palapeli.mo
 share/locale/hu/LC_MESSAGES/palapeli.mo
@@ -177,3 +178,4 @@ share/palapeli/palapeli.kcfg
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-mime-database
 share/qlogging-categories6/palapeli.categories
+share/qlogging-categories6/palapeli.renamecategories

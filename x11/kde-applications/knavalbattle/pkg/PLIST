@@ -40,6 +40,9 @@ share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/knavalbattle/
 share/doc/HTML/pt_BR/knavalbattle/index.cache.bz2
 share/doc/HTML/pt_BR/knavalbattle/index.docbook
+share/doc/HTML/sl/knavalbattle/
+share/doc/HTML/sl/knavalbattle/index.cache.bz2
+share/doc/HTML/sl/knavalbattle/index.docbook
 share/doc/HTML/sv/knavalbattle/
 share/doc/HTML/sv/knavalbattle/index.cache.bz2
 share/doc/HTML/sv/knavalbattle/index.docbook
@@ -144,3 +147,4 @@ share/metainfo/org.kde.knavalbattle.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
 share/qlogging-categories6/knavalbattle.categories
+share/qlogging-categories6/knavalbattle.renamecategories

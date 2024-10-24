@@ -4,7 +4,7 @@ CATEGORIES =	editors
 
 HOMEPAGE =	https://kate-editor.org/
 
-SHARED_LIBS +=  kateprivate               4.0 # 0.0
+SHARED_LIBS +=  kateprivate               5.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Attica KF6Bookmarks KF6BookmarksWidgets
 WANTLIB += KF6ColorScheme KF6Completion KF6ConfigCore KF6ConfigGui
@@ -15,7 +15,7 @@ WANTLIB += KF6KIOWidgets KF6NewStuffCore KF6NewStuffWidgets KF6Parts
 WANTLIB += KF6Service KF6Solid KF6SonnetUi KF6SyntaxHighlighting
 WANTLIB += KF6TextEditor KF6TextWidgets KF6UserFeedbackCore KF6UserFeedbackWidgets
 WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui Qt6Concurrent
-WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Qml Qt6Widgets
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Qml Qt6Sql Qt6Widgets
 WANTLIB += Qt6Xml X11 c intl m xkbcommon
 
 MODKDE_DESKTOP_FILE = yes
@@ -55,6 +55,7 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/solid \
 		devel/kf6/sonnet \
 		devel/kf6/syntax-highlighting \
+		security/qtkeychain,qt6 \
 		x11/qt6/qtdeclarative \
 		x11/xkbcommon
 

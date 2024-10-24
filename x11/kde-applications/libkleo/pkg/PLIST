@@ -70,6 +70,7 @@ include/KPim6/Libkleo/Libkleo/TreeView
 include/KPim6/Libkleo/Libkleo/TreeWidget
 include/KPim6/Libkleo/Libkleo/UniqueLock
 include/KPim6/Libkleo/Libkleo/UserIDListModel
+include/KPim6/Libkleo/Libkleo/UserIDListProxyModel
 include/KPim6/Libkleo/Libkleo/UserIDProxyModel
 include/KPim6/Libkleo/Libkleo/UserIDSelectionCombo
 include/KPim6/Libkleo/libkleo/
@@ -145,6 +146,7 @@ include/KPim6/Libkleo/libkleo/treeview.h
 include/KPim6/Libkleo/libkleo/treewidget.h
 include/KPim6/Libkleo/libkleo/uniquelock.h
 include/KPim6/Libkleo/libkleo/useridlistmodel.h
+include/KPim6/Libkleo/libkleo/useridlistproxymodel.h
 include/KPim6/Libkleo/libkleo/useridproxymodel.h
 include/KPim6/Libkleo/libkleo/useridselectioncombo.h
 include/KPim6/Libkleo/libkleo_version.h

@@ -4,12 +4,12 @@ DISTNAME =	xdg-desktop-portal-kde-${VERSION}
 MODKDE_TRANSLATIONS =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Bookmarks KF6Completion KF6ConfigCore
-WANTLIB += KF6ConfigGui KF6CoreAddons KF6GlobalAccel KF6GuiAddons
-WANTLIB += KF6I18n KF6IconThemes KF6ItemViews KF6JobWidgets KF6KIOCore
-WANTLIB += KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets KF6Notifications
-WANTLIB += KF6Service KF6Solid KF6StatusNotifierItem KF6WidgetsAddons
-WANTLIB += KF6WindowSystem KWaylandClient Qt6Concurrent Qt6Core
-WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6PrintSupport
+WANTLIB += KF6ConfigGui KF6CoreAddons KF6Crash KF6GlobalAccel
+WANTLIB += KF6GuiAddons KF6I18n KF6IconThemes KF6ItemViews KF6JobWidgets
+WANTLIB += KF6KIOCore KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets
+WANTLIB += KF6Notifications KF6Service KF6Solid KF6StatusNotifierItem
+WANTLIB += KF6WidgetsAddons KF6WindowSystem KWaylandClient Qt6Concurrent
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6PrintSupport
 WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickWidgets Qt6WaylandClient
 WANTLIB += Qt6Widgets Qt6Xml X11 c m wayland-client wayland-cursor
 WANTLIB += xkbcommon
@@ -23,6 +23,7 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/kcompletion \
 		devel/kf6/kconfig \
 		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
 		devel/kf6/kglobalaccel \
 		devel/kf6/kguiaddons \
 		devel/kf6/ki18n \

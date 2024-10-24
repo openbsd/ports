@@ -50,6 +50,9 @@ share/doc/HTML/pt_BR/kbounce/index.cache.bz2
 share/doc/HTML/pt_BR/kbounce/index.docbook
 share/doc/HTML/pt_BR/kbounce/kbounce_corridor1.png
 share/doc/HTML/pt_BR/kbounce/kbounce_corridor2.png
+share/doc/HTML/sl/kbounce/
+share/doc/HTML/sl/kbounce/index.cache.bz2
+share/doc/HTML/sl/kbounce/index.docbook
 share/doc/HTML/sv/kbounce/
 share/doc/HTML/sv/kbounce/index.cache.bz2
 share/doc/HTML/sv/kbounce/index.docbook
@@ -175,3 +178,4 @@ share/metainfo/org.kde.kbounce.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
 share/qlogging-categories6/kbounce.categories
+share/qlogging-categories6/kbounce.renamecategories

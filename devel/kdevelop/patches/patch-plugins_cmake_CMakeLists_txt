@@ -1,0 +1,14 @@
+Index: plugins/cmake/CMakeLists.txt
+--- plugins/cmake/CMakeLists.txt.orig
++++ plugins/cmake/CMakeLists.txt
+@@ -85,6 +85,10 @@ endif()
+ kconfig_add_kcfg_files( cmakecommon_SRCS cmakebuilderconfig.kcfgc )
+ ki18n_wrap_ui( cmakecommon_SRCS ${cmakecommon_UI} )
+ kdevelop_add_private_library(KDevCMakeCommon SOURCES ${cmakecommon_SRCS})
++set_target_properties(KDevCMakeCommon PROPERTIES
++    C_STANDARD 11
++    C_STANDARD_REQUIRED ON
++)
+ target_link_libraries(KDevCMakeCommon
+     PUBLIC
+         kdevmakefileresolver

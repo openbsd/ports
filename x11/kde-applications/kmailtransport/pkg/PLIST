@@ -10,7 +10,6 @@ include/KPim6/MailTransport/MailTransport/TransportActivitiesAbstract
 include/KPim6/MailTransport/MailTransport/TransportComboBox
 include/KPim6/MailTransport/MailTransport/TransportConfigWidget
 include/KPim6/MailTransport/MailTransport/TransportJob
-include/KPim6/MailTransport/MailTransport/TransportManagementWidget
 include/KPim6/MailTransport/MailTransport/TransportManagementWidgetNg
 include/KPim6/MailTransport/MailTransport/TransportManager
 include/KPim6/MailTransport/MailTransport/TransportModel
@@ -29,7 +28,6 @@ include/KPim6/MailTransport/mailtransport/transportbase.h
 include/KPim6/MailTransport/mailtransport/transportcombobox.h
 include/KPim6/MailTransport/mailtransport/transportconfigwidget.h
 include/KPim6/MailTransport/mailtransport/transportjob.h
-include/KPim6/MailTransport/mailtransport/transportmanagementwidget.h
 include/KPim6/MailTransport/mailtransport/transportmanagementwidgetng.h
 include/KPim6/MailTransport/mailtransport/transportmanager.h
 include/KPim6/MailTransport/mailtransport/transportmodel.h

@@ -42,6 +42,9 @@ share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/kfourinline/
 share/doc/HTML/pt_BR/kfourinline/index.cache.bz2
 share/doc/HTML/pt_BR/kfourinline/index.docbook
+share/doc/HTML/sl/kfourinline/
+share/doc/HTML/sl/kfourinline/index.cache.bz2
+share/doc/HTML/sl/kfourinline/index.docbook
 share/doc/HTML/sv/kfourinline/
 share/doc/HTML/sv/kfourinline/index.cache.bz2
 share/doc/HTML/sv/kfourinline/index.docbook
@@ -145,3 +148,4 @@ share/metainfo/org.kde.kfourinline.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
 share/qlogging-categories6/kfourinline.categories
+share/qlogging-categories6/kfourinline.renamecategories

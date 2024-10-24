@@ -10,6 +10,7 @@ SHARED_LIBS +=  weather_ion               1.0 # 0.0
 SHARED_LIBS +=  kmpris                    0.0 # 0.0
 SHARED_LIBS +=  kworkspace6               0.0 # 0.0
 SHARED_LIBS +=  batterycontrol            0.0 # 0.0
+SHARED_LIBS +=  klipper                   0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL ICE KExiv2Qt6 KF6Archive KF6Attica
 WANTLIB += KF6AuthCore KF6Baloo KF6Bookmarks KF6CalendarEvents
@@ -28,15 +29,15 @@ WANTLIB += KF6UnitConversion KF6UserFeedbackCore KF6Wallet KF6WidgetsAddons
 WANTLIB += KF6WindowSystem KF6XmlGui KScreenLocker KSysGuardFormatter
 WANTLIB += KSysGuardSensorFaces KSysGuardSensors KWaylandClient
 WANTLIB += LayerShellQtInterface Plasma Plasma5Support PlasmaActivities
-WANTLIB += PlasmaActivitiesStats PlasmaQuick QCoro6Core QCoro6DBus
-WANTLIB += Qt6Concurrent Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
+WANTLIB += PlasmaActivitiesStats PlasmaQuick QCoro6Core Qt6Concurrent
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning
 WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickWidgets
 WANTLIB += Qt6Sql Qt6Svg Qt6WaylandClient Qt6Widgets Qt6Xml SM
 WANTLIB += X11 Xau Xcursor Xext Xfixes Xft Xi Xrender Xtst c canberra
-WANTLIB += fontconfig freetype icui18n icuuc m phonon4qt6 processcore
-WANTLIB += qalculate udev wayland-client wayland-cursor xcb xcb-composite
-WANTLIB += xcb-damage xcb-image xcb-randr xcb-render xcb-shape
-WANTLIB += xcb-shm xcb-util xcb-xfixes xkbcommon z
+WANTLIB += dbus-1 fontconfig freetype icui18n icuuc m phonon4qt6
+WANTLIB += processcore qalculate udev wayland-client wayland-cursor
+WANTLIB += xcb xcb-composite xcb-damage xcb-image xcb-randr xcb-render
+WANTLIB += xcb-shape xcb-shm xcb-util xcb-xfixes xkbcommon z
 
 MODKDE_TRANSLATIONS = Yes
 MODKDE_ICON_CACHE = Yes
@@ -106,8 +107,9 @@ LIB_DEPENDS =	audio/libcanberra \
 		math/libqalculate \
 		multimedia/phonon,qt6 \
 		sysutils/libudev-openbsd \
-		wayland/wayland \
 		textproc/icu4c \
+		wayland/wayland \
+		x11/dbus \
 		x11/kde-applications/kf6-libkexiv2 \
 		x11/kde-plasma/kscreenlocker>=${VERSION} \
 		x11/kde-plasma/kwayland>=${VERSION} \
@@ -119,6 +121,7 @@ LIB_DEPENDS =	audio/libcanberra \
 		x11/kde-plasma/plasma-activities>=${VERSION} \
 		x11/kde-plasma/plasma5support>=${VERSION} \
 		x11/qt6/qtdeclarative \
+		x11/qt6/qtpositioning  \
 		x11/qt6/qtsvg \
 		x11/qt6/qtwayland \
 		x11/xkbcommon
@@ -138,5 +141,8 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/kde-puffy.svgz \
 		${PREFIX}/share/plasma/look-and-feel/org.kde.breeze.desktop/contents/splash/images/
+# WIP
+#	${MODPY_COMPILEALL} \
+#		${PREFIX}/share/kconf_update/migrate-calendar-to-plugin-id.py
 
 .include <bsd.port.mk>

@@ -59,3 +59,5 @@ share/locale/zh_CN/LC_MESSAGES/accountwizard.mo
 share/locale/zh_TW/LC_MESSAGES/accountwizard.mo
 @tag update-desktop-database
 @tag update-mime-database
+share/metainfo/
+share/metainfo/org.kde.accountwizard.appdata.xml

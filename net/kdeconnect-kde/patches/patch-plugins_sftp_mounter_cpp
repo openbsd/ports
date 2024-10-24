@@ -28,7 +28,7 @@ Index: plugins/sftp/mounter.cpp
                        << m_mountPoint << QStringLiteral("-p") << np.get<QString>(QStringLiteral("port"))
                        << QStringLiteral("-s") // This fixes a bug where file chunks are sent out of order and get corrupted on reception
                        << QStringLiteral("-f") << QStringLiteral("-F") << QStringLiteral("/dev/null") // Do not use ~/.ssh/config
-@@ -137,8 +137,8 @@ void Mounter::onPacketReceived(const NetworkPacket &np
+@@ -135,8 +135,8 @@ void Mounter::onPacketReceived(const NetworkPacket &np
      m_proc->start();
  
      // qCDebug(KDECONNECT_PLUGIN_SFTP) << "Passing password: " << np.get<QString>("password").toLatin1();

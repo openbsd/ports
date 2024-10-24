@@ -4,7 +4,7 @@ CATEGORIES =	textproc
 
 HOMEPAGE =	https://okular.kde.org/
 
-SHARED_LIBS +=	Okular6Core               0.0 # 0.0
+SHARED_LIBS +=	Okular6Core               1.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KExiv2Qt6 KF6Archive KF6Bookmarks
 WANTLIB += KF6BookmarksWidgets KF6ColorScheme KF6Completion KF6ConfigCore
@@ -62,7 +62,7 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		graphics/tiff \
 		multimedia/phonon,qt6 \
 		print/libspectre \
-		print/poppler,-qt6>=23.05.0 \
+		print/poppler,-qt6 \
 		textproc/discount \
 		textproc/ebook-tools \
 		x11/kde-applications/kf6-kdegraphics-mobipocket>=${MODKDE_GEAR_VERSION} \

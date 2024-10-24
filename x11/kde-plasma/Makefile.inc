@@ -24,4 +24,9 @@ EXTRACT_SUFX ?=		.tar.xz
 RUN_DEPENDS +=		${MODKDE_RUN_DEPENDS}
 BUILD_DEPENDS +=	${MODKDE_BUILD_DEPENDS}
 
+# Detected locale "C" with character encoding "US-ASCII", which is not UTF-8.
+# Qt depends on a UTF-8 locale, and has switched to "C.UTF-8" instead.
+CONFIGURE_ENV +=	LC_ALL=en_US.UTF-8
+MAKE_ENV +=		LC_ALL=en_US.UTF-8
+
 DIST_SUBDIR =		plasma

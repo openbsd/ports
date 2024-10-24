@@ -52,6 +52,7 @@ include/KPim6/AkonadiAgentBase/akonadi/transportresourcebase.h
 include/KPim6/AkonadiCore/
 include/KPim6/AkonadiCore/Akonadi/
 include/KPim6/AkonadiCore/Akonadi/AbstractDifferencesReporter
+include/KPim6/AkonadiCore/Akonadi/AccountActivitiesAbstract
 include/KPim6/AkonadiCore/Akonadi/AgentConfigurationBase
 include/KPim6/AkonadiCore/Akonadi/AgentConfigurationFactoryBase
 include/KPim6/AkonadiCore/Akonadi/AgentFilterProxyModel
@@ -120,10 +121,6 @@ include/KPim6/AkonadiCore/Akonadi/PartFetcher
 include/KPim6/AkonadiCore/Akonadi/PersistentSearchAttribute
 include/KPim6/AkonadiCore/Akonadi/RecursiveCollectionFilterProxyModel
 include/KPim6/AkonadiCore/Akonadi/RecursiveItemFetchJob
-include/KPim6/AkonadiCore/Akonadi/Relation
-include/KPim6/AkonadiCore/Akonadi/RelationCreateJob
-include/KPim6/AkonadiCore/Akonadi/RelationDeleteJob
-include/KPim6/AkonadiCore/Akonadi/RelationFetchJob
 include/KPim6/AkonadiCore/Akonadi/ResourceSynchronizationJob
 include/KPim6/AkonadiCore/Akonadi/SearchCreateJob
 include/KPim6/AkonadiCore/Akonadi/SearchQuery
@@ -156,6 +153,7 @@ include/KPim6/AkonadiCore/Akonadi/VectorHelper
 include/KPim6/AkonadiCore/akonadi/
 include/KPim6/AkonadiCore/akonadi/abstractdifferencesreporter.h
 include/KPim6/AkonadiCore/akonadi/abstractsearchplugin.h
+include/KPim6/AkonadiCore/akonadi/accountactivitiesabstract.h
 include/KPim6/AkonadiCore/akonadi/agentconfigurationbase.h
 include/KPim6/AkonadiCore/akonadi/agentconfigurationfactorybase.h
 include/KPim6/AkonadiCore/akonadi/agentfilterproxymodel.h
@@ -228,10 +226,6 @@ include/KPim6/AkonadiCore/akonadi/persistentsearchattribute.h
 include/KPim6/AkonadiCore/akonadi/qtest_akonadi.h
 include/KPim6/AkonadiCore/akonadi/recursivecollectionfilterproxymodel.h
 include/KPim6/AkonadiCore/akonadi/recursiveitemfetchjob.h
-include/KPim6/AkonadiCore/akonadi/relation.h
-include/KPim6/AkonadiCore/akonadi/relationcreatejob.h
-include/KPim6/AkonadiCore/akonadi/relationdeletejob.h
-include/KPim6/AkonadiCore/akonadi/relationfetchjob.h
 include/KPim6/AkonadiCore/akonadi/resourcesynchronizationjob.h
 include/KPim6/AkonadiCore/akonadi/searchcreatejob.h
 include/KPim6/AkonadiCore/akonadi/searchquery.h
@@ -451,6 +445,8 @@ share/locale/ga/LC_MESSAGES/libakonadi6.mo
 share/locale/gl/LC_MESSAGES/akonadi-db-migrator.mo
 share/locale/gl/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/gl/LC_MESSAGES/libakonadi6.mo
+share/locale/he/LC_MESSAGES/akonadi-db-migrator.mo
+share/locale/he/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/hsb/LC_MESSAGES/libakonadi6.mo
 share/locale/hu/LC_MESSAGES/akonadi-db-migrator.mo
 share/locale/hu/LC_MESSAGES/akonadi_knut_resource.mo
@@ -458,6 +454,7 @@ share/locale/hu/LC_MESSAGES/libakonadi6.mo
 share/locale/ia/LC_MESSAGES/akonadi-db-migrator.mo
 share/locale/ia/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/ia/LC_MESSAGES/libakonadi6.mo
+share/locale/id/LC_MESSAGES/akonadi-db-migrator.mo
 share/locale/id/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/id/LC_MESSAGES/libakonadi6.mo
 share/locale/is/LC_MESSAGES/akonadi_knut_resource.mo

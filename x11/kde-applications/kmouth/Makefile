@@ -7,8 +7,7 @@ WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
 WANTLIB += KF6Crash KF6I18n KF6JobWidgets KF6KIOCore KF6KIOGui
 WANTLIB += KF6KIOWidgets KF6Service KF6Solid KF6WidgetsAddons
 WANTLIB += KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Multimedia Qt6Network
-WANTLIB += Qt6PrintSupport Qt6TextToSpeech Qt6Widgets Qt6Xml c
-WANTLIB += m
+WANTLIB += Qt6PrintSupport Qt6Widgets Qt6Xml c m
 
 MODKDE_ICON_CACHE = yes
 MODKDE_TRANSLATIONS = yes
@@ -30,7 +29,7 @@ LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \
-		x11/qt6/qtmultimedia \
-		x11/qt6/qtspeech
+		x11/qt6/qtspeech \
+		x11/qt6/qtmultimedia
 
 .include <bsd.port.mk>

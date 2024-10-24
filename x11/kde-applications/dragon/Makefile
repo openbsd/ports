@@ -1,5 +1,4 @@
 COMMENT =	simple video player for KDE
-VERSION =	24.02.2
 DISTNAME =	dragon-${VERSION}
 CATEGORIES =	multimedia
 

@@ -19,12 +19,12 @@ WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui KSysGuardFormatter
 WANTLIB += Plasma PlasmaActivities PlasmaActivitiesStats PlasmaQuick
 WANTLIB += Qt6Concurrent Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
 WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickWidgets Qt6Sql
-WANTLIB += Qt6WaylandClient Qt6Widgets Qt6Xml SDL2 X11 X11-xcb
-WANTLIB += Xext Xi accounts-qt6 c canberra gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += ibus-1.0 icui18n icuuc intl kaccounts6 kworkspace6
-WANTLIB += m notificationmanager processcore taskmanager wayland-client
-WANTLIB += wayland-cursor xcb xcb-keysyms xcb-record xcb-util
-WANTLIB += xcb-xkb xkbcommon xkbfile xkbregistry
+WANTLIB += Qt6WaylandClient Qt6Widgets Qt6Xml SDL2 X11 Xext Xi
+WANTLIB += accounts-qt6 c canberra gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += gthread-2.0 ibus-1.0 icui18n icuuc intl kaccounts6
+WANTLIB += kworkspace6 m notificationmanager processcore taskmanager
+WANTLIB += wayland-client wayland-cursor xcb xcb-keysyms xcb-xkb
+WANTLIB += xkbcommon xkbfile xkbregistry
 
 BUILD_DEPENDS =	devel/kf6/kirigami \
 		devel/kf6/qqc2-desktop-style \
@@ -91,11 +91,11 @@ LIB_DEPENDS =	audio/libcanberra \
 		x11/qt6/qtwayland \
 		x11/xkbcommon
 
-CONFIGURE_ARGS = \
+CONFIGURE_ARGS += \
 	-DCMAKE_DISABLE_FIND_PACKAGE_KF5NetworkManagerQt=Yes
 
-# XXX
-CONFIGURE_ARGS +=	-DBUILD_KCM_MOUSE_X11=OFF
+CONFIGURE_ARGS +=	-DBUILD_KCM_MOUSE_X11=OFF \
+			-DBUILD_KCM_TOUCHPAD_X11=OFF
 
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 

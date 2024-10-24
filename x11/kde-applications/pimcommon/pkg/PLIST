@@ -69,7 +69,6 @@ include/KPim6/PimCommon/pimcommon_version.h
 include/KPim6/PimCommonAkonadi/
 include/KPim6/PimCommonAkonadi/PimCommonAkonadi/
 include/KPim6/PimCommonAkonadi/PimCommonAkonadi/AddresseeLineEdit
-include/KPim6/PimCommonAkonadi/PimCommonAkonadi/AnnotationDialog
 include/KPim6/PimCommonAkonadi/PimCommonAkonadi/CheckedCollectionWidget
 include/KPim6/PimCommonAkonadi/PimCommonAkonadi/CollectionAclPage
 include/KPim6/PimCommonAkonadi/PimCommonAkonadi/CollectionTypeUtil
@@ -90,7 +89,6 @@ include/KPim6/PimCommonAkonadi/PimCommonAkonadi/RecentAddresses
 include/KPim6/PimCommonAkonadi/PimCommonAkonadi/SelectMultiCollectionDialog
 include/KPim6/PimCommonAkonadi/pimcommonakonadi/
 include/KPim6/PimCommonAkonadi/pimcommonakonadi/addresseelineedit.h
-include/KPim6/PimCommonAkonadi/pimcommonakonadi/annotationdialog.h
 include/KPim6/PimCommonAkonadi/pimcommonakonadi/checkedcollectionwidget.h
 include/KPim6/PimCommonAkonadi/pimcommonakonadi/collectionaclpage.h
 include/KPim6/PimCommonAkonadi/pimcommonakonadi/collectiontypeutil.h
@@ -143,6 +141,7 @@ share/locale/fi/LC_MESSAGES/libpimcommon6.mo
 share/locale/fr/LC_MESSAGES/libpimcommon6.mo
 share/locale/ga/LC_MESSAGES/libpimcommon6.mo
 share/locale/gl/LC_MESSAGES/libpimcommon6.mo
+share/locale/he/LC_MESSAGES/libpimcommon6.mo
 share/locale/hu/LC_MESSAGES/libpimcommon6.mo
 share/locale/ia/LC_MESSAGES/libpimcommon6.mo
 share/locale/it/LC_MESSAGES/libpimcommon6.mo

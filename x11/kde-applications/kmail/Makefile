@@ -7,7 +7,7 @@ CATEGORIES =	net mail
 HOMEPAGE =	https://kontact.kde.org/components/kmail/
 
 SHARED_LIBS +=	mailfilteragentprivate    0.0 # 0.0
-SHARED_LIBS +=  kmailprivate              9.0 # 5.13.2
+SHARED_LIBS +=  kmailprivate              10.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Bookmarks KF6CalendarCore
 WANTLIB += KF6Codecs KF6ColorScheme KF6Completion KF6ConfigCore

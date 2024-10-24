@@ -46,6 +46,9 @@ share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/killbots/
 share/doc/HTML/pt_BR/killbots/index.cache.bz2
 share/doc/HTML/pt_BR/killbots/index.docbook
+share/doc/HTML/sl/killbots/
+share/doc/HTML/sl/killbots/index.cache.bz2
+share/doc/HTML/sl/killbots/index.docbook
 share/doc/HTML/sv/killbots/
 share/doc/HTML/sv/killbots/index.cache.bz2
 share/doc/HTML/sv/killbots/index.docbook
@@ -98,6 +101,7 @@ share/locale/fi/LC_MESSAGES/killbots.mo
 share/locale/fr/LC_MESSAGES/killbots.mo
 share/locale/ga/LC_MESSAGES/killbots.mo
 share/locale/gl/LC_MESSAGES/killbots.mo
+share/locale/he/LC_MESSAGES/killbots.mo
 share/locale/hr/LC_MESSAGES/killbots.mo
 share/locale/hu/LC_MESSAGES/killbots.mo
 share/locale/ia/LC_MESSAGES/killbots.mo
@@ -140,3 +144,4 @@ share/metainfo/org.kde.killbots.appdata.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 share/qlogging-categories6/killbots.categories
+share/qlogging-categories6/killbots.renamecategories

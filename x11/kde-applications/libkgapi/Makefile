@@ -4,7 +4,7 @@ CATEGORIES =	www devel
 
 SHARED_LIBS +=	KPim6GAPIBlogger          0.0 # 0.0
 SHARED_LIBS +=	KPim6GAPICalendar         0.0 # 0.0
-SHARED_LIBS +=	KPim6GAPICore             0.0 # 0.0
+SHARED_LIBS +=	KPim6GAPICore             0.1 # 0.0
 SHARED_LIBS +=	KPim6GAPIDrive            0.0 # 0.0
 SHARED_LIBS +=	KPim6GAPILatitude         0.0 # 0.0
 SHARED_LIBS +=	KPim6GAPIMaps             0.0 # 0.0

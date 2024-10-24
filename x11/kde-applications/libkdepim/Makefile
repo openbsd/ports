@@ -2,7 +2,7 @@ COMMENT =	library for common kdepim apps
 DISTNAME =	libkdepim-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=	KPim6Libkdepim            0.0 # 0.0
+SHARED_LIBS +=	KPim6Libkdepim            1.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Completion KF6I18n KF6WidgetsAddons
 WANTLIB += Qt6Core Qt6Gui Qt6Widgets m

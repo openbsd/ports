@@ -2,6 +2,7 @@ include/KPim6/MimeTreeParserCore/
 include/KPim6/MimeTreeParserCore/MimeTreeParserCore/
 include/KPim6/MimeTreeParserCore/MimeTreeParserCore/AttachmentModel
 include/KPim6/MimeTreeParserCore/MimeTreeParserCore/CryptoHelper
+include/KPim6/MimeTreeParserCore/MimeTreeParserCore/Enums
 include/KPim6/MimeTreeParserCore/MimeTreeParserCore/Errors
 include/KPim6/MimeTreeParserCore/MimeTreeParserCore/FileOpener
 include/KPim6/MimeTreeParserCore/MimeTreeParserCore/MessageParser
@@ -12,6 +13,7 @@ include/KPim6/MimeTreeParserCore/MimeTreeParserCore/PartModel
 include/KPim6/MimeTreeParserCore/mimetreeparsercore/
 include/KPim6/MimeTreeParserCore/mimetreeparsercore/attachmentmodel.h
 include/KPim6/MimeTreeParserCore/mimetreeparsercore/cryptohelper.h
+include/KPim6/MimeTreeParserCore/mimetreeparsercore/enums.h
 include/KPim6/MimeTreeParserCore/mimetreeparsercore/errors.h
 include/KPim6/MimeTreeParserCore/mimetreeparsercore/fileopener.h
 include/KPim6/MimeTreeParserCore/mimetreeparsercore/messageparser.h

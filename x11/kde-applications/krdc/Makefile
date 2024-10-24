@@ -2,7 +2,7 @@ COMMENT =	VNC and RDP  desktop client
 DISTNAME =	krdc-${VERSION}
 CATEGORIES =	net x11
 
-SHARED_LIBS +=  krdccore               3.0 # 5.0
+SHARED_LIBS +=  krdccore               3.1 # 5.0
 
 HOMEPAGE =	https://kde.org/applications/internet/org.kde.krdc
 
@@ -14,8 +14,9 @@ WANTLIB += KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Notifications
 WANTLIB += KF6NotifyConfig KF6Service KF6Solid KF6StatusNotifierItem
 WANTLIB += KF6Wallet KF6WidgetsAddons KF6WindowSystem KF6XmlGui
 WANTLIB += PlasmaActivities Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6Qml Qt6Widgets Qt6Xml X11 c freerdp-client2 freerdp2
-WANTLIB += m sndio ssh vncclient winpr2
+WANTLIB += Qt6Qml Qt6WaylandClient Qt6Widgets Qt6Xml X11 c freerdp-client2
+WANTLIB += freerdp2 m sndio ssh vncclient wayland-client wayland-cursor
+WANTLIB += winpr2 xkbcommon
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_TRANSLATIONS = yes
@@ -46,8 +47,11 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/solid \
 		net/libvncserver \
 		security/libssh \
+		wayland/wayland \
 		x11/freerdp \
 		x11/kde-plasma/plasma-activities \
-		x11/qt6/qtdeclarative
+		x11/qt6/qtdeclarative \
+		x11/qt6/qtwayland \
+		x11/xkbcommon \
 
 .include <bsd.port.mk>

@@ -92,6 +92,9 @@ share/doc/HTML/pt_BR/kmahjongg/index.docbook
 share/doc/HTML/ru/kmahjongg/
 share/doc/HTML/ru/kmahjongg/index.cache.bz2
 share/doc/HTML/ru/kmahjongg/index.docbook
+share/doc/HTML/sl/kmahjongg/
+share/doc/HTML/sl/kmahjongg/index.cache.bz2
+share/doc/HTML/sl/kmahjongg/index.docbook
 share/doc/HTML/sv/kmahjongg/
 share/doc/HTML/sv/kmahjongg/boardeditor.png
 share/doc/HTML/sv/kmahjongg/config.png
@@ -348,3 +351,4 @@ share/metainfo/org.kde.kmahjongg.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
 share/qlogging-categories6/kmahjongg.categories
+share/qlogging-categories6/kmahjongg.renamecategories

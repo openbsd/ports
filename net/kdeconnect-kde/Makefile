@@ -1,9 +1,8 @@
 COMMENT =	KDE app that allows your devices to communicate
 
 DISTNAME =	kdeconnect-kde-${MODKDE_GEAR_VERSION}
-REVISION =	0
 
-SHARED_LIBS +=	kdeconnectcore		6.0 # 1.4
+SHARED_LIBS +=	kdeconnectcore		7.0 # 1.4
 SHARED_LIBS +=	kdeconnectpluginkcm	1.0 # 1.4
 
 CATEGORIES =	net
@@ -15,16 +14,16 @@ PERMIT_PACKAGE = Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL ICE KF6Bookmarks KF6ColorScheme
 WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
-WANTLIB += KF6CoreAddons KF6DBusAddons KF6GuiAddons KF6I18n KF6IconThemes
-WANTLIB += KF6ItemViews KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore
-WANTLIB += KF6KCMUtilsQuick KF6KIOCore KF6KIOFileWidgets KF6KIOGui
-WANTLIB += KF6KIOWidgets KF6Notifications KF6People KF6PulseAudioQt
-WANTLIB += KF6Service KF6Solid KF6StatusNotifierItem KF6WidgetsAddons
-WANTLIB += KF6WindowSystem Qt6Core Qt6DBus Qt6Gui Qt6Multimedia
-WANTLIB += Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickControls2
-WANTLIB += Qt6WaylandClient Qt6Widgets Qt6Xml SM X11 Xext Xtst
-WANTLIB += c crypto dbus-1 fakekey m wayland-client wayland-cursor
-WANTLIB += xkbcommon
+WANTLIB += KF6CoreAddons KF6Crash KF6DBusAddons KF6GuiAddons KF6I18n
+WANTLIB += KF6IconThemes KF6ItemViews KF6JobWidgets KF6KCMUtils
+WANTLIB += KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore KF6KIOFileWidgets
+WANTLIB += KF6KIOGui KF6KIOWidgets KF6Notifications KF6People
+WANTLIB += KF6PulseAudioQt KF6Service KF6Solid KF6StatusNotifierItem
+WANTLIB += KF6WidgetsAddons KF6WindowSystem Qt6Core Qt6DBus Qt6Gui
+WANTLIB += Qt6Multimedia Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels
+WANTLIB += Qt6Quick Qt6QuickControls2 Qt6WaylandClient Qt6Widgets
+WANTLIB += Qt6Xml SM X11 Xext Xtst c crypto dbus-1 fakekey m wayland-client
+WANTLIB += wayland-cursor xkbcommon
 
 SITES =		${SITE_KDE:=stable/release-service/${MODKDE_GEAR_VERSION}/src/}
 EXTRACT_SUFX =		.tar.xz
@@ -66,6 +65,7 @@ LIB_DEPENDS =	audio/pulseaudio-qt \
 		devel/kf6/kiconthemes \
 		devel/kf6/kio \
 		devel/kf6/kitemviews \
+		devel/kf6/kcrash \
 		devel/kf6/kjobwidgets \
 		devel/kf6/knotifications \
 		devel/kf6/kpeople \
@@ -79,6 +79,7 @@ LIB_DEPENDS =	audio/pulseaudio-qt \
 		x11/libfakekey \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtmultimedia \
+		x11/qt6/qtconnectivity \
 		x11/qt6/qtwayland \
 		x11/xkbcommon
 

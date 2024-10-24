@@ -16,15 +16,15 @@ WANTLIB += KF6Notifications KF6Package KF6Service KF6Svg KF6WidgetsAddons
 WANTLIB += KF6WindowSystem KF6XmlGui KGlobalAccelD KWaylandClient
 WANTLIB += PlasmaActivities Qt6Concurrent Qt6Core Qt6DBus Qt6Gui
 WANTLIB += Qt6Network Qt6OpenGL Qt6OpenGLWidgets Qt6Qml Qt6QmlModels
-WANTLIB += Qt6Quick Qt6Sensors Qt6UiTools Qt6WaylandClient Qt6Widgets
-WANTLIB += Qt6Xml SM X11 X11-xcb Xext Xi c display-info drm eis
-WANTLIB += epoll-shim epoxy fontconfig freetype gbm input kdecorations2
-WANTLIB += kdecorations2private lcms2 m pipewire-0.3 qaccessibilityclient-qt6
-WANTLIB += udev wayland-client wayland-cursor wayland-server xcb
-WANTLIB += xcb-composite xcb-cursor xcb-damage xcb-dri3 xcb-glx
-WANTLIB += xcb-icccm xcb-keysyms xcb-present xcb-randr xcb-render
-WANTLIB += xcb-shape xcb-shm xcb-sync xcb-xfixes xcb-xinerama
-WANTLIB += xcb-xkb xcvt xkbcommon xkbcommon-x11
+WANTLIB += Qt6Quick Qt6Sensors Qt6Svg Qt6UiTools Qt6WaylandClient
+WANTLIB += Qt6Widgets Qt6Xml SM X11 Xext Xi c canberra display-info
+WANTLIB += drm eis epoll-shim epoxy fontconfig freetype gbm input
+WANTLIB += kdecorations2 kdecorations2private lcms2 m pipewire-0.3
+WANTLIB += qaccessibilityclient-qt6 udev wayland-client wayland-cursor
+WANTLIB += wayland-server xcb xcb-composite xcb-cursor xcb-damage
+WANTLIB += xcb-dri3 xcb-glx xcb-icccm xcb-keysyms xcb-present
+WANTLIB += xcb-randr xcb-render xcb-shape xcb-shm xcb-sync xcb-xfixes
+WANTLIB += xcb-xinerama xcb-xinput xcb-xkb xcvt xkbcommon xkbcommon-x11
 
 MODKDE_TRANSLATIONS =	Yes
 MODKDE_ICON_CACHE =	Yes
@@ -42,7 +42,9 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/hwdata \
 		x11/kde-plasma/breeze>=${VERSION}
 
-LIB_DEPENDS =	devel/kf6/attica \
+LIB_DEPENDS =	audio/libcanberra \
+		devel/epoll-shim \
+		devel/kf6/attica \
 		devel/kf6/kauth \
 		devel/kf6/kcmutils \
 		devel/kf6/kcolorscheme \
@@ -63,14 +65,13 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kwindowsystem \
 		devel/kf6/kxmlgui \
-		devel/epoll-shim \
 		graphics/lcms2 \
 		multimedia/pipewire/pipewire,-libs \
 		sysutils/libdisplay-info \
 		sysutils/libudev-openbsd \
+		wayland/libei \
 		wayland/libinput-openbsd \
 		wayland/wayland \
-		wayland/libei \
 		x11/kde-plasma/kdecoration>=${VERSION} \
 		x11/kde-plasma/kglobalacceld>=${VERSION} \
 		x11/kde-plasma/kwayland>=${VERSION} \
@@ -78,13 +79,14 @@ LIB_DEPENDS =	devel/kf6/attica \
 		x11/libqaccessibilityclient \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtsensors \
+		x11/qt6/qtsvg \
 		x11/qt6/qttools \
 		x11/qt6/qtwayland \
 		x11/xkbcommon
 
 CXXFLAGS +=		-I${X11BASE}/include -I${LOCALBASE}/include/libepoll-shim/
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib -lepoll-shim
-CONFIGURE_ENV +=	KFWaylandServer_DIR=${MODQT5_LIBDIR}/cmake
+CONFIGURE_ENV +=	KFWaylandServer_DIR=${MODQT6_LIBDIR}/cmake
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

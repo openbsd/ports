@@ -45,7 +45,6 @@ lib/qt6/plugins/potd/
 @so lib/qt6/plugins/potd/plasma_potd_bingprovider.so
 @so lib/qt6/plugins/potd/plasma_potd_epodprovider.so
 @so lib/qt6/plugins/potd/plasma_potd_flickrprovider.so
-@so lib/qt6/plugins/potd/plasma_potd_natgeoprovider.so
 @so lib/qt6/plugins/potd/plasma_potd_noaaprovider.so
 @so lib/qt6/plugins/potd/plasma_potd_simonstalenhagprovider.so
 @so lib/qt6/plugins/potd/plasma_potd_wcpotdprovider.so

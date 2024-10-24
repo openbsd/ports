@@ -242,6 +242,16 @@ share/doc/HTML/ru/khelpcenter/index.docbook
 share/doc/HTML/ru/onlinehelp/
 share/doc/HTML/ru/onlinehelp/index.cache.bz2
 share/doc/HTML/ru/onlinehelp/index.docbook
+share/doc/HTML/sl/khelpcenter/
+share/doc/HTML/sl/khelpcenter/glossary/
+share/doc/HTML/sl/khelpcenter/glossary/index.cache.bz2
+share/doc/HTML/sl/khelpcenter/glossary/index.docbook
+share/doc/HTML/sl/khelpcenter/glossary/kdeprintingglossary.docbook
+share/doc/HTML/sl/khelpcenter/index.cache.bz2
+share/doc/HTML/sl/khelpcenter/index.docbook
+share/doc/HTML/sl/onlinehelp/
+share/doc/HTML/sl/onlinehelp/index.cache.bz2
+share/doc/HTML/sl/onlinehelp/index.docbook
 share/doc/HTML/sr/khelpcenter/
 share/doc/HTML/sr/khelpcenter/index.cache.bz2
 share/doc/HTML/sr/khelpcenter/index.docbook

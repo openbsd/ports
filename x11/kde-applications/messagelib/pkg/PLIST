@@ -199,10 +199,10 @@ include/KPim6/MessageCore/MessageCore/AutocryptRecipient
 include/KPim6/MessageCore/MessageCore/AutocryptStorage
 include/KPim6/MessageCore/MessageCore/AutocryptUtils
 include/KPim6/MessageCore/MessageCore/ColorUtil
+include/KPim6/MessageCore/MessageCore/DateFormatter
 include/KPim6/MessageCore/MessageCore/ImageCollector
 include/KPim6/MessageCore/MessageCore/MailingList
 include/KPim6/MessageCore/MessageCore/MessageCoreSettings
-include/KPim6/MessageCore/MessageCore/NodeHelper
 include/KPim6/MessageCore/MessageCore/StringUtil
 include/KPim6/MessageCore/MessageCore/Util
 include/KPim6/MessageCore/messagecore/
@@ -217,12 +217,12 @@ include/KPim6/MessageCore/messagecore/autocryptrecipient.h
 include/KPim6/MessageCore/messagecore/autocryptstorage.h
 include/KPim6/MessageCore/messagecore/autocryptutils.h
 include/KPim6/MessageCore/messagecore/colorutil.h
+include/KPim6/MessageCore/messagecore/dateformatter.h
 include/KPim6/MessageCore/messagecore/globalsettings_messagecore.h
 include/KPim6/MessageCore/messagecore/imagecollector.h
 include/KPim6/MessageCore/messagecore/mailinglist.h
 include/KPim6/MessageCore/messagecore/messagecore_export.h
 include/KPim6/MessageCore/messagecore/messagecoresettings.h
-include/KPim6/MessageCore/messagecore/nodehelper.h
 include/KPim6/MessageCore/messagecore/stringutil.h
 include/KPim6/MessageCore/messagecore/util.h
 include/KPim6/MessageCore/messagecore_version.h
@@ -234,6 +234,7 @@ include/KPim6/MessageList/MessageList/Enums
 include/KPim6/MessageList/MessageList/MessageListUtil
 include/KPim6/MessageList/MessageList/Pane
 include/KPim6/MessageList/MessageList/QuickSearchLine
+include/KPim6/MessageList/MessageList/SearchMessageByButtons
 include/KPim6/MessageList/MessageList/StorageModel
 include/KPim6/MessageList/MessageList/StorageModelBase
 include/KPim6/MessageList/MessageList/ThemeComboBox
@@ -249,6 +250,7 @@ include/KPim6/MessageList/messagelist/messagelistsettings.h
 include/KPim6/MessageList/messagelist/messagelistutil.h
 include/KPim6/MessageList/messagelist/pane.h
 include/KPim6/MessageList/messagelist/quicksearchline.h
+include/KPim6/MessageList/messagelist/searchmessagebybuttons.h
 include/KPim6/MessageList/messagelist/storagemodel.h
 include/KPim6/MessageList/messagelist/storagemodelbase.h
 include/KPim6/MessageList/messagelist/themecombobox.h
@@ -1065,7 +1067,6 @@ share/messagelist/pics/mail-vertical-separator-line.png
 share/messageviewer/
 share/messageviewer/about/
 share/messageviewer/about/default/
-share/messageviewer/about/default/background.png
 share/messageviewer/about/default/main.css
 share/messageviewer/about/default/main.html
 share/messageviewer/about/default/splash.theme

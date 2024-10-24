@@ -4,7 +4,7 @@ COMMENT =	BitTorrent Client
 
 DISTNAME =	ktorrent-${MODKDE_GEAR_VERSION}
 
-SHARED_LIBS +=  ktcore                    3.0 # 0.0
+SHARED_LIBS +=  ktcore                    4.0 # 0.0
 
 CATEGORIES =	net
 

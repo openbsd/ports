@@ -37,6 +37,9 @@ share/doc/HTML/pt_BR/
 share/doc/HTML/pt_BR/klines/
 share/doc/HTML/pt_BR/klines/index.cache.bz2
 share/doc/HTML/pt_BR/klines/index.docbook
+share/doc/HTML/sl/klines/
+share/doc/HTML/sl/klines/index.cache.bz2
+share/doc/HTML/sl/klines/index.docbook
 share/doc/HTML/sv/klines/
 share/doc/HTML/sv/klines/index.cache.bz2
 share/doc/HTML/sv/klines/index.docbook
@@ -147,3 +150,4 @@ share/metainfo/
 share/metainfo/org.kde.klines.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 share/qlogging-categories6/klines.categories
+share/qlogging-categories6/klines.renamecategories

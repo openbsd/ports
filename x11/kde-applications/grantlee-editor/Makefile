@@ -68,6 +68,4 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		x11/qt6/qtwebchannel \
 		x11/qt6/qtwebengine
 
-CXXFLAGS +=	-I${LOCALBASE}/include/KPim5/MessageViewer
-
 .include <bsd.port.mk>

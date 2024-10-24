@@ -4,9 +4,9 @@ CATEGORIES =	databases productivity
 
 HOMEPAGE =	https://kontact.kde.org
 
-SHARED_LIBS +=	KPim6AkonadiAgentBase     0.0 # 0.0
-SHARED_LIBS +=	KPim6AkonadiCore          0.0 # 0.0
-SHARED_LIBS +=	KPim6AkonadiPrivate       0.0 # 0.0
+SHARED_LIBS +=	KPim6AkonadiAgentBase     1.0 # 0.0
+SHARED_LIBS +=	KPim6AkonadiCore          1.0 # 0.0
+SHARED_LIBS +=	KPim6AkonadiPrivate       1.0 # 0.0
 SHARED_LIBS +=	KPim6AkonadiWidgets       0.0 # 0.0
 SHARED_LIBS +=	KPim6AkonadiXml           0.0 # 0.0
 

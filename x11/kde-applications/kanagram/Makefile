@@ -11,7 +11,7 @@ WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
 WANTLIB += KF6Crash KF6I18n KF6NewStuffCore KF6NewStuffWidgets
 WANTLIB += KF6SonnetCore KF6WidgetsAddons KF6XmlGui Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Multimedia Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels
-WANTLIB += Qt6Quick Qt6TextToSpeech Qt6Widgets Qt6Xml c m
+WANTLIB += Qt6Quick Qt6Widgets Qt6Xml c m
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes
@@ -37,8 +37,8 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/sonnet \
 		x11/kde-applications/libkeduvocdocument>=${MODKDE_GEAR_VERSION} \
 		x11/qt6/qtdeclarative \
-		x11/qt6/qtmultimedia \
-		x11/qt6/qtspeech
+		x11/qt6/qtspeech \
+		x11/qt6/qtmultimedia
 
 TEST_IS_INTERACTIVE =	X11
 

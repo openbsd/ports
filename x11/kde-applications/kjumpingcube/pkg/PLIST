@@ -41,6 +41,9 @@ share/doc/HTML/pt_BR/kjumpingcube/index.docbook
 share/doc/HTML/ru/kjumpingcube/
 share/doc/HTML/ru/kjumpingcube/index.cache.bz2
 share/doc/HTML/ru/kjumpingcube/index.docbook
+share/doc/HTML/sl/kjumpingcube/
+share/doc/HTML/sl/kjumpingcube/index.cache.bz2
+share/doc/HTML/sl/kjumpingcube/index.docbook
 share/doc/HTML/sv/kjumpingcube/
 share/doc/HTML/sv/kjumpingcube/index.cache.bz2
 share/doc/HTML/sv/kjumpingcube/index.docbook
@@ -138,3 +141,4 @@ share/metainfo/org.kde.kjumpingcube.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
 share/qlogging-categories6/kjumpingcube.categories
+share/qlogging-categories6/kjumpingcube.renamecategories

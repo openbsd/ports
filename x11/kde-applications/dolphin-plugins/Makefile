@@ -8,8 +8,8 @@ WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
 WANTLIB += KF6I18n KF6ItemViews KF6JobWidgets KF6KIOCore KF6KIOFileWidgets
 WANTLIB += KF6KIOGui KF6KIOWidgets KF6Parts KF6Service KF6Solid
 WANTLIB += KF6SonnetUi KF6SyntaxHighlighting KF6TextEditor KF6TextWidgets
-WANTLIB += KF6WidgetsAddons KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6Widgets Qt6Xml dolphinvcs m
+WANTLIB += KF6WidgetsAddons KF6XmlGui Qt6Concurrent Qt6Core Qt6DBus
+WANTLIB += Qt6Gui Qt6Network Qt6Widgets Qt6Xml dolphinvcs m
 
 MODKDE_TRANSLATIONS = yes
 MODKF5_L10N_CONFLICT = yes

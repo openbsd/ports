@@ -76,6 +76,9 @@ share/doc/HTML/pt_BR/granatier/index.docbook
 share/doc/HTML/ru/granatier/
 share/doc/HTML/ru/granatier/index.cache.bz2
 share/doc/HTML/ru/granatier/index.docbook
+share/doc/HTML/sl/granatier/
+share/doc/HTML/sl/granatier/index.cache.bz2
+share/doc/HTML/sl/granatier/index.docbook
 share/doc/HTML/sv/granatier/
 share/doc/HTML/sv/granatier/index.cache.bz2
 share/doc/HTML/sv/granatier/index.docbook
@@ -269,3 +272,4 @@ share/metainfo/org.kde.granatier.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
 share/qlogging-categories6/granatier.categories
+share/qlogging-categories6/granatier.renamecategories

@@ -85,6 +85,10 @@ share/doc/HTML/ru/ktuberling/
 share/doc/HTML/ru/ktuberling/index.cache.bz2
 share/doc/HTML/ru/ktuberling/index.docbook
 share/doc/HTML/ru/ktuberling/technical-reference.docbook
+share/doc/HTML/sl/ktuberling/
+share/doc/HTML/sl/ktuberling/index.cache.bz2
+share/doc/HTML/sl/ktuberling/index.docbook
+share/doc/HTML/sl/ktuberling/technical-reference.docbook
 share/doc/HTML/sv/ktuberling/
 share/doc/HTML/sv/ktuberling/index.cache.bz2
 share/doc/HTML/sv/ktuberling/index.docbook
@@ -2396,3 +2400,4 @@ share/metainfo/org.kde.ktuberling.appdata.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 share/qlogging-categories6/ktuberling.categories
+share/qlogging-categories6/ktuberling.renamecategories

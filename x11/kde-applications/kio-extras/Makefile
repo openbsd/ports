@@ -3,7 +3,7 @@ VERSION =	24.02.1
 DISTNAME =	kio-extras-kf5-${VERSION}
 PKGNAME =	kio-extras-${VERSION}
 CATEGORIES =	productivity net
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=  kioarchive                4.0 # 5.97
 SHARED_LIBS +=  molletnetwork5            3.0 # 18.08
