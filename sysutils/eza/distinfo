@@ -23,7 +23,7 @@ SHA256 (cargo/byteorder-1.4.3.tar.gz) = FMGJxT0JiUVJnN+n7MY1Z884hrMzKzEqW0WF2NOm
 SHA256 (cargo/cast-0.3.0.tar.gz) = N7KmcqLLEpouQcELEiS7No+fN6Kxa2ElmBOL79ezfrU=
 SHA256 (cargo/cc-1.0.79.tar.gz) = UNMJBihhIdlb49R5UztFj4dJOzCktfeaYH249dEaqR8=
 SHA256 (cargo/cfg-if-1.0.0.tar.gz) = uvHeQzl2FYi8Bhnjy8ASDuWC67dLU7Tvv3kRe9LaQP0=
-SHA256 (cargo/chrono-0.4.34.tar.gz) = W8AVZEuS1YkPq3SJ5J0h+HnVyZAYaCfULsURkZQE84s=
+SHA256 (cargo/chrono-0.4.38.tar.gz) = oh+TbfF3G/Yrd/BHtybEYl/y6KpgfAHsBuWgW9hGNAE=
 SHA256 (cargo/ciborium-0.2.1.tar.gz) = 7/2R9seOWkrOil08C2v67J4rqu9V8+/ADkX7Lkd+6SY=
 SHA256 (cargo/ciborium-io-0.2.1.tar.gz) = zfkZF1Uys2mFP11eILJrQxEmE/1v567nV+NfekRkJlY=
 SHA256 (cargo/ciborium-ll-0.2.1.tar.gz) = 3vqiTswJPHdjDmwV4XxR9eGHvzXuUU9OLWe6qpba4is=
@@ -69,7 +69,7 @@ SHA256 (cargo/itertools-0.10.5.tar.gz) = sP0iYOgpvd9MtuqAIoneL4bWp6aQGS++kbP0bg8
 SHA256 (cargo/itoa-1.0.9.tar.gz) = rxUKtoj/ISL87yKb6Jy1DdZq+eAaT/MgzBN+7Mm6zDg=
 SHA256 (cargo/jobserver-0.1.22.tar.gz) = ly9a5dHLnGrkF3iRlsgDIFMT7d6YhoXaXjquCCe55/0=
 SHA256 (cargo/js-sys-0.3.64.tar.gz) = xfGV/kl/cC2w8xiwf91o7bFpVa7YMN+DY9g3VC+Pk1o=
-SHA256 (cargo/libc-0.2.159.tar.gz) = Vh2XpTmjbiappfrR6hGjA5pncUaUqqN5Qz5YCFS8PcU=
+SHA256 (cargo/libc-0.2.161.tar.gz) = jpSJwoB8E5/9nBeU9K8OvoaoKNtT7Nx/6iER0P7QhdE=
 SHA256 (cargo/libgit2-sys-0.17.0+1.8.1.tar.gz) = EEcjJqimR3w8IKZFR7AFnksNCGhp7uMebX2nKKjrciQ=
 SHA256 (cargo/libredox-0.0.1.tar.gz) = hcgzyh5mB4hR26KQRodOOPCLLIg3AKopoD3dOyOBTug=
 SHA256 (cargo/libz-sys-1.1.2.tar.gz) = YCETGSsI2484eWxOhcOelgwUWWUUDpGAGLzeGVJCllU=
@@ -87,7 +87,7 @@ SHA256 (cargo/num-conv-0.1.0.tar.gz) = UdUV0y+xgu43zaLM3LkpUNajwok6ooDlQGccLNDzs
 SHA256 (cargo/num-traits-0.2.14.tar.gz) = mmSx7FzaJYbihHIkhtgCrPH329xiPiv8V+Zcoc0JkpA=
 SHA256 (cargo/number_prefix-0.4.0.tar.gz) = gwskag5fIK+HFBslwXPNG2Cb13eaRhfW7FgquvkIcPM=
 SHA256 (cargo/object-0.36.4.tar.gz) = CE8aWCGsTGUWYKlKcVPSesnYpTc2ID9YsxlF3tCYBwo=
-SHA256 (cargo/once_cell-1.20.1.tar.gz) = gogcS+IZq1+q8q1eXl7N/4xmvXQCyjFgl1yTsklhr9E=
+SHA256 (cargo/once_cell-1.20.2.tar.gz) = EmH+fjPHOzVOq0OxJzpXyPln0DkegDU+UfdkrALPZ3U=
 SHA256 (cargo/oorandom-11.1.3.tar.gz) = CrG8KiidNL0EozAyOsmKG0vILJ2fyx5mtjyqhNomtXU=
 SHA256 (cargo/openssl-src-111.26.0+1.1.1u.tar.gz) = 78YsnxKyK49SCMI6cgCkQrLlmZ+L34AjOFISK1pPbzc=
 SHA256 (cargo/openssl-sys-0.9.61.tar.gz) = MTdSOTUZ6HaDfgnh+hg93vC+dzWGjc7TGW9EctU2J38=
@@ -107,7 +107,6 @@ SHA256 (cargo/plist-1.7.0.tar.gz) = Qs8X6aGAD185a8Z9GT3JQRtZASpYdkRe9FDUSYgeEBY=
 SHA256 (cargo/plotters-0.3.5.tar.gz) = 0sIkugDXyt1NXGYN6vIJjl6A4HhGU3xR+c+kvlDB/UU=
 SHA256 (cargo/plotters-backend-0.3.5.tar.gz) = nnZii006dYE4mjXVtuITlgetfHWxeu0yXyEKqR9Klgk=
 SHA256 (cargo/plotters-svg-0.3.5.tar.gz) = OPbTmJPMoHATcePCcpTwl5chS4bx+5Ubia3o7ATiq6s=
-SHA256 (cargo/portable-atomic-1.9.0.tar.gz) = zJxoo/baBnU+kzXWPif2uXVN0ZINlBE1t+qCJPFBrbI=
 SHA256 (cargo/powerfmt-0.2.0.tar.gz) = Q57jBd7xFboFk4226xZE/5QWXFq16UINHBvO27qQk5E=
 SHA256 (cargo/proc-macro2-1.0.83.tar.gz) = CzPrVsMn3sNiqeVbOtFPnS8JBPtaWwO1E6tUZTmen0M=
 SHA256 (cargo/proc-mounts-0.3.0.tar.gz) = DWUvhDXQq3C/TzWQpqhR1ZYEgxpFgIZUG5UjjMUf/PI=
@@ -201,7 +200,7 @@ SHA256 (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 7ZT85hVxpABoUrc4mgY6uYPALrG7N
 SHA256 (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = WJ9tqExkYgR0fRJwoqVmHqZu0cztJjHVRv37FVlZ+ew=
 SHA256 (cargo/winnow-0.6.20.tar.gz) = NsH+waK7WGbwfCX2jCblZcTCAK67ltflVxDBnT6KxJs=
 SHA256 (cargo/zoneinfo_compiled-0.5.1.tar.gz) = ZPvr5l6JlTD0O9dgsj/ajxQRGPTbSZUrApmMvQkHpd4=
-SHA256 (eza-0.20.1.tar.gz) = 54qEzFMk67ZIEpPTLt/bx954UR1RkLSAigiW+M5NZS4=
+SHA256 (eza-0.20.5.tar.gz) = NFWQer3dcqtAVhNYj4LitfZ3H6zyFeW82SvKGoJSCBk=
 SIZE (cargo/addr2line-0.24.1.tar.gz) = 41554
 SIZE (cargo/adler2-2.0.0.tar.gz) = 13529
 SIZE (cargo/aho-corasick-1.0.5.tar.gz) = 172064
@@ -227,7 +226,7 @@ SIZE (cargo/byteorder-1.4.3.tar.gz) = 22512
 SIZE (cargo/cast-0.3.0.tar.gz) = 11452
 SIZE (cargo/cc-1.0.79.tar.gz) = 62624
 SIZE (cargo/cfg-if-1.0.0.tar.gz) = 7934
-SIZE (cargo/chrono-0.4.34.tar.gz) = 228932
+SIZE (cargo/chrono-0.4.38.tar.gz) = 220559
 SIZE (cargo/ciborium-0.2.1.tar.gz) = 34974
 SIZE (cargo/ciborium-io-0.2.1.tar.gz) = 6679
 SIZE (cargo/ciborium-ll-0.2.1.tar.gz) = 14649
@@ -273,7 +272,7 @@ SIZE (cargo/itertools-0.10.5.tar.gz) = 115354
 SIZE (cargo/itoa-1.0.9.tar.gz) = 10492
 SIZE (cargo/jobserver-0.1.22.tar.gz) = 21175
 SIZE (cargo/js-sys-0.3.64.tar.gz) = 80313
-SIZE (cargo/libc-0.2.159.tar.gz) = 755366
+SIZE (cargo/libc-0.2.161.tar.gz) = 765389
 SIZE (cargo/libgit2-sys-0.17.0+1.8.1.tar.gz) = 1812997
 SIZE (cargo/libredox-0.0.1.tar.gz) = 4212
 SIZE (cargo/libz-sys-1.1.2.tar.gz) = 1339299
@@ -291,7 +290,7 @@ SIZE (cargo/num-conv-0.1.0.tar.gz) = 7444
 SIZE (cargo/num-traits-0.2.14.tar.gz) = 45476
 SIZE (cargo/number_prefix-0.4.0.tar.gz) = 6922
 SIZE (cargo/object-0.36.4.tar.gz) = 325802
-SIZE (cargo/once_cell-1.20.1.tar.gz) = 33345
+SIZE (cargo/once_cell-1.20.2.tar.gz) = 33394
 SIZE (cargo/oorandom-11.1.3.tar.gz) = 10068
 SIZE (cargo/openssl-src-111.26.0+1.1.1u.tar.gz) = 5110372
 SIZE (cargo/openssl-sys-0.9.61.tar.gz) = 52010
@@ -311,7 +310,6 @@ SIZE (cargo/plist-1.7.0.tar.gz) = 101068
 SIZE (cargo/plotters-0.3.5.tar.gz) = 143975
 SIZE (cargo/plotters-backend-0.3.5.tar.gz) = 13440
 SIZE (cargo/plotters-svg-0.3.5.tar.gz) = 6948
-SIZE (cargo/portable-atomic-1.9.0.tar.gz) = 166365
 SIZE (cargo/powerfmt-0.2.0.tar.gz) = 15165
 SIZE (cargo/proc-macro2-1.0.83.tar.gz) = 48661
 SIZE (cargo/proc-mounts-0.3.0.tar.gz) = 8363
@@ -405,4 +403,4 @@ SIZE (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 798412
 SIZE (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = 832564
 SIZE (cargo/winnow-0.6.20.tar.gz) = 163617
 SIZE (cargo/zoneinfo_compiled-0.5.1.tar.gz) = 8837
-SIZE (eza-0.20.1.tar.gz) = 1415714
+SIZE (eza-0.20.5.tar.gz) = 1415403
