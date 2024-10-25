@@ -1,6 +1,6 @@
 COMMENT =		library for reading RAW files
 
-DISTNAME =		LibRaw-0.21.2
+DISTNAME =		LibRaw-0.21.3
 PKGNAME =		${DISTNAME:L}
 CATEGORIES =		graphics
 
@@ -34,3 +34,4 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 .include <bsd.port.mk>
+LIB_DEPENDS += devel/jdk/1.8 graphics/darktable graphics/jpeg multimedia/xine-lib 
