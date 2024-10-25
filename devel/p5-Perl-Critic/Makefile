@@ -1,6 +1,6 @@
 COMMENT =	critique Perl source code for best-practices
 
-DISTNAME =	Perl-Critic-1.152
+DISTNAME =	Perl-Critic-1.156
 
 CATEGORIES =	devel
 
