@@ -8,7 +8,7 @@ SHA256 (cargo/bitflags-1.3.2.tar.gz) = vvONRRY8Lx3eCUp9/TPM9ZXJKQXI+PT9wY0G+xA3c
 SHA256 (cargo/bitflags-2.5.0.tar.gz) = z0udapRPdn+OXg2wGFcGI8hfPZJaxxjbTgbQGHrbIcE=
 SHA256 (cargo/bstr-1.9.1.tar.gz) = Be/Fz9kRDIQW5HHfDpZwLVhpAXjiBuYbcXNwZnPJNwY=
 SHA256 (cargo/bumpalo-3.14.0.tar.gz) = fzDnR2Uh9vivGhxMC4zJTwvuN9kXY9DKJmXymbbNiuw=
-SHA256 (cargo/cc-1.1.5.tar.gz) = Mkx08hVWU8kLBPJbKkeopjE2DLkI+Sp3JpX0MMfjEFI=
+SHA256 (cargo/cc-1.1.30.tar.gz) = sWgDphuB2eq7fq4liHdsTB5YS3OO3kX9u0yXLOwemUU=
 SHA256 (cargo/cfg-if-1.0.0.tar.gz) = uvHeQzl2FYi8Bhnjy8ASDuWC67dLU7Tvv3kRe9LaQP0=
 SHA256 (cargo/clap-3.2.25.tar.gz) = TqGBv1ZvccuaXRelnhhxr2OBgKGPsANckq5itwUgcSM=
 SHA256 (cargo/clap_lex-0.2.4.tar.gz) = KFDy9agsv0N91a9NSYSPvfwnwVfD0BA0V3b5UnZSYcU=
@@ -91,6 +91,7 @@ SHA256 (cargo/scopeguard-1.2.0.tar.gz) = lBQ/N3JRCfksJi7Sz15ZvOdJjAG8wVAte5r+Q5p
 SHA256 (cargo/serde-1.0.197.tar.gz) = P7HIc+G5sFak3EwMGYskw/+gWSQ4dVUrK9CTOxruTOI=
 SHA256 (cargo/serde_derive-1.0.197.tar.gz) = frCzS0LtwX9rfKyEpSocXw4bsiJ+mXypAR6j3TToYQs=
 SHA256 (cargo/serde_json-1.0.114.tar.gz) = xfCbG9Yy71Seqp9gofjedCvbxpjmzuIJX8hN3l9UmuA=
+SHA256 (cargo/shlex-1.3.0.tar.gz) = D9ov8NCEAZuk18bzccldj9dc41JMPLj7ZTowI/YyPmQ=
 SHA256 (cargo/signal-hook-0.3.17.tar.gz) = hiFYfUeYyvjrRIedQuVrmpPqXc0xWmSHw1cTAJW2KAE=
 SHA256 (cargo/signal-hook-mio-0.2.3.tar.gz) = Ka0uFfN+yabMVECXt4oeyQAB6fcbgTOMo59DCtrKma8=
 SHA256 (cargo/signal-hook-registry-1.4.1.tar.gz) = 2CKbRzuqWYCscu9DTEQV5wxLXnG0IwQ620ugWficmaE=
@@ -105,7 +106,7 @@ SHA256 (cargo/termtree-0.4.1.tar.gz) = M2n1rFLV62q0jGtP/cjvvK1ricdldJBkuimPLGiha
 SHA256 (cargo/textwrap-0.16.1.tar.gz) = I9Q00/iWeglID7BBMuvgo+CIwXPm0O54l6u99Oqw+Lk=
 SHA256 (cargo/thread_local-1.1.8.tar.gz) = i575utATraOAiFTOrHtGgSpkZbo2iFmjfiEAKD0tcZw=
 SHA256 (cargo/tree-sitter-0.20.10.tar.gz) = 50ex+be5Me05pUjB+uFJEBSX3jwfyNnhjGLBpmxoPT0=
-SHA256 (cargo/tree_magic_mini-3.1.4.tar.gz) = d+4TdZfNs2G1WkdGmD5KwbNatgJDlqQZlErUc7uRUmU=
+SHA256 (cargo/tree_magic_mini-3.1.5.tar.gz) = RppyfKxVtBRIMVzBBCfAacYYrFm7akSAKD/NgRdJvcI=
 SHA256 (cargo/typed-arena-2.0.2.tar.gz) = avauIBZ6ns5Ly0GvW4D4ofHfmB9jkRic4A/SV68EEmo=
 SHA256 (cargo/unicode-ident-1.0.12.tar.gz) = M1S5rD+uH/Z1XLbbU2g622YWNPZ1V5Qt6k+s6+wP7ks=
 SHA256 (cargo/unicode-width-0.1.11.tar.gz) = 5Rcz8RycT3KqDBYACCRoWeNAsAgHVpoNoOehB5snuoU=
@@ -140,7 +141,7 @@ SHA256 (cargo/wu-diff-0.1.2.tar.gz) = jj5nNfzeBkMocNuNydfjqxuTcnwU6u8ymWlCYpnyiJ
 SHA256 (cargo/yansi-0.5.1.tar.gz) = CQQc2Qz4X3+LLfYMZG+FO39TXOaPhSROtnMc+J+kmOw=
 SHA256 (cargo/zerocopy-0.7.32.tar.gz) = dNTTlh5T+kyaJahjf8K/ryWVs9OuNIdVaKXPZHh3Fr4=
 SHA256 (cargo/zerocopy-derive-0.7.32.tar.gz) = nOGxjM2Oc6kyEYb5fkb58Et3iFEXdWexl1EJ0moI0qY=
-SHA256 (difftastic-0.60.0.tar.gz) = Q0ayaSQPO+/xU3WNCiMTrMx5ZF7iGzbPzHGsD8pdm10=
+SHA256 (difftastic-0.61.0.tar.gz) = joUAHjLx/nssbRZPOmVMtYnG5ItjUEId8npWkZ2noYU=
 SIZE (cargo/ahash-0.8.11.tar.gz) = 43607
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
 SIZE (cargo/allocator-api2-0.2.16.tar.gz) = 59025
@@ -151,7 +152,7 @@ SIZE (cargo/bitflags-1.3.2.tar.gz) = 23021
 SIZE (cargo/bitflags-2.5.0.tar.gz) = 43821
 SIZE (cargo/bstr-1.9.1.tar.gz) = 380305
 SIZE (cargo/bumpalo-3.14.0.tar.gz) = 82400
-SIZE (cargo/cc-1.1.5.tar.gz) = 81493
+SIZE (cargo/cc-1.1.30.tar.gz) = 84509
 SIZE (cargo/cfg-if-1.0.0.tar.gz) = 7934
 SIZE (cargo/clap-3.2.25.tar.gz) = 219403
 SIZE (cargo/clap_lex-0.2.4.tar.gz) = 9652
@@ -234,6 +235,7 @@ SIZE (cargo/scopeguard-1.2.0.tar.gz) = 11619
 SIZE (cargo/serde-1.0.197.tar.gz) = 77087
 SIZE (cargo/serde_derive-1.0.197.tar.gz) = 55771
 SIZE (cargo/serde_json-1.0.114.tar.gz) = 146986
+SIZE (cargo/shlex-1.3.0.tar.gz) = 18713
 SIZE (cargo/signal-hook-0.3.17.tar.gz) = 50296
 SIZE (cargo/signal-hook-mio-0.2.3.tar.gz) = 9064
 SIZE (cargo/signal-hook-registry-1.4.1.tar.gz) = 17987
@@ -248,7 +250,7 @@ SIZE (cargo/termtree-0.4.1.tar.gz) = 4557
 SIZE (cargo/textwrap-0.16.1.tar.gz) = 56012
 SIZE (cargo/thread_local-1.1.8.tar.gz) = 13962
 SIZE (cargo/tree-sitter-0.20.10.tar.gz) = 134502
-SIZE (cargo/tree_magic_mini-3.1.4.tar.gz) = 14548
+SIZE (cargo/tree_magic_mini-3.1.5.tar.gz) = 14557
 SIZE (cargo/typed-arena-2.0.2.tar.gz) = 11848
 SIZE (cargo/unicode-ident-1.0.12.tar.gz) = 42168
 SIZE (cargo/unicode-width-0.1.11.tar.gz) = 19187
@@ -283,4 +285,4 @@ SIZE (cargo/wu-diff-0.1.2.tar.gz) = 33439
 SIZE (cargo/yansi-0.5.1.tar.gz) = 16525
 SIZE (cargo/zerocopy-0.7.32.tar.gz) = 151096
 SIZE (cargo/zerocopy-derive-0.7.32.tar.gz) = 37623
-SIZE (difftastic-0.60.0.tar.gz) = 44037544
+SIZE (difftastic-0.61.0.tar.gz) = 44045376
