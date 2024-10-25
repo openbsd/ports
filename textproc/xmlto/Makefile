@@ -1,9 +1,7 @@
 COMMENT=	front-end for converting XML files to various formats
 
-DISTNAME=	xmlto-0.0.28
+DISTNAME=	xmlto-0.0.29
 EXTRACT_SUFX=	.tar.bz2
-
-REVISION=	1
 
 CATEGORIES=	textproc
 
@@ -24,7 +22,10 @@ RUN_DEPENDS=	misc/gnugetopt \
 
 BUILD_DEPENDS=	misc/gnugetopt
 
-CONFIGURE_STYLE=gnu
+CONFIGURE_STYLE=autoreconf
+AUTOCONF_VERSION=2.71
+AUTOMAKE_VERSION=1.16
+USE_GMAKE=	Yes
 CONFIGURE_ARGS=	--with-webbrowser=lynx
 
 # so that we do not need more BUILD_DEPENDS
