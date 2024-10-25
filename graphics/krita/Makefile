@@ -1,8 +1,7 @@
 COMMENT =	advanced drawing and image manipulation
 
-VERSION =	5.2.3
+VERSION =	5.2.6
 DISTNAME =	krita-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  kritabasicflakes          4.1 # 16.0
 SHARED_LIBS +=  kritacolord               2.0 # 16.0
@@ -82,9 +81,11 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 			math/eigen3 \
 			net/curl
 
-LIB_DEPENDS =		archivers/quazip \
-			archivers/bzip2 \
+LIB_DEPENDS =		archivers/bzip2 \
+			archivers/quazip \
 			devel/fribidi \
+			devel/gettext,-runtime \
+			devel/glib2 \
 			devel/gsl \
 			devel/harfbuzz \
 			devel/json-c \
