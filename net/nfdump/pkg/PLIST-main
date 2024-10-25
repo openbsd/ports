@@ -1,21 +1,30 @@
 @newgroup _nfcapd:649
 @newuser _nfcapd:649:_nfcapd::nfcapd user:/nonexistent:/sbin/nologin
 @bin bin/ft2nfdump
+@bin bin/geolookup
 @bin bin/nfanon
 @bin bin/nfcapd
 @bin bin/nfdump
 @bin bin/nfexpire
 @bin bin/nfreplay
 @bin bin/sfcapd
+@bin bin/torlookup
+bin/updateGeoDB.sh
+bin/updateTorDB.sh
 @static-lib lib/libnfdump.a
 lib/libnfdump.la
 @lib lib/libnfdump.so.${LIBnfdump_VERSION}
+@static-lib lib/libnffile.a
+lib/libnffile.la
+@lib lib/libnffile.so.${LIBnffile_VERSION}
 @man man/man1/ft2nfdump.1
+@man man/man1/geolookup.1
 @man man/man1/nfanon.1
 @man man/man1/nfcapd.1
 @man man/man1/nfdump.1
 @man man/man1/nfexpire.1
 @man man/man1/nfreplay.1
 @man man/man1/sfcapd.1
+@man man/man1/torlookup.1
 share/doc/nfdump/
 share/doc/nfdump/README

@@ -1,0 +1,21 @@
+Index: src/tor/updateTorDB.sh
+--- src/tor/updateTorDB.sh.orig
++++ src/tor/updateTorDB.sh
+@@ -1,4 +1,4 @@
+-#!/bin/sh
++#!/bin/ksh
+ 
+ # Script to update nfdump toDB.
+ 
+@@ -43,9 +43,9 @@ fetch_files() {
+ 			month="0${month}"
+ 		fi
+ 		/bin/echo -n "Fetch exit-list-$year-$month.tar.xz: .. "
+-		wget -q "${EXIT_URL}/exit-list-$year-$month.tar.xz"
++		ftp -V "${EXIT_URL}/exit-list-$year-$month.tar.xz"
+ 		if [ $? -eq 0 -a -f exit-list-$year-$month.tar.xz ]; then
+-			tar Jxf exit-list-$year-$month.tar.xz
++			xzcat exit-list-$year-$month.tar.xz | tar xf -
+ 			rm exit-list-$year-$month.tar.xz
+ 			/bin/echo OK.
+ 		else

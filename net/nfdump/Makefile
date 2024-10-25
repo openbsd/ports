@@ -1,13 +1,14 @@
 COMMENT-main =		tools to collect and process netflow data
 COMMENT-nfprofile =	filters data from nfdump according to profiles
 
-V =			1.7.4
+V =			1.7.5
 GH_ACCOUNT =		phaag
 GH_PROJECT =		nfdump
 GH_TAGNAME =		v$V
 PKGNAME-nfprofile =	nfprofile-$V
 
-SHARED_LIBS +=	nfdump                    2.0
+SHARED_LIBS +=	nfdump                    3.0
+SHARED_LIBS +=  nffile                    0.0
 
 CATEGORIES =		net
 
@@ -19,8 +20,8 @@ WANTLIB-main =		${WANTLIB} ft m pthread
 
 WANTLIB-nfprofile =  ${WANTLIB}
 WANTLIB-nfprofile += X11 cairo expat freetype glib-2.0 gobject-2.0 harfbuzz
-WANTLIB-nfprofile += iconv intl lzma m nfdump pango-1.0 pangocairo-1.0 png
-WANTLIB-nfprofile += pthread rrd xcb xml2
+WANTLIB-nfprofile += iconv intl lzma m nfdump nffile pango-1.0 pangocairo-1.0
+WANTLIB-nfprofile += png pthread rrd xcb xml2
 
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
@@ -36,6 +37,8 @@ CONFIGURE_ARGS +=	--enable-ftconv \
 			--enable-nftrack \
 			--enable-nsel \
 			--enable-sflow \
+			--enable-maxmind \
+			--enable-tor \
 			--with-rrdpath=${LOCALBASE} \
 			--with-ftpath=${LOCALBASE}
 

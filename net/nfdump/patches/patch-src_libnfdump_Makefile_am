@@ -1,0 +1,11 @@
+Index: src/libnfdump/Makefile.am
+--- src/libnfdump/Makefile.am.orig
++++ src/libnfdump/Makefile.am
+@@ -21,6 +21,6 @@ tor = tor/tor.c tor/tor.h 
+ 
+ lib_LTLIBRARIES = libnfdump.la
+ libnfdump_la_SOURCES = $(filter) $(maxmind) $(tor) $(regex) $(decode) $(digest) ../libnffile/vcs_track.h
+-libnfdump_la_LDFLAGS = -release @VERSION@
++libnfdump_la_LDFLAGS =
+  
+ CLEANFILES = filter/lex.yy.c filter/grammar.c filter/grammar.h filter/scanner.c filter/scanner.h *.gch

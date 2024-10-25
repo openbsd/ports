@@ -1,0 +1,34 @@
+Index: src/maxmind/updateGeoDB.sh
+--- src/maxmind/updateGeoDB.sh.orig
++++ src/maxmind/updateGeoDB.sh
+@@ -1,11 +1,11 @@
+-#!/bin/sh
++#!/bin/ksh
+ #
+ 
+ # Get your license key from maxmind.com
+ # - Signup for a free account
+ # - This account gives you access to the GeoLite2 files
+ # - On the web page, in your account, create the license key
+-LICENSE=YOURLICENSEKEY
++LICENSE=${LICENSE:=YOURLICENSEKEY}
+ 
+ # language: the location information is avalable in many languages
+ # available languages:
+@@ -18,14 +18,14 @@ rm -rf GeoLite2-ASN-CSV_* GeoLite2-City-CSV_*
+ 
+ # get the permalink from the maxmind download page
+ # If you have a maxmind paid account, replace the URLs below
+-wget -O GeoLite2-ASN-CSV.zip "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-ASN-CSV&license_key=${LICENSE}&suffix=zip"
++ftp -o GeoLite2-ASN-CSV.zip "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-ASN-CSV&license_key=${LICENSE}&suffix=zip"
+ if [ $? -ne 0 ]; then
+   echo "### Maxmind DB download error ###"
+   echo "DB Download failed. Check your license keys or download URLs."
+   exit
+ fi
+ 
+-wget -O GeoLite2-City-CSV.zip "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City-CSV&license_key=${LICENSE}&suffix=zip"
++ftp -o GeoLite2-City-CSV.zip "https://download.maxmind.com/app/geoip_download?edition_id=GeoLite2-City-CSV&license_key=${LICENSE}&suffix=zip"
+ if [ $? -ne 0 ]; then
+   echo "### Maxmind DB download error ###"
+   echo "DB Download failed. Check your license keys or download URLs."
