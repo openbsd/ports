@@ -3,8 +3,7 @@ CATEGORIES =	graphics x11
 
 GH_ACCOUNT =	naelstrof
 GH_PROJECT =	maim
-GH_TAGNAME =	v5.7.4
-REVISION =	0
+GH_TAGNAME =	v5.8.0
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
