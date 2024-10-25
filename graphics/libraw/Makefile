@@ -3,7 +3,7 @@ COMMENT =		library for reading RAW files
 DISTNAME =		LibRaw-0.21.3
 PKGNAME =		${DISTNAME:L}
 CATEGORIES =		graphics
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  raw                  5.0 # 23.0
 SHARED_LIBS +=  raw_r                5.0 # 23.0
@@ -22,6 +22,7 @@ SITES =			https://www.libraw.org/data/
 COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS =		graphics/jasper \
+			graphics/jpeg \
 			graphics/lcms2
 
 SEPARATE_BUILD =	Yes
