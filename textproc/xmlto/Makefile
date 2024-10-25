@@ -20,7 +20,9 @@ RUN_DEPENDS=	misc/gnugetopt \
 		textproc/docbook-xsl \
 		www/lynx
 
-BUILD_DEPENDS=	misc/gnugetopt
+BUILD_DEPENDS=	misc/gnugetopt \
+		shells/bash \
+		textproc/docbook-xsl
 
 CONFIGURE_STYLE=autoreconf
 AUTOCONF_VERSION=2.71
