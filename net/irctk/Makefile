@@ -2,6 +2,7 @@ COMMENT =	graphical IRC client
 
 V =		1.1.0
 DISTNAME =	irctk-$V
+REVISION =	0
 CATEGORIES =	net
 HOMEPAGE =	https://lab.abiscuola.com/irctk/
 MAINTAINER =	Omar Polo <op@openbsd.org>
