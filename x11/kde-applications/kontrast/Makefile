@@ -1,6 +1,7 @@
 COMMENT =	color contrast checker
 DISTNAME =	kontrast-${VERSION}
 CATEGORIES =	x11 graphics
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CoreAddons KF6I18n QCoro6Core
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml
@@ -14,9 +15,11 @@ MODKDE_ICON_CACHE = yes
 BUILD_DEPENDS =	devel/kf6/kconfig \
 		devel/kf6/kdeclarative \
 		devel/kf6/kirigami \
+		graphics/kirigami-addons \
 		devel/kf6/kpackage
 
-RUN_DEPENDS =	devel/kf6/kirigami
+RUN_DEPENDS =	devel/kf6/kirigami \
+		graphics/kirigami-addons
 
 LIB_DEPENDS =	databases/futuresql \
 		devel/kf6/kcoreaddons \
