@@ -7,6 +7,8 @@
 @so lib/libstd-${LIBRUST_HASH}15.so
 lib/rustlib/
 lib/rustlib/${TRIPLE_ARCH}/
+lib/rustlib/${TRIPLE_ARCH}/bin/
+@bin lib/rustlib/${TRIPLE_ARCH}/bin/wasm-component-ld
 lib/rustlib/${TRIPLE_ARCH}/lib/
 lib/rustlib/${TRIPLE_ARCH}/lib/libaddr2line-${LIBRUST_HASH}00.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/libadler-${LIBRUST_HASH}01.rlib
@@ -45,6 +47,7 @@ lib/rustlib/${TRIPLE_ARCH}/lib/libunwind-${LIBRUST_HASH}1a.rlib
 @man man/man1/cargo-fix.1
 @man man/man1/cargo-generate-lockfile.1
 @man man/man1/cargo-help.1
+@man man/man1/cargo-info.1
 @man man/man1/cargo-init.1
 @man man/man1/cargo-install.1
 @man man/man1/cargo-locate-project.1
