@@ -10,7 +10,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser
 
-V=			129.0.6668.100
+V=			130.0.6723.69
 
 DISTNAME=		chromium-${V}
 
@@ -181,7 +181,7 @@ GN_ARGS=	enable_nacl=false \
 		use_partition_alloc_as_malloc=false \
 		enable_backup_ref_ptr_support=false \
 		disable_fieldtrial_testing_config=true \
-		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
+		extra_cppflags=\"-I${LOCALBASE}/include/libepoll-shim -idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
 		fatal_linker_warnings=false \
 		use_custom_libcxx=true \
 		use_custom_libunwind=true \

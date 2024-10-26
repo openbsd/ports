@@ -10,7 +10,7 @@ Index: content/common/features.h
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kEnableDevToolsJsErrorReporting);
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kEmbeddingRequiresOptIn);
-@@ -75,7 +75,7 @@ CONTENT_EXPORT extern const base::FeatureParam<int>
+@@ -76,7 +76,7 @@ CONTENT_EXPORT extern const base::FeatureParam<int>
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kGpuInfoCollectionSeparatePrefetch);
  #endif
  CONTENT_EXPORT BASE_DECLARE_FEATURE(kGroupNIKByJoiningOrigin);

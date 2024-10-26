@@ -10,7 +10,7 @@ Index: components/supervised_user/core/common/features.h
  BASE_DECLARE_FEATURE(kEnableExtensionsPermissionsForSupervisedUsersOnDesktop);
  #endif
  
-@@ -62,11 +62,11 @@ BASE_DECLARE_FEATURE(kCustomWebSignInInterceptForSuper
+@@ -59,11 +59,11 @@ BASE_DECLARE_FEATURE(kSupervisedUserProfileSigninIPH);
  
  // Displays a Family Link kite badge on the supervised user avatar in various
  // surfaces.
@@ -24,7 +24,7 @@ Index: components/supervised_user/core/common/features.h
  // This hides the following guest mode entry points for supervised users:
  //
  // * In the Profile menu for supervised profiles
-@@ -78,7 +78,7 @@ BASE_DECLARE_FEATURE(kHideGuestModeForSupervisedUsers)
+@@ -75,7 +75,7 @@ BASE_DECLARE_FEATURE(kHideGuestModeForSupervisedUsers)
  // unauthenticated (e.g. signed out of the content area) account.
  BASE_DECLARE_FEATURE(kForceSafeSearchForUnauthenticatedSupervisedUsers);
  
