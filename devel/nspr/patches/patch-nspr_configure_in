@@ -1,7 +1,7 @@
 Index: nspr/configure.in
 --- nspr/configure.in.orig
 +++ nspr/configure.in
-@@ -1988,10 +1988,12 @@ tools are selected during the Xcode/Developer Tools in
+@@ -1889,10 +1889,12 @@ tools are selected during the Xcode/Developer Tools in
      AC_DEFINE(OPENBSD)
      AC_DEFINE(HAVE_BSD_FLOCK)
      AC_DEFINE(HAVE_SOCKLEN_T)

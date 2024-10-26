@@ -1,13 +1,13 @@
 Index: nspr/pr/src/misc/prnetdb.c
 --- nspr/pr/src/misc/prnetdb.c.orig
 +++ nspr/pr/src/misc/prnetdb.c
-@@ -2161,7 +2161,9 @@ PR_IMPLEMENT(PRAddrInfo *) PR_GetAddrInfoByName(const 
-          */
-         hints.ai_socktype = SOCK_STREAM;
+@@ -2011,7 +2011,9 @@ PR_GetAddrInfoByName(const char* hostname, PRUint16 af
+      */
+     hints.ai_socktype = SOCK_STREAM;
  
-+	LOCK_DNS();
-         rv = GETADDRINFO(hostname, NULL, &hints, &res);
-+	UNLOCK_DNS();
- #ifdef AI_ADDRCONFIG
-         if (rv == EAI_BADFLAGS && (hints.ai_flags & AI_ADDRCONFIG)) {
-             hints.ai_flags &= ~AI_ADDRCONFIG;
++    LOCK_DNS();
+     rv = GETADDRINFO(hostname, NULL, &hints, &res);
++    UNLOCK_DNS();
+ #  ifdef AI_ADDRCONFIG
+     if (rv == EAI_BADFLAGS && (hints.ai_flags & AI_ADDRCONFIG)) {
+       hints.ai_flags &= ~AI_ADDRCONFIG;

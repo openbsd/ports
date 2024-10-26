@@ -12,24 +12,32 @@ Index: nspr/pr/src/linking/prlink.c
 +#endif
 +
  #ifdef XP_UNIX
- #ifdef USE_DLFCN
- #include <dlfcn.h>
-@@ -531,6 +535,10 @@ pr_LoadLibraryByPathname(const char *name, PRIntn flag
- #else
-         int dl_flags = 0;
- #endif
-+#if defined(OPENBSD)
+ #  ifdef USE_DLFCN
+ #    include <dlfcn.h>
+@@ -384,6 +388,7 @@ PR_LoadLibrary(const char* name) {
+ ** map first.
+ */
+ static PRLibrary* pr_LoadLibraryByPathname(const char* name, PRIntn flags) {
++  PR_LOG(_pr_linker_lm, PR_LOG_ALWAYS, ("[PID=%d] pr_LoadLibraryByPathname(%s,%d)", getpid(), name, flags));
+   PRLibrary* lm;
+   PRLibrary* result = NULL;
+   PRInt32 oserr;
+@@ -478,6 +483,10 @@ static PRLibrary* pr_LoadLibraryByPathname(const char*
+ #      else
+     int dl_flags = 0;
+ #      endif
++#      if defined(OPENBSD)
 +    char sname[PATH_MAX];
 +    char *c;
-+#endif
-         void *h = NULL;
- #if defined(DARWIN)
-         PRBool okToLoad = PR_FALSE;
-@@ -582,7 +590,18 @@ pr_LoadLibraryByPathname(const char *name, PRIntn flag
-         }
- #else
-         h = dlopen(name, dl_flags);
-+#if defined(OPENBSD)
++#      endif
+     void* h = NULL;
+ #      if defined(DARWIN)
+     PRBool okToLoad = PR_FALSE;
+@@ -529,6 +538,18 @@ static PRLibrary* pr_LoadLibraryByPathname(const char*
+     }
+ #      else
+     h = dlopen(name, dl_flags);
++#        if defined(OPENBSD)
 +    /* On OpenBSD, we don't know what can be major.minor in libfoo.so.major.minor */
 +    /* but ld.so is smart enough to open the correct lib when asked for libfoo.so */
 +    /* so if the previous dlopen() failed, let's strip what's after .so and retry */
@@ -39,20 +47,20 @@ Index: nspr/pr/src/linking/prlink.c
 +            c[3] = '\0';
 +        h = dlopen(sname, dl_flags);
 +    }
- #endif
-+#endif
- #elif defined(USE_HPSHL)
-         int shl_flags = 0;
-         shl_t h;
-@@ -611,7 +630,11 @@ pr_LoadLibraryByPathname(const char *name, PRIntn flag
-             PR_DELETE(lm);
-             goto unlock;
-         }
-+#if defined(OPENBSD)
-+        lm->name = strdup(sname);
-+#else
-         lm->name = strdup(name);
-+#endif
-         lm->dlh = h;
-         lm->next = pr_loadmap;
-         pr_loadmap = lm;
++    PR_LOG(_pr_linker_lm, PR_LOG_ALWAYS, ("[PID=%d] pr_LoadLibraryByPathname dlopen(%s) returned %p", getpid(), name, h));
++#        endif
+ #      endif
+ #    elif defined(USE_HPSHL)
+     int shl_flags = 0;
+@@ -558,7 +579,11 @@ static PRLibrary* pr_LoadLibraryByPathname(const char*
+       PR_DELETE(lm);
+       goto unlock;
+     }
++#    if defined(OPENBSD)
++    lm->name = strdup(sname);
++#    else
+     lm->name = strdup(name);
++#    endif
+     lm->dlh = h;
+     lm->next = pr_loadmap;
+     pr_loadmap = lm;

@@ -1,33 +1,33 @@
 Index: nspr/pr/src/misc/prinit.c
 --- nspr/pr/src/misc/prinit.c.orig
 +++ nspr/pr/src/misc/prinit.c
-@@ -380,8 +380,6 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup()
-         _PR_CleanupDtoa();
-         _PR_CleanupCallOnce();
-         _PR_ShutdownLinker();
--        _PR_CleanupNet();
--        _PR_CleanupIO();
-         /* Release the primordial thread's private data, etc. */
-         _PR_CleanupThread(me);
+@@ -350,8 +350,6 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup() {
+     _PR_CleanupDtoa();
+     _PR_CleanupCallOnce();
+     _PR_ShutdownLinker();
+-    _PR_CleanupNet();
+-    _PR_CleanupIO();
+     /* Release the primordial thread's private data, etc. */
+     _PR_CleanupThread(me);
  
-@@ -392,6 +390,12 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup()
-         _PR_LogCleanup();
+@@ -362,6 +360,12 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup() {
+     _PR_LogCleanup();
  
-         /*
-+         * accesses the current thread
-+         */
-+        _PR_CleanupNet();
-+        _PR_CleanupIO();
+     /*
++     * accesses the current thread
++     */
++    _PR_CleanupNet();
++    _PR_CleanupIO();
 +
-+        /*
-          * This part should look like the end of _PR_NativeRunThread
-          * and _PR_UserRunThread.
-          */
-@@ -403,6 +407,7 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup()
-             PR_DELETE(me->stack);
-             PR_DELETE(me);
-         }
-+        _PR_MD_SET_CURRENT_THREAD(NULL);
++    /*
+      * This part should look like the end of _PR_NativeRunThread
+      * and _PR_UserRunThread.
+      */
+@@ -373,6 +377,7 @@ PR_IMPLEMENT(PRStatus) PR_Cleanup() {
+       PR_DELETE(me->stack);
+       PR_DELETE(me);
+     }
++    _PR_MD_SET_CURRENT_THREAD(NULL);
  
-         /*
-          * XXX: We are freeing the heap memory here so that Purify won't
+     /*
+      * XXX: We are freeing the heap memory here so that Purify won't

@@ -1,13 +1,13 @@
 Index: nspr/pr/tests/nameshm1.c
 --- nspr/pr/tests/nameshm1.c.orig
 +++ nspr/pr/tests/nameshm1.c
-@@ -574,7 +574,9 @@ int main(int argc, char **argv)
-         if ( failed_already != 0 ) {
-             goto Finished;
-         }
-+#if !defined(__OpenBSD__)
-         ClientServerTest();
-+#endif
+@@ -520,7 +520,9 @@ int main(int argc, char** argv) {
+     if (failed_already != 0) {
+       goto Finished;
      }
++#if !defined(__OpenBSD__)
+     ClientServerTest();
++#endif
+   }
  
  Finished:

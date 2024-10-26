@@ -1,6 +1,6 @@
 COMMENT =		Netscape Portable Runtime
 
-VER=			4.35
+VER=			4.36
 DISTNAME=		nspr-${VER}
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
@@ -23,7 +23,7 @@ PERMIT_PACKAGE=	Yes
 SITES =			https://ftp.mozilla.org/pub/nspr/releases/v${VER}/src/
 
 USE_GMAKE=		Yes
-AUTOCONF_VERSION=	2.69
+AUTOCONF_VERSION=	2.71
 CONFIGURE_STYLE=	autoconf no-autoheader
 
 MAKE_ENV=		SO_VERSION="${SO_VERSION}"
