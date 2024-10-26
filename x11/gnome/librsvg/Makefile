@@ -15,6 +15,8 @@ SITES.old=		${SITE_GNOME:=sources/${GNOME_PROJECT}/${OLD_VERSION:C/^([0-9]+\.[0-
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
+EPOCH=			0
+
 .include <bsd.port.arch.mk>
 
 ### stable

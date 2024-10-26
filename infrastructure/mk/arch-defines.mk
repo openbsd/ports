@@ -1,4 +1,4 @@
-# $OpenBSD: arch-defines.mk,v 1.108 2024/07/30 15:08:14 sthen Exp $
+# $OpenBSD: arch-defines.mk,v 1.109 2024/10/26 14:00:10 semarie Exp $
 #
 # ex:ts=4 sw=4 filetype=make:
 #
@@ -26,7 +26,7 @@ GCC3_ARCHS = m88k
 MONO_ARCHS = aarch64 amd64 i386
 GO_ARCHS = aarch64 amd64 arm i386 riscv64
 LUAJIT_ARCHS = aarch64 arm amd64 i386 powerpc
-RUST_ARCHS = aarch64 amd64 i386 powerpc64 riscv64 sparc64
+RUST_ARCHS = aarch64 amd64 riscv64 sparc64
 # arch-specific features that ocaml ports need to know about
 OCAML_NATIVE_ARCHS = aarch64 amd64 i386
 OCAML_NATIVE_DYNLINK_ARCHS = aarch64 amd64 i386
