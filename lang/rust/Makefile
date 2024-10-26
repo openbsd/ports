@@ -1,13 +1,8 @@
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
-BROKEN-i386 =		fail to build due to ENOMEM
 BROKEN-powerpc64 =	needs new bootstrap
 
-.if "${MACHINE_ARCH}" == "i386"
-DPB_PROPERTIES =	lonesome
-.else
 DPB_PROPERTIES =	parallel
-.endif
 
 COMMENT-main =		compiler for Rust Language
 COMMENT-gdb =		Rust debugger through gdb and lldb
@@ -22,7 +17,6 @@ DISTNAME =		rustc-${V}-src
 # rustc bootstrap version
 BV-aarch64 =		1.82.0
 BV-amd64 =		1.82.0
-BV-i386 =		1.81.0
 BV-powerpc64 =		1.65.0-20221213
 BV-riscv64 =		1.81.0
 BV-sparc64 =		1.81.0
@@ -76,7 +70,6 @@ SUPDISTFILES.bsp +=	${BOOTSTRAP-$m}
 # per MACHINE_ARCH configuration
 TRIPLE_ARCH-aarch64 =	aarch64-unknown-openbsd
 TRIPLE_ARCH-amd64 =	x86_64-unknown-openbsd
-TRIPLE_ARCH-i386 =	i686-unknown-openbsd
 TRIPLE_ARCH-powerpc64 =	powerpc64-unknown-openbsd
 TRIPLE_ARCH-riscv64 =	riscv64gc-unknown-openbsd
 TRIPLE_ARCH-sparc64 =	sparc64-unknown-openbsd
@@ -87,7 +80,6 @@ USE_EMB_LLVM ?=		No
 # flags to use when building LLVM
 LLVMCXXFLAGS-aarch64 =	-fno-ret-protector
 LLVMCXXFLAGS-amd64 =	-fno-ret-protector -mno-retpoline
-LLVMCXXFLAGS-i386 =	-fno-ret-protector -mno-retpoline
 LLVMCXXFLAGS-mips64 =	-fno-ret-protector -fomit-frame-pointer
 LLVMCXXFLAGS-mips64el =	-fno-ret-protector -fomit-frame-pointer
 LLVMCXXFLAGS-powerpc =	-fno-ret-protector

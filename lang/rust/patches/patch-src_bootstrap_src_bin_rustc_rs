@@ -1,11 +1,10 @@
-try to reduce memory usage on aarch64 and i386:
+try to reduce memory usage on aarch64:
  - reduce memory use by retaining fewer names within compilation artifacts
- - divise (with codegen-units) the unit in smaller parts to manipulate it 
 
 Index: src/bootstrap/src/bin/rustc.rs
 --- src/bootstrap/src/bin/rustc.rs.orig
 +++ src/bootstrap/src/bin/rustc.rs
-@@ -166,6 +166,19 @@ fn main() {
+@@ -166,6 +166,13 @@ fn main() {
          {
              cmd.arg("-Ztls-model=initial-exec");
          }
@@ -14,12 +13,6 @@ Index: src/bootstrap/src/bin/rustc.rs
 +            && crate_name == Some("rustc")
 +        {
 +            cmd.arg("-Z").arg("fewer-names");
-+        }
-+        if target.unwrap().contains("i686-unknown-openbsd")
-+            && crate_name == Some("rustc_middle")
-+        {
-+            cmd.arg("-Z").arg("fewer-names");
-+            cmd.arg("-C").arg("codegen-units=64");
 +        }
 +
      } else {
