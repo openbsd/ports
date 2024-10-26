@@ -1,8 +1,8 @@
 COMMENT=	image processing and analysis library
 
-DISTNAME=	leptonica-1.84.1
+DISTNAME=	leptonica-1.85.0
 
-SHARED_LIBS +=  leptonica            0.1      # 6.0
+SHARED_LIBS +=  leptonica            0.2      # 6.0
 
 CATEGORIES=	graphics
 
