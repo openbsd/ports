@@ -36,7 +36,7 @@ CATEGORIES +=		x11/mate
 .  if ${NO_BUILD:L} == "no"
 # XXX not ideal: some autoconf and cmake based projects moved to gettext-tools;
 # since intltool depends on gettext-tools, that's not that big of a deal
-.    if ${CONFIGURE_STYLE:Mmeson}
+.    if ${CONFIGURE_STYLE:Mmeson} || ${CONFIGURE_STYLE:Mcmake}
 MODGNOME_BUILD_DEPENDS +=	devel/gettext,-tools
 .    else
 MODULES +=		textproc/intltool
