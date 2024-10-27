@@ -1,5 +1,5 @@
 COMMENT =	SDL multi protocol navigator
-VERSION =	1.17.6
+VERSION =	1.18.3
 
 DISTNAME =	lagrange-${VERSION}
 
@@ -12,7 +12,7 @@ HOMEPAGE =	https://gmi.skyjake.fi/lagrange/
 # BSD 2-Clause
 PERMIT_PACKAGE =Yes
 
-WANTLIB +=	ICE SDL2 SM X11 Xext c crypto fribidi harfbuzz m
+WANTLIB +=	ICE SDL2 SM X11 Xext c crypto curses fribidi harfbuzz m
 WANTLIB +=	mpg123 pcre2-8 pthread ssl unistring webp z
 
 DEBUG_PACKAGES =${BUILD_PACKAGES}
@@ -37,7 +37,9 @@ LIB_DEPENDS =	audio/mpg123 \
 		devel/sdl2 \
 		graphics/libwebp
 
-CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Git=TRUE
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Git=TRUE \
+			-DENABLE_GUI=TRUE \
+			-DENABLE_TUI=TRUE
 
 # Don't enable SSE4.1, it fails at runtime on old amd64 machines and i386
 CONFIGURE_ARGS +=	-DTFDN_ENABLE_SSE41=No

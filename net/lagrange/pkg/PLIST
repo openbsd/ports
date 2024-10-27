@@ -1,7 +1,10 @@
+@bin bin/clagrange
 @bin bin/lagrange
 @man man/man1/lagrange.1
 share/applications/fi.skyjake.Lagrange.desktop
+share/applications/fi.skyjake.clagrange.desktop
 share/icons/hicolor/256x256/apps/fi.skyjake.Lagrange.png
+share/icons/hicolor/256x256/apps/fi.skyjake.clagrange.png
 share/lagrange/
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
