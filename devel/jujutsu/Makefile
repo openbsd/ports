@@ -5,6 +5,7 @@ PKGNAME =		jujutsu-$V
 GH_ACCOUNT =		martinvonz
 GH_PROJECT =		jj
 GH_TAGNAME =		v$V
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -28,6 +29,10 @@ LIB_DEPENDS =		archivers/zstd \
 MAKE_ENV =		LIBGIT2_NO_VENDOR=1
 
 MODCARGO_INSTALL_TARGET_PATHS = cli
+
+# scm-record >= 0.4.0 (which depends on ratatui >= 0.27.0) is needed due to
+# https://github.com/martinvonz/jj/pull/4639
+MODCARGO_CRATES_UPDATE = scm-record ratatui
 
 .include "crates.inc"
 

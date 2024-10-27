@@ -240,7 +240,7 @@ SHA256 (cargo/quote-1.0.37.tar.gz) = tbnTS4mR0Z2YCBtG6s3Y61jG8rIBE598X2Q8wVWmM68
 SHA256 (cargo/rand-0.8.5.tar.gz) = NK+NGg4lkkvFt8Q8B5yUIznY8Ki1fDkEm+9YG0YydAQ=
 SHA256 (cargo/rand_chacha-0.3.1.tar.gz) = 5sEKY6D6MiUr5J0h53CdTUuvjSMcLbzh6qgUG5sSfYg=
 SHA256 (cargo/rand_core-0.6.4.tar.gz) = 7AvkeV4vaigGm+wLX/PirJuvyZ5qmn3DVHmWxcgWkiw=
-SHA256 (cargo/ratatui-0.26.3.tar.gz) = 9EyeaP1G7aFcZG+7heEEC2V6WM3IyY2x2XpVkw2ZHu8=
+SHA256 (cargo/ratatui-0.27.0.tar.gz) = 0WVGxbWWKr+M5uKIHnIrTgrjtvGgiiauNXPFWFPKaNM=
 SHA256 (cargo/rayon-1.10.0.tar.gz) = tBimAVRRDKGgAqdSypcUmE4h5CQegE0yVVJR+vi3j/o=
 SHA256 (cargo/rayon-core-1.12.1.tar.gz) = FGWHOj39qornyxS0ODZXyqsLPooKqa6OBLBEhUyN/OI=
 SHA256 (cargo/redox_syscall-0.5.3.tar.gz) = KpCKbgDx/dDf2cDrCM6FEm9ti72lABfnS8Skt9SpJqQ=
@@ -261,7 +261,7 @@ SHA256 (cargo/rustversion-1.0.17.tar.gz) = lV0or0J43oEht+vreWtqRXNdwBQ22JiAEBSs7
 SHA256 (cargo/ryu-1.0.18.tar.gz) = 88tboNxDJCzhfemcGA6W25CyNbip/clUPJbSIJEWvZ8=
 SHA256 (cargo/same-file-1.0.6.tar.gz) = k/wdw6qpv+2V4C5urau0uvfjB4sL0bTXtrC2g3iQBQI=
 SHA256 (cargo/scanlex-0.1.4.tar.gz) = CIxdcVchJJKep1SajOmOGm/TPQo4NnsJAns4LmfAM9s=
-SHA256 (cargo/scm-record-0.3.0.tar.gz) = Shv0MQFsejQDj0QGlsZy8P7hoV1q6jH+EA32l0o1v18=
+SHA256 (cargo/scm-record-0.4.0.tar.gz) = DTRP0qfdFYBFjDRPl3xkznsbGtHU+VmrbSyiy6tE3mk=
 SHA256 (cargo/scopeguard-1.2.0.tar.gz) = lBQ/N3JRCfksJi7Sz15ZvOdJjAG8wVAte5r+Q5pOn0k=
 SHA256 (cargo/serde-1.0.210.tar.gz) = yONZJHIHLm4i4KVNWQTZ/r+FCPZfuFUkmaGrx9EHjDo=
 SHA256 (cargo/serde_bser-0.4.0.tar.gz) = pWtLzBXkLlta4WxvdVgr74DTbG/+LAOxtTF3VLOPhxc=
@@ -620,7 +620,7 @@ SIZE (cargo/quote-1.0.37.tar.gz) = 28558
 SIZE (cargo/rand-0.8.5.tar.gz) = 87113
 SIZE (cargo/rand_chacha-0.3.1.tar.gz) = 15251
 SIZE (cargo/rand_core-0.6.4.tar.gz) = 22666
-SIZE (cargo/ratatui-0.26.3.tar.gz) = 465596
+SIZE (cargo/ratatui-0.27.0.tar.gz) = 486576
 SIZE (cargo/rayon-1.10.0.tar.gz) = 180155
 SIZE (cargo/rayon-core-1.12.1.tar.gz) = 70701
 SIZE (cargo/redox_syscall-0.5.3.tar.gz) = 23830
@@ -641,7 +641,7 @@ SIZE (cargo/rustversion-1.0.17.tar.gz) = 17621
 SIZE (cargo/ryu-1.0.18.tar.gz) = 47713
 SIZE (cargo/same-file-1.0.6.tar.gz) = 10183
 SIZE (cargo/scanlex-0.1.4.tar.gz) = 10496
-SIZE (cargo/scm-record-0.3.0.tar.gz) = 66845
+SIZE (cargo/scm-record-0.4.0.tar.gz) = 58563
 SIZE (cargo/scopeguard-1.2.0.tar.gz) = 11619
 SIZE (cargo/serde-1.0.210.tar.gz) = 78338
 SIZE (cargo/serde_bser-0.4.0.tar.gz) = 18744
