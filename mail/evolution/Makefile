@@ -34,6 +34,7 @@ WANTLIB += ssl3 webkit2gtk-4.1 xml2 ytnef
 
 MODULES=		devel/cmake \
 			devel/dconf \
+			textproc/intltool \
 			x11/gnome
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas

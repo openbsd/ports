@@ -36,6 +36,7 @@ COMPILER=		base-clang ports-gcc base-gcc
 MODULES=		devel/cmake \
 			devel/dconf \
 			lang/python \
+			textproc/intltool \
 			x11/gnome
 
 BUILD_DEPENDS=		devel/gperf

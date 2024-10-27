@@ -26,6 +26,7 @@ WANTLIB += lib/evolution/evolution-shell
 WANTLIB += lib/evolution/evolution-util
 
 MODULES=		devel/cmake \
+			textproc/intltool \
 			x11/gnome
 
 LIB_DEPENDS=		archivers/libmspack \
