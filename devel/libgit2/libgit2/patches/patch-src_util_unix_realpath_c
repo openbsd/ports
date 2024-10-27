@@ -1,4 +1,7 @@
-https://github.com/libgit2/libgit2/pull/6932
+From d1f1e17404d4928004b4eb9a84e74da3404e45da Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@openbsd.org>
+Date: Sun, 27 Oct 2024 09:47:31 +0100
+Subject: [PATCH] realpath: unbreak build on OpenBSD
 
 Index: src/util/unix/realpath.c
 --- src/util/unix/realpath.c.orig
