@@ -1,6 +1,6 @@
 COMMENT=	graphical tool to change Tux Paint settings
 
-DISTNAME=	tuxpaint-config-0.0.24
+DISTNAME=	tuxpaint-config-0.0.25
 
 CATEGORIES=	games graphics
 
@@ -12,9 +12,9 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xau Xcursor Xdmcp Xext Xfixes
-WANTLIB += Xft Xinerama c fltk fontconfig freetype glib-2.0 gobject-2.0
-WANTLIB += harfbuzz iconv intl m pango-1.0 pangoft2-1.0 paper
-WANTLIB += unibreak
+WANTLIB += Xft Xinerama Xrender c fltk fontconfig freetype glib-2.0
+WANTLIB += gobject-2.0 harfbuzz iconv intl m pango-1.0 pangoft2-1.0
+WANTLIB += paper unibreak
 
 SITES=		${SITE_SOURCEFORGE:=tuxpaint/}
 
