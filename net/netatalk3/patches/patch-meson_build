@@ -4,7 +4,7 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -893,6 +893,7 @@ else
+@@ -901,6 +901,7 @@ else
      endif
  endif
  
@@ -12,7 +12,7 @@ Index: meson.build
  have_spotlight = (
      sparql.found()
      and indexer_found
-@@ -900,6 +901,8 @@ have_spotlight = (
+@@ -908,6 +909,8 @@ have_spotlight = (
      and flex.found()
      and bison.found()
  )
@@ -21,7 +21,7 @@ Index: meson.build
  if have_spotlight
      cdata.set('WITH_SPOTLIGHT', 1)
  endif
-@@ -1601,6 +1604,7 @@ uams_options = ''
+@@ -1610,6 +1613,7 @@ uams_options = ''
  
  if not enable_pam
      have_pam = false
