@@ -6,6 +6,7 @@ include/tuxpaint/tp_magic_api.h
 lib/tuxpaint/
 lib/tuxpaint/plugins/
 @so lib/tuxpaint/plugins/alien.so
+@so lib/tuxpaint/plugins/ascii.so
 @so lib/tuxpaint/plugins/blind.so
 @so lib/tuxpaint/plugins/blocks_etc.so
 @so lib/tuxpaint/plugins/bloom.so
@@ -16,7 +17,9 @@ lib/tuxpaint/plugins/
 @so lib/tuxpaint/plugins/checkerboard.so
 @so lib/tuxpaint/plugins/clone.so
 @so lib/tuxpaint/plugins/colorsep.so
+@so lib/tuxpaint/plugins/comicdot.so
 @so lib/tuxpaint/plugins/confetti.so
+@so lib/tuxpaint/plugins/crescent.so
 @so lib/tuxpaint/plugins/distortion.so
 @so lib/tuxpaint/plugins/dither.so
 @so lib/tuxpaint/plugins/emboss.so
@@ -25,6 +28,7 @@ lib/tuxpaint/plugins/
 @so lib/tuxpaint/plugins/flower.so
 @so lib/tuxpaint/plugins/foam.so
 @so lib/tuxpaint/plugins/fold.so
+@so lib/tuxpaint/plugins/fractal.so
 @so lib/tuxpaint/plugins/fretwork.so
 @so lib/tuxpaint/plugins/glasstile.so
 @so lib/tuxpaint/plugins/googlyeyes.so
@@ -54,14 +58,18 @@ lib/tuxpaint/plugins/
 @so lib/tuxpaint/plugins/ribbon.so
 @so lib/tuxpaint/plugins/ripples.so
 @so lib/tuxpaint/plugins/rosette.so
+@so lib/tuxpaint/plugins/rotate.so
 @so lib/tuxpaint/plugins/sharpen.so
 @so lib/tuxpaint/plugins/shift.so
 @so lib/tuxpaint/plugins/smooth.so
 @so lib/tuxpaint/plugins/smudge.so
 @so lib/tuxpaint/plugins/snow.so
+@so lib/tuxpaint/plugins/spiral.so
+@so lib/tuxpaint/plugins/spraypaint.so
 @so lib/tuxpaint/plugins/stretch.so
 @so lib/tuxpaint/plugins/string.so
 @so lib/tuxpaint/plugins/swirls.so
+@so lib/tuxpaint/plugins/tessell.so
 @so lib/tuxpaint/plugins/tint.so
 @so lib/tuxpaint/plugins/toothpaste.so
 @so lib/tuxpaint/plugins/tornado.so
@@ -134,6 +142,9 @@ share/doc/tuxpaint/en/magic-docs/2pt_perspective_select.txt
 share/doc/tuxpaint/en/magic-docs/3dglasses.txt
 share/doc/tuxpaint/en/magic-docs/3pt_perspective.txt
 share/doc/tuxpaint/en/magic-docs/3pt_perspective_select.txt
+share/doc/tuxpaint/en/magic-docs/ascii_color_computer.txt
+share/doc/tuxpaint/en/magic-docs/ascii_computer.txt
+share/doc/tuxpaint/en/magic-docs/ascii_typewriter.txt
 share/doc/tuxpaint/en/magic-docs/blinds.txt
 share/doc/tuxpaint/en/magic-docs/blocks.txt
 share/doc/tuxpaint/en/magic-docs/bloom.txt
@@ -148,7 +159,11 @@ share/doc/tuxpaint/en/magic-docs/clone.txt
 share/doc/tuxpaint/en/magic-docs/color_and_white.txt
 share/doc/tuxpaint/en/magic-docs/color_shift.txt
 share/doc/tuxpaint/en/magic-docs/colorsep.txt
+share/doc/tuxpaint/en/magic-docs/comic_dots.txt
+share/doc/tuxpaint/en/magic-docs/concentric-circle.txt
+share/doc/tuxpaint/en/magic-docs/concentric-square.txt
 share/doc/tuxpaint/en/magic-docs/confetti.txt
+share/doc/tuxpaint/en/magic-docs/crescent.txt
 share/doc/tuxpaint/en/magic-docs/darken.txt
 share/doc/tuxpaint/en/magic-docs/desaturate.txt
 share/doc/tuxpaint/en/magic-docs/dimetric_draw.txt
@@ -171,6 +186,7 @@ share/doc/tuxpaint/en/magic-docs/flip.txt
 share/doc/tuxpaint/en/magic-docs/flower.txt
 share/doc/tuxpaint/en/magic-docs/foam.txt
 share/doc/tuxpaint/en/magic-docs/fold.txt
+share/doc/tuxpaint/en/magic-docs/fractal.txt
 share/doc/tuxpaint/en/magic-docs/fretwork.txt
 share/doc/tuxpaint/en/magic-docs/fur.txt
 share/doc/tuxpaint/en/magic-docs/glass_tile.txt
@@ -186,6 +202,9 @@ share/doc/tuxpaint/en/magic-docs/html/2pt_perspective_select.html
 share/doc/tuxpaint/en/magic-docs/html/3dglasses.html
 share/doc/tuxpaint/en/magic-docs/html/3pt_perspective.html
 share/doc/tuxpaint/en/magic-docs/html/3pt_perspective_select.html
+share/doc/tuxpaint/en/magic-docs/html/ascii_color_computer.html
+share/doc/tuxpaint/en/magic-docs/html/ascii_computer.html
+share/doc/tuxpaint/en/magic-docs/html/ascii_typewriter.html
 share/doc/tuxpaint/en/magic-docs/html/blinds.html
 share/doc/tuxpaint/en/magic-docs/html/blocks.html
 share/doc/tuxpaint/en/magic-docs/html/bloom.html
@@ -200,7 +219,11 @@ share/doc/tuxpaint/en/magic-docs/html/clone.html
 share/doc/tuxpaint/en/magic-docs/html/color_and_white.html
 share/doc/tuxpaint/en/magic-docs/html/color_shift.html
 share/doc/tuxpaint/en/magic-docs/html/colorsep.html
+share/doc/tuxpaint/en/magic-docs/html/comic_dots.html
+share/doc/tuxpaint/en/magic-docs/html/concentric-circle.html
+share/doc/tuxpaint/en/magic-docs/html/concentric-square.html
 share/doc/tuxpaint/en/magic-docs/html/confetti.html
+share/doc/tuxpaint/en/magic-docs/html/crescent.html
 share/doc/tuxpaint/en/magic-docs/html/darken.html
 share/doc/tuxpaint/en/magic-docs/html/desaturate.html
 share/doc/tuxpaint/en/magic-docs/html/dimetric_draw.html
@@ -223,6 +246,7 @@ share/doc/tuxpaint/en/magic-docs/html/flip.html
 share/doc/tuxpaint/en/magic-docs/html/flower.html
 share/doc/tuxpaint/en/magic-docs/html/foam.html
 share/doc/tuxpaint/en/magic-docs/html/fold.html
+share/doc/tuxpaint/en/magic-docs/html/fractal.html
 share/doc/tuxpaint/en/magic-docs/html/fretwork.html
 share/doc/tuxpaint/en/magic-docs/html/fur.html
 share/doc/tuxpaint/en/magic-docs/html/glass_tile.html
@@ -270,6 +294,7 @@ share/doc/tuxpaint/en/magic-docs/html/remove_color.html
 share/doc/tuxpaint/en/magic-docs/html/ribbon.html
 share/doc/tuxpaint/en/magic-docs/html/ripples.html
 share/doc/tuxpaint/en/magic-docs/html/rosette.html
+share/doc/tuxpaint/en/magic-docs/html/rotate.html
 share/doc/tuxpaint/en/magic-docs/html/roygbiv_rainbow.html
 share/doc/tuxpaint/en/magic-docs/html/rush.html
 share/doc/tuxpaint/en/magic-docs/html/saturate.html
@@ -281,6 +306,9 @@ share/doc/tuxpaint/en/magic-docs/html/smooth_rainbow.html
 share/doc/tuxpaint/en/magic-docs/html/smudge.html
 share/doc/tuxpaint/en/magic-docs/html/snow_ball.html
 share/doc/tuxpaint/en/magic-docs/html/snow_flake.html
+share/doc/tuxpaint/en/magic-docs/html/spiral-square.html
+share/doc/tuxpaint/en/magic-docs/html/spiral.html
+share/doc/tuxpaint/en/magic-docs/html/spraypaint.html
 share/doc/tuxpaint/en/magic-docs/html/square_mosaic.html
 share/doc/tuxpaint/en/magic-docs/html/squiggles.html
 share/doc/tuxpaint/en/magic-docs/html/stretch.html
@@ -289,6 +317,8 @@ share/doc/tuxpaint/en/magic-docs/html/string_edges.html
 share/doc/tuxpaint/en/magic-docs/html/string_v.html
 share/doc/tuxpaint/en/magic-docs/html/symmetry_left_right.html
 share/doc/tuxpaint/en/magic-docs/html/symmetry_up_down.html
+share/doc/tuxpaint/en/magic-docs/html/tessellation-flat.html
+share/doc/tuxpaint/en/magic-docs/html/tessellation-pointy.html
 share/doc/tuxpaint/en/magic-docs/html/tiles.html
 share/doc/tuxpaint/en/magic-docs/html/tilezoom.html
 share/doc/tuxpaint/en/magic-docs/html/tint.html
@@ -343,6 +373,7 @@ share/doc/tuxpaint/en/magic-docs/remove_color.txt
 share/doc/tuxpaint/en/magic-docs/ribbon.txt
 share/doc/tuxpaint/en/magic-docs/ripples.txt
 share/doc/tuxpaint/en/magic-docs/rosette.txt
+share/doc/tuxpaint/en/magic-docs/rotate.txt
 share/doc/tuxpaint/en/magic-docs/roygbiv_rainbow.txt
 share/doc/tuxpaint/en/magic-docs/rush.txt
 share/doc/tuxpaint/en/magic-docs/saturate.txt
@@ -354,6 +385,9 @@ share/doc/tuxpaint/en/magic-docs/smooth_rainbow.txt
 share/doc/tuxpaint/en/magic-docs/smudge.txt
 share/doc/tuxpaint/en/magic-docs/snow_ball.txt
 share/doc/tuxpaint/en/magic-docs/snow_flake.txt
+share/doc/tuxpaint/en/magic-docs/spiral-square.txt
+share/doc/tuxpaint/en/magic-docs/spiral.txt
+share/doc/tuxpaint/en/magic-docs/spraypaint.txt
 share/doc/tuxpaint/en/magic-docs/square_mosaic.txt
 share/doc/tuxpaint/en/magic-docs/squiggles.txt
 share/doc/tuxpaint/en/magic-docs/stretch.txt
@@ -362,6 +396,8 @@ share/doc/tuxpaint/en/magic-docs/string_edges.txt
 share/doc/tuxpaint/en/magic-docs/string_v.txt
 share/doc/tuxpaint/en/magic-docs/symmetry_left_right.txt
 share/doc/tuxpaint/en/magic-docs/symmetry_up_down.txt
+share/doc/tuxpaint/en/magic-docs/tessellation-flat.txt
+share/doc/tuxpaint/en/magic-docs/tessellation-pointy.txt
 share/doc/tuxpaint/en/magic-docs/tiles.txt
 share/doc/tuxpaint/en/magic-docs/tilezoom.txt
 share/doc/tuxpaint/en/magic-docs/tint.txt
@@ -412,6 +448,9 @@ share/doc/tuxpaint/es_ES.UTF-8/magic-docs/2pt_perspective_select.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/3dglasses.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/3pt_perspective.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/3pt_perspective_select.txt
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/ascii_color_computer.txt
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/ascii_computer.txt
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/ascii_typewriter.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/blinds.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/blocks.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/bloom.txt
@@ -426,7 +465,11 @@ share/doc/tuxpaint/es_ES.UTF-8/magic-docs/clone.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/color_and_white.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/color_shift.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/colorsep.txt
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/comic_dots.txt
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/concentric-circle.txt
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/concentric-square.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/confetti.txt
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/crescent.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/darken.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/desaturate.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/dimetric_draw.txt
@@ -448,6 +491,7 @@ share/doc/tuxpaint/es_ES.UTF-8/magic-docs/flip.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/flower.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/foam.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/fold.txt
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/fractal.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/fretwork.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/fur.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/glass_tile.txt
@@ -463,6 +507,9 @@ share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/2pt_perspective_select.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/3dglasses.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/3pt_perspective.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/3pt_perspective_select.html
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/ascii_color_computer.html
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/ascii_computer.html
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/ascii_typewriter.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/blinds.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/blocks.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/bloom.html
@@ -477,7 +524,11 @@ share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/clone.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/color_and_white.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/color_shift.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/colorsep.html
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/comic_dots.html
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/concentric-circle.html
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/concentric-square.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/confetti.html
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/crescent.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/darken.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/desaturate.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/dimetric_draw.html
@@ -499,6 +550,7 @@ share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/flip.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/flower.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/foam.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/fold.html
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/fractal.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/fretwork.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/fur.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/glass_tile.html
@@ -546,6 +598,7 @@ share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/remove_color.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/ribbon.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/ripples.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/rosette.html
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/rotate.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/roygbiv_rainbow.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/rush.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/saturate.html
@@ -557,6 +610,9 @@ share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/smooth_rainbow.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/smudge.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/snow_ball.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/snow_flake.html
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/spiral-square.html
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/spiral.html
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/spraypaint.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/square_mosaic.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/squiggles.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/stretch.html
@@ -565,6 +621,8 @@ share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/string_edges.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/string_v.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/symmetry_left_right.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/symmetry_up_down.html
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/tessellation-flat.html
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/tessellation-pointy.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/tiles.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/tilezoom.html
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/html/tint.html
@@ -619,6 +677,7 @@ share/doc/tuxpaint/es_ES.UTF-8/magic-docs/remove_color.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/ribbon.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/ripples.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/rosette.txt
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/rotate.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/roygbiv_rainbow.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/rush.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/saturate.txt
@@ -630,6 +689,9 @@ share/doc/tuxpaint/es_ES.UTF-8/magic-docs/smooth_rainbow.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/smudge.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/snow_ball.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/snow_flake.txt
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/spiral-square.txt
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/spiral.txt
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/spraypaint.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/square_mosaic.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/squiggles.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/stretch.txt
@@ -638,6 +700,8 @@ share/doc/tuxpaint/es_ES.UTF-8/magic-docs/string_edges.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/string_v.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/symmetry_left_right.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/symmetry_up_down.txt
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/tessellation-flat.txt
+share/doc/tuxpaint/es_ES.UTF-8/magic-docs/tessellation-pointy.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/tiles.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/tilezoom.txt
 share/doc/tuxpaint/es_ES.UTF-8/magic-docs/tint.txt
@@ -705,6 +769,9 @@ share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/2pt_perspective_select.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/3dglasses.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/3pt_perspective.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/3pt_perspective_select.txt
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/ascii_color_computer.txt
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/ascii_computer.txt
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/ascii_typewriter.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/blinds.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/blocks.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/bloom.txt
@@ -719,7 +786,11 @@ share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/clone.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/color_and_white.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/color_shift.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/colorsep.txt
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/comic_dots.txt
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/concentric-circle.txt
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/concentric-square.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/confetti.txt
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/crescent.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/darken.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/desaturate.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/dimetric_draw.txt
@@ -741,6 +812,7 @@ share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/flip.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/flower.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/foam.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/fold.txt
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/fractal.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/fretwork.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/fur.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/glass_tile.txt
@@ -756,6 +828,9 @@ share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/2pt_perspective_select.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/3dglasses.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/3pt_perspective.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/3pt_perspective_select.html
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/ascii_color_computer.html
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/ascii_computer.html
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/ascii_typewriter.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/blinds.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/blocks.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/bloom.html
@@ -770,7 +845,11 @@ share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/clone.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/color_and_white.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/color_shift.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/colorsep.html
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/comic_dots.html
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/concentric-circle.html
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/concentric-square.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/confetti.html
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/crescent.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/darken.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/desaturate.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/dimetric_draw.html
@@ -792,6 +871,7 @@ share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/flip.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/flower.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/foam.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/fold.html
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/fractal.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/fretwork.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/fur.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/glass_tile.html
@@ -839,6 +919,7 @@ share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/remove_color.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/ribbon.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/ripples.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/rosette.html
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/rotate.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/roygbiv_rainbow.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/rush.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/saturate.html
@@ -850,6 +931,9 @@ share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/smooth_rainbow.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/smudge.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/snow_ball.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/snow_flake.html
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/spiral-square.html
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/spiral.html
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/spraypaint.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/square_mosaic.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/squiggles.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/stretch.html
@@ -858,6 +942,8 @@ share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/string_edges.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/string_v.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/symmetry_left_right.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/symmetry_up_down.html
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/tessellation-flat.html
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/tessellation-pointy.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/tiles.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/tilezoom.html
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/html/tint.html
@@ -912,6 +998,7 @@ share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/remove_color.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/ribbon.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/ripples.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/rosette.txt
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/rotate.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/roygbiv_rainbow.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/rush.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/saturate.txt
@@ -923,6 +1010,9 @@ share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/smooth_rainbow.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/smudge.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/snow_ball.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/snow_flake.txt
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/spiral-square.txt
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/spiral.txt
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/spraypaint.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/square_mosaic.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/squiggles.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/stretch.txt
@@ -931,6 +1021,8 @@ share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/string_edges.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/string_v.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/symmetry_left_right.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/symmetry_up_down.txt
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/tessellation-flat.txt
+share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/tessellation-pointy.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/tiles.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/tilezoom.txt
 share/doc/tuxpaint/fr_FR.UTF-8/magic-docs/tint.txt
@@ -1019,6 +1111,9 @@ share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/2pt_perspective_select.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/3dglasses.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/3pt_perspective.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/3pt_perspective_select.txt
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/ascii_color_computer.txt
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/ascii_computer.txt
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/ascii_typewriter.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/blinds.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/blocks.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/bloom.txt
@@ -1033,7 +1128,11 @@ share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/clone.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/color_and_white.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/color_shift.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/colorsep.txt
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/comic_dots.txt
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/concentric-circle.txt
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/concentric-square.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/confetti.txt
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/crescent.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/darken.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/desaturate.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/dimetric_draw.txt
@@ -1055,6 +1154,7 @@ share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/flip.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/flower.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/foam.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/fold.txt
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/fractal.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/fretwork.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/fur.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/glass_tile.txt
@@ -1070,6 +1170,9 @@ share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/2pt_perspective_select.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/3dglasses.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/3pt_perspective.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/3pt_perspective_select.html
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/ascii_color_computer.html
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/ascii_computer.html
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/ascii_typewriter.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/blinds.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/blocks.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/bloom.html
@@ -1084,7 +1187,11 @@ share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/clone.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/color_and_white.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/color_shift.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/colorsep.html
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/comic_dots.html
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/concentric-circle.html
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/concentric-square.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/confetti.html
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/crescent.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/darken.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/desaturate.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/dimetric_draw.html
@@ -1106,6 +1213,7 @@ share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/flip.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/flower.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/foam.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/fold.html
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/fractal.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/fretwork.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/fur.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/glass_tile.html
@@ -1153,6 +1261,7 @@ share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/remove_color.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/ribbon.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/ripples.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/rosette.html
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/rotate.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/roygbiv_rainbow.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/rush.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/saturate.html
@@ -1164,6 +1273,9 @@ share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/smooth_rainbow.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/smudge.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/snow_ball.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/snow_flake.html
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/spiral-square.html
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/spiral.html
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/spraypaint.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/square_mosaic.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/squiggles.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/stretch.html
@@ -1172,6 +1284,8 @@ share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/string_edges.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/string_v.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/symmetry_left_right.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/symmetry_up_down.html
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/tessellation-flat.html
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/tessellation-pointy.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/tiles.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/tilezoom.html
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/html/tint.html
@@ -1226,6 +1340,7 @@ share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/remove_color.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/ribbon.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/ripples.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/rosette.txt
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/rotate.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/roygbiv_rainbow.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/rush.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/saturate.txt
@@ -1237,6 +1352,9 @@ share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/smooth_rainbow.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/smudge.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/snow_ball.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/snow_flake.txt
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/spiral-square.txt
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/spiral.txt
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/spraypaint.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/square_mosaic.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/squiggles.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/stretch.txt
@@ -1245,6 +1363,8 @@ share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/string_edges.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/string_v.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/symmetry_left_right.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/symmetry_up_down.txt
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/tessellation-flat.txt
+share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/tessellation-pointy.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/tiles.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/tilezoom.txt
 share/doc/tuxpaint/gl_ES.UTF-8/magic-docs/tint.txt
@@ -1290,6 +1410,9 @@ share/doc/tuxpaint/html/images/magic_examples/1pt_perspective.png
 share/doc/tuxpaint/html/images/magic_examples/2pt_perspective.png
 share/doc/tuxpaint/html/images/magic_examples/3dglasses.png
 share/doc/tuxpaint/html/images/magic_examples/3pt_perspective.png
+share/doc/tuxpaint/html/images/magic_examples/ascii_color_computer.png
+share/doc/tuxpaint/html/images/magic_examples/ascii_computer.png
+share/doc/tuxpaint/html/images/magic_examples/ascii_typewriter.png
 share/doc/tuxpaint/html/images/magic_examples/blinds.png
 share/doc/tuxpaint/html/images/magic_examples/blocks.png
 share/doc/tuxpaint/html/images/magic_examples/bloom.png
@@ -1304,7 +1427,11 @@ share/doc/tuxpaint/html/images/magic_examples/clone.png
 share/doc/tuxpaint/html/images/magic_examples/color_and_white.png
 share/doc/tuxpaint/html/images/magic_examples/color_shift.png
 share/doc/tuxpaint/html/images/magic_examples/colorsep.png
+share/doc/tuxpaint/html/images/magic_examples/comic_dots.png
+share/doc/tuxpaint/html/images/magic_examples/concentric-circle.png
+share/doc/tuxpaint/html/images/magic_examples/concentric-square.png
 share/doc/tuxpaint/html/images/magic_examples/confetti.png
+share/doc/tuxpaint/html/images/magic_examples/crescent.png
 share/doc/tuxpaint/html/images/magic_examples/darken.png
 share/doc/tuxpaint/html/images/magic_examples/desaturate.png
 share/doc/tuxpaint/html/images/magic_examples/dimetric_draw.png
@@ -1325,6 +1452,7 @@ share/doc/tuxpaint/html/images/magic_examples/flip.png
 share/doc/tuxpaint/html/images/magic_examples/flower.png
 share/doc/tuxpaint/html/images/magic_examples/foam.png
 share/doc/tuxpaint/html/images/magic_examples/fold.png
+share/doc/tuxpaint/html/images/magic_examples/fractal.png
 share/doc/tuxpaint/html/images/magic_examples/fretwork.png
 share/doc/tuxpaint/html/images/magic_examples/fur.png
 share/doc/tuxpaint/html/images/magic_examples/glass_tile.png
@@ -1370,6 +1498,7 @@ share/doc/tuxpaint/html/images/magic_examples/remove_color.png
 share/doc/tuxpaint/html/images/magic_examples/ribbon.png
 share/doc/tuxpaint/html/images/magic_examples/ripples.png
 share/doc/tuxpaint/html/images/magic_examples/rosette.png
+share/doc/tuxpaint/html/images/magic_examples/rotate.png
 share/doc/tuxpaint/html/images/magic_examples/roygbiv_rainbow.png
 share/doc/tuxpaint/html/images/magic_examples/rush.png
 share/doc/tuxpaint/html/images/magic_examples/saturate.png
@@ -1381,6 +1510,9 @@ share/doc/tuxpaint/html/images/magic_examples/smooth_rainbow.png
 share/doc/tuxpaint/html/images/magic_examples/smudge.png
 share/doc/tuxpaint/html/images/magic_examples/snow_ball.png
 share/doc/tuxpaint/html/images/magic_examples/snow_flake.png
+share/doc/tuxpaint/html/images/magic_examples/spiral-square.png
+share/doc/tuxpaint/html/images/magic_examples/spiral.png
+share/doc/tuxpaint/html/images/magic_examples/spraypaint.png
 share/doc/tuxpaint/html/images/magic_examples/square_mosaic.png
 share/doc/tuxpaint/html/images/magic_examples/squiggles.png
 share/doc/tuxpaint/html/images/magic_examples/stretch.png
@@ -1389,6 +1521,8 @@ share/doc/tuxpaint/html/images/magic_examples/string_edges.png
 share/doc/tuxpaint/html/images/magic_examples/string_v.png
 share/doc/tuxpaint/html/images/magic_examples/symmetry_left_right.png
 share/doc/tuxpaint/html/images/magic_examples/symmetry_up_down.png
+share/doc/tuxpaint/html/images/magic_examples/tessellation-flat.png
+share/doc/tuxpaint/html/images/magic_examples/tessellation-pointy.png
 share/doc/tuxpaint/html/images/magic_examples/tiles.png
 share/doc/tuxpaint/html/images/magic_examples/tilezoom.png
 share/doc/tuxpaint/html/images/magic_examples/tint.png
@@ -1475,6 +1609,9 @@ share/doc/tuxpaint/is_IS.UTF-8/magic-docs/2pt_perspective_select.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/3dglasses.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/3pt_perspective.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/3pt_perspective_select.txt
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/ascii_color_computer.txt
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/ascii_computer.txt
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/ascii_typewriter.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/blinds.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/blocks.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/bloom.txt
@@ -1489,7 +1626,11 @@ share/doc/tuxpaint/is_IS.UTF-8/magic-docs/clone.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/color_and_white.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/color_shift.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/colorsep.txt
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/comic_dots.txt
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/concentric-circle.txt
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/concentric-square.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/confetti.txt
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/crescent.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/darken.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/desaturate.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/dimetric_draw.txt
@@ -1511,6 +1652,7 @@ share/doc/tuxpaint/is_IS.UTF-8/magic-docs/flip.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/flower.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/foam.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/fold.txt
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/fractal.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/fretwork.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/fur.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/glass_tile.txt
@@ -1526,6 +1668,9 @@ share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/2pt_perspective_select.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/3dglasses.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/3pt_perspective.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/3pt_perspective_select.html
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/ascii_color_computer.html
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/ascii_computer.html
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/ascii_typewriter.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/blinds.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/blocks.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/bloom.html
@@ -1540,7 +1685,11 @@ share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/clone.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/color_and_white.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/color_shift.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/colorsep.html
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/comic_dots.html
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/concentric-circle.html
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/concentric-square.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/confetti.html
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/crescent.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/darken.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/desaturate.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/dimetric_draw.html
@@ -1562,6 +1711,7 @@ share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/flip.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/flower.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/foam.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/fold.html
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/fractal.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/fretwork.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/fur.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/glass_tile.html
@@ -1609,6 +1759,7 @@ share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/remove_color.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/ribbon.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/ripples.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/rosette.html
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/rotate.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/roygbiv_rainbow.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/rush.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/saturate.html
@@ -1620,6 +1771,9 @@ share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/smooth_rainbow.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/smudge.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/snow_ball.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/snow_flake.html
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/spiral-square.html
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/spiral.html
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/spraypaint.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/square_mosaic.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/squiggles.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/stretch.html
@@ -1628,6 +1782,8 @@ share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/string_edges.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/string_v.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/symmetry_left_right.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/symmetry_up_down.html
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/tessellation-flat.html
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/tessellation-pointy.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/tiles.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/tilezoom.html
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/html/tint.html
@@ -1682,6 +1838,7 @@ share/doc/tuxpaint/is_IS.UTF-8/magic-docs/remove_color.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/ribbon.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/ripples.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/rosette.txt
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/rotate.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/roygbiv_rainbow.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/rush.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/saturate.txt
@@ -1693,6 +1850,9 @@ share/doc/tuxpaint/is_IS.UTF-8/magic-docs/smooth_rainbow.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/smudge.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/snow_ball.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/snow_flake.txt
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/spiral-square.txt
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/spiral.txt
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/spraypaint.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/square_mosaic.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/squiggles.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/stretch.txt
@@ -1701,6 +1861,8 @@ share/doc/tuxpaint/is_IS.UTF-8/magic-docs/string_edges.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/string_v.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/symmetry_left_right.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/symmetry_up_down.txt
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/tessellation-flat.txt
+share/doc/tuxpaint/is_IS.UTF-8/magic-docs/tessellation-pointy.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/tiles.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/tilezoom.txt
 share/doc/tuxpaint/is_IS.UTF-8/magic-docs/tint.txt
@@ -1751,6 +1913,9 @@ share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/2pt_perspective_select.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/3dglasses.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/3pt_perspective.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/3pt_perspective_select.txt
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/ascii_color_computer.txt
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/ascii_computer.txt
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/ascii_typewriter.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/blinds.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/blocks.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/bloom.txt
@@ -1765,7 +1930,11 @@ share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/clone.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/color_and_white.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/color_shift.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/colorsep.txt
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/comic_dots.txt
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/concentric-circle.txt
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/concentric-square.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/confetti.txt
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/crescent.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/darken.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/desaturate.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/dimetric_draw.txt
@@ -1787,6 +1956,7 @@ share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/flip.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/flower.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/foam.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/fold.txt
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/fractal.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/fretwork.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/fur.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/glass_tile.txt
@@ -1802,6 +1972,9 @@ share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/2pt_perspective_select.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/3dglasses.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/3pt_perspective.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/3pt_perspective_select.html
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/ascii_color_computer.html
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/ascii_computer.html
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/ascii_typewriter.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/blinds.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/blocks.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/bloom.html
@@ -1816,7 +1989,11 @@ share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/clone.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/color_and_white.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/color_shift.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/colorsep.html
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/comic_dots.html
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/concentric-circle.html
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/concentric-square.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/confetti.html
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/crescent.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/darken.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/desaturate.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/dimetric_draw.html
@@ -1838,6 +2015,7 @@ share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/flip.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/flower.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/foam.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/fold.html
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/fractal.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/fretwork.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/fur.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/glass_tile.html
@@ -1885,6 +2063,7 @@ share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/remove_color.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/ribbon.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/ripples.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/rosette.html
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/rotate.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/roygbiv_rainbow.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/rush.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/saturate.html
@@ -1896,6 +2075,9 @@ share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/smooth_rainbow.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/smudge.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/snow_ball.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/snow_flake.html
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/spiral-square.html
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/spiral.html
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/spraypaint.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/square_mosaic.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/squiggles.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/stretch.html
@@ -1904,6 +2086,8 @@ share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/string_edges.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/string_v.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/symmetry_left_right.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/symmetry_up_down.html
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/tessellation-flat.html
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/tessellation-pointy.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/tiles.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/tilezoom.html
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/html/tint.html
@@ -1958,6 +2142,7 @@ share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/remove_color.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/ribbon.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/ripples.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/rosette.txt
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/rotate.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/roygbiv_rainbow.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/rush.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/saturate.txt
@@ -1969,6 +2154,9 @@ share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/smooth_rainbow.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/smudge.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/snow_ball.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/snow_flake.txt
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/spiral-square.txt
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/spiral.txt
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/spraypaint.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/square_mosaic.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/squiggles.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/stretch.txt
@@ -1977,6 +2165,8 @@ share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/string_edges.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/string_v.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/symmetry_left_right.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/symmetry_up_down.txt
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/tessellation-flat.txt
+share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/tessellation-pointy.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/tiles.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/tilezoom.txt
 share/doc/tuxpaint/ja_JP.UTF-8/magic-docs/tint.txt
@@ -2031,6 +2221,9 @@ share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/2pt_perspective_select.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/3dglasses.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/3pt_perspective.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/3pt_perspective_select.txt
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/ascii_color_computer.txt
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/ascii_computer.txt
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/ascii_typewriter.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/blinds.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/blocks.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/bloom.txt
@@ -2045,7 +2238,11 @@ share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/clone.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/color_and_white.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/color_shift.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/colorsep.txt
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/comic_dots.txt
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/concentric-circle.txt
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/concentric-square.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/confetti.txt
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/crescent.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/darken.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/desaturate.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/dimetric_draw.txt
@@ -2067,6 +2264,7 @@ share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/flip.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/flower.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/foam.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/fold.txt
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/fractal.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/fretwork.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/fur.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/glass_tile.txt
@@ -2082,6 +2280,9 @@ share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/2pt_perspective_select.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/3dglasses.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/3pt_perspective.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/3pt_perspective_select.html
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/ascii_color_computer.html
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/ascii_computer.html
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/ascii_typewriter.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/blinds.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/blocks.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/bloom.html
@@ -2096,7 +2297,11 @@ share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/clone.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/color_and_white.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/color_shift.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/colorsep.html
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/comic_dots.html
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/concentric-circle.html
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/concentric-square.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/confetti.html
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/crescent.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/darken.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/desaturate.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/dimetric_draw.html
@@ -2118,6 +2323,7 @@ share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/flip.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/flower.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/foam.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/fold.html
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/fractal.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/fretwork.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/fur.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/glass_tile.html
@@ -2165,6 +2371,7 @@ share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/remove_color.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/ribbon.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/ripples.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/rosette.html
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/rotate.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/roygbiv_rainbow.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/rush.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/saturate.html
@@ -2176,6 +2383,9 @@ share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/smooth_rainbow.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/smudge.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/snow_ball.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/snow_flake.html
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/spiral-square.html
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/spiral.html
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/spraypaint.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/square_mosaic.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/squiggles.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/stretch.html
@@ -2184,6 +2394,8 @@ share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/string_edges.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/string_v.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/symmetry_left_right.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/symmetry_up_down.html
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/tessellation-flat.html
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/tessellation-pointy.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/tiles.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/tilezoom.html
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/html/tint.html
@@ -2238,6 +2450,7 @@ share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/remove_color.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/ribbon.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/ripples.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/rosette.txt
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/rotate.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/roygbiv_rainbow.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/rush.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/saturate.txt
@@ -2249,6 +2462,9 @@ share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/smooth_rainbow.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/smudge.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/snow_ball.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/snow_flake.txt
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/spiral-square.txt
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/spiral.txt
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/spraypaint.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/square_mosaic.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/squiggles.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/stretch.txt
@@ -2257,6 +2473,8 @@ share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/string_edges.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/string_v.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/symmetry_left_right.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/symmetry_up_down.txt
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/tessellation-flat.txt
+share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/tessellation-pointy.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/tiles.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/tilezoom.txt
 share/doc/tuxpaint/sq_AL.UTF-8/magic-docs/tint.txt
@@ -2548,6 +2766,9 @@ share/tuxpaint/brushes/flower_7.png
 share/tuxpaint/brushes/fluff.dat
 share/tuxpaint/brushes/fluff.png
 share/tuxpaint/brushes/fluff.txt
+share/tuxpaint/brushes/fluff_gradient.dat
+share/tuxpaint/brushes/fluff_gradient.png
+share/tuxpaint/brushes/fluff_gradient.txt
 share/tuxpaint/brushes/footprints-human-shoes.dat
 share/tuxpaint/brushes/footprints-human-shoes.png
 share/tuxpaint/brushes/footprints-human-shoes.txt
@@ -2557,9 +2778,14 @@ share/tuxpaint/brushes/footprints-human.txt
 share/tuxpaint/brushes/footprints-paws.dat
 share/tuxpaint/brushes/footprints-paws.png
 share/tuxpaint/brushes/footprints-paws.txt
+share/tuxpaint/brushes/graphite.dat
+share/tuxpaint/brushes/graphite.png
 share/tuxpaint/brushes/heart.dat
 share/tuxpaint/brushes/heart.png
 share/tuxpaint/brushes/hexagon.png
+share/tuxpaint/brushes/impasto.dat
+share/tuxpaint/brushes/impasto.png
+share/tuxpaint/brushes/impasto.txt
 share/tuxpaint/brushes/inksplat.dat
 share/tuxpaint/brushes/inksplat.png
 share/tuxpaint/brushes/inksplat.txt
@@ -2568,6 +2794,8 @@ share/tuxpaint/brushes/lines-angled.png
 share/tuxpaint/brushes/lines-angled.txt
 share/tuxpaint/brushes/lozenge.png
 share/tuxpaint/brushes/oval.png
+share/tuxpaint/brushes/paint_splats.dat
+share/tuxpaint/brushes/paint_splats.png
 share/tuxpaint/brushes/pencil.dat
 share/tuxpaint/brushes/pencil.png
 share/tuxpaint/brushes/pencil.txt
@@ -2580,11 +2808,15 @@ share/tuxpaint/brushes/slash_16_lt.png
 share/tuxpaint/brushes/slash_16_rt.png
 share/tuxpaint/brushes/slash_20_lt.png
 share/tuxpaint/brushes/slash_20_rt.png
+share/tuxpaint/brushes/smoke.dat
+share/tuxpaint/brushes/smoke.png
 share/tuxpaint/brushes/sparkles.dat
 share/tuxpaint/brushes/sparkles.png
 share/tuxpaint/brushes/sparkles.txt
 share/tuxpaint/brushes/sphere.dat
 share/tuxpaint/brushes/sphere.png
+share/tuxpaint/brushes/spines.dat
+share/tuxpaint/brushes/spines.png
 share/tuxpaint/brushes/spiral.dat
 share/tuxpaint/brushes/spiral.png
 share/tuxpaint/brushes/spiral.txt
@@ -2608,6 +2840,11 @@ share/tuxpaint/brushes/triangle_up.png
 share/tuxpaint/brushes/vine.dat
 share/tuxpaint/brushes/vine.png
 share/tuxpaint/brushes/vine.txt
+share/tuxpaint/brushes/water_still.dat
+share/tuxpaint/brushes/water_still.png
+share/tuxpaint/brushes/watercolor-texture.dat
+share/tuxpaint/brushes/watercolor-texture.png
+share/tuxpaint/brushes/watercolor-texture.txt
 share/tuxpaint/brushes/x.png
 share/tuxpaint/fonts/
 share/tuxpaint/fonts/FreeMono.ttf
@@ -2687,6 +2924,7 @@ share/tuxpaint/im/zh_tw.im
 share/tuxpaint/images/
 share/tuxpaint/images/fills/
 share/tuxpaint/images/fills/brush.png
+share/tuxpaint/images/fills/eraser.png
 share/tuxpaint/images/fills/gradient_linear.png
 share/tuxpaint/images/fills/gradient_radial.png
 share/tuxpaint/images/fills/gradient_shaped.png
@@ -2714,6 +2952,11 @@ share/tuxpaint/images/magic/3pt_persp_select.png
 share/tuxpaint/images/magic/Snow_flake4.png
 share/tuxpaint/images/magic/Snow_flake5.png
 share/tuxpaint/images/magic/alien.png
+share/tuxpaint/images/magic/ascii-computer.png
+share/tuxpaint/images/magic/ascii-typewriter.png
+share/tuxpaint/images/magic/ascii_color_computer.png
+share/tuxpaint/images/magic/ascii_computer.png
+share/tuxpaint/images/magic/ascii_typewriter.png
 share/tuxpaint/images/magic/blind.png
 share/tuxpaint/images/magic/blocks.png
 share/tuxpaint/images/magic/bloom.png
@@ -2726,7 +2969,13 @@ share/tuxpaint/images/magic/checkerboard.png
 share/tuxpaint/images/magic/clone.png
 share/tuxpaint/images/magic/colornwhite.png
 share/tuxpaint/images/magic/colorsep.png
+share/tuxpaint/images/magic/comic_dots_0.png
+share/tuxpaint/images/magic/comic_dots_1.png
+share/tuxpaint/images/magic/comicdot-pattern.png
+share/tuxpaint/images/magic/concentric-circle.png
+share/tuxpaint/images/magic/concentric-square.png
 share/tuxpaint/images/magic/confetti.png
+share/tuxpaint/images/magic/crescent.png
 share/tuxpaint/images/magic/darken.png
 share/tuxpaint/images/magic/desaturate.png
 share/tuxpaint/images/magic/dimetric_draw.png
@@ -2751,6 +3000,7 @@ share/tuxpaint/images/magic/flower_petals.png
 share/tuxpaint/images/magic/foam.png
 share/tuxpaint/images/magic/foam_data.png
 share/tuxpaint/images/magic/fold.png
+share/tuxpaint/images/magic/fractals.png
 share/tuxpaint/images/magic/fretwork.png
 share/tuxpaint/images/magic/fretwork_corner.png
 share/tuxpaint/images/magic/fretwork_four.png
@@ -2820,6 +3070,7 @@ share/tuxpaint/images/magic/rivulet-brush-alpha.png
 share/tuxpaint/images/magic/rivulet-brush-sub.png
 share/tuxpaint/images/magic/rivulet.png
 share/tuxpaint/images/magic/rosette.png
+share/tuxpaint/images/magic/rotate.png
 share/tuxpaint/images/magic/rush.png
 share/tuxpaint/images/magic/saturate.png
 share/tuxpaint/images/magic/sharpen.png
@@ -2830,6 +3081,9 @@ share/tuxpaint/images/magic/smooth.png
 share/tuxpaint/images/magic/smudge.png
 share/tuxpaint/images/magic/snowball.png
 share/tuxpaint/images/magic/snowflake.png
+share/tuxpaint/images/magic/spiral-circle.png
+share/tuxpaint/images/magic/spiral-square.png
+share/tuxpaint/images/magic/spraypaint.png
 share/tuxpaint/images/magic/squiggles.png
 share/tuxpaint/images/magic/stretch.png
 share/tuxpaint/images/magic/string_art_angles.png
@@ -2840,6 +3094,8 @@ share/tuxpaint/images/magic/swirls_fur.png
 share/tuxpaint/images/magic/swirls_rays.png
 share/tuxpaint/images/magic/symmetric_leftright.png
 share/tuxpaint/images/magic/symmetric_updown.png
+share/tuxpaint/images/magic/tessellation-flat.png
+share/tuxpaint/images/magic/tessellation-pointy.png
 share/tuxpaint/images/magic/thick.png
 share/tuxpaint/images/magic/thin.png
 share/tuxpaint/images/magic/tilezoom.png
@@ -3025,6 +3281,8 @@ share/tuxpaint/sounds/line_start.wav
 share/tuxpaint/sounds/magic/
 share/tuxpaint/sounds/magic/3dglasses.ogg
 share/tuxpaint/sounds/magic/alien.ogg
+share/tuxpaint/sounds/magic/ascii-computer.ogg
+share/tuxpaint/sounds/magic/ascii-typewriter.ogg
 share/tuxpaint/sounds/magic/blind.ogg
 share/tuxpaint/sounds/magic/blocks.wav
 share/tuxpaint/sounds/magic/bloom.ogg
@@ -3037,7 +3295,11 @@ share/tuxpaint/sounds/magic/checkerboard.ogg
 share/tuxpaint/sounds/magic/clone.ogg
 share/tuxpaint/sounds/magic/clone_start.ogg
 share/tuxpaint/sounds/magic/colorsep.ogg
+share/tuxpaint/sounds/magic/comic_dots.ogg
+share/tuxpaint/sounds/magic/concentric-circle.ogg
+share/tuxpaint/sounds/magic/concentric-square.ogg
 share/tuxpaint/sounds/magic/confetti.ogg
+share/tuxpaint/sounds/magic/crescent.ogg
 share/tuxpaint/sounds/magic/darken.wav
 share/tuxpaint/sounds/magic/desaturate.ogg
 share/tuxpaint/sounds/magic/distortion.ogg
@@ -3056,6 +3318,7 @@ share/tuxpaint/sounds/magic/flower_release.ogg
 share/tuxpaint/sounds/magic/foam.ogg
 share/tuxpaint/sounds/magic/fold.ogg
 share/tuxpaint/sounds/magic/fold.wav
+share/tuxpaint/sounds/magic/fractals.ogg
 share/tuxpaint/sounds/magic/fretwork.ogg
 share/tuxpaint/sounds/magic/glasstile.ogg
 share/tuxpaint/sounds/magic/googlyeyes.ogg
@@ -3100,6 +3363,8 @@ share/tuxpaint/sounds/magic/reflection.ogg
 share/tuxpaint/sounds/magic/remove_color.ogg
 share/tuxpaint/sounds/magic/ribbon.ogg
 share/tuxpaint/sounds/magic/ripples.ogg
+share/tuxpaint/sounds/magic/rotate-drag.ogg
+share/tuxpaint/sounds/magic/rotate-release.ogg
 share/tuxpaint/sounds/magic/saturate.ogg
 share/tuxpaint/sounds/magic/sharpen.ogg
 share/tuxpaint/sounds/magic/shift.ogg
@@ -3108,6 +3373,10 @@ share/tuxpaint/sounds/magic/smooth.ogg
 share/tuxpaint/sounds/magic/smudge.wav
 share/tuxpaint/sounds/magic/snowball.ogg
 share/tuxpaint/sounds/magic/snowflake.ogg
+share/tuxpaint/sounds/magic/spiral-circle.ogg
+share/tuxpaint/sounds/magic/spiral-square.ogg
+share/tuxpaint/sounds/magic/spraypaint-shake.ogg
+share/tuxpaint/sounds/magic/spraypaint-spray.ogg
 share/tuxpaint/sounds/magic/squiggles.ogg
 share/tuxpaint/sounds/magic/stretch.ogg
 share/tuxpaint/sounds/magic/string.ogg
@@ -3116,6 +3385,7 @@ share/tuxpaint/sounds/magic/string3.ogg
 share/tuxpaint/sounds/magic/swirls_circles.ogg
 share/tuxpaint/sounds/magic/swirls_fur.ogg
 share/tuxpaint/sounds/magic/swirls_rays.ogg
+share/tuxpaint/sounds/magic/tessellation.ogg
 share/tuxpaint/sounds/magic/thick.wav
 share/tuxpaint/sounds/magic/thin.wav
 share/tuxpaint/sounds/magic/tint.wav
@@ -3243,9 +3513,11 @@ share/tuxpaint/templates/
 share/tuxpaint/templates/.thumbs/
 share/tuxpaint/templates/.thumbs/burnt_bark-t.png
 share/tuxpaint/templates/.thumbs/cliff-t.png
+share/tuxpaint/templates/.thumbs/clouds_from_airplane-t.png
 share/tuxpaint/templates/.thumbs/corn_maze-t.png
 share/tuxpaint/templates/.thumbs/jellyfish-t.png
 share/tuxpaint/templates/.thumbs/lighthouse-t.png
+share/tuxpaint/templates/.thumbs/lough_leane-t.png
 share/tuxpaint/templates/.thumbs/mossy_bark-t.png
 share/tuxpaint/templates/.thumbs/mossy_log-t.png
 share/tuxpaint/templates/.thumbs/mudstone-t.png
@@ -3265,12 +3537,16 @@ share/tuxpaint/templates/burnt_bark.dat
 share/tuxpaint/templates/burnt_bark.jpg
 share/tuxpaint/templates/cliff.dat
 share/tuxpaint/templates/cliff.jpg
+share/tuxpaint/templates/clouds_from_airplane.dat
+share/tuxpaint/templates/clouds_from_airplane.jpg
 share/tuxpaint/templates/corn_maze.dat
 share/tuxpaint/templates/corn_maze.jpg
 share/tuxpaint/templates/jellyfish.dat
 share/tuxpaint/templates/jellyfish.jpg
 share/tuxpaint/templates/lighthouse.dat
 share/tuxpaint/templates/lighthouse.jpg
+share/tuxpaint/templates/lough_leane.dat
+share/tuxpaint/templates/lough_leane.jpg
 share/tuxpaint/templates/mossy_bark.dat
 share/tuxpaint/templates/mossy_bark.jpg
 share/tuxpaint/templates/mossy_log.dat

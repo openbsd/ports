@@ -1,6 +1,6 @@
 COMMENT=		drawing program for children
 
-V=			0.9.33
+V=			0.9.34
 DISTNAME=		tuxpaint-${V}
 
 CATEGORIES=		games graphics
