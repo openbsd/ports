@@ -5,12 +5,12 @@ relax flex requirement as QGIS builds and runs fine with our flex.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -336,7 +336,7 @@ if(WITH_CORE)
+@@ -357,7 +357,7 @@ if(WITH_CORE)
      set (USING_NINJA TRUE)
    endif()
  
 -  find_package(FLEX 2.6 REQUIRED)
 +  find_package(FLEX 2.5.39 REQUIRED)
-   find_package(BISON REQUIRED)
+   find_package(BISON 2.4 REQUIRED)
  
    #############################################################
