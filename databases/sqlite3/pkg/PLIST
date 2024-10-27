@@ -226,6 +226,7 @@ lib/pkgconfig/sqlite3.pc
 @man man/man3/sqlite3_wal_hook.3
 @man man/man3/sqlite3_win32_set_directory.3
 @man man/man3/sqlite3changegroup_add.3
+@man man/man3/sqlite3changegroup_add_change.3
 @man man/man3/sqlite3changegroup_delete.3
 @man man/man3/sqlite3changegroup_new.3
 @man man/man3/sqlite3changegroup_output.3
