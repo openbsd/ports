@@ -1,45 +1,33 @@
-COMMENT=		powerful newsreader
+COMMENT=		read and post Usenet articles
 
-DIST_TUPLE=		gnome GNOME pan v0.153 .
-REVISION=		1
+GNOME_PROJECT=		pan
+GNOME_VERSION=		0.161
+EXTRACT_SUFX=		.tar.gz
+
+WRKDIST=		${WRKDIR}/pan-v${GNOME_VERSION}-7e6f2f65a732871c059df2c6d93a565a46bae8e1
 
 CATEGORIES=		news x11
-
-HOMEPAGE=		http://pan.rebelbase.com/
 
 # GPLv2 - GFDLv1.1
 PERMIT_PACKAGE=		Yes
 
+SITES=			https://gitlab.gnome.org/GNOME/pan/-/archive/v${GNOME_VERSION}/
 
 WANTLIB += ${COMPILER_LIBCXX} atk-1.0 c cairo cairo-gobject enchant-2
-WANTLIB += gck-1 gcr-base-3 gcr-ui-3 gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmime-3.0 gmodule-2.0 gnutls gobject-2.0 gthread-2.0
-WANTLIB += gtk-3 gtkspell3-3 harfbuzz iconv intl m notify p11-kit
-WANTLIB += pango-1.0 pangocairo-1.0 secret-1 z
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmime-3.0 gnutls
+WANTLIB += gobject-2.0 gspell-1 gtk-3 harfbuzz iconv intl m pango-1.0
+WANTLIB += pangocairo-1.0 z
 
-MODULES=		x11/gnome
+MODULES=		devel/cmake \
+			x11/gnome
 
 COMPILER=		base-clang ports-gcc base-gcc
 
-MODGNOME_LDFLAGS=	-L${LOCALBASE}/lib -liconv
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
-BUILD_DEPENDS=		devel/gettext,-tools \
-			textproc/itstool
-
-LIB_DEPENDS=		devel/libnotify \
-			mail/gmime30 \
+LIB_DEPENDS=		mail/gmime30 \
 			security/gnutls \
-			textproc/gtkspell3 \
-			x11/gnome/gcr
-
-AUTOCONF_VERSION=	2.71
-AUTOMAKE_VERSION=	1.16
-
-CONFIGURE_STYLE=	autoreconf
-
-CONFIGURE_ARGS=		--enable-libnotify \
-			--enable-gkr \
-			--with-gnutls
+			textproc/gspell \
+			x11/gtk+3
 
 .include <bsd.port.mk>
