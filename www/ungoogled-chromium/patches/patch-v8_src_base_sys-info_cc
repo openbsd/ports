@@ -1,7 +1,7 @@
 Index: v8/src/base/sys-info.cc
 --- v8/src/base/sys-info.cc.orig
 +++ v8/src/base/sys-info.cc
-@@ -38,7 +38,7 @@ namespace base {
+@@ -36,7 +36,7 @@ namespace base {
  // static
  int SysInfo::NumberOfProcessors() {
  #if V8_OS_OPENBSD

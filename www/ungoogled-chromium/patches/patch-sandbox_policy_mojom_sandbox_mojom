@@ -1,7 +1,7 @@
 Index: sandbox/policy/mojom/sandbox.mojom
 --- sandbox/policy/mojom/sandbox.mojom.orig
 +++ sandbox/policy/mojom/sandbox.mojom
-@@ -77,6 +77,12 @@ enum Sandbox {
+@@ -80,6 +80,12 @@ enum Sandbox {
    [EnableIf=is_fuchsia]
    kVideoCapture,
  

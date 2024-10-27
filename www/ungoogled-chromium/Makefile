@@ -11,7 +11,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			129.0.6668.100
+V=			130.0.6723.69
 UGV=			${V}-1
 
 DISTNAME=		ungoogled-chromium-${V}
@@ -19,8 +19,8 @@ DISTNAME=		ungoogled-chromium-${V}
 DISTFILES+=		${CHROMIUM_DISTFILES} \
 			${REGRESS_DISTFILES}
 
-DISTFILES.u=		${UGOOGLE_DISTFILES} \
-			${REGRESS_DISTFILES.u}
+DISTFILES.a+=		${UGOOGLE_DISTFILES} \
+			${REGRESS_DISTFILES.a}
 
 CHROMIUM_DISTFILES+=	chromium-${V}${EXTRACT_SUFX}
 UGOOGLE_DISTFILES+=	ungoogled-chromium-${UGV}.tar.gz
@@ -44,8 +44,8 @@ FLAVOR?=
 # BSD-like
 PERMIT_PACKAGE =	Yes
 
-SITES=	https://commondatastorage.googleapis.com/chromium-browser-official/
-SITES.u=http://nerd.hu/distfiles/
+SITES=		https://commondatastorage.googleapis.com/chromium-browser-official/
+SITES.a=	http://nerd.hu/distfiles/
 
 MODULES=	lang/clang lang/python x11/qt5
 
@@ -177,7 +177,7 @@ GN_ARGS=	is_official_build=true \
 		use_partition_alloc=true \
 		use_partition_alloc_as_malloc=false \
 		enable_backup_ref_ptr_support=false \
-		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
+		extra_cppflags=\"-I${LOCALBASE}/include/libepoll-shim -idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
 		fatal_linker_warnings=false \
 		use_custom_libcxx=true \
 		use_custom_libunwind=true \

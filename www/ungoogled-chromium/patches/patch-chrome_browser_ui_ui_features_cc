@@ -10,7 +10,7 @@ Index: chrome/browser/ui/ui_features.cc
  // Enables the feature to remove the last confirmation dialog when relaunching
  // to update Chrome.
  BASE_FEATURE(kFewerUpdateConfirmations,
-@@ -391,7 +391,7 @@ BASE_FEATURE(kTopChromeWebUIUsesSpareRenderer,
+@@ -395,7 +395,7 @@ BASE_FEATURE(kTopChromeWebUIUsesSpareRenderer,
               "TopChromeWebUIUsesSpareRenderer",
               base::FEATURE_ENABLED_BY_DEFAULT);
  
@@ -19,7 +19,7 @@ Index: chrome/browser/ui/ui_features.cc
  // Enables alternate update-related text to be displayed in browser app menu
  // button, menu item and confirmation dialog.
  BASE_FEATURE(kUpdateTextOptions,
-@@ -469,7 +469,7 @@ BASE_FEATURE(kStopLoadingAnimationForHiddenWindow,
+@@ -467,7 +467,7 @@ BASE_FEATURE(kStopLoadingAnimationForHiddenWindow,
               "StopLoadingAnimationForHiddenWindow",
               base::FEATURE_ENABLED_BY_DEFAULT);
  

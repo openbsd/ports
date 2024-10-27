@@ -1,7 +1,7 @@
 Index: build/config/clang/BUILD.gn
 --- build/config/clang/BUILD.gn.orig
 +++ build/config/clang/BUILD.gn
-@@ -237,7 +237,12 @@ template("clang_lib") {
+@@ -236,7 +236,12 @@ template("clang_lib") {
  
  # Adds a dependency on the Clang runtime library clang_rt.builtins.
  clang_lib("compiler_builtins") {
