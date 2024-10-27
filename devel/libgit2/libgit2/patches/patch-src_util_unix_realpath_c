@@ -1,5 +1,4 @@
-XXX push upstream
-error: use of undeclared identifier 'ret'
+https://github.com/libgit2/libgit2/pull/6932
 
 Index: src/util/unix/realpath.c
 --- src/util/unix/realpath.c.orig
