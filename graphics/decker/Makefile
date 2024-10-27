@@ -1,6 +1,6 @@
 COMMENT =		multimedia platform inspired by HyperCard
 
-DIST_TUPLE =		github JohnEarnest Decker v1.50 .
+DIST_TUPLE =		github JohnEarnest Decker v1.51 .
 PKGNAME =		${DISTNAME:L}
 
 CATEGORIES =		graphics

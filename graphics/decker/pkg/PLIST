@@ -48,6 +48,7 @@ share/examples/decker/brushes.deck
 share/examples/decker/chickenwave.deck
 share/examples/decker/chip8.deck
 share/examples/decker/cohostify.deck
+share/examples/decker/color.deck
 share/examples/decker/cylon.deck
 share/examples/decker/dialog.deck
 share/examples/decker/draggable.deck
