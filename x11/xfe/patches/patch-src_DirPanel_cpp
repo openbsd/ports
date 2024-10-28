@@ -1,0 +1,18 @@
+No tar -a, use archivers/gtar
+
+Index: src/DirPanel.cpp
+--- src/DirPanel.cpp.orig
++++ src/DirPanel.cpp
+@@ -1036,6 +1036,12 @@ long DirPanel::onCmdAddToArch(FXObject* o, FXSelector,
+             cmd = "tar -acvf " + archive + " ";
+         }
+ 
++        // Change tar to gtar
++        if (compare(cmd, "tar ", 4) == 0)
++        {
++            cmd.prepend('g');
++        }
++
+         // Archive command name
+         cmd = cmd + ::quote(name);
+ 

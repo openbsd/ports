@@ -1,5 +1,7 @@
 onCmdDirUsage is linux-only for now
 
+No tar -a, use archivers/gtar
+
 Index: src/FilePanel.cpp
 --- src/FilePanel.cpp.orig
 +++ src/FilePanel.cpp
@@ -19,3 +21,55 @@ Index: src/FilePanel.cpp
      FXMAPFUNC(SEL_COMMAND, FilePanel::ID_MOUNT, FilePanel::onCmdMount),
      FXMAPFUNC(SEL_COMMAND, FilePanel::ID_UMOUNT, FilePanel::onCmdMount),
      FXMAPFUNC(SEL_UPDATE, FilePanel::ID_MOUNT, FilePanel::onUpdMount),
+@@ -4984,6 +4984,12 @@ long FilePanel::onCmdAddToArch(FXObject* o, FXSelector
+             cmd = "tar -acvf " + archive + " ";
+         }
+ 
++        // Change tar to gtar
++        if (compare(cmd, "tar ", 4) == 0)
++        {
++            cmd.prepend('g');
++        }
++
+         for (int u = 0; u < current->list->getNumItems(); u++)
+         {
+             if (current->list->isItemSelected(u))
+@@ -5127,6 +5133,12 @@ long FilePanel::onCmdExtract(FXObject*, FXSelector, vo
+             cmd = "tar -axvf ";
+         }
+ 
++        // Change tar to gtar
++        if (compare(cmd, "tar ", 4) == 0)
++        {
++            cmd.prepend('g');
++        }
++
+         // Final extract command
+         cmd += name + " ";
+ 
+@@ -5279,6 +5291,12 @@ long FilePanel::onCmdExtractToFolder(FXObject*, FXSele
+             cmd = "tar -axvf ";
+         }
+ 
++        // Change tar to gtar
++        if (compare(cmd, "tar ", 4) == 0)
++        {
++            cmd.prepend('g');
++        }
++
+         // Final extract command
+         cmd += pathname + " ";
+ 
+@@ -5385,6 +5403,12 @@ long FilePanel::onCmdExtractHere(FXObject*, FXSelector
+             else
+             {
+                 cmd = "tar -axvf ";
++            }
++
++            // Change tar to gtar
++            if (compare(cmd, "tar ", 4) == 0)
++            {
++                cmd.prepend('g');
+             }
+ 
+             // Final extract command
