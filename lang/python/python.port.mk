@@ -303,6 +303,18 @@ MODPY_COMPILEALL = ${MODPY_BIN} -m compileall
 MODPY_COMPILEALL = ${MODPY_BIN} -m compileall -j ${MAKE_JOBS} -s ${WRKINST} -o 0 -o 1
 .endif
 
+MODPY_TEST_TARGET =
+MODPY_TEST_LINK_SO ?=	No
+.if ${MODPY_TEST_LINK_SO:L} == "yes" && !empty(MODPY_TEST_LIBDIR)
+MODPY_TEST_SO_CMD = for _dir in ${MODPY_TEST_LIBDIR:S,:, ,g}; do \
+	if [ -d $${_dir} ]; then \
+		cd $${_dir} && \
+		find . -name '*.so' -type f \
+			-exec ln -sf $${_dir}/{} ${WRKSRC}/{} \; ;\
+	fi; done
+MODPY_TEST_TARGET +=	${MODPY_TEST_SO_CMD};
+.endif
+
 .if ${MODPY_PYBUILD:L} != no
 .  if ! ${MODPY_PYBUILD:Msetuptools_scm}
 _MODPY_PRE_BUILD_STEPS += ; if [ -e ${WRKSRC}/pyproject.toml ]; then \
@@ -317,7 +329,7 @@ MODPY_BUILD_TARGET = ${_MODPY_PRE_BUILD_STEPS}; \
 MODPY_INSTALL_TARGET = \
 	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_LIBDIR}; \
 	${_MODPY_RUNBIN} -m installer -d ${WRKINST} ${WRKSRC}/dist/*.whl
-MODPY_TEST_TARGET =	${MODPY_TEST_CMD}
+MODPY_TEST_TARGET +=	${MODPY_TEST_CMD}
 .  if ${MODPY_PYTEST:L} == "yes"
 MODPY_TEST_TARGET +=	${MODPY_PYTEST_ARGS}
 .  endif
@@ -328,7 +340,7 @@ MODPY_INSTALL_TARGET = \
 	${MODPY_CMD} ${MODPY_DISTUTILS_BUILD} ${MODPY_DISTUTILS_BUILDARGS} \
 		${MODPY_DISTUTILS_INSTALL} ${MODPY_DISTUTILS_INSTALLARGS}
 
-MODPY_TEST_TARGET =	${MODPY_TEST_CMD}
+MODPY_TEST_TARGET +=	${MODPY_TEST_CMD}
 .  if ${MODPY_PYTEST:L} == "yes"
 MODPY_TEST_TARGET +=	${MODPY_PYTEST_ARGS}
 .  elif ${MODPY_SETUPUTILS:L} == "yes"
