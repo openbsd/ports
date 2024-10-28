@@ -547,6 +547,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/caches/redis_c
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/controller.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/filewrapper.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/heuristics.py
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/py.typed
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/serialize.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/cachecontrol/wrapper.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/certifi/
@@ -561,6 +562,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/certifi/${MODPY_PYCACHE}cor
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/certifi/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/certifi/cacert.pem
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/certifi/core.py
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/certifi/py.typed
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/distlib/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/distlib/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/distlib/${MODPY_PYCACHE}/
@@ -619,6 +621,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/distro/${MODPY_PYCACHE}__ma
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/distro/${MODPY_PYCACHE}distro.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/distro/${MODPY_PYCACHE}distro.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/distro/distro.py
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/distro/py.typed
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/idna/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/idna/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/idna/${MODPY_PYCACHE}/
@@ -644,6 +647,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/idna/core.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/idna/idnadata.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/idna/intranges.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/idna/package_data.py
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/idna/py.typed
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/idna/uts46data.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/msgpack/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/msgpack/__init__.py
@@ -698,6 +702,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/_structures.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/_tokenizer.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/markers.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/metadata.py
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/py.typed
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/requirements.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/specifiers.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/packaging/tags.py
@@ -731,6 +736,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/platformdirs/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/platformdirs/android.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/platformdirs/api.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/platformdirs/macos.py
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/platformdirs/py.typed
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/platformdirs/unix.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/platformdirs/version.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/platformdirs/windows.py
@@ -949,6 +955,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/resolvelib/compat/${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/resolvelib/compat/${MODPY_PYCACHE}collections_abc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/resolvelib/compat/collections_abc.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/resolvelib/providers.py
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/resolvelib/py.typed
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/resolvelib/reporters.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/resolvelib/resolvers.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/resolvelib/structs.py
@@ -1167,6 +1174,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/rich/progress.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/rich/progress_bar.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/rich/prompt.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/rich/protocol.py
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/rich/py.typed
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/rich/region.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/rich/repr.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/rich/rule.py
@@ -1199,6 +1207,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/tomli/${MODPY_PYCACHE}_type
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/tomli/_parser.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/tomli/_re.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/tomli/_types.py
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/tomli/py.typed
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/truststore/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/truststore/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pip/_vendor/truststore/${MODPY_PYCACHE}/
@@ -1219,6 +1228,7 @@ lib/python${MODPY_VERSION}/site-packages/pip/_vendor/truststore/_macos.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/truststore/_openssl.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/truststore/_ssl_constants.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/truststore/_windows.py
+lib/python${MODPY_VERSION}/site-packages/pip/_vendor/truststore/py.typed
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/typing_extensions.py
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/
 lib/python${MODPY_VERSION}/site-packages/pip/_vendor/urllib3/__init__.py
