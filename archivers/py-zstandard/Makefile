@@ -17,11 +17,6 @@ BUILD_DEPENDS =		devel/py-cffi${MODPY_FLAVOR}
 FLAVORS =		python3
 FLAVOR =		python3
 
-MODPY_PYTEST_ARGS =	tests/
-MODPY_TEST_DIR =	${WRKDIR}
-
-pre-test:
-	@rm -rf ${WRKDIR}/tests
-	@cp -r ${WRKSRC}/tests ${WRKDIR}/
+MODPY_TEST_LINK_SO =	Yes
 
 .include <bsd.port.mk>
