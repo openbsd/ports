@@ -1,10 +1,9 @@
 COMMENT=	tools and library routines for working with TIFF images
 
-DISTNAME=	tiff-4.6.0
-SHARED_LIBS=	tiff	42.0	# 13.0
+DISTNAME=	tiff-4.7.0
+SHARED_LIBS=	tiff	42.1	# 13.0
 SHARED_LIBS+=	tiffxx	42.0	# 13.0
 CATEGORIES=	graphics
-REVISION=	0
 
 SITES=		https://download.osgeo.org/libtiff/
 EXTRACT_SUFX=	.tar.xz
@@ -28,6 +27,7 @@ CONFIGURE_ARGS=	-Djbig=OFF \
 		-Dwebp=OFF \
 		-Dtiff-contrib=OFF \
 		-Dtiff-docs=OFF \
+		-Dtiff-opengl=OFF \
 		-Djpeg=${LOCALBASE}
 
 #		-Dtiff-tools-unsupported=ON \ # comms/hylafax needs tiff2ps and tiff2pdf

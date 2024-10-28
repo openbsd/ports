@@ -1,6 +1,19 @@
+@bin bin/fax2ps
+@bin bin/fax2tiff
+@bin bin/pal2rgb
+@bin bin/ppm2tiff
+@bin bin/raw2tiff
+@bin bin/tiff2bw
+@bin bin/tiff2pdf
+@bin bin/tiff2ps
+@bin bin/tiff2rgba
+@bin bin/tiffcmp
 @bin bin/tiffcp
+@bin bin/tiffcrop
+@bin bin/tiffdither
 @bin bin/tiffdump
 @bin bin/tiffinfo
+@bin bin/tiffmedian
 @bin bin/tiffset
 @bin bin/tiffsplit
 include/tiff.h
@@ -16,9 +29,25 @@ lib/cmake/tiff/TiffTargets.cmake
 @lib lib/libtiff.so.${LIBtiff_VERSION}
 @lib lib/libtiffxx.so.${LIBtiffxx_VERSION}
 lib/pkgconfig/libtiff-4.pc
+@man man/man1/fax2ps.1
+@man man/man1/fax2tiff.1
+@man man/man1/pal2rgb.1
+@man man/man1/ppm2tiff.1
+@man man/man1/raw2tiff.1
+@man man/man1/rgb2ycbcr.1
+@man man/man1/thumbnail.1
+@man man/man1/tiff2bw.1
+@man man/man1/tiff2pdf.1
+@man man/man1/tiff2ps.1
+@man man/man1/tiff2rgba.1
+@man man/man1/tiffcmp.1
 @man man/man1/tiffcp.1
+@man man/man1/tiffcrop.1
+@man man/man1/tiffdither.1
 @man man/man1/tiffdump.1
+@comment @man man/man1/tiffgt.1
 @man man/man1/tiffinfo.1
+@man man/man1/tiffmedian.1
 @man man/man1/tiffset.1
 @man man/man1/tiffsplit.1
 @man man/man3/TIFFAccessTagMethods.3
@@ -178,6 +207,7 @@ share/doc/tiff/manual/_sources/project/bugs.rst.txt
 share/doc/tiff/manual/_sources/project/index.rst.txt
 share/doc/tiff/manual/_sources/project/license.rst.txt
 share/doc/tiff/manual/_sources/project/mailinglist.rst.txt
+share/doc/tiff/manual/_sources/project/psc.rst.txt
 share/doc/tiff/manual/_sources/releases/
 share/doc/tiff/manual/_sources/releases/historical.rst.txt
 share/doc/tiff/manual/_sources/releases/index.rst.txt
@@ -239,6 +269,11 @@ share/doc/tiff/manual/_sources/releases/v4.4.0.rst.txt
 share/doc/tiff/manual/_sources/releases/v4.5.0.rst.txt
 share/doc/tiff/manual/_sources/releases/v4.5.1.rst.txt
 share/doc/tiff/manual/_sources/releases/v4.6.0.rst.txt
+share/doc/tiff/manual/_sources/releases/v4.7.0.rst.txt
+share/doc/tiff/manual/_sources/rfcs/
+share/doc/tiff/manual/_sources/rfcs/index.rst.txt
+share/doc/tiff/manual/_sources/rfcs/rfc1_psc.rst.txt
+share/doc/tiff/manual/_sources/rfcs/rfc2_restoring_needed_tools.rst.txt
 share/doc/tiff/manual/_sources/specification/
 share/doc/tiff/manual/_sources/specification/bigtiff.rst.txt
 share/doc/tiff/manual/_sources/specification/coverage-bigtiff.rst.txt
@@ -248,9 +283,25 @@ share/doc/tiff/manual/_sources/specification/technote2.rst.txt
 share/doc/tiff/manual/_sources/terms.rst.txt
 share/doc/tiff/manual/_sources/tools/
 share/doc/tiff/manual/_sources/tools.rst.txt
+share/doc/tiff/manual/_sources/tools/fax2ps.rst.txt
+share/doc/tiff/manual/_sources/tools/fax2tiff.rst.txt
+share/doc/tiff/manual/_sources/tools/pal2rgb.rst.txt
+share/doc/tiff/manual/_sources/tools/ppm2tiff.rst.txt
+share/doc/tiff/manual/_sources/tools/raw2tiff.rst.txt
+share/doc/tiff/manual/_sources/tools/rgb2ycbcr.rst.txt
+share/doc/tiff/manual/_sources/tools/thumbnail.rst.txt
+share/doc/tiff/manual/_sources/tools/tiff2bw.rst.txt
+share/doc/tiff/manual/_sources/tools/tiff2pdf.rst.txt
+share/doc/tiff/manual/_sources/tools/tiff2ps.rst.txt
+share/doc/tiff/manual/_sources/tools/tiff2rgba.rst.txt
+share/doc/tiff/manual/_sources/tools/tiffcmp.rst.txt
 share/doc/tiff/manual/_sources/tools/tiffcp.rst.txt
+share/doc/tiff/manual/_sources/tools/tiffcrop.rst.txt
+share/doc/tiff/manual/_sources/tools/tiffdither.rst.txt
 share/doc/tiff/manual/_sources/tools/tiffdump.rst.txt
+share/doc/tiff/manual/_sources/tools/tiffgt.rst.txt
 share/doc/tiff/manual/_sources/tools/tiffinfo.rst.txt
+share/doc/tiff/manual/_sources/tools/tiffmedian.rst.txt
 share/doc/tiff/manual/_sources/tools/tiffset.rst.txt
 share/doc/tiff/manual/_sources/tools/tiffsplit.rst.txt
 share/doc/tiff/manual/_static/
@@ -344,6 +395,7 @@ share/doc/tiff/manual/project/bugs.html
 share/doc/tiff/manual/project/index.html
 share/doc/tiff/manual/project/license.html
 share/doc/tiff/manual/project/mailinglist.html
+share/doc/tiff/manual/project/psc.html
 share/doc/tiff/manual/releases/
 share/doc/tiff/manual/releases/historical.html
 share/doc/tiff/manual/releases/index.html
@@ -405,6 +457,11 @@ share/doc/tiff/manual/releases/v4.4.0.html
 share/doc/tiff/manual/releases/v4.5.0.html
 share/doc/tiff/manual/releases/v4.5.1.html
 share/doc/tiff/manual/releases/v4.6.0.html
+share/doc/tiff/manual/releases/v4.7.0.html
+share/doc/tiff/manual/rfcs/
+share/doc/tiff/manual/rfcs/index.html
+share/doc/tiff/manual/rfcs/rfc1_psc.html
+share/doc/tiff/manual/rfcs/rfc2_restoring_needed_tools.html
 share/doc/tiff/manual/search.html
 share/doc/tiff/manual/searchindex.js
 share/doc/tiff/manual/specification/
@@ -416,8 +473,24 @@ share/doc/tiff/manual/specification/technote2.html
 share/doc/tiff/manual/terms.html
 share/doc/tiff/manual/tools/
 share/doc/tiff/manual/tools.html
+share/doc/tiff/manual/tools/fax2ps.html
+share/doc/tiff/manual/tools/fax2tiff.html
+share/doc/tiff/manual/tools/pal2rgb.html
+share/doc/tiff/manual/tools/ppm2tiff.html
+share/doc/tiff/manual/tools/raw2tiff.html
+share/doc/tiff/manual/tools/rgb2ycbcr.html
+share/doc/tiff/manual/tools/thumbnail.html
+share/doc/tiff/manual/tools/tiff2bw.html
+share/doc/tiff/manual/tools/tiff2pdf.html
+share/doc/tiff/manual/tools/tiff2ps.html
+share/doc/tiff/manual/tools/tiff2rgba.html
+share/doc/tiff/manual/tools/tiffcmp.html
 share/doc/tiff/manual/tools/tiffcp.html
+share/doc/tiff/manual/tools/tiffcrop.html
+share/doc/tiff/manual/tools/tiffdither.html
 share/doc/tiff/manual/tools/tiffdump.html
+share/doc/tiff/manual/tools/tiffgt.html
 share/doc/tiff/manual/tools/tiffinfo.html
+share/doc/tiff/manual/tools/tiffmedian.html
 share/doc/tiff/manual/tools/tiffset.html
 share/doc/tiff/manual/tools/tiffsplit.html
