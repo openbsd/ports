@@ -4,7 +4,7 @@ COMMENT =		new type of shell
 
 GH_ACCOUNT =		nushell
 GH_PROJECT =		nushell
-GH_TAGNAME =		0.94.2
+GH_TAGNAME =		0.99.1
 
 CATEGORIES =		shells
 
@@ -16,7 +16,7 @@ MODCARGO_CRATES_KEEP +=	libsqlite3-sys
 
 # Disable mimalloc feature
 MODCARGO_NO_DEFAULT_FEATURES = Yes
-MODCARGO_FEATURES =	plugin which-support trash-support sqlite system-clipboard
+MODCARGO_FEATURES =	plugin trash-support sqlite system-clipboard
 
 .include "crates.inc"
 
@@ -31,7 +31,10 @@ WANTLIB +=		${MODCARGO_WANTLIB} crypto m ssl
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/target/release/nu ${PREFIX}/bin/
 
+post-patch:
+	${SUBST_CMD} ${WRKSRC}/src/main.rs
+
 # last known test results
-# 0.94.2: test result: FAILED. 1133 passed; 101 failed; 24 ignored; 0 measured; 0 filtered out; finished in 168.38s
+# 0.99.1: test result: FAILED. 1271 passed; 103 failed; 24 ignored; 0 measured; 0 filtered out; finished in 213.79s
 
 .include <bsd.port.mk>

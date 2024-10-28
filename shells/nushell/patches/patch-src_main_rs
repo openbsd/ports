@@ -1,0 +1,13 @@
+Index: src/main.rs
+--- src/main.rs.orig
++++ src/main.rs
+@@ -45,8 +45,7 @@ fn get_engine_state() -> EngineState {
+ 
+ /// Get the directory where the Nushell executable is located.
+ fn current_exe_directory() -> PathBuf {
+-    let mut path = std::env::current_exe().expect("current_exe() should succeed");
+-    path.pop();
++    let mut path = PathBuf::from("${PREFIX}");
+     path
+ }
+ 
