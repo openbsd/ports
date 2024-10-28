@@ -1,5 +1,6 @@
 COMMENT =	reporting of idle time of user and system
 DISTNAME =	kidletime-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  KF6IdleTime               0.0 # 0.0
 
@@ -11,7 +12,6 @@ BUILD_DEPENDS =	wayland/plasma-wayland-protocols \
 		wayland/wayland-protocols
 
 LIB_DEPENDS =	wayland/wayland \
-		inputmethods/xcb-imdkit \
 		x11/qt6/qtwayland
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
