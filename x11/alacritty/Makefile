@@ -5,8 +5,7 @@ MAINTAINER =	Eric Auge <eau+obsd@unix4fun.net>
 
 GH_ACCOUNT =	alacritty
 GH_PROJECT =	alacritty
-GH_TAGNAME =	v0.13.2
-REVISION =	0
+GH_TAGNAME =	v0.14.0
 
 HOMEPAGE =	https://alacritty.org/
 
@@ -14,8 +13,8 @@ HOMEPAGE =	https://alacritty.org/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODCARGO_WANTLIB} fontconfig freetype m util
-# xcb is dlopen()'d
-WANTLIB += xcb
+# xcb and xkbcommon are dlopen()'d
+WANTLIB += xcb xkbcommon
 
 MODULES =	devel/cargo \
 		lang/python
@@ -23,6 +22,8 @@ MODULES =	devel/cargo \
 RUN_DEPENDS =	devel/desktop-file-utils
 
 BUILD_DEPENDS =	textproc/scdoc
+
+LIB_DEPENDS =	x11/xkbcommon
 
 # for riscv64 and powerpc64, please keep: cc >= 1.0.73 and libc >= 0.2.113
 MODCARGO_CRATES_UPDATE =	cc libc
