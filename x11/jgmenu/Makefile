@@ -1,3 +1,6 @@
+# uses rsvg_handle_render_document which is only in newer rust-based librsvg
+ONLY_FOR_ARCHS =	${RUST_ARCHS}
+
 COMMENT =	freedesktop-compliant menu for openbox and tint2
 CATEGORIES =	x11
 
