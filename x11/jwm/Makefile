@@ -2,6 +2,7 @@ COMMENT=		Joe's Window Manager
 
 V=			2.4.3
 DISTNAME=		jwm-${V}
+REVISION=		0
 
 CATEGORIES=		x11
 
