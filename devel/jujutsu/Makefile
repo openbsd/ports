@@ -5,7 +5,7 @@ PKGNAME =		jujutsu-$V
 GH_ACCOUNT =		martinvonz
 GH_PROJECT =		jj
 GH_TAGNAME =		v$V
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -27,6 +27,14 @@ LIB_DEPENDS =		archivers/zstd \
 			security/libssh2
 
 MAKE_ENV =		LIBGIT2_NO_VENDOR=1
+
+post-build:
+	${WRKBUILD}/target/release/jj util mangen > ${WRKBUILD}/jj.1.tmp
+	mv ${WRKBUILD}/jj.1.tmp ${WRKBUILD}/jj.1
+
+post-install:
+	${INSTALL_MAN} ${WRKBUILD}/jj.1 ${PREFIX}/man/man1
+
 
 MODCARGO_INSTALL_TARGET_PATHS = cli
 
