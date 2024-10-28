@@ -761,6 +761,7 @@ lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_prelaunch_feature_flags.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_prelaunch_logging.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_priority_queue.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_process.beam
+lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_process_flag.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_queue_consumers.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_queue_decorator.beam
 lib/rabbitmq/plugins/rabbit-${V}/ebin/rabbit_queue_index.beam

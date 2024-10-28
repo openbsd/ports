@@ -1,6 +1,6 @@
 COMMENT =	highly reliable Enterprise Messaging System
 
-V =		4.0.2
+V =		4.0.3
 DISTNAME =	rabbitmq-server-${V}
 PKGNAME =	rabbitmq-${V}
 CATEGORIES =	net
@@ -71,14 +71,14 @@ OSIRIS_VSN	1.8.2 \
 PROMETHEUS_VSN	4.11.0 \
 QUANTILE_ESTIMATOR_VSN	0.2.1 \
 RA_VSN		2.14.0 \
-RECON_VSN	2.5.3 \
-REDBUG_VSN	2.0.7 \
+RECON_VSN	2.5.6 \
+REDBUG_VSN	2.1.0 \
 SESHAT_VSN	0.6.1 \
 STDOUT_FORMATTER_VSN	0.2.4 \
 SYSLOG_VSN	4.0.0 \
 SYSMON_HANDLER_VSN	1.3.0 \
 SYSTEMD_VSN	0.6.1 \
-THOAS_VSN	1.0.0
+THOAS_VSN	1.2.1
 
 .for _n _v in ${PLUGIN_VERSIONS}
 ${_n} =		${_v}
