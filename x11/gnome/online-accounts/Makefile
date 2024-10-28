@@ -23,8 +23,8 @@ LIB_DEPENDS=		devel/json-glib \
 			x11/gnome/libsecret \
 			x11/gnome/libadwaita
 
-MODGNOME_TOOLS=		desktop-file-utils gi-docgen gobject-introspection \
-			gtk-update-icon-cache vala
+MODGNOME_TOOLS=		desktop-file-utils docbook gi-docgen \
+			gobject-introspection gtk-update-icon-cache vala
 
 # until proven useful
 CONFIGURE_ARGS +=	-Dkerberos=false
