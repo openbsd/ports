@@ -2551,6 +2551,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/backend/linux_raw/arc
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/backend/linux_raw/arch/mod.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/backend/linux_raw/arch/powerpc64.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/backend/linux_raw/arch/riscv64.rs
+share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/backend/linux_raw/arch/s390x.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/backend/linux_raw/arch/thumb.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/backend/linux_raw/arch/x86.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/backend/linux_raw/arch/x86_64.rs
@@ -2666,6 +2667,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/event/mod.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/event/pause.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/event/poll.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/event/port.rs
+share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/event/select.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/ffi.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/fs/
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/fs/abs.rs
@@ -2691,6 +2693,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/fs/openat2.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/fs/raw_dir.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/fs/seek_from.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/fs/sendfile.rs
+share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/fs/special.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/fs/statx.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/fs/sync.rs
 share/rust-openssl-tests/modcargo-crates/${VER_rustix}/src/fs/xattr.rs
@@ -3106,6 +3109,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_syn}/src/gen/debug.rs
 share/rust-openssl-tests/modcargo-crates/${VER_syn}/src/gen/eq.rs
 share/rust-openssl-tests/modcargo-crates/${VER_syn}/src/gen/fold.rs
 share/rust-openssl-tests/modcargo-crates/${VER_syn}/src/gen/hash.rs
+share/rust-openssl-tests/modcargo-crates/${VER_syn}/src/gen/token.css
 share/rust-openssl-tests/modcargo-crates/${VER_syn}/src/gen/visit.rs
 share/rust-openssl-tests/modcargo-crates/${VER_syn}/src/gen/visit_mut.rs
 share/rust-openssl-tests/modcargo-crates/${VER_syn}/src/generics.rs
