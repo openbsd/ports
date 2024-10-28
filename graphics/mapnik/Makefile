@@ -1,6 +1,6 @@
 COMMENT =	toolkit for developing mapping applications
 
-V =		4.0.0
+V =		4.0.2
 DISTNAME =	mapnik-v${V}
 PKGNAME =	${DISTNAME:S/v//}
 EXTRACT_SUFX =	.tar.bz2
