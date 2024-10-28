@@ -11,9 +11,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Iridium browser
 
-V=			2024.08.128.3
-
-REVISION=		0
+V=			2024.10.130
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
@@ -157,7 +155,7 @@ GN_ARGS=	enable_nacl=false \
 		use_partition_alloc_as_malloc=false \
 		enable_backup_ref_ptr_support=false \
 		disable_fieldtrial_testing_config=true \
-		extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
+		extra_cppflags=\"-I${LOCALBASE}/include/libepoll-shim -idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
 		fatal_linker_warnings=false \
 		chrome_pgo_phase=0 \
 		use_custom_libcxx=true \

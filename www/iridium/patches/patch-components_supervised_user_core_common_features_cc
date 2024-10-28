@@ -19,8 +19,8 @@ Index: components/supervised_user/core/common/features.cc
    bool skipParentApprovalEnabled = base::FeatureList::IsEnabled(
        kEnableSupervisedUserSkipParentApprovalToInstallExtensions);
    bool permissionExtensionsForSupervisedUsersEnabled =
-@@ -106,13 +106,13 @@ BASE_FEATURE(kCustomWebSignInInterceptForSupervisedUse
-              "CustomWebSignInInterceptForSupervisedUsersUi",
+@@ -106,13 +106,13 @@ BASE_FEATURE(kSupervisedUserProfileSigninIPH,
+              "SupervisedUserProfileSigninIPH",
               base::FEATURE_DISABLED_BY_DEFAULT);
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)

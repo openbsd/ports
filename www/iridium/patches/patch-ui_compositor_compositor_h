@@ -1,7 +1,7 @@
 Index: ui/compositor/compositor.h
 --- ui/compositor/compositor.h.orig
 +++ ui/compositor/compositor.h
-@@ -456,7 +456,7 @@ class COMPOSITOR_EXPORT Compositor : public base::Powe
+@@ -457,7 +457,7 @@ class COMPOSITOR_EXPORT Compositor : public base::Powe
    // base::PowerSuspendObserver:
    void OnResume() override;
  

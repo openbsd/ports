@@ -29,7 +29,7 @@ Index: chrome/browser/chrome_browser_main_linux.cc
  void ChromeBrowserMainPartsLinux::PostMainMessageLoopRun() {
    ChromeBrowserMainPartsPosix::PostMainMessageLoopRun();
    ui::OzonePlatform::GetInstance()->PostMainMessageLoopRun();
-@@ -169,7 +171,7 @@ void ChromeBrowserMainPartsLinux::CheckIfSanitizeCompl
+@@ -170,7 +172,7 @@ void ChromeBrowserMainPartsLinux::CheckIfSanitizeCompl
  #endif  // BUILDFLAG(IS_CHROMEOS_ASH)
  
  void ChromeBrowserMainPartsLinux::PostDestroyThreads() {
