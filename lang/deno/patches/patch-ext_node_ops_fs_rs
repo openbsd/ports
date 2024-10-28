@@ -1,7 +1,7 @@
 Index: ext/node/ops/fs.rs
 --- ext/node/ops/fs.rs.orig
 +++ ext/node/ops/fs.rs
-@@ -130,13 +130,21 @@ where
+@@ -152,13 +152,21 @@ where
      let mut cpath = path.as_bytes().to_vec();
      cpath.push(0);
      if bigint {
@@ -25,7 +25,7 @@ Index: ext/node/ops/fs.rs
        // SAFETY: `cpath` is NUL-terminated and result is pointer to valid statfs memory.
        let (code, result) = unsafe {
          let mut result: libc::statfs = std::mem::zeroed();
-@@ -146,7 +154,10 @@ where
+@@ -168,7 +176,10 @@ where
          return Err(std::io::Error::last_os_error().into());
        }
        Ok(StatFs {
@@ -36,7 +36,7 @@ Index: ext/node/ops/fs.rs
          bsize: result.f_bsize as _,
          blocks: result.f_blocks as _,
          bfree: result.f_bfree as _,
-@@ -164,7 +175,10 @@ where
+@@ -186,7 +197,10 @@ where
          return Err(std::io::Error::last_os_error().into());
        }
        Ok(StatFs {

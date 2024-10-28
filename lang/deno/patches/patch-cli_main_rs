@@ -3,7 +3,7 @@ unhelpful message - disable that.
 Index: cli/main.rs
 --- cli/main.rs.orig
 +++ cli/main.rs
-@@ -394,7 +394,7 @@ pub fn main() {
+@@ -393,7 +393,7 @@ pub fn main() {
    #[cfg(feature = "dhat-heap")]
    let profiler = dhat::Profiler::new_heap();
  

@@ -2,5 +2,5 @@
 | Running ${PKGSTEM} on OpenBSD
 +-----------------------------------------------------------------------
 
-Please note that both 'deno update' and 'deno compile' will not work
+Please note that both 'deno upgrade' and 'deno compile' will not work
 on OpenBSD.

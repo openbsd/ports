@@ -6,7 +6,7 @@ DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
 
-VERSION =		2.0.2
+VERSION =		2.0.3
 HOMEPAGE =		https://deno.com/runtime
 
 DISTNAME =		deno-${VERSION}
@@ -81,17 +81,15 @@ post-patch:
 	mkdir -p ${V8_BPGO_DIR}/{x64.profile,arm64.profile}
 	${SUBST_CMD} ${V8_DISTDIR}/v8/tools/run.py
 	cd ${WRKSRC} && ${SUBST_CMD} \
-	    cli/standalone/mod.rs \
 	    cli/task_runner.rs \
 	    cli/tools/jupyter/install.rs \
 	    runtime/ops/os/mod.rs \
 	    tests/util/server/src/lib.rs
-	cp ${WRKSRC}/cli/napi/generated_symbol_exports_list_linux.def \
-	    ${WRKSRC}/cli/napi/generated_symbol_exports_list_openbsd.def
+	cp ${WRKSRC}/ext/napi/generated_symbol_exports_list_linux.def \
+	    ${WRKSRC}/ext/napi/generated_symbol_exports_list_openbsd.def
 	mkdir ${V8_DISTDIR}/third_party/icu/common
 	cp ${MODCARGO_VENDOR_DIR}/deno_core_icudata-${DENO_CORE_ICUDATA_V}/src/icudtl.dat \
 	    ${V8_DISTDIR}/third_party/icu/common/
-
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/target/release/deno ${PREFIX}/bin

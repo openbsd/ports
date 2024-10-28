@@ -1,7 +1,7 @@
 Index: runtime/ops/os/mod.rs
 --- runtime/ops/os/mod.rs.orig
 +++ runtime/ops/os/mod.rs
-@@ -13,6 +13,7 @@ use deno_permissions::PermissionsContainer;
+@@ -10,6 +10,7 @@ use deno_permissions::PermissionsContainer;
  use serde::Serialize;
  use std::collections::HashMap;
  use std::env;
@@ -9,13 +9,13 @@ Index: runtime/ops/os/mod.rs
  
  mod sys_info;
  
-@@ -76,7 +77,8 @@ deno_core::extension!(
+@@ -91,7 +92,8 @@ pub enum OsError {
  #[op2]
  #[string]
- fn op_exec_path(state: &mut OpState) -> Result<String, AnyError> {
+ fn op_exec_path(state: &mut OpState) -> Result<String, OsError> {
 -  let current_exe = env::current_exe().unwrap();
 +  let current_exe =
-+    std::env::current_exe().unwrap_or(PathBuf::from("${PREFIX}/bin/deno"));
++    env::current_exe().unwrap_or_else(|_| PathBuf::from("${PREFIX}/bin/deno"));
    state
      .borrow_mut::<PermissionsContainer>()
-     .check_read_blind(&current_exe, "exec_path", "Deno.execPath()")?;
+     .check_read_blind(&current_exe, "exec_path", "Deno.execPath()")

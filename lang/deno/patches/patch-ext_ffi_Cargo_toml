@@ -9,5 +9,5 @@ Index: ext/ffi/Cargo.toml
 -libffi-sys = "=2.3.0"
 +libffi-sys = { version = "2.3.0", features = ["system"] }
  log.workspace = true
+ num-bigint.workspace = true
  serde.workspace = true
- serde-value = "0.7"
