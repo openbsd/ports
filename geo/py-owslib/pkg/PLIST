@@ -155,6 +155,8 @@ lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/${MODPY_PYCACHE}connectedsystems.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/${MODPY_PYCACHE}connectedsystems.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/${MODPY_PYCACHE}coverages.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/${MODPY_PYCACHE}coverages.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/${MODPY_PYCACHE}edr.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -167,6 +169,7 @@ lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/${MODPY_PYCACHE}processes
 lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/${MODPY_PYCACHE}processes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/${MODPY_PYCACHE}records.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/${MODPY_PYCACHE}records.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/connectedsystems.py
 lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/coverages.py
 lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/edr.py
 lib/python${MODPY_VERSION}/site-packages/owslib/ogcapi/features.py
