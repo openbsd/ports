@@ -1,3 +1,6 @@
+# needs rust-only librsvg
+ONLY_FOR_ARCHS=		${RUST_ARCHS}
+
 # XXX if we start providing OpenBSD appstream data files into
 # PREFIX/share/app-info, turn the @exec into a @tag (and add to portcheck);
 # for an example, see:
