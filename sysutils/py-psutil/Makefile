@@ -1,7 +1,6 @@
 COMMENT=	library to retrieve system information and utilisation
 
-MODPY_EGG_VERSION=	6.0.0
-REVISION=	0
+MODPY_EGG_VERSION=	6.1.0
 
 DISTNAME=	psutil-${MODPY_EGG_VERSION}
 PKGNAME=	py-psutil-${MODPY_EGG_VERSION}
@@ -21,6 +20,9 @@ MODPY_PI=	Yes
 FLAVORS=	python3
 FLAVOR=		python3
 
-MODPY_TEST_DIR=	${WRKSRC}/build/lib.openbsd-${OSREV}-${ARCH}-cpython-${MODPY_MAJORMINOR}
+MODPY_TEST_LINK_SO= Yes
+
+post-install:
+	rm -rf ${WRKINST}${MODPY_SITEPKG}/psutil/tests/
 
 .include <bsd.port.mk>
