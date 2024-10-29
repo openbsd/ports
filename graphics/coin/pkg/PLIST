@@ -920,11 +920,11 @@ include/SoDebug.h
 include/SoWinEnterScope.h
 include/SoWinLeaveScope.h
 lib/cmake/
-lib/cmake/Coin-4.0.2/
-lib/cmake/Coin-4.0.2/coin-config-version.cmake
-lib/cmake/Coin-4.0.2/coin-config.cmake
-lib/cmake/Coin-4.0.2/coin-export${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/Coin-4.0.2/coin-export.cmake
+lib/cmake/Coin-${V}/
+lib/cmake/Coin-${V}/coin-config-version.cmake
+lib/cmake/Coin-${V}/coin-config.cmake
+lib/cmake/Coin-${V}/coin-export${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Coin-${V}/coin-export.cmake
 @lib lib/libCoin.so.${LIBCoin_VERSION}
 lib/pkgconfig/Coin.pc
 share/Coin/
