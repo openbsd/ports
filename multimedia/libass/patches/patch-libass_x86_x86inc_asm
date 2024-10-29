@@ -3,7 +3,7 @@ add ENDBR64 instructions for BTI
 Index: libass/x86/x86inc.asm
 --- libass/x86/x86inc.asm.orig
 +++ libass/x86/x86inc.asm
-@@ -756,6 +756,9 @@ BRANCH_INSTR jz, je, jnz, jne, jl, jle, jnl, jnle, jg,
+@@ -839,6 +839,9 @@ BRANCH_INSTR jz, je, jnz, jne, jl, jle, jnl, jnle, jg,
      %endif
      align function_align
      %2:
@@ -13,7 +13,7 @@ Index: libass/x86/x86inc.asm
      RESET_MM_PERMUTATION        ; needed for x86-64, also makes disassembly somewhat nicer
      %xdefine rstk rsp           ; copy of the original stack pointer, used when greater alignment than the known stack alignment is required
      %assign stack_offset 0      ; stack pointer offset relative to the return address
-@@ -777,6 +780,9 @@ BRANCH_INSTR jz, je, jnz, jne, jl, jle, jnl, jnle, jg,
+@@ -860,6 +863,9 @@ BRANCH_INSTR jz, je, jnz, jne, jl, jle, jnl, jnle, jg,
          global current_function %+ %1
      %endif
      %1:
