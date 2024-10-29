@@ -173,7 +173,7 @@ MODGO_MODULES =	\
 	github.com/!netflix/go-expect								 v0.0.0-20220104043353-73e0943537d2 \
 	github.com/!nvveen/!gotty								 v0.0.0-20120604004816-cd527374f1e5 \
 	github.com/!one!of!one/xxhash								 v1.2.2 \
-	github.com/!proton!mail/go-crypto							 v1.1.0-alpha.5-proton \
+	github.com/!proton!mail/go-crypto							 v1.1.0-beta.0-proton \
 	github.com/!puerkito!bio/purell								 v1.0.0 \
 	github.com/!puerkito!bio/urlesc								 v0.0.0-20160726150825-5bd2802263f2 \
 	github.com/!qcloud!api/qcloud_sign_golang						 v0.0.0-20141224014652-e4130a326409 \
@@ -373,7 +373,7 @@ MODGO_MODULES =	\
 	github.com/grpc-ecosystem/grpc-gateway/v2						 v2.19.0 \
 	github.com/gruntwork-io/boilerplate							 v0.5.19 \
 	github.com/gruntwork-io/go-commons							 v0.17.2 \
-	github.com/gruntwork-io/terragrunt-engine-go						 v0.0.2 \
+	github.com/gruntwork-io/terragrunt-engine-go						 v0.0.4 \
 	github.com/gruntwork-io/terratest							 v0.47.2 \
 	github.com/hashicorp/aws-sdk-go-base							 v0.6.0 \
 	github.com/hashicorp/consul								 v0.0.0-20171026175957-610f3c86a089 \
@@ -400,7 +400,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-version								 v1.7.0 \
 	github.com/hashicorp/golang-lru								 v0.5.1 \
 	github.com/hashicorp/hcl								 v1.0.1-vault-5 \
-	github.com/hashicorp/hcl/v2								 v2.19.1 \
+	github.com/hashicorp/hcl/v2								 v2.22.0 \
 	github.com/hashicorp/jsonapi								 v0.0.0-20210420151930-edf82c9774bf \
 	github.com/hashicorp/logutils								 v1.0.0 \
 	github.com/hashicorp/memberlist								 v0.1.0 \
@@ -411,7 +411,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/terraform-registry-address						 v0.2.0 \
 	github.com/hashicorp/terraform-svchost							 v0.0.1 \
 	github.com/hashicorp/vault/api								 v1.14.0 \
-	github.com/hashicorp/yamux								 v0.1.1 \
+	github.com/hashicorp/yamux								 v0.1.2 \
 	github.com/hinshun/vt10x								 v0.0.0-20220119200601-820417d04eec \
 	github.com/homeport/dyff								 v1.6.0 \
 	github.com/hpcloud/tail									 v1.0.0 \
@@ -589,7 +589,7 @@ MODGO_MODULES =	\
 	github.com/yuin/goldmark								 v1.5.2 \
 	github.com/yuin/goldmark-emoji								 v1.0.1 \
 	github.com/zclconf/go-cty								 v1.14.1 \
-	github.com/zclconf/go-cty-debug								 v0.0.0-20191215020915-b22d67c1ba0b \
+	github.com/zclconf/go-cty-debug								 v0.0.0-20240509010212-0d6042c53940 \
 	github.com/zclconf/go-cty-yaml								 v1.0.3 \
 	go.opencensus.io									 v0.24.0 \
 	go.opentelemetry.io/contrib/detectors/gcp						 v1.31.0 \
@@ -622,12 +622,13 @@ MODGO_MODULES =	\
 	golang.org/x/oauth2									 v0.23.0 \
 	golang.org/x/sync									 v0.8.0 \
 	golang.org/x/sys									 v0.26.0 \
+	golang.org/x/telemetry									 v0.0.0-20240521205824-bda55230c457 \
 	golang.org/x/term									 v0.25.0 \
 	golang.org/x/text									 v0.19.0 \
 	golang.org/x/time									 v0.7.0 \
 	golang.org/x/tools									 v0.26.0 \
 	golang.org/x/xerrors									 v0.0.0-20220907171357-04be3eba64a2 \
-	google.golang.org/api									 v0.200.0 \
+	google.golang.org/api									 v0.201.0 \
 	google.golang.org/appengine								 v1.6.8 \
 	google.golang.org/genproto								 v0.0.0-20241007155032-5fefd90f89a9 \
 	google.golang.org/genproto/googleapis/api						 v0.0.0-20241007155032-5fefd90f89a9 \
@@ -1176,6 +1177,7 @@ MODGO_MODFILES =	\
 	github.com/hashicorp/terraform-svchost							 v0.0.0-20200729002733-f050f53b9734 \
 	github.com/hashicorp/yamux								 v0.0.0-20180604194846-3520598351bb \
 	github.com/hashicorp/yamux								 v0.0.0-20181012175058-2f1d1f20f75d \
+	github.com/hashicorp/yamux								 v0.1.1 \
 	github.com/huandu/xstrings								 v1.3.2 \
 	github.com/ianlancetaylor/demangle							 v0.0.0-20181102032728-5e5cf60278f6 \
 	github.com/jhump/protoreflect								 v1.6.0 \
@@ -1335,6 +1337,7 @@ MODGO_MODFILES =	\
 	github.com/zclconf/go-cty								 v1.8.0 \
 	github.com/zclconf/go-cty								 v1.8.3 \
 	github.com/zclconf/go-cty								 v1.9.1 \
+	github.com/zclconf/go-cty-debug								 v0.0.0-20191215020915-b22d67c1ba0b \
 	github.com/zclconf/go-cty-yaml								 v1.0.2 \
 	go.opencensus.io									 v0.21.0 \
 	go.opencensus.io									 v0.22.0 \
@@ -1812,6 +1815,7 @@ MODGO_MODFILES =	\
 	google.golang.org/api									 v0.196.0 \
 	google.golang.org/api									 v0.197.0 \
 	google.golang.org/api									 v0.20.0 \
+	google.golang.org/api									 v0.200.0 \
 	google.golang.org/api									 v0.22.0 \
 	google.golang.org/api									 v0.24.0 \
 	google.golang.org/api									 v0.28.0 \
