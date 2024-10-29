@@ -3,7 +3,7 @@ Don't strip static libraries.
 Index: source/i18n/Makefile.in
 --- source/i18n/Makefile.in.orig
 +++ source/i18n/Makefile.in
-@@ -101,7 +101,7 @@ install-local: install-headers install-library
+@@ -97,7 +97,7 @@ install-local: install-headers install-library
  install-library: all-local
  	$(MKINSTALLDIRS) $(DESTDIR)$(libdir)
  ifneq ($(ENABLE_STATIC),)

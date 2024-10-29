@@ -1,0 +1,74 @@
+REVERT:
+From 199bc827021ffdb43b6579d68e5eecf54c7f6f56 Mon Sep 17 00:00:00 2001
+From: Earl Chew <earlchew@amazon.com>
+Date: Sun, 10 Mar 2024 21:12:45 -0700
+Subject: [PATCH] ICU-22610 Use Requires.private and Libs.private
+
+This breaks multiple ports (node, dovecot, webkitgtk4...)
+
+Index: source/Makefile.in
+--- source/Makefile.in.orig
++++ source/Makefile.in
+@@ -275,36 +275,24 @@ config/icu-uc.pc: config/icu.pc Makefile icudefs.mk
+ 	@cat config/icu.pc > $@
+ 	@echo "Description: $(PACKAGE_ICU_DESCRIPTION): Common and Data libraries" >> $@
+ 	@echo "Name: $(PACKAGE)-uc" >> $@
+-ifeq ($(ENABLE_SHARED),)
+-	@echo "Libs:" '-L$${libdir}' "${ICULIBS_UC}" "${ICULIBS_DT}" '$${baselibs}' >> $@
+-else
+-	@echo "Libs:" '-L$${libdir}' "${ICULIBS_UC}" >> $@
+-	@echo "Libs.private:" "${ICULIBS_DT}" '$${baselibs}' >> $@
+-endif
++	@echo "Libs:" '-L$${libdir}' "${ICULIBS_UC}" "${ICULIBS_DT}" >> $@
++	@echo "Libs.private:" '$${baselibs}' >> $@
+ 	@echo $@ updated.
+ 
+ config/icu-i18n.pc: config/icu.pc Makefile icudefs.mk
+ 	@cat config/icu.pc > $@
+ 	@echo "Description: $(PACKAGE_ICU_DESCRIPTION): Internationalization library" >> $@
+ 	@echo "Name: $(PACKAGE)-i18n" >> $@
+-ifeq ($(ENABLE_SHARED),)
+ 	@echo "Requires: icu-uc" >> $@
+-else
+-	@echo "Requires.private: icu-uc" >> $@
+-endif
+-	@echo "Libs:" '-L$${libdir}' "${ICULIBS_I18N}" >> $@
++	@echo "Libs:" "${ICULIBS_I18N}" >> $@
+ 	@echo $@ updated.
+ 
+ config/icu-io.pc: config/icu.pc Makefile icudefs.mk
+ 	@cat config/icu.pc > $@
+ 	@echo "Description: $(PACKAGE_ICU_DESCRIPTION): Stream and I/O Library" >> $@
+ 	@echo "Name: $(PACKAGE)-io" >> $@
+-ifeq ($(ENABLE_SHARED),)
+ 	@echo "Requires: icu-i18n" >> $@
+-else
+-	@echo "Requires.private: icu-i18n" >> $@
+-endif
+-	@echo "Libs:" '-L$${libdir}' "${ICULIBS_IO}" >> $@
++	@echo "Libs:" "${ICULIBS_IO}" >> $@
+ 	@echo $@ updated.
+ 
+ ICULEHB_LIBS=@ICULEHB_LIBS@
+@@ -318,20 +306,12 @@ config/icu-lx.pc: config/icu.pc Makefile icudefs.mk
+ 	@cat config/icu.pc > $@
+ 	@echo "Description: $(PACKAGE_ICU_DESCRIPTION): Paragraph Layout library $(USING_HB)" >> $@
+ 	@echo "Name: $(PACKAGE)-lx" >> $@
+-ifeq ($(ENABLE_SHARED),)
+ ifneq ($(ICULEHB_LIBS),)
+ 	@echo "Requires: icu-le-hb icu-uc" >> $@
+ else
+ 	@echo "Requires: icu-le" >> $@
+ endif
+-else
+-ifneq ($(ICULEHB_LIBS),)
+-	@echo "Requires.private: icu-le-hb icu-uc" >> $@
+-else
+-	@echo "Requires.private: icu-le" >> $@
+-endif
+-endif
+-	@echo "Libs:" '-L$${libdir}' "${ICULIBS_LX}" >> $@
++	@echo "Libs:" "${ICULIBS_LX}" >> $@
+ 	@echo $@ updated.
+ 
+ 
