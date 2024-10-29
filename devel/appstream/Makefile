@@ -11,6 +11,7 @@ DISTNAME=		AppStream-${V}
 EXTRACT_SUFX=		.tar.xz
 PKGNAME-main=		${DISTNAME:L}
 PKGNAME-qt6=		appstream-qt6-${V}
+REVISION-main=		0
 
 SHARED_LIBS += appstream                 1.0 # 1.0.3
 SHARED_LIBS += appstream-compose         1.0 # 1.0.3

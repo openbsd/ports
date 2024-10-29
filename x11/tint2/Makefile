@@ -6,7 +6,7 @@ V=		17.0.2
 CATEGORIES=	x11
 DISTNAME=	tint2-${V}
 HOMEPAGE=	https://gitlab.com/o9000/tint2/
-REVISION=	0
+REVISION=	1
 
 # GPLv2 only
 PERMIT_PACKAGE=	Yes

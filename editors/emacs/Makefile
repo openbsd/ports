@@ -4,7 +4,7 @@ COMMENT=		GNU editor: extensible, customizable, self-documenting
 # Zap post-extract when updating
 VERSION=		29.4
 DISTNAME=		emacs-${VERSION}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		editors
 

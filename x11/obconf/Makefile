@@ -2,7 +2,7 @@ COMMENT=	configuration utility for openbox
 
 DISTNAME=	obconf-2.0.4
 CATEGORIES=	x11
-REVISION=	5
+REVISION=	6
 
 HOMEPAGE=	http://openbox.org/wiki/Obconf
 

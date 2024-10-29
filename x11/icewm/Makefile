@@ -6,6 +6,7 @@ COMMENT=	small and fast window manager
 DISTNAME=	icewm-${V}
 EXTRACT_SUFX=	.tar.lz
 CATEGORIES=	x11
+REVISION=	0
 
 HOMEPAGE=	https://ice-wm.org/
 

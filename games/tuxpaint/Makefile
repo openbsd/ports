@@ -2,6 +2,7 @@ COMMENT=		drawing program for children
 
 V=			0.9.34
 DISTNAME=		tuxpaint-${V}
+REVISION=		0
 
 CATEGORIES=		games graphics
 

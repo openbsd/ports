@@ -2,7 +2,7 @@ COMMENT =		lightweight web browser, with GTK interface
 
 NETSURF_PROJECT =	netsurf
 NETSURF_VERSION =	3.11
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://www.netsurf-browser.org/
 SITES =		https://download.netsurf-browser.org/netsurf/releases/source/

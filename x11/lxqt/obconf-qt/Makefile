@@ -1,6 +1,7 @@
 COMMENT =	configuration editor for openbox window manager
 
 VERSION =	0.16.4
+REVISION =	0
 
 NAME =		obconf-qt
 

@@ -4,7 +4,7 @@ GH_ACCOUNT =	horizon-eda
 GH_PROJECT =	horizon
 GH_TAGNAME =	v2.6.0
 PKGNAME =	${DISTNAME:S/horizon/horizon-eda/}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	cad
 

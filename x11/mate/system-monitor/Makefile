@@ -1,6 +1,6 @@
 COMMENT=		MATE system monitor
 
-REVISION=		0
+REVISION=		1
 
 MATE_PROJECT=		mate-system-monitor
 MATE_VERSION=		1.28.1

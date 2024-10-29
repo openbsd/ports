@@ -1,6 +1,6 @@
 USE_WXNEEDED=		Yes
 
-REVISION=		0
+REVISION=		1
 
 COMMENT=		image viewer for the MATE desktop
 

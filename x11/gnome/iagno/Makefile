@@ -2,7 +2,7 @@ COMMENT =		reversi board game
 
 GNOME_PROJECT =		iagno
 GNOME_VERSION =		3.38.1
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games
 

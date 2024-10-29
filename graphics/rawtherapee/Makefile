@@ -4,6 +4,7 @@ ONLY_FOR_ARCHS =	amd64
 COMMENT =		RAW image processing application
 
 DISTNAME =		rawtherapee-5.11
+REVISION =		0
 
 CATEGORIES =		graphics
 

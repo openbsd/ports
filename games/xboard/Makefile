@@ -3,7 +3,7 @@ COMMENT=	X11 frontend for GNU Chess and the Internet Chess Server
 DISTNAME=	xboard-4.9.1
 CATEGORIES=	games x11
 SITES=		${SITE_GNU:=xboard/}
-REVISION=	6
+REVISION=	7
 
 HOMEPAGE=	https://www.gnu.org/software/xboard/
 

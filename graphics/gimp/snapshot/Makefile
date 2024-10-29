@@ -2,7 +2,7 @@ COMMENT=	GNU Image Manipulation Program
 
 V=		2.99
 DISTNAME=	gimp-${V}.18
-REVISION=	4
+REVISION=	5
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets gimp-scriptfu
