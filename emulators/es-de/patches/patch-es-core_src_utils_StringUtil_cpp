@@ -1,0 +1,15 @@
+Fix build for ICU >=76.1
+(XXX check at next release if still needed and if fix is correct)
+
+Index: es-core/src/utils/StringUtil.cpp
+--- es-core/src/utils/StringUtil.cpp.orig
++++ es-core/src/utils/StringUtil.cpp
+@@ -219,7 +219,7 @@ namespace Utils
+             icu::UnicodeString iterateString {
+                 icu::UnicodeString::fromUTF8(stringArg.c_str()).toLower()};
+ 
+-            if (iterateString != nullptr) {
++            if (iterateString != "") {
+                 iterator->setText(iterateString);
+                 int32_t pos {iterator->first()};
+                 int32_t lastPos {pos};
