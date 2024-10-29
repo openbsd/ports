@@ -1,6 +1,6 @@
 COMMENT=	image processing tools with stable ABI
 
-DISTNAME=	GraphicsMagick-1.3.43
+DISTNAME=	GraphicsMagick-1.3.45
 CATEGORIES=	graphics devel
 SITES=		${SITE_SOURCEFORGE:=graphicsmagick/}
 EXTRACT_SUFX=	.tar.xz
@@ -17,16 +17,17 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xdmcp Xext aom brotlicommon
-WANTLIB += brotlidec brotlienc bz2 c de265 freetype heif hwy iconv
-WANTLIB += jasper jbig jpeg jxl jxl_cms jxl_threads lcms2 ltdl
-WANTLIB += lzma m png sharpyuv tiff webp webpmux wmflite-0.2 x265
-WANTLIB += xcb xml2 z zstd
+WANTLIB += brotlidec brotlienc bz2 c crypto de265 freetype heif
+WANTLIB += hwy iconv jasper jbig jpeg jxl jxl_cms jxl_threads
+WANTLIB += lcms2 ltdl lzma m png sharpyuv tiff webp webpmux wmflite-0.2
+WANTLIB += x265 xcb xml2 z zip zstd
 
 WANTLIB += perl # uses perl ABI
 
 COMPILER =		base-clang ports-gcc
 
 LIB_DEPENDS=		archivers/bzip2 \
+			archivers/libzip \
 			archivers/xz \
 			archivers/zstd \
 			converters/libiconv \

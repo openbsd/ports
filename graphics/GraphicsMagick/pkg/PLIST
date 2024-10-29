@@ -99,6 +99,8 @@ lib/GraphicsMagick/config/type-windows.mgk
 lib/GraphicsMagick/config/type.mgk
 lib/GraphicsMagick/modules-Q16/
 lib/GraphicsMagick/modules-Q16/coders/
+lib/GraphicsMagick/modules-Q16/coders/aai.la
+@so lib/GraphicsMagick/modules-Q16/coders/aai.so
 lib/GraphicsMagick/modules-Q16/coders/art.la
 @so lib/GraphicsMagick/modules-Q16/coders/art.so
 lib/GraphicsMagick/modules-Q16/coders/avs.la
@@ -195,6 +197,8 @@ lib/GraphicsMagick/modules-Q16/coders/mvg.la
 @so lib/GraphicsMagick/modules-Q16/coders/mvg.so
 lib/GraphicsMagick/modules-Q16/coders/null.la
 @so lib/GraphicsMagick/modules-Q16/coders/null.so
+lib/GraphicsMagick/modules-Q16/coders/ora.la
+@so lib/GraphicsMagick/modules-Q16/coders/ora.so
 lib/GraphicsMagick/modules-Q16/coders/otb.la
 @so lib/GraphicsMagick/modules-Q16/coders/otb.so
 lib/GraphicsMagick/modules-Q16/coders/palm.la
