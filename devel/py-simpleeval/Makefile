@@ -1,6 +1,6 @@
 COMMENT =	simple, safe single expression evaluator library
 
-MODPY_EGG_VERSION = 1.0.0
+MODPY_EGG_VERSION = 1.0.1
 DISTNAME =	simpleeval-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		hatchling
 MODPY_PYTEST_ARGS =	test_simpleeval.py
 
 FLAVORS =	python3
