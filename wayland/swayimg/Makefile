@@ -1,3 +1,6 @@
+# needs rust version of rsvg
+ONLY_FOR_ARCHS =	${RUST_ARCHS}
+
 COMMENT =	image display utility for Wayland
 
 GH_ACCOUNT =	artemsen
