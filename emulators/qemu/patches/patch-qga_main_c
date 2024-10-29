@@ -15,7 +15,7 @@ Index: qga/main.c
  #define QGA_STATE_RELATIVE_DIR  "run"
  #else
  #define QGA_VIRTIO_PATH_DEFAULT "\\\\.\\Global\\org.qemu.guest_agent.0"
-@@ -1597,7 +1601,11 @@ int main(int argc, char **argv)
+@@ -1601,7 +1605,11 @@ int main(int argc, char **argv)
      }
  
      if (config->method == NULL) {

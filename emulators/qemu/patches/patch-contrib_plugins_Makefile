@@ -1,0 +1,18 @@
+- contrib/plugins: ensure build does not pick up a system copy of plugin header
+
+Index: contrib/plugins/Makefile
+--- contrib/plugins/Makefile.orig
++++ contrib/plugins/Makefile
+@@ -41,9 +41,10 @@ SONAMES := $(addsuffix $(SO_SUFFIX),$(addprefix lib,$(
+ 
+ # The main QEMU uses Glib extensively so it is perfectly fine to use it
+ # in plugins (which many example do).
+-PLUGIN_CFLAGS := $(shell $(PKG_CONFIG) --cflags glib-2.0)
+-PLUGIN_CFLAGS += -fPIC -Wall
++GLIB_CFLAGS := $(shell $(PKG_CONFIG) --cflags glib-2.0)
+ PLUGIN_CFLAGS += -I$(TOP_SRC_PATH)/include/qemu
++PLUGIN_CFLAGS += $(GLIB_CFLAGS)
++PLUGIN_CFLAGS += -fPIC -Wall
+ 
+ # Helper that honours V=1 so we get some output when compiling
+ quiet-@ = $(if $(V),,@$(if $1,printf "  %-7s %s\n" "$(strip $1)" "$(strip $2)" && ))

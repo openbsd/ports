@@ -1,0 +1,79 @@
+Adapted from https://github.com/aborche/qemu-guest-agent
+
+Adds support for "guest-get-fsinfo" and "guest-get-vcpus"
+
+Index: qga/qapi-schema.json
+--- qga/qapi-schema.json.orig
++++ qga/qapi-schema.json
+@@ -767,7 +767,7 @@
+   'data': {'logical-id': 'int',
+            'online': 'bool',
+            '*can-offline': 'bool'},
+-  'if': { 'any': ['CONFIG_LINUX', 'CONFIG_WIN32'] } }
++  'if': { 'any': ['CONFIG_LINUX', 'CONFIG_WIN32', 'CONFIG_BSD'] } }
+ 
+ ##
+ # @guest-get-vcpus:
+@@ -783,7 +783,7 @@
+ ##
+ { 'command': 'guest-get-vcpus',
+   'returns': ['GuestLogicalProcessor'],
+-  'if': { 'any': ['CONFIG_LINUX', 'CONFIG_WIN32'] } }
++  'if': { 'any': ['CONFIG_LINUX', 'CONFIG_WIN32', 'CONFIG_BSD'] } }
+ 
+ ##
+ # @guest-set-vcpus:
+@@ -879,7 +879,7 @@
+   'data': [ 'ide', 'fdc', 'scsi', 'virtio', 'xen', 'usb', 'uml', 'sata',
+             'sd', 'unknown', 'ieee1394', 'ssa', 'fibre', 'raid', 'iscsi',
+             'sas', 'mmc', 'virtual', 'file-backed-virtual', 'nvme' ],
+-  'if': { 'any': [ 'CONFIG_WIN32', 'CONFIG_LINUX' ] } }
++  'if': { 'any': [ 'CONFIG_WIN32', 'CONFIG_LINUX', 'CONFIG_BSD' ] } }
+ 
+ 
+ ##
+@@ -898,7 +898,7 @@
+ { 'struct': 'GuestPCIAddress',
+   'data': {'domain': 'int', 'bus': 'int',
+            'slot': 'int', 'function': 'int'},
+-  'if': { 'any': [ 'CONFIG_WIN32', 'CONFIG_LINUX' ] } }
++  'if': { 'any': [ 'CONFIG_WIN32', 'CONFIG_LINUX', 'CONFIG_BSD' ] } }
+ 
+ ##
+ # @GuestCCWAddress:
+@@ -918,7 +918,7 @@
+            'ssid': 'int',
+            'subchno': 'int',
+            'devno': 'int'},
+-  'if': { 'any': [ 'CONFIG_WIN32', 'CONFIG_LINUX' ] } }
++  'if': { 'any': [ 'CONFIG_WIN32', 'CONFIG_LINUX', 'CONFIG_BSD' ] } }
+ 
+ ##
+ # @GuestDiskAddress:
+@@ -948,7 +948,7 @@
+            'bus': 'int', 'target': 'int', 'unit': 'int',
+            '*serial': 'str', '*dev': 'str',
+            '*ccw-address': 'GuestCCWAddress'},
+-  'if': { 'any': [ 'CONFIG_WIN32', 'CONFIG_LINUX' ] } }
++  'if': { 'any': [ 'CONFIG_WIN32', 'CONFIG_LINUX', 'CONFIG_BSD' ] } }
+ 
+ ##
+ # @GuestNVMeSmart:
+@@ -1068,7 +1068,7 @@
+   'data': {'name': 'str', 'mountpoint': 'str', 'type': 'str',
+            '*used-bytes': 'uint64', '*total-bytes': 'uint64',
+            '*total-bytes-privileged': 'uint64', 'disk': ['GuestDiskAddress']},
+-  'if': { 'any': [ 'CONFIG_WIN32', 'CONFIG_LINUX' ] } }
++  'if': { 'any': [ 'CONFIG_WIN32', 'CONFIG_LINUX', 'CONFIG_BSD' ] } }
+ 
+ ##
+ # @guest-get-fsinfo:
+@@ -1082,7 +1082,7 @@
+ ##
+ { 'command': 'guest-get-fsinfo',
+   'returns': ['GuestFilesystemInfo'],
+-  'if': { 'any': [ 'CONFIG_WIN32', 'CONFIG_LINUX' ] } }
++  'if': { 'any': [ 'CONFIG_WIN32', 'CONFIG_LINUX', 'CONFIG_BSD' ] } }
+ 
+ ##
+ # @guest-set-user-password:

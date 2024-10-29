@@ -1,0 +1,307 @@
+Adapted from https://github.com/aborche/qemu-guest-agent
+
+Adds support for "guest-get-fsinfo" and "guest-get-vcpus"
+
+Index: qga/commands-bsd.c
+--- qga/commands-bsd.c.orig
++++ qga/commands-bsd.c
+@@ -11,10 +11,9 @@
+  */
+ 
+ #include "qemu/osdep.h"
++#include "qapi/error.h"
+ #include "qga-qapi-commands.h"
+ #include "qapi/qmp/qerror.h"
+-#include "qapi/error.h"
+-#include "qemu/queue.h"
+ #include "commands-common.h"
+ #include <sys/ioctl.h>
+ #include <sys/param.h>
+@@ -28,6 +27,8 @@
+ #include <net/ethernet.h>
+ #endif
+ #include <paths.h>
++#include <sys/sysctl.h>
++#include <sys/statvfs.h>
+ 
+ #if defined(CONFIG_FSFREEZE) || defined(CONFIG_FSTRIM)
+ bool build_fs_mount_list(FsMountList *mounts, Error **errp)
+@@ -179,3 +180,278 @@ bool guest_get_hw_addr(struct ifaddrs *ifa, unsigned c
+     return true;
+ }
+ #endif /* HAVE_GETIFADDRS */
++
++GuestLogicalProcessorList *qmp_guest_get_vcpus(Error **errp)
++{
++    GuestLogicalProcessorList *head, **tail;
++    int64_t current;
++    long sc_max;
++    Error *local_err = NULL;
++    int Query[2];
++    int NumCpu = 0;
++    size_t Length = sizeof(NumCpu);
++
++    Query[0] = CTL_HW;
++#ifdef HW_NCPUONLINE
++    Query[1] = HW_NCPUONLINE;
++#else
++    Query[1] = HW_NCPU;
++#endif
++
++    current = 0;
++    head = NULL;
++    tail = &head;
++    if (sysctl(Query, 2, &NumCpu, &Length, NULL, 0) == -1) {
++        error_setg(errp, "sysctl get CTL_HW.HW_NCPU failed");
++    }
++    sc_max = NumCpu;
++
++    while (local_err == NULL && current < sc_max) {
++        GuestLogicalProcessor *vcpu;
++        int64_t id = current++;
++        vcpu = g_malloc0(sizeof *vcpu);
++        vcpu->logical_id = id;
++        vcpu->has_can_offline = false; /* lolspeak ftw */
++        vcpu->online = true;
++        vcpu->can_offline = false;
++        QAPI_LIST_APPEND(tail, vcpu);
++    }
++
++    if (local_err == NULL) {
++        /* there's no guest with zero VCPUs */
++        g_assert(head != NULL);
++        return head;
++    }
++
++    qapi_free_GuestLogicalProcessorList(head);
++    error_propagate(errp, local_err);
++    return NULL;
++}
++
++typedef struct FsMount {
++    char *dirname;
++    char *devtype;
++    char *size;
++    char *used;
++    char *free;
++    char *load;
++    char *mntpoint;
++    unsigned int devmajor, devminor;
++    QTAILQ_ENTRY(FsMount) next;
++} FsMount;
++
++typedef QTAILQ_HEAD(FsMountList, FsMount) FsMountList;
++
++static void free_fs_mount_list(FsMountList *mounts)
++{
++     FsMount *mount, *temp;
++
++     if (!mounts) {
++         return;
++     }
++
++     QTAILQ_FOREACH_SAFE(mount, mounts, next, temp) {
++         QTAILQ_REMOVE(mounts, mount, next);
++         g_free(mount->dirname);
++         g_free(mount->devtype);
++         g_free(mount->size);
++         g_free(mount->used);
++         g_free(mount->free);
++         g_free(mount->load);
++         g_free(mount->mntpoint);
++         g_free(mount);
++     }
++}
++
++static void build_fs_mount_list(FsMountList *mounts, Error **errp)
++{
++    FsMount *mount;
++#ifdef __OpenBSD__
++    char const *dfcmd = "/bin/df";
++#else // defined(__OpenBSD__)
++    char const *dfcmd = "/bin/df -hT";
++#endif // defined(__OpenBSD__)
++
++    FILE *fp;
++    char *line = NULL;
++    size_t n;
++    int ret;
++    char dev_name[128], size[12], used[12], free[12], load[10], mounted[128];
++#ifndef __OpenBSD__
++    char fstype[12] = "";
++#endif // !defined(__OpenBSD__)
++
++    if ((fp = popen(dfcmd, "r")) == NULL) {
++        g_debug("Cannot open '%s'!!\n", dfcmd);
++        error_setg_errno(errp, errno,
++                         "failed to create child process for command: %s",
++                         dfcmd);
++        return;
++    }
++
++    while (getline(&line, &n, fp) != -1) {
++        //g_debug("line '%s'", line);
++#ifdef __OpenBSD__
++        ret = sscanf(line, "%127s%11s%11s%11s%9s%127s",
++                     dev_name, size, used, free, load, mounted);
++#else // defined(__OpenBSD__)
++        ret = sscanf(line, "%127s%11s%11s%11s%11s%9s%127s",
++                     dev_name, fstype, size, used, free, load, mounted);
++        //g_debug("ret %d, dev_name '%s', fstype '%s', size '%s', used '%s', free '%s', load '%s', mounted '%s'",
++        //        ret, dev_name, fstype, size, used, free, load, mounted);
++#endif // defined(__OpenBSD__)
++        if (g_str_equal(dev_name, "Filesystem")
++#ifndef __OpenBSD__
++                ||g_str_equal(fstype,"devfs")
++                ||g_str_equal(fstype,"procfs")
++                ||g_str_equal(fstype,"fdescfs")
++#endif // !defined(__OpenBSD__)
++          ) {
++            continue;
++        }
++
++#ifdef __OpenBSD__
++        if (ret < 6) {
++#else // defined(__OpenBSD__)
++        if (ret < 7) {
++#endif // defined(__OpenBSD__)
++            continue;
++        }
++
++        mount = g_new0(FsMount, 1);
++        mount->dirname = g_strdup(dev_name);
++#ifndef __OpenBSD__
++        mount->devtype = g_strdup(fstype);
++#endif // defined(__OpenBSD__)
++        mount->free = g_strdup(free);
++        mount->load = g_strdup(load);
++        mount->size = g_strdup(size);
++        mount->used = g_strdup(used);
++        mount->mntpoint = g_strdup(mounted);
++        mount->devmajor = 0;
++        mount->devminor = 0;
++
++        QTAILQ_INSERT_TAIL(mounts, mount, next);
++    }
++    g_free(line);
++
++    fclose(fp);
++}
++
++#ifdef __OpenBSD__
++static void add_type_fs_mount_list(FsMountList *mounts, Error **errp)
++{
++    FILE *fp;
++    char const *mountcmd = "/sbin/mount";
++    char *line = NULL;
++    size_t n;
++    int ret;
++    char mnt_fsname[128], mnt_dir[128], mnt_type[32], mnt_opts[128];
++    struct FsMount *mount;
++
++    // get mounts from mount command
++    if ((fp = popen(mountcmd, "r")) == NULL) {
++        g_debug("Cannot open '%s'!!\n", mountcmd);
++        error_setg_errno(errp, errno, "failed to create child process for command: %s", mountcmd);
++        return;
++    }
++
++    // loop through mounts from mount command
++    while (getline(&line, &n, fp) != -1) {
++        //g_debug("line '%s'", line);
++
++        ret = sscanf(line, "%127s on %127s type %31s (%127s)",
++                     mnt_fsname, mnt_dir, mnt_type, mnt_opts);
++        //g_debug("ret %d, fsname '%s', dir '%s', type '%s', opts '%s'",
++        //        ret, mnt_fsname, mnt_dir, mnt_type, mnt_opts);
++
++        if (4 != ret ||
++            '/' != mnt_fsname[0] ||
++            '/' != mnt_dir[0] ||
++            g_str_equal("smbfs", mnt_type) ||
++            g_str_equal("cifs", mnt_type)) {
++            continue;
++        }
++
++        // find mount in supplied mounts list and update device type
++        QTAILQ_FOREACH(mount, mounts, next) {
++            if (NULL == mount->devtype && g_str_equal(mount->dirname, mnt_fsname)) {
++                mount->devtype = g_strdup(mnt_type);
++                break;
++            }
++        }
++    }
++    g_free(line);
++
++    fclose(fp);
++}
++#endif // defined(__OpenBSD__)
++
++/* Return a list of the disk device(s)' info which @mount lies on */
++static GuestFilesystemInfo *build_guest_fsinfo(struct FsMount *mount,
++                                               Error **errp)
++{
++    GuestFilesystemInfo *fs = g_malloc0(sizeof(*fs));
++    struct statvfs buf;
++    unsigned long used, nonroot_total, fr_size;
++
++    fs->name = g_strdup(mount->dirname);
++    fs->mountpoint = g_strdup(mount->mntpoint);
++    fs->type = g_strdup(mount->devtype);
++
++    if (statvfs(fs->mountpoint, &buf) == 0) {
++        fr_size = buf.f_frsize;
++        used = buf.f_blocks - buf.f_bfree;
++        nonroot_total = used + buf.f_bavail;
++        fs->used_bytes = used * fr_size;
++        fs->total_bytes = nonroot_total * fr_size;
++
++        fs->has_total_bytes = true;
++        fs->has_used_bytes = true;
++    }
++
++    return fs;
++}
++
++GuestFilesystemInfoList *qmp_guest_get_fsinfo(Error **errp)
++{
++    FsMountList mounts;
++    struct FsMount *mount;
++    GuestFilesystemInfoList *new, *ret = NULL;
++    Error *local_err = NULL;
++
++    QTAILQ_INIT(&mounts);
++
++    g_debug("Entering to guest_get_fsinfo");
++    build_fs_mount_list(&mounts, &local_err);
++    if (local_err) {
++        error_propagate(errp, local_err);
++        return NULL;
++    }
++
++#ifdef __OpenBSD__
++    add_type_fs_mount_list(&mounts, &local_err);
++    if (local_err) {
++        error_propagate(errp, local_err);
++        return NULL;
++    }
++#endif // defined(__OpenBSD__)
++
++    QTAILQ_FOREACH(mount, &mounts, next) {
++        //g_debug("Building guest fsinfo for '%s'", mount->dirname);
++        //g_debug("Devtype '%s'", mount->devtype);
++        new = g_malloc0(sizeof(*ret));
++        new->value = build_guest_fsinfo(mount, &local_err);
++        new->next = ret;
++        ret = new;
++        if (local_err) {
++            error_propagate(errp, local_err);
++            qapi_free_GuestFilesystemInfoList(ret);
++            ret = NULL;
++            break;
++        }
++    }
++
++    free_fs_mount_list(&mounts);
++    return ret;
++}

@@ -6,7 +6,7 @@ USE_NOBTCFI=	Yes
 COMMENT-main=	multi system emulator
 COMMENT-ga=	QEMU guest agent
 
-VERSION=	9.0.2
+VERSION=	9.1.1
 DISTNAME=	qemu-${VERSION}
 CATEGORIES=	emulators
 SITES=		https://download.qemu.org/
@@ -70,8 +70,8 @@ LIB_DEPENDS-ga=	${LIB_DEPENDS}
 MAKE_ENV=	V=1
 FAKE_FLAGS=	qemu_confdir=${PREFIX}/share/examples/qemu
 
-CFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib
+CFLAGS+=	-I${LOCALBASE}/include
+LDFLAGS+=	-L${LOCALBASE}/lib
 
 # until the system headers are fixed properly.
 CFLAGS+=	-Wno-redundant-decls
