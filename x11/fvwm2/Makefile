@@ -1,6 +1,7 @@
 COMMENT=	multiple virtual desktop window manager
 
 VERSION=	2.7.0
+REVISION=	0
 DISTNAME=	fvwm-${VERSION}
 PKGNAME=	fvwm2-${VERSION}
 

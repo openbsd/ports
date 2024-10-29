@@ -1,6 +1,7 @@
 COMMENT=	multiple virtual desktop window manager
 
 VERSION=	1.1.0
+REVISION=	0
 DISTNAME=	fvwm3-${VERSION}
 
 CATEGORIES=     x11

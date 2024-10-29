@@ -9,6 +9,8 @@ COMMENT-media=		gtk+ media engine
 GNOME_PROJECT=		gtk
 GNOME_VERSION=		4.16.3
 
+REVISION-demos=		0
+
 PKGNAME-main=		gtk+4-${GNOME_VERSION}
 PKGNAME-cups=		gtk+4-cups-${GNOME_VERSION}
 PKGNAME-demos=		gtk+4-demos-${GNOME_VERSION}

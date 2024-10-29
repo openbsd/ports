@@ -3,7 +3,7 @@ VER=		2.29
 DISTNAME=	links-${VER}
 PKGNAME=	links+-${VER}
 CATEGORIES=	www
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://links.twibright.com/
 
