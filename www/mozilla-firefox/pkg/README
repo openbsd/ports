@@ -153,3 +153,10 @@ section of about:support. For this feature, WebGL2 is necessary, so your
 hardware must support at least OpenGL 4.
 
 See https://wiki.mozilla.org/Platform/GFX/Quantum_Render for more details.
+
+Fonts in PDF viewer
+===================
+If using the builtin PDF viewer and you get garbled fonts, bitmap fonts
+should be rejected to fix rendering. A known workaround:
+
+# ln -s /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d
