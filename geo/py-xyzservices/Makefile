@@ -1,10 +1,9 @@
 COMMENT =	source of XYZ tiles providers
 
-MODPY_EGG_VERSION =	2024.6.0
+MODPY_EGG_VERSION =	2024.9.0
 
 DISTNAME =	xyzservices-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =	geo devel
 
