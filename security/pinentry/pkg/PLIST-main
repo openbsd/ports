@@ -1,3 +1,4 @@
 bin/pinentry
 @bin bin/pinentry-curses
+@bin bin/pinentry-tty
 @info info/pinentry.info

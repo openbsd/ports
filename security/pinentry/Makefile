@@ -2,6 +2,7 @@ COMMENT-main = 	PIN or passphrase entry dialog (ncurses interface)
 COMMENT-gnome3 =PIN or passphrase entry dialog (GNOME 3 interface)
 COMMENT-qt5 =	PIN or passphrase entry dialog (Qt5 interface)
 COMMENT-qt6 =	PIN or passphrase entry dialog (Qt6 interface)
+REVISION-main =	0
 REVISION-qt6 =	0
 
 VERSION = 	1.3.0
@@ -57,8 +58,8 @@ CONFIGURE_STYLE = 	gnu
 CONFIGURE_ENV = 	CPPFLAGS="-I${LOCALBASE}/include -D_XOPEN_SOURCE_EXTENDED" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS = 	--enable-pinentry-curses \
+			--enable-pinentry-tty \
 			--disable-pinentry-qt4 \
-			--disable-pinentry-tty \
 			--disable-pinentry-emacs \
 			--disable-pinentry-gtk2 \
 			--disable-pinentry-efl \
