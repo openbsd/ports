@@ -1,11 +1,14 @@
-COMMENT=	interface to HMAC Message-Digest Algorithms
+COMMENT=	keyed-hashing for message authentication
 
-MODULES=	cpan
-PKG_ARCH=	*
-DISTNAME=	Digest-HMAC-1.04
-CATEGORIES=	security
+DISTNAME =	Digest-HMAC-1.05
+
+CATEGORIES =	security
 
 # Perl
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE =	Yes
+
+MODULES =		cpan
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
