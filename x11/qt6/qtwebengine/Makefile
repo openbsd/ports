@@ -2,6 +2,7 @@
 # Patched with security patches up to: 119.0.6045.123
 
 ONLY_FOR_ARCHS =	amd64 aarch64 i386
+BROKEN-i386 =		"ld.lld: error: relocation R_386_32 cannot be used against symbol 'ff_pw_16'; recompile with -fPIC", etc.
 
 USE_WXNEEDED =		Yes
 USE_NOBTCFI =		Yes
