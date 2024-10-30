@@ -78,5 +78,8 @@ share/locale/ru/LC_MESSAGES/libosinfo.mo
 share/locale/si/LC_MESSAGES/libosinfo.mo
 share/locale/tr/LC_MESSAGES/libosinfo.mo
 share/locale/uk/LC_MESSAGES/libosinfo.mo
+share/locale/zh_Hans/
+share/locale/zh_Hans/LC_MESSAGES/
+share/locale/zh_Hans/LC_MESSAGES/libosinfo.mo
 share/vala/vapi/libosinfo-1.0.deps
 share/vala/vapi/libosinfo-1.0.vapi

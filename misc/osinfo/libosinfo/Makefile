@@ -2,7 +2,7 @@ COMMENT=		library for managing information about operating systems
 
 DISTNAME=		libosinfo-${V}
 
-SHARED_LIBS += osinfo-1.0                1.6 # 0.1010.0
+SHARED_LIBS += osinfo-1.0                1.6 # 0.1012.0
 
 WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 intl soup-3.0 xml2 xslt
 
