@@ -159,6 +159,7 @@
      SUBDIR += postgresql_autodoc
      SUBDIR += pspg
      SUBDIR += puppetdb
+     SUBDIR += py-aiosqlite,python3
      SUBDIR += py-alembic,python3
      SUBDIR += py-apsw,python3
      SUBDIR += py-borgstore,python3

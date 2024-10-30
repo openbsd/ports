@@ -419,6 +419,7 @@
      SUBDIR += py-aiohttp,python3
      SUBDIR += py-aiohttp-oauthlib,python3
      SUBDIR += py-aioquic,python3
+     SUBDIR += py-arsenic,python3
      SUBDIR += py-asgiref,python3
      SUBDIR += py-autobahn,python3
      SUBDIR += py-beaker,python3
@@ -427,6 +428,7 @@
      SUBDIR += py-bleach,python3
      SUBDIR += py-bokeh,python3
      SUBDIR += py-bottle,python3
+     SUBDIR += py-browser-cookie3,python3
      SUBDIR += py-cheroot,python3
      SUBDIR += py-cookies,python3
      SUBDIR += py-feedgenerator,python3
@@ -454,6 +456,7 @@
      SUBDIR += py-httplib2,python3
      SUBDIR += py-httpretty,python3
      SUBDIR += py-httpx,python3
+     SUBDIR += py-httpx-ntlm,python3
      SUBDIR += py-hyperframe,python3
      SUBDIR += py-hyperlink,python3
      SUBDIR += py-itsdangerous,python3

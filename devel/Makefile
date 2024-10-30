@@ -1334,6 +1334,7 @@
      SUBDIR += pth
      SUBDIR += ptlib
      SUBDIR += pudb,python3
+     SUBDIR += py-aiocache,python3
      SUBDIR += py-aioresponses,python3
      SUBDIR += py-aiosignal,python3
      SUBDIR += py-aiostream,python3
@@ -1522,6 +1523,7 @@
      SUBDIR += py-llvmlite,python3
      SUBDIR += py-logfury,python3
      SUBDIR += py-logilab-common,python3
+     SUBDIR += py-loguru,python3
      SUBDIR += py-looseversion,python3
      SUBDIR += py-magic,python3
      SUBDIR += py-matrix-common,python3
@@ -1578,6 +1580,7 @@
      SUBDIR += py-ply,python3
      SUBDIR += py-poetry-core,python3
      SUBDIR += py-portalocker,python3
+     SUBDIR += py-prance,python3
      SUBDIR += py-pretend,python3
      SUBDIR += py-process-tests,python3
      SUBDIR += py-progress,python3
@@ -1654,6 +1657,7 @@
      SUBDIR += py-stack_data,python3
      SUBDIR += py-stdnum,python3
      SUBDIR += py-straight.plugin,python3
+     SUBDIR += py-structlog,python3
      SUBDIR += py-suds,python3
      SUBDIR += py-sure,python3
      SUBDIR += py-tabulate,python3

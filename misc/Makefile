@@ -88,6 +88,7 @@
      SUBDIR += plan
      SUBDIR += portroach
      SUBDIR += posixtestsuite
+     SUBDIR += py-aiomcache,python3
      SUBDIR += py-babelfish,python3
      SUBDIR += py-imdb
      SUBDIR += py-jdcal,python3

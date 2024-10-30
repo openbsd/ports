@@ -293,6 +293,7 @@
      SUBDIR += py-in-toto,python3
      SUBDIR += py-josepy,python3
      SUBDIR += py-keyring,python3
+     SUBDIR += py-krb5,python3
      SUBDIR += py-libnacl,python3
      SUBDIR += py-miasm,python3
      SUBDIR += py-mitmproxy_rs,python3
@@ -316,6 +317,7 @@
      SUBDIR += py-securesystemslib,python3
      SUBDIR += py-service_identity,python3
      SUBDIR += py-spake2,python3
+     SUBDIR += py-spnego,python3
      SUBDIR += py-tlsfuzzer,python3
      SUBDIR += py-trustme,python3
      SUBDIR += py-yaswfp,python3
