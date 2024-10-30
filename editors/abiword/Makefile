@@ -1,3 +1,6 @@
+# needs newer rust-based librsvg
+ONLY_FOR_ARCHS=	${RUST_ARCHS}
+
 BROKEN-alpha=	gr_RenderInfo.cpp:426:1: internal compiler error: Segmentation fault
 
 COMMENT=	free cross-platform WYSIWYG word processor
