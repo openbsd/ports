@@ -1,3 +1,20 @@
 @conflict p5-libwww-<6.0
+${P5SITE}/HTML/Form/
 ${P5SITE}/HTML/Form.pm
+${P5SITE}/HTML/Form/FileInput.pm
+${P5SITE}/HTML/Form/IgnoreInput.pm
+${P5SITE}/HTML/Form/ImageInput.pm
+${P5SITE}/HTML/Form/Input.pm
+${P5SITE}/HTML/Form/KeygenInput.pm
+${P5SITE}/HTML/Form/ListInput.pm
+${P5SITE}/HTML/Form/SubmitInput.pm
+${P5SITE}/HTML/Form/TextInput.pm
 @man man/man3p/HTML::Form.3p
+@man man/man3p/HTML::Form::FileInput.3p
+@man man/man3p/HTML::Form::IgnoreInput.3p
+@man man/man3p/HTML::Form::ImageInput.3p
+@man man/man3p/HTML::Form::Input.3p
+@man man/man3p/HTML::Form::KeygenInput.3p
+@man man/man3p/HTML::Form::ListInput.3p
+@man man/man3p/HTML::Form::SubmitInput.3p
+@man man/man3p/HTML::Form::TextInput.3p
