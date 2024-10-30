@@ -19,28 +19,26 @@ MODGO_MODULES =	\
 	github.com/goccy/go-yaml			 v1.11.3 \
 	github.com/golang/freetype			 v0.0.0-20170609003504-e2365dfdc4a0 \
 	github.com/google/go-cmp			 v0.5.9 \
-	github.com/google/pprof				 v0.0.0-20221118152302-e6195bd50e26 \
+	github.com/google/pprof				 v0.0.0-20240409012703-83162a5b38cd \
 	github.com/google/uuid				 v1.6.0 \
 	github.com/hashicorp/golang-lru/v2		 v2.0.7 \
 	github.com/iancoleman/orderedmap		 v0.3.0 \
-	github.com/inconshreveable/mousetrap		 v1.0.1 \
+	github.com/inconshreveable/mousetrap		 v1.1.0 \
 	github.com/itchyny/gojq				 v0.12.16 \
 	github.com/itchyny/timefmt-go			 v0.1.6 \
 	github.com/jwalton/gchalk			 v1.3.0 \
 	github.com/jwalton/go-supportscolor		 v1.2.0 \
-	github.com/kballard/go-shellquote		 v0.0.0-20180428030007-95032a82bc51 \
 	github.com/klauspost/compress			 v1.17.8 \
 	github.com/klauspost/cpuid			 v1.2.0 \
-	github.com/klauspost/cpuid/v2			 v2.2.3 \
 	github.com/leodido/go-urn			 v1.2.0 \
 	github.com/lib/pq				 v1.10.9 \
 	github.com/mattn/go-colorable			 v0.1.13 \
 	github.com/mattn/go-isatty			 v0.0.20 \
-	github.com/mattn/go-runewidth			 v0.0.15 \
-	github.com/mattn/go-sqlite3			 v1.14.22 \
+	github.com/mattn/go-runewidth			 v0.0.16 \
+	github.com/mattn/go-sqlite3			 v1.14.24 \
 	github.com/multiprocessio/go-sqlite3-stdlib	 v0.0.0-20220822170115-9f6825a1cd25 \
 	github.com/ncruces/go-strftime			 v0.1.9 \
-	github.com/noborus/guesswidth			 v0.3.4 \
+	github.com/noborus/guesswidth			 v0.4.0 \
 	github.com/noborus/sqlss			 v0.1.0 \
 	github.com/noborus/tbln				 v0.0.2 \
 	github.com/olekukonko/tablewriter		 v0.0.5 \
@@ -49,7 +47,7 @@ MODGO_MODULES =	\
 	github.com/remyoudompheng/bigfft		 v0.0.0-20230129092748-24d4a6f8daec \
 	github.com/rivo/uniseg				 v0.4.7 \
 	github.com/scylladb/termtables			 v0.0.0-20191203121021-c4c0b6d42ff4 \
-	github.com/spf13/cobra				 v1.6.1 \
+	github.com/spf13/cobra				 v1.8.1 \
 	github.com/spf13/pflag				 v1.0.5 \
 	github.com/stretchr/objx			 v0.1.0 \
 	github.com/stretchr/testify			 v1.8.0 \
@@ -57,26 +55,28 @@ MODGO_MODULES =	\
 	golang.org/x/crypto				 v0.21.0 \
 	golang.org/x/exp				 v0.0.0-20231108232855-2478ac86f678 \
 	golang.org/x/image				 v0.6.0 \
-	golang.org/x/mod				 v0.14.0 \
+	golang.org/x/mod				 v0.16.0 \
 	golang.org/x/net				 v0.21.0 \
-	golang.org/x/sys				 v0.21.0 \
-	golang.org/x/term				 v0.21.0 \
+	golang.org/x/sys				 v0.26.0 \
+	golang.org/x/term				 v0.25.0 \
 	golang.org/x/text				 v0.14.0 \
-	golang.org/x/tools				 v0.17.0 \
+	golang.org/x/tools				 v0.19.0 \
 	golang.org/x/xerrors				 v0.0.0-20231012003039-104605ab7028 \
 	gonum.org/v1/gonum				 v0.14.0 \
 	gonum.org/v1/plot				 v0.10.1 \
 	gopkg.in/check.v1				 v0.0.0-20161208181325-20d25e280405 \
 	gopkg.in/yaml.v3				 v3.0.1 \
-	lukechampine.com/uint128			 v1.2.0 \
-	modernc.org/cc/v3				 v3.41.0 \
-	modernc.org/ccgo/v3				 v3.16.15 \
+	modernc.org/cc/v4				 v4.21.4 \
+	modernc.org/ccgo/v4				 v4.19.2 \
+	modernc.org/fileutil				 v1.3.0 \
+	modernc.org/gc/v2				 v2.4.1 \
 	modernc.org/gc/v3				 v3.0.0-20240304020402-f0dba7c97c2b \
-	modernc.org/libc				 v1.41.0 \
+	modernc.org/libc				 v1.55.3 \
 	modernc.org/mathutil				 v1.6.0 \
-	modernc.org/memory				 v1.7.2 \
+	modernc.org/memory				 v1.8.0 \
 	modernc.org/opt					 v0.1.3 \
-	modernc.org/sqlite				 v1.29.1 \
+	modernc.org/sortutil				 v1.2.0 \
+	modernc.org/sqlite				 v1.31.1 \
 	modernc.org/strutil				 v1.2.0 \
 	modernc.org/token				 v1.1.0 \
 	rsc.io/pdf					 v0.1.1
@@ -86,17 +86,15 @@ MODGO_MODFILES =	\
 	github.com/fatih/color			 v1.10.0 \
 	github.com/google/go-cmp		 v0.5.4 \
 	github.com/google/go-cmp		 v0.5.8 \
-	github.com/google/uuid			 v1.3.0 \
 	github.com/jwalton/go-supportscolor	 v1.1.0 \
 	github.com/klauspost/compress		 v1.4.1 \
 	github.com/mattn/go-colorable		 v0.1.8 \
 	github.com/mattn/go-isatty		 v0.0.12 \
 	github.com/mattn/go-isatty		 v0.0.16 \
 	github.com/mattn/go-runewidth		 v0.0.10 \
-	github.com/mattn/go-runewidth		 v0.0.14 \
+	github.com/mattn/go-runewidth		 v0.0.15 \
 	github.com/mattn/go-runewidth		 v0.0.9 \
 	github.com/mattn/go-sqlite3		 v1.14.14 \
-	github.com/mattn/go-sqlite3		 v1.14.16 \
 	github.com/rivo/uniseg			 v0.1.0 \
 	github.com/rivo/uniseg			 v0.2.0 \
 	github.com/stretchr/testify		 v1.7.0 \
@@ -105,7 +103,7 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto			 v0.0.0-20220722155217-630584e8d5aa \
 	golang.org/x/crypto			 v0.7.0 \
 	golang.org/x/exp			 v0.0.0-20230321023759-10a507213a29 \
-	golang.org/x/mod			 v0.10.0 \
+	golang.org/x/mod			 v0.14.0 \
 	golang.org/x/mod			 v0.9.0 \
 	golang.org/x/net			 v0.0.0-20211112202133-69e39bad7dc2 \
 	golang.org/x/sys			 v0.0.0-20201119102817-f84b799fce68 \
@@ -115,9 +113,9 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.0.0-20211004093028-2c5d950f24ef \
 	golang.org/x/sys			 v0.0.0-20220811171246-fbc7d0a398ab \
 	golang.org/x/sys			 v0.14.0 \
-	golang.org/x/sys			 v0.16.0 \
 	golang.org/x/sys			 v0.18.0 \
 	golang.org/x/sys			 v0.20.0 \
+	golang.org/x/sys			 v0.22.0 \
 	golang.org/x/sys			 v0.6.0 \
 	golang.org/x/term			 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/term			 v0.0.0-20210220032956-6a3ed077a48d \
@@ -128,10 +126,8 @@ MODGO_MODFILES =	\
 	golang.org/x/tools			 v0.0.0-20180917221912-90fa682c2a6e \
 	golang.org/x/tools			 v0.15.0 \
 	golang.org/x/tools			 v0.7.0 \
-	golang.org/x/tools			 v0.9.3 \
 	golang.org/x/xerrors			 v0.0.0-20200804184101-5ec99f83aff1 \
 	gonum.org/v1/gonum			 v0.11.0 \
 	gopkg.in/yaml.v3			 v3.0.0-20200313102051-9f266ea9e77c \
-	modernc.org/gc/v3			 v3.0.0-20240107210532-573471604cb6 \
-	modernc.org/strutil			 v1.1.3
+	modernc.org/gc/v3			 v3.0.0-20240107210532-573471604cb6
 
