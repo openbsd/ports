@@ -1,31 +1,56 @@
 COMMENT =	web-application vulnerability scanner
 
-MODPY_EGG_VERSION =	3.0.1
+MODPY_EGG_VERSION =	3.2.0
 DISTNAME =	wapiti3-${MODPY_EGG_VERSION}
 PKGNAME =	wapiti-${MODPY_EGG_VERSION}
-REVISION =	8
 
 CATEGORIES =	security www
 
-HOMEPAGE =	https://wapiti.sourceforge.net/
-
-MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
+HOMEPAGE =	https://wapiti-scanner.github.io/
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-SITES =			${SITE_SOURCEFORGE:=wapiti/}
-
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
 
-RUN_DEPENDS =		www/py-requests${MODPY_FLAVOR} \
-			www/py-beautifulsoup4${MODPY_FLAVOR} \
-			textproc/py-lxml${MODPY_FLAVOR} \
-			www/py-mako${MODPY_FLAVOR} \
-			net/py-socks${MODPY_FLAVOR} \
+MODPY_PI =		Yes
+MODPY_PYBUILD =		setuptools
+
+RUN_DEPENDS =		archivers/py-brotli${MODPY_FLAVOR} \
+			archivers/py-brotlicffi${MODPY_FLAVOR} \
+			databases/py-aiosqlite${MODPY_FLAVOR} \
+			databases/py-sqlalchemy${MODPY_FLAVOR} \
+			devel/py-aiocache${MODPY_FLAVOR} \
+			devel/py-asn1${MODPY_FLAVOR} \
+			devel/py-loguru${MODPY_FLAVOR} \
+			devel/py-prance${MODPY_FLAVOR} \
+			devel/py-six${MODPY_FLAVOR} \
+			devel/py-typing-extensions${MODPY_FLAVOR} \
+			net/py-dnspython${MODPY_FLAVOR} \
 			net/py-tld${MODPY_FLAVOR} \
-			devel/py-html5lib${MODPY_FLAVOR} \
-			security/py-yaswfp${MODPY_FLAVOR}
+			security/mitmproxy \
+			security/py-yaswfp${MODPY_FLAVOR} \
+			security/sslscan \
+			textproc/py-MarkupSafe${MODPY_FLAVOR} \
+			textproc/py-humanize${MODPY_FLAVOR} \
+			www/py-aiohttp${MODPY_FLAVOR} \
+			www/py-arsenic${MODPY_FLAVOR} \
+			www/py-beautifulsoup4${MODPY_FLAVOR} \
+			www/py-browser-cookie3${MODPY_FLAVOR} \
+			www/py-h11${MODPY_FLAVOR} \
+			www/py-httpcore${MODPY_FLAVOR} \
+			www/py-httpx${MODPY_FLAVOR} \
+			www/py-httpx-ntlm${MODPY_FLAVOR} \
+			www/py-mako${MODPY_FLAVOR}
+
+# here no tests inside
+NO_TEST =		Yes
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/wapiti
+	${INSTALL_DATA} ${WRKSRC}/doc/* \
+		${PREFIX}/share/doc/wapiti
+	mv ${PREFIX}/share/doc/wapiti/*.1 ${PREFIX}/man/man1
+
 
 .include <bsd.port.mk>
