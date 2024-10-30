@@ -10,8 +10,7 @@ you will need to make a few configuration changes to tomcat to use it.
 If you have not yet modified Tomcat's configuration, this readme includes
 a patch which can be used:
 
-	# patch -d ${CATALINA_BASE}/conf < \
-	    ${LOCALBASE}/share/doc/pkg-readmes/${PKGSTEM}
+	# patch -d ${CATALINA_BASE}/conf < ${LOCALBASE}/share/doc/pkg-readmes/${PKGSTEM}
 
 Then skip to the next section in this file, "Starting the service
 and online configuration".
