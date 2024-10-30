@@ -12,7 +12,7 @@ Index: src/filter.c
  
  #include "err.h"
  #include "mem.h"
-@@ -380,7 +383,7 @@ main (int argc, char *argv[])
+@@ -404,7 +407,7 @@ main (int argc, char *argv[])
  	}
  	
  	printJob.jobStatus = EPS_STATUS_ESTABLISHED;
@@ -21,7 +21,7 @@ Index: src/filter.c
  ///////////////////////////////////////////////////////////////////////////////////////////////////////////	
  
  	print_area_x = printJob.printableAreaWidth;
-@@ -409,7 +412,7 @@ main (int argc, char *argv[])
+@@ -438,7 +441,7 @@ main (int argc, char *argv[])
  	while ((read_page_no = read (STDIN_FILENO, &page_num, 1)) > 0)  // 最初に page番号を読み込み
  	{
  		long x_count, y_count;
@@ -30,7 +30,7 @@ Index: src/filter.c
  		y_count = 0;
  		band_line_count = 0;
  
-@@ -497,7 +500,11 @@ main (int argc, char *argv[])
+@@ -526,7 +529,11 @@ main (int argc, char *argv[])
  					pagebuf+= bandBmp.widthBytes;
  					posbuf+=bandBmp.widthBytes;
  
@@ -42,7 +42,7 @@ Index: src/filter.c
  					bandBmp.bits += band_line_count;
  					
  				}
-@@ -508,13 +515,17 @@ main (int argc, char *argv[])
+@@ -537,13 +544,17 @@ main (int argc, char *argv[])
  				memcpy(pagebuf, bandBmp.bits, bandBmp.widthBytes);
  				pagebuf+= bandBmp.widthBytes;
  				posbuf+= bandBmp.widthBytes;
@@ -61,7 +61,7 @@ Index: src/filter.c
  			for (revert = print_area_y; revert > 0; revert--)
  			{
  				if (3 != byte_par_pixel)
-@@ -658,7 +669,11 @@ main (int argc, char *argv[])
+@@ -687,7 +698,11 @@ main (int argc, char *argv[])
  #endif
  					debug_msg("printHeight = %d\n", printHeight);
  					debug_msg("widthByte = %d\n", bandBmp.widthBytes);
@@ -73,7 +73,7 @@ Index: src/filter.c
  					bandBmp.bits += band_line_count;
  				}
  				
-@@ -680,7 +695,11 @@ main (int argc, char *argv[])
+@@ -709,7 +724,11 @@ main (int argc, char *argv[])
  				fprintf(fp, "\n");
  				fclose(fp);
  #endif

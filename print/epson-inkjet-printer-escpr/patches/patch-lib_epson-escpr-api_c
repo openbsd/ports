@@ -9,7 +9,7 @@ Index: lib/epson-escpr-api.c
  #include "epson-escpr-pvt.h"
  #include "epson-escpr-services.h"
  #include "epson-escpr-pm.h"
-@@ -231,7 +232,7 @@ static const EPS_UINT8 PrintQualityCmd[] = {
+@@ -235,7 +236,7 @@ static const EPS_UINT8 PrintQualityCmd[] = {
  
      /*** ESC/P-R Commands (Print Num)                                                   */
      /*** -------------------------------------------------------------------------------*/
@@ -18,7 +18,7 @@ Index: lib/epson-escpr-api.c
  	                        0x1B, 'n', 0x02, 0x00, 0x00, 0x00,
                              's', 'e', 't', 'n',
                              0x00, 0x00};
-@@ -251,7 +252,7 @@ static const EPS_UINT8 SetiCmd[]   = {
+@@ -255,7 +256,7 @@ static const EPS_UINT8 SetiCmd[]   = {
  
      /*** ESC/P-R Commands (custom setting)                                              */
      /*** -------------------------------------------------------------------------------*/
@@ -27,7 +27,7 @@ Index: lib/epson-escpr-api.c
  	                        0x1B, 'm', 0x01, 0x00, 0x00, 0x00,
                              's', 'e', 't', 'c',
                              0x00 };
-@@ -4506,7 +4507,7 @@ EPS_UINT8       array4[4] = {0, 0, 0, 0};   /* Tempora
+@@ -4531,7 +4532,7 @@ EPS_UINT8       array4[4] = {0, 0, 0, 0};   /* Tempora
  /*======================================================================================*/
  /*** Set up ESC/PR "Print Num" Command                                                  */
  /*======================================================================================*/
