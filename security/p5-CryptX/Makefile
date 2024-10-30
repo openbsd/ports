@@ -1,6 +1,6 @@
 COMMENT =	cryptographic toolkit for Perl
 
-DISTNAME =	CryptX-0.081
+DISTNAME =	CryptX-0.084
 CPAN_AUTHOR =	MIK
 
 CATEGORIES =	security
