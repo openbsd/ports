@@ -108,6 +108,7 @@ share/scite/tacl.properties
 share/scite/tal.properties
 share/scite/tcl.properties
 share/scite/tex.properties
+share/scite/troff.properties
 share/scite/txt2tags.properties
 share/scite/vb.properties
 share/scite/verilog.properties

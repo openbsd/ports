@@ -1,6 +1,6 @@
 COMMENT=		flexible and small GTK+ editor
 
-VERSION=		5.5.2
+VERSION=		5.5.3
 DISTNAME=		scite${VERSION:S/.//g}
 PKGNAME=		scite-${VERSION}
 CATEGORIES=		editors x11
