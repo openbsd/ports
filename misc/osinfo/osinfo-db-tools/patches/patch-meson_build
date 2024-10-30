@@ -5,9 +5,9 @@ ld: error: undefined symbol: _Unwind_Resume
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -203,7 +203,6 @@ osinfo_db_tools_check_cflags = [
+@@ -202,7 +202,6 @@ osinfo_db_tools_check_cflags = [
+   '-Wframe-larger-than=4096',
    '-Wno-overlength-strings',
-   '-Wp,-D_FORTIFY_SOURCE=2',
    '--param=ssp-buffer-size=4',
 -  '-fexceptions',
    '-fasynchronous-unwind-tables',
