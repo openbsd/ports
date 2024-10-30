@@ -1,9 +1,8 @@
 COMMENT =		Python library for reading and writing PDF files
 
-MODPY_EGG_VERSION =	8.15.1
+MODPY_EGG_VERSION =	9.4.0
 DISTNAME =		pikepdf-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/.post/pl/}
-REVISION =		0
 
 CATEGORIES =		print
 
@@ -20,7 +19,6 @@ COMPILER =		base-clang ports-gcc
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
-MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	-rs -v -o addopts=
 CFLAGS +=		-I/usr/local/include
 
