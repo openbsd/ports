@@ -1,1 +1,1 @@
-HTTP Style messages
+An "HTTP::Message" object contains some headers and a content body.

@@ -1,26 +1,26 @@
-COMMENT =	HTTP Style Messages
+COMMENT =	HTTP style message
 
-DISTNAME =	HTTP-Message-6.31
+DISTNAME =	HTTP-Message-7.00
+
 CATEGORIES =	www
 
-MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
+MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes
 
-MODULES =	cpan
-PKG_ARCH =	*
+MODULES =		cpan
 
-RUN_DEPENDS =	devel/p5-Clone \
-		textproc/p5-Encode-Locale>=1.00 \
-		www/p5-IO-HTML \
-		www/p5-HTTP-Date>=6.00 \
-		www/p5-LWP-MediaTypes>=6.00 \
-		www/p5-URI>=1.10
+RUN_DEPENDS =		devel/p5-Clone>=0.46 \
+			textproc/p5-Encode-Locale>=1.00 \
+			www/p5-HTTP-Date>=6.00 \
+			www/p5-IO-HTML \
+			www/p5-LWP-MediaTypes>=6.00 \
+			www/p5-URI>=1.10
 
-TEST_DEPENDS =	devel/p5-Try-Tiny
+TEST_DEPENDS =		devel/p5-Test-Needs \
+			devel/p5-Try-Tiny
 
-post-build:
-		@find ${WRKSRC}/blib \( -name "*.orig" -o -name "*.rej" \) -delete
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
