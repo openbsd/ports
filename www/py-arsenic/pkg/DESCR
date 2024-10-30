@@ -1,0 +1,8 @@
+Arsenic is a library that allows you to control a web browser from async
+Python code. Use cases include testing of web applications, load
+testing, automating websites, web scraping or anything else you need a
+web browser for. It uses real web browsers using the Webdriver
+specification.
+
+While it is built on top of aiohttp, it can be used from any
+asyncio-compatible framework, such as Tornado.
