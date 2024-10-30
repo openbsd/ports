@@ -1,0 +1,4 @@
+This package allows for HTTP NTLM authentication using the HTTPX
+library.
+
+It is an adaptation of https://github.com/requests/requests-ntlm
