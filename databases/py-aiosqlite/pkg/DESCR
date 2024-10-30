@@ -1,0 +1,5 @@
+aiosqlite provides a friendly, async interface to sqlite databases.
+
+It replicates the standard sqlite3 module, but with async versions of
+all the standard connection and cursor methods, plus context managers
+for automatically closing connections and cursors.
