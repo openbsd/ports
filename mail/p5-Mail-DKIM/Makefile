@@ -1,6 +1,6 @@
 COMMENT =	DKIM and DomainKeys message-signing implementation
 
-DISTNAME =	Mail-DKIM-1.20240619
+DISTNAME =	Mail-DKIM-1.20240923
 
 CATEGORIES =	mail
 
