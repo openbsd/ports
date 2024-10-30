@@ -1,0 +1,18 @@
+Asyncio cache supporting multiple backends (memory, redis and
+memcached).
+
+This library aims for simplicity over specialization. All caches contain
+the same minimum interface which consists on the following functions:
+
+ - add: Only adds key/value if key does not exist.
+ - get: Retrieve value identified by key.
+ - set: Sets key/value.
+ - multi_get: Retrieves multiple key/values.
+ - multi_set: Sets multiple key/values.
+ - exists: Returns True if key exists False otherwise.
+ - increment: Increment the value stored in the given key.
+ - delete: Deletes key and returns number of deleted items.
+ - clear: Clears the items stored.
+ - raw: Executes the specified command using the underlying client.
+
+See example of usage here: https://github.com/aio-libs/aiocache
