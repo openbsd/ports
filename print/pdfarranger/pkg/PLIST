@@ -49,6 +49,7 @@ share/icons/hicolor/32x32/apps/com.github.jeromerobert.pdfarranger.png
 share/icons/hicolor/48x48/apps/com.github.jeromerobert.pdfarranger.png
 share/icons/hicolor/scalable/apps/com.github.jeromerobert.pdfarranger.svg
 share/icons/hicolor/symbolic/apps/com.github.jeromerobert.pdfarranger-symbolic.svg
+share/locale/ar/LC_MESSAGES/pdfarranger.mo
 share/locale/ca/LC_MESSAGES/pdfarranger.mo
 share/locale/ca@valencia/LC_MESSAGES/pdfarranger.mo
 share/locale/cs/LC_MESSAGES/pdfarranger.mo

@@ -1,6 +1,6 @@
 COMMENT=	GUI tool to rearrange and modify PDF files
 
-MODPY_EGG_VERSION=	1.11.0
+MODPY_EGG_VERSION=	1.11.1
 GH_ACCOUNT=	pdfarranger
 GH_PROJECT=	pdfarranger
 GH_TAGNAME=	${MODPY_EGG_VERSION}
