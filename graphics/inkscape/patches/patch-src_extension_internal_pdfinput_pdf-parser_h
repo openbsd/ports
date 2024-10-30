@@ -1,0 +1,25 @@
+Fix build with poppler-24.10.0.
+
+From upstream commit 22304ae8034d067670a9f95022083a75fac92b4c.
+
+Index: src/extension/internal/pdfinput/pdf-parser.h
+--- src/extension/internal/pdfinput/pdf-parser.h.orig
++++ src/extension/internal/pdfinput/pdf-parser.h
+@@ -138,7 +138,7 @@ class PdfParser { (public)
+     void loadPatternColorProfiles(Dict *resources);
+     void loadColorProfile();
+     void loadColorSpaceProfile(GfxColorSpace *space, Object *obj);
+-    GfxPattern *lookupPattern(Object *obj, GfxState *state);
++    std::unique_ptr<GfxPattern> lookupPattern(Object *obj, GfxState *state);
+ 
+     std::shared_ptr<CairoFontEngine> getFontEngine();
+ 
+@@ -177,7 +177,7 @@ class PdfParser { (public)
+     //! Caches color spaces by name
+     std::map<std::string, std::unique_ptr<GfxColorSpace>> colorSpacesCache;
+ 
+-    GfxColorSpace *lookupColorSpaceCopy(Object &);
++    std::unique_ptr<GfxColorSpace> lookupColorSpaceCopy(Object &);
+ 
+     void setDefaultApproximationPrecision(); // init color deltas
+     void pushOperator(const char *name);

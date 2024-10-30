@@ -1,0 +1,20 @@
+Fix build with poppler-24.10.0.
+
+From upstream commit 22304ae8034d067670a9f95022083a75fac92b4c.
+
+Index: src/extension/internal/pdfinput/poppler-transition-api.h
+--- src/extension/internal/pdfinput/poppler-transition-api.h.orig
++++ src/extension/internal/pdfinput/poppler-transition-api.h
+@@ -15,6 +15,12 @@
+ #include <glib/poppler-features.h>
+ #include <poppler/UTF.h>
+ 
++#if POPPLER_CHECK_VERSION(24, 10, 0)
++#define _POPPLER_CONSUME_UNIQPTR_ARG(value) std::move(value)
++#else
++#define _POPPLER_CONSUME_UNIQPTR_ARG(value) value.release()
++#endif
++
+ #if POPPLER_CHECK_VERSION(24, 5, 0)
+ #define _POPPLER_HAS_UNICODE_BOM(value) (hasUnicodeByteOrderMark(value->toStr()))
+ #define _POPPLER_HAS_UNICODE_BOMLE(value) (hasUnicodeByteOrderMarkLE(value->toStr()))

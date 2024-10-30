@@ -1,10 +1,8 @@
 COMMENT =	SVG vector drawing application
 
-# After the next update, try to re-enable poppler.
-
 VERSION =	1.4
 DISTNAME =	inkscape-${VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	graphics
 
@@ -24,7 +22,7 @@ WANTLIB += freetype gc gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0
 WANTLIB += giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0
 WANTLIB += gsl gslcblas gspell-1 gtk-3 gtkmm-3.0 gtksourceview-4
 WANTLIB += harfbuzz iconv intl jpeg lcms2 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pangomm-1.4 png potrace
+WANTLIB += pangoft2-1.0 pangomm-1.4 png poppler poppler-glib potrace
 WANTLIB += sigc-2.0 xml2 xslt z
 
 SITES =		https://media.inkscape.org/dl/resources/file/
@@ -35,8 +33,6 @@ MODULES =	devel/cmake \
 		lang/ruby
 
 COMPILER =	base-clang ports-gcc
-
-CONFIGURE_ARGS +=	-DENABLE_POPPLER=False
 
 # We are just substituting paths at build time
 MODRUBY_BUILDDEP =	No
@@ -58,6 +54,7 @@ LIB_DEPENDS =	devel/boost \
 		graphics/lcms2 \
 		graphics/png \
 		graphics/potrace \
+		print/poppler \
 		textproc/gspell \
 		textproc/libxslt \
 		x11/gtk+3 \
