@@ -1,14 +1,22 @@
 Index: pyproject.toml
 --- pyproject.toml.orig
 +++ pyproject.toml
-@@ -9,10 +9,6 @@ requires = [
+@@ -8,15 +8,15 @@ requires = [
+     # NOTE: it is still possible to build PyTables with numpy 1.x
+     # Please refer to https://github.com/PyTables/PyTables/issues/1200
+     # If you change this to build with `numpy` 1, please update `numpy` in `dependencies` as well
+-    # "numpy >= 1.20.0,<2",
+-    "numpy >= 2",
++     "numpy >= 1.20.0,<2",
++    #"numpy >= 2",
      "packaging",
      "py-cpuinfo",
      "Cython >=0.29.32",
--    # Included here for seamless wheel builds.
--    # Packagers can choose to replace it by externally provided
--    # c-blosc2 library and headers
--    "blosc2 >=2.3.0",
+     # Included here for seamless wheel builds.
+     # Packagers can choose to replace it by externally provided
+     # c-blosc2 library and headers
+-    "blosc2 >= 2.3.0",
++    #"blosc2 >= 2.3.0",
+     "typing-extensions >= 4.4.0",
  ]
  build-backend = "setuptools.build_meta"
- # build-backend = "mesonpy"  # and replace ``setuptools`` above

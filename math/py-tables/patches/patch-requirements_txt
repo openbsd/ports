@@ -1,8 +1,20 @@
 Index: requirements.txt
 --- requirements.txt.orig
 +++ requirements.txt
-@@ -4,4 +4,3 @@ numpy>=1.19.0
- numexpr>=2.6.2
- packaging
- py-cpuinfo
--blosc2>=2.3.0
+@@ -4,7 +4,6 @@
+ #
+ #    pip-compile --generate-hashes requirements.in
+ #
+-blosc2==2.7.1 \
+     --hash=sha256:06e0933855a6cba347692f08de1aaa51a8858dda67e7c5eaeaab59663b897879 \
+     --hash=sha256:150030e81bd5037f802ce7844281a37ff67e0998aa1735c48b02f3c6401bf0a1 \
+     --hash=sha256:18770f75174a3aae5712f53e9cb5885b258b730b281cbb3bf1e7a74ea3d94fae \
+@@ -123,7 +122,7 @@ numexpr==2.10.1 \
+     # via
+     #   -r requirements.in
+     #   blosc2
+-numpy==2.0.1 \
++numpy>=1.26.4 \
+     --hash=sha256:08458fbf403bff5e2b45f08eda195d4b0c9b35682311da5a5a0a0925b11b9bd8 \
+     --hash=sha256:0fbb536eac80e27a2793ffd787895242b7f18ef792563d742c2d673bfcb75134 \
+     --hash=sha256:12f5d865d60fb9734e60a60f1d5afa6d962d8d4467c120a1c0cda6eb2964437d \

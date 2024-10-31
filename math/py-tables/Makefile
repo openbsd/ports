@@ -1,10 +1,9 @@
 COMMENT=	Python package to manage extremely large amounts of data
 
-MODPY_EGG_VERSION=	3.9.2
+MODPY_EGG_VERSION=	3.10.1
 DISTNAME=		tables-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		math
-REVISION=		0
 
 HOMEPAGE=	https://www.pytables.org/
 MAINTAINER=	Martin Reindl <martin@catai.org>
