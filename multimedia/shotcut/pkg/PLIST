@@ -101,6 +101,9 @@ share/shotcut/qml/filters/audio_limiter/ui.qml
 share/shotcut/qml/filters/audio_lowpass/
 share/shotcut/qml/filters/audio_lowpass/meta.qml
 share/shotcut/qml/filters/audio_lowpass/ui.qml
+share/shotcut/qml/filters/audio_matrix_ms/
+share/shotcut/qml/filters/audio_matrix_ms/meta.qml
+share/shotcut/qml/filters/audio_matrix_ms/ui.qml
 share/shotcut/qml/filters/audio_mono/
 share/shotcut/qml/filters/audio_mono/meta.qml
 share/shotcut/qml/filters/audio_mute/
@@ -263,6 +266,10 @@ share/shotcut/qml/filters/dither/
 share/shotcut/qml/filters/dither/icon.webp
 share/shotcut/qml/filters/dither/meta.qml
 share/shotcut/qml/filters/dither/ui.qml
+share/shotcut/qml/filters/dropshadow/
+share/shotcut/qml/filters/dropshadow/icon.webp
+share/shotcut/qml/filters/dropshadow/meta.qml
+share/shotcut/qml/filters/dropshadow/ui.qml
 share/shotcut/qml/filters/dust/
 share/shotcut/qml/filters/dust/icon.webp
 share/shotcut/qml/filters/dust/meta.qml
@@ -450,6 +457,11 @@ share/shotcut/qml/filters/reflect/
 share/shotcut/qml/filters/reflect/icon.webp
 share/shotcut/qml/filters/reflect/meta.qml
 share/shotcut/qml/filters/reflect/ui.qml
+share/shotcut/qml/filters/reframe/
+share/shotcut/qml/filters/reframe/icon.webp
+share/shotcut/qml/filters/reframe/meta.qml
+share/shotcut/qml/filters/reframe/ui.qml
+share/shotcut/qml/filters/reframe/vui.qml
 share/shotcut/qml/filters/rgbsplit0r/
 share/shotcut/qml/filters/rgbsplit0r/icon.webp
 share/shotcut/qml/filters/rgbsplit0r/meta.qml
@@ -526,6 +538,11 @@ share/shotcut/qml/filters/stabilize/
 share/shotcut/qml/filters/stabilize/icon.webp
 share/shotcut/qml/filters/stabilize/meta.qml
 share/shotcut/qml/filters/stabilize/ui.qml
+share/shotcut/qml/filters/subtitle/
+share/shotcut/qml/filters/subtitle/icon.webp
+share/shotcut/qml/filters/subtitle/meta.qml
+share/shotcut/qml/filters/subtitle/ui.qml
+share/shotcut/qml/filters/subtitle/vui.qml
 share/shotcut/qml/filters/tcolor/
 share/shotcut/qml/filters/tcolor/icon.webp
 share/shotcut/qml/filters/tcolor/meta.qml
@@ -564,6 +581,10 @@ share/shotcut/qml/filters/vertigo/
 share/shotcut/qml/filters/vertigo/icon.webp
 share/shotcut/qml/filters/vertigo/meta.qml
 share/shotcut/qml/filters/vertigo/ui.qml
+share/shotcut/qml/filters/vibrance/
+share/shotcut/qml/filters/vibrance/icon.webp
+share/shotcut/qml/filters/vibrance/meta.qml
+share/shotcut/qml/filters/vibrance/ui.qml
 share/shotcut/qml/filters/video_autofade/
 share/shotcut/qml/filters/video_autofade/meta.qml
 share/shotcut/qml/filters/video_autofade/ui.qml
@@ -643,6 +664,8 @@ share/shotcut/qml/views/timeline/Clip.qml
 share/shotcut/qml/views/timeline/CornerSelectionShadow.qml
 share/shotcut/qml/views/timeline/PulsingAnimation.qml
 share/shotcut/qml/views/timeline/Ruler.qml
+share/shotcut/qml/views/timeline/Subtitle.qml
+share/shotcut/qml/views/timeline/SubtitleBar.qml
 share/shotcut/qml/views/timeline/Timeline.js
 share/shotcut/qml/views/timeline/Track.js
 share/shotcut/qml/views/timeline/Track.qml
@@ -660,6 +683,7 @@ share/shotcut/translations/shotcut_en.qm
 share/shotcut/translations/shotcut_en_GB.qm
 share/shotcut/translations/shotcut_es.qm
 share/shotcut/translations/shotcut_et.qm
+share/shotcut/translations/shotcut_eu.qm
 share/shotcut/translations/shotcut_fi.qm
 share/shotcut/translations/shotcut_fr.qm
 share/shotcut/translations/shotcut_gd.qm
