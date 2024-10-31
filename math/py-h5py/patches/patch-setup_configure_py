@@ -3,7 +3,7 @@ Avoid rebuild during make fake.
 Index: setup_configure.py
 --- setup_configure.py.orig
 +++ setup_configure.py
-@@ -178,8 +178,8 @@ class BuildConfig:
+@@ -198,8 +198,8 @@ class BuildConfig:
          }
  
      def changed(self):

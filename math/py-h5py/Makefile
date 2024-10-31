@@ -1,12 +1,9 @@
-BROKEN =	needs adjusting for cython 3
-
 COMMENT =	pythonic interface to the HDF5 binary data format
 
-MODPY_EGG_VERSION =	3.10.0
+MODPY_EGG_VERSION =	3.12.1
 DISTNAME =		h5py-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		0
 
 HOMEPAGE =		https://www.h5py.org/
 MAINTAINER =		Martin Reindl <martin@catai.org>
@@ -24,7 +21,7 @@ MODPY_PI =		Yes
 FLAVORS =	python3
 FLAVOR =	python3
 
-WANTLIB =	pthread hdf5 hdf5_hl
+WANTLIB =	hdf5 hdf5_hl
 
 MAKE_ENV =	HDF5_DIR=${PREFIX}
 
