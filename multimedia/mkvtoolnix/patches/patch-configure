@@ -1,0 +1,45 @@
+From NetBSD:
+Fix Qt6 detection.
+Fix configuring without po4a.
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -9228,9 +9228,9 @@ printf "%s\n" "$qmake6_ver" >&6; }
+ 
+   qt_searchpath="$qt_libexecdir:$qt_bindir:$PATH"
+ 
+-  QT_CFLAGS="`$ac_cv_path_EGREP '^DEFINES *=' "$qmake_dir/Makefile" | sed 's/^DEFINES *= *//'`"
+-  QT_CFLAGS="$QT_CFLAGS `$ac_cv_path_EGREP '^CXXFLAGS *=' "$qmake_dir/Makefile" | sed -e 's/^CXXFLAGS *= *//' -e 's/-pipe//g' -e 's/-O.//g' -e 's/ -f[a-z][^ ]*//g' -e 's/ -W[^ ]*//g' -e 's/-std=[^ ]*//g' -e 's/\$([^)]*)//g'`"
+-  QT_INCFLAGS="`$ac_cv_path_EGREP '^INCPATH *=' "$qmake_dir/Makefile" | sed -e 's/^INCPATH *= *//'`"
++  QT_CFLAGS="`$ac_cv_path_EGREP '^DEFINES *\+=' "$qmake_dir/Makefile" | sed 's/^DEFINES *+= *//'`"
++  QT_CFLAGS="$QT_CFLAGS `$ac_cv_path_EGREP '^CXXFLAGS *\+=' "$qmake_dir/Makefile" | sed -e 's/^CXXFLAGS *+= *//' -e 's/-pipe//g' -e 's/-O.//g' -e 's/ -f[a-z][^ ]*//g' -e 's/ -W[^ ]*//g' -e 's/-std=[^ ]*//g' -e 's/\$([^)]*)//g'`"
++  QT_INCFLAGS="`$ac_cv_path_EGREP '^INCPATH *\+=' "$qmake_dir/Makefile" | sed -e 's/^INCPATH *+= *//'`"
+ 
+   # If under MinGW/MSYS2, fix relative include paths
+   if ! test -z "${MINGW_PREFIX}"; then
+@@ -9240,11 +9240,11 @@ printf "%s\n" "$qmake6_ver" >&6; }
+   QT_INCFLAGS="`echo $QT_INCFLAGS | sed -e 's:-I[^/][^ ]*::g'`"
+   QT_CFLAGS="$QT_CFLAGS $QT_INCFLAGS"
+   QT_CFLAGS="`echo $QT_CFLAGS | sed -e 's/\$(EXPORT_ARCH_ARGS)//'`"
+-  QT_LIBS="`$ac_cv_path_EGREP '^LFLAGS *=' "$qmake_dir/Makefile" | sed -e 's/^LFLAGS *= *//' -e 's/-Wl,-O[^ ]*//g' -e 's/ -f[a-z][^ ]*//g'`"
+-  QT_LIBS="$QT_LIBS `$ac_cv_path_EGREP '^LIBS *=' "$qmake_dir/Makefile" | sed -e 's/^LIBS *= *//' -e 's/\$([^)]*)//g' -e 's:-L[^/][^ ]*::g'`"
++  QT_LIBS="`$ac_cv_path_EGREP '^LFLAGS *\+=' "$qmake_dir/Makefile" | sed -e 's/^LFLAGS *+= *//' -e 's/-Wl,-O[^ ]*//g' -e 's/ -f[a-z][^ ]*//g'`"
++  QT_LIBS="$QT_LIBS `$ac_cv_path_EGREP '^LIBS *\+=' "$qmake_dir/Makefile" | sed -e 's/^LIBS *+= *//' -e 's/\$([^)]*)//g' -e 's:-L[^/][^ ]*::g'`"
+   QT_LIBS="`echo $QT_LIBS | sed -e 's/\$(EXPORT_ARCH_ARGS)//'`"
+-  QT_LIBS_NON_GUI="`$ac_cv_path_EGREP '^LFLAGS *=' "$qmake_dir/Makefile.non_gui" | sed -e 's/^LFLAGS *= *//' -e 's/-Wl,-O[^ ]*//g' -e 's/ -f[a-z][^ ]*//g'`"
+-  QT_LIBS_NON_GUI="$QT_LIBS_NON_GUI `$ac_cv_path_EGREP '^LIBS *=' "$qmake_dir/Makefile.non_gui" | sed -e 's/^LIBS *= *//' -e 's/\$([^)]*)//g' -e 's:-L[^/][^ ]*::g'`"
++  QT_LIBS_NON_GUI="`$ac_cv_path_EGREP '^LFLAGS *\+=' "$qmake_dir/Makefile.non_gui" | sed -e 's/^LFLAGS *+= *//' -e 's/-Wl,-O[^ ]*//g' -e 's/ -f[a-z][^ ]*//g'`"
++  QT_LIBS_NON_GUI="$QT_LIBS_NON_GUI `$ac_cv_path_EGREP '^LIBS *\+=' "$qmake_dir/Makefile.non_gui" | sed -e 's/^LIBS *+= *//' -e 's/\$([^)]*)//g' -e 's:-L[^/][^ ]*::g'`"
+   QT_LIBS_NON_GUI="`echo $QT_LIBS_NON_GUI | sed -e 's/\$(EXPORT_ARCH_ARGS)//' -e 's/-Wl,-subsystem,windows *//g'`"
+ 
+   rm -rf "$qmake_dir"
+@@ -11538,7 +11538,7 @@ PO4A_FLAGS="-k $TRANSLATE_PERCENT"
+ 
+ 
+ # Check whether --with-po4a was given.
+-if test ${with_po4a+y}
++if test "x$with_po4a" != "xno"
+ then :
+   withval=$with_po4a;  PO4A="$with_po4a"
+ fi

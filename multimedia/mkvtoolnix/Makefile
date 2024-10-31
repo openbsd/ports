@@ -1,7 +1,6 @@
 COMMENT=	create, alter and inspect Matroska files
 
-DISTNAME=	mkvtoolnix-81.0
-REVISION=	0
+DISTNAME=	mkvtoolnix-88.0
 
 CATEGORIES=	multimedia x11
 
@@ -12,8 +11,8 @@ MAINTAINER=	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} FLAC Qt5Concurrent Qt5Core Qt5DBus
-WANTLIB += Qt5Gui Qt5Multimedia Qt5Network Qt5Svg Qt5Widgets boost_filesystem
+WANTLIB += ${COMPILER_LIBCXX} FLAC GL Qt6Concurrent Qt6Core Qt6DBus
+WANTLIB += Qt6Gui Qt6Multimedia Qt6Network Qt6Svg Qt6Widgets boost_filesystem
 WANTLIB += boost_system c cmark dvdread ebml fmt gmp iconv intl
 WANTLIB += m matroska ogg pugixml vorbis z
 
@@ -21,7 +20,7 @@ SITES=		https://mkvtoolnix.download/sources/
 
 EXTRACT_SUFX=	.tar.xz
 
-MODULES=	x11/qt5 \
+MODULES=	x11/qt6 \
 		lang/ruby
 
 MODRUBY_RUNDEP=	No
@@ -52,8 +51,8 @@ LIB_DEPENDS=	devel/boost \
 		textproc/cmark \
 		textproc/libebml>=1.4.4 \
 		textproc/pugixml \
-		x11/qt5/qtmultimedia \
-		x11/qt5/qtsvg
+		x11/qt6/qtmultimedia \
+		x11/qt6/qtsvg
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		misc/shared-mime-info \
@@ -65,14 +64,17 @@ AUTOCONF_VERSION= 2.71
 CONFIGURE_ARGS=	--disable-optimization \
 		--disable-update-check \
 		--disable-qt6 \
+		--disable-precompiled-headers \
 		--with-boost=${LOCALBASE} \
-		--with-docbook-xsl-root=${LOCALBASE}/share/xsl/docbook
+		--with-docbook-xsl-root=${LOCALBASE}/share/xsl/docbook \
+		--with-qmake=${MODQT6_QMAKE}
 
 MAKE_ENV+=	V=1
-CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
-LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib -L${MODQT5_LIBDIR}
+CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include -I${MODQT6_INCDIR}
+LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib -L${MODQT6_LIBDIR}
 
-CONFIGURE_ENV+=	LCONVERT="${LOCALBASE}/lib/qt5/bin/lconvert" \
+CONFIGURE_ENV+=	LCONVERT="${LOCALBASE}/lib/qt6/bin/lconvert" \
+		QMAKE6="${MODQT6_QMAKE}" \
 		CPPFLAGS="${CPPFLAGS}" \
 		LDFLAGS="${LDFLAGS}" \
 		ac_cv_path_PANDOC=

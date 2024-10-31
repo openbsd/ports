@@ -50,6 +50,7 @@ share/icons/hicolor/96x96/apps/mkvinfo.png
 share/icons/hicolor/96x96/apps/mkvmerge.png
 share/icons/hicolor/96x96/apps/mkvpropedit.png
 share/icons/hicolor/96x96/apps/mkvtoolnix-gui.png
+share/locale/be/LC_MESSAGES/mkvtoolnix.mo
 share/locale/bg/LC_MESSAGES/mkvtoolnix.mo
 share/locale/ca/LC_MESSAGES/mkvtoolnix.mo
 share/locale/cs/LC_MESSAGES/mkvtoolnix.mo
@@ -61,6 +62,7 @@ share/locale/it/LC_MESSAGES/mkvtoolnix.mo
 share/locale/ja/LC_MESSAGES/mkvtoolnix.mo
 share/locale/ko/LC_MESSAGES/mkvtoolnix.mo
 share/locale/lt/LC_MESSAGES/mkvtoolnix.mo
+share/locale/nb/LC_MESSAGES/mkvtoolnix.mo
 share/locale/nl/LC_MESSAGES/mkvtoolnix.mo
 share/locale/pl/LC_MESSAGES/mkvtoolnix.mo
 share/locale/pt/LC_MESSAGES/mkvtoolnix.mo
