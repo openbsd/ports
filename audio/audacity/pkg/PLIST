@@ -1,9 +1,11 @@
 @bin bin/audacity
 lib/audacity/
+@so lib/audacity/lib-audacity-application-logic.so
 @so lib/audacity/lib-audio-devices.so
 @so lib/audacity/lib-audio-graph.so
 @so lib/audacity/lib-audio-io.so
 @so lib/audacity/lib-basic-ui.so
+@so lib/audacity/lib-builtin-effects.so
 @so lib/audacity/lib-channel.so
 @so lib/audacity/lib-command-parameters.so
 @so lib/audacity/lib-components.so
@@ -20,6 +22,7 @@ lib/audacity/
 @so lib/audacity/lib-graphics.so
 @so lib/audacity/lib-import-export.so
 @so lib/audacity/lib-ipc.so
+@so lib/audacity/lib-label-track.so
 @so lib/audacity/lib-lv2.so
 @so lib/audacity/lib-math.so
 @so lib/audacity/lib-menus.so
@@ -28,6 +31,7 @@ lib/audacity/
 @so lib/audacity/lib-music-information-retrieval.so
 @so lib/audacity/lib-note-track.so
 @so lib/audacity/lib-numeric-formats.so
+@so lib/audacity/lib-nyquist-effects.so
 @so lib/audacity/lib-playable-track.so
 @so lib/audacity/lib-preference-pages.so
 @so lib/audacity/lib-preferences.so
@@ -58,7 +62,9 @@ lib/audacity/
 @so lib/audacity/lib-uuid.so
 @so lib/audacity/lib-viewport.so
 @so lib/audacity/lib-vst.so
+@so lib/audacity/lib-wave-track-fft.so
 @so lib/audacity/lib-wave-track-paint.so
+@so lib/audacity/lib-wave-track-settings.so
 @so lib/audacity/lib-wave-track.so
 @so lib/audacity/lib-wx-init.so
 @so lib/audacity/lib-wx-wrappers.so
