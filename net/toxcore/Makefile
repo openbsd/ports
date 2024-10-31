@@ -22,6 +22,8 @@ WANTLIB = c config m opus pthread sodium vpx
 MODULES =		devel/cmake
 COMPILER =		base-clang ports-gcc
 
+BUILD_DEPENDS =		devel/gtest
+
 LIB_DEPENDS =		audio/opus \
 			devel/libconfig \
 			multimedia/libvpx \
