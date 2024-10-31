@@ -3,6 +3,7 @@ COMMENT =		Qt API to store passwords and other secret data
 GH_ACCOUNT =		frankosterfeld
 GH_PROJECT =		qtkeychain
 GH_TAGNAME =		0.14.2
+REVISION =		0
 
 SHARED_LIBS +=		qt5keychain	2.1
 SHARED_LIBS +=		qt6keychain	0.0
@@ -31,10 +32,8 @@ FLAVOR ?=
 .if ${FLAVOR:Mqt6}
 CONFIGURE_ARGS +=	-DBUILD_WITH_QT6=ON
 FULLPKGNAME =		qtkeychain-qt6-${GH_TAGNAME}
-MODULES +=		lang/clang x11/qt6
-MODCLANG_LANGS +=	c++
+MODULES +=		x11/qt6
 WANTLIB +=		Qt6Core Qt6DBus
-LIB_DEPENDS +=		${MODCLANG_LIB_DEPENDS}
 LIBNAME =		Qt6Keychain
 QT =			qt6
 .else
