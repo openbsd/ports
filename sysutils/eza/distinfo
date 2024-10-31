@@ -128,8 +128,8 @@ SHA256 (cargo/rustix-0.38.21.tar.gz) = K0JrBQbl1Qp9ja/PLoFHFADetgI5LH3REIFa+06vA
 SHA256 (cargo/ryu-1.0.15.tar.gz) = GtTMjaTvcj7WC87SARgdg3ka1DMhPYwk7//aHuyF10E=
 SHA256 (cargo/same-file-1.0.6.tar.gz) = k/wdw6qpv+2V4C5urau0uvfjB4sL0bTXtrC2g3iQBQI=
 SHA256 (cargo/scopeguard-1.2.0.tar.gz) = lBQ/N3JRCfksJi7Sz15ZvOdJjAG8wVAte5r+Q5pOn0k=
-SHA256 (cargo/serde-1.0.210.tar.gz) = yONZJHIHLm4i4KVNWQTZ/r+FCPZfuFUkmaGrx9EHjDo=
-SHA256 (cargo/serde_derive-1.0.210.tar.gz) = JDkC7aAPrXUIYvwUTOolyspeINYVrwqBvulMpzjx3x8=
+SHA256 (cargo/serde-1.0.214.tar.gz) = 9Vwxk6ynHBKteJDxeF0rc+G59joLvDU8CO8m/gP8VrU=
+SHA256 (cargo/serde_derive-1.0.214.tar.gz) = 3lI/eB8JXij6YFzc4PgwfkUcwP0U4utM0umKNVsUd2Y=
 SHA256 (cargo/serde_json-1.0.107.tar.gz) = a0IM5uPYvYgumyQ8bu0128mmEQyXaedLWE4NaNHyDGU=
 SHA256 (cargo/serde_norway-0.9.38.tar.gz) = Ru1xCfYRJIExmtIFOeXEQRElwOgTNQKjXcD4DRnZvrU=
 SHA256 (cargo/serde_spanned-0.6.8.tar.gz) = h2B8sTmO1Z1Icy5XWkwop6jr8kVLlk/j8iTyr8B5CeE=
@@ -138,7 +138,7 @@ SHA256 (cargo/similar-2.2.1.tar.gz) = QgrLRK/a4DghDJnmmq4kEJ8y8VUAqnCOgdRsnynVX8
 SHA256 (cargo/siphasher-0.3.11.tar.gz) = OLWIJ/RGTYfTd9F16Qv1jrAP2HFv8KYvgDVrXmFVXQ0=
 SHA256 (cargo/snapbox-0.6.17.tar.gz) = hAtz6zFIvDy8EOvgDsm8bZYDPmWNAixK3L8/NVlv1ko=
 SHA256 (cargo/snapbox-macros-0.3.10.tar.gz) = FlafU8ojpBu29i4KUISqFmH0gUpn+jNpankHPgOmZK8=
-SHA256 (cargo/syn-2.0.65.tar.gz) = 0oY9lqhMZDlwHXo4+d6TXsViyIMsxV0d3g9RO1L60QY=
+SHA256 (cargo/syn-2.0.85.tar.gz) = UCMWLfzRTvjzIDTYvNTMXdxh73okfAJKM+JOHyTSG1Y=
 SHA256 (cargo/tempfile-3.8.0.tar.gz) = y5TS88xTavccqsa2/Ov2WGCzR+fODMnr6PcNPlIQVO8=
 SHA256 (cargo/terminal_size-0.3.0.tar.gz) = Ib6/K3yeClFfbg+MUdwPjkaWOR5vH/MDeVWfg2X7Dfc=
 SHA256 (cargo/thiserror-1.0.48.tar.gz) = nW16dAuKZmp+go3QDanA3CkN/1MVTqd6wQkoHekFibc=
@@ -200,7 +200,7 @@ SHA256 (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 7ZT85hVxpABoUrc4mgY6uYPALrG7N
 SHA256 (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = WJ9tqExkYgR0fRJwoqVmHqZu0cztJjHVRv37FVlZ+ew=
 SHA256 (cargo/winnow-0.6.20.tar.gz) = NsH+waK7WGbwfCX2jCblZcTCAK67ltflVxDBnT6KxJs=
 SHA256 (cargo/zoneinfo_compiled-0.5.1.tar.gz) = ZPvr5l6JlTD0O9dgsj/ajxQRGPTbSZUrApmMvQkHpd4=
-SHA256 (eza-0.20.5.tar.gz) = NFWQer3dcqtAVhNYj4LitfZ3H6zyFeW82SvKGoJSCBk=
+SHA256 (eza-0.20.6.tar.gz) = v3wweJvnhmo2/anSsbs1H0FnX0yLuMief/hWGcyJS/o=
 SIZE (cargo/addr2line-0.24.1.tar.gz) = 41554
 SIZE (cargo/adler2-2.0.0.tar.gz) = 13529
 SIZE (cargo/aho-corasick-1.0.5.tar.gz) = 172064
@@ -331,8 +331,8 @@ SIZE (cargo/rustix-0.38.21.tar.gz) = 358962
 SIZE (cargo/ryu-1.0.15.tar.gz) = 46906
 SIZE (cargo/same-file-1.0.6.tar.gz) = 10183
 SIZE (cargo/scopeguard-1.2.0.tar.gz) = 11619
-SIZE (cargo/serde-1.0.210.tar.gz) = 78338
-SIZE (cargo/serde_derive-1.0.210.tar.gz) = 56020
+SIZE (cargo/serde-1.0.214.tar.gz) = 78523
+SIZE (cargo/serde_derive-1.0.214.tar.gz) = 56630
 SIZE (cargo/serde_json-1.0.107.tar.gz) = 146458
 SIZE (cargo/serde_norway-0.9.38.tar.gz) = 69181
 SIZE (cargo/serde_spanned-0.6.8.tar.gz) = 9330
@@ -341,7 +341,7 @@ SIZE (cargo/similar-2.2.1.tar.gz) = 51147
 SIZE (cargo/siphasher-0.3.11.tar.gz) = 10442
 SIZE (cargo/snapbox-0.6.17.tar.gz) = 54102
 SIZE (cargo/snapbox-macros-0.3.10.tar.gz) = 7129
-SIZE (cargo/syn-2.0.65.tar.gz) = 264863
+SIZE (cargo/syn-2.0.85.tar.gz) = 275231
 SIZE (cargo/tempfile-3.8.0.tar.gz) = 31720
 SIZE (cargo/terminal_size-0.3.0.tar.gz) = 10096
 SIZE (cargo/thiserror-1.0.48.tar.gz) = 18862
@@ -403,4 +403,4 @@ SIZE (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 798412
 SIZE (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = 832564
 SIZE (cargo/winnow-0.6.20.tar.gz) = 163617
 SIZE (cargo/zoneinfo_compiled-0.5.1.tar.gz) = 8837
-SIZE (eza-0.20.5.tar.gz) = 1415403
+SIZE (eza-0.20.6.tar.gz) = 1415427
