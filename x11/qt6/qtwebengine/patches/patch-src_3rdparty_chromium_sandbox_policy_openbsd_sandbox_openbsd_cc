@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/sandbox/policy/openbsd/sandbox_openbsd.cc
 --- src/3rdparty/chromium/sandbox/policy/openbsd/sandbox_openbsd.cc.orig
 +++ src/3rdparty/chromium/sandbox/policy/openbsd/sandbox_openbsd.cc
-@@ -0,0 +1,420 @@
+@@ -0,0 +1,422 @@
 +// Copyright (c) 2012 The Chromium Authors. All rights reserved.
 +// Use of this source code is governed by a BSD-style license that can be
 +// found in the LICENSE file.
@@ -315,6 +315,7 @@ Index: src/3rdparty/chromium/sandbox/policy/openbsd/sandbox_openbsd.cc
 +  if (hook)
 +    CHECK(std::move(hook).Run(options));
 +
++  /** XXX no pledge, unveil support in QtWebEngine
 +  if (!command_line->HasSwitch(switches::kDisableUnveil))
 +    SetUnveil(process_type, sandbox_type);
 +
@@ -353,6 +354,7 @@ Index: src/3rdparty/chromium/sandbox/policy/openbsd/sandbox_openbsd.cc
 +      LOG(ERROR) << "non-pledge()'d process: " << GetSandboxTypeInEnglish(sandbox_type);
 +      break;
 +  }
++  */
 +
 +  return true;
 +}
