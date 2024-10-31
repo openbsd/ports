@@ -1,0 +1,12 @@
+Index: src/multimedia/platform/qplatformmediaintegration.cpp
+--- src/multimedia/platform/qplatformmediaintegration.cpp.orig
++++ src/multimedia/platform/qplatformmediaintegration.cpp
+@@ -49,7 +49,7 @@ static QString defaultBackend(const QStringList &backe
+         return backend;
+ #endif
+ 
+-#if defined(Q_OS_DARWIN) || defined(Q_OS_LINUX) || defined(Q_OS_WINDOWS) || defined(Q_OS_ANDROID)
++#if defined(Q_OS_DARWIN) || defined(Q_OS_LINUX) || defined(Q_OS_WINDOWS) || defined(Q_OS_ANDROID) || defined(Q_OS_OPENBSD)
+     // Return ffmpeg backend by default.
+     // Platform backends for the OS list are optionally available but have limited support.
+     if (backends.contains(FFmpegBackend))
