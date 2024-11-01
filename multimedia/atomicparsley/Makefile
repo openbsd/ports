@@ -2,9 +2,9 @@ COMMENT=	read and set MPEG-4/3GPP metadata tags
 
 GH_ACCOUNT=	wez
 GH_PROJECT=	atomicparsley
-GH_TAGNAME=	20221229.172126.d813aa6
+GH_TAGNAME=	20240608.083822.1ed9031
 
-DISTNAME=	atomicparsley-20221229
+DISTNAME=	atomicparsley-${GH_TAGNAME:R:R}
 
 CATEGORIES=	multimedia
 
