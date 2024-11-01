@@ -1,0 +1,19 @@
+Index: svgtopng/pngtheme.sh
+--- svgtopng/pngtheme.sh.orig
++++ svgtopng/pngtheme.sh
+@@ -18,13 +18,13 @@ echo "== Processing $1"
+ 
+ echo " * Creating png icons from svg files and symlinks"
+ #ignore list customized for elementary-xfce
+-find "$icondir" -iname "*.svg" -not \( -wholename "*/scalable/*" -o -wholename "*/symbolic/*" -o -wholename "*-symbolic.svg" -o -wholename "*-symbolic-rtl.svg" -o -wholename "*/animations/*process-*" \) -exec $cmd {} +
++find "$icondir" -iname "*.svg" -not \( -path "*/scalable/*" -o -path "*/symbolic/*" -o -path "*-symbolic.svg" -o -path "*-symbolic-rtl.svg" -o -path "*/animations/*process-*" \) -exec $cmd {} +
+ 
+ echo " * Cleanup icon directory"
+ find "$icondir" -name "untitled folder" -type d -exec rm -rf {} +
+ 
+ echo " * Deleting svg files"
+-find "$icondir" -iname '*.svg' -not \( -wholename "*/scalable/*" -o -wholename "*/symbolic/*" -o -wholename "*-symbolic.svg" -o -wholename "*-symbolic-rtl.svg" -o -wholename "*/animations/*process-*" \) -delete
++find "$icondir" -iname '*.svg' -not \( -path "*/scalable/*" -o -path "*/symbolic/*" -o -path "*-symbolic.svg" -o -path "*-symbolic-rtl.svg" -o -path "*/animations/*process-*" \) -delete
+ 
+ #ignore the output if the theme depends on another one (e.g. elementary-xfce-dark needs to be converted before elementary-xfce)
+ echo " * Checking dangling symlinks"
