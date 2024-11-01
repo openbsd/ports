@@ -1,16 +1,15 @@
 ONLY_FOR_ARCHS=	${LP64_ARCHS} i386
 
-COMMENT=	scalable AV1 encoder/decoder
+COMMENT=	scalable AV1 encoder
 
-VER=		2.1.0
+VER=		2.3.0
 DISTNAME=	SVT-AV1-v${VER}
 PKGNAME=	svt-av1-${VER}
 CATEGORIES=	multimedia
 SITES=		https://gitlab.com/AOMediaCodec/SVT-AV1/-/archive/v${VER}/
 EXTRACT_SUFX=	.tar.bz2
 
-SHARED_LIBS=	SvtAv1Dec	2.0 \
-		SvtAv1Enc	4.0
+SHARED_LIBS=	SvtAv1Enc	4.0
 
 HOMEPAGE=	https://gitlab.com/AOMediaCodec/SVT-AV1
 
@@ -28,8 +27,6 @@ MODULES=	devel/cmake
 .if ${MACHINE_ARCH} == "amd64"
 BUILD_DEPENDS+=	devel/nasm
 .endif
-
-CONFIGURE_ARGS+=-DSVT_AV1_LTO=ON
 
 NO_TEST=	Yes
 
