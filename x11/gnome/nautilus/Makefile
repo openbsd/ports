@@ -1,8 +1,7 @@
 COMMENT=		GNOME file manager
 
 GNOME_PROJECT=		nautilus
-GNOME_VERSION=		46.2
-REVISION=		0
+GNOME_VERSION=		47.0
 
 SHARED_LIBS += nautilus-extension        3.0 # 4
 
@@ -11,10 +10,11 @@ CATEGORIES=		x11
 # GPLv2 - LGPLv2 - GFPLv1.1
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += adwaita-1 c cairo cloudproviders gdk_pixbuf-2.0 gexiv2
-WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-autoar-0 gnome-desktop-4
-WANTLIB += gobject-2.0 graphene-1.0 gstpbutils-1.0 gstreamer-1.0
-WANTLIB += gtk-4 intl m pango-1.0 portal portal-gtk4 tracker-sparql-3.0
+WANTLIB += X11 adwaita-1 c cairo cloudproviders gdk_pixbuf-2.0
+WANTLIB += gexiv2 gio-2.0 glib-2.0 gmodule-2.0 gnome-autoar-0
+WANTLIB += gnome-desktop-4 gobject-2.0 graphene-1.0 gstpbutils-1.0
+WANTLIB += gstreamer-1.0 gtk-4 intl m pango-1.0 portal portal-gtk4
+WANTLIB += tinysparql-3.0 wayland-client
 
 COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c
@@ -28,8 +28,8 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas
 RUN_DEPENDS=		x11/gnome/gvfs \
 			devel/gsettings-desktop-schemas
 
-# needs tracker-miner-fs
-RUN_DEPENDS +=		x11/gnome/tracker3-miners
+# org.freedesktop.Tracker3.Miner.Files
+RUN_DEPENDS +=		x11/gnome/localsearch
 
 # create "well known" user directories and default gtk bookmarks
 RUN_DEPENDS +=		x11/xdg-user-dirs-gtk
@@ -41,7 +41,7 @@ LIB_DEPENDS=		graphics/libgexiv2 \
 			x11/gnome/desktop,-gtk4 \
 			x11/gnome/libadwaita \
 			x11/gnome/libcloudproviders \
-			x11/gnome/tracker3
+			x11/gnome/tinysparql
 
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
 			gtk-update-icon-cache

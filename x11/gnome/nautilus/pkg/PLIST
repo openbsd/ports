@@ -160,13 +160,12 @@ share/locale/zh_CN/LC_MESSAGES/nautilus.mo
 share/locale/zh_HK/LC_MESSAGES/nautilus.mo
 share/locale/zh_TW/LC_MESSAGES/nautilus.mo
 share/locale/zu/LC_MESSAGES/nautilus.mo
+share/localsearch3/domain-ontologies/org.gnome.Nautilus.domain.rule
 share/metainfo/org.gnome.Nautilus.metainfo.xml
 share/nautilus/
 share/nautilus/ontology/
 share/nautilus/ontology/nautilus.description
 share/nautilus/ontology/nautilus.ontology
-share/tracker3/domain-ontologies/
-share/tracker3/domain-ontologies/org.gnome.Nautilus.domain.rule
 @tag glib-compile-schemas
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
