@@ -5,10 +5,11 @@ ${GEM_EXTENSIONS_DIR}/gem_make.out
 ${GEM_EXTENSIONS_DIR}/mkmf.log
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/COPYING
-${GEM_LIB}/gems/${DISTNAME}/NEWS
-${GEM_LIB}/gems/${DISTNAME}/README
-${GEM_LIB}/gems/${DISTNAME}/README.rdoc
+${GEM_LIB}/gems/${DISTNAME}/NEWS.rst
+${GEM_LIB}/gems/${DISTNAME}/README.rst
 ${GEM_LIB}/gems/${DISTNAME}/Rakefile
+${GEM_LIB}/gems/${DISTNAME}/doc/
+${GEM_LIB}/gems/${DISTNAME}/doc/main.rdoc
 ${GEM_LIB}/gems/${DISTNAME}/ext/
 ${GEM_LIB}/gems/${DISTNAME}/ext/libvirt/
 ${GEM_LIB}/gems/${DISTNAME}/ext/libvirt/.sitearchdir.time

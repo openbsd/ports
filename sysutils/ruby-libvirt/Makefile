@@ -1,7 +1,7 @@
 COMMENT=	Ruby bindings for libvirt
 
 DISTNAME=	ruby-${PKGNAME}
-PKGNAME=	libvirt-0.8.2
+PKGNAME=	libvirt-0.8.4
 
 CATEGORIES=	sysutils
 
