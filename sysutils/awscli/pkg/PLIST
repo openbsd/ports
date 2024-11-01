@@ -5138,6 +5138,17 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/pinpoint/send-users-mes
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/pinpoint/tag-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/pinpoint/untag-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/pinpoint/update-sms-channel.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/pipes/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/pipes/create-pipe.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/pipes/delete-pipe.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/pipes/describe-pipe.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/pipes/list-pipes.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/pipes/list-tags-for-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/pipes/start-pipe.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/pipes/stop-pipe.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/pipes/tag-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/pipes/untag-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/pipes/update-pipe.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/polly/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/polly/delete-lexicon.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/polly/get-lexicon.rst
