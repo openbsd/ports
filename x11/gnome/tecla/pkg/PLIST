@@ -2,7 +2,9 @@
 share/applications/org.gnome.Tecla.desktop
 share/icons/hicolor/scalable/apps/org.gnome.Tecla.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Tecla-symbolic.svg
+share/locale/ar/LC_MESSAGES/tecla.mo
 share/locale/be/LC_MESSAGES/tecla.mo
+share/locale/bg/LC_MESSAGES/tecla.mo
 share/locale/ca/LC_MESSAGES/tecla.mo
 share/locale/cs/LC_MESSAGES/tecla.mo
 share/locale/da/LC_MESSAGES/tecla.mo
@@ -18,13 +20,17 @@ share/locale/fr/LC_MESSAGES/tecla.mo
 share/locale/fur/LC_MESSAGES/tecla.mo
 share/locale/gl/LC_MESSAGES/tecla.mo
 share/locale/he/LC_MESSAGES/tecla.mo
+share/locale/hi/LC_MESSAGES/tecla.mo
 share/locale/hu/LC_MESSAGES/tecla.mo
 share/locale/id/LC_MESSAGES/tecla.mo
+share/locale/ie/LC_MESSAGES/tecla.mo
 share/locale/it/LC_MESSAGES/tecla.mo
 share/locale/ka/LC_MESSAGES/tecla.mo
+share/locale/kab/LC_MESSAGES/tecla.mo
 share/locale/ko/LC_MESSAGES/tecla.mo
 share/locale/lt/LC_MESSAGES/tecla.mo
 share/locale/lv/LC_MESSAGES/tecla.mo
+share/locale/ne/LC_MESSAGES/tecla.mo
 share/locale/nl/LC_MESSAGES/tecla.mo
 share/locale/oc/LC_MESSAGES/tecla.mo
 share/locale/pa/LC_MESSAGES/tecla.mo
@@ -35,6 +41,8 @@ share/locale/ro/LC_MESSAGES/tecla.mo
 share/locale/ru/LC_MESSAGES/tecla.mo
 share/locale/sk/LC_MESSAGES/tecla.mo
 share/locale/sl/LC_MESSAGES/tecla.mo
+share/locale/sr/LC_MESSAGES/tecla.mo
+share/locale/sr@latin/LC_MESSAGES/tecla.mo
 share/locale/sv/LC_MESSAGES/tecla.mo
 share/locale/tr/LC_MESSAGES/tecla.mo
 share/locale/uk/LC_MESSAGES/tecla.mo

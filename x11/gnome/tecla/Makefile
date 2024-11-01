@@ -1,7 +1,7 @@
 COMMENT=		keymap viewer
 
 GNOME_PROJECT=		tecla
-GNOME_VERSION=		46.0
+GNOME_VERSION=		47.0
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
