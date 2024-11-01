@@ -1,0 +1,83 @@
+Fix building with newer FFmpeg
+
+Index: src/osgPlugins/ffmpeg/FFmpegDecoderAudio.cpp
+--- src/osgPlugins/ffmpeg/FFmpegDecoderAudio.cpp.orig
++++ src/osgPlugins/ffmpeg/FFmpegDecoderAudio.cpp
+@@ -13,15 +13,6 @@
+ #define AVCODEC_MAX_AUDIO_FRAME_SIZE 192000
+ #endif
+ 
+-#if LIBAVCODEC_VERSION_INT < AV_VERSION_INT(55,28,1)
+-#define av_frame_alloc  avcodec_alloc_frame
+-#define av_frame_free  avcodec_free_frame
+-#endif
+-
+-#if LIBAVCODEC_VERSION_MAJOR < 56
+-   #define AV_CODEC_ID_NONE CODEC_ID_NONE
+-#endif
+-
+ namespace osgFFmpeg {
+ 
+ static int decode_audio(AVCodecContext *avctx, int16_t *samples,
+@@ -32,25 +23,23 @@ static int decode_audio(AVCodecContext *avctx, int16_t
+                          int out_nb_channels,
+                          AVSampleFormat out_sample_format)
+ {
+-#if LIBAVCODEC_VERSION_MAJOR >= 53 || (LIBAVCODEC_VERSION_MAJOR==52 && LIBAVCODEC_VERSION_MINOR>=32)
+-
+     AVPacket avpkt;
+     av_init_packet(&avpkt);
+     avpkt.data = const_cast<uint8_t *>(buf);
+     avpkt.size = buf_size;
+ 
+     AVFrame *frame = av_frame_alloc();
+-    int ret, got_frame = 0;
++    int ret;
+ 
+     if (!frame)
+         return AVERROR(ENOMEM);
+ 
+-    ret = avcodec_decode_audio4(avctx, frame, &got_frame, &avpkt);
++    ret = avcodec_receive_frame(avctx, frame);
+ 
+ #ifdef USE_AVRESAMPLE    // libav's AVFrame structure does not contain a 'channels' field
+-    if (ret >= 0 && got_frame) {
++    if (ret >= 0) {
+ #else
+-    if (ret >= 0 && got_frame && av_frame_get_channels(frame)>0) {
++    if (ret >= 0 && frame->channels>0) {
+ #endif
+         int ch, plane_size;
+         int planar = av_sample_fmt_is_planar(avctx->sample_fmt);
+@@ -108,11 +97,6 @@ static int decode_audio(AVCodecContext *avctx, int16_t
+     }
+     av_frame_free(&frame);
+     return ret;
+-
+-#else
+-    // fallback for older versions of ffmpeg that don't have avcodec_decode_audio3.
+-    return avcodec_decode_audio2(avctx, samples, frame_size_ptr, buf, buf_size);
+-#endif
+ }
+ 
+ 
+@@ -151,7 +135,9 @@ void FFmpegDecoderAudio::open(AVStream * const stream,
+             return;
+ 
+         m_stream = stream;
+-        m_context = stream->codec;
++        m_codecpar = stream->codecpar;
++        const AVCodec* p_codec = avcodec_find_decoder(m_codecpar->codec_id);
++        m_context = avcodec_alloc_context3(p_codec);
+ 
+         m_in_sample_rate = m_context->sample_rate;
+         m_in_nb_channels = m_context->channels;
+@@ -214,7 +200,7 @@ printf("### CONVERTING from sample format %s TO %s\n\t
+             throw std::runtime_error("invalid audio codec");;
+ 
+         // Find the decoder for the audio stream
+-        AVCodec * const p_codec = avcodec_find_decoder(m_context->codec_id);
++        p_codec = avcodec_find_decoder(m_context->codec_id);
+ 
+         if (p_codec == 0)
+             throw std::runtime_error("avcodec_find_decoder() failed");

@@ -10,7 +10,7 @@ GH_ACCOUNT =		openscenegraph
 GH_PROJECT =		OpenSceneGraph
 GH_TAGNAME =		OpenSceneGraph-$V
 DISTNAME =		openscenegraph-${V}
-REVISION =		7
+REVISION =		8
 
 SUBST_VARS +=		V
 

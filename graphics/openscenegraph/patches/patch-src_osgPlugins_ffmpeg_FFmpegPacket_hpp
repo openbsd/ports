@@ -1,0 +1,14 @@
+Fix building with newer FFmpeg
+
+Index: src/osgPlugins/ffmpeg/FFmpegPacket.hpp
+--- src/osgPlugins/ffmpeg/FFmpegPacket.hpp.orig
++++ src/osgPlugins/ffmpeg/FFmpegPacket.hpp
+@@ -42,7 +42,7 @@ namespace osgFFmpeg
+         void clear()
+         {
+             if (packet.data != 0)
+-                av_free_packet(&packet);
++                av_packet_unref(&packet);
+ 
+             release();
+         }

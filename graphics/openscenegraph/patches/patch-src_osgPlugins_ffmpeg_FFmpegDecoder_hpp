@@ -1,0 +1,19 @@
+Fix building with newer FFmpeg
+
+Index: src/osgPlugins/ffmpeg/FFmpegDecoder.hpp
+--- src/osgPlugins/ffmpeg/FFmpegDecoder.hpp.orig
++++ src/osgPlugins/ffmpeg/FFmpegDecoder.hpp
+@@ -46,13 +46,8 @@ class FormatContextPtr
+         {
+             if (_ptr) 
+             {
+-#if LIBAVCODEC_VERSION_INT >= AV_VERSION_INT(53, 17, 0)
+                 OSG_NOTICE<<"Calling avformat_close_input("<<&_ptr<<")"<<std::endl;
+                 avformat_close_input(&_ptr);
+-#else
+-                OSG_NOTICE<<"Calling av_close_input_file("<<_ptr<<")"<<std::endl;
+-                av_close_input_file(_ptr);
+-#endif
+             }
+             _ptr = 0;
+         }

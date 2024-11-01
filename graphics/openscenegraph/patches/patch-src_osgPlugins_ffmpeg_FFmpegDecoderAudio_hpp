@@ -1,0 +1,13 @@
+Fix building with newer FFmpeg
+
+Index: src/osgPlugins/ffmpeg/FFmpegDecoderAudio.hpp
+--- src/osgPlugins/ffmpeg/FFmpegDecoderAudio.hpp.orig
++++ src/osgPlugins/ffmpeg/FFmpegDecoderAudio.hpp
+@@ -59,6 +59,7 @@ class FFmpegDecoderAudio : public OpenThreads::Thread 
+     PacketQueue &                       m_packets;
+     FFmpegClocks &                      m_clocks;
+     AVStream *                          m_stream;
++    AVCodecParameters *                 m_codecpar;
+     AVCodecContext *                    m_context;
+     FFmpegPacket                        m_packet;
+     const uint8_t *                     m_packet_data;
