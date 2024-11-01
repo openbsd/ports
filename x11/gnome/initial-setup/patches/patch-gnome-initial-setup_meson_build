@@ -5,7 +5,7 @@ Find libkrb5.so.
 Index: gnome-initial-setup/meson.build
 --- gnome-initial-setup/meson.build.orig
 +++ gnome-initial-setup/meson.build
-@@ -33,8 +33,6 @@ gweather_dep = dependency('gweather4')
+@@ -37,8 +37,6 @@ gweather_dep = dependency('gweather4')
  subdir('pages')
  
  dependencies = [
@@ -14,7 +14,7 @@ Index: gnome-initial-setup/meson.build
      dependency ('polkit-gobject-1', version: '>= 0.103'),
      dependency ('accountsservice'),
      geocode_glib_2_dep,
-@@ -66,7 +64,8 @@ executable(
+@@ -70,7 +68,8 @@ executable(
      include_directories: config_h_dir,
      dependencies: dependencies,
      install: true,
@@ -23,4 +23,4 @@ Index: gnome-initial-setup/meson.build
 +    install_rpath : '${LOCALBASE}/heimdal/lib'
  )
  
- executable(
+ copy_worker_dependencies = [
