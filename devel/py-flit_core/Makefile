@@ -1,10 +1,9 @@
 COMMENT=	distribution-building parts of Flit
 
-MODPY_EGG_VERSION=	3.9.0
+MODPY_EGG_VERSION=	3.10.0
 
 DISTNAME=	flit_core-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	devel
 
@@ -20,7 +19,8 @@ MODPY_PI=	Yes
 FLAVOR=		python3
 FLAVORS=	python3
 
-MODPY_PYTEST_ARGS=	flit_core/tests
+# not in pypi sdist
+NO_TEST=	Yes
 
 # This port must have minimal deps. In particular it cannot have
 # a bdep on itself :) The do-build target uses flit_core.wheel
@@ -38,8 +38,5 @@ do-install:
 	cd ${WRKSRC}; ${MODPY_BIN} bootstrap_install.py \
 	    --installdir ${WRKINST}${MODPY_SITEPKG} dist/*.whl
 	${MODPY_COMPILEALL} ${WRKINST}${MODPY_SITEPKG}
-
-post-install:
-	rm -rf ${WRKINST}/${MODPY_SITEPKG}/flit_core/tests
 
 .include <bsd.port.mk>
