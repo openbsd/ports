@@ -251,6 +251,8 @@ share/help/C/gnome-help/files-open.page
 share/help/C/gnome-help/files-preview.page
 share/help/C/gnome-help/files-recover.page
 share/help/C/gnome-help/files-removedrive.page
+share/help/C/gnome-help/files-rename-multiple.page
+share/help/C/gnome-help/files-rename-music-metadata.page
 share/help/C/gnome-help/files-rename.page
 share/help/C/gnome-help/files-search.page
 share/help/C/gnome-help/files-select.page
@@ -455,6 +457,7 @@ share/help/C/gnome-help/wacom-map-buttons.page
 share/help/C/gnome-help/wacom-mode.page
 share/help/C/gnome-help/wacom-multi-monitor.page
 share/help/C/gnome-help/wacom-stylus.page
+share/help/C/gnome-help/wacom-tablet-unknown.page
 share/help/C/gnome-help/wacom.page
 share/help/C/system-admin-guide/
 share/help/C/system-admin-guide/appearance.page
@@ -764,6 +767,8 @@ share/help/as/gnome-help/files-open.page
 share/help/as/gnome-help/files-preview.page
 share/help/as/gnome-help/files-recover.page
 share/help/as/gnome-help/files-removedrive.page
+share/help/as/gnome-help/files-rename-multiple.page
+share/help/as/gnome-help/files-rename-music-metadata.page
 share/help/as/gnome-help/files-rename.page
 share/help/as/gnome-help/files-search.page
 share/help/as/gnome-help/files-select.page
@@ -968,6 +973,7 @@ share/help/as/gnome-help/wacom-map-buttons.page
 share/help/as/gnome-help/wacom-mode.page
 share/help/as/gnome-help/wacom-multi-monitor.page
 share/help/as/gnome-help/wacom-stylus.page
+share/help/as/gnome-help/wacom-tablet-unknown.page
 share/help/as/gnome-help/wacom.page
 share/help/ca/
 share/help/ca/gnome-help/
@@ -1219,6 +1225,8 @@ share/help/ca/gnome-help/files-open.page
 share/help/ca/gnome-help/files-preview.page
 share/help/ca/gnome-help/files-recover.page
 share/help/ca/gnome-help/files-removedrive.page
+share/help/ca/gnome-help/files-rename-multiple.page
+share/help/ca/gnome-help/files-rename-music-metadata.page
 share/help/ca/gnome-help/files-rename.page
 share/help/ca/gnome-help/files-search.page
 share/help/ca/gnome-help/files-select.page
@@ -1423,6 +1431,7 @@ share/help/ca/gnome-help/wacom-map-buttons.page
 share/help/ca/gnome-help/wacom-mode.page
 share/help/ca/gnome-help/wacom-multi-monitor.page
 share/help/ca/gnome-help/wacom-stylus.page
+share/help/ca/gnome-help/wacom-tablet-unknown.page
 share/help/ca/gnome-help/wacom.page
 share/help/ca/system-admin-guide/
 share/help/ca/system-admin-guide/appearance.page
@@ -1732,6 +1741,8 @@ share/help/cs/gnome-help/files-open.page
 share/help/cs/gnome-help/files-preview.page
 share/help/cs/gnome-help/files-recover.page
 share/help/cs/gnome-help/files-removedrive.page
+share/help/cs/gnome-help/files-rename-multiple.page
+share/help/cs/gnome-help/files-rename-music-metadata.page
 share/help/cs/gnome-help/files-rename.page
 share/help/cs/gnome-help/files-search.page
 share/help/cs/gnome-help/files-select.page
@@ -1936,6 +1947,7 @@ share/help/cs/gnome-help/wacom-map-buttons.page
 share/help/cs/gnome-help/wacom-mode.page
 share/help/cs/gnome-help/wacom-multi-monitor.page
 share/help/cs/gnome-help/wacom-stylus.page
+share/help/cs/gnome-help/wacom-tablet-unknown.page
 share/help/cs/gnome-help/wacom.page
 share/help/cs/system-admin-guide/
 share/help/cs/system-admin-guide/appearance.page
@@ -2245,6 +2257,8 @@ share/help/da/gnome-help/files-open.page
 share/help/da/gnome-help/files-preview.page
 share/help/da/gnome-help/files-recover.page
 share/help/da/gnome-help/files-removedrive.page
+share/help/da/gnome-help/files-rename-multiple.page
+share/help/da/gnome-help/files-rename-music-metadata.page
 share/help/da/gnome-help/files-rename.page
 share/help/da/gnome-help/files-search.page
 share/help/da/gnome-help/files-select.page
@@ -2449,6 +2463,7 @@ share/help/da/gnome-help/wacom-map-buttons.page
 share/help/da/gnome-help/wacom-mode.page
 share/help/da/gnome-help/wacom-multi-monitor.page
 share/help/da/gnome-help/wacom-stylus.page
+share/help/da/gnome-help/wacom-tablet-unknown.page
 share/help/da/gnome-help/wacom.page
 share/help/de/
 share/help/de/gnome-help/
@@ -2700,6 +2715,8 @@ share/help/de/gnome-help/files-open.page
 share/help/de/gnome-help/files-preview.page
 share/help/de/gnome-help/files-recover.page
 share/help/de/gnome-help/files-removedrive.page
+share/help/de/gnome-help/files-rename-multiple.page
+share/help/de/gnome-help/files-rename-music-metadata.page
 share/help/de/gnome-help/files-rename.page
 share/help/de/gnome-help/files-search.page
 share/help/de/gnome-help/files-select.page
@@ -2904,6 +2921,7 @@ share/help/de/gnome-help/wacom-map-buttons.page
 share/help/de/gnome-help/wacom-mode.page
 share/help/de/gnome-help/wacom-multi-monitor.page
 share/help/de/gnome-help/wacom-stylus.page
+share/help/de/gnome-help/wacom-tablet-unknown.page
 share/help/de/gnome-help/wacom.page
 share/help/de/system-admin-guide/
 share/help/de/system-admin-guide/appearance.page
@@ -3213,6 +3231,8 @@ share/help/el/gnome-help/files-open.page
 share/help/el/gnome-help/files-preview.page
 share/help/el/gnome-help/files-recover.page
 share/help/el/gnome-help/files-removedrive.page
+share/help/el/gnome-help/files-rename-multiple.page
+share/help/el/gnome-help/files-rename-music-metadata.page
 share/help/el/gnome-help/files-rename.page
 share/help/el/gnome-help/files-search.page
 share/help/el/gnome-help/files-select.page
@@ -3417,6 +3437,7 @@ share/help/el/gnome-help/wacom-map-buttons.page
 share/help/el/gnome-help/wacom-mode.page
 share/help/el/gnome-help/wacom-multi-monitor.page
 share/help/el/gnome-help/wacom-stylus.page
+share/help/el/gnome-help/wacom-tablet-unknown.page
 share/help/el/gnome-help/wacom.page
 share/help/es/
 share/help/es/gnome-help/
@@ -3668,6 +3689,8 @@ share/help/es/gnome-help/files-open.page
 share/help/es/gnome-help/files-preview.page
 share/help/es/gnome-help/files-recover.page
 share/help/es/gnome-help/files-removedrive.page
+share/help/es/gnome-help/files-rename-multiple.page
+share/help/es/gnome-help/files-rename-music-metadata.page
 share/help/es/gnome-help/files-rename.page
 share/help/es/gnome-help/files-search.page
 share/help/es/gnome-help/files-select.page
@@ -3872,6 +3895,7 @@ share/help/es/gnome-help/wacom-map-buttons.page
 share/help/es/gnome-help/wacom-mode.page
 share/help/es/gnome-help/wacom-multi-monitor.page
 share/help/es/gnome-help/wacom-stylus.page
+share/help/es/gnome-help/wacom-tablet-unknown.page
 share/help/es/gnome-help/wacom.page
 share/help/es/system-admin-guide/
 share/help/es/system-admin-guide/appearance.page
@@ -4181,6 +4205,8 @@ share/help/eu/gnome-help/files-open.page
 share/help/eu/gnome-help/files-preview.page
 share/help/eu/gnome-help/files-recover.page
 share/help/eu/gnome-help/files-removedrive.page
+share/help/eu/gnome-help/files-rename-multiple.page
+share/help/eu/gnome-help/files-rename-music-metadata.page
 share/help/eu/gnome-help/files-rename.page
 share/help/eu/gnome-help/files-search.page
 share/help/eu/gnome-help/files-select.page
@@ -4385,6 +4411,7 @@ share/help/eu/gnome-help/wacom-map-buttons.page
 share/help/eu/gnome-help/wacom-mode.page
 share/help/eu/gnome-help/wacom-multi-monitor.page
 share/help/eu/gnome-help/wacom-stylus.page
+share/help/eu/gnome-help/wacom-tablet-unknown.page
 share/help/eu/gnome-help/wacom.page
 share/help/eu/system-admin-guide/
 share/help/eu/system-admin-guide/appearance.page
@@ -4694,6 +4721,8 @@ share/help/fa/gnome-help/files-open.page
 share/help/fa/gnome-help/files-preview.page
 share/help/fa/gnome-help/files-recover.page
 share/help/fa/gnome-help/files-removedrive.page
+share/help/fa/gnome-help/files-rename-multiple.page
+share/help/fa/gnome-help/files-rename-music-metadata.page
 share/help/fa/gnome-help/files-rename.page
 share/help/fa/gnome-help/files-search.page
 share/help/fa/gnome-help/files-select.page
@@ -4898,6 +4927,7 @@ share/help/fa/gnome-help/wacom-map-buttons.page
 share/help/fa/gnome-help/wacom-mode.page
 share/help/fa/gnome-help/wacom-multi-monitor.page
 share/help/fa/gnome-help/wacom-stylus.page
+share/help/fa/gnome-help/wacom-tablet-unknown.page
 share/help/fa/gnome-help/wacom.page
 share/help/fa/system-admin-guide/
 share/help/fa/system-admin-guide/appearance.page
@@ -5207,6 +5237,8 @@ share/help/fi/gnome-help/files-open.page
 share/help/fi/gnome-help/files-preview.page
 share/help/fi/gnome-help/files-recover.page
 share/help/fi/gnome-help/files-removedrive.page
+share/help/fi/gnome-help/files-rename-multiple.page
+share/help/fi/gnome-help/files-rename-music-metadata.page
 share/help/fi/gnome-help/files-rename.page
 share/help/fi/gnome-help/files-search.page
 share/help/fi/gnome-help/files-select.page
@@ -5411,6 +5443,7 @@ share/help/fi/gnome-help/wacom-map-buttons.page
 share/help/fi/gnome-help/wacom-mode.page
 share/help/fi/gnome-help/wacom-multi-monitor.page
 share/help/fi/gnome-help/wacom-stylus.page
+share/help/fi/gnome-help/wacom-tablet-unknown.page
 share/help/fi/gnome-help/wacom.page
 share/help/fr/
 share/help/fr/gnome-help/
@@ -5662,6 +5695,8 @@ share/help/fr/gnome-help/files-open.page
 share/help/fr/gnome-help/files-preview.page
 share/help/fr/gnome-help/files-recover.page
 share/help/fr/gnome-help/files-removedrive.page
+share/help/fr/gnome-help/files-rename-multiple.page
+share/help/fr/gnome-help/files-rename-music-metadata.page
 share/help/fr/gnome-help/files-rename.page
 share/help/fr/gnome-help/files-search.page
 share/help/fr/gnome-help/files-select.page
@@ -5866,6 +5901,7 @@ share/help/fr/gnome-help/wacom-map-buttons.page
 share/help/fr/gnome-help/wacom-mode.page
 share/help/fr/gnome-help/wacom-multi-monitor.page
 share/help/fr/gnome-help/wacom-stylus.page
+share/help/fr/gnome-help/wacom-tablet-unknown.page
 share/help/fr/gnome-help/wacom.page
 share/help/fr/system-admin-guide/
 share/help/fr/system-admin-guide/appearance.page
@@ -6175,6 +6211,8 @@ share/help/gl/gnome-help/files-open.page
 share/help/gl/gnome-help/files-preview.page
 share/help/gl/gnome-help/files-recover.page
 share/help/gl/gnome-help/files-removedrive.page
+share/help/gl/gnome-help/files-rename-multiple.page
+share/help/gl/gnome-help/files-rename-music-metadata.page
 share/help/gl/gnome-help/files-rename.page
 share/help/gl/gnome-help/files-search.page
 share/help/gl/gnome-help/files-select.page
@@ -6379,6 +6417,7 @@ share/help/gl/gnome-help/wacom-map-buttons.page
 share/help/gl/gnome-help/wacom-mode.page
 share/help/gl/gnome-help/wacom-multi-monitor.page
 share/help/gl/gnome-help/wacom-stylus.page
+share/help/gl/gnome-help/wacom-tablet-unknown.page
 share/help/gl/gnome-help/wacom.page
 share/help/gl/system-admin-guide/
 share/help/gl/system-admin-guide/appearance.page
@@ -6688,6 +6727,8 @@ share/help/gu/gnome-help/files-open.page
 share/help/gu/gnome-help/files-preview.page
 share/help/gu/gnome-help/files-recover.page
 share/help/gu/gnome-help/files-removedrive.page
+share/help/gu/gnome-help/files-rename-multiple.page
+share/help/gu/gnome-help/files-rename-music-metadata.page
 share/help/gu/gnome-help/files-rename.page
 share/help/gu/gnome-help/files-search.page
 share/help/gu/gnome-help/files-select.page
@@ -6892,6 +6933,7 @@ share/help/gu/gnome-help/wacom-map-buttons.page
 share/help/gu/gnome-help/wacom-mode.page
 share/help/gu/gnome-help/wacom-multi-monitor.page
 share/help/gu/gnome-help/wacom-stylus.page
+share/help/gu/gnome-help/wacom-tablet-unknown.page
 share/help/gu/gnome-help/wacom.page
 share/help/he/
 share/help/he/gnome-help/
@@ -7143,6 +7185,8 @@ share/help/he/gnome-help/files-open.page
 share/help/he/gnome-help/files-preview.page
 share/help/he/gnome-help/files-recover.page
 share/help/he/gnome-help/files-removedrive.page
+share/help/he/gnome-help/files-rename-multiple.page
+share/help/he/gnome-help/files-rename-music-metadata.page
 share/help/he/gnome-help/files-rename.page
 share/help/he/gnome-help/files-search.page
 share/help/he/gnome-help/files-select.page
@@ -7347,6 +7391,7 @@ share/help/he/gnome-help/wacom-map-buttons.page
 share/help/he/gnome-help/wacom-mode.page
 share/help/he/gnome-help/wacom-multi-monitor.page
 share/help/he/gnome-help/wacom-stylus.page
+share/help/he/gnome-help/wacom-tablet-unknown.page
 share/help/he/gnome-help/wacom.page
 share/help/hi/
 share/help/hi/gnome-help/
@@ -7598,6 +7643,8 @@ share/help/hi/gnome-help/files-open.page
 share/help/hi/gnome-help/files-preview.page
 share/help/hi/gnome-help/files-recover.page
 share/help/hi/gnome-help/files-removedrive.page
+share/help/hi/gnome-help/files-rename-multiple.page
+share/help/hi/gnome-help/files-rename-music-metadata.page
 share/help/hi/gnome-help/files-rename.page
 share/help/hi/gnome-help/files-search.page
 share/help/hi/gnome-help/files-select.page
@@ -7802,6 +7849,7 @@ share/help/hi/gnome-help/wacom-map-buttons.page
 share/help/hi/gnome-help/wacom-mode.page
 share/help/hi/gnome-help/wacom-multi-monitor.page
 share/help/hi/gnome-help/wacom-stylus.page
+share/help/hi/gnome-help/wacom-tablet-unknown.page
 share/help/hi/gnome-help/wacom.page
 share/help/hr/
 share/help/hr/gnome-help/
@@ -8053,6 +8101,8 @@ share/help/hr/gnome-help/files-open.page
 share/help/hr/gnome-help/files-preview.page
 share/help/hr/gnome-help/files-recover.page
 share/help/hr/gnome-help/files-removedrive.page
+share/help/hr/gnome-help/files-rename-multiple.page
+share/help/hr/gnome-help/files-rename-music-metadata.page
 share/help/hr/gnome-help/files-rename.page
 share/help/hr/gnome-help/files-search.page
 share/help/hr/gnome-help/files-select.page
@@ -8257,6 +8307,7 @@ share/help/hr/gnome-help/wacom-map-buttons.page
 share/help/hr/gnome-help/wacom-mode.page
 share/help/hr/gnome-help/wacom-multi-monitor.page
 share/help/hr/gnome-help/wacom-stylus.page
+share/help/hr/gnome-help/wacom-tablet-unknown.page
 share/help/hr/gnome-help/wacom.page
 share/help/hr/system-admin-guide/
 share/help/hr/system-admin-guide/appearance.page
@@ -8566,6 +8617,8 @@ share/help/hu/gnome-help/files-open.page
 share/help/hu/gnome-help/files-preview.page
 share/help/hu/gnome-help/files-recover.page
 share/help/hu/gnome-help/files-removedrive.page
+share/help/hu/gnome-help/files-rename-multiple.page
+share/help/hu/gnome-help/files-rename-music-metadata.page
 share/help/hu/gnome-help/files-rename.page
 share/help/hu/gnome-help/files-search.page
 share/help/hu/gnome-help/files-select.page
@@ -8770,6 +8823,7 @@ share/help/hu/gnome-help/wacom-map-buttons.page
 share/help/hu/gnome-help/wacom-mode.page
 share/help/hu/gnome-help/wacom-multi-monitor.page
 share/help/hu/gnome-help/wacom-stylus.page
+share/help/hu/gnome-help/wacom-tablet-unknown.page
 share/help/hu/gnome-help/wacom.page
 share/help/hu/system-admin-guide/
 share/help/hu/system-admin-guide/appearance.page
@@ -9079,6 +9133,8 @@ share/help/id/gnome-help/files-open.page
 share/help/id/gnome-help/files-preview.page
 share/help/id/gnome-help/files-recover.page
 share/help/id/gnome-help/files-removedrive.page
+share/help/id/gnome-help/files-rename-multiple.page
+share/help/id/gnome-help/files-rename-music-metadata.page
 share/help/id/gnome-help/files-rename.page
 share/help/id/gnome-help/files-search.page
 share/help/id/gnome-help/files-select.page
@@ -9283,6 +9339,7 @@ share/help/id/gnome-help/wacom-map-buttons.page
 share/help/id/gnome-help/wacom-mode.page
 share/help/id/gnome-help/wacom-multi-monitor.page
 share/help/id/gnome-help/wacom-stylus.page
+share/help/id/gnome-help/wacom-tablet-unknown.page
 share/help/id/gnome-help/wacom.page
 share/help/id/system-admin-guide/
 share/help/id/system-admin-guide/appearance.page
@@ -9592,6 +9649,8 @@ share/help/it/gnome-help/files-open.page
 share/help/it/gnome-help/files-preview.page
 share/help/it/gnome-help/files-recover.page
 share/help/it/gnome-help/files-removedrive.page
+share/help/it/gnome-help/files-rename-multiple.page
+share/help/it/gnome-help/files-rename-music-metadata.page
 share/help/it/gnome-help/files-rename.page
 share/help/it/gnome-help/files-search.page
 share/help/it/gnome-help/files-select.page
@@ -9796,6 +9855,7 @@ share/help/it/gnome-help/wacom-map-buttons.page
 share/help/it/gnome-help/wacom-mode.page
 share/help/it/gnome-help/wacom-multi-monitor.page
 share/help/it/gnome-help/wacom-stylus.page
+share/help/it/gnome-help/wacom-tablet-unknown.page
 share/help/it/gnome-help/wacom.page
 share/help/ja/
 share/help/ja/gnome-help/
@@ -10047,6 +10107,8 @@ share/help/ja/gnome-help/files-open.page
 share/help/ja/gnome-help/files-preview.page
 share/help/ja/gnome-help/files-recover.page
 share/help/ja/gnome-help/files-removedrive.page
+share/help/ja/gnome-help/files-rename-multiple.page
+share/help/ja/gnome-help/files-rename-music-metadata.page
 share/help/ja/gnome-help/files-rename.page
 share/help/ja/gnome-help/files-search.page
 share/help/ja/gnome-help/files-select.page
@@ -10251,6 +10313,7 @@ share/help/ja/gnome-help/wacom-map-buttons.page
 share/help/ja/gnome-help/wacom-mode.page
 share/help/ja/gnome-help/wacom-multi-monitor.page
 share/help/ja/gnome-help/wacom-stylus.page
+share/help/ja/gnome-help/wacom-tablet-unknown.page
 share/help/ja/gnome-help/wacom.page
 share/help/kn/
 share/help/kn/gnome-help/
@@ -10502,6 +10565,8 @@ share/help/kn/gnome-help/files-open.page
 share/help/kn/gnome-help/files-preview.page
 share/help/kn/gnome-help/files-recover.page
 share/help/kn/gnome-help/files-removedrive.page
+share/help/kn/gnome-help/files-rename-multiple.page
+share/help/kn/gnome-help/files-rename-music-metadata.page
 share/help/kn/gnome-help/files-rename.page
 share/help/kn/gnome-help/files-search.page
 share/help/kn/gnome-help/files-select.page
@@ -10706,6 +10771,7 @@ share/help/kn/gnome-help/wacom-map-buttons.page
 share/help/kn/gnome-help/wacom-mode.page
 share/help/kn/gnome-help/wacom-multi-monitor.page
 share/help/kn/gnome-help/wacom-stylus.page
+share/help/kn/gnome-help/wacom-tablet-unknown.page
 share/help/kn/gnome-help/wacom.page
 share/help/ko/
 share/help/ko/gnome-help/
@@ -10957,6 +11023,8 @@ share/help/ko/gnome-help/files-open.page
 share/help/ko/gnome-help/files-preview.page
 share/help/ko/gnome-help/files-recover.page
 share/help/ko/gnome-help/files-removedrive.page
+share/help/ko/gnome-help/files-rename-multiple.page
+share/help/ko/gnome-help/files-rename-music-metadata.page
 share/help/ko/gnome-help/files-rename.page
 share/help/ko/gnome-help/files-search.page
 share/help/ko/gnome-help/files-select.page
@@ -11161,6 +11229,7 @@ share/help/ko/gnome-help/wacom-map-buttons.page
 share/help/ko/gnome-help/wacom-mode.page
 share/help/ko/gnome-help/wacom-multi-monitor.page
 share/help/ko/gnome-help/wacom-stylus.page
+share/help/ko/gnome-help/wacom-tablet-unknown.page
 share/help/ko/gnome-help/wacom.page
 share/help/ko/system-admin-guide/
 share/help/ko/system-admin-guide/appearance.page
@@ -11470,6 +11539,8 @@ share/help/lt/gnome-help/files-open.page
 share/help/lt/gnome-help/files-preview.page
 share/help/lt/gnome-help/files-recover.page
 share/help/lt/gnome-help/files-removedrive.page
+share/help/lt/gnome-help/files-rename-multiple.page
+share/help/lt/gnome-help/files-rename-music-metadata.page
 share/help/lt/gnome-help/files-rename.page
 share/help/lt/gnome-help/files-search.page
 share/help/lt/gnome-help/files-select.page
@@ -11674,6 +11745,7 @@ share/help/lt/gnome-help/wacom-map-buttons.page
 share/help/lt/gnome-help/wacom-mode.page
 share/help/lt/gnome-help/wacom-multi-monitor.page
 share/help/lt/gnome-help/wacom-stylus.page
+share/help/lt/gnome-help/wacom-tablet-unknown.page
 share/help/lt/gnome-help/wacom.page
 share/help/lv/
 share/help/lv/gnome-help/
@@ -11925,6 +11997,8 @@ share/help/lv/gnome-help/files-open.page
 share/help/lv/gnome-help/files-preview.page
 share/help/lv/gnome-help/files-recover.page
 share/help/lv/gnome-help/files-removedrive.page
+share/help/lv/gnome-help/files-rename-multiple.page
+share/help/lv/gnome-help/files-rename-music-metadata.page
 share/help/lv/gnome-help/files-rename.page
 share/help/lv/gnome-help/files-search.page
 share/help/lv/gnome-help/files-select.page
@@ -12129,6 +12203,7 @@ share/help/lv/gnome-help/wacom-map-buttons.page
 share/help/lv/gnome-help/wacom-mode.page
 share/help/lv/gnome-help/wacom-multi-monitor.page
 share/help/lv/gnome-help/wacom-stylus.page
+share/help/lv/gnome-help/wacom-tablet-unknown.page
 share/help/lv/gnome-help/wacom.page
 share/help/mr/
 share/help/mr/gnome-help/
@@ -12380,6 +12455,8 @@ share/help/mr/gnome-help/files-open.page
 share/help/mr/gnome-help/files-preview.page
 share/help/mr/gnome-help/files-recover.page
 share/help/mr/gnome-help/files-removedrive.page
+share/help/mr/gnome-help/files-rename-multiple.page
+share/help/mr/gnome-help/files-rename-music-metadata.page
 share/help/mr/gnome-help/files-rename.page
 share/help/mr/gnome-help/files-search.page
 share/help/mr/gnome-help/files-select.page
@@ -12584,6 +12661,7 @@ share/help/mr/gnome-help/wacom-map-buttons.page
 share/help/mr/gnome-help/wacom-mode.page
 share/help/mr/gnome-help/wacom-multi-monitor.page
 share/help/mr/gnome-help/wacom-stylus.page
+share/help/mr/gnome-help/wacom-tablet-unknown.page
 share/help/mr/gnome-help/wacom.page
 share/help/nl/
 share/help/nl/gnome-help/
@@ -12835,6 +12913,8 @@ share/help/nl/gnome-help/files-open.page
 share/help/nl/gnome-help/files-preview.page
 share/help/nl/gnome-help/files-recover.page
 share/help/nl/gnome-help/files-removedrive.page
+share/help/nl/gnome-help/files-rename-multiple.page
+share/help/nl/gnome-help/files-rename-music-metadata.page
 share/help/nl/gnome-help/files-rename.page
 share/help/nl/gnome-help/files-search.page
 share/help/nl/gnome-help/files-select.page
@@ -13039,6 +13119,7 @@ share/help/nl/gnome-help/wacom-map-buttons.page
 share/help/nl/gnome-help/wacom-mode.page
 share/help/nl/gnome-help/wacom-multi-monitor.page
 share/help/nl/gnome-help/wacom-stylus.page
+share/help/nl/gnome-help/wacom-tablet-unknown.page
 share/help/nl/gnome-help/wacom.page
 share/help/nl/system-admin-guide/
 share/help/nl/system-admin-guide/appearance.page
@@ -13348,6 +13429,8 @@ share/help/pa/gnome-help/files-open.page
 share/help/pa/gnome-help/files-preview.page
 share/help/pa/gnome-help/files-recover.page
 share/help/pa/gnome-help/files-removedrive.page
+share/help/pa/gnome-help/files-rename-multiple.page
+share/help/pa/gnome-help/files-rename-music-metadata.page
 share/help/pa/gnome-help/files-rename.page
 share/help/pa/gnome-help/files-search.page
 share/help/pa/gnome-help/files-select.page
@@ -13552,6 +13635,7 @@ share/help/pa/gnome-help/wacom-map-buttons.page
 share/help/pa/gnome-help/wacom-mode.page
 share/help/pa/gnome-help/wacom-multi-monitor.page
 share/help/pa/gnome-help/wacom-stylus.page
+share/help/pa/gnome-help/wacom-tablet-unknown.page
 share/help/pa/gnome-help/wacom.page
 share/help/pl/
 share/help/pl/gnome-help/
@@ -13803,6 +13887,8 @@ share/help/pl/gnome-help/files-open.page
 share/help/pl/gnome-help/files-preview.page
 share/help/pl/gnome-help/files-recover.page
 share/help/pl/gnome-help/files-removedrive.page
+share/help/pl/gnome-help/files-rename-multiple.page
+share/help/pl/gnome-help/files-rename-music-metadata.page
 share/help/pl/gnome-help/files-rename.page
 share/help/pl/gnome-help/files-search.page
 share/help/pl/gnome-help/files-select.page
@@ -14007,6 +14093,7 @@ share/help/pl/gnome-help/wacom-map-buttons.page
 share/help/pl/gnome-help/wacom-mode.page
 share/help/pl/gnome-help/wacom-multi-monitor.page
 share/help/pl/gnome-help/wacom-stylus.page
+share/help/pl/gnome-help/wacom-tablet-unknown.page
 share/help/pl/gnome-help/wacom.page
 share/help/pt/
 share/help/pt/gnome-help/
@@ -14258,6 +14345,8 @@ share/help/pt/gnome-help/files-open.page
 share/help/pt/gnome-help/files-preview.page
 share/help/pt/gnome-help/files-recover.page
 share/help/pt/gnome-help/files-removedrive.page
+share/help/pt/gnome-help/files-rename-multiple.page
+share/help/pt/gnome-help/files-rename-music-metadata.page
 share/help/pt/gnome-help/files-rename.page
 share/help/pt/gnome-help/files-search.page
 share/help/pt/gnome-help/files-select.page
@@ -14462,6 +14551,7 @@ share/help/pt/gnome-help/wacom-map-buttons.page
 share/help/pt/gnome-help/wacom-mode.page
 share/help/pt/gnome-help/wacom-multi-monitor.page
 share/help/pt/gnome-help/wacom-stylus.page
+share/help/pt/gnome-help/wacom-tablet-unknown.page
 share/help/pt/gnome-help/wacom.page
 share/help/pt_BR/
 share/help/pt_BR/gnome-help/
@@ -14713,6 +14803,8 @@ share/help/pt_BR/gnome-help/files-open.page
 share/help/pt_BR/gnome-help/files-preview.page
 share/help/pt_BR/gnome-help/files-recover.page
 share/help/pt_BR/gnome-help/files-removedrive.page
+share/help/pt_BR/gnome-help/files-rename-multiple.page
+share/help/pt_BR/gnome-help/files-rename-music-metadata.page
 share/help/pt_BR/gnome-help/files-rename.page
 share/help/pt_BR/gnome-help/files-search.page
 share/help/pt_BR/gnome-help/files-select.page
@@ -14917,6 +15009,7 @@ share/help/pt_BR/gnome-help/wacom-map-buttons.page
 share/help/pt_BR/gnome-help/wacom-mode.page
 share/help/pt_BR/gnome-help/wacom-multi-monitor.page
 share/help/pt_BR/gnome-help/wacom-stylus.page
+share/help/pt_BR/gnome-help/wacom-tablet-unknown.page
 share/help/pt_BR/gnome-help/wacom.page
 share/help/pt_BR/system-admin-guide/
 share/help/pt_BR/system-admin-guide/appearance.page
@@ -15226,6 +15319,8 @@ share/help/ro/gnome-help/files-open.page
 share/help/ro/gnome-help/files-preview.page
 share/help/ro/gnome-help/files-recover.page
 share/help/ro/gnome-help/files-removedrive.page
+share/help/ro/gnome-help/files-rename-multiple.page
+share/help/ro/gnome-help/files-rename-music-metadata.page
 share/help/ro/gnome-help/files-rename.page
 share/help/ro/gnome-help/files-search.page
 share/help/ro/gnome-help/files-select.page
@@ -15430,6 +15525,7 @@ share/help/ro/gnome-help/wacom-map-buttons.page
 share/help/ro/gnome-help/wacom-mode.page
 share/help/ro/gnome-help/wacom-multi-monitor.page
 share/help/ro/gnome-help/wacom-stylus.page
+share/help/ro/gnome-help/wacom-tablet-unknown.page
 share/help/ro/gnome-help/wacom.page
 share/help/ru/
 share/help/ru/gnome-help/
@@ -15681,6 +15777,8 @@ share/help/ru/gnome-help/files-open.page
 share/help/ru/gnome-help/files-preview.page
 share/help/ru/gnome-help/files-recover.page
 share/help/ru/gnome-help/files-removedrive.page
+share/help/ru/gnome-help/files-rename-multiple.page
+share/help/ru/gnome-help/files-rename-music-metadata.page
 share/help/ru/gnome-help/files-rename.page
 share/help/ru/gnome-help/files-search.page
 share/help/ru/gnome-help/files-select.page
@@ -15885,6 +15983,7 @@ share/help/ru/gnome-help/wacom-map-buttons.page
 share/help/ru/gnome-help/wacom-mode.page
 share/help/ru/gnome-help/wacom-multi-monitor.page
 share/help/ru/gnome-help/wacom-stylus.page
+share/help/ru/gnome-help/wacom-tablet-unknown.page
 share/help/ru/gnome-help/wacom.page
 share/help/ru/system-admin-guide/
 share/help/ru/system-admin-guide/appearance.page
@@ -16194,6 +16293,8 @@ share/help/sl/gnome-help/files-open.page
 share/help/sl/gnome-help/files-preview.page
 share/help/sl/gnome-help/files-recover.page
 share/help/sl/gnome-help/files-removedrive.page
+share/help/sl/gnome-help/files-rename-multiple.page
+share/help/sl/gnome-help/files-rename-music-metadata.page
 share/help/sl/gnome-help/files-rename.page
 share/help/sl/gnome-help/files-search.page
 share/help/sl/gnome-help/files-select.page
@@ -16398,6 +16499,7 @@ share/help/sl/gnome-help/wacom-map-buttons.page
 share/help/sl/gnome-help/wacom-mode.page
 share/help/sl/gnome-help/wacom-multi-monitor.page
 share/help/sl/gnome-help/wacom-stylus.page
+share/help/sl/gnome-help/wacom-tablet-unknown.page
 share/help/sl/gnome-help/wacom.page
 share/help/sr/
 share/help/sr/gnome-help/
@@ -16649,6 +16751,8 @@ share/help/sr/gnome-help/files-open.page
 share/help/sr/gnome-help/files-preview.page
 share/help/sr/gnome-help/files-recover.page
 share/help/sr/gnome-help/files-removedrive.page
+share/help/sr/gnome-help/files-rename-multiple.page
+share/help/sr/gnome-help/files-rename-music-metadata.page
 share/help/sr/gnome-help/files-rename.page
 share/help/sr/gnome-help/files-search.page
 share/help/sr/gnome-help/files-select.page
@@ -16853,6 +16957,7 @@ share/help/sr/gnome-help/wacom-map-buttons.page
 share/help/sr/gnome-help/wacom-mode.page
 share/help/sr/gnome-help/wacom-multi-monitor.page
 share/help/sr/gnome-help/wacom-stylus.page
+share/help/sr/gnome-help/wacom-tablet-unknown.page
 share/help/sr/gnome-help/wacom.page
 share/help/sr@latin/
 share/help/sr@latin/gnome-help/
@@ -17104,6 +17209,8 @@ share/help/sr@latin/gnome-help/files-open.page
 share/help/sr@latin/gnome-help/files-preview.page
 share/help/sr@latin/gnome-help/files-recover.page
 share/help/sr@latin/gnome-help/files-removedrive.page
+share/help/sr@latin/gnome-help/files-rename-multiple.page
+share/help/sr@latin/gnome-help/files-rename-music-metadata.page
 share/help/sr@latin/gnome-help/files-rename.page
 share/help/sr@latin/gnome-help/files-search.page
 share/help/sr@latin/gnome-help/files-select.page
@@ -17308,6 +17415,7 @@ share/help/sr@latin/gnome-help/wacom-map-buttons.page
 share/help/sr@latin/gnome-help/wacom-mode.page
 share/help/sr@latin/gnome-help/wacom-multi-monitor.page
 share/help/sr@latin/gnome-help/wacom-stylus.page
+share/help/sr@latin/gnome-help/wacom-tablet-unknown.page
 share/help/sr@latin/gnome-help/wacom.page
 share/help/sv/
 share/help/sv/gnome-help/
@@ -17559,6 +17667,8 @@ share/help/sv/gnome-help/files-open.page
 share/help/sv/gnome-help/files-preview.page
 share/help/sv/gnome-help/files-recover.page
 share/help/sv/gnome-help/files-removedrive.page
+share/help/sv/gnome-help/files-rename-multiple.page
+share/help/sv/gnome-help/files-rename-music-metadata.page
 share/help/sv/gnome-help/files-rename.page
 share/help/sv/gnome-help/files-search.page
 share/help/sv/gnome-help/files-select.page
@@ -17763,6 +17873,7 @@ share/help/sv/gnome-help/wacom-map-buttons.page
 share/help/sv/gnome-help/wacom-mode.page
 share/help/sv/gnome-help/wacom-multi-monitor.page
 share/help/sv/gnome-help/wacom-stylus.page
+share/help/sv/gnome-help/wacom-tablet-unknown.page
 share/help/sv/gnome-help/wacom.page
 share/help/sv/system-admin-guide/
 share/help/sv/system-admin-guide/appearance.page
@@ -18072,6 +18183,8 @@ share/help/ta/gnome-help/files-open.page
 share/help/ta/gnome-help/files-preview.page
 share/help/ta/gnome-help/files-recover.page
 share/help/ta/gnome-help/files-removedrive.page
+share/help/ta/gnome-help/files-rename-multiple.page
+share/help/ta/gnome-help/files-rename-music-metadata.page
 share/help/ta/gnome-help/files-rename.page
 share/help/ta/gnome-help/files-search.page
 share/help/ta/gnome-help/files-select.page
@@ -18276,6 +18389,7 @@ share/help/ta/gnome-help/wacom-map-buttons.page
 share/help/ta/gnome-help/wacom-mode.page
 share/help/ta/gnome-help/wacom-multi-monitor.page
 share/help/ta/gnome-help/wacom-stylus.page
+share/help/ta/gnome-help/wacom-tablet-unknown.page
 share/help/ta/gnome-help/wacom.page
 share/help/te/
 share/help/te/gnome-help/
@@ -18527,6 +18641,8 @@ share/help/te/gnome-help/files-open.page
 share/help/te/gnome-help/files-preview.page
 share/help/te/gnome-help/files-recover.page
 share/help/te/gnome-help/files-removedrive.page
+share/help/te/gnome-help/files-rename-multiple.page
+share/help/te/gnome-help/files-rename-music-metadata.page
 share/help/te/gnome-help/files-rename.page
 share/help/te/gnome-help/files-search.page
 share/help/te/gnome-help/files-select.page
@@ -18731,6 +18847,7 @@ share/help/te/gnome-help/wacom-map-buttons.page
 share/help/te/gnome-help/wacom-mode.page
 share/help/te/gnome-help/wacom-multi-monitor.page
 share/help/te/gnome-help/wacom-stylus.page
+share/help/te/gnome-help/wacom-tablet-unknown.page
 share/help/te/gnome-help/wacom.page
 share/help/tr/
 share/help/tr/gnome-help/
@@ -18982,6 +19099,8 @@ share/help/tr/gnome-help/files-open.page
 share/help/tr/gnome-help/files-preview.page
 share/help/tr/gnome-help/files-recover.page
 share/help/tr/gnome-help/files-removedrive.page
+share/help/tr/gnome-help/files-rename-multiple.page
+share/help/tr/gnome-help/files-rename-music-metadata.page
 share/help/tr/gnome-help/files-rename.page
 share/help/tr/gnome-help/files-search.page
 share/help/tr/gnome-help/files-select.page
@@ -19186,6 +19305,7 @@ share/help/tr/gnome-help/wacom-map-buttons.page
 share/help/tr/gnome-help/wacom-mode.page
 share/help/tr/gnome-help/wacom-multi-monitor.page
 share/help/tr/gnome-help/wacom-stylus.page
+share/help/tr/gnome-help/wacom-tablet-unknown.page
 share/help/tr/gnome-help/wacom.page
 share/help/tr/system-admin-guide/
 share/help/tr/system-admin-guide/appearance.page
@@ -19495,6 +19615,8 @@ share/help/uk/gnome-help/files-open.page
 share/help/uk/gnome-help/files-preview.page
 share/help/uk/gnome-help/files-recover.page
 share/help/uk/gnome-help/files-removedrive.page
+share/help/uk/gnome-help/files-rename-multiple.page
+share/help/uk/gnome-help/files-rename-music-metadata.page
 share/help/uk/gnome-help/files-rename.page
 share/help/uk/gnome-help/files-search.page
 share/help/uk/gnome-help/files-select.page
@@ -19699,6 +19821,7 @@ share/help/uk/gnome-help/wacom-map-buttons.page
 share/help/uk/gnome-help/wacom-mode.page
 share/help/uk/gnome-help/wacom-multi-monitor.page
 share/help/uk/gnome-help/wacom-stylus.page
+share/help/uk/gnome-help/wacom-tablet-unknown.page
 share/help/uk/gnome-help/wacom.page
 share/help/uk/system-admin-guide/
 share/help/uk/system-admin-guide/appearance.page
@@ -20008,6 +20131,8 @@ share/help/vi/gnome-help/files-open.page
 share/help/vi/gnome-help/files-preview.page
 share/help/vi/gnome-help/files-recover.page
 share/help/vi/gnome-help/files-removedrive.page
+share/help/vi/gnome-help/files-rename-multiple.page
+share/help/vi/gnome-help/files-rename-music-metadata.page
 share/help/vi/gnome-help/files-rename.page
 share/help/vi/gnome-help/files-search.page
 share/help/vi/gnome-help/files-select.page
@@ -20212,6 +20337,7 @@ share/help/vi/gnome-help/wacom-map-buttons.page
 share/help/vi/gnome-help/wacom-mode.page
 share/help/vi/gnome-help/wacom-multi-monitor.page
 share/help/vi/gnome-help/wacom-stylus.page
+share/help/vi/gnome-help/wacom-tablet-unknown.page
 share/help/vi/gnome-help/wacom.page
 share/help/zh_CN/
 share/help/zh_CN/gnome-help/
@@ -20463,6 +20589,8 @@ share/help/zh_CN/gnome-help/files-open.page
 share/help/zh_CN/gnome-help/files-preview.page
 share/help/zh_CN/gnome-help/files-recover.page
 share/help/zh_CN/gnome-help/files-removedrive.page
+share/help/zh_CN/gnome-help/files-rename-multiple.page
+share/help/zh_CN/gnome-help/files-rename-music-metadata.page
 share/help/zh_CN/gnome-help/files-rename.page
 share/help/zh_CN/gnome-help/files-search.page
 share/help/zh_CN/gnome-help/files-select.page
@@ -20667,4 +20795,5 @@ share/help/zh_CN/gnome-help/wacom-map-buttons.page
 share/help/zh_CN/gnome-help/wacom-mode.page
 share/help/zh_CN/gnome-help/wacom-multi-monitor.page
 share/help/zh_CN/gnome-help/wacom-stylus.page
+share/help/zh_CN/gnome-help/wacom-tablet-unknown.page
 share/help/zh_CN/gnome-help/wacom.page
