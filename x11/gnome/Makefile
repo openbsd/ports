@@ -62,6 +62,7 @@
      SUBDIR += libsecret
      SUBDIR += libshumate
      SUBDIR += libxklavier
+     SUBDIR += localsearch
      SUBDIR += mahjongg
      SUBDIR += maps
      SUBDIR += menus
@@ -90,11 +91,10 @@
      SUBDIR += tetravex
      SUBDIR += text-editor
      SUBDIR += themes-extra
+     SUBDIR += tinysparql
      SUBDIR += totem
      SUBDIR += totem-pl-parser
      SUBDIR += tour
-     SUBDIR += tracker3
-     SUBDIR += tracker3-miners
      SUBDIR += tweaks
      SUBDIR += usage
      SUBDIR += user-docs
