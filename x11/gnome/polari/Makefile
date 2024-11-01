@@ -2,7 +2,7 @@ COMMENT=		IRC Client for GNOME
 
 GNOME_PROJECT=		polari
 GNOME_VERSION=		46.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		net
 
@@ -10,7 +10,7 @@ CATEGORIES=		net
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += c gio-2.0 girepository-1.0 gjs glib-2.0 gobject-2.0
-WANTLIB += telepathy-glib tracker-sparql-3.0
+WANTLIB += telepathy-glib tinysparql-3.0
 
 MODULES=		devel/dconf \
 			devel/meson \
@@ -21,7 +21,7 @@ MODGNOME_TOOLS= 	desktop-file-utils gobject-introspection \
 
 LIB_DEPENDS=		net/telepathy/telepathy-glib \
 			x11/gnome/gjs \
-			x11/gnome/tracker3
+			x11/gnome/tinysparql
 
 BUILD_DEPENDS=		x11/gnome/libadwaita # to pull up x11/gtk+4,-guic
 RUN_DEPENDS=		x11/gnome/libadwaita
