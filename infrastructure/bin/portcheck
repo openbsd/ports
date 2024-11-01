@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.147 2024/06/10 05:10:08 rsadowski Exp $
+# $OpenBSD: portcheck,v 1.148 2024/11/01 09:17:30 landry Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1037,7 +1037,7 @@ check_plist() {
 			;;
 		share/icons/default.*)
 			;;
-		share/icons/*)
+		share/icons/*.@(png|svg|svgz|icon|ico))
 			app=${l#share/icons/}
 			app=${app%%/*}
 			app=${app%%.*}
