@@ -1,10 +1,9 @@
 COMMENT=	simple packaging tool for simple packages
 
-MODPY_EGG_VERSION=	3.9.0
+MODPY_EGG_VERSION=	3.10.0
 
 DISTNAME=	flit-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	devel
 
@@ -16,6 +15,7 @@ PERMIT_PACKAGE= Yes
 
 MODULES=	lang/python
 MODPY_PI=	Yes
+MODPY_PYBUILD=	flit_core
 
 FLAVOR=		python3
 FLAVORS=	python3
@@ -26,12 +26,15 @@ RUN_DEPENDS=	devel/py-flit_core${MODPY_FLAVOR} \
 		www/py-requests${MODPY_FLAVOR}
 
 PORTHOME=	${WRKDIR}
-MODPY_PYTEST=	Yes
 TEST_DEPENDS=	devel/py-testpath${MODPY_FLAVOR} \
 		devel/py-pip${MODPY_FLAVOR} \
 		www/py-responses${MODPY_FLAVOR}
 
-MODPY_PYBUILD=	flit_core
+# tests using pep to install expected to fail with EXTERNALLY-MANAGED
+MODPY_PYTEST_ARGS= -k 'not test_install_data_dir \
+		and not test_install_module_pep621 \
+		and not test_symlink_data_dir \
+		and not test_symlink_module_pep621'
 
 pre-test:
 	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
