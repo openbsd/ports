@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1666 2024/10/24 13:51:40 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1667 2024/11/01 08:45:36 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -596,6 +596,8 @@ my $stem_extensions = {
 	'py3-buildbot-www-react' => 'py3-buildbot-www',
 # 7.7
 	'libkomparediff2-kf5' => 'kf6-libkomparediff2',
+	'tracker3' => 'tinysparql',
+	'tracker3' => 'localsearch',
 };
 
 my $obsolete_reason = {};
