@@ -6,7 +6,7 @@
 
      # New in KDE Gear/24.08
      #SUBDIR += kgraphviewer
-     #SUBDIR += kweathercore
+     SUBDIR += kweathercore
      #SUBDIR += massif-visualizer
 
      # New in KDE Gear/24.05
@@ -14,7 +14,7 @@
      #SUBDIR += audex
      #SUBDIR += francis
      #SUBDIR += skladnik (rejoining after long time, previously called KSokoban)
-     #SUBDIR += kalm
+     SUBDIR += kalm
 
      # New in KDE Gear/24.02
      #SUBDIR += isoimagewriter
@@ -36,7 +36,7 @@
      #SUBDIR +=  kongress
      #SUBDIR +=  krecorder
      #SUBDIR +=  ktrip
-     #SUBDIR +=  kweather
+     SUBDIR +=  kweather
      #SUBDIR +=  qmlkonsole
      #SUBDIR +=  telly-skout
 
