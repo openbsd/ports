@@ -1,0 +1,46 @@
+XXX Add a gudev option to meson(1)
+
+Index: src/miners/fs/tracker-miner-files.c
+--- src/miners/fs/tracker-miner-files.c.orig
++++ src/miners/fs/tracker-miner-files.c
+@@ -71,7 +71,9 @@ struct TrackerMinerFilesPrivate {
+ 	gboolean low_battery_pause;
+ 	gboolean initial_index;
+ 
++#if 0
+ 	GUdevClient *udev_client;
++#endif
+ #ifdef HAVE_POWER
+ 	TrackerPower *power;
+ #endif /* HAVE_POWER) */
+@@ -297,7 +299,9 @@ tracker_miner_files_init (TrackerMinerFiles *mf)
+ 	priv->finished_handler = g_signal_connect_after (mf, "finished",
+ 	                                                 G_CALLBACK (miner_finished_cb),
+ 	                                                 NULL);
++#if 0
+ 	priv->udev_client = g_udev_client_new (NULL);
++#endif
+ }
+ 
+ static void
+@@ -417,7 +421,9 @@ miner_files_finalize (GObject *object)
+ #endif /* HAVE_POWER */
+ 
+ 	tracker_domain_ontology_unref (priv->domain_ontology);
++#if 0
+ 	g_clear_pointer (&priv->udev_client, g_object_unref);
++#endif
+ 
+ 	if (priv->storage) {
+ 		g_object_unref (priv->storage);
+@@ -1184,8 +1190,10 @@ tracker_miner_files_check_allowed_text_file (TrackerMi
+ 	return FALSE;
+ }
+ 
++#if 0
+ GUdevClient *
+ tracker_miner_files_get_udev_client (TrackerMinerFiles *mf)
+ {
+ 	return mf->private->udev_client;
+ }
++#endif

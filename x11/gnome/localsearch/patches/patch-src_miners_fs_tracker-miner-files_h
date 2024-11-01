@@ -1,0 +1,25 @@
+XXX Add a gudev option to meson(1)
+
+Index: src/miners/fs/tracker-miner-files.h
+--- src/miners/fs/tracker-miner-files.h.orig
++++ src/miners/fs/tracker-miner-files.h
+@@ -21,7 +21,9 @@
+ #define __TRACKER_MINER_FS_FILES_H__
+ 
+ #include <gio/gio.h>
++#if 0
+ #include <gudev/gudev.h>
++#endif
+ 
+ #include "tracker-config.h"
+ 
+@@ -64,7 +66,9 @@ TrackerStorage * tracker_miner_files_get_storage (Trac
+ gboolean tracker_miner_files_check_allowed_text_file (TrackerMinerFiles *mf,
+                                                       GFile             *file);
+ 
++#if 0
+ GUdevClient * tracker_miner_files_get_udev_client (TrackerMinerFiles *mf);
++#endif
+ 
+ G_END_DECLS
+ 

@@ -1,0 +1,29 @@
+XXX Add a gudev option to meson(1)
+
+XXX fix and push upstream
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -23,7 +23,11 @@ gexiv2 = dependency('gexiv2', required: get_option('ra
+ gio = dependency('gio-2.0', version: '>=' + glib_required)
+ gio_unix = dependency('gio-unix-2.0', version: '>=' + glib_required)
+ glib = dependency('glib-2.0', version: '>=' + glib_required)
+-gudev = dependency('gudev-1.0')
++if host_machine.system() == 'linux'
++  gudev = dependency('gudev-1.0')
++else
++  gudev = []
++endif
+ gmodule = dependency('gmodule-2.0', version: '>=' + glib_required)
+ gobject = dependency('gobject-2.0', version: '>=' + glib_required)
+ gobject_introspection = dependency('gobject-introspection-1.0')
+@@ -69,7 +73,7 @@ if get_option('man')
+   a2x = find_program('a2x')
+ endif
+ 
+-sha256sum = find_program('sha256sum')
++sha256sum = find_program('gsha256sum')
+ 
+ add_project_arguments('-Wformat', '-Wformat-security', language: 'c')
+ 
