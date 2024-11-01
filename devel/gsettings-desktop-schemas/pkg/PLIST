@@ -17,6 +17,7 @@ share/glib-2.0/schemas/org.gnome.desktop.a11y.magnifier.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.a11y.mouse.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.app-folders.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.background.gschema.xml
+share/glib-2.0/schemas/org.gnome.desktop.break-reminders.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.calendar.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.datetime.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.default-applications.gschema.xml
