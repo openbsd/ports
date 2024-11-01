@@ -1,10 +1,10 @@
 @bin bin/epiphany
 lib/epiphany/
+@so lib/epiphany/libephyautofill.so
 @so lib/epiphany/libephymain.so
 @so lib/epiphany/libephymisc.so
 @so lib/epiphany/libephysync.so
 lib/epiphany/web-process-extensions/
-@so lib/epiphany/web-process-extensions/libephywebextension.so
 @so lib/epiphany/web-process-extensions/libephywebprocessextension.so
 libexec/epiphany/
 @bin libexec/epiphany-search-provider
