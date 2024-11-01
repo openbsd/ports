@@ -1,8 +1,7 @@
 COMMENT=		Genealogical Research Analysis Management Programming System
 
-MODPY_EGG_VERSION =	5.1.6
+MODPY_EGG_VERSION =	5.2.3
 DISTNAME=		gramps-${MODPY_EGG_VERSION}
-REVISION=		0
 
 CATEGORIES=		misc x11
 
@@ -15,6 +14,8 @@ SITES=			${SITE_SOURCEFORGE:=gramps/}
 
 MODULES=		lang/python \
 			textproc/intltool
+
+MODPY_PYBUILD=		setuptools
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/py-gobject3${MODPY_FLAVOR} \
@@ -29,12 +30,9 @@ RUN_DEPENDS=		devel/desktop-file-utils \
 			textproc/py-ICU${MODPY_FLAVOR} \
 			x11/gtk+4,-guic
 
-MODPY_DISTUTILS_BUILD=	build
 NO_TEST=		Yes
 
 pre-configure:
-	sed -i 's,/usr/share,${PREFIX}/share,g' \
-		${WRKSRC}/data/gramps.keys.in
 	sed -i 's,share/man,man,g' ${WRKSRC}/setup.py
 
 post-install:
