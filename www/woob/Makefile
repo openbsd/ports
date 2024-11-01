@@ -1,7 +1,6 @@
 COMMENT =	web outside of browsers
 
-MODPY_EGG_VERSION =	3.6
-REVISION =	2
+MODPY_EGG_VERSION =	3.7
 DISTNAME =	woob-${MODPY_EGG_VERSION}
 
 CATEGORIES =	www
@@ -31,7 +30,8 @@ RUN_DEPENDS +=	textproc/py-lxml${MODPY_FLAVOR} \
 		devel/py-babel${MODPY_FLAVOR} \
 		sysutils/py-packaging${MODPY_FLAVOR} \
 		devel/py-country${MODPY_FLAVOR} \
-		devel/py-rich${MODPY_FLAVOR}
+		devel/py-rich${MODPY_FLAVOR} \
+		graphics/py-termcolor${MODPY_FLAVOR}
 
 # unlisted dependencies in woob/ and tools/
 #  (dependencies for some tools, some features, ...)
@@ -41,6 +41,7 @@ RUN_DEPENDS +=	devel/py-colorama${MODPY_FLAVOR} \
 		textproc/py-pdfminer${MODPY_FLAVOR} \
 		textproc/py-prettytable${MODPY_FLAVOR} \
 		textproc/py-xlrd${MODPY_FLAVOR} \
+		security/py-josepy${MODPY_FLAVOR} \
 		www/py-jwt${MODPY_FLAVOR} \
 		www/py-selenium${MODPY_FLAVOR}
 
@@ -59,7 +60,9 @@ TEST_DEPENDS +=	devel/py-asttokens${MODPY_FLAVOR} \
 		devel/py-test${MODPY_FLAVOR} \
 		textproc/sphinx \
 		devel/py-virtualenv${MODPY_FLAVOR} \
-		devel/pre-commit
+		devel/pre-commit \
+		www/py-responses${MODPY_FLAVOR}
+
 # missing
 #  xunitparser
 #  commitizen
