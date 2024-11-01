@@ -58,6 +58,7 @@
      SUBDIR += echinus
      SUBDIR += ede
      SUBDIR += elementary
+     SUBDIR += elementary-xfce-icon-theme
      SUBDIR += emelfm2
      SUBDIR += emwm
      SUBDIR += emwm-utils
