@@ -2,6 +2,7 @@ COMMENT =	add-ons for the kirigami frameworks
 
 VERSION =	1.4.0
 DISTNAME =	kirigami-addons-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=	KirigamiAddonsStatefulApp 0.0 # 0.0
 
@@ -24,7 +25,8 @@ EXTRACT_SUFX =		.tar.xz
 
 MODULES =		devel/kf6
 
-BUILD_DEPENDS =		devel/gettext,-tools \
+BUILD_DEPENDS =		archivers/gtar \
+			devel/gettext,-tools \
 			devel/kf6/kirigami
 
 RUN_DEPENDS =		devel/kf6/qqc2-desktop-style \
@@ -38,5 +40,8 @@ LIB_DEPENDS =		devel/kf6/ki18n \
 			x11/qt6/qtdeclarative
 
 TEST_IS_INTERACTIVE =	X11
+
+post-extract:
+	@ln -sf ${LOCALBASE}/bin/gtar ${WRKDIR}/bin/tar
 
 .include <bsd.port.mk>
