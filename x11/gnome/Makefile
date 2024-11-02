@@ -50,6 +50,7 @@
      SUBDIR += libadwaita
      SUBDIR += libcloudproviders
      SUBDIR += libdazzle
+     SUBDIR += libdex
      SUBDIR += libdmapsharing4
      SUBDIR += libgda
      SUBDIR += libgepub
