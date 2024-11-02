@@ -10,7 +10,7 @@ Index: chrome/browser/ui/ui_features.h
  BASE_DECLARE_FEATURE(kFewerUpdateConfirmations);
  #endif
  
-@@ -258,7 +258,7 @@ bool IsToolbarPinningEnabled();
+@@ -266,7 +266,7 @@ bool IsToolbarPinningEnabled();
  
  BASE_DECLARE_FEATURE(kTopChromeWebUIUsesSpareRenderer);
  
@@ -19,7 +19,7 @@ Index: chrome/browser/ui/ui_features.h
  BASE_DECLARE_FEATURE(kUpdateTextOptions);
  extern const base::FeatureParam<int> kUpdateTextOptionNumber;
  #endif
-@@ -283,7 +283,7 @@ BASE_DECLARE_FEATURE(kViewsJSAppModalDialog);
+@@ -291,7 +291,7 @@ BASE_DECLARE_FEATURE(kViewsJSAppModalDialog);
  
  BASE_DECLARE_FEATURE(kStopLoadingAnimationForHiddenWindow);
  
