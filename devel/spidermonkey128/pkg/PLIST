@@ -1,13 +1,11 @@
-@comment when spidermonkey115 is EOL, remove comments and add the following to quirks:
-@comment 'spidermonkey115' => 'spidermonkey128'
-@comment @conflict spidermonkey78-*
-@comment @conflict spidermonkey91-*
-@comment @conflict spidermonkey102-*
-@comment @conflict spidermonkey115-*
-@comment @pkgpath devel/spidermonkey78
-@comment @pkgpath devel/spidermonkey91
-@comment @pkgpath devel/spidermonkey102
-@comment @pkgpath devel/spidermonkey115
+@conflict spidermonkey78-*
+@conflict spidermonkey91-*
+@conflict spidermonkey102-*
+@conflict spidermonkey115-*
+@pkgpath devel/spidermonkey78
+@pkgpath devel/spidermonkey91
+@pkgpath devel/spidermonkey102
+@pkgpath devel/spidermonkey115
 bin/js${MOZILLA_VERSION}-config
 include/mozjs-${MOZILLA_VERSION}/
 include/mozjs-${MOZILLA_VERSION}/BaseProfiler.h

@@ -16,6 +16,8 @@ DISTNAME =		firefox-${V}esr.source
 PKGNAME =		spidermonkey${MOZILLA_VERSION}-${V}
 EPOCH =			1
 
+REVISION =		0
+
 SHARED_LIBS =		mozjs-128 0.0
 
 CATEGORIES =		devel
