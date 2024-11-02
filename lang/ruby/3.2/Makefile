@@ -1,4 +1,4 @@
-VERSION =		3.2.5
+VERSION =		3.2.6
 DISTNAME =		ruby-${VERSION}
 SHARED_LIBS =		ruby32	0.0
 NEXTVER =		3.3
@@ -50,6 +50,7 @@ pre-install:
 	${PRE_INSTALL}
 
 post-install:
+	rm -rf ${PREFIX}/lib/ruby/gems/${REV}/gems/{debug,rbs}-*/ext/
 	${FIX_RBCONFIG}
 
 .include <bsd.port.mk>
