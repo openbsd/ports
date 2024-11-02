@@ -42,7 +42,6 @@ include/libgladeui-2.0/gladeui/glade.h
 lib/girepository-1.0/Gladeui-2.0.typelib
 lib/glade/
 lib/glade/modules/
-@so lib/glade/modules/libgladegjs.so
 @so lib/glade/modules/libgladegtk.so
 @so lib/glade/modules/libgladepython.so
 @lib lib/libgladeui-2.so.${LIBgladeui-2_VERSION}
