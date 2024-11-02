@@ -11,7 +11,7 @@ Index: src/wayland/meta-wayland-dma-buf.c
  #include <drm_fourcc.h>
  #include <glib/gstdio.h>
  #include <linux/dma-buf.h>
-@@ -1994,3 +1995,4 @@ static void
+@@ -1993,3 +1994,4 @@ static void
  meta_wayland_dma_buf_manager_init (MetaWaylandDmaBufManager *dma_buf)
  {
  }

@@ -17,7 +17,7 @@ Index: src/core/meta-context-main.c
  
  #include "backends/meta-monitor.h"
  #include "backends/meta-monitor-manager-private.h"
-@@ -347,8 +351,10 @@ meta_context_main_get_x11_display_policy (MetaContext 
+@@ -350,8 +354,10 @@ meta_context_main_get_x11_display_policy (MetaContext 
  #ifdef HAVE_WAYLAND
        if (context_main->options.no_x11)
          return META_X11_DISPLAY_POLICY_DISABLED;
@@ -28,7 +28,7 @@ Index: src/core/meta-context-main.c
        else
          return META_X11_DISPLAY_POLICY_ON_DEMAND;
  #else /* HAVE_WAYLAND */
-@@ -508,7 +514,6 @@ meta_context_main_create_backend (MetaContext  *contex
+@@ -511,7 +517,6 @@ meta_context_main_create_backend (MetaContext  *contex
  #ifdef HAVE_X11
        if (context_main->options.nested)
          return create_nested_backend (context, error);

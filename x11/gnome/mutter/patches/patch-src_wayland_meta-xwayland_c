@@ -12,7 +12,7 @@ Index: src/wayland/meta-xwayland.c
  #endif
  #include <unistd.h>
  #include <X11/extensions/Xrandr.h>
-@@ -598,9 +600,11 @@ open_display_sockets (MetaXWaylandManager  *manager,
+@@ -597,9 +599,11 @@ open_display_sockets (MetaXWaylandManager  *manager,
  {
    int abstract_fd, unix_fd;
  
@@ -24,7 +24,7 @@ Index: src/wayland/meta-xwayland.c
  
    unix_fd = bind_to_unix_socket (display_index, error);
    if (unix_fd < 0)
-@@ -609,6 +613,10 @@ open_display_sockets (MetaXWaylandManager  *manager,
+@@ -608,6 +612,10 @@ open_display_sockets (MetaXWaylandManager  *manager,
        return FALSE;
      }
  
@@ -35,7 +35,7 @@ Index: src/wayland/meta-xwayland.c
    *abstract_fd_out = abstract_fd;
    *unix_fd_out = unix_fd;
  
-@@ -684,12 +692,16 @@ prepare_auth_file (MetaXWaylandManager  *manager,
+@@ -683,12 +691,16 @@ prepare_auth_file (MetaXWaylandManager  *manager,
                                           ".mutter-Xwaylandauth.XXXXXX",
                                           NULL);
  

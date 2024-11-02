@@ -1,26 +1,24 @@
 COMMENT=		window and compositing manager based on Clutter
 
 GNOME_PROJECT=		mutter
-GNOME_VERSION=		46.6
-REVISION=		0
+GNOME_VERSION=		47.1
 
-SHARED_LIBS +=  mutter-14                 0.0 # 0.0
-SHARED_LIBS +=  mutter-clutter-14         0.0 # 0.0
-SHARED_LIBS +=  mutter-cogl-14            0.0 # 0.0
-SHARED_LIBS +=  mutter-cogl-pango-14      0.0 # 0.0
-SHARED_LIBS +=  mutter-mtk-14             0.0 # 0.0
+SHARED_LIBS += mutter-mtk-15             0.0 # 0.0.0
+SHARED_LIBS += mutter-cogl-15            0.0 # 0.0.0
+SHARED_LIBS += mutter-cogl-pango-15      0.0 # 0.0.0
+SHARED_LIBS += mutter-clutter-15         0.0 # 0.0.0
+SHARED_LIBS += mutter-15                 0.0 # 0.0.0
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += EGL GL ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xtst atk-1.0 c cairo
-WANTLIB += canberra colord display-info drm eis fontconfig fribidi
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-4
-WANTLIB += gobject-2.0 graphene-1.0 gtk-4 harfbuzz intl lcms2
-WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pixman-1 startup-notification-1
-WANTLIB += wayland-server xcb xcb-randr xcb-res xkbcommon xkbcommon-x11
-WANTLIB += xkbfile
+WANTLIB += canberra colord display-info drm eis fribidi gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnome-desktop-4 gobject-2.0
+WANTLIB += graphene-1.0 gtk-4 harfbuzz intl lcms2 m pango-1.0
+WANTLIB += pangocairo-1.0 pixman-1 startup-notification-1 wayland-server
+WANTLIB += xcb xcb-randr xcb-res xkbcommon xkbcommon-x11 xkbfile
 
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
@@ -59,7 +57,7 @@ CONFIGURE_ARGS +=	-Dopengl_libname=libGL.so \
 			-Dgles2_libname=libGLESv2.so \
 			-Dudev=false \
 			-Dlibwacom=false \
-			-Dtests=false \
+			-Dtests=disabled \
 			-Dprofiler=false \
 			-Dsystemd=false
 
