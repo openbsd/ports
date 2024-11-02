@@ -1,8 +1,7 @@
 COMMENT =	experimental fully end-to-end encrypted IPv6 network
 
 MODGO_MODNAME =	github.com/yggdrasil-network/yggdrasil-go
-MODGO_VERSION =	v0.5.3
-REVISION =	2
+MODGO_VERSION =	v0.5.9
 
 DISTNAME =	yggdrasil-go-${MODGO_VERSION}
 
@@ -12,6 +11,8 @@ HOMEPAGE =	https://yggdrasil-network.github.io/
 
 # LGPL-3.0
 PERMIT_PACKAGE =	Yes
+
+MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 MODULES =		lang/go
 
