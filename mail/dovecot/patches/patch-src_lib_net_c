@@ -1,0 +1,20 @@
+net: OpenBSD should behave like FreeBSD on net_connect_ip_full
+
+This patch fixes errors such as
+ 
+      Fatal: connect(...) failed: Address already in use
+ 
+The fix is simple, extending FreeBSD's condition to OpenBSD as well,
+which results in such errors disappearing on the tested setup.
+Index: src/lib/net.c
+--- src/lib/net.c.orig
++++ src/lib/net.c
+@@ -213,7 +213,7 @@ static int net_connect_ip_full(const struct ip_addr *i
+ 		fd = net_connect_ip_once(ip, port, my_ip, sock_type, blocking);
+ 		if (fd != -1 || try++ >= MAX_CONNECT_RETRIES ||
+ 		    (errno != EADDRNOTAVAIL
+-#ifdef __FreeBSD__
++#if defined(__FreeBSD__) || defined(__OpenBSD__)
+ 		     /* busy */
+ 		     && errno != EADDRINUSE
+ 		     /* pf may cause this if another connection used
