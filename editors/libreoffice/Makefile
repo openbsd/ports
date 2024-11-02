@@ -23,7 +23,7 @@ SHARED_LIBS +=  wpg-0.3-lo                3.4 # 3.4
 SHARED_LIBS +=  wps-0.4-lo                4.14 # 4.14
 
 BV=		24.8
-VERSION=	${BV}.1.2
+VERSION=	${BV}.2.1
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 CATEGORIES=	editors productivity
