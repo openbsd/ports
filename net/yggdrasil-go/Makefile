@@ -2,6 +2,7 @@ COMMENT =	experimental fully end-to-end encrypted IPv6 network
 
 MODGO_MODNAME =	github.com/yggdrasil-network/yggdrasil-go
 MODGO_VERSION =	v0.5.3
+REVISION =	0
 
 DISTNAME =	yggdrasil-go-${MODGO_VERSION}
 
@@ -16,11 +17,11 @@ MODULES =		lang/go
 
 WANTLIB += c pthread
 
+DOC_DIR =	${PREFIX}/share/doc/${PKGSTEM}
+
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/yggdrasil/
-	${INSTALL_DATA} ${WRKSRC}/README.md ${PREFIX}/share/doc/yggdrasil/
-	${PREFIX}/bin/yggdrasil -genconf > \
-	    ${PREFIX}/share/examples/yggdrasil/yggdrasil.conf
+	${INSTALL_DATA_DIR} ${DOC_DIR}
+	${INSTALL_DATA} ${WRKSRC}/README.md ${DOC_DIR}/
 	mv ${PREFIX}/bin/{,yggdrasil-}genkeys
 
 .include "modules.inc"
