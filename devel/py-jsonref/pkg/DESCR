@@ -1,0 +1,5 @@
+jsonref is a library for automatic dereferencing of JSON Reference objects for
+Python.
+
+This library lets you use a data structure with JSON reference objects, as if
+the references had been replaced with the referent data.

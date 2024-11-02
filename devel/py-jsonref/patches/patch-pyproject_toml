@@ -1,0 +1,14 @@
+https://github.com/gazpachoking/jsonref/commit/f18f30772df086bebdcc9b1b76a35558b4a0a897
+
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -37,6 +37,6 @@ profile = "black"
+ 
+ [build-system]
+ requires = [
+-    "pdm-pep517>=1.0.0",
++    "pdm-backend",
+ ]
+-build-backend = "pdm.pep517.api"
++build-backend = "pdm.backend"
