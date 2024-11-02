@@ -8,6 +8,8 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
+REVISION-extras=	0
+
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 HOMEPAGE=		https://www.gnome.org/
@@ -117,8 +119,7 @@ RUN_DEPENDS-extras +=	sysutils/dspy \
 # - from https://archlinux.org/groups/x86_64/gnome-extra/
 ################################################################################
 
-RUN_DEPENDS-extras +=	devel/glade \
-			mail/evolution \
+RUN_DEPENDS-extras +=	mail/evolution \
 			x11/gnome/cheese \
 			x11/gnome/dictionary \
 			x11/gnome/endeavour \
