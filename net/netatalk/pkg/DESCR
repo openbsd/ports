@@ -1,7 +1,0 @@
-Netatalk is a freely-available Open Source AFP fileserver.
-
-It also comes with a load of small utilities to ease dealing with
-Macintosh files from the Unix side.
-
-Flavors:
-          avahi - Build with ZeroConf support
