@@ -1,6 +1,6 @@
 COMMENT =	X server running as wayland application
 
-DISTNAME =	xwayland-24.1.2
+DISTNAME =	xwayland-24.1.4
 
 CATEGORIES =	wayland
 
@@ -12,7 +12,7 @@ MAINTAINER =	matthieu@openbsd.org
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =		GL Xau Xdmcp Xfont2 gbm xcvt drm kvm pthread c m
-WANTLIB +=		pixman-1 xshmfence ei epoxy wayland-client
+WANTLIB +=		pixman-1 xshmfence ei epoxy epoll-shim wayland-client
 
 SITES =			${SITE_XORG:=xserver/}
 EXTRACT_SUFX =		.tar.xz
