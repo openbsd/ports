@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1667 2024/11/01 08:45:36 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1668 2024/11/02 13:41:21 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -598,6 +598,7 @@ my $stem_extensions = {
 	'libkomparediff2-kf5' => 'kf6-libkomparediff2',
 	'tracker3' => 'tinysparql',
 	'tracker3' => 'localsearch',
+	'spidermonkey115' => 'spidermonkey128',
 };
 
 my $obsolete_reason = {};
