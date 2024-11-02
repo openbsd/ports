@@ -5,7 +5,15 @@ GIT_EXTERN(int) git_buf_grow(git_buf *buffer, size_t target_size);
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -172,7 +172,6 @@ test_c_args = [
+@@ -165,7 +165,6 @@ test_c_args = [
+   '-Wcast-align',
+   '-Wdeclaration-after-statement',
+   '-Werror=address',
+-  '-Werror=array-bounds',
+   '-Werror=empty-body',
+   '-Werror=implicit',
+   '-Werror=implicit-function-declaration',
+@@ -182,7 +181,6 @@ test_c_args = [
    '-Werror=parenthesis',
    '-Werror=pointer-arith',
    '-Werror=pointer-to-int-cast',

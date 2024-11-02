@@ -1,20 +1,20 @@
 No wordexp(3) on OpenBSD.
 XXX check for the wordexp function instead + push upstream
 
-Index: src/libide/io/ide-path.c
---- src/libide/io/ide-path.c.orig
-+++ src/libide/io/ide-path.c
-@@ -24,7 +24,9 @@
- 
- #include <string.h>
+Index: src/libide/core/ide-global.c
+--- src/libide/core/ide-global.c.orig
++++ src/libide/core/ide-global.c
+@@ -28,7 +28,9 @@
+ #include <sys/user.h>
+ #include <sys/utsname.h>
  #include <unistd.h>
 +#ifndef __OpenBSD__
  #include <wordexp.h>
 +#endif
  
- #include <libide-threading.h>
- 
-@@ -43,6 +45,7 @@
+ #include <gio/gio.h>
+ #define G_SETTINGS_ENABLE_BACKEND
+@@ -399,6 +401,7 @@ _ide_host_environ (void)
  gchar *
  ide_path_expand (const gchar *path)
  {
@@ -22,7 +22,7 @@ Index: src/libide/io/ide-path.c
    wordexp_t state = { 0 };
    char *replace_home = NULL;
    char *ret = NULL;
-@@ -85,6 +88,9 @@ ide_path_expand (const gchar *path)
+@@ -441,6 +444,9 @@ ide_path_expand (const gchar *path)
    g_free (escaped);
  
    return ret;

@@ -1,25 +1,18 @@
-# XXX cannot be updated because it needs libdex which depends on ucontext.h
-# (makecontext(3) etc.)
-
-# XXX prctl(2) or procctl(2)
-# error: #error "Please submit a patch to support parent-death signal on your OS"
-
-COMMENT=		IDE for GNOME
+COMMENT=		IDE for writing GNOME-based software
 
 GNOME_PROJECT=		gnome-builder
-GNOME_VERSION=		43.7
-REVISION=		10
+GNOME_VERSION=		47.2
 
 CATEGORIES=		devel
 
 # GPLv3
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += adwaita-1 c cairo cmark dspy-1 editorconfig enchant-2
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 girepository-1.0 git2 git2-glib-1.0
-WANTLIB += glib-2.0 gobject-2.0 gtk-4 gtksourceview-5 icuuc intl
-WANTLIB += json-glib-1.0 jsonrpc-glib-1.0 m panel-1 pango-1.0
-WANTLIB += peas-1.0 portal portal-gtk4 template_glib-1.0 vte-2.91-gtk4
+WANTLIB += adwaita-1 c cairo cmark dex-1 editorconfig gdk_pixbuf-2.0
+WANTLIB += gio-2.0 girepository-1.0 git2 git2-glib-1.0 glib-2.0
+WANTLIB += gobject-2.0 gom-1.0 gtk-4 gtksourceview-5 intl json-glib-1.0
+WANTLIB += jsonrpc-glib-1.0 m panel-1 pango-1.0 peas-2 portal
+WANTLIB += portal-gtk4 spelling-1 template_glib-1.0 vte-2.91-gtk4
 WANTLIB += webkitgtk-6.0 xml2
 WANTLIB += llvm${MODCLANG_VERSION}/lib/clang
 
@@ -29,7 +22,6 @@ MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 
-SUBST_VARS +=		MODCLANG_VERSION
 MODCLANG_COMPILER_LINKS=No
 
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
@@ -40,26 +32,25 @@ BUILD_DEPENDS=		devel/ectags \
 
 RUN_DEPENDS=		devel/ectags
 
-# python auto-completion
-RUN_DEPENDS +=		devel/py-jedi${MODPY_FLAVOR}
-
-# python documentation auto-completion
-RUN_DEPENDS +=		textproc/py-lxml${MODPY_FLAVOR}
-
 # see patch-src_plugins_todo_gbp-todo-model_c
 RUN_DEPENDS +=		sysutils/ggrep
 
-LIB_DEPENDS=		devel/jsonrpc-glib \
+# src/plugins/dspy/gbp-dspy-application-addin.c
+RUN_DEPENDS +=		sysutils/dspy
+
+LIB_DEPENDS=		${MODCLANG_LIB_DEPENDS} \
+			devel/jsonrpc-glib \
 			devel/libgit2/libgit2-glib \
-			devel/libpeas \
-			${MODCLANG_LIB_DEPENDS} \
+			devel/libpeas2 \
 			devel/template-glib \
 			devel/vte3,-gtk4 \
 			editors/editorconfig-core-c \
-			sysutils/dspy \
 			sysutils/flatpak/libportal,-gtk4 \
 			textproc/cmark \
+			textproc/libspelling \
 			www/webkitgtk4,webkitgtk60 \
+			x11/gnome/gom \
+			x11/gnome/libdex \
 			x11/gnome/libpanel \
 			x11/gtksourceview5
 
