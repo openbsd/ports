@@ -38,6 +38,8 @@
      SUBDIR += qtwebsockets
      SUBDIR += qtwebview
 
+     SUBDIR += pyside6
+
 # Windows only
 #     SUBDIR += qtactiveqt
 .include <bsd.port.subdir.mk>
