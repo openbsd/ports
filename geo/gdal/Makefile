@@ -40,7 +40,7 @@ LIB_DEPENDS-main =	archivers/libarchive \
 			archivers/zstd \
 			databases/postgresql \
 			databases/sqlite3 \
-			devel/geotiff>=1.5.0
+			devel/geotiff>=1.5.0 \
 			devel/json-c \
 			devel/pcre2 \
 			devel/proj>=6.0 \
