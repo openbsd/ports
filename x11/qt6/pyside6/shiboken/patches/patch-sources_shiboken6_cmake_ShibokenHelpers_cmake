@@ -1,0 +1,19 @@
+Index: sources/shiboken6/cmake/ShibokenHelpers.cmake
+--- sources/shiboken6/cmake/ShibokenHelpers.cmake.orig
++++ sources/shiboken6/cmake/ShibokenHelpers.cmake
+@@ -768,13 +768,13 @@ set PATH=${path_dirs_native};%PATH%
+ %*")
+     elseif(CMAKE_HOST_APPLE)
+         string(REPLACE ";" ":" path_dirs_native "${path_dirs_native}")
+-        file(WRITE "${wrapper_path}" "#!/bin/bash
++        file(WRITE "${wrapper_path}" "#!/bin/sh
+ export DYLD_LIBRARY_PATH=${path_dirs_native}:$DYLD_LIBRARY_PATH
+ export DYLD_FRAMEWORK_PATH=${path_dirs_native}:$DYLD_FRAMEWORK_PATH
+ $@")
+     else()
+         string(REPLACE ";" ":" path_dirs_native "${path_dirs_native}")
+-        file(WRITE "${wrapper_path}" "#!/bin/bash
++        file(WRITE "${wrapper_path}" "#!/bin/sh
+ export LD_LIBRARY_PATH=${path_dirs_native}:$LD_LIBRARY_PATH
+ $@")
+     endif()

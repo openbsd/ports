@@ -1,0 +1,21 @@
+Index: sources/pyside-tools/CMakeLists.txt
+--- sources/pyside-tools/CMakeLists.txt.orig
++++ sources/pyside-tools/CMakeLists.txt
+@@ -63,7 +63,7 @@ else()
+     foreach(file ${files})
+         if(EXISTS ${file})
+             install(FILES "${file}"
+-                    DESTINATION bin
++                    DESTINATION bin/pyside6
+                     PERMISSIONS
+                     OWNER_EXECUTE OWNER_WRITE OWNER_READ
+                     GROUP_EXECUTE GROUP_READ
+@@ -75,7 +75,7 @@ else()
+ 
+     foreach(directory ${directories})
+         install(DIRECTORY "${directory}"
+-                DESTINATION bin
++                DESTINATION bin/pyside6
+                 FILE_PERMISSIONS
+                 OWNER_EXECUTE OWNER_WRITE OWNER_READ
+                 GROUP_EXECUTE GROUP_READ

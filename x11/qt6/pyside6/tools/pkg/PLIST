@@ -1,0 +1,64 @@
+bin/pyside6/
+bin/pyside6/android_deploy.py
+@bin bin/pyside6/assistant
+@bin bin/pyside6/balsam
+@bin bin/pyside6/balsamui
+bin/pyside6/deploy.py
+bin/pyside6/deploy_lib/
+bin/pyside6/deploy_lib/__init__.py
+bin/pyside6/deploy_lib/android/
+bin/pyside6/deploy_lib/android/__init__.py
+bin/pyside6/deploy_lib/android/android_config.py
+bin/pyside6/deploy_lib/android/android_helper.py
+bin/pyside6/deploy_lib/android/buildozer.py
+bin/pyside6/deploy_lib/android/recipes/
+bin/pyside6/deploy_lib/android/recipes/PySide6/
+bin/pyside6/deploy_lib/android/recipes/PySide6/__init__.tmpl.py
+bin/pyside6/deploy_lib/android/recipes/shiboken6/
+bin/pyside6/deploy_lib/android/recipes/shiboken6/__init__.tmpl.py
+bin/pyside6/deploy_lib/commands.py
+bin/pyside6/deploy_lib/config.py
+bin/pyside6/deploy_lib/default.spec
+bin/pyside6/deploy_lib/dependency_util.py
+bin/pyside6/deploy_lib/deploy_util.py
+bin/pyside6/deploy_lib/nuitka_helper.py
+bin/pyside6/deploy_lib/pyside_icon.icns
+bin/pyside6/deploy_lib/pyside_icon.ico
+bin/pyside6/deploy_lib/pyside_icon.jpg
+bin/pyside6/deploy_lib/python_helper.py
+@bin bin/pyside6/designer
+@bin bin/pyside6/linguist
+@bin bin/pyside6/lrelease
+@bin bin/pyside6/lupdate
+bin/pyside6/metaobjectdump.py
+bin/pyside6/project/
+bin/pyside6/project.py
+bin/pyside6/project/__init__.py
+bin/pyside6/project/newproject.py
+bin/pyside6/project/project_data.py
+bin/pyside6/project/utils.py
+bin/pyside6/pyside_tool.py
+bin/pyside6/qml.py
+@bin bin/pyside6/qmlcachegen
+@bin bin/pyside6/qmlformat
+@bin bin/pyside6/qmlimportscanner
+@bin bin/pyside6/qmllint
+@bin bin/pyside6/qmlls
+@bin bin/pyside6/qmltyperegistrar
+@bin bin/pyside6/qsb
+bin/pyside6/qtpy2cpp.py
+bin/pyside6/qtpy2cpp_lib/
+bin/pyside6/qtpy2cpp_lib/astdump.py
+bin/pyside6/qtpy2cpp_lib/formatter.py
+bin/pyside6/qtpy2cpp_lib/nodedump.py
+bin/pyside6/qtpy2cpp_lib/qt.py
+bin/pyside6/qtpy2cpp_lib/tests/
+bin/pyside6/qtpy2cpp_lib/tests/baseline/
+bin/pyside6/qtpy2cpp_lib/tests/baseline/basic_test.cpp
+bin/pyside6/qtpy2cpp_lib/tests/baseline/basic_test.py
+bin/pyside6/qtpy2cpp_lib/tests/test_qtpy2cpp.py
+bin/pyside6/qtpy2cpp_lib/tokenizer.py
+bin/pyside6/qtpy2cpp_lib/visitor.py
+@bin bin/pyside6/rcc
+bin/pyside6/requirements-android.txt
+@bin bin/pyside6/uic

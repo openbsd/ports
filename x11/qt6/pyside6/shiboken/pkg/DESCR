@@ -1,0 +1,11 @@
+Shiboken is a fundamental piece on the Qt for Python project that
+serves two purposes:
+
+Generator: Extract information from C or C++ headers and generate
+CPython code that allow to bring C or C++ projects to Python. This
+process uses a library called ApiExtractor which internally uses
+Clang.
+
+Module: An utility Python module that exposed new Python types,
+functions to handle pointers, among other things, that is written
+in CPython and can use independently of the generator.

@@ -1,0 +1,22 @@
+Index: sources/shiboken6/libshiboken/helper.h
+--- sources/shiboken6/libshiboken/helper.h.orig
++++ sources/shiboken6/libshiboken/helper.h
+@@ -8,6 +8,9 @@
+ #include "shibokenmacros.h"
+ #include "autodecref.h"
+ 
++#include <pthread.h>
++#include <pthread_np.h>
++
+ #include <iosfwd>
+ 
+ #define SBK_UNUSED(x)   (void)(x);
+@@ -61,7 +64,7 @@ class AutoArrayPointer
+         T *data;
+ };
+ 
+-using ThreadId = unsigned long long;
++using ThreadId = pthread_t;
+ LIBSHIBOKEN_API ThreadId currentThreadId();
+ LIBSHIBOKEN_API ThreadId mainThreadId();
+ 
