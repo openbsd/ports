@@ -1,4 +1,4 @@
-@option is-branch
+@pkgpath net/netatalk
 @conflict jday-*
 @rcscript ${RCDIR}/netatalk
 @bin bin/ad
