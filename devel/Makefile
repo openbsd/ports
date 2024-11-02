@@ -1503,6 +1503,7 @@
      SUBDIR += py-jeepney,python3
      SUBDIR += py-jmespath,python3
      SUBDIR += py-jsonpath-ng,python3
+     SUBDIR += py-jsonref,python3
      SUBDIR += py-jsonschema,python3
      SUBDIR += py-jsonschema-path,python3
      SUBDIR += py-jsonschema-spec,python3
