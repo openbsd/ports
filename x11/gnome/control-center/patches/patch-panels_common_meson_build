@@ -3,7 +3,7 @@ No GUdev on OpenBSD (XXX add HAVE_GUDEV to meson_options.txt)
 Index: panels/common/meson.build
 --- panels/common/meson.build.orig
 +++ panels/common/meson.build
-@@ -91,13 +91,12 @@ gsd_headers = [
+@@ -81,13 +81,12 @@ gsd_headers = [
  ]
  
  gsd_sources = [
