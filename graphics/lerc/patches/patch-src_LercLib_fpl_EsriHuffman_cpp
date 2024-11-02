@@ -1,0 +1,32 @@
+https://github.com/Esri/lerc/commit/215c195fcfc6f41b87a4c62069911e9ea12cf741
+
+Index: src/LercLib/fpl_EsriHuffman.cpp
+--- src/LercLib/fpl_EsriHuffman.cpp.orig
++++ src/LercLib/fpl_EsriHuffman.cpp
+@@ -31,7 +31,7 @@ Original coding 2021 Yuriy Yakimenko
+ 
+ USING_NAMESPACE_LERC
+ 
+-void _assert(bool v);
++void lerc_assert(bool v);
+ 
+ bool decodePackBits (const unsigned char *ptr, const size_t size, size_t expected, unsigned char **output)
+ {
+@@ -331,7 +331,7 @@ int fpl_EsriHuffman::EncodeHuffman (const char *input,
+         ptr[0] = HUFFMAN_RLE; // RLE flag
+         ptr[1] = input[0];
+ 
+-        _assert(input_len <= 0xffffffff);
++        lerc_assert(input_len <= 0xffffffff);
+ 
+         uint32_t len = (uint32_t)input_len;
+ 
+@@ -508,7 +508,7 @@ bool fpl_EsriHuffman::DecodeHuffman(const unsigned cha
+     {
+         unsigned char *unpacked = NULL;
+ 
+-        _assert (true == decodePackBits (ppByte + 1, inCount - 1, nBytesRemainingInOut, &unpacked));
++        lerc_assert (true == decodePackBits (ppByte + 1, inCount - 1, nBytesRemainingInOut, &unpacked));
+ 
+         *output = unpacked;
+ 

@@ -1,0 +1,4 @@
+include/Lerc_c_api.h
+include/Lerc_types.h
+@lib lib/libLerc.so.${LIBLerc_VERSION}
+lib/pkgconfig/Lerc.pc
