@@ -4,7 +4,6 @@
 @extraunexec rm -rf /var/log/gdm/*
 @rcscript ${RCDIR}/gdm
 @bin bin/gdm-config
-@bin bin/gdm-screenshot
 @bin bin/gdmflexiserver
 include/gdm/
 include/gdm/gdm-client-glue.h
@@ -90,6 +89,8 @@ share/glib-2.0/schemas/org.gnome.login-screen.gschema.xml
 share/gnome-session/
 share/gnome-session/sessions/
 share/gnome-session/sessions/gnome-login.session
+share/help/
+share/help/C/
 share/help/C/gdm/
 share/help/C/gdm/index.docbook
 share/help/C/gdm/legal.xml
@@ -97,12 +98,15 @@ share/help/ca/
 share/help/ca/gdm/
 share/help/ca/gdm/index.docbook
 share/help/ca/gdm/legal.xml
+share/help/cs/
 share/help/cs/gdm/
 share/help/cs/gdm/index.docbook
 share/help/cs/gdm/legal.xml
+share/help/de/
 share/help/de/gdm/
 share/help/de/gdm/index.docbook
 share/help/de/gdm/legal.xml
+share/help/el/
 share/help/el/gdm/
 share/help/el/gdm/index.docbook
 share/help/el/gdm/legal.xml
@@ -110,6 +114,7 @@ share/help/en_GB/
 share/help/en_GB/gdm/
 share/help/en_GB/gdm/index.docbook
 share/help/en_GB/gdm/legal.xml
+share/help/es/
 share/help/es/gdm/
 share/help/es/gdm/index.docbook
 share/help/es/gdm/legal.xml
@@ -117,9 +122,11 @@ share/help/eu/
 share/help/eu/gdm/
 share/help/eu/gdm/index.docbook
 share/help/eu/gdm/legal.xml
+share/help/fr/
 share/help/fr/gdm/
 share/help/fr/gdm/index.docbook
 share/help/fr/gdm/legal.xml
+share/help/gl/
 share/help/gl/gdm/
 share/help/gl/gdm/index.docbook
 share/help/gl/gdm/legal.xml
@@ -127,9 +134,11 @@ share/help/hr/
 share/help/hr/gdm/
 share/help/hr/gdm/index.docbook
 share/help/hr/gdm/legal.xml
+share/help/hu/
 share/help/hu/gdm/
 share/help/hu/gdm/index.docbook
 share/help/hu/gdm/legal.xml
+share/help/id/
 share/help/id/gdm/
 share/help/id/gdm/index.docbook
 share/help/id/gdm/legal.xml
@@ -153,6 +162,7 @@ share/help/oc/
 share/help/oc/gdm/
 share/help/oc/gdm/index.docbook
 share/help/oc/gdm/legal.xml
+share/help/pt_BR/
 share/help/pt_BR/gdm/
 share/help/pt_BR/gdm/index.docbook
 share/help/pt_BR/gdm/legal.xml
@@ -160,12 +170,15 @@ share/help/ro/
 share/help/ro/gdm/
 share/help/ro/gdm/index.docbook
 share/help/ro/gdm/legal.xml
+share/help/ru/
 share/help/ru/gdm/
 share/help/ru/gdm/index.docbook
 share/help/ru/gdm/legal.xml
+share/help/sl/
 share/help/sl/gdm/
 share/help/sl/gdm/index.docbook
 share/help/sl/gdm/legal.xml
+share/help/sv/
 share/help/sv/gdm/
 share/help/sv/gdm/index.docbook
 share/help/sv/gdm/legal.xml
@@ -177,6 +190,7 @@ share/help/tr/
 share/help/tr/gdm/
 share/help/tr/gdm/index.docbook
 share/help/tr/gdm/legal.xml
+share/help/uk/
 share/help/uk/gdm/
 share/help/uk/gdm/index.docbook
 share/help/uk/gdm/legal.xml
