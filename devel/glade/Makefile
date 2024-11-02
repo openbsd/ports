@@ -39,7 +39,7 @@ MODGNOME_TOOLS += gobject-introspection yelp
 CONFIGURE_ARGS +=	-Dwebkit2gtk=disabled
 
 # XXX help XFCE on non-rust archs (i386)
-# rust -> spidermonkeyXX -> gjs -> libxfce4util
+# libxfce4ui -> glade -> gjs -> spidermonkeyXX -> rust
 CONFIGURE_ARGS +=	-Dgjs=disabled
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
