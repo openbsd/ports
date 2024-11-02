@@ -1,7 +1,7 @@
 COMMENT=	command-line HTTP client
 
-# intentionally no py- prefix
-MODPY_EGG_VERSION=	3.2.3
+# intentionally no py- prefix (port directory name is wrong)
+MODPY_EGG_VERSION=	3.2.4
 GH_TAGNAME=	${MODPY_EGG_VERSION}
 GH_ACCOUNT=	httpie
 GH_PROJECT=	httpie
