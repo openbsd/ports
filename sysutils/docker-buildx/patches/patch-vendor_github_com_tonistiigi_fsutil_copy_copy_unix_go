@@ -1,0 +1,13 @@
+https://github.com/docker/buildx/issues/2772
+
+Index: vendor/github.com/tonistiigi/fsutil/copy/copy_unix.go
+--- vendor/github.com/tonistiigi/fsutil/copy/copy_unix.go.orig
++++ vendor/github.com/tonistiigi/fsutil/copy/copy_unix.go
+@@ -1,5 +1,5 @@
+-//go:build solaris || darwin || freebsd
+-// +build solaris darwin freebsd
++//go:build solaris || darwin || freebsd || openbsd
++// +build solaris darwin freebsd openbsd
+ 
+ package fs
+ 
