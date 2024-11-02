@@ -3,7 +3,7 @@ Inhibit support (login1 -> ConsoleKit).
 Index: plugins/power/gsd-power-manager.c
 --- plugins/power/gsd-power-manager.c.orig
 +++ plugins/power/gsd-power-manager.c
-@@ -74,9 +74,9 @@
+@@ -75,9 +75,9 @@
  #define GSD_POWER_MANAGER_NOTIFY_TIMEOUT_SHORT          10 * 1000 /* ms */
  #define GSD_POWER_MANAGER_NOTIFY_TIMEOUT_LONG           30 * 1000 /* ms */
  

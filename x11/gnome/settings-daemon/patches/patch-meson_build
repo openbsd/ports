@@ -3,7 +3,7 @@ XXX push upstream; GUDev is not a hard requirement
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -150,7 +150,6 @@ config_h.set10('HAVE_TIMERFD', has_timerfd_create)
+@@ -163,7 +163,6 @@ config_h.set10('HAVE_TIMERFD', has_timerfd_create)
  # Check for wayland dependencies
  enable_wayland = get_option('wayland')
  if enable_wayland
