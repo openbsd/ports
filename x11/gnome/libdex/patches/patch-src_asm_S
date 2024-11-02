@@ -1,0 +1,16 @@
+Index: src/asm.S
+--- src/asm.S.orig
++++ src/asm.S
+@@ -14,6 +14,12 @@
+ # define GET getmcontext
+ #endif
+ 
++#if defined(__OpenBSD__) && defined(__amd64__)
++# define NEEDAMD64CONTEXT 1
++# define SET setmcontext
++# define GET getmcontext
++#endif
++
+ #ifdef __APPLE__
+ /* We no longer support asm.S task switching on macOS */
+ # error "asm.S is not supported on Apple operating systems

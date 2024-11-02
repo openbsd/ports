@@ -1,0 +1,7 @@
+Dex provides Future-based programming for GLib-based applications.
+
+It both integrates with and brings new features for application and library
+authors who want to structure concurrent code in an easy to manage way.
+
+Dex also provides Fibers which allow writing synchronous looking code in C
+that uses asynchronous and future-based APIs.
