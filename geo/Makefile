@@ -20,6 +20,7 @@
      SUBDIR += librttopo
      SUBDIR += mapcache
      SUBDIR += mapproxy
+     SUBDIR += mappyfile
      SUBDIR += mapserver
      SUBDIR += mdal
      SUBDIR += merkaartor
