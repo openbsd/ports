@@ -7,20 +7,19 @@
 @bin bin/gnome-extensions
 bin/gnome-extensions-app
 @bin bin/gnome-shell
-bin/gnome-shell-extension-prefs
 bin/gnome-shell-extension-tool
 bin/gnome-shell-test-tool
 lib/gnome-shell/
 lib/gnome-shell/Gvc-1.0.typelib
-lib/gnome-shell/Shell-14.typelib
-lib/gnome-shell/St-14.typelib
+lib/gnome-shell/Shell-15.typelib
+lib/gnome-shell/St-15.typelib
 lib/gnome-shell/girepository-1.0/
 lib/gnome-shell/girepository-1.0/Shew-0.typelib
 @so lib/gnome-shell/libgnome-shell-menu.so
 @so lib/gnome-shell/libgvc.so
-@so lib/gnome-shell/libshell-14.so
+@so lib/gnome-shell/libshell-15.so
 @so lib/gnome-shell/libshew-0.so
-@so lib/gnome-shell/libst-14.so
+@so lib/gnome-shell/libst-15.so
 @bin libexec/gnome-shell-calendar-server
 @bin libexec/gnome-shell-hotplug-sniffer
 @bin libexec/gnome-shell-perf-helper
@@ -51,8 +50,8 @@ share/gnome-control-center/keybindings/50-gnome-shell-launchers.xml
 share/gnome-control-center/keybindings/50-gnome-shell-screenshots.xml
 share/gnome-control-center/keybindings/50-gnome-shell-system.xml
 share/gnome-shell/Gvc-1.0.gir
-share/gnome-shell/Shell-14.gir
-share/gnome-shell/St-14.gir
+share/gnome-shell/Shell-15.gir
+share/gnome-shell/St-15.gir
 share/gnome-shell/gir-1.0/
 share/gnome-shell/gir-1.0/Shew-0.gir
 share/gnome-shell/gnome-shell-dbus-interfaces.gresource
@@ -101,7 +100,6 @@ share/locale/et/LC_MESSAGES/gnome-shell.mo
 share/locale/eu/LC_MESSAGES/gnome-shell.mo
 share/locale/fa/LC_MESSAGES/gnome-shell.mo
 share/locale/fi/LC_MESSAGES/gnome-shell.mo
-share/locale/fo/LC_MESSAGES/gnome-shell.mo
 share/locale/fr/LC_MESSAGES/gnome-shell.mo
 share/locale/fur/LC_MESSAGES/gnome-shell.mo
 share/locale/fy/LC_MESSAGES/gnome-shell.mo
