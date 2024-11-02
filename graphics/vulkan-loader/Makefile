@@ -5,6 +5,7 @@ PKGNAME =	vulkan-loader-${V}
 GH_TAGNAME =	vulkan-sdk-${V}
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	Vulkan-Loader
+REVISION =	0
 
 SHARED_LIBS +=	vulkan	1.1 # 1.3.204.1
 
@@ -21,8 +22,7 @@ WANTLIB += X11 xcb m pthread
 BUILD_DEPENDS =	graphics/vulkan-headers
 RUN_DEPENDS =	graphics/vulkan-headers
 
-CONFIGURE_ARGS =-DBUILD_WSI_WAYLAND_SUPPORT=False \
-		-DFALLBACK_CONFIG_DIRS="${SYSCONFDIR}/xdg" \
+CONFIGURE_ARGS =-DFALLBACK_CONFIG_DIRS="${SYSCONFDIR}/xdg" \
 		-DFALLBACK_DATA_DIRS="${X11BASE}/share:${LOCALBASE}/share:/usr/share"
 
 COMPILER =	base-clang ports-gcc
