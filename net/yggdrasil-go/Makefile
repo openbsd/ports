@@ -2,7 +2,7 @@ COMMENT =	experimental fully end-to-end encrypted IPv6 network
 
 MODGO_MODNAME =	github.com/yggdrasil-network/yggdrasil-go
 MODGO_VERSION =	v0.5.3
-REVISION =	0
+REVISION =	1
 
 DISTNAME =	yggdrasil-go-${MODGO_VERSION}
 
@@ -16,6 +16,8 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/go
 
 WANTLIB += c pthread
+
+RUN_DEPENDS =	textproc/jq
 
 DOC_DIR =	${PREFIX}/share/doc/${PKGSTEM}
 

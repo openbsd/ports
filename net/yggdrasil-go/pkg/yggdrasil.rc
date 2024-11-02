@@ -1,12 +1,22 @@
 #!/bin/ksh
 
 daemon="${TRUEPREFIX}/bin/yggdrasil"
-daemon_flags="-useconffile ${SYSCONFDIR}/yggdrasil.conf"
+daemon_flags="-logto syslog -useconffile ${SYSCONFDIR}/yggdrasil.conf"
 
 . /etc/rc.d/rc.subr
 
 rc_bg=YES
 rc_reload=NO
 
-rc_cmd $1
+rc_configtest() {
+	${daemon} ${daemon_flags} -normaliseconf -json
+}
 
+# /dev/tunN is opened to get a tun(4), but only /dev/tun[0123] exist by default.
+rc_pre() {
+	local _dev=$(rc_configtest | jq -r .IfName)
+
+	[[ -c /dev/${_dev} ]] || (cd /dev/ && ./MAKEDEV "${_dev}")
+}
+
+rc_cmd $1
