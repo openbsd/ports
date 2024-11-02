@@ -1,5 +1,5 @@
 USE_WXNEEDED=		Yes
-# due to devel/spidermonkey115 (matches mozilla.port.mk)
+# due to devel/spidermonkey128 (matches mozilla.port.mk)
 # mozilla #1626955 & #510629
 # see also patches/patch-meson_build
 USE_NOBTCFI=		Yes
@@ -7,9 +7,9 @@ USE_NOBTCFI=		Yes
 COMMENT=		Javascript bindings for GNOME
 
 GNOME_PROJECT=		gjs
-GNOME_VERSION=		1.80.2
+GNOME_VERSION=		1.82.1
 
-SHARED_LIBS += gjs                       6.2 # 0.0.0
+SHARED_LIBS += gjs                       6.3 # 0.0.0
 
 CATEGORIES=		devel
 
@@ -19,7 +19,7 @@ CATEGORIES=		devel
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 c cairo cairo-gobject ffi gio-2.0
-WANTLIB += girepository-1.0 glib-2.0 gobject-2.0 intl m mozjs-115
+WANTLIB += girepository-1.0 glib-2.0 gobject-2.0 intl m mozjs-128
 WANTLIB += readline
 
 MODULES=		devel/meson \
@@ -33,7 +33,7 @@ MODPY_RUNDEP=		No
 MODPY_BUILDDEP= 	No
 
 LIB_DEPENDS=		devel/gobject-introspection \
-			devel/spidermonkey115 \
+			devel/spidermonkey128 \
 			graphics/cairo
 
 # --with-dbus-tests

@@ -14,6 +14,17 @@ lib/gjs/girepository-1.0/
 lib/gjs/girepository-1.0/GjsPrivate-1.0.typelib
 @lib lib/libgjs.so.${LIBgjs_VERSION}
 lib/pkgconfig/gjs-1.0.pc
+libexec/installed-tests/
+libexec/installed-tests/gjs/
+libexec/installed-tests/gjs/GIMarshallingTests-1.0.typelib
+libexec/installed-tests/gjs/Regress-1.0.typelib
+libexec/installed-tests/gjs/RegressUnix-1.0.typelib
+libexec/installed-tests/gjs/Utility-1.0.typelib
+libexec/installed-tests/gjs/WarnLib-1.0.typelib
+@so libexec/installed-tests/gjs/libgimarshallingtests.so
+@so libexec/installed-tests/gjs/libregress.so
+@so libexec/installed-tests/gjs/libutility.so
+@so libexec/installed-tests/gjs/libwarnlib.so
 share/examples/gjs/
 share/examples/gjs/README
 share/examples/gjs/calc.js
