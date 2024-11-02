@@ -137,6 +137,7 @@
      SUBDIR += lcms2
      SUBDIR += lensfun
      SUBDIR += leptonica
+     SUBDIR += lerc
      SUBDIR += libansilove
      SUBDIR += libart
      SUBDIR += libavif
