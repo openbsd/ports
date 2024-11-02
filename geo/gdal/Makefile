@@ -35,29 +35,29 @@ COMPILER = base-clang ports-gcc
 MULTI_PACKAGES =	-main -python
 
 MODPY_RUNDEP = No
-LIB_DEPENDS-main =	databases/sqlite3 \
-			archivers/libarchive \
+LIB_DEPENDS-main =	archivers/libarchive \
 			archivers/libdeflate \
 			archivers/zstd \
-			graphics/tiff \
-			net/curl \
-			math/qhull>=2020.2 \
-			math/hdf5 \
-			math/netcdf \
 			databases/postgresql \
-			geo/geos \
-			geo/spatialite/libspatialite \
+			databases/sqlite3 \
+			devel/geotiff>=1.5.0
 			devel/json-c \
-			print/poppler \
-			graphics/png \
-			graphics/giflib \
-			graphics/libjxl \
-			graphics/libwebp \
-			graphics/jpeg \
-			graphics/openjp2 \
 			devel/pcre2 \
 			devel/proj>=6.0 \
-			devel/geotiff>=1.5.0
+			geo/geos \
+			geo/spatialite/libspatialite \
+			graphics/giflib \
+			graphics/jpeg \
+			graphics/libjxl \
+			graphics/libwebp \
+			graphics/openjp2 \
+			graphics/png \
+			graphics/tiff \
+			math/hdf5 \
+			math/netcdf \
+			math/qhull>=2020.2 \
+			net/curl \
+			print/poppler
 
 WANTLIB-main =		archive c crypto curl deflate expat freexl geos_c geotiff \
 			gif hdf5 iconv jpeg json-c jxl jxl_threads lzma lz4 m \
