@@ -4,6 +4,7 @@ DISTNAME=	tiff-4.7.0
 SHARED_LIBS=	tiff	42.1	# 13.0
 SHARED_LIBS+=	tiffxx	42.0	# 13.0
 CATEGORIES=	graphics
+REVISION =	0
 
 SITES=		https://download.osgeo.org/libtiff/
 EXTRACT_SUFX=	.tar.xz
@@ -12,9 +13,10 @@ HOMEPAGE=	https://libtiff.gitlab.io/libtiff/
 
 MODULES =	devel/cmake
 LIB_DEPENDS=	graphics/jpeg \
+		graphics/lerc \
 		archivers/xz \
 		archivers/zstd
-WANTLIB=	c ${COMPILER_LIBCXX} jpeg lzma m z zstd
+WANTLIB=	Lerc c ${COMPILER_LIBCXX} jpeg lzma m z zstd
 
 COMPILER =	base-clang ports-gcc base-gcc
 DEBUG_PACKAGES =${BUILD_PACKAGES}
