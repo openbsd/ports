@@ -310,7 +310,6 @@
      SUBDIR += nepim
      SUBDIR += net-snmp
      SUBDIR += nheko
-     SUBDIR += netatalk,avahi
      SUBDIR += netatalk3
      SUBDIR += netbsd-iscsi-target
      SUBDIR += netfwd
