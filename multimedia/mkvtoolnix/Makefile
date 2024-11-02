@@ -63,14 +63,14 @@ AUTOCONF_VERSION= 2.71
 
 CONFIGURE_ARGS=	--disable-optimization \
 		--disable-update-check \
-		--disable-qt6 \
 		--disable-precompiled-headers \
 		--with-boost=${LOCALBASE} \
 		--with-docbook-xsl-root=${LOCALBASE}/share/xsl/docbook \
-		--with-qmake=${MODQT6_QMAKE}
+		--with-qmake6=${MODQT6_QMAKE}
 
 MAKE_ENV+=	V=1
-CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include -I${MODQT6_INCDIR}
+CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include
+CPPFLAGS+=	-I${MODQT6_INCDIR} -I${MODQT6_INCDIR}/QtCore
 LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib -L${MODQT6_LIBDIR}
 
 CONFIGURE_ENV+=	LCONVERT="${LOCALBASE}/lib/qt6/bin/lconvert" \
