@@ -1,12 +1,12 @@
 COMMENT=	community cryptography specification project test vectors
 
 # No releases
-VERSION=	20240306
+VERSION=	20241027
 DISTNAME=	c2sp-testvectors-${VERSION}
 
 GH_ACCOUNT=	C2SP
 GH_PROJECT=	CCTV
-GH_COMMIT=	3ec4d716e80597545ed285cf62af3dded3a14f65
+GH_COMMIT=	da3aa2e208ccb09b57a393b2c11a0e92492093b4
 
 CATEGORIES=	security
 
