@@ -1,9 +1,22 @@
 ./screen.texinfo:2403: Node `Window Settings' lacks menu item for `Mousetrack' despite being its Up target.
+4 next chunks fails with our old makeinfo ?
+cf 12aed9c4 upstream commit
 
 Index: doc/screen.texinfo
 --- doc/screen.texinfo.orig
 +++ doc/screen.texinfo
-@@ -2416,6 +2416,7 @@ terminal emulation itself.
+@@ -2130,8 +2130,8 @@ However, if that next region contains one or more laye
+ region in the highest layer is selected first. If you are at the
+ last region of the current layer, @code{next} will move the focus
+ to the next region in the lower layer (if there is a lower layer).
+-@code{Prev} cycles in the opposite order. @xref{Split} for more
+-information about layers.
++@code{Prev} cycles in the opposite order. For more information
++about layers, see @xref{Split}.
+ 
+ The rest of the options (@code{up}, @code{down}, @code{left},
+ @code{right}, @code{top}, and @code{bottom}) are more indifferent
+@@ -2419,6 +2419,7 @@ terminal emulation itself.
  * Monitor::                     Watch for activity or inactivity in a window
  * Windows::			List the active windows
  * Hardstatus::			Set a window's hardstatus line
@@ -11,7 +24,7 @@ Index: doc/screen.texinfo
  @end menu
  
  @node Naming Windows, Console,  , Window Settings
-@@ -5147,7 +5148,6 @@ categories.
+@@ -5146,7 +5147,6 @@ categories.
  * Backtick::			Program a command for a backtick string escape.
  * Screen Saver::		Define a screen safer.
  * Zmodem::			Define how screen treats zmodem requests.
@@ -19,3 +32,56 @@ Index: doc/screen.texinfo
  @end menu
  
  @node At, Break,  , Miscellaneous
+@@ -5248,7 +5248,7 @@ Exchanges windows positions on window list, with windo
+ Changes windows numbers, so there is no gaps between them.
+ @end deffn
+ 
+-@node License, Collapse, Miscellaneous
++@node License, Nonblock, Collapse, Miscellaneous
+ @section License
+ @kindex ,
+ @deffn Command license
+@@ -5257,7 +5257,7 @@ Display the disclaimer page. This is done whenever @co
+ started without options, which should be often enough.
+ @end deffn
+ 
+-@node Nonblock, Number, Miscellaneous
++@node Nonblock, Number, License, Miscellaneous
+ @section Nonblock
+ @deffn Command nonblock [@var{state}|@var{numsecs}]
+ Tell screen how to deal with user interfaces (displays) that cease to
+@@ -5277,7 +5277,7 @@ Same as the @code{nonblock} command except that the de
+ displays is changed. Initial setting is @code{off}.
+ @end deffn
+ 
+-@node Number, Nonblock, Miscellaneous
++@node Number, Verbose, Nonblock, Miscellaneous
+ @section Number
+ @kindex N
+ @deffn Command number [[+|-]@var{n}]
+@@ -5289,7 +5289,7 @@ plus (`+') or minus (`-') will change the window's num
+ amount specified.
+ @end deffn
+ 
+-@node Verbose, Version, Miscellaneous
++@node Verbose, Version, Number, Miscellaneous
+ @section Verbose
+ @deffn Command verbose [on|off]
+ If verbose is switched on, the command name is echoed, whenever a window
+@@ -5412,14 +5412,14 @@ The default is @code{on}, of course. This command is p
+ only in rare circumstances.
+ @end deffn
+ 
+-@node Eval, , Setsid, Miscellaneous
++@node Eval, Backtick, Setsid, Miscellaneous
+ @section Eval
+ @deffn Command eval @var{command1} [@var{command2} ...]
+ (none)@*
+ Parses and executes each argument as separate command.
+ @end deffn
+ 
+-@node Backtick, Screen Saver, , Miscellaneous
++@node Backtick, Screen Saver, Eval, Miscellaneous
+ @section Backtick
+ @deffn Command backtick @var{id} @var{lifespan} @var{autorefresh} @var{command} [@var{args}]
+ @deffnx Command backtick @var{id}

@@ -28,7 +28,7 @@ Index: doc/screen.1
  \*Q.screenrc\*U in the user's home directory. These are the \*Qprogrammer's
  defaults\*U that can be overridden in the following ways: for the
  global screenrc file 
-@@ -2050,7 +2050,7 @@ when seeing proper escape sequence. See also "TITLES (
+@@ -2047,7 +2047,7 @@ when seeing proper escape sequence. See also "TITLES (
  The echo command may be used to annoy 
  .I screen
  users with a 'message of the
@@ -37,10 +37,10 @@ Index: doc/screen.1
  The option \*Q\-n\*U may be used to suppress the line feed.
  See also \*Qsleep\*U.
  Echo is also useful for online checking of environment variables.
-@@ -5212,12 +5212,12 @@ Examples in the 
+@@ -5194,12 +5194,12 @@ Examples in the 
  .I screen
  distribution package for private and global initialization files.
- .IP $SYSSCREENRC 
+ .IP $SYSSCREENRC
 -.IP /usr/local/etc/screenrc
 +.IP ${SYSCONFDIR}/screenrc
  .I screen
@@ -50,9 +50,9 @@ Index: doc/screen.1
 -Read in after /usr/local/etc/screenrc
 +Read in after ${SYSCONFDIR}/screenrc
  .IP $SCREENDIR/S\-<login>
- .IP /local/screens/S\-<login>
+ .IP $HOME/.screen
  Socket directories (default)
-@@ -5238,7 +5238,7 @@ Output log files created by the log function
+@@ -5220,7 +5220,7 @@ Output log files created by the log function
  or
  .IP /etc/termcap
  Terminal capability databases
@@ -61,7 +61,7 @@ Index: doc/screen.1
  Login records
  .IP $LOCKPRG
  Program that locks a terminal.
-@@ -5365,9 +5365,9 @@ does not make use of hardware tabs.
+@@ -5333,9 +5333,9 @@ does not make use of hardware tabs.
  must be installed as set-uid with owner root on most systems in order
  to be able to correctly change the owner of the tty device file for
  each window.

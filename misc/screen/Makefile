@@ -1,6 +1,6 @@
 COMMENT=	multi-screen window manager
 
-DISTNAME=	screen-4.9.1
+DISTNAME=	screen-5.0.0
 CATEGORIES=	misc
 SITES=		${SITE_GNU:=screen/}
 
@@ -9,9 +9,8 @@ HOMEPAGE=	https://www.gnu.org/software/screen/
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-AUTOCONF_VERSION=2.71
-CONFIGURE_STYLE=autoconf
-CONFIGURE_ARGS=	--with-sys-screenrc="${SYSCONFDIR}/screenrc"
+CONFIGURE_STYLE=	gnu
+CONFIGURE_ARGS=	--with-sys-screenrc="${SYSCONFDIR}/screenrc" --disable-pam
 
 USE_GMAKE=	Yes
 USE_GROFF=	Yes
