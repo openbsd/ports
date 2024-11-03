@@ -19,8 +19,7 @@ MODPY_PI=	Yes
 FLAVOR=		python3
 FLAVORS=	python3
 
-# not in pypi sdist
-NO_TEST=	Yes
+MODPY_PYTEST=	Yes
 
 # This port must have minimal deps. In particular it cannot have
 # a bdep on itself :) The do-build target uses flit_core.wheel
