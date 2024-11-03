@@ -1,6 +1,6 @@
 COMMENT =	Redis table for OpenSMTPD
 TABLE =		redis
-V =		1.0
+V =		1.0.1
 
 WANTLIB += c hiredis
 
