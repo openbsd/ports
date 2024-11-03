@@ -15,6 +15,8 @@ PKGNAME-demos=		gtk+4-demos-${GNOME_VERSION}
 PKGNAME-guic=		gtk4-update-icon-cache-${GNOME_VERSION}
 PKGNAME-media=		gtk+4-media-${GNOME_VERSION}
 
+REVISION-main=		0
+
 CATEGORIES=		x11 devel
 
 SHARED_LIBS += gtk-4                     5.3 # 1.1600.5
@@ -55,6 +57,7 @@ BUILD_DEPENDS +=	wayland/libinput-openbsd
 LIB_DEPENDS-main=	devel/pango \
 			graphics/gdk-pixbuf2 \
 			graphics/graphene \
+			graphics/vulkan-loader \
 			wayland/wayland \
 			x11/xkbcommon
 RUN_DEPENDS-main=	${RUN_DEPENDS}
@@ -68,9 +71,9 @@ RUN_DEPENDS-main +=	x11/gnome/adwaita-icon-theme
 WANTLIB-main += X11 Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
 WANTLIB-main += c cairo cairo-gobject cairo-script-interpreter epoxy
 WANTLIB-main += fontconfig fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB-main += gmodule-2.0 gobject-2.0 graphene-1.0 harfbuzz intl
-WANTLIB-main += jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 png tiff
-WANTLIB-main += wayland-client wayland-egl xkbcommon harfbuzz-subset
+WANTLIB-main += gmodule-2.0 gobject-2.0 graphene-1.0 harfbuzz harfbuzz-subset
+WANTLIB-main += intl jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 png
+WANTLIB-main += tiff vulkan wayland-client wayland-egl xkbcommon
 
 LIB_DEPENDS-cups=	print/cups,-libs \
 			${BASE_PKGPATH},-main=${GNOME_VERSION}
@@ -104,9 +107,6 @@ TEST_IS_INTERACTIVE=	x11
 TEST_DEPENDS=		multimedia/pipewire/pipewire
 
 CONFIGURE_ARGS=		-Dman-pages=true
-
-# XXX ld: error: undefined symbol: vkCreateWaylandSurfaceKHR
-CONFIGURE_ARGS +=	-Dvulkan=disabled
 
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mclang}
