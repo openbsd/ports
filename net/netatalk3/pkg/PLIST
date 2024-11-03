@@ -1,5 +1,5 @@
-@pkgpath net/netatalk
 @conflict jday-*
+@pkgpath net/netatalk
 @rcscript ${RCDIR}/netatalk
 @bin bin/ad
 @mode 4755
@@ -56,9 +56,16 @@ lib/netatalk/
 @so lib/netatalk/uams_randnum.so
 @man man/man1/ad.1
 @man man/man1/aecho.1
+@man man/man1/afp_encodingtest.1
+@man man/man1/afp_lantest.1
+@man man/man1/afp_logintest.1
+@man man/man1/afp_spectest.1
+@man man/man1/afp_speedtest.1
+@man man/man1/afparg.1
 @man man/man1/afpldaptest.1
 @man man/man1/afppasswd.1
 @man man/man1/afpstats.1
+@man man/man1/afptest.1
 @man man/man1/apple_dump.1
 @man man/man1/asip-status.1
 @man man/man1/dbd.1
@@ -108,6 +115,8 @@ share/doc/netatalk/htmldocs/afp_voluuid.conf.5.html
 share/doc/netatalk/htmldocs/afpd.8.html
 share/doc/netatalk/htmldocs/afpldaptest.1.html
 share/doc/netatalk/htmldocs/afppasswd.1.html
+share/doc/netatalk/htmldocs/afpstats.1.html
+share/doc/netatalk/htmldocs/afptest.1.html
 share/doc/netatalk/htmldocs/apple_dump.1.html
 share/doc/netatalk/htmldocs/appletalk.html
 share/doc/netatalk/htmldocs/asip-status.1.html

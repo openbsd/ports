@@ -1,12 +1,10 @@
 COMMENT=		Apple Filing Protocol file server over TCP/IP
 
-V=			4.0.3
+V=			4.0.4
 DISTNAME=		netatalk-${V}
 EXTRACT_SUFX=		.tar.xz
 PKGSPEC=		netatalk->=3,<4
 EPOCH=			0
-
-REVISION=		0
 
 SHARED_LIBS +=  atalk                17.0     # unknown
 
