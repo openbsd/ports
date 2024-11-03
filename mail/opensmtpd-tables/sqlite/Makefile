@@ -1,6 +1,6 @@
 COMMENT =	SQLite3 table for OpenSMTPD
 TABLE =		sqlite
-V =		1.0
+V =		1.0.1
 
 WANTLIB += c sqlite3
 
