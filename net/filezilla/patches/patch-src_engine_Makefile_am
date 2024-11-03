@@ -1,7 +1,7 @@
 Index: src/engine/Makefile.am
 --- src/engine/Makefile.am.orig
 +++ src/engine/Makefile.am
-@@ -149,7 +149,7 @@ libfzclient_private_la_SOURCES += ../pugixml/pugixml.c
+@@ -150,7 +150,7 @@ libfzclient_private_la_SOURCES += ../pugixml/pugixml.c
  endif
  
  libfzclient_private_la_CXXFLAGS = -fvisibility=hidden

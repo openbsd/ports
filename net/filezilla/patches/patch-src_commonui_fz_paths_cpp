@@ -10,7 +10,7 @@ Index: src/commonui/fz_paths.cpp
  #endif
  
  using namespace std::literals;
-@@ -491,12 +491,12 @@ std::string ShellUnescape(std::string const& path)
+@@ -498,12 +498,12 @@ std::string ShellUnescape(std::string const& path)
  {
  	std::string ret;
  
