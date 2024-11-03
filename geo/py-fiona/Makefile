@@ -21,6 +21,7 @@ COMPILER =	base-clang ports-gcc
 MODPY_PYBUILD =	setuptools
 MODPY_PI =	Yes
 MODPY_PYTEST_ARGS =	tests
+MODPY_TEST_LINK_SO =	Yes
 
 BUILD_DEPENDS +=${RUN_DEPENDS} \
 		math/py-oldest-supported-numpy${MODPY_FLAVOR} \
@@ -36,11 +37,17 @@ RUN_DEPENDS =	geo/py-cligj${MODPY_FLAVOR} \
 		devel/py-six${MODPY_FLAVOR}
 
 TEST_DEPENDS =	devel/py-tz${MODPY_FLAVOR} \
+		www/py-aiohttp${MODPY_FLAVOR} \
+		sysutils/py-fsspec${MODPY_FLAVOR} \
 		net/py-boto3${MODPY_FLAVOR}
 
 WANTLIB += ${COMPILER_LIBCXX} gdal m
 
+# installs gdal & proj data to fiona dir for tests
+# but they end up in the wheel... so do it manually
+#MAKE_ENV +=	PACKAGE_DATA=Yes
 pre-test:
-	cp ${WRKSRC}/build/lib*/fiona/*.so ${WRKSRC}/fiona/
+	cp -r /usr/local/share/proj ${WRKSRC}/fiona/proj_data
+	cp -r /usr/local/share/gdal ${WRKSRC}/fiona/gdal_data
 
 .include <bsd.port.mk>
