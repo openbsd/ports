@@ -320,6 +320,7 @@
      SUBDIR += py-expandvars,python3
      SUBDIR += py-filelock,python3
      SUBDIR += py-find,python3
+     SUBDIR += py-fsspec,python3
      SUBDIR += py-ghmi,python3
      SUBDIR += py-hpilo,python3
      SUBDIR += py-joblib,python3
