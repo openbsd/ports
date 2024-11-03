@@ -14,21 +14,36 @@ Index: src/libide/core/ide-global.c
  
  #include <gio/gio.h>
  #define G_SETTINGS_ENABLE_BACKEND
-@@ -399,6 +401,7 @@ _ide_host_environ (void)
+@@ -399,11 +401,13 @@ _ide_host_environ (void)
  gchar *
  ide_path_expand (const gchar *path)
  {
 +#ifndef __OpenBSD__
    wordexp_t state = { 0 };
++  int r;
++#endif
    char *replace_home = NULL;
    char *ret = NULL;
-@@ -441,6 +444,9 @@ ide_path_expand (const gchar *path)
-   g_free (escaped);
+   char *escaped;
+-  int r;
  
-   return ret;
+   if (path == NULL)
+     return NULL;
+@@ -425,6 +429,7 @@ ide_path_expand (const gchar *path)
+     }
+ 
+   escaped = g_shell_quote (path);
++#ifndef __OpenBSD__
+   r = wordexp (escaped, &state, WRDE_NOCMD);
+   if (r == 0 && state.we_wordc > 0)
+     ret = g_strdup (state.we_wordv [0]);
+@@ -436,6 +441,9 @@ ide_path_expand (const gchar *path)
+ 
+       ret = g_build_filename (g_get_home_dir (), freeme, NULL);
+     }
 +#else
-+  return g_strdup (path);
++  ret = g_strdup (path);
 +#endif
- }
  
- /**
+   g_free (replace_home);
+   g_free (escaped);

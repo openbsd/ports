@@ -2,6 +2,7 @@ COMMENT=		IDE for writing GNOME-based software
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		47.2
+REVISION=		0
 
 CATEGORIES=		devel
 
