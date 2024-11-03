@@ -1,9 +1,11 @@
 COMMENT=		simple encrypted backup tool for GNOME
-REVISION=		0
 
 DIST_TUPLE=		gnome World deja-dup 47.0 .
+REVISION=		1
 
 CATEGORIES=		sysutils
+
+HOMEPAGE=		https://apps.gnome.org/en/DejaDup/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

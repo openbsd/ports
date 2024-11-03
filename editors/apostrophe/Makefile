@@ -5,11 +5,11 @@ GH_ACCOUNT=		ApostropheEditor
 GH_PROJECT=		Apostrophe
 
 PKGNAME=		apostrophe-${GH_TAGNAME:S/v//}
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		editors
 
-HOMEPAGE =		https://gitlab.gnome.org/World/apostrophe
+HOMEPAGE =		https://apps.gnome.org/Apostrophe/
 
 # GPLv3+
 PERMIT_PACKAGE=		Yes

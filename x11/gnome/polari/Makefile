@@ -2,9 +2,11 @@ COMMENT=		IRC Client for GNOME
 
 GNOME_PROJECT=		polari
 GNOME_VERSION=		46.0
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		net
+
+HOMEPAGE=		https://apps.gnome.org/Polari/
 
 # GPLv2
 PERMIT_PACKAGE=		Yes

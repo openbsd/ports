@@ -6,9 +6,11 @@ DISTFILES=		diebahn-${GNOME_VERSION}${EXTRACT_SUFX}{download}
 WRKDIST=		${WRKDIR}/diebahn-${GNOME_VERSION}
 SITES=			https://gitlab.com/schmiddi-on-mobile/railway/-/package_files/139774320/
 
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		productivity
+
+HOMEPAGE=		https://apps.gnome.org/DieBahn/
 
 # GPLv3+
 PERMIT_PACKAGE=		Yes

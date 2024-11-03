@@ -1,9 +1,11 @@
 COMMENT=		GNOME password manager (Keepass)
 
 DIST_TUPLE=		gnome World secrets 8.0 .
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		security
+
+HOMEPAGE=		https://apps.gnome.org/Secrets/
 
 # GPLv3
 PERMIT_PACKAGE=		Yes
