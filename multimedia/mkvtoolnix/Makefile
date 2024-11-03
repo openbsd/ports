@@ -69,7 +69,7 @@ CONFIGURE_ARGS=	--disable-optimization \
 		--with-qmake6=${MODQT6_QMAKE}
 
 MAKE_ENV+=	V=1
-CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include -I${MODQT6_INCDIR} 
+CPPFLAGS+=	-I${LOCALBASE}/include -I${X11BASE}/include -I${MODQT6_INCDIR}
 LDFLAGS+=	-L${LOCALBASE}/lib -L${X11BASE}/lib -L${MODQT6_LIBDIR}
 
 CONFIGURE_ENV+=	LCONVERT="${LOCALBASE}/lib/qt6/bin/lconvert" \
