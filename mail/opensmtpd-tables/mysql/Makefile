@@ -1,6 +1,6 @@
 COMMENT =	MySQL table for OpenSMTPD
 TABLE =		mysql
-V =		1.2
+V =		1.2.1
 
 WANTLIB += c mariadb
 
