@@ -2,10 +2,13 @@ COMMENT=		GNOME file manager
 
 GNOME_PROJECT=		nautilus
 GNOME_VERSION=		47.0
+REVISION=		0
 
 SHARED_LIBS += nautilus-extension        3.0 # 4
 
 CATEGORIES=		x11
+
+HOMEPAGE=		https://apps.gnome.org/Nautilus/
 
 # GPLv2 - LGPLv2 - GFPLv1.1
 PERMIT_PACKAGE=		Yes

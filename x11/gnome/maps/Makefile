@@ -2,9 +2,11 @@ COMMENT=		simple GNOME 3 maps application
 
 GNOME_PROJECT=		gnome-maps
 GNOME_VERSION=		47.1
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  gnome-maps                0.0 # 0.0.0
+
+HOMEPAGE=		https://apps.gnome.org/Maps/
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes

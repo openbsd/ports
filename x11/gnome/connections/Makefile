@@ -2,8 +2,11 @@ COMMENT=		remote desktop client for GNOME
 
 GNOME_PROJECT=		gnome-connections
 GNOME_VERSION=		47.0
+REVISION=		0
 
 CATEGORIES=		net
+
+HOMEPAGE=		https://apps.gnome.org/Connections/
 
 # GPLv3
 PERMIT_PACKAGE=		Yes

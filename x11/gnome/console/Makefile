@@ -2,8 +2,11 @@ COMMENT=		user-friendly terminal emulator for GNOME
 
 GNOME_PROJECT=		gnome-console
 GNOME_VERSION=		47.1
+REVISION=		0
 
 CATEGORIES=		x11
+
+HOMEPAGE=		https://apps.gnome.org/Console/
 
 # GPLv3
 PERMIT_PACKAGE=		Yes

@@ -2,6 +2,9 @@ COMMENT =		GNOME calendar
 
 GNOME_PROJECT =		gnome-calendar
 GNOME_VERSION =		47.0
+REVISION =		0
+
+HOMEPAGE=		https://apps.gnome.org/Calendar/
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

@@ -2,10 +2,13 @@ COMMENT=		official media player for GNOME
 
 GNOME_PROJECT=		totem
 GNOME_VERSION=		43.1
+REVISION=		0
 
 SHARED_LIBS += totem                     0.0 # 0.0.0
 
 CATEGORIES=		multimedia
+
+HOMEPAGE=		https://apps.gnome.org/Totem/
 
 # GPLv2 with exception clause - LGPLv2
 PERMIT_PACKAGE=		Yes

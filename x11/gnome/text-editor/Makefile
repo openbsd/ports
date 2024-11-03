@@ -2,8 +2,11 @@ COMMENT=		simple Text Editor for GNOME
 
 GNOME_PROJECT=		gnome-text-editor
 GNOME_VERSION=		47.1
+REVISION=		0
 
 CATEGORIES=		editors
+
+HOMEPAGE=		https://apps.gnome.org/TextEditor/
 
 # GPLv3
 PERMIT_PACKAGE=		Yes

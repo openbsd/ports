@@ -5,8 +5,11 @@ COMMENT=		GNOME settings
 GNOME_PROJECT=		gnome-control-center
 # !!! sync MAJOR_VERSION (from meson.build) with meta/gnome "V" variable
 GNOME_VERSION=		47.1.1
+REVISION=		0
 
 CATEGORIES=		x11
+
+HOMEPAGE=		https://apps.gnome.org/Settings/
 
 # GPLv2
 PERMIT_PACKAGE=		Yes

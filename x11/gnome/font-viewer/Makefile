@@ -2,6 +2,9 @@ COMMENT=		font viewer utility for GNOME
 
 GNOME_PROJECT=		gnome-font-viewer
 GNOME_VERSION=		47.0
+REVISION=		0
+
+HOMEPAGE=		https://apps.gnome.org/FontViewer/
 
 # GPLv2
 PERMIT_PACKAGE=		Yes

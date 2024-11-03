@@ -2,9 +2,11 @@ COMMENT=		simple scanning utility
 
 GNOME_PROJECT=		simple-scan
 GNOME_VERSION=		46.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		graphics
+
+HOMEPAGE=		https://apps.gnome.org/SimpleScan/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

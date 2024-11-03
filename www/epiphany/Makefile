@@ -2,8 +2,11 @@ COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	47.2
+REVISION=	0
 
 CATEGORIES=	www
+
+HOMEPAGE=	https://apps.gnome.org/Epiphany/
 
 MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 

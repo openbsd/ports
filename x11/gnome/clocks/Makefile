@@ -2,6 +2,9 @@ COMMENT=		keep track of time
 
 GNOME_PROJECT=		gnome-clocks
 GNOME_VERSION=		47.0
+REVISION=		0
+
+HOMEPAGE=		https://apps.gnome.org/Clocks/
 
 # GPLv2
 PERMIT_PACKAGE=		Yes

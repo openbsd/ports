@@ -5,7 +5,9 @@ COMMENT=		GNOME music playing application
 
 GNOME_PROJECT=		gnome-music
 GNOME_VERSION=		47.0
-REVISION=		0
+REVISION=		1
+
+HOMEPAGE=		https://apps.gnome.org/Music/
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes

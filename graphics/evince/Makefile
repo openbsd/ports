@@ -2,7 +2,7 @@ COMMENT=		GNOME document viewer
 
 GNOME_PROJECT=		evince
 GNOME_VERSION=		46.3.1
-REVISION=		1
+REVISION=		2
 
 MAJ_V=			3.0
 SUBST_VARS=		MAJ_V
@@ -11,6 +11,8 @@ SHARED_LIBS += evdocument3               0.2 # 4.0.0
 SHARED_LIBS += evview3                   0.0 # 3.0.0
 
 CATEGORIES=		graphics print
+
+HOMEPAGE=		https://apps.gnome.org/Evince/
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

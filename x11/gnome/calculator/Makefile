@@ -2,11 +2,14 @@ COMMENT=		GNOME desktop calculator
 
 GNOME_PROJECT=		gnome-calculator
 GNOME_VERSION=		47.0
+REVISION=		0
 
 CATEGORIES=		math
 
 SHARED_LIBS += gcalc-2                   0.0 # 1
 SHARED_LIBS += gci-1                     0.0 # 0
+
+HOMEPAGE=		https://apps.gnome.org/Calculator/
 
 # GPLv3+
 PERMIT_PACKAGE=		Yes
