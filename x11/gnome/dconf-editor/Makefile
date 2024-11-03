@@ -2,8 +2,11 @@ COMMENT=		graphical dconf(1) editor
 
 GNOME_PROJECT=		dconf-editor
 GNOME_VERSION=		45.0.1
+REVISION=		0
 
 CATEGORIES=		sysutils editors
+
+HOMEPAGE=		https://apps.gnome.org/en/DconfEditor/
 
 # LGPLv2.1
 PERMIT_PACKAGE=		Yes

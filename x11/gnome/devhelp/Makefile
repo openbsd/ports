@@ -5,11 +5,13 @@ COMMENT=		API documentation browser for GNOME
 
 GNOME_PROJECT=		devhelp
 GNOME_VERSION=		43.0
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS += devhelp-3                 1.0 # 6.3.0
 
 CATEGORIES=		textproc
+
+HOMEPAGE=		https://apps.gnome.org/en/Devhelp/
 
 # GPLv2
 PERMIT_PACKAGE=		Yes

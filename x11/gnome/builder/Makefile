@@ -2,9 +2,11 @@ COMMENT=		IDE for writing GNOME-based software
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		47.2
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
+
+HOMEPAGE=		https://apps.gnome.org/en/Builder/
 
 # GPLv3
 PERMIT_PACKAGE=		Yes
