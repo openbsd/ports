@@ -4,6 +4,7 @@ MODPY_EGG_VERSION=	3.10.1
 DISTNAME=		tables-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		math
+REVISION=		0
 
 HOMEPAGE=	https://www.pytables.org/
 MAINTAINER=	Martin Reindl <martin@catai.org>
@@ -28,6 +29,7 @@ CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
 BUILD_DEPENDS+=	lang/cython${MODPY_FLAVOR} \
+		devel/py-typing-extensions${MODPY_FLAVOR} \
 		math/py-numpy${MODPY_FLAVOR} \
 		math/py-oldest-supported-numpy${MODPY_FLAVOR} \
 		sysutils/py-cpuinfo${MODPY_FLAVOR} \
