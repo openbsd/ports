@@ -1,6 +1,6 @@
 COMMENT =	PostgreSQL table for OpenSMTPD
 TABLE =		postgres
-V =		1.1
+V =		1.1.1
 
 WANTLIB += c pq
 
