@@ -1,6 +1,6 @@
 COMMENT=	distribution-building parts of Flit
 
-MODPY_EGG_VERSION=	3.10.0
+MODPY_EGG_VERSION=	3.10.1
 
 DISTNAME=	flit_core-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
