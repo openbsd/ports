@@ -1,0 +1,2 @@
+Filesystem Spec (fsspec) is a project to provide a unified pythonic
+interface to local, remote and embedded file systems and bytes storage.
