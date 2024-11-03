@@ -171,8 +171,8 @@ SHA256 (go_modules/github.com/stretchr/testify/@v/v1.9.0.mod) = wKZIoDfaVKawLoqB
 SHA256 (go_modules/github.com/stretchr/testify/@v/v1.9.0.zip) = 7l1Pc8tomxtUMsaQihifn72xclB8ScMtvfebI56puOA=
 SHA256 (go_modules/github.com/subosito/gotenv/@v/v1.6.0.mod) = iy2Lx4td7xBjYIZ6gq2CxaTp3pNULwogcIe7ODhPVb8=
 SHA256 (go_modules/github.com/subosito/gotenv/@v/v1.6.0.zip) = FC2z3SMo50TBV+hc8ykdAnATt5+SpFmE+GD+OLwPH40=
-SHA256 (go_modules/github.com/vultr/govultr/v3/@v/v3.9.0.mod) = itiBCJGRSMNxt1SPVdkaV6DdbGTEctXOaodq3J7P0Mc=
-SHA256 (go_modules/github.com/vultr/govultr/v3/@v/v3.9.0.zip) = Lu7qBQpAxm1ubEZK87w0Thd8IOZPgxhATXF0iphcJmM=
+SHA256 (go_modules/github.com/vultr/govultr/v3/@v/v3.11.2.mod) = kKHY+ZZY/j9aV6heNTHb7KT7s5Bl2ivu/tow2spScwc=
+SHA256 (go_modules/github.com/vultr/govultr/v3/@v/v3.11.2.zip) = Q6e0w4Q1VFHX9P4rkbiIbGufTi3ry3l36CuKpO4pCPU=
 SHA256 (go_modules/go.etcd.io/etcd/api/v3/@v/v3.5.12.mod) = +pmZ/s5wGjpHy9V2ix2j4QH0V39jTQsmNokta/jzjuE=
 SHA256 (go_modules/go.etcd.io/etcd/api/v3/@v/v3.5.12.zip) = 2TXmTHB2a+V6soYR7wcShfGu1fYhct1aKs9bGqU2aEw=
 SHA256 (go_modules/go.etcd.io/etcd/client/pkg/v3/@v/v3.5.12.mod) = uHC2V/HkdErfUVPifIxKXbCxBZlRP0lSqm4VQxIE4/Q=
@@ -213,8 +213,8 @@ SHA256 (go_modules/golang.org/x/net/@v/v0.23.0.mod) = Cz+667RmgBS03KX15YpFkWcFZ+
 SHA256 (go_modules/golang.org/x/net/@v/v0.23.0.zip) = t8K7/Fev/RM9N8Xb2vj6x24mBjISgRaRESTxxk+3b1s=
 SHA256 (go_modules/golang.org/x/oauth2/@v/v0.15.0.mod) = Nyk4dfadyoT8IxsSMwzl8DEH4iFbuS1NRrXkYdmI0pU=
 SHA256 (go_modules/golang.org/x/oauth2/@v/v0.18.0.mod) = LbHebpJX+4Kg1wxDZGgdGBXks7I7w+k6I4KBPijar3o=
-SHA256 (go_modules/golang.org/x/oauth2/@v/v0.21.0.mod) = ecZtbrNNqXbsls1FkUUSm6LYM4TRSEsLih39LMxmbYA=
-SHA256 (go_modules/golang.org/x/oauth2/@v/v0.21.0.zip) = Wut8eBa0dFubNKFBLIVahgfJLE3Wr5GOOx1TUvCJIOE=
+SHA256 (go_modules/golang.org/x/oauth2/@v/v0.23.0.mod) = ecZtbrNNqXbsls1FkUUSm6LYM4TRSEsLih39LMxmbYA=
+SHA256 (go_modules/golang.org/x/oauth2/@v/v0.23.0.zip) = llVSNxH2pA2hhRvU+rO0PxvEThrxa/Hbo4VyUWgi1Pw=
 SHA256 (go_modules/golang.org/x/sync/@v/v0.5.0.mod) = cA5dsA3SaqGaF9zl/FUkNtYPaMVgbIW4IfJMPWByoVE=
 SHA256 (go_modules/golang.org/x/sync/@v/v0.6.0.mod) = cA5dsA3SaqGaF9zl/FUkNtYPaMVgbIW4IfJMPWByoVE=
 SHA256 (go_modules/golang.org/x/sync/@v/v0.6.0.zip) = fHUXUpejs2i4Br0kx0AWKd8R3MZV48FEcAWCgvEBymo=
@@ -266,7 +266,7 @@ SHA256 (go_modules/gopkg.in/ini.v1/@v/v1.67.0.zip) = vYRd/HYqh6VuWjKgd3Dcg+hpdtt
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SHA256 (vultr-cli-v3.3.1.zip) = 57++X7br7hNcz6DlO4e/E5YyvnMqbXfO4ZQqdiv90kc=
+SHA256 (vultr-cli-v3.4.0.zip) = SARUBR45TSTAa9kSR4F8xZ6dtSFQvE5nAMEyK/518Z0=
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.10.mod) = 1349
 SIZE (go_modules/cloud.google.com/go/@v/v0.112.1.mod) = 1812
 SIZE (go_modules/cloud.google.com/go/@v/v0.112.1.zip) = 318714
@@ -440,8 +440,8 @@ SIZE (go_modules/github.com/stretchr/testify/@v/v1.9.0.mod) = 417
 SIZE (go_modules/github.com/stretchr/testify/@v/v1.9.0.zip) = 124686
 SIZE (go_modules/github.com/subosito/gotenv/@v/v1.6.0.mod) = 266
 SIZE (go_modules/github.com/subosito/gotenv/@v/v1.6.0.zip) = 17070
-SIZE (go_modules/github.com/vultr/govultr/v3/@v/v3.9.0.mod) = 256
-SIZE (go_modules/github.com/vultr/govultr/v3/@v/v3.9.0.zip) = 123873
+SIZE (go_modules/github.com/vultr/govultr/v3/@v/v3.11.2.mod) = 256
+SIZE (go_modules/github.com/vultr/govultr/v3/@v/v3.11.2.zip) = 129043
 SIZE (go_modules/go.etcd.io/etcd/api/v3/@v/v3.5.12.mod) = 1050
 SIZE (go_modules/go.etcd.io/etcd/api/v3/@v/v3.5.12.zip) = 117145
 SIZE (go_modules/go.etcd.io/etcd/client/pkg/v3/@v/v3.5.12.mod) = 442
@@ -482,8 +482,8 @@ SIZE (go_modules/golang.org/x/net/@v/v0.23.0.mod) = 155
 SIZE (go_modules/golang.org/x/net/@v/v0.23.0.zip) = 1890151
 SIZE (go_modules/golang.org/x/oauth2/@v/v0.15.0.mod) = 358
 SIZE (go_modules/golang.org/x/oauth2/@v/v0.18.0.mod) = 358
-SIZE (go_modules/golang.org/x/oauth2/@v/v0.21.0.mod) = 127
-SIZE (go_modules/golang.org/x/oauth2/@v/v0.21.0.zip) = 151016
+SIZE (go_modules/golang.org/x/oauth2/@v/v0.23.0.mod) = 127
+SIZE (go_modules/golang.org/x/oauth2/@v/v0.23.0.zip) = 151091
 SIZE (go_modules/golang.org/x/sync/@v/v0.5.0.mod) = 34
 SIZE (go_modules/golang.org/x/sync/@v/v0.6.0.mod) = 34
 SIZE (go_modules/golang.org/x/sync/@v/v0.6.0.zip) = 26351
@@ -535,4 +535,4 @@ SIZE (go_modules/gopkg.in/ini.v1/@v/v1.67.0.zip) = 71817
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
-SIZE (vultr-cli-v3.3.1.zip) = 161985
+SIZE (vultr-cli-v3.4.0.zip) = 169757

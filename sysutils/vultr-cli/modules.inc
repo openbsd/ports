@@ -73,7 +73,7 @@ MODGO_MODULES =	\
 	github.com/stretchr/objx							 v0.5.2 \
 	github.com/stretchr/testify							 v1.9.0 \
 	github.com/subosito/gotenv							 v1.6.0 \
-	github.com/vultr/govultr/v3							 v3.9.0 \
+	github.com/vultr/govultr/v3							 v3.11.2 \
 	go.etcd.io/etcd/api/v3								 v3.5.12 \
 	go.etcd.io/etcd/client/pkg/v3							 v3.5.12 \
 	go.etcd.io/etcd/client/v2							 v2.305.12 \
@@ -91,7 +91,7 @@ MODGO_MODULES =	\
 	golang.org/x/exp								 v0.0.0-20230905200255-921286631fa9 \
 	golang.org/x/mod								 v0.12.0 \
 	golang.org/x/net								 v0.23.0 \
-	golang.org/x/oauth2								 v0.21.0 \
+	golang.org/x/oauth2								 v0.23.0 \
 	golang.org/x/sync								 v0.6.0 \
 	golang.org/x/sys								 v0.20.0 \
 	golang.org/x/text								 v0.14.0 \
