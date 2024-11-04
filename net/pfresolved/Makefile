@@ -3,8 +3,11 @@ COMMENT =	pf table DNS update daemon
 VERSION =	1.01
 DISTNAME =	pfresolved-${VERSION}
 SUPDISTFILES =	${DISTFILES}.asc
+REVISION =	0
 
 CATEGORIES =	net
+
+HOMEPAGE =		https://github.com/genua/pfresolved
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
@@ -23,6 +26,6 @@ TEST_DEPENDS =		net/ldns,-utils
 FAKE_FLAGS =		BINDIR=${TRUEPREFIX}/sbin MANDIR=${TRUEPREFIX}/man/man
 
 # regress tests need root via SUDO environment to write pf table
-TEST_ENV =		SUDO=doas
+TEST_ENV =		SUDO=${SUDO:Q}
 
 .include <bsd.port.mk>
