@@ -2,7 +2,7 @@ COMMENT=		command line image viewer
 
 GH_ACCOUNT=		phillipberndt
 GH_PROJECT=		pqiv
-GH_TAGNAME=		2.13.1
+GH_TAGNAME=		2.13.2
 
 MAINTAINER=		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
