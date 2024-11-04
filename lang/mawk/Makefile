@@ -23,6 +23,8 @@ EXTRACT_SUFX=	.tgz
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 CONFIGURE_STYLE= gnu
+# Our default random initialization is stronger than
+# what mawk does (seeds with Unix epoch).
 CONFIGURE_ARGS=	--disable-init-srand
 
 .include <bsd.port.mk>
