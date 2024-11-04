@@ -72,8 +72,6 @@ lib/python${MODPY_VERSION}/site-packages/ssh_audit/${MODPY_PYCACHE}timeframe.${M
 lib/python${MODPY_VERSION}/site-packages/ssh_audit/${MODPY_PYCACHE}timeframe.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ssh_audit/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ssh_audit/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/ssh_audit/${MODPY_PYCACHE}versionvulnerabilitydb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/ssh_audit/${MODPY_PYCACHE}versionvulnerabilitydb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ssh_audit/${MODPY_PYCACHE}writebuf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ssh_audit/${MODPY_PYCACHE}writebuf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ssh_audit/algorithm.py
@@ -105,5 +103,4 @@ lib/python${MODPY_VERSION}/site-packages/ssh_audit/ssh_audit.py
 lib/python${MODPY_VERSION}/site-packages/ssh_audit/ssh_socket.py
 lib/python${MODPY_VERSION}/site-packages/ssh_audit/timeframe.py
 lib/python${MODPY_VERSION}/site-packages/ssh_audit/utils.py
-lib/python${MODPY_VERSION}/site-packages/ssh_audit/versionvulnerabilitydb.py
 lib/python${MODPY_VERSION}/site-packages/ssh_audit/writebuf.py
