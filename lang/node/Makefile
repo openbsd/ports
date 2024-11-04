@@ -14,6 +14,7 @@ DISTFILES.pledge =	node-pledge-{}${PLEDGE_VER}.tar.gz
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
 EPOCH =			0
+REVISION =		0
 
 SITES.pledge =		https://github.com/qbit/node-pledge/archive/
 
@@ -32,7 +33,7 @@ MODULES =		lang/python
 WANTLIB += c execinfo m pthread ${COMPILER_LIBCXX}
 WANTLIB += z brotlienc brotlidec
 WANTLIB += icudata icui18n icuuc cares nghttp2 uv
-WANTLIB += lib/eopenssl32/ssl lib/eopenssl32/crypto
+WANTLIB += lib/eopenssl33/ssl lib/eopenssl33/crypto
 
 COMPILER =		base-clang ports-gcc
 
@@ -75,10 +76,10 @@ LIB_DEPENDS +=		archivers/brotli \
 			devel/libuv \
 			textproc/icu4c \
 			www/nghttp2 \
-			security/openssl/3.2
+			security/openssl/3.3
 
-EOPENSSL_LIB =		${LOCALBASE}/lib/eopenssl32
-EOPENSSL_INC =		${LOCALBASE}/include/eopenssl32
+EOPENSSL_LIB =		${LOCALBASE}/lib/eopenssl33
+EOPENSSL_INC =		${LOCALBASE}/include/eopenssl33
 
 post-extract:
 	mv ${WRKDIR}/node-pledge-${PLEDGE_VER} \
