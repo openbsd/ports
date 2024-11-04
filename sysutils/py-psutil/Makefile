@@ -1,6 +1,7 @@
 COMMENT=	library to retrieve system information and utilisation
 
 MODPY_EGG_VERSION=	6.1.0
+REVISION=	0
 
 DISTNAME=	psutil-${MODPY_EGG_VERSION}
 PKGNAME=	py-psutil-${MODPY_EGG_VERSION}

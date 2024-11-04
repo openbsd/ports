@@ -1,35 +1,14 @@
-Having no swap partition is not an error.
-
 Index: psutil/arch/openbsd/mem.c
 --- psutil/arch/openbsd/mem.c.orig
 +++ psutil/arch/openbsd/mem.c
-@@ -75,19 +75,17 @@ psutil_swap_mem(PyObject *self, PyObject *args) {
-     struct swapent *swdev;
+@@ -76,8 +76,8 @@ psutil_swap_mem(PyObject *self, PyObject *args) {
      int nswap, i;
  
--    if ((nswap = swapctl(SWAP_NSWAP, 0, 0)) == 0) {
+     if ((nswap = swapctl(SWAP_NSWAP, 0, 0)) == 0) {
 -        PyErr_SetFromErrno(PyExc_OSError);
 -        return NULL;
--    }
-+    nswap = swapctl(SWAP_NSWAP, 0, 0);
-+    if (nswap != 0) {
-+        if ((swdev = calloc(nswap, sizeof(*swdev))) == NULL) {
-+            PyErr_NoMemory();
-+            return NULL;
-+        }
- 
--    if ((swdev = calloc(nswap, sizeof(*swdev))) == NULL) {
--        PyErr_NoMemory();
--        return NULL;
--    }
--
--    if (swapctl(SWAP_STATS, swdev, nswap) == -1) {
--        PyErr_SetFromErrno(PyExc_OSError);
--        goto error;
-+        if (swapctl(SWAP_STATS, swdev, nswap) == -1) {
-+            PyErr_SetFromErrno(PyExc_OSError);
-+            goto error;
-+        }
++        // This means there's no swap partition.
++        return Py_BuildValue("(iiiii)", 0, 0, 0, 0, 0);
      }
  
-     // Total things up.
+     if ((swdev = calloc(nswap, sizeof(*swdev))) == NULL) {
