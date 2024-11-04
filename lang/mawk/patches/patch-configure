@@ -1,0 +1,15 @@
+Our srandom() is a no-op, implement awk srand() using
+srandom_deterministic(3).
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -8288,7 +8288,7 @@ if test "${cf_cv_srand_func+set}" = set; then
+ else
+ 
+ cf_cv_srand_func=unknown
+-for cf_func in $cf_srand_arc4random srandom/random srand48/lrand48 srand/rand
++for cf_func in $cf_srand_arc4random srandom_deterministic/random srandom/random srand48/lrand48 srand/rand
+ do
+ 
+ 	cf_srand_func=`echo $cf_func | sed -e 's%/.*%%'`

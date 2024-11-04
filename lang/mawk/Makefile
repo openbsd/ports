@@ -3,6 +3,7 @@ COMMENT=	fast POSIX-compliant awk
 DATE =		20240827
 DISTNAME=	mawk-1.3.4-${DATE}
 PKGNAME=	mawk-1.3.4.${DATE}
+REVISION =	0
 
 CATEGORIES=	lang
 
@@ -22,5 +23,6 @@ EXTRACT_SUFX=	.tgz
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS=	--disable-init-srand
 
 .include <bsd.port.mk>
