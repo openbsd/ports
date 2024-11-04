@@ -2,7 +2,7 @@ PORTROACH =	limitw:1,even
 
 COMMENT =	GNU privacy guard - a free PGP replacement
 
-DISTNAME =	gnupg-2.4.5
+DISTNAME =	gnupg-2.4.6
 
 CATEGORIES =	security
 
@@ -56,5 +56,7 @@ CONFIGURE_ARGS +=	--enable-gpgtar \
 
 post-install:
 	rm -rf ${PREFIX}/share/doc/gnupg/examples/systemd-user
+	mv ${PREFIX}/man/manh/gnupg.7.html ${PREFIX}/share/doc/gnupg
+	rmdir ${PREFIX}/man/manh/
 
 .include <bsd.port.mk>

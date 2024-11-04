@@ -7,6 +7,7 @@
 @bin bin/gpg-agent
 @bin bin/gpg-card
 @bin bin/gpg-connect-agent
+@bin bin/gpg-mail-tube
 @bin bin/gpg-wks-client
 @bin bin/gpg-wks-server
 @bin bin/gpgconf
@@ -32,6 +33,7 @@ libexec/gpg-wks-client
 @man man/man1/gpg-card.1
 @man man/man1/gpg-check-pattern.1
 @man man/man1/gpg-connect-agent.1
+@man man/man1/gpg-mail-tube.1
 @man man/man1/gpg-preset-passphrase.1
 @man man/man1/gpg-wks-client.1
 @man man/man1/gpg-wks-server.1
@@ -67,6 +69,7 @@ share/doc/gnupg/examples/pwpattern.list
 share/doc/gnupg/examples/qualified.txt
 share/doc/gnupg/examples/scd-event
 share/doc/gnupg/examples/trustlist.txt
+share/doc/gnupg/gnupg.7.html
 share/doc/pkg-readmes/${PKGSTEM}
 share/gnupg/
 share/gnupg/distsigkey.gpg
@@ -117,6 +120,7 @@ share/locale/id/LC_MESSAGES/gnupg2.mo
 share/locale/it/LC_MESSAGES/gnupg2.mo
 share/locale/ja/LC_MESSAGES/gnupg2.mo
 share/locale/nb/LC_MESSAGES/gnupg2.mo
+share/locale/nl/LC_MESSAGES/gnupg2.mo
 share/locale/pl/LC_MESSAGES/gnupg2.mo
 share/locale/pt/LC_MESSAGES/gnupg2.mo
 share/locale/ro/LC_MESSAGES/gnupg2.mo
