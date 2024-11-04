@@ -1,4 +1,4 @@
-# Static linking with OpenSSL 3.2
+# Static linking with OpenSSL 3.3
 .if ${MACHINE_ARCH} != aarch64 && ${MACHINE_ARCH} != amd64 && ${MACHINE_ARCH} != riscv64
 USE_NOEXECONLY=		Yes
 .endif
