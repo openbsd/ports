@@ -1,0 +1,15 @@
+disable TestThreadPoolForkSafety.NestedChild, hangs and gobbles CPU
+
+Index: cpp/src/arrow/util/thread_pool_test.cc
+--- cpp/src/arrow/util/thread_pool_test.cc.orig
++++ cpp/src/arrow/util/thread_pool_test.cc
+@@ -930,6 +930,9 @@ TEST_F(TestThreadPoolForkSafety, NestedChild) {
+ #  ifdef __APPLE__
+     GTEST_SKIP() << "Nested fork is not supported on macos";
+ #  endif
++#  ifdef __OpenBSD__
++    GTEST_SKIP() << "Test hangs on OpenBSD";
++#  endif
+ #  ifndef ARROW_ENABLE_THREADING
+     GTEST_SKIP() << "Test requires threading support";
+ #  endif

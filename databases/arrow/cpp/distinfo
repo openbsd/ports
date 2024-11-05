@@ -1,0 +1,6 @@
+SHA256 (apache-arrow-18.0.0.tar.gz) = q88ZNM0M3d0zZk6fLZolHWxVI50RIq0O0iOxOlg8gqk=
+SHA256 (apache-arrow-testing-4d209492d514c2d3cb2d392681b9aa00e6d8da1c.tar.gz) = IRBRTFuH8T8BhiC9n3LWYb6Bp4qjrXcUMa9w3nc71Nw=
+SHA256 (apache-parquet-testing-cb7a9674142c137367bf75a01b79c6e214a73199.tar.gz) = i6AHxgsRa46LSi2/4tsYF10eliwoHORrINVYjjDAQqU=
+SIZE (apache-arrow-18.0.0.tar.gz) = 19113236
+SIZE (apache-arrow-testing-4d209492d514c2d3cb2d392681b9aa00e6d8da1c.tar.gz) = 3572558
+SIZE (apache-parquet-testing-cb7a9674142c137367bf75a01b79c6e214a73199.tar.gz) = 1068025

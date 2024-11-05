@@ -1,0 +1,24 @@
+chunk2: disable building process testing, as it includes a boost header that includes a non-existing wordexp.h
+cf https://github.com/boostorg/process/issues/391
+will be fixed by https://github.com/boostorg/process/commit/c8499e02c67cb8af1ad3cddc7b9feb7c42c2da0e
+
+Index: cpp/src/arrow/CMakeLists.txt
+--- cpp/src/arrow/CMakeLists.txt.orig
++++ cpp/src/arrow/CMakeLists.txt
+@@ -166,7 +166,7 @@ if(WIN32)
+   list(APPEND ARROW_SYSTEM_LINK_LIBS "ws2_32")
+ endif()
+ 
+-if(NOT WIN32 AND NOT APPLE)
++if(NOT WIN32 AND NOT APPLE AND NOT ${CMAKE_SYSTEM_NAME} STREQUAL "OpenBSD")
+   # Pass -lrt on Linux only
+   list(APPEND ARROW_SYSTEM_LINK_LIBS rt)
+ endif()
+@@ -674,7 +674,6 @@ set(ARROW_TESTING_SRCS
+     testing/fixed_width_test_util.cc
+     testing/generator.cc
+     testing/gtest_util.cc
+-    testing/process.cc
+     testing/random.cc
+     testing/util.cc)
+ 

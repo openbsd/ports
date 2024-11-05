@@ -1,0 +1,4 @@
+Apache Arrow is a universal columnar format and multi-language toolbox
+for fast data interchange and in-memory analytics. It contains a set of
+technologies that enable data systems to efficiently store, process,
+and move data.
