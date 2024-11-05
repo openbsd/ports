@@ -1925,6 +1925,7 @@
      SUBDIR += tea
      SUBDIR += teensyloader
      SUBDIR += template-glib
+     SUBDIR += thrift
      SUBDIR += ti-msp430gcc
      SUBDIR += tig
      SUBDIR += tkcvs
