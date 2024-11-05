@@ -1,4 +1,5 @@
 FW_VER=		20240513
+REVISION=	0
 FW_DRIVER=	iwx
 DISTNAME=	linux-firmware-${FW_VER}
 EXTRACT_SUFX=	.tar.xz
@@ -20,11 +21,16 @@ FW=	cc-a0		77 \
 	Qu-c0-hr-b0	77 \
 	Qu-c0-jf-b0	77 \
 	QuZ-a0-hr-b0	77 \
-	QuZ-a0-jf-b0	77
+	QuZ-a0-jf-b0	77 \
+	ma-b0-gf-a0	83 \
+	ma-b0-gf4-a0	83 \
+	ma-b0-hr-b0	83
 
 PNVM=	so-a0-gf-a0 \
 	so-a0-gf4-a0 \
-	ty-a0-gf-a0
+	ty-a0-gf-a0 \
+	ma-b0-gf-a0 \
+	ma-b0-gf4-a0
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/LICENCE.iwlwifi_firmware \
