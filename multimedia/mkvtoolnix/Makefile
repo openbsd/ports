@@ -59,7 +59,7 @@ RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+4,-guic
 
 CONFIGURE_STYLE= autoconf
-AUTOCONF_VERSION= 2.71
+AUTOCONF_VERSION= 2.72
 
 CONFIGURE_ARGS=	--disable-optimization \
 		--disable-update-check \
