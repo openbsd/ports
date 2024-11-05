@@ -1,5 +1,6 @@
      SUBDIR =
      SUBDIR += architect
+     SUBDIR += arrow
      SUBDIR += barman
      SUBDIR += bbolt
      SUBDIR += citus
