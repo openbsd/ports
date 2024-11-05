@@ -1,5 +1,6 @@
---- Makefile.orig	Sun Sep 11 12:13:27 2016
-+++ Makefile	Wed Sep 21 14:30:42 2016
+Index: Makefile
+--- Makefile.orig
++++ Makefile
 @@ -3,15 +3,11 @@
  # Please update COMPILATION.txt if necessary after changing this file.
  #
@@ -21,7 +22,21 @@
  # In this case application can be installed.
  
  
-@@ -58,6 +54,7 @@ endif
+@@ -30,6 +26,13 @@ ICON_THEME = hicolor
+ CFLAGS += -DGAME_VERSION=\"$(GAME_VERSION)\"
+ 
+ 
++# local deps copies, should be before /usr/local
++CFLAGS += -I _build/lib-MicroIni/include
++CFLAGS += -I _build/lib-rapidjson
++CFLAGS += -I _build/lib-slog
++CFLAGS += -I _build/lib-smacker/libsmacker
++CFLAGS += -I _build/lib-utf8cpp/source
++
+ ############################################################
+ # SDL Library settings.
+ # Project can be built with local SDL library (from _build/lib-SDL-devel-*)
+@@ -58,6 +61,7 @@ endif
  
  CFLAGS += $(CFLAGS_SDL)
  LDFLAGS += $(LDFLAGS_SDL)
@@ -29,15 +44,20 @@
  
  ############################################################
  # MinGW settings for building on Windows and for
-@@ -100,7 +97,6 @@ CFLAGS += -I Build/Utils
+@@ -99,12 +103,6 @@ CFLAGS += -I Build/TileEngine
+ CFLAGS += -I Build/Utils
  CFLAGS += -I sgp
  CFLAGS += -I src
- CFLAGS += -I _build/lib-MicroIni/include
+-CFLAGS += -I _build/lib-MicroIni/include
 -CFLAGS += -I _build/lib-boost
- CFLAGS += -I _build/lib-rapidjson
- CFLAGS += -I _build/lib-slog
- CFLAGS += -I _build/lib-smacker/libsmacker
-@@ -524,16 +520,6 @@ SRCS += _build/lib-MicroIni/src/MicroIni/File.cpp
+-CFLAGS += -I _build/lib-rapidjson
+-CFLAGS += -I _build/lib-slog
+-CFLAGS += -I _build/lib-smacker/libsmacker
+-CFLAGS += -I _build/lib-utf8cpp/source
+ 
+ #CFLAGS += -Wall
+ #CFLAGS += -W
+@@ -524,16 +522,6 @@ SRCS += _build/lib-MicroIni/src/MicroIni/File.cpp
  SRCS += _build/lib-MicroIni/src/MicroIni/Line.cpp
  SRCS += _build/lib-MicroIni/src/MicroIni/Section.cpp
  SRCS += _build/lib-MicroIni/src/MicroIni/Value.cpp
