@@ -151,8 +151,6 @@
      SUBDIR += ices
      SUBDIR += ices2
      SUBDIR += icinga
-     SUBDIR += icli
-     SUBDIR += icli,nagios
      SUBDIR += icmpinfo
      SUBDIR += ifstat
      SUBDIR += ifstat,snmp
@@ -643,7 +641,13 @@
      SUBDIR += rrdtool
      SUBDIR += rsnapshot
      SUBDIR += rsync
+<<<<<<< Makefile
+     SUBDIR += rsync,iconv
+     SUBDIR += rsync,zstd
+     SUBDIR += rsync,iconv,zstd
+=======
      SUBDIR += rsync,minimal
+>>>>>>> 1.1393
      SUBDIR += rtg
      SUBDIR += rtmpdump
      SUBDIR += rtorrent

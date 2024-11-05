@@ -1,8 +1,0 @@
-bin/icli
-${P5SITE}/App/
-${P5SITE}/App/Icli/
-${P5SITE}/App/Icli.pm
-${P5SITE}/App/Icli/ConfigData.pm
-@man man/man1/icli.1
-@man man/man3p/App::Icli.3p
-@man man/man3p/App::Icli::ConfigData.3p
