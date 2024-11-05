@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/printing/backend/cups_helper.cc
+--- src/3rdparty/chromium/printing/backend/cups_helper.cc.orig
++++ src/3rdparty/chromium/printing/backend/cups_helper.cc
+@@ -158,7 +158,7 @@ std::pair<std::vector<gfx::Size>, gfx::Size> GetResolu
+   // Some printers, such as Generic-CUPS-BRF-Printer, do not specify a
+   // resolution in their ppd file. Provide a default DPI if no valid DPI is
+   // found.
+-#if BUILDFLAG(IS_MAC)
++#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
+   constexpr gfx::Size kDefaultMissingDpi(kDefaultMacDpi, kDefaultMacDpi);
+ #else
+   constexpr gfx::Size kDefaultMissingDpi(kDefaultPdfDpi, kDefaultPdfDpi);
