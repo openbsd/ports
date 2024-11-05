@@ -5,8 +5,7 @@ COMMENT =	image display utility for Wayland
 
 GH_ACCOUNT =	artemsen
 GH_PROJECT =	swayimg
-GH_TAGNAME =	v3.2
-REVISION =	1
+GH_TAGNAME =	v3.4
 
 CATEGORIES =	wayland
 
@@ -50,5 +49,8 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
 
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/meson.build
 
 .include <bsd.port.mk>
