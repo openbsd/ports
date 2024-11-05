@@ -1,6 +1,6 @@
 COMMENT =	HTML5 validator
 
-V =		23.4.11
+V =		24.10.17
 DISTNAME =	vnu-jar-$V
 PKGNAME =	vnu-$V
 
@@ -18,7 +18,7 @@ SITES =		https://registry.npmjs.org/vnu-jar/-/
 EXTRACT_SUFX =		.tgz
 
 MODULES =		java
-MODJAVA_VER =		1.8+
+MODJAVA_VER =		11+
 RUN_DEPENDS =		java/javaPathHelper
 
 NO_BUILD =		Yes
