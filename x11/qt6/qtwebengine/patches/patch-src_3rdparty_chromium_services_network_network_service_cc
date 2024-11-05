@@ -21,6 +21,15 @@ Index: src/3rdparty/chromium/services/network/network_service.cc
  
    trace_net_log_observer_.WatchForTraceStart(net_log_);
  
+@@ -784,7 +784,7 @@ net::NetLog* NetworkService::net_log() const {
+ 
+ void NetworkService::GetNetworkChangeManager(
+     mojo::PendingReceiver<mojom::NetworkChangeManager> receiver) {
+-  network_change_manager_->AddReceiver(std::move(receiver));
++  // XXX network_change_manager_->AddReceiver(std::move(receiver));
+ }
+ 
+ void NetworkService::GetNetworkQualityEstimatorManager(
 @@ -1003,7 +1003,7 @@ void NetworkService::SetExplicitlyAllowedPorts(
    net::SetExplicitlyAllowedPorts(ports);
  }
