@@ -1,12 +1,15 @@
 share/doc/generaluser-gs/
-share/doc/generaluser-gs/CHANGELOG.txt
-share/doc/generaluser-gs/GU_Percussion_Map.pdf
+share/doc/generaluser-gs/CHANGELOG.html
+share/doc/generaluser-gs/CHANGELOG.md
 share/doc/generaluser-gs/LICENSE.txt
-share/doc/generaluser-gs/README.txt
+share/doc/generaluser-gs/README.html
+share/doc/generaluser-gs/README.md
+share/doc/generaluser-gs/README.pdf
+share/doc/generaluser-gs/percussion map.ods
+share/doc/generaluser-gs/percussion map.pdf
 share/examples/generaluser-gs/
-share/examples/generaluser-gs/GUTest.mid
+share/examples/generaluser-gs/MIDI timing test.mid
+share/examples/generaluser-gs/Reset GS & SF2.mid
 share/generaluser-gs/
-share/generaluser-gs/GeneralUser_GS-Drumsets.ins
-share/generaluser-gs/GeneralUser_GS.ins
-share/generaluser-gs/GeneralUser_GS.rgd
-share/generaluser-gs/GeneralUser_GS.sf2
+share/generaluser-gs/GeneralUser GS.ins
+share/generaluser-gs/GeneralUser-GS.sf2
