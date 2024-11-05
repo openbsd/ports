@@ -1,0 +1,17 @@
+c_glib tests need boost headers ?
+
+Index: lib/c_glib/test/CMakeLists.txt
+--- lib/c_glib/test/CMakeLists.txt.orig
++++ lib/c_glib/test/CMakeLists.txt
+@@ -17,6 +17,11 @@
+ # under the License.
+ #
+ 
++# Unit tests still require boost
++include(BoostMacros)
++REQUIRE_BOOST_HEADERS()
++set(BOOST_COMPONENTS filesystem thread unit_test_framework chrono)
++REQUIRE_BOOST_LIBRARIES(BOOST_COMPONENTS)
+ 
+ set(TEST_PREFIX "c_glib")
+ 

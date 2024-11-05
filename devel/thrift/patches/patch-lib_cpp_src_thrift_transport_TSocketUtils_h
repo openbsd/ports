@@ -1,0 +1,21 @@
+Index: lib/cpp/src/thrift/transport/TSocketUtils.h
+--- lib/cpp/src/thrift/transport/TSocketUtils.h.orig
++++ lib/cpp/src/thrift/transport/TSocketUtils.h
+@@ -131,7 +131,7 @@ struct AddressResolutionHelper { (public)
+   AddressResolutionHelper(const std::string& host,
+                           const std::string& port, // pass "25" or "smtp" for port 25
+                           int socktype = SOCK_STREAM,
+-                          int flags = AI_V4MAPPED | AI_ADDRCONFIG)
++                          int flags = AI_ADDRCONFIG)
+     : gai_results(query(host, port, socktype, flags)) {}
+ 
+   AddressResolutionHelper() = default;
+@@ -146,7 +146,7 @@ struct AddressResolutionHelper { (public)
+   AddressResolutionHelper& resolve(const std::string& host,
+                                    const std::string& port, // pass "25" or "smtp" for port 25
+                                    int socktype = SOCK_STREAM,
+-                                   int flags = AI_V4MAPPED | AI_ADDRCONFIG) {
++                                   int flags = AI_ADDRCONFIG) {
+     gai_results.reset(query(host, port, socktype, flags));
+     return *this;
+   }
