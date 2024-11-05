@@ -1,7 +1,7 @@
 COMMENT = 	fast, lightweight and minimalistic Wayland terminal emulator
 
 DISTNAME =	foot-${V}
-V =		1.18.0
+V =		1.19.0
 
 SITES =		https://codeberg.org/dnkl/foot/archive/
 DISTFILES =     foot-{}${V}${EXTRACT_SUFX}

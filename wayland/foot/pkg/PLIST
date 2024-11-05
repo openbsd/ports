@@ -6,9 +6,9 @@
 @man man/man1/footclient.1
 @man man/man5/foot.ini.5
 @man man/man7/foot-ctlseqs.7
-share/applications/org.codeberg.dnkl.foot-server.desktop
-share/applications/org.codeberg.dnkl.foot.desktop
-share/applications/org.codeberg.dnkl.footclient.desktop
+share/applications/foot-server.desktop
+share/applications/foot.desktop
+share/applications/footclient.desktop
 share/bash-completion/completions/foot
 share/bash-completion/completions/footclient
 share/doc/foot/
