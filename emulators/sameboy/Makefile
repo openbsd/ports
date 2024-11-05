@@ -4,7 +4,7 @@ COMMENT-libretro =	accurate Nintendo Game Boy core for retroarch
 PKGNAME-main =		sameboy-$V
 PKGNAME-libretro =	libretro-sameboy-$V
 
-V =		0.16.6
+V =		0.16.7
 
 GH_ACCOUNT =	LIJI32
 GH_PROJECT =	SameBoy

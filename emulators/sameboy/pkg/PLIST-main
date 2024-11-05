@@ -35,6 +35,7 @@ share/sameboy/Shaders/AAScale2x.fsh
 share/sameboy/Shaders/AAScale4x.fsh
 share/sameboy/Shaders/Bilinear.fsh
 share/sameboy/Shaders/CRT.fsh
+share/sameboy/Shaders/FlatCRT.fsh
 share/sameboy/Shaders/HQ2x.fsh
 share/sameboy/Shaders/LCD.fsh
 share/sameboy/Shaders/MasterShader.fsh
