@@ -1,6 +1,7 @@
 COMMENT =		C library implementing server and client side SSH
 V =			0.10.6
 DISTNAME =		libssh-${V}
+REVISION =		0
 
 SHARED_LIBS +=		ssh		4.2 # 4.8
 
@@ -27,5 +28,7 @@ BUILD_DEPENDS =		devel/cmocka \
 
 CONFIGURE_ARGS +=	-DUNIT_TESTING=ON \
 			-DWITH_EXAMPLES=OFF
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
