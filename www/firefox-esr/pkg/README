@@ -27,7 +27,7 @@ ${SYSCONFDIR}/${MOZILLA_PROJECT}/{unveil,pledge}.{content,gpu,main,rdd,socket,ut
 As unveil() can't show non-existing dirs, it is recommended to manually
 create ~/Downloads for files to be properly saved in this directory.
 
-Starting ${MOZILLA_PROJECT} should create this dir though, but it wont be available
+Starting ${MOZILLA_PROJECT} should create this directory, but it won't be available
 for downloads until it's restarted.
 
 3rd-Party MIME Handlers
@@ -119,7 +119,7 @@ device e.g.:
 
 # chown youruser /dev/video0
 
-Screen sharing needs shmget() which isnt available when pledge() is active, so
+Screen sharing needs shmget() which isn't available when pledge() is active, so
 you will have to disable pledge for the main process.
 
 KerberosV support
@@ -148,8 +148,15 @@ are enabled.
 
 Similarly, the rust-based WebRender compositor can be enabled by setting
 MOZ_WEBRENDER=1 in the environment, or by switching the about:config
-gfx.webrender.enabled knob to true. Check it is enabled in the 'Features'
+gfx.webrender.enabled knob to true. Check that it's enabled in the 'Features'
 section of about:support. For this feature, WebGL2 is necessary, so your
 hardware must support at least OpenGL 4.
 
 See https://wiki.mozilla.org/Platform/GFX/Quantum_Render for more details.
+
+Fonts in PDF viewer
+===================
+If using the builtin PDF viewer and you get garbled fonts, bitmap fonts
+should be rejected to fix rendering. A known workaround:
+
+# ln -s /etc/fonts/conf.avail/70-no-bitmaps.conf /etc/fonts/conf.d
