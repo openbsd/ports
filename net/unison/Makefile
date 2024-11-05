@@ -7,7 +7,7 @@ COMMENT-gui =	gtk3 based interface for unison
 
 GH_ACCOUNT =	bcpierce00
 GH_PROJECT =	unison
-GH_TAGNAME =	v2.53.5
+GH_TAGNAME =	v2.53.7
 
 CATEGORIES =	net
 
