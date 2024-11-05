@@ -428,6 +428,7 @@ lib/cmake/Arrow/ArrowConfigVersion.cmake
 lib/cmake/Arrow/ArrowOptions.cmake
 lib/cmake/Arrow/ArrowTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Arrow/ArrowTargets.cmake
+lib/cmake/Arrow/FindSnappyAlt.cmake
 lib/cmake/Arrow/arrow-config.cmake
 lib/cmake/ArrowAcero/
 lib/cmake/ArrowAcero/ArrowAceroConfig.cmake

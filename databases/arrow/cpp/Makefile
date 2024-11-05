@@ -37,6 +37,7 @@ CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=ON \
 		-DARROW_JSON=ON \
 		-DARROW_BUILD_UTILITIES=ON \
 		-DARROW_BUILD_TESTS=ON \
+		-DARROW_WITH_SNAPPY=ON \
 		-DARROW_WITH_UTF8PROC=OFF \
 		-DARROW_WITH_RE2=OFF \
 		-DARROW_JEMALLOC=OFF
@@ -56,7 +57,8 @@ BUILD_DEPENDS +=devel/boost \
 TEST_ENV +=	ARROW_TEST_DATA=${WRKDIST}/testing/data \
 		PARQUET_TEST_DATA=${WRKSRC}/submodules/parquet-testing/data
 
-LIB_DEPENDS =	devel/thrift
-WANTLIB +=	${COMPILER_LIBCXX} c crypto m ssl thrift
+LIB_DEPENDS =	devel/thrift \
+		archivers/snappy
+WANTLIB +=	${COMPILER_LIBCXX} c crypto m snappy ssl thrift
 
 .include <bsd.port.mk>
