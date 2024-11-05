@@ -1,4 +1,7 @@
-https://gitlab.gnome.org/GNOME/libdex/-/merge_requests/13
+From a8467d032e42c991c2422919a18089fe1d54976c Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Tue, 5 Nov 2024 19:51:12 +0100
+Subject: [PATCH] Add OpenBSD support.
 
 Index: src/asm.S
 --- src/asm.S.orig
