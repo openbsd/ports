@@ -3,6 +3,8 @@ COMMENT=	cross-platform multimedia library
 V=		2.30.9
 DISTNAME=	SDL2-${V}
 PKGNAME=	sdl2-${V}
+REVISION=	0
+
 CATEGORIES=	devel
 SITES=		https://www.libsdl.org/release/
 
@@ -17,13 +19,18 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 # zlib
 PERMIT_PACKAGE=	Yes
 
-WANTLIB+=	X11 Xcursor Xext Xfixes Xi Xrandr Xrender Xss iconv m pthread
-WANTLIB+=	samplerate sndio usbhid xcb
+WANTLIB+=	X11 Xcursor Xext Xfixes Xi Xrandr Xrender Xss epoll-shim ffi
+WANTLIB+=	wayland-client wayland-cursor wayland-egl iconv m pthread
+WANTLIB+=	samplerate sndio usbhid xcb xkbcommon
 # GL library is dlopen'd
 WANTLIB+=	GL
 
 LIB_DEPENDS=	audio/libsamplerate \
-		converters/libiconv
+		converters/libiconv \
+		devel/epoll-shim \
+		devel/libffi \
+		wayland/wayland \
+		x11/xkbcommon
 
 USE_GMAKE=		Yes
 SEPARATE_BUILD=		Yes
@@ -42,7 +49,6 @@ CONFIGURE_ARGS+= --disable-alsa \
 	         --disable-pipewire \
 		 --disable-pulseaudio \
 		 --disable-sndio-shared \
-		 --disable-video-wayland \
 		 --disable-video-wayland-qt-touch \
 		 --disable-wayland-shared \
 		 --disable-x11-shared
