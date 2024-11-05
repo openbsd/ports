@@ -4,7 +4,7 @@ COMMENT=		GNU editor: extensible, customizable, self-documenting
 # Zap post-extract when updating
 VERSION=		29.4
 DISTNAME=		emacs-${VERSION}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		editors
 
@@ -23,7 +23,7 @@ EXTRACT_SUFX=		.tar.xz
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-FLAVORS=		athena gtk2 gtk3 no_x11
+FLAVORS=		athena gtk2 gtk3 no_x11 pgtk
 FLAVOR?=		gtk3
 
 GCCARCH=		${MACHINE_ARCH}-unknown-openbsd
@@ -69,7 +69,6 @@ LIB_DEPENDS+=		devel/harfbuzz \
 			graphics/giflib \
 			graphics/lcms2 \
 			graphics/libwebp \
-			misc/m17n/lib \
 			x11/dbus \
 			x11/gnome/librsvg
 RUN_DEPENDS+=		devel/desktop-file-utils \
@@ -78,6 +77,7 @@ RUN_DEPENDS+=		devel/desktop-file-utils \
 . if ${FLAVOR} == "athena"
 CONFIGURE_ARGS+=	--with-x-toolkit=athena
 LIB_DEPENDS+=		x11/Xaw3d
+LIB_DEPENDS+=		misc/m17n/lib
 WANTLIB += ICE SM X11 X11-xcb Xaw3d Xcomposite Xext Xfixes Xi
 WANTLIB += Xinerama Xmu Xpm Xrandr Xrender Xt cairo dbus-1 fontconfig
 WANTLIB += freetype gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gobject-2.0
@@ -86,6 +86,7 @@ WANTLIB += rsvg-2 tiff webpdecoder webpdemux xcb xcb-shape xcb-util
 . elif ${FLAVOR} == "gtk2"
 CONFIGURE_ARGS+=	--with-x-toolkit=gtk2
 LIB_DEPENDS+=		x11/gtk+2
+LIB_DEPENDS+=		misc/m17n/lib
 WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xpm Xrandr Xrender atk-1.0 cairo
 WANTLIB += dbus-1 fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
@@ -96,12 +97,20 @@ WANTLIB += xcb xcb-shape xcb-util
 . elif ${FLAVOR} == "gtk3"
 CONFIGURE_ARGS+=	--with-x-toolkit=gtk3
 LIB_DEPENDS+=		x11/gtk+3
+LIB_DEPENDS+=		misc/m17n/lib
 WANTLIB += ICE SM X11 X11-xcb Xcomposite Xext Xfixes Xi Xinerama
 WANTLIB += Xpm Xrandr Xrender atk-1.0 cairo cairo-gobject dbus-1
 WANTLIB += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gif gio-2.0
 WANTLIB += glib-2.0 gobject-2.0 gtk-3 harfbuzz intl jpeg lcms2
 WANTLIB += m17n-core m17n-flt otf pango-1.0 pangocairo-1.0 png
 WANTLIB += rsvg-2 tiff webpdecoder webpdemux xcb xcb-shape xcb-util
+. elif ${FLAVOR} == "pgtk"
+CONFIGURE_ARGS+=	--with-pgtk
+LIB_DEPENDS+=		x11/gtk+3
+WANTLIB += atk-1.0 cairo cairo-gobject dbus-1 fontconfig freetype
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += gtk-3 harfbuzz intl jpeg lcms2 otf pango-1.0 pangocairo-1.0
+WANTLIB += png rsvg-2 tiff webpdecoder webpdemux
 . else
 ERRORS+=		"Fatal: Conflicting flavor: ${FLAVOR}"
 . endif

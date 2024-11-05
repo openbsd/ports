@@ -24,3 +24,4 @@ Flavors:
 	athena     - build with athena toolkit instead of gtk3
 	gtk2	   - build with gtk2 instead of gtk3
 	gtk3       - build with gtk3 (default)
+	pgtk       - build with gtk only, useful for wayland

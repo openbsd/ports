@@ -10,6 +10,7 @@
 %%gtk2%%
 %%gtk3%%
 !%%no_x11%%
+%%pgtk%%
 @bin bin/ctags
 @bin bin/ebrowse
 bin/emacs
