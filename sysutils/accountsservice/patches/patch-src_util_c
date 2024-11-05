@@ -19,3 +19,17 @@ Index: src/util.c
  }
  
  static gboolean
+@@ -214,7 +218,12 @@ get_user_groups (const gchar *user,
+         *groups = g_new (gid_t, ngroups);
+         res = getgrouplist (user, group, *groups, &ngroups);
+ 
+-        return res;
++        /* Both Linux and BSD put the number of groups found in
++         * ngroups, but Linux also returns that number if the groups
++         * fit, whereas BSD returns 0. */
++        if (res == -1)
++                return res;
++        return ngroups;
+ }
+ 
+ /**

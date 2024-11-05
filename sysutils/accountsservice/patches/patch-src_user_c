@@ -86,20 +86,7 @@ Index: src/user.c
                  argv[2] = "--";
                  argv[3] = accounts_user_get_user_name (ACCOUNTS_USER (user));
                  argv[4] = NULL;
-@@ -2272,7 +2299,12 @@ user_change_account_type_authorized_cb (Daemon        
-         AccountType account_type = GPOINTER_TO_INT (data);
- 
-         g_autoptr (GError) error = NULL;
-+#ifndef __OpenBSD__
-         gid_t *groups;
-+#else
-+        gid_t groups[NGROUPS_MAX + 1];
-+        struct group *obsdgrp;
-+#endif
-         gint ngroups;
- 
-         g_autoptr (GString) str = NULL;
-@@ -2281,7 +2313,12 @@ user_change_account_type_authorized_cb (Daemon        
+@@ -2281,7 +2308,12 @@ user_change_account_type_authorized_cb (Daemon        
          gsize n_extra_admin_groups_gids = 0;
          gid_t admin_gid;
          gint i;
@@ -112,34 +99,7 @@ Index: src/user.c
  
          if (((AccountType) accounts_user_get_account_type (ACCOUNTS_USER (user))) != account_type) {
                  sys_log (context,
-@@ -2295,7 +2332,15 @@ user_change_account_type_authorized_cb (Daemon        
-                         return;
-                 }
- 
-+#ifdef __OpenBSD__
-+                ngroups = sizeof(groups) / sizeof(gid_t);
-+                if (getgrouplist (accounts_user_get_user_name (ACCOUNTS_USER (user)), user->gid, groups, &ngroups) == -1) {
-+                        g_warning ("too many groups");
-+                        account_type = ACCOUNT_TYPE_STANDARD;
-+                }
-+#else
-                 ngroups = get_user_groups (accounts_user_get_user_name (ACCOUNTS_USER (user)), user->gid, &groups);
-+#endif
- 
-                 str = g_string_new ("");
-                 for (i = 0; i < ngroups; i++) {
-@@ -2309,15 +2354,29 @@ user_change_account_type_authorized_cb (Daemon        
-                         }
- 
-                         if (!group_is_admin)
-+#ifdef __OpenBSD__
-+                        {
-+                                obsdgrp = getgrgid(groups[i]);
-+                                g_string_append_printf (str, "%s,", obsdgrp->gr_name);
-+                        }
-+#else
-                                 g_string_append_printf (str, "%d,", groups[i]);
-+#endif
+@@ -2313,11 +2345,18 @@ user_change_account_type_authorized_cb (Daemon        
                  }
                  switch (account_type) {
                  case ACCOUNT_TYPE_ADMINISTRATOR:
@@ -158,13 +118,8 @@ Index: src/user.c
                          break;
                  case ACCOUNT_TYPE_STANDARD:
                  default:
-@@ -2326,14 +2385,26 @@ user_change_account_type_authorized_cb (Daemon        
-                         break;
-                 }
- 
-+#ifndef __OpenBSD__
+@@ -2329,11 +2368,21 @@ user_change_account_type_authorized_cb (Daemon        
                  g_free (groups);
-+#endif
  
                  argv[0] = "/usr/sbin/usermod";
 +#ifdef __OpenBSD__
