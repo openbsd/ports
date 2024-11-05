@@ -1,10 +1,9 @@
 COMMENT=	multidict implementation
 
-MODPY_EGG_VERSION=	6.0.4
+MODPY_EGG_VERSION=	6.1.0
 DISTNAME=	multidict-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	www devel
-REVISION=	0
 
 WANTLIB +=	pthread ${MODPY_WANTLIB}
 
@@ -20,5 +19,6 @@ FLAVORS=	python3
 FLAVOR=		python3
 
 TEST_DEPENDS=	devel/py-test-cov${MODPY_FLAVOR}
+MODPY_TEST_LINK_SO= Yes
 
 .include <bsd.port.mk>
