@@ -17,6 +17,7 @@
      SUBDIR += emacs
      SUBDIR += emacs,gtk2
      SUBDIR += emacs,no_x11
+     SUBDIR += emacs,pgtk
      SUBDIR += featherpad
      SUBDIR += focuswriter
      SUBDIR += fte
