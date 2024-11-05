@@ -1,21 +1,24 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -6,11 +6,11 @@ BINDIR ?= $(PREFIX)/bin
+@@ -6,7 +6,7 @@ BINDIR ?= $(PREFIX)/bin
  
- VERSION="0.5.0"
+ VERSION="0.6.0"
  
 -CFLAGS ?= -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -Wno-format-overflow
 +CFLAGS += -Wall -Wextra -Wno-unused-parameter -Wno-parentheses -I/usr/local/include -I/usr/local/include/libepoll-shim
  override CFLAGS += -DVERSION=\"$(VERSION)\"
  
- VPATH=$(WAYLAND_PROTOCOLS_DIR)/stable/xdg-shell:$(WAYLAND_PROTOCOLS_DIR)/unstable/xdg-decoration
+ VPATH = $(WAYLAND_PROTOCOLS_DIR)/stable/xdg-shell \
+@@ -17,14 +17,14 @@ GEN =	xdg-shell.h xdg-shell.c \
+ 	xdg-decoration-unstable-v1.h xdg-decoration-unstable-v1.c \
+ 	primary-selection-unstable-v1.h primary-selection-unstable-v1.c
+ 
 -LIBS=-lrt -lm -lutil -lwayland-client -lwayland-cursor -lxkbcommon -Ltsm -lhtsm
 +LIBS=-L/usr/local/lib -R/usr/local/lib -lm -lutil -lwayland-client -lwayland-cursor -lxkbcommon -Ltsm -lhtsm -lepoll-shim
- OBJ=xdg-shell.o xdg-decoration-unstable-v1.o gtk-primary-selection.o glyph.o main.o
- GEN=xdg-shell.c xdg-shell.h xdg-decoration-unstable-v1.c \
- 	xdg-decoration-unstable-v1.h gtk-primary-selection.c gtk-primary-selection.h
-@@ -19,7 +19,7 @@ havoc: tsm $(OBJ)
+ OBJ=xdg-shell.o xdg-decoration-unstable-v1.o primary-selection-unstable-v1.o glyph.o main.o
+ 
+ havoc: tsm $(OBJ)
  	$(CC) $(LDFLAGS) -o $@ $(OBJ) $(LIBS)
  
  install: havoc

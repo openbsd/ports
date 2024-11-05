@@ -2,7 +2,7 @@ COMMENT =	minimal terminal emulator for wayland
 
 GH_ACCOUNT =	ii8
 GH_PROJECT =	havoc
-GH_TAGNAME =	0.5.0
+GH_TAGNAME =	0.6.0
 
 
 CATEGORIES =	wayland

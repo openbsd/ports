@@ -18,7 +18,7 @@ Index: havoc.cfg
  columns=140
  
  # number of lines to keep in scrollback
-@@ -22,10 +22,10 @@ scrollback=1000
+@@ -25,10 +25,10 @@ scroll to bottom on input=no
  
  [font]
  # height of a single glyph in pixels

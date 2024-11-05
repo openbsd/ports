@@ -15,7 +15,7 @@ Index: main.c
  
  #include <xkbcommon/xkbcommon-compose.h>
  #include <wayland-client-core.h>
-@@ -201,7 +207,7 @@ static struct {
+@@ -203,7 +209,7 @@ static struct {
  		[TSM_COLOR_LIGHT_CYAN]    = {   0, 255, 255 },
  		[TSM_COLOR_WHITE]         = { 255, 255, 255 },
  		[TSM_COLOR_FOREGROUND]    = { 229, 229, 229 },
@@ -24,7 +24,7 @@ Index: main.c
  	},
  	.opt.app_id = "havoc"
  };
-@@ -210,7 +216,7 @@ static void wcb(struct tsm_vte *vte, const char *u8, s
+@@ -212,7 +218,7 @@ static void wcb(struct tsm_vte *vte, const char *u8, s
  {
  	assert(len <= PIPE_BUF);
  	if (term.master_fd >= 0 && write(term.master_fd, u8, len) < 0) {
@@ -33,7 +33,7 @@ Index: main.c
  		abort();
  	}
  }
-@@ -221,7 +227,7 @@ static void handle_display(int ev)
+@@ -223,7 +229,7 @@ static void handle_display(int ev)
  		term.die = true;
  	} else if (ev & EPOLLIN) {
  		if (wl_display_dispatch(term.display) < 0) {
@@ -42,7 +42,7 @@ Index: main.c
  			abort();
  		}
  	}
-@@ -232,22 +238,22 @@ static void handle_tty(int ev)
+@@ -234,22 +240,22 @@ static void handle_tty(int ev)
  	char data[256];
  	int len;
  
@@ -73,7 +73,7 @@ Index: main.c
  	}
  }
  
-@@ -524,20 +530,20 @@ static int buffer_init(struct buffer *buf)
+@@ -528,20 +534,20 @@ static int buffer_init(struct buffer *buf)
  	stride = term.width * 4;
  	buf->size = stride * term.height;
  
@@ -98,7 +98,7 @@ Index: main.c
  		close(fd);
  		return -1;
  	}
-@@ -546,7 +552,7 @@ static int buffer_init(struct buffer *buf)
+@@ -550,7 +556,7 @@ static int buffer_init(struct buffer *buf)
  			 fd, 0);
  
  	if (buf->data == MAP_FAILED) {
@@ -107,7 +107,7 @@ Index: main.c
  		close(fd);
  		return -1;
  	}
-@@ -1480,7 +1486,7 @@ static void configure(void *d, struct xdg_surface *sur
+@@ -1492,7 +1498,7 @@ static void configure(void *d, struct xdg_surface *sur
  	term.row = row;
  	tsm_screen_resize(term.screen, col, row);
  	if (term.master_fd >= 0 && ioctl(term.master_fd, TIOCSWINSZ, &ws) < 0)
@@ -116,7 +116,7 @@ Index: main.c
  
  	term.need_redraw = true;
  	term.resize = 2;
-@@ -1567,7 +1573,7 @@ static void setup_pty(char *argv[])
+@@ -1579,7 +1585,7 @@ static void setup_pty(char *argv[])
  	pid_t pid = forkpty(&term.master_fd, NULL, NULL, NULL);
  
  	if (pid < 0) {
@@ -125,7 +125,7 @@ Index: main.c
  		exit(EXIT_FAILURE);
  	} else if (pid == 0) {
  		char *prog;
-@@ -1579,7 +1585,7 @@ static void setup_pty(char *argv[])
+@@ -1591,7 +1597,7 @@ static void setup_pty(char *argv[])
  			execlp(term.cfg.shell, term.cfg.shell, (char *) NULL);
  			prog = term.cfg.shell;
  		}
@@ -134,7 +134,7 @@ Index: main.c
  		pause();
  		exit(EXIT_FAILURE);
  	}
-@@ -1780,9 +1786,9 @@ static FILE *open_config(void)
+@@ -1794,9 +1800,9 @@ static FILE *open_config(void)
  
  		f = fopen(term.opt.config, "r");
  		if (f == NULL)
@@ -146,7 +146,7 @@ Index: main.c
  		return f;
  	}
  
-@@ -1994,9 +2000,10 @@ retry:
+@@ -2018,9 +2024,10 @@ retry:
  
  	term.repeat.fd = timerfd_create(CLOCK_MONOTONIC,
  					TFD_NONBLOCK | TFD_CLOEXEC);
