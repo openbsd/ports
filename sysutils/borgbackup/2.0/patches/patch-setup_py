@@ -8,7 +8,7 @@ Index: setup.py
 -        crypto_ext_lib = {"include_dirs": ["/usr/local/include/eopenssl30"]}
 -        crypto_extra_objects += ["/usr/local/lib/eopenssl30/libcrypto.a"]
 +        crypto_ext_lib = {"include_dirs": ["/usr/local/include/eopenssl33"]}
-+        crypto_extra_objects += ["/usr/local/lib/eopenssl32/libcrypto.a"]
++        crypto_extra_objects += ["/usr/local/lib/eopenssl33/libcrypto.a"]
      else:
          crypto_ext_lib = lib_ext_kwargs(pc, "BORG_OPENSSL_PREFIX", "crypto", "libcrypto", ">=1.1.1")
  
