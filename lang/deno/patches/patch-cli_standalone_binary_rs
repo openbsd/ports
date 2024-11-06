@@ -1,7 +1,7 @@
 Index: cli/standalone/binary.rs
 --- cli/standalone/binary.rs.orig
 +++ cli/standalone/binary.rs
-@@ -505,7 +505,7 @@ impl<'a> DenoCompileBinaryWriter<'a> {
+@@ -514,7 +514,7 @@ impl<'a> DenoCompileBinaryWriter<'a> {
      let bytes = match maybe_bytes {
        Some(bytes) => bytes,
        None => {

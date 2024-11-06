@@ -18,4 +18,4 @@ Index: runtime/ops/os/mod.rs
 +    env::current_exe().unwrap_or_else(|_| PathBuf::from("${PREFIX}/bin/deno"));
    state
      .borrow_mut::<PermissionsContainer>()
-     .check_read_blind(&current_exe, "exec_path", "Deno.execPath()")
+     .check_read_blind(&current_exe, "exec_path", "Deno.execPath()")?;
