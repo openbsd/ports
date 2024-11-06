@@ -10,7 +10,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser
 
-V=			130.0.6723.91
+V=			130.0.6723.116
 
 DISTNAME=		chromium-${V}
 
@@ -18,13 +18,17 @@ DISTFILES+=		${CHROMIUM_DISTFILES} \
 			${REGRESS_DISTFILES}
 
 DISTFILES.a+=		${PROFILE_DISTFILES} \
+			${GN_DISTFILES} \
 			${REGRESS_DISTFILES.a}
 
 CHROMIUM_DISTFILES+=	chromium-${V}${EXTRACT_SUFX}
-PROFILE_DISTFILES+=	chrome-linux-${V}-llvm17.profdata${EXTRACT_SUFX}
+PROFILE_DISTFILES+=	chrome-linux-${V}-llvm17.profdata${EXTRACT_SUFX} \
+			chrome-v8-${V}.profdata.tar.xz
+GN_DISTFILES+=		chrome-gn-${V}-src.tar.xz
 REGRESS_DISTFILES+=	chromium-${V}-testdata${EXTRACT_SUFX}
 
 EXTRACT_ONLY=		${CHROMIUM_DISTFILES} \
+			${GN_DISTFILES} \
 			${PROFILE_DISTFILES}
 
 CATEGORIES=		www
@@ -42,7 +46,8 @@ FLAVOR?=
 # BSD-like
 PERMIT_PACKAGE =	Yes
 
-SITES=		https://commondatastorage.googleapis.com/chromium-browser-official/
+SITES=		https://commondatastorage.googleapis.com/chromium-browser-official/ \
+		https://chromium-tarballs.syd1.cdn.digitaloceanspaces.com/
 SITES.a=	http://nerd.hu/distfiles/
 
 MODULES=	lang/clang lang/python x11/qt5
