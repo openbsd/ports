@@ -3,6 +3,7 @@ V =		3.1.0
 DIST_TUPLE =	github chocolate-doom chocolate-doom chocolate-doom-${V} .
 PKGNAME =	chocolate-doom-${V}
 CATEGORIES =	games x11
+REVISION =	0
 
 HOMEPAGE =	https://www.chocolate-doom.org/
 
@@ -32,6 +33,8 @@ CONFIGURE_STYLE =	autoreconf
 AUTOMAKE_VERSION =	1.16
 AUTOCONF_VERSION =	2.71
 CONFIGURE_ARGS +=	--mandir="${LOCALBASE}/man"
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 post-extract:
 	# set correct data directory
