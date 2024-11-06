@@ -1,0 +1,4 @@
+@bin bin/csvlens
+share/doc/csvlens/
+share/doc/csvlens/LICENSE
+share/doc/csvlens/README.md
