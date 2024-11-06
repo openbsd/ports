@@ -94,6 +94,17 @@ include/gstreamer-${API}/gst/uridownloader/gstfragment.h
 include/gstreamer-${API}/gst/uridownloader/gsturidownloader.h
 include/gstreamer-${API}/gst/uridownloader/gsturidownloader_debug.h
 include/gstreamer-${API}/gst/uridownloader/uridownloader-prelude.h
+include/gstreamer-${API}/gst/va/
+include/gstreamer-${API}/gst/va/gstva.h
+include/gstreamer-${API}/gst/va/gstvaallocator.h
+include/gstreamer-${API}/gst/va/gstvadisplay.h
+include/gstreamer-${API}/gst/va/gstvadisplay_drm.h
+include/gstreamer-${API}/gst/va/gstvadisplay_wrapped.h
+include/gstreamer-${API}/gst/va/gstvapool.h
+include/gstreamer-${API}/gst/va/gstvautils.h
+include/gstreamer-${API}/gst/va/va-enumtypes.h
+include/gstreamer-${API}/gst/va/va-prelude.h
+include/gstreamer-${API}/gst/va/va_fwd.h
 include/gstreamer-${API}/gst/wayland/
 include/gstreamer-${API}/gst/wayland/gstwl_fwd.h
 include/gstreamer-${API}/gst/wayland/gstwlbuffer.h
@@ -130,6 +141,7 @@ lib/girepository-${API}/GstMse-${API}.typelib
 lib/girepository-${API}/GstPlay-${API}.typelib
 lib/girepository-${API}/GstPlayer-${API}.typelib
 lib/girepository-${API}/GstTranscoder-${API}.typelib
+lib/girepository-${API}/GstVa-${API}.typelib
 lib/girepository-${API}/GstWebRTC-${API}.typelib
 @so lib/gstreamer-${API}/libgstaccurip.so
 @so lib/gstreamer-${API}/libgstadpcmdec.so
@@ -209,6 +221,7 @@ lib/girepository-${API}/GstWebRTC-${API}.typelib
 @so lib/gstreamer-${API}/libgsttranscode.so
 @so lib/gstreamer-${API}/libgstttmlsubs.so
 @so lib/gstreamer-${API}/libgstunixfd.so
+@so lib/gstreamer-${API}/libgstva.so
 @so lib/gstreamer-${API}/libgstvideofiltersbad.so
 @so lib/gstreamer-${API}/libgstvideoframe_audiolevel.so
 @so lib/gstreamer-${API}/libgstvideoparsersbad.so
@@ -233,6 +246,7 @@ lib/girepository-${API}/GstWebRTC-${API}.typelib
 @lib lib/libgstsctp-${API}.so.${LIBgstsctp-${API}_VERSION}
 @lib lib/libgsttranscoder-${API}.so.${LIBgsttranscoder-${API}_VERSION}
 @lib lib/libgsturidownloader-${API}.so.${LIBgsturidownloader-${API}_VERSION}
+@lib lib/libgstva-${API}.so.${LIBgstva-${API}_VERSION}
 @lib lib/libgstwayland-${API}.so.${LIBgstwayland-${API}_VERSION}
 @lib lib/libgstwebrtc-${API}.so.${LIBgstwebrtc-${API}_VERSION}
 lib/pkgconfig/gstreamer-analytics-${API}.pc
@@ -247,6 +261,7 @@ lib/pkgconfig/gstreamer-player-${API}.pc
 lib/pkgconfig/gstreamer-plugins-bad-${API}.pc
 lib/pkgconfig/gstreamer-sctp-${API}.pc
 lib/pkgconfig/gstreamer-transcoder-${API}.pc
+lib/pkgconfig/gstreamer-va-${API}.pc
 lib/pkgconfig/gstreamer-wayland-${API}.pc
 lib/pkgconfig/gstreamer-webrtc-${API}.pc
 share/gir-${API}/GstAnalytics-${API}.gir
@@ -259,6 +274,7 @@ share/gir-${API}/GstMse-${API}.gir
 share/gir-${API}/GstPlay-${API}.gir
 share/gir-${API}/GstPlayer-${API}.gir
 share/gir-${API}/GstTranscoder-${API}.gir
+share/gir-${API}/GstVa-${API}.gir
 share/gir-${API}/GstWebRTC-${API}.gir
 share/gstreamer-${API}/encoding-profiles/
 share/gstreamer-${API}/encoding-profiles/device/

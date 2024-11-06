@@ -1,0 +1,21 @@
+Index: sys/va/meson.build
+--- sys/va/meson.build.orig
++++ sys/va/meson.build
+@@ -34,7 +34,7 @@ va_win32_sources = [
+   'gstvadevice_win32.cpp'
+ ]
+ 
+-if host_system not in ['linux', 'windows']
++if host_system not in ['linux', 'windows', 'openbsd']
+   subdir_done()
+ endif
+ 
+@@ -55,7 +55,7 @@ extra_args = [
+ extra_dep = []
+ c_std_arg = ['c_std=c99']
+ 
+-if host_system == 'linux'
++if host_system in ['linux', 'openbsd']
+   libgudev_dep = dependency('gudev-1.0', required: get_option('udev'), allow_fallback: true)
+   if libgudev_dep.found()
+     extra_args += ['-DHAVE_GUDEV']

@@ -1,0 +1,27 @@
+Index: gst-libs/gst/va/meson.build
+--- gst-libs/gst/va/meson.build.orig
++++ gst-libs/gst/va/meson.build
+@@ -45,12 +45,12 @@ extra_args = ['-DGST_USE_UNSTABLE_API',
+               '-DBUILDING_GST_VA',
+               '-DG_LOG_DOMAIN="GStreamer-VA"']
+ 
+-if host_system not in ['linux', 'windows']
++if host_system not in ['linux', 'windows', 'openbsd']
+   subdir_done()
+ endif
+ 
+ va_opt = get_option('va')
+-if host_system == 'linux'
++if host_system in ['linux', 'openbsd']
+   msdk_opt = get_option('msdk')
+   qsv_opt = get_option('qsv')
+   if va_opt.disabled() and msdk_opt.disabled() and qsv_opt.disabled()
+@@ -74,7 +74,7 @@ if not libva_dep.found()
+   subdir_done()
+ endif
+ 
+-if host_system == 'linux'
++if host_system in ['linux', 'openbsd']
+   libva_drm_dep = dependency('libva-drm', version: libva_req, required: va_required)
+   if not libva_drm_dep.found()
+     subdir_done()
