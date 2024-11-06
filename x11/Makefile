@@ -262,6 +262,7 @@
      SUBDIR += qtadvanceddocking
      SUBDIR += qtfm
      SUBDIR += qwt
+     SUBDIR += qwt,qt6
      SUBDIR += ratmen
      SUBDIR += ratpoison
      SUBDIR += rdesktop
