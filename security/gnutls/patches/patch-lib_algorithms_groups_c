@@ -1,0 +1,31 @@
+groups.c:93:2: error: initializer element is not a compile-time constant group_x25519,
+
+groups.c:49:36: warning: unused variable 'group_x25519' [-Wunused-const-variable]
+
+Index: lib/algorithms/groups.c
+--- lib/algorithms/groups.c.orig
++++ lib/algorithms/groups.c
+@@ -44,7 +44,6 @@ static const gnutls_group_entry_st group_kyber768 = {
+ 	.curve = GNUTLS_ECC_CURVE_INVALID,
+ 	.pk = GNUTLS_PK_EXP_KYBER768,
+ };
+-#endif
+ 
+ static const gnutls_group_entry_st group_x25519 = {
+ 	.name = "X25519",
+@@ -53,6 +52,7 @@ static const gnutls_group_entry_st group_x25519 = {
+ 	.tls_id = 29,
+ 	.pk = GNUTLS_PK_ECDH_X25519,
+ };
++#endif
+ 
+ static const gnutls_group_entry_st supported_groups[] = {
+ 	{
+@@ -90,7 +90,6 @@ static const gnutls_group_entry_st supported_groups[] 
+ 		.tls_id = 25,
+ 		.pk = GNUTLS_PK_ECDSA,
+ 	},
+-	group_x25519,
+ #ifdef ENABLE_GOST
+ 	/* draft-smyshlyaev-tls12-gost-suites-06, Section 6 */
+ 	{
