@@ -1,4 +1,4 @@
-SHA256 (docker-compose-v2.30.1.zip) = W9jhbWxj8t6uwVxjsCXryuRgZNd32tNPewpPOXyqsfY=
+SHA256 (docker-compose-v2.30.2.zip) = 3rgSsNq5vn2G27BtGZwwU1mrZvkneWFub7rPuIkU03g=
 SHA256 (go_modules/cel.dev/expr/@v/v0.16.0.mod) = 0232HEIabYEuaJjQ22bXEnitPVOBRNeBskPYR2G4/Qo=
 SHA256 (go_modules/cel.dev/expr/@v/v0.16.0.zip) = fD61kzmOeOyvjkyrBzx8sFKvp+17p1MfNi9vGV5YFcM=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.112.0.mod) = VtAE6OQgc1+TbaQH/PdS2hqai1NIJjtygRMQI9cMxwc=
@@ -377,8 +377,8 @@ SHA256 (go_modules/github.com/cncf/xds/go/@v/v0.0.0-20240723142845-024c85f92f20.
 SHA256 (go_modules/github.com/codahale/rfc6979/@v/v0.0.0-20141003034818-6a90f24967eb.mod) = x/z9qcumOCDuL/vNPhJQ3ERBRrIB86ObDK6Glo8/vCY=
 SHA256 (go_modules/github.com/codahale/rfc6979/@v/v0.0.0-20141003034818-6a90f24967eb.zip) = sVI4VU4uZuBF30QSUFW4z1f61FoDIbJbR8n8pI7MjjI=
 SHA256 (go_modules/github.com/compose-spec/compose-go/v2/@v/v2.1.6.mod) = LZrEW0z0NZn2dZU0aTJvZC9hyDXu1iYpUXx1XOJwqF8=
-SHA256 (go_modules/github.com/compose-spec/compose-go/v2/@v/v2.4.2.mod) = LZrEW0z0NZn2dZU0aTJvZC9hyDXu1iYpUXx1XOJwqF8=
-SHA256 (go_modules/github.com/compose-spec/compose-go/v2/@v/v2.4.2.zip) = guMf7/iIRC3AhOCh3Rt/06CjIC1uFbxl42xeKF00PwA=
+SHA256 (go_modules/github.com/compose-spec/compose-go/v2/@v/v2.4.3.mod) = LZrEW0z0NZn2dZU0aTJvZC9hyDXu1iYpUXx1XOJwqF8=
+SHA256 (go_modules/github.com/compose-spec/compose-go/v2/@v/v2.4.3.zip) = EhAmvY0xJsEbeHpsQafiFFHAP8QcHGWe0OXZK2yc8DU=
 SHA256 (go_modules/github.com/containerd/aufs/@v/v1.0.0.mod) = 272HxqB66ueMkae+lZMwW5a4j1JDxkhvmqjz+6fnuCw=
 SHA256 (go_modules/github.com/containerd/aufs/@v/v1.0.0.zip) = ZvY752ixbN7hLG0EDUqnwOivMGx2ILDBjB9jbISZrlI=
 SHA256 (go_modules/github.com/containerd/btrfs/v2/@v/v2.0.0.mod) = WCakefYO0lLeg4XXP1WPhqDNqsN1LKeoWy6HXFaWwTE=
@@ -1331,7 +1331,7 @@ SHA256 (go_modules/tags.cncf.io/container-device-interface/@v/v0.8.0.zip) = MvnK
 SHA256 (go_modules/tags.cncf.io/container-device-interface/specs-go/@v/v0.7.0.mod) = cd5T9N06HQ/G+b/RbZCq+En4CS1db3vLKpTI1fXyEtU=
 SHA256 (go_modules/tags.cncf.io/container-device-interface/specs-go/@v/v0.8.0.mod) = ls01XNT8EFcJEXpXnTm9ba+iNZHtIEug4S8FLJT4cVQ=
 SHA256 (go_modules/tags.cncf.io/container-device-interface/specs-go/@v/v0.8.0.zip) = GcGueolLJMUcGaFPICznsg9pahAlIJQ7/cKE2s770T4=
-SIZE (docker-compose-v2.30.1.zip) = 659074
+SIZE (docker-compose-v2.30.2.zip) = 659540
 SIZE (go_modules/cel.dev/expr/@v/v0.16.0.mod) = 156
 SIZE (go_modules/cel.dev/expr/@v/v0.16.0.zip) = 190847
 SIZE (go_modules/cloud.google.com/go/@v/v0.112.0.mod) = 1812
@@ -1710,8 +1710,8 @@ SIZE (go_modules/github.com/cncf/xds/go/@v/v0.0.0-20240723142845-024c85f92f20.zi
 SIZE (go_modules/github.com/codahale/rfc6979/@v/v0.0.0-20141003034818-6a90f24967eb.mod) = 35
 SIZE (go_modules/github.com/codahale/rfc6979/@v/v0.0.0-20141003034818-6a90f24967eb.zip) = 17305
 SIZE (go_modules/github.com/compose-spec/compose-go/v2/@v/v2.1.6.mod) = 896
-SIZE (go_modules/github.com/compose-spec/compose-go/v2/@v/v2.4.2.mod) = 896
-SIZE (go_modules/github.com/compose-spec/compose-go/v2/@v/v2.4.2.zip) = 293988
+SIZE (go_modules/github.com/compose-spec/compose-go/v2/@v/v2.4.3.mod) = 896
+SIZE (go_modules/github.com/compose-spec/compose-go/v2/@v/v2.4.3.zip) = 294309
 SIZE (go_modules/github.com/containerd/aufs/@v/v1.0.0.mod) = 256
 SIZE (go_modules/github.com/containerd/aufs/@v/v1.0.0.zip) = 42845
 SIZE (go_modules/github.com/containerd/btrfs/v2/@v/v2.0.0.mod) = 80

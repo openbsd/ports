@@ -181,7 +181,7 @@ MODGO_MODULES =	\
 	github.com/cloudflare/cfssl							 v0.0.0-20180223231731-4e2dcbde5004 \
 	github.com/cncf/xds/go								 v0.0.0-20240723142845-024c85f92f20 \
 	github.com/codahale/rfc6979							 v0.0.0-20141003034818-6a90f24967eb \
-	github.com/compose-spec/compose-go/v2						 v2.4.2 \
+	github.com/compose-spec/compose-go/v2						 v2.4.3 \
 	github.com/containerd/aufs							 v1.0.0 \
 	github.com/containerd/btrfs/v2							 v2.0.0 \
 	github.com/containerd/cgroups							 v1.1.0 \
