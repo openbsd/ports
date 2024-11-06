@@ -2,6 +2,7 @@ COMMENT=		GObject library for playing system sounds
 
 GNOME_PROJECT=		gsound
 GNOME_VERSION=		1.0.3
+REVISION=		0
 
 SHARED_LIBS += gsound                    0.0 # 0.0.2
 

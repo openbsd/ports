@@ -1,4 +1,5 @@
 COMMENT=		library for storing and retrieving passwords and secrets
+REVISION=		0
 
 DIST_TUPLE=		gnome GNOME libsecret 0.21.4 .
 

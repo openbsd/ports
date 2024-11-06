@@ -8,7 +8,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 # warning: PKGNAME does not default to ${DISTNAME}
 PKGNAME=		gtk-engines2-${GNOME_VERSION}
-REVISION=		13
+REVISION=		14
 
 CATEGORIES=		x11
 

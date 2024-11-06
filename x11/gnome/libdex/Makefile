@@ -5,7 +5,7 @@ COMMENT=		future-based programming for GLib-based applications
 
 GNOME_PROJECT=		libdex
 GNOME_VERSION=		0.8.1
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS += dex-1                     0.0 # 1.0.0
 

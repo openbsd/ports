@@ -2,6 +2,7 @@ COMMENT=		humanist sans-serif font family
 
 GNOME_VERSION=		0.303.1
 GNOME_PROJECT=		cantarell-fonts
+REVISION=		0
 
 CATEGORIES=		fonts x11
 

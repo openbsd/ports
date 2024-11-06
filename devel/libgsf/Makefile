@@ -2,6 +2,7 @@ COMMENT=		GNOME Structured File library
 
 GNOME_PROJECT=		libgsf
 GNOME_VERSION=		1.14.53
+REVISION=		0
 
 CATEGORIES=		devel
 

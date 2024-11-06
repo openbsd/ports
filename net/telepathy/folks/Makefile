@@ -2,7 +2,7 @@ COMMENT=		people aggregation library
 
 GNOME_PROJECT=		folks
 GNOME_VERSION=		0.15.9
-REVISION=		1
+REVISION=		2
 
 # see BACKEND_DIR in config.h
 API_V=			26
@@ -12,8 +12,6 @@ SHARED_LIBS += folks-dummy               0.0 # 26.0.0
 SHARED_LIBS += folks-eds                 1.3 # 26.0.0
 
 SUBST_VARS=		API_V
-
-HOMEPAGE=		https://wiki.gnome.org/Projects/Folks
 
 WANTLIB += c ebook-1.2 ebook-contacts-1.2 edataserver-1.2 gee-0.8
 WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 intl readline

@@ -2,6 +2,7 @@ COMMENT=		XPM icon loader
 
 DIST_TUPLE=		gnome ZanderBrown xpm-pixbuf d290a0c846687b22d2a8c5aaec83a6689f30e1c3 .
 PKGNAME=		xpm-pixbuf-1.0
+REVISION=		0
 
 CATEGORIES=		graphics
 

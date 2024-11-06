@@ -3,6 +3,7 @@ COMMENT=	library to provide a GTK+ widget to display maps
 GNOME_PROJECT=	libchamplain
 GNOME_VERSION=	0.12.21
 API_VERSION=	0.12
+REVISION=	0
 
 SHARED_LIBS +=  champlain-${API_VERSION}       2.0 # 0.11.10
 SHARED_LIBS +=  champlain-gtk-${API_VERSION}   2.0 # 0.11.10

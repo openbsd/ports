@@ -2,7 +2,7 @@ COMMENT=		GObject library for handling and rendering XPS documents
 
 GNOME_PROJECT=		libgxps
 GNOME_VERSION=		0.3.2
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS += gxps                      0.2 # 2.2.4
 

@@ -2,7 +2,7 @@ COMMENT=		API for handling SSDP resource discovery and announcement
 
 GNOME_PROJECT=		gssdp
 GNOME_VERSION=		1.6.3
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS += gssdp-1.6                 0.0 # 0.106.3
 

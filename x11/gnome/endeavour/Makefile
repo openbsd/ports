@@ -1,7 +1,7 @@
 COMMENT=		task manager for GNOME
 
 DIST_TUPLE=		gnome World Endeavour 43.0 .
-REVISION=		3
+REVISION=		4
 
 # GPLv3+
 PERMIT_PACKAGE=		Yes

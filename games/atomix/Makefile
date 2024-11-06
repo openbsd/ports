@@ -2,8 +2,7 @@ COMMENT=	build molecules out of single atoms
 
 DISTNAME=	atomix-3.22.0
 CATEGORIES=	games
-
-HOMEPAGE=	https://wiki.gnome.org/Apps/Atomix
+REVISION=	0
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes

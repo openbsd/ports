@@ -6,11 +6,9 @@ GH_TAGNAME=		v3.2.0
 MODPY_EGG_VERSION=	${GH_TAGNAME:S/v//}
 DISTNAME=		liblarch-${MODPY_EGG_VERSION}
 PKGNAME=		py-liblarch-${MODPY_EGG_VERSION}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
-
-HOMEPAGE=		https://wiki.gnome.org/Projects/liblarch
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes

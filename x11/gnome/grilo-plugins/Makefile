@@ -4,7 +4,7 @@ COMMENT=	plugins for Grilo
 
 GNOME_PROJECT=	grilo-plugins
 GNOME_VERSION=	0.3.16
-REVISION=	1
+REVISION=	2
 
 API=		0.3
 SUBST_VARS=	API

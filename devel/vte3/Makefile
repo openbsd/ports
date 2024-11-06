@@ -8,6 +8,9 @@ GNOME_VERSION=		0.78.1
 PKGNAME-main=		vte3-${GNOME_VERSION}
 PKGNAME-gtk4=		vte3-gtk4-${GNOME_VERSION}
 PKGNAME-common=		vte3-common-${GNOME_VERSION}
+REVISION-common=	0
+REVISION-gtk4=		0
+REVISION-main=		0
 
 SHARED_LIBS += vte-2.91                  2.11 # 0.7800.1
 SHARED_LIBS += vte-2.91-gtk4             0.3 # 0

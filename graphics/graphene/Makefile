@@ -2,6 +2,7 @@ COMMENT=		thin layer of graphic data types
 
 GNOME_PROJECT=		graphene
 GNOME_VERSION=		1.10.8
+REVISION=		0
 
 SHARED_LIBS += graphene-1.0              2.1 # 0.1000.8
 

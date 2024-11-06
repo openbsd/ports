@@ -4,6 +4,7 @@ COMMENT=		legacy icon theme for GNOME
 
 GNOME_PROJECT=		adwaita-icon-theme-legacy
 GNOME_VERSION=		46.2
+REVISION=		0
 
 CATEGORIES=		x11
 

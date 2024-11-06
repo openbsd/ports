@@ -3,6 +3,7 @@ COMMENT=		text widget that extends the GTK4 GtkTextView widget
 GNOME_PROJECT=		gtksourceview
 GNOME_VERSION=		5.14.1
 PKGNAME=		${GNOME_PROJECT}5-${GNOME_VERSION}
+REVISION=		0
 
 SHARED_LIBS += gtksourceview-5           0.3 # 0.0.0
 

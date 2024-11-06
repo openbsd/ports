@@ -6,7 +6,7 @@ EXTRACT_SUFX=		.tar.bz2
 
 PKGNAME=		libglade2-${GNOME_VERSION}
 EPOCH=			0
-REVISION=		21
+REVISION=		22
 
 SHARED_LIBS +=  glade-2.0            1.0      # 1.0
 

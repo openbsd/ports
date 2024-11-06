@@ -3,6 +3,7 @@ COMMENT=		window navigator construction kit
 GNOME_PROJECT=		libwnck
 GNOME_VERSION=		43.1
 PKGNAME=		${GNOME_PROJECT}3-${GNOME_VERSION}
+REVISION=		0
 
 SHARED_LIBS += wnck-3                    4.2 # 0.3.0
 

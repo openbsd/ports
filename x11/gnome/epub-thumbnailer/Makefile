@@ -2,6 +2,7 @@ COMMENT=		thumbnailer for EPub and MOBI books
 
 GNOME_PROJECT=		gnome-epub-thumbnailer
 GNOME_VERSION=		1.8
+REVISION=		0
 
 CATEGORIES=		graphics
 

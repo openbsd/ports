@@ -2,6 +2,7 @@ COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
 GNOME_VERSION=		3.54.1
+REVISION=		0
 
 CATEGORIES=		databases productivity
 

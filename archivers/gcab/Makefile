@@ -2,6 +2,7 @@ COMMENT=		cabinet file library and tool
 
 GNOME_PROJECT=		gcab
 GNOME_VERSION=		1.6
+REVISION=		0
 
 SHARED_LIBS += gcab-1.0                  1.2 # 0.3.0
 

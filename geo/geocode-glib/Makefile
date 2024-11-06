@@ -3,7 +3,7 @@ COMMENT=		helper library for geocoding services
 GNOME_VERSION=		3.26.4
 GNOME_PROJECT=		geocode-glib
 PKGNAME=		${GNOME_PROJECT}2-${GNOME_VERSION}
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS += geocode-glib-2            0.0 # 0.0.0
 

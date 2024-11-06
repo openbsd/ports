@@ -40,7 +40,7 @@ MODCARGO_CRATES +=	time		0.3.36
 MODCARGO_CRATES +=	time-macros	0.2.18
 .else
 ### old
-REVISION=		6
+REVISION=		7
 SHARED_LIBS +=  rsvg-2               38.2     # 42.20
 GNOME_VERSION=		${OLD_VERSION}
 PATCH_LIST=		old-patch-*

@@ -2,14 +2,13 @@ COMMENT =		digital photo organizer
 
 GNOME_VERSION =		0.32.10
 GNOME_PROJECT =		shotwell
+REVISION =		0
 
 SHARED_LIBS += shotwell-plugin-dev-1.0   0.0 # 0.32.4
 SHARED_LIBS += shotwell-plugin-common    0.0 # 0.32.4
 SHARED_LIBS += shotwell-authenticator    0.0 # 0.32.4
 
 CATEGORIES =		graphics
-
-HOMEPAGE =		https://wiki.gnome.org/Apps/Shotwell
 
 MAINTAINER = 		Antoine Jacoutot <ajacoutot@openbsd.org>
 

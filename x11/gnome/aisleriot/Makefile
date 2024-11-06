@@ -1,5 +1,5 @@
 COMMENT =		suite of solitaire card games
-REVISION =		1
+REVISION =		2
 
 DIST_TUPLE =		gnome GNOME aisleriot 3.22.34 .
 

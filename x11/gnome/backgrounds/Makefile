@@ -2,6 +2,7 @@ COMMENT=		wallpapers for GNOME
 
 GNOME_PROJECT=		gnome-backgrounds
 GNOME_VERSION=		47.0
+REVISION=		0
 
 # GPLv2
 PERMIT_PACKAGE=		Yes

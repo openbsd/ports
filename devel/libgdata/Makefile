@@ -2,7 +2,7 @@ COMMENT=		Google Data API based Glib client library
 
 GNOME_PROJECT=		libgdata
 GNOME_VERSION=		0.18.1
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS += gdata                     22.0 # 22.5.0
 

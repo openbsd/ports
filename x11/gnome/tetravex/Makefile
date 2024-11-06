@@ -2,7 +2,7 @@ COMMENT =		simple puzzle game games
 
 GNOME_PROJECT =		gnome-tetravex
 GNOME_VERSION =		3.38.2
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games
 

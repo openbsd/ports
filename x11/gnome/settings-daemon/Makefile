@@ -4,6 +4,7 @@ COMMENT=		GNOME settings daemon
 
 GNOME_PROJECT=		gnome-settings-daemon
 GNOME_VERSION=		47.1
+REVISION=		0
 
 # GPLv3
 PERMIT_PACKAGE=		Yes

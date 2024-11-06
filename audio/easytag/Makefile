@@ -2,7 +2,7 @@ COMMENT=		tag editor for various audio file formats
 
 GNOME_PROJECT=		easytag
 GNOME_VERSION=		2.4.3
-REVISION=		11
+REVISION=		12
 
 CATEGORIES=		audio
 

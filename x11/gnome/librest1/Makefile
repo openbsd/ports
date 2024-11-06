@@ -3,6 +3,7 @@ COMMENT =	helper library for RESTful services
 GNOME_VERSION =	0.9.1
 GNOME_PROJECT =	rest
 PKGNAME =	librest1-${GNOME_VERSION}
+REVISION =	0
 
 SHARED_LIBS += rest-1.0                  0.0 # 0.0.0
 SHARED_LIBS += rest-extras-1.0           0.0 # 0.0.0

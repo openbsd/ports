@@ -4,6 +4,7 @@ COMMENT=		callback framework for C++
 
 GNOME_VERSION=		2.12.1
 GNOME_PROJECT=		libsigc++
+REVISION=		0
 
 CATEGORIES=		devel
 

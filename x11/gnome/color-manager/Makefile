@@ -2,7 +2,7 @@ COMMENT=		GNOME Color Profile Tools
 
 GNOME_PROJECT=		gnome-color-manager
 GNOME_VERSION=		3.36.0
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		graphics
 

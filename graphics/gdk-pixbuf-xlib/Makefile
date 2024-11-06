@@ -2,6 +2,7 @@ COMMENT=		deprecated API for integrating Xlib and GdkPixbuf
 
 GNOME_PROJECT=		gdk-pixbuf-xlib
 GNOME_VERSION=		2.40.2
+REVISION=		0
 
 CATEGORIES=		graphics
 

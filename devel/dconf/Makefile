@@ -2,7 +2,7 @@ COMMENT=		configuration backend system
 
 GNOME_PROJECT=		dconf
 GNOME_VERSION=		0.40.0
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=		dconf        1.3 # 1.0.0
 

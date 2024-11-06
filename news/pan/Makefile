@@ -3,6 +3,7 @@ COMMENT=		read and post Usenet articles
 GNOME_PROJECT=		pan
 GNOME_VERSION=		0.161
 EXTRACT_SUFX=		.tar.gz
+REVISION=		0
 
 WRKDIST=		${WRKDIR}/pan-v${GNOME_VERSION}-7e6f2f65a732871c059df2c6d93a565a46bae8e1
 

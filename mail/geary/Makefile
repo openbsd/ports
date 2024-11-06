@@ -2,11 +2,9 @@ COMMENT=		email application built around conversations
 
 GNOME_PROJECT=		geary
 GNOME_VERSION=		46.0
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		mail
-
-HOMEPAGE=		https://wiki.gnome.org/Apps/Geary
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

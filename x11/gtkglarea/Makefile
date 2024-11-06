@@ -2,7 +2,7 @@ COMMENT=		OpenGL widget for GTK+2 GUI toolkit
 
 GNOME_PROJECT=		gtkglarea
 GNOME_VERSION=		2.0.1
-REVISION=		12
+REVISION=		13
 
 SHARED_LIBS +=  gtkgl-2.0      0.0               # .1.1
 
