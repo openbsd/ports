@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1669 2024/11/05 14:32:47 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1670 2024/11/06 17:38:49 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1196,6 +1196,8 @@ setup_obsolete_reason(
 	3 => 'knotes',
 	3 => 'libkipi',
 	3 => 'icli',
+	3 => 'cheese',
+	3 => 'libcheese',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
