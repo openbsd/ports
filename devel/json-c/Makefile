@@ -1,6 +1,6 @@
 COMMENT=		JSON implementation in C
 
-DISTNAME=		json-c-0.17
+DISTNAME=		json-c-0.18
 CATEGORIES=		devel
 
 WANTLIB =		m
