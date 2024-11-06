@@ -208,7 +208,7 @@ SHA256 (cargo/x11rb-0.13.0.tar.gz) = +PJerYx+TLoSMkOmNn2l05kODTr/pwjqGdzpY1a9nxo
 SHA256 (cargo/x11rb-protocol-0.13.0.tar.gz) = 5j5xxLi9n/7CyWMXOk3Ey96e6Wlh1Py0Qp25kptgbDQ=
 SHA256 (cargo/zerocopy-0.7.32.tar.gz) = dNTTlh5T+kyaJahjf8K/ryWVs9OuNIdVaKXPZHh3Fr4=
 SHA256 (cargo/zerocopy-derive-0.7.32.tar.gz) = nOGxjM2Oc6kyEYb5fkb58Et3iFEXdWexl1EJ0moI0qY=
-SHA256 (csvlens-0.10.0.tar.gz) = FLaK97umsXVC5en2T5IlrTSmyWmVgXqqspDFuQkBNcU=
+SHA256 (csvlens-0.10.1.tar.gz) = fZBi+pSmf+wSEGK9Re+wCkC/JiNvPMY17AlFeTNE4Jc=
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/ahash-0.8.11.tar.gz) = 43607
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
@@ -419,4 +419,4 @@ SIZE (cargo/x11rb-0.13.0.tar.gz) = 222396
 SIZE (cargo/x11rb-protocol-0.13.0.tar.gz) = 507838
 SIZE (cargo/zerocopy-0.7.32.tar.gz) = 151096
 SIZE (cargo/zerocopy-derive-0.7.32.tar.gz) = 37623
-SIZE (csvlens-0.10.0.tar.gz) = 961519
+SIZE (csvlens-0.10.1.tar.gz) = 961658
