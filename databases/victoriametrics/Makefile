@@ -1,6 +1,6 @@
 COMMENT =		fast, cost-effective and scalable time series database
 
-V =			1.105.0
+V =			1.106.0
 
 DIST_TUPLE +=		github VictoriaMetrics VictoriaMetrics v${V} . # Apache License 2.0
 
@@ -54,7 +54,7 @@ do-install:
 	    (cd ${PREFIX}/share/doc/vmetrics/ && pax -r -c '*.excalidraw')
 	${INSTALL_DATA} ${WRKSRC}/app/vmauth/example_config.yml \
 	    ${PREFIX}/share/doc/vmetrics/vmauth_example_config.yml
-	${INSTALL_DATA} ${WRKSRC}/deployment/docker/alerts.yml \
+	${INSTALL_DATA} ${WRKSRC}/deployment/docker/rules/alerts.yml \
 	    ${PREFIX}/share/doc/vmetrics/vmetricsalert_example_config.yml
 	${INSTALL_DATA} ${WRKSRC}/deployment/docker/prometheus.yml \
 	    ${PREFIX}/share/doc/vmetrics/vmetrics_example_config.yml

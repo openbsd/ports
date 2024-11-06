@@ -25,8 +25,6 @@ share/doc/vmetrics/vmalert_single.webp
 share/doc/vmetrics/vmalert_state.webp
 share/doc/vmetrics/vmalert_ts_data_delay.gif
 share/doc/vmetrics/vmalert_ts_normal.gif
-share/doc/vmetrics/vmanomaly-holtwinters-example.webp
-share/doc/vmetrics/vmanomaly-prophet-example.webp
 share/doc/vmetrics/vmauth.md
 share/doc/vmetrics/vmauth_example_config.yml
 share/doc/vmetrics/vmbackup.md
