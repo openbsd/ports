@@ -1,8 +1,7 @@
 COMMENT =	free content game based on the Doom engine
 
-V ?=		0.12.1
+V ?=		0.13.0
 DISTNAME ?=	${DOOM_PROJECT}-$V
-REVISION =	0
 
 CATEGORIES ?=	games
 

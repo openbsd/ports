@@ -1,9 +1,12 @@
 share/doc/freedoom/
 share/doc/freedoom/COPYING.txt
+share/doc/freedoom/CREDITS-MUSIC.txt
 share/doc/freedoom/CREDITS.txt
 share/doc/freedoom/NEWS.html
 share/doc/freedoom/README.html
-share/doc/freedoom/freedoom-manual.pdf
+share/doc/freedoom/freedoom-manual-en.pdf
+share/doc/freedoom/freedoom-manual-es.pdf
+share/doc/freedoom/freedoom-manual-fr.pdf
 share/doom/
 share/doom/freedoom1.wad
 share/doom/freedoom2.wad

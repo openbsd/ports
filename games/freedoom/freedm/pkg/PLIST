@@ -1,7 +1,11 @@
 share/doc/freedm/
 share/doc/freedm/COPYING.txt
+share/doc/freedm/CREDITS-MUSIC.txt
 share/doc/freedm/CREDITS.txt
 share/doc/freedm/NEWS.html
 share/doc/freedm/README.html
+share/doc/freedm/freedoom-manual-en.pdf
+share/doc/freedm/freedoom-manual-es.pdf
+share/doc/freedm/freedoom-manual-fr.pdf
 share/doom/
 share/doom/freedm.wad
