@@ -10,6 +10,7 @@ include/linux/linux/input-event-codes.h
 include/linux/linux/input.h
 @lib lib/libinput.so.${LIBinput_VERSION}
 lib/pkgconfig/libinput.pc
+@man man/man1/libinput-analyze-buttons.1
 @man man/man1/libinput-analyze-per-slot-delta.1
 @man man/man1/libinput-analyze-recording.1
 @man man/man1/libinput-analyze-touch-down-state.1
@@ -42,17 +43,21 @@ share/libinput/30-vendor-contour.quirks
 share/libinput/30-vendor-cypress.quirks
 share/libinput/30-vendor-elantech.quirks
 share/libinput/30-vendor-glorious.quirks
+share/libinput/30-vendor-huion.quirks
 share/libinput/30-vendor-ibm.quirks
+share/libinput/30-vendor-ite.quirks
 share/libinput/30-vendor-kensington.quirks
 share/libinput/30-vendor-logitech.quirks
 share/libinput/30-vendor-madcatz.quirks
 share/libinput/30-vendor-microsoft.quirks
+share/libinput/30-vendor-oracle.quirks
+share/libinput/30-vendor-qemu.quirks
 share/libinput/30-vendor-razer.quirks
 share/libinput/30-vendor-synaptics.quirks
 share/libinput/30-vendor-trust.quirks
+share/libinput/30-vendor-uniwill.quirks
 share/libinput/30-vendor-vmware.quirks
 share/libinput/30-vendor-wacom.quirks
-share/libinput/50-framework.quirks
 share/libinput/50-system-acer.quirks
 share/libinput/50-system-apple.quirks
 share/libinput/50-system-asus.quirks
@@ -60,12 +65,16 @@ share/libinput/50-system-chicony.quirks
 share/libinput/50-system-chuwi.quirks
 share/libinput/50-system-cyborg.quirks
 share/libinput/50-system-dell.quirks
+share/libinput/50-system-framework.quirks
 share/libinput/50-system-gigabyte.quirks
 share/libinput/50-system-google.quirks
 share/libinput/50-system-gpd.quirks
+share/libinput/50-system-graviton.quirks
 share/libinput/50-system-hp.quirks
 share/libinput/50-system-huawei.quirks
 share/libinput/50-system-lenovo.quirks
+share/libinput/50-system-lg.quirks
+share/libinput/50-system-minisforum.quirks
 share/libinput/50-system-pine64.quirks
 share/libinput/50-system-sony.quirks
 share/libinput/50-system-starlabs.quirks
