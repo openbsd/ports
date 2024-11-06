@@ -1,9 +1,5 @@
-@conflict qwt-<6.1.5
-@conflict qwt-common-<6.1.5
-@conflict qwt-*-qt5
-@pkgpath x11/qwt,-main
-@pkgpath x11/qwt,-common
-@pkgpath x11/qwt,-main,qt5
+@conflict qwt-<6.3.0
+@pkgpath x11/qwt
 include/QwtAbstractLegend
 include/QwtAbstractScale
 include/QwtAbstractScaleDraw
@@ -77,7 +73,6 @@ include/QwtPlotCanvas
 include/QwtPlotCurve
 include/QwtPlotDict
 include/QwtPlotDirectPainter
-include/QwtPlotGLCanvas
 include/QwtPlotGraphicItem
 include/QwtPlotGrid
 include/QwtPlotHistogram
@@ -111,6 +106,20 @@ include/QwtPointArrayData
 include/QwtPointMapper
 include/QwtPointPolar
 include/QwtPointSeriesData
+include/QwtPolarCanvas
+include/QwtPolarCurve
+include/QwtPolarFitter
+include/QwtPolarGrid
+include/QwtPolarItem
+include/QwtPolarItemDict
+include/QwtPolarLayout
+include/QwtPolarMagnifier
+include/QwtPolarMarker
+include/QwtPolarPanner
+include/QwtPolarPicker
+include/QwtPolarPlot
+include/QwtPolarRenderer
+include/QwtPolarSpectrogram
 include/QwtPowerTransform
 include/QwtRasterData
 include/QwtRichTextEngine
@@ -208,7 +217,6 @@ include/qwt_plot_canvas.h
 include/qwt_plot_curve.h
 include/qwt_plot_dict.h
 include/qwt_plot_directpainter.h
-include/qwt_plot_glcanvas.h
 include/qwt_plot_graphicitem.h
 include/qwt_plot_grid.h
 include/qwt_plot_histogram.h
@@ -286,205 +294,10 @@ include/qwt_vectorfield_symbol.h
 include/qwt_weeding_curve_fitter.h
 include/qwt_wheel.h
 include/qwt_widget_overlay.h
-@lib lib/libqwt.so.${LIBqwt_VERSION}
-lib/pkgconfig/Qt5Qwt6.pc
-lib/${QTVER}/mkspecs/features/qwt.prf
-lib/${QTVER}/mkspecs/features/qwtconfig.pri
-lib/${QTVER}/mkspecs/features/qwtfunctions.pri
-@so lib/${QTVER}/plugins/designer/libqwt_designer_plugin.so
-@man man/man3/QList.3
-@man man/man3/QMap.3
-@man man/man3/QStack.3
-@man man/man3/QVector.3
-@man man/man3/QwtAbstractLegend.3
-@man man/man3/QwtAbstractScale.3
-@man man/man3/QwtAbstractScaleDraw.3
-@man man/man3/QwtAbstractSeriesStore.3
-@man man/man3/QwtAbstractSlider.3
-@man man/man3/QwtAlphaColorMap.3
-@man man/man3/QwtAnalogClock.3
-@man man/man3/QwtArraySeriesData.3
-@man man/man3/QwtArrowButton.3
-@man man/man3/QwtAxis.3
-@man man/man3/QwtBezier.3
-@man man/man3/QwtCPointerData.3
-@man man/man3/QwtCPointerValueData.3
-@man man/man3/QwtClipper.3
-@man man/man3/QwtColorMap.3
-@man man/man3/QwtColumnRect.3
-@man man/man3/QwtColumnSymbol.3
-@man man/man3/QwtCompass.3
-@man man/man3/QwtCompassMagnetNeedle.3
-@man man/man3/QwtCompassRose.3
-@man man/man3/QwtCompassScaleDraw.3
-@man man/man3/QwtCompassWindArrow.3
-@man man/man3/QwtCounter.3
-@man man/man3/QwtCurveFitter.3
-@man man/man3/QwtDate.3
-@man man/man3/QwtDateScaleDraw.3
-@man man/man3/QwtDateScaleEngine.3
-@man man/man3/QwtDial.3
-@man man/man3/QwtDialNeedle.3
-@man man/man3/QwtDialSimpleNeedle.3
-@man man/man3/QwtDynGridLayout.3
-@man man/man3/QwtEventPattern.3
-@man man/man3/QwtEventPattern_KeyPattern.3
-@man man/man3/QwtEventPattern_MousePattern.3
-@man man/man3/QwtGraphic.3
-@man man/man3/QwtHueColorMap.3
-@man man/man3/QwtInterval.3
-@man man/man3/QwtIntervalSample.3
-@man man/man3/QwtIntervalSeriesData.3
-@man man/man3/QwtIntervalSymbol.3
-@man man/man3/QwtKnob.3
-@man man/man3/QwtLegend.3
-@man man/man3/QwtLegendData.3
-@man man/man3/QwtLegendLabel.3
-@man man/man3/QwtLinearColorMap.3
-@man man/man3/QwtLinearScaleEngine.3
-@man man/man3/QwtLogScaleEngine.3
-@man man/man3/QwtLogTransform.3
-@man man/man3/QwtMagnifier.3
-@man man/man3/QwtMatrixRasterData.3
-@man man/man3/QwtNullPaintDevice.3
-@man man/man3/QwtNullTransform.3
-@man man/man3/QwtOHLCSample.3
-@man man/man3/QwtPainter.3
-@man man/man3/QwtPainterCommand.3
-@man man/man3/QwtPanner.3
-@man man/man3/QwtPicker.3
-@man man/man3/QwtPickerClickPointMachine.3
-@man man/man3/QwtPickerClickRectMachine.3
-@man man/man3/QwtPickerDragLineMachine.3
-@man man/man3/QwtPickerDragPointMachine.3
-@man man/man3/QwtPickerDragRectMachine.3
-@man man/man3/QwtPickerMachine.3
-@man man/man3/QwtPickerPolygonMachine.3
-@man man/man3/QwtPickerTrackerMachine.3
-@man man/man3/QwtPixelMatrix.3
-@man man/man3/QwtPlainTextEngine.3
-@man man/man3/QwtPlot.3
-@man man/man3/QwtPlotAbstractBarChart.3
-@man man/man3/QwtPlotAbstractCanvas.3
-@man man/man3/QwtPlotAbstractGLCanvas.3
-@man man/man3/QwtPlotBarChart.3
-@man man/man3/QwtPlotCanvas.3
-@man man/man3/QwtPlotCurve.3
-@man man/man3/QwtPlotDict.3
-@man man/man3/QwtPlotDirectPainter.3
-@man man/man3/QwtPlotGLCanvas.3
-@man man/man3/QwtPlotGraphicItem.3
-@man man/man3/QwtPlotGrid.3
-@man man/man3/QwtPlotHistogram.3
-@man man/man3/QwtPlotIntervalCurve.3
-@man man/man3/QwtPlotItem.3
-@man man/man3/QwtPlotLayout.3
-@man man/man3/QwtPlotLegendItem.3
-@man man/man3/QwtPlotMagnifier.3
-@man man/man3/QwtPlotMarker.3
-@man man/man3/QwtPlotMultiBarChart.3
-@man man/man3/QwtPlotOpenGLCanvas.3
-@man man/man3/QwtPlotPanner.3
-@man man/man3/QwtPlotPicker.3
-@man man/man3/QwtPlotRasterItem.3
-@man man/man3/QwtPlotRenderer.3
-@man man/man3/QwtPlotRescaler.3
-@man man/man3/QwtPlotScaleItem.3
-@man man/man3/QwtPlotSeriesItem.3
-@man man/man3/QwtPlotShapeItem.3
-@man man/man3/QwtPlotSpectroCurve.3
-@man man/man3/QwtPlotSpectrogram.3
-@man man/man3/QwtPlotSvgItem.3
-@man man/man3/QwtPlotTextLabel.3
-@man man/man3/QwtPlotTradingCurve.3
-@man man/man3/QwtPlotVectorField.3
-@man man/man3/QwtPlotZoneItem.3
-@man man/man3/QwtPlotZoomer.3
-@man man/man3/QwtPoint3D.3
-@man man/man3/QwtPoint3DSeriesData.3
-@man man/man3/QwtPointArrayData.3
-@man man/man3/QwtPointMapper.3
-@man man/man3/QwtPointPolar.3
-@man man/man3/QwtPointSeriesData.3
-@man man/man3/QwtPolarCanvas.3
-@man man/man3/QwtPolarCurve.3
-@man man/man3/QwtPolarFitter.3
-@man man/man3/QwtPolarGrid.3
-@man man/man3/QwtPolarItem.3
-@man man/man3/QwtPolarItemDict.3
-@man man/man3/QwtPolarLayout.3
-@man man/man3/QwtPolarMagnifier.3
-@man man/man3/QwtPolarMarker.3
-@man man/man3/QwtPolarPanner.3
-@man man/man3/QwtPolarPicker.3
-@man man/man3/QwtPolarPlot.3
-@man man/man3/QwtPolarRenderer.3
-@man man/man3/QwtPolarSpectrogram.3
-@man man/man3/QwtPowerTransform.3
-@man man/man3/QwtRasterData.3
-@man man/man3/QwtRichTextEngine.3
-@man man/man3/QwtRoundScaleDraw.3
-@man man/man3/QwtSamplingThread.3
-@man man/man3/QwtSaturationValueColorMap.3
-@man man/man3/QwtScaleArithmetic.3
-@man man/man3/QwtScaleDiv.3
-@man man/man3/QwtScaleDraw.3
-@man man/man3/QwtScaleEngine.3
-@man man/man3/QwtScaleMap.3
-@man man/man3/QwtScaleWidget.3
-@man man/man3/QwtSeriesData.3
-@man man/man3/QwtSeriesStore.3
-@man man/man3/QwtSetSample.3
-@man man/man3/QwtSetSeriesData.3
-@man man/man3/QwtSimpleCompassRose.3
-@man man/man3/QwtSlider.3
-@man man/man3/QwtSpline.3
-@man man/man3/QwtSplineBasis.3
-@man man/man3/QwtSplineC1.3
-@man man/man3/QwtSplineC2.3
-@man man/man3/QwtSplineCubic.3
-@man man/man3/QwtSplineCurveFitter.3
-@man man/man3/QwtSplineG1.3
-@man man/man3/QwtSplineInterpolating.3
-@man man/man3/QwtSplineLocal.3
-@man man/man3/QwtSplineParametrization.3
-@man man/man3/QwtSplinePleasing.3
-@man man/man3/QwtSplinePolynomial.3
-@man man/man3/QwtSymbol.3
-@man man/man3/QwtSyntheticPointData.3
-@man man/man3/QwtSystemClock.3
-@man man/man3/QwtText.3
-@man man/man3/QwtTextEngine.3
-@man man/man3/QwtTextLabel.3
-@man man/man3/QwtThermo.3
-@man man/man3/QwtTradingChartData.3
-@man man/man3/QwtTransform.3
-@man man/man3/QwtValuePointData.3
-@man man/man3/QwtVectorFieldArrow.3
-@man man/man3/QwtVectorFieldData.3
-@man man/man3/QwtVectorFieldSample.3
-@man man/man3/QwtVectorFieldSymbol.3
-@man man/man3/QwtVectorFieldThinArrow.3
-@man man/man3/QwtWeedingCurveFitter.3
-@man man/man3/QwtWheel.3
-@man man/man3/QwtWidgetOverlay.3
-@man man/man3/barchartscreenshots.3
-@man man/man3/controlscreenshots.3
-@man man/man3/curvescreenshots.3
-@man man/man3/otherscreenshots.3
-@man man/man3/qwtchangelog.3
-@man man/man3/qwtinstall.3
-@man man/man3/qwtlicense.3
-@man man/man3/spectrogramscreenshots.3
 share/doc/qwt/
 share/doc/qwt/html/
-share/doc/qwt/html/_form0_tmp.epsi
-share/doc/qwt/html/_form0_tmp.pdf
-share/doc/qwt/html/_form0_tmp.ps
-share/doc/qwt/html/_formulas.aux
-share/doc/qwt/html/_formulas.dvi
-share/doc/qwt/html/_formulas.log
 share/doc/qwt/html/_formulas.tex
+share/doc/qwt/html/_formulas_dark.tex
 share/doc/qwt/html/analogclock.png
 share/doc/qwt/html/annotated.html
 share/doc/qwt/html/annotated_dup.js
@@ -492,7 +305,7 @@ share/doc/qwt/html/barchart-grouped-600x400.png
 share/doc/qwt/html/barchart-stacked-600x400.png
 share/doc/qwt/html/barchartscreenshots.html
 share/doc/qwt/html/bc_s.png
-share/doc/qwt/html/bdwn.png
+share/doc/qwt/html/bc_sd.png
 share/doc/qwt/html/bode-blue-600x400.png
 share/doc/qwt/html/bode-rosy-600x400.png
 share/doc/qwt/html/class_q_list.html
@@ -504,16 +317,19 @@ share/doc/qwt/html/class_qwt_abstract_legend.html
 share/doc/qwt/html/class_qwt_abstract_legend.js
 share/doc/qwt/html/class_qwt_abstract_legend__inherit__graph.map
 share/doc/qwt/html/class_qwt_abstract_legend__inherit__graph.svg
+share/doc/qwt/html/class_qwt_abstract_legend__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_abstract_scale-members.html
 share/doc/qwt/html/class_qwt_abstract_scale.html
 share/doc/qwt/html/class_qwt_abstract_scale.js
 share/doc/qwt/html/class_qwt_abstract_scale__inherit__graph.map
 share/doc/qwt/html/class_qwt_abstract_scale__inherit__graph.svg
+share/doc/qwt/html/class_qwt_abstract_scale__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_abstract_scale_draw-members.html
 share/doc/qwt/html/class_qwt_abstract_scale_draw.html
 share/doc/qwt/html/class_qwt_abstract_scale_draw.js
 share/doc/qwt/html/class_qwt_abstract_scale_draw__inherit__graph.map
 share/doc/qwt/html/class_qwt_abstract_scale_draw__inherit__graph.svg
+share/doc/qwt/html/class_qwt_abstract_scale_draw__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_abstract_series_store-members.html
 share/doc/qwt/html/class_qwt_abstract_series_store.html
 share/doc/qwt/html/class_qwt_abstract_series_store.js
@@ -525,26 +341,31 @@ share/doc/qwt/html/class_qwt_abstract_slider.html
 share/doc/qwt/html/class_qwt_abstract_slider.js
 share/doc/qwt/html/class_qwt_abstract_slider__inherit__graph.map
 share/doc/qwt/html/class_qwt_abstract_slider__inherit__graph.svg
+share/doc/qwt/html/class_qwt_abstract_slider__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_alpha_color_map-members.html
 share/doc/qwt/html/class_qwt_alpha_color_map.html
 share/doc/qwt/html/class_qwt_alpha_color_map.js
 share/doc/qwt/html/class_qwt_alpha_color_map__inherit__graph.map
 share/doc/qwt/html/class_qwt_alpha_color_map__inherit__graph.svg
+share/doc/qwt/html/class_qwt_alpha_color_map__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_analog_clock-members.html
 share/doc/qwt/html/class_qwt_analog_clock.html
 share/doc/qwt/html/class_qwt_analog_clock.js
 share/doc/qwt/html/class_qwt_analog_clock__inherit__graph.map
 share/doc/qwt/html/class_qwt_analog_clock__inherit__graph.svg
+share/doc/qwt/html/class_qwt_analog_clock__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_array_series_data-members.html
 share/doc/qwt/html/class_qwt_array_series_data.html
 share/doc/qwt/html/class_qwt_array_series_data.js
 share/doc/qwt/html/class_qwt_array_series_data__inherit__graph.map
 share/doc/qwt/html/class_qwt_array_series_data__inherit__graph.svg
+share/doc/qwt/html/class_qwt_array_series_data__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_arrow_button-members.html
 share/doc/qwt/html/class_qwt_arrow_button.html
 share/doc/qwt/html/class_qwt_arrow_button.js
 share/doc/qwt/html/class_qwt_arrow_button__inherit__graph.map
 share/doc/qwt/html/class_qwt_arrow_button__inherit__graph.svg
+share/doc/qwt/html/class_qwt_arrow_button__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_bezier-members.html
 share/doc/qwt/html/class_qwt_bezier.html
 share/doc/qwt/html/class_qwt_bezier.js
@@ -553,11 +374,13 @@ share/doc/qwt/html/class_qwt_c_pointer_data.html
 share/doc/qwt/html/class_qwt_c_pointer_data.js
 share/doc/qwt/html/class_qwt_c_pointer_data__inherit__graph.map
 share/doc/qwt/html/class_qwt_c_pointer_data__inherit__graph.svg
+share/doc/qwt/html/class_qwt_c_pointer_data__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_c_pointer_value_data-members.html
 share/doc/qwt/html/class_qwt_c_pointer_value_data.html
 share/doc/qwt/html/class_qwt_c_pointer_value_data.js
 share/doc/qwt/html/class_qwt_c_pointer_value_data__inherit__graph.map
 share/doc/qwt/html/class_qwt_c_pointer_value_data__inherit__graph.svg
+share/doc/qwt/html/class_qwt_c_pointer_value_data__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_color_map-members.html
 share/doc/qwt/html/class_qwt_color_map.html
 share/doc/qwt/html/class_qwt_color_map.js
@@ -575,36 +398,43 @@ share/doc/qwt/html/class_qwt_compass.html
 share/doc/qwt/html/class_qwt_compass.js
 share/doc/qwt/html/class_qwt_compass__inherit__graph.map
 share/doc/qwt/html/class_qwt_compass__inherit__graph.svg
+share/doc/qwt/html/class_qwt_compass__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_compass_magnet_needle-members.html
 share/doc/qwt/html/class_qwt_compass_magnet_needle.html
 share/doc/qwt/html/class_qwt_compass_magnet_needle.js
 share/doc/qwt/html/class_qwt_compass_magnet_needle__inherit__graph.map
 share/doc/qwt/html/class_qwt_compass_magnet_needle__inherit__graph.svg
+share/doc/qwt/html/class_qwt_compass_magnet_needle__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_compass_rose-members.html
 share/doc/qwt/html/class_qwt_compass_rose.html
 share/doc/qwt/html/class_qwt_compass_rose.js
 share/doc/qwt/html/class_qwt_compass_rose__inherit__graph.map
 share/doc/qwt/html/class_qwt_compass_rose__inherit__graph.svg
+share/doc/qwt/html/class_qwt_compass_rose__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_compass_scale_draw-members.html
 share/doc/qwt/html/class_qwt_compass_scale_draw.html
 share/doc/qwt/html/class_qwt_compass_scale_draw.js
 share/doc/qwt/html/class_qwt_compass_scale_draw__inherit__graph.map
 share/doc/qwt/html/class_qwt_compass_scale_draw__inherit__graph.svg
+share/doc/qwt/html/class_qwt_compass_scale_draw__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_compass_wind_arrow-members.html
 share/doc/qwt/html/class_qwt_compass_wind_arrow.html
 share/doc/qwt/html/class_qwt_compass_wind_arrow.js
 share/doc/qwt/html/class_qwt_compass_wind_arrow__inherit__graph.map
 share/doc/qwt/html/class_qwt_compass_wind_arrow__inherit__graph.svg
+share/doc/qwt/html/class_qwt_compass_wind_arrow__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_counter-members.html
 share/doc/qwt/html/class_qwt_counter.html
 share/doc/qwt/html/class_qwt_counter.js
 share/doc/qwt/html/class_qwt_counter__inherit__graph.map
 share/doc/qwt/html/class_qwt_counter__inherit__graph.svg
+share/doc/qwt/html/class_qwt_counter__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_curve_fitter-members.html
 share/doc/qwt/html/class_qwt_curve_fitter.html
 share/doc/qwt/html/class_qwt_curve_fitter.js
 share/doc/qwt/html/class_qwt_curve_fitter__inherit__graph.map
 share/doc/qwt/html/class_qwt_curve_fitter__inherit__graph.svg
+share/doc/qwt/html/class_qwt_curve_fitter__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_date-members.html
 share/doc/qwt/html/class_qwt_date.html
 share/doc/qwt/html/class_qwt_date.js
@@ -613,31 +443,37 @@ share/doc/qwt/html/class_qwt_date_scale_draw.html
 share/doc/qwt/html/class_qwt_date_scale_draw.js
 share/doc/qwt/html/class_qwt_date_scale_draw__inherit__graph.map
 share/doc/qwt/html/class_qwt_date_scale_draw__inherit__graph.svg
+share/doc/qwt/html/class_qwt_date_scale_draw__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_date_scale_engine-members.html
 share/doc/qwt/html/class_qwt_date_scale_engine.html
 share/doc/qwt/html/class_qwt_date_scale_engine.js
 share/doc/qwt/html/class_qwt_date_scale_engine__inherit__graph.map
 share/doc/qwt/html/class_qwt_date_scale_engine__inherit__graph.svg
+share/doc/qwt/html/class_qwt_date_scale_engine__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_dial-members.html
 share/doc/qwt/html/class_qwt_dial.html
 share/doc/qwt/html/class_qwt_dial.js
 share/doc/qwt/html/class_qwt_dial__inherit__graph.map
 share/doc/qwt/html/class_qwt_dial__inherit__graph.svg
+share/doc/qwt/html/class_qwt_dial__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_dial_needle-members.html
 share/doc/qwt/html/class_qwt_dial_needle.html
 share/doc/qwt/html/class_qwt_dial_needle.js
 share/doc/qwt/html/class_qwt_dial_needle__inherit__graph.map
 share/doc/qwt/html/class_qwt_dial_needle__inherit__graph.svg
+share/doc/qwt/html/class_qwt_dial_needle__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_dial_simple_needle-members.html
 share/doc/qwt/html/class_qwt_dial_simple_needle.html
 share/doc/qwt/html/class_qwt_dial_simple_needle.js
 share/doc/qwt/html/class_qwt_dial_simple_needle__inherit__graph.map
 share/doc/qwt/html/class_qwt_dial_simple_needle__inherit__graph.svg
+share/doc/qwt/html/class_qwt_dial_simple_needle__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_dyn_grid_layout-members.html
 share/doc/qwt/html/class_qwt_dyn_grid_layout.html
 share/doc/qwt/html/class_qwt_dyn_grid_layout.js
 share/doc/qwt/html/class_qwt_dyn_grid_layout__inherit__graph.map
 share/doc/qwt/html/class_qwt_dyn_grid_layout__inherit__graph.svg
+share/doc/qwt/html/class_qwt_dyn_grid_layout__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_event_pattern-members.html
 share/doc/qwt/html/class_qwt_event_pattern.html
 share/doc/qwt/html/class_qwt_event_pattern.js
@@ -649,27 +485,25 @@ share/doc/qwt/html/class_qwt_event_pattern_1_1_mouse_pattern.html
 share/doc/qwt/html/class_qwt_event_pattern_1_1_mouse_pattern.js
 share/doc/qwt/html/class_qwt_event_pattern__inherit__graph.map
 share/doc/qwt/html/class_qwt_event_pattern__inherit__graph.svg
+share/doc/qwt/html/class_qwt_event_pattern__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_graphic-members.html
 share/doc/qwt/html/class_qwt_graphic.html
 share/doc/qwt/html/class_qwt_graphic.js
 share/doc/qwt/html/class_qwt_graphic__inherit__graph.map
 share/doc/qwt/html/class_qwt_graphic__inherit__graph.svg
+share/doc/qwt/html/class_qwt_graphic__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_hue_color_map-members.html
 share/doc/qwt/html/class_qwt_hue_color_map.html
 share/doc/qwt/html/class_qwt_hue_color_map.js
 share/doc/qwt/html/class_qwt_hue_color_map__inherit__graph.map
 share/doc/qwt/html/class_qwt_hue_color_map__inherit__graph.svg
+share/doc/qwt/html/class_qwt_hue_color_map__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_interval-members.html
 share/doc/qwt/html/class_qwt_interval.html
 share/doc/qwt/html/class_qwt_interval.js
 share/doc/qwt/html/class_qwt_interval_sample-members.html
 share/doc/qwt/html/class_qwt_interval_sample.html
 share/doc/qwt/html/class_qwt_interval_sample.js
-share/doc/qwt/html/class_qwt_interval_series_data-members.html
-share/doc/qwt/html/class_qwt_interval_series_data.html
-share/doc/qwt/html/class_qwt_interval_series_data.js
-share/doc/qwt/html/class_qwt_interval_series_data__inherit__graph.map
-share/doc/qwt/html/class_qwt_interval_series_data__inherit__graph.svg
 share/doc/qwt/html/class_qwt_interval_symbol-members.html
 share/doc/qwt/html/class_qwt_interval_symbol.html
 share/doc/qwt/html/class_qwt_interval_symbol.js
@@ -678,11 +512,13 @@ share/doc/qwt/html/class_qwt_knob.html
 share/doc/qwt/html/class_qwt_knob.js
 share/doc/qwt/html/class_qwt_knob__inherit__graph.map
 share/doc/qwt/html/class_qwt_knob__inherit__graph.svg
+share/doc/qwt/html/class_qwt_knob__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_legend-members.html
 share/doc/qwt/html/class_qwt_legend.html
 share/doc/qwt/html/class_qwt_legend.js
 share/doc/qwt/html/class_qwt_legend__inherit__graph.map
 share/doc/qwt/html/class_qwt_legend__inherit__graph.svg
+share/doc/qwt/html/class_qwt_legend__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_legend_data-members.html
 share/doc/qwt/html/class_qwt_legend_data.html
 share/doc/qwt/html/class_qwt_legend_data.js
@@ -691,46 +527,55 @@ share/doc/qwt/html/class_qwt_legend_label.html
 share/doc/qwt/html/class_qwt_legend_label.js
 share/doc/qwt/html/class_qwt_legend_label__inherit__graph.map
 share/doc/qwt/html/class_qwt_legend_label__inherit__graph.svg
+share/doc/qwt/html/class_qwt_legend_label__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_linear_color_map-members.html
 share/doc/qwt/html/class_qwt_linear_color_map.html
 share/doc/qwt/html/class_qwt_linear_color_map.js
 share/doc/qwt/html/class_qwt_linear_color_map__inherit__graph.map
 share/doc/qwt/html/class_qwt_linear_color_map__inherit__graph.svg
+share/doc/qwt/html/class_qwt_linear_color_map__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_linear_scale_engine-members.html
 share/doc/qwt/html/class_qwt_linear_scale_engine.html
 share/doc/qwt/html/class_qwt_linear_scale_engine.js
 share/doc/qwt/html/class_qwt_linear_scale_engine__inherit__graph.map
 share/doc/qwt/html/class_qwt_linear_scale_engine__inherit__graph.svg
+share/doc/qwt/html/class_qwt_linear_scale_engine__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_log_scale_engine-members.html
 share/doc/qwt/html/class_qwt_log_scale_engine.html
 share/doc/qwt/html/class_qwt_log_scale_engine.js
 share/doc/qwt/html/class_qwt_log_scale_engine__inherit__graph.map
 share/doc/qwt/html/class_qwt_log_scale_engine__inherit__graph.svg
+share/doc/qwt/html/class_qwt_log_scale_engine__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_log_transform-members.html
 share/doc/qwt/html/class_qwt_log_transform.html
 share/doc/qwt/html/class_qwt_log_transform.js
 share/doc/qwt/html/class_qwt_log_transform__inherit__graph.map
 share/doc/qwt/html/class_qwt_log_transform__inherit__graph.svg
+share/doc/qwt/html/class_qwt_log_transform__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_magnifier-members.html
 share/doc/qwt/html/class_qwt_magnifier.html
 share/doc/qwt/html/class_qwt_magnifier.js
 share/doc/qwt/html/class_qwt_magnifier__inherit__graph.map
 share/doc/qwt/html/class_qwt_magnifier__inherit__graph.svg
+share/doc/qwt/html/class_qwt_magnifier__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_matrix_raster_data-members.html
 share/doc/qwt/html/class_qwt_matrix_raster_data.html
 share/doc/qwt/html/class_qwt_matrix_raster_data.js
 share/doc/qwt/html/class_qwt_matrix_raster_data__inherit__graph.map
 share/doc/qwt/html/class_qwt_matrix_raster_data__inherit__graph.svg
+share/doc/qwt/html/class_qwt_matrix_raster_data__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_null_paint_device-members.html
 share/doc/qwt/html/class_qwt_null_paint_device.html
 share/doc/qwt/html/class_qwt_null_paint_device.js
 share/doc/qwt/html/class_qwt_null_paint_device__inherit__graph.map
 share/doc/qwt/html/class_qwt_null_paint_device__inherit__graph.svg
+share/doc/qwt/html/class_qwt_null_paint_device__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_null_transform-members.html
 share/doc/qwt/html/class_qwt_null_transform.html
 share/doc/qwt/html/class_qwt_null_transform.js
 share/doc/qwt/html/class_qwt_null_transform__inherit__graph.map
 share/doc/qwt/html/class_qwt_null_transform__inherit__graph.svg
+share/doc/qwt/html/class_qwt_null_transform__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_o_h_l_c_sample-members.html
 share/doc/qwt/html/class_qwt_o_h_l_c_sample.html
 share/doc/qwt/html/class_qwt_o_h_l_c_sample.js
@@ -744,131 +589,157 @@ share/doc/qwt/html/class_qwt_panner.html
 share/doc/qwt/html/class_qwt_panner.js
 share/doc/qwt/html/class_qwt_panner__inherit__graph.map
 share/doc/qwt/html/class_qwt_panner__inherit__graph.svg
+share/doc/qwt/html/class_qwt_panner__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_picker-members.html
 share/doc/qwt/html/class_qwt_picker.html
 share/doc/qwt/html/class_qwt_picker.js
 share/doc/qwt/html/class_qwt_picker__inherit__graph.map
 share/doc/qwt/html/class_qwt_picker__inherit__graph.svg
+share/doc/qwt/html/class_qwt_picker__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_picker_click_point_machine-members.html
 share/doc/qwt/html/class_qwt_picker_click_point_machine.html
 share/doc/qwt/html/class_qwt_picker_click_point_machine.js
 share/doc/qwt/html/class_qwt_picker_click_point_machine__inherit__graph.map
 share/doc/qwt/html/class_qwt_picker_click_point_machine__inherit__graph.svg
+share/doc/qwt/html/class_qwt_picker_click_point_machine__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_picker_click_rect_machine-members.html
 share/doc/qwt/html/class_qwt_picker_click_rect_machine.html
 share/doc/qwt/html/class_qwt_picker_click_rect_machine.js
 share/doc/qwt/html/class_qwt_picker_click_rect_machine__inherit__graph.map
 share/doc/qwt/html/class_qwt_picker_click_rect_machine__inherit__graph.svg
+share/doc/qwt/html/class_qwt_picker_click_rect_machine__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_picker_drag_line_machine-members.html
 share/doc/qwt/html/class_qwt_picker_drag_line_machine.html
 share/doc/qwt/html/class_qwt_picker_drag_line_machine.js
 share/doc/qwt/html/class_qwt_picker_drag_line_machine__inherit__graph.map
 share/doc/qwt/html/class_qwt_picker_drag_line_machine__inherit__graph.svg
+share/doc/qwt/html/class_qwt_picker_drag_line_machine__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_picker_drag_point_machine-members.html
 share/doc/qwt/html/class_qwt_picker_drag_point_machine.html
 share/doc/qwt/html/class_qwt_picker_drag_point_machine.js
 share/doc/qwt/html/class_qwt_picker_drag_point_machine__inherit__graph.map
 share/doc/qwt/html/class_qwt_picker_drag_point_machine__inherit__graph.svg
+share/doc/qwt/html/class_qwt_picker_drag_point_machine__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_picker_drag_rect_machine-members.html
 share/doc/qwt/html/class_qwt_picker_drag_rect_machine.html
 share/doc/qwt/html/class_qwt_picker_drag_rect_machine.js
 share/doc/qwt/html/class_qwt_picker_drag_rect_machine__inherit__graph.map
 share/doc/qwt/html/class_qwt_picker_drag_rect_machine__inherit__graph.svg
+share/doc/qwt/html/class_qwt_picker_drag_rect_machine__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_picker_machine-members.html
 share/doc/qwt/html/class_qwt_picker_machine.html
 share/doc/qwt/html/class_qwt_picker_machine.js
 share/doc/qwt/html/class_qwt_picker_machine__inherit__graph.map
 share/doc/qwt/html/class_qwt_picker_machine__inherit__graph.svg
+share/doc/qwt/html/class_qwt_picker_machine__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_picker_polygon_machine-members.html
 share/doc/qwt/html/class_qwt_picker_polygon_machine.html
 share/doc/qwt/html/class_qwt_picker_polygon_machine.js
 share/doc/qwt/html/class_qwt_picker_polygon_machine__inherit__graph.map
 share/doc/qwt/html/class_qwt_picker_polygon_machine__inherit__graph.svg
+share/doc/qwt/html/class_qwt_picker_polygon_machine__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_picker_tracker_machine-members.html
 share/doc/qwt/html/class_qwt_picker_tracker_machine.html
 share/doc/qwt/html/class_qwt_picker_tracker_machine.js
 share/doc/qwt/html/class_qwt_picker_tracker_machine__inherit__graph.map
 share/doc/qwt/html/class_qwt_picker_tracker_machine__inherit__graph.svg
+share/doc/qwt/html/class_qwt_picker_tracker_machine__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_pixel_matrix-members.html
 share/doc/qwt/html/class_qwt_pixel_matrix.html
 share/doc/qwt/html/class_qwt_pixel_matrix.js
 share/doc/qwt/html/class_qwt_pixel_matrix__inherit__graph.map
 share/doc/qwt/html/class_qwt_pixel_matrix__inherit__graph.svg
+share/doc/qwt/html/class_qwt_pixel_matrix__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plain_text_engine-members.html
 share/doc/qwt/html/class_qwt_plain_text_engine.html
 share/doc/qwt/html/class_qwt_plain_text_engine.js
 share/doc/qwt/html/class_qwt_plain_text_engine__inherit__graph.map
 share/doc/qwt/html/class_qwt_plain_text_engine__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plain_text_engine__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot-members.html
 share/doc/qwt/html/class_qwt_plot.html
 share/doc/qwt/html/class_qwt_plot.js
 share/doc/qwt/html/class_qwt_plot__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_abstract_bar_chart-members.html
 share/doc/qwt/html/class_qwt_plot_abstract_bar_chart.html
 share/doc/qwt/html/class_qwt_plot_abstract_bar_chart.js
 share/doc/qwt/html/class_qwt_plot_abstract_bar_chart__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_abstract_bar_chart__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_abstract_bar_chart__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_abstract_canvas-members.html
 share/doc/qwt/html/class_qwt_plot_abstract_canvas.html
 share/doc/qwt/html/class_qwt_plot_abstract_canvas.js
 share/doc/qwt/html/class_qwt_plot_abstract_canvas__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_abstract_canvas__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_abstract_canvas__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_abstract_g_l_canvas-members.html
 share/doc/qwt/html/class_qwt_plot_abstract_g_l_canvas.html
 share/doc/qwt/html/class_qwt_plot_abstract_g_l_canvas.js
 share/doc/qwt/html/class_qwt_plot_abstract_g_l_canvas__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_abstract_g_l_canvas__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_abstract_g_l_canvas__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_bar_chart-members.html
 share/doc/qwt/html/class_qwt_plot_bar_chart.html
 share/doc/qwt/html/class_qwt_plot_bar_chart.js
 share/doc/qwt/html/class_qwt_plot_bar_chart__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_bar_chart__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_bar_chart__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_canvas-members.html
 share/doc/qwt/html/class_qwt_plot_canvas.html
 share/doc/qwt/html/class_qwt_plot_canvas.js
 share/doc/qwt/html/class_qwt_plot_canvas__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_canvas__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_canvas__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_curve-members.html
 share/doc/qwt/html/class_qwt_plot_curve.html
 share/doc/qwt/html/class_qwt_plot_curve.js
 share/doc/qwt/html/class_qwt_plot_curve__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_curve__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_curve__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_dict-members.html
 share/doc/qwt/html/class_qwt_plot_dict.html
 share/doc/qwt/html/class_qwt_plot_dict.js
 share/doc/qwt/html/class_qwt_plot_dict__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_dict__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_dict__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_direct_painter-members.html
 share/doc/qwt/html/class_qwt_plot_direct_painter.html
 share/doc/qwt/html/class_qwt_plot_direct_painter.js
 share/doc/qwt/html/class_qwt_plot_direct_painter__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_direct_painter__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_direct_painter__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_g_l_canvas-members.html
 share/doc/qwt/html/class_qwt_plot_g_l_canvas.html
 share/doc/qwt/html/class_qwt_plot_g_l_canvas.js
 share/doc/qwt/html/class_qwt_plot_g_l_canvas__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_g_l_canvas__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_g_l_canvas__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_graphic_item-members.html
 share/doc/qwt/html/class_qwt_plot_graphic_item.html
 share/doc/qwt/html/class_qwt_plot_graphic_item.js
 share/doc/qwt/html/class_qwt_plot_graphic_item__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_graphic_item__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_graphic_item__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_grid-members.html
 share/doc/qwt/html/class_qwt_plot_grid.html
 share/doc/qwt/html/class_qwt_plot_grid.js
 share/doc/qwt/html/class_qwt_plot_grid__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_grid__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_grid__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_histogram-members.html
 share/doc/qwt/html/class_qwt_plot_histogram.html
 share/doc/qwt/html/class_qwt_plot_histogram.js
 share/doc/qwt/html/class_qwt_plot_histogram__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_histogram__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_histogram__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_interval_curve-members.html
 share/doc/qwt/html/class_qwt_plot_interval_curve.html
 share/doc/qwt/html/class_qwt_plot_interval_curve.js
 share/doc/qwt/html/class_qwt_plot_interval_curve__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_interval_curve__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_interval_curve__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_item-members.html
 share/doc/qwt/html/class_qwt_plot_item.html
 share/doc/qwt/html/class_qwt_plot_item.js
@@ -883,56 +754,67 @@ share/doc/qwt/html/class_qwt_plot_legend_item.html
 share/doc/qwt/html/class_qwt_plot_legend_item.js
 share/doc/qwt/html/class_qwt_plot_legend_item__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_legend_item__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_legend_item__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_magnifier-members.html
 share/doc/qwt/html/class_qwt_plot_magnifier.html
 share/doc/qwt/html/class_qwt_plot_magnifier.js
 share/doc/qwt/html/class_qwt_plot_magnifier__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_magnifier__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_magnifier__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_marker-members.html
 share/doc/qwt/html/class_qwt_plot_marker.html
 share/doc/qwt/html/class_qwt_plot_marker.js
 share/doc/qwt/html/class_qwt_plot_marker__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_marker__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_marker__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_multi_bar_chart-members.html
 share/doc/qwt/html/class_qwt_plot_multi_bar_chart.html
 share/doc/qwt/html/class_qwt_plot_multi_bar_chart.js
 share/doc/qwt/html/class_qwt_plot_multi_bar_chart__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_multi_bar_chart__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_multi_bar_chart__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_open_g_l_canvas-members.html
 share/doc/qwt/html/class_qwt_plot_open_g_l_canvas.html
 share/doc/qwt/html/class_qwt_plot_open_g_l_canvas.js
 share/doc/qwt/html/class_qwt_plot_open_g_l_canvas__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_open_g_l_canvas__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_open_g_l_canvas__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_panner-members.html
 share/doc/qwt/html/class_qwt_plot_panner.html
 share/doc/qwt/html/class_qwt_plot_panner.js
 share/doc/qwt/html/class_qwt_plot_panner__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_panner__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_panner__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_picker-members.html
 share/doc/qwt/html/class_qwt_plot_picker.html
 share/doc/qwt/html/class_qwt_plot_picker.js
 share/doc/qwt/html/class_qwt_plot_picker__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_picker__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_picker__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_raster_item-members.html
 share/doc/qwt/html/class_qwt_plot_raster_item.html
 share/doc/qwt/html/class_qwt_plot_raster_item.js
 share/doc/qwt/html/class_qwt_plot_raster_item__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_raster_item__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_raster_item__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_renderer-members.html
 share/doc/qwt/html/class_qwt_plot_renderer.html
 share/doc/qwt/html/class_qwt_plot_renderer.js
 share/doc/qwt/html/class_qwt_plot_renderer__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_renderer__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_renderer__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_rescaler-members.html
 share/doc/qwt/html/class_qwt_plot_rescaler.html
 share/doc/qwt/html/class_qwt_plot_rescaler.js
 share/doc/qwt/html/class_qwt_plot_rescaler__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_rescaler__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_rescaler__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_scale_item-members.html
 share/doc/qwt/html/class_qwt_plot_scale_item.html
 share/doc/qwt/html/class_qwt_plot_scale_item.js
 share/doc/qwt/html/class_qwt_plot_scale_item__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_scale_item__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_scale_item__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_series_item-members.html
 share/doc/qwt/html/class_qwt_plot_series_item.html
 share/doc/qwt/html/class_qwt_plot_series_item.js
@@ -944,101 +826,106 @@ share/doc/qwt/html/class_qwt_plot_shape_item.html
 share/doc/qwt/html/class_qwt_plot_shape_item.js
 share/doc/qwt/html/class_qwt_plot_shape_item__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_shape_item__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_shape_item__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_spectro_curve-members.html
 share/doc/qwt/html/class_qwt_plot_spectro_curve.html
 share/doc/qwt/html/class_qwt_plot_spectro_curve.js
 share/doc/qwt/html/class_qwt_plot_spectro_curve__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_spectro_curve__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_spectro_curve__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_spectrogram-members.html
 share/doc/qwt/html/class_qwt_plot_spectrogram.html
 share/doc/qwt/html/class_qwt_plot_spectrogram.js
 share/doc/qwt/html/class_qwt_plot_spectrogram__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_spectrogram__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_spectrogram__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_svg_item-members.html
 share/doc/qwt/html/class_qwt_plot_svg_item.html
 share/doc/qwt/html/class_qwt_plot_svg_item.js
 share/doc/qwt/html/class_qwt_plot_svg_item__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_svg_item__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_svg_item__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_text_label-members.html
 share/doc/qwt/html/class_qwt_plot_text_label.html
 share/doc/qwt/html/class_qwt_plot_text_label.js
 share/doc/qwt/html/class_qwt_plot_text_label__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_text_label__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_text_label__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_trading_curve-members.html
 share/doc/qwt/html/class_qwt_plot_trading_curve.html
 share/doc/qwt/html/class_qwt_plot_trading_curve.js
 share/doc/qwt/html/class_qwt_plot_trading_curve__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_trading_curve__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_trading_curve__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_vector_field-members.html
 share/doc/qwt/html/class_qwt_plot_vector_field.html
 share/doc/qwt/html/class_qwt_plot_vector_field.js
 share/doc/qwt/html/class_qwt_plot_vector_field__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_vector_field__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_vector_field__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_zone_item-members.html
 share/doc/qwt/html/class_qwt_plot_zone_item.html
 share/doc/qwt/html/class_qwt_plot_zone_item.js
 share/doc/qwt/html/class_qwt_plot_zone_item__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_zone_item__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_zone_item__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_plot_zoomer-members.html
 share/doc/qwt/html/class_qwt_plot_zoomer.html
 share/doc/qwt/html/class_qwt_plot_zoomer.js
 share/doc/qwt/html/class_qwt_plot_zoomer__inherit__graph.map
 share/doc/qwt/html/class_qwt_plot_zoomer__inherit__graph.svg
+share/doc/qwt/html/class_qwt_plot_zoomer__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_point3_d-members.html
 share/doc/qwt/html/class_qwt_point3_d.html
 share/doc/qwt/html/class_qwt_point3_d.js
-share/doc/qwt/html/class_qwt_point3_d_series_data-members.html
-share/doc/qwt/html/class_qwt_point3_d_series_data.html
-share/doc/qwt/html/class_qwt_point3_d_series_data.js
-share/doc/qwt/html/class_qwt_point3_d_series_data__inherit__graph.map
-share/doc/qwt/html/class_qwt_point3_d_series_data__inherit__graph.svg
 share/doc/qwt/html/class_qwt_point_array_data-members.html
 share/doc/qwt/html/class_qwt_point_array_data.html
 share/doc/qwt/html/class_qwt_point_array_data.js
 share/doc/qwt/html/class_qwt_point_array_data__inherit__graph.map
 share/doc/qwt/html/class_qwt_point_array_data__inherit__graph.svg
+share/doc/qwt/html/class_qwt_point_array_data__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_point_mapper-members.html
 share/doc/qwt/html/class_qwt_point_mapper.html
 share/doc/qwt/html/class_qwt_point_mapper.js
 share/doc/qwt/html/class_qwt_point_polar-members.html
 share/doc/qwt/html/class_qwt_point_polar.html
 share/doc/qwt/html/class_qwt_point_polar.js
-share/doc/qwt/html/class_qwt_point_series_data-members.html
-share/doc/qwt/html/class_qwt_point_series_data.html
-share/doc/qwt/html/class_qwt_point_series_data.js
-share/doc/qwt/html/class_qwt_point_series_data__inherit__graph.map
-share/doc/qwt/html/class_qwt_point_series_data__inherit__graph.svg
-share/doc/qwt/html/class_qwt_point_series_data__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_polar_canvas-members.html
 share/doc/qwt/html/class_qwt_polar_canvas.html
 share/doc/qwt/html/class_qwt_polar_canvas.js
 share/doc/qwt/html/class_qwt_polar_canvas__inherit__graph.map
 share/doc/qwt/html/class_qwt_polar_canvas__inherit__graph.svg
+share/doc/qwt/html/class_qwt_polar_canvas__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_polar_curve-members.html
 share/doc/qwt/html/class_qwt_polar_curve.html
 share/doc/qwt/html/class_qwt_polar_curve.js
 share/doc/qwt/html/class_qwt_polar_curve__inherit__graph.map
 share/doc/qwt/html/class_qwt_polar_curve__inherit__graph.svg
+share/doc/qwt/html/class_qwt_polar_curve__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_polar_fitter-members.html
 share/doc/qwt/html/class_qwt_polar_fitter.html
 share/doc/qwt/html/class_qwt_polar_fitter.js
 share/doc/qwt/html/class_qwt_polar_fitter__inherit__graph.map
 share/doc/qwt/html/class_qwt_polar_fitter__inherit__graph.svg
+share/doc/qwt/html/class_qwt_polar_fitter__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_polar_grid-members.html
 share/doc/qwt/html/class_qwt_polar_grid.html
 share/doc/qwt/html/class_qwt_polar_grid.js
 share/doc/qwt/html/class_qwt_polar_grid__inherit__graph.map
 share/doc/qwt/html/class_qwt_polar_grid__inherit__graph.svg
+share/doc/qwt/html/class_qwt_polar_grid__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_polar_item-members.html
 share/doc/qwt/html/class_qwt_polar_item.html
 share/doc/qwt/html/class_qwt_polar_item.js
 share/doc/qwt/html/class_qwt_polar_item__inherit__graph.map
 share/doc/qwt/html/class_qwt_polar_item__inherit__graph.svg
+share/doc/qwt/html/class_qwt_polar_item__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_polar_item_dict-members.html
 share/doc/qwt/html/class_qwt_polar_item_dict.html
 share/doc/qwt/html/class_qwt_polar_item_dict.js
 share/doc/qwt/html/class_qwt_polar_item_dict__inherit__graph.map
 share/doc/qwt/html/class_qwt_polar_item_dict__inherit__graph.svg
+share/doc/qwt/html/class_qwt_polar_item_dict__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_polar_layout-members.html
 share/doc/qwt/html/class_qwt_polar_layout.html
 share/doc/qwt/html/class_qwt_polar_layout.js
@@ -1047,66 +934,79 @@ share/doc/qwt/html/class_qwt_polar_magnifier.html
 share/doc/qwt/html/class_qwt_polar_magnifier.js
 share/doc/qwt/html/class_qwt_polar_magnifier__inherit__graph.map
 share/doc/qwt/html/class_qwt_polar_magnifier__inherit__graph.svg
+share/doc/qwt/html/class_qwt_polar_magnifier__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_polar_marker-members.html
 share/doc/qwt/html/class_qwt_polar_marker.html
 share/doc/qwt/html/class_qwt_polar_marker.js
 share/doc/qwt/html/class_qwt_polar_marker__inherit__graph.map
 share/doc/qwt/html/class_qwt_polar_marker__inherit__graph.svg
+share/doc/qwt/html/class_qwt_polar_marker__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_polar_panner-members.html
 share/doc/qwt/html/class_qwt_polar_panner.html
 share/doc/qwt/html/class_qwt_polar_panner.js
 share/doc/qwt/html/class_qwt_polar_panner__inherit__graph.map
 share/doc/qwt/html/class_qwt_polar_panner__inherit__graph.svg
+share/doc/qwt/html/class_qwt_polar_panner__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_polar_picker-members.html
 share/doc/qwt/html/class_qwt_polar_picker.html
 share/doc/qwt/html/class_qwt_polar_picker.js
 share/doc/qwt/html/class_qwt_polar_picker__inherit__graph.map
 share/doc/qwt/html/class_qwt_polar_picker__inherit__graph.svg
+share/doc/qwt/html/class_qwt_polar_picker__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_polar_plot-members.html
 share/doc/qwt/html/class_qwt_polar_plot.html
 share/doc/qwt/html/class_qwt_polar_plot.js
 share/doc/qwt/html/class_qwt_polar_plot__inherit__graph.map
 share/doc/qwt/html/class_qwt_polar_plot__inherit__graph.svg
+share/doc/qwt/html/class_qwt_polar_plot__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_polar_renderer-members.html
 share/doc/qwt/html/class_qwt_polar_renderer.html
 share/doc/qwt/html/class_qwt_polar_renderer.js
 share/doc/qwt/html/class_qwt_polar_renderer__inherit__graph.map
 share/doc/qwt/html/class_qwt_polar_renderer__inherit__graph.svg
+share/doc/qwt/html/class_qwt_polar_renderer__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_polar_spectrogram-members.html
 share/doc/qwt/html/class_qwt_polar_spectrogram.html
 share/doc/qwt/html/class_qwt_polar_spectrogram.js
 share/doc/qwt/html/class_qwt_polar_spectrogram__inherit__graph.map
 share/doc/qwt/html/class_qwt_polar_spectrogram__inherit__graph.svg
+share/doc/qwt/html/class_qwt_polar_spectrogram__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_power_transform-members.html
 share/doc/qwt/html/class_qwt_power_transform.html
 share/doc/qwt/html/class_qwt_power_transform.js
 share/doc/qwt/html/class_qwt_power_transform__inherit__graph.map
 share/doc/qwt/html/class_qwt_power_transform__inherit__graph.svg
+share/doc/qwt/html/class_qwt_power_transform__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_raster_data-members.html
 share/doc/qwt/html/class_qwt_raster_data.html
 share/doc/qwt/html/class_qwt_raster_data.js
 share/doc/qwt/html/class_qwt_raster_data__inherit__graph.map
 share/doc/qwt/html/class_qwt_raster_data__inherit__graph.svg
+share/doc/qwt/html/class_qwt_raster_data__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_rich_text_engine-members.html
 share/doc/qwt/html/class_qwt_rich_text_engine.html
 share/doc/qwt/html/class_qwt_rich_text_engine.js
 share/doc/qwt/html/class_qwt_rich_text_engine__inherit__graph.map
 share/doc/qwt/html/class_qwt_rich_text_engine__inherit__graph.svg
+share/doc/qwt/html/class_qwt_rich_text_engine__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_round_scale_draw-members.html
 share/doc/qwt/html/class_qwt_round_scale_draw.html
 share/doc/qwt/html/class_qwt_round_scale_draw.js
 share/doc/qwt/html/class_qwt_round_scale_draw__inherit__graph.map
 share/doc/qwt/html/class_qwt_round_scale_draw__inherit__graph.svg
+share/doc/qwt/html/class_qwt_round_scale_draw__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_sampling_thread-members.html
 share/doc/qwt/html/class_qwt_sampling_thread.html
 share/doc/qwt/html/class_qwt_sampling_thread.js
 share/doc/qwt/html/class_qwt_sampling_thread__inherit__graph.map
 share/doc/qwt/html/class_qwt_sampling_thread__inherit__graph.svg
+share/doc/qwt/html/class_qwt_sampling_thread__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_saturation_value_color_map-members.html
 share/doc/qwt/html/class_qwt_saturation_value_color_map.html
 share/doc/qwt/html/class_qwt_saturation_value_color_map.js
 share/doc/qwt/html/class_qwt_saturation_value_color_map__inherit__graph.map
 share/doc/qwt/html/class_qwt_saturation_value_color_map__inherit__graph.svg
+share/doc/qwt/html/class_qwt_saturation_value_color_map__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_scale_arithmetic-members.html
 share/doc/qwt/html/class_qwt_scale_arithmetic.html
 share/doc/qwt/html/class_qwt_scale_div-members.html
@@ -1117,11 +1017,13 @@ share/doc/qwt/html/class_qwt_scale_draw.html
 share/doc/qwt/html/class_qwt_scale_draw.js
 share/doc/qwt/html/class_qwt_scale_draw__inherit__graph.map
 share/doc/qwt/html/class_qwt_scale_draw__inherit__graph.svg
+share/doc/qwt/html/class_qwt_scale_draw__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_scale_engine-members.html
 share/doc/qwt/html/class_qwt_scale_engine.html
 share/doc/qwt/html/class_qwt_scale_engine.js
 share/doc/qwt/html/class_qwt_scale_engine__inherit__graph.map
 share/doc/qwt/html/class_qwt_scale_engine__inherit__graph.svg
+share/doc/qwt/html/class_qwt_scale_engine__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_scale_map-members.html
 share/doc/qwt/html/class_qwt_scale_map.html
 share/doc/qwt/html/class_qwt_scale_map.js
@@ -1130,79 +1032,88 @@ share/doc/qwt/html/class_qwt_scale_widget.html
 share/doc/qwt/html/class_qwt_scale_widget.js
 share/doc/qwt/html/class_qwt_scale_widget__inherit__graph.map
 share/doc/qwt/html/class_qwt_scale_widget__inherit__graph.svg
+share/doc/qwt/html/class_qwt_scale_widget__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_series_data-members.html
 share/doc/qwt/html/class_qwt_series_data.html
 share/doc/qwt/html/class_qwt_series_data.js
 share/doc/qwt/html/class_qwt_series_data__inherit__graph.map
 share/doc/qwt/html/class_qwt_series_data__inherit__graph.svg
+share/doc/qwt/html/class_qwt_series_data__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_series_store-members.html
 share/doc/qwt/html/class_qwt_series_store.html
 share/doc/qwt/html/class_qwt_series_store.js
 share/doc/qwt/html/class_qwt_series_store__inherit__graph.map
 share/doc/qwt/html/class_qwt_series_store__inherit__graph.svg
+share/doc/qwt/html/class_qwt_series_store__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_set_sample-members.html
 share/doc/qwt/html/class_qwt_set_sample.html
 share/doc/qwt/html/class_qwt_set_sample.js
-share/doc/qwt/html/class_qwt_set_series_data-members.html
-share/doc/qwt/html/class_qwt_set_series_data.html
-share/doc/qwt/html/class_qwt_set_series_data.js
-share/doc/qwt/html/class_qwt_set_series_data__inherit__graph.map
-share/doc/qwt/html/class_qwt_set_series_data__inherit__graph.svg
 share/doc/qwt/html/class_qwt_simple_compass_rose-members.html
 share/doc/qwt/html/class_qwt_simple_compass_rose.html
 share/doc/qwt/html/class_qwt_simple_compass_rose.js
 share/doc/qwt/html/class_qwt_simple_compass_rose__inherit__graph.map
 share/doc/qwt/html/class_qwt_simple_compass_rose__inherit__graph.svg
+share/doc/qwt/html/class_qwt_simple_compass_rose__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_slider-members.html
 share/doc/qwt/html/class_qwt_slider.html
 share/doc/qwt/html/class_qwt_slider.js
 share/doc/qwt/html/class_qwt_slider__inherit__graph.map
 share/doc/qwt/html/class_qwt_slider__inherit__graph.svg
+share/doc/qwt/html/class_qwt_slider__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_spline-members.html
 share/doc/qwt/html/class_qwt_spline.html
 share/doc/qwt/html/class_qwt_spline.js
 share/doc/qwt/html/class_qwt_spline__inherit__graph.map
 share/doc/qwt/html/class_qwt_spline__inherit__graph.svg
+share/doc/qwt/html/class_qwt_spline__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_spline_basis-members.html
 share/doc/qwt/html/class_qwt_spline_basis.html
 share/doc/qwt/html/class_qwt_spline_basis.js
 share/doc/qwt/html/class_qwt_spline_basis__inherit__graph.map
 share/doc/qwt/html/class_qwt_spline_basis__inherit__graph.svg
+share/doc/qwt/html/class_qwt_spline_basis__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_spline_c1-members.html
 share/doc/qwt/html/class_qwt_spline_c1.html
 share/doc/qwt/html/class_qwt_spline_c1.js
 share/doc/qwt/html/class_qwt_spline_c1__inherit__graph.map
 share/doc/qwt/html/class_qwt_spline_c1__inherit__graph.svg
+share/doc/qwt/html/class_qwt_spline_c1__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_spline_c2-members.html
 share/doc/qwt/html/class_qwt_spline_c2.html
 share/doc/qwt/html/class_qwt_spline_c2.js
 share/doc/qwt/html/class_qwt_spline_c2__inherit__graph.map
 share/doc/qwt/html/class_qwt_spline_c2__inherit__graph.svg
+share/doc/qwt/html/class_qwt_spline_c2__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_spline_cubic-members.html
 share/doc/qwt/html/class_qwt_spline_cubic.html
 share/doc/qwt/html/class_qwt_spline_cubic.js
 share/doc/qwt/html/class_qwt_spline_cubic__inherit__graph.map
 share/doc/qwt/html/class_qwt_spline_cubic__inherit__graph.svg
+share/doc/qwt/html/class_qwt_spline_cubic__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_spline_curve_fitter-members.html
 share/doc/qwt/html/class_qwt_spline_curve_fitter.html
 share/doc/qwt/html/class_qwt_spline_curve_fitter.js
 share/doc/qwt/html/class_qwt_spline_curve_fitter__inherit__graph.map
 share/doc/qwt/html/class_qwt_spline_curve_fitter__inherit__graph.svg
+share/doc/qwt/html/class_qwt_spline_curve_fitter__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_spline_g1-members.html
 share/doc/qwt/html/class_qwt_spline_g1.html
 share/doc/qwt/html/class_qwt_spline_g1.js
 share/doc/qwt/html/class_qwt_spline_g1__inherit__graph.map
 share/doc/qwt/html/class_qwt_spline_g1__inherit__graph.svg
+share/doc/qwt/html/class_qwt_spline_g1__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_spline_interpolating-members.html
 share/doc/qwt/html/class_qwt_spline_interpolating.html
 share/doc/qwt/html/class_qwt_spline_interpolating.js
 share/doc/qwt/html/class_qwt_spline_interpolating__inherit__graph.map
 share/doc/qwt/html/class_qwt_spline_interpolating__inherit__graph.svg
+share/doc/qwt/html/class_qwt_spline_interpolating__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_spline_local-members.html
 share/doc/qwt/html/class_qwt_spline_local.html
 share/doc/qwt/html/class_qwt_spline_local.js
 share/doc/qwt/html/class_qwt_spline_local__inherit__graph.map
 share/doc/qwt/html/class_qwt_spline_local__inherit__graph.svg
+share/doc/qwt/html/class_qwt_spline_local__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_spline_parametrization-members.html
 share/doc/qwt/html/class_qwt_spline_parametrization.html
 share/doc/qwt/html/class_qwt_spline_parametrization.js
@@ -1211,6 +1122,7 @@ share/doc/qwt/html/class_qwt_spline_pleasing.html
 share/doc/qwt/html/class_qwt_spline_pleasing.js
 share/doc/qwt/html/class_qwt_spline_pleasing__inherit__graph.map
 share/doc/qwt/html/class_qwt_spline_pleasing__inherit__graph.svg
+share/doc/qwt/html/class_qwt_spline_pleasing__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_spline_polynomial-members.html
 share/doc/qwt/html/class_qwt_spline_polynomial.html
 share/doc/qwt/html/class_qwt_spline_polynomial.js
@@ -1222,6 +1134,7 @@ share/doc/qwt/html/class_qwt_synthetic_point_data.html
 share/doc/qwt/html/class_qwt_synthetic_point_data.js
 share/doc/qwt/html/class_qwt_synthetic_point_data__inherit__graph.map
 share/doc/qwt/html/class_qwt_synthetic_point_data__inherit__graph.svg
+share/doc/qwt/html/class_qwt_synthetic_point_data__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_system_clock-members.html
 share/doc/qwt/html/class_qwt_system_clock.html
 share/doc/qwt/html/class_qwt_system_clock.js
@@ -1233,41 +1146,37 @@ share/doc/qwt/html/class_qwt_text_engine.html
 share/doc/qwt/html/class_qwt_text_engine.js
 share/doc/qwt/html/class_qwt_text_engine__inherit__graph.map
 share/doc/qwt/html/class_qwt_text_engine__inherit__graph.svg
+share/doc/qwt/html/class_qwt_text_engine__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_text_label-members.html
 share/doc/qwt/html/class_qwt_text_label.html
 share/doc/qwt/html/class_qwt_text_label.js
 share/doc/qwt/html/class_qwt_text_label__inherit__graph.map
 share/doc/qwt/html/class_qwt_text_label__inherit__graph.svg
+share/doc/qwt/html/class_qwt_text_label__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_thermo-members.html
 share/doc/qwt/html/class_qwt_thermo.html
 share/doc/qwt/html/class_qwt_thermo.js
 share/doc/qwt/html/class_qwt_thermo__inherit__graph.map
 share/doc/qwt/html/class_qwt_thermo__inherit__graph.svg
-share/doc/qwt/html/class_qwt_trading_chart_data-members.html
-share/doc/qwt/html/class_qwt_trading_chart_data.html
-share/doc/qwt/html/class_qwt_trading_chart_data.js
-share/doc/qwt/html/class_qwt_trading_chart_data__inherit__graph.map
-share/doc/qwt/html/class_qwt_trading_chart_data__inherit__graph.svg
+share/doc/qwt/html/class_qwt_thermo__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_transform-members.html
 share/doc/qwt/html/class_qwt_transform.html
 share/doc/qwt/html/class_qwt_transform.js
 share/doc/qwt/html/class_qwt_transform__inherit__graph.map
 share/doc/qwt/html/class_qwt_transform__inherit__graph.svg
+share/doc/qwt/html/class_qwt_transform__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_value_point_data-members.html
 share/doc/qwt/html/class_qwt_value_point_data.html
 share/doc/qwt/html/class_qwt_value_point_data.js
 share/doc/qwt/html/class_qwt_value_point_data__inherit__graph.map
 share/doc/qwt/html/class_qwt_value_point_data__inherit__graph.svg
+share/doc/qwt/html/class_qwt_value_point_data__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_vector_field_arrow-members.html
 share/doc/qwt/html/class_qwt_vector_field_arrow.html
 share/doc/qwt/html/class_qwt_vector_field_arrow.js
 share/doc/qwt/html/class_qwt_vector_field_arrow__inherit__graph.map
 share/doc/qwt/html/class_qwt_vector_field_arrow__inherit__graph.svg
-share/doc/qwt/html/class_qwt_vector_field_data-members.html
-share/doc/qwt/html/class_qwt_vector_field_data.html
-share/doc/qwt/html/class_qwt_vector_field_data.js
-share/doc/qwt/html/class_qwt_vector_field_data__inherit__graph.map
-share/doc/qwt/html/class_qwt_vector_field_data__inherit__graph.svg
+share/doc/qwt/html/class_qwt_vector_field_arrow__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_vector_field_sample-members.html
 share/doc/qwt/html/class_qwt_vector_field_sample.html
 share/doc/qwt/html/class_qwt_vector_field_sample.js
@@ -1276,29 +1185,36 @@ share/doc/qwt/html/class_qwt_vector_field_symbol.html
 share/doc/qwt/html/class_qwt_vector_field_symbol.js
 share/doc/qwt/html/class_qwt_vector_field_symbol__inherit__graph.map
 share/doc/qwt/html/class_qwt_vector_field_symbol__inherit__graph.svg
+share/doc/qwt/html/class_qwt_vector_field_symbol__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_vector_field_thin_arrow-members.html
 share/doc/qwt/html/class_qwt_vector_field_thin_arrow.html
 share/doc/qwt/html/class_qwt_vector_field_thin_arrow.js
 share/doc/qwt/html/class_qwt_vector_field_thin_arrow__inherit__graph.map
 share/doc/qwt/html/class_qwt_vector_field_thin_arrow__inherit__graph.svg
+share/doc/qwt/html/class_qwt_vector_field_thin_arrow__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_weeding_curve_fitter-members.html
 share/doc/qwt/html/class_qwt_weeding_curve_fitter.html
 share/doc/qwt/html/class_qwt_weeding_curve_fitter.js
 share/doc/qwt/html/class_qwt_weeding_curve_fitter__inherit__graph.map
 share/doc/qwt/html/class_qwt_weeding_curve_fitter__inherit__graph.svg
+share/doc/qwt/html/class_qwt_weeding_curve_fitter__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_wheel-members.html
 share/doc/qwt/html/class_qwt_wheel.html
 share/doc/qwt/html/class_qwt_wheel.js
 share/doc/qwt/html/class_qwt_wheel__inherit__graph.map
 share/doc/qwt/html/class_qwt_wheel__inherit__graph.svg
+share/doc/qwt/html/class_qwt_wheel__inherit__graph_org.svg
 share/doc/qwt/html/class_qwt_widget_overlay-members.html
 share/doc/qwt/html/class_qwt_widget_overlay.html
 share/doc/qwt/html/class_qwt_widget_overlay.js
 share/doc/qwt/html/class_qwt_widget_overlay__inherit__graph.map
 share/doc/qwt/html/class_qwt_widget_overlay__inherit__graph.svg
+share/doc/qwt/html/class_qwt_widget_overlay__inherit__graph_org.svg
 share/doc/qwt/html/classes.html
+share/doc/qwt/html/clipboard.js
 share/doc/qwt/html/closed.png
 share/doc/qwt/html/controlscreenshots.html
+share/doc/qwt/html/cookie.js
 share/doc/qwt/html/cpuplot-600x400.png
 share/doc/qwt/html/cpuplot-oily-600x400.png
 share/doc/qwt/html/curves.png
@@ -1307,12 +1223,16 @@ share/doc/qwt/html/dials1.png
 share/doc/qwt/html/dials2.png
 share/doc/qwt/html/dir_68267d1309a1af8e8297ef4c3efbcdba.html
 share/doc/qwt/html/distrowatch-600x400.png
-share/doc/qwt/html/doc.png
+share/doc/qwt/html/doc.svg
+share/doc/qwt/html/docd.svg
 share/doc/qwt/html/doxygen.css
 share/doc/qwt/html/doxygen.svg
+share/doc/qwt/html/doxygen_crawl.html
 share/doc/qwt/html/dynsections.js
-share/doc/qwt/html/folderclosed.png
-share/doc/qwt/html/folderopen.png
+share/doc/qwt/html/folderclosed.svg
+share/doc/qwt/html/folderclosedd.svg
+share/doc/qwt/html/folderopen.svg
+share/doc/qwt/html/folderopend.svg
 share/doc/qwt/html/friedberg-bars-600x400.png
 share/doc/qwt/html/friedberg-tube-600x400.png
 share/doc/qwt/html/functions.html
@@ -1560,6 +1480,16 @@ share/doc/qwt/html/inherit_graph_8.map
 share/doc/qwt/html/inherit_graph_8.svg
 share/doc/qwt/html/inherit_graph_80.map
 share/doc/qwt/html/inherit_graph_80.svg
+share/doc/qwt/html/inherit_graph_81.map
+share/doc/qwt/html/inherit_graph_81.svg
+share/doc/qwt/html/inherit_graph_82.map
+share/doc/qwt/html/inherit_graph_82.svg
+share/doc/qwt/html/inherit_graph_83.map
+share/doc/qwt/html/inherit_graph_83.svg
+share/doc/qwt/html/inherit_graph_84.map
+share/doc/qwt/html/inherit_graph_84.svg
+share/doc/qwt/html/inherit_graph_85.map
+share/doc/qwt/html/inherit_graph_85.svg
 share/doc/qwt/html/inherit_graph_9.map
 share/doc/qwt/html/inherit_graph_9.svg
 share/doc/qwt/html/inherits.html
@@ -1568,6 +1498,8 @@ share/doc/qwt/html/jquery.js
 share/doc/qwt/html/knob.png
 share/doc/qwt/html/menu.js
 share/doc/qwt/html/menudata.js
+share/doc/qwt/html/minus.svg
+share/doc/qwt/html/minusd.svg
 share/doc/qwt/html/namespace_qwt_axis.html
 share/doc/qwt/html/namespace_qwt_clipper.html
 share/doc/qwt/html/namespacemembers.html
@@ -1577,8 +1509,10 @@ share/doc/qwt/html/namespacemembers_func.html
 share/doc/qwt/html/namespaces.html
 share/doc/qwt/html/namespaces_dup.js
 share/doc/qwt/html/nav_f.png
+share/doc/qwt/html/nav_fd.png
 share/doc/qwt/html/nav_g.png
 share/doc/qwt/html/nav_h.png
+share/doc/qwt/html/nav_hd.png
 share/doc/qwt/html/navtree.css
 share/doc/qwt/html/navtree.js
 share/doc/qwt/html/navtreedata.js
@@ -1600,6 +1534,8 @@ share/doc/qwt/html/open.png
 share/doc/qwt/html/otherscreenshots.html
 share/doc/qwt/html/pages.html
 share/doc/qwt/html/plot.png
+share/doc/qwt/html/plus.svg
+share/doc/qwt/html/plusd.svg
 share/doc/qwt/html/qwt_8cpp_source.html
 share/doc/qwt/html/qwt__abstract__legend_8cpp_source.html
 share/doc/qwt/html/qwt__abstract__legend_8h_source.html
@@ -1857,282 +1793,164 @@ share/doc/qwt/html/radio.png
 share/doc/qwt/html/resize.js
 share/doc/qwt/html/scatterplot-600x400.png
 share/doc/qwt/html/search/
-share/doc/qwt/html/search/all_0.html
 share/doc/qwt/html/search/all_0.js
-share/doc/qwt/html/search/all_1.html
 share/doc/qwt/html/search/all_1.js
-share/doc/qwt/html/search/all_10.html
 share/doc/qwt/html/search/all_10.js
-share/doc/qwt/html/search/all_11.html
 share/doc/qwt/html/search/all_11.js
-share/doc/qwt/html/search/all_12.html
 share/doc/qwt/html/search/all_12.js
-share/doc/qwt/html/search/all_13.html
 share/doc/qwt/html/search/all_13.js
-share/doc/qwt/html/search/all_14.html
 share/doc/qwt/html/search/all_14.js
-share/doc/qwt/html/search/all_15.html
 share/doc/qwt/html/search/all_15.js
-share/doc/qwt/html/search/all_16.html
 share/doc/qwt/html/search/all_16.js
-share/doc/qwt/html/search/all_17.html
 share/doc/qwt/html/search/all_17.js
-share/doc/qwt/html/search/all_18.html
 share/doc/qwt/html/search/all_18.js
-share/doc/qwt/html/search/all_19.html
 share/doc/qwt/html/search/all_19.js
-share/doc/qwt/html/search/all_1a.html
 share/doc/qwt/html/search/all_1a.js
-share/doc/qwt/html/search/all_2.html
+share/doc/qwt/html/search/all_1b.js
+share/doc/qwt/html/search/all_1c.js
+share/doc/qwt/html/search/all_1d.js
+share/doc/qwt/html/search/all_1e.js
 share/doc/qwt/html/search/all_2.js
-share/doc/qwt/html/search/all_3.html
 share/doc/qwt/html/search/all_3.js
-share/doc/qwt/html/search/all_4.html
 share/doc/qwt/html/search/all_4.js
-share/doc/qwt/html/search/all_5.html
 share/doc/qwt/html/search/all_5.js
-share/doc/qwt/html/search/all_6.html
 share/doc/qwt/html/search/all_6.js
-share/doc/qwt/html/search/all_7.html
 share/doc/qwt/html/search/all_7.js
-share/doc/qwt/html/search/all_8.html
 share/doc/qwt/html/search/all_8.js
-share/doc/qwt/html/search/all_9.html
 share/doc/qwt/html/search/all_9.js
-share/doc/qwt/html/search/all_a.html
 share/doc/qwt/html/search/all_a.js
-share/doc/qwt/html/search/all_b.html
 share/doc/qwt/html/search/all_b.js
-share/doc/qwt/html/search/all_c.html
 share/doc/qwt/html/search/all_c.js
-share/doc/qwt/html/search/all_d.html
 share/doc/qwt/html/search/all_d.js
-share/doc/qwt/html/search/all_e.html
 share/doc/qwt/html/search/all_e.js
-share/doc/qwt/html/search/all_f.html
 share/doc/qwt/html/search/all_f.js
-share/doc/qwt/html/search/classes_0.html
 share/doc/qwt/html/search/classes_0.js
-share/doc/qwt/html/search/classes_1.html
 share/doc/qwt/html/search/classes_1.js
-share/doc/qwt/html/search/classes_2.html
 share/doc/qwt/html/search/classes_2.js
 share/doc/qwt/html/search/close.svg
-share/doc/qwt/html/search/enums_0.html
 share/doc/qwt/html/search/enums_0.js
-share/doc/qwt/html/search/enums_1.html
 share/doc/qwt/html/search/enums_1.js
-share/doc/qwt/html/search/enums_10.html
 share/doc/qwt/html/search/enums_10.js
-share/doc/qwt/html/search/enums_11.html
 share/doc/qwt/html/search/enums_11.js
-share/doc/qwt/html/search/enums_2.html
 share/doc/qwt/html/search/enums_2.js
-share/doc/qwt/html/search/enums_3.html
 share/doc/qwt/html/search/enums_3.js
-share/doc/qwt/html/search/enums_4.html
 share/doc/qwt/html/search/enums_4.js
-share/doc/qwt/html/search/enums_5.html
 share/doc/qwt/html/search/enums_5.js
-share/doc/qwt/html/search/enums_6.html
 share/doc/qwt/html/search/enums_6.js
-share/doc/qwt/html/search/enums_7.html
 share/doc/qwt/html/search/enums_7.js
-share/doc/qwt/html/search/enums_8.html
 share/doc/qwt/html/search/enums_8.js
-share/doc/qwt/html/search/enums_9.html
 share/doc/qwt/html/search/enums_9.js
-share/doc/qwt/html/search/enums_a.html
 share/doc/qwt/html/search/enums_a.js
-share/doc/qwt/html/search/enums_b.html
 share/doc/qwt/html/search/enums_b.js
-share/doc/qwt/html/search/enums_c.html
 share/doc/qwt/html/search/enums_c.js
-share/doc/qwt/html/search/enums_d.html
 share/doc/qwt/html/search/enums_d.js
-share/doc/qwt/html/search/enums_e.html
 share/doc/qwt/html/search/enums_e.js
-share/doc/qwt/html/search/enums_f.html
 share/doc/qwt/html/search/enums_f.js
-share/doc/qwt/html/search/enumvalues_0.html
 share/doc/qwt/html/search/enumvalues_0.js
-share/doc/qwt/html/search/enumvalues_1.html
 share/doc/qwt/html/search/enumvalues_1.js
-share/doc/qwt/html/search/enumvalues_10.html
 share/doc/qwt/html/search/enumvalues_10.js
-share/doc/qwt/html/search/enumvalues_11.html
 share/doc/qwt/html/search/enumvalues_11.js
-share/doc/qwt/html/search/enumvalues_12.html
 share/doc/qwt/html/search/enumvalues_12.js
-share/doc/qwt/html/search/enumvalues_13.html
 share/doc/qwt/html/search/enumvalues_13.js
-share/doc/qwt/html/search/enumvalues_14.html
 share/doc/qwt/html/search/enumvalues_14.js
-share/doc/qwt/html/search/enumvalues_15.html
 share/doc/qwt/html/search/enumvalues_15.js
-share/doc/qwt/html/search/enumvalues_16.html
 share/doc/qwt/html/search/enumvalues_16.js
-share/doc/qwt/html/search/enumvalues_17.html
 share/doc/qwt/html/search/enumvalues_17.js
-share/doc/qwt/html/search/enumvalues_2.html
 share/doc/qwt/html/search/enumvalues_2.js
-share/doc/qwt/html/search/enumvalues_3.html
 share/doc/qwt/html/search/enumvalues_3.js
-share/doc/qwt/html/search/enumvalues_4.html
 share/doc/qwt/html/search/enumvalues_4.js
-share/doc/qwt/html/search/enumvalues_5.html
 share/doc/qwt/html/search/enumvalues_5.js
-share/doc/qwt/html/search/enumvalues_6.html
 share/doc/qwt/html/search/enumvalues_6.js
-share/doc/qwt/html/search/enumvalues_7.html
 share/doc/qwt/html/search/enumvalues_7.js
-share/doc/qwt/html/search/enumvalues_8.html
 share/doc/qwt/html/search/enumvalues_8.js
-share/doc/qwt/html/search/enumvalues_9.html
 share/doc/qwt/html/search/enumvalues_9.js
-share/doc/qwt/html/search/enumvalues_a.html
 share/doc/qwt/html/search/enumvalues_a.js
-share/doc/qwt/html/search/enumvalues_b.html
 share/doc/qwt/html/search/enumvalues_b.js
-share/doc/qwt/html/search/enumvalues_c.html
 share/doc/qwt/html/search/enumvalues_c.js
-share/doc/qwt/html/search/enumvalues_d.html
 share/doc/qwt/html/search/enumvalues_d.js
-share/doc/qwt/html/search/enumvalues_e.html
 share/doc/qwt/html/search/enumvalues_e.js
-share/doc/qwt/html/search/enumvalues_f.html
 share/doc/qwt/html/search/enumvalues_f.js
-share/doc/qwt/html/search/functions_0.html
 share/doc/qwt/html/search/functions_0.js
-share/doc/qwt/html/search/functions_1.html
 share/doc/qwt/html/search/functions_1.js
-share/doc/qwt/html/search/functions_10.html
 share/doc/qwt/html/search/functions_10.js
-share/doc/qwt/html/search/functions_11.html
 share/doc/qwt/html/search/functions_11.js
-share/doc/qwt/html/search/functions_12.html
 share/doc/qwt/html/search/functions_12.js
-share/doc/qwt/html/search/functions_13.html
 share/doc/qwt/html/search/functions_13.js
-share/doc/qwt/html/search/functions_14.html
 share/doc/qwt/html/search/functions_14.js
-share/doc/qwt/html/search/functions_15.html
 share/doc/qwt/html/search/functions_15.js
-share/doc/qwt/html/search/functions_16.html
 share/doc/qwt/html/search/functions_16.js
-share/doc/qwt/html/search/functions_17.html
 share/doc/qwt/html/search/functions_17.js
-share/doc/qwt/html/search/functions_18.html
 share/doc/qwt/html/search/functions_18.js
-share/doc/qwt/html/search/functions_19.html
 share/doc/qwt/html/search/functions_19.js
-share/doc/qwt/html/search/functions_2.html
 share/doc/qwt/html/search/functions_2.js
-share/doc/qwt/html/search/functions_3.html
 share/doc/qwt/html/search/functions_3.js
-share/doc/qwt/html/search/functions_4.html
 share/doc/qwt/html/search/functions_4.js
-share/doc/qwt/html/search/functions_5.html
 share/doc/qwt/html/search/functions_5.js
-share/doc/qwt/html/search/functions_6.html
 share/doc/qwt/html/search/functions_6.js
-share/doc/qwt/html/search/functions_7.html
 share/doc/qwt/html/search/functions_7.js
-share/doc/qwt/html/search/functions_8.html
 share/doc/qwt/html/search/functions_8.js
-share/doc/qwt/html/search/functions_9.html
 share/doc/qwt/html/search/functions_9.js
-share/doc/qwt/html/search/functions_a.html
 share/doc/qwt/html/search/functions_a.js
-share/doc/qwt/html/search/functions_b.html
 share/doc/qwt/html/search/functions_b.js
-share/doc/qwt/html/search/functions_c.html
 share/doc/qwt/html/search/functions_c.js
-share/doc/qwt/html/search/functions_d.html
 share/doc/qwt/html/search/functions_d.js
-share/doc/qwt/html/search/functions_e.html
 share/doc/qwt/html/search/functions_e.js
-share/doc/qwt/html/search/functions_f.html
 share/doc/qwt/html/search/functions_f.js
+share/doc/qwt/html/search/mag.svg
+share/doc/qwt/html/search/mag_d.svg
 share/doc/qwt/html/search/mag_sel.svg
-share/doc/qwt/html/search/namespaces_0.html
+share/doc/qwt/html/search/mag_seld.svg
 share/doc/qwt/html/search/namespaces_0.js
-share/doc/qwt/html/search/nomatches.html
-share/doc/qwt/html/search/pages_0.html
 share/doc/qwt/html/search/pages_0.js
-share/doc/qwt/html/search/pages_1.html
 share/doc/qwt/html/search/pages_1.js
-share/doc/qwt/html/search/pages_2.html
+share/doc/qwt/html/search/pages_10.js
+share/doc/qwt/html/search/pages_11.js
+share/doc/qwt/html/search/pages_12.js
+share/doc/qwt/html/search/pages_13.js
+share/doc/qwt/html/search/pages_14.js
 share/doc/qwt/html/search/pages_2.js
-share/doc/qwt/html/search/pages_3.html
 share/doc/qwt/html/search/pages_3.js
-share/doc/qwt/html/search/pages_4.html
 share/doc/qwt/html/search/pages_4.js
-share/doc/qwt/html/search/pages_5.html
 share/doc/qwt/html/search/pages_5.js
-share/doc/qwt/html/search/pages_6.html
 share/doc/qwt/html/search/pages_6.js
-share/doc/qwt/html/search/pages_7.html
 share/doc/qwt/html/search/pages_7.js
+share/doc/qwt/html/search/pages_8.js
+share/doc/qwt/html/search/pages_9.js
+share/doc/qwt/html/search/pages_a.js
+share/doc/qwt/html/search/pages_b.js
+share/doc/qwt/html/search/pages_c.js
+share/doc/qwt/html/search/pages_d.js
+share/doc/qwt/html/search/pages_e.js
+share/doc/qwt/html/search/pages_f.js
 share/doc/qwt/html/search/search.css
 share/doc/qwt/html/search/search.js
-share/doc/qwt/html/search/search_l.png
-share/doc/qwt/html/search/search_m.png
-share/doc/qwt/html/search/search_r.png
 share/doc/qwt/html/search/searchdata.js
-share/doc/qwt/html/search/typedefs_0.html
 share/doc/qwt/html/search/typedefs_0.js
-share/doc/qwt/html/search/typedefs_1.html
 share/doc/qwt/html/search/typedefs_1.js
-share/doc/qwt/html/search/typedefs_2.html
 share/doc/qwt/html/search/typedefs_2.js
-share/doc/qwt/html/search/typedefs_3.html
 share/doc/qwt/html/search/typedefs_3.js
-share/doc/qwt/html/search/typedefs_4.html
 share/doc/qwt/html/search/typedefs_4.js
-share/doc/qwt/html/search/typedefs_5.html
 share/doc/qwt/html/search/typedefs_5.js
-share/doc/qwt/html/search/typedefs_6.html
 share/doc/qwt/html/search/typedefs_6.js
-share/doc/qwt/html/search/typedefs_7.html
 share/doc/qwt/html/search/typedefs_7.js
-share/doc/qwt/html/search/typedefs_8.html
 share/doc/qwt/html/search/typedefs_8.js
-share/doc/qwt/html/search/typedefs_9.html
 share/doc/qwt/html/search/typedefs_9.js
-share/doc/qwt/html/search/typedefs_a.html
 share/doc/qwt/html/search/typedefs_a.js
-share/doc/qwt/html/search/typedefs_b.html
 share/doc/qwt/html/search/typedefs_b.js
-share/doc/qwt/html/search/typedefs_c.html
 share/doc/qwt/html/search/typedefs_c.js
-share/doc/qwt/html/search/variables_0.html
 share/doc/qwt/html/search/variables_0.js
-share/doc/qwt/html/search/variables_1.html
 share/doc/qwt/html/search/variables_1.js
-share/doc/qwt/html/search/variables_2.html
 share/doc/qwt/html/search/variables_2.js
-share/doc/qwt/html/search/variables_3.html
 share/doc/qwt/html/search/variables_3.js
-share/doc/qwt/html/search/variables_4.html
 share/doc/qwt/html/search/variables_4.js
-share/doc/qwt/html/search/variables_5.html
 share/doc/qwt/html/search/variables_5.js
-share/doc/qwt/html/search/variables_6.html
 share/doc/qwt/html/search/variables_6.js
-share/doc/qwt/html/search/variables_7.html
 share/doc/qwt/html/search/variables_7.js
-share/doc/qwt/html/search/variables_8.html
 share/doc/qwt/html/search/variables_8.js
-share/doc/qwt/html/search/variables_9.html
 share/doc/qwt/html/search/variables_9.js
-share/doc/qwt/html/search/variables_a.html
 share/doc/qwt/html/search/variables_a.js
-share/doc/qwt/html/search/variables_b.html
 share/doc/qwt/html/search/variables_b.js
-share/doc/qwt/html/search/variables_c.html
 share/doc/qwt/html/search/variables_c.js
-share/doc/qwt/html/search/variables_d.html
 share/doc/qwt/html/search/variables_d.js
 share/doc/qwt/html/sliders.png
 share/doc/qwt/html/spectrogram-contour1-600x400.png
@@ -2143,15 +1961,19 @@ share/doc/qwt/html/spectrogram-saturation-600x400.png
 share/doc/qwt/html/spectrogram-value-600x400.png
 share/doc/qwt/html/spectrogramscreenshots.html
 share/doc/qwt/html/splitbar.png
+share/doc/qwt/html/splitbard.png
 share/doc/qwt/html/stockchart-600x400.png
-share/doc/qwt/html/svgpan.js
+share/doc/qwt/html/svg.min.js
 share/doc/qwt/html/sync_off.png
 share/doc/qwt/html/sync_on.png
 share/doc/qwt/html/sysinfo.png
 share/doc/qwt/html/tab_a.png
+share/doc/qwt/html/tab_ad.png
 share/doc/qwt/html/tab_b.png
+share/doc/qwt/html/tab_bd.png
 share/doc/qwt/html/tab_h.png
+share/doc/qwt/html/tab_hd.png
 share/doc/qwt/html/tab_s.png
+share/doc/qwt/html/tab_sd.png
 share/doc/qwt/html/tabs.css
 share/doc/qwt/html/tvplot-600x400.png
-share/doc/qwt/man/

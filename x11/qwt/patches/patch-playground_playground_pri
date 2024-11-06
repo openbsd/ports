@@ -1,0 +1,12 @@
+Index: playground/playground.pri
+--- playground/playground.pri.orig
++++ playground/playground.pri
+@@ -35,7 +35,7 @@ else {
+ 
+ 
+ QMAKE_RPATHDIR *= $${QWT_ROOT}/lib
+-qwtAddLibrary($${QWT_OUT_ROOT}/lib, qwt)
++qwtAddLibrary($${QWT_OUT_ROOT}/lib, qwt${QTLIBSUFFIX})
+ 
+ greaterThan(QT_MAJOR_VERSION, 4) {
+ 

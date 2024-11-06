@@ -1,0 +1,9 @@
+Index: qwt.prf
+--- qwt.prf.orig
++++ qwt.prf
+@@ -44,4 +44,4 @@ else {
+ }   
+ 
+ # QMAKE_RPATHDIR *= $${QWT_INSTALL_LIBS}
+-qwtAddLibrary($${QWT_INSTALL_LIBS}, qwt)
++qwtAddLibrary($${QWT_INSTALL_LIBS}, qwt${QTLIBSUFFIX})

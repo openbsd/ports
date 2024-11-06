@@ -1,0 +1,12 @@
+Index: designer/designer.pro
+--- designer/designer.pro.orig
++++ designer/designer.pro
+@@ -99,7 +99,7 @@ contains(QWT_CONFIG, QwtDesigner) {
+         # into the plugin. Not supported on Windows !
+ 
+         QMAKE_RPATHDIR *= $${QWT_INSTALL_LIBS}
+-        qwtAddLibrary($${QWT_OUT_ROOT}/lib, qwt)
++        qwtAddLibrary($${QWT_OUT_ROOT}/lib, qwt${QTLIBSUFFIX})
+ 
+         contains(QWT_CONFIG, QwtDll) {
+ 

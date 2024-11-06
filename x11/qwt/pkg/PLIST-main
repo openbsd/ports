@@ -1,0 +1,9 @@
+@option no-default-conflict
+@conflict qwt-<6.3.0
+!%%qt6%%
+%%qt6%%
+lib/${QTVER}/mkspecs/features/qwt.prf
+lib/${QTVER}/mkspecs/features/qwtconfig.pri
+lib/${QTVER}/mkspecs/features/qwtfunctions.pri
+lib/${QTVER}/plugins/designer/
+lib/${QTVER}/plugins/designer/libqwt_designer_plugin.so

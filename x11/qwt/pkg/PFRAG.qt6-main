@@ -1,0 +1,4 @@
+@conflict qwt-*-qt6
+@pkgpath x11/qwt,qt6
+@lib lib/libqwt${QTLIBSUFFIX}.so.${LIBqwt-qt6_VERSION}
+lib/pkgconfig/Qt6Qwt6.pc
