@@ -108,7 +108,7 @@ $not_for->bind_columns(\($arch));
 
 my $category;
 my $cat_req = $db->prepare(
-	q{select
+	q{select distinct
 		_categorykeys.value
 	    from _categories
 	    	join _categorykeys on _categorykeys.keyref=_categories.value
