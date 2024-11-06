@@ -12,7 +12,6 @@
      SUBDIR += calculator
      SUBDIR += calendar
      SUBDIR += characters
-     SUBDIR += cheese
      SUBDIR += clocks
      SUBDIR += color-manager
      SUBDIR += connections
