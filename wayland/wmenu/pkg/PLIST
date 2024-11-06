@@ -1,3 +1,4 @@
 @bin bin/wmenu
+@bin bin/wmenu-run
 bin/wmenu_path
 @man man/man1/wmenu.1

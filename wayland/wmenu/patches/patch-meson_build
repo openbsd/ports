@@ -22,7 +22,15 @@ Index: meson.build
  
  subdir('protocols')
  subdir('docs')
-@@ -46,6 +49,7 @@ executable(
+@@ -49,6 +52,7 @@ executable(
+ 		pango,
+ 		pangocairo,
+ 		rt,
++		epoll,
+ 		wayland_client,
+ 		wayland_protos,
+ 		xkbcommon,
+@@ -72,6 +76,7 @@ executable(
  		pango,
  		pangocairo,
  		rt,

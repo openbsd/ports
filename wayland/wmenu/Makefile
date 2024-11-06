@@ -1,8 +1,8 @@
 COMMENT =	dynamic menu for sway and wlroots based Wayland compositors
 
-V =		0.1.6
+V =		0.1.9
 DISTNAME =	wmenu-${V}
-SITES =		https://git.sr.ht/~adnano/wmenu/
+SITES =		https://codeberg.org/adnano/wmenu/
 DISTFILES =     wmenu-{archive/}${V}${EXTRACT_SUFX}
 
 CATEGORIES =	wayland
@@ -14,6 +14,8 @@ COMPILER =      base-clang ports-gcc
 COMPILER_LANGS = c
 
 MODULES =	devel/meson
+
+WRKDIST =	${WRKDIR}/wmenu
 
 BUILD_DEPENDS =	textproc/scdoc \
 		wayland/wayland-protocols
