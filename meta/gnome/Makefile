@@ -8,7 +8,7 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
-REVISION-extras=	0
+REVISION-extras=	1
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -120,7 +120,6 @@ RUN_DEPENDS-extras +=	sysutils/dspy \
 ################################################################################
 
 RUN_DEPENDS-extras +=	mail/evolution \
-			x11/gnome/cheese \
 			x11/gnome/dictionary \
 			x11/gnome/endeavour \
 			x11/gnome/file-roller,-nautilus \
