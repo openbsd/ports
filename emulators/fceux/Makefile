@@ -1,25 +1,26 @@
 COMMENT =		emulator for Nintendo Entertainment System
 
-V =			2.6.4
-DISTNAME =		fceux-${V}
 CATEGORIES =		emulators games
 
 HOMEPAGE =		https://fceux.com/web/home.html
 
+GH_ACCOUNT =	TASEmulators
+GH_PROJECT =	fceux
+GH_TAGNAME =	v2.6.6
+
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-SITES =			${SITE_SOURCEFORGE:=fceultra/}
-
 WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB}
-WANTLIB += avcodec avformat avutil GL GLU Qt5Core
+WANTLIB += archive avcodec avformat avutil GL GLU Qt5Core
 WANTLIB += Qt5Gui Qt5OpenGL Qt5Widgets SDL2
 WANTLIB += swresample swscale c m minizip x264 x265 z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
 RUN_DEPENDS =		devel/desktop-file-utils
-LIB_DEPENDS =		archivers/minizip \
+LIB_DEPENDS =		archivers/libarchive \
+			archivers/minizip \
 			devel/sdl2 \
 			graphics/ffmpeg \
 			multimedia/x264

@@ -1,7 +1,7 @@
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -145,7 +145,7 @@ else(WIN32)
+@@ -184,7 +184,7 @@ else(WIN32)
    endif()
  
    # Check for LUA
