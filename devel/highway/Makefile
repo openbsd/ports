@@ -2,12 +2,12 @@ COMMENT =	length-agnostic SIMD with runtime dispatch
 
 GH_ACCOUNT =	google
 GH_PROJECT =	highway
-GH_TAGNAME =	1.1.0
+GH_TAGNAME =	1.2.0
 
 CATEGORIES =	devel
 
-SHARED_LIBS +=	hwy		0.1 # 0.0
-SHARED_LIBS +=	hwy_contrib	0.1 # 0.0
+SHARED_LIBS +=	hwy		0.2 # 0.0
+SHARED_LIBS +=	hwy_contrib	0.2 # 0.0
 SHARED_LIBS +=	hwy_test	0.1 # 0.0
 
 # Apache-2.0
