@@ -1,0 +1,9 @@
+Krill is a free, open source RPKI Certificate Authority that lets
+you run delegated RPKI under one or multiple Regional Internet
+Registries (RIRs). Through its built-in publication server, Krill
+can publish Route Origin Authorisations (ROAs) on your own servers
+or with a third party.
+
+Written in the Rust programming language, Krill is extremely robust
+and lightweight, letting you run it on minimalist hardware. A dual
+CPU virtual machine with 2GB available RAM is fine for most workloads.

@@ -1,0 +1,33 @@
+@newgroup _krill:555
+@newuser _krill:555:_krill::Krill:${LOCALSTATEDIR}/db/krill:/sbin/nologin
+@rcscript ${RCDIR}/krill
+@extraunexec rm -rf ${LOCALSTATEDIR}/krill/
+@bin bin/krill
+@bin bin/krillc
+@bin bin/krillta
+@bin bin/krillup
+@mode 0750
+@owner _krill
+@group _krill
+@sample ${LOCALSTATEDIR}/db/krill/
+@mode
+@owner
+@group
+@man man/man1/krill.1
+@man man/man1/krillc.1
+@man man/man1/krillta.1
+@man man/man1/krillup.1
+share/examples/krill/
+share/examples/krill/abac.polar
+share/examples/krill/aliases.polar
+share/examples/krill/krill-hsm.conf
+share/examples/krill/krill-multi-user.conf
+share/examples/krill/krill-pubd.conf
+share/examples/krill/krill-testbed.conf
+share/examples/krill/rbac.polar
+share/examples/krill/roles.polar
+share/examples/krill/rules.polar
+share/examples/krill/krill.conf
+@mode 0640
+@group _krill
+@sample ${SYSCONFDIR}/krill.conf
