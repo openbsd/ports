@@ -1,7 +1,7 @@
 Index: src/arm64/qcom/x1e80100-hp-omnibook-x14.dts
 --- src/arm64/qcom/x1e80100-hp-omnibook-x14.dts.orig
 +++ src/arm64/qcom/x1e80100-hp-omnibook-x14.dts
-@@ -0,0 +1,728 @@
+@@ -0,0 +1,732 @@
 +// SPDX-License-Identifier: BSD-3-Clause
 +/*
 + * Copyright (c) 2023 Qualcomm Innovation Center, Inc. All rights reserved.
@@ -729,4 +729,8 @@ Index: src/arm64/qcom/x1e80100-hp-omnibook-x14.dts
 +
 +&usb_1_ss1_qmpphy_out {
 +	remote-endpoint = <&pmic_glink_ss1_ss_in>;
++};
++
++&usb_mp {
++	status = "okay";
 +};
