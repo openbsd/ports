@@ -199,6 +199,7 @@
      SUBDIR += kissd
      SUBDIR += knot
      SUBDIR += konversation
+     SUBDIR += krill
      SUBDIR += kristall
      SUBDIR += ktorrent
      SUBDIR += kurly
