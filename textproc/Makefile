@@ -34,6 +34,7 @@
      SUBDIR += codespell
      SUBDIR += crossfire
      SUBDIR += crunch
+     SUBDIR += csvlens
      SUBDIR += csvquote
      SUBDIR += dblatex
      SUBDIR += delta
