@@ -18,7 +18,7 @@ SITES ?=		# empty
 EXTRACT_SUFX ?=		.tar.xz
 .  if (defined(GNOME_PROJECT) && defined(GNOME_VERSION))
 DISTNAME=		${GNOME_PROJECT}-${GNOME_VERSION}
-HOMEPAGE ?=		https://wiki.gnome.org/
+HOMEPAGE ?=		https://apps.gnome.org/
 .    if ${GNOME_VERSION:C/^([0-9]+).*/\1/:M[4-9]?}
 SITES ?=		${SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:C/^([0-9]+).*/\1/}/}
 .    else
