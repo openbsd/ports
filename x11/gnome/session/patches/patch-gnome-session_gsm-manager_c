@@ -25,7 +25,7 @@ Index: gnome-session/gsm-manager.c
  
  #include "gsm-store.h"
  #include "gsm-inhibitor.h"
-@@ -276,10 +284,12 @@ on_required_app_failure (GsmManager  *manager,
+@@ -280,10 +288,12 @@ on_required_app_failure (GsmManager  *manager,
                  allow_logout = !_log_out_is_locked_down (manager);
          }
  
@@ -38,7 +38,7 @@ Index: gnome-session/gsm-manager.c
  
          gsm_fail_whale_dialog_we_failed (FALSE,
                                           allow_logout,
-@@ -304,10 +314,12 @@ on_display_server_failure (GsmManager *manager,
+@@ -308,10 +318,12 @@ on_display_server_failure (GsmManager *manager,
                  extensions = NULL;
          }
  
@@ -51,7 +51,7 @@ Index: gnome-session/gsm-manager.c
  
          gsm_quit ();
  }
-@@ -962,6 +974,7 @@ _client_stop (const char *id,
+@@ -966,6 +978,7 @@ _client_stop (const char *id,
          return FALSE;
  }
  
@@ -59,7 +59,7 @@ Index: gnome-session/gsm-manager.c
  static void
  maybe_restart_user_bus (GsmManager *manager)
  {
-@@ -994,6 +1007,7 @@ maybe_restart_user_bus (GsmManager *manager)
+@@ -998,6 +1011,7 @@ maybe_restart_user_bus (GsmManager *manager)
                  g_debug ("GsmManager: reloading user bus failed: %s", error->message);
          }
  }
@@ -67,7 +67,7 @@ Index: gnome-session/gsm-manager.c
  
  static void
  do_phase_exit (GsmManager *manager)
-@@ -1006,8 +1020,10 @@ do_phase_exit (GsmManager *manager)
+@@ -1010,8 +1024,10 @@ do_phase_exit (GsmManager *manager)
                                     NULL);
          }
  
@@ -78,7 +78,7 @@ Index: gnome-session/gsm-manager.c
  
          end_phase (manager);
  }
-@@ -1401,10 +1417,12 @@ start_phase (GsmManager *manager)
+@@ -1405,10 +1421,12 @@ start_phase (GsmManager *manager)
                  do_phase_startup (manager);
                  break;
          case GSM_MANAGER_PHASE_RUNNING:
@@ -88,6 +88,6 @@ Index: gnome-session/gsm-manager.c
                                   "MESSAGE=Entering running state",
                                   NULL);
 +#endif
+ #ifdef HAVE_X11
                  gsm_xsmp_server_start_accepting_new_clients (priv->xsmp_server);
-                 if (priv->pending_end_session_tasks != NULL)
-                         complete_end_session_tasks (manager);
+ #endif

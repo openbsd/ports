@@ -11,7 +11,7 @@ Subject: [PATCH] Drop consolekit backend and hard depend on systemd
 Index: data/meson.build
 --- data/meson.build.orig
 +++ data/meson.build
-@@ -22,7 +22,6 @@ required_components = {
+@@ -24,7 +24,6 @@ required_components = {
      'org.gnome.SettingsDaemon.PrintNotifications',
      'org.gnome.SettingsDaemon.Rfkill',
      'org.gnome.SettingsDaemon.ScreensaverProxy',
@@ -19,128 +19,18 @@ Index: data/meson.build
      'org.gnome.SettingsDaemon.Smartcard',
      'org.gnome.SettingsDaemon.Sound',
      'org.gnome.SettingsDaemon.UsbProtection',
-@@ -108,68 +107,70 @@ install_data(
+@@ -110,6 +109,7 @@ install_data(
    install_dir: join_paths(session_datadir, 'glib-2.0', 'schemas'),
  )
  
--unit_conf = configuration_data()
--unit_conf.set('libexecdir', session_libexecdir)
 +if enable_systemd_session
-+  unit_conf = configuration_data()
-+  unit_conf.set('libexecdir', session_libexecdir)
+ unit_conf = configuration_data()
+ unit_conf.set('libexecdir', session_libexecdir)
  
--systemd_service = ['gnome-session-manager@.service',
--                    'gnome-session-signal-init.service',
--                    'gnome-session-restart-dbus.service',
--                    'gnome-session-monitor.service',
--                    'gnome-session-failed.service']
-+  systemd_service = ['gnome-session-manager@.service',
-+                     'gnome-session-signal-init.service',
-+                     'gnome-session-restart-dbus.service',
-+                     'gnome-session-monitor.service',
-+                     'gnome-session-failed.service']
- 
--foreach service: systemd_service
--  configure_file(
--    input: service + '.in',
--    output: service,
--    install: true,
--    install_dir: systemd_userunitdir,
--    configuration: unit_conf
--  )
--endforeach
-+  foreach service: systemd_service
-+    configure_file(
-+      input: service + '.in',
-+      output: service,
-+      install: true,
-+      install_dir: systemd_userunitdir,
-+      configuration: unit_conf
-+    )
-+  endforeach
- 
--systemd_target = files('gnome-session-wayland@.target',
--                        'gnome-session-wayland.target',
--                        'gnome-session-x11@.target',
--                        'gnome-session-x11.target',
--                        'gnome-session-x11-services.target',
--                        'gnome-session-x11-services-ready.target',
--                        'gnome-session@.target',
--                        'gnome-session.target',
--                        'gnome-session-pre.target',
--                        'gnome-session-manager.target',
--                        'gnome-session-initialized.target',
--                        'gnome-session-shutdown.target',
--                        'gnome-session-failed.target',
--                        )
-+  systemd_target = files('gnome-session-wayland@.target',
-+                         'gnome-session-wayland.target',
-+                         'gnome-session-x11@.target',
-+                         'gnome-session-x11.target',
-+                         'gnome-session-x11-services.target',
-+                         'gnome-session-x11-services-ready.target',
-+                         'gnome-session@.target',
-+                         'gnome-session.target',
-+                         'gnome-session-pre.target',
-+                         'gnome-session-manager.target',
-+                         'gnome-session-initialized.target',
-+                         'gnome-session-shutdown.target',
-+                         'gnome-session-failed.target',
-+                         )
- 
--install_data(
--  systemd_target,
--  install_dir: systemd_userunitdir
--)
-+  install_data(
-+    systemd_target,
-+    install_dir: systemd_userunitdir
-+  )
- 
--install_data(
--  'gnome-launched-override.scope.conf',
--  rename: 'override.conf',
--  install_dir : join_paths(systemd_userunitdir, 'gnome-launched-.scope.d')
--)
-+  install_data(
-+    'gnome-launched-override.scope.conf',
-+    rename: 'override.conf',
-+    install_dir : join_paths(systemd_userunitdir, 'gnome-launched-.scope.d')
-+  )
- 
--foreach session, req_components: required_components
--  wanted_targets = []
--  foreach component: req_components
--    wanted_targets += 'Wants=@0@.target'.format(component)
--  endforeach
-+  foreach session, req_components: required_components
-+    wanted_targets = []
-+    foreach component: req_components
-+      wanted_targets += 'Wants=@0@.target'.format(component)
-+    endforeach
- 
--  configure_file(
--    input: session + '.session.conf.in',
--    output: session + '.session.conf',
--    configuration: {
--      'requires_component': shell_component[session],
--      'wants_required_components': '\n'.join(wanted_targets),
--    },
--    install_dir: systemd_userunitdir / 'gnome-session@@0@.target.d'.format(
--      session),
--  )
--endforeach
-+    configure_file(
-+      input: session + '.session.conf.in',
-+      output: session + '.session.conf',
-+      configuration: {
-+        'requires_component': shell_component[session],
-+        'wants_required_components': '\n'.join(wanted_targets),
-+      },
-+      install_dir: systemd_userunitdir / 'gnome-session@@0@.target.d'.format(
-+        session),
-+    )
-+  endforeach
+@@ -176,6 +176,7 @@ foreach session, req_components: required_components
+       session),
+   )
+ endforeach
 +endif
  
  data = files('hardware-compatibility')

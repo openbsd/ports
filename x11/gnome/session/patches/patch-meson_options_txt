@@ -7,7 +7,7 @@ Subject: [PATCH] Drop consolekit backend and hard depend on systemd
 Index: meson_options.txt
 --- meson_options.txt.orig
 +++ meson_options.txt
-@@ -1,5 +1,9 @@
+@@ -1,6 +1,10 @@
  option('deprecation_flags', type: 'boolean', value: false, description: 'use *_DISABLE_DEPRECATED flags')
  option('session_selector', type: 'boolean', value: false, description: 'enable building a custom session selector dialog')
 +option('systemd', type: 'boolean', value: true, description: 'Use systemd')
@@ -17,3 +17,4 @@ Index: meson_options.txt
 +option('consolekit', type: 'boolean', value: false, description: 'Use consolekit')
  option('docbook', type: 'boolean', value: true, description: 'build documentation')
  option('man', type: 'boolean', value: true, description: 'build documentation (requires xmlto)')
+ option('x11', type: 'boolean', value: true, description: 'enable x11 session support')

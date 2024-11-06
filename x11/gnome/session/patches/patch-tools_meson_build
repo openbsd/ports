@@ -7,14 +7,19 @@ Subject: [PATCH] Drop consolekit backend and hard depend on systemd
 Index: tools/meson.build
 --- tools/meson.build.orig
 +++ tools/meson.build
-@@ -11,7 +11,9 @@ programs = [
-   ['gnome-session-inhibit', session_deps, cflags, session_bindir]
- ]
+@@ -2,9 +2,14 @@ cflags = ['-DLOCALE_DIR="@0@"'.format(session_localedi
  
--programs += [['gnome-session-ctl', session_bin_deps, cflags, session_libexecdir]]
+ programs = [
+   # name, deps, cflags, install_dir
+-  ['gnome-session-ctl', session_bin_deps, cflags, session_libexecdir],
+   ['gnome-session-inhibit', session_deps, cflags, session_bindir],
+ ]
++
 +if enable_systemd_session
-+  programs += [['gnome-session-ctl', session_bin_deps, cflags, session_libexecdir]]
++  programs += [
++    ['gnome-session-ctl', session_bin_deps, cflags, session_libexecdir],
++  ]
 +endif
  
- if enable_session_selector
-   deps = [
+ if have_x11
+   deps = session_deps + [

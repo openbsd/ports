@@ -7,7 +7,7 @@ Subject: [PATCH] Drop consolekit backend and hard depend on systemd
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -103,19 +103,52 @@ session_bin_deps = session_deps + [
+@@ -111,19 +111,52 @@ endif
  # Check for session selector GTK+ UI
  enable_session_selector = get_option('session_selector')
  
@@ -70,7 +70,7 @@ Index: meson.build
  configure_file(
    output: 'config.h',
    configuration: config_h
-@@ -151,6 +184,7 @@ summary_options = {
+@@ -159,6 +192,7 @@ summary_options = {
   'Build manpages': get_option('man'),
   'Systemd Units Directory': systemd_userunitdir,
   'Session Selector Enabled': enable_session_selector,

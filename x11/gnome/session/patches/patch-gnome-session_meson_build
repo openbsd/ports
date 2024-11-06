@@ -7,7 +7,7 @@ Subject: [PATCH] Drop consolekit backend and hard depend on systemd
 Index: gnome-session/meson.build
 --- gnome-session/meson.build.orig
 +++ gnome-session/meson.build
-@@ -60,6 +60,10 @@ foreach iface: dbus_ifaces
+@@ -65,6 +65,10 @@ foreach iface: dbus_ifaces
    )
  endforeach
  
