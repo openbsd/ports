@@ -84,6 +84,7 @@ share/ppsspp/assets/lang/it_IT.ini
 share/ppsspp/assets/lang/ja_JP.ini
 share/ppsspp/assets/lang/jv_ID.ini
 share/ppsspp/assets/lang/ko_KR.ini
+share/ppsspp/assets/lang/ku_SO.ini
 share/ppsspp/assets/lang/lo_LA.ini
 share/ppsspp/assets/lang/lt-LT.ini
 share/ppsspp/assets/lang/ms_MY.ini
@@ -107,8 +108,10 @@ share/ppsspp/assets/logo.png
 share/ppsspp/assets/ppge_atlas.meta
 share/ppsspp/assets/ppge_atlas.zim
 share/ppsspp/assets/rargray.png
+share/ppsspp/assets/sfx_achievement_unlocked.wav
 share/ppsspp/assets/sfx_back.wav
 share/ppsspp/assets/sfx_confirm.wav
+share/ppsspp/assets/sfx_leaderbord_submitted.wav
 share/ppsspp/assets/sfx_select.wav
 share/ppsspp/assets/sfx_toggle_off.wav
 share/ppsspp/assets/sfx_toggle_on.wav
@@ -147,12 +150,17 @@ share/ppsspp/assets/shaders/tex_4xbrz.csh
 share/ppsspp/assets/shaders/tex_mmpx.csh
 share/ppsspp/assets/shaders/upscale_bicubic.fsh
 share/ppsspp/assets/shaders/upscale_bicubic.vsh
+share/ppsspp/assets/shaders/upscale_sharp_bilinear.fsh
+share/ppsspp/assets/shaders/upscale_sharp_bilinear.vsh
 share/ppsspp/assets/shaders/upscale_spline36.fsh
 share/ppsspp/assets/shaders/upscale_spline36.vsh
 share/ppsspp/assets/shaders/videoAA.fsh
 share/ppsspp/assets/shaders/vignette.fsh
 share/ppsspp/assets/themes/
+share/ppsspp/assets/themes/1995.ini
 share/ppsspp/assets/themes/defaultthemes.ini
+share/ppsspp/assets/themes/slateforest.ini
+share/ppsspp/assets/themes/vinewood.ini
 share/ppsspp/assets/ui_atlas.meta
 share/ppsspp/assets/ui_atlas.zim
 share/ppsspp/assets/unknown.png
