@@ -307,6 +307,6 @@ share/icons/hicolor/48x48/apps/com.abisource.AbiWord.png
 share/icons/hicolor/512x512/apps/com.abisource.AbiWord.png
 share/icons/hicolor/scalable/apps/com.abisource.AbiWord.svg
 share/metainfo/
-share/metainfo/com.abisource.AbiWord.appdata.xml
+share/metainfo/com.abisource.AbiWord.metainfo.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
