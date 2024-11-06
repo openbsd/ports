@@ -1,0 +1,14 @@
+XXX push upstream (+see pre-configure)
+
+Index: src/third_party/xcursor/xcursor.c
+--- src/third_party/xcursor/xcursor.c.orig
++++ src/third_party/xcursor/xcursor.c
+@@ -126,7 +126,7 @@ static const char _XcursorStandardNames[] =
+ #endif
+ 
+ #ifndef XCURSORPATH
+-#define XCURSORPATH "~/.local/share/icons:~/.icons:/usr/share/icons:/usr/share/pixmaps:"ICONDIR
++#define XCURSORPATH "~/.local/share/icons:~/.icons:/usr/share/icons:/usr/share/pixmaps:${LOCALBASE}/share/icons:${LOCALBASE}/share/pixmaps"ICONDIR
+ #endif
+ 
+ #define XCURSOR_SCAN_CORE ((FILE *) 1)

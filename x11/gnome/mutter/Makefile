@@ -2,7 +2,7 @@ COMMENT=		window and compositing manager based on Clutter
 
 GNOME_PROJECT=		mutter
 GNOME_VERSION=		47.1
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS += mutter-mtk-15             0.0 # 0.0.0
 SHARED_LIBS += mutter-cogl-15            0.0 # 0.0.0
@@ -69,5 +69,8 @@ CONFIGURE_ARGS +=	-Dnative_backend=false
 CONFIGURE_ARGS +=	-Dremote_desktop=false
 
 MODGNOME_CPPFLAGS=	-I${X11BASE}/include
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/src/third_party/xcursor/xcursor.c
 
 .include <bsd.port.mk>
