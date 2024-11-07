@@ -42,8 +42,11 @@ vpn-user-portal/web/img/eduVPN/app/
 vpn-user-portal/web/img/eduVPN/app/Android.png
 vpn-user-portal/web/img/eduVPN/app/Linux.png
 vpn-user-portal/web/img/eduVPN/app/Windows.png
+vpn-user-portal/web/img/eduVPN/app/iOS-dark.png
 vpn-user-portal/web/img/eduVPN/app/iOS.png
+vpn-user-portal/web/img/eduVPN/app/macOS-dark.png
 vpn-user-portal/web/img/eduVPN/app/macOS.png
+vpn-user-portal/web/img/eduVPN/logo-dark.png
 vpn-user-portal/web/img/eduVPN/logo.png
 @cwd /usr/local
 share/doc/vpn-portal-artwork-eduvpn/
