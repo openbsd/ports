@@ -3,7 +3,7 @@ BROKEN-alpha=	serverpath.h:17:19: error: variable 'CServerPath final' has initia
 
 COMMENT=	fast FTP and SFTP GUI client with a lot of features
 
-V=		3.68.0
+V=		3.68.1
 PKGNAME=	filezilla-$V
 DISTNAME=	FileZilla_$V_src
 
@@ -19,10 +19,10 @@ MAINTAINER=	Bjorn Ketelaars <bket@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ICE SDL2 SM X11 Xau Xcomposite Xcursor
-WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
-WANTLIB += Xss Xtst Xxf86vm aspell atk-1.0 atk-bridge-2.0 atspi
-WANTLIB += c cairo cairo-gobject crypto curl dbus-1 enchant-2
+WANTLIB += ${COMPILER_LIBCXX} ICE Lerc SDL2 SM X11 Xau Xcomposite
+WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender Xss Xtst Xxf86vm aspell atk-1.0 atk-bridge-2.0
+WANTLIB += atspi c cairo cairo-gobject crypto curl dbus-1 enchant-2
 WANTLIB += epoll-shim epoxy execinfo expat ffi filezilla fontconfig
 WANTLIB += freetype fribidi gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gmp gnutls gobject-2.0 gpg-error
