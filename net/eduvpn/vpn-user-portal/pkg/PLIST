@@ -379,6 +379,8 @@ vpn-user-portal/web/img/icon-Unknown.png
 vpn-user-portal/web/img/icon-eduVPN.png
 vpn-user-portal/web/img/icon-govVPN.png
 vpn-user-portal/web/index.php
+vpn-user-portal/web/js/
+vpn-user-portal/web/js/language-switcher.js
 vpn-user-portal/web/node-api.php
 vpn-user-portal/web/oauth.php
 vpn-user-portal/web/well-known.php
