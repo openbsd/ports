@@ -13,6 +13,7 @@
      SUBDIR += netstrain
      SUBDIR += nuttcp
      SUBDIR += p5-Dumbbench
+     SUBDIR += qmlbench
      SUBDIR += randread
      SUBDIR += siege
      SUBDIR += smtp-benchmark
