@@ -1,6 +1,6 @@
+@conflict lout-doc-*
 @pkgpath print/lout,-main
 @pkgpath print/lout,-doc
-@conflict lout-doc-*
 @bin bin/lout
 @bin bin/prg2lout
 lib/lout/

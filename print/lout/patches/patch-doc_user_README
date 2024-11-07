@@ -1,7 +1,8 @@
---- doc/user/README.orig	Wed Jun 26 01:43:24 2013
-+++ doc/user/README	Wed Jun 26 13:39:48 2013
-@@ -6,7 +6,7 @@ final PostScript output file (A4 paper size) is stored
- "ftp://ftp.it.usyd.edu.au/jeff/lout/lout-3.40.user.ps.gz".
+Index: doc/user/README
+--- doc/user/README.orig
++++ doc/user/README
+@@ -8,7 +8,7 @@ final PostScript output file (A4 paper size) is stored
+ 
  To produce the Guide yourself, type the command
  
 -    lout -r5 all > user.ps

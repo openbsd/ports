@@ -1,11 +1,11 @@
 COMMENT=	object oriented type setting language
 
-DISTNAME=	lout-3.40
+DISTNAME=	lout-3.41
 CATEGORIES=	print textproc
 FIX_EXTRACT_PERMISSIONS =	Yes
 
-HOMEPAGE=	http://savannah.nongnu.org/projects/lout/
-SITES=		${SITE_SAVANNAH:=lout/}
+HOMEPAGE=	http://jeffreykingston.id.au/lout/
+SITES=		http://jeffreykingston.id.au/lout/
 
 MAINTAINER=	Joerg Jung <jung@openbsd.org>
 
@@ -18,6 +18,8 @@ INSTALL_TARGET=	install installman installdoc
 NO_TEST=	Yes
 
 WANTLIB=	c m z
+
+WRKDIST=	${WRKDIR}/lout-2023_06_19
 
 post-install:
 	env LOUTLIB=${PREFIX}/lib/lout \
