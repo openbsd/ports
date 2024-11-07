@@ -1,7 +1,9 @@
+No librt on OpenBSD
+
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -145,7 +145,6 @@ pixman = dependency('pixman-1',
+@@ -134,7 +134,6 @@ pixman = dependency('pixman-1',
  	default_options: ['werror=false'],
  )
  math = cc.find_library('m')
@@ -9,7 +11,7 @@ Index: meson.build
  
  wlr_files = []
  wlr_deps = [
-@@ -154,7 +153,6 @@ wlr_deps = [
+@@ -143,7 +142,6 @@ wlr_deps = [
  	xkbcommon,
  	pixman,
  	math,

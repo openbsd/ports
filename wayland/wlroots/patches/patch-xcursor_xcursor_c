@@ -1,7 +1,7 @@
 Index: xcursor/xcursor.c
 --- xcursor/xcursor.c.orig
 +++ xcursor/xcursor.c
-@@ -489,7 +489,7 @@ xcursor_xc_file_load_images(FILE *file, int size)
+@@ -490,7 +490,7 @@ xcursor_xc_file_load_images(FILE *file, int size)
  #endif
  
  #ifndef XCURSORPATH

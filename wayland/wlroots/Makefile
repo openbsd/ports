@@ -1,6 +1,6 @@
 COMMENT =	modular Wayland compositor library
 
-V =		0.17.4
+V =		0.18.1
 EPOCH =		0
 DISTNAME =	wlroots-${V}
 CATEGORIES =	wayland
@@ -12,12 +12,12 @@ HOMEPAGE =	https://gitlab.freedesktop.org/wlroots
 # MIT
 PERMIT_PACKAGE = Yes
 
-SHARED_LIBS +=  wlroots 0.1 # 0.0
+SHARED_LIBS +=  wlroots-0.18 0.0 # 0.0
 
 MODULES =	devel/meson
 
 WANTLIB +=	EGL GLESv2 drm gbm m pixman-1
-WANTLIB +=	display-info liftoff udev
+WANTLIB +=	display-info lcms2 liftoff udev
 WANTLIB +=	input seat
 WANTLIB +=	vulkan wayland-client wayland-server
 WANTLIB +=	xcb xcb-composite xcb-dri3 xcb-errors xcb-ewmh
@@ -37,6 +37,7 @@ BUILD_DEPENDS = \
 		wayland/xwayland
 
 LIB_DEPENDS = \
+		graphics/lcms2 \
 		graphics/libliftoff \
 		graphics/vulkan-loader \
 		sysutils/libdisplay-info \
