@@ -1,0 +1,21 @@
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -1,7 +1,7 @@
+ project('gdm', 'c',
+   version: '47.0',
+   license: 'GPL2+',
+-  meson_version: '>= 0.57',
++  meson_version: '>= 1.0.0',
+ )
+ 
+ # Modules
+@@ -175,7 +175,7 @@ have_pam_syslog = cc.has_function('pam_syslog', args: 
+ have_utmpx_header = cc.has_header('utmpx.h')
+ have_utmp_header =  cc.has_header('utmp.h')
+ utmp_struct = have_utmpx_header? 'struct utmpx' : 'struct utmp'
+-utmp_include =  have_utmpx_header? '#include <utmpx.h>' : '#include <utmp.h>'
++utmp_include =  have_utmpx_header? '#include <utmpx.h>' : ['#include <sys/types.h>', '#include <utmp.h>']
+ utmp_has_host_field = cc.has_member(utmp_struct, 'ut_host', prefix: utmp_include)
+ utmp_has_pid_field = cc.has_member(utmp_struct, 'ut_pid', prefix: utmp_include)
+ utmp_has_id_field = cc.has_member(utmp_struct, 'ut_id', prefix: utmp_include)
