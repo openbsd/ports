@@ -1,6 +1,7 @@
 COMMENT=	companion library to APR
 
 V=		1.6.3
+REVISION=	0
 DISTNAME=	apr-util-$V
 SHARED_LIBS +=	aprutil-1          6.2     # .6.0
 
@@ -8,7 +9,7 @@ CATEGORIES=	devel
 
 MAINTAINER=	Stefan Sperling <stsp@openbsd.org>
 
-HOMEPAGE=	http://apr.apache.org/
+HOMEPAGE=	https://apr.apache.org/
 
 FLAVORS=	ldap
 FLAVOR?=
