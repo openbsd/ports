@@ -157,6 +157,7 @@
      SUBDIR += krdc
      SUBDIR += krfb
      SUBDIR += tokodon
+     SUBDIR += falkon
 
      # pim
      SUBDIR += akregator
