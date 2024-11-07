@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1670 2024/11/06 17:38:49 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1671 2024/11/07 20:59:37 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -599,6 +599,8 @@ my $stem_extensions = {
 	'tracker3' => 'tinysparql',
 	'tracker3' => 'localsearch',
 	'spidermonkey115' => 'spidermonkey128',
+	'blas' => 'lapack',
+	'cblas' => 'lapack',
 };
 
 my $obsolete_reason = {};
