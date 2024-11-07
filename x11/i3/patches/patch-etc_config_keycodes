@@ -30,22 +30,6 @@ Index: etc/config.keycodes
  
  # Use Mouse+$mod to drag floating windows to their wanted position
  floating_modifier $mod
-@@ -48,13 +48,13 @@ floating_modifier $mod
- tiling_drag modifier titlebar
- 
- # start a terminal
--bindcode $mod+36 exec i3-sensible-terminal
-+bindcode $mod+36 exec ${X11BASE}/bin/xterm
- 
- # kill focused window
- bindcode $mod+Shift+24 kill
- 
- # start dmenu (a program launcher)
--bindcode $mod+40 exec --no-startup-id dmenu_run
-+bindcode $mod+40 exec --no-startup-id ${LOCALBASE}/bin/dmenu_run
- # A more modern dmenu replacement is rofi:
- # bindcode $mod+40 exec "rofi -modi drun,run -show drun"
- # There also is i3-dmenu-desktop which only displays applications shipping a
 @@ -68,10 +68,10 @@ bindcode $mod+46 focus up
  bindcode $mod+47 focus right
  

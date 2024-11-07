@@ -38,7 +38,7 @@ Index: src/config_directives.c
          char resolved_path[PATH_MAX] = {'\0'};
          if (realpath(w[i], resolved_path) == NULL) {
              LOG("Skipping %s: %s\n", w[i], strerror(errno));
-@@ -86,7 +98,11 @@ CFGFUN(include, const char *pattern) {
+@@ -82,7 +94,11 @@ CFGFUN(include, const char *pattern) {
                  break;
          }
      }
