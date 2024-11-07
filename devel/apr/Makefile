@@ -17,7 +17,7 @@ WANTLIB += 	pthread
 
 SITES=		${SITE_APACHE:=apr/}
 
-AUTOCONF_VERSION=2.71
+AUTOCONF_VERSION=2.72
 CONFIGURE_STYLE=autoconf autoheader
 # Prevent APR pools from re-using dynamic memory allocations:
 CFLAGS +=	"-DAPR_ALLOCATOR_MAX_FREE_DEFAULT=1"
