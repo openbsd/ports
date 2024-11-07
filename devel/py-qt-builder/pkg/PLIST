@@ -2,8 +2,6 @@ bin/pyqt-bundle
 bin/pyqt-qt-wheel
 lib/python${MODPY_VERSION}/site-packages/PyQt_builder-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/PyQt_builder-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/PyQt_builder-${MODPY_EGG_VERSION}.dist-info/LICENSE-GPL2
-lib/python${MODPY_VERSION}/site-packages/PyQt_builder-${MODPY_EGG_VERSION}.dist-info/LICENSE-GPL3
 lib/python${MODPY_VERSION}/site-packages/PyQt_builder-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/PyQt_builder-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/PyQt_builder-${MODPY_EGG_VERSION}.dist-info/WHEEL
@@ -14,6 +12,8 @@ lib/python${MODPY_VERSION}/site-packages/pyqtbuild/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyqtbuild/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyqtbuild/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pyqtbuild/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/${MODPY_PYCACHE}bindings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/${MODPY_PYCACHE}bindings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/${MODPY_PYCACHE}builder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -24,6 +24,7 @@ lib/python${MODPY_VERSION}/site-packages/pyqtbuild/${MODPY_PYCACHE}project.${MOD
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/${MODPY_PYCACHE}project.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyqtbuild/_version.py
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bindings.py
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/builder.py
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/
