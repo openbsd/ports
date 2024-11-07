@@ -1,7 +1,7 @@
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 
-V =		3.9.3
+V =		3.10.0
 DISTNAME =	gdal-${V}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		gdalautotest-${V}${EXTRACT_SUFX}
@@ -11,7 +11,7 @@ FULLPKGPATH-main =	geo/gdal,-main
 FULLPKGNAME-python =	py3-${DISTNAME}
 FULLPKGPATH-python =	geo/gdal,-python${FLAVOR_EXT:S/-/,/g}
 
-SHARED_LIBS =	gdal 49.1
+SHARED_LIBS =	gdal 50.0 #36 cf gdal.cmake
 CATEGORIES =	geo devel
 
 HOMEPAGE =	https://gdal.org/
@@ -38,6 +38,7 @@ MODPY_RUNDEP = No
 LIB_DEPENDS-main =	archivers/libarchive \
 			archivers/libdeflate \
 			archivers/zstd \
+			databases/arrow/cpp \
 			databases/postgresql \
 			databases/sqlite3 \
 			devel/geotiff>=1.5.0 \
@@ -48,6 +49,8 @@ LIB_DEPENDS-main =	archivers/libarchive \
 			geo/spatialite/libspatialite \
 			graphics/giflib \
 			graphics/jpeg \
+			graphics/lerc \
+			graphics/libavif \
 			graphics/libjxl \
 			graphics/libwebp \
 			graphics/openjp2 \
@@ -59,10 +62,11 @@ LIB_DEPENDS-main =	archivers/libarchive \
 			net/curl \
 			print/poppler
 
-WANTLIB-main =		archive c crypto curl deflate expat freexl geos_c geotiff \
-			gif hdf5 iconv jpeg json-c jxl jxl_threads lzma lz4 m \
-			netcdf openjp2 pcre2-8 png poppler pq proj pthread qhull_r \
-			spatialite sqlite3 ssl tiff xml2 webp z zstd \
+WANTLIB-main =		Lerc archive arrow arrow_acero arrow_dataset avif c crypto \
+			curl deflate expat freexl geos_c geotiff gif hdf5 iconv jpeg \
+			json-c jxl jxl_threads lzma lz4 m netcdf openjp2 parquet \
+			pcre2-8 png poppler pq proj pthread qhull_r spatialite \
+			sqlite3 ssl tiff xml2 webp z zstd \
 			${COMPILER_LIBCXX}
 
 RUN_DEPENDS-python =	${MODPY_RUN_DEPENDS} \
@@ -96,11 +100,6 @@ CONFIGURE_ARGS =-DGDAL_USE_CFITSIO:BOOL=OFF \
 		-DGDAL_USE_MYSQL:BOOL=OFF \
 		-DGDAL_USE_HEIF:BOOL=OFF \
 		-DGDAL_USE_ODBC:BOOL=OFF \
-		-DGDAL_USE_PARQUET:BOOL=OFF \
-		-DGDAL_USE_ARROW:BOOL=OFF \
-		-DGDAL_USE_ARROWDATASET:BOOL=OFF \
-		-DGDAL_USE_LERC:BOOL=OFF \
-		-DGDAL_USE_INTERNAL_LERC:BOOL=ON \
 		-DGDAL_USE_ARMADILLO:BOOL=OFF \
 		-DGDAL_USE_RASTERLITE2:BOOL=OFF \
 		-DGDAL_USE_PODOFO:BOOL=OFF \
