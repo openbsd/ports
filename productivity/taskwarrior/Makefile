@@ -4,10 +4,9 @@ VERSION =	2.6.2
 DISTNAME =	task-${VERSION}
 PKGNAME =	taskwarrior-${VERSION}
 CATEGORIES =	productivity
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://www.taskwarrior.org/
-MAINTAINER = 	Paco Esteban <paco@openbsd.org>
 
 SITES =		https://www.taskwarrior.org/download/
 
