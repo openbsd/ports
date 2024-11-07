@@ -1,15 +1,6 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -3,7 +3,7 @@ PREFIX=/usr/local
- .PHONY: all fmt check vet clean install sloc
- 
- vpn-ca: cmd/vpn-ca/main.go
--	go build -o $@ tuxed.net/vpn-ca/cmd/vpn-ca/...
-+	go build $(GOBUILDFLAGS) -o $@ tuxed.net/vpn-ca/cmd/vpn-ca/...
- 
- vpn-ca.1: vpn-ca.1.scd
- 	scdoc < $< > $@
 @@ -28,4 +28,4 @@ clean:
  
  install: all
