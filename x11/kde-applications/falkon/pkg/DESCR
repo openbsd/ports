@@ -1,0 +1,7 @@
+Falkon is a new and very fast Qt web browser. It aims to be a lightweight web.
+
+Falkon has all standard functions you expect from a web browser. It includes
+bookmarks, history (both also in sidebar) and tabs. Above that, you can manage
+RSS feeds with an included RSS reader, block ads with a built-in AdBlock
+plugin, block Flash content with Click2Flash and edit the local CA Certificates
+database with an SSL manager.
