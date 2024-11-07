@@ -1,7 +1,7 @@
 Index: apr-config.in
 --- apr-config.in.orig
 +++ apr-config.in
-@@ -243,13 +243,7 @@ while test $# -gt 0; do
+@@ -258,13 +258,7 @@ while test $# -gt 0; do
      exit 0
      ;;
      --apr-libtool)
