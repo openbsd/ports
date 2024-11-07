@@ -2,11 +2,9 @@ COMMENT =		tool for deleting old Mastodon toots
 
 MODPY_EGG_VERSION =	3.2.0
 DISTNAME =		ephemetoot-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
-
-MAINTAINER =		Paco Esteban <paco@openbsd.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
