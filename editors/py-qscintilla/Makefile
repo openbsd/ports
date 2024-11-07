@@ -4,7 +4,7 @@ VERSION =		2.14.1
 MODPY_EGG_VERSION =	${VERSION}
 DISTNAME =		QScintilla_src-${VERSION}
 PKGNAME =		py-qscintilla-${VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		editors x11 devel
 
@@ -15,25 +15,38 @@ PERMIT_PACKAGE =	Yes
 
 SITES =			https://www.riverbankcomputing.com/static/Downloads/QScintilla/${VERSION}/
 
-WANTLIB += ${COMPILER_LIBCXX} GL m Qt5Core Qt5Gui Qt5PrintSupport
-WANTLIB += Qt5Widgets qscintilla2_qt5
+COMPILER =		base-clang ports-gcc ports-gcc
+WANTLIB +=		${COMPILER_LIBCXX} GL m
 
-MODULES =		lang/python \
-			x11/qt5
+MODULES =		lang/python
+
+FLAVORS =		python3 qt6
+FLAVOR +=		python3
+
+.if ${FLAVOR:Mqt6}
+FULLPKGNAME =		py3-qscintilla-qt6-${VERSION}
+MODULES +=		x11/qt6
+QTVER =			qt6
+PYQTVER =		PyQt6
+PYQTMOD =		qscimod6
+PYQTPREFIX =		PyQt6_
+WANTLIB +=		Qt6Core Qt6Gui Qt6PrintSupport Qt6Widgets qscintilla2_qt6
+LIB_DEPENDS =		editors/qscintilla,qt6=${VERSION}
+.else
+MODULES +=	x11/qt5
 QTVER =			qt5
 PYQTVER =		PyQt5
-
-FLAVORS =		python3
-FLAVOR =		python3
+PYQTMOD =		qscimod5
+PYQTPREFIX =		# empty
+WANTLIB +=		Qt5Core Qt5Gui Qt5PrintSupport Qt5Widgets qscintilla2_qt5
+LIB_DEPENDS =		editors/qscintilla=${VERSION}
+.endif
 
 BUILD_DEPENDS =		devel/py-qt-builder${MODPY_FLAVOR} \
 			${RUN_DEPENDS}
 RUN_DEPENDS =		devel/py-sip${MODPY_FLAVOR} \
 			x11/dbus-python${MODPY_FLAVOR} \
-			x11/py-qt5${MODPY_FLAVOR}
-LIB_DEPENDS =		editors/qscintilla=${VERSION}
-
-COMPILER =		base-clang ports-gcc base-gcc
+			x11/py-${QTVER}${MODPY_FLAVOR}
 
 NO_TEST =		Yes
 
@@ -52,11 +65,11 @@ MAKE_FLAGS =	-C build \
 
 FAKE_FLAGS =	INSTALL_ROOT=${DESTDIR}
 
-SUBST_VARS +=	QTVER PYQTVER
+SUBST_VARS +=	QTVER PYQTVER PYQTPREFIX PYQTMOD
 
 post-extract:
 	# Needed to run sip-6.5+ sip-build
-	ln -sf ${MODQT5_QMAKE} ${WRKDIR}/bin/qmake
-	cp ${WRKSRC}/pyproject-qt5.toml ${WRKSRC}/pyproject.toml
+	ln -sf ${MODQT_QMAKE} ${WRKDIR}/bin/qmake
+	cp ${WRKSRC}/pyproject-${QTVER}.toml ${WRKSRC}/pyproject.toml
 
 .include <bsd.port.mk>
