@@ -5,6 +5,7 @@ COMMENT=		fast array and numeric programming library for Python 2
 PORTROACH=		limit:^1\.16
 
 MODPY_EGG_VERSION=	1.16.6
+REVISION =		0
 DISTNAME=		numpy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 EXTRACT_SUFX=		.zip
@@ -32,8 +33,7 @@ NO_TEST =		Yes
 MODFORTRAN_COMPILER =	gfortran
 
 BUILD_DEPENDS = ${MODFORTRAN_BUILD_DEPENDS}
-LIB_DEPENDS=		math/cblas \
-			math/lapack \
+LIB_DEPENDS=		math/lapack \
 			${MODFORTRAN_LIB_DEPENDS}
 
 # Cython 0.28.* uses __attribute__((optimize("Os"))) which

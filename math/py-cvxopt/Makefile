@@ -1,7 +1,7 @@
 COMMENT =		convex optimization package
 
 MODPY_EGG_VERSION =	1.3.0
-REVISION =		2
+REVISION =		3
 DISTNAME =		cvxopt-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
@@ -24,7 +24,6 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
 LIB_DEPENDS =		math/lapack \
-			math/blas \
 			math/suitesparse
 
 .include <bsd.port.mk>

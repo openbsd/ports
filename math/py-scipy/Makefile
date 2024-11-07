@@ -5,6 +5,7 @@ COMMENT=		maths, science and engineering modules for Python
 MODPY_EGG_VERSION=	1.13.1
 DISTNAME=		scipy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		math devel
 
@@ -35,9 +36,8 @@ BUILD_DEPENDS=		${RUN_DEPENDS} \
 			lang/cython${MODPY_FLAVOR} \
 			lang/pythran${MODPY_FLAVOR}
 
-LIB_DEPENDS=		${MODFORTRAN_LIB_DEPENDS} \
-			math/cblas \
-			math/lapack
+LIB_DEPENDS=		math/lapack \
+			${MODFORTRAN_LIB_DEPENDS}
 
 RUN_DEPENDS=		math/py-numpy${MODPY_FLAVOR} \
 			devel/swig

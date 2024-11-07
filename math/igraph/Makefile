@@ -1,6 +1,7 @@
 COMMENT = 	C graph library
 V =		0.10.13
 DISTNAME =	igraph-$V
+REVISION =	0
 
 SHARED_LIBS =	igraph 4.0	# 0.0
 
@@ -22,7 +23,7 @@ MODULES =	devel/cmake
 LIB_DEPENDS = 	devel/glpk \
 		devel/gmp \
 		math/arpack \
-		math/blas \
+		math/lapack \
 		math/suitesparse \
 		textproc/libxml
 

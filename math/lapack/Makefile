@@ -1,89 +1,46 @@
-COMMENT=	library of Fortran linear algebra subroutines
-DPB_PROPERTIES=	parallel
+COMMENT=		library of Fortran linear algebra subroutines
 
-VERSION=	3.8.0
-DISTNAME=	lapack-${VERSION}
-REVISION=	2
+PKGNAME=		lapack-${V}
 
-SHARED_LIBS=	lapack 7.1
+DPB_PROPERTIES =	parallel
 
-CATEGORIES=	math
-DISTFILES=	${DISTNAME}.tar.gz
-DISTFILES.doc =	manpages.tgz
+V=		3.12.0
+DIST_TUPLE =	github Reference-LAPACK lapack v${V} .
 
+SHARED_LIBS +=  blas                      2.1 # 0.0
+SHARED_LIBS +=  cblas                     2.0 # 0.0
+SHARED_LIBS +=  lapack                    7.1 # 0.0
+SHARED_LIBS +=  lapacke                   0.0 # 0.0
+SHARED_LIBS +=  tmglib                    0.0 # 0.0
 
-HOMEPAGE=	https://netlib.org/lapack/
+WANTLIB += ${MODFORTRAN_WANTLIB} m
 
-MAINTAINER=	Steven Mestdagh <steven@openbsd.org>
+CATEGORIES =	math
+
+HOMEPAGE =	https://netlib.org/lapack/
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-SITES=		https://netlib.org/lapack/ \
-		http://www.netlib.no/netlib/lapack/
-SITES.doc=	https://netlib.org/lapack/
-DIST_SUBDIR=	${DISTNAME}
+MODULES=	devel/cmake \
+		fortran
 
-LIB_DEPENDS =	math/blas
-WANTLIB =	blas>=1 m
+#TEST_DEPENDS =		lang/python
+CONFIGURE_ARGS =	-DBUILD_TESTING=ON
 
-MODULES=	fortran
-MODFORTRAN_COMPILER = gfortran
 BUILD_DEPENDS=	${MODFORTRAN_BUILD_DEPENDS}
 
-MAKE_ENV=	SHLIB_MAJOR=${LIBlapack_VERSION:R} \
-		SHLIB_MINOR=${LIBlapack_VERSION:E} \
-		TIMER=EXT_ETIME \
-		FC="${MODFORTRAN_COMPILER} -cpp" \
-		CC=${MODFORTRAN_COMPILER}
-FAKE_FLAGS=	LIBDIR=${LOCALBASE}/lib DEBUGLIBS=no
-USE_GROFF =	Yes
+LIB_DEPENDS-main =	${MODFORTRAN_LIB_DEPENDS}
 
-TEST_DEPENDS=	devel/gmake
-TEST_FLAGS=	PLAT= OPTS= FORTRAN=${MODFORTRAN_COMPILER} \
-		LOADER=${MODFORTRAN_COMPILER} \
-		LAPACKLIB=SRC/liblapack.a \
-		BLASLIB="${LOCALBASE}/lib/libblas.a ${LOCALBASE}/lib/libgfortran.a"
+CONFIGURE_ARGS +=	-DCMAKE_Fortran_COMPILER=${MODFORTRAN_COMPILER}
 
-MAKE_FILE=	${FILESDIR}/Makefile
-WRKSRC=		${WRKDIST}/SRC
+CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=ON \
+			-DLAPACKE_WITH_TMG=ON \
+			-DCBLAS=ON \
+			-DBUILD_DEPRECATED=ON
 
-MANSRC=		${WRKDIR}/man/man3
+CONFIGURE_ARGS +=	-DBUILD_MAN_DOCUMENTATION=OFF
 
-# avoid 'unknown manpage type' errors and move manpages to section 3
-pre-configure:
-	@cp ${WRKDIST}/make.inc.example ${WRKDIST}/make.inc
-	@cd ${WRKSRC} && for f in *.F ; do mv $$f $${f%.F}.f ; done
-
-post-build:
-	@cd ${MANSRC} && for m in *.f.3 ; do perl -pi \
-		-e 'if ($$. == 1) {s/(\.TH\s+)"([^"]+)\.f"\s+3\s+("[^"]+")/\1 \2 3f \3 "LAPACK Version ${VERSION}" "LAPACK Version ${VERSION}"/}' \
-		-e 'if ($$. == 5) {s/^(\w+)\.f \\-/\1/}' $$m ; done
-	@cd ${MANSRC} && \
-		for m in SRC_*.f.3; do mv $$m $${m#SRC_}; done && \
-		for m in *.f.3; do mv $$m $${m%\.f\.3}.3f; done
-
-post-install:
-	@cd ${MANSRC} && for m in `${MAKE} -f ${MAKE_FILE} printsrc | \
-		perl -p -e 's/\s/\n/g' | \
-		grep -v TIME | \
-		grep -v ssytrd_sb2st.f | \
-		grep -v dsytrd_sb2st.f | \
-		grep -v chetrd_hb2st.f | \
-		grep -v zhetrd_hb2st.f | \
-		grep -v dlamch.f | \
-		grep -v iparam2stage.f | \
-		grep -v ilaver.f | \
-		grep -v slamch.f | \
-		grep -v lsame.f | \
-		grep -v xerbla.f | \
-		grep -v xerbla_array.f` ; do \
-		${INSTALL_MAN} `basename $${m%.f}.3f` ${PREFIX}/man/man3f ; done
-
-do-test:
-	cd ${WRKDIST}/TESTING/MATGEN && \
-		${MAKE_ENV} gmake ${ALL_TEST_FLAGS}
-	cd ${WRKDIST}/TESTING && \
-		${MAKE_ENV} gmake ${ALL_TEST_FLAGS}
+SUBST_VARS +=		V
 
 .include <bsd.port.mk>

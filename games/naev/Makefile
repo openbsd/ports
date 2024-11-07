@@ -37,7 +37,7 @@ LIB_DEPENDS-main =	audio/libvorbis \
 			devel/glpk>=5.0 \
 			devel/pcre2 \
 			devel/physfs \
-			math/cblas \
+			math/lapack \
 			math/suitesparse \
 			net/enet \
 			textproc/libunibreak \

@@ -3,6 +3,7 @@ COMMENT=		fast array and numeric programming library for Python
 MODPY_EGG_VERSION=	1.26.4
 DISTNAME=		numpy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		math devel
 
@@ -46,7 +47,6 @@ TEST_DEPENDS=		${FULLPKGNAME}:${FULLPKGPATH} \
 MODULES+=		fortran
 BUILD_DEPENDS+=		${MODFORTRAN_BUILD_DEPENDS}
 LIB_DEPENDS+=		${MODFORTRAN_LIB_DEPENDS} \
-			math/cblas \
 			math/lapack
 WANTLIB+=		${MODFORTRAN_WANTLIB} blas cblas lapack
 .endif

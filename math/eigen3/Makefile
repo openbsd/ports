@@ -9,6 +9,7 @@ HOMEPAGE =	https://eigen.tuxfamily.org
 VERSION =	3.4.0
 DISTNAME =	eigen-${VERSION}
 PKGNAME =	eigen3-${VERSION}
+REVISION =	0
 
 # Mostly MPLv2, also LGPLv2.1, LGPLv2.1+ and BSDL
 PERMIT_PACKAGE =	Yes
@@ -23,7 +24,7 @@ FLAVOR ?=
 WANTLIB- =
 
 BUILD_DEPENDS =		devel/sparsehash \
-			math/blas \
+			math/lapack \
 			math/suitesparse
 
 RUN_DEPENDS =		devel/sparsehash \

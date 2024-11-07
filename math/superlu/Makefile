@@ -4,6 +4,7 @@ COMMENT =	library for solving sparse linear equation systems
 GH_ACCOUNT =	xiaoyeli
 GH_PROJECT =	superlu
 GH_TAGNAME =	v6.0.1
+REVISION =	0
 
 SHARED_LIBS +=	superlu	1.0	# 6.0.0
 
@@ -18,7 +19,7 @@ WANTLIB +=	m blas
 
 MODULES =	devel/cmake
 
-LIB_DEPENDS =	math/blas
+LIB_DEPENDS =	math/lapack
 
 CONFIGURE_ARGS += -DBUILD_SHARED_LIBS=ON
 CONFIGURE_ARGS += -DUSE_XSDK_DEFAULTS=ON

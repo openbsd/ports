@@ -1,5 +1,0 @@
-include/cblas.h
-include/cblas_f77.h
-@static-lib lib/libcblas.a
-@lib lib/libcblas.so.${LIBcblas_VERSION}
-@static-lib lib/libcblas_p.a
