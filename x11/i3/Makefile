@@ -9,8 +9,6 @@ HOMEPAGE=	https://i3wm.org/
 # BSD
 PERMIT_PACKAGE=	Yes
 
-# XXX use of pledge has been neutered. For more details see
-# https://marc.info/?l=openbsd-ports&m=156762440931634&w=2
 WANTLIB += c cairo ev glib-2.0 gobject-2.0 iconv m pango-1.0 pangocairo-1.0
 WANTLIB += pcre2-8 startup-notification-1 xcb xcb-cursor xcb-icccm
 WANTLIB += xcb-keysyms xcb-randr xcb-shape xcb-util xcb-xinerama
