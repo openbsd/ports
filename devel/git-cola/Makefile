@@ -1,13 +1,12 @@
 COMMENT =	python powered git gui
 
 MODPY_EGG_VERSION =	4.8.2
+REVISION =		0
 DISTNAME =		git-cola-${MODPY_EGG_VERSION}
 
 CATEGORIES =	devel x11
 
 HOMEPAGE =	https://git-cola.github.io/
-
-MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 
 # GPLv2 only
 PERMIT_PACKAGE =	Yes
