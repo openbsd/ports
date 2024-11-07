@@ -21,6 +21,7 @@ EPOCH=			0
 
 ### stable
 .if ${PROPERTIES:Mrust}
+REVISION=		0
 SHARED_LIBS +=  rsvg-2               41.0     # 52.0
 GNOME_VERSION=		${STABLE_VERSION}
 MODULES +=		devel/cargo \
