@@ -1,7 +1,7 @@
 Index: common/stringop.c
 --- common/stringop.c.orig
 +++ common/stringop.c
-@@ -6,7 +6,16 @@
+@@ -5,7 +5,16 @@
  #include <stdlib.h>
  #include <string.h>
  #include <strings.h>

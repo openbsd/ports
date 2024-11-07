@@ -1,7 +1,7 @@
 Index: sway/config.c
 --- sway/config.c.orig
 +++ sway/config.c
-@@ -4,7 +4,11 @@
+@@ -5,7 +5,11 @@
  #include <stdlib.h>
  #include <unistd.h>
  #include <libgen.h>
@@ -13,7 +13,7 @@ Index: sway/config.c
  #include <sys/types.h>
  #include <sys/wait.h>
  #include <sys/stat.h>
-@@ -661,6 +665,7 @@ void load_include_configs(const char *path, struct swa
+@@ -620,6 +624,7 @@ void load_include_configs(const char *path, struct swa
  		goto cleanup;
  	}
  
@@ -21,7 +21,7 @@ Index: sway/config.c
  	wordexp_t p;
  	if (wordexp(path, &p, 0) == 0) {
  		char **w = p.we_wordv;
-@@ -670,6 +675,17 @@ void load_include_configs(const char *path, struct swa
+@@ -629,6 +634,17 @@ void load_include_configs(const char *path, struct swa
  		}
  		wordfree(&p);
  	}

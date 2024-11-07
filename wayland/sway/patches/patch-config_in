@@ -3,17 +3,12 @@
 Index: config.in
 --- config.in.orig
 +++ config.in
-@@ -14,11 +14,11 @@ set $down j
+@@ -14,7 +14,7 @@ set $down j
  set $up k
  set $right l
  # Your preferred terminal emulator
 -set $term foot
 +set $term xterm
  # Your preferred application launcher
- # Note: pass the final command to swaymsg so that the resulting window can be opened
- # on the original workspace that the command was run on.
--set $menu dmenu_path | wmenu | xargs swaymsg exec --
-+set $menu wmenu_path | wmenu | xargs swaymsg exec --
+ set $menu wmenu-run
  
- ### Output configuration
- #

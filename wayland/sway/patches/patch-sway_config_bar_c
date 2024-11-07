@@ -1,7 +1,7 @@
 Index: sway/config/bar.c
 --- sway/config/bar.c.orig
 +++ sway/config/bar.c
-@@ -9,7 +9,9 @@
+@@ -8,7 +8,9 @@
  #include <sys/types.h>
  #include <sys/wait.h>
  #include <unistd.h>

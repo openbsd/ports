@@ -1,11 +1,21 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -81,7 +81,6 @@ drm_full = dependency('libdrm') # only needed for drm_
- drm = drm_full.partial_dependency(compile_args: true, includes: true)
+@@ -29,6 +29,8 @@ add_project_arguments(
+ cc = meson.get_compiler('c')
+ 
+ is_freebsd = host_machine.system().startswith('freebsd')
++is_openbsd = host_machine.system().startswith('openbsd')
++
+ datadir = get_option('datadir')
+ sysconfdir = get_option('sysconfdir')
+ prefix = get_option('prefix')
+@@ -77,7 +79,7 @@ xcb = wlroots_features['xwayland'] ? dependency('xcb')
+ drm = dependency('libdrm')
  libudev = wlroots_features['libinput_backend'] ? dependency('libudev') : null_dep
  math = cc.find_library('m')
 -rt = cc.find_library('rt')
- xcb_icccm = dependency('xcb-icccm', required: get_option('xwayland'))
++rt = cc.find_library('rt', required: not is_openbsd)
+ xcb_icccm = wlroots_features['xwayland'] ? dependency('xcb-icccm') : null_dep
  threads = dependency('threads') # for pthread_setschedparam
  
