@@ -2,3 +2,6 @@
 @pkgpath telephony/baresip/baresip,-gtk2
 @so lib/baresip/modules/gtk.so
 @so lib/baresip/modules/vidinfo.so
+share/applications/
+share/applications/com.github.baresip.desktop
+@tag update-desktop-database

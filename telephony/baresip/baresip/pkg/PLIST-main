@@ -8,6 +8,7 @@ lib/baresip/modules/
 @so lib/baresip/modules/aubridge.so
 @so lib/baresip/modules/auconv.so
 @so lib/baresip/modules/aufile.so
+@so lib/baresip/modules/augain.so
 @so lib/baresip/modules/auresamp.so
 @so lib/baresip/modules/ausine.so
 @so lib/baresip/modules/av1.so

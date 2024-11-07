@@ -32,7 +32,8 @@ LIB_DEPENDS-main =	audio/libsndfile \
 			telephony/baresip/re>=3.15.0 \
 			telephony/spandsp
 LIB_DEPENDS-gtk =	x11/gtk+3,-main
-RUN_DEPENDS-gtk =	telephony/baresip/baresip,-main
+RUN_DEPENDS-gtk =	telephony/baresip/baresip,-main \
+			devel/desktop-file-utils
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_JACK=Yes \
 			-DCMAKE_DISABLE_FIND_PACKAGE_PULSE=Yes \
 			-DCMAKE_DISABLE_FIND_PACKAGE_PORTAUDIO=Yes \
@@ -42,5 +43,10 @@ post-extract:
 	# do the symlink dance so that cmake finds static libzrtpcppcore.a & private headers
 	ln -sf ${WRKDIR}/telephony/libzrtp/ZRTPCPP-2d59090ee244bc4d3a682ad45ae49dc7b4d4dfb7 ${WRKDIR}/ZRTPCPP
 	ln -f ${WRKDIR}/telephony/libzrtp/build-${MACHINE_ARCH}/clients/no_client/libzrtpcppcore.a ${WRKDIR}/ZRTPCPP/clients/no_client/
+
+post-install:
+	# files not installed since https://github.com/baresip/baresip/commit/085e86fa32f67f6fe54b92cb11aa8ee740032a53#r148833148
+	${INSTALL_DATA_DIR} ${PREFIX}/share/baresip/
+	cp ${WRKSRC}/share/{*.wav,logo.png} ${PREFIX}/share/baresip/
 
 .include <bsd.port.mk>
