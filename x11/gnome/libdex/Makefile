@@ -1,5 +1,5 @@
 # see patches
-ONLY_FOR_ARCHS=		amd64 i386
+ONLY_FOR_ARCHS=		amd64
 
 COMMENT=		future-based programming for GLib-based applications
 
