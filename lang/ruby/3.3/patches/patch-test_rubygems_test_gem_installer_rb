@@ -4,7 +4,7 @@ files when building gems.
 Index: test/rubygems/test_gem_installer.rb
 --- test/rubygems/test_gem_installer.rb.orig
 +++ test/rubygems/test_gem_installer.rb
-@@ -1700,7 +1700,7 @@ end
+@@ -1737,7 +1737,7 @@ end
      end
  
      assert_path_exist extension_file, "installed"
