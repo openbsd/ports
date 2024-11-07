@@ -67,6 +67,7 @@ include/wayfire/plugins/ipc/
 include/wayfire/plugins/ipc/ipc-activator.hpp
 include/wayfire/plugins/ipc/ipc-helpers.hpp
 include/wayfire/plugins/ipc/ipc-method-repository.hpp
+include/wayfire/plugins/ipc/ipc-rules-common.hpp
 include/wayfire/plugins/scale-signal.hpp
 include/wayfire/plugins/vswitch.hpp
 include/wayfire/plugins/wm-actions-signals.hpp
