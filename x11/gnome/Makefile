@@ -44,7 +44,6 @@
      SUBDIR += iagno
      SUBDIR += icon-theme
      SUBDIR += icon-theme-symbolic
-     SUBDIR += initial-setup
      SUBDIR += keyring
      SUBDIR += libadwaita
      SUBDIR += libcloudproviders
