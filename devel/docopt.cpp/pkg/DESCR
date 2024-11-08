@@ -1,0 +1,3 @@
+docopt helps you create most beautiful command-line interfaces easily,
+where the option parser is generated based on the beautiful help message
+that you write yourself.

@@ -1,0 +1,14 @@
+include/docopt/
+include/docopt/docopt.h
+include/docopt/docopt_private.h
+include/docopt/docopt_util.h
+include/docopt/docopt_value.h
+lib/cmake/
+lib/cmake/docopt/
+lib/cmake/docopt/docopt-config-version.cmake
+lib/cmake/docopt/docopt-config.cmake
+lib/cmake/docopt/docopt-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/docopt/docopt-targets.cmake
+@static-lib lib/libdocopt.a
+@lib lib/libdocopt.so.${LIBdocopt_VERSION}
+lib/pkgconfig/docopt.pc
