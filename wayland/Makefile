@@ -5,6 +5,7 @@
      SUBDIR += gtk-layer-shell
      SUBDIR += gtk4-layer-shell
      SUBDIR += havoc
+     SUBDIR += labwc
      SUBDIR += libei
      SUBDIR += libevdev-openbsd
      SUBDIR += libinput-openbsd
