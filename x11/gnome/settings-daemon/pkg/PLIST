@@ -14,6 +14,7 @@ lib/pkgconfig/gnome-settings-daemon.pc
 @bin libexec/gsd-print-notifications
 @bin libexec/gsd-printer
 @bin libexec/gsd-screensaver-proxy
+@bin libexec/gsd-sharing
 @bin libexec/gsd-smartcard
 @bin libexec/gsd-sound
 @bin libexec/gsd-usb-protection
@@ -47,6 +48,8 @@ share/examples/gnome-settings-daemon/xdg/autostart/org.gnome.SettingsDaemon.Rfki
 @sample ${SYSCONFDIR}/xdg/autostart/org.gnome.SettingsDaemon.Rfkill.desktop
 share/examples/gnome-settings-daemon/xdg/autostart/org.gnome.SettingsDaemon.ScreensaverProxy.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/org.gnome.SettingsDaemon.ScreensaverProxy.desktop
+share/examples/gnome-settings-daemon/xdg/autostart/org.gnome.SettingsDaemon.Sharing.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/org.gnome.SettingsDaemon.Sharing.desktop
 share/examples/gnome-settings-daemon/xdg/autostart/org.gnome.SettingsDaemon.Smartcard.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/org.gnome.SettingsDaemon.Smartcard.desktop
 share/examples/gnome-settings-daemon/xdg/autostart/org.gnome.SettingsDaemon.Sound.desktop
