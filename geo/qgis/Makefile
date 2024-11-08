@@ -10,6 +10,7 @@ DISTNAME =	qgis-3.40.0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}
+REVISION =	0
 
 SHARED_LIBS =	qgis_core	78.0 \
 		qgis_app	51.0 \
