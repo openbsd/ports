@@ -133,6 +133,7 @@
      SUBDIR += dlib
      SUBDIR += dnspy
      SUBDIR += doc++
+     SUBDIR += docopt.cpp
      SUBDIR += dotconf
      SUBDIR += doxygen
      SUBDIR += doxygen-gui
