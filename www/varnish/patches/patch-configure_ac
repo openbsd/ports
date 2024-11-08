@@ -1,0 +1,12 @@
+https://github.com/varnishcache/varnish-cache/pull/4103
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -227,6 +227,7 @@ AC_CHECK_FUNCS([fnmatch], [], [AC_MSG_ERROR([fnmatch(3
+ 
+ save_LIBS="${LIBS}"
+ LIBS="${PTHREAD_LIBS}"
++AC_CHECK_FUNCS([pthread_setname_np])
+ AC_CHECK_FUNCS([pthread_mutex_isowned_np])
+ AC_CHECK_FUNCS([pthread_getattr_np])
+ LIBS="${save_LIBS}"
