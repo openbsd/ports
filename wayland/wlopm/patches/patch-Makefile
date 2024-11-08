@@ -1,0 +1,35 @@
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -2,9 +2,11 @@ SCANNER := wayland-scanner
+ 
+ PREFIX=/usr/local
+ BINDIR=$(PREFIX)/bin
+-MANDIR=$(PREFIX)/share/man
++MANDIR=$(PREFIX)/man
+ 
+-CFLAGS+=-Wall -Werror -Wextra -Wpedantic -Wno-unused-parameter -Wconversion -Wformat-security -Wformat -Wsign-conversion -Wfloat-conversion -Wunused-result
++CPPFLAGS=-I/usr/local/include
++CFLAGS+=-Wall -Werror -Wextra -Wpedantic -Wno-unused-parameter -Wconversion -Wformat-security -Wformat -Wsign-conversion -Wfloat-conversion -Wunused-result -Wno-strict-prototypes
++LDFLAGS=-L/usr/local/lib -Wl,-rpath /usr/local/lib
+ LIBS=-lwayland-client
+ OBJ=wlopm.o wlr-output-power-management-unstable-v1.o
+ GEN=wlr-output-power-management-unstable-v1.c wlr-output-power-management-unstable-v1.h
+@@ -21,8 +23,10 @@ $(OBJ): $(GEN)
+ 	$(SCANNER) client-header < $< > $@
+ 
+ install: wlopm
+-	install -D wlopm   $(DESTDIR)$(BINDIR)/wlopm
+-	install -D wlopm.1 $(DESTDIR)$(MANDIR)/man1/wlopm.1
++	install -d $(DESTDIR)$(BINDIR)
++	install wlopm $(DESTDIR)$(BINDIR)
++	install -d $(DESTDIR)$(MANDIR)/man1
++	install -m 644 wlopm.1 $(DESTDIR)$(MANDIR)/man1
+ 
+ uninstall:
+ 	$(RM) $(DESTDIR)$(BINDIR)/wlopm
+@@ -32,4 +36,3 @@ clean:
+ 	$(RM) wlopm $(GEN) $(OBJ)
+ 
+ .PHONY: clean install
+-
