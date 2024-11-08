@@ -112,8 +112,12 @@ lib/python${MODPY_VERSION}/site-packages/dill/tests/${MODPY_PYCACHE}test_session
 lib/python${MODPY_VERSION}/site-packages/dill/tests/${MODPY_PYCACHE}test_session.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dill/tests/${MODPY_PYCACHE}test_source.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dill/tests/${MODPY_PYCACHE}test_source.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dill/tests/${MODPY_PYCACHE}test_sources.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/dill/tests/${MODPY_PYCACHE}test_sources.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dill/tests/${MODPY_PYCACHE}test_temp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dill/tests/${MODPY_PYCACHE}test_temp.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/dill/tests/${MODPY_PYCACHE}test_threads.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/dill/tests/${MODPY_PYCACHE}test_threads.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dill/tests/${MODPY_PYCACHE}test_weakref.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/dill/tests/${MODPY_PYCACHE}test_weakref.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/dill/tests/test_abc.py
@@ -142,5 +146,7 @@ lib/python${MODPY_VERSION}/site-packages/dill/tests/test_restricted.py
 lib/python${MODPY_VERSION}/site-packages/dill/tests/test_selected.py
 lib/python${MODPY_VERSION}/site-packages/dill/tests/test_session.py
 lib/python${MODPY_VERSION}/site-packages/dill/tests/test_source.py
+lib/python${MODPY_VERSION}/site-packages/dill/tests/test_sources.py
 lib/python${MODPY_VERSION}/site-packages/dill/tests/test_temp.py
+lib/python${MODPY_VERSION}/site-packages/dill/tests/test_threads.py
 lib/python${MODPY_VERSION}/site-packages/dill/tests/test_weakref.py
