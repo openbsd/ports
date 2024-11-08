@@ -1,3 +1,5 @@
+XXX see sysutils/accountsservice/patches/patch-src_libaccountsservice_act-user_c
+
 Index: panels/system/users/run-passwd.c
 --- panels/system/users/run-passwd.c.orig
 +++ panels/system/users/run-passwd.c
