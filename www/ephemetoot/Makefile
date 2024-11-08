@@ -1,21 +1,20 @@
-COMMENT =		tool for deleting old Mastodon toots
+COMMENT=	tool for deleting old Mastodon toots
 
-MODPY_EGG_VERSION =	3.2.0
-DISTNAME =		ephemetoot-${MODPY_EGG_VERSION}
-REVISION =		1
+MODPY_EGG_VERSION=	3.2.1
+DISTNAME=	ephemetoot-${MODPY_EGG_VERSION}
 
-CATEGORIES =		www
+CATEGORIES=	www
 
 # GPLv3+
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS =		textproc/py-yaml${MODPY_FLAVOR}>=5.0 \
-			www/py-mastodon.py${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR}
+RUN_DEPENDS=	textproc/py-yaml${MODPY_FLAVOR}>=5.0 \
+		www/py-mastodon.py${MODPY_FLAVOR} \
+		www/py-requests${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
