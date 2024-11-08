@@ -1,7 +1,6 @@
 COMMENT =		high-performance HTTP accelerator
 
-DISTNAME =		varnish-7.5.0
-REVISION =		0
+DISTNAME =		varnish-7.6.1
 
 CATEGORIES =		www
 
@@ -30,7 +29,12 @@ LIB_DEPENDS =		devel/pcre2
 
 USE_GMAKE =		Yes
 SEPARATE_BUILD =	Yes
-CONFIGURE_STYLE =	gnu
+
+# requires to patch configure.ac
+AUTOCONF_VERSION =	2.72
+AUTOMAKE_VERSION=	1.16
+CONFIGURE_STYLE =	autoreconf
+
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}" \
 			PYTHON="${MODPY_BIN}" \
