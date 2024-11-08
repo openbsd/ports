@@ -20,6 +20,7 @@ PKGNAME-sqlite3=	bacula-sqlite3-$V
 REVISION-main=		0
 REVISION-server=	0
 REVISION-pgsql=		0
+REVISION-bat=		0
 
 CATEGORIES=		sysutils
 
