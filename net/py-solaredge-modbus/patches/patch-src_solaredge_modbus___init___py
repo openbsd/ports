@@ -1,0 +1,15 @@
+fix runtime with pymodbus>=3.7.0
+
+https://github.com/nmakel/solaredge_modbus/pull/103
+Index: src/solaredge_modbus/__init__.py
+--- src/solaredge_modbus/__init__.py.orig
++++ src/solaredge_modbus/__init__.py
+@@ -6,7 +6,7 @@ from pymodbus.payload import BinaryPayloadBuilder
+ from pymodbus.payload import BinaryPayloadDecoder
+ from pymodbus.client import ModbusTcpClient
+ from pymodbus.client import ModbusSerialClient
+-from pymodbus.register_read_message import ReadHoldingRegistersResponse
++from pymodbus.pdu.register_read_message import ReadHoldingRegistersResponse
+ 
+ 
+ RETRIES = 3

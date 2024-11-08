@@ -1,7 +1,6 @@
 COMMENT =	collect data from SolarEdge inverters over Modbus
 
-MODPY_EGG_VERSION =	0.7.2
-REVISION =	1
+MODPY_EGG_VERSION =	0.8.0
 DISTNAME =	solaredge_modbus-${MODPY_EGG_VERSION}
 PKGNAME =	py-solaredge-modbus-${MODPY_EGG_VERSION}
 
@@ -18,8 +17,7 @@ MODPY_PYBUILD =	setuptools
 MODPY_PI =	Yes
 NO_TEST =	Yes
 
-# https://github.com/nmakel/solaredge_modbus/issues/83
-RUN_DEPENDS =	net/py-modbus${MODPY_FLAVOR}=3.4.1
+RUN_DEPENDS =	net/py-modbus${MODPY_FLAVOR}>=3.7.0
 FLAVORS =	python3
 FLAVOR =	python3
 
