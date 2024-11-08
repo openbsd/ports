@@ -21,5 +21,6 @@ lib/python${MODPY_VERSION}/site-packages/slugify/${MODPY_PYCACHE}slugify.${MODPY
 lib/python${MODPY_VERSION}/site-packages/slugify/${MODPY_PYCACHE}special.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/slugify/${MODPY_PYCACHE}special.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/slugify/__version__.py
+lib/python${MODPY_VERSION}/site-packages/slugify/py.typed
 lib/python${MODPY_VERSION}/site-packages/slugify/slugify.py
 lib/python${MODPY_VERSION}/site-packages/slugify/special.py

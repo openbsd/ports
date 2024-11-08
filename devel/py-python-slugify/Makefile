@@ -1,9 +1,8 @@
 COMMENT =		utility to create slugs from unicode strings
 
-MODPY_EGG_VERSION =	8.0.1
+MODPY_EGG_VERSION =	8.0.4
 DISTNAME =		python-slugify-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		devel
 
