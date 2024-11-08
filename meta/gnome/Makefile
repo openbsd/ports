@@ -8,6 +8,7 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
+REVISION-main=		0
 REVISION-extras=	1
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -62,7 +63,6 @@ RUN_DEPENDS-main +=	devel/gsettings-desktop-schemas \
 			x11/gnome/desktop,-gtk4 \
 			x11/gnome/gdm \
 			x11/gnome/gvfs \
-			x11/gnome/initial-setup \
 			x11/gnome/keyring \
 			x11/gnome/menus \
 			x11/gnome/mutter \
@@ -75,6 +75,25 @@ RUN_DEPENDS-main +=	devel/gsettings-desktop-schemas \
 			x11/gnome/tecla  \
 			x11/gnome/tour \
 			x11/gnome/user-docs
+
+# XXX don't depend on gnome-initial-setup; it's in the CVS Attic for now.
+# Initial Setup is used to configure / create new users.
+# 
+# Currently, only if there is no user in the system, GDM will start Initial
+# Setup (as the _gnome-initial-setup user) and configure one. This may change in
+# the future and run for existing users that haven't connected to GNOME yet.
+# gnome-initial-setup/gnome-initial-setup.c:324
+# x11/gnome/gdm: daemon/gdm-display.c
+# https://gitlab.gnome.org/GNOME/gnome-initial-setup/-/issues/12
+# https://gitlab.gnome.org/GNOME/gnome-initial-setup/-/issues/120#note_1019004
+# https://gitlab.gnome.org/GNOME/gnome-shell/-/issues/3749
+#
+# It's integration with PAM, chpasswd, /dev/dri/card* ownership etc. makes it
+# difficult running on OpenBSD.
+# accountsservice-WARNING **: SetPassword call failed: GDBus.Error:org.freedesktop.Accounts.Error.Failed: running '/usr/sbin/chpasswd' failed: Failed to execute child process '/usr/sbin/chpasswd' (No such file or directory)
+# (gnome-initial-setup:12761): InitialSetup-WARNING **: PAM module error: Sorry, password authentication didn't work. Please try again.
+#
+#RUN_DEPENDS-main +=	x11/gnome/initial-setup
 
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core/meta-gnome-core-apps.bst
 RUN_DEPENDS-main +=	x11/gnome/calculator \
