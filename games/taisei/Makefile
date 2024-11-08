@@ -8,9 +8,8 @@ USE_NOBTCFI =		Yes
 
 COMMENT =		clone of the touhou games
 
-VERSION =		1.4.1
+VERSION =		1.4.2
 DISTNAME =		taisei-${VERSION}
-REVISION =		1
 
 CATEGORIES =		games
 

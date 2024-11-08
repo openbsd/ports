@@ -952,6 +952,8 @@ share/taisei/00-taisei.pkgdir/shader/fireparticles.vert.glsl
 share/taisei/00-taisei.pkgdir/shader/fxaa.frag.glsl
 share/taisei/00-taisei.pkgdir/shader/fxaa.prog
 share/taisei/00-taisei.pkgdir/shader/fxaa.vert.glsl
+share/taisei/00-taisei.pkgdir/shader/gamepad_circle.frag.glsl
+share/taisei/00-taisei.pkgdir/shader/gamepad_circle.prog
 share/taisei/00-taisei.pkgdir/shader/glitch.frag.glsl
 share/taisei/00-taisei.pkgdir/shader/glitch.prog
 share/taisei/00-taisei.pkgdir/shader/graph.frag.glsl
