@@ -2,6 +2,7 @@ COMMENT=		GNOME session
 
 GNOME_PROJECT=		gnome-session
 GNOME_VERSION=		47.0.1
+REVISION=		0
 
 CATEGORIES=		x11
 
