@@ -5,6 +5,7 @@ DISTNAME=		netatalk-${V}
 EXTRACT_SUFX=		.tar.xz
 PKGSPEC=		netatalk->=3,<4
 EPOCH=			0
+REVISION=		0
 
 SHARED_LIBS +=  atalk                17.0     # unknown
 

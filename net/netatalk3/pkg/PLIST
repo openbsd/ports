@@ -1,5 +1,6 @@
 @conflict jday-*
 @pkgpath net/netatalk
+@pkgpath net/netatalk,avahi
 @rcscript ${RCDIR}/netatalk
 @bin bin/ad
 @mode 4755
