@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.451 2024/11/06 14:31:59 denis Exp $
+$OpenBSD: user.list,v 1.452 2024/11/08 16:05:20 ajacoutot Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -232,7 +232,7 @@ id  user		group		port
 721 _dkimproxy		_dkimproxy	mail/dkimproxy
 722 _salt		_salt		sysutils/salt
 723 _barman		_barman		databases/barman
-724 _gnome-initial-setup _gnome-initial-setup	x11/gnome/initial-setup
+#724 _gnome-initial-setup _gnome-initial-setup	x11/gnome/initial-setup
 #725 _opengroupware	_opengroupware	www/opengroupware
 726 _rrdcached		_rrdcached	net/rrdtool
 727 _sslsplit		_sslsplit	security/sslsplit
