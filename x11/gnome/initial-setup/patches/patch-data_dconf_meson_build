@@ -1,0 +1,13 @@
+gnome-initial-setup -> _gnome-initial-setup
+
+Index: data/dconf/meson.build
+--- data/dconf/meson.build.orig
++++ data/dconf/meson.build
+@@ -1,6 +1,6 @@
+ conf = configure_file(
+   input: 'gnome-initial-setup.in',
+-  output: '@BASENAME@',
++  output: '_@BASENAME@',
+   configuration: {
+     'DATADIR': prefix / get_option('datadir'),
+     'PACKAGE': meson.project_name(),
