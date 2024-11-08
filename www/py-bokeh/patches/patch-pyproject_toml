@@ -8,18 +8,15 @@ Index: pyproject.toml
  build-backend = "setuptools.build_meta"
  
  [project]
-@@ -66,14 +66,8 @@ bokeh = "bokeh.__main__:main"
+@@ -64,11 +64,6 @@ bokeh = "bokeh.__main__:main"
+ 
  [tool.setuptools.packages.find]
  where = ["src"]
- 
+-
 -[tool.setuptools-git-versioning]
 -enabled = true
 -dev_template = "{tag}+{ccount}.g{sha}"
 -dirty_template = "{tag}+{ccount}.g{sha}.dirty"
--
+ 
  [tool.pytest.ini_options]
  timeout = 90
--asyncio_mode = "strict"
- norecursedirs = "build _build node_modules tests/support"
- python_files = "*_tests.py *_test.py test_*.py"
- markers = [
