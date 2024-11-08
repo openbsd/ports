@@ -1,9 +1,6 @@
-# do not update to 3.5.0, breaking change
-# cf https://github.com/nmakel/solaredge_modbus/issues/83
 COMMENT =	full modbus protocol written in python
 
-MODPY_EGG_VERSION =	3.4.1
-REVISION =	1
+MODPY_EGG_VERSION =	3.7.4
 DISTNAME =	pymodbus-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
 
