@@ -8831,6 +8831,7 @@ go/src/net/write_unix_test.go
 go/src/net/writev_test.go
 go/src/net/writev_unix.go
 go/src/os/
+go/src/os/copy_test.go
 go/src/os/dir.go
 go/src/os/dir_darwin.go
 go/src/os/dir_plan9.go
@@ -13693,6 +13694,9 @@ go/test/fixedbugs/issue6889.go
 go/test/fixedbugs/issue6899.go
 go/test/fixedbugs/issue6899.out
 go/test/fixedbugs/issue6902.go
+go/test/fixedbugs/issue69110.go
+go/test/fixedbugs/issue69434.go
+go/test/fixedbugs/issue69507.go
 go/test/fixedbugs/issue6964.go
 go/test/fixedbugs/issue6977.go
 go/test/fixedbugs/issue7023.dir/
