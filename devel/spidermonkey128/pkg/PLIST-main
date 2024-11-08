@@ -6,6 +6,7 @@
 @pkgpath devel/spidermonkey91
 @pkgpath devel/spidermonkey102
 @pkgpath devel/spidermonkey115
+@pkgpath devel/spidermonkey128
 bin/js${MOZILLA_VERSION}-config
 include/mozjs-${MOZILLA_VERSION}/
 include/mozjs-${MOZILLA_VERSION}/BaseProfiler.h

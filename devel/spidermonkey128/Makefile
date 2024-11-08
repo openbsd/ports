@@ -3,7 +3,8 @@ USE_WXNEEDED =		Yes
 
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
 
-COMMENT =		C/C++ Mozilla's JavaScript engine implementation #'
+COMMENT-main =		C/C++ Mozilla's JavaScript engine implementation #'
+COMMENT-js =		C/C++ Mozilla's JavaScript shell'
 
 MOZILLA_VERSION =	128
 SUBST_VARS =		MOZILLA_VERSION
@@ -13,11 +14,13 @@ SUBST_VARS +=		SO_VERSION
 
 V =			${MOZILLA_VERSION}.4.0
 DISTNAME =		firefox-${V}esr.source
-PKGNAME =		spidermonkey${MOZILLA_VERSION}-${V}
+PKGNAME-main =		spidermonkey${MOZILLA_VERSION}-${V}
+PKGNAME-js =		js${MOZILLA_VERSION}-${V}
 EPOCH =			1
 
-REVISION =		0
+REVISION-main =		1
 
+MULTI_PACKAGES =	-main -js
 SHARED_LIBS =		mozjs-128 0.0
 
 CATEGORIES =		devel
@@ -33,6 +36,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += curses ffi icudata icui18n icuuc m nspr4 plc4 plds4 z
 WANTLIB += ${COMPILER_LIBCXX} ${MODRUST_WANTLIB}
+WANTLIB-js = ${WANTLIB} readline
 
 MODULES =		lang/python \
 			lang/rust
@@ -103,5 +107,6 @@ pre-configure:
 
 post-install:
 	rm ${PREFIX}/lib/libjs_static.ajs
+	${INSTALL_PROGRAM} ${WRKBUILD}/dist/bin/js ${PREFIX}/bin/js${MOZILLA_VERSION}
 
 .include <bsd.port.mk>
