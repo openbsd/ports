@@ -71,13 +71,13 @@ MODMOZ_BUILD_DEPENDS =	archivers/gtar \
 			archivers/zip>=2.3
 
 .if !defined(MOZILLA_USE_BUNDLED_NSS)
-MODMOZ_LIB_DEPENDS +=	security/nss>=3.97
+MODMOZ_LIB_DEPENDS +=	security/nss>=3.106
 MODMOZ_WANTLIB +=	nss3 nssutil3 smime3 ssl3
 CONFIGURE_ARGS +=	--with-system-nss
 .endif
 
 .if !defined(MOZILLA_USE_BUNDLED_NSPR)
-MODMOZ_LIB_DEPENDS +=	devel/nspr>=4.35
+MODMOZ_LIB_DEPENDS +=	devel/nspr>=4.36
 MODMOZ_WANTLIB +=	nspr4 plc4 plds4
 CONFIGURE_ARGS +=	--with-system-nspr
 .endif
@@ -86,6 +86,12 @@ CONFIGURE_ARGS +=	--with-system-nspr
 MODMOZ_LIB_DEPENDS +=	textproc/icu4c>=73.2p0
 MODMOZ_WANTLIB +=	icudata icui18n icuuc
 CONFIGURE_ARGS +=	--with-system-icu
+.endif
+
+.if !defined(MOZILLA_USE_BUNDLED_FFI)
+MODMOZ_LIB_DEPENDS +=	devel/libffi
+MODMOZ_WANTLIB +=	ffi
+CONFIGURE_ARGS +=	--with-system-ffi
 .endif
 
 .if !defined(MOZILLA_USE_DBUS)
@@ -132,7 +138,6 @@ USE_GMAKE ?=	Yes
 USE_NOBTCFI ?=	Yes
 
 # no --with-system-jpeg starting with fx 18, requires libjpeg-turbo because of bug 791305
-# no --with-system-ffi, needs 3.0.10 when not using gcc
 # no --with-system-cairo, removed in #1432751
 # no --with-system-png, apng support not bundled in
 # no --with-system-sqlite, option removed in #1611386 and we need to use bundled sqlite which has SQLITE_ENABLE_FTS3_TOKENIZER (#1252937)
