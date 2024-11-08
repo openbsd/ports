@@ -1,0 +1,7 @@
+freedesktop.org specifications are sometimes ambiguous in their
+requirements, leaving room for interpretation. libsfdo tries to follow
+them as closely as possible nonetheless, except for cases when doing
+so would add too much complexity for no benefit and/or result in
+suboptimal behavior. Additionally, libsfdo is much stricter than other
+implementations, so it may refuse to process non-conformant desktop
+entry files or icon themes.

@@ -1,0 +1,13 @@
+include/sfdo-basedir.h
+include/sfdo-common.h
+include/sfdo-desktop-file.h
+include/sfdo-desktop.h
+include/sfdo-icon.h
+@lib lib/libsfdo-basedir.so.${LIBsfdo-basedir_VERSION}
+@lib lib/libsfdo-desktop-file.so.${LIBsfdo-desktop-file_VERSION}
+@lib lib/libsfdo-desktop.so.${LIBsfdo-desktop_VERSION}
+@lib lib/libsfdo-icon.so.${LIBsfdo-icon_VERSION}
+lib/pkgconfig/libsfdo-basedir.pc
+lib/pkgconfig/libsfdo-desktop-file.pc
+lib/pkgconfig/libsfdo-desktop.pc
+lib/pkgconfig/libsfdo-icon.pc
