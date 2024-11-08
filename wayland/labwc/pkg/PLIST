@@ -5,14 +5,22 @@
 @man man/man5/labwc-menu.5
 @man man/man5/labwc-theme.5
 share/doc/labwc/
+@sample ${SYSCONFDIR}/xdg/
+@sample ${SYSCONFDIR}/xdg/labwc/
 share/doc/labwc/README
 share/doc/labwc/autostart
+@sample ${SYSCONFDIR}/xdg/labwc/autostart
 share/doc/labwc/environment
+@sample ${SYSCONFDIR}/xdg/labwc/environment
 share/doc/labwc/menu.xml
+@sample ${SYSCONFDIR}/xdg/labwc/menu.xml
 share/doc/labwc/rc.xml
+@sample ${SYSCONFDIR}/xdg/labwc/rc.xml
 share/doc/labwc/rc.xml.all
 share/doc/labwc/shutdown
+@sample ${SYSCONFDIR}/xdg/labwc/shutdown
 share/doc/labwc/themerc
+@sample ${SYSCONFDIR}/xdg/labwc/themerc
 share/icons/hicolor/scalable/apps/labwc-symbolic.svg
 share/icons/hicolor/scalable/apps/labwc.svg
 share/locale/ar/LC_MESSAGES/labwc.mo

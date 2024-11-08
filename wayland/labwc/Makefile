@@ -3,6 +3,7 @@ COMMENT =	window-stacking Wayland compositor
 GH_ACCOUNT =	labwc
 GH_PROJECT =	labwc
 GH_TAGNAME =	0.8.1
+REVISION =	0
 
 CATEGORIES =	wayland
 
@@ -18,7 +19,11 @@ DEBUG_PACKAGES = ${BUILD_PACKAGES}
 BUILD_DEPENDS =	devel/gettext,-tools \
 		wayland/wayland-protocols
 
-RUN_DEPENDS +=	x11/gtk+4,-guic
+RUN_DEPENDS +=	x11/gtk+4,-guic \
+		wayland/havoc \
+		wayland/swaybg \
+		wayland/swayidle \
+		wayland/swaylock
 
 LIB_DEPENDS =	sysutils/libsfdo \
 		x11/gnome/librsvg \
