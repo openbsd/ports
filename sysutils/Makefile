@@ -183,6 +183,7 @@
      SUBDIR += libregf
      SUBDIR += librelp
      SUBDIR += libscca
+     SUBDIR += libsfdo
      SUBDIR += libsigscan
      SUBDIR += libsmdev
      SUBDIR += libsmraw
