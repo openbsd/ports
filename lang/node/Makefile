@@ -14,7 +14,7 @@ DISTFILES.pledge =	node-pledge-{}${PLEDGE_VER}.tar.gz
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
 EPOCH =			0
-REVISION =		0
+REVISION =		1
 
 SITES.pledge =		https://github.com/qbit/node-pledge/archive/
 
@@ -80,6 +80,8 @@ LIB_DEPENDS +=		archivers/brotli \
 
 EOPENSSL_LIB =		${LOCALBASE}/lib/eopenssl33
 EOPENSSL_INC =		${LOCALBASE}/include/eopenssl33
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 post-extract:
 	mv ${WRKDIR}/node-pledge-${PLEDGE_VER} \
