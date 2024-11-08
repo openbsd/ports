@@ -24,6 +24,7 @@
      SUBDIR += wev
      SUBDIR += wf-config
      SUBDIR += wf-shell
+     SUBDIR += wlopm
      SUBDIR += wlroots
      SUBDIR += wlr-randr
      SUBDIR += wmenu
