@@ -1,3 +1,6 @@
+This is not enough to set a new password for the user because we are missing
+chpasswd functionnality (i.e. add / replace password through stdin).
+
 Index: src/libaccountsservice/act-user.c
 --- src/libaccountsservice/act-user.c.orig
 +++ src/libaccountsservice/act-user.c
@@ -11,3 +14,22 @@ Index: src/libaccountsservice/act-user.c
  
  #include <glib.h>
  #include <glib/gi18n.h>
+@@ -1789,10 +1791,18 @@ generate_salt_for_crypt_hash (void)
+ static gchar *
+ make_crypted (const gchar *plain)
+ {
++#ifndef __OpenBSD__
+         g_autofree char *salt = NULL;
+ 
+         salt = generate_salt_for_crypt_hash ();
+         return g_strdup (crypt (plain, salt));
++#else
++        static char hash[_PASSWORD_LEN];
++        char *pref = "bcrypt,a";
++        crypt_newhash(plain, pref, hash, sizeof(hash));
++        explicit_bzero((void *)plain, sizeof(plain));
++        return g_strdup (hash);
++#endif
+ }
+ 
+ /**

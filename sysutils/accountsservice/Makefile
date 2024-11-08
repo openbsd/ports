@@ -1,11 +1,11 @@
-# XXX fix change password (gnome-cc run-passwd.c: argv[0])
+# XXX fix change password (gnome-cc run-passwd.c: argv[0]);
+# see patches/patch-src_libaccountsservice_act-user_c
 
 COMMENT=	D-Bus interface for user account query and manipulation
 
-# XXX 0.6.43: https://bugs.freedesktop.org/show_bug.cgi?id=48177
 DISTNAME=	accountsservice-23.13.9
-REVISION=	0
 EXTRACT_SUFX=	.tar.xz
+REVISION=	1
 
 SHARED_LIBS += accountsservice           0.1 # 0.0.0
 
