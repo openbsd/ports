@@ -709,7 +709,6 @@
      SUBDIR += tcptraceroute
      SUBDIR += tdesktop
      SUBDIR += tdlib
-     SUBDIR += telegram-purple
      SUBDIR += telepathy
      SUBDIR += telescope
      SUBDIR += termshark
