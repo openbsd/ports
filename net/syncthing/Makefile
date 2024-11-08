@@ -3,6 +3,7 @@ COMMENT =	open decentralized synchronization utility
 V =		1.27.12
 DISTNAME =	syncthing-${V}
 DISTFILES =	syncthing-source-v${V}${EXTRACT_SUFX}
+REVISION =	0
 
 CATEGORIES =	net
 HOMEPAGE =	https://syncthing.net/
@@ -11,6 +12,7 @@ MAINTAINER =	Edd Barrett <edd@openbsd.org>
 # MPL 2.0
 PERMIT_PACKAGE = Yes
 
+# uses unveil()
 WANTLIB += c pthread
 
 SITES = https://github.com/syncthing/syncthing/releases/download/v${V}/

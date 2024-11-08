@@ -1,0 +1,36 @@
+use unveil(2) to limit execution to
+- restarting itself
+- xdg-open(1) aka. to open the web interface
+
+Index: cmd/syncthing/main.go
+--- cmd/syncthing/main.go.orig
++++ cmd/syncthing/main.go
+@@ -29,6 +29,8 @@ import (
+ 	"syscall"
+ 	"time"
+ 
++	"golang.org/x/sys/unix"
++
+ 	"github.com/alecthomas/kong"
+ 	_ "github.com/syncthing/syncthing/lib/automaxprocs"
+ 	"github.com/thejerf/suture/v4"
+@@ -206,6 +208,19 @@ func defaultVars() kong.Vars {
+ }
+ 
+ func main() {
++	if err := unix.Unveil("/", "rwc"); err != nil {
++		panic(err)
++	}
++	if err := unix.Unveil("/usr/local/bin/syncthing", "rx"); err != nil {
++		panic(err)
++	}
++	if err := unix.Unveil("/usr/local/bin/xdg-open", "rx"); err != nil {
++		panic(err)
++	}
++	if err := unix.UnveilBlock(); err != nil {
++		panic(err)
++	}
++
+ 	// First some massaging of the raw command line to fit the new model.
+ 	// Basically this means adding the default command at the front, and
+ 	// converting -options to --options.
