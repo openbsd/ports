@@ -7,7 +7,7 @@ COMMENT-data =		naev game data
 V = 			0.11.5
 DISTNAME =		naev-${V}-source
 PKGNAME = 		naev-${V}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES = 		games x11
 
