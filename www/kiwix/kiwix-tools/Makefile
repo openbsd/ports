@@ -1,5 +1,7 @@
 COMMENT =	command-line Kiwix tools
 
+BROKEN =	kiwix-tools-3.7.0 is incompatible with libkiwix-14.0.0
+
 KIWIX_PROJECT =	kiwix-tools
 V =		3.7.0
 
