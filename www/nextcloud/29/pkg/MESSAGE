@@ -1,0 +1,3 @@
+This is an old major version of Nextcloud. Update to the newest available
+in packages before updating to the next OpenBSD release.
+See ${LOCALBASE}/share/doc/pkg-readmes/nextcloud for more information.
