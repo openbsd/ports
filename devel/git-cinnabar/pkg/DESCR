@@ -1,0 +1,7 @@
+git-cinnabar is a git remote helper to interact with mercurial
+repositories. Contrary to other such helpers, it doesn't use a local
+mercurial clone under the hood.
+
+The main focus at the moment is to make it work with mozilla-central
+and related mercurial repositories and support Mozilla workflows (try
+server, etc.).
