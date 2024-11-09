@@ -179,6 +179,7 @@
      SUBDIR += gindent
      SUBDIR += git
      SUBDIR += git-annex
+     SUBDIR += git-cinnabar
      SUBDIR += git-cola
      SUBDIR += git-crypt
      SUBDIR += git-cvs
