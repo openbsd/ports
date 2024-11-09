@@ -1,0 +1,13 @@
+https://gitlab.gnome.org/GNOME/gnome-shell-extensions/-/merge_requests/356
+
+Index: extensions/system-monitor/extension.js
+--- extensions/system-monitor/extension.js.orig
++++ extensions/system-monitor/extension.js
+@@ -178,6 +178,7 @@ class SwapSection extends LoadStatSection {
+     }
+ 
+     _getLoadValue() {
++        GTop.glibtop_init();
+         const swap = new GTop.glibtop_swap();
+         GTop.glibtop_get_swap(swap);
+ 
