@@ -1,7 +1,7 @@
 Index: gdb/cli/cli-cmds.c
 --- gdb/cli/cli-cmds.c.orig
 +++ gdb/cli/cli-cmds.c
-@@ -956,7 +956,7 @@ edit_command (const char *arg, int from_tty)
+@@ -1043,7 +1043,7 @@ edit_command (const char *arg, int from_tty)
      }
  
    if ((editor = getenv ("EDITOR")) == NULL)

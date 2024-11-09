@@ -2,7 +2,6 @@
 bin/egdb-add-index
 include/ansidecl.h
 include/bfd.h
-include/bfd_stdint.h
 include/bfdlink.h
 include/ctf-api.h
 include/ctf.h
@@ -11,10 +10,14 @@ include/dis-asm.h
 include/gdb/
 include/gdb/jit-reader.h
 include/plugin-api.h
+include/sframe-api.h
+include/sframe.h
 include/symcat.h
 @info info/annotate.info
 @info info/bfd.info
+@info info/ctf-spec.info
 @info info/gdb.info
+@comment @info info/sframe-spec.info
 @info info/stabs.info
 @comment lib/charset.alias
 @static-lib lib/libbfd.a
@@ -25,6 +28,8 @@ lib/libctf-nobfd.la
 lib/libctf.la
 @static-lib lib/libopcodes.a
 lib/libopcodes.la
+@static-lib lib/libsframe.a
+lib/libsframe.la
 @man man/man1/egdb-add-index.1
 @man man/man1/egdb.1
 @man man/man1/egdbserver.1
@@ -41,12 +46,16 @@ share/gdb/python/gdb/${MODPY_PYCACHE}FrameIterator.${MODPY_PYC_MAGIC_TAG}${MODPY
 share/gdb/python/gdb/${MODPY_PYCACHE}FrameIterator.${MODPY_PYC_MAGIC_TAG}pyc
 share/gdb/python/gdb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/gdb/python/gdb/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+share/gdb/python/gdb/${MODPY_PYCACHE}disassembler.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/gdb/python/gdb/${MODPY_PYCACHE}disassembler.${MODPY_PYC_MAGIC_TAG}pyc
 share/gdb/python/gdb/${MODPY_PYCACHE}frames.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/gdb/python/gdb/${MODPY_PYCACHE}frames.${MODPY_PYC_MAGIC_TAG}pyc
 share/gdb/python/gdb/${MODPY_PYCACHE}printing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/gdb/python/gdb/${MODPY_PYCACHE}printing.${MODPY_PYC_MAGIC_TAG}pyc
 share/gdb/python/gdb/${MODPY_PYCACHE}prompt.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/gdb/python/gdb/${MODPY_PYCACHE}prompt.${MODPY_PYC_MAGIC_TAG}pyc
+share/gdb/python/gdb/${MODPY_PYCACHE}styling.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/gdb/python/gdb/${MODPY_PYCACHE}styling.${MODPY_PYC_MAGIC_TAG}pyc
 share/gdb/python/gdb/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/gdb/python/gdb/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
 share/gdb/python/gdb/${MODPY_PYCACHE}unwinder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -79,6 +88,7 @@ share/gdb/python/gdb/command/prompt.py
 share/gdb/python/gdb/command/type_printers.py
 share/gdb/python/gdb/command/unwinders.py
 share/gdb/python/gdb/command/xmethods.py
+share/gdb/python/gdb/disassembler.py
 share/gdb/python/gdb/frames.py
 share/gdb/python/gdb/function/
 share/gdb/python/gdb/function/__init__.py
@@ -104,6 +114,7 @@ share/gdb/python/gdb/printer/${MODPY_PYCACHE}bound_registers.${MODPY_PYC_MAGIC_T
 share/gdb/python/gdb/printer/bound_registers.py
 share/gdb/python/gdb/printing.py
 share/gdb/python/gdb/prompt.py
+share/gdb/python/gdb/styling.py
 share/gdb/python/gdb/types.py
 share/gdb/python/gdb/unwinder.py
 share/gdb/python/gdb/xmethod.py
@@ -117,6 +128,7 @@ share/gdb/syscalls/i386-linux.xml
 share/gdb/syscalls/mips-n32-linux.xml
 share/gdb/syscalls/mips-n64-linux.xml
 share/gdb/syscalls/mips-o32-linux.xml
+share/gdb/syscalls/netbsd.xml
 share/gdb/syscalls/ppc-linux.xml
 share/gdb/syscalls/ppc64-linux.xml
 share/gdb/syscalls/s390-linux.xml

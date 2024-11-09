@@ -1,8 +1,7 @@
 COMMENT=	GNU debugger
 CATEGORIES=	devel
 
-DISTNAME=	gdb-9.2
-REVISION=	7
+DISTNAME=	gdb-13.2
 
 HOMEPAGE=	https://www.gnu.org/software/gdb/
 
@@ -17,7 +16,8 @@ EXTRACT_SUFX=	.tar.xz
 
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/gdb
 
-WANTLIB = c curses expat kvm intl m pthread ${MODPY_WANTLIB} ${COMPILER_LIBCXX} util
+WANTLIB += ${MODPY_WANTLIB} ${COMPILER_LIBCXX}
+WANTLIB += c curses expat gmp kvm iconv intl m pthread util zstd
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
@@ -29,23 +29,25 @@ CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--program-prefix=e \
 		--disable-nls \
 		--disable-sim \
-		--without-gmp \
 		--without-guile \
 		--without-isl \
 		--without-lzma \
 		--without-mpc \
 		--without-mpfr \
+		--with-libgmp-type=shared \
 		--with-auto-load-dir=${TRUEPREFIX}/share/gdb/auto-load \
 		--enable-target=all \
 		--with-python=${MODPY_BIN}
 
 USE_GMAKE=	Yes
-MAKE_FLAGS=	V=1 LDFLAGS="${LDFLAGS}"
+MAKE_FLAGS=	V=1 LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
 
 MODULES +=	lang/python
 
 BUILD_DEPENDS =	sysutils/xxhash
-LIB_DEPENDS +=	${MODPY_LIB_DEPENDS}
+LIB_DEPENDS +=	${MODPY_LIB_DEPENDS} \
+		archivers/zstd \
+		devel/gmp,-main
 TEST_DEPENDS +=	devel/dejagnu
 
 post-install:

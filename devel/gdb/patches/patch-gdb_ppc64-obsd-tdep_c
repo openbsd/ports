@@ -72,7 +72,7 @@ Index: gdb/ppc64-obsd-tdep.c
 +		      int regnum, const void *gregs, size_t len)
 +{
 +  struct gdbarch *gdbarch = regcache->arch ();
-+  struct gdbarch_tdep *tdep = gdbarch_tdep (gdbarch);
++  ppc_gdbarch_tdep *tdep = gdbarch_tdep<ppc_gdbarch_tdep> (gdbarch);
 +  const struct ppc_reg_offsets *offsets
 +    = (const struct ppc_reg_offsets *) regset->regmap;
 +  size_t offset;
@@ -117,7 +117,7 @@ Index: gdb/ppc64-obsd-tdep.c
 +		       int regnum, void *gregs, size_t len)
 +{
 +  struct gdbarch *gdbarch = regcache->arch ();
-+  struct gdbarch_tdep *tdep = gdbarch_tdep (gdbarch);
++  ppc_gdbarch_tdep *tdep = gdbarch_tdep<ppc_gdbarch_tdep> (gdbarch);
 +  const struct ppc_reg_offsets *offsets
 +    = (const struct ppc_reg_offsets *) regset->regmap;
 +  size_t offset;
@@ -230,7 +230,7 @@ Index: gdb/ppc64-obsd-tdep.c
 +
 +static int
 +ppc64obsd_sigtramp_frame_sniffer (const struct frame_unwind *self,
-+				  struct frame_info *this_frame,
++				  frame_info_ptr this_frame,
 +				  void **this_cache)
 +{
 +  struct gdbarch *gdbarch = get_frame_arch (this_frame);
@@ -249,8 +249,7 @@ Index: gdb/ppc64-obsd-tdep.c
 +      gdb_byte buf[2 * PPC_INSN_SIZE];
 +      unsigned long insn;
 +
-+      if (!safe_frame_unwind_memory (this_frame, start_pc + *offset,
-+				     buf, sizeof buf))
++      if (!safe_frame_unwind_memory (this_frame, start_pc + *offset, buf))
 +	continue;
 +
 +      /* Check for "li r0,SYS_sigreturn".  */
@@ -271,11 +270,11 @@ Index: gdb/ppc64-obsd-tdep.c
 +}
 +
 +static struct trad_frame_cache *
-+ppc64obsd_sigtramp_frame_cache (struct frame_info *this_frame,
++ppc64obsd_sigtramp_frame_cache (frame_info_ptr this_frame,
 +				void **this_cache)
 +{
 +  struct gdbarch *gdbarch = get_frame_arch (this_frame);
-+  struct gdbarch_tdep *tdep = gdbarch_tdep (gdbarch);
++  ppc_gdbarch_tdep *tdep = gdbarch_tdep<ppc_gdbarch_tdep> (gdbarch);
 +  enum bfd_endian byte_order = gdbarch_byte_order (gdbarch);
 +  struct trad_frame_cache *cache;
 +  CORE_ADDR addr, base, func;
@@ -291,7 +290,7 @@ Index: gdb/ppc64-obsd-tdep.c
 +
 +  func = get_frame_pc (this_frame);
 +  func &= ~(ppc64obsd_page_size - 1);
-+  if (!safe_frame_unwind_memory (this_frame, func, buf, sizeof buf))
++  if (!safe_frame_unwind_memory (this_frame, func, buf))
 +    return cache;
 +
 +  /* Calculate the offset where we can find `struct sigcontext'.  We
@@ -326,7 +325,7 @@ Index: gdb/ppc64-obsd-tdep.c
 +}
 +
 +static void
-+ppc64obsd_sigtramp_frame_this_id (struct frame_info *this_frame,
++ppc64obsd_sigtramp_frame_this_id (frame_info_ptr this_frame,
 +				void **this_cache, struct frame_id *this_id)
 +{
 +  struct trad_frame_cache *cache =
@@ -336,7 +335,7 @@ Index: gdb/ppc64-obsd-tdep.c
 +}
 +
 +static struct value *
-+ppc64obsd_sigtramp_frame_prev_register (struct frame_info *this_frame,
++ppc64obsd_sigtramp_frame_prev_register (frame_info_ptr this_frame,
 +					void **this_cache, int regnum)
 +{
 +  struct trad_frame_cache *cache =
@@ -346,6 +345,7 @@ Index: gdb/ppc64-obsd-tdep.c
 +}
 +
 +static const struct frame_unwind ppc64obsd_sigtramp_frame_unwind = {
++  "ppc64 openbsd sigtramp",
 +  SIGTRAMP_FRAME,
 +  default_frame_unwind_stop_reason,
 +  ppc64obsd_sigtramp_frame_this_id,

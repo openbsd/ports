@@ -3,9 +3,9 @@ Bogus variable name.
 Index: gdb/i386-obsd-nat.c
 --- gdb/i386-obsd-nat.c.orig
 +++ gdb/i386-obsd-nat.c
-@@ -93,7 +93,7 @@ static i386_bsd_nat_target<obsd_nat_target> the_i386_o
+@@ -94,7 +94,7 @@ void _initialize_i386obsd_nat ();
  void
- _initialize_i386obsd_nat (void)
+ _initialize_i386obsd_nat ()
  {
 -  add_inf_child_target (&i386_obsd_nat_target);
 +  add_inf_child_target (&the_i386_obsd_nat_target);

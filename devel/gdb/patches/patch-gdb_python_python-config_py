@@ -1,12 +1,12 @@
 Index: gdb/python/python-config.py
 --- gdb/python/python-config.py.orig
 +++ gdb/python/python-config.py
-@@ -71,6 +71,8 @@ for opt in opt_flags:
-                     libs.insert(0, '-L' + getvar('LIBPL'))
-                 elif os.name == 'nt':
-                     libs.insert(0, '-L' + sysconfig.PREFIX + '/libs')
+@@ -77,6 +77,8 @@ for opt in opt_flags:
+                     libs.insert(0, "-L" + getvar("LIBPL"))
+                 elif os.name == "nt":
+                     libs.insert(0, "-L" + os.path.normpath(sys.prefix) + "/libs")
 +            if getvar('CONFIGURE_LDFLAGS') is not None:
 +                libs.insert(0, getvar('CONFIGURE_LDFLAGS'))
-             if getvar('LINKFORSHARED') is not None:
-                 libs.extend(getvar('LINKFORSHARED').split())
-         print (to_unix_path(' '.join(libs)))
+             if getvar("LINKFORSHARED") is not None:
+                 libs.extend(getvar("LINKFORSHARED").split())
+         print(to_unix_path(" ".join(libs)))

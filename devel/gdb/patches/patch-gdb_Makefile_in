@@ -1,7 +1,11 @@
+
+Add support for aarch64, powerpc64 and riscv64.
+TODO Use OpenBSD-specific files for arm.
+
 Index: gdb/Makefile.in
 --- gdb/Makefile.in.orig
 +++ gdb/Makefile.in
-@@ -651,6 +651,7 @@ ALL_64_TARGET_OBS = \
+@@ -699,6 +699,7 @@ ALL_64_TARGET_OBS = \
  	aarch64-fbsd-tdep.o \
  	aarch64-linux-tdep.o \
  	aarch64-newlib-tdep.o \
@@ -9,23 +13,23 @@ Index: gdb/Makefile.in
  	aarch64-ravenscar-thread.o \
  	aarch64-tdep.o \
  	alpha-bsd-tdep.o \
-@@ -675,6 +676,7 @@ ALL_64_TARGET_OBS = \
- 	ia64-tdep.o \
- 	ia64-vms-tdep.o \
- 	mips64-obsd-tdep.o \
+@@ -737,6 +738,7 @@ ALL_64_TARGET_OBS = \
+ 	riscv-fbsd-tdep.o \
+ 	riscv-linux-tdep.o \
+ 	riscv-none-tdep.o \
 +	riscv-obsd-tdep.o \
+ 	riscv-ravenscar-thread.o \
+ 	riscv-tdep.o \
  	sparc64-fbsd-tdep.o \
- 	sparc64-linux-tdep.o \
- 	sparc64-nbsd-tdep.o \
-@@ -1381,6 +1383,7 @@ HFILES_NO_SRCDIR = \
- 	remote-notif.h \
+@@ -1436,6 +1438,7 @@ HFILES_NO_SRCDIR = \
  	riscv-fbsd-tdep.h \
+ 	riscv-ravenscar-thread.h \
  	riscv-tdep.h \
 +	riscv-obsd-tdep.h \
  	rs6000-aix-tdep.h \
- 	rs6000-tdep.h \
  	run-on-main-thread.h \
-@@ -2157,6 +2160,8 @@ ALLDEPFILES = \
+ 	s390-linux-tdep.h \
+@@ -1627,6 +1630,8 @@ ALLDEPFILES = \
  	aarch64-linux-nat.c \
  	aarch64-linux-tdep.c \
  	aarch64-newlib-tdep.c \
@@ -34,12 +38,12 @@ Index: gdb/Makefile.in
  	aarch64-ravenscar-thread.c \
  	aarch64-tdep.c \
  	aix-thread.c \
-@@ -2300,6 +2305,8 @@ ALLDEPFILES = \
- 	riscv-linux-nat.c \
- 	riscv-linux-tdep.c \
+@@ -1776,6 +1781,8 @@ ALLDEPFILES = \
+ 	riscv-none-tdep.c \
+ 	riscv-ravenscar-thread.c \
  	riscv-tdep.c \
 +	riscv-obsd-nat.c \
 +	riscv-obsd-tdep.c \
  	rl78-tdep.c \
+ 	rs6000-aix-nat.c \
  	rs6000-lynx178-tdep.c \
- 	rs6000-nat.c \

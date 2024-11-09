@@ -1,16 +1,29 @@
+
+Add support for aarch64, powerpc64 and riscv64.
+Use OpenBSD-specific files for arm (TBD).
+
 Index: gdb/configure.host
 --- gdb/configure.host.orig
 +++ gdb/configure.host
-@@ -85,6 +85,7 @@ case "${host}" in
+@@ -81,6 +81,7 @@ case "${host}" in
  
  aarch64*-*-linux*)	gdb_host=linux ;;
  aarch64*-*-freebsd*)	gdb_host=fbsd ;;
 +aarch64*-*-openbsd*)	gdb_host=obsd64 ;;
  
  alpha*-*-linux*)	gdb_host=alpha-linux ;;
- alpha*-*-netbsd* | alpha*-*-knetbsd*-gnu)
-@@ -139,12 +140,14 @@ powerpc*-*-freebsd*)	gdb_host=fbsd ;;
- powerpc-*-netbsd* | powerpc-*-knetbsd*-gnu)
+ alpha*-*-netbsdaout* | alpha*-*-knetbsdaout*-gnu)
+@@ -93,7 +94,7 @@ arm*-*-freebsd*)	gdb_host=fbsd ;;
+ arm*-*-linux*)		gdb_host=linux ;;
+ arm*-*-netbsd* | arm*-*-knetbsd*-gnu)
+ 			gdb_host=nbsdelf ;;
+-arm*-*-openbsd*)	gdb_host=nbsdelf ;;
++arm*-*-openbsd*)	gdb_host=obsd ;;
+ 
+ hppa*-*-linux*)		gdb_host=linux ;;
+ hppa*-*-netbsd*)	gdb_host=nbsd ;;
+@@ -141,12 +142,14 @@ powerpc*-*-freebsd*)	gdb_host=fbsd ;;
+ powerpc-*-netbsdaout* | powerpc-*-knetbsd*-gnu)
  			gdb_host=nbsd ;;
  powerpc-*-openbsd*)	gdb_host=obsd ;;
 +powerpc64-*-openbsd*)	gdb_host=obsd64 ;;

@@ -1,5 +1,6 @@
 All our targets need obsd-nat.o and kvm etc -> dedup.
-Add aarch64 and riscv64 support.
+Add aarch64, powerpc64 and riscv64 support.
+Use OpenBSD-specific files for arm. (TBD)
 
 Index: gdb/configure.nat
 --- gdb/configure.nat.orig
@@ -21,9 +22,15 @@ Index: gdb/configure.nat
 +	LOADLIBES='-lkvm'
  	;;
      cygwin*)
- 	NATDEPFILES='x86-nat.o nat/x86-dregs.o windows-nat.o'
-@@ -416,49 +416,54 @@ case ${gdb_host} in
+ 	NATDEPFILES='x86-nat.o nat/x86-dregs.o windows-nat.o nat/windows-nat.o'
+@@ -430,50 +430,60 @@ case ${gdb_host} in
+ 	;;
+     obsd)
  	case ${gdb_host_cpu} in
++	    arm)
++		# Host: OpenBSD/arm XXX TODO
++		#NATDEPFILES="${NATDEPFILES} arm-obsd-nat.o"
++		;;
  	    i386)
  		# Host: OpenBSD/i386 ELF
 -		NATDEPFILES="${NATDEPFILES} obsd-nat.o x86-bsd-nat.o \
@@ -65,9 +72,8 @@ Index: gdb/configure.nat
 +		;;
  	    i386)
  		# Host: OpenBSD/amd64
--		NATDEPFILES="${NATDEPFILES} obsd-nat.o amd64-nat.o x86-nat.o \
--		x86-bsd-nat.o amd64-bsd-nat.o amd64-obsd-nat.o bsd-kvm.o \
--		nat/x86-dregs.o"
+-		NATDEPFILES="${NATDEPFILES} obsd-nat.o amd64-nat.o \
+-		x86-bsd-nat.o amd64-bsd-nat.o amd64-obsd-nat.o bsd-kvm.o"
 -		LOADLIBES='-lkvm'
 +		NATDEPFILES="${NATDEPFILES} amd64-nat.o \
 +		x86-bsd-nat.o amd64-bsd-nat.o amd64-obsd-nat.o"

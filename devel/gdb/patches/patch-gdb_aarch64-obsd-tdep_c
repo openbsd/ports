@@ -1,7 +1,7 @@
 Index: gdb/aarch64-obsd-tdep.c
 --- gdb/aarch64-obsd-tdep.c.orig
 +++ gdb/aarch64-obsd-tdep.c
-@@ -0,0 +1,334 @@
+@@ -0,0 +1,338 @@
 +/* Target-dependent code for OpenBSD/aarch64.
 +
 +   Copyright (C) 2006-2017 Free Software Foundation, Inc.
@@ -59,7 +59,7 @@ Index: gdb/aarch64-obsd-tdep.c
 +
 +static int
 +aarch64obsd_sigtramp_frame_sniffer (const struct frame_unwind *self,
-+				    struct frame_info *this_frame,
++				    frame_info_ptr this_frame,
 +				    void **this_cache)
 +{
 +  struct gdbarch *gdbarch = get_frame_arch (this_frame);
@@ -78,8 +78,7 @@ Index: gdb/aarch64-obsd-tdep.c
 +      gdb_byte buf[8];
 +      unsigned long insn;
 +
-+      if (!safe_frame_unwind_memory (this_frame, start_pc + *offset,
-+				     buf, sizeof buf))
++      if (!safe_frame_unwind_memory (this_frame, start_pc + *offset, buf))
 +	continue;
 +
 +      /* Check for "mov x8, #SYS_sigreturn".  */
@@ -134,10 +133,10 @@ Index: gdb/aarch64-obsd-tdep.c
 +#define AARCH64_SIGCONTEXT_X0_OFFSET		40
 +
 +static struct trad_frame_cache *
-+aarch64obsd_sigtramp_frame_cache (struct frame_info *this_frame, void **this_cache)
++aarch64obsd_sigtramp_frame_cache (frame_info_ptr this_frame, void **this_cache)
 +{
 +  struct gdbarch *gdbarch = get_frame_arch (this_frame);
-+  struct gdbarch_tdep *tdep = gdbarch_tdep (gdbarch);
++  aarch64_gdbarch_tdep *tdep = gdbarch_tdep<aarch64_gdbarch_tdep> (gdbarch);
 +  enum bfd_endian byte_order = gdbarch_byte_order (gdbarch);
 +  struct trad_frame_cache *cache;
 +  CORE_ADDR sp, sigcontext_addr, x0_addr, func;
@@ -153,7 +152,7 @@ Index: gdb/aarch64-obsd-tdep.c
 +
 +  func = get_frame_pc (this_frame);
 +  func &= ~(aarch64obsd_page_size - 1);
-+  if (!safe_frame_unwind_memory (this_frame, func, buf, sizeof buf))
++  if (!safe_frame_unwind_memory (this_frame, func, buf))
 +    return cache;
 +
 +  /* Calculate the offset where we can find `struct sigframe'.  In 6.1
@@ -188,7 +187,7 @@ Index: gdb/aarch64-obsd-tdep.c
 +}
 +
 +static void
-+aarch64obsd_sigtramp_frame_this_id (struct frame_info *this_frame,
++aarch64obsd_sigtramp_frame_this_id (frame_info_ptr this_frame,
 +				    void **this_cache,
 +				    struct frame_id *this_id)
 +{
@@ -199,7 +198,7 @@ Index: gdb/aarch64-obsd-tdep.c
 +}
 +
 +static struct value *
-+aarch64obsd_sigtramp_frame_prev_register (struct frame_info *this_frame,
++aarch64obsd_sigtramp_frame_prev_register (frame_info_ptr this_frame,
 +				      void **this_cache, int regnum)
 +{
 +  struct trad_frame_cache *cache =
@@ -209,6 +208,7 @@ Index: gdb/aarch64-obsd-tdep.c
 +}
 +
 +static const struct frame_unwind aarch64obsd_sigtramp_frame_unwind = {
++  "aarch64 openbsd tramp",
 +  SIGTRAMP_FRAME,
 +  default_frame_unwind_stop_reason,
 +  aarch64obsd_sigtramp_frame_this_id,
@@ -268,7 +268,7 @@ Index: gdb/aarch64-obsd-tdep.c
 +					   void *cb_data,
 +					   const struct regcache *regcache)
 +{
-+  struct gdbarch_tdep *tdep = gdbarch_tdep (gdbarch);
++  aarch64_gdbarch_tdep *tdep = gdbarch_tdep<aarch64_gdbarch_tdep> (gdbarch);
 +
 +  cb (".reg", AARCH64_OBSD_SIZEOF_GREGSET, AARCH64_OBSD_SIZEOF_GREGSET,
 +      &aarch64_obsd_gregset, NULL, cb_data);
@@ -299,14 +299,19 @@ Index: gdb/aarch64-obsd-tdep.c
 +aarch64_obsd_core_read_description (struct gdbarch *gdbarch,
 +				    struct target_ops *target, bfd *abfd)
 +{
-+  return aarch64_read_description (0, true);
++  asection *pauth = bfd_get_section_by_name (abfd, ".reg-aarch-pauth");
++
++  aarch64_features features;
++  features.pauth = pauth != nullptr ? 1 : 0;
++
++  return aarch64_read_description (features);
 +}
 +
 +
 +static void
 +aarch64obsd_init_abi (struct gdbarch_info info, struct gdbarch *gdbarch)
 +{
-+  struct gdbarch_tdep *tdep = gdbarch_tdep (gdbarch);
++  aarch64_gdbarch_tdep *tdep = gdbarch_tdep<aarch64_gdbarch_tdep> (gdbarch);
 +
 +  obsd_init_abi (info, gdbarch);
 +
@@ -327,12 +332,12 @@ Index: gdb/aarch64-obsd-tdep.c
 +}
 +
 +
-+/* Provide a prototype to silence -Wmissing-prototypes.  */
-+extern initialize_file_ftype _initialize_aarch64obsd_tdep;
++void _initialize_aarch64_obsd_tdep ();
 +
 +void
-+_initialize_aarch64obsd_tdep (void)
++_initialize_aarch64_obsd_tdep ()
 +{
 +  gdbarch_register_osabi (bfd_arch_aarch64, 0, GDB_OSABI_OPENBSD,
 +			  aarch64obsd_init_abi);
 +}
+

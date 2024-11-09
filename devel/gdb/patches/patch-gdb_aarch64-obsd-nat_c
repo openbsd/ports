@@ -1,7 +1,7 @@
 Index: gdb/aarch64-obsd-nat.c
 --- gdb/aarch64-obsd-nat.c.orig
 +++ gdb/aarch64-obsd-nat.c
-@@ -0,0 +1,162 @@
+@@ -0,0 +1,170 @@
 +/* Native-dependent code for OpenBSD/aarch64.
 +
 +   Copyright (C) 2017-2020 Free Software Foundation, Inc.
@@ -27,6 +27,7 @@ Index: gdb/aarch64-obsd-nat.c
 +#include "target.h"
 +
 +#include <sys/types.h>
++#include <sys/auxv.h>
 +#include <sys/ptrace.h>
 +#include <machine/reg.h>
 +
@@ -69,7 +70,8 @@ Index: gdb/aarch64-obsd-nat.c
 +					  int regnum)
 +{
 +#ifdef PT_PACMASK
-+  struct gdbarch_tdep *tdep = gdbarch_tdep (regcache->arch ());
++  gdbarch *gdbarch = regcache->arch ();
++  aarch64_gdbarch_tdep *tdep = gdbarch_tdep <aarch64_gdbarch_tdep> (gdbarch);
 +#endif
 +  pid_t pid = get_ptrace_pid (regcache->ptid ());
 +
@@ -156,11 +158,19 @@ Index: gdb/aarch64-obsd-nat.c
 +const struct target_desc *
 +aarch64_obsd_nat_target::read_description ()
 +{
-+  return aarch64_read_description(0, true);
++  aarch64_features features;
++  unsigned long hwcap;
++
++  if (elf_aux_info(AT_HWCAP, &hwcap, sizeof hwcap) == 0)
++    features.pauth = hwcap & HWCAP_PACA;
++
++  return aarch64_read_description (features);
 +}
 +
 +void
-+_initialize_aarch64_obsd_nat (void)
++_initialize_aarch64_obsd_nat ()
 +{
 +  add_inf_child_target (&the_aarch64_obsd_nat_target);
 +}
+
+
