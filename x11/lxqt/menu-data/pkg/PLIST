@@ -38,8 +38,6 @@ share/examples/lxqt-menu-data/menus/lxqt-applications-compact.menu
 @sample ${SYSCONFDIR}/xdg/menus/lxqt-applications-compact.menu
 share/examples/lxqt-menu-data/menus/lxqt-applications-fm.menu
 @sample ${SYSCONFDIR}/xdg/menus/lxqt-applications-fm.menu
-share/examples/lxqt-menu-data/menus/lxqt-applications-simple.menu
-@sample ${SYSCONFDIR}/xdg/menus/lxqt-applications-simple.menu
 share/examples/lxqt-menu-data/menus/lxqt-applications.menu
 @sample ${SYSCONFDIR}/xdg/menus/lxqt-applications.menu
 share/examples/lxqt-menu-data/menus/lxqt-config.menu
