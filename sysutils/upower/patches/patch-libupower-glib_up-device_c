@@ -5,7 +5,7 @@ Fix with base gcc:
 Index: libupower-glib/up-device.c
 --- libupower-glib/up-device.c.orig
 +++ libupower-glib/up-device.c
-@@ -280,10 +280,7 @@ up_device_to_text (UpDevice *device)
+@@ -284,10 +284,7 @@ up_device_to_text (UpDevice *device)
  	/* get a human readable time */
  	t = (time_t) up_exported_device_get_update_time (priv->proxy_device);
  	time_tm = localtime (&t);

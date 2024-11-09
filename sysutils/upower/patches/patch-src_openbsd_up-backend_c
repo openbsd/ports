@@ -1,0 +1,14 @@
+add support for getting battery sensors from qcpas on arm64
+
+Index: src/openbsd/up-backend.c
+--- src/openbsd/up-backend.c.orig
++++ src/openbsd/up-backend.c
+@@ -383,6 +383,8 @@ up_backend_update_battery_state(UpDevice* device)
+ 			(void*) NULL);
+ 		if(up_native_get_sensordev("acpibat0", &sdev))
+ 			up_backend_update_acpibat_state(device, sdev);
++		else if(up_native_get_sensordev("qcpas0", &sdev))
++			up_backend_update_acpibat_state(device, sdev);
+ 		return TRUE;
+ 	}
+ 	return FALSE;
