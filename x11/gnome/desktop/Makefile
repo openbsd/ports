@@ -9,7 +9,7 @@ PKGNAME-gtk4=		gnome-desktop4-${GNOME_VERSION}
 PKGNAME-common=		gnome-desktop-common-${GNOME_VERSION}
 
 REVISION-common=	1
-REVISION-gtk4=		1
+REVISION-gtk4=		2
 REVISION-main=		2
 
 SHARED_LIBS += gnome-desktop-4           0.0 # 2.1.1
