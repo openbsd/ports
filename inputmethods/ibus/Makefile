@@ -5,18 +5,14 @@ COMMENT-gtk4 =		IBus IM module for GTK4
 
 GH_PROJECT =		ibus
 GH_ACCOUNT =		ibus
-GH_TAGNAME =		1.5.30
+GH_TAGNAME =		1.5.31
 
 PKGNAME-main =		ibus-${GH_TAGNAME:S/-//}
 PKGNAME-gtk2 =		ibus-gtk2-${GH_TAGNAME:S/-//}
 PKGNAME-gtk3 =		ibus-gtk3-${GH_TAGNAME:S/-//}
 PKGNAME-gtk4 =		ibus-gtk4-${GH_TAGNAME:S/-//}
-REVISION-gtk2 =		0
-REVISION-gtk3 =		0
-REVISION-gtk4 =		0
-REVISION-main =		0
 
-SHARED_LIBS +=  ibus-1.0             4.5      # 5.530
+SHARED_LIBS +=  ibus-1.0             4.5      # 5.531
 
 CATEGORIES =		inputmethods chinese japanese korean
 
@@ -55,6 +51,7 @@ WANTLIB-gtk4 += ${WANTLIB}
 WANTLIB-gtk4 += cairo-gobject cairo-script-interpreter dbus-1 epoxy
 WANTLIB-gtk4 += graphene-1.0 gtk-4 ibus-1.0 lzo2 lzma tiff zstd dbus-1
 WANTLIB-gtk4 += epoll-shim wayland-client wayland-egl xkbcommon
+WANTLIB-gtk4 += Lerc harfbuzz-subset vulkan
 
 MODULES =		devel/dconf \
 			lang/python
