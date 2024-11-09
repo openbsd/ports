@@ -2,7 +2,7 @@ COMMENT=		collection of developer-oriented UPnP tools
 
 GNOME_PROJECT=		gupnp-tools
 GNOME_VERSION=		0.12.1
-REVISION=		0
+REVISION=		1
 
 WANTLIB += c gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += gssdp-1.6 gtk-3 gtksourceview-4 gupnp-1.6 gupnp-av-1.0
