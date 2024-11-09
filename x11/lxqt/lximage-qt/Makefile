@@ -1,7 +1,6 @@
 COMMENT =	image viewer and screenshot tool for LXQt
 
 NAME =		lximage-qt
-VERSION =	2.0.1
 
 WANTLIB += ${COMPILER_LIBCXX} GL ICE Qt6Core Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6PrintSupport Qt6Svg Qt6SvgWidgets Qt6Widgets SM
