@@ -1,6 +1,6 @@
 COMMENT =	qt implementation of freedesktop.org xdg specs
 
-VERSION =	4.0.0
+VERSION =	4.1.0
 
 NAME =		libqtxdg
 
