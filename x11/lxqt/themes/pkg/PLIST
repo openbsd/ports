@@ -23,10 +23,15 @@ share/lxqt/graphics/spacer-light-line.svg
 share/lxqt/palettes/
 share/lxqt/palettes/Ambiance
 share/lxqt/palettes/Arch-Colors
+share/lxqt/palettes/Clearlooks
 share/lxqt/palettes/Dark
+share/lxqt/palettes/Frost
+share/lxqt/palettes/KDE-Plasma
+share/lxqt/palettes/Kvantum
 share/lxqt/palettes/Leech
+share/lxqt/palettes/Light
+share/lxqt/palettes/Silver
 share/lxqt/palettes/Silver-bright
-share/lxqt/palettes/Silver-dark
 share/lxqt/palettes/Valendas
 share/lxqt/themes/
 share/lxqt/themes/Arch-Colors/
@@ -39,6 +44,7 @@ share/lxqt/themes/Arch-Colors/calendar-popup/left-arrow.svg
 share/lxqt/themes/Arch-Colors/calendar-popup/right-arrow.svg
 share/lxqt/themes/Arch-Colors/checked.svg
 share/lxqt/themes/Arch-Colors/color-picker.svg
+share/lxqt/themes/Arch-Colors/lxqt-config.qss
 share/lxqt/themes/Arch-Colors/lxqt-notificationd.qss
 share/lxqt/themes/Arch-Colors/lxqt-panel.qss
 share/lxqt/themes/Arch-Colors/lxqt-runner/
@@ -64,6 +70,7 @@ share/lxqt/themes/Clearlooks/calendar-popup/left-arrow.svg
 share/lxqt/themes/Clearlooks/calendar-popup/right-arrow.svg
 share/lxqt/themes/Clearlooks/checked-selected.svg
 share/lxqt/themes/Clearlooks/checked.svg
+share/lxqt/themes/Clearlooks/lxqt-config.qss
 share/lxqt/themes/Clearlooks/lxqt-notificationd/
 share/lxqt/themes/Clearlooks/lxqt-notificationd.qss
 share/lxqt/themes/Clearlooks/lxqt-notificationd/cancel.svg
@@ -83,6 +90,7 @@ share/lxqt/themes/Clearlooks/wallpaper.cfg
 share/lxqt/themes/KDE-Plasma/
 share/lxqt/themes/KDE-Plasma/checked.svg
 share/lxqt/themes/KDE-Plasma/left-arrow.svg
+share/lxqt/themes/KDE-Plasma/lxqt-config.qss
 share/lxqt/themes/KDE-Plasma/lxqt-notificationd/
 share/lxqt/themes/KDE-Plasma/lxqt-notificationd.qss
 share/lxqt/themes/KDE-Plasma/lxqt-notificationd/window-close.svg
@@ -108,6 +116,7 @@ share/lxqt/themes/Leech/calendar-popup/
 share/lxqt/themes/Leech/calendar-popup/left-arrow.svg
 share/lxqt/themes/Leech/calendar-popup/right-arrow.svg
 share/lxqt/themes/Leech/checked.svg
+share/lxqt/themes/Leech/lxqt-config.qss
 share/lxqt/themes/Leech/lxqt-notificationd/
 share/lxqt/themes/Leech/lxqt-notificationd.qss
 share/lxqt/themes/Leech/lxqt-notificationd/cancel.svg
@@ -131,6 +140,7 @@ share/lxqt/themes/Valendas/arrow-right.svg
 share/lxqt/themes/Valendas/calendar-popup/
 share/lxqt/themes/Valendas/calendar-popup/left-arrow.svg
 share/lxqt/themes/Valendas/calendar-popup/right-arrow.svg
+share/lxqt/themes/Valendas/lxqt-config.qss
 share/lxqt/themes/Valendas/lxqt-notificationd.qss
 share/lxqt/themes/Valendas/lxqt-panel.qss
 share/lxqt/themes/Valendas/lxqt-runner/
@@ -147,6 +157,7 @@ share/lxqt/themes/ambiance/
 share/lxqt/themes/ambiance/arrow-left.svg
 share/lxqt/themes/ambiance/arrow-right.svg
 share/lxqt/themes/ambiance/checked.svg
+share/lxqt/themes/ambiance/lxqt-config.qss
 share/lxqt/themes/ambiance/lxqt-notificationd/
 share/lxqt/themes/ambiance/lxqt-notificationd.qss
 share/lxqt/themes/ambiance/lxqt-notificationd/cancel.svg
@@ -169,6 +180,7 @@ share/lxqt/themes/dark/calendar-popup/
 share/lxqt/themes/dark/calendar-popup/left-arrow.svg
 share/lxqt/themes/dark/calendar-popup/right-arrow.svg
 share/lxqt/themes/dark/checked.svg
+share/lxqt/themes/dark/lxqt-config.qss
 share/lxqt/themes/dark/lxqt-notificationd/
 share/lxqt/themes/dark/lxqt-notificationd.qss
 share/lxqt/themes/dark/lxqt-notificationd/cancel.svg
@@ -191,6 +203,7 @@ share/lxqt/themes/frost/calendar-popup/
 share/lxqt/themes/frost/calendar-popup/left-arrow.svg
 share/lxqt/themes/frost/calendar-popup/right-arrow.svg
 share/lxqt/themes/frost/debug.png
+share/lxqt/themes/frost/lxqt-config.qss
 share/lxqt/themes/frost/lxqt-notificationd.qss
 share/lxqt/themes/frost/lxqt-panel.qss
 share/lxqt/themes/frost/lxqt-runner/
@@ -236,6 +249,7 @@ share/lxqt/themes/kvantum/spacer-plugin/spacer-dots.svg
 share/lxqt/themes/kvantum/spacer-plugin/spacer-line.svg
 share/lxqt/themes/kvantum/wallpaper.cfg
 share/lxqt/themes/light/
+share/lxqt/themes/light/lxqt-config.qss
 share/lxqt/themes/light/lxqt-lightdm-greeter/
 share/lxqt/themes/light/lxqt-lightdm-greeter/dropdown.svg
 share/lxqt/themes/light/lxqt-lightdm-greeter/leaveIcon.svg
@@ -264,6 +278,7 @@ share/lxqt/themes/silver/calendar-popup/
 share/lxqt/themes/silver/calendar-popup/left-arrow.svg
 share/lxqt/themes/silver/calendar-popup/right-arrow.svg
 share/lxqt/themes/silver/checked.svg
+share/lxqt/themes/silver/lxqt-config.qss
 share/lxqt/themes/silver/lxqt-notificationd.qss
 share/lxqt/themes/silver/lxqt-panel.qss
 share/lxqt/themes/silver/lxqt-runner/
