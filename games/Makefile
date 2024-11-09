@@ -139,6 +139,7 @@
      SUBDIR += gcompris
      SUBDIR += gemdropx
      SUBDIR += gemrb
+     SUBDIR += gextoolbox
      SUBDIR += gigalomania
      SUBDIR += glsfcave
      SUBDIR += glutton
@@ -264,6 +265,7 @@
      SUBDIR += py-chess,python3
      SUBDIR += py-minecraft-launcher-lib,python3
      SUBDIR += py-steam,python3
+     SUBDIR += py-unitypy,python3
      SUBDIR += pygame_sdl2
      SUBDIR += pyganim
      SUBDIR += pysol
