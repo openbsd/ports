@@ -1,12 +1,13 @@
 COMMENT=	anonymity service using onion routing
 
 DISTNAME=	tor-0.4.8.13
+REVISION=	0
 CATEGORIES=	net
 HOMEPAGE=	https://www.torproject.org/
 
 MAINTAINER=	Pascal Stumpf <pascal@stumpf.co>
 
-# BSD
+# GPLv3
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c crypto event_core event_extra execinfo m pthread ssl z
@@ -21,7 +22,8 @@ CONFIGURE_ARGS=	--with-ssl-dir=/usr \
 		--with-libevent-dir="${LOCALBASE}" \
 		--disable-gcc-hardening \
 		--disable-lzma \
-		--disable-zstd
+		--disable-zstd \
+		--enable-gpl
 CONFIGURE_ENV+=ac_cv_member_struct_ssl_method_st_get_cipher_by_char=no
 CFLAGS+=	-DDISABLE_ENGINES
 
