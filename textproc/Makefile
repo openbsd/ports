@@ -495,6 +495,7 @@
      SUBDIR += py-stemmer,python3
      SUBDIR += py-textdistance,python3
      SUBDIR += py-textfsm,python3
+     SUBDIR += py-texttable,python3
      SUBDIR += py-tinycss2,python3
      SUBDIR += py-toml,python3
      SUBDIR += py-tomli,python3
