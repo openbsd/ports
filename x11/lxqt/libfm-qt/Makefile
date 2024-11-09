@@ -1,7 +1,6 @@
 COMMENT =	qt binding for libfm
 
 NAME =		libfm-qt
-VERSION =	2.0.2
 
 SHARED_LIBS +=  fm-qt6	0.0
 
