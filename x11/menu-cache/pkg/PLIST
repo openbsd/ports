@@ -1,6 +1,6 @@
 include/menu-cache/
 include/menu-cache/menu-cache.h
-lib/libmenu-cache.a
+@static-lib lib/libmenu-cache.a
 lib/libmenu-cache.la
 @lib lib/libmenu-cache.so.${LIBmenu-cache_VERSION}
 lib/pkgconfig/libmenu-cache.pc

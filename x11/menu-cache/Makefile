@@ -2,7 +2,7 @@ COMMENT=		caching mechanism for freedesktop.org compliant menus
 
 DISTNAME=		menu-cache-1.1.0
 EXTRACT_SUFX=		.tar.xz
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS +=  menu-cache           1.0      # 4.1
 
@@ -20,7 +20,7 @@ WANTLIB += gthread-2.0 iconv intl m pcre2-8 pthread z
 
 SITES=			${SITE_SOURCEFORGE:=lxde/}
 
-LIB_DEPENDS=		x11/libfm/extra
+LIB_DEPENDS=		x11/libfm-extra
 
 CONFIGURE_STYLE=	gnu
 
