@@ -228,7 +228,6 @@
      SUBDIR += paper-icon-theme
      SUBDIR += papirus-icon-theme
      SUBDIR += parcellite
-     SUBDIR += pcmanfm
      SUBDIR += peksystray
      SUBDIR += pekwm
      SUBDIR += picom

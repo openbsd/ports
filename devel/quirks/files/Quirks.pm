@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1673 2024/11/08 16:06:58 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1674 2024/11/09 12:59:53 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1202,6 +1202,7 @@ setup_obsolete_reason(
 	3 => 'libcheese',
 	3 => 'telegram-purple',
 	6 => 'gnome-initial-setup',
+	3 => 'pcmanfm',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
