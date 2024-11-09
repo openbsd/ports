@@ -2,10 +2,9 @@ COMMENT =		SoundFont2 software synthesizer
 
 GH_ACCOUNT =		FluidSynth
 GH_PROJECT =		fluidsynth
-GH_TAGNAME =		v2.3.4
-REVISION =		0
+GH_TAGNAME =		v2.4.0
 
-SHARED_LIBS +=	fluidsynth           3.0      # 6.0
+SHARED_LIBS +=	fluidsynth           3.1      # 6.0
 
 CATEGORIES =		audio
 
@@ -37,6 +36,8 @@ CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=On \
 			-Denable-oss=OFF \
 			-Denable-pipewire=OFF \
 			-Denable-pulseaudio=OFF
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 post-patch:
 	cp ${FILESDIR}/fluid_sndio.c ${WRKSRC}/src/drivers/

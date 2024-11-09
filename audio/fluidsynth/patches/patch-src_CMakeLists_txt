@@ -20,7 +20,7 @@ Index: src/CMakeLists.txt
      ${fluid_libinstpatch_SOURCES}
      ${libfluidsynth_SOURCES}
      ${public_HEADERS}
-@@ -366,6 +371,11 @@ target_link_libraries ( libfluidsynth-OBJ PUBLIC GLib2
+@@ -367,6 +372,11 @@ target_link_libraries ( libfluidsynth-OBJ PUBLIC GLib2
  
  if ( TARGET SndFile::sndfile AND LIBSNDFILE_SUPPORT )
      target_link_libraries ( libfluidsynth-OBJ PUBLIC SndFile::sndfile )

@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -95,6 +95,7 @@ option ( enable-waveout "compile Windows WaveOut suppo
+@@ -96,6 +96,7 @@ option ( enable-waveout "compile Windows WaveOut suppo
  option ( enable-winmidi "compile Windows MIDI support (if it is available)" on )
  option ( enable-sdl2 "compile SDL2 audio support (if it is available)" on )
  option ( enable-pulseaudio "compile PulseAudio support (if it is available)" on )
@@ -9,7 +9,7 @@ Index: CMakeLists.txt
  option ( enable-pipewire "compile PipeWire support (if it is available)" on )
  option ( enable-readline "compile readline lib line editing (if it is available)" on )
  option ( enable-threads "enable multi-threading support (such as parallel voice synthesis)" on )
-@@ -201,8 +202,8 @@ if ( CMAKE_COMPILER_IS_GNUCC OR CMAKE_C_COMPILER_ID MA
+@@ -198,8 +199,8 @@ if ( CMAKE_COMPILER_IS_GNUCC OR CMAKE_C_COMPILER_ID MA
    if ( NOT APPLE AND NOT OS2 AND NOT EMSCRIPTEN )
      set ( CMAKE_EXE_LINKER_FLAGS
            "${CMAKE_EXE_LINKER_FLAGS} -Wl,--as-needed" )
@@ -20,7 +20,7 @@ Index: CMakeLists.txt
    endif ( NOT APPLE AND NOT OS2 AND NOT EMSCRIPTEN )
  
    # define some warning flags
-@@ -544,6 +545,18 @@ if ( enable-libsndfile )
+@@ -552,6 +553,18 @@ if ( enable-libsndfile )
          endif (SndFile_WITH_EXTERNAL_LIBS)
      endif ( LIBSNDFILE_SUPPORT )
  endif ( enable-libsndfile )
