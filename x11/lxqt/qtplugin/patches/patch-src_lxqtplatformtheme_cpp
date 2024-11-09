@@ -1,7 +1,7 @@
 Index: src/lxqtplatformtheme.cpp
 --- src/lxqtplatformtheme.cpp.orig
 +++ src/lxqtplatformtheme.cpp
-@@ -498,7 +498,7 @@ QStringList LXQtPlatformTheme::xdgIconThemePaths() con
+@@ -537,7 +537,7 @@ QStringList LXQtPlatformTheme::xdgIconThemePaths() con
  
      QString xdgDataDirs = QFile::decodeName(qgetenv("XDG_DATA_DIRS"));
      if (xdgDataDirs.isEmpty())
@@ -9,4 +9,4 @@ Index: src/lxqtplatformtheme.cpp
 +        xdgDataDirs = QLatin1String("${LOCALBASE}/share/:/usr/share/");
      xdgDirs.append(xdgDataDirs);
  
-     for (const auto &s: xdgDirs) {
+     for (const auto &s: std::as_const(xdgDirs)) {
