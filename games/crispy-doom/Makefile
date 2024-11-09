@@ -5,7 +5,7 @@ GH_ACCOUNT =		fabiangreffrath
 GH_PROJECT =		crispy-doom
 GH_TAGNAME =		crispy-doom-${V}
 DISTNAME =		crispy-doom-${V}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		games x11
 
@@ -35,6 +35,8 @@ CONFIGURE_ARGS +=	--mandir="${LOCALBASE}/man"
 # python just used for generating manpages
 MODULES =		lang/python
 MODPY_RUNDEP =		No
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 post-install:
 	# data files get installed to this directory
