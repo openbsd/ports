@@ -1,6 +1,6 @@
 COMMENT =		radically simple IT automation
 
-MODPY_EGG_VERSION =	10.5.0
+MODPY_EGG_VERSION =	10.6.0
 DISTNAME =		ansible-${MODPY_EGG_VERSION}
 
 CATEGORIES =		sysutils
@@ -17,7 +17,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		sysutils/ansible-core>=2.17.2
+RUN_DEPENDS =		sysutils/ansible-core>=2.17.6
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ansible
