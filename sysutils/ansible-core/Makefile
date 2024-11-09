@@ -1,6 +1,6 @@
 COMMENT =		radically simple IT automation
 
-MODPY_EGG_VERSION =	2.17.5
+MODPY_EGG_VERSION =	2.18.0
 DISTNAME =		ansible_core-${MODPY_EGG_VERSION}
 PKGNAME =		ansible-core-${MODPY_EGG_VERSION}
 
@@ -40,7 +40,7 @@ TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
 			security/py-cryptography${MODPY_FLAVOR} \
 			security/py-passlib${MODPY_FLAVOR}
 
-USE_GMAKE =		Yes
+#USE_GMAKE =		Yes
 
 TEST_ENV =		HOME=${WRKSRC} ANSIBLE_REMOTE_TMP=${WRKSRC}
 
@@ -57,6 +57,7 @@ post-install:
 		-o -name '.travis.yml' \) -delete
 
 pre-test:
+	-rm -rf ${WRKSRC}/bin
 	-rm -rf ${WRKSRC}/test/units/ansible_test
 	-rm -rf	${WRKSRC}/test/units/cli/galaxy
 	-rm -rf	${WRKSRC}/test/units/galaxy
@@ -66,6 +67,9 @@ pre-test:
 	-rm ${WRKSRC}/test/units/utils/test_display.py
 	@echo "[defaults]\nremote_tmp = ${WRKSRC}/.ansible/tmp" > \
 		${WRKSRC}/test/lib/ansible_test/_data/ansible.cfg
+	cd ${WRKSRC} && mkdir bin && cd bin && \
+		ln -s ../test/lib/ansible_test/_util/target/cli/ansible_test_cli_stub.py \
+		ansible-test
 
 do-test:
 	cd ${WRKSRC} && env ${TEST_ENV} ${MODPY_BIN} \
