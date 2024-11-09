@@ -1,7 +1,7 @@
 Index: lxqt-config-session/autostartedit.cpp
 --- lxqt-config-session/autostartedit.cpp.orig
 +++ lxqt-config-session/autostartedit.cpp
-@@ -58,7 +58,7 @@ bool AutoStartEdit::needTray()
+@@ -64,7 +64,7 @@ bool AutoStartEdit::x11Only() const
  
  void AutoStartEdit::browse()
  {

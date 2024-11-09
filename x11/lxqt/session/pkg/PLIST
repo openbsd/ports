@@ -170,6 +170,7 @@ share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_tr.q
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_uk.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_zh_CN.qm
 share/examples/lxqt-session/xdg/lxqt/translations/lxqt-session/lxqt-session_zh_TW.qm
+share/examples/lxqt-session/xdg/lxqt/waylandwindowmanagers.conf
 share/examples/lxqt-session/xdg/lxqt/windowmanagers.conf
 @sample ${SYSCONFDIR}/xdg/lxqt/windowmanagers.conf
 share/xsessions/
