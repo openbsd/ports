@@ -25,6 +25,7 @@ share/screengrab/translations/screengrab_bg.qm
 share/screengrab/translations/screengrab_ca.qm
 share/screengrab/translations/screengrab_cs.qm
 share/screengrab/translations/screengrab_cy.qm
+share/screengrab/translations/screengrab_da.qm
 share/screengrab/translations/screengrab_de.qm
 share/screengrab/translations/screengrab_el.qm
 share/screengrab/translations/screengrab_es.qm
@@ -47,6 +48,7 @@ share/screengrab/translations/screengrab_pa.qm
 share/screengrab/translations/screengrab_pl.qm
 share/screengrab/translations/screengrab_pt.qm
 share/screengrab/translations/screengrab_pt_BR.qm
+share/screengrab/translations/screengrab_ro.qm
 share/screengrab/translations/screengrab_ru.qm
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
