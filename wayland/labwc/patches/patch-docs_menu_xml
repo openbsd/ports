@@ -1,0 +1,14 @@
+default to havoc, lighter and works on wayland
+
+Index: docs/menu.xml
+--- docs/menu.xml.orig
++++ docs/menu.xml
+@@ -59,7 +59,7 @@
+     <action name="Execute" command="firefox" />
+   </item>
+   <item label="Terminal">
+-    <action name="Execute" command="alacritty" />
++    <action name="Execute" command="havoc" />
+   </item>
+   <item label="Reconfigure">
+     <action name="Reconfigure" />
