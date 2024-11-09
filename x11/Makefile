@@ -159,7 +159,7 @@
      SUBDIR += libdbusmenu
      SUBDIR += libdnd
      SUBDIR += libfakekey
-     SUBDIR += libfm
+     SUBDIR += libfm-extra
      SUBDIR += libgdiplus
      SUBDIR += libhandy
      SUBDIR += libindicator

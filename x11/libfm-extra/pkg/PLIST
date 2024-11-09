@@ -1,4 +1,5 @@
-@conflict libfm-<1.2.3p0
+@conflict libfm-*
+@pkgpath x11/libfm/core
 include/libfm
 include/libfm-1.0/
 include/libfm-1.0/fm-extra.h
