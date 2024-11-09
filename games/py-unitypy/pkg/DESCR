@@ -1,0 +1,9 @@
+UnityPy is a Unity asset extractor for Python based on AssetStudio.
+
+Next to extraction, it also supports editing Unity assets. So far following
+obj types can be edited:
+
+ - Texture2D
+ - Sprite(indirectly via linked Texture2D)
+ - TextAsset
+ - MonoBehaviour (and all other types that you have the typetree of)
