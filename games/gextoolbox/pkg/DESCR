@@ -1,0 +1,6 @@
+Game Extraction Toolbox is a set of command-line tools for investigating
+game files and extracting known packages.
+
+As an artificial limitation:
+ - This tool will not hold decryption keys.
+ - This tool will not hold any 'whole' files, nor substantial parts of files.
