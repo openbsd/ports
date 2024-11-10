@@ -1,0 +1,14 @@
+Build with newer FFmpeg
+
+Index: Core/HW/SimpleAudioDec.cpp
+--- Core/HW/SimpleAudioDec.cpp.orig
++++ Core/HW/SimpleAudioDec.cpp
+@@ -118,7 +118,7 @@ class FFmpegAudioDecoder : public AudioDecoder { (priv
+ 	int channels_;
+ 
+ 	AVFrame *frame_ = nullptr;
+-	AVCodec *codec_ = nullptr;
++	const AVCodec *codec_ = nullptr;
+ 	AVCodecContext  *codecCtx_ = nullptr;
+ 	SwrContext      *swrCtx_ = nullptr;
+ 

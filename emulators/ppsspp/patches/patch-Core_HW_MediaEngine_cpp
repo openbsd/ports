@@ -1,0 +1,32 @@
+Build with newer FFmpeg
+
+Index: Core/HW/MediaEngine.cpp
+--- Core/HW/MediaEngine.cpp.orig
++++ Core/HW/MediaEngine.cpp
+@@ -416,7 +416,7 @@ bool MediaEngine::addVideoStream(int streamNum, int st
+ 		// no need to add an existing stream.
+ 		if ((u32)streamNum < m_pFormatCtx->nb_streams)
+ 			return true;
+-		AVCodec *h264_codec = avcodec_find_decoder(AV_CODEC_ID_H264);
++		const AVCodec *h264_codec = avcodec_find_decoder(AV_CODEC_ID_H264);
+ 		if (!h264_codec)
+ 			return false;
+ 		AVStream *stream = avformat_new_stream(m_pFormatCtx, h264_codec);
+@@ -439,7 +439,7 @@ bool MediaEngine::addVideoStream(int streamNum, int st
+ 			}
+ 
+ #if LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(59, 16, 100)
+-			AVCodec *codec = avcodec_find_decoder(stream->codecpar->codec_id);
++			const AVCodec *codec = avcodec_find_decoder(stream->codecpar->codec_id);
+ 			AVCodecContext *codecCtx = avcodec_alloc_context3(codec);
+ #else
+ 			AVCodecContext *codecCtx = stream->codec;
+@@ -527,7 +527,7 @@ bool MediaEngine::setVideoStream(int streamNum, bool f
+ 
+ 		AVStream *stream = m_pFormatCtx->streams[streamNum];
+ #if LIBAVFORMAT_VERSION_INT >= AV_VERSION_INT(57, 33, 100)
+-		AVCodec *pCodec = avcodec_find_decoder(stream->codecpar->codec_id);
++		const AVCodec *pCodec = avcodec_find_decoder(stream->codecpar->codec_id);
+ 		if (!pCodec) {
+ 			WARN_LOG_REPORT(Log::ME, "Could not find decoder for %d", (int)stream->codecpar->codec_id);
+ 			return false;

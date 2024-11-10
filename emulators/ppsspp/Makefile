@@ -5,7 +5,7 @@ COMMENT =	Sony PlayStation Portable emulator
 
 DISTNAME =	ppsspp-$V
 V =		1.18.1
-
+REVISION =	0
 SITES =		https://github.com/hrydgard/ppsspp/releases/download/v$V/
 
 EXTRACT_SUFX =	.tar.xz
