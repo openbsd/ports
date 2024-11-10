@@ -76,7 +76,7 @@ webapps/docs/annotationapi/resources/
 webapps/docs/annotationapi/resources/glass.png
 webapps/docs/annotationapi/resources/x.png
 webapps/docs/annotationapi/script-dir/
-webapps/docs/annotationapi/script-dir/jquery-3.6.1.min.js
+webapps/docs/annotationapi/script-dir/jquery-3.7.1.min.js
 webapps/docs/annotationapi/script-dir/jquery-ui.min.css
 webapps/docs/annotationapi/script-dir/jquery-ui.min.js
 webapps/docs/annotationapi/script.js
@@ -149,6 +149,8 @@ webapps/docs/api/org/apache/catalina/User.html
 webapps/docs/api/org/apache/catalina/UserDatabase.html
 webapps/docs/api/org/apache/catalina/Valve.html
 webapps/docs/api/org/apache/catalina/WebResource.html
+webapps/docs/api/org/apache/catalina/WebResourceLockSet.ResourceLock.html
+webapps/docs/api/org/apache/catalina/WebResourceLockSet.html
 webapps/docs/api/org/apache/catalina/WebResourceRoot.ArchiveIndexStrategy.html
 webapps/docs/api/org/apache/catalina/WebResourceRoot.CacheStrategy.html
 webapps/docs/api/org/apache/catalina/WebResourceRoot.ResourceSetType.html
@@ -519,6 +521,8 @@ webapps/docs/api/org/apache/catalina/servlets/Constants.html
 webapps/docs/api/org/apache/catalina/servlets/DefaultServlet.CompressionFormat.html
 webapps/docs/api/org/apache/catalina/servlets/DefaultServlet.Range.html
 webapps/docs/api/org/apache/catalina/servlets/DefaultServlet.html
+webapps/docs/api/org/apache/catalina/servlets/WebdavServlet.PropertyStore.html
+webapps/docs/api/org/apache/catalina/servlets/WebdavServlet.ProppatchOperation.html
 webapps/docs/api/org/apache/catalina/servlets/WebdavServlet.html
 webapps/docs/api/org/apache/catalina/servlets/package-summary.html
 webapps/docs/api/org/apache/catalina/servlets/package-tree.html
@@ -860,6 +864,7 @@ webapps/docs/api/org/apache/catalina/util/DOMWriter.html
 webapps/docs/api/org/apache/catalina/util/ErrorPageSupport.html
 webapps/docs/api/org/apache/catalina/util/Extension.html
 webapps/docs/api/org/apache/catalina/util/ExtensionValidator.html
+webapps/docs/api/org/apache/catalina/util/FastRateLimiter.html
 webapps/docs/api/org/apache/catalina/util/FilterUtil.html
 webapps/docs/api/org/apache/catalina/util/IOTools.html
 webapps/docs/api/org/apache/catalina/util/Introspection.html
@@ -869,6 +874,7 @@ webapps/docs/api/org/apache/catalina/util/ManifestResource.html
 webapps/docs/api/org/apache/catalina/util/NetMask.html
 webapps/docs/api/org/apache/catalina/util/NetMaskSet.html
 webapps/docs/api/org/apache/catalina/util/ParameterMap.html
+webapps/docs/api/org/apache/catalina/util/RateLimiter.html
 webapps/docs/api/org/apache/catalina/util/RequestUtil.html
 webapps/docs/api/org/apache/catalina/util/ResourceSet.html
 webapps/docs/api/org/apache/catalina/util/ServerInfo.html
@@ -1662,6 +1668,7 @@ webapps/docs/api/org/apache/tomcat/util/buf/HexUtils.html
 webapps/docs/api/org/apache/tomcat/util/buf/MessageBytes.html
 webapps/docs/api/org/apache/tomcat/util/buf/StringCache.html
 webapps/docs/api/org/apache/tomcat/util/buf/StringUtils.html
+webapps/docs/api/org/apache/tomcat/util/buf/ToStringUtil.html
 webapps/docs/api/org/apache/tomcat/util/buf/UDecoder.html
 webapps/docs/api/org/apache/tomcat/util/buf/UEncoder.SafeCharsSet.html
 webapps/docs/api/org/apache/tomcat/util/buf/UEncoder.html
@@ -1680,6 +1687,7 @@ webapps/docs/api/org/apache/tomcat/util/codec/binary/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/collections/
 webapps/docs/api/org/apache/tomcat/util/collections/CaseInsensitiveKeyMap.html
 webapps/docs/api/org/apache/tomcat/util/collections/ConcurrentCache.html
+webapps/docs/api/org/apache/tomcat/util/collections/ConcurrentLruCache.html
 webapps/docs/api/org/apache/tomcat/util/collections/ManagedConcurrentWeakHashMap.html
 webapps/docs/api/org/apache/tomcat/util/collections/SynchronizedQueue.html
 webapps/docs/api/org/apache/tomcat/util/collections/SynchronizedStack.html
@@ -1809,6 +1817,7 @@ webapps/docs/api/org/apache/tomcat/util/http/Rfc6265CookieProcessor.html
 webapps/docs/api/org/apache/tomcat/util/http/SameSiteCookies.html
 webapps/docs/api/org/apache/tomcat/util/http/ServerCookie.html
 webapps/docs/api/org/apache/tomcat/util/http/ServerCookies.html
+webapps/docs/api/org/apache/tomcat/util/http/WebdavIfHeader.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/ByteArrayOutputStream.html
 webapps/docs/api/org/apache/tomcat/util/http/fileupload/DeferredFileOutputStream.html
@@ -2009,6 +2018,7 @@ webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLEngine.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLImplementation.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLSessionContext.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLSessionStats.html
+webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLStatus.Name.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLStatus.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/OpenSSLUtil.html
 webapps/docs/api/org/apache/tomcat/util/net/openssl/ciphers/
@@ -2168,7 +2178,7 @@ webapps/docs/api/resources/
 webapps/docs/api/resources/glass.png
 webapps/docs/api/resources/x.png
 webapps/docs/api/script-dir/
-webapps/docs/api/script-dir/jquery-3.6.1.min.js
+webapps/docs/api/script-dir/jquery-3.7.1.min.js
 webapps/docs/api/script-dir/jquery-ui.min.css
 webapps/docs/api/script-dir/jquery-ui.min.js
 webapps/docs/api/script.js
@@ -2337,7 +2347,7 @@ webapps/docs/elapi/resources/
 webapps/docs/elapi/resources/glass.png
 webapps/docs/elapi/resources/x.png
 webapps/docs/elapi/script-dir/
-webapps/docs/elapi/script-dir/jquery-3.6.1.min.js
+webapps/docs/elapi/script-dir/jquery-3.7.1.min.js
 webapps/docs/elapi/script-dir/jquery-ui.min.css
 webapps/docs/elapi/script-dir/jquery-ui.min.js
 webapps/docs/elapi/script.js
@@ -2447,7 +2457,7 @@ webapps/docs/jaspicapi/resources/
 webapps/docs/jaspicapi/resources/glass.png
 webapps/docs/jaspicapi/resources/x.png
 webapps/docs/jaspicapi/script-dir/
-webapps/docs/jaspicapi/script-dir/jquery-3.6.1.min.js
+webapps/docs/jaspicapi/script-dir/jquery-3.7.1.min.js
 webapps/docs/jaspicapi/script-dir/jquery-ui.min.css
 webapps/docs/jaspicapi/script-dir/jquery-ui.min.js
 webapps/docs/jaspicapi/script.js
@@ -2546,7 +2556,7 @@ webapps/docs/jspapi/resources/
 webapps/docs/jspapi/resources/glass.png
 webapps/docs/jspapi/resources/x.png
 webapps/docs/jspapi/script-dir/
-webapps/docs/jspapi/script-dir/jquery-3.6.1.min.js
+webapps/docs/jspapi/script-dir/jquery-3.7.1.min.js
 webapps/docs/jspapi/script-dir/jquery-ui.min.css
 webapps/docs/jspapi/script-dir/jquery-ui.min.js
 webapps/docs/jspapi/script.js
@@ -2686,7 +2696,7 @@ webapps/docs/servletapi/resources/
 webapps/docs/servletapi/resources/glass.png
 webapps/docs/servletapi/resources/x.png
 webapps/docs/servletapi/script-dir/
-webapps/docs/servletapi/script-dir/jquery-3.6.1.min.js
+webapps/docs/servletapi/script-dir/jquery-3.7.1.min.js
 webapps/docs/servletapi/script-dir/jquery-ui.min.css
 webapps/docs/servletapi/script-dir/jquery-ui.min.js
 webapps/docs/servletapi/script.js
@@ -2790,7 +2800,7 @@ webapps/docs/websocketapi/resources/
 webapps/docs/websocketapi/resources/glass.png
 webapps/docs/websocketapi/resources/x.png
 webapps/docs/websocketapi/script-dir/
-webapps/docs/websocketapi/script-dir/jquery-3.6.1.min.js
+webapps/docs/websocketapi/script-dir/jquery-3.7.1.min.js
 webapps/docs/websocketapi/script-dir/jquery-ui.min.css
 webapps/docs/websocketapi/script-dir/jquery-ui.min.js
 webapps/docs/websocketapi/script.js
