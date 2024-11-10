@@ -18,6 +18,7 @@
      SUBDIR += autossh
      SUBDIR += awscli
      SUBDIR += awscli-plugin-endpoint
+     SUBDIR += backblaze-b2
      SUBDIR += backuppc
      SUBDIR += bacula
      SUBDIR += bat
