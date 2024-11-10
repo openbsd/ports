@@ -3,6 +3,7 @@ COMMENT =	QML and QtQuick benchmark tool
 # YYYYMMDD
 COMMIT_DATE =	20241908
 DISTNAME =	qmlbench-0.${COMMIT_DATE}
+REVISION =	0
 
 KDE_COMMIT =	5cf6dc79bb9f246f910739f8d5596a7567f66668
 DIST_TUPLE +=	kde qt/qt-labs qmlbench ${KDE_COMMIT} .
@@ -21,6 +22,9 @@ WANTLIB += c m
 
 MODULES =	devel/cmake \
 		x11/qt6
+
+BUILD_DEPENDS =	graphics/vulkan-loader
+RUN_DEPENDS =	graphics/vulkan-loader
 
 LIB_DEPENDS =	x11/qt6/qtdeclarative \
 		x11/qt6/qtquick3d \
