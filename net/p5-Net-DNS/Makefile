@@ -1,18 +1,18 @@
 COMMENT =	perl interface to the domain name system
 
-DISTNAME =	Net-DNS-1.47
-SUPDISTFILES =	${DISTFILES}.sig
+DISTNAME =	Net-DNS-1.48
+SUPDISTFILES =	${DISTFILES}.asc
 
 CATEGORIES =	net
 
-HOMEPAGE =	http://www.net-dns.org/
+HOMEPAGE =	https://www.net-dns.org/
 
 MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
-SITES =			http://www.net-dns.org/download/
+SITES =			https://www.net-dns.org/download/
 
 MODULES =		cpan
 
