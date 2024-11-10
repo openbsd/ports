@@ -2,17 +2,17 @@ PKG_ARCH=	*
 
 COMMENT=	high quality Japanese truetype fonts
 
-DISTNAME=	mixfont-mplus-ipa-TrueType-20060520
+DISTNAME=	mixfont-mplus-ipa-TrueType-20060520p1
 PKGNAME=	mixfont-mplus-ipa-20060520
 EXTRACT_SUFX=	.tar.bz2
 CATEGORIES=	fonts japanese x11
-REVISION=	7
+REVISION=	8
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-HOMEPAGE=	https://mix-mplus-ipa.osdn.jp/
-SITES=		${SITE_OSDN_JP:=mix-mplus-ipa/20216/}
+HOMEPAGE=	https://ja.osdn.net/projects/mix-mplus-ipa/
+SITES=		${SITE_OSDN_JP:=mix-mplus-ipa/25997/}
 
 NO_BUILD=	Yes
 NO_TEST=	Yes
