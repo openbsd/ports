@@ -340,4 +340,3 @@ Index: gdb/aarch64-obsd-tdep.c
 +  gdbarch_register_osabi (bfd_arch_aarch64, 0, GDB_OSABI_OPENBSD,
 +			  aarch64obsd_init_abi);
 +}
-

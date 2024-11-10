@@ -172,5 +172,3 @@ Index: gdb/aarch64-obsd-nat.c
 +{
 +  add_inf_child_target (&the_aarch64_obsd_nat_target);
 +}
-
-
