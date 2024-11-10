@@ -17,7 +17,8 @@ MODULES =	devel/meson
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 BUILD_DEPENDS =	devel/gettext,-tools \
-		wayland/wayland-protocols
+		wayland/wayland-protocols \
+		textproc/scdoc
 
 RUN_DEPENDS +=	x11/gtk+4,-guic \
 		wayland/havoc \
