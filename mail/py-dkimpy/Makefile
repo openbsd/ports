@@ -1,6 +1,6 @@
 COMMENT =		a library and tool that implements DKIM/ARC
 
-MODPY_EGG_VERSION =	1.1.6
+MODPY_EGG_VERSION =	1.1.8
 DISTNAME =		dkimpy-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		mail
