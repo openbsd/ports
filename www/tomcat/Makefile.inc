@@ -1,45 +1,43 @@
-COMMENT-main ?=	Java servlet and Java server pages server
-COMMENT-examples =example applications and full documentation
-
 MAJ_VER=	${VER:R:R}
 MIN_VER=	${VER:R:E}
-DISTNAME =	apache-tomcat-${VER}
-PKGNAME-main =	tomcat-${VER}
-PKGNAME-examples =tomcat-examples-${VER}
+DISTNAME=	apache-tomcat-${VER}
 
-CATEGORIES =	www
+PKGNAME-main=	tomcat-${VER}
 
-DISTFILES =	${DISTNAME}.tar.gz \
+COMMENT-examples= example applications and full documentation for Tomcat ${MAJ_VER}
+PKGNAME-examples= tomcat-examples-${VER}
+
+CATEGORIES=	www
+
+DISTFILES=	${DISTNAME}.tar.gz \
 		${DISTNAME}-fulldocs.tar.gz
 
-SITES =		${SITE_APACHE:=tomcat/tomcat-${MAJ_VER}/v${VER}/bin/} \
+SITES=		${SITE_APACHE:=tomcat/tomcat-${MAJ_VER}/v${VER}/bin/} \
 		https://archive.apache.org/dist/tomcat/tomcat-${MAJ_VER}/archive/v${VER}/bin/
 
-HOMEPAGE =	https://tomcat.apache.org/
+HOMEPAGE=	https://tomcat.apache.org/
 
-MULTI_PACKAGES = -main -examples
+MULTI_PACKAGES=	-main -examples
 
-MODULES =	java
-MODJAVA_VER ?=	1.8+
+MODULES=	java
+RUN_DEPENDS=	java/javaPathHelper
 
-RUN_DEPENDS =	java/javaPathHelper
+RUN_DEPENDS-examples ?= www/tomcat/v${MAJ_VER},-main>=${MAJ_VER}
 
-RUN_DEPENDS-examples ?=www/tomcat/v${MAJ_VER},-main>=${MAJ_VER}
-
-PREFIX-examples =${CATALINA_BASE}
+PREFIX-examples= ${CATALINA_BASE}
 
 # Apache Software License 2.0
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-NO_BUILD =	Yes
-NO_TEST =	Yes
+NO_BUILD=	Yes
+NO_TEST=	Yes
 
-CONFDIR =	${SYSCONFDIR}/tomcat
-CATALINA_BASE =	/var/tomcat
-SAMPLEDIR =	${PREFIX}/share/examples/tomcat
+CONFDIR=	${SYSCONFDIR}/tomcat
+CATALINA_BASE=	/var/tomcat
+SAMPLEDIR=	${PREFIX}/share/examples/tomcat
 SUBST_VARS +=	CONFDIR CATALINA_BASE
 # conf/ is not world-readable
-FIX_EXTRACT_PERMISSIONS = Yes
+FIX_EXTRACT_PERMISSIONS= Yes
 
 post-extract:
 	@rm -rf ${WRKDIST}/webapps/docs

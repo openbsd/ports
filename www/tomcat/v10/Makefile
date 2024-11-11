@@ -1,7 +1,8 @@
-COMMENT-main=	Java servlet 5.0 and Java server pages 3.0 server
+COMMENT-main=	Apache's Jakarta EE 10 server for Java web applications
 PKGSPEC-main=	tomcat->=10,<11
+MODJAVA_VER=	11+
 
 VER=		10.1.31
-MODJAVA_VER=	11+
+REVISION=	0
 
 .include <bsd.port.mk>
