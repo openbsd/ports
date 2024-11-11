@@ -754,7 +754,7 @@ SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefS
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.0-20190102054323-c2f93a96b099.mod) = scYIN+phM18U32TzGUw82S4PYo9gZIBnGJUPDXodvp4=
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.mod) = scYIN+phM18U32TzGUw82S4PYo9gZIBnGJUPDXodvp4=
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.zip) = 7qqCcA6WrF6APXqcMjYzMlBL7/j7sSAkkrTUPVpec2A=
-SHA256 (restic-v0.17.2.zip) = ZQVM9RUHERFpwnIGvTwxPlhx4prq6X0jr9Ntjc35EjM=
+SHA256 (restic-v0.17.3.zip) = zjU2sit4Ch/mLqPfMfxMVUgbTD7rN5+r9Bwx2IbP4OQ=
 SIZE (go_modules/cloud.google.com/go/@v/v0.112.2.mod) = 1812
 SIZE (go_modules/cloud.google.com/go/@v/v0.115.0.mod) = 1829
 SIZE (go_modules/cloud.google.com/go/@v/v0.115.0.zip) = 326810
@@ -1511,4 +1511,4 @@ SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
 SIZE (go_modules/honnef.co/go/tools/@v/v0.0.0-20190102054323-c2f93a96b099.mod) = 26
 SIZE (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.mod) = 26
 SIZE (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.zip) = 449180
-SIZE (restic-v0.17.2.zip) = 24637799
+SIZE (restic-v0.17.3.zip) = 24643068
