@@ -1,6 +1,7 @@
 bin/helpdev
 lib/python${MODPY_VERSION}/site-packages/helpdev/
 lib/python${MODPY_VERSION}/site-packages/helpdev-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/helpdev-${MODPY_EGG_VERSION}.dist-info/LICENSE.rst
 lib/python${MODPY_VERSION}/site-packages/helpdev-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/helpdev-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/helpdev-${MODPY_EGG_VERSION}.dist-info/WHEEL
