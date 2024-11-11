@@ -24,6 +24,7 @@ MODULES =		devel/cargo lang/clang
 
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
+DPB_PROPERTIES =	parallel
 
 .include "crates.inc"
 
