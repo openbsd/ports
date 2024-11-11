@@ -1,0 +1,15 @@
+The Apache Tomcat software is an open source implementation of
+the Jakarta Servlet, Jakarta Pages, Jakarta Expression Language,
+Jakarta WebSocket, Jakarta Annotations and Jakarta Authentication
+specifications. These specifications are part of the Jakarta EE
+platform.
+
+Tomcat 11 implements the Jakarta EE 11 specifications: Servlet 6.1,
+JSP 4.0, EL 6.0, WebSocket 2.2 and Authentication 3.1.
+
+Tomcat includes many additional features that make it a useful platform
+for developing and deploying web applications and web services.
+
+Tomcat can be run as a standalone web server with Servlet and JSP
+support, or using Apache HTTP Server as its web server via the mod_jk
+Apache module (see the ap2-mod_jk package).
