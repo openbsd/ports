@@ -4,7 +4,8 @@ Jakarta WebSocket, Jakarta Annotations and Jakarta Authentication
 specifications. These specifications are part of the Jakarta EE
 platform.
 
-Tomcat 10 implements the Jakarta EE 10 specifications.
+Tomcat 10 implements the Jakarta EE 10 specifications: Servlet 6.0,
+JSP 3.1, EL 5.0, WebSocket 2.1 and Authentication 3.0.
 
 Tomcat includes many additional features that make it a useful platform
 for developing and deploying web applications and web services.
