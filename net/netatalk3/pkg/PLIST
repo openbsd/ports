@@ -57,7 +57,6 @@ lib/netatalk/
 @so lib/netatalk/uams_randnum.so
 @man man/man1/ad.1
 @man man/man1/aecho.1
-@man man/man1/afp_encodingtest.1
 @man man/man1/afp_lantest.1
 @man man/man1/afp_logintest.1
 @man man/man1/afp_spectest.1

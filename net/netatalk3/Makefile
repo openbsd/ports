@@ -1,11 +1,10 @@
 COMMENT=		Apple Filing Protocol file server over TCP/IP
 
-V=			4.0.4
+V=			4.0.5
 DISTNAME=		netatalk-${V}
 EXTRACT_SUFX=		.tar.xz
 PKGSPEC=		netatalk->=3,<4
 EPOCH=			0
-REVISION=		0
 
 SHARED_LIBS +=  atalk                17.0     # unknown
 
@@ -25,8 +24,10 @@ SITES=			https://github.com/Netatalk/Netatalk/releases/download/netatalk-${V:S/.
 
 MODULES=		devel/meson
 
-BUILD_DEPENDS=		textproc/docbook-xsl \
-			textproc/unicode/ucd
+BUILD_DEPENDS=		textproc/docbook-xsl
+
+# don't pick up UnicodeData.txt from texlive_texmf-buildset
+BUILD_DEPENDS +=	textproc/unicode/ucd
 
 LIB_DEPENDS=		databases/db/v4 \
 			devel/glib2 \
