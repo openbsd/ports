@@ -1,7 +1,7 @@
 Index: gdb/ppc64-obsd-nat.c
 --- gdb/ppc64-obsd-nat.c.orig
 +++ gdb/ppc64-obsd-nat.c
-@@ -0,0 +1,219 @@
+@@ -0,0 +1,213 @@
 +/* Native-dependent code for OpenBSD/powerpc64.
 +
 +   Copyright (C) 2004-2020 Free Software Foundation, Inc.
@@ -83,9 +83,9 @@ Index: gdb/ppc64-obsd-nat.c
 +ppc64_obsd_nat_target::fetch_registers (struct regcache *regcache, int regnum)
 +{
 +  struct reg regs;
++  pid_t pid = get_ptrace_pid (regcache->ptid ());
 +
-+  if (ptrace (PT_GETREGS, get_ptrace_pid (inferior_ptid),
-+	      (PTRACE_TYPE_ARG3) &regs, 0) == -1)
++  if (ptrace (PT_GETREGS, pid, (PTRACE_TYPE_ARG3) &regs, 0) == -1)
 +    perror_with_name (_("Couldn't get registers"));
 +
 +  ppc64obsd_supply_gregset (&ppc64obsd_gregset, regcache, -1,
@@ -97,8 +97,7 @@ Index: gdb/ppc64-obsd-nat.c
 +    {
 +      struct fpreg fpregs;
 +
-+      if (ptrace (PT_GETFPREGS, get_ptrace_pid (inferior_ptid),
-+		  (PTRACE_TYPE_ARG3) &fpregs, 0) == -1)
++      if (ptrace (PT_GETFPREGS, pid, (PTRACE_TYPE_ARG3) &fpregs, 0) == -1)
 +	perror_with_name (_("Couldn't get floating point status"));
 +
 +      ppc64obsd_supply_fpregset (&ppc64obsd_fpregset, regcache, -1,
@@ -114,16 +113,15 @@ Index: gdb/ppc64-obsd-nat.c
 +ppc64_obsd_nat_target::store_registers (struct regcache *regcache, int regnum)
 +{
 +  struct reg regs;
++  pid_t pid = get_ptrace_pid (regcache->ptid ());
 +
-+  if (ptrace (PT_GETREGS, get_ptrace_pid (inferior_ptid),
-+	      (PTRACE_TYPE_ARG3) &regs, 0) == -1)
++  if (ptrace (PT_GETREGS, pid, (PTRACE_TYPE_ARG3) &regs, 0) == -1)
 +    perror_with_name (_("Couldn't get registers"));
 +
 +  ppc64obsd_collect_gregset (&ppc64obsd_gregset, regcache,
 +			     regnum, &regs, sizeof regs);
 +
-+  if (ptrace (PT_SETREGS, get_ptrace_pid (inferior_ptid),
-+	      (PTRACE_TYPE_ARG3) &regs, 0) == -1)
++  if (ptrace (PT_SETREGS, pid, (PTRACE_TYPE_ARG3) &regs, 0) == -1)
 +    perror_with_name (_("Couldn't write registers"));
 +
 +#if 0
@@ -132,15 +130,13 @@ Index: gdb/ppc64-obsd-nat.c
 +    {
 +      struct fpreg fpregs;
 +
-+      if (ptrace (PT_GETFPREGS, get_ptrace_pid (inferior_ptid),
-+		  (PTRACE_TYPE_ARG3) &fpregs, 0) == -1)
++      if (ptrace (PT_GETFPREGS, pid, (PTRACE_TYPE_ARG3) &fpregs, 0) == -1)
 +	perror_with_name (_("Couldn't get floating point status"));
 +
 +      ppc64obsd_collect_fpregset (&ppc64obsd_fpregset, regcache,
 +				  regnum, &fpregs, sizeof fpregs);
 +
-+      if (ptrace (PT_SETFPREGS, get_ptrace_pid (inferior_ptid),
-+		  (PTRACE_TYPE_ARG3) &fpregs, 0) == -1)
++      if (ptrace (PT_SETFPREGS, pid, (PTRACE_TYPE_ARG3) &fpregs, 0) == -1)
 +	perror_with_name (_("Couldn't write floating point status"));
 +    }
 +#endif
@@ -189,11 +185,9 @@ Index: gdb/ppc64-obsd-nat.c
 +#endif
 +
 +
-+/* Provide a prototype to silence -Wmissing-prototypes.  */
-+void _initialize_ppc64obsd_nat (void);
-+
++void _initialize_ppc64obsd_nat ();
 +void
-+_initialize_ppc64obsd_nat (void)
++_initialize_ppc64obsd_nat ()
 +{
 +  add_inf_child_target (&the_ppc64_obsd_nat_target);
 +

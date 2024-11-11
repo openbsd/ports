@@ -1,7 +1,7 @@
 Index: gdb/ppc64-obsd-tdep.c
 --- gdb/ppc64-obsd-tdep.c.orig
 +++ gdb/ppc64-obsd-tdep.c
-@@ -0,0 +1,411 @@
+@@ -0,0 +1,407 @@
 +/* Target-dependent code for OpenBSD/powerpc64.
 +
 +   Copyright (C) 2004, 2005, 2006 Free Software Foundation, Inc.
@@ -375,14 +375,10 @@ Index: gdb/ppc64-obsd-tdep.c
 +}
 +
 +
-+/* Provide a prototype to silence -Wmissing-prototypes.  */
-+void _initialize_ppc64obsd_tdep (void);
-+
++void _initialize_ppc64obsd_tdep ();
 +void
-+_initialize_ppc64obsd_tdep (void)
++_initialize_ppc64obsd_tdep ()
 +{
-+  gdbarch_register_osabi (bfd_arch_rs6000, 0, GDB_OSABI_OPENBSD,
-+			  ppc64obsd_init_abi);
 +  gdbarch_register_osabi (bfd_arch_powerpc, bfd_mach_ppc64,
 +			  GDB_OSABI_OPENBSD, ppc64obsd_init_abi);
 +
