@@ -3,6 +3,6 @@ PKGSPEC-main=	tomcat->=9,<10
 MODJAVA_VER=	1.8+
 
 VER=		9.0.97
-REVISION=	0
+REVISION=	1
 
 .include <bsd.port.mk>

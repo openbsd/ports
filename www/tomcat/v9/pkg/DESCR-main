@@ -1,7 +1,15 @@
-Tomcat 9 is a Servlet/JSP container that implements the Servlet 4.0
-and JavaServer Pages 2.3 specifications from the Java Community
-Process. Tomcat includes many additional features that make it a
-useful platform for developing and deploying web applications and
-web services.  Tomcat can be run as a standalone web server with
-Servlet and JSP support, or using Apache HTTP Server as its web
-server via the mod_jk Apache module (the www/mod_jk package).
+The Apache Tomcat software is an open source implementation of
+the Jakarta Servlet, Jakarta Pages, Jakarta Expression Language,
+Jakarta WebSocket, Jakarta Annotations and Jakarta Authentication
+specifications. These specifications are part of the Jakarta EE
+platform.
+
+Tomcat 9 implements the Java EE 8 specifications: Servlet 4.0,
+JSP 2.3, EL 3.0, WebSocket 1.1, JASPIC 1.1.
+
+Tomcat includes many additional features that make it a useful platform
+for developing and deploying web applications and web services.
+
+Tomcat can be run as a standalone web server with Servlet and JSP
+support, or using Apache HTTP Server as its web server via the mod_jk
+Apache module (see the ap2-mod_jk package).
