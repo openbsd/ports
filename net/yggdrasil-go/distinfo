@@ -1,3 +1,4 @@
+SHA256 (fix-group-access-leak-75d2080.patch) = 8/dQXUiC1r36RjwhhQFTETD2Epij0NQcA+VEAxKNigI=
 SHA256 (go_modules/github.com/!arceliar/ironwood/@v/v0.0.0-20241016082300-f6fb9da97a17.mod) = 0Naq7KX7znimNulJEb3NJMaHLcIgUNjqAFQbZ2AD6Xo=
 SHA256 (go_modules/github.com/!arceliar/ironwood/@v/v0.0.0-20241016082300-f6fb9da97a17.zip) = XM/fcP5zY2mzqWLZ8JrgvREroAwcdhY56czMlLmxApM=
 SHA256 (go_modules/github.com/!arceliar/phony/@v/v0.0.0-20220903101357-530938a4b13d.mod) = +he5rHpCMAbFDg/6LmpVq+h4AStQvuG1KM5ViaoutD0=
@@ -216,7 +217,9 @@ SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHd
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
 SHA256 (go_modules/gvisor.dev/gvisor/@v/v0.0.0-20230927004350-cbd86285d259.mod) = o3LzzlTDqcf0KiSfeM/v52Z7qknE1dn3ytwBw1joRqA=
 SHA256 (go_modules/gvisor.dev/gvisor/@v/v0.0.0-20230927004350-cbd86285d259.zip) = C4/Hpc+sLRDMhachb8OspKk+OLp+lFPxBbMZCz5EZRY=
+SHA256 (privdrop-wait-fix-8346800.patch) = dAMSP4ThPxjxxyr3Qt02Zh3xQ1mp7i2Jtf7QU1VZmw8=
 SHA256 (yggdrasil-go-v0.5.9.zip) = rw422a7QGcrUeAE08b7vU/i8mkANJ29vZy2KkM+zFfA=
+SIZE (fix-group-access-leak-75d2080.patch) = 2078
 SIZE (go_modules/github.com/!arceliar/ironwood/@v/v0.0.0-20241016082300-f6fb9da97a17.mod) = 248
 SIZE (go_modules/github.com/!arceliar/ironwood/@v/v0.0.0-20241016082300-f6fb9da97a17.zip) = 61147
 SIZE (go_modules/github.com/!arceliar/phony/@v/v0.0.0-20220903101357-530938a4b13d.mod) = 42
@@ -435,4 +438,5 @@ SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
 SIZE (go_modules/gvisor.dev/gvisor/@v/v0.0.0-20230927004350-cbd86285d259.mod) = 3579
 SIZE (go_modules/gvisor.dev/gvisor/@v/v0.0.0-20230927004350-cbd86285d259.zip) = 13870945
+SIZE (privdrop-wait-fix-8346800.patch) = 4770
 SIZE (yggdrasil-go-v0.5.9.zip) = 160953

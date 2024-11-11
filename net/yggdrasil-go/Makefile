@@ -4,6 +4,16 @@ MODGO_MODNAME =	github.com/yggdrasil-network/yggdrasil-go
 MODGO_VERSION =	v0.5.9
 
 DISTNAME =	yggdrasil-go-${MODGO_VERSION}
+REVISION =	0
+
+# make patch and update-patches work;  does the go module's default need fixing?
+WRKDIST =		${WRKSRC}
+SITES.fix =		https://${MODGO_MODNAME}/
+# merged "Create admin socket synchronously before privdrop (#1201)"
+PATCHFILES.fix =	privdrop-wait-fix-{commit/}8346800.patch
+# merged "Set groups when dropping privileges to not leak supplementary group access (#1202)
+PATCHFILES.fix +=	fix-group-access-leak-{commit/}75d2080.patch
+PATCH_DIST_STRIP =	-p1
 
 CATEGORIES =	net
 
