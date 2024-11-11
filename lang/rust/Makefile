@@ -18,7 +18,7 @@ DISTNAME =		rustc-${V}-src
 BV-aarch64 =		1.82.0
 BV-amd64 =		1.82.0
 BV-powerpc64 =		1.65.0-20221213
-BV-riscv64 =		1.81.0-20241110
+BV-riscv64 =		1.82.0
 BV-sparc64 =		1.81.0
 BV =			${BV-${MACHINE_ARCH}}
 
