@@ -1,8 +1,7 @@
 COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
-GNOME_VERSION=		3.4.7
-REVISION=		5
+GNOME_VERSION=		3.4.8
 
 SHARED_LIBS += rhythmbox-core            0.0 # 10.0.0
 
@@ -54,7 +53,7 @@ RUN_DEPENDS +=		multimedia/gstreamer1/plugins-good
 # needed for mp3 support
 RUN_DEPENDS +=		multimedia/gstreamer1/plugins-libav
 
-MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
+MODGNOME_TOOLS=		desktop-file-utils gi-docgen gobject-introspection \
 			gtk-update-icon-cache vala yelp
 
 CONFIGURE_ARGS=		-Dbrasero=disabled \
@@ -62,9 +61,6 @@ CONFIGURE_ARGS=		-Dbrasero=disabled \
 			-Dgudev=disabled \
 			-Dipod=disabled \
 			-Dlirc=disabled
-
-# XXX see top of Makefile
-CONFIGURE_ARGS +=	-Ddaap=disabled
 
 # XXX requires udev|gvfs-mtp
 CONFIGURE_ARGS +=	-Dmtp=disabled
