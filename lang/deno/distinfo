@@ -170,7 +170,6 @@ SHA256 (cargo/dprint-plugin-jupyter-0.1.5.tar.gz) = 0NIGhON7OCTivJF8/LFOLN+IOY7v
 SHA256 (cargo/dprint-plugin-markdown-0.17.8.tar.gz) = k0qOM/bzc7L7ZsKIpGjj2umlamxmv+zVUE/lZhMa/T8=
 SHA256 (cargo/dprint-plugin-typescript-0.93.2.tar.gz) = P/Kf0TZUHlnVGUbw0tNT/vyIZ3b2Gnmev7WDiwbO8Ts=
 SHA256 (cargo/dprint-swc-ext-0.20.0.tar.gz) = C6KMEokqrbdRwrpwAdhGD67kdIoEtO3FHHEhzGfuA9s=
-SHA256 (cargo/drain-0.1.2.tar.gz) = nRBQKL0rXfyzMxj9eaRFAB6tNgBN2N/+8b3X5JPYvB4=
 SHA256 (cargo/dsa-0.6.3.tar.gz) = SLwiSpCErXYBlVhM5auzwsNKIl+jEqEorSRaa0Erdok=
 SHA256 (cargo/dyn-clone-1.0.17.tar.gz) = DW7wBy+KU1KB5Idr54iTi1KOmh1DkAuCwlaa99p5kSU=
 SHA256 (cargo/dynasm-1.2.3.tar.gz) = rdmhAoB7Uk7AUDY/CeBvFQQhSw4cd5f2QmHIkQItzos=
@@ -261,6 +260,10 @@ SHA256 (cargo/heck-0.5.0.tar.gz) = IwTgCYP4f/s4tVtES147YKiEtdMMD8p9gv4zRJu+Veo=
 SHA256 (cargo/hermit-abi-0.3.9.tar.gz) = 0jHfuJz//bww5/xBV57WBmrQOr2p5WfMr65gK5fsUCQ=
 SHA256 (cargo/hex-0.4.3.tar.gz) = fyQlSqmlS1yFjq7i9bzNtGqvDkhqWV7V/Y+GulUjKnA=
 SHA256 (cargo/hexf-parse-0.2.1.tar.gz) = 36aGKDrW3QafEF5asJGwTGKFDT5M9dZ9660ZM/VQI98=
+SHA256 (cargo/hickory-client-0.24.1.tar.gz) = urloOwjY+JV6hXsCNkVdgOGIbqqMYXivVWqnhx+2G1U=
+SHA256 (cargo/hickory-proto-0.24.1.tar.gz) = B2mLhCDi8NZEekNrqZnshdj78qOYu9c3uCysSi6W5RI=
+SHA256 (cargo/hickory-resolver-0.24.1.tar.gz) = KHV/I6p1yY8lTPBAXm2MJbgxsykhsFCmZpJCdnmx8kM=
+SHA256 (cargo/hickory-server-0.24.1.tar.gz) = m+DkPFVrmz/bbHxxqaMhU6InXQJBnj3oCeUgv8/kDDc=
 SHA256 (cargo/hkdf-0.12.4.tar.gz) = e1+Osq1yhjjqLH1Hoh2yO3tYpy7Wo4JWuKGEnxX7vfc=
 SHA256 (cargo/hmac-0.12.1.tar.gz) = bEnDfAnBelPZN9+7dC6zqWHWWplOa83PN+c5nQzIq14=
 SHA256 (cargo/home-0.5.9.tar.gz) = 49E1S/a3I1y0oFdsJhn9TtGBg/aJsSsAag7nMp7v+aU=
@@ -513,7 +516,6 @@ SHA256 (cargo/serde_bytes-0.11.14.tar.gz) = i4SXwxP9Q6uZIIdUgRdkP2/Nk1y/NvF2/9oK
 SHA256 (cargo/serde_derive-1.0.205.tar.gz) = aS1vWskCIBYdZ3TbMMZiICch5krtkFjSw5T0USYUIME=
 SHA256 (cargo/serde_json-1.0.122.tar.gz) = eEtiA5UcV/90hHaxJsy16OKVmlwZ5cYXqxlWvj28aNo=
 SHA256 (cargo/serde_repr-0.1.16.tar.gz) = hyXh362zpQ9+XOCxpUBGb27T/noPyirCuLgx0xMWvQA=
-SHA256 (cargo/serde_spanned-0.6.6.tar.gz) = eeZ04B+ZmvN8SfcKbt4WeopgslA+VsVZlTKmW6pZaaA=
 SHA256 (cargo/serde_urlencoded-0.7.1.tar.gz) = 00kcFHFcoilMTWqI8V6Ec5eIwdAw7tjBEENqr9qi8/0=
 SHA256 (cargo/serde_v8-0.227.0.tar.gz) = CoKUwiI8U77TQ76LgFZOzk3A0DtkOwb6hsTMwOBk7aA=
 SHA256 (cargo/serdect-0.2.0.tar.gz) = qE8UoZ6aAUu59FEkiNmCmmjgTsq/+w+ZBM0azpRZgXc=
@@ -611,9 +613,6 @@ SHA256 (cargo/tokio-socks-0.5.1.tar.gz) = URZd+gKdKmWWlBOmzJbzVLhrRkSYcC8XSk76E2
 SHA256 (cargo/tokio-stream-0.1.15.tar.gz) = JnrIngvsbmkeWBORFgaTXXfEdv9JAk+Yq86j57FeN68=
 SHA256 (cargo/tokio-util-0.7.10.tar.gz) = VBnzRzLZ627kw1eLeYkHhXm38DnLu5yixNoBV0k3HhU=
 SHA256 (cargo/toml-0.5.11.tar.gz) = 9Pfw3Y1QqFOlMcQmNZBFsZmPBCGdiHmYEHYs1K0xQjQ=
-SHA256 (cargo/toml-0.7.8.tar.gz) = 3XnmnTtifbMA/5VgJ8xsN5jO8m0iUmvv380S/uttIlc=
-SHA256 (cargo/toml_datetime-0.6.6.tar.gz) = S639VpJK5pvMkDkzWy4BdjnOP5sAHDk8Gy0e+EbOLL8=
-SHA256 (cargo/toml_edit-0.19.15.tar.gz) = G1u3cNow5cv941ote5uKLEuO+JVIp6auq1yaV24+dCE=
 SHA256 (cargo/tower-0.4.13.tar.gz) = uPqb4N5s9J5TbOGFH5h70hpDt3GwlHPDVJpshT2zfBw=
 SHA256 (cargo/tower-http-0.6.1.tar.gz) = hDcVCra7yMXw9Rnj1e1KqIOoPdTN09GyH5SCk2BGy5c=
 SHA256 (cargo/tower-layer-0.3.3.tar.gz) = EhwqbNpGmAuw/NFkf/r2zT/HmgE94oh4KDb235xIeA4=
@@ -622,10 +621,6 @@ SHA256 (cargo/tracing-0.1.40.tar.gz) = w1I6tacZFsz0IO699VIfzvAhQSNLvAuKSfL9xFRDZ
 SHA256 (cargo/tracing-attributes-0.1.27.tar.gz) = NHBMjW68vJOYJBgK8CBWawGnwB+AZBJk66CZn2wra+c=
 SHA256 (cargo/tracing-core-0.1.32.tar.gz) = wG09phE/EWqu5o5NYBGRYUyQUwZ/mrf27byxYSN9qlQ=
 SHA256 (cargo/triomphe-0.1.13.tar.gz) = 5mMeQuELQMBpC/kvQE68/m4f20gDkdFfF8yOlu7tU2k=
-SHA256 (cargo/trust-dns-client-0.23.2.tar.gz) = FBNecsfm1Mm2kC1EN4gahZjwFF27Lj+G+S262EW2HmM=
-SHA256 (cargo/trust-dns-proto-0.23.2.tar.gz) = MRkRJlHBV/RIiTGgHlhqpFlzbp1gRtO9kQX/tpNS03Q=
-SHA256 (cargo/trust-dns-resolver-0.23.2.tar.gz) = EKPmw6/xcYs8c+OV0fNSArov+oR8amLuoNuPtM/jC+Y=
-SHA256 (cargo/trust-dns-server-0.23.2.tar.gz) = xUD3PCsuwvbFTqvQkA56r7dHqCAiS3QvVW6PqrtGG8c=
 SHA256 (cargo/try-lock-0.2.5.tar.gz) = 5CGrrdQaQiUnVQTqTWVmkjQYt/BVBvvJwP6GunOWEUs=
 SHA256 (cargo/twox-hash-1.6.3.tar.gz) = l/7mtXxqQVJKgQ2u6ShsAtd1LEJTBk0LBUcoM6Q49nU=
 SHA256 (cargo/typed-arena-2.0.2.tar.gz) = avauIBZ6ns5Ly0GvW4D4ofHfmB9jkRic4A/SV68EEmo=
@@ -708,7 +703,6 @@ SHA256 (cargo/windows_x86_64_gnullvm-0.48.5.tar.gz) = C3tSdnhooj1bq3aOOQ3F9cVYJb
 SHA256 (cargo/windows_x86_64_gnullvm-0.52.4.tar.gz) = d8p58kUbSfqeKvOfB0f+mZ/NpPXiQbKJhiTcqXofIXc=
 SHA256 (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 7ZT85hVxpABoUrc4mgY6uYPALrG7N7R/gnLOktBtlTg=
 SHA256 (cargo/windows_x86_64_msvc-0.52.4.tar.gz) = MrdS5SotoN3728xvzq3+7eTJOe0W0T5kiDOmHfthHtg=
-SHA256 (cargo/winnow-0.5.40.tar.gz) = 9ZOpU5hzeu7VPkiceF3xPzYY5B281nGMat2/E5WqaHY=
 SHA256 (cargo/winnow-0.6.15.tar.gz) = VXQE5FAVLNZ5W7VYvKaeQ8WFBV9GBuO8rliU/G2sm6A=
 SHA256 (cargo/winreg-0.50.0.tar.gz) = Uk5XssU3wPmx5p8ZZTEewSGCtBIuRQNbFQjNJNKtrbE=
 SHA256 (cargo/winreg-0.52.0.tar.gz) = onelc5jUv6B130T1AaF8/fhULSJPDTYJWirceu5O8KU=
@@ -735,7 +729,7 @@ SHA256 (cargo/zip-2.1.6.tar.gz) = QN2Mku/Clihs4fvRZlfF2+//RPG0ygHMX1F9i3s9Pi4=
 SHA256 (cargo/zstd-0.12.4.tar.gz) = GidZXhc2QRcfx0oSMrexx6fLbhgiLBHp37mIj6QkxTw=
 SHA256 (cargo/zstd-safe-6.0.6.tar.gz) = 7pj/0LSO6V5sUWgYjkSlRVCxVk2dUw7iHV8OrtEGlYE=
 SHA256 (cargo/zstd-sys-2.0.10+zstd.1.5.6.tar.gz) = wlOkkUr1uvyPqMhu5ACCfoPPbsARlewfHthEG/ANZao=
-SHA256 (deno-2.0.5.tar.gz) = dBeAViZkx5XPX8Xi5MwJmX7LqGbv8DKPZ5JvEfSK5aQ=
+SHA256 (deno-2.0.6.tar.gz) = aPjVJLCZVngQg4zbEX2al1GrFEbACVkopDzhbVaw37I=
 SIZE (cargo/Inflector-0.11.4.tar.gz) = 17438
 SIZE (cargo/addr2line-0.22.0.tar.gz) = 39156
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
@@ -908,7 +902,6 @@ SIZE (cargo/dprint-plugin-jupyter-0.1.5.tar.gz) = 10285
 SIZE (cargo/dprint-plugin-markdown-0.17.8.tar.gz) = 41649
 SIZE (cargo/dprint-plugin-typescript-0.93.2.tar.gz) = 200572
 SIZE (cargo/dprint-swc-ext-0.20.0.tar.gz) = 74163
-SIZE (cargo/drain-0.1.2.tar.gz) = 8974
 SIZE (cargo/dsa-0.6.3.tar.gz) = 25991
 SIZE (cargo/dyn-clone-1.0.17.tar.gz) = 11848
 SIZE (cargo/dynasm-1.2.3.tar.gz) = 103467
@@ -999,6 +992,10 @@ SIZE (cargo/heck-0.5.0.tar.gz) = 11517
 SIZE (cargo/hermit-abi-0.3.9.tar.gz) = 16165
 SIZE (cargo/hex-0.4.3.tar.gz) = 13299
 SIZE (cargo/hexf-parse-0.2.1.tar.gz) = 4662
+SIZE (cargo/hickory-client-0.24.1.tar.gz) = 37830
+SIZE (cargo/hickory-proto-0.24.1.tar.gz) = 374410
+SIZE (cargo/hickory-resolver-0.24.1.tar.gz) = 91134
+SIZE (cargo/hickory-server-0.24.1.tar.gz) = 90093
 SIZE (cargo/hkdf-0.12.4.tar.gz) = 171163
 SIZE (cargo/hmac-0.12.1.tar.gz) = 42657
 SIZE (cargo/home-0.5.9.tar.gz) = 8760
@@ -1251,7 +1248,6 @@ SIZE (cargo/serde_bytes-0.11.14.tar.gz) = 12018
 SIZE (cargo/serde_derive-1.0.205.tar.gz) = 55886
 SIZE (cargo/serde_json-1.0.122.tar.gz) = 147200
 SIZE (cargo/serde_repr-0.1.16.tar.gz) = 9629
-SIZE (cargo/serde_spanned-0.6.6.tar.gz) = 9120
 SIZE (cargo/serde_urlencoded-0.7.1.tar.gz) = 12822
 SIZE (cargo/serde_v8-0.227.0.tar.gz) = 32090
 SIZE (cargo/serdect-0.2.0.tar.gz) = 11691
@@ -1349,9 +1345,6 @@ SIZE (cargo/tokio-socks-0.5.1.tar.gz) = 16137
 SIZE (cargo/tokio-stream-0.1.15.tar.gz) = 36284
 SIZE (cargo/tokio-util-0.7.10.tar.gz) = 110508
 SIZE (cargo/toml-0.5.11.tar.gz) = 54910
-SIZE (cargo/toml-0.7.8.tar.gz) = 49671
-SIZE (cargo/toml_datetime-0.6.6.tar.gz) = 11698
-SIZE (cargo/toml_edit-0.19.15.tar.gz) = 95324
 SIZE (cargo/tower-0.4.13.tar.gz) = 106906
 SIZE (cargo/tower-http-0.6.1.tar.gz) = 121783
 SIZE (cargo/tower-layer-0.3.3.tar.gz) = 6180
@@ -1360,10 +1353,6 @@ SIZE (cargo/tracing-0.1.40.tar.gz) = 79459
 SIZE (cargo/tracing-attributes-0.1.27.tar.gz) = 32241
 SIZE (cargo/tracing-core-0.1.32.tar.gz) = 61221
 SIZE (cargo/triomphe-0.1.13.tar.gz) = 29568
-SIZE (cargo/trust-dns-client-0.23.2.tar.gz) = 37939
-SIZE (cargo/trust-dns-proto-0.23.2.tar.gz) = 366401
-SIZE (cargo/trust-dns-resolver-0.23.2.tar.gz) = 89012
-SIZE (cargo/trust-dns-server-0.23.2.tar.gz) = 90974
 SIZE (cargo/try-lock-0.2.5.tar.gz) = 4314
 SIZE (cargo/twox-hash-1.6.3.tar.gz) = 21842
 SIZE (cargo/typed-arena-2.0.2.tar.gz) = 11848
@@ -1446,7 +1435,6 @@ SIZE (cargo/windows_x86_64_gnullvm-0.48.5.tar.gz) = 418486
 SIZE (cargo/windows_x86_64_gnullvm-0.52.4.tar.gz) = 433358
 SIZE (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 798412
 SIZE (cargo/windows_x86_64_msvc-0.52.4.tar.gz) = 828019
-SIZE (cargo/winnow-0.5.40.tar.gz) = 159316
 SIZE (cargo/winnow-0.6.15.tar.gz) = 163033
 SIZE (cargo/winreg-0.50.0.tar.gz) = 29703
 SIZE (cargo/winreg-0.52.0.tar.gz) = 30148
@@ -1473,4 +1461,4 @@ SIZE (cargo/zip-2.1.6.tar.gz) = 107876
 SIZE (cargo/zstd-0.12.4.tar.gz) = 30434
 SIZE (cargo/zstd-safe-6.0.6.tar.gz) = 20828
 SIZE (cargo/zstd-sys-2.0.10+zstd.1.5.6.tar.gz) = 749088
-SIZE (deno-2.0.5.tar.gz) = 18940025
+SIZE (deno-2.0.6.tar.gz) = 19680991
