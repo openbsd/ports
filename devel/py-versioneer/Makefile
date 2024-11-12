@@ -17,6 +17,4 @@ FLAVOR =	python3
 MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools
 
-BUILD_DEPENDS =	textproc/py-tomli${MODPY_FLAVOR}
-
 .include <bsd.port.mk>
