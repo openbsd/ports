@@ -28,7 +28,8 @@ HOMEPAGE ?=		https://www.qt.io/
 PERMIT_PACKAGE ?=	Yes
 
 SITES ?=		https://download.qt.io/official_releases/qt/${VERSION:R}/${VERSION}/submodules/ \
-			https://mirrors.ocf.berkeley.edu/qt/official_releases/qt/${VERSION:R}/${VERSION}/submodules/
+			https://mirrors.ocf.berkeley.edu/qt/official_releases/qt/${VERSION:R}/${VERSION}/submodules/ \
+			https://download.qt.io/archive/qt/${VERSION:R}/${VERSION}/submodules/
 
 DIST_SUBDIR ?=		qt
 EXTRACT_SUFX ?=		.tar.xz
