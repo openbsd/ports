@@ -176,6 +176,9 @@ lib/python${MODPY_VERSION}/site-packages/wapitiCore/controller/${MODPY_PYCACHE}w
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/controller/wapiti.py
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/data/
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/data/attacks/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wapitiCore/data/attacks/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/wapitiCore/data/attacks/${MODPY_PYCACHE}update_hash_files.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/wapitiCore/data/attacks/${MODPY_PYCACHE}update_hash_files.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/data/attacks/backupPayloads.txt
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/data/attacks/blindSQLPayloads.ini
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/data/attacks/busterPayloads.txt
@@ -191,9 +194,16 @@ lib/python${MODPY_VERSION}/site-packages/wapitiCore/data/attacks/passwords.txt
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/data/attacks/prestashop_hash_files.json
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/data/attacks/resolvers.txt
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/data/attacks/spip_hash_files.json
+lib/python${MODPY_VERSION}/site-packages/wapitiCore/data/attacks/src_cms_files/
+lib/python${MODPY_VERSION}/site-packages/wapitiCore/data/attacks/src_cms_files/list_files_drupal.txt
+lib/python${MODPY_VERSION}/site-packages/wapitiCore/data/attacks/src_cms_files/list_files_joomla-cms.txt
+lib/python${MODPY_VERSION}/site-packages/wapitiCore/data/attacks/src_cms_files/list_files_prestashop.txt
+lib/python${MODPY_VERSION}/site-packages/wapitiCore/data/attacks/src_cms_files/list_files_spip.txt
+lib/python${MODPY_VERSION}/site-packages/wapitiCore/data/attacks/src_cms_files/list_files_wordpress.txt
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/data/attacks/subdomain-wordlist.txt
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/data/attacks/successMessage.txt
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/data/attacks/takeover_fingerprints.json
+lib/python${MODPY_VERSION}/site-packages/wapitiCore/data/attacks/update_hash_files.py
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/data/attacks/users.txt
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/data/attacks/wordpress_plugins.txt
 lib/python${MODPY_VERSION}/site-packages/wapitiCore/data/attacks/wordpress_themes.txt

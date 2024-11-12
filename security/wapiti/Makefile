@@ -1,6 +1,6 @@
 COMMENT =	web-application vulnerability scanner
 
-MODPY_EGG_VERSION =	3.2.0
+MODPY_EGG_VERSION =	3.2.1
 DISTNAME =	wapiti3-${MODPY_EGG_VERSION}
 PKGNAME =	wapiti-${MODPY_EGG_VERSION}
 
@@ -24,7 +24,6 @@ RUN_DEPENDS =		archivers/py-brotli${MODPY_FLAVOR} \
 			devel/py-asn1${MODPY_FLAVOR} \
 			devel/py-loguru${MODPY_FLAVOR} \
 			devel/py-prance${MODPY_FLAVOR} \
-			devel/py-six${MODPY_FLAVOR} \
 			devel/py-typing-extensions${MODPY_FLAVOR} \
 			net/py-dnspython${MODPY_FLAVOR} \
 			net/py-tld${MODPY_FLAVOR} \
@@ -48,9 +47,10 @@ NO_TEST =		Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/wapiti
-	${INSTALL_DATA} ${WRKSRC}/doc/* \
-		${PREFIX}/share/doc/wapiti
-	mv ${PREFIX}/share/doc/wapiti/*.1 ${PREFIX}/man/man1
+	@mv ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/doc/* \
+		${PREFIX}/share/doc/wapiti/
+	@rm -rf ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/doc
+	@mv ${PREFIX}/share/doc/wapiti/*.1 ${PREFIX}/man/man1
 
 
 .include <bsd.port.mk>
