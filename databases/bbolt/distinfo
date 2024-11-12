@@ -1,4 +1,4 @@
-SHA256 (bbolt-v1.3.8.zip) = GLq65n7M3SmCrQvUS7d6I46LbI2hkrWua9PA3UjVujE=
+SHA256 (bbolt-v1.3.11.zip) = 0WUfCUApxPY3+4o5/uR90Ua0Gud+7HmqxDGlV/hlawo=
 SHA256 (go_modules/github.com/davecgh/go-spew/@v/v1.1.0.mod) = vLKTkyUSN7eaF7bBm/KRNPQ+j0OMMZiYj81GGhzfBcw=
 SHA256 (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.mod) = vLKTkyUSN7eaF7bBm/KRNPQ+j0OMMZiYj81GGhzfBcw=
 SHA256 (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.zip) = a0SoQ5UfNxtwEMdU7MPKvv6BXVztHFuUCfstaX6KiQ0=
@@ -14,6 +14,8 @@ SHA256 (go_modules/github.com/stretchr/testify/@v/v1.8.1.mod) = rxpdyzMazno/n8G1
 SHA256 (go_modules/github.com/stretchr/testify/@v/v1.8.1.zip) = NvZOTyKfh2cu+N4cdWZIxBZedqvQNDYlF1eDl+gkhWw=
 SHA256 (go_modules/go.etcd.io/gofail/@v/v0.1.0.mod) = WE2kvNgK5d/maVudNEJlqpotG5BDZjoeFkzi54/2LBE=
 SHA256 (go_modules/go.etcd.io/gofail/@v/v0.1.0.zip) = T9aXfdc2q6Vr5YwLFultc0M2iJdqWzUleNPFTQ256AM=
+SHA256 (go_modules/golang.org/x/sync/@v/v0.5.0.mod) = cA5dsA3SaqGaF9zl/FUkNtYPaMVgbIW4IfJMPWByoVE=
+SHA256 (go_modules/golang.org/x/sync/@v/v0.5.0.zip) = nglMZbFTiBQ3ziMLLSSScZ0GPIkkAJYxyQJa3RMFaSI=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.4.0.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7/nc5E0BFvDt85KUCQ=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.4.0.zip) = 76k1T8qnCYJbuxyGuD4jR867U0n0MmzEyMy5cq0yAyw=
 SHA256 (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.mod) = XDBuDWM81moRtA4uX7vG2kIRDbfXLqPBUkzrRe5Awz8=
@@ -21,7 +23,7 @@ SHA256 (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.zip) 
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SIZE (bbolt-v1.3.8.zip) = 144978
+SIZE (bbolt-v1.3.11.zip) = 166580
 SIZE (go_modules/github.com/davecgh/go-spew/@v/v1.1.0.mod) = 34
 SIZE (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.mod) = 34
 SIZE (go_modules/github.com/davecgh/go-spew/@v/v1.1.1.zip) = 60320
@@ -37,6 +39,8 @@ SIZE (go_modules/github.com/stretchr/testify/@v/v1.8.1.mod) = 188
 SIZE (go_modules/github.com/stretchr/testify/@v/v1.8.1.zip) = 113583
 SIZE (go_modules/go.etcd.io/gofail/@v/v0.1.0.mod) = 225
 SIZE (go_modules/go.etcd.io/gofail/@v/v0.1.0.zip) = 123859
+SIZE (go_modules/golang.org/x/sync/@v/v0.5.0.mod) = 34
+SIZE (go_modules/golang.org/x/sync/@v/v0.5.0.zip) = 26308
 SIZE (go_modules/golang.org/x/sys/@v/v0.4.0.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.4.0.zip) = 1881264
 SIZE (go_modules/gopkg.in/check.v1/@v/v0.0.0-20161208181325-20d25e280405.mod) = 25

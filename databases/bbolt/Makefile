@@ -1,10 +1,10 @@
 COMMENT =		embedded key/value database for Go
 
 MODGO_MODNAME =		go.etcd.io/bbolt
-MODGO_VERSION =		v1.3.8
+MODGO_VERSION =		v1.3.11
 
 DISTNAME =		bbolt-${MODGO_VERSION}
-PKGNAME =		bbolt-1.3.8
+PKGNAME =		bbolt-1.3.11
 
 CATEGORIES =		databases
 
@@ -25,9 +25,11 @@ MODGO_MODULES =	\
 	github.com/stretchr/objx	 v0.5.0 \
 	github.com/stretchr/testify	 v1.8.1 \
 	go.etcd.io/gofail		 v0.1.0 \
+	golang.org/x/sync		 v0.5.0 \
 	golang.org/x/sys		 v0.4.0 \
 	gopkg.in/check.v1		 v0.0.0-20161208181325-20d25e280405 \
 	gopkg.in/yaml.v3		 v3.0.1
+
 MODGO_MODFILES =	\
 	github.com/davecgh/go-spew	 v1.1.0 \
 	github.com/stretchr/objx	 v0.1.0 \
