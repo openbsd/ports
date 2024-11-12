@@ -3,7 +3,7 @@ COMMENT =		black plugin for the Python Language Server
 MODPY_EGG_VERSION =	2.0.0
 DISTNAME =		python-lsp-black-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -21,8 +21,7 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		devel/py-python-lsp-server${MODPY_FLAVOR}>=1.4.0 \
-			textproc/py-black${MODPY_FLAVOR}>=23.11.0 \
-			textproc/py-tomli${MODPY_FLAVOR}
+			textproc/py-black${MODPY_FLAVOR}>=23.11.0
 
 NO_TEST =		Yes
 
