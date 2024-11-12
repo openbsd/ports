@@ -58,6 +58,9 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wheel/vendored/${MODPY_
 lib/python${MODPY_VERSION}/site-packages/wheel/vendored/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wheel/vendored/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wheel/vendored/packaging/
+lib/python${MODPY_VERSION}/site-packages/wheel/vendored/packaging/LICENSE
+lib/python${MODPY_VERSION}/site-packages/wheel/vendored/packaging/LICENSE.APACHE
+lib/python${MODPY_VERSION}/site-packages/wheel/vendored/packaging/LICENSE.BSD
 lib/python${MODPY_VERSION}/site-packages/wheel/vendored/packaging/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wheel/vendored/packaging/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wheel/vendored/packaging/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
