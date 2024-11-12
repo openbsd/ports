@@ -15,6 +15,7 @@ share/examples/msmtp/msmtprc-user.example
 share/examples/msmtp/set_sendmail.sh
 share/locale/de/LC_MESSAGES/msmtp.mo
 share/locale/eo/LC_MESSAGES/msmtp.mo
+share/locale/es/LC_MESSAGES/msmtp.mo
 share/locale/fr/LC_MESSAGES/msmtp.mo
 share/locale/pt_BR/LC_MESSAGES/msmtp.mo
 share/locale/ro/LC_MESSAGES/msmtp.mo
