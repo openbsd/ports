@@ -8,7 +8,7 @@ BROKEN-i386 =		raw-cpuid-10.2.0/src/lib.rs:80:37 "could not find `arch` in `self
 
 COMMENT =		unofficial bitwarden compatible server
 
-DIST_TUPLE =		github dani-garcia vaultwarden 1.32.3 .
+DIST_TUPLE =		github dani-garcia vaultwarden 1.32.4 .
 
 CATEGORIES =		security
 
