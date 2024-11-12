@@ -43,6 +43,14 @@ lib/python${MODPY_VERSION}/site-packages/packaging/_musllinux.py
 lib/python${MODPY_VERSION}/site-packages/packaging/_parser.py
 lib/python${MODPY_VERSION}/site-packages/packaging/_structures.py
 lib/python${MODPY_VERSION}/site-packages/packaging/_tokenizer.py
+lib/python${MODPY_VERSION}/site-packages/packaging/licenses/
+lib/python${MODPY_VERSION}/site-packages/packaging/licenses/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/packaging/licenses/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/packaging/licenses/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/packaging/licenses/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/packaging/licenses/${MODPY_PYCACHE}_spdx.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/packaging/licenses/${MODPY_PYCACHE}_spdx.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/packaging/licenses/_spdx.py
 lib/python${MODPY_VERSION}/site-packages/packaging/markers.py
 lib/python${MODPY_VERSION}/site-packages/packaging/metadata.py
 lib/python${MODPY_VERSION}/site-packages/packaging/py.typed
