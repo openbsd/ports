@@ -10,7 +10,7 @@ DISTNAME =	qgis-3.40.0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	qgis_core	78.0 \
 		qgis_app	51.0 \
@@ -60,48 +60,48 @@ SUBST_VARS +=	QTVER
 
 COMPILER =	base-clang ports-gcc
 
-BUILD_DEPENDS =	x11/py-qt6${MODPY_FLAVOR} \
+BUILD_DEPENDS =	devel/bison>=2.4 \
 		devel/py-qt-builder${MODPY_FLAVOR} \
-		devel/py-sip${MODPY_FLAVOR}>=4.19.4v0 \
-		geo/gdal,-python${MODPY_FLAVOR} \
+		devel/py-sip${MODPY_FLAVOR} \
 		devel/py-six${MODPY_FLAVOR} \
 		editors/py-qscintilla,${FLAVOR}${MODPY_FLAVOR} \
-		devel/bison>=2.4
+		geo/gdal,-python${MODPY_FLAVOR} \
+		x11/py-${QTVER}${MODPY_FLAVOR}
 
-RUN_DEPENDS =	x11/py-${QTVER}${MODPY_FLAVOR} \
+RUN_DEPENDS =	databases/py-psycopg2${MODPY_FLAVOR} \
+		devel/desktop-file-utils \
+		editors/py-qscintilla,${FLAVOR}${MODPY_FLAVOR} \
 		geo/gdal,-python${MODPY_FLAVOR} \
 		geo/py-owslib${MODPY_FLAVOR} \
-		databases/py-psycopg2${MODPY_FLAVOR} \
-		textproc/py-yaml${MODPY_FLAVOR} \
+		misc/shared-mime-info \
 		textproc/py-pygments${MODPY_FLAVOR} \
+		textproc/py-yaml${MODPY_FLAVOR} \
 		www/py-jinja2${MODPY_FLAVOR} \
 		www/py-requests${MODPY_FLAVOR} \
-		editors/py-qscintilla,${FLAVOR}${MODPY_FLAVOR} \
-		devel/desktop-file-utils \
 		x11/gtk+4,-guic \
-		misc/shared-mime-info
+		x11/py-${QTVER}${MODPY_FLAVOR}
 
 LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		archivers/draco \
 		archivers/libzip \
+		databases/postgresql \
 		databases/sqlite3 \
-		devel/proj>=6.3.1 \
+		devel/gsl \
+		devel/proj \
 		devel/protobuf \
 		editors/qscintilla,${FLAVOR} \
-		security/qtkeychain,${FLAVOR} \
+		geo/gdal \
+		geo/geos \
+		geo/mdal \
+		geo/pdal \
+		geo/spatialindex \
+		geo/spatialite/libspatialite \
+		graphics/exiv2 \
 		security/qca-${QTVER} \
+		security/qtkeychain,${FLAVOR} \
 		www/fcgi \
 		x11/${QTVER}/qt3d \
-		x11/qwt,${FLAVOR} \
-		geo/gdal \
-		geo/mdal>=0.5 \
-		geo/pdal \
-		geo/geos \
-		geo/spatialite/libspatialite \
-		geo/spatialindex \
-		graphics/exiv2 \
-		devel/gsl \
-		databases/postgresql
+		x11/qwt,${FLAVOR}
 
 # Qt common wantlibs
 WANTLIB += ${COMPILER_LIBCXX} ${UQTV}3DCore ${UQTV}3DExtras
