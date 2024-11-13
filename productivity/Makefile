@@ -52,6 +52,7 @@
      SUBDIR += teapot
      SUBDIR += thinkingrock
      SUBDIR += timewarrior
+     SUBDIR += topydo
      SUBDIR += tudu
      SUBDIR += vdirsyncer
      SUBDIR += vit
