@@ -1,19 +1,14 @@
 We do not want to use the -Wl,-soname, cruft to encode soname into the
 library.
 
+last part: properly pass on -lc++abi where needed, unbreaks a few GUI applications
+https://github.com/gnustep/tools-make/pull/48
+
+
 Index: target.make
 --- target.make.orig
 +++ target.make
-@@ -94,6 +94,8 @@ ifeq ($(findstring sysv4.2, $(GNUSTEP_TARGET_OS)), sys
-   TARGET_SYSTEM_LIBS = $(CONFIG_SYSTEM_LIBS) -lsocket -lnsl -lm
- endif
- 
-+TARGET_SYSTEM_LIBS += -lc++abi
-+
- #
- # Specific settings for building shared libraries, static libraries,
- # and bundles on various systems
-@@ -695,7 +697,7 @@ endif
+@@ -695,7 +695,7 @@ endif
  ifeq ($(findstring openbsd, $(GNUSTEP_TARGET_OS)), openbsd)
  HAVE_SHARED_LIBS        = yes
  SHARED_LIB_LINK_CMD = \
@@ -22,7 +17,7 @@ Index: target.make
  	   $(ALL_LDFLAGS) -o $(LIB_LINK_OBJ_DIR)/$(LIB_LINK_VERSION_FILE) $^ \
  	   $(INTERNAL_LIBRARIES_DEPEND_UPON) \
  	   $(SHARED_LD_POSTFLAGS) \
-@@ -703,18 +705,17 @@ SHARED_LIB_LINK_CMD = \
+@@ -703,18 +703,17 @@ SHARED_LIB_LINK_CMD = \
  	  $(RM_LN_S) $(LIB_LINK_FILE); \
            if [ "$(LIB_LINK_SONAME_FILE)" != "$(LIB_LINK_VERSION_FILE)" ]; then\
              $(RM_LN_S) $(LIB_LINK_SONAME_FILE);\
@@ -45,3 +40,17 @@ Index: target.make
  
  OBJ_MERGE_CMD		= \
  	$(LD) -nostdlib $(OBJ_MERGE_CMD_FLAG) $(CORE_LDFLAGS) -o $(GNUSTEP_OBJ_DIR)/$(SUBPROJECT_PRODUCT) $^ ;
+@@ -724,8 +723,13 @@ SHARED_LIBEXT   = .so
+ 
+ HAVE_BUNDLES    = yes
+ BUNDLE_LD	= $(LD)
++ifeq ($(CLANG_CC), yes)
++BUNDLE_LDFLAGS  += -shared -fPIC -lc++abi
++ADDITIONAL_LDFLAGS += -Wl,-E -lc++abi
++else
+ BUNDLE_LDFLAGS  += -shared -fPIC
+ ADDITIONAL_LDFLAGS += -Wl,-E
++endif
+ STATIC_LDFLAGS += -static
+ 
+ # nm on OpenBSD is rather like on Darwin

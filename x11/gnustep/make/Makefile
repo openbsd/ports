@@ -2,6 +2,7 @@
 
 COMMENT=	GNUstep makefile package
 
+REVISION=	0
 CATEGORIES=	devel x11/gnustep
 GH_ACCOUNT=	gnustep
 GH_PROJECT=	tools-make
@@ -10,7 +11,7 @@ DISTNAME=	gnustep-make-${GH_TAGNAME}
 HOMEPAGE=	http://www.gnustep.org/
 
 WANTLIB=	${COMPILER_LIBCXX}
-SITES= 	https://github.com/gnustep/tools-make/releases/download/make-2_9_2/
+SITES= 	https://github.com/gnustep/tools-make/releases/download/make-${GH_TAGNAME:S/./_/g}/
 
 BUILD_DEPENDS =	x11/gnustep/libobjc2
 RUN_DEPENDS=	archivers/gtar
@@ -32,16 +33,14 @@ CONFIGURE_ARGS=	--with-layout=openbsd \
 		--prefix=${PREFIX} \
 		--with-config-file=${SYSCONFDIR}/GNUstep.conf \
 		--with-tar=${LOCALBASE}/bin/gtar \
-		--enable-multi-platform \
 		--with-library-combo="${LIBRARY_COMBO}" \
 		--with-objc-lib-flag=-lobjc2 \
 		--enable-strict-v2-mode
 
-#		--with-runtime-abi=gnustep-2.0
-
 # base-clang
 LIBRARY_COMBO =		"ng-gnu-gnu"
-CONFIGURE_ENV +=	GS_WITH_ARC=1 AS=llvm-as
+CONFIGURE_ENV +=	GS_WITH_ARC=1 AS=llvm-as CPP="clang -E"
+CONFIGURE_ENV +=	LDFLAGS="-L${LOCALBASE}/lib -lc++abi -lobjc2 -lpthread"
 # XXX ports-gcc?
 #LIBRARY_COMBO =	"gnu-gnu-gnu"
 
