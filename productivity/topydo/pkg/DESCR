@@ -1,0 +1,11 @@
+topydo is a powerful todo list application using the todo.txt format.
+
+It has three user interfaces:
+
+Command Line Interface (CLI) - originally inspired by the todo.txt CLI by
+Gina Trapani.
+
+Prompt mode - a convenience mode for the CLI. Launch with topydo prompt.
+
+Column mode - a text based user interface (TUI) with customizable columns
+and vim-like bindings. Launch with topydo columns.
