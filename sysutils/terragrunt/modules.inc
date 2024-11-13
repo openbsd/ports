@@ -386,7 +386,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-checkpoint							 v0.5.0 \
 	github.com/hashicorp/go-cleanhttp							 v0.5.2 \
 	github.com/hashicorp/go-getter								 v1.7.6 \
-	github.com/hashicorp/go-getter/v2							 v2.2.1 \
+	github.com/hashicorp/go-getter/v2							 v2.2.3 \
 	github.com/hashicorp/go-hclog								 v1.6.3 \
 	github.com/hashicorp/go-immutable-radix							 v0.0.0-20180129170900-7f3cd4390caa \
 	github.com/hashicorp/go-msgpack								 v0.5.4 \
@@ -599,18 +599,18 @@ MODGO_MODULES =	\
 	go.opentelemetry.io/contrib/detectors/gcp						 v1.31.0 \
 	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc		 v0.56.0 \
 	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp				 v0.56.0 \
-	go.opentelemetry.io/otel								 v1.31.0 \
+	go.opentelemetry.io/otel								 v1.32.0 \
 	go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetricgrpc			 v1.31.0 \
 	go.opentelemetry.io/otel/exporters/otlp/otlpmetric/otlpmetrichttp			 v1.23.1 \
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace					 v1.31.0 \
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc				 v1.31.0 \
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp				 v1.22.0 \
-	go.opentelemetry.io/otel/exporters/stdout/stdoutmetric					 v1.23.1 \
-	go.opentelemetry.io/otel/exporters/stdout/stdouttrace					 v1.22.0 \
-	go.opentelemetry.io/otel/metric								 v1.31.0 \
-	go.opentelemetry.io/otel/sdk								 v1.31.0 \
-	go.opentelemetry.io/otel/sdk/metric							 v1.31.0 \
-	go.opentelemetry.io/otel/trace								 v1.31.0 \
+	go.opentelemetry.io/otel/exporters/stdout/stdoutmetric					 v1.32.0 \
+	go.opentelemetry.io/otel/exporters/stdout/stdouttrace					 v1.32.0 \
+	go.opentelemetry.io/otel/metric								 v1.32.0 \
+	go.opentelemetry.io/otel/sdk								 v1.32.0 \
+	go.opentelemetry.io/otel/sdk/metric							 v1.32.0 \
+	go.opentelemetry.io/otel/trace								 v1.32.0 \
 	go.opentelemetry.io/proto/otlp								 v1.3.1 \
 	go.uber.org/atomic									 v1.3.2 \
 	go.uber.org/goleak									 v1.3.0 \
@@ -625,9 +625,9 @@ MODGO_MODULES =	\
 	golang.org/x/net									 v0.30.0 \
 	golang.org/x/oauth2									 v0.23.0 \
 	golang.org/x/sync									 v0.8.0 \
-	golang.org/x/sys									 v0.26.0 \
+	golang.org/x/sys									 v0.27.0 \
 	golang.org/x/telemetry									 v0.0.0-20240521205824-bda55230c457 \
-	golang.org/x/term									 v0.25.0 \
+	golang.org/x/term									 v0.26.0 \
 	golang.org/x/text									 v0.19.0 \
 	golang.org/x/time									 v0.7.0 \
 	golang.org/x/tools									 v0.26.0 \
@@ -1370,6 +1370,7 @@ MODGO_MODFILES =	\
 	go.opentelemetry.io/otel								 v1.27.0 \
 	go.opentelemetry.io/otel								 v1.29.0 \
 	go.opentelemetry.io/otel								 v1.30.0 \
+	go.opentelemetry.io/otel								 v1.31.0 \
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace					 v1.22.0 \
 	go.opentelemetry.io/otel/metric								 v1.22.0 \
 	go.opentelemetry.io/otel/metric								 v1.23.1 \
@@ -1377,19 +1378,23 @@ MODGO_MODFILES =	\
 	go.opentelemetry.io/otel/metric								 v1.27.0 \
 	go.opentelemetry.io/otel/metric								 v1.29.0 \
 	go.opentelemetry.io/otel/metric								 v1.30.0 \
+	go.opentelemetry.io/otel/metric								 v1.31.0 \
 	go.opentelemetry.io/otel/sdk								 v1.22.0 \
 	go.opentelemetry.io/otel/sdk								 v1.23.1 \
 	go.opentelemetry.io/otel/sdk								 v1.29.0 \
 	go.opentelemetry.io/otel/sdk								 v1.30.0 \
+	go.opentelemetry.io/otel/sdk								 v1.31.0 \
 	go.opentelemetry.io/otel/sdk/metric							 v1.23.1 \
 	go.opentelemetry.io/otel/sdk/metric							 v1.29.0 \
 	go.opentelemetry.io/otel/sdk/metric							 v1.30.0 \
+	go.opentelemetry.io/otel/sdk/metric							 v1.31.0 \
 	go.opentelemetry.io/otel/trace								 v1.22.0 \
 	go.opentelemetry.io/otel/trace								 v1.23.1 \
 	go.opentelemetry.io/otel/trace								 v1.24.0 \
 	go.opentelemetry.io/otel/trace								 v1.27.0 \
 	go.opentelemetry.io/otel/trace								 v1.29.0 \
 	go.opentelemetry.io/otel/trace								 v1.30.0 \
+	go.opentelemetry.io/otel/trace								 v1.31.0 \
 	go.opentelemetry.io/proto/otlp								 v0.7.0 \
 	go.opentelemetry.io/proto/otlp								 v1.0.0 \
 	go.opentelemetry.io/proto/otlp								 v1.1.0 \
@@ -1684,6 +1689,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys									 v0.22.0 \
 	golang.org/x/sys									 v0.24.0 \
 	golang.org/x/sys									 v0.25.0 \
+	golang.org/x/sys									 v0.26.0 \
 	golang.org/x/sys									 v0.5.0 \
 	golang.org/x/sys									 v0.6.0 \
 	golang.org/x/sys									 v0.9.0 \
@@ -1698,6 +1704,7 @@ MODGO_MODFILES =	\
 	golang.org/x/term									 v0.18.0 \
 	golang.org/x/term									 v0.21.0 \
 	golang.org/x/term									 v0.22.0 \
+	golang.org/x/term									 v0.25.0 \
 	golang.org/x/term									 v0.5.0 \
 	golang.org/x/term									 v0.6.0 \
 	golang.org/x/text									 v0.0.0-20160726164857-2910a502d2bf \
