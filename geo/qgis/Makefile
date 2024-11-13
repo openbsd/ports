@@ -10,7 +10,7 @@ DISTNAME =	qgis-3.40.0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	qgis_core	78.0 \
 		qgis_app	51.0 \
@@ -30,21 +30,45 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 SITES =		${HOMEPAGE}downloads/
 
+FLAVORS =	qt6
+FLAVOR ?=
+
+.if ${FLAVOR} == "qt6"
+QTVER =		qt6
+UQTV=		Qt6
+CONFIGURE_ARGS =-DBUILD_WITH_QT6=ON \
+		-DWITH_QTWEBENGINE=ON \
+		-DWITH_QTWEBKIT=OFF
+
+# https://github.com/qgis/QGIS/pull/55671 need to port pdf4qt
+LIB_DEPENDS +=	x11/qt6/qtwebengine
+WANTLIB +=	Qt6Core5Compat Qt6OpenGL Qt6OpenGLWidgets Qt6SvgWidgets
+WANTLIB +=	Qt6UiTools Qt6WebChannel Qt6WebEngineCore qwt-qt6
+.else
+QTVER =		qt5
+UQTV=		Qt5
+
+LIB_DEPENDS +=	x11/qt5/qtwebkit
+WANTLIB +=	Qt5Gamepad Qt5WebKit Qt5WebKitWidgets qwt
+.endif
+
 MODULES =	devel/cmake \
-		x11/qt5 \
+		x11/${QTVER} \
 		lang/python
+
+SUBST_VARS +=	QTVER
 
 COMPILER =	base-clang ports-gcc
 
-BUILD_DEPENDS =	x11/py-qt5${MODPY_FLAVOR} \
+BUILD_DEPENDS =	x11/py-qt6${MODPY_FLAVOR} \
 		devel/py-qt-builder${MODPY_FLAVOR} \
 		devel/py-sip${MODPY_FLAVOR}>=4.19.4v0 \
 		geo/gdal,-python${MODPY_FLAVOR} \
 		devel/py-six${MODPY_FLAVOR} \
-		editors/py-qscintilla${MODPY_FLAVOR} \
+		editors/py-qscintilla,${FLAVOR}${MODPY_FLAVOR} \
 		devel/bison>=2.4
 
-RUN_DEPENDS =	x11/py-qt5${MODPY_FLAVOR} \
+RUN_DEPENDS =	x11/py-${QTVER}${MODPY_FLAVOR} \
 		geo/gdal,-python${MODPY_FLAVOR} \
 		geo/py-owslib${MODPY_FLAVOR} \
 		databases/py-psycopg2${MODPY_FLAVOR} \
@@ -52,7 +76,7 @@ RUN_DEPENDS =	x11/py-qt5${MODPY_FLAVOR} \
 		textproc/py-pygments${MODPY_FLAVOR} \
 		www/py-jinja2${MODPY_FLAVOR} \
 		www/py-requests${MODPY_FLAVOR} \
-		editors/py-qscintilla${MODPY_FLAVOR} \
+		editors/py-qscintilla,${FLAVOR}${MODPY_FLAVOR} \
 		devel/desktop-file-utils \
 		x11/gtk+4,-guic \
 		misc/shared-mime-info
@@ -63,13 +87,12 @@ LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		databases/sqlite3 \
 		devel/proj>=6.3.1 \
 		devel/protobuf \
-		editors/qscintilla \
-		security/qtkeychain \
-		security/qca-qt5 \
+		editors/qscintilla,${FLAVOR} \
+		security/qtkeychain,${FLAVOR} \
+		security/qca-${QTVER} \
 		www/fcgi \
-		x11/qt5/qtwebkit \
-		x11/qt5/qt3d \
-		x11/qwt \
+		x11/${QTVER}/qt3d \
+		x11/qwt,${FLAVOR} \
 		geo/gdal \
 		geo/mdal>=0.5 \
 		geo/pdal \
@@ -80,18 +103,21 @@ LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		devel/gsl \
 		databases/postgresql
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5Gui Qt5Network
-WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Sql Qt5Svg
-WANTLIB += Qt5Test Qt5WebKit Qt5WebKitWidgets Qt5Widgets Qt5Xml
+# Qt common wantlibs
+WANTLIB += ${COMPILER_LIBCXX} ${UQTV}3DCore ${UQTV}3DExtras
+WANTLIB += ${UQTV}3DInput ${UQTV}3DLogic ${UQTV}3DRender ${UQTV}Concurrent
+WANTLIB += ${UQTV}Core ${UQTV}DBus ${UQTV}Gui
+WANTLIB += ${UQTV}Multimedia ${UQTV}MultimediaWidgets ${UQTV}Network
+WANTLIB += ${UQTV}Positioning ${UQTV}PrintSupport ${UQTV}Qml ${UQTV}QmlModels
+WANTLIB += ${UQTV}Quick ${UQTV}QuickWidgets ${UQTV}SerialPort ${UQTV}Sql ${UQTV}Svg
+WANTLIB += ${UQTV}Test ${UQTV}Widgets ${UQTV}Xml
+
 WANTLIB += c draco exiv2 expat fcgi freexl gdal geos_c gsl gslcblas iconv m
-WANTLIB += mdal minizip pdalcpp pq proj ${MODPY_WANTLIB}
-WANTLIB += qca-qt5 qscintilla2_qt5 qt5keychain qwt rttopo spatialindex
+WANTLIB += mdal minizip pdalcpp pq proj protobuf-lite ${MODPY_WANTLIB}
+WANTLIB += qca-${QTVER} qscintilla2_${QTVER} ${QTVER}keychain rttopo spatialindex
 WANTLIB += spatialite sqlite3 util zip hdf5 xml2 z zstd GL
-WANTLIB += Qt53DCore Qt53DExtras Qt53DInput Qt53DLogic
-WANTLIB += Qt53DRender Qt5Gamepad protobuf-lite
-WANTLIB += Qt5Multimedia Qt5MultimediaWidgets
-WANTLIB += Qt5DBus Qt5Qml Qt5Quick Qt5QuickWidgets Qt5SerialPort
-WANTLIB += Qt5QmlModels
+
+# absl wantlibs
 WANTLIB += absl_bad_optional_access absl_bad_variant_access absl_base
 WANTLIB += absl_city absl_civil_time absl_cord absl_cord_internal
 WANTLIB += absl_cordz_functions absl_cordz_handle absl_cordz_info
@@ -123,7 +149,7 @@ WANTLIB += absl_random_internal_seed_material absl_random_seed_gen_exception
 WANTLIB += absl_random_seed_sequences absl_utf8_for_code_point
 
 CONFIGURE_ENV+=	VERBOSE=1
-CONFIGURE_ARGS =-DPYTHON_EXECUTABLE=${MODPY_BIN} \
+CONFIGURE_ARGS +=-DPYTHON_EXECUTABLE=${MODPY_BIN} \
 		-DWITH_INTERNAL_MDAL=FALSE \
 		-DWITH_3D=TRUE \
 		-DWITH_PDAL=TRUE \
@@ -134,14 +160,6 @@ MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 # does more than just debug pkgs
 #DEBUG_CONFIGURE_ARGS += -DCMAKE_BUILD_TYPE:String=RelWithDebInfo
-
-# https://issues.qgis.org/issues/17696
-#.ifdef  "${BUILD_OSG}"
-#LIB_DEPENDS += geo/osgearth
-#CONFIGURE_ARGS += -DWITH_GLOBE=TRUE
-#WANTLIB += OpenThreads osgEarthAnnotation osgEarthFeatures osgEarthQt5 osgEarthSymbology
-#WANTLIB += osgEarthUtil osgGA osgQt osgUtil osgViewer osg osgDB osgEarth
-#.endif
 
 pre-configure:
 		# otherwise takes precedence over systemwide file

@@ -1,3 +1,5 @@
+!%%qt6%%
+%%qt6%%
 @bin bin/qgis
 @bin bin/qgis_bench
 @bin bin/qgis_mapserv.fcgi
@@ -2508,7 +2510,7 @@ lib/qgis/server/
 @so lib/qgis/server/libwms.so
 @so lib/qgis/server/libwmts.so
 @bin lib/qgis/untwine
-@so lib/qt5/plugins/sqldrivers/libqsqlspatialite.so
+@so lib/${QTVER}/plugins/sqldrivers/libqsqlspatialite.so
 @man man/man1/qgis.1
 share/applications/org.qgis.qgis.desktop
 share/icons/hicolor/128x128/apps/qgis.png
