@@ -1,0 +1,6 @@
+SHA256 (esbuild-v0.24.0.zip) = dsO1EdjwlkbyQ0OLXLyyiuZNtYL8NjwUX/9FN2n/Q1k=
+SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20220715151400-c0bba94af5f8.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7/nc5E0BFvDt85KUCQ=
+SHA256 (go_modules/golang.org/x/sys/@v/v0.0.0-20220715151400-c0bba94af5f8.zip) = OxgJNyFuk1WfFrYHbQm69UpXBzePEbhntuuRTFawm5E=
+SIZE (esbuild-v0.24.0.zip) = 2043943
+SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20220715151400-c0bba94af5f8.mod) = 33
+SIZE (go_modules/golang.org/x/sys/@v/v0.0.0-20220715151400-c0bba94af5f8.zip) = 1798284

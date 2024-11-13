@@ -1,0 +1,4 @@
+esbuild is a very fast bundler for Javascript, Typescript, JSX and CSS.
+
+It combines multiple source files into a single file, optimizing it for web
+browsers.
