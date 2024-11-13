@@ -1,0 +1,36 @@
+fix a crasher: https://github.com/gnustep/apps-gorm/pull/50
+
+Index: GormCore/GormResourceEditor.m
+--- GormCore/GormResourceEditor.m.orig
++++ GormCore/GormResourceEditor.m
+@@ -222,7 +222,6 @@
+   NSPoint initialLocation;
+   BOOL **selectedCells = [self _selectedCells];
+   id selectedCell = [self selectedCell];
+-  id **cells = nil;
+   
+   /*
+    * Pathological case -- ignore mouse down
+@@ -241,7 +240,7 @@
+ 	    column: &column
+ 	    forPoint: lastLocation])
+     {
+-      if ([cells[row][column] isEnabled])
++      if ([_cells[row][column] isEnabled])
+ 	{
+ 	  if ((_mode == NSRadioModeMatrix) && _selectedCell != nil)
+ 	    {
+@@ -251,11 +250,11 @@
+ 	      selectedCell = nil;
+ 	      _selectedRow = _selectedColumn = -1;
+ 	    }
+-	  [cells[row][column] setState: NSOnState];
++	  [_cells[row][column] setState: NSOnState];
+ 	  [self drawCellAtRow: row column: column];
+ 	  [_window flushWindow];
+ 	  selectedCells[row][column] = YES;
+-	  [self _setSelectedCell: cells[row][column]];
++	  [self _setSelectedCell: _cells[row][column]];
+ 	  _selectedRow = row;
+ 	  _selectedColumn = column;
+ 	}
