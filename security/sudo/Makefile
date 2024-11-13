@@ -1,7 +1,7 @@
 COMMENT-main=	execute a command as another user
 COMMENT-python=	sudo Python plugin
 
-V=		1.9.15p5
+V=		1.9.16p1
 DISTNAME=	sudo-${V}
 CATEGORIES=	security
 
