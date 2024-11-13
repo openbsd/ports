@@ -1,15 +1,13 @@
 COMMENT-main=		XML parsing library
 COMMENT-python=		Python bindings for libxml
 
-GNOME_VERSION=		2.13.4
+GNOME_VERSION=		2.13.5
 GNOME_PROJECT=		libxml2
 
 PKGNAME-main=		libxml-${GNOME_VERSION}
 PKGNAME-python=		py3-libxml-${GNOME_VERSION}
-REVISION-main=		0
-REVISION-python=	0
 
-SHARED_LIBS +=  xml2                 21.0     # 15.4
+SHARED_LIBS +=  xml2                 21.0     # 15.5
 
 CATEGORIES=		textproc
 
