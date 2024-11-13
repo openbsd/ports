@@ -1,6 +1,6 @@
 COMMENT=		manage resources on Google Cloud Platform
 
-V=			500.0.0
+V=			501.0.0
 DISTNAME=		google-cloud-sdk-${V}-linux-x86
 PKGNAME=		google-cloud-sdk-${V}
 WRKDIST=		${WRKDIR}/google-cloud-sdk
