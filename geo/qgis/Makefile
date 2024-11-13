@@ -4,7 +4,7 @@ BROKEN-sparc64 =	undefined reference to QOpenGLExtension_ARB_tessellation_shader
 
 COMMENT =	desktop geographical information system
 
-DPB_PROPERTIES =	parallel
+DPB_PROPERTIES =	parallel parallel2
 
 DISTNAME =	qgis-3.40.0
 EXTRACT_SUFX =	.tar.bz2
