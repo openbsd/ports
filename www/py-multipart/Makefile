@@ -1,6 +1,6 @@
 COMMENT =		streaming multipart parser for Python
 
-MODPY_EGG_VERSION =	0.0.9
+MODPY_EGG_VERSION =	0.0.17
 DISTNAME =		python_multipart-${MODPY_EGG_VERSION}
 PKGNAME =		py-multipart-${MODPY_EGG_VERSION}
 
