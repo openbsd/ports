@@ -1,7 +1,7 @@
 Index: agent/platform/platform_unix.go
 --- agent/platform/platform_unix.go.orig
 +++ agent/platform/platform_unix.go
-@@ -222,6 +222,20 @@ func getPlatformDetails(log log.T) (name string, versi
+@@ -230,6 +230,20 @@ func getPlatformDetails(log log.T) (name string, versi
  		if len(data) >= 2 {
  			version = strings.TrimSpace(data[1])
  		}
