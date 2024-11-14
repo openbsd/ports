@@ -2117,6 +2117,9 @@ lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/87/02
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/87/03_current_state_index.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/88/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/88/01_add_delayed_events.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/88/02_fix_sliding_sync_membership_snapshots_forgotten_column.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/88/03_add_otk_ts_added_index.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/88/04_current_state_delta_index.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/full_schemas/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/full_schemas/72/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/full_schemas/72/full.sql.postgres

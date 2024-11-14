@@ -3,6 +3,7 @@
 daemon="${PREFIX}/bin/synctl"
 daemon_user="_synapse"
 daemon_flags="${LOCALSTATEDIR}/synapse/homeserver.yaml"
+daemon_timeout="300"
 
 . /etc/rc.d/rc.subr
 
