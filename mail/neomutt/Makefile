@@ -2,7 +2,7 @@ COMMENT=	tty-based e-mail client, forked from Mutt
 
 GH_ACCOUNT=	neomutt
 GH_PROJECT=	neomutt
-GH_TAGNAME=	20241002
+GH_TAGNAME=	20241114
 
 CATEGORIES=	mail
 HOMEPAGE=	https://neomutt.org/
@@ -40,6 +40,7 @@ CONFIGURE_ARGS+= --mandir="${PREFIX}/man" \
 		--pcre2 \
 		--ssl \
 		--tdb \
+		--zlib \
 		--debug
 
 CONFIGURE_ENV=	autosetup_tclsh="${LOCALBASE}/bin/jimsh" \
