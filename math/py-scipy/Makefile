@@ -1,11 +1,9 @@
-BROKEN =	needs pkg-config support for blas, lapack
-
 COMMENT=		maths, science and engineering modules for Python
 
 MODPY_EGG_VERSION=	1.13.1
 DISTNAME=		scipy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		math devel
 
