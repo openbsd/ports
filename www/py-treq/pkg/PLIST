@@ -11,6 +11,10 @@ lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}__init__.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}_agentspy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}_agentspy.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}_multipart.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}_multipart.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}_types.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}_types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -21,6 +25,8 @@ lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}client.${MODPY_PYC
 lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}content.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}content.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}cookies.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}cookies.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}multipart.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}multipart.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}response.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -28,12 +34,16 @@ lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}response.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}testing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/treq/${MODPY_PYCACHE}testing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/treq/_agentspy.py
+lib/python${MODPY_VERSION}/site-packages/treq/_multipart.py
+lib/python${MODPY_VERSION}/site-packages/treq/_types.py
 lib/python${MODPY_VERSION}/site-packages/treq/_version.py
 lib/python${MODPY_VERSION}/site-packages/treq/api.py
 lib/python${MODPY_VERSION}/site-packages/treq/auth.py
 lib/python${MODPY_VERSION}/site-packages/treq/client.py
 lib/python${MODPY_VERSION}/site-packages/treq/content.py
+lib/python${MODPY_VERSION}/site-packages/treq/cookies.py
 lib/python${MODPY_VERSION}/site-packages/treq/multipart.py
+lib/python${MODPY_VERSION}/site-packages/treq/py.typed
 lib/python${MODPY_VERSION}/site-packages/treq/response.py
 lib/python${MODPY_VERSION}/site-packages/treq/test/
 lib/python${MODPY_VERSION}/site-packages/treq/test/__init__.py
@@ -50,6 +60,8 @@ lib/python${MODPY_VERSION}/site-packages/treq/test/${MODPY_PYCACHE}test_client.$
 lib/python${MODPY_VERSION}/site-packages/treq/test/${MODPY_PYCACHE}test_client.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/treq/test/${MODPY_PYCACHE}test_content.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/treq/test/${MODPY_PYCACHE}test_content.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/treq/test/${MODPY_PYCACHE}test_cookies.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/treq/test/${MODPY_PYCACHE}test_cookies.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/treq/test/${MODPY_PYCACHE}test_multipart.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/treq/test/${MODPY_PYCACHE}test_multipart.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/treq/test/${MODPY_PYCACHE}test_response.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -93,6 +105,7 @@ lib/python${MODPY_VERSION}/site-packages/treq/test/test_api.py
 lib/python${MODPY_VERSION}/site-packages/treq/test/test_auth.py
 lib/python${MODPY_VERSION}/site-packages/treq/test/test_client.py
 lib/python${MODPY_VERSION}/site-packages/treq/test/test_content.py
+lib/python${MODPY_VERSION}/site-packages/treq/test/test_cookies.py
 lib/python${MODPY_VERSION}/site-packages/treq/test/test_multipart.py
 lib/python${MODPY_VERSION}/site-packages/treq/test/test_response.py
 lib/python${MODPY_VERSION}/site-packages/treq/test/test_testing.py

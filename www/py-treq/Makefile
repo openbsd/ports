@@ -1,6 +1,6 @@
 COMMENT =		HTTP library inspired by requests on top of Twisted Agents
 
-MODPY_EGG_VERSION =	23.11.0
+MODPY_EGG_VERSION =	24.9.1
 DISTNAME =		treq-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
