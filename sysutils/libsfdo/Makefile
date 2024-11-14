@@ -17,6 +17,10 @@ SITES =		${HOMEPAGE}/-/archive/${V}/
 # BSD-2
 PERMIT_PACKAGE=	Yes
 
+# C11
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS =	c
+
 MODULES =	devel/meson
 
 .include <bsd.port.mk>
