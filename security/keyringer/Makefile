@@ -1,17 +1,17 @@
 COMMENT =	manage and share secrets using GnuPG and Git
 
-DISTNAME =	keyringer-0.5.6
+DISTNAME =	keyringer-0.5.9
 
 CATEGORIES =	security
 
-HOMEPAGE =	https://keyringer.pw/
+HOMEPAGE =	https://0xacab.org/rhatto/keyringer
 
 MAINTAINER =	Gregoire Jadi <gjadi@omecha.info>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-SITES =			https://keyringer.pw/releases/
+SITES =			https://git.fluxo.info/keyringer/snapshot/
 EXTRACT_SUFX =		.tar.bz2
 
 RUN_DEPENDS =		devel/git \
