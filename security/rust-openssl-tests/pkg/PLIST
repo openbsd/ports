@@ -335,9 +335,13 @@ share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/parallel/
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/parallel/async_executor.rs
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/parallel/job_token.rs
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/parallel/mod.rs
-share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/parallel/once_lock.rs
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/parallel/stderr.rs
-share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/target_info.rs
+share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/target/
+share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/target.rs
+share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/target/apple.rs
+share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/target/generated.rs
+share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/target/llvm.rs
+share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/target/parser.rs
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/tempfile.rs
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/tool.rs
 share/rust-openssl-tests/modcargo-crates/${VER_cc}/src/utilities.rs
@@ -899,6 +903,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/solid/mod.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/switch.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/teeos/
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/teeos/mod.rs
+share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/trusty.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/unix/
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/unix/aix/
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/unix/aix/mod.rs
@@ -2954,6 +2959,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_serde_derive}/src/internals/case.
 share/rust-openssl-tests/modcargo-crates/${VER_serde_derive}/src/internals/check.rs
 share/rust-openssl-tests/modcargo-crates/${VER_serde_derive}/src/internals/ctxt.rs
 share/rust-openssl-tests/modcargo-crates/${VER_serde_derive}/src/internals/mod.rs
+share/rust-openssl-tests/modcargo-crates/${VER_serde_derive}/src/internals/name.rs
 share/rust-openssl-tests/modcargo-crates/${VER_serde_derive}/src/internals/receiver.rs
 share/rust-openssl-tests/modcargo-crates/${VER_serde_derive}/src/internals/respan.rs
 share/rust-openssl-tests/modcargo-crates/${VER_serde_derive}/src/internals/symbol.rs
@@ -3133,6 +3139,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_syn}/src/precedence.rs
 share/rust-openssl-tests/modcargo-crates/${VER_syn}/src/print.rs
 share/rust-openssl-tests/modcargo-crates/${VER_syn}/src/punctuated.rs
 share/rust-openssl-tests/modcargo-crates/${VER_syn}/src/restriction.rs
+share/rust-openssl-tests/modcargo-crates/${VER_syn}/src/scan_expr.rs
 share/rust-openssl-tests/modcargo-crates/${VER_syn}/src/sealed.rs
 share/rust-openssl-tests/modcargo-crates/${VER_syn}/src/span.rs
 share/rust-openssl-tests/modcargo-crates/${VER_syn}/src/spanned.rs
@@ -3287,6 +3294,8 @@ share/rust-openssl-tests/modcargo-crates/${VER_thiserror}/tests/ui/duplicate-str
 share/rust-openssl-tests/modcargo-crates/${VER_thiserror}/tests/ui/duplicate-struct-source.stderr
 share/rust-openssl-tests/modcargo-crates/${VER_thiserror}/tests/ui/duplicate-transparent.rs
 share/rust-openssl-tests/modcargo-crates/${VER_thiserror}/tests/ui/duplicate-transparent.stderr
+share/rust-openssl-tests/modcargo-crates/${VER_thiserror}/tests/ui/expression-fallback.rs
+share/rust-openssl-tests/modcargo-crates/${VER_thiserror}/tests/ui/expression-fallback.stderr
 share/rust-openssl-tests/modcargo-crates/${VER_thiserror}/tests/ui/fallback-impl-with-display.rs
 share/rust-openssl-tests/modcargo-crates/${VER_thiserror}/tests/ui/fallback-impl-with-display.stderr
 share/rust-openssl-tests/modcargo-crates/${VER_thiserror}/tests/ui/from-backtrace-backtrace.rs
@@ -3349,6 +3358,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_thiserror-impl}/src/fmt.rs
 share/rust-openssl-tests/modcargo-crates/${VER_thiserror-impl}/src/generics.rs
 share/rust-openssl-tests/modcargo-crates/${VER_thiserror-impl}/src/lib.rs
 share/rust-openssl-tests/modcargo-crates/${VER_thiserror-impl}/src/prop.rs
+share/rust-openssl-tests/modcargo-crates/${VER_thiserror-impl}/src/scan_expr.rs
 share/rust-openssl-tests/modcargo-crates/${VER_thiserror-impl}/src/span.rs
 share/rust-openssl-tests/modcargo-crates/${VER_thiserror-impl}/src/valid.rs
 share/rust-openssl-tests/modcargo-crates/${VER_unicode-ident}/
