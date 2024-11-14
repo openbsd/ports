@@ -1,13 +1,12 @@
 COMMENT =	Vulkan ICD loader
 
-V =		1.3.290.0
+V =		1.3.296.0
 PKGNAME =	vulkan-loader-${V}
 GH_TAGNAME =	vulkan-sdk-${V}
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	Vulkan-Loader
-REVISION =	0
 
-SHARED_LIBS +=	vulkan	1.1 # 1.3.204.1
+SHARED_LIBS +=	vulkan	1.2 # 1.3.296.0
 
 CATEGORIES =	devel graphics
 

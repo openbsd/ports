@@ -1,6 +1,6 @@
 COMMENT =	Vulkan Utilities and Tools
 
-V =		1.3.290.0
+V =		1.3.296.0
 PKGNAME =	vulkan-tools-${V}
 GH_TAGNAME =	vulkan-sdk-${V}
 GH_ACCOUNT =	KhronosGroup
@@ -15,7 +15,7 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 # vulkan is dynamically opened via statically linked volk/dlopen
-WANTLIB += ${COMPILER_LIBCXX} X11 c m vulkan xcb
+WANTLIB += ${COMPILER_LIBCXX} X11 c m vulkan wayland-client xcb
 
 # C++11
 COMPILER =	base-clang ports-gcc
@@ -28,10 +28,10 @@ MODPY_RUNDEP =	No
 BUILD_DEPENDS =	graphics/glslang \
 		graphics/volk \
 		graphics/vulkan-headers
-LIB_DEPENDS =	graphics/vulkan-loader
+LIB_DEPENDS =	graphics/vulkan-loader \
+		wayland/wayland
 
-CONFIGURE_ARGS +=	-DGLSLANG_INSTALL_DIR="/usr/local" \
-			-DBUILD_WSI_WAYLAND_SUPPORT=OFF
+CONFIGURE_ARGS +=	-DGLSLANG_INSTALL_DIR="/usr/local"
 
 NO_TEST =	Yes
 

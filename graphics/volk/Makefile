@@ -1,7 +1,7 @@
 COMMENT =	meta loader for Vulkan API
 
 # doesn't build dynamic library; (conflict with libvolk.so from comms/gnuradio)
-V =		1.3.290.0
+V =		1.3.296.0
 PKGNAME =	volk-${V}
 DIST_TUPLE +=	github zeux volk vulkan-sdk-${V} .
 CATEGORIES =	graphics

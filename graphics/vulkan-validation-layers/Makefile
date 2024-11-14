@@ -1,6 +1,6 @@
 COMMENT =	Vulkan Validation Layers
 
-V =		1.3.290.0
+V =		1.3.296.0
 PKGNAME =	vulkan-validation-layers-${V}
 GH_TAGNAME =	vulkan-sdk-${V}
 GH_ACCOUNT =	KhronosGroup
@@ -26,11 +26,11 @@ MODPY_RUNDEP =	No
 BUILD_DEPENDS =	graphics/spirv-headers \
 		graphics/spirv-tools \
 		graphics/vulkan-headers \
-		graphics/vulkan-utility-libraries
+		graphics/vulkan-utility-libraries \
+		wayland/wayland
 
 # needs robin_hood cmake package to build with robing hood hashing
 CONFIGURE_ARGS +=	-DBUILD_WERROR=False \
-			-DBUILD_WSI_WAYLAND_SUPPORT=False \
 			-DSPIRV_HEADERS_INSTALL_DIR=${LOCALBASE}/include/spirv \
 			-DUSE_ROBIN_HOOD_HASHING=False
 

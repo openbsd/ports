@@ -6,6 +6,7 @@ include/glslang/Include/
 include/glslang/Include/ResourceLimits.h
 include/glslang/Include/glslang_c_interface.h
 include/glslang/Include/glslang_c_shader_types.h
+include/glslang/Include/visibility.h
 include/glslang/MachineIndependent/
 include/glslang/MachineIndependent/Versions.h
 include/glslang/Public/
@@ -16,6 +17,7 @@ include/glslang/SPIRV/
 include/glslang/SPIRV/GlslangToSpv.h
 include/glslang/SPIRV/Logger.h
 include/glslang/SPIRV/SPVRemapper.h
+include/glslang/SPIRV/SpvTools.h
 include/glslang/SPIRV/disassemble.h
 include/glslang/SPIRV/spirv.hpp
 include/glslang/build_info.h
