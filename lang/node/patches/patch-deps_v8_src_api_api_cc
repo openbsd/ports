@@ -1,7 +1,7 @@
 Index: deps/v8/src/api/api.cc
 --- deps/v8/src/api/api.cc.orig
 +++ deps/v8/src/api/api.cc
-@@ -142,7 +142,7 @@
+@@ -144,7 +144,7 @@
  #include "src/wasm/wasm-serialization.h"
  #endif  // V8_ENABLE_WEBASSEMBLY
  
@@ -10,7 +10,7 @@ Index: deps/v8/src/api/api.cc
  #include <signal.h>
  #include <unistd.h>
  
-@@ -6454,7 +6454,7 @@ bool v8::V8::Initialize(const int build_config) {
+@@ -6396,7 +6396,7 @@ bool v8::V8::Initialize(const int build_config) {
    return true;
  }
  

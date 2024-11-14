@@ -14,7 +14,7 @@ Index: deps/v8/src/base/atomicops.h
  using Atomic64 = int64_t;
  #else
  using Atomic64 = intptr_t;
-@@ -258,7 +258,7 @@ inline Atomic32 SeqCst_Load(volatile const Atomic32* p
+@@ -266,7 +266,7 @@ inline Atomic32 SeqCst_Load(volatile const Atomic32* p
                                     std::memory_order_seq_cst);
  }
  

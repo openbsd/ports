@@ -1,0 +1,25 @@
+Index: tools/v8_gypfiles/features.gypi
+--- tools/v8_gypfiles/features.gypi.orig
++++ tools/v8_gypfiles/features.gypi
+@@ -328,7 +328,10 @@
+ 
+     # Enable advanced BigInt algorithms, costing about 10-30 KiB binary size
+     # depending on platform.
+-    'v8_advanced_bigint_algorithms%': 1
++    'v8_advanced_bigint_algorithms%': 1,
++
++    # Enable CET/IBT
++    'v8_enable_cet_ibt': 1
+   },
+ 
+   'target_defaults': {
+@@ -540,6 +543,9 @@
+       }],
+       ['v8_advanced_bigint_algorithms==1', {
+         'defines': ['V8_ADVANCED_BIGINT_ALGORITHMS',],
++      }],
++      ['v8_enable_cet_ibt==1', {
++        'defines': ['V8_ENABLE_CET_IBT',],
+       }],
+     ],  # conditions
+     'defines': [

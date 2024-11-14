@@ -27,13 +27,13 @@ Index: deps/v8/src/codegen/riscv/cpu-riscv.cc
 +	sysarch(RISCV_SYNC_ICACHE, &args);
 +# else
    char* end = reinterpret_cast<char*>(start) + size;
-   // The definition of this syscall is
+   // The definition of this syscall is equal to
    // SYSCALL_DEFINE3(riscv_flush_icache, uintptr_t, start,
-@@ -21,6 +31,7 @@ void CpuFeatures::FlushICache(void* start, size_t size
-   // The flag here is set to be SYS_RISCV_FLUSH_ICACHE_LOCAL, which is
-   // defined as 1 in the Linux kernel.
-   syscall(SYS_riscv_flush_icache, start, end, 1);
-+# endif // !__OpenBSD__
+@@ -25,6 +35,7 @@ void CpuFeatures::FlushICache(void* start, size_t size
+   // corresponding system call number used in the kernel to dispatch the system
+   // call.
+   syscall(__NR_riscv_flush_icache, start, end, 1);
++# endif // __OpenBSD__
  #endif  // !USE_SIMULATOR.
  }
  

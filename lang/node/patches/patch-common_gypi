@@ -1,7 +1,17 @@
 Index: common.gypi
 --- common.gypi.orig
 +++ common.gypi
-@@ -188,7 +188,6 @@
+@@ -40,6 +40,9 @@
+ 
+     ##### V8 defaults for Node.js #####
+ 
++    # Enable CET / IBT
++    'v8_enable_cet_ibt': 'true',
++
+     # Turn on SipHash for hash seed generation, addresses HashWick
+     'v8_use_siphash': 'true',
+ 
+@@ -191,7 +194,6 @@
              }],
            ],
          },
@@ -9,18 +19,20 @@ Index: common.gypi
          'conditions': [
            ['enable_lto=="true"', {
              'cflags': ['<(lto)'],
-@@ -472,7 +471,9 @@
+@@ -503,8 +505,10 @@
+             'standalone_static_library': 1,
            }],
            ['OS=="openbsd"', {
-             'cflags': [ '-I/usr/local/include' ],
+-            'cflags': [ '-I/usr/local/include' ],
 -            'ldflags': [ '-Wl,-z,wxneeded' ],
++            'cflags': [ '-idirafter /usr/local/include' ],
 +            'ldflags': [ '-Wl,-z,wxneeded'
 +                , '-Wl,-rpath,${EOPENSSL_LIB}'
 +            ],
            }],
            ['_toolset=="host"', {
              'conditions': [
-@@ -489,7 +490,7 @@
+@@ -521,7 +525,7 @@
                  'ldflags': [ '-m32' ],
                }],
                [ 'host_arch=="ppc64" and OS not in "aix os400"', {
@@ -29,7 +41,7 @@ Index: common.gypi
                  'ldflags': [ '-m64' ],
                }],
                [ 'host_arch=="s390x" and OS=="linux"', {
-@@ -513,7 +514,7 @@
+@@ -545,7 +549,7 @@
                  'ldflags': [ '-m32' ],
                }],
                [ 'target_arch=="ppc64" and OS not in "aix os400"', {

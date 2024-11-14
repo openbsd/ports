@@ -5,7 +5,7 @@ USE_WXNEEDED =		Yes
 
 COMMENT = JavaScript runtime built on Chrome's V8 JavaScript engine
 
-NODE_VERSION =		v20.18.0
+NODE_VERSION =		v22.11.0
 PLEDGE_VER =		1.1.3
 DISTFILES =		${DISTNAME}-headers.tar.gz \
 			${DISTNAME}.tar.xz
@@ -14,7 +14,6 @@ DISTFILES.pledge =	node-pledge-{}${PLEDGE_VER}.tar.gz
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
 EPOCH =			0
-REVISION =		1
 
 SITES.pledge =		https://github.com/qbit/node-pledge/archive/
 
@@ -32,23 +31,17 @@ MODULES =		lang/python
 
 WANTLIB += c execinfo m pthread ${COMPILER_LIBCXX}
 WANTLIB += z brotlienc brotlidec
-WANTLIB += icudata icui18n icuuc cares nghttp2 uv
-WANTLIB += lib/eopenssl33/ssl lib/eopenssl33/crypto
+WANTLIB += icudata icui18n icuuc cares nghttp2 nghttp3 uv
+WANTLIB += lib/${EOPENSSL_VSN}/ssl lib/${EOPENSSL_VSN}/crypto
 
 COMPILER =		base-clang ports-gcc
 
 USE_GMAKE =		Yes
 
-CXXFLAGS +=		-I${WRKSRC}/deps/googletest/include
-MAKE_ENV +=		CXXFLAGS="${CXXFLAGS}"
-
 BUILD_DEPENDS =		sysutils/flock
 
 RUN_DEPENDS =		devel/gmake \
 			sysutils/flock
-
-# Needed to build js_native_api_v8_internals.h
-TEST_DEPENDS =		devel/gtest
 
 TEST_TARGET =		check
 CONFIGURE_STYLE =	simple
@@ -60,10 +53,13 @@ CONFIGURE_ARGS =	--prefix=${PREFIX} \
 			--shared-cares \
 			--shared-libuv \
 			--shared-nghttp2 \
+			--shared-nghttp3 \
 			--shared-zlib \
 			--shared-openssl \
 			--shared-openssl-libpath=${EOPENSSL_LIB} \
 			--shared-openssl-includes=${EOPENSSL_INC}
+
+CFLAGS +=		-idirafter ${LOCALBASE}/include
 
 SUBST_VARS +=		DISTNAME
 SUBST_VARS +=		WRKDIST
@@ -72,14 +68,17 @@ SUBST_VARS +=		EOPENSSL_LIB
 
 # uses a wide range of OpenSSL API and only really supports boring/openssl
 LIB_DEPENDS +=		archivers/brotli \
-			net/libcares \
 			devel/libuv \
+			net/libcares \
+			security/openssl/${OPENSSL_VSN} \
 			textproc/icu4c \
 			www/nghttp2 \
-			security/openssl/3.3
+			www/nghttp3
 
-EOPENSSL_LIB =		${LOCALBASE}/lib/eopenssl33
-EOPENSSL_INC =		${LOCALBASE}/include/eopenssl33
+OPENSSL_VSN =		3.3
+EOPENSSL_VSN =		eopenssl${OPENSSL_VSN:C/\.//}
+EOPENSSL_LIB =		${LOCALBASE}/lib/${EOPENSSL_VSN}
+EOPENSSL_INC =		${LOCALBASE}/include/${EOPENSSL_VSN}
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

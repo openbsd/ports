@@ -1,7 +1,7 @@
 Index: deps/v8/src/codegen/riscv/macro-assembler-riscv.cc
 --- deps/v8/src/codegen/riscv/macro-assembler-riscv.cc.orig
 +++ deps/v8/src/codegen/riscv/macro-assembler-riscv.cc
-@@ -2149,7 +2149,7 @@ void MacroAssembler::li(Register rd, Operand j, LiFlag
+@@ -2442,7 +2442,7 @@ void MacroAssembler::li(Register rd, Operand j, LiFlag
      int reverse_count = RV_li_count(~j.immediate(), temps.hasAvailable());
      if (v8_flags.riscv_constant_pool && count >= 4 && reverse_count >= 4) {
        // Ld/Lw a Address from a constant pool.

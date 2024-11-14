@@ -4,27 +4,15 @@ OpenBSD/riscv64 always uses floating-point support.
 Index: deps/v8/src/base/cpu.cc
 --- deps/v8/src/base/cpu.cc.orig
 +++ deps/v8/src/base/cpu.cc
-@@ -868,6 +868,8 @@ CPU::CPU()
- #endif  // !USE_SIMULATOR
- 
- #elif V8_HOST_ARCH_RISCV64
-+
-+#if V8_OS_LINUX
-   CPUInfo cpu_info;
-   char* features = cpu_info.ExtractField("isa");
- 
-@@ -878,6 +880,14 @@ CPU::CPU()
-     has_fpu_ = true;
-     has_rvv_ = true;
+@@ -933,7 +933,10 @@ CPU::CPU()
+   if (HasListItem(mmu, "sv57")) {
+     riscv_mmu_ = RV_MMU_MODE::kRiscvSV57;
    }
-+
-+#elif V8_OS_OPENBSD
-+
+-#endif
++#elif V8_OS_OPENBSD // V8_OS_LINUX
 +  // OpenBSD requires and defaults to FP support.
 +  has_fpu_ = true;
-+
 +#endif  // V8_OS_OPENBSD
-+
  #endif  // V8_HOST_ARCH_RISCV64
  }
  

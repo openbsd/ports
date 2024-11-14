@@ -1,19 +1,19 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -190,7 +190,7 @@ config.gypi: configure configure.py src/node_version.h
+@@ -191,7 +191,7 @@ config.gypi: configure configure.py src/node_version.h
  	fi
  
  .PHONY: install
--install: all ## Installs node into $PREFIX (default=/usr/local).
-+install: all build-pledge ## Installs node into $PREFIX (default=/usr/local).
+-install: all ## Install node into $PREFIX (default=/usr/local).
++install: all build-pledge ## Install node into $PREFIX (default=/usr/local).
  	$(PYTHON) tools/install.py $@ --dest-dir '$(DESTDIR)' --prefix '$(PREFIX)'
  
  .PHONY: uninstall
-@@ -442,6 +442,12 @@ test/addons/.buildstamp: $(ADDONS_PREREQS) \
+@@ -443,6 +443,12 @@ test/addons/.buildstamp: $(ADDONS_PREREQS) \
  # Just goes to show that recursive make really is harmful...
  # TODO(bnoordhuis) Force rebuild after gyp update.
- build-addons: | $(NODE_EXE) test/addons/.buildstamp
+ build-addons: | $(NODE_EXE) test/addons/.buildstamp ## Build addons for Node.js.
 +
 +build-pledge: $(NODE_EXE)
 +	$(NODE) deps/npm/node_modules/node-gyp/bin/node-gyp.js rebuild \

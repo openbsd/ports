@@ -13,7 +13,7 @@ for "any address" but that's not really a straightforward change).
 Index: lib/net.js
 --- lib/net.js.orig
 +++ lib/net.js
-@@ -1861,22 +1861,12 @@ function setupListenHandle(address, port, addressType,
+@@ -1864,22 +1864,12 @@ function setupListenHandle(address, port, addressType,
  
      let rval = null;
  

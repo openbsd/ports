@@ -7,35 +7,35 @@ from "0.0" if llvm (clang) is detected.
 Index: tools/v8_gypfiles/v8.gyp
 --- tools/v8_gypfiles/v8.gyp.orig
 +++ tools/v8_gypfiles/v8.gyp
-@@ -373,6 +373,9 @@
-             'v8_libplatform',
-           ]
+@@ -281,6 +281,9 @@
+             '<(icu_gyp_path):icuuc',
+           ],
          }],
 +        ['v8_control_flow_integrity==1', {
 +          'sources': [ '<(V8_ROOT)/src/deoptimizer/deoptimizer-cfi-builtins.cc' ],
 +        }],
        ],
-       'sources': [
-         '<(V8_ROOT)/src/init/setup-isolate-deserialize.cc',
-@@ -605,7 +608,7 @@
+     },  # v8_initializers_slow
+     {
+@@ -684,7 +687,7 @@
                }],
                ['v8_enable_webassembly==1', {
                  'conditions': [
 -                  ['OS=="linux" or OS=="mac" or OS=="ios" or OS=="freebsd"', {
 +                  ['OS=="linux" or OS=="mac" or OS=="ios" or OS=="freebsd" or OS=="openbsd"', {
                      'sources': [
-                       '<!@pymod_do_main(GN-scraper "<(V8_ROOT)/BUILD.gn"  "v8_header_set.\\"v8_internal_headers\\".*?v8_enable_i18n_support.*?v8_current_cpu == \\"x64\\".*?v8_enable_webassembly.*?is_linux.*?sources \\+= ")',
+                       '<(V8_ROOT)/src/trap-handler/handler-inside-posix.h',
                      ],
-@@ -940,7 +943,7 @@
+@@ -1090,7 +1093,7 @@
              }],
              ['v8_enable_webassembly==1', {
                'conditions': [
 -                ['OS=="linux" or OS=="mac" or OS=="ios" or OS=="freebsd"', {
 +                ['OS=="linux" or OS=="mac" or OS=="ios" or OS=="freebsd" or OS=="openbsd"', {
                    'sources': [
-                     '<!@pymod_do_main(GN-scraper "<(V8_ROOT)/BUILD.gn"  "\\"v8_base_without_compiler.*?v8_enable_wasm_gdb_remote_debugging.*?v8_current_cpu == \\"x64\\".*?v8_enable_webassembly.*?is_linux.*?sources \\+= ")',
-                   ],
-@@ -1095,7 +1098,7 @@
+                     '<(V8_ROOT)/src/trap-handler/handler-inside-posix.cc',
+                     '<(V8_ROOT)/src/trap-handler/handler-outside-posix.cc',
+@@ -1245,7 +1248,7 @@
          }],
          # Platforms that don't have Compare-And-Swap (CAS) support need to link atomic library
          # to implement atomic memory access
@@ -44,7 +44,7 @@ Index: tools/v8_gypfiles/v8.gyp
            'link_settings': {
              'libraries': ['-latomic', ],
            },
-@@ -1558,6 +1561,9 @@
+@@ -1711,6 +1714,9 @@
          '<!@pymod_do_main(GN-scraper "<(V8_ROOT)/BUILD.gn"  "\\"mksnapshot.*?sources = ")',
        ],
        'conditions': [

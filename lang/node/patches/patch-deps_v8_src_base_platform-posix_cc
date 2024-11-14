@@ -1,7 +1,7 @@
 Index: deps/v8/src/base/platform/platform-posix.cc
 --- deps/v8/src/base/platform/platform-posix.cc.orig
 +++ deps/v8/src/base/platform/platform-posix.cc
-@@ -53,7 +53,7 @@
+@@ -54,7 +54,7 @@
  #if V8_OS_DARWIN
  #include <mach/mach.h>
  #include <malloc/malloc.h>
@@ -10,7 +10,7 @@ Index: deps/v8/src/base/platform/platform-posix.cc
  #include <malloc.h>
  #endif
  
-@@ -71,7 +71,7 @@
+@@ -72,7 +72,7 @@
  #include <sys/syscall.h>
  #endif
  
@@ -43,7 +43,7 @@ Index: deps/v8/src/base/platform/platform-posix.cc
  
  // TODO(bbudge) Move Cygwin and Fuchsia stuff into platform-specific files.
  #if !V8_OS_CYGWIN && !V8_OS_FUCHSIA
-@@ -667,7 +675,7 @@ void OS::DestroySharedMemoryHandle(PlatformSharedMemor
+@@ -672,7 +680,7 @@ void OS::DestroySharedMemoryHandle(PlatformSharedMemor
  
  // static
  bool OS::HasLazyCommits() {
@@ -52,12 +52,12 @@ Index: deps/v8/src/base/platform/platform-posix.cc
    return true;
  #else
    // TODO(bbudge) Return true for all POSIX platforms.
-@@ -1244,7 +1252,7 @@ void Thread::SetThreadLocal(LocalStorageKey key, void*
+@@ -1304,7 +1312,7 @@ void Thread::SetThreadLocal(LocalStorageKey key, void*
  // keep this version in POSIX as most Linux-compatible derivatives will
  // support it. MacOS and FreeBSD are different here.
  #if !defined(V8_OS_FREEBSD) && !defined(V8_OS_DARWIN) && !defined(_AIX) && \
 -    !defined(V8_OS_SOLARIS)
 +    !defined(V8_OS_SOLARIS) && !defined(V8_OS_OPENBSD)
  
- // static
- Stack::StackSlot Stack::ObtainCurrentThreadStackStart() {
+ namespace {
+ #if DEBUG

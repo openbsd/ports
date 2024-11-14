@@ -1,7 +1,7 @@
 Index: src/env.cc
 --- src/env.cc.orig
 +++ src/env.cc
-@@ -773,29 +773,7 @@ std::unique_ptr<v8::BackingStore> Environment::release
+@@ -775,29 +775,7 @@ std::unique_ptr<v8::BackingStore> Environment::release
  }
  
  std::string Environment::GetExecPath(const std::vector<std::string>& argv) {
