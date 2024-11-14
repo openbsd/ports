@@ -9,6 +9,10 @@ HOMEPAGE=	https://www.gnu.org/software/screen/
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
+# C17
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=	--with-sys-screenrc="${SYSCONFDIR}/screenrc" --disable-pam
 
