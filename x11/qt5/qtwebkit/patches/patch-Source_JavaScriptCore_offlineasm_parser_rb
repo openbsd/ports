@@ -1,0 +1,25 @@
+Work with Ruby 3.2+
+https://commits.webkit.org/219400@main
+
+--- Source/JavaScriptCore/offlineasm/parser.rb.port.orig	Wed Mar  4 09:16:37 2020
++++ Source/JavaScriptCore/offlineasm/parser.rb	Wed Nov 13 22:24:03 2024
+@@ -584,9 +584,7 @@
+         firstCodeOrigin = @tokens[@idx].codeOrigin
+         list = []
+         loop {
+-            if (@idx == @tokens.length and not final) or (final and @tokens[@idx] =~ final)
+-                break
+-            elsif @tokens[@idx].is_a? Annotation
++            if @tokens[@idx].is_a? Annotation
+                 # This is the only place where we can encounter a global
+                 # annotation, and hence need to be able to distinguish between
+                 # them.
+@@ -600,6 +598,8 @@
+                 list << Instruction.new(codeOrigin, annotationOpcode, [], @tokens[@idx].string)
+                 @annotation = nil
+                 @idx += 2 # Consume the newline as well.
++            elsif (@idx == @tokens.length and not final) or (final and @tokens[@idx] =~ final)
++                break
+             elsif @tokens[@idx] == "\n"
+                 # ignore
+                 @idx += 1
