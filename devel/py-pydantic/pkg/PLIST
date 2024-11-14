@@ -108,6 +108,8 @@ lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/${MODPY_PYCACHE}_gen
 lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/${MODPY_PYCACHE}_generics.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/${MODPY_PYCACHE}_git.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/${MODPY_PYCACHE}_git.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/${MODPY_PYCACHE}_import_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/${MODPY_PYCACHE}_import_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/${MODPY_PYCACHE}_internal_dataclass.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/${MODPY_PYCACHE}_internal_dataclass.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/${MODPY_PYCACHE}_known_annotated_metadata.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -120,6 +122,8 @@ lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/${MODPY_PYCACHE}_rep
 lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/${MODPY_PYCACHE}_repr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/${MODPY_PYCACHE}_schema_generation_shared.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/${MODPY_PYCACHE}_schema_generation_shared.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/${MODPY_PYCACHE}_serializers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/${MODPY_PYCACHE}_serializers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/${MODPY_PYCACHE}_signature.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/${MODPY_PYCACHE}_signature.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/${MODPY_PYCACHE}_std_types_schema.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -145,12 +149,14 @@ lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/_forward_ref.py
 lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/_generate_schema.py
 lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/_generics.py
 lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/_git.py
+lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/_import_utils.py
 lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/_internal_dataclass.py
 lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/_known_annotated_metadata.py
 lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/_mock_val_ser.py
 lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/_model_construction.py
 lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/_repr.py
 lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/_schema_generation_shared.py
+lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/_serializers.py
 lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/_signature.py
 lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/_std_types_schema.py
 lib/python${MODPY_VERSION}/site-packages/pydantic/_internal/_typing_extra.py
