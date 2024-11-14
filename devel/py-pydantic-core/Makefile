@@ -1,6 +1,6 @@
 COMMENT =		data validation using Python type hints
 
-MODPY_EGG_VERSION =	2.21.0
+MODPY_EGG_VERSION =	2.27.0
 DISTNAME =		pydantic_core-${MODPY_EGG_VERSION}
 PKGNAME =		py-pydantic-core-${MODPY_EGG_VERSION}
 
