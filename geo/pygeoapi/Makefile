@@ -1,6 +1,7 @@
 COMMENT =		OGC API server implementation
 
 MODPY_EGG_VERSION =	0.18.0
+REVISION =		0
 DISTNAME =		pygeoapi-${MODPY_EGG_VERSION}
 
 CATEGORIES =		geo devel
@@ -33,6 +34,7 @@ RUN_DEPENDS =	devel/py-babel${MODPY_FLAVOR} \
 		geo/py-rasterio${MODPY_FLAVOR}>=1.1.8p1 \
 		geo/py-shapely${MODPY_FLAVOR} \
 		textproc/py-yaml${MODPY_FLAVOR} \
+		sysutils/py-filelock${MODPY_FLAVOR} \
 		www/py-requests${MODPY_FLAVOR} \
 		www/py-flask${MODPY_FLAVOR} \
 		www/py-flask-cors${MODPY_FLAVOR}
