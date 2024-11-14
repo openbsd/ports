@@ -1,12 +1,13 @@
 COMMENT =	manage and share secrets using GnuPG and Git
 
 DISTNAME =	keyringer-0.5.9
+REVISION =	0
 
 CATEGORIES =	security
 
 HOMEPAGE =	https://0xacab.org/rhatto/keyringer
 
-MAINTAINER =	Gregoire Jadi <gjadi@omecha.info>
+MAINTAINER =	Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
