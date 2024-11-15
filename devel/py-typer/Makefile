@@ -1,12 +1,12 @@
 COMMENT =		library for building CLI applications
 
-MODPY_EGG_VERSION =	0.12.5
+MODPY_EGG_VERSION =	0.13.0
 DISTNAME =		typer-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		devel
 
-HOMEPAGE =		https://github.com/tiangolo/typer
+HOMEPAGE =		https://github.com/fastapi/typer
 
 MAINTAINER =		Pavel Korovin <pvk@openbsd.org>
 
