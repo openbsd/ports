@@ -1,10 +1,9 @@
-
-TODO Reinstate OpenBSD/arm native support.
+Add OpenBSD/arm native support.
 
 Index: gdb/arm-obsd-nat.c
 --- gdb/arm-obsd-nat.c.orig
 +++ gdb/arm-obsd-nat.c
-@@ -0,0 +1,421 @@
+@@ -0,0 +1,427 @@
 +/* Native-dependent code for BSD Unix running on ARM's, for GDB.
 +
 +   Copyright (C) 1988-2020 Free Software Foundation, Inc.
@@ -89,8 +88,9 @@ Index: gdb/arm-obsd-nat.c
 +{
 +  struct reg inferior_registers;
 +  int ret;
++  pid_t pid = get_ptrace_pid (regcache->ptid ());
 +
-+  ret = ptrace (PT_GETREGS, regcache->ptid ().pid (),
++  ret = ptrace (PT_GETREGS, pid,
 +		(PTRACE_TYPE_ARG3) &inferior_registers, 0);
 +
 +  if (ret < 0)
@@ -138,8 +138,9 @@ Index: gdb/arm-obsd-nat.c
 +  struct reg inferior_registers;
 +  int ret;
 +  int regno;
++  pid_t pid = get_ptrace_pid (regcache->ptid ());
 +
-+  ret = ptrace (PT_GETREGS, regcache->ptid ().pid (),
++  ret = ptrace (PT_GETREGS, pid,
 +		(PTRACE_TYPE_ARG3) &inferior_registers, 0);
 +
 +  if (ret < 0)
@@ -156,8 +157,9 @@ Index: gdb/arm-obsd-nat.c
 +{
 +  struct fpreg inferior_fp_registers;
 +  int ret;
++  pid_t pid = get_ptrace_pid (regcache->ptid ());
 +
-+  ret = ptrace (PT_GETFPREGS, regcache->ptid ().pid (),
++  ret = ptrace (PT_GETFPREGS, pid,
 +		(PTRACE_TYPE_ARG3) &inferior_fp_registers, 0);
 +
 +  if (ret < 0)
@@ -186,8 +188,9 @@ Index: gdb/arm-obsd-nat.c
 +  struct fpreg inferior_fp_registers;
 +  int ret;
 +  int regno;
++  pid_t pid = get_ptrace_pid (regcache->ptid ());
 +
-+  ret = ptrace (PT_GETFPREGS, regcache->ptid ().pid (),
++  ret = ptrace (PT_GETFPREGS, pid,
 +		(PTRACE_TYPE_ARG3) &inferior_fp_registers, 0);
 +
 +  if (ret < 0)
@@ -223,8 +226,9 @@ Index: gdb/arm-obsd-nat.c
 +  gdbarch *gdbarch = regcache->arch ();
 +  struct reg inferior_registers;
 +  int ret;
++  pid_t pid = get_ptrace_pid (regcache->ptid ());
 +
-+  ret = ptrace (PT_GETREGS, regcache->ptid ().pid (),
++  ret = ptrace (PT_GETREGS, pid,
 +		(PTRACE_TYPE_ARG3) &inferior_registers, 0);
 +
 +  if (ret < 0)
@@ -282,7 +286,7 @@ Index: gdb/arm-obsd-nat.c
 +      break;
 +    }
 +
-+  ret = ptrace (PT_SETREGS, regcache->ptid ().pid (),
++  ret = ptrace (PT_SETREGS, pid,
 +		(PTRACE_TYPE_ARG3) &inferior_registers, 0);
 +
 +  if (ret < 0)
@@ -296,7 +300,7 @@ Index: gdb/arm-obsd-nat.c
 +  struct reg inferior_registers;
 +  int ret;
 +  int regno;
-+
++  pid_t pid = get_ptrace_pid (regcache->ptid ());
 +
 +  for (regno = ARM_A1_REGNUM; regno < ARM_SP_REGNUM; regno++)
 +    regcache->raw_collect (regno, (char *) &inferior_registers.r[regno]);
@@ -324,7 +328,7 @@ Index: gdb/arm-obsd-nat.c
 +      inferior_registers.r_pc = pc_val | psr_val;
 +    }
 +
-+  ret = ptrace (PT_SETREGS, regcache->ptid ().pid (),
++  ret = ptrace (PT_SETREGS, pid,
 +		(PTRACE_TYPE_ARG3) &inferior_registers, 0);
 +
 +  if (ret < 0)
@@ -336,8 +340,9 @@ Index: gdb/arm-obsd-nat.c
 +{
 +  struct fpreg inferior_fp_registers;
 +  int ret;
++  pid_t pid = get_ptrace_pid (regcache->ptid ());
 +
-+  ret = ptrace (PT_GETFPREGS, regcache->ptid ().pid (),
++  ret = ptrace (PT_GETFPREGS, pid,
 +		(PTRACE_TYPE_ARG3) &inferior_fp_registers, 0);
 +
 +  if (ret < 0)
@@ -359,7 +364,7 @@ Index: gdb/arm-obsd-nat.c
 +      break;
 +    }
 +
-+  ret = ptrace (PT_SETFPREGS, regcache->ptid ().pid (),
++  ret = ptrace (PT_SETFPREGS, pid,
 +		(PTRACE_TYPE_ARG3) &inferior_fp_registers, 0);
 +
 +  if (ret < 0)
@@ -372,7 +377,7 @@ Index: gdb/arm-obsd-nat.c
 +  struct fpreg inferior_fp_registers;
 +  int ret;
 +  int regno;
-+
++  pid_t pid = get_ptrace_pid (regcache->ptid ());
 +
 +  for (regno = ARM_F0_REGNUM; regno <= ARM_F7_REGNUM; regno++)
 +    regcache->raw_collect
@@ -381,7 +386,7 @@ Index: gdb/arm-obsd-nat.c
 +  regcache->raw_collect (ARM_FPS_REGNUM,
 +			 (char *) &inferior_fp_registers.fp_scr);
 +
-+  ret = ptrace (PT_SETFPREGS, regcache->ptid ().pid (),
++  ret = ptrace (PT_SETFPREGS, pid,
 +		(PTRACE_TYPE_ARG3) &inferior_fp_registers, 0);
 +
 +  if (ret < 0)

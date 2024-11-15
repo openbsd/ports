@@ -1,3 +1,6 @@
+Fix build errors.
+Add support for threads.
+
 Index: gdb/mips64-obsd-nat.c
 --- gdb/mips64-obsd-nat.c.orig
 +++ gdb/mips64-obsd-nat.c
@@ -19,7 +22,16 @@ Index: gdb/mips64-obsd-nat.c
    int i;
  
    for (i = MIPS_ZERO_REGNUM; i <= MIPS_PC_REGNUM; i++)
-@@ -100,7 +100,7 @@ mips64_obsd_nat_target::fetch_registers (struct regcac
+@@ -89,7 +89,7 @@ void
+ mips64_obsd_nat_target::fetch_registers (struct regcache *regcache, int regnum)
+ {
+   struct reg regs;
+-  pid_t pid = regcache->ptid ().pid ();
++  pid_t pid = get_ptrace_pid (regcache->ptid ());
+ 
+   if (ptrace (PT_GETREGS, pid, (PTRACE_TYPE_ARG3) &regs, 0) == -1)
+     perror_with_name (_("Couldn't get registers"));
+@@ -100,11 +100,11 @@ mips64_obsd_nat_target::fetch_registers (struct regcac
  /* Store register REGNUM back into the inferior.  If REGNUM is -1, do
     this for all registers.  */
  
@@ -28,3 +40,8 @@ Index: gdb/mips64-obsd-nat.c
  mips64_obsd_nat_target::store_registers (struct regcache *regcache, int regnum)
  {
    struct reg regs;
+-  pid_t pid = regcache->ptid ().pid ();
++  pid_t pid = get_ptrace_pid (regcache->ptid ());
+ 
+   if (ptrace (PT_GETREGS, pid, (PTRACE_TYPE_ARG3) &regs, 0) == -1)
+     perror_with_name (_("Couldn't get registers"));
