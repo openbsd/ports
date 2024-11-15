@@ -2,7 +2,7 @@ COMMENT=	SSLv3/TLS network protocol analyzer
 
 GH_ACCOUNT=	adulau
 GH_PROJECT=	ssldump
-GH_TAGNAME=	v1.8
+GH_TAGNAME=	v1.9
 CATEGORIES=	net
 
 # https://github.com/adulau/ssldump

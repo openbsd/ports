@@ -1,21 +1,21 @@
 Index: base/pcap-snoop.c.in
 --- base/pcap-snoop.c.in.orig
 +++ base/pcap-snoop.c.in
-@@ -97,7 +97,7 @@ int conn_freq = 100; // Number of packets after which 
-                      // cleaning is performed
- int conn_ttl = 100;  // TTL of inactive connections in connection pool
- struct timeval last_packet_seen_time = // Timestamp of the last packet of the
--    (struct timeval) {0};              // last block of conn_freq packets seen
-+    {0};                               // last block of conn_freq packets seen
+@@ -98,7 +98,7 @@ int conn_freq = 100;  // Number of packets after which
+                       // cleaning is performed
+ int conn_ttl = 100;   // TTL of inactive connections in connection pool
+ struct timeval last_packet_seen_time =  // Timestamp of the last packet of the
+-    (struct timeval){0};                // last block of conn_freq packets seen
++    {0};                // last block of conn_freq packets seen
  
- logger_mod *logger=NULL;
+ logger_mod *logger = NULL;
  
-@@ -435,7 +435,7 @@ int main(argc,argv)
-     
-     if(!file){
-       if(!interface_name){
--        if(pcap_findalldevs(&interfaces,errbuf)==-1) {
-+        if(pcap_findalldevs(&interfaces,errbuf)==-1 || interfaces == NULL) {
-           fprintf(stderr,"PCAP: %s\n",errbuf);
-           err_exit("Aborting",-1);
-         }
+@@ -476,7 +476,7 @@ int main(int argc, char **argv) {
+ 
+   if(!file) {
+     if(!interface_name) {
+-      if(pcap_findalldevs(&interfaces, errbuf) == -1) {
++      if(pcap_findalldevs(&interfaces, errbuf) == -1 || interfaces == NULL) {
+         fprintf(stderr, "PCAP: %s\n", errbuf);
+         err_exit("Aborting", -1);
+       }

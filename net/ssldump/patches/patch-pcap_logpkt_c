@@ -1,0 +1,18 @@
+warning: 'memcpy' call operates on objects of type 'const uint32_t' (aka
+'const unsigned int') while the size is based on a different type 'const
+uint32_t *' (aka 'const unsigned int *') [-Wsizeof-pointer-memaccess]
+
+Index: pcap/logpkt.c
+--- pcap/logpkt.c.orig
++++ pcap/logpkt.c
+@@ -262,8 +262,8 @@ void logpkt_ctx_init(logpkt_ctx_t *ctx,
+   memcpy(ctx->dst_ether, dst_ether, ETHER_ADDR_LEN);
+   memcpy(&ctx->src_addr, src_addr, src_addr_len);
+   memcpy(&ctx->dst_addr, dst_addr, dst_addr_len);
+-  memcpy(&ctx->timestamp_sec, timestamp_sec, sizeof(timestamp_sec));
+-  memcpy(&ctx->timestamp_usec, timestamp_usec, sizeof(timestamp_usec));
++  memcpy(&ctx->timestamp_sec, timestamp_sec, sizeof(uint32_t));
++  memcpy(&ctx->timestamp_usec, timestamp_usec, sizeof(uint32_t));
+   ctx->src_seq = 0;
+   ctx->dst_seq = 0;
+   if(mtu) {
