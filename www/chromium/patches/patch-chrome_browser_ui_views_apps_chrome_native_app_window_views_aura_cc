@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc
 --- chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc.orig
 +++ chrome/browser/ui/views/apps/chrome_native_app_window_views_aura.cc
-@@ -19,7 +19,7 @@
+@@ -20,7 +20,7 @@
  #include "ui/gfx/image/image_skia.h"
  #include "ui/views/widget/widget.h"
  

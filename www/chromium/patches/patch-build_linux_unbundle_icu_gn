@@ -36,3 +36,18 @@ Index: build/linux/unbundle/icu.gn
  }
  
  pkg_config("system_icui18n") {
+@@ -46,6 +67,14 @@ pkg_config("system_icuuc") {
+ }
+ 
+ source_set("icui18n") {
++  deps = [ ":icui18n_shim" ]
++  public_configs = [
++    ":icu_config",
++    ":system_icui18n",
++  ]
++}
++
++source_set("icui18n_hidden_visibility") {
+   deps = [ ":icui18n_shim" ]
+   public_configs = [
+     ":icu_config",

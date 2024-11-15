@@ -10,7 +10,7 @@ Index: chrome/browser/ui/webui/signin/profile_picker_handler.cc
    } else if (base::FeatureList::IsEnabled(
                   supervised_user::kShowKiteForSupervisedUsers) &&
               entry->IsSupervised()) {
-@@ -1224,7 +1224,7 @@ void ProfilePickerHandler::BeginFirstWebContentsProfil
+@@ -1211,7 +1211,7 @@ void ProfilePickerHandler::BeginFirstWebContentsProfil
  }
  
  void ProfilePickerHandler::MaybeUpdateGuestMode() {
