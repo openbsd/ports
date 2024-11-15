@@ -291,7 +291,6 @@
      # or 3f293301)
      SUBDIR += libkgapi
 
-     #SUBDIR += kio-extras
      SUBDIR += kf6-kio-extras
 
      # audiocd-kio
