@@ -2,7 +2,7 @@ Index: runtime/autoload/tar.vim
 --- runtime/autoload/tar.vim.orig
 +++ runtime/autoload/tar.vim
 @@ -44,7 +44,7 @@ if !exists("g:tar_readoptions")
-  let g:tar_readoptions= "OPxf"
+  let g:tar_readoptions= "pPxf"
  endif
  if !exists("g:tar_cmd")
 - let g:tar_cmd= "tar"

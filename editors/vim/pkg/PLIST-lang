@@ -329,6 +329,9 @@ man/tr/man1/
 share/vim/${P}/lang/af/
 share/vim/${P}/lang/af/LC_MESSAGES/
 share/vim/${P}/lang/af/LC_MESSAGES/vim.mo
+share/vim/${P}/lang/am/
+share/vim/${P}/lang/am/LC_MESSAGES/
+share/vim/${P}/lang/am/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/ca/
 share/vim/${P}/lang/ca/LC_MESSAGES/
 share/vim/${P}/lang/ca/LC_MESSAGES/vim.mo
