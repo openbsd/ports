@@ -1,6 +1,7 @@
 COMMENT=	keyboard-focused browser with a minimal GUI
 
 MODPY_EGG_VERSION=	3.3.1
+REVISION=	0
 DISTNAME=	qutebrowser-${MODPY_EGG_VERSION}
 
 HOMEPAGE=	https://www.qutebrowser.org/
@@ -14,13 +15,26 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-# prefers PyQt6 if possible; see patch-qutebrowser_qt_machinery_py if switching
 RUN_DEPENDS=	devel/desktop-file-utils \
 		textproc/py-yaml${MODPY_FLAVOR} \
 		x11/gtk+4,-guic \
-		x11/py-qt5${MODPY_FLAVOR} \
-		www/py-jinja2${MODPY_FLAVOR} \
+		www/py-jinja2${MODPY_FLAVOR}
+
+.if ${MACHINE_ARCH} == amd64 || ${MACHINE_ARCH} == aarch64
+RUN_DEPENDS+=	x11/py-qt6${MODPY_FLAVOR} \
+		www/py-qt6webengine${MODPY_FLAVOR}
+WRAPPER=	PyQt6
+.else
+RUN_DEPENDS+=	x11/py-qt5${MODPY_FLAVOR} \
 		www/py-qtwebengine${MODPY_FLAVOR}
+WRAPPER=	PyQt5
+.endif
+
+# make sure this is set, otherwise preferred order is PyQt6 then PyQt5,
+# which fails if PyQt6 is found but PyQt6WebEngine is not.
+post-extract:
+	sed -i 's/_WRAPPER_OVERRIDE = .*/_WRAPPER_OVERRIDE = "${WRAPPER}"/' \
+		${WRKSRC}/qutebrowser/qt/machinery.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
@@ -41,9 +55,7 @@ post-install:
 .include <bsd.port.arch.mk>
 # adblock is rust+python; selectively add the dependency to avoid
 # knocking out qutebrowser where it would otherwise work.
-# adblock has BDEP on ring, which is not for powerpc64 riscv64 sparc64
-# adblock is broken on i386.
-.if ${PROPERTIES:Mrust} && ${MACHINE_ARCH} != sparc64 && ${MACHINE_ARCH} != i386 && ${MACHINE_ARCH} != powerpc64 && ${MACHINE_ARCH} != riscv64
+.if ${PROPERTIES:Mrust}
 RUN_DEPENDS +=		www/py-adblock${MODPY_FLAVOR}
 .endif
 
