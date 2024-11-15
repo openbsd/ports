@@ -333,6 +333,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/chan_motif.so
 @so lib/asterisk/modules/chan_pjsip.so
 @so lib/asterisk/modules/chan_rtp.so
+@so lib/asterisk/modules/chan_sip.so
 @so lib/asterisk/modules/chan_unistim.so
 @so lib/asterisk/modules/codec_a_mu.so
 @so lib/asterisk/modules/codec_adpcm.so
