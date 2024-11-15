@@ -1,6 +1,6 @@
 All our targets need obsd-nat.o and kvm etc -> dedup.
 Add aarch64, powerpc64 and riscv64 support.
-Use OpenBSD-specific files for arm. (TBD)
+Use OpenBSD-specific files for arm.
 
 Index: gdb/configure.nat
 --- gdb/configure.nat.orig
@@ -28,8 +28,8 @@ Index: gdb/configure.nat
      obsd)
  	case ${gdb_host_cpu} in
 +	    arm)
-+		# Host: OpenBSD/arm XXX TODO
-+		#NATDEPFILES="${NATDEPFILES} arm-obsd-nat.o"
++		# Host: OpenBSD/arm
++		NATDEPFILES="${NATDEPFILES} arm-obsd-nat.o"
 +		;;
  	    i386)
  		# Host: OpenBSD/i386 ELF
