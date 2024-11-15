@@ -2478,7 +2478,7 @@ SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = CZ2G+OBNET1A9KFSzf4AFxFtfv6
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 7wMf94/5twNuF07vSd+9d0aNxPCvtzpjm2H4qzocxCU=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.4.0.mod) = +/Vbaah9WjkQgv2brl5MdYEEH+Cbi7k7D+Fs3f6FzpU=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.4.0.zip) = VQGaOR5TAqUbpi6YkJ4AYiS4EgeGbakL6vWC7A3uA28=
-SHA256 (goreleaser-v2.4.1.zip) = 11ShfIjTBg+Pd/KLpurVyNx5WDa9a8X3ct/aOKEhZFo=
+SHA256 (goreleaser-v2.4.4.zip) = S0mSii1XpglGcMXqNd3W/7+x7ri0GEddwTsy0tXBD5M=
 SIZE (go_modules/cel.dev/expr/@v/v0.15.0.mod) = 156
 SIZE (go_modules/cel.dev/expr/@v/v0.15.0.zip) = 190386
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.10.mod) = 1349
@@ -4959,4 +4959,4 @@ SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = 133
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 222726
 SIZE (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.4.0.mod) = 100
 SIZE (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.4.0.zip) = 45988
-SIZE (goreleaser-v2.4.1.zip) = 2450984
+SIZE (goreleaser-v2.4.4.zip) = 2452168
