@@ -5,6 +5,7 @@ PKGNAME =	vulkan-tools-${V}
 GH_TAGNAME =	vulkan-sdk-${V}
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	Vulkan-Tools
+REVISION =	0
 
 CATEGORIES =	devel graphics
 
@@ -27,7 +28,8 @@ MODPY_RUNDEP =	No
 
 BUILD_DEPENDS =	graphics/glslang \
 		graphics/volk \
-		graphics/vulkan-headers
+		graphics/vulkan-headers \
+		wayland/libinput-openbsd
 LIB_DEPENDS =	graphics/vulkan-loader \
 		wayland/wayland
 
