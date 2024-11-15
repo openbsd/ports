@@ -474,6 +474,7 @@
      SUBDIR += py-ndg-httpsclient,python3
      SUBDIR += py-openapi-core,python3
      SUBDIR += py-qtwebengine,python3
+     SUBDIR += py-qt6webengine,python3
      SUBDIR += py-query,python3
      SUBDIR += py-quixote,python3
      SUBDIR += py-repoze-lru,python3
