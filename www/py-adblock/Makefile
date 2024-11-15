@@ -1,5 +1,3 @@
-BROKEN-i386=	fatal runtime error: Rust cannot catch foreign exceptions
-
 COMMENT=	Brave's adblock library
 
 MODPY_EGG_VERSION= 0.6.0
