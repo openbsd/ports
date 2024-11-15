@@ -1,6 +1,7 @@
 COMMENT=	importer for pass (passwordstore)
 
 MODPY_EGG_VERSION= 3.5
+REVISION=	0
 DISTNAME=	pass-import-${MODPY_EGG_VERSION}
 
 CATEGORIES=	security
@@ -11,7 +12,7 @@ HOMEPAGE=	https://github.com/roddhjav/pass-import
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_SETUPTOOLS= Yes
+MODPY_PYBUILD=	setuptools
 
 # no tests in pypi distfile; no formatted manpages in github releases distfile
 # dropping tests is better than a BDEP on pandoc + pypandoc...
@@ -35,5 +36,12 @@ RUN_DEPENDS=	security/password-store \
 # - gnome-keyring requires installing py3-secretstorage
 # - aegis uses py-cryptography but requires it to be built against
 # openssl with scrypt
+
+post-install:
+	cd ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/usr/local; \
+	mv lib/* ${PREFIX}/lib/; \
+	mv man/man1/* ${PREFIX}/man/man1/; \
+	mv share/* ${PREFIX}/share/
+	find ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/usr -type d -delete
 
 .include <bsd.port.mk>
