@@ -1,0 +1,11 @@
+Index: lldb/source/Plugins/ABI/X86/ABISysV_x86_64.cpp
+--- lldb/source/Plugins/ABI/X86/ABISysV_x86_64.cpp.orig
++++ lldb/source/Plugins/ABI/X86/ABISysV_x86_64.cpp
+@@ -95,6 +95,7 @@ ABISysV_x86_64::CreateInstance(lldb::ProcessSP process
+     case llvm::Triple::OSType::Linux:
+     case llvm::Triple::OSType::MacOSX:
+     case llvm::Triple::OSType::NetBSD:
++    case llvm::Triple::OSType::OpenBSD:
+     case llvm::Triple::OSType::Solaris:
+     case llvm::Triple::OSType::UnknownOS:
+       return ABISP(
