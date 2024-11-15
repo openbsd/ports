@@ -1,0 +1,12 @@
+Index: lld/ELF/Arch/RISCV.cpp
+--- lld/ELF/Arch/RISCV.cpp.orig
++++ lld/ELF/Arch/RISCV.cpp
+@@ -157,7 +157,7 @@ uint32_t RISCV::calcEFlags() const {
+       target |= EF_RISCV_RVC;
+ 
+     if ((eflags & EF_RISCV_FLOAT_ABI) != (target & EF_RISCV_FLOAT_ABI))
+-      error(
++      warn(
+           toString(f) +
+           ": cannot link object files with different floating-point ABI from " +
+           toString(ctx.objectFiles[0]));

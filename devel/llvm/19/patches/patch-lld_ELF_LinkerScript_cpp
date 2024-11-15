@@ -1,0 +1,33 @@
+Index: lld/ELF/LinkerScript.cpp
+--- lld/ELF/LinkerScript.cpp.orig
++++ lld/ELF/LinkerScript.cpp
+@@ -109,7 +109,8 @@ static StringRef getOutputSectionName(const InputSecti
+   for (StringRef v :
+        {".data.rel.ro", ".data", ".rodata", ".bss.rel.ro", ".bss", ".ldata",
+         ".lrodata", ".lbss", ".gcc_except_table", ".init_array", ".fini_array",
+-        ".tbss", ".tdata", ".ARM.exidx", ".ARM.extab", ".ctors", ".dtors"})
++        ".tbss", ".tdata", ".ARM.exidx", ".ARM.extab", ".ctors", ".dtors",
++        ".openbsd.randomdata", ".openbsd.mutable"})
+     if (isSectionPrefix(v, s->name))
+       return v;
+ 
+@@ -1062,6 +1063,10 @@ bool LinkerScript::assignOffsets(OutputSection *sec) {
+                          sec->name);
+   }
+ 
++  // This section was previously a call to switchTo(), but switchTo()
++  // was unrolled here.
++  // On OpenBSD, we had consistently moved the call to switchTo()
++  // below the next section.
+   state->outSec = sec;
+   if (!(sec->addrExpr && script->hasSectionsCommand)) {
+     // ALIGN is respected. sec->alignment is the max of ALIGN and the maximum of
+@@ -1089,6 +1094,8 @@ bool LinkerScript::assignOffsets(OutputSection *sec) {
+   } else if (!sameMemRegion || !prevLMARegionIsDefault) {
+     state->lmaOffset = 0;
+   }
++
++  // On OpenBSD, the switchTo() call was here.
+ 
+   // Propagate state->lmaOffset to the first "non-header" section.
+   if (PhdrEntry *l = sec->ptLoad)

@@ -1,0 +1,11 @@
+Index: lld/ELF/SymbolTable.cpp
+--- lld/ELF/SymbolTable.cpp.orig
++++ lld/ELF/SymbolTable.cpp
+@@ -92,6 +92,7 @@ Symbol *SymbolTable::insert(StringRef name) {
+   memset(sym, 0, sizeof(Symbol));
+   sym->setName(name);
+   sym->partition = 1;
++  sym->gwarn = false;
+   sym->versionId = VER_NDX_GLOBAL;
+   if (pos != StringRef::npos)
+     sym->hasVersionSuffix = true;

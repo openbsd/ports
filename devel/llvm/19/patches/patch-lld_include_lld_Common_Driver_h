@@ -1,0 +1,20 @@
+Index: lld/include/lld/Common/Driver.h
+--- lld/include/lld/Common/Driver.h.orig
++++ lld/include/lld/Common/Driver.h
+@@ -56,6 +56,16 @@ Result lldMain(llvm::ArrayRef<const char *> args, llvm
+   }                                                                            \
+   }
+ 
++#define LLD_HAS_DRIVER_DUMMY(name)                                             \
++  namespace lld {                                                              \
++  namespace name {                                                             \
++  bool link(llvm::ArrayRef<const char *> args, llvm::raw_ostream &stdoutOS,    \
++            llvm::raw_ostream &stderrOS, bool exitEarly, bool disableOutput) { \
++                 return false;                                                 \
++            }                                                                  \
++  }                                                                            \
++  }
++
+ // An array which declares that all LLD drivers are linked in your executable.
+ // Must be used along with LLD_HAS_DRIVERS. See examples in LLD unittests.
+ #define LLD_ALL_DRIVERS                                                        \

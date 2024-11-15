@@ -1,0 +1,86 @@
+Index: lld/ELF/Writer.cpp
+--- lld/ELF/Writer.cpp.orig
++++ lld/ELF/Writer.cpp
+@@ -239,6 +239,7 @@ void elf::addReservedSymbols() {
+   };
+ 
+   ElfSym::bss = add("__bss_start", 0);
++  ElfSym::data = add("__data_start", 0);
+   ElfSym::end1 = add("end", -1);
+   ElfSym::end2 = add("_end", -1);
+   ElfSym::etext1 = add("etext", -1);
+@@ -446,7 +447,7 @@ static bool shouldKeepInSymtab(const Defined &sym) {
+   // * --discard-locals is used.
+   // * The symbol is in a SHF_MERGE section, which is normally the reason for
+   //   the assembler keeping the .L symbol.
+-  if (sym.getName().starts_with(".L") &&
++  if ((sym.getName().starts_with(".L") || sym.getName().empty()) &&
+       (config->discard == DiscardPolicy::Locals ||
+        (sym.section && (sym.section->flags & SHF_MERGE))))
+     return false;
+@@ -594,7 +595,11 @@ static bool isRelroSection(const OutputSection *sec) {
+   // However, if "-z now" is given, the lazy symbol resolution is
+   // disabled, which enables us to put it into RELRO.
+   if (sec == in.gotPlt->getParent())
++#ifndef __OpenBSD__
+     return config->zNow;
++#else
++    return true;	/* kbind(2) means we can always put these in RELRO */
++#endif
+ 
+   if (in.relroPadding && sec == in.relroPadding->getParent())
+     return true;
+@@ -882,6 +887,9 @@ template <class ELFT> void Writer<ELFT>::setReservedSy
+     ElfSym::bss->section = sbss ? sbss : findSection(".bss");
+   }
+ 
++  if (ElfSym::data)
++    ElfSym::data->section = findSection(".data");
++
+   // Setup MIPS _gp_disp/__gnu_local_gp symbols which should
+   // be equal to the _gp symbol's value.
+   if (ElfSym::mipsGp) {
+@@ -2328,6 +2336,11 @@ SmallVector<PhdrEntry *, 0> Writer<ELFT>::createPhdrs(
+   if (config->zWxneeded)
+     addHdr(PT_OPENBSD_WXNEEDED, PF_X);
+ 
++  // PT_OPENBSD_NOBTCFI is an OpenBSD-specific header to mark that the
++  // executable is expected to violate branch-target CFI checks.
++  if (config->zNoBtCfi)
++    addHdr(PT_OPENBSD_NOBTCFI, PF_X);
++
+   if (OutputSection *cmd = findSection(".note.gnu.property", partNo))
+     addHdr(PT_GNU_PROPERTY, PF_R)->add(cmd);
+ 
+@@ -2420,6 +2433,31 @@ template <class ELFT> void Writer<ELFT>::fixSectionAli
+         };
+     }
+   };
++
++#ifdef __OpenBSD__
++  // On i386, produce binaries that are compatible with our W^X implementation
++  if (config->emachine == EM_386) {
++    auto NXAlign = [](OutputSection *Cmd) {
++      if (Cmd && !Cmd->addrExpr)
++        Cmd->addrExpr = [=] {
++          return alignTo(script->getDot(), 0x20000000);
++        };
++    };
++
++    for (Partition &part : partitions) {
++      PhdrEntry *firstRW = nullptr;
++      for (PhdrEntry *P : part.phdrs) {
++        if (P->p_type == PT_LOAD && (P->p_flags & PF_W)) {
++          firstRW = P;
++          break;
++        }
++      }
++
++      if (firstRW)
++        NXAlign(firstRW->firstSec);
++    }
++  }
++#endif
+ 
+   for (Partition &part : partitions) {
+     prev = nullptr;

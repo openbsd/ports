@@ -1,0 +1,166 @@
+Index: clang/lib/Driver/ToolChains/Clang.cpp
+--- clang/lib/Driver/ToolChains/Clang.cpp.orig
++++ clang/lib/Driver/ToolChains/Clang.cpp
+@@ -1527,15 +1527,21 @@ static void handlePAuthABI(const ArgList &DriverArgs, 
+ 
+ static void CollectARMPACBTIOptions(const ToolChain &TC, const ArgList &Args,
+                                     ArgStringList &CmdArgs, bool isAArch64) {
++  const llvm::Triple &Triple = TC.getEffectiveTriple();
+   const Arg *A = isAArch64
+                      ? Args.getLastArg(options::OPT_msign_return_address_EQ,
+                                        options::OPT_mbranch_protection_EQ)
+                      : Args.getLastArg(options::OPT_mbranch_protection_EQ);
+-  if (!A)
++  if (!A) {
++    if (Triple.isOSOpenBSD() && isAArch64) {
++      CmdArgs.push_back("-msign-return-address=non-leaf");
++      CmdArgs.push_back("-msign-return-address-key=a_key");
++      CmdArgs.push_back("-mbranch-target-enforce");
++    }
+     return;
++  }
+ 
+   const Driver &D = TC.getDriver();
+-  const llvm::Triple &Triple = TC.getEffectiveTriple();
+   if (!(isAArch64 || (Triple.isArmT32() && Triple.isArmMClass())))
+     D.Diag(diag::warn_incompatible_branch_protection_option)
+         << Triple.getArchName();
+@@ -1549,7 +1555,10 @@ static void CollectARMPACBTIOptions(const ToolChain &T
+       D.Diag(diag::err_drv_unsupported_option_argument)
+           << A->getSpelling() << Scope;
+     Key = "a_key";
+-    IndirectBranches = false;
++    if (Triple.isOSOpenBSD() && isAArch64)
++      IndirectBranches = true;
++    else
++      IndirectBranches = false;
+     BranchProtectionPAuthLR = false;
+     GuardedControlStack = false;
+   } else {
+@@ -2664,6 +2673,11 @@ static void CollectArgsForIntegratedAssembler(Compilat
+           CmdArgs.push_back("-soft-float");
+           continue;
+         }
++        if (Value.starts_with("-mfix-loongson2f-btb")) {
++          CmdArgs.push_back("-mllvm");
++          CmdArgs.push_back("-fix-loongson2f-btb");
++          continue;
++        }
+ 
+         MipsTargetFeature = llvm::StringSwitch<const char *>(Value)
+                                 .Case("-mips1", "+mips1")
+@@ -5799,8 +5813,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+       OFastEnabled ? options::OPT_Ofast : options::OPT_fstrict_aliasing;
+   // We turn strict aliasing off by default if we're Windows MSVC since MSVC
+   // doesn't do any TBAA.
++  bool StrictAliasingDefault = !IsWindowsMSVC;
++  // We also turn off strict aliasing on OpenBSD.
++  if (getToolChain().getTriple().isOSOpenBSD())
++    StrictAliasingDefault = false;
+   if (!Args.hasFlag(options::OPT_fstrict_aliasing, StrictAliasingAliasOption,
+-                    options::OPT_fno_strict_aliasing, !IsWindowsMSVC))
++                    options::OPT_fno_strict_aliasing, StrictAliasingDefault))
+     CmdArgs.push_back("-relaxed-aliasing");
+   if (Args.hasFlag(options::OPT_fpointer_tbaa, options::OPT_fno_pointer_tbaa,
+                    false))
+@@ -6844,7 +6862,8 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+                                       options::OPT_fno_strict_overflow)) {
+     if (A->getOption().matches(options::OPT_fno_strict_overflow))
+       CmdArgs.push_back("-fwrapv");
+-  }
++  } else if (getToolChain().getTriple().isOSOpenBSD())
++    CmdArgs.push_back("-fwrapv");
+ 
+   Args.AddLastArg(CmdArgs, options::OPT_ffinite_loops,
+                   options::OPT_fno_finite_loops);
+@@ -6860,7 +6879,58 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+   Args.addOptInFlag(CmdArgs, options::OPT_mspeculative_load_hardening,
+                     options::OPT_mno_speculative_load_hardening);
+ 
+-  RenderSSPOptions(D, TC, Args, CmdArgs, KernelOrKext);
++  // -ret-protector
++  unsigned RetProtector = 1;
++  if (Arg *A = Args.getLastArg(options::OPT_fno_ret_protector,
++        options::OPT_fret_protector)) {
++    if (A->getOption().matches(options::OPT_fno_ret_protector))
++      RetProtector = 0;
++    else if (A->getOption().matches(options::OPT_fret_protector))
++      RetProtector = 1;
++  }
++
++  if (RetProtector &&
++      ((getToolChain().getArch() == llvm::Triple::x86_64) ||
++       (getToolChain().getArch() == llvm::Triple::mips64) ||
++       (getToolChain().getArch() == llvm::Triple::mips64el) ||
++       (getToolChain().getArch() == llvm::Triple::ppc) ||
++       (getToolChain().getArch() == llvm::Triple::ppc64) ||
++       (getToolChain().getArch() == llvm::Triple::ppc64le) ||
++       (getToolChain().getArch() == llvm::Triple::aarch64)) &&
++      !Args.hasArg(options::OPT_fno_stack_protector) &&
++      !Args.hasArg(options::OPT_pg)) {
++    CmdArgs.push_back(Args.MakeArgString("-D_RET_PROTECTOR"));
++    CmdArgs.push_back(Args.MakeArgString("-ret-protector"));
++    // Consume the stack protector arguments to prevent warning
++    Args.getLastArg(options::OPT_fstack_protector_all,
++        options::OPT_fstack_protector_strong,
++        options::OPT_fstack_protector,
++        options::OPT__param); // ssp-buffer-size
++  } else {
++    // If we're not using retguard, then do the usual stack protector
++    RenderSSPOptions(D, TC, Args, CmdArgs, KernelOrKext);
++  }
++
++  // -fixup-gadgets
++  if (Arg *A = Args.getLastArg(options::OPT_fno_fixup_gadgets,
++                               options::OPT_ffixup_gadgets)) {
++    CmdArgs.push_back(Args.MakeArgString(Twine("-mllvm")));
++    if (A->getOption().matches(options::OPT_fno_fixup_gadgets))
++      CmdArgs.push_back(Args.MakeArgString(Twine("-x86-fixup-gadgets=false")));
++    else if (A->getOption().matches(options::OPT_ffixup_gadgets))
++      CmdArgs.push_back(Args.MakeArgString(Twine("-x86-fixup-gadgets=true")));
++  }
++
++  // -ret-clean
++  if (Arg *A = Args.getLastArg(options::OPT_fno_ret_clean,
++                               options::OPT_fret_clean)) {
++    CmdArgs.push_back(Args.MakeArgString(Twine("-mllvm")));
++    if (A->getOption().matches(options::OPT_fno_ret_clean))
++      CmdArgs.push_back(Args.MakeArgString(Twine("-x86-ret-clean=false")));
++    else if (A->getOption().matches(options::OPT_fret_clean))
++      CmdArgs.push_back(Args.MakeArgString(Twine("-x86-ret-clean=true")));
++  }
++
+   RenderSCPOptions(TC, Args, CmdArgs);
+   RenderTrivialAutoVarInitOptions(D, TC, Args, CmdArgs);
+ 
+@@ -6938,6 +7008,11 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+   if (Arg *A = Args.getLastArg(options::OPT_fcf_protection_EQ)) {
+     CmdArgs.push_back(
+         Args.MakeArgString(Twine("-fcf-protection=") + A->getValue()));
++  } else if (Triple.isOSOpenBSD() && Triple.getArch() == llvm::Triple::x86_64) {
++    // Emit IBT endbr64 instructions by default
++    CmdArgs.push_back("-fcf-protection=branch");
++    // jump-table can generate indirect jumps, which are not permitted
++    CmdArgs.push_back("-fno-jump-tables");
+   }
+ 
+   if (Arg *A = Args.getLastArg(options::OPT_mfunction_return_EQ))
+@@ -7466,6 +7541,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+                                      options::OPT_fno_rewrite_imports, false);
+   if (RewriteImports)
+     CmdArgs.push_back("-frewrite-imports");
++
++  // Disable some builtins on OpenBSD because they are just not
++  // right...
++  if (getToolChain().getTriple().isOSOpenBSD()) {
++    CmdArgs.push_back("-fno-builtin-malloc");
++    CmdArgs.push_back("-fno-builtin-calloc");
++    CmdArgs.push_back("-fno-builtin-realloc");
++    CmdArgs.push_back("-fno-builtin-valloc");
++    CmdArgs.push_back("-fno-builtin-free");
++    CmdArgs.push_back("-fno-builtin-strdup");
++    CmdArgs.push_back("-fno-builtin-strndup");
++  }
+ 
+   Args.addOptInFlag(CmdArgs, options::OPT_fdirectives_only,
+                     options::OPT_fno_directives_only);

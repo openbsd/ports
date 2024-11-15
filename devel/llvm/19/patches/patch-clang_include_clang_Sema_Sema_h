@@ -1,0 +1,11 @@
+Index: clang/include/clang/Sema/Sema.h
+--- clang/include/clang/Sema/Sema.h.orig
++++ clang/include/clang/Sema/Sema.h
+@@ -2214,6 +2214,7 @@ class Sema final : public SemaBase { (public)
+     FST_FreeBSDKPrintf,
+     FST_OSTrace,
+     FST_OSLog,
++    FST_Syslog,
+     FST_Unknown
+   };
+   static FormatStringType GetFormatStringType(const FormatAttr *Format);

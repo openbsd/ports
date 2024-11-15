@@ -1,0 +1,13 @@
+Index: llvm/lib/Support/Unix/Process.inc
+--- llvm/lib/Support/Unix/Process.inc.orig
++++ llvm/lib/Support/Unix/Process.inc
+@@ -342,6 +342,9 @@ unsigned Process::StandardErrColumns() {
+ }
+ 
+ static bool terminalHasColors() {
++#if defined(__OpenBSD__)
++	return false;
++#endif
+   // Check if the current terminal is one of terminals that are known to support
+   // ANSI color escape codes.
+   if (const char *TermStr = std::getenv("TERM")) {
