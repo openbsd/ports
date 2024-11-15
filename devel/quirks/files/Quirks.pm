@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1674 2024/11/09 12:59:53 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1675 2024/11/15 09:55:49 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -601,6 +601,7 @@ my $stem_extensions = {
 	'spidermonkey115' => 'spidermonkey128',
 	'blas' => 'lapack',
 	'cblas' => 'lapack',
+	'kio-extras' => 'kf6-kio-extras',
 };
 
 my $obsolete_reason = {};
