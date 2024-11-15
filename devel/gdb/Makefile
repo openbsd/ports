@@ -2,7 +2,7 @@ COMMENT=	GNU debugger
 CATEGORIES=	devel
 
 DISTNAME=	gdb-13.2
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://www.gnu.org/software/gdb/
 
@@ -42,6 +42,8 @@ CONFIGURE_ARGS=	--program-prefix=e \
 
 USE_GMAKE=	Yes
 MAKE_FLAGS=	V=1 LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
+# Avoid using malloc replacement for no good reason
+MAKE_ENV=	gl_cv_malloc_ptrdiff=yes
 
 MODULES +=	lang/python
 
