@@ -2,7 +2,7 @@ COMMENT =		powerful curses interface python file manager
 
 MODPY_EGG_VERSION =	3.1
 DISTNAME =		lfm-${MODPY_EGG_VERSION}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		misc
 
@@ -14,10 +14,10 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
+MODPY_PYBUILD =		setuptools
 
-# Actually required at runtime (pkg_resources), also see
-# patches/patch-setup_py comment
-MODPY_SETUPTOOLS =	Yes
+# for pkg_resources
+RUN_DEPENDS =		devel/py-setuptools${MODPY_FLAVOR}
 
 NO_TEST =		Yes
 
@@ -25,5 +25,11 @@ NO_TEST =		Yes
 pre-build:
 	sed -i 's,/usr,${LOCALBASE},g' ${WRKSRC}/lfm.1
 	${SUBST_CMD} ${WRKSRC}/lfm/actions.py
+
+post-install:
+	cd ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/usr/local; \
+	mv man/man1/* ${PREFIX}/man/man1/; \
+	mv share/doc/* ${PREFIX}/share/doc/
+	find ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/usr -type d -delete
 
 .include <bsd.port.mk>
