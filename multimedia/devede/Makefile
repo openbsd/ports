@@ -3,7 +3,7 @@ COMMENT=		video DVDs and CDs creation tool
 MODPY_EGG_VERSION=	4.17.0
 DISTNAME=		devedeng-${MODPY_EGG_VERSION}
 PKGNAME=		devede-${MODPY_EGG_VERSION}
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		multimedia x11
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 SITES=	https://gitlab.com/rastersoft/devedeng/-/archive/${MODPY_EGG_VERSION}/
 
 MODULES=		lang/python
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD=		setuptools
 
 BUILD_DEPENDS=		devel/gettext,-tools
 
@@ -32,5 +32,8 @@ pre-configure:
 
 post-install:
 	cd ${PREFIX}/bin && ln -s devede_ng.py devede
+	cd ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/usr/local; \
+		mv share/* ${PREFIX}/share/
+	find ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/usr -type d -delete
 
 .include <bsd.port.mk>
