@@ -355,6 +355,12 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock/2023-04-20/endpoi
 lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock/2023-04-20/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock/2023-04-20/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/bedrock/2023-04-20/waiters-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/billing/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/billing/2023-09-07/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/billing/2023-09-07/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/billing/2023-09-07/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/billing/2023-09-07/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/billing/2023-09-07/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/billingconductor/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/billingconductor/2021-07-30/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/billingconductor/2021-07-30/endpoint-rule-set-1.json
@@ -750,6 +756,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/connectcampaigns/2021-01-
 lib/python${MODPY_VERSION}/site-packages/botocore/data/connectcampaigns/2021-01-30/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/connectcampaigns/2021-01-30/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/connectcampaigns/2021-01-30/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/connectcampaignsv2/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/connectcampaignsv2/2024-04-23/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/connectcampaignsv2/2024-04-23/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/connectcampaignsv2/2024-04-23/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/connectcampaignsv2/2024-04-23/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/connectcases/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/connectcases/2022-10-03/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/connectcases/2022-10-03/endpoint-rule-set-1.json
@@ -1897,6 +1908,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/panorama/2019-07-24/examp
 lib/python${MODPY_VERSION}/site-packages/botocore/data/panorama/2019-07-24/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/panorama/2019-07-24/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/partitions.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/partnercentral-selling/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/partnercentral-selling/2022-07-26/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/partnercentral-selling/2022-07-26/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/partnercentral-selling/2022-07-26/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/partnercentral-selling/2022-07-26/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/payment-cryptography/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/payment-cryptography-data/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/payment-cryptography-data/2022-02-03/
