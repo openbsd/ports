@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	KDE PIM email client
 DISTNAME =	kmail-${VERSION}
 CATEGORIES =	net mail
+REVISION =	0
 
 HOMEPAGE =	https://kontact.kde.org/components/kmail/
 
@@ -122,6 +123,8 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		x11/qt6/qtwebengine
 
 TEST_IS_INTERACTIVE =	X11
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
 

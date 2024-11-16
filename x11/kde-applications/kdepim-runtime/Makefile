@@ -4,6 +4,7 @@ COMMENT =	KDE PIM mail related libraries
 DISTNAME =	kdepim-runtime-${VERSION}
 PKGNAME =	kdepim-runtime-kf5-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  akonadi-filestore           1.0 # 5.13.2
 SHARED_LIBS +=  akonadi-singlefileresource  2.0 # 5.13.2
@@ -100,5 +101,7 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 TEST_IS_INTERACTIVE =	X11
 
 CXXFLAGS =	-Wno-enum-constexpr-conversion
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>
