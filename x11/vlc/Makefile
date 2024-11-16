@@ -1,14 +1,13 @@
 COMMENT-main=	VideoLAN client; multimedia player
 COMMENT-jack=	JACK audio output module for VLC
 
-V=		3.0.20
+V=		3.0.21
 DISTNAME=	vlc-${V}
 PKGNAME-main=	${DISTNAME}
 PKGNAME-jack=	vlc-jack-${V}
 CATEGORIES=	x11
 SITES=		https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
-REVISION-main=	5
 
 USE_NOBTCFI=	Yes
 
@@ -182,6 +181,7 @@ CONFIGURE_ARGS+=--disable-a52 \
 		--disable-kwallet \
 		--disable-libmpeg2 \
 		--disable-libplacebo \
+		--disable-libva \
 		--disable-linsys \
 		--disable-live555 \
 		--disable-mad \

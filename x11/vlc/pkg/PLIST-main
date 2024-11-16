@@ -268,8 +268,6 @@ lib/vlc/plugins/codec/
 @so lib/vlc/plugins/codec/libtextst_plugin.so
 @so lib/vlc/plugins/codec/libttml_plugin.so
 @so lib/vlc/plugins/codec/libuleaddvaudio_plugin.so
-@so lib/vlc/plugins/codec/libvaapi_drm_plugin.so
-@so lib/vlc/plugins/codec/libvaapi_plugin.so
 @so lib/vlc/plugins/codec/libvorbis_plugin.so
 @so lib/vlc/plugins/codec/libwebvtt_plugin.so
 @so lib/vlc/plugins/codec/libx26410b_plugin.so
