@@ -2,9 +2,8 @@ COMMENT = 	IMAP client interface with lots of features
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Mail-IMAPTalk-4.04
+DISTNAME =	Mail-IMAPTalk-4.06
 CATEGORIES =	mail
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =		Yes
