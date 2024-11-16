@@ -3,14 +3,17 @@ include/KF6/KI18n/
 include/KF6/KI18n/KLazyLocalizedString
 include/KF6/KI18n/KLocalization
 include/KF6/KI18n/KLocalizedContext
+include/KF6/KI18n/KLocalizedQmlContext
 include/KF6/KI18n/KLocalizedString
 include/KF6/KI18n/KLocalizedTranslator
 include/KF6/KI18n/KuitSetup
 include/KF6/KI18n/ki18n_export.h
 include/KF6/KI18n/ki18n_version.h
+include/KF6/KI18n/ki18nqml_export.h
 include/KF6/KI18n/klazylocalizedstring.h
 include/KF6/KI18n/klocalization.h
 include/KF6/KI18n/klocalizedcontext.h
+include/KF6/KI18n/klocalizedqmlcontext.h
 include/KF6/KI18n/klocalizedstring.h
 include/KF6/KI18n/klocalizedtranslator.h
 include/KF6/KI18n/kuitsetup.h
@@ -34,6 +37,7 @@ lib/cmake/KF6I18n/kf6i18nuic.cmake
 lib/cmake/KF6I18n/ts-pmap-compile.py
 @lib lib/libKF6I18n.so.${LIBKF6I18n_VERSION}
 @lib lib/libKF6I18nLocaleData.so.${LIBKF6I18nLocaleData_VERSION}
+@lib lib/libKF6I18nQml.so.${LIBKF6I18nQml_VERSION}
 lib/qt6/plugins/kf6/
 @so lib/qt6/plugins/kf6/ktranscript.so
 lib/qt6/qml/org/

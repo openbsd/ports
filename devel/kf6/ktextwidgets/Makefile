@@ -4,10 +4,9 @@ DISTNAME =	ktextwidgets-${VERSION}
 SHARED_LIBS +=  KF6TextWidgets            0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6Completion
-WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6I18n
-WANTLIB += KF6SonnetCore KF6SonnetUi KF6WidgetsAddons Qt6Core
-WANTLIB += Qt6Gui Qt6Multimedia Qt6Network Qt6TextToSpeech Qt6Widgets
-WANTLIB += m
+WANTLIB += KF6ConfigCore KF6ConfigGui KF6I18n KF6SonnetCore KF6SonnetUi
+WANTLIB += KF6WidgetsAddons Qt6Core Qt6Gui Qt6Multimedia Qt6Network
+WANTLIB += Qt6TextToSpeech Qt6Widgets m
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		x11/qt6/qtwebengine

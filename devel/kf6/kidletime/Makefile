@@ -1,6 +1,5 @@
 COMMENT =	reporting of idle time of user and system
 DISTNAME =	kidletime-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  KF6IdleTime               0.0 # 0.0
 

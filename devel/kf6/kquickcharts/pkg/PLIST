@@ -1,6 +1,8 @@
 lib/cmake/KF6QuickCharts/
 lib/cmake/KF6QuickCharts/KF6QuickChartsConfig.cmake
 lib/cmake/KF6QuickCharts/KF6QuickChartsConfigVersion.cmake
+lib/cmake/KF6QuickCharts/KF6QuickChartsTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KF6QuickCharts/KF6QuickChartsTargets.cmake
 @lib lib/libQuickCharts.so.${LIBQuickCharts_VERSION}
 @lib lib/libQuickChartsControls.so.${LIBQuickChartsControls_VERSION}
 lib/qt6/qml/org/

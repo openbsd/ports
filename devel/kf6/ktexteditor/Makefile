@@ -35,7 +35,6 @@ LIB_DEPENDS =	devel/kf6/karchive>=${MODKF6_VERSION} \
 		devel/kf6/kjobwidgets>=${MODKF6_VERSION} \
 		devel/kf6/kparts>=${MODKF6_VERSION} \
 		devel/kf6/kservice>=${MODKF6_VERSION} \
-		devel/kf6/ktextwidgets>=${MODKF6_VERSION} \
 		devel/kf6/kwidgetsaddons>=${MODKF6_VERSION} \
 		devel/kf6/kxmlgui>=${MODKF6_VERSION} \
 		devel/kf6/solid>=${MODKF6_VERSION} \

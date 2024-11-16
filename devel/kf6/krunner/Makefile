@@ -1,6 +1,5 @@
 COMMENT =	KDE framework for Plasma runners
 DISTNAME =	krunner-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  KF6Runner                 0.0 # 0.0
 
@@ -8,7 +7,6 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6ConfigCore KF6CoreAddons KF6I18n
 WANTLIB += KF6ItemModels Qt6Core Qt6DBus Qt6Gui m
 
 BUILD_DEPENDS =	devel/gettext,-tools \
-		graphics/vulkan-loader \
 		archivers/gtar
 
 LIB_DEPENDS =	devel/kf6/kconfig>=${MODKF6_VERSION} \

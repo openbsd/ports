@@ -8,11 +8,10 @@ SHARED_LIBS +=  KF6KIOWidgets             0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6AuthCore KF6Bookmarks
 WANTLIB += KF6BookmarksWidgets KF6ColorScheme KF6Completion KF6ConfigCore
-WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
-WANTLIB += KF6DBusAddons KF6DocTools KF6GuiAddons KF6I18n KF6IconThemes
-WANTLIB += KF6IconWidgets KF6ItemViews KF6JobWidgets KF6Service
-WANTLIB += KF6Solid KF6Wallet KF6WidgetsAddons KF6WindowSystem
-WANTLIB += Qt6Concurrent Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui
+WANTLIB += KF6ConfigGui KF6CoreAddons KF6Crash KF6DBusAddons KF6DocTools
+WANTLIB += KF6GuiAddons KF6I18n KF6IconThemes KF6IconWidgets KF6ItemViews
+WANTLIB += KF6JobWidgets KF6Service KF6Solid KF6Wallet KF6WidgetsAddons
+WANTLIB += KF6WindowSystem Qt6Concurrent Qt6Core Qt6DBus Qt6Gui
 WANTLIB += Qt6Network Qt6Widgets Qt6Xml X11 c exslt m xkbcommon
 WANTLIB += xml2 xslt
 
@@ -31,7 +30,6 @@ LIB_DEPENDS =	devel/kf6/karchive>=${MODKF6_VERSION} \
 		devel/kf6/kcolorscheme>=${MODKF6_VERSION} \
 		devel/kf6/kcompletion>=${MODKF6_VERSION} \
 		devel/kf6/kconfig>=${MODKF6_VERSION} \
-		devel/kf6/kconfigwidgets>=${MODKF6_VERSION} \
 		devel/kf6/kcoreaddons>=${MODKF6_VERSION} \
 		devel/kf6/kcrash>=${MODKF6_VERSION} \
 		devel/kf6/kdbusaddons>=${MODKF6_VERSION} \
@@ -46,7 +44,6 @@ LIB_DEPENDS =	devel/kf6/karchive>=${MODKF6_VERSION} \
 		devel/kf6/kguiaddons>=${MODKF6_VERSION} \
 		devel/kf6/kwindowsystem>=${MODKF6_VERSION} \
 		devel/kf6/solid>=${MODKF6_VERSION} \
-		x11/qt6/qt5compat \
 		textproc/libxml \
 		textproc/libxslt \
 		x11/xkbcommon

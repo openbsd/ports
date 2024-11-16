@@ -1,6 +1,5 @@
 COMMENT =	KDE configuration system
 DISTNAME =	kconfig-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  KF6ConfigCore             0.0 # 0.0
 SHARED_LIBS +=  KF6ConfigGui              0.0 # 0.0

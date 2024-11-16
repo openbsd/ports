@@ -3,15 +3,15 @@
 Index: src/solid/devices/backends/fstab/fstabwatcher.cpp
 --- src/solid/devices/backends/fstab/fstabwatcher.cpp.orig
 +++ src/solid/devices/backends/fstab/fstabwatcher.cpp
-@@ -33,6 +33,7 @@ FstabWatcher::FstabWatcher()
-         connect(qApp, &QCoreApplication::aboutToQuit, this, &FstabWatcher::orphanFileSystemWatcher);
-     }
+@@ -65,6 +65,7 @@ FstabWatcher::FstabWatcher()
+     m_isRoutineInstalled = false;
+     m_fileSystemWatcher = new QFileSystemWatcher(this);
  
 +#ifndef Q_OS_OPENBSD
      m_mtabFile = new QFile(s_mtabFile, this);
      if (m_mtabFile && m_mtabFile->symLinkTarget().startsWith(QLatin1String("/proc/")) && m_mtabFile->open(QIODevice::ReadOnly)) {
-         m_mtabSocketNotifier = new QSocketNotifier(m_mtabFile->handle(), QSocketNotifier::Exception, this);
-@@ -40,6 +41,7 @@ FstabWatcher::FstabWatcher()
+         m_socketNotifier = new QSocketNotifier(m_mtabFile->handle(), QSocketNotifier::Exception, this);
+@@ -72,6 +73,7 @@ FstabWatcher::FstabWatcher()
      } else {
          m_fileSystemWatcher->addPath(s_mtabFile);
      }
