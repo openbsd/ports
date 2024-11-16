@@ -1,6 +1,6 @@
 COMMENT =	formatter for spellchecking pod
 
-DISTNAME =	Pod-Spell-1.26
+DISTNAME =	Pod-Spell-1.27
 
 CATEGORIES =	textproc
 
