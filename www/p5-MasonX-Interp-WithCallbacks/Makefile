@@ -2,9 +2,8 @@ COMMENT=	Mason callback support via Params::CallbackRequest
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	MasonX-Interp-WithCallbacks-1.19
+DISTNAME =	MasonX-Interp-WithCallbacks-1.20
 CATEGORIES=	www
-REVISION =	0
 
 # GPL/Artistic
 PERMIT_PACKAGE=	Yes
