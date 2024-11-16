@@ -1,6 +1,6 @@
 COMMENT =	object-oriented database mapper
 
-DISTNAME =	Rose-DB-Object-0.820
+DISTNAME =	Rose-DB-Object-0.821
 FIX_EXTRACT_PERMISSIONS =	Yes
 
 CATEGORIES =	databases
