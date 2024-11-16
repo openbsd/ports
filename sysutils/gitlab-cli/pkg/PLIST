@@ -124,9 +124,13 @@
 @man man/man1/glab-stack-next.1
 @man man/man1/glab-stack-prev.1
 @man man/man1/glab-stack-save.1
+@man man/man1/glab-stack-switch.1
 @man man/man1/glab-stack-sync.1
 @man man/man1/glab-stack.1
 @man man/man1/glab-token-create.1
+@man man/man1/glab-token-list.1
+@man man/man1/glab-token-revoke.1
+@man man/man1/glab-token-rotate.1
 @man man/man1/glab-token.1
 @man man/man1/glab-user-events.1
 @man man/man1/glab-user.1
