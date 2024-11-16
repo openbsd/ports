@@ -11,22 +11,23 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			130.0.6723.91
+V=			131.0.6778.69
 UGV=			${V}-1
 
 DISTNAME=		ungoogled-chromium-${V}
 
 DISTFILES+=		${CHROMIUM_DISTFILES} \
-			${REGRESS_DISTFILES}
-
-DISTFILES.a+=		${UGOOGLE_DISTFILES} \
-			${REGRESS_DISTFILES.a}
+			${REGRESS_DISTFILES} \
+			${UGOOGLE_DISTFILES} \
+			${GN_DISTFILES}
 
 CHROMIUM_DISTFILES+=	chromium-${V}${EXTRACT_SUFX}
 UGOOGLE_DISTFILES+=	ungoogled-chromium-${UGV}.tar.gz
+GN_DISTFILES+=		chrome-gn-${V}-src.tar.xz
 REGRESS_DISTFILES+=	chromium-${V}-testdata${EXTRACT_SUFX}
 
 EXTRACT_ONLY=		${CHROMIUM_DISTFILES} \
+			${GN_DISTFILES} \
 			${UGOOGLE_DISTFILES}
 
 CATEGORIES=		www
@@ -44,8 +45,8 @@ FLAVOR?=
 # BSD-like
 PERMIT_PACKAGE =	Yes
 
-SITES=		https://commondatastorage.googleapis.com/chromium-browser-official/
-SITES.a=	http://nerd.hu/distfiles/
+#SITES=		https://commondatastorage.googleapis.com/chromium-browser-official/
+SITES=		http://nerd.hu/distfiles/
 
 MODULES=	lang/clang lang/python x11/qt5
 
@@ -61,11 +62,12 @@ WANTLIB+=	Xrender Xtst aom atk-1.0 atk-bridge-2.0 atspi c cairo
 WANTLIB+=	cbor crypto cups dav1d dbus-1 drm event execinfo expat ffi fido2
 WANTLIB+=	fontconfig freetype fribidi gbm gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB+=	gobject-2.0 graphite2 gthread-2.0 harfbuzz harfbuzz-gobject
-WANTLIB+=	harfbuzz-subset iconv icudata icui18n icuuc intl jpeg kvm m
+WANTLIB+=	harfbuzz-subset icudata icui18n icuuc intl jpeg kvm m
 WANTLIB+=	nspr4 nss3 nssutil3 openh264 opus pango-1.0 pangocairo-1.0
 WANTLIB+=	pangoft2-1.0 pcre2-8 pixman-1 plc4 plds4 png pthread pthread smime3
 WANTLIB+=	sndio usbhid util vpx xcb xcb-render xcb-shm xkbcommon xml2
 WANTLIB+=	xshmfence xslt z
+WANTLIB+=	epoll-shim lzma udev
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \

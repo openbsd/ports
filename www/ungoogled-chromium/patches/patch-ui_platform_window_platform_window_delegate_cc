@@ -1,7 +1,7 @@
 Index: ui/platform_window/platform_window_delegate.cc
 --- ui/platform_window/platform_window_delegate.cc.orig
 +++ ui/platform_window/platform_window_delegate.cc
-@@ -61,7 +61,7 @@ gfx::Insets PlatformWindowDelegate::CalculateInsetsInD
+@@ -66,7 +66,7 @@ gfx::Insets PlatformWindowDelegate::CalculateInsetsInD
    return gfx::Insets();
  }
  

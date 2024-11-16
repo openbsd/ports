@@ -1,7 +1,7 @@
 Index: ash/display/mirror_window_controller.cc
 --- ash/display/mirror_window_controller.cc.orig
 +++ ash/display/mirror_window_controller.cc
-@@ -294,7 +294,11 @@ void MirrorWindowController::UpdateWindow(
+@@ -295,7 +295,11 @@ void MirrorWindowController::UpdateWindow(
        if (!base::Contains(display_info_list, iter->first,
                            &display::ManagedDisplayInfo::id)) {
          CloseAndDeleteHost(iter->second, true);

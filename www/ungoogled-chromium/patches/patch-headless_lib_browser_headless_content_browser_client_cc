@@ -10,7 +10,7 @@ Index: headless/lib/browser/headless_content_browser_client.cc
  #include "components/os_crypt/sync/os_crypt.h"  // nogncheck
  #include "content/public/browser/network_service_util.h"
  #endif
-@@ -478,7 +478,7 @@ void HeadlessContentBrowserClient::HandleExplicitlyAll
+@@ -488,7 +488,7 @@ void HeadlessContentBrowserClient::HandleExplicitlyAll
  
  void HeadlessContentBrowserClient::SetEncryptionKey(
      ::network::mojom::NetworkService* network_service) {

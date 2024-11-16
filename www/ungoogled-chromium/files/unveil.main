@@ -26,6 +26,9 @@
 /usr/local/bin/xdg-open rx
 /usr/local/bin/xdg-settings rx
 
+# libexpat is required for file dialog
+/usr/lib r
+
 # misc. files and libraries
 /usr/local/lib r
 /usr/local/ungoogled-chromium rx
