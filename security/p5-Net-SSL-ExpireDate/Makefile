@@ -1,6 +1,6 @@
 COMMENT =		obtain expiration date of SSL certificate
 
-DISTNAME =		Net-SSL-ExpireDate-1.24
+DISTNAME =		Net-SSL-ExpireDate-1.25
 CATEGORIES =		security
 
 # Perl
@@ -14,6 +14,9 @@ RUN_DEPENDS =		devel/p5-Time-Duration-Parse \
 			devel/p5-DateTime \
 			devel/p5-Time-TimeDate \
 			devel/p5-Class-Accessor
-TEST_DEPENDS =		${RUN_DEPENDS}
+TEST_DEPENDS =		${RUN_DEPENDS} \
+			devel/p5-Test-Base
+
+CONFIGURE_STYLE =	modbuild tiny
 
 .include <bsd.port.mk>
