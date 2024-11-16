@@ -1,6 +1,6 @@
 COMMENT=		various subroutines to format text
 
-DISTNAME =		Text-Format-0.62
+DISTNAME =		Text-Format-0.63
 CATEGORIES=		textproc
 
 # Perl
