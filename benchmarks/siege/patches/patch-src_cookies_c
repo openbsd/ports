@@ -15,11 +15,11 @@ Index: src/cookies.c
  cookies_add(COOKIES this, char *str, char *host)
  {
 -  size_t  id    = pthread_self();
-+  pthread_t  id    = pthread_self();
-   //int     hlen  = 0;
-   //int     dlen  = 0;
++  pthread_t  id = pthread_self();
    NODE   *cur   = NULL; 
-@@ -169,7 +169,7 @@ cookies_header(COOKIES this, char *host, char *newton)
+   NODE   *pre   = NULL; 
+   NODE   *new   = NULL;
+@@ -174,7 +174,7 @@ cookies_header(COOKIES this, char *host, char *newton)
    time_t now;
    struct tm tm;
    char   oreo[MAX_COOKIES_SIZE];
@@ -27,4 +27,4 @@ Index: src/cookies.c
 +  pthread_t id = pthread_self();
  
    memset(oreo, '\0', sizeof oreo);
- 
+   tmp = time(NULL);
