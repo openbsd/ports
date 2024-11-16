@@ -2,8 +2,7 @@ COMMENT=	concise attribute rewriting
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	HTML-RewriteAttributes-0.05
-REVISION=	1
+DISTNAME =	HTML-RewriteAttributes-0.06
 CATEGORIES=	www devel
 FIX_EXTRACT_PERMISSIONS=Yes
 

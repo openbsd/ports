@@ -1,4 +1,3 @@
-${P5SITE}/HTML/
 ${P5SITE}/HTML/RewriteAttributes/
 ${P5SITE}/HTML/RewriteAttributes.pm
 ${P5SITE}/HTML/RewriteAttributes/Links.pm
