@@ -68,6 +68,7 @@ include/fst/arcfilter.h
 include/fst/arcsort.h
 include/fst/bi-table.h
 include/fst/cache.h
+include/fst/cc-visitors.h
 include/fst/closure.h
 include/fst/compact-fst.h
 include/fst/compat.h
@@ -161,6 +162,7 @@ include/fst/fstlib.h
 include/fst/generic-register.h
 include/fst/heap.h
 include/fst/icu.h
+include/fst/impl-to-fst.h
 include/fst/intersect.h
 include/fst/interval-set.h
 include/fst/invert.h
@@ -223,7 +225,6 @@ include/fst/script/epsnormalize.h
 include/fst/script/equal.h
 include/fst/script/equivalent.h
 include/fst/script/fst-class.h
-include/fst/script/fstscript-decl.h
 include/fst/script/fstscript.h
 include/fst/script/getters.h
 include/fst/script/info-impl.h
