@@ -90,7 +90,7 @@ MODGO_MODULES =	\
 	github.com/coreos/go-semver							 v0.3.1 \
 	github.com/coreos/go-systemd/v22						 v22.5.0 \
 	github.com/cpuguy83/go-md2man/v2						 v2.0.5 \
-	github.com/creack/pty								 v1.1.23 \
+	github.com/creack/pty								 v1.1.24 \
 	github.com/cyberphone/json-canonicalization					 v0.0.0-20220623050100-57a0ce2678a7 \
 	github.com/danieljoos/wincred							 v1.2.1 \
 	github.com/davecgh/go-spew							 v1.1.2-0.20180830191138-d8f796af33cc \
