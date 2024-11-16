@@ -1305,7 +1305,12 @@ icinga-web2/modules/translation/library/Translation/Cli/TranslationCommand.php
 icinga-web2/modules/translation/library/Translation/Util/
 icinga-web2/modules/translation/library/Translation/Util/GettextTranslationHelper.php
 icinga-web2/modules/translation/module.info
-icinga-web2/phpstan-baseline.neon
+icinga-web2/phpstan-baseline-7x.neon
+icinga-web2/phpstan-baseline-8.0.neon
+icinga-web2/phpstan-baseline-8.1+.neon
+icinga-web2/phpstan-baseline-8x.neon
+icinga-web2/phpstan-baseline-by-php-version.php
+icinga-web2/phpstan-baseline-standard.neon
 icinga-web2/phpstan.neon
 icinga-web2/public/
 icinga-web2/public/css/
