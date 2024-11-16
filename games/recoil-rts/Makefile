@@ -10,8 +10,8 @@ COMMENT =		real-time strategy game engine for Beyond All Reason
 MJ =			105
 # don't reduce ${MN} to just single digit to avoid update-plist going berserk
 MN =			1.1
-BLD =			2577
-HASH =			g77272e9
+BLD =			2590
+HASH =			gb9462a0
 V =			${MJ}.${MN}pl${BLD}
 # ${IN_ENGINE_V} is what recoil uses/displays internally
 IN_ENGINE_V =		"${MJ}.${MN}-${BLD}-${HASH} BAR${MJ}"
@@ -23,6 +23,9 @@ PKGNAME =		recoil-rts-0.${V}
 DIST_STRING =		spring_bar_%7BBAR${MJ}%7D${MAJ}.${MN}-${BLD}-${HASH}
 
 DIST_TUPLE +=		github beyond-all-reason spring ${DIST_STRING} .
+DIST_TUPLE +=		github mikke89 RmlUi \
+			7a06f27db04fe5d13a5dacc19b2b4544673a4eca \
+			rts/lib/RmlUi # MIT
 DIST_TUPLE +=		github USCiLab cereal \
 			d1fcec807b372f04e4c1041b3058e11c12853e6e \
 			rts/lib/cereal # BSD-3
@@ -32,6 +35,9 @@ DIST_TUPLE +=		github skypjack entt \
 DIST_TUPLE +=		github gflags gflags \
 			f8a0efe03aa69b3336d8e228b37d4ccb17324b88 \
 			rts/lib/gflags # BSD-3
+DIST_TUPLE +=		github sammycage lunasvg \
+			d1eec967ec515395cfd669a1bfed8d5a6a119dde \
+			rts/lib/lunasvg # MIT
 DIST_TUPLE +=		github wolfpld tracy \
 			5a1f5371b792c12aea324213e1dc738b2923ae21 \
 			rts/lib/tracy # BSD-3

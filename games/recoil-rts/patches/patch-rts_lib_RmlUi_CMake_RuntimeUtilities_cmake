@@ -1,0 +1,18 @@
+RUNTIME_DEPENDENCY_SET is not supported on OpenBSD (see cmake).
+
+Index: rts/lib/RmlUi/CMake/RuntimeUtilities.cmake
+--- rts/lib/RmlUi/CMake/RuntimeUtilities.cmake.orig
++++ rts/lib/RmlUi/CMake/RuntimeUtilities.cmake
+@@ -24,9 +24,9 @@ endfunction()
+ ]]
+ function(setup_runtime_dependency_set_arg)
+ 	set(RMLUI_RUNTIME_DEPENDENCY_SET_ARG "" PARENT_SCOPE)
+-	if(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.21")
+-		set(RMLUI_RUNTIME_DEPENDENCY_SET_ARG RUNTIME_DEPENDENCY_SET rmlui_runtime_dependencies PARENT_SCOPE)
+-	endif()
++#	if(${CMAKE_VERSION} VERSION_GREATER_EQUAL "3.21")
++#		set(RMLUI_RUNTIME_DEPENDENCY_SET_ARG RUNTIME_DEPENDENCY_SET rmlui_runtime_dependencies PARENT_SCOPE)
++#	endif()
+ endfunction()
+ 
+ #[[
