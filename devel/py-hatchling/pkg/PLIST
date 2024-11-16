@@ -131,6 +131,14 @@ lib/python${MODPY_VERSION}/site-packages/hatchling/dep/${MODPY_PYCACHE}__init__.
 lib/python${MODPY_VERSION}/site-packages/hatchling/dep/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/hatchling/dep/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/hatchling/dep/core.py
+lib/python${MODPY_VERSION}/site-packages/hatchling/licenses/
+lib/python${MODPY_VERSION}/site-packages/hatchling/licenses/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hatchling/licenses/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/hatchling/licenses/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/hatchling/licenses/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hatchling/licenses/${MODPY_PYCACHE}supported.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/hatchling/licenses/${MODPY_PYCACHE}supported.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/hatchling/licenses/supported.py
 lib/python${MODPY_VERSION}/site-packages/hatchling/metadata/
 lib/python${MODPY_VERSION}/site-packages/hatchling/metadata/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hatchling/metadata/${MODPY_PYCACHE}/
