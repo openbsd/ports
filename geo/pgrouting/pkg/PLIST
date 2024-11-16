@@ -1,4 +1,4 @@
-@so lib/postgresql/libpgrouting-3.6.so
+@so lib/postgresql/libpgrouting-3.7.so
 share/postgresql/extension/pgrouting--2.6.0--${V}.sql
 share/postgresql/extension/pgrouting--2.6.1--${V}.sql
 share/postgresql/extension/pgrouting--2.6.2--${V}.sql
@@ -32,5 +32,6 @@ share/postgresql/extension/pgrouting--3.5.1--${V}.sql
 share/postgresql/extension/pgrouting--3.6.0--${V}.sql
 share/postgresql/extension/pgrouting--3.6.1--${V}.sql
 share/postgresql/extension/pgrouting--3.6.2--${V}.sql
+share/postgresql/extension/pgrouting--3.6.3--${V}.sql
 share/postgresql/extension/pgrouting--${V}.sql
 share/postgresql/extension/pgrouting.control
