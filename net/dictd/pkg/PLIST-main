@@ -10,6 +10,6 @@ bin/dictl
 @man man/man1/dict_lookup.1
 @man man/man1/dictl.1
 share/examples/dictd/
-share/examples/dictd/dict1.conf
 share/examples/dictd/dict.conf
 @sample ${SYSCONFDIR}/dict.conf
+share/examples/dictd/dict1.conf

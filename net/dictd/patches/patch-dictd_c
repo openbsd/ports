@@ -52,7 +52,7 @@ Index: dictd.c
 +    * drop "getpw id"    after privilege drop
 +    */
 +   if (inetd) {
-+      /* drop "exec" unless --pp was used */
++      /* drop "proc exec" unless --pp was used */
 +      if (preprocessor != NULL) {
 +         if (pledge("stdio rpath proc exec", NULL) == -1)
 +            err_fatal_errno(__func__, "pledge");

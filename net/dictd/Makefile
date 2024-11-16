@@ -1,13 +1,11 @@
 COMMENT-main=	Dictionary Server Protocol client
 COMMENT-server=	Dictionary Server Protocol server
 
-V=		1.13.1
+V=		1.13.2
 DISTNAME=	dictd-$V
 
 PKGNAME-main=	dictd-client-$V
 PKGNAME-server=	dictd-server-$V
-REVISION-main=	4
-REVISION-server=3
 
 CATEGORIES=	net education
 
