@@ -25,8 +25,7 @@ PKG_ARGS+=      -Dx86=1
 PKG_ARGS+=      -Dx86=0
 .endif
 
-BUILD_DEPENDS =	x11/qt6/qtmultimedia \
-		graphics/vulkan-loader
+BUILD_DEPENDS =	x11/qt6/qtmultimedia
 
 LIB_DEPENDS =	multimedia/assimp \
 		x11/qt6/qtshadertools \

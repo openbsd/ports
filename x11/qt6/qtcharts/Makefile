@@ -11,6 +11,4 @@ WANTLIB += c m
 
 LIB_DEPENDS =	x11/qt6/qtdeclarative
 
-BUILD_DEPENDS =	graphics/vulkan-loader
-
 .include <bsd.port.mk>

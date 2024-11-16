@@ -16,8 +16,7 @@ LIB_DEPENDS =	wayland/wayland \
 		x11/qt6/qtdeclarative \
 		x11/xkbcommon
 
-BUILD_DEPENDS =	graphics/vulkan-headers \
-		wayland/wayland-protocols \
+BUILD_DEPENDS =	wayland/wayland-protocols \
 		x11/qt6/qtshadertools
 
 .include <bsd.port.mk>

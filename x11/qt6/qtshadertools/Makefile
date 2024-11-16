@@ -8,8 +8,6 @@ WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui c m xkbcommon
 
 MODQT6_DEPS =	No
 
-BUILD_DEPENDS =	graphics/vulkan-loader
-
 LIB_DEPENDS =	x11/qt6/qtbase \
 		x11/xkbcommon
 

@@ -24,13 +24,13 @@ MODCLANG_COMPILER_LINKS =	No
 MODCLANG_BUILDDEP =		No
 MODCLANG_RUNDEP =		No
 
+BUILD_DEPENDS =	graphics/vulkan-loader
+
 LIB_DEPENDS =	${MODCLANG_LIB_DEPENDS} \
 		archivers/zstd \
 		x11/qt6/qtbase \
 		x11/qt6/qtdeclarative \
 		x11/xkbcommon
-
-BUILD_DEPENDS =	graphics/vulkan-loader
 
 CONFIGURE_ENV =	LLVM_INSTALL_DIR=${LOCALBASE}/llvm${MODCLANG_VERSION}
 MODCMAKE_LDFLAGS = -L${LOCALBASE}/llvm${MODCLANG_VERSION}/lib -Wl,-rpath=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib

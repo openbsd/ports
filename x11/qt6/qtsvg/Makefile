@@ -8,8 +8,6 @@ SHARED_LIBS +=  Qt6SvgWidgets       1.1 # 6.7
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Widgets c m
 WANTLIB += xkbcommon z
 
-BUILD_DEPENDS =	graphics/vulkan-loader
-
 MODQT6_DEPS =	No
 LIB_DEPENDS =	x11/xkbcommon \
 		${MODQT6_LIB_DEPENDS}

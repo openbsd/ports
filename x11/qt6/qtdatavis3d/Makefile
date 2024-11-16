@@ -10,6 +10,4 @@ WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick c m
 
 LIB_DEPENDS =	x11/qt6/qtdeclarative
 
-BUILD_DEPENDS =	graphics/vulkan-loader
-
 .include <bsd.port.mk>

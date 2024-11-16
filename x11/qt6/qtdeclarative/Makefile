@@ -59,8 +59,8 @@ MODQT6_DEPS =	No
 #PKG_ARGS+=      -Dx86=0
 #.endif
 
-BUILD_DEPENDS =	x11/qt6/qtshadertools \
-		graphics/vulkan-loader
+BUILD_DEPENDS =	graphics/vulkan-loader \
+		x11/qt6/qtshadertools
 
 LIB_DEPENDS =	x11/qt6/qtlanguageserver \
 		x11/qt6/qtbase \

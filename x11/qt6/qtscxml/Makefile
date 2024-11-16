@@ -13,6 +13,4 @@ WANTLIB += c m xkbcommon
 LIB_DEPENDS =	x11/qt6/qtdeclarative \
 		x11/xkbcommon
 
-BUILD_DEPENDS =	graphics/vulkan-loader
-
 .include <bsd.port.mk>

@@ -9,6 +9,4 @@ WANTLIB += c m
 
 LIB_DEPENDS =	x11/qt6/qtserialport
 
-BUILD_DEPENDS =	graphics/vulkan-loader
-
 .include <bsd.port.mk>

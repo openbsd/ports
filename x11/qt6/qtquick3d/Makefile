@@ -27,6 +27,4 @@ LIB_DEPENDS =	multimedia/assimp \
 		x11/qt6/qtshadertools \
 		x11/xkbcommon
 
-BUILD_DEPENDS =	graphics/vulkan-loader
-
 .include <bsd.port.mk>
