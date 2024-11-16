@@ -1,10 +1,9 @@
 COMMENT=	pager/text-based web browser
 
-C=		5ae3ef7cb20cd2209629ac0508c05206fd0d0b00
+C=		36005bf6ef17b0094e0c67a280edb5046383208d
 DIST_TUPLE=	srht rkta w3m $C .
 WRKDIST=	${WRKDIR}/w3m-$C
-DISTNAME=	w3m-0.5.3pl20240810
-REVISION=	0
+DISTNAME=	w3m-0.5.3pl20241116
 
 CATEGORIES=	www
 
