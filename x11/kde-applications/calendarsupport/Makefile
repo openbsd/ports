@@ -43,8 +43,7 @@ LIB_DEPENDS =	devel/kf6/kcalendarcore \
 		x11/kde-applications/akonadi>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/kcalutils>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/kidentitymanagement>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kmime>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kpimtextedit>=${MODKDE_GEAR_VERSION}
+		x11/kde-applications/kmime>=${MODKDE_GEAR_VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 

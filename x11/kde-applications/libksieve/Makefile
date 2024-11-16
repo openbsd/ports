@@ -47,8 +47,6 @@ LIB_DEPENDS =	devel/kf6/attica \
 		x11/kde-applications/kidentitymanagement>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/kmailtransport>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/kmime>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kimap>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kpimtextedit>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/libkdepim>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/pimcommon>=${MODKDE_GEAR_VERSION} \
 		x11/qt6/qtdeclarative \

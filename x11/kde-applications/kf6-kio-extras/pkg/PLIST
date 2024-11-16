@@ -652,6 +652,9 @@ share/doc/HTML/ru/kioworker6/thumbnail/index.docbook
 share/doc/HTML/ru/kioworker6/xz/
 share/doc/HTML/ru/kioworker6/xz/index.cache.bz2
 share/doc/HTML/ru/kioworker6/xz/index.docbook
+share/doc/HTML/ru/kioworker6/zstd/
+share/doc/HTML/ru/kioworker6/zstd/index.cache.bz2
+share/doc/HTML/ru/kioworker6/zstd/index.docbook
 share/doc/HTML/sl/kcontrol6/
 share/doc/HTML/sl/kcontrol6/cookies/
 share/doc/HTML/sl/kcontrol6/cookies/index.cache.bz2
@@ -1691,10 +1694,12 @@ share/locale/ru/LC_MESSAGES/kio-extras_kcms.mo
 share/locale/ru/LC_MESSAGES/kio6_activities.mo
 share/locale/ru/LC_MESSAGES/kio6_afc.mo
 share/locale/ru/LC_MESSAGES/kio6_archive.mo
+share/locale/ru/LC_MESSAGES/kio6_filenamesearch.mo
 share/locale/ru/LC_MESSAGES/kio6_fish.mo
 share/locale/ru/LC_MESSAGES/kio6_info.mo
 share/locale/ru/LC_MESSAGES/kio6_man.mo
 share/locale/ru/LC_MESSAGES/kio6_mtp.mo
+share/locale/ru/LC_MESSAGES/kio6_recentlyused.mo
 share/locale/ru/LC_MESSAGES/kio6_sftp.mo
 share/locale/ru/LC_MESSAGES/kio6_smb.mo
 share/locale/ru/LC_MESSAGES/kio6_thumbnail.mo

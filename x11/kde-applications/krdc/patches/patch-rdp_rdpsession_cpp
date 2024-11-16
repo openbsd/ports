@@ -12,7 +12,7 @@ Index: rdp/rdpsession.cpp
  #include "rdpview.h"
  
  #include "krdc_debug.h"
-@@ -505,7 +509,11 @@ bool RdpSession::start()
+@@ -508,7 +512,11 @@ bool RdpSession::start()
      }
  
      m_thread = std::thread(std::bind(&RdpSession::run, this));

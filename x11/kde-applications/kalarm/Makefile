@@ -77,7 +77,6 @@ LIB_DEPENDS =	devel/kf6/kauth \
 		x11/kde-applications/kcalutils>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/kidentitymanagement>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/kmailtransport>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kmime>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kpimtextedit>=${MODKDE_GEAR_VERSION}
+		x11/kde-applications/kmime>=${MODKDE_GEAR_VERSION}
 
 .include <bsd.port.mk>

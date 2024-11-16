@@ -88,7 +88,6 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		x11/kde-applications/akonadi-contacts>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/akonadi-import-wizard>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/akonadi-mime>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/akonadi-notes>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/akonadi>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/calendarsupport>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/eventviews>=${MODKDE_GEAR_VERSION} \

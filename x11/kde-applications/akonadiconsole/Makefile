@@ -60,7 +60,6 @@ LIB_DEPENDS =	databases/xapian-core \
 		x11/kde-applications/grantleetheme>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/kidentitymanagement>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/kmime>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kpimtextedit>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/libkdepim>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/libkleo>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/messagelib>=${MODKDE_GEAR_VERSION} \

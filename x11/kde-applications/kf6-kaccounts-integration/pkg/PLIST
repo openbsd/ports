@@ -99,3 +99,4 @@ share/locale/uk/LC_MESSAGES/kaccounts-integration.mo
 share/locale/zh_CN/LC_MESSAGES/kaccounts-integration.mo
 share/locale/zh_TW/LC_MESSAGES/kaccounts-integration.mo
 @tag update-desktop-database
+share/qlogging-categories6/kaccounts.categories

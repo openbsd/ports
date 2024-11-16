@@ -59,7 +59,6 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		x11/kde-applications/akonadi>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/grantleetheme>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/kmime>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kpimtextedit>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/libkleo>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/messagelib>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/pimcommon>=${MODKDE_GEAR_VERSION} \

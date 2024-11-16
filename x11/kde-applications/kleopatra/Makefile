@@ -59,7 +59,6 @@ LIB_DEPENDS =	devel/kf6/kcodecs \
 		x11/kde-applications/akonadi>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/kidentitymanagement>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/kmailtransport>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kmbox>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/kmime>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/libkleo>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/mimetreeparser>=${MODKDE_GEAR_VERSION}

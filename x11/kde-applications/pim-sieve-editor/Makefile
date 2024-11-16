@@ -20,6 +20,8 @@ MODKDE_DESKTOP_FILE = yes
 MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
 
+RUN_DEPENDS =	x11/gtk+4,-guic
+
 LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/kcolorscheme \
 		devel/kf6/kconfig \

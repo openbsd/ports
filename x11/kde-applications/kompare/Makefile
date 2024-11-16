@@ -20,8 +20,7 @@ MODKF5_L10N_CONFLICT = yes
 MODKDE_DOCS = yes
 MODKDE_DESKTOP_FILE = yes
 
-LIB_DEPENDS =	devel/kf6/kauth \
-		devel/kf6/kcodecs \
+LIB_DEPENDS =	devel/kf6/kcodecs \
 		devel/kf6/kcompletion \
 		devel/kf6/kconfig \
 		devel/kf6/kconfigwidgets \
@@ -33,12 +32,9 @@ LIB_DEPENDS =	devel/kf6/kauth \
 		devel/kf6/kparts \
 		devel/kf6/kservice \
 		devel/kf6/ktexteditor \
-		devel/kf6/ktextwidgets \
 		devel/kf6/kwidgetsaddons \
-		devel/kf6/kwindowsystem \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \
-		devel/kf6/sonnet \
 		devel/kf6/syntax-highlighting \
 		devel/kf6/kcolorscheme \
 		x11/kde-applications/libkomparediff2>=${MODKDE_GEAR_VERSION}

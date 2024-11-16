@@ -64,6 +64,7 @@ lib/qt6/qml/org/kde/pim/mimetreeparser/qmldir
 share/kf6/mkspecs/
 share/kf6/mkspecs/qt_MimeTreeParserCore.pri
 share/kf6/mkspecs/qt_MimeTreeParserWidgets.pri
+share/locale/ar/LC_MESSAGES/mimetreeparser6.mo
 share/locale/ast/LC_MESSAGES/mimetreeparser6.mo
 share/locale/ca/LC_MESSAGES/mimetreeparser6.mo
 share/locale/ca@valencia/LC_MESSAGES/mimetreeparser6.mo
