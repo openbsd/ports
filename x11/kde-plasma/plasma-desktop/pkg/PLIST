@@ -2421,6 +2421,7 @@ share/locale/id/LC_MESSAGES/kcm_baloofile.mo
 share/locale/id/LC_MESSAGES/kcm_componentchooser.mo
 share/locale/id/LC_MESSAGES/kcm_desktoppaths.mo
 share/locale/id/LC_MESSAGES/kcm_device_automounter.mo
+share/locale/id/LC_MESSAGES/kcm_gamecontroller.mo
 share/locale/id/LC_MESSAGES/kcm_kded.mo
 share/locale/id/LC_MESSAGES/kcm_keyboard.mo
 share/locale/id/LC_MESSAGES/kcm_keys.mo
@@ -2433,6 +2434,7 @@ share/locale/id/LC_MESSAGES/kcm_solid_actions.mo
 share/locale/id/LC_MESSAGES/kcm_splashscreen.mo
 share/locale/id/LC_MESSAGES/kcm_tablet.mo
 share/locale/id/LC_MESSAGES/kcm_touchpad.mo
+share/locale/id/LC_MESSAGES/kcm_touchscreen.mo
 share/locale/id/LC_MESSAGES/kcm_workspace.mo
 share/locale/id/LC_MESSAGES/kcmkclock.mo
 share/locale/id/LC_MESSAGES/kcmmouse.mo

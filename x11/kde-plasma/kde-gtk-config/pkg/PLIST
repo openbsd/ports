@@ -11,5 +11,6 @@ share/kcm-gtk-module/preview.ui
 share/kconf_update/
 share/kconf_update/gtkconfig.upd
 share/kconf_update/remove_window_decorations_from_gtk_css.sh
+share/qlogging-categories6/kde-gtk-config.categories
 share/themes/Breeze/
 share/themes/Breeze/window_decorations.css
