@@ -1,6 +1,6 @@
 COMMENT =	terminal screen handling and optimisation
 
-DISTNAME =	Curses-1.44
+DISTNAME =	Curses-1.45
 FIX_EXTRACT_PERMISSIONS = Yes
 
 CATEGORIES =	devel
