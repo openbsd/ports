@@ -1,6 +1,9 @@
-Fix syntax error by our sh:
+ksh(1) defaults to alias login='exec login' which expands before definition
+of the equally named function, i.e. 'exec login() ...' causing
 
   dnsapi/dns_netcup.sh[128]: syntax error: `(' unexpected
+
+Rename it to _login() for sh(1) -n to pass.
 
 Index: dnsapi/dns_netcup.sh
 --- dnsapi/dns_netcup.sh.orig
@@ -32,12 +35,3 @@ Index: dnsapi/dns_netcup.sh
    tmp=$(_post "{\"action\": \"login\", \"param\": {\"apikey\": \"$NC_Apikey\", \"apipassword\": \"$NC_Apipw\", \"customernumber\": \"$NC_CID\"}}" "$end" "" "POST")
    sid=$(echo "$tmp" | tr '{}' '\n' | grep apisessionid | cut -d '"' -f 4)
    _debug "$tmp"
-@@ -134,7 +134,7 @@ login() {
-     return 1
-   fi
- }
--logout() {
-+_logout() {
-   tmp=$(_post "{\"action\": \"logout\", \"param\": {\"apikey\": \"$NC_Apikey\", \"apisessionid\": \"$sid\", \"customernumber\": \"$NC_CID\"}}" "$end" "" "POST")
-   _debug "$tmp"
-   if [ "$(_getfield "$tmp" "4" | sed s/\"status\":\"//g | sed s/\"//g)" != "success" ]; then
