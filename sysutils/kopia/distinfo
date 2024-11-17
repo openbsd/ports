@@ -930,7 +930,7 @@ SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefS
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.0-20190102054323-c2f93a96b099.mod) = scYIN+phM18U32TzGUw82S4PYo9gZIBnGJUPDXodvp4=
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.mod) = scYIN+phM18U32TzGUw82S4PYo9gZIBnGJUPDXodvp4=
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.zip) = 7qqCcA6WrF6APXqcMjYzMlBL7/j7sSAkkrTUPVpec2A=
-SHA256 (kopia-v0.18.0.zip) = BJOFJGGCexi0+7ngzKBYyk3LUZuP5SiGJkIl+Sbi8bo=
+SHA256 (kopia-v0.18.1.zip) = MtXbKcDQfU80qqXOz7QRFbEu3ZxgU2QeJV7upbLPeWk=
 SIZE (go_modules/al.essio.dev/pkg/shellescape/@v/v1.5.1.mod) = 113
 SIZE (go_modules/al.essio.dev/pkg/shellescape/@v/v1.5.1.zip) = 14934
 SIZE (go_modules/cel.dev/expr/@v/v0.15.0.mod) = 156
@@ -1863,4 +1863,4 @@ SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
 SIZE (go_modules/honnef.co/go/tools/@v/v0.0.0-20190102054323-c2f93a96b099.mod) = 26
 SIZE (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.mod) = 26
 SIZE (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.zip) = 449180
-SIZE (kopia-v0.18.0.zip) = 2380431
+SIZE (kopia-v0.18.1.zip) = 2381452
