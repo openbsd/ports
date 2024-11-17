@@ -1,6 +1,6 @@
 COMMENT =	flexibly parse strings and turn them into DateTime objects
 
-DISTNAME =	DateTime-Format-Flexible-0.34
+DISTNAME =	DateTime-Format-Flexible-0.36
 
 CATEGORIES =	devel
 
