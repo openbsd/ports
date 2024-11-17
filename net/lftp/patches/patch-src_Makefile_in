@@ -1,9 +1,9 @@
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -252,7 +252,7 @@ am__installdirs = "$(DESTDIR)$(libdir)" "$(DESTDIR)$(p
- 	"$(DESTDIR)$(bindir)" "$(DESTDIR)$(bindir)" \
- 	"$(DESTDIR)$(pkgdatadir)"
+@@ -270,7 +270,7 @@ am__uninstall_files_from_dir = { \
+          $(am__cd) "$$dir" && rm -f $$files; }; \
+   }
  LTLIBRARIES = $(lib_LTLIBRARIES) $(pkgverlib_LTLIBRARIES)
 -cmd_mirror_la_LIBADD =
 +cmd_mirror_la_LIBADD = $(GNULIB)

@@ -3,7 +3,7 @@ Use GNU readline as our base readline lacks add_history_time().
 Index: configure
 --- configure.orig
 +++ configure
-@@ -55428,7 +55428,7 @@ fi
+@@ -71020,7 +71020,7 @@ fi
  	fi
          readline_ld_flags="-L$readline_prefix/lib"
          if test -z "$readline_lib_flags"; then
