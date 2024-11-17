@@ -2,9 +2,8 @@ COMMENT= 	DateTime::Format extension to HTTP formats
 
 MODULES=	cpan 
 PKG_ARCH=	*
-DISTNAME=	DateTime-Format-HTTP-0.42
+DISTNAME =	DateTime-Format-HTTP-0.43
 CATEGORIES=	devel www
-REVISION=	0
 
 # perl
 PERMIT_PACKAGE=	Yes
