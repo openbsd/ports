@@ -1,6 +1,7 @@
      SUBDIR =
      SUBDIR += ADMsnmp
      SUBDIR += ROPgadget
+     SUBDIR += acme.sh
      SUBDIR += aescrypt
      SUBDIR += age
      SUBDIR += age-plugin-yubikey
