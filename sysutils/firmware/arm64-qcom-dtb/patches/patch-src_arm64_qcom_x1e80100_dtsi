@@ -9,7 +9,161 @@ Index: src/arm64/qcom/x1e80100.dtsi
  #include <dt-bindings/clock/qcom,x1e80100-dispcc.h>
  #include <dt-bindings/clock/qcom,x1e80100-gcc.h>
  #include <dt-bindings/clock/qcom,x1e80100-gpucc.h>
-@@ -745,7 +746,7 @@
+@@ -70,8 +71,8 @@
+ 			reg = <0x0 0x0>;
+ 			enable-method = "psci";
+ 			next-level-cache = <&L2_0>;
+-			power-domains = <&CPU_PD0>;
+-			power-domain-names = "psci";
++			power-domains = <&CPU_PD0>, <&scmi_dvfs 0>;
++			power-domain-names = "psci", "perf";
+ 			cpu-idle-states = <&CLUSTER_C4>;
+ 
+ 			L2_0: l2-cache {
+@@ -87,8 +88,8 @@
+ 			reg = <0x0 0x100>;
+ 			enable-method = "psci";
+ 			next-level-cache = <&L2_0>;
+-			power-domains = <&CPU_PD1>;
+-			power-domain-names = "psci";
++			power-domains = <&CPU_PD1>, <&scmi_dvfs 0>;
++			power-domain-names = "psci", "perf";
+ 			cpu-idle-states = <&CLUSTER_C4>;
+ 		};
+ 
+@@ -98,8 +99,8 @@
+ 			reg = <0x0 0x200>;
+ 			enable-method = "psci";
+ 			next-level-cache = <&L2_0>;
+-			power-domains = <&CPU_PD2>;
+-			power-domain-names = "psci";
++			power-domains = <&CPU_PD2>, <&scmi_dvfs 0>;
++			power-domain-names = "psci", "perf";
+ 			cpu-idle-states = <&CLUSTER_C4>;
+ 		};
+ 
+@@ -109,8 +110,8 @@
+ 			reg = <0x0 0x300>;
+ 			enable-method = "psci";
+ 			next-level-cache = <&L2_0>;
+-			power-domains = <&CPU_PD3>;
+-			power-domain-names = "psci";
++			power-domains = <&CPU_PD3>, <&scmi_dvfs 0>;
++			power-domain-names = "psci", "perf";
+ 			cpu-idle-states = <&CLUSTER_C4>;
+ 		};
+ 
+@@ -120,8 +121,8 @@
+ 			reg = <0x0 0x10000>;
+ 			enable-method = "psci";
+ 			next-level-cache = <&L2_1>;
+-			power-domains = <&CPU_PD4>;
+-			power-domain-names = "psci";
++			power-domains = <&CPU_PD4>, <&scmi_dvfs 1>;
++			power-domain-names = "psci", "perf";
+ 			cpu-idle-states = <&CLUSTER_C4>;
+ 
+ 			L2_1: l2-cache {
+@@ -137,8 +138,8 @@
+ 			reg = <0x0 0x10100>;
+ 			enable-method = "psci";
+ 			next-level-cache = <&L2_1>;
+-			power-domains = <&CPU_PD5>;
+-			power-domain-names = "psci";
++			power-domains = <&CPU_PD5>, <&scmi_dvfs 1>;
++			power-domain-names = "psci", "perf";
+ 			cpu-idle-states = <&CLUSTER_C4>;
+ 		};
+ 
+@@ -148,8 +149,8 @@
+ 			reg = <0x0 0x10200>;
+ 			enable-method = "psci";
+ 			next-level-cache = <&L2_1>;
+-			power-domains = <&CPU_PD6>;
+-			power-domain-names = "psci";
++			power-domains = <&CPU_PD6>, <&scmi_dvfs 1>;
++			power-domain-names = "psci", "perf";
+ 			cpu-idle-states = <&CLUSTER_C4>;
+ 		};
+ 
+@@ -159,8 +160,8 @@
+ 			reg = <0x0 0x10300>;
+ 			enable-method = "psci";
+ 			next-level-cache = <&L2_1>;
+-			power-domains = <&CPU_PD7>;
+-			power-domain-names = "psci";
++			power-domains = <&CPU_PD7>, <&scmi_dvfs 1>;
++			power-domain-names = "psci", "perf";
+ 			cpu-idle-states = <&CLUSTER_C4>;
+ 		};
+ 
+@@ -170,8 +171,8 @@
+ 			reg = <0x0 0x20000>;
+ 			enable-method = "psci";
+ 			next-level-cache = <&L2_2>;
+-			power-domains = <&CPU_PD8>;
+-			power-domain-names = "psci";
++			power-domains = <&CPU_PD8>, <&scmi_dvfs 2>;
++			power-domain-names = "psci", "perf";
+ 			cpu-idle-states = <&CLUSTER_C4>;
+ 
+ 			L2_2: l2-cache {
+@@ -187,8 +188,8 @@
+ 			reg = <0x0 0x20100>;
+ 			enable-method = "psci";
+ 			next-level-cache = <&L2_2>;
+-			power-domains = <&CPU_PD9>;
+-			power-domain-names = "psci";
++			power-domains = <&CPU_PD9>, <&scmi_dvfs 2>;
++			power-domain-names = "psci", "perf";
+ 			cpu-idle-states = <&CLUSTER_C4>;
+ 		};
+ 
+@@ -198,8 +199,8 @@
+ 			reg = <0x0 0x20200>;
+ 			enable-method = "psci";
+ 			next-level-cache = <&L2_2>;
+-			power-domains = <&CPU_PD10>;
+-			power-domain-names = "psci";
++			power-domains = <&CPU_PD10>, <&scmi_dvfs 2>;
++			power-domain-names = "psci", "perf";
+ 			cpu-idle-states = <&CLUSTER_C4>;
+ 		};
+ 
+@@ -209,8 +210,8 @@
+ 			reg = <0x0 0x20300>;
+ 			enable-method = "psci";
+ 			next-level-cache = <&L2_2>;
+-			power-domains = <&CPU_PD11>;
+-			power-domain-names = "psci";
++			power-domains = <&CPU_PD11>, <&scmi_dvfs 2>;
++			power-domain-names = "psci", "perf";
+ 			cpu-idle-states = <&CLUSTER_C4>;
+ 		};
+ 
+@@ -310,6 +311,21 @@
+ 			interconnects = <&aggre2_noc MASTER_CRYPTO QCOM_ICC_TAG_ALWAYS
+ 					 &mc_virt SLAVE_EBI1 QCOM_ICC_TAG_ALWAYS>;
+ 		};
++
++		scmi {
++			compatible = "arm,scmi";
++			mboxes = <&cpucp_mbox 0>, <&cpucp_mbox 2>;
++			mbox-names = "tx", "rx";
++			shmem = <&cpu_scp_lpri0>, <&cpu_scp_lpri1>;
++
++			#address-cells = <1>;
++			#size-cells = <0>;
++
++			scmi_dvfs: protocol@13 {
++				reg = <0x13>;
++				#power-domain-cells = <1>;
++			};
++		};
+ 	};
+ 
+ 	clk_virt: interconnect-0 {
+@@ -745,7 +761,7 @@
  				 <&sleep_clk>,
  				 <0>,
  				 <&pcie4_phy>,
@@ -18,7 +172,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  				 <&pcie6a_phy>,
  				 <0>,
  				 <&usb_1_ss0_qmpphy QMP_USB43DP_USB3_PIPE_CLK>,
-@@ -1979,7 +1980,7 @@
+@@ -1979,7 +1995,7 @@
  
  			i2c0: i2c@b80000 {
  				compatible = "qcom,geni-i2c";
@@ -27,7 +181,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  
  				interrupts = <GIC_SPI 373 IRQ_TYPE_LEVEL_HIGH>;
  
-@@ -2142,9 +2143,31 @@
+@@ -2142,9 +2158,31 @@
  				status = "disabled";
  			};
  
@@ -60,7 +214,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  
  				interrupts = <GIC_SPI 584 IRQ_TYPE_LEVEL_HIGH>;
  
-@@ -2243,7 +2266,7 @@
+@@ -2243,7 +2281,7 @@
  
  			i2c4: i2c@b90000 {
  				compatible = "qcom,geni-i2c";
@@ -69,7 +223,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  
  				interrupts = <GIC_SPI 586 IRQ_TYPE_LEVEL_HIGH>;
  
-@@ -2603,6 +2626,8 @@
+@@ -2603,6 +2641,8 @@
  			#clock-cells = <1>;
  			#phy-cells = <1>;
  
@@ -78,7 +232,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  			status = "disabled";
  
  			ports {
-@@ -2671,6 +2696,8 @@
+@@ -2671,6 +2711,8 @@
  			#clock-cells = <1>;
  			#phy-cells = <1>;
  
@@ -87,7 +241,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  			status = "disabled";
  
  			ports {
-@@ -2739,6 +2766,8 @@
+@@ -2739,6 +2781,8 @@
  			#clock-cells = <1>;
  			#phy-cells = <1>;
  
@@ -96,7 +250,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  			status = "disabled";
  
  			ports {
-@@ -2772,7 +2801,7 @@
+@@ -2772,7 +2816,7 @@
  
  		cnoc_main: interconnect@1500000 {
  			compatible = "qcom,x1e80100-cnoc-main";
@@ -105,7 +259,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  
  			qcom,bcm-voters = <&apps_bcm_voter>;
  
-@@ -2781,7 +2810,7 @@
+@@ -2781,7 +2825,7 @@
  
  		config_noc: interconnect@1600000 {
  			compatible = "qcom,x1e80100-cnoc-cfg";
@@ -114,7 +268,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  
  			qcom,bcm-voters = <&apps_bcm_voter>;
  
-@@ -2790,7 +2819,7 @@
+@@ -2790,7 +2834,7 @@
  
  		system_noc: interconnect@1680000 {
  			compatible = "qcom,x1e80100-system-noc";
@@ -123,7 +277,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  
  			qcom,bcm-voters = <&apps_bcm_voter>;
  
-@@ -2799,7 +2828,7 @@
+@@ -2799,7 +2843,7 @@
  
  		pcie_south_anoc: interconnect@16c0000 {
  			compatible = "qcom,x1e80100-pcie-south-anoc";
@@ -132,7 +286,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  
  			qcom,bcm-voters = <&apps_bcm_voter>;
  
-@@ -2808,7 +2837,7 @@
+@@ -2808,7 +2852,7 @@
  
  		pcie_center_anoc: interconnect@16d0000 {
  			compatible = "qcom,x1e80100-pcie-center-anoc";
@@ -141,7 +295,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  
  			qcom,bcm-voters = <&apps_bcm_voter>;
  
-@@ -2817,7 +2846,7 @@
+@@ -2817,7 +2861,7 @@
  
  		aggre1_noc: interconnect@16e0000 {
  			compatible = "qcom,x1e80100-aggre1-noc";
@@ -150,7 +304,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  
  			qcom,bcm-voters = <&apps_bcm_voter>;
  
-@@ -2826,7 +2855,7 @@
+@@ -2826,7 +2870,7 @@
  
  		aggre2_noc: interconnect@1700000 {
  			compatible = "qcom,x1e80100-aggre2-noc";
@@ -159,7 +313,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  
  			qcom,bcm-voters = <&apps_bcm_voter>;
  
-@@ -2835,7 +2864,7 @@
+@@ -2835,7 +2879,7 @@
  
  		pcie_north_anoc: interconnect@1740000 {
  			compatible = "qcom,x1e80100-pcie-north-anoc";
@@ -168,7 +322,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  
  			qcom,bcm-voters = <&apps_bcm_voter>;
  
-@@ -2844,7 +2873,7 @@
+@@ -2844,7 +2888,7 @@
  
  		usb_center_anoc: interconnect@1750000 {
  			compatible = "qcom,x1e80100-usb-center-anoc";
@@ -177,7 +331,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  
  			qcom,bcm-voters = <&apps_bcm_voter>;
  
-@@ -2853,7 +2882,7 @@
+@@ -2853,7 +2897,7 @@
  
  		usb_north_anoc: interconnect@1760000 {
  			compatible = "qcom,x1e80100-usb-north-anoc";
@@ -186,7 +340,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  
  			qcom,bcm-voters = <&apps_bcm_voter>;
  
-@@ -2862,16 +2891,87 @@
+@@ -2862,16 +2906,87 @@
  
  		usb_south_anoc: interconnect@1770000 {
  			compatible = "qcom,x1e80100-usb-south-anoc";
@@ -276,7 +430,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  
  			qcom,bcm-voters = <&apps_bcm_voter>;
  
-@@ -3000,6 +3100,126 @@
+@@ -3000,6 +3115,126 @@
  			status = "disabled";
  		};
  
@@ -403,7 +557,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  		pcie4: pci@1c08000 {
  			device_type = "pci";
  			compatible = "qcom,pcie-x1e80100";
-@@ -3350,7 +3570,7 @@
+@@ -3350,7 +3585,7 @@
  
  		nsp_noc: interconnect@320c0000 {
  			compatible = "qcom,x1e80100-nsp-noc";
@@ -412,7 +566,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  
  			qcom,bcm-voters = <&apps_bcm_voter>;
  
-@@ -3385,6 +3605,8 @@
+@@ -3385,6 +3620,8 @@
  
  			pinctrl-0 = <&wsa2_swr_active>;
  			pinctrl-names = "default";
@@ -421,7 +575,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  
  			qcom,din-ports = <4>;
  			qcom,dout-ports = <9>;
-@@ -3433,6 +3655,8 @@
+@@ -3433,6 +3670,8 @@
  			pinctrl-0 = <&rx_swr_active>;
  			pinctrl-names = "default";
  
@@ -430,7 +584,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  			qcom,din-ports = <1>;
  			qcom,dout-ports = <11>;
  
-@@ -3497,6 +3721,8 @@
+@@ -3497,6 +3736,8 @@
  
  			pinctrl-0 = <&wsa_swr_active>;
  			pinctrl-names = "default";
@@ -439,7 +593,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  
  			qcom,din-ports = <4>;
  			qcom,dout-ports = <9>;
-@@ -3517,6 +3743,13 @@
+@@ -3517,6 +3758,13 @@
  			status = "disabled";
  		};
  
@@ -453,7 +607,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  		swr2: soundwire@6d30000 {
  			compatible = "qcom,soundwire-v2.0.0";
  			reg = <0 0x06d30000 0 0x10000>;
-@@ -3526,6 +3759,8 @@
+@@ -3526,6 +3774,8 @@
  				     <GIC_SPI 520 IRQ_TYPE_LEVEL_HIGH>;
  			interrupt-names = "core", "wakeup";
  			label = "TX";
@@ -462,7 +616,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  
  			pinctrl-0 = <&tx_swr_active>;
  			pinctrl-names = "default";
-@@ -3682,9 +3917,16 @@
+@@ -3682,9 +3932,16 @@
  			};
  		};
  
@@ -480,7 +634,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  
  			qcom,bcm-voters = <&apps_bcm_voter>;
  
-@@ -3693,7 +3935,7 @@
+@@ -3693,7 +3950,7 @@
  
  		lpass_lpiaon_noc: interconnect@7400000 {
  			compatible = "qcom,x1e80100-lpass-lpiaon-noc";
@@ -489,7 +643,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  
  			qcom,bcm-voters = <&apps_bcm_voter>;
  
-@@ -3702,7 +3944,7 @@
+@@ -3702,7 +3959,7 @@
  
  		lpass_lpicx_noc: interconnect@7430000 {
  			compatible = "qcom,x1e80100-lpass-lpicx-noc";
@@ -498,7 +652,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  
  			qcom,bcm-voters = <&apps_bcm_voter>;
  
-@@ -3723,6 +3965,90 @@
+@@ -3723,6 +3980,90 @@
  			status = "disabled";
  		};
  
@@ -589,7 +743,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  		usb_1_ss2: usb@a0f8800 {
  			compatible = "qcom,x1e80100-dwc3", "qcom,dwc3";
  			reg = <0 0x0a0f8800 0 0x400>;
-@@ -3897,6 +4223,92 @@
+@@ -3897,6 +4238,92 @@
  			};
  		};
  
@@ -682,7 +836,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  		usb_1_ss0: usb@a6f8800 {
  			compatible = "qcom,x1e80100-dwc3", "qcom,dwc3";
  			reg = <0 0x0a6f8800 0 0x400>;
-@@ -4215,11 +4627,11 @@
+@@ -4215,11 +4642,11 @@
  
  			mdss_dp0: displayport-controller@ae90000 {
  				compatible = "qcom,x1e80100-dp";
@@ -699,7 +853,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  
  				interrupts-extended = <&mdss 12>;
  
-@@ -4298,11 +4710,11 @@
+@@ -4298,11 +4725,11 @@
  
  			mdss_dp1: displayport-controller@ae98000 {
  				compatible = "qcom,x1e80100-dp";
@@ -716,7 +870,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  
  				interrupts-extended = <&mdss 13>;
  
-@@ -4381,11 +4793,11 @@
+@@ -4381,11 +4808,11 @@
  
  			mdss_dp2: displayport-controller@ae9a000 {
  				compatible = "qcom,x1e80100-dp";
@@ -733,7 +887,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  
  				interrupts-extended = <&mdss 14>;
  
-@@ -4402,14 +4814,14 @@
+@@ -4402,14 +4829,14 @@
  
  				assigned-clocks = <&dispcc DISP_CC_MDSS_DPTX2_LINK_CLK_SRC>,
  						  <&dispcc DISP_CC_MDSS_DPTX2_PIXEL0_CLK_SRC>;
@@ -751,7 +905,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  				phy-names = "dp";
  
  				#sound-dai-cells = <0>;
-@@ -4463,11 +4875,11 @@
+@@ -4463,11 +4890,11 @@
  
  			mdss_dp3: displayport-controller@aea0000 {
  				compatible = "qcom,x1e80100-dp";
@@ -768,7 +922,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  
  				interrupts-extended = <&mdss 15>;
  
-@@ -4597,8 +5009,8 @@
+@@ -4597,8 +5024,8 @@
  				 <&usb_1_ss0_qmpphy QMP_USB43DP_DP_VCO_DIV_CLK>,
  				 <&usb_1_ss1_qmpphy QMP_USB43DP_DP_LINK_CLK>, /* dp1 */
  				 <&usb_1_ss1_qmpphy QMP_USB43DP_DP_VCO_DIV_CLK>,
@@ -779,7 +933,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  				 <&mdss_dp3_phy 0>, /* dp3 */
  				 <&mdss_dp3_phy 1>;
  			power-domains = <&rpmhpd RPMHPD_MMCX>;
-@@ -4631,6 +5043,11 @@
+@@ -4631,6 +5058,11 @@
  			#clock-cells = <0>;
  		};
  
@@ -791,7 +945,7 @@ Index: src/arm64/qcom/x1e80100.dtsi
  		spmi: arbiter@c400000 {
  			compatible = "qcom,x1e80100-spmi-pmic-arb";
  			reg = <0 0x0c400000 0 0x3000>,
-@@ -5241,12 +5658,50 @@
+@@ -5241,12 +5673,50 @@
  				bias-disable;
  			};
  
@@ -844,6 +998,46 @@ Index: src/arm64/qcom/x1e80100.dtsi
 +					drive-strength = <2>;
 +					bias-disable;
 +				};
+ 			};
+ 		};
+ 
+@@ -5384,6 +5854,13 @@
+ 			};
+ 		};
+ 
++		cpucp_mbox: mailbox@17430000 {
++			compatible = "qcom,x1e80100-cpucp-mbox";
++			reg = <0 0x17430000 0 0x10000>, <0 0x18830000 0 0x10000>;
++			interrupts = <GIC_SPI 28 IRQ_TYPE_LEVEL_HIGH>;
++			#mbox-cells = <1>;
++		};
++
+ 		apps_rsc: rsc@17500000 {
+ 			compatible = "qcom,rpmh-rsc";
+ 			reg = <0 0x17500000 0 0x10000>,
+@@ -5564,6 +6041,25 @@
+ 				frame-number = <6>;
+ 
+ 				status = "disabled";
++			};
++		};
++
++		sram: sram@18b4e000 {
++			compatible = "mmio-sram";
++			reg = <0x0 0x18b4e000 0x0 0x400>;
++
++			#address-cells = <1>;
++			#size-cells = <1>;
++			ranges = <0x0 0x0 0x18b4e000 0x400>;
++
++			cpu_scp_lpri0: scp-sram-section@0 {
++				compatible = "arm,scmi-shmem";
++				reg = <0x0 0x200>;
++			};
++
++			cpu_scp_lpri1: scp-sram-section@200 {
++				compatible = "arm,scmi-shmem";
++				reg = <0x200 0x200>;
  			};
  		};
  
