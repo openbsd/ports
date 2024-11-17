@@ -1,6 +1,6 @@
 COMMENT =		Executable Uniform Command-Line Interface Descriptions
 
-DISTNAME =		Getopt-Euclid-0.4.6
+DISTNAME =		Getopt-Euclid-0.4.8
 CATEGORIES =		devel
 
 # perl
