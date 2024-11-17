@@ -4,7 +4,7 @@ COMMENT =	KDE PIM mail related libraries
 DISTNAME =	kdepim-runtime-${VERSION}
 PKGNAME =	kdepim-runtime-kf5-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  akonadi-filestore           1.0 # 5.13.2
 SHARED_LIBS +=  akonadi-singlefileresource  2.0 # 5.13.2
@@ -42,10 +42,14 @@ MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
 
 BUILD_DEPENDS =	devel/boost \
-		devel/kf6/kholidays
+		devel/kf6/kholidays \
+		x11/kde-applications/akonadi-notes>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/libkdepim>=${MODKDE_GEAR_VERSION}
 
 RUN_DEPENDS =	misc/shared-mime-info \
-		devel/kf6/kholidays
+		devel/kf6/kholidays \
+		x11/kde-applications/akonadi-notes>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/libkdepim>=${MODKDE_GEAR_VERSION}
 
 LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/kcalendarcore \
