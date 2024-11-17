@@ -1,6 +1,6 @@
 COMMENT =	non-blocking I/O as lambda calculus
 
-DISTNAME =	IO-Lambda-1.33
+DISTNAME =	IO-Lambda-1.34
 CATEGORIES =	devel
 
 # perl
