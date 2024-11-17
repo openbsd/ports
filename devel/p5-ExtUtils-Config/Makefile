@@ -2,9 +2,8 @@ COMMENT =	wrapper for perl's configuration
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	ExtUtils-Config-0.008
+DISTNAME =	ExtUtils-Config-0.010
 CATEGORIES =	devel
-REVISION =	1
 
 CPAN_AUTHOR =	LEONT
 

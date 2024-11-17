@@ -1,3 +1,6 @@
 ${P5SITE}/ExtUtils/
+${P5SITE}/ExtUtils/Config/
 ${P5SITE}/ExtUtils/Config.pm
+${P5SITE}/ExtUtils/Config/MakeMaker.pm
 @man man/man3p/ExtUtils::Config.3p
+@man man/man3p/ExtUtils::Config::MakeMaker.3p
