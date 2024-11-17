@@ -2,7 +2,7 @@ COMMENT=	GNU debugger
 CATEGORIES=	devel
 
 DISTNAME=	gdb-13.2
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://www.gnu.org/software/gdb/
 
@@ -18,7 +18,7 @@ EXTRACT_SUFX=	.tar.xz
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/gdb
 
 WANTLIB += ${MODPY_WANTLIB} ${COMPILER_LIBCXX}
-WANTLIB += c curses expat gmp kvm iconv intl m pthread util zstd
+WANTLIB += c curses expat gmp kvm iconv intl m pthread util z zstd
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
@@ -38,7 +38,8 @@ CONFIGURE_ARGS=	--program-prefix=e \
 		--with-libgmp-type=shared \
 		--with-auto-load-dir=${TRUEPREFIX}/share/gdb/auto-load \
 		--enable-target=all \
-		--with-python=${MODPY_BIN}
+		--with-python=${MODPY_BIN} \
+		--with-system-zlib
 
 USE_GMAKE=	Yes
 MAKE_FLAGS=	V=1 LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
