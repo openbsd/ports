@@ -1,9 +1,8 @@
 COMMENT=	module for creating generic methods
 
 MODULES=	cpan
-DISTNAME =	Class-MethodMaker-2.24
+DISTNAME =	Class-MethodMaker-2.25
 CATEGORIES=	devel
-REVISION =	0
 
 # perl
 PERMIT_PACKAGE=	Yes

@@ -18,7 +18,7 @@ ${P5ARCH}/auto/Class/MethodMaker/Engine/abstract.al
 ${P5ARCH}/auto/Class/MethodMaker/Engine/autosplit.ix
 ${P5ARCH}/auto/Class/MethodMaker/Engine/copy.al
 ${P5ARCH}/auto/Class/MethodMaker/Engine/new.al
-${P5ARCH}/auto/Class/MethodMaker/MethodMaker.so
+@so ${P5ARCH}/auto/Class/MethodMaker/MethodMaker.so
 ${P5ARCH}/auto/Class/MethodMaker/array/
 ${P5ARCH}/auto/Class/MethodMaker/array/arra0000.al
 ${P5ARCH}/auto/Class/MethodMaker/array/arra0001.al
