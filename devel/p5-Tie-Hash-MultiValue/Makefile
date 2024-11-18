@@ -1,8 +1,7 @@
 COMMENT=	store multiple values per key
 
-DISTNAME =	Tie-Hash-MultiValue-1.06
+DISTNAME =	Tie-Hash-MultiValue-1.07
 CATEGORIES=	devel
-REVISION =	0
 
 # perl
 PERMIT_PACKAGE=	Yes
