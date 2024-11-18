@@ -1,6 +1,6 @@
 COMMENT =	support for the SSH 2 protocol via libssh2
 
-DISTNAME =	Net-SSH2-0.73
+DISTNAME =	Net-SSH2-0.74
 CATEGORIES =	net
 MODULES =	cpan
 
