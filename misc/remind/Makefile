@@ -1,7 +1,7 @@
 COMMENT=	scripting language for reminders, with a Tk front end
 
-DISTNAME=	remind-05.00.07
-PKGNAME=	remind-5.0.7
+DISTNAME=	remind-05.01.00
+PKGNAME=	remind-5.1.0
 
 CATEGORIES=	misc
 
@@ -39,7 +39,7 @@ CONFIGURE_STYLE=	gnu
 TEST_TARGET=		test
 
 pre-configure:
-	${MODTCL_WISH_ADJ} ${WRKSRC}/scripts/tkremind
+	${MODTCL_WISH_ADJ} ${WRKSRC}/scripts/tkremind.in
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/remind
