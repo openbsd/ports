@@ -15,6 +15,8 @@ MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE_DOCS = yes
 
+BUILD_DEPENDS =	devel/kf6/kconfigwidgets
+
 LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/kconfig \
 		devel/kf6/kcoreaddons \
