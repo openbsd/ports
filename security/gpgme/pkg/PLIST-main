@@ -2,13 +2,12 @@
 bin/gpgme-config
 @bin bin/gpgme-json
 @bin bin/gpgme-tool
-include/QGpgME/WKDRefreshJob
 include/gpgme.h
-include/qgpgme/wkdrefreshjob.h
 @info info/gpgme.info
 @static-lib lib/libgpgme.a
 lib/libgpgme.la
 @lib lib/libgpgme.so.${LIBgpgme_VERSION}
 lib/pkgconfig/gpgme-glib.pc
 lib/pkgconfig/gpgme.pc
+@man man/man1/gpgme-json.1
 share/aclocal/gpgme.m4
