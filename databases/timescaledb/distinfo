@@ -1,4 +1,4 @@
 SHA256 (timescale-timescaledb-extras-52443a469a58d3f64a4e049889f468e8a149cc8f.tar.gz) = /fBZ0+p3BcPYlmf7Oj4cqXKF19YpWJaywrt0qGuZqvw=
-SHA256 (timescaledb-2.16.1.tar.gz) = wdJ9oR0Ns7lH7Qy/Y9IwQnpTL9gIYA3qnsOvxKtdcws=
+SHA256 (timescaledb-2.17.0.tar.gz) = FVv2Q5HTVYxC8xyg5SPPxiUpIZdPdSmMkDnMrRyJgRo=
 SIZE (timescale-timescaledb-extras-52443a469a58d3f64a4e049889f468e8a149cc8f.tar.gz) = 12981
-SIZE (timescaledb-2.16.1.tar.gz) = 7449327
+SIZE (timescaledb-2.17.0.tar.gz) = 7559829
