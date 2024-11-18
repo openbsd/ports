@@ -1,3 +1,8 @@
+BROKEN = needs updating and/or adapting to work with newer numpy.
+# if sticking with 2.1.1-2, the version number in setup.py needs patching
+# to a valid format; probably simpler to update to a newer 2.x than that
+# though.
+
 COMMENT =		Python interface to SCS
 
 MODPY_EGG_VERSION =	2.1.1-2
