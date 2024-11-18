@@ -1,0 +1,12 @@
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -2,7 +2,7 @@
+ requires = [
+     "Cython>=0.29",
+     "oldest-supported-numpy ; python_version < '3.9'",
+-    "numpy>=2.0.0rc1 ; python_version >= '3.9'",
++    "numpy>=1.26.4 ; python_version >= '3.9'",
+     "setuptools>=61", "setuptools_scm[toml]>=3.4"
+ ]
+ build-backend = "setuptools.build_meta"

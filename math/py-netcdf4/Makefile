@@ -1,10 +1,9 @@
 COMMENT=	Python interface to the netCDF C library
 
-MODPY_EGG_VERSION=	1.6.5
-DISTNAME=		netCDF4-${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION=	1.7.2
+DISTNAME=		netcdf4-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME:L}
 CATEGORIES=		math
-REVISION=		0
 
 HOMEPAGE=		http://unidata.github.io/netcdf4-python/
 
@@ -31,6 +30,7 @@ BUILD_DEPENDS+=		archivers/blosc \
 RUN_DEPENDS+=		lang/cython${MODPY_FLAVOR} \
 			math/hdf5 \
 			math/py-numpy${MODPY_FLAVOR} \
+			devel/py-certifi${MODPY_FLAVOR} \
 			math/py-cftime${MODPY_FLAVOR}
 
 TEST_DEPENDS=		${FULLPKGNAME}:${FULLPKGPATH}
