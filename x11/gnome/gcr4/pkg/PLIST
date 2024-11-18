@@ -561,6 +561,7 @@ share/doc/gcr-4/method.Certificate.get_subject_dn.html
 share/doc/gcr-4/method.Certificate.get_subject_name.html
 share/doc/gcr-4/method.Certificate.get_subject_part.html
 share/doc/gcr-4/method.Certificate.get_subject_raw.html
+share/doc/gcr-4/method.Certificate.get_version.html
 share/doc/gcr-4/method.Certificate.is_issuer.html
 share/doc/gcr-4/method.Certificate.mixin_emit_notify.html
 share/doc/gcr-4/method.CertificateChain.add.html
@@ -813,6 +814,7 @@ share/locale/is/LC_MESSAGES/gcr-4.mo
 share/locale/it/LC_MESSAGES/gcr-4.mo
 share/locale/ja/LC_MESSAGES/gcr-4.mo
 share/locale/ka/LC_MESSAGES/gcr-4.mo
+share/locale/kab/LC_MESSAGES/gcr-4.mo
 share/locale/kk/LC_MESSAGES/gcr-4.mo
 share/locale/kn/LC_MESSAGES/gcr-4.mo
 share/locale/ko/LC_MESSAGES/gcr-4.mo
