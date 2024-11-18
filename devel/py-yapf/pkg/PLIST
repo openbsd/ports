@@ -18,6 +18,9 @@ lib/python${MODPY_VERSION}/site-packages/yapf/${MODPY_PYCACHE}__init__.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/yapf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yapf/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yapf/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yapf/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/yapf/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yapf/_version.py
 lib/python${MODPY_VERSION}/site-packages/yapf/pyparser/
 lib/python${MODPY_VERSION}/site-packages/yapf/pyparser/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yapf/pyparser/${MODPY_PYCACHE}/

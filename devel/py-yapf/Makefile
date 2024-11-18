@@ -1,6 +1,6 @@
 COMMENT=	formatter for Python code
 
-MODPY_EGG_VERSION=	0.40.2
+MODPY_EGG_VERSION=	0.43.0
 DISTNAME=	yapf-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
@@ -17,9 +17,6 @@ FLAVOR=		python3
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-# tomli and importlib-metadata deps go away after 0.40.2
-RUN_DEPENDS=	devel/py-importlib-metadata${MODPY_FLAVOR} \
-		sysutils/py-platformdirs${MODPY_FLAVOR} \
-		textproc/py-tomli${MODPY_FLAVOR}
+RUN_DEPENDS=	sysutils/py-platformdirs${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
