@@ -72,7 +72,12 @@ _MODERL_FLAVOR ?=	${_MODERL_DEFAULT_FLAVOR}
 CONFIGURE_STYLE =	rebar3
 .endif
 
+MODERL_USE_REBAR3 ?=	No
 .if ${CONFIGURE_STYLE} == "rebar3"
+MODERL_USE_REBAR3 =	Yes
+.endif
+
+.if ${MODERL_USE_REBAR3:L} == yes
 MODERL_BUILD_DEPENDS +=	devel/rebar3,${_MODERL_FLAVOR}
 REBAR_BIN ?=		${LOCALBASE}/bin/rebar3-${MODERL_VERSION}
 # Make sure rebar gets called as 'rebar3', otherwise escript tries to call the
@@ -125,6 +130,7 @@ MODERL_LIBROOT ?=	lib/erlang${MODERL_VERSION}/lib
 ERL_LIBDIR ?=		${ERL_LIBROOT}/${DISTNAME}
 
 # Common program shortcuts
+MODERL_EPMD =		${LOCALBASE}/bin/epmd${MODERL_VERSION}
 MODERL_ERL =		${LOCALBASE}/bin/erl${MODERL_VERSION}
 MODERL_ERLC =		${LOCALBASE}/bin/erlc${MODERL_VERSION}
 
@@ -172,20 +178,42 @@ SITE_HEX =		https://repo.hex.pm/tarballs/
 SITES.erl ?= 		${SITE_HEX}
 MODERL_DIST_SUBDIR ?=	hex_modules
 
+.  for _m _v in ${MODERL_PLUGINS}
+MODERL_DISTFILES += ${MODERL_DIST_SUBDIR}/{}${_m}-${_v}.tar
+.  endfor
+
+.  if ! empty(MODERL_PLUGINS)
+.    for _m _v in ${MODERL_PLUGINS}
+MODERL_SETUP_WORKSPACE_PLUGINS += mkdir -p ${WRKDIR}/${MODERL_DIST_SUBDIR}/${_m}; \
+		tar xf ${FULLDISTDIR}/${MODERL_DIST_SUBDIR}/${_m}-${_v}.tar -C ${WRKDIR}/${MODERL_DIST_SUBDIR}/${_m}; \
+		mkdir -p ${WRKSRC}/_checkouts/${_m}; \
+		mkdir -p ${WRKSRC}/_build/default/plugins; \
+		tar xzf ${WRKDIR}/${MODERL_DIST_SUBDIR}/${_m}/contents.tar.gz -C ${WRKSRC}/_checkouts/${_m}; \
+		ln -fs ${WRKSRC}/_checkouts/${_m} ${WRKSRC}/_build/default/plugins/${_m};
+.    endfor
+MODERLANG_post-extract += ${MODERL_SETUP_WORKSPACE_PLUGINS}
+.  endif
+
 .  for _m _v in ${MODERL_MODULES}
 MODERL_DISTFILES += ${MODERL_DIST_SUBDIR}/{}${_m}-${_v}.tar
 .  endfor
 
 .  if ! empty(MODERL_MODULES)
 .    for _m _v in ${MODERL_MODULES}
+MODERL_MODULE_${_n}_VERSION = ${_v}
+SUBST_VARS += MODERL_MODULE_${_n}_VERSION
 MODERL_SETUP_WORKSPACE += mkdir -p ${WRKDIR}/${MODERL_DIST_SUBDIR}/${_m}; \
 		tar xf ${FULLDISTDIR}/${MODERL_DIST_SUBDIR}/${_m}-${_v}.tar -C ${WRKDIR}/${MODERL_DIST_SUBDIR}/${_m}; \
 		mkdir -p ${WRKSRC}/_checkouts/${_m}; \
 		mkdir -p ${WRKSRC}/_build/default/lib; \
 		tar xzf ${WRKDIR}/${MODERL_DIST_SUBDIR}/${_m}/contents.tar.gz -C ${WRKSRC}/_checkouts/${_m}; \
-		cp -r ${WRKSRC}/_checkouts/${_m} ${WRKSRC}/_build/default/lib/;
+		ln -fs ${WRKSRC}/_checkouts/${_m} ${WRKSRC}/_build/default/lib/${_m};
+MODERL_COPY_EBINS += if [ -d ${WRKSRC}/_build/default/checkouts/${_m}/ebin ]; then \
+		cp -r ${WRKSRC}/_build/default/checkouts/${_m}/ebin \
+			${WRKSRC}/_build/default/lib/${_m}/ebin; fi;
 .    endfor
 MODERLANG_post-extract += ${MODERL_SETUP_WORKSPACE}
+MODERLANG_pre-fake += ${MODERL_COPY_EBINS}
 .  endif
 
 .  if defined(MODERL_DISTFILES)
