@@ -1,7 +1,6 @@
 COMMENT =		handy utf8 tests for Perl
-DISTNAME =		Test-utf8-1.02
+DISTNAME =		Test-utf8-1.03
 CATEGORIES =		devel
-REVISION =		1
 
 # Perl
 PERMIT_PACKAGE =	Yes
