@@ -1,7 +1,14 @@
-${P5SITE}/Method/Generate/Constructor/
-${P5SITE}/Method/Generate/Constructor/Role/
-${P5SITE}/Method/Generate/Constructor/Role/StrictConstructor.pm
 ${P5SITE}/MooX/
+${P5SITE}/MooX/StrictConstructor/
 ${P5SITE}/MooX/StrictConstructor.pm
-@man man/man3p/Method::Generate::Constructor::Role::StrictConstructor.3p
+${P5SITE}/MooX/StrictConstructor/Role/
+${P5SITE}/MooX/StrictConstructor/Role/BuildAll.pm
+${P5SITE}/MooX/StrictConstructor/Role/Constructor/
+${P5SITE}/MooX/StrictConstructor/Role/Constructor.pm
+${P5SITE}/MooX/StrictConstructor/Role/Constructor/Base.pm
+${P5SITE}/MooX/StrictConstructor/Role/Constructor/Late.pm
 @man man/man3p/MooX::StrictConstructor.3p
+@man man/man3p/MooX::StrictConstructor::Role::BuildAll.3p
+@man man/man3p/MooX::StrictConstructor::Role::Constructor.3p
+@man man/man3p/MooX::StrictConstructor::Role::Constructor::Base.3p
+@man man/man3p/MooX::StrictConstructor::Role::Constructor::Late.3p
