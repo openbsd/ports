@@ -1,3 +1,4 @@
+@bin bin/hackrf_biast
 @bin bin/hackrf_clock
 @bin bin/hackrf_cpldjtag
 @bin bin/hackrf_debug
