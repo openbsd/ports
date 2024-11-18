@@ -1105,6 +1105,7 @@ lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/write_precision.
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/xy_geom.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/domain/xy_view_properties.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/extras.py
+lib/python${MODPY_VERSION}/site-packages/influxdb_client/py.typed
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/rest.py
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/service/
 lib/python${MODPY_VERSION}/site-packages/influxdb_client/service/__init__.py
