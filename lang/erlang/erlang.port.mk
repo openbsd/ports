@@ -200,8 +200,8 @@ MODERL_DISTFILES += ${MODERL_DIST_SUBDIR}/{}${_m}-${_v}.tar
 
 .  if ! empty(MODERL_MODULES)
 .    for _m _v in ${MODERL_MODULES}
-MODERL_MODULE_${_n}_VERSION = ${_v}
-SUBST_VARS += MODERL_MODULE_${_n}_VERSION
+MODERL_MODULE_${_m}_VERSION = ${_v}
+SUBST_VARS += MODERL_MODULE_${_m}_VERSION
 MODERL_SETUP_WORKSPACE += mkdir -p ${WRKDIR}/${MODERL_DIST_SUBDIR}/${_m}; \
 		tar xf ${FULLDISTDIR}/${MODERL_DIST_SUBDIR}/${_m}-${_v}.tar -C ${WRKDIR}/${MODERL_DIST_SUBDIR}/${_m}; \
 		mkdir -p ${WRKSRC}/_checkouts/${_m}; \
