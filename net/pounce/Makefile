@@ -1,12 +1,13 @@
 COMMENT =	multi-client, TLS-only IRC bouncer
 
 DISTNAME =	pounce-3.1
+REVISION =	0
 
 CATEGORIES =	net
 
 HOMEPAGE =	https://git.causal.agency/pounce/about/
 
-MAINTAINER =	Omar Polo <op@omarpolo.com>
+MAINTAINER =	Sebastien Marie <semarie@kapouay.eu.org>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes

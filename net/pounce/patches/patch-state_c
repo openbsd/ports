@@ -1,0 +1,54 @@
+Backport https://git.causal.agency/pounce/commit/?id=c23e879d060730d6b9484fd7c6554f11ad76b5fa
+
+Handle 004 RPL_MYINFO with fewer parameters
+
+Index: state.c
+--- state.c.orig
++++ state.c
+@@ -198,11 +198,11 @@ static void handleReplyCreated(struct Message *msg) {
+ }
+ 
+ static void handleReplyMyInfo(struct Message *msg) {
+-	require(msg, false, 5);
++	require(msg, false, 2);
+ 	set(&intro.myInfo[0], msg->params[1]);
+-	set(&intro.myInfo[1], msg->params[2]);
+-	set(&intro.myInfo[2], msg->params[3]);
+-	set(&intro.myInfo[3], msg->params[4]);
++	if (msg->params[2]) set(&intro.myInfo[1], msg->params[2]);
++	if (msg->params[3]) set(&intro.myInfo[2], msg->params[3]);
++	if (msg->params[4]) set(&intro.myInfo[3], msg->params[4]);
+ 	if (msg->params[5]) set(&intro.myInfo[4], msg->params[5]);
+ }
+ 
+@@ -417,13 +417,15 @@ void stateSync(struct Client *client) {
+ 		client, ":%s 003 %s :%s\r\n",
+ 		intro.origin, self.nick, intro.created
+ 	);
+-	clientFormat(
+-		client, ":%s 004 %s %s %s %s %s%s%s\r\n",
+-		intro.origin, self.nick,
+-		intro.myInfo[0], intro.myInfo[1], intro.myInfo[2], intro.myInfo[3],
+-		(intro.myInfo[4] ? " " : ""), (intro.myInfo[4] ? intro.myInfo[4] : "")
+-	);
+ 
++	char buf[512], *ptr = buf, *end = &buf[sizeof(buf)];
++	ptr = seprintf(ptr, end, ":%s 004 %s", intro.origin, self.nick);
++	for (size_t i = 0; i < ARRAY_LEN(intro.myInfo) && intro.myInfo[i]; ++i) {
++		ptr = seprintf(ptr, end, " %s", intro.myInfo[i]);
++	}
++	ptr = seprintf(ptr, end, "\r\n");
++	clientSend(client, buf, ptr - buf);
++
+ 	size_t i;
+ 	for (i = 0; support.len - i >= 13; i += 13) {
+ 		clientFormat(
+@@ -442,7 +444,7 @@ void stateSync(struct Client *client) {
+ 		);
+ 	}
+ 	if (i < support.len) {
+-		char buf[512], *ptr = buf, *end = &buf[sizeof(buf)];
++		ptr = buf;
+ 		ptr = seprintf(ptr, end, ":%s 005 %s", intro.origin, self.nick);
+ 		for (; i < support.len; ++i) {
+ 			ptr = seprintf(ptr, end, " %s", support.tokens[i]);
