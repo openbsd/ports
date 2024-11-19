@@ -60,6 +60,7 @@
      SUBDIR += cabal-install
      SUBDIR += capstone
      SUBDIR += cargo-audit
+     SUBDIR += cargo-c
      SUBDIR += cargo-generate-vendor
      SUBDIR += catalyst
      SUBDIR += catalyst-tutorial
