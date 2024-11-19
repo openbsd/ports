@@ -1,0 +1,11 @@
+Index: par2cmdline-turbo/include/par2/gf16/threadqueue.h
+--- par2cmdline-turbo/include/par2/gf16/threadqueue.h.orig
++++ par2cmdline-turbo/include/par2/gf16/threadqueue.h
+@@ -212,6 +212,7 @@ typedef std::function<void(ThreadMessageQueue<void*>&)
+ # include <Windows.h>
+ #else
+ # include <pthread.h>
++# include <pthread_np.h>
+ #endif
+ #if defined(__linux) || defined(__linux__)
+ # include <unistd.h>

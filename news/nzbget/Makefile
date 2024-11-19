@@ -1,6 +1,8 @@
 COMMENT =	binary newsreader supporting NZB files
 
-DIST_TUPLE =	github nzbgetcom nzbget v24.3 .
+DIST_TUPLE +=	github nzbgetcom nzbget v24.4 .
+DIST_TUPLE +=	github nzbgetcom par2cmdline-turbo v1.1.1-nzbget .
+PKGNAME =	nzbget-24.4
 
 CATEGORIES =	news
 
@@ -26,10 +28,13 @@ RUN_DEPENDS =	archivers/p7zip \
 		archivers/unrar
 LIB_DEPENDS =	devel/boost \
 		textproc/libxml
-TEST_DEPENDS =	archivers/unrar
+TEST_DEPENDS =	${RUN_DEPENDS}
 
-# Network test (SystemInfoTest) fails with PORTS_PRIVSEP
-CONFIGURE_ARGS =	-DENABLE_TESTS=ON
+CONFIGURE_ARGS =	-DCURSES_INCLUDE_PATH=/usr/include \
+			-DENABLE_TESTS=ON
+
+post-extract:
+	mv ${WRKDIR}/par2cmdline-turbo-* ${WRKDIST}/par2cmdline-turbo
 
 post-install:
 	${SUBST_CMD} ${WRKBUILD}/nzbget.conf
