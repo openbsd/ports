@@ -1,2 +1,16 @@
 bin/imapdedup
-share/doc/imapdedup
+lib/python${MODPY_VERSION}/site-packages/imapdedup/
+lib/python${MODPY_VERSION}/site-packages/imapdedup-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/imapdedup-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/imapdedup-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/imapdedup-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/imapdedup-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/imapdedup-${MODPY_EGG_VERSION}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/imapdedup-${MODPY_EGG_VERSION}.dist-info/licenses/LICENCE.TXT
+lib/python${MODPY_VERSION}/site-packages/imapdedup/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/imapdedup/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/imapdedup/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/imapdedup/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/imapdedup/${MODPY_PYCACHE}imapdedup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/imapdedup/${MODPY_PYCACHE}imapdedup.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/imapdedup/imapdedup.py
