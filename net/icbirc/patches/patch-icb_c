@@ -1,0 +1,17 @@
+According to RFC2815 section 5.1: The server sends Replies 001 to 004 to a user 
+upon successful registration.
+
+Index: icb.c
+--- icb.c.orig
++++ icb.c
+@@ -210,6 +210,10 @@ icb_cmd(const char *cmd, unsigned char len, int fd, in
+ 		irc_send_code(fd, icb_hostid, irc_nick, "002",
+ 		    "Your host is %s running %s protocol %s",
+ 		    icb_hostid, icb_serverid, icb_protolevel);
++		irc_send_code(fd, icb_hostid, irc_nick, "003",
++		    "This server was created recently");
++		irc_send_code(fd, icb_hostid, irc_nick, "004",
++		    "%s %d", icb_serverid, icb_protolevel);
+ 		/* some clients really want to see a MOTD */
+ 		irc_send_code(fd, icb_hostid, irc_nick, "375",
+ 		    "ICB server: %s", icb_serverid);
