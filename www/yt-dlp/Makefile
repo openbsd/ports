@@ -1,8 +1,7 @@
 COMMENT =	CLI program to download videos from YouTube and other sites
 
-VERSION =	2024.10.07
-# keep REVISION above -stable for 7.6 (no cryptodomex in -stable)
-TEVISION =	1
+VERSION =	2024.11.18
+# on backport keep REVISION above -stable for 7.6 (no cryptodomex in -stable)
 MODPY_EGG_VERSION =	${VERSION:S/.0/./g}
 
 DISTNAME =	yt-dlp-${VERSION}
