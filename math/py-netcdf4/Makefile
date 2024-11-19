@@ -13,7 +13,7 @@ MAINTAINER=		Martin Reindl <martin@catai.org>
 PERMIT_PACKAGE=		Yes
 
 MODULES=		lang/python
-MODPY_PYBUILD=		setuptools
+MODPY_PYBUILD=		setuptools_scm
 MODPY_PI=		Yes
 
 WANTLIB+=		netcdf
