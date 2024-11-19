@@ -5,7 +5,7 @@ NOT_FOR_ARCHS =		sparc64
 
 GH_ACCOUNT =		gleam-lang
 GH_PROJECT =		gleam
-GH_TAGNAME =		v1.5.1
+GH_TAGNAME =		v1.6.1
 
 HOMEPAGE =		https://gleam.run
 
@@ -24,9 +24,12 @@ WANTLIB += 		${MODCARGO_WANTLIB} m
 CONFIGURE_STYLE =	cargo
 
 post-patch:
-	${SUBST_CMD} ${WRKSRC}/compiler-core/src/build/package_compiler.rs \
+	${SUBST_CMD} \
+	${WRKSRC}/compiler-cli/src/beam_compiler.rs \
+	${WRKSRC}/compiler-cli/src/run.rs \
 	${WRKSRC}/compiler-cli/src/shell.rs \
-	${WRKSRC}/compiler-cli/src/run.rs
+	${WRKSRC}/compiler-core/src/build/project_compiler.rs \
+	${WRKSRC}/compiler-core/src/error.rs
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/gleam/

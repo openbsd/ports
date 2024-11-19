@@ -1,0 +1,12 @@
+Index: compiler-core/src/error.rs
+--- compiler-core/src/error.rs.orig
++++ compiler-core/src/error.rs
+@@ -1002,7 +1002,7 @@ your app.src file \"{app_ver}\"."
+                 let mut text = format!("The program `{program}` was not found. Is it installed?");
+ 
+                 match program.as_str() {
+-                    "erl" | "erlc" | "escript" => text.push_str(
++                    "erl" | "erlc" | "escript" | "escript${MODERL_VERSION}" => text.push_str(
+                         "
+ Documentation for installing Erlang can be viewed here:
+ https://gleam.run/getting-started/installing/",

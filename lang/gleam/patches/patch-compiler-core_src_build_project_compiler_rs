@@ -1,0 +1,12 @@
+Index: compiler-core/src/build/project_compiler.rs
+--- compiler-core/src/build/project_compiler.rs.orig
++++ compiler-core/src/build/project_compiler.rs
+@@ -42,7 +42,7 @@ use camino::{Utf8Path, Utf8PathBuf};
+ // On Windows we have to call rebar3 via a little wrapper script.
+ //
+ #[cfg(not(target_os = "windows"))]
+-const REBAR_EXECUTABLE: &str = "rebar3";
++const REBAR_EXECUTABLE: &str = "rebar3-${MODERL_VERSION}";
+ #[cfg(target_os = "windows")]
+ const REBAR_EXECUTABLE: &str = "rebar3.cmd";
+ 

@@ -1,0 +1,51 @@
+Index: compiler-cli/src/beam_compiler.rs
+--- compiler-cli/src/beam_compiler.rs.orig
++++ compiler-cli/src/beam_compiler.rs
+@@ -59,7 +59,7 @@ impl BeamCompiler {
+         tracing::debug!(args=?args, "call_beam_compiler");
+ 
+         writeln!(inner.stdin, "{}.", args).map_err(|e| Error::ShellCommand {
+-            program: "escript".into(),
++            program: "escript${MODERL_VERSION}".into(),
+             err: Some(e.kind()),
+         })?;
+ 
+@@ -69,7 +69,7 @@ impl BeamCompiler {
+                 "gleam-compile-result-ok" => return Ok(()),
+                 "gleam-compile-result-error" => {
+                     return Err(Error::ShellCommand {
+-                        program: "escript".into(),
++                        program: "escript${MODERL_VERSION}".into(),
+                         err: None,
+                     })
+                 }
+@@ -84,7 +84,7 @@ impl BeamCompiler {
+ 
+         // if we get here, stdout got closed before we got an "ok" or "err".
+         Err(Error::ShellCommand {
+-            program: "escript".into(),
++            program: "escript${MODERL_VERSION}".into(),
+             err: None,
+         })
+     }
+@@ -103,17 +103,17 @@ impl BeamCompiler {
+ 
+         tracing::trace!(escript_path=?escript_path, "spawn_beam_compiler");
+ 
+-        let mut process = std::process::Command::new("escript")
++        let mut process = std::process::Command::new("escript${MODERL_VERSION}")
+             .args([escript_path])
+             .stdin(std::process::Stdio::piped())
+             .stdout(std::process::Stdio::piped())
+             .spawn()
+             .map_err(|e| match e.kind() {
+                 io::ErrorKind::NotFound => Error::ShellProgramNotFound {
+-                    program: "escript".into(),
++                    program: "escript${MODERL_VERSION}".into(),
+                 },
+                 other => Error::ShellCommand {
+-                    program: "escript".into(),
++                    program: "escript${MODERL_VERSION}".into(),
+                     err: Some(other),
+                 },
+             })?;
