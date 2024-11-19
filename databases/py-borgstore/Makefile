@@ -1,6 +1,6 @@
 COMMENT =		key/value store implementation in Python
 
-MODPY_EGG_VERSION =	0.0.5
+MODPY_EGG_VERSION =	0.1.0
 DISTNAME =		borgstore-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
