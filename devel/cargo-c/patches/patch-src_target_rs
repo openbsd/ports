@@ -1,0 +1,13 @@
+https://github.com/lu-zero/cargo-c/pull/424
+
+Index: src/target.rs
+--- src/target.rs.orig
++++ src/target.rs
+@@ -87,6 +87,7 @@ impl Target {
+             || os == "netbsd"
+             || os == "haiku"
+             || os == "illumos"
++            || os == "openbsd"
+         {
+             lines.push(if capi_config.library.versioning {
+                 format!("-Wl,-soname,lib{lib_name}.so.{sover}")

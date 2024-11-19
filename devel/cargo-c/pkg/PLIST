@@ -1,0 +1,4 @@
+@bin bin/cargo-capi
+@bin bin/cargo-cbuild
+@bin bin/cargo-cinstall
+@bin bin/cargo-ctest

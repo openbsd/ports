@@ -1,0 +1,13 @@
+https://github.com/lu-zero/cargo-c/pull/424
+
+Index: src/install.rs
+--- src/install.rs.orig
++++ src/install.rs
+@@ -102,6 +102,7 @@ impl LibType {
+             | ("android", _)
+             | ("haiku", _)
+             | ("illumos", _)
++            | ("openbsd", _)
+             | ("emscripten", _) => LibType::So,
+             ("macos", _) | ("ios", _) | ("tvos", _) | ("visionos", _) => LibType::Dylib,
+             ("windows", _) => LibType::Windows,
