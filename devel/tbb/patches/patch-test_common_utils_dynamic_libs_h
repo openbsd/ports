@@ -1,3 +1,6 @@
+Set the extension correctly for OpenBSD (#1468)
+e85d3705e72b02587fd20e2d7eaf85f865968202
+
 Index: test/common/utils_dynamic_libs.h
 --- test/common/utils_dynamic_libs.h.orig
 +++ test/common/utils_dynamic_libs.h
