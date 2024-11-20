@@ -5,7 +5,7 @@ HOMEPAGE =	https://moc.daper.net/
 SITES =		https://ftp.daper.net/pub/soft/moc/stable/ \
 		https://distfiles.sigtrap.nl/
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	10
+REVISION =	11
 
 # GPLv3+
 PERMIT_PACKAGE = Yes
