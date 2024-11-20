@@ -1,0 +1,21 @@
+part of
+
+From d2ae874d9e1615d09afc912275cc3b27776a1392 Mon Sep 17 00:00:00 2001
+From: cecini <loleta842jhu@gmail.com>
+Date: Tue, 15 Dec 2020 13:09:19 +0000
+Subject: [PATCH] fix float to int conversion DeprecationWarning
+
+Index: aqt/preferences.py
+--- aqt/preferences.py.orig
++++ aqt/preferences.py
+@@ -77,8 +77,8 @@ class Preferences(QDialog):
+             f.hwAccel.setVisible(False)
+         else:
+             f.hwAccel.setChecked(self.mw.pm.glMode() != "software")
+-        f.lrnCutoff.setValue(qc['collapseTime']/60.0)
+-        f.timeLimit.setValue(qc['timeLim']/60.0)
++        f.lrnCutoff.setValue(int(qc['collapseTime']/60.0))
++        f.timeLimit.setValue(int(qc['timeLim']/60.0))
+         f.showEstimates.setChecked(qc['estTimes'])
+         f.showProgress.setChecked(qc['dueCounts'])
+         f.nightMode.setChecked(qc.get("nightMode", False))

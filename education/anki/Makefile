@@ -13,13 +13,9 @@ COMMENT =	flashcard learning system with spaced repetition
 # (https://aur.archlinux.org/packages/anki), and see Anki's discussion
 # in https://github.com/ankitects/anki/issues/1378
 #
-# XXX expected to have problems with Python 3.10 - these may help:
-# https://github.com/ankitects/anki/commit/daf2e0a78f2277cddf13bb0abed9e620d4d47179
-# https://github.com/ankitects/anki/commit/62426279ffca8a454ec4e3f5c22e6729932403f7
-#
 DISTNAME =	anki-2.1.16
 EXTRACT_SUFX =	-source.tgz
-REVISION =	7
+REVISION =	8
 
 CATEGORIES =	education
 

@@ -1,0 +1,35 @@
+From 62426279ffca8a454ec4e3f5c22e6729932403f7 Mon Sep 17 00:00:00 2001
+From: Damien Elmes <gpg@ankiweb.net>
+Date: Fri, 11 Feb 2022 10:59:04 +1000
+Subject: [PATCH] fix error when opening old deck options in python 3.10
+
+Index: aqt/deckconf.py
+--- aqt/deckconf.py.orig
++++ aqt/deckconf.py
+@@ -172,7 +172,7 @@ class DeckConf(QDialog):
+         f.lrnGradInt.setValue(c['ints'][0])
+         f.lrnEasyInt.setValue(c['ints'][1])
+         f.lrnEasyInt.setValue(c['ints'][1])
+-        f.lrnFactor.setValue(c['initialFactor']/10.0)
++        f.lrnFactor.setValue(int(c['initialFactor']/10.0))
+         f.newOrder.setCurrentIndex(c['order'])
+         f.newPerDay.setValue(c['perDay'])
+         f.bury.setChecked(c.get("bury", True))
+@@ -180,7 +180,7 @@ class DeckConf(QDialog):
+         # rev
+         c = self.conf['rev']
+         f.revPerDay.setValue(c['perDay'])
+-        f.easyBonus.setValue(c['ease4']*100)
++        f.easyBonus.setValue(int(c['ease4']*100))
+         f.fi1.setValue(c['ivlFct']*100)
+         f.maxIvl.setValue(c['maxIvl'])
+         f.revplim.setText(self.parentLimText('rev'))
+@@ -192,7 +192,7 @@ class DeckConf(QDialog):
+         # lapse
+         c = self.conf['lapse']
+         f.lapSteps.setText(self.listToUser(c['delays']))
+-        f.lapMult.setValue(c['mult']*100)
++        f.lapMult.setValue(int(c['mult']*100))
+         f.lapMinInt.setValue(c['minInt'])
+         f.leechThreshold.setValue(c['leechFails'])
+         f.leechAction.setCurrentIndex(c['leechAction'])
