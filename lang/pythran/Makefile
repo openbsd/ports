@@ -1,5 +1,6 @@
 COMMENT =	ahead of time compiler for numeric kernels
 
+# scipy (1.31.1, as used at 20241120) wants pythran<0.16.0
 MODPY_EGG_VERSION =	0.15.0
 
 DISTNAME =	pythran-${MODPY_EGG_VERSION}
