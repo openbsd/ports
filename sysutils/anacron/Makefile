@@ -4,9 +4,7 @@ V=		2.5.3
 DISTNAME=	anacron.$V
 PKGNAME=	anacron-$V
 CATEGORIES=	sysutils
-REVISION=	4
-
-MAINTAINER=	Andreas Kusalananda Kahari <andreas.kahari@abc.se>
+REVISION=	5
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
