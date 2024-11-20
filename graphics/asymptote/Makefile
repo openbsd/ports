@@ -1,9 +1,8 @@
 COMMENT=		powerful descriptive vector graphics language
 
-DISTNAME=		asymptote-2.82
+DISTNAME=		asymptote-2.91
 EXTRACT_SUFX=		.src.tgz
 CATEGORIES=		graphics
-REVISION=		5
 
 HOMEPAGE=		https://asymptote.sourceforge.io/
 

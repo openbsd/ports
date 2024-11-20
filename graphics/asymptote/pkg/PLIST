@@ -7,6 +7,7 @@ info/asy-faq.info
 share/asymptote/
 share/asymptote/CAD.asy
 share/asymptote/GUI/
+share/asymptote/GUI/ContextWindow.py
 share/asymptote/GUI/CustMatTransform.py
 share/asymptote/GUI/DebugFlags.py
 share/asymptote/GUI/GuidesManager.py
@@ -35,7 +36,6 @@ share/asymptote/GUI/pyUIClass/widgetPointEditor.py
 share/asymptote/GUI/pyUIClass/window1.py
 share/asymptote/GUI/res/
 share/asymptote/GUI/res/icons/
-share/asymptote/GUI/res/icons.qrc
 share/asymptote/GUI/res/icons/anchor.svg
 share/asymptote/GUI/res/icons/android-arrow-back.svg
 share/asymptote/GUI/res/icons/android-arrow-forward.svg
@@ -127,6 +127,7 @@ share/asymptote/labelpath.asy
 share/asymptote/labelpath3.asy
 share/asymptote/lmfit.asy
 share/asymptote/map.asy
+share/asymptote/mapArray.asy
 share/asymptote/markers.asy
 share/asymptote/math.asy
 share/asymptote/metapost.asy
@@ -171,6 +172,7 @@ share/asymptote/shaders/sum3.glsl
 share/asymptote/shaders/vertex.glsl
 share/asymptote/shaders/zero.glsl
 share/asymptote/simplex.asy
+share/asymptote/simplex2.asy
 share/asymptote/size10.asy
 share/asymptote/size11.asy
 share/asymptote/slide.asy
@@ -245,6 +247,7 @@ share/examples/asymptote/RiemannSurfaceRoot.asy
 share/examples/asymptote/Sierpinski.asy
 share/examples/asymptote/SierpinskiGasket.asy
 share/examples/asymptote/SierpinskiSponge.asy
+share/examples/asymptote/Viviani.asy
 share/examples/asymptote/advection.asy
 share/examples/asymptote/alignbox.asy
 share/examples/asymptote/alignedaxis.asy
