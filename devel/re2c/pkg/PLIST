@@ -1,9 +1,34 @@
 @bin bin/re2c
+@bin bin/re2d
 @bin bin/re2go
+@bin bin/re2hs
+@bin bin/re2js
+@bin bin/re2ocaml
+@bin bin/re2py
 @bin bin/re2rust
+@bin bin/re2v
+@bin bin/re2zig
 @man man/man1/re2c.1
+@man man/man1/re2d.1
 @man man/man1/re2go.1
+@man man/man1/re2hs.1
+@man man/man1/re2js.1
+@man man/man1/re2ocaml.1
+@man man/man1/re2py.1
 @man man/man1/re2rust.1
+@man man/man1/re2v.1
+@man man/man1/re2zig.1
 share/re2c/
 share/re2c/stdlib/
+share/re2c/stdlib/c
+share/re2c/stdlib/d
+share/re2c/stdlib/go
+share/re2c/stdlib/haskell
+share/re2c/stdlib/java
+share/re2c/stdlib/js
+share/re2c/stdlib/ocaml
+share/re2c/stdlib/python
+share/re2c/stdlib/rust
 share/re2c/stdlib/unicode_categories.re
+share/re2c/stdlib/v
+share/re2c/stdlib/zig
