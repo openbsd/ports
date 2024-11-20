@@ -2,7 +2,7 @@ COMMENT=	GNU debugger
 CATEGORIES=	devel
 
 DISTNAME=	gdb-13.2
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	https://www.gnu.org/software/gdb/
 
@@ -37,7 +37,7 @@ CONFIGURE_ARGS=	--program-prefix=e \
 		--without-mpfr \
 		--with-libgmp-type=shared \
 		--with-auto-load-dir=${TRUEPREFIX}/share/gdb/auto-load \
-		--enable-target=all \
+		--enable-targets=all \
 		--with-python=${MODPY_BIN} \
 		--with-system-zlib
 
