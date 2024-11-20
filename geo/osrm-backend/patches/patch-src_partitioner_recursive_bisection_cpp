@@ -4,9 +4,9 @@ https://github.com/Project-OSRM/osrm-backend/pull/6493
 Index: src/partitioner/recursive_bisection.cpp
 --- src/partitioner/recursive_bisection.cpp.orig
 +++ src/partitioner/recursive_bisection.cpp
-@@ -64,12 +64,20 @@ RecursiveBisection::RecursiveBisection(BisectionGraph 
-         return TreeNode{std::move(graph), internal_state.SCCDepth()};
-     });
+@@ -65,12 +65,20 @@ RecursiveBisection::RecursiveBisection(BisectionGraph 
+                        return TreeNode{std::move(graph), internal_state.SCCDepth()};
+                    });
  
 +#if TBB_VERSION_MAJOR == 2020
 +    using Feeder = tbb::parallel_do_feeder<TreeNode>;
@@ -18,10 +18,10 @@ Index: src/partitioner/recursive_bisection.cpp
  
      // Bisect graph into two parts. Get partition point and recurse left and right in parallel.
 +#if TBB_VERSION_MAJOR == 2020
-+    tbb::parallel_do(begin(forest), end(forest), [&](const TreeNode &node, Feeder &feeder) {
++    tbb::parallel_do(
 +#else
-     tbb::parallel_for_each(begin(forest), end(forest), [&](const TreeNode &node, Feeder &feeder) {
+     tbb::parallel_for_each(
 +#endif
-         const auto cut =
-             computeInertialFlowCut(node.graph, num_optimizing_cuts, balance, boundary_factor);
-         const auto center = internal_state.ApplyBisection(
+         begin(forest),
+         end(forest),
+         [&](const TreeNode &node, Feeder &feeder)

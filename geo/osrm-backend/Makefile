@@ -6,9 +6,8 @@ COMMENT =		high-performance road network routing engine
 
 GH_ACCOUNT =		Project-OSRM
 GH_PROJECT =		osrm-backend
-GH_COMMIT =		31e31a63d062fb804f5f4695ed3036ca7a269ead
-REVISION =		2
-DISTNAME =		osrm-backend-5.27.1pl0
+GH_COMMIT =		d9ce9cf780777c96d74e0430b7c6f1dee6930f9a
+DISTNAME =		osrm-backend-5.27.1pl1
 
 CATEGORIES =		geo
 
@@ -18,9 +17,8 @@ HOMEPAGE =		https://project-osrm.org/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB}
-WANTLIB += boost_chrono-mt boost_date_time-mt boost_filesystem-mt
-WANTLIB += boost_iostreams-mt boost_program_options-mt boost_regex-mt
-WANTLIB += boost_system-mt boost_thread-mt bz2 c expat m tbb z
+WANTLIB += boost_date_time-mt boost_iostreams-mt boost_program_options-mt
+WANTLIB += boost_regex-mt boost_thread-mt bz2 c expat m tbb z
 
 COMPILER =		base-clang ports-gcc
 

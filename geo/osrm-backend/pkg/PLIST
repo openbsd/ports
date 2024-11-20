@@ -8,12 +8,6 @@
 @bin bin/osrm-extract
 @bin bin/osrm-partition
 @bin bin/osrm-routed
-include/mapbox/
-include/mapbox/optional.hpp
-include/mapbox/recursive_wrapper.hpp
-include/mapbox/variant.hpp
-include/mapbox/variant_io.hpp
-include/mapbox/variant_visitor.hpp
 include/osrm/
 include/osrm/approach.hpp
 include/osrm/bearing.hpp
