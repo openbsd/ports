@@ -48,7 +48,7 @@ PERMIT_PACKAGE =   https://www.ui.com/eula/
 PERMIT_DISTFILES = https://www.ui.com/eula/
 
 MODULES =	java
-MODJAVA_VER ?=	1.8
+MODJAVA_VER ?=	17
 
 # mongodb is amd64-only (and even if that weren't the case,
 # building snappy-java for i386 is even more of a pain than for amd64)
@@ -57,10 +57,7 @@ ONLY_FOR_ARCHS =	amd64
 RUN_DEPENDS =	java/javaPathHelper
 
 MONGODB_VER ?=	44
-.if ${MONGODB_VER} == 36
-# <=3.6 only
-RUN_DEPENDS +=	mongodb-<3.7:databases/mongodb/${MONGODB_VER}
-.elif ${MONGODB_VER} == 44
+.if ${MONGODB_VER} == 44
 # permit any, prefer 44 for new installs
 RUN_DEPENDS +=	mongodb-*:databases/mongodb/${MONGODB_VER}
 .else
