@@ -1,0 +1,13 @@
+Fix build with Boost 1.79
+
+Index: src/mongo/shell/shell_utils_extended.cpp
+--- src/mongo/shell/shell_utils_extended.cpp.orig
++++ src/mongo/shell/shell_utils_extended.cpp
+@@ -39,6 +39,7 @@
+ #endif
+ 
+ #include <boost/filesystem.hpp>
++#include <boost/filesystem/fstream.hpp>
+ #include <fstream>
+ 
+ #include "mongo/scripting/engine.h"

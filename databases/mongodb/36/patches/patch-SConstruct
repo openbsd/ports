@@ -1,0 +1,29 @@
+Index: SConstruct
+--- SConstruct.orig
++++ SConstruct
+@@ -78,7 +78,7 @@ def make_variant_dir_generator():
+ 
+ # Always randomize the build order to shake out missing edges, and to help the cache:
+ # http://scons.org/doc/production/HTML/scons-user/ch24s06.html
+-SetOption('random', 1)
++#SetOption('random', 1)
+ 
+ # Options TODOs:
+ #
+@@ -895,6 +895,7 @@ envDict = dict(BUILD_ROOT=buildDir,
+                INSTALL_DIR=installDir,
+                CONFIG_HEADER_DEFINES={},
+                LIBDEPS_TAG_EXPANSIONS=[],
++               ENV = {'PATH': os.environ['PATH']},
+                )
+ 
+ env = Environment(variables=env_vars, **envDict)
+@@ -2699,7 +2700,7 @@ def doConfigure(myenv):
+         sslLibName = "ssl"
+         cryptoLibName = "crypto"
+         sslLinkDependencies = ["crypto", "dl"]
+-        if conf.env.TargetOSIs('freebsd'):
++        if conf.env.TargetOSIs('freebsd') or conf.env.TargetOSIs('openbsd'):
+             sslLinkDependencies = ["crypto"]
+         if conf.env.TargetOSIs('windows'):
+             sslLibName = "ssleay32"

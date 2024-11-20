@@ -1,0 +1,41 @@
+- mincore(2) has been removed
+
+Index: src/mongo/util/processinfo_openbsd.cpp
+--- src/mongo/util/processinfo_openbsd.cpp.orig
++++ src/mongo/util/processinfo_openbsd.cpp
+@@ -188,19 +188,24 @@ bool ProcessInfo::supported() {
+ }
+ 
+ bool ProcessInfo::blockCheckSupported() {
+-    return true;
++    return false;
+ }
+ 
+ bool ProcessInfo::blockInMemory(const void* start) {
++#if 0
+     char x = 0;
+     if (mincore((void*)alignToStartOfPage(start), getPageSize(), &x)) {
+         log() << "mincore failed: " << errnoWithDescription();
+         return 1;
+     }
+     return x & 0x1;
++#else
++    return false;
++#endif
+ }
+ 
+ bool ProcessInfo::pagesInMemory(const void* start, size_t numPages, vector<char>* out) {
++#if 0
+     out->resize(numPages);
+     // int mincore(const void *addr, size_t len, char *vec);
+     if (mincore((void*)alignToStartOfPage(start), numPages * getPageSize(), &(out->front()))) {
+@@ -211,6 +216,9 @@ bool ProcessInfo::pagesInMemory(const void* start, siz
+         (*out)[i] = 0x1;
+     }
+     return true;
++#else
++    return false;
++#endif
+ }
+ 
+ // get the number of CPUs available to the scheduler

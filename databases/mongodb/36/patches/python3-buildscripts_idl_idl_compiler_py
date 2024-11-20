@@ -1,0 +1,47 @@
+Index: buildscripts/idl/idl/compiler.py
+--- buildscripts/idl/idl/compiler.py.orig
++++ buildscripts/idl/idl/compiler.py
+@@ -31,8 +31,6 @@ IDL compiler driver.
+ Orchestrates the 3 passes (parser, binder, and generator) together.
+ """
+ 
+-from __future__ import absolute_import, print_function, unicode_literals
+-
+ import io
+ import logging
+ import os
+@@ -66,14 +64,14 @@ class CompilerImportResolver(parser.ImportResolverBase
+     """Class for the IDL compiler to resolve imported files."""
+ 
+     def __init__(self, import_directories):
+-        # type: (List[unicode]) -> None
++        # type: (List[str]) -> None
+         """Construct a ImportResolver."""
+         self._import_directories = import_directories
+ 
+         super(CompilerImportResolver, self).__init__()
+ 
+     def resolve(self, base_file, imported_file_name):
+-        # type: (unicode, unicode) -> unicode
++        # type: (str, str) -> str
+         """Return the complete path to an imported file name."""
+ 
+         logging.debug("Resolving imported file '%s' for file '%s'", imported_file_name, base_file)
+@@ -104,7 +102,7 @@ class CompilerImportResolver(parser.ImportResolverBase
+         raise errors.IDLError(msg)
+ 
+     def open(self, resolved_file_name):
+-        # type: (unicode) -> Any
++        # type: (str) -> Any
+         """Return an io.Stream for the requested file."""
+         return io.open(resolved_file_name, encoding='utf-8')
+ 
+@@ -121,7 +119,7 @@ def _write_dependencies(spec):
+ 
+ 
+ def _update_import_includes(args, spec, header_file_name):
+-    # type: (CompilerArgs, syntax.IDLSpec, unicode) -> None
++    # type: (CompilerArgs, syntax.IDLSpec, str) -> None
+     """Update the list of imports with a list of include files for each import with structs."""
+     # This function is fragile:
+     # In order to try to generate headers with an "include what you use" set of headers, the IDL

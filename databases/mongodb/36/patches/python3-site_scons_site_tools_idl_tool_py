@@ -1,0 +1,43 @@
+Index: site_scons/site_tools/idl_tool.py
+--- site_scons/site_tools/idl_tool.py.orig
++++ site_scons/site_tools/idl_tool.py
+@@ -21,6 +21,7 @@ import sys
+ 
+ import SCons
+ 
++
+ def idlc_emitter(target, source, env):
+     """For each input IDL file, the tool produces a .cpp and .h file."""
+     first_source = str(source[0])
+@@ -43,7 +44,7 @@ IDLCAction = SCons.Action.Action('$IDLCCOM', '$IDLCCOM
+ def idl_scanner(node, env, path):
+     # Use the import scanner mode of the IDL compiler to file imported files
+     cmd = [sys.executable, "buildscripts/idl/idlc.py",  '--include','src', str(node), '--write-dependencies']
+-    deps_str = subprocess.check_output(cmd)
++    deps_str = subprocess.check_output(cmd).decode('utf-8')
+ 
+     deps_list = deps_str.splitlines()
+ 
+@@ -57,19 +58,14 @@ def idl_scanner(node, env, path):
+ idl_scanner = SCons.Scanner.Scanner(function=idl_scanner, skeys=['.idl'])
+ 
+ # TODO: create a scanner for imports when imports are implemented
+-IDLCBuilder = SCons.Builder.Builder(
+-    action=IDLCAction,
+-    emitter=idlc_emitter,
+-    srcsuffx=".idl",
+-    suffix=".cpp",
+-    source_scanner = idl_scanner
+-    )
++IDLCBuilder = SCons.Builder.Builder(action=IDLCAction, emitter=idlc_emitter, srcsuffx=".idl",
++                                    suffix=".cpp", source_scanner=idl_scanner)
+ 
+ 
+ def generate(env):
+     bld = IDLCBuilder
+ 
+-    env.Append(SCANNERS = idl_scanner)
++    env.Append(SCANNERS=idl_scanner)
+ 
+     env['BUILDERS']['Idlc'] = bld
+ 

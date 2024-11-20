@@ -1,0 +1,14 @@
+sync actual changes from newer mongodb
+
+Index: src/mongo/db/fts/unicode/gen_diacritic_map.py
+--- src/mongo/db/fts/unicode/gen_diacritic_map.py.orig
++++ src/mongo/db/fts/unicode/gen_diacritic_map.py
+@@ -45,7 +45,7 @@ def add_diacritic_mapping(codepoint):
+     # c : recomposed unicode character with diacritics removed
+     a = chr(codepoint)
+     d = normalize('NFD', a)
+-    r = u''
++    r = ''
+ 
+     for i in range(len(d)):
+         if ord(d[i]) not in diacritics:

@@ -1,0 +1,26 @@
+@option is-branch
+@pkgpath databases/mongodb
+@newgroup _mongodb:670
+@newuser _mongodb:670:670::MongoDB Account:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/mongod
+@mode 750
+@owner _mongodb
+@group _mongodb
+@sample /var/mongodb/
+@sample /var/mongodb/data/
+@sample /var/log/mongodb/
+@mode
+@owner
+@group
+@bin bin/mongo
+@bin bin/mongobridge
+@bin bin/mongod
+@bin bin/mongoperf
+@bin bin/mongos
+@man man/man1/mongo.1
+@man man/man1/mongod.1
+@man man/man1/mongoperf.1
+@man man/man1/mongos.1
+share/examples/mongodb/
+share/examples/mongodb/mongodb.conf
+@sample ${SYSCONFDIR}/mongodb.conf

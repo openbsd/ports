@@ -1,0 +1,12 @@
+Index: src/mongo/executor/network_interface_mock_test.cpp
+--- src/mongo/executor/network_interface_mock_test.cpp.orig
++++ src/mongo/executor/network_interface_mock_test.cpp
+@@ -145,7 +145,7 @@ TEST_F(NetworkInterfaceMockTest, ConnectionHook) {
+         [&](const HostAndPort& remoteHost) {
+             makeRequestCalled = true;
+             hostCorrectForRequest = (remoteHost == testHost());
+-            return boost::make_optional<RemoteCommandRequest>(expectedRequest);
++            return boost::optional<RemoteCommandRequest>(expectedRequest);
+         },
+         [&](const HostAndPort& remoteHost, RemoteCommandResponse&& response) {
+             handleReplyCalled = true;
