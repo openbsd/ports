@@ -1,2 +1,3 @@
-A pathlib-compatible Zipfile object wrapper. Official backport of the standard
-library Path object.
+A pathlib-compatible Zipfile object wrapper. Official backport of the
+standard library Path object. New features are introduced in this third-
+party library and later merged into CPython.
