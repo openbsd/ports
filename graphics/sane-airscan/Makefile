@@ -1,6 +1,6 @@
 COMMENT=		SANE backend for eSCL and WSD scanners
 
-DIST_TUPLE=		github alexpevzner sane-airscan 0.99.29 .
+DIST_TUPLE=		github alexpevzner sane-airscan 0.99.30 .
 
 SHARED_LIBS += sane-airscan              0.0 # 1
 
