@@ -11,23 +11,20 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			131.0.6778.69
+V=			131.0.6778.85
 UGV=			${V}-1
 
 DISTNAME=		ungoogled-chromium-${V}
 
 DISTFILES+=		${CHROMIUM_DISTFILES} \
-			${REGRESS_DISTFILES} \
-			${UGOOGLE_DISTFILES} \
-			${GN_DISTFILES}
+			${REGRESS_DISTFILES}
+DISTFILES.a+=		${UGOOGLE_DISTFILES}
 
 CHROMIUM_DISTFILES+=	chromium-${V}${EXTRACT_SUFX}
 UGOOGLE_DISTFILES+=	ungoogled-chromium-${UGV}.tar.gz
-GN_DISTFILES+=		chrome-gn-${V}-src.tar.xz
 REGRESS_DISTFILES+=	chromium-${V}-testdata${EXTRACT_SUFX}
 
 EXTRACT_ONLY=		${CHROMIUM_DISTFILES} \
-			${GN_DISTFILES} \
 			${UGOOGLE_DISTFILES}
 
 CATEGORIES=		www
@@ -45,8 +42,8 @@ FLAVOR?=
 # BSD-like
 PERMIT_PACKAGE =	Yes
 
-#SITES=		https://commondatastorage.googleapis.com/chromium-browser-official/
-SITES=		http://nerd.hu/distfiles/
+SITES=		https://commondatastorage.googleapis.com/chromium-browser-official/
+SITES.a=	http://nerd.hu/distfiles/
 
 MODULES=	lang/clang lang/python x11/qt5
 
