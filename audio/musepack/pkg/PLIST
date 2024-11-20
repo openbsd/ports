@@ -16,5 +16,5 @@ include/mpc/mpcdec.h
 include/mpc/mpcmath.h
 include/mpc/reader.h
 include/mpc/streaminfo.h
-lib/libmpcdec.a
+@static-lib lib/libmpcdec.a
 @lib lib/libmpcdec.so.${LIBmpcdec_VERSION}

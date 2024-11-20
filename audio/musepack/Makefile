@@ -3,7 +3,7 @@ COMMENT =		decoder, encoder and replaygain for musepack files
 V =			475
 DISTNAME =		musepack_src_r${V}
 PKGNAME =		musepack-${V}
-REVISION =		5
+REVISION =		6
 CATEGORIES =		audio
 
 HOMEPAGE =		https://www.musepack.net/
@@ -27,8 +27,10 @@ NO_TEST =		Yes
 FIX_CRLF_FILES =	mpcgain/gain_analysis.c
 
 post-extract:
-	cp ${WRKDIR}/libreplaygain_r${V}/include/replaygain/gain_analysis.h ${WRKSRC}/mpcgain/
-	cp ${WRKDIR}/libreplaygain_r${V}/src/gain_analysis.c ${WRKSRC}/mpcgain/
+	cp ${WRKDIR}/libreplaygain_r${V}/include/replaygain/gain_analysis.h \
+		${WRKSRC}/mpcgain/
+	cp ${WRKDIR}/libreplaygain_r${V}/src/gain_analysis.c \
+		${WRKSRC}/mpcgain/
 	rm -r ${WRKSRC}/include/mpc/.svn
 
 .include <bsd.port.mk>
