@@ -292,6 +292,8 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/${MODPY_PYCACHE}pagerdu
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/${MODPY_PYCACHE}pagerduty.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/${MODPY_PYCACHE}postgresql.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/${MODPY_PYCACHE}postgresql.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/${MODPY_PYCACHE}pushover.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/${MODPY_PYCACHE}pushover.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/${MODPY_PYCACHE}sqlite.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/${MODPY_PYCACHE}sqlite.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/${MODPY_PYCACHE}uptimekuma.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -314,6 +316,7 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/mysql.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/ntfy.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/pagerduty.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/postgresql.py
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/pushover.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/sqlite.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/uptimekuma.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/zabbix.py
