@@ -4,6 +4,8 @@ DISTNAME=	mcrypt-1.0.7
 DIST_SUBDIR=	pecl
 REVISION=	1
 
+FLAVOR=		php81 php82 php83
+
 CATEGORIES=	security
 
 # PHP

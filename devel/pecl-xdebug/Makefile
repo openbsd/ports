@@ -5,6 +5,8 @@ GH_PROJECT=	xdebug
 GH_TAGNAME=	3.3.2
 REVISION=	0
 
+FLAVOR=		php81 php82 php83
+
 CATEGORIES=	devel
 
 HOMEPAGE=	https://xdebug.org/
