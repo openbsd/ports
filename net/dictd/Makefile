@@ -1,7 +1,7 @@
 COMMENT-main=	Dictionary Server Protocol client
 COMMENT-server=	Dictionary Server Protocol server
 
-V=		1.13.2
+V=		1.13.3
 DISTNAME=	dictd-$V
 
 PKGNAME-main=	dictd-client-$V
