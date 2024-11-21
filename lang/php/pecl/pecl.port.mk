@@ -5,6 +5,8 @@ MODULES +=	lang/php
 FLAVORS ?=	php81 php82 php83 php84
 FLAVOR ?=	php82
 
+DIST_SUBDIR ?=	pecl
+
 # MODPECL_DEFAULTV is used in PLISTs so that @pkgpath markers are only
 # applied for packages built against the "ports default" version of PHP,
 # this allows updates from old removed versions without additional per-
