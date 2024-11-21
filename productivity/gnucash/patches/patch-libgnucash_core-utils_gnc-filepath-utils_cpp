@@ -1,0 +1,48 @@
+unbreak with boost 1.87
+
+use std::filesystem::copy instead of handrolling a loop over the now-removed
+boost:filesystem::recursive_directory_iterator() API
+
+this code is only used when migrating from ~/.gnucash to ~/.local/share/gnucash
+Index: libgnucash/core-utils/gnc-filepath-utils.cpp
+--- libgnucash/core-utils/gnc-filepath-utils.cpp.orig
++++ libgnucash/core-utils/gnc-filepath-utils.cpp
+@@ -64,6 +64,7 @@
+ #endif
+ 
+ #include "gnc-locale-utils.hpp"
++#include <filesystem>
+ #include <boost/filesystem.hpp>
+ #include <boost/locale.hpp>
+ #include <regex>
+@@ -444,26 +445,11 @@ copy_recursive(const bfs::path& src, const bfs::path& 
+     auto old_len = old_str.size();
+     try
+     {
+-        /* Note: the for(auto elem : iterator) construct fails
+-         * on travis (g++ 4.8.x, boost 1.54) so I'm using
+-         * a traditional for loop here */
+-        for(auto direntry = bfs::recursive_directory_iterator(src);
+-            direntry != bfs::recursive_directory_iterator(); ++direntry)
+-        {
+-#ifdef G_OS_WIN32
+-            string cur_str = direntry->path().wstring();
+-#else
+-            string cur_str = direntry->path().string();
+-#endif
+-            auto cur_len = cur_str.size();
+-            string rel_str(cur_str, old_len, cur_len - old_len);
+-            bfs::path relpath(rel_str, cvt);
+-            auto newpath = bfs::absolute (relpath.relative_path(), dest);
+-            newpath.imbue(bfs_locale);
+-            bfs::copy(direntry->path(), newpath);
+-        }
++        std::filesystem::copy (std::filesystem::path(old_str),
++                               std::filesystem::path(dest.string()),
++                               std::filesystem::copy_options::recursive);
+     }
+-    catch(const bfs::filesystem_error& ex)
++    catch(const std::filesystem::filesystem_error& ex)
+     {
+         g_warning("An error occurred while trying to migrate the user configation from\n%s to\n%s"
+                   "(Error: %s)",

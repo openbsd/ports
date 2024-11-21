@@ -1,0 +1,12 @@
+Index: libgnucash/app-utils/gnc-quotes.cpp
+--- libgnucash/app-utils/gnc-quotes.cpp.orig
++++ libgnucash/app-utils/gnc-quotes.cpp
+@@ -205,7 +205,7 @@ GncFQQuoteSource::run_cmd (const StrVec& args, const s
+     try
+     {
+         std::future<std::vector<char> > out_buf, err_buf;
+-        boost::asio::io_service svc;
++        boost::asio::io_context svc;
+ 
+         auto input_buf = bp::buffer (json_string);
+ 	bp::child process;
