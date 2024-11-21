@@ -1,0 +1,16 @@
+- don't hardcode libstdc++
+
+Index: build/php.m4
+--- build/php.m4.orig
++++ build/php.m4
+@@ -757,7 +757,9 @@ AC_DEFUN([PHP_REQUIRE_CXX], [
+ AS_VAR_IF([php_cxx_done],, [
+   AC_PROG_CXX
+   AC_PROG_CXXCPP
+-  PHP_ADD_LIBRARY([stdc++])
++  for i in $LIBCXX; do
++    PHP_ADD_LIBRARY($i)
++  done
+   php_cxx_done=yes
+ ])
+ ])
