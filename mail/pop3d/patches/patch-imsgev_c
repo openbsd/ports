@@ -1,0 +1,93 @@
+Index: imsgev.c
+--- imsgev.c.orig
++++ imsgev.c
+@@ -25,6 +25,7 @@
+ #include <string.h>
+ #include <unistd.h>
+ 
++#include "pop3d.h"
+ #include "imsgev.h"
+ 
+ void imsgev_add(struct imsgev *);
+@@ -36,7 +37,9 @@ imsgev_init(struct imsgev *iev, int fd, void *data,
+     void (*callback)(struct imsgev *, int, struct imsg *),
+     void (*needfd)(struct imsgev *))
+ {
+-	imsg_init(&iev->ibuf, fd);
++	if (imsgbuf_init(&iev->ibuf, fd) == -1)
++		fatal("imsgbuf_init");
++
+ 	iev->terminate = 0;
+ 
+ 	iev->data = data;
+@@ -73,7 +76,7 @@ void
+ imsgev_clear(struct imsgev *iev)
+ {
+ 	event_del(&iev->ev);
+-	msgbuf_clear(&iev->ibuf.w);
++	imsgbuf_clear(&iev->ibuf);
+ 	close(iev->ibuf.fd);
+ }
+ 
+@@ -84,7 +87,7 @@ imsgev_add(struct imsgev *iev)
+ 
+ 	if (!iev->terminate)
+ 		events = EV_READ;
+-	if (iev->ibuf.w.queued || iev->terminate)
++	if (imsgbuf_queuelen(&iev->ibuf) > 0 || iev->terminate)
+ 		events |= EV_WRITE;
+ 
+ 	/* optimization: skip event_{del/set/add} if already set */
+@@ -108,17 +111,14 @@ imsgev_dispatch(int fd, short ev, void *humppa)
+ 	iev->events = 0;
+ 
+ 	if (ev & EV_READ) {
+-		if ((n = imsg_read(ibuf)) == -1) {
+-			/* if we don't have enough fds, free one up and retry */
+-			if (errno == EAGAIN) {
+-				iev->needfd(iev);
+-				n = imsg_read(ibuf);
+-			}
++		/* if we don't have enough fds, free one up and retry */
++		if (getdtablesize() <= getdtablecount() +
++		    (int)((CMSG_SPACE(sizeof(int))-CMSG_SPACE(0))/sizeof(int)))
++			iev->needfd(iev);
+ 
+-			if (n == -1) {
+-				imsgev_disconnect(iev, IMSGEV_EREAD);
+-				return;
+-			}
++		if ((n = imsgbuf_read(ibuf)) == -1) {
++			imsgev_disconnect(iev, IMSGEV_EREAD);
++			return;
+ 		}
+ 		if (n == 0) {
+ 			/*
+@@ -127,7 +127,8 @@ imsgev_dispatch(int fd, short ev, void *humppa)
+ 			 * if write data is pending.
+ 			 */
+ 			imsgev_disconnect(iev,
+-			    (iev->ibuf.w.queued) ? IMSGEV_EWRITE : IMSGEV_DONE);
++			    imsgbuf_queuelen(&iev->ibuf) > 0 ? IMSGEV_EWRITE :
++			    IMSGEV_DONE);
+ 			return;
+ 		}
+ 	}
+@@ -138,7 +139,7 @@ imsgev_dispatch(int fd, short ev, void *humppa)
+ 		 * closed, or some error occured. Both case are not recoverable
+ 		 * from the imsg perspective, so we treat it as a WRITE error.
+ 		 */
+-		if ((n = msgbuf_write(&ibuf->w)) <= 0 && errno != EAGAIN) {
++		if (imsgbuf_write(ibuf) == -1) {
+ 			imsgev_disconnect(iev, IMSGEV_EWRITE);
+ 			return;
+ 		}
+@@ -155,7 +156,7 @@ imsgev_dispatch(int fd, short ev, void *humppa)
+ 		imsg_free(&imsg);
+ 	}
+ 
+-	if (iev->terminate && iev->ibuf.w.queued == 0) {
++	if (iev->terminate && imsgbuf_queuelen(&iev->ibuf) == 0) {
+ 		imsgev_disconnect(iev, IMSGEV_DONE);
+ 		return;
+ 	}

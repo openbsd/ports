@@ -1,0 +1,34 @@
+Index: session.c
+--- session.c.orig
++++ session.c
+@@ -533,18 +533,20 @@ handle_retr(struct session *s, struct imsg *imsg)
+ 	FILE		*fp;
+ 	char		*line;
+ 	size_t		len;
++	int		fd;
+ 
+-	if (imsg->fd == -1) {
++	if ((fd = imsg_get_fd(imsg)) == -1) {
+ 		session_reply(s, "%s", "-ERR marked for delete");
+ 		io_set_write(&s->io);
+ 		return;
+ 	}
+ 
+-	if ((fp = fdopen(imsg->fd, "r")) == NULL) {
++	if ((fp = fdopen(fd, "r")) == NULL) {
+ 		logit(LOG_INFO, "%zu: retr failed", s->id);
+ 		session_reply(s, "%s", "-ERR RETR failed");
+ 		io_set_write(&s->io);
+ 		session_close(s, 1);
++		close(fd);
+ 		return;
+ 	}
+ 
+@@ -576,7 +578,6 @@ handle_retr(struct session *s, struct imsg *imsg)
+ 	session_reply(s, "%s", ".");
+ 	io_set_write(&s->io);
+ 	fclose(fp);
+-	close(imsg->fd);
+ }
+ 
+ static void

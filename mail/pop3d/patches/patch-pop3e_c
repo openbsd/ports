@@ -1,0 +1,12 @@
+Index: pop3e.c
+--- pop3e.c.orig
++++ pop3e.c
+@@ -203,7 +203,7 @@ pop3d_imsgev(struct imsgev *iev, int code, struct imsg
+ 		}
+ 		switch (imsg->hdr.type) {
+ 		case IMSG_AUTH:
+-			auth_response(r, imsg->fd);
++			auth_response(r, imsg_get_fd(imsg));
+ 			break;
+ 		default:
+ 			logit(LOG_DEBUG, "%s: unexpected imsg %d",
