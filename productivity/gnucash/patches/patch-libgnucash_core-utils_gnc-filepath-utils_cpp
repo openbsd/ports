@@ -1,3 +1,5 @@
+https://github.com/Gnucash/gnucash/pull/2045
+
 unbreak with boost 1.87
 
 use std::filesystem::copy instead of handrolling a loop over the now-removed

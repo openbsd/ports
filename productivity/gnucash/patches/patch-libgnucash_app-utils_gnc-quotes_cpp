@@ -1,3 +1,5 @@
+https://github.com/Gnucash/gnucash/pull/2045
+
 Index: libgnucash/app-utils/gnc-quotes.cpp
 --- libgnucash/app-utils/gnc-quotes.cpp.orig
 +++ libgnucash/app-utils/gnc-quotes.cpp
