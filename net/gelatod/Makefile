@@ -1,5 +1,5 @@
 COMMENT =		CLAT configuration daemon for OpenBSD
-V =			1.5
+V =			1.6
 DISTNAME =		gelatod-${V}
 CATEGORIES =		net
 
