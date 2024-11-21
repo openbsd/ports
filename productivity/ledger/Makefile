@@ -3,7 +3,7 @@ COMMENT =		command line double-entry accounting ledger
 GH_TAGNAME =		v3.3.2
 GH_ACCOUNT =		ledger
 GH_PROJECT =		ledger
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=  ledger                    1.0 # 3.0
 
