@@ -1,0 +1,20 @@
+Index: thingsd/config.c
+--- thingsd/config.c.orig
++++ thingsd/config.c
+@@ -115,14 +115,11 @@ config_getsocks(struct thingsd *env, struct imsg *imsg
+ 	}
+ 
+ 	/* create a new socket */
+-	if ((sock = calloc(1, sizeof(*sock))) == NULL) {
+-		if (imsg->fd != -1)
+-			close(imsg->fd);
++	if ((sock = calloc(1, sizeof(*sock))) == NULL)
+ 		return (-1);
+-	}
+ 
+ 	memcpy(&sock->conf, &sock_conf, sizeof(sock->conf));
+-	sock->fd = imsg->fd;
++	sock->fd = imsg_get_fd(imsg);
+ 
+ 	TAILQ_INSERT_TAIL(env->sockets, sock, entry);
+ 

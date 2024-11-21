@@ -1,0 +1,54 @@
+Index: thingsd/control.c
+--- thingsd/control.c.orig
++++ thingsd/control.c
+@@ -315,7 +315,12 @@ control_accept(int listenfd, short event, void *arg)
+ 		return;
+ 	}
+ 
+-	imsg_init(&c->iev.ibuf, connfd);
++	if (imsgbuf_init(&c->iev.ibuf, connfd) == -1) {
++		log_warn("%s: failed to init imsgbuf", __func__);
++		close(connfd);
++		free(c);
++		return;
++	}
+ 
+ 	c->iev.handler = control_dispatch_imsg;
+ 	c->iev.events = EV_READ;
+@@ -358,7 +363,7 @@ control_close(struct privsep *ps, struct imsg *imsg, i
+ 	    &fd, sizeof(fd)) == -1)
+ 		log_warn("fd not sent to thingsd to close");
+ 
+-	msgbuf_clear(&c->iev.ibuf.w);
++	imsgbuf_clear(&c->iev.ibuf);
+ 	TAILQ_REMOVE(&ctl_conns, c, entry);
+ 
+ 	event_del(&c->iev.ev);
+@@ -397,15 +402,15 @@ control_dispatch_imsg(int fd, short event, void *arg)
+ 	}
+ 
+ 	if (event & EV_READ) {
+-		n = imsg_read(&c->iev.ibuf);
+-		if ((n == -1 && errno != EAGAIN) || n == 0) {
++		n = imsgbuf_read(&c->iev.ibuf);
++		if (n == -1 || n == 0) {
+ 			control_close(ps, &imsg, fd, cs);
+ 			return;
+ 		}
+ 	}
+ 
+ 	if (event & EV_WRITE) {
+-		if (msgbuf_write(&c->iev.ibuf.w) <= 0 && errno != EAGAIN) {
++		if (imsgbuf_write(&c->iev.ibuf) == -1) {
+ 			control_close(ps, &imsg, fd, cs);
+ 			return;
+ 		}
+@@ -505,7 +510,7 @@ control_dispatch_imsg(int fd, short event, void *arg)
+ fail:
+ 	imsg_compose_event(&c->iev, IMSG_CTL_FAIL,
+ 	    0, 0, -1, &ret, sizeof(ret));
+-	imsg_flush(&c->iev.ibuf);
++	imsgbuf_flush(&c->iev.ibuf);
+ 	control_close(ps, &imsg, fd, cs);
+ }
+ 

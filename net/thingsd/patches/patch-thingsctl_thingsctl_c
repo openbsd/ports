@@ -1,0 +1,38 @@
+Index: thingsctl/thingsctl.c
+--- thingsctl/thingsctl.c.orig
++++ thingsctl/thingsctl.c
+@@ -104,7 +104,8 @@ main(int argc, char *argv[])
+ 
+ 	if ((ibuf = malloc(sizeof(struct imsgbuf))) == NULL)
+ 		err(1, "%s: malloc", __func__);
+-	imsg_init(ibuf, ctl_sock);
++	if (imsgbuf_init(ibuf, ctl_sock) == -1)
++		err(1, "%s: imsgbuf_init", __func__);
+ 	done = 0;
+ 
+ 	/* Check for root only actions */
+@@ -186,12 +187,11 @@ main(int argc, char *argv[])
+ 		usage();
+ 	}
+ 
+-	while (ibuf->w.queued)
+-		if (msgbuf_write(&ibuf->w) <= 0 && errno != EAGAIN)
+-			err(1, "write error");
++	if (imsgbuf_flush(ibuf) == -1)
++		err(1, "write error");
+ 
+ 	while (!done) {
+-		if ((n = imsg_read(ibuf)) == -1 && errno != EAGAIN)
++		if ((n = imsgbuf_read(ibuf)) == -1)
+ 			errx(1, "imsg_read error");
+ 		if (n == 0) {
+ 			if (res->action == SHOW_PACKETS)
+@@ -226,7 +226,7 @@ main(int argc, char *argv[])
+ 					done = 1;
+ 					break;
+ 				}
+-				printf("%s\n", imsg.data);
++				printf("%s\n", (char *)imsg.data);
+ 				break;
+ 			case SHOW_THINGSD:
+ 				done = show_parent_msg(&imsg);
