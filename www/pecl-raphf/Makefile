@@ -1,7 +1,7 @@
 COMMENT=	persistent handle and resource factory API
 
 DISTNAME=	raphf-2.0.0
-REVISION=	7
+REVISION=	8
 
 # PHP
 PERMIT_PACKAGE=	Yes
