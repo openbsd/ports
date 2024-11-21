@@ -13,3 +13,43 @@ Index: mdnsd/control.c
  void
  control_lookup(struct ctl_conn *c, struct imsg *imsg)
  {
+@@ -566,8 +568,13 @@ control_accept(int listenfd, short event, void *bula)
+ 		return;
+ 	}
+ 
++	if (imsgbuf_init(&c->iev.ibuf, connfd) == -1) {
++		log_warn("control_accept");
++		close(connfd);
++		free(c);
++		return;
++	}
+ 	LIST_INIT(&c->qlist);
+-	imsg_init(&c->iev.ibuf, connfd);
+ 	c->iev.handler = control_dispatch_imsg;
+ 	c->iev.events = EV_READ;
+ 	event_set(&c->iev.ev, c->iev.ibuf.fd, c->iev.events,
+@@ -612,7 +619,7 @@ control_close(int fd)
+ 		log_warn("control_close: fd %d: not found", fd);
+ 		return;
+ 	}
+-	msgbuf_clear(&c->iev.ibuf.w);
++	imsgbuf_clear(&c->iev.ibuf);
+ 	TAILQ_REMOVE(&ctl_conns, c, entry);
+ 
+ 	event_del(&c->iev.ev);
+@@ -644,13 +651,13 @@ control_dispatch_imsg(int fd, short event, void *bula)
+ 	}
+ 
+ 	if (event & EV_READ) {
+-		if ((n = imsg_read(&c->iev.ibuf)) == -1 || n == 0) {
++		if ((n = imsgbuf_read(&c->iev.ibuf)) == -1 || n == 0) {
+ 			control_close(fd);
+ 			return;
+ 		}
+ 	}
+ 	if (event & EV_WRITE) {
+-		if (msgbuf_write(&c->iev.ibuf.w) == -1) {
++		if (imsgbuf_write(&c->iev.ibuf) == -1) {
+ 			control_close(fd);
+ 			return;
+ 		}

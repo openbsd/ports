@@ -1,0 +1,40 @@
+Index: mdnsctl/mdnsl.c
+--- mdnsctl/mdnsl.c.orig
++++ mdnsctl/mdnsl.c
+@@ -59,7 +59,8 @@ mdns_open(struct mdns *m)
+ 	bzero(m, sizeof(*m));
+ 	if ((sockfd = mdns_connect()) == -1)
+ 		return (-1);
+-	imsg_init(&m->ibuf, sockfd);
++	if (imsgbuf_init(&m->ibuf, sockfd) == -1)
++		return (-1);
+ 	
+ 	return (sockfd);
+ }
+@@ -67,7 +68,7 @@ mdns_open(struct mdns *m)
+ void
+ mdns_close(struct mdns *m)
+ {
+-	imsg_clear(&m->ibuf);
++	imsgbuf_clear(&m->ibuf);
+ }
+ 
+ void
+@@ -329,7 +330,7 @@ mdns_read(struct mdns *m)
+ 	struct mdns_service	ms;
+ 	char			groupname[MAXHOSTNAMELEN];
+ 
+-	n = imsg_read(&m->ibuf);
++	n = imsgbuf_read(&m->ibuf);
+ 
+ 	if (n == -1 || n == 0)
+ 		return (n);
+@@ -514,7 +515,7 @@ ibuf_send_imsg(struct imsgbuf *ibuf, u_int32_t type,
+ 
+ 	imsg_close(ibuf, wbuf);
+ 
+-	if (msgbuf_write(&ibuf->w) == -1)
++	if (imsgbuf_write(ibuf) == -1)
+ 		return (-1);
+ 
+ 	return (0);
