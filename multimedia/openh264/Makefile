@@ -1,9 +1,6 @@
 COMMENT =		Cisco implementation of H.264 codec
-GH_ACCOUNT =		cisco
-GH_PROJECT =		openh264
-GH_TAGNAME =		v2.4.1
+DIST_TUPLE =		github	cisco	openh264	v2.5.0	.
 CATEGORIES =		multimedia
-REVISION =		1
 
 SHARED_LIBS =		openh264	1.0	# 7.0
 
@@ -37,7 +34,8 @@ MAKE_FLAGS +=		ARCH=${MACHINE_ARCH:amd64=x86_64}
 MAKE_FLAGS +=		HAVE_GMP_API=No
 
 # pass our .so version and ensure full SONAME, see ${WRKSRC}/build-bsd.mk
-MAKE_FLAGS +=		SHAREDLIB_MAJORVERSION=${LIBopenh264_VERSION:R} \
+MAJORVER =		${LIBopenh264_VERSION:R}
+MAKE_FLAGS +=		SHAREDLIB_MAJORVERSION=${MAJORVER} \
 			SHAREDLIBSUFFIXFULLVER=so.${LIBopenh264_VERSION} \
 			SHLDFLAGS=-Wl,-soname,libopenh264.so.${LIBopenh264_VERSION}
 
@@ -55,5 +53,6 @@ TEST_FLAGS +=	CODEC_UNITTEST_INCLUDES='-I${WRKSRC}/test -I/usr/local/include' \
 
 post-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/h264{enc,dec} ${PREFIX}/bin/
+	rm ${PREFIX}/lib/libopenh264.so{.${MAJORVER},}
 
 .include <bsd.port.mk>
