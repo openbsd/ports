@@ -183,6 +183,7 @@
      SUBDIR += pecl-mailparse,php81
      SUBDIR += pecl-mailparse,php82
      SUBDIR += pecl-mailparse,php83
+     SUBDIR += pecl-mailparse,php84
      SUBDIR += perdition
      SUBDIR += pflogsumm
      SUBDIR += pine-pgp-filters

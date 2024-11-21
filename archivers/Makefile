@@ -56,6 +56,7 @@
      SUBDIR += pecl-lzf,php81
      SUBDIR += pecl-lzf,php82
      SUBDIR += pecl-lzf,php83
+     SUBDIR += pecl-lzf,php84
      SUBDIR += pigz
      SUBDIR += pixz
      SUBDIR += py-brotli,python3

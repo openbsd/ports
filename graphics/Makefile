@@ -246,6 +246,7 @@
      SUBDIR += pecl-imagick,php81
      SUBDIR += pecl-imagick,php82
      SUBDIR += pecl-imagick,php83
+     SUBDIR += pecl-imagick,php84
      SUBDIR += peek
      SUBDIR += pho
      SUBDIR += piglit
