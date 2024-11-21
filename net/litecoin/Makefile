@@ -4,7 +4,7 @@ COMMENT =		P2P payment system
 
 GH_ACCOUNT =		litecoin-project
 GH_PROJECT =		litecoin
-GH_TAGNAME =		v0.21.3
+GH_TAGNAME =		v0.21.4
 
 SHARED_LIBS +=  bitcoinconsensus          3.0 # 0.0
 SHARED_LIBS +=  secp256k1                 0.0 # 0.0
