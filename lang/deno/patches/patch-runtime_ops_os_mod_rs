@@ -1,16 +1,16 @@
 Index: runtime/ops/os/mod.rs
 --- runtime/ops/os/mod.rs.orig
 +++ runtime/ops/os/mod.rs
-@@ -10,6 +10,7 @@ use deno_permissions::PermissionsContainer;
+@@ -11,6 +11,7 @@ use deno_permissions::PermissionsContainer;
  use serde::Serialize;
  use std::collections::HashMap;
  use std::env;
 +use std::path::PathBuf;
  
- mod sys_info;
- 
-@@ -91,7 +92,8 @@ pub enum OsError {
- #[op2]
+ deno_core::extension!(
+   deno_os,
+@@ -90,7 +91,8 @@ pub enum OsError {
+ #[op2(stack_trace)]
  #[string]
  fn op_exec_path(state: &mut OpState) -> Result<String, OsError> {
 -  let current_exe = env::current_exe().unwrap();

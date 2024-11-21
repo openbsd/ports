@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-0.106.0/build/toolchain/gcc_solink_wrapper.py
---- modcargo-crates/v8-0.106.0/build/toolchain/gcc_solink_wrapper.py.orig
-+++ modcargo-crates/v8-0.106.0/build/toolchain/gcc_solink_wrapper.py
+Index: modcargo-crates/v8-130.0.1/build/toolchain/gcc_solink_wrapper.py
+--- modcargo-crates/v8-130.0.1/build/toolchain/gcc_solink_wrapper.py.orig
++++ modcargo-crates/v8-130.0.1/build/toolchain/gcc_solink_wrapper.py
 @@ -39,7 +39,7 @@ def CollectDynSym(args):
    """Replaces: nm --format=posix -g -D -p $sofile | cut -f1-2 -d' '"""
    toc = ''

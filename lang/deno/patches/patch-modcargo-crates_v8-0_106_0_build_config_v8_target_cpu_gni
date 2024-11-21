@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-0.106.0/build/config/v8_target_cpu.gni
---- modcargo-crates/v8-0.106.0/build/config/v8_target_cpu.gni.orig
-+++ modcargo-crates/v8-0.106.0/build/config/v8_target_cpu.gni
+Index: modcargo-crates/v8-130.0.1/build/config/v8_target_cpu.gni
+--- modcargo-crates/v8-130.0.1/build/config/v8_target_cpu.gni.orig
++++ modcargo-crates/v8-130.0.1/build/config/v8_target_cpu.gni
 @@ -36,6 +36,8 @@ declare_args() {
  if (v8_target_cpu == "") {
    if (current_toolchain == "//build/toolchain/linux:clang_x64_v8_arm64") {

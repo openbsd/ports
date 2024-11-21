@@ -1,12 +1,11 @@
 Index: cli/standalone/binary.rs
 --- cli/standalone/binary.rs.orig
 +++ cli/standalone/binary.rs
-@@ -514,7 +514,7 @@ impl<'a> DenoCompileBinaryWriter<'a> {
-     let bytes = match maybe_bytes {
-       Some(bytes) => bytes,
-       None => {
--        log::info!("Download could not be found, aborting");
-+        log::info!("Download could not be found, aborting. deno compile is not supported on OpenBSD.");
-         std::process::exit(1)
-       }
-     };
+@@ -450,6 +450,7 @@ impl<'a> DenoCompileBinaryWriter<'a> {
+     &self,
+     compile_flags: &CompileFlags,
+   ) -> Result<Vec<u8>, AnyError> {
++    bail!("deno compile is not supported on OpenBSD.");
+     // Used for testing.
+     //
+     // Phase 2 of the 'min sized' deno compile RFC talks
