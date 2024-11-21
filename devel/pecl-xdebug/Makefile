@@ -3,9 +3,9 @@ COMMENT=	debug and development tools for PHP
 GH_ACCOUNT=	xdebug
 GH_PROJECT=	xdebug
 GH_TAGNAME=	3.3.2
-REVISION=	0
+REVISION=	1
 
-FLAVORS=	php81 php82 php83
+FLAVORS=	php82 php83
 
 CATEGORIES=	devel
 

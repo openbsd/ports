@@ -4,6 +4,11 @@
 @conflict php->=7.4,<7.4.28p1
 @conflict php->=8.0,<8.0.28p1
 @conflict php->=8.1,<8.1.28p0
+@pkgpath lang/php/7.2,-main
+@pkgpath lang/php/7.3,-main
+@pkgpath lang/php/7.4,-main
+@pkgpath lang/php/8.0,-main
+@pkgpath lang/php/8.1,-main
 @extraunexec rm -f ${SYSCONFDIR}/php-${PV}.sample/*
 @extraunexec rm -f ${SYSCONFDIR}/php-fpm.d/*
 @mode 1700

@@ -1,8 +1,9 @@
 # PHP PECL module
 
 MODULES +=	lang/php
+DIST_SUBDIR ?=	pecl
 
-FLAVORS ?=	php81 php82 php83 php84
+FLAVORS ?=	php82 php83 php84
 FLAVOR ?=	php82
 
 DIST_SUBDIR ?=	pecl

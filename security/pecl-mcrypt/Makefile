@@ -1,9 +1,9 @@
 COMMENT=	PHP bindings for the libmcrypt library
 
 DISTNAME=	mcrypt-1.0.7
-REVISION=	1
+REVISION=	2
 
-FLAVORS=	php81 php82 php83
+FLAVORS=	php82 php83
 
 CATEGORIES=	security
 

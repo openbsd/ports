@@ -134,7 +134,6 @@
      SUBDIR += p5-ldap
      SUBDIR += p5-pgsql
      SUBDIR += patroni
-     SUBDIR += pecl-redis,php81
      SUBDIR += pecl-redis,php82
      SUBDIR += pecl-redis,php83
      SUBDIR += pecl-redis,php84

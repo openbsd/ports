@@ -244,7 +244,6 @@
      SUBDIR += pdf-parser
      SUBDIR += pdfcrack
      SUBDIR += pdfid
-     SUBDIR += pecl-mcrypt,php81
      SUBDIR += pecl-mcrypt,php82
      SUBDIR += pecl-mcrypt,php83
      #SUBDIR += pecl-mcrypt,php84
