@@ -801,6 +801,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/customer-profiles/2020-08
 lib/python${MODPY_VERSION}/site-packages/botocore/data/customer-profiles/2020-08-15/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/customer-profiles/2020-08-15/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/customer-profiles/2020-08-15/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/customer-profiles/2020-08-15/paginators-1.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/customer-profiles/2020-08-15/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/databrew/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/databrew/2017-07-25/
@@ -1697,6 +1698,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/mediaconvert/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mediaconvert/2017-08-29/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mediaconvert/2017-08-29/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mediaconvert/2017-08-29/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/mediaconvert/2017-08-29/paginators-1.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/mediaconvert/2017-08-29/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/medialive/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/medialive/2017-10-14/
