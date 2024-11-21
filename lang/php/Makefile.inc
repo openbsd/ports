@@ -5,7 +5,7 @@ COMMENT-main=	server-side HTML-embedded scripting language
 PV=		${PHP_VERSION:R}
 SV=		${PV:S/.//}
 
-PKGNAME-main?=		php-${PHP_VERSION}
+PKGNAME-main?=		php-${PHP_VERSION:L}
 PKGSTEM=		php-${PV}
 PKGSTEM-main=		php-${PV}
 PORTROACH?=		limit:^${PV}
@@ -18,7 +18,7 @@ CATEGORIES=		lang www
 MAINTAINER=		Stuart Henderson <stu.ports@spacehopper.org>
 
 HOMEPAGE=		https://www.php.net/
-SITES=			https://www.php.net/distributions/
+SITES?=			https://www.php.net/distributions/
 
 # UPGRADERS: please read BOTH the PHP and Zend licenses
 # and make sure they are safe before an upgrade
@@ -106,10 +106,11 @@ TEST_FLAGS=		NO_INTERACTION=1
 ZEND_EXTENSIONS+=	-opcache
 
 # new subpackages must be added to devel/quirks $cve tables
-PHP_EXTENSIONS+=	-bz2 -curl -dba -enchant -gd -gmp -intl -imap -ldap \
-			-mysqli -odbc -pcntl -pdo_mysql -pdo_odbc -pdo_pgsql \
-			-pdo_sqlite -pgsql -pspell -shmop -soap -snmp \
-			-sqlite3 -pdo_dblib -tidy -xsl -zip
+PHP_EXTENSIONS+=	-bz2 -curl -dba -enchant -gd -gmp -intl \
+			-ldap -mysqli -odbc -pcntl -pdo_mysql \
+			-pdo_odbc -pdo_pgsql -pdo_sqlite -pgsql \
+			-shmop -soap -snmp -sqlite3 -pdo_dblib \
+			-tidy -xsl -zip
 
 SAPI+=			-main -apache -cgi -dbg -embed
 
@@ -254,9 +255,9 @@ CONFIGURE_ARGS+=	--with-enchant=shared,${LOCALBASE}
 COMMENT-gd=		image manipulation extensions for php
 HOMEPAGE-gd=		https://www.php.net/image
 LIB_DEPENDS-gd=		graphics/gd
-WANTLIB-gd+=		${COMPILER_LIBCXX} expat fontconfig freetype \
-			gd iconv jpeg lzma m png pthread sharpyuv \
-			tiff webp z zstd
+WANTLIB-gd+=		${COMPILER_LIBCXX} Lerc expat fontconfig \
+			freetype gd iconv jpeg lzma m png pthread \
+			sharpyuv tiff webp z zstd
 .if ${BUILD_PACKAGES:M-gd}
 CONFIGURE_ARGS+=	--with-external-gd \
 			--enable-gd=shared \
@@ -471,9 +472,9 @@ INSTALL_TARGET+= install-pharcmd
 
 .for i in ${MULTI_PACKAGES:N-main:S/-//g}
 DESCR-${i}=		${.CURDIR}/../files/DESCR-${i}
-PKGNAME-${i}=		php-${i}-${PHP_VERSION}
+PKGNAME-${i}=		php-${i}-${PHP_VERSION:L}
 PKGSPEC-${i}=		php-${i}-${PHP_PKGSPEC}
-RUN_DEPENDS-${i}+=	php-${PHP_VERSION}:lang/php/${PV}
+RUN_DEPENDS-${i}+=	php-${PHP_VERSION:L}:lang/php/${PV}
 .endfor
 
 DESCR-main=		${.CURDIR}/../files/DESCR-main
