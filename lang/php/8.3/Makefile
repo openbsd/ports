@@ -1,9 +1,7 @@
-PHP_VERSION=	8.3.13
+PHP_VERSION=	8.3.14
 PHP_PKGSPEC=	>=8.3,<8.4
 
-# no PORTROACH marker for the highest branch, to allow finding new branches
-PORTROACH=
-
-AUTOCONF_VERSION= 2.69
+PHP_EXTENSIONS+=  -imap -pspell
+AUTOCONF_VERSION= 2.71
 
 .include <bsd.port.mk>
