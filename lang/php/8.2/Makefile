@@ -1,8 +1,9 @@
-PHP_VERSION=	8.2.25
+PHP_VERSION=	8.2.26
 PHP_PKGSPEC=	>=8.2,<8.3
 
 DEFAULT_PHP=	Yes
 
-AUTOCONF_VERSION= 2.72
+PHP_EXTENSIONS+=  -imap -pspell
+AUTOCONF_VERSION= 2.69
 
 .include <bsd.port.mk>
