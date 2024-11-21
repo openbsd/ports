@@ -216,7 +216,7 @@ LIB_DEPENDS$i +=	devel/gettext,-runtime \
 COMMENT-bz2=		bzip2 compression extensions for php
 HOMEPAGE-bz2=		https://www.php.net/bzip2
 LIB_DEPENDS-bz2=	archivers/bzip2
-WANTLIB-bz2=		bz2 pthread
+WANTLIB-bz2+=		bz2 pthread
 .if ${BUILD_PACKAGES:M-bz2}
 CONFIGURE_ARGS+=	--with-bz2=shared,${LOCALBASE}
 .endif
@@ -225,7 +225,7 @@ CONFIGURE_ARGS+=	--with-bz2=shared,${LOCALBASE}
 COMMENT-curl=		curl URL library extensions for php
 HOMEPAGE-curl=		https://www.php.net/curl
 LIB_DEPENDS-curl=	net/curl
-WANTLIB-curl=		crypto curl nghttp2 nghttp3 ngtcp2 \
+WANTLIB-curl+=		crypto curl nghttp2 nghttp3 ngtcp2 \
 			ngtcp2_crypto_quictls pthread ssl z
 .if ${BUILD_PACKAGES:M-curl}
 CONFIGURE_ARGS+=	--with-curl=shared,${LOCALBASE}
@@ -235,7 +235,7 @@ CONFIGURE_ARGS+=	--with-curl=shared,${LOCALBASE}
 COMMENT-dba=		dba GDBM access extensions for php
 HOMEPAGE-dba=		https://www.php.net/dba
 LIB_DEPENDS-dba=	databases/gdbm
-WANTLIB-dba=		gdbm iconv intl pthread
+WANTLIB-dba+=		gdbm iconv intl pthread
 .if ${BUILD_PACKAGES:M-dba}
 CONFIGURE_ARGS+=	--enable-dba=shared \
 			--with-gdbm=${LOCALBASE}
@@ -245,7 +245,7 @@ CONFIGURE_ARGS+=	--enable-dba=shared \
 COMMENT-enchant=	enchant library extensions for php
 HOMEPAGE-enchant=	https://www.php.net/enchant
 LIB_DEPENDS-enchant=	textproc/enchant2
-WANTLIB-enchant=	aspell enchant-2 gio-2.0 glib-2.0 gmodule-2.0 \
+WANTLIB-enchant+=	aspell enchant-2 gio-2.0 glib-2.0 gmodule-2.0 \
 			gobject-2.0 iconv intl pthread
 .if ${BUILD_PACKAGES:M-enchant}
 CONFIGURE_ARGS+=	--with-enchant=shared,${LOCALBASE}
@@ -271,7 +271,7 @@ CONFIGURE_ARGS+=	--with-external-gd \
 COMMENT-gmp=		gmp math library support for php
 HOMEPAGE-gmp=		https://www.php.net/gmp
 LIB_DEPENDS-gmp=	devel/gmp
-WANTLIB-gmp=		gmp pthread
+WANTLIB-gmp+=		gmp pthread
 .if ${BUILD_PACKAGES:M-gmp}
 CONFIGURE_ARGS+=	--with-gmp=shared,${LOCALBASE}
 .endif
@@ -280,7 +280,7 @@ CONFIGURE_ARGS+=	--with-gmp=shared,${LOCALBASE}
 COMMENT-imap=		imap, pop3 and nntp extensions for php
 HOMEPAGE-imap=		https://www.php.net/imap
 LIB_DEPENDS-imap=	mail/alpine,-c-client
-WANTLIB-imap=		c-client crypto pthread ssl
+WANTLIB-imap+=		c-client crypto pthread ssl
 .if ${BUILD_PACKAGES:M-imap}
 CONFIGURE_ARGS+=	--with-imap=shared,${LOCALBASE} \
 			--with-imap-ssl
@@ -291,7 +291,7 @@ COMMENT-intl=		intl library support for php
 HOMEPAGE-intl=		https://www.php.net/intl
 LIB_DEPENDS-intl=	textproc/icu4c
 RUN_DEPENDS-intl=	textproc/icu4c,-wwwdata
-WANTLIB-intl=		${COMPILER_LIBCXX} icudata icui18n icuio icuuc m
+WANTLIB-intl+=		${COMPILER_LIBCXX} icudata icui18n icuio icuuc m
 .if ${BUILD_PACKAGES:M-intl}
 CONFIGURE_ARGS+=	--enable-intl=shared
 .endif
@@ -300,7 +300,7 @@ CONFIGURE_ARGS+=	--enable-intl=shared
 COMMENT-ldap=		ldap protocol extensions for php
 HOMEPAGE-ldap=		https://www.php.net/ldap
 LIB_DEPENDS-ldap=	databases/openldap
-WANTLIB-ldap=		crypto lber ldap pthread sasl2 ssl
+WANTLIB-ldap+=		crypto lber ldap pthread sasl2 ssl
 .if ${BUILD_PACKAGES:M-ldap}
 CONFIGURE_ARGS+=	--with-ldap=shared,${LOCALBASE}
 .endif
@@ -310,13 +310,13 @@ COMMENT-mysqli=		mysql database access extensions for php
 HOMEPAGE-mysqli	=	https://www.php.net/mysqli
 CONFIGURE_ARGS+=	--with-mysqli=shared
 LIB_DEPENDS-mysqli=	# empty: using PHP's mysqlnd
-WANTLIB-mysqli=		pthread
+WANTLIB-mysqli+=	pthread
 
 # odbc
 COMMENT-odbc=		odbc database access extensions for php
 HOMEPAGE-odbc=		https://www.php.net/odbc
 LIB_DEPENDS-odbc=	databases/iodbc
-WANTLIB-odbc=		iodbc iodbcinst pthread
+WANTLIB-odbc+=		iodbc iodbcinst pthread
 .if ${BUILD_PACKAGES:M-odbc}
 CONFIGURE_ARGS+=	--with-iodbc=shared,${LOCALBASE}
 .endif
@@ -326,13 +326,13 @@ COMMENT-pcntl=		PCNTL extensions for php
 HOMEPAGE-pcntl=		https://www.php.net/pcntl
 CONFIGURE_ARGS+=	--enable-pcntl=shared
 LIB_DEPENDS-pcntl=	# empty
-WANTLIB-pcntl=		pthread
+WANTLIB-pcntl+=		pthread
 
 # pdo-dblib
 COMMENT-pdo_dblib=	PDO DB-LIB support for php
 HOMEPAGE-pdo_dblib=	https://www.php.net/pdo_dblib
 LIB_DEPENDS-pdo_dblib=	databases/freetds
-WANTLIB-pdo_dblib=	gmp gnutls hogweed iconv idn2 intl nettle p11-kit \
+WANTLIB-pdo_dblib+=	gmp gnutls hogweed iconv idn2 intl nettle p11-kit \
 			pthread sybdb tasn1 unistring
 .if ${BUILD_PACKAGES:M-pdo_dblib}
 CONFIGURE_ARGS+=	--with-pdo-dblib=shared,${LOCALBASE}
@@ -343,13 +343,13 @@ COMMENT-pdo_mysql=	PDO mysql database access extensions for php
 HOMEPAGE-pdo_mysql=	https://www.php.net/pdo_mysql
 CONFIGURE_ARGS+=	--with-pdo-mysql=shared
 LIB_DEPENDS-pdo_mysql=	# empty: using PHP's mysqlnd
-WANTLIB-pdo_mysql=	pthread
+WANTLIB-pdo_mysql+=	pthread
 
 # pdo-odbc
 COMMENT-pdo_odbc=	PDO database access extensions for php
 HOMEPAGE-pdo_odbc=	https://www.php.net/pdo_odbc
 LIB_DEPENDS-pdo_odbc=	databases/iodbc
-WANTLIB-pdo_odbc=	iodbc pthread
+WANTLIB-pdo_odbc+=	iodbc pthread
 .if ${BUILD_PACKAGES:M-pdo_odbc}
 CONFIGURE_ARGS+=	--with-pdo-odbc=shared,iODBC,${LOCALBASE}
 .endif
@@ -358,7 +358,7 @@ CONFIGURE_ARGS+=	--with-pdo-odbc=shared,iODBC,${LOCALBASE}
 COMMENT-pdo_pgsql=	PDO pgsql database access extensions for php
 HOMEPAGE-pdo_pgsql=	https://www.php.net/pdo_pgsql
 LIB_DEPENDS-pdo_pgsql=	databases/postgresql
-WANTLIB-pdo_pgsql=	crypto m pq pthread ssl
+WANTLIB-pdo_pgsql+=	crypto m pq pthread ssl
 .if ${BUILD_PACKAGES:M-pdo_pgsql}
 CONFIGURE_ARGS+=	--with-pdo-pgsql=shared,${LOCALBASE}
 .endif
@@ -367,7 +367,7 @@ CONFIGURE_ARGS+=	--with-pdo-pgsql=shared,${LOCALBASE}
 COMMENT-pdo_sqlite=	PDO sqlite3 database access extensions for php
 HOMEPAGE-pdo_sqlite=	https://www.php.net/pdo_sqlite
 LIB_DEPENDS-pdo_sqlite=	databases/sqlite3
-WANTLIB-pdo_sqlite=	m pthread sqlite3 z
+WANTLIB-pdo_sqlite+=	m pthread sqlite3 z
 .if ${BUILD_PACKAGES:M-pdo_sqlite}
 CONFIGURE_ARGS+=	--with-pdo-sqlite=shared,${LOCALBASE}
 .else
@@ -378,7 +378,7 @@ CONFIGURE_ARGS+=	--with-pdo-sqlite=no
 COMMENT-pgsql=		pgsql database access extensions for php
 HOMEPAGE-pgsql=		https://www.php.net/pgsql
 LIB_DEPENDS-pgsql=	databases/postgresql
-WANTLIB-pgsql=		crypto m pq pthread ssl
+WANTLIB-pgsql+=		crypto m pq pthread ssl
 .if ${BUILD_PACKAGES:M-pgsql}
 CONFIGURE_ARGS+=	--with-pgsql=shared,${LOCALBASE}
 .endif
@@ -387,7 +387,7 @@ CONFIGURE_ARGS+=	--with-pgsql=shared,${LOCALBASE}
 COMMENT-pspell=		pspell library extensions for php
 HOMEPAGE-pspell=	https://www.php.net/pspell
 LIB_DEPENDS-pspell=	textproc/aspell/core
-WANTLIB-pspell=		aspell iconv intl pspell pthread
+WANTLIB-pspell+=	aspell iconv intl pspell pthread
 .if ${BUILD_PACKAGES:M-pspell}
 CONFIGURE_ARGS+=	--with-pspell=shared,${LOCALBASE}
 .endif
@@ -397,13 +397,13 @@ COMMENT-shmop=		shared memory extensions for php
 HOMEPAGE-shmop=		https://www.php.net/shmop
 CONFIGURE_ARGS+=	--enable-shmop=shared,${LOCALBASE}
 LIB_DEPENDS-shmop=	# empty
-WANTLIB-shmop=		pthread
+WANTLIB-shmop+=		pthread
 
 # snmp
 COMMENT-snmp=		snmp protocol extensions for php
 HOMEPAGE-snmp=		https://www.php.net/snmp
 LIB_DEPENDS-snmp=	net/net-snmp
-WANTLIB-snmp=		crypto m netsnmp pthread ssl
+WANTLIB-snmp+=		crypto m netsnmp pthread ssl
 .if ${BUILD_PACKAGES:M-snmp}
 CONFIGURE_ARGS+=	--with-snmp=shared,${LOCALBASE}
 .endif
@@ -412,7 +412,7 @@ CONFIGURE_ARGS+=	--with-snmp=shared,${LOCALBASE}
 COMMENT-soap=		SOAP functions for php
 HOMEPAGE-soap=		https://www.php.net/soap
 LIB_DEPENDS-soap=	textproc/libxml
-WANTLIB-soap=		iconv lzma m pthread xml2 z
+WANTLIB-soap+=		iconv lzma m pthread xml2 z
 .if ${BUILD_PACKAGES:M-soap}
 CONFIGURE_ARGS+=	--enable-soap=shared,${LOCALBASE}
 .endif
@@ -421,7 +421,7 @@ CONFIGURE_ARGS+=	--enable-soap=shared,${LOCALBASE}
 COMMENT-sqlite3=	sqlite3 database access extension for php
 HOMEPAGE-sqlite3=	https://www.php.net/sqlite3
 LIB_DEPENDS-sqlite3=	databases/sqlite3
-WANTLIB-sqlite3=	m pthread sqlite3 z
+WANTLIB-sqlite3+=	m pthread sqlite3 z
 .if ${BUILD_PACKAGES:M-sqlite3}
 CONFIGURE_ARGS+=	--with-sqlite3=shared,${LOCALBASE}
 .else
@@ -432,7 +432,7 @@ CONFIGURE_ARGS+=	--with-sqlite3=no
 COMMENT-tidy=		tidy HTML cleaner bindings
 HOMEPAGE-tidy=		https://www.php.net/tidy
 LIB_DEPENDS-tidy=	www/tidy
-WANTLIB-tidy=		pthread tidy
+WANTLIB-tidy+=		pthread tidy
 .if ${BUILD_PACKAGES:M-tidy}
 CONFIGURE_ARGS+=	--with-tidy=shared,${LOCALBASE}
 .endif
@@ -441,7 +441,7 @@ CONFIGURE_ARGS+=	--with-tidy=shared,${LOCALBASE}
 COMMENT-xsl=		XSL functions for php
 HOMEPAGE-xsl=		https://www.php.net/xsl
 LIB_DEPENDS-xsl=	textproc/libxslt
-WANTLIB-xsl=		exslt gcrypt gpg-error iconv intl lzma m pthread \
+WANTLIB-xsl+=		exslt gcrypt gpg-error iconv intl lzma m pthread \
 			xml2 xslt z
 .if ${BUILD_PACKAGES:M-xsl}
 CONFIGURE_ARGS+=	--with-xsl=shared --enable-dom
@@ -452,7 +452,7 @@ COMMENT-zip=		zip functions for php
 HOMEPAGE-zip=		https://www.php.net/zip
 LIB_DEPENDS-zip=	archivers/bzip2 \
 			archivers/libzip
-WANTLIB-zip=		bz2 crypto lzma pthread z zip zstd
+WANTLIB-zip+=		bz2 crypto lzma pthread z zip zstd
 .if ${BUILD_PACKAGES:M-zip}
 CONFIGURE_ARGS+=	--with-zip=shared
 .endif
