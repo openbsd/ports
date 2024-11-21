@@ -1,7 +1,7 @@
 # qmake picks up gcrypt.h even though it's unused
 DPB_PROPERTIES =	nojunk
 
-VER =		5.0.1
+VER =		5.0.2
 DISTNAME =	qbittorrent-${VER}
 
 DIST_SUBDIR =	qbittorrent
