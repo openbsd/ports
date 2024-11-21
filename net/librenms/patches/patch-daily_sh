@@ -48,9 +48,9 @@ Index: daily.sh
  }
  
  #######################################
-@@ -132,13 +132,13 @@ set_notifiable_result() {
+@@ -132,14 +132,14 @@ set_notifiable_result() {
  check_dependencies() {
-     local branch ver_71 ver_72 ver_73 ver_81 python3 python_deps phpver pythonver old_branches msg
+     local branch ver_71 ver_72 ver_73 ver_81 ver_82 python3 python_deps phpver pythonver old_branches msg
  
 -    branch=$(git rev-parse --abbrev-ref HEAD)
 +    branch=master
@@ -60,14 +60,16 @@ Index: daily.sh
 -    ver_72=$(php -r "echo (int)version_compare(PHP_VERSION, '7.2.5', '<');")
 -    ver_73=$(php -r "echo (int)version_compare(PHP_VERSION, '7.3', '<');")
 -    ver_81=$(php -r "echo (int)version_compare(PHP_VERSION, '8.1', '<');")
+-    ver_82=$(php -r "echo (int)version_compare(PHP_VERSION, '8.2', '<');")
 +    ver_71=$(${MODPHP_BIN} -r "echo (int)version_compare(PHP_VERSION, '7.1.3', '<');")
 +    ver_72=$(${MODPHP_BIN} -r "echo (int)version_compare(PHP_VERSION, '7.2.5', '<');")
 +    ver_73=$(${MODPHP_BIN} -r "echo (int)version_compare(PHP_VERSION, '7.3', '<');")
 +    ver_81=$(${MODPHP_BIN} -r "echo (int)version_compare(PHP_VERSION, '8.1', '<');")
++    ver_82=$(${MODPHP_BIN} -r "echo (int)version_compare(PHP_VERSION, '8.2', '<');")
      python3=$(python3 -c "import sys;print(int(sys.version_info < (3, 4)))" 2> /dev/null)
      python_deps=$("${LIBRENMS_DIR}/scripts/check_requirements.py" > /dev/null 2>&1; echo $?)
      phpver="master"
-@@ -276,7 +276,7 @@ main () {
+@@ -282,7 +282,7 @@ main () {
      fi
  
      if [[ -z "$arg" ]]; then
@@ -76,7 +78,7 @@ Index: daily.sh
          if [[ "$up" == "0" ]]; then
              "${DAILY_SCRIPT}" no-code-update
              set_notifiable_result update 1  # make sure there are no update notifications if update is disabled
-@@ -287,7 +287,7 @@ main () {
+@@ -293,7 +293,7 @@ main () {
          php_ver_ret=$?
  
          # Restore composer files if user installed plugins

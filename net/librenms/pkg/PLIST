@@ -858,6 +858,7 @@ librenms/app/Console/Commands/DevicePoll.php
 librenms/app/Console/Commands/GetConfigCommand.php
 librenms/app/Console/Commands/InternalHttpRequest.php
 librenms/app/Console/Commands/KeyRotate.php
+librenms/app/Console/Commands/MaintenanceDatabaseCleanup.php
 librenms/app/Console/Commands/MaintenanceFetchOuis.php
 librenms/app/Console/Commands/PluginAddCommand.php
 librenms/app/Console/Commands/PluginDisable.php
@@ -982,6 +983,7 @@ librenms/app/Http/Controllers/Maps/AvailabilityMapController.php
 librenms/app/Http/Controllers/Maps/CustomMapBackgroundController.php
 librenms/app/Http/Controllers/Maps/CustomMapController.php
 librenms/app/Http/Controllers/Maps/CustomMapDataController.php
+librenms/app/Http/Controllers/Maps/CustomMapNodeImageController.php
 librenms/app/Http/Controllers/Maps/DeviceDependencyController.php
 librenms/app/Http/Controllers/Maps/FullscreenMapController.php
 librenms/app/Http/Controllers/Maps/MapDataController.php
@@ -1160,6 +1162,7 @@ librenms/app/Models/CustomMap.php
 librenms/app/Models/CustomMapBackground.php
 librenms/app/Models/CustomMapEdge.php
 librenms/app/Models/CustomMapNode.php
+librenms/app/Models/CustomMapNodeImage.php
 librenms/app/Models/Dashboard.php
 librenms/app/Models/Device.php
 librenms/app/Models/DeviceAttrib.php
@@ -1314,6 +1317,7 @@ librenms/app/StreamedOutput.php
 librenms/app/View/
 librenms/app/View/Components/
 librenms/app/View/Components/DeviceLink.php
+librenms/app/View/Components/DeviceLinkMap.php
 librenms/app/View/Components/Graph.php
 librenms/app/View/Components/GraphRow.php
 librenms/app/View/Components/Label.php
@@ -1322,6 +1326,7 @@ librenms/app/View/Components/OptionBar.php
 librenms/app/View/Components/Panel.php
 librenms/app/View/Components/Popup.php
 librenms/app/View/Components/PortLink.php
+librenms/app/View/Components/PortLinkMap.php
 librenms/app/View/Components/Submenu.php
 librenms/app/View/Components/Toast.php
 librenms/app/View/Components/TransceiverSensors.php
@@ -1699,6 +1704,9 @@ librenms/database/migrations/2024_08_27_182000_ports_statistics_table_rev_length
 librenms/database/migrations/2024_10_06_002633_ports_vlans_table_add_port_id_index.php
 librenms/database/migrations/2024_10_12_164214_custom_map_edge_width.php
 librenms/database/migrations/2024_10_12_210114_custom_map_legend_colours.php
+librenms/database/migrations/2024_10_13_161616_create_custom_map_nodeimage_table.php
+librenms/database/migrations/2024_10_13_162920_add_custom_map_nodeimage_column.php
+librenms/database/migrations/2024_11_07_110342_custommap_edge_add_text_align.php
 librenms/database/schema/
 librenms/database/schema/mysql-schema.sql
 librenms/database/schema/testing-schema.sql
@@ -2401,6 +2409,7 @@ librenms/html/images/os/tranzeo.png
 librenms/html/images/os/trellix.svg
 librenms/html/images/os/trendnet.png
 librenms/html/images/os/tripplite.svg
+librenms/html/images/os/truenas-scale.png
 librenms/html/images/os/truenas.png
 librenms/html/images/os/tsc.png
 librenms/html/images/os/tyconsystems.png
@@ -2564,7 +2573,8 @@ librenms/html/js/tw-sack.js
 librenms/html/js/typeahead.bundle.min.js
 librenms/html/js/vendor.js
 librenms/html/js/vendor.js.LICENSE.txt
-librenms/html/js/vis.min.js
+librenms/html/js/vis-data.min.js
+librenms/html/js/vis-network.min.js
 librenms/html/mix-manifest.json
 librenms/html/pdf.php
 librenms/html/plugins/
@@ -2602,6 +2612,7 @@ librenms/includes/definitions/acos.yaml
 librenms/includes/definitions/acs.yaml
 librenms/includes/definitions/acsw.yaml
 librenms/includes/definitions/adtran-aos.yaml
+librenms/includes/definitions/adva-fsp150cp.yaml
 librenms/includes/definitions/adva-osa.yaml
 librenms/includes/definitions/adva_fsp150.yaml
 librenms/includes/definitions/adva_fsp3kr7.yaml
@@ -3330,6 +3341,7 @@ librenms/includes/definitions/discovery/transition.yaml
 librenms/includes/definitions/discovery/tranzeo.yaml
 librenms/includes/definitions/discovery/trendnet.yaml
 librenms/includes/definitions/discovery/trippliteconsole.yaml
+librenms/includes/definitions/discovery/truenas-scale.yaml
 librenms/includes/definitions/discovery/truenas.yaml
 librenms/includes/definitions/discovery/ts-bspdu.yaml
 librenms/includes/definitions/discovery/ubiquoss-pon.yaml
@@ -3865,6 +3877,7 @@ librenms/includes/definitions/transition.yaml
 librenms/includes/definitions/tranzeo.yaml
 librenms/includes/definitions/trendnet.yaml
 librenms/includes/definitions/trippliteconsole.yaml
+librenms/includes/definitions/truenas-scale.yaml
 librenms/includes/definitions/truenas.yaml
 librenms/includes/definitions/ts-bspdu.yaml
 librenms/includes/definitions/tsc.yaml
@@ -3989,6 +4002,7 @@ librenms/includes/discovery/os.inc.php
 librenms/includes/discovery/ports/
 librenms/includes/discovery/ports-stack.inc.php
 librenms/includes/discovery/ports.inc.php
+librenms/includes/discovery/ports/adva-fsp150cp.inc.php
 librenms/includes/discovery/ports/airos-af-ltu.inc.php
 librenms/includes/discovery/ports/brocade.inc.php
 librenms/includes/discovery/ports/cnmatrix.inc.php
@@ -4221,7 +4235,6 @@ librenms/includes/discovery/sensors/pre-cache/nokia-isam.inc.php
 librenms/includes/discovery/sensors/pre-cache/pbn.inc.php
 librenms/includes/discovery/sensors/pre-cache/poweralert.inc.php
 librenms/includes/discovery/sensors/pre-cache/powerlogic.inc.php
-librenms/includes/discovery/sensors/pre-cache/procurve.inc.php
 librenms/includes/discovery/sensors/pre-cache/raisecom-ros.inc.php
 librenms/includes/discovery/sensors/pre-cache/raisecom.inc.php
 librenms/includes/discovery/sensors/pre-cache/raritan-pdu.inc.php
@@ -4277,7 +4290,6 @@ librenms/includes/discovery/sensors/state/exa.inc.php
 librenms/includes/discovery/sensors/state/extendair.inc.php
 librenms/includes/discovery/sensors/state/fortigate.inc.php
 librenms/includes/discovery/sensors/state/fs-nmu.inc.php
-librenms/includes/discovery/sensors/state/hirschmann.inc.php
 librenms/includes/discovery/sensors/state/hp.inc.php
 librenms/includes/discovery/sensors/state/hpblmos.inc.php
 librenms/includes/discovery/sensors/state/ibm-amm.inc.php
@@ -4394,6 +4406,7 @@ librenms/includes/discovery/sensors/temperature/supermicro.inc.php
 librenms/includes/discovery/sensors/temperature/teracom.inc.php
 librenms/includes/discovery/sensors/temperature/terra.inc.php
 librenms/includes/discovery/sensors/temperature/tpdin.inc.php
+librenms/includes/discovery/sensors/temperature/truenas-scale.inc.php
 librenms/includes/discovery/sensors/temperature/truenas.inc.php
 librenms/includes/discovery/sensors/temperature/unix.inc.php
 librenms/includes/discovery/sensors/temperature/voss.inc.php
@@ -4485,6 +4498,7 @@ librenms/includes/discovery/storage/nimbleos.inc.php
 librenms/includes/discovery/storage/oceanstor.inc.php
 librenms/includes/discovery/storage/onefs.inc.php
 librenms/includes/discovery/storage/primekey-sw-sql.inc.php
+librenms/includes/discovery/storage/truenas-scale-zv.inc.php
 librenms/includes/discovery/storage/ucd-dsktable.inc.php
 librenms/includes/discovery/storage/vrp.inc.php
 librenms/includes/discovery/stp.inc.php
@@ -6174,7 +6188,6 @@ librenms/includes/html/graphs/device/smokeping_in_all_avg.inc.php
 librenms/includes/html/graphs/device/smokeping_out_all.inc.php
 librenms/includes/html/graphs/device/smokeping_out_all_avg.inc.php
 librenms/includes/html/graphs/device/snr.inc.php
-librenms/includes/html/graphs/device/sonicwall_sessions.inc.php
 librenms/includes/html/graphs/device/state.inc.php
 librenms/includes/html/graphs/device/storage.inc.php
 librenms/includes/html/graphs/device/sub10_sub10RadioLclAFER.inc.php
@@ -7058,6 +7071,7 @@ librenms/includes/polling/ports/cisco-if-extension.inc.php
 librenms/includes/polling/ports/exalink-fusion.inc.php
 librenms/includes/polling/ports/f5.inc.php
 librenms/includes/polling/ports/os/
+librenms/includes/polling/ports/os/adva-fsp150cp.inc.php
 librenms/includes/polling/ports/os/airos-af-ltu.inc.php
 librenms/includes/polling/ports/os/airos-af.inc.php
 librenms/includes/polling/ports/os/ciena-sds.inc.php
@@ -7140,6 +7154,7 @@ librenms/includes/polling/storage/nimbleos.inc.php
 librenms/includes/polling/storage/oceanstor.inc.php
 librenms/includes/polling/storage/onefs.inc.php
 librenms/includes/polling/storage/primekey-sw-sql.inc.php
+librenms/includes/polling/storage/truenas-scale-zv.inc.php
 librenms/includes/polling/storage/ucd-dsktable.inc.php
 librenms/includes/polling/storage/vrp.inc.php
 librenms/includes/polling/stp.inc.php
@@ -7289,11 +7304,29 @@ librenms/lang/pt-BR/wireless.php
 librenms/lang/ru/
 librenms/lang/ru.json
 librenms/lang/ru/auth.php
+librenms/lang/ru/bgp.php
 librenms/lang/ru/commands.php
+librenms/lang/ru/components.php
+librenms/lang/ru/device.php
+librenms/lang/ru/exceptions.php
+librenms/lang/ru/install.php
+librenms/lang/ru/inventory.php
+librenms/lang/ru/map.php
+librenms/lang/ru/modules.php
 librenms/lang/ru/pagination.php
 librenms/lang/ru/passwords.php
+librenms/lang/ru/plugins.php
+librenms/lang/ru/poller.php
+librenms/lang/ru/port.php
 librenms/lang/ru/preferences.php
+librenms/lang/ru/sensors.php
+librenms/lang/ru/settings.php
+librenms/lang/ru/smokeping.php
+librenms/lang/ru/stp.php
+librenms/lang/ru/syslog.php
 librenms/lang/ru/validation.php
+librenms/lang/ru/widgets.php
+librenms/lang/ru/wireless.php
 librenms/lang/sr/
 librenms/lang/sr.json
 librenms/lang/sr/auth.php
@@ -7723,6 +7756,7 @@ librenms/mibs/adva/F3-SYNC-MIB
 librenms/mibs/adva/F3-SYNCJACK-MIB
 librenms/mibs/adva/F3-TIMEZONE-MIB
 librenms/mibs/adva/F3-TWAMP-MIB
+librenms/mibs/adva/FSP150-MIB
 librenms/mibs/adva/OA-SFP-MIB
 librenms/mibs/adva/OS-COMMON-TC-MIB
 librenms/mibs/advantech/
@@ -12418,6 +12452,7 @@ librenms/resources/views/auth/login-form.blade.php
 librenms/resources/views/auth/login.blade.php
 librenms/resources/views/auth/public-status.blade.php
 librenms/resources/views/components/
+librenms/resources/views/components/device-link-map.blade.php
 librenms/resources/views/components/device-link-missing.blade.php
 librenms/resources/views/components/device-link-no-access.blade.php
 librenms/resources/views/components/device-link.blade.php
@@ -12436,6 +12471,7 @@ librenms/resources/views/components/notification-subscription-status.blade.php
 librenms/resources/views/components/option-bar.blade.php
 librenms/resources/views/components/panel.blade.php
 librenms/resources/views/components/popup.blade.php
+librenms/resources/views/components/port-link-map.blade.php
 librenms/resources/views/components/port-link.blade.php
 librenms/resources/views/components/port-link_basic.blade.php
 librenms/resources/views/components/refresh-timer.blade.php
@@ -12519,6 +12555,9 @@ librenms/resources/views/map/custom-map-list-modal.blade.php
 librenms/resources/views/map/custom-map-modal.blade.php
 librenms/resources/views/map/custom-new.blade.php
 librenms/resources/views/map/custom-node-modal.blade.php
+librenms/resources/views/map/custom-nodeimage-delete-modal.blade.php
+librenms/resources/views/map/custom-nodeimage-manage.blade.php
+librenms/resources/views/map/custom-nodeimage-modal.blade.php
 librenms/resources/views/map/custom-view.blade.php
 librenms/resources/views/map/device-dependency.blade.php
 librenms/resources/views/map/fullscreen.blade.php
@@ -13273,6 +13312,7 @@ librenms/vendor/doctrine/dbal/src/Platforms/Keywords/MariaDBKeywords.php
 librenms/vendor/doctrine/dbal/src/Platforms/Keywords/MariaDb102Keywords.php
 librenms/vendor/doctrine/dbal/src/Platforms/Keywords/MySQL57Keywords.php
 librenms/vendor/doctrine/dbal/src/Platforms/Keywords/MySQL80Keywords.php
+librenms/vendor/doctrine/dbal/src/Platforms/Keywords/MySQL84Keywords.php
 librenms/vendor/doctrine/dbal/src/Platforms/Keywords/MySQLKeywords.php
 librenms/vendor/doctrine/dbal/src/Platforms/Keywords/OracleKeywords.php
 librenms/vendor/doctrine/dbal/src/Platforms/Keywords/PostgreSQL100Keywords.php
@@ -13283,6 +13323,7 @@ librenms/vendor/doctrine/dbal/src/Platforms/Keywords/SQLServer2012Keywords.php
 librenms/vendor/doctrine/dbal/src/Platforms/Keywords/SQLServerKeywords.php
 librenms/vendor/doctrine/dbal/src/Platforms/Keywords/SQLiteKeywords.php
 librenms/vendor/doctrine/dbal/src/Platforms/MariaDBPlatform.php
+librenms/vendor/doctrine/dbal/src/Platforms/MariaDb1010Platform.php
 librenms/vendor/doctrine/dbal/src/Platforms/MariaDb1027Platform.php
 librenms/vendor/doctrine/dbal/src/Platforms/MariaDb1043Platform.php
 librenms/vendor/doctrine/dbal/src/Platforms/MariaDb1052Platform.php
@@ -13295,9 +13336,11 @@ librenms/vendor/doctrine/dbal/src/Platforms/MySQL/CollationMetadataProvider/Conn
 librenms/vendor/doctrine/dbal/src/Platforms/MySQL/Comparator.php
 librenms/vendor/doctrine/dbal/src/Platforms/MySQL57Platform.php
 librenms/vendor/doctrine/dbal/src/Platforms/MySQL80Platform.php
+librenms/vendor/doctrine/dbal/src/Platforms/MySQL84Platform.php
 librenms/vendor/doctrine/dbal/src/Platforms/MySQLPlatform.php
 librenms/vendor/doctrine/dbal/src/Platforms/OraclePlatform.php
 librenms/vendor/doctrine/dbal/src/Platforms/PostgreSQL100Platform.php
+librenms/vendor/doctrine/dbal/src/Platforms/PostgreSQL120Platform.php
 librenms/vendor/doctrine/dbal/src/Platforms/PostgreSQL94Platform.php
 librenms/vendor/doctrine/dbal/src/Platforms/PostgreSQLPlatform.php
 librenms/vendor/doctrine/dbal/src/Platforms/SQLServer/
@@ -13967,6 +14010,7 @@ librenms/vendor/ezyang/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/ListStyle.p
 librenms/vendor/ezyang/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Multiple.php
 librenms/vendor/ezyang/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Number.php
 librenms/vendor/ezyang/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Percentage.php
+librenms/vendor/ezyang/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/Ratio.php
 librenms/vendor/ezyang/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/TextDecoration.php
 librenms/vendor/ezyang/htmlpurifier/library/HTMLPurifier/AttrDef/CSS/URI.php
 librenms/vendor/ezyang/htmlpurifier/library/HTMLPurifier/AttrDef/Clone.php
@@ -14109,6 +14153,7 @@ librenms/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Cor
 librenms/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.LexerImpl.txt
 librenms/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.MaintainLineNumbers.txt
 librenms/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.NormalizeNewlines.txt
+librenms/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.RemoveBlanks.txt
 librenms/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.RemoveInvalidImg.txt
 librenms/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.RemoveProcessingInstructions.txt
 librenms/vendor/ezyang/htmlpurifier/library/HTMLPurifier/ConfigSchema/schema/Core.RemoveScriptContents.txt
@@ -16886,6 +16931,7 @@ librenms/vendor/laravel/socialite/src/Two/SlackProvider.php
 librenms/vendor/laravel/socialite/src/Two/Token.php
 librenms/vendor/laravel/socialite/src/Two/TwitterProvider.php
 librenms/vendor/laravel/socialite/src/Two/User.php
+librenms/vendor/laravel/socialite/src/Two/XProvider.php
 librenms/vendor/laravel/tinker/
 librenms/vendor/laravel/tinker/LICENSE.md
 librenms/vendor/laravel/tinker/README.md
@@ -18814,12 +18860,14 @@ librenms/vendor/nikic/php-parser/lib/PhpParser/Lexer/
 librenms/vendor/nikic/php-parser/lib/PhpParser/Lexer.php
 librenms/vendor/nikic/php-parser/lib/PhpParser/Lexer/Emulative.php
 librenms/vendor/nikic/php-parser/lib/PhpParser/Lexer/TokenEmulator/
+librenms/vendor/nikic/php-parser/lib/PhpParser/Lexer/TokenEmulator/AsymmetricVisibilityTokenEmulator.php
 librenms/vendor/nikic/php-parser/lib/PhpParser/Lexer/TokenEmulator/AttributeEmulator.php
 librenms/vendor/nikic/php-parser/lib/PhpParser/Lexer/TokenEmulator/EnumTokenEmulator.php
 librenms/vendor/nikic/php-parser/lib/PhpParser/Lexer/TokenEmulator/ExplicitOctalEmulator.php
 librenms/vendor/nikic/php-parser/lib/PhpParser/Lexer/TokenEmulator/KeywordEmulator.php
 librenms/vendor/nikic/php-parser/lib/PhpParser/Lexer/TokenEmulator/MatchTokenEmulator.php
 librenms/vendor/nikic/php-parser/lib/PhpParser/Lexer/TokenEmulator/NullsafeTokenEmulator.php
+librenms/vendor/nikic/php-parser/lib/PhpParser/Lexer/TokenEmulator/PropertyTokenEmulator.php
 librenms/vendor/nikic/php-parser/lib/PhpParser/Lexer/TokenEmulator/ReadonlyFunctionTokenEmulator.php
 librenms/vendor/nikic/php-parser/lib/PhpParser/Lexer/TokenEmulator/ReadonlyTokenEmulator.php
 librenms/vendor/nikic/php-parser/lib/PhpParser/Lexer/TokenEmulator/ReverseEmulator.php
@@ -18947,6 +18995,7 @@ librenms/vendor/nikic/php-parser/lib/PhpParser/Node/Name/FullyQualified.php
 librenms/vendor/nikic/php-parser/lib/PhpParser/Node/Name/Relative.php
 librenms/vendor/nikic/php-parser/lib/PhpParser/Node/NullableType.php
 librenms/vendor/nikic/php-parser/lib/PhpParser/Node/Param.php
+librenms/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyHook.php
 librenms/vendor/nikic/php-parser/lib/PhpParser/Node/PropertyItem.php
 librenms/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/
 librenms/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar.php
@@ -18966,6 +19015,7 @@ librenms/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst/Function_.
 librenms/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst/Line.php
 librenms/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst/Method.php
 librenms/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst/Namespace_.php
+librenms/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst/Property.php
 librenms/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/MagicConst/Trait_.php
 librenms/vendor/nikic/php-parser/lib/PhpParser/Node/Scalar/String_.php
 librenms/vendor/nikic/php-parser/lib/PhpParser/Node/StaticVar.php
@@ -19068,11 +19118,8 @@ librenms/vendor/nunomaduro/laravel-console-summary/src/LaravelConsoleSummaryServ
 librenms/vendor/nunomaduro/laravel-console-summary/src/SummaryCommand.php
 librenms/vendor/nunomaduro/termwind/
 librenms/vendor/nunomaduro/termwind/LICENSE.md
-librenms/vendor/nunomaduro/termwind/Makefile
 librenms/vendor/nunomaduro/termwind/composer.json
-librenms/vendor/nunomaduro/termwind/docker/
-librenms/vendor/nunomaduro/termwind/docker-compose.yml
-librenms/vendor/nunomaduro/termwind/docker/Dockerfile
+librenms/vendor/nunomaduro/termwind/pint.json
 librenms/vendor/nunomaduro/termwind/playground.php
 librenms/vendor/nunomaduro/termwind/src/
 librenms/vendor/nunomaduro/termwind/src/Actions/
@@ -19752,6 +19799,7 @@ librenms/vendor/phpmailer/phpmailer/language/phpmailer.lang-it.php
 librenms/vendor/phpmailer/phpmailer/language/phpmailer.lang-ja.php
 librenms/vendor/phpmailer/phpmailer/language/phpmailer.lang-ka.php
 librenms/vendor/phpmailer/phpmailer/language/phpmailer.lang-ko.php
+librenms/vendor/phpmailer/phpmailer/language/phpmailer.lang-ku.php
 librenms/vendor/phpmailer/phpmailer/language/phpmailer.lang-lt.php
 librenms/vendor/phpmailer/phpmailer/language/phpmailer.lang-lv.php
 librenms/vendor/phpmailer/phpmailer/language/phpmailer.lang-mg.php
@@ -19773,6 +19821,7 @@ librenms/vendor/phpmailer/phpmailer/language/phpmailer.lang-sv.php
 librenms/vendor/phpmailer/phpmailer/language/phpmailer.lang-tl.php
 librenms/vendor/phpmailer/phpmailer/language/phpmailer.lang-tr.php
 librenms/vendor/phpmailer/phpmailer/language/phpmailer.lang-uk.php
+librenms/vendor/phpmailer/phpmailer/language/phpmailer.lang-ur.php
 librenms/vendor/phpmailer/phpmailer/language/phpmailer.lang-vi.php
 librenms/vendor/phpmailer/phpmailer/language/phpmailer.lang-zh.php
 librenms/vendor/phpmailer/phpmailer/language/phpmailer.lang-zh_cn.php
@@ -19991,6 +20040,7 @@ librenms/vendor/phpseclib/phpseclib/phpseclib/Exception/InsufficientSetupExcepti
 librenms/vendor/phpseclib/phpseclib/phpseclib/Exception/InvalidPacketLengthException.php
 librenms/vendor/phpseclib/phpseclib/phpseclib/Exception/NoKeyLoadedException.php
 librenms/vendor/phpseclib/phpseclib/phpseclib/Exception/NoSupportedAlgorithmsException.php
+librenms/vendor/phpseclib/phpseclib/phpseclib/Exception/TimeoutException.php
 librenms/vendor/phpseclib/phpseclib/phpseclib/Exception/UnableToConnectException.php
 librenms/vendor/phpseclib/phpseclib/phpseclib/Exception/UnsupportedAlgorithmException.php
 librenms/vendor/phpseclib/phpseclib/phpseclib/Exception/UnsupportedCurveException.php
@@ -23116,12 +23166,6 @@ librenms/vendor/symfony/polyfill-mbstring/Resources/unidata/upperCase.php
 librenms/vendor/symfony/polyfill-mbstring/bootstrap.php
 librenms/vendor/symfony/polyfill-mbstring/bootstrap80.php
 librenms/vendor/symfony/polyfill-mbstring/composer.json
-librenms/vendor/symfony/polyfill-php72/
-librenms/vendor/symfony/polyfill-php72/LICENSE
-librenms/vendor/symfony/polyfill-php72/Php72.php
-librenms/vendor/symfony/polyfill-php72/README.md
-librenms/vendor/symfony/polyfill-php72/bootstrap.php
-librenms/vendor/symfony/polyfill-php72/composer.json
 librenms/vendor/symfony/polyfill-php80/
 librenms/vendor/symfony/polyfill-php80/LICENSE
 librenms/vendor/symfony/polyfill-php80/Php80.php
