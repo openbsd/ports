@@ -2,7 +2,6 @@
 lib/moc/
 lib/moc/decoder_plugins/
 @so lib/moc/decoder_plugins/libaac_decoder.so
-@so lib/moc/decoder_plugins/libffmpeg_decoder.so
 @so lib/moc/decoder_plugins/libflac_decoder.so
 @so lib/moc/decoder_plugins/libmodplug_decoder.so
 @so lib/moc/decoder_plugins/libmp3_decoder.so

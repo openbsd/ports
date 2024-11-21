@@ -5,38 +5,44 @@ HOMEPAGE =	https://moc.daper.net/
 SITES =		https://ftp.daper.net/pub/soft/moc/stable/ \
 		https://distfiles.sigtrap.nl/
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	11
+REVISION =	12
 
 # GPLv3+
 PERMIT_PACKAGE = Yes
 
 # uses pledge()
-WANTLIB += ${COMPILER_LIBCXX} FLAC aom avcodec avformat avutil
-WANTLIB += bz2 c crypto curl curses dav1d db faad gsm iconv id3tag
-WANTLIB += ltdl lzma m mad magic modplug mp3lame mpcdec mpg123
-WANTLIB += nghttp2 ogg opus samplerate sndfile sndio speex ssl
-WANTLIB += swresample tag tag_c theoradec theoraenc vorbis vorbisenc
-WANTLIB += vorbisfile vpx wavpack x264 x265 xml2 xvidcore z
+WANTLIB += ${COMPILER_LIBCXX} FLAC c crypto curl curses db faad
+WANTLIB += iconv id3tag ltdl m mad magic modplug mp3lame mpcdec
+WANTLIB += mpg123 nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls
+WANTLIB += ogg opus samplerate sndfile sndio speex ssl tag tag_c
+WANTLIB += vorbis vorbisenc vorbisfile wavpack z
 
 COMPILER =	base-clang ports-gcc base-gcc
 
 LIB_DEPENDS =	audio/faad \
 		audio/flac \
+		audio/lame \
 		audio/libid3tag \
 		audio/libmad \
 		audio/libmodplug \
+		audio/libogg \
 		audio/libsamplerate \
 		audio/libsndfile \
 		audio/libvorbis \
+		audio/mpg123 \
 		audio/musepack \
-		audio/wavpack \
+		audio/opus \
 		audio/speex \
 		audio/taglib \
+		audio/wavpack \
+		converters/libiconv \
 		databases/db/v4 \
 		devel/libmagic \
 		devel/libtool,-ltdl \
-		graphics/ffmpeg \
-		net/curl
+		net/curl \
+		net/ngtcp2 \
+		www/nghttp2 \
+		www/nghttp3
 
 SEPARATE_BUILD = Yes
 
@@ -49,6 +55,7 @@ CONFIGURE_ARGS += \
 		--without-rcc \
 		--without-included-ltdl \
 		--without-timidity \
+		--without-ffmpeg \
 		--with-magic \
 		--with-ltdl-include=${LOCALBASE}/include \
 		--with-ltdl-lib=${LOCALBASE}/lib
