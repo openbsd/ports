@@ -1,8 +1,8 @@
 COMMENT=	GNU Image Manipulation Program
 
-V=		2.99
-DISTNAME=	gimp-${V}.18
-REVISION=	5
+V=		3.0
+DISTNAME=	gimp-${V}.0-RC1
+PKGNAME =	gimp-${V}.0rc1
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets gimp-scriptfu
@@ -64,9 +64,6 @@ BUILD_DEPENDS=	${COMMON_DEPENDS} \
 		shells/bash \
 		textproc/libxslt
 
-# XXX check at next release: this should be optional for building
-BUILD_DEPENDS +=x11/gnome/gjs
-
 RUN_DEPENDS=	${COMMON_DEPENDS} \
 		devel/xdg-utils \
 		x11/gtk+4,-guic
@@ -111,6 +108,7 @@ CONFIGURE_ARGS=	-Dmng=disabled \
 		-Dgudev=disabled \
 		-Dappdata-test=disabled \
 		-Dheadless-tests=disabled \
+		-Djavascript=enabled \
 		-Dcheck-update=no \
 		-Denable-console-bin=true
 
