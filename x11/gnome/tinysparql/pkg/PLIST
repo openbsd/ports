@@ -55,6 +55,7 @@ share/doc/Tsparql-3.0/class.SparqlConnection.html
 share/doc/Tsparql-3.0/class.SparqlCursor.html
 share/doc/Tsparql-3.0/class.SparqlStatement.html
 share/doc/Tsparql-3.0/classes_hierarchy.html
+share/doc/Tsparql-3.0/commandline.html
 share/doc/Tsparql-3.0/const.MAJOR_VERSION.html
 share/doc/Tsparql-3.0/const.MICRO_VERSION.html
 share/doc/Tsparql-3.0/const.MINOR_VERSION.html
