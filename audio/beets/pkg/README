@@ -17,9 +17,6 @@ OAuth token for Discogs; if updating from an older version and this no
 longer works, you may need to "rm ~/.config/beets/discogs_token.json"
 and login again.
 
-chroma: This plugin is for acoustic fingerprinting. Install py3-acoustid
-and add 'chroma' to the plugins: line.
-
 replaygain: This plugin adds support for ReplayGain, a technique for
 normalizing audio playback levels. It requires dependencies:
 "pkg_add py3-gstreamer1 gstreamer1-plugins-good".

@@ -6,7 +6,6 @@ lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}.dist-info/ME
 lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/beets-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/beets/__init__.py
 lib/python${MODPY_VERSION}/site-packages/beets/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/beets/${MODPY_PYCACHE}/
@@ -98,10 +97,6 @@ lib/python${MODPY_VERSION}/site-packages/beets/util/${MODPY_PYCACHE}artresizer.$
 lib/python${MODPY_VERSION}/site-packages/beets/util/${MODPY_PYCACHE}artresizer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beets/util/${MODPY_PYCACHE}bluelet.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/beets/util/${MODPY_PYCACHE}bluelet.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/beets/util/${MODPY_PYCACHE}confit.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/beets/util/${MODPY_PYCACHE}confit.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/beets/util/${MODPY_PYCACHE}enumeration.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/beets/util/${MODPY_PYCACHE}enumeration.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beets/util/${MODPY_PYCACHE}functemplate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/beets/util/${MODPY_PYCACHE}functemplate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beets/util/${MODPY_PYCACHE}hidden.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -114,8 +109,6 @@ lib/python${MODPY_VERSION}/site-packages/beets/util/${MODPY_PYCACHE}pipeline.${M
 lib/python${MODPY_VERSION}/site-packages/beets/util/${MODPY_PYCACHE}pipeline.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beets/util/artresizer.py
 lib/python${MODPY_VERSION}/site-packages/beets/util/bluelet.py
-lib/python${MODPY_VERSION}/site-packages/beets/util/confit.py
-lib/python${MODPY_VERSION}/site-packages/beets/util/enumeration.py
 lib/python${MODPY_VERSION}/site-packages/beets/util/functemplate.py
 lib/python${MODPY_VERSION}/site-packages/beets/util/hidden.py
 lib/python${MODPY_VERSION}/site-packages/beets/util/id_extractors.py
@@ -376,6 +369,4 @@ lib/python${MODPY_VERSION}/site-packages/beetsplug/web/static/underscore.js
 lib/python${MODPY_VERSION}/site-packages/beetsplug/web/templates/
 lib/python${MODPY_VERSION}/site-packages/beetsplug/web/templates/index.html
 lib/python${MODPY_VERSION}/site-packages/beetsplug/zero.py
-@man man/man1/beet.1
-@man man/man5/beetsconfig.5
 share/doc/pkg-readmes/${PKGSTEM}
