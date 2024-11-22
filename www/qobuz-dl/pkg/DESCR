@@ -1,0 +1,10 @@
+Search, explore and download Lossless and Hi-Res music from Qobuz.
+
+It supports downloading music only from links that look like
+https://play.qobuz.com/album/XXX where XXX is the album ID.
+
+You can find links to purchased albums on this page
+https://play.qobuz.com/user/library/purchases/albums
+
+If you try to download an unpurchased album without a streaming
+subscription, this tool will skip it as a demo track.
