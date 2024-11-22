@@ -108,7 +108,7 @@ Index: doc/sample.config
  #restrict-user-to-routes = true
  
  # This option implies restrict-user-to-routes set to true. If set, the
-@@ -642,23 +624,6 @@ no-route = 192.168.5.0/255.255.255.0
+@@ -655,23 +637,6 @@ no-route = 192.168.5.0/255.255.255.0
  # and '%{G}', if present will be replaced by the username and group name.
  #proxy-url = http://example.com/
  #proxy-url = http://example.com/%{U}/

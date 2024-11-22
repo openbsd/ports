@@ -1,12 +1,13 @@
 COMMENT=	server implementing the AnyConnect SSL VPN protocol
 
-DISTNAME=	ocserv-1.2.4
+DISTNAME=	ocserv-1.3.0
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
 
 CATEGORIES=	net
 
-HOMEPAGE=	https://ocserv.gitlab.io/www/
+HOMEPAGE=	https://ocserv.openconnect-vpn.net/
+
+MAINTAINER =	Renaud Allard <renaud@allard.it>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
@@ -14,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB+=	c curses ev gnutls lz4 m nettle oath pam protobuf-c
 WANTLIB+=	radcli readline talloc
 
-SITES=		ftp://ftp.infradead.org/pub/ocserv/
+SITES=		https://www.infradead.org/ocserv/download/
 
 MODULES=	lang/ruby
 

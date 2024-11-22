@@ -1,7 +1,7 @@
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -222,7 +222,7 @@ if test "$test_for_geoip" = yes && test "$have_maxmind
+@@ -231,7 +231,7 @@ if test "$test_for_geoip" = yes && test "$have_maxmind
  fi
  
  have_readline=no
