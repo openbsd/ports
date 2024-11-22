@@ -1,0 +1,2 @@
+pick is a small python library to help you create curses based
+interactive selection list in the terminal.
