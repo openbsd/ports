@@ -1,0 +1,12 @@
+Index: configs/samples/pjsip.conf.sample
+--- configs/samples/pjsip.conf.sample.orig
++++ configs/samples/pjsip.conf.sample
+@@ -172,6 +172,8 @@
+ ;protocol=flow
+ 
+ ; Example IPv4 TCP transport with Keepalive options
++; These timers cannot be set per-socket in OpenBSD; some can be set
++; system-wide, see sysctl(2) net.inet.tcp.(keepidle,keepinittime,keepintvl)
+ ;
+ ;[transport-tcp]
+ ;type=transport

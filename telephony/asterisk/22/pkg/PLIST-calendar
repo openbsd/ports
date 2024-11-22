@@ -1,0 +1,7 @@
+@option is-branch
+@pkgpath telephony/asterisk/19,-calendar
+@so lib/asterisk/modules/res_calendar.so
+@so lib/asterisk/modules/res_calendar_caldav.so
+@so lib/asterisk/modules/res_calendar_ews.so
+@so lib/asterisk/modules/res_calendar_exchange.so
+@so lib/asterisk/modules/res_calendar_icalendar.so

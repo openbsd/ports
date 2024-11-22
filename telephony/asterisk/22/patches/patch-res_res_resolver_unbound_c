@@ -1,0 +1,12 @@
+Index: res/res_resolver_unbound.c
+--- res/res_resolver_unbound.c.orig
++++ res/res_resolver_unbound.c
+@@ -259,7 +259,7 @@ static void unbound_resolver_callback(void *data, int 
+ 
+ 	if (!ub_result) {
+ 		ast_debug(3, "Badly formatted DNS query '%s'\n", ast_dns_query_get_name(query));
+-		ast_dns_resolver_set_result(query, 0, 0, ns_r_formerr, ast_dns_query_get_name(query), "", 0);
++		ast_dns_resolver_set_result(query, 0, 0, FORMERR, ast_dns_query_get_name(query), "", 0);
+ 		ast_dns_resolver_completed(query);
+ 		ao2_ref(query, -1);
+ 		return;

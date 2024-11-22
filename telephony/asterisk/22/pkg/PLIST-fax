@@ -1,0 +1,9 @@
+@option is-branch
+@conflict asterisk->=13.8.0,<16.30.1p0
+@conflict asterisk->=18,<18.20.0p0
+@conflict asterisk->=20,<20.5.0p0
+include/asterisk/res_fax.h
+@so lib/asterisk/modules/res_fax.so
+@so lib/asterisk/modules/res_fax_spandsp.so
+share/examples/asterisk/default/res_fax.conf
+@sample ${SYSCONFDIR}/asterisk/res_fax.conf

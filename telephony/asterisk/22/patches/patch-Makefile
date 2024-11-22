@@ -1,0 +1,24 @@
+- don't force compiler flags
+- don't unconditionally set -ftrampolines, it is gcc-only.
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -144,7 +144,7 @@ ASTTOPDIR:=$(subst $(space),\$(space),$(CURDIR))
+ OVERWRITE=y
+ 
+ # Include debug and macro symbols in the executables (-g) and profiling info (-pg)
+-DEBUG=-g3
++#DEBUG=-g3
+ 
+ # Asterisk.conf is located in ASTETCDIR or by using the -C flag
+ # when starting Asterisk
+@@ -237,7 +237,7 @@ ifeq ($(OSARCH),NetBSD)
+ endif
+ 
+ ifeq ($(OSARCH),OpenBSD)
+-  _ASTCFLAGS+=-pthread -ftrampolines
++  _ASTCFLAGS+=-pthread
+ endif
+ 
+ ifeq ($(OSARCH),linux-uclibc)

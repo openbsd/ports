@@ -1,0 +1,7 @@
+@option is-branch
+@pkgpath telephony/asterisk/19,-ldap
+@so lib/asterisk/modules/res_config_ldap.so
+share/examples/asterisk/asterisk.ldap-schema
+share/examples/asterisk/asterisk.ldif
+share/examples/asterisk/default/res_ldap.conf
+@sample ${SYSCONFDIR}/asterisk/res_ldap.conf

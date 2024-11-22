@@ -1,0 +1,3 @@
+@option is-branch
+@pkgpath telephony/asterisk/19,-vm_odbc
+@so lib/asterisk/modules/app_voicemail_odbc.so

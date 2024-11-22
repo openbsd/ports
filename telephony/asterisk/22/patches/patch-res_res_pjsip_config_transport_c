@@ -1,0 +1,50 @@
+Index: res/res_pjsip/config_transport.c
+--- res/res_pjsip/config_transport.c.orig
++++ res/res_pjsip/config_transport.c
+@@ -853,6 +853,10 @@ static int transport_apply(const struct ast_sorcery *s
+ 			cfg.sockopt_params.options[sockopt_count].optlen = sizeof(option);
+ 			sockopt_count++;
+ 
++#if !defined(TCP_KEEPINTVL)
++			ast_log(LOG_DEBUG, "No OS support for per-socket settings of Idle Time, Interval, Count.\n",
++				ast_sorcery_object_get_id(obj));
++#else
+ 			cfg.sockopt_params.options[sockopt_count].level = pj_SOL_TCP();
+ 			cfg.sockopt_params.options[sockopt_count].optname = TCP_KEEPIDLE;
+ 			cfg.sockopt_params.options[sockopt_count].optval = &transport->tcp_keepalive_idle_time;
+@@ -870,6 +874,16 @@ static int transport_apply(const struct ast_sorcery *s
+ 			cfg.sockopt_params.options[sockopt_count].optval = &transport->tcp_keepalive_probe_count;
+ 			cfg.sockopt_params.options[sockopt_count].optlen = sizeof(transport->tcp_keepalive_probe_count);
+ 			sockopt_count++;
++#endif
++#elif !defined(TCP_KEEPINTVL)
++			ast_log(LOG_DEBUG, "TCP Keepalive enabled for transport '%s'. No OS support to set Idle Time, Interval, Count per-socket.\n",
++				ast_sorcery_object_get_id(obj));
++
++			cfg.sockopt_params.options[sockopt_count].level = pj_SOL_SOCKET();
++			cfg.sockopt_params.options[sockopt_count].optname = SO_KEEPALIVE;
++			cfg.sockopt_params.options[sockopt_count].optval = &option;
++			cfg.sockopt_params.options[sockopt_count].optlen = sizeof(option);
++			sockopt_count++;
+ #else
+ 			ast_log(LOG_WARNING, "TCP keepalive settings for '%s' not set due to PJSIP built without support for setting all options. Consider using bundled PJSIP.\n",
+ 				ast_sorcery_object_get_id(obj));
+@@ -920,6 +934,10 @@ static int transport_apply(const struct ast_sorcery *s
+ 			temp_state->state->tls.sockopt_params.options[sockopt_count].optlen = sizeof(option);
+ 			sockopt_count++;
+ 
++#if !defined(TCP_KEEPINTVL)
++			ast_log(LOG_DEBUG, "No OS support for per-socket settings of Idle Time, Interval, Count.\n",
++				ast_sorcery_object_get_id(obj));
++#else
+ 			temp_state->state->tls.sockopt_params.options[sockopt_count].level = pj_SOL_TCP();
+ 			temp_state->state->tls.sockopt_params.options[sockopt_count].optname = TCP_KEEPIDLE;
+ 			temp_state->state->tls.sockopt_params.options[sockopt_count].optval = &transport->tcp_keepalive_idle_time;
+@@ -937,6 +955,7 @@ static int transport_apply(const struct ast_sorcery *s
+ 			temp_state->state->tls.sockopt_params.options[sockopt_count].optval = &transport->tcp_keepalive_probe_count;
+ 			temp_state->state->tls.sockopt_params.options[sockopt_count].optlen = sizeof(transport->tcp_keepalive_probe_count);
+ 			sockopt_count++;
++#endif
+ #else
+ 			ast_log(LOG_WARNING, "TCP keepalive settings for '%s' not set due to PJSIP built without support for setting all options. Consider using bundled PJSIP.\n",
+ 				ast_sorcery_object_get_id(obj));

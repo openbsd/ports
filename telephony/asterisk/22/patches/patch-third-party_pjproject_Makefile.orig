@@ -1,0 +1,12 @@
+Index: third-party/pjproject/Makefile
+--- third-party/pjproject/Makefile.orig
++++ third-party/pjproject/Makefile
+@@ -98,7 +98,7 @@ SHELL_ECHO_PREFIX := echo '[pjproject] '
+ 
+ _all: $(TARGETS)
+ 
+-$(DOWNLOAD_DIR)/$(TARBALL_FILE): ../versions.mak
++$(DOWNLOAD_DIR)/$(TARBALL_FILE): 
+ 	$(CMD_PREFIX) ($(TARBALL_EXISTS) && $(TARBALL_VERIFY) && touch $@) || (rm -rf $@ ;\
+ 	$(TARBALL_DOWNLOAD)) || (rm -rf $@ ;\
+ 	$(SHELL_ECHO_PREFIX) Retrying download ; $(TARBALL_DOWNLOAD))

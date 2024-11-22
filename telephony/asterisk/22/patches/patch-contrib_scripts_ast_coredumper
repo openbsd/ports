@@ -1,0 +1,12 @@
+Index: contrib/scripts/ast_coredumper
+--- contrib/scripts/ast_coredumper.orig
++++ contrib/scripts/ast_coredumper
+@@ -24,7 +24,7 @@ source <(sed -n "/^#@@@FUNCSSTART@@@/,/^#@@@FUNCSEND@@
+ : "${DELETE_COREDUMPS_AFTER:=false}"
+ : "${DELETE_RESULTS_AFTER:=false}"
+ : "${DRY_RUN:=false}"
+-: "${GDB:=$(which gdb)}"
++: "${GDB:=$(which egdb)}"
+ : "${HELP:=false}"
+ : "${LATEST:=false}"
+ : "${OUTPUTDIR:=/tmp}"

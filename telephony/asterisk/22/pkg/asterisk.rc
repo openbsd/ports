@@ -1,0 +1,17 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/sbin/asterisk"
+
+. /etc/rc.d/rc.subr
+
+pexp="${daemon}.*"
+
+rc_start() {
+	rc_exec "${TRUEPREFIX}/sbin/safe_asterisk"
+}
+
+rc_stop() {
+	${daemon} -rx "core stop now"
+}
+
+rc_cmd $1
