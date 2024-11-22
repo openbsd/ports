@@ -1,5 +1,6 @@
 COMMENT =		DigiDoc4 GUI client for signing and encrypting documents
 
+PORTROACH =		skipv:4.6.1	# Windows-only
 V =			4.6.0
 DISTNAME =		qdigidoc4-${V}
 CATEGORIES =		security x11
