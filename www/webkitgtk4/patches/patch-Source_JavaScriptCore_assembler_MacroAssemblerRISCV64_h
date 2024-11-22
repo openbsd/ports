@@ -1,0 +1,224 @@
+
+https://github.com/WebKit/WebKit/pull/36459/commits/de57a167af8ec11f1f12e2d1f40bcd60334f77d6
+
+From de57a167af8ec11f1f12e2d1f40bcd60334f77d6 Mon Sep 17 00:00:00 2001
+From: MingZhu Yan <yanmingzhu@iscas.ac.cn>
+Date: Mon, 11 Nov 2024 00:56:40 +0800
+
+    [RISCV] Add MacroAssemblerRISCV64 implementations for add8
+    https://bugs.webkit.org/show_bug.cgi?id=282898
+
+    Reviewed by NOBODY (OOPS!).
+
+    * Source/JavaScriptCore/assembler/MacroAssemblerRISCV64.h:
+    (JSC::MacroAssemblerRISCV64::add8):
+
+========
+
+https://github.com/WebKit/WebKit/commit/11bb726032715079621145e442f7ded7812e5404
+
+commit 11bb726032715079621145e442f7ded7812e5404
+Author: MingZhu Yan <yanmingzhu@iscas.ac.cn>
+Date:   Sun Nov 10 09:48:24 2024 -0800
+
+    [RISCV] Set some used MacroAssemblerRISCV64 methods to public
+    https://bugs.webkit.org/show_bug.cgi?id=282899
+    
+    Reviewed by Yusuke Suzuki.
+    
+    float16 related methods are used in jit, so this patch makes them public
+    
+    * Source/JavaScriptCore/assembler/MacroAssemblerRISCV64.h:
+    (JSC::MacroAssemblerRISCV64::loadFloat16):
+    (JSC::MacroAssemblerRISCV64::storeFloat16):
+    (JSC::MacroAssemblerRISCV64::convertFloat16ToDouble):
+    (JSC::MacroAssemblerRISCV64::convertDoubleToFloat16):
+    (JSC::MacroAssemblerRISCV64::moveZeroToFloat16):
+    (JSC::MacroAssemblerRISCV64::move16ToFloat16):
+    (JSC::MacroAssemblerRISCV64::moveFloat16To16):
+    
+    Canonical link: https://commits.webkit.org/286408@main
+
+Index: Source/JavaScriptCore/assembler/MacroAssemblerRISCV64.h
+--- Source/JavaScriptCore/assembler/MacroAssemblerRISCV64.h.orig
++++ Source/JavaScriptCore/assembler/MacroAssemblerRISCV64.h
+@@ -171,6 +171,14 @@ class MacroAssemblerRISCV64 : public AbstractMacroAsse
+     static constexpr RegisterID framePointerRegister = RISCV64Registers::fp;
+     static constexpr RegisterID linkRegister = RISCV64Registers::ra;
+ 
++    void add8(TrustedImm32 imm, Address address)
++    {
++        auto temp = temps<Data>();
++        load8(address, temp.data());
++        add32(imm, temp.data());
++        store8(temp.data(), address);
++    }
++
+     void add32(RegisterID src, RegisterID dest)
+     {
+         add32(src, dest, dest);
+@@ -4146,6 +4154,82 @@ class MacroAssemblerRISCV64 : public AbstractMacroAsse
+         m_assembler.fsgnjInsn<64>(dest, falseSrc, falseSrc);
+     }
+ 
++    void loadFloat16(Address address, FPRegisterID dest)
++    {
++        UNUSED_PARAM(address);
++        UNUSED_PARAM(dest);
++        UNREACHABLE_FOR_PLATFORM();
++    }
++
++    void loadFloat16(BaseIndex address, FPRegisterID dest)
++    {
++        UNUSED_PARAM(address);
++        UNUSED_PARAM(dest);
++        UNREACHABLE_FOR_PLATFORM();
++    }
++
++    void loadFloat16(TrustedImmPtr address, FPRegisterID dest)
++    {
++        UNUSED_PARAM(address);
++        UNUSED_PARAM(dest);
++        UNREACHABLE_FOR_PLATFORM();
++    }
++
++    void storeFloat16(FPRegisterID src, Address address)
++    {
++        UNUSED_PARAM(src);
++        UNUSED_PARAM(address);
++        UNREACHABLE_FOR_PLATFORM();
++    }
++
++    void storeFloat16(FPRegisterID src, BaseIndex address)
++    {
++        UNUSED_PARAM(src);
++        UNUSED_PARAM(address);
++        UNREACHABLE_FOR_PLATFORM();
++    }
++
++    void convertFloat16ToDouble(FPRegisterID src, FPRegisterID dest)
++    {
++        UNUSED_PARAM(src);
++        UNUSED_PARAM(dest);
++        UNREACHABLE_FOR_PLATFORM();
++    }
++
++    void convertDoubleToFloat16(FPRegisterID src, FPRegisterID dest)
++    {
++        UNUSED_PARAM(src);
++        UNUSED_PARAM(dest);
++        UNREACHABLE_FOR_PLATFORM();
++    }
++
++    void moveZeroToFloat16(FPRegisterID reg)
++    {
++        UNUSED_PARAM(reg);
++        UNREACHABLE_FOR_PLATFORM();
++    }
++
++    void move16ToFloat16(RegisterID src, FPRegisterID dest)
++    {
++        UNUSED_PARAM(src);
++        UNUSED_PARAM(dest);
++        UNREACHABLE_FOR_PLATFORM();
++    }
++
++    void move16ToFloat16(TrustedImm32 imm, FPRegisterID dest)
++    {
++        UNUSED_PARAM(imm);
++        UNUSED_PARAM(dest);
++        UNREACHABLE_FOR_PLATFORM();
++    }
++
++    void moveFloat16To16(FPRegisterID src, RegisterID dest)
++    {
++        UNUSED_PARAM(src);
++        UNUSED_PARAM(dest);
++        UNREACHABLE_FOR_PLATFORM();
++    }
++
+ private:
+     enum class ArithmeticOperation {
+         Addition,
+@@ -4720,81 +4804,6 @@ class MacroAssemblerRISCV64 : public AbstractMacroAsse
+         end.link(this);
+     }
+ 
+-    void convertDoubleToFloat16(FPRegisterID src, FPRegisterID dest)
+-    {
+-        UNUSED_PARAM(src);
+-        UNUSED_PARAM(dest);
+-        UNREACHABLE_FOR_PLATFORM();
+-    }
+-
+-    void convertFloat16ToDouble(FPRegisterID src, FPRegisterID dest)
+-    {
+-        UNUSED_PARAM(src);
+-        UNUSED_PARAM(dest);
+-        UNREACHABLE_FOR_PLATFORM();
+-    }
+-
+-    void loadFloat16(Address address, FPRegisterID dest)
+-    {
+-        UNUSED_PARAM(address);
+-        UNUSED_PARAM(dest);
+-        UNREACHABLE_FOR_PLATFORM();
+-    }
+-
+-    void loadFloat16(BaseIndex address, FPRegisterID dest)
+-    {
+-        UNUSED_PARAM(address);
+-        UNUSED_PARAM(dest);
+-        UNREACHABLE_FOR_PLATFORM();
+-    }
+-
+-    void loadFloat16(TrustedImmPtr address, FPRegisterID dest)
+-    {
+-        UNUSED_PARAM(address);
+-        UNUSED_PARAM(dest);
+-        UNREACHABLE_FOR_PLATFORM();
+-    }
+-
+-    void moveZeroToFloat16(FPRegisterID reg)
+-    {
+-        UNUSED_PARAM(reg);
+-        UNREACHABLE_FOR_PLATFORM();
+-    }
+-
+-    void move16ToFloat16(RegisterID src, FPRegisterID dest)
+-    {
+-        UNUSED_PARAM(src);
+-        UNUSED_PARAM(dest);
+-        UNREACHABLE_FOR_PLATFORM();
+-    }
+-
+-    void move16ToFloat16(TrustedImm32 imm, FPRegisterID dest)
+-    {
+-        UNUSED_PARAM(imm);
+-        UNUSED_PARAM(dest);
+-        UNREACHABLE_FOR_PLATFORM();
+-    }
+-
+-    void moveFloat16To16(FPRegisterID src, RegisterID dest)
+-    {
+-        UNUSED_PARAM(src);
+-        UNUSED_PARAM(dest);
+-        UNREACHABLE_FOR_PLATFORM();
+-    }
+-
+-    void storeFloat16(FPRegisterID src, Address address)
+-    {
+-        UNUSED_PARAM(src);
+-        UNUSED_PARAM(address);
+-        UNREACHABLE_FOR_PLATFORM();
+-    }
+-
+-    void storeFloat16(FPRegisterID src, BaseIndex address)
+-    {
+-        UNUSED_PARAM(src);
+-        UNUSED_PARAM(address);
+-        UNREACHABLE_FOR_PLATFORM();
+-    }
+ };
+ 
+ } // namespace JSC
