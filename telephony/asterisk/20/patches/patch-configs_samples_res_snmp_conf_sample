@@ -9,6 +9,6 @@ Index: configs/samples/res_snmp.conf.sample
 +; Note that you can only run one copy of Asterisk on the system in this case.
 +; To work with standard permissions on the agentx socket in OpenBSD's
 +; snmpd(8), add the "_asterisk" user to the _agentx group.
- ;
- ; See https://wiki.asterisk.org/wiki/display/AST/Simple+Network+Management+Protocol+(SNMP)+Support
- ; to get more information about
+ 
+ [general]
+ ; We run as a subagent per default -- to run as a full agent
