@@ -1574,11 +1574,13 @@
      SUBDIR += py-path.py,python3
      SUBDIR += py-pathable,python3
      SUBDIR += py-pathspec,python3
+     SUBDIR += py-pathvalidate,python3
      SUBDIR += py-pbr,python3
      SUBDIR += py-pdm-backend,python3
      SUBDIR += py-pebble,python3
      SUBDIR += py-pexpect,python3
      SUBDIR += py-phx-class-registry,python3
+     SUBDIR += py-pick,python3
      SUBDIR += py-pip,python3
      SUBDIR += py-pkgconfig,python3
      SUBDIR += py-pluggy,python3

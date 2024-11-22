@@ -511,6 +511,7 @@
      SUBDIR += py-wtforms,python3
      SUBDIR += py-yarl,python3
      SUBDIR += qutebrowser
+     SUBDIR += qobuz-dl
      SUBDIR += racktables
      SUBDIR += ratproxy
      SUBDIR += redlib
