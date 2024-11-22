@@ -1,7 +1,7 @@
 Index: third-party/pjproject/Makefile
 --- third-party/pjproject/Makefile.orig
 +++ third-party/pjproject/Makefile
-@@ -98,7 +98,7 @@ SHELL_ECHO_PREFIX := echo '[pjproject] '
+@@ -100,7 +100,7 @@ SHELL_ECHO_PREFIX := echo '[pjproject] '
  
  _all: $(TARGETS)
  
