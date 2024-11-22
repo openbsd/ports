@@ -19,6 +19,7 @@ FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
+MODPY_PYTEST_ARGS =	--ignore tests/acceptance/test_serializers.py
 
 # Missed marshmallow serializer due to missed dependency
 RUN_DEPENDS =		databases/py-redis${MODPY_FLAVOR} \
