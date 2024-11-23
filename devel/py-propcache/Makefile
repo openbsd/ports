@@ -16,7 +16,7 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-BUILD_DEPENDS=	devel/py-expandvars${MODPY_FLAVOR} \
+BUILD_DEPENDS=	sysutils/py-expandvars${MODPY_FLAVOR} \
 		lang/cython${MODPY_FLAVOR}
 
 # tests of C extension are failing (can't find propcache._helpers_c module)
