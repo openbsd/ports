@@ -2825,6 +2825,9 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr-public/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr-public/create-repository.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr-public/delete-repository.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr-public/describe-registries.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr-public/describe-repository.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr-public/get-login-password.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr-public/get-login-password_description.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr/batch-check-layer-availability.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ecr/batch-delete-image.rst
