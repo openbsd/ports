@@ -1,6 +1,6 @@
 COMMENT=		JavaScript with syntax for types
 
-DISTNAME=		typescript-5.6.3
+DISTNAME=		typescript-5.7.2
 EXTRACT_SUFX=		.tgz
 WRKDIST=		${WRKDIR}/package
 
