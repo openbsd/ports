@@ -1,12 +1,12 @@
 COMMENT =		yet another URL library
 
-MODPY_EGG_VERSION =	1.9.4
+MODPY_EGG_VERSION =	1.18.0
 DISTNAME =		yarl-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		www devel
 
+# https://github.com/aio-libs/yarl
 HOMEPAGE =		https://yarl.readthedocs.org
 
 MAINTAINER =		Joerg Jung <jung@openbsd.org>
@@ -27,7 +27,8 @@ MODPY_PYBUILD =		setuptools
 BUILD_DEPENDS =		lang/cython${MODPY_FLAVOR} \
 			sysutils/py-expandvars${MODPY_FLAVOR}
 
-RUN_DEPENDS =		net/py-idna${MODPY_FLAVOR}>=2.0 \
+RUN_DEPENDS =		devel/py-propcache${MODPY_FLAVOR} \
+			net/py-idna${MODPY_FLAVOR}>=2.0 \
 			www/py-multidict${MODPY_FLAVOR}>=4.0
 
 TEST_DEPENDS =		devel/py-test-cov${MODPY_FLAVOR} \
