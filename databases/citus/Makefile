@@ -1,3 +1,4 @@
+BROKEN =		No support yet for PostgreSQL 17
 COMMENT =		extension to horizontally scale PostgreSQL
 
 GH_ACCOUNT =		citusdata
