@@ -1,19 +1,20 @@
-COMMENT=	proxy IRC client with ICB server
+COMMENT =	proxy IRC client with ICB server
 
-DISTNAME=	icbirc-2.1
-REVISION=	5
-CATEGORIES=	net
-SITES=		https://www.benzedrine.ch/
+DISTNAME =	icbirc-2.2
+CATEGORIES =	net
+SITES =		https://www.benzedrine.ch/
 
-HOMEPAGE=	https://www.benzedrine.ch/icbirc.html
+HOMEPAGE =	https://www.benzedrine.ch/icbirc.html
+
+MAINTAINER =	Sebastien Marie <semarie@kapouay.eu.org>
 
 # BSD
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE =	Yes
 
 # uses pledge()
-WANTLIB=	c
+WANTLIB +=	c
 
-NO_TEST=	Yes
+NO_TEST =	Yes
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/icbirc ${PREFIX}/bin
