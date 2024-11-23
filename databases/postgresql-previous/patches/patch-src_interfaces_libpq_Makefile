@@ -10,5 +10,5 @@ Index: src/interfaces/libpq/Makefile
 +SO_MAJOR_VERSION= ${LIBpq_MAJOR}
 +SO_MINOR_VERSION= ${LIBpq_MINOR}
  
- override CPPFLAGS :=  -DFRONTEND -DUNSAFE_STAT_OK -I$(srcdir) $(CPPFLAGS) -I$(top_builddir)/src/port -I$(top_srcdir)/src/port
+ override CPPFLAGS :=  -I$(srcdir) $(CPPFLAGS) -I$(top_builddir)/src/port -I$(top_srcdir)/src/port
  ifneq ($(PORTNAME), win32)

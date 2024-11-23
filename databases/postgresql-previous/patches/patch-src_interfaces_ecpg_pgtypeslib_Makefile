@@ -11,4 +11,4 @@ Index: src/interfaces/ecpg/pgtypeslib/Makefile
 +SO_MINOR_VERSION= ${LIBpgtypes_MINOR}
  
  override CPPFLAGS := -I../include -I$(top_srcdir)/src/interfaces/ecpg/include \
- 	-DFRONTEND $(CPPFLAGS)
+ 	$(CPPFLAGS)

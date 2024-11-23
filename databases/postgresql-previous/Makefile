@@ -1,15 +1,14 @@
 COMMENT=	PostgreSQL RDBMS (previous version, for pg_upgrade)
 
-VERSION=	15.4
+VERSION=	16.6
 DISTNAME=	postgresql-${VERSION}
 PKGNAME=	postgresql-previous-${VERSION}
-REVISION=	0
 
 CATEGORIES=	databases
 SHARED_LIBS=	ecpg		7.10 \
 		ecpg_compat	4.10 \
 		pgtypes		4.9 \
-		pq		6.14
+		pq		6.15
 
 HOMEPAGE=	https://www.postgresql.org/
 
@@ -18,7 +17,7 @@ MAINTAINER=	Jeremy Evans <jeremy@openbsd.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB =  c crypto curses execinfo m perl readline ssl xml2 z
+WANTLIB =  c crypto curses execinfo icudata icui18n icuuc m perl readline ssl xml2 z
 
 SITES=		https://ftp.postgresql.org/pub/source/v${VERSION}/ \
 		ftp://ftp.postgresql.org/pub/source/v${VERSION}/
@@ -68,7 +67,8 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config
 ALL_TARGET=	all
 INSTALL_TARGET=	install
 
-LIB_DEPENDS = textproc/libxml
+LIB_DEPENDS =	textproc/libxml \
+		textproc/icu4c
 
 MAKE_ENV=	LIBpq_MAJOR=${LIBpq_VERSION:R} \
 		LIBpq_MINOR=${LIBpq_VERSION:E} \

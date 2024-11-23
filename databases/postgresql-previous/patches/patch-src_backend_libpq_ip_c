@@ -4,12 +4,11 @@ since the latter is unreliable. Fixes "samenet"/"samehost".
 Index: src/backend/libpq/ifaddr.c
 --- src/backend/libpq/ifaddr.c.orig
 +++ src/backend/libpq/ifaddr.c
-@@ -200,17 +200,16 @@ run_ifaddr_callback(PgIfAddrCallback callback, void *c
+@@ -189,16 +189,14 @@ run_ifaddr_callback(PgIfAddrCallback callback, void *c
  	/* Check that the mask is valid */
  	if (mask)
  	{
 -		if (mask->sa_family != addr->sa_family)
-+
 +		/* mask->sa_family can be different from addr->sa_family. */
 +
 +		if (addr->sa_family == AF_INET)
@@ -21,7 +20,6 @@ Index: src/backend/libpq/ifaddr.c
  			if (((struct sockaddr_in *) mask)->sin_addr.s_addr == INADDR_ANY)
  				mask = NULL;
  		}
- #ifdef HAVE_IPV6
 -		else if (mask->sa_family == AF_INET6)
 +		else if (addr->sa_family == AF_INET6)
  		{
