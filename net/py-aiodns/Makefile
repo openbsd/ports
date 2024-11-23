@@ -1,10 +1,11 @@
 COMMENT =		simple DNS resolver for asyncio
 
-MODPY_EGG_VERSION =	3.0.0
+MODPY_EGG_VERSION =	3.2.0
 DISTNAME =		aiodns-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		net
-REVISION =		3
+
+HOMEPAGE =		https://github.com/aio-libs/aiodns
 
 MAINTAINER =		Kurt Mosiejczuk <kmos@openbsd.org>
 
