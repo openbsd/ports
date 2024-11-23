@@ -1,0 +1,24 @@
+lib/python${MODPY_VERSION}/site-packages/propcache/
+lib/python${MODPY_VERSION}/site-packages/propcache-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/propcache-${MODPY_EGG_VERSION}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/propcache-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/propcache-${MODPY_EGG_VERSION}.dist-info/NOTICE
+lib/python${MODPY_VERSION}/site-packages/propcache-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/propcache-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/propcache-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/propcache/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/propcache/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/propcache/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/propcache/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/propcache/${MODPY_PYCACHE}_helpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/propcache/${MODPY_PYCACHE}_helpers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/propcache/${MODPY_PYCACHE}_helpers_py.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/propcache/${MODPY_PYCACHE}_helpers_py.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/propcache/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/propcache/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/propcache/_helpers.py
+@so lib/python${MODPY_VERSION}/site-packages/propcache/_helpers_c.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/propcache/_helpers_c.pyx
+lib/python${MODPY_VERSION}/site-packages/propcache/_helpers_py.py
+lib/python${MODPY_VERSION}/site-packages/propcache/api.py
+lib/python${MODPY_VERSION}/site-packages/propcache/py.typed
