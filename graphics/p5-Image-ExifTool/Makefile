@@ -1,6 +1,6 @@
 COMMENT=	read and write meta information in image/audio/video files
 
-DISTNAME=	Image-ExifTool-12.98
+DISTNAME=	Image-ExifTool-13.00
 CATEGORIES=	graphics
 
 HOMEPAGE=	https://exiftool.org/
