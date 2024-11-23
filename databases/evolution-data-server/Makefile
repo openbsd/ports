@@ -1,8 +1,7 @@
 COMMENT=		unified backend for PIM programs
 
 GNOME_PROJECT=		evolution-data-server
-GNOME_VERSION=		3.54.1
-REVISION=		0
+GNOME_VERSION=		3.54.2
 
 CATEGORIES=		databases productivity
 
@@ -30,7 +29,7 @@ WANTLIB += icalvcal icudata icui18n icuuc intl javascriptcoregtk-4.1
 WANTLIB += javascriptcoregtk-6.0 json-glib-1.0 lber ldap m nspr4
 WANTLIB += nss3 nssutil3 pango-1.0 pangocairo-1.0 phonenumber
 WANTLIB += plc4 plds4 secret-1 smime3 soup-3.0 sqlite3 ssl3 uuid
-WANTLIB += webkit2gtk-4.1 webkitgtk-6.0 xml2 z
+WANTLIB += vulkan webkit2gtk-4.1 webkitgtk-6.0 xml2 z
 
 COMPILER=		base-clang ports-gcc base-gcc
 
