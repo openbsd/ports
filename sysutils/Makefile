@@ -159,6 +159,7 @@
      SUBDIR += iucode-tool
      SUBDIR += iwatch
      SUBDIR += jefferson
+     SUBDIR += kitd
      SUBDIR += kopia
      SUBDIR += krename
      SUBDIR += kubectl
