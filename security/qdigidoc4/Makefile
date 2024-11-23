@@ -4,7 +4,7 @@ PORTROACH =		skipv:4.6.1	# Windows-only
 V =			4.6.0
 DISTNAME =		qdigidoc4-${V}
 CATEGORIES =		security x11
-REVISION =		0
+REVISION =		1
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
@@ -15,10 +15,11 @@ PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		qdigidoc4
 SITES =			https://github.com/open-eid/DigiDoc4-Client/releases/download/v${V}/
+DISTFILES =		new-{}${DISTNAME}${EXTRACT_SUFX}
 # .tar.gz asset is an uncompressed tar archive, qdigidoc4_4.6.0.4458-2004.tar.xz
 # is slightly different, at least in (inner directory) name
 # 
-EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
+EXTRACT_ONLY =		${DISTFILES:S/{}//}
 
 SITES.eesti =		https://id.eesti.ee/
 CONFIG_NAME =		config-20241021071615Z
