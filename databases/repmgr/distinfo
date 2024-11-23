@@ -1,2 +1,4 @@
 SHA256 (repmgr-5.4.1.tar.gz) = oY1hqZ310ma/KYVM4Q5pdmYXiLoJYF0yY9Y4WtRCOxA=
+SHA256 (repmgr-pg17-fix.patch) = 8bnAAEkso7WAxpQBCG9wfGdQFFrkvZE1y0LiyLZaFCw=
 SIZE (repmgr-5.4.1.tar.gz) = 461670
+SIZE (repmgr-pg17-fix.patch) = 749

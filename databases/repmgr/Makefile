@@ -3,6 +3,11 @@ COMMENT =	HA and replication cluster management for PostgreSQL
 DISTNAME =	repmgr-5.4.1
 CATEGORIES =	databases
 HOMEPAGE =	https://repmgr.org/
+REVISION =	0
+
+SITES.github =	https://github.com/EnterpriseDB/repmgr/commit/
+PATCHFILES.github =	repmgr-pg17-fix{5abdbb0d39e77b9463857c60a53707fd6f2abc45}.patch
+PATCH_DIST_STRIP =	-p1
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
