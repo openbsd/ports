@@ -5,11 +5,10 @@ COMMENT-contrib=PostgreSQL RDBMS contributions
 COMMENT-plpython=Python procedural language for PostgreSQL
 COMMENT-pg_upgrade=Support for upgrading PostgreSQL data from previous version
 
-VERSION=	16.4
-PREV_MAJOR=	15
+VERSION=	17.2
+PREV_MAJOR=	16
 DISTNAME=	postgresql-${VERSION}
 PKGNAME-main=	postgresql-client-${VERSION}
-REVISION=	0
 
 DPB_PROPERTIES=	parallel
 
@@ -17,7 +16,7 @@ CATEGORIES=	databases
 SHARED_LIBS=	ecpg		7.10 \
 		ecpg_compat	4.10 \
 		pgtypes		4.9 \
-		pq		6.15
+		pq		6.16
 
 HOMEPAGE=	https://www.postgresql.org/
 
@@ -26,7 +25,7 @@ MAINTAINER=	Jeremy Evans <jeremy@openbsd.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c curses crypto m readline ssl z
+WANTLIB += c curses crypto m readline ssl z pthread
 
 SITES=		https://ftp.postgresql.org/pub/source/v${VERSION}/ \
 		ftp://ftp.postgresql.org/pub/source/v${VERSION}/
@@ -82,6 +81,10 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config
 ALL_TARGET=	world
 INSTALL_TARGET=	install-world
 
+BUILD_DEPENDS=  textproc/docbook \
+		textproc/docbook-xsl \
+		textproc/xmlto
+
 LIB_DEPENDS-main=	textproc/libxml
 WANTLIB-main=		${WANTLIB} execinfo xml2
 
@@ -110,7 +113,6 @@ RUN_DEPENDS-plpython=	databases/postgresql,-server=${VERSION}
 WANTLIB-docs=
 PKG_ARCH-docs=	*
 
-
 MAKE_ENV=	LIBpq_MAJOR=${LIBpq_VERSION:R} \
 		LIBpq_MINOR=${LIBpq_VERSION:E} \
 		LIBecpg_MAJOR=${LIBecpg_VERSION:R} \
@@ -118,11 +120,12 @@ MAKE_ENV=	LIBpq_MAJOR=${LIBpq_VERSION:R} \
 		LIBecpg_compat_MAJOR=${LIBecpg_compat_VERSION:R} \
 		LIBecpg_compat_MINOR=${LIBecpg_compat_VERSION:E} \
 		LIBpgtypes_MAJOR=${LIBpgtypes_VERSION:R} \
-		LIBpgtypes_MINOR=${LIBpgtypes_VERSION:E}
+		LIBpgtypes_MINOR=${LIBpgtypes_VERSION:E} \
+		XML_CATALOG_FILES="${LOCALBASE}/share/xml/docbook/4.5/catalog.xml \
+			${LOCALBASE}/share/xsl/docbook/catalog.xml"
 
 DOCS=	${WRKSRC}/COPYRIGHT ${WRKSRC}/HISTORY \
-	${WRKSRC}/INSTALL ${WRKSRC}/README \
-	${WRKSRC}/doc/TODO
+	${WRKSRC}/README.md ${WRKSRC}/doc/TODO
 
 # Work around Makefile issue where it attempts to rebuild
 # the documentation even if it is not necessary.
