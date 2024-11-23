@@ -416,6 +416,7 @@
      SUBDIR += purritobin
      SUBDIR += py-CherryPy,python3
      SUBDIR += py-adblock,python3
+     SUBDIR += py-aiohappyeyeballs,python3
      SUBDIR += py-aiohttp,python3
      SUBDIR += py-aiohttp-oauthlib,python3
      SUBDIR += py-aioquic,python3
