@@ -1,0 +1,24 @@
+@pkgpath www/py-aiohttp
+lib/python${MODPY_VERSION}/site-packages/aiohappyeyeballs/
+lib/python${MODPY_VERSION}/site-packages/aiohappyeyeballs-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/aiohappyeyeballs-${MODPY_EGG_VERSION}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/aiohappyeyeballs-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/aiohappyeyeballs-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/aiohappyeyeballs-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/aiohappyeyeballs/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/aiohappyeyeballs/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/aiohappyeyeballs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/aiohappyeyeballs/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/aiohappyeyeballs/${MODPY_PYCACHE}_staggered.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/aiohappyeyeballs/${MODPY_PYCACHE}_staggered.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/aiohappyeyeballs/${MODPY_PYCACHE}impl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/aiohappyeyeballs/${MODPY_PYCACHE}impl.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/aiohappyeyeballs/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/aiohappyeyeballs/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/aiohappyeyeballs/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/aiohappyeyeballs/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/aiohappyeyeballs/_staggered.py
+lib/python${MODPY_VERSION}/site-packages/aiohappyeyeballs/impl.py
+lib/python${MODPY_VERSION}/site-packages/aiohappyeyeballs/py.typed
+lib/python${MODPY_VERSION}/site-packages/aiohappyeyeballs/types.py
+lib/python${MODPY_VERSION}/site-packages/aiohappyeyeballs/utils.py
