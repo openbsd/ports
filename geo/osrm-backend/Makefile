@@ -1,6 +1,6 @@
-# devel/tbb does not support 64-bits atomics on ppc32, forcing them does
-# not help, see tbb's ${WRKSRC}/include/tbb/machine/mac_ppc.h
-NOT_FOR_ARCHS =	powerpc
+# CMake Error at CMakeLists.txt:118 (message):
+#   Building on a 32 bit system is not supported
+ONLY_FOR_ARCHS =	${LP64_ARCHS}
 
 COMMENT =		high-performance road network routing engine
 
