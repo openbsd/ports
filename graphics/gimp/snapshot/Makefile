@@ -61,6 +61,7 @@ BUILD_DEPENDS=	${COMMON_DEPENDS} \
 		devel/gettext,-tools \
 		lang/luajit \
 		lang/vala \
+		misc/shared-mime-info \
 		shells/bash \
 		textproc/libxslt
 

@@ -59,7 +59,8 @@ COMMON_DEPENDS=	archivers/lzip/lzlib \
 		x11/py-gtk2
 
 BUILD_DEPENDS=	${COMMON_DEPENDS} \
-		devel/appstream-glib
+		devel/appstream-glib \
+		misc/shared-mime-info
 
 RUN_DEPENDS=	${COMMON_DEPENDS} \
 		devel/xdg-utils \
