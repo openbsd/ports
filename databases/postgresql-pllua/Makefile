@@ -5,6 +5,7 @@ GH_ACCOUNT =		pllua
 GH_PROJECT =		pllua
 GH_TAGNAME =		REL_${VERSION:S/./_/g}
 PKGNAME =		postgresql-pllua-${VERSION}
+REVISION =		0
 
 CATEGORIES =		databases
 
@@ -21,8 +22,8 @@ MODULES =		lang/lua
 MODLUA_VERSION =	5.3
 
 BUILD_DEPENDS =		${RUN_DEPENDS} \
-			postgresql-client->=16,<17:databases/postgresql,-main
-RUN_DEPENDS =		postgresql-server->=16,<17:databases/postgresql,-server
+			postgresql-client->=17,<18:databases/postgresql,-main
+RUN_DEPENDS =		postgresql-server->=17,<18:databases/postgresql,-server
 
 USE_GMAKE =		Yes
 
