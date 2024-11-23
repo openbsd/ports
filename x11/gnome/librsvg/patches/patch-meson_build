@@ -1,0 +1,41 @@
+XXX our pkg-config(1) does not support relocation via pcfiledir.
+prefix=${pcfiledir}/../..
+versus
+prefix=/usr/local
+
+XXX ld: error: undefined reference: _Unwind_Resume
+probably because the version map created by nm excludes unwind symbols;
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -3,7 +3,7 @@ project('librsvg',
+         version: '2.59.2', # Keep this in sync with Cargo.toml, doc/librsvg.toml, rsvg/Cargo.toml
+         meson_version: '>= 1.2.0',
+         default_options: [
+-          'pkgconfig.relocatable=true',
++          'pkgconfig.relocatable=false',
+         ]
+ )
+ 
+@@ -176,6 +176,11 @@ foundation_dep = dependency('appleframeworks', modules
+                             required: host_system in ['darwin', 'ios'])
+ m_dep = cc.find_library('m', required: false)
+ 
++unwind_dep = []
++if host_system == 'openbsd'
++  unwind_dep = cc.find_library('c++abi', required: true)
++endif
++
+ # Use this in place of libxml2/freetype2 for 'Requires:' in the
+ # pkg-config file in case either or both were found with CMake
+ empty_pc_dep = dependency('', required: false)
+@@ -198,7 +203,7 @@ library_dependencies_sole = [
+ ]
+ 
+ library_dependencies = library_dependencies_sole
+-private_dependencies = []
++private_dependencies = [unwind_dep]
+ other_library_dependencies = []
+ 
+ foreach d: [libxml_dep, freetype2_dep]

@@ -1,11 +1,9 @@
-PORTROACH=		skipv:2.56.90,2.56.92,2.56.93,2.58.90,2.58.91,2.58.92,2.58.93,2.58.94
-
 COMMENT=		SAX-based render library for SVG files
 
 # !!! /!\ make sure both distinfo are updated on version change:
 # make makesum && make RUST_ARCHS= makesum
 GNOME_PROJECT=		librsvg
-STABLE_VERSION=		2.58.5
+STABLE_VERSION=		2.59.2
 OLD_VERSION=		2.40.21
 DISTFILES.stable=	librsvg-${STABLE_VERSION}${EXTRACT_SUFX}
 DISTFILES.old= 		librsvg-${OLD_VERSION}${EXTRACT_SUFX}
@@ -19,29 +17,37 @@ EPOCH=			0
 
 .include <bsd.port.arch.mk>
 
-### stable
+### stable #####################################################################
 .if ${PROPERTIES:Mrust}
-REVISION=		0
-SHARED_LIBS +=  rsvg-2               41.0     # 52.0
+SHARED_LIBS += rsvg-2                    41.1 # 2.59.2
 GNOME_VERSION=		${STABLE_VERSION}
+
+# nm(1) is ${LOCALBASE}/bin/llvm-nm-${MODCLANG_VERSION};
+# see pre-configure target
+MODULES +=		lang/clang
+MODCLANG_COMPILER_LINKS=	No
+MODCLANG_RUNDEP=	No
 MODULES +=		devel/cargo \
+			devel/meson \
 			lang/python
 MODCARGO_BUILD=		No
 MODCARGO_INSTALL=	No
 MODCARGO_TEST=		No
+MODGNOME_TOOLS +=	gi-docgen
 MODPY_RUNDEP=		No
-BUILD_DEPENDS=		textproc/py-docutils${MODPY_FLAVOR}
+BUILD_DEPENDS=		devel/cargo-c
+# rst2man
+BUILD_DEPENDS +=	textproc/py-docutils${MODPY_FLAVOR}
 PKG_ARGS=		-Dold=0 -Dstable=1
 MAKE_ENV +=		${MODCARGO_ENV}
 MAKE_FLAGS +=		V=1
-WANTLIB += ${MODCARGO_WANTLIB} ${COMPILER_LIBCXX} Xau Xdmcp cairo-gobject jpeg
-
-MODCARGO_CRATES_UPDATE +=	time
-MODCARGO_CRATES +=	time		0.3.36
-MODCARGO_CRATES +=	time-macros	0.2.18
+WANTLIB += ${MODCARGO_WANTLIB} cairo gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gobject-2.0 m pango-1.0 pangocairo-1.0 xml2
+# XXX Dependency dav1d found: NO. Found 1.2.1 but need: '>= 1.3.0'
+CONFIGURE_ARGS +=	-Davif=disabled
 .else
-### old
-REVISION=		7
+### old ########################################################################
+REVISION=		8
 SHARED_LIBS +=  rsvg-2               38.2     # 42.20
 GNOME_VERSION=		${OLD_VERSION}
 PATCH_LIST=		old-patch-*
@@ -50,42 +56,43 @@ WANTLIB += ${COMPILER_LIBCXX} croco-0.6 ffi gmodule-2.0 jpeg pcre2-8 Xau Xdmcp
 LIB_DEPENDS +=		www/libcroco
 CONFIGURE_ARGS +=	--disable-tools
 CHECKSUM_FILE=		${.CURDIR}/distinfo.old
+CONFIGURE_STYLE=	gnu
+WANTLIB += X11 Xext Xrender c cairo expat fontconfig freetype
+WANTLIB += fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += graphite2 harfbuzz iconv intl lzma m pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pixman-1 png xcb xcb-render xcb-shm xml2
+WANTLIB += z
+
+#.include <bsd.port.arch.mk>
+.if !${PROPERTIES:Mlld}
+# error: -Bsymbolic-functions requested but not supported by ld
+CONFIGURE_ARGS +=	--disable-Bsymbolic
 .endif
+
+.endif
+################################################################################
 
 CATEGORIES=		devel graphics
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += X11 Xext Xrender c cairo expat ffi fontconfig
-WANTLIB += freetype fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 graphite2 harfbuzz iconv
-WANTLIB += intl lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8
-WANTLIB += pixman-1 png pthread xcb xcb-render xcb-shm xml2 z
-
 MODULES +=		x11/gnome
 
-MODGNOME_TOOLS=		gobject-introspection vala
+MODGNOME_TOOLS +=	gobject-introspection vala
 
 LIB_DEPENDS +=		devel/pango \
 			graphics/gdk-pixbuf2 \
 			textproc/libxml
 
-CONFIGURE_STYLE=	gnu
-
-.include <bsd.port.arch.mk>
-.if !${PROPERTIES:Mlld}
-# error: -Bsymbolic-functions requested but not supported by ld
-CONFIGURE_ARGS +=	--disable-Bsymbolic
-.endif
-
 .if ${PROPERTIES:Mrust}
 .include "crates.inc"
 pre-configure:
+	ln -sf ${LOCALBASE}/bin/llvm-nm-${MODCLANG_VERSION} ${WRKDIR}/bin/llvm-nm
 	@${MODCARGO_configure}
-.endif
-
+.else
 post-install:
 	rm ${PREFIX}/lib/gdk-pixbuf-2.0/2.10.0/loaders/*.{a,la}
+.endif
 
 .include <bsd.port.mk>

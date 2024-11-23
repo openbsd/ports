@@ -1,5 +1,8 @@
 include/librsvg-2.0/librsvg/librsvg-enum-types.h
 include/librsvg-2.0/librsvg/librsvg-features.h
+@so lib/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-svg.so
+@static-lib lib/librsvg-2.a
+lib/librsvg-2.la
 share/gtk-doc/html/rsvg-2.0/
 share/gtk-doc/html/rsvg-2.0/RsvgHandle.html
 share/gtk-doc/html/rsvg-2.0/annotation-glossary.html
