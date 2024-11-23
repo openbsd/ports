@@ -1,10 +1,10 @@
 COMMENT =	open source, multi-platform library for creating windows
 
-V =		3.3.9
+V =		3.4
 DISTNAME =	glfw-${V}
 CATEGORIES =	graphics x11
 
-SHARED_LIBS +=  glfw                      1.1 # 3.1
+SHARED_LIBS +=  glfw                      1.2 # 3.4
 
 HOMEPAGE =	https://www.glfw.org/
 MAINTAINER =	Kurt Mosiejczuk <kmos@openbsd.org>
@@ -23,6 +23,9 @@ CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=ON \
 			-DGLFW_BUILD_TESTS=OFF
 
 CFLAGS +=		-I${X11BASE}/include
+
+BUILD_DEPENDS =	wayland/libinput-openbsd \
+		wayland/wayland
 
 NO_TEST =	Yes
 
