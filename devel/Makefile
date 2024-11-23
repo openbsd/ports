@@ -483,9 +483,9 @@
      SUBDIR += openmpi
      SUBDIR += openocd
      SUBDIR += ophis
+     SUBDIR += or1k-elf
      SUBDIR += orc
      SUBDIR += orcania
-     SUBDIR += or1k-elf
      SUBDIR += p5-Acme-Damn
      SUBDIR += p5-Algorithm-Annotate
      SUBDIR += p5-Algorithm-C3
@@ -1374,9 +1374,9 @@
      SUBDIR += py-bitcoinlib,python3
      SUBDIR += py-bitstring,python3
      SUBDIR += py-blessings,python3
+     SUBDIR += py-blinker,python3
      SUBDIR += py-boolean.py,python3
      SUBDIR += py-borghash,python3
-     SUBDIR += py-blinker,python3
      SUBDIR += py-build,python3
      SUBDIR += py-buildbot		# subdir; uses python3
      SUBDIR += py-buildslave		# standalone, uses python3
@@ -1410,6 +1410,7 @@
      SUBDIR += py-cookiecutter,python3
      SUBDIR += py-cooldict,python3
      SUBDIR += py-country,python3
+     SUBDIR += py-covdefaults,python3
      SUBDIR += py-coverage,python3
      SUBDIR += py-coveralls,python3
      SUBDIR += py-cparser,python3
@@ -1594,6 +1595,7 @@
      SUBDIR += py-progress,python3
      SUBDIR += py-progressbar,python3
      SUBDIR += py-prompt_toolkit,python3
+     SUBDIR += py-propcache,python3
      SUBDIR += py-protobuf,python3
      SUBDIR += py-ptyprocess,python3
      SUBDIR += py-pure_eval,python3
@@ -1601,8 +1603,8 @@
      SUBDIR += py-py,python3
      SUBDIR += py-pybind11,python3
      SUBDIR += py-pydantic,python3
-     SUBDIR += py-pydantic-core,python3
      SUBDIR += py-pydantic-compat,python3
+     SUBDIR += py-pydantic-core,python3
      SUBDIR += py-pydocstyle,python3
      SUBDIR += py-pygithub,python3
      SUBDIR += py-pyinotify,python3
@@ -1614,8 +1616,8 @@
      SUBDIR += py-pyproject_hooks,python3
      SUBDIR += py-pyrsistent,python3
      SUBDIR += py-pyte,python3
-     SUBDIR += py-python-lsp-server,python3
      SUBDIR += py-python-lsp-black,python3
+     SUBDIR += py-python-lsp-server,python3
      SUBDIR += py-python-slugify,python3
      SUBDIR += py-pytoolconfig,python3
      SUBDIR += py-qdarkstyle,python3
@@ -1672,11 +1674,13 @@
      SUBDIR += py-tempora,python3
      SUBDIR += py-tenacity,python3
      SUBDIR += py-test,python3
+     SUBDIR += py-test-aiohttp,python3
      SUBDIR += py-test-arraydiff,python3
      SUBDIR += py-test-astropy,python3
      SUBDIR += py-test-astropy-header,python3
      SUBDIR += py-test-asyncio,python3
      SUBDIR += py-test-benchmark,python3
+     SUBDIR += py-test-codspeed,python3
      SUBDIR += py-test-console-scripts,python3
      SUBDIR += py-test-cov,python3
      SUBDIR += py-test-datafiles,python3
@@ -1712,8 +1716,8 @@
      SUBDIR += py-toposort,python3
      SUBDIR += py-tox,python3
      SUBDIR += py-tqdm,python3
-     SUBDIR += py-transitions,python3
      SUBDIR += py-traitlets,python3
+     SUBDIR += py-transitions,python3
      SUBDIR += py-trio,python3
      SUBDIR += py-trove-classifiers,python3
      SUBDIR += py-twisted,python3
@@ -1821,8 +1825,8 @@
      SUBDIR += ruby-idn,ruby32
      SUBDIR += ruby-idn,ruby33
      SUBDIR += ruby-isolate
-     SUBDIR += ruby-json_pure
      SUBDIR += ruby-json-schema
+     SUBDIR += ruby-json_pure
      SUBDIR += ruby-kgio,ruby32
      SUBDIR += ruby-kgio,ruby33
      SUBDIR += ruby-locale
