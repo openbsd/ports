@@ -1,7 +1,6 @@
 COMMENT =		pure Unix shell script implementing ACME client protocol
-REVISION =		0
 
-DIST_TUPLE +=		github acmesh-official acme.sh 3.0.9 .
+DIST_TUPLE +=		github acmesh-official acme.sh 3.1.0 .
 
 CATEGORIES =		security
 

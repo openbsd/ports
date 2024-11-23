@@ -3,6 +3,7 @@ share/acme.sh/
 share/acme.sh/acme.sh
 share/acme.sh/deploy/
 share/acme.sh/deploy/ali_cdn.sh
+share/acme.sh/deploy/ali_dcdn.sh
 share/acme.sh/deploy/apache.sh
 share/acme.sh/deploy/cleverreach.sh
 share/acme.sh/deploy/consul.sh
@@ -148,6 +149,7 @@ share/acme.sh/dnsapi/dns_nsone.sh
 share/acme.sh/dnsapi/dns_nsupdate.sh
 share/acme.sh/dnsapi/dns_nw.sh
 share/acme.sh/dnsapi/dns_oci.sh
+share/acme.sh/dnsapi/dns_omglol.sh
 share/acme.sh/dnsapi/dns_one.sh
 share/acme.sh/dnsapi/dns_online.sh
 share/acme.sh/dnsapi/dns_openprovider.sh
