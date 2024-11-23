@@ -1,0 +1,9 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/sbin/kitd -n ${0##*/}"
+
+. /etc/rc.d/rc.subr
+
+pexp="kitd: ${0##*/}"
+
+rc_cmd $1

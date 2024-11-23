@@ -1,0 +1,3 @@
+@rcscript ${RCDIR}/kitd
+@man man/man8/kitd.8
+@bin sbin/kitd

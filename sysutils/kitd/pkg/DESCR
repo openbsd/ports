@@ -1,0 +1,3 @@
+kitd supervises a child process, redirecting its standard output
+and standard error to syslog. When the child process exits, it is
+automatically restarted using exponential backoff.
