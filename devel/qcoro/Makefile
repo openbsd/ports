@@ -1,26 +1,25 @@
 COMMENT =	C++ coroutines for Qt
 
-V =		0.10.0
+V =		0.11.0
 GH_ACCOUNT =	danvratil
 GH_PROJECT =	qcoro
 GH_TAGNAME =	v${V}
-REVISION=	0
 
 CATEGORIES =	devel
 
 SHARED_LIBS +=  QCoro5Core                0.0 # 0.0
-SHARED_LIBS +=  QCoro5DBus                0.0 # 0.0
-SHARED_LIBS +=  QCoro5Network             0.0 # 0.0
-SHARED_LIBS +=  QCoro5Qml                 0.0 # 0.0
-SHARED_LIBS +=  QCoro5Quick               0.0 # 0.0
-SHARED_LIBS +=  QCoro5WebSockets          0.0 # 0.0
+SHARED_LIBS +=  QCoro5DBus                1.0 # 0.0
+SHARED_LIBS +=  QCoro5Network             1.0 # 0.0
+SHARED_LIBS +=  QCoro5Qml                 0.1 # 0.0
+SHARED_LIBS +=  QCoro5Quick               1.0 # 0.0
+SHARED_LIBS +=  QCoro5WebSockets          1.0 # 0.0
 
 SHARED_LIBS +=  QCoro6Core                0.0 # 0.0
-SHARED_LIBS +=  QCoro6DBus                0.0 # 0.0
-SHARED_LIBS +=  QCoro6Network             0.0 # 0.0
-SHARED_LIBS +=  QCoro6Qml                 0.0 # 0.0
-SHARED_LIBS +=  QCoro6Quick               0.0 # 0.0
-SHARED_LIBS +=  QCoro6WebSockets          0.0 # 0.0
+SHARED_LIBS +=  QCoro6DBus                1.0 # 0.0
+SHARED_LIBS +=  QCoro6Network             1.0 # 0.0
+SHARED_LIBS +=  QCoro6Qml                 0.1 # 0.0
+SHARED_LIBS +=  QCoro6Quick               1.0 # 0.0
+SHARED_LIBS +=  QCoro6WebSockets          1.0 # 0.0
 
 HOMEPAGE =	https://qcoro.dvratil.cz/
 

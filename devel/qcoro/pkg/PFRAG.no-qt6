@@ -12,6 +12,7 @@ include/qcoro5/QCoro/QCoroFwd
 include/qcoro5/QCoro/QCoroGenerator
 include/qcoro5/QCoro/QCoroIODevice
 include/qcoro5/QCoro/QCoroImageProvider
+include/qcoro5/QCoro/QCoroLazyTask
 include/qcoro5/QCoro/QCoroLocalSocket
 include/qcoro5/QCoro/QCoroNetwork
 include/qcoro5/QCoro/QCoroNetworkReply
@@ -35,8 +36,10 @@ include/qcoro5/qcoro/coroutine.h
 include/qcoro5/qcoro/impl/
 include/qcoro5/qcoro/impl/connect.h
 include/qcoro5/qcoro/impl/isqprivatesignal.h
+include/qcoro5/qcoro/impl/lazytask.h
 include/qcoro5/qcoro/impl/task.h
 include/qcoro5/qcoro/impl/taskawaiterbase.h
+include/qcoro5/qcoro/impl/taskbase.h
 include/qcoro5/qcoro/impl/taskfinalsuspend.h
 include/qcoro5/qcoro/impl/taskpromise.h
 include/qcoro5/qcoro/impl/taskpromisebase.h
@@ -56,6 +59,7 @@ include/qcoro5/qcoro/qcorofwd.h
 include/qcoro5/qcoro/qcorogenerator.h
 include/qcoro5/qcoro/qcoroimageprovider.h
 include/qcoro5/qcoro/qcoroiodevice.h
+include/qcoro5/qcoro/qcorolazytask.h
 include/qcoro5/qcoro/qcorolocalsocket.h
 include/qcoro5/qcoro/qcoronetwork.h
 include/qcoro5/qcoro/qcoronetwork_export.h
@@ -77,7 +81,6 @@ include/qcoro5/qcoro/qcorowebsockets_export.h
 include/qcoro5/qcoro/qcorowebsocketserver.h
 include/qcoro5/qcoro/task.h
 include/qcoro5/qcoro/waitoperationbase_p.h
-lib/cmake/
 lib/cmake/QCoro5/
 lib/cmake/QCoro5/QCoro5Config.cmake
 lib/cmake/QCoro5/QCoro5ConfigVersion.cmake
@@ -120,6 +123,7 @@ lib/cmake/QCoro5WebSockets/QCoro5WebSocketsConfig.cmake
 lib/cmake/QCoro5WebSockets/QCoro5WebSocketsConfigVersion.cmake
 lib/cmake/QCoro5WebSockets/QCoro5WebSocketsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/QCoro5WebSockets/QCoro5WebSocketsTargets.cmake
+@lib lib/libQCoro5Core.so.${LIBQCoro5Core_VERSION}
 @lib lib/libQCoro5DBus.so.${LIBQCoro5DBus_VERSION}
 @lib lib/libQCoro5Network.so.${LIBQCoro5Network_VERSION}
 @lib lib/libQCoro5Qml.so.${LIBQCoro5Qml_VERSION}

@@ -77,7 +77,6 @@ include/qcoro6/qcoro/qcorowebsockets_export.h
 include/qcoro6/qcoro/qcorowebsocketserver.h
 include/qcoro6/qcoro/task.h
 include/qcoro6/qcoro/waitoperationbase_p.h
-lib/cmake/
 lib/cmake/QCoro6/
 lib/cmake/QCoro6/QCoro6Config.cmake
 lib/cmake/QCoro6/QCoro6ConfigVersion.cmake
@@ -126,9 +125,6 @@ lib/cmake/QCoro6WebSockets/QCoro6WebSocketsTargets.cmake
 @lib lib/libQCoro6Qml.so.${LIBQCoro6Qml_VERSION}
 @lib lib/libQCoro6Quick.so.${LIBQCoro6Quick_VERSION}
 @lib lib/libQCoro6WebSockets.so.${LIBQCoro6WebSockets_VERSION}
-lib/qt6/
-lib/qt6/mkspecs/
-lib/qt6/mkspecs/modules/
 lib/qt6/mkspecs/modules/qt_QCoroCore.pri
 lib/qt6/mkspecs/modules/qt_QCoroCoro.pri
 lib/qt6/mkspecs/modules/qt_QCoroDBus.pri
