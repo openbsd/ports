@@ -1,6 +1,8 @@
 Fix build with libheif >=1.18.0
 See: https://github.com/strukturag/libheif/commit/cf0d89c6e0809427427583290547a7757428cf5a
 
+Add new librsvg GdkPixbuf loader name.
+
 Index: configure
 --- configure.orig
 +++ configure
@@ -27,3 +29,13 @@ Index: configure
    if test "x$can_import_avif" = xyes; then
      MIME_TYPES="$MIME_TYPES;image/avif"
    fi
+@@ -33906,7 +33902,8 @@ fi
+     # So let's test files the shell way.
+     if (test "x$platform_win32" = "xyes" &&
+         test -f "$gdk_pixbuf_moduledir/libpixbufloader-svg.dll") ||
+-       test -f "$gdk_pixbuf_moduledir/libpixbufloader-svg.so"; then
++       test -f "$gdk_pixbuf_moduledir/libpixbufloader-svg.so" ||
++       test -f "$gdk_pixbuf_moduledir/libpixbufloader_svg.so"; then
+       # We must not use $PKG_CONFIG nor PKG_CHECK_* macros because we need
+       # to make sure we use the native pkg-config (in case we cross-compile).
+       if pkg-config --atleast-version=2.56.2 glib-2.0 &&
