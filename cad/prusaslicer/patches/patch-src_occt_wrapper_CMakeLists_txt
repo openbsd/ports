@@ -5,7 +5,7 @@ Index: src/occt_wrapper/CMakeLists.txt
  
  generate_export_header(OCCTWrapper)
  
--find_package(OpenCASCADE 7.6.2 REQUIRED)
+-find_package(OpenCASCADE 7.6.1 REQUIRED)
 +find_package(OpenCASCADE REQUIRED)
  
  set(OCCT_LIBS
@@ -20,7 +20,7 @@ Index: src/occt_wrapper/CMakeLists.txt
      TKXCAF
      TKXSBase
      TKVCAF
-@@ -58,5 +56,5 @@ target_link_libraries(OCCTWrapper ${OCCT_LIBS})
+@@ -59,5 +57,5 @@ target_link_libraries(OCCTWrapper libslic3r admesh)
  
  include(GNUInstallDirs)
  

@@ -50,7 +50,6 @@ share/PrusaSlicer/icons/bullet_black.png
 share/PrusaSlicer/icons/bullet_blue.png
 share/PrusaSlicer/icons/bullet_white.png
 share/PrusaSlicer/icons/burn.svg
-share/PrusaSlicer/icons/cancel.svg
 share/PrusaSlicer/icons/change_extruder.svg
 share/PrusaSlicer/icons/check_off.svg
 share/PrusaSlicer/icons/check_off_disabled.svg
@@ -779,6 +778,8 @@ share/PrusaSlicer/profiles/PrusaResearch/MK3_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/MK4ISMMU3_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/MK4IS_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/MK4IS_thumbnail_v2.png
+share/PrusaSlicer/profiles/PrusaResearch/MK4SMMU3_thumbnail.png
+share/PrusaSlicer/profiles/PrusaResearch/MK4S_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/MK4_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/XL2IS_alpha_thumbnail.png
 share/PrusaSlicer/profiles/PrusaResearch/XL2IS_beta_thumbnail.png
@@ -801,10 +802,12 @@ share/PrusaSlicer/profiles/PrusaResearch/mk2_bed.stl
 share/PrusaSlicer/profiles/PrusaResearch/mk3.svg
 share/PrusaSlicer/profiles/PrusaResearch/mk35.svg
 share/PrusaSlicer/profiles/PrusaResearch/mk39.svg
+share/PrusaSlicer/profiles/PrusaResearch/mk39s.svg
 share/PrusaSlicer/profiles/PrusaResearch/mk3_bed.stl
 share/PrusaSlicer/profiles/PrusaResearch/mk4.svg
 share/PrusaSlicer/profiles/PrusaResearch/mk4_bed.stl
 share/PrusaSlicer/profiles/PrusaResearch/mk4is.svg
+share/PrusaSlicer/profiles/PrusaResearch/mk4s.svg
 share/PrusaSlicer/profiles/PrusaResearch/xl.svg
 share/PrusaSlicer/profiles/PrusaResearch/xl_bed.stl
 share/PrusaSlicer/profiles/PrusaResearch/xlis_alpha.svg
@@ -934,6 +937,8 @@ share/PrusaSlicer/profiles/Ultimaker/
 share/PrusaSlicer/profiles/Ultimaker.idx
 share/PrusaSlicer/profiles/Ultimaker.ini
 share/PrusaSlicer/profiles/Ultimaker/ULTIMAKER2_thumbnail.png
+share/PrusaSlicer/profiles/Ultimaker/ULTIMAKER2_thumbnail_v2.png
+share/PrusaSlicer/profiles/Ultimaker/ULTIMAKERSline_thumbnail.png
 share/PrusaSlicer/profiles/Ultimaker/ultimaker2.svg
 share/PrusaSlicer/profiles/Ultimaker/ultimaker2_bed.stl
 share/PrusaSlicer/profiles/Voron/

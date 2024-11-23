@@ -10,7 +10,7 @@ Index: CMakeLists.txt
      find_package(PkgConfig REQUIRED)
  
      if (CMAKE_VERSION VERSION_LESS "3.1")
-@@ -658,7 +658,6 @@ elseif (SLIC3R_FHS)
+@@ -646,7 +646,6 @@ elseif (SLIC3R_FHS)
              DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/icons/hicolor/${SIZE}x${SIZE}/apps RENAME PrusaSlicer-gcodeviewer.png
          )
      endforeach()

@@ -36,7 +36,7 @@ Index: src/slic3r/GUI/UserAccountCommunication.cpp
          load_refresh_token_linux(refresh_token);
  #endif
      }
-@@ -253,7 +254,7 @@ void UserAccountCommunication::set_username(const std:
+@@ -254,7 +255,7 @@ void UserAccountCommunication::set_username(const std:
              save_secret("tokens", m_session->get_shared_session_key(), tokens);
          }
          else {

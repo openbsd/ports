@@ -1,7 +1,7 @@
 Index: tests/libslic3r/test_emboss.cpp
 --- tests/libslic3r/test_emboss.cpp.orig
 +++ tests/libslic3r/test_emboss.cpp
-@@ -412,7 +412,7 @@ TEST_CASE("ray segment intersection", "[MeshBoolean]")
+@@ -413,7 +413,7 @@ TEST_CASE("ray segment intersection", "[MeshBoolean]")
      CHECK(abs(*t1 - *t2) < std::numeric_limits<double>::epsilon());
  }
  
@@ -10,7 +10,7 @@ Index: tests/libslic3r/test_emboss.cpp
  {
      Vec2d                point(1, 1);
      Vec2d                dir(-1, 0);
-@@ -481,7 +481,7 @@ TEST_CASE("Italic check", "[Emboss]") 
+@@ -482,7 +482,7 @@ TEST_CASE("Italic check", "[Emboss]") 
  #endif // FONT_DIR_PATH
  
  #include "libslic3r/CutSurface.hpp"
