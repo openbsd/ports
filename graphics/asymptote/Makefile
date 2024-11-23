@@ -49,6 +49,7 @@ CONFIGURE_ARGS+=	--enable-gc=${LOCALBASE} \
 			--with-context=${LOCALBASE}/share/texmf-local/tex/context/third
 CONFIGURE_ENV=		CPPFLAGS="-I${WRKSRC} -I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
+			BISON="yacc" \
 			ac_cv_prog_kpsewhich="${LOCALBASE}/bin/kpsewhich"
 
 FAKE_FLAGS+=		exampledir="${WRKINST}${PREFIX}/share/examples/asymptote"
