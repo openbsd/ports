@@ -1,0 +1,2 @@
+pytest-aiohttp is a pytest plugin providing useful fixtures to test
+aiohttp server and client.
