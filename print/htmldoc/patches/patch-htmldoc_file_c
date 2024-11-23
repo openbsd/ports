@@ -1,7 +1,7 @@
 Index: htmldoc/file.c
 --- htmldoc/file.c.orig
 +++ htmldoc/file.c
-@@ -42,7 +42,7 @@
+@@ -38,7 +38,7 @@
  #  define OPENPERM	(_S_IREAD | _S_IWRITE)
  #else
  #  define TEMPLATE	"%s/%06ld.%06d.tmp"
@@ -10,7 +10,7 @@ Index: htmldoc/file.c
  #  define OPENPERM	0600
  #endif /* WIN32 */
  
-@@ -141,7 +141,7 @@ file_cleanup(void)
+@@ -137,7 +137,7 @@ file_cleanup(void)
    }
  #else
    if ((tmpdir = getenv("TMPDIR")) == NULL)
@@ -19,7 +19,7 @@ Index: htmldoc/file.c
  #endif /* WIN32 */
  
   /*
-@@ -1094,7 +1094,7 @@ file_temp(char *name,			/* O - Filename */
+@@ -1109,7 +1109,7 @@ file_temp(char *name,			/* O - Filename */
    }
  #else
    if ((tmpdir = getenv("TMPDIR")) == NULL)

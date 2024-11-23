@@ -1,7 +1,7 @@
 Index: Makedefs.in
 --- Makedefs.in.orig
 +++ Makedefs.in
-@@ -43,7 +43,7 @@ INSTALL_MAN	=	$(INSTALL) -c -m 444
+@@ -42,7 +42,7 @@ INSTALL_MAN	=	$(INSTALL) -c -m 444
  # Directories...
  #
  
@@ -10,7 +10,7 @@ Index: Makedefs.in
  bindir		=	@bindir@
  datadir		=	@datadir@
  datarootdir	=	@datarootdir@
-@@ -80,11 +80,8 @@ OPTIM		=	@OPTIM@ @SSLFLAGS@
+@@ -81,11 +81,8 @@ WARNINGS	=	@WARNINGS@
  # Rules...
  #
  
