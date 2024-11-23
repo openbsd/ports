@@ -3,11 +3,9 @@ COMMENT =	faithfully remade Amiga fonts
 GH_ACCOUNT =	rewtnull
 GH_PROJECT =	amigafonts
 GH_TAGNAME =	1.02
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	fonts
-
-HOMEPAGE =	https://www.trueschool.se/html/fonts.html
 
 # GPL-FE
 PERMIT_PACKAGE =	Yes
