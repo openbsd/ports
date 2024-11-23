@@ -1,0 +1,5 @@
+Pytest plugin to create https://codspeed.io/ benchmarks.
+
+Creating benchmarks with pytest-codspeed is compatible with the standard
+pytest-benchmark API. So if you already have benchmarks written with it,
+you can start using pytest-codspeed right away.
