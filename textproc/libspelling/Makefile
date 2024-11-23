@@ -1,8 +1,7 @@
 COMMENT=		spellcheck library for GTK 4
 
 GNOME_PROJECT=		libspelling
-GNOME_VERSION=		0.4.4
-REVISION=		0
+GNOME_VERSION=		0.4.5
 
 SHARED_LIBS += spelling-1                0.0 # 2.0.0
 
