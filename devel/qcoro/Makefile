@@ -38,6 +38,7 @@ MODULES =	devel/cmake
 
 .if ${FLAVOR:Mqt6}
 FULLPKGNAME=	qcoro-qt6-${V}
+REVISION=	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick Qt6WebSockets

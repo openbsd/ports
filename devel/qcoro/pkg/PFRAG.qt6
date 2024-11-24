@@ -12,6 +12,7 @@ include/qcoro6/QCoro/QCoroFwd
 include/qcoro6/QCoro/QCoroGenerator
 include/qcoro6/QCoro/QCoroIODevice
 include/qcoro6/QCoro/QCoroImageProvider
+include/qcoro6/QCoro/QCoroLazyTask
 include/qcoro6/QCoro/QCoroLocalSocket
 include/qcoro6/QCoro/QCoroNetwork
 include/qcoro6/QCoro/QCoroNetworkReply
@@ -35,8 +36,10 @@ include/qcoro6/qcoro/coroutine.h
 include/qcoro6/qcoro/impl/
 include/qcoro6/qcoro/impl/connect.h
 include/qcoro6/qcoro/impl/isqprivatesignal.h
+include/qcoro6/qcoro/impl/lazytask.h
 include/qcoro6/qcoro/impl/task.h
 include/qcoro6/qcoro/impl/taskawaiterbase.h
+include/qcoro6/qcoro/impl/taskbase.h
 include/qcoro6/qcoro/impl/taskfinalsuspend.h
 include/qcoro6/qcoro/impl/taskpromise.h
 include/qcoro6/qcoro/impl/taskpromisebase.h
@@ -56,6 +59,7 @@ include/qcoro6/qcoro/qcorofwd.h
 include/qcoro6/qcoro/qcorogenerator.h
 include/qcoro6/qcoro/qcoroimageprovider.h
 include/qcoro6/qcoro/qcoroiodevice.h
+include/qcoro6/qcoro/qcorolazytask.h
 include/qcoro6/qcoro/qcorolocalsocket.h
 include/qcoro6/qcoro/qcoronetwork.h
 include/qcoro6/qcoro/qcoronetwork_export.h
