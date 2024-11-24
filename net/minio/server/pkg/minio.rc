@@ -2,11 +2,20 @@
 
 daemon="${TRUEPREFIX}/bin/minio server"
 daemon_flags="${LOCALSTATEDIR}/minio/export"
+daemon_logger="daemon.info"
 daemon_user="_minio"
 
 . /etc/rc.d/rc.subr
 
 rc_bg=YES
 rc_reload=NO
+
+rc_pre() {
+	if ! getcap -f /etc/login.conf.d/minio:/etc/login.conf \
+		-c setenv minio | grep -q ^=.*MINIO_ROOT_PASSWORD; then
+		echo "MINIO_ROOT_PASSWORD not set; refer to pkg-readme" >&2
+		return 1
+	fi
+}
 
 rc_cmd $1

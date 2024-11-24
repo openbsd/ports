@@ -1,11 +1,20 @@
+@option is-branch
 @newgroup _minio:796
 @newuser _minio:796:_minio::Minio user:${LOCALSTATEDIR}/minio:/sbin/nologin
-@bin bin/minio
-share/doc/pkg-readmes/${PKGSTEM}
 @rcscript ${RCDIR}/minio
+@mode 0750
 @owner _minio
 @group _minio
-@mode 0750
 @sample ${LOCALSTATEDIR}/minio/
 @sample ${LOCALSTATEDIR}/minio/export/
 @extraunexec rm -rf ${LOCALSTATEDIR}/minio/{.,}*
+@mode
+@owner
+@group
+@bin bin/minio
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/login.conf.d/minio
+@mode 640
+@owner root
+@group _minio
+@sample ${SYSCONFDIR}/login.conf.d/minio
