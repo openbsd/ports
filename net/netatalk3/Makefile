@@ -17,6 +17,9 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
+
 WANTLIB += avahi-client avahi-common c crack db event_core gcrypt
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 iconv rpcsvc
 
