@@ -15,6 +15,9 @@ DISTFILES =		pgbackrest-{}${V}.tar.gz
 
 WRKDIST =		${WRKDIR}/pgbackrest-release-${V}
 
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB += 		bz2 c crypto lz4 pq ssh2 ssl xml2 z zstd
 
 BUILD_DEPENDS =		devel/libyaml
