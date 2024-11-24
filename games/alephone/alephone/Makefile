@@ -1,15 +1,14 @@
 DPB_PROPERTIES =	parallel
 
-DIST_SUBDIR ?=		alephone
 COMMENT =		open source game engine based on Marathon 2: Durandal
 
-DATE =			20200904
+DATE =			20240822
 DISTNAME =		AlephOne-${DATE}
-PKGNAME =		alephone-1.3.1
-REVISION =		0
-
-EXTRACT_SUFX =		.tar.bz2
+PKGNAME =		alephone-1.10
 CATEGORIES =		games x11
+EXTRACT_SUFX =		.tar.bz2
+
+DIST_SUBDIR ?=		alephone
 
 HOMEPAGE =		https://alephone.lhowon.org/
 
@@ -20,25 +19,22 @@ PERMIT_PACKAGE =	Yes
 
 SITES =			https://github.com/Aleph-One-Marathon/alephone/releases/download/release-${DATE}/
 
-WANTLIB += ${COMPILER_LIBCXX} GL GLU SDL2 SDL2_image SDL2_net
+WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_image SDL2_net
 WANTLIB += SDL2_ttf avcodec avformat avutil boost_filesystem boost_system
-WANTLIB += c curl expat m mad png sndfile speex speexdsp swscale
-WANTLIB += vorbisfile z zzip
+WANTLIB += c curl m openal png sndfile swresample swscale z zzip
 
-COMPILER =		base-clang ports-gcc base-gcc
-CXXFLAGS_base-clang =	-std=c++14
+# GL GLU
 
-BUILD_DEPENDS =		devel/automake/${AUTOMAKE_VER} \
-			devel/autoconf/${AUTOCONF_VER}
+# C++17
+COMPILER =		base-clang ports-gcc
+
 LIB_DEPENDS =		archivers/zziplib \
+			audio/openal \
 			devel/boost \
 			devel/sdl2-net \
 			devel/sdl2-image \
 			devel/sdl2-ttf \
-			audio/libmad \
 			audio/libsndfile \
-			audio/speex \
-			audio/libvorbis \
 			graphics/ffmpeg \
 			net/curl
 
@@ -46,18 +42,11 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+4,-guic \
 			misc/shared-mime-info
 
-USE_BZIP2 =		Yes
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
-AUTOCONF_VER =		2.65
-AUTOMAKE_VER =		1.16
-CONFIGURE_ENV =		AUTOCONF_VERSION=${AUTOCONF_VER} \
-			AUTOMAKE_VERSION=${AUTOMAKE_VER} \
-			CPPFLAGS=-I${LOCALBASE}/include
-
-.include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mclang}
-CXXFLAGS +=		-Wno-c++11-narrowing -Wno-deprecated-register
-.endif
+CONFIGURE_ARGS +=	--disable-opengl \
+			--without-miniupnpc
+CONFIGURE_ENV =		CPPFLAGS=-I${LOCALBASE}/include \
+			LDFLAGS=-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>
