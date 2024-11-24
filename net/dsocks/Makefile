@@ -15,7 +15,7 @@ MAKE_FLAGS=		CFLAGS="-Wall ${CFLAGS}" \
 			SHLIB_MINOR=${LIBdsocks_VERSION:E}
 
 FAKE_FLAGS=		DEBUGLIBS=No
-NO_TEST=		Ues
+NO_TEST=		Yes
 
 do-configure:
 	${SUBST_CMD} ${WRKSRC}/dsocks.sh ${WRKSRC}/dsocks-torify.sh
