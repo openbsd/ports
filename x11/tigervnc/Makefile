@@ -45,7 +45,7 @@ DISTFILES.t=	tigervnc-vncserver-${SCRIPTV}.pl{vncserver} \
 MODULES=	gnu \
 		devel/cmake
 
-COMPILER=	base-clang ports-gcc
+COMPILER=	base-clang
 
 CONFIGURE_ARGS=	-DMAN_DIR="${TRUEPREFIX}/man" \
 		-DDOC_DIR="${TRUEPREFIX}/share/doc/tigervnc" \
