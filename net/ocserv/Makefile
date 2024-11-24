@@ -47,6 +47,10 @@ CONFIGURE_ARGS=		--disable-namespaces \
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
+# autoconf requires this (it's used in tests), but the ipcalc we
+# have in ports is not compatible with the one that ocserv wants.
+CONFIGURE_ENV+=	IPCALC=false
+
 AUTOCONF_VERSION=	2.71
 
 post-extract:
