@@ -10,6 +10,9 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 # just header files
 PKG_ARCH =		*
 
+# NO_BUILD may be set, but cmake gets upset
+COMPILER =		base-gcc ports-gcc
+
 MODULES =		devel/cmake
 
 BUILD_DEPENDS =		devel/gtest
