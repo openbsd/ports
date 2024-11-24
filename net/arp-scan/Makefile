@@ -5,7 +5,7 @@ DISTNAME=	arp-scan-$V
 COMMENT-main=	ARP scanning and fingerprinting tool
 PKGNAME-main=	${DISTNAME}
 
-M=		20240806
+M=		20241124
 COMMENT-mac=	MAC address vendor list
 PKGNAME-mac=	mac-vendor-$M
 
