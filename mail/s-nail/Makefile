@@ -7,6 +7,9 @@ HOMEPAGE=		https://www.sdaoden.eu/code.html\#s-mailx
 # BSD
 PERMIT_PACKAGE=		Yes
 
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
+
 WANTLIB+=		c crypto curses iconv ssl
 
 SITES=			https://ftp.sdaoden.eu/
