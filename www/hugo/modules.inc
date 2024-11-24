@@ -325,9 +325,9 @@ MODGO_MODULES =	\
 	github.com/spf13/pflag								 v1.0.5 \
 	github.com/stretchr/objx							 v0.5.0 \
 	github.com/stretchr/testify							 v1.9.0 \
-	github.com/tdewolff/argp							 v0.0.0-20240625173203-87b04d5d3e52 \
-	github.com/tdewolff/minify/v2							 v2.21.1 \
-	github.com/tdewolff/parse/v2							 v2.7.18 \
+	github.com/tdewolff/argp							 v0.0.0-20240307141015-960de61a6aa8 \
+	github.com/tdewolff/minify/v2							 v2.20.37 \
+	github.com/tdewolff/parse/v2							 v2.7.15 \
 	github.com/tdewolff/test							 v1.0.11-0.20240106005702-7de5f7df4739 \
 	github.com/tetratelabs/wazero							 v1.8.1 \
 	github.com/ugorji/go/codec							 v1.2.7 \
