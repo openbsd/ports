@@ -48,6 +48,7 @@ SHA256 (cargo/regex-1.5.5.tar.gz) = GhFke2sl/wWlFcuSw2XOwIgB6DQjojW1HiMeGAh0coY=
 SHA256 (cargo/regex-syntax-0.6.26.tar.gz) = SbPensXcCjQX2jcaqxfXKZl8FQEOf9JP9wd3OjO922Q=
 SHA256 (cargo/rustc-demangle-0.1.18.tar.gz) = bjutDuNoFMoH15aCad1LfsiewtoQxLthOSjTB3CDwjI=
 SHA256 (cargo/rustix-0.36.16.tar.gz) = baNjb6olgg2GSODjHF1Rm7sB9y/fVxMfD199pf7Tbqs=
+SHA256 (cargo/rustversion-1.0.18.tar.gz) = DoGfK8Yy8oW+bXzTbiWUDUWyOR3W2bk5553lV/cBQkg=
 SHA256 (cargo/similar-2.6.0.tar.gz) = HeHU+BFzsDr0wMvtPImPa/9bhw5Kf11vQFfWKnpLaG4=
 SHA256 (cargo/strsim-0.10.0.tar.gz) = c0c8Dlnm1YEsXf4qBkpkRJSfCJ4g7smi5VBllklORiM=
 SHA256 (cargo/syn-1.0.48.tar.gz) = zDca/+/8R39CoiGh5Cl67c6jPUfRm2FFVYi9nY9rGaw=
@@ -79,7 +80,7 @@ SHA256 (cargo/windows_x86_64_gnullvm-0.42.1.tar.gz) = Yov98jLaoisNZP22Kwn8w2uwHw
 SHA256 (cargo/windows_x86_64_gnullvm-0.48.5.tar.gz) = C3tSdnhooj1bq3aOOQ3F9cVYJbbTC4bIRP8tx0FARMw=
 SHA256 (cargo/windows_x86_64_msvc-0.42.1.tar.gz) = RHZgrTahMoix201CSOhXtRDow6IlyCK6T7dIwKr+z/0=
 SHA256 (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 7ZT85hVxpABoUrc4mgY6uYPALrG7N7R/gnLOktBtlTg=
-SHA256 (riff-3.3.4.tar.gz) = 2hV6psPuUGywOYWAKJZztptEH+0ycI1CHwKE4je0py8=
+SHA256 (riff-3.3.7.tar.gz) = WzoX6Y/RNOO4AxJasOLs+w9Vt6Kibo9AHZ7XwcQ76xI=
 SIZE (cargo/addr2line-0.14.0.tar.gz) = 30065
 SIZE (cargo/adler-0.2.3.tar.gz) = 12168
 SIZE (cargo/aho-corasick-0.7.18.tar.gz) = 112923
@@ -130,6 +131,7 @@ SIZE (cargo/regex-1.5.5.tar.gz) = 238119
 SIZE (cargo/regex-syntax-0.6.26.tar.gz) = 293912
 SIZE (cargo/rustc-demangle-0.1.18.tar.gz) = 19913
 SIZE (cargo/rustix-0.36.16.tar.gz) = 290950
+SIZE (cargo/rustversion-1.0.18.tar.gz) = 17794
 SIZE (cargo/similar-2.6.0.tar.gz) = 51659
 SIZE (cargo/strsim-0.10.0.tar.gz) = 11355
 SIZE (cargo/syn-1.0.48.tar.gz) = 225747
@@ -161,4 +163,4 @@ SIZE (cargo/windows_x86_64_gnullvm-0.42.1.tar.gz) = 362788
 SIZE (cargo/windows_x86_64_gnullvm-0.48.5.tar.gz) = 418486
 SIZE (cargo/windows_x86_64_msvc-0.42.1.tar.gz) = 664606
 SIZE (cargo/windows_x86_64_msvc-0.48.5.tar.gz) = 798412
-SIZE (riff-3.3.4.tar.gz) = 1025976
+SIZE (riff-3.3.7.tar.gz) = 2172918

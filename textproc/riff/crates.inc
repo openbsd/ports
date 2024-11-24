@@ -48,6 +48,7 @@ MODCARGO_CRATES +=	regex	1.5.5	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	regex-syntax	0.6.26	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	rustc-demangle	0.1.18	# MIT/Apache-2.0
 MODCARGO_CRATES +=	rustix	0.36.16	# Apache-2.0 WITH LLVM-exception OR Apache-2.0 OR MIT
+MODCARGO_CRATES +=	rustversion	1.0.18	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	similar	2.6.0	# Apache-2.0
 MODCARGO_CRATES +=	strsim	0.10.0	# MIT
 MODCARGO_CRATES +=	syn	1.0.48	# MIT OR Apache-2.0
