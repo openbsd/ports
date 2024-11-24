@@ -1,0 +1,33 @@
+https://build.opensuse.org/projects/openSUSE:Factory/packages/mediastreamer2/files/fix-build-ffmpeg5.patch
+
+Index: src/videofilters/h264dec.cpp
+--- src/videofilters/h264dec.cpp.orig
++++ src/videofilters/h264dec.cpp
+@@ -66,17 +66,15 @@ typedef struct _DecData {
+ static void ffmpeg_init(void) {
+ 	static bool_t done = FALSE;
+ 	if (!done) {
+-		avcodec_register_all();
+ 		done = TRUE;
+ 	}
+ }
+ 
+ static void dec_open(DecData *d) {
+-	AVCodec *codec;
++	const AVCodec *codec;
+ 	int error;
+ 	codec = avcodec_find_decoder(CODEC_ID_H264);
+ 	if (codec == NULL) ms_fatal("Could not find H264 decoder in ffmpeg.");
+-	avcodec_get_context_defaults3(&d->av_context, NULL);
+ 	error = avcodec_open2(&d->av_context, codec, NULL);
+ 	if (error != 0) {
+ 		ms_fatal("avcodec_open() failed.");
+@@ -162,7 +160,7 @@ static mblk_t *get_as_yuvmsg(MSFilter *f, DecData *s, 
+ 		ms_error("%s: error in sws_scale().", f->desc->name);
+ 	}
+ #if LIBAVUTIL_VERSION_INT >= AV_VERSION_INT(50, 43, 0) // backward compatibility with Debian Squeeze (6.0)
+-	mblk_set_timestamp_info(yuv_msg, (uint32_t)orig->pkt_pts);
++	mblk_set_timestamp_info(yuv_msg, (uint32_t)orig->pts);
+ #endif
+ 	return yuv_msg;
+ }

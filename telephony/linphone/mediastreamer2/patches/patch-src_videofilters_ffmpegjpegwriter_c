@@ -1,0 +1,14 @@
+https://build.opensuse.org/projects/openSUSE:Factory/packages/mediastreamer2/files/fix-build-ffmpeg5.patch
+
+Index: src/videofilters/ffmpegjpegwriter.c
+--- src/videofilters/ffmpegjpegwriter.c.orig
++++ src/videofilters/ffmpegjpegwriter.c
+@@ -190,7 +190,7 @@ static void jpg_process_frame_task(void *obj) {
+ 		sws_freeContext(sws_ctx);
+ 
+ 		av_frame_unref(s->pict);
+-		avpicture_fill((AVPicture *)s->pict, (uint8_t *)jpegm->b_rptr, avctx->pix_fmt, avctx->width, avctx->height);
++		av_image_fill_arrays(s->pict->data,s->pict->linesize,(uint8_t*)jpegm->b_rptr,avctx->pix_fmt,avctx->width,avctx->height, 1);
+ 		packet.data = comp_buf;
+ 		packet.size = (int)comp_buf_sz;
+ 		packet.pts = frame_ts;

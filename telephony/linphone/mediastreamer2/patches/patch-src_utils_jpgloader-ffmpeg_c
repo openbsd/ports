@@ -1,0 +1,13 @@
+https://build.opensuse.org/projects/openSUSE:Factory/packages/mediastreamer2/files/fix-build-ffmpeg5.patch
+
+Index: src/utils/jpgloader-ffmpeg.c
+--- src/utils/jpgloader-ffmpeg.c.orig
++++ src/utils/jpgloader-ffmpeg.c
+@@ -76,7 +76,6 @@ mblk_t *jpeg2yuv(uint8_t *jpgbuf, int bufsize, MSVideo
+ 		return NULL;
+ 	}
+ 
+-	avcodec_get_context_defaults3(&av_context, NULL);
+ 	if (avcodec_open2(&av_context, codec, NULL) < 0) {
+ 		ms_error("jpeg2yuv: avcodec_open failed");
+ 		return NULL;

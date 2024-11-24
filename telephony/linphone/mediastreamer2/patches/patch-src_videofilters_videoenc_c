@@ -1,0 +1,38 @@
+https://build.opensuse.org/projects/openSUSE:Factory/packages/mediastreamer2/files/fix-build-ffmpeg5.patch
+
+Index: src/videofilters/videoenc.c
+--- src/videofilters/videoenc.c.orig
++++ src/videofilters/videoenc.c
+@@ -109,7 +109,6 @@ void ms_ffmpeg_log_callback(void *ptr, int level, cons
+ 
+ void ms_ffmpeg_check_init() {
+ 	if (!avcodec_initialized) {
+-		avcodec_register_all();
+ 		avcodec_initialized = TRUE;
+ #ifdef ENABLE_LOG_FFMPEG
+ 		av_log_set_level(AV_LOG_WARNING);
+@@ -250,7 +249,6 @@ static void prepare(EncState *s) {
+ 	AVCodecContext *c = &s->av_context;
+ 	const int max_br_vbv = 128000;
+ 
+-	avcodec_get_context_defaults3(c, NULL);
+ 	if (s->codec == CODEC_ID_MJPEG) {
+ 		ms_message("Codec bitrate set to %i", (int)c->bit_rate);
+ 		c->width = s->vconf.vsize.width;
+@@ -312,7 +310,6 @@ static void prepare_h263(EncState *s) {
+ #if LIBAVCODEC_VERSION_INT < ((52 << 16) + (0 << 8) + 0)
+ 	c->rtp_mode = 1;
+ #endif
+-	c->rtp_payload_size = s->mtu / 2;
+ 	if (s->profile == 0) {
+ 		s->codec = CODEC_ID_H263;
+ 	} else {
+@@ -787,7 +784,7 @@ static void process_frame(MSFilter *f, mblk_t *inm) {
+ 	ms_yuv_buf_init_from_mblk(&yuv, inm);
+ 	/* convert image if necessary */
+ 	av_frame_unref(s->pict);
+-	avpicture_fill((AVPicture *)s->pict, yuv.planes[0], c->pix_fmt, c->width, c->height);
++	av_image_fill_arrays(s->pict->data,s->pict->linesize,yuv.planes[0],c->pix_fmt,c->width,c->height,1);
+ 
+ 	/* timestamp used by ffmpeg, unset here */
+ 	s->pict->pts = AV_NOPTS_VALUE;

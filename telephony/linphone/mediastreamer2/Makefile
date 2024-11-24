@@ -1,4 +1,5 @@
 COMMENT =	streaming engine for voice/video telephony applications
+REVISION =	0
 
 MODULE =	mediastreamer2
 

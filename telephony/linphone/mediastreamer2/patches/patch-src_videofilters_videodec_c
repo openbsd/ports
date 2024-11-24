@@ -1,0 +1,22 @@
+https://build.opensuse.org/projects/openSUSE:Factory/packages/mediastreamer2/files/fix-build-ffmpeg5.patch
+
+Index: src/videofilters/videodec.c
+--- src/videofilters/videodec.c.orig
++++ src/videofilters/videodec.c
+@@ -67,7 +67,6 @@ static void dec_init(MSFilter *f, enum CodecID cid) {
+ 	DecState *s = (DecState *)ms_new0(DecState, 1);
+ 	ms_ffmpeg_check_init();
+ 
+-	avcodec_get_context_defaults3(&s->av_context, NULL);
+ 	s->allocator = ms_yuv_buf_allocator_new();
+ 	s->av_codec = NULL;
+ 	s->codec = cid;
+@@ -591,7 +590,7 @@ static mblk_t *get_as_yuvmsg(MSFilter *f, DecState *s,
+ #endif
+ 		ms_error("%s: error in ms_sws_scale().", f->desc->name);
+ 	}
+-	mblk_set_timestamp_info(yuv_msg, (uint32_t)orig->pkt_pts);
++	mblk_set_timestamp_info(yuv_msg, (uint32_t)orig->pts);
+ 	return yuv_msg;
+ }
+ /* Bitmasks to select bits of a byte from low side */

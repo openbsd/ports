@@ -1,0 +1,48 @@
+https://build.opensuse.org/projects/openSUSE:Factory/packages/mediastreamer2/files/fix-build-ffmpeg5.patch
+
+Index: src/utils/ffmpeg-priv.c
+--- src/utils/ffmpeg-priv.c.orig
++++ src/utils/ffmpeg-priv.c
+@@ -23,29 +23,22 @@
+ 
+ #ifndef HAVE_FUN_avcodec_encode_video2
+ int avcodec_encode_video2(AVCodecContext *avctx, AVPacket *avpkt, const AVFrame *frame, int *got_packet_ptr) {
+-	int error = avcodec_encode_video(avctx, avpkt->data, avpkt->size, frame);
+-	if (error < 0) {
+-		return error;
+-	} else {
+-		if (error > 0) {
+-			*got_packet_ptr = 1;
+-			avpkt->size = error;
+-		} else *got_packet_ptr = 0;
+-	}
+-	return 0;
+-}
+-#endif
++    int ret;
+ 
+-#ifndef HAVE_FUN_avcodec_get_context_defaults3 /**/
+-int avcodec_get_context_defaults3(AVCodecContext *s, AVCodec *codec) {
+-	avcodec_get_context_defaults(s);
+-	return 0;
+-}
++    *got_packet_ptr = 0;
+ 
+-AVCodecContext *avcodec_alloc_context3(AVCodec *codec) {
+-	return avcodec_alloc_context();
+-}
++    ret = avcodec_send_frame(avctx, frame);
++    if (ret < 0)
++        return ret;
+ 
++    ret = avcodec_receive_packet(avctx, avpkt);
++    if (!ret)
++        *got_packet_ptr = 1;
++    if (ret == AVERROR(EAGAIN))
++        return 0;
++
++    return ret;
++}
+ #endif
+ 
+ #ifndef HAVE_FUN_avcodec_open2 /**/
