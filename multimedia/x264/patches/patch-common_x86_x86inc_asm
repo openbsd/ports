@@ -1,7 +1,7 @@
 Index: common/x86/x86inc.asm
 --- common/x86/x86inc.asm.orig
 +++ common/x86/x86inc.asm
-@@ -802,6 +802,9 @@ BRANCH_INSTR jz, je, jnz, jne, jl, jle, jnl, jnle, jg,
+@@ -848,6 +848,9 @@ BRANCH_INSTR jz, je, jnz, jne, jl, jle, jnl, jnle, jg,
      %endif
      align function_align
      %2:
@@ -11,7 +11,7 @@ Index: common/x86/x86inc.asm
      RESET_MM_PERMUTATION        ; needed for x86-64, also makes disassembly somewhat nicer
      %xdefine rstk rsp           ; copy of the original stack pointer, used when greater alignment than the known stack alignment is required
      %assign stack_offset 0      ; stack pointer offset relative to the return address
-@@ -823,6 +826,9 @@ BRANCH_INSTR jz, je, jnz, jne, jl, jle, jnl, jnle, jg,
+@@ -869,6 +872,9 @@ BRANCH_INSTR jz, je, jnz, jne, jl, jle, jnl, jnle, jg,
          global current_function %+ %1
      %endif
      %1:

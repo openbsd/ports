@@ -1,7 +1,7 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -261,7 +261,7 @@ example: example$(EXE)
+@@ -297,7 +297,7 @@ example: example$(EXE)
  endif
  
  x264$(EXE): $(OBJCLI) $(CLI_LIBX264)
@@ -10,7 +10,7 @@ Index: Makefile
  
  checkasm8$(EXE): $(OBJCHK) $(OBJCHK_8) $(LIBX264)
  	$(LD)$@ $(OBJCHK) $(OBJCHK_8) $(LIBX264) $(LDFLAGS)
-@@ -408,7 +408,6 @@ ifneq ($(IMPLIBNAME),)
+@@ -444,7 +444,6 @@ ifneq ($(IMPLIBNAME),)
  	$(INSTALL) -m 755 $(SONAME) $(DESTDIR)$(bindir)
  	$(INSTALL) -m 644 $(IMPLIBNAME) $(DESTDIR)$(libdir)
  else ifneq ($(SONAME),)
