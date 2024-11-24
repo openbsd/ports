@@ -1,5 +1,3 @@
-BROKEN =		needs devel/py-lazy_loader to be imported
-
 COMMENT =		image processing routines for SciPy
 
 MODPY_EGG_VERSION =	0.23.2
