@@ -7,8 +7,8 @@ Index: vpx_ports/aarch32_cpudetect.c
    return flags;
  }
  
--#elif defined(__linux__)  // end defined(AOM_USE_ANDROID_CPU_FEATURES)
-+#elif defined(__linux__) || defined(__OpenBSD__)  // end defined(AOM_USE_ANDROID_CPU_FEATURES)
+-#elif defined(__linux__)  // end defined(VPX_USE_ANDROID_CPU_FEATURES)
++#elif defined(__linux__) || defined(__OpenBSD__)  // end defined(VPX_USE_ANDROID_CPU_FEATURES)
  
  #include <sys/auxv.h>
  

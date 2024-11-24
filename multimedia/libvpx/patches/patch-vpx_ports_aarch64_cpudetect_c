@@ -3,7 +3,7 @@ Add AArch64 CPU feature detection support for OpenBSD.
 Index: vpx_ports/aarch64_cpudetect.c
 --- vpx_ports/aarch64_cpudetect.c.orig
 +++ vpx_ports/aarch64_cpudetect.c
-@@ -91,7 +91,7 @@ static int arm_get_cpu_caps(void) {
+@@ -120,7 +120,7 @@ static int arm_get_cpu_caps(void) {
    return flags;
  }
  
@@ -12,23 +12,24 @@ Index: vpx_ports/aarch64_cpudetect.c
  
  #include <sys/auxv.h>
  
-@@ -103,9 +103,19 @@ static int arm_get_cpu_caps(void) {
- 
+@@ -134,10 +134,20 @@ static int arm_get_cpu_caps(void) {
  static int arm_get_cpu_caps(void) {
    int flags = 0;
+ #if HAVE_NEON_DOTPROD || HAVE_SVE
 +#ifdef __OpenBSD__
 +  unsigned long hwcap = 0;
 +  elf_aux_info(AT_HWCAP, &hwcap, sizeof(hwcap));
 +#else
    unsigned long hwcap = getauxval(AT_HWCAP);
 +#endif
- #if HAVE_NEON_I8MM
+ #endif  // HAVE_NEON_DOTPROD || HAVE_SVE
+ #if HAVE_NEON_I8MM || HAVE_SVE2
 +#ifdef __OpenBSD__
 +  unsigned long hwcap2 = 0;
 +  elf_aux_info(AT_HWCAP2, &hwcap2, sizeof(hwcap2));
 +#else
    unsigned long hwcap2 = getauxval(AT_HWCAP2);
 +#endif
- #endif  // HAVE_NEON_I8MM
+ #endif  // HAVE_NEON_I8MM || HAVE_SVE2
  #if HAVE_NEON
    flags |= HAS_NEON;  // Neon is mandatory in Armv8.0-A.

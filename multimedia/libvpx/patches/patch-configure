@@ -40,7 +40,7 @@ Index: configure
  # disable codecs when their source directory does not exist
  [ -d "${source_path}/vp8" ] || disable_codec vp8
  [ -d "${source_path}/vp9" ] || disable_codec vp9
-@@ -560,7 +549,7 @@ process_detect() {
+@@ -562,7 +551,7 @@ process_detect() {
          # here rather than at option parse time because the target auto-detect
          # magic happens after the command line has been parsed.
          case "${tgt_os}" in
