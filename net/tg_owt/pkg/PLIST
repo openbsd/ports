@@ -1909,6 +1909,7 @@ include/tg_owt/third_party/libyuv/include/libyuv/convert_argb.h
 include/tg_owt/third_party/libyuv/include/libyuv/convert_from.h
 include/tg_owt/third_party/libyuv/include/libyuv/convert_from_argb.h
 include/tg_owt/third_party/libyuv/include/libyuv/cpu_id.h
+include/tg_owt/third_party/libyuv/include/libyuv/cpu_support.h
 include/tg_owt/third_party/libyuv/include/libyuv/loongson_intrinsics.h
 include/tg_owt/third_party/libyuv/include/libyuv/macros_msa.h
 include/tg_owt/third_party/libyuv/include/libyuv/mjpeg_decoder.h

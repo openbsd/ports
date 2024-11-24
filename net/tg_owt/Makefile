@@ -11,15 +11,14 @@ COMMENT =		WebRTC build for Telegram
 # No releases or tags, use commit from tdesktop's snap/snapcraft.yaml
 # 04.08.2024 HEAD to include merged PRs
 DIST_TUPLE =		github	desktop-app	tg_owt	\
-			dc17143230b5519f3c1a8da0079e00566bd4c5a8	.
-PKGNAME =		tg_owt-0.0.0.20240804
-REVISION =		1
+			8198c4d8b91e22d68eb5c7327fd408e3b6abcc79	.
+PKGNAME =		tg_owt-0.0.0.20241028
 
 CATEGORIES =		net
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-SHARED_LIBS =		tg_owt	10.0	# upstream is static only
+SHARED_LIBS =		tg_owt	11.0	# upstream is static only
 
 DIST_SUBDIR =		tg_owt
 # Fetch bundles/submodules missing from the tarball, see ${WRKSRC}/.gitmodules
@@ -28,14 +27,14 @@ DIST_SUBDIR =		tg_owt
 # main/master/stable/<commit> tarballs are *not reproducible*
 # use a mirror to get stable tarballs for latest master
 DIST_TUPLE +=		github	klemensn	libyuv \
-			04821d1e7d60845525e8db55c7bcd41ef5be9406 \
+			f00c43f4d6e812b581f64edc53a655f8e2413938 \
 			src/third_party/libyuv
 
 SITES.tg_owt =		https://github.com/desktop-app/tg_owt/commit/
 # Pending "Unbundle libSRTP"
 # https://github.com/desktop-app/tg_owt/pull/137
-PATCHFILES.tg_owt =	use-system-libsrtp-{}7aa05f2c3.patch \
-			use-system-libsrtp-{}a7b3d1e5d.patch
+PATCHFILES.tg_owt =	use-system-libsrtp-{}b582f89d.patch \
+			use-system-libsrtp-{}b080adb5.patch
 PATCH_DIST_STRIP =	-p1
 
 MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
