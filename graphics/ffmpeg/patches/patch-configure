@@ -1,48 +1,37 @@
-- configure: add initial RISC-V support
+- aarch64: Implement support for elf_aux_info(3) on FreeBSD and OpenBSD
+  a3f79fd22a367207097c78e0a5d2bc213efe9f80
+- lsws/ppc/yuv2rgb_altivec: Fix build in non-VSX environments with Clang
+
 - Fix broken libatomic test
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -1992,6 +1992,7 @@ ARCH_LIST="
-     parisc
-     ppc
-     ppc64
-+    riscv
-     s390
-     sh4
-     sparc
-@@ -2601,7 +2602,7 @@ for ext in $(filter_out mmx $ARCH_EXT_LIST_X86_SIMD); 
- done
+@@ -2146,6 +2146,7 @@ ARCH_EXT_LIST_PPC="
+     ldbrx
+     power8
+     ppc4xx
++    vec_xl
+     vsx
+ "
  
- aligned_stack_if_any="aarch64 ppc x86"
--fast_64bit_if_any="aarch64 alpha ia64 mips64 parisc64 ppc64 sparc64 x86_64"
-+fast_64bit_if_any="aarch64 alpha ia64 mips64 parisc64 ppc64 riscv64 sparc64 x86_64"
- fast_clz_if_any="aarch64 alpha avr32 mips ppc x86"
- fast_unaligned_if_any="aarch64 ppc x86"
- simd_align_16_if_any="altivec neon sse"
-@@ -4915,6 +4916,9 @@ case "$arch" in
-     "Power Macintosh"|ppc*|powerpc*)
-         arch="ppc"
-     ;;
-+    riscv*)
-+        arch="riscv"
-+    ;;
-     s390|s390x)
-         arch="s390"
-     ;;
-@@ -5306,6 +5310,10 @@ case "$arch" in
-         check_64bit ppc ppc64
-         enabled shared && enable_weak pic
-     ;;
-+    riscv)
-+        check_64bit riscv32 riscv64
-+        enabled shared && enable_weak pic
-+    ;;
-     s390)
-         check_64bit s390 s390x
-         enabled shared && enable_weak pic
-@@ -5379,7 +5387,6 @@ case $target_os in
+@@ -2296,6 +2297,7 @@ SYSTEM_FUNCS="
+     clock_gettime
+     closesocket
+     CommandLineToArgvW
++    elf_aux_info
+     fcntl
+     getaddrinfo
+     getauxval
+@@ -2674,6 +2676,7 @@ altivec_deps="ppc"
+ dcbzl_deps="ppc"
+ ldbrx_deps="ppc"
+ ppc4xx_deps="ppc"
++vec_xl_deps="altivec"
+ vsx_deps="altivec"
+ power8_deps="vsx"
+ 
+@@ -5598,7 +5601,6 @@ case $target_os in
          enable section_data_rel_ro
          striptype=""
          SHFLAGS='-shared'
@@ -50,7 +39,7 @@ Index: configure
          SLIB_INSTALL_LINKS=
          oss_indev_extralibs="-lossaudio"
          oss_outdev_extralibs="-lossaudio"
-@@ -5736,7 +5743,7 @@ set_default libdir
+@@ -5959,7 +5961,7 @@ set_default libdir
  set_default $PATHS_LIST
  set_default nm
  
@@ -59,7 +48,27 @@ Index: configure
  
  enable_weak_pic() {
      disabled pic && return
-@@ -6191,7 +6198,7 @@ check_headers asm/types.h
+@@ -6215,6 +6217,11 @@ elif enabled ppc; then
+         check_cpp_condition power8 "altivec.h" "defined(_ARCH_PWR8)"
+     fi
+ 
++    if enabled altivec && disabled vsx; then
++        check_cc vec_xl altivec.h "const unsigned char *y1i = { 0 };
++                                vector unsigned char y0 = vec_xl(0, y1i);"
++    fi
++
+ elif enabled riscv; then
+ 
+     enabled rvv && check_inline_asm rvv '".option arch, +v\nvsetivli zero, 0, e8, m1, ta, ma"'
+@@ -6417,6 +6424,7 @@ check_func_headers mach/mach_time.h mach_absolute_time
+ check_func_headers stdlib.h getenv
+ check_func_headers sys/stat.h lstat
+ check_func_headers sys/auxv.h getauxval
++check_func_headers sys/auxv.h elf_aux_info
+ check_func_headers sys/sysctl.h sysctlbyname
+ 
+ check_func_headers windows.h GetModuleHandle
+@@ -6483,7 +6491,7 @@ check_headers asm/types.h
  #
  # some configurations also require linking to libatomic, so try
  # both with -latomic and without
@@ -68,3 +77,11 @@ Index: configure
      check_builtin stdatomic stdatomic.h                                                 \
          "atomic_int foo, bar = ATOMIC_VAR_INIT(-1); atomic_store(&foo, 0); foo += bar"  \
          $LATOMIC && eval stdatomic_extralibs="\$LATOMIC" && break
+@@ -7748,6 +7756,7 @@ if enabled ppc; then
+     echo "POWER8 enabled            ${power8-no}"
+     echo "PPC 4xx optimizations     ${ppc4xx-no}"
+     echo "dcbzl available           ${dcbzl-no}"
++    echo "vec_xl available          ${vec_xl-no}"
+ fi
+ if enabled loongarch; then
+     echo "LSX enabled               ${lsx-no}"

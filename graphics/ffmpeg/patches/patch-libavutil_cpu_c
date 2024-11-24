@@ -1,0 +1,41 @@
+- avutil/cpu_internal: Provide ff_getauxval() wrapper for getauxvaul()
+  fe4b9ef69f10df2424e22cc8a1a63848c0857460
+- aarch64: Implement support for elf_aux_info(3) on FreeBSD and OpenBSD
+  a3f79fd22a367207097c78e0a5d2bc213efe9f80
+
+Index: libavutil/cpu.c
+--- libavutil/cpu.c.orig
++++ libavutil/cpu.c
+@@ -49,6 +49,10 @@
+ #include <unistd.h>
+ #endif
+ 
++#if HAVE_GETAUXVAL || HAVE_ELF_AUX_INFO
++#include <sys/auxv.h>
++#endif
++
+ static atomic_int cpu_flags = ATOMIC_VAR_INIT(-1);
+ static atomic_int cpu_count = ATOMIC_VAR_INIT(-1);
+ 
+@@ -282,4 +286,21 @@ size_t av_cpu_max_align(void)
+ #endif
+ 
+     return 8;
++}
++
++unsigned long ff_getauxval(unsigned long type)
++{
++#if HAVE_GETAUXVAL
++    return getauxval(type);
++#elif HAVE_ELF_AUX_INFO
++    unsigned long aux = 0;
++    int ret = elf_aux_info(type, &aux, sizeof(aux));
++    if (ret != 0) {
++        errno = ret;
++    }
++    return aux;
++#else
++    errno = ENOSYS;
++    return 0;
++#endif
+ }

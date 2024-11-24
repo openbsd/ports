@@ -1,0 +1,16 @@
+Add av_stream_get_first_dts for Chromium
+
+Index: libavformat/avformat.h
+--- libavformat/avformat.h.orig
++++ libavformat/avformat.h
+@@ -1030,6 +1030,10 @@ attribute_deprecated
+ int64_t    av_stream_get_end_pts(const AVStream *st);
+ #endif
+ 
++// Chromium: We use the internal field first_dts vvv
++int64_t    av_stream_get_first_dts(const AVStream *st);
++// Chromium: We use the internal field first_dts ^^^
++
+ #define AV_PROGRAM_RUNNING 1
+ 
+ /**

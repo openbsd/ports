@@ -1,0 +1,88 @@
+- libavutil/ppc: Make use of getauxval() and elf_aux_info() on ppc
+  2bf588f273432344d95164c7f83832839a938088
+- libavutil/ppc: Include the hardware feature flags like the other archs
+  d6b2d08fc7283da7a5db7a64d9a3047ed1ba0de1
+- libavutil/ppc: defines involving bit shifts should be unsigned
+  c325f9c619b38614ab6e339cefacd596266db471
+
+Index: libavutil/ppc/cpu.c
+--- libavutil/ppc/cpu.c.orig
++++ libavutil/ppc/cpu.c
+@@ -20,6 +20,11 @@
+ 
+ #ifdef __APPLE__
+ #include <sys/sysctl.h>
++#elif HAVE_GETAUXVAL || HAVE_ELF_AUX_INFO
++#ifdef __FreeBSD__
++#include <machine/cpu.h>
++#endif
++#include <sys/auxv.h>
+ #elif defined(__linux__)
+ #include <asm/cputable.h>
+ #include <linux/auxvec.h>
+@@ -41,6 +46,17 @@
+ #include "libavutil/cpu.h"
+ #include "libavutil/cpu_internal.h"
+ 
++#ifndef AT_HWCAP
++#define AT_HWCAP             16
++#endif
++#ifndef AT_HWCAP2
++#define AT_HWCAP2            26
++#endif
++
++#define HWCAP_PPC_VSX        (1U << 7)
++#define HWCAP_PPC_ALTIVEC    (1U << 28)
++#define HWCAP2_PPC_ARCH_2_07 (1U << 31)
++
+ /**
+  * This function MAY rely on signal() or fork() in order to make sure AltiVec
+  * is present.
+@@ -56,6 +72,20 @@ int ff_get_cpu_flags_ppc(void)
+     if (result == VECTORTYPE_ALTIVEC)
+         return AV_CPU_FLAG_ALTIVEC;
+     return 0;
++#elif HAVE_GETAUXVAL || HAVE_ELF_AUX_INFO
++    int flags = 0;
++
++    unsigned long hwcap = ff_getauxval(AT_HWCAP);
++    unsigned long hwcap2 = ff_getauxval(AT_HWCAP2);
++
++    if (hwcap & HWCAP_PPC_ALTIVEC)
++       flags |= AV_CPU_FLAG_ALTIVEC;
++    if (hwcap & HWCAP_PPC_VSX)
++       flags |= AV_CPU_FLAG_VSX;
++    if (hwcap2 & HWCAP2_PPC_ARCH_2_07)
++       flags |= AV_CPU_FLAG_POWER8;
++
++    return flags;
+ #elif defined(__APPLE__) || defined(__NetBSD__) || defined(__OpenBSD__)
+ #if defined(__NetBSD__) || defined(__OpenBSD__)
+     int sels[2] = {CTL_MACHDEP, CPU_ALTIVEC};
+@@ -87,23 +117,17 @@ int ff_get_cpu_flags_ppc(void)
+             if (buf[i] == AT_NULL)
+                 goto out;
+             if (buf[i] == AT_HWCAP) {
+-                if (buf[i + 1] & PPC_FEATURE_HAS_ALTIVEC)
++                if (buf[i + 1] & HWCAP_PPC_ALTIVEC)
+                     ret = AV_CPU_FLAG_ALTIVEC;
+-#ifdef PPC_FEATURE_HAS_VSX
+-                if (buf[i + 1] & PPC_FEATURE_HAS_VSX)
++                if (buf[i + 1] & HWCAP_PPC_VSX)
+                     ret |= AV_CPU_FLAG_VSX;
+-#endif
+                 if (ret & AV_CPU_FLAG_VSX)
+                     av_assert0(ret & AV_CPU_FLAG_ALTIVEC);
+             }
+-#ifdef AT_HWCAP2 /* not introduced until glibc 2.18 */
+             else if (buf[i] == AT_HWCAP2) {
+-#ifdef PPC_FEATURE2_ARCH_2_07
+-                if (buf[i + 1] & PPC_FEATURE2_ARCH_2_07)
++                if (buf[i + 1] & HWCAP2_PPC_ARCH_2_07)
+                     ret |= AV_CPU_FLAG_POWER8;
+-#endif
+             }
+-#endif /* AT_HWCAP2 */
+         }
+     }
+ 

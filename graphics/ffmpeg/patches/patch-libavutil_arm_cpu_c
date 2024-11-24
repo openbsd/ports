@@ -1,0 +1,15 @@
+- avutil/cpu_internal: Provide ff_getauxval() wrapper for getauxvaul()
+  fe4b9ef69f10df2424e22cc8a1a63848c0857460
+
+Index: libavutil/arm/cpu.c
+--- libavutil/arm/cpu.c.orig
++++ libavutil/arm/cpu.c
+@@ -55,7 +55,7 @@
+ static int get_auxval(uint32_t *hwcap)
+ {
+ #if HAVE_GETAUXVAL
+-    unsigned long ret = getauxval(AT_HWCAP);
++    unsigned long ret = ff_getauxval(AT_HWCAP);
+     if (ret == 0)
+         return -1;
+     *hwcap = ret;

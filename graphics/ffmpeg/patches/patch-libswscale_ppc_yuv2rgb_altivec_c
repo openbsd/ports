@@ -1,4 +1,4 @@
-error: redeclaration of 'vec_xl' must have the 'overloadable' attribute
+- lsws/ppc/yuv2rgb_altivec: Fix build in non-VSX environments with Clang
 
 Index: libswscale/ppc/yuv2rgb_altivec.c
 --- libswscale/ppc/yuv2rgb_altivec.c.orig
@@ -8,7 +8,16 @@ Index: libswscale/ppc/yuv2rgb_altivec.c
   */
  
 -#if !HAVE_VSX
-+#if !HAVE_VSX && !defined(__clang__)
++#if !HAVE_VEC_XL
  static inline vector unsigned char vec_xl(signed long long offset, const ubyte *addr)
  {
      const vector unsigned char *v_addr = (const vector unsigned char *) (addr + offset);
+@@ -292,7 +292,7 @@ static inline vector unsigned char vec_xl(signed long 
+ 
+     return (vector unsigned char) vec_perm(v_addr[0], v_addr[1], align_perm);
+ }
+-#endif /* !HAVE_VSX */
++#endif /* !HAVE_VEC_XL */
+ 
+ #define DEFCSP420_CVT(name, out_pixels)                                       \
+ static int altivec_ ## name(SwsContext *c, const unsigned char **in,          \

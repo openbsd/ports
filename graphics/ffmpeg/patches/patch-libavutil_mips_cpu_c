@@ -1,0 +1,15 @@
+- avutil/cpu_internal: Provide ff_getauxval() wrapper for getauxvaul()
+  fe4b9ef69f10df2424e22cc8a1a63848c0857460
+
+Index: libavutil/mips/cpu.c
+--- libavutil/mips/cpu.c.orig
++++ libavutil/mips/cpu.c
+@@ -34,7 +34,7 @@
+ 
+ static int cpucfg_available(void)
+ {
+-    return getauxval(AT_HWCAP) & HWCAP_LOONGSON_CPUCFG;
++    return ff_getauxval(AT_HWCAP) & HWCAP_LOONGSON_CPUCFG;
+ }
+ 
+ /* Most toolchains have no CPUCFG support yet */

@@ -1,9 +1,8 @@
 COMMENT=	movie player supporting many formats
 
-V=		20230409
-FFMPEG_V=	4.4.5
+V=		20240803
+FFMPEG_V=	6.1.2
 DISTNAME=	mplayer-${V}
-REVISION=	2
 CATEGORIES=	x11 multimedia
 SITES=		https://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
@@ -63,9 +62,6 @@ CONFDIR=	${SYSCONFDIR}/mplayer
 MAKE_ENV=	V=1
 SUBST_VARS+=	PREFIX CONFDIR
 
-# Add back fast math flag since we override CFLAGS
-CFLAGS+=	-ffast-math
-
 # PIE doesn't leave sufficient registers
 .if ${MACHINE_ARCH:Mi386}
 CFLAGS+=	-fomit-frame-pointer
@@ -77,7 +73,7 @@ CONFIGURE_STYLE= simple
 # CONFIGURE_ARGS for misc stuff
 CONFIGURE_ARGS+=--confdir=${CONFDIR} \
 		--extra-cflags="-I${LOCALBASE}/include" \
-		--extra-ldflags="-L${LOCALBASE}/lib -ffast-math ${LDFLAGS}" \
+		--extra-ldflags="-L${LOCALBASE}/lib ${LDFLAGS}" \
 		--extra-libs-mplayer="-lrtunes -lcrypto" \
 		--mandir=${LOCALBASE}/man \
 		--target="${MACHINE_ARCH}-openbsd"

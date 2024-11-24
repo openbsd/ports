@@ -1,7 +1,7 @@
 Index: DOCS/man/en/mplayer.1
 --- DOCS/man/en/mplayer.1.orig
 +++ DOCS/man/en/mplayer.1
-@@ -1552,7 +1552,7 @@ May be negative.
+@@ -1557,7 +1557,7 @@ May be negative.
  .
  .TP
  .B \-cdrom\-device <path to device>
@@ -10,7 +10,7 @@ Index: DOCS/man/en/mplayer.1
  .
  .TP
  .B \-channels <number> (also see \-af channels)
-@@ -12277,7 +12277,7 @@ mplayer dvd://1 \-dvdangle 2
+@@ -12250,7 +12250,7 @@ mplayer dvd://1 \-dvdangle 2
  .PP
  .B Play from a different DVD device:
  .nf
@@ -19,7 +19,7 @@ Index: DOCS/man/en/mplayer.1
  .fi
  .
  .PP
-@@ -12343,11 +12343,11 @@ mplayer \-vo zr2 \-vf scale=352:288,zrmjpeg file.avi
+@@ -12316,11 +12316,11 @@ mplayer \-vo zr2 \-vf scale=352:288,zrmjpeg file.avi
  .PP
  .B Play DTS-CD with passthrough:
  .nf

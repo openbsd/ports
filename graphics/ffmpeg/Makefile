@@ -1,6 +1,6 @@
 COMMENT=	audio/video converter and streamer
 
-V=		4.4.5
+V=		6.1.2
 DISTNAME=	ffmpeg-${V}
 EPOCH=		1
 CATEGORIES=	graphics multimedia
@@ -9,14 +9,14 @@ EXTRACT_SUFX=	.tar.xz
 
 USE_NOBTCFI-amd64=	Yes
 
-SHARED_LIBS=	avcodec		25.0 \
-		avdevice	13.0 \
-		avfilter	11.0 \
-		avformat	22.0 \
-		avutil		15.0 \
-		postproc	19.0 \
-		swresample	4.0 \
-		swscale		7.0
+SHARED_LIBS=	avcodec		26.0 \
+		avdevice	14.0 \
+		avfilter	12.0 \
+		avformat	23.0 \
+		avutil		16.0 \
+		postproc	20.0 \
+		swresample	5.0 \
+		swscale		8.0
 
 HOMEPAGE=	https://ffmpeg.org/
 
@@ -32,7 +32,6 @@ WANTLIB += va-x11 vidstab vorbis vorbisenc vpx x264 x265 xcb xcb-shape
 WANTLIB += xcb-shm xcb-xfixes xml2 xvidcore z zimg
 
 COMPILER=	base-clang ports-gcc
-COMPILER_LANGS=	c
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
@@ -100,10 +99,12 @@ CONFIGURE_STYLE= simple
 CONFIGURE_ARGS+=--enable-shared \
 		--arch=${MACHINE_ARCH} \
 		--cc=${CC} \
+		--cxx=${CXX} \
 		--enable-debug \
 		--disable-stripping \
 		--disable-indev=jack \
 		--disable-outdev=sdl2 \
+		--disable-vulkan \
 		--enable-fontconfig \
 		--enable-frei0r \
 		--enable-gpl \
@@ -111,6 +112,7 @@ CONFIGURE_ARGS+=--enable-shared \
 		--enable-libaom \
 		--enable-libass \
 		--enable-libdav1d \
+		--enable-libfontconfig \
 		--enable-libfreetype \
 		--enable-libfribidi \
 		--enable-libgsm \
