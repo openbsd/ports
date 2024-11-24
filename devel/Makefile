@@ -1523,6 +1523,7 @@
      SUBDIR += py-kaitaistruct,python3
      SUBDIR += py-kitchen,python3
      SUBDIR += py-kiwisolver,python3
+     SUBDIR += py-lazy-loader,python3
      SUBDIR += py-lazy-object-proxy,python3
      SUBDIR += py-liblarch,python3
      SUBDIR += py-lief,python3
