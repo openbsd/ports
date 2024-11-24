@@ -81,7 +81,8 @@ MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC}/config
 ALL_TARGET=	world
 INSTALL_TARGET=	install-world
 
-BUILD_DEPENDS=  textproc/docbook \
+BUILD_DEPENDS=	devel/bison \
+		textproc/docbook \
 		textproc/docbook-xsl \
 		textproc/xmlto
 
