@@ -31,6 +31,9 @@ MODCARGO_VENDOR_DIR ?= ${WRKSRC}/modcargo-crates
 # Default path for cargo manifest.
 MODCARGO_CARGOTOML ?= ${WRKSRC}/Cargo.toml
 
+# Default path for Cargo.lock.
+MODCARGO_CARGOLOCK ?= ${MODCARGO_CARGOTOML:toml=lock}
+
 # WANTLIB for Rust compiled code
 MODCARGO_WANTLIB = ${MODRUST_WANTLIB}
 
@@ -419,7 +422,7 @@ modcargo-gen-crates: extract
 		/^version = / { v=$$3; gsub("\"", "", v); } \
 		/^source = "registry\+https:\/\/github.com\/rust-lang\/crates\.io-index"/ \
 			{ print "MODCARGO_CRATES +=	" n "	" v; }' \
-		<${MODCARGO_CARGOTOML:toml=lock}
+		<${MODCARGO_CARGOLOCK}
 
 # modcargo-gen-crates-licenses will try to grab license information from downloaded crates.
 modcargo-gen-crates-licenses: configure
