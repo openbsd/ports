@@ -2,8 +2,7 @@ COMMENT =	web and CGI vulnerability scanner with SSL support
 
 GH_ACCOUNT =	sullo
 GH_PROJECT =	nikto
-GH_TAGNAME =	2.1.6
-REVISION =	2
+GH_TAGNAME =	2.5.0
 
 EPOCH = 	0
 CATEGORIES =	security www
@@ -26,7 +25,7 @@ pre-configure:
 		s%# DOCDIR=.*%DOCDIR=${PREFIX}/share/doc/nikto%; \
 		s%# DBDIR=.*%DBDIR=/var/db/nikto/databases%; \
 		s%NIKTODTD=.*%NIKTODTD=${PREFIX}/share/doc/nikto/nikto.dtd%' \
-		${WRKSRC}/program/nikto.conf
+		${WRKSRC}/program/nikto.conf.default
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/nikto/databases
@@ -37,7 +36,7 @@ do-install:
 
 	${INSTALL_SCRIPT} ${WRKSRC}/program/nikto.pl ${PREFIX}/bin/nikto
 	${INSTALL_SCRIPT} ${WRKSRC}/program/replay.pl ${PREFIX}/bin/replay
-	${INSTALL_DATA} ${WRKSRC}/program/nikto.conf \
+	${INSTALL_DATA} ${WRKSRC}/program/nikto.conf.default \
 		${PREFIX}/share/examples/nikto/nikto.conf
 
 	${INSTALL_DATA} ${WRKSRC}/program/databases/!(*.orig) \
@@ -47,9 +46,7 @@ do-install:
 	${INSTALL_DATA} ${WRKSRC}/program/templates/!(*.orig) \
 			${PREFIX}/share/nikto/templates
 
-	${INSTALL_DATA} ${WRKSRC}/program/docs/nikto_manual.html \
-			${PREFIX}/share/doc/nikto
-	${INSTALL_DATA} ${WRKSRC}/program/docs/CHANGES.txt \
+	${INSTALL_DATA} ${WRKSRC}/program/docs/nikto_schema.sql \
 			${PREFIX}/share/doc/nikto
 	${INSTALL_DATA} ${WRKSRC}/program/docs/nikto.dtd \
 			${PREFIX}/share/doc/nikto

@@ -4,9 +4,8 @@ bin/nikto
 bin/replay
 @man man/man1/nikto.1
 share/doc/nikto/
-share/doc/nikto/CHANGES.txt
 share/doc/nikto/nikto.dtd
-share/doc/nikto/nikto_manual.html
+share/doc/nikto/nikto_schema.sql
 share/examples/nikto/
 share/examples/nikto/nikto.conf
 @sample ${SYSCONFDIR}/nikto.conf
@@ -20,6 +19,8 @@ share/nikto/databases/db_content_search
 @sample /var/db/nikto/databases/db_content_search
 share/nikto/databases/db_dictionary
 @sample /var/db/nikto/databases/db_dictionary
+share/nikto/databases/db_domino
+@sample /var/db/nikto/databases/db_domino
 share/nikto/databases/db_drupal
 @sample /var/db/nikto/databases/db_drupal
 share/nikto/databases/db_embedded
@@ -40,8 +41,6 @@ share/nikto/databases/db_realms
 @sample /var/db/nikto/databases/db_realms
 share/nikto/databases/db_server_msgs
 @sample /var/db/nikto/databases/db_server_msgs
-share/nikto/databases/db_subdomains
-@sample /var/db/nikto/databases/db_subdomains
 share/nikto/databases/db_tests
 @sample /var/db/nikto/databases/db_tests
 share/nikto/databases/db_variables
@@ -59,6 +58,9 @@ share/nikto/plugins/nikto_content_search.plugin
 share/nikto/plugins/nikto_cookies.plugin
 share/nikto/plugins/nikto_core.plugin
 share/nikto/plugins/nikto_dictionary_attack.plugin
+share/nikto/plugins/nikto_dishwasher.plugin
+share/nikto/plugins/nikto_docker_registry.plugin
+share/nikto/plugins/nikto_domino.plugin
 share/nikto/plugins/nikto_drupal.plugin
 share/nikto/plugins/nikto_embedded.plugin
 share/nikto/plugins/nikto_favicon.plugin
@@ -69,12 +71,14 @@ share/nikto/plugins/nikto_ms10_070.plugin
 share/nikto/plugins/nikto_msgs.plugin
 share/nikto/plugins/nikto_multiple_index.plugin
 share/nikto/plugins/nikto_negotiate.plugin
+share/nikto/plugins/nikto_origin_reflection.plugin
 share/nikto/plugins/nikto_outdated.plugin
 share/nikto/plugins/nikto_parked.plugin
 share/nikto/plugins/nikto_paths.plugin
 share/nikto/plugins/nikto_put_del_test.plugin
 share/nikto/plugins/nikto_report_csv.plugin
 share/nikto/plugins/nikto_report_html.plugin
+share/nikto/plugins/nikto_report_json.plugin
 share/nikto/plugins/nikto_report_nbe.plugin
 share/nikto/plugins/nikto_report_sqlg.plugin
 share/nikto/plugins/nikto_report_text.plugin
@@ -84,7 +88,7 @@ share/nikto/plugins/nikto_shellshock.plugin
 share/nikto/plugins/nikto_siebel.plugin
 share/nikto/plugins/nikto_sitefiles.plugin
 share/nikto/plugins/nikto_ssl.plugin
-share/nikto/plugins/nikto_subdomain.plugin
+share/nikto/plugins/nikto_strutshock.plugin
 share/nikto/plugins/nikto_tests.plugin
 share/nikto/templates/
 share/nikto/templates/htm_close.tmpl

@@ -1,6 +1,7 @@
---- program/nikto.pl.orig	Thu Jul  9 15:06:04 2015
-+++ program/nikto.pl	Mon Feb  1 19:37:41 2016
-@@ -358,7 +358,7 @@ sub setup_dirs {
+Index: program/nikto.pl
+--- program/nikto.pl.orig
++++ program/nikto.pl
+@@ -364,7 +364,7 @@ sub setup_dirs {
          $CONFIGFILE{'TEMPLATEDIR'} = "$CONFIGFILE{'EXECDIR'}/templates";
      }
      unless (defined $CONFIGFILE{'DOCDIR'}) {
