@@ -1,0 +1,16 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+ejabberd is listening to all IPv4 addresses (0.0.0.0), in case if you
+want to listen to IPv6 addresses you need to duplicate listener in
+ejabberd.yml
+
+To run a cluster you should distribute the same cookie
+${LOCALSTATEDIR}/db/ejabberd/.erlang.cookie to all machines. These files
+should have permission 0400 and be owned by _ejabberd:_ejabberd. You
+will also need to customize the machines node name via rc flags like
+this
+
+    rcctl set ejabberd flags --node ejabberd@somehost
+

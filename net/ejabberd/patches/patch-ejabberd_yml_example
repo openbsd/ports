@@ -1,0 +1,64 @@
+Listen to IPv4 by default
+Index: ejabberd.yml.example
+--- ejabberd.yml.example.orig
++++ ejabberd.yml.example
+@@ -27,7 +27,7 @@ loglevel: info
+ listen:
+   -
+     port: 5222
+-    ip: "::"
++    ip: "0.0.0.0"
+     module: ejabberd_c2s
+     max_stanza_size: 262144
+     shaper: c2s_shaper
+@@ -35,7 +35,7 @@ listen:
+     starttls_required: true
+   -
+     port: 5223
+-    ip: "::"
++    ip: "0.0.0.0"
+     module: ejabberd_c2s
+     max_stanza_size: 262144
+     shaper: c2s_shaper
+@@ -43,13 +43,13 @@ listen:
+     tls: true
+   -
+     port: 5269
+-    ip: "::"
++    ip: "0.0.0.0"
+     module: ejabberd_s2s_in
+     max_stanza_size: 524288
+     shaper: s2s_shaper
+   -
+     port: 5443
+-    ip: "::"
++    ip: "0.0.0.0"
+     module: ejabberd_http
+     tls: true
+     request_handlers:
+@@ -61,14 +61,14 @@ listen:
+       /ws: ejabberd_http_ws
+   -
+     port: 5280
+-    ip: "::"
++    ip: "0.0.0.0"
+     module: ejabberd_http
+     request_handlers:
+       /admin: ejabberd_web_admin
+       /.well-known/acme-challenge: ejabberd_acme
+   -
+     port: 3478
+-    ip: "::"
++    ip: "0.0.0.0"
+     transport: udp
+     module: ejabberd_stun
+     use_turn: true
+@@ -78,7 +78,7 @@ listen:
+     # turn_ipv6_address: "2001:db8::3"
+   -
+     port: 1883
+-    ip: "::"
++    ip: "0.0.0.0"
+     module: mod_mqtt
+     backlog: 1000
+ 

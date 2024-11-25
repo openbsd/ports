@@ -1,0 +1,3 @@
+ejabberd is an open-source, robust, scalable and extensible realtime
+platform built using Erlang/OTP, that includes XMPP Server, MQTT Broker
+and SIP Service.

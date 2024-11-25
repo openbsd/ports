@@ -1,0 +1,12 @@
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -80,7 +80,7 @@ SQLDIR = $(PRIVDIR)/sql
+ LUADIR = $(PRIVDIR)/lua
+ 
+ # /var/lib/ejabberd/
+-SPOOLDIR = @localstatedir@/lib/ejabberd
++SPOOLDIR = @localstatedir@/db/ejabberd
+ 
+ # /var/log/ejabberd/
+ LOGDIR = @localstatedir@/log/ejabberd
