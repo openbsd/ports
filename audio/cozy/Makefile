@@ -3,7 +3,7 @@ COMMENT =		gtk3 audiobook player
 GH_ACCOUNT =		geigi
 GH_PROJECT =		cozy
 GH_TAGNAME =		1.3.0
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		audio
 
@@ -33,7 +33,6 @@ RUN_DEPENDS =		${COMMON_DEPENDS} \
 			multimedia/gstreamer1/plugins-libav \
 			sysutils/py-packaging${MODPY_FLAVOR} \
 			www/py-requests${MODPY_FLAVOR} \
-			x11/gnome/libdazzle \
 			x11/gtk+4,-guic
 
 # required for running tests
