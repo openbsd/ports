@@ -1,12 +1,10 @@
 COMMENT-main=		create and modify archives
 COMMENT-nautilus=	file-roller extension for Nautilus
-REVISION-main=		1
 
 GNOME_PROJECT=		file-roller
-GNOME_VERSION=		44.3
+GNOME_VERSION=		44.4
 
 PKGNAME-nautilus=	${GNOME_PROJECT}-nautilus-${GNOME_VERSION}
-REVISION-nautilus=	1
 
 CATEGORIES=		archivers
 
@@ -16,7 +14,7 @@ PERMIT_PACKAGE=		Yes
 MULTI_PACKAGES=		-main -nautilus
 
 WANTLIB-main += adwaita-1 archive c gio-2.0 glib-2.0 gobject-2.0 gtk-4
-WANTLIB-main += intl json-glib-1.0 m pango-1.0 portal portal-gtk4
+WANTLIB-main += intl json-glib-1.0 m pango-1.0
 
 WANTLIB-nautilus += gio-2.0 glib-2.0 gobject-2.0 intl nautilus-extension
 
@@ -40,7 +38,6 @@ RUN_DEPENDS-main +=	archivers/unrar
 
 LIB_DEPENDS-main=	archivers/libarchive \
 			devel/json-glib \
-			sysutils/flatpak/libportal,-gtk4 \
 			x11/gnome/libadwaita
 
 LIB_DEPENDS-nautilus=	x11/gnome/nautilus
