@@ -11,6 +11,8 @@ PKGNAME-mktexlsr =	texlive_mktexlsr-${V}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-synctex =	texlive_synctex-${V}
 
+REVISION =		0
+
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
 DISTFILES.mk =		mktexlsr-${V}.gz
@@ -59,6 +61,10 @@ LIB_DEPENDS-main =	converters/libiconv \
 			archivers/zziplib \
 			print/ghostscript/gnu \
 			${BASE_PKGPATH},-mktexlsr
+
+LIB_DEPENDS-mktexlsr =
+
+LIB_DEPENDS-synctex =
 
 MODULES =		textproc/intltool perl
 
