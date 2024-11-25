@@ -1,9 +1,10 @@
---- src/common/sendpacket.h.orig	Sat Aug  9 16:18:28 2014
-+++ src/common/sendpacket.h	Wed Oct 15 18:22:28 2014
-@@ -26,6 +26,7 @@
+Index: src/common/sendpacket.h
+--- src/common/sendpacket.h.orig
++++ src/common/sendpacket.h
+@@ -27,6 +27,7 @@
  #ifdef __NetBSD__
  #include <net/if_ether.h>
- #else
+ #elif ! defined(__HAIKU__)
 +#include <net/if.h>
  #include <netinet/if_ether.h>
  #endif
