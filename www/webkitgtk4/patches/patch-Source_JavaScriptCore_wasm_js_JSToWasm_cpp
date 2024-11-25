@@ -1,0 +1,17 @@
+Fix invalid application of 'sizeof' to an incomplete type 'JSC::OpaqueByproducts'
+The required header is supposedly brought in if OMGJIT is enabled, but that's
+not the case on riscv64.
+
+Upstream discussion: https://bugs.webkit.org/show_bug.cgi?id=282677
+
+Index: Source/JavaScriptCore/wasm/js/JSToWasm.cpp
+--- Source/JavaScriptCore/wasm/js/JSToWasm.cpp.orig
++++ Source/JavaScriptCore/wasm/js/JSToWasm.cpp
+@@ -39,6 +39,7 @@
+ #include "WasmContext.h"
+ #include "WasmOperations.h"
+ #include "WasmToJS.h"
++#include "JITOpaqueByproducts.h"
+ 
+ namespace JSC {
+ namespace Wasm {
