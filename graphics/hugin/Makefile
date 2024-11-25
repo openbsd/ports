@@ -2,15 +2,13 @@ BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
 
 COMMENT =	panorama image stitcher
 
-DISTNAME =	hugin-2023.0.0
-REVISION =	0
+DISTNAME =	hugin-2024.0.0
 
 EXTRACT_SUFX =	.tar.bz2
 
 # not needed for releases, but makes RCs/betas easier to work with
 PKGNAME =	${DISTNAME:S/_//:L}
 WRKDIST =	${WRKDIR}/${DISTNAME:C/_.*//}
-REVISION =	1
 
 SHARED_LIBS +=  celeste                   4.0
 SHARED_LIBS +=  flann_cpp                 4.0
