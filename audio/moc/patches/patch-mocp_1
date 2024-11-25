@@ -1,7 +1,8 @@
 Fix paths in manual.
 
---- mocp.1.orig	Sun Apr 24 06:23:30 2016
-+++ mocp.1	Sun Jun  5 13:16:37 2016
+Index: mocp.1
+--- mocp.1.orig
++++ mocp.1
 @@ -58,10 +58,8 @@ Implies \fB\-S\fP.  Run the server in foreground and l
  .TP
  \fB\-R\fP \fINAME\fP[\fB:\fP...], \
@@ -15,7 +16,7 @@ Fix paths in manual.
  .LP
  .TP
  \fB\-m\fP, \fB\-\-music\-dir\fP
-@@ -123,7 +121,7 @@ file currently being played.
+@@ -128,7 +126,7 @@ file currently being played.
  .TP
  \fB\-T\fP \fITHEME\fP, \fB\-\-theme\fP \fITHEME\fP
  Use a theme file.  If the path is not absolute, the file will be searched
@@ -24,7 +25,7 @@ Fix paths in manual.
  \fB~/.moc/themes/\fP and the current directory.
  .LP
  .TP
-@@ -143,7 +141,7 @@ allows the new values to be picked up by substitutions
+@@ -152,7 +150,7 @@ allows the new values to be picked up by substitutions
  options are overridden afterwards (which gives the choice of whether the
  configured values are replaced or added to).
  .IP
@@ -33,7 +34,7 @@ Fix paths in manual.
  of the options available.
  .LP
  .RS
-@@ -261,7 +259,7 @@ MOC directory for the configuration file, socket, the 
+@@ -440,7 +438,7 @@ MOC directory for the configuration file, socket, the 
  .TP
  .B ~/.moc/config
  Configuration file for MOC.  The format is very simple; to see how to use
@@ -42,7 +43,7 @@ Fix paths in manual.
  with the program.  The example file fully describes all the configuration
  options, and so is a useful reference when using the \fB\-O\fP option.  As
  this file can specify commands which invoke other applications MOC will
-@@ -271,11 +269,11 @@ it is writable by anyone other than its owner.
+@@ -460,11 +458,11 @@ variable above.)
  .TP
  .B ~/.moc/themes
  .TQ

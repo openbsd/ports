@@ -4,33 +4,36 @@
 Index: main.c
 --- main.c.orig
 +++ main.c
-@@ -174,6 +174,8 @@ static void start_moc (const struct parameters *params
- 			case 0: /* child - start server */
- 				set_me_server ();
- 				list_sock = server_init (params->debug, params->foreground);
-+				if (pledge("stdio rpath wpath cpath inet unix dns audio", NULL) == -1)
-+					fatal ("pledge() failed: %s", strerror(errno));
- 				rc = write (notify_pipe[1], &i, sizeof(i));
- 				if (rc < 0)
- 					fatal ("write() to notify pipe failed: %s",
-@@ -208,10 +210,14 @@ static void start_moc (const struct parameters *params
+@@ -161,6 +161,8 @@ static void start_moc (const struct parameters *params
+ 	if (params->foreground) {
  		set_me_server ();
- 		list_sock = server_init (params->debug, params->foreground);
- 		signal (SIGCHLD, sig_chld);
-+		if (pledge("stdio rpath wpath cpath inet unix dns audio", NULL) == -1)
+ 		server_init (params->debug, params->foreground);
++		if (pledge("stdio rpath wpath cpath inet unix audio", NULL) == -1)
 +			fatal ("pledge() failed: %s", strerror(errno));
- 		server_loop (list_sock);
+ 		server_loop ();
+ 		return;
  	}
- 
- 	if (!params->only_server) {
+@@ -185,6 +187,8 @@ static void start_moc (const struct parameters *params
+ 		case 0: /* child - start server */
+ 			set_me_server ();
+ 			server_init (params->debug, params->foreground);
++			if (pledge("stdio rpath wpath cpath inet unix audio", NULL) == -1)
++				fatal ("pledge() failed: %s", strerror(errno));
+ 			rc = write (notify_pipe[1], &i, sizeof(i));
+ 			if (rc < 0)
+ 				fatal ("write() to notify pipe failed: %s", xstrerror (errno));
+@@ -216,6 +220,8 @@ static void start_moc (const struct parameters *params
+ 	if (params->only_server)
+ 		send_int (server_sock, CMD_DISCONNECT);
+ 	else {
 +		if (pledge("stdio rpath wpath cpath flock unix tty proc", NULL) == -1)
 +			fatal ("pledge() failed: %s", strerror(errno));
- 		signal (SIGPIPE, SIG_IGN);
- 		if (ping_server(server_sock)) {
- 			if (!params->dont_run_iface) {
-@@ -800,6 +806,9 @@ int main (int argc, char *argv[])
- 	struct utsname uts;
- #endif
+ 		xsignal (SIGPIPE, SIG_IGN);
+ 		if (!ping_server (server_sock))
+ 			fatal ("Can't connect to the server!");
+@@ -1202,6 +1208,9 @@ int main (int argc, const char *argv[])
+ 	mocp_argc = argc;
+ 	mocp_argv = argv;
  
 +	if (pledge("stdio rpath wpath cpath flock inet unix dns tty proc prot_exec audio", NULL) == -1)
 +		fatal ("pledge() failed: %s", strerror(errno));
@@ -38,19 +41,20 @@ Index: main.c
  #ifdef PACKAGE_REVISION
  	logit ("This is Music On Console (revision %s)", PACKAGE_REVISION);
  #else
-@@ -852,11 +861,12 @@ int main (int argc, char *argv[])
+@@ -1265,12 +1274,14 @@ int main (int argc, const char *argv[])
  	io_init ();
  	rcc_init ();
  	decoder_init (params.debug);
 -	srand (time(NULL));
  
--	if (!params.only_server && params.dont_run_iface)
-+	if (!params.only_server && params.dont_run_iface) {
+ 	if (params.allow_iface)
+ 		start_moc (&params, args);
+-	else
++	else {
 +		if (pledge("cpath rpath stdio unix", NULL) == -1)
 +			fatal ("pledge() failed: %s", strerror(errno));
  		server_command (&params, args);
--	else
-+	} else
- 		start_moc (&params, args);
++	}
  
  	lists_strs_free (args);
+ 	options_free ();

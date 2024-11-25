@@ -3,7 +3,7 @@ Remove audio choices that are irrelevant on OpenBSD.
 Index: config.example.in
 --- config.example.in.orig
 +++ config.example.in
-@@ -121,32 +121,10 @@
+@@ -140,32 +140,10 @@
  #
  #HTTPProxy =
  
@@ -35,5 +35,5 @@ Index: config.example.in
 -#ALSAMixer1 = PCM
 -#ALSAMixer2 = Master
  
- # Under some circumstances on 32-bit systems, audio played continously
- # for long periods of time may begin to stutter.  Setting this option to
+ # Save software mixer state?
+ # If enabled, a file 'softmixer' will be created in '~/.moc/' storing the

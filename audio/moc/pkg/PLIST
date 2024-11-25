@@ -2,6 +2,7 @@
 lib/moc/
 lib/moc/decoder_plugins/
 @so lib/moc/decoder_plugins/libaac_decoder.so
+@so lib/moc/decoder_plugins/libffmpeg_decoder.so
 @so lib/moc/decoder_plugins/libflac_decoder.so
 @so lib/moc/decoder_plugins/libmodplug_decoder.so
 @so lib/moc/decoder_plugins/libmp3_decoder.so
@@ -11,6 +12,7 @@ lib/moc/decoder_plugins/
 @so lib/moc/decoder_plugins/libvorbis_decoder.so
 @so lib/moc/decoder_plugins/libwavpack_decoder.so
 @man man/man1/mocp.1
+share/applications/mocp.desktop
 share/doc/moc/
 share/doc/moc/README
 share/doc/moc/README_equalizer
@@ -18,14 +20,23 @@ share/doc/moc/THANKS
 share/examples/moc/
 share/examples/moc/config.example
 share/examples/moc/keymap.example
+share/icons/hicolor/scalable/apps/mocp.svg
 share/moc/
 share/moc/themes/
+share/moc/themes/black_orange_theme
 share/moc/themes/black_theme
+share/moc/themes/blue_theme
 share/moc/themes/darkdot_theme
 share/moc/themes/example_theme
 share/moc/themes/green_theme
+share/moc/themes/lcars
+share/moc/themes/lcars2
 share/moc/themes/moca_theme
 share/moc/themes/nightly_theme
 share/moc/themes/red_theme
 share/moc/themes/transparent-background
+share/moc/themes/white_theme
+share/moc/themes/winter
 share/moc/themes/yellow_red_theme
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

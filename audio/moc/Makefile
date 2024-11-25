@@ -1,23 +1,26 @@
 COMMENT =	console audio player
-DISTNAME =	moc-2.5.2
+
+DIST_TUPLE+=	gitlab tomaszg mocp fb0a63b564b40fa861204e2f804b696c6ee573da .
+PKGNAME =	moc-2.6alpha3
 CATEGORIES =	audio
-HOMEPAGE =	https://moc.daper.net/
-SITES =		https://ftp.daper.net/pub/soft/moc/stable/ \
-		https://distfiles.sigtrap.nl/
-EXTRACT_SUFX =	.tar.bz2
-REVISION =	12
 
 # GPLv3+
 PERMIT_PACKAGE = Yes
 
 # uses pledge()
-WANTLIB += ${COMPILER_LIBCXX} FLAC c crypto curl curses db faad
-WANTLIB += iconv id3tag ltdl m mad magic modplug mp3lame mpcdec
-WANTLIB += mpg123 nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls
-WANTLIB += ogg opus samplerate sndfile sndio speex ssl tag tag_c
-WANTLIB += vorbis vorbisenc vorbisfile wavpack z
+WANTLIB += ${COMPILER_LIBCXX} FLAC X11 X11-xcb Xext Xfixes aom
+WANTLIB += avcodec avformat avutil bz2 c crypto curl curses dav1d
+WANTLIB += drm faad gsm iconv id3tag intl ltdl lzma m mad magic
+WANTLIB += modplug mp3lame mpcdec mpg123 nghttp2 nghttp3 ngtcp2
+WANTLIB += ngtcp2_crypto_quictls ogg opus popt samplerate sndfile
+WANTLIB += sndio speex ssl swresample tag tag_c theoradec theoraenc
+WANTLIB += va va-drm va-x11 vorbis vorbisenc vorbisfile vpx wavpack
+WANTLIB += x264 x265 xcb xcb-dri3 xml2 xvidcore z
 
-COMPILER =	base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc
+
+RUN_DEPENDS+=	devel/desktop-file-utils \
+		x11/gtk+4,-guic
 
 LIB_DEPENDS =	audio/faad \
 		audio/flac \
@@ -36,30 +39,32 @@ LIB_DEPENDS =	audio/faad \
 		audio/taglib \
 		audio/wavpack \
 		converters/libiconv \
-		databases/db/v4 \
 		devel/libmagic \
 		devel/libtool,-ltdl \
-		net/curl \
-		net/ngtcp2 \
-		www/nghttp2 \
-		www/nghttp3
+		devel/popt \
+		graphics/ffmpeg \
+		net/curl
 
+AUTOCONF_VERSION=	2.71
+AUTOMAKE_VERSION=	1.16
 SEPARATE_BUILD = Yes
-
-CONFIGURE_STYLE = gnu
+CONFIGURE_STYLE = autoreconf
 CONFIGURE_ARGS += \
-		--with-sndio \
+		--disable-cache \
 		--without-jack \
 		--without-oss \
 		--without-alsa \
+		--without-mpg123 \
+		--without-mpris \
+		--without-opus \
+		--without-pulse \
 		--without-rcc \
 		--without-included-ltdl \
 		--without-timidity \
-		--without-ffmpeg \
 		--with-magic \
 		--with-ltdl-include=${LOCALBASE}/include \
 		--with-ltdl-lib=${LOCALBASE}/lib
-CONFIGURE_ENV = CPPFLAGS="-I${LOCALBASE}/include -I${LOCALBASE}/include/db4" \
+CONFIGURE_ENV = CPPFLAGS="-Wno-unused-but-set-parameter -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
 
 pre-install:
