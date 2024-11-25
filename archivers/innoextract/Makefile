@@ -1,7 +1,7 @@
 COMMENT=	unpack Inno Setup installers
 
 DISTNAME=	innoextract-1.9
-REVISION=	2
+REVISION=	3
 CATEGORIES=	archivers
 HOMEPAGE=	https://constexpr.org/innoextract/
 MAINTAINER=	Thomas Frohwein <thfr@openbsd.org>
