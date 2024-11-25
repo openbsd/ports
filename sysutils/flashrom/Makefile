@@ -17,6 +17,9 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB=	c ftdi1 usb-1.0 z
 
 SITES=		https://download.flashrom.org/releases/
