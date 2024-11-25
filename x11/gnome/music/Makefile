@@ -1,8 +1,7 @@
 COMMENT=		GNOME music playing application
 
 GNOME_PROJECT=		gnome-music
-GNOME_VERSION=		47.0
-REVISION=		2
+GNOME_VERSION=		47.1
 
 HOMEPAGE=		https://apps.gnome.org/Music/
 
@@ -20,17 +19,17 @@ MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
 BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
 			devel/libsoup3 \
+			graphics/py-cairo${MODPY_FLAVOR} \
 			x11/gnome/grilo-plugins \
 			x11/gnome/libadwaita \
-			x11/gnome/libdazzle \
 			x11/gnome/libmediaart \
 			x11/gnome/tinysparql
 
 RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
 			devel/libsoup3 \
+			graphics/py-cairo${MODPY_FLAVOR} \
 			x11/gnome/grilo-plugins \
 			x11/gnome/libadwaita \
-			x11/gnome/libdazzle \
 			x11/gnome/libmediaart \
 			x11/gnome/tinysparql
 
