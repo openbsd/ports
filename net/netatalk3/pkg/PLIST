@@ -56,7 +56,6 @@ lib/netatalk/
 @so lib/netatalk/uams_passwd.so
 @so lib/netatalk/uams_randnum.so
 @man man/man1/ad.1
-@man man/man1/aecho.1
 @man man/man1/afp_lantest.1
 @man man/man1/afp_logintest.1
 @man man/man1/afp_spectest.1
@@ -69,32 +68,18 @@ lib/netatalk/
 @man man/man1/apple_dump.1
 @man man/man1/asip-status.1
 @man man/man1/dbd.1
-@man man/man1/getzones.1
 @man man/man1/macusers.1
-@man man/man1/nbp.1
-@man man/man1/nbplkup.1
-@man man/man1/nbprgstr.1
-@man man/man1/nbpunrgstr.1
-@man man/man1/pap.1
 @man man/man3/atalk_aton.3
 @man man/man3/nbp_name.3
 @man man/man4/atalk.4
 @man man/man5/afp.conf.5
 @man man/man5/afp_signature.conf.5
 @man man/man5/afp_voluuid.conf.5
-@man man/man5/atalkd.conf.5
 @man man/man5/extmap.conf.5
-@man man/man5/papd.conf.5
-@man man/man8/a2boot.8
 @man man/man8/afpd.8
-@man man/man8/atalkd.8
 @man man/man8/cnid_dbd.8
 @man man/man8/cnid_metad.8
-@man man/man8/macipgw.8
 @man man/man8/netatalk.8
-@man man/man8/papd.8
-@man man/man8/papstatus.8
-@man man/man8/timelord.8
 @bin sbin/afpd
 @bin sbin/cnid_dbd
 @bin sbin/cnid_metad
@@ -104,60 +89,11 @@ share/doc/netatalk/
 share/doc/netatalk/CONTRIBUTORS
 share/doc/netatalk/DEVELOPER
 share/doc/netatalk/NEWS
-share/doc/netatalk/README.AppleTalk
-share/doc/netatalk/htmldocs/
-share/doc/netatalk/htmldocs/a2boot.8.html
-share/doc/netatalk/htmldocs/ad.1.html
-share/doc/netatalk/htmldocs/aecho.1.html
-share/doc/netatalk/htmldocs/afp.conf.5.html
-share/doc/netatalk/htmldocs/afp_signature.conf.5.html
-share/doc/netatalk/htmldocs/afp_voluuid.conf.5.html
-share/doc/netatalk/htmldocs/afpd.8.html
-share/doc/netatalk/htmldocs/afpldaptest.1.html
-share/doc/netatalk/htmldocs/afppasswd.1.html
-share/doc/netatalk/htmldocs/afpstats.1.html
-share/doc/netatalk/htmldocs/afptest.1.html
-share/doc/netatalk/htmldocs/apple_dump.1.html
-share/doc/netatalk/htmldocs/appletalk.html
-share/doc/netatalk/htmldocs/asip-status.1.html
-share/doc/netatalk/htmldocs/atalk.4.html
-share/doc/netatalk/htmldocs/atalk_aton.3.html
-share/doc/netatalk/htmldocs/atalkd.8.html
-share/doc/netatalk/htmldocs/atalkd.conf.5.html
-share/doc/netatalk/htmldocs/cnid_dbd.8.html
-share/doc/netatalk/htmldocs/cnid_metad.8.html
-share/doc/netatalk/htmldocs/compile.html
-share/doc/netatalk/htmldocs/configuration.html
-share/doc/netatalk/htmldocs/dbd.1.html
-share/doc/netatalk/htmldocs/example-toc.html
-share/doc/netatalk/htmldocs/extmap.conf.5.html
-share/doc/netatalk/htmldocs/getzones.1.html
-share/doc/netatalk/htmldocs/gpl.html
-share/doc/netatalk/htmldocs/index.html
-share/doc/netatalk/htmldocs/installation.html
-share/doc/netatalk/htmldocs/intro.html
-share/doc/netatalk/htmldocs/macipgw.8.html
-share/doc/netatalk/htmldocs/macusers.1.html
-share/doc/netatalk/htmldocs/man-pages.html
-share/doc/netatalk/htmldocs/manual-index.html
-share/doc/netatalk/htmldocs/nbp.1.html
-share/doc/netatalk/htmldocs/nbp_name.3.html
-share/doc/netatalk/htmldocs/netatalk.8.html
-share/doc/netatalk/htmldocs/netatalk.css
-share/doc/netatalk/htmldocs/pap.1.html
-share/doc/netatalk/htmldocs/papd.8.html
-share/doc/netatalk/htmldocs/papd.conf.5.html
-share/doc/netatalk/htmldocs/papstatus.8.html
-share/doc/netatalk/htmldocs/table-toc.html
-share/doc/netatalk/htmldocs/timelord.8.html
-share/doc/netatalk/htmldocs/upgrade.html
 share/examples/netatalk/
 share/examples/netatalk/netatalk/
 @sample ${SYSCONFDIR}/netatalk/
 share/examples/netatalk/netatalk/afp.conf
 @sample ${SYSCONFDIR}/netatalk/afp.conf
-share/examples/netatalk/netatalk/dbus-session.conf
-@sample ${SYSCONFDIR}/netatalk/dbus-session.conf
 share/examples/netatalk/netatalk/extmap.conf
 @sample ${SYSCONFDIR}/netatalk/extmap.conf
 share/examples/netatalk/var/

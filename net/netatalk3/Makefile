@@ -1,6 +1,6 @@
 COMMENT=		Apple Filing Protocol file server over TCP/IP
 
-V=			4.0.6
+V=			4.0.7
 DISTNAME=		netatalk-${V}
 EXTRACT_SUFX=		.tar.xz
 PKGSPEC=		netatalk->=3,<4
@@ -17,15 +17,15 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-COMPILER=		base-clang ports-gcc
-COMPILER_LANGS=		c
-
 WANTLIB += avahi-client avahi-common c crack db event_core gcrypt
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 iconv rpcsvc
 
 SITES=			https://github.com/Netatalk/Netatalk/releases/download/netatalk-${V:S/./-/g}/
 
 MODULES=		devel/meson
+
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
 
 BUILD_DEPENDS=		textproc/docbook-xsl
 
@@ -57,7 +57,8 @@ CONFIGURE_ARGS=		-Dwith-acls=false \
 			-Dwith-tcp-wrappers=false \
 			-Dwith-dbus-daemon-path=${LOCALBASE}/bin/dbus-daemon \
 			-Dwith-unicode-data-path=${LOCALBASE}/share/unicode/ucd \
-			-Dwith-init-hooks=false
+			-Dwith-init-hooks=false \
+			-Dwith-manual=man_only
 
 # needs x11/gnome/tracker3
 CONFIGURE_ARGS +=	-Dwith-spotlight=false
