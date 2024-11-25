@@ -31,5 +31,6 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy_rs/local.pyi
 @so lib/python${MODPY_VERSION}/site-packages/mitmproxy_rs/mitmproxy_rs${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/mitmproxy_rs/process_info.pyi
 lib/python${MODPY_VERSION}/site-packages/mitmproxy_rs/py.typed
+lib/python${MODPY_VERSION}/site-packages/mitmproxy_rs/tun.pyi
 lib/python${MODPY_VERSION}/site-packages/mitmproxy_rs/udp.pyi
 lib/python${MODPY_VERSION}/site-packages/mitmproxy_rs/wireguard.pyi

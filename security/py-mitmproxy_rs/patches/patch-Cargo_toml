@@ -9,6 +9,6 @@ Index: Cargo.toml
 -boringtun = { git = 'https://github.com/cloudflare/boringtun', rev = 'e3252d9c4f4c8fc628995330f45369effd4660a1' }
 +smoltcp = { path = "./smoltcp" }
 +boringtun = { path = "./boringtun/boringtun" }
+ # tun2 = { path = "../rust-tun" }
  
  [target.'cfg(windows)'.dependencies.windows]
- version = "0.57.0"

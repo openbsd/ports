@@ -3,7 +3,7 @@ NOT_FOR_ARCHS =		sparc64
 
 COMMENT =		Rust components used in mitmproxy
 
-MODPY_EGG_VERSION =	0.9.2
+MODPY_EGG_VERSION =	0.10.7
 DISTNAME =		mitmproxy_rs-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -34,6 +34,7 @@ MODCARGO_CARGO_BIN =	maturin
 CONFIGURE_STYLE =	cargo
 
 WRKSRC =		${WRKDIST}/mitmproxy-rs
+MODCARGO_CARGOLOCK = 	${WRKDIST}/Cargo.lock
 
 NO_TEST =		Yes
 
