@@ -88,6 +88,7 @@
      SUBDIR += dxpc
      SUBDIR += echoping
      SUBDIR += eduvpn
+     SUBDIR += ejabberd
      SUBDIR += ekg
      SUBDIR += endlessh
      SUBDIR += enet
