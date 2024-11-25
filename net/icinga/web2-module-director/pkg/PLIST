@@ -3,9 +3,11 @@
 icinga-web2/modules/director/
 icinga-web2/modules/director/.github/
 icinga-web2/modules/director/.github/ISSUE_TEMPLATE.md
+icinga-web2/modules/director/.github/dependabot.yml
 icinga-web2/modules/director/.github/workflows/
 icinga-web2/modules/director/.github/workflows/L10n-update.yml
 icinga-web2/modules/director/.github/workflows/php.yml
+icinga-web2/modules/director/.github/workflows/phpstan.yml
 icinga-web2/modules/director/.gitignore
 icinga-web2/modules/director/.gitlab-ci.yml
 icinga-web2/modules/director/LICENSE
@@ -699,10 +701,12 @@ icinga-web2/modules/director/library/Director/ProvidedHook/
 icinga-web2/modules/director/library/Director/ProvidedHook/CubeLinks.php
 icinga-web2/modules/director/library/Director/ProvidedHook/IcingaDbCubeLinks.php
 icinga-web2/modules/director/library/Director/ProvidedHook/Icingadb/
+icinga-web2/modules/director/library/Director/ProvidedHook/Icingadb/CustomVarRenderer.php
 icinga-web2/modules/director/library/Director/ProvidedHook/Icingadb/HostActions.php
 icinga-web2/modules/director/library/Director/ProvidedHook/Icingadb/IcingadbSupport.php
 icinga-web2/modules/director/library/Director/ProvidedHook/Icingadb/ServiceActions.php
 icinga-web2/modules/director/library/Director/ProvidedHook/Monitoring/
+icinga-web2/modules/director/library/Director/ProvidedHook/Monitoring/CustomVarRenderer.php
 icinga-web2/modules/director/library/Director/ProvidedHook/Monitoring/HostActions.php
 icinga-web2/modules/director/library/Director/ProvidedHook/Monitoring/ServiceActions.php
 icinga-web2/modules/director/library/Director/Repository/
@@ -791,6 +795,7 @@ icinga-web2/modules/director/library/Director/Web/Form/IcingaObjectFieldLoader.p
 icinga-web2/modules/director/library/Director/Web/Form/IconHelper.php
 icinga-web2/modules/director/library/Director/Web/Form/IplElement/
 icinga-web2/modules/director/library/Director/Web/Form/IplElement/ExtensibleSetElement.php
+icinga-web2/modules/director/library/Director/Web/Form/PropertyTableSortForm.php
 icinga-web2/modules/director/library/Director/Web/Form/QuickBaseForm.php
 icinga-web2/modules/director/library/Director/Web/Form/QuickForm.php
 icinga-web2/modules/director/library/Director/Web/Form/QuickSubForm.php
@@ -1196,6 +1201,7 @@ icinga-web2/modules/director/schema/pgsql-migrations/upgrade_183.sql
 icinga-web2/modules/director/schema/pgsql-migrations/upgrade_184.sql
 icinga-web2/modules/director/schema/pgsql-migrations/upgrade_186.sql
 icinga-web2/modules/director/schema/pgsql-migrations/upgrade_187.sql
+icinga-web2/modules/director/schema/pgsql-migrations/upgrade_188.sql
 icinga-web2/modules/director/schema/pgsql-migrations/upgrade_77.sql
 icinga-web2/modules/director/schema/pgsql-migrations/upgrade_78.sql
 icinga-web2/modules/director/schema/pgsql-migrations/upgrade_79.sql
