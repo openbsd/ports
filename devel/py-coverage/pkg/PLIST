@@ -32,6 +32,8 @@ lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}context.${MODP
 lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}context.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}control.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}control.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}core.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}data.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}data.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/coverage/${MODPY_PYCACHE}debug.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -103,6 +105,7 @@ lib/python${MODPY_VERSION}/site-packages/coverage/collector.py
 lib/python${MODPY_VERSION}/site-packages/coverage/config.py
 lib/python${MODPY_VERSION}/site-packages/coverage/context.py
 lib/python${MODPY_VERSION}/site-packages/coverage/control.py
+lib/python${MODPY_VERSION}/site-packages/coverage/core.py
 lib/python${MODPY_VERSION}/site-packages/coverage/data.py
 lib/python${MODPY_VERSION}/site-packages/coverage/debug.py
 lib/python${MODPY_VERSION}/site-packages/coverage/disposition.py
@@ -142,6 +145,7 @@ lib/python${MODPY_VERSION}/site-packages/coverage/sysmon.py
 lib/python${MODPY_VERSION}/site-packages/coverage/templite.py
 lib/python${MODPY_VERSION}/site-packages/coverage/tomlconfig.py
 @so lib/python${MODPY_VERSION}/site-packages/coverage/tracer.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/coverage/tracer.pyi
 lib/python${MODPY_VERSION}/site-packages/coverage/types.py
 lib/python${MODPY_VERSION}/site-packages/coverage/version.py
 lib/python${MODPY_VERSION}/site-packages/coverage/xmlreport.py
