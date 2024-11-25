@@ -1,15 +1,16 @@
 COMMENT=	microcode update binaries for AMD CPUs
 FW_DRIVER=	amd
-FW_VER=		20240909
-DISTNAME=	linux-firmware-${FW_VER}
-EXTRACT_SUFX=	.tar.xz
+FW_VER=		20241125
+DISTNAME=	linux-firmware-76af388fd7011dd3ab05b637cfb510a10d440487
+#DISTNAME=	linux-firmware-${FW_VER}
+#EXTRACT_SUFX=	.tar.xz
 EXTRACT_FILES=	${DISTNAME}/{LICENSE.\*,amd-ucode}
 
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 HOMEPAGE=	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/amd-ucode
-#SITES=		https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/
-SITES=		https://cdn.kernel.org/pub/linux/kernel/firmware/
+SITES=		https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/
+#SITES=		https://cdn.kernel.org/pub/linux/kernel/firmware/
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/firmware/amd
