@@ -1,8 +1,8 @@
 COMMENT =		test asyncio code with pytest
 
-MODPY_EGG_VERSION =	0.23.6
-DISTNAME =		pytest-asyncio-${MODPY_EGG_VERSION}
-PKGNAME =		${DISTNAME:S/py/py-/}
+MODPY_EGG_VERSION =	0.24.0
+DISTNAME =		pytest_asyncio-${MODPY_EGG_VERSION}
+PKGNAME =		py-test-asyncio-${MODPY_EGG_VERSION}
 CATEGORIES =		devel
 
 # Apache 2.0
