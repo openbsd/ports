@@ -227,7 +227,6 @@ vpn-user-portal/vendor/composer/installed.php
 vpn-user-portal/vendor/composer/platform_check.php
 vpn-user-portal/vendor/fkooman/
 vpn-user-portal/vendor/fkooman/oauth2-server/
-vpn-user-portal/vendor/fkooman/oauth2-server/.build.yml
 vpn-user-portal/vendor/fkooman/oauth2-server/.forgejo/
 vpn-user-portal/vendor/fkooman/oauth2-server/.forgejo/workflows/
 vpn-user-portal/vendor/fkooman/oauth2-server/.forgejo/workflows/tests.yml
@@ -238,7 +237,8 @@ vpn-user-portal/vendor/fkooman/oauth2-server/Makefile
 vpn-user-portal/vendor/fkooman/oauth2-server/README.md
 vpn-user-portal/vendor/fkooman/oauth2-server/TOKEN_FORMAT.md
 vpn-user-portal/vendor/fkooman/oauth2-server/composer.json
-vpn-user-portal/vendor/fkooman/oauth2-server/php.mod
+vpn-user-portal/vendor/fkooman/oauth2-server/go/
+vpn-user-portal/vendor/fkooman/oauth2-server/go/token.go
 vpn-user-portal/vendor/fkooman/oauth2-server/phpstan.neon
 vpn-user-portal/vendor/fkooman/oauth2-server/phpunit.xml.dist
 vpn-user-portal/vendor/fkooman/oauth2-server/psalm.xml.dist
@@ -320,7 +320,9 @@ vpn-user-portal/vendor/fkooman/radius/src/ServerInfo.php
 vpn-user-portal/vendor/fkooman/radius/src/SocketInterface.php
 vpn-user-portal/vendor/fkooman/radius/src/Utils.php
 vpn-user-portal/vendor/fkooman/secookie/
-vpn-user-portal/vendor/fkooman/secookie/.build.yml
+vpn-user-portal/vendor/fkooman/secookie/.forgejo/
+vpn-user-portal/vendor/fkooman/secookie/.forgejo/workflows/
+vpn-user-portal/vendor/fkooman/secookie/.forgejo/workflows/tests.yml
 vpn-user-portal/vendor/fkooman/secookie/.php-cs-fixer.dist.php
 vpn-user-portal/vendor/fkooman/secookie/AUTHORS.md
 vpn-user-portal/vendor/fkooman/secookie/CHANGES.md
@@ -332,6 +334,7 @@ vpn-user-portal/vendor/fkooman/secookie/extra/
 vpn-user-portal/vendor/fkooman/secookie/extra/test_memcache.php
 vpn-user-portal/vendor/fkooman/secookie/extra/test_mysql.php
 vpn-user-portal/vendor/fkooman/secookie/phpstan.neon
+vpn-user-portal/vendor/fkooman/secookie/phpunit.xml.dist
 vpn-user-portal/vendor/fkooman/secookie/psalm.xml.dist
 vpn-user-portal/vendor/fkooman/secookie/src/
 vpn-user-portal/vendor/fkooman/secookie/src/ActiveSession.php
