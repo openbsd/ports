@@ -1,7 +1,7 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -28,4 +28,4 @@ clean:
+@@ -31,4 +31,4 @@ clean:
  
  install: all
  	install -m 0755 -D vpn-ca $(DESTDIR)$(PREFIX)/bin/vpn-ca
