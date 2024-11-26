@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/webui/certificate_manager/client_cert_sources.h
 --- chrome/browser/ui/webui/certificate_manager/client_cert_sources.h.orig
 +++ chrome/browser/ui/webui/certificate_manager/client_cert_sources.h
-@@ -18,7 +18,7 @@ CreatePlatformClientCertSource(
+@@ -19,7 +19,7 @@ CreatePlatformClientCertSource(
          remote_client,
      Profile* profile);
  

@@ -20,7 +20,7 @@ Index: chromecast/browser/cast_browser_main_parts.cc
  base::FilePath GetApplicationFontsDir() {
    std::unique_ptr<base::Environment> env(base::Environment::Create());
 @@ -313,7 +313,7 @@ const DefaultCommandLineSwitch kDefaultSwitches[] = {
-     {cc::switches::kDisableThreadedAnimation, ""},
+     {switches::kDisableThreadedAnimation, ""},
  #endif  // BUILDFLAG(IS_ANDROID)
  #endif  // BUILDFLAG(IS_CAST_AUDIO_ONLY)
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
