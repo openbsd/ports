@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1676 2024/11/24 14:21:12 kn Exp $
+# $OpenBSD: Quirks.pm,v 1.1677 2024/11/26 16:48:36 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -771,6 +771,7 @@ setup_obsolete_reason(
 	43 => 'upt-rubygems',
 	3 => 'p5-VCP-autrijus',
 # 7.0
+	3 => qr{^ruby26-},
 	3 => 'mailpile',
 	7 => 'p5-Geo-GDAL',
 	3 => 'gnome-latex',
@@ -979,6 +980,7 @@ setup_obsolete_reason(
 	13 => 'py-scandir',
 	3 => 'd-feet',
 # 7.2
+	3 => qr{^ruby27-},
 	3 => 'gnome-documents',
 	3 => 'lumail',
 	3 => 'kalarmcal',
@@ -1080,6 +1082,7 @@ setup_obsolete_reason(
 	3 => 'ogmrip',
 	3 => 'shrip',
 # 7.4
+	3 => qr{^ruby30-},
 	53 => 'compton',
 	54 => 'depotdownloader',
 	55 => 'residualvm',
@@ -1150,6 +1153,7 @@ setup_obsolete_reason(
 	1 => 'proteus',
 	1 => qr{^tryton},
 # 7.6
+	3 => qr{^ruby31-},
 	5 => 'py3-pyls-black',
 	5 => 'py3-python-language-server',
 	5 => 'py3-python-jsonrpc-server',
