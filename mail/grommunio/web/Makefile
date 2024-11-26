@@ -5,9 +5,9 @@ DISTNAME=	grommunio-web-${V}
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	grommunio-web
-GH_COMMIT=	a45cc2e75937e41a3b770b96585b618c2b1f9a88
+GH_COMMIT=	47ac21a763d64956d7b0f9c9a7de3feb9c855d09
 
-REVISION=	0
+REVISION=	1
 
 SITES=		https://nerd.hu/distfiles/
 

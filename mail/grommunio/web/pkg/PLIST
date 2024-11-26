@@ -615,7 +615,10 @@ grommunio-web/client/filepreviewer/pdfjs/web/debugger.css
 grommunio-web/client/filepreviewer/pdfjs/web/debugger.mjs
 grommunio-web/client/filepreviewer/pdfjs/web/images/
 grommunio-web/client/filepreviewer/pdfjs/web/images/altText_add.svg
+grommunio-web/client/filepreviewer/pdfjs/web/images/altText_disclaimer.svg
 grommunio-web/client/filepreviewer/pdfjs/web/images/altText_done.svg
+grommunio-web/client/filepreviewer/pdfjs/web/images/altText_spinner.svg
+grommunio-web/client/filepreviewer/pdfjs/web/images/altText_warning.svg
 grommunio-web/client/filepreviewer/pdfjs/web/images/annotation-check.svg
 grommunio-web/client/filepreviewer/pdfjs/web/images/annotation-comment.svg
 grommunio-web/client/filepreviewer/pdfjs/web/images/annotation-help.svg
@@ -639,6 +642,8 @@ grommunio-web/client/filepreviewer/pdfjs/web/images/gv-toolbarButton-openinapp.s
 grommunio-web/client/filepreviewer/pdfjs/web/images/loading-dark.svg
 grommunio-web/client/filepreviewer/pdfjs/web/images/loading-icon.gif
 grommunio-web/client/filepreviewer/pdfjs/web/images/loading.svg
+grommunio-web/client/filepreviewer/pdfjs/web/images/messageBar_closingButton.svg
+grommunio-web/client/filepreviewer/pdfjs/web/images/messageBar_warning.svg
 grommunio-web/client/filepreviewer/pdfjs/web/images/secondaryToolbarButton-documentProperties.svg
 grommunio-web/client/filepreviewer/pdfjs/web/images/secondaryToolbarButton-firstPage.svg
 grommunio-web/client/filepreviewer/pdfjs/web/images/secondaryToolbarButton-handTool.svg
