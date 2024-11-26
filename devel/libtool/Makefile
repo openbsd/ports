@@ -4,7 +4,7 @@ COMMENT-ltdl=	GNU libtool system independent dlopen wrapper
 VERSION=	2.4.2
 DISTNAME=	libtool-${VERSION}
 PKGNAME-ltdl=	libltdl-${VERSION}
-REVISION=	2
+REVISION=	3
 CATEGORIES=	devel
 SITES=		${SITE_GNU:=libtool/}
 
@@ -28,6 +28,7 @@ USE_LIBTOOL=	No
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	GREP=/usr/bin/grep \
+		LD=ld \
 		ac_cv_f77_compiler_gnu=yes \
 		lt_cv_prog_compiler_c_o_F77=yes \
 		lt_cv_prog_compiler_pic_works_F77=yes \

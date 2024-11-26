@@ -3,7 +3,7 @@ include/libltdl/lt_dlloader.h
 include/libltdl/lt_error.h
 include/libltdl/lt_system.h
 include/ltdl.h
-lib/libltdl.a
+@static-lib lib/libltdl.a
 lib/libltdl.la
 @lib lib/libltdl.so.${LIBltdl_VERSION}
 share/aclocal/
