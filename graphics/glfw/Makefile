@@ -3,6 +3,7 @@ COMMENT =	open source, multi-platform library for creating windows
 V =		3.4
 DISTNAME =	glfw-${V}
 CATEGORIES =	graphics x11
+REVISION =	0
 
 SHARED_LIBS +=  glfw                      1.2 # 3.4
 
@@ -12,7 +13,10 @@ MAINTAINER =	Kurt Mosiejczuk <kmos@openbsd.org>
 # zlib
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =	X11 m pthread
+WANTLIB +=	epoll-shim m pthread
+
+# dlopen()'d
+WANTLIB +=	X11 wayland-client wayland-cursor wayland-egl xkbcommon
 
 SITES =		https://github.com/glfw/glfw/releases/download/${V}/
 EXTRACT_SUFX =	.zip
@@ -24,8 +28,10 @@ CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=ON \
 
 CFLAGS +=		-I${X11BASE}/include
 
-BUILD_DEPENDS =	wayland/libinput-openbsd \
-		wayland/wayland
+LIB_DEPENDS =	wayland/libinput-openbsd \
+		wayland/wayland \
+		x11/xkbcommon
+
 
 NO_TEST =	Yes
 
