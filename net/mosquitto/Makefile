@@ -1,6 +1,7 @@
-COMMENT =		opensource MQTT broker
+COMMENT =	opensource MQTT broker
 
-DISTNAME =		mosquitto-2.0.20
+DISTNAME =	mosquitto-2.0.20
+REVISION =	0
 
 SHARED_LIBS +=  mosquitto                 2.1
 SHARED_LIBS +=  mosquittopp               2.0
@@ -20,8 +21,8 @@ COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake \
 			lang/python
 
-MODPY_BUILDDEP=		No
-MODPY_RUNDEP=		No
+MODPY_BUILDDEP =	No
+MODPY_RUNDEP =		No
 
 BUILD_DEPENDS =		devel/uthash
 LIB_DEPENDS =		devel/cjson \

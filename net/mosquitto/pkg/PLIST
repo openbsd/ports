@@ -29,7 +29,11 @@ lib/pkgconfig/libmosquittopp.pc
 @man man/man8/mosquitto.8
 @bin sbin/mosquitto
 share/examples/mosquitto/
+@mode 750
+@group _mosquitto
 @sample ${SYSCONFDIR}/mosquitto/
+@mode
+@group
 share/examples/mosquitto/aclfile.example
 share/examples/mosquitto/mosquitto.conf
 @mode 640
