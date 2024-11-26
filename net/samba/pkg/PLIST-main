@@ -327,6 +327,7 @@ lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/${MODPY_PYCACHE}__init__.$
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/ntlmssp.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/preg.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/samr.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/schannel.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/security.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/server_id.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/samba/dcerpc/smb3posix.${MODPY_PYC_MAGIC_TAG}so
