@@ -6,6 +6,7 @@
 share/examples/meli/
 share/examples/meli/sample-config.toml
 share/examples/meli/themes/
+share/examples/meli/themes/ibm-modern.toml
 share/examples/meli/themes/nord.toml
 share/examples/meli/themes/orca.toml
 share/examples/meli/themes/sail.toml
