@@ -3,8 +3,7 @@ PKG_ARCH=		*
 COMMENT=		collection of extensions for GNOME Shell
 
 GNOME_PROJECT=		gnome-shell-extensions
-GNOME_VERSION=		47.1
-REVISION=		3
+GNOME_VERSION=		47.2
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
