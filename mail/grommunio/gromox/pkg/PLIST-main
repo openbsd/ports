@@ -109,6 +109,7 @@ lib/sysusers.d/sysusers-gromox.conf
 lib/tmpfiles.d/
 lib/tmpfiles.d/tmpfiles-gromox.conf
 libexec/gromox/
+@bin libexec/gromox/authtry
 @bin libexec/gromox/cgkrepair
 @bin libexec/gromox/delivery
 @bin libexec/gromox/delivery-queue
@@ -150,8 +151,10 @@ man/man4/timer_agent.4gx
 man/man4/user_filter.4gx
 @man man/man5/gromox-selinux.5
 @man man/man5/gromox.cfg.5
+@man man/man7/autodiscover.7
 @man man/man7/gromox.7
 man/man7/mapi.7gx
+man/man8/authtry.8gx
 man/man8/cgkrepair.8gx
 man/man8/delivery-queue.8gx
 man/man8/delivery.8gx
@@ -171,6 +174,7 @@ man/man8/event.8gx
 @man man/man8/gromox-kdb2mt.8
 @man man/man8/gromox-mailq.8
 @man man/man8/gromox-mbop.8
+@man man/man8/gromox-mbsize.8
 @man man/man8/gromox-mkmidb.8
 @man man/man8/gromox-mkprivate.8
 @man man/man8/gromox-mkpublic.8
@@ -202,10 +206,12 @@ sbin/gromox-ical2mt
 @bin sbin/gromox-mbck
 @bin sbin/gromox-mbop
 sbin/gromox-mbox2mt
+@bin sbin/gromox-mbsize
 @bin sbin/gromox-mkmidb
 @bin sbin/gromox-mkprivate
 @bin sbin/gromox-mkpublic
 @bin sbin/gromox-mt2exm
+sbin/gromox-tnef2mt
 sbin/gromox-vcf2mt
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/gromox/

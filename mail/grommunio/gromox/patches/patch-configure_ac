@@ -7,9 +7,9 @@ Index: configure.ac
  AC_PROG_CXX
 +AS_IF([test -n "$LD" && $LD -v | grep -q GNU >/dev/null 2>/dev/null], [with_gnu_ld=yes], [with_gnu_ld=no])
  AM_CONDITIONAL([WITH_GNU_LD], [test "$with_gnu_ld" = yes])
- AS_IF([test -n "$LD" && $LD -z help >/dev/null 2>/dev/null], [with_sun_ld=yes], [with_sun_ld=no])
- AM_CONDITIONAL([WITH_SUN_LD], [test "$with_sun_ld" = yes])
-@@ -141,25 +142,6 @@ PKG_CHECK_MODULES([libzstd], [libzstd >= 1.4])
+ 
+ saved_CPPFLAGS="$CPPFLAGS"
+@@ -145,25 +146,6 @@ PKG_CHECK_MODULES([libzstd], [libzstd >= 1.4])
  PKG_CHECK_MODULES([sqlite], [sqlite3])
  PKG_CHECK_MODULES([tinyxml2], [tinyxml2 >= 8])
  PKG_CHECK_MODULES([vmime], [vmime >= 0.9.2])
