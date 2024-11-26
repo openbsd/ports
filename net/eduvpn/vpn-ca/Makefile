@@ -2,6 +2,7 @@ COMMENT=	simple CA to manage server and client certificates
 
 V=		5.0.0
 DISTNAME=	vpn-ca-$V
+REVISION=	0
 
 # MIT
 PERMIT_PACKAGE=	Yes

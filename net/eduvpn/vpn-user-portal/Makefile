@@ -2,6 +2,7 @@ COMMENT=	user and admin portal for Let's Connect/eduVPN
 
 V=		3.9.7
 DISTNAME=	vpn-user-portal-$V
+REVISION=	0
 SITES.sh=	https://spacehopper.org/mirrors/
 # to update: comment out DISTFILES.sh, update V, make makesum, make dist
 DISTFILES.sh=	${DISTNAME}-vendor.tar.xz

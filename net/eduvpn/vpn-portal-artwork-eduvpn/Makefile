@@ -2,6 +2,7 @@ COMMENT=	eduVPN artwork for vpn-user-portal
 
 V=		3.0.6
 DISTNAME=	vpn-portal-artwork-eduVPN-$V
+REVISION=	0
 
 # AGPL-3.0
 PERMIT_PACKAGE=	Yes
