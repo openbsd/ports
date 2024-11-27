@@ -1,0 +1,10 @@
+fix build on sparc64
+
+Index: cmake/compilers/GNU.cmake
+--- cmake/compilers/GNU.cmake.orig
++++ cmake/compilers/GNU.cmake
+@@ -81,4 +81,3 @@ endif ()
+ 
+ # TBB malloc settings
+ set(TBBMALLOC_LIB_COMPILE_FLAGS -fno-rtti -fno-exceptions)
+-set(TBB_OPENMP_FLAG -fopenmp)
