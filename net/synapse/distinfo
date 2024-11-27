@@ -1,5 +1,5 @@
 SHA256 (cargo/aho-corasick-1.1.3.tar.gz) = jmDTQw06aUeK0Jk/GSONLfl8UHAJpSs8EK3c1/a8uRY=
-SHA256 (cargo/anyhow-1.0.92.tar.gz) = dPNxZtfUigKEuZ3YJGlMJhGccAtTvw0VQM2xR9varxM=
+SHA256 (cargo/anyhow-1.0.93.tar.gz) = TJXBC6CwCgJjYji4FJRkCLEyLVrEdgMm5vuOyVbYV3U=
 SHA256 (cargo/arc-swap-1.7.1.tar.gz) = aff4w5BrYrdUzVMmBHiUMWAh3P5aGUyOpSvdlJNKNFc=
 SHA256 (cargo/autocfg-1.3.0.tar.gz) = DEtNC9Jb0LdGgcCtIUl2EM4bfJGxAizSHIDG+92UdrA=
 SHA256 (cargo/base64-0.21.7.tar.gz) = nSl96xkluJ8szBPXY1+gcU8SyHrc4cdTVrOcqbcXhWc=
@@ -54,8 +54,8 @@ SHA256 (cargo/regex-automata-0.4.8.tar.gz) = NodY8jJ0cStQSEjp1abwEERcyLh6fNtNfL7
 SHA256 (cargo/regex-syntax-0.8.5.tar.gz) = KxXEMYa+Z6T9Y77lDQMDr//O84FJLr4sXYfzJOG4gVw=
 SHA256 (cargo/ryu-1.0.18.tar.gz) = 88tboNxDJCzhfemcGA6W25CyNbip/clUPJbSIJEWvZ8=
 SHA256 (cargo/scopeguard-1.2.0.tar.gz) = lBQ/N3JRCfksJi7Sz15ZvOdJjAG8wVAte5r+Q5pOn0k=
-SHA256 (cargo/serde-1.0.214.tar.gz) = 9Vwxk6ynHBKteJDxeF0rc+G59joLvDU8CO8m/gP8VrU=
-SHA256 (cargo/serde_derive-1.0.214.tar.gz) = 3lI/eB8JXij6YFzc4PgwfkUcwP0U4utM0umKNVsUd2Y=
+SHA256 (cargo/serde-1.0.215.tar.gz) = ZRPBrQsRqTdtqIjj4LqgB38a7VXBf1DnsjlxNhKfuI8=
+SHA256 (cargo/serde_derive-1.0.215.tar.gz) = rR6Gb4ZpI/JS8FyImYeZMUT7dOciQDRopOvXDDzXVsA=
 SHA256 (cargo/serde_json-1.0.132.tar.gz) = 1ya/r/SzICZtOViYkF0OugNFquI7VK7jpzfiYP1G2wM=
 SHA256 (cargo/sha1-0.10.6.tar.gz) = 47+Cmi1Rq0pd3xNS2EcMFAytyDAbKuF4nbAj8Bzt1ro=
 SHA256 (cargo/sha2-0.10.8.tar.gz) = eT23WtK8r8P/p8aLIV/uJo9TeYLNkB0TL4nGND86Pcg=
@@ -84,9 +84,9 @@ SHA256 (cargo/windows_i686_msvc-0.52.5.tar.gz) = 2zwr89E9W2WL5zRjKE6vEoMKyaJqkMc
 SHA256 (cargo/windows_x86_64_gnu-0.52.5.tar.gz) = TkJG92ve/wnrSIdaD9Pir2qtp51AnTMBGIbT4VgVF9k=
 SHA256 (cargo/windows_x86_64_gnullvm-0.52.5.tar.gz) = hSKY5ILNZ8NW3dlXA4bihitWc8hb1fiN+atoArM0xZY=
 SHA256 (cargo/windows_x86_64_msvc-0.52.5.tar.gz) = vsR+W/0b/w7q9ti0hcwQdIkaGXq0Il1QTLehq4iwK/A=
-SHA256 (synapse-1.119.0.tar.gz) = BoBF338TLFdeYwqY9dhURYtOXKFMxTzKIZm4VNVQeLA=
+SHA256 (synapse-1.120.0.tar.gz) = 9YM6nK/jDDiaWpA+tenpFUyK4sRDQ8X8Q+M+J1C9ZEI=
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
-SIZE (cargo/anyhow-1.0.92.tar.gz) = 47459
+SIZE (cargo/anyhow-1.0.93.tar.gz) = 47490
 SIZE (cargo/arc-swap-1.7.1.tar.gz) = 68512
 SIZE (cargo/autocfg-1.3.0.tar.gz) = 16524
 SIZE (cargo/base64-0.21.7.tar.gz) = 82576
@@ -141,8 +141,8 @@ SIZE (cargo/regex-automata-0.4.8.tar.gz) = 617784
 SIZE (cargo/regex-syntax-0.8.5.tar.gz) = 357541
 SIZE (cargo/ryu-1.0.18.tar.gz) = 47713
 SIZE (cargo/scopeguard-1.2.0.tar.gz) = 11619
-SIZE (cargo/serde-1.0.214.tar.gz) = 78523
-SIZE (cargo/serde_derive-1.0.214.tar.gz) = 56630
+SIZE (cargo/serde-1.0.215.tar.gz) = 78527
+SIZE (cargo/serde_derive-1.0.215.tar.gz) = 57092
 SIZE (cargo/serde_json-1.0.132.tar.gz) = 150549
 SIZE (cargo/sha1-0.10.6.tar.gz) = 13517
 SIZE (cargo/sha2-0.10.8.tar.gz) = 26357
@@ -171,4 +171,4 @@ SIZE (cargo/windows_i686_msvc-0.52.5.tar.gz) = 895404
 SIZE (cargo/windows_x86_64_gnu-0.52.5.tar.gz) = 831539
 SIZE (cargo/windows_x86_64_gnullvm-0.52.5.tar.gz) = 433246
 SIZE (cargo/windows_x86_64_msvc-0.52.5.tar.gz) = 827905
-SIZE (synapse-1.119.0.tar.gz) = 8813426
+SIZE (synapse-1.120.0.tar.gz) = 8819007

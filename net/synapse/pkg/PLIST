@@ -2120,6 +2120,9 @@ lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/88/01
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/88/02_fix_sliding_sync_membership_snapshots_forgotten_column.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/88/03_add_otk_ts_added_index.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/88/04_current_state_delta_index.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/88/05_drop_old_otks.sql.postgres
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/88/05_drop_old_otks.sql.sqlite
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/88/05_sliding_sync_room_config_index.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/full_schemas/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/full_schemas/72/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/full_schemas/72/full.sql.postgres

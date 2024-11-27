@@ -18,6 +18,15 @@ doas -u _synapse \
 	-c ${LOCALSTATEDIR}/synapse/homeserver.yaml \
 	http://localhost:8008
 
+Updating the database after an upgrade
+======================================
+On startup, synapse will fail to start if the database schema is too old.
+So, after an upgrade of synapse, you should update the database.
+It can be done with a command like this one:
+doas -u _synapse ${LOCALBASE}/bin/update_synapse_database \
+	--database-config /var/synapse/homeserver.yaml \
+	--run-background-updates
+
 Configuration with TLS
 ======================
 

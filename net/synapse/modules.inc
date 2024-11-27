@@ -1,5 +1,5 @@
 MODCARGO_CRATES +=	aho-corasick	1.1.3	# Unlicense OR MIT
-MODCARGO_CRATES +=	anyhow	1.0.92	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	anyhow	1.0.93	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	arc-swap	1.7.1	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	autocfg	1.3.0	# Apache-2.0 OR MIT
 MODCARGO_CRATES +=	base64	0.21.7	# MIT OR Apache-2.0
@@ -54,8 +54,8 @@ MODCARGO_CRATES +=	regex-automata	0.4.8	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	regex-syntax	0.8.5	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	ryu	1.0.18	# Apache-2.0 OR BSL-1.0
 MODCARGO_CRATES +=	scopeguard	1.2.0	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	serde	1.0.214	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	serde_derive	1.0.214	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	serde	1.0.215	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	serde_derive	1.0.215	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	serde_json	1.0.132	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	sha1	0.10.6	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	sha2	0.10.8	# MIT OR Apache-2.0
