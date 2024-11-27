@@ -23,7 +23,7 @@ Updating the database after an upgrade
 On startup, synapse will fail to start if the database schema is too old.
 So, after an upgrade of synapse, you should update the database.
 It can be done with a command like this one:
-doas -u _synapse ${LOCALBASE}/bin/update_synapse_database \
+doas -u _synapse ${PREFIX}/bin/update_synapse_database \
 	--database-config /var/synapse/homeserver.yaml \
 	--run-background-updates
 
