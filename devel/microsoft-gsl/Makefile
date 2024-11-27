@@ -11,7 +11,7 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 PKG_ARCH =		*
 
 # NO_BUILD may be set, but cmake gets upset
-COMPILER =		base-gcc ports-gcc
+COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake
 
