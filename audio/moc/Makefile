@@ -19,6 +19,9 @@ WANTLIB += x264 x265 xcb xcb-dri3 xml2 xvidcore z
 
 COMPILER =	base-clang ports-gcc
 
+# iconv.m4
+BUILD_DEPENDS+=	devel/gettext-tools
+
 RUN_DEPENDS+=	devel/desktop-file-utils \
 		x11/gtk+4,-guic
 
