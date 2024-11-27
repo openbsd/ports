@@ -1,7 +1,7 @@
 Index: virtinst/buildconfig.py
 --- virtinst/buildconfig.py.orig
 +++ virtinst/buildconfig.py
-@@ -62,7 +62,7 @@ class _BuildConfig(object):
+@@ -59,7 +59,7 @@ class _BuildConfig(object):
          self.icon_dir = None
          self.gsettings_dir = None
          self.running_from_srcdir = _running_from_srcdir
