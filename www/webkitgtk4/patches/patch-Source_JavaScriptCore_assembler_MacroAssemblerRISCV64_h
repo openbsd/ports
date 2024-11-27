@@ -1,5 +1,4 @@
-
-https://github.com/WebKit/WebKit/pull/36459/commits/de57a167af8ec11f1f12e2d1f40bcd60334f77d6
+https://github.com/WebKit/WebKit/pull/36459/
 
 From de57a167af8ec11f1f12e2d1f40bcd60334f77d6 Mon Sep 17 00:00:00 2001
 From: MingZhu Yan <yanmingzhu@iscas.ac.cn>
@@ -14,8 +13,7 @@ Date: Mon, 11 Nov 2024 00:56:40 +0800
     (JSC::MacroAssemblerRISCV64::add8):
 
 ========
-
-https://github.com/WebKit/WebKit/commit/11bb726032715079621145e442f7ded7812e5404
+https://github.com/WebKit/WebKit/pull/36460/
 
 commit 11bb726032715079621145e442f7ded7812e5404
 Author: MingZhu Yan <yanmingzhu@iscas.ac.cn>
