@@ -66,5 +66,6 @@ include/njs_value_conversion.h
 include/njs_variable.h
 include/njs_vm.h
 include/njs_vmcode.h
+include/qjs.h
 @static-lib lib/libnjs.a
 lib/pkgconfig/njs.pc

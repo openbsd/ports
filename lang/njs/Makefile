@@ -2,7 +2,7 @@ COMMENT=	NGINX JavaScript command line utility and static library
 
 GH_ACCOUNT=	nginx
 GH_PROJECT=	njs
-GH_TAGNAME=	0.8.4
+GH_TAGNAME=	0.8.7
 
 CATEGORIES=	lang www
 
@@ -22,6 +22,7 @@ LIB_DEPENDS=	devel/pcre2 \
 		textproc/libxml
 
 CONFIGURE_STYLE=simple
+CONFIGURE_ARGS+=	--no-quickjs
 
 ALL_TARGET=	libnjs njs
 
