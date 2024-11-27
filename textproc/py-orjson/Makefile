@@ -1,6 +1,7 @@
 COMMENT =		fast, correct Python JSON library
 
 MODPY_EGG_VERSION =	3.10.7
+REVISION =		0
 DISTNAME =		orjson-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 

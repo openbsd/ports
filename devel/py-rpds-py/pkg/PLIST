@@ -11,5 +11,5 @@ lib/python${MODPY_VERSION}/site-packages/rpds_py-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/rpds_py-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/rpds_py-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/rpds_py-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/rpds_py-${MODPY_EGG_VERSION}.dist-info/license_files/
-lib/python${MODPY_VERSION}/site-packages/rpds_py-${MODPY_EGG_VERSION}.dist-info/license_files/LICENSE
+lib/python${MODPY_VERSION}/site-packages/rpds_py-${MODPY_EGG_VERSION}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/rpds_py-${MODPY_EGG_VERSION}.dist-info/licenses/LICENSE

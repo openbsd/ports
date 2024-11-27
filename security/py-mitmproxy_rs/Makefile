@@ -4,6 +4,7 @@ NOT_FOR_ARCHS =		sparc64
 COMMENT =		Rust components used in mitmproxy
 
 MODPY_EGG_VERSION =	0.10.7
+REVISION =		0
 DISTNAME =		mitmproxy_rs-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 

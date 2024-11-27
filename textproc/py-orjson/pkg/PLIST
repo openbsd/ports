@@ -3,9 +3,9 @@ lib/python${MODPY_VERSION}/site-packages/orjson-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/orjson-${MODPY_EGG_VERSION}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/orjson-${MODPY_EGG_VERSION}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/orjson-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/orjson-${MODPY_EGG_VERSION}.dist-info/license_files/
-lib/python${MODPY_VERSION}/site-packages/orjson-${MODPY_EGG_VERSION}.dist-info/license_files/LICENSE-APACHE
-lib/python${MODPY_VERSION}/site-packages/orjson-${MODPY_EGG_VERSION}.dist-info/license_files/LICENSE-MIT
+lib/python${MODPY_VERSION}/site-packages/orjson-${MODPY_EGG_VERSION}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/orjson-${MODPY_EGG_VERSION}.dist-info/licenses/LICENSE-APACHE
+lib/python${MODPY_VERSION}/site-packages/orjson-${MODPY_EGG_VERSION}.dist-info/licenses/LICENSE-MIT
 lib/python${MODPY_VERSION}/site-packages/orjson/__init__.py
 lib/python${MODPY_VERSION}/site-packages/orjson/__init__.pyi
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/orjson/${MODPY_PYCACHE}/
