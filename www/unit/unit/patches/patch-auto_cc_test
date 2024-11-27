@@ -2,54 +2,23 @@ opt levels / debug should be under control of ports
 disable -Werror as it often causes build issues on less-common archs
 
 Index: auto/cc/test
---- auto/cc/test.orig
-+++ auto/cc/test
-@@ -104,7 +104,7 @@ case $NXT_CC_NAME in
-         # c99/gnu99 conflict with Solaris XOPEN.
-         #NXT_CFLAGS="$NXT_CFLAGS -std=gnu99"
+--- auto/cc/test.orig	Wed Nov 27 15:30:38 2024
++++ auto/cc/test	Wed Nov 27 15:31:32 2024
+@@ -69,7 +69,7 @@
+ 
+         NXT_CFLAGS="$NXT_CFLAGS -std=gnu11"
  
 -        NXT_CFLAGS="$NXT_CFLAGS -O"
 +        #NXT_CFLAGS="$NXT_CFLAGS -O"
-         #NXT_CFLAGS="$NXT_CFLAGS -O0"
-         NXT_CFLAGS="$NXT_CFLAGS -W -Wall -Wextra"
+         NXT_CFLAGS="$NXT_CFLAGS -Wall -Wextra"
  
-@@ -126,10 +126,10 @@ case $NXT_CC_NAME in
-         NXT_CFLAGS="$NXT_CFLAGS -Wmissing-prototypes"
+         #NXT_CFLAGS="$NXT_CFLAGS -Wunused-result"
+@@ -111,7 +111,7 @@
  
-         # Stop on warning.
--        NXT_CFLAGS="$NXT_CFLAGS -Werror"
-+        #NXT_CFLAGS="$NXT_CFLAGS -Werror"
- 
-         # Debug.
--        NXT_CFLAGS="$NXT_CFLAGS -g"
-+        #NXT_CFLAGS="$NXT_CFLAGS -g"
-     ;;
- 
-     clang)
-@@ -141,7 +141,7 @@ case $NXT_CC_NAME in
-         # Do not export symbols except explicitly marked with NXT_EXPORT.
-         NXT_CFLAGS="$NXT_CFLAGS -fvisibility=hidden"
+         NXT_CFLAGS="$NXT_CFLAGS -std=gnu11"
  
 -        NXT_CFLAGS="$NXT_CFLAGS -O"
 +        #NXT_CFLAGS="$NXT_CFLAGS -O"
-         #NXT_CFLAGS="$NXT_CFLAGS -O0"
-         NXT_CFLAGS="$NXT_CFLAGS -W -Wall -Wextra"
+         NXT_CFLAGS="$NXT_CFLAGS -Wall -Wextra"
  
-@@ -157,14 +157,15 @@ case $NXT_CC_NAME in
-         NXT_CFLAGS="$NXT_CFLAGS -Wmissing-prototypes"
- 
-         # Stop on warning.
--        NXT_CFLAGS="$NXT_CFLAGS -Werror"
-+        #NXT_CFLAGS="$NXT_CFLAGS -Werror"
- 
-         # Debug.
- 
-         if [ "$NXT_SYSTEM_PLATFORM" != "powerpc" ]; then
-             # "-g" flag causes the "unknown pseudo-op: `.cfi_sections'"
-             # error on PowerPC Clang.
--            NXT_CFLAGS="$NXT_CFLAGS -g"
-+            #NXT_CFLAGS="$NXT_CFLAGS -g"
-+            :
-         fi
-     ;;
- 
+         #NXT_CFLAGS="$NXT_CFLAGS -Wunused-result"
