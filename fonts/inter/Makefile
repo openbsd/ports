@@ -1,6 +1,6 @@
 COMMENT =	typeface carefully crafted & designed for computer screens
 
-V =		3.19
+V =		4.1
 DISTNAME =	Inter-$V
 PKGNAME =	inter-$V
 
@@ -23,8 +23,7 @@ WRKDIST =	${WRKDIR}
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/fonts/inter
-	${INSTALL_DATA} ${WRKSRC}/"Inter Desktop"/*.otf \
-		${WRKSRC}/"Inter Hinted for Windows"/Desktop/*.ttf \
+	${INSTALL_DATA} ${WRKSRC}/extras/otf/*.otf \
 		${PREFIX}/share/fonts/inter
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/inter
 	${INSTALL_DATA} ${WRKSRC}/LICENSE.txt ${PREFIX}/share/doc/inter
