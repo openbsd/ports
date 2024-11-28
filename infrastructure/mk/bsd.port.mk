@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1640 2024/10/18 22:39:30 kn Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1641 2024/11/28 09:53:09 tb Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -1355,11 +1355,11 @@ _ALL_VARIABLES += BROKEN COMES_WITH \
 	PKGPATHS DEBUG_PACKAGES DEBUG_CONFIGURE_ARGS \
 	FIX_CRLF_FILES EXTRACT_FILES DIST_TUPLE DIST_TUPLE_MV \
 	UNLINKED
-.if !empty(MODULES)
-.  for _m in ${MODULES}
+.  if !empty(MODULES)
+.    for _m in ${MODULES}
 _ALL_VARIABLES += ${.VARIABLES:MMOD${_m:T:U}*}
-.  endfor
-.endif
+.    endfor
+.  endif
 _ALL_VARIABLES_PER_ARCH += BROKEN
 # and stuff needing to be MULTI_PACKAGE'd
 _ALL_VARIABLES_INDEXED += COMMENT PKGNAME \
