@@ -46,8 +46,6 @@ lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}http_websocket.
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}http_websocket.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}http_writer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}http_writer.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}locks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}locks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}log.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}log.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}multipart.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -103,15 +101,42 @@ lib/python${MODPY_VERSION}/site-packages/aiohttp/${MODPY_PYCACHE}worker.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_cparser.pxd
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_find_header.pxd
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_headers.pxi
-@so lib/python${MODPY_VERSION}/site-packages/aiohttp/_helpers.${MODPY_PYC_MAGIC_TAG}so
-lib/python${MODPY_VERSION}/site-packages/aiohttp/_helpers.pyi
-lib/python${MODPY_VERSION}/site-packages/aiohttp/_helpers.pyx
 @so lib/python${MODPY_VERSION}/site-packages/aiohttp/_http_parser.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_http_parser.pyx
 @so lib/python${MODPY_VERSION}/site-packages/aiohttp/_http_writer.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/aiohttp/_http_writer.pyx
-@so lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket.${MODPY_PYC_MAGIC_TAG}so
-lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket.pyx
+lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/
+lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/.hash/
+lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/.hash/mask.pxd.hash
+lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/.hash/mask.pyx.hash
+lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/.hash/reader_c.pxd.hash
+lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/${MODPY_PYCACHE}models.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/${MODPY_PYCACHE}models.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/${MODPY_PYCACHE}reader.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/${MODPY_PYCACHE}reader.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/${MODPY_PYCACHE}reader_c.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/${MODPY_PYCACHE}reader_c.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/${MODPY_PYCACHE}reader_py.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/${MODPY_PYCACHE}reader_py.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/${MODPY_PYCACHE}writer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/${MODPY_PYCACHE}writer.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/helpers.py
+@so lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/mask.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/mask.pxd
+lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/mask.pyx
+lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/models.py
+lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/reader.py
+@so lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/reader_c.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/reader_c.pxd
+lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/reader_c.py
+lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/reader_py.py
+lib/python${MODPY_VERSION}/site-packages/aiohttp/_websocket/writer.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/abc.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/base_protocol.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/client.py
@@ -130,7 +155,6 @@ lib/python${MODPY_VERSION}/site-packages/aiohttp/http_exceptions.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/http_parser.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/http_websocket.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/http_writer.py
-lib/python${MODPY_VERSION}/site-packages/aiohttp/locks.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/log.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/multipart.py
 lib/python${MODPY_VERSION}/site-packages/aiohttp/payload.py
