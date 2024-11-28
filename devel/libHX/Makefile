@@ -1,6 +1,6 @@
 COMMENT=		C/C++ library with common data structures and functions
 
-DISTNAME =		libHX-4.23
+DISTNAME =		libHX-4.24
 CATEGORIES=		devel
 EXTRACT_SUFX=		.tar.xz
 
