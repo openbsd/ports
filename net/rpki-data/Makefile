@@ -6,8 +6,8 @@ MAINTAINER =		Job Snijders <job@openbsd.org>
 # public domain
 PERMIT_PACKAGE =	Yes
 
-DATE =			2023/08/03
-TIME =			T000429Z
+DATE =			2024/11/28
+TIME =			T000425Z
 DISTNAME =		rpki-${DATE:S|/||g}${TIME}
 PKGNAME =		rpki-data-${DATE:S|/|.|g}.${TIME:T%Z=%}
 
