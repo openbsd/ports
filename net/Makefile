@@ -638,7 +638,6 @@
      SUBDIR += radcli
      SUBDIR += rbldnsd
      SUBDIR += routinator
-     SUBDIR += rpki-data
      SUBDIR += rpkitouch
      SUBDIR += rrdpit
      SUBDIR += rrdtool
