@@ -277,7 +277,6 @@
      SUBDIR += mcast-proxy
      SUBDIR += meanwhile
      SUBDIR += megatools
-     SUBDIR += mfi
      SUBDIR += microblog-purple
      SUBDIR += miniflux
      SUBDIR += mininet
