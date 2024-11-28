@@ -1,6 +1,6 @@
 COMMENT=	library to determine file type
 
-V=		5.45
+V=		5.46
 DISTNAME=	file-${V}
 PKGNAME=	libmagic-${V}
 
