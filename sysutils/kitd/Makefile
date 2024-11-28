@@ -10,6 +10,10 @@ MAINTAINER =	Lydia Sobot <chilledfrogs@disroot.org>
 # AGPLv3+
 PERMIT_PACKAGE =	Yes
 
+# c11
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 # uses pledge()
 WANTLIB = c
 
