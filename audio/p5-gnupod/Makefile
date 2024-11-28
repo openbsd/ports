@@ -1,3 +1,5 @@
+BROKEN =	needs modifying for neweer Perl; dead upstream
+
 COMMENT =	collection of perl scripts to manage your iPod
 
 DISTNAME =	gnupod-0.99.8
