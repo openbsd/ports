@@ -56,6 +56,7 @@
      SUBDIR += xastir
      SUBDIR += xdx
      SUBDIR += xlog
+     SUBDIR += zigpy
      SUBDIR += zmtx-zmrx
 
 .include <bsd.port.subdir.mk>

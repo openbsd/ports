@@ -1,12 +1,20 @@
 Index: conserver/group.c
 --- conserver/group.c.orig
 +++ conserver/group.c
-@@ -753,7 +753,7 @@ CheckPass(char *pcUser, char *pcWord, FLAG empty_check
+@@ -753,9 +753,14 @@ CheckPass(char *pcUser, char *pcWord, FLAG empty_check
      struct spwd *spwd;
  # endif
  
 -    if ((pwd = getpwnam(pcUser)) == (struct passwd *)0) {
+-	CONDDEBUG((1, "CheckPass(): getpwnam(%s): %s", pcUser,
 +    if ((pwd = getpwnam_shadow(pcUser)) == (struct passwd *)0) {
- 	CONDDEBUG((1, "CheckPass(): getpwnam(%s): %s", pcUser,
++	CONDDEBUG((1, "CheckPass(): getpwnam_shadow(%s): %s", pcUser,
  		   strerror(errno)));
++	retval = AUTH_NOUSER;
++	goto finished_pass;
++    }
++    if (strcmp(pwd->pw_passwd, "*") == 0) {
++	CONDDEBUG((1, "CheckPass(): getpwnam_shadow(%s) did not return password hash; either the account's password is disabled, or _conserver is not in group _shadow", pcUser);
  	retval = AUTH_NOUSER;
+ 	goto finished_pass;
+     }
