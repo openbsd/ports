@@ -24,8 +24,7 @@ MODPY_PYBUILD=	setuptools
 
 # otherwise the cpython extension is not found, and py-lmdb falls back
 # to a cffi-based implementation
-MODPY_TEST_DIR=	${WRKSRC}/build
-MODPY_PYTEST_ARGS= ..
+MODPY_TEST_LINK_SO= Yes
 
 LIB_DEPENDS=	databases/lmdb
 MAKE_ENV=	LMDB_INCLUDEDIR=${LOCALBASE}/include \
