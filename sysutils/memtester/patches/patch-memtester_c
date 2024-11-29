@@ -1,7 +1,7 @@
 Index: memtester.c
 --- memtester.c.orig
 +++ memtester.c
-@@ -343,7 +343,7 @@ int main(int argc, char **argv) {
+@@ -347,7 +347,7 @@ int main(int argc, char **argv) {
                          wantbytes = wantbytes_orig;
                          break;
                      default:
