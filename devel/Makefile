@@ -1417,6 +1417,7 @@
      SUBDIR += py-cppy,python3
      SUBDIR += py-crayons,python3
      SUBDIR += py-crc32c,python3
+     SUBDIR += py-crccheck,python3
      SUBDIR += py-cruft,python3
      SUBDIR += py-cstruct,python3
      SUBDIR += py-curio,python3
