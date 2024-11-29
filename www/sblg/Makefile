@@ -1,6 +1,6 @@
 COMMENT =	simple off-line blog utility
 
-DISTNAME =	sblg-0.5.11
+DISTNAME =	sblg-0.6.1
 CATEGORIES =	www
 
 HOMEPAGE =	https://kristaps.bsd.lv/sblg/
@@ -20,6 +20,7 @@ MAKE_FLAGS =		CC="${CC}"
 CONFIGURE_STYLE =	simple
 
 TEST_TARGET = 		regress
+TEST_DEPENDS =		textproc/jq
 
 ALL_TARGET =		sblg
 
