@@ -1360,6 +1360,7 @@
      SUBDIR += py-astunparse,python3
      SUBDIR += py-async-lru,python3
      SUBDIR += py-async-timeout,python3
+     SUBDIR += py-asynctest,python3
      SUBDIR += py-atomicwrites,python3
      SUBDIR += py-attrs,python3
      SUBDIR += py-autocommand,python3
@@ -1648,6 +1649,7 @@
      SUBDIR += py-serial,python3
      SUBDIR += py-setproctitle,python3
      SUBDIR += py-setuptools,python3
+     SUBDIR += py-setuptools-git-versioning,python3
      SUBDIR += py-setuptools-rust,python3
      SUBDIR += py-setuptools_git,python3
      SUBDIR += py-setuptools_scm,python3
