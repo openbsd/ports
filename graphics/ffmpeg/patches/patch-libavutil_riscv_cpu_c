@@ -1,5 +1,7 @@
 - avutil/cpu_internal: Provide ff_getauxval() wrapper for getauxvaul()
   fe4b9ef69f10df2424e22cc8a1a63848c0857460
+- libavutil/riscv: Make use of elf_aux_info() on FreeBSD / OpenBSD riscv
+  f3eca3f387092c596f035a126fba15a30c3a9499
 
 Index: libavutil/riscv/cpu.c
 --- libavutil/riscv/cpu.c.orig
