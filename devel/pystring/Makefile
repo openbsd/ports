@@ -2,8 +2,7 @@ COMMENT =	C++ functions analogous to Python string methods
 
 GH_ACCOUNT =	imageworks
 GH_PROJECT =	pystring
-GH_TAGNAME =	v1.1.3
-REVISION =	0
+GH_TAGNAME =	v1.1.4
 
 SHARED_LIBS +=  pystring                  0.0 # 0.0
 
