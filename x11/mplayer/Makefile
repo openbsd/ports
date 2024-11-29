@@ -3,13 +3,14 @@ COMMENT=	movie player supporting many formats
 V=		20240803
 FFMPEG_V=	6.1.2
 DISTNAME=	mplayer-${V}
+REVISION=	0
 CATEGORIES=	x11 multimedia
 SITES=		https://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
 
 USE_NOBTCFI=	Yes
 
-HOMEPAGE=	http://www.mplayerhq.hu/
+HOMEPAGE=	https://www.mplayerhq.hu/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
