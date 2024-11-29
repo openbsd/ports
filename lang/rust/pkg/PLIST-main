@@ -4,11 +4,8 @@
 @bin bin/rustc
 @bin bin/rustdoc
 @so lib/librustc_driver-${LIBRUST_HASH}11.so
-@so lib/libstd-${LIBRUST_HASH}15.so
 lib/rustlib/
 lib/rustlib/${TRIPLE_ARCH}/
-lib/rustlib/${TRIPLE_ARCH}/bin/
-@bin lib/rustlib/${TRIPLE_ARCH}/bin/wasm-component-ld
 lib/rustlib/${TRIPLE_ARCH}/lib/
 lib/rustlib/${TRIPLE_ARCH}/lib/libaddr2line-${LIBRUST_HASH}00.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/libadler-${LIBRUST_HASH}01.rlib

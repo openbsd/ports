@@ -85,9 +85,7 @@ lib/rustlib/src/rust/library/alloc/src/raw_vec/tests.rs
 lib/rustlib/src/rust/library/alloc/src/rc/
 lib/rustlib/src/rust/library/alloc/src/rc.rs
 lib/rustlib/src/rust/library/alloc/src/rc/tests.rs
-lib/rustlib/src/rust/library/alloc/src/slice/
 lib/rustlib/src/rust/library/alloc/src/slice.rs
-lib/rustlib/src/rust/library/alloc/src/slice/tests.rs
 lib/rustlib/src/rust/library/alloc/src/str.rs
 lib/rustlib/src/rust/library/alloc/src/string.rs
 lib/rustlib/src/rust/library/alloc/src/sync/
@@ -131,6 +129,13 @@ lib/rustlib/src/rust/library/alloc/tests/lib.rs
 lib/rustlib/src/rust/library/alloc/tests/linked_list.rs
 lib/rustlib/src/rust/library/alloc/tests/rc.rs
 lib/rustlib/src/rust/library/alloc/tests/slice.rs
+lib/rustlib/src/rust/library/alloc/tests/sort/
+lib/rustlib/src/rust/library/alloc/tests/sort/ffi_types.rs
+lib/rustlib/src/rust/library/alloc/tests/sort/known_good_stable_sort.rs
+lib/rustlib/src/rust/library/alloc/tests/sort/mod.rs
+lib/rustlib/src/rust/library/alloc/tests/sort/patterns.rs
+lib/rustlib/src/rust/library/alloc/tests/sort/tests.rs
+lib/rustlib/src/rust/library/alloc/tests/sort/zipf.rs
 lib/rustlib/src/rust/library/alloc/tests/str.rs
 lib/rustlib/src/rust/library/alloc/tests/string.rs
 lib/rustlib/src/rust/library/alloc/tests/task.rs
@@ -540,6 +545,7 @@ lib/rustlib/src/rust/library/core/src/ptr/mod.rs
 lib/rustlib/src/rust/library/core/src/ptr/mut_ptr.rs
 lib/rustlib/src/rust/library/core/src/ptr/non_null.rs
 lib/rustlib/src/rust/library/core/src/ptr/unique.rs
+lib/rustlib/src/rust/library/core/src/random.rs
 lib/rustlib/src/rust/library/core/src/range/
 lib/rustlib/src/rust/library/core/src/range.rs
 lib/rustlib/src/rust/library/core/src/range/iter.rs
@@ -568,6 +574,7 @@ lib/rustlib/src/rust/library/core/src/slice/sort/stable/drift.rs
 lib/rustlib/src/rust/library/core/src/slice/sort/stable/merge.rs
 lib/rustlib/src/rust/library/core/src/slice/sort/stable/mod.rs
 lib/rustlib/src/rust/library/core/src/slice/sort/stable/quicksort.rs
+lib/rustlib/src/rust/library/core/src/slice/sort/stable/tiny.rs
 lib/rustlib/src/rust/library/core/src/slice/sort/unstable/
 lib/rustlib/src/rust/library/core/src/slice/sort/unstable/heapsort.rs
 lib/rustlib/src/rust/library/core/src/slice/sort/unstable/mod.rs
@@ -1125,6 +1132,10 @@ lib/rustlib/src/rust/library/std/src/os/nto/
 lib/rustlib/src/rust/library/std/src/os/nto/fs.rs
 lib/rustlib/src/rust/library/std/src/os/nto/mod.rs
 lib/rustlib/src/rust/library/std/src/os/nto/raw.rs
+lib/rustlib/src/rust/library/std/src/os/nuttx/
+lib/rustlib/src/rust/library/std/src/os/nuttx/fs.rs
+lib/rustlib/src/rust/library/std/src/os/nuttx/mod.rs
+lib/rustlib/src/rust/library/std/src/os/nuttx/raw.rs
 lib/rustlib/src/rust/library/std/src/os/openbsd/
 lib/rustlib/src/rust/library/std/src/os/openbsd/fs.rs
 lib/rustlib/src/rust/library/std/src/os/openbsd/mod.rs
@@ -1136,6 +1147,10 @@ lib/rustlib/src/rust/library/std/src/os/redox/
 lib/rustlib/src/rust/library/std/src/os/redox/fs.rs
 lib/rustlib/src/rust/library/std/src/os/redox/mod.rs
 lib/rustlib/src/rust/library/std/src/os/redox/raw.rs
+lib/rustlib/src/rust/library/std/src/os/rtems/
+lib/rustlib/src/rust/library/std/src/os/rtems/fs.rs
+lib/rustlib/src/rust/library/std/src/os/rtems/mod.rs
+lib/rustlib/src/rust/library/std/src/os/rtems/raw.rs
 lib/rustlib/src/rust/library/std/src/os/solaris/
 lib/rustlib/src/rust/library/std/src/os/solaris/fs.rs
 lib/rustlib/src/rust/library/std/src/os/solaris/mod.rs
@@ -1238,6 +1253,7 @@ lib/rustlib/src/rust/library/std/src/prelude/mod.rs
 lib/rustlib/src/rust/library/std/src/process/
 lib/rustlib/src/rust/library/std/src/process.rs
 lib/rustlib/src/rust/library/std/src/process/tests.rs
+lib/rustlib/src/rust/library/std/src/random.rs
 lib/rustlib/src/rust/library/std/src/rt.rs
 lib/rustlib/src/rust/library/std/src/sync/
 lib/rustlib/src/rust/library/std/src/sync/barrier/
@@ -1258,6 +1274,7 @@ lib/rustlib/src/rust/library/std/src/sync/mpmc/error.rs
 lib/rustlib/src/rust/library/std/src/sync/mpmc/list.rs
 lib/rustlib/src/rust/library/std/src/sync/mpmc/mod.rs
 lib/rustlib/src/rust/library/std/src/sync/mpmc/select.rs
+lib/rustlib/src/rust/library/std/src/sync/mpmc/tests.rs
 lib/rustlib/src/rust/library/std/src/sync/mpmc/utils.rs
 lib/rustlib/src/rust/library/std/src/sync/mpmc/waker.rs
 lib/rustlib/src/rust/library/std/src/sync/mpmc/zero.rs
@@ -1395,7 +1412,6 @@ lib/rustlib/src/rust/library/std/src/sys/pal/teeos/
 lib/rustlib/src/rust/library/std/src/sys/pal/teeos/mod.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/teeos/net.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/teeos/os.rs
-lib/rustlib/src/rust/library/std/src/sys/pal/teeos/rand.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/teeos/stdio.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/teeos/thread.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/uefi/
@@ -1451,7 +1467,6 @@ lib/rustlib/src/rust/library/std/src/sys/pal/unix/process/process_unsupported/wa
 lib/rustlib/src/rust/library/std/src/sys/pal/unix/process/process_unsupported/wait_status/tests.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/unix/process/process_vxworks.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/unix/process/zircon.rs
-lib/rustlib/src/rust/library/std/src/sys/pal/unix/rand.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/unix/stack_overflow.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/unix/stdio.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/unix/thread.rs
@@ -1488,6 +1503,7 @@ lib/rustlib/src/rust/library/std/src/sys/pal/wasi/time.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/wasip2/
 lib/rustlib/src/rust/library/std/src/sys/pal/wasip2/cabi_realloc.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/wasip2/mod.rs
+lib/rustlib/src/rust/library/std/src/sys/pal/wasip2/net.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/wasm/
 lib/rustlib/src/rust/library/std/src/sys/pal/wasm/atomics/
 lib/rustlib/src/rust/library/std/src/sys/pal/wasm/atomics/futex.rs
@@ -1508,7 +1524,9 @@ lib/rustlib/src/rust/library/std/src/sys/pal/windows/c/bindings.txt
 lib/rustlib/src/rust/library/std/src/sys/pal/windows/c/windows_sys.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/windows/compat.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/windows/env.rs
+lib/rustlib/src/rust/library/std/src/sys/pal/windows/fs/
 lib/rustlib/src/rust/library/std/src/sys/pal/windows/fs.rs
+lib/rustlib/src/rust/library/std/src/sys/pal/windows/fs/remove_dir_all.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/windows/futex.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/windows/handle/
 lib/rustlib/src/rust/library/std/src/sys/pal/windows/handle.rs
@@ -1523,7 +1541,6 @@ lib/rustlib/src/rust/library/std/src/sys/pal/windows/pipe.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/windows/process/
 lib/rustlib/src/rust/library/std/src/sys/pal/windows/process.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/windows/process/tests.rs
-lib/rustlib/src/rust/library/std/src/sys/pal/windows/rand.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/windows/stack_overflow.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/windows/stack_overflow_uwp.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/windows/stdio/
@@ -1566,6 +1583,27 @@ lib/rustlib/src/rust/library/std/src/sys/personality/dwarf/tests.rs
 lib/rustlib/src/rust/library/std/src/sys/personality/emcc.rs
 lib/rustlib/src/rust/library/std/src/sys/personality/gcc.rs
 lib/rustlib/src/rust/library/std/src/sys/personality/mod.rs
+lib/rustlib/src/rust/library/std/src/sys/random/
+lib/rustlib/src/rust/library/std/src/sys/random/apple.rs
+lib/rustlib/src/rust/library/std/src/sys/random/arc4random.rs
+lib/rustlib/src/rust/library/std/src/sys/random/espidf.rs
+lib/rustlib/src/rust/library/std/src/sys/random/fuchsia.rs
+lib/rustlib/src/rust/library/std/src/sys/random/getentropy.rs
+lib/rustlib/src/rust/library/std/src/sys/random/hermit.rs
+lib/rustlib/src/rust/library/std/src/sys/random/horizon.rs
+lib/rustlib/src/rust/library/std/src/sys/random/linux.rs
+lib/rustlib/src/rust/library/std/src/sys/random/mod.rs
+lib/rustlib/src/rust/library/std/src/sys/random/redox.rs
+lib/rustlib/src/rust/library/std/src/sys/random/sgx.rs
+lib/rustlib/src/rust/library/std/src/sys/random/solid.rs
+lib/rustlib/src/rust/library/std/src/sys/random/teeos.rs
+lib/rustlib/src/rust/library/std/src/sys/random/uefi.rs
+lib/rustlib/src/rust/library/std/src/sys/random/unix_legacy.rs
+lib/rustlib/src/rust/library/std/src/sys/random/unsupported.rs
+lib/rustlib/src/rust/library/std/src/sys/random/vxworks.rs
+lib/rustlib/src/rust/library/std/src/sys/random/wasi.rs
+lib/rustlib/src/rust/library/std/src/sys/random/windows.rs
+lib/rustlib/src/rust/library/std/src/sys/random/zkvm.rs
 lib/rustlib/src/rust/library/std/src/sys/sync/
 lib/rustlib/src/rust/library/std/src/sys/sync/condvar/
 lib/rustlib/src/rust/library/std/src/sys/sync/condvar/futex.rs
@@ -1574,7 +1612,6 @@ lib/rustlib/src/rust/library/std/src/sys/sync/condvar/mod.rs
 lib/rustlib/src/rust/library/std/src/sys/sync/condvar/no_threads.rs
 lib/rustlib/src/rust/library/std/src/sys/sync/condvar/pthread.rs
 lib/rustlib/src/rust/library/std/src/sys/sync/condvar/sgx.rs
-lib/rustlib/src/rust/library/std/src/sys/sync/condvar/teeos.rs
 lib/rustlib/src/rust/library/std/src/sys/sync/condvar/windows7.rs
 lib/rustlib/src/rust/library/std/src/sys/sync/condvar/xous.rs
 lib/rustlib/src/rust/library/std/src/sys/sync/mod.rs
@@ -1593,6 +1630,7 @@ lib/rustlib/src/rust/library/std/src/sys/sync/once/futex.rs
 lib/rustlib/src/rust/library/std/src/sys/sync/once/mod.rs
 lib/rustlib/src/rust/library/std/src/sys/sync/once/no_threads.rs
 lib/rustlib/src/rust/library/std/src/sys/sync/once/queue.rs
+lib/rustlib/src/rust/library/std/src/sys/sync/once_box.rs
 lib/rustlib/src/rust/library/std/src/sys/sync/rwlock/
 lib/rustlib/src/rust/library/std/src/sys/sync/rwlock/futex.rs
 lib/rustlib/src/rust/library/std/src/sys/sync/rwlock/mod.rs
@@ -1635,7 +1673,6 @@ lib/rustlib/src/rust/library/std/src/sys/thread_local/statik.rs
 lib/rustlib/src/rust/library/std/src/sys_common/
 lib/rustlib/src/rust/library/std/src/sys_common/fs.rs
 lib/rustlib/src/rust/library/std/src/sys_common/io.rs
-lib/rustlib/src/rust/library/std/src/sys_common/lazy_box.rs
 lib/rustlib/src/rust/library/std/src/sys_common/mod.rs
 lib/rustlib/src/rust/library/std/src/sys_common/net/
 lib/rustlib/src/rust/library/std/src/sys_common/net.rs
@@ -1647,6 +1684,7 @@ lib/rustlib/src/rust/library/std/src/sys_common/wtf8/
 lib/rustlib/src/rust/library/std/src/sys_common/wtf8.rs
 lib/rustlib/src/rust/library/std/src/sys_common/wtf8/tests.rs
 lib/rustlib/src/rust/library/std/src/thread/
+lib/rustlib/src/rust/library/std/src/thread/current.rs
 lib/rustlib/src/rust/library/std/src/thread/local/
 lib/rustlib/src/rust/library/std/src/thread/local.rs
 lib/rustlib/src/rust/library/std/src/thread/local/dynamic_tests.rs
@@ -1751,6 +1789,7 @@ lib/rustlib/src/rust/library/stdarch/crates/core_arch/rustfmt.toml
 lib/rustlib/src/rust/library/stdarch/crates/core_arch/src/
 lib/rustlib/src/rust/library/stdarch/crates/core_arch/src/aarch64/
 lib/rustlib/src/rust/library/stdarch/crates/core_arch/src/aarch64/mod.rs
+lib/rustlib/src/rust/library/stdarch/crates/core_arch/src/aarch64/mte.rs
 lib/rustlib/src/rust/library/stdarch/crates/core_arch/src/aarch64/neon/
 lib/rustlib/src/rust/library/stdarch/crates/core_arch/src/aarch64/neon/generated.rs
 lib/rustlib/src/rust/library/stdarch/crates/core_arch/src/aarch64/neon/mod.rs
@@ -1930,6 +1969,8 @@ lib/rustlib/src/rust/library/stdarch/crates/std_detect/src/detect/macros.rs
 lib/rustlib/src/rust/library/stdarch/crates/std_detect/src/detect/mod.rs
 lib/rustlib/src/rust/library/stdarch/crates/std_detect/src/detect/os/
 lib/rustlib/src/rust/library/stdarch/crates/std_detect/src/detect/os/aarch64.rs
+lib/rustlib/src/rust/library/stdarch/crates/std_detect/src/detect/os/darwin/
+lib/rustlib/src/rust/library/stdarch/crates/std_detect/src/detect/os/darwin/aarch64.rs
 lib/rustlib/src/rust/library/stdarch/crates/std_detect/src/detect/os/freebsd/
 lib/rustlib/src/rust/library/stdarch/crates/std_detect/src/detect/os/freebsd/aarch64.rs
 lib/rustlib/src/rust/library/stdarch/crates/std_detect/src/detect/os/freebsd/arm.rs
@@ -1946,8 +1987,6 @@ lib/rustlib/src/rust/library/stdarch/crates/std_detect/src/detect/os/linux/mips.
 lib/rustlib/src/rust/library/stdarch/crates/std_detect/src/detect/os/linux/mod.rs
 lib/rustlib/src/rust/library/stdarch/crates/std_detect/src/detect/os/linux/powerpc.rs
 lib/rustlib/src/rust/library/stdarch/crates/std_detect/src/detect/os/linux/riscv.rs
-lib/rustlib/src/rust/library/stdarch/crates/std_detect/src/detect/os/macos/
-lib/rustlib/src/rust/library/stdarch/crates/std_detect/src/detect/os/macos/aarch64.rs
 lib/rustlib/src/rust/library/stdarch/crates/std_detect/src/detect/os/openbsd/
 lib/rustlib/src/rust/library/stdarch/crates/std_detect/src/detect/os/openbsd/aarch64.rs
 lib/rustlib/src/rust/library/stdarch/crates/std_detect/src/detect/os/other.rs

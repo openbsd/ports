@@ -4,7 +4,7 @@ aarch64: make -Z branch-protection=bti,pac-ret the default
 Index: compiler/rustc_session/src/options.rs
 --- compiler/rustc_session/src/options.rs.orig
 +++ compiler/rustc_session/src/options.rs
-@@ -1636,6 +1636,24 @@ options! {
+@@ -1674,6 +1674,24 @@ options! {
      // - src/doc/rustc/src/codegen-options/index.md
  }
  
@@ -29,7 +29,7 @@ Index: compiler/rustc_session/src/options.rs
  options! {
      UnstableOptions, Z_OPTIONS, dbopts, "Z", "unstable",
  
-@@ -1659,9 +1677,9 @@ options! {
+@@ -1697,9 +1715,9 @@ options! {
          (default: no)"),
      box_noalias: bool = (true, parse_bool, [TRACKED],
          "emit noalias metadata for box (default: yes)"),
