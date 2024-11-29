@@ -3,6 +3,7 @@
      SUBDIR += birda
      SUBDIR += bottlerocket
      SUBDIR += c3270
+     SUBDIR += cc2538-bsl
      SUBDIR += chirp
      SUBDIR += colrdx
      SUBDIR += conserver
@@ -38,6 +39,7 @@
      SUBDIR += pterm
      SUBDIR += py-dmr_utils3,python3
      SUBDIR += py-gammu
+     SUBDIR += py-serial-asyncio,python3
      SUBDIR += qodem
      SUBDIR += qpage
      SUBDIR += rtl-sdr
