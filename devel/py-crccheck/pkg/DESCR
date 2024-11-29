@@ -1,0 +1,4 @@
+Python classes to calculate cyclic redundancy codes (CRCs) of all
+types listed in the "Catalogue of parametrised CRC algorithms"
+(http://reveng.sourceforge.net/crc-catalogue/) and checksums from
+binary data.
