@@ -1,4 +1,4 @@
-V =		2111.01
+V =		2404.23
 COMMENT =	Microsoft programming/terminal font
 DISTNAME =	CascadiaCode-${V}
 PKGNAME =	cascadia-code-${V}
@@ -19,6 +19,6 @@ NO_BUILD =	Yes
 NO_TEST =	Yes
 
 MODFONT_FONTDIR =	${PREFIX}/share/fonts/cascadia
-MODFONT_FONTFILES =	ttf/*.ttf otf/static/*.otf
+MODFONT_FONTFILES =	otf/static/*.otf
 
 .include <bsd.port.mk>
