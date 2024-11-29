@@ -1,0 +1,17 @@
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -22,11 +22,8 @@ setup(
+     ],
+     platforms="posix",
+     python_requires=">=3.4",
+-    setup_requires=["setuptools_scm"],
+-    use_scm_version=lambda: {
+-        "version_scheme": "post-release",
+-        "local_scheme": "node-and-date",
+-        },
++    version="2.1",
++    setup_requires=["setuptools"],
+     install_requires=["pyserial"],
+     extras_require={
+         'cc2538-bsl': ["intelhex"],

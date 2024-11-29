@@ -1,0 +1,4 @@
+Python script that communicates with the boot loader of the Texas
+Instruments CC2538, CC26xx and CC13xx System on Chips (SoCs). It can be
+used to erase, program, verify and read the flash of those SoCs with a
+simple USB to serial converter.
