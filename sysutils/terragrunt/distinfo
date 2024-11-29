@@ -89,8 +89,8 @@ SHA256 (go_modules/cloud.google.com/go/assuredworkloads/@v/v1.12.1.zip) = YpqsVW
 SHA256 (go_modules/cloud.google.com/go/assuredworkloads/@v/v1.5.0.mod) = zCxkriFXLUYU/Icn41hH2S2joHxJfon1Tg4HL9IcurA=
 SHA256 (go_modules/cloud.google.com/go/assuredworkloads/@v/v1.6.0.mod) = rAh760/LYZp4+PAp0mdUn0HxLbPj06SO9RpawPWb/rY=
 SHA256 (go_modules/cloud.google.com/go/assuredworkloads/@v/v1.7.0.mod) = xwjhSnaZGaqwfWb2eplGdd6qIKZ3SGRmK587YfJRg04=
-SHA256 (go_modules/cloud.google.com/go/auth/@v/v0.10.0.mod) = zeHk0EC0pSjalP4LZkeHrEdHnWZIxxBdeURgJ58W6P0=
-SHA256 (go_modules/cloud.google.com/go/auth/@v/v0.10.0.zip) = gnCGo+lKpKsM4W/1ykaYZd/TPiIRk70u9rqKBX60kJw=
+SHA256 (go_modules/cloud.google.com/go/auth/@v/v0.10.2.mod) = zeHk0EC0pSjalP4LZkeHrEdHnWZIxxBdeURgJ58W6P0=
+SHA256 (go_modules/cloud.google.com/go/auth/@v/v0.10.2.zip) = UjkYCshiurXp7UG2yIF+Etp8pvV/Fw2MEn06CTejwC4=
 SHA256 (go_modules/cloud.google.com/go/auth/@v/v0.3.0.mod) = 4HJ8NcAne7IBFPKzSOdyhD1C8lMReziMm7Po9GWCZhw=
 SHA256 (go_modules/cloud.google.com/go/auth/@v/v0.6.0.mod) = bKkfo0MRnsKCejL2aRSp1HBHwIuRAhrOJA+120jN9vM=
 SHA256 (go_modules/cloud.google.com/go/auth/@v/v0.7.0.mod) = a+9jZ0uBjTP74TNzNYflFoMKpTe+ZOYrqLi5PqmU/OI=
@@ -425,8 +425,8 @@ SHA256 (go_modules/cloud.google.com/go/storage/@v/v1.35.1.mod) = A2BdU7aPBTpD5Ex
 SHA256 (go_modules/cloud.google.com/go/storage/@v/v1.42.0.mod) = DwzWAXzjSKMNVQxVmVOshGSoRMAoVVNfYjIQmlMXBxQ=
 SHA256 (go_modules/cloud.google.com/go/storage/@v/v1.43.0.mod) = myUALtIZXvIvBzRaIVTSMBaZ3VEZTnSIPQwmj5jzVrg=
 SHA256 (go_modules/cloud.google.com/go/storage/@v/v1.44.0.mod) = nWX+a4ewtCc182zGyfz+4BeHQLVwRiJWlhoeYnCSKTY=
-SHA256 (go_modules/cloud.google.com/go/storage/@v/v1.46.0.mod) = AHARQv7MpGnaPcuf102Jx1Q6i3t6cHxjLsIw11f49qw=
-SHA256 (go_modules/cloud.google.com/go/storage/@v/v1.46.0.zip) = x0KUDg1YztE6itD6ZvY/5D4nwxa8iA1lJEQ2r4Y3oRc=
+SHA256 (go_modules/cloud.google.com/go/storage/@v/v1.47.0.mod) = Sul6jPhZ26kp6xnwAsNvka0eAaAp5Ih5VV3w5p0JpTg=
+SHA256 (go_modules/cloud.google.com/go/storage/@v/v1.47.0.zip) = al2KVLaiJMcvpn/yRwA11Kaqwj9UIK1nU/QQK4ZGTzE=
 SHA256 (go_modules/cloud.google.com/go/storage/@v/v1.5.0.mod) = 16E0qqEHfDOku9V6kS5Q4Ujk0AApZowJau9GZOgB8ls=
 SHA256 (go_modules/cloud.google.com/go/storage/@v/v1.6.0.mod) = LyqETUzzdDAyU04QhhXs+WSObZAhzXreG+hRWTpNduI=
 SHA256 (go_modules/cloud.google.com/go/storage/@v/v1.8.0.mod) = UAjocNysCFV4giSP2IjSizFIH41AmKkZHeRz2Q4yS2A=
@@ -678,7 +678,8 @@ SHA256 (go_modules/github.com/aws/aws-lambda-go/@v/v1.13.3.zip) = jPxUAHmKvShA9F
 SHA256 (go_modules/github.com/aws/aws-sdk-go-v2/@v/v1.16.16.mod) = 7hT9VdHAtovXCeTeQ6ntF6bg9kaPEQKz3DJ8VgTGILY=
 SHA256 (go_modules/github.com/aws/aws-sdk-go-v2/@v/v1.30.0.mod) = Ozhlj5BOszOsp6poFAv7hy7wlKuvmDg14C4ENOH9BCc=
 SHA256 (go_modules/github.com/aws/aws-sdk-go-v2/@v/v1.30.3.mod) = UkLow/bvY4matS7TOAHyUV+RY9LV4XixKjtpnEI+F60=
-SHA256 (go_modules/github.com/aws/aws-sdk-go-v2/@v/v1.30.3.zip) = 07iPxZMeLx+REv8smWwjJndQ6BTkAQ23Zq7pFapajz4=
+SHA256 (go_modules/github.com/aws/aws-sdk-go-v2/@v/v1.32.5.mod) = y2AH7gIAahjni3tw2uLp/lW/5j4PAuRMyUXBF3C9SYo=
+SHA256 (go_modules/github.com/aws/aws-sdk-go-v2/@v/v1.32.5.zip) = 7w09hWD+WKZOysm2hpXHcSzwnRljHgMjgaQI0nmFXYI=
 SHA256 (go_modules/github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream/@v/v1.4.3.mod) = IuWgV+4+W9PMXTJBSTuXhTF6yiyu7xF+DHuA/YnOJDI=
 SHA256 (go_modules/github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream/@v/v1.6.2.mod) = a8heKozjjClinvQ1NBLR/pOFSekSGK0Sy16QjWgMU4Y=
 SHA256 (go_modules/github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream/@v/v1.6.2.zip) = 42WfG3gXcI1FQWylLu9aQDObuwY6p7ocn4MRX/IZzsE=
@@ -756,7 +757,8 @@ SHA256 (go_modules/github.com/aws/aws-sdk-go/@v/v1.55.5.zip) = XQUi2VKCSnnYN7upw
 SHA256 (go_modules/github.com/aws/smithy-go/@v/v1.13.3.mod) = RwZKnOIkureadOCEE6fP+mYhd69WuoVbxFnspDWrw/A=
 SHA256 (go_modules/github.com/aws/smithy-go/@v/v1.20.2.mod) = JWYI9961FLCq8nrMaN3GfWi/slXPvdJnAvwFKAbKpfI=
 SHA256 (go_modules/github.com/aws/smithy-go/@v/v1.20.3.mod) = JWYI9961FLCq8nrMaN3GfWi/slXPvdJnAvwFKAbKpfI=
-SHA256 (go_modules/github.com/aws/smithy-go/@v/v1.20.3.zip) = JWhfjWE18Vye2I5cZEMV7ASZQbddh/RFmO9z8wHcgNE=
+SHA256 (go_modules/github.com/aws/smithy-go/@v/v1.22.1.mod) = I3whUegeUzevIA8LMIzl7BoTmwTKOpw30/Abi327S3I=
+SHA256 (go_modules/github.com/aws/smithy-go/@v/v1.22.1.zip) = 6dezC+SKBDJpfUIt2p4NqpErRXKgVBeAi51lQn1EAIU=
 SHA256 (go_modules/github.com/aymanbagabas/go-osc52/v2/@v/v2.0.1.mod) = Rkb58ZqCKuv0KWvOJNXyt7JwDqHET1zJeDACY8t7VhE=
 SHA256 (go_modules/github.com/aymanbagabas/go-osc52/v2/@v/v2.0.1.zip) = k56/KlSB8hcuGl4MMY0FrvW22VCpYFViFsPaeHmpJ/g=
 SHA256 (go_modules/github.com/aymanbagabas/go-udiff/@v/v0.2.0.mod) = 8HbrxTvRjkauc/7y+Rwwmgp4Opr+FvBQv6avo763ptw=
@@ -1912,6 +1914,7 @@ SHA256 (go_modules/go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegr
 SHA256 (go_modules/go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc/@v/v1.31.0.zip) = NOtSlvrQG1Dr5g/1wEq1VfPLO5DotpLTJB8lnJSJIbw=
 SHA256 (go_modules/go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp/@v/v1.22.0.mod) = 3IAaTwtAP+yjER64ywNW7Ie1mbDmOIQrS07UKE47WuY=
 SHA256 (go_modules/go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp/@v/v1.22.0.zip) = a3wByjilscQhatz1TEIuCnjCV9kY6JuN0CchxgmLnew=
+SHA256 (go_modules/go.opentelemetry.io/otel/exporters/stdout/stdoutmetric/@v/v1.29.0.mod) = m03A8KmqKyDoK0+HOQUF5m03qm8SrNelDQ8QN380W4M=
 SHA256 (go_modules/go.opentelemetry.io/otel/exporters/stdout/stdoutmetric/@v/v1.32.0.mod) = tsNKrUHeKNQTGF0fY/SSNyasSsxPctydZjevIIfvvIg=
 SHA256 (go_modules/go.opentelemetry.io/otel/exporters/stdout/stdoutmetric/@v/v1.32.0.zip) = F3gYziO6yC4RMZK5NAkFQSpXQydX8YLPWJRzlt06lnE=
 SHA256 (go_modules/go.opentelemetry.io/otel/exporters/stdout/stdouttrace/@v/v1.32.0.mod) = 155TkYqphxhEbUYSZ6xIs46SuLfx9ssIkt5zrEwO0O0=
@@ -2784,7 +2787,7 @@ SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRe
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = L8eybun2ctl7QvpvJfWxWlWYK7usaZYdduux0DbRUAE=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = CZ2G+OBNET1A9KFSzf4AFxFtfv6mjkF6nGRthgJj174=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 7wMf94/5twNuF07vSd+9d0aNxPCvtzpjm2H4qzocxCU=
-SHA256 (terragrunt-v0.69.1.zip) = sYYTbJNoA1sw5X9mYNX6dirwkuhw1kv9P/Y6n8hvFX4=
+SHA256 (terragrunt-v0.69.2.zip) = Ouly05vpYq607Ff4xUxEi7cWkAvqKhBg/fW+3DJxtbU=
 SIZE (go_modules/atomicgo.dev/assert/@v/v0.0.2.mod) = 36
 SIZE (go_modules/atomicgo.dev/assert/@v/v0.0.2.zip) = 11231
 SIZE (go_modules/atomicgo.dev/cursor/@v/v0.2.0.mod) = 36
@@ -2876,8 +2879,8 @@ SIZE (go_modules/cloud.google.com/go/assuredworkloads/@v/v1.12.1.zip) = 98377
 SIZE (go_modules/cloud.google.com/go/assuredworkloads/@v/v1.5.0.mod) = 921
 SIZE (go_modules/cloud.google.com/go/assuredworkloads/@v/v1.6.0.mod) = 921
 SIZE (go_modules/cloud.google.com/go/assuredworkloads/@v/v1.7.0.mod) = 909
-SIZE (go_modules/cloud.google.com/go/auth/@v/v0.10.0.mod) = 1165
-SIZE (go_modules/cloud.google.com/go/auth/@v/v0.10.0.zip) = 286494
+SIZE (go_modules/cloud.google.com/go/auth/@v/v0.10.2.mod) = 1165
+SIZE (go_modules/cloud.google.com/go/auth/@v/v0.10.2.zip) = 287473
 SIZE (go_modules/cloud.google.com/go/auth/@v/v0.3.0.mod) = 768
 SIZE (go_modules/cloud.google.com/go/auth/@v/v0.6.0.mod) = 768
 SIZE (go_modules/cloud.google.com/go/auth/@v/v0.7.0.mod) = 768
@@ -3212,8 +3215,8 @@ SIZE (go_modules/cloud.google.com/go/storage/@v/v1.35.1.mod) = 1439
 SIZE (go_modules/cloud.google.com/go/storage/@v/v1.42.0.mod) = 2014
 SIZE (go_modules/cloud.google.com/go/storage/@v/v1.43.0.mod) = 1957
 SIZE (go_modules/cloud.google.com/go/storage/@v/v1.44.0.mod) = 2815
-SIZE (go_modules/cloud.google.com/go/storage/@v/v1.46.0.mod) = 2816
-SIZE (go_modules/cloud.google.com/go/storage/@v/v1.46.0.zip) = 729027
+SIZE (go_modules/cloud.google.com/go/storage/@v/v1.47.0.mod) = 2880
+SIZE (go_modules/cloud.google.com/go/storage/@v/v1.47.0.zip) = 731972
 SIZE (go_modules/cloud.google.com/go/storage/@v/v1.5.0.mod) = 953
 SIZE (go_modules/cloud.google.com/go/storage/@v/v1.6.0.mod) = 736
 SIZE (go_modules/cloud.google.com/go/storage/@v/v1.8.0.mod) = 622
@@ -3465,7 +3468,8 @@ SIZE (go_modules/github.com/aws/aws-lambda-go/@v/v1.13.3.zip) = 150444
 SIZE (go_modules/github.com/aws/aws-sdk-go-v2/@v/v1.16.16.mod) = 165
 SIZE (go_modules/github.com/aws/aws-sdk-go-v2/@v/v1.30.0.mod) = 132
 SIZE (go_modules/github.com/aws/aws-sdk-go-v2/@v/v1.30.3.mod) = 132
-SIZE (go_modules/github.com/aws/aws-sdk-go-v2/@v/v1.30.3.zip) = 531122
+SIZE (go_modules/github.com/aws/aws-sdk-go-v2/@v/v1.32.5.mod) = 132
+SIZE (go_modules/github.com/aws/aws-sdk-go-v2/@v/v1.32.5.zip) = 532180
 SIZE (go_modules/github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream/@v/v1.4.3.mod) = 163
 SIZE (go_modules/github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream/@v/v1.6.2.mod) = 163
 SIZE (go_modules/github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream/@v/v1.6.2.zip) = 31339
@@ -3543,7 +3547,8 @@ SIZE (go_modules/github.com/aws/aws-sdk-go/@v/v1.55.5.zip) = 36031361
 SIZE (go_modules/github.com/aws/smithy-go/@v/v1.13.3.mod) = 127
 SIZE (go_modules/github.com/aws/smithy-go/@v/v1.20.2.mod) = 41
 SIZE (go_modules/github.com/aws/smithy-go/@v/v1.20.3.mod) = 41
-SIZE (go_modules/github.com/aws/smithy-go/@v/v1.20.3.zip) = 244833
+SIZE (go_modules/github.com/aws/smithy-go/@v/v1.22.1.mod) = 41
+SIZE (go_modules/github.com/aws/smithy-go/@v/v1.22.1.zip) = 255692
 SIZE (go_modules/github.com/aymanbagabas/go-osc52/v2/@v/v2.0.1.mod) = 52
 SIZE (go_modules/github.com/aymanbagabas/go-osc52/v2/@v/v2.0.1.zip) = 7855
 SIZE (go_modules/github.com/aymanbagabas/go-udiff/@v/v0.2.0.mod) = 49
@@ -4699,6 +4704,7 @@ SIZE (go_modules/go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc
 SIZE (go_modules/go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc/@v/v1.31.0.zip) = 50491
 SIZE (go_modules/go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp/@v/v1.22.0.mod) = 1474
 SIZE (go_modules/go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp/@v/v1.22.0.zip) = 53147
+SIZE (go_modules/go.opentelemetry.io/otel/exporters/stdout/stdoutmetric/@v/v1.29.0.mod) = 944
 SIZE (go_modules/go.opentelemetry.io/otel/exporters/stdout/stdoutmetric/@v/v1.32.0.mod) = 944
 SIZE (go_modules/go.opentelemetry.io/otel/exporters/stdout/stdoutmetric/@v/v1.32.0.zip) = 14036
 SIZE (go_modules/go.opentelemetry.io/otel/exporters/stdout/stdouttrace/@v/v1.32.0.mod) = 815
@@ -5571,4 +5577,4 @@ SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = 24
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = 133
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 222726
-SIZE (terragrunt-v0.69.1.zip) = 5220139
+SIZE (terragrunt-v0.69.2.zip) = 5220826

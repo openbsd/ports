@@ -18,7 +18,7 @@ MODGO_MODULES =	\
 	cloud.google.com/go/artifactregistry							 v1.15.1 \
 	cloud.google.com/go/asset								 v1.20.2 \
 	cloud.google.com/go/assuredworkloads							 v1.12.1 \
-	cloud.google.com/go/auth								 v0.10.0 \
+	cloud.google.com/go/auth								 v0.10.2 \
 	cloud.google.com/go/auth/oauth2adapt							 v0.2.5 \
 	cloud.google.com/go/automl								 v1.14.1 \
 	cloud.google.com/go/baremetalsolution							 v1.3.1 \
@@ -113,7 +113,7 @@ MODGO_MODULES =	\
 	cloud.google.com/go/shell								 v1.8.1 \
 	cloud.google.com/go/spanner								 v1.70.0 \
 	cloud.google.com/go/speech								 v1.25.1 \
-	cloud.google.com/go/storage								 v1.46.0 \
+	cloud.google.com/go/storage								 v1.47.0 \
 	cloud.google.com/go/storagetransfer							 v1.11.1 \
 	cloud.google.com/go/talent								 v1.7.1 \
 	cloud.google.com/go/texttospeech							 v1.8.1 \
@@ -207,7 +207,7 @@ MODGO_MODULES =	\
 	github.com/atotto/clipboard								 v0.1.4 \
 	github.com/aws/aws-lambda-go								 v1.13.3 \
 	github.com/aws/aws-sdk-go								 v1.55.5 \
-	github.com/aws/aws-sdk-go-v2								 v1.30.3 \
+	github.com/aws/aws-sdk-go-v2								 v1.32.5 \
 	github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream					 v1.6.2 \
 	github.com/aws/aws-sdk-go-v2/config							 v1.27.27 \
 	github.com/aws/aws-sdk-go-v2/credentials						 v1.17.27 \
@@ -229,7 +229,7 @@ MODGO_MODULES =	\
 	github.com/aws/aws-sdk-go-v2/service/sso						 v1.22.4 \
 	github.com/aws/aws-sdk-go-v2/service/ssooidc						 v1.26.4 \
 	github.com/aws/aws-sdk-go-v2/service/sts						 v1.30.3 \
-	github.com/aws/smithy-go								 v1.20.3 \
+	github.com/aws/smithy-go								 v1.22.1 \
 	github.com/aymanbagabas/go-osc52/v2							 v2.0.1 \
 	github.com/aymanbagabas/go-udiff							 v0.2.0 \
 	github.com/aymerick/douceur								 v0.2.0 \
@@ -941,6 +941,7 @@ MODGO_MODFILES =	\
 	github.com/aws/aws-sdk-go								 v1.44.122 \
 	github.com/aws/aws-sdk-go-v2								 v1.16.16 \
 	github.com/aws/aws-sdk-go-v2								 v1.30.0 \
+	github.com/aws/aws-sdk-go-v2								 v1.30.3 \
 	github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream					 v1.4.3 \
 	github.com/aws/aws-sdk-go-v2/config							 v1.15.13 \
 	github.com/aws/aws-sdk-go-v2/config							 v1.27.21 \
@@ -969,6 +970,7 @@ MODGO_MODFILES =	\
 	github.com/aws/aws-sdk-go-v2/service/sts						 v1.29.1 \
 	github.com/aws/smithy-go								 v1.13.3 \
 	github.com/aws/smithy-go								 v1.20.2 \
+	github.com/aws/smithy-go								 v1.20.3 \
 	github.com/bmatcuk/doublestar								 v1.1.5 \
 	github.com/cenkalti/backoff/v3								 v3.0.0 \
 	github.com/cenkalti/backoff/v4								 v4.2.1 \
@@ -1374,6 +1376,7 @@ MODGO_MODFILES =	\
 	go.opentelemetry.io/otel								 v1.30.0 \
 	go.opentelemetry.io/otel								 v1.31.0 \
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace					 v1.22.0 \
+	go.opentelemetry.io/otel/exporters/stdout/stdoutmetric					 v1.29.0 \
 	go.opentelemetry.io/otel/metric								 v1.22.0 \
 	go.opentelemetry.io/otel/metric								 v1.24.0 \
 	go.opentelemetry.io/otel/metric								 v1.27.0 \
