@@ -3,7 +3,7 @@ Add AArch64 CPU feature detection support for OpenBSD.
 Index: aom_ports/aarch64_cpudetect.c
 --- aom_ports/aarch64_cpudetect.c.orig
 +++ aom_ports/aarch64_cpudetect.c
-@@ -99,7 +99,7 @@ static int arm_get_cpu_caps(void) {
+@@ -127,7 +127,7 @@ static int arm_get_cpu_caps(void) {
    return flags;
  }
  
@@ -12,7 +12,7 @@ Index: aom_ports/aarch64_cpudetect.c
  
  #include <sys/auxv.h>
  
-@@ -114,10 +114,20 @@ static int arm_get_cpu_caps(void) {
+@@ -142,10 +142,20 @@ static int arm_get_cpu_caps(void) {
  static int arm_get_cpu_caps(void) {
    int flags = 0;
  #if HAVE_ARM_CRC32 || HAVE_NEON_DOTPROD || HAVE_SVE
