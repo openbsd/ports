@@ -44,6 +44,7 @@ share/lite-xl/core/modkeys-macos.lua
 share/lite-xl/core/nagview.lua
 share/lite-xl/core/node.lua
 share/lite-xl/core/object.lua
+share/lite-xl/core/process.lua
 share/lite-xl/core/regex.lua
 share/lite-xl/core/rootview.lua
 share/lite-xl/core/scrollbar.lua
