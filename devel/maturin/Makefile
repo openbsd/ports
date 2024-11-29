@@ -1,24 +1,23 @@
 # ring-v0.17 does not support this arch
-NOT_FOR_ARCHS =	sparc64
+NOT_FOR_ARCHS=	sparc64
 
-COMMENT =	develop crates with pyo3, rust-cpython and cffi bindings
+COMMENT=	develop crates with pyo3, rust-cpython and cffi bindings
 
-GH_ACCOUNT =	PyO3
-GH_PROJECT =	maturin
-GH_TAGNAME =	v1.7.5
+GH_ACCOUNT=	PyO3
+GH_PROJECT=	maturin
+GH_TAGNAME=	v1.7.6
 
-CATEGORIES =	devel
+CATEGORIES=	devel
 
 # APACHE 2.0
-PERMIT_PACKAGE =Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	${MODCARGO_WANTLIB} bz2 m
 
-MODULES =	devel/cargo
+MODULES=	devel/cargo
+CONFIGURE_STYLE=cargo
 
-CONFIGURE_STYLE =cargo
-
-LIB_DEPENDS =	archivers/bzip2
+LIB_DEPENDS=	archivers/bzip2
 
 .include "crates.inc"
 

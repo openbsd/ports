@@ -29,7 +29,7 @@ SHA256 (cargo/cargo-platform-0.1.8.tar.gz) = JLHwNlpsa7QCDNBYBv0NM8RNOARri9fw5Ag
 SHA256 (cargo/cargo-xwin-0.16.5.tar.gz) = Rx9v/zUfxauDfOciNjf3wgBI5KhGcI5+WP2mTbnTqLk=
 SHA256 (cargo/cargo-zigbuild-0.19.4.tar.gz) = IN5mVV0+vseAAhp81Rqv6Suej0+mSO8fEunHI7dsl2Q=
 SHA256 (cargo/cargo_metadata-0.18.1.tar.gz) = LYhlR+QfdAxhaucxCPbrcK/m2UDHvGl8sw8T2uwHMDc=
-SHA256 (cargo/cbindgen-0.26.0.tar.gz) = 2mvBGwdSnxaUQwcnLVvZsiUwvH0FdRcXydQWWGztq0k=
+SHA256 (cargo/cbindgen-0.27.0.tar.gz) = P86N1/z8vzoKh9j1FRlLSdYTWsq3Phi9OA0dk7saFes=
 SHA256 (cargo/cc-1.2.1.tar.gz) = /Z3p8iBdXvP9Z+aFsN8zeZTd1EleKijRhVANDh7f6kc=
 SHA256 (cargo/cfb-0.9.0.tar.gz) = s5B5PpEjAPGqcTQp9/0MORAk5sGLmIliVYvE+Wo0mx8=
 SHA256 (cargo/cfg-if-1.0.0.tar.gz) = uvHeQzl2FYi8Bhnjy8ASDuWC67dLU7Tvv3kRe9LaQP0=
@@ -101,7 +101,6 @@ SHA256 (cargo/getrandom-0.2.15.tar.gz) = xFZ8jbEK6RCJyZr4TGjDjaPsLwh8P4KWC82/Nla
 SHA256 (cargo/glob-0.3.1.tar.gz) = 0vq8+9yH9HWDN8pTX7QabXAbZWk844KH2FbRZ0VR7Js=
 SHA256 (cargo/globset-0.4.15.tar.gz) = FfHOaGZG5/Hhm/fVUz/kQ6Rdv7mQ4AYpEQeXV4tC+xk=
 SHA256 (cargo/goblin-0.9.2.tar.gz) = U6s/MtHXcUaYHepdax6P4x7ty3AT5eANbM0SWaS02SM=
-SHA256 (cargo/hashbrown-0.12.3.tar.gz) = ip7nDEOq9BfJFDlmRaD6hSYkgBsk67eueP6CcoiayIg=
 SHA256 (cargo/hashbrown-0.14.5.tar.gz) = 5SdEI+F7fJ/CC25+IIUy+bGYJdgt/WFXCLcO3YPfQfE=
 SHA256 (cargo/heck-0.4.1.tar.gz) = lVBcOLRXKy2RDOywKBVg9UtEChkzbLvLJ79s5q3G9ag=
 SHA256 (cargo/heck-0.5.0.tar.gz) = IwTgCYP4f/s4tVtES147YKiEtdMMD8p9gv4zRJu+Veo=
@@ -121,7 +120,6 @@ SHA256 (cargo/icu_provider_macros-1.5.0.tar.gz) = Hsiekzdjjs3Ah0TfSQsiGnOZv40WTr
 SHA256 (cargo/idna-1.0.3.tar.gz) = aG+CUmTWMHUKVEY5N3uuc3YoBD8g04u8Ap6PKeqWin4=
 SHA256 (cargo/idna_adapter-1.2.0.tar.gz) = 2sod8clXMgss8TmsYee9ZP7TBMUEDfAAp0WqHeO073E=
 SHA256 (cargo/ignore-0.4.23.tar.gz) = bYn9OAr96GVn37pxXbBlZzmJ1iU/QriBeavT6uR72ks=
-SHA256 (cargo/indexmap-1.9.3.tar.gz) = vQcOOTNTeW6AHSCa0znolZbrTI1DDRjt5qHM7Y+vvZk=
 SHA256 (cargo/indexmap-2.5.0.tar.gz) = aLkAqi9zAeIcNkYrFw7pmZTeNN/zmkpqUo6A5zdtB+U=
 SHA256 (cargo/indicatif-0.17.8.tar.gz) = djpaj0UIfWvOpCIue3LCkaBU7fgOTvbv0qSXmHjHvqM=
 SHA256 (cargo/indoc-2.0.5.tar.gz) = skj1Ik0dYGAF4CyX9apOiO6yMEiLzAO8nKTXmROZ8rU=
@@ -147,7 +145,7 @@ SHA256 (cargo/memchr-2.7.2.tar.gz) = bIZAxdcwyxPr2QfY0EtS9VrJou7FW0QMiJL0DVbHbB0
 SHA256 (cargo/mimalloc-0.1.42.tar.gz) = 6RhthrebUvSnevZWBLUSJejbHW7n4/Qa7B5AgpxxoXY=
 SHA256 (cargo/mime-0.3.17.tar.gz) = aHe7UUCB7ip/9e+d4ygfFKTdS86sTAk4gHSmtd+KE5o=
 SHA256 (cargo/mime_guess-2.0.4.tar.gz) = QZImPCOKXw0Ma/0h8zajE6TOHEUFQkScoZG7ZXtGQu8=
-SHA256 (cargo/minijinja-1.0.21.tar.gz) = Veh32WHU+WzhNhWGIyLffAttFp1AyrcafvP5ueWURR4=
+SHA256 (cargo/minijinja-2.5.0.tar.gz) = LDfhtRfR3NDlHcNsRWe51aKSYrPsjabLXTXieo+1KbU=
 SHA256 (cargo/minimal-lexical-0.2.1.tar.gz) = aDVMXGvTbXP/P+zrBe+lm2rLdiZhf0livjIqgl5h95o=
 SHA256 (cargo/miniz_oxide-0.8.0.tar.gz) = 4tgCme8S/2mxaoS7GC47nfaLWpFXTT1PpuQbZd7sTfE=
 SHA256 (cargo/msi-0.7.0.tar.gz) = ImskBPA9LPRzdblxXIrfrk44i7I3fP+QjopA8x5CFRQ=
@@ -265,7 +263,6 @@ SHA256 (cargo/time-0.3.36.tar.gz) = Xf2I5WNGRobJFsfkbmI+Ug3cbXn6ZkE5Dy4/qG6D6IU=
 SHA256 (cargo/time-core-0.1.2.tar.gz) = 75J8p1r7gIpNZN03TwCirfjQ/P+OexhK+IbDyH7Eo/M=
 SHA256 (cargo/time-macros-0.2.18.tar.gz) = PyUqaFQP3jo4d67qVSuDK0CrmmnjGO/QeHdKAd3uHM8=
 SHA256 (cargo/tinystr-0.7.6.tar.gz) = kRf11Ns5HBz2kn576j23S5ocGt2Pftqf/VNk9A9XuC8=
-SHA256 (cargo/toml-0.5.11.tar.gz) = 9Pfw3Y1QqFOlMcQmNZBFsZmPBCGdiHmYEHYs1K0xQjQ=
 SHA256 (cargo/toml-0.8.15.tar.gz) = rCyqsL91c4jGwK4jsyk/20Y/7llDRSkBT4XjJjuZXCg=
 SHA256 (cargo/toml_datetime-0.6.6.tar.gz) = S639VpJK5pvMkDkzWy4BdjnOP5sAHDk8Gy0e+EbOLL8=
 SHA256 (cargo/toml_edit-0.21.1.tar.gz) = aoU0/X94tUBehgNArWV1IXzpnzjU1cjyRCy17LUAkOE=
@@ -346,7 +343,7 @@ SHA256 (cargo/zeroize-1.8.1.tar.gz) = ztNniih5swMG0yP0VCYmaXpGSpfAoHya6/frymXNTd
 SHA256 (cargo/zerovec-0.10.4.tar.gz) = qiuJPXnfI7+xLVRhAY1AjqGd+v52wsfvbU66YU+P8Hk=
 SHA256 (cargo/zerovec-derive-0.10.3.tar.gz) = bq+m37F1hOo+K9bnbgzBWtevErCavdHKVZYb7ZsQY8Y=
 SHA256 (cargo/zip-0.6.6.tar.gz) = dgOU4kbkwoGJ8Z1IjAWL8W9WQBau+sXTK7HztR1ekmE=
-SHA256 (maturin-1.7.5.tar.gz) = 4MgrpU5bQQyWQdtlNYG5lfbsn3pE4Qosxqj3XON5fCo=
+SHA256 (maturin-1.7.6.tar.gz) = l/vZAQiIZ3ZEHsy8RLktWATMboJh/YwDdYwhDH91kyA=
 SIZE (cargo/adler2-2.0.0.tar.gz) = 13529
 SIZE (cargo/ahash-0.8.11.tar.gz) = 43607
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
@@ -378,7 +375,7 @@ SIZE (cargo/cargo-platform-0.1.8.tar.gz) = 11813
 SIZE (cargo/cargo-xwin-0.16.5.tar.gz) = 28602
 SIZE (cargo/cargo-zigbuild-0.19.4.tar.gz) = 41018
 SIZE (cargo/cargo_metadata-0.18.1.tar.gz) = 24535
-SIZE (cargo/cbindgen-0.26.0.tar.gz) = 206157
+SIZE (cargo/cbindgen-0.27.0.tar.gz) = 215957
 SIZE (cargo/cc-1.2.1.tar.gz) = 92731
 SIZE (cargo/cfb-0.9.0.tar.gz) = 67837
 SIZE (cargo/cfg-if-1.0.0.tar.gz) = 7934
@@ -450,7 +447,6 @@ SIZE (cargo/getrandom-0.2.15.tar.gz) = 37163
 SIZE (cargo/glob-0.3.1.tar.gz) = 18880
 SIZE (cargo/globset-0.4.15.tar.gz) = 25177
 SIZE (cargo/goblin-0.9.2.tar.gz) = 191510
-SIZE (cargo/hashbrown-0.12.3.tar.gz) = 102968
 SIZE (cargo/hashbrown-0.14.5.tar.gz) = 141498
 SIZE (cargo/heck-0.4.1.tar.gz) = 11567
 SIZE (cargo/heck-0.5.0.tar.gz) = 11517
@@ -470,7 +466,6 @@ SIZE (cargo/icu_provider_macros-1.5.0.tar.gz) = 6436
 SIZE (cargo/idna-1.0.3.tar.gz) = 142515
 SIZE (cargo/idna_adapter-1.2.0.tar.gz) = 8206
 SIZE (cargo/ignore-0.4.23.tar.gz) = 55901
-SIZE (cargo/indexmap-1.9.3.tar.gz) = 54653
 SIZE (cargo/indexmap-2.5.0.tar.gz) = 85919
 SIZE (cargo/indicatif-0.17.8.tar.gz) = 64869
 SIZE (cargo/indoc-2.0.5.tar.gz) = 14396
@@ -496,7 +491,7 @@ SIZE (cargo/memchr-2.7.2.tar.gz) = 96220
 SIZE (cargo/mimalloc-0.1.42.tar.gz) = 4079
 SIZE (cargo/mime-0.3.17.tar.gz) = 15712
 SIZE (cargo/mime_guess-2.0.4.tar.gz) = 26399
-SIZE (cargo/minijinja-1.0.21.tar.gz) = 143627
+SIZE (cargo/minijinja-2.5.0.tar.gz) = 159958
 SIZE (cargo/minimal-lexical-0.2.1.tar.gz) = 94841
 SIZE (cargo/miniz_oxide-0.8.0.tar.gz) = 56343
 SIZE (cargo/msi-0.7.0.tar.gz) = 59110
@@ -614,7 +609,6 @@ SIZE (cargo/time-0.3.36.tar.gz) = 119805
 SIZE (cargo/time-core-0.1.2.tar.gz) = 7191
 SIZE (cargo/time-macros-0.2.18.tar.gz) = 24361
 SIZE (cargo/tinystr-0.7.6.tar.gz) = 16971
-SIZE (cargo/toml-0.5.11.tar.gz) = 54910
 SIZE (cargo/toml-0.8.15.tar.gz) = 50652
 SIZE (cargo/toml_datetime-0.6.6.tar.gz) = 11698
 SIZE (cargo/toml_edit-0.21.1.tar.gz) = 101661
@@ -695,4 +689,4 @@ SIZE (cargo/zeroize-1.8.1.tar.gz) = 20029
 SIZE (cargo/zerovec-0.10.4.tar.gz) = 126398
 SIZE (cargo/zerovec-derive-0.10.3.tar.gz) = 19438
 SIZE (cargo/zip-0.6.6.tar.gz) = 65789
-SIZE (maturin-1.7.5.tar.gz) = 525764
+SIZE (maturin-1.7.6.tar.gz) = 525922
