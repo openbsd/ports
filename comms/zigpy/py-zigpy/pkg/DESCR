@@ -1,0 +1,15 @@
+zigpy is a Python 3 library implementing standard specifications of the
+Zigbee protocol stack.
+
+When used with an additional radio library module, this allows you to
+connect to one of many off-the-shelf Zigbee Coordinator adapters and
+use it to control Zigbee devices such as lights, switches, sensors,
+fans, etc.
+
+zigpy also has optional code to automatically download and perform
+Over-The-Air (OTA) firmware updates of Zigbee devices if the OTA
+firmware image provider source URL for updates is known or offline
+firmware files are available.
+
+zigpy is used by various other pieces of software which provide a
+user interface, or can be used for your own implementations.

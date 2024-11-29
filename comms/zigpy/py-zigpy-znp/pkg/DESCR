@@ -1,0 +1,23 @@
+zigpy-znp is a Python library that adds support to zigpy for radio
+modules using Texas Instruments Zigbee Network Processor (ZNP) devices
+running compatible Z-Stack firmware. It also provides tools that can be
+run from the command line. See TOOLS.md for basic information; small
+adaptations are needed for OpenBSD, e.g.
+
+$ python3 -m zigpy_znp.tools.network_backup /dev/cuaU0 -o network_backup.json
+$ python3 -m zigpy_znp.tools.energy_scan -a /dev/cuaU0
+$ python3 -m zigpy_znp.tools.network_scan -a -c 11 /dev/cuaU0
+
+Several ranges of controller are supported, including the recommended
+CC2652- and CC1352-based ones. These are often supplied with firmware
+that requires replacing before they can be used. See documentation,
+but common hardware includes:
+
+- Electrolama zzh CC2652R and Slaesh CC2652R sticks (running Z-Stack 3
+firmware) - can be flashed using cc2538-bsl.
+
+- TI LAUNCHXL-CC26X2R1 (running Z-Stack 3 firmware).
+
+- CC2531 (running Z-Stack Home 1.2). You can flash CC2531ZNP-Prod.bin
+to your stick directly with zigpy_znp's flash_write tool if your stick
+already has a serial bootloader.
