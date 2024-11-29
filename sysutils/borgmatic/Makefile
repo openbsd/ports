@@ -1,13 +1,15 @@
 COMMENT=	wrapper for Borg to create and prune backups
 
-MODPY_EGG_VERSION=	1.9.0
+MODPY_EGG_VERSION=	1.9.1
 DISTNAME=	borgmatic-${MODPY_EGG_VERSION}
-EPOCH=		0
+
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 HOMEPAGE=	https://torsion.org/borgmatic/
 
 CATEGORIES=	sysutils
+
+EPOCH=		0
 
 # GPLv3
 PERMIT_PACKAGE=	Yes
