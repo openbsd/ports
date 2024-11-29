@@ -1,9 +1,9 @@
 Index: scripts/wsrep_sst_common.sh
 --- scripts/wsrep_sst_common.sh.orig
 +++ scripts/wsrep_sst_common.sh
-@@ -39,6 +39,16 @@ if [ -z "$BASH_VERSION" ]; then
-     [ -z "$(commandex printf)" ] && with_printf=0
- fi
+@@ -79,6 +79,16 @@ wsrep_log_info()
+     wsrep_log "[INFO] $*"
+ }
  
 +find()
 +{
@@ -18,31 +18,65 @@ Index: scripts/wsrep_sst_common.sh
  trim_string()
  {
      if [ -n "$BASH_VERSION" ]; then
-@@ -1207,14 +1217,17 @@ check_sockets_utils()
+@@ -1212,6 +1222,7 @@ check_sockets_utils()
      lsof_available=0
      sockstat_available=0
      ss_available=0
 +    fstat_available=0
  
-     [ -n "$(commandex lsof)" ] && lsof_available=1
-     [ -n "$(commandex sockstat)" ] && sockstat_available=1
-     [ -n "$(commandex ss)" ] && ss_available=1
-+    [ -n "$(commandex fstat)" ] && fstat_available=1
- 
-     if [ $lsof_available -eq 0 -a \
-          $sockstat_available -eq 0 -a \
--         $ss_available -eq 0 ]
-+         $ss_available -eq 0 -a \
-+         $fstat_available -eq 0 ]
-     then
-         wsrep_log_error "Neither lsof, nor sockstat or ss tool was found in" \
-                         "the PATH. Make sure you have it installed."
-@@ -1257,6 +1270,8 @@ check_port()
-     elif [ $ss_available -ne 0 ]; then
-         ss -nlpH "( sport = :$port )" 2>/dev/null | \
-         grep -q -E "users:\\(.*\\(\"($utils)[^[:space:]]*\"[^)]*,pid=$pid(,[^)]*)?\\)" && rc=0
+     socket_utility="$(commandex ss)"
+     if [ -n "$socket_utility" ]; then
+@@ -1236,23 +1247,30 @@ check_sockets_utils()
+                 sockstat_opts='-46lq -P tcp -p'
+             fi
+         else
+-            socket_utility="$(commandex lsof)"
++            socket_utility="$(commandex fstat)"
+             if [ -n "$socket_utility" ]; then
+-                socket_uname='lsof'
+-                lsof_available=1
+-                lsof_opts='-Pnl'
+-                # Let's check that lsof has an option to bypass blocking:
+-                if $socket_utility -h 2>&1 | grep -qw -F -- '-b'; then
+-                    lsof_available=2
+-                    lsof_opts="$lsof_opts -b -w"
++                socket_uname='fstat'
++                fstat_available=1
++                fstat_opts='-n'
++            else
++                socket_utility="$(commandex lsof)"
++                if [ -n "$socket_utility" ]; then
++                    socket_uname='lsof'
++                    lsof_available=1
++                    lsof_opts='-Pnl'
++                    # Let's check that lsof has an option to bypass blocking:
++                    if $socket_utility -h 2>&1 | grep -qw -F -- '-b'; then
++                        lsof_available=2
++                        lsof_opts="$lsof_opts -b -w"
++                    else
++                        lsof_opts="$lsof_opts -S 10"
++                    fi
+                 else
+-                    lsof_opts="$lsof_opts -S 10"
++                    wsrep_log_error "Neither lsof, nor sockstat, nor ss, nor fstat tool" \
++                                    "were found in the path. Make sure you have" \
++                                    "at least one of them installed."
++                    exit 2 # ENOENT
+                 fi
+-            else
+-                wsrep_log_error "Neither lsof, nor sockstat, nor ss tool" \
+-                                "were found in the path. Make sure you have" \
+-                                "at least one of them installed."
+-                exit 2 # ENOENT
+             fi
+         fi
+     fi
+@@ -1302,6 +1320,8 @@ check_port()
+             $socket_utility $sockstat_opts "$port" 2>/dev/null | \
+                 grep -q -E "^[^[:space:]]+[[:space:]]+($utils)[^[:space:]]*[[:space:]]+$pid([[:space:]].+)?[[:space:]]LISTEN([[:space:]]|\$)" && rc=0
+         fi
 +    elif [ $fstat_available -ne 0 ]; then
-+        fstat -n 2>/dev/null | grep -q -E ".*$pid.*:$port\$" && rc=0
-     else
-         wsrep_log_error "Unknown sockets utility"
-         exit 2 # ENOENT
++        $socket_utility $fstat_opts 2>/dev/null | grep -q -E ".*$pid.*:$port\$" && rc=0
+     elif [ $lsof_available -ne 0 ]; then
+         $socket_utility $lsof_opts -i ":$port" 2>/dev/null | \
+             grep -q -E "^($utils)[^[:space:]]*[[:space:]]+$pid([[:space:]].+)?[[:space:]]\\(LISTEN\\)([[:space:]]|\$)" && rc=0

@@ -2,19 +2,17 @@ COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
-VERSION=	11.4.3
+VERSION=	11.4.4
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
-REVISION-main=  2
-REVISION-server= 0
 EPOCH=		1
 CATEGORIES=	databases
 SITES=		https://downloads.mariadb.com/MariaDB/${DISTNAME}/source/ \
 		https://ftp.osuosl.org/pub/mariadb/${DISTNAME}/source/ \
 		https://archive.mariadb.org/${DISTNAME}/source/
 
-DISTFILES.fmt=	fmt-11.0.1.zip
-SITES.fmt=	https://github.com/fmtlib/fmt/releases/download/11.0.1/
+DISTFILES.fmt=	fmt-11.0.2.zip
+SITES.fmt=	https://github.com/fmtlib/fmt/releases/download/11.0.2/
 
 LIB_VERSION=	31
 SHARED_LIBS=	mysqlclient_r	${LIB_VERSION}.0 \
@@ -135,7 +133,7 @@ PKG_ARGS+=	-Drocksdb=0
 
 pre-configure:
 	mkdir -p ${WRKBUILD}/extra/libfmt/src
-	cp -f ${DISTDIR}/fmt-11.0.1.zip ${WRKBUILD}/extra/libfmt/src
+	cp -f ${DISTDIR}/fmt-11.0.2.zip ${WRKBUILD}/extra/libfmt/src
 	@${SUBST_CMD} ${WRKSRC}/cmake/mysql_version.cmake \
 	    ${WRKSRC}/libmariadb/mariadb_config/mariadb_config.c.in \
 	    ${WRKSRC}/scripts/mysql_config.sh

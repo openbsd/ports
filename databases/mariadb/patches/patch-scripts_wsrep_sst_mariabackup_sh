@@ -1,7 +1,7 @@
 Index: scripts/wsrep_sst_mariabackup.sh
 --- scripts/wsrep_sst_mariabackup.sh.orig
 +++ scripts/wsrep_sst_mariabackup.sh
-@@ -101,6 +101,18 @@ if [ -z "$BACKUP_BIN" ]; then
+@@ -33,6 +33,18 @@ if [ -z "$BACKUP_BIN" ]; then
      exit 42
  fi
  
@@ -17,6 +17,6 @@ Index: scripts/wsrep_sst_mariabackup.sh
 +    exit 42
 +fi
 +
- DATA="$WSREP_SST_OPT_DATA"
+ BACKUP_PID=""
  
  INFO_FILE='mariadb_backup_galera_info'

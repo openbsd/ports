@@ -1,19 +1,22 @@
 Index: scripts/wsrep_sst_rsync.sh
 --- scripts/wsrep_sst_rsync.sh.orig
 +++ scripts/wsrep_sst_rsync.sh
-@@ -117,9 +117,14 @@ check_pid_and_port()
-                 fi
-                 port_info=$(sockstat "$opts" "$port" 2>/dev/null | \
-                     grep -E '[[:space:]]LISTEN' | grep -o -E "$filter")
--            else
-+            elif [ $ss_available -ne 0 ]; then
-                 port_info=$(ss -nlpH "( sport = :$port )" 2>/dev/null | \
-                     grep -F 'users:(' | grep -o -E "$filter")
-+            elif [ $fstat_available -ne 0 ]; then
-+                port_info=$(fstat -n 2>/dev/null | grep -E "[[:space:]](\\*|\\[?::\\]?):$port\$")
-+            else
-+                wsrep_log_error "Unknown sockets utility"
-+                exit 2 # ENOENT
+@@ -127,9 +127,15 @@ check_pid_and_port()
              fi
-             echo "$port_info" | \
-             grep -q -E "[[:space:]](\\*|\\[?::\\]?):$port\$" && busy=1
+             final='$'
+         else
+-            port_info=$($socket_utility $lsof_opts -i ":$port" 2>/dev/null | \
+-                grep -w -F '(LISTEN)' || :)
+-            final='[[:space:]]'
++            if [ $fstat_available -ne 0 ]; then
++                port_info=$($socket_utility $fstat_opts 2>/dev/null | \
++                    grep -E "[[:space:]](\\*|\\[?::\\]?):$port\$")
++                final=''
++            else
++                port_info=$($socket_utility $lsof_opts -i ":$port" 2>/dev/null | \
++                    grep -w -F '(LISTEN)' || :)
++                final='[[:space:]]'
++            fi
+         fi
+ 
+         local busy=0

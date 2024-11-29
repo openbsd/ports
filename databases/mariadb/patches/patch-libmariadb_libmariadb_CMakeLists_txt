@@ -1,7 +1,7 @@
 Index: libmariadb/libmariadb/CMakeLists.txt
 --- libmariadb/libmariadb/CMakeLists.txt.orig
 +++ libmariadb/libmariadb/CMakeLists.txt
-@@ -485,15 +485,6 @@ INCLUDE(${CC_SOURCE_DIR}/cmake/symlink.cmake)
+@@ -487,15 +487,6 @@ INCLUDE(${CC_SOURCE_DIR}/cmake/symlink.cmake)
  # of the config program. To make sure these programs can
  # use mariadb client library we provide libmysql symlinks
  

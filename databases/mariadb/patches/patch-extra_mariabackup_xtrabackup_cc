@@ -1,12 +1,12 @@
 Index: extra/mariabackup/xtrabackup.cc
 --- extra/mariabackup/xtrabackup.cc.orig
 +++ extra/mariabackup/xtrabackup.cc
-@@ -7701,6 +7701,8 @@ static int get_exepath(char *buf, size_t size, const c
-   if (sysctl(mib, 4, buf, &size, NULL, 0) == 0) {
-     return 0;
+@@ -1061,6 +1061,8 @@ static std::string filename_to_spacename(const void *f
+     if (f[i] == '\\')
+       f[i] = '/';
    }
 +#elif defined(__OpenBSD__)
 +  return 0;
  #endif
  
-   return my_realpath(buf, argv0, 0);
+   /* Remove extension, if exists */
