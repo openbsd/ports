@@ -1,0 +1,9 @@
+The package asynctest is built on top of the standard unittest module
+and cuts down boilerplate code when testing libraries for asyncio.
+
+asynctest imports the standard unittest package, overrides some of its
+features and adds new ones. A test author can import asynctest in place
+of unittest safely.
+
+It is divided in submodules, but they are all imported at the top level,
+so asynctest.case.TestCase is equivalent to asynctest.TestCase.
