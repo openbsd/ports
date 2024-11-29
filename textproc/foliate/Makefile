@@ -1,7 +1,9 @@
 COMMENT=		simple and modern GTK eBook viewer
 
-DIST_TUPLE +=		github johnfactotum foliate 3.1.1 .
-DIST_TUPLE +=		github johnfactotum foliate-js 04b8789267aa0d4bc9313a3205dd5cc2e836733e src/foliate-js
+V=			3.2.0
+DISTNAME=		com.github.johnfactotum.Foliate-${V}
+EXTRACT_SUFX=		.tar.xz
+PKGNAME=		foliate-${V}
 
 CATEGORIES=		textproc graphics print
 
@@ -12,10 +14,12 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE=		Yes
 
+SITES=			https://github.com/johnfactotum/foliate/releases/download/${V}/
+
 MODULES=		devel/dconf \
 			devel/meson
 
-BUILD_DEPENDS=		devel/appstream-glib \
+BUILD_DEPENDS=		devel/appstream \
 			devel/gettext,-tools \
 			www/webkitgtk4,webkitgtk60 \
 			x11/gnome/gjs \
