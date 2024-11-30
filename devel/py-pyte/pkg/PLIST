@@ -33,5 +33,6 @@ lib/python${MODPY_VERSION}/site-packages/pyte/control.py
 lib/python${MODPY_VERSION}/site-packages/pyte/escape.py
 lib/python${MODPY_VERSION}/site-packages/pyte/graphics.py
 lib/python${MODPY_VERSION}/site-packages/pyte/modes.py
+lib/python${MODPY_VERSION}/site-packages/pyte/py.typed
 lib/python${MODPY_VERSION}/site-packages/pyte/screens.py
 lib/python${MODPY_VERSION}/site-packages/pyte/streams.py
