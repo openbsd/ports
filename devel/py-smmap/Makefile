@@ -1,10 +1,9 @@
 COMMENT=		pure Python implementation of an SMM manager
 
-MODPY_EGG_VERSION=	5.0.0
+MODPY_EGG_VERSION =	5.0.1
 DISTNAME=		smmap-${MODPY_EGG_VERSION}
 PKGNAME=		py-smmap-${MODPY_EGG_VERSION}
 CATEGORIES=		devel
-REVISION=		2
 
 # BSD
 PERMIT_PACKAGE=	Yes
