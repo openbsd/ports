@@ -5,6 +5,7 @@ COMMENT =		simple bookmarks manager
 
 MODGO_MODNAME =		github.com/go-shiori/shiori
 MODGO_VERSION =		v1.7.0
+REVISION =		0
 
 DISTNAME =		shiori-${MODGO_VERSION}
 

@@ -13,7 +13,7 @@ On OpenBSD, it is also ready to run system wide.
 By default, it will also use the sqlite3 backend and place its data on
 ${LOCALSTATEDIR}/shiori
 One can modify the environment variables needed for configuration by
-modifying the login class located at ${SYSCONFDIR}/login.conf.d/shiori
+modifying the login class located at /etc/login.conf.d/shiori
 
 
 Web Interface
