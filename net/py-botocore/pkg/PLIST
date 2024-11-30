@@ -1872,6 +1872,12 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/oam/2022-06-10/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/oam/2022-06-10/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/oam/2022-06-10/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/oam/2022-06-10/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/observabilityadmin/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/observabilityadmin/2018-05-10/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/observabilityadmin/2018-05-10/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/observabilityadmin/2018-05-10/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/observabilityadmin/2018-05-10/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/observabilityadmin/2018-05-10/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/omics/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/omics/2022-11-28/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/omics/2022-11-28/endpoint-rule-set-1.json
