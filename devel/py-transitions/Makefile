@@ -1,6 +1,6 @@
 COMMENT=	lightweight, object-oriented state machine for Python
 
-MODPY_EGG_VERSION=	0.9.1
+MODPY_EGG_VERSION =	0.9.2
 DISTNAME=	transitions-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel

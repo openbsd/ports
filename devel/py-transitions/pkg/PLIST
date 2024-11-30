@@ -16,6 +16,15 @@ lib/python${MODPY_VERSION}/site-packages/transitions/${MODPY_PYCACHE}version.${M
 lib/python${MODPY_VERSION}/site-packages/transitions/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/transitions/core.py
 lib/python${MODPY_VERSION}/site-packages/transitions/core.pyi
+lib/python${MODPY_VERSION}/site-packages/transitions/experimental/
+lib/python${MODPY_VERSION}/site-packages/transitions/experimental/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/transitions/experimental/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/transitions/experimental/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/transitions/experimental/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/transitions/experimental/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/transitions/experimental/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/transitions/experimental/utils.py
+lib/python${MODPY_VERSION}/site-packages/transitions/experimental/utils.pyi
 lib/python${MODPY_VERSION}/site-packages/transitions/extensions/
 lib/python${MODPY_VERSION}/site-packages/transitions/extensions/__init__.py
 lib/python${MODPY_VERSION}/site-packages/transitions/extensions/__init__.pyi
@@ -30,6 +39,8 @@ lib/python${MODPY_VERSION}/site-packages/transitions/extensions/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/transitions/extensions/${MODPY_PYCACHE}diagrams_base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/transitions/extensions/${MODPY_PYCACHE}diagrams_graphviz.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/transitions/extensions/${MODPY_PYCACHE}diagrams_graphviz.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/transitions/extensions/${MODPY_PYCACHE}diagrams_mermaid.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/transitions/extensions/${MODPY_PYCACHE}diagrams_mermaid.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/transitions/extensions/${MODPY_PYCACHE}diagrams_pygraphviz.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/transitions/extensions/${MODPY_PYCACHE}diagrams_pygraphviz.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/transitions/extensions/${MODPY_PYCACHE}factory.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -50,6 +61,8 @@ lib/python${MODPY_VERSION}/site-packages/transitions/extensions/diagrams_base.py
 lib/python${MODPY_VERSION}/site-packages/transitions/extensions/diagrams_base.pyi
 lib/python${MODPY_VERSION}/site-packages/transitions/extensions/diagrams_graphviz.py
 lib/python${MODPY_VERSION}/site-packages/transitions/extensions/diagrams_graphviz.pyi
+lib/python${MODPY_VERSION}/site-packages/transitions/extensions/diagrams_mermaid.py
+lib/python${MODPY_VERSION}/site-packages/transitions/extensions/diagrams_mermaid.pyi
 lib/python${MODPY_VERSION}/site-packages/transitions/extensions/diagrams_pygraphviz.py
 lib/python${MODPY_VERSION}/site-packages/transitions/extensions/diagrams_pygraphviz.pyi
 lib/python${MODPY_VERSION}/site-packages/transitions/extensions/factory.py
