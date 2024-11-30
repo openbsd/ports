@@ -21,6 +21,7 @@ include/google/protobuf/arenastring.h
 include/google/protobuf/arenaz_sampler.h
 include/google/protobuf/compiler/
 include/google/protobuf/compiler/code_generator.h
+include/google/protobuf/compiler/code_generator_lite.h
 include/google/protobuf/compiler/command_line_interface.h
 include/google/protobuf/compiler/cpp/
 include/google/protobuf/compiler/cpp/enum.h
@@ -86,7 +87,6 @@ include/google/protobuf/compiler/java/generator_factory.h
 include/google/protobuf/compiler/java/helpers.h
 include/google/protobuf/compiler/java/internal_helpers.h
 include/google/protobuf/compiler/java/java_features.pb.h
-include/google/protobuf/compiler/java/kotlin_generator.h
 include/google/protobuf/compiler/java/lite/
 include/google/protobuf/compiler/java/lite/enum.h
 include/google/protobuf/compiler/java/lite/enum_field.h
@@ -105,6 +105,10 @@ include/google/protobuf/compiler/java/name_resolver.h
 include/google/protobuf/compiler/java/names.h
 include/google/protobuf/compiler/java/options.h
 include/google/protobuf/compiler/java/shared_code_generator.h
+include/google/protobuf/compiler/kotlin/
+include/google/protobuf/compiler/kotlin/file.h
+include/google/protobuf/compiler/kotlin/generator.h
+include/google/protobuf/compiler/kotlin/message.h
 include/google/protobuf/compiler/objectivec/
 include/google/protobuf/compiler/objectivec/enum.h
 include/google/protobuf/compiler/objectivec/enum_field.h
@@ -144,6 +148,7 @@ include/google/protobuf/compiler/rust/accessors/accessor_case.h
 include/google/protobuf/compiler/rust/accessors/accessors.h
 include/google/protobuf/compiler/rust/accessors/default_value.h
 include/google/protobuf/compiler/rust/accessors/generator.h
+include/google/protobuf/compiler/rust/accessors/with_presence.h
 include/google/protobuf/compiler/rust/context.h
 include/google/protobuf/compiler/rust/crate_mapping.h
 include/google/protobuf/compiler/rust/enum.h
@@ -154,6 +159,7 @@ include/google/protobuf/compiler/rust/oneof.h
 include/google/protobuf/compiler/rust/relative_path.h
 include/google/protobuf/compiler/rust/rust_field_type.h
 include/google/protobuf/compiler/rust/rust_keywords.h
+include/google/protobuf/compiler/rust/upb_helpers.h
 include/google/protobuf/compiler/scc.h
 include/google/protobuf/compiler/subprocess.h
 include/google/protobuf/compiler/versions.h
@@ -378,6 +384,7 @@ include/upb/reflection/def.h
 include/upb/reflection/def.hpp
 include/upb/reflection/def_pool.h
 include/upb/reflection/def_type.h
+include/upb/reflection/descriptor_bootstrap.h
 include/upb/reflection/enum_def.h
 include/upb/reflection/enum_reserved_range.h
 include/upb/reflection/enum_value_def.h
@@ -415,6 +422,7 @@ include/upb/util/
 include/upb/util/def_to_proto.h
 include/upb/util/required_fields.h
 include/upb/wire/
+include/upb/wire/byte_size.h
 include/upb/wire/decode.h
 include/upb/wire/encode.h
 include/upb/wire/eps_copy_input_stream.h
@@ -423,7 +431,11 @@ include/upb/wire/internal/decode_fast.h
 include/upb/wire/reader.h
 include/upb/wire/types.h
 include/upb_generator/
-include/upb_generator/mangle.h
+include/upb_generator/common/
+include/upb_generator/common/names.h
+include/upb_generator/minitable/
+include/upb_generator/minitable/names.h
+include/upb_generator/minitable/names_internal.h
 include/utf8_range.h
 include/utf8_validity.h
 lib/cmake/protobuf/
@@ -446,4 +458,5 @@ lib/cmake/utf8_range/utf8_range-targets.cmake
 @lib lib/libutf8_validity.so.${LIButf8_validity_VERSION}
 lib/pkgconfig/protobuf-lite.pc
 lib/pkgconfig/protobuf.pc
+lib/pkgconfig/upb.pc
 lib/pkgconfig/utf8_range.pc
