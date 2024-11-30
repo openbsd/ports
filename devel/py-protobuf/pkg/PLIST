@@ -8,6 +8,8 @@ lib/python${MODPY_VERSION}/site-packages/google/protobuf/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}any.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}any.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}any_pb2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}any_pb2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}api_pb2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -20,6 +22,8 @@ lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}descrip
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}descriptor_pb2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}descriptor_pool.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}descriptor_pool.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}duration.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}duration.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}duration_pb2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}duration_pb2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}empty_pb2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -56,6 +60,8 @@ lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}text_en
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}text_encoding.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}text_format.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}text_format.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}timestamp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}timestamp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}timestamp_pb2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}timestamp_pb2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}type_pb2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -64,6 +70,7 @@ lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}unknown
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}unknown_fields.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}wrappers_pb2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/${MODPY_PYCACHE}wrappers_pb2.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/google/protobuf/any.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/any_pb2.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/api_pb2.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/compiler/
@@ -78,6 +85,7 @@ lib/python${MODPY_VERSION}/site-packages/google/protobuf/descriptor.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/descriptor_database.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/descriptor_pb2.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/descriptor_pool.py
+lib/python${MODPY_VERSION}/site-packages/google/protobuf/duration.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/duration_pb2.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/empty_pb2.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/field_mask_pb2.py
@@ -162,6 +170,7 @@ lib/python${MODPY_VERSION}/site-packages/google/protobuf/testdata/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/testdata/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/text_encoding.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/text_format.py
+lib/python${MODPY_VERSION}/site-packages/google/protobuf/timestamp.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/timestamp_pb2.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/type_pb2.py
 lib/python${MODPY_VERSION}/site-packages/google/protobuf/unknown_fields.py
