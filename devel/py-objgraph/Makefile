@@ -1,6 +1,6 @@
 COMMENT =		draw Python object reference graphs
 
-MODPY_EGG_VERSION =	3.6.1
+MODPY_EGG_VERSION =	3.6.2
 DISTNAME =		objgraph-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
