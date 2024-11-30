@@ -1,6 +1,6 @@
 COMMENT =		SPNEGO authentication library
 
-MODPY_EGG_VERSION =	0.11.1
+MODPY_EGG_VERSION =	0.11.2
 DISTNAME =		pyspnego-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/py/py-/}
 
