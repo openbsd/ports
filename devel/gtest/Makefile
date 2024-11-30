@@ -1,16 +1,13 @@
 COMMENT =	C++ unit test framework
 
-V=		1.14.0
-GH_ACCOUNT=	google
-GH_PROJECT=	googletest
-GH_TAGNAME=	v${V}
-DISTNAME=	gtest-${V}
-REVISION=	1
+V =		1.15.2
+DIST_TUPLE =	github	google	googletest	v${V}	.
+PKGNAME =	gtest-${V}
 
-SHARED_LIBS +=	gmock		2.0   # .0.0
-SHARED_LIBS +=	gmock_main	1.0   # .0.0
-SHARED_LIBS +=	gtest		3.0   # .0.0
-SHARED_LIBS +=	gtest_main	2.0   # .0.0
+SHARED_LIBS +=	gmock		2.0
+SHARED_LIBS +=	gmock_main	1.0
+SHARED_LIBS +=	gtest		4.0
+SHARED_LIBS +=	gtest_main	2.0
 
 CATEGORIES =	devel
 
