@@ -1,3 +1,5 @@
+# match version in archivers/draco when updating
+
 COMMENT =	C++ unit test framework
 
 V =		1.15.2
