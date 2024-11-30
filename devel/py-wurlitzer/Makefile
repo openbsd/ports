@@ -1,6 +1,6 @@
 COMMENT=	capture c-level output in context managers
 
-MODPY_EGG_VERSION=	3.1.0
+MODPY_EGG_VERSION =	3.1.1
 DISTNAME=	wurlitzer-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
