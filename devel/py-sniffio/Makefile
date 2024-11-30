@@ -1,9 +1,8 @@
 COMMENT =	sniff out which async library is being used
 
-MODPY_EGG_VERSION=	1.3.0
+MODPY_EGG_VERSION =	1.3.1
 DISTNAME=	sniffio-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	devel
 
@@ -16,7 +15,7 @@ FLAVORS=	python3
 FLAVOR=		python3
 
 MODPY_PI=	Yes
-MODPY_PYBUILD=	setuptools
+MODPY_PYBUILD=	setuptools_scm
 
 TEST_DEPENDS=	devel/py-curio${MODPY_FLAVOR}
 
