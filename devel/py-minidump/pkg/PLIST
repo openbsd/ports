@@ -126,6 +126,14 @@ lib/python${MODPY_VERSION}/site-packages/minidump/streams/${MODPY_PYCACHE}Unload
 lib/python${MODPY_VERSION}/site-packages/minidump/streams/${MODPY_PYCACHE}UnloadedModuleListStream.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/minidump/streams/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/minidump/streams/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/minidump/structures/
+lib/python${MODPY_VERSION}/site-packages/minidump/structures/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/minidump/structures/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/minidump/structures/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/minidump/structures/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/minidump/structures/${MODPY_PYCACHE}peb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/minidump/structures/${MODPY_PYCACHE}peb.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/minidump/structures/peb.py
 lib/python${MODPY_VERSION}/site-packages/minidump/utils/
 lib/python${MODPY_VERSION}/site-packages/minidump/utils/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/minidump/utils/${MODPY_PYCACHE}/
