@@ -5,6 +5,8 @@ PW_PROJECT=		pipewire
 PW_VERSION=		1.2.7
 PKGNAME-libs=		lib${PW_PROJECT}-${PW_VERSION}
 
+REVISION-main=		0
+
 SHARED_LIBS += pipewire-0.3              0.2 # 0.1207.0
 
 MULTI_PACKAGES=		-main -libs
@@ -16,8 +18,7 @@ WANTLIB-main += pthread readline sndfile stdthreads
 
 WANTLIB-libs += intl pthread
 
-MODULES=		devel/dconf \
-			devel/meson \
+MODULES=		devel/meson \
 			lang/python
 
 MODPY_RUNDEP=		No
@@ -93,11 +94,16 @@ CONFIGURE_ARGS +=	-Djack=disabled
 # Jack3 server
 CONFIGURE_ARGS +=	-Dpipewire-jack=disabled
 
-# XXX to be revisited; useful to replace the pulseaudio daemon
-# (audio/pulseaudio) but it seems to depend on systemd activation for now
-CONFIGURE_ARGS +=	-Dlibpulse=disabled
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/daemon/pipewire.conf.in
+
+# XXX to be revisited; useful to replace the pulseaudio daemon
+# (audio/pulseaudio) but it seems to depend on systemd activation for now
+CONFIGURE_ARGS +=	-Dlibpulse=disabled
+# XXX prevent conflict with audio/pulseaudio that installs the same gschema;
+# add devel/dconf to MODULES once we enable pulse support
+post-install:
+	rm -f ${PREFIX}/share/glib-2.0/schemas/org.freedesktop.pulseaudio.gschema.xml
 
 .include <bsd.port.mk>
