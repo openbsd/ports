@@ -1,9 +1,8 @@
 COMMENT=	Python module dependency analysis tool
 
-MODPY_EGG_VERSION=	0.19.5
+MODPY_EGG_VERSION =	0.19.6
 DISTNAME=	modulegraph-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	devel
 
