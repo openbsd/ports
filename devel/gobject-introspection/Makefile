@@ -2,7 +2,7 @@ COMMENT=		GObject Introspection
 
 GNOME_VERSION=		1.82.0
 GNOME_PROJECT=		gobject-introspection
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 
@@ -28,7 +28,6 @@ CONFIGURE_ARGS=		-Dcairo_libname=libcairo-gobject.so
 # cairo is only needed for tests;
 # prevent cyclic dependency: g-o-i -> cairo -> glib2 -> g-o-i
 CONFIGURE_ARGS +=	-Dcairo=disabled
-LIB_DEPENDS=		devel/glib2,bootstrap
 
 BUILD_DEPENDS=		devel/bison \
 			textproc/py-markdown${MODPY_FLAVOR} \
@@ -37,17 +36,23 @@ BUILD_DEPENDS=		devel/bison \
 RUN_DEPENDS=		textproc/py-markdown${MODPY_FLAVOR} \
 			www/py-mako${MODPY_FLAVOR}
 
+# XXX work-around for dpb limitations: trick dpb scanner into being
+# happy with glib2-bootstrap as a RUN_DEPENDS
+#LIB_DEPENDS +=		devel/glib2
+BUILD_DEPENDS +=	devel/glib2,bootstrap
+.if defined(DPB)
+RUN_DEPENDS +=		devel/glib2,bootstrap
+.else
+RUN_DEPENDS +=		glib2-*:devel/glib2
+.endif
+
 # g-ir-scanner uses distutils functions. these are overridden by setuptools
 # if setuptools is present (see site-packages/distutils-precedence.pth);
 # enforce a dependency to avoid the case where setuptools might be removed
 # mid-run, causing g-ir-scanner to fail.
-#
 # could be removed if/when gobject-introspection stops using distutils;
 # see https://gitlab.gnome.org/GNOME/gobject-introspection/-/issues/395
-RUN_DEPENDS+=		devel/py-setuptools${MODPY_FLAVOR}
-
-# XXX: tests/scanner/test_transformer.py fails otherwise
-TEST_DEPENDS+=		textproc/gsed
+RUN_DEPENDS +=		devel/py-setuptools${MODPY_FLAVOR}
 
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mlld}
@@ -55,7 +60,9 @@ TEST_DEPENDS+=		textproc/gsed
 MAKE_ENV=		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 .endif
 
-# XXX: tidy-up some GNU-isms; see above.
+# XXX: tidy-up some GNU-isms;
+# tests/scanner/test_transformer.py fails otherwise
+TEST_DEPENDS +=		textproc/gsed
 pre-test:
 	sed -i 's,\"sed ,\"gsed ,g' ${WRKSRC}/tests/scanner/test_transformer.py
 
