@@ -22,6 +22,13 @@ CONFIGURE_ARGS =-DBUILD_SHARED_LIBS=ON \
 		-DDRACO_TESTS=ON \
 		-DDRACO_GOOGLETEST_PATH=${WRKDIR}/devel/gtest/googletest-1.15.2
 
+# everything but tests
+ALL_TARGET =	draco_encoder draco_decoder
+
+pre-test:
+	# build whatever is left (ca. 57 C++ test files)
+	${MODCMAKE_BUILD_TARGET}
+
 do-test:
 	cd ${WRKBUILD} && \
 		./draco_tests && \
