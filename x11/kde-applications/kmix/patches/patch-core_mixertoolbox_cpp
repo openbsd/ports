@@ -1,0 +1,46 @@
+OpenBSD sndio(7) backend support
+https://invent.kde.org/multimedia/kmix/-/merge_requests/32
+
+Index: core/mixertoolbox.cpp
+--- core/mixertoolbox.cpp.orig
++++ core/mixertoolbox.cpp
+@@ -51,9 +51,16 @@ extern MixerBackend *SUN_getMixer(Mixer *mixer, int de
+ extern const char *SUN_driverName;
+ #endif
+ 
++#ifdef HAVE_SNDIO_MIXER
++extern MixerBackend *Sndio_getMixer(Mixer *mixer, int deviceIndex);
++extern const char *Sndio_driverName;
++#endif
++
++#ifndef __OpenBSD__
+ // Possibly encapsulated by #ifdef HAVE_DBUS
+ extern MixerBackend *MPRIS2_getMixer(Mixer *mixer, int deviceIndex);
+ extern const char *MPRIS2_driverName;
++#endif
+ 
+ #ifdef HAVE_ALSA_MIXER
+ extern MixerBackend *ALSA_getMixer(Mixer *mixer, int deviceIndex);
+@@ -131,6 +138,9 @@ struct MixerFactory
+  */
+ static const MixerFactory g_mixerFactories[] =
+ {
++#ifdef HAVE_SNDIO_MIXER
++    { &Sndio_getMixer, Sndio_driverName, nullptr, nullptr },
++#endif
+ #ifdef HAVE_SUN_MIXER
+     { &SUN_getMixer, SUN_driverName, nullptr, nullptr },
+ #endif
+@@ -151,10 +161,12 @@ static const MixerFactory g_mixerFactories[] =
+     { &OSS4_getMixer, OSS4_driverName, nullptr, nullptr },
+ #endif
+ 
++#ifndef __OpenBSD__
+     // Make sure MPRIS2 is at the end.  The implementation of SINGLE_PLUS_MPRIS2
+     // in MixerToolBox is much easier.  And also we make sure that streams are always
+     // the last backend, which is important for the default KMix GUI layout.
+     { &MPRIS2_getMixer, MPRIS2_driverName, nullptr, nullptr }
++#endif
+ };
+ 
+ static const int numBackends = sizeof(g_mixerFactories)/sizeof(MixerFactory);

@@ -1,6 +1,7 @@
 COMMENT =	sound channel mixer and volume control
 DISTNAME =	kmix-${VERSION}
 CATEGORIES =	audio
+REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/kmix
 
@@ -11,7 +12,7 @@ WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
 WANTLIB += KF5DBusAddons KF5GlobalAccel KF5I18n KF5Notifications
 WANTLIB += KF5Solid KF5WidgetsAddons KF5WindowSystem KF5XmlGui
 WANTLIB += Qt5Core Qt5DBus Qt5Gui Qt5Widgets Qt5Xml X11 c canberra
-WANTLIB += m pulse
+WANTLIB += m sndio
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes
@@ -26,7 +27,6 @@ BUILD_DEPENDS =	devel/kf5/kcrash
 RUN_DEPENDS =	devel/kf5/kcrash
 
 LIB_DEPENDS =	audio/libcanberra \
-		audio/pulseaudio \
 		devel/kf5/kauth \
 		devel/kf5/kcodecs \
 		devel/kf5/kconfig \
