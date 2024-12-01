@@ -5,7 +5,7 @@ COMMENT=		cross-platform networked sound server
 VERSION=		17.0
 DISTNAME=		pulseaudio-${VERSION}
 EXTRACT_SUFX=		.tar.xz
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS += pulse                     7.2 # 0.24.3
 SHARED_LIBS += pulse-simple              1.2 # 0.1.1
@@ -29,7 +29,8 @@ WANTLIB += xcb
 
 SITES=			https://freedesktop.org/software/pulseaudio/releases/
 
-MODULES=		devel/meson
+MODULES=		devel/meson \
+			devel/dconf
 
 # C++11; no associated WANTLIB: only checked by configure but never used
 COMPILER=		base-clang ports-gcc
@@ -77,7 +78,6 @@ CONFIGURE_ARGS=		-Ddoxygen=false \
 			-Delogind=disabled \
 			-Dfftw=disabled \
 			-Dbluez5-gstreamer=disabled \
-			-Dgsettings=disabled \
 			-Dgtk=disabled \
 			-Dhal-compat=false \
 			-Djack=disabled \
@@ -117,5 +117,5 @@ post-install:
 	mv ${WRKINST}${SYSCONFDIR}/{pulse,xdg} ${PREFIX}/share/examples/pulseaudio
 # remove this linux-centric bash script
 	rm ${PREFIX}/bin/pa-info
-	
+
 .include <bsd.port.mk>

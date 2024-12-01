@@ -1,3 +1,4 @@
+@conflict pipewire-<1.2.7p0
 @newgroup _pulse:683
 @newgroup _pulse-access:684
 @newuser _pulse:683:683::PulseAudio System Daemon:/var/run/pulse:/sbin/nologin
@@ -85,6 +86,7 @@ lib/pulseaudio/modules/
 @so lib/pulseaudio/modules/module-echo-cancel.so
 @so lib/pulseaudio/modules/module-filter-apply.so
 @so lib/pulseaudio/modules/module-filter-heuristics.so
+@so lib/pulseaudio/modules/module-gsettings.so
 @so lib/pulseaudio/modules/module-http-protocol-tcp.so
 @so lib/pulseaudio/modules/module-http-protocol-unix.so
 @so lib/pulseaudio/modules/module-intended-roles.so
@@ -128,6 +130,8 @@ lib/pulseaudio/modules/
 @so lib/pulseaudio/modules/module-x11-cork-request.so
 @so lib/pulseaudio/modules/module-x11-publish.so
 @so lib/pulseaudio/modules/module-x11-xsmp.so
+libexec/pulse/
+@bin libexec/pulse/gsettings-helper
 @man man/man1/pacat.1
 @man man/man1/pacmd.1
 @man man/man1/pactl.1
@@ -143,6 +147,9 @@ lib/pulseaudio/modules/
 @man man/man5/pulse-cli-syntax.5
 @man man/man5/pulse-client.conf.5
 @man man/man5/pulse-daemon.conf.5
+share/GConf/
+share/GConf/gsettings/
+share/GConf/gsettings/pulseaudio.convert
 share/bash-completion/completions/pacat
 share/bash-completion/completions/pacmd
 share/bash-completion/completions/pactl
@@ -174,6 +181,7 @@ share/examples/pulseaudio/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/pulseaudio/xdg/autostart/pulseaudio.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/pulseaudio.desktop
+share/glib-2.0/schemas/org.freedesktop.pulseaudio.gschema.xml
 share/locale/af/LC_MESSAGES/pulseaudio.mo
 share/locale/as/LC_MESSAGES/pulseaudio.mo
 share/locale/be/LC_MESSAGES/pulseaudio.mo
@@ -239,3 +247,4 @@ share/vala/vapi/libpulse.vapi
 share/zsh/
 share/zsh/site-functions/
 share/zsh/site-functions/_pulseaudio
+@tag glib-compile-schemas
