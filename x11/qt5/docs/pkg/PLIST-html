@@ -860,6 +860,8 @@ share/doc/qt5/qtdoc/examples-xml.html
 share/doc/qt5/qtdoc/exceptionsafety.html
 share/doc/qt5/qtdoc/fdl.html
 share/doc/qt5/qtdoc/functions.html
+share/doc/qt5/qtdoc/get-and-install-qt-cli.html
+share/doc/qt5/qtdoc/get-and-install-qt.html
 share/doc/qt5/qtdoc/gettingstarted.html
 share/doc/qt5/qtdoc/gpl.html
 share/doc/qt5/qtdoc/groups.html
@@ -911,6 +913,7 @@ share/doc/qt5/qtdoc/images/kernel-settings.png
 share/doc/qt5/qtdoc/images/layout-examples.png
 share/doc/qt5/qtdoc/images/logo.png
 share/doc/qt5/qtdoc/images/mainscreen.png
+share/doc/qt5/qtdoc/images/maintenancetool.png
 share/doc/qt5/qtdoc/images/mob-idle.png
 share/doc/qt5/qtdoc/images/ok.png
 share/doc/qt5/qtdoc/images/open-project.png
@@ -1234,6 +1237,7 @@ share/doc/qt5/qtdoc/qt-embedded-fonts.html
 share/doc/qt5/qtdoc/qt-embedded-kmap2qmap.html
 share/doc/qt5/qtdoc/qt-embedded-makeqpf.html
 share/doc/qt5/qtdoc/qt-gui-concepts.html
+share/doc/qt5/qtdoc/qt-online-installation.html
 share/doc/qt5/qtdoc/qt5-intro.html
 share/doc/qt5/qtdoc/qtconcurrent-mtexamples.html
 share/doc/qt5/qtdoc/qtconcurrentexamples.html

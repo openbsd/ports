@@ -1,6 +1,9 @@
 QT5NAME =		Qt3D
 COMMENT-main =		Qt5 components for 3D graphics
 
+KDE_COMMIT =		1eecf07a4d5dadd1b5aaf785fc2a5ed03565599d
+KDE_VERSION =		3
+
 MULTI_PACKAGES =	-main -examples
 
 SHARED_LIBS +=  Qt53DCore                    3.0 # 5.9
@@ -32,5 +35,8 @@ CONFIGURE_ARGS +=	-assimp=system
 FLAVORS =		debug
 
 MODQMAKE_RECURSIVE =	No
+
+pre-configure:
+	${QT5_GEN_INCLUDES}
 
 .include <bsd.port.mk>

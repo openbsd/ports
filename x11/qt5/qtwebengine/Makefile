@@ -8,7 +8,7 @@ USE_NOBTCFI =		Yes
 
 QT5NAME =		QtWebEngine
 KDE_COMMIT =		17fd3176988586168bee8654008a097a5f23ec1d
-KDE_VERSION =		5
+KDE_VERSION =		6
 
 # Override
 VERSION =		${QT5_WEBENGINE_VERSION}
@@ -16,7 +16,7 @@ QT5_VERSION =		${QT5_WEBENGINE_VERSION}
 
 # https://invent.kde.org/qt/qt/qtwebengine-chromium/-/commits/87-based?ref_type=heads
 DIST_TUPLE +=	kde qt qt/qtwebengine-chromium \
-		4df08bfa3bf4ae9d3f49b7d27b5faeb757721c44 src/3rdparty
+		a5e3030056f7a1470067ad6460ab2f0ee6f9c0a4 src/3rdparty
 
 ONLY_FOR_ARCHS =	amd64 aarch64 i386
 

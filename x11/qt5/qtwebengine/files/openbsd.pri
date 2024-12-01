@@ -29,4 +29,5 @@ gn_args +=	clang_use_chrome_plugins=false \
 		use_system_harfbuzz=true \
 		use_system_minizip=true \
 		use_system_re2=false \
+		use_system_libvpx=true \
 		use_udev=false

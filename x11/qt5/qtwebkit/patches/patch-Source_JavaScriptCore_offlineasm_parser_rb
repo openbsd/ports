@@ -1,9 +1,10 @@
 Work with Ruby 3.2+
 https://commits.webkit.org/219400@main
 
---- Source/JavaScriptCore/offlineasm/parser.rb.port.orig	Wed Mar  4 09:16:37 2020
-+++ Source/JavaScriptCore/offlineasm/parser.rb	Wed Nov 13 22:24:03 2024
-@@ -584,9 +584,7 @@
+Index: Source/JavaScriptCore/offlineasm/parser.rb
+--- Source/JavaScriptCore/offlineasm/parser.rb.orig
++++ Source/JavaScriptCore/offlineasm/parser.rb
+@@ -584,9 +584,7 @@ class Parser
          firstCodeOrigin = @tokens[@idx].codeOrigin
          list = []
          loop {
@@ -14,7 +15,7 @@ https://commits.webkit.org/219400@main
                  # This is the only place where we can encounter a global
                  # annotation, and hence need to be able to distinguish between
                  # them.
-@@ -600,6 +598,8 @@
+@@ -600,6 +598,8 @@ class Parser
                  list << Instruction.new(codeOrigin, annotationOpcode, [], @tokens[@idx].string)
                  @annotation = nil
                  @idx += 2 # Consume the newline as well.

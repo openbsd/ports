@@ -1,7 +1,7 @@
 QT5NAME =		QtSVG
 COMMENT-main =		SVG support for Qt5
 
-KDE_COMMIT =		26fdcaff0d3d6bf6f5c847e833006577a6e8ba7d
+KDE_COMMIT =		9c3d40626ddfccc87886966a59e5cd6b1b5ce739
 KDE_VERSION =		5
 
 DPB_PROPERTIES =	parallel
