@@ -13,6 +13,9 @@ MAINTAINER =	Kurt Mosiejczuk <kmos@openbsd.org>
 # zlib
 PERMIT_PACKAGE =	Yes
 
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB +=	epoll-shim m pthread
 
 # dlopen()'d
@@ -24,6 +27,7 @@ EXTRACT_SUFX =	.zip
 MODULES =	devel/cmake
 
 CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=ON \
+			-DGLFW_BUILD_EXAMPLES=OFF \
 			-DGLFW_BUILD_TESTS=OFF
 
 CFLAGS +=		-I${X11BASE}/include
