@@ -1,6 +1,5 @@
 COMMENT =	Breeze QQC2 Style
 DISTNAME =	qqc2-breeze-style-${VERSION}
-REVISION =	0
 
 MODKDE_TRANSLATIONS = Yes
 MODKDE_ICON_CACHE = Yes
