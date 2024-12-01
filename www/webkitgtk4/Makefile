@@ -12,7 +12,7 @@ PORTROACH =		limitw:1,even
 
 COMMENT =		GTK+ port of the WebKit (${API}) rendering engine
 
-V =			2.46.3
+V =			2.46.4
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk${API:S/.//}-${V}
 FULLPKGNAME =		${PKGNAME}
@@ -176,7 +176,7 @@ CONFIGURE_ARGS +=	-DENABLE_WEBDRIVER=OFF \
 			-DUSE_GTK4=OFF
 .elif ${FLAVOR:Mwebkitgtk60}
 API =			6.0
-WANTLIB += graphene-1.0 gtk-4 soup-3.0
+WANTLIB += graphene-1.0 gtk-4 soup-3.0 vulkan
 LIB_DEPENDS +=		devel/libsoup3 \
 			x11/gtk+4
 .else

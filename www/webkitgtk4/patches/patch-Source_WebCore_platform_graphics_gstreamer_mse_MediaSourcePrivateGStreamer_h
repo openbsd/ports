@@ -1,0 +1,21 @@
+XXX push upstream
+/usr/ports/pobj/webkitgtk60-2.46.4-webkitgtk60/webkitgtk-2.46.4/Source/WebCore/platform/graphics/gstreamer/mse/MediaSourcePrivateGStreamer.cpp:177:9: error: use of undeclared identifier 'm_trackIdRegistry'
+    if (m_trackIdRegistry.add(preferredId).isNewEntry) {
+
+Index: Source/WebCore/platform/graphics/gstreamer/mse/MediaSourcePrivateGStreamer.h
+--- Source/WebCore/platform/graphics/gstreamer/mse/MediaSourcePrivateGStreamer.h.orig
++++ Source/WebCore/platform/graphics/gstreamer/mse/MediaSourcePrivateGStreamer.h
+@@ -94,12 +94,12 @@ class MediaSourcePrivateGStreamer final : public Media
+     Ref<const Logger> m_logger;
+     const void* m_logIdentifier;
+     uint64_t m_nextSourceBufferID { 0 };
++#endif
+ 
+     // Stores known track IDs, so we can work around ID collisions between multiple source buffers.
+     // The registry is placed here to enforce ID uniqueness specifically by player, not by process,
+     // since its not an issue if multiple players use the same ID, and we want to preserve IDs as much as possible.
+     HashSet<TrackID, WTF::IntHash<TrackID>, WTF::UnsignedWithZeroKeyHashTraits<TrackID>> m_trackIdRegistry;
+-#endif
+ };
+ 
+ } // namespace WebCore
