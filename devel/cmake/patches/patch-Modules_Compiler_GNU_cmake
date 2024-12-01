@@ -1,7 +1,7 @@
 Index: Modules/Compiler/GNU.cmake
 --- Modules/Compiler/GNU.cmake.orig
 +++ Modules/Compiler/GNU.cmake
-@@ -107,11 +107,19 @@ macro(__compiler_gnu lang)
+@@ -53,11 +53,19 @@ macro(__compiler_gnu lang)
    endif()
  
    # Initial configuration flags.

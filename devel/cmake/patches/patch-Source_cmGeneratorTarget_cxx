@@ -1,7 +1,7 @@
 Index: Source/cmGeneratorTarget.cxx
 --- Source/cmGeneratorTarget.cxx.orig
 +++ Source/cmGeneratorTarget.cxx
-@@ -2963,6 +2963,50 @@ cmGeneratorTarget::Names cmGeneratorTarget::GetLibrary
+@@ -3424,6 +3424,50 @@ cmGeneratorTarget::Names cmGeneratorTarget::GetLibrary
    targetNames.Output =
      cmStrCat(components.prefix, targetNames.Base, components.suffix);
  
