@@ -1,9 +1,8 @@
 COMMENT =		freezes a Flask application into a set of static files
 
-MODPY_EGG_VERSION =	0.18
+MODPY_EGG_VERSION =	0.19
 DISTNAME =		Frozen-Flask-${MODPY_EGG_VERSION}
 PKGNAME =		py-frozen-flask-${MODPY_EGG_VERSION}
-REVISION =		0
 
 CATEGORIES =		www
 
