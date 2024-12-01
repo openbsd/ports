@@ -2,7 +2,7 @@ COMMENT =		multithreaded lossless PNG compression optimizer
 
 GH_ACCOUNT =		shssoichiro
 GH_PROJECT =		oxipng
-GH_TAGNAME =		v9.1.2
+GH_TAGNAME =		v9.1.3
 
 CATEGORIES =		graphics
 
