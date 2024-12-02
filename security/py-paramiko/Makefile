@@ -1,10 +1,9 @@
 COMMENT =	low-level pure Python implementation of SSHv2
 
-MODPY_EGG_VERSION =	3.4.0
+MODPY_EGG_VERSION =	3.5.0
 DISTNAME =		paramiko-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		security
-REVISION =		0
 
 HOMEPAGE =		https://www.paramiko.org/
 
@@ -32,11 +31,10 @@ FLAVOR =		python3
 MODPY_ADJ_FILES =	demos/*.py
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}paramiko
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${MODPY_PY_PREFIX}paramiko
-	cp -R ${WRKSRC}/docs/* ${PREFIX}/share/doc/${MODPY_PY_PREFIX}paramiko
-	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}paramiko
-	${INSTALL_DATA} ${WRKSRC}/demos/* \
-	  ${PREFIX}/share/examples/${MODPY_PY_PREFIX}paramiko
+	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-paramiko
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-paramiko
+	cp -R ${WRKSRC}/docs/* ${PREFIX}/share/doc/py-paramiko
+	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/py-paramiko
+	${INSTALL_DATA} ${WRKSRC}/demos/* ${PREFIX}/share/examples/py-paramiko
 
 .include <bsd.port.mk>
