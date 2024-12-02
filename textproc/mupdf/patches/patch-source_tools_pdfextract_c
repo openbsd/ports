@@ -15,7 +15,7 @@ Index: source/tools/pdfextract.c
  
  static pdf_document *doc = NULL;
  static fz_context *ctx = NULL;
-@@ -294,6 +297,12 @@ int pdfextract_main(int argc, char **argv)
+@@ -297,6 +300,12 @@ int pdfextract_main(int argc, char **argv)
  		return usage();
  
  	infile = argv[fz_optind++];

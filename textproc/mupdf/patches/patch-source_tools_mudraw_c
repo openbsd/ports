@@ -12,7 +12,7 @@ Index: source/tools/mudraw.c
  #include <string.h>
  #include <limits.h>
  #include <stdlib.h>
-@@ -2147,6 +2149,12 @@ int mudraw_main(int argc, char **argv)
+@@ -2165,6 +2167,12 @@ int mudraw_main(int argc, char **argv)
  
  	if (fz_optind == argc)
  		return usage();
