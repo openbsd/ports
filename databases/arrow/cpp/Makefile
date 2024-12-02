@@ -1,3 +1,4 @@
+BROKEN-sparc64 =	Unknown system processor
 COMMENT =	columnar format and toolbox for fast-data interchange
 
 V =		18.0.0
