@@ -1,6 +1,6 @@
 COMMENT =		http client/server for asyncio
 
-MODPY_EGG_VERSION =	3.11.8
+MODPY_EGG_VERSION =	3.11.9
 DISTNAME =		aiohttp-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
