@@ -1,0 +1,14 @@
+give a chance to sparc64
+
+Index: cpp/cmake_modules/SetupCxxFlags.cmake
+--- cpp/cmake_modules/SetupCxxFlags.cmake.orig
++++ cpp/cmake_modules/SetupCxxFlags.cmake
+@@ -38,6 +38,8 @@ if(NOT DEFINED ARROW_CPU_FLAG)
+     set(ARROW_CPU_FLAG "s390x")
+   elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "riscv64")
+     set(ARROW_CPU_FLAG "riscv64")
++  elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "sparc64")
++    set(ARROW_CPU_FLAG "sparc64")
+   elseif(CMAKE_SYSTEM_PROCESSOR MATCHES "loongarch64")
+     set(ARROW_CPU_FLAG "loongarch64")
+   else()
