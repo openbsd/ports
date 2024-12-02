@@ -1,8 +1,6 @@
 COMMENT=	database toolkit for Python
 
-# 2.x is a major update with incompatible changes;
-# dependent ports need checking
-MODPY_EGG_VERSION=	1.4.54
+MODPY_EGG_VERSION=	2.0.36
 DISTNAME=	sqlalchemy-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
@@ -29,10 +27,12 @@ FLAVOR=		python3
 MAKE_ENV +=	PYTHONPATH=.
 MODPY_PYTEST=	Yes
 
-RUN_DEPENDS +=	devel/py-greenlet${MODPY_FLAVOR}
+RUN_DEPENDS +=	devel/py-greenlet${MODPY_FLAVOR} \
+		devel/py-typing-extensions${MODPY_FLAVOR}
 
 TEST_DEPENDS=	devel/py-test-xdist${MODPY_FLAVOR} \
-		devel/py-mock${MODPY_FLAVOR}
+		devel/py-mock${MODPY_FLAVOR} \
+		devel/py-mypy${MODPY_FLAVOR}
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-sqlalchemy
