@@ -1,6 +1,6 @@
 COMMENT=	classes without boilerplate
 
-MODPY_EGG_VERSION=	23.2.0
+MODPY_EGG_VERSION=	24.2.0
 
 DISTNAME=	attrs-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
