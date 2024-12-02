@@ -1,27 +1,26 @@
-PKG_ARCH =	*
+PKG_ARCH=	*
 
-COMMENT =	monitoring plugin to check the status of ESX/i hardware
+COMMENT=	monitoring plugin to check the status of ESX/i hardware
 
-GH_ACCOUNT =	Napsty
-GH_PROJECT =	check_esxi_hardware
-GH_TAGNAME =	20221230
-REVISION =	0
+GH_ACCOUNT=	Napsty
+GH_PROJECT=	check_esxi_hardware
+GH_TAGNAME=	20241129
 
-CATEGORIES =	net
+CATEGORIES=	net
 
-HOMEPAGE =	http://www.claudiokuenzler.com/nagios-plugins/check_esxi_hardware.php
+HOMEPAGE=	http://www.claudiokuenzler.com/nagios-plugins/check_esxi_hardware.php
 
 # GPLv2+
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-NO_BUILD =	Yes
-NO_TEST =	Yes
+NO_BUILD=	Yes
+NO_TEST=	Yes
 
-RUN_DEPENDS =	devel/py-wbem${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-wbem${MODPY_FLAVOR}
 
-MODULES =	lang/python
+MODULES=	lang/python
 
-MODPY_ADJ_FILES=	check_esxi_hardware.py
+MODPY_ADJ_FILES= check_esxi_hardware.py
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/libexec/nagios
