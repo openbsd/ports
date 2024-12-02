@@ -31,7 +31,8 @@ WANTLIB +=	c crypto curl execinfo gdal geotiff m proj pq pthread
 WANTLIB +=	ssl xml2 z zstd
 WANTLIB += ${COMPILER_LIBCXX}
 
-BUILD_DEPENDS +=	devel/gtest
+CONFIGURE_ARGS +=	-DWITH_TESTS=OFF
+#BUILD_DEPENDS +=	devel/gtest
 # pgpointcloudtest fails but that's the only one (needs running psql on /tmp/.s.PGSQL.5432)
 
 .include <bsd.port.mk>
