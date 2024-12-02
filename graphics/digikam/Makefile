@@ -4,11 +4,10 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	KDE digital photo and video management utility
 
-V =		8.4.0
+V =		8.5.0
 PKGNAME =	digikam-${V}
 DISTNAME =	digiKam-${V}
 CATEGORIES =	graphics
-REVISION =	0
 
 HOMEPAGE =	https://www.digikam.org/
 
@@ -70,6 +69,7 @@ RUN_DEPENDS +=	graphics/p5-Image-ExifTool
 
 LIB_DEPENDS =	devel/glib2 \
 		devel/kf6/kcalendarcore \
+		devel/kf6/kcolorscheme \
 		devel/kf6/kcompletion \
 		devel/kf6/kconfig \
 		devel/kf6/kconfigwidgets \
@@ -96,8 +96,8 @@ LIB_DEPENDS =	devel/glib2 \
 		graphics/jpeg \
 		graphics/lcms2 \
 		graphics/lensfun \
-		graphics/libjxl \
 		graphics/libgphoto2 \
+		graphics/libjxl \
 		graphics/opencv \
 		graphics/png \
 		graphics/tiff \
@@ -108,8 +108,9 @@ LIB_DEPENDS =	devel/glib2 \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtmultimedia \
 		x11/qt6/qtnetworkauth \
-		x11/qt6/qtsvg \
+		x11/qt6/qtpositioning \
 		x11/qt6/qtscxml \
+		x11/qt6/qtsvg \
 		x11/qt6/qtwebchannel \
 		x11/qt6/qtwebengine
 

@@ -363,9 +363,6 @@ share/digikam/data/editimage.png
 share/digikam/data/exifinfo.png
 share/digikam/data/fabric-texture.png
 share/digikam/data/granit-pattern.png
-share/digikam/data/histogram-lin.png
-share/digikam/data/histogram-log.png
-share/digikam/data/histogram.png
 share/digikam/data/ice-pattern.png
 share/digikam/data/image-full.png
 share/digikam/data/image-selection.png
@@ -418,6 +415,8 @@ share/digikam/data/wood-pattern.png
 share/digikam/database/
 share/digikam/database/dbconfig.xml
 share/digikam/database/mysql-global.conf
+share/digikam/dnnmodels/
+share/digikam/dnnmodels/dnnmodels.conf
 share/digikam/geoiface/
 share/digikam/geoiface/backend-googlemaps-js.js
 share/digikam/geoiface/backend-googlemaps.html
@@ -2008,12 +2007,10 @@ share/digikam/themes/vanilla/template.xsl
 share/digikam/themes/vanilla/vanilla.desktop
 share/digikam/utils/
 share/digikam/utils/digikam-camera
-share/icons/hicolor/128x128/apps/avplayer.png
 share/icons/hicolor/128x128/apps/digikam.png
 share/icons/hicolor/128x128/apps/expoblending.png
 share/icons/hicolor/128x128/apps/panorama.png
 share/icons/hicolor/128x128/apps/showfoto.png
-share/icons/hicolor/16x16/apps/avplayer.png
 share/icons/hicolor/16x16/apps/digikam.png
 share/icons/hicolor/16x16/apps/dk-box.png
 share/icons/hicolor/16x16/apps/dk-dropbox.png
@@ -2031,7 +2028,6 @@ share/icons/hicolor/16x16/apps/dk-smugmug.png
 share/icons/hicolor/16x16/apps/expoblending.png
 share/icons/hicolor/16x16/apps/panorama.png
 share/icons/hicolor/16x16/apps/showfoto.png
-share/icons/hicolor/22x22/apps/avplayer.png
 share/icons/hicolor/22x22/apps/digikam.png
 share/icons/hicolor/22x22/apps/dk-box.png
 share/icons/hicolor/22x22/apps/dk-dropbox.png
@@ -2049,7 +2045,6 @@ share/icons/hicolor/22x22/apps/dk-smugmug.png
 share/icons/hicolor/22x22/apps/expoblending.png
 share/icons/hicolor/22x22/apps/panorama.png
 share/icons/hicolor/22x22/apps/showfoto.png
-share/icons/hicolor/256x256/apps/avplayer.png
 share/icons/hicolor/256x256/apps/digikam.png
 share/icons/hicolor/256x256/apps/showfoto.png
 share/icons/hicolor/32x32/actions/albumfolder-importdir.png
@@ -2070,7 +2065,6 @@ share/icons/hicolor/32x32/actions/tag-recents.png
 share/icons/hicolor/32x32/actions/tag-reset.png
 share/icons/hicolor/32x32/actions/tag.png
 share/icons/hicolor/32x32/actions/underexposure.png
-share/icons/hicolor/32x32/apps/avplayer.png
 share/icons/hicolor/32x32/apps/digikam.png
 share/icons/hicolor/32x32/apps/dk-box.png
 share/icons/hicolor/32x32/apps/dk-dropbox.png
@@ -2088,7 +2082,6 @@ share/icons/hicolor/32x32/apps/dk-smugmug.png
 share/icons/hicolor/32x32/apps/expoblending.png
 share/icons/hicolor/32x32/apps/panorama.png
 share/icons/hicolor/32x32/apps/showfoto.png
-share/icons/hicolor/48x48/apps/avplayer.png
 share/icons/hicolor/48x48/apps/digikam.png
 share/icons/hicolor/48x48/apps/dk-box.png
 share/icons/hicolor/48x48/apps/dk-dropbox.png
@@ -2106,12 +2099,10 @@ share/icons/hicolor/48x48/apps/dk-smugmug.png
 share/icons/hicolor/48x48/apps/expoblending.png
 share/icons/hicolor/48x48/apps/panorama.png
 share/icons/hicolor/48x48/apps/showfoto.png
-share/icons/hicolor/64x64/apps/avplayer.png
 share/icons/hicolor/64x64/apps/digikam.png
 share/icons/hicolor/64x64/apps/showfoto.png
 share/icons/hicolor/96x96/apps/expoblending.png
 share/icons/hicolor/96x96/apps/panorama.png
-share/icons/hicolor/scalable/apps/avplayer.svgz
 share/icons/hicolor/scalable/apps/digikam.svgz
 share/icons/hicolor/scalable/apps/dk-flickr.svgz
 share/icons/hicolor/scalable/apps/dk-googlephoto.svgz
