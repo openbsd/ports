@@ -1,6 +1,6 @@
 COMMENT=	allow connecting with Happy Eyeballs (RFC 8305)
 
-MODPY_EGG_VERSION=	2.4.3
+MODPY_EGG_VERSION=	2.4.4
 DISTNAME=	aiohappyeyeballs-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
