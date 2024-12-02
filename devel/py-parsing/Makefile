@@ -1,6 +1,6 @@
-COMMENT=	Python parsing module
+COMMENT=	classes and methods to define and execute parsing grammars
 
-MODPY_EGG_VERSION=	3.1.2
+MODPY_EGG_VERSION=	3.2.0
 DISTNAME=	pyparsing-${MODPY_EGG_VERSION}
 PKGNAME=	${DISTNAME:S/py/py-/}
 CATEGORIES=	devel
@@ -19,6 +19,7 @@ FLAVOR=		python3
 
 # test_diagram needs railroad (some others want it too, but test_diagram
 # makes test collection fail)
-MODPY_PYTEST_ARGS=	--ignore tests/test_diagram.py tests
+MODPY_PYTEST_ARGS= --ignore tests/test_diagram.py tests
+TEST_DEPENDS=	graphics/py-matplotlib${MODPY_FLAVOR}
 
 .include <bsd.port.mk>
