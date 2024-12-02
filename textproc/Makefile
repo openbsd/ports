@@ -430,6 +430,7 @@
      SUBDIR += py-gTTS,python3
      SUBDIR += py-humanfriendly,python3
      SUBDIR += py-humanize,python3
+     SUBDIR += py-icecream,python3
      SUBDIR += py-ijson,python3
      SUBDIR += py-inflect,python3
      SUBDIR += py-inflection,python3
