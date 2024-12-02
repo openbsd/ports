@@ -3,6 +3,7 @@ COMMENT=	database toolkit for Python
 MODPY_EGG_VERSION=	2.0.36
 DISTNAME=	sqlalchemy-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	databases
 
@@ -26,6 +27,8 @@ FLAVOR=		python3
 
 MAKE_ENV +=	PYTHONPATH=.
 MODPY_PYTEST=	Yes
+
+BUILD_DEPENDS =	lang/cython${MODPY_FLAVOR}
 
 RUN_DEPENDS +=	devel/py-greenlet${MODPY_FLAVOR} \
 		devel/py-typing-extensions${MODPY_FLAVOR}
