@@ -89,6 +89,7 @@ share/lynis/include/tests_firewalls
 share/lynis/include/tests_hardening
 share/lynis/include/tests_homedirs
 share/lynis/include/tests_insecure_services
+share/lynis/include/tests_kerberos
 share/lynis/include/tests_kernel
 share/lynis/include/tests_kernel_hardening
 share/lynis/include/tests_ldap
