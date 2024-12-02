@@ -1,6 +1,6 @@
 COMMENT=	Python library implementing a Zigbee stack
 
-MODPY_EGG_VERSION=	0.73.0
+MODPY_EGG_VERSION=	0.73.1
 DISTNAME=	zigpy-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 
