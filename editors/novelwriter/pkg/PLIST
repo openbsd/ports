@@ -39,6 +39,7 @@ lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/i18n/nw_nb_NO.qm
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/i18n/nw_nl_NL.qm
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/i18n/nw_pl_PL.qm
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/i18n/nw_pt_BR.qm
+lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/i18n/nw_ru_RU.qm
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/i18n/nw_zh_CN.qm
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/i18n/project_de_DE.json
 lib/python${MODPY_VERSION}/site-packages/novelwriter/assets/i18n/project_en_GB.json
