@@ -1,0 +1,4 @@
+This module works with PyYAML and allows yaml files to be loaded to
+Python objects and Python objects to be dumped to yaml files.
+It works with both OrderedDicts and regular dicts. It started as
+a copy of "yamlordereddict" but has since been improved.
