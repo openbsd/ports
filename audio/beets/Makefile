@@ -1,6 +1,6 @@
 COMMENT=	CLI tools to manage music collections
 
-MODPY_EGG_VERSION= 2.1.0
+MODPY_EGG_VERSION= 2.2.0
 DISTNAME=	beets-${MODPY_EGG_VERSION}
 CATEGORIES=	audio
 
@@ -14,9 +14,6 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 MODPY_PYBUILD=	poetry-core
 MODPY_PI=	Yes
-
-# no tests in pypi package
-NO_TEST=	Yes
 
 RUN_DEPENDS+=	textproc/py-confuse${MODPY_FLAVOR} \
 		textproc/py-jellyfish${MODPY_FLAVOR} \
@@ -37,5 +34,26 @@ RUN_DEPENDS+=	textproc/py-confuse${MODPY_FLAVOR} \
 		archivers/py-rarfile${MODPY_FLAVOR} \
 		www/py-requests${MODPY_FLAVOR} \
 		www/py-requests-oauthlib${MODPY_FLAVOR}
+
+# Some tests are failed:
+#  - https://github.com/beetbox/beets/issues/5526
+#  - https://github.com/beetbox/beets/issues/5527
+TEST_DEPENDS=	archivers/py-rarfile${MODPY_FLAVOR} \
+		audio/py-mpd2${MODPY_FLAVOR} \
+		devel/py-mock${MODPY_FLAVOR} \
+		devel/py-test-cov${MODPY_FLAVOR} \
+		www/py-flask${MODPY_FLAVOR} \
+		www/py-requests-oauthlib${MODPY_FLAVOR} \
+		www/py-responses${MODPY_FLAVOR}
+
+# needs for tests
+PORTHOME=	${WRKDIR}
+
+post-install:
+	@mv ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/man/beet.1 \
+		${PREFIX}/man/man1
+	@mv ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/man/beetsconfig.5 \
+		${PREFIX}/man/man5
+	@rm -rf ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/man
 
 .include <bsd.port.mk>

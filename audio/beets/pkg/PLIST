@@ -369,4 +369,6 @@ lib/python${MODPY_VERSION}/site-packages/beetsplug/web/static/underscore.js
 lib/python${MODPY_VERSION}/site-packages/beetsplug/web/templates/
 lib/python${MODPY_VERSION}/site-packages/beetsplug/web/templates/index.html
 lib/python${MODPY_VERSION}/site-packages/beetsplug/zero.py
+@man man/man1/beet.1
+@man man/man5/beetsconfig.5
 share/doc/pkg-readmes/${PKGSTEM}
