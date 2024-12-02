@@ -1,12 +1,12 @@
 COMMENT=	free H.265/HEVC encoder
 
-VER=		3.6
+VER=		4.1
 DISTNAME=	x265_${VER}
 PKGNAME=	x265-${VER}
 CATEGORIES=	multimedia
 SITES=		https://bitbucket.org/multicoreware/x265_git/downloads/
 
-SHARED_LIBS=	x265	24.0
+SHARED_LIBS=	x265	25.0
 
 HOMEPAGE=	https://x265.org/
 
@@ -30,10 +30,8 @@ BUILD_DEPENDS+=	devel/nasm
 
 CONFIGURE_ARGS+=-DCMAKE_ASM_YASM_FLAGS_DEBUG="-g dwarf2" \
 		-DENABLE_PIC=On \
-		-DENABLE_TESTS=On
-
-CONFIGURE_ARGS+=-DX265_VERSION=${VER} \
-		-DX265_LATEST_TAG=${VER}
+		-DENABLE_TESTS=On \
+		-DGIT_ARCHETYPE=1
 
 .if ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "i386"
 CONFIGURE_ARGS+=-DENABLE_ASSEMBLY=Off

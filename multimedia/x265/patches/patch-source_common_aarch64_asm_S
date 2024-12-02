@@ -1,7 +1,7 @@
 Index: source/common/aarch64/asm.S
 --- source/common/aarch64/asm.S.orig
 +++ source/common/aarch64/asm.S
-@@ -97,6 +97,7 @@ ELF     .hidden EXTERN_ASM\name
+@@ -107,6 +107,7 @@ ELF     .hidden EXTERN_ASM\name
  ELF     .type   EXTERN_ASM\name, %function
  FUNC    .func   EXTERN_ASM\name
  EXTERN_ASM\name:

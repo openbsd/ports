@@ -1,0 +1,44 @@
+Fix for aarch64 xonly.
+
+Index: source/common/aarch64/dct.S
+--- source/common/aarch64/dct.S.orig
++++ source/common/aarch64/dct.S
+@@ -32,9 +32,6 @@
+ .section .rodata
+ #endif
+ 
+-.align 4
+-
+-.text
+ .set idct16_shift_1, 7
+ .set idct16_shift_2, 12-(BIT_DEPTH-8)
+ 
+@@ -99,7 +96,10 @@ tbl_const_dct_0:
+     .word 64, 83, 36, 89, 75, 50, 18,  0    // v0, v1
+     .word 90, 87, 80, 70, 57, 43, 25,  9    // v2, v3
+ 
++.text
+ 
++.align 4
++
+ // ***** idct 16x16 *****
+ // void idct16(const int16_t* src, int16_t* dst, intptr_t dstStride)
+ function PFX(idct16_neon)
+@@ -112,7 +112,7 @@ function PFX(idct16_neon)
+     stp             d8, d9, [sp,#-16]!
+     sub             sp, sp, #(16*16*2)
+ 
+-    adr             x8, tbl_const_idct_0
++    movrel          x8, tbl_const_idct_0
+     ldp             q0, q1, [x8]
+ 
+     mov             x5, sp
+@@ -513,7 +513,7 @@ function PFX(dct16_neon)
+     stp             d12, d13, [sp,#-16]!
+     stp             d14, d15, [sp,#-16]!
+ 
+-    adr             x6, tbl_const_dct_0
++    movrel          x6, tbl_const_dct_0
+     ld4r            {v16.2d, v17.2d, v18.2d, v19.2d}, [x6], #32
+     ld4r            {v20.2d, v21.2d, v22.2d, v23.2d}, [x6], #32
+     ld1             {v24.8h, v25.8h, v26.8h, v27.8h}, [x6], #64

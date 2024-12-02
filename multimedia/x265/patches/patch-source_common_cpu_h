@@ -1,0 +1,14 @@
+- Add run-time CPU feature detection for FreeBSD / OpenBSD
+
+Index: source/common/cpu.h
+--- source/common/cpu.h.orig
++++ source/common/cpu.h
+@@ -48,6 +48,8 @@ extern "C" void PFX(safe_intel_cpu_indicator_init)(voi
+ #define x265_emms() PFX(cpu_emms)()
+ #endif
+ 
++unsigned long x265_getauxval(unsigned long);
++
+ namespace X265_NS {
+ uint32_t cpu_detect(bool);
+ bool detect512();

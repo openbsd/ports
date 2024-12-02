@@ -1,0 +1,27 @@
+- Add run-time CPU feature detection for FreeBSD / OpenBSD
+
+Index: source/common/aarch64/cpu.h
+--- source/common/aarch64/cpu.h.orig
++++ source/common/aarch64/cpu.h
+@@ -119,7 +119,7 @@ static inline int aarch64_get_cpu_flags()
+     return flags;
+ }
+ 
+-#elif defined(__linux__)
++#elif HAVE_GETAUXVAL || HAVE_ELF_AUX_INFO
+ 
+ #include <sys/auxv.h>
+ 
+@@ -133,10 +133,10 @@ static inline int aarch64_get_cpu_flags()
+     int flags = 0;
+ 
+ #if HAVE_NEON_DOTPROD || HAVE_SVE
+-    unsigned long hwcap = getauxval(AT_HWCAP);
++    unsigned long hwcap = x265_getauxval(AT_HWCAP);
+ #endif
+ #if HAVE_NEON_I8MM || HAVE_SVE2
+-    unsigned long hwcap2 = getauxval(AT_HWCAP2);
++    unsigned long hwcap2 = x265_getauxval(AT_HWCAP2);
+ #endif
+ 
+ #if HAVE_NEON
