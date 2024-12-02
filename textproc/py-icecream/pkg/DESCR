@@ -1,0 +1,8 @@
+ic() is like print(), but better:
+
+- It prints both variables and expressions along with their values.
+- It's 60% faster to type.
+- Data structures are formatted and pretty printed.
+- Output is syntax highlighted.
+- It optionally includes program context: filename, line number, and
+parent function.

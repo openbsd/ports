@@ -1,0 +1,25 @@
+@conflict py-yamllint-<1.23.0p1
+@pkgpath devel/py-yamllint
+lib/python${MODPY_VERSION}/site-packages/icecream/
+lib/python${MODPY_VERSION}/site-packages/icecream-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/icecream-${MODPY_EGG_VERSION}.dist-info/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/icecream-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/icecream-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/icecream-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/icecream-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/icecream/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/icecream/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/icecream/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/icecream/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/icecream/${MODPY_PYCACHE}__version__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/icecream/${MODPY_PYCACHE}__version__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/icecream/${MODPY_PYCACHE}builtins.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/icecream/${MODPY_PYCACHE}builtins.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/icecream/${MODPY_PYCACHE}coloring.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/icecream/${MODPY_PYCACHE}coloring.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/icecream/${MODPY_PYCACHE}icecream.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/icecream/${MODPY_PYCACHE}icecream.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/icecream/__version__.py
+lib/python${MODPY_VERSION}/site-packages/icecream/builtins.py
+lib/python${MODPY_VERSION}/site-packages/icecream/coloring.py
+lib/python${MODPY_VERSION}/site-packages/icecream/icecream.py

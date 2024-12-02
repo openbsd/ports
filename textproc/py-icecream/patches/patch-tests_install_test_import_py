@@ -1,0 +1,19 @@
+Index: tests/install_test_import.py
+--- tests/install_test_import.py.orig
++++ tests/install_test_import.py
+@@ -0,0 +1,15 @@
++# -*- coding: utf-8 -*-
++
++#
++# IceCream - Never use print() to debug again
++#
++# Ansgar Grunseid
++# grunseid.com
++# grunseid@gmail.com
++#
++# License: MIT
++#
++
++def runMe():
++    x = 3
++    ic(x)
