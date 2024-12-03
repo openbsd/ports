@@ -1,0 +1,14 @@
+- riscv: test for assembler support
+  b3825bbe452c8e4f129fa90bba1fed0ee7b87d71
+
+Index: ffbuild/arch.mak
+--- ffbuild/arch.mak.orig
++++ ffbuild/arch.mak
+@@ -15,6 +15,7 @@ OBJS-$(HAVE_LASX)      += $(LASX-OBJS)       $(LASX-OB
+ OBJS-$(HAVE_ALTIVEC) += $(ALTIVEC-OBJS) $(ALTIVEC-OBJS-yes)
+ OBJS-$(HAVE_VSX)     += $(VSX-OBJS) $(VSX-OBJS-yes)
+ 
++OBJS-$(HAVE_RV)      += $(RV-OBJS)      $(RV-OBJS-yes)
+ OBJS-$(HAVE_RVV)     += $(RVV-OBJS)     $(RVV-OBJS-yes)
+ 
+ OBJS-$(HAVE_MMX)     += $(MMX-OBJS)     $(MMX-OBJS-yes)

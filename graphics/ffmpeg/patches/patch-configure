@@ -1,5 +1,7 @@
 - aarch64: Implement support for elf_aux_info(3) on FreeBSD and OpenBSD
   a3f79fd22a367207097c78e0a5d2bc213efe9f80
+- riscv: test for assembler support
+  b3825bbe452c8e4f129fa90bba1fed0ee7b87d71
 - lsws/ppc/yuv2rgb_altivec: Fix build in non-VSX environments with Clang
 
 - Fix broken libatomic test
@@ -7,7 +9,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -2146,6 +2146,7 @@ ARCH_EXT_LIST_PPC="
+@@ -2146,10 +2146,12 @@ ARCH_EXT_LIST_PPC="
      ldbrx
      power8
      ppc4xx
@@ -15,7 +17,12 @@ Index: configure
      vsx
  "
  
-@@ -2296,6 +2297,7 @@ SYSTEM_FUNCS="
+ ARCH_EXT_LIST_RISCV="
++    rv
+     rvv
+ "
+ 
+@@ -2296,6 +2298,7 @@ SYSTEM_FUNCS="
      clock_gettime
      closesocket
      CommandLineToArgvW
@@ -23,7 +30,7 @@ Index: configure
      fcntl
      getaddrinfo
      getauxval
-@@ -2674,6 +2676,7 @@ altivec_deps="ppc"
+@@ -2674,9 +2677,11 @@ altivec_deps="ppc"
  dcbzl_deps="ppc"
  ldbrx_deps="ppc"
  ppc4xx_deps="ppc"
@@ -31,7 +38,11 @@ Index: configure
  vsx_deps="altivec"
  power8_deps="vsx"
  
-@@ -5598,7 +5601,6 @@ case $target_os in
++rv_deps="riscv"
+ rvv_deps="riscv"
+ 
+ loongson2_deps="mips"
+@@ -5598,7 +5603,6 @@ case $target_os in
          enable section_data_rel_ro
          striptype=""
          SHFLAGS='-shared'
@@ -39,7 +50,7 @@ Index: configure
          SLIB_INSTALL_LINKS=
          oss_indev_extralibs="-lossaudio"
          oss_outdev_extralibs="-lossaudio"
-@@ -5959,7 +5961,7 @@ set_default libdir
+@@ -5959,7 +5963,7 @@ set_default libdir
  set_default $PATHS_LIST
  set_default nm
  
@@ -48,7 +59,7 @@ Index: configure
  
  enable_weak_pic() {
      disabled pic && return
-@@ -6215,6 +6217,11 @@ elif enabled ppc; then
+@@ -6215,8 +6219,14 @@ elif enabled ppc; then
          check_cpp_condition power8 "altivec.h" "defined(_ARCH_PWR8)"
      fi
  
@@ -59,8 +70,11 @@ Index: configure
 +
  elif enabled riscv; then
  
++    enabled rv && check_inline_asm rv '".option arch, +zbb\nrev8 t0, t1"'
      enabled rvv && check_inline_asm rvv '".option arch, +v\nvsetivli zero, 0, e8, m1, ta, ma"'
-@@ -6417,6 +6424,7 @@ check_func_headers mach/mach_time.h mach_absolute_time
+ 
+ elif enabled x86; then
+@@ -6417,6 +6427,7 @@ check_func_headers mach/mach_time.h mach_absolute_time
  check_func_headers stdlib.h getenv
  check_func_headers sys/stat.h lstat
  check_func_headers sys/auxv.h getauxval
@@ -68,7 +82,7 @@ Index: configure
  check_func_headers sys/sysctl.h sysctlbyname
  
  check_func_headers windows.h GetModuleHandle
-@@ -6483,7 +6491,7 @@ check_headers asm/types.h
+@@ -6483,7 +6494,7 @@ check_headers asm/types.h
  #
  # some configurations also require linking to libatomic, so try
  # both with -latomic and without
@@ -77,7 +91,7 @@ Index: configure
      check_builtin stdatomic stdatomic.h                                                 \
          "atomic_int foo, bar = ATOMIC_VAR_INIT(-1); atomic_store(&foo, 0); foo += bar"  \
          $LATOMIC && eval stdatomic_extralibs="\$LATOMIC" && break
-@@ -7748,6 +7756,7 @@ if enabled ppc; then
+@@ -7748,6 +7759,7 @@ if enabled ppc; then
      echo "POWER8 enabled            ${power8-no}"
      echo "PPC 4xx optimizations     ${ppc4xx-no}"
      echo "dcbzl available           ${dcbzl-no}"

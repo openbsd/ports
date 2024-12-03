@@ -1,0 +1,20 @@
+- riscv: test for assembler support
+  b3825bbe452c8e4f129fa90bba1fed0ee7b87d71
+
+Index: libavcodec/riscv/bswapdsp_init.c
+--- libavcodec/riscv/bswapdsp_init.c.orig
++++ libavcodec/riscv/bswapdsp_init.c
+@@ -30,6 +30,7 @@ void ff_bswap16_buf_rvv(uint16_t *dst, const uint16_t 
+ 
+ av_cold void ff_bswapdsp_init_riscv(BswapDSPContext *c)
+ {
++#if HAVE_RV
+     int flags = av_get_cpu_flags();
+ 
+     if (flags & AV_CPU_FLAG_RVB_ADDR) {
+@@ -42,4 +43,5 @@ av_cold void ff_bswapdsp_init_riscv(BswapDSPContext *c
+             c->bswap16_buf = ff_bswap16_buf_rvv;
+ #endif
+     }
++#endif
+ }

@@ -1,0 +1,21 @@
+- riscv: test for assembler support
+  b3825bbe452c8e4f129fa90bba1fed0ee7b87d71
+
+Index: libavcodec/riscv/audiodsp_init.c
+--- libavcodec/riscv/audiodsp_init.c.orig
++++ libavcodec/riscv/audiodsp_init.c
+@@ -33,6 +33,7 @@ void ff_vector_clipf_rvv(float *dst, const float *src,
+ 
+ av_cold void ff_audiodsp_init_riscv(AudioDSPContext *c)
+ {
++#if HAVE_RV
+     int flags = av_get_cpu_flags();
+ 
+     if (flags & AV_CPU_FLAG_RVF)
+@@ -46,5 +47,6 @@ av_cold void ff_audiodsp_init_riscv(AudioDSPContext *c
+         if (flags & AV_CPU_FLAG_RVV_F32)
+             c->vector_clipf = ff_vector_clipf_rvv;
+     }
++#endif
+ #endif
+ }

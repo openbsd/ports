@@ -1,0 +1,21 @@
+- riscv: test for assembler support
+  b3825bbe452c8e4f129fa90bba1fed0ee7b87d71
+
+Index: libavcodec/riscv/pixblockdsp_init.c
+--- libavcodec/riscv/pixblockdsp_init.c.orig
++++ libavcodec/riscv/pixblockdsp_init.c
+@@ -43,6 +43,7 @@ av_cold void ff_pixblockdsp_init_riscv(PixblockDSPCont
+                                        AVCodecContext *avctx,
+                                        unsigned high_bit_depth)
+ {
++#if HAVE_RV
+     int cpu_flags = av_get_cpu_flags();
+ 
+     if (cpu_flags & AV_CPU_FLAG_RVI) {
+@@ -61,5 +62,6 @@ av_cold void ff_pixblockdsp_init_riscv(PixblockDSPCont
+ 
+         c->diff_pixels_unaligned = c->diff_pixels = ff_diff_pixels_rvv;
+     }
++#endif
+ #endif
+ }
