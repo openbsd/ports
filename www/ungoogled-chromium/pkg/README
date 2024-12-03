@@ -41,3 +41,8 @@ Interoperability with base window managers:
 - some window managers do not have compositing support; for instance, fvwm.
 In order to have decent graphic rendering, they should be supplemented by
 a compositing manager. For instance, xcompmgr in base.
+
+WebAssembly support:
+- some web applications and "not a bot" verification requires support
+for WebAssembly, which is disabled by default and can be enabled by
+adding ENABLE_WASM=1 to environment variables.
