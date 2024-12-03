@@ -28,6 +28,10 @@ MODULES=		devel/meson
 LIB_DEPENDS=		graphics/cairo \
 			devel/libsigc++-2
 
+# avoid picking up boost for tests
+CONFIGURE_ARGS =	-Dboost-shared=false \
+			-Dbuild-tests=false
+
 # c++11
 COMPILER =		base-clang ports-gcc
 
