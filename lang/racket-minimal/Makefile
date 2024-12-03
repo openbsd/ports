@@ -1,3 +1,4 @@
+BROKEN-arm =		invalid memory reference
 BROKEN-i386 =		compiling ChezScheme/s/format.ss nonrecoverable invalid memory reference
 BROKEN-sparc64 =	racket-v.boot environment-variables-ref: contract violation
 
