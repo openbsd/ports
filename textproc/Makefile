@@ -449,6 +449,7 @@
      SUBDIR += py-lxml,python3
      SUBDIR += py-markdown,python3
      SUBDIR += py-markdown-it,python3
+     SUBDIR += py-mdown-extensions,python3
      SUBDIR += py-mdurl,python3
      SUBDIR += py-mistune,python3
      SUBDIR += py-natsort,python3
