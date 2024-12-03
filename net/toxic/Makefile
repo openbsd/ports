@@ -7,6 +7,9 @@ CATEGORIES =		net
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB += alut c config curses curl m openal png pthread intl
 WANTLIB += qrencode toxcore util z ${MODPY_WANTLIB}
 
