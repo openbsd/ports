@@ -1,0 +1,12 @@
+Index: yokadi/tests/tuitestcase.py
+--- yokadi/tests/tuitestcase.py.orig
++++ yokadi/tests/tuitestcase.py
+@@ -19,7 +19,7 @@ class TuiTestCase(unittest.TestCase):
+         # Add an unused input answer to pass the isInteractive() check in editText()
+         tui.addInputAnswers("")
+ 
+-        os.environ["EDITOR"] = "/bin/true"
++        os.environ["EDITOR"] = "/usr/bin/true"
+         out = tui.editText(None)
+         self.assertEqual(out, "")
+ 
