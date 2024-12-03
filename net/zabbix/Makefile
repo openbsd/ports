@@ -3,7 +3,7 @@ COMMENT-server =	network and application monitoring - server
 COMMENT-proxy =		network and application monitoring - proxy
 COMMENT-web =		network and application monitoring - web frontend
 
-VERSION =		6.4.18
+VERSION =		7.0.6
 DISTNAME =		zabbix-${VERSION}
 FULLPKGNAME-main =	zabbix-agent-${VERSION}
 FULLPKGPATH-main =	net/zabbix,-main
@@ -12,8 +12,6 @@ PKGNAME-proxy =		zabbix-proxy-${VERSION}
 FULLPKGNAME-web =	zabbix-web-${VERSION}
 FULLPKGPATH-web =	net/zabbix,-web
 CATEGORIES =		net
-
-REVISION-server =	0
 
 MAJV =			${VERSION:C/^([0-9]+\.[0-9]+).*/\1/}
 
@@ -55,7 +53,7 @@ LIB_DEPENDS-server =	${LIB_DEPENDS} \
 RUN_DEPENDS-server =	net/fping
 # we want the _zabbix user&group as well as README-main
 RUN_DEPENDS-server +=	net/zabbix,-main>=${VERSION}
-WANTLIB-server =	${WANTLIB} event_core event_pthreads \
+WANTLIB-server =	${WANTLIB} event_core event_extra event_pthreads \
 			crypto ssl z netsnmp ssh2 xml2
 
 CONFIGURE_STYLE =	gnu
@@ -84,8 +82,8 @@ LIB_DEPENDS-proxy =	${LIB_DEPENDS} \
 			net/net-snmp \
 			security/libssh2 \
 			textproc/libxml
-WANTLIB-proxy =		${WANTLIB} event_core event_pthreads netsnmp \
-			ssh2 xml2
+WANTLIB-proxy =		${WANTLIB} event_core event_extra event_pthreads \
+			netsnmp ssh2 xml2
 RUN_DEPENDS-proxy =	# empty
 
 FLAVOR ?=		no_server

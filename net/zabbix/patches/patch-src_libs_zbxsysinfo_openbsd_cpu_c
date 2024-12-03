@@ -3,7 +3,7 @@ Add ZBX_CPU_STATE_SPIN to monitor CP_SPIN
 Index: src/libs/zbxsysinfo/openbsd/cpu.c
 --- src/libs/zbxsysinfo/openbsd/cpu.c.orig
 +++ src/libs/zbxsysinfo/openbsd/cpu.c
-@@ -105,6 +105,8 @@ int	system_cpu_util(AGENT_REQUEST *request, AGENT_RESU
+@@ -100,6 +100,8 @@ int	system_cpu_util(AGENT_REQUEST *request, AGENT_RESU
  		state = ZBX_CPU_STATE_IDLE;
  	else if (0 == strcmp(tmp, "interrupt"))
  		state = ZBX_CPU_STATE_INTERRUPT;

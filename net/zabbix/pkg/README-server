@@ -92,8 +92,5 @@ automatically created and initialized if it does not exist. Note that
 for obvious performance reasons, it is NOT encouraged to use the SQLite
 backend for a server.
 
-    # cd ${TRUEPREFIX}/share/zabbix-server/schema/sqlite3
+    # cd ${TRUEPREFIX}/share/zabbix-proxy/schema/sqlite3
     # su -m _zabbix -c "sqlite3 /var/db/zabbix/zabbix.db < schema.sql"
-The following steps are not required for setting up a Zabbix Proxy.
-    # su -m _zabbix -c "sqlite3 /var/db/zabbix/zabbix.db < images.sql"
-    # su -m _zabbix -c "sqlite3 /var/db/zabbix/zabbix.db < data.sql"

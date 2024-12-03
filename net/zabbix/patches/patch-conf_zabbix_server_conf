@@ -10,7 +10,7 @@ Index: conf/zabbix_server.conf
  
  ### Option: LogFileSize
  #	Maximum size of log file in MB.
-@@ -128,6 +128,7 @@ DBUser=zabbix
+@@ -130,6 +130,7 @@ DBUser=zabbix
  # Mandatory: no
  # Default:
  # DBSocket=
@@ -18,7 +18,7 @@ Index: conf/zabbix_server.conf
  
  ### Option: DBPort
  #	Database port when not using local socket.
-@@ -554,6 +555,7 @@ Timeout=4
+@@ -590,6 +591,7 @@ Timeout=4
  # Mandatory: no
  # Default:
  # AlertScriptsPath=${datadir}/zabbix/alertscripts
@@ -26,7 +26,7 @@ Index: conf/zabbix_server.conf
  
  ### Option: ExternalScripts
  #	Full path to location of external scripts.
-@@ -571,6 +573,7 @@ Timeout=4
+@@ -607,6 +609,7 @@ Timeout=4
  # Mandatory: no
  # Default:
  # FpingLocation=/usr/sbin/fping
@@ -34,7 +34,7 @@ Index: conf/zabbix_server.conf
  
  ### Option: Fping6Location
  #	Location of fping6.
-@@ -580,6 +583,7 @@ Timeout=4
+@@ -616,6 +619,7 @@ Timeout=4
  # Mandatory: no
  # Default:
  # Fping6Location=/usr/sbin/fping6

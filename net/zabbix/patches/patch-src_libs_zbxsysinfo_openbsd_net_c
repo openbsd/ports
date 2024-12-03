@@ -3,7 +3,7 @@ Stop using struct ifnet and libkvm for interface stats.
 Index: src/libs/zbxsysinfo/openbsd/net.c
 --- src/libs/zbxsysinfo/openbsd/net.c.orig
 +++ src/libs/zbxsysinfo/openbsd/net.c
-@@ -37,7 +37,6 @@
+@@ -31,7 +31,6 @@
  
  static struct nlist kernel_symbols[] =
  {
@@ -11,22 +11,25 @@ Index: src/libs/zbxsysinfo/openbsd/net.c
  	{"_tcbtable", N_UNDF, 0, 0, 0},
  	{NULL, 0, 0, 0, 0}
  };
-@@ -50,11 +49,6 @@ static int	get_ifdata(const char *if_name,
+@@ -44,12 +43,8 @@ static int	get_ifdata(const char *if_name,
  		zbx_uint64_t *icollisions, char **error)
  {
  #define IFNET_ID 0
 -	struct ifnet_head	head;
 -	struct ifnet		*ifp;
--
--	kvm_t	*kp;
--	int	len = 0;
- 	int	ret = SYSINFO_RET_FAIL;
++	int	ret = SYSINFO_RET_FAIL;
  
+-	kvm_t	*kp;
+-	int	len = 0, ret = SYSINFO_RET_FAIL;
+-
  	if (NULL == if_name || '\0' == *if_name)
-@@ -95,66 +89,7 @@ static int	get_ifdata(const char *if_name,
+ 	{
+ 		*error = zbx_strdup(NULL, "Network interface name cannot be empty.");
+@@ -87,67 +82,7 @@ static int	get_ifdata(const char *if_name,
+ 		*terrors = 0;
  	if (icollisions)
  		*icollisions = 0;
- 
+-
 -	if (NULL != (kp = kvm_open(NULL, NULL, NULL, O_RDONLY, NULL))) /* requires root privileges */
  	{
 -		struct ifnet	v;

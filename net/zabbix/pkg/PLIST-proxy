@@ -22,8 +22,7 @@ share/zabbix-proxy/schema/mysql/option-patches/
 @comment share/zabbix-proxy/schema/mysql/option-patches/Makefile
 @comment share/zabbix-proxy/schema/mysql/option-patches/Makefile.am
 @comment share/zabbix-proxy/schema/mysql/option-patches/Makefile.in
-share/zabbix-proxy/schema/mysql/option-patches/double.sql
-share/zabbix-proxy/schema/mysql/option-patches/history_pk_prepare.sql
+share/zabbix-proxy/schema/mysql/option-patches/history_upgrade_prepare.sql
 share/zabbix-proxy/schema/mysql/schema.sql
 share/zabbix-proxy/schema/postgresql/
 @comment share/zabbix-proxy/schema/postgresql/Makefile
@@ -35,8 +34,7 @@ share/zabbix-proxy/schema/postgresql/option-patches/
 @comment share/zabbix-proxy/schema/postgresql/option-patches/Makefile
 @comment share/zabbix-proxy/schema/postgresql/option-patches/Makefile.am
 @comment share/zabbix-proxy/schema/postgresql/option-patches/Makefile.in
-share/zabbix-proxy/schema/postgresql/option-patches/double.sql
-share/zabbix-proxy/schema/postgresql/option-patches/history_pk_prepare.sql
+share/zabbix-proxy/schema/postgresql/option-patches/history_upgrade_prepare.sql
 share/zabbix-proxy/schema/postgresql/schema.sql
 share/zabbix-proxy/schema/postgresql/timescaledb/
 @comment share/zabbix-proxy/schema/postgresql/timescaledb/Makefile
@@ -50,27 +48,29 @@ share/zabbix-proxy/schema/postgresql/timescaledb/option-patches/with-compression
 @comment share/zabbix-proxy/schema/postgresql/timescaledb/option-patches/with-compression/Makefile
 @comment share/zabbix-proxy/schema/postgresql/timescaledb/option-patches/with-compression/Makefile.am
 @comment share/zabbix-proxy/schema/postgresql/timescaledb/option-patches/with-compression/Makefile.in
-share/zabbix-proxy/schema/postgresql/timescaledb/option-patches/with-compression/history_pk.sql
-share/zabbix-proxy/schema/postgresql/timescaledb/option-patches/with-compression/history_pk_log.sql
-share/zabbix-proxy/schema/postgresql/timescaledb/option-patches/with-compression/history_pk_str.sql
-share/zabbix-proxy/schema/postgresql/timescaledb/option-patches/with-compression/history_pk_text.sql
-share/zabbix-proxy/schema/postgresql/timescaledb/option-patches/with-compression/history_pk_uint.sql
+share/zabbix-proxy/schema/postgresql/timescaledb/option-patches/with-compression/history_upgrade.sql
+share/zabbix-proxy/schema/postgresql/timescaledb/option-patches/with-compression/history_upgrade_log.sql
+share/zabbix-proxy/schema/postgresql/timescaledb/option-patches/with-compression/history_upgrade_prepare.sql
+share/zabbix-proxy/schema/postgresql/timescaledb/option-patches/with-compression/history_upgrade_str.sql
+share/zabbix-proxy/schema/postgresql/timescaledb/option-patches/with-compression/history_upgrade_text.sql
+share/zabbix-proxy/schema/postgresql/timescaledb/option-patches/with-compression/history_upgrade_uint.sql
+share/zabbix-proxy/schema/postgresql/timescaledb/option-patches/with-compression/trends_upgrade.sql
 share/zabbix-proxy/schema/postgresql/timescaledb/option-patches/without-compression/
 @comment share/zabbix-proxy/schema/postgresql/timescaledb/option-patches/without-compression/Makefile
 @comment share/zabbix-proxy/schema/postgresql/timescaledb/option-patches/without-compression/Makefile.am
 @comment share/zabbix-proxy/schema/postgresql/timescaledb/option-patches/without-compression/Makefile.in
-share/zabbix-proxy/schema/postgresql/timescaledb/option-patches/without-compression/history_pk.sql
-share/zabbix-proxy/schema/postgresql/timescaledb/option-patches/without-compression/history_pk_log.sql
-share/zabbix-proxy/schema/postgresql/timescaledb/option-patches/without-compression/history_pk_str.sql
-share/zabbix-proxy/schema/postgresql/timescaledb/option-patches/without-compression/history_pk_text.sql
-share/zabbix-proxy/schema/postgresql/timescaledb/option-patches/without-compression/history_pk_uint.sql
+share/zabbix-proxy/schema/postgresql/timescaledb/option-patches/without-compression/history_upgrade.sql
+share/zabbix-proxy/schema/postgresql/timescaledb/option-patches/without-compression/history_upgrade_log.sql
+share/zabbix-proxy/schema/postgresql/timescaledb/option-patches/without-compression/history_upgrade_prepare.sql
+share/zabbix-proxy/schema/postgresql/timescaledb/option-patches/without-compression/history_upgrade_str.sql
+share/zabbix-proxy/schema/postgresql/timescaledb/option-patches/without-compression/history_upgrade_text.sql
+share/zabbix-proxy/schema/postgresql/timescaledb/option-patches/without-compression/history_upgrade_uint.sql
+share/zabbix-proxy/schema/postgresql/timescaledb/option-patches/without-compression/trends_upgrade.sql
 share/zabbix-proxy/schema/postgresql/timescaledb/schema.sql
 share/zabbix-proxy/schema/sqlite3/
 @comment share/zabbix-proxy/schema/sqlite3/Makefile
 @comment share/zabbix-proxy/schema/sqlite3/Makefile.am
 @comment share/zabbix-proxy/schema/sqlite3/Makefile.in
-share/zabbix-proxy/schema/sqlite3/data.sql
-share/zabbix-proxy/schema/sqlite3/images.sql
 share/zabbix-proxy/schema/sqlite3/schema.sql
 @mode 750
 @owner _zabbix

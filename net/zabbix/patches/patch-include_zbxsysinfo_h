@@ -1,7 +1,7 @@
 Index: include/zbxsysinfo.h
 --- include/zbxsysinfo.h.orig
 +++ include/zbxsysinfo.h
-@@ -154,7 +154,8 @@ extern int	CONFIG_UNSAFE_USER_PARAMETERS;
+@@ -52,7 +52,8 @@ void	*get_result_value_by_type(AGENT_RESULT *result, i
  #define ZBX_CPU_STATE_STEAL	7
  #define ZBX_CPU_STATE_GCPU	8
  #define ZBX_CPU_STATE_GNICE	9

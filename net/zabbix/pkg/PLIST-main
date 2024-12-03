@@ -25,5 +25,3 @@ share/examples/zabbix/zabbix_agentd.conf
 @group
 @sample /var/log/zabbix/
 @comment share/examples/zabbix/zabbix_agentd.win.conf
-@mode
-@owner
