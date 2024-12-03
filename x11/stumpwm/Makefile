@@ -1,8 +1,7 @@
 COMMENT=		easily hackable Common LISP window manager
 
-VERSION=		23.11
+VERSION=		24.11
 DISTNAME=		stumpwm-${VERSION}
-REVISION=		10
 
 CATEGORIES=		x11
 
