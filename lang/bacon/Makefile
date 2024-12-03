@@ -4,6 +4,7 @@ BROKEN-sparc64 =	SIGBUS bacon binary
 COMMENT =		BASIC converter to C translator for Unix system
 
 DISTNAME =		bacon-5.0.2pre20241122
+REVISION =		0
 
 CATEGORIES =		lang
 
@@ -23,7 +24,8 @@ SITES =			https://www.basic-converter.org/stable/ \
 			https://www.basic-converter.org/museum/ \
 			https://download.tuxfamily.org/jod/lang/bacon/
 
-BUILD_DEPENDS =		shells/ksh93
+# using zsh until we solve the conflicts with ksh93/eterm
+BUILD_DEPENDS =		shells/zsh
 RUN_DEPENDS =		devel/desktop-file-utils \
 			shells/bash \
 			x11/gtk+4,-guic
@@ -33,7 +35,7 @@ PORTHOME =		${WRKDIR}
 
 CONFIGURE_STYLE =	gnu
 # Gtk doesn't works on OpenBSD.
-CONFIGURE_ARGS =	--with-ksh93 \
+CONFIGURE_ARGS =	--with-zsh \
 			--enable-gui-fltk
 CONFIGURE_ENV =		CFLAGS="`fltk-config --cflags` ${CFLAGS}" \
 			CXXFLAGS="`fltk-config --cxxflags` ${CXXFLAGS}" \
