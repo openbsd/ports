@@ -12,6 +12,9 @@ MAINTAINER=		Martin Reindl <martin@catai.org>
 # MIT
 PERMIT_PACKAGE=		Yes
 
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
+
 MODULES=		lang/python
 MODPY_PYBUILD=		setuptools_scm
 MODPY_PI=		Yes
