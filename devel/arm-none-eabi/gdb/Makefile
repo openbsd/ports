@@ -6,6 +6,9 @@ REVISION=	0
 
 HOMEPAGE=	https://www.gnu.org/software/gdb/
 
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB=	${COMPILER_LIBCXX} c expat m curses pthread z
 
 SITES=		${SITE_GNU:=gdb/}
