@@ -70,7 +70,7 @@ DISTFILES.hs += {${_package}-${_version}/}${_package}-${_version}.tar.gz
 DISTFILES.hs += ${_package}-${_version}_${_revision}{${_package}-${_version}/revision/${_revision}}.cabal
 .endfor
 
-BUILD_DEPENDS +=	lang/ghc>=8.10.6
+BUILD_DEPENDS +=	lang/ghc>=9.8.3
 
 MODULES =		lang/python
 

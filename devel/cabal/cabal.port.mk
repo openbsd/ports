@@ -30,10 +30,10 @@
 # Special files:
 #   files/cabal.project is used automatically.
 
-ONLY_FOR_ARCHS ?=	i386 amd64
+ONLY_FOR_ARCHS ?=	arm64 amd64
 
-BUILD_DEPENDS +=	devel/cabal-install>=3.4.0.0 \
-			lang/ghc>=8.6.4
+BUILD_DEPENDS +=	devel/cabal-install>=3.12.0.0 \
+			lang/ghc>=9.8.3
 
 SITES.hs =		https://hackage.haskell.org/package/
 

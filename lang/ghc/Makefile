@@ -1,5 +1,5 @@
 # Not yet ported to other architectures (i386 bootstrap recipe is broken).
-ONLY_FOR_ARCHS =	amd64
+ONLY_FOR_ARCHS =	amd64 arm64
 
 COMMENT =		compiler for the functional language Haskell
 
@@ -13,13 +13,13 @@ USE_NOEXECONLY =	Yes
 
 USE_NOBTCFI =		Yes
 
-GHC_VERSION =		9.6.6
+GHC_VERSION =		9.8.3
 DISTNAME =		ghc-${GHC_VERSION}
 CATEGORIES =		lang devel
 HOMEPAGE =		https://www.haskell.org/ghc/
 
 # Version of the precompiled binaries
-BIN_VER =		9.6.6.20240708
+BIN_VER =		9.8.3.20241111
 
 # lang/python needed to bootstrap hadrian.
 MODULES =		lang/python
@@ -48,7 +48,7 @@ SITES.boot =		https://openbsd.dead-parrot.de/distfiles/
 
 DIST_SUBDIR =		ghc
 
-.for m in amd64
+.for m in amd64 aarch64
 BINDISTFILE-$m =	ghc-${BIN_VER}-$m.tar.xz \
 			ghc-${BIN_VER}-shlibs-$m.tar.gz
 SUPDISTFILES.boot +=	${BINDISTFILE-$m}
@@ -67,31 +67,32 @@ EXTRACT_ONLY =		${DISTFILES} ${DISTFILES.boot}
 # ghc-heap and ghci will always have the same version number as ghc.
 GHC_ITEMS = \
 	CABAL			3.10.3.0	 \
-	ARRAY			0.5.6.0		 \
-	BASE			4.18.2.1	 \
+	ARRAY			0.5.8.0		 \
+	BASE			4.19.2.0	 \
 	BINARY			0.8.9.1		 \
-	BYTESTRING		0.11.5.3	 \
-	CONTAINERS		0.6.7		 \
-	DEEPSEQ			1.4.8.1		 \
+	BYTESTRING		0.12.1.0	 \
+	CONTAINERS		0.6.8		 \
+	DEEPSEQ			1.5.1.0		 \
 	DIRECTORY		1.3.8.5		 \
 	EXCEPTIONS		0.10.7		 \
-	FILEPATH		1.4.300.1	 \
-	GHC			9.6.6		 \
+	FILEPATH		1.4.200.1	 \
+	GHC			9.8.3		 \
 	GHC_BIGNUM		1.3		 \
 	GHC_COMPACT		0.1.0.0		 \
 	GHC_PRIM		0.10.0		 \
 	HASKELINE		0.8.2.1		 \
-	HPC			0.6.2.0		 \
+	HPC			0.7.0.0		 \
 	INTEGER_GMP		1.1		 \
 	MTL			2.3.1		 \
-	PARSEC			3.1.16.1	 \
+	PARSEC			3.1.17.0	 \
 	PRETTY			1.1.3.6		 \
-	PROCESS			1.6.19.0	 \
+	PROCESS			1.6.25.0	 \
 	RTS			1.0.2		 \
-	STM			2.5.1.0		 \
-	TEMPLATE-HASKELL	2.20.0.0	 \
+	SEMAPHORE_COMPAT	1.0.0		 \
+	STM			2.5.3.1		 \
+	TEMPLATE_HASKELL	2.21.0.0	 \
 	TERMINFO		0.4.1.6		 \
-	TEXT			2.0.2		 \
+	TEXT			2.1.1		 \
 	TIME			1.12.2		 \
 	TRANSFORMERS		0.6.1.0		 \
 	UNIX			2.8.4.0		 \
@@ -101,6 +102,10 @@ GHC_ITEMS = \
 ${_i}_VER =	${_v}
 SUBST_VARS +=	${_i}_VER
 .endfor
+
+# GHC uses unusual platform names
+SUB ?=		${MACHINE_ARCH:S/amd64/x86_64/}-openbsd
+SUBST_VARS +=	SUB
 
 USE_GMAKE =		Yes
 USE_GROFF =		Yes
@@ -125,11 +130,6 @@ CONFIGURE_ENV +=	CONF_GCC_LINKER_OPTS_STAGE0="${GHC_CC_OPTS}" \
 			CONF_GCC_LINKER_OPTS_STAGE1="${GHC_CC_OPTS}" \
 			CONF_GCC_LINKER_OPTS_STAGE2="${GHC_CC_OPTS}" \
 			CONF_CC_OPTS_STAGE2="${GHC_CC_OPTS}"
-
-MAKE_FLAGS +=		StripLibraries=YES \
-			INSTALL_BIN_OPTS=-s \
-			HSCOLOUR_SRCS=NO \
-			BUILD_SPHINX_PDF=NO
 
 # haddock: ... <stdout>: commitBuffer: invalid argument (invalid character)
 MAKE_ENV +=	LC_ALL=en_US.UTF-8
@@ -163,11 +163,13 @@ post-patch:
 	${MODPY_BIN} hadrian/bootstrap/bootstrap.py --no-archive -w ../bin/ghc \
 		-s ${FULLDISTDIR}/hadrian-sources-${BIN_VER}.tar.gz
 
+
 HADRIAN = \
 	env -i ${AUTOCONF_ENV} ${MAKE_ENV} \
 	_build/bin/hadrian '*.*.ghc.link.opts+=-optl-Wl,--no-execute-only' \
 	'*.*.ghc.link.opts+=-optl-Qunused-arguments' \
 	'*.*.ghc.link.opts+=-L/usr/local/lib' \
+	'*.rts.ghc.c.opts+=-optc-fno-ret-protector' \
 	--docs=none \
 	--flavour=release${TRANSFORMER} \
 	--no-color \
@@ -176,7 +178,7 @@ HADRIAN = \
 do-build:
 	cd ${WRKSRC} && \
 	${HADRIAN} binary-dist-dir
-	ln -sf ${WRKSRC}/_build/bindist/ghc-${GHC_VERSION}{-x86_64-unknown-openbsd,}
+	ln -sf ${WRKSRC}/_build/bindist/ghc-${GHC_VERSION}{-*-unknown-openbsd,}
 
 do-install:
 	cd ${WRKSRC}/_build/bindist/ghc-${GHC_VERSION} && \
@@ -186,12 +188,12 @@ do-install:
 do-test:
 	ln -sf /usr/bin/false ${WRKDIR}/bin/git
 	cd ${WRKSRC} && \
-	ulimit -s 8192 -d 10485760 -n 1024 && env  ${HADRIAN} test
+	ulimit -s 8192 -d 10485760 -n 1024 && env ${HADRIAN} test
 
 # It doesn't matter whether this is the actual date of the bootstrapper
 # build. It's just used to get different distfiles whenever new
 # bootstrappers have to be built.
-BOOTSTRAP_DATE =	20240708
+BOOTSTRAP_DATE =	20241111
 
 # Create a bootstrapper. This compiles a stripped-down version of ghc
 # and creates a `bindist', i.e. a tarball with binaries that can be
@@ -201,7 +203,7 @@ bootstrap:
 	$(MAKE) rebuild 'TRANSFORMER=+no_profiled_libs'
 	$(_PBUILD) $(MAKE) _bootstrap_finish
 	${MODPY_BIN} ${WRKSRC}/hadrian/bootstrap/bootstrap.py -w ${WRKSRC}/_build/stage1/bin/ghc \
-		-d ${WRKSRC}/hadrian/bootstrap/plan-bootstrap-9_6_2.json fetch \
+		-d ${WRKSRC}/hadrian/bootstrap/plan-bootstrap-9_8_2.json fetch \
 		-o hadrian-sources-${GHC_VERSION}.${BOOTSTRAP_DATE}
 	ln -sf ${WRKBUILD}/ghc-${GHC_VERSION}.${BOOTSTRAP_DATE}*.?z .
 	@sha256 -b *.?z

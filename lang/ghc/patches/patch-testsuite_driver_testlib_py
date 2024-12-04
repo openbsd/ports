@@ -1,7 +1,7 @@
 Index: testsuite/driver/testlib.py
 --- testsuite/driver/testlib.py.orig
 +++ testsuite/driver/testlib.py
-@@ -2149,6 +2149,11 @@ def compare_outputs(way: WayName,
+@@ -2310,6 +2310,11 @@ async def compare_outputs(way: WayName,
      actual_raw = read_no_crs(actual_path)
      actual_str = normaliser(actual_raw)
  
@@ -13,21 +13,21 @@ Index: testsuite/driver/testlib.py
      # See Note [Output comparison].
      if whitespace_normaliser(expected_str) == whitespace_normaliser(actual_str):
          return True
-@@ -2165,7 +2170,7 @@ def compare_outputs(way: WayName,
+@@ -2326,7 +2331,7 @@ async def compare_outputs(way: WayName,
  
          if config.verbose >= 1 and _expect_pass(way):
              # See Note [Output comparison].
--            r = runCmd('diff -uw "{0}" "{1}"'.format(null2unix_null(expected_normalised_path),
-+            r = runCmd('diff -auw "{0}" "{1}"'.format(null2unix_null(expected_normalised_path),
+-            r = await runCmd('diff -uw "{0}" "{1}"'.format(null2unix_null(expected_normalised_path),
++            r = await runCmd('diff -auw "{0}" "{1}"'.format(null2unix_null(expected_normalised_path),
                                                          actual_normalised_path),
                          stdout=diff_file,
                          print_output=True)
-@@ -2173,7 +2178,7 @@ def compare_outputs(way: WayName,
+@@ -2334,7 +2339,7 @@ async def compare_outputs(way: WayName,
              # If for some reason there were no non-whitespace differences,
              # then do a full diff
              if r == 0:
--                r = runCmd('diff -u "{0}" "{1}"'.format(null2unix_null(expected_normalised_path),
-+                r = runCmd('diff -au "{0}" "{1}"'.format(null2unix_null(expected_normalised_path),
+-                r = await runCmd('diff -u "{0}" "{1}"'.format(null2unix_null(expected_normalised_path),
++                r = await runCmd('diff -au "{0}" "{1}"'.format(null2unix_null(expected_normalised_path),
                                                             actual_normalised_path),
                             stdout=diff_file,
                             print_output=True)
