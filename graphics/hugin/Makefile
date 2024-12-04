@@ -2,7 +2,7 @@ BROKEN-hppa =	run dep on enblend-enfuse which will not build on hppa
 
 COMMENT =	panorama image stitcher
 
-DISTNAME =	hugin-2024.0.0
+DISTNAME =	hugin-2024.0.1
 
 EXTRACT_SUFX =	.tar.bz2
 
@@ -20,7 +20,7 @@ SHARED_LIBS +=  hugin_python_interface    4.0
 
 CATEGORIES =	graphics x11
 
-HOMEPAGE =	https://hugin.sourceforge.net/
+HOMEPAGE =	https://hugin.sourceforge.io/
 
 MAINTAINER =	Kirill Bychkov <kirby@openbsd.org>
 
