@@ -2,16 +2,15 @@ COMMENT =		color management library
 
 GH_ACCOUNT =		AcademySoftwareFoundation
 GH_PROJECT =		OpenColorIO
-GH_TAGNAME =		v2.3.2
+GH_TAGNAME =		v2.4.0
 PKGNAME =		${DISTNAME:L}
-REVISION =		1
 EPOCH =			2
 
-SHARED_LIBS +=  OpenColorIO               4.0 # 1.1.1
+SHARED_LIBS +=  OpenColorIO               5.0 # 1.1.1
 
 CATEGORIES =		graphics
 
-HOMEPAGE =		http://opencolorio.org/index.html
+HOMEPAGE =		https://opencolorio.org/
 
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
@@ -29,7 +28,7 @@ BUILD_DEPENDS =		devel/boost \
 			devel/py-pybind11${MODPY_FLAVOR} \
 			devel/py-setuptools${MODPY_FLAVOR} \
 			devel/py-wheel${MODPY_FLAVOR}
-LIB_DEPENDS =		archivers/minizip>=4.0.4 \
+LIB_DEPENDS =		archivers/minizip \
 			devel/pystring \
 			devel/yaml-cpp \
 			math/imath

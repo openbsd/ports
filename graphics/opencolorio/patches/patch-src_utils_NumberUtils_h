@@ -1,7 +1,7 @@
 Index: src/utils/NumberUtils.h
 --- src/utils/NumberUtils.h.orig
 +++ src/utils/NumberUtils.h
-@@ -64,8 +64,10 @@ really_inline from_chars_result from_chars(const char 
+@@ -67,8 +67,10 @@ really_inline from_chars_result from_chars(const char 
      double
  #ifdef _WIN32
      tempval = _strtod_l(first, &endptr, loc.local);
@@ -13,7 +13,7 @@ Index: src/utils/NumberUtils.h
  #endif
  
      if (errno != 0 && errno != EINVAL)
-@@ -108,8 +110,10 @@ really_inline from_chars_result from_chars(const char 
+@@ -111,8 +113,10 @@ really_inline from_chars_result from_chars(const char 
  #elif __APPLE__
      // On OSX, strtod_l is for some reason drastically faster than strtof_l.
      tempval = static_cast<float>(::strtod_l(first, &endptr, loc.local));
@@ -25,7 +25,7 @@ Index: src/utils/NumberUtils.h
  #endif
  
      if (errno != 0)
-@@ -144,7 +148,7 @@ really_inline from_chars_result from_chars(const char 
+@@ -147,7 +151,7 @@ really_inline from_chars_result from_chars(const char 
      long int
  #ifdef _WIN32
      tempval = _strtol_l(first, &endptr, 0, loc.local);
