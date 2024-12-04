@@ -1,14 +1,7 @@
---- doc/m4.texi.orig	Sat Dec 31 23:34:38 2016
-+++ doc/m4.texi	Sun Feb  5 15:11:00 2017
-@@ -4,6 +4,7 @@
- @setfilename m4.info
- @include version.texi
- @settitle GNU M4 @value{VERSION} macro processor
-+@dircategory Programming & development tools
- @setchapternewpage odd
- @finalout
- 
-@@ -55,7 +56,7 @@ entitled ``GNU Free Documentation License.''
+Index: doc/m4.texi
+--- doc/m4.texi.orig
++++ doc/m4.texi
+@@ -58,7 +58,7 @@ entitled ``GNU Free Documentation License.''
  
  @dircategory Text creation and manipulation
  @direntry
