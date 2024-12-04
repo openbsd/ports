@@ -21,6 +21,7 @@ LIB_DEPENDS =	net/curl \
 		archivers/zstd \
 		archivers/bzip2
 RUN_DEPENDS =	devel/mercurial
+BUILD_DEPENDS =	devel/gmake
 
 WANTLIB +=	${MODCARGO_WANTLIB} bz2 curl z zstd
 
