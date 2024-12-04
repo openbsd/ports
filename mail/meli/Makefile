@@ -2,7 +2,7 @@ COMMENT =		terminal mail client
 
 GH_ACCOUNT =		meli
 GH_PROJECT =		meli
-GH_TAGNAME =		v0.8.8
+GH_TAGNAME =		v0.8.9
 
 # ring-v0.17 does not support this arch
 NOT_FOR_ARCHS = sparc64
