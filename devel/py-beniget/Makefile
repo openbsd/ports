@@ -1,10 +1,9 @@
 COMMENT =	extract semantic information about static Python code
 
-MODPY_EGG_VERSION =	0.4.1
+MODPY_EGG_VERSION =	0.4.2.post1
 
 DISTNAME =	beniget-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	2
 
 CATEGORIES =	devel
 
