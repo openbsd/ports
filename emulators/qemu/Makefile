@@ -6,7 +6,7 @@ USE_NOBTCFI=	Yes
 COMMENT-main=	multi system emulator
 COMMENT-ga=	QEMU guest agent
 
-VERSION=	9.1.1
+VERSION=	9.1.2
 DISTNAME=	qemu-${VERSION}
 CATEGORIES=	emulators
 SITES=		https://download.qemu.org/
@@ -112,11 +112,6 @@ CONFIGURE_ARGS+=--disable-debug-info
 .endif
 
 TEST_TARGET=	check
-
-# XXX Optimizer bug, using -O2 causes segfaults, -O1 linking errors
-.if ${MACHINE_ARCH:Mpowerpc}
-#CFLAGS+=	-O0
-.endif
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/qemu
