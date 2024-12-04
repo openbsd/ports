@@ -1,6 +1,6 @@
 COMMENT =		version control system with git compatibility backend
 
-V =			0.23.0
+V =			0.24.0
 PKGNAME =		jujutsu-$V
 GH_ACCOUNT =		martinvonz
 GH_PROJECT =		jj
@@ -33,7 +33,6 @@ post-build:
 
 post-install:
 	${INSTALL_MAN} ${WRKBUILD}/jj.1 ${PREFIX}/man/man1
-
 
 MODCARGO_INSTALL_TARGET_PATHS = cli
 
