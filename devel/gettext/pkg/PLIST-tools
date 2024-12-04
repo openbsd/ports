@@ -19,12 +19,6 @@ bin/gettextize
 @bin bin/xgettext
 include/gettext-po.h
 @info info/gettext.info
-lib/gettext/
-@bin lib/gettext/cldr-plurals
-@bin lib/gettext/hostname
-lib/gettext/project-id
-@bin lib/gettext/urlget
-lib/gettext/user-email
 @static-lib lib/libgettextlib.a
 lib/libgettextlib.la
 @lib lib/libgettextlib.so.${LIBgettextlib_VERSION}
@@ -34,6 +28,12 @@ lib/libgettextpo.la
 @static-lib lib/libgettextsrc.a
 lib/libgettextsrc.la
 @lib lib/libgettextsrc.so.${LIBgettextsrc_VERSION}
+libexec/gettext/
+@bin libexec/gettext/cldr-plurals
+@bin libexec/gettext/hostname
+libexec/gettext/project-id
+@bin libexec/gettext/urlget
+libexec/gettext/user-email
 @man man/man1/autopoint.1
 @man man/man1/gettextize.1
 @man man/man1/msgattrib.1
@@ -1943,6 +1943,9 @@ share/emacs/site-lisp/po-mode.el
 share/emacs/site-lisp/start-po.el
 share/gettext-${VERSION}/
 share/gettext-${VERSION}/its/
+share/gettext-${VERSION}/its/docbook.loc
+share/gettext-${VERSION}/its/docbook4.its
+share/gettext-${VERSION}/its/docbook5.its
 share/gettext-${VERSION}/its/glade.loc
 share/gettext-${VERSION}/its/glade1.its
 share/gettext-${VERSION}/its/glade2.its
@@ -1953,6 +1956,7 @@ share/gettext-${VERSION}/its/metainfo.its
 share/gettext-${VERSION}/its/metainfo.loc
 share/gettext/archive.dir.tar.xz
 share/gettext/config.rpath
+share/gettext/disclaim-translations.txt
 share/gettext/gettext.h
 share/gettext/javaversion.class
 share/gettext/msgunfmt.tcl
@@ -1963,9 +1967,9 @@ share/gettext/po/Rules-quot
 share/gettext/po/boldquot.sed
 share/gettext/po/en@boldquot.header
 share/gettext/po/en@quot.header
-share/gettext/po/insert-header.sin
+share/gettext/po/insert-header.sed
 share/gettext/po/quot.sed
-share/gettext/po/remove-potcdate.sin
+share/gettext/po/remove-potcdate.sed
 share/gettext/projects/
 share/gettext/projects/GNOME/
 share/gettext/projects/GNOME/team-address
@@ -1984,6 +1988,12 @@ share/gettext/projects/TP/teams.url
 share/gettext/projects/TP/trigger
 share/gettext/projects/index
 share/gettext/projects/team-address
+share/gettext/schema/
+share/gettext/schema/its-extensions.xsd
+share/gettext/schema/its.xsd10
+share/gettext/schema/its.xsd11
+share/gettext/schema/locating-rules.xsd10
+share/gettext/schema/locating-rules.xsd11
 share/gettext/styles/
 share/gettext/styles/po-default.css
 share/gettext/styles/po-emacs-x.css

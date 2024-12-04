@@ -3,12 +3,12 @@ Use standard shared library versioning.
 Index: gettext-tools/gnulib-lib/Makefile.in
 --- gettext-tools/gnulib-lib/Makefile.in.orig
 +++ gettext-tools/gnulib-lib/Makefile.in
-@@ -4653,7 +4653,7 @@ libgettextlib_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined
- 	$(LTLIBC32CONV) $(LTLIBICONV) $(LTLIBINTL) $(LTLIBUNISTRING) \
- 	$(MBRTOWC_LIB) $(POSIX_SPAWN_LIB) $(POW_LIBM) $(QCOPY_ACL_LIB) \
- 	$(SERVENT_LIB) $(SETLOCALE_LIB) $(SETLOCALE_NULL_LIB) \
--	@INTL_MACOSX_LIBS@ -release @VERSION@ $(am__append_38) \
-+	@INTL_MACOSX_LIBS@ $(am__append_38) \
- 	$(am__append_54) $(LTLIBICONV) $(LTLIBICONV) $(am__append_175) \
- 	$(am__append_176)
+@@ -5540,7 +5540,7 @@ libgettextlib_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined
+ 	$(LTLIBINTL) $(LTLIBUNISTRING) $(MBRTOWC_LIB) \
+ 	$(POSIX_SPAWN_LIB) $(POW_LIBM) $(QCOPY_ACL_LIB) $(SERVENT_LIB) \
+ 	$(SETLOCALE_LIB) $(SETLOCALE_NULL_LIB) @INTL_MACOSX_LIBS@ \
+-	-release @VERSION@ $(am__append_40) $(LTLIBXML) $(LTLIBICONV) \
++	$(am__append_40) $(LTLIBXML) $(LTLIBICONV) \
+ 	$(LTLIBICONV) $(am__append_194) $(am__append_195)
  
+ # Use this preprocessor expression to decide whether #include_next works.

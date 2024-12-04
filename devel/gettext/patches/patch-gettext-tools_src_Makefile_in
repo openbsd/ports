@@ -3,12 +3,12 @@ Use standard shared library versioning.
 Index: gettext-tools/src/Makefile.in
 --- gettext-tools/src/Makefile.in.orig
 +++ gettext-tools/src/Makefile.in
-@@ -3965,7 +3965,7 @@ cldr_plurals_LDADD = libgettextsrc.la $(LDADD)
+@@ -4412,7 +4412,7 @@ libgettextsrc_la_DEPENDENCIES = $(WOE32_LIBADD)
  # Need @LTLIBINTL@ because many source files use gettext().
- # Need @LTLIBICONV@ because po-charset.c, po-lex.c, msgl-iconv.c, write-po.c
- # use iconv().
+ # Need @LTLIBICONV@ because po-charset.c, read-po-lex.c, msgl-iconv.c,
+ # write-po.c use iconv().
 -libgettextsrc_la_LDFLAGS = -release @VERSION@ \
 +libgettextsrc_la_LDFLAGS = \
  	../gnulib-lib/libgettextlib.la $(LTLIBUNISTRING) \
  	$(LT_LIBTEXTSTYLE) @LTLIBINTL@ @LTLIBICONV@ -lc -no-undefined \
- 	$(am__append_3) $(am__append_5) $(am__append_7)
+ 	$(am__append_6) $(am__append_8) $(am__append_10)

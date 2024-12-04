@@ -2,16 +2,16 @@ COMMENT-runtime=	GNU gettext runtime libraries and programs
 COMMENT-textstyle=	text styling library
 COMMENT-tools=		GNU gettext development and translation tools
 
-VERSION=		0.22.5
+VERSION=		0.23
 DISTNAME=		gettext-${VERSION}
 PKGNAME-textstyle=	libtextstyle-${VERSION}
 
-SHARED_LIBS +=  intl                 8.0      # 12.0
+SHARED_LIBS +=  intl                 8.1      # 12.1
 SHARED_LIBS +=  asprintf             3.0      # unknown
-SHARED_LIBS +=  textstyle            0.2      # 2.1
-SHARED_LIBS +=  gettextlib           14.0     # unknown
-SHARED_LIBS +=  gettextsrc           10.0     # unknown
-SHARED_LIBS +=  gettextpo            12.0     # 5.10
+SHARED_LIBS +=  textstyle            0.2      # 2.2
+SHARED_LIBS +=  gettextlib           15.0     # unknown
+SHARED_LIBS +=  gettextsrc           11.0     # unknown
+SHARED_LIBS +=  gettextpo            13.0     # 5.11
 
 SUBST_VARS=	VERSION
 
@@ -32,8 +32,8 @@ MULTI_PACKAGES=	-runtime -textstyle -tools
 SUBPACKAGE?=	-runtime
 
 WANTLIB-runtime=	c iconv m ${COMPILER_LIBCXX}
-WANTLIB-textstyle=	curses iconv m
-WANTLIB-tools=		c curses iconv intl m textstyle
+WANTLIB-textstyle=	curses iconv m pthread
+WANTLIB-tools=		c curses iconv intl m pthread textstyle
 
 LIB_DEPENDS=		converters/libiconv
 LIB_DEPENDS-tools=	${BASE_PKGPATH},-runtime \
@@ -73,6 +73,7 @@ EXTRA_LOCALES=	en he lv no
 EXTRA_LOCALES+=	eu pa
 
 post-install:
+	rmdir ${PREFIX}/lib/gettext
 	for l in ${EXTRA_LOCALES}; do \
 		${INSTALL_DATA_DIR} ${PREFIX}/share/locale/$$l/LC_MESSAGES; \
 	done

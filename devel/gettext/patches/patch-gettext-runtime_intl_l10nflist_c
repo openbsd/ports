@@ -76,7 +76,7 @@ Index: gettext-runtime/intl/l10nflist.c
      {
        if (only_digit)
 -	wp = stpcpy (retval, "iso");
-+	wp = (char *) memcpy (retval, "iso", 3) + 3;
++	wp = memcpy (retval, "iso", 3) + 3;
        else
  	wp = retval;
  
