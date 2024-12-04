@@ -24,7 +24,7 @@ MODULES =       	devel/cabal
 MODCABAL_STEM		= git-annex
 # newer versions have no docs to install
 MODCABAL_VERSION	= 10.20230802
-REVISION		= 0
+REVISION		= 1
 
 MAN1_STAGING_DIR = ${WRKBUILD}/man1_staging
 
@@ -44,19 +44,23 @@ post-install:
 	${INSTALL_MAN_DIR} ${PREFIX}/man/man1
 	${INSTALL_MAN} ${MAN1_STAGING_DIR}/*.1 ${PREFIX}/man/man1
 
+# Benchmark disabled to skip criterion-measurement missing support for
+# aarch64 in old versions:
+# % cabal v2-configure --flags='-benchmark'
+# % cabal build --dry-run --allow-newer
+# % cabal-bundler --openbsd git-annex-10.20230802 --plan=dist-newstyle/cache/plan.json
 MODCABAL_BUILD_ARGS	= --allow-newer
+MODCABAL_FLAGS		= -benchmark
 MODCABAL_MANIFEST	= \
 	DAV	1.3.4	0	\
-	Glob	0.10.2	3	\
 	HUnit	1.6.2.0	0	\
 	IfElse	0.85	0	\
 	OneTuple	0.4.1.1	1	\
-	Only	0.1	2	\
 	QuickCheck	2.15	0	\
 	SafeSemaphore	0.10.1	1	\
 	StateVar	1.2.2	0	\
 	adjunctions	4.4.2	2	\
-	aeson	2.2.1.0	1	\
+	aeson	2.2.1.0	2	\
 	alex	3.5.1.0	0	\
 	ansi-terminal	1.1.1	0	\
 	ansi-terminal-types	1.1	0	\
@@ -65,24 +69,22 @@ MODCABAL_MANIFEST	= \
 	asn1-parse	0.9.5	0	\
 	asn1-types	0.3.4	0	\
 	assoc	1.1	1	\
-	async	2.2.5	1	\
+	async	2.2.5	3	\
 	attoparsec	0.14.4	5	\
 	attoparsec-aeson	2.2.0.1	0	\
 	auto-update	0.2.0	0	\
 	aws	0.24.2	0	\
-	base-compat	0.13.1	0	\
-	base-compat-batteries	0.13.1	0	\
-	base-orphans	0.9.1	0	\
+	base-compat	0.14.0	0	\
+	base-orphans	0.9.2	0	\
 	base16-bytestring	1.0.2.0	1	\
 	base64-bytestring	1.2.1.0	1	\
 	basement	0.0.16	0	\
 	bencode	0.6.1.1	0	\
 	bifunctors	5.6.2	0	\
-	binary-orphans	1.0.4.1	3	\
 	bitvec	1.1.5.0	1	\
 	blaze-builder	0.4.2.3	0	\
-	blaze-html	0.9.2.0	0	\
-	blaze-markup	0.8.3.0	1	\
+	blaze-html	0.9.2.0	1	\
+	blaze-markup	0.8.3.0	2	\
 	bloomfilter	2.0.1.2	0	\
 	bsb-http-chunked	0.0.0.4	4	\
 	byteable	0.1.1	0	\
@@ -90,28 +92,24 @@ MODCABAL_MANIFEST	= \
 	cabal-doctest	1.0.9	3	\
 	call-stack	0.4.0	0	\
 	case-insensitive	1.2.1.0	0	\
-	cassava	0.5.3.1	0	\
-	cborg	0.2.10.0	0	\
+	cborg	0.2.10.0	1	\
 	cereal	0.5.8.3	0	\
 	clientsession	0.9.2.0	1	\
 	clock	0.8.4	0	\
-	code-page	0.2.1	0	\
 	colour	2.3.6	0	\
 	comonad	5.0.8	2	\
-	concurrent-output	1.10.20	0	\
+	concurrent-output	1.10.21	0	\
 	conduit	1.3.5	0	\
 	conduit-extra	1.3.6	0	\
 	contravariant	1.5.5	0	\
 	cookie	0.5.0	0	\
-	criterion	1.6.3.0	0	\
-	criterion-measurement	0.2.1.0	0	\
 	crypto-api	0.13.3	1	\
 	crypto-token	0.1.1	0	\
-	cryptohash-md5	0.11.101.0	4	\
-	cryptohash-sha1	0.11.101.0	4	\
+	cryptohash-md5	0.11.101.0	5	\
+	cryptohash-sha1	0.11.101.0	5	\
 	crypton	1.0.0	0	\
-	crypton-connection	0.3.2	0	\
-	crypton-x509	1.7.6	1	\
+	crypton-connection	0.3.2	1	\
+	crypton-x509	1.7.6	2	\
 	crypton-x509-store	1.6.9	0	\
 	crypton-x509-system	1.6.7	0	\
 	crypton-x509-validation	1.6.12	0	\
@@ -124,27 +122,26 @@ MODCABAL_MANIFEST	= \
 	data-default-instances-dlist	0.0.1	0	\
 	data-default-instances-old-locale	0.0.1	0	\
 	data-fix	0.3.2	5	\
-	dense-linear-algebra	0.1.0.0	0	\
 	disk-free-space	0.1.0.1	3	\
 	distributive	0.6.2.1	1	\
-	dlist	1.0	1	\
+	dlist	1.0	2	\
 	easy-file	0.2.5	0	\
 	edit-distance	0.2.2.1	1	\
 	email-validate	2.3.2.20	0	\
-	entropy	0.4.1.10	1	\
+	entropy	0.4.1.10	2	\
 	fast-logger	3.2.2	0	\
 	feed	1.3.2.1	4	\
 	file-embed	0.0.16.0	0	\
 	filepath-bytestring	1.4.2.1.13	0	\
-	free	5.2	4	\
-	generically	0.1.1	2	\
+	free	5.2	5	\
+	generically	0.1.1	4	\
 	git-lfs	1.2.2	0	\
 	half	0.3.1	2	\
 	happy	1.20.1.1	0	\
 	hashable	1.4.4.0	1	\
 	hjsmin	0.2.1	0	\
-	hourglass	0.2.12	0	\
-	hsc2hs	0.68.10	2	\
+	hourglass	0.2.12	1	\
+	hsc2hs	0.68.10	3	\
 	http-api-data	0.6	1	\
 	http-client	0.7.17	0	\
 	http-client-restricted	0.1.0	0	\
@@ -153,36 +150,32 @@ MODCABAL_MANIFEST	= \
 	http-date	0.0.11	0	\
 	http-semantics	0.0.0	0	\
 	http-types	0.12.4	0	\
-	http2	5.2.1	0	\
+	http2	5.2.1	1	\
 	indexed-traversable	0.1.3	0	\
 	indexed-traversable-instances	0.1.1.2	2	\
 	integer-conversion	0.1.0.1	1	\
 	integer-logarithms	1.0.3.1	6	\
 	invariant	0.6.3	0	\
 	iproute	1.7.12	0	\
-	js-chart	2.9.4.1	0	\
 	kan-extensions	5.2.5	2	\
 	language-javascript	0.7.1.0	0	\
-	lens	5.2.3	4	\
+	lens	5.2.3	5	\
 	libyaml	0.1.4	0	\
 	libyaml-clib	0.2.5	0	\
 	lift-type	0.1.1.1	0	\
 	lifted-base	0.2.3.12	0	\
 	magic	1.1	0	\
-	math-functions	0.3.4.4	0	\
 	memory	0.18.0	0	\
 	microlens	0.4.13.1	1	\
 	microlens-th	0.4.3.15	0	\
-	microstache	1.0.2.3	3	\
 	mime-types	0.1.2.0	0	\
 	monad-control	1.0.3.1	0	\
 	monad-logger	0.3.40	0	\
 	monad-loops	0.4.3	0	\
 	mono-traversable	1.0.17.0	0	\
 	mountpoints	1.0.2	0	\
-	mwc-random	0.15.0.2	1	\
 	network	3.2.0.0	0	\
-	network-bsd	2.8.1.0	5	\
+	network-bsd	2.8.1.0	6	\
 	network-byte-order	0.1.7	0	\
 	network-control	0.1.0	0	\
 	network-info	0.2.1	0	\
@@ -192,7 +185,7 @@ MODCABAL_MANIFEST	= \
 	old-time	1.1.0.4	0	\
 	optparse-applicative	0.18.1.0	0	\
 	os-string	2.0.2.1	0	\
-	parallel	3.2.2.0	8	\
+	parallel	3.2.2.0	9	\
 	path-pieces	0.2.1	1	\
 	pem	0.2.4	0	\
 	persistent	2.14.6.1	0	\
@@ -200,9 +193,9 @@ MODCABAL_MANIFEST	= \
 	persistent-template	2.12.0.0	0	\
 	prettyprinter	1.7.1	0	\
 	prettyprinter-ansi-terminal	1.1.3	0	\
-	primitive	0.9.0.0	1	\
+	primitive	0.9.0.0	2	\
 	profunctors	5.6.2	3	\
-	psqueues	0.2.8.0	0	\
+	psqueues	0.2.8.0	1	\
 	random	1.2.1.2	0	\
 	recv	0.1.0	0	\
 	reflection	2.1.7	1	\
@@ -218,7 +211,7 @@ MODCABAL_MANIFEST	= \
 	semialign	1.3	1	\
 	semigroupoids	6.0.0.1	1	\
 	semigroups	0.20	0	\
-	serialise	0.2.6.1	2	\
+	serialise	0.2.6.1	3	\
 	setenv	0.1.1.3	1	\
 	shakespeare	2.1.0.1	0	\
 	silently	1.2.5.3	0	\
@@ -227,7 +220,6 @@ MODCABAL_MANIFEST	= \
 	socks	0.6.1	0	\
 	split	0.2.5	0	\
 	splitmix	0.1.0.5	1	\
-	statistics	0.16.2.1	0	\
 	stm-chans	3.0.0.9	0	\
 	streaming-commons	0.2.2.6	1	\
 	strict	0.5	1	\
@@ -238,12 +230,12 @@ MODCABAL_MANIFEST	= \
 	tasty-hunit	0.10.1	0	\
 	tasty-quickcheck	0.10.3	2	\
 	tasty-rerun	1.1.19	3	\
-	terminal-size	0.3.4	0	\
+	terminal-size	0.3.4	1	\
 	text-iso8601	0.1	1	\
 	text-short	0.1.5	3	\
 	th-abstraction	0.7.0.0	0	\
-	th-compat	0.1.5	1	\
-	th-lift	0.8.4	2	\
+	th-compat	0.1.5	2	\
+	th-lift	0.8.4	3	\
 	th-lift-instances	0.1.20	0	\
 	these	1.2	1	\
 	time-compat	1.9.6.1	6	\
@@ -258,25 +250,23 @@ MODCABAL_MANIFEST	= \
 	unix-compat	0.7.1	0	\
 	unix-time	0.4.12	0	\
 	unliftio	0.2.25.0	0	\
-	unliftio-core	0.2.1.0	3	\
-	unordered-containers	0.2.20	1	\
+	unliftio-core	0.2.1.0	4	\
+	unordered-containers	0.2.20	3	\
 	utf8-string	1.0.2	0	\
 	uuid	1.3.15	3	\
 	uuid-types	1.0.5.1	0	\
-	vault	0.3.1.5	6	\
-	vector	0.13.1.0	1	\
+	vault	0.3.1.5	8	\
+	vector	0.13.1.0	2	\
 	vector-algorithms	0.9.0.1	3	\
-	vector-binary-instances	0.2.5.2	5	\
-	vector-stream	0.1.0.1	1	\
-	vector-th-unbox	0.2.2	6	\
+	vector-stream	0.1.0.1	2	\
 	void	0.7.3	0	\
 	wai	3.2.4	0	\
 	wai-app-static	3.1.9	0	\
 	wai-extra	3.1.14	0	\
 	wai-logger	2.4.0	0	\
-	warp	3.4.1	0	\
-	warp-tls	3.4.5	0	\
-	witherable	0.4.2	4	\
+	warp	3.4.1	1	\
+	warp-tls	3.4.5	1	\
+	witherable	0.4.2	5	\
 	word8	0.1.3	0	\
 	xml-conduit	1.9.1.3	0	\
 	xml-hamlet	0.5.0.2	0	\
@@ -288,6 +278,6 @@ MODCABAL_MANIFEST	= \
 	yesod-form	1.7.6	0	\
 	yesod-persistent	1.6.0.8	0	\
 	yesod-static	1.6.1.0	0	\
-	zlib	0.7.1.0	0	\
+	zlib	0.7.1.0	2	\
 
 .include <bsd.port.mk>
