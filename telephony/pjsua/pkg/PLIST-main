@@ -15,8 +15,10 @@ include/pj++/tree.hpp
 include/pj++/types.hpp
 include/pj/activesock.h
 include/pj/addr_resolv.h
+include/pj/argparse.h
 include/pj/array.h
 include/pj/assert.h
+include/pj/atomic_queue.h
 include/pj/compat/
 include/pj/compat/assert.h
 include/pj/compat/cc_armcc.h
@@ -97,6 +99,7 @@ include/pj/string_i.h
 include/pj/timer.h
 include/pj/types.h
 include/pj/unicode.h
+include/pj/unittest.h
 include/pjlib++.hpp
 include/pjlib-util/
 include/pjlib-util.h
@@ -130,6 +133,7 @@ include/pjlib-util/xml.h
 include/pjlib.h
 include/pjmedia/
 include/pjmedia-audiodev/
+include/pjmedia-audiodev/alsa.h
 include/pjmedia-audiodev/audiodev.h
 include/pjmedia-audiodev/audiodev_imp.h
 include/pjmedia-audiodev/audiotest.h
@@ -156,6 +160,7 @@ include/pjmedia-codec/h264_packetizer.h
 include/pjmedia-codec/ilbc.h
 include/pjmedia-codec/ipp_codecs.h
 include/pjmedia-codec/l16.h
+include/pjmedia-codec/lyra.h
 include/pjmedia-codec/opencore_amr.h
 include/pjmedia-codec/openh264.h
 include/pjmedia-codec/opus.h
@@ -260,6 +265,8 @@ include/pjnath/types.h
 include/pjnath/upnp.h
 include/pjsip/
 include/pjsip-simple/
+include/pjsip-simple/dialog_info.h
+include/pjsip-simple/dlg_event.h
 include/pjsip-simple/errno.h
 include/pjsip-simple/evsub.h
 include/pjsip-simple/evsub_msg.h

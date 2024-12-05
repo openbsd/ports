@@ -1,7 +1,7 @@
 Index: build.mak.in
 --- build.mak.in.orig
 +++ build.mak.in
-@@ -330,7 +330,6 @@ export APP_LDLIBS := $(PJSUA_LIB_LDLIB) \
+@@ -331,7 +331,6 @@ export APP_LDLIBS := $(PJSUA_LIB_LDLIB) \
          $(PJLIB_LDLIB) \
          @LIBS@
  export APP_LDXXLIBS := $(PJSUA2_LIB_LDLIB) \
