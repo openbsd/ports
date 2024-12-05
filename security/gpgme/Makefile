@@ -1,17 +1,16 @@
 COMMENT-main =	GnuPG Made Easy
 COMMENT-qt =	Qt bindings for GPGme
 
-VERSION =	1.24.0
+VERSION =	1.24.1
 DISTNAME =	gpgme-${VERSION}
 PKGNAME-main =	gpgme-${VERSION}
 PKGNAME-qt =	gpgme-qt-${VERSION}
 
 CATEGORIES =	security devel
 
-SHARED_LIBS +=  gpgme                24.2     # 44.0
-SHARED_LIBS +=  gpgmepp              3.3      # 27.0
-SHARED_LIBS +=  qgpgme               3.2      # 20.0
-SHARED_LIBS +=  qgpgmeqt6            0.0      # 21.0
+SHARED_LIBS +=  gpgme                24.3     # 44.1
+SHARED_LIBS +=  gpgmepp              3.4      # 27.1
+SHARED_LIBS +=  qgpgmeqt6            0.1      # 21.1
 
 HOMEPAGE =	https://www.gnupg.org/software/gpgme/
 
