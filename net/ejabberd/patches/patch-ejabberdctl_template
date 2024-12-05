@@ -1,4 +1,4 @@
-OpenBSD su treats -c before username as class, and don't requires --
+OpenBSD su treats -c before username as class, and doesn't require --
 
 See: https://github.com/processone/ejabberd/pull/4320
 

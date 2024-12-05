@@ -1,7 +1,7 @@
 COMMENT =		robust, ubiquitous and massively scalable messaging platform
 
 V =			24.10
-REVISION =		0
+REVISION =		1
 DIST_TUPLE +=		github processone ejabberd ${V} .
 
 CATEGORIES =		net
@@ -25,6 +25,9 @@ PERMIT_PACKAGE = 	Yes
 
 WANTLIB += 		${COMPILER_LIBCXX} c crypto expat m sqlite3 ssl yaml-0
 
+# dlopen()'ed
+WANTLIB += 		jpeg webp png gd
+
 MODULES =		lang/erlang
 
 MODERL_USE_REBAR3 =	Yes
@@ -33,7 +36,11 @@ MODERL_USE_REBAR3 =	Yes
 COMPILER=       	base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS =		devel/rebar3
-LIB_DEPENDS =		devel/libyaml \
+LIB_DEPENDS =		graphics/gd \
+			graphics/libwebp \
+			graphics/png \
+			graphics/jpeg \
+			devel/libyaml \
 			databases/sqlite3
 
 AUTOCONF_VERSION =	2.72
