@@ -10,8 +10,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser
 
-V=			131.0.6778.85
-REVISION=		0
+V=			131.0.6778.108
 
 DISTNAME=		chromium-${V}
 
@@ -21,7 +20,7 @@ DISTFILES+=		${CHROMIUM_DISTFILES} \
 DISTFILES.a+=		${PROFILE_DISTFILES}
 
 CHROMIUM_DISTFILES+=	chromium-${V}${EXTRACT_SUFX}
-PROFILE_DISTFILES+=	chrome-linux-${V}-llvm17.profdata${EXTRACT_SUFX}
+PROFILE_DISTFILES+=	chromium-linux-${V}-llvm17.profdata${EXTRACT_SUFX}
 REGRESS_DISTFILES+=	chromium-${V}-testdata${EXTRACT_SUFX}
 
 EXTRACT_ONLY=		${CHROMIUM_DISTFILES} \
