@@ -1,7 +1,7 @@
 COMMENT =		filesystem secrets scanner
 
 MODGO_MODNAME =		github.com/owenrumney/squealer
-MODGO_VERSION =		v1.2.4
+MODGO_VERSION =		v1.2.5
 
 DISTNAME =		squealer-${MODGO_VERSION}
 
@@ -19,6 +19,9 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/go
 
 WRKDIST =		${WRKSRC}
+
+post-extract:
+	rm -rf ${WRKSRC}/vendor
 
 .include "modules.inc"
 .include <bsd.port.mk>
