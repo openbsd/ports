@@ -479,6 +479,7 @@ lib/python${MODPY_VERSION}/site-packages/Cython/Runtime/${MODPY_PYCACHE}__init__
 @so lib/python${MODPY_VERSION}/site-packages/Cython/Runtime/refnanny.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/Cython/Runtime/refnanny.pyx
 lib/python${MODPY_VERSION}/site-packages/Cython/Shadow.py
+lib/python${MODPY_VERSION}/site-packages/Cython/Shadow.pyi
 @so lib/python${MODPY_VERSION}/site-packages/Cython/StringIOTree.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/Cython/StringIOTree.py
 lib/python${MODPY_VERSION}/site-packages/Cython/Tempita/
