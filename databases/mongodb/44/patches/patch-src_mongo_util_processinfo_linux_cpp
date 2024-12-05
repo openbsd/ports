@@ -1,0 +1,11 @@
+Index: src/mongo/util/processinfo_linux.cpp
+--- src/mongo/util/processinfo_linux.cpp.orig
++++ src/mongo/util/processinfo_linux.cpp
+@@ -52,6 +52,7 @@
+ #endif
+ 
+ #include <boost/filesystem.hpp>
++#include <boost/filesystem/exception.hpp>
+ #include <boost/none.hpp>
+ #include <boost/optional.hpp>
+ #include <fmt/format.h>

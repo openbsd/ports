@@ -1,0 +1,12 @@
+Index: src/mongo/shell/shell_utils_launcher.h
+--- src/mongo/shell/shell_utils_launcher.h.orig
++++ src/mongo/shell/shell_utils_launcher.h
+@@ -29,7 +29,7 @@
+ 
+ #pragma once
+ 
+-#include <boost/filesystem/convenience.hpp>
++#include <boost/filesystem/operations.hpp>
+ #include <map>
+ #include <sstream>
+ #include <string>

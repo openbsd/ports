@@ -1,0 +1,11 @@
+Index: src/mongo/scripting/engine.cpp
+--- src/mongo/scripting/engine.cpp.orig
++++ src/mongo/scripting/engine.cpp
+@@ -33,6 +33,7 @@
+ 
+ #include "mongo/scripting/engine.h"
+ 
++#include <boost/filesystem/directory.hpp>
+ #include <boost/filesystem/operations.hpp>
+ #include <cctype>
+ 
