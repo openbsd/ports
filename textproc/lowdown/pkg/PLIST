@@ -40,5 +40,7 @@ lib/pkgconfig/lowdown.pc
 @man man/man3/lowdown_tree_rndr.3
 @man man/man5/lowdown.5
 share/lowdown/
+share/lowdown/html/
+share/lowdown/html/default.html
 share/lowdown/odt/
 share/lowdown/odt/styles.xml
