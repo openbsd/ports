@@ -1,6 +1,6 @@
 COMMENT =		interactive intercepting HTTP proxy
 
-MODPY_EGG_VERSION =	11.0.1
+MODPY_EGG_VERSION =	11.0.2
 
 DISTNAME =		mitmproxy-${MODPY_EGG_VERSION}
 
