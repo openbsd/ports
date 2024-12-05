@@ -1,28 +1,23 @@
-COMMENT =	Python 2 and 3 compatibility library
+COMMENT=	Python 2 and 3 compatibility library
 
-MODPY_EGG_VERSION =	1.16.0
-DISTNAME =	six-${MODPY_EGG_VERSION}
-PKGNAME =	py-six-${MODPY_EGG_VERSION}
-REVISION =	4
+MODPY_EGG_VERSION=	1.17.0
+DISTNAME=	six-${MODPY_EGG_VERSION}
+PKGNAME=	py-six-${MODPY_EGG_VERSION}
 
-CATEGORIES =	devel
+CATEGORIES=	devel
 
-HOMEPAGE =	https://github.com/benjaminp/six
+HOMEPAGE=	https://github.com/benjaminp/six
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODPY_PI =	Yes
+MODPY_PI=	Yes
 
-MODULES =	lang/python
+MODULES=	lang/python
 
-FLAVORS =	python3
-FLAVOR =	python3
+FLAVORS=	python3
+FLAVOR=		python3
 
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
-MODPY_PYTEST_ARGS =	-v
-
-TEST_DEPENDS =	devel/py-py${MODPY_FLAVOR}
+MODPY_PYBUILD=	setuptools
 
 .include <bsd.port.mk>
