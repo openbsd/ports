@@ -1,9 +1,20 @@
-Fix build with poppler-24.10.0. From upstream commits 26325 and 26327.
+Fix build with poppler-24.10.0.
+
+From upstream commits 26325, 26327, 26392 and 26429.
 
 Index: scribus/plugins/import/pdf/slaoutput.h
 --- scribus/plugins/import/pdf/slaoutput.h.orig
 +++ scribus/plugins/import/pdf/slaoutput.h
-@@ -56,9 +56,11 @@ for which a new license (GPL+exception) is in place.
+@@ -45,8 +45,6 @@ for which a new license (GPL+exception) is in place.
+ #include <poppler/Form.h>
+ #include <poppler/Page.h>
+ #include <poppler/Catalog.h>
+-#include <poppler/CharCodeToUnicode.h>
+-#include <poppler/FontEncodingTables.h>
+ #include <poppler/splash/SplashFontFileID.h>
+ #include <poppler/splash/SplashFontFile.h>
+ #include <poppler/splash/SplashFontEngine.h>
+@@ -56,9 +54,11 @@ for which a new license (GPL+exception) is in place.
  #include <poppler/splash/SplashGlyphBitmap.h>
  
  //------------------------------------------------------------------------
@@ -16,7 +27,7 @@ Index: scribus/plugins/import/pdf/slaoutput.h
  class LinkSubmitForm: public LinkAction
  {
  public:
-@@ -68,16 +70,18 @@ class LinkSubmitForm: public LinkAction (public)
+@@ -68,17 +68,19 @@ class LinkSubmitForm: public LinkAction (public)
  	virtual ~LinkSubmitForm();
  
  	// Was the LinkImportData created successfully?
@@ -33,8 +44,52 @@ Index: scribus/plugins/import/pdf/slaoutput.h
 +	GooString *m_url {nullptr};		// URL
  	int m_flags {0};
  };
-+
-+#endif
  
++#endif
++
  //------------------------------------------------------------------------
  // LinkImportData
+ //------------------------------------------------------------------------
+@@ -87,9 +89,9 @@ class LinkImportData: public LinkAction
+ {
+ public:
+ 	// Build a LinkImportData from an action dictionary.
+-	LinkImportData(Object *actionObj);
++	explicit LinkImportData(Object *actionObj);
+ 	// Destructor.
+-	virtual ~LinkImportData();
++	~LinkImportData() override;
+ 
+ 	// Was the LinkImportData created successfully?
+ 	GBool isOk() POPPLER_CONST override { return fileName != nullptr; }
+@@ -108,13 +110,19 @@ class LinkImportData: public LinkAction
+ class SlaOutFontFileID: public SplashFontFileID
+ {
+ public:
+-	SlaOutFontFileID(const Ref *rA) { r = *rA; }
+-	~SlaOutFontFileID() {}
++	explicit SlaOutFontFileID(const Ref *rA) { r = *rA; }
+ 
++#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(24, 11, 0)
++       bool matches(const SplashFontFileID& id) const override
++       {
++	       return ((const SlaOutFontFileID&) id).r.num == r.num && ((const SlaOutFontFileID&) id).r.gen == r.gen;
++       }
++#else
+ 	GBool matches(SplashFontFileID *id) override
+ 	{
+ 		return ((SlaOutFontFileID*) id)->r.num == r.num && ((SlaOutFontFileID *) id)->r.gen == r.gen;
+ 	}
++#endif
+ 
+ private:
+ 	Ref r;
+@@ -160,7 +168,7 @@ class SlaOutputDev : public OutputDev
+ {
+ public:
+ 	SlaOutputDev(ScribusDoc* doc, QList<PageItem*> *Elements, QStringList *importedColors, int flags);
+-	virtual ~SlaOutputDev();
++	~SlaOutputDev() override;
+ 
+ 	LinkAction* SC_getAction(AnnotWidget *ano);
+ #if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(0, 86, 0)
