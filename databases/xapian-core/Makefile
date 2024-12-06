@@ -1,6 +1,6 @@
 COMMENT=	search engine library
 
-V=		1.4.26
+V=		1.4.27
 PORTROACH=	limitw:1,even
 DISTNAME=	xapian-core-${V}
 # the other xapian ports should be kept in-sync:
@@ -30,6 +30,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib" \
 		ac_cv_header_uuid_uuid_h=false
 # xapian is happy with libc uuid functions, but picks up libuuid if present
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 .include <bsd.port.arch.mk>
 # amd64-capable CPUs all have SSE
