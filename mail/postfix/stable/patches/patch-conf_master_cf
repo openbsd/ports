@@ -68,7 +68,7 @@ Index: conf/master.cf
 -relay     unix  -       -       n       -       -       smtp
 +smtp      unix  -       -       y       -       -       smtp
 +relay     unix  -       -       y       -       -       smtp
-         -o syslog_name=postfix/$service_name
+         -o syslog_name=${multi_instance_name?{$multi_instance_name}:{postfix}}/$service_name
  #       -o smtp_helo_timeout=5 -o smtp_connect_timeout=5
 -showq     unix  n       -       n       -       -       showq
 -error     unix  -       -       n       -       -       error
