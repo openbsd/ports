@@ -1,7 +1,7 @@
 COMMENT=		declaratively manage infrastructure
 
 MODGO_MODNAME=		github.com/opentofu/opentofu
-MODGO_VERSION=		v1.8.6
+MODGO_VERSION=		v1.8.7
 DISTNAME=		opentofu-${MODGO_VERSION}
 
 CATEGORIES=		sysutils net

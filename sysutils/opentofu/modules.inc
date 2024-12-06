@@ -268,7 +268,7 @@ MODGO_MODULES =	\
 	github.com/gofrs/uuid									 v4.0.0+incompatible \
 	github.com/gogo/protobuf								 v1.3.2 \
 	github.com/goji/httpauth								 v0.0.0-20160601135302-2da839ab0f4d \
-	github.com/golang-jwt/jwt/v4								 v4.4.2 \
+	github.com/golang-jwt/jwt/v4								 v4.5.1 \
 	github.com/golang/glog									 v1.2.0 \
 	github.com/golang/groupcache								 v0.0.0-20210331224755-41bb18bfe9da \
 	github.com/golang/mock									 v1.6.0 \
@@ -844,6 +844,7 @@ MODGO_MODFILES =	\
 	github.com/golang-jwt/jwt/v4						 v4.0.0 \
 	github.com/golang-jwt/jwt/v4						 v4.2.0 \
 	github.com/golang-jwt/jwt/v4						 v4.4.1 \
+	github.com/golang-jwt/jwt/v4						 v4.4.2 \
 	github.com/golang/glog							 v0.0.0-20160126235308-23def4e6c14b \
 	github.com/golang/glog							 v1.1.0 \
 	github.com/golang/groupcache						 v0.0.0-20190702054246-869f871628b6 \

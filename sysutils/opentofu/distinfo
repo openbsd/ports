@@ -823,7 +823,8 @@ SHA256 (go_modules/github.com/golang-jwt/jwt/v4/@v/v4.0.0.mod) = iF+p5+KXYzdQLJA
 SHA256 (go_modules/github.com/golang-jwt/jwt/v4/@v/v4.2.0.mod) = iF+p5+KXYzdQLJA2seI6YTpIzY8a84eGYyHe0kEk0ck=
 SHA256 (go_modules/github.com/golang-jwt/jwt/v4/@v/v4.4.1.mod) = D45njmSVtlLFyK7Bh5yBcc1v8c9DX7R/5TY2L4iZQpk=
 SHA256 (go_modules/github.com/golang-jwt/jwt/v4/@v/v4.4.2.mod) = D45njmSVtlLFyK7Bh5yBcc1v8c9DX7R/5TY2L4iZQpk=
-SHA256 (go_modules/github.com/golang-jwt/jwt/v4/@v/v4.4.2.zip) = Mx78MxmJVyVsVyWMr5YZn+xTTQwISdowOhH7ATtH0QE=
+SHA256 (go_modules/github.com/golang-jwt/jwt/v4/@v/v4.5.1.mod) = D45njmSVtlLFyK7Bh5yBcc1v8c9DX7R/5TY2L4iZQpk=
+SHA256 (go_modules/github.com/golang-jwt/jwt/v4/@v/v4.5.1.zip) = oF5ISfa1LYQVTpvDf8p/NAu4XZzOLOGAoJrnB1j2iQw=
 SHA256 (go_modules/github.com/golang/glog/@v/v0.0.0-20160126235308-23def4e6c14b.mod) = nJuvwPUpBa+qcWSFizoBoMw9wH2iMDAXfOSH9ydDiVg=
 SHA256 (go_modules/github.com/golang/glog/@v/v1.1.0.mod) = w/83RXwr4BIcrZMN4GLCwxQUn9LbtJ8wE6XkTOedcV0=
 SHA256 (go_modules/github.com/golang/glog/@v/v1.2.0.mod) = bobL43Fj1eFAF4iKgsMrvinnMum9Zrvp2o5C4I9r/cw=
@@ -2326,7 +2327,7 @@ SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.2.1.mod) = MZI3y2a
 SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.2.1.zip) = 9L7QuayfT9ekxDVbSACgzs8kQ0ISmRJM7oZtb4J54Lc=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 8ikTVRI4fWZj4fCZmkkiq3CN7UvcgExxzpPj1gK6ld0=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = Ve0Ixd9EigM79+LCkS1NqoW4VqBchUsMh8zIXH8/v8c=
-SHA256 (opentofu-v1.8.6.zip) = zJz21ZjxKVHprK6shpSqofY6N7QCoIpLlMVymKkt4uk=
+SHA256 (opentofu-v1.8.7.zip) = U5drBi/cMdCiRYUAQpkTEoUnwKeNoAWyY0VsqpwkEr0=
 SIZE (go_modules/cloud.google.com/go/@v/v0.100.2.mod) = 531
 SIZE (go_modules/cloud.google.com/go/@v/v0.102.0.mod) = 568
 SIZE (go_modules/cloud.google.com/go/@v/v0.102.1.mod) = 568
@@ -3152,7 +3153,8 @@ SIZE (go_modules/github.com/golang-jwt/jwt/v4/@v/v4.0.0.mod) = 45
 SIZE (go_modules/github.com/golang-jwt/jwt/v4/@v/v4.2.0.mod) = 45
 SIZE (go_modules/github.com/golang-jwt/jwt/v4/@v/v4.4.1.mod) = 138
 SIZE (go_modules/github.com/golang-jwt/jwt/v4/@v/v4.4.2.mod) = 138
-SIZE (go_modules/github.com/golang-jwt/jwt/v4/@v/v4.4.2.zip) = 75332
+SIZE (go_modules/github.com/golang-jwt/jwt/v4/@v/v4.5.1.mod) = 138
+SIZE (go_modules/github.com/golang-jwt/jwt/v4/@v/v4.5.1.zip) = 77256
 SIZE (go_modules/github.com/golang/glog/@v/v0.0.0-20160126235308-23def4e6c14b.mod) = 30
 SIZE (go_modules/github.com/golang/glog/@v/v1.1.0.mod) = 39
 SIZE (go_modules/github.com/golang/glog/@v/v1.2.0.mod) = 92
@@ -4655,4 +4657,4 @@ SIZE (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.2.1.mod) = 346
 SIZE (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.2.1.zip) = 239376
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = 20937
-SIZE (opentofu-v1.8.6.zip) = 6084969
+SIZE (opentofu-v1.8.7.zip) = 6086700
