@@ -3,7 +3,7 @@
 Index: qt5/src/CMakeLists.txt
 --- qt5/src/CMakeLists.txt.orig
 +++ qt5/src/CMakeLists.txt
-@@ -38,7 +38,6 @@ set(poppler_qt5_SRCS
+@@ -34,7 +34,6 @@ set(poppler_qt5_SRCS
  )
  add_library(poppler-qt5 ${poppler_qt5_SRCS})
  generate_export_header(poppler-qt5 BASE_NAME poppler-qt5 EXPORT_FILE_NAME "${CMAKE_CURRENT_BINARY_DIR}/poppler-export.h")

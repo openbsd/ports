@@ -6,7 +6,7 @@ package contains BoostConfig.cmake.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -215,7 +215,7 @@ find_soft_mandatory_package(ENABLE_QT5 Qt5Xml ${QT5_VE
+@@ -217,7 +217,7 @@ find_soft_mandatory_package(ENABLE_QT5 Qt5Xml ${QT5_VE
  find_soft_mandatory_package(ENABLE_QT5 Qt5Widgets ${QT5_VERSION})
  find_soft_mandatory_package(ENABLE_QT5 Qt5Test ${QT5_VERSION})
  
@@ -15,7 +15,7 @@ Index: CMakeLists.txt
  SET(QT_NO_CREATE_VERSIONLESS_TARGETS ON)
  find_soft_mandatory_package(ENABLE_QT6 Qt6Core ${QT6_VERSION})
  find_soft_mandatory_package(ENABLE_QT6 Qt6Gui ${QT6_VERSION})
-@@ -225,7 +225,7 @@ find_soft_mandatory_package(ENABLE_QT6 Qt6Test ${QT6_V
+@@ -227,7 +227,7 @@ find_soft_mandatory_package(ENABLE_QT6 Qt6Test ${QT6_V
  # Check for Cairo rendering backend
  macro_optional_find_package(Cairo ${CAIRO_VERSION})
  
