@@ -1,0 +1,16 @@
+in some circumstances where it's not running on the console (as is
+the case when tests are run under ports infrastructure), wget writes
+output to wget-log, which tests complain about as being an extra file.
+skip that error.
+
+Index: testenv/conf/expected_files.py
+--- testenv/conf/expected_files.py.orig
++++ testenv/conf/expected_files.py
+@@ -34,6 +34,7 @@ class ExpectedFiles:
+                     "common.conf",
+                     "dirmngr.conf",
+                     "gpg.conf",
++                    "wget-log",
+                 ]:
+                     continue
+ 

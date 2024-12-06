@@ -19,7 +19,7 @@ Index: doc/wget.texi
  Default location of the @dfn{global} startup file.
  
  @item .wgetrc
-@@ -3185,9 +3185,8 @@ commands.
+@@ -3188,9 +3188,8 @@ commands.
  @cindex location of wgetrc
  
  When initializing, Wget will look for a @dfn{global} startup file,
@@ -31,7 +31,7 @@ Index: doc/wget.texi
  
  Then it will look for the user's file.  If the environmental variable
  @code{WGETRC} is set, Wget will try to load that file.  Failing that, no
-@@ -3197,7 +3196,7 @@ If @code{WGETRC} is not set, Wget will try to load @fi
+@@ -3200,7 +3199,7 @@ If @code{WGETRC} is not set, Wget will try to load @fi
  
  The fact that user's settings are loaded after the system-wide ones
  means that in case of collision user's wgetrc @emph{overrides} the

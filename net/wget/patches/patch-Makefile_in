@@ -1,7 +1,7 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -1895,7 +1895,7 @@ distuninstallcheck_listfiles = find . -type f | \
+@@ -2128,7 +2128,7 @@ distuninstallcheck_listfiles = find . -type f | \
  ACLOCAL_AMFLAGS = -I m4
  
  # subdirectories in the distribution
