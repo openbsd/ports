@@ -3,7 +3,7 @@ COMMENT =	open source, multi-platform library for creating windows
 V =		3.4
 DISTNAME =	glfw-${V}
 CATEGORIES =	graphics x11
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  glfw                      1.2 # 3.4
 
@@ -32,7 +32,8 @@ CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=ON \
 
 CFLAGS +=		-I${X11BASE}/include
 
-LIB_DEPENDS =	wayland/libinput-openbsd \
+LIB_DEPENDS =	devel/epoll-shim \
+		wayland/libinput-openbsd \
 		wayland/wayland \
 		x11/xkbcommon
 
