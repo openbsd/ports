@@ -104,18 +104,18 @@ Index: backends/mixer_sndio.cpp
 +
 +    s_hdl = sioctl_open(devname.toLocal8Bit().data(), SIOCTL_READ | SIOCTL_WRITE, 0);
 +    if (!s_hdl) {
-+        qCCritical(KMIX_LOG) << devname << ": can't open control device\n";
++        qDebug(KMIX_LOG) << devname << ": can't open control device\n";
 +        return;
 +    }
 +
 +    if (!sioctl_ondesc(s_hdl, ondesc, nullptr)) {
-+        qCCritical(KMIX_LOG) << devname << ": can't get device description\n";
++        qDebug(KMIX_LOG) << devname << ": can't get device description\n";
 +        s_hdl = nullptr;
 +        return;
 +    }
 +
 +    if (!sioctl_onval(s_hdl, onctl, nullptr)) {
-+        qCCritical(KMIX_LOG) << devname << ": can't get device description\n";
++        qDebug(KMIX_LOG) << devname << ": can't get device description\n";
 +        s_hdl = nullptr;
 +        return;
 +    }
@@ -124,12 +124,12 @@ Index: backends/mixer_sndio.cpp
 +    m_pollfd = std::unique_ptr<struct pollfd[]>(new struct pollfd[m_nfds]);
 +
 +    if (!m_pollfd) {
-+        qCCritical(KMIX_LOG) << "Failed to allocate pollfd array";
++        qDebug(KMIX_LOG) << "Failed to allocate pollfd array";
 +        return;
 +    }
 +
 +    // Initialize pollfd structure
-+    sioctl_pollfd(s_hdl, m_pollfd.get(), POLLIN | POLLOUT);
++    sioctl_pollfd(s_hdl, m_pollfd.get(), POLLIN);
 +
 +    m_polling = true;
 +    m_pollThread = std::thread(&MixerSndio::pollEvents, this);
@@ -151,7 +151,7 @@ Index: backends/mixer_sndio.cpp
 +            if (m_pollfd && m_pollfd[i].revents != 0) {
 +                short revents = sioctl_revents(s_hdl, &m_pollfd[i]);
 +                if (revents & POLLHUP) {
-+                    qCCritical(KMIX_LOG) << "POLLHUP event detected for fd:" << m_pollfd[i].fd;
++                    qDebug(KMIX_LOG) << "POLLHUP event detected for fd:" << m_pollfd[i].fd;
 +                    m_polling = false;
 +                    break;
 +                }
@@ -305,35 +305,35 @@ Index: backends/mixer_sndio.cpp
 +    case SndioDevTyp::SERVER:
 +        if (!devExists(serverDevices, dev)) {
 +            qDebug(KMIX_LOG) << ": Add Server\n";
-+            //dev.print();
++            dev.print();
 +            serverDevices[dev.index] = dev;
 +        }
 +        break;
 +    case SndioDevTyp::PLAYBACK:
 +        if (!devExists(outputDevices, dev)) {
 +            qDebug(KMIX_LOG) << ": Add playback\n";
-+            //dev.print();
++            dev.print();
 +            outputDevices[dev.index] = dev;
 +        }
 +        break;
 +    case SndioDevTyp::CAPTURE:
 +        if (!devExists(captureDevices, dev)) {
 +            qDebug(KMIX_LOG) << ": Add capture\n";
-+            //dev.print();
++            dev.print();
 +            captureDevices[dev.index] = dev;
 +        }
 +        break;
 +    case SndioDevTyp::APP_CAPTURE:
 +        if (!devExists(captureApps, dev)) {
 +            qDebug(KMIX_LOG) << ": Add app capture\n";
-+            //dev.print();
++            dev.print();
 +            captureApps[dev.index] = dev;
 +        }
 +        break;
 +    case SndioDevTyp::APP_PLAYBACK:
 +        if (!devExists(outputApps, dev)) {
 +            qDebug(KMIX_LOG) << ": Add appp playback\n";
-+            //dev.print();
++            dev.print();
 +            outputApps[dev.index] = dev;
 +        }
 +        break;

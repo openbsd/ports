@@ -4,7 +4,7 @@ https://invent.kde.org/multimedia/kmix/-/merge_requests/32
 Index: backends/mixer_sndio.h
 --- backends/mixer_sndio.h.orig
 +++ backends/mixer_sndio.h
-@@ -0,0 +1,156 @@
+@@ -0,0 +1,157 @@
 +/*
 + * SPDX-FileCopyrightText: 2024 Rafael Sadowski <rafael@rsadowski.de>
 + * SPDX-License-Identifier: BSD-2-Clause
@@ -141,6 +141,7 @@ Index: backends/mixer_sndio.h
 +protected:
 +    int open() override;
 +    int close() override;
++    bool needsPolling() override { return false; }
 +
 +private:
 +    static void ondesc(void *, struct sioctl_desc *, int);
