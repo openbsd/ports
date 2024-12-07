@@ -6,8 +6,8 @@ Index: configure.in
  
  dnl for gettext
 -AM_GNU_GETTEXT
-+AM_GNU_GETTEXT_VERSION([0.21])
 +AM_GNU_GETTEXT([external])
++AM_GNU_GETTEXT_VERSION([0.23])
  AC_CHECK_FUNC(gettext,,AC_CHECK_LIB(intl, gettext))
  localedir='${prefix}/share/locale'
  AC_SUBST(localedir)
