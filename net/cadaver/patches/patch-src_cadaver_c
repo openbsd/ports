@@ -1,6 +1,7 @@
---- src/cadaver.c.orig	Wed Oct 29 10:35:33 2008
-+++ src/cadaver.c	Fri Apr 30 11:38:11 2010
-@@ -724,7 +724,7 @@ static char **completion(const char *text, int start, 
+Index: src/cadaver.c
+--- src/cadaver.c.orig
++++ src/cadaver.c
+@@ -708,7 +708,7 @@ static char **completion(const char *text, int start, 
      char *sep = strchr(rl_line_buffer, ' ');
  
      if (start == 0) {
@@ -9,7 +10,7 @@
      }
      else if (sep != NULL) {
  	char *cname = ne_strndup(rl_line_buffer, sep - rl_line_buffer);
-@@ -736,7 +736,7 @@ static char **completion(const char *text, int start, 
+@@ -720,7 +720,7 @@ static char **completion(const char *text, int start, 
  	    case parmscope_none:
  		break;
  	    case parmscope_local:
@@ -18,7 +19,7 @@
  						rl_filename_completion_function);
  		break;
  	    case parmscope_option:
-@@ -744,7 +744,7 @@ static char **completion(const char *text, int start, 
+@@ -728,7 +728,7 @@ static char **completion(const char *text, int start, 
  		break;
  	    case parmscope_remote:
  		if (session.connected) {

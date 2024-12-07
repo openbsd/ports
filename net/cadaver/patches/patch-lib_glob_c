@@ -1,0 +1,21 @@
+our realloc works, fixes scary warnings about realloc param types
+
+Index: lib/glob.c
+--- lib/glob.c.orig
++++ lib/glob.c
+@@ -204,6 +204,7 @@ extern void bcopy ();
+ #endif
+ 
+ #ifndef	__GNU_LIBRARY__
++#ifndef __OpenBSD__
+ # ifdef	__GNUC__
+ __inline
+ # endif
+@@ -225,6 +226,7 @@ my_realloc (p, n)
+ }
+ # define	realloc	my_realloc
+ # endif /* __SASC */
++#endif /* __OpenBSD__ */
+ #endif /* __GNU_LIBRARY__ */
+ 
+ 

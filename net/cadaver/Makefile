@@ -1,6 +1,6 @@
 COMMENT=		command-line WebDAV client
 
-DISTNAME=		cadaver-0.24
+DISTNAME=		cadaver-0.26
 CATEGORIES=		net www
 
 HOMEPAGE=		https://notroj.github.io/cadaver/
