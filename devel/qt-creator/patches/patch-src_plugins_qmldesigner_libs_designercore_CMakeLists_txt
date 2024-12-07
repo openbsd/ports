@@ -1,0 +1,12 @@
+Index: src/plugins/qmldesigner/libs/designercore/CMakeLists.txt
+--- src/plugins/qmldesigner/libs/designercore/CMakeLists.txt.orig
++++ src/plugins/qmldesigner/libs/designercore/CMakeLists.txt
+@@ -68,7 +68,7 @@ extend_qtc_library(QmlDesignerCore
+   PUBLIC_DEFINES QDS_BUILD_QMLPARSER
+ )
+ extend_qtc_library(QmlDesignerCore
+-  CONDITION UNIX AND NOT APPLE
++  CONDITION UNIX AND NOT APPLE AND (NOT ${CMAKE_SYSTEM_NAME} STREQUAL "OpenBSD")
+   PUBLIC_DEPENDS rt
+ )
+ 

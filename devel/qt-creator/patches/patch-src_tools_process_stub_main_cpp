@@ -43,8 +43,8 @@ Index: src/tools/process_stub/main.cpp
      // In debug mode we use the poll timer to send the pid.
      if (!debugMode)
          sendPid(inferiorId);
-@@ -279,7 +281,7 @@ void setupUnixInferior()
- #ifndef Q_OS_WIN
+@@ -280,7 +282,7 @@ void setupUnixInferior()
+ #ifdef Q_OS_UNIX
      if (debugMode) {
          qCInfo(log) << "Debug mode enabled";
 -#ifdef Q_OS_DARWIN
@@ -52,7 +52,7 @@ Index: src/tools/process_stub/main.cpp
          // We are using raise(SIGSTOP) to stop the child process, macOS does not support ptrace(...)
          inferiorProcess.setChildProcessModifier([] {
              // Let the parent know our pid ...
-@@ -312,7 +314,7 @@ void setupWindowsInferior()
+@@ -313,7 +315,7 @@ void setupWindowsInferior()
  
  void setupPidPollTimer()
  {
@@ -61,7 +61,7 @@ Index: src/tools/process_stub/main.cpp
      if (!debugMode)
          return;
  
-@@ -520,7 +522,7 @@ std::optional<int> trySetWorkingDir()
+@@ -521,7 +523,7 @@ std::optional<int> trySetWorkingDir()
  
  void setupSharedPid()
  {

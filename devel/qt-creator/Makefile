@@ -3,30 +3,33 @@ DPB_PROPERTIES =	parallel
 
 COMMENT =		cross-platform IDE for use with Qt
 
-V =			14.0.2
+V =			15.0.0
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
 
-SHARED_LIBS +=  Aggregation               4.0 # 0.0
-SHARED_LIBS +=  CPlusPlus                 10.0 # 0.0
-SHARED_LIBS +=  ExtensionSystem           10.0 # 0.0
+SHARED_LIBS +=  Aggregation               4.1 # 0.0
+SHARED_LIBS +=  CPlusPlus                 10.1 # 0.0
+SHARED_LIBS +=  ExtensionSystem           10.1 # 0.0
 SHARED_LIBS +=  GLSL                      3.0 # 0.0
 SHARED_LIBS +=  LanguageUtils             4.0 # 0.0
 SHARED_LIBS +=  QmlDebug                  7.0 # 0.0
 SHARED_LIBS +=  QmlEditorWidgets          4.0 # 0.0
-SHARED_LIBS +=  QmlJS                     13.0 # 0.0
-SHARED_LIBS +=  Utils                     13.0 # 0.0
-SHARED_LIBS +=  Sqlite                    11.0 # 1.0
+SHARED_LIBS +=  QmlJS                     14.0 # 0.0
+SHARED_LIBS +=  Utils                     14.0 # 0.0
+SHARED_LIBS +=  Sqlite                    12.0 # 1.0
 SHARED_LIBS +=  Modeling                  10.0 # 1.0
 SHARED_LIBS +=  Tracing                   5.0 # 4.7
 SHARED_LIBS +=  LanguageServerProtocol    10.0 # 4.8
-SHARED_LIBS +=  AdvancedDockingSystem     5.0 # 4.12
+SHARED_LIBS +=  AdvancedDockingSystem     5.1 # 4.12
 SHARED_LIBS +=  qlitehtml                 5.0 # 4.15
 SHARED_LIBS +=  ProParser                 5.0 # 4.15
-SHARED_LIBS +=  KSyntaxHighlighting       2.0 # 0.0
-SHARED_LIBS +=  TerminalLib               1.1 # 0.0
+SHARED_LIBS +=  KSyntaxHighlighting       3.0 # 0.0
+SHARED_LIBS +=  TerminalLib               1.2 # 0.0
 SHARED_LIBS +=  Nanotrace                 0.0 # 0.0
 SHARED_LIBS +=  qtkeychain                0.0 # 0.0
+SHARED_LIBS +=  CmdBridgeClient           0.0 # 0.0
+SHARED_LIBS +=  QmlDesignerCore           0.0 # 0.0
+SHARED_LIBS +=  Zip                       0.0 # 0.0
 
 CATEGORIES =	devel editors
 

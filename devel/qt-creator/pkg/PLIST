@@ -3,6 +3,7 @@ bin/qtcreator.sh
 @lib lib/libAdvancedDockingSystem.so.${LIBAdvancedDockingSystem_VERSION}
 @lib lib/libAggregation.so.${LIBAggregation_VERSION}
 @lib lib/libCPlusPlus.so.${LIBCPlusPlus_VERSION}
+@lib lib/libCmdBridgeClient.so.${LIBCmdBridgeClient_VERSION}
 @lib lib/libExtensionSystem.so.${LIBExtensionSystem_VERSION}
 @lib lib/libGLSL.so.${LIBGLSL_VERSION}
 @lib lib/libKSyntaxHighlighting.so.${LIBKSyntaxHighlighting_VERSION}
@@ -12,18 +13,21 @@ bin/qtcreator.sh
 @lib lib/libNanotrace.so.${LIBNanotrace_VERSION}
 @lib lib/libProParser.so.${LIBProParser_VERSION}
 @lib lib/libQmlDebug.so.${LIBQmlDebug_VERSION}
+@lib lib/libQmlDesignerCore.so.${LIBQmlDesignerCore_VERSION}
 @lib lib/libQmlEditorWidgets.so.${LIBQmlEditorWidgets_VERSION}
 @lib lib/libQmlJS.so.${LIBQmlJS_VERSION}
 @lib lib/libSqlite.so.${LIBSqlite_VERSION}
 @lib lib/libTerminalLib.so.${LIBTerminalLib_VERSION}
 @lib lib/libTracing.so.${LIBTracing_VERSION}
 @lib lib/libUtils.so.${LIBUtils_VERSION}
+@lib lib/libZip.so.${LIBZip_VERSION}
 @lib lib/libqlitehtml.so.${LIBqlitehtml_VERSION}
 @lib lib/libqtkeychain.so.${LIBqtkeychain_VERSION}
 lib/qtcreator/
 @lib lib/qtcreator/libAdvancedDockingSystem.so.${LIBAdvancedDockingSystem_VERSION}
 @lib lib/qtcreator/libAggregation.so.${LIBAggregation_VERSION}
 @lib lib/qtcreator/libCPlusPlus.so.${LIBCPlusPlus_VERSION}
+@lib lib/qtcreator/libCmdBridgeClient.so.${LIBCmdBridgeClient_VERSION}
 @lib lib/qtcreator/libExtensionSystem.so.${LIBExtensionSystem_VERSION}
 @lib lib/qtcreator/libGLSL.so.${LIBGLSL_VERSION}
 @lib lib/qtcreator/libKSyntaxHighlighting.so.${LIBKSyntaxHighlighting_VERSION}
@@ -33,12 +37,14 @@ lib/qtcreator/
 @lib lib/qtcreator/libNanotrace.so.${LIBNanotrace_VERSION}
 @lib lib/qtcreator/libProParser.so.${LIBProParser_VERSION}
 @lib lib/qtcreator/libQmlDebug.so.${LIBQmlDebug_VERSION}
+@lib lib/qtcreator/libQmlDesignerCore.so.${LIBQmlDesignerCore_VERSION}
 @lib lib/qtcreator/libQmlEditorWidgets.so.${LIBQmlEditorWidgets_VERSION}
 @lib lib/qtcreator/libQmlJS.so.${LIBQmlJS_VERSION}
 @lib lib/qtcreator/libSqlite.so.${LIBSqlite_VERSION}
 @lib lib/qtcreator/libTerminalLib.so.${LIBTerminalLib_VERSION}
 @lib lib/qtcreator/libTracing.so.${LIBTracing_VERSION}
 @lib lib/qtcreator/libUtils.so.${LIBUtils_VERSION}
+@lib lib/qtcreator/libZip.so.${LIBZip_VERSION}
 @lib lib/qtcreator/libqlitehtml.so.${LIBqlitehtml_VERSION}
 @lib lib/qtcreator/libqtkeychain.so.${LIBqtkeychain_VERSION}
 lib/qtcreator/plugins/
@@ -142,7 +148,7 @@ lib/qtcreator/plugins/qmldesigner/
 libexec/qtcreator/
 @bin libexec/qtcreator/buildoutputparser
 @bin libexec/qtcreator/cpaster
-@bin libexec/qtcreator/qml2puppet-14.0.2
+@bin libexec/qtcreator/qml2puppet-15.0.0
 @bin libexec/qtcreator/qtc-askpass
 @bin libexec/qtcreator/qtcreator_process_stub
 @bin libexec/qtcreator/qtcreator_processlauncher
@@ -184,6 +190,7 @@ share/qtcreator/changelog/changes-13.0.2.md
 share/qtcreator/changelog/changes-14.0.0.md
 share/qtcreator/changelog/changes-14.0.1.md
 share/qtcreator/changelog/changes-14.0.2.md
+share/qtcreator/changelog/changes-15.0.0.md
 share/qtcreator/changelog/changes-2.0.0
 share/qtcreator/changelog/changes-2.0.1
 share/qtcreator/changelog/changes-2.1.0
@@ -370,8 +377,6 @@ share/qtcreator/debugger/setup.cfg
 share/qtcreator/debugger/stdtypes.py
 share/qtcreator/debugger/utils.py
 share/qtcreator/externaltools/
-share/qtcreator/externaltools/lrelease.xml
-share/qtcreator/externaltools/lupdate.xml
 share/qtcreator/externaltools/qml.xml
 share/qtcreator/externaltools/qmlscene.xml
 share/qtcreator/externaltools/vi.xml
@@ -409,6 +414,7 @@ share/qtcreator/generic-highlighter/syntax/modelines.xml
 share/qtcreator/generic-highlighter/syntax/perl.xml
 share/qtcreator/generic-highlighter/syntax/powershell.xml
 share/qtcreator/generic-highlighter/syntax/qdocconf.xml
+share/qtcreator/generic-highlighter/syntax/qface.xml
 share/qtcreator/generic-highlighter/syntax/ruby.xml
 share/qtcreator/generic-highlighter/syntax/spdx-comments.xml
 share/qtcreator/generic-highlighter/syntax/toml.xml
@@ -434,41 +440,27 @@ share/qtcreator/indexer_preincludes/qglobal.h
 share/qtcreator/indexer_preincludes/windows.h
 share/qtcreator/jsonschemas/
 share/qtcreator/jsonschemas/project.json
-share/qtcreator/lua/
+share/qtcreator/lua-lupdate/
+share/qtcreator/lua-lupdate/README.md
+share/qtcreator/lua-lupdate/lupdate.lua
 share/qtcreator/lua-plugins/
 share/qtcreator/lua-plugins/luals/
 share/qtcreator/lua-plugins/luals/init.lua
 share/qtcreator/lua-plugins/luals/luals.lua
 share/qtcreator/lua-plugins/luatests/
-share/qtcreator/lua-plugins/luatests/INSPECT-LICENSE.txt
 share/qtcreator/lua-plugins/luatests/guidemo.lua
-share/qtcreator/lua-plugins/luatests/inspect.lua
 share/qtcreator/lua-plugins/luatests/luatests.lua
 share/qtcreator/lua-plugins/luatests/qtctest.lua
 share/qtcreator/lua-plugins/luatests/tests.lua
 share/qtcreator/lua-plugins/luatests/tst_aspectcontainer.lua
 share/qtcreator/lua-plugins/luatests/tst_fetch.lua
+share/qtcreator/lua-plugins/luatests/tst_texteditor.lua
 share/qtcreator/lua-plugins/luatests/tst_utils.lua
 share/qtcreator/lua-plugins/rustls/
 share/qtcreator/lua-plugins/rustls/init.lua
 share/qtcreator/lua-plugins/rustls/rustls.lua
 share/qtcreator/lua-plugins/tellajoke/
 share/qtcreator/lua-plugins/tellajoke/tellajoke.lua
-share/qtcreator/lua/meta/
-share/qtcreator/lua/meta/action.lua
-share/qtcreator/lua/meta/async.lua
-share/qtcreator/lua/meta/core.lua
-share/qtcreator/lua/meta/fetch.lua
-share/qtcreator/lua/meta/gui.lua
-share/qtcreator/lua/meta/lsp.lua
-share/qtcreator/lua/meta/messagemanager.lua
-share/qtcreator/lua/meta/process.lua
-share/qtcreator/lua/meta/qt.lua
-share/qtcreator/lua/meta/qtc.lua
-share/qtcreator/lua/meta/settings.lua
-share/qtcreator/lua/meta/simpletypes.lua
-share/qtcreator/lua/meta/utils.lua
-share/qtcreator/lua/meta/widgets.lua
 share/qtcreator/modeleditor/
 share/qtcreator/modeleditor/standard.def
 share/qtcreator/package-manager/
@@ -541,6 +533,8 @@ share/qtcreator/qmldesigner/connectionseditor/imports/ConnectionsEditor/
 share/qtcreator/qmldesigner/connectionseditor/imports/ConnectionsEditor/Constants.qml
 share/qtcreator/qmldesigner/connectionseditor/imports/ConnectionsEditor/qmldir
 share/qtcreator/qmldesigner/contentLibraryImages/
+share/qtcreator/qmldesigner/contentLibraryImages/camera.png
+share/qtcreator/qmldesigner/contentLibraryImages/light.png
 share/qtcreator/qmldesigner/contentLibraryImages/new_flag_triangle.png
 share/qtcreator/qmldesigner/contentLibraryQmlSource/
 share/qtcreator/qmldesigner/contentLibraryQmlSource/ContentLibrary.qml
@@ -852,8 +846,10 @@ share/qtcreator/qmldesigner/materialBrowserQmlSource/MaterialItem.qml
 share/qtcreator/qmldesigner/materialBrowserQmlSource/TextureBrowserContextMenu.qml
 share/qtcreator/qmldesigner/materialBrowserQmlSource/TextureItem.qml
 share/qtcreator/qmldesigner/materialEditorQmlSources/
+share/qtcreator/qmldesigner/materialEditorQmlSources/ColorEditorPopup.qml
 share/qtcreator/qmldesigner/materialEditorQmlSources/EmptyMaterialEditorPane.qml
 share/qtcreator/qmldesigner/materialEditorQmlSources/MaterialEditorPane.qml
+share/qtcreator/qmldesigner/materialEditorQmlSources/MaterialEditorPreview.qml
 share/qtcreator/qmldesigner/materialEditorQmlSources/MaterialEditorToolBar.qml
 share/qtcreator/qmldesigner/materialEditorQmlSources/MaterialEditorTopSection.qml
 share/qtcreator/qmldesigner/misc/
@@ -1232,6 +1228,7 @@ share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/Sort
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/SpinBox.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/SpinBoxIndicator.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/SpinBoxInput.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/SplitView.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/Switch.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/TabBar.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/TabButton.qml
@@ -1285,6 +1282,7 @@ share/qtcreator/qmldesigner/qt4mcu/qul-24.qml
 share/qtcreator/qmldesigner/qt4mcu/qul-25.qml
 share/qtcreator/qmldesigner/qt4mcu/qul-26.qml
 share/qtcreator/qmldesigner/qt4mcu/qul-27.qml
+share/qtcreator/qmldesigner/qt4mcu/qul-28.qml
 share/qtcreator/qmldesigner/stateseditor/
 share/qtcreator/qmldesigner/stateseditor/Main.qml
 share/qtcreator/qmldesigner/stateseditor/MenuButton.qml
@@ -1298,7 +1296,12 @@ share/qtcreator/qmldesigner/stateseditor/imports/StatesEditor/
 share/qtcreator/qmldesigner/stateseditor/imports/StatesEditor/Constants.qml
 share/qtcreator/qmldesigner/stateseditor/imports/StatesEditor/qmldir
 share/qtcreator/qmldesigner/statusbar/
+share/qtcreator/qmldesigner/statusbar/IssuesOutputPanel.qml
+share/qtcreator/qmldesigner/statusbar/IssuesPanel.qml
 share/qtcreator/qmldesigner/statusbar/Main.qml
+share/qtcreator/qmldesigner/statusbar/NotificationButton.qml
+share/qtcreator/qmldesigner/statusbar/OutputPanel.qml
+share/qtcreator/qmldesigner/statusbar/TabBarButton.qml
 share/qtcreator/qmldesigner/studio_templates/
 share/qtcreator/qmldesigner/studio_templates/files/
 share/qtcreator/qmldesigner/studio_templates/files/custombutton/
@@ -1461,13 +1464,15 @@ share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefault
 share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/MCUDefaultStyle/qmldir
 share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/Screen01.ui.qml.tpl
 share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/app_mcu.qmlproject.tpl
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/assets.txt
 share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/constants_module.qmlproject.tpl
 share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/desktop_blank.png
 share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/desktop_blank@2.png
 share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/detailsPage.qml
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/images.txt
 share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/main.qml.tpl
 share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/mcuqtquickcontrols2.conf
-share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/qmldir
+share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/qmldir.tpl
 share/qtcreator/qmldesigner/studio_templates/projects/application-mcu/wizard.json
 share/qtcreator/qmldesigner/studio_templates/projects/application/Screen01.ui.qml.tpl
 share/qtcreator/qmldesigner/studio_templates/projects/application/desktop_blank.png
@@ -1518,7 +1523,6 @@ share/qtcreator/qmldesigner/studio_templates/projects/shared-plugin/
 share/qtcreator/qmldesigner/studio_templates/projects/shared-plugin/name/
 share/qtcreator/qmldesigner/studio_templates/projects/shared-plugin/name/CMakeLists.importmodule.txt.tpl
 share/qtcreator/qmldesigner/studio_templates/projects/shared-plugin/name/Constants.qml.tpl
-share/qtcreator/qmldesigner/studio_templates/projects/shared-plugin/name/DirectoryFontLoader.qml.tpl
 share/qtcreator/qmldesigner/studio_templates/projects/shared-plugin/name/EventListModel.qml.tpl
 share/qtcreator/qmldesigner/studio_templates/projects/shared-plugin/name/EventListSimulator.qml.tpl
 share/qtcreator/qmldesigner/studio_templates/projects/shared-plugin/name/JsonData.qml.tpl
@@ -1526,7 +1530,6 @@ share/qtcreator/qmldesigner/studio_templates/projects/shared-plugin/name/data.js
 share/qtcreator/qmldesigner/studio_templates/projects/shared-plugin/name/designer/
 share/qtcreator/qmldesigner/studio_templates/projects/shared-plugin/name/designer/plugin.metainfo
 share/qtcreator/qmldesigner/studio_templates/projects/shared-plugin/name/importmodule.qmldir.tpl
-share/qtcreator/qmldesigner/studio_templates/projects/shared-plugin/name/qmldir
 share/qtcreator/qmldesigner/textureEditorQmlSource/
 share/qtcreator/qmldesigner/textureEditorQmlSource/EmptyTextureEditorPane.qml
 share/qtcreator/qmldesigner/textureEditorQmlSource/TextureEditorPane.qml
@@ -1634,6 +1637,7 @@ share/qtcreator/qmldesigner/workspacePresets/Basic.wrk
 share/qtcreator/qmldesigner/workspacePresets/Code.wrk
 share/qtcreator/qmldesigner/workspacePresets/Essentials-3D.wrk
 share/qtcreator/qmldesigner/workspacePresets/Essentials.wrk
+share/qtcreator/qmldesigner/workspacePresets/Lite-QML-Designer.wrk
 share/qtcreator/qmldesigner/workspacePresets/UX-Design.wrk
 share/qtcreator/qmldesigner/workspacePresets/Views-All.wrk
 share/qtcreator/qmldesigner/workspacePresets/order.json
@@ -1707,12 +1711,14 @@ share/qtcreator/snippets/test.xml
 share/qtcreator/snippets/text.xml
 share/qtcreator/styles/
 share/qtcreator/styles/creator-dark.xml
+share/qtcreator/styles/dark-2024.xml
 share/qtcreator/styles/dark.xml
 share/qtcreator/styles/default.xml
 share/qtcreator/styles/default_classic.xml
 share/qtcreator/styles/grayscale.xml
 share/qtcreator/styles/inkpot.xml
 share/qtcreator/styles/intellij.xml
+share/qtcreator/styles/light-2024.xml
 share/qtcreator/styles/mabakor.xml
 share/qtcreator/styles/modnokai_night_shift_v2.xml
 share/qtcreator/styles/solarized-dark.xml
@@ -1862,6 +1868,7 @@ share/qtcreator/templates/wizards/global/lib.png
 share/qtcreator/templates/wizards/global/lib@2x.png
 share/qtcreator/templates/wizards/projects/
 share/qtcreator/templates/wizards/projects/consoleapp/
+share/qtcreator/templates/wizards/projects/consoleapp/CMakeLists-Qt6.txt
 share/qtcreator/templates/wizards/projects/consoleapp/CMakeLists.txt
 share/qtcreator/templates/wizards/projects/consoleapp/file.pro
 share/qtcreator/templates/wizards/projects/consoleapp/file.qbs
@@ -1993,6 +2000,7 @@ share/qtcreator/templates/wizards/projects/qtquickuiprototype/qtquickuiprototype
 share/qtcreator/templates/wizards/projects/qtquickuiprototype/qtquickuiprototype@2x.png
 share/qtcreator/templates/wizards/projects/qtquickuiprototype/wizard.json
 share/qtcreator/templates/wizards/projects/qtwidgetsapplication/
+share/qtcreator/templates/wizards/projects/qtwidgetsapplication/CMakeLists-Qt6.txt
 share/qtcreator/templates/wizards/projects/qtwidgetsapplication/CMakeLists.txt
 share/qtcreator/templates/wizards/projects/qtwidgetsapplication/main.cpp
 share/qtcreator/templates/wizards/projects/qtwidgetsapplication/meson.build
@@ -2028,6 +2036,8 @@ share/qtcreator/templates/wizards/qtcreatorplugin/
 share/qtcreator/templates/wizards/qtcreatorplugin/CMakeLists.txt
 share/qtcreator/templates/wizards/qtcreatorplugin/MyPlugin.json.in
 share/qtcreator/templates/wizards/qtcreatorplugin/README.md
+share/qtcreator/templates/wizards/qtcreatorplugin/github_scripts_plugin.json
+share/qtcreator/templates/wizards/qtcreatorplugin/github_scripts_registerPlugin.js
 share/qtcreator/templates/wizards/qtcreatorplugin/github_workflows_README.md
 share/qtcreator/templates/wizards/qtcreatorplugin/github_workflows_build_cmake.yml
 share/qtcreator/templates/wizards/qtcreatorplugin/myplugin.cpp
@@ -2037,6 +2047,8 @@ share/qtcreator/templates/wizards/qtcreatorplugin/qtcreatorplugin.png
 share/qtcreator/templates/wizards/qtcreatorplugin/qtcreatorplugin@2x.png
 share/qtcreator/templates/wizards/qtcreatorplugin/wizard.json
 share/qtcreator/themes/
+share/qtcreator/themes/2024.tokenmapping
+share/qtcreator/themes/dark-2024.creatortheme
 share/qtcreator/themes/dark.creatortheme
 share/qtcreator/themes/dark.figmatokens
 share/qtcreator/themes/default.creatortheme
@@ -2045,6 +2057,7 @@ share/qtcreator/themes/design.creatortheme
 share/qtcreator/themes/flat-dark.creatortheme
 share/qtcreator/themes/flat-light.creatortheme
 share/qtcreator/themes/flat.creatortheme
+share/qtcreator/themes/light-2024.creatortheme
 share/qtcreator/themes/light-palette.inc
 share/qtcreator/themes/light.figmatokens
 share/qtcreator/translations/
