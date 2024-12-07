@@ -1,6 +1,6 @@
 COMMENT =	personal accounting application
 
-DISTNAME =	homebank-5.7.4
+DISTNAME =	homebank-5.7.2
 
 CATEGORIES =	productivity x11
 
@@ -20,10 +20,14 @@ SITES =		http://homebank.free.fr/public/sources/
 
 MODULES =	textproc/intltool
 
-LIB_DEPENDS =	x11/gtk+3 \
+LIB_DEPENDS =	devel/gettext,-runtime \
+		devel/glib2 \
 		devel/harfbuzz \
 		devel/libofx \
-		devel/libsoup3
+		devel/libsoup3 \
+		devel/pango graphics/cairo \
+		graphics/gdk-pixbuf2 \
+		x11/gtk+3
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		misc/shared-mime-info \
