@@ -1,0 +1,19 @@
+Index: exporters/pkg-config/libssl.pc.in
+--- exporters/pkg-config/libssl.pc.in.orig
++++ exporters/pkg-config/libssl.pc.in
+@@ -9,13 +9,13 @@ libdir={- if (defined $OpenSSL::safe::installdata::LIB
+               $OpenSSL::safe::installdata::libdir[0];
+           } -}
+ includedir={- $OUT = '';
+-              $OUT .= '${prefix}/' . $_ . ' '
++              $OUT .= '${prefix}/' . $_ . '/' . 'eopenssl34' . ' '
+                   foreach (@OpenSSL::safe::installdata::INCLUDEDIR_REL_PREFIX); -}
+ 
+ Name: OpenSSL-libssl
+ Description: Secure Sockets Layer and cryptography libraries
+ Version: {- $OpenSSL::safe::installdata::VERSION -}
+-Requires.private: libcrypto
++Requires.private: libecrypto34
+ Libs: -L${libdir} -lssl
+ Cflags:{- $OUT = ' -I${includedir}';
+           if (scalar @OpenSSL::safe::installdata::INCLUDEDIR_REL_PREFIX > 1) {

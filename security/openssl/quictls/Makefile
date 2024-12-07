@@ -9,6 +9,7 @@ V=		3.3.0
 DISTNAME=	openssl-${V}-quic1
 WRKDIST=	${WRKDIR}/openssl-${DISTNAME}
 EOPENSSL_V=	qopenssl33
+REVISION=	0
 
 SITES=		https://github.com/quictls/openssl/archive/refs/tags/
 PKGNAME=	quictls-${V}
@@ -50,6 +51,7 @@ SUBST_VARS+=		EOPENSSL_V SHLIBVER
 # picked up by configure scripts without explicitly CPPFLAGS/LDFLAGS.
 # common names like lib/openssl, openssl/lib, etc, *do* get picked up.
 MAKE_FLAGS+=	CC="${CC}" \
+		INCLUDEDIR="include/qopenssl33" \
 		LDFLAGS="${LDFLAGS}" \
 		LIBDIR="lib/qopenssl33" \
 		MANDIR=${PREFIX}/lib/qopenssl33/man \

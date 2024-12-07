@@ -1,0 +1,10 @@
+Index: exporters/pkg-config/libssl.pc.in
+--- exporters/pkg-config/libssl.pc.in.orig
++++ exporters/pkg-config/libssl.pc.in
+@@ -1,5 +1,5 @@
+ libdir={- $OpenSSL::safe::installdata::LIBDIR -}
+-includedir={- $OpenSSL::safe::installdata::INCLUDEDIR -}
++includedir={- $OpenSSL::safe::installdata::INCLUDEDIR . '/' . 'qopenssl33' -}
+ 
+ Name: OpenSSL-libssl
+ Description: Secure Sockets Layer and cryptography libraries

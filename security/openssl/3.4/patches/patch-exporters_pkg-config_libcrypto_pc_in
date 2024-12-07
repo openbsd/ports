@@ -1,0 +1,12 @@
+Index: exporters/pkg-config/libcrypto.pc.in
+--- exporters/pkg-config/libcrypto.pc.in.orig
++++ exporters/pkg-config/libcrypto.pc.in
+@@ -9,7 +9,7 @@ libdir={- if (defined $OpenSSL::safe::installdata::LIB
+               $OpenSSL::safe::installdata::libdir[0];
+           } -}
+ includedir={- $OUT = '';
+-              $OUT .= '${prefix}/' . $_ . ' '
++              $OUT .= '${prefix}/' . $_ . '/' . 'eopenssl34' . ' '
+                   foreach (@OpenSSL::safe::installdata::INCLUDEDIR_REL_PREFIX); -}
+ enginesdir=${libdir}/{- $OpenSSL::safe::installdata::ENGINESDIR_REL_LIBDIR[0] -}
+ modulesdir=${libdir}/{- $OpenSSL::safe::installdata::MODULESDIR_REL_LIBDIR[0] -}
