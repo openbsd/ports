@@ -3,7 +3,7 @@ Do not install tests
 Index: cmake/QbsBuildConfig.cmake
 --- cmake/QbsBuildConfig.cmake.orig
 +++ cmake/QbsBuildConfig.cmake
-@@ -256,6 +256,6 @@ function(add_qbs_test test_name)
+@@ -257,6 +257,6 @@ function(add_qbs_test test_name)
          INSTALL_RPATH "${QBS_APP_RPATH}"
          MACOSX_RPATH ${QBS_MACOSX_RPATH}
          )
