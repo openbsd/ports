@@ -1,9 +1,11 @@
-include/volk.c
-include/volk.h
-lib/cmake/
-lib/cmake/volk/
-lib/cmake/volk/volkConfig.cmake
-lib/cmake/volk/volkConfigVersion.cmake
-lib/cmake/volk/volkTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/volk/volkTargets.cmake
-@static-lib lib/libvolk.a
+include/vulkan_volk/
+include/vulkan_volk/volk.c
+include/vulkan_volk/volk.h
+lib/vulkan_volk/
+lib/vulkan_volk/cmake/
+lib/vulkan_volk/cmake/volk/
+lib/vulkan_volk/cmake/volk/volkConfig.cmake
+lib/vulkan_volk/cmake/volk/volkConfigVersion.cmake
+lib/vulkan_volk/cmake/volk/volkTargets${MODCMAKE_BUILD_SUFFIX}
+lib/vulkan_volk/cmake/volk/volkTargets.cmake
+@static-lib lib/vulkan_volk/libvolk.a
