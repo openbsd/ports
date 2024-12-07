@@ -5,7 +5,7 @@ PKGNAME =	vulkan-tools-${V}
 GH_TAGNAME =	vulkan-sdk-${V}
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	Vulkan-Tools
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel graphics
 
@@ -34,9 +34,12 @@ LIB_DEPENDS =	graphics/vulkan-loader \
 		wayland/wayland
 
 CONFIGURE_ARGS +=	-DGLSLANG_INSTALL_DIR="/usr/local"
+CONFIGURE_ENV +=	volk_DIR=${LOCALBASE}/lib/vulkan_volk/cmake/volk
 
 NO_TEST =	Yes
 
-CXXFLAGS +=	-I${X11BASE}/include
+CFLAGS +=	-I${LOCALBASE}/include/vulkan_volk
+CXXFLAGS +=	-I${LOCALBASE}/include/vulkan_volk \
+		-I${X11BASE}/include
 
 .include <bsd.port.mk>
