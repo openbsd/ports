@@ -177,7 +177,7 @@ MODGO_MODULES =	\
 	github.com/bep/debounce								 v1.2.0 \
 	github.com/bep/gitmap								 v1.6.0 \
 	github.com/bep/goat								 v0.5.0 \
-	github.com/bep/godartsass/v2							 v2.3.0 \
+	github.com/bep/godartsass/v2							 v2.3.1 \
 	github.com/bep/golibsass							 v1.2.0 \
 	github.com/bep/gowebp								 v0.3.0 \
 	github.com/bep/helpers								 v0.5.0 \
@@ -329,7 +329,7 @@ MODGO_MODULES =	\
 	github.com/tdewolff/minify/v2							 v2.20.37 \
 	github.com/tdewolff/parse/v2							 v2.7.15 \
 	github.com/tdewolff/test							 v1.0.11-0.20240106005702-7de5f7df4739 \
-	github.com/tetratelabs/wazero							 v1.8.1 \
+	github.com/tetratelabs/wazero							 v1.8.2 \
 	github.com/ugorji/go/codec							 v1.2.7 \
 	github.com/yuin/goldmark							 v1.7.8 \
 	github.com/yuin/goldmark-emoji							 v1.0.4 \
