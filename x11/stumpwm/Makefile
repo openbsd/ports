@@ -42,9 +42,17 @@ MAKE_FLAGS=		'-e'
 DESTDIRNAME=		destdir
 NO_TEST=		yes
 
+# ~/.sbclrc
+PORTHOME =		${WRKDIST}
+
 # Use symlinks so ASDF finds system dependencies
 pre-configure:
 	@find ${WRKDIR} -type f -name \*.asd -a \! -name stumpwm.asd \
 		-exec ln -s {} ${WRKSRC} \;
+
+# Warning shouldn't fail the build
+pre-build:
+	@echo '(declaim (sb-ext:muffle-conditions cl:warning))' \
+		> ${WRKDIST}/.sbclrc
 
 .include <bsd.port.mk>
