@@ -1,0 +1,24 @@
+- OpenBSD CPU detection is the same as FreeBSD
+  https://github.com/animetosho/ParPar/commit/b721a564dd331ee4f19fd8f325c39b5b3bc5130f
+
+Index: par2cmdline-turbo/include/par2/osinfo/cpuid.h
+--- par2cmdline-turbo/include/par2/osinfo/cpuid.h.orig
++++ par2cmdline-turbo/include/par2/osinfo/cpuid.h
+@@ -64,7 +64,7 @@
+ # elif defined(__has_include)
+ #  if __has_include(<sys/auxv.h>)
+ #   include <sys/auxv.h>
+-#   ifdef __FreeBSD__
++#   if defined(__FreeBSD__) || defined(__OpenBSD__)
+ static unsigned long getauxval(unsigned long cap) {
+ 	unsigned long ret;
+ 	elf_aux_info(cap, &ret, sizeof(ret));
+@@ -155,7 +155,7 @@ static unsigned long getauxval(unsigned long cap) {
+ # if defined(__has_include)
+ #  if __has_include(<sys/auxv.h>)
+ #   include <sys/auxv.h>
+-#   ifdef __FreeBSD__
++#   if defined(__FreeBSD__) || defined(__OpenBSD__)
+ static unsigned long getauxval(unsigned long cap) {
+ 	unsigned long ret;
+ 	elf_aux_info(cap, &ret, sizeof(ret));
