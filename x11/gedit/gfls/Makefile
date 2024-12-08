@@ -1,7 +1,7 @@
 COMMENT=		file loading and saving module
 
 GNOME_PROJECT=		libgedit-gfls
-GNOME_VERSION=		0.2.0
+GNOME_VERSION=		0.2.1
 
 SHARED_LIBS += gedit-gfls-1              0.1 # 0
 

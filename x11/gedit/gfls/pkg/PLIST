@@ -42,3 +42,14 @@ share/gtk-doc/html/libgedit-gfls-1/right.png
 share/gtk-doc/html/libgedit-gfls-1/style.css
 share/gtk-doc/html/libgedit-gfls-1/up-insensitive.png
 share/gtk-doc/html/libgedit-gfls-1/up.png
+share/locale/be/LC_MESSAGES/libgedit-gfls-1.mo
+share/locale/da/LC_MESSAGES/libgedit-gfls-1.mo
+share/locale/de/LC_MESSAGES/libgedit-gfls-1.mo
+share/locale/ka/LC_MESSAGES/libgedit-gfls-1.mo
+share/locale/pt_BR/LC_MESSAGES/libgedit-gfls-1.mo
+share/locale/ru/LC_MESSAGES/libgedit-gfls-1.mo
+share/locale/sl/LC_MESSAGES/libgedit-gfls-1.mo
+share/locale/sv/LC_MESSAGES/libgedit-gfls-1.mo
+share/locale/tr/LC_MESSAGES/libgedit-gfls-1.mo
+share/locale/uk/LC_MESSAGES/libgedit-gfls-1.mo
+share/locale/zh_CN/LC_MESSAGES/libgedit-gfls-1.mo
