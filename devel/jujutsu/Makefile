@@ -5,6 +5,7 @@ PKGNAME =		jujutsu-$V
 GH_ACCOUNT =		martinvonz
 GH_PROJECT =		jj
 GH_TAGNAME =		v$V
+REVISION =		0
 
 CATEGORIES =		devel
 
