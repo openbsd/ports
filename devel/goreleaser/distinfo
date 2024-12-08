@@ -415,7 +415,8 @@ SHA256 (go_modules/github.com/!masterminds/goutils/@v/v1.1.1.zip) = 74d4ogw36YqS
 SHA256 (go_modules/github.com/!masterminds/semver/v3/@v/v3.2.0.mod) = 3P7TMlRlZszr37RIQcjXt8hl9U6r/hmEpsxErLXW7YQ=
 SHA256 (go_modules/github.com/!masterminds/semver/v3/@v/v3.2.1.mod) = 3P7TMlRlZszr37RIQcjXt8hl9U6r/hmEpsxErLXW7YQ=
 SHA256 (go_modules/github.com/!masterminds/semver/v3/@v/v3.3.0.mod) = dGKkjNkJWNb8efZ0q7fsifpHehz08pKZTstyoEPFfQM=
-SHA256 (go_modules/github.com/!masterminds/semver/v3/@v/v3.3.0.zip) = tJLo9vpMgkAjSm1QlVIfddni58UmcrkLWv3lMygbVA8=
+SHA256 (go_modules/github.com/!masterminds/semver/v3/@v/v3.3.1.mod) = dGKkjNkJWNb8efZ0q7fsifpHehz08pKZTstyoEPFfQM=
+SHA256 (go_modules/github.com/!masterminds/semver/v3/@v/v3.3.1.zip) = 4bIEh2qS+KrjSIZwOV2O4IE/x3XNiDcn9Hdo6QQJBes=
 SHA256 (go_modules/github.com/!masterminds/sprig/v3/@v/v3.2.3.mod) = Btb8/v0R+9+az4jwtJYMM3VG8GkJaMqBe7mZJDVw2YE=
 SHA256 (go_modules/github.com/!masterminds/sprig/v3/@v/v3.2.3.zip) = LFM6H55wBJi/8FsFFlbhAk/63jj+mj6L38Q57lHUghs=
 SHA256 (go_modules/github.com/!microsoft/go-winio/@v/v0.4.14.mod) = jUXZD8V+bfc5N+o6J4grGaPp+6rz6XB+7SGNXQ/QZwY=
@@ -710,8 +711,6 @@ SHA256 (go_modules/github.com/charmbracelet/x/ansi/@v/v0.4.2.mod) = lT2ueMrqPEoU
 SHA256 (go_modules/github.com/charmbracelet/x/ansi/@v/v0.4.2.zip) = LLz0et+fx8r9Jpfm6n/lt5wY0j62kRJaWXJtr1FNCko=
 SHA256 (go_modules/github.com/charmbracelet/x/exp/golden/@v/v0.0.0-20240806155701-69247e0abc2a.mod) = qOQi7fNKC26E5mkaeXSSaknqW54R3uh7Auc32goAc0s=
 SHA256 (go_modules/github.com/charmbracelet/x/exp/golden/@v/v0.0.0-20240806155701-69247e0abc2a.zip) = 18YfAR2G8pk6/XyA9lE8MDvRc/jbQu0vMCtRCbqGwy0=
-SHA256 (go_modules/github.com/charmbracelet/x/exp/ordered/@v/v0.1.0.mod) = d0C19W7NavX9uf6MokWgG9/eTO2gDSBq6WFJxBC4S4U=
-SHA256 (go_modules/github.com/charmbracelet/x/exp/ordered/@v/v0.1.0.zip) = gFVKw7+W86HEeCcIyCDHV7kJJlLFwda0IfOXgh0naJo=
 SHA256 (go_modules/github.com/checkpoint-restore/go-criu/v5/@v/v5.3.0.mod) = Cn9QWQjacQb08ac533yRQDNWa2z4+ruh5xxRYiWLLZQ=
 SHA256 (go_modules/github.com/checkpoint-restore/go-criu/v5/@v/v5.3.0.zip) = +rSStWvy45oWsGBFa990kxrSKQ3DPbO6jQGAf+vSnr0=
 SHA256 (go_modules/github.com/chrismellard/docker-credential-acr-env/@v/v0.0.0-20230304212654-82a0ddb27589.mod) = xNo2PMmuLCCdyAdYTYeqCsYwoQRPb1zpvP1HELBnZ34=
@@ -1885,8 +1884,8 @@ SHA256 (go_modules/github.com/wk8/go-ordered-map/v2/@v/v2.1.8.zip) = wXgUNcZOTNk
 SHA256 (go_modules/github.com/x448/float16/@v/v0.8.4.mod) = +Kgjiqc0wdJGPUj4gI41EkVGvVIisT5MCXdG3tWlfh4=
 SHA256 (go_modules/github.com/x448/float16/@v/v0.8.4.zip) = c7JKQQN+qZmrZoUeN5iglz27HyFJJZFbAfCCD3svFQA=
 SHA256 (go_modules/github.com/xanzy/go-gitlab/@v/v0.109.0.mod) = E3wU2N5CknpIA8OdPL5yia/NZ3432vQZMvkm4ACWndg=
-SHA256 (go_modules/github.com/xanzy/go-gitlab/@v/v0.113.0.mod) = E3wU2N5CknpIA8OdPL5yia/NZ3432vQZMvkm4ACWndg=
-SHA256 (go_modules/github.com/xanzy/go-gitlab/@v/v0.113.0.zip) = 3dLyoyl8FwZ9JcfSPDzAF6P/wy+twp69I4X4ALvd2F0=
+SHA256 (go_modules/github.com/xanzy/go-gitlab/@v/v0.114.0.mod) = E3wU2N5CknpIA8OdPL5yia/NZ3432vQZMvkm4ACWndg=
+SHA256 (go_modules/github.com/xanzy/go-gitlab/@v/v0.114.0.zip) = xR9EzH7uGBUpbLAmI35x8ADYuPy5Y0TQEcx74iaUzF0=
 SHA256 (go_modules/github.com/xanzy/ssh-agent/@v/v0.3.3.mod) = HOHMUJiJtzjB9j2/zFrVIs62MnLZ3v9u73SZ7TAaoSU=
 SHA256 (go_modules/github.com/xanzy/ssh-agent/@v/v0.3.3.zip) = GahsJiOyDMmGh73diePwI9sMpRyLyeOLmtnFblt9EQ0=
 SHA256 (go_modules/github.com/xdg-go/pbkdf2/@v/v1.0.0.mod) = shcJzl2h/KmdmORmS0pnPyYgzzPQ/FdWS5pTTrGm15g=
@@ -2525,7 +2524,7 @@ SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = CZ2G+OBNET1A9KFSzf4AFxFtfv6
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 7wMf94/5twNuF07vSd+9d0aNxPCvtzpjm2H4qzocxCU=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.4.0.mod) = +/Vbaah9WjkQgv2brl5MdYEEH+Cbi7k7D+Fs3f6FzpU=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.4.0.zip) = VQGaOR5TAqUbpi6YkJ4AYiS4EgeGbakL6vWC7A3uA28=
-SHA256 (goreleaser-v2.4.7.zip) = RBmBf8WS6kh0O0ahqcBdSNxSTE6G4dRWY1QhDuFgeZ8=
+SHA256 (goreleaser-v2.4.8.zip) = 6GuPqBRwUzmMTvaIx+VXdjMjrXSumZyxTi4CX7VsDZ8=
 SIZE (go_modules/cel.dev/expr/@v/v0.15.0.mod) = 156
 SIZE (go_modules/cel.dev/expr/@v/v0.16.0.mod) = 156
 SIZE (go_modules/cel.dev/expr/@v/v0.16.1.mod) = 434
@@ -2943,7 +2942,8 @@ SIZE (go_modules/github.com/!masterminds/goutils/@v/v1.1.1.zip) = 21693
 SIZE (go_modules/github.com/!masterminds/semver/v3/@v/v3.2.0.mod) = 49
 SIZE (go_modules/github.com/!masterminds/semver/v3/@v/v3.2.1.mod) = 49
 SIZE (go_modules/github.com/!masterminds/semver/v3/@v/v3.3.0.mod) = 49
-SIZE (go_modules/github.com/!masterminds/semver/v3/@v/v3.3.0.zip) = 34352
+SIZE (go_modules/github.com/!masterminds/semver/v3/@v/v3.3.1.mod) = 49
+SIZE (go_modules/github.com/!masterminds/semver/v3/@v/v3.3.1.zip) = 34769
 SIZE (go_modules/github.com/!masterminds/sprig/v3/@v/v3.2.3.mod) = 416
 SIZE (go_modules/github.com/!masterminds/sprig/v3/@v/v3.2.3.zip) = 75651
 SIZE (go_modules/github.com/!microsoft/go-winio/@v/v0.4.14.mod) = 177
@@ -3238,8 +3238,6 @@ SIZE (go_modules/github.com/charmbracelet/x/ansi/@v/v0.4.2.mod) = 87
 SIZE (go_modules/github.com/charmbracelet/x/ansi/@v/v0.4.2.zip) = 77128
 SIZE (go_modules/github.com/charmbracelet/x/exp/golden/@v/v0.0.0-20240806155701-69247e0abc2a.mod) = 103
 SIZE (go_modules/github.com/charmbracelet/x/exp/golden/@v/v0.0.0-20240806155701-69247e0abc2a.zip) = 3799
-SIZE (go_modules/github.com/charmbracelet/x/exp/ordered/@v/v0.1.0.mod) = 55
-SIZE (go_modules/github.com/charmbracelet/x/exp/ordered/@v/v0.1.0.zip) = 2902
 SIZE (go_modules/github.com/checkpoint-restore/go-criu/v5/@v/v5.3.0.mod) = 159
 SIZE (go_modules/github.com/checkpoint-restore/go-criu/v5/@v/v5.3.0.zip) = 44461
 SIZE (go_modules/github.com/chrismellard/docker-credential-acr-env/@v/v0.0.0-20230304212654-82a0ddb27589.mod) = 1647
@@ -4413,8 +4411,8 @@ SIZE (go_modules/github.com/wk8/go-ordered-map/v2/@v/v2.1.8.zip) = 27742
 SIZE (go_modules/github.com/x448/float16/@v/v0.8.4.mod) = 40
 SIZE (go_modules/github.com/x448/float16/@v/v0.8.4.zip) = 14960
 SIZE (go_modules/github.com/xanzy/go-gitlab/@v/v0.109.0.mod) = 602
-SIZE (go_modules/github.com/xanzy/go-gitlab/@v/v0.113.0.mod) = 602
-SIZE (go_modules/github.com/xanzy/go-gitlab/@v/v0.113.0.zip) = 651457
+SIZE (go_modules/github.com/xanzy/go-gitlab/@v/v0.114.0.mod) = 602
+SIZE (go_modules/github.com/xanzy/go-gitlab/@v/v0.114.0.zip) = 652579
 SIZE (go_modules/github.com/xanzy/ssh-agent/@v/v0.3.3.mod) = 203
 SIZE (go_modules/github.com/xanzy/ssh-agent/@v/v0.3.3.zip) = 11274
 SIZE (go_modules/github.com/xdg-go/pbkdf2/@v/v1.0.0.mod) = 40
@@ -5053,4 +5051,4 @@ SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = 133
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 222726
 SIZE (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.4.0.mod) = 100
 SIZE (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.4.0.zip) = 45988
-SIZE (goreleaser-v2.4.7.zip) = 2457506
+SIZE (goreleaser-v2.4.8.zip) = 2461712

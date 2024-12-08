@@ -169,7 +169,7 @@ MODGO_MODULES =	\
 	github.com/!google!cloud!platform/opentelemetry-operations-go/internal/cloudmock	 v0.48.1 \
 	github.com/!google!cloud!platform/opentelemetry-operations-go/internal/resourcemapping	 v0.48.1 \
 	github.com/!masterminds/goutils								 v1.1.1 \
-	github.com/!masterminds/semver/v3							 v3.3.0 \
+	github.com/!masterminds/semver/v3							 v3.3.1 \
 	github.com/!masterminds/sprig/v3							 v3.2.3 \
 	github.com/!microsoft/go-winio								 v0.6.2 \
 	github.com/!nvveen/!gotty								 v0.0.0-20120604004816-cd527374f1e5 \
@@ -278,7 +278,6 @@ MODGO_MODULES =	\
 	github.com/charmbracelet/lipgloss							 v1.0.0 \
 	github.com/charmbracelet/x/ansi								 v0.4.2 \
 	github.com/charmbracelet/x/exp/golden							 v0.0.0-20240806155701-69247e0abc2a \
-	github.com/charmbracelet/x/exp/ordered							 v0.1.0 \
 	github.com/checkpoint-restore/go-criu/v5						 v5.3.0 \
 	github.com/chrismellard/docker-credential-acr-env					 v0.0.0-20230304212654-82a0ddb27589 \
 	github.com/chzyer/readline								 v1.5.1 \
@@ -728,7 +727,7 @@ MODGO_MODULES =	\
 	github.com/withfig/autocomplete-tools/integrations/cobra				 v1.2.1 \
 	github.com/wk8/go-ordered-map/v2							 v2.1.8 \
 	github.com/x448/float16									 v0.8.4 \
-	github.com/xanzy/go-gitlab								 v0.113.0 \
+	github.com/xanzy/go-gitlab								 v0.114.0 \
 	github.com/xanzy/ssh-agent								 v0.3.3 \
 	github.com/xdg-go/pbkdf2								 v1.0.0 \
 	github.com/xdg-go/scram									 v1.1.2 \
@@ -926,6 +925,7 @@ MODGO_MODFILES =	\
 	github.com/!burnt!sushi/toml							 v0.3.1 \
 	github.com/!masterminds/semver/v3						 v3.2.0 \
 	github.com/!masterminds/semver/v3						 v3.2.1 \
+	github.com/!masterminds/semver/v3						 v3.3.0 \
 	github.com/!microsoft/go-winio							 v0.4.14 \
 	github.com/!microsoft/go-winio							 v0.5.2 \
 	github.com/!microsoft/go-winio							 v0.6.1 \
