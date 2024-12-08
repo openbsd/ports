@@ -1,6 +1,7 @@
 @rcscript ${RCDIR}/tailscaled
 @comment bin/addlicense
 @comment bin/build-webclient
+@comment bin/checkmetrics
 @comment bin/cloner
 @comment bin/connector-gen
 @bin bin/derper

@@ -40,7 +40,7 @@ MODGO_MODULES =	\
 	github.com/!masterminds/semver/v3						 v3.2.1 \
 	github.com/!masterminds/sprig							 v2.22.0+incompatible \
 	github.com/!masterminds/sprig/v3						 v3.2.3 \
-	github.com/!microsoft/go-winio							 v0.6.1 \
+	github.com/!microsoft/go-winio							 v0.6.2 \
 	github.com/!microsoft/hcsshim							 v0.8.14 \
 	github.com/!n!y!times/gziphandler						 v1.1.1 \
 	github.com/!netflix/go-expect							 v0.0.0-20220104043353-73e0943537d2 \
@@ -154,7 +154,7 @@ MODGO_MODULES =	\
 	github.com/coreos/go-semver							 v0.3.1 \
 	github.com/coreos/go-systemd							 v0.0.0-20191104093116-d3cd4ed1dbcf \
 	github.com/coreos/go-systemd/v22						 v22.5.0 \
-	github.com/cpuguy83/go-md2man/v2						 v2.0.4 \
+	github.com/cpuguy83/go-md2man/v2						 v2.0.5 \
 	github.com/creack/pty								 v1.1.23 \
 	github.com/cristalhq/acmd							 v0.11.2 \
 	github.com/curioswitch/go-reassign						 v0.2.0 \
@@ -173,11 +173,11 @@ MODGO_MODULES =	\
 	github.com/digitalocean/godo							 v1.108.0 \
 	github.com/distribution/reference						 v0.6.0 \
 	github.com/djherbis/times							 v1.6.0 \
-	github.com/docker/cli								 v25.0.0+incompatible \
+	github.com/docker/cli								 v27.3.1+incompatible \
 	github.com/docker/distribution							 v2.8.3+incompatible \
-	github.com/docker/docker							 v26.1.4+incompatible \
-	github.com/docker/docker-credential-helpers					 v0.8.1 \
-	github.com/docker/go-connections						 v0.4.0 \
+	github.com/docker/docker							 v27.3.1+incompatible \
+	github.com/docker/docker-credential-helpers					 v0.8.2 \
+	github.com/docker/go-connections						 v0.5.0 \
 	github.com/docker/go-units							 v0.5.0 \
 	github.com/dsnet/try								 v0.0.3 \
 	github.com/dustin/go-humanize							 v1.0.1 \
@@ -281,7 +281,7 @@ MODGO_MODULES =	\
 	github.com/google/cel-go							 v0.17.8 \
 	github.com/google/gnostic-models						 v0.6.9-0.20230804172637-c7be7c783f49 \
 	github.com/google/go-cmp							 v0.6.0 \
-	github.com/google/go-containerregistry						 v0.18.0 \
+	github.com/google/go-containerregistry						 v0.20.2 \
 	github.com/google/go-github/v56							 v56.0.0 \
 	github.com/google/go-querystring						 v1.1.0 \
 	github.com/google/go-tpm							 v0.9.1-0.20230914180155-ee6cbcd136f8 \
@@ -384,7 +384,7 @@ MODGO_MODULES =	\
 	github.com/kisielk/errcheck							 v1.7.0 \
 	github.com/kisielk/gotool							 v1.0.0 \
 	github.com/kk!h!a!i!k!e/contextcheck						 v1.1.4 \
-	github.com/klauspost/compress							 v1.17.4 \
+	github.com/klauspost/compress							 v1.17.11 \
 	github.com/klauspost/pgzip							 v1.2.6 \
 	github.com/knz/bubbline								 v0.0.0-20230717192058-486954f9953f \
 	github.com/kolo/xmlrpc								 v0.0.0-20220921171641-a4b6fa1dd06b \
@@ -473,7 +473,7 @@ MODGO_MODULES =	\
 	github.com/onsi/ginkgo/v2							 v2.17.1 \
 	github.com/onsi/gomega								 v1.33.1 \
 	github.com/opencontainers/go-digest						 v1.0.0 \
-	github.com/opencontainers/image-spec						 v1.1.0-rc6 \
+	github.com/opencontainers/image-spec						 v1.1.0 \
 	github.com/opencontainers/runtime-spec						 v1.1.0-rc.1 \
 	github.com/orangecms/go-framebuffer						 v0.0.0-20200613202404-a0700d90c330 \
 	github.com/otiai10/copy								 v1.14.0 \
@@ -571,12 +571,12 @@ MODGO_MODULES =	\
 	github.com/tailscale/golang-x-crypto						 v0.0.0-20240604161659-3fde5e568aa4 \
 	github.com/tailscale/goupnp							 v1.0.1-0.20210804011211-c64d0f06ea05 \
 	github.com/tailscale/hujson							 v0.0.0-20221223112325-20486734a56a \
-	github.com/tailscale/mkctr							 v0.0.0-20240628074852-17ca944da6ba \
+	github.com/tailscale/mkctr							 v0.0.0-20241111153353-1a38f6676f10 \
 	github.com/tailscale/netlink							 v1.1.1-0.20240822203006-4d49adab4de7 \
 	github.com/tailscale/peercred							 v0.0.0-20240214030740-b535050b2aa4 \
 	github.com/tailscale/web-client-prebuilt					 v0.0.0-20240226180453-5db17b287bf1 \
 	github.com/tailscale/wf								 v0.0.0-20240214030419-6fbb0a674ee6 \
-	github.com/tailscale/wireguard-go						 v0.0.0-20240905161824-799c1978fafc \
+	github.com/tailscale/wireguard-go						 v0.0.0-20241113014420-4e883d38c8d3 \
 	github.com/tailscale/xnet							 v0.0.0-20240729143630-8497ac4dab2e \
 	github.com/tc-hib/winres							 v0.2.1 \
 	github.com/tcnksm/go-httpstat							 v0.2.0 \
@@ -599,11 +599,11 @@ MODGO_MODULES =	\
 	github.com/ulikunitz/xz								 v0.5.11 \
 	github.com/ultraware/funlen							 v0.1.0 \
 	github.com/ultraware/whitespace							 v0.1.0 \
-	github.com/urfave/cli								 v1.22.12 \
+	github.com/urfave/cli								 v1.22.15 \
 	github.com/uudashr/gocognit							 v1.1.2 \
 	github.com/valyala/bytebufferpool						 v1.0.0 \
 	github.com/valyala/quicktemplate						 v1.7.0 \
-	github.com/vbatts/tar-split							 v0.11.5 \
+	github.com/vbatts/tar-split							 v0.11.6 \
 	github.com/vishvananda/netlink							 v1.2.1-beta.2 \
 	github.com/vishvananda/netns							 v0.0.4 \
 	github.com/vtolstov/go-ioctl							 v0.0.0-20151206205506-6be9cced4810 \
@@ -643,14 +643,14 @@ MODGO_MODULES =	\
 	go.opentelemetry.io/collector/pdata						 v1.0.1 \
 	go.opentelemetry.io/collector/semconv						 v0.93.0 \
 	go.opentelemetry.io/contrib/instrumentation/google.golang.org/grpc/otelgrpc	 v0.42.0 \
-	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp			 v0.47.0 \
-	go.opentelemetry.io/otel							 v1.22.0 \
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp			 v0.57.0 \
+	go.opentelemetry.io/otel							 v1.32.0 \
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace				 v1.22.0 \
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc			 v1.22.0 \
-	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp			 v1.22.0 \
-	go.opentelemetry.io/otel/metric							 v1.22.0 \
-	go.opentelemetry.io/otel/sdk							 v1.22.0 \
-	go.opentelemetry.io/otel/trace							 v1.22.0 \
+	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp			 v1.28.0 \
+	go.opentelemetry.io/otel/metric							 v1.32.0 \
+	go.opentelemetry.io/otel/sdk							 v1.28.0 \
+	go.opentelemetry.io/otel/trace							 v1.32.0 \
 	go.opentelemetry.io/proto/otlp							 v1.0.0 \
 	go.uber.org/atomic								 v1.11.0 \
 	go.uber.org/automaxprocs							 v1.5.3 \
@@ -669,8 +669,8 @@ MODGO_MODULES =	\
 	golang.org/x/mod								 v0.19.0 \
 	golang.org/x/net								 v0.27.0 \
 	golang.org/x/oauth2								 v0.16.0 \
-	golang.org/x/sync								 v0.7.0 \
-	golang.org/x/sys								 v0.22.0 \
+	golang.org/x/sync								 v0.9.0 \
+	golang.org/x/sys								 v0.27.0 \
 	golang.org/x/telemetry								 v0.0.0-20240521205824-bda55230c457 \
 	golang.org/x/term								 v0.22.0 \
 	golang.org/x/text								 v0.16.0 \
@@ -774,8 +774,10 @@ MODGO_MODFILES =	\
 	github.com/!burnt!sushi/toml					 v1.3.2 \
 	github.com/!djarvur/go-err113					 v0.0.0-20210108212216-aea10b59be24 \
 	github.com/!masterminds/semver/v3				 v3.2.0 \
+	github.com/!microsoft/go-winio					 v0.4.14 \
 	github.com/!microsoft/go-winio					 v0.5.2 \
 	github.com/!microsoft/go-winio					 v0.6.0 \
+	github.com/!microsoft/go-winio					 v0.6.1 \
 	github.com/!n!y!times/gziphandler				 v0.0.0-20170623195520-56545f4a5d46 \
 	github.com/!proton!mail/go-crypto				 v0.0.0-20221026131551-cf6655e29de4 \
 	github.com/!proton!mail/go-crypto				 v0.0.0-20230518184743-7afd39499903 \
@@ -815,19 +817,18 @@ MODGO_MODFILES =	\
 	github.com/coreos/go-semver					 v0.3.0 \
 	github.com/coreos/go-systemd/v22				 v22.3.2 \
 	github.com/cpuguy83/go-md2man/v2				 v2.0.2 \
+	github.com/cpuguy83/go-md2man/v2				 v2.0.4 \
 	github.com/creack/pty						 v1.1.21 \
 	github.com/creack/pty						 v1.1.9 \
 	github.com/davecgh/go-spew					 v1.1.0 \
 	github.com/davecgh/go-spew					 v1.1.1 \
 	github.com/distribution/reference				 v0.5.0 \
-	github.com/docker/cli						 v24.0.0+incompatible \
-	github.com/docker/cli						 v24.0.7+incompatible \
+	github.com/docker/cli						 v27.1.1+incompatible \
 	github.com/docker/distribution					 v2.8.2+incompatible \
 	github.com/docker/docker					 v24.0.0+incompatible \
-	github.com/docker/docker					 v24.0.7+incompatible \
 	github.com/docker/docker					 v25.0.0+incompatible \
 	github.com/docker/docker-credential-helpers			 v0.7.0 \
-	github.com/docker/docker-credential-helpers			 v0.8.0 \
+	github.com/docker/go-connections				 v0.4.0 \
 	github.com/docker/go-units					 v0.4.0 \
 	github.com/emicklei/go-restful/v3				 v3.11.0 \
 	github.com/emicklei/go-restful/v3				 v3.8.0 \
@@ -924,7 +925,6 @@ MODGO_MODFILES =	\
 	github.com/google/go-cmp					 v0.5.7 \
 	github.com/google/go-cmp					 v0.5.8 \
 	github.com/google/go-cmp					 v0.5.9 \
-	github.com/google/go-containerregistry				 v0.17.0 \
 	github.com/google/gofuzz					 v1.0.0 \
 	github.com/google/gofuzz					 v1.1.0 \
 	github.com/google/goterm					 v0.0.0-20190703233501-fc88cf888a3f \
@@ -979,6 +979,7 @@ MODGO_MODFILES =	\
 	github.com/klauspost/compress					 v1.16.6 \
 	github.com/klauspost/compress					 v1.17.0 \
 	github.com/klauspost/compress					 v1.17.2 \
+	github.com/klauspost/compress					 v1.17.4 \
 	github.com/konsorten/go-windows-terminal-sequences		 v1.0.1 \
 	github.com/kr/pretty						 v0.1.0 \
 	github.com/kr/pretty						 v0.3.0 \
@@ -1012,7 +1013,6 @@ MODGO_MODFILES =	\
 	github.com/onsi/gomega						 v1.32.0 \
 	github.com/opencontainers/image-spec				 v1.0.2 \
 	github.com/opencontainers/image-spec				 v1.1.0-rc3 \
-	github.com/opencontainers/image-spec				 v1.1.0-rc5 \
 	github.com/opencontainers/runtime-spec				 v1.0.2 \
 	github.com/otiai10/copy						 v1.2.0 \
 	github.com/otiai10/curr						 v0.0.0-20150429015615-9b4961190c95 \
@@ -1099,6 +1099,7 @@ MODGO_MODFILES =	\
 	github.com/u-root/uio						 v0.0.0-20230220225925-ffce2a382923 \
 	github.com/u-root/uio						 v0.0.0-20230305220412-3e8cd9d6bf63 \
 	github.com/vbatts/tar-split					 v0.11.3 \
+	github.com/vbatts/tar-split					 v0.11.5 \
 	github.com/vishvananda/netlink					 v1.1.1-0.20211118161826-650dca95af54 \
 	github.com/vishvananda/netns					 v0.0.0-20180720170159-13995c7128cc \
 	github.com/vishvananda/netns					 v0.0.0-20200728191858-db3c7e526aae \
@@ -1118,12 +1119,18 @@ MODGO_MODFILES =	\
 	go.opencensus.io						 v0.22.3 \
 	go.opencensus.io						 v0.22.4 \
 	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp	 v0.44.0 \
+	go.opentelemetry.io/contrib/instrumentation/net/http/otelhttp	 v0.47.0 \
 	go.opentelemetry.io/otel					 v1.19.0 \
+	go.opentelemetry.io/otel					 v1.22.0 \
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace		 v1.19.0 \
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc	 v1.19.0 \
+	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp	 v1.22.0 \
 	go.opentelemetry.io/otel/metric					 v1.19.0 \
+	go.opentelemetry.io/otel/metric					 v1.22.0 \
 	go.opentelemetry.io/otel/sdk					 v1.19.0 \
+	go.opentelemetry.io/otel/sdk					 v1.22.0 \
 	go.opentelemetry.io/otel/trace					 v1.19.0 \
+	go.opentelemetry.io/otel/trace					 v1.22.0 \
 	go.uber.org/atomic						 v1.7.0 \
 	go.uber.org/atomic						 v1.9.0 \
 	go.uber.org/goleak						 v1.2.1 \
@@ -1303,6 +1310,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sync						 v0.4.0 \
 	golang.org/x/sync						 v0.5.0 \
 	golang.org/x/sync						 v0.6.0 \
+	golang.org/x/sync						 v0.7.0 \
 	golang.org/x/sys						 v0.0.0-20180830151530-49385e6e1522 \
 	golang.org/x/sys						 v0.0.0-20180905080454-ebe1bf3edb33 \
 	golang.org/x/sys						 v0.0.0-20181116152217-5ac8a444bdc5 \
@@ -1376,6 +1384,8 @@ MODGO_MODFILES =	\
 	golang.org/x/sys						 v0.2.0 \
 	golang.org/x/sys						 v0.20.0 \
 	golang.org/x/sys						 v0.21.0 \
+	golang.org/x/sys						 v0.22.0 \
+	golang.org/x/sys						 v0.25.0 \
 	golang.org/x/sys						 v0.3.0 \
 	golang.org/x/sys						 v0.4.0 \
 	golang.org/x/sys						 v0.4.1-0.20230131160137-e7d7f63158de \
