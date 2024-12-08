@@ -1,7 +1,7 @@
 Index: src/arm64/rockchip/rk3399-firefly.dts
 --- src/arm64/rockchip/rk3399-firefly.dts.orig
 +++ src/arm64/rockchip/rk3399-firefly.dts
-@@ -23,7 +23,7 @@
+@@ -22,7 +22,7 @@
  	};
  
  	chosen {

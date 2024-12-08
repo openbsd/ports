@@ -1,7 +1,7 @@
 Index: src/arm/ti/omap/am335x-bone-common.dtsi
 --- src/arm/ti/omap/am335x-bone-common.dtsi.orig
 +++ src/arm/ti/omap/am335x-bone-common.dtsi
-@@ -358,27 +358,24 @@
+@@ -382,27 +382,24 @@
  	};
  };
  

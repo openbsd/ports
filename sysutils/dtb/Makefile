@@ -1,7 +1,7 @@
 ONLY_FOR_ARCHS=	${GCC4_ARCHS} ${CLANG_ARCHS}
 
 COMMENT=	Device Tree Blobs
-VERSION=	6.11
+VERSION=	6.12
 
 # XXX Updating this port has a high chance of breaking drivers as breaking
 # XXX changes are frequently made to device trees in linux. See commit log
