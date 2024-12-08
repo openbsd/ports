@@ -2,29 +2,28 @@
 
 MAN_SYMLINKS_CMD = \
 	cd ${PREFIX}/man/man1 && \
-	ln -sf ../man1/extractbb.1 ebb.1 && \
-	ln -sf ../man1/dvilj.1 dvilj4l.1 && \
 	ln -sf ../man1/cweb.1 ctangle.1 && \
 	ln -sf ../man1/ctwill.1 ctwill-refsort.1 && \
 	ln -sf ../man1/ctwill.1 ctwill-twinx.1 && \
-	ln -sf ../man1/dvipng.1 dvigif.1 && \
 	ln -sf ../man1/cweb.1 cweave.1 && \
+	ln -sf ../man1/dvipng.1 dvigif.1 && \
 	ln -sf ../man1/dvilj.1 dvilj2p.1 && \
 	ln -sf ../man1/dvilj.1 dvilj4.1 && \
-	ln -sf ../man1/latex.1 cslatex.1 && \
+	ln -sf ../man1/dvilj.1 dvilj4l.1 && \
 	ln -sf ../man1/dvilj.1 dvilj6.1 && \
 	ln -sf ../man1/latex-dev.1 dvilualatex-dev.1 && \
 	ln -sf ../man1/latex.1 dvilualatex.1 && \
 	ln -sf ../man1/luatex.1 dviluatex.1 && \
 	ln -sf ../man1/dvipdfmx.1 dvipdfm.1 && \
-	ln -sf ../man1/kpsetool.1 kpsexpand.1 && \
-	ln -sf ../man1/mf.1 inimf.1 && \
-	ln -sf ../man1/tex.1 initex.1 && \
+	ln -sf ../man1/extractbb.1 ebb.1 && \
 	ln -sf ../man1/ptex.1 eptex.1 && \
 	ln -sf ../man1/ptex.1 euptex.1 && \
-	ln -sf ../man1/kpsetool.1 kpsepath.1 && \
 	ln -sf ../man1/fmtutil.1 fmtutil-sys.1 && \
 	ln -sf ../man1/fmtutil.1 fmtutil-user.1 && \
+	ln -sf ../man1/mf.1 inimf.1 && \
+	ln -sf ../man1/tex.1 initex.1 && \
+	ln -sf ../man1/kpsetool.1 kpsepath.1 && \
+	ln -sf ../man1/kpsetool.1 kpsexpand.1 && \
 	ln -sf ../man1/luatex.1 luahbtex.1 && \
 	ln -sf ../man1/luatex.1 luajithbtex.1 && \
 	ln -sf ../man1/luatex.1 luajittex.1 && \
@@ -36,7 +35,6 @@ MAN_SYMLINKS_CMD = \
 	ln -sf ../man1/dvitype.1 odvitype.1 && \
 	ln -sf ../man1/tangle.1 otangle.1 && \
 	ln -sf ../man1/pdfopen.1 pdfclose.1 && \
-	ln -sf ../man1/latex.1 pdfcslatex.1 && \
 	ln -sf ../man1/latex-dev.1 pdflatex-dev.1 && \
 	ln -sf ../man1/pdftex.1 pdflatex.1 && \
 	ln -sf ../man1/latex-dev.1 platex-dev.1 && \
@@ -46,6 +44,7 @@ MAN_SYMLINKS_CMD = \
 	ln -sf ../man1/mktexlsr.1 texhash.1 && \
 	ln -sf ../man1/luatex.1 texlua.1 && \
 	ln -sf ../man1/luatex.1 texluac.1 && \
+	ln -sf ../man1/pbibtex.1 upbibtex.1 && \
 	ln -sf ../man1/updmap.1 updmap-sys.1 && \
 	ln -sf ../man1/updmap.1 updmap-user.1 && \
 	ln -sf ../man1/latex-dev.1 uplatex-dev.1 && \
@@ -55,6 +54,16 @@ MAN_SYMLINKS_CMD = \
 	ln -sf ../man1/ptftopl.1 uptftopl.1 && \
 	ln -sf ../man1/dvipdfmx.1 xdvipdfmx.1 && \
 	ln -sf ../man1/latex-dev.1 xelatex-dev.1 && \
-	ln -sf ../man1/latex.1 xelatex.1 && \
 	ln -sf ../man1/xetex-unsafe.1 xelatex-unsafe.1 && \
-	ln -sf ../man1/pbibtex.1 upbibtex.1
+	ln -sf ../man1/latex.1 xelatex.1 && \
+	ln -sf ../man1/memoize-clean.1 memoize-clean.pl.1 && \
+	ln -sf ../man1/memoize-clean.1 memoize-clean.py.1 && \
+	ln -sf ../man1/memoize-extract.1 memoize-extract.pl.1 && \
+	ln -sf ../man1/memoize-extract.1 memoize-extract.py.1 && \
+	ln -sf ../man1/cluttex.1 cllualatex.1 && \
+	ln -sf ../man1/cluttex.1 clxelatex.1 && \
+	ln -sf ../man1/ctwill.1 ctwill-proofsort.1 && \
+	ln -sf ../man1/twill.1 twill-refsort.1 && \
+	ln -sf ../man1/context.1 contextjit.1 && \
+	ln -sf ../man1/mtxrun.1 luatools.1 && \
+	ln -sf ../man1/mtxrun.1 mtxrunjit.1

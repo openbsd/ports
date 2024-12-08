@@ -142,6 +142,9 @@ def build_subset_file_lists(tlpdb):
         "svn-multi", "avantgar", "ncntrsbk", "fontname", "ntgclass",
 	    # print/foiltex, textproc/lgrind
         "hypdoc",
+        # math/R textproc/bibtex2html textproc/lgrind books/tex-by-topic
+        # print/gl2ps print/foiltex
+	"etoolbox",
         ]
     buildset_files, buildset_symlinks = \
         collect_files(runspecs(buildset_pkgs), db)

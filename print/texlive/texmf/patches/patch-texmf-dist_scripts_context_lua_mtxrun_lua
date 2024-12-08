@@ -1,20 +1,19 @@
-https://github.com/contextgarden/luametatex/issues/1#issuecomment-1490390527
+selfautoparent doesn't work, so hard-code the paths.
 
 Index: texmf-dist/scripts/context/lua/mtxrun.lua
 --- texmf-dist/scripts/context/lua/mtxrun.lua.orig
 +++ texmf-dist/scripts/context/lua/mtxrun.lua
-@@ -22308,10 +22308,10 @@ if environment.default_texmfcnf then
- else
-  resolvers.luacnfspec=concat ({
+@@ -22471,9 +22471,10 @@ do
+  local texroot=environment.texroot
+  resolvers.luacnfspec={
    "home:texmf/web2c",
 -  "selfautoparent:/texmf-local/web2c",
 -  "selfautoparent:/texmf-context/web2c",
--  "selfautoparent:/texmf-dist/web2c",
 -  "selfautoparent:/texmf/web2c",
 +  "${TRUEPREFIX}/share/texmf-local/web2c",
 +  "${TRUEPREFIX}/share/texmf-context/web2c",
 +  "${TRUEPREFIX}/share/texmf-dist/web2c",
 +  "${TRUEPREFIX}/share/texmf/web2c",
-  },";")
- end
- local unset_variable="unset"
+  }
+  if environment.default_texmfcnf then
+   resolvers.luacnfspec={

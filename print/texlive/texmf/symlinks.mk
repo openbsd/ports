@@ -16,6 +16,7 @@ tl-symlinks-main:
 		ln -s pdftex cslatex && \
 		ln -s pdftex csplain && \
 		ln -s pdftex eplain && \
+		ln -s euptex eptex && \
 		ln -s hitex hilatex && \
 		ln -s pdftex jadetex && \
 		ln -s tex lollipop && \
@@ -28,9 +29,9 @@ tl-symlinks-main:
 		ln -s pdftex pdfjadetex && \
 		ln -s pdftex pdfmex && \
 		ln -s pdftex pdfxmltex && \
-		ln -s eptex platex && \
+		ln -s euptex platex && \
 		ln -s euptex platex-dev && \
-		ln -s eptex ptex && \
+		ln -s euptex ptex && \
 		ln -s pdftex texsis && \
 		ln -s euptex uplatex && \
 		ln -s euptex uplatex-dev && \

@@ -22,10 +22,10 @@ Index: texmf-dist/web2c/texmf.cnf
 +OBSD_PREFIX= ${TRUEPREFIX}
 +TEXMFROOT = $OBSD_PREFIX/share
 +
- % The main tree of distributed packages and programs:
- TEXMFDIST = $TEXMFROOT/texmf-dist
+ % The various texmf trees used by TeX Live, follow.
+ % They must must all have the TDS directory structure (https://tug.org/tds).
  
-@@ -69,7 +76,7 @@ TEXMFDIST = $TEXMFROOT/texmf-dist
+@@ -72,7 +79,7 @@ TEXMFDIST = $TEXMFROOT/texmf-dist
  TEXMFMAIN = $TEXMFDIST
  
  % Local additions to the distribution trees.
@@ -34,7 +34,7 @@ Index: texmf-dist/web2c/texmf.cnf
  
  % TEXMFSYSVAR, where *-sys store cached runtime data.
  TEXMFSYSVAR = $TEXMFROOT/texmf-var
-@@ -523,7 +530,7 @@ LUAINPUTS.harflatex-dev = $TEXMFDOTDIR;$TEXMF/scripts/
+@@ -528,7 +535,7 @@ LUAINPUTS.harflatex-dev = $TEXMFDOTDIR;$TEXMF/scripts/
  LUAINPUTS = $TEXMFDOTDIR;$TEXMF/scripts/{$progname,$engine,}/{lua,}//;$TEXMF/tex/{luatex,plain,generic,latex,}//
  
  % Lua needs to look for binary lua libraries distributed with packages.

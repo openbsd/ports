@@ -1,5 +1,6 @@
---- texmf-dist/scripts/installfont/installfont-tl.origy	Mon Jul 15 23:47:34 2013
-+++ texmf-dist/scripts/installfont/installfont-tl	Fri Jan  2 16:38:59 2015
+Index: texmf-dist/scripts/installfont/installfont-tl
+--- texmf-dist/scripts/installfont/installfont-tl.orig
++++ texmf-dist/scripts/installfont/installfont-tl
 @@ -1,4 +1,4 @@
 -#!/bin/bash
 +#!/bin/ksh
@@ -15,10 +16,3 @@
    then
      exit 1
    fi
-@@ -611,4 +611,4 @@ then
-   rmdir ./Backup
- fi
- echo -e "\n\nThe font(s) should be installed now!"
--exit 0
-\ No newline at end of file
-+exit 0

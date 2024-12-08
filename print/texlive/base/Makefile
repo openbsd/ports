@@ -11,8 +11,6 @@ PKGNAME-mktexlsr =	texlive_mktexlsr-${V}
 PKGNAME-main =		${PKGNAME}
 PKGNAME-synctex =	texlive_synctex-${V}
 
-REVISION =		0
-
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
 			texlive-${DIST_V}-extra${EXTRACT_SUFX}
 DISTFILES.mk =		mktexlsr-${V}.gz
@@ -20,18 +18,16 @@ DISTFILES.mk =		mktexlsr-${V}.gz
 SITES.mk =		https://theunixzoo.co.uk/distfiles/
 
 SHARED_LIBS =		kpathsea	9.0 # 9.2
-SHARED_LIBS +=		ptexenc		6.0 # 5.0
-SHARED_LIBS +=		synctex		3.0 # 2.0
-SHARED_LIBS +=		texlua53        0.1 # 8.5
+SHARED_LIBS +=		ptexenc		6.1 # 5.6
+SHARED_LIBS +=		synctex		3.1 # 2.0
+SHARED_LIBS +=		texlua53        0.1 # 8.6
 
-WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xaw Xdmcp Xext Xi
-WANTLIB += Xmu Xpm Xrender Xt avahi-client avahi-common c cairo
-WANTLIB += crypto cups dbus-1 execinfo expat fontconfig freetype
-WANTLIB += gd glib-2.0 graphite2 gs harfbuzz iconv icudata icui18n
-WANTLIB += icuio icuuc idn ijs intl jbig2dec jpeg kpathsea lzma
-WANTLIB += m openjp2 paper pcre2-8 pixman-1 png sharpyuv ssl tiff
-WANTLIB += webp xcb xcb-render xcb-shm z zstd zzip
-
+WANTLIB-main += ${COMPILER_LIBCXX} ICE SM X11 Xau Xaw Xdmcp Xext Xi
+WANTLIB-main += Xmu Xpm Xrender Xt c cairo expat fontconfig freetype
+WANTLIB-main += gd glib-2.0 graphite2 harfbuzz iconv icudata icui18n
+WANTLIB-main += icuio icuuc intl jpeg kpathsea lzma m paper pcre2-8
+WANTLIB-main += pixman-1 png sharpyuv tiff webp xcb xcb-render xcb-shm
+WANTLIB-main += z zstd zzip
 
 WANTLIB-mktexlsr += c
 
@@ -59,7 +55,6 @@ LIB_DEPENDS-main =	converters/libiconv \
 			devel/pcre2 \
 			print/libpaper \
 			archivers/zziplib \
-			print/ghostscript/gnu \
 			${BASE_PKGPATH},-mktexlsr
 
 LIB_DEPENDS-mktexlsr =
@@ -143,6 +138,14 @@ CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 			--with-system-libpaper \
 			--with-system-zziplib \
 			--disable-lcdf-typetools
+# Since 2024, dvisvgm inside TL is unable to link against system libs (it
+# always bundles its deps). For now we disable it -- it doesn't appear to be a
+# very widely used program anyway.
+#
+# If we want it back, we can make a separate port of dvisvgm and depend on it.
+#
+# https://tug.org/pipermail/tldistro/2024q2/000477.html
+CONFIGURE_ARGS +=	--disable-dvisvgm
 
 SUBST_VARS +=		TRUEPREFIX LOCALBASE
 

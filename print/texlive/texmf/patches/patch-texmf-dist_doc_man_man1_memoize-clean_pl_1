@@ -1,0 +1,6 @@
+Index: texmf-dist/doc/man/man1/memoize-clean.pl.1
+--- texmf-dist/doc/man/man1/memoize-clean.pl.1.orig
++++ texmf-dist/doc/man/man1/memoize-clean.pl.1
+@@ -1 +1 @@
+-.so man1/doc/memoize-clean.1
++.so man1/memoize-clean.1

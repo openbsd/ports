@@ -34,6 +34,8 @@ def process_mandir(direc):
     for f in os.scandir(direc):
         if not f.is_file():
             continue
+        if f.name.endswith(".orig.port"):
+            continue
 
         path = os.path.join(direc, f.name)
         with open(path, "r", errors="ignore") as fh:

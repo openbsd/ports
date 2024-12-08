@@ -14,8 +14,7 @@ DISTNAME =		texlive-${DIST_V}-texmf
 
 SITES.pregen =		http://theunixzoo.co.uk/distfiles/
 DISTFILES =		${DISTNAME}${EXTRACT_SUFX} \
-			texlive-${DIST_V}-extra${EXTRACT_SUFX} \
-			texlive-20230311-tlpdb-full.tar.gz
+			texlive-${DIST_V}-extra${EXTRACT_SUFX}
 DISTFILES.pregen = 	texmf-var-pregen-${V}${EXTRACT_SUFX}
 
 PKGNAME-main =		texlive_texmf-minimal-${V}
@@ -23,11 +22,6 @@ PKGNAME-full =		texlive_texmf-full-${V}
 PKGNAME-docs =		texlive_texmf-docs-${V}
 PKGNAME-context =	texlive_texmf-context-${V}
 PKGNAME-buildset =	texlive_texmf-buildset-${V}
-REVISION-buildset =	0
-REVISION-context =	0
-REVISION-docs =		0
-REVISION-full =		0
-REVISION-main =		0
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
@@ -51,10 +45,10 @@ RUN_DEPENDS-main +=	texlive_base->=${V}:print/texlive/base,-main \
 RUN_DEPENDS-full =	${FULLPKGNAME-main}:print/texlive/texmf,-main \
 			${MODPY_RUN_DEPENDS} \
 			${_MODLUA_RUNDEPENDS}
-# XXX: when unbreaking context, see if it can be further towards the top dep
-# chain. Can it depend on only the buildset?
+# XXX: Can we make context be further towards the top dep chain? Can it depend
+# on only the buildset?
 RUN_DEPENDS-context +=	${FULLPKGNAME-full}:print/texlive/texmf,-full \
-			print/luametatex
+			print/luametatex>=2.11.01
 RUN_DEPENDS-docs +=	texlive_base->=${V}:print/texlive/base,-main \
 			x11/p5-Tk
 RUN_DEPENDS-buildset +=	texlive_mktexlsr->=${V}:print/texlive/base,-mktexlsr
@@ -168,7 +162,9 @@ do-install: tl-symlinks-main tl-symlinks-full tl-symlinks-context
 
 	# texdoc needs a copy of the TLPDB in a specific path.
 	${INSTALL_DATA_DIR} ${PREFIX}/share/tlpkg/
-	${INSTALL_DATA} ${WRKDIR}/texlive.tlpdb ${PREFIX}/share/tlpkg/
+	${INSTALL_DATA} \
+		${WRKDIR}/texlive-${DIST_V}-extra/tlpkg/texlive.tlpdb \
+		${PREFIX}/share/tlpkg/
 
 post-install:
 	# selfauto does not work with our legacy texmf paths, patch in paths.
@@ -188,7 +184,7 @@ plist: fake
 	env WRKINST=${WRKINST} TRUEPREFIX=${TRUEPREFIX} \
 		python${MODPY_DEFAULT_VERSION_3} \
 		${FILESDIR}/update_plist_hints.py \
-		${WRKDIR}/texlive.tlpdb | \
+		${WRKDIR}/texlive-${DIST_V}-extra/tlpkg/texlive.tlpdb | \
 		python${MODPY_DEFAULT_VERSION_3} ${FILESDIR}/write_plists.py
 
 # Regenerate adj.mk.

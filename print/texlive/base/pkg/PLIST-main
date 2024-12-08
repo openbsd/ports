@@ -1,11 +1,3 @@
-@conflict teTeX_base-*
-@conflict pdfjam-*
-@conflict ht-<2
-@conflict texlive_texmf-buildset-<2023
-@pkgpath print/teTeX/base
-@pkgpath print/pdfjam
-@pkgpath print/teTeX/base,-fmt
-@pkgpath print/texlive/base
 %%xindy%%
 bin/a2ping
 bin/a5toa4
@@ -71,6 +63,7 @@ bin/ctanify
 bin/ctanupload
 @bin bin/ctie
 @bin bin/ctwill
+bin/ctwill-proofsort
 @bin bin/ctwill-refsort
 @bin bin/ctwill-twinx
 @bin bin/cweave
@@ -109,17 +102,19 @@ bin/dvipdft
 bin/dvired
 @bin bin/dviselect
 @bin bin/dvispc
-@bin bin/dvisvgm
 @bin bin/dvitodvi
 bin/dvitomp
 @bin bin/dvitype
 bin/e2pall
 bin/ebb
 bin/ebong
+bin/edtx2dtx
+bin/eolang
 bin/epspdf
 bin/epspdftk
 bin/epstopdf
-@bin bin/eptex
+@comment texmfs already make a symlink called 'eptex'
+@comment bin/eptex
 bin/etex
 @bin bin/euptex
 bin/exceltex
@@ -146,7 +141,6 @@ bin/git-latexdiff
 @bin bin/histretch
 @bin bin/hitex
 bin/ht
-bin/htcontext
 bin/htlatex
 bin/htmex
 bin/httex
@@ -191,6 +185,7 @@ bin/listbib
 bin/listings-ext.sh
 bin/llmk
 bin/ltx2crossrefxml
+bin/ltx2unitxt
 bin/ltxfileinfo
 bin/ltximg
 bin/luafindfont
@@ -210,6 +205,8 @@ bin/makeglossaries-lite
 @bin bin/makejvf
 bin/match_parens
 bin/mathspic
+bin/memoize-clean
+bin/memoize-extract
 @bin bin/mendex
 @bin bin/mf
 @bin bin/mf-nowin
@@ -290,6 +287,7 @@ bin/ps2frag
 bin/ps4pdf
 bin/pslatex
 bin/pst2pdf
+@bin bin/ptekf
 bin/ptex2pdf
 bin/ptftopl
 bin/purifyeps
@@ -304,6 +302,7 @@ bin/rubibtex
 bin/rubikrotation
 bin/rumakeindex
 bin/rungs
+bin/runtexshebang
 @bin bin/scor2prt
 bin/simpdftex
 @bin bin/sjisconv
@@ -322,6 +321,7 @@ bin/svn-multi
 bin/tex4ebook
 @bin bin/tex4ht
 bin/texaccents
+bin/texblend
 bin/texconfig
 bin/texconfig-dialog
 bin/texconfig-sys
@@ -331,6 +331,7 @@ bin/texdiff
 bin/texdirflatten
 bin/texdoc
 bin/texdoctk
+bin/texfindpkg
 bin/texfot
 bin/texhash
 bin/texlinks
@@ -358,6 +359,7 @@ bin/ttf2kotexfont
 @bin bin/ttf2tfm
 @bin bin/ttfdump
 @bin bin/twill
+bin/twill-refsort
 bin/typeoutfileinfo
 bin/ulqda
 @bin bin/upbibtex
@@ -413,7 +415,8 @@ lib/pkgconfig/ptexenc.pc
 @tag mktexlsr
 @unexec-delete rm -f %D/share/texmf-dist/ls-R
 @unexec-delete rm -f %D/share/texmf-var/ls-R
-@unexec-delete rm -rf %D/share/texmf-var/luametatex-cache/
+@unexec-delete rm -f %D/share/texmf-var/luametatex-cache/context/148f906ad1dab182285ae0357953b2c0/trees/*
+@unexec-delete rm -df %D/share/texmf-var/luametatex-cache/context/148f906ad1dab182285ae0357953b2c0/trees
 @unexec-delete rm -f %D/share/texmf/ls-R
 @unexec-delete rm -f %D/share/texmf-local/ls-R
 lib/pkgconfig/texlua53.pc
@@ -423,3 +426,4 @@ ${P5SITE}/TeXLive/TLUtils.pm
 share/applications/xdvi.desktop
 share/doc/pkg-readmes/${PKGSTEM}
 @tag update-desktop-database
+share/texmf-dist/
