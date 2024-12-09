@@ -3,17 +3,18 @@
 Index: source/common/cpu.cpp
 --- source/common/cpu.cpp.orig
 +++ source/common/cpu.cpp
-@@ -31,6 +31,9 @@
+@@ -31,6 +31,10 @@
  #include "cpu.h"
  #include "common.h"
  
++#include <errno.h>
 +#if HAVE_GETAUXVAL || HAVE_ELF_AUX_INFO
 +#include <sys/auxv.h>
 +#endif
  #if MACOS || SYS_FREEBSD
  #include <sys/types.h>
  #include <sys/sysctl.h>
-@@ -41,7 +44,7 @@
+@@ -41,7 +45,7 @@
  #include <machine/cpu.h>
  #endif
  
@@ -22,7 +23,7 @@ Index: source/common/cpu.cpp
  #include <signal.h>
  #include <setjmp.h>
  static sigjmp_buf jmpbuf;
-@@ -128,6 +131,22 @@ const cpu_name_t cpu_names[] =
+@@ -128,6 +132,22 @@ const cpu_name_t cpu_names[] =
      { "", 0 },
  };
  
@@ -45,7 +46,7 @@ Index: source/common/cpu.cpp
  #if X265_ARCH_X86
  
  extern "C" {
-@@ -348,6 +367,8 @@ void PFX(cpu_neon_test)(void);
+@@ -348,6 +368,8 @@ void PFX(cpu_neon_test)(void);
  int PFX(cpu_fast_neon_mrc_test)(void);
  }
  
@@ -54,7 +55,7 @@ Index: source/common/cpu.cpp
  uint32_t cpu_detect(bool benableavx512)
  {
      int flags = 0;
-@@ -355,6 +376,11 @@ uint32_t cpu_detect(bool benableavx512)
+@@ -355,6 +377,11 @@ uint32_t cpu_detect(bool benableavx512)
  #if HAVE_ARMV6
      flags |= X265_CPU_ARMV6;
  
@@ -66,7 +67,7 @@ Index: source/common/cpu.cpp
      // don't do this hack if compiled with -mfpu=neon
  #if !HAVE_NEON
      static void (* oldsig)(int);
-@@ -372,6 +398,7 @@ uint32_t cpu_detect(bool benableavx512)
+@@ -372,6 +399,7 @@ uint32_t cpu_detect(bool benableavx512)
  #endif // if !HAVE_NEON
  
      flags |= X265_CPU_NEON;
