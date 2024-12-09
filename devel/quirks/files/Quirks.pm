@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1677 2024/11/26 16:48:36 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1678 2024/12/09 13:49:09 landry Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1209,6 +1209,7 @@ setup_obsolete_reason(
 	6 => 'gnome-initial-setup',
 	3 => 'pcmanfm',
 	3 => 'libfm',
+	3 => qr{^nextcloud-(27|28|29)},
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
