@@ -56,6 +56,7 @@
      SUBDIR += xastir
      SUBDIR += xdx
      SUBDIR += xlog
+     SUBDIR += zigbee2mqtt
      SUBDIR += zigpy
      SUBDIR += zmtx-zmrx
 
