@@ -1,10 +1,11 @@
 VERSION=	1.16
 DISTNAME=	automake-${VERSION}.5
+REVISION=	0
 PKGSPEC=	automake->=${VERSION},<1.17
 EXTRACT_SUFX=	.tar.xz
-PORTROACH =
+PORTROACH=
 
-AUTOCONF_VERSION=	2.69
+AUTOCONF_VERSION=	2.71
 
 post-install:
 	cd ${PREFIX}/info && mv automake.info automake${SUFFIX}.info
