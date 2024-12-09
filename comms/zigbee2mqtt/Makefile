@@ -1,6 +1,6 @@
 COMMENT=	Zigbee to MQTT bridge
 
-V=		1.41.0
+V=		1.42.0
 GH_ACCOUNT=	Koenkk
 GH_PROJECT=	zigbee2mqtt
 GH_TAGNAME=	$V
