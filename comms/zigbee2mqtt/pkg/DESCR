@@ -1,0 +1,16 @@
+zigbee2mqtt allows you to use your Zigbee devices without the vendor's
+bridge or gateway.
+
+It bridges events and allows you to control your Zigbee devices via
+MQTT. In this way you can integrate your Zigbee devices with whatever
+smart home infrastructure you are using.
+
+To use it, you will need suitable Zigbee bridge hardware (typically
+USB-based), Zigbee devices, and an MQTT server (for example, mosquitto
+or rabbitmq).
+
+zigbee2mqtt has mature support for adapters based on TI zStack, SiLabs
+EmberZNet, and Dresden Elektronik deCONZ. It has experimental support
+for some others. Most of these are USB devices presenting as a serial
+UART (/dev/cuaU*) when running the correct firmware - it has some
+support for network-based (wifi/ethernet) devices.

@@ -1,0 +1,26 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+You will need to use a suitable hardware device to interface with
+Zigbee, and that device will often need to have specific firmware
+loaded before it can be used. Refer to upstream documentation for
+more information.
+
+Device permissions
+------------------
+zigbee2mqtt uses USB devices which present themselves as serial ports
+(/dev/cuaU0 if this is the only USB serial device on the system).
+
+The user running the daemon (normally _z2m) must have access to the
+relevant serial port device nodes. zigbee2mqtt will not start unless
+either this is done, or configuration is changed to use a network-
+based device.
+
+Either edit /etc/group and add _z2m to "dialer", or if you would like
+to restrict it to a specific device, change the group ownership of
+the relevant /dev/cuaU* device to _z2m.
+
+The default configuration installed by the package starts a front-end
+on http://127.0.0.1:8080/ - edit ${SYSCONFDIR}/zigbee2mqtt/configuration.yaml
+to change or disable this.
