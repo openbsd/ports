@@ -3,6 +3,7 @@
 include/AppStreamQt/
 include/AppStreamQt/appstreamqt_export.h
 include/AppStreamQt/bundle.h
+include/AppStreamQt/branding.h
 include/AppStreamQt/category.h
 include/AppStreamQt/component-box.h
 include/AppStreamQt/component.h
