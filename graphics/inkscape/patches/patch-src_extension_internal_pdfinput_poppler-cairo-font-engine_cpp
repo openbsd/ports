@@ -1,0 +1,43 @@
+Fix build with poppler-24.11.0.
+
+From upstream commit 0399372ec240d23e0e70548237a541f2b5bf0f34.
+
+Index: src/extension/internal/pdfinput/poppler-cairo-font-engine.cpp
+--- src/extension/internal/pdfinput/poppler-cairo-font-engine.cpp.orig
++++ src/extension/internal/pdfinput/poppler-cairo-font-engine.cpp
+@@ -421,9 +421,9 @@ CairoFreeTypeFont *CairoFreeTypeFont::create(GfxFont *
+                 FoFiTrueType *ff;
+ #endif
+                 if (!font_data.empty()) {
+-                    ff = FoFiTrueType::make((fontchar)font_data.data(), font_data.size());
++                    ff = FoFiTrueType::make((fontchar)font_data.data(), font_data.size(), 0);
+                 } else {
+-                    ff = FoFiTrueType::load(fileName.c_str());
++                    ff = FoFiTrueType::load(fileName.c_str(), 0);
+                 }
+                 if (!ff) {
+                     goto err2;
+@@ -446,9 +446,9 @@ CairoFreeTypeFont *CairoFreeTypeFont::create(GfxFont *
+             FoFiTrueType *ff;
+ #endif
+             if (!font_data.empty()) {
+-                ff = FoFiTrueType::make((fontchar)font_data.data(), font_data.size());
++                ff = FoFiTrueType::make((fontchar)font_data.data(), font_data.size(), 0);
+             } else {
+-                ff = FoFiTrueType::load(fileName.c_str());
++                ff = FoFiTrueType::load(fileName.c_str(), 0);
+             }
+             if (!ff) {
+                 error(errSyntaxError, -1, "failed to load truetype font\n");
+@@ -514,9 +514,9 @@ CairoFreeTypeFont *CairoFreeTypeFont::create(GfxFont *
+                     FoFiTrueType *ff;
+ #endif
+                     if (!font_data.empty()) {
+-                        ff = FoFiTrueType::make((fontchar)font_data.data(), font_data.size());
++                        ff = FoFiTrueType::make((fontchar)font_data.data(), font_data.size(), 0);
+                     } else {
+-                        ff = FoFiTrueType::load(fileName.c_str());
++                        ff = FoFiTrueType::load(fileName.c_str(), 0);
+                     }
+                     if (ff) {
+                         if (ff->isOpenTypeCFF()) {

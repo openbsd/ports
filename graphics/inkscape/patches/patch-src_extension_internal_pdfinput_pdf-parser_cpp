@@ -1,6 +1,6 @@
-Fix build with poppler-24.10.0.
+Fix build with poppler-24.10.0 and poppler-24.12.0.
 
-From upstream commit 22304ae8034d067670a9f95022083a75fac92b4c.
+Parts from upstream commit 22304ae8034d067670a9f95022083a75fac92b4c.
 
 Index: src/extension/internal/pdfinput/pdf-parser.cpp
 --- src/extension/internal/pdfinput/pdf-parser.cpp.orig
@@ -250,7 +250,21 @@ Index: src/extension/internal/pdfinput/pdf-parser.cpp
  }
  
  void PdfParser::doFunctionShFill(GfxFunctionShading *shading) {
-@@ -2521,7 +2517,7 @@ void PdfParser::doImage(Object * /*ref*/, Stream *str,
+@@ -2407,11 +2403,12 @@ void PdfParser::doImage(Object * /*ref*/, Stream *str,
+     GBool maskInvert;
+     GBool maskInterpolate;
+     Object obj1, obj2;
++    bool hasAlpha;
+     
+     // get info from the stream
+     bits = 0;
+     csMode = streamCSNone;
+-    str->getImageParams(&bits, &csMode);
++    str->getImageParams(&bits, &csMode, &hasAlpha);
+     
+     // get stream dict
+     dict = str->getDict();
+@@ -2521,7 +2518,7 @@ void PdfParser::doImage(Object * /*ref*/, Stream *str,
          
      } else {
          // get color space and color map
@@ -259,7 +273,7 @@ Index: src/extension/internal/pdfinput/pdf-parser.cpp
          _POPPLER_CALL_ARGS(obj1, dict->lookup, "ColorSpace");
          if (obj1.isNull()) {
              _POPPLER_FREE(obj1);
-@@ -2530,13 +2526,11 @@ void PdfParser::doImage(Object * /*ref*/, Stream *str,
+@@ -2530,13 +2527,11 @@ void PdfParser::doImage(Object * /*ref*/, Stream *str,
          if (!obj1.isNull()) {
              colorSpace = lookupColorSpaceCopy(obj1);
          } else if (csMode == streamCSDeviceGray) {
@@ -276,7 +290,7 @@ Index: src/extension/internal/pdfinput/pdf-parser.cpp
          }
          _POPPLER_FREE(obj1);
          if (!colorSpace) {
-@@ -2547,10 +2541,9 @@ void PdfParser::doImage(Object * /*ref*/, Stream *str,
+@@ -2547,10 +2542,9 @@ void PdfParser::doImage(Object * /*ref*/, Stream *str,
              _POPPLER_FREE(obj1);
              _POPPLER_CALL_ARGS(obj1, dict->lookup, "D");
          }
@@ -288,7 +302,7 @@ Index: src/extension/internal/pdfinput/pdf-parser.cpp
              goto err1;
          }
          
-@@ -2561,7 +2554,7 @@ void PdfParser::doImage(Object * /*ref*/, Stream *str,
+@@ -2561,7 +2555,7 @@ void PdfParser::doImage(Object * /*ref*/, Stream *str,
          int maskWidth = 0;
          int maskHeight = 0;
          maskInvert = gFalse;
@@ -297,7 +311,7 @@ Index: src/extension/internal/pdfinput/pdf-parser.cpp
          _POPPLER_CALL_ARGS(maskObj, dict->lookup, "Mask");
          _POPPLER_CALL_ARGS(smaskObj, dict->lookup, "SMask");
          Dict* maskDict;
-@@ -2617,7 +2610,7 @@ void PdfParser::doImage(Object * /*ref*/, Stream *str,
+@@ -2617,7 +2611,7 @@ void PdfParser::doImage(Object * /*ref*/, Stream *str,
  	            _POPPLER_FREE(obj1);
                      _POPPLER_CALL_ARGS(obj1, maskDict->lookup, "CS");
              }
@@ -306,7 +320,7 @@ Index: src/extension/internal/pdfinput/pdf-parser.cpp
              _POPPLER_FREE(obj1);
              if (!maskColorSpace || maskColorSpace->getMode() != csDeviceGray) {
                  goto err1;
-@@ -2627,10 +2620,9 @@ void PdfParser::doImage(Object * /*ref*/, Stream *str,
+@@ -2627,10 +2621,9 @@ void PdfParser::doImage(Object * /*ref*/, Stream *str,
                  _POPPLER_FREE(obj1);
                  _POPPLER_CALL_ARGS(obj1, maskDict->lookup, "D");
              }
@@ -318,7 +332,7 @@ Index: src/extension/internal/pdfinput/pdf-parser.cpp
                  goto err1;
              }
              //~ handle the Matte entry
-@@ -2711,17 +2703,15 @@ void PdfParser::doImage(Object * /*ref*/, Stream *str,
+@@ -2711,17 +2704,15 @@ void PdfParser::doImage(Object * /*ref*/, Stream *str,
          
          // draw it
          if (haveSoftMask) {
@@ -341,7 +355,7 @@ Index: src/extension/internal/pdfinput/pdf-parser.cpp
          
          _POPPLER_FREE(maskObj);
          _POPPLER_FREE(smaskObj);
-@@ -2739,7 +2729,6 @@ void PdfParser::doForm(Object *str, double *offset)
+@@ -2739,7 +2730,6 @@ void PdfParser::doForm(Object *str, double *offset)
  {
      Dict *dict;
      GBool transpGroup, isolated, knockout;
@@ -349,7 +363,7 @@ Index: src/extension/internal/pdfinput/pdf-parser.cpp
      Object matrixObj, bboxObj;
      double m[6], bbox[4];
      Object resObj;
-@@ -2805,12 +2794,12 @@ void PdfParser::doForm(Object *str, double *offset)
+@@ -2805,12 +2795,12 @@ void PdfParser::doForm(Object *str, double *offset)
  
      // check for a transparency group
      transpGroup = isolated = knockout = gFalse;
@@ -364,7 +378,7 @@ Index: src/extension/internal/pdfinput/pdf-parser.cpp
          }
          _POPPLER_FREE(obj3);
          if (_POPPLER_CALL_ARGS_DEREF(obj3, obj1.dictLookup, "I").isBool()) {
-@@ -2828,12 +2817,9 @@ void PdfParser::doForm(Object *str, double *offset)
+@@ -2828,12 +2818,9 @@ void PdfParser::doForm(Object *str, double *offset)
  
      // draw it
      ++formDepth;
