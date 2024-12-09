@@ -41,6 +41,8 @@ RUN_DEPENDS=		devel/libvirt-glib \
 RUN_DEPENDS +=		devel/desktop-file-utils \
 			x11/gtk+4,-guic
 
+CONFIGURE_ARGS=		-Dupdate-icon-cache=false
+
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/virtinst/buildconfig.py
 	ln -sf ${LOCALBASE}/bin/py.test ${WRKDIR}/bin/pytest
