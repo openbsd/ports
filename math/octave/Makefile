@@ -1,16 +1,15 @@
 COMMENT =      Scientific Programming Language
 
-VERSION =	7.3.0
+VERSION =	9.2.0
 DISTNAME =	octave-${VERSION}
-REVISION =	9
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	math
 
-SHARED_LIBS +=	octave		16.0
-SHARED_LIBS +=	octgui		10.0
-SHARED_LIBS +=	octinterp	15.0
+SHARED_LIBS +=	octave		17.0
+SHARED_LIBS +=	octgui		11.0
+SHARED_LIBS +=	octinterp	16.0
 
-HOMEPAGE =	https://www.gnu.org/software/octave/
+HOMEPAGE =	https://www.octave.org
 
 MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 
@@ -18,8 +17,12 @@ MAINTAINER =	Steven Mestdagh <steven@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} FLAC GL GLU GraphicsMagick GraphicsMagick++
-WANTLIB += ICE Qt5Core Qt5Gui Qt5Help Qt5Network Qt5OpenGL Qt5PrintSupport
-WANTLIB += Qt5Sql Qt5Widgets Qt5Xml SM X11 X11-xcb Xau Xdmcp Xext
+WANTLIB += EGL Qt6Core Qt6DBus Qt6Gui Qt6Help Qt6Network Qt6OpenGL
+WANTLIB += Qt6OpenGLWidgets Qt6PrintSupport Qt6Sql Qt6Widgets
+WANTLIB += Qt6Xml Qt6Core5Compat b2 brotlicommon brotlidec dbus-1 duktape
+WANTLIB += gbm gio-2.0 gmodule-2.0 gobject-2.0 proxy qscintilla2_qt6
+WANTLIB += ffi xkbcommon
+WANTLIB += ICE SM X11 X11-xcb Xau Xdmcp Xext
 WANTLIB += Xfixes Xi Xmu Xrandr Xrender Xt Xxf86vm amd arpack
 WANTLIB += blas bz2 c camd ccolamd cholmod colamd crypto curl
 WANTLIB += curses cxsparse double-conversion drm ereadline execinfo
@@ -27,8 +30,8 @@ WANTLIB += expat fftw3 fftw3_threads fftw3f fftw3f_threads fontconfig
 WANTLIB += freetype gl2ps glapi glib-2.0 glpk glut gmp graphite2
 WANTLIB += gthread-2.0 harfbuzz hdf5 iconv icudata icui18n icuuc
 WANTLIB += intl lapack lcms2 ltdl m mp3lame mpg123 nghttp2 nghttp3
-WANTLIB += ngtcp2 ngtcp2_crypto_quictls ogg opus pcre pcre2-16
-WANTLIB += pcre2-8 png portaudio qhull_r qrupdate qscintilla2_qt5
+WANTLIB += ngtcp2 ngtcp2_crypto_quictls ogg opus pcre2-16
+WANTLIB += pcre2-8 png portaudio qhull_r qrupdate
 WANTLIB += sndfile sndio spqr ssl suitesparseconfig umfpack util
 WANTLIB += vorbis vorbisenc xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present
 WANTLIB += xcb-randr xcb-shm xcb-sync xcb-xfixes xshmfence z zstd
@@ -37,12 +40,13 @@ WANTLIB += ${MODFORTRAN_WANTLIB}
 SITES =		${SITE_GNU:=octave/}
 
 MODULES =	fortran \
-		x11/qt5
+		x11/qt6
 
 BUILD_DEPENDS =	${MODFORTRAN_BUILD_DEPENDS} \
 		math/gnuplot \
 		print/texinfo \
-		textproc/gsed
+		textproc/gsed \
+		textproc/rapidjson
 
 MODFORTRAN_COMPILER =	gfortran
 
@@ -58,10 +62,10 @@ LIB_DEPENDS =	${MODFORTRAN_LIB_DEPENDS} \
 		audio/portaudio-svn \
 		audio/lame \
 		audio/mpg123 \
+		archivers/brotli \
 		devel/glpk \
-		devel/pcre \
 		devel/readline \
-		editors/qscintilla \
+		editors/qscintilla,qt6 \
 		graphics/GraphicsMagick \
 		math/arpack \
 		math/fftw3 \
@@ -73,32 +77,35 @@ LIB_DEPENDS =	${MODFORTRAN_LIB_DEPENDS} \
 		net/curl \
 		textproc/icu4c \
 		print/gl2ps \
-		x11/qt5/qttools,-main
+		x11/qt6/qt5compat \
+		x11/qt6/qttools
 
 SEPARATE_BUILD =	Yes
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 
 CONFIGURE_ARGS	=	--disable-java \
-			--disable-rapidjson \
-			--without-fltk
+			--host=${GNU_HOST} \
+			--without-fltk \
+			--without-libreadline-prefix \
+			--with-libreadline-prefix=${LOCALBASE}
 
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include \
 		-I${LOCALBASE}/include/ereadline" \
 		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib" \
-		LRELEASE="${MODQT_LRELEASE}" \
-		CFLAGS="${CFLAGS} -std=gnu11" \
-		CXXFLAGS="${CXXFLAGS} -std=gnu++11" \
-		QCOLLECTIONGENERATOR_QTVER=${LOCALBASE}/lib/qt5/bin/qcollectiongenerator \
-		QHELPGENERATOR=${LOCALBASE}/lib/qt5/bin/qhelpgenerator
+		CFLAGS="${CFLAGS}" \
+		CXXFLAGS="${CXXFLAGS}"
+
 
 # Some tests fail when a tilde doesn't expand to a home directory
-PORT_HOME = 	"${WRKBUILD}"
+PORTHOME = 	${WRKBUILD}
+TEST_ENV +=	HOME=${PORTHOME}
 
-# needed to build on amd64
-GCC_ARCH =	${MACHINE_ARCH}-unknown-openbsd${OSREV}
-GNU_ARCH =	${GCC_ARCH:S/amd64/x86_64/}
-SUBST_VARS =	GNU_ARCH VERSION
+# Construct a host without OSREV
+GCC_ARCH =	${MACHINE_ARCH}-unknown-openbsd
+GNU_HOST =	${GCC_ARCH:S/amd64/x86_64/}
+
+SUBST_VARS +=	GNU_HOST VERSION
 
 post-extract:
 .for i in makeinfo texi2dvi texi2pdf

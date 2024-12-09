@@ -4,7 +4,7 @@ Show warning/error and skip test
 Index: scripts/miscellaneous/memory.m
 --- scripts/miscellaneous/memory.m.orig
 +++ scripts/miscellaneous/memory.m
-@@ -151,7 +151,7 @@
+@@ -149,7 +149,7 @@
  
  function [userdata, systemdata] = memory ()
  
@@ -13,7 +13,7 @@ Index: scripts/miscellaneous/memory.m
      if (nargout > 0)
        error ("memory: function not yet implemented for this architecture");
      else
-@@ -280,14 +280,14 @@ function [status, meminfo] = lmemory ()
+@@ -284,14 +284,14 @@ function [status, meminfo] = lmemory ()
  endfunction
  
  

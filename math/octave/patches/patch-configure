@@ -1,9 +1,56 @@
-Use GNU readline as our base readline lacks rl_prefer_env_winsize.
+* Use GNU readline as our base readline lacks rl_prefer_env_winsize
 
 Index: configure
 --- configure.orig
 +++ configure
-@@ -80591,7 +80591,7 @@ printf "%s\n" "$as_me: WARNING: $warn_rapidjson" >&2;}
+@@ -82150,21 +82150,21 @@ fi
+             case "$found_dir" in
+               */$acl_libdirstem | */$acl_libdirstem/)
+                 basedir=`echo "X$found_dir" | sed -e 's,^X,,' -e "s,/$acl_libdirstem/"'*$,,'`
+-                if test "$name" = 'readline'; then
++                if test "$name" = 'ereadline'; then
+                   LIBREADLINE_PREFIX="$basedir"
+                 fi
+                 additional_includedir="$basedir/include"
+                 ;;
+               */$acl_libdirstem2 | */$acl_libdirstem2/)
+                 basedir=`echo "X$found_dir" | sed -e 's,^X,,' -e "s,/$acl_libdirstem2/"'*$,,'`
+-                if test "$name" = 'readline'; then
++                if test "$name" = 'ereadline'; then
+                   LIBREADLINE_PREFIX="$basedir"
+                 fi
+                 additional_includedir="$basedir/include"
+                 ;;
+               */$acl_libdirstem3 | */$acl_libdirstem3/)
+                 basedir=`echo "X$found_dir" | sed -e 's,^X,,' -e "s,/$acl_libdirstem3/"'*$,,'`
+-                if test "$name" = 'readline'; then
++                if test "$name" = 'ereadline'; then
+                   LIBREADLINE_PREFIX="$basedir"
+                 fi
+                 additional_includedir="$basedir/include"
+@@ -82384,8 +82384,8 @@ fi
+   done
+ 
+ 
+-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for readline" >&5
+-printf %s "checking for readline... " >&6; }
++  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for ereadline" >&5
++printf %s "checking for ereadline... " >&6; }
+ if test ${gl_cv_lib_readline+y}
+ then :
+   printf %s "(cached) " >&6
+@@ -82448,8 +82448,8 @@ printf "%s\n" "#define HAVE_READLINE 1" >>confdefs.h
+       LIBREADLINE="$LIBREADLINE $extra_lib"
+       LTLIBREADLINE="$LTLIBREADLINE $extra_lib"
+     fi
+-    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking how to link with libreadline" >&5
+-printf %s "checking how to link with libreadline... " >&6; }
++    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking how to link with libereadline" >&5
++printf %s "checking how to link with libereadline... " >&6; }
+     { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $LIBREADLINE" >&5
+ printf "%s\n" "$LIBREADLINE" >&6; }
+   else
+@@ -92439,7 +92439,7 @@ printf "%s\n" "$as_me: WARNING: $warn_rapidjson" >&2;}
  
  fi
  
@@ -11,31 +58,13 @@ Index: configure
 +### Check for ereadline library.
  
  
-   TERM_LIBS=
-@@ -80694,14 +80694,14 @@ fi
- 
-     ac_octave_save_LIBS="$LIBS"
-     LIBS="$TERM_LIBS"
--    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for rl_set_keyboard_input_timeout in -lreadline" >&5
--printf %s "checking for rl_set_keyboard_input_timeout in -lreadline... " >&6; }
-+    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for rl_set_keyboard_input_timeout in -lereadline" >&5
-+printf %s "checking for rl_set_keyboard_input_timeout in -lereadline... " >&6; }
- if test ${ac_cv_lib_readline_rl_set_keyboard_input_timeout+y}
- then :
-   printf %s "(cached) " >&6
- else $as_nop
-   ac_check_lib_save_LIBS=$LIBS
--LIBS="-lreadline  $LIBS"
-+LIBS="-lereadline  $LIBS"
- cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- /* end confdefs.h.  */
- 
-@@ -80739,7 +80739,7 @@ fi
- printf "%s\n" "$ac_cv_lib_readline_rl_set_keyboard_input_timeout" >&6; }
- if test "x$ac_cv_lib_readline_rl_set_keyboard_input_timeout" = xyes
- then :
--  READLINE_LIBS="-lreadline"
-+  READLINE_LIBS="-lereadline"
- 
- printf "%s\n" "#define USE_READLINE 1" >>confdefs.h
- 
+   USE_READLINE=yes
+@@ -92525,7 +92525,7 @@ fi
+   rpathdirs=
+   ltrpathdirs=
+   names_already_handled=
+-  names_next_round='readline '
++  names_next_round='ereadline '
+   while test -n "$names_next_round"; do
+     names_this_round="$names_next_round"
+     names_next_round=
