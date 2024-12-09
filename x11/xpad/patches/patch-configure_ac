@@ -1,0 +1,14 @@
+Fix "gettext infrastructure mismatch".
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -52,7 +52,7 @@ AC_TYPE_SIZE_T
+ # i18n / text translations
+ # The choice for version of gettext is only based on what was installed on the developers desktop (2021).
+ # If another version is more convenient, go for it.
+-AM_GNU_GETTEXT_VERSION([0.21])
++AM_GNU_GETTEXT_VERSION([0.23])
+ AM_GNU_GETTEXT([external])
+ 
+ GETTEXT_PACKAGE="$PACKAGE"
