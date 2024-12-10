@@ -517,43 +517,43 @@ Index: src/x86/ipred16_sse.asm
      movifnidn         wpadd, wpadm
      mov                  r5, acq
      WIN64_SPILL_XMM       8
-@@ -3979,6 +4050,7 @@ cglobal pal_pred_16bpc, 4, 5, 5, dst, stride, pal, idx
+@@ -3979,6 +4050,7 @@ cglobal pal_pred_16bpc, 4, 5, 6, dst, stride, pal, idx
      movifnidn            hd, hm
      jmp                  wq
  .w4:
 +    _CET_ENDBR
-     mova                 m0, [idxq]
-     add                idxq, 16
-     pshufb               m1, m3, m0
-@@ -3995,6 +4067,7 @@ cglobal pal_pred_16bpc, 4, 5, 5, dst, stride, pal, idx
+     movq                 m0, [idxq]
+     add                idxq, 8
+     psrlw                m1, m0, 4
+@@ -3997,6 +4069,7 @@ cglobal pal_pred_16bpc, 4, 5, 6, dst, stride, pal, idx
      jg .w4
      RET
  .w8:
 +    _CET_ENDBR
-     mova                 m0, [idxq]
+     movu                 m3, [idxq]
      add                idxq, 16
-     pshufb               m1, m3, m0
-@@ -4008,6 +4081,7 @@ cglobal pal_pred_16bpc, 4, 5, 5, dst, stride, pal, idx
+     psrlw                m1, m3, 4
+@@ -4020,6 +4093,7 @@ cglobal pal_pred_16bpc, 4, 5, 6, dst, stride, pal, idx
      jg .w8
      RET
  .w16:
 +    _CET_ENDBR
-     mova                 m0, [idxq]
+     movu                 m3, [idxq]
      add                idxq, 16
-     pshufb               m1, m3, m0
-@@ -4021,6 +4095,7 @@ cglobal pal_pred_16bpc, 4, 5, 5, dst, stride, pal, idx
+     psrlw                m1, m3, 4
+@@ -4042,6 +4116,7 @@ cglobal pal_pred_16bpc, 4, 5, 6, dst, stride, pal, idx
      jg .w16
      RET
  .w32:
 +    _CET_ENDBR
-     mova                 m0, [idxq+16*0]
-     pshufb               m1, m3, m0
-     pshufb               m2, m4, m0
-@@ -4041,6 +4116,7 @@ cglobal pal_pred_16bpc, 4, 5, 5, dst, stride, pal, idx
+     movu                 m3, [idxq]
+     add                idxq, 16
+     psrlw                m1, m3, 4
+@@ -4064,6 +4139,7 @@ cglobal pal_pred_16bpc, 4, 5, 6, dst, stride, pal, idx
      jg .w32
      RET
  .w64:
 +    _CET_ENDBR
-     mova                 m0, [idxq+16*0]
-     pshufb               m1, m3, m0
-     pshufb               m2, m4, m0
+     movu                 m3, [idxq+16*0]
+     psrlw                m1, m3, 4
+     punpcklbw            m0, m3, m1

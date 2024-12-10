@@ -288,34 +288,34 @@ Index: src/x86/ipred16_avx2.asm
      RET
  .w8:
 +    _CET_ENDBR
- %assign stack_offset stack_offset - stack_size_padded
      WIN64_SPILL_XMM     12
      vpbroadcastw        m0, [tlq] ; bottom
-@@ -974,6 +1016,7 @@ cglobal ipred_smooth_16bpc, 3, 7, 6, dst, stride, tl, 
+     vbroadcasti128      m7, [tlq+hq*2+2]
+@@ -973,6 +1015,7 @@ cglobal ipred_smooth_16bpc, 3, 7, 6, dst, stride, tl, 
      jg .w8_loop
      RET
  .w16:
 +    _CET_ENDBR
- %assign stack_offset stack_offset - stack_size_padded
      WIN64_SPILL_XMM     11
      vpbroadcastw        m0, [tlq] ; bottom
-@@ -1005,6 +1048,7 @@ cglobal ipred_smooth_16bpc, 3, 7, 6, dst, stride, tl, 
+     movu                m7, [tlq+hq*2+2]
+@@ -1003,6 +1046,7 @@ cglobal ipred_smooth_16bpc, 3, 7, 6, dst, stride, tl, 
      jg .w16_loop
      RET
  .w32:
 +    _CET_ENDBR
- %assign stack_offset stack_offset - stack_size_padded
      WIN64_SPILL_XMM     15
      vpbroadcastw        m0, [tlq] ; bottom
-@@ -1047,6 +1091,7 @@ cglobal ipred_smooth_16bpc, 3, 7, 6, dst, stride, tl, 
+     movu                m7, [tlq+hq*2+ 2]
+@@ -1044,6 +1088,7 @@ cglobal ipred_smooth_16bpc, 3, 7, 6, dst, stride, tl, 
      jg .w32_loop
      RET
  .w64:
 +    _CET_ENDBR
- %assign stack_offset stack_offset - stack_size_padded
      PROLOGUE 0, 11, 16, dst, stride, tl, tl_base, h, v_weights, dummy, v_weights_base, x, y, dst_base
      mov          dst_baseq, dstq
-@@ -1121,6 +1166,7 @@ cglobal ipred_z1_16bpc, 3, 8, 0, dst, stride, tl, w, h
+     mov           tl_baseq, tlq
+@@ -1116,6 +1161,7 @@ cglobal ipred_z1_16bpc, 3, 8, 0, dst, stride, tl, w, h
      vpbroadcastd         m5, [pw_62]
      jmp                  wq
  .w4:
@@ -323,39 +323,39 @@ Index: src/x86/ipred16_avx2.asm
      ALLOC_STACK         -64, 7
      cmp              angleb, 40
      jae .w4_no_upsample
-@@ -1312,6 +1358,7 @@ ALIGN function_align
+@@ -1307,6 +1353,7 @@ ALIGN function_align
  .w4_end:
      RET
  .w8:
 +    _CET_ENDBR
-     %assign stack_offset org_stack_offset
      ALLOC_STACK         -64, 7
      lea                 r3d, [angleq+216]
-@@ -1476,6 +1523,7 @@ ALIGN function_align
+     mov                 r3b, hb
+@@ -1470,6 +1517,7 @@ ALIGN function_align
      or             maxbased, 16 ; imin(h+15, 31)
      jmp .w16_main
  .w16:
 +    _CET_ENDBR
-     %assign stack_offset org_stack_offset
      ALLOC_STACK         -96, 7
      lea            maxbased, [hq+15]
-@@ -1622,6 +1670,7 @@ ALIGN function_align
+     test             angled, 0x400
+@@ -1615,6 +1663,7 @@ ALIGN function_align
  .w16_end:
      RET
  .w32:
 +    _CET_ENDBR
-     %assign stack_offset org_stack_offset
      ALLOC_STACK        -160, 8
      lea            maxbased, [hq+31]
-@@ -1737,6 +1786,7 @@ ALIGN function_align
+     mov                 r3d, 63
+@@ -1729,6 +1778,7 @@ ALIGN function_align
  .w32_end:
      RET
  .w64:
 +    _CET_ENDBR
-     %assign stack_offset org_stack_offset
      ALLOC_STACK        -256, 10
      lea            maxbased, [hq+63]
-@@ -1881,6 +1931,7 @@ cglobal ipred_z2_16bpc, 3, 12, 12, 352, dst, stride, t
+     test             angled, 0x400
+@@ -1872,6 +1922,7 @@ cglobal ipred_z2_16bpc, 3, 12, 12, 352, dst, stride, t
      mova          [rsp+  0], m5
      jmp                  wq
  .w4:
@@ -363,7 +363,7 @@ Index: src/x86/ipred16_avx2.asm
      vbroadcasti128      m10, [base+z2_x_shuf]
      vpbroadcastq         m6, [base+z_base_inc+2]
      lea                 r8d, [dxq+(65<<6)] ; xpos
-@@ -2166,6 +2217,7 @@ ALIGN function_align
+@@ -2157,6 +2208,7 @@ ALIGN function_align
  .w4_end:
      RET
  .w8:
@@ -371,7 +371,7 @@ Index: src/x86/ipred16_avx2.asm
      mov                r10d, hd
      test             angled, 0x400
      jnz .w8_main
-@@ -2460,6 +2512,7 @@ ALIGN function_align
+@@ -2451,6 +2503,7 @@ ALIGN function_align
  .w8_ret:
      RET
  .w16:
@@ -379,7 +379,7 @@ Index: src/x86/ipred16_avx2.asm
      movd                xm0, [tlq+32]
      lea                r10d, [hq+(1<<8)]
      movd          [rsp+160], xm0
-@@ -2531,6 +2584,7 @@ ALIGN function_align
+@@ -2522,6 +2575,7 @@ ALIGN function_align
      movq          [rsp+120], xm1
      jmp .w8_main
  .w32:
@@ -387,7 +387,7 @@ Index: src/x86/ipred16_avx2.asm
      mova                 m2, [tlq+32]
      movd                xm0, [tlq+64]
      lea                r10d, [hq+(3<<8)]
-@@ -2649,6 +2703,7 @@ ALIGN function_align
+@@ -2640,6 +2694,7 @@ ALIGN function_align
      mova          [rsp+112], xm1
      jmp .w8_main
  .w64:
@@ -395,7 +395,7 @@ Index: src/x86/ipred16_avx2.asm
      mova                 m2, [tlq+ 32]
      mova                 m3, [tlq+ 64]
      mova                 m4, [tlq+ 96]
-@@ -2709,6 +2764,7 @@ cglobal ipred_z3_16bpc, 4, 9, 0, dst, stride, tl, w, h
+@@ -2699,6 +2754,7 @@ cglobal ipred_z3_16bpc, 4, 9, 0, dst, stride, tl, w, h
      mov              org_wd, wd
      jmp                  hq
  .h4:
@@ -403,39 +403,39 @@ Index: src/x86/ipred16_avx2.asm
      ALLOC_STACK         -64, 7
      lea                  r7, [strideq*3]
      cmp              angleb, 40
-@@ -2906,6 +2962,7 @@ ALIGN function_align
+@@ -2896,6 +2952,7 @@ ALIGN function_align
  .h4_end:
      RET
  .h8:
 +    _CET_ENDBR
      lea                 r4d, [angleq+216]
-     %assign stack_offset org_stack_offset
      ALLOC_STACK         -64, 8
-@@ -3155,6 +3212,7 @@ ALIGN function_align
+     mov                 r4b, wb
+@@ -3144,6 +3201,7 @@ ALIGN function_align
      jmp .h16_main
  ALIGN function_align
  .h16:
 +    _CET_ENDBR
-     %assign stack_offset org_stack_offset
      ALLOC_STACK         -96, 10
      lea            maxbased, [wq+15]
-@@ -3372,6 +3430,7 @@ ALIGN function_align
+     lea                  r7, [strideq*3]
+@@ -3360,6 +3418,7 @@ ALIGN function_align
  .h16_end:
      RET
  .h32:
 +    _CET_ENDBR
-     %assign stack_offset org_stack_offset
      ALLOC_STACK        -160, 9
      lea            maxbased, [wq+31]
-@@ -3557,6 +3616,7 @@ ALIGN function_align
+     and            maxbased, 31
+@@ -3544,6 +3603,7 @@ ALIGN function_align
  .h32_end:
      RET
  .h64:
 +    _CET_ENDBR
-     %assign stack_offset org_stack_offset
      ALLOC_STACK        -256, 10
      lea            maxbased, [wq+63]
-@@ -3827,6 +3887,7 @@ cglobal ipred_filter_16bpc, 3, 9, 0, dst, stride, tl, 
+     test             angled, 0x400
+@@ -3812,6 +3872,7 @@ cglobal ipred_filter_16bpc, 3, 9, 0, dst, stride, tl, 
      mov                  hd, hm
      jmp                  wq
  .w4:
@@ -443,31 +443,31 @@ Index: src/x86/ipred16_avx2.asm
      WIN64_SPILL_XMM      10
      mova                xm8, [base+filter_shuf2]
      vpbroadcastw         m9, r8m ; bitdepth_max
-@@ -3846,6 +3907,7 @@ cglobal ipred_filter_16bpc, 3, 9, 0, dst, stride, tl, 
+@@ -3831,6 +3892,7 @@ cglobal ipred_filter_16bpc, 3, 9, 0, dst, stride, tl, 
      RET
  ALIGN function_align
  .w8:
 +    _CET_ENDBR
-     %assign stack_offset stack_offset - stack_size_padded
      WIN64_SPILL_XMM      16
      vbroadcasti128      m14, [base+filter_shuf3]
-@@ -3883,6 +3945,7 @@ ALIGN function_align
+     vpbroadcastw        m15, r8m ; bitdepth_max
+@@ -3867,6 +3929,7 @@ ALIGN function_align
      RET
  ALIGN function_align
  .w16:
 +    _CET_ENDBR
-     %assign stack_offset stack_offset - stack_size_padded
      ALLOC_STACK          32, 16
      vpbroadcastw        m15, r8m ; bitdepth_max
-@@ -3977,6 +4040,7 @@ ALIGN function_align
+     sub                  hd, 2
+@@ -3960,6 +4023,7 @@ ALIGN function_align
      ret
  ALIGN function_align
  .w32:
 +    _CET_ENDBR
-     %assign stack_offset org_stack_offset
      ALLOC_STACK          64, 16
      vpbroadcastw        m15, r8m ; bitdepth_max
-@@ -4171,14 +4235,18 @@ cglobal ipred_cfl_left_16bpc, 3, 7, 8, dst, stride, tl
+     sub                  hd, 2
+@@ -4153,14 +4217,18 @@ cglobal ipred_cfl_left_16bpc, 3, 7, 8, dst, stride, tl
      movifnidn           acq, acmp
      jmp                  r6
  .h32:
@@ -486,7 +486,7 @@ Index: src/x86/ipred16_avx2.asm
      punpcklwd           xm0, xm6
      psrlq               xm1, xm0, 32
      paddd               xm0, xm1
-@@ -4209,9 +4277,11 @@ cglobal ipred_cfl_16bpc, 3, 7, 8, dst, stride, tl, w, 
+@@ -4191,9 +4259,11 @@ cglobal ipred_cfl_16bpc, 3, 7, 8, dst, stride, tl, w, 
      movifnidn           acq, acmp
      jmp                  r6
  .h4:
@@ -498,7 +498,7 @@ Index: src/x86/ipred16_avx2.asm
      movq                xm1, [tlq+2]
      paddw                m0, m4
      paddw                m0, m1
-@@ -4239,6 +4309,7 @@ cglobal ipred_cfl_16bpc, 3, 7, 8, dst, stride, tl, w, 
+@@ -4221,6 +4291,7 @@ cglobal ipred_cfl_16bpc, 3, 7, 8, dst, stride, tl, w, 
  .w4_end:
      vpbroadcastw         m0, xm0
  .s4:
@@ -506,7 +506,7 @@ Index: src/x86/ipred16_avx2.asm
      vpbroadcastw         m1, alpham
      lea                  r6, [strideq*3]
      pabsw                m2, m1
-@@ -4260,9 +4331,11 @@ cglobal ipred_cfl_16bpc, 3, 7, 8, dst, stride, tl, w, 
+@@ -4242,9 +4313,11 @@ cglobal ipred_cfl_16bpc, 3, 7, 8, dst, stride, tl, w, 
      RET
  ALIGN function_align
  .h8:
@@ -518,7 +518,7 @@ Index: src/x86/ipred16_avx2.asm
      vextracti128        xm1, m0, 1
      paddw               xm0, [tlq+2]
      paddw               xm0, xm4
-@@ -4287,6 +4360,7 @@ ALIGN function_align
+@@ -4269,6 +4342,7 @@ ALIGN function_align
  .w8_end:
      vpbroadcastw         m0, xm0
  .s8:
@@ -526,7 +526,7 @@ Index: src/x86/ipred16_avx2.asm
      vpbroadcastw         m1, alpham
      lea                  r6, [strideq*3]
      pabsw                m2, m1
-@@ -4311,9 +4385,11 @@ ALIGN function_align
+@@ -4293,9 +4367,11 @@ ALIGN function_align
      RET
  ALIGN function_align
  .h16:
@@ -538,7 +538,7 @@ Index: src/x86/ipred16_avx2.asm
      paddw                m0, [tlq+2]
      vextracti128        xm1, m0, 1
      paddw               xm0, xm4
-@@ -4338,6 +4414,7 @@ ALIGN function_align
+@@ -4320,6 +4396,7 @@ ALIGN function_align
  .w16_end:
      vpbroadcastw         m0, xm0
  .s16:
@@ -546,7 +546,7 @@ Index: src/x86/ipred16_avx2.asm
      vpbroadcastw         m1, alpham
      pabsw                m2, m1
      psllw                m2, 9
-@@ -4359,10 +4436,12 @@ ALIGN function_align
+@@ -4341,10 +4418,12 @@ ALIGN function_align
      RET
  ALIGN function_align
  .h32:
@@ -559,7 +559,7 @@ Index: src/x86/ipred16_avx2.asm
      paddw                m0, [tlq+ 2]
      paddw                m0, [tlq+34]
      vextracti128        xm1, m0, 1
-@@ -4387,6 +4466,7 @@ ALIGN function_align
+@@ -4369,6 +4448,7 @@ ALIGN function_align
  .w32_end:
      vpbroadcastw         m0, xm0
  .s32:
@@ -567,7 +567,7 @@ Index: src/x86/ipred16_avx2.asm
      vpbroadcastw         m1, alpham
      pabsw                m2, m1
      psllw                m2, 9
-@@ -4432,6 +4512,7 @@ cglobal ipred_cfl_ac_420_16bpc, 4, 7, 6, ac, ypx, stri
+@@ -4414,6 +4494,7 @@ cglobal ipred_cfl_ac_420_16bpc, 4, 7, 6, ac, ypx, stri
      jg .w16
      je .w8
  .w4:
@@ -575,7 +575,7 @@ Index: src/x86/ipred16_avx2.asm
      lea                  r3, [strideq*3]
      mov                  r5, acq
  .w4_loop:
-@@ -4462,6 +4543,7 @@ cglobal ipred_cfl_ac_420_16bpc, 4, 7, 6, ac, ypx, stri
+@@ -4444,6 +4525,7 @@ cglobal ipred_cfl_ac_420_16bpc, 4, 7, 6, ac, ypx, stri
      jg .w4_hpad_loop
      jmp .dc
  .w8:
@@ -583,7 +583,7 @@ Index: src/x86/ipred16_avx2.asm
      mov                  r5, acq
      test              wpadd, wpadd
      jnz .w8_wpad1
-@@ -4532,6 +4614,7 @@ cglobal ipred_cfl_ac_420_16bpc, 4, 7, 6, ac, ypx, stri
+@@ -4514,6 +4596,7 @@ cglobal ipred_cfl_ac_420_16bpc, 4, 7, 6, ac, ypx, stri
      jg .w16_wpad
      jmp .w16_hpad
  .w16:
@@ -591,7 +591,7 @@ Index: src/x86/ipred16_avx2.asm
      mov                  r5, acq
      test              wpadd, wpadd
      jnz .w16_wpad
-@@ -4596,6 +4679,7 @@ cglobal ipred_cfl_ac_422_16bpc, 4, 7, 6, ac, ypx, stri
+@@ -4578,6 +4661,7 @@ cglobal ipred_cfl_ac_422_16bpc, 4, 7, 6, ac, ypx, stri
      jg .w16
      je .w8
  .w4:
@@ -599,7 +599,7 @@ Index: src/x86/ipred16_avx2.asm
      lea                  r3, [strideq*3]
      mov                  r5, acq
  .w4_loop:
-@@ -4626,6 +4710,7 @@ cglobal ipred_cfl_ac_422_16bpc, 4, 7, 6, ac, ypx, stri
+@@ -4608,6 +4692,7 @@ cglobal ipred_cfl_ac_422_16bpc, 4, 7, 6, ac, ypx, stri
      jg .w4_hpad_loop
      jmp mangle(private_prefix %+ _ipred_cfl_ac_420_16bpc_avx2).dc
  .w8:
@@ -607,7 +607,7 @@ Index: src/x86/ipred16_avx2.asm
      mov                  r5, acq
      test              wpadd, wpadd
      jnz .w8_wpad1
-@@ -4665,6 +4750,7 @@ cglobal ipred_cfl_ac_422_16bpc, 4, 7, 6, ac, ypx, stri
+@@ -4647,6 +4732,7 @@ cglobal ipred_cfl_ac_422_16bpc, 4, 7, 6, ac, ypx, stri
      jg .w8_wpad1
      jmp .w8_hpad
  .w16:
@@ -615,7 +615,7 @@ Index: src/x86/ipred16_avx2.asm
      mov                  r5, acq
      test              wpadd, wpadd
      jnz .w16_wpad
-@@ -4739,6 +4825,7 @@ cglobal ipred_cfl_ac_444_16bpc, 4, 7, 6, ac, ypx, stri
+@@ -4721,6 +4807,7 @@ cglobal ipred_cfl_ac_444_16bpc, 4, 7, 6, ac, ypx, stri
      sub                  hd, hpadd
      jmp                  wq
  .w4:
@@ -623,7 +623,7 @@ Index: src/x86/ipred16_avx2.asm
      lea                  r3, [strideq*3]
      mov                  r5, acq
  .w4_loop:
-@@ -4767,6 +4854,7 @@ cglobal ipred_cfl_ac_444_16bpc, 4, 7, 6, ac, ypx, stri
+@@ -4749,6 +4836,7 @@ cglobal ipred_cfl_ac_444_16bpc, 4, 7, 6, ac, ypx, stri
      paddd                m4, m1
      jmp mangle(private_prefix %+ _ipred_cfl_ac_420_16bpc_avx2).dc
  .w8:
@@ -631,7 +631,7 @@ Index: src/x86/ipred16_avx2.asm
      lea                  r3, [strideq*3]
      mov                  r5, acq
  .w8_loop:
-@@ -4800,6 +4888,7 @@ cglobal ipred_cfl_ac_444_16bpc, 4, 7, 6, ac, ypx, stri
+@@ -4782,6 +4870,7 @@ cglobal ipred_cfl_ac_444_16bpc, 4, 7, 6, ac, ypx, stri
      vpblendd             m1, m0, 0xf0
      jmp .w16_wpad_end
  .w16:
@@ -639,7 +639,7 @@ Index: src/x86/ipred16_avx2.asm
      mov                  r5, acq
  .w16_loop:
      mova                 m2, [ypxq+strideq*0]
-@@ -4824,6 +4913,7 @@ cglobal ipred_cfl_ac_444_16bpc, 4, 7, 6, ac, ypx, stri
+@@ -4806,6 +4895,7 @@ cglobal ipred_cfl_ac_444_16bpc, 4, 7, 6, ac, ypx, stri
      paddd                m0, m0
      jmp mangle(private_prefix %+ _ipred_cfl_ac_420_16bpc_avx2).hpad
  .w32:
@@ -647,43 +647,43 @@ Index: src/x86/ipred16_avx2.asm
      mov                  r5, acq
      test              wpadd, wpadd
      jnz .w32_wpad
-@@ -4899,6 +4989,7 @@ DEFINE_ARGS dst, stride, stride3, idx, w, h
+@@ -4881,6 +4971,7 @@ DEFINE_ARGS dst, stride, stride3, idx, w, h
      lea            stride3q, [strideq*3]
      jmp                  wq
  .w4:
 +    _CET_ENDBR
-     mova                xm2, [idxq]
-     add                idxq, 16
-     pshufb              xm1, xm3, xm2
-@@ -4914,6 +5005,7 @@ DEFINE_ARGS dst, stride, stride3, idx, w, h
+     movq                xm0, [idxq]
+     add                idxq, 8
+     psrlw               xm1, xm0, 4
+@@ -4898,6 +4989,7 @@ DEFINE_ARGS dst, stride, stride3, idx, w, h
      jg .w4
      RET
  .w8:
 +    _CET_ENDBR
-     movu                 m2, [idxq] ; only 16-byte alignment
-     add                idxq, 32
-     pshufb               m1, m3, m2
-@@ -4929,6 +5021,7 @@ DEFINE_ARGS dst, stride, stride3, idx, w, h
+     pmovzxbw             m2, [idxq]
+     add                idxq, 16
+     psllw                m1, m2, 4
+@@ -4915,6 +5007,7 @@ DEFINE_ARGS dst, stride, stride3, idx, w, h
      jg .w8
      RET
  .w16:
 +    _CET_ENDBR
-     vpermq               m2, [idxq+ 0], q3120
-     vpermq               m5, [idxq+32], q3120
-     add                idxq, 64
-@@ -4949,6 +5042,7 @@ DEFINE_ARGS dst, stride, stride3, idx, w, h
+     pshufd               m3, [idxq], q3120
+     add                idxq, 32
+     vpermq               m3, m3, q3120
+@@ -4938,6 +5031,7 @@ DEFINE_ARGS dst, stride, stride3, idx, w, h
      jg .w16
      RET
  .w32:
 +    _CET_ENDBR
-     vpermq               m2, [idxq+ 0], q3120
-     vpermq               m5, [idxq+32], q3120
-     add                idxq, 64
-@@ -4969,6 +5063,7 @@ DEFINE_ARGS dst, stride, stride3, idx, w, h
+     pshufd               m3, [idxq], q3120
+     add                idxq, 32
+     vpermq               m3, m3, q3120
+@@ -4961,6 +5055,7 @@ DEFINE_ARGS dst, stride, stride3, idx, w, h
      jg .w32
      RET
  .w64:
 +    _CET_ENDBR
-     vpermq               m2, [idxq+ 0], q3120
-     vpermq               m5, [idxq+32], q3120
-     add                idxq, 64
+     pshufd               m3, [idxq], q3120
+     add                idxq, 32
+     vpermq               m3, m3, q3120

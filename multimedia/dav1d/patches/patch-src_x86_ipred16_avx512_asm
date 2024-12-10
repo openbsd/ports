@@ -1,7 +1,7 @@
 Index: src/x86/ipred16_avx512.asm
 --- src/x86/ipred16_avx512.asm.orig
 +++ src/x86/ipred16_avx512.asm
-@@ -104,6 +104,7 @@ cglobal ipred_paeth_16bpc, 3, 7, 10, dst, stride, tl, 
+@@ -152,6 +152,7 @@ cglobal ipred_paeth_16bpc, 3, 7, 10, dst, stride, tl, 
      add                 wq, r6
      jmp                 wq
  .w4:
@@ -9,7 +9,7 @@ Index: src/x86/ipred16_avx512.asm
      vpbroadcastq        m4, [tlq+2] ; top
      movsldup            m7, [base+ipred_shuf]
      lea                 r6, [strideq*3]
-@@ -133,6 +134,7 @@ cglobal ipred_paeth_16bpc, 3, 7, 10, dst, stride, tl, 
+@@ -181,6 +182,7 @@ cglobal ipred_paeth_16bpc, 3, 7, 10, dst, stride, tl, 
  .w4_end:
      RET
  .w8:
@@ -17,7 +17,7 @@ Index: src/x86/ipred16_avx512.asm
      vbroadcasti32x4     m4, [tlq+2]
      movsldup            m7, [base+ipred_shuf]
      lea                 r6, [strideq*3]
-@@ -152,6 +154,7 @@ cglobal ipred_paeth_16bpc, 3, 7, 10, dst, stride, tl, 
+@@ -200,6 +202,7 @@ cglobal ipred_paeth_16bpc, 3, 7, 10, dst, stride, tl, 
      jg .w8_loop
      RET
  .w16:
@@ -25,7 +25,7 @@ Index: src/x86/ipred16_avx512.asm
      vbroadcasti32x8     m4, [tlq+2]
      movsldup            m7, [base+ipred_shuf]
      psubw               m5, m4, m3
-@@ -168,6 +171,7 @@ cglobal ipred_paeth_16bpc, 3, 7, 10, dst, stride, tl, 
+@@ -216,6 +219,7 @@ cglobal ipred_paeth_16bpc, 3, 7, 10, dst, stride, tl, 
      jg .w16_loop
      RET
  .w32:
@@ -33,7 +33,7 @@ Index: src/x86/ipred16_avx512.asm
      movu                m4, [tlq+2]
      psubw               m5, m4, m3
      pabsw               m6, m5
-@@ -181,6 +185,7 @@ cglobal ipred_paeth_16bpc, 3, 7, 10, dst, stride, tl, 
+@@ -229,6 +233,7 @@ cglobal ipred_paeth_16bpc, 3, 7, 10, dst, stride, tl, 
      jg .w32_loop
      RET
  .w64:
@@ -41,7 +41,7 @@ Index: src/x86/ipred16_avx512.asm
      movu                m4, [tlq+ 2]
      movu                m7, [tlq+66]
      psubw               m5, m4, m3
-@@ -212,6 +217,7 @@ cglobal ipred_smooth_v_16bpc, 3, 7, 7, dst, stride, tl
+@@ -260,6 +265,7 @@ cglobal ipred_smooth_v_16bpc, 3, 7, 7, dst, stride, tl
      lea            stride3q, [strideq*3]
      jmp                  wq
  .w4:
@@ -49,7 +49,7 @@ Index: src/x86/ipred16_avx512.asm
      vpbroadcastq         m5, [tlq+2]    ; top
      movsldup             m4, [ipred_shuf]
      psubw                m5, m6         ; top - bottom
-@@ -239,6 +245,7 @@ cglobal ipred_smooth_v_16bpc, 3, 7, 7, dst, stride, tl
+@@ -287,6 +293,7 @@ cglobal ipred_smooth_v_16bpc, 3, 7, 7, dst, stride, tl
  .end:
      RET
  .w8:
@@ -57,7 +57,7 @@ Index: src/x86/ipred16_avx512.asm
      vbroadcasti32x4      m5, [tlq+2]    ; top
      movsldup             m4, [ipred_shuf]
      psubw                m5, m6         ; top - bottom
-@@ -256,6 +263,7 @@ cglobal ipred_smooth_v_16bpc, 3, 7, 7, dst, stride, tl
+@@ -304,6 +311,7 @@ cglobal ipred_smooth_v_16bpc, 3, 7, 7, dst, stride, tl
      jl .w8_loop
      RET
  .w16:
@@ -65,7 +65,7 @@ Index: src/x86/ipred16_avx512.asm
      vbroadcasti32x8      m5, [tlq+2]    ; top
      movsldup             m4, [ipred_shuf]
      psubw                m5, m6         ; top - bottom
-@@ -277,6 +285,7 @@ cglobal ipred_smooth_v_16bpc, 3, 7, 7, dst, stride, tl
+@@ -325,6 +333,7 @@ cglobal ipred_smooth_v_16bpc, 3, 7, 7, dst, stride, tl
      jl .w16_loop
      RET
  .w32:
@@ -73,7 +73,7 @@ Index: src/x86/ipred16_avx512.asm
      movu                 m5, [tlq+2]
      psubw                m5, m6
  .w32_loop:
-@@ -295,6 +304,7 @@ cglobal ipred_smooth_v_16bpc, 3, 7, 7, dst, stride, tl
+@@ -343,6 +352,7 @@ cglobal ipred_smooth_v_16bpc, 3, 7, 7, dst, stride, tl
      jl .w32_loop
      RET
  .w64:
@@ -81,7 +81,7 @@ Index: src/x86/ipred16_avx512.asm
      movu                 m4, [tlq+ 2]
      movu                 m5, [tlq+66]
      psubw                m4, m6
-@@ -329,6 +339,7 @@ cglobal ipred_smooth_h_16bpc, 3, 7, 7, dst, stride, tl
+@@ -377,6 +387,7 @@ cglobal ipred_smooth_h_16bpc, 3, 7, 7, dst, stride, tl
      lea                  wq, [base+ipred_smooth_h_16bpc_avx512icl_table+wq]
      jmp                  wq
  .w4:
@@ -89,7 +89,7 @@ Index: src/x86/ipred16_avx512.asm
      movsldup             m4, [base+ipred_shuf]
      vpbroadcastq         m5, [base+smooth_weights_1d_16bpc+4*2]
  .w4_loop:
-@@ -356,6 +367,7 @@ cglobal ipred_smooth_h_16bpc, 3, 7, 7, dst, stride, tl
+@@ -404,6 +415,7 @@ cglobal ipred_smooth_h_16bpc, 3, 7, 7, dst, stride, tl
  .end:
      RET
  .w8:
@@ -97,7 +97,7 @@ Index: src/x86/ipred16_avx512.asm
      movsldup             m4, [base+ipred_shuf]
      vbroadcasti32x4      m5, [base+smooth_weights_1d_16bpc+8*2]
  .w8_loop:
-@@ -373,6 +385,7 @@ cglobal ipred_smooth_h_16bpc, 3, 7, 7, dst, stride, tl
+@@ -421,6 +433,7 @@ cglobal ipred_smooth_h_16bpc, 3, 7, 7, dst, stride, tl
      jg .w8_loop
      RET
  .w16:
@@ -105,7 +105,7 @@ Index: src/x86/ipred16_avx512.asm
      movsldup             m4, [base+ipred_shuf]
      vbroadcasti32x8      m5, [base+smooth_weights_1d_16bpc+16*2]
  .w16_loop:
-@@ -395,6 +408,7 @@ cglobal ipred_smooth_h_16bpc, 3, 7, 7, dst, stride, tl
+@@ -443,6 +456,7 @@ cglobal ipred_smooth_h_16bpc, 3, 7, 7, dst, stride, tl
      jg .w16_loop
      RET
  .w32:
@@ -113,7 +113,7 @@ Index: src/x86/ipred16_avx512.asm
      movu                 m5, [base+smooth_weights_1d_16bpc+32*2]
  .w32_loop:
      vpbroadcastq         m3, [tlq+hq-8]
-@@ -415,6 +429,7 @@ cglobal ipred_smooth_h_16bpc, 3, 7, 7, dst, stride, tl
+@@ -463,6 +477,7 @@ cglobal ipred_smooth_h_16bpc, 3, 7, 7, dst, stride, tl
      jg .w32_loop
      RET
  .w64:
@@ -121,7 +121,7 @@ Index: src/x86/ipred16_avx512.asm
      movu                 m4, [base+smooth_weights_1d_16bpc+64*2]
      movu                 m5, [base+smooth_weights_1d_16bpc+64*3]
  .w64_loop:
-@@ -456,6 +471,7 @@ cglobal ipred_smooth_16bpc, 3, 7, 16, dst, stride, tl,
+@@ -504,6 +519,7 @@ cglobal ipred_smooth_16bpc, 3, 7, 16, dst, stride, tl,
      lea         v_weightsq, [base+smooth_weights_2d_16bpc+hq*2]
      jmp                 wq
  .w4:
@@ -129,7 +129,7 @@ Index: src/x86/ipred16_avx512.asm
      vpbroadcastq        m5, [tlq+hq+2]
      movshdup            m3, [base+ipred_shuf]
      movsldup            m4, [base+ipred_shuf]
-@@ -483,6 +499,7 @@ cglobal ipred_smooth_16bpc, 3, 7, 16, dst, stride, tl,
+@@ -531,6 +547,7 @@ cglobal ipred_smooth_16bpc, 3, 7, 16, dst, stride, tl,
      jg .w4_loop
      RET
  .w8:
@@ -137,7 +137,7 @@ Index: src/x86/ipred16_avx512.asm
      vbroadcasti32x4    ym5, [tlq+hq+2]
      movshdup            m6, [base+ipred_shuf]
      movsldup            m7, [base+ipred_shuf]
-@@ -517,6 +534,7 @@ cglobal ipred_smooth_16bpc, 3, 7, 16, dst, stride, tl,
+@@ -565,6 +582,7 @@ cglobal ipred_smooth_16bpc, 3, 7, 16, dst, stride, tl,
      jg .w8_loop
      RET
  .w16:
@@ -145,7 +145,7 @@ Index: src/x86/ipred16_avx512.asm
      pmovzxwd            m5, [tlq+hq+2]
      mova                m6, [base+smooth_weights_2d_16bpc+16*4]
      vpblendmw       m5{k1}, m0, m5       ; top, bottom
-@@ -541,6 +559,7 @@ cglobal ipred_smooth_16bpc, 3, 7, 16, dst, stride, tl,
+@@ -589,6 +607,7 @@ cglobal ipred_smooth_16bpc, 3, 7, 16, dst, stride, tl,
      jg .w16_loop
      RET
  .w32:
@@ -153,7 +153,7 @@ Index: src/x86/ipred16_avx512.asm
      pmovzxwd            m5, [tlq+hq+ 2]
      pmovzxwd            m6, [tlq+hq+34]
      mova                m7, [base+smooth_weights_2d_16bpc+32*4]
-@@ -574,6 +593,7 @@ cglobal ipred_smooth_16bpc, 3, 7, 16, dst, stride, tl,
+@@ -622,6 +641,7 @@ cglobal ipred_smooth_16bpc, 3, 7, 16, dst, stride, tl,
      jg .w32_loop
      RET
  .w64:
@@ -161,43 +161,187 @@ Index: src/x86/ipred16_avx512.asm
      pmovzxwd            m5, [tlq+hq+ 2]
      pmovzxwd            m6, [tlq+hq+34]
      pmovzxwd            m7, [tlq+hq+66]
-@@ -621,6 +641,7 @@ cglobal pal_pred_16bpc, 4, 7, 4, dst, stride, pal, idx
+@@ -682,6 +702,7 @@ cglobal ipred_z1_16bpc, 3, 8, 16, dst, stride, tl, w, 
+     vpbroadcastd        m15, [base+pw_31806]
+     jmp                  wq
+ .w4:
++    _CET_ENDBR
+     vpbroadcastw         m5, [tlq+14]
+     vinserti32x4         m5, [tlq], 0
+     cmp              angleb, 40
+@@ -775,6 +796,7 @@ cglobal ipred_z1_16bpc, 3, 8, 16, dst, stride, tl, w, 
+     pminsw               m5, m0
+     ret
+ .w8:
++    _CET_ENDBR
+     lea                 r3d, [angleq+216]
+     movu                ym5, [tlq]
+     mov                 r3b, hb
+@@ -882,6 +904,7 @@ cglobal ipred_z1_16bpc, 3, 8, 16, dst, stride, tl, w, 
+     pavgw                m5, m1
+     ret
+ .w16:
++    _CET_ENDBR
+     lea                 r3d, [hq+15]
+     vpbroadcastb        ym0, r3d
+     and                 r3d, 15
+@@ -961,6 +984,7 @@ cglobal ipred_z1_16bpc, 3, 8, 16, dst, stride, tl, w, 
+     mov                 rsp, r7
+     RET
+ .w32:
++    _CET_ENDBR
+     lea                 r3d, [hq+31]
+     movu                 m7, [tlq+64*0]
+     and                 r3d, 31
+@@ -1088,6 +1112,7 @@ cglobal ipred_z1_16bpc, 3, 8, 16, dst, stride, tl, w, 
+     paddw                m0, m1
+     ret
+ .w64:
++    _CET_ENDBR
+     movu                 m7, [tlq+64*0]
+     lea                 r3d, [hq-1]
+     movu                 m8, [tlq+64*1]
+@@ -1203,6 +1228,7 @@ cglobal ipred_z2_16bpc, 3, 9, 16, dst, stride, tl, w, 
+     vpbroadcastd        m15, [base+pw_1]
+     jmp                  wq
+ .w4:
++    _CET_ENDBR
+     movq                xm3, [tlq]
+     vpbroadcastq         m8, [base+pw_1to32]
+     test             angled, 0x400
+@@ -1457,6 +1483,7 @@ cglobal ipred_z2_16bpc, 3, 9, 16, dst, stride, tl, w, 
+     vpsrlw           m8{k1}, m1, 2
+     ret
+ .w8:
++    _CET_ENDBR
+     mova                xm3, [tlq]
+     vbroadcasti32x4      m8, [base+pw_1to32]
+     test             angled, 0x400
+@@ -1559,6 +1586,7 @@ cglobal ipred_z2_16bpc, 3, 9, 16, dst, stride, tl, w, 
+ .w8_end:
+     RET
+ .w16:
++    _CET_ENDBR
+     mova                ym3, [tlq]
+     vpermw               m8, m0, [tlq-64*2]
+     test             angled, 0x400
+@@ -1644,6 +1672,7 @@ cglobal ipred_z2_16bpc, 3, 9, 16, dst, stride, tl, w, 
+ .w16_end:
+     RET
+ .w32:
++    _CET_ENDBR
+     mova                 m3, [tlq]
+     vpermw               m8, m0, [tlq-64*2]
+     mova                 m9, [base+pw_1to32]
+@@ -1738,6 +1767,7 @@ cglobal ipred_z2_16bpc, 3, 9, 16, dst, stride, tl, w, 
+ .w32_end:
+     ret
+ .w64:
++    _CET_ENDBR
+     movu                 m3, [tlq+66]
+     vpermw               m8, m0, [tlq-64*2]
+     mova                 m9, [base+pw_1to32]
+@@ -1803,6 +1833,7 @@ cglobal ipred_z3_16bpc, 3, 8, 16, dst, stride, tl, w, 
+     vpbroadcastd        m15, [base+pw_1]
+     jmp                  wq
+ .w4:
++    _CET_ENDBR
+     lea                 r3d, [hq+3]
+     xor                 r3d, 31 ; 32 - (h + imin(w, h))
+     vpbroadcastw         m7, r3d
+@@ -1891,6 +1922,7 @@ cglobal ipred_z3_16bpc, 3, 8, 16, dst, stride, tl, w, 
+     pminsw               m6, m0
+     ret
+ .w8:
++    _CET_ENDBR
+     mova                 m6, [tlq-64*1]
+     cmp                  hd, 32
+     je .w8_h32
+@@ -2018,6 +2050,7 @@ cglobal ipred_z3_16bpc, 3, 8, 16, dst, stride, tl, w, 
+ .filter32_end:
+     ret
+ .w16:
++    _CET_ENDBR
+     mova                 m6, [tlq-64*1]
+     cmp                  hd, 32
+     jl .w16_h16
+@@ -2172,6 +2205,7 @@ cglobal ipred_z3_16bpc, 3, 8, 16, dst, stride, tl, w, 
+     psrlw                m7, 2
+     ret
+ .w32:
++    _CET_ENDBR
+     mova                 m6, [tlq-64*1]
+     cmp                  hd, 32
+     jl .w32_h16
+@@ -2282,6 +2316,7 @@ cglobal ipred_z3_16bpc, 3, 8, 16, dst, stride, tl, w, 
+     psrlw                m8, 2
+     ret
+ .w64:
++    _CET_ENDBR
+     mova                 m7, [tlq-64*1]
+     vpermw               m6, m0, m7
+     cmp                  hd, 32
+@@ -2429,6 +2464,7 @@ cglobal pal_pred_16bpc, 4, 7, 7, dst, stride, pal, idx
      lea            stride3q, [strideq*3]
      jmp                  wq
  .w4:
 +    _CET_ENDBR
-     pmovzxbw            ym0, [idxq]
-     add                idxq, 16
-     vpermw              ym0, ym0, ym3
-@@ -634,6 +655,7 @@ cglobal pal_pred_16bpc, 4, 7, 4, dst, stride, pal, idx
+     pmovzxbd            ym0, [idxq]
+     add                idxq, 8
+     vpmultishiftqb      ym0, ym4, ym0
+@@ -2443,6 +2479,7 @@ cglobal pal_pred_16bpc, 4, 7, 7, dst, stride, pal, idx
      jg .w4
      RET
  .w8:
 +    _CET_ENDBR
-     pmovzxbw             m0, [idxq]
-     add                idxq, 32
-     vpermw               m0, m0, m3
-@@ -646,6 +668,7 @@ cglobal pal_pred_16bpc, 4, 7, 4, dst, stride, pal, idx
+     pmovzxbd             m0, [idxq]
+     add                idxq, 16
+     vpmultishiftqb       m0, m4, m0
+@@ -2456,6 +2493,7 @@ cglobal pal_pred_16bpc, 4, 7, 7, dst, stride, pal, idx
      jg .w8
      RET
  .w16:
 +    _CET_ENDBR
-     vpermb               m1, m2, [idxq]
-     add                idxq, 64
-     vpermw               m0, m1, m3
-@@ -660,6 +683,7 @@ cglobal pal_pred_16bpc, 4, 7, 4, dst, stride, pal, idx
+     movu                ym1, [idxq]
+     add                idxq, 32
+     vpermb               m1, m3, m1
+@@ -2472,6 +2510,7 @@ cglobal pal_pred_16bpc, 4, 7, 7, dst, stride, pal, idx
      jg .w16
      RET
  .w32:
 +    _CET_ENDBR
-     vpermb               m1, m2, [idxq]
+     vpermb               m2, m3, [idxq]
      add                idxq, 64
-     vpermw               m0, m1, m3
-@@ -672,6 +696,7 @@ cglobal pal_pred_16bpc, 4, 7, 4, dst, stride, pal, idx
+     vpmultishiftqb       m1, m4, m2
+@@ -2491,6 +2530,7 @@ cglobal pal_pred_16bpc, 4, 7, 7, dst, stride, pal, idx
      jg .w32
      RET
  .w64:
 +    _CET_ENDBR
-     vpermb               m1, m2, [idxq]
+     vpermb               m2, m3, [idxq]
      add                idxq, 64
-     vpermw               m0, m1, m3
+     vpmultishiftqb       m1, m4, m2
+@@ -2544,6 +2584,7 @@ cglobal ipred_filter_16bpc, 4, 7, 14, dst, stride, tl,
+     sub                  wd, 8
+     jl .w4
+ .w8:
++    _CET_ENDBR
+     call .main4
+     movsldup            m11, [filter_permB]
+     lea                 r5d, [hq*2+2]
+@@ -2571,6 +2612,7 @@ cglobal ipred_filter_16bpc, 4, 7, 14, dst, stride, tl,
+     kmovb                k1, r2d
+     lea                  r2, [strideq*3]
+ .w16:
++    _CET_ENDBR
+     movd               xmm0, [r7+strideq*1+12]
+     vpblendd           xmm0, [topq+8], 0x0e ; t1 t2
+     pinsrw              xm4, xmm0, [r7+strideq*0+14], 2
+@@ -2614,6 +2656,7 @@ cglobal ipred_filter_16bpc, 4, 7, 14, dst, stride, tl,
+     lea                dstq, [dstq+strideq*2]
+     sub                 tlq, 4
+ .w4:
++    _CET_ENDBR
+     call .main4
+     movq   [dstq+strideq*0], xm0
+     movhps [dstq+strideq*1], xm0

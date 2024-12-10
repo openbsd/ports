@@ -1,7 +1,7 @@
 Index: src/x86/ipred_avx512.asm
 --- src/x86/ipred_avx512.asm.orig
 +++ src/x86/ipred_avx512.asm
-@@ -168,18 +168,23 @@ cglobal ipred_dc_left_8bpc, 3, 7, 5, dst, stride, tl, 
+@@ -256,18 +256,23 @@ cglobal ipred_dc_left_8bpc, 3, 7, 5, dst, stride, tl, 
      add                  wq, r5
      jmp                  r6
  .h64:
@@ -25,7 +25,7 @@ Index: src/x86/ipred_avx512.asm
      vpsrlvd             xm0, xmm3
      lea            stride3q, [strideq*3]
      vpbroadcastb         m0, xm0
-@@ -204,10 +209,12 @@ cglobal ipred_dc_8bpc, 3, 7, 5, dst, stride, tl, w, h,
+@@ -292,10 +297,12 @@ cglobal ipred_dc_8bpc, 3, 7, 5, dst, stride, tl, w, h,
      lea            stride3q, [strideq*3]
      jmp                  r6
  .h4:
@@ -38,7 +38,7 @@ Index: src/x86/ipred_avx512.asm
      movd               xmm1, [tlq+1]
      vpdpbusd            xm0, xmm1, xm3
      cmp                  hd, 4
-@@ -228,6 +235,7 @@ cglobal ipred_dc_8bpc, 3, 7, 5, dst, stride, tl, w, h,
+@@ -316,6 +323,7 @@ cglobal ipred_dc_8bpc, 3, 7, 5, dst, stride, tl, w, h,
  .w4_end:
      vpbroadcastb        xm0, xmm0
  .s4:
@@ -46,7 +46,7 @@ Index: src/x86/ipred_avx512.asm
      movd   [dstq+strideq*0], xm0
      movd   [dstq+strideq*1], xm0
      movd   [dstq+strideq*2], xm0
-@@ -237,10 +245,12 @@ cglobal ipred_dc_8bpc, 3, 7, 5, dst, stride, tl, w, h,
+@@ -325,10 +333,12 @@ cglobal ipred_dc_8bpc, 3, 7, 5, dst, stride, tl, w, h,
      jg .s4
      RET
  .h8:
@@ -59,7 +59,7 @@ Index: src/x86/ipred_avx512.asm
      movq               xmm1, [tlq+1]
      vextracti32x4       xm2, ym0, 1
      vpdpbusd            xm0, xmm1, xm3
-@@ -261,6 +271,7 @@ cglobal ipred_dc_8bpc, 3, 7, 5, dst, stride, tl, w, h,
+@@ -349,6 +359,7 @@ cglobal ipred_dc_8bpc, 3, 7, 5, dst, stride, tl, w, h,
  .w8_end:
      vpbroadcastb        xm0, xmm0
  .s8:
@@ -67,7 +67,7 @@ Index: src/x86/ipred_avx512.asm
      movq   [dstq+strideq*0], xm0
      movq   [dstq+strideq*1], xm0
      movq   [dstq+strideq*2], xm0
-@@ -270,10 +281,12 @@ cglobal ipred_dc_8bpc, 3, 7, 5, dst, stride, tl, w, h,
+@@ -358,10 +369,12 @@ cglobal ipred_dc_8bpc, 3, 7, 5, dst, stride, tl, w, h,
      jg .s8
      RET
  .h16:
@@ -80,7 +80,7 @@ Index: src/x86/ipred_avx512.asm
      movu               xmm1, [tlq+1]
      vextracti32x4       xm2, ym0, 1
      vpdpbusd            xm0, xmm1, xm3
-@@ -294,6 +307,7 @@ cglobal ipred_dc_8bpc, 3, 7, 5, dst, stride, tl, w, h,
+@@ -382,6 +395,7 @@ cglobal ipred_dc_8bpc, 3, 7, 5, dst, stride, tl, w, h,
  .w16_end:
      vpbroadcastb        xm0, xmm0
  .s16:
@@ -88,7 +88,7 @@ Index: src/x86/ipred_avx512.asm
      mova   [dstq+strideq*0], xm0
      mova   [dstq+strideq*1], xm0
      mova   [dstq+strideq*2], xm0
-@@ -303,10 +317,12 @@ cglobal ipred_dc_8bpc, 3, 7, 5, dst, stride, tl, w, h,
+@@ -391,10 +405,12 @@ cglobal ipred_dc_8bpc, 3, 7, 5, dst, stride, tl, w, h,
      jg .s16
      RET
  .h32:
@@ -101,7 +101,7 @@ Index: src/x86/ipred_avx512.asm
      movu                ym1, [tlq+1]
      vpdpbusd            ym0, ym1, ym3
      vextracti32x4       xm1, ym0, 1
-@@ -326,6 +342,7 @@ cglobal ipred_dc_8bpc, 3, 7, 5, dst, stride, tl, w, h,
+@@ -414,6 +430,7 @@ cglobal ipred_dc_8bpc, 3, 7, 5, dst, stride, tl, w, h,
  .w32_end:
      vpbroadcastb        ym0, xmm0
  .s32:
@@ -109,7 +109,7 @@ Index: src/x86/ipred_avx512.asm
      mova   [dstq+strideq*0], ym0
      mova   [dstq+strideq*1], ym0
      mova   [dstq+strideq*2], ym0
-@@ -335,12 +352,14 @@ cglobal ipred_dc_8bpc, 3, 7, 5, dst, stride, tl, w, h,
+@@ -423,12 +440,14 @@ cglobal ipred_dc_8bpc, 3, 7, 5, dst, stride, tl, w, h,
      jg .s32
      RET
  .h64:
@@ -124,7 +124,7 @@ Index: src/x86/ipred_avx512.asm
      movu                ym1, [tlq+ 1]
      movu                ym2, [tlq+33]
      vpdpbusd            ym0, ym1, ym3
-@@ -361,6 +380,7 @@ cglobal ipred_dc_8bpc, 3, 7, 5, dst, stride, tl, w, h,
+@@ -449,6 +468,7 @@ cglobal ipred_dc_8bpc, 3, 7, 5, dst, stride, tl, w, h,
  .w64_end:
      vpbroadcastb         m0, xmm0
  .s64:
@@ -132,7 +132,7 @@ Index: src/x86/ipred_avx512.asm
      mova   [dstq+strideq*0], m0
      mova   [dstq+strideq*1], m0
      mova   [dstq+strideq*2], m0
-@@ -401,6 +421,7 @@ cglobal ipred_h_8bpc, 3, 7, 8, dst, stride, tl, w, h, 
+@@ -489,6 +509,7 @@ cglobal ipred_h_8bpc, 3, 7, 8, dst, stride, tl, w, h, 
      add                  wq, r6
      jmp                  wq
  .w4:
@@ -140,7 +140,7 @@ Index: src/x86/ipred_avx512.asm
      mova               xmm1, [base+ipred_h_shuf+16]
  .w4_loop:
      movd               xmm0, [tlq+hq-4]
-@@ -414,6 +435,7 @@ cglobal ipred_h_8bpc, 3, 7, 8, dst, stride, tl, w, h, 
+@@ -502,6 +523,7 @@ cglobal ipred_h_8bpc, 3, 7, 8, dst, stride, tl, w, h, 
      jg .w4_loop
      RET
  .w8:
@@ -148,7 +148,7 @@ Index: src/x86/ipred_avx512.asm
      movsldup           xmm2, [base+ipred_h_shuf+16]
      movshdup           xmm3, [base+ipred_h_shuf+16]
  .w8_loop:
-@@ -429,6 +451,7 @@ cglobal ipred_h_8bpc, 3, 7, 8, dst, stride, tl, w, h, 
+@@ -517,6 +539,7 @@ cglobal ipred_h_8bpc, 3, 7, 8, dst, stride, tl, w, h, 
      jg .w8_loop
      RET
  .w16:
@@ -156,7 +156,7 @@ Index: src/x86/ipred_avx512.asm
      movsldup             m1, [base+smooth_shuf]
  .w16_loop:
      vpbroadcastd         m0, [tlq+hq-4]
-@@ -442,6 +465,7 @@ cglobal ipred_h_8bpc, 3, 7, 8, dst, stride, tl, w, h, 
+@@ -530,6 +553,7 @@ cglobal ipred_h_8bpc, 3, 7, 8, dst, stride, tl, w, h, 
      jg .w16
      RET
  .w32:
@@ -164,7 +164,7 @@ Index: src/x86/ipred_avx512.asm
      vpbroadcastd        ym3, [base+pb_1]
      vpord                m2, m3, [base+pb_2] {1to16}
  .w32_loop:
-@@ -457,6 +481,7 @@ cglobal ipred_h_8bpc, 3, 7, 8, dst, stride, tl, w, h, 
+@@ -545,6 +569,7 @@ cglobal ipred_h_8bpc, 3, 7, 8, dst, stride, tl, w, h, 
      jg .w32_loop
      RET
  .w64:
@@ -172,7 +172,7 @@ Index: src/x86/ipred_avx512.asm
      vpbroadcastd         m4, [base+pb_3]
      vpbroadcastd         m5, [base+pb_2]
      vpbroadcastd         m6, [base+pb_1]
-@@ -509,6 +534,7 @@ cglobal ipred_paeth_8bpc, 3, 7, 10, dst, stride, tl, w
+@@ -597,6 +622,7 @@ cglobal ipred_paeth_8bpc, 3, 7, 10, dst, stride, tl, w
      jmp                  wq
  INIT_YMM avx512icl
  .w4:
@@ -180,7 +180,7 @@ Index: src/x86/ipred_avx512.asm
      vpbroadcastd         m6, [topq]
      mova                 m9, [ipred_h_shuf]
      psubusb              m7, m5, m6
-@@ -536,6 +562,7 @@ INIT_YMM avx512icl
+@@ -624,6 +650,7 @@ INIT_YMM avx512icl
      RET
  INIT_ZMM avx512icl
  .w8:
@@ -188,7 +188,7 @@ Index: src/x86/ipred_avx512.asm
      vpbroadcastq         m6, [topq]
      movsldup             m9, [smooth_shuf]
      psubusb              m7, m5, m6
-@@ -564,6 +591,7 @@ INIT_ZMM avx512icl
+@@ -652,6 +679,7 @@ INIT_ZMM avx512icl
  .w8_ret:
      RET
  .w16:
@@ -196,7 +196,7 @@ Index: src/x86/ipred_avx512.asm
      vbroadcasti32x4      m6, [topq]
      movsldup             m9, [smooth_shuf]
      psubusb              m7, m5, m6
-@@ -582,6 +610,7 @@ INIT_ZMM avx512icl
+@@ -670,6 +698,7 @@ INIT_ZMM avx512icl
      jg .w16_loop
      RET
  .w32:
@@ -204,7 +204,7 @@ Index: src/x86/ipred_avx512.asm
      vbroadcasti32x8      m6, [topq]
      mova                ym9, ym8
      psubusb              m7, m5, m6
-@@ -598,6 +627,7 @@ INIT_ZMM avx512icl
+@@ -686,6 +715,7 @@ INIT_ZMM avx512icl
      jg .w32_loop
      RET
  .w64:
@@ -212,7 +212,7 @@ Index: src/x86/ipred_avx512.asm
      movu                 m6, [topq]
      psubusb              m7, m5, m6
      psubusb              m0, m6, m5
-@@ -626,6 +656,7 @@ cglobal ipred_smooth_v_8bpc, 3, 7, 7, dst, stride, tl,
+@@ -714,6 +744,7 @@ cglobal ipred_smooth_v_8bpc, 3, 7, 7, dst, stride, tl,
      lea            stride3q, [strideq*3]
      jmp                  wq
  .w4:
@@ -220,7 +220,7 @@ Index: src/x86/ipred_avx512.asm
      vpbroadcastd         m2, [tlq+1]
      movshdup             m5, [smooth_shuf]
      mova                ym6, [smooth_endA]
-@@ -656,6 +687,7 @@ cglobal ipred_smooth_v_8bpc, 3, 7, 7, dst, stride, tl,
+@@ -744,6 +775,7 @@ cglobal ipred_smooth_v_8bpc, 3, 7, 7, dst, stride, tl,
  .ret:
      RET
  .w8:
@@ -228,7 +228,7 @@ Index: src/x86/ipred_avx512.asm
      vpbroadcastq         m2, [tlq+1]
      movshdup             m5, [smooth_shuf]
      mova                ym6, [smooth_endA]
-@@ -679,6 +711,7 @@ cglobal ipred_smooth_v_8bpc, 3, 7, 7, dst, stride, tl,
+@@ -767,6 +799,7 @@ cglobal ipred_smooth_v_8bpc, 3, 7, 7, dst, stride, tl,
      jl .w8_loop
      RET
  .w16:
@@ -236,7 +236,7 @@ Index: src/x86/ipred_avx512.asm
      vbroadcasti32x4      m3, [tlq+1]
      movshdup             m6, [smooth_shuf]
      mova                 m7, [smooth_endB]
-@@ -707,6 +740,7 @@ cglobal ipred_smooth_v_8bpc, 3, 7, 7, dst, stride, tl,
+@@ -795,6 +828,7 @@ cglobal ipred_smooth_v_8bpc, 3, 7, 7, dst, stride, tl,
      jl .w16_loop
      RET
  .w32:
@@ -244,7 +244,7 @@ Index: src/x86/ipred_avx512.asm
      vbroadcasti32x8      m3, [tlq+1]
      movshdup             m6, [smooth_shuf]
      mova                 m7, [smooth_endB]
-@@ -733,6 +767,7 @@ cglobal ipred_smooth_v_8bpc, 3, 7, 7, dst, stride, tl,
+@@ -821,6 +855,7 @@ cglobal ipred_smooth_v_8bpc, 3, 7, 7, dst, stride, tl,
      jl .w32_loop
      RET
  .w64:
@@ -252,7 +252,7 @@ Index: src/x86/ipred_avx512.asm
      movu                 m3, [tlq+1]
      mova                 m6, [smooth_endB]
      punpcklbw            m2, m3, m4
-@@ -772,6 +807,7 @@ cglobal ipred_smooth_h_8bpc, 4, 7, 11, dst, stride, tl
+@@ -860,6 +895,7 @@ cglobal ipred_smooth_h_8bpc, 4, 7, 11, dst, stride, tl
      lea            stride3q, [strideq*3]
      jmp                  wq
  .w4:
@@ -260,7 +260,7 @@ Index: src/x86/ipred_avx512.asm
      movsldup             m3, [smooth_shuf]
      vpbroadcastq         m7, [smooth_weights+4*2]
      mova                ym8, [smooth_endA]
-@@ -802,6 +838,7 @@ cglobal ipred_smooth_h_8bpc, 4, 7, 11, dst, stride, tl
+@@ -890,6 +926,7 @@ cglobal ipred_smooth_h_8bpc, 4, 7, 11, dst, stride, tl
  .ret:
      RET
  .w8:
@@ -268,7 +268,7 @@ Index: src/x86/ipred_avx512.asm
      movsldup             m3, [smooth_shuf]
      vbroadcasti32x4      m7, [smooth_weights+8*2]
      mova                ym8, [smooth_endA]
-@@ -825,6 +862,7 @@ cglobal ipred_smooth_h_8bpc, 4, 7, 11, dst, stride, tl
+@@ -913,6 +950,7 @@ cglobal ipred_smooth_h_8bpc, 4, 7, 11, dst, stride, tl
      jg .w8_loop
      RET
  .w16:
@@ -276,7 +276,7 @@ Index: src/x86/ipred_avx512.asm
      movsldup             m7, [smooth_shuf]
      vbroadcasti32x4      m8, [smooth_weights+16*2]
      vbroadcasti32x4      m9, [smooth_weights+16*3]
-@@ -850,6 +888,7 @@ cglobal ipred_smooth_h_8bpc, 4, 7, 11, dst, stride, tl
+@@ -938,6 +976,7 @@ cglobal ipred_smooth_h_8bpc, 4, 7, 11, dst, stride, tl
      jg .w16_loop
      RET
  .w32:
@@ -284,7 +284,7 @@ Index: src/x86/ipred_avx512.asm
      mova                m10, [smooth_endA]
      vpbroadcastd        ym7, [pb_1]
      vbroadcasti32x8      m8, [smooth_weights+32*2]
-@@ -874,6 +913,7 @@ cglobal ipred_smooth_h_8bpc, 4, 7, 11, dst, stride, tl
+@@ -962,6 +1001,7 @@ cglobal ipred_smooth_h_8bpc, 4, 7, 11, dst, stride, tl
      jg .w32_loop
      RET
  .w64:
@@ -292,7 +292,7 @@ Index: src/x86/ipred_avx512.asm
      mova                 m7, [smooth_weights+64*2]
      mova                 m8, [smooth_weights+64*3]
      mova                 m9, [smooth_endA]
-@@ -912,6 +952,7 @@ cglobal ipred_smooth_8bpc, 4, 7, 16, dst, stride, tl, 
+@@ -1000,6 +1040,7 @@ cglobal ipred_smooth_8bpc, 4, 7, 16, dst, stride, tl, 
      lea            stride3q, [strideq*3]
      jmp                  wq
  .w4:
@@ -300,7 +300,7 @@ Index: src/x86/ipred_avx512.asm
      vpbroadcastd         m8, [tlq+hq+1]
      movsldup             m4, [smooth_shuf]
      movshdup             m5, [smooth_shuf]
-@@ -954,6 +995,7 @@ cglobal ipred_smooth_8bpc, 4, 7, 16, dst, stride, tl, 
+@@ -1042,6 +1083,7 @@ cglobal ipred_smooth_8bpc, 4, 7, 16, dst, stride, tl, 
  .ret:
      RET
  .w8:
@@ -308,7 +308,7 @@ Index: src/x86/ipred_avx512.asm
      vpbroadcastq         m8, [tlq+hq+1]
      movsldup             m4, [smooth_shuf]
      movshdup             m5, [smooth_shuf]
-@@ -988,6 +1030,7 @@ cglobal ipred_smooth_8bpc, 4, 7, 16, dst, stride, tl, 
+@@ -1076,6 +1118,7 @@ cglobal ipred_smooth_8bpc, 4, 7, 16, dst, stride, tl, 
      jg .w8_loop
      RET
  .w16:
@@ -316,7 +316,7 @@ Index: src/x86/ipred_avx512.asm
      vbroadcasti32x4      m9, [tlq+hq+1]
      movsldup             m5, [smooth_shuf]
      movshdup            m10, [smooth_shuf]
-@@ -1031,6 +1074,7 @@ cglobal ipred_smooth_8bpc, 4, 7, 16, dst, stride, tl, 
+@@ -1119,6 +1162,7 @@ cglobal ipred_smooth_8bpc, 4, 7, 16, dst, stride, tl, 
      jg .w16_loop
      RET
  .w32:
@@ -324,7 +324,7 @@ Index: src/x86/ipred_avx512.asm
      vbroadcasti32x8      m9, [tlq+hq+1]
      movshdup            m10, [smooth_shuf]
      mova                m12, [smooth_weights+32*2]
-@@ -1073,6 +1117,7 @@ cglobal ipred_smooth_8bpc, 4, 7, 16, dst, stride, tl, 
+@@ -1161,6 +1205,7 @@ cglobal ipred_smooth_8bpc, 4, 7, 16, dst, stride, tl, 
      jg .w32_loop
      RET
  .w64:
@@ -332,43 +332,179 @@ Index: src/x86/ipred_avx512.asm
      movu                 m9, [tlq+hq+1]
      mova                m11, [smooth_weights+64*2]
      mova                 m2, [smooth_weights+64*3]
-@@ -1122,6 +1167,7 @@ cglobal pal_pred_8bpc, 4, 7, 5, dst, stride, pal, idx,
-     lea            stride3q, [strideq*3]
-     jmp                  wq
+@@ -1208,6 +1253,7 @@ cglobal pal_pred_8bpc, 4, 7, 6, dst, stride, pal, idx,
+     movq               xmm3, [palq]
+     je .w8
  .w4:
 +    _CET_ENDBR
-     pshufb             xmm0, xm4, [idxq]
-     add                idxq, 16
-     movd   [dstq+strideq*0], xmm0
-@@ -1133,6 +1179,7 @@ cglobal pal_pred_8bpc, 4, 7, 5, dst, stride, pal, idx,
+     movq               xmm0, [idxq]
+     add                idxq, 8
+     psrlw              xmm1, xmm0, 4
+@@ -1222,6 +1268,7 @@ cglobal pal_pred_8bpc, 4, 7, 6, dst, stride, pal, idx,
      jg .w4
      RET
  .w8:
 +    _CET_ENDBR
-     pshufb             xmm0, xm4, [idxq+16*0]
-     pshufb             xmm1, xm4, [idxq+16*1]
-     add                idxq, 16*2
-@@ -1145,6 +1192,7 @@ cglobal pal_pred_8bpc, 4, 7, 5, dst, stride, pal, idx,
+     movu               xmm2, [idxq]
+     add                idxq, 16
+     pshufb             xmm1, xmm3, xmm2
+@@ -1238,6 +1285,7 @@ cglobal pal_pred_8bpc, 4, 7, 6, dst, stride, pal, idx,
      jg .w8
      RET
  .w16:
 +    _CET_ENDBR
-     pshufb               m0, m4, [idxq]
-     add                idxq, 64
-     mova          [dstq+strideq*0], xm0
-@@ -1156,6 +1204,7 @@ cglobal pal_pred_8bpc, 4, 7, 5, dst, stride, pal, idx,
+     pmovzxdq             m0, [idxq]
+     add                idxq, 32
+     vpmultishiftqb       m0, m3, m0
+@@ -1251,6 +1299,7 @@ cglobal pal_pred_8bpc, 4, 7, 6, dst, stride, pal, idx,
      jg .w16
      RET
  .w32:
 +    _CET_ENDBR
-     pshufb               m0, m4, [idxq+64*0]
-     pshufb               m1, m4, [idxq+64*1]
-     add                idxq, 64*2
-@@ -1168,6 +1217,7 @@ cglobal pal_pred_8bpc, 4, 7, 5, dst, stride, pal, idx,
-     jg .w32
+     vpbroadcastq         m3, [pal_unpack+0]
+     vpbroadcastq         m5, [palq]
+     cmp                  wd, 32
+@@ -1274,6 +1323,7 @@ cglobal pal_pred_8bpc, 4, 7, 6, dst, stride, pal, idx,
+     jg .w32_loop
      RET
  .w64:
 +    _CET_ENDBR
-     pshufb               m0, m4, [idxq+64*0]
-     pshufb               m1, m4, [idxq+64*1]
-     pshufb               m2, m4, [idxq+64*2]
+     vpermd               m1, m2, [idxq]
+     add                idxq, 64
+     vpmultishiftqb       m0, m3, m1
+@@ -1312,6 +1362,7 @@ cglobal ipred_z1_8bpc, 3, 8, 16, dst, stride, tl, w, h
+     vpbroadcastd        m15, [base+pw_512]
+     jmp                  wq
+ .w4:
++    _CET_ENDBR
+     mova                 m9, [pb_0to63]
+     pminud               m8, m9, [base+pb_7] {1to16}
+     vpbroadcastq         m7, [tlq]
+@@ -1435,6 +1486,7 @@ cglobal ipred_z1_8bpc, 3, 8, 16, dst, stride, tl, w, h
+     packuswb            ym0, ym1
+     ret
+ .w8:
++    _CET_ENDBR
+     lea                 r3d, [angleq+216]
+     mov                 r3b, hb
+     cmp                 r3d, 8
+@@ -1578,6 +1630,7 @@ cglobal ipred_z1_8bpc, 3, 8, 16, dst, stride, tl, w, h
+     packuswb             m0, m1
+     ret
+ .w16:
++    _CET_ENDBR
+     lea                 r3d, [hq+15]
+     mova                 m9, [pb_0to63]
+     vpbroadcastb        ym0, r3d
+@@ -1681,6 +1734,7 @@ cglobal ipred_z1_8bpc, 3, 8, 16, dst, stride, tl, w, h
+     packuswb             m7, m0, m1
+     ret
+ .w32:
++    _CET_ENDBR
+     lea                 r3d, [hq+31]
+     vpbroadcastb         m9, r3d
+     and                 r3d, 31
+@@ -1784,6 +1838,7 @@ cglobal ipred_z1_8bpc, 3, 8, 16, dst, stride, tl, w, h
+     vpermb               m8, m12, m0
+     ret
+ .w64:
++    _CET_ENDBR
+     lea                 r3d, [hq-1]
+     movu                 m7, [tlq+64*0]
+     vpbroadcastb        m13, r3d
+@@ -1859,6 +1914,7 @@ cglobal ipred_z2_8bpc, 3, 9, 18, dst, stride, tl, w, h
+     neg                 dxd
+     jmp                  wq
+ .w4:
++    _CET_ENDBR
+     movd                xm7, [tlq]
+     vpbroadcastq        m10, [base+z_xpos_off2a]
+     test             angled, 0x400
+@@ -1989,6 +2045,7 @@ cglobal ipred_z2_8bpc, 3, 9, 18, dst, stride, tl, w, h
+     kmovd               r3d, k1
+     ret
+ .w8:
++    _CET_ENDBR
+     movq                xm7, [tlq]
+     vbroadcasti32x4     m10, [base+z_xpos_off2a]
+     test             angled, 0x400
+@@ -2166,6 +2223,7 @@ cglobal ipred_z2_8bpc, 3, 9, 18, dst, stride, tl, w, h
+     packuswb        xm8{k1}, xm0, xm1
+     ret
+ .w16:
++    _CET_ENDBR
+     movu                xm7, [tlq] ; top
+     test             angled, 0x400
+     jnz .w16_main
+@@ -2278,6 +2336,7 @@ cglobal ipred_z2_8bpc, 3, 9, 18, dst, stride, tl, w, h
+ .w16_end:
+     RET
+ .w32:
++    _CET_ENDBR
+     movu                ym7, [tlq]
+     test             angled, 0x400
+     jnz .w32_main
+@@ -2439,6 +2498,7 @@ cglobal ipred_z2_8bpc, 3, 9, 18, dst, stride, tl, w, h
+     packuswb         m8{k1}, m0, m1
+     ret
+ .w64:
++    _CET_ENDBR
+     movu                 m7, [tlq]
+     test             angled, 0x400
+     jnz .w64_main
+@@ -2570,6 +2630,7 @@ cglobal ipred_z3_8bpc, 3, 8, 16, dst, stride, tl, w, h
+     vpbroadcastd        m15, [base+pw_512]
+     jmp                  wq
+ .w4:
++    _CET_ENDBR
+     cmp              angleb, 40
+     jae .w4_no_upsample
+     lea                 r3d, [angleq-1024]
+@@ -2655,6 +2716,7 @@ cglobal ipred_z3_8bpc, 3, 8, 16, dst, stride, tl, w, h
+     punpcklbw           ym7, ym0
+     ret
+ .w8:
++    _CET_ENDBR
+     lea                 r3d, [angleq+216]
+     mov                 r3b, hb
+     cmp                 r3d, 8
+@@ -2740,6 +2802,7 @@ cglobal ipred_z3_8bpc, 3, 8, 16, dst, stride, tl, w, h
+     vpermb               m8, m2, [tlq-64*2]
+     ret
+ .w16:
++    _CET_ENDBR
+     mov                 r3d, 16
+     call .w16_load
+     test             angled, 0x400 ; !enable_intra_edge_filter
+@@ -2805,6 +2868,7 @@ cglobal ipred_z3_8bpc, 3, 8, 16, dst, stride, tl, w, h
+     jg .w16_loop
+     RET
+ .w32:
++    _CET_ENDBR
+     mov                  r3d, 32
+     call .w16_load
+     test             angled, 0x400 ; !enable_intra_edge_filter
+@@ -2850,6 +2914,7 @@ cglobal ipred_z3_8bpc, 3, 8, 16, dst, stride, tl, w, h
+     jg .w32_loop
+     RET
+ .w64:
++    _CET_ENDBR
+     mova                 m7, [tlq-64*1]
+     cmp                  hd, 64
+     je .w64_h64
+@@ -3097,6 +3162,7 @@ cglobal ipred_filter_8bpc, 4, 7, 14, dst, stride, tl, 
+ .ret:
+     RET
+ .w8:
++    _CET_ENDBR
+     vpermb              ym3, ym11, ymm2
+ .w8_loop:
+     vpbroadcastd    ym3{k1}, [tlq-4]     ; l3 l2 l1 __   b3 a3 t3 __
+@@ -3130,6 +3196,7 @@ cglobal ipred_filter_8bpc, 4, 7, 14, dst, stride, tl, 
+     vpdpbusd           xmm1, xmm3, xm10
+     packssdw           xmm0, xmm1
+ .w4:
++    _CET_ENDBR
+     psraw              xmm0, 4           ; a0 b0
+     packuswb           xmm0, xmm0
+     movd   [dstq+strideq*0], xmm0

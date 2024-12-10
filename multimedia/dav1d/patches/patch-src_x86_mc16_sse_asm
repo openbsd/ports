@@ -1,7 +1,7 @@
 Index: src/x86/mc16_sse.asm
 --- src/x86/mc16_sse.asm.orig
 +++ src/x86/mc16_sse.asm
-@@ -184,12 +184,14 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+@@ -186,12 +186,14 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
      test               mxyd, mxyd
      jnz .v
  .put:
@@ -16,7 +16,7 @@ Index: src/x86/mc16_sse.asm
      mov                 r4d, [srcq+ssq*0]
      mov                 r6d, [srcq+ssq*1]
      lea                srcq, [srcq+ssq*2]
-@@ -200,6 +202,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+@@ -202,6 +204,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
      jg .put_w2
      RET
  .put_w4:
@@ -24,7 +24,7 @@ Index: src/x86/mc16_sse.asm
      movq                 m0, [srcq+ssq*0]
      movq                 m1, [srcq+ssq*1]
      lea                srcq, [srcq+ssq*2]
-@@ -210,6 +213,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+@@ -212,6 +215,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
      jg .put_w4
      RET
  .put_w8:
@@ -32,7 +32,7 @@ Index: src/x86/mc16_sse.asm
      movu                 m0, [srcq+ssq*0]
      movu                 m1, [srcq+ssq*1]
      lea                srcq, [srcq+ssq*2]
-@@ -220,6 +224,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+@@ -222,6 +226,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
      jg .put_w8
      RET
  .put_w16:
@@ -40,7 +40,7 @@ Index: src/x86/mc16_sse.asm
      movu                 m0, [srcq+ssq*0+16*0]
      movu                 m1, [srcq+ssq*0+16*1]
      movu                 m2, [srcq+ssq*1+16*0]
-@@ -234,6 +239,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+@@ -236,6 +241,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
      jg .put_w16
      RET
  .put_w32:
@@ -48,7 +48,7 @@ Index: src/x86/mc16_sse.asm
      movu                 m0, [srcq+16*0]
      movu                 m1, [srcq+16*1]
      movu                 m2, [srcq+16*2]
-@@ -248,6 +254,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+@@ -250,6 +256,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
      jg .put_w32
      RET
  .put_w64:
@@ -56,7 +56,7 @@ Index: src/x86/mc16_sse.asm
      movu                 m0, [srcq+16*0]
      movu                 m1, [srcq+16*1]
      movu                 m2, [srcq+16*2]
-@@ -270,6 +277,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+@@ -272,6 +279,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
      jg .put_w64
      RET
  .put_w128:
@@ -64,7 +64,7 @@ Index: src/x86/mc16_sse.asm
      add                srcq, 16*8
      add                dstq, 16*8
  .put_w128_loop:
-@@ -311,6 +319,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+@@ -313,6 +321,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
      jg .put_w128_loop
      RET
  .h:
@@ -72,7 +72,7 @@ Index: src/x86/mc16_sse.asm
      movd                 m5, mxyd
      mov                mxyd, r7m ; my
      mova                 m4, [base+pw_16]
-@@ -329,6 +338,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+@@ -331,6 +340,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
      cmp                  wd, -4
      je .h_w4
  .h_w2:
@@ -80,7 +80,7 @@ Index: src/x86/mc16_sse.asm
      movq                 m1, [srcq+ssq*0]
      movhps               m1, [srcq+ssq*1]
      lea                srcq, [srcq+ssq*2]
-@@ -346,6 +356,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+@@ -348,6 +358,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
      jg .h_w2
      RET
  .h_w4:
@@ -88,7 +88,7 @@ Index: src/x86/mc16_sse.asm
      movq                 m0, [srcq+ssq*0]
      movhps               m0, [srcq+ssq*1]
      movq                 m1, [srcq+ssq*0+2]
-@@ -363,6 +374,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+@@ -365,6 +376,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
      jg .h_w4
      RET
  .h_w8:
@@ -96,7 +96,7 @@ Index: src/x86/mc16_sse.asm
      movu                 m0, [srcq+ssq*0]
      movu                 m1, [srcq+ssq*0+2]
      pmullw               m0, m4
-@@ -385,6 +397,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+@@ -387,6 +399,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
      jg .h_w8
      RET
  .h_w16:
@@ -104,7 +104,7 @@ Index: src/x86/mc16_sse.asm
      lea                srcq, [srcq+wq*2]
      lea                dstq, [dstq+wq*2]
      neg                  wq
-@@ -415,6 +428,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+@@ -417,6 +430,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
      jg .h_w16_loop0
      RET
  .v:
@@ -112,7 +112,7 @@ Index: src/x86/mc16_sse.asm
      shl                mxyd, 11
      movd                 m5, mxyd
      pshufb               m5, [base+pw_256]
-@@ -423,6 +437,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+@@ -425,6 +439,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
      jg .v_w8
      je .v_w4
  .v_w2:
@@ -120,7 +120,7 @@ Index: src/x86/mc16_sse.asm
      movd                 m0, [srcq+ssq*0]
  .v_w2_loop:
      movd                 m1, [srcq+ssq*1]
-@@ -441,6 +456,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+@@ -443,6 +458,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
      jg .v_w2_loop
      RET
  .v_w4:
@@ -128,7 +128,7 @@ Index: src/x86/mc16_sse.asm
      movq                 m0, [srcq+ssq*0]
  .v_w4_loop:
      movq                 m1, [srcq+ssq*1]
-@@ -458,6 +474,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+@@ -460,6 +476,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
      jg .v_w4_loop
      RET
  .v_w8:
@@ -136,7 +136,7 @@ Index: src/x86/mc16_sse.asm
  %if ARCH_X86_64
  %if WIN64
      push                 r7
-@@ -508,6 +525,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+@@ -510,6 +527,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
  %endif
      RET
  .hv:
@@ -144,7 +144,7 @@ Index: src/x86/mc16_sse.asm
      WIN64_SPILL_XMM       8
      shl                mxyd, 11
      mova                 m3, [base+pw_2]
-@@ -525,6 +543,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+@@ -527,6 +545,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
      jg .hv_w8
      je .hv_w4
  .hv_w2:
@@ -152,7 +152,7 @@ Index: src/x86/mc16_sse.asm
      movddup              m0, [srcq+ssq*0]
      pshufhw              m1, m0, q0321
      pmullw               m0, m4
-@@ -557,6 +576,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+@@ -559,6 +578,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
      jg .hv_w2_loop
      RET
  .hv_w4:
@@ -160,7 +160,7 @@ Index: src/x86/mc16_sse.asm
      movddup              m0, [srcq+ssq*0]
      movddup              m1, [srcq+ssq*0+2]
      pmullw               m0, m4
-@@ -589,6 +609,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
+@@ -591,6 +611,7 @@ cglobal put_bilin_16bpc, 4, 7, 0, dst, ds, src, ss, w,
      jg .hv_w4_loop
      RET
  .hv_w8:
@@ -168,7 +168,7 @@ Index: src/x86/mc16_sse.asm
  %if ARCH_X86_64
  %if WIN64
      push                 r7
-@@ -672,6 +693,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+@@ -674,6 +695,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
      test               mxyd, mxyd
      jnz .v
  .prep:
@@ -176,7 +176,7 @@ Index: src/x86/mc16_sse.asm
      tzcnt                wd, wd
      movzx                wd, word [base+prep_ssse3_table+wq*2]
      mov                 r5d, r7m ; bitdepth_max
-@@ -682,6 +704,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+@@ -684,6 +706,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
      lea            stride3q, [strideq*3]
      jmp                  wq
  .prep_w4:
@@ -184,7 +184,7 @@ Index: src/x86/mc16_sse.asm
      movq                 m0, [srcq+strideq*0]
      movhps               m0, [srcq+strideq*1]
      movq                 m1, [srcq+strideq*2]
-@@ -698,6 +721,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+@@ -700,6 +723,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
      jg .prep_w4
      RET
  .prep_w8:
@@ -192,7 +192,7 @@ Index: src/x86/mc16_sse.asm
      movu                 m0, [srcq+strideq*0]
      movu                 m1, [srcq+strideq*1]
      movu                 m2, [srcq+strideq*2]
-@@ -714,6 +738,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+@@ -716,6 +740,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
      jg .prep_w8
      RET
  .prep_w16:
@@ -200,16 +200,15 @@ Index: src/x86/mc16_sse.asm
      movu                 m0, [srcq+strideq*0+16*0]
      movu                 m1, [srcq+strideq*0+16*1]
      movu                 m2, [srcq+strideq*1+16*0]
-@@ -730,6 +755,8 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+@@ -732,6 +757,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
      jg .prep_w16
      RET
  .prep_w32:
 +    _CET_ENDBR
-+    _CET_ENDBR
      movu                 m0, [srcq+16*0]
      movu                 m1, [srcq+16*1]
      movu                 m2, [srcq+16*2]
-@@ -746,6 +773,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+@@ -748,6 +774,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
      jg .prep_w32
      RET
  .prep_w64:
@@ -217,7 +216,7 @@ Index: src/x86/mc16_sse.asm
      movu                 m0, [srcq+16*0]
      movu                 m1, [srcq+16*1]
      movu                 m2, [srcq+16*2]
-@@ -772,6 +800,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+@@ -774,6 +801,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
      jg .prep_w64
      RET
  .prep_w128:
@@ -225,7 +224,7 @@ Index: src/x86/mc16_sse.asm
      movu                 m0, [srcq+16* 0]
      movu                 m1, [srcq+16* 1]
      movu                 m2, [srcq+16* 2]
-@@ -818,6 +847,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+@@ -820,6 +848,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
      jg .prep_w128
      RET
  .h:
@@ -233,7 +232,7 @@ Index: src/x86/mc16_sse.asm
      movd                 m4, mxyd
      mov                mxyd, r6m ; my
      mova                 m3, [base+pw_16]
-@@ -835,6 +865,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+@@ -837,6 +866,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
      je .h_w8
      jg .h_w16
  .h_w4:
@@ -241,7 +240,7 @@ Index: src/x86/mc16_sse.asm
      movq                 m0, [srcq+strideq*0]
      movhps               m0, [srcq+strideq*1]
      movq                 m1, [srcq+strideq*0+2]
-@@ -851,6 +882,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+@@ -853,6 +883,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
      jg .h_w4
      RET
  .h_w8:
@@ -249,7 +248,7 @@ Index: src/x86/mc16_sse.asm
      movu                 m0, [srcq+strideq*0]
      movu                 m1, [srcq+strideq*0+2]
      pmullw               m0, m3
-@@ -873,6 +905,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+@@ -875,6 +906,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
      jg .h_w8
      RET
  .h_w16:
@@ -257,7 +256,7 @@ Index: src/x86/mc16_sse.asm
      lea                srcq, [srcq+wq*2]
      neg                  wq
  .h_w16_loop0:
-@@ -902,6 +935,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+@@ -904,6 +936,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
      jg .h_w16_loop0
      RET
  .v:
@@ -265,7 +264,7 @@ Index: src/x86/mc16_sse.asm
      movd                 m4, mxyd
      mova                 m3, [base+pw_16]
      pshufb               m4, [base+pw_256]
-@@ -916,6 +950,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+@@ -918,6 +951,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
      je .v_w8
      jg .v_w16
  .v_w4:
@@ -273,7 +272,7 @@ Index: src/x86/mc16_sse.asm
      movq                 m0, [srcq+strideq*0]
  .v_w4_loop:
      movq                 m2, [srcq+strideq*1]
-@@ -934,6 +969,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+@@ -936,6 +970,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
      jg .v_w4_loop
      RET
  .v_w8:
@@ -281,7 +280,7 @@ Index: src/x86/mc16_sse.asm
      movu                 m0, [srcq+strideq*0]
  .v_w8_loop:
      movu                 m2, [srcq+strideq*1]
-@@ -956,6 +992,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+@@ -958,6 +993,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
      jg .v_w8_loop
      RET
  .v_w16:
@@ -289,7 +288,7 @@ Index: src/x86/mc16_sse.asm
  %if WIN64
      push                 r7
  %endif
-@@ -1011,6 +1048,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+@@ -1013,6 +1049,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
  %endif
      RET
  .hv:
@@ -297,7 +296,7 @@ Index: src/x86/mc16_sse.asm
      WIN64_SPILL_XMM       7
      shl                mxyd, 11
      movd                 m6, mxyd
-@@ -1019,6 +1057,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+@@ -1021,6 +1058,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
      je .hv_w8
      jg .hv_w16
  .hv_w4:
@@ -305,7 +304,7 @@ Index: src/x86/mc16_sse.asm
      movddup              m0, [srcq+strideq*0]
      movddup              m1, [srcq+strideq*0+2]
      pmullw               m0, m3
-@@ -1048,6 +1087,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+@@ -1050,6 +1088,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
      jg .hv_w4_loop
      RET
  .hv_w8:
@@ -313,7 +312,7 @@ Index: src/x86/mc16_sse.asm
      movu                 m0, [srcq+strideq*0]
      movu                 m1, [srcq+strideq*0+2]
      pmullw               m0, m3
-@@ -1084,6 +1124,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
+@@ -1086,6 +1125,7 @@ cglobal prep_bilin_16bpc, 4, 7, 0, tmp, src, stride, w
      jg .hv_w8_loop
      RET
  .hv_w16:
@@ -321,39 +320,39 @@ Index: src/x86/mc16_sse.asm
  %if WIN64
      push                 r7
  %endif
-@@ -1234,6 +1275,7 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+@@ -1211,6 +1251,7 @@ cglobal put_6tap_16bpc, 0, 9, 0, dst, ds, src, ss, w, 
+     test                myd, 0xf00
+     jnz .v
+ .put:
++    _CET_ENDBR
+     tzcnt                wd, wd
+     movzx                wd, word [base+put_ssse3_table+wq*2]
+     movifnidn          dstq, dstmp
+@@ -1222,6 +1263,7 @@ cglobal put_6tap_16bpc, 0, 9, 0, dst, ds, src, ss, w, 
  %endif
      jmp                  wq
- .h:
-+    _CET_ENDBR
-     test                myd, 0xf00
-     jnz .hv
-     mov                 myd, r8m
-@@ -1252,6 +1294,7 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
-     psraw                m3, 8 ; sign-extend
-     je .h_w4
  .h_w2:
 +    _CET_ENDBR
      mova                 m2, [base+spel_h_shuf2]
      pshufd               m3, m3, q2121
  .h_w2_loop:
-@@ -1277,6 +1320,7 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+@@ -1247,6 +1289,7 @@ cglobal put_6tap_16bpc, 0, 9, 0, dst, ds, src, ss, w, 
      jg .h_w2_loop
      RET
  .h_w4:
 +    _CET_ENDBR
-     WIN64_SPILL_XMM       8
-     mova                 m6, [base+spel_h_shufA]
-     mova                 m7, [base+spel_h_shufB]
-@@ -1302,6 +1346,7 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     movzx               mxd, mxb
+     lea                srcq, [srcq-2]
+     movq                 m3, [base+subpel_filters+mxq*8]
+@@ -1292,6 +1335,7 @@ cglobal put_6tap_16bpc, 0, 9, 0, dst, ds, src, ss, w, 
      jg .h_w4_loop
      RET
- .h_w8:
+ .h:
 +    _CET_ENDBR
- %if WIN64
-     %assign stack_offset stack_offset - stack_size_padded
-     WIN64_SPILL_XMM      12
-@@ -1378,6 +1423,7 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     RESET_STACK_STATE
+     test                myd, 0xf00
+     jnz .hv
+@@ -1367,6 +1411,7 @@ cglobal put_6tap_16bpc, 0, 9, 0, dst, ds, src, ss, w, 
      jg .h_w8_loop0
      RET
  .v:
@@ -361,7 +360,63 @@ Index: src/x86/mc16_sse.asm
      movzx               mxd, myb
      shr                 myd, 16
      cmp                  hd, 6
-@@ -1418,6 +1464,7 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+@@ -1402,6 +1447,7 @@ cglobal put_6tap_16bpc, 0, 9, 0, dst, ds, src, ss, w, 
+     je .v_w4
+ %endif
+ .v_w2:
++    _CET_ENDBR
+     movd                 m1, [srcq+r6 *2]
+     movd                 m3, [srcq+r6 *1]
+     movd                 m2, [srcq+ssq*0]
+@@ -1441,6 +1487,7 @@ cglobal put_6tap_16bpc, 0, 9, 0, dst, ds, src, ss, w, 
+     jg .v_w2_loop
+     RET
+ .v_w4:
++    _CET_ENDBR
+ %if ARCH_X86_32
+     shl                  wd, 14
+     lea                srcq, [srcq+r6*2]
+@@ -1510,6 +1557,7 @@ cglobal put_6tap_16bpc, 0, 9, 0, dst, ds, src, ss, w, 
+ %else
+     RET
+ .v_w8:
++    _CET_ENDBR
+     mova                r6m, m8
+     shl                  wd, 5
+     pshufd               m6, m2, q1111
+@@ -1589,6 +1637,7 @@ cglobal put_6tap_16bpc, 0, 9, 0, dst, ds, src, ss, w, 
+     RET
+ %endif
+ .hv:
++    _CET_ENDBR
+     cmp                  wd, 4
+     jg .hv_w8
+     WIN64_SPILL_XMM      12, 16
+@@ -1699,6 +1748,7 @@ cglobal put_6tap_16bpc, 0, 9, 0, dst, ds, src, ss, w, 
+     jg .hv_w2_loop
+     RET
+ .hv_w4:
++    _CET_ENDBR
+ %if ARCH_X86_32
+     %define             m12  [esp+16*5]
+     %define             m13  [esp+16*6]
+@@ -1774,6 +1824,7 @@ cglobal put_6tap_16bpc, 0, 9, 0, dst, ds, src, ss, w, 
+     jg .hv_w4_loop
+     RET
+ .hv_w8:
++    _CET_ENDBR
+     RESET_STACK_STATE
+     shr                 mxd, 16
+     movq                 m2, [base+subpel_filters+1+mxq*8]
+@@ -2082,6 +2133,7 @@ cglobal put_8tap_16bpc, 0, 9, 0, dst, ds, src, ss, w, 
+     test                myd, 0xf00
+     jz mangle(private_prefix %+ _put_6tap_16bpc_ssse3).put
+ .v:
++    _CET_ENDBR
+     movzx               mxd, myb
+     shr                 myd, 16
+     cmp                  hd, 6
+@@ -2115,6 +2167,7 @@ cglobal put_8tap_16bpc, 0, 9, 0, dst, ds, src, ss, w, 
      cmp                  wd, 2
      jne .v_w4
  .v_w2:
@@ -369,7 +424,7 @@ Index: src/x86/mc16_sse.asm
      movd                 m1, [srcq+ssq*0]
      movd                 m4, [srcq+ssq*1]
      movd                 m2, [srcq+ssq*2]
-@@ -1466,6 +1513,7 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+@@ -2163,6 +2216,7 @@ cglobal put_8tap_16bpc, 0, 9, 0, dst, ds, src, ss, w, 
      jg .v_w2_loop
      RET
  .v_w4:
@@ -377,15 +432,23 @@ Index: src/x86/mc16_sse.asm
  %if ARCH_X86_32
      shl                  wd, 14
  %if STACK_ALIGNMENT < 16
-@@ -1604,6 +1652,7 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+@@ -2301,6 +2355,7 @@ cglobal put_8tap_16bpc, 0, 9, 0, dst, ds, src, ss, w, 
      jg .v_w4_loop0
+     RET
+ .h:
++    _CET_ENDBR
+     RESET_STACK_STATE
+     test                myd, 0xf00
+     jnz .hv
+@@ -2385,6 +2440,7 @@ cglobal put_8tap_16bpc, 0, 9, 0, dst, ds, src, ss, w, 
+     jg .h_w8_loop0
      RET
  .hv:
 +    _CET_ENDBR
- %if STACK_ALIGNMENT < 16
-     %xdefine           rstk  rsp
- %else
-@@ -1741,8 +1790,10 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     RESET_STACK_STATE
+ %if ARCH_X86_32
+     movd                 m4, r8m
+@@ -2514,8 +2570,10 @@ cglobal put_8tap_16bpc, 0, 9, 0, dst, ds, src, ss, w, 
      jg .hv_w2_loop
      RET
  .hv_w8:
@@ -396,15 +459,79 @@ Index: src/x86/mc16_sse.asm
      movq                 m2, [base+subpel_filters+mxq*8]
      movzx               mxd, myb
      shr                 myd, 16
-@@ -2060,6 +2111,7 @@ cglobal prep_8tap_16bpc, 4, 8, 0, tmp, src, ss, w, h, 
+@@ -2809,6 +2867,7 @@ cglobal prep_6tap_16bpc, 0, 8, 0, tmp, src, ss, w, h, 
+     test                myd, 0xf00
+     jnz .v
+ .prep:
++    _CET_ENDBR
+     tzcnt                wd, wd
+     mov                 myd, r7m ; bitdepth_max
+     movzx                wd, word [base+prep_ssse3_table+wq*2]
+@@ -2824,6 +2883,7 @@ cglobal prep_6tap_16bpc, 0, 8, 0, tmp, src, ss, w, h, 
  %endif
      jmp                  wq
  .h:
 +    _CET_ENDBR
+     RESET_STACK_STATE
      test                myd, 0xf00
      jnz .hv
-     movifnidn           ssq, r2mp
-@@ -2107,6 +2159,7 @@ cglobal prep_8tap_16bpc, 4, 8, 0, tmp, src, ss, w, h, 
+@@ -2894,6 +2954,7 @@ cglobal prep_6tap_16bpc, 0, 8, 0, tmp, src, ss, w, h, 
+     jg .h_w8_loop0
+     RET
+ .v:
++    _CET_ENDBR
+     movzx               mxd, myb
+     shr                 myd, 16
+     cmp                  hd, 6
+@@ -2992,6 +3053,7 @@ cglobal prep_6tap_16bpc, 0, 8, 0, tmp, src, ss, w, h, 
+     jg .v_w4_loop
+     RET
+ .v_w8:
++    _CET_ENDBR
+     mova                r6m, m8
+     lea                 r6d, [wq*4-(1<<5)]
+     pshufd               m6, m2, q1111
+@@ -3066,6 +3128,7 @@ cglobal prep_6tap_16bpc, 0, 8, 0, tmp, src, ss, w, h, 
+     RET
+ %endif
+ .hv:
++    _CET_ENDBR
+     and                  wd, -8
+     jnz .hv_w8
+     movzx               mxd, mxb
+@@ -3179,6 +3242,7 @@ cglobal prep_6tap_16bpc, 0, 8, 0, tmp, src, ss, w, h, 
+     jg .hv_w4_loop
+     RET
+ .hv_w8:
++    _CET_ENDBR
+     RESET_STACK_STATE
+     shr                 mxd, 16
+     movq                 m2, [base+subpel_filters+1+mxq*8]
+@@ -3441,6 +3505,7 @@ cglobal prep_8tap_16bpc, 0, 8, 0, tmp, src, ss, w, h, 
+     test                myd, 0xf00
+     jz mangle(private_prefix %+ _prep_6tap_16bpc_ssse3).prep
+ .v:
++    _CET_ENDBR
+     movzx               mxd, myb
+     shr                 myd, 16
+     cmp                  hd, 4
+@@ -3598,6 +3663,7 @@ cglobal prep_8tap_16bpc, 0, 8, 0, tmp, src, ss, w, h, 
+     jg .v_loop0
+     RET
+ .h:
++    _CET_ENDBR
+     RESET_STACK_STATE
+     test                myd, 0xf00
+     jnz .hv
+@@ -3607,6 +3673,7 @@ cglobal prep_8tap_16bpc, 0, 8, 0, tmp, src, ss, w, h, 
+     cmp                  wd, 4
+     jne .h_w8
+ .h_w4:
++    _CET_ENDBR
+     movzx               mxd, mxb
+     movq                 m0, [base+subpel_filters+mxq*8]
+     mova                 m3, [base+spel_h_shufA]
+@@ -3647,6 +3714,7 @@ cglobal prep_8tap_16bpc, 0, 8, 0, tmp, src, ss, w, h, 
      jg .h_w4_loop
      RET
  .h_w8:
@@ -412,23 +539,15 @@ Index: src/x86/mc16_sse.asm
      WIN64_SPILL_XMM      11
      shr                 mxd, 16
      movq                 m2, [base+subpel_filters+mxq*8]
-@@ -2177,6 +2230,7 @@ cglobal prep_8tap_16bpc, 4, 8, 0, tmp, src, ss, w, h, 
+@@ -3717,6 +3785,7 @@ cglobal prep_8tap_16bpc, 0, 8, 0, tmp, src, ss, w, h, 
      jg .h_w8_loop0
-     RET
- .v:
-+    _CET_ENDBR
-     movzx               mxd, myb
-     shr                 myd, 16
-     cmp                  hd, 4
-@@ -2339,6 +2393,7 @@ cglobal prep_8tap_16bpc, 4, 8, 0, tmp, src, ss, w, h, 
-     jg .v_loop0
      RET
  .hv:
 +    _CET_ENDBR
- %if STACK_ALIGNMENT < 16
-     %xdefine           rstk  rsp
- %else
-@@ -3008,6 +3063,7 @@ cglobal prep_8tap_scaled_16bpc, 0, 6, 8, 0x200, tmp, s
+     RESET_STACK_STATE
+     movzx               t3d, mxb
+     shr                 mxd, 16
+@@ -4382,6 +4451,7 @@ cglobal prep_8tap_scaled_16bpc, 0, 6, 8, 0x200, tmp, s
      jmp                  wq
  %if isput
  .w2:
@@ -436,7 +555,7 @@ Index: src/x86/mc16_sse.asm
   %if ARCH_X86_64
      mov                 myd, mym
      movzx               t0d, t0b
-@@ -3259,6 +3315,7 @@ cglobal prep_8tap_scaled_16bpc, 0, 6, 8, 0x200, tmp, s
+@@ -4633,6 +4703,7 @@ cglobal prep_8tap_scaled_16bpc, 0, 6, 8, 0x200, tmp, s
  %endif
  INIT_XMM ssse3
  .w4:
@@ -444,7 +563,7 @@ Index: src/x86/mc16_sse.asm
  %if ARCH_X86_64
      mov                 myd, mym
      mova         [rsp+0x10], m11
-@@ -3695,22 +3752,27 @@ INIT_XMM ssse3
+@@ -5069,22 +5140,27 @@ INIT_XMM ssse3
   %define stk rsp+0x20
  %endif
  .w8:
@@ -472,7 +591,13 @@ Index: src/x86/mc16_sse.asm
      mov    dword [stk+0xf0], 16
      movifprep   tmp_stridem, 256
  .w_start:
-@@ -4277,6 +4339,7 @@ INIT_XMM ssse3
+@@ -5646,11 +5722,13 @@ INIT_XMM ssse3
+     jmp .vloop
+ INIT_XMM ssse3
+ .dy1:
++    _CET_ENDBR
+     movzx                wd, word [base+%1_8tap_scaled_ssse3_dy1_table+wq*2]
+     add                  wq, base_reg
      jmp                  wq
  %if isput
  .dy1_w2:
@@ -480,7 +605,7 @@ Index: src/x86/mc16_sse.asm
   %if ARCH_X86_64
      mov                 myd, mym
      movzx               t0d, t0b
-@@ -4477,6 +4540,7 @@ INIT_XMM ssse3
+@@ -5851,6 +5929,7 @@ INIT_XMM ssse3
  %endif
  INIT_XMM ssse3
  .dy1_w4:
@@ -488,7 +613,7 @@ Index: src/x86/mc16_sse.asm
  %if ARCH_X86_64
      mov                 myd, mym
      mova         [rsp+0x10], m11
-@@ -4857,22 +4921,27 @@ INIT_XMM ssse3
+@@ -6231,22 +6310,27 @@ INIT_XMM ssse3
      MC_8TAP_SCALED_RET ; why not jz .ret?
  INIT_XMM ssse3
  .dy1_w8:
@@ -516,7 +641,7 @@ Index: src/x86/mc16_sse.asm
      mov    dword [stk+0xf0], 16
      movifprep   tmp_stridem, 256
  .dy1_w_start:
-@@ -5395,11 +5464,13 @@ INIT_XMM ssse3
+@@ -6769,11 +6853,13 @@ INIT_XMM ssse3
   %define stk rsp+0x20
  %endif
  .dy2:
@@ -530,7 +655,7 @@ Index: src/x86/mc16_sse.asm
   %if ARCH_X86_64
      mov                 myd, mym
      mova         [rsp+0x10], m13
-@@ -5609,6 +5680,7 @@ INIT_XMM ssse3
+@@ -6983,6 +7069,7 @@ INIT_XMM ssse3
  %endif
  INIT_XMM ssse3
  .dy2_w4:
@@ -538,7 +663,7 @@ Index: src/x86/mc16_sse.asm
  %if ARCH_X86_64
      mov                 myd, mym
      mova         [rsp+0x10], m11
-@@ -5946,22 +6018,27 @@ INIT_XMM ssse3
+@@ -7320,22 +7407,27 @@ INIT_XMM ssse3
      MC_8TAP_SCALED_RET ; why not jz .ret?
  INIT_XMM ssse3
  .dy2_w8:
@@ -566,7 +691,7 @@ Index: src/x86/mc16_sse.asm
      mov    dword [stk+0xf0], 16
      movifprep   tmp_stridem, 256
  .dy2_w_start:
-@@ -6812,6 +6889,7 @@ ALIGN function_align
+@@ -8190,6 +8282,7 @@ ALIGN function_align
      ret
  ALIGN function_align
  .h:
@@ -574,7 +699,7 @@ Index: src/x86/mc16_sse.asm
      lea                tmpd, [mxq+alphaq]
      shr                 mxd, 10
      movq                 m3, [filterq+mxq*8]
-@@ -6890,6 +6968,7 @@ ALIGN function_align
+@@ -8268,6 +8361,7 @@ ALIGN function_align
      call .main
      lea                dstq, [dstq+strideq*2]
  .w4:
@@ -582,7 +707,7 @@ Index: src/x86/mc16_sse.asm
      movq   [dstq+strideq*0], m0
      movhps [dstq+strideq*1], m0
      lea                dstq, [dstq+strideq*2]
-@@ -6903,6 +6982,7 @@ ALIGN function_align
+@@ -8281,6 +8375,7 @@ ALIGN function_align
      call .main
      lea                dstq, [dstq+strideq*2]
  .w8:
@@ -590,7 +715,7 @@ Index: src/x86/mc16_sse.asm
      mova   [dstq+strideq*0], m0
      mova   [dstq+strideq*1], m1
      sub                  hd, 2
-@@ -6912,6 +6992,7 @@ ALIGN function_align
+@@ -8290,6 +8385,7 @@ ALIGN function_align
      call .main
      add                dstq, strideq
  .w16:
@@ -598,7 +723,7 @@ Index: src/x86/mc16_sse.asm
      mova        [dstq+16*0], m0
      mova        [dstq+16*1], m1
      dec                  hd
-@@ -6921,6 +7002,7 @@ ALIGN function_align
+@@ -8299,6 +8395,7 @@ ALIGN function_align
      call .main
      add                dstq, strideq
  .w32:
@@ -606,7 +731,7 @@ Index: src/x86/mc16_sse.asm
      mova        [dstq+16*0], m0
      mova        [dstq+16*1], m1
      call .main
-@@ -6933,6 +7015,7 @@ ALIGN function_align
+@@ -8311,6 +8408,7 @@ ALIGN function_align
      call .main
      add                dstq, strideq
  .w64:
@@ -614,7 +739,7 @@ Index: src/x86/mc16_sse.asm
      mova        [dstq+16*0], m0
      mova        [dstq+16*1], m1
      call .main
-@@ -6951,6 +7034,7 @@ ALIGN function_align
+@@ -8329,6 +8427,7 @@ ALIGN function_align
      call .main
      add                dstq, strideq
  .w128:
@@ -622,7 +747,7 @@ Index: src/x86/mc16_sse.asm
      mova       [dstq+16* 0], m0
      mova       [dstq+16* 1], m1
      call .main
-@@ -7174,6 +7258,7 @@ cglobal w_mask_420_16bpc, 4, 7, 12, dst, stride, tmp1,
+@@ -8552,6 +8651,7 @@ cglobal w_mask_420_16bpc, 4, 7, 12, dst, stride, tmp1,
      lea                dstq, [dstq+strideq*2]
      add               maskq, 4
  .w4:
@@ -630,7 +755,7 @@ Index: src/x86/mc16_sse.asm
      movq   [dstq+strideq*0], m0
      phaddw               m2, m3
      movhps [dstq+strideq*1], m0
-@@ -7193,6 +7278,7 @@ cglobal w_mask_420_16bpc, 4, 7, 12, dst, stride, tmp1,
+@@ -8571,6 +8671,7 @@ cglobal w_mask_420_16bpc, 4, 7, 12, dst, stride, tmp1,
      lea                dstq, [dstq+strideq*2]
      add               maskq, 4
  .w8:
@@ -638,7 +763,7 @@ Index: src/x86/mc16_sse.asm
      mova   [dstq+strideq*0], m0
      paddw                m2, m3
      phaddw               m2, m2
-@@ -7209,6 +7295,7 @@ cglobal w_mask_420_16bpc, 4, 7, 12, dst, stride, tmp1,
+@@ -8587,6 +8688,7 @@ cglobal w_mask_420_16bpc, 4, 7, 12, dst, stride, tmp1,
      lea                dstq, [dstq+strideq*2]
      add               maskq, 8
  .w16:
@@ -646,7 +771,7 @@ Index: src/x86/mc16_sse.asm
      mova [dstq+strideq*1+16*0], m2
      mova [dstq+strideq*0+16*0], m0
      mova [dstq+strideq*1+16*1], m3
-@@ -7231,6 +7318,7 @@ cglobal w_mask_420_16bpc, 4, 7, 12, dst, stride, tmp1,
+@@ -8609,6 +8711,7 @@ cglobal w_mask_420_16bpc, 4, 7, 12, dst, stride, tmp1,
      lea                dstq, [dstq+strideq*2]
      add               maskq, 16
  .w32:
@@ -654,7 +779,7 @@ Index: src/x86/mc16_sse.asm
      mova [dstq+strideq*1+16*0], m2
      mova [dstq+strideq*0+16*0], m0
      mova [dstq+strideq*1+16*1], m3
-@@ -7266,6 +7354,7 @@ cglobal w_mask_420_16bpc, 4, 7, 12, dst, stride, tmp1,
+@@ -8644,6 +8747,7 @@ cglobal w_mask_420_16bpc, 4, 7, 12, dst, stride, tmp1,
      lea                dstq, [dstq+strideq*2]
      add               maskq, 16*2
  .w64:
@@ -662,7 +787,7 @@ Index: src/x86/mc16_sse.asm
      mova [dstq+strideq*1+16*1], m2
      mova [dstq+strideq*0+16*0], m0
      mova [dstq+strideq*1+16*2], m3
-@@ -7330,6 +7419,7 @@ cglobal w_mask_420_16bpc, 4, 7, 12, dst, stride, tmp1,
+@@ -8708,6 +8812,7 @@ cglobal w_mask_420_16bpc, 4, 7, 12, dst, stride, tmp1,
      lea                dstq, [dstq+strideq*2]
      add               maskq, 16*4
  .w128:
@@ -670,7 +795,7 @@ Index: src/x86/mc16_sse.asm
      mova [dstq+strideq*1+16* 1], m2
      mova [dstq+strideq*0+16* 0], m0
      mova [dstq+strideq*1+16* 2], m3
-@@ -7511,6 +7601,7 @@ cglobal w_mask_422_16bpc, 4, 7, 12, dst, stride, tmp1,
+@@ -8889,6 +8994,7 @@ cglobal w_mask_422_16bpc, 4, 7, 12, dst, stride, tmp1,
      call .main
      lea                dstq, [dstq+strideq*2]
  .w4:
@@ -678,7 +803,7 @@ Index: src/x86/mc16_sse.asm
      movq   [dstq+strideq*0], m0
      movhps [dstq+strideq*1], m0
      lea                dstq, [dstq+strideq*2]
-@@ -7524,6 +7615,7 @@ cglobal w_mask_422_16bpc, 4, 7, 12, dst, stride, tmp1,
+@@ -8902,6 +9008,7 @@ cglobal w_mask_422_16bpc, 4, 7, 12, dst, stride, tmp1,
      call .main
      lea                dstq, [dstq+strideq*2]
  .w8:
@@ -686,7 +811,7 @@ Index: src/x86/mc16_sse.asm
      mova   [dstq+strideq*0], m0
      mova   [dstq+strideq*1], m1
      sub                  hd, 2
-@@ -7534,6 +7626,7 @@ cglobal w_mask_422_16bpc, 4, 7, 12, dst, stride, tmp1,
+@@ -8912,6 +9019,7 @@ cglobal w_mask_422_16bpc, 4, 7, 12, dst, stride, tmp1,
      call .main
      lea                dstq, [dstq+strideq*2]
  .w16:
@@ -694,7 +819,7 @@ Index: src/x86/mc16_sse.asm
      mova [dstq+strideq*0+16*0], m0
      mova [dstq+strideq*0+16*1], m1
      call .main
-@@ -7546,6 +7639,7 @@ cglobal w_mask_422_16bpc, 4, 7, 12, dst, stride, tmp1,
+@@ -8924,6 +9032,7 @@ cglobal w_mask_422_16bpc, 4, 7, 12, dst, stride, tmp1,
      call .main
      add                dstq, strideq
  .w32:
@@ -702,7 +827,7 @@ Index: src/x86/mc16_sse.asm
      mova        [dstq+16*0], m0
      mova        [dstq+16*1], m1
      call .main
-@@ -7558,6 +7652,7 @@ cglobal w_mask_422_16bpc, 4, 7, 12, dst, stride, tmp1,
+@@ -8936,6 +9045,7 @@ cglobal w_mask_422_16bpc, 4, 7, 12, dst, stride, tmp1,
      call .main
      add                dstq, strideq
  .w64:
@@ -710,7 +835,7 @@ Index: src/x86/mc16_sse.asm
      mova        [dstq+16*0], m0
      mova        [dstq+16*1], m1
      call .main
-@@ -7576,6 +7671,7 @@ cglobal w_mask_422_16bpc, 4, 7, 12, dst, stride, tmp1,
+@@ -8954,6 +9064,7 @@ cglobal w_mask_422_16bpc, 4, 7, 12, dst, stride, tmp1,
      call .main
      add                dstq, strideq
  .w128:
@@ -718,7 +843,7 @@ Index: src/x86/mc16_sse.asm
      mova       [dstq+16* 0], m0
      mova       [dstq+16* 1], m1
      call .main
-@@ -7649,6 +7745,7 @@ cglobal w_mask_444_16bpc, 4, 7, 12, dst, stride, tmp1,
+@@ -9027,6 +9138,7 @@ cglobal w_mask_444_16bpc, 4, 7, 12, dst, stride, tmp1,
      call .main
      lea                dstq, [dstq+strideq*2]
  .w4:
@@ -726,7 +851,7 @@ Index: src/x86/mc16_sse.asm
      movq   [dstq+strideq*0], m0
      movhps [dstq+strideq*1], m0
      lea                dstq, [dstq+strideq*2]
-@@ -7662,6 +7759,7 @@ cglobal w_mask_444_16bpc, 4, 7, 12, dst, stride, tmp1,
+@@ -9040,6 +9152,7 @@ cglobal w_mask_444_16bpc, 4, 7, 12, dst, stride, tmp1,
      call .main
      lea                dstq, [dstq+strideq*2]
  .w8:
@@ -734,7 +859,7 @@ Index: src/x86/mc16_sse.asm
      mova   [dstq+strideq*0], m0
      mova   [dstq+strideq*1], m1
      sub                  hd, 2
-@@ -7672,6 +7770,7 @@ cglobal w_mask_444_16bpc, 4, 7, 12, dst, stride, tmp1,
+@@ -9050,6 +9163,7 @@ cglobal w_mask_444_16bpc, 4, 7, 12, dst, stride, tmp1,
      call .main
      lea                dstq, [dstq+strideq*2]
  .w16:
@@ -742,7 +867,7 @@ Index: src/x86/mc16_sse.asm
      mova [dstq+strideq*0+16*0], m0
      mova [dstq+strideq*0+16*1], m1
      call .main
-@@ -7684,6 +7783,7 @@ cglobal w_mask_444_16bpc, 4, 7, 12, dst, stride, tmp1,
+@@ -9062,6 +9176,7 @@ cglobal w_mask_444_16bpc, 4, 7, 12, dst, stride, tmp1,
      call .main
      add                dstq, strideq
  .w32:
@@ -750,7 +875,7 @@ Index: src/x86/mc16_sse.asm
      mova        [dstq+16*0], m0
      mova        [dstq+16*1], m1
      call .main
-@@ -7696,6 +7796,7 @@ cglobal w_mask_444_16bpc, 4, 7, 12, dst, stride, tmp1,
+@@ -9074,6 +9189,7 @@ cglobal w_mask_444_16bpc, 4, 7, 12, dst, stride, tmp1,
      call .main
      add                dstq, strideq
  .w64:
@@ -758,7 +883,7 @@ Index: src/x86/mc16_sse.asm
      mova        [dstq+16*0], m0
      mova        [dstq+16*1], m1
      call .main
-@@ -7714,6 +7815,7 @@ cglobal w_mask_444_16bpc, 4, 7, 12, dst, stride, tmp1,
+@@ -9092,6 +9208,7 @@ cglobal w_mask_444_16bpc, 4, 7, 12, dst, stride, tmp1,
      call .main
      add                dstq, strideq
  .w128:
@@ -766,7 +891,7 @@ Index: src/x86/mc16_sse.asm
      mova       [dstq+16* 0], m0
      mova       [dstq+16* 1], m1
      call .main
-@@ -7770,6 +7872,7 @@ cglobal blend_16bpc, 3, 7, 8, dst, stride, tmp, w, h, 
+@@ -9148,6 +9265,7 @@ cglobal blend_16bpc, 3, 7, 8, dst, stride, tmp, w, h, 
      pxor                 m6, m6
      jmp                  wq
  .w4:
@@ -774,7 +899,7 @@ Index: src/x86/mc16_sse.asm
      mova                 m5, [maskq]
      movq                 m0, [dstq+strideq*0]
      movhps               m0, [dstq+strideq*1]
-@@ -7796,6 +7899,7 @@ cglobal blend_16bpc, 3, 7, 8, dst, stride, tmp, w, h, 
+@@ -9174,6 +9292,7 @@ cglobal blend_16bpc, 3, 7, 8, dst, stride, tmp, w, h, 
      jg .w4
      RET
  .w8:
@@ -782,7 +907,7 @@ Index: src/x86/mc16_sse.asm
      mova                 m5, [maskq]
      mova                 m0, [dstq+strideq*0]
      mova                 m1, [dstq+strideq*1]
-@@ -7818,6 +7922,7 @@ cglobal blend_16bpc, 3, 7, 8, dst, stride, tmp, w, h, 
+@@ -9196,6 +9315,7 @@ cglobal blend_16bpc, 3, 7, 8, dst, stride, tmp, w, h, 
      jg .w8
      RET
  .w16:
@@ -790,7 +915,7 @@ Index: src/x86/mc16_sse.asm
      mova                 m5, [maskq]
      mova                 m0, [dstq+16*0]
      mova                 m1, [dstq+16*1]
-@@ -7840,6 +7945,7 @@ cglobal blend_16bpc, 3, 7, 8, dst, stride, tmp, w, h, 
+@@ -9218,6 +9338,7 @@ cglobal blend_16bpc, 3, 7, 8, dst, stride, tmp, w, h, 
      jg .w16
      RET
  .w32:
@@ -798,7 +923,7 @@ Index: src/x86/mc16_sse.asm
      mova                 m5, [maskq+16*0]
      mova                 m0, [dstq+16*0]
      mova                 m1, [dstq+16*1]
-@@ -7886,6 +7992,7 @@ cglobal blend_v_16bpc, 3, 6, 6, dst, stride, tmp, w, h
+@@ -9264,6 +9385,7 @@ cglobal blend_v_16bpc, 3, 6, 6, dst, stride, tmp, w, h
      add                  wq, r5
      jmp                  wq
  .w2:
@@ -806,7 +931,7 @@ Index: src/x86/mc16_sse.asm
      movd                 m4, [base+obmc_masks+2*2]
  .w2_loop:
      movd                 m0, [dstq+strideq*0]
-@@ -7906,6 +8013,7 @@ cglobal blend_v_16bpc, 3, 6, 6, dst, stride, tmp, w, h
+@@ -9284,6 +9406,7 @@ cglobal blend_v_16bpc, 3, 6, 6, dst, stride, tmp, w, h
      jg .w2_loop
      RET
  .w4:
@@ -814,7 +939,7 @@ Index: src/x86/mc16_sse.asm
      movddup              m2, [base+obmc_masks+4*2]
  .w4_loop:
      movq                 m0, [dstq+strideq*0]
-@@ -7922,6 +8030,7 @@ cglobal blend_v_16bpc, 3, 6, 6, dst, stride, tmp, w, h
+@@ -9300,6 +9423,7 @@ cglobal blend_v_16bpc, 3, 6, 6, dst, stride, tmp, w, h
      jg .w4_loop
      RET
  .w8:
@@ -822,7 +947,7 @@ Index: src/x86/mc16_sse.asm
      mova                 m4, [base+obmc_masks+8*2]
  .w8_loop:
      mova                 m0, [dstq+strideq*0]
-@@ -7942,6 +8051,7 @@ cglobal blend_v_16bpc, 3, 6, 6, dst, stride, tmp, w, h
+@@ -9320,6 +9444,7 @@ cglobal blend_v_16bpc, 3, 6, 6, dst, stride, tmp, w, h
      jg .w8_loop
      RET
  .w16:
@@ -830,7 +955,7 @@ Index: src/x86/mc16_sse.asm
      mova                 m4, [base+obmc_masks+16*2]
      movq                 m5, [base+obmc_masks+16*3]
  .w16_loop:
-@@ -7963,6 +8073,7 @@ cglobal blend_v_16bpc, 3, 6, 6, dst, stride, tmp, w, h
+@@ -9341,6 +9466,7 @@ cglobal blend_v_16bpc, 3, 6, 6, dst, stride, tmp, w, h
      jg .w16_loop
      RET
  .w32:
@@ -838,7 +963,7 @@ Index: src/x86/mc16_sse.asm
  %if WIN64
      movaps          [rsp+8], m6
  %endif
-@@ -8030,6 +8141,7 @@ cglobal blend_h_16bpc, 3, 7, 6, dst, ds, tmp, w, h, ma
+@@ -9408,6 +9534,7 @@ cglobal blend_h_16bpc, 3, 7, 6, dst, ds, tmp, w, h, ma
      neg                  hq
      jmp                  wq
  .w2:
@@ -846,7 +971,7 @@ Index: src/x86/mc16_sse.asm
      movd                 m0, [dstq+dsq*0]
      movd                 m2, [dstq+dsq*1]
      movd                 m3, [maskq+hq*2]
-@@ -8048,6 +8160,7 @@ cglobal blend_h_16bpc, 3, 7, 6, dst, ds, tmp, w, h, ma
+@@ -9426,6 +9553,7 @@ cglobal blend_h_16bpc, 3, 7, 6, dst, ds, tmp, w, h, ma
      jl .w2
      RET
  .w4:
@@ -854,7 +979,7 @@ Index: src/x86/mc16_sse.asm
      mova                 m3, [base+blend_shuf]
  .w4_loop:
      movq                 m0, [dstq+dsq*0]
-@@ -8066,6 +8179,7 @@ cglobal blend_h_16bpc, 3, 7, 6, dst, ds, tmp, w, h, ma
+@@ -9444,6 +9572,7 @@ cglobal blend_h_16bpc, 3, 7, 6, dst, ds, tmp, w, h, ma
      jl .w4_loop
      RET
  .w8:
@@ -862,7 +987,7 @@ Index: src/x86/mc16_sse.asm
      movddup              m5, [base+blend_shuf+8]
  %if WIN64
      movaps         [rsp+ 8], m6
-@@ -8097,6 +8211,7 @@ cglobal blend_h_16bpc, 3, 7, 6, dst, ds, tmp, w, h, ma
+@@ -9475,6 +9604,7 @@ cglobal blend_h_16bpc, 3, 7, 6, dst, ds, tmp, w, h, ma
  %endif
      RET
  .w16:
@@ -870,7 +995,7 @@ Index: src/x86/mc16_sse.asm
      movd                 m5, [maskq+hq*2]
      pshufb               m5, m4
      BLEND_H_ROW           0, 0, 2
-@@ -8105,6 +8220,7 @@ cglobal blend_h_16bpc, 3, 7, 6, dst, ds, tmp, w, h, ma
+@@ -9483,6 +9613,7 @@ cglobal blend_h_16bpc, 3, 7, 6, dst, ds, tmp, w, h, ma
      jl .w16
      RET
  .w32:
@@ -878,7 +1003,7 @@ Index: src/x86/mc16_sse.asm
      movd                 m5, [maskq+hq*2]
      pshufb               m5, m4
      BLEND_H_ROW           0, 0
-@@ -8114,6 +8230,7 @@ cglobal blend_h_16bpc, 3, 7, 6, dst, ds, tmp, w, h, ma
+@@ -9492,6 +9623,7 @@ cglobal blend_h_16bpc, 3, 7, 6, dst, ds, tmp, w, h, ma
      jl .w32
      RET
  .w64:
@@ -886,7 +1011,7 @@ Index: src/x86/mc16_sse.asm
      movd                 m5, [maskq+hq*2]
      pshufb               m5, m4
      BLEND_H_ROW           0, 0
-@@ -8125,6 +8242,7 @@ cglobal blend_h_16bpc, 3, 7, 6, dst, ds, tmp, w, h, ma
+@@ -9503,6 +9635,7 @@ cglobal blend_h_16bpc, 3, 7, 6, dst, ds, tmp, w, h, ma
      jl .w64
      RET
  .w128:

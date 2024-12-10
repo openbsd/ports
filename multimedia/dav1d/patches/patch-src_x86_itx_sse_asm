@@ -512,11 +512,9 @@ Index: src/x86/itx_sse.asm
      punpckhwd             m7, m3, m6                 ;packed 9, 11, 13, 15 high
      punpcklwd             m3, m6                     ;packed 9, 10, 13, 15 low
      punpckhwd             m6, m4, m5                 ;packed 8, 10, 12, 14 high
-@@ -1839,10 +1912,13 @@ cglobal idct_16x4_internal_8bpc, 0, 0, 0, dst, stride,
-     punpcklwd             m2, m7                     ;0, 1, 2, 3, 4, 5, 6, 7(2)
+@@ -1840,9 +1913,11 @@ cglobal idct_16x4_internal_8bpc, 0, 0, 0, dst, stride,
      jmp                 tx2q
  
-+    _CET_ENDBR
  .pass2:
 +    _CET_ENDBR
      lea                 tx2q, [o(m(idct_8x4_internal_8bpc).pass2)]
@@ -526,7 +524,7 @@ Index: src/x86/itx_sse.asm
      mova       [coeffq+16*4], m4
      mova       [coeffq+16*5], m5
      mova       [coeffq+16*6], m6
-@@ -1922,6 +1998,7 @@ cglobal iadst_16x4_internal_8bpc, 0, 0, 0, dst, stride
+@@ -1922,6 +1997,7 @@ cglobal iadst_16x4_internal_8bpc, 0, 0, 0, dst, stride
      mova                  m7, [o(pw_16384)]
  
  .pass1_end:
@@ -534,7 +532,7 @@ Index: src/x86/itx_sse.asm
      REPX    {pmulhrsw x, m7}, m0, m1, m4, m5
      pxor                  m2, m2
      psubw                 m2, m7
-@@ -1932,6 +2009,7 @@ cglobal iadst_16x4_internal_8bpc, 0, 0, 0, dst, stride
+@@ -1932,6 +2008,7 @@ cglobal iadst_16x4_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_16x4_internal_8bpc).pass1_end3
  
  .pass2:
@@ -542,7 +540,7 @@ Index: src/x86/itx_sse.asm
      lea                 tx2q, [o(m(iadst_8x4_internal_8bpc).pass2)]
      jmp   m(idct_16x4_internal_8bpc).pass2_end
  
-@@ -2107,6 +2185,7 @@ cglobal iflipadst_16x4_internal_8bpc, 0, 0, 0, dst, st
+@@ -2107,6 +2184,7 @@ cglobal iflipadst_16x4_internal_8bpc, 0, 0, 0, dst, st
      jmp   m(iadst_16x4_internal_8bpc).pass1_end
  
  .pass2:
@@ -550,7 +548,7 @@ Index: src/x86/itx_sse.asm
      lea                 tx2q, [o(m(iflipadst_8x4_internal_8bpc).pass2)]
      jmp   m(idct_16x4_internal_8bpc).pass2_end
  
-@@ -2169,6 +2248,7 @@ cglobal iidentity_16x4_internal_8bpc, 0, 0, 0, dst, st
+@@ -2169,6 +2247,7 @@ cglobal iidentity_16x4_internal_8bpc, 0, 0, 0, dst, st
      jmp   m(idct_16x4_internal_8bpc).pass1_end3
  
  .pass2:
@@ -558,7 +556,7 @@ Index: src/x86/itx_sse.asm
      lea                 tx2q, [o(m(iidentity_8x4_internal_8bpc).pass2)]
      jmp   m(idct_16x4_internal_8bpc).pass2_end
  
-@@ -2202,6 +2282,7 @@ cglobal iidentity_16x4_internal_8bpc, 0, 0, 0, dst, st
+@@ -2202,6 +2281,7 @@ cglobal iidentity_16x4_internal_8bpc, 0, 0, 0, dst, st
      lea                tx2q, [o(m(inv_txfm_add_dct_dct_8x16_8bpc).end)]
      jmp m(inv_txfm_add_dct_dct_8x8_8bpc).loop
  .end:
@@ -566,7 +564,7 @@ Index: src/x86/itx_sse.asm
      RET
  %endif
  %endmacro
-@@ -2215,18 +2296,21 @@ cglobal idct_8x16_internal_8bpc, 0, 0, 0, dst, stride,
+@@ -2215,18 +2295,21 @@ cglobal idct_8x16_internal_8bpc, 0, 0, 0, dst, stride,
      lea                    r3, [o(m(idct_8x8_internal_8bpc).pass1)]
  
  .pass1:
@@ -588,7 +586,7 @@ Index: src/x86/itx_sse.asm
      lea                  tx2q, [o(m(idct_8x16_internal_8bpc).end)]
  
  .pass2_pre:
-@@ -2261,6 +2345,7 @@ cglobal idct_8x16_internal_8bpc, 0, 0, 0, dst, stride,
+@@ -2261,6 +2344,7 @@ cglobal idct_8x16_internal_8bpc, 0, 0, 0, dst, stride,
      jmp  m(idct_8x8_internal_8bpc).end
  
  .end:
@@ -596,7 +594,7 @@ Index: src/x86/itx_sse.asm
      LOAD_8ROWS   rsp+gprsize+16*3, 16
      mova   [rsp+gprsize+16*0], m7
      lea                  tx2q, [o(m(idct_8x16_internal_8bpc).end1)]
-@@ -2268,6 +2353,7 @@ cglobal idct_8x16_internal_8bpc, 0, 0, 0, dst, stride,
+@@ -2268,6 +2352,7 @@ cglobal idct_8x16_internal_8bpc, 0, 0, 0, dst, stride,
      jmp  m(idct_8x8_internal_8bpc).end
  
  .end1:
@@ -604,7 +602,7 @@ Index: src/x86/itx_sse.asm
      pxor                   m7, m7
      REPX  {mova [coeffq+16*x], m7}, 0,  1,  2,  3,  4,  5,  6,  7,  8,  9,  10, 11, 12, 13, 14, 15
      ret
-@@ -2282,6 +2368,7 @@ cglobal iadst_8x16_internal_8bpc, 0, 0, 0, dst, stride
+@@ -2282,6 +2367,7 @@ cglobal iadst_8x16_internal_8bpc, 0, 0, 0, dst, stride
      jmp  m(idct_8x16_internal_8bpc).pass1
  
  .pass2:
@@ -612,7 +610,7 @@ Index: src/x86/itx_sse.asm
      lea                  tx2q, [o(m(iadst_8x16_internal_8bpc).end)]
  
  .pass2_pre:
-@@ -2316,6 +2403,7 @@ cglobal iadst_8x16_internal_8bpc, 0, 0, 0, dst, stride
+@@ -2316,6 +2402,7 @@ cglobal iadst_8x16_internal_8bpc, 0, 0, 0, dst, stride
      jmp m(iadst_8x8_internal_8bpc).end
  
  .end:
@@ -620,7 +618,7 @@ Index: src/x86/itx_sse.asm
      LOAD_8ROWS   rsp+gprsize+16*3, 16
      mova   [rsp+gprsize+16*0], m7
      lea                  tx2q, [o(m(idct_8x16_internal_8bpc).end1)]
-@@ -2333,6 +2421,7 @@ cglobal iflipadst_8x16_internal_8bpc, 0, 0, 0, dst, st
+@@ -2333,6 +2420,7 @@ cglobal iflipadst_8x16_internal_8bpc, 0, 0, 0, dst, st
      jmp  m(idct_8x16_internal_8bpc).pass1
  
  .pass2:
@@ -628,7 +626,7 @@ Index: src/x86/itx_sse.asm
      lea                   tx2q, [o(m(iflipadst_8x16_internal_8bpc).end)]
      lea                     r3, [dstq+strideq*8]
  
-@@ -2365,6 +2454,7 @@ cglobal iflipadst_8x16_internal_8bpc, 0, 0, 0, dst, st
+@@ -2365,6 +2453,7 @@ cglobal iflipadst_8x16_internal_8bpc, 0, 0, 0, dst, st
      jmp  m(iflipadst_8x8_internal_8bpc).end
  
  .end:
@@ -636,7 +634,7 @@ Index: src/x86/itx_sse.asm
      LOAD_8ROWS    rsp+gprsize+16*3, 16
      mova    [rsp+gprsize+16*0], m7
      lea                   tx2q, [o(m(idct_8x16_internal_8bpc).end1)]
-@@ -2385,6 +2475,7 @@ cglobal iidentity_8x16_internal_8bpc, 0, 0, 0, dst, st
+@@ -2385,6 +2474,7 @@ cglobal iidentity_8x16_internal_8bpc, 0, 0, 0, dst, st
      jmp  m(idct_8x8_internal_8bpc).pass1_end3
  
  .pass1_end:
@@ -644,7 +642,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS    coeffq+16*1, 32
      LOAD_8ROWS    coeffq+16*0, 32, 1
      mov                  tx2q, r3
-@@ -2392,9 +2483,11 @@ cglobal iidentity_8x16_internal_8bpc, 0, 0, 0, dst, st
+@@ -2392,9 +2482,11 @@ cglobal iidentity_8x16_internal_8bpc, 0, 0, 0, dst, st
      jmp  m(idct_8x8_internal_8bpc).pass1_end3
  
  .pass2:
@@ -656,7 +654,7 @@ Index: src/x86/itx_sse.asm
      mova   [rsp+gprsize+16*0], m7
      mova   [rsp+gprsize+16*1], m6
      mova                   m7, [o(pw_1697x16)]
-@@ -2413,6 +2506,7 @@ cglobal iidentity_8x16_internal_8bpc, 0, 0, 0, dst, st
+@@ -2413,6 +2505,7 @@ cglobal iidentity_8x16_internal_8bpc, 0, 0, 0, dst, st
      jmp  m(idct_8x8_internal_8bpc).end3
  
  .end1:
@@ -664,7 +662,7 @@ Index: src/x86/itx_sse.asm
      LOAD_8ROWS    coeffq+16*1, 32
      lea                  tx2q, [o(m(idct_8x16_internal_8bpc).end1)]
      lea                  dstq, [dstq+strideq*2]
-@@ -2431,6 +2525,7 @@ cglobal iidentity_8x16_internal_8bpc, 0, 0, 0, dst, st
+@@ -2431,6 +2524,7 @@ cglobal iidentity_8x16_internal_8bpc, 0, 0, 0, dst, st
      lea                tx2q, [o(m(inv_txfm_add_dct_dct_16x8_8bpc).end)]
      jmp m(inv_txfm_add_dct_dct_16x4_8bpc).dconly
  .end:
@@ -672,7 +670,7 @@ Index: src/x86/itx_sse.asm
      RET
  %endif
  %endmacro
-@@ -2452,6 +2547,7 @@ cglobal idct_16x8_internal_8bpc, 0, 0, 0, dst, stride,
+@@ -2452,6 +2546,7 @@ cglobal idct_16x8_internal_8bpc, 0, 0, 0, dst, stride,
      jmp  m(idct_8x8_internal_8bpc).pass1_end
  
  .pass1_end:
@@ -680,7 +678,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS    coeffq+16*1, 32
      LOAD_8ROWS   rsp+gprsize+16*3, 16
      mova   [rsp+gprsize+16*0], m7
-@@ -2459,11 +2555,13 @@ cglobal idct_16x8_internal_8bpc, 0, 0, 0, dst, stride,
+@@ -2459,11 +2554,13 @@ cglobal idct_16x8_internal_8bpc, 0, 0, 0, dst, stride,
      jmp  m(idct_8x8_internal_8bpc).pass1_end
  
  .pass2:
@@ -694,7 +692,7 @@ Index: src/x86/itx_sse.asm
      LOAD_8ROWS    coeffq+16*1, 32
      lea                  tx2q, [o(m(idct_8x16_internal_8bpc).end1)]
      mov                  dstq, r3
-@@ -2591,6 +2689,7 @@ cglobal iadst_16x8_internal_8bpc, 0, 0, 0, dst, stride
+@@ -2591,6 +2688,7 @@ cglobal iadst_16x8_internal_8bpc, 0, 0, 0, dst, stride
      jmp m(iadst_8x8_internal_8bpc).pass1_end
  
  .pass1_end:
@@ -702,7 +700,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS    coeffq+16*1, 32
      LOAD_8ROWS   rsp+gprsize+16*3, 16
      mova   [rsp+gprsize+16*0], m7
-@@ -2598,11 +2697,13 @@ cglobal iadst_16x8_internal_8bpc, 0, 0, 0, dst, stride
+@@ -2598,11 +2696,13 @@ cglobal iadst_16x8_internal_8bpc, 0, 0, 0, dst, stride
      jmp m(iadst_8x8_internal_8bpc).pass1_end
  
  .pass2:
@@ -716,7 +714,7 @@ Index: src/x86/itx_sse.asm
      LOAD_8ROWS    coeffq+16*1, 32
      lea                  tx2q, [o(m(idct_8x16_internal_8bpc).end1)]
      mov                  dstq, r3
-@@ -2876,6 +2977,7 @@ cglobal iflipadst_16x8_internal_8bpc, 0, 0, 0, dst, st
+@@ -2876,6 +2976,7 @@ cglobal iflipadst_16x8_internal_8bpc, 0, 0, 0, dst, st
      jmp m(iflipadst_8x8_internal_8bpc).pass1_end
  
  .pass1_end:
@@ -724,7 +722,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS     coeffq+16*1, 32
      LOAD_8ROWS     coeffq+16*0, 32
      mova    [rsp+gprsize+16*0], m7
-@@ -2883,11 +2985,13 @@ cglobal iflipadst_16x8_internal_8bpc, 0, 0, 0, dst, st
+@@ -2883,11 +2984,13 @@ cglobal iflipadst_16x8_internal_8bpc, 0, 0, 0, dst, st
      jmp m(iflipadst_8x8_internal_8bpc).pass1_end
  
  .pass2:
@@ -738,7 +736,7 @@ Index: src/x86/itx_sse.asm
      LOAD_8ROWS     coeffq+16*1, 32
      lea                   tx2q, [o(m(idct_8x16_internal_8bpc).end1)]
      mov                   dstq, r3
-@@ -2909,6 +3013,7 @@ cglobal iidentity_16x8_internal_8bpc, 0, 0, 0, dst, st
+@@ -2909,6 +3012,7 @@ cglobal iidentity_16x8_internal_8bpc, 0, 0, 0, dst, st
      lea                  tx2q, [o(.pass1_end)]
  
  .pass1:
@@ -746,7 +744,7 @@ Index: src/x86/itx_sse.asm
      mova                   m0, [o(pw_2896x8)]
      mova                   m2, [o(pw_1697x16)]
      mova                   m3, [o(pw_16384)]
-@@ -2948,6 +3053,7 @@ cglobal iidentity_16x8_internal_8bpc, 0, 0, 0, dst, st
+@@ -2948,6 +3052,7 @@ cglobal iidentity_16x8_internal_8bpc, 0, 0, 0, dst, st
      jmp   m(idct_8x8_internal_8bpc).pass1_end3
  
  .pass1_end:
@@ -754,7 +752,7 @@ Index: src/x86/itx_sse.asm
      mova        [coeffq+16*1], m4
      mova        [coeffq+16*3], m5
      mova        [coeffq+16*5], m6
-@@ -2964,11 +3070,13 @@ cglobal iidentity_16x8_internal_8bpc, 0, 0, 0, dst, st
+@@ -2964,11 +3069,13 @@ cglobal iidentity_16x8_internal_8bpc, 0, 0, 0, dst, st
      jmp .pass1
  
  .pass2:
@@ -768,7 +766,7 @@ Index: src/x86/itx_sse.asm
      LOAD_8ROWS    coeffq+16*1, 32
      lea                  tx2q, [o(m(idct_8x16_internal_8bpc).end1)]
      mov                  dstq, r3
-@@ -2986,6 +3094,7 @@ cglobal iidentity_16x8_internal_8bpc, 0, 0, 0, dst, st
+@@ -2986,6 +3093,7 @@ cglobal iidentity_16x8_internal_8bpc, 0, 0, 0, dst, st
      lea                  tx2q, [o(m(inv_txfm_add_dct_dct_16x16_8bpc).end)]
      jmp m(inv_txfm_add_dct_dct_16x4_8bpc).dconly
  .end:
@@ -776,7 +774,7 @@ Index: src/x86/itx_sse.asm
      RET
  %endif
  %endmacro
-@@ -3007,6 +3116,7 @@ cglobal idct_16x16_internal_8bpc, 0, 0, 0, dst, stride
+@@ -3007,6 +3115,7 @@ cglobal idct_16x16_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end1
  
  .pass1_end:
@@ -784,7 +782,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS    coeffq+16*17, 32
      LOAD_8ROWS    rsp+gprsize+16*3, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -3015,6 +3125,7 @@ cglobal idct_16x16_internal_8bpc, 0, 0, 0, dst, stride
+@@ -3015,6 +3124,7 @@ cglobal idct_16x16_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end1
  
  .pass1_end1:
@@ -792,7 +790,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS     coeffq+16*1, 32
      LOAD_8ROWS     coeffq+16*0, 64
      call  m(idct_8x8_internal_8bpc).main
-@@ -3026,6 +3137,7 @@ cglobal idct_16x16_internal_8bpc, 0, 0, 0, dst, stride
+@@ -3026,6 +3136,7 @@ cglobal idct_16x16_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end1
  
  .pass1_end2:
@@ -800,7 +798,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS    coeffq+16*16, 32
      LOAD_8ROWS    rsp+gprsize+16*3, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -3034,10 +3146,12 @@ cglobal idct_16x16_internal_8bpc, 0, 0, 0, dst, stride
+@@ -3034,10 +3145,12 @@ cglobal idct_16x16_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end1
  
  .pass2:
@@ -813,7 +811,7 @@ Index: src/x86/itx_sse.asm
      LOAD_8ROWS    rsp+gprsize+16*3, 16
      mova    [rsp+gprsize+16*0], m7
      lea                   tx2q, [o(.end1)]
-@@ -3046,6 +3160,7 @@ cglobal idct_16x16_internal_8bpc, 0, 0, 0, dst, stride
+@@ -3046,6 +3159,7 @@ cglobal idct_16x16_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).end
  
  .end1:
@@ -821,7 +819,7 @@ Index: src/x86/itx_sse.asm
      pxor                    m7, m7
      REPX   {mova [coeffq+16*x], m7}, 0,  1,  2,  3,  4,  5,  6,  7,  8,  9,  10, 11, 12, 13, 14, 15
  
-@@ -3133,6 +3248,7 @@ cglobal iadst_16x16_internal_8bpc, 0, 0, 0, dst, strid
+@@ -3133,6 +3247,7 @@ cglobal iadst_16x16_internal_8bpc, 0, 0, 0, dst, strid
      jmp  m(iadst_8x8_internal_8bpc).pass1_end1
  
  .pass1_end:
@@ -829,7 +827,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS    coeffq+16*17, 32
      LOAD_8ROWS    rsp+gprsize+16*3, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -3141,6 +3257,7 @@ cglobal iadst_16x16_internal_8bpc, 0, 0, 0, dst, strid
+@@ -3141,6 +3256,7 @@ cglobal iadst_16x16_internal_8bpc, 0, 0, 0, dst, strid
      jmp  m(iadst_8x8_internal_8bpc).pass1_end1
  
  .pass1_end1:
@@ -837,7 +835,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS     coeffq+16*1, 32
      ITX_16X16_ADST_LOAD_EVEN_COEFS
      call m(iadst_16x8_internal_8bpc).main
-@@ -3151,6 +3268,7 @@ cglobal iadst_16x16_internal_8bpc, 0, 0, 0, dst, strid
+@@ -3151,6 +3267,7 @@ cglobal iadst_16x16_internal_8bpc, 0, 0, 0, dst, strid
      jmp  m(iadst_8x8_internal_8bpc).pass1_end1
  
  .pass1_end2:
@@ -845,7 +843,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS    coeffq+16*16, 32
      LOAD_8ROWS    rsp+gprsize+16*3, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -3159,10 +3277,12 @@ cglobal iadst_16x16_internal_8bpc, 0, 0, 0, dst, strid
+@@ -3159,10 +3276,12 @@ cglobal iadst_16x16_internal_8bpc, 0, 0, 0, dst, strid
      jmp  m(iadst_8x8_internal_8bpc).pass1_end1
  
  .pass2:
@@ -858,7 +856,7 @@ Index: src/x86/itx_sse.asm
      LOAD_8ROWS    rsp+gprsize+16*3, 16
      mova    [rsp+gprsize+16*0], m7
      lea                   tx2q, [o(.end1)]
-@@ -3171,6 +3291,7 @@ cglobal iadst_16x16_internal_8bpc, 0, 0, 0, dst, strid
+@@ -3171,6 +3290,7 @@ cglobal iadst_16x16_internal_8bpc, 0, 0, 0, dst, strid
      jmp  m(iadst_8x8_internal_8bpc).end
  
  .end1:
@@ -866,7 +864,7 @@ Index: src/x86/itx_sse.asm
      pxor                    m7, m7
      REPX   {mova [coeffq+16*x], m7}, 0,  1,  2,  3,  4,  5,  6,  7,  8,  9,  10, 11, 12, 13, 14, 15
  
-@@ -3208,6 +3329,7 @@ cglobal iflipadst_16x16_internal_8bpc, 0, 0, 0, dst, s
+@@ -3208,6 +3328,7 @@ cglobal iflipadst_16x16_internal_8bpc, 0, 0, 0, dst, s
      jmp  m(iflipadst_8x8_internal_8bpc).pass1_end1
  
  .pass1_end:
@@ -874,7 +872,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS     coeffq+16*1, 32
      LOAD_8ROWS    rsp+gprsize+16*3, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -3216,6 +3338,7 @@ cglobal iflipadst_16x16_internal_8bpc, 0, 0, 0, dst, s
+@@ -3216,6 +3337,7 @@ cglobal iflipadst_16x16_internal_8bpc, 0, 0, 0, dst, s
      jmp  m(iflipadst_8x8_internal_8bpc).pass1_end1
  
  .pass1_end1:
@@ -882,7 +880,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS    coeffq+16*17, 32
      ITX_16X16_ADST_LOAD_EVEN_COEFS
      call m(iadst_16x8_internal_8bpc).main
-@@ -3230,6 +3353,7 @@ cglobal iflipadst_16x16_internal_8bpc, 0, 0, 0, dst, s
+@@ -3230,6 +3352,7 @@ cglobal iflipadst_16x16_internal_8bpc, 0, 0, 0, dst, s
      jmp  m(iflipadst_8x8_internal_8bpc).pass1_end1
  
  .pass1_end2:
@@ -890,7 +888,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS    coeffq+16*16, 32
      LOAD_8ROWS    coeffq+16* 0, 32
      mova    [rsp+gprsize+16*0], m7
-@@ -3238,11 +3362,13 @@ cglobal iflipadst_16x16_internal_8bpc, 0, 0, 0, dst, s
+@@ -3238,11 +3361,13 @@ cglobal iflipadst_16x16_internal_8bpc, 0, 0, 0, dst, s
      jmp m(iflipadst_8x8_internal_8bpc).pass1_end1
  
  .pass2:
@@ -904,7 +902,7 @@ Index: src/x86/itx_sse.asm
      LOAD_8ROWS    rsp+gprsize+16*3, 16
      mova    [rsp+gprsize+16*0], m7
      lea                   tx2q, [o(.end1)]
-@@ -3250,6 +3376,7 @@ cglobal iflipadst_16x16_internal_8bpc, 0, 0, 0, dst, s
+@@ -3250,6 +3375,7 @@ cglobal iflipadst_16x16_internal_8bpc, 0, 0, 0, dst, s
      jmp  m(iflipadst_8x8_internal_8bpc).end
  
  .end1:
@@ -912,7 +910,7 @@ Index: src/x86/itx_sse.asm
      pxor                    m7, m7
      REPX   {mova [coeffq+16*x], m7}, 0,  1,  2,  3,  4,  5,  6,  7,  8,  9,  10, 11, 12, 13, 14, 15
  
-@@ -3273,6 +3400,7 @@ cglobal iflipadst_16x16_internal_8bpc, 0, 0, 0, dst, s
+@@ -3273,6 +3399,7 @@ cglobal iflipadst_16x16_internal_8bpc, 0, 0, 0, dst, s
      jmp m(iflipadst_8x16_internal_8bpc).pass2_main
  
  .end2:
@@ -920,7 +918,7 @@ Index: src/x86/itx_sse.asm
      LOAD_8ROWS    rsp+gprsize+16*3, 16
      mova    [rsp+gprsize+16*0], m7
      lea                   tx2q, [o(m(idct_8x16_internal_8bpc).end1)]
-@@ -3295,6 +3423,7 @@ cglobal iidentity_16x16_internal_8bpc, 0, 0, 0, dst, s
+@@ -3295,6 +3422,7 @@ cglobal iidentity_16x16_internal_8bpc, 0, 0, 0, dst, s
      lea                   tx2q, [o(.pass1_end)]
  
  .pass1:
@@ -928,7 +926,7 @@ Index: src/x86/itx_sse.asm
      mova                    m6, [o(pw_1697x16)]
      mova                    m7, [coeffq+32*6]
      mova                    m0, [coeffq+32*0]
-@@ -3311,28 +3440,33 @@ cglobal iidentity_16x16_internal_8bpc, 0, 0, 0, dst, s
+@@ -3311,28 +3439,33 @@ cglobal iidentity_16x16_internal_8bpc, 0, 0, 0, dst, s
      jmp   m(idct_8x8_internal_8bpc).pass1_end3
  
  .pass1_end:
@@ -962,7 +960,7 @@ Index: src/x86/itx_sse.asm
      mova    [rsp+gprsize+16*0], m7
      mova    [rsp+gprsize+16*1], m4
      mova                    m7, [o(pw_1697x16)]
-@@ -3352,12 +3486,14 @@ cglobal iidentity_16x16_internal_8bpc, 0, 0, 0, dst, s
+@@ -3352,12 +3485,14 @@ cglobal iidentity_16x16_internal_8bpc, 0, 0, 0, dst, s
      jmp   m(idct_8x8_internal_8bpc).end3
  
  .end1:
@@ -977,7 +975,7 @@ Index: src/x86/itx_sse.asm
      pxor                    m7, m7
      REPX   {mova [coeffq+16*x], m7}, 0,  1,  2,  3,  4,  5,  6,  7,  8,  9,  10, 11, 12, 13, 14, 15
  
-@@ -3368,6 +3504,7 @@ cglobal iidentity_16x16_internal_8bpc, 0, 0, 0, dst, s
+@@ -3368,6 +3503,7 @@ cglobal iidentity_16x16_internal_8bpc, 0, 0, 0, dst, s
      jmp .end
  
  .end3:
@@ -985,7 +983,7 @@ Index: src/x86/itx_sse.asm
      LOAD_8ROWS     coeffq+16*1, 32
      lea                   tx2q, [o(m(idct_8x16_internal_8bpc).end1)]
      lea                   dstq, [dstq+strideq*2]
-@@ -3399,6 +3536,7 @@ cglobal inv_txfm_add_dct_dct_8x32_8bpc, 4, 6, 8, 16*36
+@@ -3399,6 +3535,7 @@ cglobal inv_txfm_add_dct_dct_8x32_8bpc, 4, 6, 8, 16*36
      jmp m(inv_txfm_add_dct_dct_8x8_8bpc).loop
  
  .end:
@@ -993,7 +991,7 @@ Index: src/x86/itx_sse.asm
      RET
  
  
-@@ -3414,6 +3552,7 @@ cglobal idct_8x32_internal_8bpc, 0, 0, 0, dst, stride,
+@@ -3414,6 +3551,7 @@ cglobal idct_8x32_internal_8bpc, 0, 0, 0, dst, stride,
      jmp   m(idct_8x8_internal_8bpc).pass1_end1
  
  .pass1:
@@ -1001,7 +999,7 @@ Index: src/x86/itx_sse.asm
      mova   [rsp+gprsize+16*9 ], m0                        ;in24
      mova   [rsp+gprsize+16*10], m4                        ;in28
      mova   [rsp+gprsize+16*17], m2                        ;in26
-@@ -3429,6 +3568,7 @@ cglobal idct_8x32_internal_8bpc, 0, 0, 0, dst, stride,
+@@ -3429,6 +3567,7 @@ cglobal idct_8x32_internal_8bpc, 0, 0, 0, dst, stride,
      jmp   m(idct_8x8_internal_8bpc).pass1_end1
  
  .pass1_1:
@@ -1009,7 +1007,7 @@ Index: src/x86/itx_sse.asm
      mova   [rsp+gprsize+16*7 ], m0                        ;in16
      mova   [rsp+gprsize+16*8 ], m4                        ;in20
      mova   [rsp+gprsize+16*15], m2                        ;in18
-@@ -3446,6 +3586,7 @@ cglobal idct_8x32_internal_8bpc, 0, 0, 0, dst, stride,
+@@ -3446,6 +3585,7 @@ cglobal idct_8x32_internal_8bpc, 0, 0, 0, dst, stride,
      jmp   m(idct_8x8_internal_8bpc).pass1_end1
  
  .pass1_end:
@@ -1017,7 +1015,7 @@ Index: src/x86/itx_sse.asm
      mova   [rsp+gprsize+16*5 ], m0                        ;in8
      mova   [rsp+gprsize+16*6 ], m4                        ;in12
      mova   [rsp+gprsize+16*13], m2                        ;in10
-@@ -3461,6 +3602,7 @@ cglobal idct_8x32_internal_8bpc, 0, 0, 0, dst, stride,
+@@ -3461,6 +3601,7 @@ cglobal idct_8x32_internal_8bpc, 0, 0, 0, dst, stride,
      jmp   m(idct_8x8_internal_8bpc).pass1_end1
  
  .pass1_end1:
@@ -1025,7 +1023,7 @@ Index: src/x86/itx_sse.asm
      mova   [rsp+gprsize+16*11], m2                        ;in2
      mova   [rsp+gprsize+16*12], m6                        ;in6
      mova   [rsp+gprsize+16*19], m1                        ;in1
-@@ -3505,13 +3647,16 @@ cglobal idct_8x32_internal_8bpc, 0, 0, 0, dst, stride,
+@@ -3505,13 +3646,16 @@ cglobal idct_8x32_internal_8bpc, 0, 0, 0, dst, stride,
      call .main
  
  .pass2:
@@ -1042,7 +1040,7 @@ Index: src/x86/itx_sse.asm
      pxor                    m7, m7
      REPX   {mova [coeffq+16*x], m7}, 0,  1,  2,  3,  4,  5,  6,  7,  \
                                       8,  9,  10, 11, 12, 13, 14, 15, \
-@@ -3521,10 +3666,12 @@ cglobal idct_8x32_internal_8bpc, 0, 0, 0, dst, stride,
+@@ -3521,10 +3665,12 @@ cglobal idct_8x32_internal_8bpc, 0, 0, 0, dst, stride,
      jmp                   tx2q
  
  .end2:
@@ -1055,7 +1053,7 @@ Index: src/x86/itx_sse.asm
      LOAD_8ROWS   rsp+gprsize+16*11, 16
      mova   [rsp+gprsize+16*0 ], m7
      lea                   dstq, [dstq+strideq*2]
-@@ -3532,6 +3679,7 @@ cglobal idct_8x32_internal_8bpc, 0, 0, 0, dst, stride,
+@@ -3532,6 +3678,7 @@ cglobal idct_8x32_internal_8bpc, 0, 0, 0, dst, stride,
      jmp   m(idct_8x8_internal_8bpc).end
  
  .end4:
@@ -1063,7 +1061,7 @@ Index: src/x86/itx_sse.asm
      LOAD_8ROWS   rsp+gprsize+16*19, 16
      mova   [rsp+gprsize+16*0 ], m7
      lea                   dstq, [dstq+strideq*2]
-@@ -3539,6 +3687,7 @@ cglobal idct_8x32_internal_8bpc, 0, 0, 0, dst, stride,
+@@ -3539,6 +3686,7 @@ cglobal idct_8x32_internal_8bpc, 0, 0, 0, dst, stride,
      jmp   m(idct_8x8_internal_8bpc).end
  
  .end5:
@@ -1071,7 +1069,7 @@ Index: src/x86/itx_sse.asm
      LOAD_8ROWS   rsp+gprsize+16*27, 16
      mova   [rsp+gprsize+16*0 ], m7
      lea                   dstq, [dstq+strideq*2]
-@@ -3546,6 +3695,7 @@ cglobal idct_8x32_internal_8bpc, 0, 0, 0, dst, stride,
+@@ -3546,6 +3694,7 @@ cglobal idct_8x32_internal_8bpc, 0, 0, 0, dst, stride,
      jmp   m(idct_8x8_internal_8bpc).end
  
  .end6:
@@ -1079,7 +1077,7 @@ Index: src/x86/itx_sse.asm
      ret
  
  ALIGN function_align
-@@ -3906,6 +4056,7 @@ cglobal inv_txfm_add_dct_dct_32x8_8bpc, 4, 6, 8, 16*36
+@@ -3906,6 +4055,7 @@ cglobal inv_txfm_add_dct_dct_32x8_8bpc, 4, 6, 8, 16*36
      jmp                   tx2q
  
  .end:
@@ -1087,7 +1085,7 @@ Index: src/x86/itx_sse.asm
      RET
  
  
-@@ -3947,21 +4098,25 @@ cglobal idct_32x8_internal_8bpc, 0, 0, 0, dst, stride,
+@@ -3947,21 +4097,25 @@ cglobal idct_32x8_internal_8bpc, 0, 0, 0, dst, stride,
      call m(idct_8x32_internal_8bpc).main
  
  .pass2:
@@ -1113,7 +1111,7 @@ Index: src/x86/itx_sse.asm
      LOAD_8ROWS   rsp+gprsize+16*11, 16
      mova   [rsp+gprsize+16*0 ], m7
      mova                    m7, [o(pw_8192)]
-@@ -3969,12 +4124,14 @@ cglobal idct_32x8_internal_8bpc, 0, 0, 0, dst, stride,
+@@ -3969,12 +4123,14 @@ cglobal idct_32x8_internal_8bpc, 0, 0, 0, dst, stride,
      jmp   m(idct_8x8_internal_8bpc).pass1_end1
  
  .end3:
@@ -1128,7 +1126,7 @@ Index: src/x86/itx_sse.asm
      LOAD_8ROWS   rsp+gprsize+16*19, 16
      mova   [rsp+gprsize+16*0 ], m7
      mova                    m7, [o(pw_8192)]
-@@ -3982,12 +4139,14 @@ cglobal idct_32x8_internal_8bpc, 0, 0, 0, dst, stride,
+@@ -3982,12 +4138,14 @@ cglobal idct_32x8_internal_8bpc, 0, 0, 0, dst, stride,
      jmp   m(idct_8x8_internal_8bpc).pass1_end1
  
  .end5:
@@ -1143,7 +1141,7 @@ Index: src/x86/itx_sse.asm
      LOAD_8ROWS   rsp+gprsize+16*27, 16
      mova   [rsp+gprsize+16*0 ], m7
      mova                    m7, [o(pw_8192)]
-@@ -3995,11 +4154,13 @@ cglobal idct_32x8_internal_8bpc, 0, 0, 0, dst, stride,
+@@ -3995,11 +4153,13 @@ cglobal idct_32x8_internal_8bpc, 0, 0, 0, dst, stride,
      jmp   m(idct_8x8_internal_8bpc).pass1_end1
  
  .end7:
@@ -1157,7 +1155,7 @@ Index: src/x86/itx_sse.asm
      ret
  
  
-@@ -4076,6 +4237,7 @@ cglobal inv_txfm_add_dct_dct_16x32_8bpc, 4, 6, 8, 16*3
+@@ -4076,6 +4236,7 @@ cglobal inv_txfm_add_dct_dct_16x32_8bpc, 4, 6, 8, 16*3
      jz .dconly
      call  m(idct_16x32_internal_8bpc)
  .end:
@@ -1165,7 +1163,7 @@ Index: src/x86/itx_sse.asm
      RET
  
  .dconly:
-@@ -4099,6 +4261,7 @@ cglobal idct_16x32_internal_8bpc, 0, 0, 0, dst, stride
+@@ -4099,6 +4260,7 @@ cglobal idct_16x32_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end
  
  .pass1_end:
@@ -1173,7 +1171,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS    coeffq+16*33, 64               ;in8~in15
      LOAD_8ROWS    rsp+gprsize+16*3, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -4106,6 +4269,7 @@ cglobal idct_16x32_internal_8bpc, 0, 0, 0, dst, stride
+@@ -4106,6 +4268,7 @@ cglobal idct_16x32_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end
  
  .pass1_end1:
@@ -1181,7 +1179,7 @@ Index: src/x86/itx_sse.asm
      mova        [coeffq+16*1 ], m0                        ;in8
      mova        [coeffq+16*5 ], m4                        ;in12
      mova   [rsp+gprsize+16*13], m2                        ;in10
-@@ -4123,6 +4287,7 @@ cglobal idct_16x32_internal_8bpc, 0, 0, 0, dst, stride
+@@ -4123,6 +4286,7 @@ cglobal idct_16x32_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end
  
  .pass1_end2:
@@ -1189,7 +1187,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS    coeffq+16*32, 64               ;in0~in7
      LOAD_8ROWS    rsp+gprsize+16*3, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -4130,6 +4295,7 @@ cglobal idct_16x32_internal_8bpc, 0, 0, 0, dst, stride
+@@ -4130,6 +4294,7 @@ cglobal idct_16x32_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end
  
  .pass1_end3:
@@ -1197,7 +1195,7 @@ Index: src/x86/itx_sse.asm
      mova   [rsp+gprsize+16*11], m2                        ;in2
      mova   [rsp+gprsize+16*12], m6                        ;in6
      mova   [rsp+gprsize+16*19], m1                        ;in1
-@@ -4173,6 +4339,7 @@ cglobal idct_16x32_internal_8bpc, 0, 0, 0, dst, stride
+@@ -4173,6 +4338,7 @@ cglobal idct_16x32_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end
  
  .pass1_end4:
@@ -1205,7 +1203,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS    coeffq+16*34, 64               ;in16~in23
      LOAD_8ROWS    rsp+gprsize+16*3, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -4180,6 +4347,7 @@ cglobal idct_16x32_internal_8bpc, 0, 0, 0, dst, stride
+@@ -4180,6 +4346,7 @@ cglobal idct_16x32_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end
  
  .pass1_end5:
@@ -1213,7 +1211,7 @@ Index: src/x86/itx_sse.asm
      mova        [coeffq+16*2 ], m0                        ;in16
      mova        [coeffq+16*6 ], m4                        ;in20
      mova   [rsp+gprsize+16*15], m2                        ;in18
-@@ -4198,6 +4366,7 @@ cglobal idct_16x32_internal_8bpc, 0, 0, 0, dst, stride
+@@ -4198,6 +4365,7 @@ cglobal idct_16x32_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end
  
  .pass1_end6:
@@ -1221,7 +1219,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS    coeffq+16*35, 64                        ;in24~in31
      LOAD_8ROWS    rsp+gprsize+16*3, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -4205,6 +4374,7 @@ cglobal idct_16x32_internal_8bpc, 0, 0, 0, dst, stride
+@@ -4205,6 +4373,7 @@ cglobal idct_16x32_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end
  
  .pass1_end7:
@@ -1229,7 +1227,7 @@ Index: src/x86/itx_sse.asm
      mova   [rsp+gprsize+16*17], m2                        ;in26
      mova   [rsp+gprsize+16*18], m6                        ;in30
      mova   [rsp+gprsize+16*31], m1                        ;in25
-@@ -4230,6 +4400,7 @@ cglobal idct_16x32_internal_8bpc, 0, 0, 0, dst, stride
+@@ -4230,6 +4399,7 @@ cglobal idct_16x32_internal_8bpc, 0, 0, 0, dst, stride
      call m(idct_8x32_internal_8bpc).main
  
  .pass2:
@@ -1237,7 +1235,7 @@ Index: src/x86/itx_sse.asm
      mov  [rsp+gprsize*1+16*35], eobd
      lea                     r3, [dstq+8]
      mov  [rsp+gprsize*2+16*35], r3
-@@ -4237,6 +4408,7 @@ cglobal idct_16x32_internal_8bpc, 0, 0, 0, dst, stride
+@@ -4237,6 +4407,7 @@ cglobal idct_16x32_internal_8bpc, 0, 0, 0, dst, stride
      jmp  m(idct_8x32_internal_8bpc).end
  
  .end:
@@ -1245,7 +1243,7 @@ Index: src/x86/itx_sse.asm
      mov                   dstq, [rsp+gprsize*2+16*35]
      mov                   eobd, [rsp+gprsize*1+16*35]
      add                 coeffq, 16*32
-@@ -4377,6 +4549,7 @@ cglobal idct_32x16_internal_8bpc, 0, 0, 0, dst, stride
+@@ -4377,6 +4548,7 @@ cglobal idct_32x16_internal_8bpc, 0, 0, 0, dst, stride
      add                 coeffq, 16
      lea                     r3, [o(.pass1_end1)]
  .pass1:
@@ -1253,7 +1251,7 @@ Index: src/x86/itx_sse.asm
      LOAD_8ROWS     coeffq+16*0, 128, 1
      call  m(idct_8x8_internal_8bpc).main
      SAVE_7ROWS    rsp+gprsize+16*3, 16
-@@ -4408,11 +4581,13 @@ cglobal idct_32x16_internal_8bpc, 0, 0, 0, dst, stride
+@@ -4408,11 +4580,13 @@ cglobal idct_32x16_internal_8bpc, 0, 0, 0, dst, stride
      call m(idct_8x32_internal_8bpc).main
  
  .pass1_end:
@@ -1267,7 +1265,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS     coeffq+16*0, 32
      LOAD_8ROWS   rsp+gprsize+16*11, 16
      mova   [rsp+gprsize+16*0 ], m7
-@@ -4420,6 +4595,7 @@ cglobal idct_32x16_internal_8bpc, 0, 0, 0, dst, stride
+@@ -4420,6 +4594,7 @@ cglobal idct_32x16_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end
  
  .pass1_end2:
@@ -1275,7 +1273,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS    coeffq+16*16, 32
      LOAD_8ROWS   rsp+gprsize+16*19, 16
      mova   [rsp+gprsize+16*0 ], m7
-@@ -4427,6 +4603,7 @@ cglobal idct_32x16_internal_8bpc, 0, 0, 0, dst, stride
+@@ -4427,6 +4602,7 @@ cglobal idct_32x16_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end
  
  .pass1_end3:
@@ -1283,7 +1281,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS    coeffq+16*32, 32
      LOAD_8ROWS   rsp+gprsize+16*27, 16
      mova   [rsp+gprsize+16*0 ], m7
-@@ -4434,6 +4611,7 @@ cglobal idct_32x16_internal_8bpc, 0, 0, 0, dst, stride
+@@ -4434,6 +4610,7 @@ cglobal idct_32x16_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end
  
  .pass1_end4:
@@ -1291,7 +1289,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS    coeffq+16*48, 32
  
      sub                 coeffq, 16
-@@ -4441,6 +4619,7 @@ cglobal idct_32x16_internal_8bpc, 0, 0, 0, dst, stride
+@@ -4441,6 +4618,7 @@ cglobal idct_32x16_internal_8bpc, 0, 0, 0, dst, stride
      jmp .pass1
  
  .end:
@@ -1299,7 +1297,7 @@ Index: src/x86/itx_sse.asm
      ret
  
  
-@@ -4658,12 +4837,14 @@ cglobal idct_32x32_internal_8bpc, 0, 0, 0, dst, stride
+@@ -4658,12 +4836,14 @@ cglobal idct_32x32_internal_8bpc, 0, 0, 0, dst, stride
      call m(idct_8x32_internal_8bpc).main_fast
  
  .pass1_end:
@@ -1314,7 +1312,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS     coeffq+64*0, 64
      LOAD_8ROWS   rsp+gprsize+16*11, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -4672,6 +4853,7 @@ cglobal idct_32x32_internal_8bpc, 0, 0, 0, dst, stride
+@@ -4672,6 +4852,7 @@ cglobal idct_32x32_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end1
  
  .pass1_end2:
@@ -1322,7 +1320,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS     coeffq+64*8, 64
      LOAD_8ROWS   rsp+gprsize+16*19, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -4680,6 +4862,7 @@ cglobal idct_32x32_internal_8bpc, 0, 0, 0, dst, stride
+@@ -4680,6 +4861,7 @@ cglobal idct_32x32_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end1
  
  .pass1_end3:
@@ -1330,7 +1328,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS    coeffq+64*16, 64
      LOAD_8ROWS   rsp+gprsize+16*27, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -4688,6 +4871,7 @@ cglobal idct_32x32_internal_8bpc, 0, 0, 0, dst, stride
+@@ -4688,6 +4870,7 @@ cglobal idct_32x32_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end1
  
  .pass1_end4:
@@ -1338,7 +1336,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS    coeffq+64*24, 64
  
      add                 coeffq, 16
-@@ -4696,6 +4880,7 @@ cglobal idct_32x32_internal_8bpc, 0, 0, 0, dst, stride
+@@ -4696,6 +4879,7 @@ cglobal idct_32x32_internal_8bpc, 0, 0, 0, dst, stride
  
  
  .pass2:
@@ -1346,7 +1344,7 @@ Index: src/x86/itx_sse.asm
      mov                 coeffq, [rsp+gprsize*2+16*35]
      mov                    r3d, 4
      lea                   tx2q, [o(.pass2_end)]
-@@ -4794,10 +4979,12 @@ cglobal idct_32x32_internal_8bpc, 0, 0, 0, dst, stride
+@@ -4794,10 +4978,12 @@ cglobal idct_32x32_internal_8bpc, 0, 0, 0, dst, stride
      jmp                   tx2q
  
  .pass2_end:
@@ -1359,7 +1357,7 @@ Index: src/x86/itx_sse.asm
      lea                   tx2q, [o(.pass2_end)]
      add                 coeffq, 16*32
      mov                   dstq, [rsp+gprsize*2+16*35]
-@@ -4871,6 +5058,7 @@ cglobal inv_txfm_add_dct_dct_16x64_8bpc, 4, 6, 8, 16*6
+@@ -4871,6 +5057,7 @@ cglobal inv_txfm_add_dct_dct_16x64_8bpc, 4, 6, 8, 16*6
      jz .dconly
      call m(idct_16x64_internal_8bpc)
  .end:
@@ -1367,7 +1365,7 @@ Index: src/x86/itx_sse.asm
      RET
  
  .dconly:
-@@ -4907,6 +5095,7 @@ cglobal idct_16x64_internal_8bpc, 0, 0, 0, dst, stride
+@@ -4907,6 +5094,7 @@ cglobal idct_16x64_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end1
  
  .pass1_end:
@@ -1375,7 +1373,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS     coeffq+64*8, 64
      LOAD_8ROWS    rsp+gprsize+16*3, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -4915,6 +5104,7 @@ cglobal idct_16x64_internal_8bpc, 0, 0, 0, dst, stride
+@@ -4915,6 +5103,7 @@ cglobal idct_16x64_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end1
  
  .pass1_end1:
@@ -1383,7 +1381,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS     coeffq+64*0, 64
  
      add                 coeffq, 16
-@@ -5043,12 +5233,14 @@ cglobal idct_16x64_internal_8bpc, 0, 0, 0, dst, stride
+@@ -5043,12 +5232,14 @@ cglobal idct_16x64_internal_8bpc, 0, 0, 0, dst, stride
      call .main_fast
  
  .end:
@@ -1398,7 +1396,7 @@ Index: src/x86/itx_sse.asm
      LOAD_8ROWS   rsp+gprsize+16*35, 16
      lea                   dstq, [dstq+strideq*2]
      lea                     r3, [rsp+16*32+gprsize]
-@@ -5804,6 +5996,7 @@ cglobal inv_txfm_add_dct_dct_64x16_8bpc, 4, 6, 8, 16*1
+@@ -5804,6 +5995,7 @@ cglobal inv_txfm_add_dct_dct_64x16_8bpc, 4, 6, 8, 16*1
      jmp                   tx2q
  
  .end:
@@ -1406,7 +1404,7 @@ Index: src/x86/itx_sse.asm
      RET
  
  
-@@ -5892,6 +6085,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
+@@ -5892,6 +6084,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end1
  
  .pass1_end:
@@ -1414,7 +1412,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS     coeffq+32*0, 32
      LOAD_8ROWS   rsp+gprsize+16*11, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -5900,6 +6094,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
+@@ -5900,6 +6093,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end1
  
  .pass1_end1:
@@ -1422,7 +1420,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS     coeffq+32*8, 32
      LOAD_8ROWS   rsp+gprsize+16*19, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -5908,6 +6103,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
+@@ -5908,6 +6102,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end1
  
  .pass1_end2:
@@ -1430,7 +1428,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS    coeffq+32*16, 32
      LOAD_8ROWS   rsp+gprsize+16*27, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -5916,6 +6112,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
+@@ -5916,6 +6111,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end1
  
  .pass1_end3:
@@ -1438,7 +1436,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS    coeffq+32*24, 32
      LOAD_8ROWS   rsp+gprsize+16*35, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -5924,6 +6121,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
+@@ -5924,6 +6120,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end1
  
  .pass1_end4:
@@ -1446,7 +1444,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS       dstq+32*0, 32
      LOAD_8ROWS   rsp+gprsize+16*43, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -5932,6 +6130,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
+@@ -5932,6 +6129,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end1
  
  .pass1_end5:
@@ -1454,7 +1452,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS       dstq+32*8, 32
      LOAD_8ROWS   rsp+gprsize+16*51, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -5940,6 +6139,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
+@@ -5940,6 +6138,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end1
  
  .pass1_end6:
@@ -1462,7 +1460,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS      dstq+32*16, 32
      LOAD_8ROWS   rsp+gprsize+16*59, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -5948,6 +6148,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
+@@ -5948,6 +6147,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end1
  
  .pass1_end7:
@@ -1470,7 +1468,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS      dstq+32*24, 32
  
      add                 coeffq, 16
-@@ -5956,6 +6157,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
+@@ -5956,6 +6156,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
      jg .pass1_loop
  
  .pass2:
@@ -1478,7 +1476,7 @@ Index: src/x86/itx_sse.asm
      mov                   dstq, [rsp+gprsize*2+16*67]
      sub                 coeffq, 32
      mov                    r3d, 4
-@@ -5977,6 +6179,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
+@@ -5977,6 +6178,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
      jmp  m(idct_8x8_internal_8bpc).end
  
  .end:
@@ -1486,7 +1484,7 @@ Index: src/x86/itx_sse.asm
      LOAD_8ROWS   rsp+gprsize+16*3, 16
      mova   [rsp+gprsize+16*0], m7
      lea                  tx2q, [o(.end1)]
-@@ -5984,6 +6187,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
+@@ -5984,6 +6186,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
      jmp  m(idct_8x8_internal_8bpc).end
  
  .end1:
@@ -1494,7 +1492,7 @@ Index: src/x86/itx_sse.asm
      pxor                   m7, m7
      REPX  {mova [coeffq+16*x], m7}, 0,  1,  2,  3,  4,  5,  6,  7,  8,  9,  10, 11, 12, 13, 14, 15
  
-@@ -6014,6 +6218,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
+@@ -6014,6 +6217,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
      jmp  m(idct_8x8_internal_8bpc).end
  
  .end2:
@@ -1502,7 +1500,7 @@ Index: src/x86/itx_sse.asm
      LOAD_8ROWS   rsp+gprsize+16*3, 16
      mova   [rsp+gprsize+16*0], m7
      lea                  tx2q, [o(.end3)]
-@@ -6021,7 +6226,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
+@@ -6021,7 +6225,7 @@ cglobal idct_64x16_internal_8bpc, 0, 0, 0, dst, stride
      jmp  m(idct_8x8_internal_8bpc).end
  
  .end3:
@@ -1511,7 +1509,7 @@ Index: src/x86/itx_sse.asm
      add                 coeffq, 16*16
      mov                    r3d, [rsp+gprsize*1+16*67]
      mov                   dstq, [rsp+gprsize*2+16*67]
-@@ -6040,6 +6245,7 @@ cglobal inv_txfm_add_dct_dct_32x64_8bpc, 4, 6, 8, 16*6
+@@ -6040,6 +6244,7 @@ cglobal inv_txfm_add_dct_dct_32x64_8bpc, 4, 6, 8, 16*6
      jz .dconly
      call m(idct_32x64_internal_8bpc)
  .end:
@@ -1519,7 +1517,7 @@ Index: src/x86/itx_sse.asm
      RET
  
  .dconly:
-@@ -6120,11 +6326,13 @@ cglobal idct_32x64_internal_8bpc, 0, 0, 0, dst, stride
+@@ -6120,11 +6325,13 @@ cglobal idct_32x64_internal_8bpc, 0, 0, 0, dst, stride
      call m(idct_8x32_internal_8bpc).main_fast
  
  .pass1_end:
@@ -1533,7 +1531,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS     coeffq+64*0, 64
      LOAD_8ROWS   rsp+gprsize+16*11, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -6132,6 +6340,7 @@ cglobal idct_32x64_internal_8bpc, 0, 0, 0, dst, stride
+@@ -6132,6 +6339,7 @@ cglobal idct_32x64_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end
  
  .pass1_end2:
@@ -1541,7 +1539,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS     coeffq+64*8, 64
      LOAD_8ROWS   rsp+gprsize+16*19, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -6139,6 +6348,7 @@ cglobal idct_32x64_internal_8bpc, 0, 0, 0, dst, stride
+@@ -6139,6 +6347,7 @@ cglobal idct_32x64_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end
  
  .pass1_end3:
@@ -1549,7 +1547,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS    coeffq+64*16, 64
      LOAD_8ROWS   rsp+gprsize+16*27, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -6146,6 +6356,7 @@ cglobal idct_32x64_internal_8bpc, 0, 0, 0, dst, stride
+@@ -6146,6 +6355,7 @@ cglobal idct_32x64_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end
  
  .pass1_end4:
@@ -1557,7 +1555,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS    coeffq+64*24, 64
  
      add                 coeffq, 16
-@@ -6153,6 +6364,7 @@ cglobal idct_32x64_internal_8bpc, 0, 0, 0, dst, stride
+@@ -6153,6 +6363,7 @@ cglobal idct_32x64_internal_8bpc, 0, 0, 0, dst, stride
      jg .pass1_loop
  
  .pass2:
@@ -1565,7 +1563,7 @@ Index: src/x86/itx_sse.asm
      mov                 coeffq, [rsp+gprsize*2+16*67]
      mov                    r3d, 4
      lea                     r4, [dstq+8]
-@@ -6169,6 +6381,7 @@ cglobal inv_txfm_add_dct_dct_64x32_8bpc, 4, 6, 8, 16*1
+@@ -6169,6 +6380,7 @@ cglobal inv_txfm_add_dct_dct_64x32_8bpc, 4, 6, 8, 16*1
      jz .dconly
      call m(idct_64x32_internal_8bpc)
  .end:
@@ -1573,7 +1571,7 @@ Index: src/x86/itx_sse.asm
      RET
  
  .dconly:
-@@ -6254,6 +6467,7 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
+@@ -6254,6 +6466,7 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end
  
  .pass1_end:
@@ -1581,7 +1579,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS     coeffq+64*0, 64
      LOAD_8ROWS   rsp+gprsize+16*11, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -6261,6 +6475,7 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
+@@ -6261,6 +6474,7 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end
  
  .pass1_end1:
@@ -1589,7 +1587,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS     coeffq+64*8, 64
      LOAD_8ROWS   rsp+gprsize+16*19, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -6268,6 +6483,7 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
+@@ -6268,6 +6482,7 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end
  
  .pass1_end2:
@@ -1597,7 +1595,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS    coeffq+64*16, 64
      LOAD_8ROWS   rsp+gprsize+16*27, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -6275,6 +6491,7 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
+@@ -6275,6 +6490,7 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end
  
  .pass1_end3:
@@ -1605,7 +1603,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS    coeffq+64*24, 64
      LOAD_8ROWS   rsp+gprsize+16*35, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -6282,6 +6499,7 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
+@@ -6282,6 +6498,7 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end
  
  .pass1_end4:
@@ -1613,7 +1611,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS       dstq+64*0, 64
      LOAD_8ROWS   rsp+gprsize+16*43, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -6289,6 +6507,7 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
+@@ -6289,6 +6506,7 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end
  
  .pass1_end5:
@@ -1621,7 +1619,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS       dstq+64*8, 64
      LOAD_8ROWS   rsp+gprsize+16*51, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -6296,6 +6515,7 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
+@@ -6296,6 +6514,7 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end
  
  .pass1_end6:
@@ -1629,7 +1627,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS      dstq+64*16, 64
      LOAD_8ROWS   rsp+gprsize+16*59, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -6303,6 +6523,7 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
+@@ -6303,6 +6522,7 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end
  
  .pass1_end7:
@@ -1637,7 +1635,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS      dstq+64*24, 64
  
      add                 coeffq, 16
-@@ -6311,6 +6532,7 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
+@@ -6311,6 +6531,7 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
      jg .pass1_loop
  
  .pass2:
@@ -1645,7 +1643,7 @@ Index: src/x86/itx_sse.asm
      mov                 coeffq, [rsp+gprsize*4+16*67]
      mov                   dstq, [rsp+gprsize*3+16*67]
      mov                   eobd, [rsp+gprsize*1+16*67]
-@@ -6321,11 +6543,13 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
+@@ -6321,11 +6542,13 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
      jmp m(idct_32x32_internal_8bpc).pass2_loop
  
  .pass2_end:
@@ -1659,7 +1657,7 @@ Index: src/x86/itx_sse.asm
      lea                   tx2q, [o(.pass2_end)]
      add                 coeffq, 16*32
      mov                   dstq, [rsp+gprsize*2+16*35]
-@@ -6334,6 +6558,7 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
+@@ -6334,6 +6557,7 @@ cglobal idct_64x32_internal_8bpc, 0, 0, 0, dst, stride
      jg m(idct_32x32_internal_8bpc).pass2_loop
  
  .pass2_end2:
@@ -1667,7 +1665,7 @@ Index: src/x86/itx_sse.asm
      mov                   dstq, [rsp+gprsize*3+16*67]
      mov                 coeffq, [rsp+gprsize*2+16*67]
      lea                   tx2q, [o(m(idct_32x32_internal_8bpc).pass2_end)]
-@@ -6434,6 +6659,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
+@@ -6434,6 +6658,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end1
  
  .pass1_end:
@@ -1675,7 +1673,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS     coeffq+64*0, 64
      LOAD_8ROWS   rsp+gprsize+16*11, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -6442,6 +6668,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
+@@ -6442,6 +6667,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end1
  
  .pass1_end1:
@@ -1683,7 +1681,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS     coeffq+64*8, 64
      LOAD_8ROWS   rsp+gprsize+16*19, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -6450,6 +6677,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
+@@ -6450,6 +6676,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end1
  
  .pass1_end2:
@@ -1691,7 +1689,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS    coeffq+64*16, 64
      LOAD_8ROWS   rsp+gprsize+16*27, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -6458,6 +6686,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
+@@ -6458,6 +6685,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end1
  
  .pass1_end3:
@@ -1699,7 +1697,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS    coeffq+64*24, 64
      LOAD_8ROWS   rsp+gprsize+16*35, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -6466,6 +6695,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
+@@ -6466,6 +6694,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end1
  
  .pass1_end4:
@@ -1707,7 +1705,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS       dstq+64*0, 64
      LOAD_8ROWS   rsp+gprsize+16*43, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -6474,6 +6704,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
+@@ -6474,6 +6703,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end1
  
  .pass1_end5:
@@ -1715,7 +1713,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS       dstq+64*8, 64
      LOAD_8ROWS   rsp+gprsize+16*51, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -6482,6 +6713,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
+@@ -6482,6 +6712,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end1
  
  .pass1_end6:
@@ -1723,7 +1721,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS      dstq+64*16, 64
      LOAD_8ROWS   rsp+gprsize+16*59, 16
      mova    [rsp+gprsize+16*0], m7
-@@ -6490,6 +6722,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
+@@ -6490,6 +6721,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
      jmp   m(idct_8x8_internal_8bpc).pass1_end1
  
  .pass1_end7:
@@ -1731,7 +1729,7 @@ Index: src/x86/itx_sse.asm
      SAVE_8ROWS      dstq+64*24, 64
  
      add                 coeffq, 16
-@@ -6498,6 +6731,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
+@@ -6498,6 +6730,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
      jg .pass1_loop
  
  .pass2:
@@ -1739,7 +1737,7 @@ Index: src/x86/itx_sse.asm
      mov                   dstq, [rsp+gprsize*3+16*67]
      mov                 coeffq, [rsp+gprsize*2+16*67]
      lea                   dstq, [dstq+32]
-@@ -6508,6 +6742,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
+@@ -6508,6 +6741,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
      jmp m(idct_16x64_internal_8bpc).pass2_loop
  
  .pass2_end:
@@ -1747,7 +1745,7 @@ Index: src/x86/itx_sse.asm
      LOAD_8ROWS   rsp+gprsize+16*35, 16
      lea                   dstq, [dstq+strideq*2]
      lea                     r3, [rsp+16*32+gprsize]
-@@ -6523,6 +6758,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
+@@ -6523,6 +6757,7 @@ cglobal idct_64x64_internal_8bpc, 0, 0, 0, dst, stride
      jg  m(idct_16x64_internal_8bpc).pass2_loop
  
  .pass2_end2:

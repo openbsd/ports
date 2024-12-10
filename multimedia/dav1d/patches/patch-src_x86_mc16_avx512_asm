@@ -1,7 +1,12 @@
 Index: src/x86/mc16_avx512.asm
 --- src/x86/mc16_avx512.asm.orig
 +++ src/x86/mc16_avx512.asm
-@@ -276,6 +276,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
+@@ -278,10 +278,12 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
+     test               mxyd, mxyd
+     jnz .v
+ .put:
++    _CET_ENDBR
+     movzx               t0d, word [r7+t0*2+table_offset(put,)]
      add                  t0, r7
      jmp                  t0
  .put_w2:
@@ -9,7 +14,7 @@ Index: src/x86/mc16_avx512.asm
      mov                 r6d, [srcq+ssq*0]
      mov                 r7d, [srcq+ssq*1]
      lea                srcq, [srcq+ssq*2]
-@@ -286,6 +287,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
+@@ -292,6 +294,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
      jg .put_w2
      RET
  .put_w4:
@@ -17,7 +22,7 @@ Index: src/x86/mc16_avx512.asm
      mov                  r6, [srcq+ssq*0]
      mov                  r7, [srcq+ssq*1]
      lea                srcq, [srcq+ssq*2]
-@@ -296,6 +298,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
+@@ -302,6 +305,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
      jg .put_w4
      RET
  .put_w8:
@@ -25,7 +30,7 @@ Index: src/x86/mc16_avx512.asm
      movu               xmm0, [srcq+ssq*0]
      movu               xmm1, [srcq+ssq*1]
      lea                srcq, [srcq+ssq*2]
-@@ -306,6 +309,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
+@@ -312,6 +316,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
      jg .put_w8
      RET
  .put_w16:
@@ -33,7 +38,7 @@ Index: src/x86/mc16_avx512.asm
      movu                ym0, [srcq+ssq*0]
      movu                ym1, [srcq+ssq*1]
      lea                srcq, [srcq+ssq*2]
-@@ -316,6 +320,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
+@@ -322,6 +327,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
      jg .put_w16
      RET
  .put_w32:
@@ -41,7 +46,7 @@ Index: src/x86/mc16_avx512.asm
      movu                 m0, [srcq+ssq*0]
      movu                 m1, [srcq+ssq*1]
      lea                srcq, [srcq+ssq*2]
-@@ -326,6 +331,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
+@@ -332,6 +338,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
      jg .put_w32
      RET
  .put_w64:
@@ -49,7 +54,7 @@ Index: src/x86/mc16_avx512.asm
      movu                 m0, [srcq+ssq*0+64*0]
      movu                 m1, [srcq+ssq*0+64*1]
      movu                 m2, [srcq+ssq*1+64*0]
-@@ -340,6 +346,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
+@@ -346,6 +353,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
      jg .put_w64
      RET
  .put_w128:
@@ -57,7 +62,15 @@ Index: src/x86/mc16_avx512.asm
      movu                 m0, [srcq+64*0]
      movu                 m1, [srcq+64*1]
      movu                 m2, [srcq+64*2]
-@@ -368,6 +375,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
+@@ -360,6 +368,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
+     jg .put_w128
+     RET
+ .h:
++    _CET_ENDBR
+     vpbroadcastw         m5, mxyd
+     mov                mxyd, r7m ; my
+     vpbroadcastd         m4, [pw_16]
+@@ -374,6 +383,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
      vpbroadcastd         m6, [r7-put_avx512icl+put_bilin_h_rnd+r6*4]
      jmp                  t0
  .h_w2:
@@ -65,7 +78,7 @@ Index: src/x86/mc16_avx512.asm
      movq               xmm1, [srcq+ssq*0]
      movhps             xmm1, [srcq+ssq*1]
      lea                srcq, [srcq+ssq*2]
-@@ -384,6 +392,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
+@@ -390,6 +400,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
      jg .h_w2
      RET
  .h_w4:
@@ -73,7 +86,7 @@ Index: src/x86/mc16_avx512.asm
      movq               xmm0, [srcq+ssq*0+0]
      movhps             xmm0, [srcq+ssq*1+0]
      movq               xmm1, [srcq+ssq*0+2]
-@@ -401,6 +410,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
+@@ -407,6 +418,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
      jg .h_w4
      RET
  .h_w8:
@@ -81,7 +94,7 @@ Index: src/x86/mc16_avx512.asm
      movu                xm0, [srcq+ssq*0+0]
      vinserti32x4        ym0, [srcq+ssq*1+0], 1
      movu                xm1, [srcq+ssq*0+2]
-@@ -418,6 +428,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
+@@ -424,6 +436,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
      jg .h_w8
      RET
  .h_w16:
@@ -89,7 +102,7 @@ Index: src/x86/mc16_avx512.asm
      movu                ym0, [srcq+ssq*0+0]
      vinserti32x8         m0, [srcq+ssq*1+0], 1
      movu                ym1, [srcq+ssq*0+2]
-@@ -435,6 +446,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
+@@ -441,6 +454,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
      jg .h_w16
      RET
  .h_w32:
@@ -97,7 +110,7 @@ Index: src/x86/mc16_avx512.asm
      pmullw               m0, m4, [srcq+ssq*0+0]
      pmullw               m2, m5, [srcq+ssq*0+2]
      pmullw               m1, m4, [srcq+ssq*1+0]
-@@ -453,6 +465,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
+@@ -459,6 +473,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
      jg .h_w32
      RET
  .h_w64:
@@ -105,7 +118,7 @@ Index: src/x86/mc16_avx512.asm
      pmullw               m0, m4, [srcq+64*0+0]
      pmullw               m2, m5, [srcq+64*0+2]
      pmullw               m1, m4, [srcq+64*1+0]
-@@ -471,6 +484,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
+@@ -477,6 +492,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
      jg .h_w64
      RET
  .h_w128:
@@ -113,7 +126,14 @@ Index: src/x86/mc16_avx512.asm
      pmullw               m0, m4, [srcq+64*0+0]
      pmullw               m7, m5, [srcq+64*0+2]
      pmullw               m1, m4, [srcq+64*1+0]
-@@ -501,6 +515,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
+@@ -501,12 +517,14 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
+     jg .h_w128
+     RET
+ .v:
++    _CET_ENDBR
+     movzx               t0d, word [r7+t0*2+table_offset(put, _bilin_v)]
+     shl                mxyd, 11
+     vpbroadcastw         m8, mxyd
      add                  t0, r7
      jmp                  t0
  .v_w2:
@@ -121,7 +141,7 @@ Index: src/x86/mc16_avx512.asm
      movd               xmm0, [srcq+ssq*0]
  .v_w2_loop:
      movd               xmm1, [srcq+ssq*1]
-@@ -518,6 +533,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
+@@ -524,6 +542,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
      jg .v_w2_loop
      RET
  .v_w4:
@@ -129,7 +149,7 @@ Index: src/x86/mc16_avx512.asm
      movq               xmm0, [srcq+ssq*0]
  .v_w4_loop:
      movq               xmm1, [srcq+ssq*1]
-@@ -535,6 +551,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
+@@ -541,6 +560,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
      jg .v_w4_loop
      RET
  .v_w8:
@@ -137,7 +157,7 @@ Index: src/x86/mc16_avx512.asm
      movu               xmm0, [srcq+ssq*0]
  .v_w8_loop:
      vbroadcasti128     ymm1, [srcq+ssq*1]
-@@ -553,6 +570,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
+@@ -559,6 +579,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
      vzeroupper
      RET
  .v_w16:
@@ -145,7 +165,7 @@ Index: src/x86/mc16_avx512.asm
      movu                ym0, [srcq+ssq*0]
  .v_w16_loop:
      movu                ym3, [srcq+ssq*1]
-@@ -571,6 +589,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
+@@ -577,6 +598,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
      jg .v_w16_loop
      RET
  .v_w32:
@@ -153,7 +173,7 @@ Index: src/x86/mc16_avx512.asm
      movu                 m0, [srcq+ssq*0]
  .v_w32_loop:
      movu                 m3, [srcq+ssq*1]
-@@ -589,6 +608,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
+@@ -595,6 +617,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
      jg .v_w32_loop
      RET
  .v_w64:
@@ -161,7 +181,7 @@ Index: src/x86/mc16_avx512.asm
      movu                 m0, [srcq+ssq*0+64*0]
      movu                 m1, [srcq+ssq*0+64*1]
  .v_w64_loop:
-@@ -618,6 +638,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
+@@ -624,6 +647,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
      jg .v_w64_loop
      RET
  .v_w128:
@@ -169,7 +189,15 @@ Index: src/x86/mc16_avx512.asm
      movu                 m0, [srcq+ssq*0+64*0]
      movu                 m1, [srcq+ssq*0+64*1]
      movu                 m2, [srcq+ssq*0+64*2]
-@@ -683,6 +704,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
+@@ -675,6 +699,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
+     jg .v_w128_loop
+     RET
+ .hv:
++    _CET_ENDBR
+     movzx               t0d, word [r7+t0*2+table_offset(put, _bilin_hv)]
+     shl                mxyd, 11
+     vpbroadcastd         m6, [pw_2]
+@@ -689,6 +714,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
  .hv_12bpc:
      jmp                  t0
  .hv_w2:
@@ -177,7 +205,7 @@ Index: src/x86/mc16_avx512.asm
      vpbroadcastq       xmm1, [srcq+ssq*0]
      pmullw             xmm0, xmm1, xm4
      psrlq              xmm1, 16
-@@ -714,6 +736,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
+@@ -720,6 +746,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
      jg .hv_w2_loop
      RET
  .hv_w4:
@@ -185,7 +213,7 @@ Index: src/x86/mc16_avx512.asm
      pmullw             xmm0, xm4, [srcq+ssq*0-8]
      pmullw             xmm1, xm5, [srcq+ssq*0-6]
      paddw              xmm0, xm6
-@@ -744,6 +767,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
+@@ -750,6 +777,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
      jg .hv_w4_loop
      RET
  .hv_w8:
@@ -193,7 +221,7 @@ Index: src/x86/mc16_avx512.asm
      pmullw             xmm0, xm4, [srcq+ssq*0+0]
      pmullw             xmm1, xm5, [srcq+ssq*0+2]
      paddw              xmm0, xm6
-@@ -775,6 +799,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
+@@ -781,6 +809,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
      jg .hv_w8_loop
      RET
  .hv_w16:
@@ -201,7 +229,7 @@ Index: src/x86/mc16_avx512.asm
      pmullw              ym0, ym4, [srcq+ssq*0+0]
      pmullw              ym1, ym5, [srcq+ssq*0+2]
      paddw               ym0, ym6
-@@ -808,6 +833,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
+@@ -814,6 +843,7 @@ cglobal put_bilin_16bpc, 4, 8, 13, dst, ds, src, ss, w
  .hv_w32:
  .hv_w64:
  .hv_w128:
@@ -209,23 +237,31 @@ Index: src/x86/mc16_avx512.asm
      movifnidn            wd, wm
      lea                 r6d, [hq+wq*8-256]
      mov                  r4, srcq
-@@ -874,6 +900,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
+@@ -871,6 +901,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
+     test               mxyd, mxyd
+     jnz .v
+ .prep:
++    _CET_ENDBR
+     movzx                wd, word [r6+wq*2+table_offset(prep,)]
+     mov                 r5d, r7m ; bitdepth_max
+     vpbroadcastd         m5, [r6-prep_avx512icl+pw_8192]
+@@ -880,6 +911,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
      lea            stride3q, [strideq*3]
      jmp                  wq
  .prep_w4:
 +    _CET_ENDBR
-     movq               xmm0, [srcq+strideq*0]
-     movhps             xmm0, [srcq+strideq*1]
-     vpbroadcastq       ymm1, [srcq+strideq*2]
-@@ -890,6 +917,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
-     vzeroupper
+     mov                 r3d, 0x0c
+     kmovb                k1, r3d
+ .prep_w4_loop:
+@@ -896,6 +928,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
+     jg .prep_w4_loop
      RET
  .prep_w8:
 +    _CET_ENDBR
      movu                xm0, [srcq+strideq*0]
      vinserti32x4        ym0, [srcq+strideq*1], 1
      vinserti32x4         m0, [srcq+strideq*2], 2
-@@ -903,6 +931,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
+@@ -909,6 +942,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
      jg .prep_w8
      RET
  .prep_w16:
@@ -233,7 +269,7 @@ Index: src/x86/mc16_avx512.asm
      movu                ym0, [srcq+strideq*0]
      vinserti32x8         m0, [srcq+strideq*1], 1
      movu                ym1, [srcq+strideq*2]
-@@ -919,6 +948,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
+@@ -925,6 +959,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
      jg .prep_w16
      RET
  .prep_w32:
@@ -241,7 +277,7 @@ Index: src/x86/mc16_avx512.asm
      pmullw               m0, m4, [srcq+strideq*0]
      pmullw               m1, m4, [srcq+strideq*1]
      pmullw               m2, m4, [srcq+strideq*2]
-@@ -934,6 +964,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
+@@ -940,6 +975,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
      jg .prep_w32
      RET
  .prep_w64:
@@ -249,7 +285,7 @@ Index: src/x86/mc16_avx512.asm
      pmullw               m0, m4, [srcq+strideq*0+64*0]
      pmullw               m1, m4, [srcq+strideq*0+64*1]
      pmullw               m2, m4, [srcq+strideq*1+64*0]
-@@ -949,6 +980,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
+@@ -955,6 +991,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
      jg .prep_w64
      RET
  .prep_w128:
@@ -257,7 +293,15 @@ Index: src/x86/mc16_avx512.asm
      pmullw               m0, m4, [srcq+64*0]
      pmullw               m1, m4, [srcq+64*1]
      pmullw               m2, m4, [srcq+64*2]
-@@ -981,6 +1013,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
+@@ -970,6 +1007,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
+     jg .prep_w128
+     RET
+ .h:
++    _CET_ENDBR
+     vpbroadcastw         m5, mxyd
+     mov                mxyd, r6m ; my
+     vpbroadcastd         m4, [pw_16]
+@@ -987,6 +1025,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
      lea            stride3q, [strideq*3]
      jmp                  wq
  .h_w4:
@@ -265,7 +309,7 @@ Index: src/x86/mc16_avx512.asm
      movu                xm1, [srcq+strideq*0]
      vinserti32x4        ym1, [srcq+strideq*2], 1
      movu                xm2, [srcq+strideq*1]
-@@ -1001,6 +1034,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
+@@ -1007,6 +1046,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
      jg .h_w4
      RET
  .h_w8:
@@ -273,7 +317,7 @@ Index: src/x86/mc16_avx512.asm
      movu                xm0, [srcq+strideq*0+0]
      movu                xm1, [srcq+strideq*0+2]
      vinserti32x4        ym0, [srcq+strideq*1+0], 1
-@@ -1021,6 +1055,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
+@@ -1027,6 +1067,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
      jg .h_w8
      RET
  .h_w16:
@@ -281,7 +325,7 @@ Index: src/x86/mc16_avx512.asm
      movu                ym0, [srcq+strideq*0+0]
      vinserti32x8         m0, [srcq+strideq*1+0], 1
      movu                ym1, [srcq+strideq*0+2]
-@@ -1037,6 +1072,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
+@@ -1043,6 +1084,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
      jg .h_w16
      RET
  .h_w32:
@@ -289,7 +333,7 @@ Index: src/x86/mc16_avx512.asm
      pmullw               m0, m4, [srcq+strideq*0+0]
      pmullw               m2, m5, [srcq+strideq*0+2]
      pmullw               m1, m4, [srcq+strideq*1+0]
-@@ -1055,6 +1091,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
+@@ -1061,6 +1103,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
      jg .h_w32
      RET
  .h_w64:
@@ -297,7 +341,7 @@ Index: src/x86/mc16_avx512.asm
      pmullw               m0, m4, [srcq+ 0]
      pmullw               m2, m5, [srcq+ 2]
      pmullw               m1, m4, [srcq+64]
-@@ -1073,6 +1110,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
+@@ -1079,6 +1122,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
      jg .h_w64
      RET
  .h_w128:
@@ -305,7 +349,15 @@ Index: src/x86/mc16_avx512.asm
      pmullw               m0, m4, [srcq+  0]
      pmullw               m7, m5, [srcq+  2]
      pmullw               m1, m4, [srcq+ 64]
-@@ -1111,6 +1149,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
+@@ -1103,6 +1147,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
+     jg .h_w128
+     RET
+ .v:
++    _CET_ENDBR
+     movzx                wd, word [r6+wq*2+table_offset(prep, _bilin_v)]
+     vpbroadcastw         m9, mxyd
+     vpbroadcastd         m8, [pw_16]
+@@ -1117,6 +1162,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
  .v_12bpc:
      jmp                  wq
  .v_w4:
@@ -313,7 +365,7 @@ Index: src/x86/mc16_avx512.asm
      movq               xmm0, [srcq+strideq*0]
  .v_w4_loop:
      vpbroadcastq       xmm2, [srcq+strideq*1]
-@@ -1134,6 +1173,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
+@@ -1140,6 +1186,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
      vzeroupper
      RET
  .v_w8:
@@ -321,7 +373,7 @@ Index: src/x86/mc16_avx512.asm
      movu                xm0, [srcq+strideq*0]
  .v_w8_loop:
      vinserti32x4        ym1, ym0, [srcq+strideq*1], 1
-@@ -1153,6 +1193,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
+@@ -1159,6 +1206,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
      jg .v_w8_loop
      RET
  .v_w16:
@@ -329,7 +381,7 @@ Index: src/x86/mc16_avx512.asm
      movu                ym0, [srcq+strideq*0]
  .v_w16_loop:
      vinserti32x8         m1, m0, [srcq+strideq*1], 1 ; 0 1
-@@ -1179,6 +1220,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
+@@ -1185,6 +1233,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
      jg .v_w16_loop
      RET
  .v_w32:
@@ -337,7 +389,7 @@ Index: src/x86/mc16_avx512.asm
      movu                 m0, [srcq+strideq*0]
  .v_w32_loop:
      movu                 m3, [srcq+strideq*1]
-@@ -1201,6 +1243,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
+@@ -1207,6 +1256,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
      jg .v_w32_loop
      RET
  .v_w64:
@@ -345,7 +397,7 @@ Index: src/x86/mc16_avx512.asm
      movu                 m0, [srcq+64*0]
      movu                 m1, [srcq+64*1]
  .v_w64_loop:
-@@ -1224,6 +1267,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
+@@ -1230,6 +1280,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
      jg .v_w64_loop
      RET
  .v_w128:
@@ -353,7 +405,15 @@ Index: src/x86/mc16_avx512.asm
      movu                 m0, [srcq+64*0]
      movu                 m1, [srcq+64*1]
      movu                 m2, [srcq+64*2]
-@@ -1264,6 +1308,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
+@@ -1263,6 +1314,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
+     jg .v_w128_loop
+     RET
+ .hv:
++    _CET_ENDBR
+     movzx                wd, word [r6+wq*2+table_offset(prep, _bilin_hv)]
+     shl                mxyd, 11
+     vpbroadcastw         m7, mxyd
+@@ -1270,6 +1322,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
      lea            stride3q, [strideq*3]
      jmp                  wq
  .hv_w4:
@@ -361,7 +421,7 @@ Index: src/x86/mc16_avx512.asm
      movq               xmm0, [srcq+strideq*0+0]
      movq               xmm1, [srcq+strideq*0+2]
      pmullw             xmm0, xm4
-@@ -1298,6 +1343,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
+@@ -1304,6 +1357,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
      jg .hv_w4_loop
      RET
  .hv_w8:
@@ -369,7 +429,7 @@ Index: src/x86/mc16_avx512.asm
      pmullw              xm0, xm4, [srcq+strideq*0+0]
      pmullw              xm1, xm5, [srcq+strideq*0+2]
      psubw               xm0, xm6
-@@ -1330,6 +1376,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
+@@ -1336,6 +1390,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
      jg .hv_w8_loop
      RET
  .hv_w16:
@@ -377,7 +437,7 @@ Index: src/x86/mc16_avx512.asm
      pmullw              ym0, ym4, [srcq+strideq*0+0]
      pmullw              ym1, ym5, [srcq+strideq*0+2]
      psubw               ym0, ym6
-@@ -1358,6 +1405,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
+@@ -1364,6 +1419,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
      jg .hv_w16_loop
      RET
  .hv_w32:
@@ -385,7 +445,7 @@ Index: src/x86/mc16_avx512.asm
      pmullw               m0, m4, [srcq+strideq*0+0]
      pmullw               m1, m5, [srcq+strideq*0+2]
      psubw                m0, m6
-@@ -1388,6 +1436,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
+@@ -1394,6 +1450,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
      jg .hv_w32_loop
      RET
  .hv_w64:
@@ -393,7 +453,7 @@ Index: src/x86/mc16_avx512.asm
      pmullw               m0, m4, [srcq+ 0]
      pmullw               m2, m5, [srcq+ 2]
      pmullw               m1, m4, [srcq+64]
-@@ -1425,6 +1474,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
+@@ -1431,6 +1488,7 @@ cglobal prep_bilin_16bpc, 3, 7, 16, tmp, src, stride, 
      jg .hv_w64_loop
      RET
  .hv_w128:
@@ -401,47 +461,139 @@ Index: src/x86/mc16_avx512.asm
      pmullw               m0, m4, [srcq+  0]
      pmullw               m8, m5, [srcq+  2]
      pmullw               m1, m4, [srcq+ 64]
-@@ -1534,6 +1584,7 @@ cglobal put_8tap_16bpc, 4, 9, 16, dst, ds, src, ss, w,
+@@ -1529,6 +1587,7 @@ cglobal put_6tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     test                myd, 0xf00
+     jnz .v
+ .put:
++    _CET_ENDBR
+     tzcnt                wd, wd
+     movzx                wd, word [r8+wq*2+table_offset(put,)]
+     add                  wq, r8
+@@ -1537,6 +1596,7 @@ cglobal put_6tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
  %endif
      jmp                  wq
- .h_w2:
-+    _CET_ENDBR
-     movzx               mxd, mxb
-     sub                srcq, 2
-     mova                ym2, [spel_h_shuf2a]
-@@ -1559,6 +1610,7 @@ cglobal put_8tap_16bpc, 4, 9, 16, dst, ds, src, ss, w,
-     jg .h_w2_loop
-     RET
- .h_w4:
-+    _CET_ENDBR
-     movzx               mxd, mxb
-     sub                srcq, 2
-     pmovsxbw           xmm0, [base+subpel_filters+mxq*8]
-@@ -1608,6 +1660,7 @@ cglobal put_8tap_16bpc, 4, 9, 16, dst, ds, src, ss, w,
-     je .h_w16
-     jg .h_w32
  .h_w8:
 +    _CET_ENDBR
      mova                 m4, [spel_h_shufA]
      movu                 m5, [spel_h_shufB]
      movu                 m6, [spel_h_shufC]
-@@ -1636,6 +1689,7 @@ cglobal put_8tap_16bpc, 4, 9, 16, dst, ds, src, ss, w,
+@@ -1562,6 +1622,7 @@ cglobal put_6tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
      jg .h_w8_loop
      RET
- .h_w16:
+ .h:
 +    _CET_ENDBR
-     vbroadcasti32x4      m6, [spel_h_shufA]
-     vbroadcasti32x4      m7, [spel_h_shufB]
- .h_w16_loop:
-@@ -1672,6 +1726,7 @@ cglobal put_8tap_16bpc, 4, 9, 16, dst, ds, src, ss, w,
+     vpbroadcastw        m15, r8m
+     test                myd, 0xf00
+     jnz .hv
+@@ -1612,6 +1673,7 @@ cglobal put_6tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
      jg .h_w16_loop
      RET
  .h_w32:
 +    _CET_ENDBR
      lea                srcq, [srcq+wq*2]
-     vbroadcasti32x4      m6, [spel_h_shufA]
      lea                dstq, [dstq+wq*2]
-@@ -1731,6 +1786,7 @@ cglobal put_8tap_16bpc, 4, 9, 16, dst, ds, src, ss, w,
+     neg                  wq
+@@ -1646,6 +1708,7 @@ cglobal put_6tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     jg .h_w32_loop0
+     RET
+ .v:
++    _CET_ENDBR
+     movzx               mxd, myb
+     shr                 myd, 16
+     cmp                  hd, 6
+@@ -1664,6 +1727,7 @@ cglobal put_6tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     vpbroadcastd        m14, [rsp+stack_offset+16]
+     jmp                  r7
+ .v_w2:
++    _CET_ENDBR
+     movd               xmm2, [srcq+r6 *2]
+     pinsrd             xmm2, [srcq+r6 *1], 1
+     pinsrd             xmm2, [srcq+ssq*0], 2
+@@ -1695,6 +1759,7 @@ cglobal put_6tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     jg .v_w2_loop
+     RET
+ .v_w4:
++    _CET_ENDBR
+     movq               xmm1, [srcq+r6 *2]
+     vpbroadcastq       ymm3, [srcq+r6 *1]
+     vpbroadcastq       ymm2, [srcq+ssq*0]
+@@ -1731,6 +1796,7 @@ cglobal put_6tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     vzeroupper
+     RET
+ .v_w8:
++    _CET_ENDBR
+     vbroadcasti32x4      m0, [srcq+ssq*0]
+     vinserti32x4         m1, m0, [srcq+r6 *2], 0
+     vinserti32x4         m1, [srcq+r6 *1], 1 ; 0 1 2
+@@ -1762,6 +1828,7 @@ cglobal put_6tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     jg .v_w8_loop
+     RET
+ .v_w16:
++    _CET_ENDBR
+     vbroadcasti32x8      m0, [srcq+r6 *1]
+     vinserti32x8         m1, m0, [srcq+ssq*0], 1
+     vinserti32x8         m0, [srcq+r6*2], 0
+@@ -1802,8 +1869,11 @@ cglobal put_6tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     jg .v_w16_loop
+     RET
+ .v_w32:
++    _CET_ENDBR
+ .v_w64:
++    _CET_ENDBR
+ .v_w128:
++    _CET_ENDBR
+     lea                  wd, [hq+wq*8-256]
+ .v_w32_loop0:
+     movu                m16, [srcq+r6 *2]
+@@ -1867,6 +1937,7 @@ cglobal put_6tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     vzeroupper
+     RET
+ .hv:
++    _CET_ENDBR
+     cmp                  wd, 4
+     jg .hv_w8
+     movzx               mxd, mxb
+@@ -1942,6 +2013,7 @@ cglobal put_6tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     jg .hv_w2_loop
+     RET
+ .hv_w4:
++    _CET_ENDBR
+     vbroadcasti32x4      m7, [spel_h_shufB]
+     mova                ym0, [spel_shuf4a]
+     pshufb               m1, m4, m6
+@@ -1983,6 +2055,7 @@ cglobal put_6tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     jg .hv_w4_loop
+     RET
+ .hv_w8:
++    _CET_ENDBR
+     shr                 mxd, 16
+     pmovsxbw           xmm0, [base+subpel_filters+1+mxq*8]
+     movzx               mxd, myb
+@@ -2074,6 +2147,7 @@ cglobal put_6tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     vzeroupper
+     RET
+ .hv_w16:
++    _CET_ENDBR
+     vbroadcasti32x4     m20, [spel_h_shufA]
+     vbroadcasti32x4     m21, [spel_h_shufB]
+     jg .hv_w32
+@@ -2172,6 +2246,7 @@ cglobal put_6tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     vzeroupper
+     RET
+ .hv_w32:
++    _CET_ENDBR
+     WIN64_SPILL_XMM      28
+     mova                m27, [spel_shuf32]
+     lea                  wd, [hq+wq*8-256]
+@@ -2351,6 +2426,7 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     test                myd, 0xf00
+     jz mangle(private_prefix %+ _put_6tap_16bpc_avx512icl).put
+ .v:
++    _CET_ENDBR
+     movzx               mxd, myb
+     shr                 myd, 16
+     cmp                  hd, 6
+@@ -2370,6 +2446,7 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
      vpbroadcastd        m15, [rsp+stack_offset+20]
      jmp                  r7
  .v_w2:
@@ -449,7 +601,7 @@ Index: src/x86/mc16_avx512.asm
      movd               xmm2, [srcq+ssq*0]
      pinsrd             xmm2, [srcq+ssq*1], 1
      pinsrd             xmm2, [srcq+ssq*2], 2
-@@ -1770,6 +1826,7 @@ cglobal put_8tap_16bpc, 4, 9, 16, dst, ds, src, ss, w,
+@@ -2409,6 +2486,7 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
      jg .v_w2_loop
      RET
  .v_w4:
@@ -457,7 +609,7 @@ Index: src/x86/mc16_avx512.asm
      movq               xmm1, [srcq+ssq*0]
      vpbroadcastq       ymm0, [srcq+ssq*1]
      vpbroadcastq       ymm2, [srcq+ssq*2]
-@@ -1814,6 +1871,7 @@ cglobal put_8tap_16bpc, 4, 9, 16, dst, ds, src, ss, w,
+@@ -2453,6 +2531,7 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
      vzeroupper
      RET
  .v_w8:
@@ -465,87 +617,303 @@ Index: src/x86/mc16_avx512.asm
      vbroadcasti32x4      m2, [srcq+ssq*2]
      vinserti32x4         m1, m2, [srcq+ssq*0], 0
      vinserti32x4         m1, [srcq+ssq*1], 1 ; 0 1 2
-@@ -1852,6 +1910,7 @@ cglobal put_8tap_16bpc, 4, 9, 16, dst, ds, src, ss, w,
+@@ -2491,6 +2570,7 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
      jg .v_w8_loop
      RET
  .v_w16:
 +    _CET_ENDBR
-     vbroadcasti32x8      m1, [srcq+ssq*1]
-     vinserti32x8         m0, m1, [srcq+ssq*0], 0
-     vinserti32x8         m1, [srcq+ssq*2], 1
-@@ -1904,6 +1963,7 @@ cglobal put_8tap_16bpc, 4, 9, 16, dst, ds, src, ss, w,
+     vbroadcasti32x8      m0, [srcq+ssq*1]
+     vinserti32x8         m1, m0, [srcq+ssq*2], 1
+     vinserti32x8         m0, [srcq+ssq*0], 0
+@@ -2542,6 +2622,7 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+ .v_w32:
+ .v_w64:
+ .v_w128:
++    _CET_ENDBR
+     WIN64_SPILL_XMM      23
+     lea                  wd, [hq+wq*8-256]
+ .v_w32_loop0:
+@@ -2620,6 +2701,7 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     jg .v_w32_loop0
+     RET
+ .h_w2:
++    _CET_ENDBR
+     RESET_STACK_STATE
+     mova                ym2, [spel_h_shuf2a]
+     sub                srcq, 2
+@@ -2644,6 +2726,7 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     jg .h_w2_loop
+     RET
+ .h_w4:
++    _CET_ENDBR
+     movzx               mxd, mxb
+     pmovsxbw           xmm0, [base+subpel_filters+mxq*8]
+     jl .h_w2
+@@ -2673,6 +2756,7 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     jg .h_w4_loop
+     RET
+ .h_w8:
++    _CET_ENDBR
+     mova                 m4, [spel_h_shufA]
+     movu                 m5, [spel_h_shufB]
+     movu                 m6, [spel_h_shufC]
+@@ -2701,6 +2785,7 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     jg .h_w8_loop
+     RET
+ .h:
++    _CET_ENDBR
+     vpbroadcastw        m15, r8m
+     test                myd, 0xf00
+     jnz .hv
+@@ -2756,6 +2841,7 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     jg .h_w16_loop
+     RET
+ .h_w32:
++    _CET_ENDBR
+     lea                srcq, [srcq+wq*2]
+     lea                dstq, [dstq+wq*2]
+     neg                  wq
+@@ -2794,6 +2880,7 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     jg .h_w32_loop0
+     RET
+ .hv:
++    _CET_ENDBR
+     cmp                  wd, 4
+     jg .hv_w8
+     movzx               mxd, mxb
+@@ -2875,6 +2962,7 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     jg .hv_w2_loop
+     RET
+ .hv_w4:
++    _CET_ENDBR
+     vbroadcasti32x4     m19, [spel_h_shufA]
+     vbroadcasti32x4     m20, [spel_h_shufB]
+     mova                ym6, [spel_shuf4a]
+@@ -2921,6 +3009,7 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     vzeroupper
+     RET
+ .hv_w8:
++    _CET_ENDBR
+     shr                 mxd, 16
+     pmovsxbw           xmm0, [base+subpel_filters+mxq*8]
+     movzx               mxd, myb
+@@ -3039,6 +3128,7 @@ cglobal put_8tap_16bpc, 4, 9, 0, dst, ds, src, ss, w, 
+     vzeroupper
+     RET
+ .hv_w16:
++    _CET_ENDBR
+     WIN64_SPILL_XMM 26
+     vbroadcasti32x4     m20, [spel_h_shufA]
+     vbroadcasti32x4     m21, [spel_h_shufB]
+@@ -3213,6 +3303,7 @@ cglobal prep_6tap_16bpc, 3, 8, 0, tmp, src, ss, w, h, 
+     test                myd, 0xf00
+     jnz .v
+ .prep:
++    _CET_ENDBR
+     tzcnt                wd, wd
+     mov                 r5d, r7m ; bitdepth_max
+     vpbroadcastd         m5, [pw_8192]
+@@ -3226,6 +3317,7 @@ cglobal prep_6tap_16bpc, 3, 8, 0, tmp, src, ss, w, h, 
+ %endif
+     jmp                  wq
+ .h_w8:
++    _CET_ENDBR
+     mova                 m6, [spel_h_shufA]
+     movu                 m7, [spel_h_shufC]
+     mova                 m8, [prep_endB]
+@@ -3256,6 +3348,7 @@ cglobal prep_6tap_16bpc, 3, 8, 0, tmp, src, ss, w, h, 
+     jg .h_w8_loop
+     RET
+ .h:
++    _CET_ENDBR
+     vpbroadcastd        m10, [prep_8tap_rnd]
+     test                myd, 0xf00
+     jnz .hv
+@@ -3304,6 +3397,7 @@ cglobal prep_6tap_16bpc, 3, 8, 0, tmp, src, ss, w, h, 
+     jg .h_w16_loop
+     RET
+ .h_w32:
++    _CET_ENDBR
+     lea                srcq, [srcq+wq*2]
+     neg                  wq
+ .h_w32_loop0:
+@@ -3334,6 +3428,7 @@ cglobal prep_6tap_16bpc, 3, 8, 0, tmp, src, ss, w, h, 
+     jg .h_w32_loop0
+     RET
+ .v:
++    _CET_ENDBR
+     movzx               mxd, myb
+     shr                 myd, 16
+     cmp                  hd, 4
+@@ -3354,6 +3449,7 @@ cglobal prep_6tap_16bpc, 3, 8, 0, tmp, src, ss, w, h, 
+     vpbroadcastd        m14, [tmpq+ 8]
+     jmp                  r7
+ .v_w4:
++    _CET_ENDBR
+     mov                 r3d, 0x330c
+     movq                xm1, [srcq+r6 *2]
+     kmovw                k1, r3d
+@@ -3386,6 +3482,7 @@ cglobal prep_6tap_16bpc, 3, 8, 0, tmp, src, ss, w, h, 
+     jg .v_w4_loop
+     RET
+ .v_w8:
++    _CET_ENDBR
+     vbroadcasti32x4     ym1, [srcq+r6 *1]
+     mov                 r3d, 0x33
+     vbroadcasti32x4      m2, [srcq+ssq*0]
+@@ -3421,6 +3518,7 @@ cglobal prep_6tap_16bpc, 3, 8, 0, tmp, src, ss, w, h, 
+     jg .v_w8_loop
+     RET
+ .v_w16:
++    _CET_ENDBR
+     vbroadcasti32x8      m0, [srcq+r6 *1]
+     vinserti32x8         m1, m0, [srcq+ssq*0], 1 ; 1 2
+     vinserti32x8         m0, [srcq+r6 *2], 0     ; 0 1
+@@ -3458,6 +3556,7 @@ cglobal prep_6tap_16bpc, 3, 8, 0, tmp, src, ss, w, h, 
  .v_w32:
  .v_w64:
  .v_w128:
 +    _CET_ENDBR
  %if WIN64
-     movaps [rsp+stack_offset+8], xmm6
+     push                 r8
  %endif
-@@ -2595,6 +2655,7 @@ cglobal prep_8tap_16bpc, 3, 8, 16, tmp, src, stride, w
- %endif
-     jmp                  wq
- .h_w4:
+@@ -3525,6 +3624,7 @@ cglobal prep_6tap_16bpc, 3, 8, 0, tmp, src, ss, w, h, 
+     vzeroupper
+     RET
+ .hv_w4:
 +    _CET_ENDBR
      movzx               mxd, mxb
-     sub                srcq, 2
      pmovsxbw           xmm0, [base+subpel_filters+mxq*8]
-@@ -2646,6 +2707,7 @@ cglobal prep_8tap_16bpc, 3, 8, 16, tmp, src, stride, w
-     je .h_w16
-     jg .h_w32
+     movzx               mxd, myb
+@@ -3594,6 +3694,7 @@ cglobal prep_6tap_16bpc, 3, 8, 0, tmp, src, ss, w, h, 
+     jg .hv_w4_loop
+     RET
+ .hv_w8:
++    _CET_ENDBR
+     mova                 m8, [spel_h_shufA]
+     movu               ym18, [srcq+r6 *2]
+     vinserti32x8        m18, [srcq+r6 *1], 1 ; 0 1
+@@ -3666,6 +3767,7 @@ cglobal prep_6tap_16bpc, 3, 8, 0, tmp, src, ss, w, h, 
+     vzeroupper
+     RET
+ .hv:
++    _CET_ENDBR
+     vpbroadcastd        m11, [pd_128]
+     cmp                  wd, 4
+     je .hv_w4
+@@ -3788,6 +3890,7 @@ cglobal prep_6tap_16bpc, 3, 8, 0, tmp, src, ss, w, h, 
+     vzeroupper
+     RET
+ .hv_w32:
++    _CET_ENDBR
+     WIN64_SPILL_XMM      29
+ %if WIN64
+     push                 r8
+@@ -3976,6 +4079,7 @@ cglobal prep_8tap_16bpc, 3, 8, 0, tmp, src, stride, w,
+     test                myd, 0xf00
+     jz mangle(private_prefix %+ _prep_6tap_16bpc_avx512icl).prep
+ .v:
++    _CET_ENDBR
+     movzx               mxd, myb
+     shr                 myd, 16
+     cmp                  hd, 4
+@@ -3997,6 +4101,7 @@ cglobal prep_8tap_16bpc, 3, 8, 0, tmp, src, stride, w,
+     vpbroadcastd        m15, [tmpq+12]
+     jmp                  r7
+ .v_w4:
++    _CET_ENDBR
+     mov                 r3d, 0x330c
+     movq                xm1, [srcq+strideq*0]
+     kmovw                k1, r3d
+@@ -4035,6 +4140,7 @@ cglobal prep_8tap_16bpc, 3, 8, 0, tmp, src, stride, w,
+     jg .v_w4_loop
+     RET
+ .v_w8:
++    _CET_ENDBR
+     movu                xm0, [srcq+strideq*0]
+     mov                 r3d, 0x33
+     vbroadcasti32x4     ym1, [srcq+strideq*1]
+@@ -4078,6 +4184,7 @@ cglobal prep_8tap_16bpc, 3, 8, 0, tmp, src, stride, w,
+     jg .v_w8_loop
+     RET
+ .v_w16:
++    _CET_ENDBR
+     vbroadcasti32x8      m0, [srcq+strideq*1]
+     vinserti32x8         m1, m0, [srcq+strideq*2], 1
+     vinserti32x8         m0, [srcq+strideq*0], 0
+@@ -4124,6 +4231,7 @@ cglobal prep_8tap_16bpc, 3, 8, 0, tmp, src, stride, w,
+ .v_w32:
+ .v_w64:
+ .v_w128:
++    _CET_ENDBR
+     WIN64_PUSH_XMM       23
+ %if WIN64
+     push                 r8
+@@ -4206,6 +4314,7 @@ cglobal prep_8tap_16bpc, 3, 8, 0, tmp, src, stride, w,
+ %endif
+     RET
+ .h_w4:
++    _CET_ENDBR
+     RESET_STACK_STATE
+     movzx               mxd, mxb
+     sub                srcq, 2
+@@ -4237,6 +4346,7 @@ cglobal prep_8tap_16bpc, 3, 8, 0, tmp, src, stride, w,
+     jg .h_w4_loop
+     RET
  .h_w8:
 +    _CET_ENDBR
      mova                 m6, [spel_h_shufA]
      movu                 m7, [spel_h_shufB]
      movu                 m8, [spel_h_shufC]
-@@ -2682,6 +2744,7 @@ cglobal prep_8tap_16bpc, 3, 8, 16, tmp, src, stride, w
+@@ -4273,6 +4383,7 @@ cglobal prep_8tap_16bpc, 3, 8, 0, tmp, src, stride, w,
      jg .h_w8_loop
      RET
- .h_w16:
+ .h:
 +    _CET_ENDBR
-     vbroadcasti32x4      m6, [spel_h_shufA]
-     vbroadcasti32x4      m7, [spel_h_shufB]
-     mova                m11, [prep_endC]
-@@ -2715,6 +2778,7 @@ cglobal prep_8tap_16bpc, 3, 8, 16, tmp, src, stride, w
+     vpbroadcastd        m10, [prep_8tap_rnd]
+     test                myd, 0xf00
+     jnz .hv
+@@ -4326,6 +4437,7 @@ cglobal prep_8tap_16bpc, 3, 8, 0, tmp, src, stride, w,
      jg .h_w16_loop
      RET
  .h_w32:
 +    _CET_ENDBR
-     vbroadcasti32x4      m6, [spel_h_shufA]
      lea                srcq, [srcq+wq*2]
-     vbroadcasti32x4      m7, [spel_h_shufB]
-@@ -2773,6 +2837,7 @@ cglobal prep_8tap_16bpc, 3, 8, 16, tmp, src, stride, w
-     vpbroadcastd        m15, [tmpq+12]
-     jmp                  r7
- .v_w4:
+     neg                  wq
+ .h_w32_loop0:
+@@ -4360,6 +4472,7 @@ cglobal prep_8tap_16bpc, 3, 8, 0, tmp, src, stride, w,
+     jg .h_w32_loop0
+     RET
+ .hv:
 +    _CET_ENDBR
-     movq               xmm1, [srcq+strideq*0]
-     vpbroadcastq       ymm0, [srcq+strideq*1]
-     vpbroadcastq       ymm2, [srcq+strideq*2]
-@@ -2814,6 +2879,7 @@ cglobal prep_8tap_16bpc, 3, 8, 16, tmp, src, stride, w
+     vpbroadcastd        m11, [pd_128]
+     cmp                  wd, 4
+     jg .hv_w8
+@@ -4441,6 +4554,7 @@ cglobal prep_8tap_16bpc, 3, 8, 0, tmp, src, stride, w,
      vzeroupper
      RET
- .v_w8:
+ .hv_w8:
 +    _CET_ENDBR
-     vbroadcasti32x4      m2, [srcq+strideq*2]
-     vinserti32x4         m1, m2, [srcq+strideq*0], 0
-     vinserti32x4         m1, [srcq+strideq*1], 1 ; 0 1 2
-@@ -2849,6 +2915,7 @@ cglobal prep_8tap_16bpc, 3, 8, 16, tmp, src, stride, w
-     jg .v_w8_loop
+     shr                 mxd, 16
+     pmovsxbw           xmm0, [base+subpel_filters+mxq*8]
+     movzx               mxd, myb
+@@ -4551,6 +4665,7 @@ cglobal prep_8tap_16bpc, 3, 8, 0, tmp, src, stride, w,
+     jg .hv_w8_loop
      RET
- .v_w16:
+ .hv_w16:
 +    _CET_ENDBR
-     vbroadcasti32x8      m1, [srcq+strideq*1]
-     vinserti32x8         m0, m1, [srcq+strideq*0], 0
-     vinserti32x8         m1, [srcq+strideq*2], 1
-@@ -2896,6 +2963,7 @@ cglobal prep_8tap_16bpc, 3, 8, 16, tmp, src, stride, w
- .v_w32:
- .v_w64:
- .v_w128:
-+    _CET_ENDBR
+     WIN64_SPILL_XMM      27
  %if WIN64
-     PUSH                 r8
-     movaps [rsp+stack_offset+8], xmm6
-@@ -3613,6 +3681,7 @@ ALIGN function_align
+     push                 r8
+@@ -4840,6 +4955,7 @@ cglobal warp_affine_8x8_16bpc, 4, 7, 22, dst, ds, src,
+     ret
+ ALIGN function_align
+ .h:
++    _CET_ENDBR
+     movu               ym16, [srcq+ssq*1]
+     psrad               ym6, ym18, 10
+     lea                srcq, [srcq+ssq*2]
+@@ -4874,6 +4990,7 @@ ALIGN function_align
      lea            stride3q, [strideq*3]
      jmp                  wq
  .w4:
@@ -553,7 +921,7 @@ Index: src/x86/mc16_avx512.asm
      movq   [dstq          ], xm0
      movhps [dstq+strideq*1], xm0
      vextracti32x4       xm2, ym0, 1
-@@ -3647,6 +3716,7 @@ ALIGN function_align
+@@ -4908,6 +5025,7 @@ ALIGN function_align
      call .main
      lea                dstq, [dstq+strideq*4]
  .w8:
@@ -561,7 +929,7 @@ Index: src/x86/mc16_avx512.asm
      mova          [dstq+strideq*0], xm0
      vextracti32x4 [dstq+strideq*1], ym0, 1
      vextracti32x4 [dstq+strideq*2], m0, 2
-@@ -3665,6 +3735,7 @@ ALIGN function_align
+@@ -4926,6 +5044,7 @@ ALIGN function_align
      call .main
      lea                dstq, [dstq+strideq*4]
  .w16:
@@ -569,7 +937,7 @@ Index: src/x86/mc16_avx512.asm
      mova          [dstq+strideq*0], ym0
      vextracti32x8 [dstq+strideq*1], m0, 1
      mova          [dstq+strideq*2], ym1
-@@ -3676,6 +3747,7 @@ ALIGN function_align
+@@ -4937,6 +5056,7 @@ ALIGN function_align
      call .main
      lea                dstq, [dstq+strideq*2]
  .w32:
@@ -577,7 +945,7 @@ Index: src/x86/mc16_avx512.asm
      mova   [dstq+strideq*0], m0
      mova   [dstq+strideq*1], m1
      sub                  hd, 2
-@@ -3685,6 +3757,7 @@ ALIGN function_align
+@@ -4946,6 +5066,7 @@ ALIGN function_align
      call .main
      add                dstq, strideq
  .w64:
@@ -585,7 +953,7 @@ Index: src/x86/mc16_avx512.asm
      mova        [dstq+64*0], m0
      mova        [dstq+64*1], m1
      dec                  hd
-@@ -3694,6 +3767,7 @@ ALIGN function_align
+@@ -4955,6 +5076,7 @@ ALIGN function_align
      call .main
      add                dstq, strideq
  .w128:
@@ -593,7 +961,7 @@ Index: src/x86/mc16_avx512.asm
      mova        [dstq+64*0], m0
      mova        [dstq+64*1], m1
      call .main
-@@ -3853,6 +3927,7 @@ cglobal w_mask_420_16bpc, 4, 8, 16, dst, stride, tmp1,
+@@ -5114,6 +5236,7 @@ cglobal w_mask_420_16bpc, 4, 8, 16, dst, stride, tmp1,
      lea            stride3q, [strideq*3]
      jmp                  wq
  .w4:
@@ -601,7 +969,7 @@ Index: src/x86/mc16_avx512.asm
      mova                 m4, [w_mask_shuf4]
      vpermt2b             m2, m4, m3
      mova                 m3, m14
-@@ -3890,6 +3965,7 @@ cglobal w_mask_420_16bpc, 4, 8, 16, dst, stride, tmp1,
+@@ -5151,6 +5274,7 @@ cglobal w_mask_420_16bpc, 4, 8, 16, dst, stride, tmp1,
  .w4_end:
      RET
  .w8:
@@ -609,7 +977,7 @@ Index: src/x86/mc16_avx512.asm
      mova                 m8, [w_mask_shuf8]
      vpbroadcastd         m9, [pb_64]
      jmp .w8_start
-@@ -3918,6 +3994,7 @@ cglobal w_mask_420_16bpc, 4, 8, 16, dst, stride, tmp1,
+@@ -5179,6 +5303,7 @@ cglobal w_mask_420_16bpc, 4, 8, 16, dst, stride, tmp1,
  .w8_end:
      RET
  .w16:
@@ -617,7 +985,7 @@ Index: src/x86/mc16_avx512.asm
      mova                 m8, [w_mask_shuf16]
      vpbroadcastd         m9, [pb_64]
      jmp .w16_start
-@@ -3943,6 +4020,7 @@ cglobal w_mask_420_16bpc, 4, 8, 16, dst, stride, tmp1,
+@@ -5204,6 +5329,7 @@ cglobal w_mask_420_16bpc, 4, 8, 16, dst, stride, tmp1,
      lea                dstq, [dstq+strideq*4]
      add               maskq, 32
  .w32:
@@ -625,7 +993,7 @@ Index: src/x86/mc16_avx512.asm
      paddw                m2, m3
      mova                 m8, m14
      vpdpwssd             m8, m11, m2
-@@ -3964,6 +4042,7 @@ cglobal w_mask_420_16bpc, 4, 8, 16, dst, stride, tmp1,
+@@ -5225,6 +5351,7 @@ cglobal w_mask_420_16bpc, 4, 8, 16, dst, stride, tmp1,
      lea                dstq, [dstq+strideq*2]
      add               maskq, 32
  .w64:
@@ -633,7 +1001,7 @@ Index: src/x86/mc16_avx512.asm
      mova                 m8, m2
      mova                 m9, m3
      mova [dstq+strideq*0+64*0], m0
-@@ -3987,6 +4066,7 @@ cglobal w_mask_420_16bpc, 4, 8, 16, dst, stride, tmp1,
+@@ -5248,6 +5375,7 @@ cglobal w_mask_420_16bpc, 4, 8, 16, dst, stride, tmp1,
      lea                dstq, [dstq+strideq*2]
      add               maskq, 64
  .w128:
@@ -641,7 +1009,7 @@ Index: src/x86/mc16_avx512.asm
      mova               m16, m2
      mova                m8, m3
      mova [dstq+strideq*0+64*0], m0
-@@ -4088,6 +4168,7 @@ cglobal w_mask_422_16bpc, 4, 8, 15, dst, stride, tmp1,
+@@ -5349,6 +5477,7 @@ cglobal w_mask_422_16bpc, 4, 8, 15, dst, stride, tmp1,
      lea            stride3q, [strideq*3]
      jmp                  wq
  .w4:
@@ -649,7 +1017,7 @@ Index: src/x86/mc16_avx512.asm
      movq   [dstq+strideq*0], xm0
      movhps [dstq+strideq*1], xm0
      vextracti32x4       xm2, ym0, 1
-@@ -4122,6 +4203,7 @@ cglobal w_mask_422_16bpc, 4, 8, 15, dst, stride, tmp1,
+@@ -5383,6 +5512,7 @@ cglobal w_mask_422_16bpc, 4, 8, 15, dst, stride, tmp1,
      call .main
      lea                dstq, [dstq+strideq*4]
  .w8:
@@ -657,7 +1025,7 @@ Index: src/x86/mc16_avx512.asm
      mova          [dstq+strideq*0], xm0
      vextracti32x4 [dstq+strideq*1], ym0, 1
      vextracti32x4 [dstq+strideq*2], m0, 2
-@@ -4140,6 +4222,7 @@ cglobal w_mask_422_16bpc, 4, 8, 15, dst, stride, tmp1,
+@@ -5401,6 +5531,7 @@ cglobal w_mask_422_16bpc, 4, 8, 15, dst, stride, tmp1,
      call .main
      lea                dstq, [dstq+strideq*4]
  .w16:
@@ -665,7 +1033,7 @@ Index: src/x86/mc16_avx512.asm
      mova          [dstq+strideq*0], ym0
      vextracti32x8 [dstq+strideq*1], m0, 1
      mova          [dstq+strideq*2], ym1
-@@ -4151,6 +4234,7 @@ cglobal w_mask_422_16bpc, 4, 8, 15, dst, stride, tmp1,
+@@ -5412,6 +5543,7 @@ cglobal w_mask_422_16bpc, 4, 8, 15, dst, stride, tmp1,
      call .main
      lea                dstq, [dstq+strideq*2]
  .w32:
@@ -673,7 +1041,7 @@ Index: src/x86/mc16_avx512.asm
      mova   [dstq+strideq*0], m0
      mova   [dstq+strideq*1], m1
      sub                  hd, 2
-@@ -4160,6 +4244,7 @@ cglobal w_mask_422_16bpc, 4, 8, 15, dst, stride, tmp1,
+@@ -5421,6 +5553,7 @@ cglobal w_mask_422_16bpc, 4, 8, 15, dst, stride, tmp1,
      call .main
      add                dstq, strideq
  .w64:
@@ -681,7 +1049,7 @@ Index: src/x86/mc16_avx512.asm
      mova        [dstq+64*0], m0
      mova        [dstq+64*1], m1
      dec                  hd
-@@ -4169,6 +4254,7 @@ cglobal w_mask_422_16bpc, 4, 8, 15, dst, stride, tmp1,
+@@ -5430,6 +5563,7 @@ cglobal w_mask_422_16bpc, 4, 8, 15, dst, stride, tmp1,
      call .main
      add                dstq, strideq
  .w128:
@@ -689,7 +1057,7 @@ Index: src/x86/mc16_avx512.asm
      mova        [dstq+64*0], m0
      mova        [dstq+64*1], m1
      call .main
-@@ -4247,6 +4333,7 @@ cglobal w_mask_444_16bpc, 4, 8, 13, dst, stride, tmp1,
+@@ -5508,6 +5642,7 @@ cglobal w_mask_444_16bpc, 4, 8, 13, dst, stride, tmp1,
      lea            stride3q, [strideq*3]
      jmp                  wq
  .w4:
@@ -697,7 +1065,7 @@ Index: src/x86/mc16_avx512.asm
      movq   [dstq+strideq*0], xm0
      movhps [dstq+strideq*1], xm0
      vextracti32x4       xm2, ym0, 1
-@@ -4281,6 +4368,7 @@ cglobal w_mask_444_16bpc, 4, 8, 13, dst, stride, tmp1,
+@@ -5542,6 +5677,7 @@ cglobal w_mask_444_16bpc, 4, 8, 13, dst, stride, tmp1,
      call .main
      lea                dstq, [dstq+strideq*4]
  .w8:
@@ -705,7 +1073,7 @@ Index: src/x86/mc16_avx512.asm
      mova          [dstq+strideq*0], xm0
      vextracti32x4 [dstq+strideq*1], ym0, 1
      vextracti32x4 [dstq+strideq*2], m0, 2
-@@ -4299,6 +4387,7 @@ cglobal w_mask_444_16bpc, 4, 8, 13, dst, stride, tmp1,
+@@ -5560,6 +5696,7 @@ cglobal w_mask_444_16bpc, 4, 8, 13, dst, stride, tmp1,
      call .main
      lea                dstq, [dstq+strideq*4]
  .w16:
@@ -713,7 +1081,7 @@ Index: src/x86/mc16_avx512.asm
      mova          [dstq+strideq*0], ym0
      vextracti32x8 [dstq+strideq*1], m0, 1
      mova          [dstq+strideq*2], ym1
-@@ -4310,6 +4399,7 @@ cglobal w_mask_444_16bpc, 4, 8, 13, dst, stride, tmp1,
+@@ -5571,6 +5708,7 @@ cglobal w_mask_444_16bpc, 4, 8, 13, dst, stride, tmp1,
      call .main
      lea                dstq, [dstq+strideq*2]
  .w32:
@@ -721,7 +1089,7 @@ Index: src/x86/mc16_avx512.asm
      mova   [dstq+strideq*0], m0
      mova   [dstq+strideq*1], m1
      sub                  hd, 2
-@@ -4319,6 +4409,7 @@ cglobal w_mask_444_16bpc, 4, 8, 13, dst, stride, tmp1,
+@@ -5580,6 +5718,7 @@ cglobal w_mask_444_16bpc, 4, 8, 13, dst, stride, tmp1,
      call .main
      add                dstq, strideq
  .w64:
@@ -729,7 +1097,7 @@ Index: src/x86/mc16_avx512.asm
      mova        [dstq+64*0], m0
      mova        [dstq+64*1], m1
      dec                  hd
-@@ -4328,6 +4419,7 @@ cglobal w_mask_444_16bpc, 4, 8, 13, dst, stride, tmp1,
+@@ -5589,6 +5728,7 @@ cglobal w_mask_444_16bpc, 4, 8, 13, dst, stride, tmp1,
      call .main
      add                dstq, strideq
  .w128:
@@ -737,7 +1105,7 @@ Index: src/x86/mc16_avx512.asm
      mova        [dstq+64*0], m0
      mova        [dstq+64*1], m1
      call .main
-@@ -4395,6 +4487,7 @@ cglobal blend_16bpc, 3, 7, 7, dst, ds, tmp, w, h, mask
+@@ -5656,6 +5796,7 @@ cglobal blend_16bpc, 3, 7, 7, dst, ds, tmp, w, h, mask
      lea                  r6, [dsq*3]
      jmp                  wq
  .w4:
@@ -745,7 +1113,7 @@ Index: src/x86/mc16_avx512.asm
      pmovzxbw           ym19, [maskq]
      movq               xm16, [dstq+dsq*0]
      movhps             xm16, [dstq+dsq*1]
-@@ -4419,6 +4512,7 @@ cglobal blend_16bpc, 3, 7, 7, dst, ds, tmp, w, h, mask
+@@ -5680,6 +5821,7 @@ cglobal blend_16bpc, 3, 7, 7, dst, ds, tmp, w, h, mask
      vzeroupper
      RET
  .w8:
@@ -753,7 +1121,7 @@ Index: src/x86/mc16_avx512.asm
      pmovzxbw             m2, [maskq]
      mova                xm0, [dstq+dsq*0]
      vinserti32x4        ym0, [dstq+dsq*1], 1
-@@ -4439,6 +4533,7 @@ cglobal blend_16bpc, 3, 7, 7, dst, ds, tmp, w, h, mask
+@@ -5700,6 +5842,7 @@ cglobal blend_16bpc, 3, 7, 7, dst, ds, tmp, w, h, mask
      jg .w8
      RET
  .w16:
@@ -761,7 +1129,7 @@ Index: src/x86/mc16_avx512.asm
      pmovzxbw             m4, [maskq+32*0]
      pmovzxbw             m5, [maskq+32*1]
      mova                ym0, [dstq+dsq*0]
-@@ -4464,6 +4559,7 @@ cglobal blend_16bpc, 3, 7, 7, dst, ds, tmp, w, h, mask
+@@ -5725,6 +5868,7 @@ cglobal blend_16bpc, 3, 7, 7, dst, ds, tmp, w, h, mask
      jg .w16
      RET
  .w32:
@@ -769,7 +1137,7 @@ Index: src/x86/mc16_avx512.asm
      pmovzxbw             m4, [maskq+32*0]
      pmovzxbw             m5, [maskq+32*1]
      mova                 m0, [dstq+dsq*0]
-@@ -4493,6 +4589,7 @@ cglobal blend_v_16bpc, 3, 6, 5, dst, ds, tmp, w, h
+@@ -5754,6 +5898,7 @@ cglobal blend_v_16bpc, 3, 6, 5, dst, ds, tmp, w, h
      add                  wq, r5
      jmp                  wq
  .w2:
@@ -777,7 +1145,7 @@ Index: src/x86/mc16_avx512.asm
      vpbroadcastd       xmm2, [obmc_masks_avx2+2*2]
  .w2_loop:
      movd               xmm0, [dstq+dsq*0]
-@@ -4509,6 +4606,7 @@ cglobal blend_v_16bpc, 3, 6, 5, dst, ds, tmp, w, h
+@@ -5770,6 +5915,7 @@ cglobal blend_v_16bpc, 3, 6, 5, dst, ds, tmp, w, h
      jg .w2_loop
      RET
  .w4:
@@ -785,7 +1153,7 @@ Index: src/x86/mc16_avx512.asm
      vpbroadcastq       xmm2, [obmc_masks_avx2+4*2]
  .w4_loop:
      movq               xmm0, [dstq+dsq*0]
-@@ -4524,6 +4622,7 @@ cglobal blend_v_16bpc, 3, 6, 5, dst, ds, tmp, w, h
+@@ -5785,6 +5931,7 @@ cglobal blend_v_16bpc, 3, 6, 5, dst, ds, tmp, w, h
      jg .w4_loop
      RET
  .w8:
@@ -793,7 +1161,7 @@ Index: src/x86/mc16_avx512.asm
      vbroadcasti32x4     ym2, [obmc_masks_avx2+8*2]
  .w8_loop:
      mova                xm0, [dstq+dsq*0]
-@@ -4539,6 +4638,7 @@ cglobal blend_v_16bpc, 3, 6, 5, dst, ds, tmp, w, h
+@@ -5800,6 +5947,7 @@ cglobal blend_v_16bpc, 3, 6, 5, dst, ds, tmp, w, h
      jg .w8_loop
      RET
  .w16:
@@ -801,7 +1169,7 @@ Index: src/x86/mc16_avx512.asm
      vbroadcasti32x8      m2, [obmc_masks_avx2+16*2]
  .w16_loop:
      mova                ym0, [dstq+dsq*0]
-@@ -4554,6 +4654,7 @@ cglobal blend_v_16bpc, 3, 6, 5, dst, ds, tmp, w, h
+@@ -5815,6 +5963,7 @@ cglobal blend_v_16bpc, 3, 6, 5, dst, ds, tmp, w, h
      jg .w16_loop
      RET
  .w32:
@@ -809,7 +1177,7 @@ Index: src/x86/mc16_avx512.asm
      mova                 m4, [obmc_masks_avx2+32*2]
  .w32_loop:
      mova                 m0,     [dstq+dsq*0]
-@@ -4586,6 +4687,7 @@ cglobal blend_h_16bpc, 3, 7, 9, dst, ds, tmp, w, h, ma
+@@ -5847,6 +5996,7 @@ cglobal blend_h_16bpc, 3, 7, 9, dst, ds, tmp, w, h, ma
      neg                  hq
      jmp                  wq
  .w2:
@@ -817,7 +1185,7 @@ Index: src/x86/mc16_avx512.asm
      movd               xmm0, [dstq+dsq*0]
      pinsrd             xmm0, [dstq+dsq*1], 1
      movd               xmm2, [maskq+hq*2]
-@@ -4602,6 +4704,7 @@ cglobal blend_h_16bpc, 3, 7, 9, dst, ds, tmp, w, h, ma
+@@ -5863,6 +6013,7 @@ cglobal blend_h_16bpc, 3, 7, 9, dst, ds, tmp, w, h, ma
      jl .w2
      RET
  .w4:
@@ -825,7 +1193,7 @@ Index: src/x86/mc16_avx512.asm
      mova               xmm3, [blend_shuf]
  .w4_loop:
      movq               xmm0, [dstq+dsq*0]
-@@ -4619,6 +4722,7 @@ cglobal blend_h_16bpc, 3, 7, 9, dst, ds, tmp, w, h, ma
+@@ -5880,6 +6031,7 @@ cglobal blend_h_16bpc, 3, 7, 9, dst, ds, tmp, w, h, ma
      jl .w4_loop
      RET
  .w8:
@@ -833,7 +1201,7 @@ Index: src/x86/mc16_avx512.asm
      vbroadcasti32x4     ym3, [blend_shuf]
      shufpd              ym3, ym3, 0x0c
  .w8_loop:
-@@ -4637,6 +4741,7 @@ cglobal blend_h_16bpc, 3, 7, 9, dst, ds, tmp, w, h, ma
+@@ -5898,6 +6050,7 @@ cglobal blend_h_16bpc, 3, 7, 9, dst, ds, tmp, w, h, ma
      jl .w8_loop
      RET
  .w16:
@@ -841,7 +1209,7 @@ Index: src/x86/mc16_avx512.asm
      vbroadcasti32x4      m3, [blend_shuf]
      shufpd               m3, m3, 0xf0
  .w16_loop:
-@@ -4655,6 +4760,7 @@ cglobal blend_h_16bpc, 3, 7, 9, dst, ds, tmp, w, h, ma
+@@ -5916,6 +6069,7 @@ cglobal blend_h_16bpc, 3, 7, 9, dst, ds, tmp, w, h, ma
      jl .w16_loop
      RET
  .w32:
@@ -849,7 +1217,7 @@ Index: src/x86/mc16_avx512.asm
      vpbroadcastw         m4, [maskq+hq*2]
      vpbroadcastw         m5, [maskq+hq*2+2]
      mova                 m0,     [dstq+dsq*0]
-@@ -4673,6 +4779,7 @@ cglobal blend_h_16bpc, 3, 7, 9, dst, ds, tmp, w, h, ma
+@@ -5934,6 +6088,7 @@ cglobal blend_h_16bpc, 3, 7, 9, dst, ds, tmp, w, h, ma
      jl .w32
      RET
  .w64:
@@ -857,7 +1225,7 @@ Index: src/x86/mc16_avx512.asm
      vpbroadcastw         m4, [maskq+hq*2]
      mova                 m0,     [dstq+64*0]
      psubw                m2, m0, [tmpq+64*0]
-@@ -4690,6 +4797,7 @@ cglobal blend_h_16bpc, 3, 7, 9, dst, ds, tmp, w, h, ma
+@@ -5951,6 +6106,7 @@ cglobal blend_h_16bpc, 3, 7, 9, dst, ds, tmp, w, h, ma
      jl .w64
      RET
  .w128:

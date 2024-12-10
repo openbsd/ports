@@ -19,17 +19,17 @@ Index: src/x86/filmgrain_avx2.asm
  .ar2:
 +    _CET_ENDBR
  %if WIN64
-     ; xmm6 and xmm7 already saved
-     %assign xmm_regs_used 16
-@@ -286,6 +289,7 @@ cglobal generate_grain_y_8bpc, 2, 9, 8, buf, fg_data
+     %assign stack_size_padded 168
+     SUB             rsp, stack_size_padded
+@@ -277,6 +280,7 @@ cglobal generate_grain_y_8bpc, 2, 9, 8, buf, fg_data
  
  INIT_YMM avx2
  .ar3:
 +    _CET_ENDBR
  %if WIN64
-     ; xmm6 and xmm7 already saved
-     %assign stack_offset 16
-@@ -461,6 +465,7 @@ cglobal generate_grain_uv_%1_8bpc, 4, 10, 16, buf, buf
+     ALLOC_STACK   16*14
+     %assign stack_size stack_size - 16*4
+@@ -446,6 +450,7 @@ cglobal generate_grain_uv_%1_8bpc, 4, 10, 16, buf, buf
  
  INIT_YMM avx2
  .ar0:
@@ -37,7 +37,7 @@ Index: src/x86/filmgrain_avx2.asm
      DEFINE_ARGS buf, bufy, fg_data, uv, unused, shift
      imul            uvd, 28
      mov          shiftd, [fg_dataq+FGData.ar_coeff_shift]
-@@ -589,6 +594,7 @@ INIT_YMM avx2
+@@ -574,6 +579,7 @@ INIT_YMM avx2
  
  INIT_XMM avx2
  .ar1:
@@ -45,7 +45,7 @@ Index: src/x86/filmgrain_avx2.asm
      DEFINE_ARGS buf, bufy, fg_data, uv, val3, cf3, min, max, x, shift
      imul            uvd, 28
      mov          shiftd, [fg_dataq+FGData.ar_coeff_shift]
-@@ -671,6 +677,7 @@ INIT_XMM avx2
+@@ -656,6 +662,7 @@ INIT_XMM avx2
      RET
  
  .ar2:
@@ -53,7 +53,7 @@ Index: src/x86/filmgrain_avx2.asm
      DEFINE_ARGS buf, bufy, fg_data, uv, unused, shift
      mov          shiftd, [fg_dataq+FGData.ar_coeff_shift]
      imul            uvd, 28
-@@ -765,6 +772,7 @@ INIT_XMM avx2
+@@ -750,6 +757,7 @@ INIT_XMM avx2
  
  INIT_YMM avx2
  .ar3:

@@ -1,0 +1,123 @@
+Index: src/x86/pal.asm
+--- src/x86/pal.asm.orig
++++ src/x86/pal.asm
+@@ -73,6 +73,7 @@ cglobal pal_idx_finish, 2, 7, 6, dst, src, bw, bh, w, 
+     sub                 bhd, hd
+     jmp                 bwq
+ .w4:
++    _CET_ENDBR
+     mova                 m0, [srcq]
+     add                srcq, 16
+     pmaddubsw            m0, m3
+@@ -96,6 +97,7 @@ cglobal pal_idx_finish, 2, 7, 6, dst, src, bw, bh, w, 
+     pshufb               m1, m2
+     jmp .w8_main
+ .w8:
++    _CET_ENDBR
+     mova                 m2, [base+pal_idx_w8_padh]
+ .w8_loop:
+     mova                 m0, [srcq+16*0]
+@@ -126,6 +128,7 @@ cglobal pal_idx_finish, 2, 7, 6, dst, src, bw, bh, w, 
+     pshufb               m1, m4
+     jmp .w16_main
+ .w16:
++    _CET_ENDBR
+     cmp                  wd, 16
+     je .w16_loop
+     call .setup_padh
+@@ -164,6 +167,7 @@ cglobal pal_idx_finish, 2, 7, 6, dst, src, bw, bh, w, 
+     pshufb               m1, m4
+     jmp .w32_main
+ .w32:
++    _CET_ENDBR
+     cmp                  wd, 32
+     je .w32_loop
+     call .setup_padh
+@@ -222,6 +226,7 @@ cglobal pal_idx_finish, 2, 7, 6, dst, src, bw, bh, w, 
+     pshufb               m2, m4
+     jmp .w64_main2
+ .w64:
++    _CET_ENDBR
+     cmp                  wd, 64
+     je .w64_loop
+     call .setup_padh
+@@ -286,6 +291,7 @@ cglobal pal_idx_finish, 4, 7, 5, dst, src, bw, bh, w, 
+     sub                 bhd, hd
+     jmp                 bwq
+ .w4:
++    _CET_ENDBR
+     mova                xm0, [srcq]
+     add                srcq, 16
+     pmaddubsw           xm0, xm2
+@@ -309,6 +315,7 @@ cglobal pal_idx_finish, 4, 7, 5, dst, src, bw, bh, w, 
+     pshufb              xm1, xm3
+     jmp .w8_main
+ .w8:
++    _CET_ENDBR
+     mova                xm3, [base+pal_idx_w8_padh]
+ .w8_loop:
+     mova                xm0, [srcq+16*0]
+@@ -339,6 +346,7 @@ cglobal pal_idx_finish, 4, 7, 5, dst, src, bw, bh, w, 
+     pshufb               m1, m3
+     jmp .w16_main
+ .w16:
++    _CET_ENDBR
+     cmp                  wd, 15
+     je .w16_loop
+     vbroadcasti128       m0, [base+pb_0to63]
+@@ -380,6 +388,7 @@ cglobal pal_idx_finish, 4, 7, 5, dst, src, bw, bh, w, 
+     pshufb               m1, m3
+     jmp .w32_main
+ .w32:
++    _CET_ENDBR
+     cmp                  wd, 31
+     je .w32_loop
+     movd                xm3, wd
+@@ -433,6 +442,7 @@ cglobal pal_idx_finish, 4, 7, 5, dst, src, bw, bh, w, 
+     pshufb               m1, m3
+     jmp .w64_main
+ .w64:
++    _CET_ENDBR
+     cmp                  wd, 63
+     je .w64_loop
+     mov                 r6d, wd
+@@ -482,6 +492,7 @@ cglobal pal_idx_finish, 4, 7, 7, dst, src, bw, bh, w, 
+     sub                 bhd, hd
+     jmp                 bwq
+ .w4:
++    _CET_ENDBR
+     mova               xmm0, [srcq]
+     add                srcq, 16
+     pmaddubsw          xmm0, xm4
+@@ -505,6 +516,7 @@ cglobal pal_idx_finish, 4, 7, 7, dst, src, bw, bh, w, 
+     pshufb             xmm1, xmm2
+     jmp .w8_main
+ .w8:
++    _CET_ENDBR
+     mova               xmm2, [base+pal_idx_w8_padh]
+ .w8_loop:
+     mova               xmm0, [srcq+16*0]
+@@ -534,6 +546,7 @@ cglobal pal_idx_finish, 4, 7, 7, dst, src, bw, bh, w, 
+     pshufb               m0, m2
+     jmp .w16_main
+ .w16:
++    _CET_ENDBR
+     cmp                  wd, 15
+     je .w16_loop
+     vbroadcasti32x4      m2, [base+pb_0to63]
+@@ -566,6 +579,7 @@ cglobal pal_idx_finish, 4, 7, 7, dst, src, bw, bh, w, 
+     vpermb               m1, m2, m1
+     jmp .w32_main
+ .w32:
++    _CET_ENDBR
+     mova                 m2, [base+pb_0to63]
+     paddb                m3, m2, m2
+     cmp                  wd, 31
+@@ -603,6 +617,7 @@ cglobal pal_idx_finish, 4, 7, 7, dst, src, bw, bh, w, 
+     REPX  {vpermb x, m5, x}, m0, m1, m2, m3
+     jmp .w64_main
+ .w64:
++    _CET_ENDBR
+     mova                 m5, [base+pb_0to63]
+     paddb                m6, m5, m5
+     cmp                  wd, 63

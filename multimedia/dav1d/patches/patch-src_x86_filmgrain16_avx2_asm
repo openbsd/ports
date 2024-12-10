@@ -51,13 +51,13 @@ Index: src/x86/filmgrain16_avx2.asm
  .ar2:
 +    _CET_ENDBR
  %if WIN64
-     ; xmm6 and xmm7 already saved
-     %assign xmm_regs_used 13 + %2
-@@ -746,6 +753,7 @@ INIT_YMM avx2
+     %assign stack_size_padded 136
+     SUB             rsp, stack_size_padded
+@@ -737,6 +744,7 @@ INIT_YMM avx2
      RET
  
  .ar3:
 +    _CET_ENDBR
  %if WIN64
-     ; xmm6 and xmm7 already saved
      %assign stack_offset 32
+     %assign stack_size_padded 152

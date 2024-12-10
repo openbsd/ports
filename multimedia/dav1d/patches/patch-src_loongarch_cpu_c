@@ -1,0 +1,15 @@
+Provide dav1d_getauxval() wrapper for getauxvaul() and elf_aux_info()
+93f12c117a4e1c0cc2b129dcc52e84dbd9b84200
+
+Index: src/loongarch/cpu.c
+--- src/loongarch/cpu.c.orig
++++ src/loongarch/cpu.c
+@@ -40,7 +40,7 @@
+ COLD unsigned dav1d_get_cpu_flags_loongarch(void) {
+     unsigned flags = dav1d_get_default_cpu_flags();
+ #if HAVE_GETAUXVAL
+-    unsigned long hw_cap = getauxval(AT_HWCAP);
++    unsigned long hw_cap = dav1d_getauxval(AT_HWCAP);
+     flags |= (hw_cap & LA_HWCAP_LSX) ? DAV1D_LOONGARCH_CPU_FLAG_LSX : 0;
+     flags |= (hw_cap & LA_HWCAP_LASX) ? DAV1D_LOONGARCH_CPU_FLAG_LASX : 0;
+ #endif
