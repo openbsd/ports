@@ -1,0 +1,13 @@
+Disable GoLang
+Index: src/libs/gocmdbridge/server/CMakeLists.txt
+--- src/libs/gocmdbridge/server/CMakeLists.txt.orig
++++ src/libs/gocmdbridge/server/CMakeLists.txt
+@@ -41,7 +41,7 @@ endfunction()
+ find_program(GO_BIN go)
+ find_program(UPX_BIN upx)
+ 
+-if (${GO_BIN} STREQUAL "GO_BIN-NOTFOUND")
++if (${GO_BIN} STREQUAL "GO_BIN-NOTFOUND" OR ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
+     set(CMDBRIDGEFEATURE NO)
+     set(CMDBRIDGEFEATURE_TEXT "no GO compiler found")
+ else ()
