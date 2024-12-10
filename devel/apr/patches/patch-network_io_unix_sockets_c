@@ -10,19 +10,3 @@ Index: network_io/unix/sockets.c
      if (apr_is_option_set(sock, APR_SO_NONBLOCK) == 1) {
          apr_set_option(*new, APR_SO_NONBLOCK, 1);
      }
-@@ -388,6 +388,15 @@ apr_status_t apr_socket_accept(apr_socket_t **new, apr
- apr_status_t apr_socket_connect(apr_socket_t *sock, apr_sockaddr_t *sa)
- {
-     int rc;        
-+/*
-+ * OpenBSD doesn't support connect() to INADDR_ANY so convert to
-+ * INADDR_LOOPBACK to emulate what is expected.
-+ */
-+#ifdef __OpenBSD__
-+    if (sa->family == APR_INET)
-+        if (sa->sa.sin.sin_addr.s_addr == INADDR_ANY)
-+            sa->sa.sin.sin_addr.s_addr = htonl(INADDR_LOOPBACK);
-+#endif
- 
-     do {
-         rc = connect(sock->socketdes,
