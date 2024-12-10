@@ -42,7 +42,6 @@ do-install:
 	rm -rf ${PREFIX}/lib/node_modules/zigbee2mqtt/node_modules/@serialport/bindings-cpp/prebuilds
 
 # maintainer convenience target
-# (yes, gtar)
 dist: ${FULLDISTDIR}/${GH_DISTFILE}
 	@set -x; \
 	t=`mktemp -d /tmp/zigbee2mqtt.XXXXXXXXXX`; \
@@ -56,7 +55,7 @@ dist: ${FULLDISTDIR}/${GH_DISTFILE}
 	npm install -d --exclude=dev --global --cache=$$t/npm-cache --prefix=$$t/inst --install-links; \
 	cd -; \
 	rm -r npm-cache/_logs; \
-	gtar cf - npm-cache | xz -T 0 > $$f; \
+	tar cf - npm-cache | xz -T 0 > $$f; \
 	scp $$f naiad:mirrors/; \
 	rm -rf $$t
 
