@@ -1,11 +1,11 @@
 Index: po/POTFILES.in
 --- po/POTFILES.in.orig
 +++ po/POTFILES.in
-@@ -41,6 +41,7 @@ src/ui-budget.c
+@@ -42,6 +42,7 @@ src/ui-budget.c
  src/ui-budget-tabview.c
  src/ui-category.c
  src/ui-currency.c
 +src/da_encoding.c
  src/ui-dialogs.c
  src/ui-filter.c
- src/ui-group.c
+ src/ui-flt-widget.c
