@@ -1,12 +1,12 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -75,7 +75,7 @@ ecm_setup_version(${PROJECT_VERSION} VARIABLE_PREFIX K
- # but that isn't enough to ship as clang has no such workaround. 1.65 is known to be affected.
+@@ -63,7 +63,7 @@ ecm_setup_version(${PROJECT_VERSION} VARIABLE_PREFIX K
  #
  # 1.71 or later is required for safe_numerics to work on MSVC otherwise we get a link-time error.
--find_package(Boost 1.71 REQUIRED)
+ # Change this to 1.84 when its more widely available
+-find_package(Boost 1.82 REQUIRED)
 +find_package(Boost)
- 
  #needed on craft and possiablely other custom setups.
  include_directories(${Boost_INCLUDE_DIRS})
+ 

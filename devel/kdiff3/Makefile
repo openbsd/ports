@@ -1,6 +1,6 @@
 COMMENT =	compares and merges multiple files or directories
 
-DISTNAME =	kdiff3-1.11.5
+DISTNAME =	kdiff3-1.12.0
 
 CATEGORIES =	devel
 
@@ -18,8 +18,8 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
 WANTLIB += KF6Crash KF6I18n KF6JobWidgets KF6KIOCore KF6KIOGui
 WANTLIB += KF6KIOWidgets KF6Service KF6Solid KF6WidgetsAddons
-WANTLIB += KF6XmlGui Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6PrintSupport Qt6Widgets Qt6Xml c m
+WANTLIB += KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6PrintSupport
+WANTLIB += Qt6Widgets Qt6Xml c icuuc m
 
 MODULES =	devel/kf6
 
@@ -46,9 +46,7 @@ LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \
-		x11/qt6/qt5compat
-
-CONFIGURE_ARGS =	-DBUILD_WITH_QT6=ON
+		textproc/icu4c
 
 TEST_IS_INTERACTIVE =	X11
 
