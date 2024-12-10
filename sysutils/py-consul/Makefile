@@ -1,14 +1,15 @@
 COMMENT =	python client for consul
 
-MODPY_EGG_VERSION =	1.1.0
+MODPY_EGG_VERSION =	1.5.3
 
-DISTNAME =	python-consul-${MODPY_EGG_VERSION}
+DISTNAME =	py_consul-${MODPY_EGG_VERSION}
 PKGNAME =	py-consul-${MODPY_EGG_VERSION}
-REVISION =	4
 
 CATEGORIES =	sysutils
 
-HOMEPAGE =	https://python-consul.readthedocs.io
+HOMEPAGE =	https://github.com/criteo/py-consul
+
+MAINTAINER =	Pavel Korovin <pvk@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -20,10 +21,9 @@ FLAVORS =	python3
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =	www/py-requests${MODPY_FLAVOR} \
-		devel/py-six${MODPY_FLAVOR}
+RUN_DEPENDS =	www/py-requests${MODPY_FLAVOR}
 
-# requires pytest-twisted
+# requires docker
 NO_TEST =	Yes
 
 .include <bsd.port.mk>
