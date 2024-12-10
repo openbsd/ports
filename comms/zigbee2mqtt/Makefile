@@ -55,7 +55,7 @@ dist: ${FULLDISTDIR}/${GH_DISTFILE}
 	npm run build -d --cache=$$t/npm-cache; \
 	npm install -d --exclude=dev --global --cache=$$t/npm-cache --prefix=$$t/inst --install-links; \
 	cd -; \
-	rm -rf npm_cache/_logs; \
+	rm -r npm-cache/_logs; \
 	gtar cf - npm-cache | xz -T 0 > $$f; \
 	scp $$f naiad:mirrors/; \
 	rm -rf $$t
