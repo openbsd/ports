@@ -2,7 +2,7 @@ COMMENT=	SSL encryption wrapper for standard network daemons
 
 DISTNAME=	stunnel-5.64
 CATEGORIES=	security
-REVISION=	0
+REVISION=	1
 
 MAINTAINER=	Gleydson Soares <gsoares@openbsd.org>
 
