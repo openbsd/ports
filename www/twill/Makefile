@@ -26,7 +26,9 @@ RUN_DEPENDS=	textproc/py-lxml${MODPY_FLAVOR}>=5.2,<6 \
 		www/py-httpx${MODPY_FLAVOR}<1 \
 		devel/py-parsing${MODPY_FLAVOR}<4
 
-TEST_DEPENDS=	www/py-quixote${MODPY_FLAVOR}>=3.6,<4
+TEST_DEPENDS=	www/py-flask${MODPY_FLAVOR}
+# default is 8080, which is not uncommon to be used by something else
+TEST_ENV=	TWILL_TEST_PORT=8086
 
 post-build:
 	cd ${WRKSRC}/docs && ${MAKE_PROGRAM} man
