@@ -4,6 +4,7 @@ BROKEN-sparc64 =	infinite loop or aborts during build
 COMMENT =		Prolog for the real world
 
 V =			9.2.6
+REVISION =		0
 DISTNAME =		swipl-$V
 PKGNAME =		swi-prolog-$V
 CATEGORIES =		lang
@@ -42,7 +43,8 @@ CONFIGURE_ARGS +=	-DBDB_INCLUDE_DIR=${LOCALBASE}/include \
 			-DCMAKE_C_FLAGS=-DHAVE_DB4_DB_H
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-BUILD_DEPENDS +=	shells/bash
+BUILD_DEPENDS +=	shells/bash \
+			editors/emacs
 LIB_DEPENDS =		devel/gmp \
 			graphics/jpeg \
 			devel/uuid \
