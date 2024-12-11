@@ -46,9 +46,7 @@ eboringssl/include/openssl/evp.h
 eboringssl/include/openssl/evp_errors.h
 eboringssl/include/openssl/ex_data.h
 eboringssl/include/openssl/experimental/
-eboringssl/include/openssl/experimental/dilithium.h
 eboringssl/include/openssl/experimental/kyber.h
-eboringssl/include/openssl/experimental/spx.h
 eboringssl/include/openssl/hkdf.h
 eboringssl/include/openssl/hmac.h
 eboringssl/include/openssl/hpke.h
@@ -88,6 +86,7 @@ eboringssl/include/openssl/safestack.h
 eboringssl/include/openssl/service_indicator.h
 eboringssl/include/openssl/sha.h
 eboringssl/include/openssl/siphash.h
+eboringssl/include/openssl/slhdsa.h
 eboringssl/include/openssl/span.h
 eboringssl/include/openssl/srtp.h
 eboringssl/include/openssl/ssl.h
