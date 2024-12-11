@@ -33,7 +33,7 @@ Index: src/miners/fs/tracker-miner-files.c
  
  	if (priv->storage) {
  		g_object_unref (priv->storage);
-@@ -1184,8 +1190,10 @@ tracker_miner_files_check_allowed_text_file (TrackerMi
+@@ -1200,8 +1206,10 @@ tracker_miner_files_check_allowed_text_file (TrackerMi
  	return FALSE;
  }
  

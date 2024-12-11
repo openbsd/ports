@@ -3,7 +3,7 @@ XXX Add a gudev option to meson(1)
 Index: src/miners/fs/tracker-miner-files-methods.c
 --- src/miners/fs/tracker-miner-files-methods.c.orig
 +++ src/miners/fs/tracker-miner-files-methods.c
-@@ -404,6 +404,7 @@ lookup_filesystem_id (TrackerMinerFiles *files,
+@@ -407,6 +407,7 @@ lookup_filesystem_id (TrackerMinerFiles *files,
                        GFile             *file)
  {
  	const gchar *id = NULL, *devname = NULL;
@@ -11,7 +11,7 @@ Index: src/miners/fs/tracker-miner-files-methods.c
  	GUdevClient *udev_client;
  	g_autoptr (GUdevDevice) udev_device = NULL;
  	MountData *mount_data = NULL;
-@@ -455,7 +456,7 @@ lookup_filesystem_id (TrackerMinerFiles *files,
+@@ -458,7 +459,7 @@ lookup_filesystem_id (TrackerMinerFiles *files,
  				id = g_udev_device_get_property (udev_device, "ID_FS_UUID");
  		}
  	}
