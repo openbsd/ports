@@ -1,0 +1,8 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+The hub needs to be updated before starting the crowdsec service by
+simply running the following command:
+
+	# ${TRUEPREFIX}/bin/cscli hub update

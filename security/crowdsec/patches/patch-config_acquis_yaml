@@ -1,0 +1,12 @@
+Index: config/acquis.yaml
+--- config/acquis.yaml.orig
++++ config/acquis.yaml
+@@ -6,7 +6,7 @@ labels:
+   type: nginx
+ ---
+ filenames:
+- - /var/log/auth.log
++ - /var/log/authlog
+  - /var/log/syslog
+ labels:
+   type: syslog

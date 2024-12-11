@@ -1,0 +1,119 @@
+@rcscript ${RCDIR}/crowdsec
+@bin bin/crowdsec
+@bin bin/crowdsec-cli
+@bin bin/cscli
+@bin bin/notification-dummy
+@bin bin/notification-email
+@bin bin/notification-file
+@bin bin/notification-http
+@bin bin/notification-sentinel
+@bin bin/notification-slack
+@bin bin/notification-splunk
+@mode 700
+@owner root
+@group wheel
+@sample /var/db/crowdsec/
+@sample /var/db/crowdsec/data/
+@sample /var/db/crowdsec/data/trace/
+@mode
+@owner
+@group
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/crowdsec/
+@sample ${SYSCONFDIR}/crowdsec/
+@sample ${SYSCONFDIR}/crowdsec/hub/
+@sample ${SYSCONFDIR}/crowdsec/acquis.d/
+share/examples/crowdsec/acquis.yaml
+@sample ${SYSCONFDIR}/crowdsec/acquis.yaml
+share/examples/crowdsec/acquis_win.yaml
+@sample ${SYSCONFDIR}/crowdsec/acquis_win.yaml
+share/examples/crowdsec/config.yaml
+@sample ${SYSCONFDIR}/crowdsec/config.yaml
+share/examples/crowdsec/config_win.yaml
+@sample ${SYSCONFDIR}/crowdsec/config_win.yaml
+share/examples/crowdsec/config_win_no_lapi.yaml
+@sample ${SYSCONFDIR}/crowdsec/config_win_no_lapi.yaml
+share/examples/crowdsec/console.yaml
+@sample ${SYSCONFDIR}/crowdsec/console.yaml
+share/examples/crowdsec/context.yaml
+@sample ${SYSCONFDIR}/crowdsec/context.yaml
+share/examples/crowdsec/crowdsec.cron.daily
+@sample ${SYSCONFDIR}/crowdsec/crowdsec.cron.daily
+share/examples/crowdsec/crowdsec.service
+@sample ${SYSCONFDIR}/crowdsec/crowdsec.service
+share/examples/crowdsec/detect.yaml
+@sample ${SYSCONFDIR}/crowdsec/detect.yaml
+share/examples/crowdsec/dev.yaml
+@sample ${SYSCONFDIR}/crowdsec/dev.yaml
+share/examples/crowdsec/local_api_credentials.yaml
+@sample ${SYSCONFDIR}/crowdsec/local_api_credentials.yaml
+share/examples/crowdsec/notifications/
+@sample ${SYSCONFDIR}/crowdsec/notifications/
+share/examples/crowdsec/notifications/email.yaml
+@sample ${SYSCONFDIR}/crowdsec/notifications/email.yaml
+share/examples/crowdsec/notifications/http.yaml
+@sample ${SYSCONFDIR}/crowdsec/notifications/http.yaml
+share/examples/crowdsec/notifications/sentinel.yaml
+@sample ${SYSCONFDIR}/crowdsec/notifications/sentinel.yaml
+share/examples/crowdsec/notifications/slack.yaml
+@sample ${SYSCONFDIR}/crowdsec/notifications/slack.yaml
+share/examples/crowdsec/notifications/splunk.yaml
+@sample ${SYSCONFDIR}/crowdsec/notifications/splunk.yaml
+share/examples/crowdsec/online_api_credentials.yaml
+@sample ${SYSCONFDIR}/crowdsec/online_api_credentials.yaml
+share/examples/crowdsec/patterns/
+@sample ${SYSCONFDIR}/crowdsec/patterns/
+share/examples/crowdsec/patterns/aws
+@sample ${SYSCONFDIR}/crowdsec/patterns/aws
+share/examples/crowdsec/patterns/bacula
+@sample ${SYSCONFDIR}/crowdsec/patterns/bacula
+share/examples/crowdsec/patterns/bro
+@sample ${SYSCONFDIR}/crowdsec/patterns/bro
+share/examples/crowdsec/patterns/cowrie_honeypot
+@sample ${SYSCONFDIR}/crowdsec/patterns/cowrie_honeypot
+share/examples/crowdsec/patterns/exim
+@sample ${SYSCONFDIR}/crowdsec/patterns/exim
+share/examples/crowdsec/patterns/firewalls
+@sample ${SYSCONFDIR}/crowdsec/patterns/firewalls
+share/examples/crowdsec/patterns/haproxy
+@sample ${SYSCONFDIR}/crowdsec/patterns/haproxy
+share/examples/crowdsec/patterns/java
+@sample ${SYSCONFDIR}/crowdsec/patterns/java
+share/examples/crowdsec/patterns/junos
+@sample ${SYSCONFDIR}/crowdsec/patterns/junos
+share/examples/crowdsec/patterns/linux-syslog
+@sample ${SYSCONFDIR}/crowdsec/patterns/linux-syslog
+share/examples/crowdsec/patterns/mcollective
+@sample ${SYSCONFDIR}/crowdsec/patterns/mcollective
+share/examples/crowdsec/patterns/modsecurity
+@sample ${SYSCONFDIR}/crowdsec/patterns/modsecurity
+share/examples/crowdsec/patterns/mongodb
+@sample ${SYSCONFDIR}/crowdsec/patterns/mongodb
+share/examples/crowdsec/patterns/mysql
+@sample ${SYSCONFDIR}/crowdsec/patterns/mysql
+share/examples/crowdsec/patterns/nagios
+@sample ${SYSCONFDIR}/crowdsec/patterns/nagios
+share/examples/crowdsec/patterns/nginx
+@sample ${SYSCONFDIR}/crowdsec/patterns/nginx
+share/examples/crowdsec/patterns/paths
+@sample ${SYSCONFDIR}/crowdsec/patterns/paths
+share/examples/crowdsec/patterns/postgresql
+@sample ${SYSCONFDIR}/crowdsec/patterns/postgresql
+share/examples/crowdsec/patterns/rails
+@sample ${SYSCONFDIR}/crowdsec/patterns/rails
+share/examples/crowdsec/patterns/redis
+@sample ${SYSCONFDIR}/crowdsec/patterns/redis
+share/examples/crowdsec/patterns/ruby
+@sample ${SYSCONFDIR}/crowdsec/patterns/ruby
+share/examples/crowdsec/patterns/smb
+@sample ${SYSCONFDIR}/crowdsec/patterns/smb
+share/examples/crowdsec/patterns/ssh
+@sample ${SYSCONFDIR}/crowdsec/patterns/ssh
+share/examples/crowdsec/patterns/tcpdump
+@sample ${SYSCONFDIR}/crowdsec/patterns/tcpdump
+share/examples/crowdsec/profiles.yaml
+@sample ${SYSCONFDIR}/crowdsec/profiles.yaml
+share/examples/crowdsec/simulation.yaml
+@sample ${SYSCONFDIR}/crowdsec/simulation.yaml
+share/examples/crowdsec/user.yaml
+@sample ${SYSCONFDIR}/crowdsec/user.yaml

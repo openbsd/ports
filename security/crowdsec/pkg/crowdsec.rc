@@ -1,0 +1,26 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/crowdsec"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+
+rc_pre() {
+	_lapi=$(${TRUEPREFIX}/bin/cscli config show --key Config.API.Server.Enable)
+	if [ "${_lapi}" != "false" ]; then
+		_m=$(${TRUEPREFIX}/bin/cscli machines list -o json --error)
+		if [ "${_m}" = "[]" ]; then
+			${TRUEPREFIX}/bin/cscli machines add --auto --force --error
+		fi
+		[ ! -s "${SYSCONFDIR}/crowdsec/online_api_credentials.yaml" ] && \
+			${TRUEPREFIX}/bin/cscli capi register
+	fi
+	_hubcount=$(${TRUEPREFIX}/bin/cscli hub list -o raw | wc -l)
+	if [ "${_hubcount}" -le 1 ]; then
+		${TRUEPREFIX}/bin/cscli parsers install \
+			crowdsecurity/whitelists --error
+	fi
+}
+
+rc_cmd $1
