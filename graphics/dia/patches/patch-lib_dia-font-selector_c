@@ -1,0 +1,14 @@
+Workaround for slow text preferences:
+https://gitlab.gnome.org/GNOME/dia/-/merge_requests/133
+
+Index: lib/dia-font-selector.c
+--- lib/dia-font-selector.c.orig
++++ lib/dia-font-selector.c
+@@ -496,7 +496,6 @@ dia_font_selector_init (DiaFontSelector *fs)
+   gtk_cell_layout_pack_start (GTK_CELL_LAYOUT (priv->fonts), renderer, TRUE);
+   gtk_cell_layout_set_attributes (GTK_CELL_LAYOUT (priv->fonts), renderer,
+                                   "text", FONT_COL_FAMILY,
+-                                  "family", FONT_COL_FAMILY,
+                                   NULL);
+ 
+   gtk_combo_box_set_row_separator_func (GTK_COMBO_BOX (priv->fonts),
