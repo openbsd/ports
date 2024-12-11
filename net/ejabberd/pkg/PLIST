@@ -978,7 +978,14 @@ share/examples/ejabberd/inetrc
 @owner _ejabberd
 @group _ejabberd
 @sample ${SYSCONFDIR}/ejabberd/inetrc
+@mode
+@owner
+@group
+share/examples/login.conf.d/ejabberd
+@sample ${SYSCONFDIR}/login.conf.d/ejabberd
 @mode 0750
+@owner _ejabberd
+@group _ejabberd
 @sample ${LOCALSTATEDIR}/db/ejabberd/
 @mode 0755
 @sample ${LOCALSTATEDIR}/log/ejabberd/
