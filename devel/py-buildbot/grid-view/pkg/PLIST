@@ -1,5 +1,5 @@
 @conflict py-buildbot-grid-view-*
-@conflict py3-buildbot-react-grid-view-*
+@conflict ${MODPY_PY_PREFIX}buildbot-react-grid-view-*
 @pkgpath devel/py-buildbot/react-grid-view
 lib/python${MODPY_VERSION}/site-packages/buildbot_grid_view/
 lib/python${MODPY_VERSION}/site-packages/buildbot_grid_view-${MODPY_EGG_VERSION}.dist-info/
