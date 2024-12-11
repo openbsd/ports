@@ -1,0 +1,14 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+The crowdsec firewall bouncer needs two pf tables so setting these up is
+necessary in order for the bouncer to work.
+
+table <crowdsec-blacklists> persist
+table <crowdsec6-blacklists> persist
+
+These tables can then be used to block traffic, for example:
+
+block drop in quick from <crowdsec-blacklists> to any
+block drop in quick from <crowdsec6-blacklists> to any
