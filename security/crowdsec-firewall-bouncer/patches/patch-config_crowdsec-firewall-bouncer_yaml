@@ -1,0 +1,10 @@
+Index: config/crowdsec-firewall-bouncer.yaml
+--- config/crowdsec-firewall-bouncer.yaml.orig
++++ config/crowdsec-firewall-bouncer.yaml
+@@ -1,4 +1,5 @@
+-mode: ${BACKEND}
++mode: pf
++retry_initial_connect: true
+ update_frequency: 10s
+ log_mode: file
+ log_dir: /var/log/

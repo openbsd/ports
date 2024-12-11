@@ -1,0 +1,10 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/cs-firewall-bouncer"
+daemon_flags="-c ${SYSCONFDIR}/crowdsec-firewall-bouncer/crowdsec-firewall-bouncer.yaml"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+
+rc_cmd $1
