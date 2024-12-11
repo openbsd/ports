@@ -1,10 +1,9 @@
 COMMENT=		JSON parser for GLib-based libraries and applications
 
 GNOME_PROJECT=		json-glib
-GNOME_VERSION=		1.10.0
-REVISION=		0
+GNOME_VERSION=		1.10.6
 
-SHARED_LIBS += json-glib-1.0             6.2 # 0.1000.0
+SHARED_LIBS += json-glib-1.0             6.2 # 0.1000.6
 
 CATEGORIES=		devel
 
