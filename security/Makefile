@@ -31,6 +31,8 @@
      SUBDIR += clusterssh
      SUBDIR += corkscrew
      SUBDIR += cracklib
+     SUBDIR += crowdsec
+     SUBDIR += crowdsec-firewall-bouncer
      SUBDIR += cvechecker
      SUBDIR += cyrus-sasl-xoauth2
      SUBDIR += cyrus-sasl2
