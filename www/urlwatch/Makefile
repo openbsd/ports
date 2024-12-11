@@ -1,9 +1,7 @@
 COMMENT=	monitor webpages for updates
 
-MODPY_EGG_VERSION=	2.28
-
+MODPY_EGG_VERSION=	2.29
 DISTNAME=	urlwatch-${MODPY_EGG_VERSION}
-REVISION=	0
 
 CATEGORIES=	www
 
@@ -20,18 +18,21 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	converters/py-html2text${MODPY_FLAVOR} \
-		databases/py-minidb${MODPY_FLAVOR}>=2.0.6 \
-		devel/py-appdirs${MODPY_FLAVOR} \
-		security/py-keyring${MODPY_FLAVOR} \
-		textproc/py-cssselect${MODPY_FLAVOR} \
-		textproc/py-lxml${MODPY_FLAVOR} \
-		textproc/py-vobject${MODPY_FLAVOR} \
+m['install_requires'] = ['minidb>=2.0.8', 'PyYAML', 'requests', 'keyring', 'platformdirs', 'lxml', 'cssselect']
+
+RUN_DEPENDS=	databases/py-minidb${MODPY_FLAVOR} \
 		textproc/py-yaml${MODPY_FLAVOR} \
-		www/lynx \
-		www/py-requests${MODPY_FLAVOR}
-TEST_DEPENDS=	devel/py-codestyle${MODPY_FLAVOR} \
-		devel/py-nose${MODPY_FLAVOR}
+		www/py-requests${MODPY_FLAVOR} \
+		security/py-keyring${MODPY_FLAVOR} \
+		sysutils/py-platformdirs${MODPY_FLAVOR} \
+		textproc/py-lxml${MODPY_FLAVOR} \
+		textproc/py-cssselect${MODPY_FLAVOR}
+
+# optional but useful
+RUN_DEPENDS+=	converters/py-html2text${MODPY_FLAVOR} \
+		textproc/py-vobject${MODPY_FLAVOR}
+
+TEST_DEPENDS=	devel/py-codestyle${MODPY_FLAVOR}
 
 post-install:
 	mv ${PREFIX}/share/man/* ${PREFIX}/man/
