@@ -1,0 +1,12 @@
+Index: lib/Makefile.in
+--- lib/Makefile.in.orig
++++ lib/Makefile.in
+@@ -625,7 +625,7 @@ libdia_la_SOURCES = \
+ #		charconv.h 
+ #		render.h \
+ #		render.c 
+-libdia_la_LDFLAGS = -avoid-version --export-dynamic
++libdia_la_LDFLAGS = -avoid-version -Wl,--export-dynamic
+ libdia_la_LIBADD = $(GTK_LIBS)
+ AM_CPPFLAGS = \
+ 	$(LIBART_CFLAGS) \
