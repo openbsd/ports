@@ -1,5 +1,5 @@
 MODGO_MODULES =	\
-	github.com/!arceliar/ironwood		 v0.0.0-20241122002527-75a6e82fa380 \
+	github.com/!arceliar/ironwood		 v0.0.0-20241210120540-9deb08d9f8f9 \
 	github.com/!arceliar/phony		 v0.0.0-20220903101357-530938a4b13d \
 	github.com/!vivid!cortex/ewma		 v1.2.0 \
 	github.com/beorn7/perks			 v1.0.1 \
@@ -12,7 +12,7 @@ MODGO_MODULES =	\
 	github.com/chzyer/test			 v0.0.0-20180213035817-a1ea475d72b1 \
 	github.com/coder/websocket		 v1.8.12 \
 	github.com/davecgh/go-spew		 v1.1.1 \
-	github.com/fatih/color			 v1.15.0 \
+	github.com/fatih/color			 v1.18.0 \
 	github.com/francoispqt/gojay		 v1.2.13 \
 	github.com/go-logr/logr			 v1.2.4 \
 	github.com/go-task/slim-sprig		 v0.0.0-20230315185526-52ccab3ef572 \
@@ -28,8 +28,8 @@ MODGO_MODULES =	\
 	github.com/lxn/walk			 v0.0.0-20210112085537-c389da54e794 \
 	github.com/lxn/win			 v0.0.0-20210218163916-a377121e959e \
 	github.com/mattn/go-colorable		 v0.1.13 \
-	github.com/mattn/go-isatty		 v0.0.19 \
-	github.com/mattn/go-runewidth		 v0.0.15 \
+	github.com/mattn/go-isatty		 v0.0.20 \
+	github.com/mattn/go-runewidth		 v0.0.16 \
 	github.com/olekukonko/tablewriter	 v0.0.5 \
 	github.com/onsi/ginkgo/v2		 v2.9.5 \
 	github.com/onsi/gomega			 v1.27.6 \
@@ -45,19 +45,19 @@ MODGO_MODULES =	\
 	github.com/stretchr/testify		 v1.6.1 \
 	github.com/twmb/murmur3			 v1.1.6 \
 	github.com/vishvananda/netlink		 v1.3.0 \
-	github.com/vishvananda/netns		 v0.0.4 \
+	github.com/vishvananda/netns		 v0.0.5 \
 	github.com/wlynxg/anet			 v0.0.5 \
 	github.com/yuin/goldmark		 v1.4.13 \
 	go.uber.org/mock			 v0.4.0 \
-	golang.org/x/crypto			 v0.29.0 \
+	golang.org/x/crypto			 v0.31.0 \
 	golang.org/x/exp			 v0.0.0-20240719175910-8a7402abbf56 \
 	golang.org/x/mod			 v0.19.0 \
-	golang.org/x/net			 v0.31.0 \
-	golang.org/x/sync			 v0.9.0 \
-	golang.org/x/sys			 v0.27.0 \
+	golang.org/x/net			 v0.32.0 \
+	golang.org/x/sync			 v0.10.0 \
+	golang.org/x/sys			 v0.28.0 \
 	golang.org/x/telemetry			 v0.0.0-20240521205824-bda55230c457 \
-	golang.org/x/term			 v0.26.0 \
-	golang.org/x/text			 v0.20.0 \
+	golang.org/x/term			 v0.27.0 \
+	golang.org/x/text			 v0.21.0 \
 	golang.org/x/time			 v0.5.0 \
 	golang.org/x/tools			 v0.23.0 \
 	golang.org/x/xerrors			 v0.0.0-20200804184101-5ec99f83aff1 \
@@ -67,18 +67,23 @@ MODGO_MODULES =	\
 	google.golang.org/protobuf		 v1.33.0 \
 	gopkg.in/check.v1			 v0.0.0-20161208181325-20d25e280405 \
 	gopkg.in/yaml.v3			 v3.0.1 \
-	gvisor.dev/gvisor			 v0.0.0-20230927004350-cbd86285d259
+	gvisor.dev/gvisor			 v0.0.0-20230927004350-cbd86285d259 \
+	suah.dev/protect			 v1.2.4
 
 MODGO_MODFILES =	\
 	github.com/bits-and-blooms/bitset	 v1.10.0 \
 	github.com/davecgh/go-spew		 v1.1.0 \
+	github.com/fatih/color			 v1.15.0 \
 	github.com/google/go-cmp		 v0.5.9 \
 	github.com/mattn/go-isatty		 v0.0.16 \
-	github.com/mattn/go-isatty		 v0.0.17 \
+	github.com/mattn/go-isatty		 v0.0.19 \
+	github.com/mattn/go-runewidth		 v0.0.15 \
 	github.com/mattn/go-runewidth		 v0.0.9 \
+	github.com/vishvananda/netns		 v0.0.4 \
 	golang.org/x/crypto			 v0.0.0-20211215153901-e495a2d5b3d3 \
 	golang.org/x/crypto			 v0.13.0 \
 	golang.org/x/crypto			 v0.23.0 \
+	golang.org/x/crypto			 v0.30.0 \
 	golang.org/x/exp			 v0.0.0-20240506185415-9bf2ced13842 \
 	golang.org/x/mod			 v0.11.0 \
 	golang.org/x/mod			 v0.17.0 \
@@ -101,6 +106,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.2.0 \
 	golang.org/x/sys			 v0.20.0 \
 	golang.org/x/sys			 v0.22.0 \
+	golang.org/x/sys			 v0.25.0 \
 	golang.org/x/sys			 v0.6.0 \
 	golang.org/x/sys			 v0.8.0 \
 	golang.org/x/text			 v0.15.0 \
