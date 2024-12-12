@@ -2,7 +2,7 @@ COMMENT=	module to interface the DNS resolver using the ldns library
 
 MODULES=	cpan
 CPAN_AUTHOR=	ZNMSTR
-DISTNAME=	Zonemaster-LDNS-4.0.2
+DISTNAME=	Zonemaster-LDNS-4.1.0
 CATEGORIES=	net
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
@@ -12,7 +12,12 @@ PERMIT_PACKAGE= Yes
 
 WANTLIB += c crypto idn2 ldns perl
 
-BUILD_DEPENDS=	devel/p5-Devel-CheckLib
+BUILD_DEPENDS=	devel/p5-Devel-CheckLib \
+		devel/p5-ExtUtils-PkgConfig
+
+# * `Module::Install`
+# * `Module::Install::XSUtil`
+
 LIB_DEPENDS=	devel/libidn2 \
 		net/ldns
 TEST_DEPENDS=	devel/p5-Test-Fatal
