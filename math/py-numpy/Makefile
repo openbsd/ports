@@ -3,7 +3,7 @@ COMMENT=		fast array and numeric programming library for Python
 MODPY_EGG_VERSION=	1.26.4
 DISTNAME=		numpy-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		math devel
 
@@ -33,6 +33,11 @@ MODPY_PYBUILD=		other
 BUILD_DEPENDS=		devel/gas \
 			devel/meson-python \
 			lang/cython${MODPY_FLAVOR}
+
+# detected at runtime in crackfortran.py; checked at the start of run
+# but not used until later. force the dep to ensure consistent results
+# and avoid dpb junking issues.
+RUN_DEPENDS=		textproc/py-charset-normalizer${MODPY_FLAVOR}
 
 TEST_DEPENDS=		${FULLPKGNAME}:${FULLPKGPATH} \
 			devel/py-hypothesis${MODPY_FLAVOR} \
