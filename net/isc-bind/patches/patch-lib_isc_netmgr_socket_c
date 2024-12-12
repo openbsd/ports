@@ -11,7 +11,7 @@ Index: lib/isc/netmgr/socket.c
 +/* disabled for pledge */
 +#if !defined(__OpenBSD__) && defined(IPV6_DONTFRAG)
  		if (setsockopt_off(fd, IPPROTO_IPV6, IPV6_DONTFRAG) == -1) {
- 			return (ISC_R_FAILURE);
+ 			return ISC_R_FAILURE;
  		} else {
 @@ -242,7 +243,12 @@ isc__nm_socket_disable_pmtud(uv_os_sock_t fd, sa_famil
  		UNUSED(fd);
@@ -25,7 +25,7 @@ Index: lib/isc/netmgr/socket.c
 + */
 +#if !defined(__OpenBSD__) && defined(IP_DONTFRAG)
  		if (setsockopt_off(fd, IPPROTO_IP, IP_DONTFRAG) == -1) {
- 			return (ISC_R_FAILURE);
+ 			return ISC_R_FAILURE;
  		} else {
 @@ -272,7 +278,11 @@ isc__nm_socket_v6only(uv_os_sock_t fd, sa_family_t sa_
  	 * Enable the IPv6-only option on IPv6 sockets
@@ -38,5 +38,5 @@ Index: lib/isc/netmgr/socket.c
 + */
 +#if !defined(__OpenBSD__) && defined(IPV6_V6ONLY)
  		if (setsockopt_on(fd, IPPROTO_IPV6, IPV6_V6ONLY) == -1) {
- 			return (ISC_R_FAILURE);
+ 			return ISC_R_FAILURE;
  		} else {
