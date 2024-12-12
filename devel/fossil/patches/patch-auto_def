@@ -1,7 +1,7 @@
 Index: auto.def
 --- auto.def.orig
 +++ auto.def
-@@ -309,7 +309,7 @@ if {[opt-bool with-th1-hooks]} {
+@@ -312,7 +312,7 @@ if {[opt-bool with-th1-hooks]} {
  
  if {[opt-bool static]} {
      # XXX: This will not work on all systems.

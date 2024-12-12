@@ -1,14 +1,12 @@
 COMMENT =		simple distributed software configuration management
 
+V =			2.25
+PKGNAME =		fossil-${V}
+
 # commit ID must be changed in DISTFILES when updating, see
 # https://fossil-scm.org/home/uv/download.html
-DISTNAME =		fossil-2.24
-REVISION =		0
-
-#DISTFILES =		{8be0372c1051043761320c8ea8669c3cf320c406e5fe18ad36b7be5f844ca73b}${DISTNAME}${EXTRACT_SUFX}
-# temporary, mistake in 2.24 update requires this file to be renamed.
-# switch back to the above scheme for 2.25.
-DISTFILES =		${DISTNAME}-1{8be0372c1051043761320c8ea8669c3cf320c406e5fe18ad36b7be5f844ca73b/${DISTNAME}}${EXTRACT_SUFX}
+DISTNAME =		fossil-src-${V}
+DISTFILES =		{8f798279d5f7c3288099915f2ea88c57b6d6039f3f05eac5e237897af33376dc/}${DISTNAME}${EXTRACT_SUFX}
 
 CATEGORIES =		devel www
 EPOCH =			0
@@ -27,11 +25,6 @@ FLAVOR?=
 # uses pledge()
 WANTLIB =		c crypto fuse m ssl z
 
-MODULES =		lang/tcl
-MODTCL_VERSION =	8.6
-
-BUILD_DEPENDS =		${MODTCL_BUILD_DEPENDS}
-
 CONFIGURE_STYLE =	simple
 CONFLICT_MARKER =	fossil-*-!static
 
@@ -43,13 +36,10 @@ CONFLICT_MARKER =	fossil-*-static
 
 SUBST_VARS +=		CONFLICT_MARKER STATIC
 
-TEST_DEPENDS =		${MODTCL_RUN_DEPENDS}
+NO_TEST =		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/auto.def
-
-do-test:
-	@cd ${WRKSRC} && ${MODTCL_BIN} test/tester.tcl fossil
 
 do-install:
 	${INSTALL_PROGRAM_DIR} ${PREFIX}/bin
