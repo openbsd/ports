@@ -2,7 +2,7 @@ COMMENT=	open-source JPEG 2000 codec library
 
 GH_ACCOUNT=	uclouvain
 GH_PROJECT=	openjpeg
-GH_TAGNAME=	v2.5.2
+GH_TAGNAME=	v2.5.3
 DISTNAME=	openjp2-${GH_TAGNAME:S/v//}
 
 SHARED_LIBS +=	openjp2	6.0
@@ -23,6 +23,7 @@ CONFIGURE_ARGS=	-DOPJ_DATA_ROOT=${WRKDIR}/data \
 LIB_DEPENDS=	graphics/lcms2 \
 		graphics/png
 DEBUG_PACKAGES= ${BUILD_PACKAGES}
+TEST_DEPENDS=	${BUILD_PKGPATH}
 
 post-install:
 	cd ${WRKSRC}/doc/man; \
