@@ -1,6 +1,6 @@
 COMMENT=	module to produce pretty and readable YAML
 
-MODPY_EGG_VERSION=	24.4.0
+MODPY_EGG_VERSION=	24.12.1
 
 DISTNAME=	pyaml-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
