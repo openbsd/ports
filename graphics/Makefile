@@ -38,6 +38,7 @@
      SUBDIR += decker
      SUBDIR += delaboratory
      SUBDIR += dia
+     SUBDIR += dia-gtk2
      SUBDIR += dibuja
      SUBDIR += digikam
      SUBDIR += displaz
