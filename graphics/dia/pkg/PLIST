@@ -1,4 +1,6 @@
+@conflict dia-gtk2-*
 @pkgpath graphics/dia,gnome
+@pkgpath graphics/dia-gtk2
 @bin bin/dia
 lib/dia/
 @so lib/dia/libaadl_objects.so

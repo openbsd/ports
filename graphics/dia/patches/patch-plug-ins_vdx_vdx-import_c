@@ -1,0 +1,15 @@
+../dia-78c75625dffcec345c776c35914a2de0380058cc/plug-ins/vdx/vdx-import.c:1085:9: warning: using floating point absolute value function 'fabs' when argument is of integer type [-Wabsolute-value]
+    if (fabs(XForm->Angle > EPSILON))
+
+Index: plug-ins/vdx/vdx-import.c
+--- plug-ins/vdx/vdx-import.c.orig
++++ plug-ins/vdx/vdx-import.c
+@@ -1082,7 +1082,7 @@ plot_ellipse(const struct vdx_Geom *Geom, const struct
+     current->y += Ellipse->D;
+ 
+     p = dia_point(apply_XForm(*current, XForm), theDoc);
+-    if (fabs(XForm->Angle > EPSILON))
++    if (abs(XForm->Angle > EPSILON))
+ 	dia_context_add_message(ctx, _("Can't rotate ellipse"));
+ 
+     newobj =

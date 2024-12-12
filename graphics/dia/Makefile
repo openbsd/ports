@@ -2,6 +2,7 @@ COMMENT=		program for drawing structured diagrams
 
 DIST_TUPLE=		gnome GNOME dia 78c75625dffcec345c776c35914a2de0380058cc .
 PKGNAME=		dia-0.98.0alpha20241027
+REVISION=		0
 
 CATEGORIES=		graphics
 
