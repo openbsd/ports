@@ -9,8 +9,8 @@ EXTRACT_FILES=	${DISTNAME}/{LICENSE.\*,amd-ucode}
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
 HOMEPAGE=	https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/tree/amd-ucode
-SITES=		https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/
-#SITES=		https://cdn.kernel.org/pub/linux/kernel/firmware/
+#SITES=		https://git.kernel.org/pub/scm/linux/kernel/git/firmware/linux-firmware.git/snapshot/
+SITES=		https://cdn.kernel.org/pub/linux/kernel/firmware/
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/firmware/amd
