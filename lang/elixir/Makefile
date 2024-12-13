@@ -7,6 +7,7 @@ GH_TAGNAME=		v$V
 DISTNAME=		${GH_PROJECT}-$V
 CATEGORIES=		lang
 MAINTAINER=		Volker Schlecht <openbsd-ports@schlecht.dev>
+REVISION=		0
 
 HOMEPAGE=		https://elixir-lang.org/
 
