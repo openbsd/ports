@@ -1,0 +1,12 @@
+Index: OrthancFramework/Sources/DicomNetworking/Internals/DicomTls.cpp
+--- OrthancFramework/Sources/DicomNetworking/Internals/DicomTls.cpp.orig
++++ OrthancFramework/Sources/DicomNetworking/Internals/DicomTls.cpp
+@@ -132,7 +132,7 @@ namespace Orthanc
+                                ownPrivateKeyPath);
+       }
+ 
+-      if (IsFailure(tls->setCertificateFile(ownCertificatePath.c_str(), DCF_Filetype_PEM /*opt_keyFileFormat*/)))
++      if (IsFailure(tls->setCertificateFile(ownCertificatePath.c_str(), DCF_Filetype_PEM /*opt_keyFileFormat*/, TSP_Profile_BCP_195_RFC_8996)))
+       {
+         throw OrthancException(ErrorCode_BadFileFormat, "Cannot parse PEM file with own certificate for DICOM TLS: " +
+                                ownCertificatePath);
