@@ -2,7 +2,7 @@ COMMENT =		PostgreSQL Foreign Data Wrapper for SQLite
 
 GH_ACCOUNT =		pgspider
 GH_PROJECT =		sqlite_fdw
-GH_TAGNAME =		v2.4.0
+GH_TAGNAME =		v2.5.0
 
 PKGNAME =		pg_${DISTNAME}
 
