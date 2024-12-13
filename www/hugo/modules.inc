@@ -177,7 +177,7 @@ MODGO_MODULES =	\
 	github.com/bep/debounce								 v1.2.0 \
 	github.com/bep/gitmap								 v1.6.0 \
 	github.com/bep/goat								 v0.5.0 \
-	github.com/bep/godartsass/v2							 v2.3.1 \
+	github.com/bep/godartsass/v2							 v2.3.2 \
 	github.com/bep/golibsass							 v1.2.0 \
 	github.com/bep/gowebp								 v0.3.0 \
 	github.com/bep/helpers								 v0.5.0 \
@@ -367,7 +367,7 @@ MODGO_MODULES =	\
 	google.golang.org/genproto/googleapis/bytestream				 v0.0.0-20241104194629-dd2ea8efbc28 \
 	google.golang.org/genproto/googleapis/rpc					 v0.0.0-20241104194629-dd2ea8efbc28 \
 	google.golang.org/grpc								 v1.67.1 \
-	google.golang.org/protobuf							 v1.35.1 \
+	google.golang.org/protobuf							 v1.35.2 \
 	gopkg.in/check.v1								 v1.0.0-20201130134442-10cb98267c6c \
 	gopkg.in/errgo.v2								 v2.1.0 \
 	gopkg.in/neurosnap/sentences.v1							 v1.0.6 \
@@ -1020,9 +1020,9 @@ MODGO_MODFILES =	\
 	google.golang.org/protobuf							 v1.23.1-0.20200526195155-81db48ad09cc \
 	google.golang.org/protobuf							 v1.24.0 \
 	google.golang.org/protobuf							 v1.25.0 \
-	google.golang.org/protobuf							 v1.30.0 \
 	google.golang.org/protobuf							 v1.31.0 \
 	google.golang.org/protobuf							 v1.34.2 \
+	google.golang.org/protobuf							 v1.35.1 \
 	gopkg.in/check.v1								 v0.0.0-20161208181325-20d25e280405 \
 	gopkg.in/check.v1								 v1.0.0-20180628173108-788fd7840127 \
 	gopkg.in/yaml.v2								 v2.2.2 \
