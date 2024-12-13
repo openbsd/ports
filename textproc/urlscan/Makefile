@@ -1,6 +1,6 @@
 COMMENT =	terminal URL viewer (urlview replacement)
 
-MODPY_EGG_VERSION =	1.0.3
+MODPY_EGG_VERSION =	1.0.6
 DISTNAME =		urlscan-${MODPY_EGG_VERSION}
 
 CATEGORIES =	textproc
