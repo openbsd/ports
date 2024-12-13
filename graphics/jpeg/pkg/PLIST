@@ -26,9 +26,6 @@ lib/pkgconfig/libturbojpeg.pc
 @man man/man1/jpegtran.1
 @man man/man1/rdjpgcom.1
 @man man/man1/wrjpgcom.1
-share/doc/jpeg/
-share/doc/jpeg/libjpeg.txt
-share/doc/jpeg/wizard.txt
 share/doc/libjpeg-turbo/
 share/doc/libjpeg-turbo/LICENSE.md
 share/doc/libjpeg-turbo/README.ijg
@@ -36,6 +33,8 @@ share/doc/libjpeg-turbo/README.md
 share/doc/libjpeg-turbo/example.c
 share/doc/libjpeg-turbo/libjpeg.txt
 share/doc/libjpeg-turbo/structure.txt
-share/doc/libjpeg-turbo/tjexample.c
+share/doc/libjpeg-turbo/tjcomp.c
+share/doc/libjpeg-turbo/tjdecomp.c
+share/doc/libjpeg-turbo/tjtran.c
 share/doc/libjpeg-turbo/usage.txt
 share/doc/libjpeg-turbo/wizard.txt

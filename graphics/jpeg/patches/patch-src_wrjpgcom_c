@@ -1,6 +1,6 @@
-Index: wrjpgcom.c
---- wrjpgcom.c.orig
-+++ wrjpgcom.c
+Index: src/wrjpgcom.c
+--- src/wrjpgcom.c.orig
++++ src/wrjpgcom.c
 @@ -438,7 +438,7 @@ main(int argc, char **argv)
                    (unsigned int)MAX_COM_LENGTH);
            exit(EXIT_FAILURE);
