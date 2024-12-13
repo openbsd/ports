@@ -1,6 +1,5 @@
 COMMENT =		library for processing panoramic images
-DISTNAME =		libpano13-2.9.20
-REVISION =		0
+DISTNAME =		libpano13-2.9.22
 
 SHARED_LIBS +=		pano13               3.0
 

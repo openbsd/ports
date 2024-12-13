@@ -1,6 +1,7 @@
---- man/CMakeLists.txt.orig	Wed Jun 17 08:12:09 2015
-+++ man/CMakeLists.txt	Wed Jun 17 08:12:26 2015
-@@ -25,4 +25,4 @@ endforeach(_m)
+Index: man/CMakeLists.txt
+--- man/CMakeLists.txt.orig
++++ man/CMakeLists.txt
+@@ -32,4 +32,4 @@ endforeach(_m)
  
  add_custom_target(man ALL DEPENDS ${_manuals})
  
