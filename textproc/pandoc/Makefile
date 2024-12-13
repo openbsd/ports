@@ -1,4 +1,4 @@
-V =		3.5
+V =		3.6
 COMMENT =	convert between markup and document formats
 PKGNAME =	pandoc-${V}
 
@@ -43,23 +43,23 @@ MODCABAL_MANIFEST	= \
 	aeson	2.2.3.0	2	\
 	aeson-pretty	0.8.10	0	\
 	alex	3.5.1.0	0	\
-	ansi-terminal	1.1.1	0	\
+	ansi-terminal	1.1.2	0	\
 	ansi-terminal-types	1.1	0	\
 	appar	0.1.8	0	\
 	asn1-encoding	0.9.6	2	\
 	asn1-parse	0.9.5	0	\
 	asn1-types	0.3.4	0	\
 	assoc	1.1.1	0	\
-	async	2.2.5	2	\
-	attoparsec	0.14.4	5	\
-	auto-update	0.2.2	0	\
-	base-compat	0.14.0	0	\
-	base-orphans	0.9.2	0	\
+	async	2.2.5	3	\
+	attoparsec	0.14.4	6	\
+	auto-update	0.2.4	0	\
+	base-compat	0.14.1	0	\
+	base-orphans	0.9.3	0	\
 	base-unicode-symbols	0.2.4.2	0	\
 	base16-bytestring	1.0.2.0	1	\
 	base64-bytestring	1.2.1.0	1	\
 	basement	0.0.16	0	\
-	bifunctors	5.6.2	0	\
+	bifunctors	5.6.2	1	\
 	bitvec	1.1.5.0	1	\
 	blaze-builder	0.4.2.3	0	\
 	blaze-html	0.9.2.0	1	\
@@ -67,35 +67,32 @@ MODCABAL_MANIFEST	= \
 	boring	0.2.2	0	\
 	bsb-http-chunked	0.0.0.4	4	\
 	byteorder	1.0.4	0	\
-	cabal-doctest	1.0.10	0	\
+	cabal-doctest	1.0.11	0	\
 	call-stack	0.4.0	0	\
 	case-insensitive	1.2.1.0	0	\
 	cassava	0.5.3.2	0	\
 	cborg	0.2.10.0	1	\
 	cereal	0.5.8.3	0	\
 	character-ps	0.1	0	\
-	citeproc	0.8.1.1	1	\
+	citeproc	0.8.1.2	0	\
 	colour	2.3.6	0	\
 	commonmark	0.2.6.1	0	\
-	commonmark-extensions	0.2.5.5	0	\
-	commonmark-pandoc	0.2.2.2	0	\
-	comonad	5.0.8	2	\
+	commonmark-extensions	0.2.5.6	0	\
+	commonmark-pandoc	0.2.2.3	0	\
+	comonad	5.0.9	0	\
 	conduit	1.3.6	0	\
 	conduit-extra	1.3.6	0	\
 	constraints	0.14.2	1	\
 	contravariant	1.5.5	0	\
 	cookie	0.5.0	0	\
 	crypton	1.0.1	0	\
-	crypton-connection	0.4.1	0	\
+	crypton-connection	0.4.3	0	\
 	crypton-x509	1.7.7	0	\
 	crypton-x509-store	1.6.9	0	\
 	crypton-x509-system	1.6.7	0	\
-	crypton-x509-validation	1.6.12	0	\
-	data-default	0.7.1.3	0	\
-	data-default-class	0.1.2.2	0	\
-	data-default-instances-containers	0.1.0.3	0	\
-	data-default-instances-dlist	0.0.1.2	0	\
-	data-default-instances-old-locale	0.0.1.2	0	\
+	crypton-x509-validation	1.6.13	0	\
+	data-default	0.8.0.0	0	\
+	data-default-class	0.2.0.0	0	\
 	data-fix	0.3.4	0	\
 	dec	0.0.6	0	\
 	digest	0.0.2.1	0	\
@@ -111,9 +108,9 @@ MODCABAL_MANIFEST	= \
 	generically	0.1.1	4	\
 	gridtables	0.1.0.0	1	\
 	haddock-library	1.11.0	5	\
-	half	0.3.1	2	\
-	happy	2.1.2	0	\
-	happy-lib	2.1.2	0	\
+	half	0.3.2	0	\
+	happy	2.1.3	0	\
+	happy-lib	2.1.3	0	\
 	hashable	1.5.0.0	0	\
 	haskell-lexer	1.1.2	0	\
 	hourglass	0.2.12	1	\
@@ -140,9 +137,9 @@ MODCABAL_MANIFEST	= \
 	http-client-tls	0.3.6.4	0	\
 	http-date	0.0.11	0	\
 	http-media	0.8.1.1	2	\
-	http-semantics	0.2.1	0	\
+	http-semantics	0.3.0	0	\
 	http-types	0.12.4	0	\
-	http2	5.3.4	0	\
+	http2	5.3.9	0	\
 	indexed-traversable	0.1.4	0	\
 	indexed-traversable-instances	0.1.2	0	\
 	integer-conversion	0.1.1	0	\
@@ -160,7 +157,7 @@ MODCABAL_MANIFEST	= \
 	mmorph	1.2.0	3	\
 	monad-control	1.0.3.1	0	\
 	mono-traversable	1.0.20.0	0	\
-	network	3.2.4.0	0	\
+	network	3.2.7.0	0	\
 	network-byte-order	0.1.7	0	\
 	network-control	0.1.3	0	\
 	network-uri	2.6.4.2	1	\
@@ -168,11 +165,11 @@ MODCABAL_MANIFEST	= \
 	old-time	1.1.0.4	0	\
 	optparse-applicative	0.18.1.0	0	\
 	ordered-containers	0.2.4	0	\
-	os-string	2.0.6	0	\
-	pandoc	3.5	0	\
-	pandoc-lua-engine	0.3.3	0	\
-	pandoc-lua-marshal	0.2.9	0	\
-	pandoc-server	0.1.0.9	0	\
+	os-string	2.0.7	0	\
+	pandoc	3.6	0	\
+	pandoc-lua-engine	0.4	0	\
+	pandoc-lua-marshal	0.3.0	0	\
+	pandoc-server	0.1.0.10	0	\
 	pandoc-types	1.23.1	2	\
 	pem	0.2.4	0	\
 	pretty-show	1.10	0	\
@@ -186,7 +183,6 @@ MODCABAL_MANIFEST	= \
 	regex-tdfa	1.3.2.2	3	\
 	resourcet	1.3.0	0	\
 	safe	0.3.21	1	\
-	safe-exceptions	0.1.7.4	1	\
 	scientific	0.3.8.0	1	\
 	semialign	1.3.1	1	\
 	semigroupoids	6.0.1	1	\
@@ -195,10 +191,10 @@ MODCABAL_MANIFEST	= \
 	servant-server	0.20.2	0	\
 	simple-sendfile	0.2.32	0	\
 	singleton-bool	0.1.8	0	\
-	skylighting	0.14.3	0	\
-	skylighting-core	0.14.3	0	\
+	skylighting	0.14.4	0	\
+	skylighting-core	0.14.4	0	\
 	skylighting-format-ansi	0.1	0	\
-	skylighting-format-blaze-html	0.1.1.2	0	\
+	skylighting-format-blaze-html	0.1.1.3	0	\
 	skylighting-format-context	0.1.0.2	0	\
 	skylighting-format-latex	0.1	0	\
 	socks	0.6.1	0	\
@@ -209,49 +205,48 @@ MODCABAL_MANIFEST	= \
 	streaming-commons	0.2.2.6	1	\
 	strict	0.5.1	1	\
 	syb	0.7.2.4	0	\
-	tagged	0.8.8	1	\
+	tagged	0.8.9	0	\
 	tagsoup	0.14.8	0	\
-	tasty	1.5	2	\
+	tasty	1.5.2	0	\
 	temporary	1.3	0	\
-	texmath	0.12.8.11	0	\
+	texmath	0.12.8.12	0	\
 	text-conversions	0.3.1.1	0	\
 	text-iso8601	0.1.1	1	\
 	text-short	0.1.6	2	\
-	th-abstraction	0.7.0.0	0	\
-	th-compat	0.1.5	2	\
-	th-lift	0.8.5	0	\
+	th-abstraction	0.7.1.0	0	\
+	th-compat	0.1.6	0	\
+	th-lift	0.8.6	0	\
 	th-lift-instances	0.1.20	0	\
 	these	1.2.1	1	\
 	time-compat	1.9.7	2	\
-	time-manager	0.1.0	0	\
-	tls	2.1.3	0	\
+	time-manager	0.2.1	0	\
+	tls	2.1.5	0	\
 	toml-parser	2.0.1.0	0	\
 	transformers-base	0.4.6	0	\
 	transformers-compat	0.7.2	0	\
 	typed-process	0.2.12.0	0	\
-	typst	0.6	0	\
-	typst-symbols	0.1.6	0	\
+	typst	0.6.1	0	\
+	typst-symbols	0.1.7	0	\
 	unicode-collation	0.1.3.6	1	\
 	unicode-data	0.6.0	2	\
 	unicode-transforms	0.4.0.1	6	\
 	uniplate	1.6.13	1	\
 	unix-compat	0.7.3	0	\
 	unix-time	0.4.16	0	\
-	unliftio	0.2.25.0	0	\
 	unliftio-core	0.2.1.0	4	\
 	unordered-containers	0.2.20	3	\
 	utf8-string	1.0.2	0	\
 	uuid-types	1.0.6	1	\
 	vault	0.3.1.5	8	\
 	vector	0.13.2.0	0	\
-	vector-algorithms	0.9.0.2	1	\
-	vector-stream	0.1.0.1	2	\
+	vector-algorithms	0.9.0.3	0	\
+	vector-stream	0.1.0.1	3	\
 	wai	3.2.4	0	\
 	wai-app-static	3.1.9	0	\
 	wai-cors	0.2.7	0	\
-	wai-extra	3.1.15	0	\
+	wai-extra	3.1.17	0	\
 	wai-logger	2.5.0	0	\
-	warp	3.4.3	0	\
+	warp	3.4.7	0	\
 	witherable	0.5	1	\
 	word8	0.1.3	0	\
 	xml	1.3.14	2	\
@@ -259,7 +254,7 @@ MODCABAL_MANIFEST	= \
 	xml-types	0.3.8	0	\
 	yaml	0.11.11.2	2	\
 	zip-archive	0.4.3.2	1	\
-	zlib	0.7.1.0	1	\
+	zlib	0.7.1.0	2	\
 
 test:
 	cd ${WRKBUILD} \

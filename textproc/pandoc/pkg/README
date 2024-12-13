@@ -22,7 +22,7 @@ latex             lualatex        texlive_base
 latex             pdflatex        texlive_base
 latex             tectonic        n/a (not in ports)
 latex             xelatex         texlive_texmf-minimal
-context           context         texlive_texmf-context (broken on OpenBSD)
+context           context         texlive_texmf-context
 html              pagedjs-cli     n/a (NPM package)
 html              prince          n/a (commercial/proprietary)
 html              weasyprint      weasyprint
