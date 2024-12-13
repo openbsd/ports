@@ -5,7 +5,7 @@ GH_ACCOUNT=	java-native-access
 GH_TAGNAME=	5.11.0
 CATEGORIES=	devel
 
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	https://github.com/java-native-access/jna
 

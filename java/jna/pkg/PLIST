@@ -1359,7 +1359,7 @@ share/java/doc/javadoc/jquery-ui.overrides.css
 share/java/doc/javadoc/jquery/external/
 share/java/doc/javadoc/jquery/external/jquery/
 share/java/doc/javadoc/jquery/external/jquery/jquery.js
-share/java/doc/javadoc/jquery/jquery-3.6.1.min.js
+share/java/doc/javadoc/jquery/jquery-3.7.1.min.js
 share/java/doc/javadoc/jquery/jquery-ui.min.css
 share/java/doc/javadoc/jquery/jquery-ui.min.js
 share/java/doc/javadoc/jquery/jszip/
@@ -1372,6 +1372,14 @@ share/java/doc/javadoc/jquery/jszip-utils/dist/jszip-utils.min.js
 share/java/doc/javadoc/jquery/jszip/dist/
 share/java/doc/javadoc/jquery/jszip/dist/jszip.js
 share/java/doc/javadoc/jquery/jszip/dist/jszip.min.js
+share/java/doc/javadoc/legal/
+share/java/doc/javadoc/legal/ADDITIONAL_LICENSE_INFO
+share/java/doc/javadoc/legal/ASSEMBLY_EXCEPTION
+share/java/doc/javadoc/legal/LICENSE
+share/java/doc/javadoc/legal/jquery.md
+share/java/doc/javadoc/legal/jqueryUI.md
+share/java/doc/javadoc/legal/jszip.md
+share/java/doc/javadoc/legal/pako.md
 share/java/doc/javadoc/member-search-index.js
 share/java/doc/javadoc/member-search-index.zip
 share/java/doc/javadoc/overview-summary.html
