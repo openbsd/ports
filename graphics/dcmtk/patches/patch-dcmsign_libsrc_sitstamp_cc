@@ -1,0 +1,55 @@
+Allow building with opaque X509_ALGOR
+
+Index: dcmsign/libsrc/sitstamp.cc
+--- dcmsign/libsrc/sitstamp.cc.orig
++++ dcmsign/libsrc/sitstamp.cc
+@@ -192,22 +192,15 @@ OFCondition SiTimeStamp::create_ts_query(
+       // set time stamp query version (always 1)
+       if (!TS_REQ_set_version(tsq_, 1)) result = SI_EC_OpenSSLFailure;
+ 
+-      // set message digest type
++      // set message digest type and parameters
+       if (result.good())
+       {
+-        if (NULL == (algo->algorithm = OBJ_nid2obj(EVP_MD_type(evpmd)))) result = SI_EC_OpenSSLFailure;
++        if (!X509_ALGOR_set0(algo, OBJ_nid2obj(EVP_MD_type(evpmd)), V_ASN1_NULL, NULL)) result = SI_EC_OpenSSLFailure;
+       }
+ 
+-      // create parameter object
+-      if (result.good())
+-      {
+-        if (NULL == (algo->parameter = ASN1_TYPE_new())) result = EC_MemoryExhausted;
+-      }
+-
+       // copy algorithm object into message imprint
+       if (result.good())
+       {
+-        algo->parameter->type = V_ASN1_NULL;
+         if (!TS_MSG_IMPRINT_set_algo(msg_imprint, algo)) result = SI_EC_OpenSSLFailure;
+       }
+ 
+@@ -482,7 +475,10 @@ OFCondition SiTimeStamp::check_ts_response(
+       }
+       else
+       {
+-        if (OBJ_cmp(tsq_algo->algorithm, ts_info_algo->algorithm))
++        const ASN1_OBJECT *tsq_oid = NULL, *ts_info_oid = NULL;
++        X509_ALGOR_get0(&tsq_oid, NULL, NULL, tsq_algo);
++        X509_ALGOR_get0(&ts_info_oid, NULL, NULL, ts_info_algo);
++        if (OBJ_cmp(tsq_oid, ts_info_oid))
+         {
+           DCMSIGN_ERROR("timestamp response validation failed: message digest algorithms are different in timestamp query and response");
+           result = SI_EC_InvalidTSR;
+@@ -856,9 +852,11 @@ void SiTimeStamp::get_tsinfo_imprint_algorithm_name(OF
+       }
+       else
+       {
++        const ASN1_OBJECT *ts_info_oid = NULL;
+         char buf[TSINFO_BUFSIZE]; // The OpenSSL recommends a buffer of at least 80 characters
+         buf[0]='\0'; // zero terminate buffer
+-        int len = OBJ_obj2txt(buf, TSINFO_BUFSIZE, ts_info_algo->algorithm, 0);
++        X509_ALGOR_get0(&ts_info_oid, NULL, NULL, ts_info_algo);
++        int len = OBJ_obj2txt(buf, TSINFO_BUFSIZE, ts_info_oid, 0);
+         if (len > TSINFO_BUFSIZE)
+         {
+            DCMSIGN_WARN("timestamp imprint algorithm name truncated, length is " << len);
