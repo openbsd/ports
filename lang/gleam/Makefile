@@ -6,6 +6,7 @@ NOT_FOR_ARCHS =		sparc64
 GH_ACCOUNT =		gleam-lang
 GH_PROJECT =		gleam
 GH_TAGNAME =		v1.6.3
+REVISION =		0
 
 HOMEPAGE =		https://gleam.run
 
