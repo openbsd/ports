@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1678 2024/12/09 13:49:09 landry Exp $
+# $OpenBSD: Quirks.pm,v 1.1679 2024/12/13 12:46:20 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1210,6 +1210,7 @@ setup_obsolete_reason(
 	3 => 'pcmanfm',
 	3 => 'libfm',
 	3 => qr{^nextcloud-(27|28|29)},
+	10 => 'wkhtmltopdf',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -1243,6 +1244,7 @@ my $obsolete_message = {
 	7 => "removed in favor of using the language's package manager",
 	8 => "no longer maintained upstream, consider mapproxy as an alternative",
 	9 => "removed, needs a port maintainer",
+	10 => "mostly broken, use chromium instead: --headless --disable-gpu --print-to-pdf=foo.pdf https://www.openbsd.org",
 	11 => "no longer packageable",
 	13 => "has a dependency on obsolete software",
 	15 => "use rspamd's internal milter support instead",
