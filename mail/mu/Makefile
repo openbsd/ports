@@ -18,7 +18,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} c gio-2.0 glib-2.0 gmime-3.0 gobject-2.0
 WANTLIB += m xapian
 
-DIST_TUPLE =	github djcb mu v1.12.6 .
+DIST_TUPLE =	github djcb mu v1.12.7 .
 
 EXTRACT_SUFX =	.tar.xz
 
