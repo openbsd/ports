@@ -24,4 +24,6 @@ WANTLIB +=	${COMPILER_LIBCXX} c m orc-0.4
 BUILD_DEPENDS =	${MODPY_BUILD_DEPENDS} \
 		www/py-mako${MODPY_FLAVOR}
 
+CONFIGURE_ARGS = -DDOXYGEN_EXECUTABLE="false"
+
 .include <bsd.port.mk>
