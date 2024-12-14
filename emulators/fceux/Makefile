@@ -1,3 +1,5 @@
+ONLY_FOR_ARCHS =	amd64 i386
+
 COMMENT =		emulator for Nintendo Entertainment System
 
 CATEGORIES =		emulators games
