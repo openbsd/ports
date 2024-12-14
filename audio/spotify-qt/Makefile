@@ -1,5 +1,5 @@
 COMMENT =		lightweight Spotify client using Qt
-DIST_TUPLE =		github	kraxarn	spotify-qt	v3.11	.
+DIST_TUPLE =		github	kraxarn	spotify-qt	v3.12	.
 CATEGORIES =		audio x11
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
@@ -11,12 +11,9 @@ MODULES =		devel/cmake \
 			x11/qt6
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6Svg Qt6Widgets c gio-2.0 glib-2.0 gobject-2.0 intl
-WANTLIB += m secret-1
+WANTLIB += Qt6Svg Qt6Widgets c m
 
-LIB_DEPENDS =		devel/glib2 \
-			x11/gnome/libsecret \
-			x11/qt6/qtsvg
+LIB_DEPENDS =		x11/qt6/qtsvg
 
 RUN_DEPENDS =		audio/spotifyd \
 			devel/desktop-file-utils \
