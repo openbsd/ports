@@ -1,0 +1,13 @@
+--- qt/src/corelib/concurrent/qtconcurrentiteratekernel.cpp.orig	Sat Sep 10 12:41:36 2016
++++ qt/src/corelib/concurrent/qtconcurrentiteratekernel.cpp	Sat Sep 10 12:45:05 2016
+@@ -46,8 +46,8 @@
+ #include <mach/mach_time.h>
+ #include <unistd.h>
+ #elif defined(Q_OS_UNIX)
+-#if defined(Q_OS_HURD)
+-#include <sys/time.h>
++#if defined(Q_OS_HURD) || defined(__OpenBSD__)
++#include <sys/time.h> /* gettimeofday */
+ #endif
+ #include <time.h>
+ #include <unistd.h>

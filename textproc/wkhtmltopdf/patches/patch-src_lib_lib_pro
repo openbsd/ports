@@ -1,0 +1,12 @@
+Index: src/lib/lib.pro
+--- src/lib/lib.pro.orig
++++ src/lib/lib.pro
+@@ -40,6 +40,8 @@ macx {
+ TARGET=wkhtmltox
+ INSTALLS += target
+ 
++QMAKE_LFLAGS = -L${WRKBUILD}/qt/lib
++
+ DESTDIR = ../../bin
+ !windows: target.path=$$INSTALLBASE/lib
+ else:     target.path=$$INSTALLBASE/bin

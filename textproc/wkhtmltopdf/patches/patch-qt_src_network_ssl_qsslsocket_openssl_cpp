@@ -1,0 +1,60 @@
+Index: qt/src/network/ssl/qsslsocket_openssl.cpp
+--- qt/src/network/ssl/qsslsocket_openssl.cpp.orig
++++ qt/src/network/ssl/qsslsocket_openssl.cpp
+@@ -93,7 +93,6 @@ bool QSslSocketPrivate::s_libraryLoaded = false;
+ bool QSslSocketPrivate::s_loadedCiphersAndCerts = false;
+ bool QSslSocketPrivate::s_loadRootCertsOnDemand = false;
+ 
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
+ /* \internal
+ 
+     From OpenSSL's thread(3) manual page:
+@@ -175,8 +174,6 @@ static unsigned long id_function()
+ }
+ } // extern "C"
+ 
+-#endif //OPENSSL_VERSION_NUMBER >= 0x10100000L
+-
+ QSslSocketBackendPrivate::QSslSocketBackendPrivate()
+     : ssl(0),
+       ctx(0),
+@@ -510,10 +507,8 @@ void QSslSocketBackendPrivate::destroySslContext()
+ */
+ void QSslSocketPrivate::deinitialize()
+ {
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
+     q_CRYPTO_set_id_callback(0);
+     q_CRYPTO_set_locking_callback(0);
+-#endif
+ }
+ 
+ /*!
+@@ -534,17 +529,13 @@ bool QSslSocketPrivate::ensureLibraryLoaded()
+         return false;
+ 
+     // Check if the library itself needs to be initialized.
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
+     QMutexLocker locker(openssl_locks()->initLock());
+-#endif
+     if (!s_libraryLoaded) {
+         s_libraryLoaded = true;
+ 
+         // Initialize OpenSSL.
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
+         q_CRYPTO_set_id_callback(id_function);
+         q_CRYPTO_set_locking_callback(locking_function);
+-#endif
+         if (q_SSL_library_init() != 1)
+             return false;
+         q_SSL_load_error_strings();
+@@ -583,9 +574,7 @@ bool QSslSocketPrivate::ensureLibraryLoaded()
+ 
+ void QSslSocketPrivate::ensureCiphersAndCertsLoaded()
+ {
+-#if OPENSSL_VERSION_NUMBER < 0x10100000L
+-  QMutexLocker locker(openssl_locks()->initLock());
+-#endif
++    QMutexLocker locker(openssl_locks()->initLock());
+     if (s_loadedCiphersAndCerts)
+         return;
+     s_loadedCiphersAndCerts = true;

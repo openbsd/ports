@@ -1,0 +1,13 @@
+--- qt/src/corelib/plugin/qlibrary_unix.cpp.orig	Wed Jan  6 15:51:51 2016
++++ qt/src/corelib/plugin/qlibrary_unix.cpp	Wed Jan  6 15:52:47 2016
+@@ -143,9 +143,8 @@ bool QLibraryPrivate::load_sys()
+ #endif // Q_OS_AIX
+         if (!fullVersion.isEmpty()) {
+             suffixes << QString::fromLatin1(".so.%1").arg(fullVersion);
+-        } else {
+-            suffixes << QLatin1String(".so");
+         }
++        suffixes << QLatin1String(".so");
+ #endif
+ # ifdef Q_OS_MAC
+         if (!fullVersion.isEmpty()) {

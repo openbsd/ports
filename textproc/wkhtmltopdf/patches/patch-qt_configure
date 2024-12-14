@@ -1,0 +1,21 @@
+Index: qt/configure
+--- qt/configure.orig
++++ qt/configure
+@@ -3427,7 +3427,7 @@ else
+     CFG_FRAMEWORK=no
+ fi
+ 
+-QMAKE_CONF_COMPILER=`getXQMakeConf QMAKE_CXX`
++QMAKE_CONF_COMPILER="${PORTS_CXX}"
+ TEST_COMPILER="$CXX"
+ 
+ [ -z "$TEST_COMPILER" ] && TEST_COMPILER=$QMAKE_CONF_COMPILER
+@@ -7754,6 +7754,8 @@ case "$XPLATFORM" in
+     *-g++*)
+ 	# Check gcc's version
+ 	case "$(${QMAKE_CONF_COMPILER} -dumpversion)" in
++	    [1-9][0-9].*)
++		;;
+ 	    12*|11*|10*|9*|8*|7*|6*|5*|4*|3.4*)
+ 		;;
+             3.3*)

@@ -1,0 +1,11 @@
+--- qt/config.tests/unix/gnu-libiconv/gnu-libiconv.cpp.orig	Wed Dec  9 20:22:20 2015
++++ qt/config.tests/unix/gnu-libiconv/gnu-libiconv.cpp	Wed Dec  9 20:22:28 2015
+@@ -48,7 +48,7 @@ int main(int, char **)
+ {
+     iconv_t x = iconv_open("", "");
+ 
+-    const char *inp;
++    char *inp;
+     char *outp;
+     size_t inbytes, outbytes;
+     iconv(x, &inp, &inbytes, &outp, &outbytes);

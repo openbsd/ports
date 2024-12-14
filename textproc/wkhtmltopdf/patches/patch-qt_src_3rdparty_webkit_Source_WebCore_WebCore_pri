@@ -1,0 +1,17 @@
+The -f*-sections options provide no gain and cause a text relocation
+in JITStubs.o on i386.
+
+Index: qt/src/3rdparty/webkit/Source/WebCore/WebCore.pri
+--- qt/src/3rdparty/webkit/Source/WebCore/WebCore.pri.orig
++++ qt/src/3rdparty/webkit/Source/WebCore/WebCore.pri
+@@ -322,8 +322,8 @@ mac {
+     LIBS_PRIVATE += -framework Carbon -framework AppKit
+ }
+ 
+-unix:!mac:*-g++*:QMAKE_CXXFLAGS += -ffunction-sections -fdata-sections
+-unix:!mac:*-g++*:QMAKE_LFLAGS += -Wl,--gc-sections
++#unix:!mac:*-g++*:QMAKE_CXXFLAGS += -ffunction-sections -fdata-sections
++#unix:!mac:*-g++*:QMAKE_LFLAGS += -Wl,--gc-sections
+ linux*-g++*:QMAKE_LFLAGS += $$QMAKE_LFLAGS_NOUNDEF
+ 
+ unix|win32-g++*:QMAKE_PKGCONFIG_REQUIRES = QtCore QtGui QtNetwork

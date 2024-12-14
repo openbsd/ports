@@ -1,0 +1,20 @@
+--- qt/src/3rdparty/webkit/Source/JavaScriptCore/wtf/Atomics.h.orig	Thu Apr 27 16:37:16 2017
++++ qt/src/3rdparty/webkit/Source/JavaScriptCore/wtf/Atomics.h	Thu Apr 27 16:37:51 2017
+@@ -69,6 +69,8 @@
+ #include <cutils/atomic.h>
+ #elif OS(QNX)
+ #include <atomic.h>
++#elif defined(__clang__)
++#include <atomic>
+ #elif COMPILER(GCC) && !OS(SYMBIAN)
+ #if (__GNUC__ > 4) || ((__GNUC__ == 4) && (__GNUC_MINOR__ >= 2))
+ #include <ext/atomicity.h>
+@@ -106,6 +108,8 @@ inline int atomicDecrement(int volatile* addend) { ret
+ inline int atomicIncrement(int volatile* addend) { return (int) atomic_add_value((unsigned int volatile*)addend, 1); }
+ inline int atomicDecrement(int volatile* addend) { return (int) atomic_sub_value((unsigned int volatile*)addend, 1); }
+ 
++#elif defined(__clang__)
++// XXX  no idea what to put there.
+ #elif COMPILER(GCC) && !CPU(SPARC64) && !OS(SYMBIAN) // sizeof(_Atomic_word) != sizeof(int) on sparc64 gcc
+ #define WTF_USE_LOCKFREE_THREADSAFEREFCOUNTED 1
+ 

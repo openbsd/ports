@@ -1,0 +1,12 @@
+--- qt/src/network/ssl/qsslsocket.cpp.orig	Thu Jul  2 13:46:37 2015
++++ qt/src/network/ssl/qsslsocket.cpp	Wed Jan  6 14:32:16 2016
+@@ -2330,7 +2330,8 @@ QList<QByteArray> QSslSocketPrivate::unixRootCertDirec
+                                << "/var/ssl/certs/" // AIX
+                                << "/usr/local/ssl/certs/" // Solaris
+                                << "/etc/openssl/certs/" // BlackBerry
+-                               << "/opt/openssl/certs/"; // HP-UX
++                               << "/opt/openssl/certs/" // HP-UX
++                               << "/etc/ssl/"; // OpenBSD
+ }
+ 
+ QT_END_NAMESPACE

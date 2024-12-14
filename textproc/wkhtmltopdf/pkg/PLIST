@@ -1,0 +1,10 @@
+@bin bin/wkhtmltoimage
+@bin bin/wkhtmltopdf
+include/wkhtmltox/
+include/wkhtmltox/dllbegin.inc
+include/wkhtmltox/dllend.inc
+include/wkhtmltox/image.h
+include/wkhtmltox/pdf.h
+@lib lib/libwkhtmltox.so.${LIBwkhtmltox_VERSION}
+@man man/man1/wkhtmltoimage.1
+@man man/man1/wkhtmltopdf.1

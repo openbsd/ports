@@ -1,0 +1,11 @@
+--- qt/qmake/generators/unix/unixmake.cpp.orig	Mon Dec 14 19:17:46 2015
++++ qt/qmake/generators/unix/unixmake.cpp	Mon Dec 14 19:17:54 2015
+@@ -757,7 +757,7 @@ UnixMakefileGenerator::defaultInstall(const QString &t
+         if(project->isEmpty("QMAKE_CYGWIN_SHLIB")) {
+             if(!project->isActiveConfig("staticlib") && !project->isActiveConfig("plugin")) {
+                 if(project->isEmpty("QMAKE_HPUX_SHLIB")) {
+-                    links << "$(TARGET0)" << "$(TARGET1)" << "$(TARGET2)";
++                    //links << "$(TARGET0)" << "$(TARGET1)" << "$(TARGET2)";
+                 } else {
+                     links << "$(TARGET0)";
+                 }

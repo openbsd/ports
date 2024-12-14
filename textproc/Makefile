@@ -605,6 +605,7 @@
      SUBDIR += vislcg3
      SUBDIR += wdg-sgml-lib
      SUBDIR += wdiff
+     SUBDIR += wkhtmltopdf
      SUBDIR += xerces-c
      SUBDIR += xlsx2csv
      SUBDIR += xml2rfc

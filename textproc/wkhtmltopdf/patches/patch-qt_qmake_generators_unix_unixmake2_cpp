@@ -1,0 +1,120 @@
+--- qt/qmake/generators/unix/unixmake2.cpp.orig	Thu Jul  2 13:46:37 2015
++++ qt/qmake/generators/unix/unixmake2.cpp	Sun Dec 13 11:47:43 2015
+@@ -247,10 +247,8 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
+         } else if(!project->isEmpty("QMAKE_SYMBIAN_SHLIB")) {
+             t << "TARGETD       = " << escapeFilePath(var("TARGET")) << endl;
+         } else if(project->isEmpty("QMAKE_HPUX_SHLIB")) {
+-            t << "TARGETD       = " << escapeFilePath(var("TARGET_x.y.z")) << endl;
+-            t << "TARGET0       = " << escapeFilePath(var("TARGET_")) << endl;
+-            t << "TARGET1       = " << escapeFilePath(var("TARGET_x")) << endl;
+-            t << "TARGET2       = " << escapeFilePath(var("TARGET_x.y")) << endl;
++	    t << "LIB" << var("OBSD_TARGET_NAME") << "_VERSION = " << var("OBSD_TARGET_VERSION") << endl;
++            t << "TARGETD       = " << var("OBSD_TARGET_x.y") << endl;
+         } else {
+             t << "TARGETD       = " << escapeFilePath(var("TARGET_x")) << endl;
+             t << "TARGET0       = " << escapeFilePath(var("TARGET_")) << endl;
+@@ -572,31 +570,22 @@ UnixMakefileGenerator::writeMakeParts(QTextStream &t)
+             t << endl << endl;
+         } else if(project->isEmpty("QMAKE_HPUX_SHLIB")) {
+             t << "\n\t"
+-              << "-$(DEL_FILE) $(TARGET) $(TARGET0) $(TARGET1) $(TARGET2)" << "\n\t"
+               << var("QMAKE_LINK_SHLIB_CMD") << "\n\t";
+-            t << varGlue("QMAKE_LN_SHLIB","-"," "," $(TARGET) $(TARGET0)")  << "\n\t"
+-              << varGlue("QMAKE_LN_SHLIB","-"," "," $(TARGET) $(TARGET1)") << "\n\t"
+-              << varGlue("QMAKE_LN_SHLIB","-"," "," $(TARGET) $(TARGET2)");
+             if(!destdir.isEmpty())
+                 t << "\n\t"
+                   << "-$(DEL_FILE) " << destdir << "$(TARGET)\n\t"
+-                  << "-$(DEL_FILE) " << destdir << "$(TARGET0)\n\t"
+-                  << "-$(DEL_FILE) " << destdir << "$(TARGET1)\n\t"
+-                  << "-$(DEL_FILE) " << destdir << "$(TARGET2)\n\t"
+-                  << "-$(MOVE) $(TARGET) $(TARGET0) $(TARGET1) $(TARGET2) " << destdir;
++                  << "-$(MOVE) $(TARGET) " << destdir;
+             if(!project->isEmpty("QMAKE_POST_LINK"))
+                 t << "\n\t" << var("QMAKE_POST_LINK");
+             t << endl << endl;
+         } else {
+             t << "\n\t"
+-              << "-$(DEL_FILE) $(TARGET) $(TARGET0)" << "\n\t"
++              << "-$(DEL_FILE) $(TARGET)" << "\n\t"
+               << var("QMAKE_LINK_SHLIB_CMD") << "\n\t";
+-            t << varGlue("QMAKE_LN_SHLIB",""," "," $(TARGET) $(TARGET0)");
+             if(!destdir.isEmpty())
+                 t  << "\n\t"
+                    << "-$(DEL_FILE) " << destdir << "$(TARGET)\n\t"
+-                   << "-$(DEL_FILE) " << destdir << "$(TARGET0)\n\t"
+-                   << "-$(MOVE) $(TARGET) $(TARGET0) " << destdir;
++                   << "-$(MOVE) $(TARGET) " << destdir;
+             if(!project->isEmpty("QMAKE_POST_LINK"))
+                 t << "\n\t" << var("QMAKE_POST_LINK");
+             t << endl << endl;
+@@ -1019,6 +1008,13 @@ void UnixMakefileGenerator::init2()
+     project->values("VER_MAJ").append(l[0]);
+     project->values("VER_MIN").append(l[1]);
+     project->values("VER_PAT").append(l[2]);
++    project->values("OBSD_TARGET_NAME").append(project->first("TARGET"));
++    project->values("OBSD_TARGET_VERSION").append(project->first("VER_MAJ") +  "."  + project->first("VER_MIN"));
++    // for (portable) Makefiles
++    project->values("OBSD_TARGET_x.y").append("lib" + project->first("TARGET") + "." + project->first("QMAKE_EXTENSION_SHLIB") + ".$(LIB" + project->first("TARGET") + "_VERSION)");
++    // for libtool files, to be updated by SUBST_CMD in OpenBSD ports
++    project->values("OBSD_SUBST_x.y").append("lib" + project->first("TARGET") + "." + project->first("QMAKE_EXTENSION_SHLIB") + ".${LIB" + project->first("TARGET") + "_VERSION}");
++
+     if(project->isEmpty("QMAKE_FRAMEWORK_VERSION"))
+         project->values("QMAKE_FRAMEWORK_VERSION").append(project->values("VER_MAJ").first());
+ 
+@@ -1159,7 +1155,7 @@ void UnixMakefileGenerator::init2()
+                                                             project->first("VER_MIN") +  "." +
+                                                             project->first("VER_PAT"));
+             }
+-            project->values("TARGET") = project->values("TARGET_x.y.z");
++            project->values("TARGET") = project->values("OBSD_TARGET_x.y");
+         }
+         if(project->isEmpty("QMAKE_LN_SHLIB"))
+             project->values("QMAKE_LN_SHLIB").append("ln -s");
+@@ -1304,18 +1300,31 @@ UnixMakefileGenerator::writeLibtoolFile()
+       << QT_VERSION_STR << ") on: " << QDateTime::currentDateTime().toString();
+ 	t << "\n";
+ 
+-    t << "# The name that we can dlopen(3).\n"
+-      << "dlname='" << var(project->isActiveConfig("plugin") ? "TARGET" : "TARGET_x")
+-      << "'\n\n";
++    t << "# The name that we can dlopen(3).\ndlname='";
++    if(project->isActiveConfig("plugin")) {
++        t << var("TARGET");
++    } else {
++#ifdef __OpenBSD__
++        t << var("OBSD_SUBST_x.y");
++#else
++        t << var("TARGET_x");
++#endif
++    }
++    t << "'\n\n";
+ 
+     t << "# Names of this library.\n";
+     t << "library_names='";
+     if(project->isActiveConfig("plugin")) {
+         t << var("TARGET");
+     } else {
+-        if (project->isEmpty("QMAKE_HPUX_SHLIB"))
+-            t << var("TARGET_x.y.z") << " ";
+-        t << var("TARGET_x") << " " << var("TARGET_");
++        if (project->isEmpty("QMAKE_HPUX_SHLIB")) {
++#ifdef __OpenBSD__
++            t << var("OBSD_SUBST_x.y") << " ";
++#else
++            t << var("TARGET_x.y.z") << " " << var("TARGET_x") << " ";
++#endif
++        }
++        t << var("TARGET_");
+     }
+     t << "'\n\n";
+ 
+@@ -1330,7 +1339,7 @@ UnixMakefileGenerator::writeLibtoolFile()
+         libs << "QMAKE_LIBS"; //obvious one
+     t << "dependency_libs='";
+     for(QStringList::ConstIterator it = libs.begin(); it != libs.end(); ++it)
+-        t << project->values((*it)).join(" ") << " ";
++        t << project->values((*it)).join(" ").replace('(', '{').replace(')', '}') << " ";
+     t << "'\n\n";
+ 
+     t << "# Version information for " << lname << "\n";
