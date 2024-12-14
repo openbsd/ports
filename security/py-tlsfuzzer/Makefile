@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	20240906
 DISTNAME =		tlsfuzzer-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		security
+REVISION =		0
 
 GH_ACCOUNT =		tlsfuzzer
 GH_PROJECT =		tlsfuzzer
@@ -24,6 +25,8 @@ RUN_DEPENDS +=		net/py-tlslite-ng${MODPY_FLAVOR}
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
+
+MODPY_PYBUILD =		setuptools
 
 TEST_DEPENDS +=         devel/py-mock${MODPY_FLAVOR}
 
