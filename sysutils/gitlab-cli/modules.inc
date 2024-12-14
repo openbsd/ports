@@ -136,11 +136,11 @@ MODGO_MODULES =	\
 	github.com/spf13/pflag								 v1.0.5 \
 	github.com/spf13/viper								 v1.19.0 \
 	github.com/stretchr/objx							 v0.5.2 \
-	github.com/stretchr/testify							 v1.9.0 \
+	github.com/stretchr/testify							 v1.10.0 \
 	github.com/subosito/gotenv							 v1.6.0 \
 	github.com/tidwall/pretty							 v1.2.1 \
 	github.com/x448/float16								 v0.8.4 \
-	github.com/xanzy/go-gitlab							 v0.113.0 \
+	github.com/xanzy/go-gitlab							 v0.114.0 \
 	github.com/yuin/goldmark							 v1.7.4 \
 	github.com/yuin/goldmark-emoji							 v1.0.3 \
 	github.com/zalando/go-keyring							 v0.2.6 \
@@ -184,9 +184,9 @@ MODGO_MODULES =	\
 	gopkg.in/ini.v1									 v1.67.0 \
 	gopkg.in/yaml.v2								 v2.4.0 \
 	gopkg.in/yaml.v3								 v3.0.1 \
-	k8s.io/api									 v0.31.2 \
-	k8s.io/apimachinery								 v0.31.2 \
-	k8s.io/client-go								 v0.31.2 \
+	k8s.io/api									 v0.31.3 \
+	k8s.io/apimachinery								 v0.31.3 \
+	k8s.io/client-go								 v0.31.3 \
 	k8s.io/klog/v2									 v2.130.1 \
 	k8s.io/kube-openapi								 v0.0.0-20240228011516-70dd3763d340 \
 	k8s.io/utils									 v0.0.0-20240711033017-18e509b52bc8 \
@@ -245,6 +245,7 @@ MODGO_MODFILES =	\
 	github.com/stretchr/testify			 v1.8.0 \
 	github.com/stretchr/testify			 v1.8.1 \
 	github.com/stretchr/testify			 v1.8.4 \
+	github.com/stretchr/testify			 v1.9.0 \
 	github.com/yuin/goldmark			 v1.1.27 \
 	github.com/yuin/goldmark			 v1.2.1 \
 	github.com/yuin/goldmark			 v1.4.13 \
