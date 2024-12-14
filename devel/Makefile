@@ -352,6 +352,7 @@
      SUBDIR += libusb1,debug
      SUBDIR += libuv
      SUBDIR += libvirt-glib
+     SUBDIR += libvolk
      SUBDIR += libvmime
      SUBDIR += libvterm
      SUBDIR += libwnck3
