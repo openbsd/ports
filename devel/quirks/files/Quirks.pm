@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1679 2024/12/13 12:46:20 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1680 2024/12/14 15:49:13 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1210,7 +1210,6 @@ setup_obsolete_reason(
 	3 => 'pcmanfm',
 	3 => 'libfm',
 	3 => qr{^nextcloud-(27|28|29)},
-	10 => 'wkhtmltopdf',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
