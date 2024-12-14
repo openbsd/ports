@@ -1,13 +1,12 @@
 COMMENT =		collaborative, networked system to detect and block spam
 
+MODPY_EGG_VERSION =	1.1.2
 GH_ACCOUNT =		SpamExperts
 GH_PROJECT =		pyzor
-GH_COMMIT =		53aceee8943c30cc28850ca76e19a54689e3d119
+GH_TAGNAME =		release-${MODPY_EGG_VERSION:S/./-/g}
+PKGNAME =		pyzor-${MODPY_EGG_VERSION}
 
-MODPY_EGG_VERSION =	1.1.1
-DISTNAME =		pyzor-1.1.1pre20210613
 CATEGORIES =		mail net
-REVISION =		3
 
 HOMEPAGE =		https://www.pyzor.org/
 
@@ -15,14 +14,15 @@ HOMEPAGE =		https://www.pyzor.org/
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-RUN_DEPENDS =		${MODPY_RUN_DEPENDS},-gdbm
-# actual releases should be available on pypi, could switch back if
-# there's a new release, but no tests
-#MODPY_PI =		Yes
+MODPY_PYBUILD =		setuptools
+# currently no sdist, only a wheel, on pypi
+# MODPY_PI =		Yes
 
 MODPY_PYTEST =		Yes
 # default includes functional tests, which require network and configuration
 MODPY_PYTEST_ARGS =	tests/unit
+
+RUN_DEPENDS =		${MODPY_RUN_DEPENDS},-gdbm
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/pyzor
