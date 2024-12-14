@@ -1,0 +1,36 @@
+https://github.com/gnuradio/gnuradio/pull/7554/commits/b30b5feb130a1997c53bce61a85885858d4c9a0d
+
+Index: gr-network/lib/tcp_sink_impl.cc
+--- gr-network/lib/tcp_sink_impl.cc.orig
++++ gr-network/lib/tcp_sink_impl.cc
+@@ -63,11 +63,9 @@ bool tcp_sink_impl::start()
+ 
+         std::string s_port = std::to_string(d_port);
+         asio::ip::tcp::resolver resolver(d_io_context);
+-        asio::ip::tcp::resolver::query query(
+-            d_host, s_port, asio::ip::resolver_query_base::passive);
++        d_endpoint = *(
++            resolver.resolve(d_host, s_port, asio::ip::tcp::resolver::passive).cbegin());
+ 
+-        d_endpoint = *resolver.resolve(query, err);
+-
+         if (err) {
+             throw std::runtime_error(
+                 std::string("[TCP Sink] Unable to resolve host/IP: ") + err.message());
+@@ -159,7 +157,7 @@ void tcp_sink_impl::connect(bool initial_connection)
+             d_acceptor = new asio::ip::tcp::acceptor(
+                 d_io_context, asio::ip::tcp::endpoint(asio::ip::tcp::v4(), d_port));
+     } else {
+-        d_io_context.reset();
++        d_io_context.restart();
+     }
+ 
+     if (d_tcpsocket) {
+@@ -194,7 +192,6 @@ bool tcp_sink_impl::stop()
+         d_tcpsocket = NULL;
+     }
+ 
+-    d_io_context.reset();
+     d_io_context.stop();
+ 
+     if (d_acceptor) {

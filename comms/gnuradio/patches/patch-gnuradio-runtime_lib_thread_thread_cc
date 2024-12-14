@@ -1,22 +1,29 @@
+https://github.com/gnuradio/gnuradio/pull/7553
+
 Index: gnuradio-runtime/lib/thread/thread.cc
 --- gnuradio-runtime/lib/thread/thread.cc.orig
 +++ gnuradio-runtime/lib/thread/thread.cc
-@@ -147,7 +147,7 @@ void set_thread_name(gr_thread_t thread, std::string n
+@@ -135,8 +135,12 @@ void set_thread_name(gr_thread_t thread, std::string n
  
  #elif defined(macintosh) || defined(__APPLE__) || defined(__APPLE_CC__) ||     \
      defined(__FreeBSD__) || defined(__FreeBSD_kernel__) || defined(__GNU__) || \
 -    defined(__NetBSD__)
 +    defined(__NetBSD__) || defined(__OpenBSD__)
  
++#include <pthread.h>
++#ifdef __OpenBSD__
++#include <pthread_np.h>
++#endif
  namespace gr {
  namespace thread {
-@@ -219,7 +219,9 @@ void set_thread_name(gr_thread_t thread, std::string n
- #else
  
- #include <pthread.h>
-+#ifndef __OpenBSD__
- #include <sys/prctl.h>
+@@ -199,6 +203,9 @@ int set_thread_priority(gr_thread_t thread, int priori
+ void set_thread_name(gr_thread_t thread, std::string name)
+ {
+     // Not implemented on OSX
++#ifdef __OpenBSD__
++    pthread_set_name_np(thread, name.c_str());
 +#endif
- #include <sstream>
- #include <stdexcept>
+ }
  
+ } /* namespace thread */
