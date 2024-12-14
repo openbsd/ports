@@ -1,0 +1,14 @@
+after all we're not that different.. makes all tests succeed
+
+Index: cpu_features/include/cpu_features_macros.h
+--- cpu_features/include/cpu_features_macros.h.orig
++++ cpu_features/include/cpu_features_macros.h
+@@ -91,7 +91,7 @@
+ // Os
+ ////////////////////////////////////////////////////////////////////////////////
+ 
+-#if (defined(__freebsd__) || defined(__FreeBSD__))
++#if (defined(__freebsd__) || defined(__FreeBSD__) || defined(__OpenBSD__))
+ #define CPU_FEATURES_OS_FREEBSD
+ #endif
+ 
