@@ -1,9 +1,16 @@
 lib/python${MODPY_VERSION}/site-packages/goopy/
-lib/python${MODPY_VERSION}/site-packages/goopy-0.1-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/goopy-0.1.dist-info/
+lib/python${MODPY_VERSION}/site-packages/goopy-0.1.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/goopy-0.1.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/goopy-0.1.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/goopy-0.1.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/goopy/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/goopy/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/goopy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/goopy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/goopy/${MODPY_PYCACHE}functional.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/goopy/${MODPY_PYCACHE}functional.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/goopy/${MODPY_PYCACHE}functional_unittest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/goopy/${MODPY_PYCACHE}functional_unittest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/goopy/functional.py
 lib/python${MODPY_VERSION}/site-packages/goopy/functional_unittest.py
