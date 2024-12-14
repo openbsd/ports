@@ -1,9 +1,8 @@
 COMMENT=	inline and side-by-side colored and incremental diff
 
 # was renamed cdiff->ydiff
-MODPY_EGG_VERSION=	1.3
+MODPY_EGG_VERSION=	1.4.2
 DISTNAME=	ydiff-${MODPY_EGG_VERSION}
-REVISION=	0
 
 CATEGORIES=	textproc
 
@@ -13,8 +12,11 @@ HOMEPAGE=	https://github.com/ymattw/ydiff
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
 MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
+
+# not in sdist
+MODPY_PYTEST=	No
 
 TEST_DEPENDS=	devel/git \
 		devel/py-codestyle${MODPY_FLAVOR} \
