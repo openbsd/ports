@@ -77,7 +77,7 @@ MODGO_MODULES =	\
 	github.com/charmbracelet/x/errors						 v0.0.0-20240117030013-d31dba354651 \
 	github.com/charmbracelet/x/exp/term						 v0.0.0-20240425164147-ba2a9512b05f \
 	github.com/cli/browser								 v1.3.0 \
-	github.com/cli/go-gh/v2								 v2.11.0 \
+	github.com/cli/go-gh/v2								 v2.11.1 \
 	github.com/cli/go-internal							 v0.0.0-20241025142207-6c48bcd5ce24 \
 	github.com/cli/oauth								 v1.1.1 \
 	github.com/cli/safeexec								 v1.0.1 \
@@ -117,7 +117,7 @@ MODGO_MODULES =	\
 	github.com/fsnotify/fsnotify							 v1.7.0 \
 	github.com/fullstorydev/grpcurl							 v1.9.1 \
 	github.com/fxamacker/cbor/v2							 v2.4.0 \
-	github.com/gabriel-vasile/mimetype						 v1.4.6 \
+	github.com/gabriel-vasile/mimetype						 v1.4.7 \
 	github.com/gdamore/encoding							 v1.0.0 \
 	github.com/gdamore/tcell/v2							 v2.5.4 \
 	github.com/go-chi/chi								 v4.1.2+incompatible \
@@ -379,16 +379,16 @@ MODGO_MODULES =	\
 	go.uber.org/multierr								 v1.11.0 \
 	go.uber.org/zap									 v1.27.0 \
 	gocloud.dev									 v0.37.0 \
-	golang.org/x/crypto								 v0.28.0 \
+	golang.org/x/crypto								 v0.29.0 \
 	golang.org/x/exp								 v0.0.0-20240112132812-db7319d0e0e3 \
 	golang.org/x/mod								 v0.21.0 \
-	golang.org/x/net								 v0.30.0 \
+	golang.org/x/net								 v0.31.0 \
 	golang.org/x/oauth2								 v0.22.0 \
-	golang.org/x/sync								 v0.8.0 \
-	golang.org/x/sys								 v0.26.0 \
+	golang.org/x/sync								 v0.9.0 \
+	golang.org/x/sys								 v0.27.0 \
 	golang.org/x/telemetry								 v0.0.0-20240521205824-bda55230c457 \
-	golang.org/x/term								 v0.25.0 \
-	golang.org/x/text								 v0.19.0 \
+	golang.org/x/term								 v0.26.0 \
+	golang.org/x/text								 v0.20.0 \
 	golang.org/x/time								 v0.5.0 \
 	golang.org/x/tools								 v0.26.0 \
 	golang.org/x/xerrors								 v0.0.0-20231012003039-104605ab7028 \
@@ -651,6 +651,7 @@ MODGO_MODFILES =	\
 	golang.org/x/net								 v0.25.0 \
 	golang.org/x/net								 v0.26.0 \
 	golang.org/x/net								 v0.27.0 \
+	golang.org/x/net								 v0.30.0 \
 	golang.org/x/net								 v0.9.0 \
 	golang.org/x/oauth2								 v0.15.0 \
 	golang.org/x/oauth2								 v0.16.0 \
@@ -663,6 +664,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sync								 v0.5.0 \
 	golang.org/x/sync								 v0.6.0 \
 	golang.org/x/sync								 v0.7.0 \
+	golang.org/x/sync								 v0.8.0 \
 	golang.org/x/sys								 v0.0.0-20190215142949-d0b11bdaac8a \
 	golang.org/x/sys								 v0.0.0-20190222072716-a9d3bda3a223 \
 	golang.org/x/sys								 v0.0.0-20201119102817-f84b799fce68 \
@@ -686,6 +688,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys								 v0.21.0 \
 	golang.org/x/sys								 v0.22.0 \
 	golang.org/x/sys								 v0.25.0 \
+	golang.org/x/sys								 v0.26.0 \
 	golang.org/x/sys								 v0.4.0 \
 	golang.org/x/sys								 v0.6.0 \
 	golang.org/x/sys								 v0.7.0 \
