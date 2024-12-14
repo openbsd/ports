@@ -11,6 +11,9 @@ HOMEPAGE=	https://lxml.de/
 # BSD
 PERMIT_PACKAGE=	Yes
 
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB=	${MODPY_WANTLIB} exslt m pthread xml2 xslt z
 
 MODULES=	lang/python
