@@ -1,6 +1,6 @@
 COMMENT =		framework for more readable interactive test scripts
 
-DISTNAME =		Test-Inter-1.11
+DISTNAME =		Test-Inter-1.12
 CATEGORIES =		devel
 
 # perl
