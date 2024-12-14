@@ -1,3 +1,5 @@
+BROKEN-sparc64 =	extconf.rb fails trying to find stdalign.h
+
 COMMENT =		fast, intuitive file opening in VIM
 
 V =			1.11.2
