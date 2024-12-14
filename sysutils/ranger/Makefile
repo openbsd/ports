@@ -2,7 +2,7 @@ COMMENT =	minimalistic console file manager
 
 MODPY_EGG_VERSION =	1.9.3
 DISTNAME =	ranger-${MODPY_EGG_VERSION}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	sysutils misc
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE =	Yes
 SITES =		https://ranger.github.io/
 
 MODULES =	lang/python
+MODPY_PYBUILD =	setuptools
 MODPY_ADJ_FILES =	tests/manpage_completion_test.py
 
 # libarchive (bsdtar) used as an alternative to atool
