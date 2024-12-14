@@ -20,7 +20,7 @@ WANTLIB += Qt6QmlModels Qt6Quick Qt6Quick3D Qt6Quick3DRuntimeRender
 WANTLIB += Qt6Quick3DUtils Qt6QuickWidgets Qt6RemoteObjects Qt6Sensors
 WANTLIB += Qt6SerialPort Qt6ShaderTools Qt6SpatialAudio Qt6Sql
 WANTLIB += Qt6Svg Qt6SvgWidgets Qt6Test Qt6TextToSpeech Qt6WebChannel
-WANTLIB += Qt6WebSockets Qt6Widgets Qt6Xml dbus-1 m python3.11
+WANTLIB += Qt6WebSockets Qt6Widgets Qt6Xml dbus-1 m ${MODPY_WANTLIB}
 
 FLAVORS=	python3
 FLAVOR=		python3
