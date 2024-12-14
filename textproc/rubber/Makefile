@@ -2,7 +2,7 @@ COMMENT=	wrapper for LaTeX and friends
 
 MODPY_EGG_VERSION=	1.5.1
 DISTNAME=	rubber-${MODPY_EGG_VERSION}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	textproc print
 
@@ -14,6 +14,7 @@ PERMIT_PACKAGE=	Yes
 SITES=		${HOMEPAGE}/trunk/${MODPY_EGG_VERSION}/+download/
 
 MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
 
 BUILD_DEPENDS=	print/texinfo \
 		print/texlive/base
@@ -23,6 +24,13 @@ RUN_DEPENDS=	print/texlive/base
 pre-configure:
 	sed -i -e 's,makeinfo,gmakeinfo,g;' \
 		-e 's,texi2dvi,gtexi2dvi,g;' ${WRKSRC}/setup.py
+
+post-install:
+	mv ${WRKINST}${MODPY_SITEPKG}/usr/local/info ${PREFIX}/
+	mv ${WRKINST}${MODPY_SITEPKG}/usr/local/share/doc/rubber ${PREFIX}/share/doc/
+	mv ${WRKINST}${MODPY_SITEPKG}/usr/local/man/man1/* ${PREFIX}/man/man1/
+	mv ${WRKINST}${MODPY_SITEPKG}/usr/local/man/fr/ ${PREFIX}/man/
+	find ${WRKINST}${MODPY_SITEPKG}/usr -type d -delete
 
 do-test:
 	cd ${WRKSRC}/tests && /bin/sh ./run.sh
