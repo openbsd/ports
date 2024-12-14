@@ -3,7 +3,7 @@ MODPY_EGG_VERSION =	0.1.11
 DISTNAME =		arandr-${MODPY_EGG_VERSION}
 CATEGORIES =		x11 sysutils
 HOMEPAGE =		https://christian.amsuess.com/tools/arandr/
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE =	Yes
 SITES =			https://christian.amsuess.com/tools/arandr/files/
 
 MODULES =		lang/python
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/py-gobject3${MODPY_FLAVOR}
