@@ -1,5 +1,6 @@
 COMMENT =	SDL multi protocol navigator
 VERSION =	1.18.3
+REVISION =	0
 
 DISTNAME =	lagrange-${VERSION}
 
@@ -13,7 +14,7 @@ HOMEPAGE =	https://gmi.skyjake.fi/lagrange/
 PERMIT_PACKAGE =Yes
 
 WANTLIB +=	ICE SDL2 SM X11 Xext c crypto curses fribidi harfbuzz m
-WANTLIB +=	mpg123 pcre2-8 pthread ssl unistring webp z
+WANTLIB +=	mpg123 opusfile pcre2-8 pthread ssl unistring webp z
 
 DEBUG_PACKAGES =${BUILD_PACKAGES}
 
@@ -30,6 +31,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
 
 LIB_DEPENDS =	audio/mpg123 \
+		audio/opusfile \
 		converters/libunistring \
 		devel/fribidi \
 		devel/harfbuzz \
