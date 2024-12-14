@@ -13,6 +13,8 @@ PERMIT_PACKAGE=	Yes
 HOMEPAGE =	https://www.libvolk.org
 SITES =		${HOMEPAGE}/releases/
 
+# Uses C11 and C++17
+COMPILER =	base-clang ports-gcc
 MODULES =	devel/cmake \
 		lang/python
 
