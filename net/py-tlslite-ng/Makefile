@@ -4,6 +4,7 @@ MODPY_EGG_VERSION =	0.8.0-beta6
 DISTNAME =		tlslite-ng-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/-beta/beta/}
 EPOCH =			0
+REVISION =		0
 
 PLIST_VERSION =		${MODPY_EGG_VERSION:S/-/_/}
 SUBST_VARS +=		PLIST_VERSION
@@ -26,6 +27,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
+MODPY_PYBUILD =		setuptools
 MODPY_PYTEST =		Yes
 
 RUN_DEPENDS +=		devel/py-six${MODPY_FLAVOR} \
