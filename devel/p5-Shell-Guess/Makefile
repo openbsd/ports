@@ -3,7 +3,7 @@ COMMENT = 	make an educated guess about the shell in use
 MODULES =	cpan
 PKG_ARCH =	*
 
-DISTNAME =	Shell-Guess-0.09
+DISTNAME =	Shell-Guess-0.10
 
 CATEGORIES =	devel
 
