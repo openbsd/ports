@@ -43,6 +43,7 @@ WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c fftw3f
 WANTLIB += fftw3f_threads fmt gmp gmpxx gsl gslcblas gsm iconv jack
 WANTLIB += m portaudio qwt sndfile spdlog volk zmq
 
+# c++17
 COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake \
