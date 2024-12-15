@@ -1,0 +1,14 @@
+Allow HDF5 versions greater than 1.12
+
+Index: src/hdfi/_MEDfileCreate.c
+--- src/hdfi/_MEDfileCreate.c.orig
++++ src/hdfi/_MEDfileCreate.c
+@@ -189,7 +189,7 @@ med_idt _MEDfileCreate(const char * const filename, co
+    * Cette ligne est censée obliger HDF à ne pas utiliser un modèle interne différent de 1.10.z
+    * Un test autoconf permet de fixer un intervalle de version HDF à MED.
+    */
+-#if H5_VERS_MINOR > 12
++#if H5_VERS_MINOR > 14
+ #error "Don't forget to change the compatibility version of the library !"
+ #endif
+    

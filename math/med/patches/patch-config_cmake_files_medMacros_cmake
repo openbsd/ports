@@ -1,0 +1,21 @@
+Allow HDF5 versions greater than 1.12
+
+Index: config/cmake_files/medMacros.cmake
+--- config/cmake_files/medMacros.cmake.orig
++++ config/cmake_files/medMacros.cmake
+@@ -447,13 +447,13 @@ MACRO(MED_FIND_HDF5)
+     ##
+     ## Requires 1.12.x version
+     ##
+-    IF (NOT HDF_VERSION_MAJOR_REF EQUAL 1 OR NOT HDF_VERSION_MINOR_REF EQUAL 12 OR NOT HDF_VERSION_RELEASE_REF GREATER 0)
++    IF(HDF5_VERSION VERSION_LESS 1.12.0)
+         MESSAGE(FATAL_ERROR "HDF5 version is ${HDF_VERSION_REF}. Only versions >= 1.12.1 are supported.")
+     ENDIF()
+     ##
+     ##
+ 
+-    ADD_DEFINITIONS(-DH5_USE_16_API -DH5Oget_info_by_name_vers=1 -DH5O_info_t_vers=1)  
++    ADD_DEFINITIONS(-DH5_USE_18_API -DH5_USE_16_API -DH5Oget_info_by_name_vers=1 -DH5O_info_t_vers=1)  
+     IF(WIN32 AND MEDFILE_BUILD_SHARED_LIBS)
+       ADD_DEFINITIONS(-D_HDF5USEDLL_ -DH5_BUILT_AS_DYNAMIC_LIB=1)   
+     ENDIF()

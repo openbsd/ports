@@ -1,0 +1,14 @@
+Allow HDF5 versions greater than 1.12
+
+Index: src/misc/MEDversionedApi3C.c
+--- src/misc/MEDversionedApi3C.c.orig
++++ src/misc/MEDversionedApi3C.c
+@@ -114,7 +114,7 @@ MedFuncType _MEDversionedApi3( const char * const key,
+   /*      (_fversionMM <= (100*MED_NUM_MAJEUR+10*MED_NUM_MINEUR) ) */
+   /*      ) { */
+ 
+-#if H5_VERS_MINOR > 12
++#if H5_VERS_MINOR > 14
+ #error "Don't forget to change the compatibility version of the library !"
+ #endif
+   

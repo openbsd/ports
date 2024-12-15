@@ -1,0 +1,14 @@
+Allow HDF5 versions greater than 1.12
+
+Index: src/hdfi/_MEDfileOpen.c
+--- src/hdfi/_MEDfileOpen.c.orig
++++ src/hdfi/_MEDfileOpen.c
+@@ -113,7 +113,7 @@ med_idt _MEDfileOpen(const char * const filename,const
+        has been set in the group creation property list (see H5Pset_link_creation_order).
+   */
+ 
+-#if H5_VERS_MINOR > 12
++#if H5_VERS_MINOR > 14
+ #error "Don't forget to change the compatibility version of the library !"
+ #endif
+ /* L'avantage de bloquer le modèle interne HDF5

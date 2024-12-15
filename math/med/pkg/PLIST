@@ -1,0 +1,46 @@
+@bin bin/mdump2
+@bin bin/mdump3
+@bin bin/mdump4
+@bin bin/medconforme
+@bin bin/medimport
+bin/xmdump2
+bin/xmdump3
+bin/xmdump4
+include/MEDerreur.hxx
+include/MEDimport.h
+include/MEDimport.hxx
+include/med.h
+include/med.hf
+include/med.hf77
+include/med.hf90
+include/medC_win_dll.h
+include/med_err.h
+include/med_exit_if.h
+include/med_filechar.h
+include/med_parameter.hf
+include/med_proto.h
+include/med_utils.h
+include/medequivalence.h
+include/medfamily.h
+include/medfield.h
+include/medfile.h
+include/medfilter.h
+include/medimport_win_dll.h
+include/medimportcxx_win_dll.h
+include/medinterp.h
+include/medlibrary.h
+include/medlink.h
+include/medlocalization.h
+include/medmesh.h
+include/medparameter.h
+include/medprofile.h
+include/medstructelement.h
+include/medsubdomain.h
+@lib lib/libmedC.so.${LIBmedC_VERSION}
+@lib lib/libmedimport.so.${LIBmedimport_VERSION}
+share/cmake/
+share/cmake/medfile-${V}/
+share/cmake/medfile-${V}/MEDFileConfig.cmake
+share/cmake/medfile-${V}/MEDFileConfigVersion.cmake
+share/cmake/medfile-${V}/MEDFileTargets${MODCMAKE_BUILD_SUFFIX}
+share/cmake/medfile-${V}/MEDFileTargets.cmake
