@@ -60,6 +60,7 @@
      SUBDIR += maxima
      SUBDIR += mcl
      SUBDIR += mcsim
+     SUBDIR += med
      SUBDIR += minisat
      SUBDIR += ministat
      SUBDIR += mlpack
