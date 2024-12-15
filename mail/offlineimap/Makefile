@@ -6,7 +6,7 @@ DISTNAME =	offlineimap-${MODPY_EGG_VERSION}pl20231218
 GH_ACCOUNT =	OfflineIMAP
 GH_PROJECT =	offlineimap3
 GH_COMMIT =	d29a4dc459401f8a78e347cb0f8ae7670add0975
-REVISION =	0
+REVISION =	1
 
 CATEGORIES=	mail
 
@@ -18,6 +18,8 @@ PERMIT_PACKAGE=	Yes
 NO_TEST=	Yes
 
 MODULES=	lang/python
+
+MODPY_PYBUILD=	setuptools
 
 BUILD_DEPENDS=	textproc/asciidoc \
 		devel/py-rfc6555${MODPY_FLAVOR} \
