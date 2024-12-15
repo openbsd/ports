@@ -2,9 +2,13 @@
 | Running ${PKGSTEM} on OpenBSD
 +-------------------------------------------------------------------------------
 
-ejabberd is listening to all IPv4 addresses (0.0.0.0), in case if you
-want to listen to IPv6 addresses you need to duplicate listener in
-ejabberd.yml
+ejabberd is listening on all IPv4 addresses (0.0.0.0). To listen on
+IPv6 addresses you need to duplicate the listener in
+${SYSCONFDIR}/ejabberd/ejabberd.yml
+
+By default ejabberd and ejabberdctl are configured not to use epmd.
+To use epmd, comment out the ERL_DIST_PORT setting in
+${SYSCONFDIR}/ejabberd/ejabberdctl.cfg
 
 To run a cluster you should distribute the same cookie
 ${LOCALSTATEDIR}/db/ejabberd/.erlang.cookie to all machines. These files
@@ -14,3 +18,9 @@ this
 
     rcctl set ejabberd flags --node ejabberd@somehost
 
+or via ERLANG_NODE in ${SYSCONFDIR}/ejabberd/ejabberdctl.cfg
+
+    ERLANG_NODE=ejabberd@somehost
+
+Note that to change a node name, you should migrate Mnesia, see:
+https://docs.ejabberd.im/admin/guide/managing/?h=mnesia_change_nodename#change-computer-hostname

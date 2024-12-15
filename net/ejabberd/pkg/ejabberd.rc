@@ -6,11 +6,12 @@ daemon_user=_ejabberd
 . /etc/rc.d/rc.subr
 
 rc_start() {
-	rc_exec "${daemon} ${daemon_flags} start"
+	rc_exec "${daemon} ${daemon_flags} start \
+		&& ${daemon} ${daemon_flags} started"
 }
 
 rc_check() {
-	rc_exec "${daemon} ${daemon_flags} ping | grep pong"
+	rc_exec "${daemon} ${daemon_flags} ping | grep -q pong"
 }
 
 rc_reload() {
@@ -18,7 +19,8 @@ rc_reload() {
 }
 
 rc_stop() {
-	rc_exec "${daemon} ${daemon_flags} stop"
+	rc_exec "${daemon} ${daemon_flags} stop \
+		&& ${daemon} ${daemon_flags} stopped"
 }
 
 rc_cmd $1

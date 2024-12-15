@@ -1,0 +1,14 @@
+Do not use epmd out of the box to prevent killing system's epmd
+
+Index: ejabberdctl.cfg.example
+--- ejabberdctl.cfg.example.orig
++++ ejabberdctl.cfg.example
+@@ -62,7 +62,7 @@
+ #
+ # Default: not defined
+ #
+-#ERL_DIST_PORT=5210
++ERL_DIST_PORT=5210
+ 
+ #.
+ #' ERL_EPMD_ADDRESS: IP addresses where EPMD listens for connections
