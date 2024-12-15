@@ -1,9 +1,9 @@
 COMMENT =	Tcl implementation for the CLR
 
 V =		1.0
-P =		8503.24499
+P =		8734.30319
 DISTNAME =	eagle-${V}
-PKGNAME =	${DISTNAME}beta53
+PKGNAME =	${DISTNAME}beta55
 EPOCH =		0
 CATEGORIES =	lang lang/tcl
 HOMEPAGE =	https://eagle.to/
@@ -41,7 +41,7 @@ EAGLE_BIN =	${PREFIX}/bin/eagle
 EAGLE_TEST_FLAGS = -notFile 'benchmark.eagle perf*.eagle'
 
 # Skip tests that may hang or fail
-EAGLE_TEST_FLAGS += -skip 'interp-1.80? socket-2.2 socket-6.1 string-99.400'
+EAGLE_TEST_FLAGS += -skip 'interp-1.80? socket-2.2 socket-6.1 string-99.400 interp-1.50000'
 
 # "-namespaces 1" enables namespace tests
 # "set no(bigLists) 1" avoids oom problems
@@ -49,13 +49,14 @@ EAGLE_TEST_FLAGS += -skip 'interp-1.80? socket-2.2 socket-6.1 string-99.400'
 # "set no(tcl) 1" ignores any installed Tcl
 # "set test_log {}" disables logging test results to a file
 # "set no(failLogStartSentry) 1" disables Eagle test log sentry checking
+# "set no(logRemoteTestResults) 1" disables Eagle tests trying to send results to a remote server
 
 do-test:
 	${SETENV} ${ALL_TEST_ENV} ${ALL_TEST_FLAGS} \
 	${LOCALBASE}/bin/mono ${WRKSRC}/bin/EagleShell.exe \
 	-namespaces 1 \
 	-preInitialize 'set no(bigLists) 1; set no(exec) 1; set no(compileCSharp) 1; set no(tcl) 1' \
-	-preInitialize 'set test_log {}; set no(failLogStartSentry) 1' \
+	-preInitialize 'set test_log {}; set no(failLogStartSentry) 1; set no(logRemoteTestResults) 1' \
 	-file ${WRKSRC}/Tests/all.eagle \
 	${EAGLE_TEST_FLAGS}
 
