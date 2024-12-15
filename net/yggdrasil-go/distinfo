@@ -188,6 +188,7 @@ SHA256 (go_modules/gvisor.dev/gvisor/@v/v0.0.0-20230927004350-cbd86285d259.mod) 
 SHA256 (go_modules/gvisor.dev/gvisor/@v/v0.0.0-20230927004350-cbd86285d259.zip) = C4/Hpc+sLRDMhachb8OspKk+OLp+lFPxBbMZCz5EZRY=
 SHA256 (go_modules/suah.dev/protect/@v/v1.2.4.mod) = pCV/n1U15tgZJcVzlnCrb/jASbWzwzyUJcHxej9/uYk=
 SHA256 (go_modules/suah.dev/protect/@v/v1.2.4.zip) = jPSmvb1DRSuQEcSp3WHi9mS7bqqeMXF4sFd9k8x/eSs=
+SHA256 (pledge-37cce42.patch) = YZ6gOB1/9FuCgG+gIsWMotrwcKSpeSN1lTf0SFaSkmQ=
 SHA256 (yggdrasil-go-v0.5.11.zip) = C/WVl2iT8cAkffYFThZSOMLsksRMrRZsFucTbI2m270=
 SIZE (go_modules/github.com/!arceliar/ironwood/@v/v0.0.0-20241210120540-9deb08d9f8f9.mod) = 299
 SIZE (go_modules/github.com/!arceliar/ironwood/@v/v0.0.0-20241210120540-9deb08d9f8f9.zip) = 59572
@@ -379,4 +380,5 @@ SIZE (go_modules/gvisor.dev/gvisor/@v/v0.0.0-20230927004350-cbd86285d259.mod) = 
 SIZE (go_modules/gvisor.dev/gvisor/@v/v0.0.0-20230927004350-cbd86285d259.zip) = 13870945
 SIZE (go_modules/suah.dev/protect/@v/v1.2.4.mod) = 67
 SIZE (go_modules/suah.dev/protect/@v/v1.2.4.zip) = 3576
+SIZE (pledge-37cce42.patch) = 1356
 SIZE (yggdrasil-go-v0.5.11.zip) = 163682

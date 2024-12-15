@@ -4,9 +4,16 @@ MODGO_MODNAME =	github.com/yggdrasil-network/yggdrasil-go
 MODGO_VERSION =	v0.5.11
 
 DISTNAME =	yggdrasil-go-${MODGO_VERSION}
+REVISION =	0
 
 # make patch and update-patches work;  does the go module's default need fixing?
 WRKDIST =		${WRKSRC}
+
+SITES.gh =		https://${MODGO_MODNAME}/
+# https://github.com/yggdrasil-network/yggdrasil-go/pull/1215
+# pending "Use pledge(2) on OpenBSD"
+PATCHFILES.gh =		pledge-{commit/}37cce42.patch
+PATCH_DIST_STRIP =	-p1
 
 CATEGORIES =	net
 
@@ -27,7 +34,7 @@ RUN_DEPENDS =	textproc/jq
 _BUILD =		${MODGO_MODNAME}/src/version.build
 # buildName appears in -version output and as syslogd(8) tag
 MODGO_LDFLAGS =		-X ${_BUILD}Name=${PKGSTEM} \
-			-X ${_BUILD}Version=${MODGO_VERSION:v%=:Q}
+			-X ${_BUILD}Version=${MODGO_VERSION:v%=:Q}+patches
 
 DOC_DIR =	${PREFIX}/share/doc/${PKGSTEM}
 
