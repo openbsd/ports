@@ -1,0 +1,12 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -85,7 +85,7 @@ add_subdirectory(src)
+ # Translation files
+ #
+ if(NOT WIN32)
+-	find_program(MAKE_EXECUTABLE make)
++	find_program(MAKE_EXECUTABLE gmake)
+ 
+ 	add_custom_target(
+ 		translations
