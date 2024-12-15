@@ -7,7 +7,7 @@ Index: src/version.cmake
  ELSE(GIT_EXECUTABLE)
 -	MESSAGE(WARNING "Git binary not found. Build version will be set to NULL. Install Git package or use -DGIT_BINARY to set path to git binary.")
 -	SET (VERSION "NULL")
-+	SET (VERSION "${GH_TAGNAME}")
++	SET (VERSION "${V}")
  ENDIF(GIT_EXECUTABLE)
  
  CONFIGURE_FILE(${SRC} ${DST} @ONLY)

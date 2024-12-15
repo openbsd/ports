@@ -1,12 +1,32 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -120,7 +120,7 @@ else ()
+@@ -84,6 +84,10 @@ if ("${CMAKE_SYSTEM_NAME}" MATCHES "FreeBSD")
+     set(_OS_FREEBSD_ 1)
  endif ()
  
- # System specific actions
--if ("${CMAKE_SYSTEM_NAME}" MATCHES "(Linux|FreeBSD|Darwin)")
-+if ("${CMAKE_SYSTEM_NAME}" MATCHES "(Linux|FreeBSD|Darwin|OpenBSD)")
-     if (NOT DATA_PREFIX)
-         set(DATA_PREFIX ${CMAKE_INSTALL_PREFIX}/share/cataclysm-dda)
-     endif ()
++if ("${CMAKE_SYSTEM_NAME}" MATCHES "OpenBSD")
++    set(_OS_OPENBSD_ 1)
++endif ()
++
+ if ("${CMAKE_SYSTEM_NAME}" MATCHES "Darwin")
+     set(_OS_DARWIN_ 1)
+     add_definitions(-DMACOSX)
+@@ -171,7 +175,7 @@ else ()
+     add_definitions(-DRELEASE)
+     # Use CMAKE_INSTALL_PREFIX as storage of data,gfx, etc.. Useful only on *nix OS.
+     if(USE_PREFIX_DATA_DIR)
+-        if ("${CMAKE_SYSTEM_NAME}" MATCHES "(Linux|FreeBSD|Darwin)")
++        if ("${CMAKE_SYSTEM_NAME}" MATCHES "(Linux|FreeBSD|Darwin|OpenBSD)")
+             set(CMAKE_INSTALL_DATAROOTDIR "${CMAKE_INSTALL_PREFIX}/share/cataclysm-dda")
+             add_definitions(-DPREFIX=${CMAKE_INSTALL_PREFIX})
+             configure_file(
+@@ -401,7 +405,7 @@ if (CATA_CLANG_TIDY_PLUGIN OR CATA_CLANG_TIDY_EXECUTAB
+     add_subdirectory(tools/clang-tidy-plugin)
+ endif()
+ 
+-install(DIRECTORY doc TYPE DOC)
++#install(DIRECTORY doc TYPE DOC)
+ 
+ if (RELEASE)
+     install(FILES

@@ -1,6 +1,6 @@
 @bin bin/cataclysm-tiles
 @man man/man6/cataclysm-tiles.6
-share/cataclysm-dda/LICENSE-OFL-Terminus-Font.txt
+share/applications/org.cataclysmdda.CataclysmDDA.desktop
 share/cataclysm-dda/font/
 share/cataclysm-dda/font/Terminus.ttf
 share/cataclysm-dda/font/VecTerminus12Medium.otf
@@ -14,6 +14,11 @@ share/cataclysm-dda/gfx/ASCIITileset/ASCIITiles.png
 share/cataclysm-dda/gfx/ASCIITileset/fallback.png
 share/cataclysm-dda/gfx/ASCIITileset/tile_config.json
 share/cataclysm-dda/gfx/ASCIITileset/tileset.txt
+share/cataclysm-dda/gfx/ASCII_Overmap/
+share/cataclysm-dda/gfx/ASCII_Overmap/ASCIITiles.png
+share/cataclysm-dda/gfx/ASCII_Overmap/fallback.png
+share/cataclysm-dda/gfx/ASCII_Overmap/tile_config.json
+share/cataclysm-dda/gfx/ASCII_Overmap/tileset.txt
 share/cataclysm-dda/gfx/Altica/
 share/cataclysm-dda/gfx/Altica/centered.png
 share/cataclysm-dda/gfx/Altica/character.png
@@ -26,27 +31,17 @@ share/cataclysm-dda/gfx/Altica/giant.png
 share/cataclysm-dda/gfx/Altica/huge.png
 share/cataclysm-dda/gfx/Altica/human_body.png
 share/cataclysm-dda/gfx/Altica/human_body_plus.png
-share/cataclysm-dda/gfx/Altica/human_body_wielded.png
 share/cataclysm-dda/gfx/Altica/incomplete.png
 share/cataclysm-dda/gfx/Altica/incomplete_large.png
 share/cataclysm-dda/gfx/Altica/large.png
 share/cataclysm-dda/gfx/Altica/large_ridden.png
 share/cataclysm-dda/gfx/Altica/layering.json
-share/cataclysm-dda/gfx/Altica/monsters_plus.png
 share/cataclysm-dda/gfx/Altica/normal.png
 share/cataclysm-dda/gfx/Altica/small.png
 share/cataclysm-dda/gfx/Altica/tall.png
-share/cataclysm-dda/gfx/Altica/tall_furniture.png
-share/cataclysm-dda/gfx/Altica/tall_magiclysm.png
-share/cataclysm-dda/gfx/Altica/tall_overmap.png
-share/cataclysm-dda/gfx/Altica/tall_terrain.png
-share/cataclysm-dda/gfx/Altica/tall_vehicle.png
-share/cataclysm-dda/gfx/Altica/tall_wielded.png
 share/cataclysm-dda/gfx/Altica/tile_config.json
 share/cataclysm-dda/gfx/Altica/tileset.txt
-share/cataclysm-dda/gfx/Altica/traps_plus.png
 share/cataclysm-dda/gfx/Altica/ultica-tall.png
-share/cataclysm-dda/gfx/Altica/vehicle_plus.png
 share/cataclysm-dda/gfx/BrownLikeBears/
 share/cataclysm-dda/gfx/BrownLikeBears/big.png
 share/cataclysm-dda/gfx/BrownLikeBears/fallback.png
@@ -64,11 +59,11 @@ share/cataclysm-dda/gfx/ChibiUltica/ChibiLarge.png
 share/cataclysm-dda/gfx/ChibiUltica/ChibiNormal.png
 share/cataclysm-dda/gfx/ChibiUltica/ChibiSmall.png
 share/cataclysm-dda/gfx/ChibiUltica/ChibiTall.png
-share/cataclysm-dda/gfx/ChibiUltica/ChibiTaller.png
 share/cataclysm-dda/gfx/ChibiUltica/ChibiWide.png
 share/cataclysm-dda/gfx/ChibiUltica/centered.png
 share/cataclysm-dda/gfx/ChibiUltica/dcss.png
 share/cataclysm-dda/gfx/ChibiUltica/fallback.png
+share/cataclysm-dda/gfx/ChibiUltica/filler.png
 share/cataclysm-dda/gfx/ChibiUltica/fillergiant.png
 share/cataclysm-dda/gfx/ChibiUltica/fillerhoder.png
 share/cataclysm-dda/gfx/ChibiUltica/giant.png
@@ -103,6 +98,16 @@ share/cataclysm-dda/gfx/Cuteclysm/tile_config.json
 share/cataclysm-dda/gfx/Cuteclysm/tileset.txt
 share/cataclysm-dda/gfx/Cuteclysm/ui.png
 share/cataclysm-dda/gfx/Cuteclysm/ultratallbackdrop.png
+share/cataclysm-dda/gfx/GiantDays/
+share/cataclysm-dda/gfx/GiantDays/cursor.png
+share/cataclysm-dda/gfx/GiantDays/fallback.png
+share/cataclysm-dda/gfx/GiantDays/items.png
+share/cataclysm-dda/gfx/GiantDays/large.png
+share/cataclysm-dda/gfx/GiantDays/layering.json
+share/cataclysm-dda/gfx/GiantDays/mobs.png
+share/cataclysm-dda/gfx/GiantDays/tile_config.json
+share/cataclysm-dda/gfx/GiantDays/tiles.png
+share/cataclysm-dda/gfx/GiantDays/tileset.txt
 share/cataclysm-dda/gfx/HollowMoon/
 share/cataclysm-dda/gfx/HollowMoon/fallback.png
 share/cataclysm-dda/gfx/HollowMoon/giant.png
@@ -119,7 +124,6 @@ share/cataclysm-dda/gfx/Larwick_Overmap/overmap_tall.png
 share/cataclysm-dda/gfx/Larwick_Overmap/tile_config.json
 share/cataclysm-dda/gfx/Larwick_Overmap/tileset.txt
 share/cataclysm-dda/gfx/MshockXotto+/
-share/cataclysm-dda/gfx/MshockXotto+/Credit.txt
 share/cataclysm-dda/gfx/MshockXotto+/big.png
 share/cataclysm-dda/gfx/MshockXotto+/dcss.png
 share/cataclysm-dda/gfx/MshockXotto+/dcssTall.png
@@ -143,12 +147,24 @@ share/cataclysm-dda/gfx/MshockXotto+/widecenter.png
 share/cataclysm-dda/gfx/NeoDaysTileset/
 share/cataclysm-dda/gfx/NeoDaysTileset/fallback.png
 share/cataclysm-dda/gfx/NeoDaysTileset/large.png
+share/cataclysm-dda/gfx/NeoDaysTileset/layering.json
 share/cataclysm-dda/gfx/NeoDaysTileset/tile_config.json
 share/cataclysm-dda/gfx/NeoDaysTileset/tiles.png
 share/cataclysm-dda/gfx/NeoDaysTileset/tileset.txt
+share/cataclysm-dda/gfx/PenAndPaper/
+share/cataclysm-dda/gfx/PenAndPaper/backgrounds.png
+share/cataclysm-dda/gfx/PenAndPaper/cursor.png
+share/cataclysm-dda/gfx/PenAndPaper/fallback.png
+share/cataclysm-dda/gfx/PenAndPaper/icons-h.png
+share/cataclysm-dda/gfx/PenAndPaper/icons-v.png
+share/cataclysm-dda/gfx/PenAndPaper/icons.png
+share/cataclysm-dda/gfx/PenAndPaper/overmap.png
+share/cataclysm-dda/gfx/PenAndPaper/tile_config.json
+share/cataclysm-dda/gfx/PenAndPaper/tileset.txt
+share/cataclysm-dda/gfx/PenAndPaper/weather.png
+share/cataclysm-dda/gfx/PenAndPaper/weather_unknown.png
 share/cataclysm-dda/gfx/RetroDaysTileset/
 share/cataclysm-dda/gfx/RetroDaysTileset/fallback.png
-share/cataclysm-dda/gfx/RetroDaysTileset/overlay_ordering.json
 share/cataclysm-dda/gfx/RetroDaysTileset/tile_config.json
 share/cataclysm-dda/gfx/RetroDaysTileset/tiles.png
 share/cataclysm-dda/gfx/RetroDaysTileset/tiles_20x20.png
@@ -168,8 +184,7 @@ share/cataclysm-dda/gfx/SurveyorsMap/tileset.txt
 share/cataclysm-dda/gfx/Ultica_iso/
 share/cataclysm-dda/gfx/Ultica_iso/cursors.png
 share/cataclysm-dda/gfx/Ultica_iso/fallback.png
-share/cataclysm-dda/gfx/Ultica_iso/fillergiant.png
-share/cataclysm-dda/gfx/Ultica_iso/giant.png
+share/cataclysm-dda/gfx/Ultica_iso/guns.png
 share/cataclysm-dda/gfx/Ultica_iso/human_body_2x.png
 share/cataclysm-dda/gfx/Ultica_iso/human_body_plus_2x.png
 share/cataclysm-dda/gfx/Ultica_iso/incomplete.png
@@ -186,8 +201,8 @@ share/cataclysm-dda/gfx/Ultica_iso/iso_high.png
 share/cataclysm-dda/gfx/Ultica_iso/iso_high_wide.png
 share/cataclysm-dda/gfx/Ultica_iso/iso_large.png
 share/cataclysm-dda/gfx/Ultica_iso/iso_tall.png
+share/cataclysm-dda/gfx/Ultica_iso/iso_tall_plus.png
 share/cataclysm-dda/gfx/Ultica_iso/iso_tall_r.png
-share/cataclysm-dda/gfx/Ultica_iso/large.png
 share/cataclysm-dda/gfx/Ultica_iso/layering.json
 share/cataclysm-dda/gfx/Ultica_iso/normal.png
 share/cataclysm-dda/gfx/Ultica_iso/normal_2x.png
@@ -232,7 +247,8 @@ share/cataclysm-dda/sound/Basic/menu_move.ogg
 share/cataclysm-dda/sound/Basic/musicset.json
 share/cataclysm-dda/sound/Basic/soundpack.txt
 share/cataclysm-dda/sound/Basic/soundset.json
-share/cataclysm-dda/xdg/
-share/cataclysm-dda/xdg/org.cataclysmdda.CataclysmDDA.appdata.xml
-share/cataclysm-dda/xdg/org.cataclysmdda.CataclysmDDA.desktop
-share/cataclysm-dda/xdg/org.cataclysmdda.CataclysmDDA.svg
+share/icons/hicolor/scalable/apps/org.cataclysmdda.CataclysmDDA.svg
+share/metainfo/
+share/metainfo/org.cataclysmdda.CataclysmDDA.appdata.xml
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database
