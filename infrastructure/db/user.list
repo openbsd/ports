@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.454 2024/12/09 22:43:22 sthen Exp $
+$OpenBSD: user.list,v 1.455 2024/12/15 23:03:27 danj Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -255,7 +255,7 @@ id  user		group		port
 744 _isc-dhcp		_isc-dhcp	net/isc-dhcp
 745 _smmsp		_smmsp		mail/sendmail
 746 _spampd		_spampd		mail/spampd
-747 _mfi		_mfi		net/mfi
+#747 _mfi		_mfi		net/mfi
 #748 _elasticsearch	_elasticsearch	textproc/elasticsearch
 749 _ocserv		_ocserv		net/ocserv
 750 _ddclient		_ddclient	net/ddclient
