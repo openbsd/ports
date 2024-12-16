@@ -3,7 +3,7 @@ COMMENT=	audio player and tagger for GTK+ with regex support
 MODPY_EGG_VERSION= 4.6.0
 DISTNAME=	quodlibet-${MODPY_EGG_VERSION}
 PORTROACH=	skipv:release-${MODPY_EGG_VERSION}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	audio
 
@@ -15,6 +15,8 @@ PERMIT_PACKAGE=	Yes
 SITES=		https://github.com/quodlibet/quodlibet/releases/download/release-${MODPY_EGG_VERSION}/
 
 MODULES=	lang/python
+MODPY_ADJ_FILES= *py
+MODPY_PYBUILD=	setuptools
 
 RUN_DEPENDS=	audio/py-musicbrainzngs${MODPY_FLAVOR} \
 		audio/py-mutagen${MODPY_FLAVOR} \
@@ -34,9 +36,10 @@ RUN_DEPENDS+=	devel/desktop-file-utils \
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		devel/gettext,-runtime \
 		devel/gettext,-tools
-MODPY_ADJ_FILES= *py
 
-MODPY_DISTUTILS_INSTALLARGS= --mandir=${PREFIX}/man
+post-install:
+	mv ${PREFIX}/share/man/man1/* ${PREFIX}/man/man1/
+	rmdir ${PREFIX}/share/man{/man1,}
 
 do-test:
 	cd ${WRKSRC}; ${MODPY_BIN} ./setup.py test
