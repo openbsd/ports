@@ -1,7 +1,7 @@
 COMMENT=		media aggregator and podcast client
 
 MODPY_EGG_VERSION=	3.11.4
-REVISION=		2
+REVISION=		3
 
 GH_ACCOUNT=		gpodder
 GH_PROJECT=		gpodder
@@ -18,6 +18,7 @@ PERMIT_PACKAGE=		Yes
 
 MODULES=		lang/python \
 			textproc/intltool
+MODPY_PYBUILD=		setuptools
 
 TEST_ENV=		PYTEST=py.test
 
