@@ -1,0 +1,12 @@
+Index: libiberty/Makefile.in
+--- libiberty/Makefile.in.orig
++++ libiberty/Makefile.in
+@@ -113,7 +113,7 @@ installcheck: installcheck-subdir
+ 
+ INCDIR=$(srcdir)/$(MULTISRCTOP)../include
+ 
+-COMPILE.c = $(CC) -c @DEFS@ $(CFLAGS) $(CPPFLAGS) -I. -I$(INCDIR) \
++COMPILE.c = $(CC) -c @DEFS@ $(CFLAGS) -I. -I$(INCDIR) $(CPPFLAGS) \
+                $(HDEFINES) @ac_libiberty_warn_cflags@ -D_GNU_SOURCE
+ 
+ # Just to make sure we don't use a built-in rule with VPATH

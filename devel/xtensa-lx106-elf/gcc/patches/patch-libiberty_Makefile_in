@@ -1,7 +1,7 @@
 Index: libiberty/Makefile.in
 --- libiberty/Makefile.in.orig
 +++ libiberty/Makefile.in
-@@ -112,7 +112,7 @@ installcheck: installcheck-subdir
+@@ -111,7 +111,7 @@ installcheck: installcheck-subdir
  
  INCDIR=$(srcdir)/$(MULTISRCTOP)../include
  
@@ -10,12 +10,3 @@ Index: libiberty/Makefile.in
                 $(HDEFINES) @ac_libiberty_warn_cflags@ -D_GNU_SOURCE \
                 @CET_HOST_FLAGS@
  
-@@ -376,7 +376,7 @@ libiberty.html : $(srcdir)/libiberty.texi $(TEXISRC)
- @MAINT@	echo stamp > stamp-functions
- 
- INSTALL_DEST = @INSTALL_DEST@
--install: install_to_$(INSTALL_DEST) install-subdir
-+install:
- install-strip: install
- 
- .PHONY: install install-strip
