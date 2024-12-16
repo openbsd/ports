@@ -1,0 +1,12 @@
+Index: src/apps/common/apputils.c
+--- src/apps/common/apputils.c.orig
++++ src/apps/common/apputils.c
+@@ -1179,7 +1179,7 @@ char *find_config_file(const char *config_file) {
+ /////////////////// SYS SETTINGS ///////////////////////
+ 
+ void ignore_sigpipe(void) {
+-#if defined(__linux__) || defined(__APPLE__)
++#if defined(__linux__) || defined(__APPLE__) || defined(__OpenBSD__)
+   /* Ignore SIGPIPE from TCP sockets */
+   if (signal(SIGPIPE, SIG_IGN) == SIG_ERR) {
+     perror("Cannot set SIGPIPE handler");

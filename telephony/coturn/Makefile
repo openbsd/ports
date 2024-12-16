@@ -1,21 +1,22 @@
 COMMENT =	coturn STUN/TURN server
 
-V =		4.5.2
-DISTNAME =	turnserver-${V}
-REVISION =	5
+V =		4.6.3-r0
+GH_ACCOUNT =	coturn
+GH_PROJECT =	coturn
+GH_TAGNAME =	docker/${V}
+DISTNAME =	turnserver-${V:S/-r/pl/}
+WRKDIST =	${WRKDIR}/coturn-docker-${V}
+
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS = c
 
 CATEGORIES =	telephony
-
-HOMEPAGE =	https://github.com/coturn/coturn
 
 # BSD
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += c crypto event_core event_extra event_openssl event_pthreads
 WANTLIB += hiredis intl mariadb pq pthread sqlite3 ssl m z
-
-PORTROACH =		site:https://github.com/coturn/coturn/releases/
-SITES =			https://coturn.net/turnserver/v${V}/
 
 LIB_DEPENDS =		databases/mariadb \
 			databases/postgresql \
