@@ -1,0 +1,15 @@
+Index: Cargo.toml
+--- Cargo.toml.orig
++++ Cargo.toml
+@@ -168,9 +168,9 @@ grass_compiler = { version = "0.13.4", default-feature
+ 
+ [patch.crates-io]
+ # Patch fern to support syslog v7
+-fern = { git = "https://github.com/daboross/fern", rev = "3e775ccfafe7d24baee39826d38011981b2e55b5" }
++fern = { path = "./fern" }
+ # Patch yubico to remove duplicate crates of older versions
+-yubico = { git = "https://github.com/BlackDex/yubico-rs", rev = "00df14811f58155c0f02e3ab10f1570ed3e115c6" }
++yubico = { path = "./yubico-rs" }
+ 
+ # Strip debuginfo from the release builds
+ # The symbols are the provide better panic traces
