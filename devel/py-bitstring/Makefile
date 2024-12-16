@@ -1,31 +1,30 @@
-COMMENT =		construction, analysis and modification of binary data
+COMMENT=	construction, analysis and modification of binary data
 
-MODPY_EGG_VERSION =	3.1.5
-DISTNAME =		bitstring-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME}
-REVISION =		4
+MODPY_EGG_VERSION=	4.2.3
+DISTNAME=	bitstring-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =		devel
+CATEGORIES=	devel
 
-HOMEPAGE =		https://github.com/scott-griffiths/bitstring
+HOMEPAGE=	https://github.com/scott-griffiths/bitstring
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-EXTRACT_SUFX =		.zip
+MODULES=	lang/python
 
-MODULES =		lang/python
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
-MODPY_PI =		Yes
-MODPY_PYTEST =		Yes
-MODPY_TEST_DIR =	${WRKSRC}/test/
+FLAVORS=	python3
+FLAVOR=		python3
 
-FLAVORS =		python3
-FLAVOR =	python3
+RUN_DEPENDS=	devel/py-bitarray${MODPY_FLAVOR}<3
+TEST_DEPENDS=	devel/py-hypothesis${MODPY_FLAVOR} \
+		devel/py-test-benchmark${MODPY_FLAVOR}
 
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/${MODPY_PY_PREFIX}bitstring/
-	${INSTALL_DATA} ${WRKSRC}/README.rst \
-	    ${PREFIX}/share/doc/${MODPY_PY_PREFIX}bitstring/
+# require gfloat
+MODPY_PYTEST_ARGS= --ignore tests/test_fp8.py \
+		   --ignore tests/test_mxfp.py
 
 .include <bsd.port.mk>
