@@ -1,0 +1,8 @@
+share/doc/nerd-fonts/
+share/doc/nerd-fonts/nerdfontssymbolsonly/
+share/doc/nerd-fonts/nerdfontssymbolsonly/LICENSE
+share/fonts/
+share/fonts/nerd-fonts/
+@fontdir share/fonts/nerd-fonts/nerdfontssymbolsonly/
+share/fonts/nerd-fonts/nerdfontssymbolsonly/SymbolsNerdFont-Regular.ttf
+share/fonts/nerd-fonts/nerdfontssymbolsonly/SymbolsNerdFontMono-Regular.ttf
