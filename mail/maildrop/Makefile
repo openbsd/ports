@@ -1,10 +1,9 @@
 COMMENT-main=		mail delivery agent with filtering abilities
 COMMENT-utils=		quota tools for the Courier mail suite
 
-V=			3.1.5
+V=			3.1.8
 DISTNAME=		maildrop-$V
 PKGNAME-main=		maildrop-$V
-REVISION=		0
 FULLPKGNAME-utils=	courier-utils-$V
 FULLPKGPATH-utils=	mail/maildrop,-utils
 CATEGORIES=		mail
