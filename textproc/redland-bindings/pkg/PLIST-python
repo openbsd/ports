@@ -1,3 +1,0 @@
-@so lib/python${MODPY_VERSION}/site-packages/_Redland.${MODPY_PYC_MAGIC_TAG}so
-lib/python${MODPY_VERSION}/site-packages/RDF.py
-lib/python${MODPY_VERSION}/site-packages/Redland.py
