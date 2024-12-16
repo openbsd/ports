@@ -1,6 +1,6 @@
 COMMENT=		templating library able to output odt and pdf files
 
-MODPY_EGG_VERSION=	0.11.0
+MODPY_EGG_VERSION=	0.11.1
 DISTNAME=		relatorio-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 
