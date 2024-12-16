@@ -1,12 +1,14 @@
 COMMENT =	web-application vulnerability scanner
 
-MODPY_EGG_VERSION =	3.2.1
+MODPY_EGG_VERSION =	3.2.2
 DISTNAME =	wapiti3-${MODPY_EGG_VERSION}
 PKGNAME =	wapiti-${MODPY_EGG_VERSION}
 
 CATEGORIES =	security www
 
 HOMEPAGE =	https://wapiti-scanner.github.io/
+
+MAINTAINER =	Kirill A. Korinsky <kirill@korins.ky>
 
 # GPLv2
 PERMIT_PACKAGE =	Yes

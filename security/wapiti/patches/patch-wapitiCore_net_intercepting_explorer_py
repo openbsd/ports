@@ -1,0 +1,27 @@
+Revert https://github.com/wapiti-scanner/wapiti/pull/633
+
+Index: wapitiCore/net/intercepting_explorer.py
+--- wapitiCore/net/intercepting_explorer.py.orig
++++ wapitiCore/net/intercepting_explorer.py
+@@ -34,9 +34,9 @@ from mitmproxy.master import Master
+ from mitmproxy.options import Options
+ from mitmproxy.http import Request as MitmRequest
+ import httpx
+-from wapiti_arsenic import get_session, browsers, services
+-from wapiti_arsenic.constants import SelectorType
+-from wapiti_arsenic.errors import ArsenicError, ElementNotInteractable, UnknownArsenicError, NoSuchElement
++from arsenic import get_session, browsers, services
++from arsenic.constants import SelectorType
++from arsenic.errors import ArsenicError, ElementNotInteractable, UnknownArsenicError, NoSuchElement
+ import structlog
+ 
+ from wapitiCore.net import Request
+@@ -68,7 +68,7 @@ def is_interpreted_type(mime_type: str) -> bool:
+ 
+ def set_arsenic_log_level(level: int = WARNING):
+     # Create logger
+-    logger = getLogger('wapiti_arsenic')
++    logger = getLogger('arsenic')
+ 
+     # We need factory, to return application-wide logger
+     def logger_factory():
