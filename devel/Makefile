@@ -361,6 +361,7 @@
      SUBDIR += libyaml
      SUBDIR += libzen
      SUBDIR += llvm
+     SUBDIR += llvm-lit
      SUBDIR += log4c
      SUBDIR += log4cplus
      SUBDIR += log4cpp
