@@ -1,0 +1,15 @@
+Fix build with boost >= 1.85
+https://github.com/luceneplusplus/LucenePlusPlus/pull/203
+
+Index: src/core/store/MMapDirectory.cpp
+--- src/core/store/MMapDirectory.cpp.orig
++++ src/core/store/MMapDirectory.cpp
+@@ -36,7 +36,7 @@ MMapIndexInput::MMapIndexInput(const String& path) {
+     bufferPosition = 0;
+     if (!path.empty()) {
+         try {
+-            file.open(boost::filesystem::wpath(path), _length);
++            file.open(boost::filesystem::path(path), _length);
+         } catch (...) {
+             boost::throw_exception(FileNotFoundException(path));
+         }
