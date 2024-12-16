@@ -813,10 +813,10 @@ lib/rabbitmq/plugins/rabbit-${V}/include/
 lib/rabbitmq/plugins/rabbit-${V}/include/amqqueue.hrl
 lib/rabbitmq/plugins/rabbit-${V}/include/amqqueue_v2.hrl
 lib/rabbitmq/plugins/rabbit-${V}/include/internal_user.hrl
-lib/rabbitmq/plugins/rabbit-${V}/include/khepri.hrl
 lib/rabbitmq/plugins/rabbit-${V}/include/mc.hrl
 lib/rabbitmq/plugins/rabbit-${V}/include/rabbit_amqp.hrl
 lib/rabbitmq/plugins/rabbit-${V}/include/rabbit_global_counters.hrl
+lib/rabbitmq/plugins/rabbit-${V}/include/rabbit_khepri.hrl
 lib/rabbitmq/plugins/rabbit-${V}/include/vhost.hrl
 lib/rabbitmq/plugins/rabbit-${V}/include/vhost_v2.hrl
 lib/rabbitmq/plugins/rabbit-${V}/priv/
@@ -1148,6 +1148,7 @@ lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_user_limit.bea
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_user_limits.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_users.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_users_bulk_delete.beam
+lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_version.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_vhost.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_vhost_restart.beam
 lib/rabbitmq/plugins/rabbitmq_management-${V}/ebin/rabbit_mgmt_wm_vhosts.beam
