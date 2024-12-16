@@ -5,8 +5,8 @@ GH_ACCOUNT =		micahflee
 GH_PROJECT =		onionshare
 GH_TAGNAME =		v${MODPY_EGG_VERSION}
 MODPY_EGG_VERSION =	2.0
-REVISION-main =		6
-REVISION-gui =		6
+REVISION-main =		7
+REVISION-gui =		7
 
 PKGNAME-main =		onionshare-${MODPY_EGG_VERSION}
 PKGNAME-gui =		onionshare-gui-${MODPY_EGG_VERSION}
@@ -23,6 +23,7 @@ PERMIT_PACKAGE =	Yes
 MULTI_PACKAGES =	-main -gui
 
 MODULES =		lang/python
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		devel/py-sip${MODPY_FLAVOR} \
 			www/py-flask${MODPY_FLAVOR} \
@@ -37,5 +38,11 @@ RUN_DEPENDS-gui =	${RUN_DEPENDS} \
 
 # XXX: not yet working
 NO_TEST =		Yes
+
+post-install:
+	cd ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/usr/local; \
+		find . -type d -exec mkdir -p ../../../../../{} ';' ; \
+		find . -type f -exec mv {} ../../../../../{} ';' ; \
+		cd ../..; find usr -type d -delete
 
 .include <bsd.port.mk>

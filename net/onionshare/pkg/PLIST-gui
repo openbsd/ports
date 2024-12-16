@@ -1,7 +1,7 @@
 bin/onionshare-gui
 lib/python${MODPY_VERSION}/site-packages/onionshare_gui/
 lib/python${MODPY_VERSION}/site-packages/onionshare_gui/__init__.py
-lib/python${MODPY_VERSION}/site-packages/onionshare_gui/${MODPY_PYCACHE}/
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/onionshare_gui/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/onionshare_gui/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/onionshare_gui/${MODPY_PYCACHE}onionshare_gui.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/onionshare_gui/${MODPY_PYCACHE}server_status.${MODPY_PYC_MAGIC_TAG}pyc
@@ -13,9 +13,9 @@ lib/python${MODPY_VERSION}/site-packages/onionshare_gui/server_status.py
 lib/python${MODPY_VERSION}/site-packages/onionshare_gui/settings_dialog.py
 lib/python${MODPY_VERSION}/site-packages/onionshare_gui/tor_connection_dialog.py
 lib/python${MODPY_VERSION}/site-packages/onionshare_gui/update_checker.py
+share/applications/onionshare.desktop
 share/metainfo/
 share/metainfo/onionshare.appdata.xml
-share/applications/onionshare.desktop
 share/pixmaps/
 share/pixmaps/onionshare80.xpm
 @tag update-desktop-database
