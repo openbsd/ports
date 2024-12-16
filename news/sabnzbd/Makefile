@@ -1,7 +1,6 @@
 COMMENT =			retrieve and process nzb-files via web interface
 
-VERSION =			4.3.3
-REVISION =			0
+VERSION =			4.4.0
 DISTNAME =			SABnzbd-${VERSION}
 PKGNAME =			sabnzbd-${VERSION}
 
