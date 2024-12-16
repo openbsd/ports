@@ -4,8 +4,6 @@
 USE_WXNEEDED =		Yes
 USE_NOBTCFI =		Yes
 
-BROKEN-alpha =		GCC 5.0.0 is required to build WebKitGTK+, use a newer GCC version or clang
-BROKEN-hppa =		GCC 5.0.0 is required to build WebKitGTK+, use a newer GCC version or clang
 BROKEN-arm =		JavaScriptCore/runtime/MachineContext.h, various sigcontext-related
 
 PORTROACH =		limitw:1,even
@@ -16,6 +14,8 @@ V =			2.46.4
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk${API:S/.//}-${V}
 FULLPKGNAME =		${PKGNAME}
+
+REVISION =		0
 
 EXTRACT_SUFX =		.tar.xz
 SUBST_VARS =		API
@@ -47,7 +47,7 @@ WANTLIB += webp webpdemux webpmux woff2dec xml2 xslt z
 
 SITES =			https://webkitgtk.org/releases/
 
-COMPILER =		base-clang ports-gcc
+COMPILER =		base-clang ports-clang ports-gcc
 
 MODULES =		devel/cmake \
 			lang/python \
@@ -146,6 +146,18 @@ LIB_DEPENDS +=		devel/epoll-shim
 CXXFLAGS +=		$$(pkg-config --cflags epoll-shim)
 
 .include <bsd.port.arch.mk>
+
+# if we are using ports-gcc then use gcc 11
+USING_CLANG =		No
+.for _i in ${CLANG_ARCHS} ${LLVM_ARCHS}
+.  if !empty(MACHINE_ARCH:M${_i})
+USING_CLANG =		Yes
+.  endif
+.endfor
+
+.if ${USING_CLANG:L} == "no"
+MODGCC4_VERSION =	11
+.endif
 
 # disable thin archives for bfd;
 # and set DEBUG=-g1 for GNU ar(1) arches (libWebCoreGTK.a is too big (4.1G)):

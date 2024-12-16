@@ -1,0 +1,13 @@
+clang 16 on sparc64 does not support _Float16
+
+Index: Source/WTF/wtf/simde/arm/neon.h
+--- Source/WTF/wtf/simde/arm/neon.h.orig
++++ Source/WTF/wtf/simde/arm/neon.h
+@@ -8787,6 +8787,7 @@ SIMDE_BEGIN_DECLS_
+   #elif !defined(__EMSCRIPTEN__) && !(defined(__clang__) && defined(SIMDE_ARCH_POWER)) && \
+     !(defined(HEDLEY_MSVC_VERSION) && defined(__clang__)) && \
+     !(defined(SIMDE_ARCH_MIPS) && defined(__clang__)) && \
++    !(defined(SIMDE_ARCH_SPARC) && defined(__clang__)) && \
+     !(defined(SIMDE_ARCH_ZARCH) && defined(__clang__)) && \
+     !(defined(__clang__) && defined(SIMDE_ARCH_RISCV64)) && ( \
+       defined(SIMDE_X86_AVX512FP16_NATIVE) || \
