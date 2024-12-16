@@ -1,9 +1,9 @@
 COMMENT =	some useful dict-like structures
 
-MODPY_EGG_VERSION =	1.04
-DISTNAME =	cooldict-${MODPY_EGG_VERSION}
+MODPY_EGG_VERSION =	1.4
+DISTNAME =	cooldict-1.04
 PKGNAME =	py-${DISTNAME}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	devel
 
@@ -17,10 +17,10 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PYTEST =		Yes
+MODPY_PYBUILD =		setuptools
 
 FLAVORS =		python3
-FLAVOR =	python3
+FLAVOR =		python3
 
 RUN_DEPENDS =		devel/py-ana${MODPY_FLAVOR}
 
