@@ -4,17 +4,18 @@ MODPY_EGG_VERSION =	0.6.1
 DISTNAME =		python-nmap-${MODPY_EGG_VERSION}
 PKGNAME =		${DISTNAME:S/python/py/}
 CATEGORIES =		net
-REVISION =		6
+REVISION =		7
 
 HOMEPAGE =		http://xael.org/norman/python/python-nmap/
 SITES =			http://xael.org/pages/
 
-MAINTAINER = 		Remi Pointel <rpointel@openbsd.org>
+MAINTAINER =		Remi Pointel <rpointel@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		net/nmap
 
