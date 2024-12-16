@@ -4,7 +4,7 @@ MODPY_EGG_VERSION=	0.9.23
 DISTNAME=		dnslib-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		net
-REVISION=		0
+REVISION=		1
 
 MAINTAINER=		Bryan Everly <bryan@bceassociates.com>
 
@@ -12,11 +12,11 @@ MAINTAINER=		Bryan Everly <bryan@bceassociates.com>
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
+MODPY_PI =	Yes
+MODPY_PYBUILD =	setuptools
 
 FLAVORS =	python3
 FLAVOR =	python3
-
-MODPY_PI =	Yes
 
 do-test:
 	${SUBST_CMD} ${WRKSRC}/run_tests.sh
