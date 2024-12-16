@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	2008.1
 
 DISTNAME =	de421-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	astro
 
@@ -14,7 +14,7 @@ HOMEPAGE =	https://github.com/brandon-rhodes/python-jplephem/
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
-
+MODPY_PYBUILD =	setuptools
 MODPY_PI =	Yes
 NO_TEST =	Yes
 
