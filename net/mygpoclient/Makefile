@@ -3,7 +3,7 @@ COMMENT=		gpodder.net client library
 MODPY_EGG_VERSION=	1.9
 DISTNAME=		mygpoclient-${MODPY_EGG_VERSION}
 CATEGORIES=		net devel
-REVISION=		0
+REVISION=		1
 
 MAINTAINER=		Tim Meunier <trondd@kagu-tsuchi.com>
 
@@ -11,8 +11,8 @@ MAINTAINER=		Tim Meunier <trondd@kagu-tsuchi.com>
 PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
-
 MODPY_PI=		Yes
+MODPY_PYBUILD=		setuptools
 
 NO_TEST=		Yes
 
