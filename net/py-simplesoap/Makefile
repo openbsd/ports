@@ -3,15 +3,16 @@ COMMENT =	simple and lightweight SOAP library
 MODPY_EGG_VERSION = 1.16.2
 DISTNAME =	PySimpleSOAP-${MODPY_EGG_VERSION}
 PKGNAME =	py-simplesoap-${MODPY_EGG_VERSION}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	net
 
 # LGPLv3+
 PERMIT_PACKAGE =	Yes
 
-MODULES =		lang/python
-MODPY_PI =		Yes
+MODULES =	lang/python
+MODPY_PI =	Yes
+MODPY_PYBUILD =	setuptools
 
 FLAVORS =	python3
 FLAVOR =	python3
