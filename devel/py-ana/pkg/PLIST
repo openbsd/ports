@@ -1,12 +1,22 @@
 @pkgpath devel/py-ana
 lib/python${MODPY_VERSION}/site-packages/ana/
-lib/python${MODPY_VERSION}/site-packages/ana-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/ana-0.6.dist-info/
+lib/python${MODPY_VERSION}/site-packages/ana-0.6.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/ana-0.6.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/ana-0.6.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/ana-0.6.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/ana-0.6.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/ana/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ana/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/ana/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ana/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ana/${MODPY_PYCACHE}d.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ana/${MODPY_PYCACHE}d.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ana/${MODPY_PYCACHE}datalayer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ana/${MODPY_PYCACHE}datalayer.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ana/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ana/${MODPY_PYCACHE}errors.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ana/${MODPY_PYCACHE}storable.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ana/${MODPY_PYCACHE}storable.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ana/d.py
 lib/python${MODPY_VERSION}/site-packages/ana/datalayer.py
