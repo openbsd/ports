@@ -2,7 +2,7 @@ SHARED_LIBS +=  courier-unicode		2.0 # 2.0
 
 COMMENT =		courier unicode library
 
-DISTNAME =		courier-unicode-2.2.6
+DISTNAME =		courier-unicode-2.3.1
 
 CATEGORIES =		mail devel
 
