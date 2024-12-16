@@ -3,7 +3,7 @@ COMMENT=		CUPS bindings for Python
 MODPY_EGG_VERSION=	2.0.4
 DISTNAME=		pycups-${MODPY_EGG_VERSION}
 PKGNAME=		${DISTNAME:S/^py/py-/}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		print
 
@@ -19,6 +19,7 @@ WANTLIB += cups iconv pthread ${MODPY_WANTLIB}
 MODULES=		lang/python
 
 MODPY_PI=		Yes
+MODPY_PYBUILD=		setuptools
 
 FLAVORS=		python3
 FLAVOR=			python3
