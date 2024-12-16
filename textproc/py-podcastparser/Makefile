@@ -4,7 +4,7 @@ MODPY_EGG_VERSION=	0.6.10
 DISTNAME=	podcastparser-${MODPY_EGG_VERSION}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
-REVISION=	0
+REVISION=	1
 
 MAINTAINER=	Tim Meunier <trondd@kagu-tsuchi.com>
 
@@ -12,10 +12,8 @@ MAINTAINER=	Tim Meunier <trondd@kagu-tsuchi.com>
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
 MODPY_PI=	Yes
-
-MODPY_PYTEST=	Yes
+MODPY_PYBUILD=	setuptools
 
 BUILD_DEPENDS=	textproc/py-sphinx${MODPY_FLAVOR}
 
