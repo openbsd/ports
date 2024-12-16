@@ -4,6 +4,7 @@
     SUBDIR += fantasquesansmono
     SUBDIR += noto
     SUBDIR += profont
+    SUBDIR += symbolsonly
     SUBDIR += terminus
     SUBDIR += ubuntu
     SUBDIR += ubuntu-mono
