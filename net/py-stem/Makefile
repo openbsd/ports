@@ -3,7 +3,7 @@ COMMENT =		Tor controller library
 MODPY_EGG_VERSION =	1.8.2
 DISTNAME =		stem-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 
@@ -19,6 +19,7 @@ FLAVOR =		python3
 
 MODULES =		lang/python
 MODPY_PI =		Yes
+MODPY_PYBUILD =		setuptools
 
 NO_TEST =		Yes
 
