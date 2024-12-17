@@ -2,6 +2,7 @@ COMMENT=	Thunar media tags plugin
 
 XFCE_VERSION=	0.4.0
 THUNAR_PLUGIN=	thunar-media-tags-plugin
+REVISION=	0
 
 # GPLv3
 PERMIT_PACKAGE=	Yes
@@ -19,6 +20,8 @@ WANTLIB=	X11 Xcomposite Xcursor Xdamage Xext fribidi \
 		atk-bridge-2.0 cairo-gobject epoxy fribidi \
 		harfbuzz pthread graphite2 iconv intl
 WANTLIB += Xau Xdmcp execinfo jpeg atspi dbus-1
+WANTLIB += epoll-shim wayland-client wayland-cursor wayland-egl
+WANTLIB += xkbcommon
 
 LIB_DEPENDS=	x11/xfce4/thunar>=1.7.0 \
 		audio/taglib

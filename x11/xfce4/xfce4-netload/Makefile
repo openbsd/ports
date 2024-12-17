@@ -2,6 +2,7 @@ COMMENT=	Xfce4 network load monitor panel plugin
 
 XFCE_VERSION=	1.4.1
 XFCE_PLUGIN=	netload
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -19,6 +20,7 @@ WANTLIB += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8
 WANTLIB += pixman-1 png pthread startup-notification-1 xcb xcb-render
 WANTLIB += xcb-shm xcb-util xfce4ui-2 xfce4util z
 WANTLIB += Xau Xdmcp execinfo jpeg atspi dbus-1 gthread-2.0 xfconf-0
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += epoll-shim gtk-layer-shell wayland-client wayland-cursor
+WANTLIB += wayland-egl xkbcommon ${COMPILER_LIBCXX}
 
 .include <bsd.port.mk>

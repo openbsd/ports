@@ -2,6 +2,7 @@ COMMENT=	Xfce4 volume mixer
 
 XFCE_GOODIE=	xfce4-mixer
 XFCE_VERSION=	4.18.1
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -20,6 +21,8 @@ WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1
 WANTLIB += png startup-notification-1 xcb xcb-render xcb-shm xcb-util
 WANTLIB += xfce4panel-2.0 xfce4ui-2 xfce4util xfconf-0 z
 WANTLIB += Xau Xdmcp execinfo jpeg
+WANTLIB += epoll-shim gtk-layer-shell wayland-client wayland-cursor
+WANTLIB += wayland-egl xkbcommon
 
 LIB_DEPENDS=	multimedia/gstreamer1/core \
 		x11/xfce4/xfce4-panel

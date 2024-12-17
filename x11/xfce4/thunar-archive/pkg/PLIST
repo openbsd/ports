@@ -1,5 +1,4 @@
 @so lib/thunarx-3/thunar-archive-plugin.so
-libexec/thunar-archive-plugin/
 libexec/thunar-archive-plugin/ark.tap
 libexec/thunar-archive-plugin/engrampa.tap
 libexec/thunar-archive-plugin/file-roller.tap

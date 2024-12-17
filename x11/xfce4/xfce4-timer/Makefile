@@ -2,6 +2,7 @@ COMMENT=	Xfce4 timer/timeout plugin
 
 XFCE_VERSION=	1.7.2
 XFCE_PLUGIN=	timer
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -21,6 +22,6 @@ WANTLIB += harfbuzz iconv intl jpeg m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png startup-notification-1
 WANTLIB += wayland-client wayland-cursor wayland-egl xcb xcb-render
 WANTLIB += xcb-shm xcb-util xfce4ui-2 xfce4util xfconf-0 xkbcommon
-WANTLIB += z
+WANTLIB += z gtk-layer-shell
 
 .include <bsd.port.mk>

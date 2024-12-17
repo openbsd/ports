@@ -1,7 +1,7 @@
 COMMENT =	Thunar vcs integration plugin
 
 XFCE_VERSION =	0.2.0
-REVISION =	5
+REVISION =	6
 THUNAR_PLUGIN =	thunar-vcs-plugin
 
 HOMEPAGE = https://docs.xfce.org/xfce/thunar/${THUNAR_PLUGIN}
@@ -9,7 +9,7 @@ HOMEPAGE = https://docs.xfce.org/xfce/thunar/${THUNAR_PLUGIN}
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ICE SM X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
+WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi
 WANTLIB += Xinerama Xrandr Xrender apr-1 aprutil-1 atk-1.0 c cairo
 WANTLIB += db exo-2 expat ffi fontconfig freetype gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
@@ -22,6 +22,8 @@ WANTLIB += svn_repos-1 svn_subr-1 svn_wc-1 thunarx-3 xcb xcb-render
 WANTLIB += xcb-shm xfce4util z iconv intl ${COMPILER_LIBCXX}
 WANTLIB += atk-bridge-2.0 cairo-gobject epoxy fribidi lz4
 WANTLIB += Xau Xdmcp crypto execinfo jpeg atspi dbus-1
+WANTLIB += epoll-shim wayland-client wayland-cursor wayland-egl
+WANTLIB += xkbcommon
 
 MODULES =	x11/xfce4
 

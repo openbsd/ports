@@ -4,7 +4,7 @@ COMMENT=	Xfce4 battery monitor panel plugin
 
 XFCE_VERSION=	1.1.5
 XFCE_PLUGIN=	battery
-REVISION=	0
+REVISION=	1
 
 # BSD
 PERMIT_PACKAGE=	Yes
@@ -19,7 +19,8 @@ WANTLIB+= xcb xcb-render xcb-shm xcb-util xfce4ui-2 xfce4util z
 WANTLIB+= atk-bridge-2.0 cairo-gobject epoxy gdk-3 gtk-3 iconv intl
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += Xau Xdmcp execinfo jpeg atspi dbus-1 gthread-2.0 xfconf-0
-
+WANTLIB += epoll-shim gtk-layer-shell wayland-client wayland-cursor
+WANTLIB += wayland-egl xkbcommon
 
 MODULES=	x11/xfce4
 MODXFCE_ICON_CACHE=	Yes

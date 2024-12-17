@@ -2,6 +2,7 @@ COMMENT=	Xfce4 command line panel plugin
 
 XFCE_VERSION=	2.0.3
 XFCE_PLUGIN=	verve
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -19,6 +20,7 @@ WANTLIB += intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1
 WANTLIB += png pthread startup-notification-1 xcb xcb-render xcb-shm
 WANTLIB += xcb-util xfce4ui-2 xfce4util xfconf-0 z
 WANTLIB += Xau Xdmcp execinfo jpeg atspi dbus-1
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += epoll-shim gtk-layer-shell wayland-client wayland-cursor
+WANTLIB += wayland-egl xkbcommon ${COMPILER_LIBCXX}
 
 .include <bsd.port.mk>

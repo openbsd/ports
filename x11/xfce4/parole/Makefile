@@ -1,5 +1,5 @@
 COMMENT =	Xfce4 media player
-REVISION =	0
+REVISION =	1
 
 XFCE_GOODIE =	parole
 XFCE_VERSION =	4.18.1
@@ -20,6 +20,8 @@ WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png pthread
 WANTLIB += startup-notification-1 ${COMPILER_LIBCXX} tag tag_c xcb xcb-render
 WANTLIB += xcb-shm xcb-util xfce4ui-2 xfce4util xfconf-0 z iconv intl
 WANTLIB += Xau Xdmcp execinfo jpeg atspi
+WANTLIB += epoll-shim wayland-client wayland-cursor wayland-egl
+WANTLIB += xkbcommon
 
 COMPILER =		base-clang ports-gcc base-gcc
 

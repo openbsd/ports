@@ -2,6 +2,7 @@ COMMENT=	Xfce4 notification daemon
 
 XFCE_VERSION=	0.9.6
 XFCE_GOODIE=	xfce4-notifyd
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -31,7 +32,7 @@ WANTLIB += xcb-shm xfce4ui-2 xfce4util xfconf-0 z
 WANTLIB += harfbuzz graphite2 notify iconv intl fribidi
 WANTLIB += atk-bridge-2.0 cairo-gobject epoxy gdk-3 gtk-3
 WANTLIB += epoll-shim wayland-client wayland-cursor wayland-egl
-WANTLIB += xkbcommon
+WANTLIB += xkbcommon gtk-layer-shell
 WANTLIB += ${COMPILER_LIBCXX}
 
 .include <bsd.port.mk>

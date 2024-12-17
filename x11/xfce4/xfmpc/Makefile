@@ -2,6 +2,7 @@ COMMENT=	Xfce4 Music Player Daemon client
 
 XFCE_VERSION=	0.3.1
 XFCE_GOODIE=	xfmpc
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -15,7 +16,8 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png pthread
 WANTLIB += startup-notification-1 xcb xcb-render
 WANTLIB += xcb-shm xcb-util xfce4ui-2 xfce4util xfconf-0 z iconv intl
 WANTLIB += Xau Xdmcp execinfo jpeg atspi dbus-1
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += epoll-shim wayland-client wayland-cursor wayland-egl
+WANTLIB += xkbcommon ${COMPILER_LIBCXX}
 
 MODXFCE_DESKTOP_FILE=	Yes
 MODULES=	x11/xfce4

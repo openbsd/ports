@@ -2,7 +2,7 @@ COMMENT=	Xfce4 xkb layout switcher panel plugin
 
 XFCE_VERSION=	0.8.3
 XFCE_PLUGIN=	xkb
-REVISION=	6
+REVISION=	7
 
 # BSD
 PERMIT_PACKAGE=	Yes
@@ -23,6 +23,7 @@ WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png pthread rsvg-2
 WANTLIB += startup-notification-1 wnck-3 xcb xcb-render xcb-shm xcb-util
 WANTLIB += xfce4ui-2 xfce4util xfconf-0 xkbfile xklavier xml2 z
 WANTLIB += Xau Xdmcp execinfo jpeg
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += epoll-shim gtk-layer-shell wayland-client wayland-cursor
+WANTLIB += wayland-egl xkbcommon ${COMPILER_LIBCXX}
 
 .include <bsd.port.mk>

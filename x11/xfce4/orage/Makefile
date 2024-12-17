@@ -2,7 +2,7 @@ COMMENT=	Xfce4 calendar
 
 XFCE_VERSION=	4.18.0
 XFCE_GOODIE=	orage
-REVISION=	0
+REVISION=	1
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -26,5 +26,7 @@ WANTLIB += intl jpeg m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre2-8 pixman-1 png startup-notification-1 xcb xcb-render
 WANTLIB += xcb-shm xcb-util xfce4ui-2 xfce4util
 WANTLIB += db db_cxx ical icalss icalvcal icudata icui18n icuuc z
+WANTLIB += epoll-shim gthread-2.0 wayland-client wayland-cursor
+WANTLIB += wayland-egl xfconf-0 xkbcommon
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@ COMMENT=	Xfce4 web search panel plugin
 
 XFCE_VERSION=	0.5.2
 XFCE_PLUGIN=	smartbookmark
-REVISION=	3
+REVISION=	4
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -16,8 +16,9 @@ WANTLIB += freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gtk-3 harfbuzz
 WANTLIB += iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8
 WANTLIB += pixman-1 png pthread startup-notification-1 xcb xcb-render
-WANTLIB += xcb-shm xcb-util xfce4ui-2 xfce4util z
-WANTLIB += Xau Xdmcp execinfo jpeg atspi dbus-1
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += xcb-shm xcb-util xfce4ui-2 xfce4util xfconf-0 z
+WANTLIB += Xau Xdmcp execinfo jpeg atspi dbus-1 gthread-2.0
+WANTLIB += epoll-shim gtk-layer-shell wayland-client wayland-cursor
+WANTLIB += wayland-egl xkbcommon ${COMPILER_LIBCXX}
 
 .include <bsd.port.mk>

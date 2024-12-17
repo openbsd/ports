@@ -2,6 +2,7 @@ COMMENT=	Xfce4 cpu usage graph panel plugin
 
 XFCE_VERSION=	1.2.10
 XFCE_PLUGIN=	cpugraph
+REVISION=	0
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
@@ -15,7 +16,8 @@ WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png pthread
 WANTLIB += startup-notification-1 xcb xcb-render xcb-shm xcb-util
 WANTLIB += xfce4ui-2 xfce4util xfconf-0 z iconv intl execinfo jpeg
 WANTLIB += atk-bridge-2.0 atspi cairo-gobject dbus-1 epoxy fribidi
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += epoll-shim gtk-layer-shell wayland-client wayland-cursor
+WANTLIB += wayland-egl xkbcommon ${COMPILER_LIBCXX}
 
 MODULES=	x11/xfce4
 

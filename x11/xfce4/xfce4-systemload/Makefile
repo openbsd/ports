@@ -2,7 +2,7 @@ COMMENT=	Xfce4 cpu/memory/swap/uptime monitor panel plugin
 
 XFCE_VERSION=	1.3.2
 XFCE_PLUGIN=	systemload
-REVISION=	1
+REVISION=	2
 
 # BSD
 PERMIT_PACKAGE=	Yes
@@ -23,6 +23,7 @@ WANTLIB += xfce4util xfce4ui-2 gthread-2.0 gtop-2.0 xfconf-0 z
 WANTLIB += harfbuzz pthread graphite2 iconv intl
 WANTLIB += atk-bridge-2.0 cairo-gobject epoxy gdk-3 gtk-3
 WANTLIB += Xau Xdmcp execinfo jpeg
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += epoll-shim gtk-layer-shell wayland-client wayland-cursor
+WANTLIB += wayland-egl xkbcommon ${COMPILER_LIBCXX}
 
 .include <bsd.port.mk>

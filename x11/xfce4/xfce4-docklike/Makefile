@@ -2,6 +2,8 @@ COMMENT=	modern and minimalist taskbar for Xfce
 
 XFCE_VERSION=	0.4.2
 XFCE_PLUGIN=	docklike
+REVISION=	0
+
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
@@ -18,6 +20,6 @@ WANTLIB += intl jpeg m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8
 WANTLIB += pixman-1 png startup-notification-1 wnck-3 xcb xcb-render
 WANTLIB += xcb-shm xcb-util xfce4ui-2 xfce4util xfconf-0 z
 WANTLIB += epoll-shim wayland-client wayland-cursor wayland-egl
-WANTLIB += xkbcommon
+WANTLIB += xkbcommon gtk-layer-shell
 
 .include <bsd.port.mk>
