@@ -1,0 +1,23 @@
+https://github.com/mupen64plus/mupen64plus-video-glide64mk2/pull/129
+
+Index: src/GlideHQ/TxCache.cpp
+--- src/GlideHQ/TxCache.cpp.orig
++++ src/GlideHQ/TxCache.cpp
+@@ -237,7 +237,7 @@ TxCache::save(const wchar_t *path, const wchar_t *file
+     /* dump cache to disk */
+     char cbuf[MAX_PATH];
+ 
+-    boost::filesystem::wpath cachepath(path);
++    boost::filesystem::path cachepath(path);
+     boost::filesystem::create_directory(cachepath);
+ 
+     /* Ugly hack to enable fopen/gzopen in Win9x */
+@@ -330,7 +330,7 @@ TxCache::load(const wchar_t *path, const wchar_t *file
+   /* find it on disk */
+   char cbuf[MAX_PATH];
+ 
+-  boost::filesystem::wpath cachepath(path);
++  boost::filesystem::path cachepath(path);
+ 
+ #ifdef BOOST_WINDOWS_API
+   wchar_t curpath[MAX_PATH];

@@ -1,0 +1,14 @@
+https://github.com/mupen64plus/mupen64plus-video-glide64mk2/pull/129
+
+Index: src/GlideHQ/TxHiResCache.h
+--- src/GlideHQ/TxHiResCache.h.orig
++++ src/GlideHQ/TxHiResCache.h
+@@ -47,7 +47,7 @@ class TxHiResCache : public TxCache (private)
+   TxImage *_txImage;
+   TxQuantize *_txQuantize;
+   TxReSample *_txReSample;
+-  boolean loadHiResTextures(boost::filesystem::wpath dir_path, boolean replace);
++  boolean loadHiResTextures(boost::filesystem::path dir_path, boolean replace);
+ public:
+   ~TxHiResCache();
+   TxHiResCache(int maxwidth, int maxheight, int maxbpp, int options,
