@@ -1,13 +1,12 @@
 COMMENT =	Yet Another SWF Parser
 
 MODPY_EGG_VERSION =	0.9.3
-DISTNAME =	yaswfp-${MODPY_EGG_VERSION}
+DISTNAME =	yaswfp-${MODPY_EGG_VERSION}pl20220304
 PKGNAME =	py-${DISTNAME}
-REVISION =	5
 
 GH_ACCOUNT =	facundobatista
 GH_PROJECT =	yaswfp
-GH_COMMIT =	2a2cc6ca4c0b4d52bd2e658fb5f80fdc0db4924c
+GH_COMMIT =	c945213c0e967a207bc52e7d163248f7f09a267b
 
 CATEGORIES =	security devel
 
@@ -15,14 +14,7 @@ CATEGORIES =	security devel
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
-
-TEST_DEPENDS =	devel/pyflakes${MODPY_FLAVOR} \
-		devel/py-nose${MODPY_FLAVOR}
-
-do-test:
-	sed -i "s/nosetests3/nosetests${MODPY_BIN_SUFFIX}/g" ${WRKSRC}/test
-	sed -i "s/flake8/pyflakes${MODPY_BIN_SUFFIX}/g" ${WRKSRC}/test
-	cd ${WRKSRC} && /bin/sh ./test
+MODPY_PYBUILD =	setuptools
 
 FLAVORS =	python3
 FLAVOR =	python3
