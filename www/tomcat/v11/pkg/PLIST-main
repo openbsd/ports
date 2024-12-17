@@ -93,7 +93,7 @@ tomcat/lib/catalina-ssi.jar
 tomcat/lib/catalina-storeconfig.jar
 tomcat/lib/catalina-tribes.jar
 tomcat/lib/catalina.jar
-tomcat/lib/ecj-4.33.jar
+tomcat/lib/ecj-4.34.jar
 tomcat/lib/el-api.jar
 tomcat/lib/jakartaee-migration-1.0.8-shaded.jar
 tomcat/lib/jasper-el.jar
