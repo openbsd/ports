@@ -1,24 +1,24 @@
 COMMENT=	D-Bus thumbnailing service
 
 XFCE_PROJECT=	tumbler
-XFCE_VERSION=	4.18.2
 
 SHARED_LIBS+=	tumbler-1 1.0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += X11 Xext Xrender aom avcodec avformat avutil bz2 c cairo
-WANTLIB += crypto curl dav1d expat ffi ffmpegthumbnailer
-WANTLIB += fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0
-WANTLIB += gmodule-2.0 gobject-2.0 gsf-1 gthread-2.0 jpeg
-WANTLIB += lcms2 lzma m nghttp2 ogg openjp2 pcre2-8 pixman-1 png poppler
-WANTLIB += poppler-glib pthread ssl swscale tiff harfbuzz
-WANTLIB += vorbis xcb xcb-render xcb-shm xml2 z iconv intl
-WANTLIB += ${COMPILER_LIBCXX} ass avfilter fribidi unibreak
-WANTLIB += gsm mp3lame opus postproc speex swresample vorbisenc
-WANTLIB += vpx x264 x265 xfce4util xvidcore theoradec theoraenc zstd
-WANTLIB += Xau Xdmcp vidstab nghttp3 ngtcp2 ngtcp2_crypto_quictls zimg
+WANTLIB += ${COMPILER_LIBCXX} Lerc X11 X11-xcb Xau Xdmcp Xext
+WANTLIB += Xfixes Xrender aom ass avcodec avfilter avformat avutil
+WANTLIB += bz2 c cairo crypto curl dav1d drm expat ffi ffmpegthumbnailer
+WANTLIB += fontconfig freetype fribidi gdk_pixbuf-2.0 gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gsf-1 gsm gthread-2.0
+WANTLIB += harfbuzz iconv intl jpeg lcms2 lzma m mp3lame nghttp2
+WANTLIB += nghttp3 ngtcp2 ngtcp2_crypto_quictls ogg openjp2 opus
+WANTLIB += pcre2-8 pixman-1 png poppler poppler-glib postproc
+WANTLIB += speex ssl swresample swscale theoradec theoraenc tiff
+WANTLIB += unibreak va va-drm va-x11 vidstab vorbis vorbisenc
+WANTLIB += vpx x264 x265 xcb xcb-dri3 xcb-render xcb-shm xfce4util
+WANTLIB += xml2 xvidcore z zimg zstd
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -41,6 +41,7 @@ LIB_DEPENDS +=	x11/xfce4/libxfce4util>=4.17.1 \
 		graphics/png \
 		graphics/jpeg \
 		graphics/ffmpegthumbnailer \
+		graphics/ffmpeg \
 		graphics/gdk-pixbuf2
 
 .include <bsd.port.mk>
