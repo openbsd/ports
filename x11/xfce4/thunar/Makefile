@@ -1,9 +1,8 @@
 COMMENT=	Xfce4 file manager
 
 XFCE_PROJECT=	thunar
-XFCE_VERSION=	4.18.11
 
-SHARED_LIBS=	thunarx-3	0.1
+SHARED_LIBS=	thunarx-3	0.2
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -18,7 +17,7 @@ WANTLIB += gtk-3 harfbuzz iconv intl jpeg m notify pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png startup-notification-1
 WANTLIB += wayland-client wayland-cursor wayland-egl xcb xcb-render
 WANTLIB += xcb-shm xcb-util xfce4kbd-private-3 xfce4ui-2 xfce4util
-WANTLIB += xfconf-0 xkbcommon z
+WANTLIB += xfconf-0 xkbcommon z gtk-layer-shell
 
 MODULES=	x11/xfce4
 MODXFCE_DESKTOP_FILE=	Yes
@@ -34,9 +33,9 @@ FAKE_FLAGS=	defaultsdir=${PREFIX}/share/examples/Thunar
 
 BUILD_DEPENDS =	textproc/gtk-doc
 
-LIB_DEPENDS=	x11/xfce4/exo>=4.17.0 \
+LIB_DEPENDS=	x11/xfce4/exo>=4.19.0 \
 		x11/xfce4/libxfce4ui>=4.17.6 \
-		x11/xfce4/xfce4-panel \
+		x11/xfce4/xfce4-panel>=4.19.0 \
 		devel/libnotify \
 		devel/pcre2 \
 		graphics/libexif
