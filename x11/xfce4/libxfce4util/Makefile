@@ -1,9 +1,8 @@
 COMMENT=	Xfce4 basic utility library
 
 XFCE_PROJECT=	libxfce4util
-XFCE_VERSION=	4.18.2
 
-SHARED_LIBS +=	xfce4util            4.3 #.7.0
+SHARED_LIBS +=	xfce4util            4.4 #.7.0
 
 # LGPLv2
 PERMIT_PACKAGE=	Yes
