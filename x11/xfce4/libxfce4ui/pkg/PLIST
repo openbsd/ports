@@ -14,7 +14,9 @@ include/xfce4/libxfce4ui-2/
 include/xfce4/libxfce4ui-2/libxfce4ui/
 include/xfce4/libxfce4ui-2/libxfce4ui/libxfce4ui-config.h
 include/xfce4/libxfce4ui-2/libxfce4ui/libxfce4ui-enum-types.h
+include/xfce4/libxfce4ui-2/libxfce4ui/libxfce4ui-enums.h
 include/xfce4/libxfce4ui-2/libxfce4ui/libxfce4ui.h
+include/xfce4/libxfce4ui-2/libxfce4ui/xfce-clipboard-manager.h
 include/xfce4/libxfce4ui-2/libxfce4ui/xfce-dialogs.h
 include/xfce4/libxfce4ui-2/libxfce4ui/xfce-filename-input.h
 include/xfce4/libxfce4ui-2/libxfce4ui/xfce-gdk-extensions.h
@@ -44,6 +46,7 @@ share/glade/catalogs/libxfce4ui-2.xml
 share/glade/pixmaps/hicolor/16x16/actions/widget-libxfce4ui-xfce-titled-dialog.png
 share/glade/pixmaps/hicolor/22x22/actions/widget-libxfce4ui-xfce-titled-dialog.png
 share/gtk-doc/html/libxfce4ui/
+share/gtk-doc/html/libxfce4ui/XfceClipboardManager.html
 share/gtk-doc/html/libxfce4ui/XfceFilenameInput.html
 share/gtk-doc/html/libxfce4ui/XfceSMClient.html
 share/gtk-doc/html/libxfce4ui/XfceScreensaver.html
@@ -54,6 +57,7 @@ share/gtk-doc/html/libxfce4ui/api-index-4-12.html
 share/gtk-doc/html/libxfce4ui/api-index-4-14.html
 share/gtk-doc/html/libxfce4ui/api-index-4-16.html
 share/gtk-doc/html/libxfce4ui/api-index-4-18.html
+share/gtk-doc/html/libxfce4ui/api-index-4-20.html
 share/gtk-doc/html/libxfce4ui/api-index-deprecated.html
 share/gtk-doc/html/libxfce4ui/api-index-full.html
 share/gtk-doc/html/libxfce4ui/home.png
@@ -102,8 +106,6 @@ share/locale/en_GB/LC_MESSAGES/libxfce4ui.mo
 share/locale/es/LC_MESSAGES/libxfce4ui.mo
 share/locale/et/LC_MESSAGES/libxfce4ui.mo
 share/locale/eu/LC_MESSAGES/libxfce4ui.mo
-share/locale/fa_IR/
-share/locale/fa_IR/LC_MESSAGES/
 share/locale/fa_IR/LC_MESSAGES/libxfce4ui.mo
 share/locale/fi/LC_MESSAGES/libxfce4ui.mo
 share/locale/fr/LC_MESSAGES/libxfce4ui.mo
