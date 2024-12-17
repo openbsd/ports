@@ -1,3 +1,8 @@
 @conflict rcsparse-*
-lib/python${MODPY_VERSION}/site-packages/rcsparse-0.1-py${MODPY_VERSION}.egg-info
+@pkgpath devel/py-rcsparse
+lib/python${MODPY_VERSION}/site-packages/rcsparse-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/rcsparse-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/rcsparse-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/rcsparse-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/rcsparse-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 @so lib/python${MODPY_VERSION}/site-packages/rcsparse.${MODPY_PYC_MAGIC_TAG}so
