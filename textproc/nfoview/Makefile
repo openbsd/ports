@@ -2,7 +2,7 @@ COMMENT =	simple viewer for NFO files
 MODPY_EGG_VERSION =	1.28.1
 DISTNAME =	nfoview-${MODPY_EGG_VERSION}
 CATEGORIES =	textproc x11
-REVISION =	3
+REVISION =	4
 
 GH_ACCOUNT =	otsaloma
 GH_PROJECT =	nfoview
@@ -15,6 +15,7 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
+MODPY_PYBUILD =	setuptools
 
 BUILD_DEPENDS =	devel/gettext,-tools
 
@@ -26,14 +27,17 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 # pygobject GTK3 introspection (not provided by indirect dependencies)
 RUN_DEPENDS +=	x11/gtk+3
 
-TEST_DEPENDS =	devel/py-test${MODPY_FLAVOR} \
-		devel/py-gobject3${MODPY_FLAVOR}
+# tests fail with Trace/BPT trap
+MODPY_PYTEST_ARGS = -v nfoview/unittest.py nfoview/test/test_*.py
+TEST_DEPENDS =	devel/py-gobject3${MODPY_FLAVOR}
 
 post-patch:
 	sed -i "s,share/man,man,g" ${WRKSRC}/setup.py
 
-do-test:
-	cd ${WRKSRC}/nfoview && ${LOCALBASE}/bin/py.test unittest.py
-	cd ${WRKSRC}/nfoview/test && ${LOCALBASE}/bin/py.test test_*
+post-install:
+	sed -i \
+	    -e 's,^DATA_DIR = .*$$,DATA_DIR = "${TRUEPREFIX}/share/nfoview",' \
+	    -e 's,^LOCALE_DIR = .*$$,LOCALE_DIR = "${TRUEPREFIX}/share/locale",' \
+	    ${WRKINST}${MODPY_SITEPKG}/nfoview/paths.py
 
 .include <bsd.port.mk>
