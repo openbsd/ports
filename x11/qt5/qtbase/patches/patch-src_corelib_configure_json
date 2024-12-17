@@ -1,0 +1,15 @@
+icu needs c++17
+
+Index: src/corelib/configure.json
+--- src/corelib/configure.json.orig
++++ src/corelib/configure.json
+@@ -102,7 +102,8 @@
+                     "UCollator *collator = ucol_open(\"ru_RU\", &status);",
+                     "if (!U_FAILURE(status))",
+                     "    ucol_close(collator);"
+-                ]
++                ],
++                "qmake": "CONFIG += c++17"
+             },
+             "headers": [ "unicode/utypes.h", "unicode/ucol.h", "unicode/ustring.h" ],
+             "sources": [
