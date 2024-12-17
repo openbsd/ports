@@ -148,14 +148,7 @@ CXXFLAGS +=		$$(pkg-config --cflags epoll-shim)
 .include <bsd.port.arch.mk>
 
 # if we are using ports-gcc then use gcc 11
-USING_CLANG =		No
-.for _i in ${CLANG_ARCHS} ${LLVM_ARCHS}
-.  if !empty(MACHINE_ARCH:M${_i})
-USING_CLANG =		Yes
-.  endif
-.endfor
-
-.if ${USING_CLANG:L} == "no"
+.if !${PROPERTIES:Mclang} && !${PROPERTIES:Mllvm}
 MODGCC4_VERSION =	11
 .endif
 
