@@ -1,6 +1,6 @@
 COMMENT=	Xfce4 pulseaudio control line panel plugin
 
-XFCE_VERSION=	0.4.8
+XFCE_VERSION=	0.4.9
 XFCE_PLUGIN=	pulseaudio
 
 # GPLv2
@@ -14,10 +14,9 @@ LIB_DEPENDS+=	x11/xfce4/exo \
 		audio/libcanberra \
 		audio/pulseaudio \
 		devel/libnotify \
-		devel/libwnck3 \
 		devel/startup-notification
 
-WANTLIB += FLAC ICE SM X11 X11-xcb XRes Xcomposite Xcursor Xdamage Xext
+WANTLIB += FLAC ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0
 WANTLIB += atspi cairo cairo-gobject dbus-1 epoxy execinfo exo-2 expat
 WANTLIB += ffi fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0
@@ -27,6 +26,8 @@ WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png pthread pulse
 WANTLIB += pulse-mainloop-glib sndfile startup-notification-1 vorbis
 WANTLIB += vorbisenc wnck-3 xcb xcb-render xcb-shm xcb-util xfce4ui-2
 WANTLIB += xfce4util xfconf-0 z Xau Xdmcp jpeg opus mp3lame mpg123
+WANTLIB += display-info epoll-shim wayland-client wayland-cursor
+WANTLIB += wayland-egl xfce4windowing-0 xkbcommon
 WANTLIB += canberra ltdl vorbisfile ${COMPILER_LIBCXX}
 
 .include <bsd.port.mk>
