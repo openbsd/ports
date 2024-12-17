@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	2.23
 
 DISTNAME =	sgp4-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	astro
 
@@ -21,7 +21,7 @@ FLAVORS =	python3
 FLAVOR =	python3
 
 MODULES =	lang/python
-
+MODPY_PYBUILD =	setuptools
 MODPY_PI =	Yes
 MODPY_PYTEST_ARGS = sgp4/tests.py
 
