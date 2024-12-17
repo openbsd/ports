@@ -1,12 +1,11 @@
 COMMENT-main =		Xfce desktop meta-package (base installation)
 COMMENT-extras =	Xfce desktop meta-package (full installation)
 
-V =		4.18.1
+V =		4.20.0
 PKGNAME=	xfce-${V}
 
 PKGNAME-main =		xfce-${V}
 PKGNAME-extras =	xfce-extras-${V}
-REVISION-extras =	0
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 

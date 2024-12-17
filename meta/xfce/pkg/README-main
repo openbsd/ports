@@ -76,3 +76,14 @@ on that topic.
 
 More generally, https://docs.xfce.org and https://docs.xfce.org/faq
 are the best resources for user-level documentation.
+
+Wayland
+=======
+
+Xfce 4.20 has initial wayland support, even if the xfwm4 window manager
+doesn't support wayland yet. It is advised to use labwc or wayfire as
+the compositor.
+
+the 'startxfce4' script now has a --wayland option.
+
+see https://wiki.xfce.org/releng/wayland_roadmap#testing for more details.
