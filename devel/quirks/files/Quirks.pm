@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1681 2024/12/16 15:03:38 naddy Exp $
+# $OpenBSD: Quirks.pm,v 1.1682 2024/12/17 17:12:15 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1210,6 +1210,8 @@ setup_obsolete_reason(
 	3 => 'pcmanfm',
 	3 => 'libfm',
 	3 => qr{^nextcloud-(27|28|29)},
+	3 => 'cvs20hg',
+	3 => 'git-cvs',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

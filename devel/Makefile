@@ -109,7 +109,6 @@
      SUBDIR += cutils
      SUBDIR += cutter
      SUBDIR += cvs-fast-export
-     SUBDIR += cvs20hg
      SUBDIR += cvs2cl
      SUBDIR += cvs2gitdump
      SUBDIR += cvs2svn
@@ -184,7 +183,6 @@
      SUBDIR += git-cinnabar
      SUBDIR += git-cola
      SUBDIR += git-crypt
-     SUBDIR += git-cvs
      SUBDIR += git-filter-repo
      SUBDIR += git-lfs
      SUBDIR += github-backup
@@ -1630,7 +1628,6 @@
      SUBDIR += py-qt-builder,python3
      SUBDIR += py-r2pipe,python3
      SUBDIR += py-radix,python3
-     SUBDIR += py-rcsparse
      SUBDIR += py-rcsparse,python3
      SUBDIR += py-regex,python3
      SUBDIR += py-rencode,python3
