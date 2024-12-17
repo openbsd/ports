@@ -1,6 +1,6 @@
 COMMENT =	(re)name a sub
 
-DISTNAME =	Sub-Name-0.27
+DISTNAME =	Sub-Name-0.28
 FIX_EXTRACT_PERMISSIONS =	Yes
 
 CATEGORIES =	devel
