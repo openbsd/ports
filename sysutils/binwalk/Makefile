@@ -4,7 +4,7 @@ MODPY_EGG_VERSION = 2.3.4
 GH_ACCOUNT =	ReFirmLabs
 GH_PROJECT =	binwalk
 GH_TAGNAME =	v${MODPY_EGG_VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	sysutils
 
@@ -14,6 +14,7 @@ MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
 PERMIT_PACKAGE =Yes
 
 MODULES =	lang/python
+MODPY_PYBUILD =	setuptools
 
 MODPY_PYTEST =		Yes
 MODPY_PYTEST_ARGS =	testing/tests
