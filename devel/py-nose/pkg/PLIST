@@ -1,13 +1,8 @@
-@pkgpath devel/py-nose
 @conflict py-nose-<1.3.7p7
+@pkgpath devel/py-nose
 bin/nosetests${MODPY_BIN_SUFFIX}
+bin/pynose
 lib/python${MODPY_VERSION}/site-packages/nose/
-lib/python${MODPY_VERSION}/site-packages/nose-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/nose-${MODPY_EGG_VERSION}.dist-info/AUTHORS
-lib/python${MODPY_VERSION}/site-packages/nose-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/nose-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/nose-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/nose-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/nose/__init__.py
 lib/python${MODPY_VERSION}/site-packages/nose/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nose/${MODPY_PYCACHE}/
@@ -15,6 +10,8 @@ lib/python${MODPY_VERSION}/site-packages/nose/${MODPY_PYCACHE}__init__.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/nose/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nose/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nose/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nose/${MODPY_PYCACHE}__version__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/nose/${MODPY_PYCACHE}__version__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nose/${MODPY_PYCACHE}case.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nose/${MODPY_PYCACHE}case.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nose/${MODPY_PYCACHE}commands.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -47,19 +44,12 @@ lib/python${MODPY_VERSION}/site-packages/nose/${MODPY_PYCACHE}twistedtools.${MOD
 lib/python${MODPY_VERSION}/site-packages/nose/${MODPY_PYCACHE}twistedtools.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nose/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nose/${MODPY_PYCACHE}util.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nose/__version__.py
 lib/python${MODPY_VERSION}/site-packages/nose/case.py
 lib/python${MODPY_VERSION}/site-packages/nose/commands.py
 lib/python${MODPY_VERSION}/site-packages/nose/config.py
 lib/python${MODPY_VERSION}/site-packages/nose/core.py
 lib/python${MODPY_VERSION}/site-packages/nose/exc.py
-lib/python${MODPY_VERSION}/site-packages/nose/ext/
-lib/python${MODPY_VERSION}/site-packages/nose/ext/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nose/ext/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/nose/ext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/nose/ext/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/nose/ext/${MODPY_PYCACHE}dtcompat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/nose/ext/${MODPY_PYCACHE}dtcompat.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/nose/ext/dtcompat.py
 lib/python${MODPY_VERSION}/site-packages/nose/failure.py
 lib/python${MODPY_VERSION}/site-packages/nose/importer.py
 lib/python${MODPY_VERSION}/site-packages/nose/inspector.py
@@ -103,8 +93,6 @@ lib/python${MODPY_VERSION}/site-packages/nose/plugins/${MODPY_PYCACHE}multiproce
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/${MODPY_PYCACHE}multiprocess.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/${MODPY_PYCACHE}plugintest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/${MODPY_PYCACHE}plugintest.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/nose/plugins/${MODPY_PYCACHE}prof.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/nose/plugins/${MODPY_PYCACHE}prof.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/${MODPY_PYCACHE}skip.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/${MODPY_PYCACHE}skip.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/${MODPY_PYCACHE}testid.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -128,7 +116,6 @@ lib/python${MODPY_VERSION}/site-packages/nose/plugins/logcapture.py
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/manager.py
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/multiprocess.py
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/plugintest.py
-lib/python${MODPY_VERSION}/site-packages/nose/plugins/prof.py
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/skip.py
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/testid.py
 lib/python${MODPY_VERSION}/site-packages/nose/plugins/xunit.py
@@ -159,14 +146,12 @@ lib/python${MODPY_VERSION}/site-packages/nose/tools/trivial.py
 lib/python${MODPY_VERSION}/site-packages/nose/twistedtools.py
 lib/python${MODPY_VERSION}/site-packages/nose/usage.txt
 lib/python${MODPY_VERSION}/site-packages/nose/util.py
-@man man/man1/nosetests${MODPY_BIN_SUFFIX}.1
-share/doc/${MODPY_PY_PREFIX}nose/
-share/doc/${MODPY_PY_PREFIX}nose/README.txt
-share/examples/${MODPY_PY_PREFIX}nose/
-share/examples/${MODPY_PY_PREFIX}nose/attrib_plugin.py
-share/examples/${MODPY_PY_PREFIX}nose/html_plugin/
-share/examples/${MODPY_PY_PREFIX}nose/html_plugin/htmlplug.py
-share/examples/${MODPY_PY_PREFIX}nose/html_plugin/setup.py
-share/examples/${MODPY_PY_PREFIX}nose/plugin/
-share/examples/${MODPY_PY_PREFIX}nose/plugin/plug.py
-share/examples/${MODPY_PY_PREFIX}nose/plugin/setup.py
+lib/python${MODPY_VERSION}/site-packages/pynose-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pynose-${MODPY_EGG_VERSION}.dist-info/AUTHORS
+lib/python${MODPY_VERSION}/site-packages/pynose-${MODPY_EGG_VERSION}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/pynose-${MODPY_EGG_VERSION}.dist-info/LICENSE.cpython
+lib/python${MODPY_VERSION}/site-packages/pynose-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/pynose-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/pynose-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pynose-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/pynose-${MODPY_EGG_VERSION}.dist-info/top_level.txt
