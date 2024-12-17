@@ -79,8 +79,6 @@ share/locale/en_GB/LC_MESSAGES/exo.mo
 share/locale/es/LC_MESSAGES/exo.mo
 share/locale/et/LC_MESSAGES/exo.mo
 share/locale/eu/LC_MESSAGES/exo.mo
-share/locale/fa_IR/
-share/locale/fa_IR/LC_MESSAGES/
 share/locale/fa_IR/LC_MESSAGES/exo.mo
 share/locale/fi/LC_MESSAGES/exo.mo
 share/locale/fr/LC_MESSAGES/exo.mo
@@ -127,6 +125,7 @@ share/locale/ug/LC_MESSAGES/exo.mo
 share/locale/uk/LC_MESSAGES/exo.mo
 share/locale/ur/LC_MESSAGES/exo.mo
 share/locale/ur_PK/LC_MESSAGES/exo.mo
+share/locale/uz/LC_MESSAGES/exo.mo
 share/locale/vi/LC_MESSAGES/exo.mo
 share/locale/zh_CN/LC_MESSAGES/exo.mo
 share/locale/zh_HK/LC_MESSAGES/exo.mo

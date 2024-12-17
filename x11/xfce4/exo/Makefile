@@ -1,9 +1,8 @@
 COMMENT=	Xfce4 extension library
 
 XFCE_PROJECT=	exo
-XFCE_VERSION=	4.18.0
 
-SHARED_LIBS=	exo-2	1.0 # 1.0
+SHARED_LIBS=	exo-2	1.1 # 1.0
 
 # GPLv2/LGPLv2
 PERMIT_PACKAGE=	Yes
@@ -26,6 +25,7 @@ WANTLIB=	ICE SM X11 Xcomposite Xcursor Xdamage Xext Xau Xdmcp execinfo jpeg \
 		m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 \
 		png pthread z xcb X11-xcb startup-notification-1 \
 		xcb-render xfce4util xcb-shm ffi harfbuzz graphite2 iconv intl \
+		epoll-shim wayland-client wayland-cursor wayland-egl xfconf-0 xkbcommon \
 		atk-bridge-2.0 cairo-gobject epoxy gdk-3 gtk-3 ${COMPILER_LIBCXX}
 
 .include <bsd.port.mk>
