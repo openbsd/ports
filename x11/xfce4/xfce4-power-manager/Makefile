@@ -1,7 +1,6 @@
 COMMENT =	Xfce4 power manager
 
 XFCE_PROJECT =	xfce4-power-manager
-XFCE_VERSION =	4.18.4
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -25,7 +24,7 @@ RUN_DEPENDS +=	sysutils/consolekit
 CONFIGURE_ENV +=ac_cv_lib_Xext_DPMSQueryExtension=yes
 FAKE_FLAGS =	autostartdir=${PREFIX}/share/examples/xfce4-power-manager
 
-WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext
+WANTLIB += ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage Xdmcp Xext
 WANTLIB += Xfixes Xi Xinerama Xrandr Xrender atk-1.0 c cairo
 WANTLIB += expat ffi fontconfig freetype atspi dbus-1
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
@@ -35,7 +34,8 @@ WANTLIB += png pthread startup-notification-1 xcb
 WANTLIB += xcb-util xcb-render xcb-shm xfce4panel-2.0 xfce4ui-2
 WANTLIB += xfce4util xfconf-0 z upower-glib iconv intl
 WANTLIB += atk-bridge-2.0 cairo-gobject epoxy gdk-3 gtk-3 fribidi
+WANTLIB += epoll-shim execinfo gtk-layer-shell jpeg polkit-gobject-1
+WANTLIB += wayland-client wayland-cursor wayland-egl xkbcommon
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += Xau Xdmcp execinfo jpeg
 
 .include <bsd.port.mk>
