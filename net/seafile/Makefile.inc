@@ -10,6 +10,6 @@ MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 AUTOCONF_VERSION ?=	2.69
-AUTOMAKE_VERSION ?=	1.15
+AUTOMAKE_VERSION ?=	1.16
 
 #.include <bsd.port.mk>
