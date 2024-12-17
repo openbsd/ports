@@ -1,10 +1,9 @@
 COMMENT=	optimise a list of IPv4/IPv6 prefixes
 
-MODPY_EGG_VERSION=	1.0.12
+MODPY_EGG_VERSION=	1.0.14
 
 DISTNAME=	aggregate6-${MODPY_EGG_VERSION}
 CATEGORIES=	net
-REVISION=	5
 
 HOMEPAGE=	https://github.com/job/aggregate6/
 
