@@ -1,3 +1,6 @@
+# No Big Endian support
+NOT_FOR_ARCHS=	${BE_ARCHS}
+
 COMMENT=	free audio editor
 
 # fosshub has proper tarballs, but they are on time-expired URLs
