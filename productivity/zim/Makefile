@@ -2,7 +2,7 @@ COMMENT =		desktop wiki
 
 MODPY_EGG_VERSION =	0.75.2
 DISTNAME =		zim-${MODPY_EGG_VERSION}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		productivity
 
@@ -17,14 +17,15 @@ SITES =			https://zim-wiki.org/downloads/
 
 NO_TEST =		Yes
 
-MODULES =       	lang/python
+MODULES =		lang/python
+MODPY_PYBUILD =		setuptools
 
 COMMON_DEPENDS =	devel/py-gobject3${MODPY_FLAVOR} \
 			devel/py-xdg${MODPY_FLAVOR} \
 			devel/xdg-utils \
 			x11/gtk+3
 
-BUILD_DEPENDS = 	${COMMON_DEPENDS}
+BUILD_DEPENDS =		${COMMON_DEPENDS}
 
 RUN_DEPENDS =		${COMMON_DEPENDS} \
 			devel/desktop-file-utils \
@@ -33,5 +34,8 @@ RUN_DEPENDS =		${COMMON_DEPENDS} \
 
 PORTHOME =		${WRKDIR}
 MAKE_ENV +=		XDG_RUNTIME_DIR=${PORTHOME}
+
+post-install:
+	cp -r ${WRKSRC}/xdg/hicolor ${PREFIX}/share/icons/
 
 .include <bsd.port.mk>
