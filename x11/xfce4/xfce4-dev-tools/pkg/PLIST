@@ -1,5 +1,7 @@
 bin/xdt-autogen
+bin/xdt-check-abi
 @bin bin/xdt-csource
+bin/xdt-gen-visibility
 @comment bin/xfce-build
 bin/xfce-do-release
 bin/xfce-get-release-notes
