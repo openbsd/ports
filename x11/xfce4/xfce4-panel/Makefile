@@ -1,9 +1,8 @@
 COMMENT=	Xfce4 desktop panel
 
 XFCE_PROJECT=	xfce4-panel
-XFCE_VERSION=	4.18.6
 
-SHARED_LIBS=	xfce4panel-2.0	0.2 # 4.0
+SHARED_LIBS=	xfce4panel-2.0	0.3 # 4.0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -17,10 +16,10 @@ WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz
 WANTLIB += m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png
 WANTLIB += pthread startup-notification-1 wnck-3 xcb
 WANTLIB += xcb-render xcb-shm xcb-util xfce4ui-2 xfce4util xfconf-0 z
-WANTLIB += iconv intl exo-2 jpeg atspi dbus-1
+WANTLIB += iconv intl exo-2 jpeg atspi dbus-1 display-info
 WANTLIB += dbusmenu-glib dbusmenu-gtk3 Xau Xdmcp execinfo
 WANTLIB += epoll-shim wayland-client wayland-cursor wayland-egl
-WANTLIB += xkbcommon
+WANTLIB += xkbcommon gtk-layer-shell xfce4windowing-0 xfce4windowingui-0
 WANTLIB += ${COMPILER_LIBCXX}
 
 MODULES=	x11/xfce4
@@ -32,9 +31,11 @@ BUILD_DEPENDS += devel/gobject-introspection lang/vala
 LIB_DEPENDS=	x11/xfce4/exo>=0.11.2 \
 		x11/xfce4/libxfce4ui>=4.15.6 \
 		x11/xfce4/libxfce4util>=4.15.6 \
+		x11/xfce4/libxfce4windowing>=4.19.6 \
 		x11/xfce4/xfconf>=4.13.3 \
 		x11/xfce4/garcon>=0.5.0 \
 		x11/libdbusmenu \
+		wayland/gtk-layer-shell \
 		devel/libwnck3
 
 FAKE_FLAGS=	confdir=${PREFIX}/share/examples/xfce4-panel
