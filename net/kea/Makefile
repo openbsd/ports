@@ -2,6 +2,7 @@ COMMENT=	high-performance and extensible DHCP server engine from ISC
 
 VERSION=	2.4.1
 PORTROACH=	limitw:1,even
+REVISION=	0
 
 DISTNAME=	kea-${VERSION}
 PKGNAME-main=	kea-${VERSION:S/-P/pl/}

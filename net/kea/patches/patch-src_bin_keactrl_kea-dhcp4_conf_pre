@@ -1,7 +1,7 @@
 Index: src/bin/keactrl/kea-dhcp4.conf.pre
 --- src/bin/keactrl/kea-dhcp4.conf.pre.orig
 +++ src/bin/keactrl/kea-dhcp4.conf.pre
-@@ -429,7 +429,7 @@
+@@ -436,7 +436,7 @@
                  // - syslog (logs to syslog)
                  // - syslog:name (logs to syslog using specified name)
                  // Any other value is considered a name of the file

@@ -1,0 +1,14 @@
+https://github.com/isc-projects/kea/pull/143
+
+Index: src/lib/dhcp/iface_mgr.cc
+--- src/lib/dhcp/iface_mgr.cc.orig
++++ src/lib/dhcp/iface_mgr.cc
+@@ -1021,7 +1021,7 @@ IfaceMgr::getLocalAddress(const IOAddress& remote_addr
+     }
+ 
+     // Create socket that will be used to connect to remote endpoint.
+-    boost::asio::io_service io_service;
++    boost::asio::io_context io_service;
+     boost::asio::ip::udp::socket sock(io_service);
+ 
+     boost::system::error_code err_code;

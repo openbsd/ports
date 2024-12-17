@@ -1,0 +1,38 @@
+https://github.com/isc-projects/kea/pull/143
+
+Index: src/lib/asiolink/io_service.cc
+--- src/lib/asiolink/io_service.cc.orig
++++ src/lib/asiolink/io_service.cc
+@@ -25,7 +25,7 @@ class IOServiceImpl { (public)
+     /// \brief The constructor
+     IOServiceImpl() :
+         io_service_(),
+-        work_(new boost::asio::io_service::work(io_service_)) {
++        work_(boost::asio::make_work_guard(io_service_)) {
+     };
+ 
+     /// \brief The destructor.
+@@ -73,7 +73,7 @@ class IOServiceImpl { (public)
+ 
+     /// \brief Restarts the IOService in preparation for a subsequent \c run() invocation.
+     void restart() {
+-        io_service_.reset();
++        io_service_.restart();
+     }
+ 
+     /// \brief Removes IO service work object to let it finish running
+@@ -96,12 +96,12 @@ class IOServiceImpl { (public)
+     ///
+     /// \param callback The callback to be run on the IO service.
+     void post(const std::function<void ()>& callback) {
+-        io_service_.post(callback);
++        boost::asio::post(io_service_, callback);
+     }
+ 
+ private:
+     boost::asio::io_service io_service_;
+-    boost::shared_ptr<boost::asio::io_service::work> work_;
++    boost::asio::executor_work_guard<boost::asio::io_service::executor_type> work_;
+ };
+ 
+ IOService::IOService() : io_impl_(new IOServiceImpl()) {
