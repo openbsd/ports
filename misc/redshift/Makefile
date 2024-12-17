@@ -2,7 +2,7 @@ COMMENT=		automatic color temperature adjustment
 
 V=			1.12
 DISTNAME=		redshift-$V
-REVISION=		9
+REVISION=		10
 
 CATEGORIES=		misc graphics
 
@@ -37,7 +37,19 @@ RUN_DEPENDS +=		x11/gtk+3
 SEPARATE_BUILD=		Yes
 USE_GMAKE=		Yes
 
-CONFIGURE_STYLE=	gnu
+# upstream tar was generated with automake-1.15; py-compile from there
+# is not compatible with python 3.12 (uses imp which was removed)
+AUTOCONF_VERSION=	2.69
+AUTOMAKE_VERSION=	1.16
+CONFIGURE_STYLE=	autoreconf
+#CONFIGURE_STYLE=	gnu
+
+# if autoconf files are regenerated but intltoolize is not re-run,
+# configure errors out with "po/Makefile.in.in was not created by
+# intltoolize"
+pre-configure:
+	cd ${WRKSRC}; intltoolize --force
+
 CONFIGURE_ARGS=		--enable-gui \
 			--disable-geoclue
 
