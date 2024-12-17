@@ -1,8 +1,6 @@
 COMMENT=	Xfce4 window manager
-REVISION=	1
 
 XFCE_PROJECT=	xfwm4
-XFCE_VERSION=	4.18.0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -25,6 +23,7 @@ WANTLIB += startup-notification-1 wnck-3 xcb xcb-util
 WANTLIB += xcb-render xcb-shm xfce4kbd-private-3 xfce4ui-2 xfce4util
 WANTLIB += xfconf-0 z graphite2 harfbuzz iconv intl epoxy
 WANTLIB += atk-bridge-2.0 cairo-gobject fribidi ${COMPILER_LIBCXX}
-WANTLIB += Xau Xdmcp execinfo jpeg
+WANTLIB += epoll-shim wayland-client wayland-cursor wayland-egl
+WANTLIB += Xau Xdmcp execinfo jpeg xkbcommon
 
 .include <bsd.port.mk>
