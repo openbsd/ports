@@ -3,6 +3,7 @@
      SUBDIR += garcon
      SUBDIR += libxfce4util
      SUBDIR += libxfce4ui
+     SUBDIR += libxfce4windowing
      SUBDIR += mousepad
      SUBDIR += orage
      SUBDIR += parole
