@@ -1,7 +1,6 @@
 COMMENT =	Xfce4 freedesktop.org compliant menu implementation
 
 XFCE_PROJECT =	garcon
-XFCE_VERSION =	4.18.2
 
 SHARED_LIBS +=	garcon-1	0.1
 SHARED_LIBS +=	garcon-gtk3-1	0.1 # 0.0
