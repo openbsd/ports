@@ -8,7 +8,7 @@ GH_COMMIT =	16d12822563cd5cae8675788134ac0ff6e9f5c01
 
 DISTNAME =	analyzeMFT-${MODPY_EGG_VERSION}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	sysutils security
 
@@ -18,6 +18,7 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
+MODPY_PYBUILD =	setuptools
 
 NO_TEST =	Yes
 
