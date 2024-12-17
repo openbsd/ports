@@ -1,7 +1,6 @@
 COMMENT=	Xfce4 session manager
 
 XFCE_PROJECT=	xfce4-session
-XFCE_VERSION=	4.18.4
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -18,8 +17,11 @@ CONFIGURE_ARGS=	--disable-linker-opts \
 #CONFIGURE_ARGS+= --enable-session-screenshots
 #XXX session-screenshots broken?
 # http://bugzilla.xfce.org/show_bug.cgi?id=6885
-LIB_DEPENDS=	x11/xfce4/libxfce4ui>=4.18.2 \
-		x11/xfce4/xfconf>=4.9.0 \
+LIB_DEPENDS=	x11/xfce4/libxfce4ui>=4.18.4 \
+		x11/xfce4/libxfce4util>=4.19.2 \
+		x11/xfce4/libxfce4windowing \
+		x11/xfce4/xfconf>=4.12.0 \
+		wayland/gtk-layer-shell \
 		sysutils/polkit \
 		devel/libwnck3
 
@@ -33,12 +35,14 @@ WANTLIB += startup-notification-1 wnck-3 xcb xcb-util
 WANTLIB += xcb-render xcb-shm xfce4ui-2 xfce4util xfconf-0 z
 WANTLIB += harfbuzz graphite2 polkit-gobject-1 iconv intl
 WANTLIB += atk-bridge-2.0 cairo-gobject epoxy gdk-3 gtk-3
-WANTLIB += Xau Xdmcp execinfo jpeg
+WANTLIB += Xau Xdmcp display-info execinfo jpeg
+WANTLIB += epoll-shim gtk-layer-shell wayland-client wayland-cursor
+WANTLIB += wayland-egl xfce4windowing-0 xkbcommon
 WANTLIB += ${COMPILER_LIBCXX}
 
 FAKE_FLAGS=	settingsdir=${PREFIX}/share/examples/xfce4-session \
 		conffilesdir=${PREFIX}/share/examples/xfce4-session \
-		autostartdir=${PREFIX}/share/examples/xfce4-session
+		desktop_waylanddir=${PREFIX}/share/examples/xfce4-session
 
 post-install:
 	${SUBST_CMD} ${PREFIX}/bin/xflock4

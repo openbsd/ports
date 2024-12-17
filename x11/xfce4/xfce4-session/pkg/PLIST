@@ -14,12 +14,11 @@ share/applications/xfce-session-settings.desktop
 share/applications/xfce4-session-logout.desktop
 share/examples/xfce4-session/
 share/examples/xfce4-session/Xft.xrdb
+share/examples/xfce4-session/xfce-wayland.desktop
 share/examples/xfce4-session/xfce4-session.xml
 @sample ${SYSCONFDIR}/xdg/xfce4/xfconf/xfce-perchannel-xml/xfce4-session.xml
 share/examples/xfce4-session/xinitrc
 @sample ${SYSCONFDIR}/xdg/xfce4/xinitrc
-share/examples/xfce4-session/xscreensaver.desktop
-@sample ${SYSCONFDIR}/xdg/autostart/xscreensaver.desktop
 share/icons/hicolor/128x128/apps/org.xfce.session.png
 share/icons/hicolor/16x16/apps/org.xfce.session.png
 share/icons/hicolor/24x24/actions/xfsm-hibernate.png
@@ -53,6 +52,9 @@ share/locale/am/LC_MESSAGES/xfce4-session.mo
 share/locale/ar/LC_MESSAGES/xfce4-session.mo
 share/locale/ast/LC_MESSAGES/xfce4-session.mo
 share/locale/az/LC_MESSAGES/xfce4-session.mo
+share/locale/az_AZ/
+share/locale/az_AZ/LC_MESSAGES/
+share/locale/az_AZ/LC_MESSAGES/xfce4-session.mo
 share/locale/be/LC_MESSAGES/xfce4-session.mo
 share/locale/be@tarask/
 share/locale/be@tarask/LC_MESSAGES/
@@ -86,6 +88,7 @@ share/locale/ie/LC_MESSAGES/xfce4-session.mo
 share/locale/is/LC_MESSAGES/xfce4-session.mo
 share/locale/it/LC_MESSAGES/xfce4-session.mo
 share/locale/ja/LC_MESSAGES/xfce4-session.mo
+share/locale/ka/LC_MESSAGES/xfce4-session.mo
 share/locale/kk/LC_MESSAGES/xfce4-session.mo
 share/locale/ko/LC_MESSAGES/xfce4-session.mo
 share/locale/lt/LC_MESSAGES/xfce4-session.mo
