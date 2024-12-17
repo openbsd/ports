@@ -1,3 +1,5 @@
+BROKEN-sparc64=	relocation truncated to fit: R_SPARC_GOT13
+
 COMMENT=		free open source disk encryption software
 
 V=			1.25.9
