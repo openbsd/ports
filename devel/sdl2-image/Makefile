@@ -1,9 +1,8 @@
-V =		2.8.2
+V =		2.8.3
 COMMENT =	SDL2 image library
 DISTNAME =	SDL2_image-${V}
 PKGNAME =	sdl2-image-${V}
 CATEGORIES =	devel graphics
-REVISION =	1
 
 SHARED_LIBS +=	SDL2_image		1.1 # 2.8.2
 
@@ -14,10 +13,10 @@ MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 # zlib
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} SDL2 X11 Xcursor Xext Xfixes Xi Xrandr Xrender
-WANTLIB += Xss aom avif brotlicommon brotlidec brotlienc dav1d hwy jpeg jxl jxl_cms
-WANTLIB += lcms2 lzma m pthread samplerate sharpyuv sndio tiff usbhid webp
-WANTLIB += webpdemux xcb z zstd
+WANTLIB += ${COMPILER_LIBCXX} Lerc SDL2 X11 Xcursor Xext Xfixes Xi Xrandr
+WANTLIB += Xrender Xss aom avif brotlicommon brotlidec brotlienc dav1d hwy iconv
+WANTLIB += jpeg jxl jxl_cms lcms2 lzma m pthread samplerate sharpyuv sndio tiff
+WANTLIB += usbhid webp webpdemux xcb z zstd
 
 SITES =		https://www.libsdl.org/projects/SDL_image/release/
 
@@ -38,6 +37,9 @@ CONFIGURE_ARGS +=	--disable-avif-shared \
 			--disable-tif-shared \
 			--disable-webp-shared
 CONFIGURE_ENV +=	OBJC="${CC}"
+
+AUTOCONF_VERSION =	2.71
+AUTOMAKE_VERSION =	1.16
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/sdl2_image-config.cmake.in
