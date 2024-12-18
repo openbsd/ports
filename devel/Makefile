@@ -1716,6 +1716,7 @@
      SUBDIR += py-three-merge,python3
      SUBDIR += py-thrift,python3
      SUBDIR += py-timelib,python3
+     SUBDIR += py-tokenize-rt,python3
      SUBDIR += py-toolz,python3
      SUBDIR += py-toposort,python3
      SUBDIR += py-tox,python3
@@ -1774,6 +1775,7 @@
      SUBDIR += pylint,python3
      SUBDIR += pystring			# not python ;)
      SUBDIR += pyusb,python3
+     SUBDIR += pyupgrade
      SUBDIR += qbs
      SUBDIR += qcoro
      SUBDIR += qgit
