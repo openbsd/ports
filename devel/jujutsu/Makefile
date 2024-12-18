@@ -2,10 +2,9 @@ COMMENT =		version control system with git compatibility backend
 
 V =			0.24.0
 PKGNAME =		jujutsu-$V
-GH_ACCOUNT =		martinvonz
-GH_PROJECT =		jj
-GH_TAGNAME =		v$V
-REVISION =		1
+
+DIST_TUPLE =		github jj-vcs jj v$V .
+REVISION =		2
 
 CATEGORIES =		devel
 

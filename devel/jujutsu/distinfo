@@ -400,7 +400,7 @@ SHA256 (cargo/zerovec-derive-0.10.3.tar.gz) = bq+m37F1hOo+K9bnbgzBWtevErCavdHKVZ
 SHA256 (cargo/zstd-0.12.4.tar.gz) = GidZXhc2QRcfx0oSMrexx6fLbhgiLBHp37mIj6QkxTw=
 SHA256 (cargo/zstd-safe-6.0.6.tar.gz) = 7pj/0LSO6V5sUWgYjkSlRVCxVk2dUw7iHV8OrtEGlYE=
 SHA256 (cargo/zstd-sys-2.0.13+zstd.1.5.6.tar.gz) = OP8PIc/uj5fZTO9BNZ4MiaphEwKKsCkaqMoAOJlalao=
-SHA256 (jj-0.24.0.tar.gz) = wOkuwlt1AN7sI3mpWrZVxskgIc9MyylRH+4jd+N7NdY=
+SHA256 (jj-vcs-jj-v0.24.0.tar.gz) = wOkuwlt1AN7sI3mpWrZVxskgIc9MyylRH+4jd+N7NdY=
 SIZE (cargo/addr2line-0.22.0.tar.gz) = 39156
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/adler2-2.0.0.tar.gz) = 13529
@@ -803,4 +803,4 @@ SIZE (cargo/zerovec-derive-0.10.3.tar.gz) = 19438
 SIZE (cargo/zstd-0.12.4.tar.gz) = 30434
 SIZE (cargo/zstd-safe-6.0.6.tar.gz) = 20828
 SIZE (cargo/zstd-sys-2.0.13+zstd.1.5.6.tar.gz) = 749090
-SIZE (jj-0.24.0.tar.gz) = 1687520
+SIZE (jj-vcs-jj-v0.24.0.tar.gz) = 1687520
