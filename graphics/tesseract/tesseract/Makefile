@@ -16,7 +16,13 @@ WANTLIB += pixman-1 png sharpyuv ssl tiff webp webpmux xcb xcb-render
 WANTLIB += xcb-shm z zstd
 
 # c++11: needed to build the training tools
+.if ${MACHINE_ARCH} != riscv64
 COMPILER=		base-clang ports-gcc
+.else
+# riscv64 assembly needs llvm>=17
+COMPILER=		ports-clang
+MODCLANG_VERSION=	17
+.endif
 
 USE_GMAKE=		Yes
 
