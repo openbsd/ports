@@ -1,11 +1,11 @@
 COMMENT =	open asset import library
 CATEGORIES =	multimedia
 
-SHARED_LIBS +=	assimp                    2.0 # 5.0
+SHARED_LIBS +=	assimp                    3.0 # 5.0
 
 GH_ACCOUNT =	assimp
 GH_PROJECT =	assimp
-GH_TAGNAME =	v5.2.5
+GH_TAGNAME =	v5.4.3
 
 HOMEPAGE =	https://www.assimp.org/
 
