@@ -12,6 +12,7 @@ share/doc/dnscontrol/providers/bind.md
 share/doc/dnscontrol/providers/bunny_dns.md
 share/doc/dnscontrol/providers/cloudflareapi.md
 share/doc/dnscontrol/providers/cloudns.md
+share/doc/dnscontrol/providers/cnr.md
 share/doc/dnscontrol/providers/cscglobal.md
 share/doc/dnscontrol/providers/desec.md
 share/doc/dnscontrol/providers/digitalocean.md
