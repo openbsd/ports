@@ -1,6 +1,6 @@
 COMMENT =	CLI program to download videos from YouTube and other sites
 
-VERSION =	2024.12.06
+VERSION =	2024.12.13
 # on backport keep REVISION above -stable for 7.6 (no cryptodomex in -stable)
 MODPY_EGG_VERSION =	${VERSION:S/.0/./g}
 
