@@ -51,7 +51,7 @@ post-install:
 .endfor
 
 do-test:
-	cd ${WRKSRC}; exabgp_log_enable=false nosetests${MODPY_BIN_SUFFIX} --with-coverage ./qa/tests/*_test.py
+	cd ${WRKSRC}; exabgp_log_enable=false nosetests --with-coverage ./qa/tests/*_test.py
 	cd ${WRKSRC}; ./qa/bin/functional run
 
 .include <bsd.port.mk>

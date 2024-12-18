@@ -27,6 +27,6 @@ post-patch:
 	cd ${WRKSRC}; 2to3 -w tempita/*py
 
 do-test:
-	cd ${WRKSRC}; ${LOCALBASE}/bin/nosetests${MODPY_BIN_SUFFIX}
+	cd ${WRKSRC}; ${LOCALBASE}/bin/nosetests
 
 .include <bsd.port.mk>

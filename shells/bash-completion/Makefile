@@ -22,7 +22,7 @@ USE_GMAKE =		Yes
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.16
 CONFIGURE_STYLE =	autoreconf
-CONFIGURE_ENV =		PYTEST=py.test${MODPY_BIN_SUFFIX}
+CONFIGURE_ENV =		PYTEST=py.test
 
 FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/bash-completion/
 

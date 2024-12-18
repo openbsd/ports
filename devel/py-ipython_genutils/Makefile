@@ -26,6 +26,6 @@ FLAVOR =		python3
 
 do-test:
 	cd ${WRKSRC} && LC_CTYPE=C.UTF-8 \
-	    ${LOCALBASE}/bin/nosetests${MODPY_BIN_SUFFIX} --first-package-wins
+	    ${LOCALBASE}/bin/nosetests --first-package-wins
 
 .include <bsd.port.mk>

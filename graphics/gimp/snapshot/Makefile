@@ -129,7 +129,7 @@ CONFIGURE_ARGS +=	-Dopenmp=disabled
 # needs libiff
 CONFIGURE_ARGS +=	-Dilbm=disabled
 
-UPDATE_PLIST_ARGS +=	-i MODPY_PY_PREFIX -i MODPY_BIN_SUFFIX
+UPDATE_PLIST_ARGS +=	-i MODPY_PY_PREFIX
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/extensions/goat-exercises/goat-exercise-lua.lua

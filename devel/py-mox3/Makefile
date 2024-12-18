@@ -26,6 +26,6 @@ FLAVORS =	python3
 FLAVOR =	python3
 
 do-test:
-	cd ${WRKSRC}; nosetests${MODPY_BIN_SUFFIX}
+	cd ${WRKSRC}; nosetests
 
 .include <bsd.port.mk>

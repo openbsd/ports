@@ -22,9 +22,8 @@ RUN_DEPENDS =	textproc/py-yaml${MODPY_FLAVOR}
 FLAVORS =	python3
 FLAVOR =	python3
 
-# make it possible to install both (un)FLAVORed packages alongside
 post-install:
 	rm -rf ${PREFIX}/share/doc/dtfabric/
-	mv ${PREFIX}/bin/validate-definitions.py ${PREFIX}/bin/validate-definitions${MODPY_BIN_SUFFIX}
+	mv ${PREFIX}/bin/validate-definitions.py ${PREFIX}/bin/validate-definitions
 
 .include <bsd.port.mk>

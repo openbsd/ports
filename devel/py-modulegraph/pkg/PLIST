@@ -1,6 +1,6 @@
 @conflict py-modulegraph-*
 @pkgpath devel/py-modulegraph
-bin/modulegraph${MODPY_BIN_SUFFIX}
+bin/modulegraph
 lib/python${MODPY_VERSION}/site-packages/modulegraph/
 lib/python${MODPY_VERSION}/site-packages/modulegraph-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/modulegraph-${MODPY_EGG_VERSION}.dist-info/LICENSE

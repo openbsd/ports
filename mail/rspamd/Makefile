@@ -116,7 +116,7 @@ NO_TEST=	Yes
 #		RSPAMD=${TRUEPREFIX}/bin/rspamd \
 #		RSPAMD_TESTDIR=${WRKSRC}/test \
 #		RSPAMD_INSTALLROOT=${WRKINST} \
-#		${LOCALBASE}/bin/robot${MODPY_BIN_SUFFIX} \
+#		${LOCALBASE}/bin/robot \
 #		test/functional/cases
 
 pre-configure:

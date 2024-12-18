@@ -1,5 +1,5 @@
 @conflict py-test-<4.4.0p2
-bin/py.test${MODPY_BIN_SUFFIX}
+bin/py.test
 @comment bin/pytest
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}py.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -1,6 +1,6 @@
 @conflict py-elftools-*
 @pkgpath devel/py-elftools
-bin/readelf.py${MODPY_BIN_SUFFIX}
+bin/readelf.py
 lib/python${MODPY_VERSION}/site-packages/elftools/
 lib/python${MODPY_VERSION}/site-packages/elftools/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/elftools/${MODPY_PYCACHE}/

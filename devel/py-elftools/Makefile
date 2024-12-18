@@ -25,7 +25,6 @@ EXAMPLEDIR =	${PREFIX}/share/examples/${MODPY_PY_PREFIX}elftools
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLEDIR}
 	${INSTALL_SCRIPT} ${WRKSRC}/examples/*.py ${EXAMPLEDIR}/
-	mv ${PREFIX}/bin/readelf.py{,${MODPY_BIN_SUFFIX}}
 
 TEST_ENV +=		PYTHONPATH=${WRKSRC}:${WRKSRC}/test
 

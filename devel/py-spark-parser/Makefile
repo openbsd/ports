@@ -22,7 +22,4 @@ RUN_DEPENDS =		devel/py-click${MODPY_FLAVOR}
 FLAVORS =		python3
 FLAVOR =		python3
 
-post-install:
-	mv ${PREFIX}/bin/spark-parser-coverage{,${MODPY_BIN_SUFFIX}}
-
 .include <bsd.port.mk>

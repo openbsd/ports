@@ -33,7 +33,7 @@ TEST_DEPENDS +=		databases/influxdb \
 do-test:
 	# XXX ignore tests in client_test_with_server.py as distfile is missing
 	# server_tests/influxdb.conf.template
-	cd ${WRKSRC}/influxdb/tests && nosetests${MODPY_BIN_SUFFIX} \
+	cd ${WRKSRC}/influxdb/tests && nosetests \
 		--ignore-files=client_test_with_server.py
 
 .include <bsd.port.mk>

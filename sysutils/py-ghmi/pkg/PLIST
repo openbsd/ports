@@ -1,8 +1,8 @@
 @pkgpath sysutils/py-ghmi
-bin/fakebmc${MODPY_BIN_SUFFIX}
-bin/pyghmicons${MODPY_BIN_SUFFIX}
-bin/pyghmiutil${MODPY_BIN_SUFFIX}
-bin/virshbmc${MODPY_BIN_SUFFIX}
+bin/fakebmc
+bin/pyghmicons
+bin/pyghmiutil
+bin/virshbmc
 lib/python${MODPY_VERSION}/site-packages/pyghmi/
 lib/python${MODPY_VERSION}/site-packages/pyghmi-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/pyghmi-${MODPY_EGG_VERSION}.dist-info/AUTHORS

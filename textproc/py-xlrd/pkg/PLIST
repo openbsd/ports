@@ -1,6 +1,6 @@
 @conflict py-xlrd-*
 @pkgpath textproc/py-xlrd
-bin/runxlrd${MODPY_BIN_SUFFIX}
+bin/runxlrd
 lib/python${MODPY_VERSION}/site-packages/xlrd/
 lib/python${MODPY_VERSION}/site-packages/xlrd-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/xlrd-${MODPY_EGG_VERSION}.dist-info/LICENSE

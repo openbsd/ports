@@ -107,7 +107,7 @@ CONFIGURE_ARGS+= \
 		--without-alsa \
 		--without-webkit
 
-UPDATE_PLIST_ARGS +=	-i MODPY_PY_PREFIX -i MODPY_BIN_SUFFIX
+UPDATE_PLIST_ARGS +=	-i MODPY_PY_PREFIX
 
 post-install:
 	${MODPY_COMPILEALL} ${PREFIX}/lib/gimp/2.0/plug-ins

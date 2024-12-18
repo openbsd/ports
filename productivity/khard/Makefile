@@ -31,8 +31,8 @@ USE_GMAKE =		Yes
 post-build:
 	@cd ${WRKSRC} && \
 		${MAKE_PROGRAM} -C doc man \
-		SPHINXAPIDOC=${LOCALBASE}/bin/sphinx-apidoc${MODPY_BIN_SUFFIX} \
-		SPHINXBUILD=${LOCALBASE}/bin/sphinx-build${MODPY_BIN_SUFFIX}
+		SPHINXAPIDOC=${LOCALBASE}/bin/sphinx-apidoc \
+		SPHINXBUILD=${LOCALBASE}/bin/sphinx-build
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/khard

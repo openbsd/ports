@@ -1,5 +1,5 @@
 @conflict ${MODPY_PY_PREFIX}ropper-<1.12.5p2
-bin/ropper${MODPY_BIN_SUFFIX}
+bin/ropper
 lib/python${MODPY_VERSION}/site-packages/ropper/
 lib/python${MODPY_VERSION}/site-packages/ropper-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/ropper-${MODPY_EGG_VERSION}.dist-info/METADATA

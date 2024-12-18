@@ -1,5 +1,5 @@
 @conflict py-virtualenv-<16.0.0p5
-bin/virtualenv${MODPY_BIN_SUFFIX}
+bin/virtualenv
 lib/python${MODPY_VERSION}/site-packages/virtualenv/
 lib/python${MODPY_VERSION}/site-packages/virtualenv-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/virtualenv-${MODPY_EGG_VERSION}.dist-info/METADATA

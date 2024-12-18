@@ -1,7 +1,7 @@
 @conflict py-vobject-<0.9.6.1p2
 @pkgpath textproc/py-vobject
-bin/change_tz${MODPY_BIN_SUFFIX}
-bin/ics_diff${MODPY_BIN_SUFFIX}
+bin/change_tz
+bin/ics_diff
 lib/python${MODPY_VERSION}/site-packages/vobject/
 lib/python${MODPY_VERSION}/site-packages/vobject-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/vobject-${MODPY_EGG_VERSION}.dist-info/LICENSE-2.0.txt

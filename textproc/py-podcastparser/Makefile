@@ -28,10 +28,10 @@ MAKE_ENV=	PYTHON=${MODPY_BIN}
 
 post-build:
 	cd ${WRKSRC}/doc && ${MAKE_ENV} ${MAKE_PROGRAM} man \
-		SPHINXBUILD=sphinx-build${MODPY_BIN_SUFFIX}
+		SPHINXBUILD=sphinx-build
 
 post-install:
 	${INSTALL_DATA} ${WRKSRC}/doc/_build/man/podcastparser.1 \
-		${PREFIX}/man/man1/podcastparser${MODPY_BIN_SUFFIX}.1
+		${PREFIX}/man/man1/podcastparser.1
 
 .include <bsd.port.mk>

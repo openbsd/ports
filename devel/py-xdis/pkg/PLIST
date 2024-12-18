@@ -1,6 +1,6 @@
 @conflict py-xdis-<3.6.11p3
 @pkgpath devel/py-xdis
-bin/pydisasm${MODPY_BIN_SUFFIX}
+bin/pydisasm
 lib/python${MODPY_VERSION}/site-packages/test_unit/
 lib/python${MODPY_VERSION}/site-packages/test_unit/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/test_unit/${MODPY_PYCACHE}/

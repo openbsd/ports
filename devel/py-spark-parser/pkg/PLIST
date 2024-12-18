@@ -1,6 +1,6 @@
 @conflict py-spark-parser-<1.6.1p4
 @pkgpath devel/py-spark-parser
-bin/spark-parser-coverage${MODPY_BIN_SUFFIX}
+bin/spark-parser-coverage
 lib/python${MODPY_VERSION}/site-packages/spark_parser/
 lib/python${MODPY_VERSION}/site-packages/spark_parser-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/spark_parser-${MODPY_EGG_VERSION}.dist-info/LICENSE

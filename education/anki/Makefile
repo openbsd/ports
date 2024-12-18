@@ -48,9 +48,7 @@ RUN_DEPENDS =	audio/lame \
 		www/py-requests${MODPY_FLAVOR}
 
 do-build:
-.for i in pyuic5 pyrcc5
-	ln -fs ${LOCALBASE}/bin/$i${MODPY_BIN_SUFFIX} ${WRKDIR}/bin/$i
-.endfor
+	ln -fs ${LOCALBASE}/bin/{pyuic5,pyrcc5} ${WRKDIR}/bin/$i
 	cd ${WRKSRC} && ${MAKE_ENV} sh tools/build_ui.sh
 
 do-install:

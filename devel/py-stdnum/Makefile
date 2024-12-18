@@ -25,7 +25,6 @@ TEST_DEPENDS=		devel/py-nose${MODPY_FLAVOR}
 
 do-test:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${TEST_ENV} ${MODPY_BIN} \
-		${LOCALBASE}/bin/nosetests${MODPY_BIN_SUFFIX} \
-		--cover-min-percentage=0 tests
+		${LOCALBASE}/bin/nosetests --cover-min-percentage=0 tests
 
 .include <bsd.port.mk>

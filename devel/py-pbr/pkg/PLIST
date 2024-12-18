@@ -1,6 +1,6 @@
 @conflict py-pbr-<4.0.2p2
 @pkgpath devel/py-pbr
-bin/pbr${MODPY_BIN_SUFFIX}
+bin/pbr
 lib/python${MODPY_VERSION}/site-packages/pbr/
 lib/python${MODPY_VERSION}/site-packages/pbr-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/pbr-${MODPY_EGG_VERSION}.dist-info/AUTHORS

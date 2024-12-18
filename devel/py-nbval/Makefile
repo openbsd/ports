@@ -30,8 +30,4 @@ TEST_DEPENDS =		devel/py-nbval${MODPY_FLAVOR} \
 FLAVORS =		python3
 FLAVOR =		python3
 
-post-patch:
-	sed -i 's,py.test,py.test${MODPY_BIN_SUFFIX},' \
-		${WRKSRC}/tests/test_unit_tests_in_notebooks.py
-
 .include <bsd.port.mk>

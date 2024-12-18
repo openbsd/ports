@@ -35,6 +35,6 @@ FLAVOR =		python3
 
 # Need NLTK data for some tests (run python -m nltk.downloader)
 do-test:
-	cd ${WRKSRC}; ${LOCALBASE}/bin/nosetests${MODPY_BIN_SUFFIX} nltk
+	cd ${WRKSRC}; ${LOCALBASE}/bin/nosetests nltk
 
 .include <bsd.port.mk>

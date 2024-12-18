@@ -122,7 +122,7 @@ CONFIGURE_ARGS +=	--with-ffi-includes=${LOCALBASE}/include \
 			--with-system-libffi \
 			CC="${CC}"
 
-CONFIGURE_ENV += SPHINXBUILD=${LOCALBASE}/bin/sphinx-build${MODPY_BIN_SUFFIX}
+CONFIGURE_ENV += SPHINXBUILD=${LOCALBASE}/bin/sphinx-build
 
 GHC_CC_OPTS =		-Wl,--no-execute-only -Qunused-arguments \
 			-Wl,-z,nobtcfi
