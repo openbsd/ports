@@ -1,6 +1,7 @@
 COMMENT=		IntelliJ IDEA Java IDE
 
 V=			2024.2.1
+REVISION=		0
 DISTNAME=		ideaIC-${V}
 PKGNAME=		intellij-${V}
 CATEGORIES=		devel

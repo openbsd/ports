@@ -13,6 +13,10 @@ Native Libraries
 ================
 Functionality depending on native libraries is not likely to work.
 
+Filesystem notifier
+===================
+Install the intellij-fsnotifier package to use fsNotifier.
+
 Errors After Upgrading
 ======================
 If you receive errors starting after an upgrade, try the following:
