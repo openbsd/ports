@@ -1,8 +1,7 @@
 COMMENT =	command line tool for wordpress
 
-V =		2.10.0
+V =		2.11.0
 DISTNAME =	wp-cli-${V}
-REVISION =	0
 
 EXTRACT_ONLY =
 EXTRACT_SUFX =	.phar
