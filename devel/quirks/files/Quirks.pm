@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1683 2024/12/17 17:13:27 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1684 2024/12/18 11:26:46 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1213,6 +1213,7 @@ setup_obsolete_reason(
 	3 => qr{^nextcloud-(27|28|29)},
 	3 => 'cvs20hg',
 	3 => 'git-cvs',
+	7 => 'py3-uncompyle6',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
