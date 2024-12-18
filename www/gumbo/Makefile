@@ -1,12 +1,12 @@
 COMMENT =	HTML5 parsing library in pure C99
 
-V =		0.12.1
+V =		0.12.3
 DIST_TUPLE =	codeberg grisha gumbo-parser $V .
 DISTNAME =	gumbo-parser-$V
 PKGNAME =	gumbo-$V
 WRKDIST =	${WRKDIR}/gumbo-parser
 
-SHARED_LIBS +=	gumbo	1.0 # 1.0
+SHARED_LIBS +=	gumbo	2.0 # 2.2
 
 CATEGORIES =	www
 
@@ -22,12 +22,12 @@ CONFIGURE_STYLE =	autoreconf
 # Allow gtest detection
 CONFIGURE_ENV =	LDFLAGS=-L${LOCALBASE}/lib
 
-AUTOCONF_VERSION =	2.71
+AUTOCONF_VERSION =	2.72
 AUTOMAKE_VERSION =	1.16
 AUTORECONF =		./autogen.sh
 
 pre-test:
-	@mkdir ${WRKSRC}/gtest
-	@ln -s ${LOCALBASE}/include ${WRKSRC}/gtest/include
+	@mkdir -p ${WRKSRC}/gtest/googletest
+	@ln -s ${LOCALBASE}/include ${WRKSRC}/gtest/googletest/include
 
 .include <bsd.port.mk>
