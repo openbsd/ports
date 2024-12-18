@@ -6,7 +6,7 @@ to the pregenerated ones and it ends up with both getting installed
 Index: _setuputils.py
 --- _setuputils.py.orig
 +++ _setuputils.py
-@@ -216,11 +216,8 @@ def _dummy_cythonize(extensions, **_kwargs):
+@@ -219,11 +219,8 @@ def _dummy_cythonize(extensions, **_kwargs):
          extension.sources[:] = sources
      return extensions
  

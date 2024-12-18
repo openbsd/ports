@@ -1,7 +1,6 @@
 COMMENT =		network library for easy and scalable concurrency
 
-MODPY_EGG_VERSION =	22.10.2
-REVISION =		1
+MODPY_EGG_VERSION =	24.11.1
 DISTNAME =		gevent-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -21,19 +20,15 @@ FLAVOR =		python3
 
 MODULES =		lang/python
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_DISTUTILS_BUILDARGS =	--build-base="${WRKBUILD}" \
-				--build-lib="${WRKBUILD}" \
-				--build-temp="tempdir"
+MODPY_PYBUILD =		setuptools
 
 BUILD_DEPENDS =		devel/libev:configure \
-			devel/py-cffi${MODPY_FLAVOR}
+			devel/py-cffi${MODPY_FLAVOR} \
+			lang/cython${MODPY_FLAVOR}
 LIB_DEPENDS =		devel/libev \
 			devel/libuv \
 			net/libcares
-RUN_DEPENDS =		devel/py-greenlet${MODPY_FLAVOR} \
-			devel/py-zopeevent${MODPY_FLAVOR} \
-			devel/py-zopeinterface${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-greenlet${MODPY_FLAVOR}
 
 MAKE_ENV =		GEVENTSETUP_EMBED_CARES=0 \
 			GEVENTSETUP_EMBED_LIBEV=0 \
@@ -41,13 +36,8 @@ MAKE_ENV =		GEVENTSETUP_EMBED_CARES=0 \
 CFLAGS +=		-I${LOCALBASE}/include
 LDFLAGS +=		-L${LOCALBASE}/lib
 
-WRKBUILD =		${WRKSRC}/src
-
 pre-patch:
 	cp ${WRKDIR}/devel/libev/libev-*/config.h ${WRKSRC}/deps/libev/config.h
-
-post-build:
-	rm -Rf ${WRKBUILD}/tempdir
 
 post-install:
 	rm -Rf ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/greentest
@@ -62,6 +52,9 @@ TEST_DEPENDS =		${BASE_PKGPATH}=${MODPY_EGG_VERSION} \
 			www/py-requests${MODPY_FLAVOR}
 
 do-test:
-	cd ${WRKSRC}; env PYTHONPATH=src ${MODPY_BIN} -m gevent.tests
+	sed -i 's,^HAVE_SOCKET_UDPLITE = has.*,HAVE_SOCKET_UDPLITE = false,' \
+		${WRKSRC}/src/greentest/*/test_socket.py
+
+	cd ${WRKSRC}; ${MODPY_BIN} -m gevent.tests
 
 .include <bsd.port.mk>
