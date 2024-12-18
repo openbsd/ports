@@ -5,7 +5,7 @@ to avoid mismatch
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -129,6 +129,10 @@ INCLUDE_DIRECTORIES("${CMAKE_SOURCE_DIR}/"
+@@ -130,6 +130,10 @@ INCLUDE_DIRECTORIES("${CMAKE_SOURCE_DIR}/"
          "${CMAKE_BINARY_DIR}/src" #Stored in the binary dir
          "${CMAKE_BINARY_DIR}/src/libcryptobox")
  
@@ -16,7 +16,7 @@ Index: CMakeLists.txt
  SET(TAR "tar")
  INCLUDE(OSDep)
  
-@@ -360,7 +364,7 @@ IF (LIBCRYPT_LIBRARY_PATH)
+@@ -361,7 +365,7 @@ IF (LIBCRYPT_LIBRARY_PATH)
      SET(CMAKE_REQUIRED_LIBRARIES "${CMAKE_REQUIRED_LIBRARIES};-L${LIBCRYPT_LIBRARY_PATH};${LIBCRYPT_LIBRARY}")
      SET(CMAKE_REQUIRED_LIBRARIES "${CMAKE_REQUIRED_LIBRARIES};-L${LIBSSL_LIBRARY_PATH};${LIBSSL_LIBRARY}")
  ELSE ()
@@ -25,7 +25,7 @@ Index: CMakeLists.txt
  ENDIF ()
  
  CHECK_SYMBOL_EXISTS(SSL_set_tlsext_host_name "openssl/ssl.h" HAVE_SSL_TLSEXT_HOSTNAME)
-@@ -653,9 +657,7 @@ IF (BACKWARD_LIBRARIES)
+@@ -655,9 +659,7 @@ IF (BACKWARD_LIBRARIES)
      message(STATUS "Backward-cpp libraries: ${BACKWARD_LIBRARIES}")
  ENDIF ()
  

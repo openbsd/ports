@@ -32,10 +32,14 @@ share/examples/rspamd/lang_detection.inc
 @sample ${ETC}/rspamd/lang_detection.inc
 share/examples/rspamd/local.d/
 @sample ${ETC}/rspamd/local.d/
+share/examples/rspamd/local.d/module.conf.example
 share/examples/rspamd/local.d/redis.conf
 @sample ${ETC}/rspamd/local.d/redis.conf
 share/examples/rspamd/logging.inc
 @sample ${ETC}/rspamd/logging.inc
+share/examples/rspamd/lua.local.d/
+@sample ${ETC}/rspamd/lua.local.d/
+share/examples/rspamd/lua.local.d/module.lua.example
 share/examples/rspamd/maps.d/
 @sample ${ETC}/rspamd/maps.d/
 share/examples/rspamd/maps.d/dmarc_whitelist.inc
@@ -162,10 +166,14 @@ share/examples/rspamd/modules.d/url_redirector.conf
 @sample ${ETC}/rspamd/modules.d/url_redirector.conf
 share/examples/rspamd/modules.d/whitelist.conf
 @sample ${ETC}/rspamd/modules.d/whitelist.conf
+share/examples/rspamd/modules.local.d/
+@sample ${ETC}/rspamd/modules.local.d/
+share/examples/rspamd/modules.local.d/module.conf.example
 share/examples/rspamd/options.inc
 @sample ${ETC}/rspamd/options.inc
 share/examples/rspamd/override.d/
 @sample ${ETC}/rspamd/override.d/
+share/examples/rspamd/override.d/module.conf.example
 share/examples/rspamd/rspamd.conf
 @sample ${ETC}/rspamd/rspamd.conf
 share/examples/rspamd/scores.d/
@@ -210,9 +218,6 @@ share/examples/rspamd/worker-proxy.inc
 @sample ${ETC}/rspamd/worker-proxy.inc
 share/rspamd/
 share/rspamd/effective_tld_names.dat
-share/rspamd/elastic/
-share/rspamd/elastic/kibana.json
-share/rspamd/elastic/rspamd_template.json
 share/rspamd/languages/
 share/rspamd/languages/af.json
 share/rspamd/languages/an.json
@@ -371,6 +376,7 @@ share/rspamd/lualib/rspamadm/keypair.lua
 share/rspamd/lualib/rspamadm/mime.lua
 share/rspamd/lualib/rspamadm/neural_test.lua
 share/rspamd/lualib/rspamadm/publicsuffix.lua
+share/rspamd/lualib/rspamadm/ratelimit.lua
 share/rspamd/lualib/rspamadm/secretbox.lua
 share/rspamd/lualib/rspamadm/stat_convert.lua
 share/rspamd/lualib/rspamadm/statistics_dump.lua
