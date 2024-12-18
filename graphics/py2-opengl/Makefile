@@ -12,11 +12,10 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_2}
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_SETUPTOOLS =	Yes
 
 LIB_DEPENDS =		graphics/freeglut
 

@@ -1,0 +1,12 @@
+Index: OpenGL/__init__.py
+--- OpenGL/__init__.py.orig
++++ OpenGL/__init__.py
+@@ -222,6 +222,8 @@ PlatformPlugin("glx", "OpenGL.platform.glx.GLXPlatform
+ PlatformPlugin("posix", "OpenGL.platform.glx.GLXPlatform")
+ PlatformPlugin("x11", "OpenGL.platform.glx.GLXPlatform")  # xdg session type
+ PlatformPlugin("osmesa", "OpenGL.platform.osmesa.OSMesaPlatform")
++PlatformPlugin("openbsd7", "OpenGL.platform.glx.GLXPlatform")
++PlatformPlugin("openbsd8", "OpenGL.platform.glx.GLXPlatform")
+ PlatformPlugin("egl", "OpenGL.platform.egl.EGLPlatform")
+ PlatformPlugin("wayland", "OpenGL.platform.egl.EGLPlatform")  # xdg session type
+ PlatformPlugin(

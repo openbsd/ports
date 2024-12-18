@@ -5,7 +5,7 @@ V =			1.3.110
 COMMENT =		guitar hero clone
 DISTNAME =		FretsOnFire-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		16
+REVISION =		17
 
 CATEGORIES =		games x11
 
@@ -24,7 +24,7 @@ MODPY_SETUPTOOLS =	Yes
 BUILD_DEPENDS =		${RUN_DEPENDS}
 RUN_DEPENDS =		devel/py2-pygame \
 			graphics/py2-Pillow \
-			graphics/py-opengl${MODPY_FLAVOR} \
+			graphics/py2-opengl \
 			math/py2-numpy
 
 WRKDIST =		"${WRKDIR}/Frets on Fire-${V}"

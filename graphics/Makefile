@@ -262,6 +262,7 @@
      SUBDIR += povray
      SUBDIR += pqiv
      SUBDIR += pstoedit
+     SUBDIR += py2-opengl
      SUBDIR += py-Pillow,python3
      SUBDIR += py-blurhash,python3
      SUBDIR += py-bdfparser,python3
@@ -272,7 +273,6 @@
      SUBDIR += py-imagesize,python3
      SUBDIR += py-matplotlib,python3
      SUBDIR += py-matplotlib-inline,python3
-     SUBDIR += py-opengl
      SUBDIR += py-opengl,python3
      SUBDIR += py-pygal,python3
      SUBDIR += py-pyqrcode,python3
