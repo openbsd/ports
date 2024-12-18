@@ -1,7 +1,7 @@
 COMMENT=	Z shell, Bourne shell-compatible
 
 V=		5.9
-REVISION=	0
+REVISION=	1
 DISTNAME=	zsh-$V
 CATEGORIES=	shells
 
@@ -17,7 +17,7 @@ EXTRACT_SUFX=	.tar.xz
 # BSD
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c curses iconv m pcre
+WANTLIB=	c curses iconv m pcre util
 
 LIB_DEPENDS=	converters/libiconv \
 		devel/pcre
