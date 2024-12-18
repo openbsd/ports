@@ -3,6 +3,8 @@ Reordering needed to prefer long long because base-gcc doesn't recognize
   #pragma GCC diagnostic error "-Wincompatible-pointer-types"
 and doesn't fail to compile the test case (gint64 should be long long).
 
+XXX don't pick up libatomic from lang/gcc/
+
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
@@ -46,3 +48,16 @@ Index: meson.build
    else
      error('Cannot detect int64_t typedef')
    endif
+@@ -2254,9 +2254,9 @@ libatomic_test_code = '''
+     return 0;
+   }'''
+ atomic_dep = []
+-if cc.links(libatomic_test_code, args : '-latomic', name : 'check for -latomic')
+-  atomic_dep = cc.find_library('atomic')
+-endif
++#if cc.links(libatomic_test_code, args : '-latomic', name : 'check for -latomic')
++#  atomic_dep = cc.find_library('atomic')
++#endif
+ 
+ # First check in libc, fallback to libintl, and as last chance build
+ # proxy-libintl subproject.
