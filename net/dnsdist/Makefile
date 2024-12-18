@@ -1,8 +1,7 @@
 COMMENT=		highly DNS-, DoS- and abuse-aware loadbalancer
 
-DISTNAME=		dnsdist-1.9.7
+DISTNAME=		dnsdist-1.9.8
 EXTRACT_SUFX=		.tar.bz2
-REVISION=		3
 
 CATEGORIES=		net
 
@@ -16,7 +15,7 @@ PERMIT_PACKAGE=		Yes
 FLAVORS=		h3
 FLAVOR?=
 
-WANTLIB +=		${MODLUA_WANTLIB} ${COMPILER_LIBCXX} curses crypto edit m \
+WANTLIB +=		${MODLUA_WANTLIB} ${COMPILER_LIBCXX} cdb curses crypto edit lmdb m \
 			fstrm nghttp2 pthread sodium 
 
 SITES=			https://downloads.powerdns.com/releases/
@@ -39,7 +38,8 @@ CONFIGURE_ARGS+=	--without-gnutls \
 			--without-net-snmp \
 			--without-libcap \
 			--without-ebpf \
-			--without-lmdb \
+			--with-cdb \
+			--with-lmdb \
 			--with-nghttp2 \
 			--enable-dns-over-tls \
 			--enable-dnscrypt \
@@ -53,8 +53,10 @@ CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include" \
 
 BUILD_DEPENDS=		devel/boost
 LIB_DEPENDS+=		${MODLUA_LIB_DEPENDS} \
-			security/libsodium \
+			databases/lmdb \
+			databases/tinycdb \
 			net/libfstrm \
+			security/libsodium \
 			www/nghttp2
 
 
