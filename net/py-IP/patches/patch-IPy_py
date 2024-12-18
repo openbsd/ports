@@ -1,8 +1,9 @@
---- IPy.py.orig	Mon Dec 14 13:28:56 2015
-+++ IPy.py	Mon Dec 14 13:44:43 2015
-@@ -558,6 +558,13 @@ class IPint(object):
-         """
-         return True
+Index: IPy.py
+--- IPy.py.orig
++++ IPy.py
+@@ -552,6 +552,13 @@ class IPint(object):
+         locallen = bits - self._prefixlen
+         return 2 ** locallen
  
 +    def __bool__(self):
 +        """All IPy objects should evaluate to true in boolean context.
@@ -12,5 +13,5 @@
 +        """
 +        return True
  
-     def __len__(self):
-         """
+     def __nonzero__(self):
+         """All IPy objects should evaluate to true in boolean context.
