@@ -1,14 +1,14 @@
 @conflict py-babel-<2.8.0p2
 @pkgpath devel/py-babel
 bin/pybabel
-lib/python${MODPY_VERSION}/site-packages/Babel-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/Babel-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/Babel-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/Babel-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/Babel-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/Babel-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/Babel-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/babel/
+lib/python${MODPY_VERSION}/site-packages/babel-${MODPY_EGG_VERSION}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/babel-${MODPY_EGG_VERSION}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/babel-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/babel-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/babel-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/babel-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/babel-${MODPY_EGG_VERSION}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/babel/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/babel/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/babel/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1107,6 +1107,8 @@ lib/python${MODPY_VERSION}/site-packages/babel/messages/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/babel/messages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/babel/messages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/babel/messages/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/babel/messages/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/babel/messages/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/babel/messages/${MODPY_PYCACHE}catalog.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/babel/messages/${MODPY_PYCACHE}catalog.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/babel/messages/${MODPY_PYCACHE}checkers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1125,6 +1127,7 @@ lib/python${MODPY_VERSION}/site-packages/babel/messages/${MODPY_PYCACHE}pofile.$
 lib/python${MODPY_VERSION}/site-packages/babel/messages/${MODPY_PYCACHE}pofile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/babel/messages/${MODPY_PYCACHE}setuptools_frontend.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/babel/messages/${MODPY_PYCACHE}setuptools_frontend.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/babel/messages/_compat.py
 lib/python${MODPY_VERSION}/site-packages/babel/messages/catalog.py
 lib/python${MODPY_VERSION}/site-packages/babel/messages/checkers.py
 lib/python${MODPY_VERSION}/site-packages/babel/messages/extract.py
