@@ -1,0 +1,41 @@
+https://gitlab.com/worthwhileit/bsd/fsnotifier/-/merge_requests/1
+
+Index: cmake/target_definitions.cmake
+--- cmake/target_definitions.cmake.orig
++++ cmake/target_definitions.cmake
+@@ -11,21 +11,18 @@ list(APPEND HEADERS fsnotifier.h)
+ list(TRANSFORM HEADERS PREPEND ${CMAKE_SOURCE_DIR}/)
+ list(APPEND SOURCES inotify.c util.c)
+ list(TRANSFORM SOURCES PREPEND ${CMAKE_SOURCE_DIR}/)
+-list(APPEND LIBS fsnotifier_sharedlib fsnotifier_staticlib)
+-list(APPEND TYPES SHARED STATIC)
+-list(APPEND EXES fsnotifier fsnotifier-static)
++list(APPEND LIBS libfsnotifier)
++list(APPEND EXES fsnotifier)
+ 
+-add_library(fsnotifier_sharedlib SHARED ${HEADERS} ${SOURCES})
+-add_library(fsnotifier_staticlib STATIC ${HEADERS} ${SOURCES})
++add_library(libfsnotifier ${HEADERS} ${SOURCES})
+ foreach(_lib _type IN ZIP_LISTS LIBS TYPES)
+   target_link_libraries(${_lib} PUBLIC
+-      ${INOTIFY_LIBRARY_DIRS}/${CMAKE_${_type}_LIBRARY_PREFIX}${INOTIFY_LIBRARIES}${CMAKE_${_type}_LIBRARY_SUFFIX}
++      ${pkgcfg_lib_INOTIFY_inotify}
+       Threads::Threads)
+   target_include_directories(${_lib} PUBLIC ${INOTIFY_INCLUDE_DIRS})
+   set_target_properties(${_lib} PROPERTIES OUTPUT_NAME fsnotifier)
+ endforeach()
+-target_link_libraries(fsnotifier_staticlib PUBLIC -static)
+-set_target_properties(fsnotifier_sharedlib PROPERTIES SOVERSION ${CMAKE_PROJECT_VERSION})
++set_target_properties(libfsnotifier PROPERTIES SOVERSION ${CMAKE_PROJECT_VERSION})
+ 
+ #[[Executable 'fsnotifier' is dynamically linked against libc, libthr, libinotify and libfsnotifier.
+    Executable 'fsnotifier-static' is statically linked against libc and libthr, libinotify and libfsnotifier.]]
+@@ -33,4 +30,6 @@ foreach(_lib _exe _type IN ZIP_LISTS LIBS EXES TYPES)
+   add_executable(${_exe} main.c)
+   target_link_libraries(${_exe} PUBLIC ${_lib})
+ endforeach()
+-set_target_properties(fsnotifier-static PROPERTIES INSTALL_RPATH "")
+\ No newline at end of file
++if (NOT BUILD_SHARED_LIBS)
++  set_target_properties(fsnotifier PROPERTIES INSTALL_RPATH "")
++endif()

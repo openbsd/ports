@@ -1,0 +1,16 @@
+https://gitlab.com/worthwhileit/bsd/fsnotifier/-/merge_requests/1
+
+Index: cmake/options.cmake
+--- cmake/options.cmake.orig
++++ cmake/options.cmake
+@@ -1,6 +1,10 @@
+ #[[GNUInstallDirs defines CMAKE_INSTALL_{BIN,LIB}DIR and the like, abiding by GNU installation conventions.
+    See https://cmake.org/cmake/help/latest/module/GNUInstallDirs.html]]
+ include(GNUInstallDirs)
++
++# Build static library by default
++option(BUILD_SHARED_LIBS "Build shared libraries instead of static" OFF)
++
+ # Add an absolute path for the project's CMake config file
+ set(PROJECT_CMAKEDIR    # see https://cmake.org/cmake/help/latest/command/find_package.html#search-procedure
+     ${CMAKE_INSTALL_LIBDIR}/${CMAKE_PROJECT_NAME}/cmake)

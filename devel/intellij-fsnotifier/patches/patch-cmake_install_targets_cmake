@@ -1,0 +1,17 @@
+https://gitlab.com/worthwhileit/bsd/fsnotifier/-/merge_requests/1
+
+Index: cmake/install_targets.cmake
+--- cmake/install_targets.cmake.orig
++++ cmake/install_targets.cmake
+@@ -10,10 +10,8 @@ set(INCLUDE_INSTALL_DIR ${CMAKE_INSTALL_INCLUDEDIR})
+ set(LIB_INSTALL_DIR ${CMAKE_INSTALL_LIBDIR})
+ install(EXPORT fsnotifierTargets DESTINATION ${PROJECT_CMAKEDIR} NAMESPACE fsnotifier:: COMPONENT dev)
+ # Make using the library internally and externally equivalent
+-add_library(fsnotifier::fsnotifier_sharedlib ALIAS fsnotifier_sharedlib)
+-add_library(fsnotifier::fsnotifier_staticlib ALIAS fsnotifier_staticlib)
++add_library(fsnotifier::libfsnotifier ALIAS libfsnotifier)
+ add_executable(fsnotifier::fsnotifier ALIAS fsnotifier)
+-add_executable(fsnotifier::fsnotifier-static ALIAS fsnotifier-static)
+ include(CMakePackageConfigHelpers)
+ write_basic_package_version_file(${PROJECT_BINARY_DIR}/${PROJECT_CMAKEDIR}/${PROJECT_NAME}ConfigVersion.cmake
+     VERSION ${VERSION} COMPATIBILITY AnyNewerVersion)

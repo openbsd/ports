@@ -1,0 +1,10 @@
+@bin bin/fsnotifier
+include/fsnotifier.h
+lib/fsnotifier/
+lib/fsnotifier/cmake/
+lib/fsnotifier/cmake/fsnotifierConfig.cmake
+lib/fsnotifier/cmake/fsnotifierConfigVersion.cmake
+lib/fsnotifier/cmake/fsnotifierTargets${MODCMAKE_BUILD_SUFFIX}
+lib/fsnotifier/cmake/fsnotifierTargets.cmake
+@lib lib/libfsnotifier.so.${LIBfsnotifier_VERSION}
+share/doc/pkg-readmes/${PKGSTEM}

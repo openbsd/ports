@@ -1,0 +1,10 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+This is an optional filesystem notifier replacement for JetBrains IDEs
+like IntelliJ IDEA or PyCharm. Enable it by adding the following line to
+~/.config/JetBrains/<product><version>/idea.properties:
+
+    idea.filewatcher.executable.path=${TRUEPREFIX}/bin/fsnotifier
+

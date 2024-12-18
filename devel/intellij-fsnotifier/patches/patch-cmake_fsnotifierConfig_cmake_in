@@ -1,0 +1,15 @@
+https://gitlab.com/worthwhileit/bsd/fsnotifier/-/merge_requests/1
+
+Index: cmake/fsnotifierConfig.cmake.in
+--- cmake/fsnotifierConfig.cmake.in.orig
++++ cmake/fsnotifierConfig.cmake.in
+@@ -11,7 +11,7 @@ find_dependency(PkgConfig)
+ pkg_search_module(INOTIFY libinotify REQUIRED) # No clear way to use PkgConfig within CMakeFindDependencyMacro ...
+ # no optional packages
+ 
+-check_required_components(fsnotifier_sharedlib fsnotifier_staticlib fsnotifier fsnotifier-static)
++check_required_components(libfsnotifier fsnotifier)
+ 
+ include(FindPackageMessage)
+ find_package_message(@PROJECT_NAME@ "Found @PROJECT_NAME@: ${@PROJECT_NAME@_LIBRARY_DIR}" "[${@PROJECT_NAME@_LIBRARY_DIR}][${@PROJECT_NAME@_INCLUDE_DIR}]")
+\ No newline at end of file
