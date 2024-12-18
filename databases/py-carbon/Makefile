@@ -5,7 +5,7 @@ MODPY_EGG_VERSION=	1.1.10
 DISTNAME=		carbon-${MODPY_EGG_VERSION}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		databases
-REVISION=		2
+REVISION=		3
 
 # Apache
 PERMIT_PACKAGE=		Yes
@@ -20,13 +20,7 @@ RUN_DEPENDS=		databases/py-whisper${MODPY_FLAVOR} \
 FLAVORS=		python3
 FLAVOR=			python3
 
-BIN_FILES=		carbon-aggregator.py carbon-cache.py carbon-client.py \
-			carbon-relay.py validate-storage-schemas.py \
-			carbon-aggregator-cache.py
-
-.for b in ${BIN_FILES}
-MODPY_ADJ_FILES+=	bin/$b
-.endfor
+MODPY_ADJ_FILES+=	bin/*.py
 
 GRAPHITE_EGDIR=		${PREFIX}/share/examples/graphite/
 
