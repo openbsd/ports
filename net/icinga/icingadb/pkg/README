@@ -85,3 +85,12 @@ https://icinga.com/docs/icinga-db/latest/doc/04-Upgrading/
 If a schema update is necessary, it will be available under
 ${PREFIX}/share/examples/icingadb/schema/{mysql,pgsql}/upgrades/
 and will be named after the new Icinga DB version.
+
+It can be applied like the following example:
+
+  # doas -u _icingadb psql -U icingadb icingadb < ${PREFIX}/share/examples/icingadb/schema/pgsql/upgrades/1.2.1.sql
+
+The following package upgrades require the following schema upgrades.
+Please note that all intermediate upgrades are required!
+
+* 1.2.0 to 1.2.1: 1.2.1.sql needs to be applied for both MySQL and PostgreSQL
