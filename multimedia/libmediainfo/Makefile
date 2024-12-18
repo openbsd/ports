@@ -1,8 +1,8 @@
 COMMENT=	read metadata from media files
 
-VERSION=	24.11
+VERSION=	24.12
 PKGNAME=	libmediainfo-${VERSION}
-SHARED_LIBS=	mediainfo	16.0 # 0.0
+SHARED_LIBS=	mediainfo	17.0 # 0.0
 CATEGORIES=	multimedia
 
 HOMEPAGE=	https://mediaarea.net/en/MediaInfo
