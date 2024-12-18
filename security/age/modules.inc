@@ -15,9 +15,10 @@ MODGO_MODULES =	\
 	golang.org/x/tools		 v0.22.0
 
 MODGO_MODFILES =	\
-	golang.org/x/crypto	 v0.24.0 \
-	golang.org/x/mod	 v0.18.0 \
-	golang.org/x/net	 v0.26.0 \
-	golang.org/x/sys	 v0.21.0 \
-	golang.org/x/tools	 v0.22.0
+	golang.org/x/crypto	 v0.1.0 \
+	golang.org/x/mod	 v0.9.0 \
+	golang.org/x/net	 v0.21.0 \
+	golang.org/x/sys	 v0.0.0-20220722155257-8c9f86f7a55f \
+	golang.org/x/sys	 v0.1.0 \
+	golang.org/x/tools	 v0.1.12
 
