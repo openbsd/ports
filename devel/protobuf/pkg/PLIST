@@ -197,6 +197,7 @@ include/google/protobuf/generated_message_tctable_decl.h
 include/google/protobuf/generated_message_tctable_gen.h
 include/google/protobuf/generated_message_tctable_impl.h
 include/google/protobuf/generated_message_util.h
+include/google/protobuf/go_features.proto
 include/google/protobuf/has_bits.h
 include/google/protobuf/implicit_weak_message.h
 include/google/protobuf/inlined_string_field.h
