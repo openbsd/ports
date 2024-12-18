@@ -1,10 +1,10 @@
 OpenBSD whereis doesn't support -b
 
-Index: LibreNMS/Config.php
---- LibreNMS/Config.php.orig
-+++ LibreNMS/Config.php
-@@ -524,7 +524,7 @@ class Config
-     public static function locateBinary($binary)
+Index: app/ConfigRepository.php
+--- app/ConfigRepository.php.orig
++++ app/ConfigRepository.php
+@@ -525,7 +525,7 @@ class ConfigRepository
+     public function locateBinary($binary): mixed
      {
          if (! Str::contains($binary, '/')) {
 -            $output = `whereis -b $binary`;
