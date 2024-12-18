@@ -1,10 +1,9 @@
 COMMENT =		Python SSL and TLS library
 
-MODPY_EGG_VERSION =	0.8.0-beta6
+MODPY_EGG_VERSION =	0.8.0
 DISTNAME =		tlslite-ng-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME:S/-beta/beta/}
 EPOCH =			0
-REVISION =		1
 
 PLIST_VERSION =		${MODPY_EGG_VERSION:S/-/_/}
 SUBST_VARS +=		PLIST_VERSION
@@ -34,9 +33,10 @@ RUN_DEPENDS +=		devel/py-six${MODPY_FLAVOR} \
 			security/py-M2Crypto${MODPY_FLAVOR} \
 			security/py-ecdsa${MODPY_FLAVOR}
 
-# A few key exchange and x509 tests fail due to missing Ed25519/Ed448 support
-TEST_DEPENDS +=		devel/py-hypothesis${MODPY_FLAVOR} \
+TEST_DEPENDS +=		devel/py-coveralls${MODPY_FLAVOR} \
+			devel/py-hypothesis${MODPY_FLAVOR} \
 			devel/py-mock${MODPY_FLAVOR} \
+			devel/py-pluggy${MODPY_FLAVOR} \
 			security/py-ecdsa${MODPY_FLAVOR}
 
 TEST_ENV +=		PYTHONPATH=${WRKSRC}/src
