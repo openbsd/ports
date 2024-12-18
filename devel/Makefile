@@ -232,6 +232,7 @@
      SUBDIR += indi
      SUBDIR += iniparser
      SUBDIR += intellij
+     SUBDIR += intellij-fsnotifier
      SUBDIR += ipython,python3
      SUBDIR += iso-codes
      SUBDIR += itcl
