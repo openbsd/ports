@@ -79,6 +79,11 @@ CXXFLAGS +=		-I${X11BASE}/include
 
 NO_TEST =		Yes
 
+# this version is old and doesn't support Python >3.11; remove and
+# allow it to use the newer one in /usr/local/share/cmake/Modules
+post-extract:
+	rm ${WRKSRC}/CMakeModules/FindPythonLibs.cmake
+
 post-install:
 	${MODPY_COMPILEALL} \
 		${PREFIX}/lib/python${MODPY_VERSION}/site-packages/ \
