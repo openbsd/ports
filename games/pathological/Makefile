@@ -1,20 +1,21 @@
 COMMENT=	enriched clone of the game Logical by Rainbow Arts
 
 DISTNAME=	pathological-1.1.3
-REVISION =	7
+REVISION =	8
 CATEGORIES=	games
 HOMEPAGE=	https://pathological.sourceforge.net/
 
 # GPL
 PERMIT_PACKAGE=	Yes
-WANTLIB=		c
+
+WANTLIB=	c
 
 SITES=		${SITE_SOURCEFORGE:=pathological/}
 
 MODULES=	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
-RUN_DEPENDS=	devel/pygame
+RUN_DEPENDS=	devel/py2-pygame
 BUILD_DEPENDS=	graphics/netpbm
 
 NO_TEST=	Yes

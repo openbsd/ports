@@ -6,7 +6,7 @@ V =			7.3.5
 MODPY_EGG_VERSION =	${V}.606
 DISTNAME =		renpy-${V}-source
 PKGNAME =		renpy-${V}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		games
 
@@ -24,7 +24,7 @@ EXTRACT_SUFX =		.tar.bz2
 MODULES =		lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
-BUILD_DEPENDS =		devel/pygame \
+BUILD_DEPENDS =		devel/py2-pygame \
 			games/pygame_sdl2 \
 			lang/cython,python3
 

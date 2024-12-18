@@ -6,7 +6,7 @@ DISTNAME =	mysticmine-${MODPY_EGG_VERSION}
 GH_ACCOUNT =	dewitters
 GH_PROJECT =	MysticMine
 GH_COMMIT =	2fc0a5eaa0ab299c3a23ce17ae1c56a98055a44c
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	games
 
@@ -16,9 +16,9 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		pthread ${MODPY_WANTLIB}
 
 MODULES =		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_2}
 
-RUN_DEPENDS =		devel/pygame${MODPY_FLAVOR} \
+RUN_DEPENDS =		devel/py2-pygame \
 			math/py2-numpy
 
 NO_TEST =		Yes

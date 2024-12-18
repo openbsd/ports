@@ -15,12 +15,10 @@ WANTLIB += SDL SDL_image SDL_mixer SDL_ttf X11 jpeg png pthread
 WANTLIB += freetype z ${MODPY_WANTLIB}
 
 MODULES=	lang/python
+MODPY_VERSION=	${MODPY_DEFAULT_VERSION_2}
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-MODPY_PI=	Yes
-MODPY_PYBUILD=	setuptools
+MODPY_PI=		Yes
+MODPY_SETUPTOOLS=	Yes
 
 LIB_DEPENDS=	devel/sdl-ttf \
 		devel/sdl-image \

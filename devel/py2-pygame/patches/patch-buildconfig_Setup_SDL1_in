@@ -1,0 +1,11 @@
+Index: buildconfig/Setup.SDL1.in
+--- buildconfig/Setup.SDL1.in.orig
++++ buildconfig/Setup.SDL1.in
+@@ -50,6 +50,7 @@ cdrom src_c/cdrom.c $(SDL) $(DEBUG)
+ color src_c/color.c $(SDL) $(DEBUG)
+ constants src_c/constants.c $(SDL) $(DEBUG)
+ display src_c/display.c $(SDL) $(DEBUG)
++display src_c/display.c $(SDL) $(DEBUG) -I${X11BASE}/include
+ event src_c/event.c $(SDL) $(DEBUG)
+ fastevent src_c/fastevent.c src_c/fastevents.c $(SDL) $(DEBUG)
+ key src_c/key.c $(SDL) $(DEBUG)

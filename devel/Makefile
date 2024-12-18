@@ -1765,12 +1765,12 @@
      SUBDIR += py-zopeinterface,python3
      SUBDIR += py-zopetesting,python3
      SUBDIR += py2-pip
+     SUBDIR += py2-pygame
      SUBDIR += py2-setuptools
      SUBDIR += py3c
      SUBDIR += pycdc
      SUBDIR += pycharm
      SUBDIR += pyflakes,python3
-     SUBDIR += pygame
      SUBDIR += pygame,python3
      SUBDIR += pylint,python3
      SUBDIR += pystring			# not python ;)

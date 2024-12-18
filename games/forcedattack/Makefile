@@ -3,7 +3,7 @@ COMMENT=	connect four of stones in a straight line
 V=		2.1.4
 DISTNAME=	4stAttack-${V}
 PKGNAME=	forcedattack-${V}
-REVISION =	9
+REVISION=	10
 CATEGORIES=	games
 
 HOMEPAGE=	https://forcedattack.sourceforge.net/
@@ -16,7 +16,7 @@ SITES=		${SITE_SOURCEFORGE:=forcedattack/}
 MODULES=	lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
-RUN_DEPENDS+=	devel/pygame
+RUN_DEPENDS+=	devel/py2-pygame
 
 NO_TEST=	Yes
 

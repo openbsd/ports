@@ -5,7 +5,7 @@ V =			1.3.110
 COMMENT =		guitar hero clone
 DISTNAME =		FretsOnFire-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		15
+REVISION =		16
 
 CATEGORIES =		games x11
 
@@ -18,11 +18,11 @@ SITES =			${SITE_SOURCEFORGE:=fretsonfire/}
 USE_GMAKE =		Yes
 
 MODULES =		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_2}
 MODPY_SETUPTOOLS =	Yes
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		devel/pygame${MODPY_FLAVOR} \
+RUN_DEPENDS =		devel/py2-pygame \
 			graphics/py2-Pillow \
 			graphics/py-opengl${MODPY_FLAVOR} \
 			math/py2-numpy

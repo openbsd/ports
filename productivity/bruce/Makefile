@@ -2,7 +2,7 @@ COMMENT=		Python-based presentation tool
 
 MODPY_EGG_VERSION=	1.2.1
 DISTNAME=		bruce-${MODPY_EGG_VERSION}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES=		productivity
 
@@ -14,8 +14,8 @@ PERMIT_PACKAGE=	Yes
 MODPY_PI =		Yes
 
 MODULES=		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
-RUN_DEPENDS=		devel/pygame
+MODPY_VERSION =		${MODPY_DEFAULT_VERSION_2}
+RUN_DEPENDS=		devel/py2-pygame
 
 NO_TEST=		Yes
 
