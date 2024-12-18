@@ -2,7 +2,7 @@ COMMENT=	GNU debugger
 CATEGORIES=	devel
 
 DISTNAME=	gdb-13.2
-REVISION=	3
+REVISION=	4
 
 HOMEPAGE=	https://www.gnu.org/software/gdb/
 
@@ -28,6 +28,7 @@ COMPILER=	base-clang ports-gcc
 SEPARATE_BUILD= Yes
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--program-prefix=e \
+		--disable-install-libbfd \
 		--disable-nls \
 		--disable-sim \
 		--without-guile \

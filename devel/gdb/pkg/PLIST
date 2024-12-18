@@ -1,18 +1,7 @@
 @bin bin/egdb
 bin/egdb-add-index
-include/ansidecl.h
-include/bfd.h
-include/bfdlink.h
-include/ctf-api.h
-include/ctf.h
-include/diagnostics.h
-include/dis-asm.h
 include/gdb/
 include/gdb/jit-reader.h
-include/plugin-api.h
-include/sframe-api.h
-include/sframe.h
-include/symcat.h
 @info info/annotate.info
 @info info/bfd.info
 @info info/ctf-spec.info
@@ -20,16 +9,6 @@ include/symcat.h
 @comment @info info/sframe-spec.info
 @info info/stabs.info
 @comment lib/charset.alias
-@static-lib lib/libbfd.a
-lib/libbfd.la
-@static-lib lib/libctf-nobfd.a
-lib/libctf-nobfd.la
-@static-lib lib/libctf.a
-lib/libctf.la
-@static-lib lib/libopcodes.a
-lib/libopcodes.la
-@static-lib lib/libsframe.a
-lib/libsframe.la
 @man man/man1/egdb-add-index.1
 @man man/man1/egdb.1
 @man man/man1/egdbserver.1
