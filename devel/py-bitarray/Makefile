@@ -1,5 +1,7 @@
 COMMENT =		arrays of booleans
 
+# py-bitstring needs updating to 4.3.0 (not released at time of
+# writing) before updating to bitarray >= 3.
 MODPY_EGG_VERSION =	2.9.3
 DISTNAME =		bitarray-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
