@@ -1,0 +1,3 @@
+pyupgrade is a tool (and pre-commit hook) to automatically upgrade
+syntax for newer versions of the language. It handles an extensive range
+of legacy and deprecated features.
