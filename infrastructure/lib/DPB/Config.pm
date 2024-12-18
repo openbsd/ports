@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Config.pm,v 1.101 2024/01/02 15:39:30 espie Exp $
+# $OpenBSD: Config.pm,v 1.102 2024/12/18 07:05:19 tb Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -545,7 +545,7 @@ sub read_exceptions_fh($class, $state, $fh, $filename, $default = 'build')
 
 sub add_host($class, $state, $host, @properties)
 {
-	my $prop = DPB::HostProperties->new($state->{default_prop});
+	my $prop = $state->{default_prop};
 	for my $arg (@properties) {
 		if ($arg =~ m/^(.*?)=(.*)$/) {
 			$prop->{$1} = $2;
