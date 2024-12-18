@@ -2,7 +2,7 @@ COMMENT =		C++ bindings for ZeroMQ
 
 GH_ACCOUNT =		zeromq
 GH_PROJECT =		cppzmq
-GH_TAGNAME =		v4.8.1
+GH_TAGNAME =		v4.10.0
 
 CATEGORIES =		net
 

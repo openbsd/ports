@@ -1,5 +1,6 @@
 include/zmq.hpp
 include/zmq_addon.hpp
+lib/pkgconfig/cppzmq.pc
 share/cmake/
 share/cmake/cppzmq/
 share/cmake/cppzmq/cppzmqConfig.cmake
