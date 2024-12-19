@@ -155,7 +155,7 @@ FLAVOR?=
 
 .if !${FLAVOR:Mno_lang}
 LANGS=			ar bg ca cs de el es fa fi fr hr hu it \
-			ja kk lt lv nl pl pt-BR ro ru sl sv uk
+			ja kk ko lt lv nl pl pt-BR ro ru sl sv uk
 
 CONFIGURE_ARGS+=	--with-lang="en-US ${LANGS}"
 .for l in ${LANGS:L}
