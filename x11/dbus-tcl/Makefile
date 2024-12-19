@@ -1,6 +1,6 @@
 COMMENT =	dbus bindings for Tcl
 
-V =		3.1
+V =		4.1
 
 DISTNAME =	dbus-${V}
 PKGNAME =	dbus-tcl-${V}
@@ -14,7 +14,11 @@ PERMIT_PACKAGE =Yes
 WANTLIB =	dbus-1
 SITES =		${HOMEPAGE:=uv/}
 MODULES =	lang/tcl
-BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS} devel/tcllib
+MODTCL_VERSION =8.6
+
+BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS} \
+		devel/tcllib
+
 LIB_DEPENDS =	x11/dbus
 RUN_DEPENDS =	${MODTCL_RUN_DEPENDS}
 
@@ -36,6 +40,9 @@ TEST_TARGET =	test
 SUBST_VARS =	VER
 
 VER =		${V:S/.//g}
+
+# Skip tests that need a system bus, which might not be present.
+TEST_FLAGS +=	TESTFLAGS='-skip alias-1.[67]'
 
 pre-configure:
 	@${MODTCL_TCLSH_ADJ} ${WRKSRC}/demos/{dbusmon,qdbus}.tcl
