@@ -24,6 +24,7 @@ MODPY_PYBUILD =		setuptools
 
 BUILD_DEPENDS =		devel/libev:configure \
 			devel/py-cffi${MODPY_FLAVOR} \
+			devel/py-greenlet${MODPY_FLAVOR} \
 			lang/cython${MODPY_FLAVOR}
 LIB_DEPENDS =		devel/libev \
 			devel/libuv \
