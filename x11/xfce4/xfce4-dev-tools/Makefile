@@ -7,7 +7,8 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	x11/xfce4
 
-BUILD_DEPENDS =	textproc/libxslt
+BUILD_DEPENDS =	textproc/libxslt \
+		devel/meson
 RUN_DEPENDS =	devel/libtool \
 		textproc/gtk-doc \
 		textproc/intltool \
