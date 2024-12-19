@@ -14,6 +14,8 @@ DISTNAME=	gromox-${V}
 PKGNAME-main=	gromox-core-${V}
 PKGNAME-mapi=	gromox-mapi-${V}
 
+REVISION=	0
+
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	gromox
 GH_COMMIT=	ae11dd0a375d3913e7f6a176b1b063c44690c768
