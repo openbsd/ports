@@ -6,6 +6,7 @@ V=		9.20.4
 SUBST_VARS+=	V
 PORTROACH=	limitw:1,even
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 EPOCH=		3
 
 DISTNAME=	bind-$V
@@ -52,7 +53,8 @@ CONFIGURE_ARGS=	--enable-full-report \
 		--without-readline \
 		--without-cmocka \
 		--without-gssapi \
-		--with-python=${MODPY_BIN}
+		--with-python=${MODPY_BIN} \
+		--with-zonedb=RBTDB
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/bind9
 
 COMPILER=	base-clang ports-gcc
