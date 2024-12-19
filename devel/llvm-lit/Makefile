@@ -33,7 +33,8 @@ MODPY_PYBUILD =		setuptools
 
 BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}
 LIB_DEPENDS =		archivers/zstd
-TEST_DEPENDS =		sysutils/py-psutil
+TEST_DEPENDS =		shells/bash \
+			sysutils/py-psutil
 
 CONFIGURE_STYLE =	cmake
 CONFIGURE_ARGS =	-DCMAKE_BUILD_TYPE=Release \
