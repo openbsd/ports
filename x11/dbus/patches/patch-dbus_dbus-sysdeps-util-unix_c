@@ -3,7 +3,7 @@ XXX push upstream
 Index: dbus/dbus-sysdeps-util-unix.c
 --- dbus/dbus-sysdeps-util-unix.c.orig
 +++ dbus/dbus-sysdeps-util-unix.c
-@@ -61,6 +61,10 @@
+@@ -63,6 +63,10 @@
  #include <systemd/sd-daemon.h>
  #endif
  
@@ -14,7 +14,7 @@ Index: dbus/dbus-sysdeps-util-unix.c
  #ifndef O_BINARY
  #define O_BINARY 0
  #endif
-@@ -1160,7 +1164,13 @@ _dbus_command_for_pid (unsigned long  pid,
+@@ -1114,7 +1118,13 @@ _dbus_command_for_pid (unsigned long  pid,
    /* This is all Linux-specific for now */
    DBusString path;
    DBusString cmdline;
@@ -28,7 +28,7 @@ Index: dbus/dbus-sysdeps-util-unix.c
    
    if (!_dbus_string_init (&path)) 
      {
-@@ -1175,6 +1185,7 @@ _dbus_command_for_pid (unsigned long  pid,
+@@ -1129,6 +1139,7 @@ _dbus_command_for_pid (unsigned long  pid,
        return FALSE;
      }
    
@@ -36,7 +36,7 @@ Index: dbus/dbus-sysdeps-util-unix.c
    if (!_dbus_string_append_printf (&path, "/proc/%ld/cmdline", pid))
      goto oom;
    
-@@ -1202,6 +1213,37 @@ _dbus_command_for_pid (unsigned long  pid,
+@@ -1156,6 +1167,37 @@ _dbus_command_for_pid (unsigned long  pid,
    
    if (!_dbus_close (fd, error))
      goto fail;
@@ -74,7 +74,7 @@ Index: dbus/dbus-sysdeps-util-unix.c
    
    string_squash_nonprintable (&cmdline);  
  
-@@ -1210,12 +1252,18 @@ _dbus_command_for_pid (unsigned long  pid,
+@@ -1164,12 +1206,18 @@ _dbus_command_for_pid (unsigned long  pid,
  
    _dbus_string_free (&cmdline);  
    _dbus_string_free (&path);

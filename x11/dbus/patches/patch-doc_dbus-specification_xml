@@ -3,8 +3,8 @@
 Index: doc/dbus-specification.xml
 --- doc/dbus-specification.xml.orig
 +++ doc/dbus-specification.xml
-@@ -5743,7 +5743,7 @@
-           for .service files in
+@@ -5847,7 +5847,7 @@
+           <literal>/run/dbus-1/system-services</literal>,
            <literal>/usr/local/share/dbus-1/system-services</literal>,
            <literal>/usr/share/dbus-1/system-services</literal> and
 -          <literal>/lib/dbus-1/system-services</literal>, with that order

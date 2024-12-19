@@ -1,0 +1,12 @@
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -453,7 +453,7 @@ else
+       cc.has_header('sys/event.h', args: compile_args_c) and
+       cc.has_function(
+           'kqueue',
+-          prefix: '#include <sys/event.h>',
++          prefix: '#include <sys/types.h>\n#include <sys/event.h>',
+           args: compile_args_c,
+       )
+     )

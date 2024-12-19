@@ -40,8 +40,6 @@ lib/dbus-1.0/include/
 lib/dbus-1.0/include/dbus/
 lib/dbus-1.0/include/dbus/dbus-arch-deps.h
 @comment lib/dbus-1.0/test/
-@static-lib lib/libdbus-1.a
-lib/libdbus-1.la
 @lib lib/libdbus-1.so.${LIBdbus-1_VERSION}
 lib/pkgconfig/dbus-1.pc
 @man man/man1/dbus-cleanup-sockets.1
@@ -80,6 +78,7 @@ share/doc/dbus/examples/GetAllMatchRules.py
 share/doc/dbus/examples/example-session-disable-stats.conf
 share/doc/dbus/examples/example-system-enable-stats.conf
 share/doc/dbus/examples/example-system-hardening-without-traditional-activation.conf
+share/doc/dbus/index.html
 share/doc/dbus/system-activation.txt
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/dbus/

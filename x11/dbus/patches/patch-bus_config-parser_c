@@ -3,7 +3,7 @@
 Index: bus/config-parser.c
 --- bus/config-parser.c.orig
 +++ bus/config-parser.c
-@@ -3954,7 +3954,7 @@ static const char *test_system_service_dir_matches[] =
+@@ -3972,7 +3972,7 @@ static const char *test_system_service_dir_matches[] =
           "/usr/local/share/dbus-1/system-services",
           "/usr/share/dbus-1/system-services",
           DBUS_DATADIR"/dbus-1/system-services",
