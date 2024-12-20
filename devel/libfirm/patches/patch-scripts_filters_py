@@ -1,0 +1,16 @@
+Python 3.12 warns on invalid escape sequences
+https://github.com/python/cpython/pull/99011
+https://github.com/libfirm/libfirm/pull/34
+
+Index: scripts/filters.py
+--- scripts/filters.py.orig
++++ scripts/filters.py
+@@ -6,7 +6,7 @@ import re
+ 
+ 
+ def filtjoin(string, joinstring):
+-    args = re.split('\s*\n\s*', string)
++    args = re.split(r"\s*\n\s*", string)
+     if args[0] == '':
+         args = args[1:]
+     if len(args) > 0 and args[-1] == '':

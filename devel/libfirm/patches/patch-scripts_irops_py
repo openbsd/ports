@@ -1,0 +1,15 @@
+Python 3.12 removes imp module (deprecated since 3.4),
+it's not actually used in this script anyway.
+https://github.com/libfirm/libfirm/pull/34
+
+Index: scripts/irops.py
+--- scripts/irops.py.orig
++++ scripts/irops.py
+@@ -1,7 +1,6 @@
+ from jinjautil import export_filter, export
+ #from jinja2._compat import string_types use str instead
+ from filters import arguments
+-import imp
+ import sys
+ 
+ 
