@@ -1,0 +1,6 @@
+include/divsufsort.h
+include/divsufsort64.h
+@lib lib/libdivsufsort.so.${LIBdivsufsort_VERSION}
+@lib lib/libdivsufsort64.so.${LIBdivsufsort64_VERSION}
+lib/pkgconfig/libdivsufsort.pc
+lib/pkgconfig/libdivsufsort64.pc
