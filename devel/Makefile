@@ -1662,7 +1662,6 @@
      SUBDIR += py-simplegeneric,python3
      SUBDIR += py-simplejson,python3
      SUBDIR += py-sip,python3
-     SUBDIR += py-six
      SUBDIR += py-six,python3
      SUBDIR += py-smmap,python3
      SUBDIR += py-sniffio,python3
