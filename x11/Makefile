@@ -196,6 +196,7 @@
      SUBDIR += notion
      SUBDIR += numlockx
      SUBDIR += nx
+     SUBDIR += nxbelld
      SUBDIR += obconf
      SUBDIR += obmenu
      SUBDIR += ogle
