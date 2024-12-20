@@ -1,15 +1,15 @@
 COMMENT=	simulation of a true AI
 
-MODPY_EGG_VERSION= 1.00
+MODPY_EGG_VERSION= 1.0
 MUSIC_V=	007
-V=		${MODPY_EGG_VERSION}
+V=		1.00
 DISTNAME=	singularity-${V}
 PKGNAME=	singularity-${V}
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	games
 
-DISTFILES.m = 	endgame-singularity-music-${MUSIC_V}.zip
+DISTFILES.m=	endgame-singularity-music-${MUSIC_V}.zip
 
 HOMEPAGE=	http://emhsoft.com/singularity/
 
@@ -22,20 +22,18 @@ SITES.m=http://emhsoft.com/singularity/
 
 WRKDIST=	${WRKDIR}/singularity-${V}
 
-MODULES =	lang/python
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
 
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST =		Yes
-
-RUN_DEPENDS =	devel/pygame${MODPY_FLAVOR} \
+RUN_DEPENDS=	devel/pygame${MODPY_FLAVOR} \
 		math/py-numpy${MODPY_FLAVOR}
 
-pre-configure:
+xxpre-configure:
 	find ${WRKSRC} -name \*.py -exec \
 		perl -pi -e 's,/usr/bin/env python,${MODPY_BIN},g' {} \;
 
-MUSIC_SRC=endgame-singularity-music-${MUSIC_V}
-MUSIC_DEST=lib/python${MODPY_VERSION}/site-packages/singularity/music
+MUSIC_SRC=	endgame-singularity-music-${MUSIC_V}
+MUSIC_DEST=	lib/python${MODPY_VERSION}/site-packages/singularity/music
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/${MUSIC_DEST}
