@@ -72,6 +72,8 @@ lib/python${MODPY_VERSION}/site-packages/fsspec/implementations/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/fsspec/implementations/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fsspec/implementations/${MODPY_PYCACHE}arrow.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fsspec/implementations/${MODPY_PYCACHE}arrow.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/fsspec/implementations/${MODPY_PYCACHE}asyn_wrapper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/fsspec/implementations/${MODPY_PYCACHE}asyn_wrapper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fsspec/implementations/${MODPY_PYCACHE}cache_mapper.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fsspec/implementations/${MODPY_PYCACHE}cache_mapper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fsspec/implementations/${MODPY_PYCACHE}cache_metadata.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -115,6 +117,7 @@ lib/python${MODPY_VERSION}/site-packages/fsspec/implementations/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/fsspec/implementations/${MODPY_PYCACHE}zip.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fsspec/implementations/${MODPY_PYCACHE}zip.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fsspec/implementations/arrow.py
+lib/python${MODPY_VERSION}/site-packages/fsspec/implementations/asyn_wrapper.py
 lib/python${MODPY_VERSION}/site-packages/fsspec/implementations/cache_mapper.py
 lib/python${MODPY_VERSION}/site-packages/fsspec/implementations/cache_metadata.py
 lib/python${MODPY_VERSION}/site-packages/fsspec/implementations/cached.py
@@ -155,12 +158,18 @@ lib/python${MODPY_VERSION}/site-packages/fsspec/tests/abstract/${MODPY_PYCACHE}g
 lib/python${MODPY_VERSION}/site-packages/fsspec/tests/abstract/${MODPY_PYCACHE}get.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fsspec/tests/abstract/${MODPY_PYCACHE}mv.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fsspec/tests/abstract/${MODPY_PYCACHE}mv.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/fsspec/tests/abstract/${MODPY_PYCACHE}open.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/fsspec/tests/abstract/${MODPY_PYCACHE}open.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/fsspec/tests/abstract/${MODPY_PYCACHE}pipe.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/fsspec/tests/abstract/${MODPY_PYCACHE}pipe.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fsspec/tests/abstract/${MODPY_PYCACHE}put.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/fsspec/tests/abstract/${MODPY_PYCACHE}put.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/fsspec/tests/abstract/common.py
 lib/python${MODPY_VERSION}/site-packages/fsspec/tests/abstract/copy.py
 lib/python${MODPY_VERSION}/site-packages/fsspec/tests/abstract/get.py
 lib/python${MODPY_VERSION}/site-packages/fsspec/tests/abstract/mv.py
+lib/python${MODPY_VERSION}/site-packages/fsspec/tests/abstract/open.py
+lib/python${MODPY_VERSION}/site-packages/fsspec/tests/abstract/pipe.py
 lib/python${MODPY_VERSION}/site-packages/fsspec/tests/abstract/put.py
 lib/python${MODPY_VERSION}/site-packages/fsspec/transaction.py
 lib/python${MODPY_VERSION}/site-packages/fsspec/utils.py
