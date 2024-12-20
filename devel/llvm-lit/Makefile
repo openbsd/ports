@@ -4,7 +4,7 @@ DPB_PROPERTIES =	parallel
 
 COMMENT =	LLVM integrated tester
 
-LLVM_VERSION =	19.1.4
+LLVM_VERSION =	19.1.6
 DISTNAME =	llvm-project-${LLVM_VERSION}.src
 SUPDISTFILES =	${DISTFILES:S/$/.sig/}
 PKGNAME =	llvm-lit-${LLVM_VERSION}
@@ -49,6 +49,8 @@ WRKSRC =		${WRKDIST}/llvm
 
 ALL_TARGET =		FileCheck not prepare-check-lit docs-llvm-man
 TEST_TARGET =		check-lit
+
+SUBST_VARS =		LLVM_VERSION
 
 post-build:
 	@cd ${WRKSRC}/utils/lit && ${SETENV} ${MAKE_ENV} \

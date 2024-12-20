@@ -2,13 +2,13 @@
 bin/lit
 @bin bin/not
 lib/python${MODPY_VERSION}/site-packages/lit/
-lib/python${MODPY_VERSION}/site-packages/lit-19.1.4.dev0-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/lit-19.1.4.dev0-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/lit-19.1.4.dev0-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/lit-19.1.4.dev0-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/lit-19.1.4.dev0-py${MODPY_VERSION}.egg-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/lit-19.1.4.dev0-py${MODPY_VERSION}.egg-info/not-zip-safe
-lib/python${MODPY_VERSION}/site-packages/lit-19.1.4.dev0-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/lit-${LLVM_VERSION}.dev0-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/lit-${LLVM_VERSION}.dev0-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/lit-${LLVM_VERSION}.dev0-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/lit-${LLVM_VERSION}.dev0-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/lit-${LLVM_VERSION}.dev0-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/lit-${LLVM_VERSION}.dev0-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/lit-${LLVM_VERSION}.dev0-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/lit/BooleanExpression.py
 lib/python${MODPY_VERSION}/site-packages/lit/LitConfig.py
 lib/python${MODPY_VERSION}/site-packages/lit/LitTestCase.py
