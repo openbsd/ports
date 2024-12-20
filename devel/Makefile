@@ -279,6 +279,7 @@
      SUBDIR += libdaemon
      SUBDIR += libdisorder
      SUBDIR += libdispatch
+     SUBDIR += libdivsufsort
      SUBDIR += libdockapp
      SUBDIR += libdshconfig
      SUBDIR += libdvdread
