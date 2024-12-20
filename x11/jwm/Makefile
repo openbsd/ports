@@ -1,8 +1,7 @@
 COMMENT=		Joe's Window Manager
 
-V=			2.4.3
+V=			2.4.6
 DISTNAME=		jwm-${V}
-REVISION=		0
 
 CATEGORIES=		x11
 
@@ -11,10 +10,11 @@ HOMEPAGE=		https://www.joewing.net/projects/jwm/
 # MIT
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += X11 Xext Xft Xinerama Xmu Xpm Xrender c cairo fontconfig
-WANTLIB += freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += harfbuzz iconv intl jpeg m pango-1.0 pangoft2-1.0 pangoxft-1.0
-WANTLIB += png rsvg-2
+WANTLIB += X11 Xext Xft Xinerama Xmu Xpm Xrender c cairo cairo-gobject
+WANTLIB += fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 harfbuzz iconv intl jpeg pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pangoxft-1.0 png pthread
+WANTLIB += rsvg-2 xml2
 
 SITES=			https://github.com/joewing/jwm/releases/download/v${V}/
 EXTRACT_SUFX=		.tar.xz
