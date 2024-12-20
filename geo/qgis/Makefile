@@ -6,7 +6,7 @@ COMMENT =	desktop geographical information system
 
 DPB_PROPERTIES =	parallel parallel2
 
-DISTNAME =	qgis-3.40.1
+DISTNAME =	qgis-3.40.2
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}
