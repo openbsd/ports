@@ -425,7 +425,6 @@
      SUBDIR += py-enchant,python3
      SUBDIR += py-et_xmlfile,python3
      SUBDIR += py-fastjsonschema,python3
-     SUBDIR += py-feedparser
      SUBDIR += py-feedparser,python3
      SUBDIR += py-gTTS,python3
      SUBDIR += py-humanfriendly,python3
