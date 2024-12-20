@@ -61,6 +61,7 @@ lib/python${MODPY_VERSION}/site-packages/siphon/cdmr/coveragedataset.py
 lib/python${MODPY_VERSION}/site-packages/siphon/cdmr/dataset.py
 lib/python${MODPY_VERSION}/site-packages/siphon/cdmr/ncStream_pb2.py
 lib/python${MODPY_VERSION}/site-packages/siphon/cdmr/ncstream.py
+lib/python${MODPY_VERSION}/site-packages/siphon/cdmr/resources.md
 lib/python${MODPY_VERSION}/site-packages/siphon/cdmr/xarray_support.py
 lib/python${MODPY_VERSION}/site-packages/siphon/http_util.py
 lib/python${MODPY_VERSION}/site-packages/siphon/metadata.py
