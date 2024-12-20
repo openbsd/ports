@@ -14,7 +14,10 @@ PERMIT_PACKAGE =Yes
 SITES =		${HOMEPAGE:=uv/}
 MODULES =	lang/tcl
 MODTCL_VERSION =8.6
-BUILD_DEPENDS =	devel/tcllib
+
+BUILD_DEPENDS =	${MODTCL_BUILD_DEPENDS} \
+		devel/tcllib
+
 RUN_DEPENDS =	x11/dbus-tcl
 TEST_DEPENDS =	${RUN_DEPENDS}
 TEST_FLAGS =	TCLSH_PROG='${LOCALBASE}/bin/dbus-run-session ${MODTCL_BIN}'
