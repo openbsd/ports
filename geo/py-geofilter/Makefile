@@ -1,6 +1,7 @@
 COMMENT =		pure Python parser implementation of OGC filtering standards
 
 MODPY_EGG_VERSION =	0.2.4
+REVISION =		0
 DISTNAME =		pygeofilter-${MODPY_EGG_VERSION}
 PKGNAME =		py-geofilter-${MODPY_EGG_VERSION}
 
@@ -14,7 +15,7 @@ MODULES =		lang/python
 FLAVORS =		python3
 FLAVOR ?=		python3
 
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
 #all tests have missing deps
 #NO_TEST =	Yes
