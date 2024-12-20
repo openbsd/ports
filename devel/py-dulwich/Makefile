@@ -1,46 +1,45 @@
-COMMENT =		pure Python implementation of Git file formats and protocols
+COMMENT=	pure Python implementation of Git file formats and protocols
 
-MODPY_EGG_VERSION =	0.21.3
-DISTNAME =		dulwich-${MODPY_EGG_VERSION}
-PKGNAME =		py-${DISTNAME}
-REVISION =		0
+MODPY_EGG_VERSION=	0.22.7
+DISTNAME=	dulwich-${MODPY_EGG_VERSION}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =		devel
+CATEGORIES=	devel
 
-HOMEPAGE =		https://www.dulwich.io/
+HOMEPAGE=	https://www.dulwich.io/
 
 # Apache v2 or GPLv2+
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += pthread ${MODPY_WANTLIB}
 
-MODULES =		lang/python
-MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
-MODPY_PYTEST_ARGS =	dulwich/tests/
+MODULES=	lang/python
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools-rust
 
-FLAVORS =		python3
-FLAVOR =		python3
+FLAVORS=	python3
+FLAVOR=		python3
 
-RUN_DEPENDS =		net/py-geventhttpclient${MODPY_FLAVOR}
-# www/py-urllib3${MODPY_FLAVOR}
+RUN_DEPENDS=	www/py-urllib3${MODPY_FLAVOR}
 
-TEST_DEPENDS =		devel/git,-main \
-			devel/py-fastimport${MODPY_FLAVOR} \
-			devel/py-greenlet${MODPY_FLAVOR} \
-			devel/py-mock${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/git,-main \
+		devel/py-fastimport${MODPY_FLAVOR} \
+		devel/py-greenlet${MODPY_FLAVOR} \
+		devel/py-mock${MODPY_FLAVOR} \
+		net/py-geventhttpclient${MODPY_FLAVOR}
 
-MAKE_ENV +=		LC_CTYPE=en_US.UTF-8
-GIT =			${LOCALBASE}/bin/git
+MAKE_ENV +=	LC_CTYPE=en_US.UTF-8
 
-pre-test:
-	sed -i '/^_DEFAULT_GIT/s/git/${GIT:S/\//\\\//g}/' \
-		${WRKSRC}/dulwich/tests/compat/utils.py
+MODPY_PYTEST_ARGS=	--ignore tests/contrib/test_swift_smoke.py
 
 post-install:
-	rm -R ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/docs
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dulwich/tutorial
 	${INSTALL_DATA} ${WRKSRC}/docs/tutorial/*.txt \
 			${PREFIX}/share/doc/dulwich/tutorial
 
+pre-test:
+	sed -i '/^_DEFAULT_GIT/s,git,${LOCALBASE}/bin/git,' \
+		${WRKSRC}/tests/compat/utils.py
+
+.include "crates.inc"
 .include <bsd.port.mk>
