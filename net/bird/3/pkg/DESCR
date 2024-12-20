@@ -1,0 +1,14 @@
+The BIRD project aims to develop a fully functional dynamic IP
+routing daemon primarily targeted on (but not limited to) UNIX-like
+systems and distributed under the GNU General Public License.
+
+    * Both IPv4 and IPv6
+    * Multiple routing tables (not on OpenBSD yet)
+    * BGP
+    * RIP
+    * OSPF (IPv4 only)
+    * Static routes
+    * Inter-table protocol
+    * Command-line interface
+    * Soft reconfiguration
+    * Powerful language for route filtering

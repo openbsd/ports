@@ -1,0 +1,11 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/sbin/bird"
+
+. /etc/rc.d/rc.subr
+
+rc_stop() {
+	${TRUEPREFIX}/sbin/birdc down
+}
+
+rc_cmd $1

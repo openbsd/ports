@@ -1,0 +1,14 @@
+@option is-branch
+@conflict bird-v6-*
+@conflict bird-doc-*
+@rcscript ${RCDIR}/bird
+@bin sbin/bird
+@bin sbin/birdc
+@bin sbin/birdcl
+share/doc/bird/
+share/doc/bird/bird.pdf
+share/doc/bird/prog.pdf
+share/examples/bird/
+share/examples/bird/bird.conf
+@sample ${SYSCONFDIR}/bird.conf
+share/examples/bird/bird.conf.example2

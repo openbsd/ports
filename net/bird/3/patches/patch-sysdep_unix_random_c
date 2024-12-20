@@ -1,0 +1,16 @@
+Index: sysdep/unix/random.c
+--- sysdep/unix/random.c.orig
++++ sysdep/unix/random.c
+@@ -24,11 +24,7 @@
+ u32
+ random_u32(void)
+ {
+-  long int rand_low, rand_high;
+-
+-  rand_low = random();
+-  rand_high = random();
+-  return (rand_low & 0xffff) | ((rand_high & 0xffff) << 16);
++  return arc4random();
+ }
+ 
+ 
