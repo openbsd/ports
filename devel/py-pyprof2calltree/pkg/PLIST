@@ -1,5 +1,5 @@
 @conflict py-pyprof2calltree-<1.4.5p0
-@pkgpath devel/pyprof2calltree
+@pkgpath devel/py-pyprof2calltree
 bin/pyprof2calltree
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pyprof2calltree.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
