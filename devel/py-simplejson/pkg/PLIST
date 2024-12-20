@@ -1,4 +1,4 @@
-@pkgpath textproc/py-simplejson
+@pkgpath devel/py-simplejson
 lib/python${MODPY_VERSION}/site-packages/simplejson/
 lib/python${MODPY_VERSION}/site-packages/simplejson-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/simplejson-${MODPY_EGG_VERSION}.dist-info/LICENSE.txt
