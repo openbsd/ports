@@ -65,6 +65,7 @@ BUILD_DEPENDS =	archivers/bzip2 \
 		devel/bison \
 		devel/gperf \
 		devel/ninja \
+		devel/py-six${MODPY_FLAVOR} \
 		lang/node \
 		shells/bash \
 		sysutils/flock \
@@ -128,10 +129,12 @@ pre-configure:
 	@cd ${CHROMESRC}/third_party/boringssl && ${MODPY_BIN} src/util/generate_build_files.py json
 	@cd ${WRKSRC} && env -i ${MAKE_ENV} ${CHROMESRC}/build/linux/unbundle/replace_gn_files.py \
 		--system-libraries ${GN_SYSTEM_LIBS}
-	# # Rerun syncqt.pl -- otherwise the resulting package misses some forwarding headers.
+	# Rerun syncqt.pl -- otherwise the resulting package misses some forwarding headers.
 	${QT5_GEN_INCLUDES}
+	# Remove old ver of six, incompatible with py3.12.
+	rm -r ${CHROMESRC}/tools/grit/third_party/six
 
-pre-build:
+post-configure:
 	${SUBST_CMD} ${CHROMESRC}/build/gn_run_binary.py \
 		${CHROMESRC}/v8/tools/run.py \
 		${CHROMESRC}/tools/protoc_wrapper/protoc_wrapper.py
