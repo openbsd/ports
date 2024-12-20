@@ -64,7 +64,6 @@
      SUBDIR += py-pydyf,python3
      SUBDIR += py-pypdf,python3
      SUBDIR += py-relatorio,python3
-     SUBDIR += py-reportlab
      SUBDIR += py-reportlab,python3
      SUBDIR += qpdf
      SUBDIR += scribus
