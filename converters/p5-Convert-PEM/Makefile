@@ -1,17 +1,20 @@
-COMMENT=	read/write access to ASN.1-encoded PEM files
+COMMENT =	read/write encrypted ASN.1 PEM files
 
-DISTNAME=	Convert-PEM-0.08
-CATEGORIES=	converters security
-MODULES=	cpan
-PKG_ARCH=	*
-REVISION=	0
+DISTNAME =	Convert-PEM-0.13
+
+CATEGORIES =	converters security
 
 # Perl
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE =	Yes
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	converters/p5-Convert-ASN1 \
-		devel/p5-Class-ErrorHandler \
-		security/p5-Crypt-DES-EDE3
+MODULES =		cpan
+
+RUN_DEPENDS =		converters/p5-Convert-ASN1>=0.34 \
+			devel/p5-Class-ErrorHandler \
+			security/p5-Crypt-DES-EDE3 \
+			security/p5-CryptX
+TEST_DEPENDS =		devel/p5-Test-Exception
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
