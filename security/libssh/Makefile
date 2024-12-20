@@ -1,9 +1,8 @@
 COMMENT =		C library implementing server and client side SSH
-V =			0.10.6
+V =			0.11.1
 DISTNAME =		libssh-${V}
-REVISION =		0
 
-SHARED_LIBS +=		ssh		4.2 # 4.8
+SHARED_LIBS +=		ssh		4.3 # 4.8
 
 CATEGORIES =		security devel
 
@@ -18,6 +17,10 @@ COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
 WANTLIB += crypto z
+
+# see patches/patch-src_CMakeLists_txt /
+# https://gitlab.com/libssh/libssh-mirror/-/issues/286
+WANTLIB += pthread
 
 MODULES =		devel/cmake
 

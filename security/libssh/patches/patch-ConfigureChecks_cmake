@@ -1,9 +1,21 @@
+We have EVP_chacha20 but not EVP_PKEY_POLY1305 so the code using it
+fails.
+
 Fix exit code.
 
 Index: ConfigureChecks.cmake
 --- ConfigureChecks.cmake.orig
 +++ ConfigureChecks.cmake
-@@ -306,7 +306,7 @@ check_c_source_compiles("
+@@ -102,7 +102,7 @@ if (OPENSSL_FOUND)
+     check_function_exists(EVP_KDF_CTX_new HAVE_OPENSSL_EVP_KDF_CTX_NEW)
+     check_function_exists(FIPS_mode HAVE_OPENSSL_FIPS_MODE)
+     check_function_exists(RAND_priv_bytes HAVE_OPENSSL_RAND_PRIV_BYTES)
+-    check_function_exists(EVP_chacha20 HAVE_OPENSSL_EVP_CHACHA20)
++    #check_function_exists(EVP_chacha20 HAVE_OPENSSL_EVP_CHACHA20)
+ 
+     unset(CMAKE_REQUIRED_INCLUDES)
+     unset(CMAKE_REQUIRED_LIBRARIES)
+@@ -261,7 +261,7 @@ check_c_source_compiles("
  __thread int tls;
  
  int main(void) {

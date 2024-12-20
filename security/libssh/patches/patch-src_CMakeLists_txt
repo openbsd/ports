@@ -1,0 +1,21 @@
+Force pthread linkage until there's a better idea, proxy jump support
+uses pthread functions whether or not pthread was linked.
+(https://gitlab.com/libssh/libssh-mirror/-/issues/286)
+
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -69,6 +69,13 @@ if (MINGW AND Threads_FOUND)
+   )
+ endif()
+ 
++if (Threads_FOUND)
++  set(LIBSSH_LINK_LIBRARIES
++    ${LIBSSH_LINK_LIBRARIES}
++    pthread
++  )
++endif()
++
+ # The ws2_32 needs to be last for mingw to build
+ # https://gitlab.com/libssh/libssh-mirror/-/issues/84
+ if (WIN32)

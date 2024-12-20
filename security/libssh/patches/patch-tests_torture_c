@@ -10,4 +10,4 @@ Index: tests/torture.c
 +#include <limits.h>
  #elif (defined _WIN32) || (defined _WIN64)
  #include <direct.h>
- #include <io.h>
+ #define chdir _chdir

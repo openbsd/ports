@@ -3,7 +3,7 @@ Disable unit test "torture_path_expand_tilde_unix": real user required.
 Index: tests/unittests/torture_misc.c
 --- tests/unittests/torture_misc.c.orig
 +++ tests/unittests/torture_misc.c
-@@ -887,7 +887,8 @@ int torture_run_tests(void) {
+@@ -1139,7 +1139,8 @@ int torture_run_tests(void) {
  #ifdef _WIN32
          cmocka_unit_test(torture_path_expand_tilde_win),
  #else

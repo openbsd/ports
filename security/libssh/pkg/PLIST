@@ -6,6 +6,7 @@ include/libssh/libssh_version.h
 include/libssh/libsshpp.hpp
 include/libssh/server.h
 include/libssh/sftp.h
+include/libssh/sftpserver.h
 include/libssh/ssh2.h
 lib/cmake/
 lib/cmake/libssh/
