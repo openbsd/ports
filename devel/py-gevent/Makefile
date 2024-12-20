@@ -1,6 +1,7 @@
 COMMENT =		network library for easy and scalable concurrency
 
 MODPY_EGG_VERSION =	24.11.1
+REVISION =		0
 DISTNAME =		gevent-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 
@@ -24,12 +25,13 @@ MODPY_PYBUILD =		setuptools
 
 BUILD_DEPENDS =		devel/libev:configure \
 			devel/py-cffi${MODPY_FLAVOR} \
-			devel/py-greenlet${MODPY_FLAVOR} \
 			lang/cython${MODPY_FLAVOR}
 LIB_DEPENDS =		devel/libev \
 			devel/libuv \
 			net/libcares
-RUN_DEPENDS =		devel/py-greenlet${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-greenlet${MODPY_FLAVOR} \
+			devel/py-zopeevent${MODPY_FLAVOR} \
+			devel/py-zopeinterface${MODPY_FLAVOR}
 
 MAKE_ENV =		GEVENTSETUP_EMBED_CARES=0 \
 			GEVENTSETUP_EMBED_LIBEV=0 \
