@@ -22,23 +22,19 @@ FLAVOR=		python3
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
 
-MODULES=	devel/cargo \
-		lang/python
+MODULES=	lang/python
 
-MODPY_PYBUILD=	setuptools
+MODPY_PYBUILD=	setuptools-rust
 MODPY_PI=	Yes
 
 # avoid picking up test_dist_lto_opt.py in modcargo-crates/cxx
 MODPY_PYTEST_ARGS= tests
 
 MODCARGO_CARGOTOML= ${WRKSRC}/src/rust/Cargo.toml
-MODCARGO_INSTALL= No
-MODCARGO_TEST=	No
 
 MAKE_ENV=	OPENSSL_DIR="/usr" OPENSSL_STATIC=0
 
-BUILD_DEPENDS=	${RUN_DEPENDS} \
-		devel/py-setuptools-rust${MODPY_FLAVOR}
+BUILD_DEPENDS=	${RUN_DEPENDS}
 
 RUN_DEPENDS=	devel/py-cffi${MODPY_FLAVOR}>=1.4.2
 
@@ -54,11 +50,5 @@ TEST_DEPENDS=	devel/py-certifi${MODPY_FLAVOR} \
 		security/py-bcrypt${MODPY_FLAVOR} \
 		security/py-cryptography_vectors${MODPY_FLAVOR}=${MODPY_EGG_VERSION} \
 		textproc/py-iso8601${MODPY_FLAVOR}
-
-do-configure:
-	@${MODCARGO_configure}
-
-do-build:
-	@${MODPY_BUILD_TARGET}
 
 .include <bsd.port.mk>
