@@ -557,6 +557,7 @@ share/remind/holidays/us/mi.rem
 share/remind/holidays/us/mo.rem
 share/remind/holidays/us/mp.rem
 share/remind/holidays/us/ms.rem
+share/remind/holidays/us/mt.rem
 share/remind/holidays/us/nc.rem
 share/remind/holidays/us/ne.rem
 share/remind/holidays/us/nh.rem
@@ -564,6 +565,7 @@ share/remind/holidays/us/nj.rem
 share/remind/holidays/us/nm.rem
 share/remind/holidays/us/nv.rem
 share/remind/holidays/us/ny.rem
+share/remind/holidays/us/oh.rem
 share/remind/holidays/us/ok.rem
 share/remind/holidays/us/pa.rem
 share/remind/holidays/us/pr.rem
@@ -610,3 +612,4 @@ share/remind/seasons.rem
 share/remind/site/
 share/remind/site/README
 @tag update-desktop-database
+share/remind/sun.rem
