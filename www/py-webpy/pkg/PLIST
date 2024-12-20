@@ -1,5 +1,5 @@
 @conflict py-webpy-*
-@pkgpath www/py-webpy-*
+@pkgpath www/py-webpy
 lib/python${MODPY_VERSION}/site-packages/web/
 lib/python${MODPY_VERSION}/site-packages/web.py-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/web.py-${MODPY_EGG_VERSION}.dist-info/METADATA
