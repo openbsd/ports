@@ -1,9 +1,0 @@
-@option is-branch
-@pkgpath net/bird,-main${FLAVOR_COMMA}
-@rcscript ${RCDIR}/bird${SIX}
-@bin sbin/bird${SIX}
-@bin sbin/birdc${SIX}
-@bin sbin/birdcl${SIX}
-share/examples/bird/
-share/examples/bird/bird${SIX}.conf
-@sample ${SYSCONFDIR}/bird${SIX}.conf
