@@ -186,6 +186,7 @@ ${P5SITE}/Image/ExifTool/PhotoMechanic.pm
 ${P5SITE}/Image/ExifTool/Photoshop.pm
 ${P5SITE}/Image/ExifTool/PostScript.pm
 ${P5SITE}/Image/ExifTool/PrintIM.pm
+${P5SITE}/Image/ExifTool/Protobuf.pm
 ${P5SITE}/Image/ExifTool/Qualcomm.pm
 ${P5SITE}/Image/ExifTool/QuickTime.pm
 ${P5SITE}/Image/ExifTool/QuickTimeStream.pl
@@ -386,6 +387,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::Photoshop.3p
 @man man/man3p/Image::ExifTool::PostScript.3p
 @man man/man3p/Image::ExifTool::PrintIM.3p
+@man man/man3p/Image::ExifTool::Protobuf.3p
 @man man/man3p/Image::ExifTool::Qualcomm.3p
 @man man/man3p/Image::ExifTool::QuickTime.3p
 @man man/man3p/Image::ExifTool::QuickTimeStream.3p
