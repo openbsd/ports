@@ -1,7 +1,7 @@
 COMMENT =		OGC API server implementation
 
 MODPY_EGG_VERSION =	0.18.0
-REVISION =		0
+REVISION =		1
 DISTNAME =		pygeoapi-${MODPY_EGG_VERSION}
 
 CATEGORIES =		geo devel
@@ -12,7 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =	setuptools
 # PyPi tarball doesnt ship tests subdir.. and missing pyld dep
 MODPY_PI =		Yes
 NO_TEST =	Yes
