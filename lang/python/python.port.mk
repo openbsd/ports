@@ -188,14 +188,23 @@ BUILD_DEPENDS +=	devel/maturin
 BUILD_DEPENDS +=	devel/py-pdm-backend${MODPY_FLAVOR}
 .  elif ${MODPY_PYBUILD} == poetry-core
 BUILD_DEPENDS +=	devel/py-poetry-core${MODPY_FLAVOR}
-.  elif ${MODPY_PYBUILD} == setuptools || ${MODPY_PYBUILD} == setuptools_scm
+.  elif ${MODPY_PYBUILD} == setuptools || \
+	${MODPY_PYBUILD} == setuptools_scm || \
+	${MODPY_PYBUILD} == setuptools-rust
 BUILD_DEPENDS +=	devel/py-setuptools${MODPY_FLAVOR} \
 			devel/py-wheel${MODPY_FLAVOR}
 .    if ${MODPY_PYBUILD} == setuptools_scm
 BUILD_DEPENDS +=	devel/py-setuptools_scm${MODPY_FLAVOR}
+.    elif ${MODPY_PYBUILD} == setuptools-rust
+BUILD_DEPENDS +=	devel/py-setuptools-rust${MODPY_FLAVOR}
+.      if ! ${MODULES:Mdevel/cargo}
+MODCARGO_INSTALL ?=	No
+MODCARGO_TEST ?=	No
+MODULES +=		devel/cargo
+.      endif
 .    endif
 .  elif !${MODPY_PYBUILD:L:Mother}
-ERRORS +=		"Fatal: unknown MODPY_PYBUILD value (flit, flit_core, flit_scm, hatch-vcs, hatchling, jupyter_packaging, pdm, maturin, other, poetry-core, setuptools, setuptools_scm)"
+ERRORS +=		"Fatal: unknown MODPY_PYBUILD value (flit, flit_core, flit_scm, hatch-vcs, hatchling, jupyter_packaging, pdm, maturin, other, poetry-core, setuptools, setuptools_scm, setuptools-rust)"
 .  endif
 .else
 # Try to detect the case where a port will build regardless of setuptools
@@ -347,8 +356,16 @@ MODPY_TEST_TARGET +=	${TEST_TARGET}
 
 # dirty way to do it with no modifications in bsd.port.mk
 .if empty(CONFIGURE_STYLE)
+.  if !target(do-configure) && ${MODPY_PYBUILD} == setuptools-rust
+do-configure:
+	@${MODCARGO_configure}
+.  endif
+
 .  if !target(do-build)
 do-build:
+.    if ${MODPY_PYBUILD} == setuptools-rust
+	@${MODCARGO_BUILD_TARGET}
+.    endif
 	@${MODPY_BUILD_TARGET}
 .  endif
 
