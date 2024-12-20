@@ -4,7 +4,7 @@ MODPY_EGG_VERSION =	1.4.11
 DISTNAME =		pyglet-${MODPY_EGG_VERSION}
 PKGNAME =		py-${DISTNAME}
 EXTRACT_SUFX =		.zip
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		x11 multimedia
 
@@ -19,7 +19,7 @@ FLAVORS =		python3
 FLAVOR =		python3
 
 MODPY_PI =		Yes
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 
 NO_TEST =		Yes
 
