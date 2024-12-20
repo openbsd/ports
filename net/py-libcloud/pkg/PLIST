@@ -1,5 +1,5 @@
 @conflict py-libcloud-*
-@pkgpath net/py-libcloud,python3
+@pkgpath net/py-libcloud
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/apache_libcloud-${MODPY_EGG_VERSION}.dist-info/METADATA
