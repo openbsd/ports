@@ -1,7 +1,7 @@
 Index: llvm/lib/Target/AArch64/AArch64ISelLowering.cpp
 --- llvm/lib/Target/AArch64/AArch64ISelLowering.cpp.orig
 +++ llvm/lib/Target/AArch64/AArch64ISelLowering.cpp
-@@ -26403,7 +26403,8 @@ void AArch64TargetLowering::ReplaceNodeResults(
+@@ -26406,7 +26406,8 @@ void AArch64TargetLowering::ReplaceNodeResults(
  }
  
  bool AArch64TargetLowering::useLoadStackGuardNode() const {
