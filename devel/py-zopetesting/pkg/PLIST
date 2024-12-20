@@ -1,4 +1,4 @@
-@pkgpath devel/${MODPY_PY_PREFIX}zopetesting
+@pkgpath devel/py-zopetesting
 lib/python${MODPY_VERSION}/site-packages/zope/
 lib/python${MODPY_VERSION}/site-packages/zope.testing-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth
 lib/python${MODPY_VERSION}/site-packages/zope.testing-${MODPY_EGG_VERSION}.dist-info/

@@ -1,11 +1,11 @@
 COMMENT=	testing frameworks from Zope 3
 
 MODPY_EGG_VERSION=	4.10
+REVISION=	2
 
 DISTNAME=	zope.testing-${MODPY_EGG_VERSION}
 PKGNAME=	py-zopetesting-${MODPY_EGG_VERSION}
 CATEGORIES=	devel
-REVISION=	1
 
 # Zope Public License
 PERMIT_PACKAGE=	Yes
