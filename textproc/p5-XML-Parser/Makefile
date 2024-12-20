@@ -1,7 +1,7 @@
 COMMENT=	perl module for parsing XML documents
 
 MODULES=	cpan
-DISTNAME =	XML-Parser-2.46
+DISTNAME =	XML-Parser-2.47
 CATEGORIES=	textproc
 FIX_EXTRACT_PERMISSIONS = Yes
 
