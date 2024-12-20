@@ -1,0 +1,13 @@
+nxbelld is a tiny utility to aid people who either don't like the
+default PC speaker beep, or use a sound driver that doesn't have
+support for the PC speaker.
+
+nxbelld performs a given action every time the X bell is rung.  The
+actions nxbelld can currently perform include running a specified
+program, emulating the PC speaker beep using your sound card
+(default), or playing a PCM encoded WAVE file.
+
+----
+
+nxbelld is a fork of xbelld.  You can find the original project
+here: https://gitlab.com/gi1242/xbelld
