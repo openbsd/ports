@@ -5,8 +5,7 @@ SHARED_LIBS +=	bemenu                    2.0 # 0.6.7
 
 GH_ACCOUNT =	Cloudef
 GH_PROJECT =	bemenu
-GH_TAGNAME =	0.6.7
-REVISION =	0
+GH_TAGNAME =	0.6.23
 
 # Library and bindings: LGPLv3+
 # Everything else: GPLv3+
