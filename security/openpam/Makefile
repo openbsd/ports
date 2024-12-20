@@ -1,10 +1,12 @@
 COMMENT=	Pluggable Authentication Module
 
-V=		20200510
-DISTNAME=	freebsd_pam-${V}
+V=		20241220
+DISTNAME=	openbsd_pam-${V}
 PKGNAME=	openpam-${V}
 
-REVISION=	0
+GH_ACCOUNT=	rnagy
+GH_PROJECT=	openbsd_pam
+GH_COMMIT=	5a83b8e19ec35b0860cc2dcdf52976d938198738
 
 CATEGORIES=	security
 
@@ -18,8 +20,6 @@ MAINTAINER=	Robert Nagy <robert@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += util
-
-SITES=		http://nerd.hu/distfiles/
 
 WRKSRC=	${WRKDIST}/libpam
 
