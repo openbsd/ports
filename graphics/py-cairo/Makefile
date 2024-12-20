@@ -4,6 +4,7 @@ NOT_FOR_ARCHS=		m88k
 COMMENT=		cairo bindings for Python
 
 MODPY_EGG_VERSION=	1.27.0
+REVISION=		0
 GH_ACCOUNT=		pygobject
 GH_PROJECT=		pycairo
 GH_TAGNAME=		v${MODPY_EGG_VERSION}

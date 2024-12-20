@@ -1,4 +1,4 @@
-@pkgpath graphics/${MODPY_PY_PREFIX}cairo
+@pkgpath graphics/py-cairo
 include/pycairo/
 include/pycairo/py3cairo.h
 lib/pkgconfig/py3cairo.pc
