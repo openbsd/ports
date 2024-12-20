@@ -1,0 +1,12 @@
+Index: runtime/test/ompt/misc/interoperability.cpp
+--- runtime/test/ompt/misc/interoperability.cpp.orig
++++ runtime/test/ompt/misc/interoperability.cpp
+@@ -3,7 +3,7 @@
+ 
+ #include <iostream>
+ #include <thread>
+-#if !defined(__FreeBSD__) && !defined(__NetBSD__)
++#if !defined(__FreeBSD__) && !defined(__NetBSD__) && !defined(__OpenBSD__)
+ #include <alloca.h>
+ #else
+ #include <cstdlib>

@@ -1,0 +1,12 @@
+Index: runtime/CMakeLists.txt
+--- runtime/CMakeLists.txt.orig
++++ runtime/CMakeLists.txt
+@@ -367,7 +367,7 @@ if (OPENMP_MSVC_NAME_SCHEME)
+ endif()
+ 
+ if(${LIBOMP_ENABLE_SHARED})
+-  set(LIBOMP_LIBRARY_SUFFIX ${CMAKE_SHARED_LIBRARY_SUFFIX})
++  set(LIBOMP_LIBRARY_SUFFIX ${CMAKE_SHARED_LIBRARY_SUFFIX}.${LIBomp_VERSION})
+   set(LIBOMP_LIBRARY_KIND SHARED)
+   set(LIBOMP_INSTALL_KIND LIBRARY)
+ else()

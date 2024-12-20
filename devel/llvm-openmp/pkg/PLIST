@@ -1,0 +1,4 @@
+include/omp-tools.h
+include/omp.h
+include/ompt.h
+@lib lib/libomp.so.${LIBomp_VERSION}

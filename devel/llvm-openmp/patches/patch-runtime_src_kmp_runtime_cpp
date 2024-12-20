@@ -1,0 +1,22 @@
+Index: runtime/src/kmp_runtime.cpp
+--- runtime/src/kmp_runtime.cpp.orig
++++ runtime/src/kmp_runtime.cpp
+@@ -178,7 +178,8 @@ int __kmp_get_global_thread_id() {
+       if (stack_diff <= stack_size) {
+         /* The only way we can be closer than the allocated */
+         /* stack size is if we are running on this thread. */
+-        KMP_DEBUG_ASSERT(__kmp_gtid_get_specific() == i);
++        KMP_DEBUG_ASSERT(__kmp_gtid_get_specific() == i ||
++	    __kmp_gtid_get_specific() < 0);
+         return i;
+       }
+     }
+@@ -193,7 +194,7 @@ int __kmp_get_global_thread_id() {
+   /*fprintf( stderr, "=== %d\n", i );  */ /* GROO */
+ 
+   /* if we havn't been assigned a gtid, then return code */
+-  if (i < 0)
++  if (i < 0 || other_threads[i] == NULL)
+     return i;
+ 
+   /* dynamically updated stack window for uber threads to avoid get_specific
