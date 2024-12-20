@@ -1,21 +1,21 @@
 Index: src_c/camera.h
 --- src_c/camera.h.orig
 +++ src_c/camera.h
-@@ -41,9 +41,12 @@
+@@ -42,9 +42,11 @@
      /* on freebsd there is no asm/types */
      #ifdef linux
          #include <asm/types.h>          /* for videodev2.h */
 +        #include <linux/videodev2.h>
      #endif
- 
+-
 -    #include <linux/videodev2.h>
 +    #ifdef __OpenBSD__
 +        #include <sys/videoio.h>
 +    #endif
- #elif defined(__APPLE__)
-     #include <AvailabilityMacros.h>
-     /* We support OSX 10.6 and below. */
-@@ -167,7 +170,11 @@ char** v4l2_list_cameras (int* num_devices);
+ #endif
+ 
+ #if defined(__WIN32__) && PY3
+@@ -176,7 +178,11 @@ char** v4l2_list_cameras (int* num_devices);
  int v4l2_get_control (int fd, int id, int *value);
  int v4l2_set_control (int fd, int id, int value);
  PyObject* v4l2_read_raw (pgCameraObject* self);

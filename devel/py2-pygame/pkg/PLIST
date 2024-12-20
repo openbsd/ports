@@ -51,23 +51,20 @@ lib/python${MODPY_VERSION}/site-packages/pygame/__pyinstaller/${MODPY_PYCACHE}__
 lib/python${MODPY_VERSION}/site-packages/pygame/__pyinstaller/hook-pygame.py
 lib/python${MODPY_VERSION}/site-packages/pygame/__pyinstaller/${MODPY_PYCACHE}hook-pygame.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/pygame/_camera.${MODPY_PYC_MAGIC_TAG}so
-lib/python${MODPY_VERSION}/site-packages/pygame/_camera_opencv_highgui.py
-lib/python${MODPY_VERSION}/site-packages/pygame/${MODPY_PYCACHE}_camera_opencv_highgui.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygame/_camera_opencv.py
+lib/python${MODPY_VERSION}/site-packages/pygame/_camera_opencv.pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/_camera_vidcapture.py
 lib/python${MODPY_VERSION}/site-packages/pygame/${MODPY_PYCACHE}_camera_vidcapture.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pygame/_dummybackend.py
-lib/python${MODPY_VERSION}/site-packages/pygame/${MODPY_PYCACHE}_dummybackend.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygame/_common.pyi
 @so lib/python${MODPY_VERSION}/site-packages/pygame/_freetype.${MODPY_PYC_MAGIC_TAG}so
-lib/python${MODPY_VERSION}/site-packages/pygame/_numpysndarray.py
-lib/python${MODPY_VERSION}/site-packages/pygame/${MODPY_PYCACHE}_numpysndarray.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pygame/_numpysurfarray.py
-lib/python${MODPY_VERSION}/site-packages/pygame/${MODPY_PYCACHE}_numpysurfarray.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/_sdl2/
 lib/python${MODPY_VERSION}/site-packages/pygame/_sdl2/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pygame/_sdl2/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/_sdl2/__init__.pyi
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygame/_sdl2/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/pygame/_sdl2/controller.pyi
 lib/python${MODPY_VERSION}/site-packages/pygame/_sdl2/touch.pyi
+lib/python${MODPY_VERSION}/site-packages/pygame/_sdl2/video.pyi
 @so lib/python${MODPY_VERSION}/site-packages/pygame/base.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/pygame/bufferproxy.pyi
 @so lib/python${MODPY_VERSION}/site-packages/pygame/bufferproxy.${MODPY_PYC_MAGIC_TAG}so
@@ -94,11 +91,6 @@ lib/python${MODPY_VERSION}/site-packages/pygame/docs/${MODPY_PYCACHE}__init__.${
 lib/python${MODPY_VERSION}/site-packages/pygame/docs/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygame/docs/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pygame/docs/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pygame/docs/logos.html
-lib/python${MODPY_VERSION}/site-packages/pygame/docs/pygame_logo.gif
-lib/python${MODPY_VERSION}/site-packages/pygame/docs/pygame_powered.gif
-lib/python${MODPY_VERSION}/site-packages/pygame/docs/pygame_small.gif
-lib/python${MODPY_VERSION}/site-packages/pygame/docs/pygame_tiny.gif
 lib/python${MODPY_VERSION}/site-packages/pygame/draw.pyi
 @so lib/python${MODPY_VERSION}/site-packages/pygame/draw.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/pygame/draw_py.py
@@ -147,11 +139,12 @@ lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/bomb.gif
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/boom.wav
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/brick.png
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/car_door.wav
-lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/chimp.bmp
+lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/chimp.png
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/city.png
+lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/crimson.pnm
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/danger.gif
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/explosion1.gif
-lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/fist.bmp
+lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/fist.png
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/green.pcx
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/grey.pgm
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/house_lo.mp3
@@ -160,19 +153,19 @@ lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/house_lo.wav
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/laplacian.png
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/liquid.bmp
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/midikeys.png
-lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/oldplayer.gif
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/player1.gif
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/punch.wav
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/purple.xpm
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/red.jpg
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/sans.ttf
+lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/scarlet.webp
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/secosmic_lo.wav
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/shot.gif
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/static.png
+lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/teal.svg
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/turquoise.tif
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/whiff.wav
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/yellow.tga
-lib/python${MODPY_VERSION}/site-packages/pygame/examples/data/yuv_1.pgm
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/dropevent.py
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/${MODPY_PYCACHE}dropevent.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/eventlist.py
@@ -189,6 +182,8 @@ lib/python${MODPY_VERSION}/site-packages/pygame/examples/glcube.py
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/${MODPY_PYCACHE}glcube.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/headless_no_windows_needed.py
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/${MODPY_PYCACHE}headless_no_windows_needed.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygame/examples/joystick.py
+lib/python${MODPY_VERSION}/site-packages/pygame/examples/joystick.pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/liquid.py
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/${MODPY_PYCACHE}liquid.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/mask.py
@@ -199,8 +194,6 @@ lib/python${MODPY_VERSION}/site-packages/pygame/examples/moveit.py
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/${MODPY_PYCACHE}moveit.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/music_drop_fade.py
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/${MODPY_PYCACHE}music_drop_fade.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pygame/examples/overlay.py
-lib/python${MODPY_VERSION}/site-packages/pygame/examples/${MODPY_PYCACHE}overlay.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/pixelarray.py
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/${MODPY_PYCACHE}pixelarray.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/examples/playmus.py
@@ -326,6 +319,10 @@ lib/python${MODPY_VERSION}/site-packages/pygame/tests/compat_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}compat_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/constants_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}constants_test.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pygame/tests/controller_tags.py
+lib/python${MODPY_VERSION}/site-packages/pygame/tests/controller_tags.pyc
+lib/python${MODPY_VERSION}/site-packages/pygame/tests/controller_test.py
+lib/python${MODPY_VERSION}/site-packages/pygame/tests/controller_test.pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/cursors_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}cursors_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/display_test.py
@@ -395,10 +392,6 @@ lib/python${MODPY_VERSION}/site-packages/pygame/tests/mixer_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}mixer_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/mouse_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}mouse_test.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pygame/tests/overlay_tags.py
-lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}overlay_tags.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pygame/tests/overlay_test.py
-lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}overlay_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/pixelarray_test.py
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/${MODPY_PYCACHE}pixelarray_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygame/tests/pixelcopy_test.py
