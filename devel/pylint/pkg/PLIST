@@ -1,23 +1,17 @@
-@conflict pylint-*
-@conflict pylint-gui-*
-@conflict pylint3-gui-*
-@pkgpath devel/pylint,-main
-@pkgpath devel/pylint,-gui
-@pkgpath devel/pylint,-main,python3
-@pkgpath devel/pylint,-gui,python3
+@pkgpath devel/pylint,python3
 bin/pylint
 bin/pylint-config
 bin/pyreverse
 bin/symilar
 lib/python${MODPY_VERSION}/site-packages/pylint/
-lib/python${MODPY_VERSION}/site-packages/pylint-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pylint-${MODPY_EGG_VERSION}.dist-info/CONTRIBUTORS.txt
-lib/python${MODPY_VERSION}/site-packages/pylint-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/pylint-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/pylint-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/pylint-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/pylint-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/pylint-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pylint-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pylint-${MODPY_DISTV}.dist-info/CONTRIBUTORS.txt
+lib/python${MODPY_VERSION}/site-packages/pylint-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/pylint-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/pylint-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/pylint-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pylint-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/pylint-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pylint/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pylint/__main__.py
 lib/python${MODPY_VERSION}/site-packages/pylint/__pkginfo__.py

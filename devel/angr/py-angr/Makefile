@@ -1,5 +1,5 @@
 COMMENT =	multi-architecture binary analysis platform
-REVISION =	0
+REVISION =	1
 
 ANGR_PYTHON_MODULE =	angr
 
@@ -10,34 +10,34 @@ WANTLIB =	${COMPILER_LIBCXX} m
 # C++11
 COMPILER =	base-clang ports-gcc
 
-BUILD_DEPENDS =	devel/angr/py-pyvex>=${MODPY_EGG_VERSION} \
-		devel/py-bitstring${MODPY_FLAVOR} \
-		devel/py-cffi${MODPY_FLAVOR} \
-		devel/py-future${MODPY_FLAVOR}
+BUILD_DEPENDS =	devel/angr/py-pyvex>=${MODPY_DISTV} \
+		devel/py-bitstring \
+		devel/py-cffi \
+		devel/py-future
 
 # AngrServer could use (unported) rpyc
-RUN_DEPENDS =	devel/angr/py-ailment>=${MODPY_EGG_VERSION} \
-		devel/angr/py-archinfo>=${MODPY_EGG_VERSION} \
-		devel/angr/py-claripy>=${MODPY_EGG_VERSION} \
-		devel/angr/py-cle>=${MODPY_EGG_VERSION} \
-		devel/angr/py-pyvex>=${MODPY_EGG_VERSION} \
-		devel/capstone/python${MODPY_FLAVOR} \
-		devel/py-bitstring${MODPY_FLAVOR} \
-		devel/py-cachetools${MODPY_FLAVOR} \
-		devel/py-cffi${MODPY_FLAVOR} \
-		devel/py-cparser${MODPY_FLAVOR} \
-		devel/py-future${MODPY_FLAVOR} \
-		devel/py-mulpyplexer${MODPY_FLAVOR} \
-		devel/py-nampa${MODPY_FLAVOR} \
-		devel/py-progressbar${MODPY_FLAVOR} \
-		devel/py-protobuf${MODPY_FLAVOR}>=3.9.1 \
-		devel/py-rich${MODPY_FLAVOR} \
-		devel/py-sortedcontainers${MODPY_FLAVOR} \
-		devel/py-unique-log-filter${MODPY_FLAVOR} \
-		math/py-networkx${MODPY_FLAVOR} \
-		math/py-sympy${MODPY_FLAVOR} \
-		net/py-dpkt${MODPY_FLAVOR} \
-		sysutils/py-psutil${MODPY_FLAVOR}
+RUN_DEPENDS =	devel/angr/py-ailment>=${MODPY_DISTV} \
+		devel/angr/py-archinfo>=${MODPY_DISTV} \
+		devel/angr/py-claripy>=${MODPY_DISTV} \
+		devel/angr/py-cle>=${MODPY_DISTV} \
+		devel/angr/py-pyvex>=${MODPY_DISTV} \
+		devel/capstone/python \
+		devel/py-bitstring \
+		devel/py-cachetools \
+		devel/py-cffi \
+		devel/py-cparser \
+		devel/py-future \
+		devel/py-mulpyplexer \
+		devel/py-nampa \
+		devel/py-progressbar \
+		devel/py-protobuf>=3.9.1 \
+		devel/py-rich \
+		devel/py-sortedcontainers \
+		devel/py-unique-log-filter \
+		math/py-networkx \
+		math/py-sympy \
+		net/py-dpkt \
+		sysutils/py-psutil
 
 # XXX this is a bit of a mess. angr_native.so actually links against
 # /usr/local/lib/pythonXXX/site-packages/unicorn/lib/libunicorn.so
@@ -47,8 +47,8 @@ RUN_DEPENDS =	devel/angr/py-ailment>=${MODPY_EGG_VERSION} \
 # simplest way to make it work. LIB_DEPENDS doesn't work because
 # it is stripped unless there's a matching WANTLIB and that can't
 # be done with an unversioned .so.
-BUILD_DEPENDS += devel/py-unicorn${MODPY_FLAVOR}>=2.0.1
-RUN_DEPENDS +=	devel/py-unicorn${MODPY_FLAVOR}>=2.0.1
+BUILD_DEPENDS += devel/py-unicorn>=2.0.1
+RUN_DEPENDS +=	devel/py-unicorn>=2.0.1
 
 USE_GMAKE =	Yes
 

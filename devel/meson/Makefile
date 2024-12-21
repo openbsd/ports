@@ -1,10 +1,11 @@
 COMMENT=		next-generation build system
 
-MODPY_EGG_VERSION=	${GH_TAGNAME}
+MODPY_DISTV=	${GH_TAGNAME}
 GH_ACCOUNT=		mesonbuild
 GH_PROJECT=		meson
 GH_TAGNAME=		1.6.1
 EPOCH=			0
+REVISION=		0
 
 CATEGORIES=		devel
 

@@ -3,7 +3,7 @@ COMMENT =	immutable and persistent data structures for C++
 GH_ACCOUNT =	arximboldi
 GH_PROJECT =	immer
 GH_TAGNAME =	v0.8.1
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 

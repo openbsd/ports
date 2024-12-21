@@ -1,10 +1,10 @@
 COMMENT=		lint-like code checker for Python code
 
 # py-astroid and pylint usually need keeping in-sync
-MODPY_EGG_VERSION=	3.1.0
-DISTNAME=	pylint-${MODPY_EGG_VERSION}
-PKGNAME=	pylint3-${MODPY_EGG_VERSION}
-REVISION=	1
+MODPY_DISTV=	3.1.0
+DISTNAME=	pylint-${MODPY_DISTV}
+PKGNAME=	pylint3-${MODPY_DISTV}
+REVISION=	2
 
 CATEGORIES=	devel
 
@@ -16,23 +16,21 @@ MAINTAINER=	Daniel Dickman <daniel@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-FLAVORS=	python3
-FLAVOR=		python3
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS=	devel/py-dill${MODPY_FLAVOR} \
-		sysutils/py-platformdirs${MODPY_FLAVOR} \
-		devel/py-astroid${MODPY_FLAVOR}>=3.1.0,<3.2.0 \
-		devel/py-isort${MODPY_FLAVOR}<6 \
-		devel/py-mccabe${MODPY_FLAVOR}<0.8 \
-		textproc/py-tomlkit${MODPY_FLAVOR} \
-		devel/py-typing-extensions${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-dill \
+		sysutils/py-platformdirs \
+		devel/py-astroid>=3.1.0,<3.2.0 \
+		devel/py-isort<6 \
+		devel/py-mccabe<0.8 \
+		textproc/py-tomlkit \
+		devel/py-typing-extensions
 
 # tests require data files (tests/regrtest_data/* and maybe others)
 # which aren't in the pypi tar
 NO_TEST=	Yes
-#TEST_DEPENDS=	devel/py-test-benchmark${MODPY_FLAVOR}
+#TEST_DEPENDS=	devel/py-test-benchmark
 
 .include <bsd.port.mk>

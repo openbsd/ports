@@ -16,6 +16,7 @@ LLVM_V =	16.0.6
 LLVM_BASE =	llvm16
 DISTNAME =	llvm-project-${LLVM_V}.src
 PKGNAME=	clang-tools-extra-${LLVM_V}
+REVISION=	0
 
 CATEGORIES =	devel
 
@@ -50,8 +51,8 @@ WRKSRC =	${WRKDIR}/llvm-project-${LLVM_V}.src/llvm
 LIB_DEPENDS =	${MODCLANG_LIB_DEPENDS}
 
 BUILD_DEPENDS +=	devel/swig \
-			textproc/py-sphinx${MODPY_FLAVOR} \
-			textproc/py-recommonmark${MODPY_FLAVOR}
+			textproc/py-sphinx \
+			textproc/py-recommonmark
 
 CLANG_INCLUDE_PATH =	${LLVM_BASE}/lib/clang/16/include
 SUBST_VARS +=		CLANG_INCLUDE_PATH LLVM_V

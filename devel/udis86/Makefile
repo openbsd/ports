@@ -2,7 +2,7 @@ COMMENT =	easy-to-use minimalistic disassembler library
 
 DISTNAME =	udis86-1.7.2
 CATEGORIES =	devel
-REVISION =	11
+REVISION =	12
 
 SHARED_LIBS=	udis86		1.0
 
@@ -20,7 +20,7 @@ WANTLIB +=	c
 MODULES =	lang/python
 
 BUILD_DEPENDS =	devel/yasm \
-		textproc/py-sphinx,python3>=4.0.2
+		textproc/py-sphinx
 
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.69

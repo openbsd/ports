@@ -3,6 +3,7 @@ COMMENT-gtk =		GTK+ monitor for distcc
 COMMENT-server =	distcc server
 
 VERSION =		3.4
+REVISION =		0
 DISTNAME =		distcc-${VERSION}
 EPOCH =			0
 CATEGORIES =		devel net
@@ -17,7 +18,7 @@ SITES =	https://github.com/distcc/distcc/releases/download/v${VERSION}/
 MULTI_PACKAGES =	-main -gtk -server
 
 MODULES =		lang/python
-MODPY_EGG_VERSION =	${VERSION}
+MODPY_DISTV =	${VERSION}
 MODPY_PYBUILD =		setuptools
 
 # Only -main needs an RDEP

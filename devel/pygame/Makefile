@@ -1,9 +1,10 @@
 COMMENT=	set of Python modules designed for writing games
 
-MODPY_EGG_VERSION=	2.6.1
-DISTNAME=	pygame-${MODPY_EGG_VERSION}
-PKGNAME=	py-game-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.6.1
+DISTNAME=	pygame-${MODPY_DISTV}
+PKGNAME=	py-game-${MODPY_DISTV}
 CATEGORIES=	devel games
+REVISION=	0
 
 HOMEPAGE=	https://www.pygame.org/
 
@@ -15,13 +16,10 @@ WANTLIB += png portmidi ${MODPY_WANTLIB}
 
 MODULES=	lang/python
 
-FLAVORS=	python3
-FLAVOR=		python3
-
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-BUILD_DEPENDS=	lang/cython${MODPY_FLAVOR}
+BUILD_DEPENDS=	lang/cython
 LIB_DEPENDS=	audio/portmidi \
 		devel/sdl2-ttf \
 		devel/sdl2-image \

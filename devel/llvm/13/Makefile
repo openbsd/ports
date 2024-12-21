@@ -2,8 +2,8 @@ LLVM_MAJOR =	13
 LLVM_VERSION =	${LLVM_MAJOR}.0.0
 LLVM_PKGSPEC =	>=13,<14
 
-REVISION-main =		31
-REVISION-python =	6
+REVISION-main =		32
+REVISION-python =	7
 
 MULTI_PACKAGES =	-main -python
 PROJECTS =		clang;lld

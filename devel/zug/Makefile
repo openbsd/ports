@@ -3,7 +3,7 @@ COMMENT =	C++ library providing transducers.
 GH_ACCOUNT =	arximboldi
 GH_PROJECT =	zug
 GH_TAGNAME =	v0.1.1
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 

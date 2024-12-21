@@ -1,7 +1,7 @@
 COMMENT=	lightweight C library for RDF syntax
 
 DISTNAME=	serd-0.30.10
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS=	serd-0	0.0 # 0.30
 

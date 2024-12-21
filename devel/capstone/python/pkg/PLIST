@@ -1,4 +1,4 @@
-@pkgpath devel/capstone/python
+@pkgpath devel/capstone/python,python3
 lib/python${MODPY_VERSION}/site-packages/capstone/
 lib/python${MODPY_VERSION}/site-packages/capstone-5.0.0.dist-info/
 lib/python${MODPY_VERSION}/site-packages/capstone-5.0.0.dist-info/LICENSE.TXT

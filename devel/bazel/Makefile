@@ -4,7 +4,7 @@ BROKEN-sparc64 = libsingle_line_formatter.jar failed: Worker process did not ret
 ONLY_FOR_ARCHS =	${LP64_ARCHS}
 
 VERSION =		6.3.2
-REVISION =		1
+REVISION =		2
 
 COMMENT =		polyglot build tool
 HOMEPAGE =		https://bazel.build/

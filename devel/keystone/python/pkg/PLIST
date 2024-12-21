@@ -1,3 +1,4 @@
+@pkgpath devel/keystone/python,python3
 lib/python${MODPY_VERSION}/site-packages/keystone/
 lib/python${MODPY_VERSION}/site-packages/keystone/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/keystone/${MODPY_PYCACHE}/
@@ -25,9 +26,9 @@ lib/python${MODPY_VERSION}/site-packages/keystone/ppc_const.py
 lib/python${MODPY_VERSION}/site-packages/keystone/sparc_const.py
 lib/python${MODPY_VERSION}/site-packages/keystone/systemz_const.py
 lib/python${MODPY_VERSION}/site-packages/keystone/x86_const.py
-lib/python${MODPY_VERSION}/site-packages/keystone_engine-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/keystone_engine-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/keystone_engine-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/keystone_engine-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/keystone_engine-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/keystone_engine-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/zip-safe
+lib/python${MODPY_VERSION}/site-packages/keystone_engine-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/keystone_engine-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/keystone_engine-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/keystone_engine-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/keystone_engine-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/keystone_engine-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/zip-safe

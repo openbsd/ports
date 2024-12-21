@@ -10,6 +10,7 @@ DISTNAME=		subversion-${VERSION:S/rc/-rc/}
 PKGNAME-main=		subversion-${VERSION}
 PKGNAME-perl=		p5-SVN-${VERSION}
 PKGNAME-python=		py3-subversion-${VERSION}
+REVISION-python=	0
 PKGNAME-ruby=		ruby${MODRUBY_BINREV}-subversion-${VERSION}
 PKGNAME-ap2=		ap2-subversion-${VERSION}
 PKGNAME-gnome-keyring=	gnome-keyring-subversion-${VERSION}

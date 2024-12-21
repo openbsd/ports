@@ -9,7 +9,7 @@ DATE =		20230419
 VERSION =	0.0.${DATE}
 DISTNAME =	gn-${DATE}
 PKGNAME =	gn-${VERSION}
-REVISION =	0
+REVISION =	1
 
 # gn.googlesource.com does not provide stable snapshots
 SITES =		https://codeberg.org/vlkrs/gn/archive/

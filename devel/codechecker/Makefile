@@ -3,6 +3,7 @@ COMMENT =	clang static code analyzer
 GH_ACCOUNT =	Ericsson
 GH_PROJECT =	codechecker
 GH_TAGNAME =	v6.24.0
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -35,19 +36,19 @@ CONFIGURE_STYLE =	none
 ALL_TARGET =	package package_api
 USE_GMAKE =	Yes
 
-RUN_DEPENDS =	databases/py-alembic${MODPY_FLAVOR} \
-		databases/py-sqlalchemy${MODPY_FLAVOR} \
-		devel/py-multiprocess${MODPY_FLAVOR} \
-		devel/py-portalocker${MODPY_FLAVOR} \
-		devel/py-sarif-tools${MODPY_FLAVOR} \
-		devel/py-thrift${MODPY_FLAVOR} \
-		sysutils/py-psutil${MODPY_FLAVOR} \
-		textproc/py-lxml${MODPY_FLAVOR} \
-		textproc/py-yaml${MODPY_FLAVOR}
+RUN_DEPENDS =	databases/py-alembic \
+		databases/py-sqlalchemy \
+		devel/py-multiprocess \
+		devel/py-portalocker \
+		devel/py-sarif-tools \
+		devel/py-thrift \
+		sysutils/py-psutil \
+		textproc/py-lxml \
+		textproc/py-yaml
 
-BUILD_DEPENDS =	devel/py-pip${MODPY_FLAVOR} \
-		devel/py-setuptools${MODPY_FLAVOR} \
-		devel/py-wheel${MODPY_FLAVOR}
+BUILD_DEPENDS =	devel/py-pip \
+		devel/py-setuptools \
+		devel/py-wheel
 
 STATIC_DIR =	${WRKSRC}/tools/report-converter/codechecker_report_converter/report/output/html/static/vendor/codemirror
 

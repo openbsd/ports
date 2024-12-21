@@ -2,7 +2,7 @@ COMMENT=		GLib library wrapping libgit2
 
 V=			1.2.0
 DISTNAME=		libgit2-glib-$V
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS += git2-glib-1.0             5.4 # 0.200.0
 
@@ -18,12 +18,12 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 MODGNOME_TOOLS=		gobject-introspection vala
 
-BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
+BUILD_DEPENDS=		devel/py-gobject3
 
 LIB_DEPENDS=		devel/libgit2/libgit2
 
 # MODPY_LIBDIR/gi/overrides/
-RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
+RUN_DEPENDS=		devel/py-gobject3
 
 USE_GMAKE=		Yes
 

@@ -1,9 +1,9 @@
 COMMENT=	fancy interface to the Python interpreter
 
-MODPY_EGG_VERSION=0.18
-DISTNAME=	bpython-${MODPY_EGG_VERSION}
+MODPY_DISTV=0.18
+DISTNAME=	bpython-${MODPY_DISTV}
 CATEGORIES=	devel
-REVISION=	5
+REVISION=	6
 
 HOMEPAGE=	https://bpython-interpreter.org/
 MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
@@ -17,21 +17,18 @@ MODULES=	lang/python
 
 MODPY_PYBUILD=	setuptools
 
-FLAVORS=	python3
-FLAVOR=		python3
-
 RUN_DEPENDS=	devel/desktop-file-utils \
-		devel/py-curtsies${MODPY_FLAVOR} \
-		devel/py-greenlet${MODPY_FLAVOR} \
-		devel/py-six${MODPY_FLAVOR} \
-		devel/py-urwid${MODPY_FLAVOR} \
-		textproc/py-pygments${MODPY_FLAVOR} \
-		www/py-requests${MODPY_FLAVOR}
-BUILD_DEPENDS=	devel/py-babel${MODPY_FLAVOR} \
-		textproc/py-sphinx${MODPY_FLAVOR}
+		devel/py-curtsies \
+		devel/py-greenlet \
+		devel/py-six \
+		devel/py-urwid \
+		textproc/py-pygments \
+		www/py-requests
+BUILD_DEPENDS=	devel/py-babel \
+		textproc/py-sphinx
 
-TEST_DEPENDS=	devel/py-mock${MODPY_FLAVOR} \
-		devel/py-twisted${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-mock \
+		devel/py-twisted
 
 post-build:
 	cd ${WRKSRC}; sphinx-build -b man doc/sphinx/source build

@@ -1,7 +1,7 @@
 COMMENT=	lightweight C library for storing RDF data in memory
 
 DISTNAME=	sord-0.16.8
-REVISION=	3
+REVISION=	4
 
 SHARED_LIBS=	sord-0	0.0 # 0.16
 

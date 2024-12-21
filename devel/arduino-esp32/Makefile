@@ -2,7 +2,7 @@ COMMENT =	esp32 arduino core toolset
 V =		2.0.4
 DISTNAME =	esp32-${V}
 PKGNAME =	arduino-${DISTNAME}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	devel
 
@@ -17,7 +17,7 @@ EXTRACT_SUFX =		.zip
 MODULES =		lang/python
 
 RUN_DEPENDS +=		devel/arduino \
-			devel/py-esptool${MODPY_FLAVOR} \
+			devel/py-esptool \
 			devel/mkspiffs \
 			devel/xtensa-esp32-elf/gcc
 

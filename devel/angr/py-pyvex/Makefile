@@ -1,5 +1,5 @@
 COMMENT =		Python interface to libVEX and VEX IR
-REVISION =		0
+REVISION =		1
 
 ANGR_PYTHON_MODULE =	pyvex
 
@@ -9,16 +9,16 @@ CFLAGS +=		-shared -fPIC -I${LOCALBASE}/include/angr-vex/
 MODPY_PYTEST =		Yes
 
 BUILD_DEPENDS +=	devel/angr/vex>=9.2 \
-			devel/py-cffi${MODPY_FLAVOR} \
-			devel/py-cparser${MODPY_FLAVOR}
+			devel/py-cffi \
+			devel/py-cparser
 
 # dlopen(3)s libpyvex.so
 RUN_DEPENDS +=		devel/angr/vex>=9.2 \
-			devel/py-cffi${MODPY_FLAVOR} \
-			devel/py-cparser${MODPY_FLAVOR} \
-			devel/angr/py-archinfo>=${MODPY_EGG_VERSION} \
-			devel/py-bitstring${MODPY_FLAVOR} \
-			devel/py-future${MODPY_FLAVOR}
+			devel/py-cffi \
+			devel/py-cparser \
+			devel/angr/py-archinfo>=${MODPY_DISTV} \
+			devel/py-bitstring \
+			devel/py-future
 TEST_DEPENDS =		${RUN_DEPENDS}
 
 DOCDIR =		${PREFIX}/share/doc/py-${ANGR_PYTHON_MODULE}

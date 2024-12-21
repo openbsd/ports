@@ -9,8 +9,8 @@ REVISION=	8
 
 MAINTAINER=	Jonathan Gray <jsg@openbsd.org>
 
-BUILD_DEPENDS=	textproc/py-sphinx,python3>=4.0.2 \
-		textproc/py-sphinx_rtd_theme,python3>=0.4.3
+BUILD_DEPENDS=	textproc/py-sphinx \
+		textproc/py-sphinx_rtd_theme
 
 # MIT
 PERMIT_PACKAGE=	Yes

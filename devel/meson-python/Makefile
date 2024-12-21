@@ -1,7 +1,8 @@
 COMMENT=		meson PEP 517 Python build backend
 
-MODPY_EGG_VERSION=	0.17.1
-DIST_TUPLE=		github mesonbuild meson-python ${MODPY_EGG_VERSION} .
+MODPY_DISTV=	0.17.1
+DIST_TUPLE=		github mesonbuild meson-python ${MODPY_DISTV} .
+REVISION=		0
 
 CATEGORIES=		devel
 
@@ -17,11 +18,11 @@ MODULES=		lang/python
 MODPY_PYBUILD=		other
 
 BUILD_DEPENDS=		devel/meson \
-			devel/py-pyproject-metadata${MODPY_FLAVOR}
+			devel/py-pyproject-metadata
 
 RUN_DEPENDS=		devel/meson \
-			devel/py-pyproject-metadata${MODPY_FLAVOR}
+			devel/py-pyproject-metadata
 
-TEST_DEPENDS=		lang/cython${MODPY_FLAVOR}
+TEST_DEPENDS=		lang/cython
 
 .include <bsd.port.mk>

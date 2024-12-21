@@ -20,7 +20,7 @@ MODULES=		devel/meson \
 # rst2html5, rts2man
 MODULES +=		lang/python
 MODPY_RUNDEP=		No
-BUILD_DEPENDS +=	textproc/py-docutils${MODPY_FLAVOR}
+BUILD_DEPENDS +=	textproc/py-docutils
 
 LIB_DEPENDS=		devel/glib2
 

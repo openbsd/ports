@@ -3,6 +3,7 @@ COMMENT =	quickly rewrite git repository history
 V =		2.38.0
 
 DISTNAME =	git-filter-repo-$V
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -19,7 +20,7 @@ MODULES =		lang/python
 MODPY_BUILDDEP =	No
 
 RUN_DEPENDS =		devel/git
-TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-coverage
 
 NO_BUILD =		Yes
 

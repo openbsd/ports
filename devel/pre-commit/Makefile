@@ -1,8 +1,9 @@
 COMMENT =		framework for managing git pre-commit hooks
 
-MODPY_EGG_VERSION =	4.0.1
-DISTNAME =		pre_commit-${MODPY_EGG_VERSION}
-PKGNAME =		pre-commit-${MODPY_EGG_VERSION}
+MODPY_DISTV =	4.0.1
+DISTNAME =		pre_commit-${MODPY_DISTV}
+PKGNAME =		pre-commit-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -18,12 +19,12 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		devel/git \
-			devel/py-cfgv${MODPY_FLAVOR} \
-			devel/py-identify${MODPY_FLAVOR} \
-			devel/py-nodeenv${MODPY_FLAVOR} \
-			devel/py-virtualenv${MODPY_FLAVOR} \
+			devel/py-cfgv \
+			devel/py-identify \
+			devel/py-nodeenv \
+			devel/py-virtualenv \
 			shells/bash \
-			textproc/py-yaml${MODPY_FLAVOR}
+			textproc/py-yaml
 
 NO_TEST =		Yes
 

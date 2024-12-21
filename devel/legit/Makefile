@@ -1,9 +1,9 @@
 COMMENT=		complementary command-line interface for Git
 
-MODPY_EGG_VERSION=	1.2.0
-DISTNAME=		legit-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.2.0
+DISTNAME=		legit-${MODPY_DISTV}
 CATEGORIES=		devel
-REVISION=		3
+REVISION=		4
 
 HOMEPAGE=		https://frostming.github.io/legit/
 
@@ -15,11 +15,11 @@ MODULES=		lang/python
 MODPY_PI=		Yes
 MODPY_PYBUILD=		setuptools
 
-RUN_DEPENDS=		devel/py-clint${MODPY_FLAVOR}>=0.5.1 \
-			devel/py-click${MODPY_FLAVOR} \
-			devel/py-crayons${MODPY_FLAVOR} \
-			devel/py-gitpython${MODPY_FLAVOR}>=1.0.2 \
-			devel/py-six${MODPY_FLAVOR}
+RUN_DEPENDS=		devel/py-clint>=0.5.1 \
+			devel/py-click \
+			devel/py-crayons \
+			devel/py-gitpython>=1.0.2 \
+			devel/py-six
 
 NO_TEST=		Yes
 

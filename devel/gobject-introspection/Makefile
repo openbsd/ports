@@ -2,7 +2,7 @@ COMMENT=		GObject Introspection
 
 GNOME_VERSION=		1.82.0
 GNOME_PROJECT=		gobject-introspection
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		devel
 
@@ -30,11 +30,11 @@ CONFIGURE_ARGS=		-Dcairo_libname=libcairo-gobject.so
 CONFIGURE_ARGS +=	-Dcairo=disabled
 
 BUILD_DEPENDS=		devel/bison \
-			textproc/py-markdown${MODPY_FLAVOR} \
-			www/py-mako${MODPY_FLAVOR}
+			textproc/py-markdown \
+			www/py-mako
 
-RUN_DEPENDS=		textproc/py-markdown${MODPY_FLAVOR} \
-			www/py-mako${MODPY_FLAVOR}
+RUN_DEPENDS=		textproc/py-markdown \
+			www/py-mako
 
 # XXX work-around for dpb limitations: trick dpb scanner into being
 # happy with glib2-bootstrap as a RUN_DEPENDS
@@ -52,7 +52,7 @@ RUN_DEPENDS +=		glib2-*:devel/glib2
 # mid-run, causing g-ir-scanner to fail.
 # could be removed if/when gobject-introspection stops using distutils;
 # see https://gitlab.gnome.org/GNOME/gobject-introspection/-/issues/395
-RUN_DEPENDS +=		devel/py-setuptools${MODPY_FLAVOR}
+RUN_DEPENDS +=		devel/py-setuptools
 
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mlld}

@@ -35,7 +35,7 @@ AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.11
 AUTORECONF =		./autogen.sh
 
-BUILD_DEPENDS =		textproc/py-docutils,python3
+BUILD_DEPENDS =		textproc/py-docutils
 
 LIB_DEPENDS +=		textproc/libxml \
 			devel/libyaml \

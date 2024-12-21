@@ -1,6 +1,5 @@
      SUBDIR =
-     SUBDIR += spyder,python3
-     SUBDIR += py-spyder-kernels,python3
-
+     SUBDIR += spyder
+     SUBDIR += py-spyder-kernels
 
 .include <bsd.port.subdir.mk>

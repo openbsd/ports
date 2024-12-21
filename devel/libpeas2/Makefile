@@ -3,7 +3,7 @@ COMMENT=	GObject plugins library
 GNOME_PROJECT=	libpeas
 GNOME_VERSION=	2.0.5
 PKGNAME=	${GNOME_PROJECT}2-${GNOME_VERSION}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	devel
 
@@ -21,9 +21,9 @@ MODULES=	devel/meson \
 		lang/python \
 		x11/gnome
 
-BUILD_DEPENDS=	devel/py-gobject3${MODPY_FLAVOR}
+BUILD_DEPENDS=	devel/py-gobject3
 
-RUN_DEPENDS=	devel/py-gobject3${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-gobject3
 
 LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
 		devel/spidermonkey128 \

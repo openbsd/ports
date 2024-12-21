@@ -4,7 +4,7 @@ COMMENT=	gobject-based plugins engine
 
 GNOME_PROJECT=	libpeas
 GNOME_VERSION=	1.36.0
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	devel
 
@@ -23,9 +23,9 @@ MODULES=	devel/meson \
 		lang/python \
 		x11/gnome
 
-BUILD_DEPENDS=	devel/py-gobject3${MODPY_FLAVOR}
+BUILD_DEPENDS=	devel/py-gobject3
 
-RUN_DEPENDS=	devel/py-gobject3${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-gobject3
 
 LIB_DEPENDS=	devel/gobject-introspection \
 		x11/gtk+3

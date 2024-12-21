@@ -8,7 +8,7 @@ PKG_ARCH =	*
 MODULES =	lang/python
 MODPY_RUNDEP =	No
 
-BUILD_DEPENDS =	textproc/py-sphinx${MODPY_FLAVOR}>=4.0.2
+BUILD_DEPENDS =	textproc/py-sphinx>=4.0.2
 
 CONFIGURE_ARGS +=	-DBUILD_QTHELP_DOCS=ON \
 			-DQCollectionGenerator_EXECUTABLE=${MODQT_LIBDIR}/bin/qcollectiongenerator

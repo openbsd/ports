@@ -8,7 +8,7 @@ WANTLIB- =
 MODULES =	lang/python
 MODPY_RUNDEP =	No
 
-BUILD_DEPENDS =	textproc/py-lxml${MODPY_FLAVOR}
+BUILD_DEPENDS =	textproc/py-lxml
 RUN_DEPENDS =	x11/gtk+4,-guic
 
 TEST_DEPENDS =	sysutils/fdupes

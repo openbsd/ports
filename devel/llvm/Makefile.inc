@@ -58,8 +58,8 @@ MODULES +=	devel/cmake \
 		lang/python
 
 BUILD_DEPENDS +=	devel/swig \
-			textproc/py-sphinx${MODPY_FLAVOR} \
-			textproc/py-recommonmark${MODPY_FLAVOR}
+			textproc/py-sphinx \
+			textproc/py-recommonmark
 
 .if !${PROPERTIES:Mclang}
 RUN_DEPENDS +=	lang/gcc/${MODGCC4_VERSION},-c++

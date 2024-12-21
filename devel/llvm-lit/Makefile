@@ -31,7 +31,7 @@ MODULES =		devel/cmake \
 
 MODPY_PYBUILD =		setuptools
 
-BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}
+BUILD_DEPENDS =		textproc/py-sphinx
 LIB_DEPENDS =		archivers/zstd
 TEST_DEPENDS =		shells/bash \
 			sysutils/py-psutil

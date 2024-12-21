@@ -1,12 +1,13 @@
 COMMENT =	CMake modules required by KDE and Qt
 DISTNAME =	extra-cmake-modules-${VERSION}
+REVISION =	0
 
 PKG_ARCH =	*
 
 MODULES =	lang/python
 MODPY_RUNDEP =	No
 
-BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR} \
+BUILD_DEPENDS =		textproc/py-sphinx \
 			x11/qt5/qttools,-main
 
 CONFIGURE_ARGS +=	-DBUILD_QTHELP_DOCS=ON \

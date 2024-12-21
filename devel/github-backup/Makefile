@@ -1,11 +1,12 @@
 COMMENT =	 backup a github user or organization
 
-MODPY_EGG_VERSION =	0.45.1
-PKGNAME =	github-backup-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.45.1
+PKGNAME =	github-backup-${MODPY_DISTV}
+REVISION =	0
 
 GH_ACCOUNT =	josegonzalez
 GH_PROJECT =	python-github-backup
-GH_TAGNAME =	${MODPY_EGG_VERSION}
+GH_TAGNAME =	${MODPY_DISTV}
 
 CATEGORIES =	devel
 

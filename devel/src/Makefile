@@ -1,7 +1,7 @@
 COMMENT =		Simple Revision Control
 
 DISTNAME =		src-1.28
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		devel
 
@@ -19,7 +19,7 @@ RUN_DEPENDS =		devel/grcs \
 			devel/rcs-fast-import
 
 TEST_DEPENDS =		devel/git \
-			devel/pylint${MODPY_FLAVOR} \
+			devel/pylint \
 			shells/bash
 
 USE_GMAKE =		Yes

@@ -1,8 +1,8 @@
 COMMENT =	python powered git gui
 
-MODPY_EGG_VERSION =	4.8.2
-REVISION =		0
-DISTNAME =		git-cola-${MODPY_EGG_VERSION}
+MODPY_DISTV =	4.8.2
+REVISION =		1
+DISTNAME =		git-cola-${MODPY_DISTV}
 
 CATEGORIES =	devel x11
 
@@ -19,18 +19,18 @@ BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/git \
 		devel/git,-x11 \
 		textproc/xxdiff \
-		x11/py-qt5${MODPY_FLAVOR} \
-		x11/py-qtpy${MODPY_FLAVOR}
+		x11/py-qt5 \
+		x11/py-qtpy
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/git \
 		devel/git,-x11 \
 		textproc/xxdiff \
 		x11/gtk+4,-guic \
-		x11/py-qt5${MODPY_FLAVOR} \
-		x11/py-qtpy${MODPY_FLAVOR}
+		x11/py-qt5 \
+		x11/py-qtpy
 
-TEST_DEPENDS =	devel/py-mock${MODPY_FLAVOR}
+TEST_DEPENDS =	devel/py-mock
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/cola/app.py

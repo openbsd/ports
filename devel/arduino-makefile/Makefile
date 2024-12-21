@@ -4,7 +4,7 @@ GH_ACCOUNT=	sudar
 GH_PROJECT=	Arduino-Makefile
 GH_TAGNAME=	1.6.0
 PKGNAME=	arduino-makefile-${GH_TAGNAME}
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	devel
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 RUN_DEPENDS=	devel/arduino \
 		devel/gmake \
-		devel/py-serial${MODPY_FLAVOR} \
+		devel/py-serial \
 		devel/teensyloader
 
 MODULES=	lang/python

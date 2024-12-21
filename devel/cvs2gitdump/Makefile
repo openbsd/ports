@@ -4,7 +4,7 @@ DISTNAME =		cvs2gitdump-20210221
 GH_ACCOUNT =		yasuoka
 GH_PROJECT =		cvs2gitdump
 GH_COMMIT =		8f24e311be56028303b8ee7910b76eb77130ee27
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		devel
 
@@ -12,7 +12,7 @@ CATEGORIES =		devel
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-RUN_DEPENDS =		devel/py-rcsparse${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-rcsparse
 
 NO_BUILD =		Yes
 NO_TEST =		Yes

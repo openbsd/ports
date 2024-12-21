@@ -22,7 +22,7 @@ LIB_DEPENDS =	devel/orc
 WANTLIB +=	${COMPILER_LIBCXX} c m orc-0.4
 
 BUILD_DEPENDS =	${MODPY_BUILD_DEPENDS} \
-		www/py-mako${MODPY_FLAVOR}
+		www/py-mako
 
 CONFIGURE_ARGS = -DDOXYGEN_EXECUTABLE="false"
 

@@ -1,9 +1,10 @@
 COMMENT =		console-based visual debugger for Python
 
 # newer versions need urwid_readline
-MODPY_EGG_VERSION =	2021.1
-DISTNAME =		pudb-${MODPY_EGG_VERSION}
-PKGNAME =		py-pudb-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2021.1
+DISTNAME =		pudb-${MODPY_DISTV}
+PKGNAME =		py-pudb-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -14,12 +15,9 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		devel/py-jedi${MODPY_FLAVOR} \
-			devel/py-urwid${MODPY_FLAVOR} \
-			textproc/py-pygments${MODPY_FLAVOR}
-TEST_DEPENDS =		devel/py-test-mock${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR =		python3
+RUN_DEPENDS =		devel/py-jedi \
+			devel/py-urwid \
+			textproc/py-pygments
+TEST_DEPENDS =		devel/py-test-mock
 
 .include <bsd.port.mk>

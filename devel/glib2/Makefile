@@ -3,7 +3,7 @@ COMMENT=		general-purpose utility library
 GNOME_PROJECT=		glib
 GNOME_VERSION=		2.82.4
 PKGNAME=		${DISTNAME:S/glib/glib2/}
-REVISION=		0
+REVISION=		2
 
 CATEGORIES=		devel
 
@@ -38,11 +38,11 @@ COMPILER=		base-clang ports-gcc
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 # gdbus-codegen(1)
-BUILD_DEPENDS +=	sysutils/py-packaging${MODPY_FLAVOR}
-RUN_DEPENDS +=		sysutils/py-packaging${MODPY_FLAVOR}
+BUILD_DEPENDS +=	sysutils/py-packaging
+RUN_DEPENDS +=		sysutils/py-packaging
 
 # rst2html5
-BUILD_DEPENDS +=	textproc/py-docutils${MODPY_FLAVOR}
+BUILD_DEPENDS +=	textproc/py-docutils
 
 # meson: have_bash, needed to install bash-completion snippets
 BUILD_DEPENDS +=	shells/bash

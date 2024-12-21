@@ -2,10 +2,10 @@ BROKEN-riscv64 =	Unknown architecture riscv64
 
 COMMENT =	Python bindings for keystone
 
-MODPY_EGG_VERSION = ${GH_TAGNAME}
+MODPY_DISTV =	${GH_TAGNAME}
 
 PKGNAME =	py-${DISTNAME}
-REVISION =	4
+REVISION =	5
 
 MODULES =	devel/cmake \
 		lang/python
@@ -15,7 +15,6 @@ WANTLIB +=	${COMPILER_LIBCXX} m
 
 WRKDIST =	${WRKDIR}/${DISTNAME}/bindings/python
 
-FLAVORS =	python3
 FLAVOR ?=
 
 COMPILER =	base-clang ports-gcc

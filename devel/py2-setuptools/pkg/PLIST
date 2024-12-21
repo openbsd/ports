@@ -1,6 +1,3 @@
-@conflict ${MODPY_PY_PREFIX}distribute-*
-@pkgpath devel/py-distribute${MODPY_FLAVOR}
-@pkgpath devel/py-setuptools
 @comment bin/easy_install
 bin/easy_install-${MODPY_VERSION}
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
@@ -47,14 +44,14 @@ lib/python${MODPY_VERSION}/site-packages/pkg_resources/extern/${MODPY_PYCACHE}__
 lib/python${MODPY_VERSION}/site-packages/pkg_resources/py31compat.py
 lib/python${MODPY_VERSION}/site-packages/pkg_resources/${MODPY_PYCACHE}py31compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools/
-lib/python${MODPY_VERSION}/site-packages/setuptools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/setuptools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/setuptools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/setuptools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/setuptools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/setuptools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
-lib/python${MODPY_VERSION}/site-packages/setuptools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/setuptools-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/setuptools-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/setuptools-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/setuptools-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/setuptools-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/setuptools-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/setuptools-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/setuptools-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/setuptools-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/setuptools/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/setuptools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc

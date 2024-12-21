@@ -1,14 +1,14 @@
+@pkgpath devel/spyder/spyder,python3
 @conflict spyder-*
-@pkgpath devel/spyder/spyder
 bin/spyder
 lib/python${MODPY_VERSION}/site-packages/spyder/
-lib/python${MODPY_VERSION}/site-packages/spyder-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/spyder-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/spyder-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/spyder-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/spyder-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/spyder-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/spyder-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/spyder-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/spyder-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/spyder-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/spyder-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/spyder-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/spyder-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/spyder-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/spyder/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spyder/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/spyder/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc

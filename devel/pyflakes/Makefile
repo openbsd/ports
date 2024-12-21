@@ -1,8 +1,8 @@
 COMMENT=	passive checker of Python programs
 
-MODPY_EGG_VERSION=	3.2.0
-DISTNAME=	pyflakes-${MODPY_EGG_VERSION}
-REVISION=	0
+MODPY_DISTV=	3.2.0
+DISTNAME=	pyflakes-${MODPY_DISTV}
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -17,8 +17,5 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

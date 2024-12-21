@@ -1,8 +1,9 @@
 COMMENT=		libgit2 bindings in Python
 
-MODPY_EGG_VERSION=	1.16.0
-DISTNAME=		pygit2-${MODPY_EGG_VERSION}
-PKGNAME=		py-git2-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.16.0
+DISTNAME=		pygit2-${MODPY_DISTV}
+PKGNAME=		py-git2-${MODPY_DISTV}
+REVISION=		0
 
 MODULES=		lang/python
 MODPY_PI=		Yes
@@ -14,7 +15,7 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 LIB_DEPENDS=		devel/libgit2/libgit2
 
-BUILD_DEPENDS=		devel/py-cffi${MODPY_FLAVOR}
-RUN_DEPENDS=		devel/py-cffi${MODPY_FLAVOR}
+BUILD_DEPENDS=		devel/py-cffi
+RUN_DEPENDS=		devel/py-cffi
 
 .include <bsd.port.mk>

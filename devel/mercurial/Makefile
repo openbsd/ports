@@ -1,8 +1,10 @@
 COMMENT-main =		fast, lightweight source control management
 COMMENT-x11 =		graphical tooling for mercurial
+REVISION-main =		0
+REVISION-x11 =		0
 
-MODPY_EGG_VERSION =	6.8.1
-DISTNAME =		mercurial-${MODPY_EGG_VERSION}
+MODPY_DISTV =	6.8.1
+DISTNAME =		mercurial-${MODPY_DISTV}
 CATEGORIES =		devel
 
 HOMEPAGE =		https://www.mercurial-scm.org
@@ -20,7 +22,7 @@ USE_GMAKE =		Yes
 MULTI_PACKAGES =	-main -x11
 
 BUILD_DEPENDS =		devel/gettext,-tools \
-			textproc/py-docutils${MODPY_FLAVOR}
+			textproc/py-docutils
 TEST_DEPENDS =		archivers/unzip \
 			devel/git \
 			devel/mercurial,-main \

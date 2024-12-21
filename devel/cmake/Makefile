@@ -24,7 +24,7 @@ COMPILER =		base-clang ports-gcc
 MODULES =		lang/python
 MODPY_RUNDEP =		No
 
-BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}>=4.0.2
+BUILD_DEPENDS =		textproc/py-sphinx>=4.0.2
 
 LIB_DEPENDS =		archivers/libarchive \
 			devel/libuv \

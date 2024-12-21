@@ -5,6 +5,7 @@ CATEGORIES =	devel
 GH_ACCOUNT =	haskell
 GH_TAGNAME =	cabal-install-v3.12.1.0
 GH_PROJECT =	cabal
+REVISION =	0
 
 HOMEPAGE =	https://github.com/haskell/cabal
 
