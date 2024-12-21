@@ -1,8 +1,8 @@
 COMMENT =		desktop wiki
 
-MODPY_EGG_VERSION =	0.75.2
-DISTNAME =		zim-${MODPY_EGG_VERSION}
-REVISION =		1
+MODPY_DISTV =	0.75.2
+DISTNAME =		zim-${MODPY_DISTV}
+REVISION =		2
 
 CATEGORIES =		productivity
 
@@ -20,8 +20,8 @@ NO_TEST =		Yes
 MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
 
-COMMON_DEPENDS =	devel/py-gobject3${MODPY_FLAVOR} \
-			devel/py-xdg${MODPY_FLAVOR} \
+COMMON_DEPENDS =	devel/py-gobject3 \
+			devel/py-xdg \
 			devel/xdg-utils \
 			x11/gtk+3
 

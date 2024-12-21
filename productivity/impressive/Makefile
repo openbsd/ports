@@ -1,9 +1,9 @@
 COMMENT =		stylish PDF presentation generator
 
-MODPY_EGG_VERSION =	0.13.2
-DISTNAME =		Impressive-${MODPY_EGG_VERSION}
-PKGNAME =		impressive-${MODPY_EGG_VERSION}
-REVISION =		0
+MODPY_DISTV =	0.13.2
+DISTNAME =		Impressive-${MODPY_DISTV}
+PKGNAME =		impressive-${MODPY_DISTV}
+REVISION =		1
 
 CATEGORIES =		productivity
 HOMEPAGE =		https://impressive.sourceforge.net/
@@ -16,10 +16,10 @@ MODULES =		lang/python
 NO_BUILD =		Yes
 NO_TEST =		Yes
 
-RUN_DEPENDS =		devel/pygame${MODPY_FLAVOR} \
+RUN_DEPENDS =		devel/pygame \
 			devel/xdg-utils \
-			graphics/py-Pillow${MODPY_FLAVOR} \
-			graphics/py-opengl${MODPY_FLAVOR} \
+			graphics/py-Pillow \
+			graphics/py-opengl \
 			print/poppler,-utils \
 			textproc/pdftk \
 			x11/mplayer

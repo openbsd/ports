@@ -1,10 +1,10 @@
 COMMENT =		Python library to interact with Task Warrior
 
-MODPY_EGG_VERSION =	2.5.1
+MODPY_DISTV =	2.5.1
 
-DISTNAME =		tasklib-${MODPY_EGG_VERSION}
+DISTNAME =		tasklib-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		productivity
 
@@ -20,10 +20,7 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	tasklib/tests.py
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 RUN_DEPENDS =		productivity/taskwarrior
-TEST_DEPENDS =		devel/py-tzlocal${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-tzlocal
 
 .include <bsd.port.mk>

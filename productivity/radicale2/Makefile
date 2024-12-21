@@ -1,10 +1,10 @@
 COMMENT =	simple CalDAV calendar server
 
-MODPY_EGG_VERSION = 2.1.12
-DISTNAME =	Radicale-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.1.12
+DISTNAME =	Radicale-${MODPY_DISTV}
 PKGNAME =	${DISTNAME:L}
 CATEGORIES =	productivity net
-REVISION =	7
+REVISION =	8
 
 HOMEPAGE =	https://radicale.org/
 
@@ -15,10 +15,10 @@ MODULES =	lang/python
 MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools
 
-RUN_DEPENDS =	devel/py-dateutil${MODPY_FLAVOR}>=2.7.3 \
-		devel/py-setuptools${MODPY_FLAVOR} \
-		security/py-passlib${MODPY_FLAVOR} \
-		textproc/py-vobject${MODPY_FLAVOR}
+RUN_DEPENDS =	devel/py-dateutil>=2.7.3 \
+		devel/py-setuptools \
+		security/py-passlib \
+		textproc/py-vobject
 
 NO_TEST =	Yes
 

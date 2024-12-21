@@ -1,8 +1,8 @@
 COMMENT =		standards based terminal calendar
 
-MODPY_EGG_VERSION =	0.11.2
-DISTNAME =		khal-${MODPY_EGG_VERSION}
-REVISION =		0
+MODPY_DISTV =	0.11.2
+DISTNAME =		khal-${MODPY_DISTV}
+REVISION =		1
 
 CATEGORIES =		productivity
 
@@ -19,20 +19,20 @@ MODPY_PI =		Yes
 
 MODPY_PYBUILD =		setuptools_scm
 
-RUN_DEPENDS =		devel/py-atomicwrites${MODPY_FLAVOR} \
-			devel/py-click${MODPY_FLAVOR} \
-			devel/py-click-log${MODPY_FLAVOR} \
-			devel/py-configobj${MODPY_FLAVOR} \
-			devel/py-dateutil${MODPY_FLAVOR} \
-			devel/py-icalendar${MODPY_FLAVOR} \
-			devel/py-setproctitle${MODPY_FLAVOR} \
-			devel/py-tz${MODPY_FLAVOR} \
-			devel/py-tzlocal${MODPY_FLAVOR} \
-			devel/py-urwid${MODPY_FLAVOR} \
-			devel/py-xdg${MODPY_FLAVOR} \
+RUN_DEPENDS =		devel/py-atomicwrites \
+			devel/py-click \
+			devel/py-click-log \
+			devel/py-configobj \
+			devel/py-dateutil \
+			devel/py-icalendar \
+			devel/py-setproctitle \
+			devel/py-tz \
+			devel/py-tzlocal \
+			devel/py-urwid \
+			devel/py-xdg \
 			productivity/vdirsyncer
-TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR} \
-			devel/py-freezegun${MODPY_FLAVOR} \
-			sysutils/py-packaging${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-hypothesis \
+			devel/py-freezegun \
+			sysutils/py-packaging
 
 .include <bsd.port.mk>

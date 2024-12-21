@@ -1,9 +1,10 @@
 COMMENT=		diary and journal application
 
-MODPY_EGG_VERSION=	2.35
-GH_TAGNAME=		v${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.35
+GH_TAGNAME=		v${MODPY_DISTV}
 GH_ACCOUNT=		jendrikseipp
 GH_PROJECT=		rednotebook
+REVISION=		0
 
 CATEGORIES=		productivity
 
@@ -18,10 +19,10 @@ MODPY_PYBUILD=		setuptools
 BUILD_DEPENDS=		devel/gettext,-tools
 
 RUN_DEPENDS=		devel/desktop-file-utils \
-			devel/py-gobject3${MODPY_FLAVOR} \
+			devel/py-gobject3 \
 			devel/xdg-utils \
-			textproc/py-enchant${MODPY_FLAVOR} \
-			textproc/py-yaml${MODPY_FLAVOR} \
+			textproc/py-enchant \
+			textproc/py-yaml \
 			www/webkitgtk4,webkitgtk41 \
 			x11/gtk+4,-guic \
 			x11/gtksourceview4

@@ -23,7 +23,7 @@ MODPY_RUNDEP =		No
 MODPY_BUILDDEP =	No
 
 BUILD_DEPENDS =		textproc/asciidoctor
-TEST_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-dateutil
 
 CONFIGURE_STYLE =	cmake
 

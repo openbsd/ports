@@ -1,9 +1,9 @@
 COMMENT =		terminal/CLI Epub Reader
 
-MODPY_EGG_VERSION =	2.4.15
+MODPY_DISTV =	2.4.15
 
-DISTNAME =		epr-reader-${MODPY_EGG_VERSION}
-REVISION =		0
+DISTNAME =		epr-reader-${MODPY_DISTV}
+REVISION =		1
 
 CATEGORIES =		productivity
 

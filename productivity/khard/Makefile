@@ -1,8 +1,8 @@
 COMMENT =		console vCard address book
 
-MODPY_EGG_VERSION =	0.19.1
-DISTNAME =		khard-${MODPY_EGG_VERSION}
-REVISION =		0
+MODPY_DISTV =	0.19.1
+DISTNAME =		khard-${MODPY_DISTV}
+REVISION =		1
 
 CATEGORIES =		productivity
 
@@ -17,14 +17,14 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
 
-BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR} \
+BUILD_DEPENDS =		textproc/py-sphinx \
 			${RUN_DEPENDS}
 
-RUN_DEPENDS =		devel/py-atomicwrites${MODPY_FLAVOR} \
-			devel/py-configobj${MODPY_FLAVOR} \
-			textproc/py-ruamel.yaml${MODPY_FLAVOR} \
-			textproc/py-unidecode${MODPY_FLAVOR} \
-			textproc/py-vobject${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-atomicwrites \
+			devel/py-configobj \
+			textproc/py-ruamel.yaml \
+			textproc/py-unidecode \
+			textproc/py-vobject
 
 USE_GMAKE =		Yes
 

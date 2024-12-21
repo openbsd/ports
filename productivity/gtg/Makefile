@@ -1,38 +1,38 @@
 COMMENT=		GTD organizer for GNOME
 
-MODPY_EGG_VERSION =	0.6.0
-DISTNAME =		gtg-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.6.0
+DISTNAME =		gtg-${MODPY_DISTV}
 EXTRACT_SUFX =		.tar.xz
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		productivity
 
 # GPLv3+
 PERMIT_PACKAGE=		Yes
 
-SITES =			https://github.com/getting-things-gnome/gtg/releases/download/v${MODPY_EGG_VERSION:R}/
+SITES =			https://github.com/getting-things-gnome/gtg/releases/download/v${MODPY_DISTV:R}/
 
 MODULES =		devel/meson \
 			lang/python
 
 BUILD_DEPENDS =		devel/gettext,-tools \
 			textproc/itstool \
-			textproc/py-sphinx${MODPY_FLAVOR}
+			textproc/py-sphinx
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			devel/py-dateutil${MODPY_FLAVOR} \
-			devel/py-gobject3${MODPY_FLAVOR} \
-			devel/py-liblarch${MODPY_FLAVOR} \
-			devel/py-xdg${MODPY_FLAVOR} \
-			productivity/py-caldav${MODPY_FLAVOR} \
-			textproc/py-lxml${MODPY_FLAVOR} \
-			x11/dbus-python${MODPY_FLAVOR} \
+			devel/py-dateutil \
+			devel/py-gobject3 \
+			devel/py-liblarch \
+			devel/py-xdg \
+			productivity/py-caldav \
+			textproc/py-lxml \
+			x11/dbus-python \
 			x11/gnome/libsecret \
 			x11/gtk+4,-guic \
 			x11/gtksourceview4
 
-TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR} \
-			devel/py-mock${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-nose \
+			devel/py-mock
 TEST_TARGET =		tests
 
 .include <bsd.port.mk>

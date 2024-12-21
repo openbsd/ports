@@ -4,7 +4,7 @@ V=			1.10.52
 DISTNAME=		workrave-v${V}
 PKGNAME=		workrave-${V}
 WRKDIST=		${WRKDIR}/workrave-${V}
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  workrave-private-1.0 1.0      # unknown
 SHARED_LIBS +=  workrave-gtk4-private-1.0 0.0      # unknown
@@ -37,7 +37,7 @@ USE_GMAKE=		Yes
 
 BUILD_DEPENDS=		devel/boost \
 			devel/gobject-introspection \
-			www/py-jinja2${MODPY_FLAVOR}
+			www/py-jinja2
 
 LIB_DEPENDS=		multimedia/gstreamer1/core \
 			x11/gtk3mm \

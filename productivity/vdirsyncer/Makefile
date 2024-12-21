@@ -1,8 +1,8 @@
 COMMENT =		synchronize calendars and contacts
 
-MODPY_EGG_VERSION =	0.18.0
-DISTNAME =		vdirsyncer-${MODPY_EGG_VERSION}
-REVISION =		6
+MODPY_DISTV =	0.18.0
+DISTNAME =		vdirsyncer-${MODPY_DISTV}
+REVISION =		7
 
 CATEGORIES =		productivity
 
@@ -19,20 +19,20 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
 MODPY_PYTEST_ARGS =	tests/
 
-BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}>=4.0.2 \
-			textproc/py-sphinx_rtd_theme${MODPY_FLAVOR}>=0.4.3 \
+BUILD_DEPENDS =		textproc/py-sphinx>=4.0.2 \
+			textproc/py-sphinx_rtd_theme>=0.4.3 \
 			${RUN_DEPENDS}
 
-RUN_DEPENDS =		devel/py-atomicwrites${MODPY_FLAVOR} \
-			devel/py-click-log${MODPY_FLAVOR}>=0.3.0 \
-			devel/py-click-threading${MODPY_FLAVOR} \
-			www/py-requests-oauthlib${MODPY_FLAVOR} \
-			www/py-requests-toolbelt${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-atomicwrites \
+			devel/py-click-log>=0.3.0 \
+			devel/py-click-threading \
+			www/py-requests-oauthlib \
+			www/py-requests-toolbelt
 
-TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR} \
-			devel/py-test-cov${MODPY_FLAVOR} \
-			devel/py-test-localserver${MODPY_FLAVOR} \
-			www/py-urllib3${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-hypothesis \
+			devel/py-test-cov \
+			devel/py-test-localserver \
+			www/py-urllib3
 
 TEST_ENV +=		DAV_SERVER=skip \
 			DETERMINISTIC_TESTS=true
