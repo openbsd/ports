@@ -1,9 +1,9 @@
 COMMENT =		wrapper for 'email' in Python's standard library
 
-MODPY_EGG_VERSION =	3.15.0
-DISTNAME =		mail-parser-${MODPY_EGG_VERSION}
-PKGNAME =		mailparser-${MODPY_EGG_VERSION}
-REVISION =		0
+MODPY_DISTV =	3.15.0
+DISTNAME =		mail-parser-${MODPY_DISTV}
+PKGNAME =		mailparser-${MODPY_DISTV}
+REVISION =		1
 
 CATEGORIES =		mail
 
@@ -14,7 +14,7 @@ MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
 
-RUN_DEPENDS =		devel/py-simplejson${MODPY_FLAVOR} \
-			devel/py-six${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-simplejson \
+			devel/py-six
 
 .include <bsd.port.mk>

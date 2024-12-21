@@ -1,8 +1,9 @@
 COMMENT =		IMAP message de-duplicator
 
-MODPY_EGG_VERSION =	1.2
+MODPY_DISTV =	1.2
 
-DISTNAME =		imapdedup-${MODPY_EGG_VERSION}
+DISTNAME =		imapdedup-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		mail
 
@@ -16,7 +17,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		hatchling
 
-RUN_DEPENDS=		security/py-keyring${MODPY_FLAVOR}
+RUN_DEPENDS=		security/py-keyring
 
 # pypi archive hasn't got any test
 NO_TEST =		Yes

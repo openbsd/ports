@@ -3,12 +3,9 @@ COMMENT =	Python bindings for notmuch
 PKGNAME =	py-notmuch-${V}
 
 MODULES =	lang/python
-MODPY_EGG_VERSION = ${V}
+MODPY_DISTV =	${V}
 MODPY_PYBUILD =	setuptools
-REVISION =          0
-
-FLAVORS =	python3
-FLAVOR =	python3
+REVISION =          1
 
 RUN_DEPENDS =	mail/notmuch/notmuch
 

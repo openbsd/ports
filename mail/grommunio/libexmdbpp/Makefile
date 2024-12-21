@@ -2,7 +2,7 @@ COMMENT=	C++ implementation of the exmdb wire protocol for grommunio
 
 V=		1.11
 DISTNAME=	libexmdbpp-${V}
-REVISION=	1
+REVISION=	2
 
 SHARED_LIBS+=	exmdbpp	0.0 # 0.0
 
@@ -19,7 +19,7 @@ COMPILER=	base-clang ports-gcc
 
 WANTLIB += ${COMPILER_LIBCXX} m
 
-BUILD_DEPENDS=	devel/py-pybind11${MODPY_FLAVOR}
+BUILD_DEPENDS=	devel/py-pybind11
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 

@@ -1,9 +1,9 @@
 COMMENT =	convert RSS/Atom newsfeeds to email
 
-MODPY_EGG_VERSION = 3.14
-DISTNAME =	rss2email-${MODPY_EGG_VERSION}
+MODPY_DISTV =	3.14
+DISTNAME =	rss2email-${MODPY_DISTV}
 CATEGORIES =	mail www
-REVISION =	1
+REVISION =	2
 
 MAINTAINER =	Kaashif Hymabaccus <kaashif@kaashif.co.uk>
 
@@ -12,8 +12,8 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 
-RUN_DEPENDS +=	converters/py-html2text${MODPY_FLAVOR} \
-		textproc/py-feedparser${MODPY_FLAVOR}
+RUN_DEPENDS +=	converters/py-html2text \
+		textproc/py-feedparser
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		poetry-core

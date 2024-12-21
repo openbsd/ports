@@ -2,6 +2,7 @@ COMMENT=	management REST API for grommunio
 
 V=		1.16
 DISTNAME=	grommunio-admin-api-${V}
+REVISION=	0
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	admin-api
@@ -11,26 +12,26 @@ CATEGORIES=	mail www productivity
 
 MODULES=	devel/cmake lang/python
 
-BUILD_DEPENDS=	textproc/py-yaml${MODPY_FLAVOR}
+BUILD_DEPENDS=	textproc/py-yaml
 
-RUN_DEPENDS=	databases/py-ldap3${MODPY_FLAVOR} \
-		databases/py-mysqlclient${MODPY_FLAVOR} \
-		databases/py-redis${MODPY_FLAVOR} \
-		databases/py-sqlalchemy${MODPY_FLAVOR} \
-		devel/py-argcomplete${MODPY_FLAVOR} \
-		devel/py-jsonschema${MODPY_FLAVOR} \
+RUN_DEPENDS=	databases/py-ldap3 \
+		databases/py-mysqlclient \
+		databases/py-redis \
+		databases/py-sqlalchemy \
+		devel/py-argcomplete \
+		devel/py-jsonschema \
 		mail/grommunio/gromox \
 		mail/grommunio/libexmdbpp>=1.11 \
-		net/py-idna${MODPY_FLAVOR} \
-		net/py-dnspython${MODPY_FLAVOR} \
-		security/py-cryptography${MODPY_FLAVOR} \
-		sysutils/py-psutil${MODPY_FLAVOR} \
-		textproc/py-yaml${MODPY_FLAVOR} \
-		www/py-flask${MODPY_FLAVOR} \
-		www/py-jwt${MODPY_FLAVOR} \
-		www/py-multidict${MODPY_FLAVOR} \
-		www/py-openapi-core${MODPY_FLAVOR} \
-		www/py-requests${MODPY_FLAVOR}
+		net/py-idna \
+		net/py-dnspython \
+		security/py-cryptography \
+		sysutils/py-psutil \
+		textproc/py-yaml \
+		www/py-flask \
+		www/py-jwt \
+		www/py-multidict \
+		www/py-openapi-core \
+		www/py-requests
 
 CONFIGURE_ARGS+=	-DCMAKE_INSTALL_LIBDIR=${PREFIX}/lib \
 			-DCONFDIR=${PREFIX}/share/examples/grommunio-admin-api \

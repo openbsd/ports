@@ -14,7 +14,7 @@ DISTNAME=	gromox-${V}
 PKGNAME-main=	gromox-core-${V}
 PKGNAME-mapi=	gromox-mapi-${V}
 
-REVISION=	0
+REVISION=	1
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	gromox
@@ -81,10 +81,9 @@ WANTLIB-main += sasl2 sqlite3 ssl ssl xml2 xxhash z
 # Do not substitute MODULE_NAME
 UPDATE_PLIST_ARGS+=	-i MODULE_NAME
 
-# can't use MODPY_FLAVOR, doesn't pull in MODULES=lang/python
 RUN_DEPENDS-main=	textproc/catdoc \
-			sysutils/py-daemon,python3
-LIB_DEPENDS-main= 	archivers/zstd \
+			sysutils/py-daemon
+LIB_DEPENDS-main=	archivers/zstd \
 			databases/mariadb \
 			databases/openldap \
 			devel/fmt \

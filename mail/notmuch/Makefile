@@ -1,5 +1,5 @@
 SUBDIR =
 SUBDIR += notmuch
-SUBDIR += py-notmuch,python3
+SUBDIR += py-notmuch
 
 .include <bsd.port.subdir.mk>

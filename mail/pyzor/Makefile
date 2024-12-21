@@ -1,10 +1,11 @@
 COMMENT =		collaborative, networked system to detect and block spam
 
-MODPY_EGG_VERSION =	1.1.2
+MODPY_DISTV =	1.1.2
 GH_ACCOUNT =		SpamExperts
 GH_PROJECT =		pyzor
-GH_TAGNAME =		release-${MODPY_EGG_VERSION:S/./-/g}
-PKGNAME =		pyzor-${MODPY_EGG_VERSION}
+GH_TAGNAME =		release-${MODPY_DISTV:S/./-/g}
+PKGNAME =		pyzor-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		mail net
 

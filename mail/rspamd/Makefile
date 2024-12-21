@@ -47,8 +47,8 @@ BUILD_DEPENDS=	devel/ragel
 # /var/rspamd needs to exist for tests to run
 TEST_DEPENDS=	${FULLPKGNAME}:${FULLPKGPATH} \
 		databases/redis \
-		devel/py-robotframework${MODPY_FLAVOR} \
-		sysutils/py-psutil${MODPY_FLAVOR}
+		devel/py-robotframework \
+		sysutils/py-psutil
 
 CONFIGURE_ARGS+= \
 		-DNO_TARGET_VERSIONS=1 \
