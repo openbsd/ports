@@ -322,6 +322,12 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/backup/2018-11-15/endpoin
 lib/python${MODPY_VERSION}/site-packages/botocore/data/backup/2018-11-15/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/backup/2018-11-15/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/backup/2018-11-15/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/backupsearch/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/backupsearch/2018-05-10/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/backupsearch/2018-05-10/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/backupsearch/2018-05-10/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/backupsearch/2018-05-10/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/backupsearch/2018-05-10/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/batch/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/batch/2016-08-10/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/batch/2016-08-10/endpoint-rule-set-1.json
