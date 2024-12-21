@@ -5,7 +5,7 @@ COMMENT =		next generation GoldenDict
 CATEGORIES =		textproc education x11
 
 DIST_TUPLE =		github	xiaoyifang	goldendict-ng	\
-				v24.05.05-LiXia.ecd1138c	.
+				v24.09.1-Release.ca9dd133	.
 PKGNAME =		${DISTNAME:C/-[[:alnum:].]*$//}
 
 # GPLv3+
@@ -42,6 +42,7 @@ LIB_DEPENDS =		archivers/bzip2 \
 			textproc/icu4c \
 			x11/qt6/qt5compat \
 			x11/qt6/qtmultimedia \
+			x11/qt6/qtspeech \
 			x11/qt6/qtsvg \
 			x11/qt6/qtwebengine
 
@@ -49,11 +50,8 @@ RUN_DEPENDS =		devel/desktop-file-utils
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON \
 			-DUSE_ALTERNATIVE_NAME=ON \
-			-DUSE_SYSTEM_FMT=ON
-
-# ${WRKSRC}/CMakeLists.txt requires and links it unconditionally
-LIB_DEPENDS +=		x11/qt6/qtspeech
-#CONFIGURE_ARGS +=	-DWITH_TTS=OFF
+			-DUSE_SYSTEM_FMT=ON \
+			-DWITH_TTS=ON
 
 # ${WRKSRC}/CMakeLists.txt =OFF does not require it, but
 # ${WRKSRC}/src/ftshelpers.cc uses it unconditionally
