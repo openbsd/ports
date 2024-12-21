@@ -1,5 +1,6 @@
 # keep in sync with list from cad/kicad/Makefile
 BROKEN-powerpc =	segfaults when trying to run the PCB editor
+BROKEN =		likely needing update to recent 8.x for Python 3.12
 
 NOT_FOR_ARCHS =		powerpc
 

@@ -1,5 +1,6 @@
 # Sync cad/kicad-share/Makefile.inc with archs where kicad is broken
 BROKEN-powerpc =	segfaults when trying to run the PCB editor
+BROKEN =		likely needing update to recent 8.x for Python 3.12
 
 USE_NOBTCFI =		Yes
 
