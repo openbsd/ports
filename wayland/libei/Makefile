@@ -27,8 +27,8 @@ MODULES=	devel/meson \
 
 MODPY_RUNDEP=	No
 
-BUILD_DEPENDS=	devel/py-attrs${MODPY_FLAVOR} \
-		www/py-jinja2${MODPY_FLAVOR}
+BUILD_DEPENDS=	devel/py-attrs \
+		www/py-jinja2
 
 # needed for tools/
 BUILD_DEPENDS +=	wayland/libinput-openbsd \
