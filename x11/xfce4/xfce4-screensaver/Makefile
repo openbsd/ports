@@ -1,14 +1,16 @@
 COMMENT =	Xfce4 screensaver
 
 XFCE_GOODIE =	xfce4-screensaver
-XFCE_VERSION =	4.18.3
+XFCE_VERSION =	4.18.4
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MODULES =	x11/xfce4
+MODULES =	x11/xfce4 \
+		lang/python
 
 MODXFCE_DESKTOP_FILE =	Yes
+MODPY_ADJ_FILES =	src/xfce4-screensaver-configure.py
 
 LIB_DEPENDS =	x11/xfce4/garcon>=0.5.0 \
 		x11/xfce4/xfconf \
