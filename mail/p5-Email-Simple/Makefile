@@ -2,9 +2,8 @@ COMMENT =	simple parsing of RFC2822 message format and headers
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Email-Simple-2.216
+DISTNAME =	Email-Simple-2.218
 CATEGORIES =	mail
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =	Yes
