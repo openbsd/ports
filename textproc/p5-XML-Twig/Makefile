@@ -1,8 +1,7 @@
 COMMENT=	perl module for parsing huge XML documents
 
-DISTNAME=	XML-Twig-3.52
+DISTNAME=	XML-Twig-3.53
 CATEGORIES=	textproc
-REVISION=	2
 
 # perl
 PERMIT_PACKAGE=	Yes
