@@ -262,10 +262,10 @@
      SUBDIR += prboom-plus
      SUBDIR += pushover
      SUBDIR += puzzles
-     SUBDIR += py-chess,python3
-     SUBDIR += py-minecraft-launcher-lib,python3
-     SUBDIR += py-steam,python3
-     SUBDIR += py-unitypy,python3
+     SUBDIR += py-chess
+     SUBDIR += py-minecraft-launcher-lib
+     SUBDIR += py-steam
+     SUBDIR += py-unitypy
      SUBDIR += pygame_sdl2
      SUBDIR += pyganim
      SUBDIR += pysol

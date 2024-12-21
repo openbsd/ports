@@ -1,9 +1,10 @@
 COMMENT =	tools for extracting ROMS from games
 
-MODPY_EGG_VERSION =	0.1.7
+MODPY_DISTV =	0.1.7
 
-DISTNAME =		game-extraction-toolbox-${MODPY_EGG_VERSION}
-PKGNAME =		gextoolbox-${MODPY_EGG_VERSION}
+DISTNAME =		game-extraction-toolbox-${MODPY_DISTV}
+PKGNAME =		gextoolbox-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		games sysutils
 
@@ -15,16 +16,16 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		archivers/py-lz4${MODPY_FLAVOR} \
-			devel/py-bitarray${MODPY_FLAVOR} \
-			devel/py-click${MODPY_FLAVOR} \
-			devel/py-click-log${MODPY_FLAVOR} \
-			devel/py-magic${MODPY_FLAVOR} \
-			devel/py-rich${MODPY_FLAVOR} \
-			games/py-unitypy${MODPY_FLAVOR} \
-			graphics/py-Pillow${MODPY_FLAVOR} \
-			sysutils/py-fsspec${MODPY_FLAVOR} \
-			sysutils/py-psutil${MODPY_FLAVOR} \
-			textproc/py-texttable${MODPY_FLAVOR}
+RUN_DEPENDS =		archivers/py-lz4 \
+			devel/py-bitarray \
+			devel/py-click \
+			devel/py-click-log \
+			devel/py-magic \
+			devel/py-rich \
+			games/py-unitypy \
+			graphics/py-Pillow \
+			sysutils/py-fsspec \
+			sysutils/py-psutil \
+			textproc/py-texttable
 
 .include <bsd.port.mk>

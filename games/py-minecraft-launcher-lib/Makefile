@@ -1,10 +1,10 @@
 COMMENT =		library for creating a custom Minecraft launcher
 
-MODPY_EGG_VERSION =	5.3
+MODPY_DISTV =	5.3
 
-DISTNAME =		minecraft-launcher-lib-${MODPY_EGG_VERSION}
+DISTNAME =		minecraft-launcher-lib-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games
 
@@ -20,11 +20,8 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-BUILD_DEPENDS =		www/py-requests${MODPY_FLAVOR}
-RUN_DEPENDS =		www/py-requests${MODPY_FLAVOR}
+BUILD_DEPENDS =		www/py-requests
+RUN_DEPENDS =		www/py-requests
 
 # No tests in the upstream library
 NO_TEST =		Yes

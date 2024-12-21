@@ -3,7 +3,7 @@ BROKEN =		needs update for cython 3.x - current upstream version works with py 3
 COMMENT =		visual novel engine
 
 V =			7.3.5
-MODPY_EGG_VERSION =	${V}.606
+MODPY_DISTV =	${V}.606
 DISTNAME =		renpy-${V}-source
 PKGNAME =		renpy-${V}
 REVISION =		2
@@ -26,7 +26,7 @@ MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 BUILD_DEPENDS =		devel/py2-pygame \
 			games/pygame_sdl2 \
-			lang/cython,python3
+			lang/cython
 
 RUN_DEPENDS =		games/pygame_sdl2
 

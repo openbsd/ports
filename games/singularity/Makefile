@@ -1,11 +1,11 @@
 COMMENT=	simulation of a true AI
 
-MODPY_EGG_VERSION= 1.0
+MODPY_DISTV=	1.0
 MUSIC_V=	007
 V=		1.00
 DISTNAME=	singularity-${V}
 PKGNAME=	singularity-${V}
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	games
 
@@ -25,8 +25,8 @@ WRKDIST=	${WRKDIR}/singularity-${V}
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS=	devel/pygame${MODPY_FLAVOR} \
-		math/py-numpy${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/pygame \
+		math/py-numpy
 
 xxpre-configure:
 	find ${WRKSRC} -name \*.py -exec \

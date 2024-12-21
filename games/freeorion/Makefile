@@ -3,7 +3,7 @@ COMMENT =	turn-based space empire and galactic conquest computer game
 DISTNAME =	FreeOrion_v${V}_Source
 PKGNAME =	freeorion-${V}
 CATEGORIES =	games
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://www.freeorion.org/
 MAINTAINER =	Tom Murphy <openbsd@pertho.net>
@@ -28,7 +28,7 @@ MODULES =	devel/cmake \
 
 BUILD_DEPENDS =	devel/cppcheck \
 		devel/doxygen \
-		devel/py-codestyle${MODPY_FLAVOR}
+		devel/py-codestyle
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic

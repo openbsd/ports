@@ -1,8 +1,9 @@
 COMMENT =		solitaire card games collection
 
-MODPY_EGG_VERSION =	3.1.0
-DISTNAME =		PySolFC-${MODPY_EGG_VERSION}
-PKGNAME =		pysol-${MODPY_EGG_VERSION}
+MODPY_DISTV =	3.1.0
+DISTNAME =		PySolFC-${MODPY_DISTV}
+PKGNAME =		pysol-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		games
 
@@ -24,12 +25,12 @@ MODPY_PYBUILD =		setuptools
 MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache
 
 RUN_DEPENDS =		${MODPY_TKINTER_DEPENDS} \
-			devel/py-attrs${MODPY_FLAVOR} \
-			devel/py-configobj${MODPY_FLAVOR} \
-			devel/py-six${MODPY_FLAVOR} \
-			devel/pygame${MODPY_FLAVOR} \
-			games/pysol-cards${MODPY_FLAVOR} \
-			graphics/py-Pillow${MODPY_FLAVOR}
+			devel/py-attrs \
+			devel/py-configobj \
+			devel/py-six \
+			devel/pygame \
+			games/pysol-cards \
+			graphics/py-Pillow
 
 pre-test:
 	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python

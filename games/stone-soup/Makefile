@@ -7,6 +7,7 @@ TAGNAME =	Gods and Makers
 
 DISTNAME=	stone_soup-${VERSION}-nodeps
 PKGNAME=	stone-soup-${VERSION}
+REVISION=	1
 
 CATEGORIES = 	games
 
@@ -29,7 +30,7 @@ MODULES = 	lang/python \
 MODLUA_VERSION = 	5.1
 
 BUILD_DEPENDS = graphics/pngcrush \
-		textproc/py-yaml${MODPY_FLAVOR}
+		textproc/py-yaml
 LIB_DEPENDS = 	databases/sqlite3
 
 MAKE_FLAGS = 	CC="${CC}" GCC="${GCC}" GXX="${CXX}" \

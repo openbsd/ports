@@ -1,10 +1,10 @@
 COMMENT=	flash-card tool which optimises your learning process
 
-MODPY_EGG_VERSION = 2.9
-DISTNAME=	Mnemosyne-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.9
+DISTNAME=	Mnemosyne-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	games education
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://www.mnemosyne-proj.org/
 
@@ -18,17 +18,17 @@ MODULES=	lang/python
 # build needs some of the py-qt5 tools; pull them in via
 # py-qtwebengine so that build fails early on arches where
 # qtwebengine isn't available
-BUILD_DEPENDS=	www/py-qtwebengine${MODPY_FLAVOR}
+BUILD_DEPENDS=	www/py-qtwebengine
 
 MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS=	x11/py-qt5${MODPY_FLAVOR}>=5.6 \
-		www/py-qtwebengine${MODPY_FLAVOR} \
-		graphics/py-Pillow${MODPY_FLAVOR} \
-		graphics/py-matplotlib${MODPY_FLAVOR} \
-		www/py-cheroot${MODPY_FLAVOR}>=5 \
-		www/py-webob${MODPY_FLAVOR}>=1.4 \
-		security/py-argon2-cffi${MODPY_FLAVOR} \
+RUN_DEPENDS=	x11/py-qt5>=5.6 \
+		www/py-qtwebengine \
+		graphics/py-Pillow \
+		graphics/py-matplotlib \
+		www/py-cheroot>=5 \
+		www/py-webob>=1.4 \
+		security/py-argon2-cffi \
 		devel/desktop-file-utils
 
 NO_TEST=	Yes

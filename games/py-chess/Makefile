@@ -1,9 +1,9 @@
 COMMENT =		pure Python chess library
 
-MODPY_EGG_VERSION =	1.10.0
-DISTNAME =		chess-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.10.0
+DISTNAME =		chess-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games
 
@@ -13,9 +13,6 @@ HOMEPAGE =		https://github.com/niklasf/python-chess
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools

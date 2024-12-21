@@ -1,8 +1,8 @@
 COMMENT =	downloader for GOG.com games and bonus collections
 
-MODPY_EGG_VERSION =	0.3apl20230204
-DISTNAME =		gogrepo-${MODPY_EGG_VERSION}
-REVISION =		1
+MODPY_DISTV =	0.3apl20230204
+DISTNAME =		gogrepo-${MODPY_DISTV}
+REVISION =		2
 
 GH_ACCOUNT =		eddie3
 GH_PROJECT =		gogrepo
@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 # optional dep on html2text for prettying up game changelog
-RUN_DEPENDS =		devel/py-html5lib${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-html5lib
 
 NO_TEST =		Yes
 

@@ -1,9 +1,9 @@
 COMMENT =	economic historical real-time strategy game
 
-MODPY_EGG_VERSION =	2019.1
-DISTNAME =		${GH_PROJECT}-${MODPY_EGG_VERSION}
-PKGNAME =		unknown-horizons-${MODPY_EGG_VERSION}
-REVISION =	5
+MODPY_DISTV =	2019.1
+DISTNAME =		${GH_PROJECT}-${MODPY_DISTV}
+PKGNAME =		unknown-horizons-${MODPY_DISTV}
+REVISION =	6
 
 GH_ACCOUNT =	unknown-horizons
 GH_PROJECT =	unknown-horizons
@@ -28,15 +28,15 @@ SEPARATE_BUILD =	Yes
 PORTHOME =		${WRKDIR}
 
 BUILD_DEPENDS =		devel/gettext,-tools \
-			graphics/py-Pillow${MODPY_FLAVOR} \
+			graphics/py-Pillow \
 			sysutils/py-distro
 RUN_DEPENDS =		devel/desktop-file-utils \
 			games/fifengine>=0.4.2p4 \
-			textproc/py-yaml${MODPY_FLAVOR}
-TEST_DEPENDS =		devel/py-greenlet${MODPY_FLAVOR} \
-			devel/py-mock${MODPY_FLAVOR} \
-			textproc/py-polib${MODPY_FLAVOR} \
-			textproc/py-yaml${MODPY_FLAVOR}
+			textproc/py-yaml
+TEST_DEPENDS =		devel/py-greenlet \
+			devel/py-mock \
+			textproc/py-polib \
+			textproc/py-yaml
 
 #https://github.com/unknown-horizons/unknown-horizons/issues/2938
 NO_TEST = 		Yes

@@ -18,8 +18,8 @@ MODPY_RUNDEP =  No
 
 USE_GMAKE =	Yes
 
-BUILD_DEPENDS =	graphics/py-Pillow${MODPY_FLAVOR} \
-		textproc/py-yaml${MODPY_FLAVOR} \
+BUILD_DEPENDS =	graphics/py-Pillow \
+		textproc/py-yaml \
 		games/zelda3-rom:patch
 
 PERMIT_PACKAGE =	proprietary ROM image

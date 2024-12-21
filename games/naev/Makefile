@@ -28,7 +28,7 @@ WANTLIB-data =
 
 MODULES =		devel/meson lang/lua\
 			textproc/intltool
-BUILD_DEPENDS = 	textproc/py-yaml,python3 \
+BUILD_DEPENDS = 	textproc/py-yaml \
 			devel/appstream,-main \
 			devel/gettext,-tools
 LIB_DEPENDS-main =	audio/libvorbis \

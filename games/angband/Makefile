@@ -35,7 +35,7 @@ USE_GMAKE =		Yes
 FLAVORS=		no_x11 sdl
 FLAVOR?=
 
-BUILD_DEPENDS =		textproc/py-docutils,python3
+BUILD_DEPENDS =		textproc/py-docutils
 
 .if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS+=	--without-x

@@ -1,3 +1,4 @@
+@pkgpath games/py-steam,python3
 lib/python${MODPY_VERSION}/site-packages/steam/
 lib/python${MODPY_VERSION}/site-packages/steam-1.4.4.dist-info/
 lib/python${MODPY_VERSION}/site-packages/steam-1.4.4.dist-info/LICENSE

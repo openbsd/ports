@@ -3,7 +3,7 @@ COMMENT =	open source PS4 and PS5 remote play client
 V =		v2.2.0
 DISTNAME =	chiaki-${V}-src
 PKGNAME =	${DISTNAME:S/-v/-/g:S/-src//g}
-REVISION =	0
+REVISION =	1
 
 WRKDIST =	${WRKDIR}/chiaki
 
@@ -28,7 +28,7 @@ MODULES =		devel/cmake \
 
 CONFIGURE_ARGS +=	-DCHIAKI_ENABLE_SETSU=no
 BUILD_DEPENDS =		devel/protobuf-c \
-			devel/py-protobuf,python3 \
+			devel/py-protobuf \
 			devel/py-setuptools
 LIB_DEPENDS =		devel/sdl2 \
 			audio/opus \

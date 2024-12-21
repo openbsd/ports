@@ -1,8 +1,8 @@
 COMMENT =		free and open source replacement for Epic Games Launcher
-MODPY_EGG_VERSION =	0.20.34
-DISTNAME =		legendary-gl-${MODPY_EGG_VERSION}
-PKGNAME =		legendary-${MODPY_EGG_VERSION}
-REVISION =		0
+MODPY_DISTV =	0.20.34
+DISTNAME =		legendary-gl-${MODPY_DISTV}
+PKGNAME =		legendary-${MODPY_DISTV}
+REVISION =		1
 
 CATEGORIES =		games
 MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
@@ -14,8 +14,8 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		devel/py-wheel${MODPY_FLAVOR} \
-			sysutils/py-filelock${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-wheel \
+			sysutils/py-filelock \
+			www/py-requests
 
 .include <bsd.port.mk>
