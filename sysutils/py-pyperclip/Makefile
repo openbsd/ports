@@ -1,10 +1,10 @@
 COMMENT =		cross-platform clipboard module for Python
 
-MODPY_EGG_VERSION =	1.8.2
+MODPY_DISTV =	1.8.2
 
-DISTNAME =		pyperclip-${MODPY_EGG_VERSION}
+DISTNAME =		pyperclip-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		sysutils
 HOMEPAGE =		https://github.com/asweigart/pyperclip
@@ -20,8 +20,5 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		x11/xclip
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 .include <bsd.port.mk>

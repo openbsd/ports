@@ -22,7 +22,7 @@ BOARDS=\
 	x96_mate
 
 BUILD_DEPENDS+= devel/arm-none-eabi/gcc,aarch64 \
-		devel/py-elftools${MODPY_FLAVOR} \
+		devel/py-elftools \
 		sysutils/arm-trusted-firmware>=2.10.2v0 \
 		sysutils/crust>=0.6
 CROSS_COMPILE=	aarch64-none-elf-

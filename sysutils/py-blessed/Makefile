@@ -1,10 +1,10 @@
 COMMENT=	easy, practical library for making terminal apps
 
-MODPY_EGG_VERSION=	1.20.0
+MODPY_DISTV=	1.20.0
 
-DISTNAME=	blessed-${MODPY_EGG_VERSION}
+DISTNAME=	blessed-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	sysutils
 
@@ -21,11 +21,8 @@ MODPY_PYBUILD=	setuptools
 # depends on some Windows things?
 #NO_TEST=	Yes
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-RUN_DEPENDS=	devel/py-six${MODPY_FLAVOR} \
-		devel/py-wcwidth${MODPY_FLAVOR}
-TEST_DEPENDS=	devel/py-test-cov${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-six \
+		devel/py-wcwidth
+TEST_DEPENDS=	devel/py-test-cov
 
 .include <bsd.port.mk>

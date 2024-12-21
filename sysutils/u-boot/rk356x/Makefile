@@ -22,7 +22,7 @@ BOARDS=\
 	soquartz-model-a-rk3566
 
 BUILD_DEPENDS+= devel/arm-none-eabi/gcc,aarch64 \
-		devel/py-elftools${MODPY_FLAVOR} \
+		devel/py-elftools \
 		shells/bash \
 		sysutils/e2fsprogs
 CROSS_COMPILE=	aarch64-none-elf-

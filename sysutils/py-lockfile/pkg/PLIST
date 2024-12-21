@@ -1,14 +1,14 @@
+@pkgpath sysutils/py-lockfile,python3
 @conflict py-lockfile-*
-@pkgpath sysutils/py-lockfile
 lib/python${MODPY_VERSION}/site-packages/lockfile/
-lib/python${MODPY_VERSION}/site-packages/lockfile-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/lockfile-${MODPY_EGG_VERSION}.dist-info/AUTHORS
-lib/python${MODPY_VERSION}/site-packages/lockfile-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/lockfile-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/lockfile-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/lockfile-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/lockfile-${MODPY_EGG_VERSION}.dist-info/pbr.json
-lib/python${MODPY_VERSION}/site-packages/lockfile-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/lockfile-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/lockfile-${MODPY_DISTV}.dist-info/AUTHORS
+lib/python${MODPY_VERSION}/site-packages/lockfile-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/lockfile-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/lockfile-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/lockfile-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/lockfile-${MODPY_DISTV}.dist-info/pbr.json
+lib/python${MODPY_VERSION}/site-packages/lockfile-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/lockfile/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lockfile/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/lockfile/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

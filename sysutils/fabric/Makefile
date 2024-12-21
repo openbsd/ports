@@ -1,8 +1,8 @@
 COMMENT =		simple, pythonic tool for remote execution and deployment
 
-MODPY_EGG_VERSION =	2.6.0
-DISTNAME =		fabric-${MODPY_EGG_VERSION}
-REVISION =		3
+MODPY_DISTV =	2.6.0
+DISTNAME =		fabric-${MODPY_DISTV}
+REVISION =		4
 
 CATEGORIES =		sysutils
 
@@ -18,11 +18,11 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		security/py-paramiko${MODPY_FLAVOR} \
-			devel/py-invoke${MODPY_FLAVOR}
-TEST_DEPENDS =		www/py-jinja2${MODPY_FLAVOR} \
-			devel/py-test-relaxed${MODPY_FLAVOR} \
-			devel/py-mock${MODPY_FLAVOR}
+RUN_DEPENDS =		security/py-paramiko \
+			devel/py-invoke
+TEST_DEPENDS =		www/py-jinja2 \
+			devel/py-test-relaxed \
+			devel/py-mock
 
 PORTHOME =		${WRKSRC}
 

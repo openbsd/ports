@@ -1,9 +1,9 @@
 COMMENT=	datetime-iterator for cron-like formats
 
-MODPY_EGG_VERSION=	2.0.1
-DISTNAME=	croniter-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.0.1
+DISTNAME=	croniter-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	sysutils
 
@@ -14,11 +14,8 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-RUN_DEPENDS=	devel/py-dateutil${MODPY_FLAVOR} \
-		devel/py-tz${MODPY_FLAVOR}
-TEST_DEPENDS=	devel/py-tzlocal${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-dateutil \
+		devel/py-tz
+TEST_DEPENDS=	devel/py-tzlocal
 
 .include <bsd.port.mk>

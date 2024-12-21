@@ -3,6 +3,7 @@ COMMENT=		GUI for managing virtual machines through libvirt
 DISTNAME=		virt-manager-5.0.0
 CATEGORIES=		sysutils x11
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 HOMEPAGE=		http://virt-manager.org/
 
@@ -18,21 +19,21 @@ MODULES=		devel/dconf \
 			lang/python
 
 BUILD_DEPENDS=		devel/gettext,-tools \
-			textproc/py-docutils${MODPY_FLAVOR}
+			textproc/py-docutils
 
 # needed for tests; checked at configure time
-BUILD_DEPENDS +=	devel/py-codestyle${MODPY_FLAVOR} \
-			devel/pylint${MODPY_FLAVOR} \
-			devel/py-test${MODPY_FLAVOR} \
+BUILD_DEPENDS +=	devel/py-codestyle \
+			devel/pylint \
+			devel/py-test \
 			textproc/codespell
 
 RUN_DEPENDS=		devel/libvirt-glib \
-			devel/py-gobject3${MODPY_FLAVOR} \
+			devel/py-gobject3 \
 			devel/vte3 \
 			misc/osinfo/libosinfo \
-			sysutils/libvirt-python${MODPY_FLAVOR} \
+			sysutils/libvirt-python \
 			textproc/libxml,-python \
-			www/py-requests${MODPY_FLAVOR} \
+			www/py-requests \
 			x11/gtk-vnc \
 			x11/gtksourceview4 \
 			x11/spice-gtk \

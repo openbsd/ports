@@ -1,8 +1,9 @@
 COMMENT =		job scheduling for humans
 
-MODPY_EGG_VERSION = 	1.2.2
-DISTNAME =		schedule-${MODPY_EGG_VERSION}
+MODPY_DISTV =		1.2.2
+DISTNAME =		schedule-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -15,10 +16,7 @@ MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
 
-TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
-			devel/py-test${MODPY_FLAVOR}
-
-FLAVORS =	python3
-FLAVOR =	python3
+TEST_DEPENDS =		devel/py-mock \
+			devel/py-test
 
 .include <bsd.port.mk>

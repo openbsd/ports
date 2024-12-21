@@ -1,5 +1,5 @@
+@pkgpath sysutils/py-augeas,python3
 @conflict py-augeas-*
-@pkgpath sysutils/py-augeas
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}augeas.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}augeas.${MODPY_PYC_MAGIC_TAG}pyc
@@ -12,13 +12,13 @@ lib/python${MODPY_VERSION}/site-packages/augeas/${MODPY_PYCACHE}__init__.${MODPY
 lib/python${MODPY_VERSION}/site-packages/augeas/${MODPY_PYCACHE}ffi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/augeas/${MODPY_PYCACHE}ffi.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/augeas/ffi.py
-lib/python${MODPY_VERSION}/site-packages/python_augeas-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/python_augeas-${MODPY_EGG_VERSION}.dist-info/AUTHORS
-lib/python${MODPY_VERSION}/site-packages/python_augeas-${MODPY_EGG_VERSION}.dist-info/COPYING
-lib/python${MODPY_VERSION}/site-packages/python_augeas-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/python_augeas-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/python_augeas-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/python_augeas-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/python_augeas-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/python_augeas-${MODPY_DISTV}.dist-info/AUTHORS
+lib/python${MODPY_VERSION}/site-packages/python_augeas-${MODPY_DISTV}.dist-info/COPYING
+lib/python${MODPY_VERSION}/site-packages/python_augeas-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/python_augeas-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/python_augeas-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/python_augeas-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/test/
 lib/python${MODPY_VERSION}/site-packages/test/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/test/${MODPY_PYCACHE}/

@@ -1,7 +1,8 @@
 COMMENT =		best practices checker for ansible
 
-MODPY_EGG_VERSION =	24.2.2
-DISTNAME =		ansible-lint-${MODPY_EGG_VERSION}
+MODPY_DISTV =	24.2.2
+DISTNAME =		ansible-lint-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -13,35 +14,35 @@ MODULES =		lang/python
 MODPY_PYBUILD =		setuptools_scm
 MODPY_PI =		Yes
 
-BUILD_DEPENDS =		devel/py-setuptools_scm_git_archive${MODPY_FLAVOR}
+BUILD_DEPENDS =		devel/py-setuptools_scm_git_archive
 
 RUN_DEPENDS =		devel/git \
 			sysutils/ansible-core \
-			textproc/py-black${MODPY_FLAVOR} \
-			sysutils/py-filelock${MODPY_FLAVOR} \
-			devel/py-jsonschema${MODPY_FLAVOR} \
-			sysutils/py-packaging${MODPY_FLAVOR} \
-			textproc/py-yaml${MODPY_FLAVOR} \
-			devel/py-rich${MODPY_FLAVOR} \
-			textproc/py-ruamel.yaml${MODPY_FLAVOR} \
-			sysutils/py-ansible-compat${MODPY_FLAVOR}>=4.1.11 \
-			sysutils/py-subprocess-tee${MODPY_FLAVOR} \
-			devel/py-yamllint${MODPY_FLAVOR} \
-			devel/py-wcmatch${MODPY_FLAVOR} \
+			textproc/py-black \
+			sysutils/py-filelock \
+			devel/py-jsonschema \
+			sysutils/py-packaging \
+			textproc/py-yaml \
+			devel/py-rich \
+			textproc/py-ruamel.yaml \
+			sysutils/py-ansible-compat>=4.1.11 \
+			sysutils/py-subprocess-tee \
+			devel/py-yamllint \
+			devel/py-wcmatch \
 
 PORTHOME =		${WRKDIR}
 # tests need network
 MODPY_PYTEST_ARGS =	test
 TEST_DEPENDS =		devel/flake8 \
-			devel/pylint${MODPY_FLAVOR} \
-			devel/py-flaky${MODPY_FLAVOR} \
-			devel/py-mypy${MODPY_FLAVOR} \
-			devel/py-test-cov${MODPY_FLAVOR} \
-			devel/py-test-mock${MODPY_FLAVOR} \
-			devel/py-test-xdist${MODPY_FLAVOR} \
-			textproc/py-tomli${MODPY_FLAVOR} \
-			textproc/py-license-expression${MODPY_FLAVOR} \
-			sysutils/py-ansible-compat${MODPY_FLAVOR} \
+			devel/pylint \
+			devel/py-flaky \
+			devel/py-mypy \
+			devel/py-test-cov \
+			devel/py-test-mock \
+			devel/py-test-xdist \
+			textproc/py-tomli \
+			textproc/py-license-expression \
+			sysutils/py-ansible-compat \
 			shells/bash \
 			misc/findutils
 

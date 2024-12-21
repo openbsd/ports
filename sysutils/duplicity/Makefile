@@ -1,10 +1,11 @@
 COMMENT =		encrypted backup using rsync algorithm
 
-MODPY_EGG_VERSION =	3.0.2
-DISTNAME =		duplicity-${MODPY_EGG_VERSION}
+MODPY_DISTV =	3.0.2
+DISTNAME =		duplicity-${MODPY_DISTV}
+REVISION =		0
 
-DIST_TUPLE =		gitlab duplicity duplicity rel.${MODPY_EGG_VERSION} .
-WRKDIST =		${WRKDIR}/duplicity-rel.${MODPY_EGG_VERSION}-00c4d88aae8b765b67203fbe83db55386387ef9c
+DIST_TUPLE =		gitlab duplicity duplicity rel.${MODPY_DISTV} .
+WRKDIST =		${WRKDIR}/duplicity-rel.${MODPY_DISTV}-00c4d88aae8b765b67203fbe83db55386387ef9c
 
 CATEGORIES =		sysutils
 
@@ -20,28 +21,28 @@ MODULES =		lang/python
 MODPY_PYBUILD =		setuptools_scm
 
 BUILD_DEPENDS =		devel/gettext,-tools \
-			devel/py-pip${MODPY_FLAVOR} \
-			sysutils/py-pipx${MODPY_FLAVOR}
+			devel/py-pip \
+			sysutils/py-pipx
 
 LIB_DEPENDS =		net/librsync
 
-RUN_DEPENDS =		devel/py-fasteners${MODPY_FLAVOR} \
+RUN_DEPENDS =		devel/py-fasteners \
 			net/ncftp \
 			security/gnupg \
-			security/py-paramiko${MODPY_FLAVOR}
+			security/py-paramiko
 
 TEST_DEPENDS =		archivers/gtar \
 			archivers/par2cmdline \
-			devel/py-codestyle${MODPY_FLAVOR} \
-			devel/py-coverage${MODPY_FLAVOR} \
-			devel/py-mock${MODPY_FLAVOR} \
-			devel/py-pexpect${MODPY_FLAVOR} \
-			devel/pylint${MODPY_FLAVOR} \
-			devel/py-test${MODPY_FLAVOR} \
-			devel/py-test-cov${MODPY_FLAVOR} \
-			devel/py-test-runner${MODPY_FLAVOR} \
-			sysutils/py-psutil${MODPY_FLAVOR} \
-			textproc/py-sphinx${MODPY_FLAVOR}
+			devel/py-codestyle \
+			devel/py-coverage \
+			devel/py-mock \
+			devel/py-pexpect \
+			devel/pylint \
+			devel/py-test \
+			devel/py-test-cov \
+			devel/py-test-runner \
+			sysutils/py-psutil \
+			textproc/py-sphinx
 
 MAKE_ENV =		LIBRSYNC_DIR=${LOCALBASE}
 

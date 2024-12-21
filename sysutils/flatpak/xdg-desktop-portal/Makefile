@@ -28,7 +28,7 @@ BUILD_DEPENDS=		devel/gettext,-tools \
 			geo/geoclue2
 
 # rst2man
-BUILD_DEPENDS +=	textproc/py-docutils${MODPY_FLAVOR}
+BUILD_DEPENDS +=	textproc/py-docutils
 
 # needed for tests
 BUILD_DEPENDS +=	sysutils/flatpak/libportal

@@ -1,10 +1,10 @@
 COMMENT=	handle .env files
 
-MODPY_EGG_VERSION=	1.0.1
+MODPY_DISTV=	1.0.1
 
-DISTNAME=	python-dotenv-${MODPY_EGG_VERSION}
+DISTNAME=	python-dotenv-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/python-/py-/}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	sysutils
 
@@ -15,16 +15,13 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 
-FLAVORS=	python3
-FLAVOR=		python3
-
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH} \
-		devel/py-click${MODPY_FLAVOR} \
-		devel/py-mock${MODPY_FLAVOR} \
-		devel/py-sh${MODPY_FLAVOR} \
-		devel/ipython${MODPY_FLAVOR}
+		devel/py-click \
+		devel/py-mock \
+		devel/py-sh \
+		devel/ipython
 # test_ipython.py clears the environment so ipython looks up the actual
 # home directory of the user running it, resulting in "'/nonexistent' is
 # not a writable location" warning when run as _pbuild.

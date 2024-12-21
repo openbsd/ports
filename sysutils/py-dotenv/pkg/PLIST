@@ -1,3 +1,4 @@
+@pkgpath sysutils/py-dotenv,python3
 bin/dotenv
 lib/python${MODPY_VERSION}/site-packages/dotenv/
 lib/python${MODPY_VERSION}/site-packages/dotenv/__init__.py
@@ -26,10 +27,10 @@ lib/python${MODPY_VERSION}/site-packages/dotenv/parser.py
 lib/python${MODPY_VERSION}/site-packages/dotenv/py.typed
 lib/python${MODPY_VERSION}/site-packages/dotenv/variables.py
 lib/python${MODPY_VERSION}/site-packages/dotenv/version.py
-lib/python${MODPY_VERSION}/site-packages/python_dotenv-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/python_dotenv-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/python_dotenv-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/python_dotenv-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/python_dotenv-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/python_dotenv-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/python_dotenv-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/python_dotenv-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/python_dotenv-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/python_dotenv-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/python_dotenv-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/python_dotenv-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/python_dotenv-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/python_dotenv-${MODPY_DISTV}.dist-info/top_level.txt

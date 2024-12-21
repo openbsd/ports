@@ -1,8 +1,9 @@
 COMMENT=	platform independent file lock
 
-MODPY_EGG_VERSION=	3.15.4
-DISTNAME=	filelock-${MODPY_EGG_VERSION}
+MODPY_DISTV=	3.15.4
+DISTNAME=	filelock-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	sysutils
 
@@ -16,12 +17,9 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	hatch-vcs
 
-TEST_DEPENDS=	devel/py-test-cov${MODPY_FLAVOR} \
-		devel/py-test-mock${MODPY_FLAVOR} \
-		devel/py-test-timeout${MODPY_FLAVOR} \
-		devel/py-virtualenv${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+TEST_DEPENDS=	devel/py-test-cov \
+		devel/py-test-mock \
+		devel/py-test-timeout \
+		devel/py-virtualenv
 
 .include <bsd.port.mk>

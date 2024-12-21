@@ -1,9 +1,9 @@
 COMMENT =	Python bindings for The Sleuth Kit (libtsk)
 
-MODPY_EGG_VERSION = 20200117
-DISTNAME =	pytsk3-${MODPY_EGG_VERSION}
-PKGNAME =	py-tsk-${MODPY_EGG_VERSION}
-REVISION =	6
+MODPY_DISTV =	20200117
+DISTNAME =	pytsk3-${MODPY_DISTV}
+PKGNAME =	py-tsk-${MODPY_DISTV}
+REVISION =	7
 
 CATEGORIES =	sysutils
 
@@ -21,9 +21,6 @@ MODULES += 		gnu
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVORS =	python3
-FLAVOR =	python3
-
 WANTLIB += pthread talloc tsk ${MODPY_WANTLIB}
 
 # C++11
@@ -35,7 +32,7 @@ pre-configure:
 
 LIB_DEPENDS =	sysutils/sleuthkit \
 		devel/libtalloc
-TEST_DEPENDS =	sysutils/py-tsk${MODPY_FLAVOR}=${MODPY_EGG_VERSION}
+TEST_DEPENDS =	sysutils/py-tsk=${MODPY_DISTV}
 
 # it needs test_data/* in the Github repository
 do-test:

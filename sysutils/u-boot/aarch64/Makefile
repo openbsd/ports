@@ -21,7 +21,7 @@ BOARDS=\
 	rpi_arm64
 
 BUILD_DEPENDS+= devel/arm-none-eabi/gcc,aarch64 \
-		devel/py-elftools${MODPY_FLAVOR} \
+		devel/py-elftools \
 		sysutils/arm-trusted-firmware>=2.2p0v0
 CROSS_COMPILE=	aarch64-none-elf-
 RK3328_BL31=	${LOCALBASE}/share/arm-trusted-firmware/rk3328-bl31.elf

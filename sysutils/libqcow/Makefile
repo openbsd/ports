@@ -3,7 +3,7 @@ COMMENT =	library and tools to access the QEMU Copy-On-Write (QCOW)
 VERSION = 	20191221
 DISTNAME =	libqcow-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS +=  qcow                       0.0 # 1.0
 

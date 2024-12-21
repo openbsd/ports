@@ -3,7 +3,7 @@ COMMENT =	library to access to storage media devices
 VERSION = 	20200210
 DISTNAME =	libsmdev-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS +=  smdev                      0.0 # 1.0
 

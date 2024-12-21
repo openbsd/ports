@@ -1,11 +1,11 @@
 COMMENT =		schedule Python code
 
-MODPY_EGG_VERSION =	3.10.4
-DISTNAME =		APScheduler-${MODPY_EGG_VERSION}
+MODPY_DISTV =	3.10.4
+DISTNAME =		APScheduler-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:L}
 CATEGORIES =		sysutils
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
-REVISION =		0
+REVISION =		1
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -14,22 +14,19 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-RUN_DEPENDS +=		devel/py-six${MODPY_FLAVOR} \
-			devel/py-tz${MODPY_FLAVOR} \
-			devel/py-tzlocal${MODPY_FLAVOR}
+RUN_DEPENDS +=		devel/py-six \
+			devel/py-tz \
+			devel/py-tzlocal
 
 # besides skipped tests, tests pass with running redis and mongod
 # 2 errors io_loop caused by pytest-tornado missing in ports
-TEST_DEPENDS = 		databases/py-mongo${MODPY_FLAVOR} \
-			databases/py-redis${MODPY_FLAVOR} \
-			databases/py-sqlalchemy${MODPY_FLAVOR} \
-			devel/py-gevent${MODPY_FLAVOR} \
-			devel/py-test-asyncio${MODPY_FLAVOR} \
-			devel/py-test-cov${MODPY_FLAVOR} \
-			devel/py-twisted${MODPY_FLAVOR} \
-			www/py-tornado${MODPY_FLAVOR}
+TEST_DEPENDS = 		databases/py-mongo \
+			databases/py-redis \
+			databases/py-sqlalchemy \
+			devel/py-gevent \
+			devel/py-test-asyncio \
+			devel/py-test-cov \
+			devel/py-twisted \
+			www/py-tornado
 
 .include <bsd.port.mk>

@@ -1,7 +1,8 @@
 COMMENT =		radically simple IT automation
 
-MODPY_EGG_VERSION =	11.1.0
-DISTNAME =		ansible-${MODPY_EGG_VERSION}
+MODPY_DISTV =	11.1.0
+DISTNAME =		ansible-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		sysutils
 

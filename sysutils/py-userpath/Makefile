@@ -1,9 +1,10 @@
 COMMENT=	cross-platform tool to add locations to the user's PATH
 
-MODPY_EGG_VERSION =	1.9.2
-DISTNAME=	userpath-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.9.2
+DISTNAME=	userpath-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	sysutils
+REVISION=	0
 
 HOMEPAGE=	https://github.com/ofek/userpath
 
@@ -15,13 +16,10 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	hatchling
 
-FLAVORS=	python3
-FLAVOR=		python3
-
 # tests aren't working properly with OpenBSD
 NO_TEST=	Yes
 
-RUN_DEPENDS=	devel/py-click${MODPY_FLAVOR} \
-		sysutils/py-psutil${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-click \
+		sysutils/py-psutil
 
 .include <bsd.port.mk>

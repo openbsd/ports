@@ -1,8 +1,8 @@
 COMMENT =		tarsnap wrapper which automatically expires backups
 
-MODPY_EGG_VERSION =	0.4.0
-DISTNAME =		tarsnapper-${MODPY_EGG_VERSION}
-REVISION =		8
+MODPY_DISTV =	0.4.0
+DISTNAME =		tarsnapper-${MODPY_DISTV}
+REVISION =		9
 
 CATEGORIES =		sysutils
 
@@ -14,10 +14,10 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR} \
-			devel/py-pexpect${MODPY_FLAVOR} \
-			textproc/py-yaml${MODPY_FLAVOR} \
+RUN_DEPENDS =		devel/py-dateutil \
+			devel/py-pexpect \
+			textproc/py-yaml \
 			sysutils/tarsnap
-TEST_DEPENDS =	 	devel/py-nose${MODPY_FLAVOR}
+TEST_DEPENDS =	 	devel/py-nose
 
 .include <bsd.port.mk>

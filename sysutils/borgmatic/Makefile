@@ -1,8 +1,8 @@
 COMMENT=	wrapper for Borg to create and prune backups
 
-MODPY_EGG_VERSION=	1.9.1
-REVISION=	0
-DISTNAME=	borgmatic-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.9.1
+REVISION=	1
+DISTNAME=	borgmatic-${MODPY_DISTV}
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
@@ -20,17 +20,17 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
 RUN_DEPENDS=	borgbackup-*:sysutils/borgbackup/1.4 \
-		devel/py-colorama${MODPY_FLAVOR}<0.5 \
-		devel/py-jsonschema${MODPY_FLAVOR} \
-		sysutils/py-packaging${MODPY_FLAVOR} \
-		www/py-requests${MODPY_FLAVOR} \
-		textproc/py-ruamel.yaml${MODPY_FLAVOR}
+		devel/py-colorama<0.5 \
+		devel/py-jsonschema \
+		sysutils/py-packaging \
+		www/py-requests \
+		textproc/py-ruamel.yaml
 # borgmatic script used in post-install to generate config
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 MODPY_PYTEST_ARGS= --ignore tests/unit/hooks/test_apprise.py
-TEST_DEPENDS=	devel/py-flexmock${MODPY_FLAVOR} \
-		devel/py-test-cov${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-flexmock \
+		devel/py-test-cov
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/borgmatic/

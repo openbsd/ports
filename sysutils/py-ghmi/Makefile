@@ -1,9 +1,9 @@
 COMMENT =		pure python IPMI protocol library
 
-MODPY_EGG_VERSION =	1.5.65
-DISTNAME =		pyghmi-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.5.65
+DISTNAME =		pyghmi-${MODPY_DISTV}
 PKGNAME =		${DISTNAME:S/py/${MODPY_PY_PREFIX}/}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils
 
@@ -16,13 +16,10 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-BUILD_DEPENDS =		devel/py-pbr${MODPY_FLAVOR} \
-			security/py-cryptography${MODPY_FLAVOR}
-RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR} \
-			security/py-cryptography${MODPY_FLAVOR}
+BUILD_DEPENDS =		devel/py-pbr \
+			security/py-cryptography
+RUN_DEPENDS =		devel/py-dateutil \
+			security/py-cryptography
 
 # Requires unported oslotest
 NO_TEST =		Yes

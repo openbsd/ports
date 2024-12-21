@@ -1,14 +1,14 @@
 COMMENT =	platform agnostic command and shell execution tool
 
-MODPY_EGG_VERSION =	1.4.0
+MODPY_DISTV =	1.4.0
 
 GH_ACCOUNT =	netinvent
 GH_PROJECT =	command_runner
-GH_TAGNAME =	v${MODPY_EGG_VERSION}
+GH_TAGNAME =	v${MODPY_DISTV}
 
-DISTNAME =	command_runner-${MODPY_EGG_VERSION}
+DISTNAME =	command_runner-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	sysutils
 
@@ -24,8 +24,5 @@ MODULES =	lang/python
 
 MODPY_PYBUILD =	setuptools
 MODPY_PYTEST =	Yes
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 .include <bsd.port.mk>

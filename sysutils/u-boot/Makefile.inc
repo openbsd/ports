@@ -22,7 +22,7 @@ BUILD_DEPENDS+=	devel/bison \
 		devel/swig
 
 # for pkg_resources used in tools/binman/control.py
-BUILD_DEPENDS+=	devel/py-setuptools${MODPY_FLAVOR}
+BUILD_DEPENDS+=	devel/py-setuptools
 
 MODULES=	lang/python
 MODPY_RUNDEP=	No

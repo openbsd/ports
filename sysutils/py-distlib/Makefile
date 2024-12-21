@@ -1,9 +1,9 @@
 COMMENT=	distribution utilities
 
-MODPY_EGG_VERSION=	0.3.7
-DISTNAME=	distlib-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.3.7
+DISTNAME=	distlib-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	sysutils
 
@@ -20,8 +20,5 @@ MODPY_PYBUILD=	setuptools
 
 # various networks tests fail with PORTS_PRIVSEP
 MODPY_PYTEST=	Yes
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
 COMMENT =		Python client for the Prometheus monitoring system
 
-MODPY_EGG_VERSION =	0.19.0
-DISTNAME =		prometheus_client-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.19.0
+DISTNAME =		prometheus_client-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils
 
@@ -15,8 +15,5 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 .include <bsd.port.mk>

@@ -1,3 +1,4 @@
+@pkgpath sysutils/py-vsphere-automation,python3
 bin/vapi-server
 lib/python${MODPY_VERSION}/site-packages/com/
 lib/python${MODPY_VERSION}/site-packages/com/__init__.py

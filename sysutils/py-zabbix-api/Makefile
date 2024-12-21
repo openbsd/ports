@@ -1,9 +1,9 @@
 COMMENT =		Python Zabbix API
 
-MODPY_EGG_VERSION =	0.5.6
-DISTNAME =		zabbix-api-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.5.6
+DISTNAME =		zabbix-api-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils
 
@@ -16,9 +16,6 @@ MODULES =		lang/python
 
 MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 NO_TEST =		Yes
 

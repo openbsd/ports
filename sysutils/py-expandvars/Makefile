@@ -1,16 +1,14 @@
-MODPY_EGG_VERSION =	0.12.0
+MODPY_DISTV =	0.12.0
 COMMENT =		expand system variables Unix style
-DISTNAME =		expandvars-${MODPY_EGG_VERSION}
-PKGNAME =		py-expandvars-${MODPY_EGG_VERSION}
+DISTNAME =		expandvars-${MODPY_DISTV}
+PKGNAME =		py-expandvars-${MODPY_DISTV}
 CATEGORIES =		sysutils
+REVISION =		0
 
 MAINTAINER =		Denis Fondras <denis@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 MODULES =		lang/python
 MODPY_PI =		Yes

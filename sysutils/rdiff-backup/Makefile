@@ -1,8 +1,8 @@
 COMMENT =	reverse differential backup tool, over a network or locally
 
-MODPY_EGG_VERSION =	2.2.5
-DISTNAME =	rdiff-backup-${MODPY_EGG_VERSION}
-REVISION =	0
+MODPY_DISTV =	2.2.5
+DISTNAME =	rdiff-backup-${MODPY_DISTV}
+REVISION =	1
 
 CATEGORIES =	sysutils
 
@@ -22,8 +22,8 @@ CFLAGS +=		-I${LOCALBASE}/include
 
 LIB_DEPENDS =		net/librsync
 
-RUN_DEPENDS =		devel/py-importlib-metadata${MODPY_FLAVOR} \
-			textproc/py-yaml${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-importlib-metadata \
+			textproc/py-yaml
 
 # tests are present but are intended to run via Tox in a Docker container
 NO_TEST =		Yes

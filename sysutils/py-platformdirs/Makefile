@@ -1,8 +1,9 @@
 COMMENT=	determine appropriate platform-specific directories
 
-MODPY_EGG_VERSION=	4.3.6
-DISTNAME=	platformdirs-${MODPY_EGG_VERSION}
+MODPY_DISTV=	4.3.6
+DISTNAME=	platformdirs-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	sysutils
 
@@ -17,10 +18,7 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	hatch-vcs
 MODPY_PYTEST=	Yes
 
-TEST_DEPENDS=	devel/py-appdirs${MODPY_FLAVOR} \
-		devel/py-test-mock${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+TEST_DEPENDS=	devel/py-appdirs \
+		devel/py-test-mock
 
 .include <bsd.port.mk>

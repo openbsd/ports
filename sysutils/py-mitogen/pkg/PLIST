@@ -1,3 +1,4 @@
+@pkgpath sysutils/py-mitogen,python3
 lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/
 lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/${MODPY_PYCACHE}/
@@ -144,12 +145,12 @@ lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/target.py
 lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/transport_config.py
 lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/utils.py
 lib/python${MODPY_VERSION}/site-packages/mitogen/
-lib/python${MODPY_VERSION}/site-packages/mitogen-${MODPY_EGG_VERSION}.dev0.dist-info/
-lib/python${MODPY_VERSION}/site-packages/mitogen-${MODPY_EGG_VERSION}.dev0.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/mitogen-${MODPY_EGG_VERSION}.dev0.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/mitogen-${MODPY_EGG_VERSION}.dev0.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/mitogen-${MODPY_EGG_VERSION}.dev0.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/mitogen-${MODPY_EGG_VERSION}.dev0.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/mitogen-${MODPY_DISTV}.dev0.dist-info/
+lib/python${MODPY_VERSION}/site-packages/mitogen-${MODPY_DISTV}.dev0.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/mitogen-${MODPY_DISTV}.dev0.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/mitogen-${MODPY_DISTV}.dev0.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/mitogen-${MODPY_DISTV}.dev0.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/mitogen-${MODPY_DISTV}.dev0.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/mitogen/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitogen/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/mitogen/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

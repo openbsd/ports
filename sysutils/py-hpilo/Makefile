@@ -1,10 +1,10 @@
 COMMENT =	iLO automation from python or shell
 
-MODPY_EGG_VERSION =	4.4.3
+MODPY_DISTV =	4.4.3
 
-DISTNAME =	python-hpilo-${MODPY_EGG_VERSION}
+DISTNAME =	python-hpilo-${MODPY_DISTV}
 PKGNAME =	${DISTNAME:S/^python-/py-/}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	sysutils
 
@@ -17,8 +17,5 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 .include <bsd.port.mk>

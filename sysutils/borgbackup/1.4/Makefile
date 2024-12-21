@@ -1,4 +1,5 @@
-MODPY_EGG_VERSION =	1.4.0
+MODPY_DISTV =	1.4.0
+REVISION =		0
 
 WANTLIB =		crypto
 

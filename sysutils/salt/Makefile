@@ -15,9 +15,9 @@
 
 COMMENT =		remote execution and configuration management system
 
-MODPY_EGG_VERSION =	3006.9
-DISTNAME =		salt-${MODPY_EGG_VERSION}
-REVISION =		0
+MODPY_DISTV =	3006.9
+DISTNAME =		salt-${MODPY_DISTV}
+REVISION =		1
 
 CATEGORIES =		sysutils net devel
 
@@ -33,49 +33,49 @@ MODPY_SETUPTOOLS =	Yes
 
 MODULES =		lang/python
 
-BUILD_DEPENDS =		textproc/py-yaml${MODPY_FLAVOR} \
-			www/py-jinja2${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR}
+BUILD_DEPENDS =		textproc/py-yaml \
+			www/py-jinja2 \
+			www/py-requests
 
 # requirements/base.txt
-RUN_DEPENDS =		devel/py-looseversion${MODPY_FLAVOR} \
-			devel/py-jmespath${MODPY_FLAVOR} \
-			net/py-msgpack${MODPY_FLAVOR}>=0.6.2v0 \
-			security/py-cryptography${MODPY_FLAVOR} \
-			textproc/py-MarkupSafe${MODPY_FLAVOR} \
-			textproc/py-yaml${MODPY_FLAVOR} \
-			www/py-jinja2${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR} \
- 			sysutils/py-distro${MODPY_FLAVOR}>=1.5.0 \
-			sysutils/py-packaging${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-looseversion \
+			devel/py-jmespath \
+			net/py-msgpack>=0.6.2v0 \
+			security/py-cryptography \
+			textproc/py-MarkupSafe \
+			textproc/py-yaml \
+			www/py-jinja2 \
+			www/py-requests \
+ 			sysutils/py-distro>=1.5.0 \
+			sysutils/py-packaging
 
 # requirements/zeromq.txt
-RUN_DEPENDS +=		net/py-zmq${MODPY_FLAVOR} \
-			security/py-cryptodome${MODPY_FLAVOR}
+RUN_DEPENDS +=		net/py-zmq \
+			security/py-cryptodome
 
 # salt/output/progress.py
-RUN_DEPENDS +=		devel/py-progressbar${MODPY_FLAVOR}
+RUN_DEPENDS +=		devel/py-progressbar
 
 # salt/modules/x509.py
-RUN_DEPENDS +=		security/py-M2Crypto${MODPY_FLAVOR}
+RUN_DEPENDS +=		security/py-M2Crypto
 
 # salt/{beacons,modules}/ps.py
-RUN_DEPENDS +=		sysutils/py-psutil${MODPY_FLAVOR}
+RUN_DEPENDS +=		sysutils/py-psutil
 
 # max openfiles, soft: 3072, hard: 4096; DBus system session running...
 TEST_IS_INTERACTIVE =	Yes
 PORTHOME =		${WRKDIST}
-TEST_DEPENDS =		databases/py-mysqlclient${MODPY_FLAVOR} \
+TEST_DEPENDS =		databases/py-mysqlclient \
 			devel/git \
-			devel/py-gitpython${MODPY_FLAVOR} \
-			devel/py-pip${MODPY_FLAVOR} \
-			devel/py-six${MODPY_FLAVOR} \
-			devel/py-virtualenv${MODPY_FLAVOR} \
+			devel/py-gitpython \
+			devel/py-pip \
+			devel/py-six \
+			devel/py-virtualenv \
 			devel/subversion \
-			net/py-libcloud${MODPY_FLAVOR} \
+			net/py-libcloud \
 			net/rabbitmq \
 			sysutils/salt-testing \
-			www/py-CherryPy${MODPY_FLAVOR}
+			www/py-CherryPy
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/salt/returners/zabbix_return.py

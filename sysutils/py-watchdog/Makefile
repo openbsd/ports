@@ -1,9 +1,9 @@
 COMMENT =		filesystem event monitoring
 
-MODPY_EGG_VERSION =	2.3.1
-DISTNAME =		watchdog-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.3.1
+DISTNAME =		watchdog-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils
 
@@ -12,14 +12,11 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-TEST_DEPENDS =		devel/py-test-cov${MODPY_FLAVOR} \
-			devel/py-flaky${MODPY_FLAVOR} \
-			textproc/py-yaml${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-test-cov \
+			devel/py-flaky \
+			textproc/py-yaml
 
 .include <bsd.port.mk>

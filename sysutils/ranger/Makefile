@@ -1,8 +1,8 @@
 COMMENT =	minimalistic console file manager
 
-MODPY_EGG_VERSION =	1.9.3
-DISTNAME =	ranger-${MODPY_EGG_VERSION}
-REVISION =	5
+MODPY_DISTV =	1.9.3
+DISTNAME =	ranger-${MODPY_DISTV}
+REVISION =	6
 
 CATEGORIES =	sysutils misc
 
@@ -21,9 +21,9 @@ MODPY_ADJ_FILES =	tests/manpage_completion_test.py
 RUN_DEPENDS =	archivers/libarchive \
 		devel/desktop-file-utils \
 		shells/bash \
-		textproc/py-chardet${MODPY_FLAVOR}
+		textproc/py-chardet
 TEST_DEPENDS =	devel/flake8 \
-		devel/pylint${MODPY_FLAVOR} \
+		devel/pylint \
 		devel/shellcheck
 
 TEST_ENV =	HOME=${WRKDIR} \

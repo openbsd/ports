@@ -37,7 +37,7 @@ BUILD_DEPENDS=		devel/gettext,-tools
 # rst2html-3
 MODULES +=		lang/python
 MODPY_RUNDEP=		No
-BUILD_DEPENDS +=	textproc/py-docutils${MODPY_FLAVOR}
+BUILD_DEPENDS +=	textproc/py-docutils
 
 # xsltproc(1)
 BUILD_DEPENDS +=	textproc/libxslt

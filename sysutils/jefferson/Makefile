@@ -1,8 +1,8 @@
 COMMENT =		JFFS2 filesystem extraction tool
 
-MODPY_EGG_VERSION =	0.4.2
-DISTNAME =		jefferson-${MODPY_EGG_VERSION}
-REVISION =		0
+MODPY_DISTV =	0.4.2
+DISTNAME =		jefferson-${MODPY_DISTV}
+REVISION =		1
 
 CATEGORIES =		sysutils
 
@@ -13,9 +13,9 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		poetry-core
 
-RUN_DEPENDS =		archivers/py-lzo${MODPY_FLAVOR} \
-			devel/py-cstruct${MODPY_FLAVOR} \
-			devel/py-click${MODPY_FLAVOR}
+RUN_DEPENDS =		archivers/py-lzo \
+			devel/py-cstruct \
+			devel/py-click
 
 NO_TEST =		Yes
 

@@ -1,11 +1,11 @@
 COMMENT =	send messages via Pushover
 
-MODPY_EGG_VERSION =	0.4
-REVISION =	5
+MODPY_DISTV =	0.4
+REVISION =	6
 
 EPOCH =		0
 
-DISTNAME =	python-pushover-${MODPY_EGG_VERSION}
+DISTNAME =	python-pushover-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME:S/python-//}
 
 CATEGORIES =	sysutils
@@ -18,10 +18,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVORS =	python3
-FLAVOR =	python3
-
-RUN_DEPENDS =		www/py-requests${MODPY_FLAVOR}>=2.20.0
+RUN_DEPENDS =		www/py-requests>=2.20.0
 
 post-patch:
 	cd ${WRKSRC}; 2to3 -w pushover.py

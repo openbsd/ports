@@ -1,10 +1,10 @@
 COMMENT =	tool for reverse-engineering and analysing firmware blobs
 
-MODPY_EGG_VERSION = 2.3.4
+MODPY_DISTV =	2.3.4
 GH_ACCOUNT =	ReFirmLabs
 GH_PROJECT =	binwalk
-GH_TAGNAME =	v${MODPY_EGG_VERSION}
-REVISION =	1
+GH_TAGNAME =	v${MODPY_DISTV}
+REVISION =	2
 
 CATEGORIES =	sysutils
 
@@ -24,8 +24,8 @@ MODPY_PYTEST_ARGS =	testing/tests
 # sasquatch for non-standard SquashFS images
 # ubi_reader (+ py-lzo) for UBIFS
 # yaffshiv for YAFFS
-RUN_DEPENDS =	devel/capstone/python${MODPY_FLAVOR} \
-		security/py-cryptodome${MODPY_FLAVOR} \
+RUN_DEPENDS =	devel/capstone/python \
+		security/py-cryptodome \
 		sysutils/jefferson
 
 TEST_ENV =	PYTHONPATH=${WRKSRC}/lib

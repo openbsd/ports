@@ -1,7 +1,8 @@
-MODPY_EGG_VERSION =	272
+MODPY_DISTV =	272
 COMMENT =	in-depth comparison of files, archives, and directories
-DISTNAME =	diffoscope-${MODPY_EGG_VERSION}
+DISTNAME =	diffoscope-${MODPY_DISTV}
 CATEGORIES =	sysutils devel
+REVISION =	0
 
 HOMEPAGE =	https://diffoscope.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -15,14 +16,14 @@ MODPY_PYBUILD =	setuptools
 
 PORTHOME =	${WRKDIST}
 
-RUN_DEPENDS =	archivers/py-libarchive-c${MODPY_FLAVOR} \
-		devel/py-magic${MODPY_FLAVOR}
+RUN_DEPENDS =	archivers/py-libarchive-c \
+		devel/py-magic
 
 # Could use a port of tlsh to make more tests work
-TEST_DEPENDS =	devel/py-argcomplete${MODPY_FLAVOR} \
-		devel/py-progressbar${MODPY_FLAVOR} \
+TEST_DEPENDS =	devel/py-argcomplete \
+		devel/py-progressbar \
 		sysutils/binwalk \
-		sysutils/py-distro${MODPY_FLAVOR} \
-		textproc/py-defusedxml${MODPY_FLAVOR}
+		sysutils/py-distro \
+		textproc/py-defusedxml
 
 .include <bsd.port.mk>

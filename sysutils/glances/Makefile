@@ -1,11 +1,11 @@
 COMMENT =		cross-platform curses-based monitoring tool
 
-MODPY_EGG_VERSION =	3.3.0.4
+MODPY_DISTV =	3.3.0.4
 EPOCH =			0
 
-DISTNAME =		Glances-${MODPY_EGG_VERSION}
+DISTNAME =		Glances-${MODPY_DISTV}
 PKGNAME =		${DISTNAME:L}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils
 
@@ -18,10 +18,10 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-RUN_DEPENDS =		devel/py-future${MODPY_FLAVOR} \
-			sysutils/py-psutil${MODPY_FLAVOR} \
-			textproc/py-defusedxml${MODPY_FLAVOR} \
-			www/py-bottle${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-future \
+			sysutils/py-psutil \
+			textproc/py-defusedxml \
+			www/py-bottle
 
 pre-configure:
 	sed -i 's,/etc,${SYSCONFDIR},g' ${WRKSRC}/glances/config.py

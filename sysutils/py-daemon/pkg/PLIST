@@ -1,5 +1,5 @@
+@pkgpath sysutils/py-daemon,python3
 @conflict py-daemon-*
-@pkgpath sysutils/py-daemon
 lib/python${MODPY_VERSION}/site-packages/daemon/
 lib/python${MODPY_VERSION}/site-packages/daemon/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/daemon/${MODPY_PYCACHE}/
@@ -14,12 +14,12 @@ lib/python${MODPY_VERSION}/site-packages/daemon/${MODPY_PYCACHE}pidfile.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/daemon/_metadata.py
 lib/python${MODPY_VERSION}/site-packages/daemon/daemon.py
 lib/python${MODPY_VERSION}/site-packages/daemon/pidfile.py
-lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}.dist-info/LICENSE.ASF-2
-lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}.dist-info/LICENSE.GPL-3
-lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_DISTV}.dist-info/LICENSE.ASF-2
+lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_DISTV}.dist-info/LICENSE.GPL-3
+lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_DISTV}.dist-info/top_level.txt
 share/doc/${MODPY_PY_PREFIX}daemon/
 share/doc/${MODPY_PY_PREFIX}daemon/FAQ

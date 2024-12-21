@@ -1,8 +1,9 @@
-MODPY_EGG_VERSION =	1.2.2
+MODPY_DISTV =	1.2.2
 COMMENT =		Python bindings for libssh specific to Ansible use case
-DISTNAME =		ansible-pylibssh-${MODPY_EGG_VERSION}
-PKGNAME =		py-ansible-libssh-${MODPY_EGG_VERSION}
+DISTNAME =		ansible-pylibssh-${MODPY_DISTV}
+PKGNAME =		py-ansible-libssh-${MODPY_DISTV}
 CATEGORIES =		sysutils
+REVISION =		0
 
 MAINTAINER =		Denis Fondras <denis@openbsd.org>
 
@@ -11,19 +12,16 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ssh
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
 
 CFLAGS +=		-I${LOCALBASE}/include
-BUILD_DEPENDS =		sysutils/py-expandvars${MODPY_FLAVOR} \
-			lang/cython${MODPY_FLAVOR}
+BUILD_DEPENDS =		sysutils/py-expandvars \
+			lang/cython
 LIB_DEPENDS =		security/libssh
 
-TEST_DEPENDS =		devel/py-test-cov${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-test-cov
 # XXX needs fixing to find newly built extension
 NO_TEST =		Yes
 

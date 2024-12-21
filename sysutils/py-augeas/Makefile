@@ -1,9 +1,9 @@
 COMMENT =		Python bindings for Augeas
 
-MODPY_EGG_VERSION =	1.1.0
-DISTNAME =		python-augeas-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.1.0
+DISTNAME =		python-augeas-${MODPY_DISTV}
 PKGNAME =		${DISTNAME:S/python-/py-/}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		sysutils
 
@@ -14,13 +14,10 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-BUILD_DEPENDS =		devel/py-cffi${MODPY_FLAVOR} \
+BUILD_DEPENDS =		devel/py-cffi \
 			sysutils/augeas
 
-RUN_DEPENDS =		devel/py-cffi${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-cffi
 
 # dlopen()s libaugeas
 RUN_DEPENDS +=		sysutils/augeas

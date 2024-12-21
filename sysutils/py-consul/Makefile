@@ -1,9 +1,10 @@
 COMMENT =	python client for consul
 
-MODPY_EGG_VERSION =	1.5.3
+MODPY_DISTV =	1.5.3
 
-DISTNAME =	py_consul-${MODPY_EGG_VERSION}
-PKGNAME =	py-consul-${MODPY_EGG_VERSION}
+DISTNAME =	py_consul-${MODPY_DISTV}
+PKGNAME =	py-consul-${MODPY_DISTV}
+REVISION =	0
 
 CATEGORIES =	sysutils
 
@@ -15,13 +16,11 @@ MAINTAINER =	Pavel Korovin <pvk@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
-FLAVOR =	python3
-FLAVORS =	python3
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =	www/py-requests${MODPY_FLAVOR}
+RUN_DEPENDS =	www/py-requests
 
 # requires docker
 NO_TEST =	Yes

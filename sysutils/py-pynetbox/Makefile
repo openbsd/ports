@@ -1,8 +1,9 @@
 COMMENT =		NetBox API client library
 
-MODPY_EGG_VERSION =	7.4.1
-DISTNAME =		pynetbox-${MODPY_EGG_VERSION}
+MODPY_DISTV =	7.4.1
+DISTNAME =		pynetbox-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		sysutils net
 
@@ -17,10 +18,7 @@ MODPY_PYBUILD =		setuptools_scm
 MODPY_PI =		Yes
 MODPY_PYTEST_ARGS =	--ignore=tests/integration tests
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-RUN_DEPENDS =		sysutils/py-packaging${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR}
+RUN_DEPENDS =		sysutils/py-packaging \
+			www/py-requests
 
 .include <bsd.port.mk>

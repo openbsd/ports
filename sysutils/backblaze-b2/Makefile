@@ -1,9 +1,10 @@
 COMMENT =		command-line tool to access B2 cloud storage
 
-MODPY_EGG_VERSION =	4.2.0
+MODPY_DISTV =	4.2.0
 
-DISTNAME =		b2-${MODPY_EGG_VERSION}
+DISTNAME =		b2-${MODPY_DISTV}
 PKGNAME =		backblaze-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -15,15 +16,15 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		pdm
 
-RUN_DEPENDS =		devel/py-argcomplete${MODPY_FLAVOR} \
-			devel/py-arrow${MODPY_FLAVOR} \
-			devel/py-phx-class-registry${MODPY_FLAVOR} \
-			devel/py-tabulate${MODPY_FLAVOR} \
-			devel/py-tqdm${MODPY_FLAVOR} \
-			net/py-b2sdk${MODPY_FLAVOR} \
-			sysutils/py-platformdirs${MODPY_FLAVOR} \
-			textproc/py-docutils${MODPY_FLAVOR} \
-			textproc/py-rst2ansi${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-argcomplete \
+			devel/py-arrow \
+			devel/py-phx-class-registry \
+			devel/py-tabulate \
+			devel/py-tqdm \
+			net/py-b2sdk \
+			sysutils/py-platformdirs \
+			textproc/py-docutils \
+			textproc/py-rst2ansi
 
 # no tests in pypi package
 NO_TEST =		Yes

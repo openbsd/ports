@@ -1,8 +1,9 @@
 COMMENT =		radically simple IT automation
 
-MODPY_EGG_VERSION =	2.18.1
-DISTNAME =		ansible_core-${MODPY_EGG_VERSION}
-PKGNAME =		ansible-core-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.18.1
+DISTNAME =		ansible_core-${MODPY_DISTV}
+PKGNAME =		ansible-core-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -18,27 +19,27 @@ MODULES =		lang/python
 MODPY_PI =              Yes
 MODPY_PYBUILD =		setuptools
 
-BUILD_DEPENDS =		devel/py-resolvelib${MODPY_FLAVOR} \
-			sysutils/py-packaging${MODPY_FLAVOR} \
-			textproc/py-yaml${MODPY_FLAVOR} \
-			www/py-jinja2${MODPY_FLAVOR}
+BUILD_DEPENDS =		devel/py-resolvelib \
+			sysutils/py-packaging \
+			textproc/py-yaml \
+			www/py-jinja2
 
-RUN_DEPENDS =		devel/py-resolvelib${MODPY_FLAVOR} \
-			security/py-cryptography${MODPY_FLAVOR} \
-			sysutils/py-packaging${MODPY_FLAVOR} \
-			textproc/py-yaml${MODPY_FLAVOR} \
-			www/py-jinja2${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-resolvelib \
+			security/py-cryptography \
+			sysutils/py-packaging \
+			textproc/py-yaml \
+			www/py-jinja2
 
-TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
-			devel/py-nose${MODPY_FLAVOR} \
-			devel/py-test${MODPY_FLAVOR} \
-			devel/py-test-forked${MODPY_FLAVOR} \
-			devel/py-test-mock${MODPY_FLAVOR} \
-			devel/py-test-xdist${MODPY_FLAVOR} \
-			devel/py-tz${MODPY_FLAVOR} \
-			security/py-cryptodome${MODPY_FLAVOR} \
-			security/py-cryptography${MODPY_FLAVOR} \
-			security/py-passlib${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-mock \
+			devel/py-nose \
+			devel/py-test \
+			devel/py-test-forked \
+			devel/py-test-mock \
+			devel/py-test-xdist \
+			devel/py-tz \
+			security/py-cryptodome \
+			security/py-cryptography \
+			security/py-passlib
 
 #USE_GMAKE =		Yes
 

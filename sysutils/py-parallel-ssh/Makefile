@@ -1,14 +1,11 @@
 COMMENT =	asynchronous parallel SSH client library
 
-MODPY_EGG_VERSION =	1.1.1
-DISTNAME =	parallel-ssh-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.1.1
+DISTNAME =	parallel-ssh-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	6
+REVISION =	7
 
 CATEGORIES =	sysutils
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 # BSD
 PERMIT_PACKAGE =	Yes
@@ -17,9 +14,9 @@ MODPY_PI =		Yes
 MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		security/py-paramiko${MODPY_FLAVOR} \
-			devel/py-gevent${MODPY_FLAVOR} \
-			devel/py-greenlet${MODPY_FLAVOR}
+RUN_DEPENDS =		security/py-paramiko \
+			devel/py-gevent \
+			devel/py-greenlet
 
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 

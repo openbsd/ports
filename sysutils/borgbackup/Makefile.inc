@@ -1,6 +1,6 @@
 COMMENT =		deduplicating backup program
 
-DISTNAME =		borgbackup-${MODPY_EGG_VERSION}
+DISTNAME =		borgbackup-${MODPY_DISTV}
 
 CATEGORIES =		sysutils
 
@@ -24,12 +24,12 @@ MODPY_PYTEST_ARGS =	build/lib.openbsd-${OSREV}-${ARCH}-cpython-${MODPY_MAJORMINO
 LIB_DEPENDS +=		archivers/lz4 \
 			archivers/zstd \
 			sysutils/xxhash
-BUILD_DEPENDS +=	devel/py-pkgconfig${MODPY_FLAVOR} \
-			lang/cython${MODPY_FLAVOR}
-RUN_DEPENDS +=		net/py-msgpack${MODPY_FLAVOR} \
-			sysutils/py-packaging${MODPY_FLAVOR}
+BUILD_DEPENDS +=	devel/py-pkgconfig \
+			lang/cython
+RUN_DEPENDS +=		net/py-msgpack \
+			sysutils/py-packaging
 TEST_DEPENDS +=		${FULLPKGNAME}:${FULLPKGPATH} \
-			devel/py-test-benchmark${MODPY_FLAVOR}
+			devel/py-test-benchmark
 
 PORTHOME =		${WRKDIR}
 
