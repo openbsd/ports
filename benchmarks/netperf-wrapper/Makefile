@@ -1,10 +1,10 @@
 COMMENT-main=	test network latency under load via netperf
 COMMENT-gui=	GUI for flent (test network latency under load via netperf)
-REVISION-gui=	0
-REVISION-main=	0
+REVISION-gui=	1
+REVISION-main=	1
 
-MODPY_EGG_VERSION= 2.1.1
-DISTNAME=	flent-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.1.1
+DISTNAME=	flent-${MODPY_DISTV}
 
 CATEGORIES=	benchmarks net
 
@@ -23,13 +23,13 @@ MODULES=	lang/python
 RUN_DEPENDS-main= ${MODPY_RUN_DEPENDS} \
 		benchmarks/netperf \
 		net/fping>=5.0p0 \
-		graphics/py-matplotlib${MODPY_FLAVOR}
+		graphics/py-matplotlib
 
 RUN_DEPENDS-gui= ${BUILD_PKGPATH} \
 		devel/desktop-file-utils \
 		misc/shared-mime-info \
-		x11/py-qtpy${MODPY_FLAVOR} \
-		x11/py-qt5${MODPY_FLAVOR}
+		x11/py-qtpy \
+		x11/py-qt5
 
 NO_TEST=	Yes
 

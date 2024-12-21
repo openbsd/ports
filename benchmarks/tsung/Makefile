@@ -4,7 +4,7 @@ V=		1.8.0
 GH_ACCOUNT=	processone
 GH_PROJECT=	tsung
 GH_TAGNAME=	v${V}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	benchmarks net
 
@@ -16,7 +16,7 @@ MODULES=		lang/erlang \
 MODERL_VERSION=		25
 MODPY_BUILDDEP= 	No
 
-RUN_DEPENDS=		graphics/py-matplotlib${MODPY_FLAVOR} \
+RUN_DEPENDS=		graphics/py-matplotlib \
 			math/gnuplot \
 			shells/bash
 
