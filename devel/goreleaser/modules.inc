@@ -262,7 +262,7 @@ MODGO_MODULES =	\
 	github.com/caarlos0/env/v11								 v11.2.2 \
 	github.com/caarlos0/go-reddit/v3							 v3.0.1 \
 	github.com/caarlos0/go-shellwords							 v1.0.12 \
-	github.com/caarlos0/go-version								 v0.1.1 \
+	github.com/caarlos0/go-version								 v0.2.0 \
 	github.com/caarlos0/log									 v0.4.6 \
 	github.com/caarlos0/testfs								 v0.4.4 \
 	github.com/carlmjohnson/versioninfo							 v0.22.5 \
@@ -406,7 +406,7 @@ MODGO_MODULES =	\
 	github.com/google/go-cmp								 v0.6.0 \
 	github.com/google/go-containerregistry							 v0.20.2 \
 	github.com/google/go-github/v55								 v55.0.0 \
-	github.com/google/go-github/v66								 v66.0.0 \
+	github.com/google/go-github/v67								 v67.0.0 \
 	github.com/google/go-pkcs11								 v0.3.0 \
 	github.com/google/go-querystring							 v1.1.0 \
 	github.com/google/go-replayers/grpcreplay						 v1.3.0 \
@@ -691,7 +691,7 @@ MODGO_MODULES =	\
 	github.com/spf13/viper									 v1.19.0 \
 	github.com/spiffe/go-spiffe/v2								 v2.3.0 \
 	github.com/stretchr/objx								 v0.5.2 \
-	github.com/stretchr/testify								 v1.9.0 \
+	github.com/stretchr/testify								 v1.10.0 \
 	github.com/subosito/gotenv								 v1.6.0 \
 	github.com/syndtr/gocapability								 v0.0.0-20200815063812-42c35b437635 \
 	github.com/syndtr/goleveldb								 v1.0.1-0.20220721030215-126854af5e6d \
@@ -727,7 +727,7 @@ MODGO_MODULES =	\
 	github.com/withfig/autocomplete-tools/integrations/cobra				 v1.2.1 \
 	github.com/wk8/go-ordered-map/v2							 v2.1.8 \
 	github.com/x448/float16									 v0.8.4 \
-	github.com/xanzy/go-gitlab								 v0.114.0 \
+	github.com/xanzy/go-gitlab								 v0.115.0 \
 	github.com/xanzy/ssh-agent								 v0.3.3 \
 	github.com/xdg-go/pbkdf2								 v1.0.0 \
 	github.com/xdg-go/scram									 v1.1.2 \
@@ -793,19 +793,19 @@ MODGO_MODULES =	\
 	go.uber.org/tools									 v0.0.0-20190618225709-2cfd321de3ee \
 	go.uber.org/zap										 v1.27.0 \
 	gocloud.dev										 v0.40.0 \
-	golang.org/x/crypto									 v0.29.0 \
+	golang.org/x/crypto									 v0.31.0 \
 	golang.org/x/exp									 v0.0.0-20240613232115-7f521ea00fb8 \
 	golang.org/x/lint									 v0.0.0-20190930215403-16217165b5de \
 	golang.org/x/mod									 v0.22.0 \
-	golang.org/x/net									 v0.31.0 \
+	golang.org/x/net									 v0.32.0 \
 	golang.org/x/oauth2									 v0.24.0 \
-	golang.org/x/sync									 v0.9.0 \
-	golang.org/x/sys									 v0.27.0 \
+	golang.org/x/sync									 v0.10.0 \
+	golang.org/x/sys									 v0.28.0 \
 	golang.org/x/telemetry									 v0.0.0-20240521205824-bda55230c457 \
-	golang.org/x/term									 v0.26.0 \
-	golang.org/x/text									 v0.20.0 \
+	golang.org/x/term									 v0.27.0 \
+	golang.org/x/text									 v0.21.0 \
 	golang.org/x/time									 v0.6.0 \
-	golang.org/x/tools									 v0.27.0 \
+	golang.org/x/tools									 v0.28.0 \
 	golang.org/x/xerrors									 v0.0.0-20240716161551-93cc26a95ae9 \
 	google.golang.org/api									 v0.197.0 \
 	google.golang.org/appengine								 v1.6.8 \
@@ -998,6 +998,7 @@ MODGO_MODFILES =	\
 	github.com/awslabs/amazon-ecr-credential-helper/ecr-login			 v0.0.0-20231024185945-8841054dbdb8 \
 	github.com/beorn7/perks								 v0.0.0-20180321164747-3a771d992973 \
 	github.com/beorn7/perks								 v1.0.0 \
+	github.com/caarlos0/go-version							 v0.1.1 \
 	github.com/cenkalti/backoff/v4							 v4.1.2 \
 	github.com/cenkalti/backoff/v4							 v4.2.1 \
 	github.com/census-instrumentation/opencensus-proto				 v0.2.1 \
@@ -1271,6 +1272,7 @@ MODGO_MODFILES =	\
 	github.com/stretchr/testify							 v1.8.1 \
 	github.com/stretchr/testify							 v1.8.2 \
 	github.com/stretchr/testify							 v1.8.4 \
+	github.com/stretchr/testify							 v1.9.0 \
 	github.com/subosito/gotenv							 v1.2.0 \
 	github.com/ulikunitz/xz								 v0.5.11 \
 	github.com/urfave/cli								 v1.22.1 \
@@ -1362,6 +1364,7 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto								 v0.28.0 \
 	golang.org/x/crypto								 v0.3.0 \
 	golang.org/x/crypto								 v0.3.1-0.20221117191849-2c476679df9a \
+	golang.org/x/crypto								 v0.30.0 \
 	golang.org/x/crypto								 v0.6.0 \
 	golang.org/x/crypto								 v0.7.0 \
 	golang.org/x/exp								 v0.0.0-20190121172915-509febef88a4 \
