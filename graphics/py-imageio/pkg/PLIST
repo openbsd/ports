@@ -1,14 +1,14 @@
-@pkgpath graphics/py-imageio
+@pkgpath graphics/py-imageio,python3
 bin/imageio_download_bin
 bin/imageio_remove_bin
 lib/python${MODPY_VERSION}/site-packages/imageio/
-lib/python${MODPY_VERSION}/site-packages/imageio-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/imageio-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/imageio-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/imageio-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/imageio-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/imageio-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/imageio-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/imageio-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/imageio-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/imageio-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/imageio-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/imageio-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/imageio-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/imageio-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/imageio/__init__.py
 lib/python${MODPY_VERSION}/site-packages/imageio/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/imageio/${MODPY_PYCACHE}/

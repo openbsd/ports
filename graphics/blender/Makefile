@@ -6,7 +6,7 @@ DPB_PROPERTIES = parallel
 COMMENT =	3D creation software
 
 DISTNAME =	blender-3.3.21
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	graphics
 
@@ -54,8 +54,8 @@ CONFIGURE_ARGS +=	-DCMAKE_DISABLE_PRECOMPILE_HEADERS=ON
 CONFIGURE_ARGS+=	-DWITH_CPU_SIMD=OFF
 .endif
 
-BUILD_DEPENDS = math/py-numpy${MODPY_FLAVOR} \
-		www/py-requests${MODPY_FLAVOR}
+BUILD_DEPENDS = math/py-numpy \
+		www/py-requests
 LIB_DEPENDS =	audio/libsndfile \
 		audio/openal \
 		devel/boost \
@@ -78,8 +78,8 @@ LIB_DEPENDS =	audio/libsndfile \
 		math/fftw3 \
 		${MODPY_LIB_DEPENDS}
 RUN_DEPENDS =	devel/desktop-file-utils \
-		math/py-numpy${MODPY_FLAVOR} \
-		www/py-requests${MODPY_FLAVOR} \
+		math/py-numpy \
+		www/py-requests \
 		x11/gnome/librsvg
 
 NO_TEST =	Yes

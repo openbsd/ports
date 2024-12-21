@@ -9,6 +9,7 @@ EXTRACT_SUFX =	.tar.bz2
 # not needed for releases, but makes RCs/betas easier to work with
 PKGNAME =	${DISTNAME:S/_//:L}
 WRKDIST =	${WRKDIR}/${DISTNAME:C/_.*//}
+REVISION =	0
 
 SHARED_LIBS +=  celeste                   4.0
 SHARED_LIBS +=  flann_cpp                 4.0
@@ -47,7 +48,7 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			graphics/p5-Image-ExifTool \
 			misc/shared-mime-info \
 			x11/gtk+4,-guic
-RUN_DEPENDS +=		x11/py-wxPython${MODPY_FLAVOR} # required for launching python scripts
+RUN_DEPENDS +=		x11/py-wxPython # required for launching python scripts
 
 LIB_DEPENDS =		devel/boost \
 			graphics/exiv2>=0.12 \

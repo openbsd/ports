@@ -1,11 +1,11 @@
 COMMENT=		Python SANE module
 
-MODPY_EGG_VERSION=	2.9.1
-DISTNAME=		Sane-${MODPY_EGG_VERSION}
-DISTFILES=		${DISTNAME}{v${MODPY_EGG_VERSION}}.tar.gz
+MODPY_DISTV=	2.9.1
+DISTNAME=		Sane-${MODPY_DISTV}
+DISTFILES=		${DISTNAME}{v${MODPY_DISTV}}.tar.gz
 PKGNAME=		py-${DISTNAME:L}
 CATEGORIES=		graphics
-REVISION=		3
+REVISION=		4
 
 HOMEPAGE=		http://python-pillow.github.io/
 
@@ -17,17 +17,14 @@ WANTLIB += pthread sane
 
 SITES=          	https://github.com/python-pillow/Sane/archive/
 
-FLAVORS=		python3
-FLAVOR =		python3
-
 MODULES=		lang/python
 
 SUBST_VARS=		MODPY_SITEPKG
 
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS=		graphics/py-Pillow${MODPY_FLAVOR} \
-			math/py-numpy${MODPY_FLAVOR}
+RUN_DEPENDS=		graphics/py-Pillow \
+			math/py-numpy
 
 LIB_DEPENDS=		graphics/sane-backends
 

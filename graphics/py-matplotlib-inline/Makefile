@@ -1,9 +1,9 @@
 COMMENT =		inline matplotlib backend for jupyter
 
-MODPY_EGG_VERSION =	0.1.6
-DISTNAME =		matplotlib-inline-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.1.6
+DISTNAME =		matplotlib-inline-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		graphics math
 
@@ -16,10 +16,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		devel/py-traitlets${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR =		python3
+RUN_DEPENDS =		devel/py-traitlets
 
 NO_TEST =		Yes
 

@@ -1,8 +1,9 @@
 COMMENT=	QR Code image generator
 
-MODPY_EGG_VERSION=	8.0
-DISTNAME=	qrcode-${MODPY_EGG_VERSION}
+MODPY_DISTV=	8.0
+DISTNAME=	qrcode-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	graphics textproc
 
@@ -13,12 +14,9 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	poetry-core
 
-RUN_DEPENDS=	graphics/py-Pillow${MODPY_FLAVOR}
-TEST_DEPENDS=	devel/py-mock${MODPY_FLAVOR} \
-		devel/py-test-cov${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+RUN_DEPENDS=	graphics/py-Pillow
+TEST_DEPENDS=	devel/py-mock \
+		devel/py-test-cov
 
 post-install:
 	rm -rf ${WRKINST}${MODPY_SITEPKG}/qrcode/tests

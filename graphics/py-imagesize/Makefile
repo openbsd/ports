@@ -1,18 +1,15 @@
 COMMENT =		getting image size from png/jpeg/jpeg2000/gif file
 
-MODPY_EGG_VERSION =	1.4.1
-DISTNAME =		imagesize-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.4.1
+DISTNAME =		imagesize-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		graphics
-REVISION =		2
+REVISION =		3
 
 HOMEPAGE =		https://github.com/shibukawa/imagesize_py
 
 # MIT
 PERMIT_PACKAGE =	Yes
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 MODULES =		lang/python
 

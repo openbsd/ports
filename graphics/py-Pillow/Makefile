@@ -4,10 +4,11 @@ COMMENT=	Python Imaging Library (friendly fork of PIL)
 # it must be 2024.10.13/newer (noted here in case of any backports to
 # -stable). Pillow uses a new license type which was only added then;
 # setuptools enforces validation against trove-classifiers iff present.
-MODPY_EGG_VERSION=	11.0.0
-DISTNAME=	pillow-${MODPY_EGG_VERSION}
-PKGNAME=	py-Pillow-${MODPY_EGG_VERSION}
+MODPY_DISTV=	11.0.0
+DISTNAME=	pillow-${MODPY_DISTV}
+PKGNAME=	py-Pillow-${MODPY_DISTV}
 CATEGORIES=	graphics
+REVISION=	0
 
 HOMEPAGE=	https://python-pillow.org/
 
@@ -16,9 +17,6 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += freetype imagequant jpeg lcms2 openjp2 tiff
 WANTLIB += webp webpdemux webpmux xcb z
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 MODULES=	lang/python
 MODPY_PI=	Yes
@@ -34,10 +32,8 @@ LIB_DEPENDS=	graphics/lcms2 \
 		graphics/libwebp
 TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH} \
 		${MODPY_TKINTER_DEPENDS} \
-		devel/py-test-timeout${MODPY_FLAVOR} \
-		sysutils/py-packaging${MODPY_FLAVOR}
-
-SUBST_VARS+=	MODPY_FLAVOR
+		devel/py-test-timeout \
+		sysutils/py-packaging
 
 # fail if libs aren't found
 MODPY_PYBUILD_ARGS= -C tiff=enable -C xcb=enable

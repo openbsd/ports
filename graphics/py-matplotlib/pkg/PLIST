@@ -1,25 +1,25 @@
+@pkgpath graphics/py-matplotlib,python3
 @conflict py-matplotlib-*
-@pkgpath graphics/py-matplotlib
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pylab.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pylab.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/matplotlib/
-lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_EGG_VERSION}.dist-info/LICENSE_AMSFONTS
-lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_EGG_VERSION}.dist-info/LICENSE_BAKOMA
-lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_EGG_VERSION}.dist-info/LICENSE_CARLOGO
-lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_EGG_VERSION}.dist-info/LICENSE_COLORBREWER
-lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_EGG_VERSION}.dist-info/LICENSE_COURIERTEN
-lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_EGG_VERSION}.dist-info/LICENSE_JSXTOOLS_RESIZE_OBSERVER
-lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_EGG_VERSION}.dist-info/LICENSE_QHULL
-lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_EGG_VERSION}.dist-info/LICENSE_QT4_EDITOR
-lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_EGG_VERSION}.dist-info/LICENSE_SOLARIZED
-lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_EGG_VERSION}.dist-info/LICENSE_STIX
-lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_EGG_VERSION}.dist-info/LICENSE_YORICK
-lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_DISTV}.dist-info/LICENSE_AMSFONTS
+lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_DISTV}.dist-info/LICENSE_BAKOMA
+lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_DISTV}.dist-info/LICENSE_CARLOGO
+lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_DISTV}.dist-info/LICENSE_COLORBREWER
+lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_DISTV}.dist-info/LICENSE_COURIERTEN
+lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_DISTV}.dist-info/LICENSE_JSXTOOLS_RESIZE_OBSERVER
+lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_DISTV}.dist-info/LICENSE_QHULL
+lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_DISTV}.dist-info/LICENSE_QT4_EDITOR
+lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_DISTV}.dist-info/LICENSE_SOLARIZED
+lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_DISTV}.dist-info/LICENSE_STIX
+lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_DISTV}.dist-info/LICENSE_YORICK
+lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/matplotlib-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/matplotlib/__init__.py
 lib/python${MODPY_VERSION}/site-packages/matplotlib/__init__.pyi
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/matplotlib/${MODPY_PYCACHE}/

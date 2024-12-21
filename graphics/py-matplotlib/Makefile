@@ -1,9 +1,9 @@
 COMMENT=	Python charting and plotting API
 
-MODPY_EGG_VERSION =	3.8.3
-DISTNAME =		matplotlib-${MODPY_EGG_VERSION}
+MODPY_DISTV =	3.8.3
+DISTNAME =		matplotlib-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		graphics devel math
 
@@ -20,32 +20,29 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES=	lang/python
 
-FLAVORS=	python3
-FLAVOR =	python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
 
 NO_TEST =		Yes
 
-BUILD_DEPENDS =	devel/py-certifi${MODPY_FLAVOR}>=2020.06.20 \
-		devel/py-pybind11${MODPY_FLAVOR}>=2.6 \
+BUILD_DEPENDS =	devel/py-certifi>=2020.06.20 \
+		devel/py-pybind11>=2.6 \
 		math/qhull \
-		math/py-numpy${MODPY_FLAVOR}>=1.25,<2 \
-		textproc/py-sphinx${MODPY_FLAVOR}
+		math/py-numpy>=1.25,<2 \
+		textproc/py-sphinx
 
-RUN_DEPENDS=	devel/py-tz${MODPY_FLAVOR} \
-		devel/py-dateutil${MODPY_FLAVOR}>=2.7 \
-		devel/py-kiwisolver${MODPY_FLAVOR}>=1.3.1 \
-		devel/py-parsing${MODPY_FLAVOR}>=2.3.1 \
-		devel/py-gobject3${MODPY_FLAVOR} \
-		math/py-contourpy${MODPY_FLAVOR}>=1.0.1 \
-		math/py-numpy${MODPY_FLAVOR}>=1.25,<2 \
-		graphics/py-Pillow${MODPY_FLAVOR}>=8.0.0 \
-		graphics/py-cairo${MODPY_FLAVOR} \
-		graphics/py-cycler${MODPY_FLAVOR}>=0.10 \
-		print/py-fonttools${MODPY_FLAVOR}>=4.22.0 \
-		sysutils/py-packaging${MODPY_FLAVOR}>=20.0 \
+RUN_DEPENDS=	devel/py-tz \
+		devel/py-dateutil>=2.7 \
+		devel/py-kiwisolver>=1.3.1 \
+		devel/py-parsing>=2.3.1 \
+		devel/py-gobject3 \
+		math/py-contourpy>=1.0.1 \
+		math/py-numpy>=1.25,<2 \
+		graphics/py-Pillow>=8.0.0 \
+		graphics/py-cairo \
+		graphics/py-cycler>=0.10 \
+		print/py-fonttools>=4.22.0 \
+		sysutils/py-packaging>=20.0 \
 		${MODPY_TKINTER_DEPENDS}
 
 # pygobject GTK3 introspection (not provided by indirect dependencies)

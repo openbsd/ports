@@ -3,6 +3,7 @@ COMMENT=	parametrical modeling of 3D humanoid characters
 GH_ACCOUNT=	makehumancommunity
 GH_PROJECT=	makehuman
 GH_TAGNAME=	v1.3.0
+REVISION=	0
 
 CATEGORIES=	graphics
 
@@ -15,13 +16,13 @@ MODULES=	lang/python
 
 NO_TEST=	Yes
 
-BUILD_DEPENDS=	math/py-numpy${MODPY_FLAVOR} \
-		x11/py-qt5${MODPY_FLAVOR}
+BUILD_DEPENDS=	math/py-numpy \
+		x11/py-qt5
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		graphics/py-opengl${MODPY_FLAVOR} \
-		math/py-numpy${MODPY_FLAVOR} \
-		x11/py-qt5${MODPY_FLAVOR}
+		graphics/py-opengl \
+		math/py-numpy \
+		x11/py-qt5
 
 do-build:
 .for TARGET in models proxies targets

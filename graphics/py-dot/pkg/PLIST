@@ -1,13 +1,13 @@
+@pkgpath graphics/py-dot,python3
 @conflict py-dot-*
-@pkgpath graphics/py-dot
 lib/python${MODPY_VERSION}/site-packages/pydot/
-lib/python${MODPY_VERSION}/site-packages/pydot-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pydot-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/pydot-${MODPY_EGG_VERSION}.dist-info/MIT.txt
-lib/python${MODPY_VERSION}/site-packages/pydot-${MODPY_EGG_VERSION}.dist-info/Python-2.0.txt
-lib/python${MODPY_VERSION}/site-packages/pydot-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/pydot-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/pydot-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pydot-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pydot-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/pydot-${MODPY_DISTV}.dist-info/MIT.txt
+lib/python${MODPY_VERSION}/site-packages/pydot-${MODPY_DISTV}.dist-info/Python-2.0.txt
+lib/python${MODPY_VERSION}/site-packages/pydot-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/pydot-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pydot-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pydot/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pydot/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pydot/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

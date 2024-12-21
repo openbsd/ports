@@ -43,8 +43,7 @@ BUILD_DEPENDS=	graphics/p5-Image-ExifTool \
 		textproc/libxslt
 
 # used if present at configure time.
-# python.port.mk is not included, so hardcoded ,python3 not MODPY_FLAVOR
-BUILD_DEPENDS+=	devel/py-jsonschema,python3
+BUILD_DEPENDS+=	devel/py-jsonschema
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		graphics/p5-Image-ExifTool \

@@ -1,10 +1,10 @@
 COMMENT =		fractal image generator
 
-MODPY_EGG_VERSION =	4.3
+MODPY_DISTV =	4.3
 
-SITES =			https://github.com/fract4d/gnofract4d/releases/download/v${MODPY_EGG_VERSION}/
-DISTNAME =		gnofract4d-${MODPY_EGG_VERSION}
-REVISION =		3
+SITES =			https://github.com/fract4d/gnofract4d/releases/download/v${MODPY_DISTV}/
+DISTNAME =		gnofract4d-${MODPY_DISTV}
+REVISION =		4
 
 CATEGORIES =		graphics
 
@@ -26,8 +26,8 @@ LIB_DEPENDS =		graphics/png \
 			graphics/jpeg
 
 RUN_DEPENDS +=		devel/desktop-file-utils \
-			devel/py-gobject3${MODPY_FLAVOR} \
-			graphics/py-cairo${MODPY_FLAVOR} \
+			devel/py-gobject3 \
+			graphics/py-cairo \
 			misc/shared-mime-info \
 			x11/gtk+3 \
 			x11/gtk+4,-guic

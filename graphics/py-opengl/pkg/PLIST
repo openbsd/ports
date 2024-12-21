@@ -1,3 +1,4 @@
+@pkgpath graphics/py-opengl,python3
 lib/python${MODPY_VERSION}/site-packages/OpenGL/
 lib/python${MODPY_VERSION}/site-packages/OpenGL/AGL/
 lib/python${MODPY_VERSION}/site-packages/OpenGL/AGL/__init__.py
@@ -8861,8 +8862,8 @@ lib/python${MODPY_VERSION}/site-packages/OpenGL/raw/osmesa/_types.py
 lib/python${MODPY_VERSION}/site-packages/OpenGL/raw/osmesa/mesa.py
 lib/python${MODPY_VERSION}/site-packages/OpenGL/version.py
 lib/python${MODPY_VERSION}/site-packages/OpenGL/wrapper.py
-lib/python${MODPY_VERSION}/site-packages/PyOpenGL-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/PyOpenGL-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/PyOpenGL-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/PyOpenGL-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/PyOpenGL-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/PyOpenGL-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/PyOpenGL-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/PyOpenGL-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/PyOpenGL-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/PyOpenGL-${MODPY_DISTV}.dist-info/top_level.txt

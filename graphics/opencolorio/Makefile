@@ -5,6 +5,7 @@ GH_PROJECT =		OpenColorIO
 GH_TAGNAME =		v2.4.0
 PKGNAME =		${DISTNAME:L}
 EPOCH =			2
+REVISION =		0
 
 SHARED_LIBS +=  OpenColorIO               5.0 # 1.1.1
 
@@ -25,9 +26,9 @@ MODULES =		devel/cmake \
 			lang/python
 
 BUILD_DEPENDS =		devel/boost \
-			devel/py-pybind11${MODPY_FLAVOR} \
-			devel/py-setuptools${MODPY_FLAVOR} \
-			devel/py-wheel${MODPY_FLAVOR}
+			devel/py-pybind11 \
+			devel/py-setuptools \
+			devel/py-wheel
 LIB_DEPENDS =		archivers/minizip \
 			devel/pystring \
 			devel/yaml-cpp \

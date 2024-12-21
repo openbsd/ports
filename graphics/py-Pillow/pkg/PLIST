@@ -1,4 +1,5 @@
-@pkgpath graphics/py-Pillow,-main${MODPY_FLAVOR}
+@pkgpath graphics/py-Pillow,-main,python3
+@pkgpath graphics/py-Pillow,python3
 include/python${MODPY_VERSION}/ImPlatform.h
 include/python${MODPY_VERSION}/Imaging.h
 lib/python${MODPY_VERSION}/site-packages/PIL/
@@ -303,10 +304,10 @@ lib/python${MODPY_VERSION}/site-packages/PIL/_webp.pyi
 lib/python${MODPY_VERSION}/site-packages/PIL/features.py
 lib/python${MODPY_VERSION}/site-packages/PIL/py.typed
 lib/python${MODPY_VERSION}/site-packages/PIL/report.py
-lib/python${MODPY_VERSION}/site-packages/pillow-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pillow-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/pillow-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/pillow-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/pillow-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/pillow-${MODPY_EGG_VERSION}.dist-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/pillow-${MODPY_EGG_VERSION}.dist-info/zip-safe
+lib/python${MODPY_VERSION}/site-packages/pillow-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pillow-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/pillow-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/pillow-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/pillow-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pillow-${MODPY_DISTV}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pillow-${MODPY_DISTV}.dist-info/zip-safe

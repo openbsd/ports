@@ -4,8 +4,8 @@ PORTROACH=		limit:^6\.
 
 COMMENT=		Python Imaging Library (version for Python 2)
 
-MODPY_EGG_VERSION=	6.2.2
-DISTNAME=		Pillow-${MODPY_EGG_VERSION}
+MODPY_DISTV=	6.2.2
+DISTNAME=		Pillow-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		graphics
 REVISION=		3
@@ -34,7 +34,7 @@ LIB_DEPENDS=		graphics/lcms2 \
 			graphics/libwebp
 TEST_DEPENDS=		${FULLPKGNAME}:${BUILD_PKGPATH}
 
-SUBST_VARS+=		INCL_DIR MODPY_FLAVOR
+SUBST_VARS+=		INCL_DIR
 INCL_DIR=		${MODPY_INCDIR:S/${LOCALBASE}\///}
 
 pre-test:

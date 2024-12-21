@@ -1,11 +1,11 @@
 COMMENT =		QR code generator written purely in Python
 
-MODPY_EGG_VERSION =	1.2.1
-DISTNAME =		PyQRCode-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.2.1
+DISTNAME =		PyQRCode-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:L}
 CATEGORIES =		graphics
 HOMEPAGE =		https://github.com/mnooner256/pyqrcode
-REVISION =		2
+REVISION =		3
 
 # BSD
 PERMIT_PACKAGE =	Yes
@@ -15,9 +15,6 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 # tests not included in pypi tarball
 NO_TEST =		Yes

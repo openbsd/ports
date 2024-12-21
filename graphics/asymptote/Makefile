@@ -3,6 +3,7 @@ COMMENT=		powerful descriptive vector graphics language
 DISTNAME=		asymptote-2.91
 EXTRACT_SUFX=		.src.tgz
 CATEGORIES=		graphics
+REVISION=		0
 
 HOMEPAGE=		https://asymptote.sourceforge.io/
 
@@ -24,12 +25,12 @@ BUILD_DEPENDS=		graphics/glm \
 			print/texlive/texmf,-main \
 			print/texlive/texmf,-full \
 			math/eigen3 \
-			x11/py-qt5${MODPY_FLAVOR}
+			x11/py-qt5
 RUN_DEPENDS=		print/texlive/texmf,-full \
-			math/py-numpy${MODPY_FLAVOR} \
-			textproc/py-cson${MODPY_FLAVOR} \
+			math/py-numpy \
+			textproc/py-cson \
 			x11/gnome/librsvg \
-			x11/py-qt5${MODPY_FLAVOR}
+			x11/py-qt5
 
 LIB_DEPENDS=		devel/boehm-gc \
 			devel/gsl \

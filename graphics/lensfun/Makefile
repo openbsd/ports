@@ -2,7 +2,7 @@ COMMENT=	library to adjust for photographic lens characteristics
 GH_ACCOUNT=	lensfun
 GH_PROJECT=	lensfun
 GH_TAGNAME=	v0.3.3
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS=	lensfun	2.1
 
@@ -21,7 +21,7 @@ MODULES=		devel/cmake \
 
 MODPY_RUNDEP=		No
 
-BUILD_DEPENDS=		devel/py-setuptools${MODPY_FLAVOR}
+BUILD_DEPENDS=		devel/py-setuptools
 
 LIB_DEPENDS=		devel/glib2 \
 			graphics/png

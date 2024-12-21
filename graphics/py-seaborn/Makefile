@@ -1,9 +1,9 @@
 COMMENT =		statistical data visualization
 
-MODPY_EGG_VERSION =	0.12.2
-DISTNAME =		seaborn-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.12.2
+DISTNAME =		seaborn-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		graphics math
 
@@ -14,17 +14,14 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		flit_core
 MODPY_PYTEST =		Yes
 
-RUN_DEPENDS =		graphics/py-matplotlib${MODPY_FLAVOR}>=3.1 \
-			math/py-numpy${MODPY_FLAVOR}>=1.17.0 \
-			math/py-pandas${MODPY_FLAVOR}>=0.25.0 \
-			math/py-scipy${MODPY_FLAVOR}>=1.3.0
+RUN_DEPENDS =		graphics/py-matplotlib>=3.1 \
+			math/py-numpy>=1.17.0 \
+			math/py-pandas>=0.25.0 \
+			math/py-scipy>=1.3.0
 
 TEST_IS_INTERACTIVE =	x11
 

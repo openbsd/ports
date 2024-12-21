@@ -1,3 +1,4 @@
+@pkgpath graphics/pycha,python3
 bin/chavier
 lib/python${MODPY_VERSION}/site-packages/chavier/
 lib/python${MODPY_VERSION}/site-packages/chavier/__init__.py
@@ -14,15 +15,15 @@ lib/python${MODPY_VERSION}/site-packages/chavier/app.py
 lib/python${MODPY_VERSION}/site-packages/chavier/dialogs.py
 lib/python${MODPY_VERSION}/site-packages/chavier/gui.py
 lib/python${MODPY_VERSION}/site-packages/pycha/
-lib/python${MODPY_VERSION}/site-packages/pycha-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pycha-${MODPY_EGG_VERSION}.dist-info/AUTHORS
-lib/python${MODPY_VERSION}/site-packages/pycha-${MODPY_EGG_VERSION}.dist-info/COPYING
-lib/python${MODPY_VERSION}/site-packages/pycha-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/pycha-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/pycha-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/pycha-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/pycha-${MODPY_EGG_VERSION}.dist-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/pycha-${MODPY_EGG_VERSION}.dist-info/zip-safe
+lib/python${MODPY_VERSION}/site-packages/pycha-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pycha-${MODPY_DISTV}.dist-info/AUTHORS
+lib/python${MODPY_VERSION}/site-packages/pycha-${MODPY_DISTV}.dist-info/COPYING
+lib/python${MODPY_VERSION}/site-packages/pycha-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/pycha-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/pycha-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pycha-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/pycha-${MODPY_DISTV}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pycha-${MODPY_DISTV}.dist-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/pycha/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pycha/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pycha/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

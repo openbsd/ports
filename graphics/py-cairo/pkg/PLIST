@@ -1,4 +1,4 @@
-@pkgpath graphics/py-cairo
+@pkgpath graphics/py-cairo,python3
 include/pycairo/
 include/pycairo/py3cairo.h
 lib/pkgconfig/py3cairo.pc
@@ -11,5 +11,5 @@ lib/python${MODPY_VERSION}/site-packages/cairo/${MODPY_PYCACHE}__init__.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/cairo/include/
 lib/python${MODPY_VERSION}/site-packages/cairo/include/py3cairo.h
 lib/python${MODPY_VERSION}/site-packages/cairo/py.typed
-lib/python${MODPY_VERSION}/site-packages/pycairo-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pycairo-${MODPY_EGG_VERSION}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/pycairo-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pycairo-${MODPY_DISTV}.dist-info/METADATA

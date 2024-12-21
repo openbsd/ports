@@ -1,30 +1,28 @@
 COMMENT=	Python interface to Graphviz's Dot#'
 
-MODPY_EGG_VERSION= 3.0.2
-DISTNAME=	pydot-${MODPY_EGG_VERSION}
+MODPY_DISTV=	3.0.2
+DISTNAME=	pydot-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/py/py-/}
 CATEGORIES=	graphics
+REVISION=	0
 
 HOMEPAGE=	https://github.com/erocarrera/pydot
 
 # MIT
 PERMIT_PACKAGE=	Yes
 
-FLAVORS=	python3
-FLAVOR=		python3
-
 MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-BUILD_DEPENDS=	devel/py-parsing${MODPY_FLAVOR}
-RUN_DEPENDS=	devel/py-parsing${MODPY_FLAVOR} \
+BUILD_DEPENDS=	devel/py-parsing
+RUN_DEPENDS=	devel/py-parsing \
 		math/graphviz
 
-TEST_DEPENDS=	devel/py-parameterized${MODPY_FLAVOR} \
-		devel/py-test-cov${MODPY_FLAVOR} \
-		devel/py-test-xdist${MODPY_FLAVOR} \
-		textproc/py-chardet${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-parameterized \
+		devel/py-test-cov \
+		devel/py-test-xdist \
+		textproc/py-chardet
 
 .include <bsd.port.mk>

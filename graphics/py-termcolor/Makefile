@@ -1,10 +1,10 @@
 COMMENT =	ANSI color formatting for output in terminal
 
-MODPY_EGG_VERSION =	2.0.1
+MODPY_DISTV =	2.0.1
 
-DISTNAME =	termcolor-${MODPY_EGG_VERSION}
+DISTNAME =	termcolor-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	graphics
 
@@ -19,7 +19,5 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		hatch-vcs
-FLAVOR =		python3
-FLAVORS =		python3
 
 .include <bsd.port.mk>

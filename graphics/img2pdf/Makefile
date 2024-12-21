@@ -1,8 +1,8 @@
 COMMENT =		losslessly convert images to PDF
 
-MODPY_EGG_VERSION =	0.5.1
-DISTNAME =		img2pdf-${MODPY_EGG_VERSION}
-REVISION =		0
+MODPY_DISTV =	0.5.1
+DISTNAME =		img2pdf-${MODPY_DISTV}
+REVISION =		1
 
 CATEGORIES =		graphics
 
@@ -15,16 +15,16 @@ MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
 
-RUN_DEPENDS =		graphics/py-Pillow${MODPY_FLAVOR} \
-			print/py-pikepdf${MODPY_FLAVOR}
+RUN_DEPENDS =		graphics/py-Pillow \
+			print/py-pikepdf
 
 # assert failures in some compare_ghostscript tests
 TEST_DEPENDS =		graphics/colord \
 			graphics/p5-Image-ExifTool \
-			math/py-scipy${MODPY_FLAVOR} \
+			math/py-scipy \
 			print/ghostscript/gnu \
 			sysutils/coreutils \
-			sysutils/py-packaging${MODPY_FLAVOR} \
+			sysutils/py-packaging \
 			textproc/mupdf
 
 pre-test:

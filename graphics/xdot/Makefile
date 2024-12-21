@@ -1,8 +1,8 @@
 COMMENT =	interactive viewer for Graphviz dot graphs
 
-MODPY_EGG_VERSION = 1.2
-DISTNAME =	xdot-${MODPY_EGG_VERSION}
-REVISION =	3
+MODPY_DISTV =	1.2
+DISTNAME =	xdot-${MODPY_DISTV}
+REVISION =	4
 
 CATEGORIES =	graphics
 
@@ -17,7 +17,7 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =	math/graphviz \
-		devel/py-gobject3${MODPY_FLAVOR} \
+		devel/py-gobject3 \
 		graphics/cairo
 
 NO_TEST =	Yes

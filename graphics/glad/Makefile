@@ -1,10 +1,10 @@
 COMMENT =	multi-language Vulkan/GL/GLES/EGL/GLX/WGL loader-generator
 
-MODPY_EGG_VERSION = 2.0.6
-GH_TAGNAME =	v${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.0.6
+GH_TAGNAME =	v${MODPY_DISTV}
 GH_ACCOUNT =	Dav1dde
 GH_PROJECT =	glad
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	graphics
 
@@ -17,8 +17,8 @@ PERMIT_PACKAGE =	Yes
 MODULES =	lang/python
 MODPY_PYBUILD =	setuptools
 
-RUN_DEPENDS =	www/py-jinja2${MODPY_FLAVOR} \
-		textproc/py-MarkupSafe${MODPY_FLAVOR}
+RUN_DEPENDS =	www/py-jinja2 \
+		textproc/py-MarkupSafe
 
 NO_TEST =	Yes
 

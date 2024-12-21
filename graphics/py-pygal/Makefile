@@ -1,8 +1,9 @@
 COMMENT =	python svg graph plotting library
 
-MODPY_EGG_VERSION = 3.0.5
-DISTNAME =	pygal-${MODPY_EGG_VERSION}
+MODPY_DISTV =	3.0.5
+DISTNAME =	pygal-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	graphics
 
@@ -15,17 +16,14 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVORS =	python3
-FLAVOR  =	python3
+BUILD_DEPENDS +=	devel/py-test-runner
 
-BUILD_DEPENDS +=	devel/py-test-runner${MODPY_FLAVOR}
+RUN_DEPENDS +=		textproc/py-lxml
 
-RUN_DEPENDS +=		textproc/py-lxml${MODPY_FLAVOR}
-
-TEST_DEPENDS +=		www/py-flask${MODPY_FLAVOR} \
-			textproc/py-lxml${MODPY_FLAVOR} \
-			devel/py-test-runner${MODPY_FLAVOR} \
-			devel/py-test-cov${MODPY_FLAVOR}
+TEST_DEPENDS +=		www/py-flask \
+			textproc/py-lxml \
+			devel/py-test-runner \
+			devel/py-test-cov
 
 # missing TEST_DEPENDS:
 # pyquery cairosvg

@@ -18,7 +18,7 @@ MODULES =	devel/cmake x11/qt5
 LIB_DEPENDS =	graphics/openexr
 
 # links with static libLASlib.a and libGLEW.a
-BUILD_DEPENDS =	textproc/py-docutils,python3 \
+BUILD_DEPENDS =	textproc/py-docutils \
 		converters/lastools \
 		graphics/glew
 

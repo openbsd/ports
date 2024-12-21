@@ -7,7 +7,7 @@ GH_ACCOUNT =		AcademySoftwareFoundation
 GH_PROJECT =		OpenImageIO
 GH_TAGNAME =		v2.5.13.1
 PKGNAME =		${DISTNAME:L}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=		OpenImageIO		16.0 # 2.4.10
 SHARED_LIBS +=		OpenImageIO_Util	10.1 # 2.4.10
@@ -33,7 +33,7 @@ MODULES =		devel/cmake \
 COMPILER =		base-clang ports-gcc
 
 BUILD_DEPENDS =		devel/fmt>=10.2.1 \
-			devel/py-pybind11${MODPY_FLAVOR} \
+			devel/py-pybind11 \
 			devel/robin-map \
 			textproc/txt2man
 

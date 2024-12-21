@@ -1,9 +1,9 @@
 COMMENT =		Python charting module
 
-MODPY_EGG_VERSION =	0.8.1
-DISTNAME =		pycha-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.8.1
+DISTNAME =		pycha-${MODPY_DISTV}
 CATEGORIES =		graphics
-REVISION =              4
+REVISION =              5
 
 # LGPL
 PERMIT_PACKAGE =	Yes
@@ -13,12 +13,9 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	tests/*.py
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-RUN_DEPENDS =		devel/py-cairocffi${MODPY_FLAVOR} \
-			devel/py-six${MODPY_FLAVOR} \
-			graphics/py-cairo${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-cairocffi \
+			devel/py-six \
+			graphics/py-cairo
 
 pre-build:
 	cd ${WRKBUILD} && 2to3 --no-diffs -w chavier pycha tests

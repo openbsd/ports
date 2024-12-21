@@ -1,10 +1,10 @@
 COMMENT =		python implementation of the blurhash algorithm
 
-MODPY_EGG_VERSION =	1.1.4
+MODPY_DISTV =	1.1.4
 
-DISTNAME =		blurhash-${MODPY_EGG_VERSION}
+DISTNAME =		blurhash-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		graphics
 
@@ -19,10 +19,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-TEST_DEPENDS =		graphics/py-Pillow${MODPY_FLAVOR} \
-			math/py-numpy${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR =		python3
+TEST_DEPENDS =		graphics/py-Pillow \
+			math/py-numpy
 
 .include <bsd.port.mk>

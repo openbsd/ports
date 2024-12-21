@@ -6,7 +6,7 @@ DISTNAME =	piglit-20210128
 GH_ACCOUNT =	mesa3d
 GH_PROJECT =	piglit
 GH_COMMIT =	83173d9536c9f5e1571efe5933d210466ec255b8
-REVISION =	8
+REVISION =	9
 
 CATEGORIES =	graphics
 
@@ -32,9 +32,9 @@ MODPY_ADJ_FILES =	tests/glslparsertest/glsl2/gen_builtin_test.py \
 			replayer/replayer.py \
 			piglit
 
-RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
-			math/py-numpy${MODPY_FLAVOR} \
-			www/py-mako${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-six \
+			math/py-numpy \
+			www/py-mako
 BUILD_DEPENDS =		${RUN_DEPENDS} \
 			graphics/glslang \
 			graphics/vulkan-headers

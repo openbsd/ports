@@ -3,7 +3,7 @@ COMMENT=		GObject wrapper around exiv2
 GNOME_VERSION=		0.14.3
 GNOME_PROJECT=		gexiv2
 PKGNAME=		lib${DISTNAME}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		graphics
 
@@ -35,7 +35,7 @@ LIB_DEPENDS=		devel/glib2 \
 			graphics/exiv2
 
 # import gi
-BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
-RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
+BUILD_DEPENDS=		devel/py-gobject3
+RUN_DEPENDS=		devel/py-gobject3
 
 .include <bsd.port.mk>

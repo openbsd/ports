@@ -1,10 +1,11 @@
+@pkgpath graphics/py-pyqtgraph,python3
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/
-lib/python${MODPY_VERSION}/site-packages/pyqtgraph-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pyqtgraph-${MODPY_EGG_VERSION}.dist-info/LICENSE.txt
-lib/python${MODPY_VERSION}/site-packages/pyqtgraph-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/pyqtgraph-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/pyqtgraph-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/pyqtgraph-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph-${MODPY_DISTV}.dist-info/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pyqtgraph-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/GraphicsScene/
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/GraphicsScene/GraphicsScene.py
 lib/python${MODPY_VERSION}/site-packages/pyqtgraph/GraphicsScene/__init__.py

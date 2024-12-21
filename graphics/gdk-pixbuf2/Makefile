@@ -23,7 +23,7 @@ MODULES=		devel/meson \
 
 MODPY_RUNDEP=		No
 
-BUILD_DEPENDS=		textproc/py-docutils${MODPY_FLAVOR}
+BUILD_DEPENDS=		textproc/py-docutils
 
 LIB_DEPENDS=		devel/glib2 \
 			graphics/png \
