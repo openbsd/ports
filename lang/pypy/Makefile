@@ -73,7 +73,7 @@ UPDATE_PLIST_ARGS =	-i MODPY_PY_PREFIX \
 			-i MACHINE_ARCH
 
 USE_GMAKE =		Yes
-BUILD_DEPENDS =		textproc/py-sphinx,python3 \
+BUILD_DEPENDS =		textproc/py-sphinx \
 			databases/gdbm \
 			${MODTK_BUILD_DEPENDS}
 .if ${FLAVOR:Mno_bootstrap}

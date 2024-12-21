@@ -1,10 +1,10 @@
 COMMENT =	HolyC transcompiler
 
-MODPY_EGG_VERSION =	0.0.1.post7
-DISTNAME =	secularize-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.0.1.post7
+DISTNAME =	secularize-${MODPY_DISTV}
 PKGNAME =	${DISTNAME:S/post//}
 EPOCH =		0
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	lang
 
@@ -22,8 +22,8 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 NO_TEST =		Yes
 
-RUN_DEPENDS =		devel/py-cparser${MODPY_FLAVOR} \
-			devel/py-docopt${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-cparser \
+			devel/py-docopt
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/secularize/utils.py

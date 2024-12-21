@@ -1,9 +1,10 @@
 COMMENT =		optimising static compiler for Python and Cython
 
-MODPY_EGG_VERSION =	3.0.11
-DISTNAME =		cython-${MODPY_EGG_VERSION}
-PKGNAME =		py-cython-${MODPY_EGG_VERSION}
+MODPY_DISTV =	3.0.11
+DISTNAME =		cython-${MODPY_DISTV}
+PKGNAME =		py-cython-${MODPY_DISTV}
 CATEGORIES =		lang
+REVISION =		0
 
 EPOCH =			0
 
@@ -16,15 +17,12 @@ WANTLIB += pthread ${MODPY_WANTLIB}
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-BUILD_DEPENDS =		devel/py-setuptools_git${MODPY_FLAVOR}
+BUILD_DEPENDS =		devel/py-setuptools_git
 
-TEST_DEPENDS +=		math/py-numpy${MODPY_FLAVOR}
+TEST_DEPENDS +=		math/py-numpy
 
 PORTHOME =		${WRKDIR}
 

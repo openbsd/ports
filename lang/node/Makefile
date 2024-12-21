@@ -14,6 +14,7 @@ DISTFILES.pledge =	node-pledge-{}${PLEDGE_VER}.tar.gz
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
 EPOCH =			0
+REVISION =		0
 
 SITES.pledge =		https://github.com/qbit/node-pledge/archive/
 

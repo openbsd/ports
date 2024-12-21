@@ -12,6 +12,7 @@ COMMENT-bootstrap =	Rust binary bootstrap
 COMMENT-src =		Rust source component
 
 V =			1.83.0
+REVISION =		0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
