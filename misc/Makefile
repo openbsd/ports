@@ -88,12 +88,12 @@
      SUBDIR += plan
      SUBDIR += portroach
      SUBDIR += posixtestsuite
-     SUBDIR += py-aiomcache,python3
-     SUBDIR += py-babelfish,python3
+     SUBDIR += py-aiomcache
+     SUBDIR += py-babelfish
      SUBDIR += py-imdb
-     SUBDIR += py-jdcal,python3
-     SUBDIR += py-memcached,python3
-     SUBDIR += py-yfinance,python3
+     SUBDIR += py-jdcal
+     SUBDIR += py-memcached
+     SUBDIR += py-yfinance
      SUBDIR += randtype
      SUBDIR += redshift
      SUBDIR += remind

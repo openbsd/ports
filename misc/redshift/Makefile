@@ -2,7 +2,7 @@ COMMENT=		automatic color temperature adjustment
 
 V=			1.12
 DISTNAME=		redshift-$V
-REVISION=		10
+REVISION=		11
 
 CATEGORIES=		misc graphics
 
@@ -26,8 +26,8 @@ MODPY_ADJ_FILES=	src/redshift-gtk/redshift-gtk.in
 LIB_DEPENDS=		devel/glib2
 
 RUN_DEPENDS=		devel/desktop-file-utils \
-			devel/py-gobject3${MODPY_FLAVOR} \
-			devel/py-xdg${MODPY_FLAVOR} \
+			devel/py-gobject3 \
+			devel/py-xdg \
 			geo/geoclue2 \
 			x11/gtk+4,-guic
 

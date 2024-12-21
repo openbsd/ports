@@ -2,10 +2,10 @@ COMMENT =	python package to access the IMDb movie database
 
 PORTROACH =	site:https://github.com/cinemagoer/cinemagoer/releases/
 
-MODPY_EGG_VERSION = 2023.5.1
-DISTNAME =	cinemagoer-${MODPY_EGG_VERSION}
-PKGNAME =	py-imdb-${MODPY_EGG_VERSION}
-REVISION =	0
+MODPY_DISTV =	2023.5.1
+DISTNAME =	cinemagoer-${MODPY_DISTV}
+PKGNAME =	py-imdb-${MODPY_DISTV}
+REVISION =	1
 
 CATEGORIES =	misc devel
 
@@ -23,8 +23,8 @@ MODULES =	lang/python
 MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools
 
-RUN_DEPENDS =	textproc/py-lxml${MODPY_FLAVOR} \
-		databases/py-sqlalchemy${MODPY_FLAVOR}
+RUN_DEPENDS =	textproc/py-lxml \
+		databases/py-sqlalchemy
 
 NO_TEST =	Yes
 

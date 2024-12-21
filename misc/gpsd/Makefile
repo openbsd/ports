@@ -7,6 +7,9 @@ DISTNAME=		gpsd-${VERSION}
 PKGNAME-main=		gpsd-${VERSION}
 PKGNAME-x11=		gpsd-x11-${VERSION}
 PKGNAME-php=		gpsd-php-${VERSION}
+REVISION-main=		0
+REVISION-php=		0
+REVISION-x11=		0
 
 SHARED_LIBS +=		gps		23.0
 SHARED_LIBS +=		gpsdpacket	1.0
@@ -39,8 +42,8 @@ MODSCONS_FLAGS +=	gpsd_user=_gpsd \
 
 MULTI_PACKAGES =	-main -php -x11
 
-BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
-			devel/py-serial${MODPY_FLAVOR} \
+BUILD_DEPENDS=		devel/py-gobject3 \
+			devel/py-serial \
 			textproc/asciidoctor
 TEST_DEPENDS=		${FULLPKGNAME-main}:${FULLPKGPATH-main} \
 			x11/dbus
@@ -49,11 +52,11 @@ LIB_DEPENDS-main =	devel/libusb1 \
 			x11/dbus \
 			${MODGCC4_CPPLIBDEP}
 RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS} \
-			devel/py-serial${MODPY_FLAVOR}
+			devel/py-serial
 
 RUN_DEPENDS-x11 =	${BASE_PKGPATH} \
-			devel/py-gobject3${MODPY_FLAVOR} \
-			graphics/py-matplotlib${MODPY_FLAVOR} \
+			devel/py-gobject3 \
+			graphics/py-matplotlib \
 			devel/desktop-file-utils \
 			x11/gtk+3
 

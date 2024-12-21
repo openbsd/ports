@@ -1,18 +1,15 @@
 COMMENT=	Python interface to memcached
 
-MODPY_EGG_VERSION= 1.62
-DISTNAME=	python-memcached-${MODPY_EGG_VERSION}
-PKGNAME=	py-memcached-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.62
+DISTNAME=	python-memcached-${MODPY_DISTV}
+PKGNAME=	py-memcached-${MODPY_DISTV}
 CATEGORIES=	misc
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://github.com/linsomniac/python-memcached
 
 # Python
 PERMIT_PACKAGE=	Yes
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 MODULES=	lang/python
 

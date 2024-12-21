@@ -1,10 +1,10 @@
 COMMENT =	convert between Julian and calendar dates
 
-MODPY_EGG_VERSION =	1.4.1
+MODPY_DISTV =	1.4.1
 
-DISTNAME =	jdcal-${MODPY_EGG_VERSION}
+DISTNAME =	jdcal-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	misc
 
@@ -17,8 +17,5 @@ MODULES =	lang/python
 
 MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 .include <bsd.port.mk>

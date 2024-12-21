@@ -1,9 +1,10 @@
 COMMENT=	Python library to work with countries and languages
 
-MODPY_EGG_VERSION=	0.6.1
+MODPY_DISTV=	0.6.1
 
-DISTNAME=	babelfish-${MODPY_EGG_VERSION}
+DISTNAME=	babelfish-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	misc
 
@@ -17,8 +18,5 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	poetry-core
 NO_TEST=	Yes
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

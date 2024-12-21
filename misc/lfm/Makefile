@@ -1,8 +1,8 @@
 COMMENT =		powerful curses interface python file manager
 
-MODPY_EGG_VERSION =	3.1
-DISTNAME =		lfm-${MODPY_EGG_VERSION}
-REVISION =		4
+MODPY_DISTV =	3.1
+DISTNAME =		lfm-${MODPY_DISTV}
+REVISION =		5
 
 CATEGORIES =		misc
 
@@ -17,7 +17,7 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
 # for pkg_resources
-RUN_DEPENDS =		devel/py-setuptools${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-setuptools
 
 NO_TEST =		Yes
 

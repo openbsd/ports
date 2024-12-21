@@ -1,9 +1,9 @@
 COMMENT=		fetching finanical market data with Python
 
-MODPY_EGG_VERSION=	0.1.72
-DISTNAME=		yfinance-${MODPY_EGG_VERSION}
-PKGNAME=		py-yfinance-${MODPY_EGG_VERSION}
-REVISION=		2
+MODPY_DISTV=	0.1.72
+DISTNAME=		yfinance-${MODPY_DISTV}
+PKGNAME=		py-yfinance-${MODPY_DISTV}
+REVISION=		3
 
 CATEGORIES=		misc
 
@@ -16,18 +16,15 @@ PERMIT_PACKAGE=		Yes
 
 MODULES=		lang/python
 
-FLAVORS=		python3
-FLAVOR=			python3
-
 MODPY_PYBUILD=		setuptools
 MODPY_PI=		Yes
 
 # missing from pypi distfile
 NO_TEST=		Yes
 
-RUN_DEPENDS=		devel/py-multitasking${MODPY_FLAVOR} \
-			math/py-pandas${MODPY_FLAVOR} \
-			textproc/py-lxml${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR}
+RUN_DEPENDS=		devel/py-multitasking \
+			math/py-pandas \
+			textproc/py-lxml \
+			www/py-requests
 
 .include <bsd.port.mk>

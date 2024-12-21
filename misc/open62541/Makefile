@@ -31,8 +31,8 @@ BUILD_DEPENDS =		devel/check \
 			print/texlive/base \
 			print/texlive/texmf,-main \
 			print/texlive/texmf,-full \
-			textproc/py-sphinx,python3 \
-			textproc/py-sphinx_rtd_theme,python3
+			textproc/py-sphinx \
+			textproc/py-sphinx_rtd_theme
 
 CONFIGURE_ARGS =	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
 			-DOPEN62541_VERSION=v${VERSION} \
