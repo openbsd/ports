@@ -141,6 +141,9 @@ lib/ejabberd/ejabberd-${V}/ebin/mod_announce.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_announce_mnesia.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_announce_opt.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_announce_sql.beam
+lib/ejabberd/ejabberd-${V}/ebin/mod_auth_fast.beam
+lib/ejabberd/ejabberd-${V}/ebin/mod_auth_fast_mnesia.beam
+lib/ejabberd/ejabberd-${V}/ebin/mod_auth_fast_opt.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_avatar.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_avatar_opt.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_block_strangers.beam
@@ -422,20 +425,16 @@ lib/ejabberd/ejabberd-${V}/priv/sql/lite.sql
 lib/ejabberd/eredis-${MODERL_MODULE_eredis_VERSION}/
 lib/ejabberd/eredis-${MODERL_MODULE_eredis_VERSION}/ebin/
 lib/ejabberd/eredis-${MODERL_MODULE_eredis_VERSION}/ebin/basho_bench_driver_eredis.beam
-lib/ejabberd/eredis-${MODERL_MODULE_eredis_VERSION}/ebin/basho_bench_driver_erldis.beam
 lib/ejabberd/eredis-${MODERL_MODULE_eredis_VERSION}/ebin/eredis.app
 lib/ejabberd/eredis-${MODERL_MODULE_eredis_VERSION}/ebin/eredis.beam
 lib/ejabberd/eredis-${MODERL_MODULE_eredis_VERSION}/ebin/eredis_client.beam
 lib/ejabberd/eredis-${MODERL_MODULE_eredis_VERSION}/ebin/eredis_parser.beam
+lib/ejabberd/eredis-${MODERL_MODULE_eredis_VERSION}/ebin/eredis_sentinel.beam
 lib/ejabberd/eredis-${MODERL_MODULE_eredis_VERSION}/ebin/eredis_sub.beam
 lib/ejabberd/eredis-${MODERL_MODULE_eredis_VERSION}/ebin/eredis_sub_client.beam
 lib/ejabberd/eredis-${MODERL_MODULE_eredis_VERSION}/include/
 lib/ejabberd/eredis-${MODERL_MODULE_eredis_VERSION}/include/eredis.hrl
 lib/ejabberd/eredis-${MODERL_MODULE_eredis_VERSION}/include/eredis_sub.hrl
-lib/ejabberd/eredis-${MODERL_MODULE_eredis_VERSION}/priv/
-lib/ejabberd/eredis-${MODERL_MODULE_eredis_VERSION}/priv/basho_bench_eredis.config
-lib/ejabberd/eredis-${MODERL_MODULE_eredis_VERSION}/priv/basho_bench_eredis_pipeline.config
-lib/ejabberd/eredis-${MODERL_MODULE_eredis_VERSION}/priv/basho_bench_erldis.config
 lib/ejabberd/esip-${MODERL_MODULE_esip_VERSION}/
 lib/ejabberd/esip-${MODERL_MODULE_esip_VERSION}/ebin/
 lib/ejabberd/esip-${MODERL_MODULE_esip_VERSION}/ebin/esip.app
@@ -866,6 +865,7 @@ lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/xep0425.beam
 lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/xep0430.beam
 lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/xep0440.beam
 lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/xep0480.beam
+lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/xep0484.beam
 lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/xmpp.app
 lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/xmpp.beam
 lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/xmpp_codec.beam
@@ -875,6 +875,7 @@ lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/xmpp_lang.beam
 lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/xmpp_sasl.beam
 lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/xmpp_sasl_anonymous.beam
 lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/xmpp_sasl_digest.beam
+lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/xmpp_sasl_fast.beam
 lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/xmpp_sasl_oauth.beam
 lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/xmpp_sasl_plain.beam
 lib/ejabberd/xmpp-${MODERL_MODULE_xmpp_VERSION}/ebin/xmpp_sasl_scram.beam

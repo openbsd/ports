@@ -47,7 +47,7 @@ Index: ejabberd.yml.example
        /admin: ejabberd_web_admin
        /.well-known/acme-challenge: ejabberd_acme
    -
-     port: 3478
+     port: 5478
 -    ip: "::"
 +    ip: "0.0.0.0"
      transport: udp

@@ -1,7 +1,7 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -80,7 +80,7 @@ SQLDIR = $(PRIVDIR)/sql
+@@ -81,7 +81,7 @@ SQLDIR = $(PRIVDIR)/sql
  LUADIR = $(PRIVDIR)/lua
  
  # /var/lib/ejabberd/
