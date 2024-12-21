@@ -79,10 +79,10 @@
      SUBDIR += p5-Unicode-Stringprep
      SUBDIR += pflogx
      SUBDIR += ppmtoTbmp
-     SUBDIR += py-html2text,python3
-     SUBDIR += py-num2words,python3
-     SUBDIR += py-tnefparse,python3
-     SUBDIR += py-vdf,python3
+     SUBDIR += py-html2text
+     SUBDIR += py-num2words
+     SUBDIR += py-tnefparse
+     SUBDIR += py-vdf
      SUBDIR += qprint
      SUBDIR += recode
      SUBDIR += ripmime

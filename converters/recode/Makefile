@@ -21,7 +21,7 @@ MODPY_RUNDEP=	No
 
 BUILD_DEPENDS=	devel/help2man
 LIB_DEPENDS=	devel/gettext,-runtime
-TEST_DEPENDS=	lang/cython${MODPY_FLAVOR}
+TEST_DEPENDS=	lang/cython
 
 CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--without-included-gettext

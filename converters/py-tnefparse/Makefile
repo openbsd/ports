@@ -1,8 +1,8 @@
 COMMENT=	TNEF decoding and attachment extraction
 
-MODPY_EGG_VERSION=	1.4.0
-REVISION=	1
-DISTNAME=	tnefparse-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.4.0
+REVISION=	2
+DISTNAME=	tnefparse-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
 CATEGORIES=	converters
@@ -16,10 +16,7 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-RUN_DEPENDS=	archivers/py-compressed_rtf${MODPY_FLAVOR}
+RUN_DEPENDS=	archivers/py-compressed_rtf
 
 # tests in this file require pytest-console-scripts
 MODPY_PYTEST_ARGS= --ignore tests/test_cmdline.py

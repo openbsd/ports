@@ -8,7 +8,7 @@ COMMENT=		UNiversal Office CONVerter
 GH_ACCOUNT=		unoconv
 GH_PROJECT=		unoconv
 GH_TAGNAME=		0.9.0
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		converters textproc
 
