@@ -1,8 +1,9 @@
 COMMENT=	module wrapper for os.path
 
-MODPY_EGG_VERSION=	17.0.0
-DISTNAME=	path-${MODPY_EGG_VERSION}
+MODPY_DISTV=	17.0.0
+DISTNAME=	path-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -17,10 +18,7 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
 MODPY_PYTEST=	Yes
 
-TEST_DEPENDS=	devel/py-appdirs${MODPY_FLAVOR} \
-		devel/py-more-itertools${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+TEST_DEPENDS=	devel/py-appdirs \
+		devel/py-more-itertools
 
 .include <bsd.port.mk>

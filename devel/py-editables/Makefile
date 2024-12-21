@@ -1,10 +1,10 @@
 COMMENT=	Python library for creating "editable wheels"
 
-MODPY_EGG_VERSION=	0.5
+MODPY_DISTV=	0.5
 
-DISTNAME=	editables-${MODPY_EGG_VERSION}
+DISTNAME=	editables-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -19,8 +19,5 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	flit_core
 
 NO_TEST=	Yes
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

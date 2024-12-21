@@ -1,8 +1,9 @@
 COMMENT=	plugin for 'coverage' to provide sensible defaults
 
-MODPY_EGG_VERSION=	2.3.0
-DISTNAME=	covdefaults-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.3.0
+DISTNAME=	covdefaults-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -15,12 +16,9 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS=	devel/py-coverage${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-coverage
 
 # not in pypi sdist
 NO_TEST=	Yes
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

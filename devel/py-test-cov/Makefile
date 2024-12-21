@@ -1,9 +1,10 @@
 COMMENT=	pytest plugin for measuring coverage
 
-MODPY_EGG_VERSION=	6.0.0
-DISTNAME=	pytest-cov-${MODPY_EGG_VERSION}
+MODPY_DISTV=	6.0.0
+DISTNAME=	pytest-cov-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/py/py-/}
 CATEGORIES=	devel
+REVISION=	0
 
 HOMEPAGE=	https://pytest-cov.readthedocs.org/en/latest/
 
@@ -15,17 +16,14 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-RUN_DEPENDS=	devel/py-coverage${MODPY_FLAVOR} \
-		devel/py-test${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-coverage \
+		devel/py-test
 
 TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH} \
-		devel/py-fields${MODPY_FLAVOR} \
-		devel/py-process-tests${MODPY_FLAVOR} \
-		devel/py-test-xdist${MODPY_FLAVOR} \
-		devel/py-virtualenv${MODPY_FLAVOR}
+		devel/py-fields \
+		devel/py-process-tests \
+		devel/py-test-xdist \
+		devel/py-virtualenv
 # also wants py-hunter?
 
 .include <bsd.port.mk>

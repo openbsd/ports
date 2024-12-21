@@ -1,9 +1,9 @@
 COMMENT =		send files to the trash natively
 
-MODPY_EGG_VERSION =	1.8.2
-DISTNAME =		Send2Trash-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.8.2
+DISTNAME =		Send2Trash-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -13,9 +13,6 @@ HOMEPAGE =		https://github.com/hsoft/send2trash
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools

@@ -1,10 +1,11 @@
 COMMENT=	wrappers to call pyproject.toml-based build backend hooks
 
-MODPY_EGG_VERSION=	1.2.0
+MODPY_DISTV=	1.2.0
 EPOCH=		0
 
-DISTNAME=	pyproject_hooks-${MODPY_EGG_VERSION}
+DISTNAME=	pyproject_hooks-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -18,18 +19,15 @@ PERMIT_PACKAGE= Yes
 MODULES=	lang/python
 MODPY_PI=	Yes
 
-FLAVOR=		python3
-FLAVORS=	python3
-
 MODPY_PYTEST=	Yes
-TEST_DEPENDS=	devel/py-testpath${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-testpath
 PORTHOME=	${WRKDIR}
 
 # this port is used as a BDEP by python.port.mk for ports using
 # MODPY_PYBUILD, so cannot use MODPY_PYBUILD itself.
 
-BUILD_DEPENDS+=	devel/py-flit_core${MODPY_FLAVOR} \
-		devel/py-installer${MODPY_FLAVOR}
+BUILD_DEPENDS+=	devel/py-flit_core \
+		devel/py-installer
 
 do-build:
 	cd ${WRKSRC} && ${MODPY_BIN} -m flit_core.wheel

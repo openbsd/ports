@@ -3,10 +3,10 @@ BROKEN-riscv64 = /usr/ports/pobj/py-unicorn-1.0.2-python3/unicorn-1.0.2/src/qemu
 
 COMMENT =	Unicorn CPU emulator engine
 
-MODPY_EGG_VERSION =	2.0.1.post1
-DISTNAME =	unicorn-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.0.1.post1
+DISTNAME =	unicorn-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
@@ -24,9 +24,6 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 USE_GMAKE =		Yes
 

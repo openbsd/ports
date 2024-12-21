@@ -1,9 +1,10 @@
 COMMENT=	pytest plugin for filtering based on sub-packages
 
-MODPY_EGG_VERSION=	0.2.0
+MODPY_DISTV=	0.2.0
 
-DISTNAME=	pytest-filter-subpackage-${MODPY_EGG_VERSION}
+DISTNAME=	pytest-filter-subpackage-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/py//}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -17,9 +18,6 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
 
-FLAVOR=		python3
-FLAVORS=	python3
-
-RUN_DEPENDS=	devel/py-test${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-test
 
 .include <bsd.port.mk>

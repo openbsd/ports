@@ -1,8 +1,9 @@
 COMMENT=	mock out requests made by ClientSession from aiohttp
 
-MODPY_EGG_VERSION=	0.7.6
-DISTNAME=	aioresponses-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.7.6
+DISTNAME=	aioresponses-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -13,12 +14,9 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-FLAVOR=		python3
-FLAVORS=	python3
-
-BUILD_DEPENDS=	devel/py-pbr${MODPY_FLAVOR}
-RUN_DEPENDS=	www/py-aiohttp${MODPY_FLAVOR}
-TEST_DEPENDS=	devel/py-test-cov${MODPY_FLAVOR} \
-		devel/py-ddt${MODPY_FLAVOR}
+BUILD_DEPENDS=	devel/py-pbr
+RUN_DEPENDS=	www/py-aiohttp
+TEST_DEPENDS=	devel/py-test-cov \
+		devel/py-ddt
 
 .include <bsd.port.mk>

@@ -1,9 +1,10 @@
 COMMENT=	pytest plugin with advanced doctest features
 
-MODPY_EGG_VERSION=	1.2.1
+MODPY_DISTV=	1.2.1
 
-DISTNAME=	pytest-doctestplus-${MODPY_EGG_VERSION}
+DISTNAME=	pytest-doctestplus-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/py/py-/}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -17,12 +18,9 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
 
-FLAVOR=		python3
-FLAVORS=	python3
-
-RUN_DEPENDS=	devel/py-test${MODPY_FLAVOR}
-TEST_DEPENDS=	devel/py-test-remotedata${MODPY_FLAVOR} \
-		math/py-numpy${MODPY_FLAVOR} \
-		textproc/py-sphinx${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-test
+TEST_DEPENDS=	devel/py-test-remotedata \
+		math/py-numpy \
+		textproc/py-sphinx
 
 .include <bsd.port.mk>

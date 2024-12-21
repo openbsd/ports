@@ -1,26 +1,27 @@
 COMMENT =	continuous integration framework
 
-DISTNAME =	buildbot-${MODPY_EGG_VERSION}
+DISTNAME =	buildbot-${MODPY_DISTV}
 PKGNAME =	${DISTNAME}
+REVISION =	0
 
-RUN_DEPENDS =	databases/py-sqlalchemy${MODPY_FLAVOR}>=1.4.0 \
-		databases/py-alembic${MODPY_FLAVOR} \
-		devel/py-setuptools${MODPY_FLAVOR} \
+RUN_DEPENDS =	databases/py-sqlalchemy>=1.4.0 \
+		databases/py-alembic \
+		devel/py-setuptools \
 		devel/py-buildbot/www \
-		devel/py-dateutil${MODPY_FLAVOR} \
-		devel/py-twisted${MODPY_FLAVOR} \
-		devel/py-txaio${MODPY_FLAVOR} \
-		net/py-msgpack${MODPY_FLAVOR} \
-		sysutils/py-croniter${MODPY_FLAVOR} \
-		sysutils/py-packaging${MODPY_FLAVOR} \
-		textproc/py-yaml${MODPY_FLAVOR} \
-		www/py-autobahn${MODPY_FLAVOR} \
-		www/py-jwt${MODPY_FLAVOR} \
-		www/py-jinja2${MODPY_FLAVOR}
+		devel/py-dateutil \
+		devel/py-twisted \
+		devel/py-txaio \
+		net/py-msgpack \
+		sysutils/py-croniter \
+		sysutils/py-packaging \
+		textproc/py-yaml \
+		www/py-autobahn \
+		www/py-jwt \
+		www/py-jinja2
 
 NO_TEST =	Yes
 #TEST_DEPENDS =	${RUN_DEPENDS} \
-#			devel/py-mock${MODPY_FLAVOR}
+#			devel/py-mock
 # also needs treq, pyjade ?
 
 UPDATE_PLIST_ARGS+=-i MODPY_PY_PREFIX

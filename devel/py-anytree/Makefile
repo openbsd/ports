@@ -1,9 +1,9 @@
 COMMENT=	powerful and lightweight Python tree data structure
 
-MODPY_EGG_VERSION=	2.12.1
-DISTNAME=	anytree-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.12.1
+DISTNAME=	anytree-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -18,8 +18,6 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	poetry-core
 NO_TEST=	Yes
 
-RUN_DEPENDS=	devel/py-six${MODPY_FLAVOR}
-FLAVORS=	python3
-FLAVOR=		python3
+RUN_DEPENDS=	devel/py-six
 
 .include <bsd.port.mk>

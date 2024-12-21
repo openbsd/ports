@@ -1,10 +1,10 @@
 COMMENT =		plugin to manage your versions by scm tags
 
-MODPY_EGG_VERSION =	8.0.4
-DISTNAME =		setuptools-scm-${MODPY_EGG_VERSION}
+MODPY_DISTV =	8.0.4
+DISTNAME =		setuptools-scm-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/-/_/}
 CATEGORIES =		devel
-REVISION =		1
+REVISION =		2
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -14,19 +14,16 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 MODPY_PYTEST =		Yes
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-RUN_DEPENDS +=		devel/py-setuptools${MODPY_FLAVOR} \
-			devel/py-typing-extensions${MODPY_FLAVOR} \
-			sysutils/py-packaging${MODPY_FLAVOR}
+RUN_DEPENDS +=		devel/py-setuptools \
+			devel/py-typing-extensions \
+			sysutils/py-packaging
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 
 PORTHOME =		${WRKDIR}
 TEST_DEPENDS =		${FULLPKGNAME}:${FULLPKGPATH} \
 			devel/git \
 			devel/mercurial \
-			devel/py-pip${MODPY_FLAVOR}
+			devel/py-pip
 
 pre-test:
 	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python

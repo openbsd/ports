@@ -1,3 +1,4 @@
+@pkgpath devel/py-types-setuptools,python3
 lib/python${MODPY_VERSION}/site-packages/distutils-stubs/
 lib/python${MODPY_VERSION}/site-packages/distutils-stubs/METADATA.toml
 lib/python${MODPY_VERSION}/site-packages/distutils-stubs/_modified.pyi
@@ -133,8 +134,8 @@ lib/python${MODPY_VERSION}/site-packages/setuptools-stubs/version.pyi
 lib/python${MODPY_VERSION}/site-packages/setuptools-stubs/warnings.pyi
 lib/python${MODPY_VERSION}/site-packages/setuptools-stubs/wheel.pyi
 lib/python${MODPY_VERSION}/site-packages/setuptools-stubs/windows_support.pyi
-lib/python${MODPY_VERSION}/site-packages/types_setuptools-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/types_setuptools-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/types_setuptools-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/types_setuptools-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/types_setuptools-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/types_setuptools-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/types_setuptools-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/types_setuptools-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/types_setuptools-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/types_setuptools-${MODPY_DISTV}.dist-info/top_level.txt

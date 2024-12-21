@@ -1,14 +1,14 @@
+@pkgpath devel/py-jsonschema,python3
 @conflict py-jsonschema-<2.6.0p2
-@pkgpath devel/py-jsonschema
 bin/jsonschema
 lib/python${MODPY_VERSION}/site-packages/jsonschema/
-lib/python${MODPY_VERSION}/site-packages/jsonschema-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/jsonschema-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/jsonschema-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/jsonschema-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/jsonschema-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/jsonschema-${MODPY_EGG_VERSION}.dist-info/licenses/
-lib/python${MODPY_VERSION}/site-packages/jsonschema-${MODPY_EGG_VERSION}.dist-info/licenses/COPYING
+lib/python${MODPY_VERSION}/site-packages/jsonschema-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/jsonschema-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/jsonschema-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/jsonschema-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/jsonschema-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/jsonschema-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/jsonschema-${MODPY_DISTV}.dist-info/licenses/COPYING
 lib/python${MODPY_VERSION}/site-packages/jsonschema/__init__.py
 lib/python${MODPY_VERSION}/site-packages/jsonschema/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jsonschema/${MODPY_PYCACHE}/

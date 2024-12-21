@@ -1,10 +1,10 @@
 COMMENT =		reusable state for writing clean Python tests
 
-MODPY_EGG_VERSION =	3.0.0
+MODPY_DISTV =	3.0.0
 
-DISTNAME =		fixtures-${MODPY_EGG_VERSION}
+DISTNAME =		fixtures-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		devel
 
@@ -21,14 +21,11 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	fixtures
 
-FLAVORS =		python3
-FLAVOR =		python3
+BUILD_DEPENDS =		devel/py-pbr
 
-BUILD_DEPENDS =		devel/py-pbr${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-six \
+			devel/py-testtools
 
-RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
-			devel/py-testtools${MODPY_FLAVOR}
-
-TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-mock
 
 .include <bsd.port.mk>

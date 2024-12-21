@@ -1,8 +1,9 @@
 COMMENT=	lightweight template library
 
-MODPY_EGG_VERSION=	3.2.2
-DISTNAME=	wheezy.template-${MODPY_EGG_VERSION}
+MODPY_DISTV=	3.2.2
+DISTNAME=	wheezy.template-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -19,9 +20,6 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 NO_TEST=	Yes
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-BUILD_DEPENDS=	lang/cython${MODPY_FLAVOR}
+BUILD_DEPENDS=	lang/cython
 
 .include <bsd.port.mk>

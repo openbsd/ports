@@ -1,8 +1,9 @@
 COMMENT=	immutable dictionary
 
-MODPY_EGG_VERSION=	2.4.6
-DISTNAME=	frozendict-${MODPY_EGG_VERSION}
-PKGNAME=	py-frozendict-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.4.6
+DISTNAME=	frozendict-${MODPY_DISTV}
+PKGNAME=	py-frozendict-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -10,9 +11,6 @@ HOMEPAGE=	https://github.com/slezica/python-frozendict
 
 # MIT
 PERMIT_PACKAGE=	Yes
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 MODULES=	lang/python
 MODPY_PYBUILD =	setuptools

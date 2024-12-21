@@ -1,10 +1,10 @@
 COMMENT =	annotate Python ASTs with source text and token information
 
-MODPY_EGG_VERSION =	2.4.1
+MODPY_DISTV =	2.4.1
 
-DISTNAME =	asttokens-${MODPY_EGG_VERSION}
+DISTNAME =	asttokens-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
@@ -19,10 +19,7 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
 MODPY_PYTEST =		Yes
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
-TEST_DEPENDS =		devel/py-astroid${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-six
+TEST_DEPENDS =		devel/py-astroid
 
 .include <bsd.port.mk>

@@ -1,8 +1,8 @@
 COMMENT=	Python Sorted Container Types
 
-MODPY_EGG_VERSION=	2.4.0
-REVISION=	4
-DISTNAME=	sortedcontainers-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.4.0
+REVISION=	5
+DISTNAME=	sortedcontainers-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
 CATEGORIES=	devel
@@ -15,9 +15,6 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 MODPY_PI=	Yes
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 MODPY_PYBUILD=	setuptools
 

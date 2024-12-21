@@ -1,9 +1,9 @@
 COMMENT =		dark style sheet for QtWidgets apps
 
-MODPY_EGG_VERSION =	3.2.3
-DISTNAME =		QDarkStyle-${MODPY_EGG_VERSION}
+MODPY_DISTV =	3.2.3
+DISTNAME =		QDarkStyle-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -15,14 +15,11 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		devel/py-helpdev${MODPY_FLAVOR} \
-			x11/py-qtpy${MODPY_FLAVOR}>=2
+RUN_DEPENDS =		devel/py-helpdev \
+			x11/py-qtpy>=2
 
 NO_TEST =		Yes
 

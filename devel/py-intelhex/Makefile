@@ -1,9 +1,9 @@
 COMMENT =		intel hex file format is used in microprocessors
 
-MODPY_EGG_VERSION =	2.3.0
-DISTNAME =		intelhex-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.3.0
+DISTNAME =		intelhex-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		devel
 
@@ -15,9 +15,6 @@ MAINTAINER =		Gonzalo L. R. <gonzalo@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-
-FLAVORS =		python3
-FLAVOR  =		python3
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools

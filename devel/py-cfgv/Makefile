@@ -1,9 +1,9 @@
 COMMENT =		configuration validator
 
-MODPY_EGG_VERSION =	3.4.0
-DISTNAME =		cfgv-${MODPY_EGG_VERSION}
+MODPY_DISTV =	3.4.0
+DISTNAME =		cfgv-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -15,8 +15,6 @@ MAINTAINER =		Pavel Korovin <pvk@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-FLAVOR =		python3
-FLAVORS =		python3
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools

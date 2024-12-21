@@ -1,12 +1,13 @@
+@pkgpath devel/py-helpdev,python3
 bin/helpdev
 lib/python${MODPY_VERSION}/site-packages/helpdev/
-lib/python${MODPY_VERSION}/site-packages/helpdev-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/helpdev-${MODPY_EGG_VERSION}.dist-info/LICENSE.rst
-lib/python${MODPY_VERSION}/site-packages/helpdev-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/helpdev-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/helpdev-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/helpdev-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/helpdev-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/helpdev-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/helpdev-${MODPY_DISTV}.dist-info/LICENSE.rst
+lib/python${MODPY_VERSION}/site-packages/helpdev-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/helpdev-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/helpdev-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/helpdev-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/helpdev-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/helpdev/__init__.py
 lib/python${MODPY_VERSION}/site-packages/helpdev/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/helpdev/${MODPY_PYCACHE}/

@@ -1,8 +1,9 @@
 COMMENT=	run-time type checker for Python
 
-MODPY_EGG_VERSION=	4.3.0
-DISTNAME=	typeguard-${MODPY_EGG_VERSION}
+MODPY_DISTV=	4.3.0
+DISTNAME=	typeguard-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -17,10 +18,7 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-TEST_DEPENDS=	devel/py-mypy${MODPY_FLAVOR}
-RUN_DEPENDS=	devel/py-typing-extensions${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-mypy
+RUN_DEPENDS=	devel/py-typing-extensions
 
 .include <bsd.port.mk>

@@ -1,10 +1,10 @@
 # included in python core 3.9
 COMMENT=		AST unparser for Python
 
-MODPY_EGG_VERSION=	1.6.3
-DISTNAME=		astunparse-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.6.3
+DISTNAME=		astunparse-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		devel
 
@@ -15,9 +15,6 @@ MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 # BSD
 PERMIT_PACKAGE=	Yes
 
-FLAVORS=		python3
-FLAVOR=			python3
-
 MODULES=		lang/python
 
 MODPY_PI=		Yes
@@ -25,7 +22,7 @@ MODPY_PYBUILD=		setuptools
 
 TEST_ENV=		PYTHONPATH="${WRKSRC}/lib"
 
-RUN_DEPENDS +=		devel/py-six${MODPY_FLAVOR} \
-			devel/py-wheel${MODPY_FLAVOR}
+RUN_DEPENDS +=		devel/py-six \
+			devel/py-wheel
 
 .include <bsd.port.mk>

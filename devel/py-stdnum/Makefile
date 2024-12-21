@@ -1,10 +1,10 @@
 COMMENT=		parse, validate and reformat standard numbers and codes
 
-MODPY_EGG_VERSION=	1.20
-DISTNAME=		python-stdnum-${MODPY_EGG_VERSION}
-PKGNAME=		py-stdnum-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.20
+DISTNAME=		python-stdnum-${MODPY_DISTV}
+PKGNAME=		py-stdnum-${MODPY_DISTV}
 CATEGORIES=		devel
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		https://arthurdejong.org/python-stdnum/
 
@@ -18,10 +18,7 @@ MODULES=		lang/python
 MODPY_PI=		Yes
 MODPY_PYBUILD=		setuptools
 
-FLAVORS=		python3
-FLAVOR=			python3
-
-TEST_DEPENDS=		devel/py-nose${MODPY_FLAVOR}
+TEST_DEPENDS=		devel/py-nose
 
 do-test:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${TEST_ENV} ${MODPY_BIN} \

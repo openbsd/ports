@@ -1,22 +1,20 @@
 COMMENT=	deprecated fixture to invoke py.test as distutils command
 
-MODPY_EGG_VERSION=	6.0.1
-DISTNAME=	pytest-runner-${MODPY_EGG_VERSION}
+MODPY_DISTV=	6.0.1
+DISTNAME=	pytest-runner-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/py/py-/}
 CATEGORIES=	devel
+REVISION=	0
 
 # MIT
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 
-RUN_DEPENDS=	devel/py-test${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-test
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 # needs unported deps
 NO_TEST=	Yes

@@ -1,10 +1,10 @@
 COMMENT =	C-style structs for Python
 
-MODPY_EGG_VERSION =	5.3
+MODPY_DISTV =	5.3
 
-DISTNAME =	cstruct-${MODPY_EGG_VERSION}
+DISTNAME =	cstruct-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
@@ -17,9 +17,6 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 # XXX:
 # Distribution lacks several files for the test to run (e.g. 'mbr').

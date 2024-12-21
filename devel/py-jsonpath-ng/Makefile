@@ -1,9 +1,10 @@
-COMMENT=	 	implementation of JSONPath for Python
+COMMENT=		implementation of JSONPath for Python
 
-MODPY_EGG_VERSION=	1.6.1
-DISTNAME=		jsonpath-ng-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.6.1
+DISTNAME=		jsonpath-ng-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
+REVISION=		0
 
 HOMEPAGE=		https://github.com/h2non/jsonpath-ng
 
@@ -15,11 +16,6 @@ MODULES=		lang/python
 MODPY_PYBUILD=		setuptools
 MODPY_PI=		Yes
 
-SUBST_VARS+=		MODPY_FLAVOR
-
-FLAVORS=		python3
-FLAVOR=			python3
-
-RUN_DEPENDS+=		devel/py-ply${MODPY_FLAVOR}
+RUN_DEPENDS+=		devel/py-ply
 
 .include <bsd.port.mk>

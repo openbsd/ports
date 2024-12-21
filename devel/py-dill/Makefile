@@ -1,9 +1,10 @@
 COMMENT=	serialize/deserialize most Python types
 
-MODPY_EGG_VERSION=	0.3.9
-DISTNAME=	dill-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.3.9
+DISTNAME=	dill-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
+REVISION=	0
 
 # https://github.com/uqfoundation/dill
 HOMEPAGE=	https://dill.readthedocs.io/
@@ -23,8 +24,5 @@ MODPY_PYTEST_ARGS= --ignore dill/tests/test_diff.py \
 		--ignore dill/tests/test_session.py \
 		--ignore dill/tests/test_sources.py \
 		--ignore dill/tests/test_logger.py
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

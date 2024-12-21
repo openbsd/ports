@@ -1,8 +1,9 @@
 COMMENT=	Python library for rich text and beautiful formatting
 
-MODPY_EGG_VERSION=	13.9.4
-DISTNAME=	rich-${MODPY_EGG_VERSION}
-PKGNAME=	py-rich-${MODPY_EGG_VERSION}
+MODPY_DISTV=	13.9.4
+DISTNAME=	rich-${MODPY_DISTV}
+PKGNAME=	py-rich-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -14,13 +15,10 @@ HOMEPAGE=	https://github.com/Textualize/rich
 MODULES=	lang/python
 MODPY_PI=	Yes
 
-FLAVORS=	python3
-FLAVOR=		python3
-
 MODPY_PYBUILD=	poetry-core
 NO_TEST=	Yes
 
-RUN_DEPENDS=	textproc/py-markdown-it${MODPY_FLAVOR} \
-		textproc/py-pygments${MODPY_FLAVOR}
+RUN_DEPENDS=	textproc/py-markdown-it \
+		textproc/py-pygments
 
 .include <bsd.port.mk>

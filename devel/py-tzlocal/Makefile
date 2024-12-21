@@ -1,9 +1,9 @@
 COMMENT =		python tzinfo object for the local timezone
 
-MODPY_EGG_VERSION =	5.2
-DISTNAME =		tzlocal-${MODPY_EGG_VERSION}
+MODPY_DISTV =	5.2
+DISTNAME =		tzlocal-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -15,12 +15,9 @@ PERMIT_PACKAGE =	Yes
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODULES =		lang/python
 
-RUN_DEPENDS =		devel/py-tz${MODPY_FLAVOR}
-TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-tz
+TEST_DEPENDS =		devel/py-mock
 
 .include <bsd.port.mk>

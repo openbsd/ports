@@ -1,10 +1,11 @@
 COMMENT=	simplified packaging system for Python modules
 
 # py-types-setuptools should have a matching version
-MODPY_EGG_VERSION=	69.5.1
-DISTNAME=		setuptools-${MODPY_EGG_VERSION}
+MODPY_DISTV=	69.5.1
+DISTNAME=		setuptools-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
 EPOCH=			0
+REVISION=		0
 
 CATEGORIES=		devel
 
@@ -24,24 +25,19 @@ MODPY_PYTEST=		Yes
 MODPY_PYTEST_ARGS =	setuptools/tests \
 			--ignore setuptools/tests/test_editable_install.py
 
-SUBST_VARS+=		MODPY_FLAVOR
+BUILD_DEPENDS=		devel/py-wheel
 
-FLAVORS=		python3
-FLAVOR=			python3
-
-BUILD_DEPENDS=		devel/py-wheel${MODPY_FLAVOR}
-
-TEST_DEPENDS=		devel/py-jaraco-envs${MODPY_FLAVOR} \
-			devel/py-jaraco-path${MODPY_FLAVOR} \
-			devel/py-path${MODPY_FLAVOR} \
-			devel/py-pip${MODPY_FLAVOR} \
-			devel/py-test-cov${MODPY_FLAVOR} \
-			devel/py-test-timeout${MODPY_FLAVOR} \
-			devel/py-test-xdist${MODPY_FLAVOR} \
-			devel/py-wheel${MODPY_FLAVOR} \
-			sysutils/py-filelock${MODPY_FLAVOR} \
-			sysutils/py-packaging${MODPY_FLAVOR} \
-			textproc/py-ini2toml${MODPY_FLAVOR} \
-			textproc/py-tomli_w${MODPY_FLAVOR}
+TEST_DEPENDS=		devel/py-jaraco-envs \
+			devel/py-jaraco-path \
+			devel/py-path \
+			devel/py-pip \
+			devel/py-test-cov \
+			devel/py-test-timeout \
+			devel/py-test-xdist \
+			devel/py-wheel \
+			sysutils/py-filelock \
+			sysutils/py-packaging \
+			textproc/py-ini2toml \
+			textproc/py-tomli_w
 
 .include <bsd.port.mk>

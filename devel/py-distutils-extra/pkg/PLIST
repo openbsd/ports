@@ -1,5 +1,5 @@
+@pkgpath devel/py-distutils-extra,python3
 @conflict py-distutils-extra-*
-@pkgpath devel/py-distutils-extra
 lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/
 lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/${MODPY_PYCACHE}/
@@ -31,10 +31,10 @@ lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/build_i18n.py
 lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/build_icons.py
 lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/clean_i18n.py
 lib/python${MODPY_VERSION}/site-packages/DistUtilsExtra/command/pylint.py
-lib/python${MODPY_VERSION}/site-packages/python_distutils_extra-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/python_distutils_extra-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/python_distutils_extra-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/python_distutils_extra-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/python_distutils_extra-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/python_distutils_extra-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/python_distutils_extra-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/python_distutils_extra-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/python_distutils_extra-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/python_distutils_extra-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/python_distutils_extra-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/python_distutils_extra-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/python_distutils_extra-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/python_distutils_extra-${MODPY_DISTV}.dist-info/top_level.txt

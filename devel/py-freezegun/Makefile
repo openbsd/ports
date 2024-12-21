@@ -1,8 +1,9 @@
 COMMENT=	let your Python tests travel through time
 
-MODPY_EGG_VERSION=	1.5.1
-DISTNAME=	freezegun-${MODPY_EGG_VERSION}
-PKGNAME=	py-freezegun-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.5.1
+DISTNAME=	freezegun-${MODPY_DISTV}
+PKGNAME=	py-freezegun-${MODPY_DISTV}
+REVISION=	0
 
 HOMEPAGE=	https://github.com/spulec/freezegun
 
@@ -16,9 +17,6 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS=	devel/py-dateutil${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+RUN_DEPENDS=	devel/py-dateutil
 
 .include <bsd.port.mk>

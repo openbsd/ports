@@ -1,11 +1,12 @@
+@pkgpath devel/py-test-astropy-header,python3
 lib/python${MODPY_VERSION}/site-packages/pytest_astropy_header/
-lib/python${MODPY_VERSION}/site-packages/pytest_astropy_header-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pytest_astropy_header-${MODPY_EGG_VERSION}.dist-info/LICENSE.rst
-lib/python${MODPY_VERSION}/site-packages/pytest_astropy_header-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/pytest_astropy_header-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/pytest_astropy_header-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/pytest_astropy_header-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/pytest_astropy_header-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pytest_astropy_header-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pytest_astropy_header-${MODPY_DISTV}.dist-info/LICENSE.rst
+lib/python${MODPY_VERSION}/site-packages/pytest_astropy_header-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/pytest_astropy_header-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/pytest_astropy_header-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pytest_astropy_header-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/pytest_astropy_header-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pytest_astropy_header/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pytest_astropy_header/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pytest_astropy_header/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

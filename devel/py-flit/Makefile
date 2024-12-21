@@ -1,9 +1,10 @@
 COMMENT=	simple packaging tool for simple packages
 
-MODPY_EGG_VERSION=	3.10.1
+MODPY_DISTV=	3.10.1
 
-DISTNAME=	flit-${MODPY_EGG_VERSION}
+DISTNAME=	flit-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -17,19 +18,16 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	flit_core
 
-FLAVOR=		python3
-FLAVORS=	python3
-
-BUILD_DEPENDS=	devel/py-flit_core${MODPY_FLAVOR}>=${MODPY_EGG_VERSION}
-RUN_DEPENDS=	devel/py-flit_core${MODPY_FLAVOR}>=${MODPY_EGG_VERSION} \
-		textproc/py-docutils${MODPY_FLAVOR} \
-		textproc/py-tomli_w${MODPY_FLAVOR} \
-		www/py-requests${MODPY_FLAVOR}
+BUILD_DEPENDS=	devel/py-flit_core>=${MODPY_DISTV}
+RUN_DEPENDS=	devel/py-flit_core>=${MODPY_DISTV} \
+		textproc/py-docutils \
+		textproc/py-tomli_w \
+		www/py-requests
 
 PORTHOME=	${WRKDIR}
-TEST_DEPENDS=	devel/py-testpath${MODPY_FLAVOR} \
-		devel/py-pip${MODPY_FLAVOR} \
-		www/py-responses${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-testpath \
+		devel/py-pip \
+		www/py-responses
 
 # tests using pep to install expected to fail with EXTERNALLY-MANAGED
 MODPY_PYTEST_ARGS= -k 'not test_install_data_dir \

@@ -1,3 +1,4 @@
+@pkgpath devel/py-pdm-backend,python3
 lib/python${MODPY_VERSION}/site-packages/pdm/
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/__init__.py
@@ -160,10 +161,10 @@ lib/python${MODPY_VERSION}/site-packages/pdm/backend/sdist.py
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/structures.py
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/utils.py
 lib/python${MODPY_VERSION}/site-packages/pdm/backend/wheel.py
-lib/python${MODPY_VERSION}/site-packages/pdm_backend-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pdm_backend-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/pdm_backend-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/pdm_backend-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/pdm_backend-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/pdm_backend-${MODPY_EGG_VERSION}.dist-info/licenses/
-lib/python${MODPY_VERSION}/site-packages/pdm_backend-${MODPY_EGG_VERSION}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/pdm_backend-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pdm_backend-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/pdm_backend-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/pdm_backend-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pdm_backend-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/pdm_backend-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/pdm_backend-${MODPY_DISTV}.dist-info/licenses/LICENSE

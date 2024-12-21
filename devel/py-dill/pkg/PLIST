@@ -1,14 +1,14 @@
-@pkgpath devel/py-dill
+@pkgpath devel/py-dill,python3
 bin/get_gprof
 bin/get_objgraph
 bin/undill
 lib/python${MODPY_VERSION}/site-packages/dill/
-lib/python${MODPY_VERSION}/site-packages/dill-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/dill-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/dill-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/dill-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/dill-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/dill-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/dill-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/dill-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/dill-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/dill-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/dill-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/dill-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/dill/__diff.py
 lib/python${MODPY_VERSION}/site-packages/dill/__info__.py
 lib/python${MODPY_VERSION}/site-packages/dill/__init__.py

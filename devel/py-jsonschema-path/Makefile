@@ -1,9 +1,10 @@
 COMMENT=	object-oriented JSONSchema
 
-MODPY_EGG_VERSION=	0.3.3
+MODPY_DISTV=	0.3.3
 
-DISTNAME=	jsonschema_path-${MODPY_EGG_VERSION}
+DISTNAME=	jsonschema_path-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -14,12 +15,9 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 
-RUN_DEPENDS=	devel/py-pathable${MODPY_FLAVOR} \
-		textproc/py-referencing${MODPY_FLAVOR} \
-		textproc/py-yaml${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+RUN_DEPENDS=	devel/py-pathable \
+		textproc/py-referencing \
+		textproc/py-yaml
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	poetry-core

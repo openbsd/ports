@@ -1,26 +1,4 @@
-@conflict py-twisted-core-*
-@conflict py-twisted-conch-*
-@conflict py-twisted-lore-*
-@conflict py-twisted-mail-*
-@conflict py-twisted-names-*
-@conflict py-twisted-news-*
-@conflict py-twisted-pair-*
-@conflict py-twisted-runner-*
-@conflict py-twisted-web-*
-@conflict py-twisted-web2-*
-@conflict py-twisted-words-*
-@pkgpath devel/py-twisted/conch
-@pkgpath devel/py-twisted/core
-@pkgpath devel/py-twisted/lore
-@pkgpath devel/py-twisted/mail
-@pkgpath devel/py-twisted/names
-@pkgpath devel/py-twisted/news
-@pkgpath devel/py-twisted/pair
-@pkgpath devel/py-twisted/runner
-@pkgpath devel/py-twisted/web
-@pkgpath devel/py-twisted/web2
-@pkgpath devel/py-twisted/words
-!%%python3%%
+@pkgpath devel/py-twisted,python3
 bin/cftp
 bin/ckeygen
 bin/conch
@@ -31,13 +9,13 @@ bin/trial
 bin/twist
 bin/twistd
 lib/python${MODPY_VERSION}/site-packages/twisted/
-lib/python${MODPY_VERSION}/site-packages/twisted-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/twisted-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/twisted-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/twisted-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/twisted-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/twisted-${MODPY_EGG_VERSION}.dist-info/licenses/
-lib/python${MODPY_VERSION}/site-packages/twisted-${MODPY_EGG_VERSION}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/twisted-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/twisted-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/twisted-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/twisted-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/twisted-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/twisted-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/twisted-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/twisted/__init__.py
 lib/python${MODPY_VERSION}/site-packages/twisted/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/twisted/${MODPY_PYCACHE}/

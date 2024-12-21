@@ -1,5 +1,5 @@
+@pkgpath devel/py-elftools,python3
 @conflict py-elftools-*
-@pkgpath devel/py-elftools
 bin/readelf.py
 lib/python${MODPY_VERSION}/site-packages/elftools/
 lib/python${MODPY_VERSION}/site-packages/elftools/__init__.py
@@ -171,12 +171,12 @@ lib/python${MODPY_VERSION}/site-packages/elftools/elf/relocation.py
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/sections.py
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/segments.py
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/structs.py
-lib/python${MODPY_VERSION}/site-packages/pyelftools-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pyelftools-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/pyelftools-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/pyelftools-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/pyelftools-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/pyelftools-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pyelftools-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pyelftools-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/pyelftools-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/pyelftools-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/pyelftools-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pyelftools-${MODPY_DISTV}.dist-info/top_level.txt
 share/examples/${MODPY_PY_PREFIX}elftools/
 share/examples/${MODPY_PY_PREFIX}elftools/dwarf_decode_address.py
 share/examples/${MODPY_PY_PREFIX}elftools/dwarf_die_tree.py

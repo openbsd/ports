@@ -1,9 +1,9 @@
 COMMENT=	McCabe complexity checker for Python
 
-MODPY_EGG_VERSION=	0.7.0
-DISTNAME=	mccabe-${MODPY_EGG_VERSION}
-PKGNAME=	py-mccabe-${MODPY_EGG_VERSION}
-REVISION=	0
+MODPY_DISTV=	0.7.0
+DISTNAME=	mccabe-${MODPY_DISTV}
+PKGNAME=	py-mccabe-${MODPY_DISTV}
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -16,12 +16,9 @@ MODULES=	lang/python
 
 # requires Hypothesmith (not ported)
 NO_TEST=	Yes
-#TEST_DEPENDS=	devel/py-hypothesis${MODPY_FLAVOR}
+#TEST_DEPENDS=	devel/py-hypothesis
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

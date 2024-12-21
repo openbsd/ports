@@ -1,5 +1,5 @@
+@pkgpath devel/py-cheetah,python3
 @conflict py-cheetah-<3.1.0p4
-@pkgpath devel/py-cheetah
 bin/cheetah
 bin/cheetah-analyze
 bin/cheetah-compile
@@ -210,9 +210,9 @@ lib/python${MODPY_VERSION}/site-packages/Cheetah/${MODPY_PYCACHE}convertTmplPath
 @so lib/python${MODPY_VERSION}/site-packages/Cheetah/_namemapper.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/Cheetah/compat.py
 lib/python${MODPY_VERSION}/site-packages/Cheetah/convertTmplPathToModuleName.py
-lib/python${MODPY_VERSION}/site-packages/Cheetah3-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/Cheetah3-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/Cheetah3-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/Cheetah3-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/Cheetah3-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/Cheetah3-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/Cheetah3-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/Cheetah3-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/Cheetah3-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/Cheetah3-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/Cheetah3-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/Cheetah3-${MODPY_DISTV}.dist-info/top_level.txt

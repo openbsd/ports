@@ -1,10 +1,10 @@
 COMMENT =		common utilities for Synapse, Sydent and Sygnal
 
-MODPY_EGG_VERSION =	1.3.0
+MODPY_DISTV =	1.3.0
 
-DISTNAME =		matrix_common-${MODPY_EGG_VERSION}
+DISTNAME =		matrix_common-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 
@@ -18,9 +18,6 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-attrs
 
 .include <bsd.port.mk>

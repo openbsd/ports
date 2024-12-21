@@ -1,9 +1,9 @@
 COMMENT =	binary plist parser/generator for Python
 
-MODPY_EGG_VERSION =	1.0.3
-DISTNAME =		biplist-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.0.3
+DISTNAME =		biplist-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		7
+REVISION =		8
 
 CATEGORIES =		devel
 
@@ -16,10 +16,7 @@ MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
 
-FLAVORS =		python3
-FLAVOR =	python3
-
-TEST_DEPENDS =		devel/py-nose${MODPY_FLAVOR} \
-			devel/py-coverage${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-nose \
+			devel/py-coverage
 
 .include <bsd.port.mk>

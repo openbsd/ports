@@ -1,9 +1,9 @@
 COMMENT =		fast, drop-in replacement for asyncio event loop
 
-MODPY_EGG_VERSION =	0.20.0
-REVISION =		0
-DISTNAME =		uvloop-${MODPY_EGG_VERSION}
-PKGNAME =		py-uvloop-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.20.0
+REVISION =		1
+DISTNAME =		uvloop-${MODPY_DISTV}
+PKGNAME =		py-uvloop-${MODPY_DISTV}
 
 CATEGORIES=		devel net
 
@@ -15,22 +15,19 @@ MAINTAINER =		Aisha Tammy <aisha@openbsd.org>
 MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODULES =		lang/python
 WANTLIB +=		pthread uv
 
 CFLAGS =		-I${LOCALBASE}/include
 LDFLAGS =		-L${LOCALBASE}/lib
 
-BUILD_DEPENDS =		lang/cython${MODPY_FLAVOR}
+BUILD_DEPENDS =		lang/cython
 
 LIB_DEPENDS =		devel/libuv
 
-TEST_DEPENDS =		security/py-openssl${MODPY_FLAVOR} \
-			sysutils/py-psutil${MODPY_FLAVOR} \
-			www/py-aiohttp${MODPY_FLAVOR}
+TEST_DEPENDS =		security/py-openssl \
+			sysutils/py-psutil \
+			www/py-aiohttp
 
 MODPY_PYTEST_ARGS =	--deselect "tests/test_dns.py::Test_UV_DNS::test_getaddrinfo_8" \
 			--deselect "tests/test_dns.py::Test_UV_DNS::test_getaddrinfo_9" \

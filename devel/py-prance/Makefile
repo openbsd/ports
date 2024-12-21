@@ -1,9 +1,10 @@
 COMMENT =		resolving Swagger/OpenAPI 2.0 and 3.0 parser
 
-MODPY_EGG_VERSION =	23.6.21.0
+MODPY_DISTV =	23.6.21.0
 
-DISTNAME =		prance-${MODPY_EGG_VERSION}
+DISTNAME =		prance-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -14,17 +15,14 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
 
-RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
-			sysutils/py-packaging${MODPY_FLAVOR} \
-			textproc/py-chardet${MODPY_FLAVOR} \
-			textproc/py-ruamel.yaml${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR} \
+RUN_DEPENDS =		devel/py-six \
+			sysutils/py-packaging \
+			textproc/py-chardet \
+			textproc/py-ruamel.yaml \
+			www/py-requests \
 
 # partial failure due to tests/OpenAPI-Specification missing from pypi artifact
 TEST_IS_INTERACTIVE =	need network access

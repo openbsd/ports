@@ -1,8 +1,8 @@
 COMMENT=		python mocking and patching library for testing
 
-MODPY_EGG_VERSION=	4.0.3
-REVISION=		3
-DISTNAME=		mock-${MODPY_EGG_VERSION}
+MODPY_DISTV=	4.0.3
+REVISION=		4
+DISTNAME=		mock-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
 
@@ -14,9 +14,6 @@ MAINTAINER=		Kurt Mosiejczuk <kmos@openbsd.org>
 PERMIT_PACKAGE=		Yes
 
 MODULES=		lang/python
-
-FLAVORS=		python3
-FLAVOR=			python3
 
 MODPY_PI=		Yes
 MODPY_PYBUILD=		setuptools

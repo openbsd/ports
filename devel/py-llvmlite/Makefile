@@ -2,13 +2,13 @@ BROKEN =	needs an update for LLVM 16. latest current upstream version (0.41.1) o
 
 COMMENT =	lightweight LLVM-Python binding for writing JIT compilers
 
-MODPY_EGG_VERSION =	0.39.1
+MODPY_DISTV =	0.39.1
 GH_ACCOUNT =	numba
 GH_PROJECT =	llvmlite
-GH_TAGNAME =	v${MODPY_EGG_VERSION}
+GH_TAGNAME =	v${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	devel
 
@@ -27,9 +27,6 @@ MODULES =	lang/python
 
 MODPY_PYBUILD =	setuptools
 MODPY_PYTEST_ARGS =	llvmlite/tests
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 MAKE_ENV +=	LLVM_CONFIG="/usr/bin/llvm-config" \
 		LDLIBS="`llvm-config --libs all`" \

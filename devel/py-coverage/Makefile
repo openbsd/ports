@@ -1,8 +1,9 @@
 COMMENT=	code coverage measurement for Python
 
-MODPY_EGG_VERSION=	7.6.8
-DISTNAME=	coverage-${MODPY_EGG_VERSION}
+MODPY_DISTV=	7.6.8
+DISTNAME=	coverage-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -19,13 +20,10 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-TEST_DEPENDS=	devel/py-flaky${MODPY_FLAVOR} \
-		devel/py-hypothesis${MODPY_FLAVOR} \
-		devel/py-test-xdist${MODPY_FLAVOR} \
-		textproc/py-pygments${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-flaky \
+		devel/py-hypothesis \
+		devel/py-test-xdist \
+		textproc/py-pygments
 
 # tests want a writable directory on the python path that already
 # contains a .pth file. creating this allows the dir to be considered

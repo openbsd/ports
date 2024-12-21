@@ -1,20 +1,20 @@
+@pkgpath devel/py-sip,python3
 @conflict py-qt5-<5.15.2
 @conflict ${MODPY_PY_PREFIX}sip-qt5-<=5.5.0p0
 @conflict py-sip-*
-@pkgpath devel/py-sip
 bin/sip-build
 bin/sip-distinfo
 bin/sip-install
 bin/sip-module
 bin/sip-sdist
 bin/sip-wheel
-lib/python${MODPY_VERSION}/site-packages/sip-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/sip-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/sip-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/sip-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/sip-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/sip-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/sip-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/sip-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/sip-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/sip-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/sip-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/sip-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/sip-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/sip-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/sipbuild/
 lib/python${MODPY_VERSION}/site-packages/sipbuild/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sipbuild/${MODPY_PYCACHE}/

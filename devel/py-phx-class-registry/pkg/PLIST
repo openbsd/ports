@@ -1,3 +1,4 @@
+@pkgpath devel/py-phx-class-registry,python3
 lib/python${MODPY_VERSION}/site-packages/class_registry/
 lib/python${MODPY_VERSION}/site-packages/class_registry/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/class_registry/${MODPY_PYCACHE}/
@@ -18,9 +19,9 @@ lib/python${MODPY_VERSION}/site-packages/class_registry/cache.py
 lib/python${MODPY_VERSION}/site-packages/class_registry/entry_points.py
 lib/python${MODPY_VERSION}/site-packages/class_registry/patcher.py
 lib/python${MODPY_VERSION}/site-packages/class_registry/registry.py
-lib/python${MODPY_VERSION}/site-packages/phx_class_registry-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/phx_class_registry-${MODPY_EGG_VERSION}.dist-info/LICENCE.txt
-lib/python${MODPY_VERSION}/site-packages/phx_class_registry-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/phx_class_registry-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/phx_class_registry-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/phx_class_registry-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/phx_class_registry-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/phx_class_registry-${MODPY_DISTV}.dist-info/LICENCE.txt
+lib/python${MODPY_VERSION}/site-packages/phx_class_registry-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/phx_class_registry-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/phx_class_registry-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/phx_class_registry-${MODPY_DISTV}.dist-info/top_level.txt

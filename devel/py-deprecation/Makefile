@@ -1,10 +1,10 @@
 COMMENT =		library to handle automated deprecations
 
-MODPY_EGG_VERSION =	2.1.0
+MODPY_DISTV =	2.1.0
 
-DISTNAME =		deprecation-${MODPY_EGG_VERSION}
+DISTNAME =		deprecation-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		devel
 
@@ -18,12 +18,9 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		sysutils/py-packaging${MODPY_FLAVOR}
+RUN_DEPENDS =		sysutils/py-packaging
 
 TEST_DEPENDS =		devel/flake8 \
-			devel/py-coverage${MODPY_FLAVOR}
-
-FLAVORS =	python3
-FLAVOR =	python3
+			devel/py-coverage
 
 .include <bsd.port.mk>

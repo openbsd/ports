@@ -1,9 +1,9 @@
 COMMENT=	get the currently executing AST node of a frame
 
-MODPY_EGG_VERSION=	2.0.1
-DISTNAME=	executing-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.0.1
+DISTNAME=	executing-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -17,10 +17,7 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-TEST_DEPENDS=	devel/py-asttokens${MODPY_FLAVOR} \
-		devel/py-littleutils${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-asttokens \
+		devel/py-littleutils
 
 .include <bsd.port.mk>

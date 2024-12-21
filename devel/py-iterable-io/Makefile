@@ -1,9 +1,9 @@
 COMMENT =	adapt generators and other iterable to a file-like interface
-MODPY_EGG_VERSION =	1.0.0
-DISTNAME =		iterable-io-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.0.0
+DISTNAME =		iterable-io-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		0
+REVISION =		1
 
 # LGPLv3
 PERMIT_PACKAGE =	Yes
@@ -13,8 +13,5 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-
-FLAVOR =		python3
-FLAVORS =		python3
 
 .include <bsd.port.mk>

@@ -1,13 +1,13 @@
 COMMENT=		RCS parsing library for Python
 
-MODPY_EGG_VERSION=	0.1
+MODPY_DISTV=	0.1
 GH_ACCOUNT=		corecode
 GH_PROJECT=		rcsparse
 GH_COMMIT=		206bca0b90f5780815c0b6c6cbccfd03f27f6985
 
 DISTNAME=		rcsparse-20151027
 PKGNAME=		py-${DISTNAME}
-REVISION=		6
+REVISION=		7
 
 CATEGORIES=		devel
 
@@ -17,8 +17,6 @@ PERMIT_PACKAGE=	Yes
 WANTLIB +=		${MODPY_WANTLIB} pthread
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
-FLAVORS=		python3
-FLAVOR=			python3
 
 MODULES=		lang/python
 MODPY_PYBUILD=		setuptools

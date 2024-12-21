@@ -1,11 +1,11 @@
-@pkgpath devel/py-filebytes
+@pkgpath devel/py-filebytes,python3
 lib/python${MODPY_VERSION}/site-packages/filebytes/
-lib/python${MODPY_VERSION}/site-packages/filebytes-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/filebytes-${MODPY_EGG_VERSION}.dist-info/COPYING
-lib/python${MODPY_VERSION}/site-packages/filebytes-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/filebytes-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/filebytes-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/filebytes-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/filebytes-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/filebytes-${MODPY_DISTV}.dist-info/COPYING
+lib/python${MODPY_VERSION}/site-packages/filebytes-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/filebytes-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/filebytes-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/filebytes-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/filebytes/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/filebytes/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/filebytes/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

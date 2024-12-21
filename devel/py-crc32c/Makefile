@@ -1,9 +1,10 @@
 COMMENT=	implemention of the crc32c algorithm in hardware
 
-MODPY_EGG_VERSION =	2.7.1
+MODPY_DISTV =	2.7.1
 
-DISTNAME=	crc32c-${MODPY_EGG_VERSION}
+DISTNAME=	crc32c-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -18,8 +19,5 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

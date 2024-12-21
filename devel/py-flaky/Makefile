@@ -1,8 +1,9 @@
 COMMENT=	nose/pytest plugin to automatically rerun flaky tests
 
-MODPY_EGG_VERSION= 3.8.1
-DISTNAME=	flaky-${MODPY_EGG_VERSION}
+MODPY_DISTV=	3.8.1
+DISTNAME=	flaky-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -15,8 +16,5 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

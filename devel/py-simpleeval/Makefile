@@ -1,8 +1,9 @@
 COMMENT =	simple, safe single expression evaluator library
 
-MODPY_EGG_VERSION = 1.0.2
-DISTNAME =	simpleeval-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.0.2
+DISTNAME =	simpleeval-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -15,8 +16,5 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		hatchling
 MODPY_PYTEST_ARGS =	test_simpleeval.py
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 .include <bsd.port.mk>

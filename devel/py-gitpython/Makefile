@@ -1,8 +1,9 @@
 COMMENT=	library used to interact with Git repositories
 
-MODPY_EGG_VERSION=	3.1.43
-DISTNAME=	GitPython-${MODPY_EGG_VERSION}
+MODPY_DISTV=	3.1.43
+DISTNAME=	GitPython-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -15,9 +16,6 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 NO_TEST=	Yes
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-RUN_DEPENDS=	devel/py-gitdb${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-gitdb
 
 .include <bsd.port.mk>

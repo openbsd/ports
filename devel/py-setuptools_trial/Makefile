@@ -1,9 +1,9 @@
 COMMENT=	setuptools plugin for unit tests with Twisted's trial
 
-MODPY_EGG_VERSION=	0.6.0
-DISTNAME=	setuptools_trial-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.6.0
+DISTNAME=	setuptools_trial-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	9
+REVISION=	10
 
 CATEGORIES=	devel
 
@@ -15,12 +15,9 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS =	devel/py-setuptools${MODPY_FLAVOR}
+RUN_DEPENDS =	devel/py-setuptools
 
 # lots of pytest modules
 NO_TEST=	Yes
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

@@ -1,9 +1,10 @@
 COMMENT=	distribution-building parts of Flit
 
-MODPY_EGG_VERSION=	3.10.1
+MODPY_DISTV=	3.10.1
 
-DISTNAME=	flit_core-${MODPY_EGG_VERSION}
+DISTNAME=	flit_core-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -16,9 +17,6 @@ PERMIT_PACKAGE= Yes
 MODULES=	lang/python
 MODPY_PI=	Yes
 
-FLAVOR=		python3
-FLAVORS=	python3
-
 MODPY_PYTEST=	Yes
 
 # This port must have minimal deps. In particular it cannot have
@@ -28,7 +26,7 @@ MODPY_PYTEST=	Yes
 #
 # Notes in  https://github.com/pypa/flit/blob/main/doc/bootstrap.rst
 
-TEST_DEPENDS=	devel/py-testpath${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-testpath
 
 do-build:
 	cd ${WRKSRC} && ${MODPY_BIN} -m flit_core.wheel

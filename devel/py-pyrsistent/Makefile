@@ -1,9 +1,10 @@
 COMMENT=	persistent/functional/immutable data structures
 
-MODPY_EGG_VERSION =	0.20.0
+MODPY_DISTV =	0.20.0
 
-DISTNAME=	pyrsistent-${MODPY_EGG_VERSION}
+DISTNAME=	pyrsistent-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -19,9 +20,6 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-TEST_DEPENDS =	devel/py-hypothesis${MODPY_FLAVOR} 
+TEST_DEPENDS =	devel/py-hypothesis 
 
 .include <bsd.port.mk>

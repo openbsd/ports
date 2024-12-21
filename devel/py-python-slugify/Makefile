@@ -1,8 +1,9 @@
 COMMENT =		utility to create slugs from unicode strings
 
-MODPY_EGG_VERSION =	8.0.4
-DISTNAME =		python-slugify-${MODPY_EGG_VERSION}
+MODPY_DISTV =	8.0.4
+DISTNAME =		python-slugify-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -11,12 +12,9 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		textproc/py-unidecode${MODPY_FLAVOR}
+RUN_DEPENDS =		textproc/py-unidecode
 
 .include <bsd.port.mk>

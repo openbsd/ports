@@ -1,8 +1,9 @@
 COMMENT=	formatter for Python code
 
-MODPY_EGG_VERSION=	0.43.0
-DISTNAME=	yapf-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.43.0
+DISTNAME=	yapf-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -11,12 +12,9 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 
-FLAVORS=	python3
-FLAVOR=		python3
-
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS=	sysutils/py-platformdirs${MODPY_FLAVOR}
+RUN_DEPENDS=	sysutils/py-platformdirs
 
 .include <bsd.port.mk>

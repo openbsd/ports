@@ -1,9 +1,10 @@
 COMMENT=	small personal collection of python utility functions
 
-MODPY_EGG_VERSION=	0.2.4
+MODPY_DISTV=	0.2.4
 
-DISTNAME=	littleutils-${MODPY_EGG_VERSION}
+DISTNAME=	littleutils-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -17,8 +18,5 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
 NO_TEST=	Yes
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

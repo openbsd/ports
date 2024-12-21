@@ -2,11 +2,11 @@ BROKEN =	needs updating for Python 3.11 or removing
 
 COMMENT =	library to instrument executable formats
 
-MODPY_EGG_VERSION =	0.11.5
+MODPY_DISTV =	0.11.5
 
-DISTNAME =	lief-${MODPY_EGG_VERSION}
+DISTNAME =	lief-${MODPY_DISTV}
 PKGNAME =	${MODPY_PY_PREFIX}${DISTNAME}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	devel
 
@@ -25,9 +25,6 @@ COMPILER =		base-clang ports-gcc
 WANTLIB += ${COMPILER_LIBCXX} m
 
 MODULES =		lang/python
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes

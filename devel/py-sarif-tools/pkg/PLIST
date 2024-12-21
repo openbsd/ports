@@ -1,3 +1,4 @@
+@pkgpath devel/py-sarif-tools,python3
 bin/sarif
 lib/python${MODPY_VERSION}/site-packages/sarif/
 lib/python${MODPY_VERSION}/site-packages/sarif/__init__.py
@@ -85,9 +86,9 @@ lib/python${MODPY_VERSION}/site-packages/sarif/operations/upgrade_filter_op.py
 lib/python${MODPY_VERSION}/site-packages/sarif/operations/word_op.py
 lib/python${MODPY_VERSION}/site-packages/sarif/sarif_file.py
 lib/python${MODPY_VERSION}/site-packages/sarif/sarif_file_utils.py
-lib/python${MODPY_VERSION}/site-packages/sarif_tools-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/sarif_tools-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/sarif_tools-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/sarif_tools-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/sarif_tools-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/sarif_tools-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/sarif_tools-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/sarif_tools-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/sarif_tools-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/sarif_tools-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/sarif_tools-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/sarif_tools-${MODPY_DISTV}.dist-info/entry_points.txt

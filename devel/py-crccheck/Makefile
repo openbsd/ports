@@ -1,9 +1,10 @@
 COMMENT=	calculation library for CRCs and checksums
 
-MODPY_EGG_VERSION=	1.3.0
+MODPY_DISTV=	1.3.0
 
-DISTNAME=	crccheck-${MODPY_EGG_VERSION}
+DISTNAME=	crccheck-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -16,9 +17,6 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 # not in pypi sdist
 NO_TEST=	Yes

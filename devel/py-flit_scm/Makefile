@@ -1,9 +1,9 @@
 COMMENT=	pep 518 build backend that uses setuptools_scm and flit_core
 
-MODPY_EGG_VERSION =	1.7.0
-DISTNAME =	flit_scm-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.7.0
+DISTNAME =	flit_scm-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	devel
 
@@ -12,16 +12,13 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 
-FLAVOR =	python3
-FLAVORS =	python3
-
 MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools_scm
 
-BUILD_DEPENDS =	devel/py-flit_core${MODPY_FLAVOR}
+BUILD_DEPENDS =	devel/py-flit_core
 
-RUN_DEPENDS =	devel/py-flit_core${MODPY_FLAVOR} \
-		devel/py-setuptools_scm${MODPY_FLAVOR}
+RUN_DEPENDS =	devel/py-flit_core \
+		devel/py-setuptools_scm
 
 NO_TEST =	Yes
 

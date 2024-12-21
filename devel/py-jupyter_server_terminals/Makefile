@@ -1,8 +1,9 @@
 COMMENT =		Jupyter server extension providing terminals
 
-MODPY_EGG_VERSION =	0.5.3
-DISTNAME =		jupyter_server_terminals-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.5.3
+DISTNAME =		jupyter_server_terminals-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -15,15 +16,12 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		hatchling
 
-RUN_DEPENDS =		www/py-terminado${MODPY_FLAVOR}
+RUN_DEPENDS =		www/py-terminado
 
-TEST_DEPENDS =		devel/py-test-jupyter${MODPY_FLAVOR} \
-			devel/py-test-timeout${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-test-jupyter \
+			devel/py-test-timeout
 
 .include <bsd.port.mk>

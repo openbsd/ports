@@ -1,9 +1,9 @@
 COMMENT=	extract elements from a JSON document
 
-MODPY_EGG_VERSION=	1.0.1
-DISTNAME=	jmespath-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.0.1
+DISTNAME=	jmespath-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -16,8 +16,5 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

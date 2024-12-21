@@ -1,8 +1,9 @@
 COMMENT=	headers for interoperability between C++ and Python
 
-MODPY_EGG_VERSION=	2.13.6
-DISTNAME=	pybind11-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.13.6
+DISTNAME=	pybind11-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -10,9 +11,6 @@ CATEGORIES=	devel
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools

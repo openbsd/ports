@@ -1,11 +1,12 @@
+@pkgpath devel/py-shellingham,python3
 lib/python${MODPY_VERSION}/site-packages/shellingham/
-lib/python${MODPY_VERSION}/site-packages/shellingham-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/shellingham-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/shellingham-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/shellingham-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/shellingham-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/shellingham-${MODPY_EGG_VERSION}.dist-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/shellingham-${MODPY_EGG_VERSION}.dist-info/zip-safe
+lib/python${MODPY_VERSION}/site-packages/shellingham-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/shellingham-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/shellingham-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/shellingham-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/shellingham-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/shellingham-${MODPY_DISTV}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/shellingham-${MODPY_DISTV}.dist-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/shellingham/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/shellingham/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/shellingham/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

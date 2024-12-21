@@ -1,8 +1,8 @@
 COMMENT =		run a subprocess in a pseudo terminal
 
-MODPY_EGG_VERSION =	0.7.0
-REVISION =		4
-DISTNAME =		ptyprocess-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.7.0
+REVISION =		5
+DISTNAME =		ptyprocess-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		devel
@@ -17,9 +17,6 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		flit_core
 MODPY_PYTEST =		Yes
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 xx-do-test:
 	cd ${WRKSRC} && ${MODPY_BIN} -m unittest discover

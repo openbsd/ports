@@ -1,10 +1,10 @@
 COMMENT =		Python lex/yacc
 
-MODPY_EGG_VERSION =	3.11
-DISTNAME =		ply-${MODPY_EGG_VERSION}
+MODPY_DISTV =	3.11
+DISTNAME =		ply-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		7
+REVISION =		8
 
 HOMEPAGE =		https://www.dabeaz.com/ply/
 
@@ -15,9 +15,6 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 do-test:
 	cd ${WRKSRC}/test && \

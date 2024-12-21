@@ -1,9 +1,10 @@
 COMMENT =		python lib to register and instantiate classes
 
-MODPY_EGG_VERSION =	4.1.0
-DISTNAME =		phx-class-registry-${MODPY_EGG_VERSION}
+MODPY_DISTV =	4.1.0
+DISTNAME =		phx-class-registry-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
+REVISION =		0
 
 # MIT
 PERMIT_PACKAGE = 	Yes
@@ -12,9 +13,6 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		devel/py-setuptools${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR =		python3
+RUN_DEPENDS =		devel/py-setuptools
 
 .include <bsd.port.mk>

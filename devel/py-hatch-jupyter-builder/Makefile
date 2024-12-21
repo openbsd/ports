@@ -1,8 +1,9 @@
 COMMENT =		hatch plugin for building Jupyter packages
 
-MODPY_EGG_VERSION =	0.9.1
-DISTNAME =		hatch_jupyter_builder-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.9.1
+DISTNAME =		hatch_jupyter_builder-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/g}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -13,14 +14,11 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		hatchling
 
-TEST_DEPENDS =		devel/py-test-cov${MODPY_FLAVOR} \
-			devel/py-test-mock${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-test-cov \
+			devel/py-test-mock
 
 PORTHOME =		${WRKDIR}
 

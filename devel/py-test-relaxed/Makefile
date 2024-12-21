@@ -1,8 +1,9 @@
 COMMENT=	relaxed test discovery/organization for pytest
 
-MODPY_EGG_VERSION=	2.0.2
-DISTNAME=	pytest-relaxed-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.0.2
+DISTNAME=	pytest-relaxed-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/py/py-/}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -17,11 +18,8 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 MODPY_PYTEST_ARGS= tests
 
-RUN_DEPENDS=	devel/py-decorator${MODPY_FLAVOR} \
-		devel/py-invoke${MODPY_FLAVOR} \
-		devel/py-test${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+RUN_DEPENDS=	devel/py-decorator \
+		devel/py-invoke \
+		devel/py-test
 
 .include <bsd.port.mk>

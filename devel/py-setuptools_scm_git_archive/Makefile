@@ -1,9 +1,9 @@
 COMMENT =	setuptools_scm plugin for git archives
 
-MODPY_EGG_VERSION =	1.4
-DISTNAME =	setuptools_scm_git_archive-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.4
+DISTNAME =	setuptools_scm_git_archive-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	devel
 
@@ -17,9 +17,6 @@ MODPY_PI =		Yes
 MODPY_PYTEST_ARGS =	tests.py
 MODPY_PYBUILD =		setuptools_scm
 
-RUN_DEPENDS =		devel/py-setuptools_scm${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR =		python3
+RUN_DEPENDS =		devel/py-setuptools_scm
 
 .include <bsd.port.mk>

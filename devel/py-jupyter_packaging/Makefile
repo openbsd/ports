@@ -1,9 +1,9 @@
 COMMENT =		Jupyter packaging utilities
 
-MODPY_EGG_VERSION =	0.12.3
-DISTNAME =		jupyter_packaging-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.12.3
+DISTNAME =		jupyter_packaging-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -16,25 +16,22 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		hatchling
 
-RUN_DEPENDS =		devel/py-deprecation${MODPY_FLAVOR} \
-			devel/py-setuptools${MODPY_FLAVOR} \
-			devel/py-wheel${MODPY_FLAVOR} \
-			sysutils/py-packaging${MODPY_FLAVOR} \
-			textproc/py-tomlkit${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-deprecation \
+			devel/py-setuptools \
+			devel/py-wheel \
+			sysutils/py-packaging \
+			textproc/py-tomlkit
 
 TEST_DEPENDS =		devel/pre-commit \
-			devel/py-build${MODPY_FLAVOR} \
-			devel/py-coverage${MODPY_FLAVOR} \
-			devel/py-pip${MODPY_FLAVOR} \
-			devel/py-test-cov${MODPY_FLAVOR} \
-			devel/py-test-mock${MODPY_FLAVOR} \
-			devel/py-test-timeout${MODPY_FLAVOR}
+			devel/py-build \
+			devel/py-coverage \
+			devel/py-pip \
+			devel/py-test-cov \
+			devel/py-test-mock \
+			devel/py-test-timeout
 
 PORTHOME =		${WRKDIR}
 

@@ -1,10 +1,10 @@
 COMMENT =	metapackage for testing machinery used by Astropy
 
-MODPY_EGG_VERSION =	0.10.0
+MODPY_DISTV =	0.10.0
 
-DISTNAME =	pytest-astropy-${MODPY_EGG_VERSION}
+DISTNAME =	pytest-astropy-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME:S/py//}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	devel
 
@@ -19,19 +19,16 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
 NO_TEST =		Yes
 
-FLAVOR =	python3
-FLAVORS =	python3
-
-RUN_DEPENDS =	devel/py-attrs${MODPY_FLAVOR} \
-		devel/py-hypothesis${MODPY_FLAVOR} \
-		devel/py-test${MODPY_FLAVOR} \
-		devel/py-test-arraydiff${MODPY_FLAVOR} \
-		devel/py-test-astropy-header${MODPY_FLAVOR} \
-		devel/py-test-cov${MODPY_FLAVOR} \
-		devel/py-test-doctestplus${MODPY_FLAVOR} \
-		devel/py-test-filter-subpackage${MODPY_FLAVOR} \
-		devel/py-test-mock${MODPY_FLAVOR} \
-		devel/py-test-openfiles${MODPY_FLAVOR} \
-		devel/py-test-remotedata${MODPY_FLAVOR}
+RUN_DEPENDS =	devel/py-attrs \
+		devel/py-hypothesis \
+		devel/py-test \
+		devel/py-test-arraydiff \
+		devel/py-test-astropy-header \
+		devel/py-test-cov \
+		devel/py-test-doctestplus \
+		devel/py-test-filter-subpackage \
+		devel/py-test-mock \
+		devel/py-test-openfiles \
+		devel/py-test-remotedata
 
 .include <bsd.port.mk>

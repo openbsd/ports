@@ -1,10 +1,10 @@
 COMMENT=	extensions to the standard "typing" module for mypy
 
-MODPY_EGG_VERSION=	1.0.0
+MODPY_DISTV=	1.0.0
 
-DISTNAME=	mypy_extensions-${MODPY_EGG_VERSION}
+DISTNAME=	mypy_extensions-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -18,8 +18,5 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 NO_TEST=	Yes
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

@@ -1,10 +1,10 @@
 COMMENT =		versioning library for Python projects
 
-MODPY_EGG_VERSION =	24.7.2
+MODPY_DISTV =	24.7.2
 
-DISTNAME =		incremental-${MODPY_EGG_VERSION}
+DISTNAME =		incremental-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -16,11 +16,8 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	build/lib/incremental/tests
 
-RUN_DEPENDS =		devel/py-setuptools${MODPY_FLAVOR}
-TEST_DEPENDS =		devel/py-click${MODPY_FLAVOR} \
-			devel/py-twisted${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR =		python3
+RUN_DEPENDS =		devel/py-setuptools
+TEST_DEPENDS =		devel/py-click \
+			devel/py-twisted
 
 .include <bsd.port.mk>

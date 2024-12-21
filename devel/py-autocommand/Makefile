@@ -1,9 +1,9 @@
 COMMENT=	autogenerate argparse parsers from function signatures
 
-MODPY_EGG_VERSION=	2.2.2
-DISTNAME=	autocommand-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.2.2
+DISTNAME=	autocommand-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	devel
 
@@ -16,8 +16,5 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

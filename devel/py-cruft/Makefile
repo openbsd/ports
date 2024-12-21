@@ -1,9 +1,9 @@
 COMMENT =		utility to create and maintain projects from templates
 
-MODPY_EGG_VERSION =	2.15.0
-DISTNAME =		cruft-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.15.0
+DISTNAME =		cruft-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -16,19 +16,16 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		poetry-core
 
 RUN_DEPENDS =		devel/git \
-			devel/py-click${MODPY_FLAVOR}>=7.1.2 \
-			devel/py-cookiecutter${MODPY_FLAVOR}>=1.7 \
-			devel/py-gitpython${MODPY_FLAVOR}>=3 \
-			devel/py-poetry-core${MODPY_FLAVOR} \
-			devel/py-typer${MODPY_FLAVOR} \
-			textproc/py-toml${MODPY_FLAVOR}>=0.10
+			devel/py-click>=7.1.2 \
+			devel/py-cookiecutter>=1.7 \
+			devel/py-gitpython>=3 \
+			devel/py-poetry-core \
+			devel/py-typer \
+			textproc/py-toml>=0.10
 
 NO_TEST =		Yes
 

@@ -1,9 +1,10 @@
 COMMENT=	discovery-based unittest extension
 
-MODPY_EGG_VERSION=	1.5.3
-DISTNAME=	pynose-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.5.3
+DISTNAME=	pynose-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/py/py-/}
 CATEGORIES=	devel
+REVISION=	0
 
 #HOMEPAGE=	https://nose.readthedocs.io/en/latest/
 
@@ -13,9 +14,6 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 NO_TEST=	Yes
 

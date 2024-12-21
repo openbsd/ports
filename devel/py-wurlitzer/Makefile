@@ -1,8 +1,9 @@
 COMMENT=	capture c-level output in context managers
 
-MODPY_EGG_VERSION =	3.1.1
-DISTNAME=	wurlitzer-${MODPY_EGG_VERSION}
+MODPY_DISTV =	3.1.1
+DISTNAME=	wurlitzer-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -17,9 +18,6 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 MODPY_PYTEST_ARGS=	test.py
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-TEST_DEPENDS=	devel/py-cffi${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-cffi
 
 .include <bsd.port.mk>

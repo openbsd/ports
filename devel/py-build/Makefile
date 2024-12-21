@@ -1,9 +1,10 @@
 COMMENT=	simple, correct PEP 517 build frontend
 
-MODPY_EGG_VERSION=	1.2.2.post1
+MODPY_DISTV=	1.2.2.post1
 
-DISTNAME=	build-${MODPY_EGG_VERSION}
+DISTNAME=	build-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -18,16 +19,13 @@ MODPY_PI=	Yes
 # contains tests, but not clear how to run
 NO_TEST=	Yes
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-BUILD_DEPENDS=	devel/py-installer${MODPY_FLAVOR} \
-		devel/py-flit_core${MODPY_FLAVOR} \
-		devel/py-wheel${MODPY_FLAVOR} \
+BUILD_DEPENDS=	devel/py-installer \
+		devel/py-flit_core \
+		devel/py-wheel \
 		${RUN_DEPENDS}
 
-RUN_DEPENDS=	devel/py-pyproject_hooks${MODPY_FLAVOR} \
-		sysutils/py-packaging${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-pyproject_hooks \
+		sysutils/py-packaging
 
 # point to the copy of py-build in WRKSRC for a self-hosting build
 # replicate most of MODPY_PYBUILD steps because we can't use it directly

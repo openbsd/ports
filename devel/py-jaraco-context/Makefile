@@ -1,9 +1,9 @@
 COMMENT=	catch certain exceptions and provide an indication
 
-MODPY_EGG_VERSION=	4.1.2
-DISTNAME=	jaraco.context-${MODPY_EGG_VERSION}
+MODPY_DISTV=	4.1.2
+DISTNAME=	jaraco.context-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -17,8 +17,5 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

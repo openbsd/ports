@@ -1,9 +1,10 @@
 COMMENT =		small python library for interactive selection list
 
-MODPY_EGG_VERSION =	2.4.0
+MODPY_DISTV =	2.4.0
 
-DISTNAME =		pick-${MODPY_EGG_VERSION}
+DISTNAME =		pick-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES =		devel
 
@@ -11,9 +12,6 @@ HOMEPAGE =		https://github.com/wong2/pick
 
 # MIT
 PERMIT_PACKAGE =	Yes
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 MODULES =		lang/python
 

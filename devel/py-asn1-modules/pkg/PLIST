@@ -1,5 +1,5 @@
+@pkgpath devel/py-asn1-modules,python3
 @conflict py-asn1-modules-*
-@pkgpath devel/py-asn1-modules
 bin/cmcdump.py
 bin/cmpdump.py
 bin/crldump.py
@@ -15,13 +15,13 @@ bin/snmpget.py
 bin/x509dump-rfc5280.py
 bin/x509dump.py
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/
-lib/python${MODPY_VERSION}/site-packages/pyasn1_modules-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pyasn1_modules-${MODPY_EGG_VERSION}.dist-info/LICENSE.txt
-lib/python${MODPY_VERSION}/site-packages/pyasn1_modules-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/pyasn1_modules-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/pyasn1_modules-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/pyasn1_modules-${MODPY_EGG_VERSION}.dist-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/pyasn1_modules-${MODPY_EGG_VERSION}.dist-info/zip-safe
+lib/python${MODPY_VERSION}/site-packages/pyasn1_modules-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pyasn1_modules-${MODPY_DISTV}.dist-info/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/pyasn1_modules-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/pyasn1_modules-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/pyasn1_modules-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pyasn1_modules-${MODPY_DISTV}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pyasn1_modules-${MODPY_DISTV}.dist-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pyasn1_modules/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

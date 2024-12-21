@@ -1,9 +1,9 @@
 COMMENT =		Python module to retry code until it succeeds
 
-MODPY_EGG_VERSION =	8.0.1
-DISTNAME =		tenacity-${MODPY_EGG_VERSION}
+MODPY_DISTV =	8.0.1
+DISTNAME =		tenacity-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 MAINTAINER =		Mikolaj Kucharski <mikolaj@kucharski.name>
 
@@ -19,9 +19,6 @@ MODPY_PYBUILD =		setuptools_scm
 MODPY_PI =		Yes
 
 # one test fails if typeguard is missing (currently not in ports)
-TEST_DEPENDS =		www/py-tornado${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR =		python3
+TEST_DEPENDS =		www/py-tornado
 
 .include <bsd.port.mk>

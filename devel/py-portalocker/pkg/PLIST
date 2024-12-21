@@ -1,10 +1,11 @@
+@pkgpath devel/py-portalocker,python3
 lib/python${MODPY_VERSION}/site-packages/portalocker/
-lib/python${MODPY_VERSION}/site-packages/portalocker-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/portalocker-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/portalocker-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/portalocker-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/portalocker-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/portalocker-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/portalocker-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/portalocker-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/portalocker-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/portalocker-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/portalocker-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/portalocker-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/portalocker/__about__.py
 lib/python${MODPY_VERSION}/site-packages/portalocker/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/portalocker/${MODPY_PYCACHE}/

@@ -1,9 +1,9 @@
 COMMENT=	use git repo data to build a version number
 
 # zigpy wants <2
-MODPY_EGG_VERSION=	1.13.6
-REVISION=	0
-DISTNAME=	setuptools-git-versioning-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.13.6
+REVISION=	1
+DISTNAME=	setuptools-git-versioning-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
 CATEGORIES=	devel
@@ -19,11 +19,8 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS=	devel/py-setuptools${MODPY_FLAVOR} \
-		sysutils/py-packaging${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+RUN_DEPENDS=	devel/py-setuptools \
+		sysutils/py-packaging
 
 # not in sdist
 NO_TEST=	Yes

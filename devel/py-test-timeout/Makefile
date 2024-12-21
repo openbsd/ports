@@ -1,10 +1,10 @@
 COMMENT =		pytest plugin to abort hanging tests
 
-MODPY_EGG_VERSION =	1.4.2
+MODPY_DISTV =	1.4.2
 
-DISTNAME =		pytest-timeout-${MODPY_EGG_VERSION}
+DISTNAME =		pytest-timeout-${MODPY_DISTV}
 PKGNAME =		${DISTNAME:S/py/py-/}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		devel
 
@@ -20,13 +20,10 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		devel/py-test${MODPY_FLAVOR}
-TEST_DEPENDS =		devel/py-pexpect${MODPY_FLAVOR} \
-			devel/py-test-cov${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-test
+TEST_DEPENDS =		devel/py-pexpect \
+			devel/py-test-cov
 
 TEST_ENV +=		PYTHONPATH="."
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 .include <bsd.port.mk>

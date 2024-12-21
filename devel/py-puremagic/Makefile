@@ -1,9 +1,10 @@
 COMMENT=	pure Python implementation of magic file detection
 
-MODPY_EGG_VERSION=	1.28
+MODPY_DISTV=	1.28
 
-DISTNAME=	puremagic-${MODPY_EGG_VERSION}
+DISTNAME=	puremagic-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -16,8 +17,5 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

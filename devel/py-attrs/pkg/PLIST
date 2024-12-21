@@ -1,4 +1,4 @@
-@pkgpath devel/py-attrs
+@pkgpath devel/py-attrs,python3
 lib/python${MODPY_VERSION}/site-packages/attr/
 lib/python${MODPY_VERSION}/site-packages/attr/__init__.py
 lib/python${MODPY_VERSION}/site-packages/attr/__init__.pyi
@@ -51,12 +51,12 @@ lib/python${MODPY_VERSION}/site-packages/attr/setters.pyi
 lib/python${MODPY_VERSION}/site-packages/attr/validators.py
 lib/python${MODPY_VERSION}/site-packages/attr/validators.pyi
 lib/python${MODPY_VERSION}/site-packages/attrs/
-lib/python${MODPY_VERSION}/site-packages/attrs-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/attrs-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/attrs-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/attrs-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/attrs-${MODPY_EGG_VERSION}.dist-info/licenses/
-lib/python${MODPY_VERSION}/site-packages/attrs-${MODPY_EGG_VERSION}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/attrs-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/attrs-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/attrs-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/attrs-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/attrs-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/attrs-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/attrs/__init__.py
 lib/python${MODPY_VERSION}/site-packages/attrs/__init__.pyi
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/attrs/${MODPY_PYCACHE}/

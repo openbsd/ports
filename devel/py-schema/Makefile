@@ -1,8 +1,9 @@
 COMMENT=		simple data validation library
 
-MODPY_EGG_VERSION=	0.7.7
-DISTNAME=		schema-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.7.7
+DISTNAME=		schema-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		devel
 
@@ -16,9 +17,6 @@ MODULES=		lang/python
 MODPY_PI=		Yes
 MODPY_PYBUILD=		setuptools
 
-FLAVORS=		python3
-FLAVOR=			python3
-
-TEST_DEPENDS=		devel/py-mock${MODPY_FLAVOR}
+TEST_DEPENDS=		devel/py-mock
 
 .include <bsd.port.mk>

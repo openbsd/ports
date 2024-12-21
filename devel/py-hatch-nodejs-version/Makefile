@@ -1,9 +1,9 @@
 COMMENT =	hatch plugin for versioning from a package.json file
 
-MODPY_EGG_VERSION =	0.3.2
-DISTNAME =		hatch_nodejs_version-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.3.2
+DISTNAME =		hatch_nodejs_version-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -17,8 +17,5 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		hatchling
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 .include <bsd.port.mk>

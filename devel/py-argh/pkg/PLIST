@@ -1,11 +1,11 @@
-@pkgpath devel/py-argh
+@pkgpath devel/py-argh,python3
 lib/python${MODPY_VERSION}/site-packages/argh/
-lib/python${MODPY_VERSION}/site-packages/argh-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/argh-${MODPY_EGG_VERSION}.dist-info/COPYING
-lib/python${MODPY_VERSION}/site-packages/argh-${MODPY_EGG_VERSION}.dist-info/COPYING.LESSER
-lib/python${MODPY_VERSION}/site-packages/argh-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/argh-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/argh-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/argh-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/argh-${MODPY_DISTV}.dist-info/COPYING
+lib/python${MODPY_VERSION}/site-packages/argh-${MODPY_DISTV}.dist-info/COPYING.LESSER
+lib/python${MODPY_VERSION}/site-packages/argh-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/argh-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/argh-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/argh/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/argh/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/argh/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

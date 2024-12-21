@@ -1,10 +1,11 @@
+@pkgpath devel/py-pure_eval,python3
 lib/python${MODPY_VERSION}/site-packages/pure_eval/
-lib/python${MODPY_VERSION}/site-packages/pure_eval-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pure_eval-${MODPY_EGG_VERSION}.dist-info/LICENSE.txt
-lib/python${MODPY_VERSION}/site-packages/pure_eval-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/pure_eval-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/pure_eval-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/pure_eval-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pure_eval-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pure_eval-${MODPY_DISTV}.dist-info/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/pure_eval-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/pure_eval-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/pure_eval-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pure_eval-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pure_eval/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pure_eval/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pure_eval/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

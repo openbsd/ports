@@ -1,8 +1,9 @@
 COMMENT=	obtain class names of an object and its parent classes
 
-MODPY_EGG_VERSION=	3.4.0
-DISTNAME=	jaraco.classes-${MODPY_EGG_VERSION}
+MODPY_DISTV=	3.4.0
+DISTNAME=	jaraco.classes-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -16,8 +17,5 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

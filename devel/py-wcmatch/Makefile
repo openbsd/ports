@@ -1,8 +1,9 @@
 COMMENT=	file matching and globbing library
 
-MODPY_EGG_VERSION=	10.0
-DISTNAME=	wcmatch-${MODPY_EGG_VERSION}
-PKGNAME=	py-wcmatch-${MODPY_EGG_VERSION}
+MODPY_DISTV=	10.0
+DISTNAME=	wcmatch-${MODPY_DISTV}
+PKGNAME=	py-wcmatch-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	devel textproc
 
@@ -13,12 +14,9 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 
-FLAVORS=	python3
-FLAVOR=		python3
-
 MODPY_PYBUILD=	hatchling
 
-RUN_DEPENDS=	textproc/py-bracex${MODPY_FLAVOR}
+RUN_DEPENDS=	textproc/py-bracex
 
 # needed for tests (and one fails anyway, probably due to ~user expansion)
 PORTHOME=	${WRKDIR}

@@ -1,4 +1,4 @@
-@pkgpath devel/py-parallel
+@pkgpath devel/py-parallel,python3
 lib/python${MODPY_VERSION}/site-packages/parallel/
 lib/python${MODPY_VERSION}/site-packages/parallel/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/parallel/${MODPY_PYCACHE}/

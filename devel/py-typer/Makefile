@@ -1,8 +1,9 @@
 COMMENT =		library for building CLI applications
 
-MODPY_EGG_VERSION =	0.15.1
-DISTNAME =		typer-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.15.1
+DISTNAME =		typer-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -15,18 +16,15 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		pdm
 
-RUN_DEPENDS =		devel/py-click${MODPY_FLAVOR}>=8.0.0 \
-			devel/py-typing-extensions${MODPY_FLAVOR}>=3.7.4.3
+RUN_DEPENDS =		devel/py-click>=8.0.0 \
+			devel/py-typing-extensions>=3.7.4.3
 
-TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR}>=6.2 \
-			devel/py-rich${MODPY_FLAVOR}>=10.11.0 \
-			devel/py-shellingham${MODPY_FLAVOR}>=1.3.0 \
+TEST_DEPENDS =		devel/py-coverage>=6.2 \
+			devel/py-rich>=10.11.0 \
+			devel/py-shellingham>=1.3.0 \
 			shells/bash \
 			shells/fish \
 			shells/zsh

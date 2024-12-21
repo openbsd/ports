@@ -1,11 +1,11 @@
-@pkgpath devel/py-gitpython
-lib/python${MODPY_VERSION}/site-packages/GitPython-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/GitPython-${MODPY_EGG_VERSION}.dist-info/AUTHORS
-lib/python${MODPY_VERSION}/site-packages/GitPython-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/GitPython-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/GitPython-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/GitPython-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/GitPython-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+@pkgpath devel/py-gitpython,python3
+lib/python${MODPY_VERSION}/site-packages/GitPython-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/GitPython-${MODPY_DISTV}.dist-info/AUTHORS
+lib/python${MODPY_VERSION}/site-packages/GitPython-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/GitPython-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/GitPython-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/GitPython-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/GitPython-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/git/
 lib/python${MODPY_VERSION}/site-packages/git/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/git/${MODPY_PYCACHE}/

@@ -1,9 +1,9 @@
 COMMENT=	config file reader and writer
 
-MODPY_EGG_VERSION =	5.0.8
-DISTNAME=	configobj-${MODPY_EGG_VERSION}
+MODPY_DISTV =	5.0.8
+DISTNAME=	configobj-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -17,9 +17,6 @@ MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 NO_TEST=	Yes
 
-RUN_DEPENDS=	devel/py-six${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+RUN_DEPENDS=	devel/py-six
 
 .include <bsd.port.mk>

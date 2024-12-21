@@ -1,10 +1,10 @@
 COMMENT =		simple generic functions
 
-MODPY_EGG_VERSION =	0.8.1
-DISTNAME =		simplegeneric-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.8.1
+DISTNAME =		simplegeneric-${MODPY_DISTV}
 EXTRACT_SUFX =		.zip
 PKGNAME =		py-${DISTNAME}
-REVISION =		11
+REVISION =		12
 
 CATEGORIES =		devel
 
@@ -17,8 +17,5 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-
-FLAVORS =		python3
-FLAVOR =	python3
 
 .include <bsd.port.mk>

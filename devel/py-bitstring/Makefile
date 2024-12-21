@@ -1,8 +1,9 @@
 COMMENT=	construction, analysis and modification of binary data
 
-MODPY_EGG_VERSION=	4.2.3
-DISTNAME=	bitstring-${MODPY_EGG_VERSION}
+MODPY_DISTV=	4.2.3
+DISTNAME=	bitstring-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -16,12 +17,9 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-RUN_DEPENDS=	devel/py-bitarray${MODPY_FLAVOR}<3
-TEST_DEPENDS=	devel/py-hypothesis${MODPY_FLAVOR} \
-		devel/py-test-benchmark${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-bitarray<3
+TEST_DEPENDS=	devel/py-hypothesis \
+		devel/py-test-benchmark
 
 # require gfloat
 MODPY_PYTEST_ARGS= --ignore tests/test_fp8.py \

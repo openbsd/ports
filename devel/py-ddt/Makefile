@@ -1,9 +1,9 @@
 COMMENT =		multiply test cases
 
-MODPY_EGG_VERSION =	1.6.0
-DISTNAME =		ddt-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.6.0
+DISTNAME =		ddt-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -11,8 +11,6 @@ CATEGORIES =		devel
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-FLAVOR =		python3
-FLAVORS =		python3
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools

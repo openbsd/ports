@@ -1,8 +1,8 @@
 COMMENT =		network library for easy and scalable concurrency
 
-MODPY_EGG_VERSION =	24.11.1
-REVISION =		0
-DISTNAME =		gevent-${MODPY_EGG_VERSION}
+MODPY_DISTV =	24.11.1
+REVISION =		1
+DISTNAME =		gevent-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		devel
@@ -16,23 +16,20 @@ COMPILER_LANGS =	c
 
 WANTLIB += ${MODPY_WANTLIB} cares ev pthread uv
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
 BUILD_DEPENDS =		devel/libev:configure \
-			devel/py-cffi${MODPY_FLAVOR} \
-			devel/py-greenlet${MODPY_FLAVOR} \
-			lang/cython${MODPY_FLAVOR}
+			devel/py-cffi \
+			devel/py-greenlet \
+			lang/cython
 LIB_DEPENDS =		devel/libev \
 			devel/libuv \
 			net/libcares
-RUN_DEPENDS =		devel/py-greenlet${MODPY_FLAVOR} \
-			devel/py-zopeevent${MODPY_FLAVOR} \
-			devel/py-zopeinterface${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-greenlet \
+			devel/py-zopeevent \
+			devel/py-zopeinterface
 
 MAKE_ENV =		GEVENTSETUP_EMBED_CARES=0 \
 			GEVENTSETUP_EMBED_LIBEV=0 \
@@ -48,12 +45,12 @@ post-install:
 
 # depends on self for now, but upstream intends to pass PYTHONPATH
 # to subproc's in the future which should obviate the need for this
-TEST_DEPENDS =		${BASE_PKGPATH}=${MODPY_EGG_VERSION} \
-			devel/py-coverage${MODPY_FLAVOR} \
-			devel/py-coveralls${MODPY_FLAVOR} \
-			devel/py-objgraph${MODPY_FLAVOR} \
-			sysutils/py-psutil${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR}
+TEST_DEPENDS =		${BASE_PKGPATH}=${MODPY_DISTV} \
+			devel/py-coverage \
+			devel/py-coveralls \
+			devel/py-objgraph \
+			sysutils/py-psutil \
+			www/py-requests
 
 do-test:
 	sed -i 's,^HAVE_SOCKET_UDPLITE = has.*,HAVE_SOCKET_UDPLITE = false,' \

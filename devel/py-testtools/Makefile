@@ -1,10 +1,10 @@
 COMMENT=	extensions to the Python unit testing framework
 
-MODPY_EGG_VERSION= 1.8.1
-DISTNAME=	testtools-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.8.1
+DISTNAME=	testtools-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	9
+REVISION=	10
 
 # MIT
 PERMIT_PACKAGE=	Yes
@@ -12,11 +12,8 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD =	setuptools
-BUILD_DEPENDS=	devel/py-pbr${MODPY_FLAVOR}
-RUN_DEPENDS=	devel/py-extras${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+BUILD_DEPENDS=	devel/py-pbr
+RUN_DEPENDS=	devel/py-extras
 
 # needs traceback2, python-mimeparse, newer unittest2
 NO_TEST=	Yes

@@ -1,13 +1,13 @@
+@pkgpath devel/py-jedi,python3
 @conflict py-jedi-*
-@pkgpath devel/py-jedi
 lib/python${MODPY_VERSION}/site-packages/jedi/
-lib/python${MODPY_VERSION}/site-packages/jedi-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/jedi-${MODPY_EGG_VERSION}.dist-info/AUTHORS.txt
-lib/python${MODPY_VERSION}/site-packages/jedi-${MODPY_EGG_VERSION}.dist-info/LICENSE.txt
-lib/python${MODPY_VERSION}/site-packages/jedi-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/jedi-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/jedi-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/jedi-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/jedi-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/jedi-${MODPY_DISTV}.dist-info/AUTHORS.txt
+lib/python${MODPY_VERSION}/site-packages/jedi-${MODPY_DISTV}.dist-info/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/jedi-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/jedi-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/jedi-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/jedi-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/jedi/__init__.py
 lib/python${MODPY_VERSION}/site-packages/jedi/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jedi/${MODPY_PYCACHE}/

@@ -1,10 +1,10 @@
 COMMENT=	short wrapper around PHP's timelib module
 
-MODPY_EGG_VERSION=	0.3.0
+MODPY_DISTV=	0.3.0
 
-DISTNAME=	timelib-${MODPY_EGG_VERSION}
+DISTNAME=	timelib-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://github.com/pediapress/timelib/
 
@@ -18,12 +18,9 @@ WANTLIB=	m
 
 MODULES=	lang/python
 
-FLAVORS=	python3
-FLAVOR=		python3
-
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-BUILD_DEPENDS=	lang/cython${MODPY_FLAVOR}
+BUILD_DEPENDS=	lang/cython
 
 .include <bsd.port.mk>

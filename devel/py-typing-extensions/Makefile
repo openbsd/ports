@@ -1,8 +1,9 @@
 COMMENT =		backported type hints for python >= 3.5
 
-MODPY_EGG_VERSION =	4.12.2
-DISTNAME =		typing_extensions-${MODPY_EGG_VERSION}
+MODPY_DISTV =	4.12.2
+DISTNAME =		typing_extensions-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 HOMEPAGE =		https://github.com/python/typing_extensions/
 
@@ -14,9 +15,6 @@ MAINTAINER =		Renaud Allard <renaud@allard.it>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		flit_core

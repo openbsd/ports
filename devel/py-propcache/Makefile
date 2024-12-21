@@ -1,8 +1,9 @@
 COMMENT=	fast implementation of cached properties
 
-MODPY_EGG_VERSION=	0.2.0
-DISTNAME=	propcache-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.2.0
+DISTNAME=	propcache-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -16,15 +17,12 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-BUILD_DEPENDS=	sysutils/py-expandvars${MODPY_FLAVOR} \
-		lang/cython${MODPY_FLAVOR}
+BUILD_DEPENDS=	sysutils/py-expandvars \
+		lang/cython
 
 # tests of C extension are failing (can't find propcache._helpers_c module)
-TEST_DEPENDS=	devel/py-covdefaults${MODPY_FLAVOR} \
-		devel/py-test-cov${MODPY_FLAVOR} \
-		devel/py-test-xdist${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+TEST_DEPENDS=	devel/py-covdefaults \
+		devel/py-test-cov \
+		devel/py-test-xdist
 
 .include <bsd.port.mk>

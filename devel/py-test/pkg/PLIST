@@ -1,3 +1,4 @@
+@pkgpath devel/py-test,python3
 @conflict py-test-<4.4.0p2
 bin/py.test
 @comment bin/pytest
@@ -225,14 +226,14 @@ lib/python${MODPY_VERSION}/site-packages/_pytest/warning_types.py
 lib/python${MODPY_VERSION}/site-packages/_pytest/warnings.py
 lib/python${MODPY_VERSION}/site-packages/py.py
 lib/python${MODPY_VERSION}/site-packages/pytest/
-lib/python${MODPY_VERSION}/site-packages/pytest-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pytest-${MODPY_EGG_VERSION}.dist-info/AUTHORS
-lib/python${MODPY_VERSION}/site-packages/pytest-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/pytest-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/pytest-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/pytest-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/pytest-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/pytest-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pytest-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pytest-${MODPY_DISTV}.dist-info/AUTHORS
+lib/python${MODPY_VERSION}/site-packages/pytest-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/pytest-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/pytest-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/pytest-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pytest-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/pytest-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pytest/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pytest/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pytest/${MODPY_PYCACHE}/

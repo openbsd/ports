@@ -1,9 +1,9 @@
 COMMENT =		extends Python Rich library functionality
 
-MODPY_EGG_VERSION =	1.2.7
-DISTNAME =		enrich-${MODPY_EGG_VERSION}
-PKGNAME =		py-enrich-${MODPY_EGG_VERSION}
-REVISION =		2
+MODPY_DISTV =	1.2.7
+DISTNAME =		enrich-${MODPY_DISTV}
+PKGNAME =		py-enrich-${MODPY_DISTV}
+REVISION =		3
 
 CATEGORIES =		devel
 
@@ -14,13 +14,10 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PYBUILD =		setuptools_scm
 
-BUILD_DEPENDS =		devel/py-setuptools_scm_git_archive${MODPY_FLAVOR}
-RUN_DEPENDS =		devel/py-rich${MODPY_FLAVOR}
-TEST_DEPENDS =		devel/py-test-mock${MODPY_FLAVOR}
+BUILD_DEPENDS =		devel/py-setuptools_scm_git_archive
+RUN_DEPENDS =		devel/py-rich
+TEST_DEPENDS =		devel/py-test-mock
 
 .include <bsd.port.mk>

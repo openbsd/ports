@@ -1,11 +1,12 @@
+@pkgpath devel/py-openapi-spec-validator,python3
 bin/openapi-spec-validator
 lib/python${MODPY_VERSION}/site-packages/openapi_spec_validator/
-lib/python${MODPY_VERSION}/site-packages/openapi_spec_validator-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/openapi_spec_validator-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/openapi_spec_validator-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/openapi_spec_validator-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/openapi_spec_validator-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/openapi_spec_validator-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/openapi_spec_validator-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/openapi_spec_validator-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/openapi_spec_validator-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/openapi_spec_validator-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/openapi_spec_validator-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/openapi_spec_validator-${MODPY_DISTV}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/openapi_spec_validator/__init__.py
 lib/python${MODPY_VERSION}/site-packages/openapi_spec_validator/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/openapi_spec_validator/${MODPY_PYCACHE}/

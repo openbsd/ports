@@ -1,8 +1,9 @@
 COMMENT =		implementation of JSON Reference for Python
 
-MODPY_EGG_VERSION =	1.1.0
-DISTNAME =		jsonref-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.1.0
+DISTNAME =		jsonref-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -14,8 +15,5 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		pdm
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 .include <bsd.port.mk>

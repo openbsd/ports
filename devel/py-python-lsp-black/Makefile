@@ -1,9 +1,9 @@
 COMMENT =		black plugin for the Python Language Server
 
-MODPY_EGG_VERSION =	2.0.0
-DISTNAME =		python-lsp-black-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.0.0
+DISTNAME =		python-lsp-black-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 
@@ -14,14 +14,11 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		devel/py-python-lsp-server${MODPY_FLAVOR}>=1.4.0 \
-			textproc/py-black${MODPY_FLAVOR}>=23.11.0
+RUN_DEPENDS =		devel/py-python-lsp-server>=1.4.0 \
+			textproc/py-black>=23.11.0
 
 NO_TEST =		Yes
 

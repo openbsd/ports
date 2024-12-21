@@ -1,12 +1,13 @@
+@pkgpath devel/py-hatchling,python3
 bin/hatchling
 lib/python${MODPY_VERSION}/site-packages/hatchling/
-lib/python${MODPY_VERSION}/site-packages/hatchling-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/hatchling-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/hatchling-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/hatchling-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/hatchling-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/hatchling-${MODPY_EGG_VERSION}.dist-info/licenses/
-lib/python${MODPY_VERSION}/site-packages/hatchling-${MODPY_EGG_VERSION}.dist-info/licenses/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/hatchling-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/hatchling-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/hatchling-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/hatchling-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/hatchling-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/hatchling-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/hatchling-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/hatchling/__about__.py
 lib/python${MODPY_VERSION}/site-packages/hatchling/__init__.py
 lib/python${MODPY_VERSION}/site-packages/hatchling/__main__.py

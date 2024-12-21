@@ -1,9 +1,9 @@
 COMMENT=	infer file type and MIME type
 
-MODPY_EGG_VERSION=	1.2.0
-DISTNAME=	filetype-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.2.0
+DISTNAME=	filetype-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -18,9 +18,6 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
 TEST_DEPENDS=	devel/flake8 \
-		devel/py-test-benchmark${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+		devel/py-test-benchmark
 
 .include <bsd.port.mk>

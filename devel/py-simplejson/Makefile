@@ -1,8 +1,8 @@
 COMMENT=	JSON encoder/decoder
 
-MODPY_EGG_VERSION =	3.19.3
-REVISION=	0
-DISTNAME=	simplejson-${MODPY_EGG_VERSION}
+MODPY_DISTV =	3.19.3
+REVISION=	1
+DISTNAME=	simplejson-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
 CATEGORIES=	devel
@@ -16,8 +16,5 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

@@ -1,9 +1,10 @@
 COMMENT=	Python library for building powerful interactive CLI
 
 # check ipython requirements; as of 2024/06, wants <3.1
-MODPY_EGG_VERSION=	3.0.47
-DISTNAME=	prompt_toolkit-${MODPY_EGG_VERSION}
+MODPY_DISTV=	3.0.47
+DISTNAME=	prompt_toolkit-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 EPOCH=		1
 
@@ -19,10 +20,7 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 PORTHOME=	${WRKDIR}
 
-RUN_DEPENDS=	devel/py-wcwidth${MODPY_FLAVOR} \
-		textproc/py-pygments${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+RUN_DEPENDS=	devel/py-wcwidth \
+		textproc/py-pygments
 
 .include <bsd.port.mk>

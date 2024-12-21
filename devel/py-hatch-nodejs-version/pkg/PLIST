@@ -1,11 +1,12 @@
+@pkgpath devel/py-hatch-nodejs-version,python3
 lib/python${MODPY_VERSION}/site-packages/hatch_nodejs_version/
-lib/python${MODPY_VERSION}/site-packages/hatch_nodejs_version-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/hatch_nodejs_version-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/hatch_nodejs_version-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/hatch_nodejs_version-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/hatch_nodejs_version-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/hatch_nodejs_version-${MODPY_EGG_VERSION}.dist-info/licenses/
-lib/python${MODPY_VERSION}/site-packages/hatch_nodejs_version-${MODPY_EGG_VERSION}.dist-info/licenses/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/hatch_nodejs_version-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/hatch_nodejs_version-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/hatch_nodejs_version-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/hatch_nodejs_version-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/hatch_nodejs_version-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/hatch_nodejs_version-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/hatch_nodejs_version-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/hatch_nodejs_version/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hatch_nodejs_version/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/hatch_nodejs_version/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

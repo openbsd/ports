@@ -1,9 +1,10 @@
 COMMENT=	build-time package to simplify C/Cython extensions
 
-MODPY_EGG_VERSION= 1.1.1
+MODPY_DISTV=	1.1.1
 
-DISTNAME=	extension-helpers-${MODPY_EGG_VERSION}
+DISTNAME=	extension-helpers-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -18,8 +19,5 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
 MODPY_PYTEST_ARGS= extension_helpers/tests
 PORTHOME=	${WRKDIR}
-
-FLAVOR=		python3
-FLAVORS=	python3
 
 .include <bsd.port.mk>

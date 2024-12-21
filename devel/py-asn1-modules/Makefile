@@ -1,8 +1,9 @@
 COMMENT =		collection of ASN.1 data structures for py-asn1
 
-MODPY_EGG_VERSION =	0.4.0
-DISTNAME =		pyasn1_modules-${MODPY_EGG_VERSION}
-PKGNAME =		py-asn1-modules-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.4.0
+DISTNAME =		pyasn1_modules-${MODPY_DISTV}
+PKGNAME =		py-asn1-modules-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -15,12 +16,9 @@ MODPY_PI =		Yes
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		devel/py-asn1${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-asn1
 
 MODPY_ADJ_FILES =	tools/*.py
 

@@ -1,4 +1,4 @@
-@pkgpath devel/py-bitcoinlib
+@pkgpath devel/py-bitcoinlib,python3
 lib/python${MODPY_VERSION}/site-packages/bitcoin/
 lib/python${MODPY_VERSION}/site-packages/bitcoin/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bitcoin/${MODPY_PYCACHE}/
@@ -113,9 +113,9 @@ lib/python${MODPY_VERSION}/site-packages/bitcoin/tests/test_signmessage.py
 lib/python${MODPY_VERSION}/site-packages/bitcoin/tests/test_transactions.py
 lib/python${MODPY_VERSION}/site-packages/bitcoin/tests/test_wallet.py
 lib/python${MODPY_VERSION}/site-packages/bitcoin/wallet.py
-lib/python${MODPY_VERSION}/site-packages/python_bitcoinlib-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/python_bitcoinlib-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/python_bitcoinlib-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/python_bitcoinlib-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/python_bitcoinlib-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/python_bitcoinlib-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/python_bitcoinlib-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/python_bitcoinlib-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/python_bitcoinlib-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/python_bitcoinlib-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/python_bitcoinlib-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/python_bitcoinlib-${MODPY_DISTV}.dist-info/top_level.txt

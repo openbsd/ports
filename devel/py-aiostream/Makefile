@@ -1,8 +1,9 @@
 COMMENT=	generator-based operators for asynchronous iteration
 
-MODPY_EGG_VERSION=	0.6.3
-DISTNAME=	aiostream-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.6.3
+DISTNAME=	aiostream-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -13,12 +14,9 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-FLAVOR=		python3
-FLAVORS=	python3
+RUN_DEPENDS=	devel/py-typing-extensions
 
-RUN_DEPENDS=	devel/py-typing-extensions${MODPY_FLAVOR}
-
-TEST_DEPENDS=	devel/py-test-asyncio${MODPY_FLAVOR} \
-		devel/py-test-cov${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-test-asyncio \
+		devel/py-test-cov
 
 .include <bsd.port.mk>

@@ -1,13 +1,13 @@
 COMMENT =	parse, read and write Microsoft OLE2 files
 
-MODPY_EGG_VERSION = 0.46
-DISTNAME =	olefile-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.46
+DISTNAME =	olefile-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	7
+REVISION =	8
 
 GH_ACCOUNT =	decalage2
 GH_PROJECT =	olefile
-GH_TAGNAME =	v${MODPY_EGG_VERSION}
+GH_TAGNAME =	v${MODPY_DISTV}
 
 CATEGORIES =	devel
 
@@ -20,9 +20,6 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_PYBUILD =		setuptools
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 NO_TEST = 	Yes
 

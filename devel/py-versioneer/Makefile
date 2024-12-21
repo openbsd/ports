@@ -1,8 +1,9 @@
 COMMENT =	management of project version strings
 
-MODPY_EGG_VERSION = 0.29
-DISTNAME =	versioneer-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.29
+DISTNAME =	versioneer-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -10,9 +11,6 @@ CATEGORIES =	devel
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools

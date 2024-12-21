@@ -1,9 +1,9 @@
 COMMENT =		timeout context manager for asyncio programs
 
-MODPY_EGG_VERSION =	4.0.2
-DISTNAME =		async-timeout-${MODPY_EGG_VERSION}
+MODPY_DISTV =	4.0.2
+DISTNAME =		async-timeout-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -16,8 +16,5 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 .include <bsd.port.mk>

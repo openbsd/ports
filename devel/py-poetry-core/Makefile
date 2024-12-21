@@ -1,8 +1,9 @@
 COMMENT=	Poetry's PEP517 build backend
 
-MODPY_EGG_VERSION=	1.9.1
-DISTNAME=	poetry_core-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.9.1
+DISTNAME=	poetry_core-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -14,14 +15,11 @@ PERMIT_PACKAGE= Yes
 MODULES=	lang/python
 MODPY_PI=	Yes
 
-FLAVOR=		python3
-FLAVORS=	python3
-
 MODPY_PYBUILD=	other
 
-TEST_DEPENDS=	devel/py-virtualenv${MODPY_FLAVOR} \
-		devel/py-test-mock${MODPY_FLAVOR} \
-		textproc/py-tomli_w${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-virtualenv \
+		devel/py-test-mock \
+		textproc/py-tomli_w
 
 pre-build:
 	@if [ -d ${MODPY_SITEPKG}/poetry/core ]; then \

@@ -1,11 +1,11 @@
 COMMENT =		library for property based testing
 
 # newer versions required new dep 'exceptiongroup'
-MODPY_EGG_VERSION =	6.47.1
-DISTNAME =		hypothesis-${MODPY_EGG_VERSION}
-PKGNAME =		py-hypothesis-${MODPY_EGG_VERSION}
+MODPY_DISTV =	6.47.1
+DISTNAME =		hypothesis-${MODPY_DISTV}
+PKGNAME =		py-hypothesis-${MODPY_DISTV}
 CATEGORIES =		devel
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		https://hypothesis.works/
 
@@ -17,12 +17,9 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR} \
-			devel/py-coverage${MODPY_FLAVOR} \
-			devel/py-sortedcontainers${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-attrs \
+			devel/py-coverage \
+			devel/py-sortedcontainers
 
 # Primary author is completely uninterested in supplying tests via PyPI
 NO_TEST =		Yes

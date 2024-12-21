@@ -1,9 +1,9 @@
 COMMENT =		Jupyter notebook format
 
-MODPY_EGG_VERSION =	5.9.2
-DISTNAME =		nbformat-${MODPY_EGG_VERSION}
+MODPY_DISTV =	5.9.2
+DISTNAME =		nbformat-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 
@@ -16,21 +16,18 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		hatchling
 
-BUILD_DEPENDS =		devel/py-hatch-nodejs-version${MODPY_FLAVOR}
+BUILD_DEPENDS =		devel/py-hatch-nodejs-version
 
-RUN_DEPENDS =		devel/py-jsonschema${MODPY_FLAVOR}>=2.6 \
-			devel/py-jupyter_core${MODPY_FLAVOR} \
-			devel/py-traitlets${MODPY_FLAVOR}>=5.1 \
-			textproc/py-fastjsonschema${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-jsonschema>=2.6 \
+			devel/py-jupyter_core \
+			devel/py-traitlets>=5.1 \
+			textproc/py-fastjsonschema
 
 # XXX: needs pep440
-TEST_DEPENDS =		devel/py-testpath${MODPY_FLAVOR} \
+TEST_DEPENDS =		devel/py-testpath \
 			devel/pre-commit
 
 .include <bsd.port.mk>

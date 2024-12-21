@@ -1,9 +1,9 @@
 COMMENT=	C call graphs using Cflow producing linked PDF
 
-MODPY_EGG_VERSION=	0.2.3
-DISTNAME=	pycflow2dot-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.2.3
+DISTNAME=	pycflow2dot-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/py/py-/}
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	devel
 
@@ -16,12 +16,9 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
 RUN_DEPENDS=	devel/cflow \
-		graphics/py-dot${MODPY_FLAVOR} \
-		math/py-networkx${MODPY_FLAVOR}
+		graphics/py-dot \
+		math/py-networkx
 TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH}
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 do-test:
 	make -C ${WRKSRC}/tests

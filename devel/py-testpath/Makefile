@@ -1,9 +1,9 @@
 COMMENT =		test utilities working with files and commands
 
-MODPY_EGG_VERSION =	0.6.0
-DISTNAME =		testpath-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.6.0
+DISTNAME =		testpath-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 
@@ -16,9 +16,6 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYTEST =		Yes
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 MODPY_PYBUILD =		flit_core
 

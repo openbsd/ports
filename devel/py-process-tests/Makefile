@@ -1,9 +1,9 @@
 COMMENT =		tools for testing processes
 
-MODPY_EGG_VERSION =	2.0.2
-DISTNAME =		process-tests-${MODPY_EGG_VERSION}
-PKGNAME =		py-process-tests-${MODPY_EGG_VERSION}
-REVISION =		3
+MODPY_DISTV =	2.0.2
+DISTNAME =		process-tests-${MODPY_DISTV}
+PKGNAME =		py-process-tests-${MODPY_DISTV}
+REVISION =		4
 
 CATEGORIES =		devel
 
@@ -17,9 +17,6 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 # There don't seem to be any tests
 NO_TEST =		Yes

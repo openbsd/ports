@@ -1,9 +1,9 @@
 COMMENT=	multi-producer-multi-consumer signal dispatching mechanism
 
-MODPY_EGG_VERSION= 2.0.7
-DISTNAME=	PyDispatcher-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.0.7
+DISTNAME=	PyDispatcher-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/Py/py-/:L}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -15,8 +15,5 @@ PERMIT_PACKAGE=	Yes
 MODPY_PI=	Yes
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

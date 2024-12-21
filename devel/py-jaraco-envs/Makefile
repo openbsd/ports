@@ -1,8 +1,9 @@
 COMMENT=	classes for orchestrating Python (virtual) environments
 
-MODPY_EGG_VERSION=	2.6.0
-DISTNAME=	jaraco.envs-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.6.0
+DISTNAME=	jaraco.envs-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -17,10 +18,7 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
 MODPY_PYTEST_ARGS=	tests
 
-RUN_DEPENDS=	devel/py-path${MODPY_FLAVOR} \
-		devel/py-virtualenv${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+RUN_DEPENDS=	devel/py-path \
+		devel/py-virtualenv
 
 .include <bsd.port.mk>

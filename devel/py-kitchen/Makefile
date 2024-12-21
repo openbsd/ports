@@ -1,9 +1,9 @@
 COMMENT =		kitchen contains a cornucopia of useful code
 
-MODPY_EGG_VERSION =	1.2.6
-REVISION =		4
+MODPY_DISTV =	1.2.6
+REVISION =		5
 
-DISTNAME =		kitchen-${MODPY_EGG_VERSION}
+DISTNAME =		kitchen-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		devel
@@ -16,8 +16,5 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 .include <bsd.port.mk>

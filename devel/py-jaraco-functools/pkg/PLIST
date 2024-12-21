@@ -1,13 +1,13 @@
+@pkgpath devel/py-jaraco-functools,python3
 @conflict py-jaraco-functoolsjaraco.functools-*
 @conflict ${MODPY_PY_PREFIX}jaraco-functoolsjaraco.functools-*
-@pkgpath devel/py-jaraco-functools
 lib/python${MODPY_VERSION}/site-packages/jaraco/
-lib/python${MODPY_VERSION}/site-packages/jaraco.functools-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/jaraco.functools-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/jaraco.functools-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/jaraco.functools-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/jaraco.functools-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/jaraco.functools-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/jaraco.functools-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/jaraco.functools-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/jaraco.functools-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/jaraco.functools-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/jaraco.functools-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/jaraco.functools-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/jaraco/functools/
 lib/python${MODPY_VERSION}/site-packages/jaraco/functools/__init__.py
 lib/python${MODPY_VERSION}/site-packages/jaraco/functools/__init__.pyi

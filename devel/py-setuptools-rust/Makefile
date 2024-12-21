@@ -1,9 +1,9 @@
 COMMENT=		setuptools Rust extension plugin
 
-MODPY_EGG_VERSION=	1.8.1
-DISTNAME=		setuptools-rust-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.8.1
+DISTNAME=		setuptools-rust-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		devel
 
@@ -18,12 +18,9 @@ MODPY_PI=		Yes
 MODPY_PYBUILD=		setuptools_scm
 MODPY_PYTEST_ARGS=	setuptools_rust
 
-FLAVORS=		python3
-FLAVOR =		python3
-
-RUN_DEPENDS=		devel/py-semantic-version${MODPY_FLAVOR} \
-			devel/py-setuptools${MODPY_FLAVOR} \
-			devel/py-typing-extensions${MODPY_FLAVOR}
+RUN_DEPENDS=		devel/py-semantic-version \
+			devel/py-setuptools \
+			devel/py-typing-extensions
 
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mrust}

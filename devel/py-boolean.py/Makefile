@@ -1,9 +1,9 @@
 COMMENT =		define Boolean algebras, create and parse Boolean expression
 
-MODPY_EGG_VERSION =	4.0
-DISTNAME =		boolean.py-${MODPY_EGG_VERSION}
+MODPY_DISTV =	4.0
+DISTNAME =		boolean.py-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -13,8 +13,5 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 .include <bsd.port.mk>

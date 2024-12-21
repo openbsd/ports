@@ -1,10 +1,10 @@
 COMMENT =		Python API for advanced date calculations
 
-MODPY_EGG_VERSION =	2.9.0
-DISTNAME =		python-dateutil-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.9.0
+DISTNAME =		python-dateutil-${MODPY_DISTV}
 PKGNAME =		${DISTNAME:S/^python-/py-/}
 CATEGORIES =		devel
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://dateutil.readthedocs.org/
 
@@ -12,15 +12,13 @@ HOMEPAGE =		https://dateutil.readthedocs.org/
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-FLAVORS =		python3
-FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
 
-RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
-TEST_DEPENDS =		devel/py-freezegun${MODPY_FLAVOR} \
-			devel/py-hypothesis${MODPY_FLAVOR} \
-			devel/py-six${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-six
+TEST_DEPENDS =		devel/py-freezegun \
+			devel/py-hypothesis \
+			devel/py-six
 
 .include <bsd.port.mk>

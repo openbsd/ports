@@ -1,9 +1,9 @@
 COMMENT =		data validation using Python type hints
 
-MODPY_EGG_VERSION =	2.27.0
-REVISION =		0
-DISTNAME =		pydantic_core-${MODPY_EGG_VERSION}
-PKGNAME =		py-pydantic-core-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.27.0
+REVISION =		1
+DISTNAME =		pydantic_core-${MODPY_DISTV}
+PKGNAME =		py-pydantic-core-${MODPY_DISTV}
 
 CATEGORIES =		devel
 
@@ -24,20 +24,17 @@ CONFIGURE_STYLE =       cargo
 
 MAKE_ENV +=		${MODCARGO_ENV}
 
-BUILD_DEPENDS =		devel/py-typing-extensions${MODPY_FLAVOR}
-RUN_DEPENDS =		devel/py-typing-extensions${MODPY_FLAVOR}
-TEST_DEPENDS =		devel/py-test-mock${MODPY_FLAVOR} \
-			devel/py-pip${MODPY_FLAVOR} \
-			devel/py-test-benchmark${MODPY_FLAVOR} \
-			devel/py-dirty-equals${MODPY_FLAVOR} \
-			devel/py-hypothesis${MODPY_FLAVOR} \
-			devel/py-coverage${MODPY_FLAVOR} \
-			devel/py-test-timeout${MODPY_FLAVOR} \
-			math/py-pandas${MODPY_FLAVOR}
+BUILD_DEPENDS =		devel/py-typing-extensions
+RUN_DEPENDS =		devel/py-typing-extensions
+TEST_DEPENDS =		devel/py-test-mock \
+			devel/py-pip \
+			devel/py-test-benchmark \
+			devel/py-dirty-equals \
+			devel/py-hypothesis \
+			devel/py-coverage \
+			devel/py-test-timeout \
+			math/py-pandas
 PORTHOME =		${WRKDIR}
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 do-build:
 	${MODCARGO_CARGO_RUN} build \

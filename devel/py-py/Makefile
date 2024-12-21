@@ -1,8 +1,8 @@
 COMMENT=		cross-python path, ini-parsing, io, code, log facilities
 
-MODPY_EGG_VERSION =	1.11.0
-REVISION=		3
-DISTNAME=		py-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.11.0
+REVISION=		4
+DISTNAME=		py-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
 
 CATEGORIES=		devel
@@ -14,8 +14,5 @@ MODULES=		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
-
-FLAVORS=		python3
-FLAVOR=			python3
 
 .include <bsd.port.mk>

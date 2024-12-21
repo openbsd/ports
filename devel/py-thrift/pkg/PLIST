@@ -1,9 +1,10 @@
+@pkgpath devel/py-thrift,python3
 lib/python${MODPY_VERSION}/site-packages/thrift/
-lib/python${MODPY_VERSION}/site-packages/thrift-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/thrift-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/thrift-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/thrift-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/thrift-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/thrift-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/thrift-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/thrift-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/thrift-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/thrift-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/thrift/TMultiplexedProcessor.py
 lib/python${MODPY_VERSION}/site-packages/thrift/TRecursive.py
 lib/python${MODPY_VERSION}/site-packages/thrift/TSCons.py

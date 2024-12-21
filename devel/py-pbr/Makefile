@@ -1,9 +1,10 @@
 COMMENT=	manage setuptools packaging needs in a consistent manner
 
-MODPY_EGG_VERSION=	6.1.0
-DISTNAME=	pbr-${MODPY_EGG_VERSION}
+MODPY_DISTV=	6.1.0
+DISTNAME=	pbr-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
+REVISION=	0
 
 # https://github.com/openstack-dev/pbr
 HOMEPAGE=	https://docs.openstack.org/pbr/latest/
@@ -12,9 +13,6 @@ HOMEPAGE=	https://docs.openstack.org/pbr/latest/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools

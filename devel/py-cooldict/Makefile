@@ -1,9 +1,9 @@
 COMMENT =	some useful dict-like structures
 
-MODPY_EGG_VERSION =	1.4
+MODPY_DISTV =	1.4
 DISTNAME =	cooldict-1.04
 PKGNAME =	py-${DISTNAME}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	devel
 
@@ -19,10 +19,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-RUN_DEPENDS =		devel/py-ana${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-ana
 
 # tests fail:
 # ana.errors.ANAError: SimpleDataLayer does not support state loading. 

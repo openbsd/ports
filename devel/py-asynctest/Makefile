@@ -1,9 +1,10 @@
 COMMENT=	enhance unittest with features to test asyncio libraries
 
-MODPY_EGG_VERSION=	0.13.0
-DISTNAME=	asynctest-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.13.0
+DISTNAME=	asynctest-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
+REVISION=	0
 
 # https://github.com/Martiusweb/asynctest
 HOMEPAGE=	http://asynctest.readthedocs.org/
@@ -18,8 +19,5 @@ MODPY_PYBUILD=	setuptools
 
 # AttributeError: module 'asyncio' has no attribute 'coroutine'
 NO_TEST=	Yes
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

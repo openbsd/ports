@@ -1,9 +1,10 @@
 COMMENT =	finds unused code in Python programs
 
-MODPY_EGG_VERSION =	2.14
+MODPY_DISTV =	2.14
 
-DISTNAME =	vulture-${MODPY_EGG_VERSION}
+DISTNAME =	vulture-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -19,12 +20,9 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVORS =	python3
-FLAVOR =	python3
-
 # requires py-pint for test_whitelists_with_python
-TEST_DEPENDS =  devel/py-test${MODPY_FLAVOR} \
-                devel/py-test-cov${MODPY_FLAVOR} \
-		textproc/py-toml${MODPY_FLAVOR}
+TEST_DEPENDS =  devel/py-test \
+                devel/py-test-cov \
+		textproc/py-toml
 
 .include <bsd.port.mk>

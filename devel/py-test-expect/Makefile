@@ -1,10 +1,10 @@
 COMMENT =		py.test plugin to store test expectations
 
-MODPY_EGG_VERSION =	1.1.0
-DISTNAME =		pytest-expect-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.1.0
+DISTNAME =		pytest-expect-${MODPY_DISTV}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
-REVISION =		9
+REVISION =		10
 
 HOMEPAGE =		https://github.com/gsnedders/pytest-expect
 
@@ -16,11 +16,8 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-RUN_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
-			net/py-u-msgpack${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-test \
+			net/py-u-msgpack
 
 NO_TEST =		Yes
 

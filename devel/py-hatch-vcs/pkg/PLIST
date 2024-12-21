@@ -1,11 +1,12 @@
+@pkgpath devel/py-hatch-vcs,python3
 lib/python${MODPY_VERSION}/site-packages/hatch_vcs/
-lib/python${MODPY_VERSION}/site-packages/hatch_vcs-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/hatch_vcs-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/hatch_vcs-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/hatch_vcs-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/hatch_vcs-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/hatch_vcs-${MODPY_EGG_VERSION}.dist-info/licenses/
-lib/python${MODPY_VERSION}/site-packages/hatch_vcs-${MODPY_EGG_VERSION}.dist-info/licenses/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/hatch_vcs-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/hatch_vcs-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/hatch_vcs-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/hatch_vcs-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/hatch_vcs-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/hatch_vcs-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/hatch_vcs-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/hatch_vcs/__about__.py
 lib/python${MODPY_VERSION}/site-packages/hatch_vcs/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hatch_vcs/${MODPY_PYCACHE}/

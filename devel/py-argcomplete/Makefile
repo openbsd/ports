@@ -1,10 +1,10 @@
 COMMENT=	bash tab completion for argparse
 
-MODPY_EGG_VERSION=	2.0.5
-DISTNAME=	argcomplete-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.0.5
+DISTNAME=	argcomplete-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	0
+REVISION=	1
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
@@ -14,16 +14,13 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-FLAVORS=	python3
-FLAVOR=		python3
-
 #MODPY_PYTEST_ARGS=	test/test.py
 PORTHOME=	${WRKDIR}
 TEST_DEPENDS=	devel/flake8 \
-		devel/py-coverage${MODPY_FLAVOR} \
-		devel/py-pexpect${MODPY_FLAVOR} \
-		devel/py-pip${MODPY_FLAVOR} \
-		devel/py-wheel${MODPY_FLAVOR} \
+		devel/py-coverage \
+		devel/py-pexpect \
+		devel/py-pip \
+		devel/py-wheel \
 		shells/bash \
 		shells/fish \
 		shells/tcsh

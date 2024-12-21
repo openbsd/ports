@@ -1,10 +1,10 @@
 COMMENT =	Mox is a mock object framework for Python
 
-MODPY_EGG_VERSION = 1.1.0
-DISTNAME =	mox3-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.1.0
+DISTNAME =	mox3-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	devel
-REVISION =	6
+REVISION =	7
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
@@ -13,17 +13,14 @@ MODULES =	lang/python
 MODPY_PI =	Yes
 MODPY_PYBUILD =		setuptools
 
-BUILD_DEPENDS =	devel/py-pbr${MODPY_FLAVOR}
-RUN_DEPENDS =	devel/py-fixtures${MODPY_FLAVOR} \
-		devel/py-pbr${MODPY_FLAVOR}
+BUILD_DEPENDS =	devel/py-pbr
+RUN_DEPENDS =	devel/py-fixtures \
+		devel/py-pbr
 
 # some tests run, some problems
-TEST_DEPENDS =	devel/py-fixtures${MODPY_FLAVOR} \
-		devel/py-testtools${MODPY_FLAVOR} \
-		devel/py-nose${MODPY_FLAVOR}
-
-FLAVORS =	python3
-FLAVOR =	python3
+TEST_DEPENDS =	devel/py-fixtures \
+		devel/py-testtools \
+		devel/py-nose
 
 do-test:
 	cd ${WRKSRC}; nosetests

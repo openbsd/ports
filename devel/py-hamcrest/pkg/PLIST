@@ -1,10 +1,10 @@
-@pkgpath devel/py-hamcrest
-lib/python${MODPY_VERSION}/site-packages/PyHamcrest-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/PyHamcrest-${MODPY_EGG_VERSION}.dist-info/LICENSE.txt
-lib/python${MODPY_VERSION}/site-packages/PyHamcrest-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/PyHamcrest-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/PyHamcrest-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/PyHamcrest-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+@pkgpath devel/py-hamcrest,python3
+lib/python${MODPY_VERSION}/site-packages/PyHamcrest-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/PyHamcrest-${MODPY_DISTV}.dist-info/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/PyHamcrest-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/PyHamcrest-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/PyHamcrest-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/PyHamcrest-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/hamcrest/
 lib/python${MODPY_VERSION}/site-packages/hamcrest/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/hamcrest/${MODPY_PYCACHE}/

@@ -1,9 +1,9 @@
 COMMENT=	pretty-print tabular data
 
-MODPY_EGG_VERSION=	0.9.0
-DISTNAME=	tabulate-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.9.0
+DISTNAME=	tabulate-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -15,8 +15,5 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

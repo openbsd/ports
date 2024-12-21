@@ -1,9 +1,10 @@
 COMMENT =		Python library for managing github repos
 
-MODPY_EGG_VERSION =	2.4.0
-DISTNAME =		pygithub-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.4.0
+DISTNAME =		pygithub-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
+REVISION =		0
 
 HOMEPAGE =		https://pygithub.readthedocs.io/en/stable/
 
@@ -14,20 +15,17 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
 
-RUN_DEPENDS =		devel/py-deprecated${MODPY_FLAVOR} \
-			devel/py-typing-extensions${MODPY_FLAVOR} \
-			security/py-PyNaCl${MODPY_FLAVOR} \
-			www/py-jwt${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR} \
-			www/py-urllib3${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-deprecated \
+			devel/py-typing-extensions \
+			security/py-PyNaCl \
+			www/py-jwt \
+			www/py-requests \
+			www/py-urllib3
 
-TEST_DEPENDS =		devel/py-test-cov${MODPY_FLAVOR} \
-			www/py-httpretty${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-test-cov \
+			www/py-httpretty
 
 .include <bsd.port.mk>

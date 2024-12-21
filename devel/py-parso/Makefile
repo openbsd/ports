@@ -1,8 +1,9 @@
 COMMENT=	python parser
 
-MODPY_EGG_VERSION=	0.8.4
-DISTNAME=	parso-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.8.4
+DISTNAME=	parso-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -17,9 +18,6 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 #MODPY_PYTEST_ARGS=	parso test
 
-TEST_DEPENDS=	devel/py-docopt${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+TEST_DEPENDS=	devel/py-docopt
 
 .include <bsd.port.mk>

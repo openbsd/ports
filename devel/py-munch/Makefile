@@ -1,8 +1,9 @@
 COMMENT=	dot-accessible dictionary (a la JavaScript objects)
 
-MODPY_EGG_VERSION=	4.0.0
-DISTNAME=	munch-${MODPY_EGG_VERSION}
+MODPY_DISTV=	4.0.0
+DISTNAME=	munch-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -13,9 +14,6 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-BUILD_DEPENDS=	devel/py-pbr${MODPY_FLAVOR}
+BUILD_DEPENDS=	devel/py-pbr
 
 .include <bsd.port.mk>

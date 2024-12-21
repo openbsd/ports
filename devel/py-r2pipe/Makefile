@@ -1,9 +1,9 @@
 COMMENT =	pipe interface for radare2
 
-MODPY_EGG_VERSION =	1.8.8
-DISTNAME =	r2pipe-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.8.8
+DISTNAME =	r2pipe-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	devel
 
@@ -20,8 +20,5 @@ MODPY_PYBUILD =		setuptools
 # tests fail unless you add missing files from
 # https://github.com/radareorg/radare2-r2pipe/tree/master/python/test
 TEST_DEPENDS =		devel/radare2/main
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 .include <bsd.port.mk>

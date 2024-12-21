@@ -1,8 +1,9 @@
 COMMENT=	Python module dependency analysis tool
 
-MODPY_EGG_VERSION =	0.19.6
-DISTNAME=	modulegraph-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.19.6
+DISTNAME=	modulegraph-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -13,10 +14,7 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-RUN_DEPENDS=	devel/py-altgraph${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-altgraph
 TEST_DEPENDS=	${RUN_DEPENDS} \
 		${MODPY_RUN_DEPENDS},-idle
 

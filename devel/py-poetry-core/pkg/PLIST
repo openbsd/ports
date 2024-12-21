@@ -1,3 +1,4 @@
+@pkgpath devel/py-poetry-core,python3
 lib/python${MODPY_VERSION}/site-packages/poetry/
 lib/python${MODPY_VERSION}/site-packages/poetry/core/
 lib/python${MODPY_VERSION}/site-packages/poetry/core/__init__.py
@@ -496,8 +497,8 @@ lib/python${MODPY_VERSION}/site-packages/poetry/core/version/pep440/parser.py
 lib/python${MODPY_VERSION}/site-packages/poetry/core/version/pep440/segments.py
 lib/python${MODPY_VERSION}/site-packages/poetry/core/version/pep440/version.py
 lib/python${MODPY_VERSION}/site-packages/poetry/core/version/requirements.py
-lib/python${MODPY_VERSION}/site-packages/poetry_core-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/poetry_core-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/poetry_core-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/poetry_core-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/poetry_core-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/poetry_core-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/poetry_core-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/poetry_core-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/poetry_core-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/poetry_core-${MODPY_DISTV}.dist-info/WHEEL

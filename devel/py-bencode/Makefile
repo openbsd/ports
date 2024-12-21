@@ -1,9 +1,9 @@
 COMMENT =	bencoding and bdecoding implementation
 
-MODPY_EGG_VERSION = 2.1.0
-DISTNAME =	bencode.py-${MODPY_EGG_VERSION}
-PKGNAME =	py-bencode-${MODPY_EGG_VERSION}
-REVISION =	4
+MODPY_DISTV =	2.1.0
+DISTNAME =	bencode.py-${MODPY_DISTV}
+PKGNAME =	py-bencode-${MODPY_DISTV}
+REVISION =	5
 
 CATEGORIES =	devel
 
@@ -17,10 +17,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-BUILD_DEPENDS =		devel/py-pbr${MODPY_FLAVOR}
+BUILD_DEPENDS =		devel/py-pbr
 
 NO_TEST =		Yes
 

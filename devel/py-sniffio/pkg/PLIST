@@ -1,12 +1,13 @@
+@pkgpath devel/py-sniffio,python3
 lib/python${MODPY_VERSION}/site-packages/sniffio/
-lib/python${MODPY_VERSION}/site-packages/sniffio-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/sniffio-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/sniffio-${MODPY_EGG_VERSION}.dist-info/LICENSE.APACHE2
-lib/python${MODPY_VERSION}/site-packages/sniffio-${MODPY_EGG_VERSION}.dist-info/LICENSE.MIT
-lib/python${MODPY_VERSION}/site-packages/sniffio-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/sniffio-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/sniffio-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/sniffio-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/sniffio-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/sniffio-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/sniffio-${MODPY_DISTV}.dist-info/LICENSE.APACHE2
+lib/python${MODPY_VERSION}/site-packages/sniffio-${MODPY_DISTV}.dist-info/LICENSE.MIT
+lib/python${MODPY_VERSION}/site-packages/sniffio-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/sniffio-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/sniffio-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/sniffio-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/sniffio/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sniffio/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sniffio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -1,8 +1,9 @@
 COMMENT=	extensible memoizing collections and decorators
 
-MODPY_EGG_VERSION=	5.5.0
-DISTNAME=	cachetools-${MODPY_EGG_VERSION}
+MODPY_DISTV=	5.5.0
+DISTNAME=	cachetools-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -12,9 +13,6 @@ HOMEPAGE=	https://github.com/tkem/cachetools
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-FLAVOR=		python3
-FLAVORS=	python3
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools

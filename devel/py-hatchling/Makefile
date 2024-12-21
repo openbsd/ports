@@ -1,9 +1,10 @@
 COMMENT=	modern, extensible Python build backend used by Hatch
 
-MODPY_EGG_VERSION=	1.26.3
+MODPY_DISTV=	1.26.3
 
-DISTNAME=	hatchling-${MODPY_EGG_VERSION}
+DISTNAME=	hatchling-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -18,15 +19,12 @@ MODPY_PI=	Yes
 
 NO_TEST=	Yes
 
-FLAVORS=	python3
-FLAVOR=		python3
-
 BUILD_DEPENDS=	${RUN_DEPENDS}
-RUN_DEPENDS=	devel/py-editables${MODPY_FLAVOR} \
-		devel/py-pathspec${MODPY_FLAVOR} \
-		devel/py-pluggy${MODPY_FLAVOR} \
-		devel/py-trove-classifiers${MODPY_FLAVOR} \
-		sysutils/py-packaging${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-editables \
+		devel/py-pathspec \
+		devel/py-pluggy \
+		devel/py-trove-classifiers \
+		sysutils/py-packaging
 
 MODPY_PYBUILD=	other
 

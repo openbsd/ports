@@ -1,9 +1,9 @@
 COMMENT =		filesystem events monitoring
 
-MODPY_EGG_VERSION =	0.9.6
-DISTNAME =		pyinotify-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.9.6
+DISTNAME =		pyinotify-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		9
+REVISION =		10
 
 CATEGORIES =		devel
 
@@ -22,9 +22,6 @@ MAKE_ENV =		LIBRARY_PATH="${LOCALBASE}/lib/inotify:${LOCALBASE}/lib" \
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/setup.py ${WRKSRC}/python*/pyinotify.py

@@ -1,9 +1,10 @@
 COMMENT=	fast and thorough lazy object proxy
 
-MODPY_EGG_VERSION=	1.10.0
-DISTNAME=	lazy-object-proxy-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.10.0
+DISTNAME=	lazy-object-proxy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
+REVISION=	0
 
 HOMEPAGE=	https://python-lazy-object-proxy.readthedocs.org
 
@@ -14,12 +15,9 @@ WANTLIB += pthread ${MODPY_WANTLIB}
 
 MODULES=	lang/python
 
-FLAVORS=	python3
-FLAVOR=		python3
-
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
 
-TEST_DEPENDS=	devel/py-test-benchmark${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-test-benchmark
 
 .include <bsd.port.mk>

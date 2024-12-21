@@ -1,10 +1,10 @@
 COMMENT =	data type fabric
 
-MODPY_EGG_VERSION =	20200621
-DISTNAME =	dtfabric-${MODPY_EGG_VERSION}
+MODPY_DISTV =	20200621
+DISTNAME =	dtfabric-${MODPY_DISTV}
 
 PKGNAME =	py-${DISTNAME}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	devel
 
@@ -17,10 +17,7 @@ MODULES =	lang/python
 MODPY_PYBUILD =		setuptools
 MODPY_PI =	Yes
 
-RUN_DEPENDS =	textproc/py-yaml${MODPY_FLAVOR}
-
-FLAVORS =	python3
-FLAVOR =	python3
+RUN_DEPENDS =	textproc/py-yaml
 
 post-install:
 	rm -rf ${PREFIX}/share/doc/dtfabric/

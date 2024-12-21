@@ -1,9 +1,9 @@
 COMMENT =		Python pledge(2) and unveil(2) bindings
-MODPY_EGG_VERSION =	0.1.0
-DISTNAME =		openbsd-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.1.0
+DISTNAME =		openbsd-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
@@ -14,12 +14,9 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
+BUILD_DEPENDS =		devel/py-cffi
+RUN_DEPENDS =		devel/py-cffi
 
-BUILD_DEPENDS =		devel/py-cffi${MODPY_FLAVOR}
-RUN_DEPENDS =		devel/py-cffi${MODPY_FLAVOR}
-
-TEST_DEPENDS =		devel/py-test-cov${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-test-cov
 
 .include <bsd.port.mk>

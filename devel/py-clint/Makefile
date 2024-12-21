@@ -1,11 +1,10 @@
 COMMENT =		command line interface tools for Python
 
-MODPY_EGG_VERSION =	0.5.1
-DISTNAME =		clint-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.5.1
+DISTNAME =		clint-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		9
-
+REVISION =		10
 
 # ISC
 PERMIT_PACKAGE =	Yes
@@ -14,9 +13,6 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-
-FLAVORS =		python3
-FLAVOR =	python3
 
 DOCS =			${PREFIX}/share/doc/${MODPY_PY_PREFIX}clint
 

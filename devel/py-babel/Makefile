@@ -1,9 +1,10 @@
 COMMENT=	I18N/L10N tools for Python
 
-MODPY_EGG_VERSION=	2.16.0
-DISTNAME=	babel-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.16.0
+DISTNAME=	babel-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
+REVISION=	0
 
 HOMEPAGE=	https://babel.pocoo.org/
 
@@ -15,10 +16,7 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS=	devel/py-tz${MODPY_FLAVOR}
-TEST_DEPENDS=	devel/py-freezegun${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+RUN_DEPENDS=	devel/py-tz
+TEST_DEPENDS=	devel/py-freezegun
 
 .include <bsd.port.mk>

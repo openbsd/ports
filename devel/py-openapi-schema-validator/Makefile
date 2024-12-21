@@ -1,8 +1,9 @@
 COMMENT =		OpenAPI schema validator
 
-MODPY_EGG_VERSION =	0.6.2
-DISTNAME =		openapi_schema_validator-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.6.2
+DISTNAME =		openapi_schema_validator-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -13,11 +14,8 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-RUN_DEPENDS =		devel/py-jsonschema${MODPY_FLAVOR} \
-			devel/py-rfc3339-validator${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR  =		python3
+RUN_DEPENDS =		devel/py-jsonschema \
+			devel/py-rfc3339-validator
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		poetry-core

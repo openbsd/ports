@@ -1,10 +1,10 @@
 COMMENT =	check for files left open at the end of a pytest run
 
-MODPY_EGG_VERSION =	0.5.0
+MODPY_DISTV =	0.5.0
 
-DISTNAME =	pytest-openfiles-${MODPY_EGG_VERSION}
+DISTNAME =	pytest-openfiles-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME:S/py//}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	devel
 
@@ -18,11 +18,8 @@ MODULES =	lang/python
 MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools_scm
 
-FLAVOR =	python3
-FLAVORS =	python3
-
-RUN_DEPENDS =	devel/py-test${MODPY_FLAVOR} \
-		sysutils/py-packaging${MODPY_FLAVOR} \
-		sysutils/py-psutil${MODPY_FLAVOR}
+RUN_DEPENDS =	devel/py-test \
+		sysutils/py-packaging \
+		sysutils/py-psutil
 
 .include <bsd.port.mk>

@@ -1,8 +1,9 @@
 COMMENT=	implementation of JSON Schema validation for Python
 
-MODPY_EGG_VERSION=	2024.10.21.16
-DISTNAME=	trove_classifiers-${MODPY_EGG_VERSION}
-PKGNAME=	py-trove-classifiers-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2024.10.21.16
+DISTNAME=	trove_classifiers-${MODPY_DISTV}
+PKGNAME=	py-trove-classifiers-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -15,9 +16,6 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-BUILD_DEPENDS=	devel/py-calver${MODPY_FLAVOR}
+BUILD_DEPENDS=	devel/py-calver
 
 .include <bsd.port.mk>

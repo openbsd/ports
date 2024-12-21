@@ -1,9 +1,9 @@
 COMMENT =		hack to explicitly set up and tear down fixtures
 
-MODPY_EGG_VERSION =	0.2.0
-DISTNAME =		pytest-subtesthack-${MODPY_EGG_VERSION}
-PKGNAME =		py-test-subtesthack-${MODPY_EGG_VERSION}
-REVISION =		1
+MODPY_DISTV =	0.2.0
+DISTNAME =		pytest-subtesthack-${MODPY_DISTV}
+PKGNAME =		py-test-subtesthack-${MODPY_DISTV}
+REVISION =		2
 
 CATEGORIES =		devel
 
@@ -15,9 +15,6 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 NO_TEST =		Yes
 
-RUN_DEPENDS =		devel/py-test${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR =		python3
+RUN_DEPENDS =		devel/py-test
 
 .include <bsd.port.mk>

@@ -1,10 +1,10 @@
 COMMENT =	python module to interface with the pkg-config tool
 
-MODPY_EGG_VERSION =	1.5.5
-DISTNAME =		pkgconfig-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.5.5
+DISTNAME =		pkgconfig-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		2
+REVISION =		3
 
 HOMEPAGE =		https://github.com/matze/pkgconfig
 
@@ -16,8 +16,5 @@ PERMIT_PACKAGE =	Yes
 MODULES =	lang/python
 MODPY_PI =	Yes
 MODPY_PYBUILD =	poetry-core
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 .include <bsd.port.mk>

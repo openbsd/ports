@@ -1,9 +1,9 @@
 COMMENT =		python attributes without boilerplate
 
-MODPY_EGG_VERSION =	14.3.0
-DISTNAME =		characteristic-${MODPY_EGG_VERSION}
-PKGNAME =		py-characteristic-${MODPY_EGG_VERSION}
-REVISION =		7
+MODPY_DISTV =	14.3.0
+DISTNAME =		characteristic-${MODPY_DISTV}
+PKGNAME =		py-characteristic-${MODPY_DISTV}
+REVISION =		8
 
 CATEGORIES =		devel
 
@@ -18,10 +18,6 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-TEST_DEPENDS =		devel/py-test-xdist${MODPY_FLAVOR}
-
+TEST_DEPENDS =		devel/py-test-xdist
 
 .include <bsd.port.mk>

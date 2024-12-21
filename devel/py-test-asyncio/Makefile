@@ -1,9 +1,10 @@
 COMMENT =		test asyncio code with pytest
 
-MODPY_EGG_VERSION =	0.24.0
-DISTNAME =		pytest_asyncio-${MODPY_EGG_VERSION}
-PKGNAME =		py-test-asyncio-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.24.0
+DISTNAME =		pytest_asyncio-${MODPY_DISTV}
+PKGNAME =		py-test-asyncio-${MODPY_DISTV}
 CATEGORIES =		devel
+REVISION =		0
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
@@ -12,17 +13,14 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 # needs extra dep pytest_trio
 MODPY_PYTEST_ARGS =	--ignore tests/trio/test_fixtures.py
 # most tests are ok without self-dep, but some require it to be
 # installed for pytest --asyncio-mode==strict to work
 TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH} \
-			devel/py-flaky${MODPY_FLAVOR} \
-			devel/py-hypothesis${MODPY_FLAVOR}
+			devel/py-flaky \
+			devel/py-hypothesis
 
-RUN_DEPENDS =		devel/py-test${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-test
 
 .include <bsd.port.mk>

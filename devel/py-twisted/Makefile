@@ -1,9 +1,10 @@
 COMMENT =		asynchronous networking Python framework
 
-MODPY_EGG_VERSION =	24.7.0
+MODPY_DISTV =	24.7.0
 
-DISTNAME =		twisted-${MODPY_EGG_VERSION}
-PKGNAME =		py-twisted-${MODPY_EGG_VERSION}
+DISTNAME =		twisted-${MODPY_DISTV}
+PKGNAME =		py-twisted-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -19,28 +20,25 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		hatchling
 
-BUILD_DEPENDS =		devel/py-hatch-fancy-pypi-readme${MODPY_FLAVOR} \
-			devel/py-incremental${MODPY_FLAVOR}
+BUILD_DEPENDS =		devel/py-hatch-fancy-pypi-readme \
+			devel/py-incremental
 
-RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR}		\
-			devel/py-automat${MODPY_FLAVOR}		\
-			devel/py-constantly${MODPY_FLAVOR}	\
-			devel/py-hamcrest${MODPY_FLAVOR}	\
-			devel/py-incremental${MODPY_FLAVOR}	\
-			devel/py-typing-extensions${MODPY_FLAVOR} \
-			devel/py-zopeinterface${MODPY_FLAVOR}	\
-			net/py-idna${MODPY_FLAVOR}		\
-			security/py-bcrypt${MODPY_FLAVOR}	\
-			security/py-cryptography${MODPY_FLAVOR}	\
-			security/py-openssl${MODPY_FLAVOR}	\
-			security/py-service_identity${MODPY_FLAVOR} \
-			www/py-hyperlink${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR =		python3
+RUN_DEPENDS =		devel/py-attrs		\
+			devel/py-automat		\
+			devel/py-constantly	\
+			devel/py-hamcrest	\
+			devel/py-incremental	\
+			devel/py-typing-extensions \
+			devel/py-zopeinterface	\
+			net/py-idna		\
+			security/py-bcrypt	\
+			security/py-cryptography	\
+			security/py-openssl	\
+			security/py-service_identity \
+			www/py-hyperlink
 
 TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH} \
-			devel/py-hypothesis${MODPY_FLAVOR}
+			devel/py-hypothesis
 TEST_ENV =		LC_ALL=en_US.UTF-8
 TESTDIR =		${WRKSRC}/regress
 

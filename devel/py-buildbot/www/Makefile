@@ -1,8 +1,9 @@
 COMMENT =	web interface for buildbot
+REVISION =	0
 
 PART = www
 
-BUILD_DEPENDS =	www/py-autobahn${MODPY_FLAVOR} \
+BUILD_DEPENDS =	www/py-autobahn \
 		devel/py-buildbot/pkg
 
 RUN_DEPENDS +=	devel/py-buildbot/grid-view \

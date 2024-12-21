@@ -1,14 +1,14 @@
+@pkgpath devel/py-isort,python3
 @conflict py-isort-<4.2.15p3
-@pkgpath devel/py-isort
 bin/isort
 bin/isort-identify-imports
 lib/python${MODPY_VERSION}/site-packages/isort/
-lib/python${MODPY_VERSION}/site-packages/isort-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/isort-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/isort-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/isort-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/isort-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/isort-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/isort-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/isort-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/isort-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/isort-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/isort-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/isort-${MODPY_DISTV}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/isort/__init__.py
 lib/python${MODPY_VERSION}/site-packages/isort/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/isort/${MODPY_PYCACHE}/

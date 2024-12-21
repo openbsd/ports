@@ -1,11 +1,11 @@
 COMMENT=	component architecture from Zope
 
-MODPY_EGG_VERSION=	4.2.2
+MODPY_DISTV=	4.2.2
 
-DISTNAME=	zope.component-${MODPY_EGG_VERSION}
-PKGNAME=	py-zopecomponent-${MODPY_EGG_VERSION}
+DISTNAME=	zope.component-${MODPY_DISTV}
+PKGNAME=	py-zopecomponent-${MODPY_DISTV}
 CATEGORIES=	devel
-REVISION=	9
+REVISION=	10
 
 # Zope Public License
 PERMIT_PACKAGE=	Yes
@@ -14,11 +14,8 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-RUN_DEPENDS=	devel/py-zopeinterface${MODPY_FLAVOR} \
-		devel/py-zopeevent${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-zopeinterface \
+		devel/py-zopeevent
 
 # too many deps
 NO_TEST=	Yes

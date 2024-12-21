@@ -1,8 +1,9 @@
 COMMENT=	pure Python implementation of Git file formats and protocols
 
-MODPY_EGG_VERSION=	0.22.7
-DISTNAME=	dulwich-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.22.7
+DISTNAME=	dulwich-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -17,16 +18,13 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools-rust
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-RUN_DEPENDS=	www/py-urllib3${MODPY_FLAVOR}
+RUN_DEPENDS=	www/py-urllib3
 
 TEST_DEPENDS=	devel/git,-main \
-		devel/py-fastimport${MODPY_FLAVOR} \
-		devel/py-greenlet${MODPY_FLAVOR} \
-		devel/py-mock${MODPY_FLAVOR} \
-		net/py-geventhttpclient${MODPY_FLAVOR}
+		devel/py-fastimport \
+		devel/py-greenlet \
+		devel/py-mock \
+		net/py-geventhttpclient
 
 MAKE_ENV +=	LC_CTYPE=en_US.UTF-8
 

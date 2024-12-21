@@ -1,14 +1,14 @@
+@pkgpath devel/py-coveralls,python3
 @conflict py-coveralls-<1.6.0p5
-@pkgpath devel/py-coveralls
 bin/coveralls
 bin/python-coveralls
 lib/python${MODPY_VERSION}/site-packages/coveralls/
-lib/python${MODPY_VERSION}/site-packages/coveralls-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/coveralls-${MODPY_EGG_VERSION}.dist-info/LICENSE.rst
-lib/python${MODPY_VERSION}/site-packages/coveralls-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/coveralls-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/coveralls-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/coveralls-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/coveralls-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/coveralls-${MODPY_DISTV}.dist-info/LICENSE.rst
+lib/python${MODPY_VERSION}/site-packages/coveralls-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/coveralls-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/coveralls-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/coveralls-${MODPY_DISTV}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/coveralls/__init__.py
 lib/python${MODPY_VERSION}/site-packages/coveralls/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/coveralls/${MODPY_PYCACHE}/

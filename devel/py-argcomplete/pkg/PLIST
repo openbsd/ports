@@ -1,16 +1,16 @@
+@pkgpath devel/py-argcomplete,python3
 @conflict py-argcomplete-<1.9.3p2
-@pkgpath devel/py-argcomplete
 bin/activate-global-python-argcomplete
 bin/python-argcomplete-check-easy-install-script
 bin/python-argcomplete-tcsh
 bin/register-python-argcomplete
 lib/python${MODPY_VERSION}/site-packages/argcomplete/
-lib/python${MODPY_VERSION}/site-packages/argcomplete-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/argcomplete-${MODPY_EGG_VERSION}.dist-info/LICENSE.rst
-lib/python${MODPY_VERSION}/site-packages/argcomplete-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/argcomplete-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/argcomplete-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/argcomplete-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/argcomplete-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/argcomplete-${MODPY_DISTV}.dist-info/LICENSE.rst
+lib/python${MODPY_VERSION}/site-packages/argcomplete-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/argcomplete-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/argcomplete-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/argcomplete-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/argcomplete/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/argcomplete/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/argcomplete/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

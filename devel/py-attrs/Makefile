@@ -1,9 +1,10 @@
 COMMENT=	classes without boilerplate
 
-MODPY_EGG_VERSION=	24.3.0
+MODPY_DISTV=	24.3.0
 
-DISTNAME=	attrs-${MODPY_EGG_VERSION}
+DISTNAME=	attrs-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -16,11 +17,8 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	hatch-vcs
 
-BUILD_DEPENDS=	devel/py-hatch-fancy-pypi-readme${MODPY_FLAVOR}
-TEST_DEPENDS=	devel/py-hypothesis${MODPY_FLAVOR} \
-		devel/py-zopeinterface${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+BUILD_DEPENDS=	devel/py-hatch-fancy-pypi-readme
+TEST_DEPENDS=	devel/py-hypothesis \
+		devel/py-zopeinterface
 
 .include <bsd.port.mk>

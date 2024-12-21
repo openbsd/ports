@@ -1,8 +1,9 @@
 COMMENT =		file identification library
 
-MODPY_EGG_VERSION =	2.6.3
-DISTNAME =		identify-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.6.3
+DISTNAME =		identify-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -14,8 +15,6 @@ MAINTAINER =		Pavel Korovin <pvk@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-FLAVOR =		python3
-FLAVORS =		python3
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools

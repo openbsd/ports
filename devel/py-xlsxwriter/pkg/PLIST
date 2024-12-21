@@ -1,12 +1,12 @@
+@pkgpath devel/py-xlsxwriter,python3
 @conflict py-xlsxwriter-<1.2.9p1
-@pkgpath devel/py-xlsxwriter
 bin/vba_extract.py
-lib/python${MODPY_VERSION}/site-packages/XlsxWriter-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/XlsxWriter-${MODPY_EGG_VERSION}.dist-info/LICENSE.txt
-lib/python${MODPY_VERSION}/site-packages/XlsxWriter-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/XlsxWriter-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/XlsxWriter-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/XlsxWriter-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/XlsxWriter-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/XlsxWriter-${MODPY_DISTV}.dist-info/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/XlsxWriter-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/XlsxWriter-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/XlsxWriter-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/XlsxWriter-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/xlsxwriter/
 lib/python${MODPY_VERSION}/site-packages/xlsxwriter/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/xlsxwriter/${MODPY_PYCACHE}/

@@ -1,8 +1,9 @@
 COMMENT=	immutable dictionary
 
-MODPY_EGG_VERSION=	4.2.0
-DISTNAME=	immutabledict-${MODPY_EGG_VERSION}
-PKGNAME=	py-immutabledict-${MODPY_EGG_VERSION}
+MODPY_DISTV=	4.2.0
+DISTNAME=	immutabledict-${MODPY_DISTV}
+PKGNAME=	py-immutabledict-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -12,9 +13,6 @@ MAINTAINER =	Renaud Allard <renaud@allard.it>
 
 # MIT
 PERMIT_PACKAGE=	Yes
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 MODULES=	lang/python
 MODPY_PYBUILD=	poetry-core

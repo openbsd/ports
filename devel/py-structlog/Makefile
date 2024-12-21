@@ -1,9 +1,10 @@
 COMMENT =		asynchronous WebDriver client
 
-MODPY_EGG_VERSION =	24.4.0
+MODPY_DISTV =	24.4.0
 
-DISTNAME =		structlog-${MODPY_EGG_VERSION}
+DISTNAME =		structlog-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -14,20 +15,17 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		hatch-vcs
 
 # This test requires pip -e .
 MODPY_PYTEST_ARGS =	--ignore tests/test_packaging.py
 
-BUILD_DEPENDS =		devel/py-hatch-fancy-pypi-readme${MODPY_FLAVOR}
+BUILD_DEPENDS =		devel/py-hatch-fancy-pypi-readme
 
-TEST_DEPENDS =		devel/py-freezegun${MODPY_FLAVOR} \
-			devel/py-pretend${MODPY_FLAVOR} \
-			devel/py-simplejson${MODPY_FLAVOR} \
-			devel/py-test-asyncio${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-freezegun \
+			devel/py-pretend \
+			devel/py-simplejson \
+			devel/py-test-asyncio
 
 .include <bsd.port.mk>

@@ -1,21 +1,18 @@
 COMMENT =	generic test automation framework for acceptance testing
 
-MODPY_EGG_VERSION =	6.0.2
+MODPY_DISTV =	6.0.2
 
 # We could use PyPI, but the test suite is not distributed via that means.
 GH_ACCOUNT =	robotframework
 GH_PROJECT =	robotframework
-GH_TAGNAME =	v${MODPY_EGG_VERSION}
+GH_TAGNAME =	v${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
 # Apache
 PERMIT_PACKAGE =	Yes
-
-FLAVORS =               python3
-FLAVOR =		python3
 
 MODULES =		lang/python
 MODPY_PYBUILD =		setuptools

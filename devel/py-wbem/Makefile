@@ -1,9 +1,10 @@
 COMMENT=	CIM operations over HTTP in Python
 
-MODPY_EGG_VERSION=	1.7.2
-DISTNAME=	pywbem-${MODPY_EGG_VERSION}
-PKGNAME=	py-wbem-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.7.2
+DISTNAME=	pywbem-${MODPY_DISTV}
+PKGNAME=	py-wbem-${MODPY_DISTV}
 CATEGORIES=	devel
+REVISION=	0
 
 HOMEPAGE=	https://pywbem.github.io/
 
@@ -14,19 +15,16 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-RUN_DEPENDS=	devel/py-ply${MODPY_FLAVOR} \
-		textproc/py-yaml${MODPY_FLAVOR} \
-		textproc/py-yamlloader${MODPY_FLAVOR} \
-		www/py-requests${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-ply \
+		textproc/py-yaml \
+		textproc/py-yamlloader \
+		www/py-requests
 
 # needs yagot, pytest_easy_server, testfixtures
 NO_TEST=	Yes
-TEST_DEPENDS=	devel/py-mock${MODPY_FLAVOR} \
-		www/py-formencode${MODPY_FLAVOR} \
-		www/py-requests-mock${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-mock \
+		www/py-formencode \
+		www/py-requests-mock
 
 post-install:
 	rm ${PREFIX}/bin/*.bat

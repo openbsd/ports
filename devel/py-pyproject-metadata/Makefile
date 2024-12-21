@@ -1,8 +1,9 @@
 COMMENT=		PEP 621 metadata parsing
 
-MODPY_EGG_VERSION=	0.9.0
-DISTNAME=		pyproject_metadata-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.9.0
+DISTNAME=		pyproject_metadata-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME:S/_/-/}
+REVISION=		0
 
 CATEGORIES=		devel
 
@@ -16,9 +17,6 @@ MODULES=		lang/python
 MODPY_PI=		Yes
 MODPY_PYBUILD=		flit_core
 
-RUN_DEPENDS=		sysutils/py-packaging${MODPY_FLAVOR}
-
-FLAVORS=		python3
-FLAVOR=			python3
+RUN_DEPENDS=		sysutils/py-packaging
 
 .include <bsd.port.mk>

@@ -1,10 +1,10 @@
 COMMENT =	Python3 interface to the Bitcoin data structure and protocol
 
-MODPY_EGG_VERSION =	0.11.0
+MODPY_DISTV =	0.11.0
 
-DISTNAME =		python-bitcoinlib-${MODPY_EGG_VERSION}
+DISTNAME =		python-bitcoinlib-${MODPY_DISTV}
 PKGNAME =		${DISTNAME:S/^python-/py-/}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		devel
 
@@ -19,8 +19,5 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 .include <bsd.port.mk>

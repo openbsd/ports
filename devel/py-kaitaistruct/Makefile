@@ -1,8 +1,9 @@
 COMMENT =		pure-Python Kaitai Struct declarative parser generator
 
-MODPY_EGG_VERSION =	0.10
-DISTNAME =		kaitaistruct-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.10
+DISTNAME =		kaitaistruct-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -12,9 +13,6 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 HOMEPAGE =		https://kaitai.io/
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools

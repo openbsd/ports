@@ -1,8 +1,9 @@
 COMMENT =		log formatting with colors
 
-MODPY_EGG_VERSION =	6.8.2
-DISTNAME =		colorlog-${MODPY_EGG_VERSION}
+MODPY_DISTV =	6.8.2
+DISTNAME =		colorlog-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -17,8 +18,5 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 .include <bsd.port.mk>

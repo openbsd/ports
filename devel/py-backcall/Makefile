@@ -1,9 +1,9 @@
 COMMENT =		specifications for callback functions passed to an API
 
-MODPY_EGG_VERSION =	0.2.0
-DISTNAME =		backcall-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.2.0
+DISTNAME =		backcall-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 
@@ -14,8 +14,5 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYTEST =		Yes
 MODPY_PYBUILD =		flit_core
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 .include <bsd.port.mk>

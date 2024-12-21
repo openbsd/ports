@@ -1,8 +1,9 @@
 COMMENT=	display coverage stats online via coveralls.io
 
-MODPY_EGG_VERSION=	4.0.1
-DISTNAME=	coveralls-${MODPY_EGG_VERSION}
+MODPY_DISTV=	4.0.1
+DISTNAME=	coveralls-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -13,15 +14,12 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 
-FLAVORS=	python3
-FLAVOR=		python3
-
 MODPY_PI=	Yes
 MODPY_PYBUILD=	poetry-core
 
-RUN_DEPENDS=	devel/py-docopt${MODPY_FLAVOR} \
-		devel/py-coverage${MODPY_FLAVOR} \
-		www/py-requests${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-docopt \
+		devel/py-coverage \
+		www/py-requests
 
 NO_TEST=	Yes
 

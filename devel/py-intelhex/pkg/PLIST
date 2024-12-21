@@ -1,3 +1,4 @@
+@pkgpath devel/py-intelhex,python3
 bin/bin2hex.py
 bin/hex2bin.py
 bin/hex2dump.py
@@ -5,13 +6,13 @@ bin/hexdiff.py
 bin/hexinfo.py
 bin/hexmerge.py
 lib/python${MODPY_VERSION}/site-packages/intelhex/
-lib/python${MODPY_VERSION}/site-packages/intelhex-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/intelhex-${MODPY_EGG_VERSION}.dist-info/AUTHORS.rst
-lib/python${MODPY_VERSION}/site-packages/intelhex-${MODPY_EGG_VERSION}.dist-info/LICENSE.txt
-lib/python${MODPY_VERSION}/site-packages/intelhex-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/intelhex-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/intelhex-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/intelhex-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/intelhex-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/intelhex-${MODPY_DISTV}.dist-info/AUTHORS.rst
+lib/python${MODPY_VERSION}/site-packages/intelhex-${MODPY_DISTV}.dist-info/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/intelhex-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/intelhex-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/intelhex-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/intelhex-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/intelhex/__init__.py
 lib/python${MODPY_VERSION}/site-packages/intelhex/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/intelhex/${MODPY_PYCACHE}/

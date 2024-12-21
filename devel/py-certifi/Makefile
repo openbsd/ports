@@ -1,9 +1,10 @@
 COMMENT=	TLS CA support for Python
 
-MODPY_EGG_VERSION=	2024.8.30
-DISTNAME=	certifi-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2024.8.30
+DISTNAME=	certifi-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel security
+REVISION=	0
 
 HOMEPAGE=	https://certifi.io/
 
@@ -14,8 +15,5 @@ MODPY_PI=	Yes
 
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

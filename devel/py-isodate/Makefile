@@ -1,8 +1,9 @@
 COMMENT=	ISO 8601 date/time/duration parser and formater
 
-MODPY_EGG_VERSION=	0.7.2
-DISTNAME=	isodate-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.7.2
+DISTNAME=	isodate-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -13,8 +14,5 @@ MODPY_PI=	Yes
 
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools_scm
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

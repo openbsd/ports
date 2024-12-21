@@ -1,9 +1,9 @@
 COMMENT =		distributed data storage classes
 
-MODPY_EGG_VERSION =	0.06
-DISTNAME =		ana-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.06
+DISTNAME =		ana-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		devel
 
@@ -18,10 +18,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-RUN_DEPENDS =		devel/py-future${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-future
 
 NO_TEST =		Yes
 

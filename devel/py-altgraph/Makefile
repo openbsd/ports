@@ -1,9 +1,9 @@
 COMMENT=	Python graph (network) package
 
-MODPY_EGG_VERSION =	0.17.4
-DISTNAME=	altgraph-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.17.4
+DISTNAME=	altgraph-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -16,8 +16,5 @@ HOMEPAGE=	https://altgraph.readthedocs.io/
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

@@ -1,11 +1,11 @@
 COMMENT =		lightweight python SOAP client
 
-MODPY_EGG_VERSION =	1.1.2
+MODPY_DISTV =	1.1.2
 GH_ACCOUNT =		suds-community
 GH_PROJECT =		suds
-GH_TAGNAME =		v${MODPY_EGG_VERSION}
+GH_TAGNAME =		v${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -18,8 +18,5 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
 MODULES =		lang/python
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 .include <bsd.port.mk>

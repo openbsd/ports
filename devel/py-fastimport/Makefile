@@ -1,9 +1,9 @@
 COMMENT =		parser for and generator of the Git fastimport format
 
-MODPY_EGG_VERSION =	0.9.14
-DISTNAME =		fastimport-${MODPY_EGG_VERSION}
-PKGNAME =		py-fastimport-${MODPY_EGG_VERSION}
-REVISION =		2
+MODPY_DISTV =	0.9.14
+DISTNAME =		fastimport-${MODPY_DISTV}
+PKGNAME =		py-fastimport-${MODPY_DISTV}
+REVISION =		3
 
 CATEGORIES =		devel
 
@@ -16,8 +16,5 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	fastimport
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 .include <bsd.port.mk>

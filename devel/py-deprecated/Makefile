@@ -1,10 +1,10 @@
 COMMENT=	decorator to deprecate old python classes, etc
 
-MODPY_EGG_VERSION=	1.2.14
+MODPY_DISTV=	1.2.14
 
-DISTNAME=	Deprecated-${MODPY_EGG_VERSION}
+DISTNAME=	Deprecated-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:L}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -18,12 +18,9 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS=	devel/py-wrapt${MODPY_FLAVOR}<2
+RUN_DEPENDS=	devel/py-wrapt<2
 
 # for pkg_resources
-TEST_DEPENDS=	devel/py-setuptools${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+TEST_DEPENDS=	devel/py-setuptools
 
 .include <bsd.port.mk>

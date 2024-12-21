@@ -1,8 +1,9 @@
 COMMENT =		library providing an API for accessing packages metadata
 
-MODPY_EGG_VERSION =	8.5.0
-DISTNAME =		importlib_metadata-${MODPY_EGG_VERSION}
+MODPY_DISTV =	8.5.0
+DISTNAME =		importlib_metadata-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 HOMEPAGE =		https://importlib-metadata.readthedocs.io/
 
@@ -13,7 +14,7 @@ MAINTAINER =		Renaud Allard <renaud@allard.it>
 # Apache Software License
 PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS =		devel/py-zipp${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-zipp
 
 MODULES =		lang/python
 MODPY_PI =		Yes
@@ -31,8 +32,5 @@ MODPY_PYTEST_ARGS =	--ignore exercises.py \
 			--ignore tests/test_zip.py
 # ModuleNotFoundError: No module named 'test' (for "test.support")
 TEST_DEPENDS =		${MODPY_RUN_DEPENDS},-tests
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 .include <bsd.port.mk>

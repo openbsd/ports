@@ -1,9 +1,9 @@
 COMMENT=	a generic plug-in system for Python
 
-MODPY_EGG_VERSION=	0.5.4
-DISTNAME=	plugnplay-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.5.4
+DISTNAME=	plugnplay-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	devel
 
@@ -17,8 +17,5 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
 NO_TEST=	Yes
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

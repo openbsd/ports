@@ -1,5 +1,5 @@
+@pkgpath devel/py-suds,python3
 @conflict py-suds-*
-@pkgpath devel/py-suds
 lib/python${MODPY_VERSION}/site-packages/suds/
 lib/python${MODPY_VERSION}/site-packages/suds/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/suds/${MODPY_PYCACHE}/
@@ -185,9 +185,9 @@ lib/python${MODPY_VERSION}/site-packages/suds/xsd/schema.py
 lib/python${MODPY_VERSION}/site-packages/suds/xsd/sxbase.py
 lib/python${MODPY_VERSION}/site-packages/suds/xsd/sxbasic.py
 lib/python${MODPY_VERSION}/site-packages/suds/xsd/sxbuiltin.py
-lib/python${MODPY_VERSION}/site-packages/suds_community-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/suds_community-${MODPY_EGG_VERSION}.dist-info/LICENSE.txt
-lib/python${MODPY_VERSION}/site-packages/suds_community-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/suds_community-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/suds_community-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/suds_community-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/suds_community-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/suds_community-${MODPY_DISTV}.dist-info/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/suds_community-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/suds_community-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/suds_community-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/suds_community-${MODPY_DISTV}.dist-info/top_level.txt

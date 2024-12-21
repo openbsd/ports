@@ -1,9 +1,9 @@
 COMMENT =		py.test plugin to validate Jupyter notebooks
 
-MODPY_EGG_VERSION =	0.9.6
-DISTNAME =		nbval-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.9.6
+DISTNAME =		nbval-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 
@@ -19,15 +19,12 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	-v --current-env
 
-RUN_DEPENDS =		devel/py-ipykernel${MODPY_FLAVOR} \
-			devel/py-jupyter_client${MODPY_FLAVOR} \
-			devel/py-nbformat${MODPY_FLAVOR} \
-			devel/py-six${MODPY_FLAVOR} \
-			devel/py-test-cov${MODPY_FLAVOR}
-TEST_DEPENDS =		devel/py-nbval${MODPY_FLAVOR} \
-			math/py-sympy${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR =		python3
+RUN_DEPENDS =		devel/py-ipykernel \
+			devel/py-jupyter_client \
+			devel/py-nbformat \
+			devel/py-six \
+			devel/py-test-cov
+TEST_DEPENDS =		devel/py-nbval \
+			math/py-sympy
 
 .include <bsd.port.mk>

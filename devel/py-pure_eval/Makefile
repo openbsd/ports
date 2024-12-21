@@ -1,9 +1,10 @@
 COMMENT=	safely evaluate AST nodes without side effects
 
-MODPY_EGG_VERSION=	0.2.3
+MODPY_DISTV=	0.2.3
 
-DISTNAME=	pure_eval-${MODPY_EGG_VERSION}
+DISTNAME=	pure_eval-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -16,8 +17,5 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

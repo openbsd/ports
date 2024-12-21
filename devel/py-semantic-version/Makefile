@@ -1,10 +1,10 @@
 COMMENT=		library implementing the 'SemVer' scheme
 
-MODPY_EGG_VERSION=	2.10.0
+MODPY_DISTV=	2.10.0
 
-DISTNAME=		semantic_version-${MODPY_EGG_VERSION}
+DISTNAME=		semantic_version-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		devel
 
@@ -17,8 +17,5 @@ MODULES=		lang/python
 
 MODPY_PI=		Yes
 MODPY_PYBUILD=		setuptools
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

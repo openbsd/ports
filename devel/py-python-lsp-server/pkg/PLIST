@@ -1,3 +1,4 @@
+@pkgpath devel/py-python-lsp-server,python3
 bin/pylsp
 lib/python${MODPY_VERSION}/site-packages/pylsp/
 lib/python${MODPY_VERSION}/site-packages/pylsp/__init__.py
@@ -119,10 +120,10 @@ lib/python${MODPY_VERSION}/site-packages/pylsp/python_lsp.py
 lib/python${MODPY_VERSION}/site-packages/pylsp/text_edit.py
 lib/python${MODPY_VERSION}/site-packages/pylsp/uris.py
 lib/python${MODPY_VERSION}/site-packages/pylsp/workspace.py
-lib/python${MODPY_VERSION}/site-packages/python_lsp_server-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/python_lsp_server-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/python_lsp_server-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/python_lsp_server-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/python_lsp_server-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/python_lsp_server-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/python_lsp_server-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/python_lsp_server-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/python_lsp_server-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/python_lsp_server-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/python_lsp_server-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/python_lsp_server-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/python_lsp_server-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/python_lsp_server-${MODPY_DISTV}.dist-info/top_level.txt

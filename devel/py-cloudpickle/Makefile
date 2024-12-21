@@ -1,9 +1,9 @@
 COMMENT =	extended pickling support for Python objects
-MODPY_EGG_VERSION =	1.5.0
-DISTNAME =	cloudpickle-${MODPY_EGG_VERSION}
-PKGNAME =	py-cloudpickle-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.5.0
+DISTNAME =	cloudpickle-${MODPY_DISTV}
+PKGNAME =	py-cloudpickle-${MODPY_DISTV}
 CATEGORIES =	devel
-REVISION =	4
+REVISION =	5
 
 HOMEPAGE =	https://github.com/cloudpipe/cloudpickle
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -15,12 +15,9 @@ MODULES =	lang/python
 MODPY_PYBUILD =	setuptools
 MODPY_PI =	Yes
 
-FLAVORS =	python3
-FLAVOR =	python3
-
-TEST_DEPENDS =	devel/py-mock${MODPY_FLAVOR} \
-		sysutils/py-psutil${MODPY_FLAVOR} \
-		www/py-tornado${MODPY_FLAVOR}
+TEST_DEPENDS =	devel/py-mock \
+		sysutils/py-psutil \
+		www/py-tornado
 
 MODPY_TEST_LIBDIR = ".:tests:tests/cloudpickle_testpkg"
 

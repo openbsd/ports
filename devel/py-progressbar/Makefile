@@ -1,11 +1,11 @@
 COMMENT =		text progressbar library for python
 
-MODPY_EGG_VERSION =	2.5
+MODPY_DISTV =	2.5
 
-DISTNAME =		progressbar-${MODPY_EGG_VERSION}
+DISTNAME =		progressbar-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		7
+REVISION =		8
 
 HOMEPAGE =		https://github.com/niltonvolpato/python-progressbar
 
@@ -17,9 +17,6 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 NO_TEST =		Yes
 

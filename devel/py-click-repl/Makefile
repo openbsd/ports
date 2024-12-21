@@ -1,9 +1,9 @@
 COMMENT =		REPL plugin for click
 
-MODPY_EGG_VERSION =	0.3.0
-DISTNAME =		click-repl-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.3.0
+DISTNAME =		click-repl-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
@@ -12,15 +12,12 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		devel/py-click${MODPY_FLAVOR} \
-			devel/py-prompt_toolkit${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-click \
+			devel/py-prompt_toolkit
 
-TEST_DEPENDS =		devel/py-test-cov${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-test-cov
 
 .include <bsd.port.mk>

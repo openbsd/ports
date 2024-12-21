@@ -1,28 +1,27 @@
 COMMENT=	reference implementation for Python's "wheel" package format
 
-MODPY_EGG_VERSION=	0.45.1
-DISTNAME=	wheel-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.45.1
+DISTNAME=	wheel-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
+REVISION=	0
 
 # MIT
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 MODPY_PI=	Yes
-FLAVORS=	python3
-FLAVOR=		python3
 
 # This port is a BDEP of most py-* ports so must have minimal deps and
 # cannot use MODPY_PYBUILD. flit_core and installer are OK because they
 # have their own bootstrap mechanisms.
-BUILD_DEPENDS=  devel/py-installer${MODPY_FLAVOR} \
-                devel/py-flit_core${MODPY_FLAVOR}
+BUILD_DEPENDS=  devel/py-installer \
+                devel/py-flit_core
 
 MODPY_PYTEST_ARGS= tests
-TEST_DEPENDS=	devel/py-coverage${MODPY_FLAVOR} \
-		devel/py-flit${MODPY_FLAVOR} \
-		devel/py-test-cov${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-coverage \
+		devel/py-flit \
+		devel/py-test-cov
 
 do-build:
 	cd ${WRKSRC} && ${MODPY_BIN} -m flit_core.wheel

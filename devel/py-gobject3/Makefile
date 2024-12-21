@@ -2,8 +2,9 @@ COMMENT=		Python bindings for GLib and GObject
 
 GNOME_PROJECT=		pygobject
 GNOME_VERSION=		3.50.0
-MODPY_EGG_VERSION=	${GNOME_VERSION}
+MODPY_DISTV=	${GNOME_VERSION}
 PKGNAME=		py3-gobject3-${GNOME_VERSION}
+REVISION=		0
 
 CATEGORIES=		devel
 
@@ -15,9 +16,6 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += cairo cairo-gobject ffi girepository-1.0 glib-2.0 gobject-2.0
-
-FLAVORS=		python3
-FLAVOR=			python3
 
 MODULES=		devel/meson \
 			lang/python \
@@ -31,14 +29,14 @@ MODPY_PYBUILD=		setuptools
 MODULES +=		gcc4
 MODGCC4_ARCHS=		${GCC3_ARCHS} ${GCC4_ARCHS}
 
-BUILD_DEPENDS=		graphics/py-cairo${MODPY_FLAVOR}
+BUILD_DEPENDS=		graphics/py-cairo
 
 LIB_DEPENDS=		devel/gobject-introspection \
 			graphics/cairo
 
-RUN_DEPENDS=		graphics/py-cairo${MODPY_FLAVOR}
+RUN_DEPENDS=		graphics/py-cairo
 
-TEST_DEPENDS=		devel/py-test${MODPY_FLAVOR}
+TEST_DEPENDS=		devel/py-test
 
 CONFIGURE_ARGS=		-Dpython=python${MODPY_VERSION}
 

@@ -1,9 +1,9 @@
 COMMENT=	library for getting/setting process names
 
-MODPY_EGG_VERSION=	1.3.3
-DISTNAME=	setproctitle-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.3.3
+DISTNAME=	setproctitle-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -18,8 +18,5 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
 MODULES=	lang/python
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

@@ -1,8 +1,9 @@
 COMMENT=	lightweight in-process concurrent programming
 
-MODPY_EGG_VERSION= 3.1.1
-DISTNAME=	greenlet-${MODPY_EGG_VERSION}
+MODPY_DISTV=	3.1.1
+DISTNAME=	greenlet-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -19,13 +20,10 @@ MODPY_PI=	Yes
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 
-FLAVORS=	python3
-FLAVOR=		python3
-
 # some exception-handling tests seem to be expected to abort Python
 # which is a bit noisy in test output but those tests don't fail
-TEST_DEPENDS=	devel/py-objgraph${MODPY_FLAVOR} \
-		sysutils/py-psutil${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-objgraph \
+		sysutils/py-psutil
 
 # disable leak tests which try to look up USS via psutil (not on BSDs)
 MODPY_PYTEST_ARGS+= -k 'not test_untracked_memory_doesnt_increase and \

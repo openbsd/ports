@@ -1,4 +1,4 @@
-@pkgpath devel/py-ana
+@pkgpath devel/py-ana,python3
 lib/python${MODPY_VERSION}/site-packages/ana/
 lib/python${MODPY_VERSION}/site-packages/ana-0.6.dist-info/
 lib/python${MODPY_VERSION}/site-packages/ana-0.6.dist-info/LICENSE

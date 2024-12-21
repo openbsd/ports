@@ -1,9 +1,9 @@
-@pkgpath devel/py-dispatcher
-lib/python${MODPY_VERSION}/site-packages/PyDispatcher-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/PyDispatcher-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/PyDispatcher-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/PyDispatcher-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/PyDispatcher-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+@pkgpath devel/py-dispatcher,python3
+lib/python${MODPY_VERSION}/site-packages/PyDispatcher-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/PyDispatcher-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/PyDispatcher-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/PyDispatcher-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/PyDispatcher-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pydispatch/
 lib/python${MODPY_VERSION}/site-packages/pydispatch/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pydispatch/${MODPY_PYCACHE}/

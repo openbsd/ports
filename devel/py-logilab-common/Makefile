@@ -1,10 +1,10 @@
 COMMENT=	common low-level libraries for logilab projects
 
-MODPY_EGG_VERSION=	1.9.8
-DISTNAME=	logilab-common-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.9.8
+DISTNAME=	logilab-common-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://www.logilab.org/project/logilab-common
 
@@ -13,12 +13,9 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 
-TEST_DEPENDS=	devel/py-tz${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-tz
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

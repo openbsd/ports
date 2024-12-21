@@ -1,12 +1,12 @@
+@pkgpath devel/py-traitlets,python3
 @conflict py-traitlets-*
-@pkgpath devel/py-traitlets
 lib/python${MODPY_VERSION}/site-packages/traitlets/
-lib/python${MODPY_VERSION}/site-packages/traitlets-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/traitlets-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/traitlets-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/traitlets-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/traitlets-${MODPY_EGG_VERSION}.dist-info/licenses/
-lib/python${MODPY_VERSION}/site-packages/traitlets-${MODPY_EGG_VERSION}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/traitlets-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/traitlets-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/traitlets-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/traitlets-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/traitlets-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/traitlets-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/traitlets/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/traitlets/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/traitlets/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

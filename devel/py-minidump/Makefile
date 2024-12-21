@@ -1,9 +1,10 @@
 COMMENT =		library to parse Windows minidump file format
 
-MODPY_EGG_VERSION =	0.0.24
+MODPY_DISTV =	0.0.24
 
-DISTNAME =		minidump-${MODPY_EGG_VERSION}
+DISTNAME =		minidump-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -16,8 +17,5 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 NO_TEST =		Yes
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 .include <bsd.port.mk>

@@ -1,8 +1,9 @@
 COMMENT =		data validation using Python type hints
 
-MODPY_EGG_VERSION =	2.9.2
-DISTNAME =		pydantic-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.9.2
+DISTNAME =		pydantic-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -15,19 +16,16 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		hatchling
 
-BUILD_DEPENDS =		devel/py-hatch-fancy-pypi-readme${MODPY_FLAVOR}
-RUN_DEPENDS =		devel/py-typing-extensions${MODPY_FLAVOR} \
-			devel/py-pydantic-core${MODPY_FLAVOR} \
-			devel/py-annotated_types${MODPY_FLAVOR}
-TEST_DEPENDS =		devel/py-test-mock${MODPY_FLAVOR} \
-			devel/py-cloudpickle${MODPY_FLAVOR} \
-			devel/py-dirty-equals${MODPY_FLAVOR}
+BUILD_DEPENDS =		devel/py-hatch-fancy-pypi-readme
+RUN_DEPENDS =		devel/py-typing-extensions \
+			devel/py-pydantic-core \
+			devel/py-annotated_types
+TEST_DEPENDS =		devel/py-test-mock \
+			devel/py-cloudpickle \
+			devel/py-dirty-equals
 PORTHOME =		${WRKDIR}
 
 # needs pytest-examples
 MODPY_PYTEST_ARGS= --ignore tests/test_docs.py
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 .include <bsd.port.mk>

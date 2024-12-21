@@ -1,8 +1,9 @@
 COMMENT=	buildworker for the buildbot CI system
 
-MODPY_EGG_VERSION=	4.2.0
-DISTNAME=	buildbot_worker-${MODPY_EGG_VERSION}
+MODPY_DISTV=	4.2.0
+DISTNAME=	buildbot_worker-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/_/-/}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -13,19 +14,19 @@ MAINTAINER =	Landry Breuil <landry@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-SITES =		https://github.com/buildbot/buildbot/releases/download/v${MODPY_EGG_VERSION}/
+SITES =		https://github.com/buildbot/buildbot/releases/download/v${MODPY_DISTV}/
 
 MODULES=	lang/python
 
 MODPY_PYBUILD =	setuptools
 
-RUN_DEPENDS=	devel/py-twisted${MODPY_FLAVOR}>=17.9.0 \
-		devel/py-txaio${MODPY_FLAVOR} \
-		www/py-autobahn${MODPY_FLAVOR} \
-		net/py-msgpack${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-twisted>=17.9.0 \
+		devel/py-txaio \
+		www/py-autobahn \
+		net/py-msgpack
 
-TEST_DEPENDS=	devel/py-setuptools_trial${MODPY_FLAVOR} \
-		devel/py-mock${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-setuptools_trial \
+		devel/py-mock
 
 UPDATE_PLIST_ARGS +=	-i MODPY_PY_PREFIX
 

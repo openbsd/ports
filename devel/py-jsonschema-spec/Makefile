@@ -1,11 +1,11 @@
 COMMENT=	JSONSchema Spec with object-oriented paths
 
-MODPY_EGG_VERSION=	0.1.6
+MODPY_DISTV=	0.1.6
 EPOCH=		0
 # 0.2.x has new dependencies
-DISTNAME=	jsonschema_spec-${MODPY_EGG_VERSION}
+DISTNAME=	jsonschema_spec-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -16,16 +16,13 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 
-RUN_DEPENDS=	devel/py-jsonschema${MODPY_FLAVOR} \
-		devel/py-pathable${MODPY_FLAVOR} \
-		textproc/py-yaml${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+RUN_DEPENDS=	devel/py-jsonschema \
+		devel/py-pathable \
+		textproc/py-yaml
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	poetry-core
 # coverage only, no real tests in pypi distfile
-TEST_DEPENDS=	devel/py-coverage${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-coverage
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
 COMMENT =	atomic file writes
 
-MODPY_EGG_VERSION =	1.4.1
-DISTNAME =	atomicwrites-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.4.1
+DISTNAME =	atomicwrites-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	devel
 
@@ -16,8 +16,5 @@ MODULES =	lang/python
 
 MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 .include <bsd.port.mk>

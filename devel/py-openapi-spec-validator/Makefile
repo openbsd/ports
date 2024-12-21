@@ -1,8 +1,9 @@
 COMMENT =		OpenAPI 2.0 (aka Swagger) and OpenAPI 3 spec validator
 
-MODPY_EGG_VERSION =	0.7.1
-DISTNAME =		openapi_spec_validator-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.7.1
+DISTNAME =		openapi_spec_validator-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/}
+REVISION =		0
 
 CATEGORIES =		devel www
 
@@ -13,13 +14,10 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-RUN_DEPENDS =		devel/py-jsonschema${MODPY_FLAVOR} \
-			devel/py-jsonschema-spec${MODPY_FLAVOR} \
-			devel/py-lazy-object-proxy${MODPY_FLAVOR} \
-			devel/py-openapi-schema-validator${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR  =		python3
+RUN_DEPENDS =		devel/py-jsonschema \
+			devel/py-jsonschema-spec \
+			devel/py-lazy-object-proxy \
+			devel/py-openapi-schema-validator
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		poetry-core

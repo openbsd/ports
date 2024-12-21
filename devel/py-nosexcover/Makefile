@@ -1,10 +1,10 @@
 COMMENT=	extend nose coverage to add Cobertura-style XML reports
 
-MODPY_EGG_VERSION=	1.0.11
-DISTNAME=	nosexcover-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.0.11
+DISTNAME=	nosexcover-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	9
+REVISION=	10
 
 # BSD
 PERMIT_PACKAGE=	Yes
@@ -16,10 +16,7 @@ MODPY_PYTEST_ARGS= nosexcover/tests.py
 
 HOMEPAGE=	https://github.com/cmheisel/nose-xcover/
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-RUN_DEPENDS=	devel/py-nose${MODPY_FLAVOR} \
-		devel/py-coverage${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-nose \
+		devel/py-coverage
 
 .include <bsd.port.mk>

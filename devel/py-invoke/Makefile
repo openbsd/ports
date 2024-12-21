@@ -1,10 +1,10 @@
 COMMENT =	Pythonic task execution
 
-MODPY_EGG_VERSION =	1.7.3
+MODPY_DISTV =	1.7.3
 
-DISTNAME =	invoke-${MODPY_EGG_VERSION}
+DISTNAME =	invoke-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
@@ -22,10 +22,7 @@ NO_TEST =	Yes
 
 # some failures, possibly related to running under ports test framework
 # with captured stdio etc.
-#TEST_DEPENDS =	devel/py-test-relaxed${MODPY_FLAVOR} \
-#		devel/py-mock${MODPY_FLAVOR}
-
-FLAVORS =	python3
-FLAVOR =	python3
+#TEST_DEPENDS =	devel/py-test-relaxed \
+#		devel/py-mock
 
 .include <bsd.port.mk>

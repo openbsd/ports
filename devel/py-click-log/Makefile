@@ -1,9 +1,9 @@
 COMMENT =		logging integration for Python click
 
-MODPY_EGG_VERSION =	0.3.2
-DISTNAME =		click-log-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.3.2
+DISTNAME =		click-log-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		7
+REVISION =		8
 
 CATEGORIES =		devel
 
@@ -14,14 +14,11 @@ MAINTAINER =		Remi Locherer <remi@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS =		devel/py-click${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-click
 
 MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 .include <bsd.port.mk>

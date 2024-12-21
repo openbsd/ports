@@ -1,10 +1,10 @@
 COMMENT=	measures number of terminal column cells of wide-char code
 
-MODPY_EGG_VERSION=	0.2.13
+MODPY_DISTV=	0.2.13
 
-DISTNAME=	wcwidth-${MODPY_EGG_VERSION}
+DISTNAME=	wcwidth-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -18,9 +18,6 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-TEST_DEPENDS=	devel/py-test-cov${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-test-cov
 
 .include <bsd.port.mk>

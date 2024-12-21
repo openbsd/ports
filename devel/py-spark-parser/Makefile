@@ -1,10 +1,10 @@
 COMMENT =		early-algorithm context-free grammar parser
 
-MODPY_EGG_VERSION =	1.8.9
-DISTNAME =		spark_parser-${MODPY_EGG_VERSION}
-PKGNAME =		py-spark-parser-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.8.9
+DISTNAME =		spark_parser-${MODPY_DISTV}
+PKGNAME =		py-spark-parser-${MODPY_DISTV}
 CATEGORIES =		devel
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://github.com/rocky/python-spark/
 
@@ -17,9 +17,6 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	test
 
-RUN_DEPENDS =		devel/py-click${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR =		python3
+RUN_DEPENDS =		devel/py-click
 
 .include <bsd.port.mk>

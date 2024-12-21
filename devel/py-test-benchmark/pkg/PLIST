@@ -1,16 +1,16 @@
+@pkgpath devel/py-test-benchmark,python3
 @conflict py-test-benchmark-<3.2.2p2
-@pkgpath devel/py-test-benchmark
 bin/py.test-benchmark
 bin/pytest-benchmark
 lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/
-lib/python${MODPY_VERSION}/site-packages/pytest_benchmark-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pytest_benchmark-${MODPY_EGG_VERSION}.dist-info/AUTHORS.rst
-lib/python${MODPY_VERSION}/site-packages/pytest_benchmark-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/pytest_benchmark-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/pytest_benchmark-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/pytest_benchmark-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/pytest_benchmark-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/pytest_benchmark-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pytest_benchmark-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pytest_benchmark-${MODPY_DISTV}.dist-info/AUTHORS.rst
+lib/python${MODPY_VERSION}/site-packages/pytest_benchmark-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/pytest_benchmark-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/pytest_benchmark-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/pytest_benchmark-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pytest_benchmark-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/pytest_benchmark-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pytest_benchmark/${MODPY_PYCACHE}/

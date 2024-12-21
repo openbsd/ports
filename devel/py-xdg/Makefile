@@ -1,9 +1,9 @@
 COMMENT=		python library to access freedesktop.org standards
 
-MODPY_EGG_VERSION=	0.28
-DISTNAME=		pyxdg-${MODPY_EGG_VERSION}
-PKGNAME=		py-xdg-${MODPY_EGG_VERSION}
-REVISION=		3
+MODPY_DISTV=	0.28
+DISTNAME=		pyxdg-${MODPY_DISTV}
+PKGNAME=		py-xdg-${MODPY_DISTV}
+REVISION=		4
 
 CATEGORIES=		devel
 
@@ -13,9 +13,6 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # LGPLv2
 PERMIT_PACKAGE=	Yes
-
-FLAVORS=		python3
-FLAVOR=			python3
 
 MODULES=		lang/python
 

@@ -1,10 +1,10 @@
 COMMENT=		useful extra bits for Python
 
-MODPY_EGG_VERSION=	1.0.0
-DISTNAME=		extras-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.0.0
+DISTNAME=		extras-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
-REVISION=		7
+REVISION=		8
 
 # MIT
 PERMIT_PACKAGE=	Yes
@@ -14,9 +14,6 @@ MODULES=		lang/python
 MODPY_PI=		Yes
 MODPY_PYBUILD=		setuptools
 
-FLAVORS=		python3
-FLAVOR=			python3
-
-TEST_DEPENDS=		devel/py-testtools${MODPY_FLAVOR}
+TEST_DEPENDS=		devel/py-testtools
 
 .include <bsd.port.mk>

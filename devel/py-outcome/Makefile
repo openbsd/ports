@@ -1,9 +1,9 @@
 COMMENT =	capture the outcome of a Python function call
 
-MODPY_EGG_VERSION=	1.3.0
-DISTNAME=	outcome-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.3.0
+DISTNAME=	outcome-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
@@ -11,9 +11,6 @@ CATEGORIES=	devel
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools

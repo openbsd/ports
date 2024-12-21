@@ -1,10 +1,10 @@
 COMMENT =		textUI colors for Python
 
-MODPY_EGG_VERSION =	0.4.0
+MODPY_DISTV =	0.4.0
 
-DISTNAME =		crayons-${MODPY_EGG_VERSION}
+DISTNAME =		crayons-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		devel
 
@@ -20,9 +20,6 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		devel/py-colorama${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR =		python3
+RUN_DEPENDS =		devel/py-colorama
 
 .include <bsd.port.mk>

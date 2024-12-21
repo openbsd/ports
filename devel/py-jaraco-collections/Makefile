@@ -1,8 +1,9 @@
 COMMENT=	models and classes to supplement stdlib 'collections' module
 
-MODPY_EGG_VERSION=	5.1.0
-DISTNAME=	jaraco_collections-${MODPY_EGG_VERSION}
-PKGNAME=	py-jaraco.collections-${MODPY_EGG_VERSION}
+MODPY_DISTV=	5.1.0
+DISTNAME=	jaraco_collections-${MODPY_DISTV}
+PKGNAME=	py-jaraco.collections-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -16,10 +17,7 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
-RUN_DEPENDS=	textproc/py-jaraco-text${MODPY_FLAVOR} \
-		devel/py-jaraco-classes${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+RUN_DEPENDS=	textproc/py-jaraco-text \
+		devel/py-jaraco-classes
 
 .include <bsd.port.mk>

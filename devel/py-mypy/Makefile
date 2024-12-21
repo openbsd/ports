@@ -1,8 +1,9 @@
 COMMENT=	optional static type checker for Python
 
-MODPY_EGG_VERSION=	1.12.0
-DISTNAME=	mypy-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.12.0
+DISTNAME=	mypy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -16,19 +17,16 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-BUILD_DEPENDS=	devel/py-types-psutil${MODPY_FLAVOR} \
-		devel/py-types-setuptools${MODPY_FLAVOR} \
-		devel/py-typing-extensions${MODPY_FLAVOR} \
-		devel/py-mypy-extensions${MODPY_FLAVOR}
-RUN_DEPENDS=	devel/py-typing-extensions${MODPY_FLAVOR} \
-		devel/py-mypy-extensions${MODPY_FLAVOR}
+BUILD_DEPENDS=	devel/py-types-psutil \
+		devel/py-types-setuptools \
+		devel/py-typing-extensions \
+		devel/py-mypy-extensions
+RUN_DEPENDS=	devel/py-typing-extensions \
+		devel/py-mypy-extensions
 # some tests want network access
 PORTHOME=	${WRKDIR}
-TEST_DEPENDS=	devel/py-test-cov${MODPY_FLAVOR} \
-		devel/py-test-xdist${MODPY_FLAVOR} \
-		sysutils/py-filelock${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+TEST_DEPENDS=	devel/py-test-cov \
+		devel/py-test-xdist \
+		sysutils/py-filelock
 
 .include <bsd.port.mk>

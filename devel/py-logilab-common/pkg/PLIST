@@ -1,5 +1,5 @@
+@pkgpath devel/py-logilab-common,python3
 @conflict py-logilab-common-<1.4.0p3
-@pkgpath devel/py-logilab-common
 bin/logilab-pytest
 lib/python${MODPY_VERSION}/site-packages/logilab/
 lib/python${MODPY_VERSION}/site-packages/logilab/common/
@@ -123,12 +123,12 @@ lib/python${MODPY_VERSION}/site-packages/logilab/common/urllib2ext.py
 lib/python${MODPY_VERSION}/site-packages/logilab/common/vcgutils.py
 lib/python${MODPY_VERSION}/site-packages/logilab/common/visitor.py
 lib/python${MODPY_VERSION}/site-packages/logilab/common/xmlutils.py
-lib/python${MODPY_VERSION}/site-packages/logilab_common-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth
-lib/python${MODPY_VERSION}/site-packages/logilab_common-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/logilab_common-${MODPY_EGG_VERSION}.dist-info/COPYING
-lib/python${MODPY_VERSION}/site-packages/logilab_common-${MODPY_EGG_VERSION}.dist-info/COPYING.LESSER
-lib/python${MODPY_VERSION}/site-packages/logilab_common-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/logilab_common-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/logilab_common-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/logilab_common-${MODPY_EGG_VERSION}.dist-info/namespace_packages.txt
-lib/python${MODPY_VERSION}/site-packages/logilab_common-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/logilab_common-${MODPY_DISTV}-py${MODPY_VERSION}-nspkg.pth
+lib/python${MODPY_VERSION}/site-packages/logilab_common-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/logilab_common-${MODPY_DISTV}.dist-info/COPYING
+lib/python${MODPY_VERSION}/site-packages/logilab_common-${MODPY_DISTV}.dist-info/COPYING.LESSER
+lib/python${MODPY_VERSION}/site-packages/logilab_common-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/logilab_common-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/logilab_common-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/logilab_common-${MODPY_DISTV}.dist-info/namespace_packages.txt
+lib/python${MODPY_VERSION}/site-packages/logilab_common-${MODPY_DISTV}.dist-info/top_level.txt

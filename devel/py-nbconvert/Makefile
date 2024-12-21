@@ -1,8 +1,9 @@
 COMMENT =		convert Jupyter notebooks (.ipynb) to other formats
 
-MODPY_EGG_VERSION =	7.16.4
-DISTNAME =		nbconvert-${MODPY_EGG_VERSION}
+MODPY_DISTV =	7.16.4
+DISTNAME =		nbconvert-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -18,28 +19,25 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		hatchling
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-RUN_DEPENDS =		devel/py-jupyter_core${MODPY_FLAVOR}>=4.7 \
-			devel/py-nbclient${MODPY_FLAVOR}>=0.5.0 \
-			devel/py-nbformat${MODPY_FLAVOR}>=5.7 \
-			devel/py-traitlets${MODPY_FLAVOR}>=5.1 \
-			sysutils/py-packaging${MODPY_FLAVOR} \
-			textproc/py-MarkupSafe${MODPY_FLAVOR}>=2.0 \
-			textproc/py-defusedxml${MODPY_FLAVOR} \
-			textproc/py-jupyterlab_pygments${MODPY_FLAVOR} \
-			textproc/py-mistune${MODPY_FLAVOR}>=2.0.3,<4 \
-			textproc/py-pandocfilters${MODPY_FLAVOR}>=1.4.1 \
-			textproc/py-pygments${MODPY_FLAVOR}>=2.4.1 \
-			textproc/py-tinycss2${MODPY_FLAVOR} \
-			www/py-beautifulsoup4${MODPY_FLAVOR} \
-			www/py-bleach${MODPY_FLAVOR}>=5.0.0 \
-			www/py-jinja2${MODPY_FLAVOR}>=3.0
+RUN_DEPENDS =		devel/py-jupyter_core>=4.7 \
+			devel/py-nbclient>=0.5.0 \
+			devel/py-nbformat>=5.7 \
+			devel/py-traitlets>=5.1 \
+			sysutils/py-packaging \
+			textproc/py-MarkupSafe>=2.0 \
+			textproc/py-defusedxml \
+			textproc/py-jupyterlab_pygments \
+			textproc/py-mistune>=2.0.3,<4 \
+			textproc/py-pandocfilters>=1.4.1 \
+			textproc/py-pygments>=2.4.1 \
+			textproc/py-tinycss2 \
+			www/py-beautifulsoup4 \
+			www/py-bleach>=5.0.0 \
+			www/py-jinja2>=3.0
 
 # needs ipywidgets>=7.5
-TEST_DEPENDS =		devel/py-flaky${MODPY_FLAVOR} \
-			devel/py-ipykernel${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-flaky \
+			devel/py-ipykernel
 
 PORTHOME =		${WRKDIR}
 

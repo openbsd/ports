@@ -1,8 +1,9 @@
 COMMENT =		memory-efficient hashtable with serialization
 
-MODPY_EGG_VERSION =	0.0.2
-DISTNAME =		borghash-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.0.2
+DISTNAME =		borghash-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -16,9 +17,6 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PYBUILD =		setuptools_scm
 MODPY_PI =		Yes
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 # tests not included in pypi tarball
 NO_TEST	=		Yes

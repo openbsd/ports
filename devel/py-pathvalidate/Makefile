@@ -1,9 +1,10 @@
 COMMENT =		library to sanitize/validate paths
 
-MODPY_EGG_VERSION =	3.2.1
+MODPY_DISTV =	3.2.1
 
-DISTNAME =		pathvalidate-${MODPY_EGG_VERSION}
+DISTNAME =		pathvalidate-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES =		devel
 
@@ -11,9 +12,6 @@ HOMEPAGE =		https://github.com/thombashi/pathvalidate
 
 # MIT
 PERMIT_PACKAGE =	Yes
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 MODULES =		lang/python
 

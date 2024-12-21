@@ -1,8 +1,9 @@
 COMMENT =		compatibility for pydantic v1-v2 cross compatibility
 
-MODPY_EGG_VERSION =	0.1.2
-DISTNAME =		pydantic_compat-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.1.2
+DISTNAME =		pydantic_compat-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 
@@ -15,13 +16,10 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		hatch-vcs
 
-BUILD_DEPENDS =		lang/cython${MODPY_FLAVOR}
-RUN_DEPENDS =		devel/py-pydantic${MODPY_FLAVOR} \
-			devel/py-typing-extensions${MODPY_FLAVOR}
-TEST_DEPENDS =		devel/py-test-mock${MODPY_FLAVOR}
+BUILD_DEPENDS =		lang/cython
+RUN_DEPENDS =		devel/py-pydantic \
+			devel/py-typing-extensions
+TEST_DEPENDS =		devel/py-test-mock
 PORTHOME =		${WRKDIR}
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 .include <bsd.port.mk>
