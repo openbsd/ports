@@ -33,6 +33,10 @@ MAKE_ENV+=	LOCALBASE="${LOCALBASE}" \
 TEST_IS_INTERACTIVE=	x11
 TEST_ENV=	PYTHONPATH=${WRKSRC}
 
+.if ${MACHINE_ARCH:Mi386}
+CFLAGS+=	-msse2
+.endif
+
 do-configure:
 	@cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} buildconfig/config.py -auto
 
