@@ -26,7 +26,7 @@ MODULES=		devel/meson \
 
 MODPY_RUNDEP=		No
 
-BUILD_DEPENDS=		textproc/py-sphinx${MODPY_FLAVOR}
+BUILD_DEPENDS=		textproc/py-sphinx
 
 LIB_DEPENDS=		graphics/ffmpeg
 

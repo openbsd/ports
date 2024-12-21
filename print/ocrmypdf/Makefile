@@ -1,8 +1,9 @@
 COMMENT=	add an OCR text layer to scanned PDF files
 
-MODPY_EGG_VERSION=  16.6.0
+MODPY_DISTV=	 16.6.0
 # standalone; no py- prefix
-DISTNAME=	ocrmypdf-${MODPY_EGG_VERSION}
+DISTNAME=	ocrmypdf-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	print
 
@@ -17,17 +18,17 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	hatch-vcs
 
 # python deps:
-RUN_DEPENDS=	graphics/py-Pillow${MODPY_FLAVOR} \
-		textproc/py-coloredlogs${MODPY_FLAVOR} \
-		devel/py-deprecation${MODPY_FLAVOR} \
+RUN_DEPENDS=	graphics/py-Pillow \
+		textproc/py-coloredlogs \
+		devel/py-deprecation \
 		graphics/img2pdf \
-		sysutils/py-packaging${MODPY_FLAVOR} \
-		textproc/py-pdfminer${MODPY_FLAVOR} \
-		print/py-pikepdf${MODPY_FLAVOR} \
-		devel/py-pluggy${MODPY_FLAVOR} \
-		print/py-reportlab${MODPY_FLAVOR} \
-		devel/py-rich${MODPY_FLAVOR} \
-		devel/py-tqdm${MODPY_FLAVOR}
+		sysutils/py-packaging \
+		textproc/py-pdfminer \
+		print/py-pikepdf \
+		devel/py-pluggy \
+		print/py-reportlab \
+		devel/py-rich \
+		devel/py-tqdm
 
 # other deps
 # can also use jbig2enc, not in ports
@@ -37,8 +38,8 @@ RUN_DEPENDS +=	graphics/tesseract/tesseract \
 		print/ghostscript/gnu \
 		print/unpaper
 
-TEST_DEPENDS=	devel/py-test-xdist${MODPY_FLAVOR} \
-		devel/py-hypothesis${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-test-xdist \
+		devel/py-hypothesis
 
 post-install:
 	${INSTALL_DATA_DIR} \

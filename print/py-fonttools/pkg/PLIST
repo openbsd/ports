@@ -1,3 +1,4 @@
+@pkgpath print/py-fonttools,python3
 bin/fonttools
 bin/pyftmerge
 bin/pyftsubset
@@ -940,11 +941,11 @@ lib/python${MODPY_VERSION}/site-packages/fontTools/voltLib/ast.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/voltLib/error.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/voltLib/lexer.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/voltLib/parser.py
-lib/python${MODPY_VERSION}/site-packages/fonttools-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/fonttools-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/fonttools-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/fonttools-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/fonttools-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/fonttools-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/fonttools-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/fonttools-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/fonttools-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/fonttools-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/fonttools-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/fonttools-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/fonttools-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/fonttools-${MODPY_DISTV}.dist-info/top_level.txt
 @man man/man1/ttx.1

@@ -1,8 +1,9 @@
 COMMENT=		templating library able to output odt and pdf files
 
-MODPY_EGG_VERSION=	0.11.1
-DISTNAME=		relatorio-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.11.1
+DISTNAME=		relatorio-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		print textproc
 
@@ -19,13 +20,10 @@ MODULES=		lang/python
 
 MODPY_PYBUILD=		setuptools
 
-FLAVOR=			python3
-FLAVORS=		python3
+RUN_DEPENDS=		www/py-genshi \
+			textproc/py-lxml \
+			devel/py-magic
 
-RUN_DEPENDS=		www/py-genshi${MODPY_FLAVOR} \
-			textproc/py-lxml${MODPY_FLAVOR} \
-			devel/py-magic${MODPY_FLAVOR}
-
-TEST_DEPENDS=		devel/py-nose${MODPY_FLAVOR}
+TEST_DEPENDS=		devel/py-nose
 
 .include <bsd.port.mk>

@@ -4,6 +4,8 @@ COMMENT-full =		texlive texmf for extra macros
 COMMENT-main =		texlive texmf for basic functionality
 COMMENT-buildset =	smallest texlive texmf for building ports
 
+REVISION =		0
+
 # Please do not directly edit the PLIST files. They are auto-generated.
 #
 # If you move things out of another texmf into the buildset, don't forget to:

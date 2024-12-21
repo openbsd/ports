@@ -3,7 +3,7 @@ DPB_PROPERTIES=	parallel
 COMMENT=	desktop publishing program
 DISTNAME=	scribus-1.6.2
 CATEGORIES=	print
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://www.scribus.net/
 
@@ -27,7 +27,7 @@ MODULES=	x11/qt5 \
 BUILD_DEPENDS=	devel/boost
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		graphics/py-Pillow${MODPY_FLAVOR} \
+		graphics/py-Pillow \
 		print/ghostscript/gnu \
 		textproc/antiword \
 		misc/shared-mime-info \

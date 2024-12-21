@@ -2,6 +2,7 @@ COMMENT-main=		text based music notation system
 COMMENT-docs=		lilypond documentation
 
 VERSION=		2.24.4
+REVISION-main=		0
 DISTNAME=		lilypond-v${VERSION}
 DISTNAME-docs=		lilypond-${VERSION}-documentation
 PKGNAME-main=		lilypond-${VERSION}

@@ -1,4 +1,5 @@
 COMMENT =		PDF creation library
+REVISION =		0
 
 DIST_TUPLE +=		github libharu libharu v2.4.4 .
 

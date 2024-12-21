@@ -1,8 +1,9 @@
 COMMENT =		low-level PDF generator
 
-MODPY_EGG_VERSION =	0.11.0
-DISTNAME =		pydyf-${MODPY_EGG_VERSION}
-PKGNAME =		py-pydyf-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.11.0
+DISTNAME =		pydyf-${MODPY_DISTV}
+PKGNAME =		py-pydyf-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		print
 
@@ -14,10 +15,7 @@ MODPY_PYBUILD =		flit_core
 MODPY_PI =		Yes
 #MODPY_TEST_DIR=		${WRKSRC}/tests
 
-TEST_DEPENDS +=		devel/py-test-xdist${MODPY_FLAVOR} \
-			graphics/py-Pillow${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR =		python3
+TEST_DEPENDS +=		devel/py-test-xdist \
+			graphics/py-Pillow
 
 .include <bsd.port.mk>

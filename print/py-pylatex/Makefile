@@ -1,8 +1,9 @@
 COMMENT=		Python interface for LaTeX
 
-MODPY_EGG_VERSION=	1.4.2
-DISTNAME=		PyLaTeX-${MODPY_EGG_VERSION}
-PKGNAME=		py-pylatex-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.4.2
+DISTNAME=		PyLaTeX-${MODPY_DISTV}
+PKGNAME=		py-pylatex-${MODPY_DISTV}
+REVISION=		0
 
 CATEGORIES=		print
 
@@ -15,13 +16,10 @@ PERMIT_PACKAGE=		Yes
 
 MODULES=		lang/python
 
-FLAVORS=		python3
-FLAVOR=			python3
-
 MODPY_PYBUILD=		setuptools
 MODPY_PI=		Yes
 
-RUN_DEPENDS=		devel/py-ordered-set${MODPY_FLAVOR} \
+RUN_DEPENDS=		devel/py-ordered-set \
 			print/texlive/texmf,-full
 
 .include <bsd.port.mk>

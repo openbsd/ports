@@ -2,7 +2,7 @@ COMMENT=		printer (CUPS) administration tool
 
 V=			1.5.18
 DISTNAME=		system-config-printer-${V}
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		print sysutils
 
@@ -24,11 +24,11 @@ BUILD_DEPENDS=		devel/gettext,-tools \
 BUILD_DEPENDS +=	devel/desktop-file-utils
 
 RUN_DEPENDS=		devel/desktop-file-utils \
-			devel/py-gobject3${MODPY_FLAVOR} \
-			graphics/py-cairo${MODPY_FLAVOR} \
+			devel/py-gobject3 \
+			graphics/py-cairo \
 			print/cups-pk-helper \
-			print/py-cups${MODPY_FLAVOR} \
-			x11/dbus-python${MODPY_FLAVOR}
+			print/py-cups \
+			x11/dbus-python
 
 # pygobject introspections (not provided by indirect dependencies)
 RUN_DEPENDS +=		devel/libnotify \

@@ -1,11 +1,11 @@
 COMMENT=	PDF-generating toolkit for Python
 
 # 4.0+ removes the C extension and requires py-cairo and freetype-py instead
-MODPY_EGG_VERSION=	3.6.13
-DISTNAME=	reportlab-${MODPY_EGG_VERSION}
+MODPY_DISTV=	3.6.13
+DISTNAME=	reportlab-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 EPOCH=		0
-REVISION=	0
+REVISION=	1
 
 # see patches/patch-setup_py
 # grep 'zipdata =' `make show=WRKSRC`/setup.py
@@ -22,9 +22,6 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += art_lgpl_2 freetype
 
-FLAVORS=	python3
-FLAVOR=		python3
-
 MODULES=	lang/python
 
 MODPY_PI=	Yes
@@ -32,7 +29,7 @@ MODPY_PYBUILD=	setuptools
 
 LIB_DEPENDS=	graphics/libart
 
-RUN_DEPENDS=	graphics/py-Pillow${MODPY_FLAVOR}
+RUN_DEPENDS=	graphics/py-Pillow
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 post-extract:

@@ -1,9 +1,10 @@
 COMMENT=	GUI tool to rearrange and modify PDF files
 
-MODPY_EGG_VERSION=	1.11.1
+MODPY_DISTV=	1.11.1
 GH_ACCOUNT=	pdfarranger
 GH_PROJECT=	pdfarranger
-GH_TAGNAME=	${MODPY_EGG_VERSION}
+GH_TAGNAME=	${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	print
 
@@ -17,15 +18,15 @@ MODPY_PYBUILD=	setuptools
 # Tests write to HOME
 PORTHOME=	${WRKDIR}
 
-BUILD_DEPENDS=	devel/py-distutils-extra${MODPY_FLAVOR} \
-		print/py-pikepdf${MODPY_FLAVOR}
+BUILD_DEPENDS=	devel/py-distutils-extra \
+		print/py-pikepdf
 RUN_DEPENDS=	devel/desktop-file-utils \
-		devel/py-dateutil${MODPY_FLAVOR} \
-		devel/py-gobject3${MODPY_FLAVOR} \
+		devel/py-dateutil \
+		devel/py-gobject3 \
 		graphics/img2pdf \
 		print/poppler \
-		print/py-pikepdf${MODPY_FLAVOR} \
-		sysutils/py-packaging${MODPY_FLAVOR} \
+		print/py-pikepdf \
+		sysutils/py-packaging \
 		x11/gtk+3 \
 		x11/gtk+4,-guic
 

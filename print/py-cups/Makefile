@@ -1,9 +1,9 @@
 COMMENT=		CUPS bindings for Python
 
-MODPY_EGG_VERSION=	2.0.4
-DISTNAME=		pycups-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.0.4
+DISTNAME=		pycups-${MODPY_DISTV}
 PKGNAME=		${DISTNAME:S/^py/py-/}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		print
 
@@ -21,13 +21,10 @@ MODULES=		lang/python
 MODPY_PI=		Yes
 MODPY_PYBUILD=		setuptools
 
-FLAVORS=		python3
-FLAVOR=			python3
-
 LIB_DEPENDS=		print/cups,-libs \
 			${MODPY_LIB_DEPENDS}
 
-CFLAGS +=		-I${LOCALBASE}/include -DVERSION=\"${MODPY_EGG_VERSION}\"
+CFLAGS +=		-I${LOCALBASE}/include -DVERSION=\"${MODPY_DISTV}\"
 LDFLAGS=		-L${LOCALBASE}/lib
 MAKE_ENV=		PYTHON="${MODPY_BIN}"
 

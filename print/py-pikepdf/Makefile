@@ -1,8 +1,9 @@
 COMMENT =		Python library for reading and writing PDF files
 
-MODPY_EGG_VERSION =	9.4.0
-DISTNAME =		pikepdf-${MODPY_EGG_VERSION}
+MODPY_DISTV =	9.4.0
+DISTNAME =		pikepdf-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/.post/pl/}
+REVISION =		0
 
 CATEGORIES =		print
 
@@ -22,17 +23,14 @@ MODPY_PYBUILD =		setuptools_scm
 MODPY_PYTEST_ARGS =	-rs -v -o addopts=
 CFLAGS +=		-I/usr/local/include
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-BUILD_DEPENDS =		devel/py-pybind11${MODPY_FLAVOR}
-RUN_DEPENDS =		devel/py-deprecated${MODPY_FLAVOR} \
-			graphics/py-Pillow${MODPY_FLAVOR} \
-			sysutils/py-packaging${MODPY_FLAVOR} \
-			textproc/py-lxml${MODPY_FLAVOR}
+BUILD_DEPENDS =		devel/py-pybind11
+RUN_DEPENDS =		devel/py-deprecated \
+			graphics/py-Pillow \
+			sysutils/py-packaging \
+			textproc/py-lxml
 LIB_DEPENDS =		print/qpdf
-TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR} \
-			math/py-numpy${MODPY_FLAVOR} \
-			sysutils/py-psutil${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-hypothesis \
+			math/py-numpy \
+			sysutils/py-psutil
 
 .include <bsd.port.mk>

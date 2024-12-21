@@ -11,6 +11,10 @@ V=			3.24.4
 DISTNAME=		hplip-${V}
 SUBST_VARS=		V
 
+REVISION-main=		0
+REVISION-hpaio=		0
+REVISION-gui=		0
+
 PKGNAME-main=		${DISTNAME}
 PKGNAME-common=		hplip-common-${V}
 PKGNAME-hpaio=		hpaio-${V}
@@ -61,14 +65,14 @@ LIB_DEPENDS-main=	print/cups,-libs \
 			print/hplip,-common
 
 RUN_DEPENDS-main=	${MODPY_RUN_DEPENDS} \
-			devel/py-gobject3${MODPY_FLAVOR} \
-			graphics/py-Pillow${MODPY_FLAVOR} \
+			devel/py-gobject3 \
+			graphics/py-Pillow \
 			net/avahi \
 			print/hplip,-hpaio \
 			print/hplip,-hpcups \
-			print/py-reportlab${MODPY_FLAVOR} \
-			sysutils/py-distro${MODPY_FLAVOR} \
-			x11/dbus-python${MODPY_FLAVOR}
+			print/py-reportlab \
+			sysutils/py-distro \
+			x11/dbus-python
 
 # package is only useful if cups is installed
 RUN_DEPENDS-main +=	print/cups
@@ -123,7 +127,7 @@ RUN_DEPENDS-hpijs +=	print/cups-filters
 ### -gui
 WANTLIB-gui +=		# empty
 
-RUN_DEPENDS-gui=	x11/py-qt5${MODPY_FLAVOR} \
+RUN_DEPENDS-gui=	x11/py-qt5 \
 			print/hplip,-main \
 			devel/xdg-utils \
 			devel/desktop-file-utils \
