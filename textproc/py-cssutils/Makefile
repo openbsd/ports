@@ -2,12 +2,11 @@ COMMENT=	parse and build CSS from Python
 
 CATEGORIES=	textproc
 
-MODPY_DISTV=	2.10.3
+MODPY_DISTV=	2.11.1
 DISTNAME=	cssutils-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
-# GPLv3
+# LGPLv3
 PERMIT_PACKAGE=	Yes
 
 HOMEPAGE=	https://github.com/jaraco/cssutils

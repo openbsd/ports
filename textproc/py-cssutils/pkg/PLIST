@@ -1,12 +1,11 @@
-@pkgpath textproc/py-cssutils,python3
 @conflict py-cssutils-<1.0.2p2
+@pkgpath textproc/py-cssutils,python3
 bin/csscapture
 bin/csscombine
 bin/cssparse
 lib/python${MODPY_VERSION}/site-packages/cssutils/
 lib/python${MODPY_VERSION}/site-packages/cssutils-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/cssutils-${MODPY_DISTV}.dist-info/COPYING
-lib/python${MODPY_VERSION}/site-packages/cssutils-${MODPY_DISTV}.dist-info/COPYING.LESSER
+lib/python${MODPY_VERSION}/site-packages/cssutils-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/cssutils-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/cssutils-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/cssutils-${MODPY_DISTV}.dist-info/WHEEL
