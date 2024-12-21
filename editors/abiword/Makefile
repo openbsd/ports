@@ -10,6 +10,7 @@ WRKDIST=	${WRKDIR}/AbiWord-542cb5c8aa0a97efd033f78d29f706d1fbae74e7
 
 VERSION=	3.0.6.0.20241101
 DISTNAME=	abiword-${VERSION}
+REVISION=	0
 
 SHARED_LIBS +=  abiword-3.1-test          0.0 # 0.0
 
@@ -49,13 +50,13 @@ CFLAGS +=	-O0
 USE_GMAKE=	Yes
 
 BUILD_DEPENDS=	devel/gobject-introspection \
-		devel/py-gobject3${MODPY_FLAVOR}
+		devel/py-gobject3
 
 # plugins/openxml.so
 BUILD_DEPENDS +=devel/boost
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		devel/py-gobject3${MODPY_FLAVOR} \
+		devel/py-gobject3 \
 		x11/gtk+4,-guic
 
 LIB_DEPENDS=	devel/fribidi \

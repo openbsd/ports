@@ -1,5 +1,5 @@
+@pkgpath editors/py-neovim,python3
 @conflict editors/py-neovim-*
-@pkgpath editors/py-neovim
 lib/python${MODPY_VERSION}/site-packages/neovim/
 lib/python${MODPY_VERSION}/site-packages/neovim/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/neovim/${MODPY_PYCACHE}/
@@ -9,12 +9,12 @@ lib/python${MODPY_VERSION}/site-packages/neovim/api/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/neovim/api/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/neovim/api/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pynvim/
-lib/python${MODPY_VERSION}/site-packages/pynvim-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/pynvim-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/pynvim-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/pynvim-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/pynvim-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/pynvim-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pynvim-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/pynvim-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/pynvim-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/pynvim-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/pynvim-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/pynvim-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pynvim/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pynvim/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pynvim/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc

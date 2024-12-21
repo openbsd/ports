@@ -28,7 +28,7 @@ DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel
-REVISION=	0
+REVISION=	1
 
 EPOCH=		0
 

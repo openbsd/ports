@@ -109,7 +109,7 @@ MODPY_RUNDEP =	No
 MODPY_BUILDDEP =No
 TEST_DEPENDS =	shells/bash \
 		editors/py-neovim \
-		editors/py-neovim${MODPY_FLAVOR}
+		editors/py-neovim
 
 # Build LuaJIT (if required) and libluv as static libraries.
 #

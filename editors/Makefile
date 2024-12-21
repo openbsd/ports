@@ -54,9 +54,9 @@
      SUBDIR += nvi
      SUBDIR += nvi,iconv
      SUBDIR += poke
-     SUBDIR += py-neovim,python3
-     SUBDIR += py-qscintilla,python3
-     SUBDIR += py-qscintilla,python3,qt6
+     SUBDIR += py-neovim
+     SUBDIR += py-qscintilla
+     SUBDIR += py-qscintilla,qt6
      SUBDIR += qownnotes
      SUBDIR += qscintilla
      SUBDIR += qscintilla,qt6

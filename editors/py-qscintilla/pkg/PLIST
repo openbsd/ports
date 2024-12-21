@@ -1,11 +1,4 @@
-@conflict ${MODPY_PY_PREFIX}qscintilla-${QTVER}-*
-@conflict py-qscintilla-common-*
-@conflict py-qscintilla-*
-@pkgpath editors/py-qscintilla,-common
-@pkgpath editors/py-qscintilla,-main
-@pkgpath editors/py-qscintilla,-main,python3
-@pkgpath editors/py-qscintilla,${QTVER}
-@pkgpath editors/py-qscintilla
+@pkgpath editors/py-qscintilla,python3${FLAVOR_STRING}
 @so lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/Qsci${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/Qsci.toml
@@ -69,7 +62,7 @@ lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qsciscintilla.
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qsciscintillabase.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscistyle.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/Qsci/qscistyledtext.sip
-lib/python${MODPY_VERSION}/site-packages/${PYQTPREFIX}QScintilla-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/${PYQTPREFIX}QScintilla-${MODPY_EGG_VERSION}.dist-info/INSTALLER
-lib/python${MODPY_VERSION}/site-packages/${PYQTPREFIX}QScintilla-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/${PYQTPREFIX}QScintilla-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/${PYQTPREFIX}QScintilla-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/${PYQTPREFIX}QScintilla-${MODPY_DISTV}.dist-info/INSTALLER
+lib/python${MODPY_VERSION}/site-packages/${PYQTPREFIX}QScintilla-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/${PYQTPREFIX}QScintilla-${MODPY_DISTV}.dist-info/RECORD

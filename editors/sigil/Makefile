@@ -3,7 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	EPUB ebook editor
 
 PKGNAME =	sigil-${GH_TAGNAME}
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	Sigil-Ebook
 GH_PROJECT =	Sigil
@@ -26,7 +26,7 @@ MODULES =		devel/cmake \
 			lang/python \
 			x11/qt5
 RUN_DEPENDS =		devel/desktop-file-utils \
-			textproc/py-lxml${MODPY_FLAVOR}
+			textproc/py-lxml
 LIB_DEPENDS =		textproc/hunspell \
 			x11/qt5/qtwebengine
 

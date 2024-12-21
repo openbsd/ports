@@ -1,9 +1,9 @@
 COMMENT =	Python plugin support for Neovim
 
-MODPY_EGG_VERSION =	0.5.0
-DISTNAME =		pynvim-${MODPY_EGG_VERSION}
-PKGNAME =		py-neovim-${MODPY_EGG_VERSION}
-REVISION =		0
+MODPY_DISTV =	0.5.0
+DISTNAME =		pynvim-${MODPY_DISTV}
+PKGNAME =		py-neovim-${MODPY_DISTV}
+REVISION =		1
 
 CATEGORIES =	editors devel
 HOMEPAGE =	https://github.com/neovim/pynvim
@@ -19,11 +19,8 @@ MODPY_PYTEST =		Yes
 PORTHOME =		${WRKDIR}
 TEST_ENV =		PYTHONPATH=lib
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-RUN_DEPENDS =		net/py-msgpack${MODPY_FLAVOR} \
-			devel/py-greenlet${MODPY_FLAVOR}
+RUN_DEPENDS =		net/py-msgpack \
+			devel/py-greenlet
 TEST_DEPENDS =		editors/neovim
 
 # Note: You may need to increase the file descriptor ulimits to run tests.

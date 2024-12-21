@@ -1,10 +1,10 @@
 COMMENT =		Python binding for the Scintilla source code editor
 
 VERSION =		2.14.1
-MODPY_EGG_VERSION =	${VERSION}
+MODPY_DISTV =	${VERSION}
 DISTNAME =		QScintilla_src-${VERSION}
 PKGNAME =		py-qscintilla-${VERSION}
-REVISION =		1
+REVISION =		3
 
 CATEGORIES =		editors x11 devel
 
@@ -15,13 +15,15 @@ PERMIT_PACKAGE =	Yes
 
 SITES =			https://www.riverbankcomputing.com/static/Downloads/QScintilla/${VERSION}/
 
-COMPILER =		base-clang ports-gcc ports-gcc
+COMPILER =		base-clang ports-gcc
 WANTLIB +=		${COMPILER_LIBCXX} GL m
 
 MODULES =		lang/python
 
-FLAVORS =		python3 qt6
-FLAVOR +=		python3
+FLAVORS =		qt6
+FLAVOR ?=
+
+FLAVOR_STRING =		${FLAVOR_EXT:S/-/,/g}
 
 .if ${FLAVOR:Mqt6}
 FULLPKGNAME =		py3-qscintilla-qt6-${VERSION}
@@ -33,7 +35,7 @@ PYQTPREFIX =		PyQt6_
 WANTLIB +=		Qt6Core Qt6Gui Qt6PrintSupport Qt6Widgets qscintilla2_qt6
 LIB_DEPENDS =		editors/qscintilla,qt6=${VERSION}
 .else
-MODULES +=	x11/qt5
+MODULES +=		x11/qt5
 QTVER =			qt5
 PYQTVER =		PyQt5
 PYQTMOD =		qscimod5
@@ -42,11 +44,11 @@ WANTLIB +=		Qt5Core Qt5Gui Qt5PrintSupport Qt5Widgets qscintilla2_qt5
 LIB_DEPENDS =		editors/qscintilla=${VERSION}
 .endif
 
-BUILD_DEPENDS =		devel/py-qt-builder${MODPY_FLAVOR} \
+BUILD_DEPENDS =		devel/py-qt-builder \
 			${RUN_DEPENDS}
-RUN_DEPENDS =		devel/py-sip${MODPY_FLAVOR} \
-			x11/dbus-python${MODPY_FLAVOR} \
-			x11/py-${QTVER}${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-sip \
+			x11/dbus-python \
+			x11/py-${QTVER}
 
 NO_TEST =		Yes
 
