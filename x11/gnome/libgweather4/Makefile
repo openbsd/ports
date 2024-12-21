@@ -23,7 +23,7 @@ MODULES=		devel/dconf \
 MODPY_RUNDEP=		No
 MODGNOME_TOOLS= 	gi-docgen gobject-introspection vala
 
-BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
+BUILD_DEPENDS=		devel/py-gobject3
 
 LIB_DEPENDS=		devel/libsoup3 \
 			geo/geocode-glib

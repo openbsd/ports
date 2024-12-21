@@ -2,6 +2,7 @@ COMMENT=		GNOME music playing application
 
 GNOME_PROJECT=		gnome-music
 GNOME_VERSION=		47.1
+REVISION=		0
 
 HOMEPAGE=		https://apps.gnome.org/Music/
 
@@ -17,17 +18,17 @@ MODGNOME_TOOLS=		desktop-file-utils yelp gtk-update-icon-cache
 
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
-BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
+BUILD_DEPENDS=		devel/py-gobject3 \
 			devel/libsoup3 \
-			graphics/py-cairo${MODPY_FLAVOR} \
+			graphics/py-cairo \
 			x11/gnome/grilo-plugins \
 			x11/gnome/libadwaita \
 			x11/gnome/libmediaart \
 			x11/gnome/tinysparql
 
-RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
+RUN_DEPENDS=		devel/py-gobject3 \
 			devel/libsoup3 \
-			graphics/py-cairo${MODPY_FLAVOR} \
+			graphics/py-cairo \
 			x11/gnome/grilo-plugins \
 			x11/gnome/libadwaita \
 			x11/gnome/libmediaart \

@@ -4,7 +4,7 @@ COMMENT =	X C Binding - protocol binding generator
 VERSION =	1.17.0
 DISTNAME =	xcb-proto-${VERSION}
 PKGNAME =	py-xcbgen-${VERSION}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	x11
 
@@ -20,9 +20,6 @@ SITES =			${SITE_XORG:=proto/}
 EXTRACT_SUFX=           .tar.xz
 
 MODULES=		lang/python
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 NO_BUILD =		Yes
 NO_TEST =		Yes

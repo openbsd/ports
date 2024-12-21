@@ -2,7 +2,7 @@ COMMENT=		customize advanced GNOME 3 options
 
 GNOME_PROJECT=		gnome-tweaks
 GNOME_VERSION=		46.1
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		sysutils
 
@@ -17,11 +17,11 @@ MODULES=		devel/dconf \
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
-			devel/py-gobject3${MODPY_FLAVOR} \
+			devel/py-gobject3 \
 			x11/gnome/libadwaita
 
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
-			devel/py-gobject3${MODPY_FLAVOR} \
+			devel/py-gobject3 \
 			x11/gnome/settings-daemon \
 			x11/gnome/libadwaita
 

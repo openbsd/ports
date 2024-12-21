@@ -4,7 +4,7 @@ GH_COMMIT=		61a995e25948015a4f6d86e12cf6141a3b729ce7
 GH_ACCOUNT=		rnagy
 GH_PROJECT=		mate-menu
 DISTNAME=		mate-menu-advanced-20.04.1
-REVISION=		6
+REVISION=		7
 
 CATEGORIES=		x11
 
@@ -21,13 +21,13 @@ MODGNOME_TOOLS=		gtk-update-icon-cache \
 MODPY_SETUPTOOLS=	Yes
 
 BUILD_DEPENDS=		devel/gettext,-tools \
-			devel/py-distutils-extra${MODPY_FLAVOR}
+			devel/py-distutils-extra
 
-RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
-			devel/py-setproctitle${MODPY_FLAVOR} \
-			devel/py-xdg${MODPY_FLAVOR} \
+RUN_DEPENDS=		devel/py-gobject3 \
+			devel/py-setproctitle \
+			devel/py-xdg \
 			x11/mate/panel \
-			x11/py-xlib${MODPY_FLAVOR} \
+			x11/py-xlib \
 			x11/gtk+3
 
 .include <bsd.port.mk>

@@ -2,7 +2,7 @@ USE_WXNEEDED=		Yes
 
 COMMENT=		powerful text editor for the MATE desktop
 
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		textproc
 

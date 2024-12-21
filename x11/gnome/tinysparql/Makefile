@@ -34,10 +34,10 @@ LIB_DEPENDS=		devel/json-glib \
 			textproc/libstemmer \
 			textproc/libxml
 
-TEST_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
+TEST_DEPENDS=		devel/py-gobject3
 
 # needed for tests
-BUILD_DEPENDS +=	devel/py-gobject3${MODPY_FLAVOR}
+BUILD_DEPENDS +=	devel/py-gobject3
 
 CONFIGURE_ARGS=		-Dsystemd_user_services=false
 

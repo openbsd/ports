@@ -2,6 +2,7 @@ COMMENT=		assistive screen reader
 
 GNOME_PROJECT=		orca
 GNOME_VERSION=		47.2
+REVISION=		0
 
 # LGPLv2
 PERMIT_PACKAGE=		Yes
@@ -12,13 +13,13 @@ MODULES=		devel/meson \
 
 MODGNOME_TOOLS= 	gtk-update-icon-cache yelp
 
-BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
+BUILD_DEPENDS=		devel/py-gobject3 \
 			x11/gnome/py-atspi \
 			x11/gtk+3
 
-RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
-			sysutils/py-psutil${MODPY_FLAVOR} \
-			devel/py-setproctitle${MODPY_FLAVOR} \
+RUN_DEPENDS=		devel/py-gobject3 \
+			sysutils/py-psutil \
+			devel/py-setproctitle \
 			x11/gnome/py-atspi
 
 # pygobject GTK3 introspection (not provided by indirect dependencies)

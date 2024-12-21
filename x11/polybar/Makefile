@@ -2,7 +2,7 @@ COMMENT =	fast and easy-to-use status bar
 V =		3.7.1
 DISTNAME =	polybar-$V
 CATEGORIES =	x11
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://polybar.github.io/
 MAINTAINER =	Jasper Lievisse Adriaanse <jasper@openbsd.org>
@@ -27,7 +27,7 @@ MODULES =	devel/cmake \
 DEBUG_PACKAGES =${BUILD_PACKAGES}
 
 BUILD_DEPENDS =	${RUN_DEPENDS} \
-		textproc/py-sphinx${MODPY_FLAVOR}>=4.0.2 \
+		textproc/py-sphinx>=4.0.2 \
 		x11/i3
 
 LIB_DEPENDS =	audio/libmpdclient \
@@ -38,7 +38,7 @@ LIB_DEPENDS =	audio/libmpdclient \
 		graphics/cairo \
 		net/curl
 
-RUN_DEPENDS =	x11/py-xcbgen${MODPY_FLAVOR} \
+RUN_DEPENDS =	x11/py-xcbgen \
 		fonts/siji \
 		fonts/unifont
 

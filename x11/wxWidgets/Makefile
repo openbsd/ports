@@ -8,7 +8,7 @@ PKGNAME-main =		wxWidgets-gtk3-${V}
 PKGNAME-media =		wxWidgets-media-${V}
 PKGNAME-webview =	wxWidgets-webview-${V}
 
-REVISION-main =		0
+REVISION-main =		1
 REVISION-media =	0
 REVISION-webview =	0
 

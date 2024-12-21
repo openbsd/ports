@@ -1,8 +1,8 @@
 COMMENT =		display keypresses on screen
 
-MODPY_EGG_VERSION =	1.5
-DISTNAME =		screenkey-${MODPY_EGG_VERSION}
-REVISION =		0
+MODPY_DISTV =	1.5
+DISTNAME =		screenkey-${MODPY_DISTV}
+REVISION =		1
 
 CATEGORIES =		x11
 
@@ -22,12 +22,12 @@ MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
 
 BUILD_DEPENDS +=	devel/gettext,-tools \
-			devel/py-babel${MODPY_FLAVOR} \
-			devel/py-distutils-extra${MODPY_FLAVOR}
+			devel/py-babel \
+			devel/py-distutils-extra
 RUN_DEPENDS +=		devel/desktop-file-utils \
-			devel/py-gobject3${MODPY_FLAVOR} \
-			graphics/py-cairo${MODPY_FLAVOR} \
-			x11/py-xlib${MODPY_FLAVOR}
+			devel/py-gobject3 \
+			graphics/py-cairo \
+			x11/py-xlib
 
 NO_TEST =		Yes
 

@@ -1,8 +1,9 @@
 COMMENT=	Python bindings for Qt5
 
-MODPY_EGG_VERSION= 5.15.11
-DISTNAME=	PyQt5-${MODPY_EGG_VERSION}
-PKGNAME=	py-qt5-${MODPY_EGG_VERSION}
+MODPY_DISTV=	5.15.11
+DISTNAME=	PyQt5-${MODPY_DISTV}
+PKGNAME=	py-qt5-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	x11 devel
 
@@ -22,18 +23,15 @@ WANTLIB += Qt5WebChannel Qt5WebKit Qt5WebKitWidgets Qt5WebSockets
 WANTLIB += Qt5Widgets Qt5X11Extras Qt5Xml Qt5XmlPatterns dbus-1
 WANTLIB += m ${MODPY_WANTLIB}
 
-FLAVORS=	python3
-FLAVOR=		python3
+BUILD_DEPENDS=	devel/py-qt-builder \
+		devel/py-ply \
+		devel/py-setuptools \
+		x11/dbus-python
 
-BUILD_DEPENDS=	devel/py-qt-builder${MODPY_FLAVOR} \
-		devel/py-ply${MODPY_FLAVOR} \
-		devel/py-setuptools${MODPY_FLAVOR} \
-		x11/dbus-python${MODPY_FLAVOR}
-
-RUN_DEPENDS=	devel/py-sip${MODPY_FLAVOR}>=5.5.0v0 \
-		x11/py-sip-qt5${MODPY_FLAVOR}>=12.12 \
-		devel/py-ply${MODPY_FLAVOR} \
-		x11/dbus-python${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-sip>=5.5.0v0 \
+		x11/py-sip-qt5>=12.12 \
+		devel/py-ply \
+		x11/dbus-python
 
 LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
 		x11/qt5/qtconnectivity \

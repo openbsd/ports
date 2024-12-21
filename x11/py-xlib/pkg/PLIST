@@ -1,5 +1,5 @@
+@pkgpath x11/py-xlib,python3
 @conflict py-xlib-*
-@pkgpath x11/py-xlib
 lib/python${MODPY_VERSION}/site-packages/Xlib/
 lib/python${MODPY_VERSION}/site-packages/Xlib/X.py
 lib/python${MODPY_VERSION}/site-packages/Xlib/XK.py

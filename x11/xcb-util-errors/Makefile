@@ -1,7 +1,7 @@
 COMMENT =	XCB utility library naming error, event & request codes
 
 DISTNAME =	xcb-util-errors-1.0.1
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	x11
 

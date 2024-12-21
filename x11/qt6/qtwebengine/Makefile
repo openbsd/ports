@@ -16,7 +16,7 @@ QT6NAME =	QtWebEngine
 COMMENT =	Qt chromium based web engine
 VERSION =	${QT6_VERSION}
 PKGSPEC =	qt6-qtwebengine-${QT6_PKGSPEC}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=  Qt6Pdf                        1.0 # 0.0
 SHARED_LIBS +=  Qt6PdfQuick                   1.0 # 0.0
@@ -52,14 +52,14 @@ BUILD_DEPENDS =	audio/pulseaudio \
 		devel/bison \
 		devel/gperf \
 		devel/ninja \
-		devel/py-html5lib${MODPY_FLAVOR} \
+		devel/py-html5lib \
 		lang/node \
 		shells/bash \
 		sysutils/flock \
 		sysutils/pciutils \
 		x11/gtk+3 \
 		sysutils/libudev-openbsd \
-		x11/py-xcbgen${MODPY_FLAVOR}
+		x11/py-xcbgen
 
 LIB_DEPENDS =	archivers/minizip \
 		archivers/snappy \

@@ -3,7 +3,7 @@ COMMENT =		dbus bindings for Python
 V =			1.3.2
 DISTNAME =		dbus-python-${V}
 PKGNAME =		py-dbus-${V}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		x11
 
@@ -21,15 +21,12 @@ SITES =			${HOMEPAGE}releases/dbus-python/
 MODULES =		devel/meson \
 			lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 LIB_DEPENDS =		devel/glib2 \
 			x11/dbus
 
 RUN_DEPENDS =		x11/dbus
 
-TEST_DEPENDS =		devel/py-gobject3${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-gobject3
 
 pre-configure:
 	sed -i "s,/bin/bash,/bin/sh,g" \

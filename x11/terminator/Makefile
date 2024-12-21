@@ -2,7 +2,7 @@ COMMENT =		GTK3 terminal emulator with split-window and tabs support
 
 VERSION =		1.92
 DISTNAME =		terminator-${VERSION}
-REVISION =		7
+REVISION =		8
 
 CATEGORIES =		x11
 
@@ -19,10 +19,10 @@ MODULES =		lang/python \
 RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/gsettings-desktop-schemas \
 			devel/libnotify \
-			devel/py-configobj${MODPY_FLAVOR} \
-			devel/py-gobject3${MODPY_FLAVOR} \
+			devel/py-configobj \
+			devel/py-gobject3 \
 			devel/vte3 \
-			sysutils/py-psutil${MODPY_FLAVOR} \
+			sysutils/py-psutil \
 			x11/gtk+3 \
 			x11/gtk+4,-guic \
 			x11/keybinder3

@@ -2,6 +2,7 @@ COMMENT=		text editor
 
 GNOME_PROJECT=		gedit
 GNOME_VERSION=		48.1
+REVISION=		0
 
 WANTLIB += c cairo gdk-3 gdk_pixbuf-2.0 gedit-amtk-5 gedit-gfls-1
 WANTLIB += gedit-gtksourceview-300 gedit-tepl-6 gio-2.0 girepository-1.0
@@ -18,7 +19,7 @@ MODULES=		devel/dconf \
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes \
-			devel/py-gobject3${MODPY_FLAVOR} \
+			devel/py-gobject3 \
 			textproc/gtk-doc
 
 LIB_DEPENDS=		devel/libpeas \
@@ -29,7 +30,7 @@ RUN_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/iso-codes
 
 # MODPY_LIBDIR/gi/overrides/
-RUN_DEPENDS +=		devel/py-gobject3${MODPY_FLAVOR}
+RUN_DEPENDS +=		devel/py-gobject3
 
 MODGNOME_TOOLS= 	desktop-file-utils gobject-introspection \
 			gtk-update-icon-cache yelp

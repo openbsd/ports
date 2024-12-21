@@ -2,6 +2,7 @@ BROKEN =	qt6 python
 COMMENT =	Mah Jongg four players board game for KDE
 DISTNAME =	kajongg-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/kajongg
 
@@ -15,13 +16,13 @@ MODKDE_DOCS = yes
 BUILD_DEPENDS =	devel/kf6/kconfig \
 		devel/kf6/kpty \
 		x11/kde-applications/libkmahjongg>=${MODKDE_GEAR_VERSION} \
-		devel/py-twisted${MODPY_FLAVOR} \
-		x11/py-qt6${MODPY_FLAVOR}
+		devel/py-twisted \
+		x11/py-qt6
 
-RUN_DEPENDS =	devel/py-twisted${MODPY_FLAVOR} \
+RUN_DEPENDS =	devel/py-twisted \
 		x11/kde-applications/libkmahjongg>=${MODKDE_GEAR_VERSION} \
 		audio/vorbis-tools \
-		x11/py-qt6${MODPY_FLAVOR}
+		x11/py-qt6
 
 post-install:
 	${MODPY_COMPILEALL} ${PREFIX}/share/kajongg/

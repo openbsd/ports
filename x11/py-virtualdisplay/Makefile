@@ -1,9 +1,9 @@
 COMMENT =		Python wrapper for Xvfb, Xephyr and Xvnc
 
-MODPY_EGG_VERSION =	3.0
-DISTNAME =		PyVirtualDisplay-${MODPY_EGG_VERSION}
+MODPY_DISTV =	3.0
+DISTNAME =		PyVirtualDisplay-${MODPY_DISTV}
 PKGNAME =		${DISTNAME:L:S/^py/py-/}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		x11
 
@@ -21,9 +21,6 @@ MODPY_PYTEST_ARGS =	--ignore tests/vagrant/vagrant_boxes.py \
 			--ignore tests/test_xvnc.py
 MODPY_PYBUILD =		setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-RUN_DEPENDS =		devel/py-easyprocess${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-easyprocess
 
 .include <bsd.port.mk>

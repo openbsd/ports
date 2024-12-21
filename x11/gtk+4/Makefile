@@ -43,9 +43,9 @@ MODPY_RUNDEP=		No
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
-BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
+BUILD_DEPENDS=		devel/py-gobject3 \
 			graphics/shaderc \
-			textproc/py-docutils${MODPY_FLAVOR} \
+			textproc/py-docutils \
 			wayland/wayland-protocols \
 			www/sassc
 

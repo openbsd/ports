@@ -2,7 +2,7 @@ COMMENT=		GNOME Shell browser connector
 
 GNOME_PROJECT=		gnome-browser-connector
 GNOME_VERSION=		42.1
-REVISION=		6
+REVISION=		7
 
 # GPLv3
 PERMIT_PACKAGE=		Yes
@@ -14,9 +14,9 @@ MODULES=		devel/meson \
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 MODPY_ADJ_FILES=	contrib/merge_json.py
 
-BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
+BUILD_DEPENDS=		devel/py-gobject3
 
-RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
+RUN_DEPENDS=		devel/py-gobject3 \
 			x11/gnome/shell
 
 post-install:

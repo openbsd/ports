@@ -28,7 +28,7 @@ TEST_IS_INTERACTIVE=	X11
 MODULES +=		lang/python
 MODPY_RUNDEP=		No
 MODPY_BUILDDEP=		No
-TEST_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
-			x11/dbus-python${MODPY_FLAVOR}
+TEST_DEPENDS=		devel/py-gobject3 \
+			x11/dbus-python
 
 .include <bsd.port.mk>

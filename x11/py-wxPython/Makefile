@@ -19,6 +19,9 @@ FULLPKGNAME-webview=	py3-wxPython-webview-${V}
 FULLPKGPATH-main=	${BUILD_PKGPATH}
 FULLPKGPATH-media=	${BUILD_PKGPATH},-media
 FULLPKGPATH-webview=	${BUILD_PKGPATH},-webview
+REVISION-main=		0
+REVISION-media=		0
+REVISION-webview=	0
 
 CATEGORIES=	x11 devel
 
@@ -51,12 +54,9 @@ COMPILER=		base-clang ports-gcc base-gcc
 
 MODULES=		lang/python
 
-FLAVORS=		python3
-FLAVOR=			python3
-
-BUILD_DEPENDS=		devel/py-setuptools${MODPY_FLAVOR} \
-			devel/py-sip${MODPY_FLAVOR} \
-			devel/py-six${MODPY_FLAVOR}
+BUILD_DEPENDS=		devel/py-setuptools \
+			devel/py-sip \
+			devel/py-six
 
 LIB_DEPENDS-main=	x11/wxWidgets
 
@@ -65,7 +65,7 @@ LIB_DEPENDS-media=	x11/wxWidgets,-media
 LIB_DEPENDS-webview=	x11/wxWidgets,-webview
 
 RUN_DEPENDS-main=	${RUN_DEPENDS} \
-			devel/py-six${MODPY_FLAVOR}
+			devel/py-six
 
 RUN_DEPENDS-media=	${RUN_DEPENDS} \
 			${BASE_PKGPATH}

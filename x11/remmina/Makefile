@@ -6,7 +6,7 @@ DIST_TUPLE=		gitlab	Remmina	Remmina	${C}	.
 DISTNAME=		Remmina-${C}
 PKGNAME=		remmina-1.4.34
 CATEGORIES=		x11 net
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		https://www.remmina.org/
 
@@ -44,7 +44,7 @@ LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \
 			x11/gnome/libsecret
 
 RUN_DEPENDS=		devel/desktop-file-utils \
-			devel/py-gobject3${MODPY_FLAVOR} \
+			devel/py-gobject3 \
 			misc/shared-mime-info \
 			x11/gtk+4,-guic
 

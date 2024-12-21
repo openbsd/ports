@@ -3,7 +3,7 @@ COMMENT=		python bindings for at-spi2
 GNOME_PROJECT=		pyatspi
 GNOME_VERSION=		2.46.1
 PKGNAME=		py-atspi-${GNOME_VERSION}
-REVISION=		1
+REVISION=		2
 
 # LGPLv2
 PERMIT_PACKAGE=		Yes
@@ -13,8 +13,8 @@ MODULES=		lang/python \
 
 MODPY_ADJ_FILES=	examples/magFocusTracker.py
 
-BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
-RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
+BUILD_DEPENDS=		devel/py-gobject3
+RUN_DEPENDS=		devel/py-gobject3 \
 			x11/gnome/at-spi2-core
 
 # pygobject GTK3 introspection (not provided by indirect dependencies)

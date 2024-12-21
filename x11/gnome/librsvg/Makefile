@@ -37,7 +37,7 @@ MODGNOME_TOOLS +=	gi-docgen
 MODPY_RUNDEP=		No
 BUILD_DEPENDS=		devel/cargo-c
 # rst2man
-BUILD_DEPENDS +=	textproc/py-docutils${MODPY_FLAVOR}
+BUILD_DEPENDS +=	textproc/py-docutils
 PKG_ARGS=		-Dold=0 -Dstable=1
 MAKE_ENV +=		${MODCARGO_ENV}
 MAKE_FLAGS +=		V=1

@@ -2,7 +2,7 @@ COMMENT=		official media player for GNOME
 
 GNOME_PROJECT=		totem
 GNOME_VERSION=		43.1
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS += totem                     0.0 # 0.0.0
 
@@ -26,15 +26,15 @@ MODULES=		devel/dconf \
 			x11/gnome
 
 BUILD_DEPENDS=	 	devel/gsettings-desktop-schemas \
-			devel/py-gobject3${MODPY_FLAVOR} \
+			devel/py-gobject3 \
 			multimedia/gstreamer1/plugins-good
 
 # needed for make check
-BUILD_DEPENDS +=	devel/pylint${MODPY_FLAVOR}
+BUILD_DEPENDS +=	devel/pylint
 
 RUN_DEPENDS=		devel/gsettings-desktop-schemas \
-			devel/py-gobject3${MODPY_FLAVOR} \
-			x11/dbus-python${MODPY_FLAVOR}
+			devel/py-gobject3 \
+			x11/dbus-python
 
 # calls grl_registry_load...plugin
 RUN_DEPENDS +=		x11/gnome/grilo-plugins

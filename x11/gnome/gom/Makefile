@@ -2,7 +2,7 @@ COMMENT=		GObject to SQLite object mapper
 
 GNOME_PROJECT=		gom
 GNOME_VERSION=		0.5.3
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS += gom-1.0                   0.0 # 0.1.0
 
@@ -19,7 +19,7 @@ MODGNOME_TOOLS=		gobject-introspection
 
 MODPY_RUNDEP=		No
 
-BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
+BUILD_DEPENDS=		devel/py-gobject3 \
 			graphics/gdk-pixbuf2
 
 LIB_DEPENDS=		databases/sqlite3 \

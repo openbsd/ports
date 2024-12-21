@@ -1,12 +1,12 @@
 COMMENT=		nagios status monitor for the Desktop
 
-MODPY_EGG_VERSION=	3.8.0
+MODPY_DISTV=	3.8.0
 GH_ACCOUNT=		HenriWahl
 GH_PROJECT=		Nagstamon
-GH_TAGNAME=		v${MODPY_EGG_VERSION}
+GH_TAGNAME=		v${MODPY_DISTV}
 PKGNAME=		${DISTNAME:L}
-#WRKDIST=		${WRKDIR}/Nagstamon-${MODPY_EGG_VERSION}
-REVISION=		3
+#WRKDIST=		${WRKDIR}/Nagstamon-${MODPY_DISTV}
+REVISION=		4
 
 CATEGORIES=		x11 net
 
@@ -22,11 +22,11 @@ MODPY_SETUPTOOLS=	Yes
 BUILD_DEPENDS=		${RUN_DEPENDS}
 
 RUN_DEPENDS=		devel/desktop-file-utils \
-			security/py-keyring${MODPY_FLAVOR} \
-			sysutils/py-psutil${MODPY_FLAVOR} \
-			www/py-beautifulsoup4${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR} \
-			x11/py-qt5${MODPY_FLAVOR}
+			security/py-keyring \
+			sysutils/py-psutil \
+			www/py-beautifulsoup4 \
+			www/py-requests \
+			x11/py-qt5
 
 NO_TEST=		Yes
 

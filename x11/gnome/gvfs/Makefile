@@ -136,7 +136,7 @@ CONFIGURE_ARGS +=	-Donedrive=false
 MODULES +=		lang/python
 MODPY_BUILDDEP=		No
 MODPY_RUNDEP=		No
-TEST_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
+TEST_DEPENDS=		devel/py-gobject3
 
 # -Dadmin=false
 post-install:

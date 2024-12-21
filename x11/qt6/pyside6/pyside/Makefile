@@ -1,5 +1,6 @@
 COMMENT =	Python Qt bindings for Qt 6
 PKGNAME =	pyside6-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  pyside6${MODPY_ABI3SO}              0.0 # 0.0
 SHARED_LIBS +=  pyside6qml${MODPY_ABI3SO}           0.0 # 0.0

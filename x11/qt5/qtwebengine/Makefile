@@ -65,7 +65,7 @@ BUILD_DEPENDS =	archivers/bzip2 \
 		devel/bison \
 		devel/gperf \
 		devel/ninja \
-		devel/py-six${MODPY_FLAVOR} \
+		devel/py-six \
 		lang/node \
 		shells/bash \
 		sysutils/flock \
@@ -107,32 +107,34 @@ MODQMAKE_RECURSIVE =	No
 
 CHROMESRC =	${WRKDIST}/src/3rdparty/chromium
 
+# most of these would fit better in post-extract, but between
+# DIST_TUPLE and ../Makefile.inc that's complicated
 pre-configure:
-	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
+	ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
 .for _arch in x64 ia32 arm64
+	mkdir -p ${CHROMESRC}/third_party/ffmpeg/chromium/config/Chrome/openbsd/${_arch}
 .  for _dir in avcodec avformat avutil
-	@cp -pR ${CHROMESRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/lib${_dir} \
+	cp -pR ${CHROMESRC}/third_party/ffmpeg/chromium/config/Chrome/linux/${_arch}/lib${_dir} \
 		${CHROMESRC}/third_party/ffmpeg/chromium/config/Chrome/openbsd/${_arch}/lib${_dir}
 .  endfor
 .endfor
-	@mkdir -p ${CHROMESRC}/media/audio/sndio ${CHROMESRC}/media/audio/openbsd
-	@cp ${FILESDIR}/hid_{service,connection}_fido.{cc,h} ${CHROMESRC}/services/device/hid
-	@cp ${FILESDIR}/sndio_{out,in}put.{cc,h} ${CHROMESRC}/media/audio/sndio
-	@cp ${FILESDIR}/audio_manager_openbsd.{cc,h} ${CHROMESRC}/media/audio/openbsd
-	@cp ${FILESDIR}/openbsd.pri ${WRKDIST}/src/buildtools/config/openbsd.pri
-	@cp ${FILESDIR}/openbsd.pri ${WRKDIST}/src/core/config/openbsd.pri
-	@mkdir -p ${CHROMESRC}/third_party/node/openbsd/node-openbsd/bin
-	@ln -sf ${TRUEPREFIX}/bin/node ${CHROMESRC}/third_party/node/openbsd/node-openbsd/bin/node
+	mkdir -p ${CHROMESRC}/media/audio/sndio ${CHROMESRC}/media/audio/openbsd
+	cp ${FILESDIR}/hid_{service,connection}_fido.{cc,h} ${CHROMESRC}/services/device/hid
+	cp ${FILESDIR}/sndio_{out,in}put.{cc,h} ${CHROMESRC}/media/audio/sndio
+	cp ${FILESDIR}/audio_manager_openbsd.{cc,h} ${CHROMESRC}/media/audio/openbsd
+	cp ${FILESDIR}/openbsd.pri ${WRKDIST}/src/buildtools/config/openbsd.pri
+	cp ${FILESDIR}/openbsd.pri ${WRKDIST}/src/core/config/openbsd.pri
+	cp ${MODPY_SITEPKG}/six.py ${CHROMESRC}/tools/grit/third_party/six/__init__.py
+	mkdir -p ${CHROMESRC}/third_party/node/openbsd/node-openbsd/bin
+	ln -sf ${TRUEPREFIX}/bin/node ${CHROMESRC}/third_party/node/openbsd/node-openbsd/bin/node
 	# build with python3 (remove catapult)
-	@rm ${CHROMESRC}/content/browser/tracing/BUILD.gn
+	rm ${CHROMESRC}/content/browser/tracing/BUILD.gn
 	# Regenerate build and perlasm files (force json to not overwrite our local gn patches)
-	@cd ${CHROMESRC}/third_party/boringssl && ${MODPY_BIN} src/util/generate_build_files.py json
-	@cd ${WRKSRC} && env -i ${MAKE_ENV} ${CHROMESRC}/build/linux/unbundle/replace_gn_files.py \
+	cd ${CHROMESRC}/third_party/boringssl && ${MODPY_BIN} src/util/generate_build_files.py json
+	cd ${WRKSRC} && env -i ${MAKE_ENV} ${CHROMESRC}/build/linux/unbundle/replace_gn_files.py \
 		--system-libraries ${GN_SYSTEM_LIBS}
 	# Rerun syncqt.pl -- otherwise the resulting package misses some forwarding headers.
 	${QT5_GEN_INCLUDES}
-	# Remove old ver of six, incompatible with py3.12.
-	rm -r ${CHROMESRC}/tools/grit/third_party/six
 
 post-configure:
 	${SUBST_CMD} ${CHROMESRC}/build/gn_run_binary.py \

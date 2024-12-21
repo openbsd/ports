@@ -1,7 +1,7 @@
 COMMENT=		GNOME password manager (Keepass)
 
 DIST_TUPLE=		gnome World secrets 8.0 .
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		security
 
@@ -15,18 +15,18 @@ MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 
-BUILD_DEPENDS=		devel/py-validators${MODPY_FLAVOR} \
-			security/py-pykeepass${MODPY_FLAVOR} \
-			security/py-pyotp${MODPY_FLAVOR} \
-			security/py-zxcvbn${MODPY_FLAVOR} \
+BUILD_DEPENDS=		devel/py-validators \
+			security/py-pykeepass \
+			security/py-pyotp \
+			security/py-zxcvbn \
 			x11/gnome/libadwaita \
 			x11/gtk+4
 
-RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
-			devel/py-validators${MODPY_FLAVOR} \
-			security/py-pykeepass${MODPY_FLAVOR} \
-			security/py-pyotp${MODPY_FLAVOR} \
-			security/py-zxcvbn${MODPY_FLAVOR} \
+RUN_DEPENDS=		devel/py-gobject3 \
+			devel/py-validators \
+			security/py-pykeepass \
+			security/py-pyotp \
+			security/py-zxcvbn \
 			x11/gnome/libadwaita \
 			x11/gtk+4
 

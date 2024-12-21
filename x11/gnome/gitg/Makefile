@@ -2,7 +2,7 @@ COMMENT=		graphical user interface for git
 
 GNOME_PROJECT=		gitg
 GNOME_VERSION=		44
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS += gitg-1.0                  1.0 # 0.0.0
 SHARED_LIBS += gitg-ext-1.0              0.0 # 0.0.0
@@ -40,7 +40,7 @@ LIB_DEPENDS=		devel/json-glib \
 
 RUN_DEPENDS=		devel/git \
 			devel/gsettings-desktop-schemas \
-			devel/py-gobject3${MODPY_FLAVOR}
+			devel/py-gobject3
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 

@@ -34,8 +34,8 @@ MODPY_RUNDEP=		No
 
 BUILD_DEPENDS=		devel/gettext,-tools \
 			devel/gobject-introspection \
-			devel/py-parsing${MODPY_FLAVOR} \
-			devel/py-six${MODPY_FLAVOR} \
+			devel/py-parsing \
+			devel/py-six \
 			devel/spice-protocol \
 			lang/vala \
 			sysutils/usbutils \

@@ -1,9 +1,9 @@
 COMMENT =		XRandR GUI
-MODPY_EGG_VERSION =	0.1.11
-DISTNAME =		arandr-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.1.11
+DISTNAME =		arandr-${MODPY_DISTV}
 CATEGORIES =		x11 sysutils
 HOMEPAGE =		https://christian.amsuess.com/tools/arandr/
-REVISION =		1
+REVISION =		2
 
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 
@@ -16,9 +16,9 @@ MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			devel/py-gobject3${MODPY_FLAVOR}
+			devel/py-gobject3
 BUILD_DEPENDS =		devel/gettext,-tools \
-			textproc/py-docutils${MODPY_FLAVOR}
+			textproc/py-docutils
 
 NO_TEST =		Yes
 

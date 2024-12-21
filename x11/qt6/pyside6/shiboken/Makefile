@@ -1,5 +1,6 @@
 COMMENT =		Python binding generator for C++ libraries
 PKGNAME =		shiboken6-${VERSION}
+REVISION =		0
 
 SHARED_LIBS +=  shiboken6${MODPY_ABI3SO}            0.0 # 0.0
 
@@ -10,9 +11,9 @@ MODULES +=		lang/clang \
 			lang/python
 
 BUILD_DEPENDS =		x11/qt6/qttools \
-			math/py-numpy${MODPY_FLAVOR}
+			math/py-numpy
 
-RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR}
+RUN_DEPENDS =		math/py-numpy
 
 LIB_DEPENDS =		${MODCLANG_LIB_DEPENDS} \
 			textproc/libxml \

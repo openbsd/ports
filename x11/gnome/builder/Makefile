@@ -2,7 +2,7 @@ COMMENT=		IDE for writing GNOME-based software
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		47.2
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		devel
 
@@ -31,7 +31,7 @@ MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
 			gobject-introspection yelp
 
 BUILD_DEPENDS=		devel/ectags \
-			textproc/py-sphinx${MODPY_FLAVOR}
+			textproc/py-sphinx
 
 RUN_DEPENDS=		devel/ectags
 

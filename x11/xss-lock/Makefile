@@ -19,7 +19,7 @@ SITES=		https://bitbucket.org/raymonad/xss-lock/get/
 
 MODULES=	devel/cmake
 LIB_DEPENDS=	devel/glib2
-BUILD_DEPENDS=	textproc/py-docutils,python3
+BUILD_DEPENDS=	textproc/py-docutils
 NO_TEST=	Yes
 
 .include <bsd.port.mk>

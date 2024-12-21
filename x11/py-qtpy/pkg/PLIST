@@ -1,13 +1,13 @@
-@pkgpath x11/py-qtpy
+@pkgpath x11/py-qtpy,python3
 bin/qtpy
-lib/python${MODPY_VERSION}/site-packages/QtPy-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/QtPy-${MODPY_EGG_VERSION}.dist-info/AUTHORS.md
-lib/python${MODPY_VERSION}/site-packages/QtPy-${MODPY_EGG_VERSION}.dist-info/LICENSE.txt
-lib/python${MODPY_VERSION}/site-packages/QtPy-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/QtPy-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/QtPy-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/QtPy-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/QtPy-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/QtPy-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/QtPy-${MODPY_DISTV}.dist-info/AUTHORS.md
+lib/python${MODPY_VERSION}/site-packages/QtPy-${MODPY_DISTV}.dist-info/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/QtPy-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/QtPy-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/QtPy-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/QtPy-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/QtPy-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/qtpy/
 lib/python${MODPY_VERSION}/site-packages/qtpy/Qsci.py
 lib/python${MODPY_VERSION}/site-packages/qtpy/Qt3DAnimation.py

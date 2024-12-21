@@ -1,9 +1,10 @@
+@pkgpath x11/py-qt6,python3
 bin/pylupdate6
 bin/pyuic6
-lib/python${MODPY_VERSION}/site-packages/PyQt6-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/PyQt6-${MODPY_EGG_VERSION}.dist-info/INSTALLER
-lib/python${MODPY_VERSION}/site-packages/PyQt6-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/PyQt6-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/PyQt6-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/PyQt6-${MODPY_DISTV}.dist-info/INSTALLER
+lib/python${MODPY_VERSION}/site-packages/PyQt6-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/PyQt6-${MODPY_DISTV}.dist-info/RECORD
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtBluetooth${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtCore${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/PyQt6/QtDBus${MODPY_ABI3SO}.so

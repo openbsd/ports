@@ -50,8 +50,8 @@ CONFIGURE_ARGS=		-Dnetwork_manager=disabled \
 # XXX error: use of undeclared identifier 'AF_NETLINK'
 CONFIGURE_ARGS +=	-Dfunctional_tests=false
 # tests
-#BUILD_DEPENDS +=	devel/py-gobject3${MODPY_FLAVOR}
-#TEST_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
+#BUILD_DEPENDS +=	devel/py-gobject3
+#TEST_DEPENDS=		devel/py-gobject3
 
 CONFIGURE_ARGS +=	-Dminer_rss=false
 

@@ -1,13 +1,13 @@
+@pkgpath x11/py-qt5,python3
 @conflict py-qt5-*
 @pkgpath x11/py-qt5,-main
-@pkgpath x11/py-qt5
 bin/pylupdate5
 bin/pyrcc5
 bin/pyuic5
-lib/python${MODPY_VERSION}/site-packages/PyQt5-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/PyQt5-${MODPY_EGG_VERSION}.dist-info/INSTALLER
-lib/python${MODPY_VERSION}/site-packages/PyQt5-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/PyQt5-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/PyQt5-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/PyQt5-${MODPY_DISTV}.dist-info/INSTALLER
+lib/python${MODPY_VERSION}/site-packages/PyQt5-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/PyQt5-${MODPY_DISTV}.dist-info/RECORD
 @so lib/python${MODPY_VERSION}/site-packages/PyQt5/Qt${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/PyQt5/QtBluetooth${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/PyQt5/QtCore${MODPY_ABI3SO}.so

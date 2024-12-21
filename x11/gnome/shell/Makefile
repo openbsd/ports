@@ -6,6 +6,7 @@ GNOME_PROJECT=		gnome-shell
 # check/fix CONFIGURE_ARGS (-Dgnome_shell_version=XX) in x11/arc-theme on
 # major upgrade;
 GNOME_VERSION=		47.2
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -32,7 +33,7 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			shells/bash-completion
 
 # rst2man
-BUILD_DEPENDS +=	textproc/py-docutils${MODPY_FLAVOR}
+BUILD_DEPENDS +=	textproc/py-docutils
 
 RUN_DEPENDS +=		devel/gsettings-desktop-schemas
 
@@ -63,7 +64,7 @@ RUN_DEPENDS +=		x11/gnome/control-center
 RUN_DEPENDS +=		sysutils/consolekit
 
 # gnome-shell-extension-tool, gnome-shell-perf-tool
-RUN_DEPENDS +=		devel/py-gobject3${MODPY_FLAVOR}
+RUN_DEPENDS +=		devel/py-gobject3
 
 # Don't depend on evolution to lower down the amount of dependencies and
 # because most users want to be able to choose their PIM. Evolution can

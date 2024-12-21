@@ -28,7 +28,7 @@ SITES =		${HOMEPAGE}dist/openbox/
 
 MODULES =	lang/python
 
-RUN_DEPENDS =	devel/py-xdg${MODPY_FLAVOR} \
+RUN_DEPENDS =	devel/py-xdg \
 		devel/desktop-file-utils
 LIB_DEPENDS +=	devel/gettext,-runtime \
 		devel/pango \
