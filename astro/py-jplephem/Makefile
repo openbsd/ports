@@ -2,10 +2,11 @@ FIX_EXTRACT_PERMISSIONS=	Yes
 
 COMMENT=	use a JPL ephemeris to predict planet positions
 
-MODPY_EGG_VERSION =	2.22
+MODPY_DISTV =	2.22
 
-DISTNAME=	jplephem-${MODPY_EGG_VERSION}
+DISTNAME=	jplephem-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	astro
 
@@ -28,11 +29,8 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 MODPY_PYTEST_ARGS= jplephem/test.py
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-RUN_DEPENDS=	math/py-numpy${MODPY_FLAVOR}
-TEST_DEPENDS=	astro/py-de421${MODPY_FLAVOR}
+RUN_DEPENDS=	math/py-numpy
+TEST_DEPENDS=	astro/py-de421
 
 pre-test:
 	cd ${FULLDISTDIR}; cp ${TESTFILES} ${WRKSRC}/

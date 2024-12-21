@@ -1,10 +1,10 @@
 COMMENT =	Python implementation of SGP4 satellite tracking algorithm
 
-MODPY_EGG_VERSION =	2.23
+MODPY_DISTV =	2.23
 
-DISTNAME =	sgp4-${MODPY_EGG_VERSION}
+DISTNAME =	sgp4-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	astro
 
@@ -17,14 +17,11 @@ WANTLIB += ${COMPILER_LIBCXX} m
 
 COMPILER =	base-clang ports-gcc
 
-FLAVORS =	python3
-FLAVOR =	python3
-
 MODULES =	lang/python
 MODPY_PYBUILD =	setuptools
 MODPY_PI =	Yes
 MODPY_PYTEST_ARGS = sgp4/tests.py
 
-RUN_DEPENDS =	math/py-numpy${MODPY_FLAVOR}
+RUN_DEPENDS =	math/py-numpy
 
 .include <bsd.port.mk>

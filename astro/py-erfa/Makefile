@@ -1,10 +1,10 @@
 COMMENT=	Python wrapper for ERFA
 
-MODPY_EGG_VERSION=	2.0.1.1
+MODPY_DISTV=	2.0.1.1
 
-DISTNAME=	pyerfa-${MODPY_EGG_VERSION}
+DISTNAME=	pyerfa-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/py/py-/}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	astro
 
@@ -22,15 +22,12 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
 MODPY_PYTEST_ARGS=	erfa/tests
 
-FLAVOR=		python3
-FLAVORS=	python3
-
-BUILD_DEPENDS=	math/py-numpy${MODPY_FLAVOR} \
-		math/py-oldest-supported-numpy${MODPY_FLAVOR} \
-		sysutils/py-packaging${MODPY_FLAVOR} \
-		www/py-jinja2${MODPY_FLAVOR}
-RUN_DEPENDS=	math/py-numpy${MODPY_FLAVOR}
-TEST_DEPENDS=	devel/py-test-doctestplus${MODPY_FLAVOR}
+BUILD_DEPENDS=	math/py-numpy \
+		math/py-oldest-supported-numpy \
+		sysutils/py-packaging \
+		www/py-jinja2
+RUN_DEPENDS=	math/py-numpy
+TEST_DEPENDS=	devel/py-test-doctestplus
 
 pre-test:
 	${MODPY_CMD} build_ext --inplace

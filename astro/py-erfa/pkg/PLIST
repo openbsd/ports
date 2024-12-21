@@ -1,3 +1,4 @@
+@pkgpath astro/py-erfa,python3
 lib/python${MODPY_VERSION}/site-packages/erfa/
 lib/python${MODPY_VERSION}/site-packages/erfa/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/erfa/${MODPY_PYCACHE}/
@@ -30,9 +31,9 @@ lib/python${MODPY_VERSION}/site-packages/erfa/tests/test_erfa.py
 lib/python${MODPY_VERSION}/site-packages/erfa/tests/test_ufunc.py
 @so lib/python${MODPY_VERSION}/site-packages/erfa/ufunc${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/erfa/version.py
-lib/python${MODPY_VERSION}/site-packages/pyerfa-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pyerfa-${MODPY_EGG_VERSION}.dist-info/LICENSE.rst
-lib/python${MODPY_VERSION}/site-packages/pyerfa-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/pyerfa-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/pyerfa-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/pyerfa-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pyerfa-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pyerfa-${MODPY_DISTV}.dist-info/LICENSE.rst
+lib/python${MODPY_VERSION}/site-packages/pyerfa-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/pyerfa-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/pyerfa-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pyerfa-${MODPY_DISTV}.dist-info/top_level.txt

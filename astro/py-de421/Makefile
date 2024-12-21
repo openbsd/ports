@@ -1,10 +1,10 @@
 COMMENT =	JPL Planetary and Lunar Ephemeris DE421 for jplephem
 
-MODPY_EGG_VERSION =	2008.1
+MODPY_DISTV =	2008.1
 
-DISTNAME =	de421-${MODPY_EGG_VERSION}
+DISTNAME =	de421-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	astro
 
@@ -17,9 +17,6 @@ MODULES =	lang/python
 MODPY_PYBUILD =	setuptools
 MODPY_PI =	Yes
 NO_TEST =	Yes
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 FIX_EXTRACT_PERMISSIONS =	Yes
 

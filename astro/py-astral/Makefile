@@ -1,9 +1,9 @@
 COMMENT =		calculations for the position of the sun and the moon
 
-MODPY_EGG_VERSION =	2.2
-DISTNAME =		astral-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.2
+DISTNAME =		astral-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		astro
 
@@ -20,10 +20,7 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		poetry-core
 MODPY_PYTEST =		Yes
 
-RUN_DEPENDS =		devel/py-tz${MODPY_FLAVOR}
-TEST_DEPENDS =		devel/py-freezegun${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR =		python3
+RUN_DEPENDS =		devel/py-tz
+TEST_DEPENDS =		devel/py-freezegun
 
 .include <bsd.port.mk>

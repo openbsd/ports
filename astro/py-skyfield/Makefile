@@ -1,9 +1,10 @@
 COMMENT=	computes positions for the stars, planets, and satellites
 
-MODPY_EGG_VERSION =	1.49
+MODPY_DISTV =	1.49
 
-DISTNAME=	skyfield-${MODPY_EGG_VERSION}
+DISTNAME=	skyfield-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	astro
 
@@ -18,11 +19,8 @@ MODPY_PI=	Yes
 # tests require "assay"
 NO_TEST=	Yes
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-RUN_DEPENDS=	astro/py-jplephem${MODPY_FLAVOR} \
-		astro/py-sgp4${MODPY_FLAVOR} \
-		math/py-numpy${MODPY_FLAVOR}
+RUN_DEPENDS=	astro/py-jplephem \
+		astro/py-sgp4 \
+		math/py-numpy
 
 .include <bsd.port.mk>

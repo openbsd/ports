@@ -1,10 +1,10 @@
 COMMENT =	Python module to access NOAA's METAR weather reports
 
-MODPY_EGG_VERSION =	1.4
-DISTNAME =		pymetar-${MODPY_EGG_VERSION}
-PKGNAME =		py-metar-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.4
+DISTNAME =		pymetar-${MODPY_DISTV}
+PKGNAME =		py-metar-${MODPY_DISTV}
 CATEGORIES =		astro
-REVISION =		4
+REVISION =		5
 
 HOMEPAGE =		https://www.schwarzvogel.de/software/pymetar/
 
@@ -21,9 +21,6 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
 NO_TEST =		Yes
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 pre-build:
 	cp ${WRKSRC}/bin/pymetar ${WRKSRC}/bin/pymet
