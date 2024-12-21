@@ -8,7 +8,7 @@ COMMENT-md=	machine-dependent libraries for boost
 VERSION=	1.84.0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME=	boost-${VERSION}
-REVISION=	4
+REVISION=	5
 EPOCH=		0
 CATEGORIES=	devel
 SITES=		https://boostorg.jfrog.io/artifactory/main/release/${VERSION}/source/
@@ -34,10 +34,10 @@ BOOST_LIBS=	boost_atomic-mt \
 		boost_math_tr1f-mt boost_math_tr1f \
 		boost_math_tr1l-mt boost_math_tr1l \
 		boost_nowide-mt boost_nowide \
-		boost_numpy311-mt boost_numpy311 \
+		boost_numpy312-mt boost_numpy312 \
 		boost_prg_exec_monitor-mt boost_prg_exec_monitor \
 		boost_program_options-mt boost_program_options \
-		boost_python311-mt boost_python311 \
+		boost_python312-mt boost_python312 \
 		boost_random-mt boost_random \
 		boost_regex-mt boost_regex \
 		boost_serialization-mt boost_serialization \
@@ -80,7 +80,7 @@ MULTI_PACKAGES=	-main -md
 MODULES=	lang/python
 MODPY_RUNDEP=	No
 
-BUILD_DEPENDS=	math/py-numpy${MODPY_FLAVOR}
+BUILD_DEPENDS=	math/py-numpy
 
 LIB_DEPENDS=	archivers/bzip2 \
 		textproc/icu4c

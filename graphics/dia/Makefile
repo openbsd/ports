@@ -2,7 +2,7 @@ COMMENT=		program for drawing structured diagrams
 
 DIST_TUPLE=		gnome GNOME dia 78c75625dffcec345c776c35914a2de0380058cc .
 PKGNAME=		dia-0.98.0alpha20241027
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		graphics
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c cairo gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphene-1.0 gtk-3
-WANTLIB += intl m pango-1.0 pangocairo-1.0 poppler python3.11
+WANTLIB += intl m pango-1.0 pangocairo-1.0 poppler python3.12
 WANTLIB += xml2 xpm-pixbuf xslt z
 
 MODULES=		devel/meson \

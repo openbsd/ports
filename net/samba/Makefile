@@ -1,5 +1,6 @@
 VERSION =		4.21.2
 DISTNAME =		samba-${VERSION}
+REVISION =		1
 EPOCH =			0
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
@@ -67,11 +68,11 @@ BUILD_DEPENDS =		databases/tdb,-python \
 			devel/bison \
 			devel/cmocka \
 			devel/p5-Parse-Yapp>=1.0.5 \
-			net/py-dnspython${MODPY_FLAVOR} \
+			net/py-dnspython \
 			textproc/docbook-xsl
 
 RUN_DEPENDS-main =	databases/tdb,-python \
-			net/py-dnspython${MODPY_FLAVOR}
+			net/py-dnspython
 
 RUN_DEPENDS-docs =
 
