@@ -1,6 +1,6 @@
 COMMENT=		simple and modern GTK eBook viewer
 
-V=			3.2.0
+V=			3.2.1
 DISTNAME=		com.github.johnfactotum.Foliate-${V}
 EXTRACT_SUFX=		.tar.xz
 PKGNAME=		foliate-${V}
