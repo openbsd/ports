@@ -10,6 +10,7 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	x11/xfce4
 BUILD_DEPENDS =	x11/xfce4/xfce4-dev-tools>=4.19.3 \
+		devel/gobject-introspection \
 		wayland/wayland-protocols
 LIB_DEPENDS =	devel/libwnck3 \
 		wayland/wayland \
