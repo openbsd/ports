@@ -1,7 +1,7 @@
 COMMENT=		services and D-Bus APIs to access UPnP and DLNA devices
 
 DIST_TUPLE=		gnome World dLeyna v0.8.3 .
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS += dleyna-core-1.0           1.1 # 6.0.0
 SHARED_LIBS += dleyna-renderer-1.0       1.1 # 1.0.3
@@ -22,15 +22,15 @@ MODULES=		devel/meson \
 			x11/gnome
 
 BUILD_DEPENDS=		devel/epoll-shim \
-			textproc/py-docutils${MODPY_FLAVOR} \
-			textproc/py-sphinx${MODPY_FLAVOR}
+			textproc/py-docutils \
+			textproc/py-sphinx
 
 LIB_DEPENDS=		net/gupnp/core \
 			net/gupnp/av \
 			net/gupnp/dlna
 
-RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
-			x11/dbus-python${MODPY_FLAVOR}
+RUN_DEPENDS=		devel/py-gobject3 \
+			x11/dbus-python
 
 MODGNOME_CPPFLAGS=	-I${LOCALBASE}/include/libepoll-shim
 

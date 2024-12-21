@@ -1,5 +1,5 @@
+@pkgpath net/py-irclib,python3
 @conflict py-irclib-*
-@pkgpath net/py-irclib
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}ircbot.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}ircbot.${MODPY_PYC_MAGIC_TAG}pyc

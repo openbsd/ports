@@ -1,11 +1,11 @@
-@pkgpath net/py-nbxmpp
+@pkgpath net/py-nbxmpp,python3
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/
-lib/python${MODPY_VERSION}/site-packages/nbxmpp-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/nbxmpp-${MODPY_EGG_VERSION}.dist-info/COPYING
-lib/python${MODPY_VERSION}/site-packages/nbxmpp-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/nbxmpp-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/nbxmpp-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/nbxmpp-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/nbxmpp-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/nbxmpp-${MODPY_DISTV}.dist-info/COPYING
+lib/python${MODPY_VERSION}/site-packages/nbxmpp-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/nbxmpp-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/nbxmpp-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/nbxmpp-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

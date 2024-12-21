@@ -1,9 +1,9 @@
 COMMENT =		console XMPP client
 
-MODPY_EGG_VERSION =	0.13.1
-DISTNAME =		poezio-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.13.1
+DISTNAME =		poezio-${MODPY_DISTV}
 CATEGORIES =		net
-REVISION =		4
+REVISION =		5
 
 HOMEPAGE =		https://poez.io/
 
@@ -20,11 +20,11 @@ MODPY_PYTEST_ARGS =	-v test/
 
 MODPY_DISTUTILS_BUILD =	build_ext --inplace
 
-BUILD_DEPENDS =		lang/cython${MODPY_FLAVOR}
+BUILD_DEPENDS =		lang/cython
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			net/py-aiodns${MODPY_FLAVOR} \
-			net/py-slixmpp${MODPY_FLAVOR} \
-			security/py-potr${MODPY_FLAVOR}
+			net/py-aiodns \
+			net/py-slixmpp \
+			security/py-potr
 
 .include <bsd.port.mk>

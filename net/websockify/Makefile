@@ -1,10 +1,10 @@
 COMMENT=	WebSocket to TCP proxy
 
-MODPY_EGG_VERSION= 0.11.0
+MODPY_DISTV=	0.11.0
 GH_ACCOUNT=	novnc
 GH_PROJECT=	websockify
-GH_TAGNAME=	v${MODPY_EGG_VERSION}
-REVISION=	0
+GH_TAGNAME=	v${MODPY_DISTV}
+REVISION=	1
 
 CATEGORIES=	net
 
@@ -14,8 +14,8 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 MODPY_PYTEST_ARGS= --ignore tests/test_token_plugins.py
-RUN_DEPENDS=	math/py-numpy${MODPY_FLAVOR} \
-		www/py-requests${MODPY_FLAVOR}
+RUN_DEPENDS=	math/py-numpy \
+		www/py-requests
 
 post-build:
 	cd ${WRKSRC}; env ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS}

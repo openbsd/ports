@@ -1,14 +1,14 @@
+@pkgpath net/py-tld,python3
 @conflict py-tld-<0.9.3p1
-@pkgpath net/py-tld
 bin/update-tld-names
 lib/python${MODPY_VERSION}/site-packages/tld/
-lib/python${MODPY_VERSION}/site-packages/tld-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/tld-${MODPY_EGG_VERSION}.dist-info/LICENSE_LGPL_2.1.txt
-lib/python${MODPY_VERSION}/site-packages/tld-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/tld-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/tld-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/tld-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/tld-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/tld-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/tld-${MODPY_DISTV}.dist-info/LICENSE_LGPL_2.1.txt
+lib/python${MODPY_VERSION}/site-packages/tld-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/tld-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/tld-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/tld-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/tld-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/tld/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tld/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tld/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

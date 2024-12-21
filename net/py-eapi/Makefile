@@ -1,8 +1,9 @@
 COMMENT=	Python client for Arista eAPI
 
-MODPY_EGG_VERSION=	1.0.2
-DISTNAME=	pyeapi-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.0.2
+DISTNAME=	pyeapi-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/py//}
+REVISION=	0
 
 CATEGORIES=	net
 
@@ -10,14 +11,12 @@ CATEGORIES=	net
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-FLAVORS=	python3
-FLAVOR=		python3
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 MODPY_PYTEST_ARGS=	test/unit
 
-RUN_DEPENDS=	net/py-netaddr${MODPY_FLAVOR}
-TEST_DEPENDS=	devel/py-mock${MODPY_FLAVOR}
+RUN_DEPENDS=	net/py-netaddr
+TEST_DEPENDS=	devel/py-mock
 
 .include <bsd.port.mk>

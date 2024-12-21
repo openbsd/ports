@@ -3,10 +3,11 @@ COMMENT=	tool to automatically build BGP route server configurations
 # pypi sdist doesn't include tests
 GH_ACCOUNT=	pierky
 GH_PROJECT=	arouteserver
-GH_TAGNAME=	v${MODPY_EGG_VERSION}
+GH_TAGNAME=	v${MODPY_DISTV}
 
-MODPY_EGG_VERSION=	1.23.1
-DISTNAME=	arouteserver-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.23.1
+DISTNAME=	arouteserver-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	net
 
@@ -19,12 +20,12 @@ MODULES=	lang/python
 
 RUN_DEPENDS=	net/aggregate6 \
 		net/bgpq4 \
-		sysutils/py-packaging${MODPY_FLAVOR} \
-		textproc/py-yaml${MODPY_FLAVOR} \
-		www/py-jinja2${MODPY_FLAVOR} \
-		www/py-requests${MODPY_FLAVOR} \
-		www/py-urllib3${MODPY_FLAVOR}
-TEST_DEPENDS=	www/py-requests-mock${MODPY_FLAVOR} \
+		sysutils/py-packaging \
+		textproc/py-yaml \
+		www/py-jinja2 \
+		www/py-requests \
+		www/py-urllib3
+TEST_DEPENDS=	www/py-requests-mock \
 		net/bgpq3
 
 MODPY_PYBUILD=	setuptools

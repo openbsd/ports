@@ -1,13 +1,14 @@
 COMMENT=	fully-featured XMPP client written in Python
-MODPY_EGG_VERSION=	1.9.5
-DISTNAME=	gajim-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.9.5
+DISTNAME=	gajim-${MODPY_DISTV}
 CATEGORIES=	net x11
+REVISION=	0
 
 HOMEPAGE=	https://www.gajim.org
 
 MAINTAINER=	Paco Esteban <paco@openbsd.org>
 
-SITES=		${HOMEPAGE}/downloads/${MODPY_EGG_VERSION:R}/
+SITES=		${HOMEPAGE}/downloads/${MODPY_DISTV:R}/
 
 # GPLv3 only
 PERMIT_PACKAGE=	Yes
@@ -18,29 +19,29 @@ MODPY_PYBUILD=	setuptools
 BUILD_DEPENDS=	devel/gettext,-tools
 
 RUN_DEPENDS=	audio/gsound \
-		databases/py-sqlalchemy${MODPY_FLAVOR} \
+		databases/py-sqlalchemy \
 		devel/desktop-file-utils \
 		devel/glib2>=2.66.0 \
 		devel/libsoup3 \
 		devel/pango>=1.50.0 \
 		devel/py-gobject3 \
-		graphics/py-Pillow${MODPY_FLAVOR} \
-		graphics/py-cairo${MODPY_FLAVOR} \
-		graphics/py-qrcode${MODPY_FLAVOR}>=7.3.1 \
-		multimedia/gstreamer1/py-gstreamer${MODPY_FLAVOR} \
-		net/py-nbxmpp${MODPY_FLAVOR}>=5.0.4 \
-		security/py-cryptodome${MODPY_FLAVOR} \
-		security/py-cryptography${MODPY_FLAVOR} \
-		security/py-gnupg${MODPY_FLAVOR} \
-		security/py-keyring${MODPY_FLAVOR} \
-		security/py-omemo-dr${MODPY_FLAVOR}>=1.0.0 \
-		security/py-openssl${MODPY_FLAVOR} \
-		sysutils/py-packaging${MODPY_FLAVOR} \
+		graphics/py-Pillow \
+		graphics/py-cairo \
+		graphics/py-qrcode>=7.3.1 \
+		multimedia/gstreamer1/py-gstreamer \
+		net/py-nbxmpp>=5.0.4 \
+		security/py-cryptodome \
+		security/py-cryptography \
+		security/py-gnupg \
+		security/py-keyring \
+		security/py-omemo-dr>=1.0.0 \
+		security/py-openssl \
+		sysutils/py-packaging \
 		textproc/gspell \
-		textproc/py-css-parser${MODPY_FLAVOR} \
-		textproc/py-emoji${MODPY_FLAVOR}>=2.6.0 \
-		textproc/py-precis_i18n${MODPY_FLAVOR} \
-		x11/dbus-python${MODPY_FLAVOR} \
+		textproc/py-css-parser \
+		textproc/py-emoji>=2.6.0 \
+		textproc/py-precis_i18n \
+		x11/dbus-python \
 		x11/gtk+4,-guic \
 		x11/gtksourceview4
 

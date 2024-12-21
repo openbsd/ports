@@ -1,9 +1,9 @@
 COMMENT =	collect data from SolarEdge API
 
-MODPY_EGG_VERSION =	0.3.2
-DISTNAME =	solaredge-interface-${MODPY_EGG_VERSION}
-PKGNAME =	py-solaredge-interface-${MODPY_EGG_VERSION}
-REVISION =	0
+MODPY_DISTV =	0.3.2
+DISTNAME =	solaredge-interface-${MODPY_DISTV}
+PKGNAME =	py-solaredge-interface-${MODPY_DISTV}
+REVISION =	1
 
 CATEGORIES =	net
 
@@ -18,13 +18,10 @@ MODPY_PYBUILD =	setuptools
 MODPY_PI =	Yes
 NO_TEST =	Yes
 
-RUN_DEPENDS =	math/py-pandas${MODPY_FLAVOR} \
-		devel/py-click${MODPY_FLAVOR} \
-		devel/py-dateutil${MODPY_FLAVOR} \
-		devel/py-tz${MODPY_FLAVOR} \
-		www/py-requests${MODPY_FLAVOR}
-
-FLAVORS =	python3
-FLAVOR =	python3
+RUN_DEPENDS =	math/py-pandas \
+		devel/py-click \
+		devel/py-dateutil \
+		devel/py-tz \
+		www/py-requests
 
 .include <bsd.port.mk>

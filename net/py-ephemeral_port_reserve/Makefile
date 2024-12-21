@@ -1,9 +1,9 @@
 COMMENT =	implementation of the port 0 trick
 
-MODPY_EGG_VERSION =	1.1.4
-DISTNAME =	ephemeral_port_reserve-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.1.4
+DISTNAME =	ephemeral_port_reserve-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	net www
 
@@ -13,9 +13,6 @@ HOMEPAGE =	https://github.com/Yelp/ephemeral-port-reserve/
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 MODPY_PYBUILD =	setuptools
 MODPY_PI =	Yes

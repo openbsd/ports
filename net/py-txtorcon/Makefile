@@ -1,9 +1,9 @@
 COMMENT =		control-spec implementation for Tor
 
-MODPY_EGG_VERSION =	22.0.0
-DISTNAME =		txtorcon-${MODPY_EGG_VERSION}
+MODPY_DISTV =	22.0.0
+DISTNAME =		txtorcon-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 HOMEPAGE =		https://txtorcon.readthedocs.org
 
@@ -16,11 +16,8 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-RUN_DEPENDS =		devel/py-automat${MODPY_FLAVOR} \
-			devel/py-twisted${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-automat \
+			devel/py-twisted
 
 post-install:
 	mv ${PREFIX}/share/txtorcon/examples ${PREFIX}/share/examples/txtorcon

@@ -1,13 +1,13 @@
+@pkgpath net/py-s3transfer,python3
 @conflict py-s3transfer-*
-@pkgpath net/py-s3transfer
 lib/python${MODPY_VERSION}/site-packages/s3transfer/
-lib/python${MODPY_VERSION}/site-packages/s3transfer-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/s3transfer-${MODPY_EGG_VERSION}.dist-info/LICENSE.txt
-lib/python${MODPY_VERSION}/site-packages/s3transfer-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/s3transfer-${MODPY_EGG_VERSION}.dist-info/NOTICE.txt
-lib/python${MODPY_VERSION}/site-packages/s3transfer-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/s3transfer-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/s3transfer-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/s3transfer-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/s3transfer-${MODPY_DISTV}.dist-info/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/s3transfer-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/s3transfer-${MODPY_DISTV}.dist-info/NOTICE.txt
+lib/python${MODPY_VERSION}/site-packages/s3transfer-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/s3transfer-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/s3transfer-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/s3transfer/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/s3transfer/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/s3transfer/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

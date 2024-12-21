@@ -1,9 +1,9 @@
 COMMENT =		async library on top of asyncio or trio
 
-MODPY_EGG_VERSION =	3.7.1
-DISTNAME =		anyio-${MODPY_EGG_VERSION}
+MODPY_DISTV =	3.7.1
+DISTNAME =		anyio-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 
@@ -16,20 +16,17 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
 
-RUN_DEPENDS =		devel/py-exceptiongroup${MODPY_FLAVOR} \
-			devel/py-sniffio${MODPY_FLAVOR} \
-			devel/py-trio${MODPY_FLAVOR} \
-			net/py-idna${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-exceptiongroup \
+			devel/py-sniffio \
+			devel/py-trio \
+			net/py-idna
 
-TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR} \
-			devel/py-test-mock${MODPY_FLAVOR} \
-			security/py-trustme${MODPY_FLAVOR} \
-			sysutils/py-psutil${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-hypothesis \
+			devel/py-test-mock \
+			security/py-trustme \
+			sysutils/py-psutil
 
 .include <bsd.port.mk>

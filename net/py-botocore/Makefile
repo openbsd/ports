@@ -4,9 +4,10 @@
 
 COMMENT=		low-level interface to Amazon Web Services
 
-MODPY_EGG_VERSION=	1.35.86
-DISTNAME=		botocore-${MODPY_EGG_VERSION}
+MODPY_DISTV=		1.35.86
+DISTNAME=		botocore-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		net devel
 
@@ -22,18 +23,15 @@ MODULES=		lang/python
 MODPY_PI=		Yes
 MODPY_PYBUILD=		setuptools
 
-RUN_DEPENDS=		devel/py-dateutil${MODPY_FLAVOR} \
-			devel/py-jmespath${MODPY_FLAVOR} \
-			textproc/py-docutils${MODPY_FLAVOR} \
-			www/py-urllib3${MODPY_FLAVOR}
-
-FLAVORS=		python3
-FLAVOR=			python3
+RUN_DEPENDS=		devel/py-dateutil \
+			devel/py-jmespath \
+			textproc/py-docutils \
+			www/py-urllib3
 
 # XXX py-behave, unported yet
 TEST_DEPENDS=		${BUILD_PKGPATH} \
-			devel/py-mock${MODPY_FLAVOR} \
-			devel/py-nose${MODPY_FLAVOR}
+			devel/py-mock \
+			devel/py-nose
 
 # needs a driver and a runner
 TEST_IS_INTERACTIVE=	Yes

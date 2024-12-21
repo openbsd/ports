@@ -21,7 +21,7 @@ MODULES=	devel/dconf \
 MODPY_RUNDEP=	No
 
 BUILD_DEPENDS=	devel/gobject-introspection \
-		devel/py-twisted${MODPY_FLAVOR} \
+		devel/py-twisted \
 		textproc/libxslt
 LIB_DEPENDS=	databases/sqlite3 \
 		net/telepathy/telepathy-glib \

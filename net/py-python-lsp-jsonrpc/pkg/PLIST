@@ -1,3 +1,4 @@
+@pkgpath net/py-python-lsp-jsonrpc,python3
 lib/python${MODPY_VERSION}/site-packages/pylsp_jsonrpc/
 lib/python${MODPY_VERSION}/site-packages/pylsp_jsonrpc/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pylsp_jsonrpc/${MODPY_PYCACHE}/
@@ -18,9 +19,9 @@ lib/python${MODPY_VERSION}/site-packages/pylsp_jsonrpc/dispatchers.py
 lib/python${MODPY_VERSION}/site-packages/pylsp_jsonrpc/endpoint.py
 lib/python${MODPY_VERSION}/site-packages/pylsp_jsonrpc/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/pylsp_jsonrpc/streams.py
-lib/python${MODPY_VERSION}/site-packages/python_lsp_jsonrpc-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/python_lsp_jsonrpc-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/python_lsp_jsonrpc-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/python_lsp_jsonrpc-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/python_lsp_jsonrpc-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/python_lsp_jsonrpc-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/python_lsp_jsonrpc-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/python_lsp_jsonrpc-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/python_lsp_jsonrpc-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/python_lsp_jsonrpc-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/python_lsp_jsonrpc-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/python_lsp_jsonrpc-${MODPY_DISTV}.dist-info/top_level.txt

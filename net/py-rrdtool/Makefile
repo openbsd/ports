@@ -1,10 +1,10 @@
 COMMENT =	Python bindings for rrdtool
 
-MODPY_EGG_VERSION =	0.1.16
+MODPY_DISTV =	0.1.16
 
-DISTNAME =	rrdtool-${MODPY_EGG_VERSION}
+DISTNAME =	rrdtool-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	databases net
 
@@ -21,8 +21,5 @@ LIB_DEPENDS =	net/rrdtool
 MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools
 NO_TEST =	Yes
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 .include <bsd.port.mk>

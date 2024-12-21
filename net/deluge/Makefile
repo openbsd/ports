@@ -1,8 +1,8 @@
 COMMENT =	bittorrent client
 
-DISTNAME =		deluge-${MODPY_EGG_VERSION}
-MODPY_EGG_VERSION =	2.1.1
-REVISION =		0
+DISTNAME =		deluge-${MODPY_DISTV}
+MODPY_DISTV =	2.1.1
+REVISION =		1
 
 CATEGORIES =	net
 
@@ -11,7 +11,7 @@ HOMEPAGE =	https://www.deluge-torrent.org/
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-SITES =			https://ftp.osuosl.org/pub/deluge/source/${MODPY_EGG_VERSION:R}/
+SITES =			https://ftp.osuosl.org/pub/deluge/source/${MODPY_DISTV:R}/
 
 EXTRACT_SUFX =		.tar.xz
 
@@ -28,20 +28,20 @@ MODPY_PYTEST_ARGS =	-v \
 # share/appdata/deluge.appdata.xml
 # share/applications/deluge.desktop
 MODPY_SETUPTOOLS =	Yes
-BUILD_DEPENDS =		devel/py-wheel${MODPY_FLAVOR} \
-			devel/py-xdg${MODPY_FLAVOR} \
+BUILD_DEPENDS =		devel/py-wheel \
+			devel/py-xdg \
 			net/libtorrent-rasterbar \
-			textproc/py-chardet${MODPY_FLAVOR}
+			textproc/py-chardet
 RUN_DEPENDS =		devel/desktop-file-utils \
-			devel/py-gobject3${MODPY_FLAVOR} \
-			devel/py-rencode${MODPY_FLAVOR} \
-			devel/py-setproctitle${MODPY_FLAVOR} \
-			devel/py-twisted${MODPY_FLAVOR} \
-			devel/py-xdg${MODPY_FLAVOR} \
-			graphics/py-Pillow${MODPY_FLAVOR} \
+			devel/py-gobject3 \
+			devel/py-rencode \
+			devel/py-setproctitle \
+			devel/py-twisted \
+			devel/py-xdg \
+			graphics/py-Pillow \
 			net/libtorrent-rasterbar \
-			textproc/py-chardet${MODPY_FLAVOR} \
-			www/py-mako${MODPY_FLAVOR} \
+			textproc/py-chardet \
+			www/py-mako \
 			x11/gtk+3 \
 			x11/gtk+4,-guic
 

@@ -1,9 +1,10 @@
 COMMENT =	Python bindings for libknot
 
-MODPY_EGG_VERSION =	3.3.9
+MODPY_DISTV =	3.3.9
 
-DISTNAME =	libknot-${MODPY_EGG_VERSION}
+DISTNAME =	libknot-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	net
 
@@ -18,9 +19,6 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		hatchling
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-RUN_DEPENDS =		net/knot=${MODPY_EGG_VERSION}
+RUN_DEPENDS =		net/knot=${MODPY_DISTV}
 
 .include <bsd.port.mk>

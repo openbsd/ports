@@ -1,4 +1,4 @@
-@pkgpath net/py-pf
+@pkgpath net/py-pf,python3
 lib/python${MODPY_VERSION}/site-packages/pf/
 lib/python${MODPY_VERSION}/site-packages/pf/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pf/${MODPY_PYCACHE}/
@@ -51,9 +51,9 @@ lib/python${MODPY_VERSION}/site-packages/pf/tests/${MODPY_PYCACHE}test_filter.${
 lib/python${MODPY_VERSION}/site-packages/pf/tests/${MODPY_PYCACHE}test_filter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pf/tests/cmd.py
 lib/python${MODPY_VERSION}/site-packages/pf/tests/test_filter.py
-lib/python${MODPY_VERSION}/site-packages/py_pf-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/py_pf-${MODPY_EGG_VERSION}.dist-info/LICENSE.md
-lib/python${MODPY_VERSION}/site-packages/py_pf-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/py_pf-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/py_pf-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/py_pf-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/py_pf-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/py_pf-${MODPY_DISTV}.dist-info/LICENSE.md
+lib/python${MODPY_VERSION}/site-packages/py_pf-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/py_pf-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/py_pf-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/py_pf-${MODPY_DISTV}.dist-info/top_level.txt

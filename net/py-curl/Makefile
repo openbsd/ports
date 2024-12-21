@@ -1,9 +1,10 @@
 COMMENT=	Python interface to cURL library
 
-MODPY_EGG_VERSION=	7.45.3
-DISTNAME=	pycurl-${MODPY_EGG_VERSION}
-PKGNAME=	py-curl-${MODPY_EGG_VERSION}
+MODPY_DISTV=	7.45.3
+DISTNAME=	pycurl-${MODPY_DISTV}
+PKGNAME=	py-curl-${MODPY_DISTV}
 CATEGORIES=	net
+REVISION=	0
 
 HOMEPAGE=	http://pycurl.io/
 
@@ -17,9 +18,6 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-FLAVORS=	python3
-FLAVOR=		python3
-
 LIB_DEPENDS=	net/curl
 
 post-install:
@@ -29,7 +27,7 @@ post-install:
 	mv ${PREFIX}/share/doc/pycurl ${PREFIX}/share/doc/py-curl/
 
 TEST_DEPENDS=	${BUILD_PKGPATH} \
-		devel/py-flaky${MODPY_FLAVOR} \
-		www/py-bottle${MODPY_FLAVOR}
+		devel/py-flaky \
+		www/py-bottle
 
 .include <bsd.port.mk>

@@ -33,7 +33,7 @@ SITES=		${SITE_ISC:=bind9/$V/}
 MODULES=	lang/python
 # used for dnssec-checkds/dnssec-coverage, but don't want to force the run dep.
 MODPY_RUNDEP=	No
-BUILD_DEPENDS=	textproc/py-sphinx${MODPY_FLAVOR}
+BUILD_DEPENDS=	textproc/py-sphinx
 LIB_DEPENDS=	converters/libiconv \
 		devel/json-c \
 		devel/libidn2 \

@@ -1,10 +1,10 @@
 COMMENT=		library to en/decode DNS wire-format packets for Python
 
-MODPY_EGG_VERSION=	0.9.23
-DISTNAME=		dnslib-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.9.23
+DISTNAME=		dnslib-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		net
-REVISION=		1
+REVISION=		2
 
 MAINTAINER=		Bryan Everly <bryan@bceassociates.com>
 
@@ -14,9 +14,6 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 do-test:
 	${SUBST_CMD} ${WRKSRC}/run_tests.sh

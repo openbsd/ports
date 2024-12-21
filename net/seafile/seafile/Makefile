@@ -6,6 +6,7 @@ GH_PROJECT =		seafile
 GH_COMMIT =		5517d012bde196a7bab99a08db6580d52630862a
 DISTNAME =		seafile-daemon-9.0.6pl20240525
 EPOCH = 		0
+REVISION =		0
 
 SHARED_LIBS =		seafile 4.0
 

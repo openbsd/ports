@@ -1,8 +1,8 @@
 COMMENT =		terminal status monitor for Tor
 
-MODPY_EGG_VERSION =	2.1.0
-DISTNAME =		nyx-${MODPY_EGG_VERSION}
-REVISION =		6
+MODPY_DISTV =	2.1.0
+DISTNAME =		nyx-${MODPY_DISTV}
+REVISION =		7
 
 CATEGORIES =		net
 
@@ -17,8 +17,8 @@ MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
 
-BUILD_DEPENDS =		net/py-stem${MODPY_FLAVOR}
-RUN_DEPENDS =		net/py-stem${MODPY_FLAVOR}
+BUILD_DEPENDS =		net/py-stem
+RUN_DEPENDS =		net/py-stem
 
 
 pre-configure:

@@ -1,9 +1,9 @@
 COMMENT =	powerful interactive packet manipulation in python
 
-MODPY_EGG_VERSION =	2.4.4
-REVISION =	5
+MODPY_DISTV =	2.4.4
+REVISION =	6
 
-DISTNAME =	scapy-${MODPY_EGG_VERSION}
+DISTNAME =	scapy-${MODPY_DISTV}
 
 CATEGORIES =	net
 
@@ -28,7 +28,7 @@ UPDATE_PLIST_ARGS =	-i MODPY_PY_PREFIX
 # py-cryptography is only for architectures with newer compilers.
 # it is not needed for all features; include the dependency
 # where available but skip it on base-gcc architectures.
-RUN_DEPENDS =		security/py-cryptography${MODPY_FLAVOR}
+RUN_DEPENDS =		security/py-cryptography
 .endif
 
 pre-configure:

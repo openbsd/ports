@@ -1,8 +1,9 @@
 COMMENT =		securely transfer data between computers
 
-MODPY_EGG_VERSION =	0.17.0
-DISTNAME =		magic_wormhole-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.17.0
+DISTNAME =		magic_wormhole-${MODPY_DISTV}
 PKGNAME =		${DISTNAME:S/_/-/}
+REVISION =		0
 
 HOMEPAGE =		https://magic-wormhole.readthedocs.io
 
@@ -17,29 +18,29 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		archivers/py-zipstream-ng${MODPY_FLAVOR} \
-			devel/py-attrs${MODPY_FLAVOR} \
-			devel/py-automat${MODPY_FLAVOR} \
-			devel/py-click${MODPY_FLAVOR} \
-			devel/py-iterable-io${MODPY_FLAVOR} \
-			devel/py-six${MODPY_FLAVOR} \
-			devel/py-tqdm${MODPY_FLAVOR} \
-			devel/py-twisted${MODPY_FLAVOR} \
-			devel/py-txaio${MODPY_FLAVOR} \
-			net/py-txtorcon${MODPY_FLAVOR} \
-			security/py-PyNaCl${MODPY_FLAVOR} \
-			security/py-cryptography${MODPY_FLAVOR} \
-			security/py-hkdf${MODPY_FLAVOR} \
-			security/py-spake2${MODPY_FLAVOR}>=0.9 \
-			textproc/py-humanize${MODPY_FLAVOR} \
-			www/py-autobahn${MODPY_FLAVOR}
+RUN_DEPENDS =		archivers/py-zipstream-ng \
+			devel/py-attrs \
+			devel/py-automat \
+			devel/py-click \
+			devel/py-iterable-io \
+			devel/py-six \
+			devel/py-tqdm \
+			devel/py-twisted \
+			devel/py-txaio \
+			net/py-txtorcon \
+			security/py-PyNaCl \
+			security/py-cryptography \
+			security/py-hkdf \
+			security/py-spake2>=0.9 \
+			textproc/py-humanize \
+			www/py-autobahn
 
 # XXX completes partially, needs unported
 # "magic-wormhole-transit-relay==0.1.2"
 # "magic-wormhole-mailbox-server==0.3.1"
-TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
-			devel/py-txaio${MODPY_FLAVOR} \
-			devel/pyflakes${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-mock \
+			devel/py-txaio \
+			devel/pyflakes
 
 post-install:
 	${INSTALL_DATA} -D ${PREFIX}/{wormhole_complete.bash,share/bash-completion/completions/wormhole}

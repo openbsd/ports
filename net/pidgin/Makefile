@@ -47,9 +47,9 @@ MODULES=	textproc/intltool \
 		lang/python \
 		devel/gconf2
 
-BUILD_DEPENDS=		x11/dbus-python${MODPY_FLAVOR}
+BUILD_DEPENDS=		x11/dbus-python
 LIB_DEPENDS=		devel/glib2
-RUN_DEPENDS-main=	x11/dbus-python${MODPY_FLAVOR} \
+RUN_DEPENDS-main=	x11/dbus-python \
 			devel/desktop-file-utils \
 			x11/gtk+4,-guic
 LIB_DEPENDS-main=	${LIB_DEPENDS} \

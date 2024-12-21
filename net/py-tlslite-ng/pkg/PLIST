@@ -1,3 +1,4 @@
+@pkgpath net/py-tlslite-ng,python3
 bin/tls.py
 bin/tlsdb.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/

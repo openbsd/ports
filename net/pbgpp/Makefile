@@ -1,8 +1,8 @@
 COMMENT =	pcap bgp parser
 
-MODPY_EGG_VERSION =	0.2.22
-DISTNAME =	pbgpp-${MODPY_EGG_VERSION}
-REVISION =	4
+MODPY_DISTV =	0.2.22
+DISTNAME =	pbgpp-${MODPY_DISTV}
+REVISION =	5
 
 CATEGORIES =	net
 
@@ -15,7 +15,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		net/py-pcapy${MODPY_FLAVOR}
+RUN_DEPENDS =		net/py-pcapy
 BUILD_DEPENDS +=	${RUN_DEPENDS}
 
 # tests depend on a running kafka

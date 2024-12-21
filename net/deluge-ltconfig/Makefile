@@ -1,11 +1,11 @@
 COMMENT =	libtorrent settings modification plugin for deluge
 
-MODPY_EGG_VERSION =	2.0.0
-REVISION =	0
+MODPY_DISTV =	2.0.0
+REVISION =	1
 
 GH_ACCOUNT =	ratanakvlun
 GH_PROJECT =	deluge-ltconfig
-GH_TAGNAME =	v${MODPY_EGG_VERSION}
+GH_TAGNAME =	v${MODPY_DISTV}
 
 CATEGORIES =	net
 

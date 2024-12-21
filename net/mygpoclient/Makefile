@@ -1,9 +1,9 @@
 COMMENT=		gpodder.net client library
 
-MODPY_EGG_VERSION=	1.9
-DISTNAME=		mygpoclient-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.9
+DISTNAME=		mygpoclient-${MODPY_DISTV}
 CATEGORIES=		net devel
-REVISION=		1
+REVISION=		2
 
 MAINTAINER=		Tim Meunier <trondd@kagu-tsuchi.com>
 

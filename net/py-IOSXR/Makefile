@@ -1,9 +1,9 @@
 COMMENT =		library to manage IOS-XR devices
 
-MODPY_EGG_VERSION =	0.53
-DISTNAME =		pyIOSXR-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.53
+DISTNAME =		pyIOSXR-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/py//}
-REVISION =		7
+REVISION =		8
 
 CATEGORIES =		net
 
@@ -15,10 +15,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-RUN_DEPENDS =		net/py-netmiko${MODPY_FLAVOR} \
-			textproc/py-lxml${MODPY_FLAVOR}
+RUN_DEPENDS =		net/py-netmiko \
+			textproc/py-lxml
 
 .include <bsd.port.mk>

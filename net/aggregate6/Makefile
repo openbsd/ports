@@ -1,9 +1,10 @@
 COMMENT=	optimise a list of IPv4/IPv6 prefixes
 
-MODPY_EGG_VERSION=	1.0.14
+MODPY_DISTV=	1.0.14
 
-DISTNAME=	aggregate6-${MODPY_EGG_VERSION}
+DISTNAME=	aggregate6-${MODPY_DISTV}
 CATEGORIES=	net
+REVISION=	0
 
 HOMEPAGE=	https://github.com/job/aggregate6/
 
@@ -17,10 +18,10 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS=	devel/py-radix${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-radix
 
-TEST_DEPENDS=	devel/py-coverage${MODPY_FLAVOR} \
-		devel/py-mock${MODPY_FLAVOR} \
-		devel/py-nose${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-coverage \
+		devel/py-mock \
+		devel/py-nose
 
 .include <bsd.port.mk>

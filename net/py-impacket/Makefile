@@ -2,12 +2,12 @@ FIX_EXTRACT_PERMISSIONS = Yes
 
 COMMENT =		Python classes providing access to network packets
 
-MODPY_EGG_VERSION =	0.9.24
-DISTNAME =		impacket-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.9.24
+DISTNAME =		impacket-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 EPOCH =			0
 CATEGORIES =		net security
-REVISION =		3
+REVISION =		4
 
 HOMEPAGE =		https://github.com/fortra/impacket
 
@@ -31,16 +31,13 @@ MODPY_ADJ_FILES =	impacket/ese.py \
 			impacket/tds.py
 
 # ntlmrelayx can additionaly use py-ldap3, py-flask and unported py-ldapdomaindump
-RUN_DEPENDS =		devel/py-asn1${MODPY_FLAVOR} \
-			devel/py-future${MODPY_FLAVOR} \
-			net/py-pcapy${MODPY_FLAVOR} \
-			security/py-cryptodomex${MODPY_FLAVOR} \
-			security/py-openssl${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-asn1 \
+			devel/py-future \
+			net/py-pcapy \
+			security/py-cryptodomex \
+			security/py-openssl
 
 NO_TEST =		Yes
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/examples/goldenPac.py \

@@ -1,9 +1,9 @@
 COMMENT =		simplify Paramiko connections to network devices
 
-MODPY_EGG_VERSION =	3.1.1
-DISTNAME=		netmiko-${MODPY_EGG_VERSION}
+MODPY_DISTV =	3.1.1
+DISTNAME=		netmiko-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		net
 
@@ -15,13 +15,10 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-RUN_DEPENDS =		devel/py-serial${MODPY_FLAVOR} \
-			security/py-paramiko${MODPY_FLAVOR} \
-			security/py-scp${MODPY_FLAVOR} \
-			textproc/py-textfsm${MODPY_FLAVOR} \
-			textproc/py-yaml${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-serial \
+			security/py-paramiko \
+			security/py-scp \
+			textproc/py-textfsm \
+			textproc/py-yaml
 
 .include <bsd.port.mk>

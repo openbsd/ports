@@ -1,10 +1,11 @@
 # using bundled c-ares which is patched for TTL support
 COMMENT=	Python interface to c-ares
 
-MODPY_EGG_VERSION=	4.4.0
-DISTNAME=	pycares-${MODPY_EGG_VERSION}
-PKGNAME=	py-cares-${MODPY_EGG_VERSION}
+MODPY_DISTV=	4.4.0
+DISTNAME=	pycares-${MODPY_DISTV}
+PKGNAME=	py-cares-${MODPY_DISTV}
 CATEGORIES=	net
+REVISION=	0
 
 # MIT
 PERMIT_PACKAGE=	Yes
@@ -19,10 +20,7 @@ MODPY_PYBUILD=	setuptools
 
 USE_GMAKE=	Yes
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-RUN_DEPENDS=	devel/py-cffi${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-cffi
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 .include <bsd.port.mk>

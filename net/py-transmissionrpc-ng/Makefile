@@ -1,9 +1,9 @@
 COMMENT =		json-rpc client library for Transmission
 
-MODPY_EGG_VERSION =	0.14.1
-DISTNAME =		transmissionrpc-ng-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.14.1
+DISTNAME =		transmissionrpc-ng-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		net
 
@@ -19,9 +19,6 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	test/*.py
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-RUN_DEPENDS =		net/py-curl${MODPY_FLAVOR}
+RUN_DEPENDS =		net/py-curl
 
 .include <bsd.port.mk>

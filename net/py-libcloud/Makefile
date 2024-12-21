@@ -1,9 +1,9 @@
 COMMENT=		unified interface for interacting with cloud services
 
-MODPY_EGG_VERSION=	3.8.0
-DISTNAME=		apache-libcloud-${MODPY_EGG_VERSION}
-PKGNAME=		py-libcloud-${MODPY_EGG_VERSION}
-REVISION=		1
+MODPY_DISTV=	3.8.0
+DISTNAME=		apache-libcloud-${MODPY_DISTV}
+PKGNAME=		py-libcloud-${MODPY_DISTV}
+REVISION=		2
 
 CATEGORIES=		net
 
@@ -20,19 +20,16 @@ MODULES=		lang/python
 
 MODPY_PYBUILD=		setuptools
 
-FLAVORS=		python3
-FLAVOR=			python3
+BUILD_DEPENDS=		devel/py-test-runner
 
-BUILD_DEPENDS=		devel/py-test-runner${MODPY_FLAVOR}
-
-RUN_DEPENDS=		sysutils/py-lockfile${MODPY_FLAVOR}
+RUN_DEPENDS=		sysutils/py-lockfile
 
 TEST_DEPENDS=		devel/flake8 \
-			devel/py-mock${MODPY_FLAVOR} \
-			devel/py-test-runner${MODPY_FLAVOR} \
-			security/py-openssl${MODPY_FLAVOR} \
-			sysutils/py-lockfile${MODPY_FLAVOR} \
-			www/py-requests-mock${MODPY_FLAVOR}
+			devel/py-mock \
+			devel/py-test-runner \
+			security/py-openssl \
+			sysutils/py-lockfile \
+			www/py-requests-mock
 
 # no need to package the test suite
 post-install:

@@ -1,4 +1,5 @@
 COMMENT =		ncurses-based Tox client
+REVISION =		1
 
 DIST_TUPLE =		github Jfreegman toxic v0.15.1 .
 

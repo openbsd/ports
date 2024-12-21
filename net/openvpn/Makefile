@@ -15,7 +15,7 @@ WANTLIB += c lz4 lzo2
 
 SITES=		https://swupdate.openvpn.org/community/releases/
 
-BUILD_DEPENDS=	textproc/py-docutils,python3
+BUILD_DEPENDS=	textproc/py-docutils
 LIB_DEPENDS=	archivers/lzo2 \
 		archivers/lz4
 TEST_DEPENDS=	devel/cmocka

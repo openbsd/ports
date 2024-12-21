@@ -41,7 +41,7 @@ TEST_DEPENDS=		${MODPY_RUN_DEPENDS} \
 			${FULLPKGNAME}:${BUILD_PKGPATH} \
 			devel/cunit \
 			devel/gmake \
-			sysutils/py-psutil${MODPY_FLAVOR}
+			sysutils/py-psutil
 
 pre-test:
 	ln -fs ${WRKBUILD}/src/mosquitto ${WRKSRC}/src/

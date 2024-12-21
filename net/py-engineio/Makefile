@@ -1,10 +1,10 @@
 COMMENT=	client/server implementation of Engine.IO
 
 # py-ripe.atlas.cousteau 1.5.0 needs socketio<5 which needs engineio<4
-MODPY_EGG_VERSION= 3.14.2
-DISTNAME=	python-engineio-${MODPY_EGG_VERSION}
+MODPY_DISTV=	3.14.2
+DISTNAME=	python-engineio-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/python-/py-/}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	net
 
@@ -19,11 +19,8 @@ MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 NO_TEST=	Yes
 
-RUN_DEPENDS=	devel/py-six${MODPY_FLAVOR} \
-		www/py-requests${MODPY_FLAVOR} \
-		net/py-websocket-client${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+RUN_DEPENDS=	devel/py-six \
+		www/py-requests \
+		net/py-websocket-client
 
 .include <bsd.port.mk>

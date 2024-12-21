@@ -1,7 +1,7 @@
 COMMENT-main=	portable low-level networking library
 COMMENT-python=	python interface to libdnet
 
-MODPY_EGG_VERSION= 1.16.4
+MODPY_DISTV=	1.16.4
 GH_ACCOUNT=	ofalk
 GH_PROJECT=	libdnet
 # 1.16.4 release with my merged PRs on top
@@ -9,8 +9,8 @@ GH_COMMIT=	8a0163b38fefdf6184f41645548cfbe306a254b5
 DISTNAME=	libdnet-1.16.4
 PKGNAME-main=	${DISTNAME}
 PKGNAME-python=	${MODPY_PY_PREFIX}${DISTNAME}
-REVISION-main=	0
-REVISION-python=0
+REVISION-main=	1
+REVISION-python=1
 
 SHARED_LIBS=	dnet	1.1
 
@@ -38,11 +38,11 @@ CONFIGURE_ARGS +=	--without-check
 MODULES+=		lang/python
 MODPY_ADJ_FILES=	python/test.py
 CONFIGURE_ARGS+=	--with-python
-BUILD_DEPENDS+=		devel/py-setuptools${MODPY_FLAVOR} \
-			lang/cython${MODPY_FLAVOR}
+BUILD_DEPENDS+=		devel/py-setuptools \
+			lang/cython
 MAKE_FLAGS=		PYTHON=${MODPY_BIN}
 TEST_DEPENDS=		${FULLPKGNAME-python}:${FULLPKGPATH-python} \
-			net/py-netifaces${MODPY_FLAVOR}
+			net/py-netifaces
 TEST_FLAGS=		TESTS_ENVIRONMENT=${MODPY_BIN}
 TEST_IS_INTERACTIVE=	needs root
 WANTLIB-python=		${MODPY_WANTLIB} m pthread util

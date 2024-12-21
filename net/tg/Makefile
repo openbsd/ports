@@ -1,9 +1,9 @@
 COMMENT =	ncurses Telegram client
 
-MODPY_EGG_VERSION =	0.19.0
+MODPY_DISTV =	0.19.0
 
-DISTNAME =	tg-${MODPY_EGG_VERSION}
-REVISION =	2
+DISTNAME =	tg-${MODPY_DISTV}
+REVISION =	3
 
 CATEGORIES =	net
 
@@ -18,6 +18,6 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		poetry-core
 NO_TEST =		Yes
 
-RUN_DEPENDS =		net/py-telegram${MODPY_FLAVOR}
+RUN_DEPENDS =		net/py-telegram
 
 .include <bsd.port.mk>

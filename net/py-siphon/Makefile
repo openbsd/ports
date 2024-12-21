@@ -1,9 +1,10 @@
 COMMENT=	download data from remote data services (such as THREDDS)
 
-MODPY_EGG_VERSION=	0.10.0
-DISTNAME=	siphon-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.10.0
+DISTNAME=	siphon-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	net
+REVISION=	0
 
 HOMEPAGE=	https://unidata.github.io/siphon/
 
@@ -17,18 +18,15 @@ MODPY_PI=	Yes
 
 MODULES=	lang/python
 
-FLAVORS=	python3
-FLAVOR=		python3
+RUN_DEPENDS+=	devel/py-protobuf \
+		math/py-numpy \
+		math/py-pandas \
+		www/py-beautifulsoup4 \
+		www/py-requests
 
-RUN_DEPENDS+=	devel/py-protobuf${MODPY_FLAVOR} \
-		math/py-numpy${MODPY_FLAVOR} \
-		math/py-pandas${MODPY_FLAVOR} \
-		www/py-beautifulsoup4${MODPY_FLAVOR} \
-		www/py-requests${MODPY_FLAVOR}
-
-TEST_DEPENDS=	devel/py-coveralls${MODPY_FLAVOR} \
-		devel/py-test-cov${MODPY_FLAVOR} \
-		math/py-netcdf4${MODPY_FLAVOR} \
-		www/py-vcrpy${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-coveralls \
+		devel/py-test-cov \
+		math/py-netcdf4 \
+		www/py-vcrpy
 
 .include <bsd.port.mk>

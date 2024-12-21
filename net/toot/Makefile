@@ -1,7 +1,8 @@
 COMMENT=	CLI and TUI tool to interact with Mastodon instances
 
-MODPY_EGG_VERSION=	0.47.1
-DISTNAME=	toot-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.47.1
+DISTNAME=	toot-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	net
 
@@ -20,13 +21,13 @@ MODPY_PYBUILD=	setuptools_scm
 MODPY_PYTEST_ARGS=	--ignore tests/integration \
 			--ignore tests/tui/test_rich_text.py
 
-RUN_DEPENDS=	devel/py-click${MODPY_FLAVOR} \
-		www/py-requests${MODPY_FLAVOR} \
-		www/py-beautifulsoup4${MODPY_FLAVOR} \
-		devel/py-wcwidth${MODPY_FLAVOR} \
-		devel/py-urwid${MODPY_FLAVOR} \
-		textproc/py-tomlkit${MODPY_FLAVOR}
-TEST_DEPENDS=	devel/py-test-cov${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-click \
+		www/py-requests \
+		www/py-beautifulsoup4 \
+		devel/py-wcwidth \
+		devel/py-urwid \
+		textproc/py-tomlkit
+TEST_DEPENDS=	devel/py-test-cov
 
 MAKE_ENV=	LC_CTYPE=C.UTF-8
 

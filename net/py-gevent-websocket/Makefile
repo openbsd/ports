@@ -1,10 +1,10 @@
 COMMENT =	WebSocket handler for the gevent pywsgi server
 
-MODPY_EGG_VERSION =	0.10.1
+MODPY_DISTV =	0.10.1
 
-DISTNAME =	gevent-websocket-${MODPY_EGG_VERSION}
+DISTNAME =	gevent-websocket-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	net
 
@@ -18,9 +18,7 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-FLAVOR =		python3
-FLAVORS =		python3
 
-RUN_DEPENDS =		devel/py-gevent${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-gevent
 
 .include <bsd.port.mk>

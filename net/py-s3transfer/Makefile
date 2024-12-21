@@ -4,9 +4,10 @@
 
 COMMENT=		Amazon S3 transfer manager for Python
 
-MODPY_EGG_VERSION=	0.10.4
-DISTNAME=		s3transfer-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.10.4
+DISTNAME=		s3transfer-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		net devel
 
@@ -22,9 +23,6 @@ MODULES=		lang/python
 MODPY_PI=		Yes
 MODPY_PYBUILD=		setuptools
 
-FLAVORS=		python3
-FLAVOR=			python3
-
-RUN_DEPENDS=		net/py-botocore${MODPY_FLAVOR}
+RUN_DEPENDS=		net/py-botocore
 
 .include <bsd.port.mk>

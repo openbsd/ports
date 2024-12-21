@@ -1,9 +1,9 @@
 COMMENT =		FTP server library for Python
 
-MODPY_EGG_VERSION =	1.5.7
-DISTNAME =		pyftpdlib-${MODPY_EGG_VERSION}
-PKGNAME =		py-ftpdlib-${MODPY_EGG_VERSION}
-REVISION =		0
+MODPY_DISTV =	1.5.7
+DISTNAME =		pyftpdlib-${MODPY_DISTV}
+PKGNAME =		py-ftpdlib-${MODPY_DISTV}
+REVISION =		1
 
 CATEGORIES =		net devel
 
@@ -17,9 +17,6 @@ PERMIT_PACKAGE=	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 NO_TEST =		Yes
 

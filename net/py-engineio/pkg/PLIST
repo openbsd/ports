@@ -1,3 +1,4 @@
+@pkgpath net/py-engineio,python3
 lib/python${MODPY_VERSION}/site-packages/engineio/
 lib/python${MODPY_VERSION}/site-packages/engineio/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/engineio/${MODPY_PYCACHE}/
@@ -65,9 +66,9 @@ lib/python${MODPY_VERSION}/site-packages/engineio/payload.py
 lib/python${MODPY_VERSION}/site-packages/engineio/server.py
 lib/python${MODPY_VERSION}/site-packages/engineio/socket.py
 lib/python${MODPY_VERSION}/site-packages/engineio/static_files.py
-lib/python${MODPY_VERSION}/site-packages/python_engineio-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/python_engineio-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/python_engineio-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/python_engineio-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/python_engineio-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/python_engineio-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/python_engineio-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/python_engineio-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/python_engineio-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/python_engineio-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/python_engineio-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/python_engineio-${MODPY_DISTV}.dist-info/top_level.txt

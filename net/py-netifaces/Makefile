@@ -2,10 +2,10 @@ COMMENT =	portable network interface information
 
 CATEGORIES =	net
 
-MODPY_EGG_VERSION = 0.11.0
-DISTNAME =	netifaces-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.11.0
+DISTNAME =	netifaces-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	2
+REVISION =	3
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -13,9 +13,6 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += pthread ${MODPY_WANTLIB}
 
 MODULES =	lang/python
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools

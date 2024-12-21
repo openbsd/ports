@@ -3,7 +3,7 @@ V =			2.16.2
 DISTNAME =		hexchat-$V
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		net x11
-REVISION =		2
+REVISION =		3
 
 HOMEPAGE =		https://hexchat.github.io/
 
@@ -28,7 +28,7 @@ MODULES =		devel/meson \
 			textproc/intltool
 
 BUILD_DEPENDS =		devel/iso-codes \
-			devel/py-cffi${MODPY_FLAVOR}
+			devel/py-cffi
 
 # work towards gtk+3 support is in
 # https://github.com/hexchat/hexchat/tree/wip/gtk3

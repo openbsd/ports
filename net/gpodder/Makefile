@@ -1,11 +1,11 @@
 COMMENT=		media aggregator and podcast client
 
-MODPY_EGG_VERSION=	3.11.4
-REVISION=		3
+MODPY_DISTV=	3.11.4
+REVISION=		4
 
 GH_ACCOUNT=		gpodder
 GH_PROJECT=		gpodder
-GH_TAGNAME=		${MODPY_EGG_VERSION}
+GH_TAGNAME=		${MODPY_DISTV}
 
 CATEGORIES=		net www
 
@@ -24,20 +24,20 @@ TEST_ENV=		PYTEST=py.test
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/gettext,-runtime \
-			devel/py-html5lib${MODPY_FLAVOR} \
-			devel/py-gobject3${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR} \
+			devel/py-html5lib \
+			devel/py-gobject3 \
+			www/py-requests \
 			net/mygpoclient \
-			textproc/py-podcastparser${MODPY_FLAVOR} \
+			textproc/py-podcastparser \
 			www/yt-dlp \
 			www/webkitgtk4 \
-			x11/dbus-python${MODPY_FLAVOR} \
+			x11/dbus-python \
 			x11/gtk+4,-guic
-TEST_DEPENDS=		devel/py-coverage${MODPY_FLAVOR} \
-			devel/py-minimock${MODPY_FLAVOR} \
-			devel/py-test${MODPY_FLAVOR} \
-			devel/py-test-cov${MODPY_FLAVOR} \
-			textproc/py-podcastparser${MODPY_FLAVOR} \
+TEST_DEPENDS=		devel/py-coverage \
+			devel/py-minimock \
+			devel/py-test \
+			devel/py-test-cov \
+			textproc/py-podcastparser \
 			net/mygpoclient
 
 USE_GMAKE=		Yes

@@ -1,9 +1,10 @@
 COMMENT=	Python library to support the IDNA protocol
 
-MODPY_EGG_VERSION=	3.10
-DISTNAME=	idna-${MODPY_EGG_VERSION}
+MODPY_DISTV=	3.10
+DISTNAME=	idna-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	net
+REVISION=	0
 
 HOMEPAGE=	https://github.com/kjd/idna
 
@@ -14,8 +15,5 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	flit_core
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

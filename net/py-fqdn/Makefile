@@ -1,8 +1,9 @@
 COMMENT =		validates that domain names are acceptable to browsers
 
-MODPY_EGG_VERSION =	1.5.1
-DISTNAME =		fqdn-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.5.1
+DISTNAME =		fqdn-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		net
 
@@ -12,9 +13,6 @@ HOMEPAGE =		https://github.com/ypcrts/fqdn
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools

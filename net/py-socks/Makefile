@@ -1,9 +1,9 @@
 COMMENT =		Python module for working with SOCKS proxies
 
-MODPY_EGG_VERSION =	1.7.1
-DISTNAME =		PySocks-${MODPY_EGG_VERSION}
-PKGNAME =		py-socks-${MODPY_EGG_VERSION}
-REVISION =		6
+MODPY_DISTV =	1.7.1
+DISTNAME =		PySocks-${MODPY_DISTV}
+PKGNAME =		py-socks-${MODPY_DISTV}
+REVISION =		7
 
 CATEGORIES =		net
 
@@ -18,9 +18,6 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 # Tests depend on bundled Linux binary
 NO_TEST =		Yes

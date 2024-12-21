@@ -1,9 +1,9 @@
 COMMENT =		pure Python Multicast DNS Service Discovery Library
 
-MODPY_EGG_VERSION =	0.28.8
-DISTNAME =		zeroconf-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.28.8
+DISTNAME =		zeroconf-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		net
 
@@ -17,9 +17,6 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-RUN_DEPENDS =		net/py-ifaddr${MODPY_FLAVOR}
+RUN_DEPENDS =		net/py-ifaddr
 
 .include <bsd.port.mk>

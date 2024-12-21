@@ -1,9 +1,9 @@
 COMMENT =		MQTT Python client library
 
-MODPY_EGG_VERSION =	1.6.1
-DISTNAME =		paho-mqtt-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.6.1
+DISTNAME =		paho-mqtt-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 HOMEPAGE =		http://www.eclipse.org/paho/clients/python/
 
@@ -16,11 +16,8 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 # not in pypi tarball.
-#TEST_DEPENDS =		devel/py-test-runner${MODPY_FLAVOR}
+#TEST_DEPENDS =		devel/py-test-runner
 NO_TEST =		Yes
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 MODPY_ADJ_FILES =	examples/*.py
 

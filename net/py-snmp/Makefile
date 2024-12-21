@@ -1,10 +1,10 @@
 COMMENT =	SNMP framework for Python
 
-MODPY_EGG_VERSION =	4.4.12
-DISTNAME =	pysnmp-${MODPY_EGG_VERSION}
+MODPY_DISTV =	4.4.12
+DISTNAME =	pysnmp-${MODPY_DISTV}
 PKGNAME =	${DISTNAME:S/py/py-/}
 CATEGORIES =	net
-REVISION =	6
+REVISION =	7
 
 HOMEPAGE =	http://snmplabs.com/
 
@@ -19,14 +19,11 @@ MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
-RUN_DEPENDS =	security/py-cryptodome${MODPY_FLAVOR} \
-		devel/py-asn1${MODPY_FLAVOR}
+RUN_DEPENDS =	security/py-cryptodome \
+		devel/py-asn1
 
 DOCSDIR =	${PREFIX}/share/doc/${MODPY_PY_PREFIX}snmp
 EXAMPLESDIR =	${PREFIX}/share/examples/${MODPY_PY_PREFIX}snmp
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 post-install:
 	${INSTALL_DATA_DIR} ${DOCSDIR} ${EXAMPLESDIR}

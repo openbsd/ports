@@ -1,9 +1,9 @@
 COMMENT=	twitter python module
 
-MODPY_EGG_VERSION=	1.18.0
-DISTNAME=	twitter-${MODPY_EGG_VERSION}
-PKGNAME=	py-twitter-${MODPY_EGG_VERSION}
-REVISION=	4
+MODPY_DISTV=	1.18.0
+DISTNAME=	twitter-${MODPY_DISTV}
+PKGNAME=	py-twitter-${MODPY_DISTV}
+REVISION=	5
 
 CATEGORIES=	net www
 
@@ -18,11 +18,9 @@ MODPY_PI=	Yes
 MODULES=	lang/python
 
 MODPY_PYBUILD=	setuptools
-FLAVORS=	python3
-FLAVOR=		python3
 
-RUN_DEPENDS=	net/py-irclib${MODPY_FLAVOR}
+RUN_DEPENDS=	net/py-irclib
 BUILD_DEPENDS=	${RUN_DEPENDS}
-TEST_DEPENDS=	devel/py-nose${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-nose
 
 .include <bsd.port.mk>

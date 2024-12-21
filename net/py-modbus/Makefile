@@ -1,8 +1,9 @@
 COMMENT =	full modbus protocol written in python
 
-MODPY_EGG_VERSION =	3.7.4
-DISTNAME =	pymodbus-${MODPY_EGG_VERSION}
+MODPY_DISTV =	3.7.4
+DISTNAME =	pymodbus-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	net
 
@@ -17,8 +18,6 @@ MODPY_PYBUILD =	setuptools
 MODPY_PI =	Yes
 NO_TEST =	Yes
 
-RUN_DEPENDS =	devel/py-serial${MODPY_FLAVOR}
-FLAVORS =	python3
-FLAVOR =	python3
+RUN_DEPENDS =	devel/py-serial
 
 .include <bsd.port.mk>

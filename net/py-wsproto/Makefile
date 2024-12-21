@@ -1,9 +1,9 @@
 COMMENT=	state-machine based WebSocket protocol implementation
 
-MODPY_EGG_VERSION=	1.2.0
-DISTNAME=	wsproto-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.2.0
+DISTNAME=	wsproto-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net
 
@@ -14,12 +14,9 @@ MODULES=	lang/python
 
 HOMEPAGE=	https://github.com/python-hyper/wsproto/
 
-FLAVORS=	python3
-FLAVOR=		python3
-
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS=	www/py-h11${MODPY_FLAVOR}
+RUN_DEPENDS=	www/py-h11
 
 .include <bsd.port.mk>

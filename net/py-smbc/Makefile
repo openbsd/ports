@@ -1,9 +1,9 @@
 COMMENT=		Python bindings to wrap the libsmbclient API
 
-MODPY_EGG_VERSION=	1.0.25.1
-DISTNAME=		pysmbc-${MODPY_EGG_VERSION}
-PKGNAME=		py-smbc-${MODPY_EGG_VERSION}
-REVISION=		0
+MODPY_DISTV=	1.0.25.1
+DISTNAME=		pysmbc-${MODPY_DISTV}
+PKGNAME=		py-smbc-${MODPY_DISTV}
+REVISION=		1
 
 CATEGORIES=		net devel
 
@@ -21,12 +21,9 @@ MODULES=		lang/python
 MODPY_PI=		Yes
 MODPY_PYBUILD=		setuptools
 
-FLAVORS=		python3
-FLAVOR=			python3
-
 LIB_DEPENDS=		net/samba
 
-CFLAGS +=		-I${LOCALBASE}/include -DVERSION=\"${MODPY_EGG_VERSION}\"
+CFLAGS +=		-I${LOCALBASE}/include -DVERSION=\"${MODPY_DISTV}\"
 LDFLAGS=		-L${LOCALBASE}/lib
 MAKE_ENV=		PYTHON="${MODPY_BIN}" \
 			CFLAGS="${CFLAGS}" \

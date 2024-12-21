@@ -1,4 +1,4 @@
-@pkgpath net/py-junos-eznc
+@pkgpath net/py-junos-eznc,python3
 lib/python${MODPY_VERSION}/site-packages/jnpr/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/__init__.py
@@ -345,11 +345,11 @@ lib/python${MODPY_VERSION}/site-packages/jnpr/junos/utils/start_shell.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/utils/sw.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/utils/util.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/version.py
-lib/python${MODPY_VERSION}/site-packages/junos_eznc-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth
-lib/python${MODPY_VERSION}/site-packages/junos_eznc-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/junos_eznc-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/junos_eznc-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/junos_eznc-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/junos_eznc-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/junos_eznc-${MODPY_EGG_VERSION}.dist-info/namespace_packages.txt
-lib/python${MODPY_VERSION}/site-packages/junos_eznc-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/junos_eznc-${MODPY_DISTV}-py${MODPY_VERSION}-nspkg.pth
+lib/python${MODPY_VERSION}/site-packages/junos_eznc-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/junos_eznc-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/junos_eznc-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/junos_eznc-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/junos_eznc-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/junos_eznc-${MODPY_DISTV}.dist-info/namespace_packages.txt
+lib/python${MODPY_VERSION}/site-packages/junos_eznc-${MODPY_DISTV}.dist-info/top_level.txt

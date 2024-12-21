@@ -1,13 +1,13 @@
-@pkgpath net/py-ripe.atlas.sagan
+@pkgpath net/py-ripe.atlas.sagan,python3
 lib/python${MODPY_VERSION}/site-packages/ripe/
-lib/python${MODPY_VERSION}/site-packages/ripe.atlas.sagan-${MODPY_EGG_VERSION}-py${MODPY_VERSION}-nspkg.pth
-lib/python${MODPY_VERSION}/site-packages/ripe.atlas.sagan-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/ripe.atlas.sagan-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/ripe.atlas.sagan-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/ripe.atlas.sagan-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/ripe.atlas.sagan-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/ripe.atlas.sagan-${MODPY_EGG_VERSION}.dist-info/namespace_packages.txt
-lib/python${MODPY_VERSION}/site-packages/ripe.atlas.sagan-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/ripe.atlas.sagan-${MODPY_DISTV}-py${MODPY_VERSION}-nspkg.pth
+lib/python${MODPY_VERSION}/site-packages/ripe.atlas.sagan-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/ripe.atlas.sagan-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/ripe.atlas.sagan-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/ripe.atlas.sagan-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/ripe.atlas.sagan-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/ripe.atlas.sagan-${MODPY_DISTV}.dist-info/namespace_packages.txt
+lib/python${MODPY_VERSION}/site-packages/ripe.atlas.sagan-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/sagan/
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/sagan/__init__.py

@@ -1,15 +1,14 @@
-@conflict py-boto3-*
-@pkgpath net/py-boto3
+@pkgpath net/py-boto3,python3
 @pkgpath net/py-boto
 @pkgpath net/py-boto,python3
 lib/python${MODPY_VERSION}/site-packages/boto3/
-lib/python${MODPY_VERSION}/site-packages/boto3-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/boto3-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/boto3-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/boto3-${MODPY_EGG_VERSION}.dist-info/NOTICE
-lib/python${MODPY_VERSION}/site-packages/boto3-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/boto3-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/boto3-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/boto3-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/boto3-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/boto3-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/boto3-${MODPY_DISTV}.dist-info/NOTICE
+lib/python${MODPY_VERSION}/site-packages/boto3-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/boto3-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/boto3-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/boto3/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/boto3/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/boto3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

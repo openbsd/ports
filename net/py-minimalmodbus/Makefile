@@ -1,10 +1,10 @@
 COMMENT=	easy-to-use Modbus RTU/ASCII implementation for Python
 
-MODPY_EGG_VERSION=	2.1.1
-DISTNAME=		minimalmodbus-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.1.1
+DISTNAME=		minimalmodbus-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		net
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		https://github.com/pyhys/minimalmodbus
 
@@ -19,12 +19,9 @@ MODPY_PYTEST=		Yes
 
 MODULES=		lang/python
 
-FLAVORS=		python3
-FLAVOR=			python3
+RUN_DEPENDS=		devel/py-serial
 
-RUN_DEPENDS=		devel/py-serial${MODPY_FLAVOR}
-
-TEST_DEPENDS=		devel/py-coveralls${MODPY_FLAVOR} \
-			devel/py-test-cov${MODPY_FLAVOR}
+TEST_DEPENDS=		devel/py-coveralls \
+			devel/py-test-cov
 
 .include <bsd.port.mk>

@@ -4,7 +4,7 @@ CATEGORIES =	net
 
 V =		1.26
 DISTNAME =	libaccounts-glib-${V}
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS +=  accounts-glib             0.0 # 0.0
 
@@ -22,12 +22,12 @@ MODPY_RUNDEP =	No
 
 CONFIGURE_STYLE = meson
 
-RUN_DEPENDS =	devel/py-gobject3${MODPY_FLAVOR}
+RUN_DEPENDS =	devel/py-gobject3
 
 BUILD_DEPENDS =	lang/vala \
 		devel/check \
 		devel/gobject-introspection \
-		devel/py-gobject3${MODPY_FLAVOR} \
+		devel/py-gobject3 \
 		textproc/gtk-doc
 
 LIB_DEPENDS =	databases/sqlite3 \

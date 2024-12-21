@@ -1,10 +1,10 @@
 COMMENT =	Python wrapper for Telegram tdlib
 
-MODPY_EGG_VERSION =	0.16.0
+MODPY_DISTV =	0.16.0
 
-DISTNAME =	python-telegram-${MODPY_EGG_VERSION}
+DISTNAME =	python-telegram-${MODPY_DISTV}
 PKGNAME =	${DISTNAME:S/^python-/py-/}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	net
 
@@ -17,9 +17,6 @@ MODULES =	lang/python
 
 MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 RUN_DEPENDS =	net/tdlib
 NO_TEST =	Yes

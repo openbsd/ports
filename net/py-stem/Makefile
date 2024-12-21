@@ -1,9 +1,9 @@
 COMMENT =		Tor controller library
 
-MODPY_EGG_VERSION =	1.8.2
-DISTNAME =		stem-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.8.2
+DISTNAME =		stem-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		net
 
@@ -13,9 +13,6 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 MODULES =		lang/python
 MODPY_PI =		Yes

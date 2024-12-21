@@ -3,13 +3,13 @@ COMMENT-gui =		graphical user interface for onionshare based on Qt
 
 GH_ACCOUNT =		micahflee
 GH_PROJECT =		onionshare
-GH_TAGNAME =		v${MODPY_EGG_VERSION}
-MODPY_EGG_VERSION =	2.0
-REVISION-main =		7
-REVISION-gui =		7
+GH_TAGNAME =		v${MODPY_DISTV}
+MODPY_DISTV =	2.0
+REVISION-main =		8
+REVISION-gui =		8
 
-PKGNAME-main =		onionshare-${MODPY_EGG_VERSION}
-PKGNAME-gui =		onionshare-gui-${MODPY_EGG_VERSION}
+PKGNAME-main =		onionshare-${MODPY_DISTV}
+PKGNAME-gui =		onionshare-gui-${MODPY_DISTV}
 
 CATEGORIES =		net
 
@@ -25,16 +25,16 @@ MULTI_PACKAGES =	-main -gui
 MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		devel/py-sip${MODPY_FLAVOR} \
-			www/py-flask${MODPY_FLAVOR} \
-			net/py-stem${MODPY_FLAVOR} \
+RUN_DEPENDS =		devel/py-sip \
+			www/py-flask \
+			net/py-stem \
 			net/tor \
-			security/py-cryptodome${MODPY_FLAVOR}
+			security/py-cryptodome
 RUN_DEPENDS-gui =	${RUN_DEPENDS} \
 			devel/desktop-file-utils \
-			net/onionshare=${MODPY_EGG_VERSION} \
-			net/py-socks${MODPY_FLAVOR} \
-			x11/py-qt5${MODPY_FLAVOR}
+			net/onionshare=${MODPY_DISTV} \
+			net/py-socks \
+			x11/py-qt5
 
 # XXX: not yet working
 NO_TEST =		Yes

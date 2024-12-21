@@ -18,8 +18,8 @@ PKGNAME-gui=		avahi-gui-${V}
 PKGNAME-libs=		avahi-libs-${V}
 PKGNAME-python=		py3-avahi-${V}
 
-REVISION-python=	7
-REVISION-gui=		10
+REVISION-python=	8
+REVISION-gui=		11
 REVISION-gtk3=		5
 REVISION-main=		10
 REVISION-libs=		5
@@ -95,9 +95,9 @@ BUILD_PACKAGES :=	${BUILD_PACKAGES:N-gtk3:N-python}
 .if ${BUILD_PACKAGES:M-gui}
 ### common
 MODULES+=		lang/python
-BUILD_DEPENDS+=		devel/py-gobject3${MODPY_FLAVOR} \
+BUILD_DEPENDS+=		devel/py-gobject3 \
 			${MODPY_RUN_DEPENDS},-gdbm \
-			x11/dbus-python${MODPY_FLAVOR}
+			x11/dbus-python
 
 ### -gtk3
 LIB_DEPENDS-gtk3=	databases/gdbm \
@@ -118,8 +118,8 @@ WANTLIB-gtk3 += ${COMPILER_LIBCXX} execinfo jpeg Xau Xdmcp
 LIB_DEPENDS-gui=	${BUILD_PKGPATH},-gtk3
 RUN_DEPENDS-gui=	${MODPY_RUN_DEPENDS} \
 			${BUILD_PKGPATH},-python \
-			x11/dbus-python${MODPY_FLAVOR} \
-			devel/py-twisted${MODPY_FLAVOR} \
+			x11/dbus-python \
+			devel/py-twisted \
 			devel/desktop-file-utils
 
 WANTLIB-gui += X11 Xcomposite Xcursor Xdamage Xext Xfixes harfbuzz

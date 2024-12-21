@@ -4,6 +4,7 @@ COMMENT=	auto-discovering network management/monitoring system
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
 GH_TAGNAME=	24.12.0
+REVISION=	0
 
 DISTFILES.dep=	librenms-${GH_TAGNAME:R}-vendor.tar.xz
 EPOCH=		0
@@ -29,11 +30,11 @@ RUN_DEPENDS=	lang/php/${MODPHP_VERSION},-curl \
 		lang/php/${MODPHP_VERSION},-mysqli \
 		lang/php/${MODPHP_VERSION},-pdo_mysql \
 		lang/php/${MODPHP_VERSION},-snmp \
-		databases/py-pymysql${MODPY_FLAVOR} \
-		databases/py-redis${MODPY_FLAVOR} \
-		sysutils/py-command_runner${MODPY_FLAVOR} \
-		sysutils/py-dotenv${MODPY_FLAVOR} \
-		sysutils/py-psutil${MODPY_FLAVOR}>=5.6.0 \
+		databases/py-pymysql \
+		databases/py-redis \
+		sysutils/py-command_runner \
+		sysutils/py-dotenv \
+		sysutils/py-psutil>=5.6.0 \
 		net/fping \
 		net/mtr \
 		net/net-snmp \

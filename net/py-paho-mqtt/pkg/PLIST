@@ -1,4 +1,4 @@
-@pkgpath net/py-paho-mqtt
+@pkgpath net/py-paho-mqtt,python3
 lib/python${MODPY_VERSION}/site-packages/paho/
 lib/python${MODPY_VERSION}/site-packages/paho/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/paho/${MODPY_PYCACHE}/
@@ -33,12 +33,12 @@ lib/python${MODPY_VERSION}/site-packages/paho/mqtt/publish.py
 lib/python${MODPY_VERSION}/site-packages/paho/mqtt/reasoncodes.py
 lib/python${MODPY_VERSION}/site-packages/paho/mqtt/subscribe.py
 lib/python${MODPY_VERSION}/site-packages/paho/mqtt/subscribeoptions.py
-lib/python${MODPY_VERSION}/site-packages/paho_mqtt-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/paho_mqtt-${MODPY_EGG_VERSION}.dist-info/LICENSE.txt
-lib/python${MODPY_VERSION}/site-packages/paho_mqtt-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/paho_mqtt-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/paho_mqtt-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/paho_mqtt-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/paho_mqtt-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/paho_mqtt-${MODPY_DISTV}.dist-info/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/paho_mqtt-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/paho_mqtt-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/paho_mqtt-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/paho_mqtt-${MODPY_DISTV}.dist-info/top_level.txt
 share/examples/${MODPY_PY_PREFIX}paho-mqtt/
 share/examples/${MODPY_PY_PREFIX}paho-mqtt/aws_iot.py
 share/examples/${MODPY_PY_PREFIX}paho-mqtt/client_logger.py

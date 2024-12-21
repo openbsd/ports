@@ -1,9 +1,9 @@
 COMMENT =	create measurements on RIPE Atlas probes
 
-MODPY_EGG_VERSION = 2.0.0
-DISTNAME =	blaeu-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.0.0
+DISTNAME =	blaeu-${MODPY_DISTV}
 CATEGORIES =	net
-REVISION =	0
+REVISION =	1
 
 MAINTAINER =	Denis Fondras <denis@openbsd.org>
 
@@ -17,9 +17,9 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 NO_TEST =		Yes
 
-RUN_DEPENDS =		net/py-dnspython${MODPY_FLAVOR} \
-			net/py-cymruwhois${MODPY_FLAVOR} \
-			security/py-openssl${MODPY_FLAVOR}
+RUN_DEPENDS =		net/py-dnspython \
+			net/py-cymruwhois \
+			security/py-openssl
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 

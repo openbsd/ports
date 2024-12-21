@@ -1,9 +1,9 @@
 COMMENT =	extracts the top level domain (TLD) from the URL given
 
-MODPY_EGG_VERSION =	0.13
-DISTNAME =	tld-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.13
+DISTNAME =	tld-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	net
 
@@ -17,8 +17,5 @@ MODPY_PYBUILD =	setuptools_scm
 MODPY_PI =	Yes
 # requires Faker (not in ports)
 NO_TEST =	Yes
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 .include <bsd.port.mk>

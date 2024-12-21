@@ -3,7 +3,7 @@ COMMENT =		curses interface for transmission
 GH_ACCOUNT =		tremc
 GH_PROJECT =		tremc
 GH_TAGNAME =		0.9.3
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		net
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-RUN_DEPENDS =		sysutils/py-pyperclip${MODPY_FLAVOR}
+RUN_DEPENDS =		sysutils/py-pyperclip
 
 NO_TEST =		Yes
 NO_BUILD =		Yes

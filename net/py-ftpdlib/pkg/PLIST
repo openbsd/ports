@@ -1,13 +1,13 @@
+@pkgpath net/py-ftpdlib,python3
 @conflict py-ftpdlib-<1.5.6p1
-@pkgpath net/py-ftpdlib
 bin/ftpbench
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/
-lib/python${MODPY_VERSION}/site-packages/pyftpdlib-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pyftpdlib-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/pyftpdlib-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/pyftpdlib-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/pyftpdlib-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/pyftpdlib-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pyftpdlib-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pyftpdlib/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyftpdlib/${MODPY_PYCACHE}/

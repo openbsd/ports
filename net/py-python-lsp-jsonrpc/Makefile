@@ -1,8 +1,9 @@
 COMMENT =		json rpc server library
 
-MODPY_EGG_VERSION =	1.1.2
-DISTNAME =		python-lsp-jsonrpc-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.1.2
+DISTNAME =		python-lsp-jsonrpc-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		net
 
@@ -13,15 +14,12 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
 
-RUN_DEPENDS =		textproc/py-ujson${MODPY_FLAVOR}>=3.0.0
+RUN_DEPENDS =		textproc/py-ujson>=3.0.0
 
-TEST_DEPENDS =		devel/py-test-cov${MODPY_FLAVOR} \
-			devel/py-mock${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-test-cov \
+			devel/py-mock
 
 .include <bsd.port.mk>

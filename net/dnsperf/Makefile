@@ -2,7 +2,7 @@ COMMENT=	DNS performance testing tools
 
 # newer versions needs libck ("Concurrency Kit") not yet in ports
 DISTNAME=	dnsperf-2.4.2
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	net benchmarks
 
@@ -26,8 +26,8 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ENV=	CPPFLAGS=-I${LOCALBASE}/include \
 		LDFLAGS=-L${LOCALBASE}/lib
 
-RUN_DEPENDS=	net/py-dnspython${MODPY_FLAVOR} \
-		net/py-pcapy${MODPY_FLAVOR}
+RUN_DEPENDS=	net/py-dnspython \
+		net/py-pcapy
 
 post-install:
 	cd ${WRKSRC}/contrib/queryparse; \

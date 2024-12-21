@@ -14,13 +14,13 @@ MODULES=		lang/python
 MODPY_RUNDEP=		No
 
 BUILD_DEPENDS=		devel/gettext,-tools \
-			devel/py-twisted${MODPY_FLAVOR} \
+			devel/py-twisted \
 			textproc/libxslt
 
 RUN_DEPENDS=		textproc/libxslt
 
 LIB_DEPENDS=		net/telepathy/telepathy-glib
 
-TEST_DEPENDS=		devel/py-twisted${MODPY_FLAVOR}
+TEST_DEPENDS=		devel/py-twisted
 
 .include <bsd.port.mk>
