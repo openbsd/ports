@@ -1,5 +1,5 @@
+@pkgpath archivers/py-libarchive-c,python3
 @conflict py-libarchive-c-*
-@pkgpath archivers/py-libarchive-c
 lib/python${MODPY_VERSION}/site-packages/libarchive/
 lib/python${MODPY_VERSION}/site-packages/libarchive/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/libarchive/${MODPY_PYCACHE}/
@@ -26,9 +26,9 @@ lib/python${MODPY_VERSION}/site-packages/libarchive/ffi.py
 lib/python${MODPY_VERSION}/site-packages/libarchive/flags.py
 lib/python${MODPY_VERSION}/site-packages/libarchive/read.py
 lib/python${MODPY_VERSION}/site-packages/libarchive/write.py
-lib/python${MODPY_VERSION}/site-packages/libarchive_c-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/libarchive_c-${MODPY_EGG_VERSION}.dist-info/LICENSE.md
-lib/python${MODPY_VERSION}/site-packages/libarchive_c-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/libarchive_c-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/libarchive_c-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/libarchive_c-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/libarchive_c-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/libarchive_c-${MODPY_DISTV}.dist-info/LICENSE.md
+lib/python${MODPY_VERSION}/site-packages/libarchive_c-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/libarchive_c-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/libarchive_c-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/libarchive_c-${MODPY_DISTV}.dist-info/top_level.txt

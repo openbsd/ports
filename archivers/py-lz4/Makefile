@@ -1,9 +1,10 @@
 COMMENT =		lz4 bindings for Python
 
-MODPY_EGG_VERSION =	4.3.3
+MODPY_DISTV =	4.3.3
 
-DISTNAME =		lz4-${MODPY_EGG_VERSION}
+DISTNAME =		lz4-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		archivers
 
@@ -20,12 +21,9 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
 MODPY_PYTEST_ARGS =	--ignore tests/stream
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-BUILD_DEPENDS =		devel/py-pkgconfig${MODPY_FLAVOR}
+BUILD_DEPENDS =		devel/py-pkgconfig
 LIB_DEPENDS =		archivers/lz4
-TEST_DEPENDS =		sysutils/py-psutil${MODPY_FLAVOR}
+TEST_DEPENDS =		sysutils/py-psutil
 
 pre-test:
 	cd ${WRKSRC} && ${MODPY_CMD} build_ext --inplace

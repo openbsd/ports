@@ -1,8 +1,9 @@
 COMMENT =		modern and easy to use streamable zip file generator
-MODPY_EGG_VERSION =	1.8.0
-DISTNAME =		zipstream_ng-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.8.0
+DISTNAME =		zipstream_ng-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/}
 CATEGORIES =		archivers
+REVISION =		0
 
 # LGPLv3
 PERMIT_PACKAGE =	Yes
@@ -13,9 +14,6 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVOR =		python3
-FLAVORS =		python3
-
-TEST_DEPENDS =		devel/py-test-cov${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-test-cov
 
 .include <bsd.port.mk>

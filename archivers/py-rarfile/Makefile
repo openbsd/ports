@@ -1,10 +1,10 @@
 COMMENT =		RAR archive reader for Python
 
-MODPY_EGG_VERSION =	4.0
+MODPY_DISTV =	4.0
 
-DISTNAME =		rarfile-${MODPY_EGG_VERSION}
+DISTNAME =		rarfile-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		archivers
 
@@ -19,9 +19,6 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 RUN_DEPENDS =		archivers/libarchive \
 			archivers/unrar
