@@ -16,11 +16,7 @@ SITES =		https://github.com/GothenburgBitFactory/timewarrior/releases/download/v
 
 COMPILER =		base-clang ports-gcc
 
-MODULES =		devel/cmake \
-			lang/python
-
-MODPY_RUNDEP =		No
-MODPY_BUILDDEP =	No
+MODULES =		devel/cmake
 
 BUILD_DEPENDS =		textproc/asciidoctor
 TEST_DEPENDS =		devel/py-dateutil
