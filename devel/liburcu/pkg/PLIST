@@ -6,6 +6,7 @@ include/urcu-flavor.h
 include/urcu-pointer.h
 include/urcu-qsbr.h
 include/urcu.h
+include/urcu/annotate.h
 include/urcu/arch/
 include/urcu/arch.h
 include/urcu/arch/aarch64.h
@@ -43,7 +44,6 @@ include/urcu/map/urcu-bp.h
 include/urcu/map/urcu-mb.h
 include/urcu/map/urcu-memb.h
 include/urcu/map/urcu-qsbr.h
-include/urcu/map/urcu-signal.h
 include/urcu/map/urcu.h
 include/urcu/pointer.h
 include/urcu/rcuhlist.h
@@ -62,8 +62,6 @@ include/urcu/static/urcu-common.h
 include/urcu/static/urcu-mb.h
 include/urcu/static/urcu-memb.h
 include/urcu/static/urcu-qsbr.h
-include/urcu/static/urcu-signal-nr.h
-include/urcu/static/urcu-signal.h
 include/urcu/static/urcu.h
 include/urcu/static/wfcqueue.h
 include/urcu/static/wfqueue.h
@@ -75,7 +73,10 @@ include/urcu/uatomic/
 include/urcu/uatomic.h
 include/urcu/uatomic/aarch64.h
 include/urcu/uatomic/alpha.h
+include/urcu/uatomic/api.h
 include/urcu/uatomic/arm.h
+include/urcu/uatomic/builtins-generic.h
+include/urcu/uatomic/builtins.h
 include/urcu/uatomic/gcc.h
 include/urcu/uatomic/generic.h
 include/urcu/uatomic/hppa.h
@@ -97,7 +98,6 @@ include/urcu/urcu-mb.h
 include/urcu/urcu-memb.h
 include/urcu/urcu-poll.h
 include/urcu/urcu-qsbr.h
-include/urcu/urcu-signal.h
 include/urcu/urcu.h
 include/urcu/urcu_ref.h
 include/urcu/wfcqueue.h
@@ -121,9 +121,6 @@ lib/liburcu-memb.la
 @static-lib lib/liburcu-qsbr.a
 lib/liburcu-qsbr.la
 @lib lib/liburcu-qsbr.so.${LIBurcu-qsbr_VERSION}
-@static-lib lib/liburcu-signal.a
-lib/liburcu-signal.la
-@lib lib/liburcu-signal.so.${LIBurcu-signal_VERSION}
 @static-lib lib/liburcu.a
 lib/liburcu.la
 @lib lib/liburcu.so.${LIBurcu_VERSION}
@@ -132,10 +129,9 @@ lib/pkgconfig/liburcu-cds.pc
 lib/pkgconfig/liburcu-mb.pc
 lib/pkgconfig/liburcu-memb.pc
 lib/pkgconfig/liburcu-qsbr.pc
-lib/pkgconfig/liburcu-signal.pc
 lib/pkgconfig/liburcu.pc
 share/doc/userspace-rcu/
-share/doc/userspace-rcu/LICENSE
+share/doc/userspace-rcu/LICENSE.md
 share/doc/userspace-rcu/README.md
 share/doc/userspace-rcu/cds-api.md
 share/doc/userspace-rcu/examples/
@@ -202,12 +198,10 @@ share/doc/userspace-rcu/examples/urcu-flavors/Makefile.bp
 share/doc/userspace-rcu/examples/urcu-flavors/Makefile.mb
 share/doc/userspace-rcu/examples/urcu-flavors/Makefile.membarrier
 share/doc/userspace-rcu/examples/urcu-flavors/Makefile.qsbr
-share/doc/userspace-rcu/examples/urcu-flavors/Makefile.signal
 share/doc/userspace-rcu/examples/urcu-flavors/bp.c
 share/doc/userspace-rcu/examples/urcu-flavors/mb.c
 share/doc/userspace-rcu/examples/urcu-flavors/membarrier.c
 share/doc/userspace-rcu/examples/urcu-flavors/qsbr.c
-share/doc/userspace-rcu/examples/urcu-flavors/signal.c
 share/doc/userspace-rcu/examples/wfcqueue/
 share/doc/userspace-rcu/examples/wfcqueue/Makefile
 share/doc/userspace-rcu/examples/wfcqueue/Makefile.cds_wfcq_dequeue
