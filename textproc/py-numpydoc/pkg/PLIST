@@ -1,12 +1,12 @@
+@pkgpath textproc/py-numpydoc,python3
 @conflict py-numpydoc-*
-@pkgpath textproc/py-numpydoc
 lib/python${MODPY_VERSION}/site-packages/numpydoc/
-lib/python${MODPY_VERSION}/site-packages/numpydoc-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/numpydoc-${MODPY_EGG_VERSION}.dist-info/LICENSE.txt
-lib/python${MODPY_VERSION}/site-packages/numpydoc-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/numpydoc-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/numpydoc-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/numpydoc-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/numpydoc-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/numpydoc-${MODPY_DISTV}.dist-info/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/numpydoc-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/numpydoc-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/numpydoc-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/numpydoc-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/numpydoc/__init__.py
 lib/python${MODPY_VERSION}/site-packages/numpydoc/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/numpydoc/${MODPY_PYCACHE}/

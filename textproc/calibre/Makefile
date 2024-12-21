@@ -2,7 +2,7 @@ COMMENT =		ebook management application
 
 V =			5.44.0
 DISTNAME =		calibre-$V
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		textproc
 
@@ -23,32 +23,32 @@ EXTRACT_SUFX =	.tar.xz
 MODULES =	lang/python \
 		x11/qt5
 
-COMMON_DEPENDS =	databases/py-apsw${MODPY_FLAVOR}>=3.35.4 \
-			devel/py-dateutil${MODPY_FLAVOR} \
-			devel/py-html5lib${MODPY_FLAVOR} \
-			devel/py-regex${MODPY_FLAVOR} \
+COMMON_DEPENDS =	databases/py-apsw>=3.35.4 \
+			devel/py-dateutil \
+			devel/py-html5lib \
+			devel/py-regex \
 			devel/xdg-utils \
 			graphics/libwmf \
 			graphics/png \
-			graphics/py-Pillow${MODPY_FLAVOR} \
-			net/py-dnspython${MODPY_FLAVOR} \
-			net/py-msgpack${MODPY_FLAVOR} \
-			net/py-zeroconf${MODPY_FLAVOR} \
+			graphics/py-Pillow \
+			net/py-dnspython \
+			net/py-msgpack \
+			net/py-zeroconf \
 			print/poppler \
 			print/poppler,-qt5 \
-			textproc/py-css-parser${MODPY_FLAVOR} \
-			textproc/py-cssselect${MODPY_FLAVOR} \
-			textproc/py-cssutils${MODPY_FLAVOR} \
-			textproc/py-lxml${MODPY_FLAVOR} \
-			textproc/py-markdown${MODPY_FLAVOR} \
-			textproc/py-toml${MODPY_FLAVOR} \
-			textproc/py-webencodings${MODPY_FLAVOR} \
-			www/py-CherryPy${MODPY_FLAVOR} \
-			www/py-beautifulsoup4${MODPY_FLAVOR} \
-			www/py-html5-parser${MODPY_FLAVOR} \
-			www/py-mechanize${MODPY_FLAVOR} \
-			www/py-qtwebengine${MODPY_FLAVOR} \
-			x11/py-qt5${MODPY_FLAVOR}
+			textproc/py-css-parser \
+			textproc/py-cssselect \
+			textproc/py-cssutils \
+			textproc/py-lxml \
+			textproc/py-markdown \
+			textproc/py-toml \
+			textproc/py-webencodings \
+			www/py-CherryPy \
+			www/py-beautifulsoup4 \
+			www/py-html5-parser \
+			www/py-mechanize \
+			www/py-qtwebengine \
+			x11/py-qt5
 
 LIB_DEPENDS =		devel/gettext,-runtime \
 			textproc/hunspell \
@@ -58,15 +58,15 @@ LIB_DEPENDS =		devel/gettext,-runtime \
 			textproc/podofo
 
 BUILD_DEPENDS =		${COMMON_DEPENDS} \
-			devel/py-qt-builder${MODPY_FLAVOR} \
-			sysutils/py-packaging${MODPY_FLAVOR}
+			devel/py-qt-builder \
+			sysutils/py-packaging
 
 RUN_DEPENDS =		${COMMON_DEPENDS} \
-			converters/py-html2text${MODPY_FLAVOR} \
+			converters/py-html2text \
 			devel/desktop-file-utils \
-			devel/py-jeepney${MODPY_FLAVOR} \
+			devel/py-jeepney \
 			misc/shared-mime-info \
-			net/py-netifaces${MODPY_FLAVOR}  \
+			net/py-netifaces  \
 			print/poppler,-utils \
 			x11/gtk+4,-guic
 

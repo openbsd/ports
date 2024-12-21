@@ -1,10 +1,10 @@
 COMMENT=	simple, fast and efficient podcast parser
 
-MODPY_EGG_VERSION=	0.6.10
-DISTNAME=	podcastparser-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.6.10
+DISTNAME=	podcastparser-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
-REVISION=	1
+REVISION=	2
 
 MAINTAINER=	Tim Meunier <trondd@kagu-tsuchi.com>
 
@@ -15,13 +15,10 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-BUILD_DEPENDS=	textproc/py-sphinx${MODPY_FLAVOR}
+BUILD_DEPENDS=	textproc/py-sphinx
 
-TEST_DEPENDS=	devel/py-coverage${MODPY_FLAVOR} \
-		devel/py-test-cov${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+TEST_DEPENDS=	devel/py-coverage \
+		devel/py-test-cov
 
 MAKE_FILE=	makefile
 MAKE_ENV=	PYTHON=${MODPY_BIN}

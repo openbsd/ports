@@ -1,7 +1,8 @@
 COMMENT=		documentation tool micro-framework
 
-MODPY_EGG_VERSION=	0.17.2
-DISTNAME=		hotdoc-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.17.2
+DISTNAME=		hotdoc-${MODPY_DISTV}
+REVISION=		0
 
 CATEGORIES=		textproc
 
@@ -24,17 +25,17 @@ BUILD_DEPENDS=		devel/cmake
 LIB_DEPENDS=		devel/json-glib \
 			textproc/libxml
 
-RUN_DEPENDS=		devel/py-appdirs${MODPY_FLAVOR} \
-			devel/py-dbus-deviation${MODPY_FLAVOR} \
-			devel/py-decorator${MODPY_FLAVOR} \
-			devel/py-pkgconfig${MODPY_FLAVOR} \
-			devel/py-schema${MODPY_FLAVOR} \
-			devel/py-toposort${MODPY_FLAVOR} \
-			devel/py-wheezy.template${MODPY_FLAVOR} \
-			math/py-networkx${MODPY_FLAVOR}>=2.6.2 \
-			textproc/py-cchardet${MODPY_FLAVOR} \
-			textproc/py-lxml${MODPY_FLAVOR} \
-			textproc/py-yaml${MODPY_FLAVOR}
+RUN_DEPENDS=		devel/py-appdirs \
+			devel/py-dbus-deviation \
+			devel/py-decorator \
+			devel/py-pkgconfig \
+			devel/py-schema \
+			devel/py-toposort \
+			devel/py-wheezy.template \
+			math/py-networkx>=2.6.2 \
+			textproc/py-cchardet \
+			textproc/py-lxml \
+			textproc/py-yaml
 
 # XXX only include what we need from backports (unported)
 SITES.pybackports=	https://files.pythonhosted.org/packages/fc/25/dae014b114397a6f60578d7358bf5fcb103f71556e5363a50d7b42e9bc51/

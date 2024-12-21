@@ -1,8 +1,9 @@
 COMMENT=	handy routines for dealing with text
 
-MODPY_EGG_VERSION=	4.0.0
-DISTNAME=	jaraco_text-${MODPY_EGG_VERSION}
-PKGNAME=	py-jaraco.text-${MODPY_EGG_VERSION}
+MODPY_DISTV=	4.0.0
+DISTNAME=	jaraco_text-${MODPY_DISTV}
+PKGNAME=	py-jaraco.text-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	textproc
 
@@ -16,13 +17,10 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
-RUN_DEPENDS=	devel/py-jaraco-context${MODPY_FLAVOR} \
-		devel/py-jaraco-functools${MODPY_FLAVOR} \
-		devel/py-more-itertools${MODPY_FLAVOR} \
-	        devel/py-autocommand${MODPY_FLAVOR}
-TEST_DEPENDS=	textproc/py-inflect${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+RUN_DEPENDS=	devel/py-jaraco-context \
+		devel/py-jaraco-functools \
+		devel/py-more-itertools \
+	        devel/py-autocommand
+TEST_DEPENDS=	textproc/py-inflect
 
 .include <bsd.port.mk>

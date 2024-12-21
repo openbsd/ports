@@ -1,9 +1,9 @@
 COMMENT=		character encoding auto-detection in Python
 
-MODPY_EGG_VERSION=	5.2.0
-DISTNAME=		chardet-${MODPY_EGG_VERSION}
-PKGNAME=		py-chardet-${MODPY_EGG_VERSION}
-REVISION=		0
+MODPY_DISTV=	5.2.0
+DISTNAME=		chardet-${MODPY_DISTV}
+PKGNAME=		py-chardet-${MODPY_DISTV}
+REVISION=		1
 
 CATEGORIES=		textproc
 
@@ -17,9 +17,6 @@ MODULES=		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR =		python3
+TEST_DEPENDS =		devel/py-hypothesis
 
 .include <bsd.port.mk>

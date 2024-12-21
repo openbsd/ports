@@ -1,12 +1,12 @@
 COMMENT =	simple viewer for NFO files
-MODPY_EGG_VERSION =	1.28.1
-DISTNAME =	nfoview-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.28.1
+DISTNAME =	nfoview-${MODPY_DISTV}
 CATEGORIES =	textproc x11
-REVISION =	4
+REVISION =	5
 
 GH_ACCOUNT =	otsaloma
 GH_PROJECT =	nfoview
-GH_TAGNAME =	${MODPY_EGG_VERSION}
+GH_TAGNAME =	${MODPY_DISTV}
 
 HOMEPAGE =	https://otsaloma.io/nfoview/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -20,7 +20,7 @@ MODPY_PYBUILD =	setuptools
 BUILD_DEPENDS =	devel/gettext,-tools
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		devel/py-gobject3${MODPY_FLAVOR} \
+		devel/py-gobject3 \
 		fonts/cascadia-code \
 		x11/gtk+4,-guic
 
@@ -29,7 +29,7 @@ RUN_DEPENDS +=	x11/gtk+3
 
 # tests fail with Trace/BPT trap
 MODPY_PYTEST_ARGS = -v nfoview/unittest.py nfoview/test/test_*.py
-TEST_DEPENDS =	devel/py-gobject3${MODPY_FLAVOR}
+TEST_DEPENDS =	devel/py-gobject3
 
 post-patch:
 	sed -i "s,share/man,man,g" ${WRKSRC}/setup.py

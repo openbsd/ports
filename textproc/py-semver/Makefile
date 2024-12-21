@@ -1,9 +1,9 @@
 COMMENT=	python helper for Semantic Versioning
 
-MODPY_EGG_VERSION=	3.0.2
-DISTNAME=	semver-${MODPY_EGG_VERSION}
+MODPY_DISTV=	3.0.2
+DISTNAME=	semver-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc
 
@@ -16,9 +16,6 @@ MODULES=	lang/python
 MODPY_PYBUILD=	setuptools_scm
 MODPY_PI=	Yes
 
-TEST_DEPENDS=	devel/py-test-cov${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+TEST_DEPENDS=	devel/py-test-cov
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
 COMMENT =		canonical JSON
 
-MODPY_EGG_VERSION =	2.0.0
-DISTNAME =		canonicaljson-${MODPY_EGG_VERSION}
-PKGNAME =		py-canonicaljson-${MODPY_EGG_VERSION}
-REVISION =		0
+MODPY_DISTV =	2.0.0
+DISTNAME =		canonicaljson-${MODPY_DISTV}
+PKGNAME =		py-canonicaljson-${MODPY_DISTV}
+REVISION =		1
 
 CATEGORIES =		textproc
 
@@ -17,7 +17,5 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
-FLAVORS =		python3
-FLAVOR =		python3
 
 .include <bsd.port.mk>

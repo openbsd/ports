@@ -2,9 +2,10 @@ COMMENT=	parse and build CSS from Python
 
 CATEGORIES=	textproc
 
-MODPY_EGG_VERSION=	2.10.3
-DISTNAME=	cssutils-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.10.3
+DISTNAME=	cssutils-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 # GPLv3
 PERMIT_PACKAGE=	Yes
@@ -15,14 +16,11 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
 
-FLAVORS=	python3
-FLAVOR=		python3
-
 # tests also need jaraco.test (not in ports)
 NO_TEST=	Yes
-TEST_DEPENDS=	devel/py-test-cov${MODPY_FLAVOR} \
-		devel/py-mock${MODPY_FLAVOR} \
-		textproc/py-lxml${MODPY_FLAVOR} \
-		textproc/py-cssselect${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-test-cov \
+		devel/py-mock \
+		textproc/py-lxml \
+		textproc/py-cssselect
 
 .include <bsd.port.mk>

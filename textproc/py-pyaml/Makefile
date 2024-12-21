@@ -1,9 +1,10 @@
 COMMENT=	module to produce pretty and readable YAML
 
-MODPY_EGG_VERSION=	24.12.1
+MODPY_DISTV=	24.12.1
 
-DISTNAME=	pyaml-${MODPY_EGG_VERSION}
+DISTNAME=	pyaml-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	textproc
 
@@ -17,9 +18,6 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-TEST_DEPENDS=	textproc/py-unidecode${MODPY_FLAVOR}
+TEST_DEPENDS=	textproc/py-unidecode
 
 .include <bsd.port.mk>

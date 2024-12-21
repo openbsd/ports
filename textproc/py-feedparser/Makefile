@@ -1,9 +1,10 @@
 COMMENT=	RSS and Atom feeds parser written in Python
 
-MODPY_EGG_VERSION=	6.0.11
-DISTNAME=	feedparser-${MODPY_EGG_VERSION}
+MODPY_DISTV=	6.0.11
+DISTNAME=	feedparser-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
+REVISION=	0
 
 HOMEPAGE=	https://github.com/kurtmckee/feedparser
 
@@ -13,9 +14,6 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 do-test:
 	cd ${WRKSRC}; python3 tests/runtests.py

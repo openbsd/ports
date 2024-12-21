@@ -1,9 +1,9 @@
 COMMENT=		PEG Parser-Interpreter in Python
 
-MODPY_EGG_VERSION=	2.15.2
-DISTNAME=		pyPEG2-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.15.2
+DISTNAME=		pyPEG2-${MODPY_DISTV}
 PKGNAME=		${DISTNAME:S/^py/${MODPY_PY_PREFIX}/}
-REVISION=		7
+REVISION=		8
 
 CATEGORIES=		textproc
 
@@ -13,8 +13,5 @@ PERMIT_PACKAGE=	Yes
 MODULES=		lang/python
 MODPY_PI=		Yes
 MODPY_PYBUILD=		setuptools
-
-FLAVORS=		python3
-FLAVOR=			python3
 
 .include <bsd.port.mk>

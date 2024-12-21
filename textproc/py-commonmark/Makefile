@@ -1,10 +1,10 @@
 COMMENT=		parser for the CommonMark markdown spec
 
-MODPY_EGG_VERSION=	0.9.1
-DISTNAME=		commonmark-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.9.1
+DISTNAME=		commonmark-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		textproc
-REVISION=		4
+REVISION=		5
 
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 
@@ -13,15 +13,12 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/python
 
-FLAVORS=		python3
-FLAVOR =		python3
-
 MODPY_PI=		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS=		devel/py-future${MODPY_FLAVOR}
+RUN_DEPENDS=		devel/py-future
 TEST_DEPENDS=		devel/flake8 \
-			devel/py-hypothesis${MODPY_FLAVOR}
+			devel/py-hypothesis
 
 post-install:
 	mv ${PREFIX}/bin/cmark ${PREFIX}/bin/commonmark

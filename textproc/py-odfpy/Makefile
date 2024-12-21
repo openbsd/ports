@@ -1,9 +1,9 @@
 COMMENT=	Python API and tools to manipulate OpenDocument files
 
-MODPY_EGG_VERSION=	1.4.1
-DISTNAME=	odfpy-${MODPY_EGG_VERSION}
-PKGNAME=	py-odfpy-${MODPY_EGG_VERSION}
-REVISION=	5
+MODPY_DISTV=	1.4.1
+DISTNAME=	odfpy-${MODPY_DISTV}
+PKGNAME=	py-odfpy-${MODPY_DISTV}
+REVISION=	6
 
 CATEGORIES=	textproc devel
 
@@ -17,9 +17,6 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS=	textproc/py-defusedxml${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+RUN_DEPENDS=	textproc/py-defusedxml
 
 .include <bsd.port.mk>

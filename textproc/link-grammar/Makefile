@@ -5,6 +5,8 @@ COMMENT-main =		syntactic parser of different languages
 COMMENT-java =		Java bindings for link-grammar
 COMMENT-python =	Python bindings for link-grammar
 
+REVISION-python =	0
+
 VERSION =		5.12.5
 DISTNAME =		link-grammar-${VERSION}
 PKGNAME-main =		${DISTNAME}

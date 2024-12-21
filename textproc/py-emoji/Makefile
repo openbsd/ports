@@ -1,8 +1,9 @@
 COMMENT =		emoji for Python
 
-MODPY_EGG_VERSION =	2.14.0
-DISTNAME =		emoji-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.14.0
+DISTNAME =		emoji-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		textproc
 
@@ -16,8 +17,5 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 .include <bsd.port.mk>

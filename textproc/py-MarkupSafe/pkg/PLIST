@@ -1,10 +1,10 @@
-@pkgpath textproc/py-MarkupSafe
-lib/python${MODPY_VERSION}/site-packages/MarkupSafe-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/MarkupSafe-${MODPY_EGG_VERSION}.dist-info/LICENSE.rst
-lib/python${MODPY_VERSION}/site-packages/MarkupSafe-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/MarkupSafe-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/MarkupSafe-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/MarkupSafe-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+@pkgpath textproc/py-MarkupSafe,python3
+lib/python${MODPY_VERSION}/site-packages/MarkupSafe-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/MarkupSafe-${MODPY_DISTV}.dist-info/LICENSE.rst
+lib/python${MODPY_VERSION}/site-packages/MarkupSafe-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/MarkupSafe-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/MarkupSafe-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/MarkupSafe-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/markupsafe/
 lib/python${MODPY_VERSION}/site-packages/markupsafe/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/markupsafe/${MODPY_PYCACHE}/

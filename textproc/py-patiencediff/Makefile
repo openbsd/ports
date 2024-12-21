@@ -1,8 +1,9 @@
 COMMENT=	Python implementation of the patiencediff algorithm
 
-MODPY_EGG_VERSION =	0.2.15
-DISTNAME=	patiencediff-${MODPY_EGG_VERSION}
-PKGNAME=	py-patiencediff-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.2.15
+DISTNAME=	patiencediff-${MODPY_DISTV}
+PKGNAME=	py-patiencediff-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	textproc
 
@@ -19,9 +20,6 @@ MODPY_PYBUILD=	setuptools
 # otherwise extension is not found and relevant tests are skipped
 MODPY_TEST_DIR=	${WRKSRC}/build/lib.*
 
-BUILD_DEPENDS=	lang/cython${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+BUILD_DEPENDS=	lang/cython
 
 .include <bsd.port.mk>

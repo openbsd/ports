@@ -1,8 +1,9 @@
 COMMENT=	Python binding for the libxml2 and libxslt libraries
 
-MODPY_EGG_VERSION=	5.3.0
-DISTNAME=	lxml-${MODPY_EGG_VERSION}
-PKGNAME=	py-lxml-${MODPY_EGG_VERSION}
+MODPY_DISTV=	5.3.0
+DISTNAME=	lxml-${MODPY_DISTV}
+PKGNAME=	py-lxml-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	textproc devel
 
@@ -20,12 +21,9 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-BUILD_DEPENDS=	lang/cython${MODPY_FLAVOR}
+BUILD_DEPENDS=	lang/cython
 LIB_DEPENDS=	textproc/libxslt
-TEST_DEPENDS=	textproc/py-cssselect${MODPY_FLAVOR}
+TEST_DEPENDS=	textproc/py-cssselect
 
 pre-test:
 	cd ${WRKSRC} && cp build/lib.openbsd-*/lxml/*.so src/lxml

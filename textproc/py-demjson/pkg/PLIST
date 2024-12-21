@@ -1,17 +1,17 @@
+@pkgpath textproc/py-demjson,python3
 @conflict py-demjson-<2.2.4p3
-@pkgpath textproc/py-demjson
 bin/jsonlint
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}demjson3.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}demjson3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}jsonlint.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}jsonlint.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/demjson3-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/demjson3-${MODPY_EGG_VERSION}.dist-info/LICENSE.txt
-lib/python${MODPY_VERSION}/site-packages/demjson3-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/demjson3-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/demjson3-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/demjson3-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/demjson3-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/demjson3-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/demjson3-${MODPY_DISTV}.dist-info/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/demjson3-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/demjson3-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/demjson3-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/demjson3-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/demjson3-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/demjson3.py
 lib/python${MODPY_VERSION}/site-packages/jsonlint.py

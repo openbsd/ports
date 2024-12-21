@@ -1,9 +1,10 @@
 COMMENT =		utilities for writing pandoc filters
 
-MODPY_EGG_VERSION =	1.4.2
-DISTNAME =		pandocfilters-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.4.2
+DISTNAME =		pandocfilters-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		textproc
+REVISION =		0
 
 HOMEPAGE =		https://github.com/jgm/pandocfilters
 
@@ -13,9 +14,6 @@ MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools

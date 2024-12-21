@@ -1,18 +1,18 @@
-@pkgpath textproc/py-black
+@pkgpath textproc/py-black,python3
 bin/black
 bin/blackd
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}_black_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}_black_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/_black_version.py
 lib/python${MODPY_VERSION}/site-packages/black/
-lib/python${MODPY_VERSION}/site-packages/black-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/black-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/black-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/black-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/black-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/black-${MODPY_EGG_VERSION}.dist-info/licenses/
-lib/python${MODPY_VERSION}/site-packages/black-${MODPY_EGG_VERSION}.dist-info/licenses/AUTHORS.md
-lib/python${MODPY_VERSION}/site-packages/black-${MODPY_EGG_VERSION}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/black-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/black-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/black-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/black-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/black-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/black-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/black-${MODPY_DISTV}.dist-info/licenses/AUTHORS.md
+lib/python${MODPY_VERSION}/site-packages/black-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/black/__init__.py
 lib/python${MODPY_VERSION}/site-packages/black/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/black/${MODPY_PYCACHE}/

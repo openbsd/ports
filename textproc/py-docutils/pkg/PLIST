@@ -1,5 +1,5 @@
+@pkgpath textproc/py-docutils,python3
 @conflict py-docutils-<0.16
-@pkgpath textproc/py-docutils
 bin/docutils
 bin/rst2html
 bin/rst2html4
@@ -12,12 +12,12 @@ bin/rst2s5
 bin/rst2xetex
 bin/rst2xml
 lib/python${MODPY_VERSION}/site-packages/docutils/
-lib/python${MODPY_VERSION}/site-packages/docutils-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/docutils-${MODPY_EGG_VERSION}.dist-info/COPYING.txt
-lib/python${MODPY_VERSION}/site-packages/docutils-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/docutils-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/docutils-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/docutils-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/docutils-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/docutils-${MODPY_DISTV}.dist-info/COPYING.txt
+lib/python${MODPY_VERSION}/site-packages/docutils-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/docutils-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/docutils-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/docutils-${MODPY_DISTV}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/docutils/__init__.py
 lib/python${MODPY_VERSION}/site-packages/docutils/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/docutils/${MODPY_PYCACHE}/

@@ -1,9 +1,9 @@
 COMMENT =		lib/cli for JSON/YAML schema validation
 
-MODPY_EGG_VERSION =	1.8.0
-DISTNAME =		pykwalify-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.8.0
+DISTNAME =		pykwalify-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		textproc
 
@@ -14,11 +14,8 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR} \
-			devel/py-docopt${MODPY_FLAVOR} \
-			textproc/py-ruamel.yaml${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-dateutil \
+			devel/py-docopt \
+			textproc/py-ruamel.yaml
 
 .include <bsd.port.mk>

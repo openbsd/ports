@@ -1,10 +1,10 @@
 COMMENT=	brain-dead simple config-ini parsing
 
-MODPY_EGG_VERSION=	2.0.0
+MODPY_DISTV=	2.0.0
 
-DISTNAME=	iniconfig-${MODPY_EGG_VERSION}
+DISTNAME=	iniconfig-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc
 
@@ -14,9 +14,6 @@ HOMEPAGE=	http://github.com/RonnyPfannschmidt/iniconfig
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	hatch-vcs

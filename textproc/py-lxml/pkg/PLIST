@@ -1,13 +1,13 @@
+@pkgpath textproc/py-lxml,python3
 @conflict py-lxml-*
-@pkgpath textproc/py-lxml
 lib/python${MODPY_VERSION}/site-packages/lxml/
-lib/python${MODPY_VERSION}/site-packages/lxml-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/lxml-${MODPY_EGG_VERSION}.dist-info/LICENSE.txt
-lib/python${MODPY_VERSION}/site-packages/lxml-${MODPY_EGG_VERSION}.dist-info/LICENSES.txt
-lib/python${MODPY_VERSION}/site-packages/lxml-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/lxml-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/lxml-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/lxml-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/lxml-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/lxml-${MODPY_DISTV}.dist-info/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/lxml-${MODPY_DISTV}.dist-info/LICENSES.txt
+lib/python${MODPY_VERSION}/site-packages/lxml-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/lxml-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/lxml-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/lxml-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/lxml/ElementInclude.py
 lib/python${MODPY_VERSION}/site-packages/lxml/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/lxml/${MODPY_PYCACHE}/
@@ -264,7 +264,7 @@ share/doc/py-lxml/html/apidoc/search.html
 share/doc/py-lxml/html/apidoc/searchindex.js
 share/doc/py-lxml/html/build.html
 share/doc/py-lxml/html/capi.html
-share/doc/py-lxml/html/changes-${MODPY_EGG_VERSION}.html
+share/doc/py-lxml/html/changes-${MODPY_DISTV}.html
 share/doc/py-lxml/html/compatibility.html
 share/doc/py-lxml/html/credits.html
 share/doc/py-lxml/html/cssselect.html

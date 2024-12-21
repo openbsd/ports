@@ -1,12 +1,12 @@
 COMMENT=		terminal session recorder
 
-MODPY_EGG_VERSION=	2.4.0
-REVISION=		0
+MODPY_DISTV=	2.4.0
+REVISION=		1
 
 # MODPY_PI does not work
 GH_PROJECT=		asciinema
 GH_ACCOUNT=		asciinema
-GH_TAGNAME=		v${MODPY_EGG_VERSION}
+GH_TAGNAME=		v${MODPY_DISTV}
 
 CATEGORIES=		textproc graphics
 

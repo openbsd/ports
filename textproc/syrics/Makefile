@@ -1,10 +1,10 @@
 COMMENT =		fetch lyrics from spotify
 
 V =			0.0.1.8
-MODPY_EGG_VERSION =	${V}
+MODPY_DISTV =	${V}
 DISTNAME =		syrics-${V}
 CATEGORIES =		textproc audio
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://github.com/akashrchandran/syrics
 
@@ -17,12 +17,9 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-RUN_DEPENDS =		audio/py-tinytag${MODPY_FLAVOR} \
-			devel/py-tqdm${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR} \
-			www/py-spotipy${MODPY_FLAVOR}
+RUN_DEPENDS =		audio/py-tinytag \
+			devel/py-tqdm \
+			www/py-requests \
+			www/py-spotipy
 
 .include <bsd.port.mk>

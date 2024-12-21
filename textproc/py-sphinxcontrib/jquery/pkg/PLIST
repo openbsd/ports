@@ -1,3 +1,4 @@
+@pkgpath textproc/py-sphinxcontrib/jquery,python3
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/jquery/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/jquery/__init__.py
@@ -7,7 +8,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/jquery/${MODPY_PYCACHE}__
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/jquery/_sphinx_javascript_frameworks_compat.js
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/jquery/jquery-3.6.0.js
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/jquery/jquery.js
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_jquery-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_jquery-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_jquery-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_jquery-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_jquery-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_jquery-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_jquery-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_jquery-${MODPY_DISTV}.dist-info/WHEEL

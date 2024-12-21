@@ -1,9 +1,10 @@
 COMMENT=	simple TOML writer
 
-MODPY_EGG_VERSION=	1.1.0
+MODPY_DISTV=	1.1.0
 
-DISTNAME=	tomli_w-${MODPY_EGG_VERSION}
+DISTNAME=	tomli_w-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	textproc
 
@@ -15,9 +16,6 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	flit_core
-
-FLAVOR=		python3
-FLAVORS=	python3
 
 # not in pypi sdist
 NO_TEST=	Yes

@@ -1,8 +1,9 @@
 COMMENT =		Python implementation of json5
 
-MODPY_EGG_VERSION =	0.9.25
-DISTNAME =		json5-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.9.25
+DISTNAME =		json5-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		textproc
 
@@ -10,9 +11,6 @@ CATEGORIES =		textproc
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools

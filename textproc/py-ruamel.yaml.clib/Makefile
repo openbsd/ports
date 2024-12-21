@@ -1,9 +1,9 @@
 COMMENT=	C based reader/scanner and emitter for ruamel.yaml
 
-MODPY_EGG_VERSION=	0.2.8
-DISTNAME=	ruamel.yaml.clib-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.2.8
+DISTNAME=	ruamel.yaml.clib-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://yaml.readthedocs.io
 
@@ -18,8 +18,5 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 NO_TEST=	Yes
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

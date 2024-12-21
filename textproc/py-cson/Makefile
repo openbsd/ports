@@ -1,10 +1,10 @@
 COMMENT =	parser for Coffeescript Object Notation (CSON)
 
-MODPY_EGG_VERSION =	0.8
+MODPY_DISTV =	0.8
 
-DISTNAME =	cson-${MODPY_EGG_VERSION}
+DISTNAME =	cson-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	textproc
 
@@ -18,10 +18,7 @@ MODULES =	lang/python
 MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools
 
-FLAVORS =	python3
-FLAVOR =	python3
-
-RUN_DEPENDS =	devel/py-speg${MODPY_FLAVOR}
+RUN_DEPENDS =	devel/py-speg
 
 # test files not included in pypi distribution
 NO_TEST =	Yes

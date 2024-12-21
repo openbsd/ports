@@ -1,7 +1,8 @@
 COMMENT =	terminal URL viewer (urlview replacement)
 
-MODPY_EGG_VERSION =	1.0.6
-DISTNAME =		urlscan-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.0.6
+DISTNAME =		urlscan-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =	textproc
 
@@ -17,7 +18,7 @@ MODULES =	lang/python
 MODPY_PI =	Yes
 MODPY_PYBUILD =	hatch-vcs
 
-RUN_DEPENDS =	devel/py-urwid${MODPY_FLAVOR}>=1.2.1
+RUN_DEPENDS =	devel/py-urwid>=1.2.1
 
 NO_TEST =	Yes
 

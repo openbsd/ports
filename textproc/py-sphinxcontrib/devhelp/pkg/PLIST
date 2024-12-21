@@ -1,3 +1,4 @@
+@pkgpath textproc/py-sphinxcontrib/devhelp,python3
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/devhelp/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/devhelp/__init__.py
@@ -200,7 +201,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/devhelp/locales/zh_TW/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/devhelp/locales/zh_TW/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/devhelp/locales/zh_TW/LC_MESSAGES/sphinxcontrib.devhelp.mo
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/devhelp/locales/zh_TW/LC_MESSAGES/sphinxcontrib.devhelp.po
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_devhelp-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_devhelp-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_devhelp-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_devhelp-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_devhelp-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_devhelp-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_devhelp-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_devhelp-${MODPY_DISTV}.dist-info/WHEEL

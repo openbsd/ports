@@ -1,8 +1,9 @@
 COMMENT=	inline and side-by-side colored and incremental diff
 
 # was renamed cdiff->ydiff
-MODPY_EGG_VERSION=	1.4.2
-DISTNAME=	ydiff-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.4.2
+DISTNAME=	ydiff-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	textproc
 
@@ -19,10 +20,10 @@ MODPY_PYBUILD=	setuptools
 MODPY_PYTEST=	No
 
 TEST_DEPENDS=	devel/git \
-		devel/py-codestyle${MODPY_FLAVOR} \
-		devel/py-coverage${MODPY_FLAVOR} \
+		devel/py-codestyle \
+		devel/py-coverage \
 		shells/bash \
-		textproc/py-docutils${MODPY_FLAVOR}
+		textproc/py-docutils
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ydiff

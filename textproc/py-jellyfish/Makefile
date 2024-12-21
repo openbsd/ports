@@ -1,8 +1,8 @@
 COMMENT =		Python library for approximate and phonetic string matching
 
-MODPY_EGG_VERSION =	1.1.0
-REVISION =		0
-DISTNAME =		jellyfish-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.1.0
+REVISION =		1
+DISTNAME =		jellyfish-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/g}
 
 CATEGORIES =		textproc
@@ -19,9 +19,6 @@ WANTLIB += ${MODCARGO_WANTLIB}
 MODULES =		devel/cargo \
 			lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		maturin
 
@@ -29,7 +26,7 @@ MODCARGO_CARGO_BIN =	maturin
 CONFIGURE_STYLE =	cargo
 
 BUILD_DEPENDS =		devel/maturin \
-			devel/py-pip${MODPY_FLAVOR}
+			devel/py-pip
 
 do-build:
 	${MODCARGO_CARGO_RUN} build \

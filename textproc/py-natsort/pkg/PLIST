@@ -1,13 +1,13 @@
-@pkgpath textproc/py-natsort
+@pkgpath textproc/py-natsort,python3
 bin/natsort
 lib/python${MODPY_VERSION}/site-packages/natsort/
-lib/python${MODPY_VERSION}/site-packages/natsort-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/natsort-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/natsort-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/natsort-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/natsort-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/natsort-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/natsort-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/natsort-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/natsort-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/natsort-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/natsort-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/natsort-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/natsort-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/natsort-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/natsort/__init__.py
 lib/python${MODPY_VERSION}/site-packages/natsort/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/natsort/${MODPY_PYCACHE}/

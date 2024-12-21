@@ -1,3 +1,4 @@
+@pkgpath textproc/py-sphinxcontrib/applehelp,python3
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/applehelp/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/applehelp/__init__.py
@@ -211,7 +212,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/applehelp/locales/zh_TW/L
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/applehelp/py.typed
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/applehelp/templates/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/applehelp/templates/_access.html_t
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_applehelp-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_applehelp-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_applehelp-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_applehelp-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_applehelp-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_applehelp-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_applehelp-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_applehelp-${MODPY_DISTV}.dist-info/WHEEL

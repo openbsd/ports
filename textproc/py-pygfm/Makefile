@@ -1,9 +1,9 @@
 COMMENT =		GitHub Flavored Markdown extension
 
-MODPY_EGG_VERSION =	1.0.2
-DISTNAME =		py-gfm-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.0.2
+DISTNAME =		py-gfm-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/py-/py/}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		textproc
 
@@ -16,8 +16,5 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 .include <bsd.port.mk>

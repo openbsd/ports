@@ -1,11 +1,11 @@
 COMMENT=		Natural Language ToolKit
 
-MODPY_EGG_VERSION =	3.8.1
-DISTNAME=		nltk-${MODPY_EGG_VERSION}
+MODPY_DISTV =	3.8.1
+DISTNAME=		nltk-${MODPY_DISTV}
 EXTRACT_SUFX=		.zip
-PKGNAME=		py-nltk-${MODPY_EGG_VERSION}
+PKGNAME=		py-nltk-${MODPY_DISTV}
 CATEGORIES=		textproc
-REVISION=		0
+REVISION=		1
 
 EPOCH =			0
 
@@ -19,19 +19,16 @@ MODULES=		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS=		devel/py-click${MODPY_FLAVOR} \
-			devel/py-parsing${MODPY_FLAVOR} \
-			devel/py-regex${MODPY_FLAVOR} \
-			devel/py-tqdm${MODPY_FLAVOR} \
-			graphics/py-matplotlib${MODPY_FLAVOR} \
+RUN_DEPENDS=		devel/py-click \
+			devel/py-parsing \
+			devel/py-regex \
+			devel/py-tqdm \
+			graphics/py-matplotlib \
 			math/prover9/p9m4 \
-			sysutils/py-joblib${MODPY_FLAVOR} \
-			textproc/py-yaml${MODPY_FLAVOR}
+			sysutils/py-joblib \
+			textproc/py-yaml
 
-TEST_DEPENDS=		devel/pylint${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR =		python3
+TEST_DEPENDS=		devel/pylint
 
 # Need NLTK data for some tests (run python -m nltk.downloader)
 do-test:

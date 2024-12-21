@@ -1,8 +1,9 @@
 COMMENT=	Python wrapper for pandoc
 
-MODPY_EGG_VERSION=	1.13
-DISTNAME=	pypandoc-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.13
+DISTNAME=	pypandoc-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	textproc
 
@@ -16,9 +17,6 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	poetry-core
 MODPY_PYTEST_ARGS=	tests.py
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 RUN_DEPENDS=	textproc/pandoc
 

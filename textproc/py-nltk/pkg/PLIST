@@ -1,16 +1,16 @@
+@pkgpath textproc/py-nltk,python3
 @conflict py-nltk-*
-@pkgpath textproc/py-nltk
 bin/nltk
 lib/python${MODPY_VERSION}/site-packages/nltk/
-lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_EGG_VERSION}.dist-info/AUTHORS.md
-lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_EGG_VERSION}.dist-info/LICENSE.txt
-lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_EGG_VERSION}.dist-info/README.md
-lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_DISTV}.dist-info/AUTHORS.md
+lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_DISTV}.dist-info/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_DISTV}.dist-info/README.md
+lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/nltk/VERSION
 lib/python${MODPY_VERSION}/site-packages/nltk/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nltk/${MODPY_PYCACHE}/

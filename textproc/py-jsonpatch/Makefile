@@ -1,10 +1,10 @@
 COMMENT =	library to apply JSON Patches according to RFC 6902
 
-MODPY_EGG_VERSION =	1.33
+MODPY_DISTV =	1.33
 
-DISTNAME =	jsonpatch-${MODPY_EGG_VERSION}
+DISTNAME =	jsonpatch-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	textproc
 
@@ -19,10 +19,7 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =     tests.py
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-RUN_DEPENDS =		textproc/py-jsonpointer${MODPY_FLAVOR}
-TEST_DEPENDS =		textproc/py-jsonpointer${MODPY_FLAVOR}
+RUN_DEPENDS =		textproc/py-jsonpointer
+TEST_DEPENDS =		textproc/py-jsonpointer
 
 .include <bsd.port.mk>

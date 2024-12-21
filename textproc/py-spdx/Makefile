@@ -1,9 +1,9 @@
 COMMENT =		SPDX license list database
 
-MODPY_EGG_VERSION =	2.5.1
-DISTNAME =		spdx-${MODPY_EGG_VERSION}
-PKGNAME =		py-spdx-${MODPY_EGG_VERSION}
-REVISION =		2
+MODPY_DISTV =	2.5.1
+DISTNAME =		spdx-${MODPY_DISTV}
+PKGNAME =		py-spdx-${MODPY_DISTV}
+REVISION =		3
 
 CATEGORIES =		textproc
 
@@ -16,8 +16,5 @@ MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
 NO_TEST =		Yes
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 .include <bsd.port.mk>

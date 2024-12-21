@@ -1,9 +1,9 @@
 COMMENT=		spellchecking library for Python
 
-MODPY_EGG_VERSION=	3.2.2
-DISTNAME=		pyenchant-${MODPY_EGG_VERSION}
-PKGNAME=		py-enchant-${MODPY_EGG_VERSION}
-REVISION=		4
+MODPY_DISTV=	3.2.2
+DISTNAME=		pyenchant-${MODPY_DISTV}
+PKGNAME=		py-enchant-${MODPY_DISTV}
+REVISION=		5
 
 CATEGORIES=		textproc
 
@@ -19,8 +19,5 @@ MODPY_PYBUILD=		setuptools
 MODPY_PYTEST_ARGS=	enchant/tests.py
 
 RUN_DEPENDS=		textproc/enchant2
-
-FLAVORS=		python3
-FLAVOR=			python3
 
 .include <bsd.port.mk>

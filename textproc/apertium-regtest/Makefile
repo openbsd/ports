@@ -2,7 +2,7 @@ COMMENT =	regression testing system for apertium data and tools
 
 DISTNAME =	apertium-regtest-$V
 V =		0.9.1
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	textproc
 

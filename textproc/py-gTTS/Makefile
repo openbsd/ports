@@ -1,8 +1,9 @@
 COMMENT =		Google Translate text-to-speech API library and CLI tool
-MODPY_EGG_VERSION =	2.5.4
-DISTNAME =		gtts-${MODPY_EGG_VERSION}
-PKGNAME =		py-gTTS-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.5.4
+DISTNAME =		gtts-${MODPY_DISTV}
+PKGNAME =		py-gTTS-${MODPY_DISTV}
 CATEGORIES =		textproc audio
+REVISION =		0
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
@@ -15,14 +16,11 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		www/py-requests${MODPY_FLAVOR}>=2.27,<3 \
-			devel/py-click${MODPY_FLAVOR}>=7.1,<8.2
+RUN_DEPENDS =		www/py-requests>=2.27,<3 \
+			devel/py-click>=7.1,<8.2
 
 # XXX wants unported "testfixtures"
-TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
-			devel/py-test-cov${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR =		python3
+TEST_DEPENDS =		devel/py-test \
+			devel/py-test-cov
 
 .include <bsd.port.mk>

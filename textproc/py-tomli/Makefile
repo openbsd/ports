@@ -1,11 +1,12 @@
 COMMENT=	lil' TOML parser
 
-MODPY_EGG_VERSION=	2.2.1
+MODPY_DISTV=	2.2.1
 
 # generally not needed with Python 3.11+ as this is essentially
 # a backport of tomllib
-DISTNAME=	tomli-${MODPY_EGG_VERSION}
+DISTNAME=	tomli-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	textproc
 
@@ -19,8 +20,5 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	flit_core
 NO_TEST=	Yes
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

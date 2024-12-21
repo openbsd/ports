@@ -1,9 +1,9 @@
 COMMENT=		high speed universal character encoding detector
 
-MODPY_EGG_VERSION=	2.1.7
-DISTNAME=		cchardet-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.1.7
+DISTNAME=		cchardet-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		textproc
 
@@ -19,9 +19,6 @@ MODULES=		lang/python
 MODPY_PI=		Yes
 MODPY_PYBUILD=		setuptools
 
-FLAVORS=		python3
-FLAVOR=			python3
-
-BUILD_DEPENDS=		lang/cython${MODPY_FLAVOR}
+BUILD_DEPENDS=		lang/cython
 
 .include <bsd.port.mk>

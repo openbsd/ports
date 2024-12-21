@@ -1,8 +1,9 @@
 COMMENT=	YAML parser and emitter in Python
 
-MODPY_EGG_VERSION=6.0.2
-DISTNAME=	pyyaml-${MODPY_EGG_VERSION}
-PKGNAME=	py-yaml-${MODPY_EGG_VERSION}
+MODPY_DISTV=6.0.2
+DISTNAME=	pyyaml-${MODPY_DISTV}
+PKGNAME=	py-yaml-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	textproc
 
@@ -17,14 +18,11 @@ WANTLIB+=	yaml-0 ${MODPY_WANTLIB}
 
 MODULES=	lang/python
 
-FLAVORS=	python3
-FLAVOR=		python3
-
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
 CFLAGS+=	-I${LOCALBASE}/include
 LIB_DEPENDS=	devel/libyaml
-BUILD_DEPENDS=	lang/cython${MODPY_FLAVOR}
+BUILD_DEPENDS=	lang/cython
 
 .include <bsd.port.mk>

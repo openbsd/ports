@@ -1,9 +1,9 @@
 COMMENT=	parse CSS3 Selectors and translates them to XPath 1.0
 
-MODPY_EGG_VERSION=	1.2.0
-DISTNAME=	cssselect-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.2.0
+DISTNAME=	cssselect-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc
 
@@ -12,12 +12,9 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 
-TEST_DEPENDS=	textproc/py-lxml${MODPY_FLAVOR}
+TEST_DEPENDS=	textproc/py-lxml
 
 MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

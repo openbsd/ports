@@ -1,10 +1,10 @@
 COMMENT =		convert rst to ansi-decorated console output
 
-MODPY_EGG_VERSION =	0.1.5
-DISTNAME =		rst2ansi-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.1.5
+DISTNAME =		rst2ansi-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		textproc
-REVISION =		0
+REVISION =		1
 
 # MIT
 PERMIT_PACKAGE = 	Yes
@@ -16,9 +16,6 @@ MODPY_PYBUILD =		setuptools
 # no tests in pypi package
 NO_TEST =		Yes
 
-RUN_DEPENDS =		textproc/py-docutils${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR =		python3
+RUN_DEPENDS =		textproc/py-docutils
 
 .include <bsd.port.mk>

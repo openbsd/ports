@@ -3,6 +3,7 @@ V =			2.5.0
 DIST_TUPLE =		github	dialect-app	dialect	${V}	. \
 			github	dialect-app	po	${V}	po
 CATEGORIES =		textproc x11
+REVISION =		0
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
@@ -19,7 +20,7 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/glib2 \
 			devel/gobject-introspection \
 			devel/libsoup3 \
-			devel/py-gobject3${MODPY_FLAVOR} \
+			devel/py-gobject3 \
 			multimedia/gstreamer1/core \
 			x11/blueprint-compiler \
 			x11/gnome/libadwaita>=1.6.0 \
@@ -29,10 +30,10 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/glib2 \
 			devel/gobject-introspection \
 			devel/libsoup3 \
-			devel/py-gobject3${MODPY_FLAVOR} \
+			devel/py-gobject3 \
 			multimedia/gstreamer1/core \
-			textproc/py-gTTS${MODPY_FLAVOR} \
-			www/py-beautifulsoup4${MODPY_FLAVOR} \
+			textproc/py-gTTS \
+			www/py-beautifulsoup4 \
 			x11/gnome/libadwaita>=1.6.0 \
 			x11/gnome/libsecret \
 			x11/gtk+4 \

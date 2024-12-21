@@ -1,9 +1,10 @@
 COMMENT=	loaders and dumpers for PyYAML
 
-MODPY_EGG_VERSION=	1.4.1
-DISTNAME=	yamlloader-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.4.1
+DISTNAME=	yamlloader-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
+REVISION=	0
 
 HOMEPAGE=	https://github.com/Phynix/yamlloader
 
@@ -14,10 +15,7 @@ MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-RUN_DEPENDS=	textproc/py-yaml${MODPY_FLAVOR}
-TEST_DEPENDS=	devel/py-hypothesis${MODPY_FLAVOR}
+RUN_DEPENDS=	textproc/py-yaml
+TEST_DEPENDS=	devel/py-hypothesis
 
 .include <bsd.port.mk>

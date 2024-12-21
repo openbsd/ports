@@ -1,9 +1,9 @@
 COMMENT=	Python library to manipulate gettext files
 
-MODPY_EGG_VERSION =	1.1.1
-DISTNAME =	polib-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.1.1
+DISTNAME =	polib-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES=	textproc devel
 
@@ -15,13 +15,10 @@ MODPY_PI =	Yes
 
 MODPY_PYBUILD =	setuptools
 
-FLAVOR =	python3
-FLAVORS =	python3
-
 # only used on test, but poisoned if not in BUILD_DEPENDS
 BUILD_DEPENDS =	devel/gettext,-tools
 
-TEST_DEPENDS =	devel/py-coverage${MODPY_FLAVOR}
+TEST_DEPENDS =	devel/py-coverage
 
 SUBST_VARS +=	MODPY_MAJOR_VERSION
 

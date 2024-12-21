@@ -1,16 +1,16 @@
+@pkgpath textproc/py-vobject,python3
 @conflict py-vobject-<0.9.6.1p2
-@pkgpath textproc/py-vobject
 bin/change_tz
 bin/ics_diff
 lib/python${MODPY_VERSION}/site-packages/vobject/
-lib/python${MODPY_VERSION}/site-packages/vobject-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/vobject-${MODPY_EGG_VERSION}.dist-info/LICENSE-2.0.txt
-lib/python${MODPY_VERSION}/site-packages/vobject-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/vobject-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/vobject-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/vobject-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/vobject-${MODPY_EGG_VERSION}.dist-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/vobject-${MODPY_EGG_VERSION}.dist-info/zip-safe
+lib/python${MODPY_VERSION}/site-packages/vobject-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/vobject-${MODPY_DISTV}.dist-info/LICENSE-2.0.txt
+lib/python${MODPY_VERSION}/site-packages/vobject-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/vobject-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/vobject-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/vobject-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/vobject-${MODPY_DISTV}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/vobject-${MODPY_DISTV}.dist-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/vobject/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/vobject/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/vobject/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

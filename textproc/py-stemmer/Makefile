@@ -1,9 +1,9 @@
 COMMENT =		snowball stemming algorithms, for information retrieval
 
-MODPY_EGG_VERSION =	2.2.0.1
-DISTNAME =		PyStemmer-${MODPY_EGG_VERSION}
-PKGNAME =		py-stemmer-${MODPY_EGG_VERSION}
-REVISION =		1
+MODPY_DISTV =	2.2.0.1
+DISTNAME =		PyStemmer-${MODPY_DISTV}
+PKGNAME =		py-stemmer-${MODPY_DISTV}
+REVISION =		2
 
 CATEGORIES =		textproc
 
@@ -19,10 +19,7 @@ MODPY_PYBUILD =		setuptools
 MAKE_ENV =		PYSTEMMER_SYSTEM_LIBSTEMMER=1
 CFLAGS +=		-I${LOCALBASE}/include
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-BUILD_DEPENDS =		lang/cython${MODPY_FLAVOR}
+BUILD_DEPENDS =		lang/cython
 LIB_DEPENDS =		textproc/libstemmer
 
 .include <bsd.port.mk>

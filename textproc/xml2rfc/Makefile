@@ -1,8 +1,8 @@
 COMMENT=	convert memos written in XML to the RFC format
 
-MODPY_EGG_VERSION=	3.23.0
-DISTNAME=	xml2rfc-${MODPY_EGG_VERSION}
-REVISION=	0
+MODPY_DISTV=	3.23.0
+DISTNAME=	xml2rfc-${MODPY_DISTV}
+REVISION=	1
 
 CATEGORIES=	textproc
 
@@ -18,21 +18,21 @@ MODPY_PYBUILD=	setuptools
 MODPY_PYTEST_ARGS= test.py
 
 # from requirements.txt
-RUN_DEPENDS=	sysutils/py-platformdirs${MODPY_FLAVOR} \
-		devel/py-configargparse${MODPY_FLAVOR} \
-		geo/py-google-i18n-address${MODPY_FLAVOR}>=3 \
-		devel/py-intervaltree${MODPY_FLAVOR} \
-		www/py-jinja2${MODPY_FLAVOR} \
-		textproc/py-lxml${MODPY_FLAVOR} \
-		devel/py-country${MODPY_FLAVOR} \
-		textproc/py-yaml${MODPY_FLAVOR} \
-		www/py-requests${MODPY_FLAVOR} \
-		devel/py-wcwidth${MODPY_FLAVOR}
+RUN_DEPENDS=	sysutils/py-platformdirs \
+		devel/py-configargparse \
+		geo/py-google-i18n-address>=3 \
+		devel/py-intervaltree \
+		www/py-jinja2 \
+		textproc/py-lxml \
+		devel/py-country \
+		textproc/py-yaml \
+		www/py-requests \
+		devel/py-wcwidth
 
-TEST_DEPENDS+=	devel/py-decorator${MODPY_FLAVOR} \
-		print/py-pypdf${MODPY_FLAVOR} \
-		print/weasyprint${MODPY_FLAVOR} \
-		textproc/py-dict2xml${MODPY_FLAVOR} \
+TEST_DEPENDS+=	devel/py-decorator \
+		print/py-pypdf \
+		print/weasyprint \
+		textproc/py-dict2xml \
 		fonts/noto/fonts \
 		fonts/noto/cjk
 

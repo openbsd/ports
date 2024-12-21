@@ -2,7 +2,7 @@ COMMENT=		documentation generator for GObject-based libraries
 
 GNOME_PROJECT=		gi-docgen
 GNOME_VERSION=		2024.1
-REVISION=		0
+REVISION=		1
 
 # override gnome MODULE
 SITES ?=         	${SITE_GNOME:=sources/${GNOME_PROJECT}/${GNOME_VERSION:C/^([0-9]+)\..*/\1/}/}
@@ -19,12 +19,12 @@ MODULES=		lang/python \
 
 MODPY_PYBUILD=		setuptools
 
-RUN_DEPENDS=		sysutils/py-packaging${MODPY_FLAVOR} \
-			textproc/py-MarkupSafe${MODPY_FLAVOR} \
-			textproc/py-markdown${MODPY_FLAVOR} \
-			textproc/py-pygments${MODPY_FLAVOR} \
-			textproc/py-typogrify${MODPY_FLAVOR} \
-			www/py-jinja2${MODPY_FLAVOR}
+RUN_DEPENDS=		sysutils/py-packaging \
+			textproc/py-MarkupSafe \
+			textproc/py-markdown \
+			textproc/py-pygments \
+			textproc/py-typogrify \
+			www/py-jinja2
 
 TEST_DEPENDS=		${RUN_DEPENDS}
 

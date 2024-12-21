@@ -1,10 +1,10 @@
 COMMENT=	Python port of the parser used internally by GNU bash
 
-MODPY_EGG_VERSION=	0.18
-DISTNAME=	bashlex-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.18
+DISTNAME=	bashlex-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc sysutils
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://github.com/idank/bashlex
 
@@ -15,8 +15,5 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
 MODULES=	lang/python
-
-FLAVOR=		python3
-FLAVORS=	python3
 
 .include <bsd.port.mk>

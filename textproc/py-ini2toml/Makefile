@@ -1,8 +1,9 @@
 COMMENT=	convert .ini/.cfg files to TOML equivalents
 
-MODPY_EGG_VERSION=	0.15
-DISTNAME=	ini2toml-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.15
+DISTNAME=	ini2toml-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	textproc
 
@@ -19,9 +20,6 @@ MODPY_PYBUILD=	setuptools_scm
 # tests need validate-pyproject (not ported) and others
 NO_TEST=	Yes
 
-RUN_DEPENDS=	sysutils/py-packaging${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+RUN_DEPENDS=	sysutils/py-packaging
 
 .include <bsd.port.mk>

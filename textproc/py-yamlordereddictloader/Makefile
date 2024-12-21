@@ -1,11 +1,11 @@
 COMMENT=	loader and dumper for PyYAML allowing keeping items order
 
 # deprecated, but needed by py-junos-eznc
-MODPY_EGG_VERSION=	0.4.2
-DISTNAME=	yamlordereddictloader-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.4.2
+DISTNAME=	yamlordereddictloader-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://github.com/fmenabe/python-yamlordereddictloader
 
@@ -16,11 +16,8 @@ MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 
-FLAVORS=	python3
-FLAVOR=		python3
-
 NO_TEST=	Yes
 
-RUN_DEPENDS=	textproc/py-yaml${MODPY_FLAVOR}
+RUN_DEPENDS=	textproc/py-yaml
 
 .include <bsd.port.mk>

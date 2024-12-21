@@ -1,8 +1,8 @@
 COMMENT =	parser for the Open Financial Exchange file format
 
-MODPY_EGG_VERSION = 0.21
-REVISION =	4
-DISTNAME =	ofxparse-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.21
+REVISION =	5
+DISTNAME =	ofxparse-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 
 CATEGORIES =	textproc
@@ -16,11 +16,8 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVORS =	python3
-FLAVOR =	python3
-
-RUN_DEPENDS +=		devel/py-six${MODPY_FLAVOR} \
-			textproc/py-lxml${MODPY_FLAVOR} \
-			www/py-beautifulsoup4${MODPY_FLAVOR}
+RUN_DEPENDS +=		devel/py-six \
+			textproc/py-lxml \
+			www/py-beautifulsoup4
 
 .include <bsd.port.mk>

@@ -1,9 +1,10 @@
-lib/python${MODPY_VERSION}/site-packages/pymdown_extensions-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pymdown_extensions-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/pymdown_extensions-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/pymdown_extensions-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/pymdown_extensions-${MODPY_EGG_VERSION}.dist-info/licenses/
-lib/python${MODPY_VERSION}/site-packages/pymdown_extensions-${MODPY_EGG_VERSION}.dist-info/licenses/LICENSE.md
+@pkgpath textproc/py-mdown-extensions,python3
+lib/python${MODPY_VERSION}/site-packages/pymdown_extensions-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pymdown_extensions-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/pymdown_extensions-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/pymdown_extensions-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pymdown_extensions-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/pymdown_extensions-${MODPY_DISTV}.dist-info/licenses/LICENSE.md
 lib/python${MODPY_VERSION}/site-packages/pymdownx/
 lib/python${MODPY_VERSION}/site-packages/pymdownx/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pymdownx/__meta__.py

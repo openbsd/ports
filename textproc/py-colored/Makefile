@@ -1,9 +1,9 @@
 COMMENT=	simple library for color and formatting in terminal
 
-MODPY_EGG_VERSION=	2.2.4
-DISTNAME=	colored-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.2.4
+DISTNAME=	colored-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc
 
@@ -13,9 +13,6 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	flit_core
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 NO_TEST=	Yes
 

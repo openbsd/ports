@@ -1,14 +1,15 @@
+@pkgpath textproc/py-license-expression,python3
 lib/python${MODPY_VERSION}/site-packages/license_expression/
-lib/python${MODPY_VERSION}/site-packages/license_expression-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/license_expression-${MODPY_EGG_VERSION}.dist-info/AUTHORS.rst
-lib/python${MODPY_VERSION}/site-packages/license_expression-${MODPY_EGG_VERSION}.dist-info/CHANGELOG.rst
-lib/python${MODPY_VERSION}/site-packages/license_expression-${MODPY_EGG_VERSION}.dist-info/CODE_OF_CONDUCT.rst
-lib/python${MODPY_VERSION}/site-packages/license_expression-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/license_expression-${MODPY_EGG_VERSION}.dist-info/NOTICE
-lib/python${MODPY_VERSION}/site-packages/license_expression-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/license_expression-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/license_expression-${MODPY_EGG_VERSION}.dist-info/apache-2.0.LICENSE
-lib/python${MODPY_VERSION}/site-packages/license_expression-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/license_expression-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/license_expression-${MODPY_DISTV}.dist-info/AUTHORS.rst
+lib/python${MODPY_VERSION}/site-packages/license_expression-${MODPY_DISTV}.dist-info/CHANGELOG.rst
+lib/python${MODPY_VERSION}/site-packages/license_expression-${MODPY_DISTV}.dist-info/CODE_OF_CONDUCT.rst
+lib/python${MODPY_VERSION}/site-packages/license_expression-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/license_expression-${MODPY_DISTV}.dist-info/NOTICE
+lib/python${MODPY_VERSION}/site-packages/license_expression-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/license_expression-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/license_expression-${MODPY_DISTV}.dist-info/apache-2.0.LICENSE
+lib/python${MODPY_VERSION}/site-packages/license_expression-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/license_expression/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/license_expression/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/license_expression/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -1,9 +1,9 @@
-@pkgpath textproc/py-colored
+@pkgpath textproc/py-colored,python3
 lib/python${MODPY_VERSION}/site-packages/colored/
-lib/python${MODPY_VERSION}/site-packages/colored-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/colored-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/colored-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/colored-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/colored-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/colored-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/colored-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/colored-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/colored/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/colored/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/colored/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

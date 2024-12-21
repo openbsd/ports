@@ -1,8 +1,8 @@
 COMMENT=	wrapper for LaTeX and friends
 
-MODPY_EGG_VERSION=	1.5.1
-DISTNAME=	rubber-${MODPY_EGG_VERSION}
-REVISION=	3
+MODPY_DISTV=	1.5.1
+DISTNAME=	rubber-${MODPY_DISTV}
+REVISION=	4
 
 CATEGORIES=	textproc print
 
@@ -11,7 +11,7 @@ HOMEPAGE=	https://launchpad.net/rubber/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-SITES=		${HOMEPAGE}/trunk/${MODPY_EGG_VERSION}/+download/
+SITES=		${HOMEPAGE}/trunk/${MODPY_DISTV}/+download/
 
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools

@@ -1,9 +1,9 @@
 COMMENT =		python number humanization utilities
 
-MODPY_EGG_VERSION =	4.3.0
-DISTNAME =		humanize-${MODPY_EGG_VERSION}
-PKGNAME =		py-humanize-${MODPY_EGG_VERSION}
-REVISION =		1
+MODPY_DISTV =	4.3.0
+DISTNAME =		humanize-${MODPY_DISTV}
+PKGNAME =		py-humanize-${MODPY_DISTV}
+REVISION =		2
 
 CATEGORIES =		textproc
 
@@ -18,10 +18,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-TEST_DEPENDS =		devel/py-freezegun${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-freezegun
 
 TEST_ENV =		PYTHONPATH=${WRKSRC}/src
 

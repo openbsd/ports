@@ -1,9 +1,9 @@
 COMMENT =		makes working with XML feel like orking with JSON
 
-MODPY_EGG_VERSION =	0.12.0
-DISTNAME =		xmltodict-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.12.0
+DISTNAME =		xmltodict-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		textproc
 
@@ -16,9 +16,6 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR =		python3
+TEST_DEPENDS =		devel/py-coverage
 
 .include <bsd.port.mk>

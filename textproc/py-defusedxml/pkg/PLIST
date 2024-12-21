@@ -1,11 +1,11 @@
-@pkgpath textproc/py-defusedxml
+@pkgpath textproc/py-defusedxml,python3
 lib/python${MODPY_VERSION}/site-packages/defusedxml/
-lib/python${MODPY_VERSION}/site-packages/defusedxml-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/defusedxml-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/defusedxml-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/defusedxml-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/defusedxml-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/defusedxml-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/defusedxml-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/defusedxml-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/defusedxml-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/defusedxml-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/defusedxml-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/defusedxml-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/defusedxml/ElementTree.py
 lib/python${MODPY_VERSION}/site-packages/defusedxml/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/defusedxml/${MODPY_PYCACHE}/

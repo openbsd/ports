@@ -2,7 +2,7 @@ COMMENT =		rule-based machine translation platform
 
 V =			3.9.4
 DISTNAME =		apertium-$V
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  apertium                 1.0 # 3.0
 
@@ -42,7 +42,7 @@ LIB_DEPENDS =		converters/libiconv \
 			textproc/lttoolbox>=3.7.1
 TEST_DEPENDS =		${MODPY_TEST_DEPENDS} \
 			devel/shellcheck \
-			textproc/py-lxml${MODPY_FLAVOR}
+			textproc/py-lxml
 
 MODPY_BUILDDEP =	No
 MODPY_ADJ_FILES =	scripts/apertium-editdist \

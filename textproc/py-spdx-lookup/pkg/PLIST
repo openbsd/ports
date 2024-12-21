@@ -1,14 +1,14 @@
+@pkgpath textproc/py-spdx-lookup,python3
 @conflict py-spdx-lookup-<0.3.2p2
-@pkgpath textproc/py-spdx-lookup
 bin/spdx-lookup
 lib/python${MODPY_VERSION}/site-packages/spdx_lookup/
-lib/python${MODPY_VERSION}/site-packages/spdx_lookup-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/spdx_lookup-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/spdx_lookup-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/spdx_lookup-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/spdx_lookup-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/spdx_lookup-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/spdx_lookup-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/spdx_lookup-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/spdx_lookup-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/spdx_lookup-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/spdx_lookup-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/spdx_lookup-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/spdx_lookup-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/spdx_lookup-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/spdx_lookup/__init__.py
 lib/python${MODPY_VERSION}/site-packages/spdx_lookup/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/spdx_lookup/${MODPY_PYCACHE}/

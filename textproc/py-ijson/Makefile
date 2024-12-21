@@ -1,8 +1,9 @@
 COMMENT =		iterative JSON parser
 
-MODPY_EGG_VERSION =	3.3.0
-DISTNAME =		ijson-${MODPY_EGG_VERSION}
-PKGNAME =		py-ijson-${MODPY_EGG_VERSION:S/.post/pl/}
+MODPY_DISTV =	3.3.0
+DISTNAME =		ijson-${MODPY_DISTV}
+PKGNAME =		py-ijson-${MODPY_DISTV:S/.post/pl/}
+REVISION =		0
 
 CATEGORIES =		textproc
 
@@ -18,8 +19,6 @@ WANTLIB += pthread yajl
 MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
-FLAVORS =		python3
-FLAVOR =		python3
 
 MAKE_ENV =		LDFLAGS=-L${LOCALBASE}/lib \
 			CPPFLAGS=-I${LOCALBASE}/include

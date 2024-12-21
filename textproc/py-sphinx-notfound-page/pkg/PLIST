@@ -1,5 +1,5 @@
+@pkgpath textproc/py-sphinx-notfound-page,python3
 @conflict py-sphinx-notfound-page-*
-@pkgpath textproc/py-sphinx-notfound-page
 lib/python${MODPY_VERSION}/site-packages/notfound/
 lib/python${MODPY_VERSION}/site-packages/notfound/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/notfound/${MODPY_PYCACHE}/
@@ -11,8 +11,8 @@ lib/python${MODPY_VERSION}/site-packages/notfound/${MODPY_PYCACHE}utils.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/notfound/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/notfound/extension.py
 lib/python${MODPY_VERSION}/site-packages/notfound/utils.py
-lib/python${MODPY_VERSION}/site-packages/sphinx_notfound_page-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/sphinx_notfound_page-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/sphinx_notfound_page-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/sphinx_notfound_page-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/sphinx_notfound_page-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/sphinx_notfound_page-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/sphinx_notfound_page-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/sphinx_notfound_page-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/sphinx_notfound_page-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/sphinx_notfound_page-${MODPY_DISTV}.dist-info/WHEEL

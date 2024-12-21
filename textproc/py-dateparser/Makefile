@@ -1,10 +1,10 @@
 COMMENT=	parse dates from HTML pages
 
-MODPY_EGG_VERSION=	1.2.0
-DISTNAME=	dateparser-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.2.0
+DISTNAME=	dateparser-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://github.com/scrapinghub/dateparser/
 
@@ -13,17 +13,14 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 
-FLAVORS=	python3
-FLAVOR=		python3
-
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-RUN_DEPENDS=	devel/py-tzlocal${MODPY_FLAVOR} \
-		devel/py-tz${MODPY_FLAVOR} \
-		devel/py-regex${MODPY_FLAVOR} \
-		devel/py-dateutil${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-tzlocal \
+		devel/py-tz \
+		devel/py-regex \
+		devel/py-dateutil
 
-TEST_DEPENDS=	devel/py-parameterized${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-parameterized
 
 MODPY_PYTEST_ARGS=	--ignore tests/test_dateparser_data_integrity.py \
 			--ignore tests/test_hijri.py \

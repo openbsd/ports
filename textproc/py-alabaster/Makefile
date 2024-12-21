@@ -1,8 +1,9 @@
 COMMENT=	configurable sidebar-enabled Sphinx theme
 
-MODPY_EGG_VERSION=	1.0.0
-DISTNAME=	alabaster-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.0.0
+DISTNAME=	alabaster-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	textproc
 
@@ -13,9 +14,6 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	flit_core
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 NO_TEST=	Yes
 

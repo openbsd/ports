@@ -1,9 +1,9 @@
 COMMENT=	an XML Schema validator and decoder
 
-MODPY_EGG_VERSION=	2.5.0
-DISTNAME=	xmlschema-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.5.0
+DISTNAME=	xmlschema-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc
 
@@ -16,9 +16,6 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS=	textproc/py-elementpath${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+RUN_DEPENDS=	textproc/py-elementpath
 
 .include <bsd.port.mk>

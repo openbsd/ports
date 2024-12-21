@@ -2,7 +2,7 @@ COMMENT=		graphical diff and merge tool
 
 GNOME_VERSION=		3.22.2
 GNOME_PROJECT=		meld
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		textproc
 
@@ -21,11 +21,11 @@ MODPY_ADJ_FILES=	bin/meld
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache \
 			shared-mime-info yelp
 
-BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
+BUILD_DEPENDS=		devel/py-gobject3 \
 			x11/gtk+3 \
 			x11/gtksourceview4
 
-RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
+RUN_DEPENDS=		devel/py-gobject3 \
 			x11/gtk+3 \
 			x11/gtksourceview4
 

@@ -1,8 +1,8 @@
 COMMENT =		fast, correct Python JSON library
 
-MODPY_EGG_VERSION =	3.10.7
-REVISION =		0
-DISTNAME =		orjson-${MODPY_EGG_VERSION}
+MODPY_DISTV =	3.10.7
+REVISION =		1
+DISTNAME =		orjson-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		textproc
@@ -17,17 +17,13 @@ MAINTAINER =		Aisha Tammy <aisha@openbsd.org>
 MODULES =		devel/cargo \
 			lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		maturin
 MODCARGO_CARGO_BIN =	maturin
 CONFIGURE_STYLE =	cargo
 
-
-TEST_DEPENDS =		devel/py-tz${MODPY_FLAVOR} \
-			math/py-numpy${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-tz \
+			math/py-numpy
 
 TEST_ENV =		PYTHONPATH=${WRKSRC}/test-install/${MODPY_LIBDIR}/site-packages
 

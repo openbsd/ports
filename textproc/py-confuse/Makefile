@@ -1,9 +1,9 @@
 COMMENT=	painless YAML configuration
 
-MODPY_EGG_VERSION=	2.0.1
-DISTNAME=	confuse-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.0.1
+DISTNAME=	confuse-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc
 
@@ -17,9 +17,6 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	flit_core
 
-RUN_DEPENDS=	textproc/py-yaml${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+RUN_DEPENDS=	textproc/py-yaml
 
 .include <bsd.port.mk>

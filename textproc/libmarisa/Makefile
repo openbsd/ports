@@ -10,7 +10,7 @@ PKGNAME-python =	py3-libmarisa-${V}
 PKGNAME-ruby =		ruby-libmarisa-${V}
 
 REVISION-main =		2
-REVISION-python =	5
+REVISION-python =	6
 REVISION-ruby =		3
 REVISION-perl =		0
 

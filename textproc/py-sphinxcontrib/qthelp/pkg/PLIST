@@ -1,3 +1,4 @@
+@pkgpath textproc/py-sphinxcontrib/qthelp,python3
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/qthelp/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/qthelp/__init__.py
@@ -204,7 +205,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/qthelp/py.typed
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/qthelp/templates/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/qthelp/templates/project.qhcp
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/qthelp/templates/project.qhp
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_qthelp-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_qthelp-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_qthelp-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_qthelp-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_qthelp-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_qthelp-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_qthelp-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_qthelp-${MODPY_DISTV}.dist-info/WHEEL

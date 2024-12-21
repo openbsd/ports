@@ -1,9 +1,9 @@
 COMMENT=	extract data from xls spreadsheet files
 
-MODPY_EGG_VERSION=	2.0.1
-DISTNAME=	xlrd-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.0.1
+DISTNAME=	xlrd-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc devel
 
@@ -19,9 +19,6 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 # not in pypi sdist
 NO_TEST=	Yes
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 post-install:
 	mv ${PREFIX}/bin/runxlrd.py ${PREFIX}/bin/runxlrd

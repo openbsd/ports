@@ -1,8 +1,9 @@
 COMMENT=	tiny CSS parser
 
-MODPY_EGG_VERSION=	1.4.0
-DISTNAME=	tinycss2-${MODPY_EGG_VERSION}
-PKGNAME=	py-tinycss2-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.4.0
+DISTNAME=	tinycss2-${MODPY_DISTV}
+PKGNAME=	py-tinycss2-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	textproc
 
@@ -13,14 +14,11 @@ MODULES=	lang/python
 MODPY_PYBUILD=	flit_core
 MODPY_PI=	yes
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-BUILD_DEPENDS=	textproc/py-webencodings${MODPY_FLAVOR}
-RUN_DEPENDS=	textproc/py-webencodings${MODPY_FLAVOR}
-TEST_DEPENDS=	devel/py-test-flake8${MODPY_FLAVOR} \
-		devel/py-test-isort${MODPY_FLAVOR} \
-		devel/py-test-cov${MODPY_FLAVOR} \
-		devel/py-test-xdist${MODPY_FLAVOR}
+BUILD_DEPENDS=	textproc/py-webencodings
+RUN_DEPENDS=	textproc/py-webencodings
+TEST_DEPENDS=	devel/py-test-flake8 \
+		devel/py-test-isort \
+		devel/py-test-cov \
+		devel/py-test-xdist
 
 .include <bsd.port.mk>

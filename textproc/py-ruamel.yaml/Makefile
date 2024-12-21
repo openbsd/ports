@@ -1,9 +1,9 @@
 COMMENT=	YAML 1.2 loader/dumper package for Python
 
-MODPY_EGG_VERSION=	0.18.5
-DISTNAME=	ruamel.yaml-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.18.5
+DISTNAME=	ruamel.yaml-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc
 
@@ -16,9 +16,6 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-RUN_DEPENDS=	textproc/py-ruamel.yaml.clib${MODPY_FLAVOR}
+RUN_DEPENDS=	textproc/py-ruamel.yaml.clib
 
 .include <bsd.port.mk>

@@ -1,3 +1,4 @@
+@pkgpath textproc/py-sphinxcontrib/serializinghtml,python3
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/__init__.py
@@ -228,7 +229,7 @@ lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/z
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/zh_TW/LC_MESSAGES/sphinxcontrib.serializinghtml.mo
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/locales/zh_TW/LC_MESSAGES/sphinxcontrib.serializinghtml.po
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib/serializinghtml/py.typed
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_serializinghtml-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_serializinghtml-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_serializinghtml-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_serializinghtml-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_serializinghtml-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_serializinghtml-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_serializinghtml-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_serializinghtml-${MODPY_DISTV}.dist-info/WHEEL

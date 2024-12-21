@@ -1,10 +1,10 @@
 COMMENT =	create spreadsheet files compatible with MS Excel 95-2003
 
-MODPY_EGG_VERSION =	1.3.0
+MODPY_DISTV =	1.3.0
 
-DISTNAME =	xlwt-${MODPY_EGG_VERSION}
+DISTNAME =	xlwt-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	textproc devel
 
@@ -19,10 +19,8 @@ MODULES =	lang/python
 
 MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools
-FLAVOR =	python3
-FLAVORS =	python3
 
-RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-six
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-xlwt

@@ -1,3 +1,4 @@
+@pkgpath textproc/py-markdown-it,python3
 bin/markdown-it
 lib/python${MODPY_VERSION}/
 lib/python${MODPY_VERSION}/site-packages/
@@ -211,10 +212,10 @@ lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/text_collapse.
 lib/python${MODPY_VERSION}/site-packages/markdown_it/token.py
 lib/python${MODPY_VERSION}/site-packages/markdown_it/tree.py
 lib/python${MODPY_VERSION}/site-packages/markdown_it/utils.py
-lib/python${MODPY_VERSION}/site-packages/markdown_it_py-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/markdown_it_py-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/markdown_it_py-${MODPY_EGG_VERSION}.dist-info/LICENSE.markdown-it
-lib/python${MODPY_VERSION}/site-packages/markdown_it_py-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/markdown_it_py-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/markdown_it_py-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/markdown_it_py-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/markdown_it_py-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/markdown_it_py-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/markdown_it_py-${MODPY_DISTV}.dist-info/LICENSE.markdown-it
+lib/python${MODPY_VERSION}/site-packages/markdown_it_py-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/markdown_it_py-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/markdown_it_py-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/markdown_it_py-${MODPY_DISTV}.dist-info/entry_points.txt

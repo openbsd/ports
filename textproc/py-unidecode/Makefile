@@ -1,9 +1,9 @@
 COMMENT=	US-ASCII transliterations of Unicode text
 
-MODPY_EGG_VERSION=	1.3.8
-DISTNAME=	Unidecode-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.3.8
+DISTNAME=	Unidecode-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:L}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc devel
 
@@ -16,8 +16,5 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

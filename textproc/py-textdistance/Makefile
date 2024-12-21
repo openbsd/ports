@@ -1,9 +1,9 @@
 COMMENT=	compute distance between texts
 
-MODPY_EGG_VERSION=	4.6.3
-DISTNAME=	textdistance-${MODPY_EGG_VERSION}
+MODPY_DISTV=	4.6.3
+DISTNAME=	textdistance-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc
 
@@ -14,15 +14,12 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 
-FLAVORS=	python3
-FLAVOR=		python3
-
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
 # don't have all the deps for external tests
-TEST_DEPENDS=	devel/py-hypothesis${MODPY_FLAVOR} \
-		math/py-numpy${MODPY_FLAVOR} \
-		textproc/py-jellyfish${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-hypothesis \
+		math/py-numpy \
+		textproc/py-jellyfish
 
 .include <bsd.port.mk>

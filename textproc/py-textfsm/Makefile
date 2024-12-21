@@ -1,9 +1,9 @@
 COMMENT =		parse semi-structured text into Python table
 
-MODPY_EGG_VERSION =	1.1.3
-DISTNAME =		textfsm-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.1.3
+DISTNAME =		textfsm-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		textproc
 
@@ -17,11 +17,8 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		devel/py-future${MODPY_FLAVOR} \
-			devel/py-six${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-future \
+			devel/py-six
 
 .include <bsd.port.mk>

@@ -1,8 +1,9 @@
 COMMENT=	correctly generate plurals, singular nouns, ordinals, etc
 
-MODPY_EGG_VERSION=	7.3.1
-DISTNAME=	inflect-${MODPY_EGG_VERSION}
+MODPY_DISTV=	7.3.1
+DISTNAME=	inflect-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	textproc
 
@@ -16,10 +17,7 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
-RUN_DEPENDS=	devel/py-more-itertools${MODPY_FLAVOR} \
-		devel/py-typeguard${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+RUN_DEPENDS=	devel/py-more-itertools \
+		devel/py-typeguard
 
 .include <bsd.port.mk>

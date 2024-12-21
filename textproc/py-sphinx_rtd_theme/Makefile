@@ -1,16 +1,16 @@
 COMMENT =		readthedocs.org theme for Sphinx
 
-MODPY_EGG_VERSION =	1.2.2
-REVISION =		2
+MODPY_DISTV =	1.2.2
+REVISION =		3
 
 GH_ACCOUNT =		readthedocs
 GH_PROJECT =		sphinx_rtd_theme
-GH_TAGNAME =		${MODPY_EGG_VERSION}
+GH_TAGNAME =		${MODPY_DISTV}
 
 PKGNAME =		py-${DISTNAME}
 
 SITES.deb =		${SITE_DEBIAN:=main/s/sphinx-rtd-theme/}
-DISTFILES.deb =		sphinx-rtd-theme_${MODPY_EGG_VERSION}+dfsg-1.debian.tar.xz
+DISTFILES.deb =		sphinx-rtd-theme_${MODPY_DISTV}+dfsg-1.debian.tar.xz
 
 CATEGORIES =		textproc
 
@@ -18,13 +18,10 @@ CATEGORIES =		textproc
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-BUILD_DEPENDS =		textproc/py-sphinxcontrib/jquery${MODPY_FLAVOR}
-RUN_DEPENDS =		textproc/py-sphinxcontrib/jquery${MODPY_FLAVOR}
+BUILD_DEPENDS =		textproc/py-sphinxcontrib/jquery
+RUN_DEPENDS =		textproc/py-sphinxcontrib/jquery
 
 MODPY_PYBUILD =		setuptools
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 NO_TEST =		Yes
 

@@ -1,9 +1,9 @@
 COMMENT =		SPDX license list query tool
 
-MODPY_EGG_VERSION =	0.3.3
-DISTNAME =		spdx-lookup-${MODPY_EGG_VERSION}
-PKGNAME =		py-spdx-lookup-${MODPY_EGG_VERSION}
-REVISION =		2
+MODPY_DISTV =	0.3.3
+DISTNAME =		spdx-lookup-${MODPY_DISTV}
+PKGNAME =		py-spdx-lookup-${MODPY_DISTV}
+REVISION =		3
 
 CATEGORIES =		textproc
 
@@ -16,10 +16,7 @@ MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-RUN_DEPENDS =		textproc/py-spdx${MODPY_FLAVOR}
+RUN_DEPENDS =		textproc/py-spdx
 
 NO_TEST =		No tests written by upstream
 

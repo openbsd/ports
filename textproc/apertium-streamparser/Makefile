@@ -1,9 +1,9 @@
 COMMENT =	apertium stream format parser
 
-DISTNAME =	apertium-streamparser-${MODPY_EGG_VERSION}
+DISTNAME =	apertium-streamparser-${MODPY_DISTV}
 
-MODPY_EGG_VERSION =	5.0.2
-REVISION =		5
+MODPY_DISTV =	5.0.2
+REVISION =		6
 
 CATEGORIES =	textproc
 

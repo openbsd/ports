@@ -1,9 +1,9 @@
 COMMENT =	PDF parser and analyzer
 
-MODPY_EGG_VERSION =	20221105
-DISTNAME =		pdfminer.six-${MODPY_EGG_VERSION}
-PKGNAME =		py-pdfminer-${MODPY_EGG_VERSION}
-REVISION =		1
+MODPY_DISTV =	20221105
+DISTNAME =		pdfminer.six-${MODPY_DISTV}
+PKGNAME =		py-pdfminer-${MODPY_DISTV}
+REVISION =		2
 
 CATEGORIES =	textproc
 
@@ -16,13 +16,10 @@ MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
 
-RUN_DEPENDS =		security/py-cryptography${MODPY_FLAVOR} \
-			textproc/py-charset-normalizer${MODPY_FLAVOR}
+RUN_DEPENDS =		security/py-cryptography \
+			textproc/py-charset-normalizer
 
 # tests aren't included in the pypi distfiles
 NO_TEST =		Yes
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 .include <bsd.port.mk>

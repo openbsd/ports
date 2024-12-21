@@ -1,9 +1,9 @@
 COMMENT =		singularizes and pluralizes English words
 
-MODPY_EGG_VERSION =	0.5.1
-DISTNAME =		inflection-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.5.1
+DISTNAME =		inflection-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc
 
@@ -11,9 +11,6 @@ CATEGORIES =		textproc
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 MODPY_PI =		yes
 MODPY_PYBUILD =		setuptools

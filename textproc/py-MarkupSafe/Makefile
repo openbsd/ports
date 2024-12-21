@@ -1,8 +1,9 @@
 COMMENT=	implements an XML/HTML/XHTML markup safe string
 
-MODPY_EGG_VERSION=	2.1.5
-DISTNAME=	MarkupSafe-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.1.5
+DISTNAME=	MarkupSafe-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	textproc
 
@@ -14,8 +15,5 @@ WANTLIB+=	${MODPY_WANTLIB} pthread
 MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

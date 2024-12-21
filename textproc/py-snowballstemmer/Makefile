@@ -1,9 +1,9 @@
 COMMENT =		snowball stemming library collection for Python
 
-MODPY_EGG_VERSION =	2.2.0
-DISTNAME =		snowballstemmer-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.2.0
+DISTNAME =		snowballstemmer-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		textproc
 
@@ -12,13 +12,10 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		textproc/py-stemmer${MODPY_FLAVOR}
+RUN_DEPENDS =		textproc/py-stemmer
 
 NO_TEST =		Yes
 

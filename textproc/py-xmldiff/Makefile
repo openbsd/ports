@@ -1,9 +1,10 @@
 COMMENT=	show differences between XML files/DOM trees
 
-MODPY_EGG_VERSION=	2.7.0
-DISTNAME=	xmldiff-${MODPY_EGG_VERSION}
-PKGNAME=	py-xmldiff-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.7.0
+DISTNAME=	xmldiff-${MODPY_DISTV}
+PKGNAME=	py-xmldiff-${MODPY_DISTV}
 CATEGORIES=	textproc
+REVISION=	0
 
 HOMEPAGE=	https://github.com/Shoobx/xmldiff
 
@@ -15,6 +16,6 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS=	textproc/py-lxml${MODPY_FLAVOR}
+RUN_DEPENDS=	textproc/py-lxml
 
 .include <bsd.port.mk>

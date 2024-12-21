@@ -1,9 +1,9 @@
 COMMENT =		drop-in replace for csv with unicode support
 
-MODPY_EGG_VERSION =	0.14.1
-DISTNAME =		unicodecsv-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.14.1
+DISTNAME =		unicodecsv-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		textproc
 
@@ -19,8 +19,5 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
 NO_TEST =		Yes
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 .include <bsd.port.mk>

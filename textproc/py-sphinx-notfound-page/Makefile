@@ -1,10 +1,10 @@
 COMMENT =		Sphinx extension to build a 404 page with absolute URLs
 
-MODPY_EGG_VERSION =	0.8.3
-DISTNAME =		sphinx-notfound-page-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.8.3
+DISTNAME =		sphinx-notfound-page-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		textproc
 
@@ -15,13 +15,10 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR  =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		flit_core
 
-RUN_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}
+RUN_DEPENDS =		textproc/py-sphinx
 
 NO_TEST =		Yes
 

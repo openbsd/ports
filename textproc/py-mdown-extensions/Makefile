@@ -1,8 +1,9 @@
 COMMENT=	extensions for python-markdown
 
-MODPY_EGG_VERSION=	10.12
-DISTNAME=	pymdown_extensions-${MODPY_EGG_VERSION}
-PKGNAME=	py-mdown-extensions-${MODPY_EGG_VERSION}
+MODPY_DISTV=	10.12
+DISTNAME=	pymdown_extensions-${MODPY_DISTV}
+PKGNAME=	py-mdown-extensions-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	textproc
 HOMEPAGE =	https://facelessuser.github.io/pymdown-extensions/
@@ -14,11 +15,8 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	hatchling
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-RUN_DEPENDS=	textproc/py-markdown${MODPY_FLAVOR} \
-		textproc/py-pygments${MODPY_FLAVOR} \
-		textproc/py-yaml${MODPY_FLAVOR}
+RUN_DEPENDS=	textproc/py-markdown \
+		textproc/py-pygments \
+		textproc/py-yaml
 
 .include <bsd.port.mk>

@@ -1,7 +1,8 @@
 COMMENT =		source code spelling checker
 
-MODPY_EGG_VERSION =	2.3.0
-DISTNAME =		codespell-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.3.0
+DISTNAME =		codespell-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		devel textproc
 
@@ -14,10 +15,10 @@ MODPY_PI =		Yes
 MODULES =		lang/python
 MODPY_PYBUILD =		setuptools_scm
 
-RUN_DEPENDS =		textproc/py-chardet${MODPY_FLAVOR}
+RUN_DEPENDS =		textproc/py-chardet
 
 TEST_DEPENDS =		${FULLPKGNAME}:${FULLPKGPATH} \
-			devel/py-test-cov${MODPY_FLAVOR}
+			devel/py-test-cov
 
 # XXX needs pytest-dependency, not in ports
 MODPY_PYTEST_ARGS =	--ignore codespell_lib/tests/test_dictionary.py

@@ -1,10 +1,10 @@
 COMMENT=	small utility to convert a Python dictionary into an XML
 
-MODPY_EGG_VERSION=	1.7.5
+MODPY_DISTV=	1.7.5
 
-DISTNAME=	dict2xml-${MODPY_EGG_VERSION}
+DISTNAME=	dict2xml-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc
 
@@ -20,8 +20,5 @@ MODPY_PYBUILD=	hatchling
 
 # tests require unported noseOfYeti
 NO_TEST=	Yes
-
-FLAVOR=		python3
-FLAVORS=	python3
 
 .include <bsd.port.mk>

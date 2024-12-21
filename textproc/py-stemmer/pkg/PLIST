@@ -1,8 +1,9 @@
-lib/python${MODPY_VERSION}/site-packages/PyStemmer-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/PyStemmer-${MODPY_EGG_VERSION}.dist-info/AUTHORS
-lib/python${MODPY_VERSION}/site-packages/PyStemmer-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/PyStemmer-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/PyStemmer-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/PyStemmer-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/PyStemmer-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+@pkgpath textproc/py-stemmer,python3
+lib/python${MODPY_VERSION}/site-packages/PyStemmer-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/PyStemmer-${MODPY_DISTV}.dist-info/AUTHORS
+lib/python${MODPY_VERSION}/site-packages/PyStemmer-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/PyStemmer-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/PyStemmer-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/PyStemmer-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/PyStemmer-${MODPY_DISTV}.dist-info/top_level.txt
 @so lib/python${MODPY_VERSION}/site-packages/Stemmer.${MODPY_PYC_MAGIC_TAG}so

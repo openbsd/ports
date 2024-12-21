@@ -1,9 +1,9 @@
 COMMENT =		markdown parser for Python
 
-MODPY_EGG_VERSION =	2.0.5
-DISTNAME =		mistune-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.0.5
+DISTNAME =		mistune-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc
 
@@ -16,8 +16,5 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 .include <bsd.port.mk>

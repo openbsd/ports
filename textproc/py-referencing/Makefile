@@ -1,8 +1,9 @@
 COMMENT=	JSON referencing in Python
 
-MODPY_EGG_VERSION=	0.35.1
-DISTNAME=	referencing-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.35.1
+DISTNAME=	referencing-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	textproc
 
@@ -11,16 +12,13 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 
-FLAVORS=	python3
-FLAVOR=		python3
-
 MODPY_PI=	Yes
 MODPY_PYBUILD=	hatch-vcs
 
-RUN_DEPENDS=	devel/py-attrs${MODPY_FLAVOR} \
-		devel/py-rpds-py${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-attrs \
+		devel/py-rpds-py
 
-TEST_DEPENDS=	devel/py-jsonschema${MODPY_FLAVOR} \
-		devel/py-test-subtests${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-jsonschema \
+		devel/py-test-subtests
 
 .include <bsd.port.mk>

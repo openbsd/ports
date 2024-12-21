@@ -5,7 +5,7 @@ COMMENT=		GTK C code documentation system
 
 GNOME_VERSION=		1.34.0
 GNOME_PROJECT=		gtk-doc
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		textproc devel
 
@@ -22,11 +22,11 @@ MODGNOME_TOOLS=		docbook yelp
 
 # glib2 needed to build regression tests
 BUILD_DEPENDS=		devel/glib2 \
-			textproc/py-pygments${MODPY_FLAVOR}
+			textproc/py-pygments
 
-RUN_DEPENDS=		devel/py-anytree${MODPY_FLAVOR} \
+RUN_DEPENDS=		devel/py-anytree \
 			textproc/docbook-xsl \
-			textproc/py-lxml${MODPY_FLAVOR} \
-			textproc/py-pygments${MODPY_FLAVOR}
+			textproc/py-lxml \
+			textproc/py-pygments
 
 .include <bsd.port.mk>

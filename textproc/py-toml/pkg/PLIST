@@ -1,12 +1,12 @@
+@pkgpath textproc/py-toml,python3
 @conflict py-toml-*
-@pkgpath textproc/py-toml
 lib/python${MODPY_VERSION}/site-packages/toml/
-lib/python${MODPY_VERSION}/site-packages/toml-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/toml-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/toml-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/toml-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/toml-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/toml-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/toml-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/toml-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/toml-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/toml-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/toml-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/toml-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/toml/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/toml/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/toml/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
