@@ -16,6 +16,7 @@ REVISION-gdbm =		0
 REVISION-tkinter =	1
 REVISION-tools =	0
 
+AUTOCONF_VERSION =	2.69
 CONFIGURE_ARGS +=	--with-ensurepip=no
 CONFIGURE_ENV +=	ac_cv_opt_olimit_ok=no
 

@@ -1,7 +1,7 @@
 Index: Python/fileutils.c
 --- Python/fileutils.c.orig
 +++ Python/fileutils.c
-@@ -2614,9 +2614,9 @@ done:
+@@ -2875,9 +2875,9 @@ done:
   *    non-opened fd in the middle.
   * 2b. If fdwalk(3) isn't available, just do a plain close(2) loop.
   */

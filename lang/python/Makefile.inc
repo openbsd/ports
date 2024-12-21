@@ -110,8 +110,6 @@ LIB_DEPENDS-tkinter =	lang/python/${V_SUBDIR},-main \
 WANTLIB-tkinter =	pthread python${VERSION} \
 			${MODTK_WANTLIB}
 
-AUTOCONF_VERSION =	2.69
-
 CONFIGURE_STYLE =	autoconf
 CONFIGURE_ARGS +=	--enable-shared
 CONFIGURE_ARGS +=	--enable-ipv6 \

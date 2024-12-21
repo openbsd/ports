@@ -4,7 +4,7 @@ of changes made to this version of Python for the OpenBSD package.
 1.  OpenBSD packages require that sonames are under control of the
 ports infrastructure, configure.ac was patched to do this.
 
-2.  Conditionally enable modern hashes according to their availability.
+2.  Disable scrypt, which is not currently available in LibreSSL.
 
 3.  Disable libuuid, otherwise Python prefers it over the libc uuid
 functions.

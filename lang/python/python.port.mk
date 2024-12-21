@@ -5,48 +5,32 @@ CATEGORIES +=		lang/python
 
 # define the default versions
 MODPY_DEFAULT_VERSION_2 = 2.7
-MODPY_DEFAULT_VERSION_3 = 3.11
+MODPY_DEFAULT_VERSION_3 = 3.12
+MODPY_VERSION ?=	${MODPY_DEFAULT_VERSION_3}
 
 # If switching to a new MODPY_DEFAULT_VERSION_3, say 3.x to 3.y:
 # - All ports with PLISTs that depend on the Python version number
 # must be REVISION-bumped.
 # - Keep xenocara/share/mk/bsd.xorg.mk PYTHON_VERSION in sync
 
-.if !defined(MODPY_VERSION)
-FLAVOR ?=
-
-.  if !defined(FLAVORS) || !${FLAVORS:Mpython3} || ${FLAVOR:Mpython3}
-# for standard "python3-flavoured" ports (normal for py-* modules),
-# set the default MODPY_VERSION for the usual py3 version
-MODPY_VERSION ?=	${MODPY_DEFAULT_VERSION_3}
-.  else
-# for unflavoured "py2+py3" ports (again normal for py-* modules),
-# set the default MODPY_VERSION for the usual py2 version
-.    if defined(FLAVORS) && ${FLAVORS:Mpython3}
-MODPY_VERSION ?=	${MODPY_DEFAULT_VERSION_2}
-.    else
-# ports which don't have a python3 FLAVOR are either old py2-only py-*
-# modules, or are other ports which use Python (e.g. those which are
-# intended as a standalone program rather than a py-* module).
-# in that case, use the usual py3 version; old py2-only modules
-# will set MODPY_VERSION themselves.
-.    endif
-.  endif
-.endif
-
 # verify if MODPY_VERSION found is correct
 .if ${MODPY_VERSION} == "2.7"
 _MODPY_SUBDIR = 2.7
-.elif ${MODPY_VERSION} == "3.11"
+.elif ${MODPY_VERSION} == "3.12"
 _MODPY_SUBDIR = 3
 .else
 ERRORS += "Fatal: unknown or unsupported MODPY_VERSION: ${MODPY_VERSION}"
 .endif
 
+MODPY_WANTLIB =		python${MODPY_VERSION}
+MODPY_RUN_DEPENDS =	lang/python/${_MODPY_SUBDIR}
+MODPY_LIB_DEPENDS =	lang/python/${_MODPY_SUBDIR}
+_MODPY_BUILD_DEPENDS =	lang/python/${_MODPY_SUBDIR}
+MODPY_TKINTER_DEPENDS =	lang/python/${_MODPY_SUBDIR},-tkinter
+
 MODPY_MAJOR_VERSION =	${MODPY_VERSION:R}
 
 .if ${MODPY_MAJOR_VERSION} == 2
-MODPY_FLAVOR =
 MODPY_PY_PREFIX =	py-
 MODPY_PYCACHE =
 MODPY_PYC_MAGIC_TAG =
@@ -54,9 +38,8 @@ MODPY_COMMENT =		"@comment "
 MODPY_ABI3SO =
 MODPY_PYOEXTENSION =	pyo
 .elif ${MODPY_MAJOR_VERSION} == 3
-# replace py- prefix by py3-
-FULLPKGNAME ?=	${PKGNAME:S/^py-/py3-/}${FLAVOR_EXT:S/-python3//}
-MODPY_FLAVOR =	,python3
+# replace py- prefix with py3-
+FULLPKGNAME ?=	${PKGNAME:S/^py-/py3-/}${FLAVOR_EXT}
 MODPY_PY_PREFIX =	py3-
 MODPY_PYCACHE =		__pycache__/
 MODPY_MAJORMINOR =	${MODPY_VERSION:C/\.//g}
@@ -80,18 +63,12 @@ MODPY_PYTEST ?=		No
 MODPY_PYTEST ?=		Yes
 .endif
 
-MODPY_WANTLIB =		python${MODPY_VERSION}
-
-MODPY_RUN_DEPENDS =	lang/python/${_MODPY_SUBDIR}
-MODPY_LIB_DEPENDS =	lang/python/${_MODPY_SUBDIR}
-_MODPY_BUILD_DEPENDS =	lang/python/${_MODPY_SUBDIR}
-
 .if ${MODPY_PYTEST:L} == "yes"
 .  if ${MODPY_VERSION} == ${MODPY_DEFAULT_VERSION_2}
 NO_TEST = Yes
 .  else
 MODPY_TEST_DEPENDS =	${RUN_DEPENDS}
-MODPY_TEST_DEPENDS +=	devel/py-test${MODPY_FLAVOR}
+MODPY_TEST_DEPENDS +=	devel/py-test
 .  endif
 .else
 MODPY_TEST_DEPENDS =	${MODPY_RUN_DEPENDS}
@@ -146,7 +123,7 @@ ERRORS +=		"Fatal: don't set both MODPY_PYBUILD and MODPY_SETUPTOOLS"
 MODPY_SETUPUTILS_DEPEND ?= devel/py2-setuptools
 MODPY_RUN_DEPENDS +=	${MODPY_SETUPUTILS_DEPEND}
 .  else
-MODPY_SETUPUTILS_DEPEND ?= devel/py-setuptools${MODPY_FLAVOR}
+MODPY_SETUPUTILS_DEPEND ?= devel/py-setuptools
 .  endif
 
 BUILD_DEPENDS +=	${MODPY_SETUPUTILS_DEPEND}
@@ -162,41 +139,36 @@ _MODPY_PRE_BUILD_STEPS += ;[ -e ${WRKSRC}/${MODPY_SETUP} ] || \
 			> ${WRKSRC}/${MODPY_SETUP}; \
 			echo '*** generating minimal setup.py; consider using MODPY_PYBUILD')
 _MODPY_PRE_BUILD_STEPS += ;${MODPY_CMD} egg_info || true
-# Setuptools opportunistically picks up plugins. If it picks one up that
-# uses finalize_distribution_options (usually setuptools_scm), junking
-# that plugin will cause failure at the end of build.
-# In the absence of a targetted means of disabling this, use a big hammer:
-DPB_PROPERTIES +=	nojunk
 .elif ${MODPY_PYBUILD:L} != no
-BUILD_DEPENDS +=	devel/py-build${MODPY_FLAVOR} \
-			devel/py-installer${MODPY_FLAVOR}
+BUILD_DEPENDS +=	devel/py-build \
+			devel/py-installer
 .  if ${MODPY_PYBUILD} == flit
-BUILD_DEPENDS +=	devel/py-flit${MODPY_FLAVOR}
+BUILD_DEPENDS +=	devel/py-flit
 .  elif ${MODPY_PYBUILD} == flit_core
-BUILD_DEPENDS +=	devel/py-flit_core${MODPY_FLAVOR}
+BUILD_DEPENDS +=	devel/py-flit_core
 .  elif ${MODPY_PYBUILD} == flit_scm
-BUILD_DEPENDS +=	devel/py-flit_scm${MODPY_FLAVOR}
+BUILD_DEPENDS +=	devel/py-flit_scm
 .  elif ${MODPY_PYBUILD} == hatch-vcs
-BUILD_DEPENDS +=	devel/py-hatch-vcs${MODPY_FLAVOR}
+BUILD_DEPENDS +=	devel/py-hatch-vcs
 .  elif ${MODPY_PYBUILD} == hatchling
-BUILD_DEPENDS +=	devel/py-hatchling${MODPY_FLAVOR}
+BUILD_DEPENDS +=	devel/py-hatchling
 .  elif ${MODPY_PYBUILD} == jupyter_packaging
-BUILD_DEPENDS +=	devel/py-jupyter_packaging${MODPY_FLAVOR}
+BUILD_DEPENDS +=	devel/py-jupyter_packaging
 .  elif ${MODPY_PYBUILD} == maturin
 BUILD_DEPENDS +=	devel/maturin
 .  elif ${MODPY_PYBUILD} == pdm
-BUILD_DEPENDS +=	devel/py-pdm-backend${MODPY_FLAVOR}
+BUILD_DEPENDS +=	devel/py-pdm-backend
 .  elif ${MODPY_PYBUILD} == poetry-core
-BUILD_DEPENDS +=	devel/py-poetry-core${MODPY_FLAVOR}
+BUILD_DEPENDS +=	devel/py-poetry-core
 .  elif ${MODPY_PYBUILD} == setuptools || \
 	${MODPY_PYBUILD} == setuptools_scm || \
 	${MODPY_PYBUILD} == setuptools-rust
-BUILD_DEPENDS +=	devel/py-setuptools${MODPY_FLAVOR} \
-			devel/py-wheel${MODPY_FLAVOR}
+BUILD_DEPENDS +=	devel/py-setuptools \
+			devel/py-wheel
 .    if ${MODPY_PYBUILD} == setuptools_scm
-BUILD_DEPENDS +=	devel/py-setuptools_scm${MODPY_FLAVOR}
+BUILD_DEPENDS +=	devel/py-setuptools_scm
 .    elif ${MODPY_PYBUILD} == setuptools-rust
-BUILD_DEPENDS +=	devel/py-setuptools-rust${MODPY_FLAVOR}
+BUILD_DEPENDS +=	devel/py-setuptools-rust
 .      if ! ${MODULES:Mdevel/cargo}
 MODCARGO_INSTALL ?=	No
 MODCARGO_TEST ?=	No
@@ -209,6 +181,7 @@ ERRORS +=		"Fatal: unknown MODPY_PYBUILD value (flit, flit_core, flit_scm, hatch
 .else
 # Try to detect the case where a port will build regardless of setuptools
 # but the final plist will be different if it's present.
+# XXX probably redundant with py312
 _MODPY_SETUPUTILS_FAKE_DIR =	\
 	${WRKDIR}/lib/python${MODPY_VERSION}/site-packages/setuptools
 _MODPY_PRE_BUILD_STEPS +=	\
@@ -224,14 +197,27 @@ MODPY_SETUPUTILS =	No
 _MODPY_USERBASE =	${WRKDIR}
 .endif
 
+# XXX  If we run into too many problems with setuptools ports and junking
+# XXX  then this can be enabled, however if a "nojunk" port fails to build,
+# XXX  DPB will no longer junk on that node, likely resulting in running
+# XXX  out of disk space in /usr/local. So far it has only happened very
+# XXX  occasionally and a single port failure is easier to clean up, and
+# XXX  setuptools use is decreasing, so trying to avoid this!
+#
+#.if ${MODPY_SETUPTOOLS:L} == "yes" || ${MODPY_PYBUILD:Msetuptools*}
+# Setuptools opportunistically picks up plugins. If it picks one up that
+# uses finalize_distribution_options (usually setuptools_scm), junking
+# that plugin will cause failure at the end of build.
+# In the absence of a targetted means of disabling this, use a big hammer:
+#DPB_PROPERTIES +=	nojunk
+#.endif
+
 .if ${MODPY_PI:L} == "yes"
-_MODPY_EGG_NAME =	${DISTNAME:S/-${MODPY_EGG_VERSION}//}
+_MODPY_EGG_NAME =	${DISTNAME:S/-${MODPY_DISTV}//}
 MODPY_PI_DIR ?=		${DISTNAME:C/^([a-zA-Z0-9]).*/\1/}/${_MODPY_EGG_NAME}
 SITES =			${SITE_PYPI:=${MODPY_PI_DIR}/}
 HOMEPAGE ?=		https://pypi.python.org/pypi/${_MODPY_EGG_NAME}
 .endif
-
-MODPY_TKINTER_DEPENDS =	lang/python/${_MODPY_SUBDIR},-tkinter
 
 MODPY_BIN =		${LOCALBASE}/bin/python${MODPY_VERSION}
 MODPY_INCDIR =		${LOCALBASE}/include/python${MODPY_VERSION}
@@ -286,7 +272,7 @@ TEST_ENV +=	PYTHONPATH=${MODPY_TEST_LIBDIR}:lib:src
 .endif
 
 SUBST_VARS :=	MODPY_PYCACHE MODPY_COMMENT MODPY_ABI3SO MODPY_PYC_MAGIC_TAG \
-		MODPY_BIN MODPY_EGG_VERSION MODPY_VERSION \
+		MODPY_BIN MODPY_DISTV MODPY_VERSION \
 		MODPY_PY_PREFIX MODPY_PYOEXTENSION ${SUBST_VARS}
 
 UPDATE_PLIST_ARGS += -S MODPY_PYOEXTENSION \
@@ -383,12 +369,6 @@ do-install:
       (${MODPY_SETUPUTILS:L} == "yes" || ${MODPY_PYTEST:L} == "yes")
 do-test:
 	@${MODPY_TEST_TARGET}
-.  endif
-
-.  if make(update-plist) || make(plist)
-.    if defined(FLAVORS) && ${FLAVORS:Mpython3} && !${FLAVOR:Mpython3}
-ERRORS += "***\n*** WARNING: running update-plist without FLAVOR=python3\n***\n***"
-.    endif
 .  endif
 
 .endif

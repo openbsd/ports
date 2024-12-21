@@ -1,7 +1,7 @@
 Index: Modules/_ssl.c
 --- Modules/_ssl.c.orig
 +++ Modules/_ssl.c
-@@ -4541,7 +4541,7 @@ set_sni_callback(PySSLContext *self, PyObject *arg, vo
+@@ -4469,7 +4469,7 @@ set_sni_callback(PySSLContext *self, PyObject *arg, vo
      return 0;
  }
  
