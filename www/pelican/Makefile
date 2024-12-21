@@ -1,8 +1,8 @@
 COMMENT =		static site generator written in Python
 
-MODPY_EGG_VERSION =	${GH_TAGNAME}
-DISTNAME =		pelican-${MODPY_EGG_VERSION}
-REVISION =		2
+MODPY_DISTV =	${GH_TAGNAME}
+DISTNAME =		pelican-${MODPY_DISTV}
+REVISION =		3
 
 GH_ACCOUNT =		getpelican
 GH_PROJECT =		pelican
@@ -19,16 +19,16 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		devel/py-blinker${MODPY_FLAVOR} \
-			devel/py-dateutil${MODPY_FLAVOR} \
-			devel/py-rich${MODPY_FLAVOR} \
-			devel/py-tz${MODPY_FLAVOR} \
-			textproc/py-markdown${MODPY_FLAVOR} \
-			textproc/py-docutils${MODPY_FLAVOR} \
-			textproc/py-pygments${MODPY_FLAVOR} \
-			textproc/py-unidecode${MODPY_FLAVOR} \
-			www/py-feedgenerator${MODPY_FLAVOR} \
-			www/py-jinja2${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-blinker \
+			devel/py-dateutil \
+			devel/py-rich \
+			devel/py-tz \
+			textproc/py-markdown \
+			textproc/py-docutils \
+			textproc/py-pygments \
+			textproc/py-unidecode \
+			www/py-feedgenerator \
+			www/py-jinja2
 
 # Else setuptools skips filenames containing UTF8 chars
 MAKE_ENV +=		LC_CTYPE=en_US.UTF-8

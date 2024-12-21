@@ -1,8 +1,9 @@
 COMMENT=	toolkit for generation of output for the web
 
-MODPY_EGG_VERSION= 0.7.9
-DISTNAME=	Genshi-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.7.9
+DISTNAME=	Genshi-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:L}
+REVISION=	0
 
 CATEGORIES=	www
 
@@ -20,9 +21,6 @@ MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 MODPY_PYTEST_ARGS=	genshi/
-
-FLAVOR=		python3
-FLAVORS=	python3
 
 CONFIGURE_ENV=	GENSHI_BUILD_SPEEDUP=1
 

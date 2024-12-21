@@ -1,9 +1,9 @@
 COMMENT =	apertium text translation API in Python
 
-DISTNAME =	apertium-apy-${MODPY_EGG_VERSION}
+DISTNAME =	apertium-apy-${MODPY_DISTV}
 
-MODPY_EGG_VERSION =	0.12.0
-REVISION =		0
+MODPY_DISTV =	0.12.0
+REVISION =		1
 
 CATEGORIES =	www
 
@@ -18,13 +18,13 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 BUILD_DEPENDS =		databases/sqlite3 \
-			www/py-tornado${MODPY_FLAVOR}
+			www/py-tornado
 RUN_DEPENDS =		textproc/apertium-lex-tools \
 			textproc/apertium-streamparser \
-			textproc/py-chardet${MODPY_FLAVOR} \
+			textproc/py-chardet \
 			textproc/vislcg3 \
-			www/py-requests${MODPY_FLAVOR} \
-			www/py-tornado${MODPY_FLAVOR}
+			www/py-requests \
+			www/py-tornado
 
 TEST_ENV =		LC_ALL=en_US.UTF-8
 

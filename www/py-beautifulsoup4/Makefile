@@ -1,9 +1,9 @@
 COMMENT=	HTML/XML parser that supports invalid markup
 
-MODPY_EGG_VERSION=	4.12.3
-DISTNAME=	beautifulsoup4-${MODPY_EGG_VERSION}
+MODPY_DISTV=	4.12.3
+DISTNAME=	beautifulsoup4-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www
 
@@ -14,12 +14,9 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 
-FLAVORS=	python3
-FLAVOR=		python3
-
 MODPY_PYBUILD=	hatchling
 MODPY_PI=	Yes
 
-RUN_DEPENDS=	www/py-soupsieve${MODPY_FLAVOR}
+RUN_DEPENDS=	www/py-soupsieve
 
 .include <bsd.port.mk>

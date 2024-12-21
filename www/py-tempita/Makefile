@@ -1,9 +1,9 @@
 COMMENT =	very small text templating language
 
-MODPY_EGG_VERSION = 0.5.2
-DISTNAME =	Tempita-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.5.2
+DISTNAME =	Tempita-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	10
+REVISION =	11
 
 CATEGORIES =	www
 
@@ -16,12 +16,9 @@ MODPY_PI =	Yes
 
 MODULES =	lang/python
 
-FLAVORS =	python3
-FLAVOR =	python3
-
 MODPY_PYBUILD =	setuptools
 
-TEST_DEPENDS = devel/py-nose${MODPY_FLAVOR}
+TEST_DEPENDS = devel/py-nose
 
 post-patch:
 	cd ${WRKSRC}; 2to3 -w tempita/*py

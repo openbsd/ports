@@ -1,8 +1,9 @@
 COMMENT =		pure-Python HTTP/2 State-Machine based protocol
 
-MODPY_EGG_VERSION =	4.1.0
-DISTNAME =		h2-${MODPY_EGG_VERSION}
+MODPY_DISTV =	4.1.0
+DISTNAME =		h2-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www
 
@@ -13,16 +14,13 @@ MODULES =		lang/python
 
 HOMEPAGE =		https://github.com/python-hyper/h2
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		www/py-hpack${MODPY_FLAVOR} \
-			www/py-hyperframe${MODPY_FLAVOR}
+RUN_DEPENDS =		www/py-hpack \
+			www/py-hyperframe
 
-TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-hypothesis
 
 pre-test:
 	@if ! [ `sysctl -n hw.perfpolicy` = "high" ]; then echo; \

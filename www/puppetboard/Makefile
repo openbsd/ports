@@ -1,9 +1,9 @@
 COMMENT=		web interface to PuppetDB
 
-MODPY_EGG_VERSION=	5.4.0
-DISTNAME=		puppetboard-${MODPY_EGG_VERSION}
+MODPY_DISTV=	5.4.0
+DISTNAME=		puppetboard-${MODPY_DISTV}
 CATEGORIES=		www
-REVISION=		0
+REVISION=		1
 
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 
@@ -17,15 +17,15 @@ NO_BUILD=		Yes
 NO_TEST=		Yes
 PKG_ARCH=		*
 
-RUN_DEPENDS=		databases/py-puppetdb${MODPY_FLAVOR}>=3.2 \
-			devel/py-setuptools${MODPY_FLAVOR} \
-			sysutils/py-packaging${MODPY_FLAVOR} \
-			textproc/py-commonmark${MODPY_FLAVOR} \
-			www/py-flask-apscheduler${MODPY_FLAVOR} \
-			www/py-flask-wtf${MODPY_FLAVOR} \
-			www/py-flask-caching${MODPY_FLAVOR} \
-			www/py-gunicorn${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR}
+RUN_DEPENDS=		databases/py-puppetdb>=3.2 \
+			devel/py-setuptools \
+			sysutils/py-packaging \
+			textproc/py-commonmark \
+			www/py-flask-apscheduler \
+			www/py-flask-wtf \
+			www/py-flask-caching \
+			www/py-gunicorn \
+			www/py-requests
 
 PREFIX=			${LOCALSTATEDIR}/www
 INSTDIR=		${PREFIX}/puppetboard

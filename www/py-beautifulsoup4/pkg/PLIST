@@ -1,11 +1,11 @@
-@pkgpath www/py-beautifulsoup4
-lib/python${MODPY_VERSION}/site-packages/beautifulsoup4-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/beautifulsoup4-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/beautifulsoup4-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/beautifulsoup4-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/beautifulsoup4-${MODPY_EGG_VERSION}.dist-info/licenses/
-lib/python${MODPY_VERSION}/site-packages/beautifulsoup4-${MODPY_EGG_VERSION}.dist-info/licenses/AUTHORS
-lib/python${MODPY_VERSION}/site-packages/beautifulsoup4-${MODPY_EGG_VERSION}.dist-info/licenses/LICENSE
+@pkgpath www/py-beautifulsoup4,python3
+lib/python${MODPY_VERSION}/site-packages/beautifulsoup4-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/beautifulsoup4-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/beautifulsoup4-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/beautifulsoup4-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/beautifulsoup4-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/beautifulsoup4-${MODPY_DISTV}.dist-info/licenses/AUTHORS
+lib/python${MODPY_VERSION}/site-packages/beautifulsoup4-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/bs4/
 lib/python${MODPY_VERSION}/site-packages/bs4/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bs4/${MODPY_PYCACHE}/

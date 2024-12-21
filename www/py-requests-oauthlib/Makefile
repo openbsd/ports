@@ -1,9 +1,9 @@
 COMMENT =		OAuth library support for python-requests
 
-MODPY_EGG_VERSION =	1.3.1
-DISTNAME =		requests-oauthlib-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.3.1
+DISTNAME =		requests-oauthlib-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		www
 
@@ -14,18 +14,15 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-RUN_DEPENDS =		security/py-oauthlib${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR}
+RUN_DEPENDS =		security/py-oauthlib \
+			www/py-requests
 
-TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
-			www/py-requests-mock${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-mock \
+			www/py-requests-mock
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 # the tests make connections to http://httpbin.org
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 pre-test:
 	rm -rf ${WRKSRC}/tests/__pycache__

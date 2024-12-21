@@ -1,9 +1,9 @@
 COMMENT=	Python HTTP client library
 
-MODPY_EGG_VERSION=	0.22.0
-DISTNAME=	httplib2-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.22.0
+DISTNAME=	httplib2-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www net
 
@@ -14,15 +14,12 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 
-RUN_DEPENDS=	devel/py-parsing${MODPY_FLAVOR}
-TEST_DEPENDS=	devel/py-test-cov${MODPY_FLAVOR} \
-		devel/py-test-timeout${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-parsing
+TEST_DEPENDS=	devel/py-test-cov \
+		devel/py-test-timeout
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 post-install:
 	ln -sf /etc/ssl/cert.pem \

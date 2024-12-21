@@ -1,21 +1,18 @@
 COMMENT =	aggregate profiling for wsgi requests
 
-MODPY_EGG_VERSION = 2.3
-DISTNAME =	repoze.profile-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.3
+DISTNAME =	repoze.profile-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME:S/./-/}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	www devel
 
 # BSD-derived
 PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS =	devel/py-pyprof2calltree${MODPY_FLAVOR}
+RUN_DEPENDS =	devel/py-pyprof2calltree
 
 MODULES =	lang/python
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools

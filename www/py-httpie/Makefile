@@ -1,11 +1,12 @@
 COMMENT=	command-line HTTP client
 
 # intentionally no py- prefix (port directory name is wrong)
-MODPY_EGG_VERSION=	3.2.4
-GH_TAGNAME=	${MODPY_EGG_VERSION}
+MODPY_DISTV=	3.2.4
+GH_TAGNAME=	${MODPY_DISTV}
 GH_ACCOUNT=	httpie
 GH_PROJECT=	httpie
-WRKDIST=	${WRKDIR}/cli-${MODPY_EGG_VERSION}
+WRKDIST=	${WRKDIR}/cli-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	www net
 
@@ -18,24 +19,24 @@ MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 
 # tests require network access
-# ignore tests using devel/py-test-lazy-fixture${MODPY_FLAVOR}
+# ignore tests using devel/py-test-lazy-fixture
 # which is broken with newer pytest
 MODPY_PYTEST_ARGS= --ignore tests/test_cookie_on_redirects.py \
 		--ignore tests/test_sessions.py \
 		--ignore tests/test_update_warnings.py
 
-RUN_DEPENDS=	net/py-socks${MODPY_FLAVOR} \
-		textproc/py-charset-normalizer${MODPY_FLAVOR} \
-		textproc/py-defusedxml${MODPY_FLAVOR} \
-		textproc/py-pygments${MODPY_FLAVOR} \
-		www/py-multidict${MODPY_FLAVOR} \
-		www/py-requests${MODPY_FLAVOR} \
-		www/py-requests-toolbelt${MODPY_FLAVOR}
-TEST_DEPENDS=	devel/py-test-httpbin${MODPY_FLAVOR} \
-		devel/py-test-mock${MODPY_FLAVOR} \
-		devel/py-mock${MODPY_FLAVOR} \
-		devel/py-rich${MODPY_FLAVOR} \
-		www/py-responses${MODPY_FLAVOR}
+RUN_DEPENDS=	net/py-socks \
+		textproc/py-charset-normalizer \
+		textproc/py-defusedxml \
+		textproc/py-pygments \
+		www/py-multidict \
+		www/py-requests \
+		www/py-requests-toolbelt
+TEST_DEPENDS=	devel/py-test-httpbin \
+		devel/py-test-mock \
+		devel/py-mock \
+		devel/py-rich \
+		www/py-responses
 PORTHOME=	${WRKSRC}
 
 pre-test:

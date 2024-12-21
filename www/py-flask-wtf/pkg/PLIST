@@ -1,11 +1,11 @@
+@pkgpath www/py-flask-wtf,python3
 @conflict py-flask-wtf-*
-@pkgpath www/py-flask-wtf
-lib/python${MODPY_VERSION}/site-packages/Flask_WTF-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/Flask_WTF-${MODPY_EGG_VERSION}.dist-info/LICENSE.rst
-lib/python${MODPY_VERSION}/site-packages/Flask_WTF-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/Flask_WTF-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/Flask_WTF-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/Flask_WTF-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/Flask_WTF-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/Flask_WTF-${MODPY_DISTV}.dist-info/LICENSE.rst
+lib/python${MODPY_VERSION}/site-packages/Flask_WTF-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/Flask_WTF-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/Flask_WTF-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/Flask_WTF-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/flask_wtf/
 lib/python${MODPY_VERSION}/site-packages/flask_wtf/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/flask_wtf/${MODPY_PYCACHE}/

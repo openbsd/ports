@@ -37,7 +37,7 @@ BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt \
 			lang/wasi-sdk/libcxx \
 			lang/wasi-libc
 # mach uses pkg_resources
-BUILD_DEPENDS +=	devel/py-setuptools${MODPY_FLAVOR}
+BUILD_DEPENDS +=	devel/py-setuptools
 
 # uses pledge()
 WANTLIB += Xrandr Xtst

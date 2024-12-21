@@ -1,9 +1,9 @@
 COMMENT =	CORS handling for flask
 
-MODPY_EGG_VERSION =	3.0.10
-DISTNAME =	Flask-Cors-${MODPY_EGG_VERSION}
+MODPY_DISTV =	3.0.10
+DISTNAME =	Flask-Cors-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	www
 
@@ -16,9 +16,6 @@ MODULES =	lang/python
 MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools
 
-RUN_DEPENDS +=	www/py-flask${MODPY_FLAVOR}
-
-FLAVORS =	python3
-FLAVOR =	python3
+RUN_DEPENDS +=	www/py-flask
 
 .include <bsd.port.mk>

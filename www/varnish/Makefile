@@ -23,8 +23,8 @@ MODULES =		lang/python
 MODPY_RUNDEP =		No
 MODPY_ADJ_FILES =	lib/libvcc/vmodtool.py
 
-BUILD_DEPENDS =		textproc/py-docutils${MODPY_FLAVOR} \
-			textproc/py-sphinx${MODPY_FLAVOR}
+BUILD_DEPENDS =		textproc/py-docutils \
+			textproc/py-sphinx
 LIB_DEPENDS =		devel/pcre2
 
 USE_GMAKE =		Yes

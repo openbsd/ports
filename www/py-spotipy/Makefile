@@ -1,9 +1,10 @@
 COMMENT =		lightweight library for the Spotify Web API
 
-MODPY_EGG_VERSION =	2.24.0
-DISTNAME =		spotipy-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.24.0
+DISTNAME =		spotipy-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		www audio
+REVISION =		0
 
 HOMEPAGE =		https://spotipy.readthedocs.io
 
@@ -16,13 +17,10 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-RUN_DEPENDS =		databases/py-redis${MODPY_FLAVOR}>=3.5.3 \
-			misc/py-memcached${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR}>=2.25.0 \
-			www/py-urllib3${MODPY_FLAVOR}>=1.26.0
+RUN_DEPENDS =		databases/py-redis>=3.5.3 \
+			misc/py-memcached \
+			www/py-requests>=2.25.0 \
+			www/py-urllib3>=1.26.0
 
 NO_TEST =		Yes
 

@@ -1,7 +1,8 @@
 COMMENT =	web outside of browsers
 
-MODPY_EGG_VERSION =	3.7
-DISTNAME =	woob-${MODPY_EGG_VERSION}
+MODPY_DISTV =	3.7
+DISTNAME =	woob-${MODPY_DISTV}
+REVISION =	0
 
 CATEGORIES =	www
 HOMEPAGE =	https://woob.tech/
@@ -11,7 +12,7 @@ MAINTAINER =	Sebastien Marie <semarie@kapouay.eu.org>
 # LGPLv3+
 PERMIT_PACKAGE =	Yes
 
-SITES =		https://gitlab.com/woob/woob/-/archive/${MODPY_EGG_VERSION}/
+SITES =		https://gitlab.com/woob/woob/-/archive/${MODPY_DISTV}/
 
 MODULES =	lang/python
 
@@ -20,30 +21,30 @@ MODPY_PI =	No
 MODPY_PYBUILD =	setuptools
 
 # dependencies from pyproject.toml
-RUN_DEPENDS +=	textproc/py-lxml${MODPY_FLAVOR} \
-		www/py-requests${MODPY_FLAVOR} \
-		devel/py-dateutil${MODPY_FLAVOR} \
-		textproc/py-yaml${MODPY_FLAVOR} \
-		converters/py-html2text${MODPY_FLAVOR} \
-		textproc/py-unidecode${MODPY_FLAVOR} \
-		graphics/py-Pillow${MODPY_FLAVOR} \
-		devel/py-babel${MODPY_FLAVOR} \
-		sysutils/py-packaging${MODPY_FLAVOR} \
-		devel/py-country${MODPY_FLAVOR} \
-		devel/py-rich${MODPY_FLAVOR} \
-		graphics/py-termcolor${MODPY_FLAVOR}
+RUN_DEPENDS +=	textproc/py-lxml \
+		www/py-requests \
+		devel/py-dateutil \
+		textproc/py-yaml \
+		converters/py-html2text \
+		textproc/py-unidecode \
+		graphics/py-Pillow \
+		devel/py-babel \
+		sysutils/py-packaging \
+		devel/py-country \
+		devel/py-rich \
+		graphics/py-termcolor
 
 # unlisted dependencies in woob/ and tools/
 #  (dependencies for some tools, some features, ...)
-RUN_DEPENDS +=	devel/py-colorama${MODPY_FLAVOR} \
-		devel/py-simplejson${MODPY_FLAVOR} \
-		textproc/py-feedparser${MODPY_FLAVOR} \
-		textproc/py-pdfminer${MODPY_FLAVOR} \
-		textproc/py-prettytable${MODPY_FLAVOR} \
-		textproc/py-xlrd${MODPY_FLAVOR} \
-		security/py-josepy${MODPY_FLAVOR} \
-		www/py-jwt${MODPY_FLAVOR} \
-		www/py-selenium${MODPY_FLAVOR}
+RUN_DEPENDS +=	devel/py-colorama \
+		devel/py-simplejson \
+		textproc/py-feedparser \
+		textproc/py-pdfminer \
+		textproc/py-prettytable \
+		textproc/py-xlrd \
+		security/py-josepy \
+		www/py-jwt \
+		www/py-selenium
 
 # executable dependencies (functions check_exec(), find_exe(), subprocess.call())
 RUN_DEPENDS +=	net/curl \
@@ -52,16 +53,16 @@ RUN_DEPENDS +=	net/curl \
 		textproc/mupdf
 
 # dependencies from requirements-dev.txt
-TEST_DEPENDS +=	devel/py-asttokens${MODPY_FLAVOR} \
+TEST_DEPENDS +=	devel/py-asttokens \
 		devel/flake8 \
-		devel/py-test-isort${MODPY_FLAVOR} \
-		devel/py-mock${MODPY_FLAVOR} \
-		textproc/py-prettytable${MODPY_FLAVOR} \
-		devel/py-test${MODPY_FLAVOR} \
+		devel/py-test-isort \
+		devel/py-mock \
+		textproc/py-prettytable \
+		devel/py-test \
 		textproc/sphinx \
-		devel/py-virtualenv${MODPY_FLAVOR} \
+		devel/py-virtualenv \
 		devel/pre-commit \
-		www/py-responses${MODPY_FLAVOR}
+		www/py-responses
 
 # missing
 #  xunitparser

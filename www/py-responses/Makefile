@@ -1,10 +1,10 @@
 COMMENT =		utility library for mocking out the `requests` Python
 
-MODPY_EGG_VERSION =	0.25.0
+MODPY_DISTV =	0.25.0
 
-DISTNAME =		responses-${MODPY_EGG_VERSION}
+DISTNAME =		responses-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
 
@@ -20,20 +20,17 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		textproc/py-yaml${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR} \
-			www/py-urllib3${MODPY_FLAVOR}
+RUN_DEPENDS =		textproc/py-yaml \
+			www/py-requests \
+			www/py-urllib3
 TEST_DEPENDS =		devel/flake8 \
-			devel/py-coverage${MODPY_FLAVOR} \
-			devel/py-mock${MODPY_FLAVOR} \
-			devel/py-mypy${MODPY_FLAVOR} \
-			devel/py-test-asyncio${MODPY_FLAVOR} \
-			devel/py-test-cov${MODPY_FLAVOR} \
-			devel/py-test-httpserver${MODPY_FLAVOR} \
-			textproc/py-tomli${MODPY_FLAVOR} \
-			textproc/py-tomli_w${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR =		python3
+			devel/py-coverage \
+			devel/py-mock \
+			devel/py-mypy \
+			devel/py-test-asyncio \
+			devel/py-test-cov \
+			devel/py-test-httpserver \
+			textproc/py-tomli \
+			textproc/py-tomli_w
 
 .include <bsd.port.mk>

@@ -2,10 +2,11 @@ COMMENT =	CLI program to download videos from YouTube and other sites
 
 VERSION =	2024.12.13
 # on backport keep REVISION above -stable for 7.6 (no cryptodomex in -stable)
-MODPY_EGG_VERSION =	${VERSION:S/.0/./g}
+MODPY_DISTV =	${VERSION:S/.0/./g}
 
 DISTNAME =	yt-dlp-${VERSION}
 DISTFILES =	yt-dlp-${VERSION}{yt-dlp}${EXTRACT_SUFX}
+REVISION =	0
 
 CATEGORIES =	www
 
@@ -24,15 +25,15 @@ MODPY_PYBUILD =	hatchling
 # or functionality. these ones are quite common and either don't
 # pull in a big chain of other ports, or (in the case of ffmpeg)
 # are strongly recommended.
-RUN_DEPENDS =	audio/py-mutagen${MODPY_FLAVOR} \
-		devel/py-certifi${MODPY_FLAVOR} \
+RUN_DEPENDS =	audio/py-mutagen \
+		devel/py-certifi \
 		graphics/ffmpeg \
-		security/py-cryptodomex${MODPY_FLAVOR} \
-		www/py-requests${MODPY_FLAVOR}
+		security/py-cryptodomex \
+		www/py-requests
 
 TEST_DEPENDS +=	devel/flake8 \
-		archivers/py-brotlicffi${MODPY_FLAVOR} \
-		net/py-websockets${MODPY_FLAVOR}
+		archivers/py-brotlicffi \
+		net/py-websockets
 
 WRKDIST =	${WRKDIR}/yt-dlp
 

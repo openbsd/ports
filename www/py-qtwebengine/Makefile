@@ -1,8 +1,9 @@
 COMMENT =	python Qt5WebEngine bindings
 
-MODPY_EGG_VERSION =	5.15.7
-DISTNAME =	PyQtWebEngine-${MODPY_EGG_VERSION}
-PKGNAME =	py-qtwebengine-${MODPY_EGG_VERSION}
+MODPY_DISTV =	5.15.7
+DISTNAME =	PyQtWebEngine-${MODPY_DISTV}
+PKGNAME =	py-qtwebengine-${MODPY_DISTV}
+REVISION =	0
 
 CATEGORIES =	www devel
 
@@ -19,21 +20,18 @@ WANTLIB += m
 MODULES =	lang/python \
 		x11/qt5
 
-FLAVORS =	python3
-FLAVOR =	python3
-
 MODPY_PI =	Yes
 
 LIB_DEPENDS =	x11/qt5/qtwebengine
 
-RUN_DEPENDS =		x11/py-sip-qt5${MODPY_FLAVOR} \
-			devel/py-sip${MODPY_FLAVOR} \
-			x11/py-qt5${MODPY_FLAVOR}
+RUN_DEPENDS =		x11/py-sip-qt5 \
+			devel/py-sip \
+			x11/py-qt5
 
-BUILD_DEPENDS =		x11/py-sip-qt5${MODPY_FLAVOR} \
-			devel/py-sip${MODPY_FLAVOR} \
-			devel/py-qt-builder${MODPY_FLAVOR} \
-			x11/py-qt5${MODPY_FLAVOR}
+BUILD_DEPENDS =		x11/py-sip-qt5 \
+			devel/py-sip \
+			devel/py-qt-builder \
+			x11/py-qt5
 
 QTVER =			qt5
 PYQTVER =		PyQt5

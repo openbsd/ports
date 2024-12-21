@@ -1,9 +1,9 @@
 COMMENT=	web framework for python
 
-MODPY_EGG_VERSION=	0.61
-DISTNAME=	web.py-${MODPY_EGG_VERSION}
-PKGNAME=	py-webpy-${MODPY_EGG_VERSION}
-REVISION=	4
+MODPY_DISTV=	0.61
+DISTNAME=	web.py-${MODPY_DISTV}
+PKGNAME=	py-webpy-${MODPY_DISTV}
+REVISION=	5
 
 CATEGORIES=	www
 
@@ -19,9 +19,6 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD =	setuptools
 
-RUN_DEPENDS=	www/py-cheroot${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+RUN_DEPENDS=	www/py-cheroot
 
 .include <bsd.port.mk>

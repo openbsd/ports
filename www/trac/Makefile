@@ -1,10 +1,10 @@
 COMMENT=	wiki and bug tracking system for software projects
 
-MODPY_EGG_VERSION=1.6
-REVISION=	2
+MODPY_DISTV=1.6
+REVISION=	3
 PORTROACH=	limitw:1,even
-DISTNAME=	Trac-${MODPY_EGG_VERSION:S/post/.post/}
-PKGNAME=	trac-${MODPY_EGG_VERSION:S/post/pl/}
+DISTNAME=	Trac-${MODPY_DISTV:S/post/.post/}
+PKGNAME=	trac-${MODPY_DISTV:S/post/pl/}
 CATEGORIES=	www devel
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
@@ -20,15 +20,15 @@ PERMIT_PACKAGE=   Yes
 
 MODULES=	lang/python
 
-COMMON_DEPS=	devel/py-babel${MODPY_FLAVOR} \
-		textproc/py-MarkupSafe${MODPY_FLAVOR} \
-		www/py-jinja2${MODPY_FLAVOR}
+COMMON_DEPS=	devel/py-babel \
+		textproc/py-MarkupSafe \
+		www/py-jinja2
 
 RUN_DEPENDS=	${COMMON_DEPS} \
 		devel/subversion,-python \
-		devel/py-setuptools${MODPY_FLAVOR} \
-		textproc/py-docutils${MODPY_FLAVOR} \
-		textproc/py-pygments${MODPY_FLAVOR}
+		devel/py-setuptools \
+		textproc/py-docutils \
+		textproc/py-pygments
 
 BUILD_DEPENDS=	${COMMON_DEPS}
 

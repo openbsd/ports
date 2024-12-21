@@ -1,12 +1,12 @@
+@pkgpath www/py-wtforms,python3
 @conflict py-flask-wtk-<0.9.4p0
 @conflict py-wtforms-*
-@pkgpath www/py-wtforms
-lib/python${MODPY_VERSION}/site-packages/WTForms-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/WTForms-${MODPY_EGG_VERSION}.dist-info/LICENSE.rst
-lib/python${MODPY_VERSION}/site-packages/WTForms-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/WTForms-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/WTForms-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/WTForms-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/WTForms-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/WTForms-${MODPY_DISTV}.dist-info/LICENSE.rst
+lib/python${MODPY_VERSION}/site-packages/WTForms-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/WTForms-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/WTForms-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/WTForms-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/wtforms/
 lib/python${MODPY_VERSION}/site-packages/wtforms/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wtforms/${MODPY_PYCACHE}/

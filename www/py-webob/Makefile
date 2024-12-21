@@ -1,9 +1,9 @@
 COMMENT =	wsgi request and response object
 
-MODPY_EGG_VERSION = 1.8.7
-DISTNAME =	WebOb-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.8.7
+DISTNAME =	WebOb-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	www devel
 
@@ -17,15 +17,12 @@ MODULES =	lang/python
 MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools
 
-FLAVORS =	python3
-FLAVOR =	python3
-
 DOCS =		differences.txt do-it-yourself.txt index.txt whatsnew-*.txt \
 		reference.txt
 EXAMPLES =	comment-example.txt file-example.txt jsonrpc-example.txt \
 		wiki-example.txt
 
-TEST_DEPENDS =	www/py-webtest${MODPY_FLAVOR}
+TEST_DEPENDS =	www/py-webtest
 TEST_ENV +=	PYTHONPATH=${WRKSRC}/lib
 
 post-extract:

@@ -1,10 +1,10 @@
 COMMENT=	pythonic, object-oriented web development framework
 
-MODPY_EGG_VERSION=	18.8.0
-DISTNAME=	CherryPy-${MODPY_EGG_VERSION}
+MODPY_DISTV=	18.8.0
+DISTNAME=	CherryPy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	www
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://cherrypy.dev/
 
@@ -23,16 +23,13 @@ MODPY_PYTEST_ARGS=	cherrypy/ \
 		--ignore cherrypy/test/test_wsgi_unix_socket.py \
 		--ignore cherrypy/test/test_auth_basic.py::BasicAuthTest::testBasic
 
-RUN_DEPENDS=	www/py-cheroot${MODPY_FLAVOR}>=8.2.1 \
-		net/py-portend${MODPY_FLAVOR}>=2.1.1 \
-		devel/py-more-itertools${MODPY_FLAVOR} \
-		devel/py-zc-lockfile${MODPY_FLAVOR} \
-		devel/py-jaraco-collections${MODPY_FLAVOR}
-TEST_DEPENDS=	devel/py-path.py${MODPY_FLAVOR} \
-		devel/py-test-cov${MODPY_FLAVOR} \
-		www/py-requests-toolbelt${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+RUN_DEPENDS=	www/py-cheroot>=8.2.1 \
+		net/py-portend>=2.1.1 \
+		devel/py-more-itertools \
+		devel/py-zc-lockfile \
+		devel/py-jaraco-collections
+TEST_DEPENDS=	devel/py-path.py \
+		devel/py-test-cov \
+		www/py-requests-toolbelt
 
 .include <bsd.port.mk>

@@ -1,8 +1,8 @@
 COMMENT=	keyboard-focused browser with a minimal GUI
 
-MODPY_EGG_VERSION=	3.3.1
-REVISION=	0
-DISTNAME=	qutebrowser-${MODPY_EGG_VERSION}
+MODPY_DISTV=	3.3.1
+REVISION=	1
+DISTNAME=	qutebrowser-${MODPY_DISTV}
 
 HOMEPAGE=	https://www.qutebrowser.org/
 
@@ -16,17 +16,17 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		textproc/py-yaml${MODPY_FLAVOR} \
+		textproc/py-yaml \
 		x11/gtk+4,-guic \
-		www/py-jinja2${MODPY_FLAVOR}
+		www/py-jinja2
 
 .if ${MACHINE_ARCH} == amd64 || ${MACHINE_ARCH} == aarch64
-RUN_DEPENDS+=	x11/py-qt6${MODPY_FLAVOR} \
-		www/py-qt6webengine${MODPY_FLAVOR}
+RUN_DEPENDS+=	x11/py-qt6 \
+		www/py-qt6webengine
 WRAPPER=	PyQt6
 .else
-RUN_DEPENDS+=	x11/py-qt5${MODPY_FLAVOR} \
-		www/py-qtwebengine${MODPY_FLAVOR}
+RUN_DEPENDS+=	x11/py-qt5 \
+		www/py-qtwebengine
 WRAPPER=	PyQt5
 .endif
 
@@ -56,7 +56,7 @@ post-install:
 # adblock is rust+python; selectively add the dependency to avoid
 # knocking out qutebrowser where it would otherwise work.
 .if ${PROPERTIES:Mrust}
-RUN_DEPENDS +=		www/py-adblock${MODPY_FLAVOR}
+RUN_DEPENDS +=		www/py-adblock
 .endif
 
 .include <bsd.port.mk>

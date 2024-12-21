@@ -1,9 +1,9 @@
 COMMENT =		helper to test wsgi applications
 
-MODPY_EGG_VERSION =	2.0.35
-DISTNAME =		WebTest-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.0.35
+DISTNAME =		WebTest-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		www devel
 
@@ -18,17 +18,14 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	tests
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
-			www/py-waitress${MODPY_FLAVOR} \
-			www/py-beautifulsoup4${MODPY_FLAVOR} \
-			www/py-webob${MODPY_FLAVOR}>=1.2
+RUN_DEPENDS =		devel/py-six \
+			www/py-waitress \
+			www/py-beautifulsoup4 \
+			www/py-webob>=1.2
 
 # also needs WSGIProxy2 and PasteDeploy
-TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR} \
-			devel/py-mock${MODPY_FLAVOR} \
-			www/py-query${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-coverage \
+			devel/py-mock \
+			www/py-query
 
 .include <bsd.port.mk>

@@ -1,13 +1,13 @@
+@pkgpath www/py-urlgrabber,python3
 @conflict py-urlgrabber-*
-@pkgpath www/py-urlgrabber
 bin/urlgrabber
 lib/python${MODPY_VERSION}/site-packages/urlgrabber/
-lib/python${MODPY_VERSION}/site-packages/urlgrabber-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/urlgrabber-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/urlgrabber-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/urlgrabber-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/urlgrabber-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/urlgrabber-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/urlgrabber-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/urlgrabber-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/urlgrabber-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/urlgrabber-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/urlgrabber-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/urlgrabber-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/urlgrabber/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/urlgrabber/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/urlgrabber/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -25,8 +25,8 @@ lib/python${MODPY_VERSION}/site-packages/urlgrabber/grabber.py
 lib/python${MODPY_VERSION}/site-packages/urlgrabber/mirror.py
 lib/python${MODPY_VERSION}/site-packages/urlgrabber/progress.py
 libexec/urlgrabber-ext-down
-share/doc/urlgrabber-${MODPY_EGG_VERSION}/
-share/doc/urlgrabber-${MODPY_EGG_VERSION}/ChangeLog
-share/doc/urlgrabber-${MODPY_EGG_VERSION}/LICENSE
-share/doc/urlgrabber-${MODPY_EGG_VERSION}/README
-share/doc/urlgrabber-${MODPY_EGG_VERSION}/TODO
+share/doc/urlgrabber-${MODPY_DISTV}/
+share/doc/urlgrabber-${MODPY_DISTV}/ChangeLog
+share/doc/urlgrabber-${MODPY_DISTV}/LICENSE
+share/doc/urlgrabber-${MODPY_DISTV}/README
+share/doc/urlgrabber-${MODPY_DISTV}/TODO

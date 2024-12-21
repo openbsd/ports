@@ -1,9 +1,9 @@
 COMMENT =	extract swagger specs from your flask project
 
-MODPY_EGG_VERSION =	0.9.7.1
-DISTNAME =		flasgger-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.9.7.1
+DISTNAME =		flasgger-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
 
@@ -19,14 +19,11 @@ MODPY_PYBUILD =		setuptools
 # XXX: needs import of flex
 MODPY_PYTEST_ARGS =	--ignore tests/test_examples.py tests
 
-RUN_DEPENDS =		devel/py-jsonschema${MODPY_FLAVOR} \
-			devel/py-six${MODPY_FLAVOR} \
-			sysutils/py-packaging${MODPY_FLAVOR} \
-			textproc/py-mistune${MODPY_FLAVOR} \
-			textproc/py-yaml${MODPY_FLAVOR} \
-			www/py-flask${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR =		python3
+RUN_DEPENDS =		devel/py-jsonschema \
+			devel/py-six \
+			sysutils/py-packaging \
+			textproc/py-mistune \
+			textproc/py-yaml \
+			www/py-flask
 
 .include <bsd.port.mk>

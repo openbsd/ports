@@ -1,12 +1,12 @@
-@pkgpath www/py-requests-toolbelt
+@pkgpath www/py-requests-toolbelt,python3
 lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/
-lib/python${MODPY_VERSION}/site-packages/requests_toolbelt-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/requests_toolbelt-${MODPY_EGG_VERSION}.dist-info/AUTHORS.rst
-lib/python${MODPY_VERSION}/site-packages/requests_toolbelt-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/requests_toolbelt-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/requests_toolbelt-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/requests_toolbelt-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/requests_toolbelt-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/requests_toolbelt-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/requests_toolbelt-${MODPY_DISTV}.dist-info/AUTHORS.rst
+lib/python${MODPY_VERSION}/site-packages/requests_toolbelt-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/requests_toolbelt-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/requests_toolbelt-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/requests_toolbelt-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/requests_toolbelt-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/requests_toolbelt/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -1,9 +1,9 @@
 COMMENT =		oauthlib for aiohttp clients
 
-MODPY_EGG_VERSION =	0.1.0
-DISTNAME =		aiohttp-oauthlib-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.1.0
+DISTNAME =		aiohttp-oauthlib-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
 
@@ -11,14 +11,12 @@ CATEGORIES =		www
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-FLAVOR =		python3
-FLAVORS =		python3
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
 NO_TEST =		Yes
 
-RUN_DEPENDS =		security/py-oauthlib${MODPY_FLAVOR} \
-			www/py-aiohttp${MODPY_FLAVOR}
+RUN_DEPENDS =		security/py-oauthlib \
+			www/py-aiohttp
 
 .include <bsd.port.mk>

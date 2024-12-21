@@ -1,8 +1,9 @@
 COMMENT =	python and cli interface to archive.org
 
-MODPY_EGG_VERSION =	4.0.1
+MODPY_DISTV =	4.0.1
 
-DISTNAME =	internetarchive-${MODPY_EGG_VERSION}
+DISTNAME =	internetarchive-${MODPY_DISTV}
+REVISION =	0
 
 DIST_TUPLE +=	github jjjake internetarchive v4.0.1 .
 
@@ -17,14 +18,14 @@ MODULES =		lang/python
 
 MODPY_PYBUILD =	setuptools
 
-RUN_DEPENDS =		devel/py-docopt${MODPY_FLAVOR} \
-			devel/py-schema${MODPY_FLAVOR} \
-			devel/py-tqdm${MODPY_FLAVOR} \
-			textproc/py-charset-normalizer${MODPY_FLAVOR} \
-			textproc/py-jsonpatch${MODPY_FLAVOR} \
-			www/py-urllib3${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-docopt \
+			devel/py-schema \
+			devel/py-tqdm \
+			textproc/py-charset-normalizer \
+			textproc/py-jsonpatch \
+			www/py-urllib3
 TEST_DEPENDS =		${RUN_DEPENDS} \
 			www/internetarchive \
-			www/py-responses${MODPY_FLAVOR}
+			www/py-responses
 
 .include <bsd.port.mk>

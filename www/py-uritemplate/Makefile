@@ -1,9 +1,9 @@
 COMMENT =	URI templates
 
-MODPY_EGG_VERSION = 4.1.1
-DISTNAME =	uritemplate-${MODPY_EGG_VERSION}
+MODPY_DISTV =	4.1.1
+DISTNAME =	uritemplate-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	www
 
@@ -16,9 +16,6 @@ MODULES =	lang/python
 MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools
 
-FLAVORS =	python3
-FLAVOR =	python3
-
-RUN_DEPENDS =	www/py-requests${MODPY_FLAVOR}
+RUN_DEPENDS =	www/py-requests
 
 .include <bsd.port.mk>

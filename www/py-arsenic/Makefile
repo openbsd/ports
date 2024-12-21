@@ -1,9 +1,10 @@
 COMMENT =		asynchronous WebDriver client
 
-MODPY_EGG_VERSION =	21.8
+MODPY_DISTV =	21.8
 
-DISTNAME =		arsenic-${MODPY_EGG_VERSION}
+DISTNAME =		arsenic-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www
 
@@ -14,14 +15,11 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		poetry-core
 
-RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR} \
-			devel/py-structlog${MODPY_FLAVOR} \
-			www/py-aiohttp${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-attrs \
+			devel/py-structlog \
+			www/py-aiohttp
 
 .include <bsd.port.mk>

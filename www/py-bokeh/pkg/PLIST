@@ -1,14 +1,14 @@
+@pkgpath www/py-bokeh,python3
 @conflict py-bokeh-*
-@pkgpath www/py-bokeh
 bin/bokeh
 lib/python${MODPY_VERSION}/site-packages/bokeh/
-lib/python${MODPY_VERSION}/site-packages/bokeh-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/bokeh-${MODPY_EGG_VERSION}.dist-info/LICENSE.txt
-lib/python${MODPY_VERSION}/site-packages/bokeh-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/bokeh-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/bokeh-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/bokeh-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/bokeh-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/bokeh-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/bokeh-${MODPY_DISTV}.dist-info/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/bokeh-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/bokeh-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/bokeh-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/bokeh-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/bokeh-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/bokeh/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/bokeh/__init__.py
 lib/python${MODPY_VERSION}/site-packages/bokeh/__main__.py
@@ -117,7 +117,7 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/_sri/3.3.0.json
 lib/python${MODPY_VERSION}/site-packages/bokeh/_sri/3.4.0.json
 lib/python${MODPY_VERSION}/site-packages/bokeh/_sri/3.5.0.json
 lib/python${MODPY_VERSION}/site-packages/bokeh/_sri/3.6.0.json
-lib/python${MODPY_VERSION}/site-packages/bokeh/_sri/${MODPY_EGG_VERSION}.json
+lib/python${MODPY_VERSION}/site-packages/bokeh/_sri/${MODPY_DISTV}.json
 lib/python${MODPY_VERSION}/site-packages/bokeh/application/
 lib/python${MODPY_VERSION}/site-packages/bokeh/application/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bokeh/application/${MODPY_PYCACHE}/

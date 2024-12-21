@@ -1,9 +1,9 @@
-MODPY_EGG_VERSION =	1.5.2
+MODPY_DISTV =	1.5.2
 COMMENT =	mock out responses from py-requests
-DISTNAME =	requests-mock-${MODPY_EGG_VERSION}
+DISTNAME =	requests-mock-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	www
-REVISION =	7
+REVISION =	8
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
@@ -14,14 +14,11 @@ MODULES =	lang/python
 MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools
 
-FLAVORS =	python3
-FLAVOR =	python3
+BUILD_DEPENDS =	devel/py-pbr
+RUN_DEPENDS =	devel/py-six \
+		www/py-requests
 
-BUILD_DEPENDS =	devel/py-pbr${MODPY_FLAVOR}
-RUN_DEPENDS =	devel/py-six${MODPY_FLAVOR} \
-		www/py-requests${MODPY_FLAVOR}
-
-#TEST_DEPENDS =	devel/py-testtools${MODPY_FLAVOR}
+#TEST_DEPENDS =	devel/py-testtools
 
 # Requires py-testrepository
 NO_TEST =	Yes

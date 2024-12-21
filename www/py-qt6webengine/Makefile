@@ -1,8 +1,9 @@
 COMMENT =	python Qt6WebEngine bindings
 
-MODPY_EGG_VERSION =	6.7.0
-DISTNAME =	PyQt6_WebEngine-${MODPY_EGG_VERSION}
-PKGNAME =	py-qt6webengine-${MODPY_EGG_VERSION}
+MODPY_DISTV =	6.7.0
+DISTNAME =	PyQt6_WebEngine-${MODPY_DISTV}
+PKGNAME =	py-qt6webengine-${MODPY_DISTV}
+REVISION =	0
 
 CATEGORIES =	www devel
 
@@ -19,22 +20,19 @@ WANTLIB += Qt6WebEngineQuick Qt6WebEngineWidgets Qt6Widgets m
 MODULES =	lang/python \
 		x11/qt6
 
-FLAVORS =	python3
-FLAVOR =	python3
-
 MODPY_PI =	Yes
 MODPY_PI_DIR =	P/PyQt6-WebEngine
 
 LIB_DEPENDS =		x11/qt6/qtwebengine
 
-RUN_DEPENDS =		x11/py-sip-qt6${MODPY_FLAVOR} \
-			devel/py-sip${MODPY_FLAVOR} \
-			x11/py-qt6${MODPY_FLAVOR}
+RUN_DEPENDS =		x11/py-sip-qt6 \
+			devel/py-sip \
+			x11/py-qt6
 
-BUILD_DEPENDS =		x11/py-sip-qt6${MODPY_FLAVOR} \
-			devel/py-sip${MODPY_FLAVOR} \
-			devel/py-qt-builder${MODPY_FLAVOR} \
-			x11/py-qt6${MODPY_FLAVOR}
+BUILD_DEPENDS =		x11/py-sip-qt6 \
+			devel/py-sip \
+			devel/py-qt-builder \
+			x11/py-qt6
 
 QTVER =			qt6
 PYQTVER =		PyQt6

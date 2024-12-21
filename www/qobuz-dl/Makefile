@@ -1,8 +1,9 @@
 COMMENT =		music downloader for Qobuz
 
-MODPY_EGG_VERSION =	0.9.9.10
+MODPY_DISTV =	0.9.9.10
 
-DISTNAME =		qobuz-dl-${MODPY_EGG_VERSION}
+DISTNAME =		qobuz-dl-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		www audio
 
@@ -16,13 +17,13 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		audio/py-mutagen${MODPY_FLAVOR} \
-			devel/py-colorama${MODPY_FLAVOR} \
-			devel/py-pathvalidate${MODPY_FLAVOR} \
-			devel/py-pick${MODPY_FLAVOR} \
-			devel/py-tqdm${MODPY_FLAVOR} \
-			www/py-beautifulsoup4${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR}
+RUN_DEPENDS =		audio/py-mutagen \
+			devel/py-colorama \
+			devel/py-pathvalidate \
+			devel/py-pick \
+			devel/py-tqdm \
+			www/py-beautifulsoup4 \
+			www/py-requests
 
 # tests don't exist
 NO_TEST =		Yes

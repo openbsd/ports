@@ -1,10 +1,10 @@
 COMMENT=	WSDL parsing services package for Python
 
-MODPY_EGG_VERSION=	0.4.8
-DISTNAME=	wstools-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.4.8
+DISTNAME=	wstools-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	www
-REVISION=	7
+REVISION=	8
 
 # BSD
 PERMIT_PACKAGE=	Yes
@@ -14,14 +14,11 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-BUILD_DEPENDS=	devel/py-pbr${MODPY_FLAVOR} \
-		devel/py-six${MODPY_FLAVOR} \
-		devel/py-test-runner${MODPY_FLAVOR}
-RUN_DEPENDS=	devel/py-pbr${MODPY_FLAVOR} \
-		devel/py-six${MODPY_FLAVOR}
-TEST_DEPENDS=	devel/py-test-runner${MODPY_FLAVOR}
+BUILD_DEPENDS=	devel/py-pbr \
+		devel/py-six \
+		devel/py-test-runner
+RUN_DEPENDS=	devel/py-pbr \
+		devel/py-six
+TEST_DEPENDS=	devel/py-test-runner
 
 .include <bsd.port.mk>

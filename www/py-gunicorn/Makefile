@@ -1,10 +1,10 @@
 COMMENT =		Python WSGI HTTP server
 
-MODPY_EGG_VERSION =	20.0.4
-DISTNAME =		gunicorn-${MODPY_EGG_VERSION}
+MODPY_DISTV =	20.0.4
+DISTNAME =		gunicorn-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		www
-REVISION =		5
+REVISION =		6
 
 HOMEPAGE =		https://gunicorn.org/
 
@@ -15,15 +15,12 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
+RUN_DEPENDS =		www/py-multidict \
+			www/py-aiohttp
 
-RUN_DEPENDS =		www/py-multidict${MODPY_FLAVOR} \
-			www/py-aiohttp${MODPY_FLAVOR}
-
-TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR} \
-			devel/py-test${MODPY_FLAVOR} \
-			devel/py-test-cov${MODPY_FLAVOR} \
-			${BASE_PKGPATH}=${MODPY_EGG_VERSION}
+TEST_DEPENDS =		devel/py-coverage \
+			devel/py-test \
+			devel/py-test-cov \
+			${BASE_PKGPATH}=${MODPY_DISTV}
 
 .include <bsd.port.mk>

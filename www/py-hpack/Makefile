@@ -1,8 +1,9 @@
 COMMENT =		pure-Python HTTP/2 Header Encoding
 
-MODPY_EGG_VERSION =	4.0.0
-DISTNAME =		hpack-${MODPY_EGG_VERSION}
+MODPY_DISTV =	4.0.0
+DISTNAME =		hpack-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www
 
@@ -12,9 +13,6 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 HOMEPAGE =		https://github.com/python-hyper/hpack
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools

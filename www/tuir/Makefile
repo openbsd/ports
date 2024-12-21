@@ -1,9 +1,9 @@
 COMMENT =		terminal UI for Reddit
 
-MODPY_EGG_VERSION =	1.29.0
+MODPY_DISTV =	1.29.0
 
-DISTNAME =		tuir-${MODPY_EGG_VERSION}
-REVISION =		6
+DISTNAME =		tuir-${MODPY_DISTV}
+REVISION =		7
 
 CATEGORIES =		www
 
@@ -16,16 +16,16 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		devel/py-decorator${MODPY_FLAVOR} \
-			devel/py-kitchen${MODPY_FLAVOR} \
-			devel/py-six${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR}>=2.4.0 \
-			www/py-beautifulsoup4${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-decorator \
+			devel/py-kitchen \
+			devel/py-six \
+			www/py-requests>=2.4.0 \
+			www/py-beautifulsoup4
 
-TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR} \
-			devel/py-coveralls${MODPY_FLAVOR} \
-			devel/py-mock${MODPY_FLAVOR} \
-			devel/pylint${MODPY_FLAVOR} \
-			www/py-vcrpy${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-coverage \
+			devel/py-coveralls \
+			devel/py-mock \
+			devel/pylint \
+			www/py-vcrpy
 
 .include <bsd.port.mk>

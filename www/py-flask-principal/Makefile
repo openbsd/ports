@@ -1,9 +1,9 @@
 COMMENT =		identity management for flask
 
-MODPY_EGG_VERSION =	0.4.0
-DISTNAME =		Flask-Principal-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.4.0
+DISTNAME =		Flask-Principal-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		7
+REVISION =		8
 
 CATEGORIES =		www
 
@@ -14,12 +14,9 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR  =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		www/py-flask${MODPY_FLAVOR}
+RUN_DEPENDS =		www/py-flask
 
 .include <bsd.port.mk>

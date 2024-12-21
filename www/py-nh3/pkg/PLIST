@@ -1,12 +1,13 @@
+@pkgpath www/py-nh3,python3
 @so lib/libnh3.so
 lib/python${MODPY_VERSION}/site-packages/nh3/
-lib/python${MODPY_VERSION}/site-packages/nh3-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/nh3-${MODPY_EGG_VERSION}.dist-info/INSTALLER
-lib/python${MODPY_VERSION}/site-packages/nh3-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/nh3-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/nh3-${MODPY_EGG_VERSION}.dist-info/REQUESTED
-lib/python${MODPY_VERSION}/site-packages/nh3-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/nh3-${MODPY_EGG_VERSION}.dist-info/direct_url.json
+lib/python${MODPY_VERSION}/site-packages/nh3-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/nh3-${MODPY_DISTV}.dist-info/INSTALLER
+lib/python${MODPY_VERSION}/site-packages/nh3-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/nh3-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/nh3-${MODPY_DISTV}.dist-info/REQUESTED
+lib/python${MODPY_VERSION}/site-packages/nh3-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/nh3-${MODPY_DISTV}.dist-info/direct_url.json
 lib/python${MODPY_VERSION}/site-packages/nh3/__init__.py
 lib/python${MODPY_VERSION}/site-packages/nh3/__init__.pyi
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nh3/${MODPY_PYCACHE}/

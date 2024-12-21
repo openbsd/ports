@@ -1,8 +1,9 @@
 COMMENT=	modern CSS selector implementation for Beautiful Soup
 
-MODPY_EGG_VERSION=	2.6
-DISTNAME=	soupsieve-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.6
+DISTNAME=	soupsieve-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 EPOCH=		0
 
@@ -18,13 +19,10 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	hatchling
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-TEST_DEPENDS=	devel/py-coverage${MODPY_FLAVOR} \
-		devel/py-html5lib${MODPY_FLAVOR} \
-		devel/py-test-cov${MODPY_FLAVOR} \
-		textproc/py-lxml${MODPY_FLAVOR} \
-		www/py-beautifulsoup4${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-coverage \
+		devel/py-html5lib \
+		devel/py-test-cov \
+		textproc/py-lxml \
+		www/py-beautifulsoup4
 
 .include <bsd.port.mk>

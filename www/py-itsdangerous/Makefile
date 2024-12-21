@@ -1,8 +1,9 @@
 COMMENT=	helpers to pass trusted data to untrusted environments
 
-MODPY_EGG_VERSION= 2.2.0
-DISTNAME=	itsdangerous-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.2.0
+DISTNAME=	itsdangerous-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	www devel
 
@@ -17,9 +18,6 @@ MODULES=	lang/python
 
 MODPY_PYBUILD=	flit_core
 
-TEST_DEPENDS=	devel/py-freezegun${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+TEST_DEPENDS=	devel/py-freezegun
 
 .include <bsd.port.mk>

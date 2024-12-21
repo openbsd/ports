@@ -1,8 +1,9 @@
 COMMENT =		streaming multipart parser for Python
 
-MODPY_EGG_VERSION =	0.0.17
-DISTNAME =		python_multipart-${MODPY_EGG_VERSION}
-PKGNAME =		py-multipart-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.0.17
+DISTNAME =		python_multipart-${MODPY_DISTV}
+PKGNAME =		py-multipart-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		www
 
@@ -16,7 +17,5 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PYBUILD =		hatchling
 MODPY_PI =		Yes
-FLAVORS =		python3
-FLAVOR =		python3
 
 .include <bsd.port.mk>

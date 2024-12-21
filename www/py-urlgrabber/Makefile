@@ -1,9 +1,9 @@
 COMMENT =		high-level cross-protocol url-grabber
 
-MODPY_EGG_VERSION =	4.1.0
-DISTNAME =		urlgrabber-${MODPY_EGG_VERSION}
-PKGNAME =		py-urlgrabber-${MODPY_EGG_VERSION}
-REVISION =		3
+MODPY_DISTV =	4.1.0
+DISTNAME =		urlgrabber-${MODPY_DISTV}
+PKGNAME =		py-urlgrabber-${MODPY_DISTV}
+REVISION =		4
 
 CATEGORIES =		www
 
@@ -15,10 +15,7 @@ MODPY_PI =		Yes
 MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		net/py-curl${MODPY_FLAVOR}
+RUN_DEPENDS =		net/py-curl
 
 .include <bsd.port.mk>

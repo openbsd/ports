@@ -1,8 +1,8 @@
 COMMENT=	allow connecting with Happy Eyeballs (RFC 8305)
 
-MODPY_EGG_VERSION=	2.4.4
-REVISION=	0
-DISTNAME=	aiohappyeyeballs-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.4.4
+REVISION=	1
+DISTNAME=	aiohappyeyeballs-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
 HOMEPAGE=	https://github.com/aio-libs/aiohappyeyeballs
@@ -13,13 +13,11 @@ CATEGORIES=	www
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-FLAVOR=		python3
-FLAVORS=	python3
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	poetry-core
 
-TEST_DEPENDS=	devel/py-test-asyncio${MODPY_FLAVOR} \
-		devel/py-test-cov${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-test-asyncio \
+		devel/py-test-cov
 
 .include <bsd.port.mk>

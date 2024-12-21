@@ -1,9 +1,9 @@
 COMMENT =		html/xml templating engine
 
-MODPY_EGG_VERSION =	2.0.1
-DISTNAME =		meld3-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.0.1
+DISTNAME =		meld3-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		www textproc
 
@@ -15,9 +15,6 @@ PERMIT_PACKAGE =	Yes
 MODPY_PI =		Yes
 
 MODULES =		lang/python
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 MODPY_PYBUILD =		setuptools
 

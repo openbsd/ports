@@ -1,9 +1,9 @@
 COMMENT =		python wrapper for the Mastodon API
 
-MODPY_EGG_VERSION =	1.5.1
-DISTNAME =		Mastodon.py-${MODPY_EGG_VERSION}
-PKGNAME =		py-mastodon.py-${MODPY_EGG_VERSION}
-REVISION =		4
+MODPY_DISTV =	1.5.1
+DISTNAME =		Mastodon.py-${MODPY_DISTV}
+PKGNAME =		py-mastodon.py-${MODPY_DISTV}
+REVISION =		5
 
 CATEGORIES =		www
 
@@ -18,26 +18,23 @@ MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
 
-FLAVORS =		python3
-FLAVOR =		python3
+BUILD_DEPENDS =		devel/py-test-runner
 
-BUILD_DEPENDS =		devel/py-test-runner${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-dateutil \
+			devel/py-decorator \
+			devel/py-magic \
+			devel/py-six \
+			devel/py-tz \
+			graphics/py-blurhash \
+			security/py-cryptography \
+			www/py-http_ece \
+			www/py-requests
 
-RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR} \
-			devel/py-decorator${MODPY_FLAVOR} \
-			devel/py-magic${MODPY_FLAVOR} \
-			devel/py-six${MODPY_FLAVOR} \
-			devel/py-tz${MODPY_FLAVOR} \
-			graphics/py-blurhash${MODPY_FLAVOR} \
-			security/py-cryptography${MODPY_FLAVOR} \
-			www/py-http_ece${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR}
-
-TEST_DEPENDS =		devel/py-test-cov${MODPY_FLAVOR} \
-			devel/py-test-mock${MODPY_FLAVOR} \
-			devel/py-test-runner${MODPY_FLAVOR} \
-			devel/py-test-vcr${MODPY_FLAVOR} \
-			www/py-requests-mock${MODPY_FLAVOR} \
-			www/py-vcrpy${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-test-cov \
+			devel/py-test-mock \
+			devel/py-test-runner \
+			devel/py-test-vcr \
+			www/py-requests-mock \
+			www/py-vcrpy
 
 .include <bsd.port.mk>

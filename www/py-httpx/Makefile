@@ -1,9 +1,9 @@
 COMMENT =		fully featured HTTP client library
 
-MODPY_EGG_VERSION =	0.27.0
-DISTNAME =		httpx-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.27.0
+DISTNAME =		httpx-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
 
@@ -16,20 +16,17 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		hatchling
 
-BUILD_DEPENDS =		devel/py-hatch-fancy-pypi-readme${MODPY_FLAVOR}
+BUILD_DEPENDS =		devel/py-hatch-fancy-pypi-readme
 
-RUN_DEPENDS =		devel/py-certifi${MODPY_FLAVOR} \
-			devel/py-sniffio${MODPY_FLAVOR} \
-			net/py-anyio${MODPY_FLAVOR} \
-			net/py-idna${MODPY_FLAVOR} \
-			www/py-httpcore${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-certifi \
+			devel/py-sniffio \
+			net/py-anyio \
+			net/py-idna \
+			www/py-httpcore
 # needs uvicorn
-TEST_DEPENDS =		security/py-trustme${MODPY_FLAVOR}
+TEST_DEPENDS =		security/py-trustme
 
 .include <bsd.port.mk>

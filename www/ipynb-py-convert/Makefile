@@ -1,10 +1,10 @@
 COMMENT =	convert .py files to jupyter .ipynb notebooks and vice versa
 
-MODPY_EGG_VERSION =	0.4.5
-DISTNAME =	ipynb-py-convert-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.4.5
+DISTNAME =	ipynb-py-convert-${MODPY_DISTV}
 CATEGORIES =	www devel
 HOMEPAGE =	https://github.com/kiwi0fruit/ipynb-py-convert
-REVISION =	5
+REVISION =	6
 
 # MIT
 PERMIT_PACKAGE =	Yes

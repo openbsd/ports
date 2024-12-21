@@ -1,9 +1,9 @@
 COMMENT =		terminals served to term.js using Tornado websockets
 
-MODPY_EGG_VERSION =	0.16.0
-DISTNAME =		terminado-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.16.0
+DISTNAME =		terminado-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		www
 
@@ -19,10 +19,7 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		hatchling
 #MODPY_PYTEST_ARGS =	terminado
 
-RUN_DEPENDS +=		devel/py-ptyprocess${MODPY_FLAVOR} \
-			www/py-tornado${MODPY_FLAVOR}>=4
-
-FLAVORS =		python3
-FLAVOR =		python3
+RUN_DEPENDS +=		devel/py-ptyprocess \
+			www/py-tornado>=4
 
 .include <bsd.port.mk>

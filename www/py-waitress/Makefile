@@ -1,9 +1,9 @@
 COMMENT =		pure-Python WSGI server
 
-MODPY_EGG_VERSION =	2.1.2
-DISTNAME =		waitress-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.1.2
+DISTNAME =		waitress-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
 
@@ -12,16 +12,13 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-BUILD_DEPENDS =		textproc/py-sphinx${MODPY_FLAVOR}
+BUILD_DEPENDS =		textproc/py-sphinx
 
 TEST_ENV +=		PYTHONPATH=${WRKSRC}/src/
 
-TEST_DEPENDS =		devel/py-test-cov${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-test-cov
 
 .include <bsd.port.mk>

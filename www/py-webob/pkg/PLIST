@@ -1,12 +1,12 @@
+@pkgpath www/py-webob,python3
 @conflict py-webob-*
-@pkgpath www/py-webob
-lib/python${MODPY_VERSION}/site-packages/WebOb-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/WebOb-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/WebOb-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/WebOb-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/WebOb-${MODPY_EGG_VERSION}.dist-info/license.txt
-lib/python${MODPY_VERSION}/site-packages/WebOb-${MODPY_EGG_VERSION}.dist-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/WebOb-${MODPY_EGG_VERSION}.dist-info/zip-safe
+lib/python${MODPY_VERSION}/site-packages/WebOb-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/WebOb-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/WebOb-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/WebOb-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/WebOb-${MODPY_DISTV}.dist-info/license.txt
+lib/python${MODPY_VERSION}/site-packages/WebOb-${MODPY_DISTV}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/WebOb-${MODPY_DISTV}.dist-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/webob/
 lib/python${MODPY_VERSION}/site-packages/webob/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/webob/${MODPY_PYCACHE}/

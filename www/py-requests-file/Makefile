@@ -1,10 +1,10 @@
 COMMENT =	file transport adapter for requests
 
-MODPY_EGG_VERSION =	1.5.1
+MODPY_DISTV =	1.5.1
 
-DISTNAME =	requests-file-${MODPY_EGG_VERSION}
+DISTNAME =	requests-file-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	www
 
@@ -20,11 +20,8 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVOR =		python3
-FLAVORS =		python3
+RUN_DEPENDS =		www/py-requests
 
-RUN_DEPENDS =		www/py-requests${MODPY_FLAVOR}
-
-TEST_DEPENDS =		www/py-requests${MODPY_FLAVOR}
+TEST_DEPENDS =		www/py-requests
 
 .include <bsd.port.mk>

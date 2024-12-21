@@ -77,7 +77,7 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		sysutils/flock \
 		sysutils/pciutils \
 		devel/ninja \
-		x11/py-xcbgen${MODPY_FLAVOR} \
+		x11/py-xcbgen \
 		x11/qt5/qtbase,-main \
 		${MODGCC4_CPPDEP} \
 		${RUN_DEPENDS}

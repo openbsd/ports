@@ -1,7 +1,7 @@
 COMMENT =		Python bindings for the ammonia html sanitizer
 
-MODPY_EGG_VERSION =	0.2.12
-DISTNAME =		nh3-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.2.12
+DISTNAME =		nh3-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		www
@@ -14,9 +14,6 @@ WANTLIB += ${MODCARGO_WANTLIB}
 MODULES =		devel/cargo \
 			lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		maturin
 
@@ -24,7 +21,7 @@ MODCARGO_CARGO_BIN =	maturin
 CONFIGURE_STYLE =	cargo
 
 BUILD_DEPENDS =		devel/maturin \
-			devel/py-pip${MODPY_FLAVOR}
+			devel/py-pip
 
 do-build:
 	${MODCARGO_CARGO_RUN} build \

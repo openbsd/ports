@@ -1,9 +1,9 @@
 COMMENT =		jquery-like library for python
 
-MODPY_EGG_VERSION =	1.4.3
-DISTNAME =		pyquery-${MODPY_EGG_VERSION}
-PKGNAME =		py-query-${MODPY_EGG_VERSION}
-REVISION =		4
+MODPY_DISTV =	1.4.3
+DISTNAME =		pyquery-${MODPY_DISTV}
+PKGNAME =		py-query-${MODPY_DISTV}
+REVISION =		5
 
 CATEGORIES =		www
 
@@ -19,11 +19,8 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		textproc/py-cssselect${MODPY_FLAVOR} \
-			textproc/py-lxml${MODPY_FLAVOR}
-TEST_DEPENDS =		www/py-webtest${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR =		python3
+RUN_DEPENDS =		textproc/py-cssselect \
+			textproc/py-lxml
+TEST_DEPENDS =		www/py-webtest
 
 .include <bsd.port.mk>

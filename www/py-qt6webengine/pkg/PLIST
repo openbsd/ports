@@ -1,3 +1,4 @@
+@pkgpath www/py-qt6webengine,python3
 @so lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/QtWebEngineCore${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/QtWebEngineQuick${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/QtWebEngineWidgets${MODPY_ABI3SO}.so
@@ -44,7 +45,7 @@ lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineWidgets/
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineWidgets/QtWebEngineWidgets.toml
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineWidgets/QtWebEngineWidgetsmod.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineWidgets/qwebengineview.sip
-lib/python${MODPY_VERSION}/site-packages/${PYQTVER}_WebEngine-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/${PYQTVER}_WebEngine-${MODPY_EGG_VERSION}.dist-info/INSTALLER
-lib/python${MODPY_VERSION}/site-packages/${PYQTVER}_WebEngine-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/${PYQTVER}_WebEngine-${MODPY_EGG_VERSION}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}_WebEngine-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}_WebEngine-${MODPY_DISTV}.dist-info/INSTALLER
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}_WebEngine-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}_WebEngine-${MODPY_DISTV}.dist-info/RECORD

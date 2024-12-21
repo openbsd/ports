@@ -1,12 +1,12 @@
+@pkgpath www/py-responses,python3
 @conflict py-responses-<0.12.0
-@pkgpath www/py-responses
 lib/python${MODPY_VERSION}/site-packages/responses/
-lib/python${MODPY_VERSION}/site-packages/responses-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/responses-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/responses-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/responses-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/responses-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/responses-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/responses-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/responses-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/responses-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/responses-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/responses-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/responses-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/responses/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/responses/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/responses/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -1,7 +1,8 @@
 COMMENT=	monitor webpages for updates
 
-MODPY_EGG_VERSION=	2.29
-DISTNAME=	urlwatch-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.29
+DISTNAME=	urlwatch-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	www
 
@@ -20,19 +21,19 @@ MODPY_PYBUILD=	setuptools
 BUILD_DEPENDS=	${RUN_DEPENDS}
 m['install_requires'] = ['minidb>=2.0.8', 'PyYAML', 'requests', 'keyring', 'platformdirs', 'lxml', 'cssselect']
 
-RUN_DEPENDS=	databases/py-minidb${MODPY_FLAVOR} \
-		textproc/py-yaml${MODPY_FLAVOR} \
-		www/py-requests${MODPY_FLAVOR} \
-		security/py-keyring${MODPY_FLAVOR} \
-		sysutils/py-platformdirs${MODPY_FLAVOR} \
-		textproc/py-lxml${MODPY_FLAVOR} \
-		textproc/py-cssselect${MODPY_FLAVOR}
+RUN_DEPENDS=	databases/py-minidb \
+		textproc/py-yaml \
+		www/py-requests \
+		security/py-keyring \
+		sysutils/py-platformdirs \
+		textproc/py-lxml \
+		textproc/py-cssselect
 
 # optional but useful
-RUN_DEPENDS+=	converters/py-html2text${MODPY_FLAVOR} \
-		textproc/py-vobject${MODPY_FLAVOR}
+RUN_DEPENDS+=	converters/py-html2text \
+		textproc/py-vobject
 
-TEST_DEPENDS=	devel/py-codestyle${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-codestyle
 
 post-install:
 	mv ${PREFIX}/share/man/* ${PREFIX}/man/

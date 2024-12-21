@@ -1,10 +1,10 @@
 COMMENT =	HTTP client mock for Python
 
-MODPY_EGG_VERSION =	1.1.4
+MODPY_DISTV =	1.1.4
 
-DISTNAME =	httpretty-${MODPY_EGG_VERSION}
+DISTNAME =	httpretty-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	www
 
@@ -25,15 +25,12 @@ MODPY_PYTEST_ARGS =	--ignore tests/bugfixes/nosetests/test_414_httpx.py \
 			--ignore tests/bugfixes/nosetests/test_eventlet.py \
 			--ignore tests/functional/test_httplib2.py
 
-FLAVOR =		python3
-FLAVORS =		python3
-
-TEST_DEPENDS =		devel/py-freezegun${MODPY_FLAVOR} \
-			devel/py-sure${MODPY_FLAVOR} \
-			net/py-boto3${MODPY_FLAVOR} \
-			www/py-httplib2${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR} \
-			www/py-tornado${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-freezegun \
+			devel/py-sure \
+			net/py-boto3 \
+			www/py-httplib2 \
+			www/py-requests \
+			www/py-tornado
 
 FIX_EXTRACT_PERMISSIONS =	Yes
 

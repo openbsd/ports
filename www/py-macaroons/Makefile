@@ -1,9 +1,9 @@
 COMMENT =		macaroon library for Python
 
-MODPY_EGG_VERSION =	0.13.0
-DISTNAME =		pymacaroons-${MODPY_EGG_VERSION}
-PKGNAME =		py-macaroons-${MODPY_EGG_VERSION}
-REVISION =		4
+MODPY_DISTV =	0.13.0
+DISTNAME =		pymacaroons-${MODPY_DISTV}
+PKGNAME =		py-macaroons-${MODPY_DISTV}
+REVISION =		5
 
 CATEGORIES =		www
 
@@ -17,10 +17,8 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
-FLAVORS =		python3
-FLAVOR =		python3
 
-RUN_DEPENDS =		security/py-libnacl${MODPY_FLAVOR} \
-			devel/py-six${MODPY_FLAVOR}
+RUN_DEPENDS =		security/py-libnacl \
+			devel/py-six
 
 .include <bsd.port.mk>

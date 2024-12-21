@@ -2,11 +2,11 @@ BROKEN =	broken with py3.11, dead upstream, unused - candidate for removal?
 
 COMMENT =	friendlier RFC 6265-compliant cookie parser/renderer
 
-MODPY_EGG_VERSION =	2.2.1
+MODPY_DISTV =	2.2.1
 
-DISTNAME =		cookies-${MODPY_EGG_VERSION}
+DISTNAME =		cookies-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		www
 
@@ -21,8 +21,5 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 .include <bsd.port.mk>

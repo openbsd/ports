@@ -1,9 +1,9 @@
 COMMENT =	tiny LRU cache implementation and decorator
 
-MODPY_EGG_VERSION = 0.7
-DISTNAME =	repoze.lru-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.7
+DISTNAME =	repoze.lru-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME:S/./-/}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	www devel
 
@@ -11,9 +11,6 @@ CATEGORIES =	www devel
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools

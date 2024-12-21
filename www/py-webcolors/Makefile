@@ -1,8 +1,9 @@
 COMMENT=	library for working with HTML color formats
 
-MODPY_EGG_VERSION=	24.11.1
-DISTNAME=	webcolors-${MODPY_EGG_VERSION}
+MODPY_DISTV=	24.11.1
+DISTNAME=	webcolors-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	www
 
@@ -10,9 +11,6 @@ CATEGORIES=	www
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	pdm

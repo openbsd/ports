@@ -1,7 +1,8 @@
 COMMENT=	tool for deleting old Mastodon toots
 
-MODPY_EGG_VERSION=	3.2.1
-DISTNAME=	ephemetoot-${MODPY_EGG_VERSION}
+MODPY_DISTV=	3.2.1
+DISTNAME=	ephemetoot-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	www
 
@@ -13,8 +14,8 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS=	textproc/py-yaml${MODPY_FLAVOR}>=5.0 \
-		www/py-mastodon.py${MODPY_FLAVOR} \
-		www/py-requests${MODPY_FLAVOR}
+RUN_DEPENDS=	textproc/py-yaml>=5.0 \
+		www/py-mastodon.py \
+		www/py-requests
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
 COMMENT =		web-based notebook for interactive computing
 
-MODPY_EGG_VERSION =	6.4.13
-DISTNAME =		notebook-${MODPY_EGG_VERSION}
-PKGNAME =		jupyter-notebook-${MODPY_EGG_VERSION}
-REVISION =		1
+MODPY_DISTV =	6.4.13
+DISTNAME =		notebook-${MODPY_DISTV}
+PKGNAME =		jupyter-notebook-${MODPY_DISTV}
+REVISION =		2
 
 CATEGORIES =		www devel
 
@@ -21,29 +21,29 @@ MODPY_PYBUILD =		jupyter_packaging
 # XXX skip selenium tests as recommended
 MODPY_PYTEST_ARGS =	--ignore notebook/tests/selenium
 
-RUN_DEPENDS =		devel/py-ipykernel${MODPY_FLAVOR} \
-			devel/py-ipython_genutils${MODPY_FLAVOR} \
-			devel/py-jupyter_client${MODPY_FLAVOR}>=5.3.4 \
-			devel/py-jupyter_core${MODPY_FLAVOR}>=4.6.1 \
-			devel/py-nbconvert${MODPY_FLAVOR}>=5 \
-			devel/py-nbformat${MODPY_FLAVOR} \
-			devel/py-nest-asyncio${MODPY_FLAVOR}>=1.5 \
-			devel/py-send2trash${MODPY_FLAVOR}>=1.8.0 \
-			devel/py-traitlets${MODPY_FLAVOR}>=4.2.1 \
-			net/py-zmq${MODPY_FLAVOR}>=17 \
-			security/py-argon2-cffi${MODPY_FLAVOR} \
-			sysutils/py-prometheus_client${MODPY_FLAVOR} \
-			www/py-jinja2${MODPY_FLAVOR} \
-			www/py-terminado${MODPY_FLAVOR}>=0.8.3 \
-			www/py-tornado${MODPY_FLAVOR}>=6.1
+RUN_DEPENDS =		devel/py-ipykernel \
+			devel/py-ipython_genutils \
+			devel/py-jupyter_client>=5.3.4 \
+			devel/py-jupyter_core>=4.6.1 \
+			devel/py-nbconvert>=5 \
+			devel/py-nbformat \
+			devel/py-nest-asyncio>=1.5 \
+			devel/py-send2trash>=1.8.0 \
+			devel/py-traitlets>=4.2.1 \
+			net/py-zmq>=17 \
+			security/py-argon2-cffi \
+			sysutils/py-prometheus_client \
+			www/py-jinja2 \
+			www/py-terminado>=0.8.3 \
+			www/py-tornado>=6.1
 
-TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR} \
-			devel/py-nbval${MODPY_FLAVOR} \
-			devel/py-test-cov${MODPY_FLAVOR} \
-			devel/py-testpath${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR} \
-			www/py-requests-unixsocket${MODPY_FLAVOR} \
-			www/py-selenium${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-coverage \
+			devel/py-nbval \
+			devel/py-test-cov \
+			devel/py-testpath \
+			www/py-requests \
+			www/py-requests-unixsocket \
+			www/py-selenium
 
 # XXX once we have a port of pandoc, we can make docs.
 

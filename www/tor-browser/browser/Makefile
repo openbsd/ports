@@ -49,7 +49,7 @@ BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt \
 			lang/wasi-sdk/libcxx \
 			lang/wasi-libc
 # mach uses pkg_resources
-BUILD_DEPENDS +=	devel/py-setuptools${MODPY_FLAVOR}
+BUILD_DEPENDS +=	devel/py-setuptools
 BUILD_DEPENDS +=	textproc/jq
 
 # vendored copy of dav1d needs patching to avoid these (or changing to the ports

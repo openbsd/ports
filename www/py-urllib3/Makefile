@@ -1,9 +1,9 @@
 COMMENT=	HTTP library for Python
 
-MODPY_EGG_VERSION= 1.26.18
-DISTNAME=	urllib3-${MODPY_EGG_VERSION}
-PKGNAME=	py-urllib3-${MODPY_EGG_VERSION}
-REVISION=	0
+MODPY_DISTV=	1.26.18
+DISTNAME=	urllib3-${MODPY_DISTV}
+PKGNAME=	py-urllib3-${MODPY_DISTV}
+REVISION=	1
 
 CATEGORIES=	www
 
@@ -12,17 +12,14 @@ PERMIT_PACKAGE= Yes
 
 MODULES=	lang/python
 
-FLAVORS=	python3
-FLAVOR=		python3
-
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-TEST_DEPENDS=	devel/py-dateutil${MODPY_FLAVOR} \
-		devel/py-mock${MODPY_FLAVOR} \
-		net/py-socks${MODPY_FLAVOR} \
-		sysutils/py-psutil${MODPY_FLAVOR} \
-		security/py-trustme${MODPY_FLAVOR} \
-		www/py-tornado${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-dateutil \
+		devel/py-mock \
+		net/py-socks \
+		sysutils/py-psutil \
+		security/py-trustme \
+		www/py-tornado
 
 .include <bsd.port.mk>

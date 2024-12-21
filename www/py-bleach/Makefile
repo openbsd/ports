@@ -1,9 +1,9 @@
 COMMENT =		easy whitelist-based HTML-sanitizing tool
 
-MODPY_EGG_VERSION =	5.0.1
-DISTNAME =		bleach-${MODPY_EGG_VERSION}
+MODPY_DISTV =	5.0.1
+DISTNAME =		bleach-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		www
 
@@ -19,12 +19,9 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
-			sysutils/py-packaging${MODPY_FLAVOR} \
-			textproc/py-webencodings${MODPY_FLAVOR}
-BUILD_DEPENDS =		devel/py-test-runner${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-six \
+			sysutils/py-packaging \
+			textproc/py-webencodings
+BUILD_DEPENDS =		devel/py-test-runner
 
 .include <bsd.port.mk>

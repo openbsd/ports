@@ -1,9 +1,9 @@
 COMMENT =		minimal low-level HTTP client
 
-MODPY_EGG_VERSION =	1.0.5
-DISTNAME =		httpcore-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.0.5
+DISTNAME =		httpcore-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		www
 
@@ -16,20 +16,17 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		hatchling
 
-BUILD_DEPENDS =		devel/py-hatch-fancy-pypi-readme${MODPY_FLAVOR}
+BUILD_DEPENDS =		devel/py-hatch-fancy-pypi-readme
 
-RUN_DEPENDS =		devel/py-certifi${MODPY_FLAVOR} \
-			www/py-h11${MODPY_FLAVOR}>=0.13,<0.15
+RUN_DEPENDS =		devel/py-certifi \
+			www/py-h11>=0.13,<0.15
 
-TEST_DEPENDS =		devel/py-trio${MODPY_FLAVOR} \
-			net/py-anyio${MODPY_FLAVOR} \
-			www/py-hpack${MODPY_FLAVOR} \
-			www/py-hyperframe${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-trio \
+			net/py-anyio \
+			www/py-hpack \
+			www/py-hyperframe
 
 .include <bsd.port.mk>

@@ -1,10 +1,10 @@
-@pkgpath www/py-flask-cors
-lib/python${MODPY_VERSION}/site-packages/Flask_Cors-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/Flask_Cors-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/Flask_Cors-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/Flask_Cors-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/Flask_Cors-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/Flask_Cors-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+@pkgpath www/py-flask-cors,python3
+lib/python${MODPY_VERSION}/site-packages/Flask_Cors-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/Flask_Cors-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/Flask_Cors-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/Flask_Cors-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/Flask_Cors-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/Flask_Cors-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/flask_cors/
 lib/python${MODPY_VERSION}/site-packages/flask_cors/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/flask_cors/${MODPY_PYCACHE}/

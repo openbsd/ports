@@ -1,10 +1,11 @@
 COMMENT=	elegant and simple HTTP library for Python
 
 # 2.33 expected to move to hatchling
-MODPY_EGG_VERSION=	2.32.2
+MODPY_DISTV=	2.32.2
 # XXX 2.32.3 has problems: https://github.com/psf/requests/issues/6730
-DISTNAME=	requests-${MODPY_EGG_VERSION}
+DISTNAME=	requests-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	www
 
@@ -15,24 +16,21 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 
-FLAVORS=	python3
-FLAVOR=		python3
-
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS=	archivers/py-brotli${MODPY_FLAVOR} \
-		devel/py-certifi${MODPY_FLAVOR} \
-		net/py-idna${MODPY_FLAVOR} \
-		textproc/py-charset-normalizer${MODPY_FLAVOR} \
-		www/py-urllib3${MODPY_FLAVOR}
+RUN_DEPENDS=	archivers/py-brotli \
+		devel/py-certifi \
+		net/py-idna \
+		textproc/py-charset-normalizer \
+		www/py-urllib3
 
-TEST_DEPENDS=	devel/py-test-cov${MODPY_FLAVOR} \
-		devel/py-test-mock${MODPY_FLAVOR} \
-		devel/py-test-httpbin${MODPY_FLAVOR} \
-		devel/py-test-xdist${MODPY_FLAVOR} \
-		net/py-socks${MODPY_FLAVOR} \
-		security/py-trustme${MODPY_FLAVOR} \
-		www/py-urllib3${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-test-cov \
+		devel/py-test-mock \
+		devel/py-test-httpbin \
+		devel/py-test-xdist \
+		net/py-socks \
+		security/py-trustme \
+		www/py-urllib3
 
 .include <bsd.port.mk>

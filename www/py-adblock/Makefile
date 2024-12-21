@@ -1,9 +1,9 @@
 COMMENT=	Brave's adblock library
 
-MODPY_EGG_VERSION= 0.6.0
-DISTNAME=	adblock-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.6.0
+DISTNAME=	adblock-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	www
 
@@ -16,15 +16,12 @@ MODULES=	devel/cargo \
 		lang/python
 MODPY_PI=	Yes
 
-FLAVORS=	python3
-FLAVOR=		python3
-
 MODPY_PYBUILD=		maturin
 MODCARGO_CARGO_BIN=	maturin
 CONFIGURE_STYLE=	cargo
 
-TEST_DEPENDS=		devel/py-pip${MODPY_FLAVOR} \
-			textproc/py-toml${MODPY_FLAVOR}
+TEST_DEPENDS=		devel/py-pip \
+			textproc/py-toml
 
 do-build:
 	${MODCARGO_CARGO_RUN} build \

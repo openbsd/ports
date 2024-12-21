@@ -1,8 +1,9 @@
 COMMENT =		QUIC and HTTP/3 implementation in Python
 
-MODPY_EGG_VERSION =	1.2.0
-DISTNAME =		aioquic-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.2.0
+DISTNAME =		aioquic-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www
 
@@ -15,19 +16,16 @@ MODULES =		lang/python
 
 HOMEPAGE =		https://github.com/python-hyper/h2
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		archivers/py-lsqpack${MODPY_FLAVOR} \
-			devel/py-certifi${MODPY_FLAVOR} \
-			security/py-cryptography${MODPY_FLAVOR} \
-			security/py-openssl${MODPY_FLAVOR} \
-			security/py-service_identity${MODPY_FLAVOR}
+RUN_DEPENDS =		archivers/py-lsqpack \
+			devel/py-certifi \
+			security/py-cryptography \
+			security/py-openssl \
+			security/py-service_identity
 
-TEST_DEPENDS =		devel/py-coverage${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-coverage
 
 TEST_ENV +=		AIOQUIC_SKIP_TESTS=ed448
 

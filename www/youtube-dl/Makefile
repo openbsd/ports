@@ -1,11 +1,11 @@
 COMMENT =	CLI program to download videos from YouTube and other sites
 
 VERSION =	2021.12.17
-MODPY_EGG_VERSION =	${VERSION:S/.0/./g}
+MODPY_DISTV =	${VERSION:S/.0/./g}
 
 DISTNAME =	youtube-dl-${VERSION}
 CATEGORIES =	www
-REVISION =	3
+REVISION =	4
 
 HOMEPAGE =	https://yt-dl.org
 

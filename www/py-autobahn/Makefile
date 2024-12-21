@@ -1,9 +1,9 @@
 COMMENT =	WebSocket client & server library, WAMP real-time framework
 
-MODPY_EGG_VERSION =	22.7.1
-DISTNAME =	autobahn-${MODPY_EGG_VERSION}
+MODPY_DISTV =	22.7.1
+DISTNAME =	autobahn-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES =	www
 
@@ -24,12 +24,9 @@ MODPY_PYTEST_ARGS = autobahn \
 		--ignore autobahn/asyncio/test \
 		--ignore autobahn/wamp/test
 
-FLAVORS =	python3
-FLAVOR  =	python3
-
-BUILD_DEPENDS =	devel/py-txaio${MODPY_FLAVOR}>=18.8.1 \
-		devel/py-cffi${MODPY_FLAVOR} \
-		devel/py-six${MODPY_FLAVOR}
+BUILD_DEPENDS =	devel/py-txaio>=18.8.1 \
+		devel/py-cffi \
+		devel/py-six
 
 # the NVX module uses SSE
 .if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
@@ -39,7 +36,7 @@ PKG_ARGS =	-Dnvx=0
 MAKE_ENV =	AUTOBAHN_USE_NVX=0
 .endif
 
-TEST_DEPENDS =	devel/py-twisted${MODPY_FLAVOR} \
-		security/py-PyNaCl${MODPY_FLAVOR}
+TEST_DEPENDS =	devel/py-twisted \
+		security/py-PyNaCl
 
 .include <bsd.port.mk>
