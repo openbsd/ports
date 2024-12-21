@@ -1,4 +1,4 @@
-# $OpenBSD: PyPI.pm,v 1.19 2020/04/30 23:04:48 kn Exp $
+# $OpenBSD: PyPI.pm,v 1.20 2024/12/21 11:40:34 sthen Exp $
 #
 # Copyright (c) 2015 Giannis Tsaraias <tsg@openbsd.org>
 #
@@ -84,14 +84,14 @@ sub fill_in_makefile
 	$self->add_notice("distname $distname does not match pkgname $pkgname")
 	    unless $distname =~ /^\Q$pkgname/;
 
-	$distname =~ s/-\Q$version\E$/-\$\{MODPY_EGG_VERSION\}/
+	$distname =~ s/-\Q$version\E$/-\$\{MODPY_DISTV\}/
 	    or $self->add_notice(
-		"Didn't set distname version to \${MODPY_EGG_VERSION}");
+		"Didn't set distname version to \${MODPY_DISTV}");
 
 	$self->set_other( 'MODPY_PI',         'Yes' );
 	$self->set_other( 'MODPY_SETUPTOOLS', 'Yes' );
 	$self->set_comment( $di->{info}{summary} );
-	$self->set_other( 'MODPY_EGG_VERSION', $version );
+	$self->set_other( 'MODPY_DISTV', $version );
 	$self->set_distname($distname);
 	$self->set_modules('lang/python');
 	$self->set_other( 'HOMEPAGE', $di->{info}{home_page} );
@@ -197,16 +197,6 @@ sub get_deps
 		}
 
 		my $base_port = $port;
-
-		{
-			my $old_cwd = getcwd();
-			chdir $dep_dir || die "Unable to chdir $dep_dir: $!";
-			my $flavors = $self->make_show('FLAVORS');
-			chdir $old_cwd || die "Unable to chdir $old_cwd: $!";
-
-			# Attach the flavor if the dependency has one
-			$port .= '${MODPY_FLAVOR}' if $flavors =~ /\bpython3\b/;
-		}
 
 		if ( $phase eq 'build' ) {
 			$deps->add_build( $port, $req );

@@ -16,9 +16,12 @@ COMMENT =	???
 # COMMENT-foo =	???	for multi packages
 
 #
-# Version of port if using lang/python module
+# Version number used in Python dist-info/egg-info files if using
+# lang/python module; often the upstream release version number,
+# but not always. Check pkg/PLIST after generating and adjust if
+# necessary.
 #
-#MODPY_EGG_VERSION =	???
+#MODPY_DISTV =	???
 
 # MODGO_MODNAME should be set to the 'module' specified in the 'go.mod' file.
 #MODGO_MODNAME =	github.com/test/app
@@ -139,9 +142,6 @@ SITES =		???
 #MODPY_PI =		Yes
 #MODPY_PYBUILD =	setuptools
 #			or flit_core, hatchling, etc - see python-module(5)
-#
-# If port is a Python module (py-*) that is or might be used by other Python
-# ports, set FLAVOR=python3 and FLAVORS=python3
 
 #
 # MODGO_ settings for when using lang/go module
