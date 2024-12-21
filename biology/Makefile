@@ -9,6 +9,6 @@
      SUBDIR += p5-Bio-DB-EMBL
      SUBDIR += p5-Bio-DB-NCBIHelper
      SUBDIR += p5-Bio-Variation
-     SUBDIR += py-biopython,python3
+     SUBDIR += py-biopython
 
 .include <bsd.port.subdir.mk>

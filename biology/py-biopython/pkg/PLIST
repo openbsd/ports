@@ -1,3 +1,4 @@
+@pkgpath biology/py-biopython,python3
 lib/python${MODPY_VERSION}/site-packages/Bio/
 lib/python${MODPY_VERSION}/site-packages/Bio/Affy/
 lib/python${MODPY_VERSION}/site-packages/Bio/Affy/CelFile.py
@@ -1458,13 +1459,13 @@ lib/python${MODPY_VERSION}/site-packages/BioSQL/${MODPY_PYCACHE}Loader.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/BioSQL/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/BioSQL/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/BioSQL/py.typed
-lib/python${MODPY_VERSION}/site-packages/biopython-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/biopython-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/biopython-${MODPY_EGG_VERSION}.dist-info/LICENSE.rst
-lib/python${MODPY_VERSION}/site-packages/biopython-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/biopython-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/biopython-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/biopython-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/biopython-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/biopython-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/biopython-${MODPY_DISTV}.dist-info/LICENSE.rst
+lib/python${MODPY_VERSION}/site-packages/biopython-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/biopython-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/biopython-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/biopython-${MODPY_DISTV}.dist-info/top_level.txt
 share/doc/py-biopython/
 share/doc/py-biopython/Biopython_doc.pdf
 share/examples/py-biopython/

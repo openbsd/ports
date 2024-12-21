@@ -1,9 +1,10 @@
 COMMENT =		Python tools for computational molecular biology
 
-MODPY_EGG_VERSION =	1.84
-DISTNAME =		biopython-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.84
+DISTNAME =		biopython-${MODPY_DISTV}
 CATEGORIES =		biology
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 HOMEPAGE =		http://www.biopython.org/
 
@@ -17,13 +18,10 @@ MODULES =	lang/python
 MODPY_PI =              Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 BUILD_DEPENDS =	devel/swig \
-		math/py-numpy${MODPY_FLAVOR}
-RUN_DEPENDS =	math/py-numpy${MODPY_FLAVOR} \
-		print/py-reportlab${MODPY_FLAVOR}
+		math/py-numpy
+RUN_DEPENDS =	math/py-numpy \
+		print/py-reportlab
 
 CFLAGS +=	-fPIC
 
