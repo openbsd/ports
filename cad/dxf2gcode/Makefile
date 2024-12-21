@@ -1,7 +1,7 @@
 COMMENT =		tool to convert 2D (dxf, pdf, ps) files to gcode
 
 DISTNAME =		dxf2gcode-20191025
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		cad
 
@@ -18,14 +18,14 @@ EXTRACT_SUFX =		.zip
 
 MODULES =		lang/python
 
-BUILD_DEPENDS =		devel/py-configobj${MODPY_FLAVOR} \
-			graphics/py-opengl${MODPY_FLAVOR} \
-			x11/py-qt5${MODPY_FLAVOR}
+BUILD_DEPENDS =		devel/py-configobj \
+			graphics/py-opengl \
+			x11/py-qt5
 # uses py-setuptools, but it isn't a typical setuptools port.
-BUILD_DEPENDS +=	devel/py-setuptools${MODPY_FLAVOR}
+BUILD_DEPENDS +=	devel/py-setuptools
 RUN_DEPENDS =		${BUILD_DEPENDS} \
 			print/poppler,-utils \
-			x11/py-qt5${MODPY_FLAVOR}
+			x11/py-qt5
 
 NO_TEST =		Yes
 

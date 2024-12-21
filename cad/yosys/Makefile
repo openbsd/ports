@@ -1,6 +1,6 @@
 COMMENT =	framework for Verilog RTL synthesis
 DISTNAME =	yosys-0.9pl4081
-REVISION =	3
+REVISION =	4
 
 GH_ACCOUNT =	YosysHQ
 GH_PROJECT =	yosys

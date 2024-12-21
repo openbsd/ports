@@ -9,7 +9,7 @@ V =			6.0.11
 COMMENT =		schematic and PCB editing software
 DISTNAME =		kicad-${V}
 EPOCH =			0
-REVISION =		5
+REVISION =		6
 
 SHARED_LIBS +=		kicad_3dsg                1.0 # 2.0
 
