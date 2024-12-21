@@ -1,8 +1,7 @@
 COMMENT=	client and server-side SOAP implementation
 
-DISTNAME=	SOAP-Lite-1.20
+DISTNAME=	SOAP-Lite-1.27
 CATEGORIES=	www
-REVISION=	0
 
 # perl
 PERMIT_PACKAGE=	Yes
