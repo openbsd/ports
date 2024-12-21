@@ -1,9 +1,9 @@
 COMMENT =		scp module for Paramiko
 
-MODPY_EGG_VERSION =	0.14.5
-DISTNAME =		scp-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.14.5
+DISTNAME =		scp-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		security
 
@@ -21,9 +21,6 @@ MODPY_PYBUILD =		setuptools
 # write files etc.
 NO_TEST =		Yes
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-RUN_DEPENDS =		security/py-paramiko${MODPY_FLAVOR}
+RUN_DEPENDS =		security/py-paramiko
 
 .include <bsd.port.mk>

@@ -1,3 +1,4 @@
+@pkgpath security/py-tlsfuzzer,python3
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer-0.0.1.dist-info/
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer-0.0.1.dist-info/LICENSE

@@ -1,9 +1,9 @@
 COMMENT=		secure storing of passwords using the SecretService DBus API
 
-MODPY_EGG_VERSION=	3.3.3
-DISTNAME=		SecretStorage-${MODPY_EGG_VERSION}
+MODPY_DISTV=	3.3.3
+DISTNAME=		SecretStorage-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME:L}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		security
 
@@ -18,11 +18,8 @@ MODPY_PYBUILD =	setuptools
 # there are various tests, but pretty much all need dbus
 NO_TEST=		Yes
 
-RUN_DEPENDS=		devel/py-jeepney${MODPY_FLAVOR} \
-			security/py-cryptography${MODPY_FLAVOR}
-
-FLAVORS=		python3
-FLAVOR=			python3
+RUN_DEPENDS=		devel/py-jeepney \
+			security/py-cryptography
 
 # org.freedesktop.secrets
 # not enforcing RDEP to give user the choice of secret service provider

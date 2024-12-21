@@ -27,7 +27,7 @@ MODLUA_SA =		Yes
 MODULES =		devel/cargo \
 			lang/lua
 BUILD_DEPENDS =		security/rust-ring \
-			textproc/py-sphinx,python3
+			textproc/py-sphinx
 RUN_DEPENDS =		net/libmaxminddb,-asn \
 			net/libmaxminddb,-city
 

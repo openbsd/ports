@@ -4,8 +4,8 @@ GH_ACCOUNT=	scumjr
 GH_PROJECT=	yubikeyedup
 GH_COMMIT=	d5044d3fdc10cc59a5213efd53e0f80b2a1096f9
 DISTNAME=	yubikeyedup-0.20201226
-MODPY_EGG_VERSION=0.1
-REVISION=	6
+MODPY_DISTV=0.1
+REVISION=	7
 
 CATEGORIES=	security www
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 MODPY_PYBUILD =	setuptools
 
-RUN_DEPENDS=	security/py-cryptodomex${MODPY_FLAVOR}
+RUN_DEPENDS=	security/py-cryptodomex
 
 NO_TEST=	Yes
 

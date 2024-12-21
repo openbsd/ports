@@ -1,10 +1,10 @@
 COMMENT =		Python library for interacting with Duo APIs
 
-MODPY_EGG_VERSION =	4.4.0
+MODPY_DISTV =	4.4.0
 
-REVISION =		2
+REVISION =		3
 
-DISTNAME =		duo_client-${MODPY_EGG_VERSION}
+DISTNAME =		duo_client-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		security sysutils
@@ -18,14 +18,11 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-FLAVOR =		python3
-FLAVORS =		python3
 
-BUILD_DEPENDS =		devel/py-six${MODPY_FLAVOR}
-RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR}
+BUILD_DEPENDS =		devel/py-six
+RUN_DEPENDS =		devel/py-six
 
-TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR} \
-			devel/py-tz${MODPY_FLAVOR}
-
+TEST_DEPENDS =		devel/py-mock \
+			devel/py-tz
 
 .include <bsd.port.mk>

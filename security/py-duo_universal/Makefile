@@ -1,9 +1,9 @@
 COMMENT =		Duo Python two-factor authentication
 
-MODPY_EGG_VERSION =	2.0.3
-DISTNAME =		duo_universal-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.0.3
+DISTNAME =		duo_universal-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		security sysutils
 
@@ -16,15 +16,13 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-FLAVOR =		python3
-FLAVORS =		python3
 
-RUN_DEPENDS =		devel/py-wheel${MODPY_FLAVOR} \
-			security/py-cryptography${MODPY_FLAVOR} \
-			security/py-openssl${MODPY_FLAVOR} \
-			www/py-jwt${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-wheel \
+			security/py-cryptography \
+			security/py-openssl \
+			www/py-jwt \
+			www/py-requests
 
-TEST_DEPENDS =		devel/py-mock${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-mock
 
 .include <bsd.port.mk>

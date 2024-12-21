@@ -1,9 +1,10 @@
 COMMENT=	quality TLS certs while you wait, for the discerning
 
-MODPY_EGG_VERSION=	1.2.0
+MODPY_DISTV=	1.2.0
 
-DISTNAME=	trustme-${MODPY_EGG_VERSION}
+DISTNAME=	trustme-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	security devel
 
@@ -17,12 +18,9 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	hatchling
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-RUN_DEPENDS=	net/py-idna${MODPY_FLAVOR} \
-		security/py-cryptography${MODPY_FLAVOR} \
-		security/py-openssl${MODPY_FLAVOR}
-TEST_DEPENDS=	security/py-service_identity${MODPY_FLAVOR}
+RUN_DEPENDS=	net/py-idna \
+		security/py-cryptography \
+		security/py-openssl
+TEST_DEPENDS=	security/py-service_identity
 
 .include <bsd.port.mk>

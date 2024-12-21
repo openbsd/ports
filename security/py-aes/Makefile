@@ -1,9 +1,9 @@
 COMMENT =		pure-Python implementation of AES block-cipher
 
-MODPY_EGG_VERSION =	1.6.1
-DISTNAME =		pyaes-${MODPY_EGG_VERSION}
-PKGNAME =		py-aes-${MODPY_EGG_VERSION}
-REVISION =		6
+MODPY_DISTV =	1.6.1
+DISTNAME =		pyaes-${MODPY_DISTV}
+PKGNAME =		py-aes-${MODPY_DISTV}
+REVISION =		7
 
 CATEGORIES =		security
 
@@ -13,9 +13,6 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 TEST_DEPENDS =		${FULLPKGNAME}:${FULLPKGPATH}
 

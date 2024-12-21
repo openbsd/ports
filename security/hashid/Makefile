@@ -1,12 +1,12 @@
 COMMENT =	Identify the different types of cryptographic hashes
 
-MODPY_EGG_VERSION = 3.1.4
-DISTNAME =	hashid-${MODPY_EGG_VERSION}
-REVISION =	3
+MODPY_DISTV =	3.1.4
+DISTNAME =	hashid-${MODPY_DISTV}
+REVISION =	4
 
 GH_ACCOUNT =    psypanda
 GH_PROJECT =    hashID
-GH_TAGNAME =	v${MODPY_EGG_VERSION}
+GH_TAGNAME =	v${MODPY_DISTV}
 
 CATEGORIES =	security
 

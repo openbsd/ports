@@ -3,9 +3,9 @@ ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		ROP chain builder based off of angr
 
-MODPY_EGG_VERSION =	9.2.8
-DISTNAME =		angrop-${MODPY_EGG_VERSION}
-REVISION =		0
+MODPY_DISTV =	9.2.8
+DISTNAME =		angrop-${MODPY_DISTV}
+REVISION =		1
 
 CATEGORIES =		security
 
@@ -18,9 +18,9 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =	setuptools
 
-RUN_DEPENDS =		devel/angr/py-angr>=${MODPY_EGG_VERSION} \
-			devel/py-progressbar${MODPY_FLAVOR} \
-			devel/py-tqdm${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/angr/py-angr>=${MODPY_DISTV} \
+			devel/py-progressbar \
+			devel/py-tqdm
 
 DOCDIR =		${PREFIX}/share/doc/angrop
 

@@ -1,9 +1,10 @@
 COMMENT=	cryptographic recipes and primitives for Python
 
-MODPY_EGG_VERSION=	42.0.7
-DISTNAME=	cryptography-${MODPY_EGG_VERSION}
-DISTFILES=	cryptography-${MODPY_EGG_VERSION}${EXTRACT_SUFX}
+MODPY_DISTV=	42.0.7
+DISTNAME=	cryptography-${MODPY_DISTV}
+DISTFILES=	cryptography-${MODPY_DISTV}${EXTRACT_SUFX}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
+REVISION=	0
 
 .include "crates.inc"
 
@@ -15,9 +16,6 @@ HOMEPAGE=	https://cryptography.io/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=	${MODPY_WANTLIB} ${MODCARGO_WANTLIB} crypto ssl
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
@@ -36,19 +34,19 @@ MAKE_ENV=	OPENSSL_DIR="/usr" OPENSSL_STATIC=0
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
-RUN_DEPENDS=	devel/py-cffi${MODPY_FLAVOR}>=1.4.2
+RUN_DEPENDS=	devel/py-cffi>=1.4.2
 
 PORTHOME=	${WRKDIR}
-TEST_DEPENDS=	devel/py-certifi${MODPY_FLAVOR} \
-		devel/py-coverage${MODPY_FLAVOR} \
-		devel/py-hypothesis${MODPY_FLAVOR} \
-		devel/py-pretend${MODPY_FLAVOR} \
-		devel/py-test-benchmark${MODPY_FLAVOR} \
-		devel/py-test-subtests${MODPY_FLAVOR} \
-		devel/py-test-xdist${MODPY_FLAVOR} \
-		devel/py-tz${MODPY_FLAVOR} \
-		security/py-bcrypt${MODPY_FLAVOR} \
-		security/py-cryptography_vectors${MODPY_FLAVOR}=${MODPY_EGG_VERSION} \
-		textproc/py-iso8601${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-certifi \
+		devel/py-coverage \
+		devel/py-hypothesis \
+		devel/py-pretend \
+		devel/py-test-benchmark \
+		devel/py-test-subtests \
+		devel/py-test-xdist \
+		devel/py-tz \
+		security/py-bcrypt \
+		security/py-cryptography_vectors=${MODPY_DISTV} \
+		textproc/py-iso8601
 
 .include <bsd.port.mk>

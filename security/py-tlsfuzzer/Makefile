@@ -1,10 +1,10 @@
 COMMENT =		fuzzer and test suite for TLS implementations.
 
-MODPY_EGG_VERSION =	20240906
-DISTNAME =		tlsfuzzer-${MODPY_EGG_VERSION}
+MODPY_DISTV =	20240906
+DISTNAME =		tlsfuzzer-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		security
-REVISION =		0
+REVISION =		1
 
 GH_ACCOUNT =		tlsfuzzer
 GH_PROJECT =		tlsfuzzer
@@ -14,12 +14,9 @@ MAINTAINER =		Theo Buehler <tb@openbsd.org>
 
 MODPY_PYTEST =		Yes
 
-FLAVOR =		python3
-FLAVORS =		python3
-
 WANTLIB +=		${MODPY_WANTLIB}
 
-RUN_DEPENDS +=		net/py-tlslite-ng${MODPY_FLAVOR}
+RUN_DEPENDS +=		net/py-tlslite-ng
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
@@ -28,7 +25,7 @@ MODULES =		lang/python
 
 MODPY_PYBUILD =		setuptools
 
-TEST_DEPENDS +=         devel/py-mock${MODPY_FLAVOR}
+TEST_DEPENDS +=         devel/py-mock
 
 TEST_ENV +=		PYTHONPATH=${WRKSRC}/src
 

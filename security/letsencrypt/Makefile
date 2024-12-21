@@ -4,6 +4,6 @@
 SUBDIR =
 SUBDIR += acme-tiny
 SUBDIR += client
-SUBDIR += py-acme,python3
+SUBDIR += py-acme
 
 .include <bsd.port.subdir.mk>

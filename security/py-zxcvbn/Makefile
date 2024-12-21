@@ -1,11 +1,11 @@
 COMMENT=	realistic password strength estimator
 
-MODPY_EGG_VERSION=	4.4.28
+MODPY_DISTV=	4.4.28
 
-DISTNAME=	zxcvbn-${MODPY_EGG_VERSION}
+DISTNAME=	zxcvbn-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	security
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://github.com/dwolfhub/zxcvbn-python
 
@@ -16,8 +16,5 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 NO_TEST=	Yes
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

@@ -1,10 +1,10 @@
 COMMENT =	framework to protect supply chain integrity
 
-MODPY_EGG_VERSION =	1.2.0
+MODPY_DISTV =	1.2.0
 
-DISTNAME =	in-toto-${MODPY_EGG_VERSION}
+DISTNAME =	in-toto-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	security
 
@@ -20,14 +20,11 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVOR =		python3
-FLAVORS =		python3
-
-RUN_DEPENDS =		devel/py-attrs${MODPY_FLAVOR} \
-			devel/py-dateutil${MODPY_FLAVOR} \
-			devel/py-pathspec${MODPY_FLAVOR} \
-			security/py-securesystemslib${MODPY_FLAVOR} \
-			textproc/py-iso8601${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-attrs \
+			devel/py-dateutil \
+			devel/py-pathspec \
+			security/py-securesystemslib \
+			textproc/py-iso8601
 
 pre-test:
 	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python

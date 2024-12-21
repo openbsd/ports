@@ -3,7 +3,7 @@ COMMENT =		web reconnaissance framework
 GH_ACCOUNT =		lanmaster53
 GH_PROJECT =		recon-ng
 GH_TAGNAME =		v5.1.2
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		https://github.com/lanmaster53/recon-ng
 
@@ -14,14 +14,14 @@ CATEGORIES =		security
 # GPLv3
 PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS =		devel/py-olefile${MODPY_FLAVOR} \
-			devel/py-xlsxwriter${MODPY_FLAVOR} \
-			net/py-dnspython${MODPY_FLAVOR} \
-			textproc/py-dicttoxml${MODPY_FLAVOR} \
-			textproc/py-lxml${MODPY_FLAVOR} \
-			textproc/py-unicodecsv${MODPY_FLAVOR} \
-			www/py-flask${MODPY_FLAVOR} \
-			www/py-mechanize${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-olefile \
+			devel/py-xlsxwriter \
+			net/py-dnspython \
+			textproc/py-dicttoxml \
+			textproc/py-lxml \
+			textproc/py-unicodecsv \
+			www/py-flask \
+			www/py-mechanize
 
 # Could make use of:
 # PyPDF2

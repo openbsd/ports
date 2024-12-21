@@ -9,6 +9,7 @@ SUPDATE_V =	1.3.3
 DISTNAME =	suricata-${SURICATA_V}
 CATEGORIES =	security
 SHARED_LIBS +=	htp                       0.1 # 2.0
+REVISION =	0
 
 HOMEPAGE =	https://suricata.io/
 
@@ -27,11 +28,11 @@ WANTLIB += net pcap pcre2-8 yaml-0 z
 MODULES =	lang/python \
 		lang/rust
 
-BUILD_DEPENDS =	devel/py-setuptools${MODPY_FLAVOR} \
-		textproc/py-sphinx${MODPY_FLAVOR} \
-		textproc/py-yaml${MODPY_FLAVOR}
+BUILD_DEPENDS =	devel/py-setuptools \
+		textproc/py-sphinx \
+		textproc/py-yaml
 
-RUN_DEPENDS =	textproc/py-yaml${MODPY_FLAVOR}
+RUN_DEPENDS =	textproc/py-yaml
 
 LIB_DEPENDS =	archivers/lz4 \
 		converters/libiconv \

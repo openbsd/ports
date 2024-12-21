@@ -1,10 +1,10 @@
 COMMENT=	Python library for one-time passwords
 
-MODPY_EGG_VERSION=	2.9.0
+MODPY_DISTV=	2.9.0
 
-DISTNAME=	pyotp-${MODPY_EGG_VERSION}
+DISTNAME=	pyotp-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	security
 
@@ -20,8 +20,5 @@ MODPY_PI=	Yes
 
 MODPY_PYBUILD=	setuptools
 MODPY_PYTEST_ARGS= test.py
-
-FLAVOR=		python3
-FLAVORS=	python3
 
 .include <bsd.port.mk>

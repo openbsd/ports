@@ -1,4 +1,4 @@
-@pkgpath security/py-openssl
+@pkgpath security/py-openssl,python3
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/SSL.py
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/__init__.py
@@ -22,9 +22,9 @@ lib/python${MODPY_VERSION}/site-packages/OpenSSL/crypto.py
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/debug.py
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/rand.py
 lib/python${MODPY_VERSION}/site-packages/OpenSSL/version.py
-lib/python${MODPY_VERSION}/site-packages/pyOpenSSL-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pyOpenSSL-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/pyOpenSSL-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/pyOpenSSL-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/pyOpenSSL-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/pyOpenSSL-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pyOpenSSL-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pyOpenSSL-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/pyOpenSSL-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/pyOpenSSL-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/pyOpenSSL-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pyOpenSSL-${MODPY_DISTV}.dist-info/top_level.txt

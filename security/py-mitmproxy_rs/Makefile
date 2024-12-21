@@ -3,9 +3,9 @@ NOT_FOR_ARCHS =		sparc64
 
 COMMENT =		Rust components used in mitmproxy
 
-MODPY_EGG_VERSION =	0.10.7
-REVISION =		0
-DISTNAME =		mitmproxy_rs-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.10.7
+REVISION =		1
+DISTNAME =		mitmproxy_rs-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		security
@@ -24,9 +24,6 @@ DIST_TUPLE +=		github cloudflare boringtun e3252d9c4f4c8fc628995330f45369effd466
 
 MODULES =		devel/cargo \
 			lang/python
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		maturin

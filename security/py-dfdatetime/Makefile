@@ -1,9 +1,9 @@
 COMMENT =	Digital Forensics date and time
 
-MODPY_EGG_VERSION = 20200824
-DISTNAME =	dfdatetime-${MODPY_EGG_VERSION}
+MODPY_DISTV =	20200824
+DISTNAME =	dfdatetime-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	security devel
 
@@ -11,7 +11,7 @@ HOMEPAGE =	https://github.com/log2timeline/dfdatetime/wiki
 
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
-SITES =		https://github.com/log2timeline/dfdatetime/releases/download/${MODPY_EGG_VERSION}/
+SITES =		https://github.com/log2timeline/dfdatetime/releases/download/${MODPY_DISTV}/
 
 # Apachev2
 PERMIT_PACKAGE =	Yes
@@ -19,10 +19,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =	lang/python
 MODPY_PYBUILD =	setuptools
 
-FLAVORS =	python3
-FLAVOR =	python3
-
-TEST_DEPENDS +=	devel/py-mock${MODPY_FLAVOR}
+TEST_DEPENDS +=	devel/py-mock
 
 # make it possible to install both (un)FLAVORed packages alongside
 post-install:

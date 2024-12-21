@@ -1,13 +1,13 @@
+@pkgpath security/py-cryptography_vectors,python3
 @conflict py-cryptography_vectors-*
-@pkgpath security/py-cryptography_vectors
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/
-lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}.dist-info/LICENSE.APACHE
-lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}.dist-info/LICENSE.BSD
-lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_DISTV}.dist-info/LICENSE.APACHE
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_DISTV}.dist-info/LICENSE.BSD
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/cryptography_vectors-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/CMAC/
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/CMAC/nist-800-38b-3des.txt
 lib/python${MODPY_VERSION}/site-packages/cryptography_vectors/CMAC/nist-800-38b-aes128.txt

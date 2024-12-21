@@ -1,11 +1,12 @@
+@pkgpath security/distorm3,python3
 @so lib/python${MODPY_VERSION}/site-packages/_distorm3.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/distorm3/
-lib/python${MODPY_VERSION}/site-packages/distorm3-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/distorm3-${MODPY_EGG_VERSION}.dist-info/COPYING
-lib/python${MODPY_VERSION}/site-packages/distorm3-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/distorm3-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/distorm3-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/distorm3-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/distorm3-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/distorm3-${MODPY_DISTV}.dist-info/COPYING
+lib/python${MODPY_VERSION}/site-packages/distorm3-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/distorm3-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/distorm3-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/distorm3-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/distorm3/__init__.py
 lib/python${MODPY_VERSION}/site-packages/distorm3/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/distorm3/${MODPY_PYCACHE}/

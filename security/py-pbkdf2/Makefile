@@ -1,8 +1,8 @@
 COMMENT =	Python implementation of PBKDF2
 
-MODPY_EGG_VERSION =	1.3
-REVISION =		11
-DISTNAME =		pbkdf2-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.3
+REVISION =		12
+DISTNAME =		pbkdf2-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		security devel
 
@@ -16,9 +16,6 @@ PERMIT_PACKAGE =	Yes
 MODPY_PI = 		Yes
 MODULES =		lang/python
 MODPY_PYBUILD =	setuptools
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 TEST_ENV =		PYTHONPATH=${WRKBUILD}
 

@@ -1,9 +1,9 @@
 COMMENT =		Python binding to the NaCl library
 
-MODPY_EGG_VERSION =	1.5.0
-DISTNAME =		PyNaCl-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.5.0
+DISTNAME =		PyNaCl-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		security
 
@@ -19,17 +19,14 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 WANTLIB += ${MODPY_WANTLIB} pthread sodium
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		devel/py-cffi${MODPY_FLAVOR} \
-			devel/py-wheel${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-cffi \
+			devel/py-wheel
 
 LIB_DEPENDS =		security/libsodium
-TEST_DEPENDS =		devel/py-hypothesis${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-hypothesis
 
 MAKE_ENV +=		SODIUM_INSTALL="system"
 

@@ -1,7 +1,7 @@
+@pkgpath security/py-miasm,python3
 @conflict py-elfesteem-*
 @conflict py-miasm-*
 @pkgpath security/py-elfesteem
-@pkgpath security/py-miasm
 lib/python${MODPY_VERSION}/site-packages/miasm/
 lib/python${MODPY_VERSION}/site-packages/miasm-0.1.3.dist-info/
 lib/python${MODPY_VERSION}/site-packages/miasm-0.1.3.dist-info/LICENSE

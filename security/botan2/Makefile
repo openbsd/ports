@@ -3,7 +3,7 @@ COMMENT =	crypto and TLS for C++11
 VERSION =	2.19.5
 DISTNAME =	Botan-${VERSION}
 PKGNAME =	botan2-${VERSION}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	botan-2		19.1
 
@@ -28,7 +28,7 @@ MODPY_RUNDEP =		No
 
 # C++11
 COMPILER =		base-clang ports-gcc
-BUILD_DEPENDS =		textproc/py-docutils,python3
+BUILD_DEPENDS =		textproc/py-docutils
 LIB_DEPENDS =		archivers/bzip2 \
 			archivers/xz
 

@@ -1,12 +1,13 @@
 COMMENT =	subdomain scanner
 
-MODPY_EGG_VERSION =	7.0.2
+MODPY_DISTV =	7.0.2
 
-DISTNAME =	knockpy-${MODPY_EGG_VERSION}
+DISTNAME =	knockpy-${MODPY_DISTV}
+REVISION =	0
 
 GH_ACCOUNT =	guelfoweb
 GH_PROJECT =	knock
-GH_TAGNAME =	${MODPY_EGG_VERSION}
+GH_TAGNAME =	${MODPY_DISTV}
 
 CATEGORIES =	security
 
@@ -19,10 +20,10 @@ MODULES =	lang/python
 
 MODPY_PYBUILD =	setuptools
 
-RUN_DEPENDS =	devel/py-tqdm${MODPY_FLAVOR} \
-		net/py-dnspython${MODPY_FLAVOR} \
-		security/py-openssl${MODPY_FLAVOR} \
-		www/py-beautifulsoup4${MODPY_FLAVOR} \
-		www/py-requests${MODPY_FLAVOR}
+RUN_DEPENDS =	devel/py-tqdm \
+		net/py-dnspython \
+		security/py-openssl \
+		www/py-beautifulsoup4 \
+		www/py-requests
 
 .include <bsd.port.mk>

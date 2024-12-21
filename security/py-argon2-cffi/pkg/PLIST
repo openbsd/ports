@@ -1,3 +1,4 @@
+@pkgpath security/py-argon2-cffi,python3
 lib/python${MODPY_VERSION}/site-packages/argon2/
 lib/python${MODPY_VERSION}/site-packages/argon2/__init__.py
 lib/python${MODPY_VERSION}/site-packages/argon2/__main__.py
@@ -25,10 +26,10 @@ lib/python${MODPY_VERSION}/site-packages/argon2/_password_hasher.py
 lib/python${MODPY_VERSION}/site-packages/argon2/_utils.py
 lib/python${MODPY_VERSION}/site-packages/argon2/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/argon2/low_level.py
-lib/python${MODPY_VERSION}/site-packages/argon2_cffi-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/argon2_cffi-${MODPY_EGG_VERSION}.dist-info/AUTHORS.rst
-lib/python${MODPY_VERSION}/site-packages/argon2_cffi-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/argon2_cffi-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/argon2_cffi-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/argon2_cffi-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/argon2_cffi-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/argon2_cffi-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/argon2_cffi-${MODPY_DISTV}.dist-info/AUTHORS.rst
+lib/python${MODPY_VERSION}/site-packages/argon2_cffi-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/argon2_cffi-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/argon2_cffi-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/argon2_cffi-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/argon2_cffi-${MODPY_DISTV}.dist-info/top_level.txt

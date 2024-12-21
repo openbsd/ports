@@ -1,10 +1,10 @@
 COMMENT =	analyze Python pickle object serializations
 
-MODPY_EGG_VERSION = 0.1.3
-DISTNAME =	fickling-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.1.3
+DISTNAME =	fickling-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	security
-REVISION =	0
+REVISION =	1
 
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
 
@@ -14,8 +14,5 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PYBUILD =		flit_core
 MODPY_PI =		Yes
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 .include <bsd.port.mk>

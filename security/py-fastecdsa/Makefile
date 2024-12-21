@@ -1,13 +1,13 @@
 COMMENT =		fast elliptic curve digital signatures
 
-MODPY_EGG_VERSION =	2.3.2
+MODPY_DISTV =	2.3.2
 
 GH_ACCOUNT =		AntonKueltz
 GH_PROJECT =		fastecdsa
-GH_TAGNAME =		v${MODPY_EGG_VERSION}
+GH_TAGNAME =		v${MODPY_DISTV}
 
-PKGNAME =		py-fastecdsa-${MODPY_EGG_VERSION}
-REVISION =		0
+PKGNAME =		py-fastecdsa-${MODPY_DISTV}
+REVISION =		1
 
 CATEGORIES =		security
 
@@ -25,9 +25,6 @@ MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
 MODPY_TEST_DIR =	${WRKSRC}/fastecdsa/tests
 MODPY_PYTEST_ARGS =	--pyargs fastecdsa
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 CFLAGS +=		-I${LOCALBASE}/include
 

@@ -1,15 +1,15 @@
 COMMENT =	Digital Forensics Virtual File System (dfVFS)
 
-MODPY_EGG_VERSION = 20200625
-DISTNAME =	dfvfs-${MODPY_EGG_VERSION}
+MODPY_DISTV =	20200625
+DISTNAME =	dfvfs-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	security
 
 HOMEPAGE =	https://github.com/log2timeline/dfvfs/wiki
 
-SITES =		https://github.com/log2timeline/dfvfs/releases/download/${MODPY_EGG_VERSION}/
+SITES =		https://github.com/log2timeline/dfvfs/releases/download/${MODPY_DISTV}/
 
 MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 
@@ -18,15 +18,12 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 
-FLAVORS =	python3
-FLAVOR =	python3
-
 MODPY_PYBUILD =	setuptools
-RUN_DEPENDS +=	devel/py-construct${MODPY_FLAVOR} \
-		security/py-cryptography${MODPY_FLAVOR} \
-		security/py-dfdatetime${MODPY_FLAVOR} \
-		devel/py-six${MODPY_FLAVOR} \
-		sysutils/py-tsk${MODPY_FLAVOR} \
+RUN_DEPENDS +=	devel/py-construct \
+		security/py-cryptography \
+		security/py-dfdatetime \
+		devel/py-six \
+		sysutils/py-tsk \
 		security/libbde \
 		security/libewf \
 		sysutils/libfsntfs \
@@ -42,7 +39,7 @@ RUN_DEPENDS +=	devel/py-construct${MODPY_FLAVOR} \
 		sysutils/libvshadow \
 		sysutils/libvslvm
 
-TEST_DEPENDS +=	devel/py-mock${MODPY_FLAVOR}
+TEST_DEPENDS +=	devel/py-mock
 
 do-test:
 	touch ${WRKSRC}/utils/__init__.py

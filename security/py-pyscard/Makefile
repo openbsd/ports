@@ -1,9 +1,9 @@
 COMMENT=	smartcard package for Python
 
-MODPY_EGG_VERSION=	2.0.7
-DISTNAME=	pyscard-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.0.7
+DISTNAME=	pyscard-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	security
 
@@ -13,8 +13,6 @@ HOMEPAGE=	https://pyscard.sourceforge.io/
 PERMIT_PACKAGE= Yes
 
 MODULES=	lang/python
-FLAVOR=		python3
-FLAVORS=	python3
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools

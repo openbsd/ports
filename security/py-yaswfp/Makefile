@@ -1,8 +1,9 @@
 COMMENT =	Yet Another SWF Parser
 
-MODPY_EGG_VERSION =	0.9.3
-DISTNAME =	yaswfp-${MODPY_EGG_VERSION}pl20220304
+MODPY_DISTV =	0.9.3
+DISTNAME =	yaswfp-${MODPY_DISTV}pl20220304
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 GH_ACCOUNT =	facundobatista
 GH_PROJECT =	yaswfp
@@ -15,8 +16,5 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_PYBUILD =	setuptools
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 .include <bsd.port.mk>

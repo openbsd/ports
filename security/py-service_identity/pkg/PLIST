@@ -1,11 +1,11 @@
-@pkgpath security/py-service_identity
+@pkgpath security/py-service_identity,python3
 lib/python${MODPY_VERSION}/site-packages/service_identity/
-lib/python${MODPY_VERSION}/site-packages/service_identity-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/service_identity-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/service_identity-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/service_identity-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/service_identity-${MODPY_EGG_VERSION}.dist-info/licenses/
-lib/python${MODPY_VERSION}/site-packages/service_identity-${MODPY_EGG_VERSION}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/service_identity-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/service_identity-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/service_identity-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/service_identity-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/service_identity-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/service_identity-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/service_identity/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/service_identity/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/service_identity/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

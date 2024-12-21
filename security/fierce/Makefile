@@ -1,10 +1,10 @@
 COMMENT =		DNS reconnaissance tool for locating non-contiguous IP space
 
-MODPY_EGG_VERSION =	1.5.0
+MODPY_DISTV =	1.5.0
 GH_ACCOUNT =		mschwager
 GH_PROJECT =		fierce
-GH_TAGNAME =		${MODPY_EGG_VERSION}
-REVISION =		0
+GH_TAGNAME =		${MODPY_DISTV}
+REVISION =		1
 
 CATEGORIES =		security
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		net/py-dnspython${MODPY_FLAVOR}
+RUN_DEPENDS =		net/py-dnspython
 
 pre-configure:
 	sed -i 's,os.path.dirname(__file__),"${MODPY_SITEPKG}/fierce/",' \

@@ -1,8 +1,9 @@
 COMMENT =		krb5 API interface
 
-MODPY_EGG_VERSION =	0.6.0
-DISTNAME =		krb5-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.6.0
+DISTNAME =		krb5-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		security
 
@@ -14,13 +15,10 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python \
 			security/heimdal
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-BUILD_DEPENDS =		lang/cython${MODPY_FLAVOR}
+BUILD_DEPENDS =		lang/cython
 
 # tests need missing k5test
 

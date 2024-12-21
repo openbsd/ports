@@ -2,19 +2,20 @@ COMMENT=	client for certificate authorities using ACME protocols
 
 HOMEPAGE=	https://certbot.eff.org/
 
-DISTNAME=	certbot-${MODPY_EGG_VERSION}
+DISTNAME=	certbot-${MODPY_DISTV}
+REVISION=	0
 
-RUN_DEPENDS=	security/letsencrypt/py-acme${MODPY_FLAVOR}=${MODPY_EGG_VERSION} \
-		devel/py-configargparse${MODPY_FLAVOR} \
-		devel/py-configobj${MODPY_FLAVOR} \
-		security/py-cryptography${MODPY_FLAVOR} \
-		sysutils/py-distro${MODPY_FLAVOR} \
-		security/py-josepy${MODPY_FLAVOR} \
-		devel/py-parsedatetime${MODPY_FLAVOR} \
-		textproc/py-pyRFC3339${MODPY_FLAVOR} \
-		devel/py-zopecomponent${MODPY_FLAVOR} \
-		devel/py-zopeinterface${MODPY_FLAVOR}
-RUN_DEPENDS+=	devel/py-setuptools${MODPY_FLAVOR}
+RUN_DEPENDS=	security/letsencrypt/py-acme=${MODPY_DISTV} \
+		devel/py-configargparse \
+		devel/py-configobj \
+		security/py-cryptography \
+		sysutils/py-distro \
+		security/py-josepy \
+		devel/py-parsedatetime \
+		textproc/py-pyRFC3339 \
+		devel/py-zopecomponent \
+		devel/py-zopeinterface
+RUN_DEPENDS+=	devel/py-setuptools
 MODPY_PYTEST=	Yes
 
 do-configure:

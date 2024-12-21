@@ -1,10 +1,10 @@
 COMMENT =	library providing cryptographic and general-purpose routines
 
-MODPY_EGG_VERSION =	0.23.0
+MODPY_DISTV =	0.23.0
 
-DISTNAME =	securesystemslib-${MODPY_EGG_VERSION}
+DISTNAME =	securesystemslib-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	security
 
@@ -21,12 +21,9 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	tests
 
-FLAVOR =		python3
-FLAVORS =		python3
-
-RUN_DEPENDS =		devel/py-colorama${MODPY_FLAVOR} \
-			security/py-cryptography${MODPY_FLAVOR} \
-			security/py-PyNaCl${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-colorama \
+			security/py-cryptography \
+			security/py-PyNaCl
 
 pre-test:
 	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python

@@ -1,9 +1,9 @@
 COMMENT =	ForensicArtifacts.com Artifact Repository
 
-MODPY_EGG_VERSION = 20200118
-DISTNAME =	artifacts-${MODPY_EGG_VERSION}
+MODPY_DISTV =	20200118
+DISTNAME =	artifacts-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	security
 
@@ -18,11 +18,8 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =	setuptools
 
-FLAVORS =	python3
-FLAVOR =	python3
-
-RUN_DEPENDS =	textproc/py-yaml${MODPY_FLAVOR}
-TEST_DEPENDS =	devel/py-yapf${MODPY_FLAVOR}
+RUN_DEPENDS =	textproc/py-yaml
+TEST_DEPENDS =	devel/py-yapf
 MAKE_ENV +=	LC_CTYPE='en_US.UTF-8'
 
 .include <bsd.port.mk>

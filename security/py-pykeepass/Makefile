@@ -1,11 +1,11 @@
 COMMENT =	interact with keepass databases from Python
 
-MODPY_EGG_VERSION =	4.0.6
+MODPY_DISTV =	4.0.6
 
-DISTNAME =	pykeepass-${MODPY_EGG_VERSION}
+DISTNAME =	pykeepass-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	security
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://github.com/libkeepass/pykeepass
 
@@ -14,19 +14,16 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 
-FLAVORS =	python3
-FLAVOR =	python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =	setuptools
 NO_TEST =		Yes
 # tests are not included in pypi tarballs; with a git checkout you can use
 #MODPY_PYTEST_ARGS =tests/tests.py
 
-RUN_DEPENDS =	devel/py-construct${MODPY_FLAVOR} \
-		devel/py-dateutil${MODPY_FLAVOR} \
-		security/py-argon2-cffi${MODPY_FLAVOR} \
-		security/py-cryptodomex${MODPY_FLAVOR} \
-		textproc/py-lxml${MODPY_FLAVOR}
+RUN_DEPENDS =	devel/py-construct \
+		devel/py-dateutil \
+		security/py-argon2-cffi \
+		security/py-cryptodomex \
+		textproc/py-lxml
 
 .include <bsd.port.mk>

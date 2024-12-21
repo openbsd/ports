@@ -1,9 +1,9 @@
 COMMENT=	crypto and TLS toolkit for Python
 
-MODPY_EGG_VERSION=	0.41.0
-DISTNAME=	M2Crypto-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.41.0
+DISTNAME=	M2Crypto-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	security
 
@@ -17,9 +17,6 @@ WANTLIB +=	crypto pthread ssl ${MODPY_WANTLIB}
 MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 BUILD_DEPENDS=	devel/swig
 MAKE_ENV=	SWIG_FEATURES=-I/usr/include

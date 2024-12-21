@@ -1,9 +1,9 @@
 COMMENT=	Python module providing a password hashing framework
 
-MODPY_EGG_VERSION= 1.7.4
-DISTNAME=	passlib-${MODPY_EGG_VERSION}
-PKGNAME=	py-passlib-${MODPY_EGG_VERSION}
-REVISION=	4
+MODPY_DISTV=	1.7.4
+DISTNAME=	passlib-${MODPY_DISTV}
+PKGNAME=	py-passlib-${MODPY_DISTV}
+REVISION=	5
 
 CATEGORIES=	security
 
@@ -16,14 +16,11 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-RUN_DEPENDS=	devel/py-setuptools${MODPY_FLAVOR} \
-		security/py-bcrypt${MODPY_FLAVOR} \
-		security/py-scrypt${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-setuptools \
+		security/py-bcrypt \
+		security/py-scrypt
 TEST_DEPENDS=	${RUN_DEPENDS} \
-		devel/py-mock${MODPY_FLAVOR} \
+		devel/py-mock \
 		www/apache-httpd
 
 pre-test:

@@ -1,8 +1,8 @@
 COMMENT =	web fuzzer
 
-MODPY_EGG_VERSION =	3.1.0
-DISTNAME =	wfuzz-${MODPY_EGG_VERSION}
-REVISION =	3
+MODPY_DISTV =	3.1.0
+DISTNAME =	wfuzz-${MODPY_DISTV}
+REVISION =	4
 
 CATEGORIES =	security www
 
@@ -18,10 +18,10 @@ MODPY_PI =		Yes
 MODULES =		lang/python
 MODPY_PYBUILD =	setuptools
 
-RUN_DEPENDS =		devel/py-parsing${MODPY_FLAVOR} \
-			devel/py-six${MODPY_FLAVOR} \
-			net/py-curl${MODPY_FLAVOR} \
-			textproc/py-chardet${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-parsing \
+			devel/py-six \
+			net/py-curl \
+			textproc/py-chardet
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
 

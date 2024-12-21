@@ -1,9 +1,9 @@
 COMMENT =		Gajim's fork of py-axolotl
 
-MODPY_EGG_VERSION =	1.0.1
-DISTNAME =		omemo-dr-${MODPY_EGG_VERSION}
-PKGNAME =		py-omemo-dr-${MODPY_EGG_VERSION}
-REVISION =		0
+MODPY_DISTV =	1.0.1
+DISTNAME =		omemo-dr-${MODPY_DISTV}
+PKGNAME =		py-omemo-dr-${MODPY_DISTV}
+REVISION =		1
 
 CATEGORIES =		security
 
@@ -16,10 +16,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-RUN_DEPENDS =		devel/py-protobuf${MODPY_FLAVOR}>=4.21.0 \
-			security/py-cryptography${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-protobuf>=4.21.0 \
+			security/py-cryptography
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
 COMMENT =	tool to test a PDF file
 
-MODPY_EGG_VERSION =	0.2.7
-DISTNAME =	pdfid_v${MODPY_EGG_VERSION:S/./_/g}
-PKGNAME =	pdfid-${MODPY_EGG_VERSION}
-REVISION =	3
+MODPY_DISTV =	0.2.7
+DISTNAME =	pdfid_v${MODPY_DISTV:S/./_/g}
+PKGNAME =	pdfid-${MODPY_DISTV}
+REVISION =	4
 
 CATEGORIES =	security
 

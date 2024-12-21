@@ -1,8 +1,8 @@
 COMMENT=	importer for pass (passwordstore)
 
-MODPY_EGG_VERSION= 3.5
-REVISION=	0
-DISTNAME=	pass-import-${MODPY_EGG_VERSION}
+MODPY_DISTV=	3.5
+REVISION=	1
+DISTNAME=	pass-import-${MODPY_DISTV}
 
 CATEGORIES=	security
 
@@ -19,18 +19,18 @@ MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 NO_TEST=	Yes
 
-BUILD_DEPENDS=	security/py-zxcvbn${MODPY_FLAVOR} \
-		textproc/py-yaml${MODPY_FLAVOR} \
-		www/py-requests${MODPY_FLAVOR}
+BUILD_DEPENDS=	security/py-zxcvbn \
+		textproc/py-yaml \
+		www/py-requests
 
 RUN_DEPENDS=	security/password-store \
-		devel/py-magic${MODPY_FLAVOR} \
-		security/py-cryptography${MODPY_FLAVOR} \
-		security/py-pykeepass${MODPY_FLAVOR} \
-		security/py-zxcvbn${MODPY_FLAVOR} \
-		textproc/py-defusedxml${MODPY_FLAVOR} \
-		textproc/py-yaml${MODPY_FLAVOR} \
-		www/py-requests${MODPY_FLAVOR}
+		devel/py-magic \
+		security/py-cryptography \
+		security/py-pykeepass \
+		security/py-zxcvbn \
+		textproc/py-defusedxml \
+		textproc/py-yaml \
+		www/py-requests
 
 # some import modules require additional dependencies;
 # - gnome-keyring requires installing py3-secretstorage

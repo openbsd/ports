@@ -1,9 +1,9 @@
 COMMENT =	analyze OLE files
 
-MODPY_EGG_VERSION =	0.0.60
-DISTNAME =	oledump_V${MODPY_EGG_VERSION:S/./_/g}
-PKGNAME =	oledump-${MODPY_EGG_VERSION}
-REVISION =	3
+MODPY_DISTV =	0.0.60
+DISTNAME =	oledump_V${MODPY_DISTV:S/./_/g}
+PKGNAME =	oledump-${MODPY_DISTV}
+REVISION =	4
 
 
 CATEGORIES =	security
@@ -20,8 +20,8 @@ SITES =		https://didierstevens.com/files/software/
 EXTRACT_SUFX =	.zip
 
 MODULES =	lang/python
-RUN_DEPENDS =	security/yara/python${MODPY_FLAVOR} \
-		devel/py-olefile${MODPY_FLAVOR}
+RUN_DEPENDS =	security/yara/python \
+		devel/py-olefile
 
 NO_BUILD =	Yes
 NO_TEST =	Yes

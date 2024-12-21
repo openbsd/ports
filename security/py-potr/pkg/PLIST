@@ -1,4 +1,4 @@
-@pkgpath security/py-potr
+@pkgpath security/py-potr,python3
 lib/python${MODPY_VERSION}/site-packages/potr/
 lib/python${MODPY_VERSION}/site-packages/potr/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/potr/${MODPY_PYCACHE}/
@@ -27,9 +27,9 @@ lib/python${MODPY_VERSION}/site-packages/potr/context.py
 lib/python${MODPY_VERSION}/site-packages/potr/crypt.py
 lib/python${MODPY_VERSION}/site-packages/potr/proto.py
 lib/python${MODPY_VERSION}/site-packages/potr/utils.py
-lib/python${MODPY_VERSION}/site-packages/python_potr-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/python_potr-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/python_potr-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/python_potr-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/python_potr-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/python_potr-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/python_potr-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/python_potr-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/python_potr-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/python_potr-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/python_potr-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/python_potr-${MODPY_DISTV}.dist-info/top_level.txt

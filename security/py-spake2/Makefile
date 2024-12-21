@@ -1,8 +1,9 @@
 COMMENT =	SPAKE2 password-authenticated key exchange (pure Python)
 
-MODPY_EGG_VERSION =	0.9
-DISTNAME =		spake2-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.9
+DISTNAME =		spake2-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		security
 
@@ -15,9 +16,6 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =	setuptools
 
-RUN_DEPENDS =		security/py-cryptography${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR =		python3
+RUN_DEPENDS =		security/py-cryptography
 
 .include <bsd.port.mk>

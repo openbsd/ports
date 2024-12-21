@@ -1,9 +1,9 @@
 COMMENT =	python tools to analyze OLE files
 
-MODPY_EGG_VERSION = 0.60.1
-DISTNAME =	oletools-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.60.1
+DISTNAME =	oletools-${MODPY_DISTV}
 EXTRACT_SUFX =	.zip
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	security
 
@@ -26,7 +26,7 @@ MODPY_PYTEST =		Yes
 # XXX: pcodedmp needed for olevba, but it can be run with --no-pcode
 # XXX: colorclass also needed by some tools
 RUN_DEPENDS =	${MODPY_TKINTER_DEPENDS} \
-		devel/py-parsing${MODPY_FLAVOR}>=2.2.0 \
-		devel/py-olefile${MODPY_FLAVOR}
+		devel/py-parsing>=2.2.0 \
+		devel/py-olefile
 
 .include <bsd.port.mk>

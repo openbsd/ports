@@ -1,9 +1,10 @@
 COMMENT=	bcrypt blowfish password hashing for Python
 
-MODPY_EGG_VERSION= 4.2.1
-DISTNAME=	bcrypt-${MODPY_EGG_VERSION}
-DISTFILES=	bcrypt-${MODPY_EGG_VERSION}${EXTRACT_SUFX}
+MODPY_DISTV=	4.2.1
+DISTNAME=	bcrypt-${MODPY_DISTV}
+DISTFILES=	bcrypt-${MODPY_DISTV}${EXTRACT_SUFX}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 .include "crates.inc"
 
@@ -23,13 +24,10 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools-rust
 MODPY_PI=	Yes
 
-FLAVORS=	python3
-FLAVOR=		python3
-
 MODCARGO_CARGOTOML= ${WRKSRC}/src/_bcrypt/Cargo.toml
 
-RUN_DEPENDS=	devel/py-cffi${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-cffi
 BUILD_DEPENDS=	${RUN_DEPENDS} \
-		devel/py-setuptools-rust${MODPY_FLAVOR}
+		devel/py-setuptools-rust
 
 .include <bsd.port.mk>

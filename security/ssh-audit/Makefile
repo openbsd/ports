@@ -1,9 +1,10 @@
 COMMENT =		ssh configuration security auditing tool
 
-MODPY_EGG_VERSION =	3.3.0
+MODPY_DISTV =	3.3.0
 
-DISTNAME =		ssh_audit-${MODPY_EGG_VERSION}
-PKGNAME =		ssh-audit-${MODPY_EGG_VERSION}
+DISTNAME =		ssh_audit-${MODPY_DISTV}
+PKGNAME =		ssh-audit-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		security
 
@@ -18,8 +19,6 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-FLAVORS =		python3
-FLAVOR =		python3
 
 NO_TEST =		Yes
 

@@ -1,9 +1,9 @@
 COMMENT=		Python bindings for libsodium/tweetnacl based on ctypes
 
-MODPY_EGG_VERSION=	2.1.0
-DISTNAME=		libnacl-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.1.0
+DISTNAME=		libnacl-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		security
 
@@ -18,8 +18,6 @@ MODULES=		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		poetry-core
-FLAVORS =		python3
-FLAVOR =		python3
 
 RUN_DEPENDS =		security/libsodium
 

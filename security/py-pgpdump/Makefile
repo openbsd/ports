@@ -1,9 +1,9 @@
 COMMENT =		PGP packet parser library for Python
 
-MODPY_EGG_VERSION =	1.5
-DISTNAME =		pgpdump-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.5
+DISTNAME =		pgpdump-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		security
 
@@ -15,9 +15,6 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 # test_parse_partial_length fails due to a missing file in the sources
 do-test:

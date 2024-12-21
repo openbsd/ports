@@ -1,9 +1,9 @@
 COMMENT =	parse a PDF document
 
-MODPY_EGG_VERSION =	0.7.5
-DISTNAME =	pdf-parser_V${MODPY_EGG_VERSION:S/./_/g}
-PKGNAME =	pdf-parser-${MODPY_EGG_VERSION}
-REVISION =	2
+MODPY_DISTV =	0.7.5
+DISTNAME =	pdf-parser_V${MODPY_DISTV:S/./_/g}
+PKGNAME =	pdf-parser-${MODPY_DISTV}
+REVISION =	3
 
 CATEGORIES =	security
 
@@ -19,7 +19,7 @@ SITES =		https://didierstevens.com/files/software/
 EXTRACT_SUFX =	.zip
 
 MODULES =	lang/python
-RUN_DEPENDS =	security/yara/python${MODPY_FLAVOR}
+RUN_DEPENDS =	security/yara/python
 
 NO_BUILD =	Yes
 NO_TEST =	Yes

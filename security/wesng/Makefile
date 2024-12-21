@@ -1,12 +1,12 @@
 COMMENT=	Windows Exploit Suggester - Next Generation
 
-MODPY_EGG_VERSION= 1.0.2.1
-DISTNAME=	wesng-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.0.2.1
+DISTNAME=	wesng-${MODPY_DISTV}
 # definitions.zip isn't in the pypi release, and is updated frequently;
 # fetch it from upstream's github repo instead
 DEF_DATE=	20221123
 DEF_COMMITHASH=	2834f8e925d1f3ea7ff7de2dad6d7d4155f0fa00
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://github.com/bitsadmin/wesng
 
@@ -19,8 +19,8 @@ MODULES=	lang/python
 MODPY_PI=	yes
 MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS=	textproc/py-chardet${MODPY_FLAVOR} \
-		graphics/py-termcolor${MODPY_FLAVOR}
+RUN_DEPENDS=	textproc/py-chardet \
+		graphics/py-termcolor
 
 DISTFILES=	${DISTNAME}.tar.gz
 DISTFILES.d = 	definitions-${DEF_DATE}{definitions}.zip

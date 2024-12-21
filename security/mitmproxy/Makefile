@@ -1,8 +1,9 @@
 COMMENT =		interactive intercepting HTTP proxy
 
-MODPY_EGG_VERSION =	11.0.2
+MODPY_DISTV =	11.0.2
 
-DISTNAME =		mitmproxy-${MODPY_EGG_VERSION}
+DISTNAME =		mitmproxy-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		security www net
 
@@ -13,36 +14,36 @@ MAINTAINER=		Kirill A. Korinsky <kirill@korins.ky>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-SITES =			https://downloads.mitmproxy.org/${MODPY_EGG_VERSION}/
+SITES =			https://downloads.mitmproxy.org/${MODPY_DISTV}/
 
 MODULES =		lang/python
 
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		www/py-aioquic${MODPY_FLAVOR} \
-			www/py-asgiref${MODPY_FLAVOR} \
-			archivers/py-brotli${MODPY_FLAVOR} \
-			devel/py-certifi${MODPY_FLAVOR} \
-			security/py-cryptography${MODPY_FLAVOR} \
-			www/py-flask${MODPY_FLAVOR} \
-			www/py-h11${MODPY_FLAVOR} \
-			www/py-h2${MODPY_FLAVOR} \
-			www/py-hyperframe${MODPY_FLAVOR} \
-			devel/py-kaitaistruct${MODPY_FLAVOR} \
-			databases/py-ldap3${MODPY_FLAVOR} \
-			security/py-mitmproxy_rs${MODPY_FLAVOR} \
-			net/py-msgpack${MODPY_FLAVOR} \
-			security/py-passlib${MODPY_FLAVOR} \
-			security/py-openssl${MODPY_FLAVOR} \
-			devel/py-parsing${MODPY_FLAVOR} \
-			sysutils/py-pyperclip${MODPY_FLAVOR} \
-			textproc/py-ruamel.yaml${MODPY_FLAVOR} \
-			devel/py-sortedcontainers${MODPY_FLAVOR} \
-			www/py-tornado${MODPY_FLAVOR} \
-			devel/py-urwid${MODPY_FLAVOR} \
-			net/py-wsproto${MODPY_FLAVOR} \
-			net/py-publicsuffix2${MODPY_FLAVOR} \
-			archivers/py-zstandard${MODPY_FLAVOR}
+RUN_DEPENDS =		www/py-aioquic \
+			www/py-asgiref \
+			archivers/py-brotli \
+			devel/py-certifi \
+			security/py-cryptography \
+			www/py-flask \
+			www/py-h11 \
+			www/py-h2 \
+			www/py-hyperframe \
+			devel/py-kaitaistruct \
+			databases/py-ldap3 \
+			security/py-mitmproxy_rs \
+			net/py-msgpack \
+			security/py-passlib \
+			security/py-openssl \
+			devel/py-parsing \
+			sysutils/py-pyperclip \
+			textproc/py-ruamel.yaml \
+			devel/py-sortedcontainers \
+			www/py-tornado \
+			devel/py-urwid \
+			net/py-wsproto \
+			net/py-publicsuffix2 \
+			archivers/py-zstandard
 
 NO_TEST =		Yes
 

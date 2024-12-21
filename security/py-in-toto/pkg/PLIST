@@ -1,3 +1,4 @@
+@pkgpath security/py-in-toto,python3
 bin/in-toto-keygen
 bin/in-toto-mock
 bin/in-toto-record
@@ -5,13 +6,13 @@ bin/in-toto-run
 bin/in-toto-sign
 bin/in-toto-verify
 lib/python${MODPY_VERSION}/site-packages/in_toto/
-lib/python${MODPY_VERSION}/site-packages/in_toto-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/in_toto-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/in_toto-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/in_toto-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/in_toto-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/in_toto-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/in_toto-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/in_toto-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/in_toto-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/in_toto-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/in_toto-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/in_toto-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/in_toto-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/in_toto-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/in_toto/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/in_toto/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/in_toto/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

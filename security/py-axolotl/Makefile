@@ -1,9 +1,9 @@
 COMMENT =		Python port of libaxolotl
 
-MODPY_EGG_VERSION =	0.2.3
-DISTNAME =		python-axolotl-${MODPY_EGG_VERSION}
-PKGNAME =		py-axolotl-${MODPY_EGG_VERSION}
-REVISION =		6
+MODPY_DISTV =	0.2.3
+DISTNAME =		python-axolotl-${MODPY_DISTV}
+PKGNAME =		py-axolotl-${MODPY_DISTV}
+REVISION =		7
 
 CATEGORIES =		security
 
@@ -14,11 +14,8 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =	setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-RUN_DEPENDS =		devel/py-protobuf${MODPY_FLAVOR} \
-			security/py-axolotl-curve25519${MODPY_FLAVOR} \
-			security/py-cryptography${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-protobuf \
+			security/py-axolotl-curve25519 \
+			security/py-cryptography
 
 .include <bsd.port.mk>

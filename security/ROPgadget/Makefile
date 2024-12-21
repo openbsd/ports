@@ -1,11 +1,11 @@
 COMMENT =	Gadgets finder and auto-roper
 
-MODPY_EGG_VERSION =	7.4
-GH_TAGNAME =	v${MODPY_EGG_VERSION}
+MODPY_DISTV =	7.4
+GH_TAGNAME =	v${MODPY_DISTV}
 GH_PROJECT =	ROPGadget
 GH_ACCOUNT =	JonathanSalwan
-DISTNAME =	ROPGadget-${MODPY_EGG_VERSION}
-REVISION =	0
+DISTNAME =	ROPGadget-${MODPY_DISTV}
+REVISION =	1
 
 CATEGORIES =	security
 
@@ -17,8 +17,8 @@ PERMIT_PACKAGE =	Yes
 MODULES =	lang/python
 MODPY_PYBUILD =	setuptools
 
-RUN_DEPENDS =	devel/capstone/python${MODPY_FLAVOR}
+RUN_DEPENDS =	devel/capstone/python
 
-WRKDIST =	${WRKDIR}/ROPgadget-${MODPY_EGG_VERSION}
+WRKDIST =	${WRKDIR}/ROPgadget-${MODPY_DISTV}
 
 .include <bsd.port.mk>

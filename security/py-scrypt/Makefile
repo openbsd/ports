@@ -1,9 +1,10 @@
 COMMENT=	support for the scrypt key derivation function
 
-MODPY_EGG_VERSION=	0.8.27
+MODPY_DISTV=	0.8.27
 
-DISTNAME=	scrypt-${MODPY_EGG_VERSION}
+DISTNAME=	scrypt-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	security
 
@@ -19,8 +20,5 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 MODPY_PYTEST_ARGS=	scrypt/tests
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

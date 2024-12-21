@@ -1,12 +1,12 @@
+@pkgpath security/py-oauthlib,python3
 @conflict py-oauthlib-*
-@pkgpath security/py-oauthlib
 lib/python${MODPY_VERSION}/site-packages/oauthlib/
-lib/python${MODPY_VERSION}/site-packages/oauthlib-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/oauthlib-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/oauthlib-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/oauthlib-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/oauthlib-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/oauthlib-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/oauthlib-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/oauthlib-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/oauthlib-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/oauthlib-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/oauthlib-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/oauthlib-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/oauthlib/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/oauthlib/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/oauthlib/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

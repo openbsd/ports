@@ -1,14 +1,14 @@
 COMMENT =		pure Python Off-The-Record encryption
 
-MODPY_EGG_VERSION =	1.0.2
+MODPY_DISTV =	1.0.2
 #GH_ACCOUNT =		python-otr
 #GH_PROJECT =		pure-python-otr
-#GH_TAGNAME =		${MODPY_EGG_VERSION}
+#GH_TAGNAME =		${MODPY_DISTV}
 
-DISTNAME =		python-potr-${MODPY_EGG_VERSION}
-PKGNAME =		py-potr-${MODPY_EGG_VERSION}
+DISTNAME =		python-potr-${MODPY_DISTV}
+PKGNAME =		py-potr-${MODPY_DISTV}
 CATEGORIES =		security net
-REVISION =		0
+REVISION =		1
 
 # LGPLv3
 PERMIT_PACKAGE =	Yes
@@ -21,9 +21,6 @@ MODPY_PYBUILD =		setuptools
 # no tests in pypi distfile
 NO_TEST =		Yes
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-RUN_DEPENDS =		security/py-cryptodome${MODPY_FLAVOR}
+RUN_DEPENDS =		security/py-cryptodome
 
 .include <bsd.port.mk>

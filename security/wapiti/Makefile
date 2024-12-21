@@ -1,8 +1,9 @@
 COMMENT =	web-application vulnerability scanner
 
-MODPY_EGG_VERSION =	3.2.2
-DISTNAME =	wapiti3-${MODPY_EGG_VERSION}
-PKGNAME =	wapiti-${MODPY_EGG_VERSION}
+MODPY_DISTV =	3.2.2
+DISTNAME =	wapiti3-${MODPY_DISTV}
+PKGNAME =	wapiti-${MODPY_DISTV}
+REVISION =	0
 
 CATEGORIES =	security www
 
@@ -18,31 +19,31 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		archivers/py-brotli${MODPY_FLAVOR} \
-			archivers/py-brotlicffi${MODPY_FLAVOR} \
-			databases/py-aiosqlite${MODPY_FLAVOR} \
-			databases/py-sqlalchemy${MODPY_FLAVOR} \
-			devel/py-aiocache${MODPY_FLAVOR} \
-			devel/py-asn1${MODPY_FLAVOR} \
-			devel/py-loguru${MODPY_FLAVOR} \
-			devel/py-prance${MODPY_FLAVOR} \
-			devel/py-typing-extensions${MODPY_FLAVOR} \
-			net/py-dnspython${MODPY_FLAVOR} \
-			net/py-tld${MODPY_FLAVOR} \
+RUN_DEPENDS =		archivers/py-brotli \
+			archivers/py-brotlicffi \
+			databases/py-aiosqlite \
+			databases/py-sqlalchemy \
+			devel/py-aiocache \
+			devel/py-asn1 \
+			devel/py-loguru \
+			devel/py-prance \
+			devel/py-typing-extensions \
+			net/py-dnspython \
+			net/py-tld \
 			security/mitmproxy \
-			security/py-yaswfp${MODPY_FLAVOR} \
+			security/py-yaswfp \
 			security/sslscan \
-			textproc/py-MarkupSafe${MODPY_FLAVOR} \
-			textproc/py-humanize${MODPY_FLAVOR} \
-			www/py-aiohttp${MODPY_FLAVOR} \
-			www/py-arsenic${MODPY_FLAVOR} \
-			www/py-beautifulsoup4${MODPY_FLAVOR} \
-			www/py-browser-cookie3${MODPY_FLAVOR} \
-			www/py-h11${MODPY_FLAVOR} \
-			www/py-httpcore${MODPY_FLAVOR} \
-			www/py-httpx${MODPY_FLAVOR} \
-			www/py-httpx-ntlm${MODPY_FLAVOR} \
-			www/py-mako${MODPY_FLAVOR}
+			textproc/py-MarkupSafe \
+			textproc/py-humanize \
+			www/py-aiohttp \
+			www/py-arsenic \
+			www/py-beautifulsoup4 \
+			www/py-browser-cookie3 \
+			www/py-h11 \
+			www/py-httpcore \
+			www/py-httpx \
+			www/py-httpx-ntlm \
+			www/py-mako
 
 # here no tests inside
 NO_TEST =		Yes

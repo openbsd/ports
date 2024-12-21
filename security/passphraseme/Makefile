@@ -1,11 +1,11 @@
 COMMENT =	passphrase generator using EFF's wordlists
 
-MODPY_EGG_VERSION=	0.1.5
-REVISION =		2
+MODPY_DISTV=	0.1.5
+REVISION =		3
 
 GH_ACCOUNT =	micahflee
 GH_PROJECT =	passphraseme
-GH_TAGNAME =	${MODPY_EGG_VERSION}
+GH_TAGNAME =	${MODPY_DISTV}
 
 CATEGORIES =	security
 

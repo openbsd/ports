@@ -1,9 +1,9 @@
 COMMENT =	ROP gadget finder and binary information tool
 
-MODPY_EGG_VERSION =	1.13.8
-DISTNAME =	ropper-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.13.8
+DISTNAME =	ropper-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	security
 
@@ -18,11 +18,8 @@ MODULES =	lang/python
 MODPY_PYBUILD =	setuptools
 MODPY_PI =	Yes
 
-RUN_DEPENDS =	devel/py-filebytes${MODPY_FLAVOR} \
-		devel/capstone/python${MODPY_FLAVOR} \
-		devel/keystone/python${MODPY_FLAVOR}
-
-FLAVORS =	python3
-FLAVOR =	python3
+RUN_DEPENDS =	devel/py-filebytes \
+		devel/capstone/python \
+		devel/keystone/python
 
 .include <bsd.port.mk>

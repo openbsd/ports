@@ -1,8 +1,9 @@
 COMMENT =		SPNEGO authentication library
 
-MODPY_EGG_VERSION =	0.11.2
-DISTNAME =		pyspnego-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.11.2
+DISTNAME =		pyspnego-${MODPY_DISTV}
 PKGNAME =		${DISTNAME:S/py/py-/}
+REVISION =		0
 
 CATEGORIES =		security
 
@@ -13,21 +14,18 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		security/py-cryptography${MODPY_FLAVOR} \
-			security/py-gssapi${MODPY_FLAVOR} \
-			security/py-krb5${MODPY_FLAVOR}
+RUN_DEPENDS =		security/py-cryptography \
+			security/py-gssapi \
+			security/py-krb5
 
-TEST_DEPENDS =		devel/py-isort${MODPY_FLAVOR} \
-			devel/py-mypy${MODPY_FLAVOR} \
-			devel/py-test-mock${MODPY_FLAVOR} \
-			textproc/py-black${MODPY_FLAVOR} \
-			textproc/py-ruamel.yaml${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-isort \
+			devel/py-mypy \
+			devel/py-test-mock \
+			textproc/py-black \
+			textproc/py-ruamel.yaml
 
 TEST_IS_INTERACTIVE =	test_auth.py takes ages to complete
 

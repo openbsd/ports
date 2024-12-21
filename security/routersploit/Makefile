@@ -1,10 +1,10 @@
 COMMENT =	The Router Exploitation Framework
 
-MODPY_EGG_VERSION = 3.4.0
+MODPY_DISTV =	3.4.0
 GH_ACCOUNT =	threat9
 GH_PROJECT =	routersploit
-GH_TAGNAME =	v${MODPY_EGG_VERSION}
-REVISION =	6
+GH_TAGNAME =	v${MODPY_DISTV}
+REVISION =	7
 
 CATEGORIES =	security net
 
@@ -15,11 +15,11 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PYBUILD =	setuptools
-RUN_DEPENDS =		devel/py-future${MODPY_FLAVOR} \
-			net/py-snmp${MODPY_FLAVOR} \
-			security/py-cryptodome${MODPY_FLAVOR} \
-			security/py-paramiko${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-future \
+			net/py-snmp \
+			security/py-cryptodome \
+			security/py-paramiko \
+			www/py-requests
 
 NO_TEST =		Yes
 

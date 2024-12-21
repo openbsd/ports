@@ -1,5 +1,5 @@
+@pkgpath security/py-axolotl,python3
 @conflict py-axolotl-*
-@pkgpath security/py-axolotl
 lib/python${MODPY_VERSION}/site-packages/axolotl/
 lib/python${MODPY_VERSION}/site-packages/axolotl/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/axolotl/${MODPY_PYCACHE}/
@@ -300,8 +300,8 @@ lib/python${MODPY_VERSION}/site-packages/axolotl/util/byteutil.py
 lib/python${MODPY_VERSION}/site-packages/axolotl/util/hexutil.py
 lib/python${MODPY_VERSION}/site-packages/axolotl/util/keyhelper.py
 lib/python${MODPY_VERSION}/site-packages/axolotl/util/medium.py
-lib/python${MODPY_VERSION}/site-packages/python_axolotl-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/python_axolotl-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/python_axolotl-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/python_axolotl-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/python_axolotl-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/python_axolotl-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/python_axolotl-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/python_axolotl-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/python_axolotl-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/python_axolotl-${MODPY_DISTV}.dist-info/top_level.txt

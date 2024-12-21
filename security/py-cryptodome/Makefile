@@ -1,8 +1,9 @@
 COMMENT =	self-contained cryptographic library for Python
 
-MODPY_EGG_VERSION =	3.21.0
-DISTNAME =	pycryptodome-${MODPY_EGG_VERSION}
+MODPY_DISTV =	3.21.0
+DISTNAME =	pycryptodome-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME:S/py//}
+REVISION =	0
 
 CATEGORIES =	security
 
@@ -15,14 +16,11 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
 TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH} \
-			security/py-cryptodome-test-vectors${MODPY_FLAVOR}
+			security/py-cryptodome-test-vectors
 RUN_DEPENDS =		devel/gmp
 
 .include <bsd.port.arch.mk>

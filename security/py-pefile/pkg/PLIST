@@ -1,4 +1,4 @@
-@pkgpath security/py-pefile
+@pkgpath security/py-pefile,python3
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pefile.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pefile.${MODPY_PYC_MAGIC_TAG}pyc
@@ -15,11 +15,11 @@ lib/python${MODPY_VERSION}/site-packages/ordlookup/${MODPY_PYCACHE}ws2_32.${MODP
 lib/python${MODPY_VERSION}/site-packages/ordlookup/${MODPY_PYCACHE}ws2_32.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ordlookup/oleaut32.py
 lib/python${MODPY_VERSION}/site-packages/ordlookup/ws2_32.py
-lib/python${MODPY_VERSION}/site-packages/pefile-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pefile-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/pefile-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/pefile-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/pefile-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/pefile-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pefile-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pefile-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/pefile-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/pefile-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/pefile-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pefile-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pefile.py
 lib/python${MODPY_VERSION}/site-packages/peutils.py

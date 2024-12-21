@@ -1,9 +1,9 @@
 COMMENT =		Python client library for Hashicorp Vault
 
-MODPY_EGG_VERSION =	1.1.0
-DISTNAME =		hvac-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.1.0
+DISTNAME =		hvac-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Mikolaj Kucharski <mikolaj@kucharski.name>
 
@@ -18,9 +18,6 @@ MODULES =		lang/python
 MODPY_PYBUILD =		poetry-core
 MODPY_PI =		Yes
 
-RUN_DEPENDS =		www/py-requests${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR =		python3
+RUN_DEPENDS =		www/py-requests
 
 .include <bsd.port.mk>

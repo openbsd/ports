@@ -1,3 +1,4 @@
+@pkgpath security/py-cryptodomex,python3
 %%aesni%%
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/Cipher/
@@ -780,10 +781,10 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Cryptodome/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/py.typed
-lib/python${MODPY_VERSION}/site-packages/pycryptodomex-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pycryptodomex-${MODPY_EGG_VERSION}.dist-info/AUTHORS.rst
-lib/python${MODPY_VERSION}/site-packages/pycryptodomex-${MODPY_EGG_VERSION}.dist-info/LICENSE.rst
-lib/python${MODPY_VERSION}/site-packages/pycryptodomex-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/pycryptodomex-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/pycryptodomex-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/pycryptodomex-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pycryptodomex-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pycryptodomex-${MODPY_DISTV}.dist-info/AUTHORS.rst
+lib/python${MODPY_VERSION}/site-packages/pycryptodomex-${MODPY_DISTV}.dist-info/LICENSE.rst
+lib/python${MODPY_VERSION}/site-packages/pycryptodomex-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/pycryptodomex-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/pycryptodomex-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pycryptodomex-${MODPY_DISTV}.dist-info/top_level.txt

@@ -22,6 +22,6 @@ USE_GMAKE=	Yes
 # tests need network (they use pip to populate a venv)
 # some errors expected
 PORTHOME=	${WRKDIR}
-TEST_DEPENDS=	security/py-cryptography${MODPY_FLAVOR}
+TEST_DEPENDS=	security/py-cryptography
 
 .include <bsd.port.mk>

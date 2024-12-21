@@ -2,7 +2,7 @@ COMMENT =	information gathering suite
 
 VERSION =	3.0.6
 DISTNAME =	theharvester-${VERSION}
-REVISION =	6
+REVISION =	7
 
 GH_ACCOUNT =	laramies
 GH_PROJECT =	theHarvester
@@ -23,8 +23,8 @@ FIX_CRLF_FILES =	discovery/dnssearch.py \
 
 MODULES =	lang/python
 
-RUN_DEPENDS =	www/py-requests${MODPY_FLAVOR} \
-		www/py-beautifulsoup4${MODPY_FLAVOR}
+RUN_DEPENDS =	www/py-requests \
+		www/py-beautifulsoup4
 
 MODPY_ADJ_FILES =	theHarvester.py
 

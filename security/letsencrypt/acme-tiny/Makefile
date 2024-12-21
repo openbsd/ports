@@ -1,10 +1,10 @@
 COMMENT=	small 3rd-party letsencrypt client
 
-MODPY_EGG_VERSION= 5.0.1
-DISTNAME=	acme-tiny-${MODPY_EGG_VERSION}
+MODPY_DISTV=	5.0.1
+DISTNAME=	acme-tiny-${MODPY_DISTV}
 EPOCH=		0
 
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	https://github.com/diafygi/acme-tiny
 

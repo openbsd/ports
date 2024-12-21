@@ -1,5 +1,5 @@
 SUBDIR =
 SUBDIR += main
-SUBDIR += python,python3
+SUBDIR += python
 
 .include <bsd.port.subdir.mk>
