@@ -1,6 +1,6 @@
 COMMENT=	fast console MPEG audio player and decoder library
 
-DISTNAME=	mpg123-1.32.9
+DISTNAME=	mpg123-1.32.10
 SHARED_LIBS=	mpg123		7.3	# 48.3
 SHARED_LIBS+=	out123		2.2	# 5.1
 SHARED_LIBS+=	syn123		1.0	# 2.3
