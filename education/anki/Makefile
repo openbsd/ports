@@ -15,7 +15,7 @@ COMMENT =	flashcard learning system with spaced repetition
 #
 DISTNAME =	anki-2.1.16
 EXTRACT_SUFX =	-source.tgz
-REVISION =	8
+REVISION =	9
 
 CATEGORIES =	education
 
@@ -33,19 +33,19 @@ MODPY_SETUPTOOLS =	Yes
 # build needs some of the py-qt5 tools; pull them in via
 # py-qtwebengine so that build fails early on arches where
 # qtwebengine isn't available
-BUILD_DEPENDS =	www/py-qtwebengine${MODPY_FLAVOR}
+BUILD_DEPENDS =	www/py-qtwebengine
 
 RUN_DEPENDS =	audio/lame \
-		audio/py-audio${MODPY_FLAVOR} \
-		devel/py-decorator${MODPY_FLAVOR} \
-		devel/py-jsonschema${MODPY_FLAVOR} \
-		devel/py-send2trash${MODPY_FLAVOR} \
+		audio/py-audio \
+		devel/py-decorator \
+		devel/py-jsonschema \
+		devel/py-send2trash \
 		multimedia/mpv \
-		sysutils/py-distro${MODPY_FLAVOR} \
-		textproc/py-markdown${MODPY_FLAVOR} \
-		www/py-beautifulsoup4${MODPY_FLAVOR} \
-		www/py-qtwebengine${MODPY_FLAVOR} \
-		www/py-requests${MODPY_FLAVOR}
+		sysutils/py-distro \
+		textproc/py-markdown \
+		www/py-beautifulsoup4 \
+		www/py-qtwebengine \
+		www/py-requests
 
 do-build:
 	ln -fs ${LOCALBASE}/bin/{pyuic5,pyrcc5} ${WRKDIR}/bin/$i
