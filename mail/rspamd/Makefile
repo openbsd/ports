@@ -25,12 +25,9 @@ FLAVOR?=
 FLAVOR=
 .endif
 
-MODULES=	devel/cmake \
-		lang/python
+MODULES=	devel/cmake
 COMPILER=	base-clang ports-gcc
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
-MODPY_BUILDDEP=	No
-MODPY_RUNDEP=	No
 
 LIB_DEPENDS=	archivers/libarchive \
 		archivers/zstd \
