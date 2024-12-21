@@ -1,10 +1,9 @@
 COMMENT=	loaders and dumpers for PyYAML
 
-MODPY_DISTV=	1.4.1
+MODPY_DISTV=	1.5.0
 DISTNAME=	yamlloader-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
-REVISION=	0
 
 HOMEPAGE=	https://github.com/Phynix/yamlloader
 
@@ -12,7 +11,7 @@ HOMEPAGE=	https://github.com/Phynix/yamlloader
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PYBUILD=	setuptools
+MODPY_PYBUILD=	hatch-vcs
 MODPY_PI=	Yes
 
 RUN_DEPENDS=	textproc/py-yaml
