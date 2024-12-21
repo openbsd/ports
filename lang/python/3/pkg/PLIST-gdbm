@@ -1,6 +1,6 @@
 @option no-default-conflict
 @option is-branch
-@conflict python-gdbm-${VERSION_SPEC}
+@conflict python-gdbm->=3,<4
 @pkgpath lang/python/3.8,-gdbm
 @pkgpath lang/python/3.9,-gdbm
 @pkgpath lang/python/3.10,-gdbm

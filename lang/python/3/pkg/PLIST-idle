@@ -1,7 +1,6 @@
 @option no-default-conflict
 @option is-branch
-@conflict python-idle-${VERSION_SPEC}
-@conflict python-idle->=3,<3.11.10p0
+@conflict python-idle->=3,<4
 @pkgpath lang/python/3.8,-idle
 @pkgpath lang/python/3.9,-idle
 @pkgpath lang/python/3.10,-idle

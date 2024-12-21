@@ -1,6 +1,6 @@
 @option no-default-conflict
 @option is-branch
-@conflict python-tkinter-${VERSION_SPEC}
+@conflict python-tkinter->=3,<4
 @pkgpath lang/python/3.8,-tkinter
 @pkgpath lang/python/3.9,-tkinter
 @pkgpath lang/python/3.10,-tkinter

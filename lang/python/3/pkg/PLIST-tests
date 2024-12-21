@@ -1,6 +1,6 @@
 @option no-default-conflict
 @option is-branch
-@conflict python-tests-${VERSION_SPEC}
+@conflict python-tests->=3,<4
 @pkgpath lang/python/3.8,-tests
 @pkgpath lang/python/3.9,-tests
 @pkgpath lang/python/3.10,-tests

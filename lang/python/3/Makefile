@@ -8,6 +8,8 @@ SHARED_LIBS =		python3.12 0.0
 VERSION_SPEC =		>=3.12,<3.13
 PORTROACH =		limit:^3\.12
 
+REVISION =		0
+
 AUTOCONF_VERSION =	2.71
 
 CONFIGURE_ENV +=	ac_cv_working_openssl_hashlib=yes \
