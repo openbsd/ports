@@ -1,8 +1,9 @@
 COMMENT=	Python driver for mongodb
 
-MODPY_EGG_VERSION= 4.7.3
-DISTNAME=	pymongo-${MODPY_EGG_VERSION}
+MODPY_DISTV=	4.7.3
+DISTNAME=	pymongo-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/py//}
+REVISION=	0
 
 CATEGORIES=	databases devel
 
@@ -16,8 +17,6 @@ WANTLIB=	pthread ${MODPY_WANTLIB}
 MODPY_PI=	Yes
 
 MODULES=	lang/python
-FLAVORS=	python3
-FLAVOR=		python3
 
 MODPY_PYBUILD=	setuptools
 

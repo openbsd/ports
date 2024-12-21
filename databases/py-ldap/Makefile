@@ -1,9 +1,9 @@
 COMMENT=	LDAP client API for Python
 
-MODPY_EGG_VERSION =	3.4.4
-DISTNAME=	python-ldap-${MODPY_EGG_VERSION}
-PKGNAME=	py-ldap-${MODPY_EGG_VERSION}
-REVISION=	0
+MODPY_DISTV =	3.4.4
+DISTNAME=	python-ldap-${MODPY_DISTV}
+PKGNAME=	py-ldap-${MODPY_DISTV}
+REVISION=	1
 
 CATEGORIES=	databases
 
@@ -16,9 +16,6 @@ WANTLIB += lber ldap pthread ${MODPY_WANTLIB}
 
 MODULES=	lang/python
 
-FLAVORS=	python3
-FLAVOR=		python3
-
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
@@ -26,7 +23,7 @@ LIB_DEPENDS=	${MODPY_LIB_DEPENDS} \
 		databases/openldap
 
 RUN_DEPENDS=	${MODPY_RUN_DEPENDS} \
-		devel/py-asn1-modules${MODPY_FLAVOR}
+		devel/py-asn1-modules
 
 MAKE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"

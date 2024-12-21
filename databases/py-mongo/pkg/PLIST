@@ -1,4 +1,4 @@
-@pkgpath databases/py-mongo
+@pkgpath databases/py-mongo,python3
 %%no_be%%
 lib/python${MODPY_VERSION}/site-packages/bson/
 lib/python${MODPY_VERSION}/site-packages/bson/__init__.py
@@ -85,12 +85,12 @@ lib/python${MODPY_VERSION}/site-packages/gridfs/errors.py
 lib/python${MODPY_VERSION}/site-packages/gridfs/grid_file.py
 lib/python${MODPY_VERSION}/site-packages/gridfs/py.typed
 lib/python${MODPY_VERSION}/site-packages/pymongo/
-lib/python${MODPY_VERSION}/site-packages/pymongo-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pymongo-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/pymongo-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/pymongo-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/pymongo-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/pymongo-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pymongo-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pymongo-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/pymongo-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/pymongo-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/pymongo-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pymongo-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pymongo/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pymongo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

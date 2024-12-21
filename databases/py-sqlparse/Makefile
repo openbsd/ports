@@ -1,8 +1,9 @@
 COMMENT=	non-validating SQL parser
 
-MODPY_EGG_VERSION=	0.5.2
-DISTNAME=	sqlparse-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.5.2
+DISTNAME=	sqlparse-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	databases
 
@@ -12,8 +13,5 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	hatchling
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

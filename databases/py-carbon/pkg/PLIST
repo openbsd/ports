@@ -1,5 +1,5 @@
+@pkgpath databases/py-carbon,python3
 @conflict py-carbon-*
-@pkgpath databases/py-carbon
 @newgroup _graphite:706
 @newuser _graphite:706:_graphite::Graphite and Carbon user:/nonexistent:/sbin/nologin
 bin/carbon-aggregator-cache.py
@@ -8,7 +8,7 @@ bin/carbon-cache.py
 bin/carbon-relay.py
 bin/validate-storage-schemas.py
 lib/python${MODPY_VERSION}/site-packages/carbon/
-lib/python${MODPY_VERSION}/site-packages/carbon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/carbon-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/carbon.egg-info/
 lib/python${MODPY_VERSION}/site-packages/carbon.egg-info/PKG-INFO
 lib/python${MODPY_VERSION}/site-packages/carbon.egg-info/SOURCES.txt

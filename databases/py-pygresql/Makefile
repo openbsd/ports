@@ -1,10 +1,10 @@
 COMMENT =	PostgreSQL module for Python
 
-MODPY_EGG_VERSION =	6.0
-DISTNAME =		PyGreSQL-${MODPY_EGG_VERSION}
-PKGNAME =		py-pygresql-${MODPY_EGG_VERSION}
+MODPY_DISTV =	6.0
+DISTNAME =		PyGreSQL-${MODPY_DISTV}
+PKGNAME =		py-pygresql-${MODPY_DISTV}
 CATEGORIES =		databases
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		http://www.pygresql.org/
 
@@ -12,9 +12,6 @@ MAINTAINER =		Benoit Lecocq <benoit@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 MODULES =	lang/python
 LIB_DEPENDS =	databases/postgresql

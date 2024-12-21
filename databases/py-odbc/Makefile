@@ -1,8 +1,9 @@
 COMMENT=	ODBC bindings for Python
 
-MODPY_EGG_VERSION= 5.2.0
-DISTNAME=	pyodbc-${MODPY_EGG_VERSION}
+MODPY_DISTV=	5.2.0
+DISTNAME=	pyodbc-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/py/py-/}
+REVISION=	0
 
 CATEGORIES=	databases
 
@@ -25,8 +26,5 @@ LIB_DEPENDS=	databases/iodbc
 
 CFLAGS+=	-fPIC -I${LOCALBASE}/include -Wno-deprecated-register
 MAKE_ENV=	LDFLAGS=-L${LOCALBASE}/lib
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

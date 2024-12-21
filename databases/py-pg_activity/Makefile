@@ -1,11 +1,12 @@
 COMMENT =		command line tool for PostgreSQL server activity monitoring
 
-MODPY_EGG_VERSION =	3.5.1
-DISTNAME =		pg_activity-${MODPY_EGG_VERSION}
+MODPY_DISTV =	3.5.1
+DISTNAME =		pg_activity-${MODPY_DISTV}
+REVISION =		0
 
 GH_ACCOUNT =		dalibo
 GH_PROJECT =		pg_activity
-GH_TAGNAME =		v${MODPY_EGG_VERSION}
+GH_TAGNAME =		v${MODPY_DISTV}
 
 CATEGORIES =		databases
 
@@ -14,11 +15,11 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
-RUN_DEPENDS =		databases/py-psycopg2${MODPY_FLAVOR} \
-			devel/py-attrs${MODPY_FLAVOR} \
-			sysutils/py-blessed${MODPY_FLAVOR} \
-			sysutils/py-psutil${MODPY_FLAVOR} \
-			textproc/py-humanize${MODPY_FLAVOR}
+RUN_DEPENDS =		databases/py-psycopg2 \
+			devel/py-attrs \
+			sysutils/py-blessed \
+			sysutils/py-psutil \
+			textproc/py-humanize
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/docs/man/pg_activity.1 ${PREFIX}/man/man1

@@ -1,16 +1,10 @@
-@conflict py-sqlalchemy-<1.4
-@conflict py-sqlalchemy-docs-<1.4
-@conflict ${MODPY_PY_PREFIX}sqlalchemy-<1.4
-@pkgpath databases/py-sqlalchemy,-main
-@pkgpath databases/py-sqlalchemy,-docs
-@pkgpath databases/py-sqlalchemy,-main${MODPY_FLAVOR}
-@pkgpath databases/py-sqlalchemy,-docs${MODPY_FLAVOR}
-lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+@pkgpath databases/py-sqlalchemy,python3
+lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/SQLAlchemy-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/${MODPY_PYCACHE}/

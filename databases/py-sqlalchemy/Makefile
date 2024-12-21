@@ -1,9 +1,9 @@
 COMMENT=	database toolkit for Python
 
-MODPY_EGG_VERSION=	2.0.36
-DISTNAME=	sqlalchemy-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.0.36
+DISTNAME=	sqlalchemy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	databases
 
@@ -20,22 +20,17 @@ MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 
-SUBST_VARS +=	MODPY_FLAVOR
-
-FLAVORS=	python3
-FLAVOR=		python3
-
 MAKE_ENV +=	PYTHONPATH=.
 MODPY_PYTEST=	Yes
 
-BUILD_DEPENDS =	lang/cython${MODPY_FLAVOR}
+BUILD_DEPENDS =	lang/cython
 
-RUN_DEPENDS +=	devel/py-greenlet${MODPY_FLAVOR} \
-		devel/py-typing-extensions${MODPY_FLAVOR}
+RUN_DEPENDS +=	devel/py-greenlet \
+		devel/py-typing-extensions
 
-TEST_DEPENDS=	devel/py-test-xdist${MODPY_FLAVOR} \
-		devel/py-mock${MODPY_FLAVOR} \
-		devel/py-mypy${MODPY_FLAVOR}
+TEST_DEPENDS=	devel/py-test-xdist \
+		devel/py-mock \
+		devel/py-mypy
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-sqlalchemy

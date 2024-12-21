@@ -1,12 +1,12 @@
-@pkgpath databases/py-bsddb3
+@pkgpath databases/py-bsddb3,python3
 include/python${MODPY_VERSION}${MODPY_LIB_SUFFIX}/bsddb3/
 include/python${MODPY_VERSION}${MODPY_LIB_SUFFIX}/bsddb3/bsddb.h
 lib/python${MODPY_VERSION}/site-packages/bsddb3/
-lib/python${MODPY_VERSION}/site-packages/bsddb3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/bsddb3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/bsddb3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/bsddb3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/bsddb3-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/bsddb3-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/bsddb3-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/bsddb3-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/bsddb3-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/bsddb3-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/bsddb3/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bsddb3/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/bsddb3/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc

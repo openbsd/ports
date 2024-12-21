@@ -1,9 +1,4 @@
-@conflict py-ldap-examples-*
-@conflict ${MODPY_PY_PREFIX}ldap-examples-*
-@pkgpath databases/py-ldap,-main
-@pkgpath databases/py-ldap,-main,python3
-@pkgpath databases/py-ldap,-examples
-@pkgpath databases/py-ldap,-examples,python3
+@pkgpath databases/py-ldap,python3
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}ldapurl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}ldapurl.${MODPY_PYC_MAGIC_TAG}pyc
@@ -128,12 +123,12 @@ lib/python${MODPY_VERSION}/site-packages/ldap/schema/tokenizer.py
 lib/python${MODPY_VERSION}/site-packages/ldap/syncrepl.py
 lib/python${MODPY_VERSION}/site-packages/ldapurl.py
 lib/python${MODPY_VERSION}/site-packages/ldif.py
-lib/python${MODPY_VERSION}/site-packages/python_ldap-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/python_ldap-${MODPY_EGG_VERSION}.dist-info/LICENCE
-lib/python${MODPY_VERSION}/site-packages/python_ldap-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/python_ldap-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/python_ldap-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/python_ldap-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/python_ldap-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/python_ldap-${MODPY_DISTV}.dist-info/LICENCE
+lib/python${MODPY_VERSION}/site-packages/python_ldap-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/python_ldap-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/python_ldap-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/python_ldap-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/slapdtest/
 lib/python${MODPY_VERSION}/site-packages/slapdtest/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/slapdtest/${MODPY_PYCACHE}/

@@ -1,13 +1,13 @@
 COMMENT =	backup and restoration manager for PostgreSQL
 
-MODPY_EGG_VERSION =	3.10.0
+MODPY_DISTV =	3.10.0
 
 GH_ACCOUNT =	EnterpriseDB
 GH_PROJECT =	barman
-GH_TAGNAME =	release/${MODPY_EGG_VERSION}
-DISTNAME =	barman-${MODPY_EGG_VERSION}
-WRKDIST =	${WRKDIR}/barman-release-${MODPY_EGG_VERSION}
-REVISION =	0
+GH_TAGNAME =	release/${MODPY_DISTV}
+DISTNAME =	barman-${MODPY_DISTV}
+WRKDIST =	${WRKDIR}/barman-release-${MODPY_DISTV}
+REVISION =	1
 
 CATEGORIES =	databases
 HOMEPAGE =	https://www.pgbarman.org/
@@ -16,19 +16,19 @@ HOMEPAGE =	https://www.pgbarman.org/
 PERMIT_PACKAGE =	Yes
 
 # generated tars are available in /releases/, but lack tests
-#SITES =	https://github.com/EnterpriseDB/barman/releases/download/release%2F${MODPY_EGG_VERSION}/
+#SITES =	https://github.com/EnterpriseDB/barman/releases/download/release%2F${MODPY_DISTV}/
 
 MODULES =	lang/python
 MODPY_PYBUILD =	setuptools
-RUN_DEPENDS =	databases/py-psycopg2${MODPY_FLAVOR} \
+RUN_DEPENDS =	databases/py-psycopg2 \
 		databases/postgresql \
 		net/rsync \
-		devel/py-dateutil${MODPY_FLAVOR} \
-		devel/py-argcomplete${MODPY_FLAVOR}
+		devel/py-dateutil \
+		devel/py-argcomplete
 
-TEST_DEPENDS =	devel/py-test-timeout${MODPY_FLAVOR} \
-		devel/py-mock${MODPY_FLAVOR} \
-		devel/py-test-runner${MODPY_FLAVOR}
+TEST_DEPENDS =	devel/py-test-timeout \
+		devel/py-mock \
+		devel/py-test-runner
 
 # some cloud-related deps are not ported (esp for google/azure); pytest's
 # collection of tets errors out if some of these are not ignored, and avoid

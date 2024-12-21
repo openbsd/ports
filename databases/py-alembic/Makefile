@@ -1,10 +1,11 @@
 COMMENT=	database migration tool for sqlalchemy
 
-MODPY_EGG_VERSION=	1.14.0
+MODPY_DISTV=	1.14.0
 #FIX_EXTRACT_PERMISSIONS= Yes
 
-DISTNAME=	alembic-${MODPY_EGG_VERSION}
+DISTNAME=	alembic-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	databases
 
@@ -17,11 +18,8 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-RUN_DEPENDS=	databases/py-sqlalchemy${MODPY_FLAVOR} \
-		devel/py-typing-extensions${MODPY_FLAVOR} \
-		www/py-mako${MODPY_FLAVOR}
+RUN_DEPENDS=	databases/py-sqlalchemy \
+		devel/py-typing-extensions \
+		www/py-mako
 
 .include <bsd.port.mk>

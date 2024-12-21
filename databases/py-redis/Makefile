@@ -1,10 +1,11 @@
 COMMENT =		Python interface to Redis
 
-MODPY_EGG_VERSION =	5.0.9
-DIST_TUPLE =		github redis redis-py v${MODPY_EGG_VERSION} .
+MODPY_DISTV =	5.0.9
+DIST_TUPLE =		github redis redis-py v${MODPY_DISTV} .
 
 PKGNAME =		py-${DISTNAME:S/-py//}
 CATEGORIES =		databases
+REVISION =		0
 
 HOMEPAGE =		https://github.com/redis/redis-py
 
@@ -15,9 +16,6 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	--disable-pytest-warnings \
 			-m "onlynoncluster and not redismod"
@@ -25,16 +23,16 @@ MODPY_PYTEST_ARGS =	--disable-pytest-warnings \
 # Be sure to have a redis server running on localhost
 TEST_IS_INTERACTIVE =	Yes
 
-RUN_DEPENDS =		devel/py-async-timeout${MODPY_FLAVOR} \
+RUN_DEPENDS =		devel/py-async-timeout \
 
 TEST_DEPENDS =		databases/redis \
-			devel/py-cachetools${MODPY_FLAVOR} \
-			devel/py-invoke${MODPY_FLAVOR} \
-			devel/py-mock${MODPY_FLAVOR} \
-			devel/py-test-asyncio${MODPY_FLAVOR} \
-			devel/py-test-cov${MODPY_FLAVOR} \
-			devel/py-uvloop${MODPY_FLAVOR} \
-			math/py-numpy${MODPY_FLAVOR} \
-			textproc/py-ujson${MODPY_FLAVOR}
+			devel/py-cachetools \
+			devel/py-invoke \
+			devel/py-mock \
+			devel/py-test-asyncio \
+			devel/py-test-cov \
+			devel/py-uvloop \
+			math/py-numpy \
+			textproc/py-ujson
 
 .include <bsd.port.mk>

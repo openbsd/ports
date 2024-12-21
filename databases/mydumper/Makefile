@@ -16,7 +16,7 @@ WANTLIB +=	pcre ssl z
 SITES =		https://launchpad.net/mydumper/${V:R}/${V}/+download/
 
 MODULES =	devel/cmake
-BUILD_DEPENDS =	textproc/py-sphinx,python3>=4.0.2
+BUILD_DEPENDS =	textproc/py-sphinx
 LIB_DEPENDS =	databases/mariadb \
 		devel/glib2 \
 		devel/pcre

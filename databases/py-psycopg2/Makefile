@@ -1,9 +1,10 @@
 COMMENT=	PostgreSQL database adapter for Python
 
-MODPY_EGG_VERSION=	2.9.10
-DISTNAME=	psycopg2-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.9.10
+DISTNAME=	psycopg2-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	databases
+REVISION=	0
 
 HOMEPAGE=	https://www.psycopg.org/
 
@@ -23,9 +24,6 @@ MODPY_PYTEST=	No
 LIB_DEPENDS=	databases/postgresql
 RUN_DEPENDS=	databases/postgresql
 TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH}
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 # To run the tests, create and start a test database as follows:
 #     createdb psycopg2_test

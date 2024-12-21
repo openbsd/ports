@@ -1,8 +1,9 @@
 COMMENT=	sqlalchemy support for flask
 
-MODPY_EGG_VERSION= 3.1.1
-DISTNAME=	flask_sqlalchemy-${MODPY_EGG_VERSION}
+MODPY_DISTV=	3.1.1
+DISTNAME=	flask_sqlalchemy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
+REVISION=	0
 
 CATEGORIES=	databases www
 
@@ -15,10 +16,7 @@ MODULES=	lang/python
 MODPY_PYBUILD=	flit_core
 MODPY_PI=	Yes
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-RUN_DEPENDS=	databases/py-sqlalchemy${MODPY_FLAVOR} \
-		www/py-flask${MODPY_FLAVOR}
+RUN_DEPENDS=	databases/py-sqlalchemy \
+		www/py-flask
 
 .include <bsd.port.mk>

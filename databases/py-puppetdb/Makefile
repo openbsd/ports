@@ -1,10 +1,10 @@
 COMMENT=		library for working with the PuppetDB API
 
-MODPY_EGG_VERSION=	3.2.0
-DISTNAME=		pypuppetdb-${MODPY_EGG_VERSION}
-PKGNAME=		py-puppetdb-${MODPY_EGG_VERSION}
+MODPY_DISTV=	3.2.0
+DISTNAME=		pypuppetdb-${MODPY_DISTV}
+PKGNAME=		py-puppetdb-${MODPY_DISTV}
 CATEGORIES=		databases www
-REVISION=		0
+REVISION=		1
 
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 
@@ -16,10 +16,7 @@ MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 
-FLAVORS=	python3
-FLAVOR=		python3
-
-RUN_DEPENDS=	www/py-requests${MODPY_FLAVOR}>=2.22.0
+RUN_DEPENDS=	www/py-requests>=2.22.0
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
 # ERROR: toxini file 'tox.ini' not found

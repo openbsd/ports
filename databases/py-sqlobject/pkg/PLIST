@@ -1,14 +1,14 @@
+@pkgpath databases/py-sqlobject,python3
 @conflict py-sqlobject-*
-@pkgpath databases/py-sqlobject
 bin/sqlobject-admin
 bin/sqlobject-convertOldURI
-lib/python${MODPY_VERSION}/site-packages/SQLObject-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/SQLObject-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/SQLObject-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/SQLObject-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/SQLObject-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/SQLObject-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/SQLObject-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/SQLObject-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/SQLObject-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/SQLObject-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/SQLObject-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/SQLObject-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/SQLObject-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/SQLObject-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/sqlobject/
 lib/python${MODPY_VERSION}/site-packages/sqlobject/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlobject/${MODPY_PYCACHE}/

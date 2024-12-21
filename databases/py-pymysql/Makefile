@@ -1,10 +1,10 @@
 COMMENT=	MySQL driver in pure Python
 
-MODPY_EGG_VERSION=	1.1.0
+MODPY_DISTV=	1.1.0
 
-DISTNAME=	PyMySQL-${MODPY_EGG_VERSION}
+DISTNAME=	PyMySQL-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:L}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	databases
 
@@ -17,9 +17,6 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 # only tests specific newer auth methods, one of which we don't have deps
 # for, and doesn't seem to fit the mariadb.port.mk framework too well

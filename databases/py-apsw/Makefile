@@ -1,18 +1,18 @@
 COMMENT =	thin SQLite wrapper for Python
 
 # version 3.XX.Y.Z of apsw usually needs sqlite3 of at least 3.XX
-MODPY_EGG_VERSION = 3.44.2.0
-DISTNAME =	apsw-${MODPY_EGG_VERSION}
-PKGNAME =	py-apsw-${MODPY_EGG_VERSION}
+MODPY_DISTV =	3.44.2.0
+DISTNAME =	apsw-${MODPY_DISTV}
+PKGNAME =	py-apsw-${MODPY_DISTV}
 CATEGORIES =	databases
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://rogerbinns.github.io/apsw/
 
 # zlib
 PERMIT_PACKAGE =	Yes
 
-SITES =		https://github.com/rogerbinns/apsw/releases/download/${MODPY_EGG_VERSION}/
+SITES =		https://github.com/rogerbinns/apsw/releases/download/${MODPY_DISTV}/
 
 EXTRACT_SUFX =	.zip
 
@@ -23,9 +23,6 @@ LIB_DEPENDS =	databases/sqlite3
 MODULES =	lang/python
 MODPY_PYBUILD =	setuptools
 CFLAGS +=	-I${LOCALBASE}/include
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 do-test: fake
 	@cd ${WRKSRC} && ${SETENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \

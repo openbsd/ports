@@ -1,9 +1,10 @@
 COMMENT=	Python bindings for LMDB
 
-MODPY_EGG_VERSION=	1.5.1
+MODPY_DISTV=	1.5.1
 
-DISTNAME=	lmdb-${MODPY_EGG_VERSION}
+DISTNAME=	lmdb-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	databases
 
@@ -15,8 +16,6 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += lmdb
 
 MODULES=	lang/python
-FLAVOR=		python3
-FLAVORS=	python3
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools

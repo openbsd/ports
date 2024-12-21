@@ -1,8 +1,9 @@
 COMMENT=	library to write SQL queries
 
-MODPY_EGG_VERSION=	1.5.2
-DISTNAME=	python_sql-${MODPY_EGG_VERSION}
-PKGNAME=	py-sql-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.5.2
+DISTNAME=	python_sql-${MODPY_DISTV}
+PKGNAME=	py-sql-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	databases
 
@@ -12,8 +13,5 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

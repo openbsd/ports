@@ -3,6 +3,7 @@ COMMENT-python=	python bindings for Xapian
 COMMENT-ruby=	ruby bindings for Xapian
 
 V=		1.4.27
+REVISION-python= 0
 DISTNAME=	xapian-bindings-${V}
 
 PKGNAME-main=	xapian-bindings-perl-${V}
@@ -30,7 +31,7 @@ USE_LIBTOOL=	gnu
 
 LIB_DEPENDS=	databases/xapian-core
 
-BUILD_DEPENDS=	textproc/py-sphinx${MODPY_FLAVOR}
+BUILD_DEPENDS=	textproc/py-sphinx
 
 MODULES=	lang/python \
 		lang/ruby

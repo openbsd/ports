@@ -1,7 +1,8 @@
 COMMENT =		PostgreSQL HA cluster management tool
 
-MODPY_EGG_VERSION =	4.0.4
-DISTNAME =		patroni-${MODPY_EGG_VERSION}
+MODPY_DISTV =	4.0.4
+DISTNAME =		patroni-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		databases
 
@@ -16,24 +17,21 @@ MODPY_PI =		Yes
 
 MODULES =		lang/python
 
-BUILD_DEPENDS =		databases/py-psycopg2${MODPY_FLAVOR}
+BUILD_DEPENDS =		databases/py-psycopg2
 
 RUN_DEPENDS =		databases/postgresql,-server \
-			databases/py-psycopg2${MODPY_FLAVOR} \
-			devel/py-click${MODPY_FLAVOR} \
-			devel/py-dateutil${MODPY_FLAVOR} \
-			devel/py-six${MODPY_FLAVOR} \
-			security/py-cryptography${MODPY_FLAVOR} \
-			sysutils/py-psutil${MODPY_FLAVOR} \
+			databases/py-psycopg2 \
+			devel/py-click \
+			devel/py-dateutil \
+			devel/py-six \
+			security/py-cryptography \
+			sysutils/py-psutil \
 			textproc/cdiff \
-			textproc/py-prettytable,python3 \
-			textproc/py-yaml${MODPY_FLAVOR} \
-			www/py-urllib3${MODPY_FLAVOR}
+			textproc/py-prettytable \
+			textproc/py-yaml \
+			www/py-urllib3
 
 MODPY_PYBUILD =		setuptools
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 NO_TEST =		Yes
 

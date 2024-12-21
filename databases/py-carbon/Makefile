@@ -1,11 +1,11 @@
 COMMENT=		backend data caching and persistence daemon for Graphite
 
-MODPY_EGG_VERSION=	1.1.10
+MODPY_DISTV=	1.1.10
 
-DISTNAME=		carbon-${MODPY_EGG_VERSION}
+DISTNAME=		carbon-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		databases
-REVISION=		3
+REVISION=		4
 
 # Apache
 PERMIT_PACKAGE=		Yes
@@ -14,11 +14,8 @@ MODULES=		lang/python
 MODPY_PI=		Yes
 
 BUILD_DEPENDS=		${RUN_DEPENDS}
-RUN_DEPENDS=		databases/py-whisper${MODPY_FLAVOR} \
-			devel/py-twisted${MODPY_FLAVOR}
-
-FLAVORS=		python3
-FLAVOR=			python3
+RUN_DEPENDS=		databases/py-whisper \
+			devel/py-twisted
 
 MODPY_ADJ_FILES+=	bin/*.py
 

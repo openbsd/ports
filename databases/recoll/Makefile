@@ -8,7 +8,7 @@ ONLY_FOR_ARCHS-gui= aarch64 amd64 i386
 PSEUDO_FLAVORS=	no_gui
 
 V=		1.37.0
-REVISION=	1
+REVISION=	3
 DISTNAME=	recoll-${V}
 
 CATEGORIES=	databases sysutils
@@ -35,13 +35,13 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 MODULES=		lang/python \
 			x11/qt5
-MODPY_EGG_VERSION=	$V
+MODPY_DISTV=	$V
 MODPY_ADJ_FILES=	filters/*.py filters/rclepub
 
 USE_GMAKE=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 
-BUILD_DEPENDS=		devel/py-setuptools${MODPY_FLAVOR} \
+BUILD_DEPENDS=		devel/py-setuptools \
 			textproc/aspell/core
 
 LIB_DEPENDS-main=	databases/xapian-core \
@@ -49,7 +49,7 @@ LIB_DEPENDS-main=	databases/xapian-core \
 # listing deps used by the included filters for some common file formats;
 # see https://www.lesbonscomptes.com/recoll/pages/features.html for others
 RUN_DEPENDS-main=	archivers/unzip \
-			audio/py-mutagen${MODPY_FLAVOR} \
+			audio/py-mutagen \
 			graphics/p5-Image-ExifTool \
 			print/poppler,-utils \
 			textproc/unrtf

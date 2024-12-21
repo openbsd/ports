@@ -50,6 +50,7 @@ MODSCONS_FLAGS += --opt=on \
 		  --ssl=on \
 		  --allocator=system \
 		  --use-system-boost \
+		  --use-system-icu \
 		  --use-system-pcre \
 		  --use-system-snappy \
 		  --use-system-stemmer \
@@ -62,23 +63,19 @@ LIB_DEPENDS +=	archivers/snappy \
 		devel/boost \
 		devel/pcre \
 		devel/yaml-cpp \
-		textproc/libstemmer
-TEST_DEPENDS +=	databases/py-mongo${MODPY_FLAVOR}
+		sysutils/py-psutil \
+		textproc/libstemmer \
+		textproc/icu4c
+TEST_DEPENDS +=	databases/py-mongo
 
 # - can't cope with OpenBSD's nameser.h with ancient defines, plus uses
 # res_ninit/res_nclose which are not supported by the libc resolver,
 # so use libbind
 BUILD_DEPENDS += \
-		devel/py-cheetah${MODPY_FLAVOR} \
-		devel/py-setuptools${MODPY_FLAVOR} \
+		devel/py-cheetah \
+		devel/py-setuptools \
 		net/libbind \
-		textproc/py-yaml${MODPY_FLAVOR}
-
-.if !${V:M3*}
-MODSCONS_FLAGS += --use-system-icu
-LIB_DEPENDS +=	  textproc/icu4c
-BUILD_DEPENDS +=  sysutils/py-psutil${MODPY_FLAVOR}
-.endif
+		textproc/py-yaml
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mongodb

@@ -1,9 +1,9 @@
 COMMENT=		Python bindings for Oracle Berkeley DB
 
-MODPY_EGG_VERSION=	6.0.1
-DISTNAME=		bsddb3-${MODPY_EGG_VERSION}
+MODPY_DISTV=	6.0.1
+DISTNAME=		bsddb3-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
-REVISION=		9
+REVISION=		10
 
 CATEGORIES=		databases devel
 
@@ -23,9 +23,6 @@ MODPY_SETUPTOOLS=	Yes
 SUBST_VARS=		MODPY_LIB_SUFFIX
 
 LIB_DEPENDS=		databases/db/v4
-
-FLAVORS=		python3
-FLAVOR =	python3
 
 do-test:
 	cd ${WRKSRC} && ${MODPY_BIN} test.py

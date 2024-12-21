@@ -2,11 +2,11 @@ COMMENT =	provides an API to access LDAP directory servers for Python
 
 FIX_EXTRACT_PERMISSIONS = Yes
 
-MODPY_EGG_VERSION =	1.4.10
+MODPY_DISTV =	1.4.10
 
-DISTNAME =	ldap0-${MODPY_EGG_VERSION}
+DISTNAME =	ldap0-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	databases devel
 
@@ -20,15 +20,13 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=	${MODPY_WANTLIB} pthread ldap
 
 MODULES =	lang/python
-FLAVOR =	python3
-FLAVORS =	python3
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =	setuptools
 
 LIB_DEPENDS +=	databases/openldap
-RUN_DEPENDS =	devel/py-asn1${MODPY_FLAVOR} \
-		devel/py-asn1-modules${MODPY_FLAVOR}
+RUN_DEPENDS =	devel/py-asn1 \
+		devel/py-asn1-modules
 TEST_DEPENDS =	${RUN_DEPENDS} \
 		databases/openldap,-server
 
