@@ -5,12 +5,12 @@ BROKEN = needs updating and/or adapting to work with newer numpy.
 
 COMMENT =		Python interface to SCS
 
-MODPY_EGG_VERSION =	2.1.1-2
-DISTNAME =		scs-${MODPY_EGG_VERSION}
-V =			${MODPY_EGG_VERSION:S/-/./}
+MODPY_DISTV =	2.1.1-2
+DISTNAME =		scs-${MODPY_DISTV}
+V =			${MODPY_DISTV:S/-/./}
 PKGNAME =		py-scs-${V}
 CATEGORIES =		math
-REVISION =		8
+REVISION =		9
 
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 
@@ -22,14 +22,11 @@ WANTLIB += blas cblas lapack pthread
 MODULES =		lang/python
 
 BUILD_DEPENDS =		${RUN_DEPENDS}
-RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR} \
-			math/py-scipy${MODPY_FLAVOR}
+RUN_DEPENDS =		math/py-numpy \
+			math/py-scipy
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =	setuptools
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
 

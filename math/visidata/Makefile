@@ -1,7 +1,8 @@
 COMMENT=	console-based multitool to explore and arrange tabular data
 
-MODPY_EGG_VERSION=	3.1.1
-DISTNAME=	visidata-${MODPY_EGG_VERSION}
+MODPY_DISTV=	3.1.1
+DISTNAME=	visidata-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	math textproc
 
@@ -18,8 +19,8 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		devel/py-dateutil${MODPY_FLAVOR} \
-		devel/py-importlib-metadata${MODPY_FLAVOR}
+		devel/py-dateutil \
+		devel/py-importlib-metadata
 
 # tests are available but not included in the standard pypi download
 NO_TEST=	Yes

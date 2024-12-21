@@ -1,13 +1,13 @@
+@pkgpath math/py-ecos,python3
 @conflict py-ecos-*
-@pkgpath math/py-ecos
 @so lib/python${MODPY_VERSION}/site-packages/_ecos.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/ecos/
-lib/python${MODPY_VERSION}/site-packages/ecos-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/ecos-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/ecos-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/ecos-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/ecos-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/ecos-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/ecos-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/ecos-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/ecos-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/ecos-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/ecos-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/ecos-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/ecos/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ecos/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ecos/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

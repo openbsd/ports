@@ -15,8 +15,7 @@ V = 		3.4.2
 V1 =		2.22
 V2 =		1.13
 
-REVISION-python =       4
-
+REVISION-python =       5
 
 DISTNAME = 	mlpack-$V
 SHARED_LIBS +=  mlpack                    2.0 # 3.0
@@ -41,11 +40,10 @@ DISTFILES = 	${EXTRACT_ONLY} \
 		stb-${V1}/stb_image.h \
 		stb-${V2}/stb_image_write.h
 
-
 FULLPKGNAME-main = 	mlpack-$V
 FULLPKGPATH-main = 	${PKGPATH},-main
 FULLPKGNAME-python = 	${MODPY_PY_PREFIX}mlpack-$V
-FULLPKGPATH-python = 	${PKGPATH},-python${FLAVOR_EXT:S/-/,/g}
+FULLPKGPATH-python = 	${PKGPATH},-python
 REVISION-main =         1
 
 WANTLIB += 	${COMPILER_LIBCXX} m
@@ -62,18 +60,15 @@ WANTLIB-python = ${WANTLIB} ${MODPY_WANTLIB} boost_serialization mlpack \
 MODULES = 	devel/cmake \
 		lang/python
 
-FLAVORS = 		python3
-FLAVOR = 		python3
-
 MODPY_RUNDEP =	No
 
 BUILD_DEPENDS += 	textproc/txt2man \
-			lang/cython${MODPY_FLAVOR} \
+			lang/cython \
 			math/ensmallen \
-			devel/py-setuptools${MODPY_FLAVOR} \
-			math/py-pandas${MODPY_FLAVOR} \
-			devel/py-distutils-extra${MODPY_FLAVOR} \
-			devel/py-test-runner${MODPY_FLAVOR}
+			devel/py-setuptools \
+			math/py-pandas \
+			devel/py-distutils-extra \
+			devel/py-test-runner
 
 LIB_DEPENDS-main =	math/armadillo \
 			devel/boost
@@ -82,7 +77,7 @@ LIB_DEPENDS-python = 	math/mlpack,-main \
 			devel/boost
 
 RUN_DEPENDS-python = 	${MODPY_RUN_DEPENDS} \
-			math/py-pandas${MODPY_FLAVOR}
+			math/py-pandas
 
 # XXX set this *explicitly*, do not depend on module order
 CONFIGURE_STYLE = 	cmake
@@ -100,7 +95,7 @@ CONFIGURE_ARGS += 	-DCMAKE_DISABLE_FIND_PACKAGE_Git=TRUE \
 # software...
 TEST_ENV = 	CTEST_OUTPUT_ON_FAILURE=1
 
-TEST_DEPENDS =	devel/py-more-itertools${MODPY_FLAVOR}
+TEST_DEPENDS =	devel/py-more-itertools
 
 SITEDIR = 	lib/python${MODPY_VERSION}/site-packages
 EGGDIR = 	${SITEDIR}/mlpack-$V-py${MODPY_VERSION}.egg-info

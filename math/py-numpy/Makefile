@@ -1,9 +1,9 @@
 COMMENT=		fast array and numeric programming library for Python
 
-MODPY_EGG_VERSION=	1.26.4
-DISTNAME=		numpy-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.26.4
+DISTNAME=		numpy-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		math devel
 
@@ -19,9 +19,6 @@ WANTLIB += ${MODPY_WANTLIB} m pthread
 
 MODULES=		lang/python
 
-FLAVORS=		python3
-FLAVOR=			python3
-
 # Disable dwz: it fails on DWARF 5 symbols due to 128-bit arithmetic in _pcg64.
 # Alternative is CFLAGS += -D PCG_FORCE_EMULATED_128BIT_MATH
 DWZ=			:
@@ -32,20 +29,20 @@ MODPY_PYBUILD=		other
 
 BUILD_DEPENDS=		devel/gas \
 			devel/meson-python \
-			lang/cython${MODPY_FLAVOR}
+			lang/cython
 
 # detected at runtime in crackfortran.py; checked at the start of run
 # but not used until later. force the dep to ensure consistent results
 # and avoid dpb junking issues.
-RUN_DEPENDS=		textproc/py-charset-normalizer${MODPY_FLAVOR}
+RUN_DEPENDS=		textproc/py-charset-normalizer
 
 TEST_DEPENDS=		${FULLPKGNAME}:${FULLPKGPATH} \
-			devel/py-hypothesis${MODPY_FLAVOR} \
-			devel/py-test${MODPY_FLAVOR} \
-			devel/py-test-cov${MODPY_FLAVOR} \
-			devel/py-typing-extensions${MODPY_FLAVOR} \
-			devel/py-tz${MODPY_FLAVOR} \
-			devel/py-wheel${MODPY_FLAVOR}
+			devel/py-hypothesis \
+			devel/py-test \
+			devel/py-test-cov \
+			devel/py-typing-extensions \
+			devel/py-tz \
+			devel/py-wheel
 
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mgcc49}

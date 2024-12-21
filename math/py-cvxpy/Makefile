@@ -1,10 +1,10 @@
 COMMENT =		modeling language for convex optimization problems
 
-MODPY_EGG_VERSION =	1.2.1
-DISTNAME =		cvxpy-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.2.1
+DISTNAME =		cvxpy-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		2
+REVISION =		3
 
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 
@@ -18,17 +18,14 @@ WANTLIB += ${COMPILER_LIBCXX} m pthread
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
+RUN_DEPENDS =		math/py-numpy \
+			math/py-scipy \
+			math/py-osqp \
+			math/py-ecos \
+			math/py-scs \
+			devel/py-multiprocess
 
-RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR} \
-			math/py-scipy${MODPY_FLAVOR} \
-			math/py-osqp${MODPY_FLAVOR} \
-			math/py-ecos${MODPY_FLAVOR} \
-			math/py-scs${MODPY_FLAVOR} \
-			devel/py-multiprocess${MODPY_FLAVOR}
-
-BUILD_DEPENDS =         lang/cython${MODPY_FLAVOR} \
+BUILD_DEPENDS =         lang/cython \
 			${RUN_DEPENDS}
 
 MODPY_PI =		Yes

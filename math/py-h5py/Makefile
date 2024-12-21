@@ -1,9 +1,10 @@
 COMMENT =	pythonic interface to the HDF5 binary data format
 
-MODPY_EGG_VERSION =	3.12.1
-DISTNAME =		h5py-${MODPY_EGG_VERSION}
+MODPY_DISTV =	3.12.1
+DISTNAME =		h5py-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
+REVISION =		0
 
 HOMEPAGE =		https://www.h5py.org/
 MAINTAINER =		Martin Reindl <martin@catai.org>
@@ -18,22 +19,19 @@ MODULES =		lang/python
 MODPY_PYBUILD =	setuptools
 MODPY_PI =		Yes
 
-FLAVORS =	python3
-FLAVOR =	python3
-
 WANTLIB =	hdf5 hdf5_hl
 
 MAKE_ENV =	HDF5_DIR=${PREFIX}
 
-BUILD_DEPENDS = lang/cython${MODPY_FLAVOR} \
-		math/py-oldest-supported-numpy${MODPY_FLAVOR} \
-		math/py-numpy${MODPY_FLAVOR} \
-		devel/py-pkgconfig${MODPY_FLAVOR}
+BUILD_DEPENDS = lang/cython \
+		math/py-oldest-supported-numpy \
+		math/py-numpy \
+		devel/py-pkgconfig
 
 LIB_DEPENDS =	math/hdf5
 
-TEST_DEPENDS =	devel/py-coveralls${MODPY_FLAVOR} \
-		devel/py-test-cov${MODPY_FLAVOR}
+TEST_DEPENDS =	devel/py-coveralls \
+		devel/py-test-cov
 
 do-test:
 	cd ${WRKDIR} && ${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \

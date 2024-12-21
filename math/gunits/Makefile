@@ -5,7 +5,7 @@ DISTNAME=		units-2.23
 PKGNAME=		g${DISTNAME}
 CATEGORIES=		math
 SITES=			${SITE_GNU:=units/}
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		https://www.gnu.org/software/units/
 
@@ -19,7 +19,7 @@ MODULES=		lang/python
 # needed for 'make test'
 MODPY_ADJ_FILES =	units_cur
 
-RUN_DEPENDS=		www/py-requests${MODPY_FLAVOR}
+RUN_DEPENDS=		www/py-requests
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--program-prefix=g \

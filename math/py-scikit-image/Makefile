@@ -1,8 +1,9 @@
 COMMENT =		image processing routines for SciPy
 
-MODPY_EGG_VERSION =	0.23.2
-DISTNAME =		scikit_image-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.23.2
+DISTNAME =		scikit_image-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/}
+REVISION =		0
 
 CATEGORIES =		math
 
@@ -18,27 +19,24 @@ COMPILER =		base-clang ports-gcc
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 MODPY_ADJ_FILES =	skimage/_build_utils/*.py
 
-BUILD_DEPENDS =		lang/cython${MODPY_FLAVOR} \
-			lang/pythran${MODPY_FLAVOR} \
+BUILD_DEPENDS =		lang/cython \
+			lang/pythran \
 			devel/meson-python \
-			devel/py-wheel${MODPY_FLAVOR} \
-			math/py-numpy${MODPY_FLAVOR}
+			devel/py-wheel \
+			math/py-numpy
 
-RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR} \
-			math/py-scipy${MODPY_FLAVOR} \
-			graphics/py-matplotlib${MODPY_FLAVOR} \
-			math/py-networkx${MODPY_FLAVOR} \
-			graphics/py-Pillow${MODPY_FLAVOR} \
-			graphics/py-imageio${MODPY_FLAVOR} \
-			graphics/py-tifffile${MODPY_FLAVOR} \
-			sysutils/py-packaging${MODPY_FLAVOR}
+RUN_DEPENDS =		math/py-numpy \
+			math/py-scipy \
+			graphics/py-matplotlib \
+			math/py-networkx \
+			graphics/py-Pillow \
+			graphics/py-imageio \
+			graphics/py-tifffile \
+			sysutils/py-packaging
 
 # needs a bunch of new dependencies
 NO_TEST =		Yes

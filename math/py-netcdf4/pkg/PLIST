@@ -1,15 +1,15 @@
-@pkgpath math/py-netcdf4
+@pkgpath math/py-netcdf4,python3
 bin/nc3tonc4
 bin/nc4tonc3
 bin/ncinfo
 lib/python${MODPY_VERSION}/site-packages/netCDF4/
-lib/python${MODPY_VERSION}/site-packages/netCDF4-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/netCDF4-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/netCDF4-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/netCDF4-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/netCDF4-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/netCDF4-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/netCDF4-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/netCDF4-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/netCDF4-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/netCDF4-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/netCDF4-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/netCDF4-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/netCDF4-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/netCDF4-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/netCDF4/__init__.py
 lib/python${MODPY_VERSION}/site-packages/netCDF4/__init__.pyi
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netCDF4/${MODPY_PYCACHE}/

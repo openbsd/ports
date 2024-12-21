@@ -1,9 +1,9 @@
 COMMENT =	library for calculating contours of 2D quadrilateral grids
 
-MODPY_EGG_VERSION =	1.2.1
-DISTNAME =		contourpy-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.2.1
+DISTNAME =		contourpy-${MODPY_DISTV}
 PKGNAME = 		py-${DISTNAME}
-REVISION =              0
+REVISION =              1
 
 CATEGORIES =	math
 
@@ -17,20 +17,17 @@ COMPILER=	base-clang ports-gcc
 
 MODULES =	lang/python
 
-FLAVORS =	python3
-FLAVOR =	python3
-
 MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools
 
-BUILD_DEPENDS =	devel/py-pybind11${MODPY_FLAVOR} \
+BUILD_DEPENDS =	devel/py-pybind11 \
 		devel/meson-python
 
-RUN_DEPENDS =	math/py-numpy${MODPY_FLAVOR}
+RUN_DEPENDS =	math/py-numpy
 
 TEST_DEPENDS =	devel/flake8 \
-		devel/py-isort${MODPY_FLAVOR} \
-		graphics/py-matplotlib${MODPY_FLAVOR} \
-		graphics/py-Pillow${MODPY_FLAVOR}
+		devel/py-isort \
+		graphics/py-matplotlib \
+		graphics/py-Pillow
 
 .include <bsd.port.mk>

@@ -1,10 +1,11 @@
+@pkgpath math/py-h5py,python3
 lib/python${MODPY_VERSION}/site-packages/h5py/
-lib/python${MODPY_VERSION}/site-packages/h5py-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/h5py-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/h5py-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/h5py-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/h5py-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/h5py-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/h5py-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/h5py-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/h5py-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/h5py-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/h5py-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/h5py-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/h5py/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/h5py/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/h5py/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

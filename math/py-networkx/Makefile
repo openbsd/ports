@@ -1,8 +1,9 @@
 COMMENT =		module for creating and manipulating graphs and networks
 
-MODPY_EGG_VERSION =	2.7.1
-DISTNAME =		networkx-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.7.1
+DISTNAME =		networkx-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		math
 
@@ -15,11 +16,8 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =	setuptools
 
-FLAVORS =		python3
-FLAVOR =		python3
+RUN_DEPENDS =		devel/py-decorator
 
-RUN_DEPENDS =		devel/py-decorator${MODPY_FLAVOR}
-
-TEST_DEPENDS =		devel/py-test-cov${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-test-cov
 
 .include <bsd.port.mk>

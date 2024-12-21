@@ -1,9 +1,9 @@
-@pkgpath math/py-scikit-image
-lib/python${MODPY_VERSION}/site-packages/scikit_image-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/scikit_image-${MODPY_EGG_VERSION}.dist-info/LICENSE.txt
-lib/python${MODPY_VERSION}/site-packages/scikit_image-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/scikit_image-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/scikit_image-${MODPY_EGG_VERSION}.dist-info/WHEEL
+@pkgpath math/py-scikit-image,python3
+lib/python${MODPY_VERSION}/site-packages/scikit_image-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/scikit_image-${MODPY_DISTV}.dist-info/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/scikit_image-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/scikit_image-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/scikit_image-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/skimage/
 lib/python${MODPY_VERSION}/site-packages/skimage/__init__.py
 lib/python${MODPY_VERSION}/site-packages/skimage/__init__.pyi

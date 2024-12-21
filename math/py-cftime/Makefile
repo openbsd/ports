@@ -1,8 +1,9 @@
 COMMENT=	time and date handling utility functions from netcdf4-python
 
-MODPY_EGG_VERSION= 	1.6.4
-DISTNAME=		cftime-${MODPY_EGG_VERSION}
+MODPY_DISTV=		1.6.4
+DISTNAME=		cftime-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 CATEGORIES=		math
 
@@ -17,19 +18,16 @@ MODULES=		lang/python
 MODPY_PYBUILD =	setuptools
 MODPY_PI=		Yes
 
-FLAVORS =		python3
-FLAVOR =		python3
+BUILD_DEPENDS=		lang/cython \
+			math/py-oldest-supported-numpy \
+			math/py-numpy
 
-BUILD_DEPENDS=		lang/cython${MODPY_FLAVOR} \
-			math/py-oldest-supported-numpy${MODPY_FLAVOR} \
-			math/py-numpy${MODPY_FLAVOR}
-
-RUN_DEPENDS=		lang/cython${MODPY_FLAVOR} \
+RUN_DEPENDS=		lang/cython \
 			math/netcdf
 
-TEST_DEPENDS=		devel/py-test${MODPY_FLAVOR} \
-			devel/py-test-cov${MODPY_FLAVOR} \
-			security/py-cryptography${MODPY_FLAVOR} \
-			security/py-openssl${MODPY_FLAVOR}
+TEST_DEPENDS=		devel/py-test \
+			devel/py-test-cov \
+			security/py-cryptography \
+			security/py-openssl
 
 .include <bsd.port.mk>

@@ -1,13 +1,13 @@
-@pkgpath math/py-cvxpy
+@pkgpath math/py-cvxpy,python3
 @so lib/python${MODPY_VERSION}/site-packages/_cvxcore.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/cvxpy/
-lib/python${MODPY_VERSION}/site-packages/cvxpy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/cvxpy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/cvxpy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/cvxpy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/cvxpy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/not-zip-safe
-lib/python${MODPY_VERSION}/site-packages/cvxpy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/requires.txt
-lib/python${MODPY_VERSION}/site-packages/cvxpy-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/cvxpy-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/cvxpy-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/cvxpy-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/cvxpy-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/cvxpy-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/not-zip-safe
+lib/python${MODPY_VERSION}/site-packages/cvxpy-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/requires.txt
+lib/python${MODPY_VERSION}/site-packages/cvxpy-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/cvxpy/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cvxpy/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cvxpy/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc

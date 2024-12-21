@@ -1,8 +1,9 @@
 COMMENT =		data analysis and manipulation library
 
-MODPY_EGG_VERSION =	2.2.3
-DISTNAME =		pandas-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.2.3
+DISTNAME =		pandas-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		math
 
@@ -15,9 +16,6 @@ WANTLIB +=		${COMPILER_LIBCXX} m ${MODPY_WANTLIB}
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		other
 # test_dst.py: ValueError: could not convert string to float: '2022.2.1'
@@ -27,38 +25,38 @@ MODPY_PYTEST_ARGS =	pandas \
 COMPILER =		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS =		devel/meson-python \
-			devel/py-versioneer${MODPY_FLAVOR} \
-			devel/py-wheel${MODPY_FLAVOR} \
-			lang/cython${MODPY_FLAVOR} \
-			math/py-numpy${MODPY_FLAVOR} \
-			math/py-oldest-supported-numpy${MODPY_FLAVOR}
+			devel/py-versioneer \
+			devel/py-wheel \
+			lang/cython \
+			math/py-numpy \
+			math/py-oldest-supported-numpy
 
-RUN_DEPENDS =		devel/py-dateutil${MODPY_FLAVOR}>=2.8.2 \
-			devel/py-tzdata${MODPY_FLAVOR}>=2022.7 \
-			devel/py-tz${MODPY_FLAVOR}>=2020.1 \
-			math/py-numpy${MODPY_FLAVOR}>=1.25.0
+RUN_DEPENDS =		devel/py-dateutil>=2.8.2 \
+			devel/py-tzdata>=2022.7 \
+			devel/py-tz>=2020.1 \
+			math/py-numpy>=1.25.0
 
 # XXX: re-add scipy once that is ported to cython 3
 # XXX: needs fixing
 NO_TEST = Yes
-TEST_DEPENDS =		databases/py-mysqlclient${MODPY_FLAVOR} \
-			databases/py-psycopg2${MODPY_FLAVOR} \
-			databases/py-sqlalchemy${MODPY_FLAVOR} \
-			devel/ipython${MODPY_FLAVOR} \
-			devel/py-html5lib${MODPY_FLAVOR} \
-			devel/py-hypothesis${MODPY_FLAVOR} \
-			devel/py-ipykernel${MODPY_FLAVOR} \
-			devel/py-test-asyncio${MODPY_FLAVOR} \
-			devel/py-test-xdist${MODPY_FLAVOR} \
-			devel/py-xlsxwriter${MODPY_FLAVOR} \
-			graphics/py-matplotlib${MODPY_FLAVOR} \
-			math/py-bottleneck${MODPY_FLAVOR} \
-			math/py-numexpr${MODPY_FLAVOR} \
-			textproc/py-lxml${MODPY_FLAVOR} \
-			textproc/py-openpyxl${MODPY_FLAVOR} \
-			www/py-beautifulsoup4${MODPY_FLAVOR} \
-			www/py-httplib2${MODPY_FLAVOR} \
-			www/py-jinja2${MODPY_FLAVOR} \
+TEST_DEPENDS =		databases/py-mysqlclient \
+			databases/py-psycopg2 \
+			databases/py-sqlalchemy \
+			devel/ipython \
+			devel/py-html5lib \
+			devel/py-hypothesis \
+			devel/py-ipykernel \
+			devel/py-test-asyncio \
+			devel/py-test-xdist \
+			devel/py-xlsxwriter \
+			graphics/py-matplotlib \
+			math/py-bottleneck \
+			math/py-numexpr \
+			textproc/py-lxml \
+			textproc/py-openpyxl \
+			www/py-beautifulsoup4 \
+			www/py-httplib2 \
+			www/py-jinja2 \
 			x11/xclip
 
 PORTHOME =		${WRKDIR}

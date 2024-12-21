@@ -1,8 +1,8 @@
 COMMENT =		convex optimization package
 
-MODPY_EGG_VERSION =	1.3.0
-REVISION =		3
-DISTNAME =		cvxopt-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.3.0
+REVISION =		4
+DISTNAME =		cvxopt-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
 
@@ -16,9 +16,6 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += amd blas cholmod colamd lapack m pthread suitesparseconfig umfpack
 
 MODULES =		lang/python
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools

@@ -1,9 +1,9 @@
 COMMENT =		library for SMT formulae manipulation and solving
 
-MODPY_EGG_VERSION =	0.9.5
-DISTNAME =		PySMT-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.9.5
+DISTNAME =		PySMT-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		math
 
@@ -16,9 +16,6 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =	setuptools
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 # Explicitly not adding RUN_DEPENDS on all the supported
 # solvers. That would beat the point of this library.

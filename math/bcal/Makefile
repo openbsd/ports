@@ -25,7 +25,7 @@ MODULES +=	lang/python
 MODPY_RUNDEP =	No
 MODPY_BUILDDEP =	No
 CONFIGURE_STYLE = python.port.mk-is-annoying
-TEST_DEPENDS =	devel/py-test${MODPY_FLAVOR}
+TEST_DEPENDS =	devel/py-test
 
 USE_GMAKE =	Yes
 

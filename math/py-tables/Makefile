@@ -1,10 +1,10 @@
 COMMENT=	Python package to manage extremely large amounts of data
 
-MODPY_EGG_VERSION=	3.10.1
-DISTNAME=		tables-${MODPY_EGG_VERSION}
+MODPY_DISTV=	3.10.1
+DISTNAME=		tables-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		math
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=	https://www.pytables.org/
 MAINTAINER=	Martin Reindl <martin@catai.org>
@@ -28,12 +28,12 @@ MODPY_DISTUTILS_BUILDARGS=	--blosc=${LOCALBASE} \
 CFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 
-BUILD_DEPENDS+=	lang/cython${MODPY_FLAVOR} \
-		devel/py-typing-extensions${MODPY_FLAVOR} \
-		math/py-numpy${MODPY_FLAVOR} \
-		math/py-oldest-supported-numpy${MODPY_FLAVOR} \
-		sysutils/py-cpuinfo${MODPY_FLAVOR} \
-		sysutils/py-packaging${MODPY_FLAVOR}
+BUILD_DEPENDS+=	lang/cython \
+		devel/py-typing-extensions \
+		math/py-numpy \
+		math/py-oldest-supported-numpy \
+		sysutils/py-cpuinfo \
+		sysutils/py-packaging
 
 LIB_DEPENDS+=	archivers/lzo2 \
 		archivers/bzip2 \
@@ -42,13 +42,10 @@ LIB_DEPENDS+=	archivers/lzo2 \
 		math/hdf5
 
 RUN_DEPENDS+=	math/netcdf \
-		sysutils/py-packaging${MODPY_FLAVOR}
+		sysutils/py-packaging
 
-TEST_DEPENDS=	math/py-numexpr${MODPY_FLAVOR} \
+TEST_DEPENDS=	math/py-numexpr \
 		math/hdf5
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 do-test:
 	cd ${WRKDIR} && ${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \

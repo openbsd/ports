@@ -1,8 +1,9 @@
 COMMENT=	Python interface to GMP, MPFR, and MPC
 
-MODPY_EGG_VERSION=	2.2.1
-DISTNAME=	gmpy2-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.2.1
+DISTNAME=	gmpy2-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	math
 
@@ -14,9 +15,6 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += gmp mpc mpfr
 
 MODULES=	lang/python
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools

@@ -1,9 +1,9 @@
-@pkgpath math/py-PyWavelets
-lib/python${MODPY_VERSION}/site-packages/pywavelets-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pywavelets-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/pywavelets-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/pywavelets-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/pywavelets-${MODPY_EGG_VERSION}.dist-info/WHEEL
+@pkgpath math/py-PyWavelets,python3
+lib/python${MODPY_VERSION}/site-packages/pywavelets-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pywavelets-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/pywavelets-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/pywavelets-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/pywavelets-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/pywt/
 lib/python${MODPY_VERSION}/site-packages/pywt/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pywt/${MODPY_PYCACHE}/

@@ -1,10 +1,10 @@
 COMMENT =		Python package for describing statistical models
 
-MODPY_EGG_VERSION =	0.5.6
-DISTNAME =		patsy-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.5.6
+DISTNAME =		patsy-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		0
+REVISION =		1
 
 # BSD
 PERMIT_PACKAGE =	Yes
@@ -15,13 +15,10 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =	setuptools
 MODPY_PYTEST_ARGS =	patsy
 
-RUN_DEPENDS =		devel/py-six${MODPY_FLAVOR} \
-			math/py-numpy${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-six \
+			math/py-numpy
 
-TEST_DEPENDS =		devel/py-test-cov${MODPY_FLAVOR} \
-			math/py-scipy${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR =		python3
+TEST_DEPENDS =		devel/py-test-cov \
+			math/py-scipy
 
 .include <bsd.port.mk>

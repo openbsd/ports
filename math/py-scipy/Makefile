@@ -1,9 +1,9 @@
 COMMENT=		maths, science and engineering modules for Python
 
-MODPY_EGG_VERSION=	1.13.1
-DISTNAME=		scipy-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.13.1
+DISTNAME=		scipy-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		math devel
 
@@ -19,9 +19,6 @@ HOMEPAGE=		https://scipy.org/
 
 MODULES=		lang/python fortran
 
-FLAVORS=		python3
-FLAVOR =		python3
-
 MODFORTRAN_COMPILER =	gfortran
 
 MODPY_PI =		Yes
@@ -30,20 +27,20 @@ MODPY_PYBUILD =		setuptools
 BUILD_DEPENDS=		${RUN_DEPENDS} \
 			${MODFORTRAN_BUILD_DEPENDS} \
 			devel/meson-python \
-			devel/py-pybind11${MODPY_FLAVOR} \
-			lang/cython${MODPY_FLAVOR} \
-			lang/pythran${MODPY_FLAVOR}
+			devel/py-pybind11 \
+			lang/cython \
+			lang/pythran
 
 LIB_DEPENDS=		math/lapack \
 			${MODFORTRAN_LIB_DEPENDS}
 
-RUN_DEPENDS=		math/py-numpy${MODPY_FLAVOR} \
+RUN_DEPENDS=		math/py-numpy \
 			devel/swig
 
 # XXX: requires py-pooch
 NO_TEST=		Yes
-# TEST_DEPENDS=		devel/py-hypothesis${MODPY_FLAVOR} \
-#			devel/py-pooch${MODPY_FLAVOR}
+# TEST_DEPENDS=		devel/py-hypothesis \
+#			devel/py-pooch
 
 do-test: fake
 	cd ${WRKDIR} && ${MAKE_ENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \

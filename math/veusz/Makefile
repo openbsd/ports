@@ -1,8 +1,8 @@
 COMMENT =	scientific plotting and graphing package
-MODPY_EGG_VERSION =	3.6.2
-DISTNAME =	veusz-${MODPY_EGG_VERSION}
+MODPY_DISTV =	3.6.2
+DISTNAME =	veusz-${MODPY_DISTV}
 CATEGORIES =	math graphics
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	https://veusz.github.io/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -19,13 +19,13 @@ MODULES =	lang/python \
 		x11/qt5
 MODPY_PYBUILD =	setuptools
 
-BUILD_DEPENDS =	devel/py-sip${MODPY_FLAVOR} \
-		math/py-numpy${MODPY_FLAVOR} \
-		textproc/py-tomli${MODPY_FLAVOR} \
-		x11/py-qt5${MODPY_FLAVOR}
+BUILD_DEPENDS =	devel/py-sip \
+		math/py-numpy \
+		textproc/py-tomli \
+		x11/py-qt5
 
-RUN_DEPENDS =	math/py-numpy${MODPY_FLAVOR} \
-		x11/py-qt5${MODPY_FLAVOR}
+RUN_DEPENDS =	math/py-numpy \
+		x11/py-qt5
 TEST_DEPENDS =	${BASE_PKGPATH}
 
 do-test:

@@ -1,9 +1,9 @@
 COMMENT =		wavelet transform module
 
-MODPY_EGG_VERSION =	1.5.0
-DISTNAME =		pywavelets-${MODPY_EGG_VERSION}
-PKGNAME =		py-PyWavelets-${MODPY_EGG_VERSION}
-REVISION =		1
+MODPY_DISTV =	1.5.0
+DISTNAME =		pywavelets-${MODPY_DISTV}
+PKGNAME =		py-PyWavelets-${MODPY_DISTV}
+REVISION =		2
 
 CATEGORIES =		math
 
@@ -14,16 +14,13 @@ WANTLIB += m
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
 BUILD_DEPENDS =		devel/meson-python \
-			lang/cython${MODPY_FLAVOR} \
-			math/py-numpy${MODPY_FLAVOR}
+			lang/cython \
+			math/py-numpy
 
-RUN_DEPENDS =		math/py-numpy${MODPY_FLAVOR}
+RUN_DEPENDS =		math/py-numpy
 
 .include <bsd.port.mk>

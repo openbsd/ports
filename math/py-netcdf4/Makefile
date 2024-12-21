@@ -1,9 +1,10 @@
 COMMENT=	Python interface to the netCDF C library
 
-MODPY_EGG_VERSION=	1.7.2
-DISTNAME=		netcdf4-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.7.2
+DISTNAME=		netcdf4-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME:L}
 CATEGORIES=		math
+REVISION=		0
 
 HOMEPAGE=		http://unidata.github.io/netcdf4-python/
 
@@ -24,26 +25,23 @@ WANTLIB+=		netcdf
 BUILD_DEPENDS+=		archivers/blosc \
 			archivers/libzip \
 			archivers/snappy \
-			lang/cython${MODPY_FLAVOR} \
+			lang/cython \
 			math/hdf5 \
 			math/netcdf \
-			math/py-oldest-supported-numpy${MODPY_FLAVOR} \
-			math/py-numpy${MODPY_FLAVOR}
+			math/py-oldest-supported-numpy \
+			math/py-numpy
 
-RUN_DEPENDS+=		lang/cython${MODPY_FLAVOR} \
+RUN_DEPENDS+=		lang/cython \
 			math/hdf5 \
-			math/py-numpy${MODPY_FLAVOR} \
-			devel/py-certifi${MODPY_FLAVOR} \
-			math/py-cftime${MODPY_FLAVOR}
+			math/py-numpy \
+			devel/py-certifi \
+			math/py-cftime
 
 TEST_DEPENDS=		${FULLPKGNAME}:${FULLPKGPATH}
 TEST_ENV=		TMPDIR=${WRKDIR}/tmp
 
 CONFIGURE_ENV+=         LDFLAGS="-L${LOCALBASE}/lib" \
                         CPPFLAGS="-I${LOCALBASE}/include"
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 pre-test:
 	@mkdir -p ${WRKDIR}/tmp

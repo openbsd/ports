@@ -2,7 +2,7 @@ COMMENT=		prover9/mace4 GUI
 
 DISTNAME=		p9m4-v05
 PKGNAME=		${DISTNAME:S/v//}
-REVISION =		5
+REVISION =		6
 
 SITES=			${HOMEPAGE}/gui/
 
@@ -19,9 +19,9 @@ MODPY_ADJ_FILES=	control.py files.py my_setup.py options.py \
 			partition_input.py platforms.py prover9-mace4.py \
 			utilities.py wx_utilities.py
 
-RUN_DEPENDS=		devel/py-modulegraph${MODPY_FLAVOR} \
+RUN_DEPENDS=		devel/py-modulegraph \
 			math/prover9/ladr \
-			x11/py-wxPython${MODPY_FLAVOR}
+			x11/py-wxPython
 
 LIBEXEC_DIR=		${PREFIX}/libexec/prover9/p9m4/
 IMAGES_DIR=		${PREFIX}/share/p9m4/Images/

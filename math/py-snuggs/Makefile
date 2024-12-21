@@ -1,10 +1,10 @@
 COMMENT =		snuggs are s-expressions for numpy
 
-MODPY_EGG_VERSION =	1.4.7
-DISTNAME =		snuggs-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.4.7
+DISTNAME =		snuggs-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		5
+REVISION =		6
 
 MAINTAINER =		Martin Reindl <martin@catai.org>
 
@@ -16,14 +16,11 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =	setuptools
 
-RUN_DEPENDS =		devel/py-parsing${MODPY_FLAVOR} \
-			devel/py-click${MODPY_FLAVOR} \
-			math/py-numpy${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-parsing \
+			devel/py-click \
+			math/py-numpy
 
-TEST_DEPENDS =		devel/py-test${MODPY_FLAVOR} \
-			devel/py-hypothesis${MODPY_FLAVOR}
-
-FLAVORS =		python3
-FLAVOR =		python3
+TEST_DEPENDS =		devel/py-test \
+			devel/py-hypothesis
 
 .include <bsd.port.mk>
