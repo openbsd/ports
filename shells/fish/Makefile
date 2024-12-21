@@ -3,7 +3,7 @@ COMMENT =		friendly interactive shell
 V =			3.7.1
 
 DISTNAME =		fish-$V
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		shells
 
@@ -27,7 +27,7 @@ MODULES =		devel/cmake \
 			lang/python
 
 BUILD_DEPENDS =		devel/gettext,-tools \
-			textproc/py-sphinx,python3>=4.0.2
+			textproc/py-sphinx
 
 LIB_DEPENDS =		devel/pcre2 \
 			devel/gettext,-runtime

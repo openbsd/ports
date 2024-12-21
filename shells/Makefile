@@ -12,7 +12,7 @@
      SUBDIR += nsh,static
      SUBDIR += nushell
      SUBDIR += perlsh
-     SUBDIR += py-qtconsole,python3
+     SUBDIR += py-qtconsole
      SUBDIR += sash
      SUBDIR += tcsh
      SUBDIR += tcsh,static

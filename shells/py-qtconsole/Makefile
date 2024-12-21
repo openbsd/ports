@@ -1,8 +1,8 @@
 COMMENT =		Jupyter Qt console
 
-MODPY_EGG_VERSION =	5.5.2
-REVISION =		0
-DISTNAME =		qtconsole-${MODPY_EGG_VERSION}
+MODPY_DISTV =	5.5.2
+REVISION =		1
+DISTNAME =		qtconsole-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		shells
@@ -14,28 +14,25 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		devel/py-ipykernel${MODPY_FLAVOR}>=4.1 \
-			devel/py-jupyter_client${MODPY_FLAVOR}>=4.1 \
-			devel/py-jupyter_core${MODPY_FLAVOR} \
-			devel/py-pexpect${MODPY_FLAVOR} \
-			devel/py-traitlets${MODPY_FLAVOR}>=5.2.2 \
-			net/py-zmq${MODPY_FLAVOR}>=17.1 \
-			sysutils/py-packaging${MODPY_FLAVOR} \
-			textproc/py-pygments${MODPY_FLAVOR} \
-			x11/py-qt5${MODPY_FLAVOR} \
-			x11/py-qtpy${MODPY_FLAVOR}>=2.4.0
+RUN_DEPENDS =		devel/py-ipykernel>=4.1 \
+			devel/py-jupyter_client>=4.1 \
+			devel/py-jupyter_core \
+			devel/py-pexpect \
+			devel/py-traitlets>=5.2.2 \
+			net/py-zmq>=17.1 \
+			sysutils/py-packaging \
+			textproc/py-pygments \
+			x11/py-qt5 \
+			x11/py-qtpy>=2.4.0
 
 # XXX: needs qtbot fixture from pytest-qt
 MODPY_PYTEST_ARGS =	--ignore qtconsole/tests/test_00_console_widget.py
 
-TEST_DEPENDS =		devel/py-flaky${MODPY_FLAVOR} \
-			devel/py-test-cov${MODPY_FLAVOR}
+TEST_DEPENDS =		devel/py-flaky \
+			devel/py-test-cov
 
 PORTHOME =		${WRKDIR}
 

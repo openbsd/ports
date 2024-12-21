@@ -3,6 +3,7 @@ COMMENT =		programmable completion functions for bash
 GH_PROJECT =		bash-completion
 GH_ACCOUNT =		scop
 GH_TAGNAME =		2.14.0
+REVISION =		0
 
 CATEGORIES =		shells sysutils
 
@@ -14,8 +15,8 @@ MODPY_RUNDEP =		No
 
 BUILD_DEPENDS =		shells/bash
 TEST_DEPENDS =		devel/dejagnu \
-			devel/py-pexpect${MODPY_FLAVOR} \
-			devel/py-test${MODPY_FLAVOR}
+			devel/py-pexpect \
+			devel/py-test
 
 USE_GMAKE =		Yes
 
