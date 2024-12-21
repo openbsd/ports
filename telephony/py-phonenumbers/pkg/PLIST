@@ -1,11 +1,11 @@
-@pkgpath telephony/py-phonenumbers
+@pkgpath telephony/py-phonenumbers,python3
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/
-lib/python${MODPY_VERSION}/site-packages/phonenumbers-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/phonenumbers-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/phonenumbers-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/phonenumbers-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/phonenumbers-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/phonenumbers-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/phonenumbers-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/phonenumbers-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/phonenumbers-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/phonenumbers-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/phonenumbers-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/phonenumbers-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/__init__.py
 lib/python${MODPY_VERSION}/site-packages/phonenumbers/__init__.pyi
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/phonenumbers/${MODPY_PYCACHE}/

@@ -15,7 +15,7 @@ CONFIGURE_ARGS =-DBUILD_SHARED_LIBS=YES \
 		-DENABLE_DB_STORAGE=NO # needs SOCI
 
 BUILD_DEPENDS = textproc/py-stache \
-		devel/py-six,python3 \
+		devel/py-six \
 		devel/doxygen>=1.10.0
 
 LIB_DEPENDS =	telephony/linphone/bctoolbox \

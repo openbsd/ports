@@ -1,8 +1,9 @@
 COMMENT =	port of Google's libphonenumber library
 
-MODPY_EGG_VERSION = 8.13.52
-DISTNAME =	phonenumbers-${MODPY_EGG_VERSION}
+MODPY_DISTV =	8.13.52
+DISTNAME =	phonenumbers-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	telephony devel
 
@@ -15,9 +16,6 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	tests/*.py
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 MAKE_ENV +=	LC_CTYPE=C.UTF-8
 

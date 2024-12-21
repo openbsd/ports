@@ -18,7 +18,7 @@
      SUBDIR += p5-Net-SIP
      SUBDIR += p5-asterisk
      SUBDIR += pjsua
-     SUBDIR += py-phonenumbers,python3
+     SUBDIR += py-phonenumbers
      SUBDIR += resiprocate
      SUBDIR += siproxd
      SUBDIR += sngrep
