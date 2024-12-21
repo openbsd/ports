@@ -1,10 +1,10 @@
 bin/ophis
 lib/python${MODPY_VERSION}/site-packages/Ophis/
-lib/python${MODPY_VERSION}/site-packages/Ophis-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/Ophis-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/Ophis-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/Ophis-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/Ophis-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/Ophis-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/Ophis-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/Ophis-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/Ophis-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/Ophis-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/Ophis/CmdLine.py
 lib/python${MODPY_VERSION}/site-packages/Ophis/CorePragmas.py
 lib/python${MODPY_VERSION}/site-packages/Ophis/Environment.py

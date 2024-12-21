@@ -6,15 +6,15 @@
 @rcscript ${RCDIR}/tracd
 bin/trac-admin
 bin/tracd
-lib/python${MODPY_VERSION}/site-packages/Trac-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/Trac-${MODPY_EGG_VERSION}.dist-info/AUTHORS
-lib/python${MODPY_VERSION}/site-packages/Trac-${MODPY_EGG_VERSION}.dist-info/COPYING
-lib/python${MODPY_VERSION}/site-packages/Trac-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/Trac-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/Trac-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/Trac-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/Trac-${MODPY_EGG_VERSION}.dist-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/Trac-${MODPY_EGG_VERSION}.dist-info/zip-safe
+lib/python${MODPY_VERSION}/site-packages/Trac-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/Trac-${MODPY_DISTV}.dist-info/AUTHORS
+lib/python${MODPY_VERSION}/site-packages/Trac-${MODPY_DISTV}.dist-info/COPYING
+lib/python${MODPY_VERSION}/site-packages/Trac-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/Trac-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/Trac-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/Trac-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/Trac-${MODPY_DISTV}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/Trac-${MODPY_DISTV}.dist-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/trac/
 lib/python${MODPY_VERSION}/site-packages/trac/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trac/${MODPY_PYCACHE}/

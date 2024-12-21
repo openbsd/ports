@@ -1,10 +1,10 @@
 COMMENT=	set of Python modules designed for writing games
 
-MODPY_EGG_VERSION=	2.0.3
+MODPY_DISTV=	2.0.3
 # no more py2 releases
 PORTROACH=	ignore:1
-DISTNAME=	pygame-${MODPY_EGG_VERSION}
-PKGNAME=	py-game-${MODPY_EGG_VERSION}
+DISTNAME=	pygame-${MODPY_DISTV}
+PKGNAME=	py-game-${MODPY_DISTV}
 CATEGORIES=	devel games
 
 HOMEPAGE=	https://www.pygame.org/

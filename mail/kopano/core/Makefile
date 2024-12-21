@@ -8,8 +8,8 @@ PKGNAME-main=	kopano-core-${V}
 PKGNAME-mapi=	kopano-mapi-${V}
 EPOCH=		0
 
-REVISION-main=	9
-REVISION-mapi=	6
+REVISION-main=	10
+REVISION-mapi=	7
 
 CATEGORIES=	mail www productivity
 
@@ -41,7 +41,7 @@ UNMESSAGE-main=	# empty
 
 BUILD_DEPENDS=	devel/cppunit \
 		devel/gettext,-tools \
-		devel/py-setuptools${MODPY_FLAVOR} \
+		devel/py-setuptools \
 		devel/swig \
 		shells/bash \
 		sysutils/coreutils \
@@ -68,14 +68,14 @@ UPDATE_PLIST_ARGS+=	-i MODULE_NAME
 
 RUN_DEPENDS-main= ${MODPY_RUN_DEPENDS} \
 		databases/xapian-bindings,-python \
-		databases/py-bsddb3${MODPY_FLAVOR} \
-		devel/py-dateutil${MODPY_FLAVOR} \
-		devel/py-magic${MODPY_FLAVOR} \
-		devel/py-tzlocal${MODPY_FLAVOR} \
+		databases/py-bsddb3 \
+		devel/py-dateutil \
+		devel/py-magic \
+		devel/py-tzlocal \
 		mail/p5-Mail-SpamAssassin \
 		textproc/catdoc \
-		sysutils/py-daemon${MODPY_FLAVOR} \
-		www/py-jwt${MODPY_FLAVOR}
+		sysutils/py-daemon \
+		www/py-jwt
 LIB_DEPENDS-main= databases/mariadb \
 		databases/openldap \
 		devel/gettext,-runtime \

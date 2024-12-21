@@ -1,7 +1,7 @@
 COMMENT =	one-button treasure collecting game
 
-MODPY_EGG_VERSION =	1.2.0
-DISTNAME =	mysticmine-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.2.0
+DISTNAME =	mysticmine-${MODPY_DISTV}
 
 GH_ACCOUNT =	dewitters
 GH_PROJECT =	MysticMine

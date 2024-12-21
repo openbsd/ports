@@ -1,6 +1,6 @@
 bin/renpy
 bin/renpyify
-lib/python${MODPY_VERSION}/site-packages/Ren_Py-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/Ren_Py-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info
 @so lib/python${MODPY_VERSION}/site-packages/_renpy.so
 @so lib/python${MODPY_VERSION}/site-packages/_renpybidi.so
 lib/python${MODPY_VERSION}/site-packages/renpy/

@@ -1,7 +1,7 @@
-MODPY_EGG_VERSION =	0.9.2
+MODPY_DISTV =	0.9.2
 COMMENT =	sprite animation module for pygame
-DISTNAME =	Pyganim-${MODPY_EGG_VERSION}
-PKGNAME =	pyganim-${MODPY_EGG_VERSION}
+DISTNAME =	Pyganim-${MODPY_DISTV}
+PKGNAME =	pyganim-${MODPY_DISTV}
 REVISION =	2
 EXTRACT_SUFX =	.zip
 CATEGORIES =	games x11

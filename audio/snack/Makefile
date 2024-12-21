@@ -1,8 +1,8 @@
 COMMENT-main =	Tcl/Tk snack sound toolkit
 
-MODPY_EGG_VERSION =	2.2.10
-DISTNAME =	snack${MODPY_EGG_VERSION}
-PKGNAME-main =  snack-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.2.10
+DISTNAME =	snack${MODPY_DISTV}
+PKGNAME-main =  snack-${MODPY_DISTV}
 CATEGORIES =	audio
 
 REVISION-main = 7

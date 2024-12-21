@@ -1,10 +1,10 @@
-lib/python${MODPY_VERSION}/site-packages/deluge/plugins/ltConfig-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg
-lib/python${MODPY_VERSION}/site-packages/ltConfig-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/ltConfig-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/ltConfig-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/ltConfig-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/ltConfig-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/ltConfig-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/deluge/plugins/ltConfig-${MODPY_DISTV}-py${MODPY_VERSION}.egg
+lib/python${MODPY_VERSION}/site-packages/ltConfig-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/ltConfig-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/ltConfig-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/ltConfig-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/ltConfig-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/ltConfig-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/ltconfig/
 lib/python${MODPY_VERSION}/site-packages/ltconfig/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ltconfig/${MODPY_PYCACHE}/

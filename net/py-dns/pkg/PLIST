@@ -26,4 +26,4 @@ lib/python${MODPY_VERSION}/site-packages/DNS/lazy.pyo
 lib/python${MODPY_VERSION}/site-packages/DNS/win32dns.py
 lib/python${MODPY_VERSION}/site-packages/DNS/win32dns.pyc
 lib/python${MODPY_VERSION}/site-packages/DNS/win32dns.pyo
-lib/python${MODPY_VERSION}/site-packages/pydns-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/pydns-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info

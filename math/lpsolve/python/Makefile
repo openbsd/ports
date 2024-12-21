@@ -1,7 +1,7 @@
 COMMENT =		Python bindings for lpsolve
 DISTNAME =		lp_solve_${V}_Python_source
 # interface version differs from pkg version
-MODPY_EGG_VERSION =	5.5.0.9
+MODPY_DISTV =	5.5.0.9
 PKGNAME =		py-lpsolve-${V}
 REVISION =		3
 

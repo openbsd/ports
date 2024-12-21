@@ -206,11 +206,11 @@ lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/sensu_api.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/sensugo_api.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/zabbix_api.py
 lib/python${MODPY_VERSION}/site-packages/Nagstamon/thirdparty/zenoss_api.py
-lib/python${MODPY_VERSION}/site-packages/nagstamon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/nagstamon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/nagstamon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/nagstamon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/nagstamon-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/nagstamon-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/nagstamon-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/nagstamon-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/nagstamon-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/nagstamon-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/top_level.txt
 @man man/man1/nagstamon.1
 share/applications/nagstamon.desktop
 share/pixmaps/

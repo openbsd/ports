@@ -6,6 +6,7 @@ COMMENT-gtk4 =		IBus IM module for GTK4
 GH_PROJECT =		ibus
 GH_ACCOUNT =		ibus
 GH_TAGNAME =		1.5.31
+REVISION =		0
 
 PKGNAME-main =		ibus-${GH_TAGNAME:S/-//}
 PKGNAME-gtk2 =		ibus-gtk2-${GH_TAGNAME:S/-//}
@@ -58,7 +59,7 @@ MODULES =		devel/dconf \
 
 BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/iso-codes \
-			devel/py-gobject3${MODPY_FLAVOR} \
+			devel/py-gobject3 \
 			lang/vala \
 			textproc/unicode/cldr,-annotations \
 			textproc/unicode/emoji \
@@ -70,7 +71,7 @@ RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			x11/gtk+4,-guic
 
 # MODPY_LIBDIR/gi/overrides/
-RUN_DEPENDS-main +=	devel/py-gobject3${MODPY_FLAVOR}
+RUN_DEPENDS-main +=	devel/py-gobject3
 
 LIB_DEPENDS-main =	devel/libnotify \
 			x11/gtk+3 \

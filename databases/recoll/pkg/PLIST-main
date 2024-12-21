@@ -24,14 +24,14 @@ include/recoll/reslistpager.h
 include/recoll/searchdata.h
 include/recoll/smallut.h
 include/recoll/wasatorcl.h
-@so lib/librecoll-${MODPY_EGG_VERSION}.so
+@so lib/librecoll-${MODPY_DISTV}.so
 lib/librecoll.la
 @so lib/librecoll.so
-lib/python${MODPY_VERSION}/site-packages/Recoll-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/Recoll-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/Recoll-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/Recoll-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/Recoll-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/Recoll-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/Recoll-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/Recoll-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/Recoll-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/Recoll-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/recoll/
 lib/python${MODPY_VERSION}/site-packages/recoll/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/recoll/${MODPY_PYCACHE}/

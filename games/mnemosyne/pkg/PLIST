@@ -1,9 +1,9 @@
 bin/mnemosyne
-lib/python${MODPY_VERSION}/site-packages/Mnemosyne-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/Mnemosyne-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/Mnemosyne-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/Mnemosyne-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/Mnemosyne-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/Mnemosyne-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/Mnemosyne-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/Mnemosyne-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/Mnemosyne-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/Mnemosyne-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/
 lib/python${MODPY_VERSION}/site-packages/mnemosyne/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mnemosyne/${MODPY_PYCACHE}/

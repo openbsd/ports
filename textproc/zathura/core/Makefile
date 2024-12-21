@@ -15,9 +15,9 @@ WANTLIB += gdk-3 gtk-3 intl json-glib-1.0 m magic pango-1.0 sqlite3 synctex
 SITES =		https://pwmt.org/projects/zathura/download/
 
 MODULES=	devel/meson
-BUILD_DEPENDS =	textproc/py-docutils,python3 \
+BUILD_DEPENDS =	textproc/py-docutils \
 		devel/gettext,-tools \
-		textproc/py-sphinx,python3
+		textproc/py-sphinx
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
 LIB_DEPENDS =	databases/sqlite3 \

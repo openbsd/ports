@@ -11,8 +11,8 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cairo/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cairo/include/
 lib/python${MODPY_VERSION}/site-packages/cairo/include/pycairo.h
 lib/python${MODPY_VERSION}/site-packages/cairo/py.typed
-lib/python${MODPY_VERSION}/site-packages/pycairo-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/pycairo-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/pycairo-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/pycairo-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/pycairo-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pycairo-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/
+lib/python${MODPY_VERSION}/site-packages/pycairo-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/PKG-INFO
+lib/python${MODPY_VERSION}/site-packages/pycairo-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/pycairo-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/dependency_links.txt
+lib/python${MODPY_VERSION}/site-packages/pycairo-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/top_level.txt

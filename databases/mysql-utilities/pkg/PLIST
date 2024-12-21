@@ -235,7 +235,7 @@ lib/python${MODPY_VERSION}/site-packages/mysql/utilities/common/variables.py
 lib/python${MODPY_VERSION}/site-packages/mysql/utilities/common/variables.pyc
 lib/python${MODPY_VERSION}/site-packages/mysql/utilities/exception.py
 lib/python${MODPY_VERSION}/site-packages/mysql/utilities/exception.pyc
-lib/python${MODPY_VERSION}/site-packages/mysql_utilities-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/mysql_utilities-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info
 @man man/man1/mysqlauditadmin.1
 @man man/man1/mysqlauditgrep.1
 @man man/man1/mysqlbinlogmove.1

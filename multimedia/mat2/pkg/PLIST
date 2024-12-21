@@ -46,10 +46,10 @@ lib/python${MODPY_VERSION}/site-packages/libmat2/pdf.py
 lib/python${MODPY_VERSION}/site-packages/libmat2/torrent.py
 lib/python${MODPY_VERSION}/site-packages/libmat2/video.py
 lib/python${MODPY_VERSION}/site-packages/libmat2/web.py
-lib/python${MODPY_VERSION}/site-packages/mat2-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/mat2-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/mat2-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/mat2-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/mat2-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/mat2-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/mat2-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/mat2-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/mat2-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/mat2-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/mat2-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/mat2-${MODPY_DISTV}.dist-info/top_level.txt
 @man man/man1/mat2.1

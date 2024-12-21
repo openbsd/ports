@@ -1,7 +1,7 @@
 COMMENT=		Python-based presentation tool
 
-MODPY_EGG_VERSION=	1.2.1
-DISTNAME=		bruce-${MODPY_EGG_VERSION}
+MODPY_DISTV=	1.2.1
+DISTNAME=		bruce-${MODPY_DISTV}
 REVISION =		7
 
 CATEGORIES=		productivity

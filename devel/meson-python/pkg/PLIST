@@ -1,8 +1,8 @@
-lib/python${MODPY_VERSION}/site-packages/meson_python-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/meson_python-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/meson_python-${MODPY_EGG_VERSION}.dist-info/MIT.txt
-lib/python${MODPY_VERSION}/site-packages/meson_python-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/meson_python-${MODPY_EGG_VERSION}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/meson_python-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/meson_python-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/meson_python-${MODPY_DISTV}.dist-info/MIT.txt
+lib/python${MODPY_VERSION}/site-packages/meson_python-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/meson_python-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/mesonpy/
 lib/python${MODPY_VERSION}/site-packages/mesonpy/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mesonpy/${MODPY_PYCACHE}/

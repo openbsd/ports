@@ -1,5 +1,5 @@
 bin/MysticMine
-lib/python${MODPY_VERSION}/site-packages/MysticMine-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/MysticMine-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/monorail/
 lib/python${MODPY_VERSION}/site-packages/monorail/__init__.py
 lib/python${MODPY_VERSION}/site-packages/monorail/__init__.pyc

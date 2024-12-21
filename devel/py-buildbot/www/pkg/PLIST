@@ -2,12 +2,12 @@
 @conflict py3-buildbot-www-react-*
 @pkgpath devel/py-buildbot/www-react
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/
-lib/python${MODPY_VERSION}/site-packages/buildbot_www-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/buildbot_www-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/buildbot_www-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/buildbot_www-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/buildbot_www-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/buildbot_www-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/buildbot_www-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/buildbot_www-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/buildbot_www-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/buildbot_www-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/buildbot_www-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/buildbot_www-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/VERSION
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/buildbot_www/${MODPY_PYCACHE}/

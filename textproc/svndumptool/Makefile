@@ -1,13 +1,13 @@
 COMMENT =		processing subversion dump files
-MODPY_EGG_VERSION =	0.6.1
-DISTNAME =		svndumptool-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.6.1
+DISTNAME =		svndumptool-${MODPY_DISTV}
 CATEGORIES =		textproc
 HOMEPAGE =		http://svn.borg.ch/svndumptool/
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-SITES =			http://svn.borg.ch/svndumptool/${MODPY_EGG_VERSION}/
+SITES =			http://svn.borg.ch/svndumptool/${MODPY_DISTV}/
 MODULES =		lang/python
 MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 

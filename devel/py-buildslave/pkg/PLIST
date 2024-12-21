@@ -12,13 +12,13 @@
 bin/buildbot-worker
 @comment bin/buildbot_worker_windows_service
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/
-lib/python${MODPY_VERSION}/site-packages/buildbot_worker-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/buildbot_worker-${MODPY_EGG_VERSION}.dist-info/COPYING
-lib/python${MODPY_VERSION}/site-packages/buildbot_worker-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/buildbot_worker-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/buildbot_worker-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/buildbot_worker-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/buildbot_worker-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/buildbot_worker-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/buildbot_worker-${MODPY_DISTV}.dist-info/COPYING
+lib/python${MODPY_VERSION}/site-packages/buildbot_worker-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/buildbot_worker-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/buildbot_worker-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/buildbot_worker-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/buildbot_worker-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/VERSION
 lib/python${MODPY_VERSION}/site-packages/buildbot_worker/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/buildbot_worker/${MODPY_PYCACHE}/

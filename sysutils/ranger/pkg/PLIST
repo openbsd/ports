@@ -268,13 +268,13 @@ lib/python${MODPY_VERSION}/site-packages/ranger/gui/widgets/titlebar.py
 lib/python${MODPY_VERSION}/site-packages/ranger/gui/widgets/view_base.py
 lib/python${MODPY_VERSION}/site-packages/ranger/gui/widgets/view_miller.py
 lib/python${MODPY_VERSION}/site-packages/ranger/gui/widgets/view_multipane.py
-lib/python${MODPY_VERSION}/site-packages/ranger_fm-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/ranger_fm-${MODPY_EGG_VERSION}.dist-info/AUTHORS
-lib/python${MODPY_VERSION}/site-packages/ranger_fm-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/ranger_fm-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/ranger_fm-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/ranger_fm-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/ranger_fm-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/ranger_fm-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/ranger_fm-${MODPY_DISTV}.dist-info/AUTHORS
+lib/python${MODPY_VERSION}/site-packages/ranger_fm-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/ranger_fm-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/ranger_fm-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/ranger_fm-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/ranger_fm-${MODPY_DISTV}.dist-info/top_level.txt
 @man man/man1/ranger.1
 @man man/man1/rifle.1
 share/applications/ranger.desktop

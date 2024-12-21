@@ -1,6 +1,6 @@
 bin/socrates
 lib/python${MODPY_VERSION}/site-packages/bruce/
-lib/python${MODPY_VERSION}/site-packages/bruce-${MODPY_EGG_VERSION}-py${MODPY_VERSION}.egg-info
+lib/python${MODPY_VERSION}/site-packages/bruce-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info
 lib/python${MODPY_VERSION}/site-packages/bruce/__init__.py
 lib/python${MODPY_VERSION}/site-packages/bruce/__init__.pyc
 lib/python${MODPY_VERSION}/site-packages/bruce/baseinterp.py

@@ -1,7 +1,7 @@
 COMMENT =	MySQL management utilities
 
-MODPY_EGG_VERSION = 1.6.5
-DISTNAME =	mysql-utilities-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.6.5
+DISTNAME =	mysql-utilities-${MODPY_DISTV}
 REVISION =	0
 CATEGORIES =	databases
 SITES =		http://mirror.switch.ch/mirror/mysql/Downloads/MySQLGUITools/ \

@@ -3,12 +3,12 @@
 @newuser _radicale:672:_radicale::radicale user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/radicale
 bin/radicale
-lib/python${MODPY_VERSION}/site-packages/Radicale-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/Radicale-${MODPY_EGG_VERSION}.dist-info/COPYING
-lib/python${MODPY_VERSION}/site-packages/Radicale-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/Radicale-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/Radicale-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/Radicale-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/Radicale-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/Radicale-${MODPY_DISTV}.dist-info/COPYING
+lib/python${MODPY_VERSION}/site-packages/Radicale-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/Radicale-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/Radicale-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/Radicale-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/radicale/
 lib/python${MODPY_VERSION}/site-packages/radicale/__init__.py
 lib/python${MODPY_VERSION}/site-packages/radicale/__main__.py

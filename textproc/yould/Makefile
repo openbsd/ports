@@ -1,7 +1,7 @@
 COMMENT=		generator for pronounceable random words
 
-MODPY_EGG_VERSION=	0.3.7
-DISTNAME=		yould-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.3.7
+DISTNAME=		yould-${MODPY_DISTV}
 REVISION=		6
 CATEGORIES=		textproc
 

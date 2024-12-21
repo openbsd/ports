@@ -6,7 +6,7 @@ USE_WXNEEDED =		Yes
 
 COMMENT =		modern Amiga emulator
 V =			3.1.66
-MODPY_EGG_VERSION =	${V}
+MODPY_DISTV =	${V}
 DISTNAME =		fs-uae-$V
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		emulators
