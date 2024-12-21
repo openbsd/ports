@@ -1,7 +1,7 @@
 COMMENT =	Python library for performing speech recognition
 
 PKGNAME =	py-speechrecognition-${GH_TAGNAME}
-REVISION =	3
+REVISION =	4
 
 GH_ACCOUNT =	Uberi
 GH_PROJECT =	speech_recognition
@@ -21,9 +21,6 @@ MODULES =	lang/python
 MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS =	audio/flac \
-		audio/py-audio${MODPY_FLAVOR}>=0.2.11
-
-FLAVORS =	python3
-FLAVOR  =	python3
+		audio/py-audio>=0.2.11
 
 .include <bsd.port.mk>

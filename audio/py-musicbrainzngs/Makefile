@@ -1,10 +1,10 @@
 COMMENT =	python bindings for musicbrainz NGS webservice
 
-MODPY_EGG_VERSION = 0.7.1
-DISTNAME =	musicbrainzngs-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.7.1
+DISTNAME =	musicbrainzngs-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	audio
-REVISION =	5
+REVISION =	6
 
 HOMEPAGE =	https://python-musicbrainzngs.readthedocs.org/
 
@@ -15,8 +15,5 @@ MODPY_PI =		Yes
 
 MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 .include <bsd.port.mk>

@@ -1,10 +1,10 @@
 COMMENT =		control subsonic api from cli
 
-MODPY_EGG_VERSION =	0.2.1
+MODPY_DISTV =	0.2.1
 
-DISTNAME =		subsonic-cli-${MODPY_EGG_VERSION}
+DISTNAME =		subsonic-cli-${MODPY_DISTV}
 PKGNAME =		${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		audio
 

@@ -1,9 +1,9 @@
 COMMENT =		Python binding of libdiscid
 
-MODPY_EGG_VERSION =	1.2.0
-DISTNAME =		discid-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.2.0
+DISTNAME =		discid-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		audio
 
@@ -17,8 +17,5 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		audio/libdiscid
-
-FLAVORS =		python3
-FLAVOR =	python3
 
 .include <bsd.port.mk>

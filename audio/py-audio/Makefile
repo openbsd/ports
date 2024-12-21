@@ -1,10 +1,10 @@
 COMMENT =	Python bindings for PortAudio
 
-MODPY_EGG_VERSION =	0.2.14
-DISTNAME =	PyAudio-${MODPY_EGG_VERSION}
-PKGNAME =	py-audio-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.2.14
+DISTNAME =	PyAudio-${MODPY_DISTV}
+PKGNAME =	py-audio-${MODPY_DISTV}
 CATEGORIES =	audio devel
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://people.csail.mit.edu/hubert/pyaudio/
 
@@ -12,9 +12,6 @@ HOMEPAGE =	http://people.csail.mit.edu/hubert/pyaudio/
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =	portaudio
-
-FLAVOR =	python3
-FLAVORS =	python3
 
 MODULES =	lang/python
 

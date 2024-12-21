@@ -1,8 +1,8 @@
-MODPY_EGG_VERSION =	0.2
+MODPY_DISTV =	0.2
 COMMENT =	curses interface for browsing and playing radio streams
-DISTNAME =	curseradio-${MODPY_EGG_VERSION}
+DISTNAME =	curseradio-${MODPY_DISTV}
 CATEGORIES =	audio
-REVISION =	5
+REVISION =	6
 
 GH_ACCOUNT =	chronitis
 GH_PROJECT =	curseradio
@@ -17,9 +17,9 @@ MODULES =	lang/python
 
 MODPY_PYBUILD =	setuptools
 
-RUN_DEPENDS =	textproc/py-lxml${MODPY_FLAVOR} \
-		www/py-requests${MODPY_FLAVOR} \
-		devel/py-xdg${MODPY_FLAVOR} \
+RUN_DEPENDS =	textproc/py-lxml \
+		www/py-requests \
+		devel/py-xdg \
 		multimedia/mpv
 
 NO_TEST =	Yes

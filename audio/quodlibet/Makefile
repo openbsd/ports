@@ -1,9 +1,9 @@
 COMMENT=	audio player and tagger for GTK+ with regex support
 
-MODPY_EGG_VERSION= 4.6.0
-DISTNAME=	quodlibet-${MODPY_EGG_VERSION}
-PORTROACH=	skipv:release-${MODPY_EGG_VERSION}
-REVISION=	2
+MODPY_DISTV=	4.6.0
+DISTNAME=	quodlibet-${MODPY_DISTV}
+PORTROACH=	skipv:release-${MODPY_DISTV}
+REVISION=	3
 
 CATEGORIES=	audio
 
@@ -12,18 +12,18 @@ HOMEPAGE=	https://quodlibet.readthedocs.org/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-SITES=		https://github.com/quodlibet/quodlibet/releases/download/release-${MODPY_EGG_VERSION}/
+SITES=		https://github.com/quodlibet/quodlibet/releases/download/release-${MODPY_DISTV}/
 
 MODULES=	lang/python
 MODPY_ADJ_FILES= *py
 MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS=	audio/py-musicbrainzngs${MODPY_FLAVOR} \
-		audio/py-mutagen${MODPY_FLAVOR} \
-		devel/py-gobject3${MODPY_FLAVOR} \
-		graphics/py-cairo${MODPY_FLAVOR} \
-		textproc/py-feedparser${MODPY_FLAVOR} \
-		x11/dbus-python${MODPY_FLAVOR}
+RUN_DEPENDS=	audio/py-musicbrainzngs \
+		audio/py-mutagen \
+		devel/py-gobject3 \
+		graphics/py-cairo \
+		textproc/py-feedparser \
+		x11/dbus-python
 
 # others
 RUN_DEPENDS+=	devel/desktop-file-utils \

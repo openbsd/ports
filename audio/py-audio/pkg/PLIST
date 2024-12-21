@@ -1,10 +1,10 @@
-@pkgpath audio/py-audio
-lib/python${MODPY_VERSION}/site-packages/PyAudio-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/PyAudio-${MODPY_EGG_VERSION}.dist-info/LICENSE.txt
-lib/python${MODPY_VERSION}/site-packages/PyAudio-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/PyAudio-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/PyAudio-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/PyAudio-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+@pkgpath audio/py-audio,python3
+lib/python${MODPY_VERSION}/site-packages/PyAudio-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/PyAudio-${MODPY_DISTV}.dist-info/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/PyAudio-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/PyAudio-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/PyAudio-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/PyAudio-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pyaudio/
 lib/python${MODPY_VERSION}/site-packages/pyaudio/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyaudio/${MODPY_PYCACHE}/

@@ -15,7 +15,7 @@ WANTLIB=		c iconv mpdclient
 LIB_DEPENDS=		audio/libmpdclient>=2.2 \
 			converters/libiconv
 
-BUILD_DEPENDS +=	textproc/py-sphinx,python3
+BUILD_DEPENDS +=	textproc/py-sphinx
 SITES=			https://www.musicpd.org/download/mpc/${VER:R}/
 
 MODULES=		devel/meson

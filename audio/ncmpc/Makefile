@@ -25,7 +25,7 @@ MODULES=		devel/meson
 
 BUILD_DEPENDS=		devel/boost \
 			devel/gettext,-tools \
-			textproc/py-sphinx,python3
+			textproc/py-sphinx
 
 LIB_DEPENDS=		audio/libmpdclient>=2.20 \
 			devel/gettext,-runtime \

@@ -3,7 +3,7 @@ COMMENT =		gtk3 audiobook player
 GH_ACCOUNT =		geigi
 GH_PROJECT =		cozy
 GH_TAGNAME =		1.3.0
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		audio
 
@@ -16,10 +16,10 @@ MODULES =		devel/dconf \
 			devel/meson \
 			lang/python
 
-COMMON_DEPENDS =	audio/py-mutagen${MODPY_FLAVOR} \
-                        databases/py-peewee${MODPY_FLAVOR} \
-                        devel/py-gobject3${MODPY_FLAVOR} \
-			sysutils/py-distro${MODPY_FLAVOR} \
+COMMON_DEPENDS =	audio/py-mutagen \
+                        databases/py-peewee \
+                        devel/py-gobject3 \
+			sysutils/py-distro \
 			x11/elementary/granite \
 			x11/gnome/libadwaita
 
@@ -28,11 +28,11 @@ BUILD_DEPENDS =		${COMMON_DEPENDS} \
 
 RUN_DEPENDS =		${COMMON_DEPENDS} \
 			devel/desktop-file-utils \
-			devel/py-tz${MODPY_FLAVOR} \
+			devel/py-tz \
 			multimedia/gstreamer1/plugins-good \
 			multimedia/gstreamer1/plugins-libav \
-			sysutils/py-packaging${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR} \
+			sysutils/py-packaging \
+			www/py-requests \
 			x11/gtk+4,-guic
 
 # required for running tests

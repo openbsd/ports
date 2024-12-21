@@ -1,6 +1,5 @@
+@pkgpath audio/py-mpd2,python3
 @conflict py-mpd2-*
-@pkgpath audio/py-mpd2
-!%%python3%%
 lib/python${MODPY_VERSION}/site-packages/mpd/
 lib/python${MODPY_VERSION}/site-packages/mpd/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mpd/${MODPY_PYCACHE}/
@@ -18,10 +17,10 @@ lib/python${MODPY_VERSION}/site-packages/mpd/asyncio.py
 lib/python${MODPY_VERSION}/site-packages/mpd/base.py
 lib/python${MODPY_VERSION}/site-packages/mpd/tests.py
 lib/python${MODPY_VERSION}/site-packages/mpd/twisted.py
-lib/python${MODPY_VERSION}/site-packages/python_mpd2-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/python_mpd2-${MODPY_EGG_VERSION}.dist-info/LICENSE.txt
-lib/python${MODPY_VERSION}/site-packages/python_mpd2-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/python_mpd2-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/python_mpd2-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/python_mpd2-${MODPY_EGG_VERSION}.dist-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/python_mpd2-${MODPY_EGG_VERSION}.dist-info/zip-safe
+lib/python${MODPY_VERSION}/site-packages/python_mpd2-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/python_mpd2-${MODPY_DISTV}.dist-info/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/python_mpd2-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/python_mpd2-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/python_mpd2-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/python_mpd2-${MODPY_DISTV}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/python_mpd2-${MODPY_DISTV}.dist-info/zip-safe

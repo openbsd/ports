@@ -1,5 +1,5 @@
+@pkgpath audio/py-discogs-client,python3
 @conflict py-discogs-client-*
-@pkgpath audio/py-discogs-client
 lib/python${MODPY_VERSION}/site-packages/discogs_client/
 lib/python${MODPY_VERSION}/site-packages/discogs_client/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/discogs_client/${MODPY_PYCACHE}/
@@ -20,9 +20,9 @@ lib/python${MODPY_VERSION}/site-packages/discogs_client/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/discogs_client/fetchers.py
 lib/python${MODPY_VERSION}/site-packages/discogs_client/models.py
 lib/python${MODPY_VERSION}/site-packages/discogs_client/utils.py
-lib/python${MODPY_VERSION}/site-packages/python3_discogs_client-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/python3_discogs_client-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/python3_discogs_client-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/python3_discogs_client-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/python3_discogs_client-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/python3_discogs_client-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/python3_discogs_client-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/python3_discogs_client-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/python3_discogs_client-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/python3_discogs_client-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/python3_discogs_client-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/python3_discogs_client-${MODPY_DISTV}.dist-info/top_level.txt

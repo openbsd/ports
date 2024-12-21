@@ -1,8 +1,9 @@
 COMMENT=	CLI tools to manage music collections
 
-MODPY_EGG_VERSION= 2.2.0
-DISTNAME=	beets-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.2.0
+DISTNAME=	beets-${MODPY_DISTV}
 CATEGORIES=	audio
+REVISION=	0
 
 HOMEPAGE=	https://beets.io/
 
@@ -15,36 +16,36 @@ MODULES=	lang/python
 MODPY_PYBUILD=	poetry-core
 MODPY_PI=	Yes
 
-RUN_DEPENDS+=	textproc/py-confuse${MODPY_FLAVOR} \
-		textproc/py-jellyfish${MODPY_FLAVOR} \
-		audio/py-mediafile${MODPY_FLAVOR} \
-		devel/py-algorithm-munkres${MODPY_FLAVOR} \
-		audio/py-musicbrainzngs${MODPY_FLAVOR} \
-		sysutils/py-platformdirs${MODPY_FLAVOR} \
-		textproc/py-yaml${MODPY_FLAVOR} \
-		textproc/py-unidecode${MODPY_FLAVOR} \
-		www/py-beautifulsoup4${MODPY_FLAVOR} \
-		textproc/py-langdetect${MODPY_FLAVOR} \
-		audio/py-mutagen${MODPY_FLAVOR} \
-		graphics/py-Pillow${MODPY_FLAVOR} \
-		audio/py-acoustid${MODPY_FLAVOR} \
-		audio/py-last${MODPY_FLAVOR} \
-		audio/py-discogs-client${MODPY_FLAVOR} \
-		devel/py-xdg${MODPY_FLAVOR} \
-		archivers/py-rarfile${MODPY_FLAVOR} \
-		www/py-requests${MODPY_FLAVOR} \
-		www/py-requests-oauthlib${MODPY_FLAVOR}
+RUN_DEPENDS+=	textproc/py-confuse \
+		textproc/py-jellyfish \
+		audio/py-mediafile \
+		devel/py-algorithm-munkres \
+		audio/py-musicbrainzngs \
+		sysutils/py-platformdirs \
+		textproc/py-yaml \
+		textproc/py-unidecode \
+		www/py-beautifulsoup4 \
+		textproc/py-langdetect \
+		audio/py-mutagen \
+		graphics/py-Pillow \
+		audio/py-acoustid \
+		audio/py-last \
+		audio/py-discogs-client \
+		devel/py-xdg \
+		archivers/py-rarfile \
+		www/py-requests \
+		www/py-requests-oauthlib
 
 # Some tests are failed:
 #  - https://github.com/beetbox/beets/issues/5526
 #  - https://github.com/beetbox/beets/issues/5527
-TEST_DEPENDS=	archivers/py-rarfile${MODPY_FLAVOR} \
-		audio/py-mpd2${MODPY_FLAVOR} \
-		devel/py-mock${MODPY_FLAVOR} \
-		devel/py-test-cov${MODPY_FLAVOR} \
-		www/py-flask${MODPY_FLAVOR} \
-		www/py-requests-oauthlib${MODPY_FLAVOR} \
-		www/py-responses${MODPY_FLAVOR}
+TEST_DEPENDS=	archivers/py-rarfile \
+		audio/py-mpd2 \
+		devel/py-mock \
+		devel/py-test-cov \
+		www/py-flask \
+		www/py-requests-oauthlib \
+		www/py-responses
 
 # needs for tests
 PORTHOME=	${WRKDIR}

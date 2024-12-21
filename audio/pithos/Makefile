@@ -1,7 +1,7 @@
 GH_ACCOUNT =	pithos
 GH_PROJECT =	pithos
 GH_TAGNAME =	1.1.2
-REVISION =	12
+REVISION =	13
 
 COMMENT =	Pandora client for GNOME
 CATEGORIES =	audio x11
@@ -17,18 +17,18 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =	audio/py-last${MODPY_FLAVOR}>=0.5.11 \
+RUN_DEPENDS =	audio/py-last>=0.5.11 \
 		devel/desktop-file-utils \
 		devel/libnotify \
-		devel/py-gobject3${MODPY_FLAVOR} \
-		devel/py-xdg${MODPY_FLAVOR} \
+		devel/py-gobject3 \
+		devel/py-xdg \
 		multimedia/gstreamer1/plugins-good \
 		multimedia/gstreamer1/plugins-libav \
-		x11/dbus-python${MODPY_FLAVOR} \
+		x11/dbus-python \
 		x11/keybinder3 \
 		x11/gtk+4,-guic
 
-TEST_DEPENDS =	audio/py-last${MODPY_FLAVOR}>=0.5.11
+TEST_DEPENDS =	audio/py-last>=0.5.11
 
 pre-configure:
 	sed -i "s,/usr/s,s,g" ${WRKSRC}/setup.py

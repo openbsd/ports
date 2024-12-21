@@ -1,10 +1,10 @@
 COMMENT=	read and write audio file tags in Python
 
-MODPY_EGG_VERSION=	0.12.0
+MODPY_DISTV=	0.12.0
 
-DISTNAME=	mediafile-${MODPY_EGG_VERSION}
+DISTNAME=	mediafile-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	audio
 
@@ -18,10 +18,7 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	flit_core
 
-FLAVOR=		python3
-FLAVORS=	python3
-
-RUN_DEPENDS=	audio/py-mutagen${MODPY_FLAVOR} \
-		devel/py-six${MODPY_FLAVOR}
+RUN_DEPENDS=	audio/py-mutagen \
+		devel/py-six
 
 .include <bsd.port.mk>

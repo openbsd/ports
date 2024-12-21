@@ -1,8 +1,8 @@
 COMMENT =		audio normalization
 
-MODPY_EGG_VERSION =	1.27.7
-DISTNAME =		ffmpeg-normalize-${MODPY_EGG_VERSION}
-REVISION =		0
+MODPY_DISTV =	1.27.7
+DISTNAME =		ffmpeg-normalize-${MODPY_DISTV}
+REVISION =		1
 
 CATEGORIES =		audio multimedia
 
@@ -17,10 +17,10 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	test/test.py
 
-RUN_DEPENDS =		devel/py-colorama${MODPY_FLAVOR} \
-			devel/py-colorlog${MODPY_FLAVOR} \
-			multimedia/py-ffmpeg-progress-yield${MODPY_FLAVOR}>=0.7.4 \
-			devel/py-tqdm${MODPY_FLAVOR} \
+RUN_DEPENDS =		devel/py-colorama \
+			devel/py-colorlog \
+			multimedia/py-ffmpeg-progress-yield>=0.7.4 \
+			devel/py-tqdm \
 			graphics/ffmpeg
 
 .include <bsd.port.mk>

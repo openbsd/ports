@@ -2,7 +2,7 @@ COMMENT=	common interface to speech synthesis
 
 V=		0.11.5
 DISTNAME=	speech-dispatcher-${V}
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  speechd              2.3      # .8.0
 
@@ -25,7 +25,7 @@ MODPY_ADJ_FILES=src/api/python/speechd_config/spd-conf \
 		src/api/python/speechd/_test.py
 
 # used by spd-conf
-RUN_DEPENDS=	devel/py-xdg${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-xdg
 
 LIB_DEPENDS=	audio/espeak \
 		audio/libao \

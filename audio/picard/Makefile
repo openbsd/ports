@@ -1,7 +1,8 @@
 COMMENT =	automatic audio files tagger using the MusicBrainz database
 
-MODPY_EGG_VERSION =	2.12.3
-DISTNAME =		picard-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.12.3
+DISTNAME =		picard-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		audio
 
@@ -19,15 +20,15 @@ MODPY_PYBUILD =		setuptools
 BUILD_DEPENDS =		devel/gettext,-tools
 
 RUN_DEPENDS =		audio/chromaprint \
-			devel/py-dateutil${MODPY_FLAVOR} \
-			audio/py-discid${MODPY_FLAVOR} \
-			audio/py-mutagen${MODPY_FLAVOR} \
+			devel/py-dateutil \
+			audio/py-discid \
+			audio/py-mutagen \
 			devel/desktop-file-utils \
-			devel/py-fasteners${MODPY_FLAVOR} \
-			textproc/py-charset-normalizer${MODPY_FLAVOR} \
-			textproc/py-markdown${MODPY_FLAVOR} \
-			textproc/py-yaml${MODPY_FLAVOR} \
+			devel/py-fasteners \
+			textproc/py-charset-normalizer \
+			textproc/py-markdown \
+			textproc/py-yaml \
 			x11/gtk+4,-guic \
-			x11/py-qt5${MODPY_FLAVOR}
+			x11/py-qt5
 
 .include <bsd.port.mk>

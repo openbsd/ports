@@ -1,10 +1,10 @@
 COMMENT =	simple curses audio player
 
-MODPY_EGG_VERSION =	5.0.1
+MODPY_DISTV =	5.0.1
 
-DISTNAME =	cplay-ng-${MODPY_EGG_VERSION}
-PKGNAME =	cplay-${MODPY_EGG_VERSION}
-REVISION =	3
+DISTNAME =	cplay-ng-${MODPY_DISTV}
+PKGNAME =	cplay-${MODPY_DISTV}
+REVISION =	4
 
 CATEGORIES =	audio
 

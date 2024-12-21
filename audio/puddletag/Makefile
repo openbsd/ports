@@ -1,7 +1,8 @@
 COMMENT =		spreadsheet-like audio file tagger
 
-MODPY_EGG_VERSION =	2.4.0
-DISTNAME =		puddletag-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.4.0
+DISTNAME =		puddletag-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		audio
 
@@ -17,13 +18,13 @@ MODPY_PYBUILD =		setuptools
 NO_TEST =		Yes
 
 # wants levenshtein
-RUN_DEPENDS =		audio/py-acoustid${MODPY_FLAVOR} \
-			audio/py-mutagen${MODPY_FLAVOR} \
+RUN_DEPENDS =		audio/py-acoustid \
+			audio/py-mutagen \
 			devel/desktop-file-utils \
-			devel/py-configobj${MODPY_FLAVOR} \
-			devel/py-parsing${MODPY_FLAVOR} \
-			textproc/py-lxml${MODPY_FLAVOR} \
-			textproc/py-unidecode${MODPY_FLAVOR} \
-			x11/py-qt5${MODPY_FLAVOR}
+			devel/py-configobj \
+			devel/py-parsing \
+			textproc/py-lxml \
+			textproc/py-unidecode \
+			x11/py-qt5
 
 .include <bsd.port.mk>

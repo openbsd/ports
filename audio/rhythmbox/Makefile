@@ -2,6 +2,7 @@ COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		3.4.8
+REVISION=		0
 
 SHARED_LIBS += rhythmbox-core            0.0 # 10.0.0
 
@@ -23,8 +24,8 @@ MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 
-BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
-RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR}
+BUILD_DEPENDS=		devel/py-gobject3
+RUN_DEPENDS=		devel/py-gobject3
 
 # needed for the tests
 BUILD_DEPENDS +=	devel/check
@@ -42,7 +43,7 @@ BUILD_DEPENDS +=	x11/gnome/libsecret
 RUN_DEPENDS +=		x11/gnome/libsecret
 
 # context plugin
-RUN_DEPENDS +=		www/py-mako${MODPY_FLAVOR}
+RUN_DEPENDS +=		www/py-mako
 
 # calls grl_registry_load...plugin
 RUN_DEPENDS +=		x11/gnome/grilo-plugins>=0.3.0

@@ -23,7 +23,7 @@ SITES =			https://www.musicpd.org/download/mpd/${VER:R}/
 COMPILER =		base-clang ports-gcc
 
 BUILD_DEPENDS =		devel/boost
-BUILD_DEPENDS +=	textproc/py-sphinx,python3
+BUILD_DEPENDS +=	textproc/py-sphinx
 
 LIB_DEPENDS =		audio/faad>=2.6.1p0 \
 			audio/flac \

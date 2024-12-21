@@ -1,3 +1,4 @@
+@pkgpath audio/py-speechrecognition,python3
 lib/python${MODPY_VERSION}/site-packages/SpeechRecognition-3.8.1.dist-info/
 lib/python${MODPY_VERSION}/site-packages/SpeechRecognition-3.8.1.dist-info/LICENSE-FLAC.txt
 lib/python${MODPY_VERSION}/site-packages/SpeechRecognition-3.8.1.dist-info/LICENSE.txt
