@@ -3,6 +3,7 @@ COMMENT =			retrieve and process nzb-files via web interface
 VERSION =			4.4.0
 DISTNAME =			SABnzbd-${VERSION}
 PKGNAME =			sabnzbd-${VERSION}
+REVISION =			0
 
 CATEGORIES =			news
 
@@ -22,34 +23,34 @@ BUILD_DEPENDS =			${_MODPY_BUILD_DEPENDS}
 RUN_DEPENDS =			archivers/par2cmdline \
 				archivers/unrar \
 				archivers/unzip \
-				devel/py-cffi${MODPY_FLAVOR} \
-				devel/py-cheetah${MODPY_FLAVOR} \
-				devel/py-configobj${MODPY_FLAVOR} \
-				devel/py-cparser${MODPY_FLAVOR} \
-				devel/py-dateutil${MODPY_FLAVOR} \
-				devel/py-jaraco-classes${MODPY_FLAVOR} \
-				devel/py-jaraco-collections${MODPY_FLAVOR} \
-				devel/py-jaraco-context${MODPY_FLAVOR} \
-				devel/py-jaraco-functools${MODPY_FLAVOR} \
-				devel/py-more-itertools${MODPY_FLAVOR} \
-				devel/py-puremagic${MODPY_FLAVOR} \
-				devel/py-six${MODPY_FLAVOR} \
-				devel/py-tempora${MODPY_FLAVOR} \
-				devel/py-tz${MODPY_FLAVOR} \
-				devel/py-zc-lockfile${MODPY_FLAVOR} \
-				misc/py-babelfish${MODPY_FLAVOR} \
-				multimedia/py-guessit${MODPY_FLAVOR} \
-				net/py-apprise${MODPY_FLAVOR} \
-				net/py-portend${MODPY_FLAVOR} \
-				net/py-socks${MODPY_FLAVOR} \
-				news/py-sabctools${MODPY_FLAVOR}>=8.2.5v0 \
-				security/py-cryptography${MODPY_FLAVOR} \
-				textproc/py-chardet${MODPY_FLAVOR} \
-				textproc/py-feedparser${MODPY_FLAVOR} \
-				textproc/py-jaraco-text${MODPY_FLAVOR} \
-				textproc/py-rebulk${MODPY_FLAVOR} \
-				www/py-CherryPy${MODPY_FLAVOR} \
-				www/py-cheroot${MODPY_FLAVOR}
+				devel/py-cffi \
+				devel/py-cheetah \
+				devel/py-configobj \
+				devel/py-cparser \
+				devel/py-dateutil \
+				devel/py-jaraco-classes \
+				devel/py-jaraco-collections \
+				devel/py-jaraco-context \
+				devel/py-jaraco-functools \
+				devel/py-more-itertools \
+				devel/py-puremagic \
+				devel/py-six \
+				devel/py-tempora \
+				devel/py-tz \
+				devel/py-zc-lockfile \
+				misc/py-babelfish \
+				multimedia/py-guessit \
+				net/py-apprise \
+				net/py-portend \
+				net/py-socks \
+				news/py-sabctools>=8.2.5v0 \
+				security/py-cryptography \
+				textproc/py-chardet \
+				textproc/py-feedparser \
+				textproc/py-jaraco-text \
+				textproc/py-rebulk \
+				www/py-CherryPy \
+				www/py-cheroot
 
 NO_BUILD =			Yes
 

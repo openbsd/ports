@@ -8,7 +8,7 @@
      SUBDIR += p5-News-Article
      SUBDIR += p5-News-Newsrc
      SUBDIR += pan
-     SUBDIR += py-sabctools,python3
+     SUBDIR += py-sabctools
      SUBDIR += sabnzbd
      SUBDIR += slrn
      SUBDIR += tin
