@@ -4,7 +4,7 @@ MODPY_DISTV=	2.6.1
 DISTNAME=	pygame-${MODPY_DISTV}
 PKGNAME=	py-game-${MODPY_DISTV}
 CATEGORIES=	devel games
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://www.pygame.org/
 
@@ -24,6 +24,7 @@ LIB_DEPENDS=	audio/portmidi \
 		devel/sdl2-ttf \
 		devel/sdl2-image \
 		devel/sdl2-mixer
+RUN_DEPENDS=	math/py-numpy
 
 TEST_DEPENDS=	${BUILD_PKGPATH}
 
