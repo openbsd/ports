@@ -8,3 +8,8 @@ sbin/spampd
 @owner _spampd
 @group _spampd
 @sample /var/spampd/
+@owner
+@group
+share/examples/spampd/
+share/examples/spampd/spampd-sm.cfg
+share/examples/spampd/spampd.cfg

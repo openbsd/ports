@@ -1,7 +1,7 @@
 Index: spampd.pl
 --- spampd.pl.orig
 +++ spampd.pl
-@@ -429,8 +429,8 @@ sub new {
+@@ -430,8 +430,8 @@ sub new {
        max_servers       => 5,                     # max number of child processes (servers) to spawn
        max_requests      => 20,                    # max requests handled by child b4 dying
        pid_file          => '/var/run/spampd.pid', # write pid to file
@@ -12,7 +12,7 @@ Index: spampd.pl
        log_file          => undef,                 # log destination (undef means log to use write_to_log_hook() with stderr fallback)
        syslog_logsock    => undef,                 # syslog socket (undef means for Sys::Syslog to decide)
        syslog_ident      => 'spampd',              # syslog identity
-@@ -2080,7 +2080,7 @@ Specifies what UNIX socket spampd will relay to. If th
+@@ -2087,7 +2087,7 @@ Specifies what UNIX socket spampd will relay to. If th
  =item B<--group> or B<-g> I<<groupname>>
  
  Specifies the user and/or group that the proxy will run as. Default is
