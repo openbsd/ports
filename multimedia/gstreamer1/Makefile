@@ -6,6 +6,6 @@
     SUBDIR += plugins-libav
     SUBDIR += plugins-ugly
     SUBDIR += plugins-bad
-    SUBDIR += py-gstreamer,python3
+    SUBDIR += py-gstreamer
 
 .include <bsd.port.subdir.mk>

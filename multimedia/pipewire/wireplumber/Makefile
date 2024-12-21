@@ -18,7 +18,7 @@ MODPY_RUNDEP=		No
 BUILD_DEPENDS=		devel/doxygen \
 			devel/gettext,-tools \
 			devel/gobject-introspection \
-			textproc/py-lxml${MODPY_FLAVOR}
+			textproc/py-lxml
 
 LIB_DEPENDS=		devel/glib2 \
 			multimedia/pipewire/pipewire,-libs

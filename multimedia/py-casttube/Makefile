@@ -1,9 +1,9 @@
 COMMENT=		interact with Youtube Chromecast api
 
-MODPY_EGG_VERSION=	0.2.1
-DISTNAME=		casttube-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.2.1
+DISTNAME=		casttube-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		multimedia net
 
@@ -17,12 +17,9 @@ MODULES=		lang/python
 MODPY_PI=		Yes
 MODPY_PYBUILD =		setuptools
 
-FLAVORS=		python3
-FLAVOR =		python3
-
-TEST_DEPENDS=		net/py-idna${MODPY_FLAVOR} \
-			textproc/py-chardet${MODPY_FLAVOR} \
-			www/py-requests${MODPY_FLAVOR}
+TEST_DEPENDS=		net/py-idna \
+			textproc/py-chardet \
+			www/py-requests
 
 # needs screen_id: https://github.com/ur1katz/CastTube-Scripts
 TEST_IS_INTERACTIVE=	Yes

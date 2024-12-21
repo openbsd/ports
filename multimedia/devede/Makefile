@@ -1,9 +1,9 @@
 COMMENT=		video DVDs and CDs creation tool
 
-MODPY_EGG_VERSION=	4.17.0
-DISTNAME=		devedeng-${MODPY_EGG_VERSION}
-PKGNAME=		devede-${MODPY_EGG_VERSION}
-REVISION=		4
+MODPY_DISTV=	4.17.0
+DISTNAME=		devedeng-${MODPY_DISTV}
+PKGNAME=		devede-${MODPY_DISTV}
+REVISION=		5
 
 CATEGORIES=		multimedia x11
 
@@ -12,7 +12,7 @@ HOMEPAGE=		https://www.rastersoft.com/programas/devede.html
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-SITES=	https://gitlab.com/rastersoft/devedeng/-/archive/${MODPY_EGG_VERSION}/
+SITES=	https://gitlab.com/rastersoft/devedeng/-/archive/${MODPY_DISTV}/
 
 MODULES=		lang/python
 MODPY_PYBUILD=		setuptools
@@ -20,7 +20,7 @@ MODPY_PYBUILD=		setuptools
 BUILD_DEPENDS=		devel/gettext,-tools
 
 RUN_DEPENDS=		devel/desktop-file-utils \
-			devel/py-gobject3${MODPY_FLAVOR} \
+			devel/py-gobject3 \
 			x11/gtk+4,-guic
 
 # pygobject GTK3 introspection (not provided by indirect dependencies)

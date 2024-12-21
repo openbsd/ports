@@ -1,7 +1,8 @@
 COMMENT =		remove metadata from media files
 
-MODPY_EGG_VERSION =	0.13.4
-DISTNAME =		mat2-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.13.4
+DISTNAME =		mat2-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		multimedia
 
@@ -16,8 +17,8 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		audio/py-mutagen${MODPY_FLAVOR} \
-			devel/py-gobject3${MODPY_FLAVOR} \
+RUN_DEPENDS =		audio/py-mutagen \
+			devel/py-gobject3 \
 			graphics/ffmpeg \
 			graphics/gdk-pixbuf2 \
 			graphics/libimagequant \

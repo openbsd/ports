@@ -2,6 +2,7 @@ COMMENT=		overrides for the gobject-introspection-based pygst bindings
 
 DISTNAME=		gst-python-${V}
 PKGNAME=		py-gstreamer1-${V}
+REVISION=		0
 
 HOMEPAGE=		http://gstreamer.freedesktop.org/modules/gst-python.html
 
@@ -13,13 +14,10 @@ SITES=			${SITE_GST:=gst-python/}
 # XXX we need the meson MODULE to come first, but Makefile.inc is parsed after
 MODULES=		devel/meson lang/python
 
-FLAVORS=		python3
-FLAVOR=			python3
-
 # MODPY_LIBDIR/gi/overrides/
-BUILD_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
+BUILD_DEPENDS=		devel/py-gobject3 \
 			${P}/plugins-base>=${V}
-RUN_DEPENDS=		devel/py-gobject3${MODPY_FLAVOR} \
+RUN_DEPENDS=		devel/py-gobject3 \
 			${P}/plugins-base>=${V}
 
 LIB_DEPENDS=		${P}/core>=${V} \

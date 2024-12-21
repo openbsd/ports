@@ -25,7 +25,7 @@ MODPY_RUNDEP=		No
 
 BUILD_DEPENDS=		devel/doxygen \
 			devel/gettext,-tools \
-			textproc/py-docutils${MODPY_FLAVOR}
+			textproc/py-docutils
 
 LIB_DEPENDS-main=	${BASE_PKGPATH},-libs \
 			audio/libcanberra \

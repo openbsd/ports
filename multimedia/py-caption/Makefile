@@ -1,8 +1,9 @@
 COMMENT=	closed caption converter
 
-MODPY_EGG_VERSION=	2.2.15
-DISTNAME=	pycaption-${MODPY_EGG_VERSION}
-PKGNAME=	py-caption-${MODPY_EGG_VERSION}
+MODPY_DISTV=	2.2.15
+DISTNAME=	pycaption-${MODPY_DISTV}
+PKGNAME=	py-caption-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	multimedia
 
@@ -11,15 +12,12 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 
-FLAVORS=	python3
-FLAVOR=		python3
-
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS=	textproc/py-cssutils${MODPY_FLAVOR} \
-		textproc/py-lxml${MODPY_FLAVOR} \
-		www/py-beautifulsoup4${MODPY_FLAVOR}
+RUN_DEPENDS=	textproc/py-cssutils \
+		textproc/py-lxml \
+		www/py-beautifulsoup4
 
 post-install:
 	rm -r ${WRKINST}${MODPY_SITEPKG}/tests

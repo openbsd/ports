@@ -1,8 +1,9 @@
 COMMENT =	guess information from video filenames
 
-MODPY_EGG_VERSION =	3.8.0
-DISTNAME =	guessit-${MODPY_EGG_VERSION}
+MODPY_DISTV =	3.8.0
+DISTNAME =	guessit-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	multimedia
 
@@ -17,15 +18,12 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	guessit
 
-BUILD_DEPENDS =	devel/py-test-runner${MODPY_FLAVOR}
-RUN_DEPENDS =	devel/py-dateutil${MODPY_FLAVOR} \
-		misc/py-babelfish${MODPY_FLAVOR} \
-		textproc/py-rebulk${MODPY_FLAVOR}>=3
-TEST_DEPENDS =	textproc/py-yaml${MODPY_FLAVOR} \
-		devel/py-test-benchmark${MODPY_FLAVOR} \
-		devel/py-test-mock${MODPY_FLAVOR}
-
-FLAVORS =	python3
-FLAVOR =	python3
+BUILD_DEPENDS =	devel/py-test-runner
+RUN_DEPENDS =	devel/py-dateutil \
+		misc/py-babelfish \
+		textproc/py-rebulk>=3
+TEST_DEPENDS =	textproc/py-yaml \
+		devel/py-test-benchmark \
+		devel/py-test-mock
 
 .include <bsd.port.mk>

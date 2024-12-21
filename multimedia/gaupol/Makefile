@@ -1,10 +1,10 @@
 COMMENT =	editor for text-based subtitle files
 
-MODPY_EGG_VERSION =	1.10.1
+MODPY_DISTV =	1.10.1
 GH_ACCOUNT =	otsaloma
 GH_PROJECT =	gaupol
-GH_TAGNAME =	${MODPY_EGG_VERSION}
-REVISION =	4
+GH_TAGNAME =	${MODPY_DISTV}
+REVISION =	5
 
 CATEGORIES =	multimedia
 
@@ -21,8 +21,8 @@ MODPY_PYBUILD =	setuptools
 BUILD_DEPENDS =	devel/gettext,-tools
 RUN_DEPENDS =	devel/iso-codes \
 		devel/desktop-file-utils \
-		devel/py-gobject3${MODPY_FLAVOR} \
-		graphics/py-cairo${MODPY_FLAVOR} \
+		devel/py-gobject3 \
+		graphics/py-cairo \
 		multimedia/gstreamer1/plugins-bad \
 		multimedia/gstreamer1/plugins-base \
 		multimedia/gstreamer1/plugins-good \
@@ -30,7 +30,7 @@ RUN_DEPENDS =	devel/iso-codes \
 		multimedia/gstreamer1/plugins-ugly \
 		multimedia/mpv \
 		textproc/gspell \
-		textproc/py-chardet${MODPY_FLAVOR} \
+		textproc/py-chardet \
 		x11/gtk+4,-guic \
 		x11/hicolor-icon-theme
 

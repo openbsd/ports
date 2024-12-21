@@ -1,4 +1,4 @@
-@pkgpath multimedia/gstreamer1/py-gstreamer
+@pkgpath multimedia/gstreamer1/py-gstreamer,python3
 @so lib/gstreamer-${API}/libgstpython.so
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/Gst.py
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/GstAudio.py

@@ -1,8 +1,9 @@
 COMMENT=	Python FFmpeg progress wrapper
 
-MODPY_EGG_VERSION=	0.9.1
-DISTNAME=	ffmpeg-progress-yield-${MODPY_EGG_VERSION}
+MODPY_DISTV=	0.9.1
+DISTNAME=	ffmpeg-progress-yield-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	multimedia
 
@@ -18,8 +19,5 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 MODPY_PYTEST_ARGS=	test/test.py
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 .include <bsd.port.mk>

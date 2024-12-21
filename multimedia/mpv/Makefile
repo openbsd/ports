@@ -31,7 +31,7 @@ COMPILER_LANGS =	c
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 BUILD_DEPENDS =		audio/ladspa \
-			textproc/py-docutils${MODPY_FLAVOR}
+			textproc/py-docutils
 
 LIB_DEPENDS =		archivers/libarchive \
 			audio/libcdio \
