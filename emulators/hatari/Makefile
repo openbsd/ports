@@ -5,7 +5,7 @@ COMMENT =	Atari ST/STE/TT/Falcon emulator
 V =		2.5.0
 DISTNAME =	hatari-${V}
 EXTRACT_SUFX =	.tar.bz2
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	emulators
 

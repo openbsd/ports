@@ -39,8 +39,8 @@ BUILD_DEPENDS=	devel/gettext,-tools \
 		devel/meson \
 		devel/ninja \
 		shells/bash \
-		textproc/py-sphinx${MODPY_FLAVOR}>=4.0.2 \
-		textproc/py-sphinx_rtd_theme${MODPY_FLAVOR}
+		textproc/py-sphinx>=4.0.2 \
+		textproc/py-sphinx_rtd_theme
 
 RUN_DEPENDS-main=	${BUILD_PKGPATH}-ga
 LIB_DEPENDS=	devel/glib2
