@@ -3,6 +3,7 @@ COMMENT =	signal-processing toolkit for SDR (software-defined radio)
 GH_TAGNAME =	v3.10.11.0
 GH_ACCOUNT =	gnuradio
 GH_PROJECT =	gnuradio
+REVISION =	0
 
 SHARED_LIBS +=  gnuradio-analog           1.0 # 3.7
 SHARED_LIBS +=  gnuradio-atsc             1.0 # 3.7
@@ -52,34 +53,34 @@ MODULES =	devel/cmake \
 
 BUILD_DEPENDS =	${RUN_DEPENDS} \
 		devel/cppunit \
-		devel/py-click${MODPY_FLAVOR} \
-		devel/py-click-plugins${MODPY_FLAVOR} \
-		devel/py-gobject3${MODPY_FLAVOR} \
-		devel/py-jsonschema${MODPY_FLAVOR} \
-		devel/py-pybind11${MODPY_FLAVOR} \
-		devel/py-six${MODPY_FLAVOR} \
+		devel/py-click \
+		devel/py-click-plugins \
+		devel/py-gobject3 \
+		devel/py-jsonschema \
+		devel/py-pybind11 \
+		devel/py-six \
 		devel/xdg-utils \
-		graphics/py-pyqtgraph${MODPY_FLAVOR} \
-		math/py-numpy${MODPY_FLAVOR} \
+		graphics/py-pyqtgraph \
+		math/py-numpy \
 		net/cppzmq \
-		textproc/py-yaml${MODPY_FLAVOR} \
+		textproc/py-yaml \
 		textproc/xmlto \
-		www/py-mako${MODPY_FLAVOR} \
-		x11/py-qt5${MODPY_FLAVOR}
+		www/py-mako \
+		x11/py-qt5
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		devel/py-cheetah${MODPY_FLAVOR} \
-		graphics/py-matplotlib${MODPY_FLAVOR} \
-		math/py-networkx${MODPY_FLAVOR} \
-		math/py-numpy${MODPY_FLAVOR} \
-		math/py-scipy${MODPY_FLAVOR} \
+		devel/py-cheetah \
+		graphics/py-matplotlib \
+		math/py-networkx \
+		math/py-numpy \
+		math/py-scipy \
 		misc/shared-mime-info \
-		textproc/py-lxml${MODPY_FLAVOR} \
-		textproc/py-yaml${MODPY_FLAVOR} \
+		textproc/py-lxml \
+		textproc/py-yaml \
 		x11/gtk+4,-guic
 
 # gnuradio-companion
-RUN_DEPENDS +=	devel/py-gobject3${MODPY_FLAVOR} \
+RUN_DEPENDS +=	devel/py-gobject3 \
 		x11/gtk+3
 
 LIB_DEPENDS =	audio/jack \

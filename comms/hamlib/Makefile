@@ -7,7 +7,7 @@ DISTNAME=	hamlib-${VERSION}
 CATEGORIES=	comms hamradio
 
 REVISION-main=	1
-REVISION-python=2
+REVISION-python=3
 REVISION-tcl=	1
 
 MULTI_PACKAGES=	-main -python -tcl

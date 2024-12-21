@@ -37,9 +37,9 @@
      SUBDIR += p5-SendPage
      SUBDIR += picocom
      SUBDIR += pterm
-     SUBDIR += py-dmr_utils3,python3
-     SUBDIR += py-gammu
-     SUBDIR += py-serial-asyncio,python3
+     SUBDIR += py-dmr_utils3
+     SUBDIR += py-gammu		# py2
+     SUBDIR += py-serial-asyncio
      SUBDIR += qodem
      SUBDIR += qpage
      SUBDIR += rtl-sdr

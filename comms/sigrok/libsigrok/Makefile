@@ -2,8 +2,8 @@ COMMENT =		sigrok hardware driver library
 
 SIGROK_PROJECT =	libsigrok
 SIGROK_VERSION =	0.5.2
-MODPY_EGG_VERSION =	${SIGROK_VERSION}
-REVISION =		7
+MODPY_DISTV =	${SIGROK_VERSION}
+REVISION =		8
 
 SHARED_LIBS +=  sigrok                    0.1 # 0.0
 SHARED_LIBS +=  sigrokcxx                 0.1 # 4.0
@@ -20,10 +20,10 @@ MODULES =		lang/python
 
 BUILD_DEPENDS =		devel/check \
 			devel/doxygen \
-			devel/py-gobject3${MODPY_FLAVOR} \
-			devel/py-setuptools${MODPY_FLAVOR} \
+			devel/py-gobject3 \
+			devel/py-setuptools \
 			devel/swig \
-			math/py-numpy${MODPY_FLAVOR}
+			math/py-numpy
 
 LIB_DEPENDS =		archivers/libzip \
 			comms/libhidapi \

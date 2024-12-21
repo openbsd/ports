@@ -1,5 +1,5 @@
 SUBDIR =
-SUBDIR += py-zigpy,python3
-SUBDIR += py-zigpy-znp,python3
+SUBDIR += py-zigpy
+SUBDIR += py-zigpy-znp
 
 .include <bsd.port.subdir.mk>

@@ -1,10 +1,11 @@
 COMMENT=	boot-loader flash tool for TI CC2538, CC26xx, CC13xx
 
-MODPY_EGG_VERSION=	2.1
+MODPY_DISTV=	2.1
 GH_ACCOUNT=	JelmerT
 GH_PROJECT=	cc2538-bsl
 GH_COMMIT=	208cf7a79c6443d3f1c218d8fee1d18096165664
-DISTNAME=	cc2538-bsl-${MODPY_EGG_VERSION}pl20240918
+DISTNAME=	cc2538-bsl-${MODPY_DISTV}pl20240918
+REVISION=	0
 
 CATEGORIES=	comms
 
@@ -20,8 +21,8 @@ MODPY_PYBUILD=	setuptools
 
 NO_TEST=	Yes
 
-RUN_DEPENDS=	devel/py-serial${MODPY_FLAVOR} \
-		devel/py-intelhex${MODPY_FLAVOR} \
-		devel/py-magic${MODPY_FLAVOR}
+RUN_DEPENDS=	devel/py-serial \
+		devel/py-intelhex \
+		devel/py-magic
 
 .include <bsd.port.mk>

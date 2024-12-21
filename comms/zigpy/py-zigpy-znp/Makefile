@@ -1,13 +1,14 @@
 COMMENT=	zigpy module and tools for TI CC2652/similar
 
-MODPY_EGG_VERSION=	0.13.1
+MODPY_DISTV=	0.13.1
 
 GH_ACCOUNT=	zigpy
 GH_PROJECT=	zigpy-znp
-GH_TAGNAME=	v${MODPY_EGG_VERSION}
+GH_TAGNAME=	v${MODPY_DISTV}
 
-DISTNAME=	zigpy-znp-${MODPY_EGG_VERSION}
+DISTNAME=	zigpy-znp-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	comms
 
@@ -19,28 +20,25 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 
 MODPY_PYBUILD=	setuptools
-BUILD_DEPENDS=	devel/py-setuptools-git-versioning${MODPY_FLAVOR}
+BUILD_DEPENDS=	devel/py-setuptools-git-versioning
 
-RUN_DEPENDS=	comms/zigpy/py-zigpy${MODPY_FLAVOR} \
-		devel/py-async-timeout${MODPY_FLAVOR} \
-		devel/py-voluptuous${MODPY_FLAVOR} \
-		textproc/py-coloredlogs${MODPY_FLAVOR} \
-		devel/py-jsonschema${MODPY_FLAVOR}
+RUN_DEPENDS=	comms/zigpy/py-zigpy \
+		devel/py-async-timeout \
+		devel/py-voluptuous \
+		textproc/py-coloredlogs \
+		devel/py-jsonschema
 
 # tests are pretty slow
-TEST_DEPENDS=	devel/py-test-asyncio${MODPY_FLAVOR} \
-		devel/py-test-timeout${MODPY_FLAVOR} \
-		devel/py-test-mock${MODPY_FLAVOR} \
-		devel/py-test-cov${MODPY_FLAVOR}
-
-FLAVORS=	python3
-FLAVOR=		python3
+TEST_DEPENDS=	devel/py-test-asyncio \
+		devel/py-test-timeout \
+		devel/py-test-mock \
+		devel/py-test-cov
 
 # sdist misses all files under tests/ except for test*.py, so use the
 # github tar instead, but that isn't handled by setuptools-git-version
 # so fake it here:
 post-extract:
-	echo "Version: ${MODPY_EGG_VERSION}" > ${WRKSRC}/PKG-INFO
+	echo "Version: ${MODPY_DISTV}" > ${WRKSRC}/PKG-INFO
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-zigpy-znp

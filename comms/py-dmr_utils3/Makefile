@@ -1,8 +1,9 @@
 COMMENT =		utilities for Digital Mobile Radio (DMR) in Python
 
-MODPY_EGG_VERSION =	0.1.29
-DISTNAME =		dmr_utils3-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.1.29
+DISTNAME =		dmr_utils3-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		comms devel
 
@@ -15,8 +16,5 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-
-FLAVORS =		python3
-FLAVOR =		python3
 
 .include <bsd.port.mk>

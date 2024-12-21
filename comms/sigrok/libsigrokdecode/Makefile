@@ -1,5 +1,5 @@
 COMMENT =		sigrok protocol decoding library
-REVISION =		6
+REVISION =		7
 
 SIGROK_PROJECT =	libsigrokdecode
 SIGROK_VERSION =	0.5.3
