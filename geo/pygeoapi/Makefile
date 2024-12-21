@@ -1,8 +1,8 @@
 COMMENT =		OGC API server implementation
 
-MODPY_EGG_VERSION =	0.18.0
-REVISION =		1
-DISTNAME =		pygeoapi-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.18.0
+REVISION =		2
+DISTNAME =		pygeoapi-${MODPY_DISTV}
 
 CATEGORIES =		geo devel
 
@@ -18,26 +18,26 @@ MODPY_PI =		Yes
 NO_TEST =	Yes
 #MODPY_PYTEST =	Yes
 #TEST_DEPENDS =	${RUN_DEPENDS} \
-#		www/py-starlette${MODPY_FLAVOR} \
-#		geo/py-owslib${MODPY_FLAVOR} \
-#		databases/py-mongo${MODPY_FLAVOR}
-RUN_DEPENDS =	devel/py-babel${MODPY_FLAVOR} \
-		devel/py-click${MODPY_FLAVOR} \
-		devel/py-dateutil${MODPY_FLAVOR} \
-		devel/py-jsonschema${MODPY_FLAVOR} \
-		devel/py-pydantic${MODPY_FLAVOR} \
-		devel/py-typing-extensions${MODPY_FLAVOR} \
-		devel/py-tz${MODPY_FLAVOR} \
+#		www/py-starlette \
+#		geo/py-owslib \
+#		databases/py-mongo
+RUN_DEPENDS =	devel/py-babel \
+		devel/py-click \
+		devel/py-dateutil \
+		devel/py-jsonschema \
+		devel/py-pydantic \
+		devel/py-typing-extensions \
+		devel/py-tz \
 		geo/mapserver,-python \
-		geo/py-geofilter${MODPY_FLAVOR} \
-		geo/py-proj${MODPY_FLAVOR} \
-		geo/py-rasterio${MODPY_FLAVOR}>=1.1.8p1 \
-		geo/py-shapely${MODPY_FLAVOR} \
-		textproc/py-yaml${MODPY_FLAVOR} \
-		sysutils/py-filelock${MODPY_FLAVOR} \
-		www/py-requests${MODPY_FLAVOR} \
-		www/py-flask${MODPY_FLAVOR} \
-		www/py-flask-cors${MODPY_FLAVOR}
+		geo/py-geofilter \
+		geo/py-proj \
+		geo/py-rasterio>=1.1.8p1 \
+		geo/py-shapely \
+		textproc/py-yaml \
+		sysutils/py-filelock \
+		www/py-requests \
+		www/py-flask \
+		www/py-flask-cors
 
 post-install:
 	rm -Rf ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/tests/

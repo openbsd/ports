@@ -1,10 +1,11 @@
 COMMENT =	Python bindings for libosmium
 
-MODPY_EGG_VERSION =	4.0.1
-GH_TAGNAME =	v${MODPY_EGG_VERSION}
+MODPY_DISTV =	4.0.1
+GH_TAGNAME =	v${MODPY_DISTV}
 GH_ACCOUNT =	osmcode
 GH_PROJECT =	pyosmium
-PKGNAME =	py-osmium-${MODPY_EGG_VERSION}
+PKGNAME =	py-osmium-${MODPY_DISTV}
+REVISION =	0
 
 CATEGORIES =	geo
 
@@ -16,9 +17,6 @@ PERMIT_PACKAGE =	Yes
 # C++
 COMPILER =	base-clang ports-gcc
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODULES =	lang/clang lang/python
 
 MODCLANG_COMPILER_LINKS=	No
@@ -29,7 +27,7 @@ MODPY_PYTEST =		Yes
 # cf https://github.com/osmcode/pyosmium/issues/199
 MODPY_PYTEST_ARGS = -v
 
-TEST_DEPENDS +=	devel/py-test-httpserver${MODPY_FLAVOR}
+TEST_DEPENDS +=	devel/py-test-httpserver
 LIB_DEPENDS =	archivers/lz4
 WANTLIB +=	${COMPILER_LIBCXX} bz2 expat lz4 m z
 
@@ -39,7 +37,7 @@ BUILD_DEPENDS +=	devel/boost \
 			devel/cmake \
 			geo/libosmium \
 			devel/protozero \
-			devel/py-pybind11${MODPY_FLAVOR}
+			devel/py-pybind11
 
 MAKE_ENV =		pybind11_DIR=`pybind11-config --cmakedir` \
 			MODCMAKE_PORT_BUILD=yes \

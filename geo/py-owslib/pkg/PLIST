@@ -1,12 +1,12 @@
+@pkgpath geo/py-owslib,python3
 @conflict py-owslib-*
-@pkgpath geo/py-owslib
-lib/python${MODPY_VERSION}/site-packages/OWSLib-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/OWSLib-${MODPY_EGG_VERSION}.dist-info/AUTHORS.rst
-lib/python${MODPY_VERSION}/site-packages/OWSLib-${MODPY_EGG_VERSION}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/OWSLib-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/OWSLib-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/OWSLib-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/OWSLib-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/OWSLib-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/OWSLib-${MODPY_DISTV}.dist-info/AUTHORS.rst
+lib/python${MODPY_VERSION}/site-packages/OWSLib-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/OWSLib-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/OWSLib-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/OWSLib-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/OWSLib-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/owslib/
 lib/python${MODPY_VERSION}/site-packages/owslib/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/owslib/${MODPY_PYCACHE}/

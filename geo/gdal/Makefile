@@ -2,7 +2,7 @@ COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 
 V =		3.10.0
-REVISION =	0
+REVISION =	1
 DISTNAME =	gdal-${V}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		gdalautotest-${V}${EXTRACT_SUFX}
@@ -10,7 +10,7 @@ DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 FULLPKGNAME-main =	${DISTNAME}
 FULLPKGPATH-main =	geo/gdal,-main
 FULLPKGNAME-python =	py3-${DISTNAME}
-FULLPKGPATH-python =	geo/gdal,-python${FLAVOR_EXT:S/-/,/g}
+FULLPKGPATH-python =	geo/gdal,-python
 
 SHARED_LIBS =	gdal 50.0 #36 cf gdal.cmake
 CATEGORIES =	geo devel
@@ -28,8 +28,6 @@ WRKDIST =	${WRKDIR}/${DISTNAME:C/rc.//}
 MODULES =	devel/cmake \
 		lang/clang \
 		lang/python
-FLAVORS =	python3
-FLAVOR =	python3
 
 COMPILER = base-clang ports-gcc
 
@@ -71,24 +69,24 @@ WANTLIB-main =		Lerc archive arrow arrow_acero arrow_dataset avif c crypto \
 			${COMPILER_LIBCXX}
 
 RUN_DEPENDS-python =	${MODPY_RUN_DEPENDS} \
-			math/py-numpy${MODPY_FLAVOR}
+			math/py-numpy
 LIB_DEPENDS-python =	${FULLPKGNAME-main}:${FULLPKGPATH-main}
 WANTLIB-python =	gdal m pthread ${COMPILER_LIBCXX}
 
 BUILD_DEPENDS +=	${RUN_DEPENDS} \
 			${MODCLANG_RUN_DEPENDS} \
-			math/py-numpy${MODPY_FLAVOR} \
+			math/py-numpy \
 			devel/gtest \
 			devel/swig
 
 MODPY_PYTEST =		Yes
 TEST_DEPENDS +=		${FULLPKGNAME-python}:${FULLPKGPATH-python} \
-			sysutils/py-filelock${MODPY_FLAVOR} \
-			textproc/py-lxml${MODPY_FLAVOR}
+			sysutils/py-filelock \
+			textproc/py-lxml
 TEST_ENV =		GDAL_DOWNLOAD_TEST_DATA=1 GDAL_RUN_SLOW_TESTS=yes
 
 MODPY_SETUPTOOLS =	Yes
-MODPY_EGG_VERSION =	${V:C/rc.//:C/beta.//}
+MODPY_DISTV =		${V:C/rc.//:C/beta.//}
 MODPY_ADJ_FILES =	swig/python/gdal-utils/osgeo_utils/samples/*.py swig/python/gdal-utils/scripts/*.py
 
 CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include" \

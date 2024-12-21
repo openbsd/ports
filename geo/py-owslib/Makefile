@@ -1,8 +1,9 @@
 COMMENT =		library for accessing OGC Web Services
 
-MODPY_EGG_VERSION =	0.32.0
-DISTNAME =		OWSLib-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.32.0
+DISTNAME =		OWSLib-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:L}
+REVISION =		0
 
 CATEGORIES =		geo devel
 
@@ -12,18 +13,15 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =	www/py-requests${MODPY_FLAVOR} \
-		textproc/py-yaml${MODPY_FLAVOR} \
-		geo/py-proj${MODPY_FLAVOR} \
-		devel/py-tz${MODPY_FLAVOR} \
-		devel/py-dateutil${MODPY_FLAVOR}
+RUN_DEPENDS =	www/py-requests \
+		textproc/py-yaml \
+		geo/py-proj \
+		devel/py-tz \
+		devel/py-dateutil
 
-TEST_DEPENDS =	devel/py-test${MODPY_FLAVOR}
+TEST_DEPENDS =	devel/py-test
 
 .include <bsd.port.mk>

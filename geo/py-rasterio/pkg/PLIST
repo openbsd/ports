@@ -1,15 +1,15 @@
+@pkgpath geo/py-rasterio,python3
 @conflict py-rasterio-*
-@pkgpath geo/py-rasterio
 bin/rio
 lib/python${MODPY_VERSION}/site-packages/rasterio/
-lib/python${MODPY_VERSION}/site-packages/rasterio-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/rasterio-${MODPY_EGG_VERSION}.dist-info/AUTHORS.txt
-lib/python${MODPY_VERSION}/site-packages/rasterio-${MODPY_EGG_VERSION}.dist-info/LICENSE.txt
-lib/python${MODPY_VERSION}/site-packages/rasterio-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/rasterio-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/rasterio-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/rasterio-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/rasterio-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/rasterio-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/rasterio-${MODPY_DISTV}.dist-info/AUTHORS.txt
+lib/python${MODPY_VERSION}/site-packages/rasterio-${MODPY_DISTV}.dist-info/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/rasterio-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/rasterio-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/rasterio-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/rasterio-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/rasterio-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/rasterio/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

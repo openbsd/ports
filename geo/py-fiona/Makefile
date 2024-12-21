@@ -1,8 +1,9 @@
 COMMENT =	high-level API and CLI on top of OGR
 
-MODPY_EGG_VERSION =	1.10.1
-DISTNAME =	fiona-${MODPY_EGG_VERSION}
+MODPY_DISTV =	1.10.1
+DISTNAME =	fiona-${MODPY_DISTV}
 PKGNAME =	${MODPY_PY_PREFIX}${DISTNAME:L:S/.post/pl/}
+REVISION =	0
 
 CATEGORIES =	geo
 
@@ -13,9 +14,6 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 
-FLAVORS =	python3
-FLAVOR =	python3
-
 COMPILER =	base-clang ports-gcc
 
 MODPY_PYBUILD =	setuptools
@@ -24,22 +22,22 @@ MODPY_PYTEST_ARGS =	tests
 MODPY_TEST_LINK_SO =	Yes
 
 BUILD_DEPENDS +=${RUN_DEPENDS} \
-		math/py-oldest-supported-numpy${MODPY_FLAVOR} \
-		math/py-numpy${MODPY_FLAVOR} \
-		lang/cython${MODPY_FLAVOR}
+		math/py-oldest-supported-numpy \
+		math/py-numpy \
+		lang/cython
 
 LIB_DEPENDS =	geo/gdal
 
-RUN_DEPENDS =	geo/py-cligj${MODPY_FLAVOR} \
-		devel/py-click${MODPY_FLAVOR} \
-		devel/py-click-plugins${MODPY_FLAVOR} \
-		devel/py-munch${MODPY_FLAVOR} \
-		devel/py-six${MODPY_FLAVOR}
+RUN_DEPENDS =	geo/py-cligj \
+		devel/py-click \
+		devel/py-click-plugins \
+		devel/py-munch \
+		devel/py-six
 
-TEST_DEPENDS =	devel/py-tz${MODPY_FLAVOR} \
-		www/py-aiohttp${MODPY_FLAVOR} \
-		sysutils/py-fsspec${MODPY_FLAVOR} \
-		net/py-boto3${MODPY_FLAVOR}
+TEST_DEPENDS =	devel/py-tz \
+		www/py-aiohttp \
+		sysutils/py-fsspec \
+		net/py-boto3
 
 WANTLIB += ${COMPILER_LIBCXX} gdal m
 

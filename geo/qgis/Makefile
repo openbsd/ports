@@ -10,6 +10,7 @@ DISTNAME =	qgis-3.40.2
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}
+REVISION =	1
 
 SHARED_LIBS =	qgis_core	79.0 \
 		qgis_app	51.0 \
@@ -60,25 +61,25 @@ SUBST_VARS +=	QTVER
 COMPILER =	base-clang ports-gcc
 
 BUILD_DEPENDS =	devel/bison>=2.4 \
-		devel/py-qt-builder${MODPY_FLAVOR} \
-		devel/py-sip${MODPY_FLAVOR} \
-		devel/py-six${MODPY_FLAVOR} \
-		editors/py-qscintilla,${FLAVOR}${MODPY_FLAVOR} \
-		geo/gdal,-python${MODPY_FLAVOR} \
-		x11/py-${QTVER}${MODPY_FLAVOR}
+		devel/py-qt-builder \
+		devel/py-sip \
+		devel/py-six \
+		editors/py-qscintilla,${FLAVOR} \
+		geo/gdal,-python \
+		x11/py-${QTVER}
 
-RUN_DEPENDS =	databases/py-psycopg2${MODPY_FLAVOR} \
+RUN_DEPENDS =	databases/py-psycopg2 \
 		devel/desktop-file-utils \
-		editors/py-qscintilla,${FLAVOR}${MODPY_FLAVOR} \
-		geo/gdal,-python${MODPY_FLAVOR} \
-		geo/py-owslib${MODPY_FLAVOR} \
+		editors/py-qscintilla,${FLAVOR} \
+		geo/gdal,-python \
+		geo/py-owslib \
 		misc/shared-mime-info \
-		textproc/py-pygments${MODPY_FLAVOR} \
-		textproc/py-yaml${MODPY_FLAVOR} \
-		www/py-jinja2${MODPY_FLAVOR} \
-		www/py-requests${MODPY_FLAVOR} \
+		textproc/py-pygments \
+		textproc/py-yaml \
+		www/py-jinja2 \
+		www/py-requests \
 		x11/gtk+4,-guic \
-		x11/py-${QTVER}${MODPY_FLAVOR}
+		x11/py-${QTVER}
 
 LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		archivers/draco \

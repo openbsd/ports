@@ -1,9 +1,9 @@
 COMMENT =		click params for command line interfaces to GeoJSON
 
-MODPY_EGG_VERSION =	0.7.2
-DISTNAME =		cligj-${MODPY_EGG_VERSION}
+MODPY_DISTV =	0.7.2
+DISTNAME =		cligj-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		geo
 
@@ -14,9 +14,6 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 MODULES =		lang/python
 
-FLAVORS =		python3
-FLAVOR =		python3
-
-RUN_DEPENDS =		devel/py-click${MODPY_FLAVOR}
+RUN_DEPENDS =		devel/py-click
 
 .include <bsd.port.mk>

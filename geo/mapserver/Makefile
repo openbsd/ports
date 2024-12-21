@@ -13,6 +13,7 @@ PKGNAME-utils=	mapserver-utils-${V:S/-//}
 PKGNAME-php=	php-mapscript-${V:S/-//}
 PKGNAME-perl=	p5-mapscript-${V:S/-//}
 PKGNAME-python=	py3-mapscript-${V:S/-//}
+REVISION-python= 0
 
 SHARED_LIBS +=	mapserver 7.0
 
@@ -33,7 +34,7 @@ MODULES=	lang/php lang/python devel/cmake
 MODPHP_BUILDDEP=Yes
 MODPHP_RUNDEP=	No
 MODPY_SETUPTOOLS=	Yes
-MODPY_EGG_VERSION=	${V:C/-beta.//:C/-rc.//}
+MODPY_DISTV=	${V:C/-beta.//:C/-rc.//}
 CONFIGURE_STYLE=cmake
 
 NO_TEST =	Yes
@@ -45,8 +46,8 @@ RUN_DEPENDS-python =	${MODPY_RUN_DEPENDS}
 RUN_DEPENDS-utils =	# empty
 
 BUILD_DEPENDS +=	devel/swig databases/postgresql,-server
-BUILD_DEPENDS +=	devel/py-pip${MODPY_FLAVOR}
-BUILD_DEPENDS +=	devel/py-wheel${MODPY_FLAVOR}
+BUILD_DEPENDS +=	devel/py-pip
+BUILD_DEPENDS +=	devel/py-wheel
 
 LIB_DEPENDS=	devel/proj \
 		devel/fribidi \

@@ -1,8 +1,9 @@
 COMMENT =	client library and CLI for Planet's public API
 
-MODPY_EGG_VERSION =	2.10.0
-DISTNAME =	planet-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.10.0
+DISTNAME =	planet-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	geo
 
@@ -14,19 +15,16 @@ MODULES =	lang/python
 MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools
 
-FLAVORS =	python3
-FLAVOR =	python3
-
-RUN_DEPENDS +=	devel/py-click${MODPY_FLAVOR} \
-		devel/py-jsonschema${MODPY_FLAVOR} \
-		devel/py-tqdm${MODPY_FLAVOR} \
-		geo/py-geojson${MODPY_FLAVOR} \
-		www/py-jwt${MODPY_FLAVOR} \
-		www/py-httpx${MODPY_FLAVOR} \
-		www/py-requests${MODPY_FLAVOR} \
-		www/py-requests-futures${MODPY_FLAVOR}
-TEST_DEPENDS =	devel/py-mock${MODPY_FLAVOR} \
-		www/py-requests-mock${MODPY_FLAVOR} \
-		devel/py-tz${MODPY_FLAVOR}
+RUN_DEPENDS +=	devel/py-click \
+		devel/py-jsonschema \
+		devel/py-tqdm \
+		geo/py-geojson \
+		www/py-jwt \
+		www/py-httpx \
+		www/py-requests \
+		www/py-requests-futures
+TEST_DEPENDS =	devel/py-mock \
+		www/py-requests-mock \
+		devel/py-tz
 
 .include <bsd.port.mk>

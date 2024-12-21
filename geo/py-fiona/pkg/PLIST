@@ -1,15 +1,15 @@
+@pkgpath geo/py-fiona,python3
 @conflict fio-*
 @conflict py-fiona-*
-@pkgpath geo/py-fiona
 bin/fio
 lib/python${MODPY_VERSION}/site-packages/fiona/
-lib/python${MODPY_VERSION}/site-packages/fiona-${MODPY_EGG_VERSION}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/fiona-${MODPY_EGG_VERSION}.dist-info/LICENSE.txt
-lib/python${MODPY_VERSION}/site-packages/fiona-${MODPY_EGG_VERSION}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/fiona-${MODPY_EGG_VERSION}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/fiona-${MODPY_EGG_VERSION}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/fiona-${MODPY_EGG_VERSION}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/fiona-${MODPY_EGG_VERSION}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/fiona-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/fiona-${MODPY_DISTV}.dist-info/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/fiona-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/fiona-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/fiona-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/fiona-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/fiona-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/fiona/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/fiona/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

@@ -1,8 +1,9 @@
 COMMENT =	encoder/decoder for simple GIS features
 
-MODPY_EGG_VERSION =	3.1.0
-DISTNAME =	geojson-${MODPY_EGG_VERSION}
+MODPY_DISTV =	3.1.0
+DISTNAME =	geojson-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	geo devel
 
@@ -14,9 +15,6 @@ HOMEPAGE = 	https://github.com/jazzband/geojson
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
-
-FLAVORS =	python3
-FLAVOR =	python3
 
 MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools

@@ -7,6 +7,7 @@ COMMENT =		OSM data to PostgreSQL converter
 GH_TAGNAME =		2.0.0
 GH_PROJECT =		osm2pgsql
 GH_ACCOUNT =		osm2pgsql-dev
+REVISION =		0
 
 CATEGORIES =		geo databases
 
@@ -36,8 +37,8 @@ BUILD_DEPENDS =		devel/libtool \
 			geo/libosmium>=2.17.0 \
 			textproc/nlohmann-json
 
-RUN_DEPENDS +=		geo/py-osmium${MODPY_FLAVOR} \
-			databases/py-psycopg2${MODPY_FLAVOR}
+RUN_DEPENDS +=		geo/py-osmium \
+			databases/py-psycopg2
 
 # postgresql,-contrib is needed for hstore extension
 TEST_DEPENDS =		databases/py-psycopg2	\

@@ -1,8 +1,9 @@
 COMMENT=	library for reading, modifying and creating LAS LiDAR files
 
-MODPY_EGG_VERSION =	2.5.4
-DISTNAME=	laspy-${MODPY_EGG_VERSION}
+MODPY_DISTV =	2.5.4
+DISTNAME=	laspy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	geo devel textproc
 
@@ -10,9 +11,6 @@ CATEGORIES=	geo devel textproc
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-FLAVORS=	python3
-FLAVOR=		python3
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools

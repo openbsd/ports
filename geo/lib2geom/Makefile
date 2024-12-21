@@ -34,7 +34,7 @@ COMPILER =	base-clang ports-gcc
 
 BUILD_DEPENDS =	devel/boost \
 		devel/gtest \
-		lang/cython${MODPY_FLAVOR} \
+		lang/cython \
 		x11/gtk+3
 
 LIB_DEPENDS =	math/double-conversion \
