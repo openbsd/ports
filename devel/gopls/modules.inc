@@ -18,7 +18,7 @@ MODGO_MODULES =	\
 	golang.org/x/sys		 v0.27.0 \
 	golang.org/x/telemetry		 v0.0.0-20241106142447-58a1122356f5 \
 	golang.org/x/text		 v0.20.0 \
-	golang.org/x/tools		 v0.27.1-0.20241211153006-a83c4ee29a47 \
+	golang.org/x/tools		 v0.27.1-0.20241219162658-575221bfbda3 \
 	golang.org/x/vuln		 v1.0.4 \
 	gopkg.in/check.v1		 v1.0.0-20190902080502-41f04d3bba15 \
 	gopkg.in/yaml.v3		 v3.0.1 \
