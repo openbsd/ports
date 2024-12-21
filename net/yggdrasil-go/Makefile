@@ -1,10 +1,9 @@
 COMMENT =	experimental fully end-to-end encrypted IPv6 network
 
 MODGO_MODNAME =	github.com/yggdrasil-network/yggdrasil-go
-MODGO_VERSION =	v0.5.11
+MODGO_VERSION =	v0.5.12
 
 DISTNAME =	yggdrasil-go-${MODGO_VERSION}
-REVISION =	0
 
 # make patch and update-patches work;  does the go module's default need fixing?
 WRKDIST =		${WRKSRC}
@@ -12,7 +11,7 @@ WRKDIST =		${WRKSRC}
 SITES.gh =		https://${MODGO_MODNAME}/
 # https://github.com/yggdrasil-network/yggdrasil-go/pull/1215
 # pending "Use pledge(2) on OpenBSD"
-PATCHFILES.gh =		pledge-{commit/}37cce42.patch
+PATCHFILES.gh =		pledge-{commit/}7a0ed69.patch
 PATCH_DIST_STRIP =	-p1
 
 CATEGORIES =	net
