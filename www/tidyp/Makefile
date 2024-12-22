@@ -15,7 +15,9 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c
 
-SITES=		https://github.com/downloads/petdance/tidyp/
+# was at https://github.com/downloads/petdance/tidyp/
+SITES=		https://spacehopper.org/mirrors/
+PORTROACH=	site:https://github.com/petdance/tidyp/releases/
 
 CONFIGURE_STYLE=gnu
 
