@@ -11,21 +11,20 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			131.0.6778.139
+V=			131.0.6778.204
 UGV=			${V}-1
 
 DISTNAME=		ungoogled-chromium-${V}
 
 DISTFILES+=		${CHROMIUM_DISTFILES} \
 			${REGRESS_DISTFILES}
-DISTFILES.a+=		${UGOOGLE_DISTFILES}
 
 CHROMIUM_DISTFILES+=	chromium-${V}${EXTRACT_SUFX}
-UGOOGLE_DISTFILES+=	ungoogled-chromium-${UGV}.tar.gz
 REGRESS_DISTFILES+=	chromium-${V}-testdata${EXTRACT_SUFX}
 
-EXTRACT_ONLY=		${CHROMIUM_DISTFILES} \
-			${UGOOGLE_DISTFILES}
+DIST_TUPLE=		github ungoogled-software ungoogled-chromium ${UGV} .
+
+EXTRACT_ONLY=		${ALL_DISTFILES:N*testdata*}
 
 CATEGORIES=		www
 
