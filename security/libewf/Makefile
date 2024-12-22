@@ -24,9 +24,8 @@ SITES =	https://github.com/libyal/libewf-legacy/releases/download/${VERSION}/
 
 MODULES =		lang/python
 
-MODPY_PBUILD =		setuptools
-
-BUILD_DEPENDS =		devel/gettext,-tools
+BUILD_DEPENDS =		devel/gettext,-tools \
+			devel/py-setuptools
 
 LIB_DEPENDS +=		devel/libbfio \
 			archivers/bzip2 \

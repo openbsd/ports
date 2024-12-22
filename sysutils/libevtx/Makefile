@@ -29,12 +29,11 @@ WRKDIST =	${WRKDIR}/${PKGNAME}
 
 MODULES +=	lang/python
 
-MODPY_PYBUILD =	setuptools
-
 MODPY_ADJ_FILES += tests/pyevtx_test_support.py
 
 # xgettext(1)
-BUILD_DEPENDS +=	devel/gettext,-tools
+BUILD_DEPENDS +=	devel/gettext,-tools \
+			devel/py-setuptools
 
 LIB_DEPENDS +=	devel/libbfio
 

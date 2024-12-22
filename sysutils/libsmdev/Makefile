@@ -21,7 +21,8 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =  ${MODPY_WANTLIB}
 WANTLIB += c iconv intl m pthread util
 
-BUILD_DEPENDS +=	devel/gettext,-tools
+BUILD_DEPENDS +=	devel/gettext,-tools \
+			devel/py-setuptools
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--enable-python3
@@ -29,8 +30,6 @@ CONFIGURE_ARGS +=	--enable-python3
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
 MODULES +=	lang/python
-
-MODPY_PYBUILD =	setuptools
 
 TEST_DEPENDS += shells/bash
 

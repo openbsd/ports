@@ -32,8 +32,6 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 CONFIGURE_STYLE=autoconf
 AUTOCONF_VERSION=2.69
 
-MODPY_PYBUILD=	setuptools
-
 CONFIGURE_ENV=	CFLAGS="${CFLAGS} -I${LOCALBASE}/include" \
 		CPPFLAGS="${CPPFLAGS} -I${LOCALBASE}/include -I${MODLUA_INCL_DIR}" \
 		CXXFLAGS="${CXXFLAGS} -I${LOCALBASE}/include" \
@@ -56,7 +54,8 @@ LIB_DEPENDS-main= ${MODLUA_LIB_DEPENDS} \
 		devel/pcre \
 		security/libssh2
 
-BUILD_DEPENDS=	devel/bison
+BUILD_DEPENDS=	devel/bison \
+		devel/py-setuptools
 
 post-extract:
 	@cd ${WRKSRC} && rm -rf liblua/ libpcre/

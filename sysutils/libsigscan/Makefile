@@ -28,9 +28,8 @@ WRKDIST =	${WRKDIR}/${PKGNAME}
 			
 MODULES +=	lang/python
 
-MODPY_PYBUILD =	setuptools
-
-BUILD_DEPENDS =	devel/gettext,-tools
+BUILD_DEPENDS =	devel/gettext,-tools \
+		devel/py-setuptools
 
 LIB_DEPENDS +=	devel/libbfio
 

@@ -27,7 +27,7 @@ WRKDIST =	${WRKDIR}/${PKGNAME}
 
 MODULES +=	lang/python
 
-MODPY_PYBUILD =	setuptools
+BUILD_DEPENDS =	devel/py-setuptools
 
 TEST_DEPENDS += shells/bash
 
