@@ -420,7 +420,6 @@
      SUBDIR += py-aiohttp
      SUBDIR += py-aiohttp-oauthlib
      SUBDIR += py-aioquic
-     SUBDIR += py-arsenic
      SUBDIR += py-asgiref
      SUBDIR += py-autobahn
      SUBDIR += py-beaker
