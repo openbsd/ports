@@ -3,7 +3,7 @@ COMMENT =	web-application vulnerability scanner
 MODPY_DISTV =	3.2.2
 DISTNAME =	wapiti3-${MODPY_DISTV}
 PKGNAME =	wapiti-${MODPY_DISTV}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	security www
 
@@ -36,7 +36,7 @@ RUN_DEPENDS =		archivers/py-brotli \
 			textproc/py-MarkupSafe \
 			textproc/py-humanize \
 			www/py-aiohttp \
-			www/py-arsenic \
+			www/py-wapiti_arsenic \
 			www/py-beautifulsoup4 \
 			www/py-browser-cookie3 \
 			www/py-h11 \
