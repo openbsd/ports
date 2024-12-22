@@ -1,7 +1,6 @@
 COMMENT=	Python documentation generator
 
-MODPY_DISTV=	7.4.7
-REVISION=	2
+MODPY_DISTV=	8.1.3
 DISTNAME=	sphinx-${MODPY_DISTV}
 PKGNAME=	py-sphinx-${MODPY_DISTV}
 
@@ -20,8 +19,8 @@ MODPY_PYBUILD=	flit_core
 RUN_DEPENDS+=	textproc/py-sphinxcontrib/applehelp \
 		textproc/py-sphinxcontrib/devhelp \
 		textproc/py-sphinxcontrib/jsmath \
-		textproc/py-sphinxcontrib/htmlhelp>=2.0.0 \
-		textproc/py-sphinxcontrib/serializinghtml>=1.1.9 \
+		textproc/py-sphinxcontrib/htmlhelp \
+		textproc/py-sphinxcontrib/serializinghtml \
 		textproc/py-sphinxcontrib/qthelp \
 		textproc/py-sphinxcontrib/websupport \
 		www/py-jinja2 \

@@ -1,5 +1,5 @@
-@pkgpath textproc/py-sphinx,python3
 @conflict py-sphinx-<1.5.6p0
+@pkgpath textproc/py-sphinx,python3
 bin/sphinx-apidoc
 bin/sphinx-autogen
 bin/sphinx-build
@@ -112,9 +112,12 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/builders/html/${MODPY_PYCACHE}__
 lib/python${MODPY_VERSION}/site-packages/sphinx/builders/html/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/builders/html/${MODPY_PYCACHE}_assets.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/builders/html/${MODPY_PYCACHE}_assets.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sphinx/builders/html/${MODPY_PYCACHE}_build_info.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/sphinx/builders/html/${MODPY_PYCACHE}_build_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/builders/html/${MODPY_PYCACHE}transforms.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/builders/html/${MODPY_PYCACHE}transforms.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/builders/html/_assets.py
+lib/python${MODPY_VERSION}/site-packages/sphinx/builders/html/_build_info.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/builders/html/transforms.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/builders/latex/
 lib/python${MODPY_VERSION}/site-packages/sphinx/builders/latex/__init__.py
@@ -177,6 +180,10 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/domains/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/domains/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sphinx/domains/${MODPY_PYCACHE}_domains_container.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/sphinx/domains/${MODPY_PYCACHE}_domains_container.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sphinx/domains/${MODPY_PYCACHE}_index.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/sphinx/domains/${MODPY_PYCACHE}_index.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/${MODPY_PYCACHE}changeset.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/${MODPY_PYCACHE}changeset.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/${MODPY_PYCACHE}citation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -189,6 +196,8 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/domains/${MODPY_PYCACHE}math.${M
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/${MODPY_PYCACHE}math.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/${MODPY_PYCACHE}rst.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/${MODPY_PYCACHE}rst.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sphinx/domains/_domains_container.py
+lib/python${MODPY_VERSION}/site-packages/sphinx/domains/_index.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/c/
 lib/python${MODPY_VERSION}/site-packages/sphinx/domains/c/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/domains/c/${MODPY_PYCACHE}/
@@ -886,10 +895,8 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/templates/latex/sphinxmessages.s
 lib/python${MODPY_VERSION}/site-packages/sphinx/templates/latex/tabular.tex.jinja
 lib/python${MODPY_VERSION}/site-packages/sphinx/templates/latex/tabulary.tex.jinja
 lib/python${MODPY_VERSION}/site-packages/sphinx/templates/quickstart/
-lib/python${MODPY_VERSION}/site-packages/sphinx/templates/quickstart/Makefile.jinja
 lib/python${MODPY_VERSION}/site-packages/sphinx/templates/quickstart/Makefile.new.jinja
 lib/python${MODPY_VERSION}/site-packages/sphinx/templates/quickstart/conf.py.jinja
-lib/python${MODPY_VERSION}/site-packages/sphinx/templates/quickstart/make.bat.jinja
 lib/python${MODPY_VERSION}/site-packages/sphinx/templates/quickstart/make.bat.new.jinja
 lib/python${MODPY_VERSION}/site-packages/sphinx/templates/quickstart/root_doc.rst.jinja
 lib/python${MODPY_VERSION}/site-packages/sphinx/templates/texinfo/
@@ -1100,10 +1107,22 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/util/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}_files.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}_files.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}_importer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}_importer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}_io.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}_io.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}_lines.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}_lines.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}_pathlib.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}_pathlib.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}_serialise.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}_serialise.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}_timestamps.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}_timestamps.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}_uri.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}_uri.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}build_phase.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}build_phase.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}cfamily.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1162,8 +1181,14 @@ lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}texescape.$
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}texescape.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}typing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/${MODPY_PYCACHE}typing.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sphinx/util/_files.py
+lib/python${MODPY_VERSION}/site-packages/sphinx/util/_importer.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/_io.py
+lib/python${MODPY_VERSION}/site-packages/sphinx/util/_lines.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/_pathlib.py
+lib/python${MODPY_VERSION}/site-packages/sphinx/util/_serialise.py
+lib/python${MODPY_VERSION}/site-packages/sphinx/util/_timestamps.py
+lib/python${MODPY_VERSION}/site-packages/sphinx/util/_uri.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/build_phase.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/cfamily.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/util/console.py
