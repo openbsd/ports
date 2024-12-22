@@ -1,9 +1,8 @@
 COMMENT=	code coverage measurement for Python
 
-MODPY_DISTV=	7.6.8
+MODPY_DISTV=	7.6.9
 DISTNAME=	coverage-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	devel
 
@@ -16,7 +15,6 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=	${MODPY_WANTLIB} pthread
 
 MODULES=	lang/python
-
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 

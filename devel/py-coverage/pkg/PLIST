@@ -1,5 +1,5 @@
-@pkgpath devel/py-coverage,python3
 @conflict py-coverage-*
+@pkgpath devel/py-coverage,python3
 bin/coverage
 bin/coverage-${MODPY_VERSION}
 bin/coverage3
