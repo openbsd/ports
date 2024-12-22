@@ -30,6 +30,8 @@ lib/python${MODPY_VERSION}/site-packages/xmlschema/${MODPY_PYCACHE}helpers.${MOD
 lib/python${MODPY_VERSION}/site-packages/xmlschema/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xmlschema/${MODPY_PYCACHE}limits.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/xmlschema/${MODPY_PYCACHE}limits.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/xmlschema/${MODPY_PYCACHE}locations.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/xmlschema/${MODPY_PYCACHE}locations.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xmlschema/${MODPY_PYCACHE}names.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/xmlschema/${MODPY_PYCACHE}names.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xmlschema/${MODPY_PYCACHE}namespaces.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -38,8 +40,8 @@ lib/python${MODPY_VERSION}/site-packages/xmlschema/${MODPY_PYCACHE}resources.${M
 lib/python${MODPY_VERSION}/site-packages/xmlschema/${MODPY_PYCACHE}resources.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xmlschema/${MODPY_PYCACHE}translation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/xmlschema/${MODPY_PYCACHE}translation.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/xmlschema/${MODPY_PYCACHE}xpath.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/xmlschema/${MODPY_PYCACHE}xpath.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/xmlschema/${MODPY_PYCACHE}xpath3.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/xmlschema/${MODPY_PYCACHE}xpath3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xmlschema/aliases.py
 lib/python${MODPY_VERSION}/site-packages/xmlschema/cli.py
 lib/python${MODPY_VERSION}/site-packages/xmlschema/converters/
@@ -55,6 +57,8 @@ lib/python${MODPY_VERSION}/site-packages/xmlschema/converters/${MODPY_PYCACHE}co
 lib/python${MODPY_VERSION}/site-packages/xmlschema/converters/${MODPY_PYCACHE}columnar.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xmlschema/converters/${MODPY_PYCACHE}default.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/xmlschema/converters/${MODPY_PYCACHE}default.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/xmlschema/converters/${MODPY_PYCACHE}gdata.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/xmlschema/converters/${MODPY_PYCACHE}gdata.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xmlschema/converters/${MODPY_PYCACHE}jsonml.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/xmlschema/converters/${MODPY_PYCACHE}jsonml.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/xmlschema/converters/${MODPY_PYCACHE}parker.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -65,6 +69,7 @@ lib/python${MODPY_VERSION}/site-packages/xmlschema/converters/abdera.py
 lib/python${MODPY_VERSION}/site-packages/xmlschema/converters/badgerfish.py
 lib/python${MODPY_VERSION}/site-packages/xmlschema/converters/columnar.py
 lib/python${MODPY_VERSION}/site-packages/xmlschema/converters/default.py
+lib/python${MODPY_VERSION}/site-packages/xmlschema/converters/gdata.py
 lib/python${MODPY_VERSION}/site-packages/xmlschema/converters/jsonml.py
 lib/python${MODPY_VERSION}/site-packages/xmlschema/converters/parker.py
 lib/python${MODPY_VERSION}/site-packages/xmlschema/converters/unordered.py
@@ -106,6 +111,7 @@ lib/python${MODPY_VERSION}/site-packages/xmlschema/locale/ru/
 lib/python${MODPY_VERSION}/site-packages/xmlschema/locale/ru/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/xmlschema/locale/ru/LC_MESSAGES/xmlschema.mo
 lib/python${MODPY_VERSION}/site-packages/xmlschema/locale/ru/LC_MESSAGES/xmlschema.po
+lib/python${MODPY_VERSION}/site-packages/xmlschema/locations.py
 lib/python${MODPY_VERSION}/site-packages/xmlschema/names.py
 lib/python${MODPY_VERSION}/site-packages/xmlschema/namespaces.py
 lib/python${MODPY_VERSION}/site-packages/xmlschema/py.typed
@@ -221,4 +227,21 @@ lib/python${MODPY_VERSION}/site-packages/xmlschema/validators/schemas.py
 lib/python${MODPY_VERSION}/site-packages/xmlschema/validators/simple_types.py
 lib/python${MODPY_VERSION}/site-packages/xmlschema/validators/wildcards.py
 lib/python${MODPY_VERSION}/site-packages/xmlschema/validators/xsdbase.py
-lib/python${MODPY_VERSION}/site-packages/xmlschema/xpath.py
+lib/python${MODPY_VERSION}/site-packages/xmlschema/xpath/
+lib/python${MODPY_VERSION}/site-packages/xmlschema/xpath/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/xmlschema/xpath/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/xmlschema/xpath/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/xmlschema/xpath/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/xmlschema/xpath/${MODPY_PYCACHE}assertion_parser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/xmlschema/xpath/${MODPY_PYCACHE}assertion_parser.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/xmlschema/xpath/${MODPY_PYCACHE}identity_parser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/xmlschema/xpath/${MODPY_PYCACHE}identity_parser.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/xmlschema/xpath/${MODPY_PYCACHE}mixin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/xmlschema/xpath/${MODPY_PYCACHE}mixin.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/xmlschema/xpath/${MODPY_PYCACHE}proxy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/xmlschema/xpath/${MODPY_PYCACHE}proxy.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/xmlschema/xpath/assertion_parser.py
+lib/python${MODPY_VERSION}/site-packages/xmlschema/xpath/identity_parser.py
+lib/python${MODPY_VERSION}/site-packages/xmlschema/xpath/mixin.py
+lib/python${MODPY_VERSION}/site-packages/xmlschema/xpath/proxy.py
+lib/python${MODPY_VERSION}/site-packages/xmlschema/xpath3.py

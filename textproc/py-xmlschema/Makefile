@@ -1,9 +1,8 @@
 COMMENT=	an XML Schema validator and decoder
 
-MODPY_DISTV=	2.5.0
+MODPY_DISTV=	3.4.3
 DISTNAME=	xmlschema-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	textproc
 
