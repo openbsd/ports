@@ -503,6 +503,7 @@
      SUBDIR += py-urllib3
      SUBDIR += py-vcrpy
      SUBDIR += py-waitress
+     SUBDIR += py-wapiti_arsenic
      SUBDIR += py-webcolors
      SUBDIR += py-webob
      SUBDIR += py-webpy
