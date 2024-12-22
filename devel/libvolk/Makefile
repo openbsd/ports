@@ -1,8 +1,11 @@
 COMMENT =	vector optimized library of kernels
 
 DISTNAME =	volk-3.1.2
+REVISION =	0
+
 # deconflict with graphics/volk
 PKGNAME =	lib${DISTNAME}
+
 CATEGORIES =	devel
 
 SHARED_LIBS +=	volk	0.0 # 0.0
