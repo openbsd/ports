@@ -1,14 +1,12 @@
 COMMENT=	SOFA (Spatially Oriented Format for Acoustics) file reader
 
-VER=		1.2
+VER=		1.3.3
 CATEGORIES=	audio
 GH_ACCOUNT=	hoene
 GH_PROJECT=	libmysofa
 GH_TAGNAME=	v${VER}
 
-SHARED_LIBS=	mysofa	0.0
-
-HOMEPAGE=	https://github.com/hoene/libmysofa
+SHARED_LIBS=	mysofa	0.1
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
 
@@ -17,7 +15,8 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	m z
 
-COMPILER=	base-clang ports-clang ports-gcc
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 MODULES=	devel/cmake
 

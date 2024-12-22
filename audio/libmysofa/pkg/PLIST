@@ -1,4 +1,11 @@
 include/mysofa.h
+include/mysofa_export.h
+lib/cmake/
+lib/cmake/mysofa/
+lib/cmake/mysofa/mysofaConfig.cmake
+lib/cmake/mysofa/mysofaConfigVersion.cmake
+lib/cmake/mysofa/mysofaTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/mysofa/mysofaTargets.cmake
 @static-lib lib/libmysofa.a
 @lib lib/libmysofa.so.${LIBmysofa_VERSION}
 lib/pkgconfig/libmysofa.pc
