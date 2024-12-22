@@ -3,7 +3,7 @@ COMMENT =	library and tools to access the OLE 2 Compound File
 VERSION = 	20191221
 DISTNAME =	libolecf-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS +=  olecf                       0.1 # 1.0
 
@@ -27,6 +27,8 @@ CONFIGURE_ARGS +=	--enable-python3
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
 MODULES +=	lang/python
+
+MODPY_PYBUILD =	setuptools
 
 BUILD_DEPENDS =	devel/gettext,-tools
 

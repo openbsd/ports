@@ -3,7 +3,7 @@ COMMENT =	library to access the Windows Shell Item format
 VERSION =	20191221
 DISTNAME =	libfwsi-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
-REVISION =	5
+REVISION =	6
 
 SHARED_LIBS +=  fwsi                       0.0 # 1.0
 
@@ -26,6 +26,8 @@ CONFIGURE_ARGS +=	--enable-python3
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
 MODULES +=	lang/python
+
+MODPY_PYBUILD =	setuptools
 
 BUILD_DEPENDS =	devel/gettext,-tools
 

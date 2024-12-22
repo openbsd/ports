@@ -3,7 +3,7 @@ COMMENT =		access the BitLocker Drive Encryption encrypted volumes
 VERSION =		20191221
 DISTNAME =		libbde-alpha-${VERSION}
 PKGNAME =		libbde-${VERSION}
-REVISION =		4
+REVISION =		5
 
 SHARED_LIBS +=  bde                       0.1 # 1.0
 
@@ -29,6 +29,8 @@ CONFIGURE_ARGS +=	--mandir=${PREFIX}/man \
 WRKDIST =		${WRKDIR}/${PKGNAME}
 
 MODULES =		lang/python
+
+MODPY_PYBUILD =		setuptools
 
 BUILD_DEPENDS =		devel/gettext,-tools
 

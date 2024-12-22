@@ -3,7 +3,7 @@ COMMENT =	library and tools to access NTFS
 VERSION = 	20200805
 DISTNAME =	libfsntfs-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS +=  fsntfs                       0.1 # 1.0
 
@@ -27,6 +27,8 @@ CONFIGURE_ARGS +=	--enable-python3
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
 MODULES +=	lang/python
+
+MODPY_PYBUILD =	setuptools
 
 BUILD_DEPENDS =	devel/gettext,-tools
 

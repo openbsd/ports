@@ -3,7 +3,7 @@ COMMENT =	library for Windows NT data types
 VERSION = 	20191222
 DISTNAME =	libfwnt-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS +=  fwnt                       0.0 # 1.0
 
@@ -26,6 +26,8 @@ CONFIGURE_ARGS +=	--enable-python3 --disable-nls
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
 MODULES +=	lang/python
+
+MODPY_PYBUILD =	setuptools
 
 TEST_DEPENDS += shells/bash
 

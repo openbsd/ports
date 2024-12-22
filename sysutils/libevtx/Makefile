@@ -3,7 +3,7 @@ COMMENT =	library and tools to access the Windows XML Event Log (EVTX)
 VERSION = 	20191221
 DISTNAME =	libevtx-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS +=  evtx                       0.0 # 1.0
 
@@ -28,6 +28,8 @@ CONFIGURE_ARGS +=	--enable-python3 \
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
 MODULES +=	lang/python
+
+MODPY_PYBUILD =	setuptools
 
 MODPY_ADJ_FILES += tests/pyevtx_test_support.py
 

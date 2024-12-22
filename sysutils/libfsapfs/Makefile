@@ -3,7 +3,7 @@ COMMENT =	library and tools to access the Apple File System
 VERSION = 	20191221
 DISTNAME =	libfsapfs-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS +=  fsapfs                       0.0 # 1.0
 
@@ -28,6 +28,8 @@ CONFIGURE_ARGS +=	--enable-python3 \
 WRKDIST =       ${WRKDIR}/${PKGNAME}
 
 MODULES +=	lang/python
+
+MODPY_PYBUILD =	setuptools
 
 BUILD_DEPENDS =	devel/gettext,-tools
 

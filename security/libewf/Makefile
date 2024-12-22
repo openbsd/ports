@@ -3,7 +3,7 @@ COMMENT =		access the Expert Witness Compression Format
 VERSION =		20140808
 DISTNAME =		libewf-${VERSION}
 EPOCH =			0
-REVISION =		4
+REVISION =		5
 
 SHARED_LIBS +=		ewf                       1.0 # 3.0
 
@@ -23,6 +23,8 @@ WANTLIB += z
 SITES =	https://github.com/libyal/libewf-legacy/releases/download/${VERSION}/
 
 MODULES =		lang/python
+
+MODPY_PBUILD =		setuptools
 
 BUILD_DEPENDS =		devel/gettext,-tools
 

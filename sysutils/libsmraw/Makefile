@@ -3,7 +3,7 @@ COMMENT =	library and tools to access the (split) RAW image format
 VERSION = 	20191221
 DISTNAME =	libsmraw-alpha-${VERSION}
 PKGNAME =	${DISTNAME:S/-alpha//}
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS +=  smraw                       0.1 # 1.0
 
@@ -27,6 +27,8 @@ CONFIGURE_ARGS +=	--enable-python3
 WRKDIST =	${WRKDIR}/${PKGNAME}
 
 MODULES +=	lang/python
+
+MODPY_PYBUILD =	setuptools
 
 BUILD_DEPENDS =	devel/gettext,-tools
 LIB_DEPENDS +=	devel/libbfio

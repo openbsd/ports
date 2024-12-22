@@ -3,7 +3,7 @@ COMMENT =	library for binary signature scanning
 VERSION = 	20191221
 DISTNAME =	libsigscan-experimental-${VERSION}
 PKGNAME =	${DISTNAME:S/-experimental//}
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS +=  sigscan                       0.0 # 1.0
 
@@ -27,6 +27,8 @@ CONFIGURE_ARGS +=	--enable-python3
 WRKDIST =	${WRKDIR}/${PKGNAME}
 			
 MODULES +=	lang/python
+
+MODPY_PYBUILD =	setuptools
 
 BUILD_DEPENDS =	devel/gettext,-tools
 
