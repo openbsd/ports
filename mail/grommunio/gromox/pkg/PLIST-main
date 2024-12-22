@@ -170,6 +170,7 @@ man/man8/event.8gx
 @man man/man8/gromox-exm2eml.8
 @man man/man8/gromox-exm2ical.8
 @man man/man8/gromox-exm2mt.8
+@man man/man8/gromox-exm2tnef.8
 @man man/man8/gromox-exm2vcf.8
 @man man/man8/gromox-kdb2mt.8
 @man man/man8/gromox-mailq.8
@@ -199,6 +200,7 @@ sbin/gromox-abktpull
 @bin sbin/gromox-exm2eml
 sbin/gromox-exm2ical
 sbin/gromox-exm2mt
+sbin/gromox-exm2tnef
 sbin/gromox-exm2vcf
 sbin/gromox-ical2mt
 @bin sbin/gromox-kdb2mt
