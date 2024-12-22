@@ -1,9 +1,8 @@
 COMMENT=	xpath 1.0/2.0 parsers and selectors for elementtree
 
-MODPY_DISTV=	4.6.0
+MODPY_DISTV=	4.7.0
 DISTNAME=	elementpath-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	textproc
 
