@@ -22,6 +22,8 @@ SITES =		https://www.libsdl.org/projects/SDL_image/release/
 
 COMPILER =	base-clang ports-gcc
 
+BUILD_DEPENDS =	${MODGNU_AUTOCONF_DEPENDS} \
+		${MODGNU_AUTOMAKE_DEPENDS}
 LIB_DEPENDS =	archivers/brotli \
 		devel/highway \
 		devel/sdl2 \
