@@ -10,7 +10,6 @@ SHARED_LIBS +=  urcu-common               2.0 # 9.0
 SHARED_LIBS +=  urcu-mb                   3.0 # 9.0
 SHARED_LIBS +=  urcu-memb                 1.0 # 9.0
 SHARED_LIBS +=  urcu-qsbr                 2.0 # 9.0
-SHARED_LIBS +=  urcu-signal               3.0 # 9.0
 SHARED_LIBS +=  urcu                      3.0 # 9.0
 
 CATEGORIES =		devel
