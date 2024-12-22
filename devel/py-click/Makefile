@@ -1,9 +1,8 @@
 COMMENT=	command line library for Python
 
-MODPY_DISTV=	8.1.7
+MODPY_DISTV=	8.1.8
 DISTNAME=	click-${MODPY_DISTV}
 PKGNAME=	py-click-${MODPY_DISTV}
-REVISION=	1
 
 CATEGORIES=	devel
 
