@@ -1,5 +1,5 @@
-@pkgpath sysutils/py-psutil,python3
 @conflict py-psutil-*
+@pkgpath sysutils/py-psutil,python3
 lib/python${MODPY_VERSION}/site-packages/psutil/
 lib/python${MODPY_VERSION}/site-packages/psutil-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/psutil-${MODPY_DISTV}.dist-info/LICENSE
