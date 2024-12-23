@@ -1,6 +1,6 @@
-Index: libs/webcam/v4l2_base.cpp
---- libs/webcam/v4l2_base.cpp.orig
-+++ libs/webcam/v4l2_base.cpp
+Index: libs/indibase/webcam/v4l2_base.cpp
+--- libs/indibase/webcam/v4l2_base.cpp.orig
++++ libs/indibase/webcam/v4l2_base.cpp
 @@ -50,7 +50,7 @@
  #include <asm/types.h> /* for videodev2.h */
  /* Kernel headers version */

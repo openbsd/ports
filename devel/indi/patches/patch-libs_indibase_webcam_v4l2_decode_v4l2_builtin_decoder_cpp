@@ -1,0 +1,12 @@
+Index: libs/indibase/webcam/v4l2_decode/v4l2_builtin_decoder.cpp
+--- libs/indibase/webcam/v4l2_decode/v4l2_builtin_decoder.cpp.orig
++++ libs/indibase/webcam/v4l2_decode/v4l2_builtin_decoder.cpp
+@@ -538,7 +538,7 @@ void V4L2_Builtin_Decoder::setformat(struct v4l2_forma
+     allocBuffers();
+ }
+ 
+-__u32 V4L2_Builtin_Decoder::getFormat()
++uint32_t V4L2_Builtin_Decoder::getFormat()
+ {
+     return fmt.fmt.pix.pixelformat;
+ }

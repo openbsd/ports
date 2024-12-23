@@ -1,6 +1,6 @@
-Index: libs/webcam/v4l2_base.h
---- libs/webcam/v4l2_base.h.orig
-+++ libs/webcam/v4l2_base.h
+Index: libs/indibase/webcam/v4l2_base.h
+--- libs/indibase/webcam/v4l2_base.h.orig
++++ libs/indibase/webcam/v4l2_base.h
 @@ -39,7 +39,11 @@
  #include <map>
  

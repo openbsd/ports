@@ -1,7 +1,7 @@
-Index: indiserver.cpp
---- indiserver.cpp.orig
-+++ indiserver.cpp
-@@ -1497,9 +1497,14 @@ void UnixServer::accept()
+Index: indiserver/indiserver.cpp
+--- indiserver/indiserver.cpp.orig
++++ indiserver/indiserver.cpp
+@@ -1503,9 +1503,14 @@ void UnixServer::accept()
      if (verbose > 0)
      {
  #ifdef SO_PEERCRED

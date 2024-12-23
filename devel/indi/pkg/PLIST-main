@@ -1,49 +1,65 @@
+@bin bin/indi_Excalibur
 @bin bin/indi_aaf2_focus
 @bin bin/indi_activefocuser_focus
+@bin bin/indi_alluna_tcs2
+@bin bin/indi_alto
 @bin bin/indi_arduinost4
+@bin bin/indi_astrolink4
+@bin bin/indi_astrolink4mini2
 @bin bin/indi_astromech_lpm
+@bin bin/indi_astromechfoc
 @bin bin/indi_astrometry
 @bin bin/indi_astrotrac_telescope
 @bin bin/indi_baader_dome
 @bin bin/indi_celestron_gps
 @bin bin/indi_celestron_sct_focus
+@bin bin/indi_cheapodc
 @bin bin/indi_crux_mount
 @bin bin/indi_ddw_dome
 @bin bin/indi_deepskydad_af1_focus
 @bin bin/indi_deepskydad_af2_focus
 @bin bin/indi_deepskydad_af3_focus
-@bin bin/indi_deepskydad_fp1
+@bin bin/indi_deepskydad_fp
 @bin bin/indi_deepskydad_fr1
 @bin bin/indi_dmfc_focus
 @bin bin/indi_domepro2_dome
+@bin bin/indi_dragon_light
+@bin bin/indi_dragonlair_dome
+@bin bin/indi_dreamfocuser_focus
 @bin bin/indi_dsc_telescope
 @bin bin/indi_efa_focus
 bin/indi_eq500x_telescope
+@bin bin/indi_esatto_focus
 @bin bin/indi_esattoarco_focus
 @bin bin/indi_eval
 @bin bin/indi_falcon_rotator
+@bin bin/indi_falconv2_rotator
 @bin bin/indi_fcusb_focus
 @bin bin/indi_flipflat
 @bin bin/indi_gemini_focus
 @bin bin/indi_getprop
+@bin bin/indi_giotto
 @bin bin/indi_gpusb
 @bin bin/indi_hid_test
 @bin bin/indi_hitecastrodc_focus
+@bin bin/indi_ieaf_focus
 @bin bin/indi_ieq_telescope
 @bin bin/indi_ieqlegacy_telescope
 @bin bin/indi_imager_agent
 @bin bin/indi_integra_focus
 bin/indi_ioptronHC8406
+@bin bin/indi_ioptron_wheel
 @bin bin/indi_ioptronv3_telescope
+@bin bin/indi_lacerta_mfoc_fmc_focus
 @bin bin/indi_lacerta_mfoc_focus
 @bin bin/indi_lakeside_focus
 bin/indi_lx200_10micron
 bin/indi_lx200_16
 bin/indi_lx200_OnStep
+bin/indi_lx200_OpenAstroTech
 @bin bin/indi_lx200_TeenAstro
+bin/indi_lx200_pegasus_nyx101
 bin/indi_lx200am5
-bin/indi_lx200ap
-bin/indi_lx200ap_gtocp2
 bin/indi_lx200ap_v2
 bin/indi_lx200autostar
 @bin bin/indi_lx200basic
@@ -63,6 +79,8 @@ bin/indi_lx200zeq25
 @bin bin/indi_microtouch_focus
 @bin bin/indi_moonlite_focus
 @bin bin/indi_moonlitedro_focus
+@bin bin/indi_myDewControllerPro
+@bin bin/indi_mydcp4esp32
 @bin bin/indi_myfocuserpro2_focus
 @bin bin/indi_nexdome_beaver
 @bin bin/indi_nfocus
@@ -75,14 +93,18 @@ bin/indi_lx200zeq25
 @bin bin/indi_paramount_telescope
 @bin bin/indi_pegasus_flatmaster
 @bin bin/indi_pegasus_focuscube
+@bin bin/indi_pegasus_focuscube3
 @bin bin/indi_pegasus_ppb
 @bin bin/indi_pegasus_ppba
 @bin bin/indi_pegasus_prodigyMF
 @bin bin/indi_pegasus_scopsoag
+@bin bin/indi_pegasus_spb
 @bin bin/indi_pegasus_uch
 @bin bin/indi_pegasus_upb
+@bin bin/indi_pegasusindigo_wheel
 @bin bin/indi_perfectstar_focus
 @bin bin/indi_planewave_deltat
+@bin bin/indi_planewave_telescope
 @bin bin/indi_pmc8_telescope
 @bin bin/indi_pyxis_rotator
 @bin bin/indi_qhycfw1_wheel
@@ -120,6 +142,7 @@ bin/indi_lx200zeq25
 @bin bin/indi_skywatcherAltAzMount
 @bin bin/indi_smartfocus_focus
 @bin bin/indi_snapcap
+@bin bin/indi_spectracyber
 @bin bin/indi_sqm_weather
 @bin bin/indi_star2000
 @bin bin/indi_steeldrive2_focus
@@ -130,18 +153,30 @@ bin/indi_tcfs3_focus
 @bin bin/indi_tcfs_focus
 @bin bin/indi_teenastro_focus
 @bin bin/indi_temma_telescope
+@bin bin/indi_terrans_powerboxgo_v2
+@bin bin/indi_terrans_powerboxpro_v2
 @bin bin/indi_trutech_wheel
+@bin bin/indi_universalror_dome
+@bin bin/indi_uranus_weather
 @bin bin/indi_usbdewpoint
 @bin bin/indi_usbfocusv3_focus
 @bin bin/indi_v4l2_ccd
 @bin bin/indi_vantage_weather
 @bin bin/indi_wanderer_cover
 @bin bin/indi_wanderer_lite_rotator
+@bin bin/indi_wanderer_rotator_lite_v2
+@bin bin/indi_wanderer_rotator_mini
+@bin bin/indi_wandererbox_plus_v3
+@bin bin/indi_wandererbox_pro_v3
+@bin bin/indi_wanderercover_v4_ec
 @bin bin/indi_watchdog
 @bin bin/indi_watcher_weather
+@bin bin/indi_wavesharemodbus_relay
 @bin bin/indi_weather_safety_proxy
 @bin bin/indi_xagyl_wheel
 @bin bin/indiserver
+@bin bin/shelyak_usis
 share/indi/
 share/indi/drivers.xml
 share/indi/indi_tcfs_sk.xml
+share/indi/shelyak_boards.json

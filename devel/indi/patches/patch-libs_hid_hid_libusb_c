@@ -1,6 +1,6 @@
-Index: libs/indibase/hid_libusb.c
---- libs/indibase/hid_libusb.c.orig
-+++ libs/indibase/hid_libusb.c
+Index: libs/hid/hid_libusb.c
+--- libs/hid/hid_libusb.c.orig
++++ libs/hid/hid_libusb.c
 @@ -65,7 +65,7 @@ extern "C" {
      } while (0)
  #endif

@@ -1,0 +1,16 @@
+Index: libs/indicore/CMakeLists.txt
+--- libs/indicore/CMakeLists.txt.orig
++++ libs/indicore/CMakeLists.txt
+@@ -52,7 +52,11 @@ if(UNIX)
+         sharedblob_parse.cpp
+         shm_open_anon.c)
+     if(UNIX AND NOT APPLE)
+-        target_link_libraries(${PROJECT_NAME} rt)
++        IF(CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
++            # do nothing
++        else()
++            target_link_libraries(${PROJECT_NAME} rt)
++        endif()
+     endif()
+ endif()
+ 

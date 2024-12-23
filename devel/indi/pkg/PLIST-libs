@@ -1,4 +1,5 @@
 include/libindi/
+include/libindi/abstractbaseclient.h
 include/libindi/alignment/
 include/libindi/alignment/AlignmentSubsystemForDrivers.h
 include/libindi/alignment/AlignmentSubsystemForMathPlugins.h
@@ -34,7 +35,9 @@ include/libindi/eventloop.h
 include/libindi/fits.h
 include/libindi/fits_extensions.h
 include/libindi/fitsidi.h
+include/libindi/fitskeyword.h
 include/libindi/hidapi.h
+include/libindi/httplib.h
 include/libindi/indiapi.h
 include/libindi/indibase.h
 include/libindi/indibasetypes.h
@@ -54,10 +57,14 @@ include/libindi/indifilterwheel.h
 include/libindi/indifocuser.h
 include/libindi/indifocuserinterface.h
 include/libindi/indigps.h
+include/libindi/indigpsinterface.h
 include/libindi/indiguiderinterface.h
+include/libindi/indiinputinterface.h
+include/libindi/indijson.hpp
 include/libindi/indilightboxinterface.h
 include/libindi/indilogger.h
 include/libindi/indimacros.h
+include/libindi/indioutputinterface.h
 include/libindi/indiproperties.h
 include/libindi/indiproperty.h
 include/libindi/indipropertybasic.h
@@ -83,14 +90,16 @@ include/libindi/indiweather.h
 include/libindi/indiweatherinterface.h
 include/libindi/indiwidgettraits.h
 include/libindi/indiwidgetview.h
-include/libindi/json.h
+include/libindi/inicpp.h
 include/libindi/libastro.h
 include/libindi/lilxml.h
 include/libindi/mounts/
 include/libindi/mounts/lx200driver.h
 include/libindi/mounts/lx200telescope.h
+include/libindi/parentdevice.h
 include/libindi/pid.h
 include/libindi/sdfits.h
+include/libindi/sharedblob.h
 include/libindi/stream/
 include/libindi/stream/ccvt.h
 include/libindi/stream/ccvt_types.h
@@ -118,6 +127,7 @@ lib/indi/MathPlugins/
 @static-lib lib/libindiAlignmentClient.a
 @lib lib/libindiAlignmentDriver.so.${LIBindiAlignmentDriver_VERSION}
 @static-lib lib/libindiclient.a
+@lib lib/libindiclient.so.${LIBindiclient_VERSION}
 @static-lib lib/libindidriver.a
 @lib lib/libindidriver.so.${LIBindidriver_VERSION}
 @lib lib/libindilx200.so.${LIBindilx200_VERSION}

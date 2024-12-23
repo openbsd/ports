@@ -1,6 +1,6 @@
-Index: libs/webcam/v4l2_decode/v4l2_decode.h
---- libs/webcam/v4l2_decode/v4l2_decode.h.orig
-+++ libs/webcam/v4l2_decode/v4l2_decode.h
+Index: libs/indibase/webcam/v4l2_decode/v4l2_decode.h
+--- libs/indibase/webcam/v4l2_decode/v4l2_decode.h.orig
++++ libs/indibase/webcam/v4l2_decode/v4l2_decode.h
 @@ -29,7 +29,11 @@
  #include <stdio.h>
  #include <cstdlib>

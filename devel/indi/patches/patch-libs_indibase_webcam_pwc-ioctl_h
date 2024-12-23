@@ -1,6 +1,6 @@
-Index: libs/webcam/pwc-ioctl.h
---- libs/webcam/pwc-ioctl.h.orig
-+++ libs/webcam/pwc-ioctl.h
+Index: libs/indibase/webcam/pwc-ioctl.h
+--- libs/indibase/webcam/pwc-ioctl.h.orig
++++ libs/indibase/webcam/pwc-ioctl.h
 @@ -51,7 +51,7 @@
  
  #pragma once

@@ -1,0 +1,12 @@
+Index: libs/indicore/indidevapi.h
+--- libs/indicore/indidevapi.h.orig
++++ libs/indicore/indidevapi.h
+@@ -97,6 +97,8 @@
+ #include "indiapi.h"
+ #include "lilxml.h"
+ 
++#include <stdarg.h> /* va_list */
++
+ /*******************************************************************************
+  *******************************************************************************
+  *

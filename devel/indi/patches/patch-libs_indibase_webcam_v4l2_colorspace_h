@@ -1,6 +1,6 @@
-Index: libs/webcam/v4l2_colorspace.h
---- libs/webcam/v4l2_colorspace.h.orig
-+++ libs/webcam/v4l2_colorspace.h
+Index: libs/indibase/webcam/v4l2_colorspace.h
+--- libs/indibase/webcam/v4l2_colorspace.h.orig
++++ libs/indibase/webcam/v4l2_colorspace.h
 @@ -1,7 +1,11 @@
  
  #pragma once
