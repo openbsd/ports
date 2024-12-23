@@ -8,6 +8,7 @@ LLVM_VERSION =	19.1.6
 DISTNAME =	llvm-project-${LLVM_VERSION}.src
 SUPDISTFILES =	${DISTFILES:S/$/.sig/}
 PKGNAME =	llvm-lit-${LLVM_VERSION}
+REVISION =	0
 
 CATEGORIES =	devel
 
