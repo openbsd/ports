@@ -2,7 +2,7 @@ COMMENT =	continuous integration framework
 
 DISTNAME =	buildbot-${MODPY_DISTV}
 PKGNAME =	${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 RUN_DEPENDS =	databases/py-sqlalchemy>=1.4.0 \
 		databases/py-alembic \
@@ -17,7 +17,8 @@ RUN_DEPENDS =	databases/py-sqlalchemy>=1.4.0 \
 		textproc/py-yaml \
 		www/py-autobahn \
 		www/py-jwt \
-		www/py-jinja2
+		www/py-jinja2 \
+		www/py-treq
 
 NO_TEST =	Yes
 #TEST_DEPENDS =	${RUN_DEPENDS} \
