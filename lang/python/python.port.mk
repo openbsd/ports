@@ -98,18 +98,20 @@ TEST_DEPENDS +=		${MODPY_TEST_DEPENDS}
 _MODPY_PRE_BUILD_STEPS = :
 
 .if ${MODPY_PYBUILD:L} == "no"
+# not necessarily an error, but try to draw attention to it. defer printing
+# the warning to fake-install where it's less likely to scroll off the screen.
 _MODPY_PRE_BUILD_STEPS += ; if [ -e ${WRKSRC}/pyproject.toml ] && \
-	grep -q ^build-backend ${WRKSRC}/pyproject.toml && \
-	! grep -q ^build-backend.*setuptools ${WRKSRC}/pyproject.toml; then \
-	printf "\n***\n\nOpenBSD ports: should this use MODPY_PYBUILD?\n"; \
-	grep ^build-backend ${WRKSRC}/pyproject.toml || true; \
-	printf "\n***\n\n"; fi
+	grep -q ^build-backend ${WRKSRC}/pyproject.toml; then \
+	    (echo; echo '*** Ports with pyproject.toml should normally use MODPY_PYBUILD'; \
+	        grep -H ^build-backend ${WRKSRC}/pyproject.toml; echo ) >> \
+	        ${WRKDIR}/.modpy-warn; \
+	fi
 .endif
 
 
 .if ${MODPY_SETUPTOOLS:L} == "yes"
 .  if ${MODPY_PYBUILD:L} != "no"
-ERRORS +=		"Fatal: don't set both MODPY_PYBUILD and MODPY_SETUPTOOLS"
+ERRORS += "Fatal: both MODPY_PYBUILD and MODPY_SETUPTOOLS are set. Just use MODPY_PYBUILD."
 .  endif
 # For Python 2, setuptools provides a package locator that is required at
 # runtime for pkg_resources to work, so an RDEP is needed.
@@ -149,6 +151,7 @@ BUILD_DEPENDS +=	devel/py-flit_core
 BUILD_DEPENDS +=	devel/py-flit_scm
 .  elif ${MODPY_PYBUILD} == hatch-vcs
 BUILD_DEPENDS +=	devel/py-hatch-vcs
+_MODPY_EXPECTED_BACKEND = hatchling
 .  elif ${MODPY_PYBUILD} == hatchling
 BUILD_DEPENDS +=	devel/py-hatchling
 .  elif ${MODPY_PYBUILD} == jupyter_packaging
@@ -159,11 +162,13 @@ BUILD_DEPENDS +=	devel/maturin
 BUILD_DEPENDS +=	devel/py-pdm-backend
 .  elif ${MODPY_PYBUILD} == poetry-core
 BUILD_DEPENDS +=	devel/py-poetry-core
+_MODPY_EXPECTED_BACKEND = poetry.core
 .  elif ${MODPY_PYBUILD} == setuptools || \
 	${MODPY_PYBUILD} == setuptools_scm || \
 	${MODPY_PYBUILD} == setuptools-rust
 BUILD_DEPENDS +=	devel/py-setuptools \
 			devel/py-wheel
+_MODPY_EXPECTED_BACKEND = setuptools
 .    if ${MODPY_PYBUILD} == setuptools_scm
 BUILD_DEPENDS +=	devel/py-setuptools_scm
 .    elif ${MODPY_PYBUILD} == setuptools-rust
@@ -177,6 +182,7 @@ MODULES +=		devel/cargo
 .  elif !${MODPY_PYBUILD:L:Mother}
 ERRORS +=		"Fatal: unknown MODPY_PYBUILD value (flit, flit_core, flit_scm, hatch-vcs, hatchling, jupyter_packaging, pdm, maturin, other, poetry-core, setuptools, setuptools_scm, setuptools-rust)"
 .  endif
+_MODPY_EXPECTED_BACKEND ?= ${MODPY_PYBUILD}
 .else
 MODPY_SETUPUTILS =	No
 # Detect the case where a port is capable of building with setup.py
@@ -307,10 +313,20 @@ MODPY_TEST_TARGET +=	${MODPY_TEST_SO_CMD};
 
 .if ${MODPY_PYBUILD:L} != no
 .  if ! ${MODPY_PYBUILD:Msetuptools_scm}
-_MODPY_PRE_BUILD_STEPS += ; if [ -e ${WRKSRC}/pyproject.toml ]; then \
-	grep -q '^requires.*setuptools_scm' ${WRKSRC}/pyproject.toml && \
-	echo && sleep 1 && \
-	echo "*** Port appears to require setuptools_scm" && sleep 2; \
+_MODPY_PRE_BUILD_STEPS += ; if [ -e ${WRKSRC}/pyproject.toml ] && \
+	grep -q '^requires.*setuptools_scm' ${WRKSRC}/pyproject.toml; then \
+	    (echo; echo '*** Port may need MODPY_PYBUILD=setuptools_scm'; \
+	        grep -H -e ^build-backend -e '^requires.*setuptools' \
+		${WRKSRC}/pyproject.toml; echo ) >> ${WRKDIR}/.modpy-warn; \
+	fi
+.  endif
+.  if ${_MODPY_EXPECTED_BACKEND} != other
+_MODPY_PRE_BUILD_STEPS += ; if [ -e ${WRKSRC}/pyproject.toml ] && \
+	grep '^build-backend' ${WRKSRC}/pyproject.toml | \
+	grep -qv ${_MODPY_EXPECTED_BACKEND}; then \
+	    (echo; echo '*** Check MODPY_PYBUILD setting (currently "${MODPY_PYBUILD}")'; \
+	        grep -H ^build-backend ${WRKSRC}/pyproject.toml; echo ) >> \
+	        ${WRKDIR}/.modpy-warn; \
 	fi
 .  endif
 MODPY_PYBUILD_ARGS ?=
@@ -337,6 +353,8 @@ MODPY_TEST_TARGET +=	${MODPY_PYTEST_ARGS}
 MODPY_TEST_TARGET +=	${TEST_TARGET}
 .  endif
 .endif
+
+MODPY_INSTALL_TARGET += ; if [ -r ${WRKDIR}/.modpy-warn ]; then cat ${WRKDIR}/.modpy-warn; fi
 
 # dirty way to do it with no modifications in bsd.port.mk
 .if empty(CONFIGURE_STYLE)
