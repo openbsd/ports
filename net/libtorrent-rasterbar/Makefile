@@ -23,7 +23,8 @@ SITES =			https://github.com/arvidn/libtorrent/releases/download/v${V}/
 MODULES =		devel/cmake \
 			lang/python
 
-BUILD_DEPENDS =		devel/libtool
+BUILD_DEPENDS =		devel/libtool \
+			devel/py-setuptools
 
 LIB_DEPENDS =		devel/boost
 
