@@ -35,7 +35,6 @@ COMPILER=		base-clang ports-gcc base-gcc
 
 MODULES=		devel/cmake \
 			devel/dconf \
-			lang/python \
 			textproc/intltool \
 			x11/gnome
 
@@ -52,8 +51,6 @@ LIB_DEPENDS= 		audio/libcanberra,-gtk3 \
 			www/webkitgtk4,webkitgtk60 \
 			x11/gnome/libgweather4 \
 			x11/gnome/online-accounts
-
-MODPY_RUNDEP=		No
 
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection \
 			gtk-update-icon-cache vala

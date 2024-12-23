@@ -5,7 +5,7 @@ COMMENT=		GTK C code documentation system
 
 GNOME_VERSION=		1.34.0
 GNOME_PROJECT=		gtk-doc
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		textproc devel
 
@@ -15,7 +15,6 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=		Yes
 
 MODULES=		devel/meson \
-			lang/python \
 			x11/gnome
 
 MODGNOME_TOOLS=		docbook yelp
