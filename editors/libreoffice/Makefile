@@ -176,6 +176,7 @@ BUILD_DEPENDS+=	archivers/zip \
 		devel/gettext,-tools \
 		devel/gpatch \
 		devel/gperf \
+		devel/py-setuptools \
 		graphics/glew \
 		graphics/glm \
 		shells/bash \
