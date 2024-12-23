@@ -1,12 +1,11 @@
-MODPY_DISTV =	0.2
+MODPY_DISTV =	0.3
 COMMENT =	curses interface for browsing and playing radio streams
-DISTNAME =	curseradio-${MODPY_DISTV}
+DISTNAME =	curseradio-${MODPY_DISTV}pre20241222
 CATEGORIES =	audio
-REVISION =	6
 
-GH_ACCOUNT =	chronitis
+GH_ACCOUNT =	elewarr
 GH_PROJECT =	curseradio
-GH_COMMIT =	1bd4bd0faeec675e0647bac9a100b526cba19f8d
+GH_COMMIT =	95d6d33202a06da7b1db5d7a599e6cd6e4ec073b
 
 MAINTAINER =	Krystian Lewandowski <k.lewandowski@me.com>
 
