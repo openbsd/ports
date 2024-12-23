@@ -1,9 +1,8 @@
 COMMENT=	pure-Python hyphenation library
 
-MODPY_DISTV=	0.15.0
+MODPY_DISTV=	0.17.0
 DISTNAME=	pyphen-${MODPY_DISTV}
 PKGNAME=	py-pyphen-${MODPY_DISTV}
-REVISION=	0
 
 CATEGORIES=	textproc
 
