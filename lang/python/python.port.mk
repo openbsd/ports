@@ -1,5 +1,6 @@
-#	python.port.mk - Xavier Santolaria <xavier@santolaria.net>
-#	This file is in the public domain.
+#	python.port.mk - This file is in the public domain.
+#	Xavier Santolaria <xavier@santolaria.net>
+#	Stuart Henderson <stu@spacehopper.org>
 
 CATEGORIES +=		lang/python
 
@@ -11,7 +12,7 @@ MODPY_VERSION ?=	${MODPY_DEFAULT_VERSION_3}
 # If switching to a new MODPY_DEFAULT_VERSION_3, say 3.x to 3.y:
 # - All ports with PLISTs that depend on the Python version number
 # must be REVISION-bumped.
-# - Keep xenocara/share/mk/bsd.xorg.mk PYTHON_VERSION in sync
+# - Keep xenocara/share/mk/bsd.xorg.mk PYTHON_VERSION in sync.
 
 # verify if MODPY_VERSION found is correct
 .if ${MODPY_VERSION} == "2.7"
@@ -64,12 +65,8 @@ MODPY_PYTEST ?=		Yes
 .endif
 
 .if ${MODPY_PYTEST:L} == "yes"
-.  if ${MODPY_VERSION} == ${MODPY_DEFAULT_VERSION_2}
-NO_TEST = Yes
-.  else
 MODPY_TEST_DEPENDS =	${RUN_DEPENDS}
 MODPY_TEST_DEPENDS +=	devel/py-test
-.  endif
 .else
 MODPY_TEST_DEPENDS =	${MODPY_RUN_DEPENDS}
 .endif
@@ -114,11 +111,13 @@ _MODPY_PRE_BUILD_STEPS += ; if [ -e ${WRKSRC}/pyproject.toml ] && \
 .  if ${MODPY_PYBUILD:L} != "no"
 ERRORS +=		"Fatal: don't set both MODPY_PYBUILD and MODPY_SETUPTOOLS"
 .  endif
-# For Python 2, setuptools provides a package locator that
-# is required at runtime for the pkg_resources stuff to work
-# For Python 3, normally importlib.metadata (in Python core
-# in newer versions) or importlib_metadata (external module)
-# are used in preference.
+# For Python 2, setuptools provides a package locator that is required at
+# runtime for pkg_resources to work, so an RDEP is needed.
+# For Python 3, pkg_resources is deprecated - Python core has similar
+# functionality in importlib.metadata.
+# If a py3 port still needs pkg_resources, expect deprecation warnings
+# at runtime, and in that case an RDEP on setuptools should be added
+# manually.
 .  if ${MODPY_MAJOR_VERSION} == 2
 MODPY_SETUPUTILS_DEPEND ?= devel/py2-setuptools
 MODPY_RUN_DEPENDS +=	${MODPY_SETUPUTILS_DEPEND}
@@ -179,9 +178,9 @@ MODULES +=		devel/cargo
 ERRORS +=		"Fatal: unknown MODPY_PYBUILD value (flit, flit_core, flit_scm, hatch-vcs, hatchling, jupyter_packaging, pdm, maturin, other, poetry-core, setuptools, setuptools_scm, setuptools-rust)"
 .  endif
 .else
-# Try to detect the case where a port will build regardless of setuptools
-# but the final plist will be different if it's present.
-# XXX probably redundant with py312
+MODPY_SETUPUTILS =	No
+# Detect the case where a port is capable of building with setup.py
+# via fallback to distutils, but should use py-build instead.
 _MODPY_SETUPUTILS_FAKE_DIR =	\
 	${WRKDIR}/lib/python${MODPY_VERSION}/site-packages/setuptools
 _MODPY_PRE_BUILD_STEPS +=	\
@@ -189,11 +188,10 @@ _MODPY_PRE_BUILD_STEPS +=	\
 	;exec 3>&1 \
 	;exec >${_MODPY_SETUPUTILS_FAKE_DIR}/__init__.py \
 	;echo 'def setup(*args, **kwargs):' \
-	;echo '    msg = "OpenBSD ports: MODPY_PYBUILD or MODPY_SETUPTOOLS is required"' \
+	;echo '    msg = "OpenBSD ports: use MODPY_PYBUILD"' \
 	;echo '    raise Exception(msg)' \
 	;echo 'Extension = Feature = find_packages = setup' \
 	;exec 1>&3
-MODPY_SETUPUTILS =	No
 _MODPY_USERBASE =	${WRKDIR}
 .endif
 
@@ -361,10 +359,6 @@ do-install:
 	@${MODPY_INSTALL_TARGET}
 .  endif
 
-# setuptools supports regress testing from setup.py using a standard target,
-# though this is deprecated and in most cases MODPY_PYTEST should be used
-# (possibly with MODPY_PYTEST_ARGS pointed at test dirs/files if the automatic
-# search picks up files in lib/).
 .  if !target(do-test) && \
       (${MODPY_SETUPUTILS:L} == "yes" || ${MODPY_PYTEST:L} == "yes")
 do-test:
