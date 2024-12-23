@@ -18,10 +18,7 @@ WANTLIB += c gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 intl jpeg
 WANTLIB += m png tiff
 
 MODULES=		devel/meson \
-			lang/python \
 			x11/gnome
-
-MODPY_RUNDEP=		No
 
 BUILD_DEPENDS=		textproc/py-docutils
 

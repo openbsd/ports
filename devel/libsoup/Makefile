@@ -27,7 +27,6 @@ MODULES =		devel/meson \
 			x11/gnome
 
 MODGNOME_TOOLS =	gobject-introspection vala
-MODPY_RUNDEP =		No
 
 RUN_DEPENDS =		net/glib2-networking
 

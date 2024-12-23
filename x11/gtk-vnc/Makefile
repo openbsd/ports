@@ -20,11 +20,9 @@ WANTLIB += gnutls gobject-2.0 gtk-3 intl m pulse pulse-simple sasl2
 WANTLIB += z
 
 MODULES=		devel/meson \
-			lang/python \
 			x11/gnome
 
 MODGNOME_TOOLS=		gobject-introspection vala
-MODPY_RUNDEP=		No
 
 LIB_DEPENDS=		audio/pulseaudio \
 			security/cyrus-sasl2 \

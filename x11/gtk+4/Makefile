@@ -30,7 +30,6 @@ MULTI_PACKAGES=		-main -cups -demos -guic -media
 
 MODULES=		devel/dconf \
 			devel/meson \
-			lang/python \
 			x11/gnome
 
 COMPILER=		base-clang ports-gcc ports-clang
@@ -38,8 +37,6 @@ COMPILER_LANGS=		c
 
 MODGNOME_TOOLS=		docbook gobject-introspection gtk-update-icon-cache \
 			desktop-file-utils
-
-MODPY_RUNDEP=		No
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
