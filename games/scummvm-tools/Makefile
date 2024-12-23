@@ -1,7 +1,6 @@
 COMMENT=	collection of various tools for scummvm
-V=		2.7.0
+V=		2.9.0
 DISTNAME=	scummvm-tools-${V}
-REVISION=	0
 
 CATEGORIES=	games
 SITES=		https://downloads.scummvm.org/frs/scummvm-tools/${V}/
