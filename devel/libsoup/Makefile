@@ -4,7 +4,7 @@ COMMENT =		HTTP client/server library for GNOME
 
 GNOME_PROJECT =		libsoup
 GNOME_VERSION =		2.74.3
-REVISION =		2
+REVISION =		3
 
 SHARED_LIBS += soup-2.4                  10.6 # 1.11.2
 SHARED_LIBS += soup-gnome-2.4            8.1 # 1.11.2
@@ -23,7 +23,6 @@ WANTLIB += brotlidec gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += intl psl sqlite3 xml2 z
 
 MODULES =		devel/meson \
-			lang/python \
 			x11/gnome
 
 MODGNOME_TOOLS =	gobject-introspection vala
