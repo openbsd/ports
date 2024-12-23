@@ -5,7 +5,9 @@ share/doc/scummvm/
 share/doc/scummvm/AUTHORS
 share/doc/scummvm/CONTRIBUTING.md
 share/doc/scummvm/COPYING
+share/doc/scummvm/COPYING.Apache
 share/doc/scummvm/COPYING.BSD
+share/doc/scummvm/COPYING.BSL
 share/doc/scummvm/COPYING.FREEFONT
 share/doc/scummvm/COPYING.GLAD
 share/doc/scummvm/COPYING.ISC
@@ -13,6 +15,7 @@ share/doc/scummvm/COPYING.LGPL
 share/doc/scummvm/COPYING.LUA
 share/doc/scummvm/COPYING.MIT
 share/doc/scummvm/COPYING.MKV
+share/doc/scummvm/COPYING.MPL
 share/doc/scummvm/COPYING.OFL
 share/doc/scummvm/COPYING.TINYGL
 share/doc/scummvm/COPYRIGHT
@@ -29,6 +32,7 @@ share/scummvm/
 share/scummvm/Roland_SC-55.sf2
 share/scummvm/access.dat
 share/scummvm/achievements.dat
+share/scummvm/bagel.dat
 share/scummvm/classicmacfonts.dat
 share/scummvm/cryomni3d.dat
 share/scummvm/drascula.dat
