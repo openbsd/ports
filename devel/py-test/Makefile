@@ -1,6 +1,6 @@
 COMMENT =		cross-project testing tool for Python
 
-MODPY_DISTV =		8.3.3
+MODPY_DISTV =		8.3.4
 DISTNAME =		pytest-${MODPY_DISTV}
 PKGNAME =		py-test-${MODPY_DISTV}
 
@@ -23,7 +23,7 @@ RUN_DEPENDS =		textproc/py-iniconfig \
 
 TEST_DEPENDS =		${FULLPKGNAME}:${FULLPKGPATH} \
 			devel/py-argcomplete \
-			devel/py-attrs>=19.2.0 \
+			devel/py-attrs \
 			devel/py-hypothesis \
 			devel/py-mock \
 			textproc/py-pygments \
