@@ -50,8 +50,9 @@ SUBST_VARS +=		MAKE_PROGRAM
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-# configure needs it
-BUILD_DEPENDS +=	lang/gawk
+# configure needs gawk
+BUILD_DEPENDS +=	lang/gawk \
+			devel/py-setuptools
 
 cWANTLIB += crypto m pthread
 
