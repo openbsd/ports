@@ -124,14 +124,21 @@ pre-configure:
 	cp ${FILESDIR}/audio_manager_openbsd.{cc,h} ${CHROMESRC}/media/audio/openbsd
 	cp ${FILESDIR}/openbsd.pri ${WRKDIST}/src/buildtools/config/openbsd.pri
 	cp ${FILESDIR}/openbsd.pri ${WRKDIST}/src/core/config/openbsd.pri
-	cp ${MODPY_SITEPKG}/six.py ${CHROMESRC}/tools/grit/third_party/six/__init__.py
+	cd ${CHROMESRC}; for six in \
+	    third_party/blink/tools/blinkpy/third_party/wpt/wpt/tools/third_party/six/six.py \
+	    third_party/catapult/third_party/six/six.py \
+	    third_party/protobuf/third_party/six/six.py \
+	    third_party/six/src/six.py \
+	    tools/grit/third_party/six/__init__.py; do \
+		cp ${MODPY_SITEPKG}/six.py $$six; \
+	done
 	mkdir -p ${CHROMESRC}/third_party/node/openbsd/node-openbsd/bin
 	ln -sf ${TRUEPREFIX}/bin/node ${CHROMESRC}/third_party/node/openbsd/node-openbsd/bin/node
 	# build with python3 (remove catapult)
 	rm ${CHROMESRC}/content/browser/tracing/BUILD.gn
 	# Regenerate build and perlasm files (force json to not overwrite our local gn patches)
 	cd ${CHROMESRC}/third_party/boringssl && ${MODPY_BIN} src/util/generate_build_files.py json
-	cd ${WRKSRC} && env -i ${MAKE_ENV} ${CHROMESRC}/build/linux/unbundle/replace_gn_files.py \
+	@cd ${WRKSRC} && env -i ${MAKE_ENV} ${CHROMESRC}/build/linux/unbundle/replace_gn_files.py \
 		--system-libraries ${GN_SYSTEM_LIBS}
 	# Rerun syncqt.pl -- otherwise the resulting package misses some forwarding headers.
 	${QT5_GEN_INCLUDES}
