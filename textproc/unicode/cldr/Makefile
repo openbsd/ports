@@ -1,7 +1,7 @@
 COMMENT-main =		Unicode Common Locale Data Repository
 COMMENT-annotations =	Unicode Common Locale Data Repository (annotations only)
 
-V =			46.0
+V =			46.1
 UNICODE_DATA_NAME =	cldr
 
 PKGNAME-main =		unicode-${UNICODE_DATA_NAME}-${V}
@@ -9,7 +9,7 @@ PKGNAME-annotations =	unicode-${UNICODE_DATA_NAME}-annotations-${V}
 
 MULTI_PACKAGES =	-main -annotations
 
-SITES =			${UNICODE_SITES}/cldr/${V:R}/
+SITES =			${UNICODE_SITES}/cldr/${V}/
 DISTFILES =		cldr-common-${V}${EXTRACT_SUFX}
 
 RUN_DEPENDS-main =	${BASE_PKGPATH},-annotations
