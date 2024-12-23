@@ -1,5 +1,5 @@
-@pkgpath textproc/py-ruamel.yaml.clib,python3
 @conflict ${MODPY_PY_PREFIX}ruamel.yaml-<0.17.16
+@pkgpath textproc/py-ruamel.yaml.clib,python3
 @so lib/python${MODPY_VERSION}/site-packages/_ruamel_yaml.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/ruamel.yaml.clib-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/ruamel.yaml.clib-${MODPY_DISTV}.dist-info/LICENSE
