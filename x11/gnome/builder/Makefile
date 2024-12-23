@@ -2,7 +2,7 @@ COMMENT=		IDE for writing GNOME-based software
 
 GNOME_PROJECT=		gnome-builder
 GNOME_VERSION=		47.2
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		devel
 
@@ -22,7 +22,6 @@ WANTLIB += llvm${MODCLANG_VERSION}/lib/clang
 MODULES=		devel/dconf \
 			devel/meson \
 			lang/clang \
-			lang/python \
 			x11/gnome
 
 MODCLANG_COMPILER_LINKS=No

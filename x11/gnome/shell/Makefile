@@ -6,7 +6,7 @@ GNOME_PROJECT=		gnome-shell
 # check/fix CONFIGURE_ARGS (-Dgnome_shell_version=XX) in x11/arc-theme on
 # major upgrade;
 GNOME_VERSION=		47.2
-REVISION=		0
+REVISION=		1
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -22,7 +22,6 @@ WANTLIB += lib/mutter-15/mutter-mtk-15
 
 MODULES=		devel/dconf \
 			devel/meson \
-			lang/python \
 			x11/gnome
 
 COMPILER=		base-clang ports-gcc
