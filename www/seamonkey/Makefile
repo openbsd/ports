@@ -1,4 +1,5 @@
 BROKEN-aarch64 =	third_party/rust/libc/src/lib.rs: error[E0412]: cannot find type 'c_long' in this scope
+BROKEN =	needs backport of bugs 1715900 and 1857492 to unbreak with py3.12
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
