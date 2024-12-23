@@ -14,6 +14,6 @@ PERMIT_PACKAGE=	Yes
 MODPY_PI =	Yes
 
 MODULES=	lang/python
-MODPY_PYBUILD=	setuptools
+MODPY_PYBUILD=	flit_core
 
 .include <bsd.port.mk>
