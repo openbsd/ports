@@ -1,10 +1,10 @@
 COMMENT =		matrices describing affine transformation of the plane
 
-MODPY_DISTV =	2.4.0
+MODPY_DISTV =		2.4.0
 DISTNAME =		affine-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		1
+REVISION =		2
 
 MAINTAINER =		Martin Reindl <martin@catai.org>
 
@@ -14,9 +14,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =	setuptools
-
-BUILD_DEPENDS +=	devel/py-flit_core
+MODPY_PYBUILD =		flit_core
 
 TEST_DEPENDS =		devel/py-test-cov
 
