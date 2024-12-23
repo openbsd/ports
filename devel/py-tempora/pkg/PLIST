@@ -1,5 +1,5 @@
-@pkgpath devel/py-tempora,python3
 @conflict py-tempora-<1.14.1p2
+@pkgpath devel/py-tempora,python3
 bin/calc-prorate
 lib/python${MODPY_VERSION}/site-packages/tempora/
 lib/python${MODPY_VERSION}/site-packages/tempora-${MODPY_DISTV}.dist-info/
