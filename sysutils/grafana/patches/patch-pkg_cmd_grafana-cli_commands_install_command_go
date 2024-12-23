@@ -1,7 +1,7 @@
 Index: pkg/cmd/grafana-cli/commands/install_command.go
 --- pkg/cmd/grafana-cli/commands/install_command.go.orig
 +++ pkg/cmd/grafana-cli/commands/install_command.go
-@@ -65,7 +65,7 @@ func validateInput(c utils.CommandLine) error {
+@@ -68,7 +68,7 @@ func validateInput(c utils.CommandLine) error {
  }
  
  func logRestartNotice() {
