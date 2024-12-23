@@ -24,7 +24,7 @@ Index: setup.py
                   ('storage/lists',[]), ('storage/log/dummy.txt',[]),
                   ('storage/rrd/dummy.txt',[]) ]
 -conf_files = [ ('conf', glob('conf/*.example')) ]
-+conf_files = [ ('${GRAPHITE_EGDIR}', glob('conf/*.example')) ]
++conf_files = [ ('share/examples/graphite', glob('conf/*.example')) ]
  
 -install_files = storage_dirs + conf_files
 +install_files = conf_files
