@@ -1,0 +1,12 @@
+Index: plugins/TelescopeControl/src/INDI/TelescopeClientINDI.cpp
+--- plugins/TelescopeControl/src/INDI/TelescopeClientINDI.cpp.orig
++++ plugins/TelescopeControl/src/INDI/TelescopeClientINDI.cpp
+@@ -25,7 +25,7 @@
+ 
+ #include "StelCore.hpp"
+ #include "StelUtils.hpp"
+-#include <libs/indibase/inditelescope.h>
++#include <libindi/inditelescope.h>
+ #include "INDIControlWidget.hpp"
+ 
+ TelescopeClientINDI::TelescopeClientINDI(const QString &name, const QString &params):

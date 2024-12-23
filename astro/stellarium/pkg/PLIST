@@ -1360,7 +1360,6 @@ share/stellarium/nebulae/default/m97dumont.png
 share/stellarium/nebulae/default/m98.png
 share/stellarium/nebulae/default/m99.png
 share/stellarium/nebulae/default/n1023.png
-share/stellarium/nebulae/default/n104.png
 share/stellarium/nebulae/default/n1042.png
 share/stellarium/nebulae/default/n1055.png
 share/stellarium/nebulae/default/n1097.png
@@ -4466,7 +4465,7 @@ share/stellarium/webroot/js/api/updatequeue.js
 share/stellarium/webroot/js/api/viewcontrol.js
 share/stellarium/webroot/js/api/viewoptions.js
 share/stellarium/webroot/js/globalize.js
-share/stellarium/webroot/js/jquery-3.6.0.js
+share/stellarium/webroot/js/jquery-3.7.1.js
 share/stellarium/webroot/js/jquery-ui.js
 share/stellarium/webroot/js/jquery.ui.touch-punch.js
 share/stellarium/webroot/js/main.js
