@@ -4,7 +4,7 @@ LLVM_PKGSPEC =	>=18,<19
 
 REVISION-main =	2
 REVISION-python = 0
-REVISION-lldb =	3
+REVISION-lldb =	4
 
 SHARED_LIBS +=	LLVM		0.0 \
 		LTO		0.0 \

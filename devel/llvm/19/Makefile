@@ -2,6 +2,8 @@ LLVM_MAJOR =	19
 LLVM_VERSION =	${LLVM_MAJOR}.1.6
 LLVM_PKGSPEC =	>=19,<20
 
+REVISION-lldb =	0
+
 SHARED_LIBS +=	LLVM		0.0 \
 		LTO		0.0 \
 		Remarks		0.0 \
