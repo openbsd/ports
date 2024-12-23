@@ -2,9 +2,15 @@
 @bin bin/recoll
 @man man/man1/recoll.1
 share/applications/recoll-searchgui.desktop
+share/icons/hicolor/
+share/icons/hicolor/48x48/
+share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/recoll.png
+share/icons/hicolor/scalable/
+share/icons/hicolor/scalable/apps/
+share/icons/hicolor/scalable/apps/recoll.svg
 share/metainfo/
-share/metainfo/recoll.appdata.xml
+share/metainfo/org.recoll.recoll.appdata.xml
 share/pixmaps/
 share/pixmaps/recoll.png
 share/recoll/images/
@@ -48,9 +54,9 @@ share/recoll/translations/recoll_ko.qm
 share/recoll/translations/recoll_lt.qm
 share/recoll/translations/recoll_nl.qm
 share/recoll/translations/recoll_pl.qm
+share/recoll/translations/recoll_ru.qm
 share/recoll/translations/recoll_sv.qm
 share/recoll/translations/recoll_tr.qm
-share/recoll/translations/recoll_ru.qm
 share/recoll/translations/recoll_uk.qm
 share/recoll/translations/recoll_xx.qm
 share/recoll/translations/recoll_zh.qm

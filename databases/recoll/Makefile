@@ -3,13 +3,14 @@ DPB_PROPERTIES=	parallel
 COMMENT-main=	full text search application
 COMMENT-gui=	X user interface to recoll
 
+SHARED_LIBS +=	recoll                    0.0 # 0.0
+
 MULTI_PACKAGES=	-main -gui
 ONLY_FOR_ARCHS-gui= aarch64 amd64 i386
 PSEUDO_FLAVORS=	no_gui
 
-V=		1.37.0
-REVISION=	3
-DISTNAME=	recoll-${V}
+MODPY_DISTV=	1.41.1
+DISTNAME=	recoll-${MODPY_DISTV}
 
 CATEGORIES=	databases sysutils
 
@@ -23,28 +24,29 @@ SITES=		https://www.lesbonscomptes.com/recoll/
 # C++11
 COMPILER=	base-clang ports-gcc
 
-WANTLIB=	${COMPILER_LIBCXX} c iconv m xapian xml2 xslt z
-WANTLIB-main=	${WANTLIB} c iconv lzma m xapian z
-WANTLIB-gui=	${WANTLIB} GL Qt5Core Qt5Gui Qt5Network Qt5PrintSupport \
-		Qt5Widgets Qt5Xml
+WANTLIB=	${COMPILER_LIBCXX} c m xapian xml2 xslt z
+WANTLIB-main=	${WANTLIB} X11 c iconv magic xapian z
+WANTLIB-gui=	${WANTLIB} GL recoll \
+		Qt6Core Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning \
+		Qt6PrintSupport Qt6Qml Qt6QmlModels Qt6Quick Qt6WebChannel \
+		Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets Qt6Xml
 
-PSEUDO_FLACORS=	no_gui
-
-# partially works, but the Qt application doesn't get symbols
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
-MODULES=		lang/python \
-			x11/qt5
-MODPY_DISTV=	$V
-MODPY_ADJ_FILES=	filters/*.py filters/rclepub
+MODULES=	devel/meson \
+		lang/python \
+		x11/qt6
+MODPY_ADJ_FILES=filters/*.py filters/rclepub
 
-USE_GMAKE=		Yes
-LIBTOOL_FLAGS=		--tag=disable-static
+#LIBTOOL_FLAGS=		--tag=disable-static
 
-BUILD_DEPENDS=		devel/py-setuptools \
+BUILD_DEPENDS=		devel/cmake \
+			devel/gmake \
+			devel/py-setuptools \
 			textproc/aspell/core
 
 LIB_DEPENDS-main=	databases/xapian-core \
+			devel/libmagic \
 			textproc/libxslt
 # listing deps used by the included filters for some common file formats;
 # see https://www.lesbonscomptes.com/recoll/pages/features.html for others
@@ -53,37 +55,34 @@ RUN_DEPENDS-main=	archivers/unzip \
 			graphics/p5-Image-ExifTool \
 			print/poppler,-utils \
 			textproc/unrtf
-RUN_DEPENDS-gui=	${FULLPKGNAME-main}:${FULLPKGPATH-main}
-LIB_DEPENDS-gui=	${MODQT5_LIB_DEPENDS} \
-			x11/qt5/qtwebengine
-WANTLIB-gui=		Qt5Positioning Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel \
-			Qt5WebEngine Qt5WebEngineCore Qt5WebEngineWidgets
+RUN_DEPENDS-gui=	devel/desktop-file-utils \
+			x11/gtk+4,-guic
+LIB_DEPENDS-gui=	${FULLPKGNAME-main}:${FULLPKGPATH-main} \
+			${MODQT6_LIB_DEPENDS} \
+			x11/qt6/qtwebengine
 
-CONFIGURE_STYLE=	gnu
-
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib" \
+CONFIGURE_ENV=		QMAKE="${MODQT_QMAKE}"
+MAKE_ENV=		MAKE_JOBS=${MAKE_JOBS} \
+			MAKE=gmake \
 			QMAKE="${MODQT_QMAKE}"
 
-CONFIGURE_ARGS=		--disable-python-aspell \
-			--disable-python-chm \
-			--disable-userdoc \
-			--without-inotify \
-			--without-fam \
-			--without-qzeitgeist \
-			--enable-recollq
+# #CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib" \
+#       export QMAKE=qmake6
+#       export MAKE="gmake"
+
+CONFIGURE_ARGS=		-Dpython-aspell=false \
+			-Dpython-chm=false \
+			-Dinotify=false \
+			-Dfam=false \
+			-Dqtzeitgeist=false \
+			-Drecollq=true
+#			-Duserdoc=false
 
 .include <bsd.port.arch.mk>
 .if ${BUILD_PACKAGES:M-gui}
-CONFIGURE_ARGS+=	--enable-webengine
+CONFIGURE_ARGS+=	-Dwebengine=true
 .else
-CONFIGURE_ARGS+=	--disable-qtgui
+CONFIGURE_ARGS+=	-Dqtgui=false
 .endif
-
-pre-configure:
-	sed -i -e "s,!!LIBrecoll_VERSION_R!!,${LIBrecoll_VERSION:R}," \
-		-e "s,!!LIBrecoll_VERSION_E!!,${LIBrecoll_VERSION:E}," \
-		${WRKSRC}/Makefile.in
-	${SUBST_CMD} ${WRKSRC}/Makefile.in
 
 .include <bsd.port.mk>

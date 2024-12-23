@@ -1,0 +1,12 @@
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -88,7 +88,7 @@ if get_option('testmains') or get_option('python-modul
+     # Searching for iconv is a meson 0.60 feature. Hopefully, for now all the systems where the
+     # meson build is used have iconv in libc. Otherwise look at glib search for iconv for how to do
+     # it.
+-    if build_machine.system() == 'freebsd'
++    if (build_machine.system() == 'freebsd') or (build_machine.system() == 'openbsd')
+         libiconv = cc.find_library('libiconv', required:true, dirs: '/usr/local/lib')
+         librecolldeps += libiconv
+     else 

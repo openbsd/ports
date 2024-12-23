@@ -1,0 +1,14 @@
+Index: utils/transcode.cpp
+--- utils/transcode.cpp.orig
++++ utils/transcode.cpp
+@@ -29,6 +29,10 @@
+ #include "rclutil.h"
+ #include "simdutf.h"
+ 
++#ifndef ICONV_CONST
++#define ICONV_CONST
++#endif
++
+ using namespace std;
+ 
+ // iconv_open caching

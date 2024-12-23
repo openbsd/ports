@@ -1,0 +1,22 @@
+Index: qtgui/qmkmk.sh
+--- qtgui/qmkmk.sh.orig
++++ qtgui/qmkmk.sh
+@@ -12,17 +12,7 @@ fn=`basename $pro_file`
+ QMAKE=${QMAKE:-qmake}
+ MAKE=${MAKE:-make}
+ 
+-ncpus=2
+-if which nproc > /dev/null ; then
+-    ncpus=`nproc`
+-elif which sysctl > /dev/null ; then
+-    ncpus=`sysctl hw.ncpu | awk '{print $2}'`
+-elif test -f /proc/cpuinfo ; then
+-    ncpus=`grep -E '^processor[        ]*:' /proc/cpuinfo | wc -l`
+-fi
+-if test -z "$ncpus" ; then
+-    ncpus=1
+-fi
++ncpus=${MAKE_JOBS}
+ 
+ cd $dir
+ ${QMAKE} $fn $*

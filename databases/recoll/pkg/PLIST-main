@@ -24,31 +24,32 @@ include/recoll/reslistpager.h
 include/recoll/searchdata.h
 include/recoll/smallut.h
 include/recoll/wasatorcl.h
-@so lib/librecoll-${MODPY_DISTV}.so
-lib/librecoll.la
-@so lib/librecoll.so
-lib/python${MODPY_VERSION}/site-packages/Recoll-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/Recoll-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/Recoll-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/Recoll-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/Recoll-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/top_level.txt
+@lib lib/librecoll.so.${LIBrecoll_VERSION}
 lib/python${MODPY_VERSION}/site-packages/recoll/
 lib/python${MODPY_VERSION}/site-packages/recoll/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/recoll/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/recoll/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/recoll/${MODPY_PYCACHE}conftree.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/recoll/${MODPY_PYCACHE}fsudi.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/recoll/${MODPY_PYCACHE}qresultstore.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/recoll/${MODPY_PYCACHE}rclconfig.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/recoll/${MODPY_PYCACHE}rclextract.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/recoll/${MODPY_PYCACHE}recoll.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/recoll/_recoll.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/recoll/conftree.py
+lib/python${MODPY_VERSION}/site-packages/recoll/fsudi.py
+lib/python${MODPY_VERSION}/site-packages/recoll/qresultstore.py
 lib/python${MODPY_VERSION}/site-packages/recoll/rclconfig.py
 lib/python${MODPY_VERSION}/site-packages/recoll/rclextract.py
 lib/python${MODPY_VERSION}/site-packages/recoll/recoll.py
 @man man/man1/recollindex.1
 @man man/man1/recollq.1
+@man man/man1/xadump.1
 @man man/man5/recoll.conf.5
 share/recoll/
+share/recoll/doc/
+share/recoll/doc/docbook-xsl.css
+share/recoll/doc/usermanual.html
 share/recoll/examples/
 share/recoll/examples/backends
 share/recoll/examples/fields
@@ -68,12 +69,12 @@ share/recoll/examples/recollindex.service
 share/recoll/examples/recollindex@.service
 share/recoll/filters/
 share/recoll/filters/abiword.xsl
+share/recoll/filters/archivextract.py
 share/recoll/filters/cmdtalk.py
 share/recoll/filters/cnsplitter.py
 share/recoll/filters/conftree.py
 share/recoll/filters/fb2.xsl
 share/recoll/filters/gnumeric.xsl
-share/recoll/filters/hotrecoll.py
 share/recoll/filters/kosplitter.py
 share/recoll/filters/msodump.zip
 share/recoll/filters/okular-note.xsl
@@ -115,9 +116,13 @@ share/recoll/filters/rclkar.py
 share/recoll/filters/rclkwd
 share/recoll/filters/rcllatinclass.py
 share/recoll/filters/rcllatinstops.zip
+share/recoll/filters/rcllink.py
 share/recoll/filters/rcllyx
 share/recoll/filters/rclman
+share/recoll/filters/rclmd.py
 share/recoll/filters/rclmidi.py
+share/recoll/filters/rclnamefilter.py
+share/recoll/filters/rclnull.py
 share/recoll/filters/rclocr.py
 share/recoll/filters/rclocrabbyy.py
 share/recoll/filters/rclocrcache.py
@@ -138,6 +143,7 @@ share/recoll/filters/rclshowinfo
 share/recoll/filters/rcltar.py
 share/recoll/filters/rcltex
 share/recoll/filters/rcltext.py
+share/recoll/filters/rcltxtlines.py
 share/recoll/filters/rcluncomp
 share/recoll/filters/rcluncomp.py
 share/recoll/filters/rclwar.py
