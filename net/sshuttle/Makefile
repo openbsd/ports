@@ -1,6 +1,6 @@
 COMMENT=		VPN over an SSH tunnel
 
-MODPY_DISTV=	1.1.2
+MODPY_DISTV=		1.1.2
 DISTNAME=		sshuttle-${MODPY_DISTV}
 REVISION=		1
 
@@ -16,12 +16,11 @@ PERMIT_PACKAGE=		Yes
 MODULES=		lang/python
 
 MODPY_PI=		Yes
-MODPY_PYBUILD=		setuptools_scm
+MODPY_PYBUILD=		poetry-core
 
 USE_GMAKE=		Yes
 
-BUILD_DEPENDS=		devel/py-poetry-core \
-			textproc/py-sphinx
+BUILD_DEPENDS=		textproc/py-sphinx
 
 TEST_DEPENDS=		devel/py-test-cov
 
