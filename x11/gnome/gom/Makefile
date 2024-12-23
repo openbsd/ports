@@ -12,12 +12,9 @@ PERMIT_PACKAGE=		Yes
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 sqlite3
 
 MODULES=		devel/meson \
-			lang/python \
 			x11/gnome
 
 MODGNOME_TOOLS=		gobject-introspection
-
-MODPY_RUNDEP=		No
 
 BUILD_DEPENDS=		devel/py-gobject3 \
 			graphics/gdk-pixbuf2

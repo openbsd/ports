@@ -28,13 +28,11 @@ MODULES +=		lang/clang
 MODCLANG_COMPILER_LINKS=	No
 MODCLANG_RUNDEP=	No
 MODULES +=		devel/cargo \
-			devel/meson \
-			lang/python
+			devel/meson
 MODCARGO_BUILD=		No
 MODCARGO_INSTALL=	No
 MODCARGO_TEST=		No
 MODGNOME_TOOLS +=	gi-docgen
-MODPY_RUNDEP=		No
 BUILD_DEPENDS=		devel/cargo-c
 # rst2man
 BUILD_DEPENDS +=	textproc/py-docutils

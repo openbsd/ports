@@ -17,10 +17,8 @@ WANTLIB += m soup-3.0 xml2
 
 MODULES=		devel/dconf \
 			devel/meson \
-			lang/python \
 			x11/gnome
 
-MODPY_RUNDEP=		No
 MODGNOME_TOOLS= 	gi-docgen gobject-introspection vala
 
 BUILD_DEPENDS=		devel/py-gobject3

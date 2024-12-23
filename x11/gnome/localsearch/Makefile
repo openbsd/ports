@@ -14,11 +14,7 @@ WANTLIB += xml2
 
 MODULES=		devel/dconf \
 			devel/meson \
-			lang/python \
 			x11/gnome
-
-MODPY_BUILDDEP=		No
-MODPY_RUNDEP=		No
 
 BUILD_DEPENDS=		textproc/asciidoc
 

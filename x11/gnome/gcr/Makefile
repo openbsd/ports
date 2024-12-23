@@ -18,13 +18,10 @@ WANTLIB += gobject-2.0 gtk-3 intl p11-kit pango-1.0
 
 MODULES=		devel/dconf \
 			devel/meson \
-			lang/python \
 			x11/gnome
 
 MODGNOME_TOOLS +=	desktop-file-utils gi-docgen gobject-introspection
 MODGNOME_TOOLS +=	gtk-update-icon-cache shared-mime-info vala
-
-MODPY_RUNDEP=		No
 
 LIB_DEPENDS=		security/libgcrypt \
 			security/p11-kit \

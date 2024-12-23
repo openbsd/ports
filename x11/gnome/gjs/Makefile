@@ -30,9 +30,6 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 COMPILER=		base-clang ports-clang
 
-MODPY_RUNDEP=		No
-MODPY_BUILDDEP= 	No
-
 LIB_DEPENDS=		devel/gobject-introspection \
 			devel/spidermonkey128 \
 			graphics/cairo

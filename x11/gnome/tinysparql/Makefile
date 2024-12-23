@@ -15,13 +15,9 @@ WANTLIB += gmodule-2.0 gobject-2.0 icui18n icuuc intl json-glib-1.0
 WANTLIB += m soup-3.0 sqlite3 stemmer xml2
 
 MODULES=		devel/meson \
-			lang/python \
 			x11/gnome
 
 MODGNOME_TOOLS=		gi-docgen gobject-introspection vala
-
-MODPY_BUILDDEP=		No
-MODPY_RUNDEP=		No
 
 BUILD_DEPENDS=		shells/bash-completion \
 			textproc/asciidoc \
@@ -34,10 +30,10 @@ LIB_DEPENDS=		devel/json-glib \
 			textproc/libstemmer \
 			textproc/libxml
 
-TEST_DEPENDS=		devel/py-gobject3
 
 # needed for tests
 BUILD_DEPENDS +=	devel/py-gobject3
+TEST_DEPENDS=		devel/py-gobject3
 
 CONFIGURE_ARGS=		-Dsystemd_user_services=false
 

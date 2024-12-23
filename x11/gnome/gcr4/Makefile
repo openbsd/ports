@@ -15,12 +15,9 @@ WANTLIB += pango-1.0 secret-1
 
 MODULES=		devel/dconf \
 			devel/meson \
-			lang/python \
 			x11/gnome
 
 MODGNOME_TOOLS=		gi-docgen gobject-introspection vala
-
-MODPY_RUNDEP=		No
 
 LIB_DEPENDS=		security/libgcrypt \
 			security/p11-kit \
