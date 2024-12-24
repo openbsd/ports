@@ -1,7 +1,7 @@
 Index: languages/english/english.3
 --- languages/english/english.3.orig
 +++ languages/english/english.3
-@@ -5167,6 +5167,7 @@ dirk
+@@ -5044,6 +5044,7 @@ dirk
  dirndl
  disaccredit
  disafforest
@@ -9,7 +9,7 @@ Index: languages/english/english.3
  disbranch
  disbud
  discalced
-@@ -5201,7 +5202,6 @@ dispersity
+@@ -5077,7 +5078,6 @@ dispersity
  dispersoid
  displayable
  disproven

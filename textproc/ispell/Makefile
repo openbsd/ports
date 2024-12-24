@@ -8,16 +8,14 @@ COMMENT-slovak=		ispell dictionary for Slovak
 COMMENT-spanish=	ispell dictionary for Spanish
 COMMENT-swedish=	ispell dictionary for Swedish
 
-VERSION=	3.4.00
+VERSION=	3.4.06
 DISTNAME=	ispell-${VERSION}
-REVISION=	3
 
 CATEGORIES=	textproc
 
-HOMEPAGE=	http://fmg-www.cs.ucla.edu/geoff/ispell.html
+HOMEPAGE=	https://www.cs.hmc.edu/~geoff/ispell.html
 
-SITES=		http://fmg-www.cs.ucla.edu/geoff/tars/ \
-		ftp://ftp.netsw.org/dict/tools/
+SITES=		https://www.cs.hmc.edu/~geoff/tars/
 SITES.a=	http://distcache.freebsd.org/ports-distfiles/
 SITES.b=	https://spacehopper.org/mirrors/
 SITES.c=	ftp://ftp.informatik.uni-kiel.de/pub/kiel/dicts/

@@ -1,7 +1,7 @@
 Index: deformatters/Makefile
 --- deformatters/Makefile.orig
 +++ deformatters/Makefile
-@@ -77,12 +77,12 @@ all:	$(PROGRAMS)
+@@ -80,12 +80,12 @@ all:	$(PROGRAMS)
  defmt-c: defmt-c.o
  	@. ../config.sh; \
  	  set -x; \

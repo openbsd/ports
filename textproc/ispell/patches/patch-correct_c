@@ -1,7 +1,7 @@
 Index: correct.c
 --- correct.c.orig
 +++ correct.c
-@@ -203,6 +203,9 @@ static char Rcs_Id[] =
+@@ -218,6 +218,9 @@ static char Rcs_Id[] =
   *
   */
  
@@ -9,5 +9,5 @@ Index: correct.c
 +#include <sys/stat.h>
 +#include <fcntl.h>
  #include <ctype.h>
+ #include <fcntl.h>
  #include "config.h"
- #include "ispell.h"

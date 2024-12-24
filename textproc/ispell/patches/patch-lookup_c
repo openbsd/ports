@@ -1,7 +1,7 @@
 Index: lookup.c
 --- lookup.c.orig
 +++ lookup.c
-@@ -85,6 +85,7 @@ static char Rcs_Id[] =
+@@ -98,6 +98,7 @@ static char Rcs_Id[] =
   *
   */
  

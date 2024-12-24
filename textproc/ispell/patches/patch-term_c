@@ -1,7 +1,7 @@
 Index: term.c
 --- term.c.orig
 +++ term.c
-@@ -85,6 +85,8 @@ static char Rcs_Id[] =
+@@ -94,6 +94,8 @@ static char Rcs_Id[] =
   *
   */
  
