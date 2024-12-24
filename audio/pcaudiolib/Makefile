@@ -2,9 +2,9 @@ COMMENT=		C API to different audio devices
 
 GH_ACCOUNT=		espeak-ng
 GH_PROJECT=		pcaudiolib
-GH_TAGNAME=		1.2
+GH_TAGNAME=		1.3
 
-SHARED_LIBS +=	pcaudio                   0.0 # 0.1
+SHARED_LIBS +=	pcaudio                   0.1 # 0.1
 
 CATEGORIES=		audio devel
 
