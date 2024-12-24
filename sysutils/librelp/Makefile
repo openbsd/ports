@@ -1,20 +1,18 @@
 COMMENT =	reliable event logging protocol library
 
-DISTNAME =	librelp-1.10.0
+DISTNAME =	librelp-1.11.0
 
-SHARED_LIBS +=  relp                      5.0 # 5.0
+SHARED_LIBS +=  relp                      6.0 # 6.0
 
 CATEGORIES =	sysutils
 
 HOMEPAGE =	https://www.rsyslog.com/librelp/
 
-MAINTAINER =	Remi Locherer <remi@openbsd.org>
-
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =  gmp gnutls hogweed iconv idn2 intl nettle p11-kit pthread
-WANTLIB += tasn1 unistring crypto ssl brotlidec brotlienc z zstd
+WANTLIB += tasn1 unistring crypto ssl
 
 SITES =			http://download.rsyslog.com/librelp/
 
