@@ -1,11 +1,10 @@
 COMMENT =		encrypted backup using rsync algorithm
 
-MODPY_DISTV =	3.0.2
+MODPY_DISTV =		3.0.3
 DISTNAME =		duplicity-${MODPY_DISTV}
-REVISION =		0
 
 DIST_TUPLE =		gitlab duplicity duplicity rel.${MODPY_DISTV} .
-WRKDIST =		${WRKDIR}/duplicity-rel.${MODPY_DISTV}-00c4d88aae8b765b67203fbe83db55386387ef9c
+WRKDIST =		${WRKDIR}/duplicity-rel.${MODPY_DISTV}-025b9226b29be8dbb984a06d8a8a53b6b23087c7
 
 CATEGORIES =		sysutils
 
