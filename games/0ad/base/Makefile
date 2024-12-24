@@ -1,3 +1,5 @@
+BROKEN =	venv for spidermonkey (mozjs) outdated and fails with Python 3.12
+
 COMMENT =		historical real-time strategy game
 
 DISTNAME =		0ad-${V}-alpha-unix-build
