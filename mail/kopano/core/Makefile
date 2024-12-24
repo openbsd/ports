@@ -1,3 +1,5 @@
+BROKEN=		Python 3.12 changes to unicode C API, kopano seems dead upstream
+
 # undefined ref's to libicon*, libintl* with ld.bfd
 ONLY_FOR_ARCHS=	${LLD_ARCHS}
 
