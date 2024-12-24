@@ -1,15 +1,6 @@
 Index: lib/accelerated/aarch64/elf/sha1-armv8.s
 --- lib/accelerated/aarch64/elf/sha1-armv8.s.orig
 +++ lib/accelerated/aarch64/elf/sha1-armv8.s
-@@ -49,7 +49,7 @@
- .hidden _gnutls_arm_cpuid_s
- 
- 
--.text
-+.rodata
- 
- .globl sha1_block_data_order
- .type sha1_block_data_order,%function
 @@ -1125,7 +1125,8 @@ sha1_block_armv8:
   stp x29,x30,[sp,#-16]!
   add x29,sp,#0
