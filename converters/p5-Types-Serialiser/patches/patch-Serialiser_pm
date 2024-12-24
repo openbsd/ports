@@ -1,0 +1,13 @@
+MLEHMANN ignores Perl newer than 5.22, disable feature signatures
+
+Index: Serialiser.pm
+--- Serialiser.pm.orig
++++ Serialiser.pm
+@@ -17,6 +17,7 @@ different implementations so they become interoperable
+ 
+ package Types::Serialiser;
+ 
++no feature 'signatures';
+ use common::sense; # required to suppress annoying warnings
+ 
+ our $VERSION = '1.01';

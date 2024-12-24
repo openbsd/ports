@@ -1,3 +1,5 @@
+MLEHMANN ignores Perl newer than 5.22, disable feature signatures
+
 indirect method invocation is deprecated
 
 Index: AIO.pm
@@ -12,16 +14,15 @@ Index: AIO.pm
  
  =head1 DESCRIPTION
  
-@@ -166,6 +166,8 @@ result in a runtime error).
+@@ -168,6 +168,7 @@ package IO::AIO;
  
- package IO::AIO;
- 
-+no feature 'signatures';
-+
  use Carp ();
  
++no feature 'signatures';
  use common::sense;
-@@ -931,15 +933,15 @@ sub aio_load($$;$) {
+ 
+ use base 'Exporter';
+@@ -931,15 +932,15 @@ sub aio_load($$;$) {
     my $grp = aio_group $cb;
  
     aioreq_pri $pri;
@@ -41,7 +42,7 @@ Index: AIO.pm
  
     $grp
  }
-@@ -970,62 +972,62 @@ sub aio_copy($$;$) {
+@@ -970,62 +971,62 @@ sub aio_copy($$;$) {
     my $grp = aio_group $cb;
  
     aioreq_pri $pri;
@@ -120,7 +121,7 @@ Index: AIO.pm
  
     $grp
  }
-@@ -1049,21 +1051,21 @@ sub aio_move($$;$) {
+@@ -1049,21 +1050,21 @@ sub aio_move($$;$) {
     my $grp = aio_group $cb;
  
     aioreq_pri $pri;
@@ -147,7 +148,7 @@ Index: AIO.pm
  
     $grp
  }
-@@ -1137,7 +1139,7 @@ sub aio_scandir($$;$) {
+@@ -1137,7 +1138,7 @@ sub aio_scandir($$;$) {
  
     # get a wd object
     aioreq_pri $pri;
@@ -156,7 +157,7 @@ Index: AIO.pm
        $_[0]
           or return $grp->result ();
  
-@@ -1145,7 +1147,7 @@ sub aio_scandir($$;$) {
+@@ -1145,7 +1146,7 @@ sub aio_scandir($$;$) {
  
        # stat once
        aioreq_pri $pri;
@@ -165,7 +166,7 @@ Index: AIO.pm
           return $grp->result () if $_[0];
           my $now = time;
           my $hash1 = join ":", (stat _)[0,1,3,7,9];
-@@ -1160,7 +1162,7 @@ sub aio_scandir($$;$) {
+@@ -1160,7 +1161,7 @@ sub aio_scandir($$;$) {
  
           # read the directory entries
           aioreq_pri $pri;
@@ -174,7 +175,7 @@ Index: AIO.pm
              my ($entries, $flags) = @_
                 or return $grp->result ();
  
-@@ -1214,7 +1216,7 @@ sub aio_scandir($$;$) {
+@@ -1214,7 +1215,7 @@ sub aio_scandir($$;$) {
  
              # stat the dir another time
              aioreq_pri $pri;
@@ -183,7 +184,7 @@ Index: AIO.pm
                 my $hash2 = join ":", (stat _)[0,1,3,7,9];
  
                 my $ndirs;
-@@ -1231,43 +1233,43 @@ sub aio_scandir($$;$) {
+@@ -1231,43 +1232,43 @@ sub aio_scandir($$;$) {
  
                 my (@dirs, @nondirs);
  
@@ -241,7 +242,7 @@ Index: AIO.pm
  
     $grp
  }
-@@ -1289,20 +1291,20 @@ sub aio_rmtree($;$) {
+@@ -1289,20 +1290,20 @@ sub aio_rmtree($;$) {
     my $grp = aio_group $cb;
  
     aioreq_pri $pri;
@@ -269,7 +270,7 @@ Index: AIO.pm
  
     $grp
  }
-@@ -1419,20 +1421,20 @@ sub aio_pathsync($;$) {
+@@ -1419,20 +1420,20 @@ sub aio_pathsync($;$) {
     my $grp = aio_group $cb;
  
     aioreq_pri $pri;
@@ -295,7 +296,7 @@ Index: AIO.pm
  
     $grp
  }
-@@ -1568,7 +1570,7 @@ Example:
+@@ -1568,7 +1569,7 @@ Example:
        print "all stats done\n";
     };
  
@@ -304,7 +305,7 @@ Index: AIO.pm
        (aio_stat ...),
        (aio_stat ...),
        ...;
-@@ -1766,14 +1768,14 @@ C<IO::AIO::REQ> objects:
+@@ -1766,14 +1767,14 @@ C<IO::AIO::REQ> objects:
  
     $grp->add (aio_unlink "...");
  
@@ -323,7 +324,7 @@ Index: AIO.pm
  
  This makes it very easy to create composite requests (see the source of
  C<aio_move> for an application) that work and feel like simple requests.
-@@ -1808,6 +1810,8 @@ finished will the the group itself finish.
+@@ -1808,6 +1809,8 @@ finished will the the group itself finish.
  
  =item add $grp ...
  
@@ -332,7 +333,7 @@ Index: AIO.pm
  =item $grp->add (...)
  
  Add one or more requests to the group. Any type of L<IO::AIO::REQ> can
-@@ -1877,7 +1881,7 @@ Example:
+@@ -1877,7 +1880,7 @@ Example:
        my $file = pop @files
           or return;
  

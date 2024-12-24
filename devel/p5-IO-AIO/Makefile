@@ -1,8 +1,12 @@
 COMMENT =	asynchronous Input/Output
 
 DISTNAME =	IO-AIO-4.81
+REVISION =	0
+CPAN_AUTHOR =	MLEHMANN
 
 CATEGORIES =	devel
+
+MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes

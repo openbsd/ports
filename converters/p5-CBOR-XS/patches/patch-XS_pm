@@ -1,0 +1,13 @@
+MLEHMANN ignores Perl newer than 5.22, disable feature signatures
+
+Index: XS.pm
+--- XS.pm.orig
++++ XS.pm
+@@ -64,6 +64,7 @@ vice versa.
+ 
+ package CBOR::XS;
+ 
++no feature 'signatures';
+ use common::sense;
+ 
+ our $VERSION = 1.87;

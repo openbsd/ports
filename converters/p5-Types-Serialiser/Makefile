@@ -1,15 +1,20 @@
 COMMENT =	simple data types for common serialisation formats
 
-MODULES =	cpan
-PKG_ARCH =	*
 DISTNAME =	Types-Serialiser-1.01
+REVISION =	0
+CPAN_AUTHOR =	MLEHMANN
+
 CATEGORIES =	converters
 
-CPAN_AUTHOR =	MLEHMANN
+MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes
 
-RUN_DEPENDS =	devel/p5-common-sense
+MODULES =		cpan
+
+RUN_DEPENDS =		devel/p5-common-sense
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>

@@ -1,6 +1,7 @@
 COMMENT =	concise binary object representation
 
 DISTNAME =	CBOR-XS-1.87
+REVISION =	0
 CPAN_AUTHOR =	MLEHMANN
 
 CATEGORIES =	converters

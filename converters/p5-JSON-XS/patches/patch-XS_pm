@@ -1,0 +1,13 @@
+MLEHMANN ignores Perl newer than 5.22, disable feature signatures
+
+Index: XS.pm
+--- XS.pm.orig
++++ XS.pm
+@@ -87,6 +87,7 @@ stuff). Or you can combine those features in whatever 
+ 
+ package JSON::XS;
+ 
++no feature 'signatures';
+ use common::sense;
+ 
+ our $VERSION = '4.03';
