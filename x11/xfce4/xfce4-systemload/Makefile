@@ -7,6 +7,9 @@ REVISION=	2
 # BSD
 PERMIT_PACKAGE=	Yes
 
+# C++
+COMPILER=	base-clang ports-gcc
+
 MODULES=	x11/xfce4
 MODXFCE_ICON_CACHE=	Yes
 
