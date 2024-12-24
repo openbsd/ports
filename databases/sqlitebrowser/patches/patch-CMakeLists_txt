@@ -1,3 +1,8 @@
+From f3335e3ceaea71bf2f4668116fb5bfd854c1e4f0 Mon Sep 17 00:00:00 2001
+From: Lucas Raab <tuftedocelot@fastmail.fm>
+Date: Sat, 12 Oct 2024 18:31:43 +0000
+Subject: [PATCH] Exclude OpenBSD from -ldl as libc provides it there
+
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
