@@ -1,7 +1,6 @@
 COMMENT=	digital camera frontend
 
-DISTNAME=	gtkam-1.0
-REVISION=	6
+DISTNAME=	gtkam-1.1
 
 CATEGORIES=	graphics
 
@@ -10,14 +9,14 @@ HOMEPAGE=	https://gphoto.sourceforge.net/proj/gtkam/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += X11 Xcomposite Xcursor Xdamage Xext Xfixes Xi Xinerama Xrandr
-WANTLIB += Xrender atk-1.0 c cairo exif exif-gtk expat ffi fontconfig
-WANTLIB += freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += ${COMPILER_LIBCXX} X11 Xau Xcomposite Xcursor Xdamage
+WANTLIB += Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0
+WANTLIB += c cairo exif exif-gtk expat ffi fontconfig freetype
+WANTLIB += fribidi gdk-x11-2.0 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gobject-2.0 gphoto2 gphoto2_port graphite2
-WANTLIB += gthread-2.0 gtk-x11-2.0 harfbuzz iconv intl ltdl m pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png pthread xcb
-WANTLIB += xcb-render xcb-shm z Xau Xdmcp jpeg
-WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += gtk-x11-2.0 harfbuzz iconv intl jpeg ltdl m pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png xcb
+WANTLIB += xcb-render xcb-shm z
 
 SITES=		${SITE_SOURCEFORGE:=gphoto/}
 
@@ -42,5 +41,8 @@ CONFIGURE_ARGS=	--with-gnome=no \
 		--with-gimp=no \
 		--with-bonobo=no \
 		--disable-scrollkeeper
+
+post-install:
+	rm -r ${PREFIX}/share/omf
 
 .include <bsd.port.mk>

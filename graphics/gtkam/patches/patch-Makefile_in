@@ -1,6 +1,7 @@
---- Makefile.in.orig	Fri May 27 09:33:16 2016
-+++ Makefile.in	Sat Aug 27 17:35:14 2016
-@@ -439,7 +439,7 @@ target_alias = @target_alias@
+Index: Makefile.in
+--- Makefile.in.orig
++++ Makefile.in
+@@ -441,7 +441,7 @@ target_alias = @target_alias@
  top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
