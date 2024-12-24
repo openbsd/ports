@@ -3,8 +3,8 @@ bin/egdb-add-index
 include/gdb/
 include/gdb/jit-reader.h
 @info info/annotate.info
-@info info/bfd.info
-@info info/ctf-spec.info
+@comment @info info/bfd.info
+@comment @info info/ctf-spec.info
 @info info/gdb.info
 @comment @info info/sframe-spec.info
 @info info/stabs.info
