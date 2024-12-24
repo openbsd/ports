@@ -46,6 +46,10 @@ share/liblouis/tables/Lv-Lv-g1.utb
 share/liblouis/tables/Pl-Pl-g1.utb
 share/liblouis/tables/afr-za-g1.ctb
 share/liblouis/tables/afr-za-g2.ctb
+share/liblouis/tables/akk-borger.utb
+share/liblouis/tables/akk.utb
+share/liblouis/tables/ancient-languages-borger.utb
+share/liblouis/tables/ancient-languages-us.utb
 share/liblouis/tables/ar-ar-comp8.utb
 share/liblouis/tables/ar-ar-g1-core.uti
 share/liblouis/tables/ar-ar-g1.utb
@@ -88,11 +92,13 @@ share/liblouis/tables/controlchars.cti
 share/liblouis/tables/cop-eg-comp8.utb
 share/liblouis/tables/corrections.cti
 share/liblouis/tables/countries.cti
+share/liblouis/tables/critical-apparatus.uti
 share/liblouis/tables/cs-chardefs.cti
 share/liblouis/tables/cs-comp8.utb
 share/liblouis/tables/cs-g1.ctb
 share/liblouis/tables/cs-translation.cti
 share/liblouis/tables/cs.tbl
+share/liblouis/tables/cuneiform-transliterated.utb
 share/liblouis/tables/cy-cy-g1.utb
 share/liblouis/tables/cy-cy-g2.ctb
 share/liblouis/tables/cy.tbl
@@ -206,6 +212,7 @@ share/liblouis/tables/gr-pl-comp8.uti
 share/liblouis/tables/grc-international-common.uti
 share/liblouis/tables/grc-international-composed.uti
 share/liblouis/tables/grc-international-decomposed.uti
+share/liblouis/tables/grc-international-en-composed.utb
 share/liblouis/tables/grc-international-en.utb
 share/liblouis/tables/grc-international-es.utb
 share/liblouis/tables/gu-in-g1.utb
@@ -213,8 +220,11 @@ share/liblouis/tables/gu.tbl
 share/liblouis/tables/gujarati.cti
 share/liblouis/tables/gurumuki.cti
 share/liblouis/tables/haw-us-g1.ctb
+share/liblouis/tables/hbo.utb
 share/liblouis/tables/he-IL-comp8.utb
 share/liblouis/tables/he-IL.utb
+share/liblouis/tables/he-common-consonants.uti
+share/liblouis/tables/he-common-vowels-ihbc.uti
 share/liblouis/tables/hi-in-g1.utb
 share/liblouis/tables/hi.tbl
 share/liblouis/tables/hr-chardefs.cti
@@ -260,6 +270,7 @@ share/liblouis/tables/it-it-comp6.utb
 share/liblouis/tables/it-it-comp8.utb
 share/liblouis/tables/it.tbl
 share/liblouis/tables/iu-ca-g1.ctb
+share/liblouis/tables/ja-kantenji-ucs2.utb
 share/liblouis/tables/ja-kantenji.utb
 share/liblouis/tables/ka-in-g1.utb
 share/liblouis/tables/ka.utb
@@ -330,7 +341,6 @@ share/liblouis/tables/nl-chardefs.uti
 share/liblouis/tables/nl-comp8.utb
 share/liblouis/tables/nl-print.dis
 share/liblouis/tables/nl-unicode.dis
-share/liblouis/tables/nl.tbl
 share/liblouis/tables/no-no-8dot-fallback-6dot-g0.utb
 share/liblouis/tables/no-no-8dot.utb
 share/liblouis/tables/no-no-braillo-047-01.dis
@@ -392,9 +402,11 @@ share/liblouis/tables/sl.tbl
 share/liblouis/tables/sot-za-g1.ctb
 share/liblouis/tables/sot-za-g2.ctb
 share/liblouis/tables/spaces.uti
-share/liblouis/tables/sr-chardefs.cti
+share/liblouis/tables/sr-Cyrl.ctb
+share/liblouis/tables/sr-common.cti
+share/liblouis/tables/sr-cyrletters.cti
 share/liblouis/tables/sr-g1.ctb
-share/liblouis/tables/sr.tbl
+share/liblouis/tables/sr-latletters.cti
 share/liblouis/tables/sv-1989.ctb
 share/liblouis/tables/sv-1996.ctb
 share/liblouis/tables/sv-g0.utb
@@ -406,6 +418,7 @@ share/liblouis/tables/sw-ke-g1-4.ctb
 share/liblouis/tables/sw-ke-g1-5.ctb
 share/liblouis/tables/sw-ke-g1.utb
 share/liblouis/tables/sw-ke-g2.ctb
+share/liblouis/tables/syc.utb
 share/liblouis/tables/ta-ta-g1.ctb
 share/liblouis/tables/ta.ctb
 share/liblouis/tables/ta.tbl
@@ -416,6 +429,7 @@ share/liblouis/tables/telugu.cti
 share/liblouis/tables/text_nabcc.dis
 share/liblouis/tables/th-comp8-backward.utb
 share/liblouis/tables/th-g0.utb
+share/liblouis/tables/th-g1.utb
 share/liblouis/tables/tr-g1.ctb
 share/liblouis/tables/tr-g2.ctb
 share/liblouis/tables/tr-g2.tbl
@@ -424,6 +438,7 @@ share/liblouis/tables/tr.tbl
 share/liblouis/tables/tsn-za-g1.ctb
 share/liblouis/tables/tsn-za-g2.ctb
 share/liblouis/tables/tt.utb
+share/liblouis/tables/uga.utb
 share/liblouis/tables/uk-comp.utb
 share/liblouis/tables/uk-detailed.utb
 share/liblouis/tables/uk.utb
@@ -452,11 +467,11 @@ share/liblouis/tables/wiskunde-chardefs.cti
 share/liblouis/tables/wordcx.dis
 share/liblouis/tables/xh-za-g1.utb
 share/liblouis/tables/xh-za-g2.ctb
+share/liblouis/tables/yi.utb
 share/liblouis/tables/zh-chn.ctb
 share/liblouis/tables/zh-hk.ctb
 share/liblouis/tables/zh-tw.ctb
 share/liblouis/tables/zh_CHN.tbl
-share/liblouis/tables/zh_HK.tbl
 share/liblouis/tables/zhcn-cbs.ctb
 share/liblouis/tables/zhcn-g1.ctb
 share/liblouis/tables/zhcn-g2.ctb
