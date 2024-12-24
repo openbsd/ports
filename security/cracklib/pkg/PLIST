@@ -36,6 +36,9 @@ share/locale/es/LC_MESSAGES/cracklib.mo
 share/locale/eu/LC_MESSAGES/cracklib.mo
 share/locale/fi/LC_MESSAGES/cracklib.mo
 share/locale/fr/LC_MESSAGES/cracklib.mo
+share/locale/fur/
+share/locale/fur/LC_MESSAGES/
+share/locale/fur/LC_MESSAGES/cracklib.mo
 share/locale/gu/
 share/locale/gu/LC_MESSAGES/
 share/locale/gu/LC_MESSAGES/cracklib.mo
@@ -47,6 +50,7 @@ share/locale/hu/LC_MESSAGES/cracklib.mo
 share/locale/id/LC_MESSAGES/cracklib.mo
 share/locale/it/LC_MESSAGES/cracklib.mo
 share/locale/ja/LC_MESSAGES/cracklib.mo
+share/locale/ka/LC_MESSAGES/cracklib.mo
 share/locale/kk/
 share/locale/kk/LC_MESSAGES/
 share/locale/kk/LC_MESSAGES/cracklib.mo
@@ -72,7 +76,11 @@ share/locale/pa/LC_MESSAGES/cracklib.mo
 share/locale/pl/LC_MESSAGES/cracklib.mo
 share/locale/pt/LC_MESSAGES/cracklib.mo
 share/locale/pt_BR/LC_MESSAGES/cracklib.mo
+share/locale/ro/LC_MESSAGES/cracklib.mo
 share/locale/ru/LC_MESSAGES/cracklib.mo
+share/locale/si/
+share/locale/si/LC_MESSAGES/
+share/locale/si/LC_MESSAGES/cracklib.mo
 share/locale/sk/LC_MESSAGES/cracklib.mo
 share/locale/sl/LC_MESSAGES/cracklib.mo
 share/locale/sq/
