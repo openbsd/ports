@@ -2,9 +2,8 @@ COMMENT=		compact speech synthesizer
 
 GH_ACCOUNT=		espeak-ng
 GH_PROJECT=		espeak-ng
-GH_TAGNAME=		1.51
+GH_TAGNAME=		1.52.0
 PKGNAME=		${DISTNAME:S/-ng//}
-REVISION=		2
 
 SHARED_LIBS +=	espeak-ng                 0.0 # 2.51
 
@@ -13,8 +12,8 @@ CATEGORIES=		audio devel
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c execinfo iconv m ogg pcaudio pulse
-WANTLIB += pulse-simple vorbis xcb
+WANTLIB += ${COMPILER_LIBCXX} c iconv m ogg pcaudio pulse pulse-simple
+WANTLIB += vorbis
 
 COMPILER=		base-clang ports-gcc base-gcc
 
@@ -28,8 +27,9 @@ AUTOMAKE_VERSION=	1.16
 AUTORECONF=		./autogen.sh
 
 CONFIGURE_STYLE=	autoreconf
-# upstream is doing something odd and doesn't add LDFLAGS/CXXFLAGS if CPPFLAGS is set
-CONFIGURE_ENV=		LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
+
+CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 

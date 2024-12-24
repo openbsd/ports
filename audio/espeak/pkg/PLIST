@@ -42,6 +42,7 @@ share/espeak-ng-data/et_dict
 share/espeak-ng-data/eu_dict
 share/espeak-ng-data/fa_dict
 share/espeak-ng-data/fi_dict
+share/espeak-ng-data/fo_dict
 share/espeak-ng-data/fr_dict
 share/espeak-ng-data/ga_dict
 share/espeak-ng-data/gd_dict
@@ -65,6 +66,7 @@ share/espeak-ng-data/it_dict
 share/espeak-ng-data/ja_dict
 share/espeak-ng-data/jbo_dict
 share/espeak-ng-data/ka_dict
+share/espeak-ng-data/kaa_dict
 share/espeak-ng-data/kk_dict
 share/espeak-ng-data/kl_dict
 share/espeak-ng-data/kn_dict
@@ -89,6 +91,7 @@ share/espeak-ng-data/lang/art/py
 share/espeak-ng-data/lang/art/qdb
 share/espeak-ng-data/lang/art/qya
 share/espeak-ng-data/lang/art/sjn
+share/espeak-ng-data/lang/art/xex
 share/espeak-ng-data/lang/azc/
 share/espeak-ng-data/lang/azc/nci
 share/espeak-ng-data/lang/bat/
@@ -116,6 +119,7 @@ share/espeak-ng-data/lang/esx/kl
 share/espeak-ng-data/lang/eu
 share/espeak-ng-data/lang/gmq/
 share/espeak-ng-data/lang/gmq/da
+share/espeak-ng-data/lang/gmq/fo
 share/espeak-ng-data/lang/gmq/is
 share/espeak-ng-data/lang/gmq/nb
 share/espeak-ng-data/lang/gmq/sv
@@ -128,6 +132,7 @@ share/espeak-ng-data/lang/gmw/en-GB-scotland
 share/espeak-ng-data/lang/gmw/en-GB-x-gbclan
 share/espeak-ng-data/lang/gmw/en-GB-x-gbcwmd
 share/espeak-ng-data/lang/gmw/en-GB-x-rp
+share/espeak-ng-data/lang/gmw/en-Shaw
 share/espeak-ng-data/lang/gmw/en-US
 share/espeak-ng-data/lang/gmw/en-US-nyc
 share/espeak-ng-data/lang/gmw/lb
@@ -166,6 +171,8 @@ share/espeak-ng-data/lang/jpx/ja
 share/espeak-ng-data/lang/ko
 share/espeak-ng-data/lang/map/
 share/espeak-ng-data/lang/map/haw
+share/espeak-ng-data/lang/miz/
+share/espeak-ng-data/lang/miz/mto
 share/espeak-ng-data/lang/myn/
 share/espeak-ng-data/lang/myn/quc
 share/espeak-ng-data/lang/poz/
@@ -176,6 +183,9 @@ share/espeak-ng-data/lang/qu
 share/espeak-ng-data/lang/roa/
 share/espeak-ng-data/lang/roa/an
 share/espeak-ng-data/lang/roa/ca
+share/espeak-ng-data/lang/roa/ca-ba
+share/espeak-ng-data/lang/roa/ca-nw
+share/espeak-ng-data/lang/roa/ca-va
 share/espeak-ng-data/lang/roa/es
 share/espeak-ng-data/lang/roa/es-419
 share/espeak-ng-data/lang/roa/fr
@@ -194,6 +204,7 @@ share/espeak-ng-data/lang/sem/am
 share/espeak-ng-data/lang/sem/ar
 share/espeak-ng-data/lang/sem/he
 share/espeak-ng-data/lang/sem/mt
+share/espeak-ng-data/lang/sem/ti
 share/espeak-ng-data/lang/sit/
 share/espeak-ng-data/lang/sit/cmn
 share/espeak-ng-data/lang/sit/cmn-Latn-pinyin
@@ -208,6 +219,7 @@ share/espeak-ng-data/lang/trk/
 share/espeak-ng-data/lang/trk/az
 share/espeak-ng-data/lang/trk/ba
 share/espeak-ng-data/lang/trk/cv
+share/espeak-ng-data/lang/trk/kaa
 share/espeak-ng-data/lang/trk/kk
 share/espeak-ng-data/lang/trk/ky
 share/espeak-ng-data/lang/trk/nog
@@ -225,6 +237,7 @@ share/espeak-ng-data/lang/zle/
 share/espeak-ng-data/lang/zle/be
 share/espeak-ng-data/lang/zle/ru
 share/espeak-ng-data/lang/zle/ru-LV
+share/espeak-ng-data/lang/zle/ru-cl
 share/espeak-ng-data/lang/zle/uk
 share/espeak-ng-data/lang/zls/
 share/espeak-ng-data/lang/zls/bg
@@ -281,8 +294,11 @@ share/espeak-ng-data/mbrola_ph/nl_phtrans
 share/espeak-ng-data/mbrola_ph/nz1_phtrans
 share/espeak-ng-data/mbrola_ph/pl1_phtrans
 share/espeak-ng-data/mbrola_ph/pt1_phtrans
+share/espeak-ng-data/mbrola_ph/ptbr2xex_phtrans
 share/espeak-ng-data/mbrola_ph/ptbr4_phtrans
+share/espeak-ng-data/mbrola_ph/ptbr4xex_phtrans
 share/espeak-ng-data/mbrola_ph/ptbr_phtrans
+share/espeak-ng-data/mbrola_ph/ptbrxex_phtrans
 share/espeak-ng-data/mbrola_ph/ro1_phtrans
 share/espeak-ng-data/mbrola_ph/sv2_phtrans
 share/espeak-ng-data/mbrola_ph/sv_phtrans
@@ -297,6 +313,7 @@ share/espeak-ng-data/ml_dict
 share/espeak-ng-data/mr_dict
 share/espeak-ng-data/ms_dict
 share/espeak-ng-data/mt_dict
+share/espeak-ng-data/mto_dict
 share/espeak-ng-data/my_dict
 share/espeak-ng-data/nci_dict
 share/espeak-ng-data/ne_dict
@@ -335,6 +352,7 @@ share/espeak-ng-data/sw_dict
 share/espeak-ng-data/ta_dict
 share/espeak-ng-data/te_dict
 share/espeak-ng-data/th_dict
+share/espeak-ng-data/ti_dict
 share/espeak-ng-data/tk_dict
 share/espeak-ng-data/tn_dict
 share/espeak-ng-data/tr_dict
@@ -367,6 +385,7 @@ share/espeak-ng-data/voices/!v/Michael
 share/espeak-ng-data/voices/!v/Mike
 share/espeak-ng-data/voices/!v/Mr serious
 share/espeak-ng-data/voices/!v/Nguyen
+share/espeak-ng-data/voices/!v/Reed
 share/espeak-ng-data/voices/!v/RicishayMax
 share/espeak-ng-data/voices/!v/RicishayMax2
 share/espeak-ng-data/voices/!v/RicishayMax3
@@ -397,6 +416,7 @@ share/espeak-ng-data/voices/!v/fast
 share/espeak-ng-data/voices/!v/grandma
 share/espeak-ng-data/voices/!v/grandpa
 share/espeak-ng-data/voices/!v/gustave
+share/espeak-ng-data/voices/!v/ian
 share/espeak-ng-data/voices/!v/iven
 share/espeak-ng-data/voices/!v/iven2
 share/espeak-ng-data/voices/!v/iven3
@@ -422,6 +442,7 @@ share/espeak-ng-data/voices/!v/marcelo
 share/espeak-ng-data/voices/!v/max
 share/espeak-ng-data/voices/!v/michel
 share/espeak-ng-data/voices/!v/miguel
+share/espeak-ng-data/voices/!v/mike2
 share/espeak-ng-data/voices/!v/norbert
 share/espeak-ng-data/voices/!v/pablo
 share/espeak-ng-data/voices/!v/paul
@@ -453,9 +474,13 @@ share/espeak-ng-data/voices/mb/mb-af1-en
 share/espeak-ng-data/voices/mb/mb-ar1
 share/espeak-ng-data/voices/mb/mb-ar2
 share/espeak-ng-data/voices/mb/mb-br1
+share/espeak-ng-data/voices/mb/mb-br1-xex
 share/espeak-ng-data/voices/mb/mb-br2
+share/espeak-ng-data/voices/mb/mb-br2-xex
 share/espeak-ng-data/voices/mb/mb-br3
+share/espeak-ng-data/voices/mb/mb-br3-xex
 share/espeak-ng-data/voices/mb/mb-br4
+share/espeak-ng-data/voices/mb/mb-br4-xex
 share/espeak-ng-data/voices/mb/mb-ca1
 share/espeak-ng-data/voices/mb/mb-ca2
 share/espeak-ng-data/voices/mb/mb-cn1
@@ -538,6 +563,7 @@ share/espeak-ng-data/voices/mb/mb-us1
 share/espeak-ng-data/voices/mb/mb-us2
 share/espeak-ng-data/voices/mb/mb-us3
 share/espeak-ng-data/voices/mb/mb-vz1
+share/espeak-ng-data/xex_dict
 share/espeak-ng-data/yue_dict
 share/vim/
 share/vim/addons/
