@@ -4,6 +4,8 @@ GH_ACCOUNT=		phillipberndt
 GH_PROJECT=		pqiv
 GH_TAGNAME=		2.13.2
 
+REVISION=		0
+
 MAINTAINER=		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 CATEGORIES=		graphics
@@ -16,7 +18,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += X11 atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gobject-2.0 gtk-3 harfbuzz intl m pango-1.0 pangocairo-1.0
 
-COMPILER=		base-clang ports-clang ports-gcc
+COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
 
 LIB_DEPENDS=		x11/gtk+3
 
