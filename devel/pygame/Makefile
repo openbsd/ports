@@ -11,6 +11,9 @@ HOMEPAGE=	https://www.pygame.org/
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB += SDL2 SDL2_image SDL2_mixer SDL2_ttf X11 freetype jpeg
 WANTLIB += png portmidi ${MODPY_WANTLIB}
 
