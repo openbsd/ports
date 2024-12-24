@@ -1,0 +1,15 @@
+Revert build: Repair boost vs cmake >= 3.30
+b3d10faaa7301534886721b2ca4f1da0e07d2353
+
+Index: src/cmake/externalpackages.cmake
+--- src/cmake/externalpackages.cmake.orig
++++ src/cmake/externalpackages.cmake
+@@ -68,7 +68,7 @@ if (NOT DEFINED Boost_NO_BOOST_CMAKE)
+     set (Boost_NO_BOOST_CMAKE ON)
+ endif ()
+ 
+-checked_find_package (Boost ${boost_config} REQUIRED
++checked_find_package (Boost REQUIRED
+                       VERSION_MIN 1.53
+                       COMPONENTS ${Boost_COMPONENTS}
+                       RECOMMEND_MIN 1.66
