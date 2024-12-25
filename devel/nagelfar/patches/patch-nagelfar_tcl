@@ -17,9 +17,9 @@ Index: nagelfar.tcl
 -} else {
 -    lappend auto_path $libDir
  }
- set version "Version 1.3.2 2021-02-02"
+ set version "Version 1.3.3 2022-10-27"
  #----------------------------------------------------------------------
-@@ -6475,14 +6473,7 @@ proc addOptionsMenu {m} {
+@@ -6495,14 +6493,7 @@ proc addOptionsMenu {m} {
  #----------------------------------------------------------------------
  
  proc PluginSearchPath {} {

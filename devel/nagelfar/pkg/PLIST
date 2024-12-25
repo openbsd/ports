@@ -1,5 +1,5 @@
 bin/nagelfar
-lib/tcl/modules/85/textSearch-0.4.tm
+lib/tcl/modules/86/textSearch-0.5.tm
 libdata/nagelfar/
 libdata/nagelfar/packagedb/
 libdata/nagelfar/packagedb/aesdb.tcl
@@ -39,6 +39,7 @@ share/doc/nagelfar/plugins.txt
 share/doc/nagelfar/syntaxdatabases.txt
 share/doc/nagelfar/syntaxtokens.txt
 share/doc/textsearch/
+share/doc/textsearch/licence.terms
 share/doc/textsearch/readme.txt
 share/examples/textsearch/
 share/examples/textsearch/demo.tcl
