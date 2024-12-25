@@ -2,7 +2,7 @@ COMMENT=		companion library to GObject and Gtk+
 
 GNOME_PROJECT=		libdazzle
 GNOME_VERSION=		3.44.0
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS += dazzle-1.0                1.2 # 0
 
@@ -16,6 +16,7 @@ WANTLIB += gtk-3 intl m pango-1.0
 
 # -std=gnu11
 COMPILER=		base-clang ports-gcc ports-clang
+COMPILER_LANGS=		c
 
 MODULES=		devel/meson \
 			x11/gnome
