@@ -1,6 +1,6 @@
 COMMENT =		high-level widget set for Tcl/Tk
 
-DISTNAME =		bwidget-1.9.16
+DISTNAME =		bwidget-1.10.1
 CATEGORIES =		x11
 HOMEPAGE =		https://core.tcl-lang.org/bwidget/
 MAINTAINER =		Stuart Cassoff <stwo@users.sourceforge.net>
