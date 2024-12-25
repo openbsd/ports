@@ -30,6 +30,7 @@ share/locale/ie/LC_MESSAGES/xfmpc.mo
 share/locale/is/LC_MESSAGES/xfmpc.mo
 share/locale/it/LC_MESSAGES/xfmpc.mo
 share/locale/ja/LC_MESSAGES/xfmpc.mo
+share/locale/kk/LC_MESSAGES/xfmpc.mo
 share/locale/ko/LC_MESSAGES/xfmpc.mo
 share/locale/lt/LC_MESSAGES/xfmpc.mo
 share/locale/ms/LC_MESSAGES/xfmpc.mo
@@ -39,6 +40,7 @@ share/locale/oc/LC_MESSAGES/xfmpc.mo
 share/locale/pl/LC_MESSAGES/xfmpc.mo
 share/locale/pt/LC_MESSAGES/xfmpc.mo
 share/locale/pt_BR/LC_MESSAGES/xfmpc.mo
+share/locale/ro/LC_MESSAGES/xfmpc.mo
 share/locale/ru/LC_MESSAGES/xfmpc.mo
 share/locale/si/LC_MESSAGES/xfmpc.mo
 share/locale/sk/LC_MESSAGES/xfmpc.mo
