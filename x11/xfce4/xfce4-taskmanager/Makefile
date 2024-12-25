@@ -1,8 +1,7 @@
 COMMENT=	Xfce4 task manager and system monitor
 
-XFCE_VERSION=	1.5.7
+XFCE_VERSION=	1.5.8
 XFCE_GOODIE=	xfce4-taskmanager
-REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
