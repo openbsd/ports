@@ -1,0 +1,15 @@
+Fix crashes on startup.
+Taken from upstream commit 0995b1a180e24ebc0383621d3d5bfaff98e1f877.
+
+Index: src/pgp/gpg.c
+--- src/pgp/gpg.c.orig
++++ src/pgp/gpg.c
+@@ -889,7 +889,8 @@ out:
+ static ProfPGPKey*
+ _gpgme_key_to_ProfPGPKey(gpgme_key_t key)
+ {
+-    if (key == NULL) {
++    if (key == NULL || key->uids == NULL
++        || key->subkeys == NULL || key->uids->uid == NULL) {
+         return NULL;
+     }
