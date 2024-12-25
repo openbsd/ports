@@ -2,9 +2,8 @@ ONLY_FOR_ARCHS=	${APM_ARCHS}
 
 COMMENT=	Xfce4 battery monitor panel plugin
 
-XFCE_VERSION=	1.1.5
+XFCE_VERSION=	1.1.6
 XFCE_PLUGIN=	battery
-REVISION=	1
 
 # BSD
 PERMIT_PACKAGE=	Yes
@@ -18,7 +17,7 @@ WANTLIB+= pcre2-8 pixman-1 png pthread startup-notification-1
 WANTLIB+= xcb xcb-render xcb-shm xcb-util xfce4ui-2 xfce4util z
 WANTLIB+= atk-bridge-2.0 cairo-gobject epoxy gdk-3 gtk-3 iconv intl
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += Xau Xdmcp execinfo jpeg atspi dbus-1 gthread-2.0 xfconf-0
+WANTLIB += Xau Xdmcp jpeg atspi dbus-1 gthread-2.0 xfconf-0
 WANTLIB += epoll-shim gtk-layer-shell wayland-client wayland-cursor
 WANTLIB += wayland-egl xkbcommon
 
