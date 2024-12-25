@@ -9,7 +9,7 @@ cf https://groups.google.com/g/scintilla-interest/c/xPXquJUIXo8/m/BLXBpTTgBwAJ
 Index: src/RunStyles.cxx
 --- src/RunStyles.cxx.orig
 +++ src/RunStyles.cxx
-@@ -307,7 +307,7 @@ void RunStyles<DISTANCE, STYLE>::Check() const {
+@@ -321,7 +321,7 @@ void RunStyles<DISTANCE, STYLE>::Check() const {
  
  template class Scintilla::Internal::RunStyles<int, int>;
  template class Scintilla::Internal::RunStyles<int, char>;
