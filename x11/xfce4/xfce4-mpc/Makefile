@@ -1,8 +1,7 @@
 COMMENT=	Xfce4 mpd client panel plugin
 
-XFCE_VERSION=	0.5.3
+XFCE_VERSION=	0.5.5
 XFCE_PLUGIN=	mpc
-REVISION=	0
 
 # BSD-ISC
 PERMIT_PACKAGE=	Yes
@@ -20,7 +19,7 @@ WANTLIB += xcb xcb-render xcb-shm xfce4util z xcb-util xfce4ui-2
 WANTLIB += ICE SM X11-xcb ffi startup-notification-1
 WANTLIB += harfbuzz pthread graphite2 iconv intl
 WANTLIB += atk-bridge-2.0 cairo-gobject epoxy gdk-3 gtk-3
-WANTLIB += Xau Xdmcp execinfo jpeg atspi dbus-1 gthread-2.0 xfconf-0
+WANTLIB += Xau Xdmcp jpeg atspi dbus-1 gthread-2.0 xfconf-0
 WANTLIB += epoll-shim gtk-layer-shell wayland-client wayland-cursor
 WANTLIB += wayland-egl xkbcommon ${COMPILER_LIBCXX}
 
