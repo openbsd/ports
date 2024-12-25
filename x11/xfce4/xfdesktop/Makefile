@@ -1,6 +1,7 @@
 COMMENT=	Xfce4 desktop manager
 
 XFCE_PROJECT=	xfdesktop
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -34,7 +35,7 @@ WANTLIB += m notify pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre2-8 pixman-1 png pthread startup-notification-1 thunarx-3
 WANTLIB += wnck-3 xcb xcb-util xcb-render xcb-shm xfce4ui-2
 WANTLIB += xfce4util xfconf-0 z harfbuzz graphite2 iconv intl
-WANTLIB += Xau Xdmcp execinfo jpeg display-info xfce4kbd-private-3 yaml-0
+WANTLIB += Xau Xdmcp jpeg display-info xfce4kbd-private-3 yaml-0
 WANTLIB += atk-bridge-2.0 cairo-gobject epoxy gdk-3 gtk-3
 WANTLIB += epoll-shim gtk-layer-shell wayland-client wayland-cursor
 WANTLIB += wayland-egl xfce4windowing-0 xfce4windowingui-0 xkbcommon

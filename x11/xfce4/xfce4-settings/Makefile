@@ -1,6 +1,7 @@
 COMMENT=	Xfce4 settings helpers
 
 XFCE_PROJECT=	xfce4-settings
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -33,7 +34,7 @@ WANTLIB += harfbuzz graphite2 lzma iconv intl fribidi
 WANTLIB += atk-bridge-2.0 cairo-gobject epoxy exo-2 gdk-3
 WANTLIB += gtk-3 xfce4kbd-private-3 xfce4ui-2
 WANTLIB += gtk-layer-shell wayland-client wayland-cursor
-WANTLIB += wayland-egl xkbcommon Xau Xdmcp execinfo epoll-shim
+WANTLIB += wayland-egl xkbcommon Xau Xdmcp epoll-shim
 WANTLIB += ${COMPILER_LIBCXX}
 
 FAKE_FLAGS =	autostartdir=${PREFIX}/share/examples/xfce4-settings \

@@ -1,6 +1,7 @@
 COMMENT=	Xfce4 extension library
 
 XFCE_PROJECT=	exo
+REVISION=	0
 
 SHARED_LIBS=	exo-2	1.1 # 1.0
 
@@ -18,7 +19,7 @@ LIB_DEPENDS=	x11/xfce4/libxfce4ui>=4.15.1 \
 
 FAKE_FLAGS=	defaultsdir=${PREFIX}/share/examples/exo
 
-WANTLIB=	ICE SM X11 Xcomposite Xcursor Xdamage Xext Xau Xdmcp execinfo jpeg \
+WANTLIB=	ICE SM X11 Xcomposite Xcursor Xdamage Xext Xau Xdmcp jpeg \
 		Xfixes Xi Xinerama Xrandr Xrender fribidi atk-1.0 atspi c cairo \
 		dbus-1 expat fontconfig freetype gdk_pixbuf-2.0 gio-2.0 glib-2.0 \
 		gmodule-2.0 gobject-2.0 gthread-2.0 xcb-util xfce4ui-2 \

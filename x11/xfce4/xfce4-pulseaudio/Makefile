@@ -2,6 +2,7 @@ COMMENT=	Xfce4 pulseaudio control line panel plugin
 
 XFCE_VERSION=	0.4.9
 XFCE_PLUGIN=	pulseaudio
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -27,7 +28,7 @@ WANTLIB += pulse-mainloop-glib sndfile startup-notification-1 vorbis
 WANTLIB += vorbisenc wnck-3 xcb xcb-render xcb-shm xcb-util xfce4ui-2
 WANTLIB += xfce4util xfconf-0 z Xau Xdmcp jpeg opus mp3lame mpg123
 WANTLIB += display-info epoll-shim wayland-client wayland-cursor
-WANTLIB += wayland-egl xfce4windowing-0 xkbcommon
+WANTLIB += wayland-egl xfce4windowing-0 xkbcommon gtk-layer-shell
 WANTLIB += canberra ltdl vorbisfile ${COMPILER_LIBCXX}
 
 .include <bsd.port.mk>

@@ -2,6 +2,7 @@ COMMENT =	Xfce4 screensaver
 
 XFCE_GOODIE =	xfce4-screensaver
 XFCE_VERSION =	4.18.4
+REVISION =	0
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
@@ -29,7 +30,7 @@ WANTLIB += pcre2-8 pixman-1 png pthread startup-notification-1 xcb
 WANTLIB += xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-render xcb-shm
 WANTLIB += xcb-sync xcb-util xcb-xfixes xfce4ui-2 xfce4util xfconf-0
 WANTLIB += xkbfile xklavier xml2 xshmfence z harfbuzz dbus-glib-1 wnck-3
-WANTLIB += Xau Xdmcp execinfo jpeg
+WANTLIB += Xau Xdmcp jpeg
 WANTLIB += epoll-shim wayland-client wayland-cursor wayland-egl
 WANTLIB += xcb-randr xkbcommon
 WANTLIB += ${COMPILER_LIBCXX}

@@ -1,6 +1,7 @@
 COMMENT=	Xfce4 file manager
 
 XFCE_PROJECT=	thunar
+REVISION=	0
 
 SHARED_LIBS=	thunarx-3	0.2
 
@@ -10,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 X11-xcb Xau Xcomposite
 WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
 WANTLIB += Xrender atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
-WANTLIB += dbus-1 epoll-shim epoxy execinfo exif exo-2 expat ffi
+WANTLIB += dbus-1 epoll-shim epoxy exif exo-2 expat ffi
 WANTLIB += fontconfig freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0
 WANTLIB += gtk-3 harfbuzz iconv intl jpeg m notify pango-1.0 pangocairo-1.0

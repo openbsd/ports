@@ -1,6 +1,7 @@
 COMMENT=	Xfce4 session manager
 
 XFCE_PROJECT=	xfce4-session
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -35,7 +36,7 @@ WANTLIB += startup-notification-1 wnck-3 xcb xcb-util
 WANTLIB += xcb-render xcb-shm xfce4ui-2 xfce4util xfconf-0 z
 WANTLIB += harfbuzz graphite2 polkit-gobject-1 iconv intl
 WANTLIB += atk-bridge-2.0 cairo-gobject epoxy gdk-3 gtk-3
-WANTLIB += Xau Xdmcp display-info execinfo jpeg
+WANTLIB += Xau Xdmcp display-info jpeg
 WANTLIB += epoll-shim gtk-layer-shell wayland-client wayland-cursor
 WANTLIB += wayland-egl xfce4windowing-0 xkbcommon
 WANTLIB += ${COMPILER_LIBCXX}

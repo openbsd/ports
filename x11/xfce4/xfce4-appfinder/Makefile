@@ -1,6 +1,7 @@
 COMMENT=	Xfce4 application finder
 
 XFCE_PROJECT=	xfce4-appfinder
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -21,7 +22,7 @@ WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
 WANTLIB += harfbuzz iconv intl m pango-1.0 pangocairo-1.0 pangoft2-1.0
 WANTLIB += pcre2-8 pixman-1 png pthread startup-notification-1 xcb
 WANTLIB += xcb-render xcb-shm xcb-util xfce4ui-2 xfce4util xfconf-0
-WANTLIB += Xau Xdmcp atspi dbus-1 execinfo jpeg z
+WANTLIB += Xau Xdmcp atspi dbus-1 jpeg z
 WANTLIB += epoll-shim wayland-client wayland-cursor wayland-egl
 WANTLIB += xkbcommon
 WANTLIB += ${COMPILER_LIBCXX}

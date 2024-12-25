@@ -1,6 +1,7 @@
 COMMENT =	Xfce4 power manager
 
 XFCE_PROJECT =	xfce4-power-manager
+REVISION =	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -34,7 +35,7 @@ WANTLIB += png pthread startup-notification-1 xcb
 WANTLIB += xcb-util xcb-render xcb-shm xfce4panel-2.0 xfce4ui-2
 WANTLIB += xfce4util xfconf-0 z upower-glib iconv intl
 WANTLIB += atk-bridge-2.0 cairo-gobject epoxy gdk-3 gtk-3 fribidi
-WANTLIB += epoll-shim execinfo gtk-layer-shell jpeg polkit-gobject-1
+WANTLIB += epoll-shim gtk-layer-shell jpeg polkit-gobject-1
 WANTLIB += wayland-client wayland-cursor wayland-egl xkbcommon
 WANTLIB += ${COMPILER_LIBCXX}
 

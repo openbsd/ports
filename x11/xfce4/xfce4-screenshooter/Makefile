@@ -2,7 +2,7 @@ COMMENT=	Xfce4 desktop screenshot panel plugin
 
 XFCE_VERSION=	1.11.1
 XFCE_GOODIE=	xfce4-screenshooter
-REVISION=	0
+REVISION=	1
 
 PORTROACH=	limitw:1,even
 
@@ -28,7 +28,7 @@ MODXFCE_WANTLIB =	xfce4panel-2.0
 
 WANTLIB += ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender fribidi
-WANTLIB += atk-1.0 c cairo execinfo expat ffi fontconfig freetype gdk-3
+WANTLIB += atk-1.0 c cairo expat ffi fontconfig freetype gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 gtk-3 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png pthread

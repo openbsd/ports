@@ -2,6 +2,7 @@ COMMENT=	Xfce4 simple text editor
 
 XFCE_VERSION=	0.6.3
 XFCE_GOODIE=	mousepad
+REVISION=	0
 
 SHARED_LIBS +=	mousepad	1.0 # 0.0
 
@@ -29,7 +30,7 @@ WANTLIB += aspell enchant-2 gspell-1 jpeg gtk-3 gtksourceview-4 harfbuzz iconv
 WANTLIB += icudata icuuc intl lzma m pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8
 WANTLIB += pixman-1 png pthread xcb xcb-render xcb-shm
 WANTLIB += xml2 z ${COMPILER_LIBCXX}
-WANTLIB += Xau Xdmcp execinfo atspi dbus-1
+WANTLIB += Xau Xdmcp atspi dbus-1
 WANTLIB += ICE SM X11-xcb gthread-2.0 startup-notification-1 xcb-util
 WANTLIB += xfce4kbd-private-3 xfce4ui-2 xfce4util xfconf-0
 WANTLIB += epoll-shim wayland-client wayland-cursor wayland-egl
