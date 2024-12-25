@@ -1,8 +1,7 @@
 COMMENT=	Xfce4 terminal
 
-XFCE_VERSION=	1.1.3
+XFCE_VERSION=	1.1.4
 XFCE_GOODIE=	xfce4-terminal
-REVISION=	1
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
