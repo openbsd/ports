@@ -15,6 +15,7 @@ share/locale/en_AU/LC_MESSAGES/xfce4-mixer.mo
 share/locale/en_CA/LC_MESSAGES/xfce4-mixer.mo
 share/locale/en_GB/LC_MESSAGES/xfce4-mixer.mo
 share/locale/es/LC_MESSAGES/xfce4-mixer.mo
+share/locale/et/LC_MESSAGES/xfce4-mixer.mo
 share/locale/eu/LC_MESSAGES/xfce4-mixer.mo
 share/locale/fa_IR/LC_MESSAGES/xfce4-mixer.mo
 share/locale/fi/LC_MESSAGES/xfce4-mixer.mo
@@ -59,9 +60,6 @@ share/locale/ur_PK/LC_MESSAGES/xfce4-mixer.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-mixer.mo
 share/locale/zh_HK/LC_MESSAGES/xfce4-mixer.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-mixer.mo
-share/pixmaps/xfce4-mixer/
-share/pixmaps/xfce4-mixer/chain-broken.png
-share/pixmaps/xfce4-mixer/chain.png
 share/xfce4/mixer/
 share/xfce4/mixer/icons/
 share/xfce4/mixer/icons/hicolor/
