@@ -44,6 +44,7 @@ share/locale/oc/LC_MESSAGES/xfce4-genmon-plugin.mo
 share/locale/pl/LC_MESSAGES/xfce4-genmon-plugin.mo
 share/locale/pt/LC_MESSAGES/xfce4-genmon-plugin.mo
 share/locale/pt_BR/LC_MESSAGES/xfce4-genmon-plugin.mo
+share/locale/ro/LC_MESSAGES/xfce4-genmon-plugin.mo
 share/locale/ru/LC_MESSAGES/xfce4-genmon-plugin.mo
 share/locale/sk/LC_MESSAGES/xfce4-genmon-plugin.mo
 share/locale/sl/LC_MESSAGES/xfce4-genmon-plugin.mo
@@ -58,5 +59,20 @@ share/locale/ur/LC_MESSAGES/xfce4-genmon-plugin.mo
 share/locale/ur_PK/LC_MESSAGES/xfce4-genmon-plugin.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-genmon-plugin.mo
 share/locale/zh_TW/LC_MESSAGES/xfce4-genmon-plugin.mo
+share/xfce4/genmon/
+share/xfce4/genmon/scripts/
+share/xfce4/genmon/scripts/datetime
+share/xfce4/genmon/scripts/disktemp
+share/xfce4/genmon/scripts/dkspuse
+share/xfce4/genmon/scripts/gmail
+share/xfce4/genmon/scripts/googcal
+share/xfce4/genmon/scripts/migrate_to_xfconf.sh
+share/xfce4/genmon/scripts/monBandwidth
+share/xfce4/genmon/scripts/monBat
+share/xfce4/genmon/scripts/monCPU
+share/xfce4/genmon/scripts/monTime
+share/xfce4/genmon/scripts/monUSB
+share/xfce4/genmon/scripts/monWIFI
+share/xfce4/genmon/scripts/sysstat
 share/xfce4/panel/plugins/genmon.desktop
 @tag gtk-update-icon-cache %D/share/icons/hicolor
