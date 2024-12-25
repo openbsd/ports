@@ -3,7 +3,7 @@ COMMENT =	fast compression/decompression library
 GH_TAGNAME =	1.1.10
 GH_PROJECT =	snappy
 GH_ACCOUNT =	google
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	snappy	3.0
 
@@ -38,7 +38,12 @@ CXXFLAGS +=		-I${LOCALBASE}/include
 MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 # expects submodule/cannot use system library
-DIST_TUPLE =		github	google	googletest	e40661d89b051e9ef4eb8a2420b74bf78b39ef41 \
-			third_party/googletest/	# BSD
+BUILD_DEPENDS =		devel/gtest:patch
+GTEST_WRKSRC =		${WRKDIR}/devel/gtest/googletest-1.15.2
+GTEST_THIRD =		${WRKSRC}/third_party/googletest
+
+post-extract:
+	rmdir ${GTEST_THIRD}
+	ln -sf ${GTEST_WRKSRC} ${GTEST_THIRD}
 
 .include <bsd.port.mk>

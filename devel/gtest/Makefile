@@ -1,4 +1,6 @@
-# match version in archivers/draco when updating
+# when updating, don't forget to bump exact versions in
+# - archivers/draco
+# - archivers/snappy
 
 COMMENT =	C++ unit test framework
 
