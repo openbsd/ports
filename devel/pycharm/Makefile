@@ -1,7 +1,6 @@
 COMMENT=		Python IDE based on IntelliJ IDEA
 
-V=			2024.1.4
-REVISION=		0
+V=			2024.3.1
 DISTNAME=		pycharm-community-${V}
 PKGNAME=		pycharm-${V}
 CATEGORIES=		devel
