@@ -1,0 +1,12 @@
+Index: openpam/lib/libpam/openpam_dynamic.c
+--- openpam/lib/libpam/openpam_dynamic.c.orig
++++ openpam/lib/libpam/openpam_dynamic.c
+@@ -235,6 +235,8 @@ openpam_dynamic(const char *modname)
+ 		else
+ 			len = snprintf(modpath, sizeof modpath, "%s/%s%s.%d",
+ 			    *path, modname, PAM_SOEXT, LIB_MAJ);
++		if (!has_ver)
++			dot = strrchr(modpath, '.') - modpath;
+ 		/* check for overflow */
+ 		if (len < 0 || (unsigned int)len >= sizeof modpath) {
+ 			errno = ENOENT;

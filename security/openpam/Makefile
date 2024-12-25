@@ -3,6 +3,7 @@ COMMENT=	Pluggable Authentication Module
 V=		20241220
 DISTNAME=	openbsd_pam-${V}
 PKGNAME=	openpam-${V}
+REVISION=	0
 
 GH_ACCOUNT=	rnagy
 GH_PROJECT=	openbsd_pam
