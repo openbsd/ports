@@ -1,6 +1,6 @@
 COMMENT =	GVfs mountpoint manager
 
-XFCE_VERSION =	0.5.3
+XFCE_VERSION =	0.5.4
 XFCE_GOODIE =	gigolo
 
 CATEGORIES =	x11
@@ -19,8 +19,8 @@ CONFIGURE_STYLE =	gnu
 RUN_DEPENDS +=	x11/gnome/gvfs
 LIB_DEPENDS =	x11/gtk+3
 
-WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3
+WANTLIB += atk-1.0 c cairo cairo-gobject iconv gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-3
-WANTLIB += harfbuzz intl pango-1.0 pangocairo-1.0
+WANTLIB += harfbuzz intl pango-1.0 pangocairo-1.0 pthread
 
 .include <bsd.port.mk>
