@@ -11,6 +11,9 @@ CATEGORIES =		games
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB =		SDL2 X11 c jpeg m z
 
 LIB_DEPENDS =		devel/sdl2 \
