@@ -7,7 +7,7 @@ TAG =			v${PROTOBUF_VERSION:S/rc-/rc/}
 DISTNAME =		protobuf-${PROTOBUF_VERSION}
 PKGNAME =		protobuf-${V:S/-//g}
 DISTFILES =		protobuf-${PROTOBUF_VERSION}.tar.gz
-REVISION =		0
+REVISION =		1
 
 PROTOC_VERSION =	${PROTOBUF_VERSION}.0
 SUBST_VARS +=		PROTOC_VERSION
@@ -70,6 +70,9 @@ CONFIGURE_ARGS +=	-Dprotobuf_BUILD_SHARED_LIBS=ON
 # Tests have been broken for a long time.
 CONFIGURE_ARGS +=	-Dprotobuf_BUILD_TESTS=OFF
 NO_TEST =		Yes
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/src/google/protobuf/compiler/command_line_interface.cc
 
 post-install:
 	${INSTALL_DATA}	${WRKSRC}/go/go_features.proto ${PREFIX}/include/google/protobuf
