@@ -1,5 +1,5 @@
-@pkgpath net/py-botocore,python3
 @conflict py-botocore-*
+@pkgpath net/py-botocore,python3
 lib/python${MODPY_VERSION}/site-packages/botocore/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/botocore-${MODPY_DISTV}.dist-info/LICENSE.txt
