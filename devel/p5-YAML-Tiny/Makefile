@@ -1,6 +1,6 @@
 COMMENT =	read/write YAML files with as little code as possible
 
-DISTNAME =	YAML-Tiny-1.75
+DISTNAME =	YAML-Tiny-1.76
 FIX_EXTRACT_PERMISSIONS =	Yes
 
 CATEGORIES =	devel
