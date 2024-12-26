@@ -1,8 +1,8 @@
 
 COMMENT =	packages that provide templated software licenses
 
-DISTNAME =	Software-License-0.104005
-CPAN_AUTHOR =	RJBS
+DISTNAME =	Software-License-0.104006
+CPAN_AUTHOR =	LEONT
 
 CATEGORIES =	devel
 
