@@ -1,12 +1,12 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -80,7 +80,7 @@ functionality while keeping current with the Soulseek 
+@@ -66,7 +66,7 @@ if __name__ == "__main__":
          data_files=[
-             ("share/applications", ["data/%s.desktop" % config.application_id]),
-             ("share/metainfo", ["data/%s.appdata.xml" % config.application_id]),
+             ("share/applications", ["data/org.nicotine_plus.Nicotine.desktop"]),
+             ("share/metainfo", ["data/org.nicotine_plus.Nicotine.appdata.xml"]),
 -            ("share/man/man1", ["data/nicotine.1"]),
 +            ("man/man1", ["data/nicotine.1"]),
              ("share/icons/hicolor/16x16/apps",
-                 ["pynicotine/gtkgui/icons/hicolor/16x16/apps/%s.png" % config.application_id]),
-             ("share/icons/hicolor/24x24/apps",
+                 ["pynicotine/gtkgui/icons/hicolor/16x16/apps/org.nicotine_plus.Nicotine.svg"]),
+             ("share/icons/hicolor/16x16@2/apps",
