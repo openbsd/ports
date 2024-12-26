@@ -22,12 +22,12 @@ MODULES=	lang/python fortran
 MODFORTRAN_COMPILER=	gfortran
 
 MODPY_PI=	Yes
-MODPY_PYBUILD=	setuptools
+MODPY_PYBUILD=	mesonpy
 
 BUILD_DEPENDS=	${RUN_DEPENDS} \
 		${MODFORTRAN_BUILD_DEPENDS} \
-		devel/meson-python \
 		devel/py-pybind11 \
+		devel/py-setuptools \
 		lang/cython \
 		lang/pythran
 

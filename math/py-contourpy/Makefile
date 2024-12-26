@@ -1,9 +1,9 @@
 COMMENT =	library for calculating contours of 2D quadrilateral grids
 
 MODPY_DISTV =	1.2.1
-DISTNAME =		contourpy-${MODPY_DISTV}
-PKGNAME = 		py-${DISTNAME}
-REVISION =              1
+DISTNAME =	contourpy-${MODPY_DISTV}
+PKGNAME =	py-${DISTNAME}
+REVISION =	1
 
 CATEGORIES =	math
 
@@ -18,10 +18,9 @@ COMPILER=	base-clang ports-gcc
 MODULES =	lang/python
 
 MODPY_PI =	Yes
-MODPY_PYBUILD =	setuptools
+MODPY_PYBUILD =	mesonpy
 
-BUILD_DEPENDS =	devel/py-pybind11 \
-		devel/meson-python
+BUILD_DEPENDS =	devel/py-pybind11
 
 RUN_DEPENDS =	math/py-numpy
 

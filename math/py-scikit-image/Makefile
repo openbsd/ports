@@ -1,6 +1,6 @@
 COMMENT =		image processing routines for SciPy
 
-MODPY_DISTV =	0.23.2
+MODPY_DISTV =		0.23.2
 DISTNAME =		scikit_image-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/}
 REVISION =		0
@@ -20,12 +20,12 @@ COMPILER =		base-clang ports-gcc
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		mesonpy
 MODPY_ADJ_FILES =	skimage/_build_utils/*.py
 
 BUILD_DEPENDS =		lang/cython \
 			lang/pythran \
-			devel/meson-python \
+			devel/py-setuptools \
 			devel/py-wheel \
 			math/py-numpy
 

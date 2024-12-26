@@ -1,6 +1,6 @@
 COMMENT =		wavelet transform module
 
-MODPY_DISTV =	1.5.0
+MODPY_DISTV =		1.5.0
 DISTNAME =		pywavelets-${MODPY_DISTV}
 PKGNAME =		py-PyWavelets-${MODPY_DISTV}
 REVISION =		2
@@ -15,10 +15,9 @@ WANTLIB += m
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		mesonpy
 
-BUILD_DEPENDS =		devel/meson-python \
-			lang/cython \
+BUILD_DEPENDS =		lang/cython \
 			math/py-numpy
 
 RUN_DEPENDS =		math/py-numpy
