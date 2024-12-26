@@ -12,6 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_PI =	Yes
+# uses own in-tree backend which wraps setuptools
 MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS =	devel/py-certifi \

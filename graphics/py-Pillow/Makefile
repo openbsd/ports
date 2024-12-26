@@ -20,7 +20,9 @@ WANTLIB += webp webpdemux webpmux xcb z
 
 MODULES=	lang/python
 MODPY_PI=	Yes
+# uses own in-tree backend which wraps setuptools
 MODPY_PYBUILD=	setuptools
+
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 # PyQt-related tests segfault
