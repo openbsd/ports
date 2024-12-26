@@ -150,8 +150,11 @@ _MODPY_EXPECTED_BACKEND = hatchling
 BUILD_DEPENDS +=	devel/py-hatchling
 .  elif ${MODPY_PYBUILD} == jupyter_packaging
 BUILD_DEPENDS +=	devel/py-jupyter_packaging
+_MODPY_EXPECTED_BACKEND = setuptools
 .  elif ${MODPY_PYBUILD} == maturin
 BUILD_DEPENDS +=	devel/maturin
+.  elif ${MODPY_PYBUILD} == mesonpy
+BUILD_DEPENDS +=	devel/meson-python
 .  elif ${MODPY_PYBUILD} == pdm
 BUILD_DEPENDS +=	devel/py-pdm-backend
 .  elif ${MODPY_PYBUILD} == poetry-core
@@ -174,7 +177,7 @@ MODULES +=		devel/cargo
 .      endif
 .    endif
 .  elif !${MODPY_PYBUILD:L:Mother}
-ERRORS +=		"Fatal: unknown MODPY_PYBUILD value (flit, flit_core, flit_scm, hatch-vcs, hatchling, jupyter_packaging, pdm, maturin, other, poetry-core, setuptools, setuptools_scm, setuptools-rust)"
+ERRORS +=		"Fatal: unknown MODPY_PYBUILD value (flit, flit_core, flit_scm, hatch-vcs, hatchling, jupyter_packaging, pdm, maturin, mesonpy, other, poetry-core, setuptools, setuptools_scm, setuptools-rust)"
 .  endif
 _MODPY_EXPECTED_BACKEND ?= ${MODPY_PYBUILD}
 .else
