@@ -1,7 +1,7 @@
 COMMENT =	libtorrent settings modification plugin for deluge
 
 MODPY_DISTV =	2.0.0
-REVISION =	1
+REVISION =	2
 
 GH_ACCOUNT =	ratanakvlun
 GH_PROJECT =	deluge-ltconfig
@@ -12,15 +12,15 @@ CATEGORIES =	net
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
-RUN_DEPENDS =		net/deluge
+MODULES =	lang/python
+BUILD_DEPENDS =	devel/py-setuptools
+RUN_DEPENDS =	net/deluge
 
-post-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} ./${MODPY_SETUP} \
-		bdist_egg
+do-build:
+	cd ${WRKSRC} && \
+		${SETENV} ${MAKE_ENV} ${MODPY_BIN} setup.py bdist_egg
 
-post-install:
+do-install:
 	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_SITEPKG}/deluge/plugins
 	${INSTALL_DATA} ${WRKBUILD}/dist/*.egg \
 		${WRKINST}${MODPY_SITEPKG}/deluge/plugins
