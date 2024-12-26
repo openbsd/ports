@@ -5,6 +5,8 @@ GH_PROJECT =	wasi-libc
 GH_COMMIT =	9c17f5235c7977cb2a000990eb8c605a25a80adf
 DISTNAME =	wasi-libc-0.20231121
 
+REVISION =	0
+
 DISTFILES =	${GH_DISTFILE}
 DISTFILES.h = 	wasi-libc-llvm13-std-headers.tar.gz
 SITES.h =	https://nerd.hu/distfiles/
@@ -15,6 +17,7 @@ CATEGORIES =	lang
 PERMIT_PACKAGE =	Yes
 
 COMPILER =	ports-clang
+COMPILER_LANGS =c
 USE_GMAKE =	yes
 ALL_TARGET =	finish
 
