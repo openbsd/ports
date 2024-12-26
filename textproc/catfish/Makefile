@@ -1,10 +1,8 @@
 COMMENT =	versatile file searching tool
 
 XFCE_GOODIE =	catfish
-XFCE_VERSION =	4.18.0
-MODPY_DISTV =	${XFCE_VERSION}
+XFCE_VERSION =	4.20.0
 CATEGORIES =	textproc
-REVISION =		1
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
@@ -13,12 +11,10 @@ HOMEPAGE =	https://bluesabre.org/projects/catfish/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-MODULES=	lang/python \
+MODULES=	devel/meson \
+		lang/python \
 		x11/xfce4
 MODPY_ADJ_FILES=bin/catfish
-NO_BUILD=	Yes
-# NO_BUILD=Yes defaults this to No, but configure and fake need it
-MODPY_BUILDDEP=	Yes
 
 RUN_DEPENDS =	devel/py-gobject3 \
 		devel/desktop-file-utils \
