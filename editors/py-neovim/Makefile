@@ -1,9 +1,9 @@
 COMMENT =	Python plugin support for Neovim
 
 MODPY_DISTV =	0.5.0
-DISTNAME =		pynvim-${MODPY_DISTV}
-PKGNAME =		py-neovim-${MODPY_DISTV}
-REVISION =		1
+DISTNAME =	pynvim-${MODPY_DISTV}
+PKGNAME =	py-neovim-${MODPY_DISTV}
+REVISION =	2
 
 CATEGORIES =	editors devel
 HOMEPAGE =	https://github.com/neovim/pynvim
@@ -13,9 +13,8 @@ MAINTAINER =	Edd Barrett <edd@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_SETUPTOOLS =	Yes
+MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
-MODPY_PYTEST =		Yes
 PORTHOME =		${WRKDIR}
 TEST_ENV =		PYTHONPATH=lib
 
