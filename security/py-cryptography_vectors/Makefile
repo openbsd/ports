@@ -1,10 +1,9 @@
 COMMENT=	test vectors for py-cryptography
 
-MODPY_DISTV=	42.0.7
+MODPY_DISTV=	44.0.0
 DISTNAME=	cryptography_vectors-${MODPY_DISTV}
-PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
+PKGNAME=	py-${DISTNAME}
 CATEGORIES=	security
-REVISION=	0
 
 HOMEPAGE=	https://cryptography.io/
 
