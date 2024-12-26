@@ -1,3 +1,5 @@
+# https://github.com/blender/blender/commit/a6837ac517b38a7fa535e0dda961334bee71323d
+BROKEN =	needs update to >= 4.0.0 for Python 3.12 compatibility
 # powerpc - tbb 64-bit atomics
 # sparc64 - openexr linking failure
 ONLY_FOR_ARCHS = aarch64 amd64 i386 powerpc64 riscv64
