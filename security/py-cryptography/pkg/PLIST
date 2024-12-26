@@ -1,13 +1,13 @@
 @pkgpath security/py-cryptography,python3
 lib/python${MODPY_VERSION}/site-packages/cryptography/
 lib/python${MODPY_VERSION}/site-packages/cryptography-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/cryptography-${MODPY_DISTV}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/cryptography-${MODPY_DISTV}.dist-info/LICENSE.APACHE
-lib/python${MODPY_VERSION}/site-packages/cryptography-${MODPY_DISTV}.dist-info/LICENSE.BSD
 lib/python${MODPY_VERSION}/site-packages/cryptography-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/cryptography-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/cryptography-${MODPY_DISTV}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/cryptography-${MODPY_DISTV}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/cryptography-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/cryptography-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/cryptography-${MODPY_DISTV}.dist-info/licenses/LICENSE.APACHE
+lib/python${MODPY_VERSION}/site-packages/cryptography-${MODPY_DISTV}.dist-info/licenses/LICENSE.BSD
 lib/python${MODPY_VERSION}/site-packages/cryptography/__about__.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cryptography/${MODPY_PYCACHE}/
@@ -41,25 +41,16 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/__
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}aead.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}aead.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}backend.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}backend.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}ciphers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}ciphers.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}decode_asn1.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/${MODPY_PYCACHE}decode_asn1.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/aead.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/backend.py
-lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/ciphers.py
-lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/backends/openssl/decode_asn1.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/
-@so lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/_openssl.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/asn1.pyi
@@ -68,6 +59,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/ocsp
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/openssl/
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/openssl/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/openssl/aead.pyi
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/openssl/ciphers.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/openssl/cmac.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/openssl/dh.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/openssl/dsa.pyi
@@ -82,7 +74,9 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/open
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/openssl/rsa.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/openssl/x25519.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/openssl/x448.pyi
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/pkcs12.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/pkcs7.pyi
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/test_support.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/_rust/x509.pyi
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/openssl/
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/openssl/__init__.py
@@ -95,6 +89,19 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/openssl/${
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/openssl/${MODPY_PYCACHE}binding.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/openssl/_conditional.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/bindings/openssl/binding.py
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/decrepit/
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/decrepit/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/decrepit/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/decrepit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/decrepit/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/decrepit/ciphers/
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/decrepit/ciphers/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/decrepit/ciphers/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/decrepit/ciphers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/decrepit/ciphers/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/decrepit/ciphers/${MODPY_PYCACHE}algorithms.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/decrepit/ciphers/${MODPY_PYCACHE}algorithms.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/decrepit/ciphers/algorithms.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/${MODPY_PYCACHE}/
@@ -187,6 +194,8 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/__in
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/${MODPY_PYCACHE}argon2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/${MODPY_PYCACHE}argon2.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/${MODPY_PYCACHE}concatkdf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/${MODPY_PYCACHE}concatkdf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/${MODPY_PYCACHE}hkdf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -199,6 +208,7 @@ lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/${MO
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/${MODPY_PYCACHE}scrypt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/${MODPY_PYCACHE}x963kdf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/${MODPY_PYCACHE}x963kdf.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/argon2.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/concatkdf.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/hkdf.py
 lib/python${MODPY_VERSION}/site-packages/cryptography/hazmat/primitives/kdf/kbkdf.py
