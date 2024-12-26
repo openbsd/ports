@@ -13,8 +13,11 @@ lib/python${MODPY_VERSION}/site-packages/ordlookup/${MODPY_PYCACHE}oleaut32.${MO
 lib/python${MODPY_VERSION}/site-packages/ordlookup/${MODPY_PYCACHE}oleaut32.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ordlookup/${MODPY_PYCACHE}ws2_32.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ordlookup/${MODPY_PYCACHE}ws2_32.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ordlookup/${MODPY_PYCACHE}wsock32.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ordlookup/${MODPY_PYCACHE}wsock32.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ordlookup/oleaut32.py
 lib/python${MODPY_VERSION}/site-packages/ordlookup/ws2_32.py
+lib/python${MODPY_VERSION}/site-packages/ordlookup/wsock32.py
 lib/python${MODPY_VERSION}/site-packages/pefile-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/pefile-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pefile-${MODPY_DISTV}.dist-info/METADATA

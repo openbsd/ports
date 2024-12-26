@@ -1,21 +1,20 @@
-COMMENT =		Python module to read and work with PE files
+COMMENT=	Python module to read and work with PE files
 
-MODPY_DISTV =	2023.2.7
-REVISION =		2
-DISTNAME =		pefile-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
+MODPY_DISTV=	2024.8.26
+DISTNAME=	pefile-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =		security
+CATEGORIES=	security
 
-HOMEPAGE =		https://github.com/erocarrera/pefile
+HOMEPAGE=	https://github.com/erocarrera/pefile
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
-MODPY_PYBUILD =		setuptools
-MODPY_PI =		Yes
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
-NO_TEST =		Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>
