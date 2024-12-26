@@ -1,5 +1,5 @@
-@pkgpath devel/py-tox,python3
 @conflict py-tox-<2.6.0p2
+@pkgpath devel/py-tox,python3
 bin/tox
 lib/python${MODPY_VERSION}/site-packages/tox/
 lib/python${MODPY_VERSION}/site-packages/tox-${MODPY_DISTV}.dist-info/
@@ -69,6 +69,8 @@ lib/python${MODPY_VERSION}/site-packages/tox/config/loader/${MODPY_PYCACHE}conve
 lib/python${MODPY_VERSION}/site-packages/tox/config/loader/${MODPY_PYCACHE}convert.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tox/config/loader/${MODPY_PYCACHE}memory.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tox/config/loader/${MODPY_PYCACHE}memory.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tox/config/loader/${MODPY_PYCACHE}replacer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/tox/config/loader/${MODPY_PYCACHE}replacer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tox/config/loader/${MODPY_PYCACHE}section.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tox/config/loader/${MODPY_PYCACHE}section.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tox/config/loader/${MODPY_PYCACHE}str_convert.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -89,9 +91,24 @@ lib/python${MODPY_VERSION}/site-packages/tox/config/loader/ini/${MODPY_PYCACHE}r
 lib/python${MODPY_VERSION}/site-packages/tox/config/loader/ini/factor.py
 lib/python${MODPY_VERSION}/site-packages/tox/config/loader/ini/replace.py
 lib/python${MODPY_VERSION}/site-packages/tox/config/loader/memory.py
+lib/python${MODPY_VERSION}/site-packages/tox/config/loader/replacer.py
 lib/python${MODPY_VERSION}/site-packages/tox/config/loader/section.py
 lib/python${MODPY_VERSION}/site-packages/tox/config/loader/str_convert.py
 lib/python${MODPY_VERSION}/site-packages/tox/config/loader/stringify.py
+lib/python${MODPY_VERSION}/site-packages/tox/config/loader/toml/
+lib/python${MODPY_VERSION}/site-packages/tox/config/loader/toml/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tox/config/loader/toml/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tox/config/loader/toml/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/tox/config/loader/toml/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tox/config/loader/toml/${MODPY_PYCACHE}_api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/tox/config/loader/toml/${MODPY_PYCACHE}_api.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tox/config/loader/toml/${MODPY_PYCACHE}_replace.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/tox/config/loader/toml/${MODPY_PYCACHE}_replace.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tox/config/loader/toml/${MODPY_PYCACHE}_validate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/tox/config/loader/toml/${MODPY_PYCACHE}_validate.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tox/config/loader/toml/_api.py
+lib/python${MODPY_VERSION}/site-packages/tox/config/loader/toml/_replace.py
+lib/python${MODPY_VERSION}/site-packages/tox/config/loader/toml/_validate.py
 lib/python${MODPY_VERSION}/site-packages/tox/config/main.py
 lib/python${MODPY_VERSION}/site-packages/tox/config/of_type.py
 lib/python${MODPY_VERSION}/site-packages/tox/config/set_env.py
@@ -113,6 +130,10 @@ lib/python${MODPY_VERSION}/site-packages/tox/config/source/${MODPY_PYCACHE}legac
 lib/python${MODPY_VERSION}/site-packages/tox/config/source/${MODPY_PYCACHE}legacy_toml.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tox/config/source/${MODPY_PYCACHE}setup_cfg.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tox/config/source/${MODPY_PYCACHE}setup_cfg.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tox/config/source/${MODPY_PYCACHE}toml_pyproject.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/tox/config/source/${MODPY_PYCACHE}toml_pyproject.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tox/config/source/${MODPY_PYCACHE}toml_tox.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/tox/config/source/${MODPY_PYCACHE}toml_tox.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tox/config/source/${MODPY_PYCACHE}tox_ini.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tox/config/source/${MODPY_PYCACHE}tox_ini.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tox/config/source/api.py
@@ -121,6 +142,8 @@ lib/python${MODPY_VERSION}/site-packages/tox/config/source/ini.py
 lib/python${MODPY_VERSION}/site-packages/tox/config/source/ini_section.py
 lib/python${MODPY_VERSION}/site-packages/tox/config/source/legacy_toml.py
 lib/python${MODPY_VERSION}/site-packages/tox/config/source/setup_cfg.py
+lib/python${MODPY_VERSION}/site-packages/tox/config/source/toml_pyproject.py
+lib/python${MODPY_VERSION}/site-packages/tox/config/source/toml_tox.py
 lib/python${MODPY_VERSION}/site-packages/tox/config/source/tox_ini.py
 lib/python${MODPY_VERSION}/site-packages/tox/config/types.py
 lib/python${MODPY_VERSION}/site-packages/tox/execute/
@@ -277,11 +300,14 @@ lib/python${MODPY_VERSION}/site-packages/tox/tox_env/python/${MODPY_PYCACHE}__in
 lib/python${MODPY_VERSION}/site-packages/tox/tox_env/python/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tox/tox_env/python/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tox/tox_env/python/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tox/tox_env/python/${MODPY_PYCACHE}dependency_groups.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/tox/tox_env/python/${MODPY_PYCACHE}dependency_groups.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tox/tox_env/python/${MODPY_PYCACHE}package.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tox/tox_env/python/${MODPY_PYCACHE}package.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tox/tox_env/python/${MODPY_PYCACHE}runner.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tox/tox_env/python/${MODPY_PYCACHE}runner.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tox/tox_env/python/api.py
+lib/python${MODPY_VERSION}/site-packages/tox/tox_env/python/dependency_groups.py
 lib/python${MODPY_VERSION}/site-packages/tox/tox_env/python/package.py
 lib/python${MODPY_VERSION}/site-packages/tox/tox_env/python/pip/
 lib/python${MODPY_VERSION}/site-packages/tox/tox_env/python/pip/__init__.py
