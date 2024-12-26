@@ -2,8 +2,7 @@ COMMENT =		programmable completion functions for bash
 
 GH_PROJECT =		bash-completion
 GH_ACCOUNT =		scop
-GH_TAGNAME =		2.14.0
-REVISION =		0
+GH_TAGNAME =		2.16.0
 
 CATEGORIES =		shells sysutils
 
@@ -26,5 +25,6 @@ CONFIGURE_STYLE =	autoreconf
 CONFIGURE_ENV =		PYTEST=py.test
 
 FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/bash-completion/
+UPDATE_PLIST_ARGS =	-i MODPY_VERSION
 
 .include <bsd.port.mk>
