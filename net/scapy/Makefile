@@ -1,7 +1,7 @@
 COMMENT =	powerful interactive packet manipulation in python
 
-MODPY_DISTV =	2.4.4
-REVISION =	6
+# some /usr/src/regress checks need fixing for 2.5+
+MODPY_DISTV =	2.4.5
 
 DISTNAME =	scapy-${MODPY_DISTV}
 
@@ -22,14 +22,20 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 UPDATE_PLIST_ARGS =	-i MODPY_PY_PREFIX
+NO_TEST =		Yes
+
+BUILD_DEPENDS =		devel/py-six
 
 .include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mcxx11}
-# py-cryptography is only for architectures with newer compilers.
+.if ${PROPERTIES:Mrust}
+# py-cryptography is only for architectures with Rust.
 # it is not needed for all features; include the dependency
 # where available but skip it on base-gcc architectures.
 RUN_DEPENDS =		security/py-cryptography
 .endif
+
+post-extract:
+	cp ${MODPY_SITEPKG}/six.py ${WRKSRC}/scapy/modules/six.py # override bundled six.py, not compatible with 3.12
 
 pre-configure:
 	sed -i "s,/etc/ethertypes,${SYSCONFDIR}/ethertypes,g" \
