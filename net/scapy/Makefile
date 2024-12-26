@@ -2,6 +2,7 @@ COMMENT =	powerful interactive packet manipulation in python
 
 # some /usr/src/regress checks need fixing for 2.5+
 MODPY_DISTV =	2.4.5
+REVISION =	0
 
 DISTNAME =	scapy-${MODPY_DISTV}
 
