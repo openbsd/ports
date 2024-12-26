@@ -2,6 +2,7 @@ COMMENT=	OCR Engine developed at HP Labs
 
 GH_PROJECT=	tesseract
 GH_TAGNAME=	5.5.0
+REVISION=	0
 
 SHARED_LIBS +=  tesseract            8.0      # 5.5
 
@@ -16,13 +17,7 @@ WANTLIB += pixman-1 png sharpyuv ssl tiff webp webpmux xcb xcb-render
 WANTLIB += xcb-shm z zstd
 
 # c++11: needed to build the training tools
-.if ${MACHINE_ARCH} != riscv64
 COMPILER=		base-clang ports-gcc
-.else
-# riscv64 assembly needs llvm>=17
-COMPILER=		ports-clang
-MODCLANG_VERSION=	17
-.endif
 
 USE_GMAKE=		Yes
 
@@ -38,6 +33,9 @@ RUN_DEPENDS=		graphics/tesseract/tessdata,-main
 CONFIGURE_STYLE=	autoreconf
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+# riscv64 RVV asm code needs llvm>=17
+# Revisit when our kernel starts supporting the Vector extension
+CONFIGURE_ENV+=		ax_cv_check_cxxflags__march_rv64gcv=no
 
 ALL_TARGET=		all training
 INSTALL_TARGET=		install training-install
