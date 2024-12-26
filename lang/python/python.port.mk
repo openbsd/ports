@@ -97,7 +97,7 @@ TEST_DEPENDS +=		${MODPY_TEST_DEPENDS}
 
 _MODPY_PRE_BUILD_STEPS = :
 
-.if ${MODPY_PYBUILD:L} == "no"
+.if ${MODPY_PYBUILD:L} == "no" && ${MODPY_MAJOR_VERSION} != 2
 # not necessarily an error, but try to draw attention to it. defer printing
 # the warning to fake-install where it's less likely to scroll off the screen.
 _MODPY_PRE_BUILD_STEPS += ; if [ -e ${WRKSRC}/pyproject.toml ] && \
