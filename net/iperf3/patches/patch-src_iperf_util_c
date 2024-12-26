@@ -1,3 +1,5 @@
+use arc4random_buf(3) instead of reading from urandom(4)
+
 Index: src/iperf_util.c
 --- src/iperf_util.c.orig
 +++ src/iperf_util.c
