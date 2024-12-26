@@ -20,6 +20,9 @@ MODULES =		devel/cmake \
 
 BUILD_DEPENDS =		devel/catch2
 
-NO_BUILD =		Yes
+# configure stage uses the compiler so can't mark as no build
+#NO_BUILD =		Yes
+
+do-build:
 
 .include <bsd.port.mk>
