@@ -1,3 +1,5 @@
+BROKEN-i386 =	modernc.org/sqlite@v1.33.1 fails
+
 COMMENT =	wordle game for the terminal
 
 MODGO_MODNAME =	github.com/ajeetdsouza/clidle
