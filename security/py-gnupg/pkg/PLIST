@@ -1,5 +1,5 @@
-@pkgpath security/py-gnupg,python3
 @conflict py-gnupg-*
+@pkgpath security/py-gnupg,python3
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}gnupg.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}gnupg.${MODPY_PYC_MAGIC_TAG}pyc
