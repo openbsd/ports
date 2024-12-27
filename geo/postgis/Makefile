@@ -1,8 +1,7 @@
-V =	3.5.0
+V =	3.5.1
 COMMENT=	geographic objects support for PostgreSQL
 DISTNAME=	postgis-${V}
 CATEGORIES=	geo databases
-REVISION=	0
 
 HOMEPAGE=	http://www.postgis.net/
 
@@ -17,6 +16,7 @@ WANTLIB += proj pthread qhull_r spatialite sqlite3 ssl ${COMPILER_LIBCXX} tiff w
 WANTLIB += hdf5 hdf5_hl minizip netcdf rttopo execinfo fontconfig freetype lcms2 poppler
 WANTLIB += nghttp3 ngtcp2 ngtcp2_crypto_quictls jxl jxl_cms jxl_threads zip
 WANTLIB += archive b2 brotlicommon brotlidec brotlienc bz2 hwy sharpyuv blosc deflate
+WANTLIB += Lerc aom arrow arrow_acero arrow_dataset avif dav1d parquet snappy thrift
 
 COMPILER =		base-clang ports-gcc base-gcc
 
