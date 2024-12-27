@@ -108,6 +108,7 @@ _MODPY_PRE_BUILD_STEPS += ; if [ -e ${WRKSRC}/pyproject.toml ] && \
 	fi
 .endif
 
+_MODPY_USE_CARGO = No
 
 .if ${MODPY_SETUPTOOLS:L} == "yes"
 .  if ${MODPY_PYBUILD:L} != "no"
@@ -153,6 +154,9 @@ BUILD_DEPENDS +=	devel/py-jupyter_packaging
 _MODPY_EXPECTED_BACKEND = setuptools
 .  elif ${MODPY_PYBUILD} == maturin
 BUILD_DEPENDS +=	devel/maturin
+MODCARGO_CARGO_BIN =	maturin
+_MODPY_WHEELSDIR =	target/wheels
+_MODPY_USE_CARGO =	Yes
 .  elif ${MODPY_PYBUILD} == mesonpy
 BUILD_DEPENDS +=	devel/meson-python
 .  elif ${MODPY_PYBUILD} == pdm
@@ -170,16 +174,18 @@ _MODPY_EXPECTED_BACKEND = setuptools
 BUILD_DEPENDS +=	devel/py-setuptools_scm
 .    elif ${MODPY_PYBUILD} == setuptools-rust
 BUILD_DEPENDS +=	devel/py-setuptools-rust
-.      if ! ${MODULES:Mdevel/cargo}
-MODCARGO_INSTALL ?=	No
-MODCARGO_TEST ?=	No
-MODULES +=		devel/cargo
-.      endif
+_MODPY_USE_CARGO =	Yes
 .    endif
 .  elif !${MODPY_PYBUILD:L:Mother}
 ERRORS +=		"Fatal: unknown MODPY_PYBUILD value (flit, flit_core, flit_scm, hatch-vcs, hatchling, jupyter_packaging, pdm, maturin, mesonpy, other, poetry-core, setuptools, setuptools_scm, setuptools-rust)"
 .  endif
 _MODPY_EXPECTED_BACKEND ?= ${MODPY_PYBUILD}
+_MODPY_WHEELSDIR ?= dist
+.  if ${_MODPY_USE_CARGO:L} == yes
+MODCARGO_INSTALL ?=	No
+MODCARGO_TEST ?=	No
+MODULES +=		devel/cargo
+.  endif
 .else
 MODPY_SETUPUTILS =	No
 # Detect the case where a port is capable of building with setup.py
@@ -259,7 +265,7 @@ MODPY_TEST_CMD = cd ${MODPY_TEST_DIR} && ${SETENV} ${ALL_TEST_ENV} ${MODPY_BIN}
 .if ${MODPY_PYTEST:L} == "yes"
 MODPY_PYTEST_USERARGS ?=
 MODPY_TEST_CMD +=	-m pytest ${MODPY_PYTEST_USERARGS}
-MODPY_TEST_LIBDIR ?=	${WRKSRC}/build/lib:${WRKSRC}/build/lib.openbsd-${OSREV}-${ARCH}-cpython-${MODPY_MAJORMINOR}:${WRKSRC}/lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION}
+MODPY_TEST_LIBDIR ?=	${WRKINST}${MODPY_SITEPKG}:${WRKSRC}/build/lib:${WRKSRC}/build/lib.openbsd-${OSREV}-${ARCH}-cpython-${MODPY_MAJORMINOR}:${WRKSRC}/lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION}
 .else
 MODPY_TEST_CMD +=	./${MODPY_SETUP} ${MODPY_SETUP_ARGS}
 .endif
@@ -331,7 +337,7 @@ MODPY_BUILD_TARGET = ${_MODPY_PRE_BUILD_STEPS}; \
 	${_MODPY_RUNBIN} -sBm build -w --no-isolation ${MODPY_PYBUILD_ARGS}
 MODPY_INSTALL_TARGET = \
 	${INSTALL_DATA_DIR} ${WRKINST}${MODPY_LIBDIR}; \
-	${_MODPY_RUNBIN} -m installer -d ${WRKINST} ${WRKSRC}/dist/*.whl
+	${_MODPY_RUNBIN} -m installer -d ${WRKINST} ${WRKSRC}/${_MODPY_WHEELSDIR}/*.whl
 MODPY_TEST_TARGET +=	${MODPY_TEST_CMD}
 .  if ${MODPY_PYTEST:L} == "yes"
 MODPY_TEST_TARGET +=	${MODPY_PYTEST_ARGS}
@@ -353,19 +359,20 @@ MODPY_TEST_TARGET +=	${TEST_TARGET}
 
 MODPY_INSTALL_TARGET += ; if [ -r ${WRKDIR}/.modpy-warn ]; then cat ${WRKDIR}/.modpy-warn; fi
 
-# dirty way to do it with no modifications in bsd.port.mk
 .if empty(CONFIGURE_STYLE)
-.  if !target(do-configure) && ${MODPY_PYBUILD} == setuptools-rust
+.  if !target(do-configure) && ${_MODPY_USE_CARGO:L} == yes
 do-configure:
 	@${MODCARGO_configure}
 .  endif
 
 .  if !target(do-build)
 do-build:
-.    if ${MODPY_PYBUILD} == setuptools-rust
+.    if ${_MODPY_USE_CARGO:L} == yes
 	@${MODCARGO_BUILD_TARGET}
 .    endif
+.    if ${MODPY_PYBUILD} != maturin
 	@${MODPY_BUILD_TARGET}
+.    endif
 .  endif
 
 # extra documentation or scripts should be installed via post-install
