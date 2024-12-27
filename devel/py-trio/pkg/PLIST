@@ -7,11 +7,15 @@ lib/python${MODPY_VERSION}/site-packages/trio-${MODPY_DISTV}.dist-info/LICENSE.M
 lib/python${MODPY_VERSION}/site-packages/trio-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/trio-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/trio-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/trio-${MODPY_DISTV}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/trio-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/trio/__init__.py
+lib/python${MODPY_VERSION}/site-packages/trio/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trio/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/trio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/trio/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/trio/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trio/${MODPY_PYCACHE}_abc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/trio/${MODPY_PYCACHE}_abc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trio/${MODPY_PYCACHE}_channel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -38,6 +42,8 @@ lib/python${MODPY_VERSION}/site-packages/trio/${MODPY_PYCACHE}_highlevel_ssl_hel
 lib/python${MODPY_VERSION}/site-packages/trio/${MODPY_PYCACHE}_highlevel_ssl_helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trio/${MODPY_PYCACHE}_path.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/trio/${MODPY_PYCACHE}_path.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/trio/${MODPY_PYCACHE}_repl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/trio/${MODPY_PYCACHE}_repl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trio/${MODPY_PYCACHE}_signals.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/trio/${MODPY_PYCACHE}_signals.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trio/${MODPY_PYCACHE}_socket.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -117,6 +123,8 @@ lib/python${MODPY_VERSION}/site-packages/trio/_core/${MODPY_PYCACHE}_parking_lot
 lib/python${MODPY_VERSION}/site-packages/trio/_core/${MODPY_PYCACHE}_parking_lot.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trio/_core/${MODPY_PYCACHE}_run.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/trio/_core/${MODPY_PYCACHE}_run.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/trio/_core/${MODPY_PYCACHE}_run_context.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/trio/_core/${MODPY_PYCACHE}_run_context.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trio/_core/${MODPY_PYCACHE}_thread_cache.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/trio/_core/${MODPY_PYCACHE}_thread_cache.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trio/_core/${MODPY_PYCACHE}_traps.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -146,6 +154,7 @@ lib/python${MODPY_VERSION}/site-packages/trio/_core/_local.py
 lib/python${MODPY_VERSION}/site-packages/trio/_core/_mock_clock.py
 lib/python${MODPY_VERSION}/site-packages/trio/_core/_parking_lot.py
 lib/python${MODPY_VERSION}/site-packages/trio/_core/_run.py
+lib/python${MODPY_VERSION}/site-packages/trio/_core/_run_context.py
 lib/python${MODPY_VERSION}/site-packages/trio/_core/_tests/
 lib/python${MODPY_VERSION}/site-packages/trio/_core/_tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trio/_core/_tests/${MODPY_PYCACHE}/
@@ -200,7 +209,10 @@ lib/python${MODPY_VERSION}/site-packages/trio/_core/_tests/type_tests/
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trio/_core/_tests/type_tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trio/_core/_tests/type_tests/${MODPY_PYCACHE}nursery_start.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/trio/_core/_tests/type_tests/${MODPY_PYCACHE}nursery_start.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/trio/_core/_tests/type_tests/${MODPY_PYCACHE}run.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/trio/_core/_tests/type_tests/${MODPY_PYCACHE}run.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trio/_core/_tests/type_tests/nursery_start.py
+lib/python${MODPY_VERSION}/site-packages/trio/_core/_tests/type_tests/run.py
 lib/python${MODPY_VERSION}/site-packages/trio/_core/_thread_cache.py
 lib/python${MODPY_VERSION}/site-packages/trio/_core/_traps.py
 lib/python${MODPY_VERSION}/site-packages/trio/_core/_unbounded_queue.py
@@ -217,6 +229,7 @@ lib/python${MODPY_VERSION}/site-packages/trio/_highlevel_serve_listeners.py
 lib/python${MODPY_VERSION}/site-packages/trio/_highlevel_socket.py
 lib/python${MODPY_VERSION}/site-packages/trio/_highlevel_ssl_helpers.py
 lib/python${MODPY_VERSION}/site-packages/trio/_path.py
+lib/python${MODPY_VERSION}/site-packages/trio/_repl.py
 lib/python${MODPY_VERSION}/site-packages/trio/_signals.py
 lib/python${MODPY_VERSION}/site-packages/trio/_socket.py
 lib/python${MODPY_VERSION}/site-packages/trio/_ssl.py
@@ -241,6 +254,8 @@ lib/python${MODPY_VERSION}/site-packages/trio/_tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}check_type_completeness.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}check_type_completeness.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}module_with_deprecations.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}module_with_deprecations.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}pytest_plugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -253,6 +268,8 @@ lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}test_contex
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}test_contextvars.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}test_deprecate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}test_deprecate.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}test_deprecate_strict_exception_groups_false.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}test_deprecate_strict_exception_groups_false.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}test_dtls.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}test_dtls.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}test_exports.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -277,6 +294,8 @@ lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}test_highle
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}test_highlevel_ssl_helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}test_path.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}test_path.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}test_repl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}test_repl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}test_scheduler_determinism.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}test_scheduler_determinism.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}test_signals.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -299,6 +318,8 @@ lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}test_timeou
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}test_timeouts.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}test_tracing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}test_tracing.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}test_trio.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}test_trio.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}test_unix_pipes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}test_unix_pipes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}test_util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -307,12 +328,15 @@ lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}test_wait_f
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}test_wait_for_object.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}test_windows_pipes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/${MODPY_PYCACHE}test_windows_pipes.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/trio/_tests/astrill-codesigning-cert.cer
+lib/python${MODPY_VERSION}/site-packages/trio/_tests/check_type_completeness.py
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/module_with_deprecations.py
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/pytest_plugin.py
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/test_abc.py
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/test_channel.py
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/test_contextvars.py
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/test_deprecate.py
+lib/python${MODPY_VERSION}/site-packages/trio/_tests/test_deprecate_strict_exception_groups_false.py
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/test_dtls.py
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/test_exports.py
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/test_fakenet.py
@@ -325,6 +349,7 @@ lib/python${MODPY_VERSION}/site-packages/trio/_tests/test_highlevel_serve_listen
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/test_highlevel_socket.py
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/test_highlevel_ssl_helpers.py
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/test_path.py
+lib/python${MODPY_VERSION}/site-packages/trio/_tests/test_repl.py
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/test_scheduler_determinism.py
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/test_signals.py
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/test_socket.py
@@ -336,6 +361,7 @@ lib/python${MODPY_VERSION}/site-packages/trio/_tests/test_testing_raisesgroup.py
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/test_threads.py
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/test_timeouts.py
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/test_tracing.py
+lib/python${MODPY_VERSION}/site-packages/trio/_tests/test_trio.py
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/test_unix_pipes.py
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/test_util.py
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/test_wait_for_object.py
@@ -361,10 +387,13 @@ lib/python${MODPY_VERSION}/site-packages/trio/_tests/type_tests/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/type_tests/${MODPY_PYCACHE}path.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/type_tests/${MODPY_PYCACHE}raisesgroup.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/type_tests/${MODPY_PYCACHE}raisesgroup.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/trio/_tests/type_tests/${MODPY_PYCACHE}task_status.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/trio/_tests/type_tests/${MODPY_PYCACHE}task_status.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/type_tests/check_wraps.py
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/type_tests/open_memory_channel.py
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/type_tests/path.py
 lib/python${MODPY_VERSION}/site-packages/trio/_tests/type_tests/raisesgroup.py
+lib/python${MODPY_VERSION}/site-packages/trio/_tests/type_tests/task_status.py
 lib/python${MODPY_VERSION}/site-packages/trio/_threads.py
 lib/python${MODPY_VERSION}/site-packages/trio/_timeouts.py
 lib/python${MODPY_VERSION}/site-packages/trio/_tools/
