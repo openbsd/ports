@@ -37,6 +37,7 @@ ${P5SITE}/Zonemaster/Engine/TestMethods.pm
 ${P5SITE}/Zonemaster/Engine/TestMethodsV2.pm
 ${P5SITE}/Zonemaster/Engine/Translator.pm
 ${P5SITE}/Zonemaster/Engine/Util.pm
+${P5SITE}/Zonemaster/Engine/Validation.pm
 ${P5SITE}/Zonemaster/Engine/Zone.pm
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/GNUmakefile
@@ -99,4 +100,5 @@ ${P5SITE}/auto/share/dist/Zonemaster-Engine/profile_additional_properties.json
 @man man/man3p/Zonemaster::Engine::TestMethodsV2.3p
 @man man/man3p/Zonemaster::Engine::Translator.3p
 @man man/man3p/Zonemaster::Engine::Util.3p
+@man man/man3p/Zonemaster::Engine::Validation.3p
 @man man/man3p/Zonemaster::Engine::Zone.3p
