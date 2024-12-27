@@ -1,10 +1,9 @@
 COMMENT =		test your HTTP library against a local copy of httpbin
 
-MODPY_DISTV =	1.0.2
+MODPY_DISTV =		2.0.0
 DISTNAME =		pytest-httpbin-${MODPY_DISTV}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
-REVISION =		3
 
 HOMEPAGE =		https://github.com/kevin1024/pytest-httpbin
 
