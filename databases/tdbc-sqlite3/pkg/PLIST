@@ -1,3 +1,4 @@
 lib/tcl/modules/86/tdbc/
 lib/tcl/modules/86/tdbc/sqlite3-${V}.tm
+lib/tcl/modules/86/tdbc/sqlite3-${V}.uuid
 @man man/mann/tdbc_sqlite3.n
