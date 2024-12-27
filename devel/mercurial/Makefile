@@ -1,9 +1,7 @@
 COMMENT-main =		fast, lightweight source control management
 COMMENT-x11 =		graphical tooling for mercurial
-REVISION-main =		0
-REVISION-x11 =		0
 
-MODPY_DISTV =	6.8.1
+MODPY_DISTV =		6.9
 DISTNAME =		mercurial-${MODPY_DISTV}
 CATEGORIES =		devel
 
@@ -33,22 +31,8 @@ RUN_DEPENDS =		devel/libgit2/py-git2
 RUN_DEPENDS-x11 +=	${BASE_PKGPATH},-main \
 			${MODTK_RUN_DEPENDS}
 
-FILES =			hgeditor hgweb.cgi
-
-CONTRIBFILES =		mercurial.el tcsh_completion \
-			mq.el
-
-CONTRIBDIRS =		hgsh vim
-SCRIPTS =		hg-ssh hgk \
-			tcsh_completion_build.sh dumprevlog \
-			undumprevlog simplemerge
-
-WANTLIB-main +=		c
 WANTLIB-x11 =
 PKG_ARCH-x11 =		*
-
-# This is needed for the development versions
-WRKDIST =		${WRKDIR}/${DISTNAME:C/pre20.*$//}
 
 PORTHOME =		${WRKDIR}
 
@@ -74,23 +58,22 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/mercurial/
 	${INSTALL_PROGRAM} ${WRKSRC}/contrib/chg/chg ${PREFIX}/bin
 	${INSTALL_SCRIPT} ${WRKSRC}/hgeditor ${PREFIX}/share/mercurial
-.	for file in ${FILES}
-		${INSTALL_DATA} ${WRKSRC}/${file} \
-			${PREFIX}/share/mercurial
-.	endfor
-.	for file in ${CONTRIBFILES}
-		${INSTALL_DATA} ${WRKSRC}/contrib/${file} \
-			${PREFIX}/share/mercurial
-.	endfor
-.	for dir in ${CONTRIBDIRS}
-		${INSTALL_DATA_DIR} ${PREFIX}/share/mercurial/${dir}
-		${INSTALL_DATA} ${WRKSRC}/contrib/${dir}/* \
-			${PREFIX}/share/mercurial/${dir}
-.	endfor
-.	for script in ${SCRIPTS}
-		${INSTALL_SCRIPT} ${WRKSRC}/contrib/${script} \
-			${PREFIX}/share/mercurial
-.	endfor
+.for file in hgeditor hgweb.cgi
+	${INSTALL_DATA} ${WRKSRC}/${file} ${PREFIX}/share/mercurial
+.endfor
+.for file in mercurial.el tcsh_completion mq.el
+	${INSTALL_DATA} ${WRKSRC}/contrib/${file} ${PREFIX}/share/mercurial
+.endfor
+.for dir in hgsh vim
+	${INSTALL_DATA_DIR} ${PREFIX}/share/mercurial/${dir}
+	${INSTALL_DATA} ${WRKSRC}/contrib/${dir}/* \
+		${PREFIX}/share/mercurial/${dir}
+.endfor
+.for script in hg-ssh hgk tcsh_completion_build.sh dumprevlog \
+    undumprevlog simplemerge
+	${INSTALL_SCRIPT} ${WRKSRC}/contrib/${script} \
+		${PREFIX}/share/mercurial
+.endfor
 	# hgk needs to be in the path for 'hg view' to work
 	ln -s ${TRUEPREFIX}/share/mercurial/hgk ${PREFIX}/bin/hgk
 	# With this file we can disable dangerous features
@@ -100,13 +83,10 @@ post-install:
 
 do-test:
 	@echo "Running the tests with ${MAKE_JOBS} jobs."
-	@rm -rf ${WRKSRC}/tmp-tests
-	@echo '#!/bin/sh\nexec gls   ' "\"\$$@\"" > ${WRKDIR}/bin/ls
-	@echo '#!/bin/sh\nexec gcp   ' "\"\$$@\"" > ${WRKDIR}/bin/cp
-	@echo '#!/bin/sh\nexec gfind ' "\"\$$@\"" > ${WRKDIR}/bin/find
-	@echo '#!/bin/sh\nexec gsort ' "\"\$$@\"" > ${WRKDIR}/bin/sort
-	@chmod +x ${WRKDIR}/bin/ls ${WRKDIR}/bin/cp ${WRKDIR}/bin/find \
-		${WRKDIR}/bin/sort
+	@rm -rf ${WRKSRC}/tmp-tests ${WRKSRC}/tests-openbsd-home
+.for g in ls cp find sort
+	@ln -fs ${LOCALBASE}/bin/g$g ${WRKDIR}/bin/$g
+.endfor
 	@mkdir ${WRKSRC}/tests-openbsd-home
 	@echo '[ui]\nusername = OpenBSD Tests <openbsd@localhost>' \
 		> ${WRKSRC}/tests-openbsd-home/.hgrc
