@@ -1,6 +1,6 @@
 COMMENT =		ODBC module for TDBC
 
-V =			1.1.5
+V =			1.1.10
 N =			odbc
 
 DISTNAME =		tdbc${N}${V}
