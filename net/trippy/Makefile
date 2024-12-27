@@ -2,7 +2,7 @@ COMMENT=	network diagnostics with curses ui (like mtr)
 
 GH_ACCOUNT=	fujiapple852
 GH_PROJECT=	trippy
-GH_TAGNAME=	0.10.0
+GH_TAGNAME=	0.12.1
 
 CATEGORIES=	net
 
@@ -16,7 +16,9 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 MODULES=	devel/cargo
 CONFIGURE_STYLE= cargo
 
-HOMEPAGE=	https://trippy.cli.rs/
+HOMEPAGE=	https://trippy.rs/
+
+MODCARGO_INSTALL_TARGET_PATHS = crates/trippy
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{doc,examples}/trippy
