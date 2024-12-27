@@ -24,6 +24,7 @@
      SUBDIR += fftw
      SUBDIR += fftw3
      SUBDIR += fftw3,float
+     SUBDIR += flann
      SUBDIR += flintlib
      SUBDIR += foma
      SUBDIR += galculator
