@@ -27,7 +27,7 @@ RUN_DEPENDS=	devel/p5-Readonly \
 		devel/p5-Try-Tiny \
 		net/p5-Zonemaster/ldns>=4.1.0 \
 		net/p5-Zonemaster/engine>=7.0.0
-TEST_DEPENDS=	textproc/p5-JSON-Validator \
-		devel/p5-Test-Differences
+TEST_DEPENDS=	devel/p5-Test-Differences
+#		textproc/p5-JSON-Validator
 
 .include <bsd.port.mk>
