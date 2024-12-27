@@ -1,7 +1,4 @@
 Index: Makefile.inc
-
-Take out -g and -Os
-
 --- Makefile.inc.orig
 +++ Makefile.inc
 @@ -15,7 +15,7 @@ else

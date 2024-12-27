@@ -1,7 +1,7 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -80,17 +80,17 @@ $(DEPDIR)/%.d: ;
+@@ -81,17 +81,17 @@ $(DEPDIR)/%.d: ;
  .PRECIOUS: $(DEPDIR)/%.d
  
  install: $(PROGS)
