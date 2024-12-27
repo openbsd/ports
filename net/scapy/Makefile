@@ -2,7 +2,7 @@ COMMENT =	powerful interactive packet manipulation in python
 
 # some /usr/src/regress checks need fixing for 2.5+
 MODPY_DISTV =	2.4.5
-REVISION =	0
+REVISION =	1
 
 DISTNAME =	scapy-${MODPY_DISTV}
 
@@ -28,8 +28,9 @@ NO_TEST =		Yes
 BUILD_DEPENDS =		devel/py-six
 
 .include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mrust}
-# py-cryptography is only for architectures with Rust.
+.if ${PROPERTIES:Mrust} && ! ${MACHINE_ARCH:Msparc64}
+# py-cryptography is only available on architectures with
+# Rust and ring.
 # it is not needed for all features; include the dependency
 # where available but skip it on base-gcc architectures.
 RUN_DEPENDS =		security/py-cryptography
