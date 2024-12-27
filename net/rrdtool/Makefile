@@ -2,9 +2,7 @@ COMMENT-main=	system to store and display time-series data
 COMMENT-update=	lightweight update-only tool for rrdtool
 COMMENT-ruby=	ruby interface to librrd
 
-V=		1.8.0
-REVISION=	1
-REVISION-ruby=	2
+V=		1.9.0
 DISTNAME=	rrdtool-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-update=	rrdupdate-$V
