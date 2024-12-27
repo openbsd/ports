@@ -7,6 +7,6 @@ Index: pkgIndex.tcl.in
  		"package require TclOO;\
 -		[list load [file join $dir @PKG_LIB_FILE8@] [string totitle @PACKAGE_NAME@]]\;\
 +		[list load [file join $dir .. .. @PKG_LIB_FILE8@] [string totitle @PACKAGE_NAME@]]\;\
- 		[list source $libraryfile]"
+ 		[list source -encoding utf-8 $libraryfile]"
      }
  }} $dir

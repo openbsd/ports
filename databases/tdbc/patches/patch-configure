@@ -1,7 +1,9 @@
+Set these here so they propagate through everything.
+
 Index: configure
 --- configure.orig
 +++ configure
-@@ -9259,7 +9259,7 @@ tdbc_SRC_DIR=`cd "${tdbc_SRC_DIR}"; $CYGPATH $(pwd)`
+@@ -9517,7 +9517,7 @@ tdbc_SRC_DIR=`cd "${tdbc_SRC_DIR}"; $CYGPATH $(pwd)`
  
  # Develop a fully qualified path for where .tcl files for the tdbc package
  # appear at run time.
@@ -10,7 +12,7 @@ Index: configure
  if test -d "${tdbc_LIB_DIR}" ; then
      tdbc_LIB_DIR=`cd "${tdbc_LIB_DIR}"; $CYGPATH $(pwd)`
  fi
-@@ -9273,7 +9273,7 @@ fi
+@@ -9531,7 +9531,7 @@ fi
      #--------------------------------------------------------------------
  
      # pkglibdir must be a fully qualified path and (not ${exec_prefix}/lib)
