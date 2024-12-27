@@ -1,10 +1,9 @@
 COMMENT=	list-like structure implementing MutableSequence
 
-MODPY_DISTV=	1.4.0
+MODPY_DISTV=	1.5.0
 
 DISTNAME=	frozenlist-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	devel
 
