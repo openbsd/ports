@@ -1,6 +1,6 @@
 COMMENT =	RSS/Atom feed reader for text terminals
 
-V =		2.37
+V =		2.38
 DISTNAME =	newsboat-$V
 
 CATEGORIES =	www
@@ -29,6 +29,7 @@ MODCARGO_INSTALL =	No
 MODCARGO_TEST =		No
 
 BUILD_DEPENDS =	devel/gettext,-tools \
+		misc/findutils \
 		textproc/asciidoctor
 
 RUN_DEPENDS =	x11/gtk+4,-guic
@@ -53,6 +54,7 @@ CONFIGURE_STYLE = cargo simple
 CONFIGURE_SCRIPT = config.sh
 
 pre-configure:
+	@ln -fs /usr/local/bin/gfind ${WRKDIR}/bin/find
 	@sed -i 's,-Werror ,,g' ${WRKSRC}/Makefile
 
 .include "crates.inc"
