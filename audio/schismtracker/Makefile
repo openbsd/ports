@@ -2,7 +2,7 @@ COMMENT =	open-source reimplementation of Impulse Tracker
 
 GH_ACCOUNT =	schismtracker
 GH_PROJECT =	schismtracker
-GH_TAGNAME =	20241021
+GH_TAGNAME =	20241226
 
 CATEGORIES =	audio x11
 
@@ -31,8 +31,12 @@ CONFIGURE_STYLE =	autoreconf
 AUTOCONF_VERSION =	2.69
 AUTOMAKE_VERSION =	1.15
 
-CONFIGURE_ARGS =	--without-flac
+CONFIGURE_ARGS =	--enable-sdl2-linking \
+			--with-sdl2 \
+			--without-flac
 
 CFLAGS +=		-I${LOCALBASE}/include/libutf8proc
+
+USE_GMAKE =		Yes
 
 .include <bsd.port.mk>
