@@ -5,6 +5,7 @@ COMMENT-lang=	vi clone, NLS subpackage
 # a gui flavour rather than no_x11
 V=		9.1.0964
 VS=		${V:C/\.0+/./}
+REVISION-main=	0
 
 DIST_TUPLE+=	github vim vim v$V . \
 		github vim colorschemes	661b1a62a4ebe4a65de79f1bb1c40571fe6a1b58 .
@@ -62,7 +63,7 @@ CONFIGURE_ARGS+= --with-tlib="curses" \
 AUTOCONF_VERSION= 2.71
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		devel/gettext,-tools
-
+DEBUG_PACKAGES=	-main
 .if defined(DEBUG)
 MAKE_FLAGS+= STRIP=:
 .endif
