@@ -24,12 +24,13 @@ RUN_DEPENDS =	devel/py-gobject3 \
 		x11/gtk+4,-guic \
 		x11/xfce4/xfconf
 
-BUILD_DEPENDS +=	${_MODPY_BUILD_DEPENDS} \
+BUILD_DEPENDS += \
 		devel/py-pexpect \
 		devel/gettext,-tools \
 		x11/dbus-python \
 		devel/py-distutils-extra \
-		devel/py-setuptools
+		devel/py-setuptools \
+		x11/xfce4/xfconf
 
 # pygobject GTK3 introspection (not provided by indirect dependencies)
 RUN_DEPENDS +=	x11/gtk+3
