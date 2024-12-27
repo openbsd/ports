@@ -159,6 +159,10 @@ _MODPY_WHEELSDIR =	target/wheels
 _MODPY_USE_CARGO =	Yes
 .  elif ${MODPY_PYBUILD} == mesonpy
 BUILD_DEPENDS +=	devel/meson-python
+.  elif ${MODPY_PYBUILD} == pbr
+BUILD_DEPENDS +=	devel/py-pbr \
+			devel/py-setuptools \
+			devel/py-wheel
 .  elif ${MODPY_PYBUILD} == pdm
 BUILD_DEPENDS +=	devel/py-pdm-backend
 .  elif ${MODPY_PYBUILD} == poetry-core
@@ -177,7 +181,7 @@ BUILD_DEPENDS +=	devel/py-setuptools-rust
 _MODPY_USE_CARGO =	Yes
 .    endif
 .  elif !${MODPY_PYBUILD:L:Mother}
-ERRORS +=		"Fatal: unknown MODPY_PYBUILD value (flit, flit_core, flit_scm, hatch-vcs, hatchling, jupyter_packaging, pdm, maturin, mesonpy, other, poetry-core, setuptools, setuptools_scm, setuptools-rust)"
+ERRORS +=		"Fatal: unknown MODPY_PYBUILD value (flit, flit_core, flit_scm, hatch-vcs, hatchling, jupyter_packaging, pbr, pdm, maturin, mesonpy, other, poetry-core, setuptools, setuptools_scm, setuptools-rust)"
 .  endif
 _MODPY_EXPECTED_BACKEND ?= ${MODPY_PYBUILD}
 _MODPY_WHEELSDIR ?= dist
