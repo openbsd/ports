@@ -5,7 +5,7 @@ COMMENT-lang=	vi clone, NLS subpackage
 # a gui flavour rather than no_x11
 V=		9.1.0964
 VS=		${V:C/\.0+/./}
-REVISION-main=	0
+REVISION-main=	1
 
 DIST_TUPLE+=	github vim vim v$V . \
 		github vim colorschemes	661b1a62a4ebe4a65de79f1bb1c40571fe6a1b58 .

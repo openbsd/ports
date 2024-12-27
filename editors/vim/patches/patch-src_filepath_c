@@ -1,0 +1,23 @@
+backout https://github.com/vim/vim/commit/bd4614f43d0eac4aff743132bab8e53b015ac801.patch
+segfaults seen, at least when using vim-airline
+
+Index: src/filepath.c
+--- src/filepath.c.orig
++++ src/filepath.c
+@@ -670,14 +670,12 @@ repeat:
+ 			str = vim_strnsave(*fnamep, *fnamelen);
+ 			if (sub != NULL && str != NULL)
+ 			{
+-			    size_t slen;
+-
+ 			    *usedlen = p + 1 - src;
+-			    s = do_string_sub(str, *fnamelen, pat, sub, NULL, flags, &slen);
++			    s = do_string_sub(str, pat, sub, NULL, flags);
+ 			    if (s != NULL)
+ 			    {
+ 				*fnamep = s;
+-				*fnamelen = slen;
++				*fnamelen = (int)STRLEN(s);
+ 				vim_free(*bufp);
+ 				*bufp = s;
+ 				didit = TRUE;

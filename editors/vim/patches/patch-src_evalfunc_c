@@ -1,0 +1,15 @@
+backout https://github.com/vim/vim/commit/bd4614f43d0eac4aff743132bab8e53b015ac801.patch
+segfaults seen, at least when using vim-airline
+
+Index: src/evalfunc.c
+--- src/evalfunc.c.orig
++++ src/evalfunc.c
+@@ -11523,7 +11523,7 @@ f_substitute(typval_T *argvars, typval_T *rettv)
+ 								|| flg == NULL)
+ 	rettv->vval.v_string = NULL;
+     else
+-	rettv->vval.v_string = do_string_sub(str, STRLEN(str), pat, sub, expr, flg, NULL);
++	rettv->vval.v_string = do_string_sub(str, pat, sub, expr, flg);
+ }
+ 
+ /*

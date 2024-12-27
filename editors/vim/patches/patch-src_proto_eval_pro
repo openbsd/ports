@@ -1,0 +1,13 @@
+backout https://github.com/vim/vim/commit/bd4614f43d0eac4aff743132bab8e53b015ac801.patch
+segfaults seen, at least when using vim-airline
+
+Index: src/proto/eval.pro
+--- src/proto/eval.pro.orig
++++ src/proto/eval.pro
+@@ -73,5 +73,5 @@ int get_echo_attr(void);
+ void ex_execute(exarg_T *eap);
+ char_u *find_option_end(char_u **arg, int *scope);
+ void last_set_msg(sctx_T script_ctx);
+-char_u *do_string_sub(char_u *str, size_t str_len, char_u *pat, char_u *sub, typval_T *expr, char_u *flags, size_t *ret_len);
++char_u *do_string_sub(char_u *str, char_u *pat, char_u *sub, typval_T *expr, char_u *flags);
+ /* vim: set ft=c : */
