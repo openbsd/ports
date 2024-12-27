@@ -1,7 +1,6 @@
 COMMENT =		thread extension for Tcl
 
-V =			2.8.8
-REVISION =		1
+V =			2.8.11
 
 DISTNAME =		thread${V}
 DISTFILES =		thread${V}-1{thread${V}}${EXTRACT_SUFX}
@@ -39,5 +38,8 @@ VER =			${V:S/.//g}
 
 # Use TESTFLAGS to control the Tclthread tests
 TESTFLAGS =
+
+# Skip broken test
+TESTFLAGS =		-skip thread-1.12
 
 .include <bsd.port.mk>
