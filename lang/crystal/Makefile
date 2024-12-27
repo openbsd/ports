@@ -3,9 +3,14 @@ ONLY_FOR_ARCHS=	amd64
 
 USE_NOBTCFI =	Yes
 
-V =		1.13.2
+V =		1.14.0
 V_SHARDS =	0.18.0
 V_MOLINILLO =	0.2.0
+
+DIST_TUPLE =	github crystal-lang crystal ${V} . \
+		github crystal-lang shards v${V_SHARDS} shards-${V_SHARDS} \
+		github crystal-lang crystal-molinillo v${V_MOLINILLO} shards-${V_SHARDS}/lib/molinillo
+
 COMMENT =	statically typed object oriented language
 DISTNAME =	crystal-${V}
 CATEGORIES =	lang
@@ -17,7 +22,7 @@ MAINTAINER =	joshua stein <jcs@jcs.org>
 PERMIT_PACKAGE = Yes
 
 WANTLIB +=	${COMPILER_LIBCXX} c event_core event_extra gc iconv m pcre2-8
-WANTLIB +=	yaml-0
+WANTLIB +=	yaml-0 llvm${MODCLANG_VERSION}/lib/LLVM
 
 #
 # crystal-X-OpenBSDX.X.tar.gz is an archive of a bootstrap compiler object
@@ -30,20 +35,15 @@ WANTLIB +=	yaml-0
 # The result will be built at .build/crystal.o
 #
 
-SITES =		https://github.com/crystal-lang/crystal/archive/
-SITES.a =	https://jcs.org/distfiles/
-SITES.b =	https://github.com/crystal-lang/shards/archive/
-SITES.c =	https://github.com/crystal-lang/crystal-molinillo/archive/
-DISTFILES =	crystal-${V}{${V}}.tar.gz
-DISTFILES.a = 	crystal-${V}-OpenBSD7.6.tar.gz
-DISTFILES.b = 	shards-${V}{v${V_SHARDS}}.tar.gz
-DISTFILES.c =	crystal-molinillo-${V}{v${V_MOLINILLO}}.tar.gz
+SITES =		https://jcs.org/distfiles/
+DISTFILES =	crystal-${V}-OpenBSD7.6.tar.gz
 
 # Build requires llvm-config from ports, not from base.  When changing
 # MODCLANG_VERSION, keep paths in patches/ in sync here and in bootstrap
 # environment.
 MODULES =	lang/clang
-MODCLANG_VERSION = 17
+MODCLANG_VERSION = 18
+MODCLANG_RUNDEP= yes
 COMPILER =	ports-clang
 LLVM_CONFIG =	llvm-config-${MODCLANG_VERSION}
 
@@ -51,18 +51,13 @@ LIB_DEPENDS =	converters/libiconv \
 		devel/boehm-gc \
 		devel/libevent2 \
 		devel/pcre2 \
-		devel/libyaml
+		devel/libyaml \
+		${MODCLANG_LIB_DEPENDS}
 
 USE_GMAKE =	Yes
 ALL_TARGET =	crystal release=1
 TEST_TARGET =	smoke_test
 SUBST_VARS =	MODCLANG_VERSION
-
-post-extract:
-	mv ${WRKDIR}/shards-${V_SHARDS} ${WRKSRC}/
-	mkdir ${WRKSRC}/shards-${V_SHARDS}/lib
-	mv ${WRKDIR}/crystal-molinillo-${V_MOLINILLO} \
-		${WRKSRC}/shards-${V_SHARDS}/lib/molinillo
 
 do-build:
 	mkdir -p ${WRKSRC}/.build

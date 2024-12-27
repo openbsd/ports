@@ -11,8 +11,8 @@ Index: bin/crystal
  
  if [ -x "$CRYSTAL_DIR/crystal" ]; then
    __warning_msg "Using compiled compiler at ${CRYSTAL_DIR#"$PWD/"}/crystal"
-+  export LD_LIBRARY_PATH=/usr/local/llvm17/lib
-+  export LLVM_CONFIG=/usr/local/llvm17/bin/llvm-config
++  export LD_LIBRARY_PATH=/usr/local/llvm18/lib
++  export LLVM_CONFIG=/usr/local/llvm18/bin/llvm-config
    exec "$CRYSTAL_DIR/crystal" "$@"
  elif !($PARENT_CRYSTAL_EXISTS); then
    __error_msg 'You need to have a crystal executable in your path! or set CRYSTAL env variable'

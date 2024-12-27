@@ -24,7 +24,12 @@ lib/crystal/big/yaml.cr
 lib/crystal/bit_array.cr
 lib/crystal/bool.cr
 lib/crystal/box.cr
+lib/crystal/channel/
 lib/crystal/channel.cr
+lib/crystal/channel/select/
+lib/crystal/channel/select.cr
+lib/crystal/channel/select/select_action.cr
+lib/crystal/channel/select/timeout_action.cr
 lib/crystal/char/
 lib/crystal/char.cr
 lib/crystal/char/reader.cr
@@ -367,6 +372,7 @@ lib/crystal/crystal/syntax_highlighter/colorize.cr
 lib/crystal/crystal/syntax_highlighter/html.cr
 lib/crystal/crystal/system/
 lib/crystal/crystal/system.cr
+lib/crystal/crystal/system/addrinfo.cr
 lib/crystal/crystal/system/dir.cr
 lib/crystal/crystal/system/env.cr
 lib/crystal/crystal/system/event_loop/
@@ -393,6 +399,7 @@ lib/crystal/crystal/system/thread_mutex.cr
 lib/crystal/crystal/system/time.cr
 lib/crystal/crystal/system/unix/
 lib/crystal/crystal/system/unix.cr
+lib/crystal/crystal/system/unix/addrinfo.cr
 lib/crystal/crystal/system/unix/arc4random.cr
 lib/crystal/crystal/system/unix/dir.cr
 lib/crystal/crystal/system/unix/env.cr
@@ -422,6 +429,7 @@ lib/crystal/crystal/system/unix/urandom.cr
 lib/crystal/crystal/system/unix/user.cr
 lib/crystal/crystal/system/user.cr
 lib/crystal/crystal/system/wasi/
+lib/crystal/crystal/system/wasi/addrinfo.cr
 lib/crystal/crystal/system/wasi/cpucount.cr
 lib/crystal/crystal/system/wasi/dir.cr
 lib/crystal/crystal/system/wasi/event_loop.cr
@@ -443,6 +451,8 @@ lib/crystal/crystal/system/wasi/thread_mutex.cr
 lib/crystal/crystal/system/wasi/user.cr
 lib/crystal/crystal/system/wasi/wasi.cr
 lib/crystal/crystal/system/win32/
+lib/crystal/crystal/system/win32/addrinfo.cr
+lib/crystal/crystal/system/win32/addrinfo_win7.cr
 lib/crystal/crystal/system/win32/cpucount.cr
 lib/crystal/crystal/system/win32/crypto.cr
 lib/crystal/crystal/system/win32/dir.cr
@@ -452,6 +462,7 @@ lib/crystal/crystal/system/win32/fiber.cr
 lib/crystal/crystal/system/win32/file.cr
 lib/crystal/crystal/system/win32/file_descriptor.cr
 lib/crystal/crystal/system/win32/file_info.cr
+lib/crystal/crystal/system/win32/group.cr
 lib/crystal/crystal/system/win32/hostname.cr
 lib/crystal/crystal/system/win32/iocp.cr
 lib/crystal/crystal/system/win32/library_archive.cr
@@ -465,6 +476,7 @@ lib/crystal/crystal/system/win32/thread.cr
 lib/crystal/crystal/system/win32/thread_condition_variable.cr
 lib/crystal/crystal/system/win32/thread_mutex.cr
 lib/crystal/crystal/system/win32/time.cr
+lib/crystal/crystal/system/win32/user.cr
 lib/crystal/crystal/system/win32/visual_studio.cr
 lib/crystal/crystal/system/win32/windows_registry.cr
 lib/crystal/crystal/system/win32/windows_sdk.cr
@@ -804,6 +816,7 @@ lib/crystal/lib_c/aarch64-linux-musl/c/sys/wait.cr
 lib/crystal/lib_c/aarch64-linux-musl/c/termios.cr
 lib/crystal/lib_c/aarch64-linux-musl/c/time.cr
 lib/crystal/lib_c/aarch64-linux-musl/c/unistd.cr
+lib/crystal/lib_c/aarch64-windows-msvc
 lib/crystal/lib_c/amd64-unknown-openbsd
 lib/crystal/lib_c/arm-linux-gnueabihf/
 lib/crystal/lib_c/arm-linux-gnueabihf/c/
@@ -1310,6 +1323,7 @@ lib/crystal/lib_c/x86_64-windows-msvc/c/ioapiset.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/jobapi2.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/knownfolders.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/libloaderapi.cr
+lib/crystal/lib_c/x86_64-windows-msvc/c/lm.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/malloc.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/memoryapi.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/minwinbase.cr
@@ -1322,7 +1336,9 @@ lib/crystal/lib_c/x86_64-windows-msvc/c/processenv.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/processthreadsapi.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/profileapi.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/regapix.cr
+lib/crystal/lib_c/x86_64-windows-msvc/c/sddl.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/sdkddkver.cr
+lib/crystal/lib_c/x86_64-windows-msvc/c/security.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/shlobj_core.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/signal.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/stdarg.cr
@@ -1340,6 +1356,7 @@ lib/crystal/lib_c/x86_64-windows-msvc/c/sys/utime.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/sysinfoapi.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/timezoneapi.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/tlhelp32.cr
+lib/crystal/lib_c/x86_64-windows-msvc/c/userenv.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/win_def.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/winbase.cr
 lib/crystal/lib_c/x86_64-windows-msvc/c/wincrypt.cr
@@ -1389,6 +1406,7 @@ lib/crystal/llvm/jit_compiler.cr
 lib/crystal/llvm/lib_llvm/
 lib/crystal/llvm/lib_llvm.cr
 lib/crystal/llvm/lib_llvm/analysis.cr
+lib/crystal/llvm/lib_llvm/bit_reader.cr
 lib/crystal/llvm/lib_llvm/bit_writer.cr
 lib/crystal/llvm/lib_llvm/core.cr
 lib/crystal/llvm/lib_llvm/debug_info.cr
@@ -1396,6 +1414,8 @@ lib/crystal/llvm/lib_llvm/error.cr
 lib/crystal/llvm/lib_llvm/execution_engine.cr
 lib/crystal/llvm/lib_llvm/initialization.cr
 lib/crystal/llvm/lib_llvm/ir_reader.cr
+lib/crystal/llvm/lib_llvm/lljit.cr
+lib/crystal/llvm/lib_llvm/orc.cr
 lib/crystal/llvm/lib_llvm/target.cr
 lib/crystal/llvm/lib_llvm/target_machine.cr
 lib/crystal/llvm/lib_llvm/transforms/
@@ -1407,6 +1427,12 @@ lib/crystal/llvm/memory_buffer.cr
 lib/crystal/llvm/module.cr
 lib/crystal/llvm/module_pass_manager.cr
 lib/crystal/llvm/operand_bundle_def.cr
+lib/crystal/llvm/orc/
+lib/crystal/llvm/orc/jit_dylib.cr
+lib/crystal/llvm/orc/lljit.cr
+lib/crystal/llvm/orc/lljit_builder.cr
+lib/crystal/llvm/orc/thread_safe_context.cr
+lib/crystal/llvm/orc/thread_safe_module.cr
 lib/crystal/llvm/parameter_collection.cr
 lib/crystal/llvm/pass_builder_options.cr
 lib/crystal/llvm/pass_manager_builder.cr
@@ -1619,7 +1645,11 @@ lib/crystal/uri/
 lib/crystal/uri.cr
 lib/crystal/uri/encoding.cr
 lib/crystal/uri/json.cr
+lib/crystal/uri/params/
 lib/crystal/uri/params.cr
+lib/crystal/uri/params/from_www_form.cr
+lib/crystal/uri/params/serializable.cr
+lib/crystal/uri/params/to_www_form.cr
 lib/crystal/uri/punycode.cr
 lib/crystal/uri/uri_parser.cr
 lib/crystal/uri/yaml.cr
