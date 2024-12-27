@@ -1,5 +1,4 @@
 @pkgpath devel/py-rpds-py,python3
-@so lib/librpds.so
 lib/python${MODPY_VERSION}/site-packages/rpds/
 lib/python${MODPY_VERSION}/site-packages/rpds/__init__.py
 lib/python${MODPY_VERSION}/site-packages/rpds/__init__.pyi

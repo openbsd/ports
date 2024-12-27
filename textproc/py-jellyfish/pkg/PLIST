@@ -1,19 +1,17 @@
 @pkgpath textproc/py-jellyfish,python3
-@so lib/libjellyfish.so
 lib/python${MODPY_VERSION}/site-packages/jellyfish/
 lib/python${MODPY_VERSION}/site-packages/jellyfish-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/jellyfish-${MODPY_DISTV}.dist-info/INSTALLER
 lib/python${MODPY_VERSION}/site-packages/jellyfish-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/jellyfish-${MODPY_DISTV}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/jellyfish-${MODPY_DISTV}.dist-info/REQUESTED
 lib/python${MODPY_VERSION}/site-packages/jellyfish-${MODPY_DISTV}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/jellyfish-${MODPY_DISTV}.dist-info/direct_url.json
 lib/python${MODPY_VERSION}/site-packages/jellyfish-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/jellyfish-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/jellyfish/__init__.py
 lib/python${MODPY_VERSION}/site-packages/jellyfish/__init__.pyi
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jellyfish/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/jellyfish/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jellyfish/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jellyfish/${MODPY_PYCACHE}_jellyfish.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jellyfish/${MODPY_PYCACHE}_jellyfish.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jellyfish/_jellyfish.py
 @so lib/python${MODPY_VERSION}/site-packages/jellyfish/_rustyfish.${MODPY_PYC_MAGIC_TAG}so

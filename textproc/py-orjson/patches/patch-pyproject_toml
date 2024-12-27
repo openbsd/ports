@@ -1,0 +1,12 @@
+maturin 1.8 needs project.version
+
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -1,5 +1,6 @@
+ [project]
+ name = "orjson"
++version = "${MODPY_DISTV}"
+ repository = "https://github.com/ijl/orjson"
+ requires-python = ">=3.8"
+ classifiers = [
