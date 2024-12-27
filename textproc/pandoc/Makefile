@@ -1,4 +1,4 @@
-V =		3.6
+V =		3.6.1
 COMMENT =	convert between markup and document formats
 PKGNAME =	pandoc-${V}
 
@@ -36,7 +36,7 @@ MODCABAL_MANIFEST	= \
 	Glob	0.10.2	3	\
 	HUnit	1.6.2.0	0	\
 	JuicyPixels	3.3.9	0	\
-	OneTuple	0.4.2	0	\
+	OneTuple	0.4.2	1	\
 	Only	0.1	2	\
 	QuickCheck	2.15.0.1	0	\
 	StateVar	1.2.2	0	\
@@ -49,10 +49,10 @@ MODCABAL_MANIFEST	= \
 	asn1-encoding	0.9.6	2	\
 	asn1-parse	0.9.5	0	\
 	asn1-types	0.3.4	0	\
-	assoc	1.1.1	0	\
+	assoc	1.1.1	1	\
 	async	2.2.5	3	\
 	attoparsec	0.14.4	6	\
-	auto-update	0.2.4	0	\
+	auto-update	0.2.6	0	\
 	base-compat	0.14.1	0	\
 	base-orphans	0.9.3	0	\
 	base-unicode-symbols	0.2.4.2	0	\
@@ -60,7 +60,7 @@ MODCABAL_MANIFEST	= \
 	base64-bytestring	1.2.1.0	1	\
 	basement	0.0.16	0	\
 	bifunctors	5.6.2	1	\
-	bitvec	1.1.5.0	1	\
+	bitvec	1.1.5.0	2	\
 	blaze-builder	0.4.2.3	0	\
 	blaze-html	0.9.2.0	1	\
 	blaze-markup	0.8.3.0	2	\
@@ -93,7 +93,7 @@ MODCABAL_MANIFEST	= \
 	crypton-x509-validation	1.6.13	0	\
 	data-default	0.8.0.0	0	\
 	data-default-class	0.2.0.0	0	\
-	data-fix	0.3.4	0	\
+	data-fix	0.3.4	1	\
 	dec	0.0.6	0	\
 	digest	0.0.2.1	0	\
 	distributive	0.6.2.1	1	\
@@ -111,7 +111,7 @@ MODCABAL_MANIFEST	= \
 	half	0.3.2	0	\
 	happy	2.1.3	0	\
 	happy-lib	2.1.3	0	\
-	hashable	1.5.0.0	0	\
+	hashable	1.5.0.0	1	\
 	haskell-lexer	1.1.2	0	\
 	hourglass	0.2.12	1	\
 	hsc2hs	0.68.10	3	\
@@ -133,7 +133,7 @@ MODCABAL_MANIFEST	= \
 	hslua-repl	0.1.2	0	\
 	hslua-typing	0.1.1	0	\
 	http-api-data	0.6.1	1	\
-	http-client	0.7.17	0	\
+	http-client	0.7.18	0	\
 	http-client-tls	0.3.6.4	0	\
 	http-date	0.0.11	0	\
 	http-media	0.8.1.1	2	\
@@ -143,7 +143,7 @@ MODCABAL_MANIFEST	= \
 	indexed-traversable	0.1.4	0	\
 	indexed-traversable-instances	0.1.2	0	\
 	integer-conversion	0.1.1	0	\
-	integer-logarithms	1.0.3.1	6	\
+	integer-logarithms	1.0.4	0	\
 	iproute	1.7.15	0	\
 	ipynb	0.2	1	\
 	isocline	1.0.9	0	\
@@ -156,7 +156,7 @@ MODCABAL_MANIFEST	= \
 	mime-types	0.1.2.0	0	\
 	mmorph	1.2.0	3	\
 	monad-control	1.0.3.1	0	\
-	mono-traversable	1.0.20.0	0	\
+	mono-traversable	1.0.21.0	0	\
 	network	3.2.7.0	0	\
 	network-byte-order	0.1.7	0	\
 	network-control	0.1.3	0	\
@@ -166,8 +166,8 @@ MODCABAL_MANIFEST	= \
 	optparse-applicative	0.18.1.0	0	\
 	ordered-containers	0.2.4	0	\
 	os-string	2.0.7	0	\
-	pandoc	3.6	0	\
-	pandoc-lua-engine	0.4	0	\
+	pandoc	3.6.1	0	\
+	pandoc-lua-engine	0.4.1	0	\
 	pandoc-lua-marshal	0.3.0	0	\
 	pandoc-server	0.1.0.10	0	\
 	pandoc-types	1.23.1	2	\
@@ -177,7 +177,7 @@ MODCABAL_MANIFEST	= \
 	prettyprinter-ansi-terminal	1.1.3	0	\
 	primitive	0.9.0.0	2	\
 	psqueues	0.2.8.0	1	\
-	random	1.2.1.2	0	\
+	random	1.2.1.3	0	\
 	recv	0.1.0	0	\
 	regex-base	0.94.0.2	4	\
 	regex-tdfa	1.3.2.2	3	\
@@ -191,17 +191,17 @@ MODCABAL_MANIFEST	= \
 	servant-server	0.20.2	0	\
 	simple-sendfile	0.2.32	0	\
 	singleton-bool	0.1.8	0	\
-	skylighting	0.14.4	0	\
-	skylighting-core	0.14.4	0	\
+	skylighting	0.14.5	0	\
+	skylighting-core	0.14.5	0	\
 	skylighting-format-ansi	0.1	0	\
 	skylighting-format-blaze-html	0.1.1.3	0	\
 	skylighting-format-context	0.1.0.2	0	\
 	skylighting-format-latex	0.1	0	\
 	socks	0.6.1	0	\
-	some	1.0.6	1	\
+	some	1.0.6	2	\
 	sop-core	0.5.0.2	4	\
 	split	0.2.5	0	\
-	splitmix	0.1.0.5	1	\
+	splitmix	0.1.1	0	\
 	streaming-commons	0.2.2.6	1	\
 	strict	0.5.1	1	\
 	syb	0.7.2.4	0	\
@@ -212,16 +212,16 @@ MODCABAL_MANIFEST	= \
 	texmath	0.12.8.12	0	\
 	text-conversions	0.3.1.1	0	\
 	text-iso8601	0.1.1	1	\
-	text-short	0.1.6	2	\
+	text-short	0.1.6	3	\
 	th-abstraction	0.7.1.0	0	\
 	th-compat	0.1.6	0	\
 	th-lift	0.8.6	0	\
 	th-lift-instances	0.1.20	0	\
 	these	1.2.1	1	\
 	time-compat	1.9.7	2	\
-	time-manager	0.2.1	0	\
+	time-manager	0.2.2	0	\
 	tls	2.1.5	0	\
-	toml-parser	2.0.1.0	0	\
+	toml-parser	2.0.1.0	1	\
 	transformers-base	0.4.6	0	\
 	transformers-compat	0.7.2	0	\
 	typed-process	0.2.12.0	0	\
@@ -234,10 +234,10 @@ MODCABAL_MANIFEST	= \
 	unix-compat	0.7.3	0	\
 	unix-time	0.4.16	0	\
 	unliftio-core	0.2.1.0	4	\
-	unordered-containers	0.2.20	3	\
+	unordered-containers	0.2.20	4	\
 	utf8-string	1.0.2	0	\
 	uuid-types	1.0.6	1	\
-	vault	0.3.1.5	8	\
+	vault	0.3.1.5	9	\
 	vector	0.13.2.0	0	\
 	vector-algorithms	0.9.0.3	0	\
 	vector-stream	0.1.0.1	3	\
