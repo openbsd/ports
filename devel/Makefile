@@ -1509,6 +1509,7 @@
      SUBDIR += py-jaraco-envs
      SUBDIR += py-jaraco-functools
      SUBDIR += py-jaraco-path
+     SUBDIR += py-jaraco-test
      SUBDIR += py-jedi
      SUBDIR += py-jeepney
      SUBDIR += py-jmespath
