@@ -1,0 +1,22 @@
+Fix test #67 that relies on the seed passed to rand(3).
+OpenBSD's srand() implementation ignores it.
+
+This patch has now been merged upstream. Drop next update.
+Commit: 9185bc8c901bf8839af2e25ed960f9b5e7b9c66f
+
+See also https://github.com/PointCloudLibrary/pcl/issues/6178
+Index: filters/src/random_sample.cpp
+--- filters/src/random_sample.cpp.orig
++++ filters/src/random_sample.cpp
+@@ -117,7 +117,11 @@ pcl::RandomSample<pcl::PCLPointCloud2>::applyFilter (I
+       removed_indices_->resize (N - sample_size);
+ 
+     // Set random seed so derived indices are the same each time the filter runs
++#ifdef __OpenBSD__
++    srand_deterministic (seed_);
++#else
+     std::srand (seed_);
++#endif
+ 
+     // Algorithm S
+     std::size_t i = 0;

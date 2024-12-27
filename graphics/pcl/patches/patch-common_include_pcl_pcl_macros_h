@@ -1,0 +1,12 @@
+Index: common/include/pcl/pcl_macros.h
+--- common/include/pcl/pcl_macros.h.orig
++++ common/include/pcl/pcl_macros.h
+@@ -363,7 +363,7 @@ pcl_round (float number)
+   #define FREEBSD_MALLOC_ALIGNED 0
+ #endif
+ 
+-#if defined(__APPLE__) || defined(_WIN64) || GLIBC_MALLOC_ALIGNED || FREEBSD_MALLOC_ALIGNED
++#if defined(__APPLE__) || defined(_WIN64) || GLIBC_MALLOC_ALIGNED || FREEBSD_MALLOC_ALIGNED || defined(__OpenBSD__)
+   #define MALLOC_ALIGNED 1
+ #endif
+ 
