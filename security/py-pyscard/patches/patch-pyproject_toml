@@ -1,0 +1,13 @@
+this is pypi's "swig" which packages SWIG as a Python package; it
+requires scikit-build which IIRC is annoying so let's skip that for now.
+
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -1,5 +1,5 @@
+ [build-system]
+-requires = ["setuptools","swig"]
++requires = ["setuptools"]
+ build-backend = "setuptools.build_meta"
+ 
+ 

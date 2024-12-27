@@ -1,9 +1,8 @@
 COMMENT=	smartcard package for Python
 
-MODPY_DISTV=	2.0.7
+MODPY_DISTV=	2.2.0
 DISTNAME=	pyscard-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	security
 
@@ -20,8 +19,5 @@ MODPY_PYBUILD=	setuptools
 BUILD_DEPENDS=	devel/swig \
 		security/pcsc-lite
 RUN_DEPENDS=	security/pcsc-lite
-
-pre-test:
-	${MODPY_CMD} build_ext --inplace
 
 .include <bsd.port.mk>
