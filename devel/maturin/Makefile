@@ -1,11 +1,8 @@
-# ring-v0.17 does not support this arch
-NOT_FOR_ARCHS=	sparc64
-
 COMMENT=	develop crates with pyo3, rust-cpython and cffi bindings
 
 GH_ACCOUNT=	PyO3
 GH_PROJECT=	maturin
-GH_TAGNAME=	v1.7.6
+GH_TAGNAME=	v1.8.0
 
 CATEGORIES=	devel
 
@@ -15,7 +12,12 @@ PERMIT_PACKAGE=	Yes
 WANTLIB +=	${MODCARGO_WANTLIB} bz2 m
 
 MODULES=	devel/cargo
-CONFIGURE_STYLE=cargo
+
+CONFIGURE_STYLE=   cargo
+
+# disable rustls/ring for sparc64 support
+MODCARGO_NO_DEFAULT_FEATURES= yes
+MODCARGO_FEATURES= cli-completion native-tls scaffolding upload
 
 LIB_DEPENDS=	archivers/bzip2
 
