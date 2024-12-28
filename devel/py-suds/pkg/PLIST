@@ -1,5 +1,5 @@
-@pkgpath devel/py-suds,python3
 @conflict py-suds-*
+@pkgpath devel/py-suds,python3
 lib/python${MODPY_VERSION}/site-packages/suds/
 lib/python${MODPY_VERSION}/site-packages/suds/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/suds/${MODPY_PYCACHE}/
