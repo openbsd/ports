@@ -9,7 +9,7 @@ CATEGORIES=	textproc print
 
 HOMEPAGE=	https://gitlab.com/latex-rubber/rubber
 
-# GPLv2
+# GPLv3+
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
