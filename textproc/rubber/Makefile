@@ -15,7 +15,6 @@ MODULES=	lang/python
 MODPY_PYBUILD=	hatchling
 MODPY_PI=	Yes
 
-BUILD_DEPENDS=	print/texlive/base
 RUN_DEPENDS=	print/texlive/base
 TEST_DEPENDS=	devel/py-prompt_toolkit \
 		graphics/ImageMagick \
