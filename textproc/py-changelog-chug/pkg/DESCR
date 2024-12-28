@@ -1,0 +1,5 @@
+changelog-chug is a parser for project changelog documents.
+
+Given a changelog as a reStructuredText document, chug will generate
+Change Log entry data for all versions, and generate a JSON document
+describing the latest version.
