@@ -17,5 +17,6 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+BUILD_DEPENDS=	sysutils/py-expandvars
 
 .include <bsd.port.mk>
