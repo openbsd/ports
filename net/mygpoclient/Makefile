@@ -1,9 +1,8 @@
 COMMENT=		gpodder.net client library
 
-MODPY_DISTV=	1.9
+MODPY_DISTV=	1.10
 DISTNAME=		mygpoclient-${MODPY_DISTV}
 CATEGORIES=		net devel
-REVISION=		2
 
 MAINTAINER=		Tim Meunier <trondd@kagu-tsuchi.com>
 
