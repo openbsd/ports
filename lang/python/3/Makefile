@@ -9,6 +9,7 @@ VERSION_SPEC =		>=3.12,<3.13
 PORTROACH =		limit:^3\.12
 
 REVISION =		0
+REVISION-main =		1
 
 AUTOCONF_VERSION =	2.71
 

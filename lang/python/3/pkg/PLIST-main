@@ -9,7 +9,6 @@
 @pkgpath meta/python3
 bin/2to3
 bin/2to3-3.12
-@comment bin/pip3
 bin/pydoc3
 bin/pydoc3.12
 bin/python3
@@ -2440,20 +2439,6 @@ lib/python3.12/shutil.py
 lib/python3.12/signal.py
 lib/python3.12/site-packages/
 lib/python3.12/site-packages/README.txt
-@comment lib/python3.12/site-packages/pip/_vendor/distlib/t32.exe
-@comment lib/python3.12/site-packages/pip/_vendor/distlib/t64-arm.exe
-@comment lib/python3.12/site-packages/pip/_vendor/distlib/t64.exe
-@comment lib/python3.12/site-packages/pip/_vendor/distlib/w32.exe
-@comment lib/python3.12/site-packages/pip/_vendor/distlib/w64-arm.exe
-@comment lib/python3.12/site-packages/pip/_vendor/distlib/w64.exe
-@comment lib/python3.12/site-packages/setuptools/cli-32.exe
-@comment lib/python3.12/site-packages/setuptools/cli-64.exe
-@comment lib/python3.12/site-packages/setuptools/cli-arm64.exe
-@comment lib/python3.12/site-packages/setuptools/cli.exe
-@comment lib/python3.12/site-packages/setuptools/gui-32.exe
-@comment lib/python3.12/site-packages/setuptools/gui-64.exe
-@comment lib/python3.12/site-packages/setuptools/gui-arm64.exe
-@comment lib/python3.12/site-packages/setuptools/gui.exe
 lib/python3.12/site.py
 lib/python3.12/smtplib.py
 lib/python3.12/sndhdr.py
