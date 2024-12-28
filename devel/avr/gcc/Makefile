@@ -1,3 +1,5 @@
+BROKEN-sparc64=	Core dumps when running build/genmodes -h
+
 COMMENT=	Atmel AVR 8-bit RISC microcontrollers' XGCC #'
 
 V=		8.5.0
