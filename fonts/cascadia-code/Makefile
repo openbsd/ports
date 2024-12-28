@@ -1,4 +1,4 @@
-V =		2404.23
+V =		2407.24
 COMMENT =	Microsoft programming/terminal font
 DISTNAME =	CascadiaCode-${V}
 PKGNAME =	cascadia-code-${V}
