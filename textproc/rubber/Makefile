@@ -1,8 +1,9 @@
-COMMENT=	wrapper for LaTeX and friends
+COMMENT=	an automated system for building LaTeX documents
 
 MODPY_DISTV=	1.6.7
 DISTNAME=	latex_rubber-${MODPY_DISTV}
 PKGNAME=	rubber-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	textproc print
 
