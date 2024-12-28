@@ -1,38 +1,39 @@
 COMMENT=	wrapper for LaTeX and friends
 
-MODPY_DISTV=	1.5.1
-DISTNAME=	rubber-${MODPY_DISTV}
-REVISION=	4
+MODPY_DISTV=	1.6.7
+DISTNAME=	latex_rubber-${MODPY_DISTV}
+PKGNAME=	rubber-${MODPY_DISTV}
 
 CATEGORIES=	textproc print
 
-HOMEPAGE=	https://launchpad.net/rubber/
+HOMEPAGE=	https://gitlab.com/latex-rubber/rubber
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-SITES=		${HOMEPAGE}/trunk/${MODPY_DISTV}/+download/
-
 MODULES=	lang/python
-MODPY_PYBUILD=	setuptools
+MODPY_PYBUILD=	hatchling
+MODPY_PI=	Yes
 
-BUILD_DEPENDS=	print/texinfo \
-		print/texlive/base
+BUILD_DEPENDS=	print/texlive/base
 RUN_DEPENDS=	print/texlive/base
-
-# makeinfo: unknown option -- info
-pre-configure:
-	sed -i -e 's,makeinfo,gmakeinfo,g;' \
-		-e 's,texi2dvi,gtexi2dvi,g;' ${WRKSRC}/setup.py
-
-post-install:
-	mv ${WRKINST}${MODPY_SITEPKG}/usr/local/info ${PREFIX}/
-	mv ${WRKINST}${MODPY_SITEPKG}/usr/local/share/doc/rubber ${PREFIX}/share/doc/
-	mv ${WRKINST}${MODPY_SITEPKG}/usr/local/man/man1/* ${PREFIX}/man/man1/
-	mv ${WRKINST}${MODPY_SITEPKG}/usr/local/man/fr/ ${PREFIX}/man/
-	find ${WRKINST}${MODPY_SITEPKG}/usr -type d -delete
+TEST_DEPENDS=	devel/py-prompt_toolkit \
+		graphics/ImageMagick \
+		graphics/asymptote \
+		print/texlive/texmf,-full \
+		print/transfig \
+		shells/bash \
+		sysutils/coreutils
 
 do-test:
-	cd ${WRKSRC}/tests && /bin/sh ./run.sh
+.for i in mktemp touch wc head
+	ln -fs ${LOCALBASE}/bin/g$i ${WRKDIR}/bin/$i
+.endfor
+	ln -fs ${WRKINST}${PREFIX}/bin ${WRKSRC}/bin
+	for i in biblatex* combine cweb-latex \
+	    graphicx-dotted-files knitr lualatex pythontex; \
+	    do touch ${WRKSRC}/tests/$$i/disable; done
+	cd ${WRKSRC}/tests; \
+	    ${SETENV} ${ALL_TEST_ENV} ./run.sh [p-z]*
 
 .include <bsd.port.mk>

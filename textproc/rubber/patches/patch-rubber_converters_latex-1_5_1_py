@@ -1,0 +1,12 @@
+Index: rubber/converters/latex-1.5.1.py
+--- rubber/converters/latex-1.5.1.py.orig
++++ rubber/converters/latex-1.5.1.py
+@@ -151,7 +151,7 @@ re_badbox = re.compile(r"(Ov|Und)erfull \\[hv]box ")
+ re_line = re.compile(r"(l\.(?P<line>[0-9]+)( (?P<code>.*))?$|<\*>)")
+ re_cseq = re.compile(r".*(?P<seq>(\\|\.\.\.)[^ ]*) ?$")
+ re_macro = re.compile(r"^(?P<macro>\\.*) ->")
+-re_page = re.compile("\[(?P<num>[0-9]+)\]")
++re_page = re.compile(r"\[(?P<num>[0-9]+)\]")
+ re_atline = re.compile("( detected| in paragraph)? at lines? (?P<line>[0-9]*)(--(?P<last>[0-9]*))?")
+ re_reference = re.compile("LaTeX Warning: Reference `(?P<ref>.*)' \
+ on page (?P<page>[0-9]*) undefined on input line (?P<line>[0-9]*)\\.$")

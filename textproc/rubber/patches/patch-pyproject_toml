@@ -1,0 +1,27 @@
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -59,16 +59,16 @@ include = [
+ #        archives (as of hatchling 1.21.1).  So be careful please.
+ #      - this should remain in sync with .targets.sdist above
+ "doc/rubber/rubber.html" = "share/doc/rubber/rubber.html"
+-"doc/rubber/rubber.info" = "share/doc/rubber/rubber.info"
++"doc/rubber/rubber.info" = "info/rubber.info"
+ "doc/rubber/rubber.pdf" = "share/doc/rubber/rubber.pdf"
+ "doc/rubber/rubber.texi" = "share/doc/rubber/rubber.texi"
+ "doc/rubber/rubber.txt" = "share/doc/rubber/rubber.txt"
+-"man/fr/man1/rubber.1" = "share/man/fr/man1/rubber.1"
+-"man/fr/man1/rubber-info.1" = "share/man/fr/man1/rubber-info.1"
+-"man/fr/man1/rubber-pipe.1" = "share/man/fr/man1/rubber-pipe.1"
+-"man/man1/rubber.1" = "share/man/man1/rubber.1"
+-"man/man1/rubber-info.1" = "share/man/man1/rubber-info.1"
+-"man/man1/rubber-pipe.1" = "share/man/man1/rubber-pipe.1"
++"man/fr/man1/rubber.1" = "man/fr/man1/rubber.1"
++"man/fr/man1/rubber-info.1" = "man/fr/man1/rubber-info.1"
++"man/fr/man1/rubber-pipe.1" = "man/fr/man1/rubber-pipe.1"
++"man/man1/rubber.1" = "man/man1/rubber.1"
++"man/man1/rubber-info.1" = "man/man1/rubber-info.1"
++"man/man1/rubber-pipe.1" = "man/man1/rubber-pipe.1"
+ "misc/zsh-completion" = "share/zsh/site-functions/_rubber"
+ 
+ [tool.hatch.build.targets.wheel]
