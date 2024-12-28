@@ -24,6 +24,9 @@ MODGNOME_LDFLAGS=	-L${LOCALBASE}/lib -lepoll-shim
 
 MODGNOME_TOOLS=		gobject-introspection vala
 
+# needed to build examples
+BUILD_DEPENDS+=		devel/libsoup3
+
 LIB_DEPENDS=		devel/epoll-shim \
 			devel/glib2
 
