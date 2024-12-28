@@ -1,7 +1,6 @@
 COMMENT=		media aggregator and podcast client
 
-MODPY_DISTV=	3.11.4
-REVISION=		4
+MODPY_DISTV=		3.11.5
 
 GH_ACCOUNT=		gpodder
 GH_PROJECT=		gpodder
@@ -19,8 +18,6 @@ PERMIT_PACKAGE=		Yes
 MODULES=		lang/python \
 			textproc/intltool
 MODPY_PYBUILD=		setuptools
-
-TEST_ENV=		PYTEST=py.test
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/gettext,-runtime \
@@ -47,8 +44,6 @@ MAKE_ENV=		LC_CTYPE=en_US.UTF-8 \
 			GPODDER_MANPATH_NO_SHARE="yes"
 
 ALL_TARGET=		messages
-
-TEST_TARGET=		unittest
 
 do-install:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} DESTDIR=/ ${MAKE_PROGRAM} \

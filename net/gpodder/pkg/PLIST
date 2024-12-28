@@ -2,11 +2,12 @@ bin/gpo
 bin/gpodder
 bin/gpodder-migrate2tres
 lib/python${MODPY_VERSION}/site-packages/gpodder/
-lib/python${MODPY_VERSION}/site-packages/gpodder-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/
-lib/python${MODPY_VERSION}/site-packages/gpodder-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/PKG-INFO
-lib/python${MODPY_VERSION}/site-packages/gpodder-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/SOURCES.txt
-lib/python${MODPY_VERSION}/site-packages/gpodder-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/dependency_links.txt
-lib/python${MODPY_VERSION}/site-packages/gpodder-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/gpodder-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/gpodder-${MODPY_DISTV}.dist-info/COPYING
+lib/python${MODPY_VERSION}/site-packages/gpodder-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/gpodder-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/gpodder-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/gpodder-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/gpodder/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gpodder/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -235,6 +236,8 @@ share/gpodder/extensions/${MODPY_PYCACHE}notification-win32.${MODPY_PYC_MAGIC_TA
 share/gpodder/extensions/${MODPY_PYCACHE}notification-win32.${MODPY_PYC_MAGIC_TAG}pyc
 share/gpodder/extensions/${MODPY_PYCACHE}notification.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/gpodder/extensions/${MODPY_PYCACHE}notification.${MODPY_PYC_MAGIC_TAG}pyc
+share/gpodder/extensions/${MODPY_PYCACHE}podverse.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/gpodder/extensions/${MODPY_PYCACHE}podverse.${MODPY_PYC_MAGIC_TAG}pyc
 share/gpodder/extensions/${MODPY_PYCACHE}rename_download.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/gpodder/extensions/${MODPY_PYCACHE}rename_download.${MODPY_PYC_MAGIC_TAG}pyc
 share/gpodder/extensions/${MODPY_PYCACHE}rm_ogg_cover.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -245,6 +248,8 @@ share/gpodder/extensions/${MODPY_PYCACHE}rockbox_coverart.${MODPY_PYC_MAGIC_TAG}
 share/gpodder/extensions/${MODPY_PYCACHE}rockbox_coverart.${MODPY_PYC_MAGIC_TAG}pyc
 share/gpodder/extensions/${MODPY_PYCACHE}sonos.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/gpodder/extensions/${MODPY_PYCACHE}sonos.${MODPY_PYC_MAGIC_TAG}pyc
+share/gpodder/extensions/${MODPY_PYCACHE}subscription_stats.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/gpodder/extensions/${MODPY_PYCACHE}subscription_stats.${MODPY_PYC_MAGIC_TAG}pyc
 share/gpodder/extensions/${MODPY_PYCACHE}tagging.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/gpodder/extensions/${MODPY_PYCACHE}tagging.${MODPY_PYC_MAGIC_TAG}pyc
 share/gpodder/extensions/${MODPY_PYCACHE}taskbar_progress.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -273,11 +278,13 @@ share/gpodder/extensions/mpris-listener.py
 share/gpodder/extensions/normalize_audio.py
 share/gpodder/extensions/notification-win32.py
 share/gpodder/extensions/notification.py
+share/gpodder/extensions/podverse.py
 share/gpodder/extensions/rename_download.py
 share/gpodder/extensions/rm_ogg_cover.py
 share/gpodder/extensions/rockbox_convert2mp4.py
 share/gpodder/extensions/rockbox_coverart.py
 share/gpodder/extensions/sonos.py
+share/gpodder/extensions/subscription_stats.py
 share/gpodder/extensions/tagging.py
 share/gpodder/extensions/taskbar_progress.py
 share/gpodder/extensions/ted_subtitles.py
@@ -290,6 +297,7 @@ share/gpodder/images/
 share/gpodder/images/directory-examples.png
 share/gpodder/images/directory-gpodder.png
 share/gpodder/images/directory-opml.png
+share/gpodder/images/directory-podverse.png
 share/gpodder/images/directory-soundcloud.png
 share/gpodder/images/directory-tags.png
 share/gpodder/images/directory-toplist.png
