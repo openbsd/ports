@@ -3,6 +3,7 @@ COMMENT =	versatile file searching tool
 XFCE_GOODIE =	catfish
 XFCE_VERSION =	4.20.0
 CATEGORIES =	textproc
+REVISION =	0
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
@@ -22,14 +23,17 @@ RUN_DEPENDS =	devel/py-gobject3 \
 		devel/py-pexpect \
 		x11/dbus-python \
 		x11/gtk+4,-guic \
+		x11/gtk+3 \
 		x11/xfce4/xfconf
 
 BUILD_DEPENDS += \
+		devel/py-gobject3 \
 		devel/py-pexpect \
 		devel/gettext,-tools \
 		x11/dbus-python \
 		devel/py-distutils-extra \
 		devel/py-setuptools \
+		x11/gtk+3 \
 		x11/xfce4/xfconf
 
 # pygobject GTK3 introspection (not provided by indirect dependencies)
