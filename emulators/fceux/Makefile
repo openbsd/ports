@@ -1,5 +1,3 @@
-ONLY_FOR_ARCHS =	amd64 i386
-
 COMMENT =		emulator for Nintendo Entertainment System
 
 CATEGORIES =		emulators games
@@ -9,6 +7,7 @@ HOMEPAGE =		https://fceux.com/web/home.html
 GH_ACCOUNT =	TASEmulators
 GH_PROJECT =	fceux
 GH_TAGNAME =	v2.6.6
+REVISION =	0
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
