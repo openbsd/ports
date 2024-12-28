@@ -1,10 +1,8 @@
 COMMENT =	bitmap paint program inspired by Deluxe Paint and Brilliance
 
-V =		2.8
-DISTNAME =	grafx2-${V}.3091-HEAD-src
+V =		2.9
+DISTNAME =	grafx2-v${V}.3219
 PKGNAME =	grafx2-${V}
-EXTRACT_SUFX =	.tgz
-REVISION =	0
 
 CATEGORIES =	graphics
 
@@ -26,7 +24,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 LIB_DEPENDS =	devel/sdl2 \
 		devel/sdl2-image
 
-WRKDIST =	${WRKDIR}/grafx2/src
+WRKDIST =	${WRKDIR}/grafx2-v${V}/src
 
 USE_GMAKE =	Yes
 

@@ -1,7 +1,7 @@
 Index: main.c
 --- main.c.orig
 +++ main.c
-@@ -640,7 +640,7 @@ int Init_program(int argc,char * argv[])
+@@ -639,7 +639,7 @@ int Init_program(int argc,char * argv[])
    Init_list_of_pages(Spare.backups);
  
    // Determine the executable directory
