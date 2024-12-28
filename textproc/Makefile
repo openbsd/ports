@@ -400,6 +400,7 @@
      SUBDIR += py-bracex
      SUBDIR += py-canonicaljson
      SUBDIR += py-cchardet
+     SUBDIR += py-changelog-chug
      SUBDIR += py-chardet
      SUBDIR += py-charset-normalizer
      SUBDIR += py-colored
