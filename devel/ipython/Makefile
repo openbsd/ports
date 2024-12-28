@@ -1,9 +1,8 @@
 COMMENT =		enhanced interactive Python shell
 
-MODPY_DISTV =	8.28.0
+MODPY_DISTV =	8.31.0
 DISTNAME =		ipython-${MODPY_DISTV}
 PKGNAME =		ipython${MODPY_MAJOR_VERSION}-${MODPY_DISTV}
-REVISION =		0
 
 CATEGORIES =		devel
 

@@ -1,5 +1,5 @@
-@pkgpath devel/ipython,python3
 @conflict ipython-*
+@pkgpath devel/ipython,python3
 bin/ipython
 @comment bin/ipython3
 lib/python${MODPY_VERSION}/site-packages/IPython/
@@ -880,6 +880,7 @@ lib/python${MODPY_VERSION}/site-packages/IPython/utils/ulinecache.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/version.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/wildcard.py
 lib/python${MODPY_VERSION}/site-packages/ipython-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/ipython-${MODPY_DISTV}.dist-info/COPYING.rst
 lib/python${MODPY_VERSION}/site-packages/ipython-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/ipython-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/ipython-${MODPY_DISTV}.dist-info/RECORD

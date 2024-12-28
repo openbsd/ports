@@ -3,12 +3,12 @@ Put man pages where they belong.
 Index: setupbase.py
 --- setupbase.py.orig
 +++ setupbase.py
-@@ -106,7 +106,7 @@ def find_data_files():
+@@ -93,7 +93,7 @@ def find_data_files():
      Just man pages at this point.
      """
  
 -    if "freebsd" in sys.platform:
 +    if "freebsd" or "openbsd" in sys.platform:
-         manpagebase = pjoin('man', 'man1')
+         manpagebase = Path("man") / "man1"
      else:
-         manpagebase = pjoin('share', 'man', 'man1')
+         manpagebase = Path("share") / "man" / "man1"
