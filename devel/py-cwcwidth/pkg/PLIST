@@ -1,0 +1,14 @@
+lib/python${MODPY_VERSION}/site-packages/cwcwidth/
+lib/python${MODPY_VERSION}/site-packages/cwcwidth-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/cwcwidth-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/cwcwidth-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/cwcwidth-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/cwcwidth-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/cwcwidth-${MODPY_DISTV}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/cwcwidth/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cwcwidth/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cwcwidth/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cwcwidth/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/cwcwidth/_impl.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/cwcwidth/_impl.pyi
+lib/python${MODPY_VERSION}/site-packages/cwcwidth/py.typed

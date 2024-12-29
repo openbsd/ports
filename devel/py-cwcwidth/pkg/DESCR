@@ -1,0 +1,9 @@
+To compute the number of columns needed to print a string, POSIX.1-2001
+and POSIX.1-2008 define two functions: wcwidth and wcswidth. Given a
+character or string, they return the required number of columns or error
+out with -1 if they encounter a nonprintable character.
+
+This module presents a Python interface to these functions.
+
+It is similar to "wcwidth", but using the C functions directly instead
+of Python emulations.
