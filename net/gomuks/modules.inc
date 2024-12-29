@@ -3,88 +3,112 @@ MODGO_MODULES =	\
 	github.com/davecgh/go-spew		 v1.1.1 \
 	github.com/disintegration/imaging	 v1.6.2 \
 	github.com/dlclark/regexp2		 v1.4.0 \
-	github.com/gabriel-vasile/mimetype	 v1.4.1 \
+	github.com/gabriel-vasile/mimetype	 v1.4.4 \
 	github.com/gdamore/encoding		 v1.0.0 \
 	github.com/gorilla/mux			 v1.8.0 \
 	github.com/gorilla/websocket		 v1.5.0 \
-	github.com/kr/pretty			 v0.1.0 \
-	github.com/kr/pty			 v1.1.1 \
-	github.com/kr/text			 v0.1.0 \
-	github.com/kyokomi/emoji/v2		 v2.2.10 \
-	github.com/lithammer/fuzzysearch	 v1.1.5 \
+	github.com/kyokomi/emoji/v2		 v2.2.13 \
+	github.com/lithammer/fuzzysearch	 v1.1.8 \
 	github.com/lucasb-eyer/go-colorful	 v1.2.0 \
-	github.com/mattn/go-runewidth		 v0.0.14 \
-	github.com/mattn/go-sqlite3		 v1.14.16 \
+	github.com/mattn/go-runewidth		 v0.0.15 \
+	github.com/mattn/go-sqlite3		 v1.14.22 \
 	github.com/nu7hatch/gouuid		 v0.0.0-20131221200532-179d4d0c4d8d \
 	github.com/petermattis/goid		 v0.0.0-20180202154549-b0b1615b78e5 \
-	github.com/pkg/diff			 v0.0.0-20210226163009-20ebb0f2a09e \
 	github.com/pmezard/go-difflib		 v1.0.0 \
-	github.com/rivo/uniseg			 v0.4.2 \
-	github.com/rogpeppe/go-internal		 v1.8.1 \
+	github.com/rivo/uniseg			 v0.4.7 \
+	github.com/rogpeppe/go-internal		 v1.10.0 \
 	github.com/sasha-s/go-deadlock		 v0.3.1 \
 	github.com/stretchr/objx		 v0.1.0 \
-	github.com/stretchr/testify		 v1.7.1 \
-	github.com/tidwall/gjson		 v1.14.1 \
+	github.com/stretchr/testify		 v1.8.1 \
+	github.com/tidwall/gjson		 v1.17.1 \
 	github.com/tidwall/match		 v1.1.1 \
-	github.com/tidwall/pretty		 v1.2.0 \
-	github.com/tidwall/sjson		 v1.2.4 \
+	github.com/tidwall/pretty		 v1.2.1 \
+	github.com/tidwall/sjson		 v1.2.5 \
 	github.com/tulir/go-runewidth		 v0.0.14-0.20221113132156-dc2fc6d28246 \
-	github.com/yuin/goldmark		 v1.5.3 \
+	github.com/yuin/goldmark		 v1.7.4 \
 	github.com/zyedidia/clipboard		 v1.0.4 \
-	go.etcd.io/bbolt			 v1.3.8 \
+	go.etcd.io/bbolt			 v1.3.10 \
+	go.etcd.io/gofail			 v0.1.0 \
 	go.mau.fi/cbind				 v0.0.0-20220415094356-e1d579b7925e \
 	go.mau.fi/mauview			 v0.2.1 \
 	go.mau.fi/tcell				 v0.4.0 \
-	golang.org/x/crypto			 v0.0.0-20220513210258-46612604a0f9 \
-	golang.org/x/image			 v0.1.0 \
-	golang.org/x/mod			 v0.6.0-dev.0.20220419223038-86c51ed26bb4 \
-	golang.org/x/net			 v0.2.0 \
-	golang.org/x/sync			 v0.0.0-20220722155255-886fb9371eb4 \
-	golang.org/x/sys			 v0.15.0 \
-	golang.org/x/term			 v0.2.0 \
-	golang.org/x/text			 v0.4.0 \
-	golang.org/x/tools			 v0.1.12 \
+	golang.org/x/crypto			 v0.25.0 \
+	golang.org/x/image			 v0.18.0 \
+	golang.org/x/mod			 v0.17.0 \
+	golang.org/x/net			 v0.27.0 \
+	golang.org/x/sync			 v0.7.0 \
+	golang.org/x/sys			 v0.22.0 \
+	golang.org/x/term			 v0.22.0 \
+	golang.org/x/text			 v0.16.0 \
+	golang.org/x/tools			 v0.21.1-0.20240508182429-e35e4ccd0d2d \
 	golang.org/x/xerrors			 v0.0.0-20190717185122-a985d3407aa7 \
-	gopkg.in/check.v1			 v1.0.0-20180628173108-788fd7840127 \
-	gopkg.in/errgo.v2			 v2.1.0 \
+	gopkg.in/check.v1			 v0.0.0-20161208181325-20d25e280405 \
 	gopkg.in/toast.v1			 v1.0.0-20180812000517-0a84660828b2 \
-	gopkg.in/vansante/go-ffprobe.v2		 v2.1.1 \
+	gopkg.in/vansante/go-ffprobe.v2		 v2.2.0 \
 	gopkg.in/yaml.v2			 v2.4.0 \
 	gopkg.in/yaml.v3			 v3.0.1 \
+	maunium.net/go/mauflag			 v1.0.0 \
 	maunium.net/go/maulogger/v2		 v2.3.2 \
-	maunium.net/go/mautrix			 v0.11.0 \
-	mvdan.cc/xurls/v2			 v2.4.0
+	maunium.net/go/mautrix			 v0.11.2-0.20240620211416-fa19263891f5 \
+	mvdan.cc/xurls/v2			 v2.5.0
 
 MODGO_MODFILES =	\
 	github.com/davecgh/go-spew	 v1.1.0 \
 	github.com/mattn/go-runewidth	 v0.0.13 \
+	github.com/mattn/go-runewidth	 v0.0.14 \
 	github.com/mattn/go-sqlite3	 v1.14.13 \
 	github.com/rivo/uniseg		 v0.2.0 \
+	github.com/rivo/uniseg		 v0.4.2 \
 	github.com/stretchr/testify	 v1.7.0 \
-	github.com/tidwall/gjson	 v1.12.1 \
+	github.com/stretchr/testify	 v1.7.1 \
+	github.com/tidwall/gjson	 v1.14.1 \
+	github.com/tidwall/gjson	 v1.14.2 \
+	github.com/tidwall/pretty	 v1.2.0 \
+	github.com/tidwall/sjson	 v1.2.4 \
 	github.com/yuin/goldmark	 v1.4.12 \
 	github.com/yuin/goldmark	 v1.4.13 \
 	go.mau.fi/tcell			 v0.0.0-20220415093808-07c67d224693 \
 	golang.org/x/crypto		 v0.0.0-20190308221718-c2843e01d9a2 \
 	golang.org/x/crypto		 v0.0.0-20210921155107-089bfa567519 \
+	golang.org/x/crypto		 v0.0.0-20220513210258-46612604a0f9 \
 	golang.org/x/image		 v0.0.0-20191009234506-e7c1f5e7dbb8 \
+	golang.org/x/mod		 v0.10.0 \
+	golang.org/x/mod		 v0.6.0-dev.0.20220419223038-86c51ed26bb4 \
+	golang.org/x/mod		 v0.8.0 \
 	golang.org/x/net		 v0.0.0-20190620200207-3b0461eec859 \
 	golang.org/x/net		 v0.0.0-20210226172049-e18ecbb05110 \
-	golang.org/x/net		 v0.0.0-20211112202133-69e39bad7dc2 \
 	golang.org/x/net		 v0.0.0-20220513224357-95641704303c \
-	golang.org/x/net		 v0.0.0-20220624214902-1bab6f366d9e \
 	golang.org/x/net		 v0.0.0-20220722155237-a158d28d115b \
+	golang.org/x/net		 v0.21.0 \
+	golang.org/x/net		 v0.25.0 \
+	golang.org/x/net		 v0.6.0 \
 	golang.org/x/sync		 v0.0.0-20190423024810-112230192c58 \
-	golang.org/x/sync		 v0.0.0-20210220032951-036812b2e83c \
+	golang.org/x/sync		 v0.0.0-20220722155255-886fb9371eb4 \
+	golang.org/x/sync		 v0.1.0 \
+	golang.org/x/sync		 v0.5.0 \
+	golang.org/x/sys		 v0.0.0-20190215142949-d0b11bdaac8a \
+	golang.org/x/sys		 v0.0.0-20201119102817-f84b799fce68 \
+	golang.org/x/sys		 v0.0.0-20210615035016-665e8c7367d1 \
+	golang.org/x/sys		 v0.0.0-20220412211240-33da011f77ad \
+	golang.org/x/sys		 v0.0.0-20220520151302-bc2c85ada10a \
+	golang.org/x/sys		 v0.0.0-20220722155257-8c9f86f7a55f \
+	golang.org/x/sys		 v0.2.0 \
+	golang.org/x/sys		 v0.4.0 \
+	golang.org/x/sys		 v0.5.0 \
 	golang.org/x/term		 v0.0.0-20201126162022-7de9c90e9dd1 \
 	golang.org/x/term		 v0.0.0-20210927222741-03fcf44c2211 \
 	golang.org/x/term		 v0.0.0-20220411215600-e5f449aeb171 \
+	golang.org/x/term		 v0.2.0 \
+	golang.org/x/term		 v0.5.0 \
 	golang.org/x/text		 v0.3.0 \
 	golang.org/x/text		 v0.3.3 \
-	golang.org/x/text		 v0.3.6 \
 	golang.org/x/text		 v0.3.7 \
+	golang.org/x/text		 v0.4.0 \
+	golang.org/x/text		 v0.7.0 \
+	golang.org/x/text		 v0.9.0 \
 	golang.org/x/tools		 v0.0.0-20180917221912-90fa682c2a6e \
 	golang.org/x/tools		 v0.0.0-20191119224855-298f0cb1881e \
-	gopkg.in/check.v1		 v0.0.0-20161208181325-20d25e280405 \
+	golang.org/x/tools		 v0.1.12 \
+	golang.org/x/tools		 v0.6.0 \
 	gopkg.in/yaml.v3		 v3.0.0-20200313102051-9f266ea9e77c
 
