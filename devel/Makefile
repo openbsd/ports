@@ -1425,6 +1425,7 @@
      SUBDIR += py-cstruct
      SUBDIR += py-curio
      SUBDIR += py-curtsies
+     SUBDIR += py-cwcwidth
      SUBDIR += py-dateutil
      SUBDIR += py-dbus-deviation
      SUBDIR += py-ddt
