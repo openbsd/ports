@@ -1,20 +1,19 @@
-COMMENT =		Python bindings for Rust's persistent data structures (rpds)
+COMMENT =	Python bindings for Rust's persistent data structures (rpds)
 
-MODPY_DISTV =		0.20.0
-REVISION =		2
-DISTNAME =		rpds_py-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME:S/_/-/g}
+MODPY_DISTV =	0.22.3
+DISTNAME =	rpds_py-${MODPY_DISTV}
+PKGNAME =	py-${DISTNAME:S/_/-/g}
 
-CATEGORIES =		devel
+CATEGORIES =	devel
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE =Yes
 
 WANTLIB += ${MODCARGO_WANTLIB}
 
-MODULES =		lang/python
-MODPY_PI =		Yes
-MODPY_PYBUILD =		maturin
+MODULES =	lang/python
+MODPY_PYBUILD =	maturin
+MODPY_PI =	Yes
 
 .include "crates.inc"
 
