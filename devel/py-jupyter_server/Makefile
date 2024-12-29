@@ -1,9 +1,8 @@
 COMMENT =		backend for Jupyter web applications
 
-MODPY_DISTV =	2.14.2
+MODPY_DISTV =		2.15.0
 DISTNAME =		jupyter_server-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		devel
 
@@ -23,7 +22,7 @@ BUILD_DEPENDS =		devel/py-hatch-jupyter-builder
 
 RUN_DEPENDS =		devel/py-jupyter_client>=7.4.4 \
 			devel/py-jupyter_core>=5.1 \
-			devel/py-jupyter_events>=0.9.0 \
+			devel/py-jupyter_events>=0.11.0 \
 			devel/py-jupyter_server_terminals>=0.4.4 \
 			devel/py-nbconvert>=6.4.4 \
 			devel/py-nbformat>=5.3.0 \
