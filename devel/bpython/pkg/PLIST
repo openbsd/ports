@@ -1,5 +1,5 @@
-@pkgpath devel/bpython,python3
 @conflict bpython3-*
+@pkgpath devel/bpython,python3
 bin/bpdb
 bin/bpython
 bin/bpython-curses
@@ -17,7 +17,6 @@ lib/python${MODPY_VERSION}/site-packages/bpdb/${MODPY_PYCACHE}debugger.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/bpdb/debugger.py
 lib/python${MODPY_VERSION}/site-packages/bpython/
 lib/python${MODPY_VERSION}/site-packages/bpython-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/bpython-${MODPY_DISTV}.dist-info/AUTHORS
 lib/python${MODPY_VERSION}/site-packages/bpython-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/bpython-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/bpython-${MODPY_DISTV}.dist-info/RECORD
@@ -33,8 +32,8 @@ lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}__main__.${MODP
 lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}_internal.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}_internal.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}_py3compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}_py3compat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}_typing_compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}_typing_compat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}args.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -43,8 +42,6 @@ lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}autocomplete.${
 lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}autocomplete.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}clipboard.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}clipboard.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}curtsies.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -75,17 +72,14 @@ lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}repl.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}repl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}simpleeval.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}simpleeval.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}simplerepl.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}simplerepl.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}urwid.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bpython/${MODPY_PYCACHE}urwid.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/_internal.py
-lib/python${MODPY_VERSION}/site-packages/bpython/_py3compat.py
+lib/python${MODPY_VERSION}/site-packages/bpython/_typing_compat.py
 lib/python${MODPY_VERSION}/site-packages/bpython/_version.py
 lib/python${MODPY_VERSION}/site-packages/bpython/args.py
 lib/python${MODPY_VERSION}/site-packages/bpython/autocomplete.py
 lib/python${MODPY_VERSION}/site-packages/bpython/cli.py
-lib/python${MODPY_VERSION}/site-packages/bpython/clipboard.py
 lib/python${MODPY_VERSION}/site-packages/bpython/config.py
 lib/python${MODPY_VERSION}/site-packages/bpython/curtsies.py
 lib/python${MODPY_VERSION}/site-packages/bpython/curtsiesfrontend/
@@ -143,7 +137,6 @@ lib/python${MODPY_VERSION}/site-packages/bpython/patch_linecache.py
 lib/python${MODPY_VERSION}/site-packages/bpython/repl.py
 lib/python${MODPY_VERSION}/site-packages/bpython/sample-config
 lib/python${MODPY_VERSION}/site-packages/bpython/simpleeval.py
-lib/python${MODPY_VERSION}/site-packages/bpython/simplerepl.py
 lib/python${MODPY_VERSION}/site-packages/bpython/test/
 lib/python${MODPY_VERSION}/site-packages/bpython/test/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PYCACHE}/
@@ -153,6 +146,8 @@ lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PYCACHE}test_args.
 lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PYCACHE}test_args.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PYCACHE}test_autocomplete.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PYCACHE}test_autocomplete.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PYCACHE}test_brackets_completion.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PYCACHE}test_brackets_completion.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PYCACHE}test_config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PYCACHE}test_config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/bpython/test/${MODPY_PYCACHE}test_crashers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -213,6 +208,7 @@ lib/python${MODPY_VERSION}/site-packages/bpython/test/test.config
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test.theme
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test_args.py
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test_autocomplete.py
+lib/python${MODPY_VERSION}/site-packages/bpython/test/test_brackets_completion.py
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test_config.py
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test_crashers.py
 lib/python${MODPY_VERSION}/site-packages/bpython/test/test_curtsies.py
@@ -239,9 +235,9 @@ lib/python${MODPY_VERSION}/site-packages/bpython/translations/${MODPY_PYCACHE}__
 lib/python${MODPY_VERSION}/site-packages/bpython/urwid.py
 @man man/man1/bpython.1
 @man man/man5/bpython-config.5
-share/appinfo/
-share/appinfo/org.bpython-interpreter.bpython.appdata.xml
 share/applications/org.bpython-interpreter.bpython.desktop
+share/metainfo/
+share/metainfo/org.bpython-interpreter.bpython.metainfo.xml
 share/pixmaps/
-@tag update-desktop-database
 share/pixmaps/bpython.png
+@tag update-desktop-database

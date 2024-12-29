@@ -1,9 +1,8 @@
 COMMENT=	fancy interface to the Python interpreter
 
-MODPY_DISTV=0.18
+MODPY_DISTV=	0.24
 DISTNAME=	bpython-${MODPY_DISTV}
 CATEGORIES=	devel
-REVISION=	6
 
 HOMEPAGE=	https://bpython-interpreter.org/
 MAINTAINER=	Brian Callahan <bcallah@openbsd.org>
@@ -14,16 +13,20 @@ PERMIT_PACKAGE=	Yes
 SITES=		${HOMEPAGE}/releases/
 
 MODULES=	lang/python
-
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/py-curtsies \
+		devel/py-cwcwidth \
 		devel/py-greenlet \
-		devel/py-six \
-		devel/py-urwid \
 		textproc/py-pygments \
-		www/py-requests
+		devel/py-xdg \
+		www/py-requests \
+		devel/py-jedi \
+		devel/py-urwid \
+		sysutils/py-pyperclip \
+		sysutils/py-watchdog
 BUILD_DEPENDS=	devel/py-babel \
 		textproc/py-sphinx
 
