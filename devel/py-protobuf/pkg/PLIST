@@ -1,5 +1,5 @@
-@pkgpath devel/py-protobuf,python3
 @conflict py-protobuf-*
+@pkgpath devel/py-protobuf,python3
 lib/python${MODPY_VERSION}/site-packages/google/
 lib/python${MODPY_VERSION}/site-packages/google/_upb/
 @so lib/python${MODPY_VERSION}/site-packages/google/_upb/_message.${MODPY_PYC_MAGIC_TAG}so
