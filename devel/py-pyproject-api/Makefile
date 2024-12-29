@@ -1,9 +1,8 @@
 COMMENT=	API to interact with pyproject.toml-based projects
 
-MODPY_DISTV=	1.7.1
+MODPY_DISTV=	1.8.0
 DISTNAME=	pyproject_api-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	devel
 
@@ -14,9 +13,8 @@ HOMEPAGE=	https://pyproject-api.readthedocs.io/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	hatch-vcs
+MODPY_PI=	Yes
 
 RUN_DEPENDS=	sysutils/py-packaging
 TEST_DEPENDS=	devel/py-virtualenv \
