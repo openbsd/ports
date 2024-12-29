@@ -1,6 +1,6 @@
 COMMENT =	format a header and rows into a table
 
-DISTNAME =	Term-Table-0.023
+DISTNAME =	Term-Table-0.024
 
 CATEGORIES =	devel
 
