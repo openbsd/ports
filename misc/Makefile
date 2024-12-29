@@ -36,6 +36,7 @@
      SUBDIR += gramps
      SUBDIR += hfsplus
      SUBDIR += hwdata
+     SUBDIR += ical2rem
      SUBDIR += ietf-cli
      SUBDIR += impress
      SUBDIR += insult
