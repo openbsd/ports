@@ -1,6 +1,6 @@
 COMMENT=	simple editor, inspired by Pico
 
-DISTNAME=	nano-8.2
+DISTNAME=	nano-8.3
 CATEGORIES=	editors
 HOMEPAGE=	https://www.nano-editor.org/
 
@@ -15,7 +15,7 @@ EXTRACT_SUFX=	.tar.xz
 PERMIT_PACKAGE=	Yes
 
 LIB_DEPENDS=	devel/gettext,-runtime
-WANTLIB=	c curses iconv intl
+WANTLIB=	c curses iconv intl pthread
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--disable-libmagic
