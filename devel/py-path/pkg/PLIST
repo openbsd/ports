@@ -7,7 +7,6 @@ lib/python${MODPY_VERSION}/site-packages/path-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/path-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/path-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/path/__init__.py
-lib/python${MODPY_VERSION}/site-packages/path/__init__.pyi
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/path/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/path/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/path/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
@@ -18,7 +17,6 @@ lib/python${MODPY_VERSION}/site-packages/path/${MODPY_PYCACHE}masks.${MODPY_PYC_
 lib/python${MODPY_VERSION}/site-packages/path/${MODPY_PYCACHE}matchers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/path/${MODPY_PYCACHE}matchers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/path/classes.py
-lib/python${MODPY_VERSION}/site-packages/path/classes.pyi
 lib/python${MODPY_VERSION}/site-packages/path/compat/
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/path/compat/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/path/compat/${MODPY_PYCACHE}py38.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -26,5 +24,4 @@ lib/python${MODPY_VERSION}/site-packages/path/compat/${MODPY_PYCACHE}py38.${MODP
 lib/python${MODPY_VERSION}/site-packages/path/compat/py38.py
 lib/python${MODPY_VERSION}/site-packages/path/masks.py
 lib/python${MODPY_VERSION}/site-packages/path/matchers.py
-lib/python${MODPY_VERSION}/site-packages/path/matchers.pyi
 lib/python${MODPY_VERSION}/site-packages/path/py.typed

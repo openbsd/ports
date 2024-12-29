@@ -1,9 +1,8 @@
 COMMENT=	module wrapper for os.path
 
-MODPY_DISTV=	17.0.0
+MODPY_DISTV=	17.1.0
 DISTNAME=	path-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	devel
 
@@ -13,10 +12,8 @@ HOMEPAGE=	https://github.com/jaraco/path
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
-MODPY_PYTEST=	Yes
+MODPY_PI=	Yes
 
 TEST_DEPENDS=	devel/py-appdirs \
 		devel/py-more-itertools
