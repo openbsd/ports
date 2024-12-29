@@ -1,9 +1,8 @@
 COMMENT =		node.js virtual environment builder
 
-MODPY_DISTV =	0.11.1
+MODPY_DISTV =		1.9.1
 DISTNAME =		nodeenv-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		devel
 
@@ -11,8 +10,7 @@ CATEGORIES =		devel
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-
-MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
+MODPY_PI =		Yes
 
 .include <bsd.port.mk>
