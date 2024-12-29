@@ -1,0 +1,3 @@
+Reads iCal files and outputs remind-compatible files. Tested ONLY with
+calendar files created by Mozilla Calendar/Sunbird. Use at your own
+risk.
