@@ -1,5 +1,5 @@
-@pkgpath devel/py-curtsies,python3
 @conflict py-curtsies-*
+@pkgpath devel/py-curtsies,python3
 lib/python${MODPY_VERSION}/site-packages/curtsies/
 lib/python${MODPY_VERSION}/site-packages/curtsies-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/curtsies-${MODPY_DISTV}.dist-info/LICENSE
@@ -41,6 +41,7 @@ lib/python${MODPY_VERSION}/site-packages/curtsies/fmtfuncs.py
 lib/python${MODPY_VERSION}/site-packages/curtsies/formatstring.py
 lib/python${MODPY_VERSION}/site-packages/curtsies/formatstringarray.py
 lib/python${MODPY_VERSION}/site-packages/curtsies/input.py
+lib/python${MODPY_VERSION}/site-packages/curtsies/py.typed
 lib/python${MODPY_VERSION}/site-packages/curtsies/termformatconstants.py
 lib/python${MODPY_VERSION}/site-packages/curtsies/termhelpers.py
 lib/python${MODPY_VERSION}/site-packages/curtsies/window.py
