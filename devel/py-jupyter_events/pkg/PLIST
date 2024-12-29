@@ -26,6 +26,8 @@ lib/python${MODPY_VERSION}/site-packages/jupyter_events/${MODPY_PYCACHE}schema_r
 lib/python${MODPY_VERSION}/site-packages/jupyter_events/${MODPY_PYCACHE}schema_registry.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyter_events/${MODPY_PYCACHE}traits.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jupyter_events/${MODPY_PYCACHE}traits.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jupyter_events/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/jupyter_events/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyter_events/${MODPY_PYCACHE}validators.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jupyter_events/${MODPY_PYCACHE}validators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jupyter_events/${MODPY_PYCACHE}yaml.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -42,5 +44,6 @@ lib/python${MODPY_VERSION}/site-packages/jupyter_events/schemas/event-core-schem
 lib/python${MODPY_VERSION}/site-packages/jupyter_events/schemas/event-metaschema.yml
 lib/python${MODPY_VERSION}/site-packages/jupyter_events/schemas/property-metaschema.yml
 lib/python${MODPY_VERSION}/site-packages/jupyter_events/traits.py
+lib/python${MODPY_VERSION}/site-packages/jupyter_events/utils.py
 lib/python${MODPY_VERSION}/site-packages/jupyter_events/validators.py
 lib/python${MODPY_VERSION}/site-packages/jupyter_events/yaml.py
