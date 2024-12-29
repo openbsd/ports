@@ -1,9 +1,8 @@
 COMMENT =		Python style guide checker
 
-MODPY_DISTV =	2.12.0
+MODPY_DISTV =		2.12.1
 DISTNAME =		pycodestyle-${MODPY_DISTV}
 PKGNAME =		py-codestyle-${MODPY_DISTV}
-REVISION =		0
 
 CATEGORIES =		devel
 

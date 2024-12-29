@@ -1,5 +1,5 @@
-@pkgpath devel/py-codestyle,python3
 @conflict py-codestyle-<2.5.0p1
+@pkgpath devel/py-codestyle,python3
 bin/pycodestyle
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pycodestyle.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
