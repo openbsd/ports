@@ -1,32 +1,31 @@
-COMMENT =		Python bindings to TagLib audio file tag library
+COMMENT=	Python bindings to TagLib audio file tag library
 
-MODPY_DISTV =	2022.1
-DISTNAME =		tagpy-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
+MODPY_DISTV=	2022.1
+DISTNAME=	tagpy-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
-REVISION =		2
+REVISION=	3
 
-CATEGORIES =		audio devel
+CATEGORIES=	audio devel
 
-HOMEPAGE =		https://mathema.tician.de/software/tagpy
+HOMEPAGE=	https://github.com/palfrey/tagpy
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} boost_python${MODPY_VERSION:C/\.//g} m tag
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc
 
-CFLAGS_base-clang =	-D_LIBCPP_ENABLE_CXX17_REMOVED_AUTO_PTR
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
-MODPY_PI =		Yes
+LIB_DEPENDS=	audio/taglib \
+		devel/boost
 
-MODULES =		lang/python
-MODPY_PYBUILD =		setuptools
-
-LIB_DEPENDS =		audio/taglib \
-			devel/boost
-
-CFLAGS +=		-I${LOCALBASE}/include
+CFLAGS_base-clang= -D_LIBCPP_ENABLE_CXX17_REMOVED_AUTO_PTR
+CFLAGS +=	-I${LOCALBASE}/include
+MAKE_ENV=	CPPFLAGS="${CFLAGS}"
 
 .include <bsd.port.mk>
