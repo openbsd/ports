@@ -1,13 +1,15 @@
 COMMENT =		terminal UI for Reddit
 
-MODPY_DISTV =	1.29.0
+MODPY_DISTV =		1.29.0
 
 DISTNAME =		tuir-${MODPY_DISTV}
-REVISION =		7
+REVISION =		8
 
 CATEGORIES =		www
 
 HOMEPAGE =		https://gitlab.com/ajak/tuir
+
+MAINTAINER =		Stefan Hagen <sh+ports@codevoid.de>
 
 # MIT
 PERMIT_PACKAGE =	Yes

@@ -1,0 +1,12 @@
+Index: tuir/theme.py
+--- tuir/theme.py.orig
++++ tuir/theme.py
+@@ -399,7 +399,7 @@ class Theme(object):
+             config = configparser.ConfigParser()
+             config.optionxform = six.text_type  # Preserve case
+             with codecs.open(filename, encoding='utf-8') as fp:
+-                config.readfp(fp)
++                config.read_file(fp)
+         except configparser.ParsingError as e:
+             raise ConfigError(e.message)
+ 

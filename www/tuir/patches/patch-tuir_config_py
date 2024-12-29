@@ -1,0 +1,12 @@
+Index: tuir/config.py
+--- tuir/config.py.orig
++++ tuir/config.py
+@@ -131,7 +131,7 @@ class Config(object):
+         config = configparser.RawConfigParser()
+         if os.path.exists(filename):
+             with codecs.open(filename, encoding='utf-8') as fp:
+-                config.readfp(fp)
++                config.read_file(fp)
+ 
+         return cls._parse_tuir_file(config)
+ 

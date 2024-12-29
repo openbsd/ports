@@ -1,0 +1,32 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Since Reddit has changed their API terms, tuir does not work out of the
+box anymore. The following steps are required to make it work:
+
+1. Log on to reddit.com and open https://www.reddit.com/prefs/apps
+2. Click on "create application" and fill out the form:
+   - name: can be anything, for example "tuir"
+   - ( ) web app
+     ( ) installed app
+     (x) script
+   - description: anything or leave empty
+   - about url: leave empty
+   - redirect uri: http://127.0.0.1:65000/
+3. Complete the Captcha and click "create app"
+4. Note down the "secret"
+5. Note down the "client id", which is the string displayed above the 
+   secret, directly under "presonal use script".
+
+Once the "app" is created, tuir can be configured to use it.
+
+1. run the command: tuir --copy-config
+2. Open ~/.config/tuir/tuir.cfg in an editor and replace the values in
+   the following entries with the ones optained above:
+
+   oauth_client_id = <reddit app client id>
+   oauth_client_secret = <reddit app secret>
+   oauth_redirect_uri = http://127.0.0.1:65000/
+
+tuir should work now.

@@ -113,3 +113,4 @@ lib/python${MODPY_VERSION}/site-packages/tuir/themes/papercolor.cfg
 lib/python${MODPY_VERSION}/site-packages/tuir/themes/solarized-dark.cfg
 lib/python${MODPY_VERSION}/site-packages/tuir/themes/solarized-light.cfg
 @man man/man1/tuir.1
+share/doc/pkg-readmes/${PKGSTEM}
