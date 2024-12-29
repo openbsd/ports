@@ -29,6 +29,7 @@ ${P5SITE}/Net/DNS/RR/DHCID.pm
 ${P5SITE}/Net/DNS/RR/DNAME.pm
 ${P5SITE}/Net/DNS/RR/DNSKEY.pm
 ${P5SITE}/Net/DNS/RR/DS.pm
+${P5SITE}/Net/DNS/RR/DSYNC.pm
 ${P5SITE}/Net/DNS/RR/EUI48.pm
 ${P5SITE}/Net/DNS/RR/EUI64.pm
 ${P5SITE}/Net/DNS/RR/GPOS.pm
@@ -116,6 +117,7 @@ ${P5SITE}/Net/DNS/ZoneFile.pm
 @man man/man3p/Net::DNS::RR::DNAME.3p
 @man man/man3p/Net::DNS::RR::DNSKEY.3p
 @man man/man3p/Net::DNS::RR::DS.3p
+@man man/man3p/Net::DNS::RR::DSYNC.3p
 @man man/man3p/Net::DNS::RR::EUI48.3p
 @man man/man3p/Net::DNS::RR::EUI64.3p
 @man man/man3p/Net::DNS::RR::GPOS.3p
