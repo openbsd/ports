@@ -1,3 +1,5 @@
+BROKEN-sparc64 = Undefined references in liblink-grammar.so to mtx_lock, tss_set, and others
+
 ONLY_FOR_ARCHS-java =	i386 amd64
 ONLY_FOR_ARCHS =	${CLANG_ARCHS} ${LLVM_ARCHS}
 
