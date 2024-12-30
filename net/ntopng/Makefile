@@ -4,7 +4,7 @@ COMMENT=	network traffic probe with web ui and deep packet inspection
 NTOPNG_V=	5.2.1
 DIST_TUPLE=	github ntop ntopng ${NTOPNG_V} . \
 		github ntop nDPI 4.2 nDPI
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	net
 
