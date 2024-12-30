@@ -1,0 +1,14 @@
+rrd offset in pixels between left margin of image and start time of the graph
+
+Index: libexec/NfSenRRD.pm
+--- libexec/NfSenRRD.pm.orig
++++ libexec/NfSenRRD.pm
+@@ -70,7 +70,7 @@ sub GetRRDoffset {
+ 	if ( $rrd_version < 1.1 ) { # it's RRD 1.0.x
+ 		$RRDoffset = 77;
+ 	}
+-	if ( $rrd_version >= 1.2 && $rrd_version < 1.9 ) {
++	if ( $rrd_version >= 1.2 && $rrd_version < 2.0 ) {
+ 		$RRDoffset = 67;
+ 	}
+ 

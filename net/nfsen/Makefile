@@ -3,6 +3,7 @@ COMMENT=	web-based front end for the nfdump netflow tools
 GH_ACCOUNT=	phaag
 GH_PROJECT=	nfsen
 GH_TAGNAME=	v.1.3.11
+REVISION=	0
 CATEGORIES=	net www
 HOMEPAGE=	https://nfsen.sourceforge.net/
 
