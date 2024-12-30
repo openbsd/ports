@@ -2,7 +2,7 @@ COMMENT=		GObject Introspection
 
 GNOME_VERSION=		1.82.0
 GNOME_PROJECT=		gobject-introspection
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		devel
 
@@ -22,6 +22,8 @@ COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c
 
 WANTLIB += c ffi gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 m
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 CONFIGURE_ARGS=		-Dcairo_libname=libcairo-gobject.so
 
@@ -52,6 +54,7 @@ RUN_DEPENDS +=		glib2-*:devel/glib2
 # mid-run, causing g-ir-scanner to fail.
 # could be removed if/when gobject-introspection stops using distutils;
 # see https://gitlab.gnome.org/GNOME/gobject-introspection/-/issues/395
+BUILD_DEPENDS +=	devel/py-setuptools
 RUN_DEPENDS +=		devel/py-setuptools
 
 .include <bsd.port.arch.mk>
