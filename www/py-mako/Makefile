@@ -1,12 +1,8 @@
 COMMENT=	super-fast templating language
 
-MODPY_DISTV=	1.3.5
-DISTNAME=	Mako-${MODPY_DISTV}
-PKGNAME=	py-${DISTNAME:L}
-REVISION=	0
-
-# somehow just the changelog is 0600
-FIX_EXTRACT_PERMISSIONS= Yes
+MODPY_DISTV=	1.3.8
+DISTNAME=	mako-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
 CATEGORIES=	www
 
@@ -15,10 +11,9 @@ HOMEPAGE=	https://www.makotemplates.org/
 # MIT
 PERMIT_PACKAGE=	Yes
 
-MODPY_PI=	Yes
-MODPY_PYBUILD=	setuptools
-
 MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 RUN_DEPENDS=	textproc/py-MarkupSafe \
 		www/py-beaker

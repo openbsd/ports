@@ -1,5 +1,5 @@
-@pkgpath www/py-mako,python3
 @conflict py-mako-<1.1.1p1
+@pkgpath www/py-mako,python3
 bin/mako-render
 lib/python${MODPY_VERSION}/site-packages/Mako-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/Mako-${MODPY_DISTV}.dist-info/LICENSE
