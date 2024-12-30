@@ -1,7 +1,7 @@
 Index: src/cold/shared.lisp
 --- src/cold/shared.lisp.orig
 +++ src/cold/shared.lisp
-@@ -387,7 +387,7 @@
+@@ -377,7 +377,7 @@
           ("(and cons-profiling (not sb-thread))" ":CONS-PROFILING requires :SB-THREAD")
           ("(and sb-linkable-runtime (not (or arm arm64 x86 x86-64 ppc ppc64)))"
            ":SB-LINKABLE-RUNTIME not supported on selected architecture")
