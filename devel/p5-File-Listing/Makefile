@@ -1,9 +1,10 @@
 COMMENT =	parse directory listing
 
-DISTNAME =	File-Listing-6.15
+DISTNAME =	File-Listing-6.16
+
 CATEGORIES =	devel
 
-MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
+MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes
