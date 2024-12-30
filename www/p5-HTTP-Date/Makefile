@@ -1,16 +1,18 @@
 COMMENT =	date conversion routines
 
-DISTNAME =	HTTP-Date-6.02
-CATEGORIES =	www
-CPAN_AUTHOR =	GAAS
-REVISION =	0
+DISTNAME =	HTTP-Date-6.06
 
-MAINTAINER =	Nigel Taylor <nigel@openbsd.org>
+CATEGORIES =	www
+
+MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes
 
-MODULES =	cpan
-PKG_ARCH =	*
+MODULES =		cpan
+
+RUN_DEPENDS =		devel/p5-Time-TimeDate
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
