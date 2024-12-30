@@ -1,25 +1,27 @@
-COMMENT =	self-contained cryptographic library for Python
+COMMENT=	self-contained cryptographic library for Python
 
-MODPY_DISTV =	3.21.0
-REVISION =	2
-DISTNAME =	pycryptodomex-${MODPY_DISTV}
-PKGNAME =	py-${DISTNAME:S/py//}
+MODPY_DISTV=	3.21.0
+REVISION=	3
+DISTNAME=	pycryptodomex-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME:S/py//}
 
-CATEGORIES =	security
+CATEGORIES=	security
 
-HOMEPAGE =	https://www.pycryptodome.org
+HOMEPAGE=	https://www.pycryptodome.org
+
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # BSD + Public Domain
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
-TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH} \
-			security/py-cryptodome-test-vectors
-RUN_DEPENDS =		devel/gmp
+TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH} \
+		security/py-cryptodome-test-vectors
+RUN_DEPENDS=	devel/gmp
 
 .include <bsd.port.arch.mk>
 .if ${MACHINE_ARCH:Mamd64} || ${MACHINE_ARCH:Mi386}
