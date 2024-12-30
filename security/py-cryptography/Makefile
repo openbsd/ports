@@ -23,7 +23,8 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	maturin
 
 RUN_DEPENDS=	devel/py-cffi>=1.4.2
-BUILD_DEPENDS=	${RUN_DEPENDS}
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		devel/py-setuptools
 
 PORTHOME=	${WRKDIR}
 TEST_DEPENDS=	devel/py-certifi \
