@@ -1,3 +1,5 @@
+BROKEN-sparc64 = src/link/script.y:17:11: fatal error: bit: No such file or directory
+
 FIX_EXTRACT_PERMISSIONS =	Yes
 
 COMMENT =	Game Boy development system
