@@ -16,6 +16,7 @@ lib/pkgconfig/rofi.pc
 @man man/man5/rofi-keys.5
 @man man/man5/rofi-script.5
 @man man/man5/rofi-theme.5
+@man man/man5/rofi-thumbnails.5
 share/applications/rofi-theme-selector.desktop
 share/applications/rofi.desktop
 share/examples/rofi/
@@ -23,8 +24,7 @@ share/examples/rofi/i3_empty_workspace.sh
 share/examples/rofi/i3_switch_workspaces.sh
 share/examples/rofi/rofi-file-browser.sh
 share/examples/rofi/test_script_mode.sh
-share/icons/hicolor/apps/
-share/icons/hicolor/apps/rofi.svg
+share/icons/hicolor/scalable/apps/rofi.svg
 share/rofi/
 share/rofi/themes/
 share/rofi/themes/Adapta-Nokto.rasi
@@ -41,8 +41,10 @@ share/rofi/themes/c64.rasi
 share/rofi/themes/dmenu.rasi
 share/rofi/themes/docu.rasi
 share/rofi/themes/fancy.rasi
+share/rofi/themes/fancy2.rasi
+share/rofi/themes/fullscreen-preview.rasi
 share/rofi/themes/glue_pro_blue.rasi
-share/rofi/themes/gruvbox-common.rasi
+share/rofi/themes/gruvbox-common.rasinc
 share/rofi/themes/gruvbox-dark-hard.rasi
 share/rofi/themes/gruvbox-dark-soft.rasi
 share/rofi/themes/gruvbox-dark.rasi
@@ -52,6 +54,7 @@ share/rofi/themes/gruvbox-light.rasi
 share/rofi/themes/iggy.jpg
 share/rofi/themes/iggy.rasi
 share/rofi/themes/lb.rasi
+share/rofi/themes/material.rasi
 share/rofi/themes/paper-float.rasi
 share/rofi/themes/purple.rasi
 share/rofi/themes/sidebar-v2.rasi

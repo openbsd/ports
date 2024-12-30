@@ -1,8 +1,7 @@
 COMMENT =		window switcher, run dialog and dmenu replacement
 
-V =			1.7.5
+V =			1.7.6
 DISTNAME =		rofi-${V}
-REVISION =		1
 
 CATEGORIES =		sysutils x11
 HOMEPAGE =		https://github.com/davatorium/rofi
@@ -21,7 +20,7 @@ WANTLIB += c cairo gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 harfbuzz intl m pango-1.0 pangocairo-1.0
 WANTLIB += pthread startup-notification-1 xcb xcb-ewmh xcb-icccm
 WANTLIB += xcb-randr xcb-render xcb-util xcb-xinerama xcb-xkb
-WANTLIB += xcb-cursor xkbcommon xkbcommon-x11
+WANTLIB += xcb-cursor xkbcommon xkbcommon-x11 xcb-keysyms
 
 BUILD_DEPENDS +=	devel/bison
 LIB_DEPENDS =		devel/pango \
