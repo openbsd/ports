@@ -21,7 +21,8 @@ MODULES=	lang/python
 LIB_DEPENDS=	${MODPY_LIB_DEPENDS}
 
 RUN_DEPENDS=	www/apache-httpd
-BUILD_DEPENDS=	www/apache-httpd
+BUILD_DEPENDS=	www/apache-httpd \
+		devel/py-setuptools
 
 CONFIGURE_STYLE=gnu
 CONFIGURE_ARGS=	--with-apxs=${LOCALBASE}/sbin/apxs2 \
