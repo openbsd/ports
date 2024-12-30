@@ -48,10 +48,8 @@ RUN_DEPENDS +=		devel/glib2,bootstrap
 RUN_DEPENDS +=		glib2-*:devel/glib2
 .endif
 
-# g-ir-scanner uses distutils functions. these are overridden by setuptools
-# if setuptools is present (see site-packages/distutils-precedence.pth);
-# enforce a dependency to avoid the case where setuptools might be removed
-# mid-run, causing g-ir-scanner to fail.
+# g-ir-scanner uses distutils functions. as of Python 3.12 these have been
+# removed from Python core and are only available in setuptools.
 # could be removed if/when gobject-introspection stops using distutils;
 # see https://gitlab.gnome.org/GNOME/gobject-introspection/-/issues/395
 BUILD_DEPENDS +=	devel/py-setuptools
