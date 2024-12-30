@@ -125,6 +125,25 @@ you can use these shell commands:
 After enabling or disabling extensions (or otherwise modifying php's
 configuration), use rcctl(8) to restart php${SV}_fpm or Apache.
 
+Moving between PHP release branches
+===================================
+If moving between PHP versions (for example, if an old release branch
+is no longer supported and has been removed from ports, or you have
+software that requires a new version), you will need to:
+
+1. update the configuration files as needed
+
+It may be useful to use diff(1) to compare the default configuration in
+${PREFIX}/share/examples/php-X.Y/php.ini-production for the old version
+with ${SYSCONFDIR}/php-X.Y.ini and apply them to the new version's ini
+file.
+
+2. make sure that rc.d(8) starts the new version (either via rcctl
+disable/stop/enable/start, or editing /etc/rc.conf.local directly).
+
+3. add symlinks to ${SYSCONFDIR}/php-${PV} as shown in the above section
+of this pkg-readme.
+
 Living with chroot
 ==================
 The chroot jail commonly used with PHP on OpenBSD means that only files
