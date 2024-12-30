@@ -1,0 +1,4 @@
+@bin bin/termsonic
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/termsonic/
+share/examples/termsonic/termsonic.toml

@@ -1,0 +1,12 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+Config File
+===========
+
+${PKGSTEM} expects to find a configuration file here:
+$HOME/.config/termsonic/termsonic.toml
+
+A sample config file can be found here:
+${PREFIX}/share/examples/termsonic/termsonic.toml
