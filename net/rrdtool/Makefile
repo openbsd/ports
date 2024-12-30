@@ -2,6 +2,8 @@ COMMENT-main=	system to store and display time-series data
 COMMENT-update=	lightweight update-only tool for rrdtool
 COMMENT-ruby=	ruby interface to librrd
 
+# check rrdoffset in nfsen if updating; needs adjusting if layout of
+# graph images changes
 V=		1.9.0
 DISTNAME=	rrdtool-$V
 PKGNAME-main=	${DISTNAME}
