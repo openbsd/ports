@@ -24,7 +24,13 @@ share/locale/gl/LC_MESSAGES/thunar-vcs-plugin.mo
 share/locale/he/LC_MESSAGES/thunar-vcs-plugin.mo
 share/locale/hr/LC_MESSAGES/thunar-vcs-plugin.mo
 share/locale/hu/LC_MESSAGES/thunar-vcs-plugin.mo
+share/locale/hy_AM/LC_MESSAGES/thunar-vcs-plugin.mo
+share/locale/hye/LC_MESSAGES/thunar-vcs-plugin.mo
+share/locale/hye_RU/
+share/locale/hye_RU/LC_MESSAGES/
+share/locale/hye_RU/LC_MESSAGES/thunar-vcs-plugin.mo
 share/locale/id/LC_MESSAGES/thunar-vcs-plugin.mo
+share/locale/ie/LC_MESSAGES/thunar-vcs-plugin.mo
 share/locale/is/LC_MESSAGES/thunar-vcs-plugin.mo
 share/locale/it/LC_MESSAGES/thunar-vcs-plugin.mo
 share/locale/ko/LC_MESSAGES/thunar-vcs-plugin.mo
@@ -37,9 +43,12 @@ share/locale/oc/LC_MESSAGES/thunar-vcs-plugin.mo
 share/locale/pl/LC_MESSAGES/thunar-vcs-plugin.mo
 share/locale/pt/LC_MESSAGES/thunar-vcs-plugin.mo
 share/locale/pt_BR/LC_MESSAGES/thunar-vcs-plugin.mo
+share/locale/ro/LC_MESSAGES/thunar-vcs-plugin.mo
 share/locale/ru/LC_MESSAGES/thunar-vcs-plugin.mo
 share/locale/sk/LC_MESSAGES/thunar-vcs-plugin.mo
 share/locale/sl/LC_MESSAGES/thunar-vcs-plugin.mo
+share/locale/sq/LC_MESSAGES/thunar-vcs-plugin.mo
+share/locale/sr/LC_MESSAGES/thunar-vcs-plugin.mo
 share/locale/sv/LC_MESSAGES/thunar-vcs-plugin.mo
 share/locale/th/LC_MESSAGES/thunar-vcs-plugin.mo
 share/locale/tr/LC_MESSAGES/thunar-vcs-plugin.mo
