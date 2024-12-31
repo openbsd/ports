@@ -1,0 +1,92 @@
+Index: src/modules/memory.cpp
+--- src/modules/memory.cpp.orig
++++ src/modules/memory.cpp
+@@ -2,6 +2,14 @@
+ #include <iomanip>
+ #include <istream>
+ 
++#ifdef __OpenBSD__
++#include <sys/param.h>
++#include <sys/types.h>
++#include <sys/sysctl.h>
++#include <sys/swap.h>
++#include <unistd.h>
++#endif
++
+ #include "drawtypes/label.hpp"
+ #include "drawtypes/progressbar.hpp"
+ #include "drawtypes/ramp.hpp"
+@@ -63,6 +71,64 @@ namespace modules {
+     unsigned long long kb_swap_total{0ULL};
+     unsigned long long kb_swap_free{0ULL};
+ 
++#ifdef __OpenBSD__
++    size_t size;
++    struct uvmexp uvmexp;
++    struct swapent *swdev = NULL;
++    int nswap, i;
++    int physmem_mib[] = {CTL_HW, HW_PHYSMEM64};
++    int uvmexp_mib[] = {CTL_VM, VM_UVMEXP};
++    int pagesize = sysconf(_SC_PAGESIZE);
++
++    size = sizeof(kb_total);
++    if (sysctl(physmem_mib, 2, &kb_total, &size, NULL, 0) < 0) {
++        m_log.err("Failed to read memory values (what: sysctl %s)", strerror(errno));
++        goto no_update;
++    }
++
++    kb_total = kb_total / 1024;
++
++    size = sizeof(uvmexp);
++    if (sysctl(uvmexp_mib, 2, &uvmexp, &size, NULL, 0) < 0) {
++        m_log.err("Failed to read memory values (what: sysctl %s)", strerror(errno));
++        goto no_update;
++    }
++
++    kb_avail = (long long) uvmexp.free * pagesize / 1024;
++
++    if ((nswap = swapctl(SWAP_NSWAP, 0, 0)) == 0) {
++        // no swap !
++        goto no_update;
++    }
++
++    if ((swdev = (struct swapent *)calloc(nswap, sizeof(*swdev))) == NULL) {
++        m_log.err("Failed to read memory values (what: calloc %s)", strerror(errno));
++        goto no_update;
++    }
++
++    if (swapctl(SWAP_STATS, swdev, nswap) == -1) {
++        m_log.err("Failed to read memory values (what: swapctl %s)", strerror(errno));
++        free(swdev);
++        goto no_update;
++    }
++
++    kb_swap_total = kb_swap_free = 0;
++    for (i = 0; i < nswap; i++) {
++        if (swdev[i].se_flags & SWF_ENABLE) {
++            kb_swap_free += (swdev[i].se_nblks - swdev[i].se_inuse);
++            kb_swap_total += swdev[i].se_nblks;
++        }
++    }
++
++    free(swdev);
++
++    kb_swap_total = kb_swap_total * DEV_BSIZE / 1024;
++    kb_swap_free = kb_swap_free * DEV_BSIZE / 1024;
++
++no_update:
++
++#else
++
+     try {
+       std::ifstream meminfo(PATH_MEMORY_INFO);
+       std::map<std::string, unsigned long long int> parsed;
+@@ -95,6 +161,8 @@ namespace modules {
+     } catch (const std::exception& err) {
+       m_log.err("Failed to read memory values (what: %s)", err.what());
+     }
++
++#endif
+ 
+     m_perc_memfree = math_util::percentage(kb_avail, kb_total);
+     m_perc_memused = 100 - m_perc_memfree;

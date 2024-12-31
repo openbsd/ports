@@ -1,0 +1,56 @@
+Index: src/polybar-msg.cpp
+--- src/polybar-msg.cpp.orig
++++ src/polybar-msg.cpp
+@@ -1,6 +1,11 @@
+ #include <fcntl.h>
+ #include <unistd.h>
+ 
++#ifdef __OpenBSD__
++#include <sys/types.h>
++#include <sys/sysctl.h>
++#endif
++
+ #include <algorithm>
+ #include <cassert>
+ #include <cstdlib>
+@@ -53,6 +58,22 @@ bool validate_type(const string& type) {
+   return (type == "action" || type == "cmd" || type == "hook");
+ }
+ 
++static bool process_exists(int pid) {
++#ifdef __OpenBSD__
++  struct kinfo_proc kp;
++  size_t len = sizeof(kp);
++  int mib[] = { CTL_KERN, KERN_PROC, KERN_PROC_PID, pid, (int)len, 1};
++
++  if (sysctl(mib, std::size(mib), &kp, &len, NULL, 0) == -1) {
++      return false; // Assume the PID does not exist
++  }
++
++  return (len > 0);
++#else
++  return file_util::exists("/proc/" + to_string(pid));
++#endif
++}
++
+ static vector<string> get_sockets() {
+   auto sockets = file_util::glob(ipc::get_glob_socket_path());
+ 
+@@ -63,7 +84,7 @@ static vector<string> get_sockets() {
+       return true;
+     }
+ 
+-    if (!file_util::exists("/proc/" + to_string(pid))) {
++    if (!process_exists(pid)) {
+       remove_socket(path);
+       return true;
+     }
+@@ -194,7 +215,7 @@ int run(int argc, char** argv) {
+   if (args.size() >= 2 && args[0].compare(0, 2, "-p") == 0) {
+     auto& pid_string = args[1];
+     socket_path = ipc::get_socket_path(pid_string);
+-    if (!file_util::exists("/proc/" + pid_string)) {
++    if (!process_exists(std::stoi(pid_string))) {
+       error("No process with pid " + pid_string);
+     } else if (!file_util::exists(socket_path)) {
+       error("No channel available for pid " + pid_string);
