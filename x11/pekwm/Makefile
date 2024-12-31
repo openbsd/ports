@@ -1,7 +1,10 @@
 COMMENT=	aewm++ based pretty themable window manager
 
-DISTNAME=	pekwm-${V}
-V=		0.3.0
+V=		0.3.2
+PKGNAME=	pekwm-${V}
+DISTNAME=	pekwm-release-${V}
+
+DIST_TUPLE=	github pekwm pekwm release-${V} .
 CATEGORIES=	x11
 
 HOMEPAGE=	https://www.pekwm.se/
@@ -19,7 +22,6 @@ WANTLIB += pangoxft-1.0 png
 
 COMPILER =	base-clang ports-gcc base-gcc
 
-SITES=		https://github.com/pekdon/pekwm/releases/download/release-${V}/
 LIB_DEPENDS=	devel/pango \
 		graphics/jpeg \
 		graphics/png
