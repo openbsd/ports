@@ -3,6 +3,7 @@ COMMENT =	i3-compatible Wayland compositor
 GH_ACCOUNT =	swaywm
 GH_PROJECT =	sway
 GH_TAGNAME =	1.10
+REVISION =	0
 
 CATEGORIES =	wayland
 
@@ -13,7 +14,7 @@ PERMIT_PACKAGE = Yes
 
 MODULES =	devel/meson
 
-WANTLIB =	cairo drm evdev gdk_pixbuf-2.0 glib-2.0 gobject-2.0 input 
+WANTLIB =	cairo drm evdev gdk_pixbuf-2.0 glib-2.0 gobject-2.0 input
 WANTLIB +=	json-c pango-1.0 pangocairo-1.0 pcre2-8 pixman-1 pthread
 WANTLIB +=	udev wayland-client wayland-cursor
 WANTLIB +=	wayland-server wlroots-0.18

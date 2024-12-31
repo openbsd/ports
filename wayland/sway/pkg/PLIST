@@ -26,6 +26,7 @@ share/backgrounds/sway/Sway_Wallpaper_Blue_768x1024_Portrait.png
 share/bash-completion/completions/sway
 share/bash-completion/completions/swaybar
 share/bash-completion/completions/swaymsg
+share/doc/pkg-readmes/${PKGSTEM}
 share/examples/sway/
 @sample ${SYSCONFDIR}/sway/
 share/examples/sway/config

@@ -1,15 +1,1 @@
 sway is an i3-compatible Wayland compositor.
-
-Configuration
-
-If you already use i3, then copy your i3 config to
-`~/.config/sway/config` and it'll work out of the box. Otherwise, copy
-the sample configuration file to `~/.config/sway/config`. It is
-usually located at `/etc/sway/config`.  Run `man 5 sway` for
-information on the configuration.
-
-Running
-
-On OpenBSD, use the provided /usr/local/bin/startsway.sh script to
-launch sway from an text VT (xenodm must be stopped).  Customize it to
-your needs

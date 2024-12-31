@@ -1,0 +1,19 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Configuration
+=============
+
+If you already use i3, then copy your i3 config to
+`$XDG_CONFIG_HOME/sway/config` and it'll work out of the box. Otherwise, copy
+the sample configuration file to `$XDG_CONFIG_HOME/sway/config`. It is
+usually located at `${SYSCONFDIR}/sway/config`.  Run `man 5 sway` for
+information on the configuration.
+
+Running
+=======
+
+On OpenBSD, use the provided ${PREFIX}/bin/startsway.sh script to
+launch sway from an text VT (xenodm must be stopped).  Customize it to
+your needs.
