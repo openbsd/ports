@@ -3,8 +3,7 @@ COMMENT =	extremely fast non-cryptographic hash algorithm
 # bump rsync on updates; used as a header-only library there
 GH_ACCOUNT =	Cyan4973
 GH_PROJECT =	xxHash
-GH_TAGNAME =	v0.8.2
-REVISION =	1
+GH_TAGNAME =	v0.8.3
 PKGNAME =	${DISTNAME:L}
 
 SHARED_LIBS =	xxhash 0.3	# 0.8.1

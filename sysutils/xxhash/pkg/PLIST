@@ -1,5 +1,6 @@
 bin/xxh128sum
 bin/xxh32sum
+bin/xxh3sum
 bin/xxh64sum
 @bin bin/xxhsum
 include/xxh3.h
@@ -9,5 +10,6 @@ include/xxhash.h
 lib/pkgconfig/libxxhash.pc
 @man man/man1/xxh128sum.1
 @man man/man1/xxh32sum.1
+@man man/man1/xxh3sum.1
 @man man/man1/xxh64sum.1
 @man man/man1/xxhsum.1
