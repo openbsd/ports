@@ -37,7 +37,11 @@ WANTLIB += z
 
 COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mlp64}
 DPB_PROPERTIES =	parallel
+.endif
 
 PCLVER =		pcl-${V:R}
 SUBST_VARS +=		PCLVER
