@@ -13,6 +13,8 @@ bin/psselect
 bin/pstops
 lib/python${MODPY_VERSION}/site-packages/psutils/
 lib/python${MODPY_VERSION}/site-packages/psutils-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/psutils-${MODPY_DISTV}.dist-info/.bak.0.SOURCES.txt
+lib/python${MODPY_VERSION}/site-packages/psutils-${MODPY_DISTV}.dist-info/.bak.0.requires.txt
 lib/python${MODPY_VERSION}/site-packages/psutils-${MODPY_DISTV}.dist-info/COPYING
 lib/python${MODPY_VERSION}/site-packages/psutils-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/psutils-${MODPY_DISTV}.dist-info/RECORD
