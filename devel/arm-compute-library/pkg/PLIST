@@ -17,6 +17,7 @@ include/CL/cl_va_api_media_sharing_intel.h
 include/CL/cl_version.h
 include/CL/opencl.h
 include/CL/opencl.hpp
+include/REUSE.toml
 include/arm_compute/
 include/arm_compute/Acl.h
 include/arm_compute/Acl.hpp
@@ -551,11 +552,15 @@ include/arm_compute/runtime/experimental/operators/
 include/arm_compute/runtime/experimental/operators/CpuActivation.h
 include/arm_compute/runtime/experimental/operators/CpuAdd.h
 include/arm_compute/runtime/experimental/operators/CpuDepthwiseConv2d.h
+include/arm_compute/runtime/experimental/operators/CpuDequantize.h
 include/arm_compute/runtime/experimental/operators/CpuElementwise.h
+include/arm_compute/runtime/experimental/operators/CpuGEMMLowp.h
 include/arm_compute/runtime/experimental/operators/CpuGemm.h
 include/arm_compute/runtime/experimental/operators/CpuGemmConv2d.h
 include/arm_compute/runtime/experimental/operators/CpuGemmDirectConv2d.h
 include/arm_compute/runtime/experimental/operators/CpuMul.h
+include/arm_compute/runtime/experimental/operators/CpuQuantize.h
+include/arm_compute/runtime/experimental/operators/CpuSoftmax.h
 include/arm_compute/runtime/experimental/operators/CpuSub.h
 include/arm_compute/runtime/experimental/operators/CpuTranspose.h
 include/arm_compute/runtime/experimental/operators/CpuWinogradConv2d.h
