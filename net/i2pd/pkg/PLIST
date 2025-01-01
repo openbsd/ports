@@ -45,6 +45,7 @@ include/i2pd/RouterInfo.h
 include/i2pd/SAM.h
 include/i2pd/SOCKS.h
 include/i2pd/SSU2.h
+include/i2pd/SSU2OutOfSession.h
 include/i2pd/SSU2Session.h
 include/i2pd/Signature.h
 include/i2pd/Siphash.h
@@ -158,12 +159,6 @@ share/examples/i2pd/certificates/reseed/hankhill19580_at_gmail.com.crt
 @owner _i2pd
 @group _i2pd
 @sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/hankhill19580_at_gmail.com.crt 
-@owner
-@group
-share/examples/i2pd/certificates/reseed/hiduser0_at_mail.i2p.crt
-@owner _i2pd
-@group _i2pd
-@sample ${LOCALSTATEDIR}/lib/i2pd/certificates/reseed/hiduser0_at_mail.i2p.crt
 @owner
 @group
 share/examples/i2pd/certificates/reseed/hottuna_at_mail.i2p.crt
