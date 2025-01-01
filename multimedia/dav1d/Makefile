@@ -34,8 +34,12 @@ BUILD_DEPENDS+=	devel/nasm
 CONFIGURE_ARGS+=-Ddefault_library=both \
 		-Dxxhash_muxer=disabled
 
-.if ${MACHINE_ARCH} == "arm"
+# riscv64 RVV asm code needs llvm>=17
+# Revisit when our kernel starts supporting the Vector extension
+.if ${MACHINE_ARCH} == "arm" || ${MACHINE_ARCH} == "riscv64"
 CONFIGURE_ARGS+=-Denable_asm=false
+.endif
+.if ${MACHINE_ARCH} == "arm"
 # XXX SIGBUS otherwise
 CFLAGS+=	-O1
 #CFLAGS+=	-fno-slp-vectorize
