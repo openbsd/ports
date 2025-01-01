@@ -1,13 +1,12 @@
 COMMENT =		fast elliptic curve digital signatures
 
-MODPY_DISTV =		2.3.2
+MODPY_DISTV =		3.0.0
 
 GH_ACCOUNT =		AntonKueltz
 GH_PROJECT =		fastecdsa
 GH_TAGNAME =		v${MODPY_DISTV}
 
 PKGNAME =		py-fastecdsa-${MODPY_DISTV}
-REVISION =		1
 
 CATEGORIES =		security
 
@@ -23,15 +22,16 @@ WANTLIB =		gmp pthread
 MODULES =		lang/python
 
 MODPY_PYBUILD =		setuptools
-MODPY_TEST_DIR =	${WRKSRC}/fastecdsa/tests
-MODPY_PYTEST_ARGS =	--pyargs fastecdsa
 
 CFLAGS +=		-I${LOCALBASE}/include
 
 LIB_DEPENDS =		devel/gmp,-main
 
+# This seems broken
+#TEST_DEPENDS =		devel/py-test-cov
+
+# Work around empty __init__.py file
 pre-test:
-	mkdir -p ${WRKSRC}/fastecdsa/tests/fastecdsa/tests
-	ln -fs ../../vectors ${WRKSRC}/fastecdsa/tests/fastecdsa/tests/
+	rm -f ${WRKSRC}/fastecdsa/__init__.py
 
 .include <bsd.port.mk>
