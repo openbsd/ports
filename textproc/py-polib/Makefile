@@ -1,9 +1,8 @@
 COMMENT=	Python library to manipulate gettext files
 
-MODPY_DISTV =	1.1.1
+MODPY_DISTV =	1.2.0
 DISTNAME =	polib-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
 
 CATEGORIES=	textproc devel
 
@@ -11,21 +10,12 @@ CATEGORIES=	textproc devel
 PERMIT_PACKAGE=	Yes
 
 MODULES =	lang/python
+MODPY_PYBUILD =	setuptools
 MODPY_PI =	Yes
 
-MODPY_PYBUILD =	setuptools
+MODPY_PYTEST_ARGS = tests/tests.py
 
-# only used on test, but poisoned if not in BUILD_DEPENDS
+# only used in tests, but poisoned if not in BUILD_DEPENDS
 BUILD_DEPENDS =	devel/gettext,-tools
-
-TEST_DEPENDS =	devel/py-coverage
-
-SUBST_VARS +=	MODPY_MAJOR_VERSION
-
-post-patch:
-	${SUBST_CMD} ${WRKSRC}/runtests.sh
-
-do-test:
-	@cd ${WRKSRC} && ${MAKE_ENV} ./runtests.sh
 
 .include <bsd.port.mk>
