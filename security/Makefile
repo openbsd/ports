@@ -257,6 +257,7 @@
      SUBDIR += pivy
      SUBDIR += pixiewps
      SUBDIR += pizauth
+     SUBDIR += pkcs11-helper
      SUBDIR += plaso
      SUBDIR += plass
      SUBDIR += polarssl
