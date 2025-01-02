@@ -4,6 +4,7 @@ COMMENT=		free open source planetarium
 
 V=			24.4
 DISTNAME=		stellarium-${V}
+REVISION=		0
 
 CATEGORIES=		astro x11
 
@@ -37,7 +38,7 @@ LIB_DEPENDS=		devel/indi,-libs>=2.1.1 \
 			graphics/exiv2 \
 			math/nlopt \
 			misc/gpsd \
-			textproc/qxlsx,qt6 \
+			textproc/qxlsx \
 			x11/qt6/qtcharts \
 			x11/qt6/qtmultimedia \
 			x11/qt6/qtpositioning \
