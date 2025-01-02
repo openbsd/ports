@@ -351,7 +351,7 @@ SHA256 (cargo/zerovec-0.10.4.tar.gz) = qiuJPXnfI7+xLVRhAY1AjqGd+v52wsfvbU66YU+P8
 SHA256 (cargo/zerovec-derive-0.10.3.tar.gz) = bq+m37F1hOo+K9bnbgzBWtevErCavdHKVZYb7ZsQY8Y=
 SHA256 (cargo/zip-2.1.6.tar.gz) = QN2Mku/Clihs4fvRZlfF2+//RPG0ygHMX1F9i3s9Pi4=
 SHA256 (cargo/zopfli-0.8.1.tar.gz) = 5QGfORusXPJS6Tu8xT0Dn/1ix7+3wVBBTWE2mv5X6UY=
-SHA256 (maturin-1.8.0.tar.gz) = SBxrNU7wbV61xSp6uLwBRjknopHavqK/MlfVbt2CfxY=
+SHA256 (maturin-1.8.1.tar.gz) = jdrxZVUJrgeUBmNWVMvAxz1iLnwqU38kZag+gCHdDMQ=
 SIZE (cargo/adler2-2.0.0.tar.gz) = 13529
 SIZE (cargo/ahash-0.8.11.tar.gz) = 43607
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
@@ -705,4 +705,4 @@ SIZE (cargo/zerovec-0.10.4.tar.gz) = 126398
 SIZE (cargo/zerovec-derive-0.10.3.tar.gz) = 19438
 SIZE (cargo/zip-2.1.6.tar.gz) = 107876
 SIZE (cargo/zopfli-0.8.1.tar.gz) = 50972
-SIZE (maturin-1.8.0.tar.gz) = 541509
+SIZE (maturin-1.8.1.tar.gz) = 542041

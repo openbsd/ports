@@ -2,11 +2,11 @@ COMMENT=	develop crates with pyo3, rust-cpython and cffi bindings
 
 GH_ACCOUNT=	PyO3
 GH_PROJECT=	maturin
-GH_TAGNAME=	v1.8.0
+GH_TAGNAME=	v1.8.1
 
 CATEGORIES=	devel
 
-# APACHE 2.0
+# Apache 2.0
 PERMIT_PACKAGE=	Yes
 
 WANTLIB +=	${MODCARGO_WANTLIB} bz2 m
