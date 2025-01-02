@@ -24,7 +24,8 @@ MODULES=	devel/cmake \
 
 MODPY_RUNDEP=	No
 
-BUILD_DEPENDS=	devel/bison
+BUILD_DEPENDS=	devel/bison \
+		devel/py-setuptools
 LIB_DEPENDS=	devel/boost \
 		math/minisat
 
