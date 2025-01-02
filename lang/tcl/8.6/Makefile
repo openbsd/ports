@@ -1,6 +1,6 @@
 COMMENT =		Tool Command Language
 
-P =			13
+P =			16
 DISTNAME =		tcl8.6.${P}
 PKGNAME =		tcl-8.6.${P}
 PKGSTEM = 		tcl-8.6
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c m pthread z
 
-SITES =		 	${SITE_SOURCEFORGE:=tcl/}
+SITES =			${SITE_SOURCEFORGE:=tcl/}
 DISTFILES =		tcl-core8.6.${P}-src.tar.gz
 
 MAKE_FLAGS =		TCL_LIBRARY='$$(prefix)/lib/tcl/tcl$$(VERSION)'

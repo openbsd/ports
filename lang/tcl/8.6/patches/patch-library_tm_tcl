@@ -15,5 +15,5 @@ Index: library/tm.tcl
 +	[file join [lindex $::tcl_pkgPath 0] modules 86] \
 +	[file join [lindex $::tcl_pkgPath 0] modules 85]
  
-     if {$tcl_platform(platform) eq "windows"} {
- 	set sep ";"
+     for {set n $minor} {$n >= 0} {incr n -1} {
+ 	foreach ev [::list \

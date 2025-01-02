@@ -1,7 +1,7 @@
 Index: library/init.tcl
 --- library/init.tcl.orig
 +++ library/init.tcl
-@@ -57,9 +57,14 @@ namespace eval tcl {
+@@ -60,9 +60,14 @@ namespace eval tcl {
  		lappend ::auto_path $Dir
  	    }
  	}

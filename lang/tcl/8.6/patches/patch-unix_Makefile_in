@@ -1,7 +1,7 @@
 Index: unix/Makefile.in
 --- unix/Makefile.in.orig
 +++ unix/Makefile.in
-@@ -900,7 +900,6 @@ install-binaries: binaries
+@@ -812,7 +812,6 @@ install-binaries: binaries
  	done
  	@echo "Installing $(LIB_FILE) to $(DLL_INSTALL_DIR)/"
  	@@INSTALL_LIB@
@@ -9,7 +9,7 @@ Index: unix/Makefile.in
  	@echo "Installing ${TCL_EXE} as $(BIN_INSTALL_DIR)/tclsh$(VERSION)${EXE_SUFFIX}"
  	@$(INSTALL_PROGRAM) ${TCL_EXE} "$(BIN_INSTALL_DIR)/tclsh$(VERSION)${EXE_SUFFIX}"
  	@echo "Installing tclConfig.sh to $(CONFIG_INSTALL_DIR)/"
-@@ -915,7 +914,7 @@ install-binaries: binaries
+@@ -827,7 +826,7 @@ install-binaries: binaries
  	@EXTRA_INSTALL_BINARIES@
  	@echo "Installing pkg-config file to $(LIB_INSTALL_DIR)/pkgconfig/"
  	@$(INSTALL_DATA_DIR) "$(LIB_INSTALL_DIR)/pkgconfig"
@@ -18,7 +18,7 @@ Index: unix/Makefile.in
  
  install-libraries: libraries
  	@for i in "$(SCRIPT_INSTALL_DIR)" "$(MODULE_INSTALL_DIR)"; \
-@@ -925,7 +924,7 @@ install-libraries: libraries
+@@ -837,7 +836,7 @@ install-libraries: libraries
  		$(INSTALL_DATA_DIR) "$$i"; \
  	    fi; \
  	    done;
@@ -27,7 +27,7 @@ Index: unix/Makefile.in
  	    do \
  	    if [ ! -d "$(SCRIPT_INSTALL_DIR)/$$i" ] ; then \
  		echo "Making directory $(SCRIPT_INSTALL_DIR)/$$i"; \
-@@ -933,7 +932,7 @@ install-libraries: libraries
+@@ -845,7 +844,7 @@ install-libraries: libraries
  		else true; \
  		fi; \
  	    done;
@@ -36,7 +36,7 @@ Index: unix/Makefile.in
  	    do \
  	    if [ ! -d "$(MODULE_INSTALL_DIR)/$$i" ] ; then \
  		echo "Making directory $(MODULE_INSTALL_DIR)/$$i"; \
-@@ -952,23 +951,23 @@ install-libraries: libraries
+@@ -864,23 +863,23 @@ install-libraries: libraries
  	    done
  	@echo "Installing package http 2.9.8 as a Tcl Module";
  	@$(INSTALL_DATA) $(TOP_DIR)/library/http/http.tcl \
@@ -50,10 +50,10 @@ Index: unix/Makefile.in
  	@$(INSTALL_DATA) $(TOP_DIR)/library/msgcat/msgcat.tcl \
 -		"$(MODULE_INSTALL_DIR)/8.5/msgcat-1.6.1.tm"
 +		"$(MODULE_INSTALL_DIR)/msgcat-1.6.1.tm"
- 	@echo "Installing package tcltest 2.5.5 as a Tcl Module"
+ 	@echo "Installing package tcltest 2.5.9 as a Tcl Module"
  	@$(INSTALL_DATA) $(TOP_DIR)/library/tcltest/tcltest.tcl \
--		"$(MODULE_INSTALL_DIR)/8.5/tcltest-2.5.5.tm"
-+		"$(MODULE_INSTALL_DIR)/tcltest-2.5.5.tm"
+-		"$(MODULE_INSTALL_DIR)/8.5/tcltest-2.5.9.tm"
++		"$(MODULE_INSTALL_DIR)/tcltest-2.5.9.tm"
  	@echo "Installing package platform 1.0.19 as a Tcl Module"
  	@$(INSTALL_DATA) $(TOP_DIR)/library/platform/platform.tcl \
 -		"$(MODULE_INSTALL_DIR)/8.4/platform-1.0.19.tm"
@@ -65,7 +65,7 @@ Index: unix/Makefile.in
  	@echo "Installing encoding files to $(SCRIPT_INSTALL_DIR)/encoding/"
  	@for i in $(TOP_DIR)/library/encoding/*.enc; do \
  		$(INSTALL_DATA) $$i "$(SCRIPT_INSTALL_DIR)/encoding"; \
-@@ -1042,6 +1041,8 @@ install-doc: doc
+@@ -954,6 +953,8 @@ install-doc: doc
  	@for i in $(TOP_DIR)/doc/*.n; do \
  	    $(SHELL) $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i "$(MANN_INSTALL_DIR)"; \
  	done

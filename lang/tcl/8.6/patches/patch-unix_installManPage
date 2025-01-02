@@ -1,13 +1,14 @@
 Don't misrename manpages. Tk bug 3604346.
 
---- unix/installManPage.orig	Wed Dec 19 10:40:38 2012
-+++ unix/installManPage	Tue Jul  9 11:49:35 2013
-@@ -71,7 +71,7 @@ Names=`sed -n '
- 	s/ \\\-.*//
- #                               Convert all non-space non-alphanum sequences
- #                               to single underscores.
--	s/[^ A-Za-z0-9][^ A-Za-z0-9]*/_/g
-+#	s/[^ A-Za-z0-9][^ A-Za-z0-9]*/_/g
- #                               print the result and exit
- 	p;q
-     }' $ManPage`
+Index: unix/installManPage
+--- unix/installManPage.orig
++++ unix/installManPage
+@@ -82,7 +82,7 @@ Names=`sed -n '
+ 
+ 	    # Convert all non-space non-alphanum sequences
+ 	    # to single underscores.
+-	    s/[^ A-Za-z0-9][^ A-Za-z0-9]*/_/g
++	    #s/[^ A-Za-z0-9][^ A-Za-z0-9]*/_/g
+ 	    p
+ 	    g
+ 	    /^\./{
