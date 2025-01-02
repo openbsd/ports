@@ -1,6 +1,6 @@
 COMMENT=	YAML 1.2 loader/dumper package for Python
 
-MODPY_DISTV=	0.18.6
+MODPY_DISTV=	0.18.7
 DISTNAME=	ruamel.yaml-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
