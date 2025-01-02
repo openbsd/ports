@@ -18,5 +18,6 @@ MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
+MODPY_TEST_LINK_SO =	Yes
 
 .include <bsd.port.mk>
