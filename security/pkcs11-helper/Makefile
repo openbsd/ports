@@ -1,6 +1,7 @@
-COMMENT =		library with PKCS#11 providers for end-user applications
+COMMENT =		library with PKCS\#11 providers for end-user applications
 CATEGORIES =		security
 DISTNAME =		pkcs11-helper-1.30.0
+REVISION =		0
 
 SHARED_LIBS =		pkcs11-helper	0.0	# 1.0
 
