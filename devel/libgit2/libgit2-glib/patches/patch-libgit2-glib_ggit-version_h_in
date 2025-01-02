@@ -1,3 +1,5 @@
+https://gitlab.gnome.org/GNOME/libgit2-glib/-/merge_requests/45
+
 Index: libgit2-glib/ggit-version.h.in
 --- libgit2-glib/ggit-version.h.in.orig
 +++ libgit2-glib/ggit-version.h.in
