@@ -1,0 +1,12 @@
+Index: libgit2-glib/ggit-version.h.in
+--- libgit2-glib/ggit-version.h.in.orig
++++ libgit2-glib/ggit-version.h.in
+@@ -35,7 +35,7 @@
+  *
+  * libgit2-glib micro version component (e.g. 3 if %GGIT_VERSION is 1.2.3)
+  */
+-#define GGIT_MINOR_VERSION (@MICRO_VERSION@)
++#define GGIT_MICRO_VERSION (@MICRO_VERSION@)
+ 
+ #define GGIT_ENCODE_VERSION(major,minor,micro) \
+         ((major) << 24 | (minor) << 16 | (micro) << 8)

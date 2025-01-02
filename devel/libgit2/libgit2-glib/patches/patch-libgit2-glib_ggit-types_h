@@ -1,5 +1,7 @@
 https://gitlab.gnome.org/GNOME/libgit2-glib/-/merge_requests/40
 
+Unbreak with libgit2 >=1.9.0.
+
 Index: libgit2-glib/ggit-types.h
 --- libgit2-glib/ggit-types.h.orig
 +++ libgit2-glib/ggit-types.h
@@ -13,3 +15,14 @@ Index: libgit2-glib/ggit-types.h
  	GGIT_CONFIG_LEVEL_HIGHEST     = -1
  } GgitConfigLevel;
  
+@@ -989,8 +990,8 @@ typedef enum
+ 
+ typedef enum
+ {
+-	GGIT_CHECKOUT_NONE                    = 0,
+-	GGIT_CHECKOUT_SAFE                    = (1u << 0),
++	GGIT_CHECKOUT_NONE                    = (1u << 30),
++	GGIT_CHECKOUT_SAFE                    = 0,
+ 	GGIT_CHECKOUT_FORCE                   = (1u << 1),
+ 	GGIT_CHECKOUT_RECREATE_MISSING        = (1u << 2),
+ 	GGIT_CHECKOUT_ALLOW_CONFLICTS         = (1u << 4),
