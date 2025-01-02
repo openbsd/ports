@@ -1,20 +1,16 @@
-COMMENT =		lru cache for asyncio
+COMMENT=	LRU cache for asyncio
 
-MODPY_DISTV =	1.0.3
-DISTNAME =		async-lru-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-REVISION =		0
+MODPY_DISTV=	2.0.4
+DISTNAME=	async-lru-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =		devel
+CATEGORIES=	devel
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
-
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
-
-NO_TEST =		Yes
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 .include <bsd.port.mk>
