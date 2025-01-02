@@ -5,7 +5,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	Multiple Arcade Machine Emulator
 
-V =		272
+V =		273
 GH_ACCOUNT =	mamedev
 GH_PROJECT =	mame
 GH_TAGNAME =	mame0${V}
