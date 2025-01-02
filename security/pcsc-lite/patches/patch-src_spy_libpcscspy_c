@@ -1,36 +1,9 @@
-- Fix printf format
 - Leave dlopen()ed .so version to CFLAGS
 
 Index: src/spy/libpcscspy.c
 --- src/spy/libpcscspy.c.orig
 +++ src/spy/libpcscspy.c
-@@ -26,6 +26,7 @@
- #include <unistd.h>
- #include <sys/time.h>
- #include <pthread.h>
-+#include <inttypes.h>
- 
- #include "misc.h"
- #include <winscard.h>
-@@ -121,7 +122,7 @@ static void spy_line_direct(char *line)
- 	if (Log_fd < 0)
- 		return;
- 
--	snprintf(threadid, sizeof threadid, "%lX@", pthread_self());
-+	snprintf(threadid, sizeof threadid, "%" PRIXPTR "@", (uintptr_t)pthread_self());
- 	pthread_mutex_lock(&Log_fd_mutex);
- 	r = write(Log_fd, threadid, strlen(threadid));
- 	r = write(Log_fd, line, strlen(line));
-@@ -150,7 +151,7 @@ static void spy_line(const char *fmt, ...)
- 		printf("libpcsc-spy: Buffer is too small!\n");
- 		return;
- 	}
--	snprintf(threadid, sizeof threadid, "%lX@", pthread_self());
-+	snprintf(threadid, sizeof threadid, "%" PRIXPTR "@", (uintptr_t)pthread_self());
- 	pthread_mutex_lock(&Log_fd_mutex);
- 	r = write(Log_fd, threadid, strlen(threadid));
- 	r = write(Log_fd, line, size);
-@@ -285,9 +286,6 @@ static void spy_readerstate(SCARD_READERSTATE * rgRead
+@@ -285,9 +285,6 @@ static void spy_readerstate(SCARD_READERSTATE * rgRead
  
  static LONG load_lib(void)
  {

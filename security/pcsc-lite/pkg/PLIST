@@ -7,6 +7,7 @@ include/PCSC/pcsclite.h
 include/PCSC/reader.h
 include/PCSC/winscard.h
 include/PCSC/wintypes.h
+@static-lib lib/libpcsclite.a
 @lib lib/libpcsclite.so.${LIBpcsclite_VERSION}
 @lib lib/libpcsclite_real.so.${LIBpcsclite_real_VERSION}
 @lib lib/libpcscspy.so.${LIBpcscspy_VERSION}
@@ -15,3 +16,5 @@ lib/pkgconfig/libpcsclite.pc
 @man man/man5/reader.conf.5
 @man man/man8/pcscd.8
 @bin sbin/pcscd
+share/metainfo/
+share/metainfo/fr.apdu.pcsclite.metainfo.xml
