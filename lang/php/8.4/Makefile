@@ -5,7 +5,7 @@ AUTOCONF_VERSION= 2.72
 PORTROACH=
 PHP_PKGSPEC=	>=8.4,<8.5
 
-REVISION-main=	0
+REVISION-main=	1
 
 WANTLIB-pdo_odbc += iodbcinst
 
