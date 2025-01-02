@@ -1,3 +1,6 @@
+# compiling features/src/integral_image_normal.cpp takes too much RAM
+ONLY_FOR_ARCHS =	${LP64_ARCHS}
+
 COMMENT =		image and point cloud processing library
 
 V =			1.14.1
@@ -37,11 +40,6 @@ WANTLIB += z
 
 COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake
-
-.include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mlp64}
-DPB_PROPERTIES =	parallel
-.endif
 
 PCLVER =		pcl-${V:R}
 SUBST_VARS +=		PCLVER
