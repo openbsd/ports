@@ -1,6 +1,7 @@
 COMMENT=	easy-to-use, robust, and highly configurable VPN
 
 DISTNAME=	openvpn-2.6.12
+REVISION=	0
 
 CATEGORIES=	net security
 
@@ -36,7 +37,11 @@ LIB_DEPENDS+=	security/polarssl
 CONFIGURE_ARGS+= --with-crypto-library=mbedtls
 WANTLIB += mbedcrypto mbedtls mbedx509 pthread
 .else
-WANTLIB += crypto ssl
+# ensure 'pkcs11-providers .../p11-kit-proxy.so' as default
+BUILD_DEPENDS+=	security/p11-kit
+LIB_DEPENDS+=	security/pkcs11-helper
+CONFIGURE_ARGS+= --enable-pkcs11
+WANTLIB += crypto pkcs11-helper ssl
 .endif
 
 SAMPLES_DIR=	${PREFIX}/share/examples/openvpn
