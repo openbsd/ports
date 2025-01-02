@@ -1,8 +1,7 @@
 COMMENT=		cryptographic library
 
-DISTNAME=		nettle-3.10
+DISTNAME=		nettle-3.10.1
 PKGNAME=		lib${DISTNAME}
-REVISION=		0
 
 SHARED_LIBS +=  hogweed                   3.1 # 6.7
 SHARED_LIBS +=  nettle                    7.3 # 8.7
