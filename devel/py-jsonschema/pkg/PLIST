@@ -1,5 +1,5 @@
-@pkgpath devel/py-jsonschema,python3
 @conflict py-jsonschema-<2.6.0p2
+@pkgpath devel/py-jsonschema,python3
 bin/jsonschema
 lib/python${MODPY_VERSION}/site-packages/jsonschema/
 lib/python${MODPY_VERSION}/site-packages/jsonschema-${MODPY_DISTV}.dist-info/
