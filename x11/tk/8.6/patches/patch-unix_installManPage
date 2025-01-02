@@ -1,8 +1,9 @@
 Don't misrename manpages. Tk bug 3604346.
 
---- unix/installManPage.orig	Tue Sep 17 08:25:13 2013
-+++ unix/installManPage	Mon Nov  4 09:34:45 2013
-@@ -71,7 +71,7 @@ Names=`sed -n '
+Index: unix/installManPage
+--- unix/installManPage.orig
++++ unix/installManPage
+@@ -72,7 +72,7 @@ Names=`sed -n '
  	s/ \\\-.*//
  #                               Convert all non-space non-alphanum sequences
  #                               to single underscores.

@@ -573,6 +573,7 @@ share/examples/tk8.6/ttknote.tcl
 share/examples/tk8.6/ttkpane.tcl
 share/examples/tk8.6/ttkprogress.tcl
 share/examples/tk8.6/ttkscale.tcl
+share/examples/tk8.6/ttkspin.tcl
 share/examples/tk8.6/twind.tcl
 share/examples/tk8.6/unicodeout.tcl
 share/examples/tk8.6/vscale.tcl

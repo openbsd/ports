@@ -13,7 +13,7 @@ Index: unix/Makefile.in
  	@if test -f "tk${MAJOR_VERSION}${MINOR_VERSION}.dll"; then \
  	    $(INSTALL_LIBRARY) "tk${MAJOR_VERSION}${MINOR_VERSION}.dll" "$(DLL_INSTALL_DIR)";\
  	    chmod 555 "$(DLL_INSTALL_DIR)/tk${MAJOR_VERSION}${MINOR_VERSION}.dll";\
-@@ -763,7 +763,7 @@ install-binaries: $(TK_STUB_LIB_FILE) $(TK_LIB_FILE) $
+@@ -761,7 +761,7 @@ install-binaries: $(TK_STUB_LIB_FILE) $(TK_LIB_FILE) $
  	@EXTRA_INSTALL_BINARIES@
  	@echo "Installing pkg-config file to $(LIB_INSTALL_DIR)/pkgconfig/"
  	@$(INSTALL_DATA_DIR) "$(LIB_INSTALL_DIR)/pkgconfig"
@@ -22,7 +22,7 @@ Index: unix/Makefile.in
  
  install-libraries: libraries
  	@for i in "$(SCRIPT_INSTALL_DIR)" "$(SCRIPT_INSTALL_DIR)/images" \
-@@ -818,6 +818,7 @@ install-demos:
+@@ -816,6 +816,7 @@ install-demos:
  	    if [ -f $$i ] ; then \
  		sed -e '3 s|exec wish|exec wish$(VERSION)|' \
  			$$i > "$(DEMO_INSTALL_DIR)"/`basename $$i`; \
@@ -30,7 +30,7 @@ Index: unix/Makefile.in
  	    fi; \
  	    done;
  	@for i in $(DEMOPROGS); \
-@@ -857,6 +858,8 @@ install-doc:
+@@ -855,6 +856,8 @@ install-doc:
  	@for i in $(TOP_DIR)/doc/*.n; do \
  	    $(SHELL) $(UNIX_DIR)/installManPage $(MAN_FLAGS) $$i "$(MANN_INSTALL_DIR)"; \
  	done
