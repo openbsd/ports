@@ -1,6 +1,7 @@
 COMMENT =	data visualization and analysis software
 
 DISTNAME =	labplot-2.11.1
+REVISION =	0
 
 CATEGORIES =	math x11
 
@@ -81,7 +82,7 @@ LIB_DEPENDS +=	devel/kf6/syntax-highlighting \
 		math/libcerf \
 		math/matio \
 		math/netcdf \
-		textproc/qxlsx,qt6
+		textproc/qxlsx
 
 #-- The following OPTIONAL packages have not been found:
 #* LibOrigin, A library for reading OriginLab project files,

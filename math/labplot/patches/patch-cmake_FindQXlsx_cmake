@@ -1,3 +1,8 @@
+From d591f2ec48f156f857558f9cc9a28e48b5d54891 Mon Sep 17 00:00:00 2001
+From: Stefan Gerlach <stefan.gerlach@uni-konstanz.de>
+Date: Sat, 23 Nov 2024 00:55:03 +0100
+Subject: [PATCH] cmake: read and use libary versions
+
 Index: cmake/FindQXlsx.cmake
 --- cmake/FindQXlsx.cmake.orig
 +++ cmake/FindQXlsx.cmake
@@ -6,10 +11,10 @@ Index: cmake/FindQXlsx.cmake
  #=============================================================================
  
 -find_library(QXLSX_LIBRARIES NAMES QXlsx QXlsxQt5)
-+find_library(QXLSX_LIBRARIES NAMES QXlsx QXlsxQt${QT_VERSION_MAJOR})
++find_library(QXLSX_LIBRARIES NAMES QXlsxQt6)
  
 -find_path(QXLSX_INCLUDE_DIR xlsxdocument.h PATH_SUFFIXES QXlsx QXlsxQt5)
-+find_path(QXLSX_INCLUDE_DIR xlsxdocument.h PATH_SUFFIXES QXlsx QXlsxQt${QT_VERSION_MAJOR})
++find_path(QXLSX_INCLUDE_DIR xlsxdocument.h PATH_SUFFIXES QXlsxQt6)
  
  include(FindPackageHandleStandardArgs)
  find_package_handle_standard_args(QXlsx

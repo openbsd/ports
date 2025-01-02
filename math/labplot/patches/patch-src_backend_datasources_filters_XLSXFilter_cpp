@@ -1,0 +1,24 @@
+/usr/ports/pobj/labplot-2.11.1/labplot-2.11.1/src/backend/datasources/filters/XLSXFilter.cpp:760:16: error: variable 'cell' with type 'const auto *' has incompatible initializer of type 'std::shared_ptr<Cell>'
+                        const auto* cell = m_document->cellAt(i, j);
+
+Index: src/backend/datasources/filters/XLSXFilter.cpp
+--- src/backend/datasources/filters/XLSXFilter.cpp.orig
++++ src/backend/datasources/filters/XLSXFilter.cpp
+@@ -757,7 +757,7 @@ void XLSXFilterPrivate::parse(const QString& fileName,
+ bool XLSXFilterPrivate::dataRangeCanBeExportedToMatrix(const QXlsx::CellRange& range) const {
+ 	for (int i = range.firstRow(); i <= range.lastRow(); ++i) {
+ 		for (int j = range.firstColumn(); j <= range.lastColumn(); ++j) {
+-			const auto* cell = m_document->cellAt(i, j);
++			const auto cell = m_document->cellAt(i, j);
+ 			if (cell && cell->cellType() != QXlsx::Cell::CellType::NumberType) {
+ 				if (cell->cellType() == QXlsx::Cell::CellType::CustomType) {
+ 					bool ok = false;
+@@ -792,7 +792,7 @@ QXlsx::Cell::CellType XLSXFilterPrivate::columnTypeInR
+ 	bool numeric = false, datetime = false;
+ 	if (column >= range.firstColumn() && column <= range.lastColumn()) {
+ 		for (int row = range.firstRow(); row <= range.lastRow(); ++row) {
+-			const auto* cell = m_document->cellAt(row, column);
++			const auto cell = m_document->cellAt(row, column);
+ 			if (!cell)
+ 				continue;
+ 
