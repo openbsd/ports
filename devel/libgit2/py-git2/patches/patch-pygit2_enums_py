@@ -1,0 +1,29 @@
+From e75219d8bbb5cfb929d2da060f9eeb48ea466e24 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?J=2E=20David=20Ib=C3=A1=C3=B1ez?= <jdavid.ibp@gmail.com>
+Date: Mon, 30 Dec 2024 12:18:05 +0100
+Subject: [PATCH] Upgrade to libgit2 1.9
+
+Index: pygit2/enums.py
+--- pygit2/enums.py.orig
++++ pygit2/enums.py
+@@ -65,16 +65,16 @@ class BlameFlag(IntFlag):
+     'Normal blame, the default'
+ 
+     TRACK_COPIES_SAME_FILE = _pygit2.GIT_BLAME_TRACK_COPIES_SAME_FILE
+-    'Not yet implemented and reserved for future use (as of libgit2 1.8.0).'
++    'Not yet implemented and reserved for future use (as of libgit2 1.9.0).'
+ 
+     TRACK_COPIES_SAME_COMMIT_MOVES = _pygit2.GIT_BLAME_TRACK_COPIES_SAME_COMMIT_MOVES
+-    'Not yet implemented and reserved for future use (as of libgit2 1.8.0).'
++    'Not yet implemented and reserved for future use (as of libgit2 1.9.0).'
+ 
+     TRACK_COPIES_SAME_COMMIT_COPIES = _pygit2.GIT_BLAME_TRACK_COPIES_SAME_COMMIT_COPIES
+-    'Not yet implemented and reserved for future use (as of libgit2 1.8.0).'
++    'Not yet implemented and reserved for future use (as of libgit2 1.9.0).'
+ 
+     TRACK_COPIES_ANY_COMMIT_COPIES = _pygit2.GIT_BLAME_TRACK_COPIES_ANY_COMMIT_COPIES
+-    'Not yet implemented and reserved for future use (as of libgit2 1.8.0).'
++    'Not yet implemented and reserved for future use (as of libgit2 1.9.0).'
+ 
+     FIRST_PARENT = _pygit2.GIT_BLAME_FIRST_PARENT
+     'Restrict the search of commits to those reachable following only the first parents.'
