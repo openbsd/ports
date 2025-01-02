@@ -1,10 +1,8 @@
 COMMENT=	quality TLS certs while you wait, for the discerning
 
-MODPY_DISTV=	1.2.0
-
+MODPY_DISTV=	1.2.1
 DISTNAME=	trustme-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	security devel
 
@@ -14,13 +12,12 @@ HOMEPAGE=	https://github.com/python-trio/trustme
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	hatchling
+MODPY_PI=	Yes
 
 RUN_DEPENDS=	net/py-idna \
-		security/py-cryptography \
-		security/py-openssl
-TEST_DEPENDS=	security/py-service_identity
+		security/py-cryptography
+TEST_DEPENDS=	security/py-openssl \
+		security/py-service_identity
 
 .include <bsd.port.mk>
