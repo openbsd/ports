@@ -1,9 +1,8 @@
 COMMENT=	Python wrapper for pandoc
 
-MODPY_DISTV=	1.13
+MODPY_DISTV=	1.14
 DISTNAME=	pypandoc-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	textproc
 
@@ -13,15 +12,16 @@ HOMEPAGE=	https://github.com/bebraw/pypandoc
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	poetry-core
-MODPY_PYTEST_ARGS=	tests.py
+MODPY_PI=	Yes
 
 RUN_DEPENDS=	textproc/pandoc
 
 PORTHOME=	${WRKDIR}
 TEST_DEPENDS=	print/texlive/texmf,-main \
 		textproc/pandoc
+
+do-test:
+	cd ${WRKSRC}; ${SETENV} ${ALL_TEST_ENV} ${MODPY_BIN} tests.py
 
 .include <bsd.port.mk>
