@@ -30,7 +30,8 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 RUN_DEPENDS =	misc/shared-mime-info
 BUILD_DEPENDS +=	textproc/asciidoc \
 		devel/gtest \
-		devel/xdg-utils
+		devel/xdg-utils \
+		x11/gtk+2
 LIB_DEPENDS +=	graphics/gdk-pixbuf2 \
 		graphics/lcms2>=2.13 \
 		graphics/png \
