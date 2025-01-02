@@ -1,13 +1,16 @@
+Unbreak with libgit2 >=1.9.0.
+
 Fix for libgit2->=1.8.0:
 error: use of undeclared identifier 'git_error_clear'
 
 Index: es-app/src/guis/GuiThemeDownloader.cpp
 --- es-app/src/guis/GuiThemeDownloader.cpp.orig
 +++ es-app/src/guis/GuiThemeDownloader.cpp
-@@ -6,6 +6,8 @@
+@@ -6,6 +6,9 @@
  //  Theme downloader.
  //
  
++#include <git2/deprecated.h>
 +#include <git2/sys/errors.h>
 +
  #include "guis/GuiThemeDownloader.h"
