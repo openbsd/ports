@@ -16,8 +16,12 @@ HOMEPAGE= 		https://github.com/OpenSC/${PKGSTEM}
 SITES =			${HOMEPAGE}/releases/download/${DISTNAME}/
 EXTRACT_SUFX =		.tar.bz2
 
+BUILD_DEPENDS =		security/p11-kit
+
 CONFIGURE_STYLE =	gnu
-CONFIGURE_ARGS =	--disable-crypto-engine-gnutls \
+CONFIGURE_ARGS =	--enable-tests \
+			--with-test-provider=`pkg-config --variable=proxy_module p11-kit-1` \
+			--disable-crypto-engine-gnutls \
 			--disable-crypto-engine-mbedtls \
 			--disable-crypto-engine-nss \
 			--disable-doc \
@@ -36,5 +40,15 @@ CONFIGURE_ARGS +=	--disable-slotevent \
 
 USE_GMAKE =		Yes
 SEPARATE_BUILD =	Yes
+
+# from ${WRKBUILD}/tests/Makefile's COMMON
+# these pass without input or smart cards present
+TESTS =			test-basic \
+			test-fork
+TEST_FLAGS =		COMMON=${TESTS:Q}
+# these prompt interactively and require a smart card
+# XXX prompts do not show up in 'make test'
+#TESTS +=		test-certificates  # XXX fails after reading PIN1
+#TESTS +=		test-openssl       # passes when run manually
 
 .include <bsd.port.mk>
