@@ -3,6 +3,7 @@ COMMENT=	construction, analysis and modification of binary data
 MODPY_DISTV=	4.3.0
 DISTNAME=	bitstring-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISIOM=	0
 
 CATEGORIES=	devel
 
@@ -16,7 +17,7 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS=	devel/py-bitarray<3
+RUN_DEPENDS=	devel/py-bitarray
 TEST_DEPENDS=	devel/py-hypothesis \
 		devel/py-test-benchmark
 
