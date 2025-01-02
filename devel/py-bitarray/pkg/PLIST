@@ -22,7 +22,6 @@ lib/python${MODPY_VERSION}/site-packages/bitarray/${MODPY_PYCACHE}util.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/bitarray/bitarray.h
 lib/python${MODPY_VERSION}/site-packages/bitarray/py.typed
 lib/python${MODPY_VERSION}/site-packages/bitarray/pythoncapi_compat.h
-lib/python${MODPY_VERSION}/site-packages/bitarray/test_150.pickle
 lib/python${MODPY_VERSION}/site-packages/bitarray/test_281.pickle
 lib/python${MODPY_VERSION}/site-packages/bitarray/test_bitarray.py
 lib/python${MODPY_VERSION}/site-packages/bitarray/test_util.py
