@@ -21,6 +21,8 @@ EXTRACT_SUFX=	.tar.bz2
 
 MODULES=	lang/python
 
+BUILD_DEPENDS=	devel/py-setuptools
+
 LIB_DEPENDS=	audio/libsndfile \
 		audio/sratom
 
