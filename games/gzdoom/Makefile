@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS =	i386 amd64
 
 COMMENT =		OpenGL engine for idTech 1 games like doom,hexen,heretic...
 
-V =			4.12.2
+V =			4.14.0
 
 DIST_TUPLE =		github ZDoom gzdoom g${V} .
 PKGNAME =		gzdoom-${V}
@@ -21,7 +21,7 @@ MAINTAINER =		Timo Myyra <timo.myyra@bittivirhe.fi>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} SDL2 bz2 c execinfo m
-WANTLIB += openal vpx webp webpdemux webpmux zmusic
+WANTLIB += openal vpx zmusic
 
 # C++17
 COMPILER =		base-clang ports-gcc
@@ -40,7 +40,6 @@ LIB_DEPENDS =		archivers/bzip2 \
 			audio/openal \
 			audio/zmusic \
 			devel/sdl2 \
-			graphics/libwebp \
 			multimedia/libvpx
 
 NO_TEST =		Yes

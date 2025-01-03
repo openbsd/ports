@@ -1,7 +1,7 @@
 Index: libraries/ZWidget/CMakeLists.txt
 --- libraries/ZWidget/CMakeLists.txt.orig
 +++ libraries/ZWidget/CMakeLists.txt
-@@ -127,7 +127,7 @@ elseif(APPLE)
+@@ -130,7 +130,7 @@ elseif(APPLE)
  	add_link_options(-pthread)
  else()
  	set(ZWIDGET_SOURCES ${ZWIDGET_SOURCES} ${ZWIDGET_SDL2_SOURCES})
