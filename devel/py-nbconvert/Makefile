@@ -1,6 +1,6 @@
 COMMENT =		convert Jupyter notebooks (.ipynb) to other formats
 
-MODPY_DISTV =	7.16.4
+MODPY_DISTV =		7.16.4
 DISTNAME =		nbconvert-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 REVISION =		0
@@ -36,7 +36,8 @@ RUN_DEPENDS =		devel/py-jupyter_core>=4.7 \
 			www/py-jinja2>=3.0
 
 # needs ipywidgets>=7.5
-TEST_DEPENDS =		devel/py-flaky \
+TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH} \
+			devel/py-flaky \
 			devel/py-ipykernel
 
 PORTHOME =		${WRKDIR}
