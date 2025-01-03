@@ -1,5 +1,5 @@
-@pkgpath graphics/py-seaborn,python3
 @conflict py-seaborn-*
+@pkgpath graphics/py-seaborn,python3
 lib/python${MODPY_VERSION}/site-packages/seaborn/
 lib/python${MODPY_VERSION}/site-packages/seaborn-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/seaborn-${MODPY_DISTV}.dist-info/LICENSE.md
@@ -10,14 +10,12 @@ lib/python${MODPY_VERSION}/site-packages/seaborn/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}_base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}_base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}_decorators.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}_decorators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}_docstrings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}_docstrings.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}_oldcore.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}_oldcore.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}_statistics.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}_statistics.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}_testing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -50,6 +48,7 @@ lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}utils.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}widgets.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/seaborn/${MODPY_PYCACHE}widgets.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/seaborn/_base.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/_compat.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/_core/
 lib/python${MODPY_VERSION}/site-packages/seaborn/_core/__init__.py
@@ -86,7 +85,6 @@ lib/python${MODPY_VERSION}/site-packages/seaborn/_core/rules.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/_core/scales.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/_core/subplots.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/_core/typing.py
-lib/python${MODPY_VERSION}/site-packages/seaborn/_decorators.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/_docstrings.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/_marks/
 lib/python${MODPY_VERSION}/site-packages/seaborn/_marks/__init__.py
@@ -111,7 +109,6 @@ lib/python${MODPY_VERSION}/site-packages/seaborn/_marks/base.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/_marks/dot.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/_marks/line.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/_marks/text.py
-lib/python${MODPY_VERSION}/site-packages/seaborn/_oldcore.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/_statistics.py
 lib/python${MODPY_VERSION}/site-packages/seaborn/_stats/
 lib/python${MODPY_VERSION}/site-packages/seaborn/_stats/__init__.py
