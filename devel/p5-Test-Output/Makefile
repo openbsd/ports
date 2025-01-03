@@ -1,6 +1,6 @@
-COMMENT = 	test output of other modules
+COMMENT = 	utilities to test STDOUT and STDERR messages
 
-DISTNAME =	Test-Output-1.034
+DISTNAME =	Test-Output-1.035
 
 CATEGORIES =	devel
 
