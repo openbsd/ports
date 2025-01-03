@@ -11,6 +11,7 @@
      SUBDIR += phoon
      SUBDIR += py-astral
      SUBDIR += py-astropy
+     SUBDIR += py-astropy-iers-data
      SUBDIR += py-de421
      SUBDIR += py-erfa
      SUBDIR += py-jplephem
