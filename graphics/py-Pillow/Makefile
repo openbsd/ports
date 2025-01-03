@@ -1,16 +1,11 @@
 COMMENT=	Python Imaging Library (friendly fork of PIL)
 
-# For Pillow >= 11: if trove-classifiers is installed during build,
-# it must be 2024.10.13/newer (noted here in case of any backports to
-# -stable). Pillow uses a new license type which was only added then;
-# setuptools enforces validation against trove-classifiers iff present.
-MODPY_DISTV=	11.0.0
+MODPY_DISTV=	11.1.0
 DISTNAME=	pillow-${MODPY_DISTV}
 PKGNAME=	py-Pillow-${MODPY_DISTV}
 CATEGORIES=	graphics
-REVISION=	0
 
-HOMEPAGE=	https://python-pillow.org/
+HOMEPAGE=	https://python-pillow.github.io/
 
 # MIT-CMU
 PERMIT_PACKAGE=	Yes
