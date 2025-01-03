@@ -1,12 +1,16 @@
-COMMENT= 	Perl module for creating read/write buffers
+COMMENT = 	Perl module for creating read/write buffers
 
-MODULES=	cpan
-PKG_ARCH=	*
-DISTNAME=	Data-Buffer-0.04
-REVISION=	2
-CATEGORIES=	devel
+DISTNAME =	Data-Buffer-0.06
 
-# Artistic
-PERMIT_PACKAGE=	Yes
+CATEGORIES =	devel
+
+# Perl
+PERMIT_PACKAGE =	Yes
+
+MODULES =		cpan
+
+TEST_DEPENDS =		devel/p5-Test2-Suite
+
+PKG_ARCH =		*
 
 .include <bsd.port.mk>
