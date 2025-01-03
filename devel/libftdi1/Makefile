@@ -24,7 +24,8 @@ MODULES =		devel/cmake \
 # don't force the python RDEP; this is used by flashrom which is helpful
 # to be able to install on small systems
 MODPY_RUNDEP =		No
-BUILD_DEPENDS =		devel/swig
+BUILD_DEPENDS =		devel/py-setuptools \
+			devel/swig
 LIB_DEPENDS =		devel/gettext,-runtime \
 			devel/libusb1 \
 			devel/libconfuse
