@@ -1,12 +1,12 @@
 COMMENT =	HTML5 parsing library in pure C99
 
-V =		0.12.3
+V =		0.13.0
 DIST_TUPLE =	codeberg grisha gumbo-parser $V .
 DISTNAME =	gumbo-parser-$V
 PKGNAME =	gumbo-$V
 WRKDIST =	${WRKDIR}/gumbo-parser
 
-SHARED_LIBS +=	gumbo	2.0 # 2.2
+SHARED_LIBS +=	gumbo	2.0 # 3.0
 
 CATEGORIES =	www
 
