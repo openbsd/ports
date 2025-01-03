@@ -1,56 +1,54 @@
-COMMENT=		fast array and numeric programming library for Python
+COMMENT=	fast array and numeric programming library for Python
 
 MODPY_DISTV=	1.26.4
-DISTNAME=		numpy-${MODPY_DISTV}
-PKGNAME=		py-${DISTNAME}
-REVISION=		3
+DISTNAME=	numpy-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
+REVISION=	3
 
-CATEGORIES=		math devel
+CATEGORIES=	math devel
 
-HOMEPAGE=		https://numpy.org/
+HOMEPAGE=	https://numpy.org/
 
 # BSD
-PERMIT_PACKAGE=		Yes
+PERMIT_PACKAGE=	Yes
 
 # C++
-COMPILER=		base-clang ports-gcc
+COMPILER=	base-clang ports-gcc
 
 WANTLIB += ${MODPY_WANTLIB} m pthread
 
-MODULES=		lang/python
-
 # Disable dwz: it fails on DWARF 5 symbols due to 128-bit arithmetic in _pcg64.
 # Alternative is CFLAGS += -D PCG_FORCE_EMULATED_128BIT_MATH
-DWZ=			:
-DEBUG_PACKAGES=		${BUILD_PACKAGES}
+DWZ=		:
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
-MODPY_PI=		Yes
-MODPY_PYBUILD=		other
+MODULES=	lang/python
+MODPY_PYBUILD=	mesonpy
+MODPY_PI=	Yes
 
-BUILD_DEPENDS=		devel/gas \
-			devel/meson-python \
-			lang/cython
+BUILD_DEPENDS=	devel/gas \
+		lang/cython
 
 # detected at runtime in crackfortran.py; checked at the start of run
 # but not used until later. force the dep to ensure consistent results
 # and avoid dpb junking issues.
-RUN_DEPENDS=		textproc/py-charset-normalizer
+RUN_DEPENDS=	textproc/py-charset-normalizer
 
-TEST_DEPENDS=		${FULLPKGNAME}:${FULLPKGPATH} \
-			devel/py-hypothesis \
-			devel/py-test \
-			devel/py-test-cov \
-			devel/py-typing-extensions \
-			devel/py-tz \
-			devel/py-wheel
+TEST_DEPENDS=	${FULLPKGNAME}:${FULLPKGPATH} \
+		devel/py-hypothesis \
+		devel/py-test \
+		devel/py-test-cov \
+		devel/py-typing-extensions \
+		devel/py-tz \
+		devel/py-wheel
 
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mgcc49}
-MODULES+=		fortran
-BUILD_DEPENDS+=		${MODFORTRAN_BUILD_DEPENDS}
-LIB_DEPENDS+=		${MODFORTRAN_LIB_DEPENDS} \
-			math/lapack
-WANTLIB+=		${MODFORTRAN_WANTLIB} blas cblas lapack
+MODULES+=	fortran
+BUILD_DEPENDS+=	${MODFORTRAN_BUILD_DEPENDS}
+LIB_DEPENDS+=	${MODFORTRAN_LIB_DEPENDS} \
+		math/lapack
+WANTLIB+=	${MODFORTRAN_WANTLIB} blas cblas lapack
 .endif
 
 # Cython up to 0.28.4 used the discouraged __attribute__((optimize("Os")))
