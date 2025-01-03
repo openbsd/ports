@@ -4,7 +4,7 @@ inline 'using Fn = std::function<Signature>;' to fix the build:
 Index: Telegram/lib_base/base/platform/linux/base_linux_xcb_utilities.cpp
 --- Telegram/lib_base/base/platform/linux/base_linux_xcb_utilities.cpp.orig
 +++ Telegram/lib_base/base/platform/linux/base_linux_xcb_utilities.cpp
-@@ -155,7 +155,7 @@ rpl::lifetime InstallEventHandler(
+@@ -139,7 +139,7 @@ rpl::lifetime InstallEventHandler(
  		}
  	}
  
