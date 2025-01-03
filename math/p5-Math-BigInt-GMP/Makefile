@@ -1,18 +1,23 @@
-COMMENT=	use the GMP library for Math::BigInt routines
+COMMENT =	backend library for Math::BigInt based on GMP
 
-MODULES=	cpan
-DISTNAME =	Math-BigInt-GMP-1.6007
-CATEGORIES=	math
-REVISION =	0
+DISTNAME =	Math-BigInt-GMP-1.6011
 
-# perl
-PERMIT_PACKAGE=	Yes
+CATEGORIES =	math
 
-WANTLIB += c gmp>=6 perl
+# Perl
+PERMIT_PACKAGE =	Yes
 
-LIB_DEPENDS =	devel/gmp
+WANTLIB =		c gmp>=6 perl
 
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
-		LDFLAGS="-L${LOCALBASE}/lib"
+MODULES =		cpan
+
+BUILD_DEPENDS =		devel/p5-Devel-CheckLib
+LIB_DEPENDS =		devel/gmp
+
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
+			LDFLAGS="-L${LOCALBASE}/lib"
+
+pre-configure:
+	rm -r -- ${WRKDIST}/inc
 
 .include <bsd.port.mk>

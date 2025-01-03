@@ -1,6 +1,12 @@
-Provides support for big integer calculations via the GMP c-library.
+Math::BigInt::GMP is a backend library for Math::BigInt, Math::BigFloat,
+Math::BigRat and related modules.
 
-Math::BigInt::GMP now no longer uses Math::GMP, but provides its own XS
-layer to access the GMP c-library. This cuts out another (perl sub routine)
-layer and also reduces the memory footprint by not loading Math::GMP and
-Carp at all.
+Math::BigInt::GMP provides support for big integer calculations by means
+of the GMP C library. See <https://gmplib.org/> for more information
+about the GMP library.
+
+Math::BigInt::GMP no longer uses Math::GMP, but provides its own XS layer
+to access the GMP C library. This cuts out another (Perl subroutine)
+layer and also reduces the memory footprint.
+
+Math::BigInt::GMP inherits from Math::BigInt::Lib.

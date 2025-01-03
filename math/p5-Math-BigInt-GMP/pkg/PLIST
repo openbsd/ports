@@ -6,5 +6,5 @@ ${P5ARCH}/auto/
 ${P5ARCH}/auto/Math/
 ${P5ARCH}/auto/Math/BigInt/
 ${P5ARCH}/auto/Math/BigInt/GMP/
-${P5ARCH}/auto/Math/BigInt/GMP/GMP.so
+@so ${P5ARCH}/auto/Math/BigInt/GMP/GMP.so
 @man man/man3p/Math::BigInt::GMP.3p
