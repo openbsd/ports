@@ -6,6 +6,7 @@ include/libportal/camera.h
 include/libportal/dynamic-launcher.h
 include/libportal/email.h
 include/libportal/filechooser.h
+include/libportal/glib-backports.h
 include/libportal/inhibit.h
 include/libportal/inputcapture-pointerbarrier.h
 include/libportal/inputcapture-zone.h
@@ -151,6 +152,7 @@ share/doc/libportal-1/method.Portal.dynamic_launcher_prepare_install_finish.html
 share/doc/libportal-1/method.Portal.dynamic_launcher_request_install_token.html
 share/doc/libportal-1/method.Portal.dynamic_launcher_uninstall.html
 share/doc/libportal-1/method.Portal.get_settings.html
+share/doc/libportal-1/method.Portal.get_supported_notification_options.html
 share/doc/libportal-1/method.Portal.get_user_information.html
 share/doc/libportal-1/method.Portal.get_user_information_finish.html
 share/doc/libportal-1/method.Portal.is_camera_present.html

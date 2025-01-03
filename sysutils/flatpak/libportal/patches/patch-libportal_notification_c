@@ -1,0 +1,55 @@
+OpenBSD does not support memfd_create.
+
+Index: libportal/notification.c
+--- libportal/notification.c.orig
++++ libportal/notification.c
+@@ -82,7 +82,12 @@ bytes_to_memfd (const gchar  *name,
+   gpointer shm;
+   gsize bytes_len;
+ 
++#ifndef __OpenBSD__
+   fd = memfd_create (name, MFD_ALLOW_SEALING);
++#else
++  /* XXX no sealing support */
++  fd = shm_open (name, O_RDWR, 0600);
++#endif
+   if (fd == -1)
+     {
+       int saved_errno = errno;
+@@ -90,7 +95,11 @@ bytes_to_memfd (const gchar  *name,
+       g_set_error (error,
+                    G_IO_ERROR,
+                    g_io_error_from_errno (saved_errno),
++#ifndef __OpenBSD__
+                    "memfd_create: %s", g_strerror (saved_errno));
++#else
++                   "shm_open: %s", g_strerror (saved_errno));
++#endif
+       return -1;
+     }
+ 
+@@ -328,7 +337,12 @@ parse_media (GVariant            *media,
+         {
+           g_autofd int fd = -1;
+ 
++#ifndef __OpenBSD__
+           fd = memfd_create ("notification-media", MFD_ALLOW_SEALING);
++#else
++          /* XXX no sealing support */
++          fd = shm_open ("notification-media", O_RDWR, 0600);
++#endif
+           if (fd == -1)
+             {
+               int saved_errno = errno;
+@@ -336,7 +350,11 @@ parse_media (GVariant            *media,
+               g_task_return_new_error (task,
+                                        G_IO_ERROR,
+                                        g_io_error_from_errno (saved_errno),
++#ifndef __OpenBSD__
+                                        "memfd_create: %s", g_strerror (saved_errno));
++#else
++                                       "shm_open: %s", g_strerror (saved_errno));
++#endif
+               return;
+             }
+ 
