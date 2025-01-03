@@ -1,0 +1,15 @@
+inline 'using Fn = std::function<Signature>;' to fix the build:
+.../base_linux_xcb_utilities.cpp:158:54: error: alias template 'Fn' requires template arguments; argument deduction only allowed for class templates
+
+Index: Telegram/lib_base/base/platform/linux/base_linux_xcb_utilities.cpp
+--- Telegram/lib_base/base/platform/linux/base_linux_xcb_utilities.cpp.orig
++++ Telegram/lib_base/base/platform/linux/base_linux_xcb_utilities.cpp
+@@ -155,7 +155,7 @@ rpl::lifetime InstallEventHandler(
+ 		}
+ 	}
+ 
+-	const auto ptr = it->second.second.emplace_back(new Fn(handler)).get();
++	const auto ptr = it->second.second.emplace_back(new std::function(handler)).get();
+ 	return rpl::lifetime([=] {
+ 		const auto it = EventHandlers.find(connection);
+ 		it->second.second.erase(
