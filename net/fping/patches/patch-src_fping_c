@@ -1,7 +1,7 @@
 Index: src/fping.c
 --- src/fping.c.orig
 +++ src/fping.c
-@@ -467,6 +467,9 @@ int main(int argc, char **argv)
+@@ -480,6 +480,9 @@ int main(int argc, char **argv)
      struct sigaction act;
  #endif
  
@@ -11,7 +11,7 @@ Index: src/fping.c
      /* pre-parse -h/--help, so that we also can output help information
       * without trying to open the socket, which might fail */
      prog = argv[0];
-@@ -503,6 +506,10 @@ int main(int argc, char **argv)
+@@ -516,6 +519,10 @@ int main(int argc, char **argv)
      }
  
      optparse_init(&optparse_state, argv);
@@ -22,7 +22,7 @@ Index: src/fping.c
      ident4 = ident6 = htons(getpid() & 0xFFFF);
      verbose_flag = 1;
      backoff_flag = 1;
-@@ -878,6 +885,11 @@ int main(int argc, char **argv)
+@@ -935,6 +942,11 @@ int main(int argc, char **argv)
          exit(4);
      }
  
@@ -34,7 +34,7 @@ Index: src/fping.c
      /* validate various option settings */
  
  #ifndef IPV6
-@@ -1147,6 +1159,10 @@ int main(int argc, char **argv)
+@@ -1209,6 +1221,10 @@ int main(int argc, char **argv)
      if (!num_hosts) {
          exit(num_noaddress ? 2 : 1);
      }
