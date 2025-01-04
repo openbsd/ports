@@ -1,7 +1,7 @@
 COMMENT=		integrated email and PIM software for GNOME
 
 GNOME_PROJECT=		evolution
-GNOME_VERSION=		3.54.2
+GNOME_VERSION=		3.54.3
 
 CATEGORIES=		mail
 
