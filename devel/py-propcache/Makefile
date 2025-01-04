@@ -1,9 +1,8 @@
 COMMENT=	fast implementation of cached properties
 
-MODPY_DISTV=	0.2.0
+MODPY_DISTV=	0.2.1
 DISTNAME=	propcache-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	devel
 
@@ -20,9 +19,15 @@ MODPY_PYBUILD=	setuptools
 BUILD_DEPENDS=	sysutils/py-expandvars \
 		lang/cython
 
-# tests of C extension are failing (can't find propcache._helpers_c module)
 TEST_DEPENDS=	devel/py-covdefaults \
+		devel/py-test-codspeed \
 		devel/py-test-cov \
 		devel/py-test-xdist
+
+# test needs "make fake"
+MODPY_TEST_LINK_SO= Yes
+
+pre-test:
+	ln -fs src/propcache ${WRKSRC}/
 
 .include <bsd.port.mk>
