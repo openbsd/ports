@@ -37,7 +37,7 @@ TEST_DEPENDS =		${FULLPKGNAME}:${FULLPKGPATH} \
 			shells/bash
 
 post-build:
-	cd ${WRKSRC}/doc/en; gmake man
+	cd ${WRKSRC}/doc/en; PYTHONPATH=${WRKSRC}/build/lib gmake man
 
 post-install:
 	${INSTALL_MAN} ${WRKSRC}/doc/en/_build/man/pytest.1 ${PREFIX}/man/man1
