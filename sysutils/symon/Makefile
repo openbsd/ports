@@ -1,13 +1,11 @@
 COMMENT-main=	active host monitoring tool
 COMMENT-mux=	symon data gatherer
 
-V=		2.88
+V=		2.89
 DISTNAME=	symon-$V
 WRKDIST=	${WRKDIR}/symon
 PKGNAME-main=	${DISTNAME}
 FULLPKGNAME-mux= symux-$V
-REVISION-main=	7
-REVISION-mux=	5
 
 CATEGORIES=	sysutils net
 
@@ -17,7 +15,7 @@ HOMEPAGE=	http://www.xs4all.nl/~wpd/symon
 PERMIT_PACKAGE=	Yes
 
 WANTLIB-main=	c
-WANTLIB-mux=	c fontconfig pthread rrd
+WANTLIB-mux=	c fontconfig rrd
 
 SITES=		${HOMEPAGE}/philes/
 
@@ -37,10 +35,6 @@ MAKE_ENV=	CLIENTDIR="${P5SITE}" \
 # avoid stripping the binaries
 MAKE_ENV+=	DEBUG=1
 .endif
-
-# XXX disable pf queue support until it can be updated for new PF queues
-post-patch:
-	rm ${WRKSRC}/platform/OpenBSD/sm_pfq.c
 
 post-build:
 	cd ${WRKSRC}/client && \
