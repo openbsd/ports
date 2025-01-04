@@ -289,9 +289,9 @@ lib/python${MODPY_VERSION}/site-packages/tlslite/utils/x25519.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/verifierdb.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/x509.py
 lib/python${MODPY_VERSION}/site-packages/tlslite/x509certchain.py
-lib/python${MODPY_VERSION}/site-packages/tlslite_ng-0.8.0.dist-info/
-lib/python${MODPY_VERSION}/site-packages/tlslite_ng-0.8.0.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/tlslite_ng-0.8.0.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/tlslite_ng-0.8.0.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/tlslite_ng-0.8.0.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/tlslite_ng-0.8.0.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/tlslite_ng-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/tlslite_ng-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/tlslite_ng-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/tlslite_ng-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/tlslite_ng-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/tlslite_ng-${MODPY_DISTV}.dist-info/top_level.txt
