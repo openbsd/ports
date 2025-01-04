@@ -5,8 +5,7 @@ lib/python${MODPY_VERSION}/site-packages/pytest_codspeed-${MODPY_DISTV}.dist-inf
 lib/python${MODPY_VERSION}/site-packages/pytest_codspeed-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/pytest_codspeed-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/pytest_codspeed-${MODPY_DISTV}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/pytest_codspeed-${MODPY_DISTV}.dist-info/licenses/
-lib/python${MODPY_VERSION}/site-packages/pytest_codspeed-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/pytest_codspeed-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pytest_codspeed/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pytest_codspeed/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pytest_codspeed/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -28,11 +27,13 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pytest_codspeed/instrum
 lib/python${MODPY_VERSION}/site-packages/pytest_codspeed/instruments/valgrind/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pytest_codspeed/instruments/valgrind/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_codspeed/instruments/valgrind/_wrapper/
-lib/python${MODPY_VERSION}/site-packages/pytest_codspeed/instruments/valgrind/_wrapper/.gitignore
 lib/python${MODPY_VERSION}/site-packages/pytest_codspeed/instruments/valgrind/_wrapper/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pytest_codspeed/instruments/valgrind/_wrapper/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pytest_codspeed/instruments/valgrind/_wrapper/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pytest_codspeed/instruments/valgrind/_wrapper/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pytest_codspeed/instruments/valgrind/_wrapper/${MODPY_PYCACHE}build.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pytest_codspeed/instruments/valgrind/_wrapper/${MODPY_PYCACHE}build.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pytest_codspeed/instruments/valgrind/_wrapper/build.py
 lib/python${MODPY_VERSION}/site-packages/pytest_codspeed/instruments/valgrind/_wrapper/wrapper.c
 lib/python${MODPY_VERSION}/site-packages/pytest_codspeed/instruments/valgrind/_wrapper/wrapper.h
 lib/python${MODPY_VERSION}/site-packages/pytest_codspeed/instruments/valgrind/_wrapper/wrapper.pyi
