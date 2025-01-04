@@ -188,8 +188,8 @@ SHA256 (cargo/serde-1.0.216.tar.gz) = C5eBAW6TWpfovuzwyTN1jJelUg0ykw5GAUK0zYDGM4
 SHA256 (cargo/serde_derive-1.0.216.tar.gz) = RvhZ279zhlxmJ+1XDniWHNOskkB6LRFyBMSSMkhdpV4=
 SHA256 (cargo/serde_json-1.0.133.tar.gz) = x/zrJHO5FmsilO8F78tlo9uAgD8LA++GpfyIorhe43c=
 SHA256 (cargo/serde_spanned-0.6.8.tar.gz) = h2B8sTmO1Z1Icy5XWkwop6jr8kVLlk/j8iTyr8B5CeE=
-SHA256 (cargo/serde_with-3.11.0.tar.gz) = jii9rW2yuDQORJ9xCPAgs7CS6Fg6nj+4JxPh1Ocf6Bc=
-SHA256 (cargo/serde_with_macros-3.11.0.tar.gz) = nYRiFKmFTvck89oWG0JiQtjefB/H3i+Jux78sVTcp50=
+SHA256 (cargo/serde_with-3.12.0.tar.gz) = 1rb38vy2n3R5IfefOSa9HiA/zk/vYsJo3Tq/tthgKao=
+SHA256 (cargo/serde_with_macros-3.12.0.tar.gz) = jQDKpRk6PINirCtzvmuedoqlpLL3Idj0szlgDDy1H44=
 SHA256 (cargo/sharded-slab-0.1.7.tar.gz) = 9AyjxGgjcT4NQglZLo1ugmqlfpKPCXUmGfxpbEmWN/Y=
 SHA256 (cargo/shlex-1.3.0.tar.gz) = D9ov8NCEAZuk18bzccldj9dc41JMPLj7ZTowI/YyPmQ=
 SHA256 (cargo/signal-hook-0.3.17.tar.gz) = hiFYfUeYyvjrRIedQuVrmpPqXc0xWmSHw1cTAJW2KAE=
@@ -291,7 +291,7 @@ SHA256 (cargo/zerofrom-0.1.5.tar.gz) = z/PuCMmV3uGFnZmN6oL3N08oJgkd2c1H3vlTyuRGz
 SHA256 (cargo/zerofrom-derive-0.1.5.tar.gz) = WV7tmC99NVvrhYN/ZR+iLpCzwESELcfywoQsCG8pWAg=
 SHA256 (cargo/zerovec-0.10.4.tar.gz) = qiuJPXnfI7+xLVRhAY1AjqGd+v52wsfvbU66YU+P8Hk=
 SHA256 (cargo/zerovec-derive-0.10.3.tar.gz) = bq+m37F1hOo+K9bnbgzBWtevErCavdHKVZYb7ZsQY8Y=
-SHA256 (trippy-0.12.1.tar.gz) = roaBI8ugOXd4bw3XQpfy4V4CHXU2hL1uR1VAA/A6PVs=
+SHA256 (trippy-0.12.2.tar.gz) = byNUnl85gRPs0NLxXIKfWrhPzfmd3plCxhdG5y+ZAIU=
 SIZE (cargo/addr2line-0.24.2.tar.gz) = 39015
 SIZE (cargo/adler2-2.0.0.tar.gz) = 13529
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
@@ -482,8 +482,8 @@ SIZE (cargo/serde-1.0.216.tar.gz) = 79000
 SIZE (cargo/serde_derive-1.0.216.tar.gz) = 57674
 SIZE (cargo/serde_json-1.0.133.tar.gz) = 150739
 SIZE (cargo/serde_spanned-0.6.8.tar.gz) = 9330
-SIZE (cargo/serde_with-3.11.0.tar.gz) = 145979
-SIZE (cargo/serde_with_macros-3.11.0.tar.gz) = 32054
+SIZE (cargo/serde_with-3.12.0.tar.gz) = 148666
+SIZE (cargo/serde_with_macros-3.12.0.tar.gz) = 32089
 SIZE (cargo/sharded-slab-0.1.7.tar.gz) = 58227
 SIZE (cargo/shlex-1.3.0.tar.gz) = 18713
 SIZE (cargo/signal-hook-0.3.17.tar.gz) = 50296
@@ -585,4 +585,4 @@ SIZE (cargo/zerofrom-0.1.5.tar.gz) = 5091
 SIZE (cargo/zerofrom-derive-0.1.5.tar.gz) = 8285
 SIZE (cargo/zerovec-0.10.4.tar.gz) = 126398
 SIZE (cargo/zerovec-derive-0.10.3.tar.gz) = 19438
-SIZE (trippy-0.12.1.tar.gz) = 18961273
+SIZE (trippy-0.12.2.tar.gz) = 20922811
