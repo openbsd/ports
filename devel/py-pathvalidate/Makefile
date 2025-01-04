@@ -1,23 +1,23 @@
-COMMENT =		library to sanitize/validate paths
+COMMENT=	library to sanitize/validate paths
 
-MODPY_DISTV =	3.2.1
+MODPY_DISTV=	3.2.3
+DISTNAME=	pathvalidate-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
-DISTNAME =		pathvalidate-${MODPY_DISTV}
-PKGNAME=		py-${DISTNAME}
-REVISION=		0
+CATEGORIES=	devel
 
-CATEGORIES =		devel
-
-HOMEPAGE =		https://github.com/thombashi/pathvalidate
+HOMEPAGE=	https://github.com/thombashi/pathvalidate
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools_scm
+MODPY_PI=	Yes
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools_scm
-
-# some tests are failed due to missed: tcolorpy and allpairspy
+# missing deps: tcolorpy, allpairspy
+MODPY_PYTEST_ARGS= --ignore test/test_common.py \
+		   --ignore test/test_filename.py \
+		   --ignore test/test_filepath.py
 
 .include <bsd.port.mk>
