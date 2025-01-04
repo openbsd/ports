@@ -27,7 +27,8 @@ COMPILER =		base-clang ports-gcc base-gcc
 
 MODULES =		devel/cmake \
 			lang/python
-BUILD_DEPENDS =		devel/swig>=3.0.12
+BUILD_DEPENDS =		devel/py-setuptools \
+			devel/swig>=3.0.12
 LIB_DEPENDS =		audio/libvorbis \
 			audio/openal \
 			devel/boost \
