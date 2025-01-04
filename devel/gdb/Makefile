@@ -2,11 +2,12 @@ COMMENT=	GNU debugger
 CATEGORIES=	devel
 
 DISTNAME=	gdb-13.2
-REVISION=	7
+REVISION=	8
 
 HOMEPAGE=	https://www.gnu.org/software/gdb/
 
-MAINTAINER=	Pascal Stumpf <pascal@stumpf.co>
+MAINTAINER=	Pascal Stumpf <pascal@stumpf.co>, \
+		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 
 # GPLv2 and GPLv3
 PERMIT_PACKAGE=	Yes
