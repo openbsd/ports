@@ -1,3 +1,5 @@
+BROKEN-sparc64= SocketAddress.hxx:16:10: fatal error: span: No such file or directory
+
 COMMENT=		curses based frontend for mpd
 
 VER=			0.49
