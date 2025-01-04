@@ -1,5 +1,4 @@
 @pkgpath graphics/py-cycler,python3
-@conflict py-cycler-*
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}cycler.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}cycler.${MODPY_PYC_MAGIC_TAG}pyc
