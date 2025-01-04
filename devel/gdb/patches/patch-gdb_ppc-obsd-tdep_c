@@ -1,0 +1,17 @@
+Avoid clash with ppc64-obsd-tdep.c:
+  /usr/ports/pobj/gdb-15.2/gdb-15.2/gdb/osabi.c:178: internal-error: gdbarch_register_osabi: A handler for OS ABI "OpenBSD" has already been registered for architecture powerpc:common64
+  A problem internal to GDB has been detected,
+  ...
+
+Index: gdb/ppc-obsd-tdep.c
+--- gdb/ppc-obsd-tdep.c.orig
++++ gdb/ppc-obsd-tdep.c
+@@ -268,7 +268,7 @@ _initialize_ppcobsd_tdep ()
+ {
+   gdbarch_register_osabi (bfd_arch_rs6000, 0, GDB_OSABI_OPENBSD,
+ 			  ppcobsd_init_abi);
+-  gdbarch_register_osabi (bfd_arch_powerpc, 0, GDB_OSABI_OPENBSD,
++  gdbarch_register_osabi (bfd_arch_powerpc, bfd_mach_ppc, GDB_OSABI_OPENBSD,
+ 			  ppcobsd_init_abi);
+ 
+   /* Avoid initializing the register offsets again if they were
