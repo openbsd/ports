@@ -1,0 +1,32 @@
+https://github.com/WebKit/WebKit/pull/36459/
+
+From de57a167af8ec11f1f12e2d1f40bcd60334f77d6 Mon Sep 17 00:00:00 2001
+From: MingZhu Yan <yanmingzhu@iscas.ac.cn>
+Date: Mon, 11 Nov 2024 00:56:40 +0800
+
+    [RISCV] Add MacroAssemblerRISCV64 implementations for add8
+    https://bugs.webkit.org/show_bug.cgi?id=282898
+
+    Reviewed by NOBODY (OOPS!).
+
+    * Source/JavaScriptCore/assembler/MacroAssemblerRISCV64.h:
+    (JSC::MacroAssemblerRISCV64::add8):
+
+Index: Source/JavaScriptCore/assembler/MacroAssemblerRISCV64.h
+--- Source/JavaScriptCore/assembler/MacroAssemblerRISCV64.h.orig
++++ Source/JavaScriptCore/assembler/MacroAssemblerRISCV64.h
+@@ -171,6 +171,14 @@ class MacroAssemblerRISCV64 : public AbstractMacroAsse
+     static constexpr RegisterID framePointerRegister = RISCV64Registers::fp;
+     static constexpr RegisterID linkRegister = RISCV64Registers::ra;
+ 
++    void add8(TrustedImm32 imm, Address address)
++    {
++        auto temp = temps<Data>();
++        load8(address, temp.data());
++        add32(imm, temp.data());
++        store8(temp.data(), address);
++    }
++
+     void add32(RegisterID src, RegisterID dest)
+     {
+         add32(src, dest, dest);
