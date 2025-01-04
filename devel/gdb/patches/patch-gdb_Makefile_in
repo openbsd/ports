@@ -1,6 +1,5 @@
-
 Add support for aarch64, powerpc64 and riscv64.
-TODO Use OpenBSD-specific files for arm.
+Add native support for arm.
 
 Index: gdb/Makefile.in
 --- gdb/Makefile.in.orig
@@ -38,7 +37,24 @@ Index: gdb/Makefile.in
  	aarch64-ravenscar-thread.c \
  	aarch64-tdep.c \
  	aix-thread.c \
-@@ -1776,6 +1781,8 @@ ALLDEPFILES = \
+@@ -1663,6 +1668,7 @@ ALLDEPFILES = \
+ 	arm-netbsd-nat.c \
+ 	arm-netbsd-tdep.c \
+ 	arm-none-tdep.c \
++	arm-obsd-nat.c \
+ 	arm-obsd-tdep.c \
+ 	arm-tdep.c \
+ 	avr-tdep.c \
+@@ -1766,6 +1772,8 @@ ALLDEPFILES = \
+ 	ppc-ravenscar-thread.c \
+ 	ppc-sysv-tdep.c \
+ 	ppc64-tdep.c \
++	ppc64-obsd-nat.c \
++	ppc64-obsd-tdep.c \
+ 	procfs.c \
+ 	ravenscar-thread.c \
+ 	remote-sim.c \
+@@ -1776,6 +1784,8 @@ ALLDEPFILES = \
  	riscv-none-tdep.c \
  	riscv-ravenscar-thread.c \
  	riscv-tdep.c \
