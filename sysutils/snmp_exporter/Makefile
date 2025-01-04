@@ -2,8 +2,8 @@ COMMENT=	Prometheus exporter for SNMP metrics
 
 # updating: bump V version, "make makesum", "make patch" (fix patches
 # if needed), "make mibs", update M version, "make makesum".
-V=		0.26.0
-M=		0.26.0
+V=		0.27.0
+M=		0.27.0
 GH_ACCOUNT=	prometheus
 GH_PROJECT=	snmp_exporter
 GH_TAGNAME=	v$V
@@ -60,6 +60,7 @@ mibs: patch
 	${_PBUILD} ln -fs ${LOCALBASE}/bin/gtar ${WRKDIR}/bin/tar
 	set -x; cd ${WRKDIR}/snmp_exporter-$V; \
 	    ${_PBUILD} chmod -R ug=rwX,o=rX .; \
+	    umask 007; \
 	    go mod tidy; \
 	    go mod vendor; \
 	    PATH=${WRKDIR}/bin:$$PATH gmake -C generator; \

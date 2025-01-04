@@ -21,11 +21,15 @@ share/examples/snmp_exporter/generator.yml
 @sample ${SYSCONFDIR}/snmp_exporter/generator.yml
 share/examples/snmp_exporter/mibs/
 @comment share/examples/snmp_exporter/mibs/.cisco_v2
+share/examples/snmp_exporter/mibs/.cisco_imc
 @comment share/examples/snmp_exporter/mibs/.do_not_remove
+share/examples/snmp_exporter/mibs/.hpe-mib
 @comment share/examples/snmp_exporter/mibs/.kemp-lm
 @comment share/examples/snmp_exporter/mibs/.net-snmp
 @comment share/examples/snmp_exporter/mibs/.paloalto_panos
+share/examples/snmp_exporter/mibs/.sophos_xg
 @comment share/examples/snmp_exporter/mibs/.synology
+share/examples/snmp_exporter/mibs/.tplinkddm
 share/examples/snmp_exporter/mibs/7.2.50.0.18765.RELEASE-B100-MIB.txt
 share/examples/snmp_exporter/mibs/7.2.50.0.18765.RELEASE-CERTS-MIB.txt
 share/examples/snmp_exporter/mibs/7.2.50.0.18765.RELEASE-IPVS-MIB.txt
@@ -35,6 +39,12 @@ share/examples/snmp_exporter/mibs/AIRESPACE-WIRELESS-MIB
 share/examples/snmp_exporter/mibs/ARISTA-ENTITY-SENSOR-MIB
 share/examples/snmp_exporter/mibs/ARISTA-SMI-MIB
 share/examples/snmp_exporter/mibs/ARISTA-SW-IP-FORWARDING-MIB
+share/examples/snmp_exporter/mibs/CISCO-SMI.my
+share/examples/snmp_exporter/mibs/CISCO-TC.my
+share/examples/snmp_exporter/mibs/CISCO-UNIFIED-COMPUTING-FAULT-MIB.my
+share/examples/snmp_exporter/mibs/CISCO-UNIFIED-COMPUTING-MIB.my
+share/examples/snmp_exporter/mibs/CISCO-UNIFIED-COMPUTING-STORAGE-MIB.my
+share/examples/snmp_exporter/mibs/CISCO-UNIFIED-COMPUTING-TC-MIB.my
 share/examples/snmp_exporter/mibs/CyberPower.MIB
 share/examples/snmp_exporter/mibs/EAP-Client.MIB
 share/examples/snmp_exporter/mibs/EAP.MIB
@@ -76,6 +86,7 @@ share/examples/snmp_exporter/mibs/SNMP-FRAMEWORK-MIB
 share/examples/snmp_exporter/mibs/SNMPv2-MIB
 share/examples/snmp_exporter/mibs/SNMPv2-SMI
 share/examples/snmp_exporter/mibs/SNMPv2-TC
+share/examples/snmp_exporter/mibs/SOPHOS-XG-MIB20.txt
 share/examples/snmp_exporter/mibs/SYNOLOGY-DISK-MIB.txt
 share/examples/snmp_exporter/mibs/SYNOLOGY-EBOX-MIB.txt
 share/examples/snmp_exporter/mibs/SYNOLOGY-FLASHCACHE-MIB.txt
@@ -99,10 +110,65 @@ share/examples/snmp_exporter/mibs/UCD-SNMP-MIB
 share/examples/snmp_exporter/mibs/VRRP-MIB
 share/examples/snmp_exporter/mibs/VRRPv3-MIB
 share/examples/snmp_exporter/mibs/apc-powernet-mib
+share/examples/snmp_exporter/mibs/cpq-traps.mib
+share/examples/snmp_exporter/mibs/cpq54nn.mib
+share/examples/snmp_exporter/mibs/cpqSasSwitch.mib
+share/examples/snmp_exporter/mibs/cpqagent.mib
+share/examples/snmp_exporter/mibs/cpqapli.mib
+share/examples/snmp_exporter/mibs/cpqappg80.mib
+share/examples/snmp_exporter/mibs/cpqclus.mib
+share/examples/snmp_exporter/mibs/cpqcmc.mib
+share/examples/snmp_exporter/mibs/cpqcr.mib
+share/examples/snmp_exporter/mibs/cpqdceeo.mib
+share/examples/snmp_exporter/mibs/cpqdmii.mib
+share/examples/snmp_exporter/mibs/cpqdsccs.mib
+share/examples/snmp_exporter/mibs/cpqfca.mib
+share/examples/snmp_exporter/mibs/cpqfix.mib
+share/examples/snmp_exporter/mibs/cpqgen.mib
+share/examples/snmp_exporter/mibs/cpqhlth.mib
+share/examples/snmp_exporter/mibs/cpqhost.mib
+share/examples/snmp_exporter/mibs/cpqhostb.mib
+share/examples/snmp_exporter/mibs/cpqhsv110v3.mib
+share/examples/snmp_exporter/mibs/cpqica.mib
+share/examples/snmp_exporter/mibs/cpqida.mib
+share/examples/snmp_exporter/mibs/cpqide.mib
+share/examples/snmp_exporter/mibs/cpqidrec.mib
+share/examples/snmp_exporter/mibs/cpqinfo.mib
+share/examples/snmp_exporter/mibs/cpqiodrv.mib
+share/examples/snmp_exporter/mibs/cpqiscsi.mib
+share/examples/snmp_exporter/mibs/cpql2mgt.mib
+share/examples/snmp_exporter/mibs/cpqlinos.mib
+share/examples/snmp_exporter/mibs/cpqn5226a.mib
+share/examples/snmp_exporter/mibs/cpqnic.mib
+share/examples/snmp_exporter/mibs/cpqnode.mib
+share/examples/snmp_exporter/mibs/cpqnunif.mib
+share/examples/snmp_exporter/mibs/cpqoneview.mib
+share/examples/snmp_exporter/mibs/cpqpower.mib
+share/examples/snmp_exporter/mibs/cpqrack.mib
+share/examples/snmp_exporter/mibs/cpqrecov.mib
+share/examples/snmp_exporter/mibs/cpqsanapp.mib
+share/examples/snmp_exporter/mibs/cpqsanevent.mib
+share/examples/snmp_exporter/mibs/cpqscsi.mib
+share/examples/snmp_exporter/mibs/cpqservice.mib
+share/examples/snmp_exporter/mibs/cpqsinfo.mib
+share/examples/snmp_exporter/mibs/cpqsm2.mib
+share/examples/snmp_exporter/mibs/cpqsrvmn.mib
+share/examples/snmp_exporter/mibs/cpqstat.mib
+share/examples/snmp_exporter/mibs/cpqstdeq.mib
+share/examples/snmp_exporter/mibs/cpqstsys.mib
+share/examples/snmp_exporter/mibs/cpqswcc.mib
+share/examples/snmp_exporter/mibs/cpqthrsh.mib
+share/examples/snmp_exporter/mibs/cpqups.mib
+share/examples/snmp_exporter/mibs/cpqwcrm.mib
+share/examples/snmp_exporter/mibs/cpqwinos.mib
 share/examples/snmp_exporter/mibs/iDRAC-SMIv2.mib
+share/examples/snmp_exporter/mibs/powercom
 share/examples/snmp_exporter/mibs/readydataos
 share/examples/snmp_exporter/mibs/readynas
 share/examples/snmp_exporter/mibs/servertech-sentry3-mib
 share/examples/snmp_exporter/mibs/servertech-sentry4-mib
+share/examples/snmp_exporter/mibs/tplink-ddmManage.mib
+share/examples/snmp_exporter/mibs/tplink-ddmStatus.mib
+share/examples/snmp_exporter/mibs/tplink-main.mib
 share/examples/snmp_exporter/snmp.yml
 @sample ${SYSCONFDIR}/snmp_exporter/snmp.yml
