@@ -1,5 +1,4 @@
 @pkgpath graphics/py-dot,python3
-@conflict py-dot-*
 lib/python${MODPY_VERSION}/site-packages/pydot/
 lib/python${MODPY_VERSION}/site-packages/pydot-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/pydot-${MODPY_DISTV}.dist-info/METADATA

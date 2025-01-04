@@ -1,10 +1,9 @@
-COMMENT=	Python interface to Graphviz's Dot#'
+COMMENT=	Python interface to Graphviz's Dot
 
-MODPY_DISTV=	3.0.2
+MODPY_DISTV=	3.0.3
 DISTNAME=	pydot-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/py/py-/}
 CATEGORIES=	graphics
-REVISION=	0
 
 HOMEPAGE=	https://github.com/erocarrera/pydot
 
