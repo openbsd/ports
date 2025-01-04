@@ -19,6 +19,8 @@ MODPY_PYBUILD =		setuptools_scm
 MODPY_PYTEST_ARGS =	testing
 
 BUILD_DEPENDS =		devel/gmake \
+			textproc/py-iniconfig \
+			devel/py-pluggy<2.0 \
 			textproc/py-sphinx
 
 RUN_DEPENDS =		textproc/py-iniconfig \
