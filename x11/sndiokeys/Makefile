@@ -2,7 +2,7 @@ COMMENT=	control sndiod with hot-keys and play keyboard bells
 
 GH_ACCOUNT=	ratchov
 GH_PROJECT=	sndiokeys
-GH_TAGNAME=	v1.1.2
+GH_TAGNAME=	v1.2.1
 
 CATEGORIES=	audio x11
 MAINTAINER=	Alexandre Ratchov <alex@caoua.org>
