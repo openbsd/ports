@@ -1,6 +1,7 @@
 COMMENT=	composable style cycles
 
 MODPY_DISTV=	0.11.0
+REVISION=	4
 DISTNAME=	cycler-${MODPY_DISTV}
 PKGNAME=	py-cycler-${MODPY_DISTV}
 CATEGORIES=	graphics
