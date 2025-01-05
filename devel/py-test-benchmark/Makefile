@@ -1,6 +1,6 @@
 COMMENT=	pytest fixture for benchmarking code
 
-MODPY_DISTV=	5.0.0
+MODPY_DISTV=	5.1.0
 DISTNAME=	pytest-benchmark-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/py/py-/}
 CATEGORIES=	devel
@@ -17,7 +17,8 @@ MODPY_PYBUILD=	setuptools
 
 # disable tests relating to benchmark.weave which needs aspectlib
 # (not yet in ports)
-MODPY_PYTEST_ARGS= --ignore tests/test_with_weaver.py \
+MODPY_PYTEST_ARGS= -v \
+		   --ignore tests/test_with_weaver.py \
 		   --ignore tests/test_with_testcase.py
 
 RUN_DEPENDS=	devel/py-test \

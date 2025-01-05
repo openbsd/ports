@@ -1,0 +1,13 @@
+nbmake isn't ported yet
+
+Index: pytest.ini
+--- pytest.ini.orig
++++ pytest.ini
+@@ -25,7 +25,6 @@ addopts =
+     --ignore=src/pytest_benchmark/pep418.py
+     --doctest-modules
+     --doctest-glob=\*.rst
+-    --nbmake
+     --tb=short
+ testpaths =
+     tests
