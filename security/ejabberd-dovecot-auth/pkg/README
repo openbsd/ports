@@ -1,0 +1,11 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+To use dovecot as authentication method you must enable it inside
+ejabeerd. Following code might be added globally to switch all vhosts to
+dovecot based authentication, or per required vhost.
+
+	auth_method: [external]
+	extauth_program: ${TRUEPREFIX}/share/ejabberd-dovecot-auth/check-dovecot
+

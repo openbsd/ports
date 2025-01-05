@@ -1,0 +1,65 @@
+Update path to dovecot sockets, lift restrictions on password, use
+services name, improve loging
+
+Index: check-dovecot
+--- check-dovecot.orig
++++ check-dovecot
+@@ -61,32 +61,22 @@ use Authen::SASL::Authd qw(auth_dovecot user_dovecot);
+ 
+ while(1) {
+     my $buf = "";
+-    syslog LOG_INFO,"ejabberd-dovecot-auth: waiting for packet";
++    syslog LOG_DEBUG,"ejabberd-dovecot-auth: waiting for packet";
+     my $nread = sysread STDIN,$buf,2;
+-    do { syslog LOG_INFO,"ejabberd-dovecot-auth: port closed"; exit; } unless $nread == 2;
++    do { syslog LOG_DEBUG,"ejabberd-dovecot-auth: port closed"; exit; } unless $nread == 2;
+     my $len = unpack "n",$buf;
+     my $nread = sysread STDIN,$buf,$len;
+ 
+-    my ($op,$user,$domain,$password) = split /:/,$buf;
+-    
+-    # Filter dangerous characters
+-    $user =~ s/[."\n\r'\$`]//g;
+-    $password =~ s/[."\n\r'\$`]//g;
+-    
+-    #$user =~ s/\./\//og;
++    my ($op,$user,$domain,$password) = split /:/,$buf,4;
++
+     my $result;
+ 
+-    syslog(LOG_INFO,"ejabberd-dovecot-auth: request ($op, \"$user\@$domain\", '****')");
+-    #print "ejabberd-dovecot-auth: request ($op, \"$user\@$domain\", $password)";
+-
+     SWITCH: {
+         $op eq 'auth' and do {
+-       	       if (auth_dovecot("$user\@$domain", $password, timeout => 3, socket => '/var/run/dovecot/ejabberd')) {
++       	       if (auth_dovecot("$user\@$domain", $password, timeout => 3, socket => '/var/dovecot/ejabberd-client', service_name => 'ejabberd')) {
+                  $result = true;
+-                 syslog(LOG_INFO,"ejabberd-dovecot-auth: -> +OK");
+                } else {
+                  $result = false;
+-                 syslog(LOG_INFO,"ejabberd-dovecot-auth: -> -ERR");
+                }
+         },last SWITCH;
+ 
+@@ -95,15 +85,17 @@ while(1) {
+         },last SWITCH;
+ 
+         $op eq 'isuser' and do {
+-       	       if (user_dovecot("$user\@$domain", timeout => 3, socket => '/var/run/dovecot/ejabberd')) {
++       	       if (user_dovecot("$user\@$domain", timeout => 3, socket => '/var/dovecot/ejabberd-userdb', service_name => 'ejabberd')) {
+                  $result = true;
+-                 syslog(LOG_INFO,"ejabberd-dovecot-auth: -> +OK");
+                } else {
+                  $result = false;
+-                 syslog(LOG_INFO,"ejabberd-dovecot-auth: -> -ERR");
+                }
+           },last SWITCH;
+     };
++
++    syslog(LOG_INFO, "ejabberd-dovecot-auth: request ($op, \"$user\@$domain\") -> "
++           . ($result ? "+OK" : "-ERR"));
++
+     my $out = pack "nn",2,$result ? 1 : 0;
+     syswrite STDOUT,$out;
+   }

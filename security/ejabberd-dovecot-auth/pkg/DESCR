@@ -1,0 +1,3 @@
+Script to authenticate ejabberd against dovecot
+
+Features: auth and isUser work, but setPass doesn't.

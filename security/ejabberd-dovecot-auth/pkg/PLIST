@@ -1,0 +1,5 @@
+share/doc/pkg-readmes/${PKGSTEM}
+share/ejabberd-dovecot-auth/
+share/ejabberd-dovecot-auth/check-dovecot
+share/ejabberd-dovecot-auth/dovecot-ejabberd-auth.conf
+@sample ${SYSCONFDIR}/dovecot/conf.d/90-ejabberd-auth.conf
