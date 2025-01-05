@@ -1,7 +1,10 @@
 COMMENT=	utilities to manipulate ext2 filesystems
 
 DISTNAME=	e2fsprogs-1.47.1
+REVISION=	0
+
 CATEGORIES=	sysutils devel
+
 SHARED_LIBS=	blkid		0.1 \
 		com_err		21.1 \
 		e2p		3.3 \
@@ -31,7 +34,8 @@ CONFIGURE_ARGS+= --disable-tls \
 		--disable-uuidd \
 		--disable-fuse2fs \
 		--enable-elf-shlibs \
-		--enable-verbose-makecmds
+		--enable-verbose-makecmds \
+		--without-libarchive
 CONFIGURE_ENV=	CPPFLAGS="-D_EXT2_USE_C_VERSIONS_" \
 		LDFLAGS="-lexecinfo"
 USE_GMAKE=	Yes
