@@ -4,13 +4,12 @@ ONLY_FOR_ARCHS =	aarch64 amd64 i386 powerpc
 
 COMMENT =		high assurance C compiler
 
-V =			3.13.1
+V =			3.15
 GH_ACCOUNT =		AbsInt
 GH_PROJECT =		CompCert
 GH_TAGNAME =		v${V}
 DISTNAME =		${GH_PROJECT}-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		1
 
 HOMEPAGE =		https://compcert.org/
 
@@ -37,6 +36,9 @@ BUILD_DEPENDS =	lang/ocaml>=4.05 \
 		math/coq>=8.12.0 \
 		sysutils/findlib \
 		devel/ocaml-menhir>=20190626
+
+# test suite was separated out (see AbsInt/CompCert-small-tests on github)
+NO_TEST =	Yes
 
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mgcc49}
