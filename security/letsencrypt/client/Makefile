@@ -16,7 +16,6 @@ RUN_DEPENDS=	security/letsencrypt/py-acme=${MODPY_DISTV} \
 		devel/py-zopecomponent \
 		devel/py-zopeinterface
 RUN_DEPENDS+=	devel/py-setuptools
-MODPY_PYTEST=	Yes
 
 do-configure:
 	sed -i -e 's,/etc,${SYSCONFDIR},' \

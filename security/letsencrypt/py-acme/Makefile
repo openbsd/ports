@@ -6,8 +6,6 @@ DISTNAME=	acme-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 REVISION=	0
 
-MODPY_PYTEST =	Yes
-
 RUN_DEPENDS=	security/py-cryptography>=0.8 \
 		security/py-josepy \
 		security/py-openssl>=0.15 \
