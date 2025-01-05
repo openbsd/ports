@@ -1,20 +1,17 @@
-COMMENT =		Python subprocess interface
+COMMENT=	Python subprocess interface
 
-MODPY_DISTV =	2.0.6
-DISTNAME =		sh-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-CATEGORIES =		devel
-REVISION =		1
+MODPY_DISTV=	2.1.0
+DISTNAME=	sh-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
+CATEGORIES=	devel
 
-HOMEPAGE =		https://github.com/amoffat/sh
+HOMEPAGE=	https://github.com/amoffat/sh
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
-
-MODPY_PI =		Yes
-MODPY_PYBUILD =		poetry-core
-MODPY_PYTEST_ARGS =	test.py
+MODULES=	lang/python
+MODPY_PYBUILD=	poetry-core
+MODPY_PI=	Yes
 
 .include <bsd.port.mk>
