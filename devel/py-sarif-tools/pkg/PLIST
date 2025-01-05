@@ -10,6 +10,8 @@ lib/python${MODPY_VERSION}/site-packages/sarif/${MODPY_PYCACHE}__main__.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/sarif/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sarif/${MODPY_PYCACHE}charts.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sarif/${MODPY_PYCACHE}charts.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sarif/${MODPY_PYCACHE}issues_report.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/sarif/${MODPY_PYCACHE}issues_report.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sarif/${MODPY_PYCACHE}loader.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sarif/${MODPY_PYCACHE}loader.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sarif/${MODPY_PYCACHE}sarif_file.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -36,6 +38,7 @@ lib/python${MODPY_VERSION}/site-packages/sarif/filter/${MODPY_PYCACHE}general_fi
 lib/python${MODPY_VERSION}/site-packages/sarif/filter/${MODPY_PYCACHE}general_filter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sarif/filter/filter_stats.py
 lib/python${MODPY_VERSION}/site-packages/sarif/filter/general_filter.py
+lib/python${MODPY_VERSION}/site-packages/sarif/issues_report.py
 lib/python${MODPY_VERSION}/site-packages/sarif/loader.py
 lib/python${MODPY_VERSION}/site-packages/sarif/operations/
 lib/python${MODPY_VERSION}/site-packages/sarif/operations/__init__.py
