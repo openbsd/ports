@@ -204,6 +204,14 @@ lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/_musllinu
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/_parser.py
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/_structures.py
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/_tokenizer.py
+lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/licenses/
+lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/licenses/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/licenses/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/licenses/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/licenses/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/licenses/${MODPY_PYCACHE}_spdx.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/licenses/${MODPY_PYCACHE}_spdx.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/licenses/_spdx.py
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/markers.py
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/metadata.py
 lib/python${MODPY_VERSION}/site-packages/poetry/core/_vendor/packaging/py.typed
@@ -311,6 +319,7 @@ lib/python${MODPY_VERSION}/site-packages/poetry/core/json/${MODPY_PYCACHE}__init
 lib/python${MODPY_VERSION}/site-packages/poetry/core/json/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poetry/core/json/schemas/
 lib/python${MODPY_VERSION}/site-packages/poetry/core/json/schemas/poetry-schema.json
+lib/python${MODPY_VERSION}/site-packages/poetry/core/json/schemas/project-schema.json
 lib/python${MODPY_VERSION}/site-packages/poetry/core/masonry/
 lib/python${MODPY_VERSION}/site-packages/poetry/core/masonry/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/poetry/core/masonry/${MODPY_PYCACHE}/
@@ -318,12 +327,9 @@ lib/python${MODPY_VERSION}/site-packages/poetry/core/masonry/${MODPY_PYCACHE}__i
 lib/python${MODPY_VERSION}/site-packages/poetry/core/masonry/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poetry/core/masonry/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/poetry/core/masonry/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/poetry/core/masonry/${MODPY_PYCACHE}builder.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/poetry/core/masonry/${MODPY_PYCACHE}builder.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poetry/core/masonry/${MODPY_PYCACHE}metadata.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/poetry/core/masonry/${MODPY_PYCACHE}metadata.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/poetry/core/masonry/api.py
-lib/python${MODPY_VERSION}/site-packages/poetry/core/masonry/builder.py
 lib/python${MODPY_VERSION}/site-packages/poetry/core/masonry/builders/
 lib/python${MODPY_VERSION}/site-packages/poetry/core/masonry/builders/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/poetry/core/masonry/builders/${MODPY_PYCACHE}/

@@ -1,9 +1,8 @@
 COMMENT=	Poetry's PEP517 build backend
 
-MODPY_DISTV=	1.9.1
+MODPY_DISTV=	2.0.0
 DISTNAME=	poetry_core-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
-REVISION=	0
 
 CATEGORIES=	devel
 
