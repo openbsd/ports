@@ -1,9 +1,8 @@
 COMMENT=	get the currently executing AST node of a frame
 
-MODPY_DISTV=	2.0.1
+MODPY_DISTV=	2.1.0
 DISTNAME=	executing-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	devel
 
