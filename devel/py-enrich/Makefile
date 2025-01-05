@@ -1,23 +1,23 @@
-COMMENT =		extends Python Rich library functionality
+COMMENT=	extends Python Rich library functionality
 
-MODPY_DISTV =	1.2.7
-DISTNAME =		enrich-${MODPY_DISTV}
-PKGNAME =		py-enrich-${MODPY_DISTV}
-REVISION =		3
+# 1.3.0 on github but not pypi yet, setuptools_scm doesn't like GH_* archives
+MODPY_DISTV=	1.2.7
+DISTNAME=	enrich-${MODPY_DISTV}
+PKGNAME=	py-enrich-${MODPY_DISTV}
+REVISIOM=	4
 
-CATEGORIES =		devel
+HOMEPAGE=	https://github.com/pycontribs/enrich
+
+CATEGORIES=	devel
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools_scm
+MODPY_PI=	Yes
 
-MODPY_PI =		Yes
-
-MODPY_PYBUILD =		setuptools_scm
-
-BUILD_DEPENDS =		devel/py-setuptools_scm_git_archive
-RUN_DEPENDS =		devel/py-rich
-TEST_DEPENDS =		devel/py-test-mock
+RUN_DEPENDS=	devel/py-rich
+TEST_DEPENDS=	devel/py-test-mock
 
 .include <bsd.port.mk>
