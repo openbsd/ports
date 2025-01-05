@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1685 2024/12/22 17:19:43 kirill Exp $
+# $OpenBSD: Quirks.pm,v 1.1686 2025/01/05 14:20:25 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1215,6 +1215,7 @@ setup_obsolete_reason(
 	3 => 'git-cvs',
 	7 => 'py3-uncompyle6',
 	6 => 'py-arsenic',
+	3 => 'py3-setuptools_scm_git_archive',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
