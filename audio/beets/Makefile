@@ -51,10 +51,7 @@ TEST_DEPENDS=	archivers/py-rarfile \
 PORTHOME=	${WRKDIR}
 
 post-install:
-	@mv ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/man/beet.1 \
-		${PREFIX}/man/man1
-	@mv ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/man/beetsconfig.5 \
-		${PREFIX}/man/man5
-	@rm -rf ${PREFIX}/lib/python${MODPY_VERSION}/site-packages/man
+	${INSTALL_DATA} ${WRKSRC}/man/beet.1 ${PREFIX}/man/man1
+	${INSTALL_DATA} ${WRKSRC}/man/beetsconfig.5 ${PREFIX}/man/man5
 
 .include <bsd.port.mk>

@@ -1,6 +1,7 @@
 bin/eyeD3
 lib/python${MODPY_VERSION}/site-packages/eyed3/
 lib/python${MODPY_VERSION}/site-packages/eyed3-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/eyed3-${MODPY_DISTV}.dist-info/AUTHORS.rst
 lib/python${MODPY_VERSION}/site-packages/eyed3-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/eyed3-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/eyed3-${MODPY_DISTV}.dist-info/RECORD

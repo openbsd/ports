@@ -4,7 +4,7 @@ COMMENT=	module and program for processing ID3 tags
 MODPY_DISTV=	0.9.7
 DISTNAME=	eyeD3-${MODPY_DISTV}
 CATEGORIES=	audio
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://eyed3.readthedocs.io/
 
@@ -20,9 +20,5 @@ RUN_DEPENDS=	devel/py-deprecation \
 FAKE_FLAGS=	docdir=${WRKINST}${PREFIX}/share/doc/py-eyed3
 
 MODPY_PYTEST_ARGS= --ignore tests/test_factory.py
-
-# https://github.com/nicfit/eyeD3/issues/588
-post-install:
-	rm -r ${WRKINST}${MODPY_SITEPKG}/!(eyed3*)
 
 .include <bsd.port.mk>

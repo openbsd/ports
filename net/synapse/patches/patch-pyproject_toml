@@ -1,4 +1,5 @@
-No need to run-depend on setuptools_rust and rust..
+No need to run-depend on setuptools_rust and rust.
+Relax poetry-core dependency for 2.0.0, no real change seen in install dir.
 
 Index: pyproject.toml
 --- pyproject.toml.orig
@@ -12,3 +13,12 @@ Index: pyproject.toml
  
  # This is used for parsing multipart responses
  python-multipart = ">=0.0.9"
+@@ -370,7 +370,7 @@ tomli = ">=1.2.3"
+ # runtime errors caused by build system changes.
+ # We are happy to raise these upper bounds upon request,
+ # provided we check that it's safe to do so (i.e. that CI passes).
+-requires = ["poetry-core>=1.1.0,<=1.9.1", "setuptools_rust>=1.3,<=1.10.2"]
++requires = ["poetry-core>=1.1.0", "setuptools_rust>=1.3,<=1.10.2"]
+ build-backend = "poetry.core.masonry.api"
+ 
+ 

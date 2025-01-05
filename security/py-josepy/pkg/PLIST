@@ -1,9 +1,7 @@
-@pkgpath security/py-josepy,python3
 @conflict py-acme-*
 @conflict py-josepy-*
+@pkgpath security/py-josepy,python3
 bin/jws
-lib/python${MODPY_VERSION}/site-packages/CHANGELOG.rst
-lib/python${MODPY_VERSION}/site-packages/CONTRIBUTING.md
 lib/python${MODPY_VERSION}/site-packages/josepy/
 lib/python${MODPY_VERSION}/site-packages/josepy-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/josepy-${MODPY_DISTV}.dist-info/LICENSE.txt

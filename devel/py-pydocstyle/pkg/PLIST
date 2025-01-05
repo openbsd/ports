@@ -2,6 +2,7 @@
 bin/pydocstyle
 lib/python${MODPY_VERSION}/site-packages/pydocstyle/
 lib/python${MODPY_VERSION}/site-packages/pydocstyle-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pydocstyle-${MODPY_DISTV}.dist-info/LICENSE-MIT
 lib/python${MODPY_VERSION}/site-packages/pydocstyle-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/pydocstyle-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/pydocstyle-${MODPY_DISTV}.dist-info/WHEEL

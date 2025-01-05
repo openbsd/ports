@@ -2,6 +2,7 @@
 bin/r2e
 lib/python${MODPY_VERSION}/site-packages/rss2email/
 lib/python${MODPY_VERSION}/site-packages/rss2email-3.12.2.dist-info/
+lib/python${MODPY_VERSION}/site-packages/rss2email-3.12.2.dist-info/AUTHORS
 lib/python${MODPY_VERSION}/site-packages/rss2email-3.12.2.dist-info/COPYING
 lib/python${MODPY_VERSION}/site-packages/rss2email-3.12.2.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/rss2email-3.12.2.dist-info/RECORD

@@ -2,7 +2,7 @@ COMMENT =	extensible network protocol fuzzer
 
 MODPY_DISTV =	0.4.2
 DISTNAME =	boofuzz-${MODPY_DISTV}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	security
 
