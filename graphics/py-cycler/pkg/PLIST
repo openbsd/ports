@@ -1,11 +1,13 @@
 @pkgpath graphics/py-cycler,python3
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}cycler.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}cycler.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cycler/
 lib/python${MODPY_VERSION}/site-packages/cycler-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/cycler-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/cycler-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/cycler-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/cycler-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/cycler-${MODPY_DISTV}.dist-info/top_level.txt
-lib/python${MODPY_VERSION}/site-packages/cycler.py
+lib/python${MODPY_VERSION}/site-packages/cycler/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cycler/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/cycler/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cycler/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cycler/py.typed
