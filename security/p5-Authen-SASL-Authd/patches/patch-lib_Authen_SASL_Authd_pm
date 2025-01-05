@@ -1,0 +1,89 @@
+Cumulative patch which includes:
+ - http://www.mail-archive.com/dovecot@dovecot.org/msg29498.html
+ - https://rt.cpan.org/Public/Bug/Display.html?id=32080
+ - handle EOF
+ - escape login as required by dovecot protocol
+
+Index: lib/Authen/SASL/Authd.pm
+--- lib/Authen/SASL/Authd.pm.orig
++++ lib/Authen/SASL/Authd.pm
+@@ -6,13 +6,14 @@ use IO::Socket::UNIX;
+ use IO::Select;
+ use MIME::Base64 qw(encode_base64);
+ 
+-our($VERSION, @EXPORT, @EXPORT_OK, @ISA);
++our($VERSION, @EXPORT, @EXPORT_OK, @ISA, $DOVECOT_REQID);
+ 
+ require Exporter;
+ @ISA = qw(Exporter);
+ @EXPORT_OK = qw(auth_cyrus auth_dovecot user_dovecot);
+ 
+ $VERSION = "0.04";
++$DOVECOT_REQID = 0;
+ 
+ 
+ sub auth_cyrus {
+@@ -44,8 +45,7 @@ sub auth_cyrus {
+ sub auth_dovecot {
+ 
+     my ($login, $passwd, %prop) = @_;
+-    utf8::encode($login);
+-    utf8::encode($passwd);
++    $login =~ s/([\x00\x01\t\r\n])/\x01$1/g;
+ 
+     my $service = $prop{service_name} || '';
+     my $timeout = $prop{timeout} || 5;
+@@ -54,6 +54,8 @@ sub auth_dovecot {
+     my $sock = new IO::Socket::UNIX(Type => SOCK_STREAM, Peer => $socket) or
+         die "Can't open socket. Check dovecot is running and $socket is readable.";
+ 
++    $DOVECOT_REQID++;
++
+     my $handshake = read_until($sock, '^DONE$', $timeout);
+     die "Unsupported protocol version"
+         unless $handshake =~ /^VERSION\t1\t\d+$/m;
+@@ -61,8 +63,8 @@ sub auth_dovecot {
+     die "PLAIN mechanism is not supported by the authentication daemon"
+         unless $handshake =~ /^MECH\tPLAIN/m;
+ 
+-    my $base64 = encode_base64("\0$login\0$passwd");
+-    $sock->send("VERSION\t1\t0\nCPID\t$$\nAUTH\t1\tPLAIN\tservice=$service\tresp=$base64\n") or
++    my $base64 = encode_base64("\0$login\0$passwd", '');
++    $sock->send("VERSION\t1\t0\nCPID\t$$\nAUTH\t$DOVECOT_REQID\tPLAIN\tservice=$service\tnologin\tresp=$base64\n") or
+         die "Can't write to $socket";
+ 
+     my $result = read_until($sock, '\n', $timeout);
+@@ -76,7 +78,7 @@ sub auth_dovecot {
+ sub user_dovecot {
+ 
+     my ($login, %prop) = @_;
+-    utf8::encode($login);
++    $login =~ s/([\x00\x01\t\r\n])/\x01$1/g;
+ 
+     my $service = $prop{service_name} || '';
+     my $timeout = $prop{timeout} || 5;
+@@ -85,11 +87,13 @@ sub user_dovecot {
+     my $sock = new IO::Socket::UNIX(Type => SOCK_STREAM, Peer => $socket) or
+         die "Can't open socket. Check dovecot is running and $socket is readable.";
+ 
++    $DOVECOT_REQID++;
++
+     my $handshake = read_until($sock, '^VERSION\t\d+\t', $timeout);
+     die "Unsupported protocol version"
+         unless $handshake =~ /^VERSION\t1\t\d+$/m;
+ 
+-    $sock->send("VERSION\t1\t0\nUSER\t1\t$login\tservice=$service\n") or
++    $sock->send("VERSION\t1\t0\nUSER\t$DOVECOT_REQID\t$login\tservice=$service\n") or
+         die "Can't write to $socket";
+ 
+     my $result = read_until($sock, '\n', $timeout);
+@@ -110,6 +114,9 @@ sub read_until {
+     while ($result !~ /$re/m) {
+         $sel->can_read($timeout) or die "Timed out while waiting for response";
+         defined recv($sock, my $buf, 256, 0) or die 'Error while reading response';
++        if ($buf eq '') {
++            die 'Connection is closed by peer while waiting for response';
++        }
+         $result .= $buf;
+     }
+     return $result;

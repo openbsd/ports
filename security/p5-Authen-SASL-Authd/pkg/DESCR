@@ -1,0 +1,6 @@
+The Authen::SASL::Authd package implements LOGIN authentication protocol
+used by Cyrus saslauthd and PLAIN authentication protocol supported by
+Dovecot authentication daemon. It can be used to process authentication
+requests against configured SASL mechanism implemented by Cyrus or
+Dovecot SASL libraries. It can also be used to check if a particular
+user exists according to the Dovecot authentication daemon.
