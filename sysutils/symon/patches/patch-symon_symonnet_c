@@ -1,0 +1,12 @@
+Index: symon/symonnet.c
+--- symon/symonnet.c.orig
++++ symon/symonnet.c
+@@ -73,7 +73,7 @@ send_packet(struct mux * mux)
+     if (sendto(mux->symuxsocket, mux->packet.data,
+                mux->packet.offset, 0, (struct sockaddr *) & mux->sockaddr,
+                SS_LEN(&mux->sockaddr))
+-        != mux->packet.offset) {
++        != (ssize_t)mux->packet.offset) {
+         mux->senderr++;
+     }
+ 
