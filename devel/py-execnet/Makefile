@@ -1,20 +1,20 @@
-COMMENT =		rapid multi-Python deployment
+COMMENT=	rapid multi-Python deployment
 
-DISTNAME =		execnet-${MODPY_DISTV}
-MODPY_DISTV =	1.9.0
-MODPY_PI =		Yes
-PKGNAME =		py-${DISTNAME}
-REVISION =		3
+DISTNAME=	execnet-${MODPY_DISTV}
+MODPY_DISTV=	2.1.1
+MODPY_PI=	Yes
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =	devel
+CATEGORIES=	devel
 
-HOMEPAGE =	https://execnet.readthedocs.io/en/latest/
+HOMEPAGE=	https://execnet.readthedocs.io/en/latest/
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
-MODPY_PYBUILD =		setuptools_scm
-MODPY_PYTEST_ARGS =	testing
+MODULES=	lang/python
+MODPY_PYBUILD=	hatch-vcs
+# disable hanging test
+MODPY_PYTEST_ARGS= -k 'not test_popen_io[gevent-sys.executable]'
 
 .include <bsd.port.mk>

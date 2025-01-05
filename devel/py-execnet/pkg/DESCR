@@ -1,2 +1,4 @@
 execnet provides carefully tested means to ad-hoc interact with Python
 interpreters across version, platform and network barriers.
+
+It is in maintenance-only mode and should not be used for new projects.
