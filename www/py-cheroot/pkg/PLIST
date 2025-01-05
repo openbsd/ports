@@ -1,5 +1,5 @@
-@pkgpath www/py-cheroot,python3
 @conflict py-cheroot-<8.2.1p2
+@pkgpath www/py-cheroot,python3
 bin/cheroot
 lib/python${MODPY_VERSION}/site-packages/cheroot/
 lib/python${MODPY_VERSION}/site-packages/cheroot-${MODPY_DISTV}.dist-info/
