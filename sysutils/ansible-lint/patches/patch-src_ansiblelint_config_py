@@ -3,8 +3,8 @@ neuter online version-check
 Index: src/ansiblelint/config.py
 --- src/ansiblelint/config.py.orig
 +++ src/ansiblelint/config.py
-@@ -288,6 +288,9 @@ def get_version_warning() -> str:
-     if __version__ == "0.1.dev1":  # pragma: no cover
+@@ -291,6 +291,9 @@ def get_version_warning() -> str:
+     if not pip:
          return ""
  
 +    # managed by pkg_add

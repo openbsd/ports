@@ -1,8 +1,8 @@
 COMMENT =		best practices checker for ansible
 
-MODPY_DISTV =	24.2.2
-DISTNAME =		ansible-lint-${MODPY_DISTV}
-REVISION =		0
+MODPY_DISTV =		24.12.2
+DISTNAME =		ansible_lint-${MODPY_DISTV}
+PKGNAME =		ansible-lint-${MODPY_DISTV}
 
 CATEGORIES =		sysutils
 
@@ -13,8 +13,6 @@ MODULES =		lang/python
 
 MODPY_PYBUILD =		setuptools_scm
 MODPY_PI =		Yes
-
-BUILD_DEPENDS =		devel/py-setuptools_scm_git_archive
 
 RUN_DEPENDS =		devel/git \
 			sysutils/ansible-core \
