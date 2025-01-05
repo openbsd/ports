@@ -49,6 +49,7 @@
      SUBDIR += dsniff
      SUBDIR += dsniff,no_x11
      SUBDIR += easy-rsa
+     SUBDIR += ejabberd-dovecot-auth
      SUBDIR += emldump
      SUBDIR += encfs
      SUBDIR += exploitdb
@@ -157,6 +158,7 @@
      SUBDIR += p5-Authen-OATH
      SUBDIR += p5-Authen-Radius
      SUBDIR += p5-Authen-SASL
+     SUBDIR += p5-Authen-SASL-Authd
      SUBDIR += p5-Authen-WebAuthn
      SUBDIR += p5-Catalyst-Authentication-Store-DBI
      SUBDIR += p5-Catalyst-Authentication-Store-DBIx-Class
