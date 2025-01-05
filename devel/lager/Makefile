@@ -18,7 +18,8 @@ COMPILER =		base-clang ports-clang ports-gcc
 MODULES =		devel/cmake \
 			lang/python
 
-NO_BUILD =		Yes
+# configure stage uses the compiler so can't mark as no build
+#NO_BUILD =		Yes
 
 BUILD_DEPENDS =		devel/catch2 \
 			devel/boost \
