@@ -4,6 +4,7 @@ GH_TAGNAME=     1.30.0
 GH_ACCOUNT=     gnustep
 GH_PROJECT=     libs-base
 DISTNAME=       gnustep-base-${GH_TAGNAME}
+REVISION =	0
 
 SHARED_LIBS=	gnustep-base 10.7
 CATEGORIES=	devel
