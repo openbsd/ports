@@ -1,7 +1,7 @@
 Index: tests/Cargo.toml
 --- tests/Cargo.toml.orig
 +++ tests/Cargo.toml
-@@ -64,5 +64,5 @@ ring = { version = "0.17" }
+@@ -67,5 +67,5 @@ ring = { version = "0.17" }
  biscuit = "0.7.0"
  form_urlencoded = "1.1.0"
  
