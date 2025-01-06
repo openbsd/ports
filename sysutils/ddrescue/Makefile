@@ -1,6 +1,6 @@
 COMMENT =		data recovery tool
 
-DISTNAME =		ddrescue-1.28
+DISTNAME =		ddrescue-1.29
 
 CATEGORIES =		sysutils
 
@@ -26,6 +26,8 @@ CONFIGURE_ARGS =	CC="${CC}" CXX="${CXX}" CFLAGS="${CFLAGS}" \
 			CXXFLAGS="${CXXFLAGS}" \
 			--mandir="${PREFIX}/man" \
 			--infodir="${PREFIX}/info"
+
+USE_GMAKE =		Yes
 
 ALL_TARGET =		all doc
 TEST_TARGET =		check
