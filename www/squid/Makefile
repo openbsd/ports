@@ -24,7 +24,8 @@ COMMONLIB=	${COMPILER_LIBCXX} c execinfo gmp gnutls hogweed iconv \
 		idn2 intl m nettle p11-kit pthread ssl tasn1 unistring
 
 # repo at https://github.com/squid-cache/squid
-SITES=		${HOMEPAGE}Versions/v${V:R:R}/ \
+SITES=		https://github.com/squid-cache/squid/releases/download/SQUID_${V:S/./_/}/ \
+		${HOMEPAGE}Versions/v${V:R:R}/ \
 		https://ftp.mirrorservice.org/sites/ftp.squid-cache.org/pub/archive/${V:R:R}/
 
 # cope with missing translations in re-rolled 6.7 release
