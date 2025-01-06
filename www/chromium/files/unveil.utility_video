@@ -5,4 +5,11 @@
 /tmp rwc
 
 # needed for video(4)
-/dev/video rw
+/dev/video0 rw
+/dev/video1 rw
+/dev/video2 rw
+/dev/video3 rw
+/dev/video4 rw
+/dev/video5 rw
+/dev/video6 rw
+/dev/video7 rw
