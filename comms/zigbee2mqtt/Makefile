@@ -1,6 +1,6 @@
 COMMENT=	Zigbee to MQTT bridge
 
-V=		1.42.0
+V=		2.0.0
 GH_ACCOUNT=	Koenkk
 GH_PROJECT=	zigbee2mqtt
 GH_TAGNAME=	$V
@@ -28,7 +28,9 @@ NO_TEST=	Yes
 
 post-extract:
 	@echo - installing npm deps from cache to WRKDIR
-	cd ${WRKSRC}; env -i HOME=${WRKDIR} PATH=$$PATH npm install -dd --audit=false --include=dev --cache=${WRKDIR}/npm-cache
+	cd ${WRKSRC}; env -i HOME=${WRKDIR} PATH=$$PATH npm install \
+		-dd --audit=false --include=dev --cache=${WRKDIR}/npm-cache \
+		--prefer-offline
 
 do-build:
 	cd ${WRKSRC}; \
@@ -36,8 +38,10 @@ do-build:
 
 do-install:
 	cd ${WRKSRC}; env -i HOME=${WRKDIR} PATH=$$PATH \
-	npm install -dd --exclude=dev --global --cache=${WRKDIR}/npm-cache --prefer-offline --prefix=${PREFIX} --install-links
-	mv ${PREFIX}/lib/node_modules/zigbee2mqtt/data ${PREFIX}/share/examples/zigbee2mqtt
+	npm install -dd --exclude=dev --global --cache=${WRKDIR}/npm-cache \
+		--prefer-offline --prefix=${PREFIX} --install-links
+	mv ${PREFIX}/lib/node_modules/zigbee2mqtt/data \
+		${PREFIX}/share/examples/zigbee2mqtt
 	ln -s /var/db/zigbee2mqtt ${PREFIX}/lib/node_modules/zigbee2mqtt/data
 	rm -rf ${PREFIX}/lib/node_modules/zigbee2mqtt/node_modules/@serialport/bindings-cpp/prebuilds
 
@@ -50,9 +54,9 @@ dist: ${FULLDISTDIR}/${GH_DISTFILE}
 	cd $$t; \
 	tar xzf ${FULLDISTDIR}/${GH_DISTFILE:C,\{.*,,}; \
 	cd ${WRKDIST:C,^.*/,,}; \
-	npm install -d --include=dev --cache=$$t/npm-cache; \
-	npm run build -d --cache=$$t/npm-cache; \
-	npm install -d --exclude=dev --global --cache=$$t/npm-cache --prefix=$$t/inst --install-links; \
+	npm install -dd --include=dev --cache=$$t/npm-cache; \
+	npm run build -dd --cache=$$t/npm-cache; \
+	npm install -dd --exclude=dev --global --cache=$$t/npm-cache --prefix=$$t/inst --install-links; \
 	cd -; \
 	rm -r npm-cache/_logs; \
 	tar cf - npm-cache | xz -T 0 > $$f; \

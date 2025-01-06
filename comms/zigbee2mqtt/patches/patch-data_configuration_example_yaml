@@ -1,0 +1,53 @@
+Index: data/configuration.example.yaml
+--- data/configuration.example.yaml.orig
++++ data/configuration.example.yaml
+@@ -1,3 +1,6 @@
++# see https://www.zigbee2mqtt.io/guide/configuration/ for information
++# zigbee2mqtt may update this file itself when running
++
+ # Indicates the configuration version (used by configuration migrations)
+ version: 4
+ 
+@@ -8,6 +11,7 @@ homeassistant:
+ # Enable the frontend, runs on port 8080 by default
+ frontend:
+     enabled: true
++    host: 127.0.0.1
+     # port: 8080
+ 
+ # MQTT settings
+@@ -23,13 +27,13 @@ mqtt:
+ # Serial settings, only required when Zigbee2MQTT fails to start with:
+ #   USB adapter discovery error (No valid USB adapter found).
+ #   Specify valid 'adapter' and 'port' in your configuration.
+-# serial:
+-#     # Location of the adapter
+-#     # USB adapters - use format "port: /dev/serial/by-id/XXX"
+-#     # Ethernet adapters - use format "port: tcp://192.168.1.12:6638"
+-#     port: /dev/serial/by-id/usb-Texas_Instruments_TI_CC2531_USB_CDC___0X00124B0018ED3DDF-if00
+-#     # Adapter type, allowed values: `zstack`, `ember`, `deconz`, `zigate` or `zboss`
+-#     adapter: zstack
++serial:
++    # Location of the adapter
++    # USB adapters - use format "port: /dev/cuaU0"
++    # Ethernet adapters - use format "port: tcp://192.168.1.12:6638"
++    port: /dev/cuaU0
++    # Adapter type, allowed values: `zstack`, `ember`, `deconz`, `zigate` or `zboss`
++    adapter: zstack
+ 
+ # Periodically check whether devices are online/offline
+ # availability:
+@@ -37,6 +41,13 @@ mqtt:
+ 
+ # Advanced settings
+ advanced:
++    # see https://www.zigbee2mqtt.io/guide/configuration/logging.html
++    log_level: info
++    log_directory: /var/log/zigbee2mqtt
++    log_file: zigbee2mqtt_%TIMESTAMP%.log
++    log_rotation: true
++    log_output:
++      - file
+     # channel: 11
+     # Let Zigbee2MQTT generate a network key on first start
+     network_key: GENERATE
