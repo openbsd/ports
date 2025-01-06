@@ -1,7 +1,7 @@
 COMMENT=		open-proxy monitor irc bot
 
 DIST_TUPLE=		github ircd-hybrid hopm 1.1.10 .
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		net
 

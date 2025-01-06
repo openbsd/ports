@@ -1,0 +1,103 @@
+add pledge/unveil
+
+Index: src/main.c
+--- src/main.c.orig
++++ src/main.c
+@@ -30,6 +30,9 @@
+ #include <fcntl.h>
+ #include <stdlib.h>
+ #include <string.h>
++#if defined(__OpenBSD__)
++#include <err.h>
++#endif
+ 
+ #include "config.h"
+ #include "irc.h"
+@@ -39,6 +42,9 @@
+ #include "options.h"
+ #include "memory.h"
+ #include "main.h"
++#if defined(__OpenBSD__)
++#include "match.h"
++#endif
+ 
+ 
+ static int RESTART;  /* Flagged to restart on next cycle */
+@@ -70,7 +76,66 @@ setup_corelimit(void)
+   }
+ }
+ 
++#if defined(__OpenBSD__)
+ static void
++setup_pledge(void) {
++  int needr = 0;
++  int needp = 0;
++
++  if (unveil(HOPM_BINPATH, "x") == -1) {
++    err(1, "unveil");
++  }
++
++  if (IRCItem.tls) {
++    if (unveil("/etc/ssl/cert.pem", "r") == -1) {
++      err(1, "unveil");
++    }
++
++    if (!EmptyString(IRCItem.rsa_private_key_file) &&
++        !EmptyString(IRCItem.tls_certificate_file)) {
++      if (unveil("IRCItem.rsa_private_key", "r") == -1) {
++        err(1, "unveil");
++      }
++
++      if (unveil("IRCItem.tls_certificate_file", "r") == -1) {
++        err(1, "unveil");
++      }
++    }
++
++    needr = 1;
++  }
++
++  if (!EmptyString(OpmItem.dnsbl_to) &&
++      !EmptyString(OpmItem.dnsbl_from) &&
++      !EmptyString(OpmItem.sendmail)) {
++    if (unveil("/bin/sh", "x") == -1) {
++	err(1, "unveil");
++    }
++
++    needp = 1;
++  }
++
++  if (needr && needp) {
++    if (pledge("stdio rpath inet dns proc exec", NULL) == -1) {
++      err(1, "pledge");
++    }
++  } else if (needr) {
++    if (pledge("stdio rpath inet dns exec", NULL) == -1) {
++      err(1, "pledge");
++    }
++  } else if (needp) {
++    if (pledge("stdio inet dns proc exec", NULL) == -1) {
++      err(1, "pledge");
++    }
++  } else {
++    if (pledge("stdio inet dns exec", NULL) == -1) {
++      err(1, "pledge");
++    }
++  }
++}
++#endif
++
++static void
+ do_signal(int signum)
+ {
+   switch (signum)
+@@ -198,6 +263,10 @@ main(int argc, char *argv[])
+                strerror(errno));
+     exit(EXIT_FAILURE);
+   }
++
++#if defined(__OpenBSD__)
++  setup_pledge();
++#endif
+ 
+   /* Setup alarm & int handlers. */
+   ALARMACTION.sa_handler = &do_signal;
