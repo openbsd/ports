@@ -1,9 +1,8 @@
 COMMENT=	library for getting/setting process names
 
-MODPY_DISTV=	1.3.3
+MODPY_DISTV=	1.3.4
 DISTNAME=	setproctitle-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	devel
 
@@ -14,9 +13,8 @@ PERMIT_PACKAGE=Yes
 
 WANTLIB +=	pthread
 
-MODPY_PI=	Yes
-MODPY_PYBUILD=	setuptools
-
 MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 .include <bsd.port.mk>
