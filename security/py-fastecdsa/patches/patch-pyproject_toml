@@ -5,7 +5,7 @@
 Index: pyproject.toml
 --- pyproject.toml.orig
 +++ pyproject.toml
-@@ -29,10 +29,10 @@ docs = "https://fastecdsa.readthedocs.io"
+@@ -29,7 +29,7 @@ docs = "https://fastecdsa.readthedocs.io"
  pypi = "https://pypi.org/project/fastecdsa/"
  
  [project.scripts]
@@ -13,11 +13,7 @@ Index: pyproject.toml
 +fastecdsa-benchmark = "fastecdsa.benchmark:run"
  
  [build-system]
--requires = ["setuptools>=75.6.0"]
-+requires = ["setuptools"]
- build-backend = "setuptools.build_meta"
- 
- [tool.coverage.run]
+ requires = ["setuptools>=75.6.0"]
 @@ -43,7 +43,7 @@ omit = [
  
  [tool.pytest.ini_options]
