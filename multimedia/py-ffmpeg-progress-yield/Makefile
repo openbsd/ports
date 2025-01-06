@@ -1,9 +1,8 @@
 COMMENT=	Python FFmpeg progress wrapper
 
-MODPY_DISTV=	0.9.1
+MODPY_DISTV=	0.10.0
 DISTNAME=	ffmpeg-progress-yield-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	multimedia
 
@@ -15,9 +14,9 @@ PERMIT_PACKAGE=	Yes
 RUN_DEPENDS=	graphics/ffmpeg
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
+
 MODPY_PYTEST_ARGS=	test/test.py
 
 .include <bsd.port.mk>
