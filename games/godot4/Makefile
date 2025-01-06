@@ -3,9 +3,8 @@ BROKEN-powerpc =	fails at runtime, the UI is totally blank
 COMMENT-main =	2D and 3D game engine
 COMMENT-editor=	2D and 3D game engine (with the editor)
 
-V =		4.2.2
+V =		4.3
 PKGNAME =	godot4-${V}
-REVISION =	0
 DIST_TUPLE +=	github godotengine godot ${V}-stable .
 DIST_TUPLE +=	github GodotSteam GodotSteam v4.3 godotsteam
 
@@ -13,7 +12,8 @@ CATEGORIES =	games
 
 HOMEPAGE =	https://godotengine.org/
 
-MAINTAINER =	Omar Polo <op@openbsd.org>
+MAINTAINER =	Omar Polo <op@openbsd.org> \
+		Thomas Frohwein <thfr@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes
@@ -21,11 +21,11 @@ PERMIT_PACKAGE =	Yes
 MULTI_PACKAGES =	-main -editor
 
 WANTLIB-main += ${COMPILER_LIBCXX} SPIRV X11 Xau Xcursor Xdmcp Xext
-WANTLIB-main += Xfixes Xi Xinerama Xrandr Xrender c dbus-1 enet execinfo
+WANTLIB-main += Xfixes Xi Xinerama Xrandr Xrender c dbus-1 enet
 WANTLIB-main += expat fontconfig freetype glib-2.0 glslang
 WANTLIB-main += glslang-default-resource-limits intl m mbedcrypto
-WANTLIB-main += mbedtls mbedx509 miniupnpc mpcdec ogg pcre2-32 pcre2-8
-WANTLIB-main += sharpyuv sndio speechd steam_api theora theoradec usbhid vorbis
+WANTLIB-main += mbedtls mbedx509 miniupnpc ogg pcre2-32 pcre2-8
+WANTLIB-main += sharpyuv sndio speechd steam_api theora theoradec vorbis
 WANTLIB-main += vorbisfile webp wslay xcb xkbcommon zstd
 
 WANTLIB-editor = ${WANTLIB-main}
@@ -39,8 +39,8 @@ MODULES =	devel/scons
 # sharedlib_ext in modules/mono/config.py to '.so.1.0'
 MODSCONS_FLAGS =	CC="${CC}" \
 			CXX="${CXX}" \
-			CFLAGS="${CFLAGS}" \
-			CXXFLAGS="${CXXFLAGS} -Wno-deprecated-register" \
+			cflags="${CFLAGS}" \
+			cxxflags="${CXXFLAGS} -Wno-deprecated-register" \
 			builtin_certs=no \
 			builtin_enet=no \
 			builtin_libogg=no \
@@ -92,7 +92,6 @@ MODSCONS_FLAGS +=	module_raycast_enabled="false"
 
 LIB_DEPENDS =		archivers/zstd \
 			audio/libvorbis \
-			audio/musepack \
 			audio/speech-dispatcher \
 			devel/gettext,-runtime \
 			devel/pcre2 \

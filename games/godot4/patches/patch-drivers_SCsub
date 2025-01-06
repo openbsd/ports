@@ -10,4 +10,4 @@ Index: drivers/SCsub
 +SConscript("sndio/SCsub")
  if env["platform"] == "windows":
      SConscript("wasapi/SCsub")
- if env["xaudio2"]:
+     if not env.msvc:

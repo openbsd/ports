@@ -5,7 +5,7 @@
 Index: thirdparty/embree/common/sys/sysinfo.cpp
 --- thirdparty/embree/common/sys/sysinfo.cpp.orig
 +++ thirdparty/embree/common/sys/sysinfo.cpp
-@@ -597,6 +597,26 @@ namespace embree
+@@ -603,6 +603,26 @@ namespace embree
  
  #endif
  
@@ -32,7 +32,7 @@ Index: thirdparty/embree/common/sys/sysinfo.cpp
  ////////////////////////////////////////////////////////////////////////////////
  /// Mac OS X Platform
  ////////////////////////////////////////////////////////////////////////////////
-@@ -655,7 +675,7 @@ namespace embree
+@@ -661,7 +681,7 @@ namespace embree
      static int nThreads = -1;
      if (nThreads != -1) return nThreads;
  
