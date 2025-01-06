@@ -27,6 +27,9 @@ MAINTAINER =	Yifei Zhan <openbsd@zhan.science>
 # dual license: either BSD 2-clause or LGPLv2.1+
 PERMIT_PACKAGE =	Yes
 
+# C++
+COMPILER =		base-clang ports-gcc
+
 PSEUDO_FLAVORS =	no_perl no_python no_ruby
 FLAVOR? =
 
