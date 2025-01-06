@@ -1,10 +1,10 @@
 COMMENT =	library for spatial indexing and querying
-V =		2.0.0
+V =		2.1.0
 DISTNAME =	spatialindex-src-${V}
 PKGNAME =	${DISTNAME:S/-src//}
 CATEGORIES =	geo
-SHARED_LIBS =	spatialindex 4.0 \
-		spatialindex_c 2.0
+SHARED_LIBS =	spatialindex 5.0 \
+		spatialindex_c 2.1
 
 # MIT
 PERMIT_PACKAGE =	Yes
