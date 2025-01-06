@@ -1,7 +1,7 @@
 COMMENT =	EC using OpenSSL
 
 DISTNAME =	Crypt-OpenSSL-EC-1.32
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	security
 

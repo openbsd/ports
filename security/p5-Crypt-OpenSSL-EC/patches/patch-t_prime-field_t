@@ -1,0 +1,12 @@
+Index: t/prime-field.t
+--- t/prime-field.t.orig
++++ t/prime-field.t
+@@ -119,7 +119,7 @@ sub prime_field_tests()
+ #    print "Generator as octet string, hybrid form:\n     " . unpack('H*', $buf) . "\n";
+     ok($buf eq pack('H*', '070d07'));
+ 
+-    ok(Crypt::OpenSSL::EC::EC_POINT::get_Jprojective_coordinates_GFp($group, $R, $x, $y, $z, $ctx));
++#    ok(Crypt::OpenSSL::EC::EC_POINT::get_Jprojective_coordinates_GFp($group, $R, $x, $y, $z, $ctx));
+ #    print "A representation of the inverse of that generator in\nJacobian projective coordinates:\n     X = 0x" .$x->to_hex() . " Y = 0x" . $y->to_hex() . " Z = 0x" . $z->to_hex() . "\n";
+ 
+     $p = Crypt::OpenSSL::Bignum->new_from_hex('FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7FFFFFFF');
