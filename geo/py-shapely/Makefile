@@ -5,7 +5,7 @@ GH_TAGNAME =	${MODPY_DISTV}
 GH_ACCOUNT =	shapely
 GH_PROJECT =	shapely
 PKGNAME =	py-shapely-${MODPY_DISTV:S/.post/pl/}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	geo
 
@@ -17,9 +17,10 @@ PERMIT_PACKAGE =	Yes
 MODULES =	lang/python
 
 MODPY_PYBUILD =		setuptools
+
+RUN_DEPENDS +=	math/py-numpy
 # cython and numpy needed to build _vectorized.so
 BUILD_DEPENDS +=${RUN_DEPENDS} \
-		math/py-numpy \
 		lang/cython
 
 LIB_DEPENDS =	geo/geos
