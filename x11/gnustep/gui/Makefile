@@ -4,7 +4,7 @@ GH_TAGNAME=     0.31.1
 GH_ACCOUNT=     gnustep
 GH_PROJECT=     libs-gui
 DISTNAME=       gnustep-gui-${GH_TAGNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES=	devel
 
@@ -16,7 +16,7 @@ HOMEPAGE=	http://www.gnustep.org/
 
 WANTLIB += ao aspell cups flite flite_cmu_us_kal flite_cmulex
 WANTLIB += flite_usenglish gif jpeg png sndfile sndio
-WANTLIB += ${LIBCXX} tiff c icudata icui18n icuuc z
+WANTLIB += ${LIBCXX} tiff c icudata icui18n icuuc z MagickCore-6.Q16
 
 #SITES=	${SITE_GNUSTEP:=core/}
 SITES=	https://github.com/gnustep/libs-gui/releases/download/gui-0_31_1/
@@ -27,6 +27,7 @@ MODGNUSTEP_NEEDS_GUI=No
 LIB_DEPENDS=	audio/flite \
 		audio/libao \
 		audio/libsndfile \
+		graphics/ImageMagick \
 		graphics/jpeg \
 		graphics/giflib \
 		graphics/png \
@@ -41,6 +42,7 @@ CONFIGURE_STYLE=autoconf
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib -lstdc++ -lm"
 CONFIGURE_ARGS=	--with-x \
+		--enable-imagemagick \
 		--enable-speech
 
 LIBDIR =	lib/GNUstep/Libraries/gnustep-gui/Versions/${GH_TAGNAME:R}
