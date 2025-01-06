@@ -33,6 +33,8 @@ TEST_DEPENDS=	devel/py-attrs \
 
 .include <bsd.port.arch.mk>
 .if ${PROPERTIES:Mrust}
+# if this becomes a hard dep, change charset-normalizer so that it
+# doesn't use mypy unconditonally
 RUN_DEPENDS+=	textproc/py-orjson
 .endif
 
