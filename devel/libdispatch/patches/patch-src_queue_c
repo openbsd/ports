@@ -3,7 +3,7 @@ backport of https://github.com/apple/swift-corelibs-libdispatch/pull/559
 Index: src/queue.c
 --- src/queue.c.orig
 +++ src/queue.c
-@@ -6469,6 +6469,8 @@ _dispatch_runloop_handle_is_valid(dispatch_runloop_han
+@@ -6474,6 +6474,8 @@ _dispatch_runloop_handle_is_valid(dispatch_runloop_han
  	return MACH_PORT_VALID(handle);
  #elif defined(__linux__)
  	return handle >= 0;
@@ -12,7 +12,7 @@ Index: src/queue.c
  #elif defined(_WIN32)
  	return handle != NULL;
  #else
-@@ -6485,6 +6487,8 @@ _dispatch_runloop_queue_get_handle(dispatch_lane_t dq)
+@@ -6490,6 +6492,8 @@ _dispatch_runloop_queue_get_handle(dispatch_lane_t dq)
  #elif defined(__linux__)
  	// decode: 0 is a valid fd, so offset by 1 to distinguish from NULL
  	return ((dispatch_runloop_handle_t)(uintptr_t)dq->do_ctxt) - 1;
@@ -21,7 +21,7 @@ Index: src/queue.c
  #elif defined(_WIN32)
  	return ((dispatch_runloop_handle_t)(uintptr_t)dq->do_ctxt);
  #else
-@@ -6502,6 +6506,8 @@ _dispatch_runloop_queue_set_handle(dispatch_lane_t dq,
+@@ -6507,6 +6511,8 @@ _dispatch_runloop_queue_set_handle(dispatch_lane_t dq,
  #elif defined(__linux__)
  	// encode: 0 is a valid fd, so offset by 1 to distinguish from NULL
  	dq->do_ctxt = (void *)(uintptr_t)(handle + 1);
@@ -30,7 +30,7 @@ Index: src/queue.c
  #elif defined(_WIN32)
  	dq->do_ctxt = (void *)(uintptr_t)handle;
  #else
-@@ -6509,6 +6515,12 @@ _dispatch_runloop_queue_set_handle(dispatch_lane_t dq,
+@@ -6514,6 +6520,12 @@ _dispatch_runloop_queue_set_handle(dispatch_lane_t dq,
  #endif
  }
  
@@ -43,7 +43,7 @@ Index: src/queue.c
  static void
  _dispatch_runloop_queue_handle_init(void *ctxt)
  {
-@@ -6558,6 +6570,14 @@ _dispatch_runloop_queue_handle_init(void *ctxt)
+@@ -6563,6 +6575,14 @@ _dispatch_runloop_queue_handle_init(void *ctxt)
  		}
  	}
  	handle = fd;
@@ -58,7 +58,7 @@ Index: src/queue.c
  #elif defined(_WIN32)
  	HANDLE hEvent;
  	hEvent = CreateEventW(NULL, /*bManualReset=*/FALSE,
-@@ -6592,6 +6612,11 @@ _dispatch_runloop_queue_handle_dispose(dispatch_lane_t
+@@ -6597,6 +6617,11 @@ _dispatch_runloop_queue_handle_dispose(dispatch_lane_t
  #elif defined(__linux__)
  	int rc = close(handle);
  	(void)dispatch_assume_zero(rc);
@@ -70,7 +70,7 @@ Index: src/queue.c
  #elif defined(_WIN32)
  	BOOL bSuccess;
  	bSuccess = CloseHandle(handle);
-@@ -6628,6 +6653,13 @@ _dispatch_runloop_queue_class_poke(dispatch_lane_t dq)
+@@ -6633,6 +6658,13 @@ _dispatch_runloop_queue_class_poke(dispatch_lane_t dq)
  		result = eventfd_write(handle, 1);
  	} while (result == -1 && errno == EINTR);
  	(void)dispatch_assume_zero(result);
@@ -84,7 +84,7 @@ Index: src/queue.c
  #elif defined(_WIN32)
  	BOOL bSuccess;
  	bSuccess = SetEvent(handle);
-@@ -6915,7 +6947,7 @@ _dispatch_runloop_root_queue_wakeup_4CF(dispatch_queue
+@@ -6920,7 +6952,7 @@ _dispatch_runloop_root_queue_wakeup_4CF(dispatch_queue
  	_dispatch_runloop_queue_wakeup(upcast(dq)._dl, 0, false);
  }
  
@@ -93,7 +93,7 @@ Index: src/queue.c
  dispatch_runloop_handle_t
  _dispatch_runloop_root_queue_get_port_4CF(dispatch_queue_t dq)
  {
-@@ -7304,6 +7336,13 @@ static inline pid_t
+@@ -7310,6 +7342,13 @@ static inline pid_t
  _gettid(void)
  {
  	return (pid_t)pthread_getthreadid_np();

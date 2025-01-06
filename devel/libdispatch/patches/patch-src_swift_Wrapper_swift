@@ -3,7 +3,7 @@ backport of https://github.com/apple/swift-corelibs-libdispatch/pull/559
 Index: src/swift/Wrapper.swift
 --- src/swift/Wrapper.swift.orig
 +++ src/swift/Wrapper.swift
-@@ -181,7 +181,7 @@ extension DispatchSource : DispatchSourceMachSend,
+@@ -182,7 +182,7 @@ extension DispatchSource : DispatchSourceMachSend,
  }
  #endif
  
@@ -12,7 +12,7 @@ Index: src/swift/Wrapper.swift
  extension DispatchSource : DispatchSourceProcess,
  	DispatchSourceFileSystemObject {
  }
-@@ -272,7 +272,7 @@ public protocol DispatchSourceMemoryPressure : Dispatc
+@@ -273,7 +273,7 @@ public protocol DispatchSourceMemoryPressure : Dispatc
  }
  #endif
  
@@ -21,7 +21,7 @@ Index: src/swift/Wrapper.swift
  public protocol DispatchSourceProcess : DispatchSourceProtocol {
  	var handle: pid_t { get }
  
-@@ -302,7 +302,7 @@ public protocol DispatchSourceTimer : DispatchSourcePr
+@@ -303,7 +303,7 @@ public protocol DispatchSourceTimer : DispatchSourcePr
  	func scheduleRepeating(wallDeadline: DispatchWallTime, interval: Double, leeway: DispatchTimeInterval)
  }
  

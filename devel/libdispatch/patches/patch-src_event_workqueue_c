@@ -3,7 +3,7 @@ backport of https://github.com/apple/swift-corelibs-libdispatch/pull/559
 Index: src/event/workqueue.c
 --- src/event/workqueue.c.orig
 +++ src/event/workqueue.c
-@@ -180,6 +180,52 @@ _dispatch_workq_count_runnable_workers(dispatch_workq_
+@@ -247,6 +247,52 @@ _dispatch_workq_count_runnable_workers(dispatch_workq_
  
  	_dispatch_unfair_lock_unlock(&mon->registered_tid_lock);
  }

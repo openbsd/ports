@@ -3,7 +3,7 @@ drop optimization flag and -Werror
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -127,7 +127,7 @@ endif()
+@@ -145,7 +145,7 @@ endif()
  # FIXME(compnerd) add check for -fblocks?
  target_compile_options(dispatch PRIVATE -fblocks)
  

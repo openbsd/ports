@@ -22,7 +22,7 @@ Index: src/shims/lock.c
  #pragma mark - semaphores
  
  #if USE_MACH_SEM
-@@ -394,8 +406,10 @@ _dispatch_unfair_lock_wake(uint32_t *uaddr, uint32_t f
+@@ -395,8 +407,10 @@ _dispatch_unfair_lock_wake(uint32_t *uaddr, uint32_t f
  #include <sys/time.h>
  #ifdef __ANDROID__
  #include <sys/syscall.h>
@@ -34,7 +34,7 @@ Index: src/shims/lock.c
  #endif /* __ANDROID__ */
  
  DISPATCH_ALWAYS_INLINE
-@@ -404,7 +418,12 @@ _dispatch_futex(uint32_t *uaddr, int op, uint32_t val,
+@@ -405,7 +419,12 @@ _dispatch_futex(uint32_t *uaddr, int op, uint32_t val,
  		const struct timespec *timeout, uint32_t *uaddr2, uint32_t val3,
  		int opflags)
  {
@@ -47,7 +47,7 @@ Index: src/shims/lock.c
  }
  
  // returns 0, ETIMEDOUT, EFAULT, EINTR, EWOULDBLOCK
-@@ -414,11 +433,15 @@ _futex_blocking_op(uint32_t *uaddr, int futex_op, uint
+@@ -415,11 +434,15 @@ _futex_blocking_op(uint32_t *uaddr, int futex_op, uint
  		const struct timespec *timeout, int flags)
  {
  	for (;;) {
@@ -66,7 +66,7 @@ Index: src/shims/lock.c
  		case EINTR:
  			/*
  			 * if we have a timeout, we need to return for the caller to
-@@ -454,6 +477,7 @@ _dispatch_futex_wake(uint32_t *uaddr, int wake, int op
+@@ -455,6 +478,7 @@ _dispatch_futex_wake(uint32_t *uaddr, int wake, int op
  	DISPATCH_INTERNAL_CRASH(errno, "_dlock_wake() failed");
  }
  
@@ -74,7 +74,7 @@ Index: src/shims/lock.c
  static void
  _dispatch_futex_lock_pi(uint32_t *uaddr, struct timespec *timeout, int detect,
  	      int opflags)
-@@ -471,6 +495,7 @@ _dispatch_futex_unlock_pi(uint32_t *uaddr, int opflags
+@@ -472,6 +496,7 @@ _dispatch_futex_unlock_pi(uint32_t *uaddr, int opflags
  	if (rc == 0) return;
  	DISPATCH_CLIENT_CRASH(errno, "futex_unlock_pi() failed");
  }
@@ -82,7 +82,7 @@ Index: src/shims/lock.c
  
  #endif
  #pragma mark - wait for address
-@@ -599,7 +624,7 @@ _dispatch_unfair_lock_lock_slow(dispatch_unfair_lock_t
+@@ -606,7 +631,7 @@ _dispatch_unfair_lock_lock_slow(dispatch_unfair_lock_t
  		}
  	}
  }
@@ -91,7 +91,7 @@ Index: src/shims/lock.c
  void
  _dispatch_unfair_lock_lock_slow(dispatch_unfair_lock_t dul,
  		dispatch_lock_options_t flags)
-@@ -636,7 +661,7 @@ _dispatch_unfair_lock_unlock_slow(dispatch_unfair_lock
+@@ -643,7 +668,7 @@ _dispatch_unfair_lock_unlock_slow(dispatch_unfair_lock
  	if (_dispatch_lock_has_waiters(cur)) {
  		_dispatch_unfair_lock_wake(&dul->dul_lock, 0);
  	}

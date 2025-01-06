@@ -11,7 +11,7 @@ Index: tests/bsdtestharness.c
  #include <stdio.h>
  #include <stdlib.h>
  #if defined(__unix__) || (defined(__APPLE__) && defined(__MACH__))
-@@ -151,7 +152,7 @@ main(int argc, char *argv[])
+@@ -144,7 +145,7 @@ main(int argc, char *argv[])
  	//fprintf(stderr, "pid = %d\n", pid);
  	assert(pid > 0);
  
@@ -20,7 +20,7 @@ Index: tests/bsdtestharness.c
  	int status;
  	struct rusage usage;
  	struct timeval tv_stop, tv_wall;
-@@ -166,9 +167,9 @@ main(int argc, char *argv[])
+@@ -159,9 +160,9 @@ main(int argc, char *argv[])
  
  	assert(res2 != -1);
  	test_long("Process exited", (WIFEXITED(status) && WEXITSTATUS(status) && WEXITSTATUS(status) != 0xff) || WIFSIGNALED(status), 0);
