@@ -1,5 +1,5 @@
-@pkgpath www/py-bokeh,python3
 @conflict py-bokeh-*
+@pkgpath www/py-bokeh,python3
 bin/bokeh
 lib/python${MODPY_VERSION}/site-packages/bokeh/
 lib/python${MODPY_VERSION}/site-packages/bokeh-${MODPY_DISTV}.dist-info/

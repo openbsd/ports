@@ -3,7 +3,7 @@ COMMENT=	statistical and novel interactive HTML plots for Python
 MODPY_DISTV=	3.6.1
 DISTNAME=	bokeh-${MODPY_DISTV}
 PKGNAME=	py-bokeh-${MODPY_DISTV}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www graphics
 
@@ -18,6 +18,9 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 # conftest.py, etc missing from pypi distfile
 NO_TEST=	Yes
+
+BUILD_DEPENDS=	devel/py-colorama \
+		devel/py-setuptools-git-versioning
 
 RUN_DEPENDS=	devel/py-typing-extensions>=3.10.0.0 \
 		geo/py-xyzservices \
@@ -39,9 +42,5 @@ TEST_DEPENDS=	devel/ipython \
 		math/py-pandas \
 		www/py-requests \
 		www/py-selenium
-
-post-extract:
-	sed -i 's/dynamic = \["version"\]/version = "${MODPY_DISTV}"/' \
-	    ${WRKSRC}/pyproject.toml
 
 .include <bsd.port.mk>
