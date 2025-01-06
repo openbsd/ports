@@ -1,9 +1,8 @@
 COMMENT =		basic implementation of the __geo_interface__
 
-MODPY_DISTV =	1.5.0
+MODPY_DISTV =	1.5.1
 DISTNAME =		pygeoif-${MODPY_DISTV}
 PKGNAME =		py-geoif-${MODPY_DISTV}
-REVISION =		0
 
 CATEGORIES =		geo devel
 
