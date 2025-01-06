@@ -1,6 +1,6 @@
 COMMENT =		persistent key-value database
 
-DISTNAME =		redis-6.2.16
+DISTNAME =		redis-6.2.17
 CATEGORIES =		databases
 HOMEPAGE =		https://redis.io/
 
