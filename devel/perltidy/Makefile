@@ -1,6 +1,6 @@
 COMMENT =	tool to indent and reformat perl scripts
 
-V =		20240903
+V =		20250105
 DISTNAME =	Perl-Tidy-$V
 PKGNAME =	perltidy-$V
 CATEGORIES =	devel

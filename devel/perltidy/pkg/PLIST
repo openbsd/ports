@@ -27,6 +27,7 @@ share/examples/perltidy/README
 share/examples/perltidy/bbtidy.pl
 share/examples/perltidy/break_long_quotes.pl
 share/examples/perltidy/delete_ending_blank_lines.pl
+share/examples/perltidy/dump_unique_keys.pl
 share/examples/perltidy/ex_mp.pl
 share/examples/perltidy/filter_example.in
 share/examples/perltidy/filter_example.pl
