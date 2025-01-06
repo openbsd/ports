@@ -13,7 +13,7 @@ GH_PROJECT =		mail-server
 CATEGORIES =		mail
 # AGPLv3
 PERMIT_PACKAGE =	Yes
-GH_TAGNAME =		v0.10.6
+GH_TAGNAME =		v0.10.7
 PKGNAME =		stalwart-mail-${GH_TAGNAME:S/v//}
 
 HOMEPAGE =	https://stalw.art/
@@ -31,6 +31,7 @@ DPB_PROPERTIES =	parallel
 # otherwise blows because rocksdb wants to statically links against libz ?
 MODCARGO_CRATES_KEEP +=	libz-sys
 MODCARGO_CRATES_KEEP +=	libsqlite3-sys
+MODCARGO_CRATES_KEEP +=	foundationdb-sys
 
 # for rocksdb bindings
 MODCARGO_ENV=	LIBCLANG_PATH=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
