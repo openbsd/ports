@@ -1,7 +1,6 @@
 COMMENT=	ESP8266 and ESP32 ROM bootloader communication tool
 
-MODPY_DISTV=	4.6.2
-REVISION=	2
+MODPY_DISTV=	4.8.1
 DISTNAME=	esptool-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -15,13 +14,13 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS=	devel/py-bitstring \
+RUN_DEPENDS=	devel/py-argcomplete \
+		devel/py-bitstring \
+		devel/py-intelhex \
 		devel/py-serial \
 		security/py-ecdsa \
 		textproc/py-yaml
 # also wants reedsolo for espefuse (not in ports)
-# 4.8 (untested) also wants:
-# devel/py-argcomplete devel/py-intelhex
 
 # tests not in pypi sdist
 NO_TEST=	Yes
