@@ -4,7 +4,7 @@ COMMENT=	extends Python Rich library functionality
 MODPY_DISTV=	1.2.7
 DISTNAME=	enrich-${MODPY_DISTV}
 PKGNAME=	py-enrich-${MODPY_DISTV}
-REVISIOM=	4
+REVISION=	4
 
 HOMEPAGE=	https://github.com/pycontribs/enrich
 
