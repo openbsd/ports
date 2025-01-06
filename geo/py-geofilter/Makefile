@@ -1,7 +1,6 @@
 COMMENT =		pure Python parser implementation of OGC filtering standards
 
-MODPY_DISTV =	0.2.4
-REVISION =		1
+MODPY_DISTV =	0.3.1
 DISTNAME =		pygeofilter-${MODPY_DISTV}
 PKGNAME =		py-geofilter-${MODPY_DISTV}
 
