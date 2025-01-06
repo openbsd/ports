@@ -1,10 +1,9 @@
 COMMENT=	plugin to manage your versions by scm tags
 
-MODPY_DISTV=	8.0.4
-DISTNAME=	setuptools-scm-${MODPY_DISTV}
-PKGNAME=	py-${DISTNAME:S/-/_/}
+MODPY_DISTV=	8.1.0
+DISTNAME=	setuptools_scm-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	2
 
 # MIT
 PERMIT_PACKAGE=	Yes
@@ -15,10 +14,10 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
 RUN_DEPENDS=	devel/py-setuptools \
-		devel/py-typing-extensions \
 		sysutils/py-packaging
 BUILD_DEPENDS=	${RUN_DEPENDS}
 
+# some tests need network
 PORTHOME=	${WRKDIR}
 TEST_DEPENDS=	${FULLPKGNAME}:${FULLPKGPATH} \
 		devel/git \

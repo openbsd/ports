@@ -64,8 +64,11 @@ lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_file_finders/${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_file_finders/${MODPY_PYCACHE}git.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_file_finders/${MODPY_PYCACHE}hg.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_file_finders/${MODPY_PYCACHE}hg.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_file_finders/${MODPY_PYCACHE}pathtools.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_file_finders/${MODPY_PYCACHE}pathtools.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_file_finders/git.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_file_finders/hg.py
+lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_file_finders/pathtools.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_get_version_impl.py
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_integration/
 lib/python${MODPY_VERSION}/site-packages/setuptools_scm/_integration/__init__.py
