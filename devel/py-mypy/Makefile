@@ -1,9 +1,8 @@
 COMMENT=	optional static type checker for Python
 
-MODPY_DISTV=	1.12.0
+MODPY_DISTV=	1.14.1
 DISTNAME=	mypy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	devel
 
@@ -25,8 +24,16 @@ RUN_DEPENDS=	devel/py-typing-extensions \
 		devel/py-mypy-extensions
 # some tests want network access
 PORTHOME=	${WRKDIR}
-TEST_DEPENDS=	devel/py-test-cov \
+TEST_DEPENDS=	devel/py-attrs \
+		devel/py-test-cov \
 		devel/py-test-xdist \
-		sysutils/py-filelock
+		sysutils/py-filelock \
+		sysutils/py-psutil \
+		textproc/py-tomli
+
+.include <bsd.port.arch.mk>
+.if ${PROPERTIES:Mrust}
+RUN_DEPENDS+=	textproc/py-orjson
+.endif
 
 .include <bsd.port.mk>
