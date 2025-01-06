@@ -1,20 +1,18 @@
 BROKEN-aarch64 =	third_party/rust/libc/src/lib.rs: error[E0412]: cannot find type 'c_long' in this scope
-BROKEN =	needs backport of bugs 1715900 and 1857492 to unbreak with py3.12
 
 COMMENT-main =		Mozilla application suite
 COMMENT-lightning =	Mozilla Seamonkey calendar extension
 ONLY_FOR_ARCHS =	amd64 i386 aarch64
 
 # version = (TB version - 3) / 100 + 2
-MOZILLA_VERSION =	2.53.19
-REVISION =		0
+MOZILLA_VERSION =	2.53.20b1
 MOZILLA_PROJECT =	seamonkey
 MOZILLA_CODENAME =	comm/suite
 SITES =	https://archive.seamonkey-project.org/releases/${MOZILLA_DIST_VERSION}/source/
 
-# unbreaks build with rust 1.78
+# unbreaks build with rust 1.83
 SITES.p =	https://bugzilla.mozilla.org/
-PATCHFILES.p=	bug-1896958-rust178.zip{attachment.cgi?id=9403797}
+PATCHFILES.p=	bug-1896958-rust183.zip{attachment.cgi?id=9445781}
 PATCH_DIST_STRIP =	-p1 -f
 # || true because third_party/rust/packed_simd/Cargo.toml fails to patch but we dont care
 PATCH_CASES += *.zip) \
@@ -22,7 +20,7 @@ PATCH_CASES += *.zip) \
 
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
-PKGNAME-lightning =	lightning-seamonkey-5.8.19
+PKGNAME-lightning =	lightning-seamonkey-5.8.20beta1
 EPOCH-lightning =	0
 
 HOMEPAGE =	https://www.seamonkey-project.org/
@@ -45,15 +43,18 @@ COMPILER =		base-clang ports-clang
 MODCLANG_ARCHS =	amd64 i386
 MODCLANG_COMPILER_LINKS =	No
 
-CONFIGURE_ARGS +=	--disable-gconf
 NO_TEST=	Yes
 
+CONFIGURE_SCRIPT =	configure.in
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
+CONFIGURE_ARGS +=	--enable-linker=lld
 
 BUILD_DEPENDS +=	devel/cbindgen>=0.6.1
 # autoconf-2.13 isnt a real dependency since a while, but configure still checks for it
 BUILD_DEPENDS +=	devel/autoconf/2.13
+# for distutils
+BUILD_DEPENDS +=	devel/py-setuptools
 
 # lld blows when linking libxul; limit threads
 .if ${MACHINE_ARCH:Mi386}
@@ -89,6 +90,10 @@ post-patch:
 	mv ${WRKSRC}/third_party/rust/{packed_simd,any_all_workaround}/LICENSE-MIT
 	# drop crate remnants to make sure cargo doesnt pickup packed_simd/Cargo.toml
 	rm -Rf ${WRKSRC}/third_party/rust/packed_simd/
+pre-configure:
+	chmod +x ${WRKSRC}/configure.in
+	ln -sf ${MODPY_SITEPKG}/setuptools/_distutils ${WRKSRC}/python/mozbuild/distutils
+	ln -sf ${MODPY_SITEPKG}/setuptools/_distutils ${WRKSRC}/python/mozbuild/mozbuild/distutils
 
 post-install:
 	${INSTALL_MAN} ${WRKBUILD}/dist/man/man1/seamonkey.1 ${PREFIX}/man/man1/

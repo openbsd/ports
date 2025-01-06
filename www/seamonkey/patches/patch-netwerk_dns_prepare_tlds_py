@@ -1,0 +1,40 @@
+https://hg.mozilla.org/integration/autoland/rev/7f8e4fcfcbfa
+https://hg.mozilla.org/integration/autoland/rev/20668aaf20ebbef0dad5b18b0db001bee589da3e
+
+Index: netwerk/dns/prepare_tlds.py
+--- netwerk/dns/prepare_tlds.py.orig
++++ netwerk/dns/prepare_tlds.py
+@@ -4,11 +4,21 @@
+ 
+ import codecs
+ import encodings.idna
+-import imp
+ import os
+ import re
+ import sys
+ 
++# see https://docs.python.org/3/whatsnew/3.12.html#imp
++def load_source(modname, filename):
++    import importlib.machinery
++    import importlib.util
++
++    loader = importlib.machinery.SourceFileLoader(modname, filename)
++    spec = importlib.util.spec_from_file_location(modname, filename, loader=loader)
++    module = importlib.util.module_from_spec(spec)
++    sys.modules[module.__name__] = module
++    loader.exec_module(module)
++    return module
+ """
+ Processes a file containing effective TLD data.  See the following URL for a
+ description of effective TLDs and of the file format that this script
+@@ -108,9 +118,7 @@ def main(output, effective_tld_filename):
+   tld_dir = os.path.dirname(effective_tld_filename)
+   make_dafsa_py = os.path.join(tld_dir, '../../xpcom/ds/make_dafsa.py')
+   sys.path.append(os.path.dirname(make_dafsa_py))
+-  with open(make_dafsa_py, 'r') as fh:
+-    make_dafsa = imp.load_module('script', fh, make_dafsa_py,
+-                                 ('.py', 'r', imp.PY_SOURCE))
++  make_dafsa = load_source('script', make_dafsa_py)
+ 
+   def typeEnum(etld):
+     """

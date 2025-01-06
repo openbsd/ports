@@ -3,7 +3,7 @@ Fix build with icu >=75
 Index: build/moz.configure/toolchain.configure
 --- build/moz.configure/toolchain.configure.orig
 +++ build/moz.configure/toolchain.configure
-@@ -513,7 +513,7 @@ def check_compiler(compiler, language, target):
+@@ -473,7 +473,7 @@ def check_compiler(compiler, language, target):
      # Note: MSVC, while supporting C++14, still reports 199711L for __cplusplus.
      # Note: this is a strict version check because we used to always add
      # -std=gnu++14.

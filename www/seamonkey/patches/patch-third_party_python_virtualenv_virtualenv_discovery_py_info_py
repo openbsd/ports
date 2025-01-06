@@ -1,0 +1,34 @@
+drop distutils codepaths, the version bundled with virtualenv has a broken/updated six ?
+
+i know 3.12 is hardcoded but MEH.
+Index: third_party/python/virtualenv/virtualenv/discovery/py_info.py
+--- third_party/python/virtualenv/virtualenv/discovery/py_info.py.orig
++++ third_party/python/virtualenv/virtualenv/discovery/py_info.py
+@@ -13,8 +13,6 @@ import re
+ import sys
+ import sysconfig
+ from collections import OrderedDict, namedtuple
+-from distutils import dist
+-from distutils.command.install import SCHEME_KEYS
+ from string import digits
+ 
+ VersionInfo = namedtuple("VersionInfo", ["major", "minor", "micro", "releaselevel", "serial"])
+@@ -122,14 +120,10 @@ class PythonInfo(object):
+     def _distutils_install():
+         # follow https://github.com/pypa/pip/blob/main/src/pip/_internal/locations.py#L95
+         # note here we don't import Distribution directly to allow setuptools to patch it
+-        d = dist.Distribution({"script_args": "--no-user-cfg"})  # conf files not parsed so they do not hijack paths
+-        if hasattr(sys, "_framework"):
+-            sys._framework = None  # disable macOS static paths for framework
+-        i = d.get_command_obj("install", create=True)
+-        i.prefix = os.sep  # paths generated are relative to prefix that contains the path sep, this makes it relative
+-        i.finalize_options()
+-        result = {key: (getattr(i, "install_{}".format(key))[1:]).lstrip(os.sep) for key in SCHEME_KEYS}
+-        return result
++        return {
++           'purelib': 'lib/python3.12/site-packages',
++           'platlib': 'lib/python3.12/site-packages',
++           'headers': 'include/python3.12', 'scripts': 'bin', 'data': ''}
+ 
+     @property
+     def version_str(self):

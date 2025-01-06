@@ -1,0 +1,15 @@
+update for python 3.12
+
+cf https://searchfox.org/mozilla-esr102/source/third_party/python/virtualenv/virtualenv/run/plugin/base.py
+Index: third_party/python/virtualenv/virtualenv/run/plugin/base.py
+--- third_party/python/virtualenv/virtualenv/run/plugin/base.py.orig
++++ third_party/python/virtualenv/virtualenv/run/plugin/base.py
+@@ -15,7 +15,7 @@ class PluginLoader(object):
+ 
+     @classmethod
+     def entry_points_for(cls, key):
+-        return OrderedDict((e.name, e.load()) for e in cls.entry_points().get(key, {}))
++        return OrderedDict((e.name, e.load()) for e in cls.entry_points().select(group=key))
+ 
+     @staticmethod
+     def entry_points():
