@@ -1,11 +1,10 @@
 COMMENT=	simplified packaging system for Python modules
 
 # py-types-setuptools should have a matching version
-MODPY_DISTV=	69.5.1
+MODPY_DISTV=		75.6.0
 DISTNAME=		setuptools-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
 EPOCH=			0
-REVISION=		0
 
 CATEGORIES=		devel
 
@@ -22,22 +21,53 @@ MODPY_PI=		Yes
 MODPY_PYBUILD=		other
 MODPY_PYTEST=		Yes
 # test_editable_install.py needs pip_run
-MODPY_PYTEST_ARGS =	setuptools/tests \
-			--ignore setuptools/tests/test_editable_install.py
+MODPY_PYTEST_ARGS=	setuptools/tests \
+			--ignore setuptools/tests/test_editable_install.py \
+			--ignore setuptools/tests/compat/py39.py
 
-BUILD_DEPENDS=		devel/py-wheel
-
-TEST_DEPENDS=		devel/py-jaraco-envs \
-			devel/py-jaraco-path \
-			devel/py-path \
-			devel/py-pip \
-			devel/py-test-cov \
-			devel/py-test-timeout \
-			devel/py-test-xdist \
+BUILD_DEPENDS=		devel/py-more-itertools \
 			devel/py-wheel \
-			sysutils/py-filelock \
+			sysutils/py-packaging
+
+# setuptools includes various vendored dependencies however, if another
+# version (newer or older) is installed, that will take precedence.
+# in order to give more consistent behaviour, list those as RUN_DEPENDS
+# where possible (i.e. where it wouldn't result in a loop).
+RUN_DEPENDS=		sysutils/py-packaging \
+			devel/py-more-itertools \
+			devel/py-wheel
+# vendored: platformdirs, jaraco.{text,collections,functools} + deps
+
+TEST_DEPENDS=		${MODPY_RUN_DEPENDS},-tests \
+			devel/py-virtualenv \
+			devel/py-wheel \
+			devel/py-pip \
 			sysutils/py-packaging \
+			devel/py-jaraco-envs \
+			devel/py-test-xdist \
+			devel/py-jaraco-path \
+			sysutils/py-filelock \
 			textproc/py-ini2toml \
-			textproc/py-tomli_w
+			textproc/py-tomli_w \
+			devel/py-test-timeout \
+			devel/py-test-cov \
+			devel/py-pyproject_hooks \
+			devel/py-jaraco-test
+
+post-extract:
+	# remove vendored modules that can come from other ports, but
+	# keep those which use setuptools themselves, as they can't be used
+	# in RUN_DEPENDS:
+	# autocommand jaraco.{text,context,functools,collections} inflect
+	cd ${WRKSRC}/setuptools/_vendor; rm -r \
+		packaging* wheel* more_itertools* backports backports.tarfile* \
+		importlib_metadata* tomli* typing_extensions* zipp
+
+post-install:
+	cd ${WRKINST}${MODPY_SITEPKG}; \
+	rm -r pkg_resources/tests \
+		setuptools/tests \
+		setuptools/_distutils/tests; \
+	rm setuptools/{cli,gui}*.exe
 
 .include <bsd.port.mk>

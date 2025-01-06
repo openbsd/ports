@@ -1,8 +1,8 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -15,7 +15,7 @@ package_data = dict(
- )
+@@ -16,7 +16,7 @@ package_data = {
+ }
  
  force_windows_specific_files = os.environ.get(
 -    "SETUPTOOLS_INSTALL_WINDOWS_SPECIFIC_FILES", "1"
