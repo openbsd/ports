@@ -74,7 +74,6 @@ SHA256 (cargo/fnv-1.0.7.tar.gz) = P57skY0/JAad7LmvFVTK18iA4tokqa/YisoABTGrgsE=
 SHA256 (cargo/foreign-types-0.3.2.tar.gz) = 9vM564rcBSzSyniRD9qGmu+jjSLVy2SOZIXk0/wG87E=
 SHA256 (cargo/foreign-types-shared-0.1.1.tar.gz) = ALAihBGQjKhoXbp/ws3XDsmZCm51Pom2rJGoTED7r0s=
 SHA256 (cargo/form_urlencoded-1.2.1.tar.gz) = 4TYkwmJ1ZO/M9JNChL3ZjLqhTnmwtaFBIY5QezqCNFY=
-SHA256 (cargo/fs_extra-1.3.0.tar.gz) = QnA3BrcWw3+Wp3rqgwOSrSMfRMnppnhy+lVIcH4RsRw=
 SHA256 (cargo/fsevent-sys-4.1.0.tar.gz) = du56AtpNIxZQx86jE0m4ib4vRd2z7zAy0uyBhfYxP9I=
 SHA256 (cargo/futures-0.3.30.tar.gz) = ZFxpFoiPbLY1DSVQuA+2PnNIl6hJir41z7cytkh4BLA=
 SHA256 (cargo/futures-channel-0.3.31.tar.gz) = Lf8Vv3iMZxwZNONm0H4wwYFKjvUU4a9ySmAuii++GxA=
@@ -173,12 +172,10 @@ SHA256 (cargo/regex-automata-0.4.7.tar.gz) = OMr1jMXvL+0oH4kpLvI/Y2VGXtmkG3p3VOt
 SHA256 (cargo/regex-syntax-0.8.4.tar.gz) = emagOufIAfrNd6KTcLT67CAXaJFawUpyG6NvILycIJs=
 SHA256 (cargo/rusqlite-0.29.0.tar.gz) = VJudA21XHULm6F0cFCXirINJEHUHjKmhW+AhxWsWQfI=
 SHA256 (cargo/rustix-0.38.35.tar.gz) = qF1QUyI52mjprdt0W6OP9GEqJCwcfO6micS8fC9Dw28=
-SHA256 (cargo/rusty-forkfork-0.4.0.tar.gz) = fOha9N+i+wwBQxIateQkxx6mk4ZzV8kVm4d3tZmEwhg=
+SHA256 (cargo/rusty-fork-0.3.0.tar.gz) = yz3MbkVMMou4JEktsQerfAro/P/krSEBNu8BRFjBvE8=
 SHA256 (cargo/ryu-1.0.18.tar.gz) = 88tboNxDJCzhfemcGA6W25CyNbip/clUPJbSIJEWvZ8=
 SHA256 (cargo/same-file-1.0.6.tar.gz) = k/wdw6qpv+2V4C5urau0uvfjB4sL0bTXtrC2g3iQBQI=
 SHA256 (cargo/schannel-0.1.23.tar.gz) = +8kVRWQ7zzoLu2VpJlYVIiYYvfM85P+70TxLvUwJNTQ=
-SHA256 (cargo/sealed_test-1.1.0.tar.gz) = Khhn+PAFvX+3PDZ+LkXdYoQXkGosonWX/lnL8EJ5oiI=
-SHA256 (cargo/sealed_test_derive-1.1.0.tar.gz) = dyU/stRFFBjQcCWCYCi8uW7kLT5YhZaJpwzmKQgAnbY=
 SHA256 (cargo/security-framework-2.11.1.tar.gz) = iXsiRfC1Ech4k685sDPlypzOaIJMTX52MLWh0zlljQI=
 SHA256 (cargo/security-framework-sys-2.11.1.tar.gz) = ddop/pubCP6dayK1tLy8ddjbOqMeY5qla7YunUa/zq8=
 SHA256 (cargo/serde-1.0.209.tar.gz) = mfzg/+cxB2HKa/n69RFa+8GWiO3QAXHYGxuxsRbGPgk=
@@ -271,7 +268,7 @@ SHA256 (cargo/winnow-0.6.18.tar.gz) = aKm9pGkfCZ1DWtGBAAck2o5YmdqhBxPC1DJVK5zNOm
 SHA256 (cargo/xdg-2.5.2.tar.gz) = ITtzJDNrU9JBSy24U35WVE2YGAMTkVWvqE927uu3pUY=
 SHA256 (cargo/zerocopy-0.7.35.tar.gz) = G5tP0Yq8grgTaDjaXVC6573qU3xXTY3Bo07QmNbBZvA=
 SHA256 (cargo/zerocopy-derive-0.7.35.tar.gz) = +k+AgDRNRnH7ToMaE60eaAknSDh9/E9V41YkL64Szj4=
-SHA256 (meli-0.8.9.tar.gz) = bgII0jy9V0rkXqPJhNqRH1s2BEp1UYGHNP6tMlqW8AA=
+SHA256 (meli-0.8.10.tar.gz) = WYR5+wUZbdefZcmWtkny+lZo7HmWPVPXdsefuE9D0XI=
 SIZE (cargo/abnf-core-0.6.0.tar.gz) = 9528
 SIZE (cargo/adler2-2.0.0.tar.gz) = 13529
 SIZE (cargo/ahash-0.8.11.tar.gz) = 43607
@@ -348,7 +345,6 @@ SIZE (cargo/fnv-1.0.7.tar.gz) = 11266
 SIZE (cargo/foreign-types-0.3.2.tar.gz) = 7504
 SIZE (cargo/foreign-types-shared-0.1.1.tar.gz) = 5672
 SIZE (cargo/form_urlencoded-1.2.1.tar.gz) = 8969
-SIZE (cargo/fs_extra-1.3.0.tar.gz) = 31298
 SIZE (cargo/fsevent-sys-4.1.0.tar.gz) = 4620
 SIZE (cargo/futures-0.3.30.tar.gz) = 53828
 SIZE (cargo/futures-channel-0.3.31.tar.gz) = 31971
@@ -447,12 +443,10 @@ SIZE (cargo/regex-automata-0.4.7.tar.gz) = 617582
 SIZE (cargo/regex-syntax-0.8.4.tar.gz) = 347577
 SIZE (cargo/rusqlite-0.29.0.tar.gz) = 137156
 SIZE (cargo/rustix-0.38.35.tar.gz) = 369206
-SIZE (cargo/rusty-forkfork-0.4.0.tar.gz) = 21388
+SIZE (cargo/rusty-fork-0.3.0.tar.gz) = 19881
 SIZE (cargo/ryu-1.0.18.tar.gz) = 47713
 SIZE (cargo/same-file-1.0.6.tar.gz) = 10183
 SIZE (cargo/schannel-0.1.23.tar.gz) = 41667
-SIZE (cargo/sealed_test-1.1.0.tar.gz) = 4568
-SIZE (cargo/sealed_test_derive-1.1.0.tar.gz) = 3392
 SIZE (cargo/security-framework-2.11.1.tar.gz) = 80188
 SIZE (cargo/security-framework-sys-2.11.1.tar.gz) = 18755
 SIZE (cargo/serde-1.0.209.tar.gz) = 78364
@@ -545,4 +539,4 @@ SIZE (cargo/winnow-0.6.18.tar.gz) = 163357
 SIZE (cargo/xdg-2.5.2.tar.gz) = 14394
 SIZE (cargo/zerocopy-0.7.35.tar.gz) = 152645
 SIZE (cargo/zerocopy-derive-0.7.35.tar.gz) = 37829
-SIZE (meli-0.8.9.tar.gz) = 1501835
+SIZE (meli-0.8.10.tar.gz) = 1522185
