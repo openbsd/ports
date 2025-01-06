@@ -1,6 +1,6 @@
 COMMENT=	Python interface to Graphviz's Dot
 
-MODPY_DISTV=	3.0.3
+MODPY_DISTV=	3.0.4
 DISTNAME=	pydot-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/py/py-/}
 CATEGORIES=	graphics
