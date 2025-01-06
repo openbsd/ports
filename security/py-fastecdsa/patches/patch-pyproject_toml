@@ -1,5 +1,4 @@
 - Install benchmark script with a less generic name
-- Drop stringent setuptools version requirement
 - Use of py-test-cov seems broken, so don't try.
 
 Index: pyproject.toml
