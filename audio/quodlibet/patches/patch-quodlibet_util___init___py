@@ -1,3 +1,14 @@
+load_library hunks:
+
+From 7fda4345bdabafa896f4a632990c20d91076e98d Mon Sep 17 00:00:00 2001
+From: Christoph Reiter <reiter.christoph@gmail.com>
+Date: Sun, 27 Aug 2023 19:48:28 +0200
+Subject: [PATCH] load_library: handle AttributeError as well
+
+Looks like with Python 3.12 getattr on cdll now correctly raises
+AttributeError instead of OSError, so catch that too.
+This fixes the tests in case libxine is missing.
+
 Index: quodlibet/util/__init__.py
 --- quodlibet/util/__init__.py.orig
 +++ quodlibet/util/__init__.py
@@ -18,3 +29,12 @@ Index: quodlibet/util/__init__.py
  NamedTemporaryFile, is_flatpak, cmp, matches_flatpak_runtime
  
  
+@@ -961,7 +961,7 @@ def load_library(names, shared=True):
+ 
+         try:
+             return load_func(dlopen_name), name
+-        except OSError as e:
++        except (OSError, AttributeError) as e:
+             errors.append(str(e))
+ 
+     raise OSError("\n".join(errors))

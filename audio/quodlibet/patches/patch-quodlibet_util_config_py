@@ -1,0 +1,17 @@
+From a8b6f6bb34864a6821174edbf7802b689e440db3 Mon Sep 17 00:00:00 2001
+From: LuK1337 <priv.luk@gmail.com>
+Date: Wed, 23 Aug 2023 17:13:23 +0200
+Subject: [PATCH] Fix startup on Python 3.12
+
+Index: quodlibet/util/config.py
+--- quodlibet/util/config.py.orig
++++ quodlibet/util/config.py
+@@ -377,7 +377,7 @@ class Config:
+             with open(filename, "rb") as fileobj:
+                 fileobj = StringIO(
+                     fileobj.read().decode("utf-8", "surrogateescape"))
+-                self._config.readfp(fileobj, filename)
++                self._config.read_file(fileobj, filename)
+         except (IOError, OSError):
+             return
+ 

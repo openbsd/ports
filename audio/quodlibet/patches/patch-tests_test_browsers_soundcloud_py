@@ -1,0 +1,20 @@
+From 9b6693e19d5a43afb163f404a113ef862a98e4ad Mon Sep 17 00:00:00 2001
+From: LuK1337 <priv.luk@gmail.com>
+Date: Wed, 23 Aug 2023 18:33:55 +0200
+Subject: [PATCH] Fix SoundCloud browser tests
+
+We need to import our own TestCase class, otherwise we call methods that
+no longer exist when using Python 3.12 unittest.
+
+Index: tests/test_browsers_soundcloud.py
+--- tests/test_browsers_soundcloud.py.orig
++++ tests/test_browsers_soundcloud.py
+@@ -4,7 +4,7 @@
+ # (at your option) any later version.
+ 
+ import time
+-from unittest import TestCase
++from tests import TestCase
+ 
+ from gi.repository import Gtk
+ 

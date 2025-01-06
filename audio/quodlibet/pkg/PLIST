@@ -1553,8 +1553,6 @@ share/locale/tr/LC_MESSAGES/quodlibet.mo
 share/locale/uk/LC_MESSAGES/quodlibet.mo
 share/locale/zh_CN/LC_MESSAGES/quodlibet.mo
 share/locale/zh_TW/LC_MESSAGES/quodlibet.mo
-share/zsh/
-share/zsh/site-functions/
 share/zsh/site-functions/_quodlibet
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

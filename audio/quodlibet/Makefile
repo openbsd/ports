@@ -3,7 +3,7 @@ COMMENT=	audio player and tagger for GTK+ with regex support
 MODPY_DISTV=	4.6.0
 DISTNAME=	quodlibet-${MODPY_DISTV}
 PORTROACH=	skipv:release-${MODPY_DISTV}
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	audio
 
@@ -40,6 +40,12 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 post-install:
 	mv ${PREFIX}/share/man/man1/* ${PREFIX}/man/man1/
 	rmdir ${PREFIX}/share/man{/man1,}
+
+# fails with PORTS_PRIVSEP
+TEST_IS_INTERACTIVE= x11
+
+# for distutils, used by setup.py
+TEST_DEPENDS=	devel/py-setuptools
 
 do-test:
 	cd ${WRKSRC}; ${MODPY_BIN} ./setup.py test
