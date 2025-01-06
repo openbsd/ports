@@ -1,5 +1,5 @@
-@pkgpath devel/py-virtualenv,python3
 @conflict py-virtualenv-<16.0.0p5
+@pkgpath devel/py-virtualenv,python3
 bin/virtualenv
 lib/python${MODPY_VERSION}/site-packages/virtualenv/
 lib/python${MODPY_VERSION}/site-packages/virtualenv-${MODPY_DISTV}.dist-info/

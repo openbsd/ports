@@ -1,10 +1,9 @@
 COMMENT=	virtual Python environment builder
 
-MODPY_DISTV=	20.28.0
+MODPY_DISTV=	20.28.1
 DISTNAME=	virtualenv-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	0
 
 HOMEPAGE=	https://virtualenv.pypa.io/
 
