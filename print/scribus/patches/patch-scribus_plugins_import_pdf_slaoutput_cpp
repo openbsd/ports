@@ -1,4 +1,4 @@
-Fix build with poppler-24.10.0.
+Fix build with poppler-24.10.0 and 25.01.0.
 
 From upstream commits 26325, 26327, 26392 and 26394.
 
@@ -36,7 +36,16 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  LinkImportData::LinkImportData(Object *actionObj)
  {
  	if (!actionObj->isDict())
-@@ -167,13 +171,8 @@ void AnoOutputDev::drawString(GfxState *state, POPPLER
+@@ -121,7 +125,7 @@ LinkImportData::LinkImportData(Object *actionObj)
+ 
+ 	Object obj3 = getFileSpecNameForPlatform(&obj1);
+ 	if (!obj3.isNull())
+-		fileName = obj3.getString()->copy();
++		fileName = obj3.getString()->copy().get();
+ }
+ 
+ LinkImportData::~LinkImportData()
+@@ -167,14 +171,9 @@ void AnoOutputDev::drawString(GfxState *state, POPPLER
  	int shade = 100;
  	currColorText = getColor(state->getFillColorSpace(), state->getFillColor(), &shade);
  	fontSize = state->getFontSize();
@@ -47,9 +56,11 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
 -	if (state->getFont())
 -		fontName = state->getFont()->getName()->copy();
 -#endif
- 	itemText = s->copy();
+-	itemText = s->copy();
++	itemText = s->copy().get();
  }
  
+ QString AnoOutputDev::getColor(GfxColorSpace *color_space, POPPLER_CONST_070 GfxColor *color, int *shade)
 @@ -359,30 +358,25 @@ LinkAction* SlaOutputDev::SC_getAdditionalAction(const
  GBool SlaOutputDev::annotations_callback(Annot *annota, void *user_data)
  {
