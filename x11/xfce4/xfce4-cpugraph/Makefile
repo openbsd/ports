@@ -6,6 +6,9 @@ XFCE_PLUGIN=	cpugraph
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
+# C++
+COMPILER=	base-clang ports-gcc
+
 WANTLIB += ICE SM X11 X11-xcb Xau Xcomposite Xcursor Xdamage Xdmcp
 WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender atk-1.0 cairo
 WANTLIB += expat ffi fontconfig freetype gdk-3 gdk_pixbuf-2.0
