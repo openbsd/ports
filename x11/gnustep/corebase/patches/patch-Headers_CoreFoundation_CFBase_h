@@ -1,0 +1,17 @@
+
+prevent warnings about duplicate definitions, that happens
+once gnustep-base picks up CF
+
+Index: Headers/CoreFoundation/CFBase.h
+--- Headers/CoreFoundation/CFBase.h.orig
++++ Headers/CoreFoundation/CFBase.h
+@@ -63,7 +63,9 @@
+ #define MAC_OS_X_VERSION_10_7 100700
+ #endif /* MAC_OS_X_VERSION_10_0 */
+ 
++#ifndef MAC_OS_X_VERSION_MAX_ALLOWED
+ #define MAC_OS_X_VERSION_MAX_ALLOWED 100700
++#endif
+ 
+ /*
+  * CoreFoundation types
