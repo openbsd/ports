@@ -3,6 +3,7 @@ COMMENT=	optional static type checker for Python
 MODPY_DISTV=	1.14.1
 DISTNAME=	mypy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -16,6 +17,13 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+
+# XXX - This has an optional rdep on textproc/py-orjson.
+# 1. If this becomes a hard dependency, change py-charset-normalizer not to
+#    depend on py-mypy for !rust arches.
+# 2. There is a loop py-charset-normalizer -> py-mypy -> py-orjson -> maturin ->
+#    rust -> cmake -> libuv -> py-sphinx -> py-requests -> py-charset-normalizer
+
 BUILD_DEPENDS=	devel/py-types-psutil \
 		devel/py-types-setuptools \
 		devel/py-typing-extensions \
@@ -30,12 +38,5 @@ TEST_DEPENDS=	devel/py-attrs \
 		sysutils/py-filelock \
 		sysutils/py-psutil \
 		textproc/py-tomli
-
-.include <bsd.port.arch.mk>
-.if ${PROPERTIES:Mrust}
-# if this becomes a hard dep, change charset-normalizer so that it
-# doesn't use mypy unconditonally
-RUN_DEPENDS+=	textproc/py-orjson
-.endif
 
 .include <bsd.port.mk>
