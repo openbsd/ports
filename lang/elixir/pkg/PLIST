@@ -139,6 +139,20 @@ lib/elixir/lib/elixir/ebin/Elixir.Inspect.Version.Requirement.beam
 lib/elixir/lib/elixir/ebin/Elixir.Inspect.Version.beam
 lib/elixir/lib/elixir/ebin/Elixir.Inspect.beam
 lib/elixir/lib/elixir/ebin/Elixir.Integer.beam
+lib/elixir/lib/elixir/ebin/Elixir.JSON.DecodeError.beam
+lib/elixir/lib/elixir/ebin/Elixir.JSON.Encoder.Atom.beam
+lib/elixir/lib/elixir/ebin/Elixir.JSON.Encoder.BitString.beam
+lib/elixir/lib/elixir/ebin/Elixir.JSON.Encoder.Date.beam
+lib/elixir/lib/elixir/ebin/Elixir.JSON.Encoder.DateTime.beam
+lib/elixir/lib/elixir/ebin/Elixir.JSON.Encoder.Duration.beam
+lib/elixir/lib/elixir/ebin/Elixir.JSON.Encoder.Float.beam
+lib/elixir/lib/elixir/ebin/Elixir.JSON.Encoder.Integer.beam
+lib/elixir/lib/elixir/ebin/Elixir.JSON.Encoder.List.beam
+lib/elixir/lib/elixir/ebin/Elixir.JSON.Encoder.Map.beam
+lib/elixir/lib/elixir/ebin/Elixir.JSON.Encoder.NaiveDateTime.beam
+lib/elixir/lib/elixir/ebin/Elixir.JSON.Encoder.Time.beam
+lib/elixir/lib/elixir/ebin/Elixir.JSON.Encoder.beam
+lib/elixir/lib/elixir/ebin/Elixir.JSON.beam
 lib/elixir/lib/elixir/ebin/Elixir.Kernel.CLI.beam
 lib/elixir/lib/elixir/ebin/Elixir.Kernel.ErrorHandler.beam
 lib/elixir/lib/elixir/ebin/Elixir.Kernel.LexicalTracker.beam
@@ -164,9 +178,10 @@ lib/elixir/lib/elixir/ebin/Elixir.Map.beam
 lib/elixir/lib/elixir/ebin/Elixir.MapSet.beam
 lib/elixir/lib/elixir/ebin/Elixir.MatchError.beam
 lib/elixir/lib/elixir/ebin/Elixir.MismatchedDelimiterError.beam
+lib/elixir/lib/elixir/ebin/Elixir.MissingApplicationsError.beam
 lib/elixir/lib/elixir/ebin/Elixir.Module.Behaviour.beam
-lib/elixir/lib/elixir/ebin/Elixir.Module.LocalsTracker.beam
 lib/elixir/lib/elixir/ebin/Elixir.Module.ParallelChecker.beam
+lib/elixir/lib/elixir/ebin/Elixir.Module.Types.Apply.beam
 lib/elixir/lib/elixir/ebin/Elixir.Module.Types.Descr.beam
 lib/elixir/lib/elixir/ebin/Elixir.Module.Types.Expr.beam
 lib/elixir/lib/elixir/ebin/Elixir.Module.Types.Helpers.beam
@@ -266,8 +281,8 @@ lib/elixir/lib/elixir/ebin/elixir_expand.beam
 lib/elixir/lib/elixir/ebin/elixir_fn.beam
 lib/elixir/lib/elixir/ebin/elixir_import.beam
 lib/elixir/lib/elixir/ebin/elixir_interpolation.beam
+lib/elixir/lib/elixir/ebin/elixir_json.beam
 lib/elixir/lib/elixir/ebin/elixir_lexical.beam
-lib/elixir/lib/elixir/ebin/elixir_locals.beam
 lib/elixir/lib/elixir/ebin/elixir_map.beam
 lib/elixir/lib/elixir/ebin/elixir_module.beam
 lib/elixir/lib/elixir/ebin/elixir_overridable.beam
@@ -292,8 +307,6 @@ lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.CaseTemplate.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.Diff.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.DocTest.Error.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.DocTest.beam
-lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.DuplicateDescribeError.beam
-lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.DuplicateTestError.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.EventManager.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.FailuresManifest.beam
 lib/elixir/lib/ex_unit/ebin/Elixir.ExUnit.Filters.beam
@@ -340,6 +353,7 @@ lib/elixir/lib/iex/ebin/Elixir.IEx.Info.Time.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Info.Tuple.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Info.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Introspection.beam
+lib/elixir/lib/iex/ebin/Elixir.IEx.MixListener.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Pry.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.Server.beam
 lib/elixir/lib/iex/ebin/Elixir.IEx.beam
@@ -385,6 +399,8 @@ lib/elixir/lib/mix/ebin/Elixir.Mix.NoProjectError.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.NoTaskError.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Project.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.ProjectStack.beam
+lib/elixir/lib/mix/ebin/Elixir.Mix.PubSub.Subscriber.beam
+lib/elixir/lib/mix/ebin/Elixir.Mix.PubSub.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Rebar.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Release.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.RemoteConverger.beam
@@ -396,6 +412,8 @@ lib/elixir/lib/mix/ebin/Elixir.Mix.Shell.Process.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Shell.Quiet.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Shell.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.State.beam
+lib/elixir/lib/mix/ebin/Elixir.Mix.Sync.Lock.beam
+lib/elixir/lib/mix/ebin/Elixir.Mix.Sync.PubSub.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Task.Compiler.Diagnostic.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Task.Compiler.beam
 lib/elixir/lib/mix/ebin/Elixir.Mix.Task.beam
