@@ -1,7 +1,7 @@
 COMMENT =	fast bundler for the web
 
 MODGO_MODNAME =	github.com/evanw/esbuild
-MODGO_VERSION =	v0.24.0
+MODGO_VERSION =	v0.24.2
 
 DISTNAME =	esbuild-${MODGO_VERSION}
 CATEGORIES =	devel
