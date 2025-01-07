@@ -1,6 +1,7 @@
 COMMENT=	interactive typing tutor
 
 DISTNAME=	gtypist-2.10
+REVISION=	0
 CATEGORIES=	education
 HOMEPAGE=	https://www.gnu.org/software/gtypist/
 
@@ -12,8 +13,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=	c curses iconv intl pthread
 
 SITES=		${SITE_GNU:=gtypist/}
-# botched release: gtypist-2.10.tar.xz has .gz format
-#EXTRACT_SUFX=	.tar.xz
+EXTRACT_SUFX=	.tar.xz
 
 LIB_DEPENDS=	devel/gettext,-runtime
 
