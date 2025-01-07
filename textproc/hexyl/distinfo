@@ -65,7 +65,7 @@ SHA256 (cargo/windows_x86_64_gnu-0.52.6.tar.gz) = FHpcgKq/vwx9kBy1iV0d4w7ykH6yH7
 SHA256 (cargo/windows_x86_64_gnullvm-0.52.6.tar.gz) = JNWyPcQXQSZ5aBOW8rSfPejBRz3rUWvTRBCHLv9R7Q0=
 SHA256 (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = WJ9tqExkYgR0fRJwoqVmHqZu0cztJjHVRv37FVlZ+ew=
 SHA256 (cargo/yansi-1.0.1.tar.gz) = z+U6Zlf9KA6qiQo7xZFSiS/6PjAQExnRaLeB7WUpsEk=
-SHA256 (hexyl-0.15.0.tar.gz) = AXq3/hjKo9E0J/sT/WBQqdi/mqJtHh/gKSTf1/hs088=
+SHA256 (hexyl-0.16.0.tar.gz) = UoU7Tt7eiJtA/W/xMuE1TZV9HybuDCbr3qOA+M6Cyws=
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
 SIZE (cargo/anstream-0.6.17.tar.gz) = 29445
 SIZE (cargo/anstyle-1.0.9.tar.gz) = 15770
@@ -133,4 +133,4 @@ SIZE (cargo/windows_x86_64_gnu-0.52.6.tar.gz) = 836363
 SIZE (cargo/windows_x86_64_gnullvm-0.52.6.tar.gz) = 435707
 SIZE (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = 832564
 SIZE (cargo/yansi-1.0.1.tar.gz) = 75497
-SIZE (hexyl-0.15.0.tar.gz) = 42536
+SIZE (hexyl-0.16.0.tar.gz) = 42826
