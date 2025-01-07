@@ -53,6 +53,7 @@ share/locale/ro/LC_MESSAGES/orage.mo
 share/locale/ru/LC_MESSAGES/orage.mo
 share/locale/si/LC_MESSAGES/orage.mo
 share/locale/sk/LC_MESSAGES/orage.mo
+share/locale/sl/LC_MESSAGES/orage.mo
 share/locale/sq/LC_MESSAGES/orage.mo
 share/locale/sr/LC_MESSAGES/orage.mo
 share/locale/sv/LC_MESSAGES/orage.mo
@@ -78,3 +79,5 @@ share/orage/sounds/Tear.wav
 share/orage/sounds/Wall_c.wav
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/themes/Default/orage-4.0/
+share/themes/Default/orage-4.0/gtk.css
