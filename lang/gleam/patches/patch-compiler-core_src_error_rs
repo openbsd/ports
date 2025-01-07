@@ -1,8 +1,8 @@
 Index: compiler-core/src/error.rs
 --- compiler-core/src/error.rs.orig
 +++ compiler-core/src/error.rs
-@@ -1002,7 +1002,7 @@ your app.src file \"{app_ver}\"."
-                 let mut text = format!("The program `{program}` was not found. Is it installed?");
+@@ -1091,7 +1091,7 @@ your app.src file \"{app_ver}\"."
+                 text.push('\n');
  
                  match program.as_str() {
 -                    "erl" | "erlc" | "escript" => text.push_str(

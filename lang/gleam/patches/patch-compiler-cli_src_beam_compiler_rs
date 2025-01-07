@@ -1,7 +1,7 @@
 Index: compiler-cli/src/beam_compiler.rs
 --- compiler-cli/src/beam_compiler.rs.orig
 +++ compiler-cli/src/beam_compiler.rs
-@@ -59,7 +59,7 @@ impl BeamCompiler {
+@@ -61,7 +61,7 @@ impl BeamCompiler {
          tracing::debug!(args=?args, "call_beam_compiler");
  
          writeln!(inner.stdin, "{}.", args).map_err(|e| Error::ShellCommand {
@@ -10,7 +10,7 @@ Index: compiler-cli/src/beam_compiler.rs
              err: Some(e.kind()),
          })?;
  
-@@ -69,7 +69,7 @@ impl BeamCompiler {
+@@ -71,7 +71,7 @@ impl BeamCompiler {
                  "gleam-compile-result-ok" => return Ok(()),
                  "gleam-compile-result-error" => {
                      return Err(Error::ShellCommand {
@@ -19,7 +19,7 @@ Index: compiler-cli/src/beam_compiler.rs
                          err: None,
                      })
                  }
-@@ -84,7 +84,7 @@ impl BeamCompiler {
+@@ -86,7 +86,7 @@ impl BeamCompiler {
  
          // if we get here, stdout got closed before we got an "ok" or "err".
          Err(Error::ShellCommand {
@@ -28,7 +28,7 @@ Index: compiler-cli/src/beam_compiler.rs
              err: None,
          })
      }
-@@ -103,17 +103,17 @@ impl BeamCompiler {
+@@ -105,18 +105,18 @@ impl BeamCompiler {
  
          tracing::trace!(escript_path=?escript_path, "spawn_beam_compiler");
  
@@ -42,6 +42,7 @@ Index: compiler-cli/src/beam_compiler.rs
                  io::ErrorKind::NotFound => Error::ShellProgramNotFound {
 -                    program: "escript".into(),
 +                    program: "escript${MODERL_VERSION}".into(),
+                     os: get_os(),
                  },
                  other => Error::ShellCommand {
 -                    program: "escript".into(),
