@@ -5,8 +5,8 @@ Use a version script (matches Linux).
 Index: src/meson.build
 --- src/meson.build.orig
 +++ src/meson.build
-@@ -98,12 +98,9 @@ else
- endif
+@@ -105,12 +105,9 @@ endif
+ gvnc_sources += coroutine_sources
  
  gvnc_link_args = []
 -if meson.get_compiler('c').has_link_argument('-Wl,--no-undefined')
@@ -19,7 +19,7 @@ Index: src/meson.build
    gvnc_link_args += ['-Wl,--version-script,' + gvnc_syms]
  endif
  
-@@ -189,9 +186,6 @@ if libpulse_dep.found()
+@@ -197,9 +194,6 @@ if libpulse_dep.found()
    ]
  
    gvncpulse_link_args = []
@@ -29,7 +29,7 @@ Index: src/meson.build
  
    gvncpulse_syms = join_paths(meson.current_source_dir(), 'libgvncpulse_sym.version')
    if host_machine.system() == 'linux'
-@@ -351,9 +345,6 @@ endforeach
+@@ -359,9 +353,6 @@ endforeach
  
  
  gtk_vnc_link_args = []
