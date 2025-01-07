@@ -11,7 +11,7 @@ PKGNAME=	boost-${VERSION}
 REVISION=	5
 EPOCH=		0
 CATEGORIES=	devel
-SITES=		https://boostorg.jfrog.io/artifactory/main/release/${VERSION}/source/
+SITES=		https://archives.boost.io/release/${VERSION}/source/
 EXTRACT_SUFX=	.tar.bz2
 
 SO_VERSION=	23.0
