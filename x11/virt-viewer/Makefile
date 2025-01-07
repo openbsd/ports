@@ -18,7 +18,7 @@ WANTLIB += c gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += gtk-3 gtk-vnc-2.0 gvnc-1.0 intl m pango-1.0 spice-client-glib-2.0
 WANTLIB += spice-client-gtk-3.0 virt virt-glib-1.0 vte-2.91 xml2
 
-SITES=		http://virt-manager.org/download/sources/virt-viewer/
+SITES=		https://releases.pagure.org/virt-viewer/
 EXTRACT_SUFX=	.tar.xz
 
 MODULES=	devel/meson
