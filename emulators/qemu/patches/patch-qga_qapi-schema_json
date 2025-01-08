@@ -5,7 +5,7 @@ Adds support for "guest-get-fsinfo" and "guest-get-vcpus"
 Index: qga/qapi-schema.json
 --- qga/qapi-schema.json.orig
 +++ qga/qapi-schema.json
-@@ -767,7 +767,7 @@
+@@ -758,7 +758,7 @@
    'data': {'logical-id': 'int',
             'online': 'bool',
             '*can-offline': 'bool'},
@@ -14,7 +14,7 @@ Index: qga/qapi-schema.json
  
  ##
  # @guest-get-vcpus:
-@@ -783,7 +783,7 @@
+@@ -774,7 +774,7 @@
  ##
  { 'command': 'guest-get-vcpus',
    'returns': ['GuestLogicalProcessor'],
@@ -23,7 +23,7 @@ Index: qga/qapi-schema.json
  
  ##
  # @guest-set-vcpus:
-@@ -879,7 +879,7 @@
+@@ -870,7 +870,7 @@
    'data': [ 'ide', 'fdc', 'scsi', 'virtio', 'xen', 'usb', 'uml', 'sata',
              'sd', 'unknown', 'ieee1394', 'ssa', 'fibre', 'raid', 'iscsi',
              'sas', 'mmc', 'virtual', 'file-backed-virtual', 'nvme' ],
@@ -32,7 +32,7 @@ Index: qga/qapi-schema.json
  
  
  ##
-@@ -898,7 +898,7 @@
+@@ -889,7 +889,7 @@
  { 'struct': 'GuestPCIAddress',
    'data': {'domain': 'int', 'bus': 'int',
             'slot': 'int', 'function': 'int'},
@@ -41,7 +41,7 @@ Index: qga/qapi-schema.json
  
  ##
  # @GuestCCWAddress:
-@@ -918,7 +918,7 @@
+@@ -909,7 +909,7 @@
             'ssid': 'int',
             'subchno': 'int',
             'devno': 'int'},
@@ -50,7 +50,7 @@ Index: qga/qapi-schema.json
  
  ##
  # @GuestDiskAddress:
-@@ -948,7 +948,7 @@
+@@ -939,7 +939,7 @@
             'bus': 'int', 'target': 'int', 'unit': 'int',
             '*serial': 'str', '*dev': 'str',
             '*ccw-address': 'GuestCCWAddress'},
@@ -59,7 +59,7 @@ Index: qga/qapi-schema.json
  
  ##
  # @GuestNVMeSmart:
-@@ -1068,7 +1068,7 @@
+@@ -1059,7 +1059,7 @@
    'data': {'name': 'str', 'mountpoint': 'str', 'type': 'str',
             '*used-bytes': 'uint64', '*total-bytes': 'uint64',
             '*total-bytes-privileged': 'uint64', 'disk': ['GuestDiskAddress']},
@@ -68,7 +68,7 @@ Index: qga/qapi-schema.json
  
  ##
  # @guest-get-fsinfo:
-@@ -1082,7 +1082,7 @@
+@@ -1073,7 +1073,7 @@
  ##
  { 'command': 'guest-get-fsinfo',
    'returns': ['GuestFilesystemInfo'],

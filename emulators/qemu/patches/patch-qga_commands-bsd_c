@@ -5,19 +5,18 @@ Adds support for "guest-get-fsinfo" and "guest-get-vcpus"
 Index: qga/commands-bsd.c
 --- qga/commands-bsd.c.orig
 +++ qga/commands-bsd.c
-@@ -11,10 +11,9 @@
+@@ -11,9 +11,8 @@
   */
  
  #include "qemu/osdep.h"
-+#include "qapi/error.h"
- #include "qga-qapi-commands.h"
- #include "qapi/qmp/qerror.h"
--#include "qapi/error.h"
+-#include "qga-qapi-commands.h"
+ #include "qapi/error.h"
 -#include "qemu/queue.h"
++#include "qga-qapi-commands.h"
  #include "commands-common.h"
  #include <sys/ioctl.h>
  #include <sys/param.h>
-@@ -28,6 +27,8 @@
+@@ -27,6 +26,8 @@
  #include <net/ethernet.h>
  #endif
  #include <paths.h>
@@ -26,7 +25,7 @@ Index: qga/commands-bsd.c
  
  #if defined(CONFIG_FSFREEZE) || defined(CONFIG_FSTRIM)
  bool build_fs_mount_list(FsMountList *mounts, Error **errp)
-@@ -179,3 +180,278 @@ bool guest_get_hw_addr(struct ifaddrs *ifa, unsigned c
+@@ -178,3 +179,278 @@ bool guest_get_hw_addr(struct ifaddrs *ifa, unsigned c
      return true;
  }
  #endif /* HAVE_GETIFADDRS */

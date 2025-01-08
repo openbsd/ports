@@ -1,10 +1,21 @@
+- revert retguard bug workaround
 - localstatedir does not belong under prefix
 - Remove hardcoding of optimization
 
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -2265,7 +2265,7 @@ config_host_data.set('CONFIG_QEMU_FIRMWAREPATH', qemu_
+@@ -673,8 +673,7 @@ hardening_flags = [
+ #
+ # NB2: This clashes with the "retguard" extension of OpenBSD's Clang
+ # https://gitlab.com/qemu-project/qemu/-/issues/2278
+-if host_os != 'openbsd' and \
+-   cc.compiles('extern struct { void (*cb)(void); } s; void f(void) { s.cb(); }',
++if cc.compiles('extern struct { void (*cb)(void); } s; void f(void) { s.cb(); }',
+                name: '-fzero-call-used-regs=used-gpr',
+                args: ['-O2', '-fzero-call-used-regs=used-gpr'])
+     hardening_flags += '-fzero-call-used-regs=used-gpr'
+@@ -2376,7 +2375,7 @@ config_host_data.set('CONFIG_QEMU_FIRMWAREPATH', qemu_
  config_host_data.set_quoted('CONFIG_QEMU_HELPERDIR', get_option('prefix') / get_option('libexecdir'))
  config_host_data.set_quoted('CONFIG_QEMU_ICONDIR', get_option('prefix') / qemu_icondir)
  config_host_data.set_quoted('CONFIG_QEMU_LOCALEDIR', get_option('prefix') / get_option('localedir'))
@@ -13,8 +24,8 @@ Index: meson.build
  config_host_data.set_quoted('CONFIG_QEMU_MODDIR', get_option('prefix') / qemu_moddir)
  config_host_data.set_quoted('CONFIG_SYSCONFDIR', get_option('prefix') / get_option('sysconfdir'))
  
-@@ -4306,9 +4306,6 @@ else
-   summary_info += {'Objective-C compiler': false}
+@@ -4561,9 +4560,6 @@ if have_rust
+   summary_info += {'bindgen version': bindgen.version()}
  endif
  option_cflags = (get_option('debug') ? ['-g'] : [])
 -if get_option('optimization') != 'plain'

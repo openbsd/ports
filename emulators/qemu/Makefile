@@ -6,7 +6,7 @@ USE_NOBTCFI=	Yes
 COMMENT-main=	multi system emulator
 COMMENT-ga=	QEMU guest agent
 
-VERSION=	9.1.2
+VERSION=	9.2.0
 DISTNAME=	qemu-${VERSION}
 CATEGORIES=	emulators
 SITES=		https://download.qemu.org/

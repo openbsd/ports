@@ -10,7 +10,6 @@
 @bin bin/qemu-system-alpha
 @bin bin/qemu-system-arm
 @bin bin/qemu-system-avr
-@bin bin/qemu-system-cris
 @bin bin/qemu-system-hppa
 @bin bin/qemu-system-i386
 @bin bin/qemu-system-loongarch64
@@ -99,12 +98,10 @@ share/doc/qemu/about/license.html
 share/doc/qemu/about/removed-features.html
 share/doc/qemu/dbus-dbusindex.html
 share/doc/qemu/devel/
-share/doc/qemu/devel/acpi-bits.html
 share/doc/qemu/devel/atomics.html
 share/doc/qemu/devel/bitops.html
 share/doc/qemu/devel/block-coroutine-wrapper.html
 share/doc/qemu/devel/build-system.html
-share/doc/qemu/devel/ci.html
 share/doc/qemu/devel/clocks.html
 share/doc/qemu/devel/code-of-conduct.html
 share/doc/qemu/devel/conflict-resolution.html
@@ -113,7 +110,6 @@ share/doc/qemu/devel/crypto.html
 share/doc/qemu/devel/decodetree.html
 share/doc/qemu/devel/docs.html
 share/doc/qemu/devel/ebpf_rss.html
-share/doc/qemu/devel/fuzzing.html
 share/doc/qemu/devel/index-api.html
 share/doc/qemu/devel/index-build.html
 share/doc/qemu/devel/index-internals.html
@@ -122,6 +118,7 @@ share/doc/qemu/devel/index-tcg.html
 share/doc/qemu/devel/index.html
 share/doc/qemu/devel/kconfig.html
 share/doc/qemu/devel/loads-stores.html
+share/doc/qemu/devel/lockcnt.html
 share/doc/qemu/devel/luks-detached-header.html
 share/doc/qemu/devel/maintainers.html
 share/doc/qemu/devel/memory.html
@@ -135,6 +132,7 @@ share/doc/qemu/devel/migration/index.html
 share/doc/qemu/devel/migration/main.html
 share/doc/qemu/devel/migration/mapped-ram.html
 share/doc/qemu/devel/migration/postcopy.html
+share/doc/qemu/devel/migration/qatzip-compression.html
 share/doc/qemu/devel/migration/qpl-compression.html
 share/doc/qemu/devel/migration/uadk-compression.html
 share/doc/qemu/devel/migration/vfio.html
@@ -142,13 +140,13 @@ share/doc/qemu/devel/migration/virtio.html
 share/doc/qemu/devel/modules.html
 share/doc/qemu/devel/multi-process.html
 share/doc/qemu/devel/multi-thread-tcg.html
+share/doc/qemu/devel/multiple-iothreads.html
 share/doc/qemu/devel/pci.html
 share/doc/qemu/devel/qapi-code-gen.html
 share/doc/qemu/devel/qdev-api.html
-share/doc/qemu/devel/qgraph.html
 share/doc/qemu/devel/qom-api.html
 share/doc/qemu/devel/qom.html
-share/doc/qemu/devel/qtest.html
+share/doc/qemu/devel/rcu.html
 share/doc/qemu/devel/replay.html
 share/doc/qemu/devel/reset.html
 share/doc/qemu/devel/s390-cpu-topology.html
@@ -162,7 +160,18 @@ share/doc/qemu/devel/tcg-icount.html
 share/doc/qemu/devel/tcg-ops.html
 share/doc/qemu/devel/tcg-plugins.html
 share/doc/qemu/devel/tcg.html
-share/doc/qemu/devel/testing.html
+share/doc/qemu/devel/testing/
+share/doc/qemu/devel/testing/acpi-bits.html
+share/doc/qemu/devel/testing/avocado.html
+share/doc/qemu/devel/testing/blkdebug.html
+share/doc/qemu/devel/testing/blkverify.html
+share/doc/qemu/devel/testing/ci.html
+share/doc/qemu/devel/testing/functional.html
+share/doc/qemu/devel/testing/fuzzing.html
+share/doc/qemu/devel/testing/index.html
+share/doc/qemu/devel/testing/main.html
+share/doc/qemu/devel/testing/qgraph.html
+share/doc/qemu/devel/testing/qtest.html
 share/doc/qemu/devel/tracing.html
 share/doc/qemu/devel/trivial-patches.html
 share/doc/qemu/devel/ui.html
@@ -218,6 +227,7 @@ share/doc/qemu/specs/ppc-spapr-xive.html
 share/doc/qemu/specs/ppc-xive.html
 share/doc/qemu/specs/pvpanic.html
 share/doc/qemu/specs/rapl-msr.html
+share/doc/qemu/specs/riscv-iommu.html
 share/doc/qemu/specs/rocker.html
 share/doc/qemu/specs/sev-guest-firmware.html
 share/doc/qemu/specs/spdm.html
@@ -238,20 +248,20 @@ share/doc/qemu/system/arm/cubieboard.html
 share/doc/qemu/system/arm/digic.html
 share/doc/qemu/system/arm/emcraft-sf2.html
 share/doc/qemu/system/arm/emulation.html
-share/doc/qemu/system/arm/gumstix.html
+share/doc/qemu/system/arm/exynos.html
+share/doc/qemu/system/arm/fby35.html
 share/doc/qemu/system/arm/highbank.html
 share/doc/qemu/system/arm/imx25-pdk.html
 share/doc/qemu/system/arm/integratorcp.html
 share/doc/qemu/system/arm/kzm.html
-share/doc/qemu/system/arm/mainstone.html
+share/doc/qemu/system/arm/mcimx6ul-evk.html
+share/doc/qemu/system/arm/mcimx7d-sabre.html
 share/doc/qemu/system/arm/mps2.html
 share/doc/qemu/system/arm/musca.html
 share/doc/qemu/system/arm/musicpal.html
 share/doc/qemu/system/arm/nrf.html
-share/doc/qemu/system/arm/nseries.html
 share/doc/qemu/system/arm/nuvoton.html
 share/doc/qemu/system/arm/orangepi.html
-share/doc/qemu/system/arm/palm.html
 share/doc/qemu/system/arm/raspi.html
 share/doc/qemu/system/arm/realview.html
 share/doc/qemu/system/arm/sabrelite.html
@@ -264,8 +274,8 @@ share/doc/qemu/system/arm/vexpress.html
 share/doc/qemu/system/arm/virt.html
 share/doc/qemu/system/arm/xenpvh.html
 share/doc/qemu/system/arm/xlnx-versal-virt.html
+share/doc/qemu/system/arm/xlnx-zcu102.html
 share/doc/qemu/system/arm/xlnx-zynq.html
-share/doc/qemu/system/arm/xscale.html
 share/doc/qemu/system/authz.html
 share/doc/qemu/system/barrier.html
 share/doc/qemu/system/bootindex.html
@@ -299,9 +309,11 @@ share/doc/qemu/system/i386/cpu.html
 share/doc/qemu/system/i386/hyperv.html
 share/doc/qemu/system/i386/kvm-pv.html
 share/doc/qemu/system/i386/microvm.html
+share/doc/qemu/system/i386/nitro-enclave.html
 share/doc/qemu/system/i386/pc.html
 share/doc/qemu/system/i386/sgx.html
 share/doc/qemu/system/i386/xen.html
+share/doc/qemu/system/i386/xenpvh.html
 share/doc/qemu/system/images.html
 share/doc/qemu/system/index.html
 share/doc/qemu/system/introduction.html
@@ -374,7 +386,6 @@ share/doc/qemu/tools/qemu-pr-helper.html
 share/doc/qemu/tools/qemu-storage-daemon.html
 share/doc/qemu/tools/qemu-trace-stap.html
 share/doc/qemu/tools/qemu-vmsr-helper.html
-share/doc/qemu/tools/virtfs-proxy-helper.html
 share/doc/qemu/user/
 share/doc/qemu/user/index.html
 share/doc/qemu/user/main.html
@@ -424,6 +435,8 @@ share/qemu/edk2-i386-code.fd
 share/qemu/edk2-i386-secure-code.fd
 share/qemu/edk2-i386-vars.fd
 share/qemu/edk2-licenses.txt
+share/qemu/edk2-loongarch64-code.fd
+share/qemu/edk2-loongarch64-vars.fd
 share/qemu/edk2-riscv-code.fd
 share/qemu/edk2-riscv-vars.fd
 share/qemu/edk2-x86_64-code.fd
@@ -442,6 +455,7 @@ share/qemu/firmware/50-edk2-x86_64-secure.json
 share/qemu/firmware/60-edk2-aarch64.json
 share/qemu/firmware/60-edk2-arm.json
 share/qemu/firmware/60-edk2-i386.json
+share/qemu/firmware/60-edk2-loongarch64.json
 share/qemu/firmware/60-edk2-x86_64.json
 share/qemu/hppa-firmware.img
 share/qemu/hppa-firmware64.img
@@ -505,7 +519,6 @@ share/qemu/qboot.rom
 share/qemu/qemu-nsis.bmp
 share/qemu/qemu_vga.ndrv
 share/qemu/s390-ccw.img
-share/qemu/s390-netboot.img
 share/qemu/skiboot.lid
 share/qemu/slof.bin
 share/qemu/trace-events-all
