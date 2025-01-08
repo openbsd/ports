@@ -47,6 +47,4 @@ share/doc/keyringer/README.md
 share/keyringer/
 share/keyringer/editors/
 share/keyringer/editors/vim
-share/zsh/
-share/zsh/site-functions/
 share/zsh/site-functions/_keyringer

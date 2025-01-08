@@ -37,6 +37,6 @@ Index: lib/keyringer/functions
        if [[ "$ahead" -gt "$expiry" ]] && [ "$BASENAME" == "check" ]; then
 -        echo "Warning: subkey from $recipient will expire soon, on `date --date="@$expiry"`"
 +        echo "Warning: subkey from $recipient will expire soon, on `date -r "$expiry"`"
+ 
+         KEYRINGER_HAS_EXPIRING_KEYS="1"
        fi
-     fi
-   done
