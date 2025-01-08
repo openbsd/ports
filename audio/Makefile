@@ -249,6 +249,7 @@
      SUBDIR += tagtool
      SUBDIR += tap-plugins
      SUBDIR += tempest
+     SUBDIR += termsonic
      SUBDIR += timidity
      SUBDIR += timidity,gtk2
      SUBDIR += timidity,xaw
