@@ -14,8 +14,6 @@ WANTLIB+=		${COMPILER_LIBCXX} c crypto m pcap pcre pthread sqlite3 ssl z
 
 SITES=			https://download.aircrack-ng.org/
 
-BUILD_DEPENDS=		devel/shtool \
-			devel/pkgconf
 LIB_DEPENDS=		databases/sqlite3 \
 			devel/pcre
 
