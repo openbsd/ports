@@ -1,6 +1,5 @@
-VERSION =		4.21.2
+VERSION =		4.21.3
 DISTNAME =		samba-${VERSION}
-REVISION =		1
 EPOCH =			0
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
@@ -14,7 +13,7 @@ PKG_ARCH-docs =		*
 SHARED_LIBS =		dcerpc			1.2 \
 			dcerpc-binding		5.0 \
 			dcerpc-samr		1.0 \
-			dcerpc-server-core	3.1 \
+			dcerpc-server-core	3.2 \
 			ldb			2.4 \
 			ndr			3.2 \
 			ndr-krb5pac		1.3 \
