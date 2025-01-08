@@ -1,4 +1,5 @@
 VERSION =		3.3.6
+REVISION =		0
 DISTNAME =		ruby-${VERSION}
 PKGNAME-main =		ruby-${VERSION}
 PKGNAME-ri_docs =	ruby${BINREV}-ri_docs-${VERSION}
@@ -29,6 +30,10 @@ MAKE_ENV +=		LIBRUBY_DLDFLAGS="-lc++abi"
 .if ${MACHINE_ARCH:Maarch64}
 # Disable YJIT on arm64 until it is fixed
 CONFIGURE_ARGS +=	--disable-yjit
+.endif
+
+.if ${MACHINE_ARCH:Mriscv64}
+CONFIGURE_ARGS +=	--with-coroutine=riscv64
 .endif
 
 MULTI_PACKAGES =	-main -ri_docs
