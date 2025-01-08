@@ -1,6 +1,6 @@
 COMMENT =	unionfs filesystem implementation
 
-DIST_TUPLE =	github rpodgorny unionfs-fuse v3.5 .
+DIST_TUPLE =	github rpodgorny unionfs-fuse v3.6 .
 
 CATEGORIES =	sysutils
 
