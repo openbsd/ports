@@ -1,10 +1,9 @@
 COMMENT=	Python interface to cURL library
 
-MODPY_DISTV=	7.45.3
+MODPY_DISTV=	7.45.4
 DISTNAME=	pycurl-${MODPY_DISTV}
 PKGNAME=	py-curl-${MODPY_DISTV}
 CATEGORIES=	net
-REVISION=	0
 
 HOMEPAGE=	http://pycurl.io/
 
