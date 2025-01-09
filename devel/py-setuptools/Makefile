@@ -4,6 +4,7 @@ COMMENT=	simplified packaging system for Python modules
 MODPY_DISTV=		75.6.0
 DISTNAME=		setuptools-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
+
 EPOCH=			0
 
 CATEGORIES=		devel
@@ -36,7 +37,16 @@ BUILD_DEPENDS=		devel/py-more-itertools \
 RUN_DEPENDS=		sysutils/py-packaging \
 			devel/py-more-itertools \
 			devel/py-wheel
-# vendored: platformdirs, jaraco.{text,collections,functools} + deps
+
+# remove vendored modules that can come from other ports, or are
+# not needed with our Python version. keep those which use setuptools
+# themselves, as they can't be used in RUN_DEPENDS: autocommand,
+# inflect, jaraco.{text,context,functools,collections}, platformdirs,
+# typeguard.
+post-extract:
+	cd ${WRKSRC}/setuptools/_vendor; rm -r \
+	    packaging* wheel* more_itertools* backports backports.tarfile* \
+	    importlib_metadata* tomli* typing_extensions* zipp
 
 TEST_DEPENDS=		${MODPY_RUN_DEPENDS},-tests \
 			devel/py-virtualenv \
@@ -53,15 +63,6 @@ TEST_DEPENDS=		${MODPY_RUN_DEPENDS},-tests \
 			devel/py-test-cov \
 			devel/py-pyproject_hooks \
 			devel/py-jaraco-test
-
-post-extract:
-	# remove vendored modules that can come from other ports, but
-	# keep those which use setuptools themselves, as they can't be used
-	# in RUN_DEPENDS:
-	# autocommand jaraco.{text,context,functools,collections} inflect
-	cd ${WRKSRC}/setuptools/_vendor; rm -r \
-		packaging* wheel* more_itertools* backports backports.tarfile* \
-		importlib_metadata* tomli* typing_extensions* zipp
 
 post-install:
 	cd ${WRKINST}${MODPY_SITEPKG}; \
