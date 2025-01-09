@@ -1,6 +1,6 @@
 COMMENT=	Python syntax highlighter
 
-MODPY_DISTV=	2.19.0
+MODPY_DISTV=	2.19.1
 DISTNAME=	pygments-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc devel
