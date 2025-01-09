@@ -3,23 +3,29 @@ COMMENT-db =	GeoIP2 GeoLite2 database: IPv4/v6 address to country
 COMMENT-city =	GeoIP2 GeoLite2 database: IPv4/v6 address to city
 COMMENT-asn =	GeoIP2 GeoLite2 database: IPv4/v6 address to AS number
 
-V =		1.11.0
-D =		20191224
+V =		1.12.1
 DISTNAME =	libmaxminddb-${V}
 PKGNAME-main =	libmaxminddb-${V}
+
+# Last version prior to license change
+# https://blog.maxmind.com/2019/12/significant-changes-to-accessing-and-using-geolite2-databases/
+# Up to date files available free of charge, but an account and EULA
+# agreement are needed:
+# https://dev.maxmind.com/geoip/geolite2-free-geolocation-data/
+D =		20191224
 PKGNAME-db =	geolite2-country-${D}
 PKGNAME-city =	geolite2-city-${D}
 PKGNAME-asn =	geolite2-asn-${D}
-DISTFILES.d = 	geolite2-data-$D.tar.xz
-REVISION-db =	1
-REVISION-city = 1
-REVISION-asn =  1
+DISTFILES.d =	geolite2-data-$D.tar.xz
+REVISION-db =	2
+REVISION-city = 2
+REVISION-asn =  2
 
 SHARED_LIBS +=	maxminddb	0.0	# 0.7
 
 CATEGORIES =	net geo
 
-HOMEPAGE =	http://maxmind.github.io/libmaxminddb/
+HOMEPAGE =	https://maxmind.github.io/libmaxminddb/
 
 # libmaxminddb: Apache 2.0
 # GeoLite2 DBs: CC BY-SA 4.0
