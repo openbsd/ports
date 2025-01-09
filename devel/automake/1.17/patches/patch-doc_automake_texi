@@ -1,0 +1,75 @@
+Mostly adding suffixes.
+
+Last hunks: patch to work with the older version of texinfo that we have
+in base (we don't want automake to depend on too many other ports..);
+the second is @geq which isn't supported in older texinfo, and others
+are avoid cross-reference without empty first argument.
+
+Index: doc/automake.texi
+--- doc/automake.texi.orig
++++ doc/automake.texi
+@@ -1,7 +1,8 @@
+ \input texinfo   @c -*-texinfo-*-
+ @c %**start of header
+-@setfilename automake.info
+-@settitle automake
++@setfilename automake-1.17.info
++@dircategory Programming & development tools
++@settitle automake-1.17
+ @documentencoding UTF-8
+ @documentlanguage en
+ @setchapternewpage off
+@@ -40,13 +41,13 @@ section entitled ``GNU Free Documentation License.''
+ 
+ @dircategory Software development
+ @direntry
+-* Automake: (automake).         Making GNU standards-compliant Makefiles.
++* automake-1.17: (automake-1.17).         Making GNU standards-compliant Makefiles.
+ @end direntry
+ 
+ @dircategory Individual utilities
+ @direntry
+-* aclocal-invocation: (automake)aclocal Invocation.   Generating aclocal.m4.
+-* automake-invocation: (automake)automake Invocation. Generating Makefile.in.
++* aclocal-1.17: (automake-1.17)aclocal Invocation.   Generating aclocal.m4.
++* automake-1.17: (automake-1.17)automake Invocation. Generating Makefile.in.
+ @end direntry
+ 
+ @titlepage
+@@ -1599,15 +1600,15 @@ curious: the basic idea is to run:
+ 
+ @enumerate
+ @item @command{aclocal} (@pxref{aclocal Invocation}),
+-@item @command{autoconf} (@pxref{,,,autoconf, The Autoconf Manual}),
++@item @command{autoconf} (@pxref{Top,,,autoconf, The Autoconf Manual}),
+ @item (if needed) @command{autoheader} (part of the
+ Autoconf distribution), and
+ @item @command{automake} (@pxref{automake Invocation}).
+ @end enumerate
+ 
+ @noindent
+-If needed, tools related to Gettext (@pxref{,,,gettext, GNU gettext
+-utilities}) and Libtool (@pxref{,,,libtool, The Libtool Manual}) are also
++If needed, tools related to Gettext (@pxref{Top,,,gettext, GNU gettext
++utilities}) and Libtool (@pxref{Top,,,libtool, The Libtool Manual}) are also
+ invoked at different points.  Thus, as you can see, using
+ @command{autoreconf} is quite a bit more convenient.
+ 
+@@ -8030,7 +8031,7 @@ AM_PATH_PYTHON([2.5])
+ 
+ @noindent
+ This is fine when Python is an absolute requirement for the package.
+-If Python @geq{} 2.5 was only @emph{optional} for the package,
++If Python >= 2.5 was only @emph{optional} for the package,
+ @code{AM_PATH_PYTHON} could be called as follows.
+ 
+ @example
+@@ -9237,7 +9238,7 @@ let's proceed with an example.  Suppose our package co
+ for which we want to build a man page using @command{help2man}.  GNU
+ @command{help2man} produces simple manual pages from the
+ @option{--help} and @option{--version} output of other commands
+-(@pxref{,,,help2man, The Help2man Manual}).  Because we don't want to
++(@pxref{Top,,,help2man, The Help2man Manual}).  Because we don't want to
+ force our users to install @command{help2man}, we distribute the
+ generated man page using the following setup.
+ 
