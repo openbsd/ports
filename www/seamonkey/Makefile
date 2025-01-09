@@ -18,6 +18,17 @@ PATCH_DIST_STRIP =	-p1 -f
 PATCH_CASES += *.zip) \
 	${UNZIP} -p $$patchfile | ${PATCH} ${PATCH_DIST_ARGS} || true ;;
 
+SITES.whl =	https://files.pythonhosted.org/packages/py3/
+WHEELS =	setuptools-70.3.0-py3-none-any.whl \
+		pip-24.3.1-py3-none-any.whl \
+		wheel-0.45.1-py3-none-any.whl
+.for _wheel in ${WHEELS}
+_wname_${_wheel} =  ${_wheel:C/-.*//}
+_wfirst_${_wheel} = ${_wheel:C/(.).*/\1/}
+DISTFILES.whl +=    {${_wfirst_${_wheel}}/${_wname_${_wheel}}/}${_wheel}
+.endfor
+EXTRACT_ONLY =	${DISTFILES}
+
 MULTI_PACKAGES =	-main -lightning
 PKGNAME-main =		${PKGNAME}
 PKGNAME-lightning =	lightning-seamonkey-5.8.20beta1
@@ -79,9 +90,13 @@ CONFIGURE_ARGS +=	--disable-necko-wifi
 
 # XXX badly formed debug ?
 DWZ = :
-DEBUG_PACKAGES =	${BUILD_PACKAGES}
+DEBUG_PACKAGES =	${BUILD_PACKAGES:N-lightning}
 DEBUG_CONFIGURE_ARGS +=	--enable-debug-symbols \
 			--disable-install-strip
+
+post-extract:
+	cd ${FULLDISTDIR}; \
+	cp ${WHEELS} ${WRKSRC}/third_party/python/virtualenv/virtualenv/seed/wheels/embed
 
 # patch doesnt grok file rename from git
 # and cargo fails to checksum those if not present
@@ -90,10 +105,9 @@ post-patch:
 	mv ${WRKSRC}/third_party/rust/{packed_simd,any_all_workaround}/LICENSE-MIT
 	# drop crate remnants to make sure cargo doesnt pickup packed_simd/Cargo.toml
 	rm -Rf ${WRKSRC}/third_party/rust/packed_simd/
+
 pre-configure:
 	chmod +x ${WRKSRC}/configure.in
-	ln -sf ${MODPY_SITEPKG}/setuptools/_distutils ${WRKSRC}/python/mozbuild/distutils
-	ln -sf ${MODPY_SITEPKG}/setuptools/_distutils ${WRKSRC}/python/mozbuild/mozbuild/distutils
 
 post-install:
 	${INSTALL_MAN} ${WRKBUILD}/dist/man/man1/seamonkey.1 ${PREFIX}/man/man1/

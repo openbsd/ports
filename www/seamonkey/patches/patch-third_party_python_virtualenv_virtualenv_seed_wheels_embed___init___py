@@ -1,0 +1,15 @@
+Index: third_party/python/virtualenv/virtualenv/seed/wheels/embed/__init__.py
+--- third_party/python/virtualenv/virtualenv/seed/wheels/embed/__init__.py.orig
++++ third_party/python/virtualenv/virtualenv/seed/wheels/embed/__init__.py
+@@ -5,6 +5,11 @@ from virtualenv.util.path import Path
+ 
+ BUNDLE_FOLDER = Path(__file__).absolute().parent
+ BUNDLE_SUPPORT = {
++    "3.12": {
++        "pip": "pip-24.3.1-py3-none-any.whl",
++        "setuptools": "setuptools-70.3.0-py3-none-any.whl",
++        "wheel": "wheel-0.45.1-py3-none-any.whl",
++    },
+     "3.10": {
+         "pip": "pip-20.3.1-py2.py3-none-any.whl",
+         "setuptools": "setuptools-51.0.0-py3-none-any.whl",
