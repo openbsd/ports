@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS =	${GO_ARCHS}
 COMMENT =	fast and flexible static site generator
 
 MODGO_MODNAME =	github.com/gohugoio/hugo
-MODGO_VERSION =	v0.139.4
+MODGO_VERSION =	v0.140.2
 
 DISTNAME =	hugo-${MODGO_VERSION}
 
