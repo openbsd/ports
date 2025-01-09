@@ -2,7 +2,7 @@ COMMENT=	FastCGI Development Kit
 
 GH_ACCOUNT=	FastCGI-Archives
 GH_PROJECT=	fcgi2
-GH_TAGNAME=	2.4.2
+GH_TAGNAME=	2.4.4
 PKGNAME=	fcgi-${GH_TAGNAME}
 
 CATEGORIES=	www
@@ -32,6 +32,7 @@ CAT3_FILES=	FCGI_Accept FCGI_Finish FCGI_SetExitStatus \
 		FCGI_StartFilterData
 
 post-install:
+	rm ${PREFIX}/man/man?/*
 	${INSTALL_MAN} ${WRKSRC}/doc/cgi-fcgi.1 ${PREFIX}/man/cat1/cgi-fcgi.0
 .for file in ${CAT3_FILES}
 	${INSTALL_MAN} ${WRKSRC}/doc/${file}.3 ${PREFIX}/man/cat3/${file}.0
