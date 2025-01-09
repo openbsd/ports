@@ -1,9 +1,8 @@
 COMMENT=	provides cross platform hidden file detection
 
-MODPY_DISTV=	3.4.1
+MODPY_DISTV=	3.7.0
 DISTNAME=	jaraco.path-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	devel
 
