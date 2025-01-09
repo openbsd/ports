@@ -1,6 +1,6 @@
 COMMENT=	pytest plugin to create CodSpeed benchmarks
 
-MODPY_DISTV=	3.1.0
+MODPY_DISTV=	3.1.2
 DISTNAME=	pytest_codspeed-${MODPY_DISTV}
 PKGNAME=	py-test-codspeed-${MODPY_DISTV}
 CATEGORIES=	devel
@@ -21,5 +21,7 @@ RUN_DEPENDS=	devel/py-cffi \
 		devel/py-test
 # conftest.py missing in sdist
 NO_TEST=	Yes
+
+MAKE_ENV=	PYTEST_CODSPEED_SKIP_EXTENSION_BUILD=1
 
 .include <bsd.port.mk>
