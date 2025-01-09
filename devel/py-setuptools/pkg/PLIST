@@ -463,14 +463,6 @@ lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/typeguard/_transform
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/typeguard/_union_transformer.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/typeguard/_utils.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/typeguard/py.typed
-lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/zipp-3.19.2.dist-info/
-lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/zipp-3.19.2.dist-info/INSTALLER
-lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/zipp-3.19.2.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/zipp-3.19.2.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/zipp-3.19.2.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/zipp-3.19.2.dist-info/REQUESTED
-lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/zipp-3.19.2.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/setuptools/_vendor/zipp-3.19.2.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/setuptools/archive_util.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/build_meta.py
 lib/python${MODPY_VERSION}/site-packages/setuptools/command/

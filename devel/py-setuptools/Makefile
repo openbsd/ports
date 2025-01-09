@@ -4,6 +4,7 @@ COMMENT=	simplified packaging system for Python modules
 MODPY_DISTV=		75.6.0
 DISTNAME=		setuptools-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
+REVISION=		0
 
 EPOCH=			0
 
@@ -46,7 +47,7 @@ RUN_DEPENDS=		sysutils/py-packaging \
 post-extract:
 	cd ${WRKSRC}/setuptools/_vendor; rm -r \
 	    packaging* wheel* more_itertools* backports backports.tarfile* \
-	    importlib_metadata* tomli* typing_extensions* zipp
+	    importlib_metadata* tomli* typing_extensions* zipp*
 
 TEST_DEPENDS=		${MODPY_RUN_DEPENDS},-tests \
 			devel/py-virtualenv \
