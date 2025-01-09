@@ -1,5 +1,4 @@
 @pkgpath net/py-cares,python3
-@conflict py-cares-*
 lib/python${MODPY_VERSION}/site-packages/pycares/
 lib/python${MODPY_VERSION}/site-packages/pycares-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/pycares-${MODPY_DISTV}.dist-info/LICENSE
@@ -20,7 +19,7 @@ lib/python${MODPY_VERSION}/site-packages/pycares/${MODPY_PYCACHE}errno.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/pycares/${MODPY_PYCACHE}errno.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pycares/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pycares/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
-@so lib/python${MODPY_VERSION}/site-packages/pycares/_cares.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/pycares/_cares${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/pycares/_version.py
 lib/python${MODPY_VERSION}/site-packages/pycares/errno.py
 lib/python${MODPY_VERSION}/site-packages/pycares/utils.py
