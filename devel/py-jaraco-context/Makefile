@@ -1,9 +1,8 @@
 COMMENT=	catch certain exceptions and provide an indication
 
-MODPY_DISTV=	4.1.2
+MODPY_DISTV=	5.3.0
 DISTNAME=	jaraco.context-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	devel
 
@@ -14,8 +13,7 @@ HOMEPAGE=	https://jaracocontext.readthedocs.io/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
+MODPY_PI=	Yes
 
 .include <bsd.port.mk>
