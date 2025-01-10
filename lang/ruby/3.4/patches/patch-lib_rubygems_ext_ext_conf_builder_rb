@@ -1,0 +1,14 @@
+Don't clean extension dir when installing gems.  Doing so breaks packaging
+of some ports.
+
+Index: lib/rubygems/ext/ext_conf_builder.rb
+--- lib/rubygems/ext/ext_conf_builder.rb.orig
++++ lib/rubygems/ext/ext_conf_builder.rb
+@@ -60,7 +60,6 @@ class Gem::Ext::ExtConfBuilder < Gem::Ext::Builder
+         destent.exist? || FileUtils.mv(ent.path, destent.path)
+       end
+ 
+-      make dest_path, results, extension_dir, tmp_dest_relative, ["clean"], target_rbconfig: target_rbconfig
+     ensure
+       ENV["DESTDIR"] = destdir
+     end

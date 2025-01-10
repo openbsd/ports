@@ -1,0 +1,15 @@
+Change expectation in test as we modify Ruby to keep intermediate files
+in order to work with the ports system.
+
+Index: test/rubygems/test_gem_installer.rb
+--- test/rubygems/test_gem_installer.rb.orig
++++ test/rubygems/test_gem_installer.rb
+@@ -1724,7 +1724,7 @@ end
+     end
+ 
+     assert_path_exist extension_file, "installed"
+-    assert_path_not_exist intermediate_file
++    assert_path_exist intermediate_file
+   end
+ 
+   def test_installation_satisfies_dependency_eh

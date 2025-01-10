@@ -1,0 +1,39 @@
+Stop hardcoding -mbranch-protection=pac-ret arm64, the compiler also
+needs to embed BTI instructions so that the program runs on a system
+with BTI support.
+
+Set correct shared library name.
+
+Override the arch setting to remove OpenBSD version from it,
+so ports don't have to be bumped when OpenBSD version changes.
+
+Index: configure
+--- configure.orig
++++ configure
+@@ -11017,7 +11017,7 @@ esac
+ 
+     # aarch64 branch protection
+     case "$target_cpu" in #(
+-  aarch64|arm64) :
++  disabled) :
+ 
+         # LLVM libunwind is not actually capable of unwinding code compiled with pointer
+         # authentication unless it's built without LIBUNWIND_ENABLE_CROSS_UNWINDING (see
+@@ -32280,7 +32280,7 @@ fi
+ 	 ;; #(
+   openbsd*|mirbsd*) :
+ 
+-	LIBRUBY_SO='lib$(RUBY_SO_NAME).$(SOEXT).$(MAJOR).'`expr ${MINOR} \* 10 + ${TEENY}`
++	LIBRUBY_SO='lib$(RUBY_SO_NAME).so.'${LIBruby34_VERSION}
+ 	 ;; #(
+   solaris*) :
+ 
+@@ -34474,7 +34474,7 @@ then :
+ 
+ else $as_nop
+ 
+-        arch="${target_cpu}-${target_os}"
++        arch="${target_cpu}-openbsd"
+ 
+ fi
+     printf "%s\n" "#define RUBY_PLATFORM \"$arch\"" >>confdefs.h
