@@ -1,7 +1,6 @@
 COMMENT =	English-Swedish FreeDict Dictionary
 DICT =	eng-swe
-V =	2023.05.29
-REVISION =	0
+V =	2024.10.10
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
