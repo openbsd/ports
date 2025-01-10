@@ -1,0 +1,12 @@
+Index: Portroach/SiteHandler/PyPI.pm
+--- Portroach/SiteHandler/PyPI.pm.orig
++++ Portroach/SiteHandler/PyPI.pm
+@@ -73,7 +73,7 @@ sub CanHandle
+ 
+ 	my ($url) = @_;
+ 
+-	return ($url =~ /https:\/\/pypi\.io\//);
++	return ($url =~ /https:\/\/(files\.pythonhosted\.org|pypi\.io)\//);
+ }
+ 
+ 
