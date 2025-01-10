@@ -1,0 +1,10 @@
+tuisky: TUI client for Bluesky
+
+- Multiple columns, multiple session management
+- Select from pinned feeds
+- Auto refresh rows
+- Auto save & restore app data
+- Post texts
+  - Embed images
+  - Embed record
+- Configure with files
