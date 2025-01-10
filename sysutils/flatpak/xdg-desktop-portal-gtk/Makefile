@@ -1,8 +1,7 @@
 COMMENT=		GTK backend implementation for xdg-desktop-portal
 
-V=			1.15.1
+V=			1.15.2
 DISTNAME=		xdg-desktop-portal-gtk-${V}
-REVISION=		1
 
 CATEGORIES=		x11
 
