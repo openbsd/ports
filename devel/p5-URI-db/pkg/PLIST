@@ -2,6 +2,7 @@ ${P5SITE}/URI/_ado.pm
 ${P5SITE}/URI/_db.pm
 ${P5SITE}/URI/_odbc.pm
 ${P5SITE}/URI/cassandra.pm
+${P5SITE}/URI/clickhouse.pm
 ${P5SITE}/URI/cockroach.pm
 ${P5SITE}/URI/cockroachdb.pm
 ${P5SITE}/URI/couch.pm
