@@ -1,3 +1,5 @@
+===>  Generating configure for jujutsu-0.25.0p0
+===>  Configuring for jujutsu-0.25.0p0
 MODCARGO_CRATES +=	addr2line	0.22.0	# Apache-2.0 OR MIT
 MODCARGO_CRATES +=	adler	1.0.2	# 0BSD OR MIT OR Apache-2.0
 MODCARGO_CRATES +=	adler2	2.0.0	# 0BSD OR MIT OR Apache-2.0
@@ -97,7 +99,7 @@ MODCARGO_CRATES +=	futures-util	0.3.31	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	generic-array	0.14.7	# MIT
 MODCARGO_CRATES +=	getrandom	0.2.15	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	gimli	0.29.0	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	git2	0.19.0	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	git2	0.20.0	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	gix	0.68.0	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	gix-actor	0.33.1	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	gix-attributes	0.23.1	# MIT OR Apache-2.0
@@ -183,7 +185,7 @@ MODCARGO_CRATES +=	js-sys	0.3.70	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	kstring	2.0.2	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	lazy_static	1.5.0	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	libc	0.2.169	# MIT OR Apache-2.0
-MODCARGO_CRATES +=	libgit2-sys	0.17.0+1.8.1	# MIT OR Apache-2.0
+MODCARGO_CRATES +=	libgit2-sys	0.18.0+1.9.0	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	libredox	0.1.3	# MIT
 MODCARGO_CRATES +=	libssh2-sys	0.3.0	# MIT/Apache-2.0
 MODCARGO_CRATES +=	libz-ng-sys	1.1.16	# MIT OR Apache-2.0
