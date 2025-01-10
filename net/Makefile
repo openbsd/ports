@@ -736,6 +736,7 @@
      SUBDIR += trickle
      SUBDIR += trippy
      SUBDIR += ttg
+     SUBDIR += tuisky
      SUBDIR += tut
      SUBDIR += twirssi
      SUBDIR += ucspi-tcp
