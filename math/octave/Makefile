@@ -4,6 +4,7 @@ VERSION =	9.3.0
 DISTNAME =	octave-${VERSION}
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	math
+REVISION =	0
 
 SHARED_LIBS +=	octave		18.0
 SHARED_LIBS +=	octgui		12.0

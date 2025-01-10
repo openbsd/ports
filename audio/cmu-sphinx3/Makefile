@@ -2,7 +2,7 @@ COMMENT=	acoustic decoder for CMU Sphinx3 speech recognition system
 
 DISTNAME=	sphinx3-0.8
 PKGNAME=	cmu-${DISTNAME}
-REVISION=	8
+REVISION=	9
 CATEGORIES=	audio
 
 SHARED_LIBS=	s3decoder	0.0

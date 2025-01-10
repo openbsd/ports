@@ -4,7 +4,7 @@ COMMENT=	maths, science and engineering modules for Python
 MODPY_DISTV=	1.13.1
 DISTNAME=	scipy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	math devel
 

@@ -8,6 +8,7 @@ DISTNAME =		hdf5-${V}
 GH_ACCOUNT =		HDFGroup
 GH_PROJECT =		hdf5
 GH_TAGNAME =		${DISTNAME:S/-/_/g}
+REVISION =		0
 
 SHARED_LIBS +=  hdf5			7.0	# 314.0
 SHARED_LIBS +=  hdf5_cpp		11.0	# 310.4

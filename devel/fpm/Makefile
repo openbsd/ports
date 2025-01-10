@@ -11,7 +11,7 @@ BROKEN-i386 =	fails "build fpm (stage1) using the bootstrap (stage0)"
 COMMENT =	Fortran Package Manager
 
 V =		0.7.0
-REVISION =	1
+REVISION =	2
 
 DIST_TUPLE +=	github fortran-lang fpm v0.7.0 .
 # external dependencies (see fpm.toml)

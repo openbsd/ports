@@ -3,6 +3,7 @@ COMMENT =	implementation of the FITS WCS standard
 CATEGORIES =	astro devel
 DISTNAME =	wcslib-7.11
 HOMEPAGE =	https://www.atnf.csiro.au/people/mcalabre/WCS/wcslib/
+REVISION =	0
 
 SHARED_LIBS =	wcs		2.0
 

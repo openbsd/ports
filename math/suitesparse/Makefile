@@ -4,7 +4,7 @@ COMMENT=		suite of sparse matrix algorithms
 
 DISTNAME=		SuiteSparse-4.4.6
 PKGNAME=		${DISTNAME:L}
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		math
 

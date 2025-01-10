@@ -6,6 +6,7 @@ DPB_PROPERTIES =	parallel
 
 V=		3.12.0
 DIST_TUPLE =	github Reference-LAPACK lapack v${V} .
+REVISION=	0
 
 SHARED_LIBS +=  blas                      2.1 # 0.0
 SHARED_LIBS +=  cblas                     2.0 # 0.0

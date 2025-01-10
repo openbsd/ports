@@ -7,7 +7,7 @@ PKGNAME =	arpack-${GH_TAGNAME}
 GH_ACCOUNT =	opencollab
 GH_PROJECT =	arpack-ng
 EPOCH =		0
-REVISION =	2
+REVISION =	3
 
 MULTI_PACKAGES =	-main -mpi
 FLAVORS =		no_mpi

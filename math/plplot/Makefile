@@ -14,9 +14,9 @@ SHARED_LIBS =	csirocsa	4.0	\
 PKGNAME-main =	${DISTNAME}
 PKGNAME-c++ =	plplot-c++-${VERSION}
 PKGNAME-fortran =	plplot-fortran-${VERSION}
-REVISION-c++ =	1
-REVISION-fortran =	2
-REVISION-main =	3
+REVISION-c++ =	2
+REVISION-fortran =	3
+REVISION-main =	4
 
 CATEGORIES =	math graphics
 
