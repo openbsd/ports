@@ -1,9 +1,0 @@
-Index: spec/spec_helper.rb
---- spec/spec_helper.rb.orig
-+++ spec/spec_helper.rb
-@@ -1,5 +1,2 @@
--require 'simplecov'
--SimpleCov.start
--
- require 'rspec/core'
- 

@@ -12,11 +12,4 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/colored2/numbers.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/colored2/object.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/colored2/strings.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/colored2/version.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/
-${GEM_LIB}/gems/${DISTNAME}/spec/colored2/
-${GEM_LIB}/gems/${DISTNAME}/spec/colored2/numbers_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/colored2/object_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/colored2/strings_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/colored2_spec.rb
-${GEM_LIB}/gems/${DISTNAME}/spec/spec_helper.rb
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
