@@ -207,7 +207,7 @@ MODGO_MODULES =	\
 	github.com/atotto/clipboard								 v0.1.4 \
 	github.com/aws/aws-lambda-go								 v1.13.3 \
 	github.com/aws/aws-sdk-go								 v1.55.5 \
-	github.com/aws/aws-sdk-go-v2								 v1.32.5 \
+	github.com/aws/aws-sdk-go-v2								 v1.32.7 \
 	github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream					 v1.6.2 \
 	github.com/aws/aws-sdk-go-v2/config							 v1.27.27 \
 	github.com/aws/aws-sdk-go-v2/credentials						 v1.17.27 \
@@ -374,7 +374,7 @@ MODGO_MODULES =	\
 	github.com/grpc-ecosystem/go-grpc-prometheus						 v1.2.0 \
 	github.com/grpc-ecosystem/grpc-gateway							 v1.16.0 \
 	github.com/grpc-ecosystem/grpc-gateway/v2						 v2.24.0 \
-	github.com/gruntwork-io/boilerplate							 v0.5.19 \
+	github.com/gruntwork-io/boilerplate							 v0.6.0 \
 	github.com/gruntwork-io/go-commons							 v0.17.2 \
 	github.com/gruntwork-io/terragrunt-engine-go						 v0.0.4 \
 	github.com/gruntwork-io/terratest							 v0.47.2 \
@@ -585,7 +585,7 @@ MODGO_MODULES =	\
 	github.com/xrash/smetrics								 v0.0.0-20240521201337-686a1a2994c1 \
 	github.com/yuin/goldmark								 v1.7.4 \
 	github.com/yuin/goldmark-emoji								 v1.0.3 \
-	github.com/zclconf/go-cty								 v1.15.1 \
+	github.com/zclconf/go-cty								 v1.16.0 \
 	github.com/zclconf/go-cty-debug								 v0.0.0-20240509010212-0d6042c53940 \
 	github.com/zclconf/go-cty-yaml								 v1.0.3 \
 	go.opencensus.io									 v0.24.0 \
@@ -619,9 +619,9 @@ MODGO_MODULES =	\
 	golang.org/x/net									 v0.33.0 \
 	golang.org/x/oauth2									 v0.24.0 \
 	golang.org/x/sync									 v0.10.0 \
-	golang.org/x/sys									 v0.28.0 \
+	golang.org/x/sys									 v0.29.0 \
 	golang.org/x/telemetry									 v0.0.0-20240521205824-bda55230c457 \
-	golang.org/x/term									 v0.27.0 \
+	golang.org/x/term									 v0.28.0 \
 	golang.org/x/text									 v0.21.0 \
 	golang.org/x/time									 v0.8.0 \
 	golang.org/x/tools									 v0.26.0 \
@@ -1692,6 +1692,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys									 v0.25.0 \
 	golang.org/x/sys									 v0.26.0 \
 	golang.org/x/sys									 v0.27.0 \
+	golang.org/x/sys									 v0.28.0 \
 	golang.org/x/sys									 v0.5.0 \
 	golang.org/x/sys									 v0.6.0 \
 	golang.org/x/sys									 v0.8.0 \
@@ -1707,6 +1708,7 @@ MODGO_MODFILES =	\
 	golang.org/x/term									 v0.21.0 \
 	golang.org/x/term									 v0.22.0 \
 	golang.org/x/term									 v0.25.0 \
+	golang.org/x/term									 v0.27.0 \
 	golang.org/x/term									 v0.5.0 \
 	golang.org/x/text									 v0.0.0-20160726164857-2910a502d2bf \
 	golang.org/x/text									 v0.0.0-20170915032832-14c0d48ead0c \
