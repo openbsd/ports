@@ -5,6 +5,7 @@ DISTNAME=		geeqie-${V}
 EXTRACT_SUFX=		.tar.xz
 CATEGORIES=		graphics
 EPOCH=			0
+REVISION=		0
 
 HOMEPAGE=		https://www.geeqie.org/
 
@@ -16,7 +17,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += ${COMPILER_LIBCXX} c cairo  exiv2
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += gtk-3 heif intl jpeg lcms2 m openjp2 pango-1.0
-WANTLIB += pangocairo-1.0 raw tiff
+WANTLIB += pangocairo-1.0 raw tiff webp
 
 # C++14
 COMPILER=		base-clang ports-gcc
@@ -49,7 +50,6 @@ CONFIGURE_ARGS+=	-Darchive=disabled \
 			-Dpdf=disabled \
 			-Dspell=disabled \
 			-Dvideothumbnailer=disabled \
-			-Dwebp=disabled \
 			-Dgq_htmldir=${PREFIX}/share/doc/geeqie \
 			-Dgq_helpdir=${PREFIX}/share/doc/geeqie
 
