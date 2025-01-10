@@ -17,7 +17,7 @@ Index: panels/system/about/cc-system-details-window.c
  
  #include <gdk/gdk.h>
  
-@@ -350,6 +354,7 @@ get_os_type (void)
+@@ -358,6 +362,7 @@ get_os_type (void)
  char *
  get_primary_disk_info (void)
  {
@@ -25,7 +25,7 @@ Index: panels/system/about/cc-system-details-window.c
    g_autoptr(UDisksClient) client = NULL;
    GDBusObjectManager *manager;
    g_autolist(GDBusObject) objects = NULL;
-@@ -388,6 +393,7 @@ get_primary_disk_info (void)
+@@ -396,6 +401,7 @@ get_primary_disk_info (void)
  
    if (total_size > 0)
        return g_format_size (total_size);
@@ -33,7 +33,7 @@ Index: panels/system/about/cc-system-details-window.c
  
    return NULL;
  }
-@@ -618,10 +624,13 @@ get_ram_size_libgtop (void)
+@@ -626,10 +632,13 @@ get_ram_size_libgtop (void)
  guint64
  get_ram_size_dmi (void)
  {
@@ -47,7 +47,7 @@ Index: panels/system/about/cc-system-details-window.c
    guint64 num_ram;
    guint i;
  
-@@ -636,6 +645,7 @@ get_ram_size_dmi (void)
+@@ -644,6 +653,7 @@ get_ram_size_dmi (void)
      prop = g_strdup_printf ("MEMORY_DEVICE_%d_SIZE", i);
      ram_total += g_udev_device_get_property_as_uint64 (dmi, prop);
    }
