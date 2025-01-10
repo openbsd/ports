@@ -148,6 +148,7 @@ share/examples/samba/scripts/
 @comment share/examples/samba/scripts/debugging/
 @comment share/examples/samba/scripts/debugging/linux/
 @comment share/examples/samba/scripts/debugging/linux/backtrace
+@comment share/examples/samba/scripts/debugging/smbXsrvdump
 @comment share/examples/samba/scripts/debugging/solaris/
 @comment share/examples/samba/scripts/debugging/solaris/README
 @comment share/examples/samba/scripts/debugging/solaris/solaris-oops.sh

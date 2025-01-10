@@ -1,6 +1,7 @@
 VERSION =		4.21.3
 DISTNAME =		samba-${VERSION}
 EPOCH =			0
+REVISION =		0
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
 COMMENT-docs =		additional documentation and examples for Samba
@@ -139,6 +140,12 @@ CONFIGURE_ENV =		LC_ALL=en_US.UTF-8 \
 MAKE_ENV =		LC_ALL=en_US.UTF-8 \
 			PYTHON=${MODPY_BIN} \
 			WAF_ARGS="${WAF_ARGS}"
+
+# XXX Tests require additional build dependencies, including
+# devel/py-dateutil, devel/py-asn1, and security/py-cryptography, as
+# well as the inclusion of --enable-selftest in CONFIGURE_ARGS.
+# However, enabling this flag results in build failures.
+NO_TEST =		Yes
 
 .for _l _v in ${SHARED_LIBS}
 MAKE_ENV +=		LIB${_l:S/-/_/g}_VERSION=${_v}

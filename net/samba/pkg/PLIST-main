@@ -2126,7 +2126,6 @@ sbin/samba-gpupdate
 share/doc/pkg-readmes/${PKGSTEM}
 @comment share/doc/samba/
 share/examples/samba/
-share/examples/samba/scripts/debugging/smbXsrvdump
 share/examples/samba/smb.conf.default
 @sample ${SYSCONFDIR}/samba/smb.conf
 @mode 0750
