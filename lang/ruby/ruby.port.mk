@@ -25,7 +25,7 @@ MODRUBY_HANDLE_FLAVORS ?= No
 # If ruby.pork.mk should handle FLAVORs, define a separate FLAVOR
 # for each ruby version.
 .    if !defined(FLAVORS)
-FLAVORS=	ruby32 ruby33
+FLAVORS=	ruby32 ruby33 ruby34
 .    endif
 
 # Instead of adding flavors to the end of the package name, we use
@@ -49,11 +49,12 @@ FLAVOR =		ruby33
 
 # Check for conflicting FLAVORs and set MODRUBY_REV appropriately based
 # on the FLAVOR.
-.    for i in ruby32 ruby33
+.    for i in ruby32 ruby33 ruby34
 .      if ${FLAVOR:M$i}
 MODRUBY_REV = ${i:C/ruby([0-9])/\1./}
 .        if ${FLAVOR:N$i:Mruby32} || \
-            ${FLAVOR:N$i:Mruby33}
+            ${FLAVOR:N$i:Mruby33} || \
+            ${FLAVOR:N$i:Mruby34}
 ERRORS += "Fatal: Conflicting flavors used: ${FLAVOR}"
 .        endif
 .      endif
