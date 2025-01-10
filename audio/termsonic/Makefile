@@ -1,6 +1,7 @@
 COMMENT =		Subsonic client running in your terminal
 
 DISTNAME =		termsonic-0.2
+REVISION =		0
 
 CATEGORIES =		audio
 
@@ -19,7 +20,9 @@ SITES =	https://russ.whirling.top/distfiles/
 # GPL3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		c pthread
+WANTLIB +=		c openal pthread
+
+LIB_DEPENDS =		audio/openal
 
 MODULES =		lang/go
 
