@@ -38,7 +38,7 @@ CXXFLAGS +=		-I${LOCALBASE}/include
 MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 # expects submodule/cannot use system library
-BUILD_DEPENDS =		devel/gtest:patch
+BUILD_DEPENDS +=	devel/gtest:patch
 GTEST_WRKSRC =		${WRKDIR}/devel/gtest/googletest-1.15.2
 GTEST_THIRD =		${WRKSRC}/third_party/googletest
 
