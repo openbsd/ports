@@ -1,26 +1,26 @@
 MODGO_MODULES =	\
-	github.com/!proton!mail/go-crypto	 v1.1.0-beta.0 \
+	github.com/!proton!mail/go-crypto	 v1.1.3 \
 	github.com/!proton!mail/go-mime		 v0.0.0-20230322103455-7d82a3887f2f \
-	github.com/!proton!mail/gopenpgp/v2	 v2.8.0-beta.0 \
+	github.com/!proton!mail/gopenpgp/v2	 v2.8.1 \
 	github.com/beevik/etree			 v1.4.1 \
 	github.com/bwesterb/go-ristretto	 v1.2.3 \
 	github.com/cloudflare/circl		 v1.5.0 \
 	github.com/davecgh/go-spew		 v1.1.0 \
-	github.com/gabriel-vasile/mimetype	 v1.4.6 \
+	github.com/gabriel-vasile/mimetype	 v1.4.7 \
 	github.com/google/uuid			 v1.6.0 \
 	github.com/pborman/getopt/v2		 v2.1.0 \
 	github.com/pkg/errors			 v0.9.1 \
 	github.com/pmezard/go-difflib		 v1.0.0 \
 	github.com/stretchr/testify		 v1.7.0 \
-	github.com/xmppo/go-xmpp		 v0.2.5 \
+	github.com/xmppo/go-xmpp		 v0.2.9 \
 	github.com/yuin/goldmark		 v1.4.13 \
-	golang.org/x/crypto			 v0.28.0 \
+	golang.org/x/crypto			 v0.31.0 \
 	golang.org/x/mod			 v0.17.0 \
-	golang.org/x/net			 v0.30.0 \
-	golang.org/x/sync			 v0.8.0 \
-	golang.org/x/sys			 v0.26.0 \
-	golang.org/x/term			 v0.25.0 \
-	golang.org/x/text			 v0.19.0 \
+	golang.org/x/net			 v0.33.0 \
+	golang.org/x/sync			 v0.10.0 \
+	golang.org/x/sys			 v0.28.0 \
+	golang.org/x/term			 v0.27.0 \
+	golang.org/x/text			 v0.21.0 \
 	golang.org/x/tools			 v0.21.1-0.20240508182429-e35e4ccd0d2d \
 	golang.org/x/xerrors			 v0.0.0-20190717185122-a985d3407aa7 \
 	gopkg.in/yaml.v3			 v3.0.0-20200313102051-9f266ea9e77c \
@@ -38,6 +38,8 @@ MODGO_MODFILES =	\
 	golang.org/x/net		 v0.0.0-20210226172049-e18ecbb05110 \
 	golang.org/x/net		 v0.0.0-20220722155237-a158d28d115b \
 	golang.org/x/net		 v0.21.0 \
+	golang.org/x/net		 v0.31.0 \
+	golang.org/x/net		 v0.32.0 \
 	golang.org/x/net		 v0.6.0 \
 	golang.org/x/sync		 v0.0.0-20190423024810-112230192c58 \
 	golang.org/x/sync		 v0.0.0-20220722155255-886fb9371eb4 \
