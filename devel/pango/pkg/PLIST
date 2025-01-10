@@ -57,7 +57,6 @@ lib/pkgconfig/pangofc.pc
 lib/pkgconfig/pangoft2.pc
 lib/pkgconfig/pangoot.pc
 lib/pkgconfig/pangoxft.pc
-@man man/man1/pango-view.1
 share/gir-1.0/Pango-1.0.gir
 share/gir-1.0/PangoCairo-1.0.gir
 share/gir-1.0/PangoFT2-1.0.gir

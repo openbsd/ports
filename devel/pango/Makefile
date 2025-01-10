@@ -3,12 +3,12 @@ PORTROACH=		skipv:1.90.0
 COMMENT=		library for layout and rendering of text
 
 GNOME_PROJECT=		pango
-GNOME_VERSION=		1.54.0
+GNOME_VERSION=		1.56.0
 
-SHARED_LIBS += pango-1.0                 3801.5 # 0.5400.0
-SHARED_LIBS += pangoft2-1.0              3801.3 # 0.5400.0
-SHARED_LIBS += pangoxft-1.0              3801.3 # 0.5400.0
-SHARED_LIBS += pangocairo-1.0            3801.3 # 0.5400.0
+SHARED_LIBS += pango-1.0                 3801.6 # 0.5600.0
+SHARED_LIBS += pangoft2-1.0              3801.3 # 0.5600.0
+SHARED_LIBS += pangoxft-1.0              3801.3 # 0.5600.0
+SHARED_LIBS += pangocairo-1.0            3801.3 # 0.5600.0
 
 CATEGORIES=		devel x11
 
@@ -19,10 +19,11 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # LGPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += X11 Xft Xrender c cairo fontconfig freetype fribidi
+WANTLIB += X11 Xft Xrender c cairo fontconfig>=13.2 freetype fribidi
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 harfbuzz m
 
 COMPILER=		base-clang ports-gcc
+
 MODULES=		devel/meson \
 			x11/gnome
 
