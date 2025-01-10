@@ -167,7 +167,7 @@ MODGO_MODULES =	\
 	github.com/apparentlymart/go-textseg/v13						 v13.0.0 \
 	github.com/apparentlymart/go-textseg/v15						 v15.0.0 \
 	github.com/apparentlymart/go-userdirs							 v0.0.0-20200915174352-b0c018a67c13 \
-	github.com/apparentlymart/go-versions							 v1.0.1 \
+	github.com/apparentlymart/go-versions							 v1.0.2 \
 	github.com/armon/circbuf								 v0.0.0-20190214190532-5111143e8da2 \
 	github.com/armon/go-metrics								 v0.0.0-20180917152333-f0300d1749da \
 	github.com/armon/go-radix								 v1.0.0 \
@@ -422,7 +422,7 @@ MODGO_MODULES =	\
 	github.com/onsi/ginkgo									 v1.14.0 \
 	github.com/onsi/gomega									 v1.10.1 \
 	github.com/openbao/openbao/api								 v0.0.0-20240326035453-c075f0ef2c7e \
-	github.com/opentofu/hcl/v2								 v2.0.0-20240416130056-03228b26f391 \
+	github.com/opentofu/hcl/v2								 v2.0.0-20240814143621-8048794c5c52 \
 	github.com/opentofu/registry-address							 v0.0.0-20230920144404-f1e51167f633 \
 	github.com/packer-community/winrmcp							 v0.0.0-20180921211025-c76d91c1e7db \
 	github.com/pascaldekloe/goe								 v0.1.0 \
@@ -479,8 +479,8 @@ MODGO_MODULES =	\
 	github.com/yuin/goldmark								 v1.4.13 \
 	github.com/yuin/goldmark-emoji								 v1.0.1 \
 	github.com/zclconf/go-cty								 v1.14.4 \
-	github.com/zclconf/go-cty-debug								 v0.0.0-20191215020915-b22d67c1ba0b \
-	github.com/zclconf/go-cty-yaml								 v1.0.3 \
+	github.com/zclconf/go-cty-debug								 v0.0.0-20240509010212-0d6042c53940 \
+	github.com/zclconf/go-cty-yaml								 v1.1.0 \
 	go.etcd.io/etcd/api/v3									 v3.5.4 \
 	go.etcd.io/etcd/client/pkg/v3								 v3.5.4 \
 	go.etcd.io/etcd/client/v3								 v3.5.4 \
@@ -765,6 +765,7 @@ MODGO_MODFILES =	\
 	github.com/alecthomas/units						 v0.0.0-20151022065526-2efee857e7cf \
 	github.com/alecthomas/units						 v0.0.0-20190717042225-c3de453c63f4 \
 	github.com/apparentlymart/go-cidr					 v1.0.1 \
+	github.com/apparentlymart/go-versions					 v1.0.1 \
 	github.com/armon/circbuf						 v0.0.0-20150827004946-bbbad097214e \
 	github.com/armon/go-radix						 v0.0.0-20180808171621-7fddfc383310 \
 	github.com/asaskevich/govalidator					 v0.0.0-20190424111038-f61b66f89f4a \
@@ -859,7 +860,6 @@ MODGO_MODFILES =	\
 	github.com/golang/mock							 v1.4.3 \
 	github.com/golang/mock							 v1.4.4 \
 	github.com/golang/mock							 v1.5.0 \
-	github.com/golang/protobuf						 v1.1.0 \
 	github.com/golang/protobuf						 v1.2.0 \
 	github.com/golang/protobuf						 v1.3.1 \
 	github.com/golang/protobuf						 v1.3.2 \
@@ -1069,7 +1069,6 @@ MODGO_MODFILES =	\
 	github.com/stretchr/testify						 v1.8.0 \
 	github.com/stretchr/testify						 v1.8.1 \
 	github.com/tencentcloud/tencentcloud-sdk-go/tencentcloud/common		 v1.0.194 \
-	github.com/vmihailenco/msgpack						 v3.3.3+incompatible \
 	github.com/yuin/goldmark						 v1.1.25 \
 	github.com/yuin/goldmark						 v1.1.27 \
 	github.com/yuin/goldmark						 v1.1.32 \
@@ -1167,7 +1166,6 @@ MODGO_MODFILES =	\
 	golang.org/x/mod							 v0.8.0 \
 	golang.org/x/net							 v0.0.0-20180530234432-1e491301e022 \
 	golang.org/x/net							 v0.0.0-20180724234803-3673e40ba225 \
-	golang.org/x/net							 v0.0.0-20180811021610-c39426892332 \
 	golang.org/x/net							 v0.0.0-20180826012351-8a410e7b638d \
 	golang.org/x/net							 v0.0.0-20180906233101-161cd47e91fd \
 	golang.org/x/net							 v0.0.0-20181114220301-adae6a3d119a \
