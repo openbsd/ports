@@ -3,6 +3,7 @@ ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.github/
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/
 ${GEM_LIB}/gems/${DISTNAME}/.github/workflows/ci.yml
+${GEM_LIB}/gems/${DISTNAME}/.gitignore
 ${GEM_LIB}/gems/${DISTNAME}/.rubocop.yml
 ${GEM_LIB}/gems/${DISTNAME}/.simplecov
 ${GEM_LIB}/gems/${DISTNAME}/AUTHORS
@@ -11,12 +12,18 @@ ${GEM_LIB}/gems/${DISTNAME}/Changelog.md
 ${GEM_LIB}/gems/${DISTNAME}/Gemfile
 ${GEM_LIB}/gems/${DISTNAME}/LICENSE
 ${GEM_LIB}/gems/${DISTNAME}/README.md
+${GEM_LIB}/gems/${DISTNAME}/Rakefile
 ${GEM_LIB}/gems/${DISTNAME}/TODO
+${GEM_LIB}/gems/${DISTNAME}/bin/
+${GEM_LIB}/gems/${DISTNAME}/bin/test
+${GEM_LIB}/gems/${DISTNAME}/doc/
+${GEM_LIB}/gems/${DISTNAME}/doc/.cvsignore
 ${GEM_LIB}/gems/${DISTNAME}/examples/
 ${GEM_LIB}/gems/${DISTNAME}/examples/ansi_colors.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/asking_for_arrays.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/basic_usage.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/color_scheme.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/custom_parser_custom_validator.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/get_character.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/limit.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/menus.rb
@@ -60,6 +67,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/highline/terminal/unix_stty.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/highline/version.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/highline/wrapper.rb
 ${GEM_LIB}/gems/${DISTNAME}/site/
+${GEM_LIB}/gems/${DISTNAME}/site/.cvsignore
 ${GEM_LIB}/gems/${DISTNAME}/site/highline.css
 ${GEM_LIB}/gems/${DISTNAME}/site/images/
 ${GEM_LIB}/gems/${DISTNAME}/site/images/logo.png

@@ -1,6 +1,6 @@
 COMMENT =		high-level IO library for Ruby
 
-DISTNAME =		highline-2.1.0
+DISTNAME =		highline-3.1.2
 CATEGORIES =		devel
 
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
