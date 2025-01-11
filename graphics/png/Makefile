@@ -1,6 +1,6 @@
 COMMENT=	library for manipulating PNG images
 
-VERSION=	1.6.44
+VERSION=	1.6.45
 DISTNAME=	libpng-${VERSION}
 PKGNAME=	png-${VERSION}
 CATEGORIES=	graphics
@@ -8,8 +8,8 @@ DPB_PROPERTIES=	parallel
 SITES=		${SITE_SOURCEFORGE:=libpng/}
 EXTRACT_SUFX=	.tar.xz
 
-SHARED_LIBS=	png	18.0 \
-		png16	18.0
+SHARED_LIBS=	png	18.1 \
+		png16	18.1
 
 HOMEPAGE=	http://www.libpng.org/pub/png/libpng.html
 
