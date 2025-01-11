@@ -5,7 +5,7 @@ GH_ACCOUNT =	HeapsIO
 GH_PROJECT =	hlsteam
 # checkout from 2022-03-22
 GH_COMMIT =	f774d8ea2b7255a3067254fde8d18063455dec24
-REVISION =	1
+REVISION =	2
 CATEGORIES =	games
 MAINTAINER =	Thomas Frohwein <thfr@openbsd.org>
 

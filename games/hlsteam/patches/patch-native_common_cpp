@@ -1,9 +1,21 @@
 match steam SDK 1.57 API
+supply is_user_logged_in (needed by some games using undisclosed forks)
 
 Index: native/common.cpp
 --- native/common.cpp.orig
 +++ native/common.cpp
-@@ -208,7 +208,7 @@ vdynamic *CallbackHandler::EncodeAuthSessionTicketResp
+@@ -172,6 +172,10 @@ HL_PRIM bool HL_NAME(is_steam_running)(){
+ 	return SteamAPI_IsSteamRunning();
+ }
+ 
++HL_PRIM bool HL_NAME(is_user_logged_in)(){
++	return (SteamUser() != nullptr);
++}
++
+ HL_PRIM vbyte *HL_NAME(get_current_game_language)(){
+ 	if (!CheckInit()) return NULL;
+ 	return (vbyte*)SteamApps()->GetCurrentGameLanguage();
+@@ -208,7 +212,7 @@ vdynamic *CallbackHandler::EncodeAuthSessionTicketResp
  
  HL_PRIM vbyte *HL_NAME(get_auth_ticket)( int *size, int *authTicket ) {
  	vbyte *ticket = hl_alloc_bytes(1024);
@@ -12,3 +24,8 @@ Index: native/common.cpp
  	return ticket;
  }
  
+@@ -351,3 +355,4 @@ DEFINE_PRIM(_BOOL, is_app_owned, _I32);
+ DEFINE_PRIM(_BOOL, is_subscribed, _NO_ARG);
+ DEFINE_PRIM(_BOOL, is_subscribed_from_family_sharing, _NO_ARG);
+ DEFINE_PRIM(_BOOL, is_subscribed_from_free_weekend, _NO_ARG);
++DEFINE_PRIM(_BOOL, is_user_logged_in, _NO_ARG);
