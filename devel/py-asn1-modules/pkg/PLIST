@@ -1,5 +1,5 @@
-@pkgpath devel/py-asn1-modules,python3
 @conflict py-asn1-modules-*
+@pkgpath devel/py-asn1-modules,python3
 bin/cmcdump.py
 bin/cmpdump.py
 bin/crldump.py
