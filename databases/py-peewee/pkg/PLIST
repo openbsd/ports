@@ -1,5 +1,5 @@
-@pkgpath databases/py-peewee,python3
 @conflict py-peewee-<2.8.3p4
+@pkgpath databases/py-peewee,python3
 bin/pwiz
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}peewee.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
