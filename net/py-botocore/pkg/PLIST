@@ -1372,17 +1372,6 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/iot/2015-05-28/endpoint-r
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot/2015-05-28/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot/2015-05-28/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot/2015-05-28/service-2.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/iot1click-devices/
-lib/python${MODPY_VERSION}/site-packages/botocore/data/iot1click-devices/2018-05-14/
-lib/python${MODPY_VERSION}/site-packages/botocore/data/iot1click-devices/2018-05-14/endpoint-rule-set-1.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/iot1click-devices/2018-05-14/paginators-1.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/iot1click-devices/2018-05-14/service-2.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/iot1click-projects/
-lib/python${MODPY_VERSION}/site-packages/botocore/data/iot1click-projects/2018-05-14/
-lib/python${MODPY_VERSION}/site-packages/botocore/data/iot1click-projects/2018-05-14/endpoint-rule-set-1.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/iot1click-projects/2018-05-14/examples-1.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/iot1click-projects/2018-05-14/paginators-1.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/iot1click-projects/2018-05-14/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iotanalytics/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iotanalytics/2017-11-27/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iotanalytics/2017-11-27/endpoint-rule-set-1.json
