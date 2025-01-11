@@ -1,9 +1,8 @@
 COMMENT =		object oriented paths
 
-MODPY_DISTV =	0.4.3
+MODPY_DISTV =		0.4.4
 DISTNAME =		pathable-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		devel
 
@@ -13,9 +12,9 @@ HOMEPAGE =		https://pypi.org/project/pathable/
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-
-MODPY_PI =		Yes
 MODPY_PYBUILD =		poetry-core
+MODPY_PI =		Yes
+
 NO_TEST =		Yes
 
 .include <bsd.port.mk>
