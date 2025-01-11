@@ -2,7 +2,7 @@ COMMENT-main =	distributed version control system
 COMMENT-svn =	subversion interoperability tools
 COMMENT-x11 =	graphical tools
 
-V =		2.47.1
+V =		2.48.0
 DISTNAME =	git-${V}
 CATEGORIES =	devel
 
@@ -112,6 +112,10 @@ TEST_ENV =		GIT_TEST_OPTS=${GIT_TEST_OPTS:Q} \
 
 # one expensive test needs explicit enabling
 TEST_ENV +=		GIT_TEST_CLONE_2GB=true
+
+# XXX with 2.48.0 'make fake' failed due to missing asiidoc.conf
+# add the target generating it for now
+ALL_TARGET =		all man
 
 post-extract:
 	@mkdir -p ${WRKSRC}/doc

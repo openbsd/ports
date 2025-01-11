@@ -419,7 +419,6 @@ share/emacs/site-lisp/git-blame.el
 share/emacs/site-lisp/git.el
 share/git-core/
 share/git-core/templates/
-share/git-core/templates/branches/
 share/git-core/templates/description
 share/git-core/templates/hooks/
 share/git-core/templates/hooks/applypatch-msg.sample
