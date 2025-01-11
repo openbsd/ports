@@ -38,7 +38,8 @@ MULTI_PACKAGES=		-main -python
 
 MODULES=		lang/python
 
-BUILD_DEPENDS=		graphics/ImageMagick
+BUILD_DEPENDS=		graphics/ImageMagick \
+			devel/py-setuptools
 RUN_DEPENDS-main=	graphics/ImageMagick
 LIB_DEPENDS-main=	devel/libgsf \
 			graphics/gd
