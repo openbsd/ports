@@ -1,6 +1,4 @@
-Stop hardcoding -mbranch-protection=pac-ret arm64, the compiler also
-needs to embed BTI instructions so that the program runs on a system
-with BTI support.
+Using -mbranch-protection=standard to build with BTI support on aarch64.
 
 Set correct shared library name.
 
@@ -10,15 +8,15 @@ so ports don't have to be bumped when OpenBSD version changes.
 Index: configure
 --- configure.orig
 +++ configure
-@@ -11017,7 +11017,7 @@ esac
+@@ -11057,7 +11057,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.b
+         if test "x$rb_cv_libunwind_broken_ra_signing" = "xno"
+ then :
  
-     # aarch64 branch protection
-     case "$target_cpu" in #(
--  aarch64|arm64) :
-+  disabled) :
+-            for opt in -mbranch-protection=pac-ret -msign-return-address=all
++            for opt in -mbranch-protection=standard -msign-return-address=all
+ do :
  
-         # LLVM libunwind is not actually capable of unwinding code compiled with pointer
-         # authentication unless it's built without LIBUNWIND_ENABLE_CROSS_UNWINDING (see
+                 # Try these flags in the _prepended_ position - i.e. we want to try building a program
 @@ -32280,7 +32280,7 @@ fi
  	 ;; #(
    openbsd*|mirbsd*) :
