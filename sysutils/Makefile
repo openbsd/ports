@@ -151,6 +151,7 @@
      SUBDIR += htop
      SUBDIR += hw-probe
      SUBDIR += idled
+     SUBDIR += idrac_exporter
      SUBDIR += incron
      SUBDIR += inotify-tools
      SUBDIR += iogen
