@@ -1,6 +1,6 @@
 COMMENT=		file manager for the MATE desktop
 
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS +=  caja-extension            5.0 # 5.0
 
@@ -11,17 +11,17 @@ CATEGORIES=		x11
 # LGPLv2/GFDLv1.1/GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext Xfixes Xi
-WANTLIB += Xinerama Xrandr Xrender atk-1.0 atk-bridge-2.0 c cairo
-WANTLIB += cairo-gobject dconf epoxy exempi exif expat ffi fontconfig
-WANTLIB += freetype fribidi gailutil-3 gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-3
-WANTLIB += harfbuzz iconv intl lzma m mate-desktop-2 notify pango-1.0
-WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png pthread
-WANTLIB += startup-notification-1 xcb xcb-render xcb-shm xcb-util xml2 z
-WANTLIB += ${COMPILER_LIBCXX} execinfo jpeg Xau Xdmcp
-WANTLIB += atspi dbus-1 epoll-shim wayland-client wayland-cursor
-WANTLIB += wayland-egl xkbcommon
+WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 X11-xcb Xau Xcomposite
+WANTLIB += Xcursor Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr
+WANTLIB += Xrender atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
+WANTLIB += dbus-1 dconf epoll-shim epoxy exempi exif expat ffi
+WANTLIB += fontconfig freetype fribidi gailutil-3 gdk-3 gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += gthread-2.0 gtk-3 gtk-layer-shell harfbuzz iconv intl
+WANTLIB += jpeg lzma m mate-desktop-2 notify pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png startup-notification-1
+WANTLIB += wayland-client wayland-cursor wayland-egl xcb xcb-render
+WANTLIB += xcb-shm xcb-util xkbcommon xml2 z
 
 MODULES=		devel/dconf \
 			x11/gnome
@@ -31,6 +31,7 @@ RUN_DEPENDS=		x11/gnome/gvfs
 LIB_DEPENDS=		devel/libnotify \
 			graphics/libexif \
 			textproc/exempi \
+			wayland/gtk-layer-shell \
 			x11/mate/desktop
 
 MODGNOME_TOOLS=		shared-mime-info gobject-introspection \
