@@ -1,3 +1,5 @@
+USE_NOBTCFI-aarch64 =	Yes# fortran
+
 # XXX there are a couple of maintained forks:
 # https://sourceforge.net/projects/nufraw/
 # https://github.com/sergiomb2/ufraw
@@ -5,7 +7,7 @@
 COMMENT=	read and manipulate raw images from digital cameras
 
 DISTNAME=	ufraw-0.22
-REVISION=	9
+REVISION=	10
 
 CATEGORIES=	graphics
 SITES=		${SITE_SOURCEFORGE:=ufraw/}

@@ -1,3 +1,5 @@
+USE_NOBTCFI-aarch64 =	Yes# fortran
+
 COMMENT=	GNU Image Manipulation Program
 
 # needs newer librsvg
@@ -6,7 +8,7 @@ ONLY_FOR_ARCHS=	${RUST_ARCHS}
 V=		3.0
 DISTNAME=	gimp-${V}.0-RC1
 PKGNAME =	gimp-${V}.0rc1
-REVISION =	0
+REVISION =	1
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets gimp-scriptfu

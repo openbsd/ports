@@ -1,7 +1,9 @@
+USE_NOBTCFI-aarch64 =	Yes# fortran
+
 COMMENT =	GNU Astronomy Utilities
 DISTNAME =	gnuastro-0.18
 CATEGORIES =	astro
-REVISION =	3
+REVISION =	4
 
 SHARED_LIBS +=	gnuastro                  3.1 # 16.0
 

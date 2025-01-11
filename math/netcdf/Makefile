@@ -1,10 +1,12 @@
+USE_NOBTCFI-aarch64 =	Yes# fortran
+
 COMMENT=	library for machine-independent, array-oriented data access
 
 V=		4.9.2
 NAME=		netcdf
 DISTNAME=	${NAME}-c-${V}
 PKGNAME=	${NAME}-${V}
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	math
 

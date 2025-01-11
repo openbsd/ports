@@ -1,6 +1,9 @@
+USE_NOBTCFI-aarch64 =	Yes# fortran
+
 COMMENT =	KDE image viewer
 DISTNAME =	gwenview-${VERSION}
 CATEGORIES =	graphics x11
+REVISION =	0
 
 SHARED_LIBS +=  gwenviewlib               60.0 # 4.97
 

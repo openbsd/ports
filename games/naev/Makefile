@@ -1,25 +1,29 @@
+USE_NOBTCFI-aarch64 =	Yes# fortran
+
 # Requires OpenGL>=3.2
-ONLY_FOR_ARCHS = 	aarch64 amd64 i386
+ONLY_FOR_ARCHS =	aarch64 amd64 i386
 
 COMMENT-main =		2D space trading and combat game
 COMMENT-data =		naev game data
 
-V = 			0.11.5
+V =			0.11.5
 DISTNAME =		naev-${V}-source
-PKGNAME = 		naev-${V}
-REVISION =		1
+PKGNAME =		naev-${V}
 
-CATEGORIES = 		games x11
+REVISION-data =		2
+REVISION-main =		3
 
-HOMEPAGE = 		https://naev.org/
+CATEGORIES =		games x11
 
-MAINTAINER = 		Kirill Bychkov <kirby@openbsd.org>
+HOMEPAGE =		https://naev.org/
+
+MAINTAINER =		Kirill Bychkov <kirby@openbsd.org>
 
 # GPLv3, GPLv2+, CC-by, CC-by-sa 3.0
-PERMIT_PACKAGE = 	Yes
+PERMIT_PACKAGE =	Yes
 
-SITES =          	https://github.com/naev/naev/releases/download/v${V}/
-EXTRACT_SUFX = 		.tar.xz
+SITES =			https://github.com/naev/naev/releases/download/v${V}/
+EXTRACT_SUFX =		.tar.xz
 
 WANTLIB-main += SDL2 SDL2_image c cblas cholmod cxsparse freetype glpk
 WANTLIB-main += m openal physfs unibreak vorbis vorbisfile xml2 pcre2-8
@@ -28,7 +32,7 @@ WANTLIB-data =
 
 MODULES =		devel/meson lang/lua\
 			textproc/intltool
-BUILD_DEPENDS = 	textproc/py-yaml \
+BUILD_DEPENDS =		textproc/py-yaml \
 			devel/appstream,-main \
 			devel/gettext,-tools
 LIB_DEPENDS-main =	audio/libvorbis \
@@ -52,13 +56,13 @@ CONFIGURE_ARGS +=	-Ddocs_c=disabled \
 			-Dluajit=disabled \
 			-Dblas=cblas
 
-CONFIGURE_ENV += 	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
+CONFIGURE_ENV +=	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib -pthread"
 
-MULTI_PACKAGES = 	-main -data
+MULTI_PACKAGES =	-main -data
 
-PKG_ARCH-data = 	*
+PKG_ARCH-data =	*
 
-WRKDIST = 		${WRKDIR}/${DISTNAME:S/-source//}
+WRKDIST =		${WRKDIR}/${DISTNAME:S/-source//}
 
 .include <bsd.port.mk>

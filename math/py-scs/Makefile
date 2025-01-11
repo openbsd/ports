@@ -1,3 +1,5 @@
+USE_NOBTCFI-aarch64 =	Yes# fortran
+
 BROKEN = needs updating and/or adapting to work with newer numpy.
 # if sticking with 2.1.1-2, the version number in setup.py needs patching
 # to a valid format; probably simpler to update to a newer 2.x than that
@@ -5,12 +7,12 @@ BROKEN = needs updating and/or adapting to work with newer numpy.
 
 COMMENT =		Python interface to SCS
 
-MODPY_DISTV =	2.1.1-2
+MODPY_DISTV =		2.1.1-2
 DISTNAME =		scs-${MODPY_DISTV}
 V =			${MODPY_DISTV:S/-/./}
 PKGNAME =		py-scs-${V}
 CATEGORIES =		math
-REVISION =		9
+REVISION =		10
 
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 

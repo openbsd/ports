@@ -1,10 +1,12 @@
+USE_NOBTCFI-aarch64 =	Yes# fortran
+
 COMMENT=	Python package to manage extremely large amounts of data
 
 MODPY_DISTV=	3.10.1
-DISTNAME=		tables-${MODPY_DISTV}
-PKGNAME=		py-${DISTNAME}
-CATEGORIES=		math
-REVISION=		1
+DISTNAME=	tables-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
+CATEGORIES=	math
+REVISION=	2
 
 HOMEPAGE=	https://www.pytables.org/
 MAINTAINER=	Martin Reindl <martin@catai.org>
@@ -15,7 +17,7 @@ PERMIT_PACKAGE=	Yes
 COMPILER=	base-clang ports-gcc
 
 MODULES=	lang/python
-MODPY_PYBUILD =	setuptools
+MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 
 WANTLIB=	blosc blosc2 bz2 hdf5 lzo2

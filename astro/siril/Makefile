@@ -1,10 +1,12 @@
-COMMENT = 	astronomical image processing tool
+USE_NOBTCFI-aarch64 =	Yes# fortran
 
-DISTNAME = 	siril-1.0.6
-REVISION =	0
+COMMENT =	astronomical image processing tool
 
-CATEGORIES = 	astro
-HOMEPAGE = 	https://siril.org/
+DISTNAME =	siril-1.0.6
+REVISION =	1
+
+CATEGORIES =	astro
+HOMEPAGE =	https://siril.org/
 
 # GPLv3+/boost
 PERMIT_PACKAGE = Yes
@@ -20,17 +22,17 @@ WANTLIB += opencv_stitching opencv_video opencv_videoio pango-1.0
 WANTLIB += pangocairo-1.0 png raw swresample swscale tiff
 WANTLIB += rtprocess wcs kplot
 
-SITES = 	https://free-astro.org/download/
+SITES =	https://free-astro.org/download/
 EXTRACT_SUFX = .tar.bz2
 
 # follow opencv to be safe
-COMPILER = 	base-clang ports-gcc
+COMPILER =	base-clang ports-gcc
 
-MODULES = 	devel/meson
+MODULES =	devel/meson
 
 BUILD_DEPENDS = devel/gettext,-tools
 
-LIB_DEPENDS = 	astro/wcslib \
+LIB_DEPENDS =	astro/wcslib \
 		devel/gsl \
 		devel/libconfig \
 		devel/json-glib \

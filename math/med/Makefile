@@ -1,7 +1,10 @@
+USE_NOBTCFI-aarch64 =	Yes# fortran
+
 COMMENT =		library for reading and writing MED files
 
 V =			5.0.0
 PKGNAME =		med-${V}
+REVISION =		0
 
 # Official sources site seems down:
 # https://files.salome-platform.org/Salome/medfile/med-${V}.tar.bz2

@@ -1,3 +1,5 @@
+USE_NOBTCFI-aarch64 =	Yes# fortran
+
 COMMENT =	mesh data abstration library
 
 GH_ACCOUNT=	lutraconsulting
@@ -5,6 +7,7 @@ GH_PROJECT =	MDAL
 GH_TAGNAME =	release-1.3.0
 
 PKGNAME =	${GH_PROJECT:L}-${GH_TAGNAME:S/release-//}
+REVISION =	0
 
 SHARED_LIBS =	mdal 10.0
 

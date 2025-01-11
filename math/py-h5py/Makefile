@@ -1,10 +1,12 @@
+USE_NOBTCFI-aarch64 =	Yes# fortran
+
 COMMENT =	pythonic interface to the HDF5 binary data format
 
 MODPY_DISTV =	3.12.1
 DISTNAME =		h5py-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://www.h5py.org/
 MAINTAINER =		Martin Reindl <martin@catai.org>
@@ -16,7 +18,7 @@ COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
 MODULES =		lang/python
-MODPY_PYBUILD =	setuptools
+MODPY_PYBUILD =		setuptools
 MODPY_PI =		Yes
 
 WANTLIB =	hdf5 hdf5_hl

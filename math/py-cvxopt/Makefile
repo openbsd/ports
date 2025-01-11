@@ -1,7 +1,9 @@
+USE_NOBTCFI-aarch64 =	Yes# fortran
+
 COMMENT =		convex optimization package
 
-MODPY_DISTV =	1.3.0
-REVISION =		4
+MODPY_DISTV =		1.3.0
+REVISION =		5
 DISTNAME =		cvxopt-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math

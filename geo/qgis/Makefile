@@ -1,3 +1,5 @@
+USE_NOBTCFI-aarch64 =	Yes# fortran
+
 USE_WXNEEDED =	Yes
 
 BROKEN-sparc64 =	undefined reference to QOpenGLExtension_ARB_tessellation_shader::QOpenGLExtension_ARB_tessellation_shader() in libQt53DRender.so.2.0 when linking qgis_3drenderingtest
@@ -10,7 +12,7 @@ DISTNAME =	qgis-3.40.2
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS =	qgis_core	79.0 \
 		qgis_app	51.0 \

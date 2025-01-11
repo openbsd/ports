@@ -1,7 +1,7 @@
 COMMENT =	data visualization and analysis software
 
 DISTNAME =	labplot-2.11.1
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	math x11
 
@@ -11,6 +11,7 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 # luajit (via cantorlibs)
 USE_NOBTCFI =	Yes
+USE_NOBTCFI-aarch64 =	Yes# fortran
 
 # LGPL, GPL and many others
 PERMIT_PACKAGE =	Yes

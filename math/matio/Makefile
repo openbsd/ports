@@ -1,8 +1,11 @@
+USE_NOBTCFI-aarch64 =	Yes# fortran
+
 COMMENT=	library for reading and writing Matlab MAT files
 
 DISTNAME=	matio-1.5.23
 SHARED_LIBS=	matio	3.2      # 11.4
 CATEGORIES=	math
+REVISION=	0
 
 HOMEPAGE=	https://sourceforge.net/projects/matio/
 

@@ -1,10 +1,12 @@
+USE_NOBTCFI-aarch64 =	Yes# fortran
+
 COMMENT = 	C++ library for scientific computing
 DISTNAME = 	armadillo-9.900.4
 SHARED_LIBS = 	armadillo 3.1	# 9.900.4
 CATEGORIES = 	math
 HOMEPAGE = 	https://arma.sourceforge.net/
 MAINTAINER =	Marc Espie <espie@openbsd.org>
-REVISION =	1
+REVISION =	2
 
 # MPL v2
 PERMIT_PACKAGE = Yes
