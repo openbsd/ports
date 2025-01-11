@@ -1,3 +1,6 @@
+# may need to add others; build uses esbuild node module, which is not MI
+NOT_FOR_ARCHS=	i386
+
 COMMENT=	Zigbee to MQTT bridge
 
 V=		2.0.0
