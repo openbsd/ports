@@ -2,8 +2,9 @@ COMMENT=	light-weight, simple and fast XML parser for C++
 
 V=		1.15
 DISTNAME=	pugixml-$V
+REVISION=	0
 
-SHARED_LIBS +=	pugixml                   1.2
+SHARED_LIBS +=	pugixml                   1.3
 
 CATEGORIES=	textproc devel
 
@@ -14,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += m ${COMPILER_LIBCXX}
 
-COMPILER =	base-clang ports-gcc
+COMPILER=	base-clang ports-gcc
 
 SITES=		https://github.com/zeux/pugixml/releases/download/v$V/
 
