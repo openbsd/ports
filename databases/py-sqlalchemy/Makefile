@@ -1,9 +1,8 @@
 COMMENT=	database toolkit for Python
 
-MODPY_DISTV=	2.0.36
+MODPY_DISTV=	2.0.37
 DISTNAME=	sqlalchemy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	databases
 
