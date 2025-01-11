@@ -1,7 +1,7 @@
 COMMENT =		c++ protocol buffers
 
 CPPMAJOR =		5
-PROTOBUF_VERSION =	29.2
+PROTOBUF_VERSION =	29.3
 V =			${CPPMAJOR}.${PROTOBUF_VERSION}
 TAG =			v${PROTOBUF_VERSION:S/rc-/rc/}
 DISTNAME =		protobuf-${PROTOBUF_VERSION}
@@ -72,8 +72,5 @@ NO_TEST =		Yes
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/google/protobuf/compiler/command_line_interface.cc
-
-post-install:
-	${INSTALL_DATA}	${WRKSRC}/go/go_features.proto ${PREFIX}/include/google/protobuf
 
 .include <bsd.port.mk>

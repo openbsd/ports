@@ -213,6 +213,7 @@ include/google/protobuf/io/zero_copy_sink.h
 include/google/protobuf/io/zero_copy_stream.h
 include/google/protobuf/io/zero_copy_stream_impl.h
 include/google/protobuf/io/zero_copy_stream_impl_lite.h
+include/google/protobuf/java_features.proto
 include/google/protobuf/json/
 include/google/protobuf/json/internal/
 include/google/protobuf/json/internal/descriptor_traits.h
@@ -286,14 +287,6 @@ include/google/protobuf/wire_format.h
 include/google/protobuf/wire_format_lite.h
 include/google/protobuf/wrappers.pb.h
 include/google/protobuf/wrappers.proto
-include/java/
-include/java/core/
-include/java/core/src/
-include/java/core/src/main/
-include/java/core/src/main/resources/
-include/java/core/src/main/resources/google/
-include/java/core/src/main/resources/google/protobuf/
-include/java/core/src/main/resources/google/protobuf/java_features.proto
 include/upb/
 include/upb/base/
 include/upb/base/descriptor_constants.h
