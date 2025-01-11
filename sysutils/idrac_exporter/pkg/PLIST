@@ -1,0 +1,12 @@
+@newgroup _idrac-exporter:540
+@newuser _idrac-exporter:540:_idrac-exporter::Prometheus idrac_exporter:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/idrac_exporter
+@bin bin/idrac_exporter
+share/examples/idrac_exporter/
+share/examples/idrac_exporter/sample-config.yml
+@sample ${SYSCONFDIR}/prometheus/
+@group _idrac-exporter
+@mode 640
+@sample ${SYSCONFDIR}/prometheus/idrac.yml
+@mode
+@group

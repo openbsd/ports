@@ -1,0 +1,12 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/idrac_exporter"
+daemon_flags=""
+daemon_user="_idrac-exporter"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1

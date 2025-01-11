@@ -1,0 +1,4 @@
+This is a simple iDRAC (and iLO and XClarity) exporter for Prometheus.
+The exporter uses the Redfish API to communicate with iDRAC and it
+supports the regular /metrics endpoint to expose metrics from the
+host passed via the target parameter.
