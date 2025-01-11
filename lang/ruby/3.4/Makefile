@@ -5,6 +5,7 @@ PKGNAME-ri_docs =	ruby${BINREV}-ri_docs-${VERSION}
 SHARED_LIBS =		ruby34	0.0
 NEXTVER =		3.5
 PKGSPEC-main ?=         ruby->=3.4.0,<${NEXTVER}
+REVISION-main =		0
 
 PSEUDO_FLAVORS=		no_ri_docs bootstrap
 # Do not build the RI docs on slow arches
@@ -19,6 +20,11 @@ FLAVOR?=
 MODULES +=		lang/rust
 WANTLIB-main +=		c++abi
 MAKE_ENV +=		LIBRUBY_DLDFLAGS="-lc++abi"
+.endif
+
+.if ${MACHINE_ARCH:Maarch64}
+# Disable YJIT on arm64 until it is fixed
+CONFIGURE_ARGS +=	--disable-yjit
 .endif
 
 .if ${MACHINE_ARCH:Mriscv64}
