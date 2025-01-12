@@ -648,10 +648,13 @@
      SUBDIR += rtorrent
      SUBDIR += ruby-cbor,ruby32
      SUBDIR += ruby-cbor,ruby33
+     SUBDIR += ruby-cbor,ruby34
      SUBDIR += ruby-eventmachine,ruby32
      SUBDIR += ruby-eventmachine,ruby33
+     SUBDIR += ruby-eventmachine,ruby34
      SUBDIR += ruby-msgpack,ruby32
      SUBDIR += ruby-msgpack,ruby33
+     SUBDIR += ruby-msgpack,ruby34
      SUBDIR += ruby-net-telnet
      SUBDIR += ruby-public_suffix
      SUBDIR += sacc
