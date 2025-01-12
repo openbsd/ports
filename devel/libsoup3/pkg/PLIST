@@ -180,6 +180,11 @@ share/doc/libsoup-${API_VERSION}/enum.WebsocketState.html
 share/doc/libsoup-${API_VERSION}/error.SessionError.html
 share/doc/libsoup-${API_VERSION}/error.TLDError.html
 share/doc/libsoup-${API_VERSION}/error.WebsocketError.html
+share/doc/libsoup-${API_VERSION}/favicon-16x16.png
+share/doc/libsoup-${API_VERSION}/favicon-180x180.png
+share/doc/libsoup-${API_VERSION}/favicon-192x192.png
+share/doc/libsoup-${API_VERSION}/favicon-32x32.png
+share/doc/libsoup-${API_VERSION}/favicon.ico
 share/doc/libsoup-${API_VERSION}/flags.Cacheability.html
 share/doc/libsoup-${API_VERSION}/flags.Expectation.html
 share/doc/libsoup-${API_VERSION}/flags.MessageFlags.html
