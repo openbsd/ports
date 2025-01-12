@@ -13,6 +13,10 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/commonmarker.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/commonmarker/config.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/commonmarker/constants.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/commonmarker/extension.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/commonmarker/node/
+${GEM_LIB}/gems/${DISTNAME}/lib/commonmarker/node.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/commonmarker/node/ast.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/commonmarker/node/inspect.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/commonmarker/renderer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/commonmarker/utils.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/commonmarker/version.rb
