@@ -1,0 +1,47 @@
+XXX REVERT:
+From fe7cc1d4cd57ee188e4676b65bbef367b1201118 Mon Sep 17 00:00:00 2001
+From: Matthias Clasen <mclasen@redhat.com>
+Date: Tue, 26 Nov 2024 21:15:30 -0500
+Subject: [PATCH] Rewrite pango_fc_is_supported_font_format
+
+Index: pango/pangofc-fontmap.c
+--- pango/pangofc-fontmap.c.orig
++++ pango/pangofc-fontmap.c
+@@ -1092,22 +1092,29 @@ static gboolean
+ pango_fc_is_supported_font_format (FcPattern* pattern)
+ {
+   FcResult res;
++  const char *fontformat;
+   const char *file;
+-  const char *fontwrapper;
+ 
+-  /* Patterns without FC_FILE are problematic, since our caching is based
+-   * on filenames.
+-   */
++  /* Harfbuzz loads woff fonts, but we don't get any glyphs */
+   res = FcPatternGetString (pattern, FC_FILE, 0, (FcChar8 **)(void*)&file);
+-  if (res != FcResultMatch)
++  if (res == FcResultMatch &&
++      (g_str_has_suffix (file, ".woff") ||
++       g_str_has_suffix (file, ".woff2")))
+     return FALSE;
+ 
+-  /* Harfbuzz supports only SFNT fonts. */
+-  res = FcPatternGetString (pattern, FC_FONT_WRAPPER, 0, (FcChar8 **)(void*)&fontwrapper);
++  res = FcPatternGetString (pattern, FC_FONTFORMAT, 0, (FcChar8 **)(void*)&fontformat);
+   if (res != FcResultMatch)
+     return FALSE;
+ 
+-  return strcmp (fontwrapper, "SFNT") == 0;
++  /* Harfbuzz supports only SFNT fonts. */
++  /* FIXME: "CFF" is used for both CFF in OpenType and bare CFF files, but
++   * HarfBuzz does not support the later and FontConfig does not seem
++   * to have a way to tell them apart.
++   */
++  if (g_ascii_strcasecmp (fontformat, "TrueType") == 0 ||
++      g_ascii_strcasecmp (fontformat, "CFF") == 0)
++    return TRUE;
++  return FALSE;
+ }
+ 
+ static FcFontSet *
