@@ -1,6 +1,6 @@
 COMMENT=		Ruby interface to the Tk graphical toolkit
 
-DISTNAME=		tk-0.5.0
+DISTNAME=		tk-0.5.1
 CATEGORIES=		x11
 
 HOMEPAGE=		https://github.com/ruby/tk
