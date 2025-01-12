@@ -2,12 +2,15 @@
 NOT_FOR_ARCHS =		sparc64
 
 COMMENT =		fast, encrypted, deduplicated backups
+REVISION =		0
 
 DIST_TUPLE =		github rustic-rs rustic v0.9.5 .
 
 CATEGORIES =		sysutils
 
 MAINTAINER =		Bjorn Ketelaars <bket@openbsd.org>
+
+HOMEPAGE =		https://rustic.cli.rs
 
 # Apache-2.0 / MIT
 PERMIT_PACKAGE =	Yes
