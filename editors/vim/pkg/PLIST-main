@@ -148,6 +148,7 @@ share/vim/${P}/colors/zellner.vim
 share/vim/${P}/compiler/
 share/vim/${P}/compiler/README.txt
 share/vim/${P}/compiler/ant.vim
+share/vim/${P}/compiler/bash.vim
 share/vim/${P}/compiler/bcc.vim
 share/vim/${P}/compiler/bdf.vim
 share/vim/${P}/compiler/cargo.vim
@@ -594,7 +595,7 @@ share/vim/${P}/ftplugin/java.vim
 share/vim/${P}/ftplugin/javacc.vim
 share/vim/${P}/ftplugin/javascript.vim
 share/vim/${P}/ftplugin/javascriptreact.vim
-share/vim/${P}/ftplugin/jj.vim
+share/vim/${P}/ftplugin/jjdescription.vim
 share/vim/${P}/ftplugin/jproperties.vim
 share/vim/${P}/ftplugin/jq.vim
 share/vim/${P}/ftplugin/json.vim
@@ -622,6 +623,8 @@ share/vim/${P}/ftplugin/liquid.vim
 share/vim/${P}/ftplugin/lisp.vim
 share/vim/${P}/ftplugin/livebook.vim
 share/vim/${P}/ftplugin/llvm.vim
+share/vim/${P}/ftplugin/lnk.vim
+share/vim/${P}/ftplugin/lnkmap.vim
 share/vim/${P}/ftplugin/logcheck.vim
 share/vim/${P}/ftplugin/loginaccess.vim
 share/vim/${P}/ftplugin/logindefs.vim
@@ -746,6 +749,7 @@ share/vim/${P}/ftplugin/setserial.vim
 share/vim/${P}/ftplugin/sexplib.vim
 share/vim/${P}/ftplugin/sgml.vim
 share/vim/${P}/ftplugin/sh.vim
+share/vim/${P}/ftplugin/shaderslang.vim
 share/vim/${P}/ftplugin/sieve.vim
 share/vim/${P}/ftplugin/slint.vim
 share/vim/${P}/ftplugin/slpconf.vim
@@ -781,6 +785,7 @@ share/vim/${P}/ftplugin/tex.vim
 share/vim/${P}/ftplugin/text.vim
 share/vim/${P}/ftplugin/tf.vim
 share/vim/${P}/ftplugin/thrift.vim
+share/vim/${P}/ftplugin/tiasm.vim
 share/vim/${P}/ftplugin/tidy.vim
 share/vim/${P}/ftplugin/tmux.vim
 share/vim/${P}/ftplugin/toml.vim
@@ -1359,6 +1364,7 @@ share/vim/${P}/syntax/cl.vim
 share/vim/${P}/syntax/clean.vim
 share/vim/${P}/syntax/clipper.vim
 share/vim/${P}/syntax/clojure.vim
+share/vim/${P}/syntax/cmacro.vim
 share/vim/${P}/syntax/cmake.vim
 share/vim/${P}/syntax/cmakecache.vim
 share/vim/${P}/syntax/cmod.vim
@@ -1568,7 +1574,7 @@ share/vim/${P}/syntax/javascriptreact.vim
 share/vim/${P}/syntax/jess.vim
 share/vim/${P}/syntax/jgraph.vim
 share/vim/${P}/syntax/jinja.vim
-share/vim/${P}/syntax/jj.vim
+share/vim/${P}/syntax/jjdescription.vim
 share/vim/${P}/syntax/jovial.vim
 share/vim/${P}/syntax/jproperties.vim
 share/vim/${P}/syntax/jq.vim
@@ -1607,6 +1613,8 @@ share/vim/${P}/syntax/lisp.vim
 share/vim/${P}/syntax/lite.vim
 share/vim/${P}/syntax/litestep.vim
 share/vim/${P}/syntax/livebook.vim
+share/vim/${P}/syntax/lnk.vim
+share/vim/${P}/syntax/lnkmap.vim
 share/vim/${P}/syntax/loginaccess.vim
 share/vim/${P}/syntax/logindefs.vim
 share/vim/${P}/syntax/logtalk.vim
@@ -1833,6 +1841,7 @@ share/vim/${P}/syntax/sgml.vim
 share/vim/${P}/syntax/sgmldecl.vim
 share/vim/${P}/syntax/sgmllnx.vim
 share/vim/${P}/syntax/sh.vim
+share/vim/${P}/syntax/shaderslang.vim
 share/vim/${P}/syntax/shared/
 share/vim/${P}/syntax/shared/README.txt
 share/vim/${P}/syntax/shared/context-data-context.vim
@@ -1931,6 +1940,7 @@ share/vim/${P}/syntax/texinfo.vim
 share/vim/${P}/syntax/texmf.vim
 share/vim/${P}/syntax/tf.vim
 share/vim/${P}/syntax/thrift.vim
+share/vim/${P}/syntax/tiasm.vim
 share/vim/${P}/syntax/tidy.vim
 share/vim/${P}/syntax/tilde.vim
 share/vim/${P}/syntax/tli.vim
