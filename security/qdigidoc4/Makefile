@@ -1,10 +1,9 @@
 COMMENT =		DigiDoc4 GUI client for signing and encrypting documents
 
 PORTROACH =		skipv:4.6.1	# Windows-only
-V =			4.6.0
+V =			4.7.0
 DISTNAME =		qdigidoc4-${V}
 CATEGORIES =		security x11
-REVISION =		1
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
@@ -15,14 +14,11 @@ PERMIT_PACKAGE =	Yes
 
 DIST_SUBDIR =		qdigidoc4
 SITES =			https://github.com/open-eid/DigiDoc4-Client/releases/download/v${V}/
-DISTFILES =		new-{}${DISTNAME}${EXTRACT_SUFX}
-# .tar.gz asset is an uncompressed tar archive, qdigidoc4_4.6.0.4458-2004.tar.xz
-# is slightly different, at least in (inner directory) name
-# 
-EXTRACT_ONLY =		${DISTFILES:S/{}//}
+# .tar.gz asset is an uncompressed tar archive
+EXTRACT_ONLY =		${DISTFILES}
 
 SITES.eesti =		https://id.eesti.ee/
-CONFIG_NAME =		config-20241021071615Z
+CONFIG_NAME =		config-20241210110015Z
 # need to be in sync due to CONFIG_URL handling
 .for _suffix in json pub rsa
 DISTFILES.eesti +=	${CONFIG_NAME}{config}.${_suffix}
@@ -31,8 +27,8 @@ DISTFILES.eesti +=	${CONFIG_NAME}{config}.${_suffix}
 CONFIGURE_ENV +=	CONFIG_URL=file://${FULLDISTDIR}/${CONFIG_NAME}.json
 
 SITES.eu =		https://ec.europa.eu/tools/lotl/
-DISTFILES.eu =		eu-lotl-pivot-300.xml
-CONFIGURE_ENV +=	TSL_URL=file://${FULLDISTDIR}/eu-lotl-pivot-300.xml
+DISTFILES.eu =		eu-lotl.xml
+CONFIGURE_ENV +=	TSL_URL=file://${FULLDISTDIR}/${DISTFILES.eu}
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
@@ -47,7 +43,7 @@ BUILD_DEPENDS =		devel/gettext,-tools
 
 LIB_DEPENDS =		devel/flatbuffers \
 			databases/openldap,-main \
-			security/libdigidocpp>=4.0.0 \
+			security/libdigidocpp>=4.1.0 \
 			security/pcsc-lite \
 			x11/qt6/qtsvg
 

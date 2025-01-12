@@ -111,6 +111,7 @@ share/kservices5/
 share/kservices5/qdigidoc-signer.desktop
 share/locale/et/LC_MESSAGES/nautilus-qdigidoc.mo
 share/locale/ru/LC_MESSAGES/nautilus-qdigidoc.mo
+share/metainfo/ee.ria.qdigidoc4.metainfo.xml
 share/mime/packages/qdigidoc4.xml
 share/nautilus-python/
 share/nautilus-python/extensions/
