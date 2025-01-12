@@ -1,11 +1,10 @@
 COMMENT =		library for creating DigiDoc signature files
 
-V =			4.0.0
+V =			4.1.0
 DISTNAME =		libdigidocpp-${V}
 CATEGORIES =		security
-REVISION =		0
 
-SHARED_LIBS =		digidocpp	5.0	# 0.0
+SHARED_LIBS =		digidocpp	6.0
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
@@ -15,6 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 HOMEPAGE =		https://www.id.ee/
 SITES =			https://github.com/open-eid/libdigidocpp/releases/download/v${V}/
+# .tar.gz is an uncompressed tar archive
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
