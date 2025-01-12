@@ -4,6 +4,9 @@ GH_ACCOUNT=	neomutt
 GH_PROJECT=	neomutt
 GH_TAGNAME=	20250109
 
+DIST_TUPLE=	github neomutt neomutt-test-files \
+		7404f4423b11cd5da2d123b3636c7a310bbbed9f neomutt-test-files
+
 CATEGORIES=	mail
 HOMEPAGE=	https://neomutt.org/
 
@@ -50,6 +53,8 @@ CONFIGURE_ENV=	autosetup_tclsh="${LOCALBASE}/bin/jimsh" \
 
 SYSCONFDIR=	${BASESYSCONFDIR}/mutt
 FAKE_FLAGS=	sysconfdir="${PREFIX}/share/examples/neomutt"
+TEST_FLAGS=	NEOMUTT_TEST_DIR=${WRKSRC}/neomutt-test-files
+FIX_CLEANUP_PERMISSIONS= Yes
 
 .if ${FLAVOR:Mgpgme}
 CONFIGURE_ARGS+= --autocrypt \
@@ -78,5 +83,8 @@ LIB_DEPENDS+=  databases/kyotocabinet
 WANTLIB+=      kyotocabinet
 CONFIGURE_ARGS+= --kyotocabinet
 .endif
+
+pre-test:
+	cd ${WRKSRC}/neomutt-test-files; ./setup.sh
 
 .include <bsd.port.mk>
