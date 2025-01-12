@@ -1,8 +1,7 @@
 COMMENT=	GNU debugger
 CATEGORIES=	devel
 
-DISTNAME=	gdb-13.2
-REVISION=	8
+DISTNAME=	gdb-15.2
 
 HOMEPAGE=	https://www.gnu.org/software/gdb/
 
@@ -19,7 +18,7 @@ EXTRACT_SUFX=	.tar.xz
 MODGNU_CONFIG_GUESS_DIRS=	${WRKSRC} ${WRKSRC}/gdb
 
 WANTLIB += ${MODPY_WANTLIB} ${COMPILER_LIBCXX}
-WANTLIB += c curses expat gmp kvm iconv intl m pthread util z zstd
+WANTLIB += c curses expat gmp kvm iconv intl m mpfr pthread util z zstd
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
@@ -35,16 +34,16 @@ CONFIGURE_ARGS=	--program-prefix=e \
 		--without-guile \
 		--without-isl \
 		--without-lzma \
-		--without-mpc \
-		--without-mpfr \
 		--with-libgmp-type=shared \
 		--with-auto-load-dir=${TRUEPREFIX}/share/gdb/auto-load \
 		--enable-targets=all \
 		--with-python=${MODPY_BIN} \
 		--with-system-zlib
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
 
 USE_GMAKE=	Yes
-MAKE_FLAGS=	V=1 LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
+MAKE_FLAGS=	V=1
 # Avoid using malloc replacement for no good reason
 MAKE_ENV=	gl_cv_malloc_ptrdiff=yes
 
@@ -53,7 +52,8 @@ MODULES +=	lang/python
 BUILD_DEPENDS =	sysutils/xxhash
 LIB_DEPENDS +=	${MODPY_LIB_DEPENDS} \
 		archivers/zstd \
-		devel/gmp,-main
+		devel/gmp,-main \
+		devel/mpfr
 TEST_DEPENDS +=	devel/dejagnu
 
 post-install:

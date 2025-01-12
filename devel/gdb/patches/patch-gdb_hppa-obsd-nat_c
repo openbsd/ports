@@ -4,7 +4,7 @@ Fix build (undefined variable).
 Index: gdb/hppa-obsd-nat.c
 --- gdb/hppa-obsd-nat.c.orig
 +++ gdb/hppa-obsd-nat.c
-@@ -196,7 +196,7 @@ hppaobsd_collect_fpregset (struct regcache *regcache,
+@@ -195,7 +195,7 @@ hppaobsd_collect_fpregset (struct regcache *regcache,
  void
  hppa_obsd_nat_target::fetch_registers (struct regcache *regcache, int regnum)
  {
@@ -13,7 +13,7 @@ Index: gdb/hppa-obsd-nat.c
  
    if (regnum == -1 || hppaobsd_gregset_supplies_p (regnum))
      {
-@@ -225,6 +225,8 @@ hppa_obsd_nat_target::fetch_registers (struct regcache
+@@ -224,6 +224,8 @@ hppa_obsd_nat_target::fetch_registers (struct regcache
  void
  hppa_obsd_nat_target::store_registers (struct regcache *regcache, int regnum)
  {

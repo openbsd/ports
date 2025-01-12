@@ -1,7 +1,7 @@
 Index: gdb/arm-bsd-tdep.c
 --- gdb/arm-bsd-tdep.c.orig
 +++ gdb/arm-bsd-tdep.c
-@@ -30,15 +30,12 @@
+@@ -29,15 +29,12 @@
  #define ARMBSD_SIZEOF_GREGS	(17 * 4)
  
  /* Sizeof `struct fpreg' in <machine/reg.h.  */
@@ -19,7 +19,7 @@ Index: gdb/arm-bsd-tdep.c
  }
  
  /* Supply register REGNUM from the buffer specified by FPREGS and LEN
-@@ -55,7 +52,7 @@ armbsd_supply_fpregset (const struct regset *regset,
+@@ -54,7 +51,7 @@ armbsd_supply_fpregset (const struct regset *regset,
  
    gdb_assert (len >= ARMBSD_SIZEOF_FPREGS);
  
@@ -28,7 +28,7 @@ Index: gdb/arm-bsd-tdep.c
      {
        if (regnum == i || regnum == -1)
  	regcache->raw_supply (i, regs + armbsd_fpreg_offset (i));
-@@ -83,7 +80,7 @@ armbsd_supply_gregset (const struct regset *regset,
+@@ -82,7 +79,7 @@ armbsd_supply_gregset (const struct regset *regset,
      }
  
    if (regnum == ARM_PS_REGNUM || regnum == -1)

@@ -3,7 +3,7 @@ Bogus variable name.
 Index: gdb/i386-obsd-nat.c
 --- gdb/i386-obsd-nat.c.orig
 +++ gdb/i386-obsd-nat.c
-@@ -94,7 +94,7 @@ void _initialize_i386obsd_nat ();
+@@ -93,7 +93,7 @@ void _initialize_i386obsd_nat ();
  void
  _initialize_i386obsd_nat ()
  {

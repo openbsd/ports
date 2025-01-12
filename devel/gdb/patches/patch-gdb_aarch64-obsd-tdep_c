@@ -1,7 +1,7 @@
 Index: gdb/aarch64-obsd-tdep.c
 --- gdb/aarch64-obsd-tdep.c.orig
 +++ gdb/aarch64-obsd-tdep.c
-@@ -0,0 +1,338 @@
+@@ -0,0 +1,339 @@
 +/* Target-dependent code for OpenBSD/aarch64.
 +
 +   Copyright (C) 2006-2017 Free Software Foundation, Inc.
@@ -22,6 +22,7 @@ Index: gdb/aarch64-obsd-tdep.c
 +   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
 +
 +#include "defs.h"
++#include "extract-store-integer.h"
 +#include "gdbarch.h"
 +#include "frame-unwind.h"
 +#include "osabi.h"
@@ -59,7 +60,7 @@ Index: gdb/aarch64-obsd-tdep.c
 +
 +static int
 +aarch64obsd_sigtramp_frame_sniffer (const struct frame_unwind *self,
-+				    frame_info_ptr this_frame,
++				    const frame_info_ptr &this_frame,
 +				    void **this_cache)
 +{
 +  struct gdbarch *gdbarch = get_frame_arch (this_frame);
@@ -187,7 +188,7 @@ Index: gdb/aarch64-obsd-tdep.c
 +}
 +
 +static void
-+aarch64obsd_sigtramp_frame_this_id (frame_info_ptr this_frame,
++aarch64obsd_sigtramp_frame_this_id (const frame_info_ptr &this_frame,
 +				    void **this_cache,
 +				    struct frame_id *this_id)
 +{
@@ -198,7 +199,7 @@ Index: gdb/aarch64-obsd-tdep.c
 +}
 +
 +static struct value *
-+aarch64obsd_sigtramp_frame_prev_register (frame_info_ptr this_frame,
++aarch64obsd_sigtramp_frame_prev_register (const frame_info_ptr &this_frame,
 +				      void **this_cache, int regnum)
 +{
 +  struct trad_frame_cache *cache =

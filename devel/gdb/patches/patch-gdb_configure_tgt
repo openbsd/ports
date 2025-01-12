@@ -3,7 +3,7 @@ Add support for aarch64, powerpc64 and riscv64.
 Index: gdb/configure.tgt
 --- gdb/configure.tgt.orig
 +++ gdb/configure.tgt
-@@ -145,6 +145,13 @@ aarch64*-*-linux*)
+@@ -153,6 +153,13 @@ aarch64*-*-linux*)
  			symfile-mem.o linux-record.o"
  	;;
  
@@ -17,7 +17,7 @@ Index: gdb/configure.tgt
  alpha*-*-linux*)
  	# Target: Little-endian Alpha running Linux
  	gdb_target_obs="alpha-mdebug-tdep.o alpha-linux-tdep.o \
-@@ -492,6 +499,12 @@ powerpc-*-openbsd*)
+@@ -506,6 +513,12 @@ powerpc-*-openbsd*)
  	gdb_target_obs="rs6000-tdep.o ppc-sysv-tdep.o ppc-obsd-tdep.o \
  			ravenscar-thread.o ppc-ravenscar-thread.o"
  	;;
@@ -30,7 +30,7 @@ Index: gdb/configure.tgt
  powerpc-*-aix* | rs6000-*-* | powerpc64-*-aix*)
  	# Target: PowerPC running AIX
  	gdb_target_obs="rs6000-tdep.o rs6000-aix-tdep.o xcoffread.o \
-@@ -534,6 +547,12 @@ riscv*-*-linux*)
+@@ -548,6 +561,12 @@ riscv*-*-linux*)
  	# Target: Linux/RISC-V
  	gdb_target_obs="riscv-linux-tdep.o glibc-tdep.o \
   			linux-tdep.o solib-svr4.o symfile-mem.o linux-record.o"

@@ -1,7 +1,7 @@
 Index: gdb/doc/gdb.info-2
 --- gdb/doc/gdb.info-2.orig
 +++ gdb/doc/gdb.info-2
-@@ -1156,7 +1156,7 @@ parts of the program:
+@@ -1249,7 +1249,7 @@ parts of the program:
  --------------------------
  
  You can customize GDB to use any editor you want (1).  By default, it is

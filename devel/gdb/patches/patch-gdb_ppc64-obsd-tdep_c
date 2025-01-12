@@ -1,7 +1,7 @@
 Index: gdb/ppc64-obsd-tdep.c
 --- gdb/ppc64-obsd-tdep.c.orig
 +++ gdb/ppc64-obsd-tdep.c
-@@ -0,0 +1,407 @@
+@@ -0,0 +1,408 @@
 +/* Target-dependent code for OpenBSD/powerpc64.
 +
 +   Copyright (C) 2004, 2005, 2006 Free Software Foundation, Inc.
@@ -24,6 +24,7 @@ Index: gdb/ppc64-obsd-tdep.c
 +   Boston, MA 02110-1301, USA.  */
 +
 +#include "defs.h"
++#include "extract-store-integer.h"
 +#include "gdbarch.h"
 +#include "arch-utils.h"
 +#include "floatformat.h"
@@ -230,7 +231,7 @@ Index: gdb/ppc64-obsd-tdep.c
 +
 +static int
 +ppc64obsd_sigtramp_frame_sniffer (const struct frame_unwind *self,
-+				  frame_info_ptr this_frame,
++				  const frame_info_ptr &this_frame,
 +				  void **this_cache)
 +{
 +  struct gdbarch *gdbarch = get_frame_arch (this_frame);
@@ -270,7 +271,7 @@ Index: gdb/ppc64-obsd-tdep.c
 +}
 +
 +static struct trad_frame_cache *
-+ppc64obsd_sigtramp_frame_cache (frame_info_ptr this_frame,
++ppc64obsd_sigtramp_frame_cache (const frame_info_ptr &this_frame,
 +				void **this_cache)
 +{
 +  struct gdbarch *gdbarch = get_frame_arch (this_frame);
@@ -325,7 +326,7 @@ Index: gdb/ppc64-obsd-tdep.c
 +}
 +
 +static void
-+ppc64obsd_sigtramp_frame_this_id (frame_info_ptr this_frame,
++ppc64obsd_sigtramp_frame_this_id (const frame_info_ptr &this_frame,
 +				void **this_cache, struct frame_id *this_id)
 +{
 +  struct trad_frame_cache *cache =
@@ -335,7 +336,7 @@ Index: gdb/ppc64-obsd-tdep.c
 +}
 +
 +static struct value *
-+ppc64obsd_sigtramp_frame_prev_register (frame_info_ptr this_frame,
++ppc64obsd_sigtramp_frame_prev_register (const frame_info_ptr &this_frame,
 +					void **this_cache, int regnum)
 +{
 +  struct trad_frame_cache *cache =

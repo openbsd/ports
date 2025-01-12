@@ -1,7 +1,7 @@
 Index: gdb/riscv-obsd-tdep.c
 --- gdb/riscv-obsd-tdep.c.orig
 +++ gdb/riscv-obsd-tdep.c
-@@ -0,0 +1,219 @@
+@@ -0,0 +1,220 @@
 +/* Target-dependent code for OpenBSD on RISC-V processors.
 +   Copyright (C) 2018-2021 Free Software Foundation, Inc.
 +
@@ -21,6 +21,7 @@ Index: gdb/riscv-obsd-tdep.c
 +   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
 +
 +#include "defs.h"
++#include "extract-store-integer.h"
 +#include "obsd-tdep.h"
 +#include "osabi.h"
 +#include "riscv-tdep.h"
@@ -112,7 +113,7 @@ Index: gdb/riscv-obsd-tdep.c
 +
 +static void
 +riscv_obsd_sigframe_init (const struct tramp_frame *self,
-+			  frame_info_ptr this_frame,
++			  const frame_info_ptr &this_frame,
 +			  struct trad_frame_cache *this_cache,
 +			  CORE_ADDR func)
 +{

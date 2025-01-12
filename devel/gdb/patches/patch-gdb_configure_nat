@@ -23,7 +23,7 @@ Index: gdb/configure.nat
  	;;
      cygwin*)
  	NATDEPFILES='x86-nat.o nat/x86-dregs.o windows-nat.o nat/windows-nat.o'
-@@ -430,50 +430,60 @@ case ${gdb_host} in
+@@ -432,50 +432,60 @@ case ${gdb_host} in
  	;;
      obsd)
  	case ${gdb_host_cpu} in

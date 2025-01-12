@@ -19,7 +19,7 @@ Index: include/diagnostics.h
  #elif defined (__GNUC__) /* GCC */
  
  # define DIAGNOSTIC_IGNORE_DEPRECATED_DECLARATIONS \
-@@ -146,6 +151,10 @@
+@@ -145,6 +150,10 @@
  
  #ifndef DIAGNOSTIC_IGNORE_FORMAT_NONLITERAL
  # define DIAGNOSTIC_IGNORE_FORMAT_NONLITERAL
