@@ -5,7 +5,7 @@ COMMENT =	extract, list & test files in a ZIP archive
 VERSION =	6.0
 DISTNAME =	unzip${VERSION:S/.//}
 PKGNAME =	unzip-${VERSION}
-REVISION =	17
+REVISION =	18
 CATEGORIES =	archivers
 SITES =		${SITE_SOURCEFORGE:=infozip/} \
 		ftp://ftp.info-zip.org/pub/infozip/src/

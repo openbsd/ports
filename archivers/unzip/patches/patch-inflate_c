@@ -1,0 +1,11 @@
+--- inflate.c.orig	Wed Jul 30 10:31:08 2008
++++ inflate.c	Mon Jan 13 18:09:38 2025
+@@ -1018,7 +1018,7 @@ unsigned bl, bd;        /* number of bits decoded by t
+           if ((unsigned)w - d >= e)
+           /* (this test assumes unsigned comparison) */
+           {
+-            memcpy(redirSlide + (unsigned)w, redirSlide + d, e);
++            memmove(redirSlide + (unsigned)w, redirSlide + d, e);
+             w += e;
+             d += e;
+           }
