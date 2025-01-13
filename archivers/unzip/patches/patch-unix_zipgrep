@@ -1,10 +1,9 @@
-Index: unix/zipgrep
-
 CVE-2022-1271
 Prevent arbitrary-file-write vulnerability if an archive member
 name contains shell wild cards that expand to an existing pathname
 with an exploit pattern.
 
+Index: unix/zipgrep
 --- unix/zipgrep.orig
 +++ unix/zipgrep
 @@ -70,7 +70,7 @@ for i in `unzip -Z1 "$zipfile" ${1+"$@"} | sed -e 's/\
