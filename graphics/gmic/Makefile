@@ -1,10 +1,12 @@
+USE_NOBTCFI-aarch64 =	Yes# fortran
+
 BROKEN-powerpc64 =	update297.gmic is not a valid G'MIC update file
 
 COMMENT = 	image processing framework
 
 V = 3.0.2
 DISTNAME = 	gmic-$V
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=  gmic 1.0 # 1
 
