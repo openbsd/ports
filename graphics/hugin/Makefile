@@ -9,10 +9,9 @@ EXTRACT_SUFX =	.tar.bz2
 # not needed for releases, but makes RCs/betas easier to work with
 PKGNAME =	${DISTNAME:S/_//:L}
 WRKDIST =	${WRKDIR}/${DISTNAME:C/_.*//}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  celeste                   4.0
-SHARED_LIBS +=  flann_cpp                 4.0
 SHARED_LIBS +=  huginbase                 8.0
 SHARED_LIBS +=  huginbasewx               7.0
 SHARED_LIBS +=  icpfindlib                5.0
@@ -28,9 +27,10 @@ MAINTAINER =	Kirill Bychkov <kirby@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL GLU Iex-3_3 OpenEXR-3_3
-WANTLIB += IlmThread-3_3 Imath-3_1 X11 boost_filesystem-mt boost_system-mt
-WANTLIB += c exiv2 epoxy fftw3 jpeg lcms2 m pano13 png ${MODPY_WANTLIB} sqlite3
+WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
+WANTLIB += GL GLU Iex-3_3 IlmThread-3_3 Imath-3_1 OpenEXR-3_3
+WANTLIB += X11 boost_filesystem-mt boost_system-mt c epoxy exiv2
+WANTLIB += fftw3 flann flann_cpp jpeg lcms2 lz4 m pano13 png sqlite3
 WANTLIB += tiff vigraimpex wx_baseu-3.2 wx_baseu_net-3.2 wx_baseu_xml-3.2
 WANTLIB += wx_gtk3u_aui-3.2 wx_gtk3u_core-3.2 wx_gtk3u_gl-3.2
 WANTLIB += wx_gtk3u_html-3.2 wx_gtk3u_propgrid-3.2 wx_gtk3u_qa-3.2
@@ -56,6 +56,7 @@ LIB_DEPENDS =		devel/boost \
 			graphics/libpano13>=2.9.19 \
 			graphics/lensfun \
 			graphics/vigra \
+			math/flann \
 			x11/wxWidgets>=3.0.4
 
 MODULES =		devel/cmake lang/python

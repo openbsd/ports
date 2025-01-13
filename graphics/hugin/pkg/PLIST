@@ -32,7 +32,6 @@
 @bin bin/vig_optimize
 lib/hugin/
 @lib lib/hugin/libceleste.so.${LIBceleste_VERSION}
-@lib lib/hugin/libflann_cpp.so.${LIBflann_cpp_VERSION}
 @lib lib/hugin/libhugin_python_interface.so.${LIBhugin_python_interface_VERSION}
 @lib lib/hugin/libhuginbase.so.${LIBhuginbase_VERSION}
 @lib lib/hugin/libhuginbasewx.so.${LIBhuginbasewx_VERSION}
