@@ -96,13 +96,11 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/pdk/generate/transport.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pdk/logger.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pdk/module/
 ${GEM_LIB}/gems/${DISTNAME}/lib/pdk/module.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/pdk/module/build.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pdk/module/convert.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pdk/module/metadata.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pdk/module/release.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pdk/module/update.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pdk/module/update_manager.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/pdk/monkey_patches.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pdk/report/
 ${GEM_LIB}/gems/${DISTNAME}/lib/pdk/report.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/pdk/report/event.rb
