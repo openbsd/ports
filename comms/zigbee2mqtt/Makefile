@@ -1,5 +1,8 @@
-# may need to add others; build uses esbuild node module, which is not MI
-NOT_FOR_ARCHS=	i386
+# building uses "esbuild" as a node module, which fetches a binary.
+# in the version used (0.21.2) only amd64 is available (and it fails on
+# BTI archs). if upstream updates to newer esbuild this should be able
+# to be removed. https://github.com/Koenkk/zigbee2mqtt/issues/25787
+ONLY_FOR_ARCHS=	amd64
 
 COMMENT=	Zigbee to MQTT bridge
 
