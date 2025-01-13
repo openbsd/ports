@@ -1,6 +1,7 @@
 COMMENT =		fast library for approximate nearest neighbors
 
 DIST_TUPLE +=		github flann-lib flann 1.9.2 .
+REVISION =		0
 
 SHARED_LIBS +=  	flann		0.0 # 0.0
 SHARED_LIBS +=  	flann_cpp	0.0 # 0.0

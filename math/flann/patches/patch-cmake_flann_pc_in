@@ -1,0 +1,13 @@
+https://github.com/flann-lib/flann/issues/466
+
+Index: cmake/flann.pc.in
+--- cmake/flann.pc.in.orig
++++ cmake/flann.pc.in
+@@ -8,6 +8,6 @@ Name: @PROJECT_NAME@
+ Description: @PKG_DESC@
+ Version: @FLANN_VERSION@
+ Requires: @PKG_EXTERNAL_DEPS@
+-Libs: -L${libdir} @LZ4_STATIC_LDFLAGS@ -lflann -lflann_cpp
++Libs: -L${libdir} -llz4 -lflann -lflann_cpp
+ Cflags: -I${includedir}
+ 
