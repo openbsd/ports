@@ -17,7 +17,7 @@ Index: tools/v8_gypfiles/v8.gyp
        ],
      },  # v8_initializers_slow
      {
-@@ -684,7 +687,7 @@
+@@ -689,7 +692,7 @@
                }],
                ['v8_enable_webassembly==1', {
                  'conditions': [
@@ -26,7 +26,7 @@ Index: tools/v8_gypfiles/v8.gyp
                      'sources': [
                        '<(V8_ROOT)/src/trap-handler/handler-inside-posix.h',
                      ],
-@@ -1090,7 +1093,7 @@
+@@ -1100,7 +1103,7 @@
              }],
              ['v8_enable_webassembly==1', {
                'conditions': [
@@ -35,7 +35,7 @@ Index: tools/v8_gypfiles/v8.gyp
                    'sources': [
                      '<(V8_ROOT)/src/trap-handler/handler-inside-posix.cc',
                      '<(V8_ROOT)/src/trap-handler/handler-outside-posix.cc',
-@@ -1245,7 +1248,7 @@
+@@ -1272,7 +1275,7 @@
          }],
          # Platforms that don't have Compare-And-Swap (CAS) support need to link atomic library
          # to implement atomic memory access
@@ -44,7 +44,7 @@ Index: tools/v8_gypfiles/v8.gyp
            'link_settings': {
              'libraries': ['-latomic', ],
            },
-@@ -1711,6 +1714,9 @@
+@@ -1738,6 +1741,9 @@
          '<!@pymod_do_main(GN-scraper "<(V8_ROOT)/BUILD.gn"  "\\"mksnapshot.*?sources = ")',
        ],
        'conditions': [

@@ -5,7 +5,7 @@ USE_WXNEEDED =		Yes
 
 COMMENT = JavaScript runtime built on Chrome's V8 JavaScript engine
 
-NODE_VERSION =		v22.12.0
+NODE_VERSION =		v22.13.0
 PLEDGE_VER =		1.1.3
 DISTFILES =		${DISTNAME}-headers.tar.gz \
 			${DISTNAME}.tar.xz
@@ -14,7 +14,6 @@ DISTFILES.pledge =	node-pledge-{}${PLEDGE_VER}.tar.gz
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
 EPOCH =			0
-REVISION =		0
 
 SITES.pledge =		https://github.com/qbit/node-pledge/archive/
 
