@@ -1860,6 +1860,7 @@
      SUBDIR += ruby-prof,ruby32
      SUBDIR += ruby-prof,ruby33
      SUBDIR += ruby-prof,ruby34
+     SUBDIR += ruby-puppet-modulebuilder
      SUBDIR += ruby-puppet-resource_api
      SUBDIR += ruby-puppet_forge
      SUBDIR += ruby-rake-compiler
