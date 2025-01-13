@@ -17,7 +17,15 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c pthread
 
 MODULES=	lang/go
-NO_TEST=	Yes
+TEST_DEPENDS=	lang/python/3
+
+# allow cleanup after test, which runs the go compiler without the correct
+# flags so -modcacherw (and -p=${MAKE_JOBS} are lost.
+#FIX_CLEANUP_PERMISSIONS= Yes
+
+do-test:
+	ln -fs ${LOCALBASE}/bin/python3 ${WRKDIR}/bin/python
+	cd ${WRKSRC}; ${SETENV} ${MAKE_ENV} ${MODGO_CMD} test ${MODGO_FLAGS:N-v} -count 1 ./...
 
 do-install:
 	${MODGO_INSTALL_TARGET}
