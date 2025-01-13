@@ -85,6 +85,12 @@ LIB_DEPENDS =		audio/opus \
 			multimedia/openh264>=2.1.1p0 \
 			security/libsrtp>=2.5.0
 
+.if ${MACHINE_ARCH} == "aarch64"
+# libyuv needs dotprod on aarch64
+# See: https://github.com/desktop-app/tg_owt/pull/146
+CXXFLAGS +=	       -march=armv8-a+dotprod+i8mm
+.endif
+
 # look for system libraries and build a shared library, despite upstream
 # treating it as "community effort" with less support
 CONFIGURE_ARGS +=	-DTG_OWT_PACKAGED_BUILD=ON \
