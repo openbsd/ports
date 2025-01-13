@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-130.0.1/build/toolchain/gcc_toolchain.gni
---- modcargo-crates/v8-130.0.1/build/toolchain/gcc_toolchain.gni.orig
-+++ modcargo-crates/v8-130.0.1/build/toolchain/gcc_toolchain.gni
+Index: modcargo-crates/v8-130.0.7/build/toolchain/gcc_toolchain.gni
+--- modcargo-crates/v8-130.0.7/build/toolchain/gcc_toolchain.gni.orig
++++ modcargo-crates/v8-130.0.7/build/toolchain/gcc_toolchain.gni
 @@ -56,6 +56,12 @@ if (enable_resource_allowlist_generation) {
        "enable_resource_allowlist_generation=true does not work for target_os=$target_os")
  }

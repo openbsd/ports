@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-130.0.1/v8/src/execution/isolate.cc
---- modcargo-crates/v8-130.0.1/v8/src/execution/isolate.cc.orig
-+++ modcargo-crates/v8-130.0.1/v8/src/execution/isolate.cc
+Index: modcargo-crates/v8-130.0.7/v8/src/execution/isolate.cc
+--- modcargo-crates/v8-130.0.7/v8/src/execution/isolate.cc.orig
++++ modcargo-crates/v8-130.0.7/v8/src/execution/isolate.cc
 @@ -168,6 +168,10 @@
  #include "src/execution/simulator-base.h"
  #endif

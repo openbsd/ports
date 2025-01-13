@@ -1,7 +1,7 @@
 Index: cli/standalone/binary.rs
 --- cli/standalone/binary.rs.orig
 +++ cli/standalone/binary.rs
-@@ -454,6 +454,7 @@ impl<'a> DenoCompileBinaryWriter<'a> {
+@@ -476,6 +476,7 @@ impl<'a> DenoCompileBinaryWriter<'a> {
      &self,
      compile_flags: &CompileFlags,
    ) -> Result<Vec<u8>, AnyError> {

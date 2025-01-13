@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-130.0.1/v8/BUILD.gn
---- modcargo-crates/v8-130.0.1/v8/BUILD.gn.orig
-+++ modcargo-crates/v8-130.0.1/v8/BUILD.gn
+Index: modcargo-crates/v8-130.0.7/v8/BUILD.gn
+--- modcargo-crates/v8-130.0.7/v8/BUILD.gn.orig
++++ modcargo-crates/v8-130.0.7/v8/BUILD.gn
 @@ -907,6 +907,8 @@ external_v8_defines = [
    "V8_TARGET_OS_MACOS",
    "V8_TARGET_OS_WIN",

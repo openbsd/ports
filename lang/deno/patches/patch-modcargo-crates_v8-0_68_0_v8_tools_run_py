@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-130.0.1/v8/tools/run.py
---- modcargo-crates/v8-130.0.1/v8/tools/run.py.orig
-+++ modcargo-crates/v8-130.0.1/v8/tools/run.py
+Index: modcargo-crates/v8-130.0.7/v8/tools/run.py
+--- modcargo-crates/v8-130.0.7/v8/tools/run.py.orig
++++ modcargo-crates/v8-130.0.7/v8/tools/run.py
 @@ -21,7 +21,7 @@ if cmd and cmd[0] == '--redirect-stdout':
    kwargs = dict(stdout=subprocess.PIPE)
    cmd = cmd[2:]

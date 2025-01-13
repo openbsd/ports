@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-130.0.1/build/config/linux/pkg-config.py
---- modcargo-crates/v8-130.0.1/build/config/linux/pkg-config.py.orig
-+++ modcargo-crates/v8-130.0.1/build/config/linux/pkg-config.py
+Index: modcargo-crates/v8-130.0.7/build/config/linux/pkg-config.py
+--- modcargo-crates/v8-130.0.7/build/config/linux/pkg-config.py.orig
++++ modcargo-crates/v8-130.0.7/build/config/linux/pkg-config.py
 @@ -108,7 +108,7 @@ def main():
    # If this is run on non-Linux platforms, just return nothing and indicate
    # success. This allows us to "kind of emulate" a Linux build from other

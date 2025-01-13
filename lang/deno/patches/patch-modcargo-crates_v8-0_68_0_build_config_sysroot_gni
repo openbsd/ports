@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-130.0.1/build/config/sysroot.gni
---- modcargo-crates/v8-130.0.1/build/config/sysroot.gni.orig
-+++ modcargo-crates/v8-130.0.1/build/config/sysroot.gni
+Index: modcargo-crates/v8-130.0.7/build/config/sysroot.gni
+--- modcargo-crates/v8-130.0.7/build/config/sysroot.gni.orig
++++ modcargo-crates/v8-130.0.7/build/config/sysroot.gni
 @@ -20,9 +20,11 @@ declare_args() {
    # Controls default is_linux sysroot. If set to true, and sysroot
    # is empty, default sysroot is calculated.

@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-130.0.1/v8/gni/v8.gni
---- modcargo-crates/v8-130.0.1/v8/gni/v8.gni.orig
-+++ modcargo-crates/v8-130.0.1/v8/gni/v8.gni
+Index: modcargo-crates/v8-130.0.7/v8/gni/v8.gni
+--- modcargo-crates/v8-130.0.7/v8/gni/v8.gni.orig
++++ modcargo-crates/v8-130.0.7/v8/gni/v8.gni
 @@ -173,7 +173,7 @@ declare_args() {
    v8_enable_cet_shadow_stack = false
  

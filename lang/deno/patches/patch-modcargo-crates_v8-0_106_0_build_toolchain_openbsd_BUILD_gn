@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-130.0.1/build/toolchain/openbsd/BUILD.gn
---- modcargo-crates/v8-130.0.1/build/toolchain/openbsd/BUILD.gn.orig
-+++ modcargo-crates/v8-130.0.1/build/toolchain/openbsd/BUILD.gn
+Index: modcargo-crates/v8-130.0.7/build/toolchain/openbsd/BUILD.gn
+--- modcargo-crates/v8-130.0.7/build/toolchain/openbsd/BUILD.gn.orig
++++ modcargo-crates/v8-130.0.7/build/toolchain/openbsd/BUILD.gn
 @@ -0,0 +1,66 @@
 +# Copyright 2013 The Chromium Authors. All rights reserved.
 +# Use of this source code is governed by a BSD-style license that can be

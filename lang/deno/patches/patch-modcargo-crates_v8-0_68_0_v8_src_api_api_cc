@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-130.0.1/v8/src/api/api.cc
---- modcargo-crates/v8-130.0.1/v8/src/api/api.cc.orig
-+++ modcargo-crates/v8-130.0.1/v8/src/api/api.cc
+Index: modcargo-crates/v8-130.0.7/v8/src/api/api.cc
+--- modcargo-crates/v8-130.0.7/v8/src/api/api.cc.orig
++++ modcargo-crates/v8-130.0.7/v8/src/api/api.cc
 @@ -149,7 +149,7 @@
  #include "src/wasm/wasm-serialization.h"
  #endif  // V8_ENABLE_WEBASSEMBLY
