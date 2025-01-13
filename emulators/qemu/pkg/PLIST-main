@@ -35,7 +35,6 @@
 @bin bin/qemu-system-x86_64
 @bin bin/qemu-system-xtensa
 @bin bin/qemu-system-xtensaeb
-include/qemu-plugin.h
 @man man/man1/qemu-img.1
 @man man/man1/qemu-storage-daemon.1
 @man man/man1/qemu.1

@@ -8,6 +8,7 @@ COMMENT-ga=	QEMU guest agent
 
 VERSION=	9.2.0
 DISTNAME=	qemu-${VERSION}
+REVISION=	0
 CATEGORIES=	emulators
 SITES=		https://download.qemu.org/
 EXTRACT_SUFX=	.tar.xz
@@ -93,6 +94,7 @@ CONFIGURE_ARGS=	--localstatedir=${LOCALSTATEDIR} \
 		--disable-auth-pam \
 		--disable-bsd-user \
 		--disable-jack \
+		--disable-plugins \
 		--disable-sdl-image \
 		--disable-smartcard \
 		--disable-snappy \
