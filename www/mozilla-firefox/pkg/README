@@ -117,7 +117,7 @@ You will also need to change the ownership and/or permissions of the
 relevant video(4) device so that your user can access the webcam
 device e.g.:
 
-# chown youruser /dev/video0
+# chown youruser /dev/video?
 
 Screen sharing needs shmget() which isn't available when pledge() is active, so
 you will have to disable pledge for the main process.
