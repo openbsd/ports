@@ -1,9 +1,5 @@
 bin/dtplite
 lib/tcl/0compatibility/
-lib/tcl/0compatibility/d_config.tcl
-lib/tcl/0compatibility/d_paths.tcl
-lib/tcl/0compatibility/p_config.tcl
-lib/tcl/0compatibility/p_paths.tcl
 lib/tcl/0compatibility/pkgIndex.tcl
 lib/tcl/amazon-s3/
 lib/tcl/amazon-s3/S3.tcl
@@ -58,9 +54,10 @@ lib/tcl/crc/
 lib/tcl/crc/cksum.tcl
 lib/tcl/crc/crc16.tcl
 lib/tcl/crc/crc32.tcl
-lib/tcl/crc/crcc.tcl
+lib/tcl/crc/crc32c.tcl
 lib/tcl/crc/pkgIndex.tcl
 lib/tcl/crc/sum.tcl
+lib/tcl/crc/sumc.tcl
 lib/tcl/debug/
 lib/tcl/debug/caller.tcl
 lib/tcl/debug/debug.tcl
@@ -276,18 +273,19 @@ lib/tcl/log/loggerUtils.tcl
 lib/tcl/log/msgs/
 lib/tcl/log/msgs/en.msg
 lib/tcl/log/pkgIndex.tcl
-lib/tcl/map/
-lib/tcl/map/map_geocode_nominatim.tcl
-lib/tcl/map/map_slippy.tcl
-lib/tcl/map/map_slippy_cache.tcl
-lib/tcl/map/map_slippy_fetcher.tcl
-lib/tcl/map/pkgIndex.tcl
+lib/tcl/map_tcllib/
+lib/tcl/map_tcllib/map_geocode_nominatim.tcl
+lib/tcl/map_tcllib/map_slippy.tcl
+lib/tcl/map_tcllib/map_slippy_c.tcl
+lib/tcl/map_tcllib/map_slippy_cache.tcl
+lib/tcl/map_tcllib/map_slippy_fetcher.tcl
+lib/tcl/map_tcllib/map_slippy_tcl.tcl
+lib/tcl/map_tcllib/pkgIndex.tcl
 lib/tcl/markdown/
 lib/tcl/markdown/markdown.tcl
 lib/tcl/markdown/pkgIndex.tcl
 lib/tcl/math/
 lib/tcl/math/bessel.tcl
-lib/tcl/math/bigfloat.tcl
 lib/tcl/math/bigfloat2.tcl
 lib/tcl/math/bignum.tcl
 lib/tcl/math/calculus.tcl
@@ -362,52 +360,52 @@ lib/tcl/mime/smtp.tcl
 lib/tcl/mkdoc/
 lib/tcl/mkdoc/mkdoc.tcl
 lib/tcl/mkdoc/pkgIndex.tcl
-lib/tcl/modules/85/aes-1.2.1.tm
-lib/tcl/modules/85/asn-0.8.4.tm
-lib/tcl/modules/85/bee-0.1.tm
-lib/tcl/modules/85/bibtex-0.7.tm
-lib/tcl/modules/85/blowfish-1.0.5.tm
-lib/tcl/modules/85/cmdline-1.5.2.tm
-lib/tcl/modules/85/comm-4.7.tm
-lib/tcl/modules/85/counter-2.0.4.tm
-lib/tcl/modules/85/cron-2.1.tm
-lib/tcl/modules/85/csv-0.8.1.tm
-lib/tcl/modules/85/dicttool-1.1.tm
-lib/tcl/modules/85/dtplite-1.3.1.tm
-lib/tcl/modules/85/ftpd-1.3.tm
-lib/tcl/modules/85/gpx-1.tm
-lib/tcl/modules/85/hook-0.2.tm
-lib/tcl/modules/85/html-1.5.tm
-lib/tcl/modules/85/htmlparse-1.2.2.tm
-lib/tcl/modules/85/ident-0.42.tm
-lib/tcl/modules/85/imap4-0.5.3.tm
-lib/tcl/modules/85/javascript-1.0.2.tm
-lib/tcl/modules/85/jpeg-0.5.tm
-lib/tcl/modules/85/lambda-1.tm
-lib/tcl/modules/85/lazyset-1.tm
-lib/tcl/modules/85/mapproj-1.0.tm
-lib/tcl/modules/85/multiplexer-0.2.tm
-lib/tcl/modules/85/namespacex-0.3.tm
-lib/tcl/modules/85/ncgi-1.4.4.tm
-lib/tcl/modules/85/nmea-1.0.0.tm
-lib/tcl/modules/85/nntp-0.2.1.tm
-lib/tcl/modules/85/oauth-1.0.3.tm
-lib/tcl/modules/85/otp-1.0.0.tm
-lib/tcl/modules/85/pki-0.20.tm
-lib/tcl/modules/85/pluginmgr-0.3.tm
-lib/tcl/modules/85/png-0.3.tm
-lib/tcl/modules/85/pop3-1.10.tm
-lib/tcl/modules/85/profiler-0.6.tm
-lib/tcl/modules/85/rcs-0.1.tm
-lib/tcl/modules/85/report-0.3.2.tm
-lib/tcl/modules/85/rest-1.5.tm
-lib/tcl/modules/85/smtpd-1.5.tm
-lib/tcl/modules/85/soundex-1.0.tm
-lib/tcl/modules/85/tar-0.11.tm
-lib/tcl/modules/85/tiff-0.2.1.tm
-lib/tcl/modules/85/units-2.2.1.tm
-lib/tcl/modules/85/uuid-1.0.7.tm
-lib/tcl/modules/85/websocket-1.4.2.tm
+lib/tcl/modules/85/aes-1.2.2.tm
+lib/tcl/modules/85/asn-0.8.5.tm
+lib/tcl/modules/85/bee-0.3.tm
+lib/tcl/modules/85/bibtex-0.8.tm
+lib/tcl/modules/85/blowfish-1.0.6.tm
+lib/tcl/modules/85/cmdline-1.5.3.tm
+lib/tcl/modules/85/comm-4.7.3.tm
+lib/tcl/modules/85/counter-2.0.6.tm
+lib/tcl/modules/85/cron-2.2.tm
+lib/tcl/modules/85/csv-0.10.tm
+lib/tcl/modules/85/dicttool-1.2.tm
+lib/tcl/modules/85/dtplite-1.3.2.tm
+lib/tcl/modules/85/ftpd-1.4.1.tm
+lib/tcl/modules/85/gpx-1.1.tm
+lib/tcl/modules/85/hook-0.3.tm
+lib/tcl/modules/85/html-1.6.tm
+lib/tcl/modules/85/htmlparse-1.2.3.tm
+lib/tcl/modules/85/ident-0.44.tm
+lib/tcl/modules/85/imap4-0.5.5.tm
+lib/tcl/modules/85/javascript-1.0.3.tm
+lib/tcl/modules/85/jpeg-0.7.tm
+lib/tcl/modules/85/lambda-1.1.tm
+lib/tcl/modules/85/lazyset-1.1.tm
+lib/tcl/modules/85/mapproj-1.1.tm
+lib/tcl/modules/85/multiplexer-0.3.tm
+lib/tcl/modules/85/namespacex-0.4.tm
+lib/tcl/modules/85/ncgi-1.4.6.tm
+lib/tcl/modules/85/nmea-1.1.0.tm
+lib/tcl/modules/85/nntp-0.2.3.tm
+lib/tcl/modules/85/oauth-1.0.4.tm
+lib/tcl/modules/85/otp-1.1.0.tm
+lib/tcl/modules/85/pki-0.22.tm
+lib/tcl/modules/85/pluginmgr-0.5.tm
+lib/tcl/modules/85/png-0.4.1.tm
+lib/tcl/modules/85/pop3-1.11.tm
+lib/tcl/modules/85/profiler-0.7.tm
+lib/tcl/modules/85/rcs-0.2.tm
+lib/tcl/modules/85/report-0.5.tm
+lib/tcl/modules/85/rest-1.7.tm
+lib/tcl/modules/85/smtpd-1.6.tm
+lib/tcl/modules/85/soundex-1.1.tm
+lib/tcl/modules/85/tar-0.13.tm
+lib/tcl/modules/85/tiff-0.2.3.tm
+lib/tcl/modules/85/units-2.2.3.tm
+lib/tcl/modules/85/uuid-1.0.9.tm
+lib/tcl/modules/85/websocket-1.6.tm
 lib/tcl/nettool/
 lib/tcl/nettool/nettool.tcl
 lib/tcl/nettool/pkgIndex.tcl
@@ -580,12 +578,10 @@ lib/tcl/simulation/pkgIndex.tcl
 lib/tcl/simulation/random.tcl
 lib/tcl/snit/
 lib/tcl/snit/main1.tcl
-lib/tcl/snit/main1_83.tcl
 lib/tcl/snit/main2.tcl
 lib/tcl/snit/pkgIndex.tcl
 lib/tcl/snit/snit.tcl
 lib/tcl/snit/snit2.tcl
-lib/tcl/snit/snit_tcl83_utils.tcl
 lib/tcl/snit/validate.tcl
 lib/tcl/stooop/
 lib/tcl/stooop/mkpkgidx.tcl
@@ -614,7 +610,6 @@ lib/tcl/struct/list.tcl
 lib/tcl/struct/list.test.tcl
 lib/tcl/struct/map.tcl
 lib/tcl/struct/matrix.tcl
-lib/tcl/struct/matrix1.tcl
 lib/tcl/struct/pkgIndex.tcl
 lib/tcl/struct/pool.tcl
 lib/tcl/struct/prioqueue.tcl
@@ -699,6 +694,7 @@ lib/tcl/treeql/treeql.tcl
 lib/tcl/treeql/treeql84.tcl
 lib/tcl/treeql/treeql85.tcl
 lib/tcl/try/
+lib/tcl/try/fhome.tcl
 lib/tcl/try/pkgIndex.tcl
 lib/tcl/try/throw.tcl
 lib/tcl/try/try.tcl
@@ -967,7 +963,6 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/math.n
 @man man/mann/math_geometry.n
 @man man/mann/matrix.n
-@man man/mann/matrix1.n
 @man man/mann/md4.n
 @man man/mann/md5.n
 @man man/mann/md5crypt.n
@@ -1139,6 +1134,7 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/tcllib.n
 @man man/mann/tcllib_coroutine.n
 @man man/mann/tcllib_dns.n
+@man man/mann/tcllib_fhome.n
 @man man/mann/tcllib_fifo.n
 @man man/mann/tcllib_fifo2.n
 @man man/mann/tcllib_interp.n
@@ -1211,6 +1207,7 @@ lib/tcl/zip/pkgIndex.tcl
 @man man/mann/vt_counter.n
 @man man/mann/vt_crc32.n
 @man man/mann/vt_otp.n
+@man man/mann/wcswidth.n
 @man man/mann/websocket.n
 @man man/mann/wip.n
 @man man/mann/xsxp.n
