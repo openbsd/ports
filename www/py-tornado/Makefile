@@ -1,26 +1,24 @@
-COMMENT =		scalable, non-blocking web server
+COMMENT=	scalable, non-blocking web server
 
-MODPY_DISTV =	6.4
-DISTNAME =		tornado-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-REVISION =		1
+MODPY_DISTV=	6.4.2
+DISTNAME=	tornado-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =		www
+CATEGORIES=	www
 
-HOMEPAGE =		https://www.tornadoweb.org/
+HOMEPAGE=	https://www.tornadoweb.org/
 
 # Apache v2
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-WANTLIB +=		pthread ${MODPY_WANTLIB}
+WANTLIB=	pthread ${MODPY_WANTLIB}
 
-MODULES =		lang/python
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
-
-TEST_DEPENDS =		devel/py-twisted \
-			net/py-cares \
-			net/py-curl
+TEST_DEPENDS=	devel/py-twisted \
+		net/py-cares \
+		net/py-curl
 
 .include <bsd.port.mk>

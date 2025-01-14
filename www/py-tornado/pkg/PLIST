@@ -1,5 +1,4 @@
 @pkgpath www/py-tornado,python3
-@conflict py-tornado-*
 lib/python${MODPY_VERSION}/site-packages/tornado/
 lib/python${MODPY_VERSION}/site-packages/tornado-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/tornado-${MODPY_DISTV}.dist-info/LICENSE
