@@ -1,6 +1,6 @@
 COMMENT=	lightweight C ACMEv2 client, uses external authenticators
 
-V=		1.7.5
+V=		1.7.6
 GH_ACCOUNT=	ndilieto
 GH_PROJECT=	uacme
 GH_TAGNAME=	upstream/$V
