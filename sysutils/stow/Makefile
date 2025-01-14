@@ -1,8 +1,7 @@
 COMMENT=	manages software package installations with symlinks
 
-DISTNAME=	stow-2.4.0
+DISTNAME=	stow-2.4.1
 CATEGORIES=	sysutils
-REVISION=	0
 
 HOMEPAGE=	https://www.gnu.org/software/stow/stow.html
 
