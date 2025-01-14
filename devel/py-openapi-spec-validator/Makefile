@@ -1,9 +1,9 @@
 COMMENT =		OpenAPI 2.0 (aka Swagger) and OpenAPI 3 spec validator
 
-MODPY_DISTV =	0.7.1
+MODPY_DISTV =		0.7.1
 DISTNAME =		openapi_spec_validator-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel www
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 RUN_DEPENDS =		devel/py-jsonschema \
-			devel/py-jsonschema-spec \
+			devel/py-jsonschema-path \
 			devel/py-lazy-object-proxy \
 			devel/py-openapi-schema-validator
 
