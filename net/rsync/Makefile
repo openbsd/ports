@@ -1,6 +1,7 @@
 COMMENT =	mirroring/synchronization over low bandwidth links
 
 DISTNAME =	rsync-3.4.0
+REVISION =	0
 CATEGORIES =	net
 HOMEPAGE =	https://rsync.samba.org/
 
@@ -17,8 +18,8 @@ SITES =		https://rsync.samba.org/ftp/rsync/src/ \
 
 BUILD_DEPENDS =	sysutils/xxhash
 
-CONFIGURE_STYLE =gnu
-CONFIGURE_ARGS =--disable-md2man \
+CONFIGURE_STYLE = gnu
+CONFIGURE_ARGS = --disable-md2man \
 		--disable-lz4 \
 		--disable-zstd \
 		--with-included-popt \
@@ -28,8 +29,10 @@ CONFIGURE_ARGS =--disable-md2man \
 		--with-rsh=/usr/bin/ssh \
 		--with-nobody-user=_rsync \
 		--with-nobody-group=_rsync
-CONFIGURE_ENV +=CPPFLAGS="-I${LOCALBASE}/include -DXXH_INLINE_ALL=1" \
+CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -DXXH_INLINE_ALL=1" \
 		ac_cv_search_XXH64_createState=""
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 .include <bsd.port.arch.mk>
 
@@ -38,9 +41,9 @@ CONFIGURE_ARGS +=--enable-md5-asm
 .endif
 
 .if !${FLAVOR:Mminimal}
-CONFIGURE_ARGS +=--enable-lz4 \
-		--enable-zstd
-CONFIGURE_ENV +=LDFLAGS='-L${LOCALBASE}/lib'
+CONFIGURE_ARGS += --enable-lz4 \
+		  --enable-zstd
+CONFIGURE_ENV += LDFLAGS='-L${LOCALBASE}/lib'
 LIB_DEPENDS +=	archivers/lz4 \
 		archivers/zstd \
 		converters/libiconv
@@ -48,7 +51,6 @@ WANTLIB +=	iconv lz4 zstd
 .endif
 
 DOCDIR =	${PREFIX}/share/doc/rsync
-DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/support/rrsync
