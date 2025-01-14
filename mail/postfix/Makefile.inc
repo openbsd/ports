@@ -3,6 +3,7 @@ COMMENT=	fast, secure sendmail replacement
 DISTNAME=	postfix-${VERSION}
 PKGNAME=	postfix-${VERSION:S/-/./}
 CATEGORIES=	mail
+REVISION=	0
 
 SITE_POSTFIX= \
 		https://archive.mgm51.com/mirrors/postfix-source/ \
@@ -69,10 +70,10 @@ MAKE_AUXLIBS+=	-L${LOCALBASE}/lib -lsasl2
 . if ${MACHINE_ARCH} != aarch64 && ${MACHINE_ARCH} != amd64 && ${MACHINE_ARCH} != riscv64
 USE_NOEXECONLY=	Yes
 . endif
-BUILD_DEPENDS+=	security/openssl/3.2
-MAKE_CCARGS+=	-I${LOCALBASE}/include/eopenssl32
-MAKE_AUXLIBS+=	${LOCALBASE}/lib/eopenssl32/libssl.a \
-		${LOCALBASE}/lib/eopenssl32/libcrypto.a
+BUILD_DEPENDS+=	security/openssl/3.3
+MAKE_CCARGS+=	-I${LOCALBASE}/include/eopenssl33
+MAKE_AUXLIBS+=	${LOCALBASE}/lib/eopenssl33/libssl.a \
+		${LOCALBASE}/lib/eopenssl33/libcrypto.a
 .else
 MAKE_AUXLIBS+=	-lssl -lcrypto
 WANTLIB+=	crypto ssl
