@@ -19,7 +19,7 @@ Index: rsyncd.conf.5
  other supplementary groups.  The default for a non-super-user is to not
  change any group attributes (and indeed, your OS may not allow a
  non-super-user to try to change their group settings).
-@@ -1239,8 +1239,8 @@ A more sophisticated example would be:
+@@ -1242,8 +1242,8 @@ A more sophisticated example would be:
  .RS 4
  .P
  .nf

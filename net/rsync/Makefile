@@ -1,9 +1,8 @@
 COMMENT =	mirroring/synchronization over low bandwidth links
 
-DISTNAME =	rsync-3.3.0
+DISTNAME =	rsync-3.4.0
 CATEGORIES =	net
 HOMEPAGE =	https://rsync.samba.org/
-REVISION =	3
 
 FLAVORS =	minimal
 FLAVOR ?=
@@ -54,8 +53,10 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/support/rrsync
 
+# rrsync.1 generated with "make man", which requires py3-commonmark
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
 	${INSTALL_DATA} ${WRKSRC}/tech_report.tex ${DOCDIR}
+	${INSTALL_DATA} ${FILESDIR}/rrsync.1 ${PREFIX}/man/man1/rrsync.1
 
 .include <bsd.port.mk>
