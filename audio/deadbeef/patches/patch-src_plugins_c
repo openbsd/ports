@@ -1,7 +1,7 @@
-Index: plugins.c
---- plugins.c.orig
-+++ plugins.c
-@@ -1444,6 +1444,8 @@ _select_output_plugin (void) {
+Index: src/plugins.c
+--- src/plugins.c.orig
++++ src/plugins.c
+@@ -1547,6 +1547,8 @@ _select_output_plugin (void) {
      char outplugname[100];
  #ifdef OSX_APPBUNDLE
      conf_get_str ("output_plugin", "coreaudio", outplugname, sizeof (outplugname));

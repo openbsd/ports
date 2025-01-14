@@ -1,0 +1,13 @@
+Index: external/ddb_dsp_libretro/sinc_resampler.h
+--- external/ddb_dsp_libretro/sinc_resampler.h.orig
++++ external/ddb_dsp_libretro/sinc_resampler.h
+@@ -27,9 +27,6 @@
+ #include <stdint.h>
+ #include <stdlib.h>
+ #include <math.h>
+-#if !__APPLE__
+-#include <malloc.h>
+-#endif
+ 
+ #ifdef _MSC_VER
+ #define _NOALIAS __declspec(noalias)

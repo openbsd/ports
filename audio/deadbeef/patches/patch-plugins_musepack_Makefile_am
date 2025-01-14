@@ -1,5 +1,6 @@
---- plugins/musepack/Makefile.am.orig	Tue Sep 23 10:03:30 2014
-+++ plugins/musepack/Makefile.am	Tue Sep 23 10:04:14 2014
+Index: plugins/musepack/Makefile.am
+--- plugins/musepack/Makefile.am.orig
++++ plugins/musepack/Makefile.am
 @@ -2,30 +2,10 @@ if HAVE_MUSEPACK
  
  pkglib_LTLIBRARIES = musepack.la
@@ -31,5 +32,5 @@
 -musepack_la_LIBADD = $(LDADD) -lm
 +musepack_la_LIBADD = $(LDADD) -lm -lmpcdec
  
- AM_CFLAGS = $(CFLAGS) -fPIC -std=c99
+ musepack_la_CFLAGS = $(CFLAGS) -fPIC -std=c99 -I@top_srcdir@/include
  

@@ -1,15 +1,15 @@
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -84,6 +84,7 @@ AC_ARG_ENABLE(alsa,     [AS_HELP_STRING([--disable-als
- AC_ARG_ENABLE(oss,      [AS_HELP_STRING([--disable-oss     ], [disable Open Sound System output plugin (default: enabled)])], [enable_oss=$enableval], [enable_oss=yes])
+@@ -87,6 +87,7 @@ AC_ARG_ENABLE(oss,      [AS_HELP_STRING([--disable-oss
+ AC_ARG_ENABLE(pipewire, [AS_HELP_STRING([--disable-pipewire   ], [disable Pipewire output plugin (default: enabled)])], [enable_pipewire=$enableval], [enable_pipewire=yes])
  AC_ARG_ENABLE(pulse,    [AS_HELP_STRING([--disable-pulse   ], [disable PulseAudio output plugin (default: enabled)])], [enable_pulse=$enableval], [enable_pulse=yes])
  AC_ARG_ENABLE(coreaudio,[AS_HELP_STRING([--disable-coreaudio], [disable CoreAudio output plugin (default: enabled)])], [enable_coreaudio=$enableval], [enable_coreaudio=yes])
 +AC_ARG_ENABLE(sndio,    [AS_HELP_STRING([--disable-sndio   ], [disable sndio output plugin (default: enabled)])], [enable_sndio=$enableval], [enable_sndio=yes])
  AC_ARG_ENABLE(gtk3,     [AS_HELP_STRING([--disable-gtk3     ], [disable GTK3 version of gtkui plugin (default: enabled)])], [enable_gtk3=$enableval], [enable_gtk3=yes])
  AC_ARG_ENABLE(gtk2,     [AS_HELP_STRING([--disable-gtk2     ], [disable GTK2 version of gtkui plugin (default: enabled)])], [enable_gtk2=$enableval], [enable_gtk2=yes])
  AC_ARG_ENABLE(vfs_curl, [AS_HELP_STRING([--disable-vfs-curl], [disable HTTP streaming vfs plugin (default: enabled)])], [enable_vfs_curl=$enableval], [enable_vfs_curl=yes])
-@@ -205,8 +206,8 @@ AS_IF([test "${enable_portable}" != "no" -a "${enable_
+@@ -209,8 +210,8 @@ AS_IF([test "${enable_portable}" != "no" -a "${enable_
  dnl HACK: using undocumented variable to check whether it's safe to define __EXTENSIONS__
  test $ac_cv_safe_to_define___extensions__ = yes && CFLAGS_EXTENSIONS="-D__EXTENSIONS__"
  
@@ -20,7 +20,7 @@ Index: configure.ac
  
  
  AS_IF([test "${enable_staticlink}" != "no"], [
-@@ -307,6 +308,17 @@ AS_IF([test "${enable_coreaudio}" != "no" -a "${found_
+@@ -311,6 +312,17 @@ AS_IF([test "${enable_coreaudio}" != "no" -a "${found_
  
  AC_SUBST(COREAUDIO_LIBS)
  
@@ -38,7 +38,7 @@ Index: configure.ac
  AS_IF([test "${enable_ffmpeg}" != "no"], [
      AS_IF([test "${enable_staticlink}" != "no"], [
          FFMPEG_DEPS_CFLAGS="-I../../$LIB/include"
-@@ -414,11 +426,11 @@ AS_IF([test "${enable_vorbis}" != "no"], [
+@@ -434,11 +446,11 @@ AS_IF([test "${enable_vorbis}" != "no"], [
          AC_SUBST(VORBIS_LIBS)
          AC_SUBST(VORBIS_CFLAGS)
      ], [
@@ -53,7 +53,7 @@ Index: configure.ac
              AC_SUBST(VORBIS_LIBS)
          ])
      ])
-@@ -467,10 +479,10 @@ AS_IF([test "${enable_flac}" != "no"], [
+@@ -487,10 +499,10 @@ AS_IF([test "${enable_flac}" != "no"], [
          AC_SUBST(FLAC_CFLAGS)
          AC_SUBST(FLAC_LIBS)
      ], [
@@ -66,7 +66,7 @@ Index: configure.ac
              AC_SUBST(FLAC_LIBS)
          ])
      ])
-@@ -747,7 +759,7 @@ AS_IF([test "${enable_aac}" != "no"], [
+@@ -773,7 +785,7 @@ AS_IF([test "${enable_aac}" != "no"], [
  ])
  
  AS_IF([test "${enable_mms}" != "no"], [
@@ -75,7 +75,7 @@ Index: configure.ac
      AC_SUBST(LIBMMS_LIBS)
      HAVE_MMS=yes
  ])
-@@ -821,7 +833,7 @@ AS_IF([test "${enable_soundtouch}" != "no"], [
+@@ -847,7 +859,7 @@ AS_IF([test "${enable_soundtouch}" != "no"], [
      HAVE_SOUNDTOUCH=yes
  ])
  
@@ -84,15 +84,15 @@ Index: configure.ac
  
  AM_CONDITIONAL(APE_USE_YASM, test "x$APE_USE_YASM" = "xyes")
  AM_CONDITIONAL(HAVE_VORBIS, test "x$HAVE_VORBISPLUGIN" = "xyes")
-@@ -837,6 +849,7 @@ AM_CONDITIONAL(HAVE_GTK2, test "x$HAVE_GTK2" = "xyes")
+@@ -863,6 +875,7 @@ AM_CONDITIONAL(HAVE_GTK2, test "x$HAVE_GTK2" = "xyes")
  AM_CONDITIONAL(HAVE_GTK3, test "x$HAVE_GTK3" = "xyes")
  AM_CONDITIONAL(HAVE_ALSA, test "x$HAVE_ALSAPLUGIN" = "xyes")
  AM_CONDITIONAL(HAVE_COREAUDIO, test "x$HAVE_COREAUDIO" = "xyes")
 +AM_CONDITIONAL(HAVE_SNDIO, test "x$HAVE_SNDIO" = "xyes")
  AM_CONDITIONAL(HAVE_FFMPEG, test "x$HAVE_FFMPEGPLUGIN" = "xyes")
+ AM_CONDITIONAL(HAVE_PIPEWIRE, test "x$HAVE_PIPEWIRE_PLUGIN" = "xyes")
  AM_CONDITIONAL(HAVE_PULSE, test "x$HAVE_PULSEPLUGIN" = "xyes")
- AM_CONDITIONAL(HAVE_ARTWORK, test "x$HAVE_ARTWORK" = "xyes")
-@@ -945,6 +958,7 @@ plugins/wma/Makefile
+@@ -976,6 +989,7 @@ plugins/wma/Makefile
  plugins/pltbrowser/Makefile
  plugins/sc68/Makefile
  plugins/coreaudio/Makefile

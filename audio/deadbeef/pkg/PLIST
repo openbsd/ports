@@ -128,6 +128,7 @@ lib/deadbeef/data68/Replay/vikingchild.bin
 lib/deadbeef/data68/Replay/xbiossound.bin
 lib/deadbeef/data68/Replay/zonewarrior.bin
 @so lib/deadbeef/dca.so
+@so lib/deadbeef/ddb_dsp_libretro.so
 @so lib/deadbeef/ddb_dumb.so
 @so lib/deadbeef/ddb_gui_GTK3.so
 @so lib/deadbeef/ddb_shn.so

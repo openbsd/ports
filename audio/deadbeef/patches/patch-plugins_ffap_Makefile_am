@@ -9,5 +9,5 @@ Index: plugins/ffap/Makefile.am
 +ffap_la_LDFLAGS += -Wl,-znotext
 +endif
  
- AM_CFLAGS = $(CFLAGS) -fPIC -std=c99
+ ffap_la_CFLAGS = $(CFLAGS) -fPIC -std=c99 -I@top_srcdir@/include
  endif
