@@ -1,0 +1,13 @@
+${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_LIB}/gems/${DISTNAME}/
+${GEM_LIB}/gems/${DISTNAME}/Changes.md
+${GEM_LIB}/gems/${DISTNAME}/LICENSE
+${GEM_LIB}/gems/${DISTNAME}/README.md
+${GEM_LIB}/gems/${DISTNAME}/connection_pool.gemspec
+${GEM_LIB}/gems/${DISTNAME}/lib/
+${GEM_LIB}/gems/${DISTNAME}/lib/connection_pool/
+${GEM_LIB}/gems/${DISTNAME}/lib/connection_pool.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/connection_pool/timed_stack.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/connection_pool/version.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/connection_pool/wrapper.rb
+${GEM_LIB}/specifications/${DISTNAME}.gemspec
