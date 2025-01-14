@@ -201,6 +201,7 @@ include/mutter-15/mtk/mtk/mtk-macros.h
 include/mutter-15/mtk/mtk/mtk-monitor-transform.h
 include/mutter-15/mtk/mtk/mtk-rectangle.h
 include/mutter-15/mtk/mtk/mtk-region.h
+include/mutter-15/mtk/mtk/mtk-utils.h
 include/mutter-15/mtk/mtk/mtk-x11-errors.h
 include/mutter-15/mtk/mtk/mtk-x11.h
 include/mutter-15/mtk/mtk/mtk.h
