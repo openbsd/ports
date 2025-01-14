@@ -1,4 +1,6 @@
 @pkgpath devel/py-jsonschema-path,python3
+@pkgpath devel/py-jsonschema-spec,python3
+@pkgpath devel/py-jsonschema-spec
 lib/python${MODPY_VERSION}/site-packages/jsonschema_path/
 lib/python${MODPY_VERSION}/site-packages/jsonschema_path-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/jsonschema_path-${MODPY_DISTV}.dist-info/LICENSE
