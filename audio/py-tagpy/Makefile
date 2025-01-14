@@ -1,10 +1,11 @@
 COMMENT=	Python bindings to TagLib audio file tag library
 
-MODPY_DISTV=	2022.1
-DISTNAME=	tagpy-${MODPY_DISTV}
+MODPY_DISTV=	2025.1
+GH_ACCOUNT=	palfrey
+GH_PROJECT=	tagpy
+GH_TAGNAME=	v${MODPY_DISTV}
+#DISTNAME=	tagpy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-
-REVISION=	3
 
 CATEGORIES=	audio devel
 
@@ -19,7 +20,8 @@ COMPILER=	base-clang ports-gcc
 
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
-MODPY_PI=	Yes
+# some files required for tests aren't included in pypi sdist
+#MODPY_PI=	Yes
 
 LIB_DEPENDS=	audio/taglib \
 		devel/boost
