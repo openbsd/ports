@@ -1,6 +1,6 @@
 COMMENT=		JSON implementation for Ruby
 
-DISTNAME=		json_pure-2.7.2
+DISTNAME=		json_pure-2.8.1
 CATEGORIES=		devel
 
 HOMEPAGE=		https://github.com/flori/json
