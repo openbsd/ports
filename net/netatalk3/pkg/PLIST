@@ -3,13 +3,13 @@
 @pkgpath net/netatalk,avahi
 @rcscript ${RCDIR}/netatalk
 @bin bin/ad
+bin/addump
 @mode 4755
 @owner root
 @bin bin/afppasswd
 @mode
 @owner
 bin/afpstats
-bin/apple_dump
 bin/asip-status
 @bin bin/dbd
 bin/macusers
@@ -34,7 +34,6 @@ include/atalk/nbp.h
 include/atalk/netatalk_conf.h
 include/atalk/netddp.h
 include/atalk/pap.h
-include/atalk/paths.h
 include/atalk/queue.h
 include/atalk/rtmp.h
 include/atalk/standards.h
@@ -56,6 +55,7 @@ lib/netatalk/
 @so lib/netatalk/uams_passwd.so
 @so lib/netatalk/uams_randnum.so
 @man man/man1/ad.1
+@man man/man1/addump.1
 @man man/man1/afp_lantest.1
 @man man/man1/afp_logintest.1
 @man man/man1/afp_spectest.1
@@ -65,7 +65,6 @@ lib/netatalk/
 @man man/man1/afppasswd.1
 @man man/man1/afpstats.1
 @man man/man1/afptest.1
-@man man/man1/apple_dump.1
 @man man/man1/asip-status.1
 @man man/man1/dbd.1
 @man man/man1/macusers.1
@@ -76,6 +75,7 @@ lib/netatalk/
 @man man/man5/afp_signature.conf.5
 @man man/man5/afp_voluuid.conf.5
 @man man/man5/extmap.conf.5
+@man man/man5/macipgw.conf.5
 @man man/man8/afpd.8
 @man man/man8/cnid_dbd.8
 @man man/man8/cnid_metad.8
