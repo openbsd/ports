@@ -3,8 +3,7 @@ USE_NOBTCFI-aarch64 =	Yes# fortran
 COMMENT-main =	translator library for geospatial data formats
 COMMENT-python =python bindings and utilities for GDAL
 
-V =		3.10.0
-REVISION =	2
+V =		3.10.1
 DISTNAME =	gdal-${V}
 DISTFILES =	${DISTNAME}${EXTRACT_SUFX} \
 		gdalautotest-${V}${EXTRACT_SUFX}
