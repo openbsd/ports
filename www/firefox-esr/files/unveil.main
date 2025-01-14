@@ -1,7 +1,9 @@
 # for uuid generation?
 /dev/urandom r
-/dev/video rw
 /dev/video0 rw
+/dev/video1 rw
+/dev/video2 rw
+/dev/video3 rw
 /dev/fido rw
 # for webgl info in about:support
 /dev/dri rw
