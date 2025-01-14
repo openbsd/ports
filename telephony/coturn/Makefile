@@ -5,7 +5,6 @@ GH_ACCOUNT =	coturn
 GH_PROJECT =	coturn
 GH_TAGNAME =	docker/${V}
 DISTNAME =	turnserver-${V:S/-r/pl/}
-WRKDIST =	${WRKDIR}/coturn-docker-${V}
 
 COMPILER =	base-clang ports-gcc
 COMPILER_LANGS = c

@@ -6,7 +6,6 @@ GH_ACCOUNT =	EnterpriseDB
 GH_PROJECT =	barman
 GH_TAGNAME =	release/${MODPY_DISTV}
 DISTNAME =	barman-${MODPY_DISTV}
-WRKDIST =	${WRKDIR}/barman-release-${MODPY_DISTV}
 REVISION =	1
 
 CATEGORIES =	databases

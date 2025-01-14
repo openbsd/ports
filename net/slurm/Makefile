@@ -19,8 +19,6 @@ WANTLIB =	c curses
 
 MODULES =	devel/cmake
 
-WRKDIST =	${WRKDIR}/${GH_PROJECT}-upstream-${GH_VERSION}
-
 pre-configure:
 	@${SUBST_CMD} ${WRKSRC}/theme.c ${WRKSRC}/slurm.1
 

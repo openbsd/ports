@@ -5,7 +5,6 @@ GH_ACCOUNT=	ndilieto
 GH_PROJECT=	uacme
 GH_TAGNAME=	upstream/$V
 DISTNAME=	uacme-$V
-WRKDIST=	${WRKDIR}/uacme-upstream-$V
 
 CATEGORIES=	security www
 
