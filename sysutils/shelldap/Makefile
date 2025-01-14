@@ -1,13 +1,12 @@
 COMMENT =	browse LDAP server with a shell-like CLI
 
-V =		1.5.1
+V =		1.5.2
 DISTNAME =	shelldap-${V}
-HG_COMMIT =	e8af5aa8bd15
-EPOCH =	0
-REVISION =	0
 CATEGORIES =	sysutils
 
-HOMEPAGE =	https://hg.sr.ht/~mahlon/shelldap/
+HOMEPAGE =	https://github.com/mahlonsmith/shelldap
+
+EPOCH =	0
 
 # BSD
 PERMIT_PACKAGE=	Yes
