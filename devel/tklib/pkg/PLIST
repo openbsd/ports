@@ -4,12 +4,15 @@
 @pkgpath devel/wcb
 lib/tcl/canvas/
 lib/tcl/canvas/canvas_drag.tcl
+lib/tcl/canvas/canvas_ecircle.tcl
 lib/tcl/canvas/canvas_epoints.tcl
 lib/tcl/canvas/canvas_epolyline.tcl
 lib/tcl/canvas/canvas_equad.tcl
+lib/tcl/canvas/canvas_erectangle.tcl
 lib/tcl/canvas/canvas_gradient.tcl
 lib/tcl/canvas/canvas_highlight.tcl
 lib/tcl/canvas/canvas_mvg.tcl
+lib/tcl/canvas/canvas_pdf.tcl
 lib/tcl/canvas/canvas_snap.tcl
 lib/tcl/canvas/canvas_sqmap.tcl
 lib/tcl/canvas/canvas_tags.tcl
@@ -56,6 +59,36 @@ lib/tcl/khim/pkgIndex.tcl
 lib/tcl/khim/pl.msg
 lib/tcl/khim/ru.msg
 lib/tcl/khim/uk.msg
+lib/tcl/map_tklib/
+lib/tcl/map_tklib/area-display.tcl
+lib/tcl/map_tklib/area-file.tcl
+lib/tcl/map_tklib/area-map-display.tcl
+lib/tcl/map_tklib/area-store-fs.tcl
+lib/tcl/map_tklib/area-store-mem.tcl
+lib/tcl/map_tklib/area-table-display.tcl
+lib/tcl/map_tklib/box-display.tcl
+lib/tcl/map_tklib/box-entry.tcl
+lib/tcl/map_tklib/box-file.tcl
+lib/tcl/map_tklib/box-map-display.tcl
+lib/tcl/map_tklib/box-store-fs.tcl
+lib/tcl/map_tklib/box-store-mem.tcl
+lib/tcl/map_tklib/box-table-display.tcl
+lib/tcl/map_tklib/display.tcl
+lib/tcl/map_tklib/mark.tcl
+lib/tcl/map_tklib/pkgIndex.tcl
+lib/tcl/map_tklib/point-file.tcl
+lib/tcl/map_tklib/point-map-display.tcl
+lib/tcl/map_tklib/point-store-fs.tcl
+lib/tcl/map_tklib/point-store-mem.tcl
+lib/tcl/map_tklib/point-table-display.tcl
+lib/tcl/map_tklib/provider-osm.tcl
+lib/tcl/map_tklib/track-display.tcl
+lib/tcl/map_tklib/track-entry.tcl
+lib/tcl/map_tklib/track-file.tcl
+lib/tcl/map_tklib/track-map-display.tcl
+lib/tcl/map_tklib/track-store-fs.tcl
+lib/tcl/map_tklib/track-store-mem.tcl
+lib/tcl/map_tklib/track-table-display.tcl
 lib/tcl/mentry/
 lib/tcl/mentry/mentry.tcl
 lib/tcl/mentry/mentryCommon.tcl
@@ -80,13 +113,13 @@ lib/tcl/menubar/pkgIndex.tcl
 lib/tcl/menubar/tree.tcl
 lib/tcl/modules/85/autoscroll-1.1.tm
 lib/tcl/modules/85/chatwidget-1.1.4.tm
-lib/tcl/modules/85/crosshair-1.2.tm
+lib/tcl/modules/85/crosshair-1.2.1.tm
 lib/tcl/modules/85/ctext-3.3.tm
 lib/tcl/modules/85/cursor-0.3.1.tm
 lib/tcl/modules/85/datefield-0.3.tm
-lib/tcl/modules/85/history-0.1.tm
-lib/tcl/modules/85/ipentry-0.3.tm
-lib/tcl/modules/85/notifywindow-1.0.tm
+lib/tcl/modules/85/history-0.3.tm
+lib/tcl/modules/85/ipentry-0.3.2.tm
+lib/tcl/modules/85/notifywindow-1.0.1.tm
 lib/tcl/modules/85/persistentSelection-1.0b1.tm
 lib/tcl/modules/85/swaplist-0.2.tm
 lib/tcl/modules/85/widgetPlus-1.0b2.tm
@@ -105,6 +138,7 @@ lib/tcl/plotchart/plotchart.tcl
 lib/tcl/plotchart/plotcombined.tcl
 lib/tcl/plotchart/plotconfig.tcl
 lib/tcl/plotchart/plotcontour.tcl
+lib/tcl/plotchart/plotdendrogram.tcl
 lib/tcl/plotchart/plotgantt.tcl
 lib/tcl/plotchart/plotobject.tcl
 lib/tcl/plotchart/plotpack.tcl
@@ -118,6 +152,7 @@ lib/tcl/plotchart/xyplot.tcl
 lib/tcl/scrollutil/
 lib/tcl/scrollutil/pkgIndex.tcl
 lib/tcl/scrollutil/scripts/
+lib/tcl/scrollutil/scripts/attrib.tcl
 lib/tcl/scrollutil/scripts/notebookImages.tcl
 lib/tcl/scrollutil/scripts/pagesman.tcl
 lib/tcl/scrollutil/scripts/plainnotebook.tcl
@@ -127,10 +162,14 @@ lib/tcl/scrollutil/scripts/scrollednotebook.tcl
 lib/tcl/scrollutil/scripts/scrollsync.tcl
 lib/tcl/scrollutil/scripts/tclIndex
 lib/tcl/scrollutil/scripts/utils/
-lib/tcl/scrollutil/scripts/utils/clampatch.tcl
+lib/tcl/scrollutil/scripts/utils/indicatorImgs/
+lib/tcl/scrollutil/scripts/utils/indicatorImgs/gifIndicatorImgs.tcl
+lib/tcl/scrollutil/scripts/utils/indicatorImgs/svgIndicatorImgs.tcl
+lib/tcl/scrollutil/scripts/utils/indicatorImgs/tclIndex
 lib/tcl/scrollutil/scripts/utils/mwutil.tcl
 lib/tcl/scrollutil/scripts/utils/pkgIndex.tcl
 lib/tcl/scrollutil/scripts/utils/scaleutil.tcl
+lib/tcl/scrollutil/scripts/utils/themepatch.tcl
 lib/tcl/scrollutil/scripts/wheelEvent.tcl
 lib/tcl/scrollutil/scrollutil.tcl
 lib/tcl/scrollutil/scrollutilCommon.tcl
@@ -149,7 +188,6 @@ lib/tcl/tablelist/
 lib/tcl/tablelist/pkgIndex.tcl
 lib/tcl/tablelist/scripts/
 lib/tcl/tablelist/scripts/pencil.cur
-lib/tcl/tablelist/scripts/repair.tcl
 lib/tcl/tablelist/scripts/tablelistBind.tcl
 lib/tcl/tablelist/scripts/tablelistConfig.tcl
 lib/tcl/tablelist/scripts/tablelistEdit.tcl
@@ -161,13 +199,21 @@ lib/tcl/tablelist/scripts/tablelistUtil.tcl
 lib/tcl/tablelist/scripts/tablelistWidget.tcl
 lib/tcl/tablelist/scripts/tclIndex
 lib/tcl/tablelist/scripts/utils/
+lib/tcl/tablelist/scripts/utils/indicatorImgs/
+lib/tcl/tablelist/scripts/utils/indicatorImgs/gifIndicatorImgs.tcl
+lib/tcl/tablelist/scripts/utils/indicatorImgs/svgIndicatorImgs.tcl
+lib/tcl/tablelist/scripts/utils/indicatorImgs/tclIndex
 lib/tcl/tablelist/scripts/utils/mwutil.tcl
 lib/tcl/tablelist/scripts/utils/pkgIndex.tcl
 lib/tcl/tablelist/scripts/utils/scaleutil.tcl
 lib/tcl/tablelist/scripts/utils/scaleutilMisc.tcl
+lib/tcl/tablelist/scripts/utils/themepatch.tcl
 lib/tcl/tablelist/tablelist.tcl
 lib/tcl/tablelist/tablelistCommon.tcl
 lib/tcl/tablelist/tablelist_tile.tcl
+lib/tcl/text/
+lib/tcl/text/pkgIndex.tcl
+lib/tcl/text/txmixins.tcl
 lib/tcl/tkpiechart/
 lib/tcl/tkpiechart/boxlabel.tcl
 lib/tcl/tkpiechart/canlabel.tcl
@@ -185,6 +231,9 @@ lib/tcl/tooltip/
 lib/tcl/tooltip/pkgIndex.tcl
 lib/tcl/tooltip/tipstack.tcl
 lib/tcl/tooltip/tooltip.tcl
+lib/tcl/treeview/
+lib/tcl/treeview/pkgIndex.tcl
+lib/tcl/treeview/tvmixins.tcl
 lib/tcl/wcb/
 lib/tcl/wcb/pkgIndex.tcl
 lib/tcl/wcb/scripts/
@@ -212,8 +261,18 @@ lib/tcl/widget/superframe.tcl
 lib/tcl/widget/toolbar.tcl
 lib/tcl/widget/widget.tcl
 lib/tcl/widgetl/
+lib/tcl/widgetl/icons/
+lib/tcl/widgetl/icons/add.png
+lib/tcl/widgetl/icons/arrow_down.png
+lib/tcl/widgetl/icons/arrow_up.png
+lib/tcl/widgetl/icons/delete.png
+lib/tcl/widgetl/icons/folder_explore.png
 lib/tcl/widgetl/listentry.tcl
 lib/tcl/widgetl/listsimple.tcl
+lib/tcl/widgetl/msgs/
+lib/tcl/widgetl/msgs/de.msg
+lib/tcl/widgetl/msgs/en.msg
+lib/tcl/widgetl/msgs/root.msg
 lib/tcl/widgetl/pkgIndex.tcl
 lib/tcl/widgetv/
 lib/tcl/widgetv/pkgIndex.tcl
@@ -221,12 +280,15 @@ lib/tcl/widgetv/validator.tcl
 @man man/mann/autoscroll.n
 @man man/mann/bitmap-editor.n
 @man man/mann/canvas::drag.n
+@man man/mann/canvas::ecircle.n
 @man man/mann/canvas::epoints.n
 @man man/mann/canvas::epolyline.n
 @man man/mann/canvas::equad.n
+@man man/mann/canvas::erectangle.n
 @man man/mann/canvas::gradient.n
 @man man/mann/canvas::highlight.n
 @man man/mann/canvas::mvg.n
+@man man/mann/canvas::pdf.n
 @man man/mann/canvas::snap.n
 @man man/mann/canvas::sqmap.n
 @man man/mann/canvas::tags.n
@@ -259,6 +321,7 @@ lib/tcl/widgetv/validator.tcl
 @man man/mann/shtmlview-mkdoc.n
 @man man/mann/shtmlview.n
 @man man/mann/swaplist.n
+@man man/mann/tipstack.n
 @man man/mann/tk_getString.n
 @man man/mann/tklib.n
 @man man/mann/tklib::history.n
@@ -302,6 +365,7 @@ share/doc/tablelist/arc.png
 share/doc/tablelist/arrowStyles.png
 share/doc/tablelist/arrowStyles_vista.png
 share/doc/tablelist/baghira.png
+share/doc/tablelist/bicolor.png
 share/doc/tablelist/bicolor100.png
 share/doc/tablelist/bicolor125.png
 share/doc/tablelist/bicolor150.png
@@ -311,6 +375,7 @@ share/doc/tablelist/blueMenta.png
 share/doc/tablelist/browse.png
 share/doc/tablelist/browseTree.png
 share/doc/tablelist/bwidget.png
+share/doc/tablelist/classic.png
 share/doc/tablelist/classic100.png
 share/doc/tablelist/classic125.png
 share/doc/tablelist/classic150.png
@@ -333,6 +398,7 @@ share/doc/tablelist/newWave.png
 share/doc/tablelist/oxygen1.png
 share/doc/tablelist/oxygen2.png
 share/doc/tablelist/phase.png
+share/doc/tablelist/plain.png
 share/doc/tablelist/plain100.png
 share/doc/tablelist/plain125.png
 share/doc/tablelist/plain150.png
@@ -363,6 +429,7 @@ share/doc/tablelist/ubuntu3.png
 share/doc/tablelist/ubuntuMate.png
 share/doc/tablelist/vistaAero.png
 share/doc/tablelist/vistaClassic.png
+share/doc/tablelist/white.png
 share/doc/tablelist/white100.png
 share/doc/tablelist/white125.png
 share/doc/tablelist/white150.png
@@ -401,10 +468,14 @@ share/examples/tklib/canvas/crosshairs_for_axes.tcl
 share/examples/tklib/canvas/crosshairs_for_multixyplot.tcl
 share/examples/tklib/canvas/crosshairs_scaled.tcl
 share/examples/tklib/canvas/demo_draghigh.tcl
+share/examples/tklib/canvas/demo_editcircle.tcl
 share/examples/tklib/canvas/demo_editpoints.tcl
 share/examples/tklib/canvas/demo_editpoly.tcl
+share/examples/tklib/canvas/demo_editpolyclosed.tcl
+share/examples/tklib/canvas/demo_editpolyclosedconvex.tcl
 share/examples/tklib/canvas/demo_editquad.tcl
 share/examples/tklib/canvas/demo_editquadconvex.tcl
+share/examples/tklib/canvas/demo_editrect.tcl
 share/examples/tklib/canvas/locationmarks.gps
 share/examples/tklib/canvas/morgens.jpg
 share/examples/tklib/canvas/osm.tcl
@@ -415,6 +486,43 @@ share/examples/tklib/controlwidget/demo-meters.tcl
 share/examples/tklib/controlwidget/demo-rdial.tcl
 share/examples/tklib/controlwidget/demo-tachometer.tcl
 share/examples/tklib/controlwidget/demo-voltmeter.tcl
+share/examples/tklib/map/
+share/examples/tklib/map/README.md
+share/examples/tklib/map/data/
+share/examples/tklib/map/data/arbutus-walk.track
+share/examples/tklib/map/data/bernau-schwarzwald.box
+share/examples/tklib/map/data/bloedel.box
+share/examples/tklib/map/data/byrne-creek-ravine-park.area
+share/examples/tklib/map/data/capilano-trail.track
+share/examples/tklib/map/data/cates-park.area
+share/examples/tklib/map/data/everett-crowley-park.area
+share/examples/tklib/map/data/fort-langley-national-historical-site.area
+share/examples/tklib/map/data/fort-langley-tour.track
+share/examples/tklib/map/data/jug-island-beach-trail.track
+share/examples/tklib/map/data/lost-lagoon.area
+share/examples/tklib/map/data/lvr-archaeologischer-park-xanten.area
+share/examples/tklib/map/data/many.points
+share/examples/tklib/map/data/nitobe-memorial-garden.area
+share/examples/tklib/map/data/pacific-spirit-park.box
+share/examples/tklib/map/data/pitt-lake-tour.track
+share/examples/tklib/map/data/quarry-rock-lookout.track
+share/examples/tklib/map/data/queen-elizabeth-park.area
+share/examples/tklib/map/data/simon-fraser-university.box
+share/examples/tklib/map/data/st-blasien-schwarzwald.box
+share/examples/tklib/map/data/stanley-park-pitch-putt-play.track
+share/examples/tklib/map/data/stanley-park-pitch-putt.area
+share/examples/tklib/map/data/stanley-park.box
+share/examples/tklib/map/data/the-sanctuary-hastings-park.area
+share/examples/tklib/map/data/university-of-bc.box
+share/examples/tklib/map/demo_map.tcl
+share/examples/tklib/map/demo_map_area_entry.tcl
+share/examples/tklib/map/demo_map_areas.tcl
+share/examples/tklib/map/demo_map_box_entry.tcl
+share/examples/tklib/map/demo_map_boxes.tcl
+share/examples/tklib/map/demo_map_layers.tcl
+share/examples/tklib/map/demo_map_points.tcl
+share/examples/tklib/map/demo_map_track_entry.tcl
+share/examples/tklib/map/demo_map_tracks.tcl
 share/examples/tklib/mentry/
 share/examples/tklib/mentry/datetime1.tcl
 share/examples/tklib/mentry/datetime1_tile.tcl
@@ -486,6 +594,7 @@ share/examples/tklib/plotchart/testregion.tcl
 share/examples/tklib/plotchart/testshadexy.tcl
 share/examples/tklib/plotchart/testtable.tcl
 share/examples/tklib/plotchart/testtxplot.tcl
+share/examples/tklib/plotchart/testviolin.tcl
 share/examples/tklib/plotchart/testxypie.tcl
 share/examples/tklib/plotchart/timeinxyplot.tcl
 share/examples/tklib/plotchart/xyplot_demo.tcl
@@ -495,6 +604,7 @@ share/examples/tklib/scrollutil/BwScrollableFrmDemo1.tcl
 share/examples/tklib/scrollutil/BwScrollableFrmDemo2.tcl
 share/examples/tklib/scrollutil/PagesManDemo.tcl
 share/examples/tklib/scrollutil/PlainNotebookDemo.tcl
+share/examples/tklib/scrollutil/ScrolledCanvas.tcl
 share/examples/tklib/scrollutil/ScrolledFrmContent.tcl
 share/examples/tklib/scrollutil/ScrolledFrmDemo1.tcl
 share/examples/tklib/scrollutil/ScrolledFrmDemo2.tcl
@@ -508,11 +618,13 @@ share/examples/tklib/scrollutil/SuScrollableFrmDemo2.tcl
 share/examples/tklib/scrollutil/SyncListboxes.tcl
 share/examples/tklib/scrollutil/SyncTablelists.tcl
 share/examples/tklib/scrollutil/TtkNotebookDemo.tcl
+share/examples/tklib/scrollutil/file.svg
 share/examples/tklib/scrollutil/file100.gif
 share/examples/tklib/scrollutil/file125.gif
 share/examples/tklib/scrollutil/file150.gif
 share/examples/tklib/scrollutil/file175.gif
 share/examples/tklib/scrollutil/file200.gif
+share/examples/tklib/scrollutil/folder.svg
 share/examples/tklib/scrollutil/folder100.gif
 share/examples/tklib/scrollutil/folder125.gif
 share/examples/tklib/scrollutil/folder150.gif
@@ -527,27 +639,31 @@ share/examples/tklib/tablelist/browseTree_tile.tcl
 share/examples/tklib/tablelist/browse_tile.tcl
 share/examples/tklib/tablelist/bwidget.tcl
 share/examples/tklib/tablelist/bwidget_tile.tcl
+share/examples/tklib/tablelist/checked.svg
 share/examples/tklib/tablelist/checked100.gif
 share/examples/tklib/tablelist/checked125.gif
 share/examples/tklib/tablelist/checked150.gif
 share/examples/tklib/tablelist/checked175.gif
 share/examples/tklib/tablelist/checked200.gif
+share/examples/tklib/tablelist/clsdFolder.svg
 share/examples/tklib/tablelist/clsdFolder100.gif
 share/examples/tklib/tablelist/clsdFolder125.gif
 share/examples/tklib/tablelist/clsdFolder150.gif
 share/examples/tklib/tablelist/clsdFolder175.gif
 share/examples/tklib/tablelist/clsdFolder200.gif
-share/examples/tklib/tablelist/comp100.xbm
-share/examples/tklib/tablelist/comp125.xbm
-share/examples/tklib/tablelist/comp150.xbm
-share/examples/tklib/tablelist/comp175.xbm
-share/examples/tklib/tablelist/comp200.xbm
+share/examples/tklib/tablelist/comp.svg
+share/examples/tklib/tablelist/comp100.gif
+share/examples/tklib/tablelist/comp125.gif
+share/examples/tklib/tablelist/comp150.gif
+share/examples/tklib/tablelist/comp175.gif
+share/examples/tklib/tablelist/comp200.gif
 share/examples/tklib/tablelist/config.tcl
 share/examples/tklib/tablelist/config_tile.tcl
 share/examples/tklib/tablelist/dirViewer.tcl
 share/examples/tklib/tablelist/dirViewer_tile.tcl
 share/examples/tklib/tablelist/embeddedWindows.tcl
 share/examples/tklib/tablelist/embeddedWindows_tile.tcl
+share/examples/tklib/tablelist/file.svg
 share/examples/tklib/tablelist/file100.gif
 share/examples/tklib/tablelist/file125.gif
 share/examples/tklib/tablelist/file150.gif
@@ -556,18 +672,15 @@ share/examples/tklib/tablelist/file200.gif
 share/examples/tklib/tablelist/images.tcl
 share/examples/tklib/tablelist/iwidgets.tcl
 share/examples/tklib/tablelist/iwidgets_tile.tcl
-share/examples/tklib/tablelist/leaf100.xbm
-share/examples/tklib/tablelist/leaf125.xbm
-share/examples/tklib/tablelist/leaf150.xbm
-share/examples/tklib/tablelist/leaf175.xbm
-share/examples/tklib/tablelist/leaf200.xbm
+share/examples/tklib/tablelist/leaf.svg
+share/examples/tklib/tablelist/leaf100.gif
+share/examples/tklib/tablelist/leaf125.gif
+share/examples/tklib/tablelist/leaf150.gif
+share/examples/tklib/tablelist/leaf175.gif
+share/examples/tklib/tablelist/leaf200.gif
 share/examples/tklib/tablelist/miscWidgets.tcl
 share/examples/tklib/tablelist/miscWidgets_tile.tcl
-share/examples/tklib/tablelist/openAction100.gif
-share/examples/tklib/tablelist/openAction125.gif
-share/examples/tklib/tablelist/openAction150.gif
-share/examples/tklib/tablelist/openAction175.gif
-share/examples/tklib/tablelist/openAction200.gif
+share/examples/tklib/tablelist/openFolder.svg
 share/examples/tklib/tablelist/openFolder100.gif
 share/examples/tklib/tablelist/openFolder125.gif
 share/examples/tklib/tablelist/openFolder150.gif
@@ -579,15 +692,35 @@ share/examples/tklib/tablelist/serialParams.tcl
 share/examples/tklib/tablelist/styles.tcl
 share/examples/tklib/tablelist/styles_tile.tcl
 share/examples/tklib/tablelist/tileWidgets.tcl
+share/examples/tklib/tablelist/unchecked.svg
 share/examples/tklib/tablelist/unchecked100.gif
 share/examples/tklib/tablelist/unchecked125.gif
 share/examples/tklib/tablelist/unchecked150.gif
 share/examples/tklib/tablelist/unchecked175.gif
 share/examples/tklib/tablelist/unchecked200.gif
+share/examples/tklib/tablelist/view.svg
+share/examples/tklib/tablelist/view100.gif
+share/examples/tklib/tablelist/view125.gif
+share/examples/tklib/tablelist/view150.gif
+share/examples/tklib/tablelist/view175.gif
+share/examples/tklib/tablelist/view200.gif
 share/examples/tklib/tkpiechart/
 share/examples/tklib/tkpiechart/demo.tcl
 share/examples/tklib/wcb/
 share/examples/tklib/wcb/entrytest.tcl
+share/examples/tklib/wcb/images/
+share/examples/tklib/wcb/images/earth.gif
+share/examples/tklib/wcb/images/earthmenu.png
+share/examples/tklib/wcb/images/earthris.gif
+share/examples/tklib/wcb/images/flagdown.xbm
+share/examples/tklib/wcb/images/flagup.xbm
+share/examples/tklib/wcb/images/gray25.xbm
+share/examples/tklib/wcb/images/letters.xbm
+share/examples/tklib/wcb/images/noletter.xbm
+share/examples/tklib/wcb/images/ouster.png
+share/examples/tklib/wcb/images/pattern.xbm
+share/examples/tklib/wcb/images/tcllogo.gif
+share/examples/tklib/wcb/images/teapot.ppm
 share/examples/tklib/wcb/listboxtest1.tcl
 share/examples/tklib/wcb/listboxtest2.tcl
 share/examples/tklib/wcb/option.tcl

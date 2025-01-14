@@ -4,7 +4,7 @@ Generate tcllib.n.
 Index: installer.tcl
 --- installer.tcl.orig
 +++ installer.tcl
-@@ -82,16 +82,24 @@ proc gen_main_index {outdir package version} {
+@@ -81,16 +81,24 @@ proc gen_main_index {outdir package version} {
  
  proc xcopyfile {src dest} {
      # dest can be dir or file
@@ -29,7 +29,7 @@ Index: installer.tcl
  	    set sub  [file join $dest $base]
  
  	    if {0 == [string compare CVS $base]} {continue}
-@@ -142,6 +150,7 @@ proc write_out {f text} {
+@@ -141,6 +149,7 @@ proc write_out {f text} {
      catch {file delete -force $f}
      puts -nonewline [set of [open $f w]] $text
      close $of
@@ -37,7 +37,7 @@ Index: installer.tcl
  }
  
  
-@@ -182,7 +191,6 @@ proc run {args} {
+@@ -181,7 +190,6 @@ proc run {args} {
              return -code error "Install error:\n $msg"
          }
      }
@@ -45,7 +45,7 @@ Index: installer.tcl
      return
  }
  
-@@ -207,18 +215,23 @@ proc ainstall {} {
+@@ -206,18 +214,23 @@ proc ainstall {} {
  	set aexe [file join $distribution apps $a]
  	set adst [file join $config(app,path) ${a}$ext]
  
@@ -74,11 +74,22 @@ Index: installer.tcl
  
      if {!$config(no-exclude)} {
  	foreach p $excluded {
-@@ -228,26 +241,35 @@ proc doinstall {} {
+@@ -227,26 +240,46 @@ proc doinstall {} {
  	}
      }
  
-+    array set pkgs [exec [info nameofexecutable] [file join $distribution sak.tcl] provided]
++    if 1 {
++	# Get module names and versions from the PACKAGES file.
++	array set pkgs {}
++	foreach l [split [read -nonewline [set f [open [file join $distribution support releases PACKAGES]]]][close $f] \n] {
++	    if {[regexp {^\s*([^\s]+)\s+(\d[^\s]*)\s*$} $l -> n v]} {
++		set pkgs($n) $v
++	    }
++	}
++    } else {
++	# Run sak to get module names and versions.
++	array set pkgs [exec [info nameofexecutable] [file join $distribution sak.tcl] provided]
++    }
 +
      if {$config(doc,nroff)} {
  	set config(man.macros) [string trim [get_input \
@@ -113,7 +124,7 @@ Index: installer.tcl
      log ""
      return
  }
-@@ -509,6 +531,10 @@ proc processargs {} {
+@@ -508,6 +541,10 @@ proc processargs {} {
  		set config(exa,path) [lindex $argv 1]
  		set argv             [lrange $argv 1 end]
  	    }
@@ -124,7 +135,7 @@ Index: installer.tcl
  	    -help   -
  	    default {
  		puts stderr "usage: $argv0 ?-dry-run/-simulate? ?-no-wait? ?-no-gui? ?-html|-no-html? ?-nroff|-no-nroff? ?-examples|-no-examples? ?-pkgs|-no-pkgs? ?-pkg-path path? ?-apps|-no-apps? ?-app-path path? ?-nroff-path path? ?-html-path path? ?-example-path path?"
-@@ -564,6 +590,40 @@ proc wait {} {
+@@ -563,6 +600,40 @@ proc wait {} {
  	exit 0
      }
      return

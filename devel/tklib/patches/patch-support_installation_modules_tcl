@@ -1,7 +1,7 @@
 Index: support/installation/modules.tcl
 --- support/installation/modules.tcl.orig
 +++ support/installation/modules.tcl
-@@ -31,37 +31,37 @@ array set guide {}
+@@ -31,31 +31,31 @@ array set guide {}
  # @@ Registration START
  
  #      name           pkg   doc   example
@@ -12,13 +12,13 @@ Index: support/installation/modules.tcl
 +Module canvas        _tcl  _man  _exa
 +Module chatwidget    _tcm  _man  _null
  Module controlwidget _tcl  _man  _exa
+-Module crosshair     _tcl  _man  _null
 -Module ctext         _ctxt _man  _null
 -Module cursor        _tcl  _man  _null
--Module crosshair     _tcl  _man  _null
 -Module datefield     _tcl  _man  _null
++Module crosshair     _tcm  _man  _null
 +Module ctext         _tcm  _man  _null
 +Module cursor        _tcm  _man  _null
-+Module crosshair     _tcm  _man  _null
 +Module datefield     _tcm  _man  _null
  Module diagrams      _tcl  _man  _null
  Module getstring     _tcl  _man  _null
@@ -28,12 +28,13 @@ Index: support/installation/modules.tcl
 -Module ipentry       _tcl  _man  _null
 +Module ipentry       _tcm  _man  _null
  Module khim          _tclm _man  _null
+ Module map           _tcl  _null _exa
  Module mentry        _tab  _null _exa
  Module menubar       _tcl  _man  _exa
- Module ntext         _tcl  _man  _exa
 -Module notifywindow  _tcl  _man  _null
--Module persistentSelection _tcl _man _exa
 +Module notifywindow  _tcm  _man  _null
+ Module ntext         _tcl  _man  _exa
+-Module persistentSelection _tcl _man _exa
 +Module persistentSelection _tcm _man _exa
  Module plotchart     _tcl  _man  _exa
  Module scrollutil    _tab  _null _exa
@@ -42,13 +43,14 @@ Index: support/installation/modules.tcl
 -Module swaplist      _tcl  _man  _null
 +Module swaplist      _tcm  _man  _null
  Module tablelist     _tab  _null _exa
+ Module text          _tcl  _null _null
  Module tkpiechart    _tcl  _man  _exa
- Module tooltip       _tcl  _man  _null
+@@ -63,7 +63,7 @@ Module tooltip       _tcl  _man  _null
+ Module treeview      _tcl  _null _null
  Module wcb           _tab  _null _exa
  Module widget        _tcl  _man  _exa
- Module widgetl       _tcl  _man  _null
 -Module widgetPlus    _tcl  _man  _exa
 +Module widgetPlus    _tcm  _man  _exa
+ Module widgetl       _tcli _man  _null
  Module widgetv       _tcl  _man  _null
  
- Application  diagram-viewer
