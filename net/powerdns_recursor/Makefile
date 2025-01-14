@@ -1,6 +1,6 @@
 COMMENT=		recursive nameserver
 
-V=			5.1.3
+V=			5.2.0
 DISTNAME=		pdns-recursor-${V}
 EXTRACT_SUFX=		.tar.bz2
 PKGNAME=		powerdns-recursor-${V}
@@ -51,8 +51,6 @@ AUTOMAKE_VERSION=	1.16
 USE_GMAKE=		Yes
 
 CONFIGURE_ARGS+=	--disable-hardening \
-			--disable-botan \
-			--disable-libdecaf \
 			--enable-dns-over-tls \
 			--enable-dnstap \
 			--with-lua=${MODLUA_DEP} \
