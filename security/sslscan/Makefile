@@ -7,6 +7,7 @@ USE_NOEXECONLY=	Yes
 GH_ACCOUNT=	rbsec
 GH_PROJECT=	sslscan
 GH_TAGNAME=	2.1.6
+REVISION=	0
 
 CATEGORIES=	security net
 
@@ -30,7 +31,7 @@ MAKE_FLAGS=	BINDIR=${TRUEPREFIX}/bin \
 		GIT_VERSION="${GH_TAGNAME}" \
 		CC="${CC}"
 
-BUILD_DEPENDS=	security/openssl/3.2:patch
+BUILD_DEPENDS=	security/openssl/3.3:patch
 ALL_TARGET=	static
 CFLAGS+=	-I${WRKSRC}/openssl/include
 
