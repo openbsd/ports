@@ -101,6 +101,7 @@
      SUBDIR += endless-sky
      SUBDIR += enigma
      SUBDIR += extremetuxracer
+     SUBDIR += exult
      SUBDIR += ezquake
      SUBDIR += f1spirit
      SUBDIR += falconseye
