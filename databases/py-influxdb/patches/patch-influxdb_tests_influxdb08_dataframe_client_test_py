@@ -1,0 +1,12 @@
+Index: influxdb/tests/influxdb08/dataframe_client_test.py
+--- influxdb/tests/influxdb08/dataframe_client_test.py.orig
++++ influxdb/tests/influxdb08/dataframe_client_test.py
+@@ -18,7 +18,7 @@ from .client_test import _mocked_session
+ 
+ if not using_pypy:
+     import pandas as pd
+-    from pandas.util.testing import assert_frame_equal
++    from pandas.testing import assert_frame_equal
+     from influxdb.influxdb08 import DataFrameClient
+ 
+ 

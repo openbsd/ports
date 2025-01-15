@@ -1,5 +1,4 @@
 @pkgpath databases/py-influxdb,python3
-@conflict py-influxdb-*
 lib/python${MODPY_VERSION}/site-packages/influxdb/
 lib/python${MODPY_VERSION}/site-packages/influxdb-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/influxdb-${MODPY_DISTV}.dist-info/LICENSE
