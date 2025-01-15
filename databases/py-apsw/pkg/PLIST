@@ -1,10 +1,12 @@
 @pkgpath databases/py-apsw,python3
+bin/apsw
 lib/python${MODPY_VERSION}/site-packages/apsw/
 lib/python${MODPY_VERSION}/site-packages/apsw-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/apsw-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/apsw-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/apsw-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/apsw-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/apsw-${MODPY_DISTV}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/apsw-${MODPY_DISTV}.dist-info/top_level.txt
 @so lib/python${MODPY_VERSION}/site-packages/apsw/__init__.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/apsw/__init__.pyi
@@ -16,6 +18,14 @@ lib/python${MODPY_VERSION}/site-packages/apsw/${MODPY_PYCACHE}bestpractice.${MOD
 lib/python${MODPY_VERSION}/site-packages/apsw/${MODPY_PYCACHE}bestpractice.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/apsw/${MODPY_PYCACHE}ext.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/apsw/${MODPY_PYCACHE}ext.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/apsw/${MODPY_PYCACHE}fts5.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/apsw/${MODPY_PYCACHE}fts5.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/apsw/${MODPY_PYCACHE}fts5aux.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/apsw/${MODPY_PYCACHE}fts5aux.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/apsw/${MODPY_PYCACHE}fts5query.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/apsw/${MODPY_PYCACHE}fts5query.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/apsw/${MODPY_PYCACHE}ftstests.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/apsw/${MODPY_PYCACHE}ftstests.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/apsw/${MODPY_PYCACHE}shell.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/apsw/${MODPY_PYCACHE}shell.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/apsw/${MODPY_PYCACHE}speedtest.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -24,10 +34,19 @@ lib/python${MODPY_VERSION}/site-packages/apsw/${MODPY_PYCACHE}tests.${MODPY_PYC_
 lib/python${MODPY_VERSION}/site-packages/apsw/${MODPY_PYCACHE}tests.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/apsw/${MODPY_PYCACHE}trace.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/apsw/${MODPY_PYCACHE}trace.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/apsw/${MODPY_PYCACHE}unicode.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/apsw/${MODPY_PYCACHE}unicode.${MODPY_PYC_MAGIC_TAG}pyc
+@so lib/python${MODPY_VERSION}/site-packages/apsw/_unicode.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/apsw/bestpractice.py
 lib/python${MODPY_VERSION}/site-packages/apsw/ext.py
+lib/python${MODPY_VERSION}/site-packages/apsw/fts5.py
+lib/python${MODPY_VERSION}/site-packages/apsw/fts5aux.py
+lib/python${MODPY_VERSION}/site-packages/apsw/fts5query.py
+lib/python${MODPY_VERSION}/site-packages/apsw/fts_test_strings
+lib/python${MODPY_VERSION}/site-packages/apsw/ftstests.py
 lib/python${MODPY_VERSION}/site-packages/apsw/py.typed
 lib/python${MODPY_VERSION}/site-packages/apsw/shell.py
 lib/python${MODPY_VERSION}/site-packages/apsw/speedtest.py
 lib/python${MODPY_VERSION}/site-packages/apsw/tests.py
 lib/python${MODPY_VERSION}/site-packages/apsw/trace.py
+lib/python${MODPY_VERSION}/site-packages/apsw/unicode.py

@@ -1,11 +1,10 @@
 COMMENT =	thin SQLite wrapper for Python
 
 # version 3.XX.Y.Z of apsw usually needs sqlite3 of at least 3.XX
-MODPY_DISTV =	3.44.2.0
+MODPY_DISTV =	3.47.2.0
 DISTNAME =	apsw-${MODPY_DISTV}
 PKGNAME =	py-apsw-${MODPY_DISTV}
 CATEGORIES =	databases
-REVISION =	1
 
 HOMEPAGE =	https://rogerbinns.github.io/apsw/
 
@@ -24,7 +23,8 @@ MODULES =	lang/python
 MODPY_PYBUILD =	setuptools
 CFLAGS +=	-I${LOCALBASE}/include
 
-do-test: fake
+do-test:
+	@if ! [ -e ${WRKINST}/.fake_done ]; then echo 'run "make fake" first'; exit 1; fi
 	@cd ${WRKSRC} && ${SETENV} PYTHONPATH=${WRKINST}${MODPY_SITEPKG} \
 		${MODPY_BIN} apsw/tests.py
 
