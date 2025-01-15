@@ -30,7 +30,20 @@ Index: lld/ELF/Writer.cpp
  
    if (in.relroPadding && sec == in.relroPadding->getParent())
      return true;
-@@ -882,6 +887,9 @@ template <class ELFT> void Writer<ELFT>::setReservedSy
+@@ -616,8 +621,11 @@ static bool isRelroSection(const OutputSection *sec) {
+                      s == ".eh_frame" || s == ".fini_array" ||
+                      s == ".init_array" || s == ".preinit_array";
+ 
+-  bool abiSpecific =
++  bool abiSpecific = false;
++#ifdef __OpenBSD__
++  abiSpecific =
+       config->osabi == ELFOSABI_OPENBSD && s == ".openbsd.randomdata";
++#endif
+ 
+   return abiAgnostic || abiSpecific;
+ }
+@@ -882,6 +890,9 @@ template <class ELFT> void Writer<ELFT>::setReservedSy
      ElfSym::bss->section = sbss ? sbss : findSection(".bss");
    }
  
@@ -40,19 +53,71 @@ Index: lld/ELF/Writer.cpp
    // Setup MIPS _gp_disp/__gnu_local_gp symbols which should
    // be equal to the _gp symbol's value.
    if (ElfSym::mipsGp) {
-@@ -2328,6 +2336,11 @@ SmallVector<PhdrEntry *, 0> Writer<ELFT>::createPhdrs(
-   if (config->zWxneeded)
-     addHdr(PT_OPENBSD_WXNEEDED, PF_X);
+@@ -2293,23 +2304,35 @@ SmallVector<PhdrEntry *, 0> Writer<ELFT>::createPhdrs(
+     addHdr(PT_GNU_EH_FRAME, part.ehFrameHdr->getParent()->getPhdrFlags())
+         ->add(part.ehFrameHdr->getParent());
  
+-  if (config->osabi == ELFOSABI_OPENBSD) {
+-    // PT_OPENBSD_MUTABLE makes the dynamic linker fill the segment with
+-    // zero data, like bss, but it can be treated differently.
+-    if (OutputSection *cmd = findSection(".openbsd.mutable", partNo))
+-      addHdr(PT_OPENBSD_MUTABLE, cmd->getPhdrFlags())->add(cmd);
++#ifdef __OpenBSD__
++  // PT_OPENBSD_MUTABLE makes the dynamic linker fill the segment with
++  // zero data, like bss, but it can be treated differently.
++  if (OutputSection *cmd = findSection(".openbsd.mutable", partNo))
++    addHdr(PT_OPENBSD_MUTABLE, cmd->getPhdrFlags())->add(cmd);
+ 
+-    // PT_OPENBSD_RANDOMIZE makes the dynamic linker fill the segment
+-    // with random data.
+-    if (OutputSection *cmd = findSection(".openbsd.randomdata", partNo))
+-      addHdr(PT_OPENBSD_RANDOMIZE, cmd->getPhdrFlags())->add(cmd);
++  // PT_OPENBSD_RANDOMIZE makes the dynamic linker fill the segment
++  // with random data.
++  if (OutputSection *cmd = findSection(".openbsd.randomdata", partNo))
++    addHdr(PT_OPENBSD_RANDOMIZE, cmd->getPhdrFlags())->add(cmd);
+ 
+-    // PT_OPENBSD_SYSCALLS makes the kernel and dynamic linker register
+-    // system call sites.
+-    if (OutputSection *cmd = findSection(".openbsd.syscalls", partNo))
+-      addHdr(PT_OPENBSD_SYSCALLS, cmd->getPhdrFlags())->add(cmd);
+-  }
++  // PT_OPENBSD_SYSCALLS makes the kernel and dynamic linker register
++  // system call sites.
++  if (OutputSection *cmd = findSection(".openbsd.syscalls", partNo))
++    addHdr(PT_OPENBSD_SYSCALLS, cmd->getPhdrFlags())->add(cmd);
+ 
++  // PT_OPENBSD_WXNEEDED is a OpenBSD-specific header to mark the executable
++  // is expected to perform W^X violations, such as calling mprotect(2) or
++  // mmap(2) with PROT_WRITE | PROT_EXEC, which is prohibited by default on
++  // OpenBSD.
++  if (config->zWxneeded)
++    addHdr(PT_OPENBSD_WXNEEDED, PF_X);
++
 +  // PT_OPENBSD_NOBTCFI is an OpenBSD-specific header to mark that the
 +  // executable is expected to violate branch-target CFI checks.
 +  if (config->zNoBtCfi)
 +    addHdr(PT_OPENBSD_NOBTCFI, PF_X);
++#endif
 +
+   if (config->zGnustack != GnuStackKind::None) {
+     // PT_GNU_STACK is a special section to tell the loader to make the
+     // pages for the stack non-executable. If you really want an executable
+@@ -2321,13 +2344,6 @@ SmallVector<PhdrEntry *, 0> Writer<ELFT>::createPhdrs(
+     addHdr(PT_GNU_STACK, perm)->p_memsz = config->zStackSize;
+   }
+ 
+-  // PT_OPENBSD_WXNEEDED is a OpenBSD-specific header to mark the executable
+-  // is expected to perform W^X violations, such as calling mprotect(2) or
+-  // mmap(2) with PROT_WRITE | PROT_EXEC, which is prohibited by default on
+-  // OpenBSD.
+-  if (config->zWxneeded)
+-    addHdr(PT_OPENBSD_WXNEEDED, PF_X);
+-
    if (OutputSection *cmd = findSection(".note.gnu.property", partNo))
      addHdr(PT_GNU_PROPERTY, PF_R)->add(cmd);
  
-@@ -2420,6 +2433,31 @@ template <class ELFT> void Writer<ELFT>::fixSectionAli
+@@ -2420,6 +2436,31 @@ template <class ELFT> void Writer<ELFT>::fixSectionAli
          };
      }
    };
