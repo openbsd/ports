@@ -11,35 +11,35 @@ include/tkimg/zlibtcl.h
 include/tkimg/zlibtclDecls.h
 lib/tcl/tkimg/
 lib/tcl/tkimg/jpegtclConfig.sh
-@so lib/tcl/tkimg/libjpegtcl940.so
-@static-lib lib/tcl/tkimg/libjpegtclstub940.a
-@so lib/tcl/tkimg/libpngtcl1637.so
-@static-lib lib/tcl/tkimg/libpngtclstub1637.a
-@so lib/tcl/tkimg/libtifftcl410.so
-@static-lib lib/tcl/tkimg/libtifftclstub410.a
-@so lib/tcl/tkimg/libtkimg1413.so
-@so lib/tcl/tkimg/libtkimgbmp1413.so
-@so lib/tcl/tkimg/libtkimgdted1413.so
-@so lib/tcl/tkimg/libtkimgflir1413.so
-@so lib/tcl/tkimg/libtkimggif1413.so
-@so lib/tcl/tkimg/libtkimgico1413.so
-@so lib/tcl/tkimg/libtkimgjpeg1413.so
-@so lib/tcl/tkimg/libtkimgpcx1413.so
-@so lib/tcl/tkimg/libtkimgpixmap1413.so
-@so lib/tcl/tkimg/libtkimgpng1413.so
-@so lib/tcl/tkimg/libtkimgppm1413.so
-@so lib/tcl/tkimg/libtkimgps1413.so
-@so lib/tcl/tkimg/libtkimgraw1413.so
-@so lib/tcl/tkimg/libtkimgsgi1413.so
-@static-lib lib/tcl/tkimg/libtkimgstub1413.a
-@so lib/tcl/tkimg/libtkimgsun1413.so
-@so lib/tcl/tkimg/libtkimgtga1413.so
-@so lib/tcl/tkimg/libtkimgtiff1413.so
-@so lib/tcl/tkimg/libtkimgwindow1413.so
-@so lib/tcl/tkimg/libtkimgxbm1413.so
-@so lib/tcl/tkimg/libtkimgxpm1413.so
-@so lib/tcl/tkimg/libzlibtcl1211.so
-@static-lib lib/tcl/tkimg/libzlibtclstub1211.a
+@so lib/tcl/tkimg/libjpegtcl${JPG_VER}.so
+@static-lib lib/tcl/tkimg/libjpegtclstub${JPG_VER}.a
+@so lib/tcl/tkimg/libpngtcl${PNG_VER}.so
+@static-lib lib/tcl/tkimg/libpngtclstub${PNG_VER}.a
+@so lib/tcl/tkimg/libtifftcl${TIFF_VER}.so
+@static-lib lib/tcl/tkimg/libtifftclstub${TIFF_VER}.a
+@so lib/tcl/tkimg/libtkimg${IMG_VER}.so
+@so lib/tcl/tkimg/libtkimgbmp${IMG_VER}.so
+@so lib/tcl/tkimg/libtkimgdted${IMG_VER}.so
+@so lib/tcl/tkimg/libtkimgflir${IMG_VER}.so
+@so lib/tcl/tkimg/libtkimggif${IMG_VER}.so
+@so lib/tcl/tkimg/libtkimgico${IMG_VER}.so
+@so lib/tcl/tkimg/libtkimgjpeg${IMG_VER}.so
+@so lib/tcl/tkimg/libtkimgpcx${IMG_VER}.so
+@so lib/tcl/tkimg/libtkimgpixmap${IMG_VER}.so
+@so lib/tcl/tkimg/libtkimgpng${IMG_VER}.so
+@so lib/tcl/tkimg/libtkimgppm${IMG_VER}.so
+@so lib/tcl/tkimg/libtkimgps${IMG_VER}.so
+@so lib/tcl/tkimg/libtkimgraw${IMG_VER}.so
+@so lib/tcl/tkimg/libtkimgsgi${IMG_VER}.so
+@static-lib lib/tcl/tkimg/libtkimgstub${IMG_VER}.a
+@so lib/tcl/tkimg/libtkimgsun${IMG_VER}.so
+@so lib/tcl/tkimg/libtkimgtga${IMG_VER}.so
+@so lib/tcl/tkimg/libtkimgtiff${IMG_VER}.so
+@so lib/tcl/tkimg/libtkimgwindow${IMG_VER}.so
+@so lib/tcl/tkimg/libtkimgxbm${IMG_VER}.so
+@so lib/tcl/tkimg/libtkimgxpm${IMG_VER}.so
+@so lib/tcl/tkimg/libzlibtcl${ZLIB_VER}.so
+@static-lib lib/tcl/tkimg/libzlibtclstub${ZLIB_VER}.a
 lib/tcl/tkimg/pkgIndex.tcl
 lib/tcl/tkimg/pngtclConfig.sh
 lib/tcl/tkimg/tifftclConfig.sh
@@ -47,6 +47,7 @@ lib/tcl/tkimg/tkimgConfig.sh
 lib/tcl/tkimg/zlibtclConfig.sh
 @man man/mann/img-bmp.n
 @man man/mann/img-dted.n
+@man man/mann/img-flir.n
 @man man/mann/img-gif.n
 @man man/mann/img-ico.n
 @man man/mann/img-jpeg.n
@@ -64,3 +65,14 @@ lib/tcl/tkimg/zlibtclConfig.sh
 @man man/mann/img-xbm.n
 @man man/mann/img-xpm.n
 @man man/mann/img.n
+share/examples/tkimg/
+share/examples/tkimg/demo.tcl
+share/examples/tkimg/msgs/
+share/examples/tkimg/msgs/de.msg
+share/examples/tkimg/msgs/el.msg
+share/examples/tkimg/msgs/en.msg
+share/examples/tkimg/msgs/es.msg
+share/examples/tkimg/msgs/fr.msg
+share/examples/tkimg/msgs/ja.msg
+share/examples/tkimg/msgs/nl.msg
+share/examples/tkimg/tkv.tcl
