@@ -20,9 +20,6 @@ WANTLIB += c m pthread glib-2.0 gmodule-2.0 ssl crypto intl
 
 SITES=			https://get.bitlbee.org/src/
 
-MODULES=		devel/gettext,-runtime
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
-
 DB_DIR?=		/var/bitlbee
 ETCDIR=			${SYSCONFDIR}/bitlbee
 EXAMPLEDIR=		${PREFIX}/share/examples/bitlbee
@@ -32,7 +29,7 @@ DOCDIR=			${PREFIX}/share/doc/bitlbee/
 BUILD_DEPENDS=		textproc/docbook-xsl \
 			textproc/libxslt
 MODULES=		lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
+MODPY_VERSION=		${MODPY_DEFAULT_VERSION_2}
 MODPY_RUNDEP=		No
 LIB_DEPENDS=		devel/glib2
 
