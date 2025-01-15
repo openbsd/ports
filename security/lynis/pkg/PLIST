@@ -15,6 +15,7 @@ share/lynis/
 @mode 0755
 share/lynis/db/
 @mode 0640
+share/lynis/db/control-links.db
 share/lynis/db/fileperms.db
 share/lynis/db/hints.db
 share/lynis/db/integrity.db
