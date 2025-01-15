@@ -1,0 +1,12 @@
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -928,7 +928,7 @@ AC_ARG_WITH([desktopdir],
+ 	esac])
+ AC_SUBST([DESKTOPDIR])
+ 
+-ICONDIR="${datadir}/icons"
++ICONDIR="${datadir}/exult/icons"
+ AC_ARG_WITH([icondir],
+ 	AS_HELP_STRING([--with-icondir=DIR],[change icon directory]),
+ 	[case "${withval}" in

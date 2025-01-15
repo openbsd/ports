@@ -1,0 +1,61 @@
+@bin bin/cmanip
+@bin bin/expack
+@bin bin/exult
+@bin bin/ipack
+@bin bin/mklink
+@bin bin/rip
+@bin bin/shp2pcx
+@bin bin/splitshp
+@bin bin/textpack
+@bin bin/u7voice2syx
+@bin bin/ucxt
+@bin bin/wuc
+@man man/man1/expack.1
+@man man/man1/exult_studio.1
+@man man/man1/ipack.1
+@man man/man1/shp2pcx.1
+@man man/man1/splitshp.1
+@man man/man1/textpack.1
+@man man/man1/ucc.1
+@man man/man6/exult.6
+share/applications/info.exult.exult.desktop
+share/doc/exult/
+share/doc/exult/ReadMe.html
+share/doc/exult/exult_studio.html
+share/doc/exult/faq.html
+share/doc/exult/images/
+share/doc/exult/images/back.gif
+share/doc/exult/images/docs01.png
+share/doc/exult/images/docs02.png
+share/doc/exult/images/docs03.png
+share/doc/exult/images/docs04.png
+share/doc/exult/images/docs05.png
+share/doc/exult/images/docs06.png
+share/doc/exult/images/exult_logo.gif
+share/doc/exult/images/studio01.png
+share/doc/exult/images/studio02.png
+share/doc/exult/images/studio03.png
+share/doc/exult/images/studio04.png
+share/doc/exult/images/studio05.png
+share/doc/exult/images/studio06.png
+share/doc/exult/images/studio07.png
+share/doc/exult/images/studio08.png
+share/doc/exult/images/studio09.png
+share/doc/exult/images/studio10.png
+share/doc/exult/images/studiobgiregs.png
+share/doc/exult/images/studiosiiregs.png
+share/doc/pkg-readmes/${PKGSTEM}
+share/exult/
+share/exult/exult.flx
+share/exult/exult_bg.flx
+share/exult/exult_si.flx
+share/exult/icons/
+share/exult/icons/info.exult.exult.png
+share/exult/icons/info.exult.exult.svg
+share/exult/midisfx.flx
+share/exult/u7bgintrinsics.data
+share/exult/u7misc.data
+share/exult/u7opcodes.data
+share/exult/u7sibetaintrinsics.data
+share/exult/u7siintrinsics.data
+@tag update-desktop-database

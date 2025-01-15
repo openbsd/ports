@@ -1,0 +1,14 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Game Data Installation
+======================
+
+To run Ultima 7, place the respective extracted files for The Black Gate and
+Serpent Isle into ${TRUEPREFIX}/share/exult/{blackgate,serpentisle},
+respectively.
+
+Audio packs (all-in-one or separate) are needed to play sound effects and music
+other than MIDI. They are available under the Download section of
+${HOMEPAGE}.
