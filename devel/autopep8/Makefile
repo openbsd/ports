@@ -1,8 +1,7 @@
 COMMENT=	format Python code to comply with PEP 8
 
-MODPY_DISTV=	2.2.0
+MODPY_DISTV=	2.3.2
 DISTNAME=	autopep8-${MODPY_DISTV}
-REVISION=	0
 
 CATEGORIES=	devel
 
@@ -10,9 +9,8 @@ CATEGORIES=	devel
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 RUN_DEPENDS=	devel/py-codestyle
 
