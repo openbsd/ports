@@ -6,16 +6,15 @@ COMMENT-php=	PHP Mapscript extension
 COMMENT-perl=	Perl Mapscript binding
 COMMENT-python=	Python Mapscript binding
 
-V=		8.2.2
+V=		8.4.0
 DISTNAME=	mapserver-${V}
 PKGNAME-main=	mapserver-${V:S/-//}
 PKGNAME-utils=	mapserver-utils-${V:S/-//}
 PKGNAME-php=	php-mapscript-${V:S/-//}
 PKGNAME-perl=	p5-mapscript-${V:S/-//}
 PKGNAME-python=	py3-mapscript-${V:S/-//}
-REVISION-python= 0
 
-SHARED_LIBS +=	mapserver 7.0
+SHARED_LIBS +=	mapserver 8.0
 
 CATEGORIES=	geo www
 
@@ -64,14 +63,13 @@ LIB_DEPENDS-php +=	${BUILD_PKGPATH},-main
 LIB_DEPENDS-utils +=	${BUILD_PKGPATH},-main
 LIB_DEPENDS-python +=	${BUILD_PKGPATH},-main
 
-WANTLIB += curl freetype jpeg iconv m png pq xml2 z proj
-WANTLIB += gdal geos_c cairo fribidi gif harfbuzz protobuf-c
-
-WANTLIB-main =	${WANTLIB} c fcgi pthread ${COMPILER_LIBCXX}
-WANTLIB-utils =	${WANTLIB} c mapserver
-WANTLIB-php =	${WANTLIB} mapserver
-WANTLIB-perl =	${WANTLIB} c mapserver perl
-WANTLIB-python =	${WANTLIB} mapserver ${MODPY_WANTLIB}
+WANTLIB-main =	c curl fcgi freetype jpeg iconv m png pq xml2 z proj
+WANTLIB-main +=	gdal geos_c cairo fribidi gif harfbuzz protobuf-c
+WANTLIB-main +=	pcre2-posix pthread ${COMPILER_LIBCXX}
+WANTLIB-utils =	c mapserver
+WANTLIB-php =	mapserver
+WANTLIB-perl =	c mapserver perl
+WANTLIB-python =	mapserver ${MODPY_WANTLIB}
 
 CONFIGURE_ARGS +=	-DPYTHON_EXECUTABLE=${MODPY_BIN} \
 			-DWITH_CLIENT_WFS=1 \
