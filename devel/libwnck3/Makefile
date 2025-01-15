@@ -1,9 +1,8 @@
 COMMENT=		window navigator construction kit
 
 GNOME_PROJECT=		libwnck
-GNOME_VERSION=		43.1
+GNOME_VERSION=		43.2
 PKGNAME=		${GNOME_PROJECT}3-${GNOME_VERSION}
-REVISION=		0
 
 SHARED_LIBS += wnck-3                    4.2 # 0.3.0
 
@@ -30,10 +29,5 @@ LIB_DEPENDS=		devel/startup-notification \
 			x11/gtk+3
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
-
-# prevent conflict with devel/libwnck
-post-install:
-	mv ${PREFIX}/bin/wnck-urgency-monitor{,3}
-	mv ${PREFIX}/bin/wnckprop{,3}
 
 .include <bsd.port.mk>

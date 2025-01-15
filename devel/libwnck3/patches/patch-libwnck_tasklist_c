@@ -3,7 +3,23 @@
 Index: libwnck/tasklist.c
 --- libwnck/tasklist.c.orig
 +++ libwnck/tasklist.c
-@@ -4973,7 +4973,8 @@ sequence_timeout_callback (void *user_data)
+@@ -4009,6 +4009,7 @@ wnck_task_get_icon (WnckTask *task)
+ 
+     case WNCK_TASK_STARTUP_SEQUENCE:
+ #ifdef HAVE_STARTUP_NOTIFICATION
++    {
+       const char *icon_name;
+ 
+       icon_name = sn_startup_sequence_get_icon_name (task->startup_sequence);
+@@ -4032,6 +4033,7 @@ wnck_task_get_icon (WnckTask *task)
+         }
+ #endif
+       break;
++    }
+ 
+     default:
+       break;
+@@ -5019,7 +5021,8 @@ sequence_timeout_callback (void *user_data)
    WnckTasklist *tasklist = user_data;
    GList *tmp;
    gint64 now;

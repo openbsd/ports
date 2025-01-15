@@ -1,11 +1,16 @@
-@bin bin/wnck-urgency-monitor3
-@bin bin/wnckprop3
+@conflict libwnck-*
+@pkgpath devel/libwnck
+@bin bin/wnck-urgency-monitor
+@bin bin/wnckprop
 include/libwnck-3.0/
 include/libwnck-3.0/libwnck/
 include/libwnck-3.0/libwnck/application.h
 include/libwnck-3.0/libwnck/class-group.h
+include/libwnck-3.0/libwnck/icons.h
 include/libwnck-3.0/libwnck/libwnck.h
+include/libwnck-3.0/libwnck/misc.h
 include/libwnck-3.0/libwnck/pager.h
+include/libwnck-3.0/libwnck/resource.h
 include/libwnck-3.0/libwnck/screen.h
 include/libwnck-3.0/libwnck/selector.h
 include/libwnck-3.0/libwnck/tasklist.h
