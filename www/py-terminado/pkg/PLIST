@@ -1,5 +1,4 @@
 @pkgpath www/py-terminado,python3
-@conflict py-terminado-*
 lib/python${MODPY_VERSION}/site-packages/terminado/
 lib/python${MODPY_VERSION}/site-packages/terminado-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/terminado-${MODPY_DISTV}.dist-info/METADATA
@@ -11,6 +10,8 @@ lib/python${MODPY_VERSION}/site-packages/terminado/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/terminado/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/terminado/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/terminado/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/terminado/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/terminado/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/terminado/${MODPY_PYCACHE}management.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/terminado/${MODPY_PYCACHE}management.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/terminado/${MODPY_PYCACHE}uimodule.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -19,16 +20,9 @@ lib/python${MODPY_VERSION}/site-packages/terminado/${MODPY_PYCACHE}websocket.${M
 lib/python${MODPY_VERSION}/site-packages/terminado/${MODPY_PYCACHE}websocket.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/terminado/_static/
 lib/python${MODPY_VERSION}/site-packages/terminado/_static/terminado.js
+lib/python${MODPY_VERSION}/site-packages/terminado/_version.py
 lib/python${MODPY_VERSION}/site-packages/terminado/management.py
 lib/python${MODPY_VERSION}/site-packages/terminado/py.typed
-lib/python${MODPY_VERSION}/site-packages/terminado/tests/
-lib/python${MODPY_VERSION}/site-packages/terminado/tests/__init__.py
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/terminado/tests/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/terminado/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/terminado/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/terminado/tests/${MODPY_PYCACHE}basic_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/terminado/tests/${MODPY_PYCACHE}basic_test.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/terminado/tests/basic_test.py
 lib/python${MODPY_VERSION}/site-packages/terminado/uimod_embed.js
 lib/python${MODPY_VERSION}/site-packages/terminado/uimodule.py
 lib/python${MODPY_VERSION}/site-packages/terminado/websocket.py
