@@ -1,0 +1,19 @@
+Index: examples/reading_logs_with_offset/Makefile.in
+--- examples/reading_logs_with_offset/Makefile.in.orig
++++ examples/reading_logs_with_offset/Makefile.in
+@@ -456,7 +456,6 @@ read_LDFLAGS = \
+ 	$(GEOIP_LDFLAGS) \
+ 	-lmodsecurity \
+ 	-lm \
+-	-lstdc++ \
+ 	$(LMDB_LDFLAGS) \
+ 	$(LUA_LDFLAGS) \
+ 	$(SSDEEP_LDFLAGS) \
+@@ -470,7 +469,6 @@ read_CPPFLAGS = \
+ 	-g \
+ 	-I../others \
+ 	-fPIC \
+-	-O3 \
+ 	$(CURL_CFLAGS) \
+ 	$(GEOIP_CFLAGS) \
+ 	$(MAXMIND_CFLAGS) \

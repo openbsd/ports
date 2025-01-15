@@ -3,6 +3,7 @@ include/modsecurity/
 include/modsecurity/actions/
 include/modsecurity/actions/action.h
 include/modsecurity/anchored_set_variable.h
+include/modsecurity/anchored_set_variable_translation_proxy.h
 include/modsecurity/anchored_variable.h
 include/modsecurity/audit_log.h
 include/modsecurity/collection/
@@ -13,10 +14,16 @@ include/modsecurity/intervention.h
 include/modsecurity/modsecurity.h
 include/modsecurity/reading_logs_via_rule_message.h
 include/modsecurity/rule.h
+include/modsecurity/rule_marker.h
 include/modsecurity/rule_message.h
+include/modsecurity/rule_unconditional.h
+include/modsecurity/rule_with_actions.h
+include/modsecurity/rule_with_operator.h
 include/modsecurity/rules.h
 include/modsecurity/rules_exceptions.h
-include/modsecurity/rules_properties.h
+include/modsecurity/rules_set.h
+include/modsecurity/rules_set_phases.h
+include/modsecurity/rules_set_properties.h
 include/modsecurity/transaction.h
 include/modsecurity/variable_origin.h
 include/modsecurity/variable_value.h

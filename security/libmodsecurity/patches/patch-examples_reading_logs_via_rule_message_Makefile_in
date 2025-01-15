@@ -1,0 +1,19 @@
+Index: examples/reading_logs_via_rule_message/Makefile.in
+--- examples/reading_logs_via_rule_message/Makefile.in.orig
++++ examples/reading_logs_via_rule_message/Makefile.in
+@@ -459,7 +459,6 @@ simple_request_LDFLAGS = \
+ 	-lmodsecurity \
+ 	-lpthread \
+ 	-lm \
+-	-lstdc++ \
+ 	$(LMDB_LDFLAGS) \
+ 	$(LUA_LDFLAGS) \
+ 	$(MAXMIND_LDFLAGS) \
+@@ -473,7 +472,6 @@ simple_request_CPPFLAGS = \
+ 	-g \
+ 	-I../others \
+ 	-fPIC \
+-	-O3 \
+ 	$(CURL_CFLAGS) \
+ 	$(GEOIP_CFLAGS) \
+ 	$(GLOBAL_CPPFLAGS) \

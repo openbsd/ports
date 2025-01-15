@@ -1,9 +1,9 @@
 Index: examples/multiprocess_c/Makefile.in
 --- examples/multiprocess_c/Makefile.in.orig
 +++ examples/multiprocess_c/Makefile.in
-@@ -435,7 +435,6 @@ multi_LDFLAGS = \
+@@ -447,7 +447,6 @@ multi_LDFLAGS = \
+ 	$(GEOIP_LDFLAGS) \
  	-lmodsecurity \
- 	-lpthread \
  	-lm \
 -	-lstdc++ \
  	$(LUA_LDFLAGS) \

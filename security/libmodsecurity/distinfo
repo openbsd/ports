@@ -1,2 +1,4 @@
-SHA256 (modsecurity-v3.0.4.tar.gz) = tCMRd92AtOB2sijlfUmGcBE7adRFurhtsl9lNGwk2yI=
-SIZE (modsecurity-v3.0.4.tar.gz) = 2806291
+SHA256 (modsecurity-v3.0.13.tar.gz) = hrSIEWShYbgipJ3zUB6DslQyMgaQYTS9w0pvMzj00/I=
+SHA256 (modsecurity-v3.0.13.tar.gz.asc) = ddvuaj3LSzTyQVoFdMc9ChzGVTAFq8MHyPIATPZZ3j8=
+SIZE (modsecurity-v3.0.13.tar.gz) = 9677566
+SIZE (modsecurity-v3.0.13.tar.gz.asc) = 833

@@ -1,7 +1,7 @@
 Index: examples/simple_example_using_c/Makefile.in
 --- examples/simple_example_using_c/Makefile.in.orig
 +++ examples/simple_example_using_c/Makefile.in
-@@ -433,7 +433,6 @@ test_LDFLAGS = \
+@@ -446,7 +446,6 @@ test_LDFLAGS = \
  	$(GEOIP_LDFLAGS) \
  	-lmodsecurity \
  	-lm \

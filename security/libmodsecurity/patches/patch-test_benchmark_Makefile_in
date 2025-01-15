@@ -1,0 +1,11 @@
+Index: test/benchmark/Makefile.in
+--- test/benchmark/Makefile.in.orig
++++ test/benchmark/Makefile.in
+@@ -457,7 +457,6 @@ benchmark_LDFLAGS = \
+ 	-lmodsecurity \
+ 	-lpthread \
+ 	-lm \
+-	-lstdc++ \
+ 	$(GEOIP_LDFLAGS) \
+ 	$(MAXMIND_LDFLAGS) \
+ 	$(YAJL_LDFLAGS) \
