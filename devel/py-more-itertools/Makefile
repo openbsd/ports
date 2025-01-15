@@ -1,6 +1,6 @@
 COMMENT=	routines for operating on iterables beyond itertools
 
-MODPY_DISTV=	10.5.0
+MODPY_DISTV=	10.6.0
 DISTNAME=	more-itertools-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
