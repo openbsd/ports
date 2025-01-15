@@ -37,9 +37,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include -DXXH_INLINE_ALL=1" \
 
 DEBUG_PACKAGES= ${BUILD_PACKAGES}
 
-.include <bsd.port.arch.mk>
-
-.if ${ARCH:Mamd64}
+.if ${MACHINE_ARCH} == amd64
 CONFIGURE_ARGS += --enable-md5-asm
 .endif
 
@@ -56,10 +54,15 @@ WANTLIB +=	iconv lz4 zstd
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/support/rrsync
 
-# rrsync.1 generated with "make man", which requires py3-commonmark
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/rsync
 	${INSTALL_DATA} ${WRKSRC}/tech_report.tex ${PREFIX}/share/doc/rsync
+	@set +e; if [ -e ${LOCALBASE}/bin/commonmark ]; then \
+	echo make -C ${WRKSRC} rrsync.1; if make -C ${WRKSRC} rrsync.1; then \
+		diff -u ${WRKSRC}/rrsync.1 ${FILESDIR}/ || echo \
+		"===> files/rrsync.1 needs updating"; fi; else \
+	    echo "===> py3-commonmark not installed, could not check freshness of files/rrsync.1"; fi
+	# rrsync.1 not included in distfile; use pre-generated file from ports
 	${INSTALL_DATA} ${FILESDIR}/rrsync.1 ${PREFIX}/man/man1/rrsync.1
 
 .include <bsd.port.mk>
