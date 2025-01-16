@@ -1,7 +1,7 @@
 COMMENT=		library for storing and retrieving passwords and secrets
-REVISION=		0
 
-DIST_TUPLE=		gnome GNOME libsecret 0.21.4 .
+GNOME_PROJECT=		libsecret
+GNOME_VERSION=		0.21.6
 
 SHARED_LIBS += secret-1                  2.2 # 0.0.0
 
@@ -15,6 +15,11 @@ MODULES=		devel/meson \
 
 MODGNOME_TOOLS=		docbook gi-docgen gobject-introspection vala
 
+# XXX conflict with shells/bash-completion;
+# https://github.com/scop/bash-completion/issues/1317
+#BUILD_DEPENDS=		shells/bash-completion
+CONFIGURE_ARGS +=	-Dbash_completion=disabled
+
 LIB_DEPENDS=		devel/glib2 \
 			security/libgcrypt
 
@@ -24,6 +29,9 @@ LIB_DEPENDS=		devel/glib2 \
 
 # unable to autolaunch a dbus-daemon without a $DISPLAY for X11
 TEST_IS_INTERACTIVE=	X11
+
+# needed for tests
+BUILD_DEPENDS +=	x11/dbus
 
 TEST_DEPENDS=		devel/py-gobject3 \
 			x11/dbus-python

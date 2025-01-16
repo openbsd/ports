@@ -17,7 +17,6 @@ include/libsecret-1/libsecret/secret-types.h
 include/libsecret-1/libsecret/secret-value.h
 include/libsecret-1/libsecret/secret-version.h
 include/libsecret-1/libsecret/secret.h
-lib/girepository-1.0/
 lib/girepository-1.0/Secret-1.typelib
 @lib lib/libsecret-1.so.${LIBsecret-1_VERSION}
 lib/pkgconfig/libsecret-1.pc
@@ -343,7 +342,6 @@ share/doc/libsecret-1/vfunc.Service.get_item_gtype.html
 share/doc/libsecret-1/vfunc.Service.prompt_async.html
 share/doc/libsecret-1/vfunc.Service.prompt_finish.html
 share/doc/libsecret-1/vfunc.Service.prompt_sync.html
-share/gir-1.0/
 share/gir-1.0/Secret-1.gir
 share/locale/ab/LC_MESSAGES/libsecret.mo
 share/locale/an/LC_MESSAGES/libsecret.mo
@@ -371,6 +369,7 @@ share/locale/fr/LC_MESSAGES/libsecret.mo
 share/locale/fur/LC_MESSAGES/libsecret.mo
 share/locale/gl/LC_MESSAGES/libsecret.mo
 share/locale/he/LC_MESSAGES/libsecret.mo
+share/locale/hi/LC_MESSAGES/libsecret.mo
 share/locale/hr/LC_MESSAGES/libsecret.mo
 share/locale/hu/LC_MESSAGES/libsecret.mo
 share/locale/id/LC_MESSAGES/libsecret.mo
@@ -378,6 +377,7 @@ share/locale/ie/LC_MESSAGES/libsecret.mo
 share/locale/it/LC_MESSAGES/libsecret.mo
 share/locale/ja/LC_MESSAGES/libsecret.mo
 share/locale/ka/LC_MESSAGES/libsecret.mo
+share/locale/kab/LC_MESSAGES/libsecret.mo
 share/locale/kk/LC_MESSAGES/libsecret.mo
 share/locale/ko/LC_MESSAGES/libsecret.mo
 share/locale/lt/LC_MESSAGES/libsecret.mo
