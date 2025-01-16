@@ -15,8 +15,8 @@ HOMEPAGE =	https://github.com/shapely/shapely
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
-
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =	setuptools
+MODPY_TEST_LINK_SO =	Yes
 
 RUN_DEPENDS +=	math/py-numpy
 # cython and numpy needed to build _vectorized.so
@@ -25,10 +25,5 @@ BUILD_DEPENDS +=${RUN_DEPENDS} \
 
 LIB_DEPENDS =	geo/geos
 WANTLIB =	geos_c
-
-pre-test:
-	# gross
-	cp ${WRKSRC}/build/lib.openbsd-${OSREV}-${ARCH}-cpython-${MODPY_MAJORMINOR}/shapely/*.so \
-		${WRKSRC}/shapely/
 
 .include <bsd.port.mk>
