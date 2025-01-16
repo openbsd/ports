@@ -1,13 +1,12 @@
 # github.com/creack/pty only supports these archs
-ONLY_FOR_ARCHS = aarch64 arm amd64 i386 mips64
+ONLY_FOR_ARCHS = aarch64 arm amd64 i386
 
 COMMENT =	terminal email client
 
 MODGO_MODNAME =	git.sr.ht/~rjarry/aerc
-MODGO_VERSION =	v0.0.0-20240729220005-e037c095a049
+MODGO_VERSION =	v0.0.0-20250114220509-add9e15e475d
 
-V =		0.18.2
-REVISION =	0
+V =		0.19.0
 DISTNAME =	aerc-$V
 
 CATEGORIES =	mail
@@ -63,6 +62,10 @@ do-build:
 do-install:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
 		${ALL_FAKE_FLAGS} ${INSTALL_TARGET}
+
+post-install:
+	chmod +x ${PREFIX}/libexec/aerc/filters/*
+	cd ${PREFIX}/libexec/aerc/filters && ln -s html html-unsafe
 
 .include "modules.inc"
 
