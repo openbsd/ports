@@ -1,3 +1,4 @@
+@conflict dolphin-plugins-kf5-*
 lib/qt6/plugins/dolphin/vcs/
 @so lib/qt6/plugins/dolphin/vcs/fileviewbazaarplugin.so
 @so lib/qt6/plugins/dolphin/vcs/fileviewdropboxplugin.so

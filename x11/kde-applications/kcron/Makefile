@@ -1,7 +1,7 @@
 COMMENT =	KDE-based GUI for cron task scheduler
 DISTNAME =	kcron-${VERSION}
-PKGNAME =	kcron-kf5-${VERSION}
 CATEGORIES =	x11
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6AuthCore KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons

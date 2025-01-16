@@ -1,7 +1,7 @@
 COMMENT =	Kio slave for accessing audio CDs
 DISTNAME =	audiocd-kio-${VERSION}
-PKGNAME =	audiocd-kio-kf5-${VERSION}
 CATEGORIES =	devel audio
+REVISION =	0
 
 SHARED_LIBS +=  audiocdplugins            3.0 # 5.0
 

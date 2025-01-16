@@ -1,3 +1,4 @@
+@conflict kdepim-runtime-kf5-*
 @bin bin/akonadi_akonotes_resource
 @bin bin/akonadi_birthdays_resource
 @bin bin/akonadi_contacts_resource

@@ -2,9 +2,8 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	KDE PIM mail related libraries
 DISTNAME =	kdepim-runtime-${VERSION}
-PKGNAME =	kdepim-runtime-kf5-${VERSION}
 CATEGORIES =	devel
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=  akonadi-filestore           1.0 # 5.13.2
 SHARED_LIBS +=  akonadi-singlefileresource  2.0 # 5.13.2

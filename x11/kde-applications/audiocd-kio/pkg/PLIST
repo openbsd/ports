@@ -1,3 +1,4 @@
+@conflict audiocd-kio-kf5-*
 @conflict kdebase-<4
 include/audiocdplugins/
 include/audiocdplugins/audiocdencoder.h
