@@ -1,6 +1,6 @@
 COMMENT =	KDE Wayland Plasma protocols
 
-VERSION =	1.14.0
+VERSION =	1.16.0
 DISTNAME =	plasma-wayland-protocols-${VERSION}
 
 CATEGORIES =	wayland
