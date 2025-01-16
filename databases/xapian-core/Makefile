@@ -33,9 +33,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
-.include <bsd.port.arch.mk>
 # amd64-capable CPUs all have SSE
-.if !${ARCH:Mamd64}
+.if ${MACHINE_ARCH} != amd64
 CONFIGURE_ARGS+= --disable-sse
 .endif
 
