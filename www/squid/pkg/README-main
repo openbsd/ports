@@ -34,12 +34,6 @@ sysctl kern.maxfiles. In some circumstances you may also need to raise
 this; if this is required, pay particular attention to testing and
 monitoring your system.
 
-The "rock" disk storage backend has only been very lightly tested with
-OpenBSD; to use it you will need to raise sysctl net.unix.dgram.sendspace
-above the default to avoid "Message too long" (EMSGSIZE) errors.
-8192 seems to work. The port maintainer has mostly been using either
-the "aufs" disk storage backend, or just using memory-based caching.
-
 Interception Proxying with PF
 =============================
 To configure an interception (a.k.a. "transparent") proxy, Squid should

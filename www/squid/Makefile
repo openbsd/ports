@@ -12,7 +12,7 @@ FULLPKGPATH-ldap= ${PKGPATH},-ldap
 RUN_DEPENDS-ldap += squid-$Vv0:www/squid
 
 EPOCH=		0
-REVISION-main=	0
+REVISION-main=	1
 CATEGORIES=	www
 
 HOMEPAGE=	http://www.squid-cache.org/
