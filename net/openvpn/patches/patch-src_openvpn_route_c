@@ -3,7 +3,7 @@
 Index: src/openvpn/route.c
 --- src/openvpn/route.c.orig
 +++ src/openvpn/route.c
-@@ -1545,7 +1545,7 @@ local_route(in_addr_t network,
+@@ -1548,7 +1548,7 @@ local_route(in_addr_t network,
  
  /* Return true if the "on-link" form of the route should be used.  This is when the gateway for
   * a route is specified as an interface rather than an address. */
@@ -12,7 +12,7 @@ Index: src/openvpn/route.c
  static inline bool
  is_on_link(const int is_local_route, const unsigned int flags, const struct route_gateway_info *rgi)
  {
-@@ -1817,12 +1817,17 @@ add_route(struct route_ipv4 *r,
+@@ -1820,12 +1820,17 @@ add_route(struct route_ipv4 *r,
      }
  #endif
  

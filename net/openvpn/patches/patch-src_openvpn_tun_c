@@ -3,7 +3,7 @@
 Index: src/openvpn/tun.c
 --- src/openvpn/tun.c.orig
 +++ src/openvpn/tun.c
-@@ -1432,21 +1432,26 @@ do_ifconfig_ipv4(struct tuntap *tt, const char *ifname
+@@ -1434,21 +1434,26 @@ do_ifconfig_ipv4(struct tuntap *tt, const char *ifname
      if (tun)
      {
          argv_printf(&argv,
