@@ -26,24 +26,24 @@ NO_TEST=	Yes
 USE_GMAKE=	Yes
 MAKE_ENV +=	CPP=clang-cpp
 
-ARCHS= arm arm64 mips powerpc riscv
+DTB_ARCHS= arm arm64 mips powerpc riscv
 
 ALL_TARGET=
-.for ARCH in ${ARCHS}
-ALL_TARGET+=	all_${ARCH}
+.for DTB_ARCH in ${DTB_ARCHS}
+ALL_TARGET+=	all_${DTB_ARCH}
 .endfor
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/dtb
-.for ARCH in ${ARCHS}
-	${INSTALL_DATA_DIR} ${PREFIX}/share/dtb/${ARCH}
-	cd ${WRKSRC}/src/${ARCH} ; \
+.for DTB_ARCH in ${DTB_ARCHS}
+	${INSTALL_DATA_DIR} ${PREFIX}/share/dtb/${DTB_ARCH}
+	cd ${WRKSRC}/src/${DTB_ARCH} ; \
 	for vendor in `find . -type d ! -name include` ; do \
-	    ${INSTALL_DATA_DIR} ${PREFIX}/share/dtb/${ARCH}/$$vendor ; \
-	    cd ${WRKSRC}/src/${ARCH}/$$vendor ; \
+	    ${INSTALL_DATA_DIR} ${PREFIX}/share/dtb/${DTB_ARCH}/$$vendor ; \
+	    cd ${WRKSRC}/src/${DTB_ARCH}/$$vendor ; \
 	    for dtb in `ls *.dtb` ; do \
-		${INSTALL_DATA} ${WRKSRC}/src/${ARCH}/$$vendor/$$dtb \
-		    ${PREFIX}/share/dtb/${ARCH}/$$vendor ; \
+		${INSTALL_DATA} ${WRKSRC}/src/${DTB_ARCH}/$$vendor/$$dtb \
+		    ${PREFIX}/share/dtb/${DTB_ARCH}/$$vendor ; \
 	    done ; \
 	done
 .endfor
