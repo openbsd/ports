@@ -13,12 +13,10 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += pthread ${MODPY_WANTLIB}
 
 MODULES =	lang/python
-
-MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools
+MODPY_PI =	Yes
 
 do-test:
-	 PYTHONPATH=${WRKSRC}/lib.openbsd-${OSREV}-${ARCH}-${MODPY_VERSION} \
-	     ${MODPY_BIN} ${WRKSRC}/test.py
+	${SETENV} ${ALL_TEST_ENV} ${MODPY_BIN} ${WRKSRC}/test.py
 
 .include <bsd.port.mk>
