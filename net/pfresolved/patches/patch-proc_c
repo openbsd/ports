@@ -8,7 +8,7 @@ Index: proc.c
 -			imsg_init(&iev->ibuf, ps->ps_pp->pp_pipes[dst][inst]);
 +			if (imsgbuf_init(&iev->ibuf,
 +			    ps->ps_pp->pp_pipes[dst][inst]) == -1)
-+				fatal(NULL);
++				fatal("%s: imsgbuf_init", __func__);
 +			imsgbuf_allow_fdpass(&iev->ibuf);
  			event_set(&iev->ev, iev->ibuf.fd, iev->events,
  			    iev->handler, iev->data);
@@ -19,7 +19,7 @@ Index: proc.c
  	iev = &ps->ps_ievs[dst][n];
 -	imsg_init(&iev->ibuf, fd);
 +	if (imsgbuf_init(&iev->ibuf, fd) == -1)
-+		fatal(NULL);
++		fatal("%s: imsgbuf_init", __func__);
 +	imsgbuf_allow_fdpass(&iev->ibuf);
  	event_set(&iev->ev, iev->ibuf.fd, iev->events, iev->handler, iev->data);
  	event_add(&iev->ev, NULL);
@@ -33,20 +33,28 @@ Index: proc.c
  			close(pp->pp_pipes[dst][n]);
  			pp->pp_pipes[dst][n] = -1;
  		}
-@@ -763,7 +768,7 @@ proc_dispatch(int fd, short event, void *arg)
+@@ -753,8 +758,8 @@ proc_dispatch(int fd, short event, void *arg)
  	ibuf = &iev->ibuf;
  
  	if (event & EV_READ) {
 -		if ((n = imsg_read(ibuf)) == -1 && errno != EAGAIN)
+-			fatal("%s: imsg_read", __func__);
 +		if ((n = imsgbuf_read(ibuf)) == -1)
- 			fatal("%s: imsg_read", __func__);
++			fatal("%s: imsgbuf_read", __func__);
  		if (n == 0) {
  			/* this pipe is dead, so remove the event handler */
-@@ -774,13 +779,14 @@ proc_dispatch(int fd, short event, void *arg)
+ 			event_del(&iev->ev);
+@@ -764,13 +769,14 @@ proc_dispatch(int fd, short event, void *arg)
  	}
  
  	if (event & EV_WRITE) {
 -		if ((n = msgbuf_write(&ibuf->w)) == -1 && errno != EAGAIN)
+-			fatal("%s: msgbuf_write", __func__);
+-		if (n == 0) {
+-			/* this pipe is dead, so remove the event handler */
+-			event_del(&iev->ev);
+-			event_loopexit(NULL);
+-			return;
 +		if ((n = imsgbuf_write(ibuf)) == -1) {
 +			if (errno == EPIPE) {
 +				/* this pipe is dead */
@@ -54,16 +62,11 @@ Index: proc.c
 +				event_loopexit(NULL);
 +				return;
 +			}
- 			fatal("%s: msgbuf_write", __func__);
--		if (n == 0) {
--			/* this pipe is dead, so remove the event handler */
--			event_del(&iev->ev);
--			event_loopexit(NULL);
--			return;
++			fatal("%s: imsgbuf_write", __func__);
  		}
  	}
  
-@@ -817,7 +823,7 @@ proc_dispatch(int fd, short event, void *arg)
+@@ -807,7 +813,7 @@ proc_dispatch(int fd, short event, void *arg)
  		case IMSG_CTL_PROCFD:
  			IMSG_SIZE_CHECK(&imsg, &pf);
  			memcpy(&pf, imsg.data, sizeof(pf));
@@ -72,7 +75,7 @@ Index: proc.c
  			    pf.pf_instance);
  			break;
  		default:
-@@ -846,12 +852,12 @@ void
+@@ -836,12 +842,12 @@ void
  imsg_event_add(struct imsgev *iev)
  {
  	if (iev->handler == NULL) {
@@ -87,7 +90,7 @@ Index: proc.c
  		iev->events |= EV_WRITE;
  
  	event_del(&iev->ev);
-@@ -951,7 +957,8 @@ proc_forward_imsg(struct privsep *ps, struct imsg *ims
+@@ -941,7 +947,8 @@ proc_forward_imsg(struct privsep *ps, struct imsg *ims
      enum privsep_procid id, int n)
  {
  	return (proc_compose_imsg(ps, id, n, imsg->hdr.type,
@@ -97,7 +100,7 @@ Index: proc.c
  }
  
  struct imsgbuf *
-@@ -984,7 +991,7 @@ proc_flush_imsg(struct privsep *ps, enum privsep_proci
+@@ -974,7 +981,7 @@ proc_flush_imsg(struct privsep *ps, enum privsep_proci
  		if ((ibuf = proc_ibuf(ps, id, n)) == NULL)
  			return (-1);
  		do {

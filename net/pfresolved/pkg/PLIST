@@ -2,5 +2,7 @@
 @newuser _pfresolved:601:_pfresolved::pf DNS daemon:/var/empty:/sbin/nologin
 @rcscript ${RCDIR}/pfresolved
 @man man/man5/pfresolved.conf.5
+@man man/man8/pfresolvectl.8
 @man man/man8/pfresolved.8
+@bin sbin/pfresolvectl
 @bin sbin/pfresolved
