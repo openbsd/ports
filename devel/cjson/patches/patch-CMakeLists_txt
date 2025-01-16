@@ -1,0 +1,13 @@
+-Werror triggers on base-gcc
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -23,7 +23,6 @@ if (ENABLE_CUSTOM_COMPILER_FLAGS)
+             -pedantic
+             -Wall
+             -Wextra
+-            -Werror
+             -Wstrict-prototypes
+             -Wwrite-strings
+             -Wshadow

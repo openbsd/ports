@@ -1,0 +1,14 @@
+...so does otto malloc
+
+Index: tests/misc_tests.c
+--- tests/misc_tests.c.orig
++++ tests/misc_tests.c
+@@ -736,7 +736,7 @@ static void deallocated_pointers_should_be_set_to_null
+ {
+     /* deallocated pointers should be set to null */
+     /* however, valgrind on linux reports when attempting to access a freed memory, we have to skip it */
+-#ifndef ENABLE_VALGRIND
++#if !defined(ENABLE_VALGRIND) && !defined(__OpenBSD__)
+     cJSON *string = cJSON_CreateString("item");
+     cJSON *root = cJSON_CreateObject();
+ 
