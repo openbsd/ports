@@ -258,8 +258,7 @@
      SUBDIR += knfmt
      SUBDIR += kproperty
      SUBDIR += kreport
-     SUBDIR += kyua-cli
-     SUBDIR += kyua-testers
+     SUBDIR += kyua
      SUBDIR += lager
      SUBDIR += legit
      SUBDIR += leiningen
@@ -1684,6 +1683,7 @@
      SUBDIR += py-test-astropy-header
      SUBDIR += py-test-asyncio
      SUBDIR += py-test-benchmark
+     SUBDIR += py-test-check
      SUBDIR += py-test-codspeed
      SUBDIR += py-test-console-scripts
      SUBDIR += py-test-cov
