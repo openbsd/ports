@@ -1,6 +1,6 @@
-@pkgpath sysutils/libvirt-python,python3
 @conflict libvirt-python-*
 @conflict py-libvirt-*
+@pkgpath sysutils/libvirt-python,python3
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}libvirt.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}libvirt.${MODPY_PYC_MAGIC_TAG}pyc
