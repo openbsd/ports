@@ -1,10 +1,9 @@
 COMMENT =		advanced text mode web browser
 
-V =			0.17.0
+V =			0.18.0
 GH_ACCOUNT =		rkd77
 GH_PROJECT =		elinks
 GH_TAGNAME =		v$V
-REVISION =		0
 
 CATEGORIES =		www
 
@@ -16,8 +15,8 @@ MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c crypto css curl curses dom expat iconv
-WANTLIB += idn2 mujs perl sqlite3 ssl tre wapcaplet z
+WANTLIB += c crypto css curl curses dom execinfo expat idn2 mujs
+WANTLIB += perl sqlite3 ssl tre wapcaplet z
 
 COMPILER =		base-clang ports-gcc
 
@@ -36,8 +35,7 @@ CONFIGURE_ARGS +=	-Dgpm=false \
 
 BUILD_DEPENDS =		devel/gettext,-tools \
 			textproc/xmlto
-LIB_DEPENDS =		converters/libiconv \
-			databases/sqlite3 \
+LIB_DEPENDS =		databases/sqlite3 \
 			devel/libidn2 \
 			lang/mujs \
 			net/curl \
