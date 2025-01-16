@@ -20,11 +20,9 @@ include/gupnp-av-1.0/libgupnp-av/gupnp-last-change-parser.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-media-collection.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-protocol-info.h
 include/gupnp-av-1.0/libgupnp-av/gupnp-search-criteria-parser.h
-lib/girepository-1.0/
 lib/girepository-1.0/GUPnPAV-1.0.typelib
 @lib lib/libgupnp-av-1.0.so.${LIBgupnp-av-1.0_VERSION}
 lib/pkgconfig/gupnp-av-1.0.pc
-share/gir-1.0/
 share/gir-1.0/GUPnPAV-1.0.gir
 share/gupnp-av/
 share/gupnp-av/av.xsd

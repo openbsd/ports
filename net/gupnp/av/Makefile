@@ -1,8 +1,7 @@
 COMMENT=		helpers for building A/V applications using GUPnP
 
 GNOME_PROJECT=		gupnp-av
-GNOME_VERSION=		0.14.1
-REVISION=		2
+GNOME_VERSION=		0.14.3
 
 SHARED_LIBS +=  gupnp-av-1.0         0.1      # 2.0
 
