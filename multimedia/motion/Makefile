@@ -57,16 +57,14 @@ CONFIGURE_ARGS+=	--with-pgsql-lib=${LOCALBASE}/lib
 CONFIGURE_ARGS+=	--without-pgsql
 .endif
 
+.if ${MACHINE_ARCH} == amd64
+CFLAGS+=	-mfpmath=sse -msse3
+.endif
+
 NO_TEST=		Yes
 
 pre-configure:
 	perl -pi -e s,/usr/local/etc,${SYSCONFDIR},g \
 		${WRKSRC}/motion-dist.conf.in
-
-.include <bsd.port.arch.mk>
-
-.if ${ARCH:Mamd64}
-CFLAGS+=	-mfpmath=sse -msse3
-.endif
 
 .include <bsd.port.mk>

@@ -86,8 +86,7 @@ CPPFLAGS+=	-I${LOCALBASE}/include
 LDFLAGS+=	-L${LOCALBASE}/lib
 NO_TEST=	Yes
 
-.include <bsd.port.arch.mk>
-.if ${ARCH:Mamd64}
+.if ${MACHINE_ARCH} == amd64
 # there's a hard requirement of SSE3
 CFLAGS+=	-msse3
 CXXFLAGS=	${CFLAGS}
