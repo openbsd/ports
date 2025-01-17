@@ -309,11 +309,12 @@ MODPY_COMPILEALL = ${MODPY_BIN} -m compileall -j ${MAKE_JOBS} -s ${WRKINST} -o 0
 MODPY_TEST_TARGET =
 MODPY_TEST_LINK_SO ?=	No
 .if ${MODPY_TEST_LINK_SO:L} == "yes" && !empty(MODPY_TEST_LIBDIR)
+MODPY_TEST_LINK_SRC ?=	${WRKSRC}
 MODPY_TEST_SO_CMD = for _dir in ${MODPY_TEST_LIBDIR:S,:, ,g}; do \
 	if [ -d $${_dir} ]; then \
 		cd $${_dir} && \
 		find . -name '*.so' -type f \
-			-exec ln -sf $${_dir}/{} ${WRKSRC}/{} \; ;\
+			-exec ln -sf $${_dir}/{} ${MODPY_TEST_LINK_SRC}/{} \; ;\
 	fi; done
 MODPY_TEST_TARGET +=	${MODPY_TEST_SO_CMD};
 .endif
