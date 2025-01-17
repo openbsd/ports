@@ -1,11 +1,9 @@
 COMMENT=		Brother P-touch CUPS driver
 
-GH_TAGNAME=		v1.7
+GH_TAGNAME=		v1.7.1
 GH_ACCOUNT=		philpem
 GH_PROJECT=		printer-driver-ptouch
 DISTNAME=		ptouch-driver-${GH_TAGNAME:S/v//}
-
-WRKDIST=		${WRKDIR}/ptouch-driver-${GH_TAGNAME:S/v//}
 
 CATEGORIES=		print
 
@@ -15,8 +13,6 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += c cups cupsimage m
-
-SITES=			https://github.com/philpem/printer-driver-ptouch/releases/download/${GH_TAGNAME}/
 
 BUILD_DEPENDS=		textproc/p5-XML-LibXML
 
