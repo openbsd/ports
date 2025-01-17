@@ -18,7 +18,6 @@
      SUBDIR += boringssl
      SUBDIR += botan2
      SUBDIR += bounix
-     SUBDIR += burpsuite
      SUBDIR += c2sp-testvectors
      SUBDIR += ccid
      SUBDIR += ccrypt

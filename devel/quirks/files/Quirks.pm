@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1688 2025/01/16 12:14:34 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1689 2025/01/17 06:15:17 tb Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1221,6 +1221,7 @@ setup_obsolete_reason(
 	7 => 'py3-uncompyle6',
 	6 => 'py-arsenic',
 	3 => 'py3-setuptools_scm_git_archive',
+	0 => 'burpsuite',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
