@@ -3,7 +3,7 @@
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -12,8 +12,13 @@ AC_REVISION([$Revision: 1.6 $])
+@@ -12,8 +12,13 @@ AC_REVISION([$Revision: 1.7 $])
  AC_SUBST([PACKAGE_VERSION])
  AC_DEFINE_UNQUOTED([WCSLIB_VERSION], [$PACKAGE_VERSION], [Define wcslib version])
  
@@ -19,7 +19,7 @@ Index: configure.ac
  AC_SUBST([LIBVER])
  
  AC_CONFIG_SRCDIR([C/wcs.h])
-@@ -319,6 +324,12 @@ if test "x$ac_cv_c_compiler_gnu" = xyes ; then
+@@ -331,6 +336,12 @@ if test "x$ac_cv_c_compiler_gnu" = xyes ; then
        SHRLD="$SHRLD -shared -Wl,-h\$(SONAME)"
        SHRLN="libwcs.dll"
        ;;
@@ -32,7 +32,7 @@ Index: configure.ac
      *)
        # Covers Linux and Solaris at least.
        SHRLIB="libwcs.so.$LIBVER"
-@@ -343,7 +354,7 @@ AC_PROG_INSTALL
+@@ -355,7 +366,7 @@ AC_PROG_INSTALL
  
  # Older versions of GNU make do not have the -O option, which only facilitates
  # legibility of the output from parallel builds (make -j).

@@ -2,7 +2,7 @@ Suppresses linked static library nonsense
 Index: C/GNUmakefile
 --- C/GNUmakefile.orig
 +++ C/GNUmakefile
-@@ -332,10 +332,6 @@ install : build
+@@ -333,10 +333,6 @@ install : build
  	     $(INSTALL) -m 644 $(WCSLIB) $(LIBDIR) ; \
  	   fi
  	   $(RANLIB) $(LIBDIR)/$(WCSLIB)

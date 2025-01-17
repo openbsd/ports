@@ -1,0 +1,11 @@
+Index: GNUmakefile
+--- GNUmakefile.orig
++++ GNUmakefile
+@@ -96,7 +96,6 @@ install :
+ 	-  if [ -h $(DOCLINK) ] ; then \
+ 	     $(RM) $(DOCLINK) ; \
+ 	   fi
+-	   $(LN_S) $(notdir $(DOCDIR)) $(DOCLINK)
+ 	   $(MAKE) -k -C doxygen $@
+ 
+ uninstall :

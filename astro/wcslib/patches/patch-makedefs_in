@@ -1,8 +1,8 @@
 Index: makedefs.in
 --- makedefs.in.orig
 +++ makedefs.in
-@@ -104,7 +104,7 @@
-   FFLAGS   := @FFLAGS@
+@@ -107,7 +107,7 @@
+   BINDC    := @BINDC@
  
  # Static object library.
 -  WCSLIB   := libwcs-$(LIBVER).a
@@ -10,7 +10,7 @@ Index: makedefs.in
    ARFLAGS  := @ARFLAGS@
    RANLIB   := @RANLIB@
  
-@@ -135,7 +135,7 @@
+@@ -138,7 +138,7 @@
  
    LIBDIR   := $(DESTDIR)@libdir@
    BINDIR   := $(DESTDIR)@bindir@
