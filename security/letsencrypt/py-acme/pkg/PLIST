@@ -1,5 +1,4 @@
 @pkgpath security/letsencrypt/py-acme,python3
-@conflict py-acme-*
 lib/python${MODPY_VERSION}/site-packages/acme/
 lib/python${MODPY_VERSION}/site-packages/acme-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/acme-${MODPY_DISTV}.dist-info/LICENSE.txt

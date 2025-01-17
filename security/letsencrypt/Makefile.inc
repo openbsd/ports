@@ -3,7 +3,7 @@ CATEGORIES?=		security/letsencrypt security
 MODPY_PI?=		Yes
 MODPY_PYBUILD?=		setuptools
 
-MODPY_DISTV?=	3.0.1
+MODPY_DISTV?=		3.1.0
 
 MODULES?=		lang/python
 
