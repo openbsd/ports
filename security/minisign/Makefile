@@ -2,7 +2,7 @@ COMMENT =	dead simple tool to sign files and verify digital signatures
 
 GH_ACCOUNT =	jedisct1
 GH_PROJECT =	minisign
-GH_TAGNAME =	0.11
+GH_TAGNAME =	0.12
 
 CATEGORIES =	security sysutils
 
