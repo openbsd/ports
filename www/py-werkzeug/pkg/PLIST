@@ -1,7 +1,7 @@
 @pkgpath www/py-werkzeug,python3
 lib/python${MODPY_VERSION}/site-packages/werkzeug/
 lib/python${MODPY_VERSION}/site-packages/werkzeug-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/werkzeug-${MODPY_DISTV}.dist-info/LICENSE.rst
+lib/python${MODPY_VERSION}/site-packages/werkzeug-${MODPY_DISTV}.dist-info/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/werkzeug-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/werkzeug-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/werkzeug-${MODPY_DISTV}.dist-info/WHEEL
@@ -65,24 +65,15 @@ lib/python${MODPY_VERSION}/site-packages/werkzeug/datastructures/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/werkzeug/datastructures/${MODPY_PYCACHE}structures.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/werkzeug/datastructures/${MODPY_PYCACHE}structures.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/werkzeug/datastructures/accept.py
-lib/python${MODPY_VERSION}/site-packages/werkzeug/datastructures/accept.pyi
 lib/python${MODPY_VERSION}/site-packages/werkzeug/datastructures/auth.py
 lib/python${MODPY_VERSION}/site-packages/werkzeug/datastructures/cache_control.py
-lib/python${MODPY_VERSION}/site-packages/werkzeug/datastructures/cache_control.pyi
 lib/python${MODPY_VERSION}/site-packages/werkzeug/datastructures/csp.py
-lib/python${MODPY_VERSION}/site-packages/werkzeug/datastructures/csp.pyi
 lib/python${MODPY_VERSION}/site-packages/werkzeug/datastructures/etag.py
-lib/python${MODPY_VERSION}/site-packages/werkzeug/datastructures/etag.pyi
 lib/python${MODPY_VERSION}/site-packages/werkzeug/datastructures/file_storage.py
-lib/python${MODPY_VERSION}/site-packages/werkzeug/datastructures/file_storage.pyi
 lib/python${MODPY_VERSION}/site-packages/werkzeug/datastructures/headers.py
-lib/python${MODPY_VERSION}/site-packages/werkzeug/datastructures/headers.pyi
 lib/python${MODPY_VERSION}/site-packages/werkzeug/datastructures/mixins.py
-lib/python${MODPY_VERSION}/site-packages/werkzeug/datastructures/mixins.pyi
 lib/python${MODPY_VERSION}/site-packages/werkzeug/datastructures/range.py
-lib/python${MODPY_VERSION}/site-packages/werkzeug/datastructures/range.pyi
 lib/python${MODPY_VERSION}/site-packages/werkzeug/datastructures/structures.py
-lib/python${MODPY_VERSION}/site-packages/werkzeug/datastructures/structures.pyi
 lib/python${MODPY_VERSION}/site-packages/werkzeug/debug/
 lib/python${MODPY_VERSION}/site-packages/werkzeug/debug/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/werkzeug/debug/${MODPY_PYCACHE}/
