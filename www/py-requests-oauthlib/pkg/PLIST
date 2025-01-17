@@ -1,5 +1,4 @@
 @pkgpath www/py-requests-oauthlib,python3
-@conflict py-requests-oauthlib-*
 lib/python${MODPY_VERSION}/site-packages/requests_oauthlib/
 lib/python${MODPY_VERSION}/site-packages/requests_oauthlib-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/requests_oauthlib-${MODPY_DISTV}.dist-info/LICENSE
