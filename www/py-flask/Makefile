@@ -6,6 +6,7 @@ PKGNAME=	py-${DISTNAME}
 
 CATEGORIES=	www devel
 
+# https://github.com/pallets/flask
 HOMEPAGE=	https://flask.palletsprojects.com/
 
 # BSD
