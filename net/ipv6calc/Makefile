@@ -1,6 +1,9 @@
 COMMENT=	tool for manipulating IPv6 addresses
 
-DIST_TUPLE =	github	pbiering	ipv6calc	4.2.0	.
+GH_ACCOUNT=	pbiering
+GH_PROJECT=	ipv6calc
+GH_TAGNAME=	4.2.1
+
 CATEGORIES=	net
 
 HOMEPAGE=	https://www.deepspace6.net/projects/ipv6calc.html
