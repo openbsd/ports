@@ -570,6 +570,8 @@ go/src/cmd/cgo/internal/testcarchive/carchive_test.go
 go/src/cmd/cgo/internal/testcarchive/testdata/
 go/src/cmd/cgo/internal/testcarchive/testdata/libgo/
 go/src/cmd/cgo/internal/testcarchive/testdata/libgo/libgo.go
+go/src/cmd/cgo/internal/testcarchive/testdata/libgo10/
+go/src/cmd/cgo/internal/testcarchive/testdata/libgo10/a.go
 go/src/cmd/cgo/internal/testcarchive/testdata/libgo2/
 go/src/cmd/cgo/internal/testcarchive/testdata/libgo2/libgo2.go
 go/src/cmd/cgo/internal/testcarchive/testdata/libgo3/
@@ -585,6 +587,7 @@ go/src/cmd/cgo/internal/testcarchive/testdata/libgo8/a.go
 go/src/cmd/cgo/internal/testcarchive/testdata/libgo9/
 go/src/cmd/cgo/internal/testcarchive/testdata/libgo9/a.go
 go/src/cmd/cgo/internal/testcarchive/testdata/main.c
+go/src/cmd/cgo/internal/testcarchive/testdata/main10.c
 go/src/cmd/cgo/internal/testcarchive/testdata/main2.c
 go/src/cmd/cgo/internal/testcarchive/testdata/main3.c
 go/src/cmd/cgo/internal/testcarchive/testdata/main4.c
@@ -1035,6 +1038,7 @@ go/src/cmd/compile/internal/importer/iimport.go
 go/src/cmd/compile/internal/importer/support.go
 go/src/cmd/compile/internal/importer/testdata/
 go/src/cmd/compile/internal/importer/testdata/a.go
+go/src/cmd/compile/internal/importer/testdata/alias.go
 go/src/cmd/compile/internal/importer/testdata/b.go
 go/src/cmd/compile/internal/importer/testdata/exports.go
 go/src/cmd/compile/internal/importer/testdata/generics.go
@@ -8716,6 +8720,7 @@ go/src/net/sendfile_linux.go
 go/src/net/sendfile_stub.go
 go/src/net/sendfile_test.go
 go/src/net/sendfile_unix_alt.go
+go/src/net/sendfile_unix_test.go
 go/src/net/sendfile_windows.go
 go/src/net/server_test.go
 go/src/net/smtp/
