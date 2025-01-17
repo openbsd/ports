@@ -1,6 +1,6 @@
 COMMENT=	Python wrapper for pandoc
 
-MODPY_DISTV=	1.14
+MODPY_DISTV=	1.15
 DISTNAME=	pypandoc-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -19,8 +19,10 @@ RUN_DEPENDS=	textproc/pandoc
 
 PORTHOME=	${WRKDIR}
 TEST_DEPENDS=	print/texlive/texmf,-main \
-		textproc/pandoc
+		textproc/pandoc \
+		textproc/py-pandocfilters
 
+# at least one test needs network
 do-test:
 	cd ${WRKSRC}; ${SETENV} ${ALL_TEST_ENV} ${MODPY_BIN} tests.py
 
