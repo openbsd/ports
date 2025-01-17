@@ -16,6 +16,10 @@ log_level            = "info"
 
 pid_file = "/var/vault/agent.pid"
 
+reporting {
+  disable_product_usage_reporting = true
+}
+
 template_config {
   static_secret_render_interval = "5m"
   exit_on_retry_failure         = true
