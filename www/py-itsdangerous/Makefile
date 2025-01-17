@@ -7,16 +7,15 @@ REVISION=	0
 
 CATEGORIES=	www devel
 
+# https://github.com/pallets/itsdangerous
 HOMEPAGE=	https://itsdangerous.palletsprojects.com
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MODPY_PI=	Yes
-
 MODULES=	lang/python
-
 MODPY_PYBUILD=	flit_core
+MODPY_PI=	Yes
 
 TEST_DEPENDS=	devel/py-freezegun
 
