@@ -1,8 +1,0 @@
---- gtk/gtk-sharp-2.0.pc.in.orig	Mon Apr  7 10:34:49 2008
-+++ gtk/gtk-sharp-2.0.pc.in	Mon Apr  7 10:34:59 2008
-@@ -1,4 +1,4 @@
--prefix=${pcfiledir}/../..
-+prefix=@prefix@
- exec_prefix=${prefix}
- libdir=${exec_prefix}/lib
- gapidir=${prefix}/share/gapi-2.0
