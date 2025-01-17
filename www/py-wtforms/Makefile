@@ -17,7 +17,9 @@ MODPY_PI=	Yes
 
 BUILD_DEPENDS=	devel/py-babel
 RUN_DEPENDS=	devel/py-dateutil
+
 # optional rdep email_validator (not ported) needed for some tests
 # https://pypi.org/project/email-validator/
+MODPY_PYTEST_ARGS= --ignore tests/validators/test_email.py
 
 .include <bsd.port.mk>
