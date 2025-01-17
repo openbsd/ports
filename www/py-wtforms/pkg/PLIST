@@ -1,13 +1,13 @@
-@pkgpath www/py-wtforms,python3
 @conflict py-flask-wtk-<0.9.4p0
 @conflict py-wtforms-*
-lib/python${MODPY_VERSION}/site-packages/WTForms-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/WTForms-${MODPY_DISTV}.dist-info/LICENSE.rst
-lib/python${MODPY_VERSION}/site-packages/WTForms-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/WTForms-${MODPY_DISTV}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/WTForms-${MODPY_DISTV}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/WTForms-${MODPY_DISTV}.dist-info/top_level.txt
+@pkgpath www/py-wtforms,python3
 lib/python${MODPY_VERSION}/site-packages/wtforms/
+lib/python${MODPY_VERSION}/site-packages/wtforms-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/wtforms-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/wtforms-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/wtforms-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/wtforms-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/wtforms-${MODPY_DISTV}.dist-info/licenses/LICENSE.rst
 lib/python${MODPY_VERSION}/site-packages/wtforms/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/wtforms/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/wtforms/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -135,6 +135,10 @@ lib/python${MODPY_VERSION}/site-packages/wtforms/locale/ja/
 lib/python${MODPY_VERSION}/site-packages/wtforms/locale/ja/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/wtforms/locale/ja/LC_MESSAGES/wtforms.mo
 lib/python${MODPY_VERSION}/site-packages/wtforms/locale/ja/LC_MESSAGES/wtforms.po
+lib/python${MODPY_VERSION}/site-packages/wtforms/locale/kk/
+lib/python${MODPY_VERSION}/site-packages/wtforms/locale/kk/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/wtforms/locale/kk/LC_MESSAGES/wtforms.mo
+lib/python${MODPY_VERSION}/site-packages/wtforms/locale/kk/LC_MESSAGES/wtforms.po
 lib/python${MODPY_VERSION}/site-packages/wtforms/locale/ko/
 lib/python${MODPY_VERSION}/site-packages/wtforms/locale/ko/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/wtforms/locale/ko/LC_MESSAGES/wtforms.mo
@@ -155,6 +159,10 @@ lib/python${MODPY_VERSION}/site-packages/wtforms/locale/pt/
 lib/python${MODPY_VERSION}/site-packages/wtforms/locale/pt/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/wtforms/locale/pt/LC_MESSAGES/wtforms.mo
 lib/python${MODPY_VERSION}/site-packages/wtforms/locale/pt/LC_MESSAGES/wtforms.po
+lib/python${MODPY_VERSION}/site-packages/wtforms/locale/ro/
+lib/python${MODPY_VERSION}/site-packages/wtforms/locale/ro/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/wtforms/locale/ro/LC_MESSAGES/wtforms.mo
+lib/python${MODPY_VERSION}/site-packages/wtforms/locale/ro/LC_MESSAGES/wtforms.po
 lib/python${MODPY_VERSION}/site-packages/wtforms/locale/ru/
 lib/python${MODPY_VERSION}/site-packages/wtforms/locale/ru/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/wtforms/locale/ru/LC_MESSAGES/wtforms.mo
