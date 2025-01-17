@@ -1,6 +1,7 @@
---- tests/Makefile.in.orig.port	Mon May 22 21:30:22 2023
-+++ tests/Makefile.in	Fri Jun  2 08:37:17 2023
-@@ -87,7 +87,7 @@
+Index: tests/Makefile.in
+--- tests/Makefile.in.orig
++++ tests/Makefile.in
+@@ -87,7 +87,7 @@ PRE_UNINSTALL = :
  POST_UNINSTALL = :
  build_triplet = @build@
  host_triplet = @host@

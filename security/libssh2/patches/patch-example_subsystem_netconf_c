@@ -1,7 +1,7 @@
 Index: example/subsystem_netconf.c
 --- example/subsystem_netconf.c.orig
 +++ example/subsystem_netconf.c
-@@ -257,14 +257,14 @@ int main(int argc, char *argv[])
+@@ -237,14 +237,14 @@ int main(int argc, char *argv[])
      /* NETCONF: https://tools.ietf.org/html/draft-ietf-netconf-ssh-06 */
  
      fprintf(stderr, "Sending NETCONF client <hello>\n");
@@ -18,7 +18,7 @@ Index: example/subsystem_netconf.c
      if(-1 == netconf_write(channel, buf, len))
          goto shutdown;
  
-@@ -277,12 +277,12 @@ int main(int argc, char *argv[])
+@@ -257,12 +257,12 @@ int main(int argc, char *argv[])
              (int)len, buf);
  
      fprintf(stderr, "Sending NETCONF <rpc>\n");
