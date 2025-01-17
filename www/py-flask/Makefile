@@ -1,26 +1,24 @@
-COMMENT =		microframework based on Werkzeug and Jinja 2
+COMMENT=	microframework based on Werkzeug and Jinja 2
 
-MODPY_DISTV =	2.3.3
-DISTNAME =		flask-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-REVISION =		1
+MODPY_DISTV=	3.1.0
+DISTNAME=	flask-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =		www devel
+CATEGORIES=	www devel
 
-HOMEPAGE =		https://flask.palletsprojects.com/
+HOMEPAGE=	https://flask.palletsprojects.com/
 
 # BSD
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
+MODPY_PYBUILD=	flit_core
+MODPY_PI=	Yes
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		flit_core
-
-RUN_DEPENDS =		devel/py-blinker>=1.6.2 \
-			devel/py-click>=8.1.3 \
-			www/py-itsdangerous>=2.1.2 \
-			www/py-jinja2>=3.1.2 \
-			www/py-werkzeug>=2.3.7
+RUN_DEPENDS=	devel/py-blinker \
+		devel/py-click \
+		www/py-itsdangerous \
+		www/py-jinja2 \
+		www/py-werkzeug
 
 .include <bsd.port.mk>

@@ -1,9 +1,9 @@
-@pkgpath www/py-flask,python3
 @conflict py-flask-<0.12.3p3
+@pkgpath www/py-flask,python3
 bin/flask
 lib/python${MODPY_VERSION}/site-packages/flask/
 lib/python${MODPY_VERSION}/site-packages/flask-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/flask-${MODPY_DISTV}.dist-info/LICENSE.rst
+lib/python${MODPY_VERSION}/site-packages/flask-${MODPY_DISTV}.dist-info/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/flask-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/flask-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/flask-${MODPY_DISTV}.dist-info/WHEEL
@@ -33,8 +33,6 @@ lib/python${MODPY_VERSION}/site-packages/flask/${MODPY_PYCACHE}helpers.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/flask/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flask/${MODPY_PYCACHE}logging.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flask/${MODPY_PYCACHE}logging.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/flask/${MODPY_PYCACHE}scaffold.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/flask/${MODPY_PYCACHE}scaffold.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flask/${MODPY_PYCACHE}sessions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flask/${MODPY_PYCACHE}sessions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flask/${MODPY_PYCACHE}signals.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -70,7 +68,18 @@ lib/python${MODPY_VERSION}/site-packages/flask/json/provider.py
 lib/python${MODPY_VERSION}/site-packages/flask/json/tag.py
 lib/python${MODPY_VERSION}/site-packages/flask/logging.py
 lib/python${MODPY_VERSION}/site-packages/flask/py.typed
-lib/python${MODPY_VERSION}/site-packages/flask/scaffold.py
+lib/python${MODPY_VERSION}/site-packages/flask/sansio/
+lib/python${MODPY_VERSION}/site-packages/flask/sansio/README.md
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/flask/sansio/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/flask/sansio/${MODPY_PYCACHE}app.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/flask/sansio/${MODPY_PYCACHE}app.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/flask/sansio/${MODPY_PYCACHE}blueprints.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/flask/sansio/${MODPY_PYCACHE}blueprints.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/flask/sansio/${MODPY_PYCACHE}scaffold.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/flask/sansio/${MODPY_PYCACHE}scaffold.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/flask/sansio/app.py
+lib/python${MODPY_VERSION}/site-packages/flask/sansio/blueprints.py
+lib/python${MODPY_VERSION}/site-packages/flask/sansio/scaffold.py
 lib/python${MODPY_VERSION}/site-packages/flask/sessions.py
 lib/python${MODPY_VERSION}/site-packages/flask/signals.py
 lib/python${MODPY_VERSION}/site-packages/flask/templating.py
