@@ -1,6 +1,6 @@
-COMMENT=	Python charting and plotting API
+COMMENT =		Python charting and plotting API
 
-MODPY_DISTV =	3.8.3
+MODPY_DISTV =		3.8.3
 DISTNAME =		matplotlib-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 REVISION =		1
@@ -18,12 +18,13 @@ WANTLIB += ${COMPILER_LIBCXX} freetype m png qhull_r z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
-MODULES=	lang/python
+MODULES =		lang/python
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
 
-NO_TEST =		Yes
+MODPY_TEST_LINK_SO =	Yes
+MODPY_TEST_LINK_SRC =	${WRKSRC}/lib
 
 BUILD_DEPENDS =	devel/py-certifi>=2020.06.20 \
 		devel/py-pybind11>=2.6 \
