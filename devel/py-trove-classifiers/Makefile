@@ -1,6 +1,6 @@
 COMMENT=	implementation of JSON Schema validation for Python
 
-MODPY_DISTV=	2025.1.10.15
+MODPY_DISTV=	2025.1.15.22
 DISTNAME=	trove_classifiers-${MODPY_DISTV}
 PKGNAME=	py-trove-classifiers-${MODPY_DISTV}
 
