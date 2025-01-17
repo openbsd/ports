@@ -1,25 +1,26 @@
-COMMENT =		fast implementation of the Cassowary constraint solver
+COMMENT=	fast implementation of the Cassowary constraint solver
 
-MODPY_DISTV =	1.3.2
-DISTNAME =		kiwisolver-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-REVISION =		4
+MODPY_DISTV=	1.4.8
+DISTNAME=	kiwisolver-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =		devel
+CATEGORIES=	devel
+
+# https://github.com/nucleic/kiwi
+HOMEPAGE=	https://kiwisolver.readthedocs.io/
 
 # BSD
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
 # C++11
-COMPILER =		base-clang ports-gcc ports-clang
+COMPILER=	base-clang ports-gcc
 
-WANTLIB =	${COMPILER_LIBCXX} ${MODPY_WANTLIB} m
+WANTLIB=	${COMPILER_LIBCXX} ${MODPY_WANTLIB} m
 
-MODULES =		lang/python
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
-
-BUILD_DEPENDS =		devel/py-cppy
+BUILD_DEPENDS=	devel/py-cppy
 
 .include <bsd.port.mk>
