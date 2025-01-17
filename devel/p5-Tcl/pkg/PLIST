@@ -1,6 +1,8 @@
 ${P5ARCH}/
+${P5ARCH}/Tcl-hack.pod
 ${P5ARCH}/Tcl.pm
 ${P5ARCH}/auto/
 ${P5ARCH}/auto/Tcl/
 @so ${P5ARCH}/auto/Tcl/Tcl.so
+@man man/man3p/Tcl-hack.3p
 @man man/man3p/Tcl.3p
