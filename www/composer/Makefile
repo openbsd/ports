@@ -4,8 +4,7 @@ CATEGORIES=	www devel
 
 PORTROACH=	site:https://github.com/composer/composer/archive/
 
-V=		2.5.8
-REVISION=	1
+V=		2.8.4
 SITES=		https://getcomposer.org/download/$V/
 DISTNAME=	composer-$V
 DISTFILES=	composer-$V{composer}.phar
