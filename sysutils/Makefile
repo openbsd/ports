@@ -141,7 +141,6 @@
      SUBDIR += go-cs
      SUBDIR += google-cloud-sdk
      SUBDIR += gource
-     SUBDIR += govmomi
      SUBDIR += gpioflicker
      SUBDIR += grafana
      SUBDIR += grive2

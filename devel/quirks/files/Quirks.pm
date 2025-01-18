@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1689 2025/01/17 06:15:17 tb Exp $
+# $OpenBSD: Quirks.pm,v 1.1690 2025/01/18 16:45:13 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1222,6 +1222,8 @@ setup_obsolete_reason(
 	6 => 'py-arsenic',
 	3 => 'py3-setuptools_scm_git_archive',
 	0 => 'burpsuite',
+	7 => 'govc',
+	7 => 'vcsim',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
