@@ -2718,10 +2718,6 @@ share/qgis/i18n/qgis_sc.qm
 share/qgis/i18n/qgis_sk.qm
 share/qgis/i18n/qgis_sv.qm
 share/qgis/i18n/qgis_tr.qm
-share/qgis/i18n/qgis_uk.qm
-share/qgis/i18n/qgis_vi.qm
-share/qgis/i18n/qgis_zh-Hans.qm
-share/qgis/i18n/qgis_zh-Hant.qm
 share/qgis/images/
 share/qgis/images/icons/
 share/qgis/images/icons/qbrowser-icon.png
@@ -3342,6 +3338,7 @@ share/qgis/python/qgis/PyQt/QtCore.py
 share/qgis/python/qgis/PyQt/QtGui.py
 share/qgis/python/qgis/PyQt/QtNetwork.py
 share/qgis/python/qgis/PyQt/QtPrintSupport.py
+share/qgis/python/qgis/PyQt/QtQuickWidgets.py
 share/qgis/python/qgis/PyQt/QtSerialPort.py
 share/qgis/python/qgis/PyQt/QtSql.py
 share/qgis/python/qgis/PyQt/QtSvg.py
