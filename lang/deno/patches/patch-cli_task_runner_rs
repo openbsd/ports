@@ -1,7 +1,7 @@
 Index: cli/task_runner.rs
 --- cli/task_runner.rs.orig
 +++ cli/task_runner.rs
-@@ -233,7 +233,8 @@ impl ShellCommand for NpmCommand {
+@@ -232,7 +232,8 @@ impl ShellCommand for NpmCommand {
        state.apply_env_var(USE_PKG_JSON_HIDDEN_ENV_VAR_NAME, "1");
        return ExecutableCommand::new(
          "deno".to_string(),
@@ -11,7 +11,7 @@ Index: cli/task_runner.rs
        )
        .execute(ShellCommandContext {
          args,
-@@ -289,12 +290,16 @@ impl ShellCommand for NodeCommand {
+@@ -288,12 +289,16 @@ impl ShellCommand for NodeCommand {
      let mut state = context.state;
  
      state.apply_env_var(USE_PKG_JSON_HIDDEN_ENV_VAR_NAME, "1");
@@ -34,7 +34,7 @@ Index: cli/task_runner.rs
    }
  }
  
-@@ -376,7 +381,8 @@ impl ShellCommand for NpmPackageBinCommand {
+@@ -375,7 +380,8 @@ impl ShellCommand for NpmPackageBinCommand {
      args.extend(context.args);
      let executable_command = deno_task_shell::ExecutableCommand::new(
        "deno".to_string(),
@@ -44,7 +44,7 @@ Index: cli/task_runner.rs
      );
      executable_command.execute(ShellCommandContext { args, ..context })
    }
-@@ -403,7 +409,8 @@ impl ShellCommand for NodeModulesFileRunCommand {
+@@ -402,7 +408,8 @@ impl ShellCommand for NodeModulesFileRunCommand {
      args.extend(context.args);
      let executable_command = deno_task_shell::ExecutableCommand::new(
        "deno".to_string(),

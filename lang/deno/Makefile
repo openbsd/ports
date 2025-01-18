@@ -6,7 +6,7 @@ DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
 
-VERSION =		2.1.5
+VERSION =		2.1.6
 HOMEPAGE =		https://deno.com/runtime
 
 DISTNAME =		deno-${VERSION}
@@ -83,7 +83,7 @@ post-patch:
 	cd ${WRKSRC} && ${SUBST_CMD} \
 	    cli/task_runner.rs \
 	    cli/tools/jupyter/install.rs \
-	    runtime/ops/os/mod.rs \
+	    ext/os/lib.rs \
 	    tests/util/server/src/lib.rs
 	cp ${WRKSRC}/ext/napi/generated_symbol_exports_list_linux.def \
 	    ${WRKSRC}/ext/napi/generated_symbol_exports_list_openbsd.def
