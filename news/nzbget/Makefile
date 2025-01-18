@@ -1,7 +1,8 @@
 COMMENT =	binary newsreader supporting NZB files
 
 DIST_TUPLE +=	github nzbgetcom nzbget v24.5 .
-DIST_TUPLE +=	github nzbgetcom par2cmdline-turbo v1.1.1-nzbget-20241128 .
+DIST_TUPLE +=	github nzbgetcom par2cmdline-turbo v1.1.1-nzbget-20241128 par2cmdline-turbo
+REVISION =	0
 
 CATEGORIES =	news
 
@@ -31,9 +32,6 @@ TEST_DEPENDS =	${RUN_DEPENDS}
 
 CONFIGURE_ARGS =	-DCURSES_INCLUDE_PATH=/usr/include \
 			-DENABLE_TESTS=ON
-
-post-extract:
-	mv ${WRKDIR}/par2cmdline-turbo-* ${WRKDIST}/par2cmdline-turbo
 
 post-install:
 	${SUBST_CMD} ${WRKBUILD}/nzbget.conf
