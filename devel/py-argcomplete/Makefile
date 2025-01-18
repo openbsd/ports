@@ -1,33 +1,29 @@
 COMMENT=	bash tab completion for argparse
 
-MODPY_DISTV=	2.0.5
+MODPY_DISTV=	3.5.3
 DISTNAME=	argcomplete-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	1
+
+HOMEPAGE=	https://github.com/kislyuk/argcomplete
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
+MODPY_PYBUILD=	hatchling
 MODPY_PI=	Yes
-MODPY_PYBUILD=	setuptools
 
-#MODPY_PYTEST_ARGS=	test/test.py
 PORTHOME=	${WRKDIR}
-TEST_DEPENDS=	devel/flake8 \
-		devel/py-coverage \
+TEST_DEPENDS=	devel/py-coverage \
 		devel/py-pexpect \
-		devel/py-pip \
 		devel/py-wheel \
+		devel/py-mypy \
 		shells/bash \
-		shells/fish \
-		shells/tcsh
+		shells/zsh
 
-pre-test:
-	@ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
-	@[[ -r /dev/ptyz0 ]] || (printf "\\nWARNING: tests are likely to fail\
-		unless additional ptys are available.\\n\\n" >&2; sleep 2)
+do-test:
+	ln -fs ${MODPY_BIN} ${WRKDIR}/bin/python
+	cd ${WRKSRC}; ${SETENV} ${ALL_TEST_ENV} make test
 
 .include <bsd.port.mk>
