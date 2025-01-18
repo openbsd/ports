@@ -1471,6 +1471,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/kafkaconnect/2021-09-14/e
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kafkaconnect/2021-09-14/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kafkaconnect/2021-09-14/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kafkaconnect/2021-09-14/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/kafkaconnect/2021-09-14/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kendra/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kendra-ranking/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/kendra-ranking/2022-10-19/
