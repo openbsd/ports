@@ -1,6 +1,6 @@
 COMMENT=	Python subprocess interface
 
-MODPY_DISTV=	2.1.0
+MODPY_DISTV=	2.2.1
 DISTNAME=	sh-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
