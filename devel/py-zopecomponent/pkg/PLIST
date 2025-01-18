@@ -26,8 +26,6 @@ lib/python${MODPY_VERSION}/site-packages/zope/component/${MODPY_PYCACHE}factory.
 lib/python${MODPY_VERSION}/site-packages/zope/component/${MODPY_PYCACHE}factory.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zope/component/${MODPY_PYCACHE}globalregistry.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zope/component/${MODPY_PYCACHE}globalregistry.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/zope/component/${MODPY_PYCACHE}hookable.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/zope/component/${MODPY_PYCACHE}hookable.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zope/component/${MODPY_PYCACHE}hooks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zope/component/${MODPY_PYCACHE}hooks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zope/component/${MODPY_PYCACHE}interface.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -56,7 +54,6 @@ lib/python${MODPY_VERSION}/site-packages/zope/component/event.py
 lib/python${MODPY_VERSION}/site-packages/zope/component/eventtesting.py
 lib/python${MODPY_VERSION}/site-packages/zope/component/factory.py
 lib/python${MODPY_VERSION}/site-packages/zope/component/globalregistry.py
-lib/python${MODPY_VERSION}/site-packages/zope/component/hookable.py
 lib/python${MODPY_VERSION}/site-packages/zope/component/hooks.py
 lib/python${MODPY_VERSION}/site-packages/zope/component/interface.py
 lib/python${MODPY_VERSION}/site-packages/zope/component/interfaces.py
@@ -101,12 +98,12 @@ lib/python${MODPY_VERSION}/site-packages/zope/component/tests/${MODPY_PYCACHE}te
 lib/python${MODPY_VERSION}/site-packages/zope/component/tests/${MODPY_PYCACHE}test_factory.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zope/component/tests/${MODPY_PYCACHE}test_globalregistry.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zope/component/tests/${MODPY_PYCACHE}test_globalregistry.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/zope/component/tests/${MODPY_PYCACHE}test_hookable.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/zope/component/tests/${MODPY_PYCACHE}test_hookable.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zope/component/tests/${MODPY_PYCACHE}test_hooks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zope/component/tests/${MODPY_PYCACHE}test_hooks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zope/component/tests/${MODPY_PYCACHE}test_interface.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zope/component/tests/${MODPY_PYCACHE}test_interface.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/zope/component/tests/${MODPY_PYCACHE}test_interfaces.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/zope/component/tests/${MODPY_PYCACHE}test_interfaces.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zope/component/tests/${MODPY_PYCACHE}test_persistentregistry.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/zope/component/tests/${MODPY_PYCACHE}test_persistentregistry.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/zope/component/tests/${MODPY_PYCACHE}test_registry.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -124,9 +121,9 @@ lib/python${MODPY_VERSION}/site-packages/zope/component/tests/test__declaration.
 lib/python${MODPY_VERSION}/site-packages/zope/component/tests/test_event.py
 lib/python${MODPY_VERSION}/site-packages/zope/component/tests/test_factory.py
 lib/python${MODPY_VERSION}/site-packages/zope/component/tests/test_globalregistry.py
-lib/python${MODPY_VERSION}/site-packages/zope/component/tests/test_hookable.py
 lib/python${MODPY_VERSION}/site-packages/zope/component/tests/test_hooks.py
 lib/python${MODPY_VERSION}/site-packages/zope/component/tests/test_interface.py
+lib/python${MODPY_VERSION}/site-packages/zope/component/tests/test_interfaces.py
 lib/python${MODPY_VERSION}/site-packages/zope/component/tests/test_persistentregistry.py
 lib/python${MODPY_VERSION}/site-packages/zope/component/tests/test_registry.py
 lib/python${MODPY_VERSION}/site-packages/zope/component/tests/test_security.py
