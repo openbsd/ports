@@ -1,9 +1,8 @@
 COMMENT =	on the fly conversion of docstrings to markdown
 
-MODPY_DISTV=	0.12
+MODPY_DISTV=	0.15
 DISTNAME=	docstring-to-markdown-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	devel
 
@@ -11,10 +10,9 @@ CATEGORIES=	devel
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
-NO_TEST=	Yes
+TEST_DEPENDS=	devel/py-test-flake8
 
 .include <bsd.port.mk>
