@@ -1,16 +1,10 @@
-VERSION =		3.3.6
-REVISION =		0
+VERSION =		3.3.7
 DISTNAME =		ruby-${VERSION}
 PKGNAME-main =		ruby-${VERSION}
 PKGNAME-ri_docs =	ruby${BINREV}-ri_docs-${VERSION}
 SHARED_LIBS =		ruby33	0.0
 NEXTVER =		3.4
 PKGSPEC-main ?=         ruby->=3.3.0,<${NEXTVER}
-
-SITES.p1 =		https://github.com/ruby/openssl/commit/
-
-# Fix openssl test failure
-PATCHFILES.p1 +=	ruby33-openssl-csr-version-failure{c06fdeb0912221d9a2888369bbf9c10704af021e}.patch
 
 PSEUDO_FLAVORS=		no_ri_docs bootstrap
 # Do not build the RI docs on slow arches

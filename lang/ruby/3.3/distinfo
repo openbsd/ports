@@ -1,4 +1,2 @@
-SHA256 (ruby-3.3.6.tar.gz) = jcSP/68nD4bxAZBT8o5R5NpMzjKjZ2CgYDqa7mfX/Y0=
-SHA256 (ruby33-openssl-csr-version-failure.patch) = 5OTIvi/5NUJ4moT03s5LxllLDAtdnkrMMZAcJk+oubk=
-SIZE (ruby-3.3.6.tar.gz) = 22153657
-SIZE (ruby33-openssl-csr-version-failure.patch) = 2441
+SHA256 (ruby-3.3.7.tar.gz) = nDfDsSKIx67CDKEhznaEW+W7XXdmKiSRllGq8dEshig=
+SIZE (ruby-3.3.7.tar.gz) = 22163173
