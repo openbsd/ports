@@ -1,7 +1,4 @@
 @pkgpath devel/py-test-flake8,python3
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
-${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pytest_flake8.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pytest_flake8.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pytest_flake8-${MODPY_DISTV}.dist-info/
