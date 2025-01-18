@@ -1,25 +1,19 @@
 COMMENT=	simple integration of Flask and WTForms
 
-MODPY_DISTV=1.0.1
-DISTNAME=	Flask-WTF-${MODPY_DISTV}
-PKGNAME=	py-${DISTNAME:L}
+MODPY_DISTV=	1.2.2
+DISTNAME=	flask_wtf-${MODPY_DISTV}
+PKGNAME=	py-flask-wtf-${MODPY_DISTV}
 CATEGORIES=	www
-REVISION=	1
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MODULES=		lang/python
+MODULES=	lang/python
 
-MODPY_PI=		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PI=	Yes
+MODPY_PYBUILD=	hatchling
 
-RUN_DEPENDS=		www/py-flask \
-			www/py-wtforms
-
-# Could also use various unported eggs, Flask-Babel, speaklater
-#TEST_DEPENDS=		devel/py-nose
-
-USE_GMAKE=		Yes
+RUN_DEPENDS=	www/py-flask \
+		www/py-wtforms
 
 .include <bsd.port.mk>
