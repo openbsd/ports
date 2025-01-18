@@ -106,6 +106,7 @@ TEST_FLAGS=		NO_INTERACTION=1
 ZEND_EXTENSIONS+=	-opcache
 
 # new subpackages must be added to devel/quirks $cve tables
+# and the pkg-readme extensions/SAPI list as applicable.
 PHP_EXTENSIONS+=	-bz2 -curl -dba -enchant -gd -gmp -intl \
 			-ldap -mysqli -odbc -pcntl -pdo_mysql \
 			-pdo_odbc -pdo_pgsql -pdo_sqlite -pgsql \
@@ -457,9 +458,12 @@ WANTLIB-zip+=		bz2 crypto lzma pthread z zip zstd
 CONFIGURE_ARGS+=	--with-zip=shared
 .endif
 
-SUBST_VARS+=	APACHE_DIR CHROOT_DIR MODPHP_CONFIG_PATH SV PV PHP_PKGSPEC
-DEFAULT_PHP?=	No
+INCLUDE_PATH=	/pear/lib:${CHROOT_DIR}/pear/lib
+SUBST_VARS=	APACHE_DIR CHROOT_DIR INCLUDE_PATH MODPHP_CONFIG_PATH \
+		MODULES_DIR PV PHP_PKGSPEC SV
 DESTDIRNAME=	INSTALL_ROOT
+
+DEFAULT_PHP?=	No
 
 # not: install-modules install-pear install-sapi
 INSTALL_TARGET=	install-binaries install-build install-headers install-programs
@@ -541,10 +545,8 @@ post-install:
 .endfor
 
 .for i in ${INI_TEMPLATES}
-	@sed -e 's,MODULES_DIR,${MODULES_DIR},' \
-	     -e 's,OPENBSD_INCLUDE_PATH,/pear/lib:${CHROOT_DIR}/pear/lib,' \
-		<${WRKSRC}/php.ini-${i} \
-		>${PREFIX}/share/examples/php-${PV}/php.ini-${i}
+	@${SUBST_DATA} ${WRKSRC}/php.ini-${i} \
+		${PREFIX}/share/examples/php-${PV}/php.ini-${i}
 .endfor
 
 .if ${BUILD_PACKAGES:M-apache}

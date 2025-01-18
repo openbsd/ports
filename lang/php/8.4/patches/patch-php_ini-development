@@ -6,7 +6,7 @@ Index: php.ini-development
  
  ; UNIX: "/path1:/path2"
 -;include_path = ".:/php/includes"
-+include_path = ".:OPENBSD_INCLUDE_PATH"
++include_path = ".:${INCLUDE_PATH}"
  ;
 -; Windows: "\path1;\path2"
 -;include_path = ".;c:\php\includes"
@@ -18,7 +18,7 @@ Index: php.ini-development
  ;extension_dir = "./"
  ; On windows:
  ;extension_dir = "ext"
-+extension_dir = "MODULES_DIR"
++extension_dir = "${MODULES_DIR}"
  
  ; Directory where the temporary files should be placed.
  ; Defaults to the system default (see sys_get_temp_dir)
@@ -31,7 +31,58 @@ Index: php.ini-development
  
  ; Whether to allow include/require to open URLs (like https:// or ftp://) as files.
  ; https://php.net/allow-url-include
-@@ -961,7 +959,7 @@ cli_server.color = On
+@@ -913,43 +911,14 @@ default_socket_timeout = 60
+ ;   extension folders as well as the separate PECL DLL download.
+ ;   Be sure to appropriately set the extension_dir directive.
+ ;
+-;extension=bz2
+-;extension=curl
+-;extension=ffi
+-;extension=ftp
+-;extension=fileinfo
+-;extension=gd
+-;extension=gettext
+-;extension=gmp
+-;extension=intl
+-;extension=ldap
+-;extension=mbstring
+-;extension=exif      ; Must be after mbstring as it depends on it
+-;extension=mysqli
+-;extension=odbc
+-;extension=openssl
+-;extension=pdo_firebird
+-;extension=pdo_mysql
+-;extension=pdo_odbc
+-;extension=pdo_pgsql
+-;extension=pdo_sqlite
+-;extension=pgsql
+-;extension=shmop
++; For OpenBSD: the most common extensions (iconv, mbstring, sodium,
++; xml and others) are enabled by default in the main PHP package.
++;
++; Others (including database drivers) are packaged separately and must
++; be enabled in your configuration; this is normally done by creating
++; symlinks in ${SYSCONFDIR}/php-${PV}. See the package documentation in
++; ${PREFIX}/share/doc/pkg-readmes/${PKSTEM} for more details.
+ 
+-; The MIBS data available in the PHP distribution must be installed.
+-; See https://www.php.net/manual/en/snmp.installation.php
+-;extension=snmp
+-
+-;extension=soap
+-;extension=sockets
+-;extension=sodium
+-;extension=sqlite3
+-;extension=tidy
+-;extension=xsl
+-;extension=zip
+-
+-;zend_extension=opcache
+-
+ ;;;;;;;;;;;;;;;;;;;
+ ; Module Settings ;
+ ;;;;;;;;;;;;;;;;;;;
+@@ -961,7 +930,7 @@ cli_server.color = On
  [Date]
  ; Defines the default timezone used by the date functions
  ; https://php.net/date.timezone

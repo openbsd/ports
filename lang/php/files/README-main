@@ -87,6 +87,12 @@ The recommended php configuration has been installed to:
 
 Modify this as required for your use.
 
+Server APIs (SAPI)
+==================
+The main php package includes the cli and php_fpm (FastCGI process
+manager) SAPIs. These cover many common use-cases. Others are packaged
+separately: php-apache, php-cgi, php-dbg, php-embed.
+
 Extension modules
 =================
 Many language features in php are provided by extensions, which come
@@ -98,8 +104,17 @@ enabled; they don't need to be installed or enabled separately.
 - opcache is in the main package but must be configured.
 
 - some 'core' extensions with extra dependencies are packaged separately
-(e.g. php-pdo_mysql, php-ldap, php-soap, and others) and can be installed
-with pkg_add(1).
+and can be installed with pkg_add(1). The list may vary between versions
+of PHP, but these are usually available:
+
+	php-bz2		php-mysqli	php-shmop
+	php-curl	php-odbc	php-soap
+	php-dba		php-pcntl	php-snmp
+	php-enchant	php-pdo_mysql	php-sqlite3
+	php-gd		php-pdo_odbc	php-pdo_dblib
+	php-gmp		php-pdo_pgsql	php-tidy
+	php-intl	php-pdo_sqlite	php-xsl
+	php-ldap	php-pgsql	php-zip
 
 - various useful third-party extensions from the PECL repository have
 also been packaged. Examples include pecl${SV}-memcached (for use with

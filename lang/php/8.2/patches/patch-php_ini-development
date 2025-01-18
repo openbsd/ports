@@ -6,7 +6,7 @@ Index: php.ini-development
  
  ; UNIX: "/path1:/path2"
 -;include_path = ".:/php/includes"
-+include_path = ".:OPENBSD_INCLUDE_PATH"
++include_path = ".:${INCLUDE_PATH}"
  ;
 -; Windows: "\path1;\path2"
 -;include_path = ".;c:\php\includes"
@@ -18,7 +18,7 @@ Index: php.ini-development
  ;extension_dir = "./"
  ; On windows:
  ;extension_dir = "ext"
-+extension_dir = "MODULES_DIR"
++extension_dir = "${MODULES_DIR}"
  
  ; Directory where the temporary files should be placed.
  ; Defaults to the system default (see sys_get_temp_dir)
@@ -31,7 +31,67 @@ Index: php.ini-development
  
  ; Whether to allow include/require to open URLs (like https:// or ftp://) as files.
  ; https://php.net/allow-url-include
-@@ -974,7 +972,7 @@ cli_server.color = On
+@@ -917,52 +915,14 @@ default_socket_timeout = 60
+ ;   extension folders as well as the separate PECL DLL download.
+ ;   Be sure to appropriately set the extension_dir directive.
+ ;
+-;extension=bz2
++; For OpenBSD: the most common extensions (iconv, mbstring, sodium,
++; xml and others) are enabled by default in the main PHP package.
++;
++; Others (including database drivers) are packaged separately and must
++; be enabled in your configuration; this is normally done by creating
++; symlinks in ${SYSCONFDIR}/php-${PV}. See the package documentation in
++; ${PREFIX}/share/doc/pkg-readmes/${PKSTEM} for more details.
+ 
+-; The ldap extension must be before curl if OpenSSL 1.0.2 and OpenLDAP is used
+-; otherwise it results in segfault when unloading after using SASL.
+-; See https://github.com/php/php-src/issues/8620 for more info.
+-;extension=ldap
+-
+-;extension=curl
+-;extension=ffi
+-;extension=ftp
+-;extension=fileinfo
+-;extension=gd
+-;extension=gettext
+-;extension=gmp
+-;extension=intl
+-;extension=imap
+-;extension=mbstring
+-;extension=exif      ; Must be after mbstring as it depends on it
+-;extension=mysqli
+-;extension=oci8_12c  ; Use with Oracle Database 12c Instant Client
+-;extension=oci8_19  ; Use with Oracle Database 19 Instant Client
+-;extension=odbc
+-;extension=openssl
+-;extension=pdo_firebird
+-;extension=pdo_mysql
+-;extension=pdo_oci
+-;extension=pdo_odbc
+-;extension=pdo_pgsql
+-;extension=pdo_sqlite
+-;extension=pgsql
+-;extension=shmop
+-
+-; The MIBS data available in the PHP distribution must be installed.
+-; See https://www.php.net/manual/en/snmp.installation.php
+-;extension=snmp
+-
+-;extension=soap
+-;extension=sockets
+-;extension=sodium
+-;extension=sqlite3
+-;extension=tidy
+-;extension=xsl
+-;extension=zip
+-
+-;zend_extension=opcache
+-
+ ;;;;;;;;;;;;;;;;;;;
+ ; Module Settings ;
+ ;;;;;;;;;;;;;;;;;;;
+@@ -974,7 +934,7 @@ cli_server.color = On
  [Date]
  ; Defines the default timezone used by the date functions
  ; https://php.net/date.timezone
