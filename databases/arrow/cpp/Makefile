@@ -1,11 +1,10 @@
 COMMENT =	columnar format and toolbox for fast-data interchange
 
-V =		18.0.0
+V =		18.1.0
 DISTNAME =	apache-arrow-${V}
 PKGNAME =	arrow-cpp-${V}
-REVISION =	0
 
-SHARED_LIBS +=	arrow		0.0 # 0.0
+SHARED_LIBS +=	arrow		1.0 # 0.0
 SHARED_LIBS +=	arrow_acero	0.0
 SHARED_LIBS +=	arrow_dataset	0.0
 #SHARED_LIBS +=	arrow_testing	0.0

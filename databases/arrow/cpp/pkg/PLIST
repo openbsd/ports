@@ -469,4 +469,4 @@ share/doc/arrow/
 share/doc/arrow/LICENSE.txt
 share/doc/arrow/NOTICE.txt
 share/doc/arrow/README.md
-share/gdb/auto-load/usr/local/lib/libarrow.so.0.0-gdb.py
+share/gdb/auto-load/usr/local/lib/libarrow.so.${LIBarrow_VERSION}-gdb.py
