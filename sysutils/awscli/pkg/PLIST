@@ -4913,6 +4913,15 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/networkmonitor/tag-reso
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/networkmonitor/untag-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/networkmonitor/update-monitor.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/networkmonitor/update-probe.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/observabilityadmin/
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/observabilityadmin/get-telemetry-evaluation-status-for-organization.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/observabilityadmin/get-telemetry-evaluation-status.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/observabilityadmin/list-resource-telemetry-for-organization.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/observabilityadmin/list-resource-telemetry.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/observabilityadmin/start-telemetry-evaluation-for-organization.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/observabilityadmin/start-telemetry-evaluation.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/observabilityadmin/stop-telemetry-evaluation-for-organization.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/observabilityadmin/stop-telemetry-evaluation.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/omics/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/omics/abort-multipart-read-set-upload.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/omics/accept-share.rst

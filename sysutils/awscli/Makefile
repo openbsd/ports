@@ -1,6 +1,6 @@
 COMMENT=		universal command line environment for AWS
 
-MODPY_DISTV=		1.36.38
+MODPY_DISTV=		1.37.2
 DISTNAME=		awscli-${MODPY_DISTV}
 
 CATEGORIES=		sysutils
@@ -21,9 +21,8 @@ RUN_DEPENDS=		textproc/py-docutils
 
 # !!! check setup.py for exact dependencies version
 RUN_DEPENDS +=		devel/py-colorama>=0.2.5,<0.4.7
-#RUN_DEPENDS +=		net/py-botocore=1.35.${MODPY_DISTV:E}
-RUN_DEPENDS +=		net/py-botocore=1.35.97
-RUN_DEPENDS +=		net/py-s3transfer>=0.10.0,<0.11.0
+RUN_DEPENDS +=		net/py-botocore=1.36.${MODPY_DISTV:E}
+RUN_DEPENDS +=		net/py-s3transfer>=0.11.0,<0.12.0
 RUN_DEPENDS +=		textproc/py-yaml>=3.10,<6.1
 RUN_DEPENDS +=		security/py-rsa>=3.1.2,<4.8
 
