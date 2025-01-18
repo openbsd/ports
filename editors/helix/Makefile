@@ -1,6 +1,6 @@
 COMMENT =	modal text editor
 
-VER =		24.07
+VER =		25.01
 DISTNAME =	helix-${VER}
 
 CATEGORIES =	editors
@@ -33,7 +33,7 @@ SEPARATE_BUILD =        Yes
 pre-extract:
 	@mkdir -p ${WRKDIST}
 
-post-patch:
+pre-configure:
 	grep -F -Rls '%%DATADIR%%' ${WRKSRC} | xargs sed -i \
 		's,%%DATADIR%%,${PREFIX}/share/helix,'
 
