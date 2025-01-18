@@ -35,6 +35,7 @@
      SUBDIR += bwidget
      SUBDIR += byzi
      SUBDIR += cegui
+     SUBDIR += chicago95-theme
      SUBDIR += clipmenu
      SUBDIR += clipnotify
      SUBDIR += coma
