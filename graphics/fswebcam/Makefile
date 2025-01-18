@@ -1,6 +1,7 @@
 COMMENT=		fswebcam is a small and simple webcam app
 
 DISTNAME=		fswebcam-20200725
+REVISION=		0
 
 CATEGORIES=		graphics
 
