@@ -38,7 +38,7 @@ SHA256 (cargo/bumpalo-3.14.0.tar.gz) = fzDnR2Uh9vivGhxMC4zJTwvuN9kXY9DKJmXymbbNi
 SHA256 (cargo/byteorder-1.5.0.tar.gz) = H9DyWEFG9vLvSAhQUIhqzzU77/cwXr0a5pUA4nxn9ks=
 SHA256 (cargo/bytes-1.6.0.tar.gz) = UU3hfeRf243AIrGnl1VWxTyG+fCqX1NLmJd7FxhXwsk=
 SHA256 (cargo/cbc-0.1.2.tar.gz) = JrUqlUOuM48nm5awuf7ZyAk3RGhQQ3OQec6FzVjyiaY=
-SHA256 (cargo/cc-1.0.83.tar.gz) = 8RdPsLbsI4Y/i5cQJ4BKQmFONH6vsKlb8LEs2uIfxNA=
+SHA256 (cargo/cc-1.1.10.tar.gz) = 6eiqv6xTS+dnyQngaQVxZ31J9BvYRlrodv4EPVK6UpI=
 SHA256 (cargo/cfg-if-0.1.10.tar.gz) = R4W90clrKoRrK9fMAuhraz2/FOflNEbE9UySo2EECCI=
 SHA256 (cargo/cfg-if-1.0.0.tar.gz) = uvHeQzl2FYi8Bhnjy8ASDuWC67dLU7Tvv3kRe9LaQP0=
 SHA256 (cargo/cfg_aliases-0.1.1.tar.gz) = /RbEcZM5xFMENdOOURkEQ40HzOeVCvo3GKhKw2wQ6J4=
@@ -387,7 +387,7 @@ SHA256 (cargo/zip-0.6.6.tar.gz) = dgOU4kbkwoGJ8Z1IjAWL8W9WQBau+sXTK7HztR1ekmE=
 SHA256 (cargo/zstd-0.13.1.tar.gz) = LXibFRQgOhEgrSQp6uQ6e9MrkJdqe7igX37AL6iMwjo=
 SHA256 (cargo/zstd-safe-7.1.0.tar.gz) = HNmbRca8A6AYyLioYCVnjIflVSYGTjj53zAZidzn7Ao=
 SHA256 (cargo/zstd-sys-2.0.10+zstd.1.5.6.tar.gz) = wlOkkUr1uvyPqMhu5ACCfoPPbsARlewfHthEG/ANZao=
-SHA256 (sccache-0.9.0.tar.gz) = 31uKOPbSn0ONugvlfsLmxMh2dce5u03S6T1Mk3XKeXs=
+SHA256 (sccache-0.9.1.tar.gz) = FQlnpZ8Uj3gKzBZ8njWWGhlpU72ATVE6sBM0TXPetDY=
 SIZE (cargo/addr2line-0.21.0.tar.gz) = 40807
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/aes-0.8.4.tar.gz) = 124812
@@ -428,7 +428,7 @@ SIZE (cargo/bumpalo-3.14.0.tar.gz) = 82400
 SIZE (cargo/byteorder-1.5.0.tar.gz) = 23288
 SIZE (cargo/bytes-1.6.0.tar.gz) = 60605
 SIZE (cargo/cbc-0.1.2.tar.gz) = 23501
-SIZE (cargo/cc-1.0.83.tar.gz) = 68343
+SIZE (cargo/cc-1.1.10.tar.gz) = 82159
 SIZE (cargo/cfg-if-0.1.10.tar.gz) = 7933
 SIZE (cargo/cfg-if-1.0.0.tar.gz) = 7934
 SIZE (cargo/cfg_aliases-0.1.1.tar.gz) = 6009
@@ -777,4 +777,4 @@ SIZE (cargo/zip-0.6.6.tar.gz) = 65789
 SIZE (cargo/zstd-0.13.1.tar.gz) = 29805
 SIZE (cargo/zstd-safe-7.1.0.tar.gz) = 20792
 SIZE (cargo/zstd-sys-2.0.10+zstd.1.5.6.tar.gz) = 749088
-SIZE (sccache-0.9.0.tar.gz) = 387733
+SIZE (sccache-0.9.1.tar.gz) = 390867
