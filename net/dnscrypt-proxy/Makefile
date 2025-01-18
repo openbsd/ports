@@ -1,9 +1,8 @@
 COMMENT =	flexible DNS proxy with support for encrypted DNS protocols
 
-GH_ACCOUNT =	jedisct1
+GH_ACCOUNT =	DNSCrypt
 GH_PROJECT =	dnscrypt-proxy
-GH_TAGNAME =	2.1.5
-REVISION =	2
+GH_TAGNAME =	2.1.7
 
 CATEGORIES =	net
 
@@ -16,7 +15,6 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =	c pthread
 
 MODULES =	lang/go
-MODGO_TYPE =	bin
 
 INSTDIR =	${PREFIX}/share/examples/dnscrypt-proxy
 
