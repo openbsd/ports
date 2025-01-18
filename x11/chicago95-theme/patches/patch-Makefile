@@ -1,0 +1,37 @@
+- fix source file names to unbreak install_cursors target
+- skip installing linux-only plymouth boot screen files
+- skip installing Plus tool (build skipped in ports Makefile)
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -88,12 +88,12 @@ install_cursors:
+ 		${ICONSDIR}/Chicago95$(space)Standard$(space)Cursors$(space)Black \
+ 		${ICONSDIR}/Chicago95$(space)Standard$(space)Cursors \
+ 
+-	${cpbin} -pr ${SRCDIR}/Cursors/Chicago95\ Animated\ Hourglass\ Cursors/* ${ICONSDIR}/Chicago95$(space)Animated$(space)Hourglass$(space)Cursors
++	${cpbin} -pr ${SRCDIR}/Cursors/Chicago95_Animated_Hourglass_Cursors/* ${ICONSDIR}/Chicago95$(space)Animated$(space)Hourglass$(space)Cursors
+ 	${cpbin} -pr ${SRCDIR}/Cursors/Chicago95_Cursor_Black/* ${ICONSDIR}/Chicago95_Cursor_Black
+ 	${cpbin} -pr ${SRCDIR}/Cursors/Chicago95_Cursor_White/* ${ICONSDIR}/Chicago95_Cursor_White
+ 	${cpbin} -pr ${SRCDIR}/Cursors/Chicago95_Emerald/* ${ICONSDIR}/Chicago95_Emerald
+-	${cpbin} -pr ${SRCDIR}/Cursors/Chicago95\ Standard\ Cursors/* ${ICONSDIR}/Chicago95$(space)Standard$(space)Cursors
+-	${cpbin} -pr ${SRCDIR}/Cursors/Chicago95\ Standard\ Cursors\ Black/* ${ICONSDIR}/Chicago95$(space)Standard$(space)Cursors$(space)Black
++	${cpbin} -pr ${SRCDIR}/Cursors/Chicago95_Standard_Cursors/* ${ICONSDIR}/Chicago95$(space)Standard$(space)Cursors
++	${cpbin} -pr ${SRCDIR}/Cursors/Chicago95_Standard_Cursors_Black/* ${ICONSDIR}/Chicago95$(space)Standard$(space)Cursors$(space)Black
+ 	${findbin} ${ICONSDIR}/Chicago95* ! -type d -exec ${chmodbin} 0644 {} +
+ 
+ install_doc:
+@@ -137,11 +137,13 @@ install_login_sound:
+ 	${installbin} -m0644 -t ${XDGAUTODIR} ${SRCDIR}/sounds/chicago95-startup.desktop
+ 
+ install_boot_screen:
++skip_plymouth:
+ 	${installbin} -dm0755 ${SHAREDIR}/plymouth/themes/Chicago95 ${SHAREDIR}/plymouth/themes/RetroTux
+ 	${installbin} -m0644 -t ${SHAREDIR}/plymouth/themes/Chicago95 ${SRCDIR}/Plymouth/Chicago95/*
+ 	${installbin} -m0644 -t ${SHAREDIR}/plymouth/themes/RetroTux ${SRCDIR}/Plymouth/RetroTux/*
+ 
+ install_plus:
++skip_plus:
+ 	${installbin} -dm0755 ${SHAREDIR}/chicago95-theme-plus/assets ${BINDIR} ${LIBEXECDIR}/chicago95-theme-plus ${DOCDIR}/demo ${APPSDIR} ${MIMEDIR} ${MANDIR}/man1
+ 	${installbin} -m0644 -t ${SHAREDIR}/chicago95-theme-plus/assets ${SRCDIR}/Plus/assets/*
+ 	${installbin} -m0755 ${SRCDIR}/Plus/ChicagoPlus.py ${BINDIR}/ChicagoPlus
