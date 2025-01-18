@@ -1,10 +1,8 @@
 COMMENT=	manage callbacks in asyncio projects
 
-MODPY_DISTV=	1.3.1
-
+MODPY_DISTV=	1.3.2
 DISTNAME=	aiosignal-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	devel
 
@@ -15,9 +13,8 @@ HOMEPAGE=	https://aiosignal.readthedocs.io/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 RUN_DEPENDS=	devel/py-frozenlist
 TEST_DEPENDS=	devel/py-test-asyncio
