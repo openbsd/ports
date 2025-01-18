@@ -139,8 +139,6 @@ include/arrow/filesystem/s3_test_util.h
 include/arrow/filesystem/s3fs.h
 include/arrow/filesystem/test_util.h
 include/arrow/filesystem/type_fwd.h
-include/arrow/integration/
-include/arrow/integration/json_integration.h
 include/arrow/io/
 include/arrow/io/api.h
 include/arrow/io/buffered.h
@@ -452,15 +450,9 @@ lib/cmake/Parquet/ParquetConfig.cmake
 lib/cmake/Parquet/ParquetConfigVersion.cmake
 lib/cmake/Parquet/ParquetTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Parquet/ParquetTargets.cmake
-@static-lib lib/libarrow.a
 @lib lib/libarrow.so.${LIBarrow_VERSION}
-@static-lib lib/libarrow_acero.a
 @lib lib/libarrow_acero.so.${LIBarrow_acero_VERSION}
-@static-lib lib/libarrow_dataset.a
 @lib lib/libarrow_dataset.so.${LIBarrow_dataset_VERSION}
-@comment @static-lib lib/libarrow_testing.a
-@comment @lib lib/libarrow_testing.so.${LIBarrow_testing_VERSION}
-@static-lib lib/libparquet.a
 @lib lib/libparquet.so.${LIBparquet_VERSION}
 lib/pkgconfig/arrow-acero.pc
 lib/pkgconfig/arrow-compute.pc
@@ -468,7 +460,6 @@ lib/pkgconfig/arrow-csv.pc
 lib/pkgconfig/arrow-dataset.pc
 lib/pkgconfig/arrow-filesystem.pc
 lib/pkgconfig/arrow-json.pc
-@comment lib/pkgconfig/arrow-testing.pc
 lib/pkgconfig/arrow.pc
 lib/pkgconfig/parquet.pc
 share/arrow/

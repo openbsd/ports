@@ -3,6 +3,7 @@ COMMENT =	columnar format and toolbox for fast-data interchange
 V =		18.0.0
 DISTNAME =	apache-arrow-${V}
 PKGNAME =	arrow-cpp-${V}
+REVISION =	0
 
 SHARED_LIBS +=	arrow		0.0 # 0.0
 SHARED_LIBS +=	arrow_acero	0.0
@@ -36,11 +37,14 @@ CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=ON \
 		-DARROW_CSV=ON \
 		-DARROW_JSON=ON \
 		-DARROW_BUILD_UTILITIES=ON \
-		-DARROW_BUILD_TESTS=ON \
 		-DARROW_WITH_SNAPPY=ON \
 		-DARROW_WITH_UTF8PROC=OFF \
 		-DARROW_WITH_RE2=OFF \
 		-DARROW_JEMALLOC=OFF
+
+# building tests requires building the static libs
+#CONFIGURE_ARGS +=-DARROW_BUILD_TESTS=ON
+CONFIGURE_ARGS += -DARROW_BUILD_STATIC=OFF
 
 # fix build failures with rapidjson headers
 CONFIGURE_ENV +=CXXFLAGS="-I${LOCALBASE}/include"
