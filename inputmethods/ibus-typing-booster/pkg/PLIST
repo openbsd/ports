@@ -459,8 +459,8 @@ share/locale/uk/LC_MESSAGES/ibus-typing-booster.mo
 share/locale/zh_CN/LC_MESSAGES/ibus-typing-booster.mo
 share/locale/zh_TW/LC_MESSAGES/ibus-typing-booster.mo
 share/metainfo/
-share/metainfo/emoji-picker.appdata.xml
-share/metainfo/typing-booster.appdata.xml
+share/metainfo/org.freedesktop.ibus.engine.typing_booster.emoji_picker.metainfo.xml
+share/metainfo/org.freedesktop.ibus.engine.typing_booster.metainfo.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
 @tag glib-compile-schemas
