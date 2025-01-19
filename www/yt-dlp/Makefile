@@ -1,6 +1,6 @@
 COMMENT =	CLI program to download videos from YouTube and other sites
 
-VERSION =	2025.01.12
+VERSION =	2025.01.15
 # on backport keep REVISION above -stable for 7.6 (no cryptodomex in -stable)
 MODPY_DISTV =	${VERSION:S/.0/./g}
 
