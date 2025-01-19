@@ -11,7 +11,7 @@ HOMEPAGE=	https://github.com/kislyuk/argcomplete
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PYBUILD=	hatchling
+MODPY_PYBUILD=	hatch-vcs
 MODPY_PI=	Yes
 
 PORTHOME=	${WRKDIR}
