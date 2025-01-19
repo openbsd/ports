@@ -10,7 +10,7 @@ Index: tool/yubico-piv-tool.c
  static int ec_key_ex_data_idx = -1;
  
  struct internal_key {
-@@ -872,7 +872,7 @@ static bool request_certificate(ykpiv_state *state, en
+@@ -891,7 +891,7 @@ static bool request_certificate(ykpiv_state *state, en
    int key = 0;
    size_t oid_len = 0;
    const unsigned char *oid = NULL;
@@ -19,7 +19,7 @@ Index: tool/yubico-piv-tool.c
    unsigned char digest[EVP_MAX_MD_SIZE + MAX_OID_LEN] = {0};
    unsigned int md_len;
    unsigned int digest_len;
-@@ -983,7 +983,7 @@ static bool request_certificate(ykpiv_state *state, en
+@@ -1002,7 +1002,7 @@ static bool request_certificate(ykpiv_state *state, en
      goto request_out;
    }
  
@@ -28,7 +28,7 @@ Index: tool/yubico-piv-tool.c
    null_parameter.type = V_ASN1_NULL;
    null_parameter.value.ptr = NULL;
  
-@@ -1108,7 +1108,7 @@ request_out:
+@@ -1127,7 +1127,7 @@ request_out:
      fclose(output_file);
    }
    EVP_PKEY_free(public_key);
@@ -37,7 +37,7 @@ Index: tool/yubico-piv-tool.c
    if(req) {
      if(req->sig_alg->parameter) {
        req->sig_alg->parameter = NULL;
-@@ -1341,7 +1341,7 @@ static bool selfsign_certificate(ykpiv_state *state, e
+@@ -1360,7 +1360,7 @@ static bool selfsign_certificate(ykpiv_state *state, e
      }
    }
  
@@ -46,7 +46,7 @@ Index: tool/yubico-piv-tool.c
    unsigned char digest[EVP_MAX_MD_SIZE + MAX_OID_LEN] = {0};
    unsigned char *signinput;
    size_t len = 0;
-@@ -1466,7 +1466,7 @@ selfsign_out:
+@@ -1485,7 +1485,7 @@ selfsign_out:
    if(output_file && output_file != stdout) {
      fclose(output_file);
    }

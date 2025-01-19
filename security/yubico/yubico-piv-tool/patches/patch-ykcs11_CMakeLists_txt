@@ -1,0 +1,12 @@
+Index: ykcs11/CMakeLists.txt
+--- ykcs11/CMakeLists.txt.orig
++++ ykcs11/CMakeLists.txt
+@@ -73,7 +73,7 @@ endif(BUILD_STATIC_LIB)
+ 
+ # dynamic library
+ add_library(ykcs11_shared SHARED ${SOURCE})
+-target_link_libraries(ykcs11_shared ${LIBCRYPTO_LDFLAGS} ykpiv_shared)
++target_link_libraries(ykcs11_shared ${LIBCRYPTO_LDFLAGS} ykpiv_shared pthread)
+ set_target_properties(ykcs11_shared PROPERTIES SOVERSION ${SO_VERSION} VERSION ${VERSION})
+ if (${CMAKE_SYSTEM_NAME} MATCHES "Darwin")
+     set_target_properties(ykcs11_shared PROPERTIES INSTALL_RPATH "${YKPIV_INSTALL_LIB_DIR}")
