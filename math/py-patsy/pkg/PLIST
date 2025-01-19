@@ -1,5 +1,4 @@
 @pkgpath math/py-patsy,python3
-@conflict py-patsy-*
 lib/python${MODPY_VERSION}/site-packages/patsy/
 lib/python${MODPY_VERSION}/site-packages/patsy-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/patsy-${MODPY_DISTV}.dist-info/LICENSE.txt
