@@ -18,7 +18,7 @@ COMPILER=	base-clang ports-gcc
 WANTLIB=	${COMPILER_LIBCXX} ${MODPY_WANTLIB} m
 
 MODULES=	lang/python
-MODPY_PYBUILD=	setuptools
+MODPY_PYBUILD=	setuptools_scm
 MODPY_PI=	Yes
 
 BUILD_DEPENDS=	devel/py-cppy
