@@ -1,4 +1,5 @@
 @bin bin/xdg-user-dirs-gtk-update
+share/applications/user-dirs-update-gtk.desktop
 share/examples/xdg-user-dirs-gtk/
 share/examples/xdg-user-dirs-gtk/xdg/
 share/examples/xdg-user-dirs-gtk/xdg/autostart/
@@ -84,3 +85,4 @@ share/locale/vi/LC_MESSAGES/xdg-user-dirs-gtk.mo
 share/locale/zh_CN/LC_MESSAGES/xdg-user-dirs-gtk.mo
 share/locale/zh_HK/LC_MESSAGES/xdg-user-dirs-gtk.mo
 share/locale/zh_TW/LC_MESSAGES/xdg-user-dirs-gtk.mo
+@tag update-desktop-database

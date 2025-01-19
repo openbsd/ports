@@ -1,7 +1,7 @@
 COMMENT=	integration of xdg-user-dirs into GNOME/gtk+
 
 GNOME_PROJECT=	xdg-user-dirs-gtk
-GNOME_VERSION=	0.12
+GNOME_VERSION=	0.14
 
 CATEGORIES=	x11 devel
 
@@ -16,13 +16,15 @@ MODULES=	devel/meson \
 		x11/gnome
 
 BUILD_DEPENDS=	devel/xdg-user-dirs
-RUN_DEPENDS=	devel/xdg-user-dirs
+
 LIB_DEPENDS=	x11/gtk+3
+
+RUN_DEPENDS=	devel/desktop-file-utils \
+		devel/xdg-user-dirs
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/xdg-user-dirs-gtk
 	mv ${WRKINST}${SYSCONFDIR}/xdg \
 		${PREFIX}/share/examples/xdg-user-dirs-gtk/
-	rm -r ${PREFIX}/data
 
 .include <bsd.port.mk>
