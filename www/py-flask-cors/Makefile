@@ -1,21 +1,20 @@
 COMMENT =	CORS handling for flask
 
-MODPY_DISTV =	3.0.10
-DISTNAME =	Flask-Cors-${MODPY_DISTV}
-PKGNAME =	py-${DISTNAME:L}
-REVISION =	3
+MODPY_DISTV =	5.0.0
+DISTNAME =	flask_cors-${MODPY_DISTV}
+PKGNAME =	py-flask-cors-${MODPY_DISTV}
 
 CATEGORIES =	www
 
-HOMEPAGE =	https://flask-cors.readthedocs.io/
+HOMEPAGE =	https://github.com/corydolphin/flask-cors
 
 # MIT
 PERMIT_PACKAGE =Yes
 
 MODULES =	lang/python
-MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools
+MODPY_PI =	Yes
 
-RUN_DEPENDS +=	www/py-flask
+RUN_DEPENDS =	www/py-flask
 
 .include <bsd.port.mk>
