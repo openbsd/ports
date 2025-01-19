@@ -19,6 +19,7 @@
      SUBDIR += charis
      SUBDIR += chivo
      SUBDIR += clearsans
+     SUBDIR += comic-mono
      SUBDIR += comic-neue
      SUBDIR += crimson
      SUBDIR += dai-banna
