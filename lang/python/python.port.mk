@@ -322,7 +322,8 @@ MODPY_TEST_TARGET +=	${MODPY_TEST_SO_CMD};
 .if ${MODPY_PYBUILD:L} != no
 .  if ! ${MODPY_PYBUILD:Msetuptools_scm}
 _MODPY_PRE_BUILD_STEPS += ; if [ -e ${WRKSRC}/pyproject.toml ] && \
-	grep -q '^requires.*setuptools[-_]scm' ${WRKSRC}/pyproject.toml; then \
+	(grep -A3 '^requires' ${WRKSRC}/pyproject.toml | \
+	grep -q 'setuptools[-_]scm'); then \
 	    (echo; echo '*** Port may need MODPY_PYBUILD=setuptools_scm'; \
 	        grep -H -e ^build-backend -e '^requires.*setuptools' \
 		${WRKSRC}/pyproject.toml; echo ) >> ${WRKDIR}/.modpy-warn; \
