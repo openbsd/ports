@@ -1,9 +1,8 @@
 COMMENT =		basic inter-process locks
 
-MODPY_DISTV =	2.0
+MODPY_DISTV =		3.0.post1
 DISTNAME =		zc.lockfile-${MODPY_DISTV}
-PKGNAME =		py-zc-lockfile${DISTNAME}
-REVISION =		7
+PKGNAME =		py-zc-lockfile-${MODPY_DISTV:S/.post/pl/}
 
 CATEGORIES =		devel
 
@@ -11,9 +10,11 @@ CATEGORIES =		devel
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
-MODPY_TEST_DIR =	${WRKSRC}/src
-MODPY_PYTEST_ARGS =	zc/lockfile/tests.py
+MODPY_PI =		Yes
+
+MODPY_PYTEST_ARGS =	src/zc/lockfile/tests.py
+
+RUN_DEPENDS =		devel/py-setuptools
 
 .include <bsd.port.mk>

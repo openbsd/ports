@@ -1,5 +1,5 @@
-@pkgpath devel/py-zc-lockfile,python3
 @conflict py3-zc-lockfilezc.lockfile-*
+@pkgpath devel/py-zc-lockfile,python3
 lib/python${MODPY_VERSION}/site-packages/zc/
 lib/python${MODPY_VERSION}/site-packages/zc.lockfile-${MODPY_DISTV}-py${MODPY_VERSION}-nspkg.pth
 lib/python${MODPY_VERSION}/site-packages/zc.lockfile-${MODPY_DISTV}.dist-info/
