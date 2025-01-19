@@ -3,13 +3,13 @@ https://github.com/polkit-org/polkit/issues/544
 Index: src/polkitbackend/polkitbackendduktapeauthority.c
 --- src/polkitbackend/polkitbackendduktapeauthority.c.orig
 +++ src/polkitbackend/polkitbackendduktapeauthority.c
-@@ -256,7 +256,9 @@ polkit_backend_common_js_authority_constructed (GObjec
+@@ -256,8 +256,7 @@ polkit_backend_common_js_authority_constructed (GObjec
        authority->priv->rules_dirs = g_new0 (gchar *, 5);
        authority->priv->rules_dirs[0] = g_strdup (PACKAGE_SYSCONF_DIR "/polkit-1/rules.d");
        authority->priv->rules_dirs[1] = g_strdup ("/run/polkit-1/rules.d");
-+#if 0
-       authority->priv->rules_dirs[2] = g_strdup ("/usr/local/share/polkit-1/rules.d");
-+#endif
-       authority->priv->rules_dirs[3] = g_strdup (PACKAGE_DATA_DIR "/polkit-1/rules.d");
+-      authority->priv->rules_dirs[2] = g_strdup ("/usr/local/share/polkit-1/rules.d");
+-      authority->priv->rules_dirs[3] = g_strdup (PACKAGE_DATA_DIR "/polkit-1/rules.d");
++      authority->priv->rules_dirs[2] = g_strdup (PACKAGE_DATA_DIR "/polkit-1/rules.d");
      }
  
+   setup_file_monitors (authority);
