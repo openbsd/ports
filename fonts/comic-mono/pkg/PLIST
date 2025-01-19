@@ -1,0 +1,4 @@
+share/fonts/
+@fontdir share/fonts/comic-mono/
+share/fonts/comic-mono/ComicMono-Bold.ttf
+share/fonts/comic-mono/ComicMono.ttf
