@@ -1,39 +1,32 @@
 COMMENT-main=	file archiver with high compression ratio
 COMMENT-rar=	rar modules for p7zip
 
-V=		16.02
-REVISION-main=	7
-REVISION-rar=	4
-DISTNAME=	p7zip_${V}_src_all
-PKGNAME=	p7zip-${V}
+DIST_TUPLE=	github	p7zip-project	p7zip	v17.06	.
 CATEGORIES=	archivers
-FIX_EXTRACT_PERMISSIONS =	Yes
-
-HOMEPAGE=	https://sourceforge.net/projects/p7zip/
 
 # LGPL, except unRar plugin which is licensed as Freeware
 PERMIT_PACKAGE=	Yes
 
 # uses pledge()
-WANTLIB=	m pthread ${COMPILER_LIBCXX}
+WANTLIB=	${COMPILER_LIBCXX} m pthread iconv
 WANTLIB-main=	${WANTLIB} c
 WANTLIB-rar=	${WANTLIB}
 
-COMPILER =		base-clang ports-gcc base-gcc
-
-SITES=		${SITE_SOURCEFORGE:=p7zip/}
-EXTRACT_SUFX=	.tar.bz2
+COMPILER =		base-clang ports-gcc
 
 MULTI_PACKAGES=	-main -rar
 
+LIB_DEPENDS=	converters/libiconv
 RUN_DEPENDS-rar= ${BASE_PKGPATH},-main
 
-WRKDIST=	${WRKDIR}/p7zip_${V}
+CXXFLAGS+=	-I/usr/local/include
+LDFLAGS+=	-L/usr/local/lib -liconv
 
 USE_GMAKE=	Yes
 MAKE_FILE=	makefile
 MAKE_FLAGS=	MYCC="${CC}" MYCXX="${CXX}" \
-		MYCFLAGS="${CFLAGS}" MYCXXFLAGS="${CXXFLAGS}"
+		MYCFLAGS="${CFLAGS}" MYCXXFLAGS="${CXXFLAGS}" \
+		LDFLAGS="${LDFLAGS}"
 
 ALL_TARGET=	all3
 TEST_TARGET=	all_test
@@ -45,5 +38,7 @@ do-install:
 	@cd ${WRKBUILD} && ${SETENV} ${MAKE_ENV} PREFIX=${TRUEPREFIX} \
 		DESTDIR=${DESTDIR} /bin/sh install.sh
 	@chmod -R u=rwX,g=rX ${PREFIX}/share/doc/p7zip
+	${INSTALL_DATA_DIR} ${PREFIX}/man/man1/
+	${INSTALL_DATA} ${WRKSRC}/man1/*.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>

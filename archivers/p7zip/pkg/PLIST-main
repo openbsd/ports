@@ -3,7 +3,7 @@ bin/7za
 bin/7zr
 lib/p7zip/
 @bin lib/p7zip/7z
-lib/p7zip/7z.so
+@so lib/p7zip/7z.so
 @bin lib/p7zip/7zCon.sfx
 @bin lib/p7zip/7za
 @bin lib/p7zip/7zr
@@ -17,6 +17,7 @@ share/doc/p7zip/DOC/7zC.txt
 share/doc/p7zip/DOC/7zFormat.txt
 share/doc/p7zip/DOC/License.txt
 share/doc/p7zip/DOC/MANUAL/
+share/doc/p7zip/DOC/MANUAL/7-zip.chm
 share/doc/p7zip/DOC/MANUAL/cmdline/
 share/doc/p7zip/DOC/MANUAL/cmdline/commands/
 share/doc/p7zip/DOC/MANUAL/cmdline/commands/add.htm
@@ -100,6 +101,8 @@ share/doc/p7zip/DOC/MANUAL/general/thanks.htm
 share/doc/p7zip/DOC/MANUAL/start.htm
 share/doc/p7zip/DOC/MANUAL/style.css
 share/doc/p7zip/DOC/Methods.txt
+share/doc/p7zip/DOC/Struct.EAP
+share/doc/p7zip/DOC/Struct.ldb
 share/doc/p7zip/DOC/copying.txt
 share/doc/p7zip/DOC/lzma.txt
 share/doc/p7zip/DOC/readme.txt

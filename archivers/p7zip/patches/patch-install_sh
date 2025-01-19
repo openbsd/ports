@@ -1,5 +1,6 @@
---- install.sh.orig	Tue Oct 20 17:17:32 2015
-+++ install.sh	Tue Oct 20 17:19:39 2015
+Index: install.sh
+--- install.sh.orig
++++ install.sh
 @@ -16,14 +16,14 @@ installShared()
  }
  
@@ -17,7 +18,7 @@
  [ "$1" ] && DEST_BIN="$1"
  [ "$2" ] && DEST_SHARE="$2"
  [ "$3" ] && DEST_MAN="$3"
-@@ -177,11 +177,14 @@ fi
+@@ -181,11 +181,14 @@ fi
  
  if [ -d DOC ]
  then

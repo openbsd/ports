@@ -1,2 +1,2 @@
 lib/p7zip/Codecs/
-lib/p7zip/Codecs/Rar.so
+@so lib/p7zip/Codecs/Rar.so
