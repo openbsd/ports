@@ -1,0 +1,3 @@
+${P5SITE}/Digest/
+${P5SITE}/Digest/ssdeep.pm
+@man man/man3p/Digest::ssdeep.3p
