@@ -1,8 +1,8 @@
 Index: helix-loader/build.rs
 --- helix-loader/build.rs.orig
 +++ helix-loader/build.rs
-@@ -15,6 +15,9 @@ fn get_calver() -> String {
- }
+@@ -7,6 +7,9 @@ const MINOR: &str = env!("CARGO_PKG_VERSION_MINOR");
+ const PATCH: &str = env!("CARGO_PKG_VERSION_PATCH");
  
  fn main() {
 +    #[cfg(target_os = "openbsd")]

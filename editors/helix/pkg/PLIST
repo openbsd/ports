@@ -74,7 +74,9 @@ share/helix/runtime/grammars/
 @so share/helix/runtime/grammars/gowork.so
 @so share/helix/runtime/grammars/gpr.so
 @so share/helix/runtime/grammars/graphql.so
+@so share/helix/runtime/grammars/gren.so
 @so share/helix/runtime/grammars/groovy.so
+@so share/helix/runtime/grammars/hare.so
 @so share/helix/runtime/grammars/haskell-persistent.so
 @so share/helix/runtime/grammars/haskell.so
 @so share/helix/runtime/grammars/hcl.so
@@ -154,6 +156,7 @@ share/helix/runtime/grammars/languages.so
 @so share/helix/runtime/grammars/prql.so
 @so share/helix/runtime/grammars/purescript.so
 @so share/helix/runtime/grammars/python.so
+@so share/helix/runtime/grammars/ql.so
 @so share/helix/runtime/grammars/qmljs.so
 @so share/helix/runtime/grammars/query.so
 @so share/helix/runtime/grammars/quint.so
@@ -316,6 +319,9 @@ share/helix/runtime/queries/cmake/highlights.scm
 share/helix/runtime/queries/cmake/indents.scm
 share/helix/runtime/queries/cmake/injections.scm
 share/helix/runtime/queries/cmake/textobjects.scm
+share/helix/runtime/queries/codeql/
+share/helix/runtime/queries/codeql/highlights.scm
+share/helix/runtime/queries/codeql/textobjects.scm
 share/helix/runtime/queries/comment/
 share/helix/runtime/queries/comment/highlights.scm
 share/helix/runtime/queries/common-lisp/
@@ -533,6 +539,11 @@ share/helix/runtime/queries/gpr/highlights.scm
 share/helix/runtime/queries/graphql/
 share/helix/runtime/queries/graphql/highlights.scm
 share/helix/runtime/queries/graphql/textobjects.scm
+share/helix/runtime/queries/gren/
+share/helix/runtime/queries/gren/highlights.scm
+share/helix/runtime/queries/gren/locals.scm
+share/helix/runtime/queries/gren/tags.scm
+share/helix/runtime/queries/gren/textobjects.scm
 share/helix/runtime/queries/groovy/
 share/helix/runtime/queries/groovy/folds.scm
 share/helix/runtime/queries/groovy/highlights.scm
@@ -997,6 +1008,9 @@ share/helix/runtime/queries/queries/cmake/highlights.scm
 share/helix/runtime/queries/queries/cmake/indents.scm
 share/helix/runtime/queries/queries/cmake/injections.scm
 share/helix/runtime/queries/queries/cmake/textobjects.scm
+share/helix/runtime/queries/queries/codeql/
+share/helix/runtime/queries/queries/codeql/highlights.scm
+share/helix/runtime/queries/queries/codeql/textobjects.scm
 share/helix/runtime/queries/queries/comment/
 share/helix/runtime/queries/queries/comment/highlights.scm
 share/helix/runtime/queries/queries/common-lisp/
@@ -1214,6 +1228,11 @@ share/helix/runtime/queries/queries/gpr/highlights.scm
 share/helix/runtime/queries/queries/graphql/
 share/helix/runtime/queries/queries/graphql/highlights.scm
 share/helix/runtime/queries/queries/graphql/textobjects.scm
+share/helix/runtime/queries/queries/gren/
+share/helix/runtime/queries/queries/gren/highlights.scm
+share/helix/runtime/queries/queries/gren/locals.scm
+share/helix/runtime/queries/queries/gren/tags.scm
+share/helix/runtime/queries/queries/gren/textobjects.scm
 share/helix/runtime/queries/queries/groovy/
 share/helix/runtime/queries/queries/groovy/folds.scm
 share/helix/runtime/queries/queries/groovy/highlights.scm

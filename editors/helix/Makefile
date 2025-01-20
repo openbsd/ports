@@ -1,6 +1,6 @@
 COMMENT =	modal text editor
 
-VER =		25.01
+VER =		25.01.1
 DISTNAME =	helix-${VER}
 
 CATEGORIES =	editors
