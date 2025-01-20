@@ -4,6 +4,8 @@ VERSION =			4.4.1
 DISTNAME =			SABnzbd-${VERSION}
 PKGNAME =			sabnzbd-${VERSION}
 
+REVISION =			0
+
 CATEGORIES =			news
 
 HOMEPAGE =			https://sabnzbd.org/
