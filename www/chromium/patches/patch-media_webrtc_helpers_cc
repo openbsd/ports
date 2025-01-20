@@ -1,7 +1,7 @@
 Index: media/webrtc/helpers.cc
 --- media/webrtc/helpers.cc.orig
 +++ media/webrtc/helpers.cc
-@@ -41,14 +41,14 @@ void ConfigAutomaticGainControl(const AudioProcessingS
+@@ -43,14 +43,14 @@ void ConfigAutomaticGainControl(const AudioProcessingS
      return;
    }
  

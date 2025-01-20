@@ -20,7 +20,7 @@ Index: components/feature_engagement/public/feature_constants.cc
  BASE_FEATURE(kIPHAutofillCreditCardBenefitFeature,
               "IPH_AutofillCreditCardBenefit",
               base::FEATURE_DISABLED_BY_DEFAULT);
-@@ -786,7 +787,7 @@ BASE_FEATURE(kIPHScalableIphGamingFeature,
+@@ -789,7 +790,7 @@ BASE_FEATURE(kIPHScalableIphGamingFeature,
               base::FEATURE_DISABLED_BY_DEFAULT);
  #endif
  

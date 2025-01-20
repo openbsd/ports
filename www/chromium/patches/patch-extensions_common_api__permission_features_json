@@ -5,8 +5,8 @@ Index: extensions/common/api/_permission_features.json
      {
        "channel": "stable",
        "extension_types": ["platform_app"],
--      "platforms": ["chromeos", "lacros", "win", "mac", "linux"],
-+      "platforms": ["chromeos", "lacros", "win", "mac", "linux", "openbsd", "freebsd"],
+-      "platforms": ["chromeos", "win", "mac", "linux"],
++      "platforms": ["chromeos", "win", "mac", "linux", "openbsd", "freebsd"],
        "allowlist": [
          "1C93BD3CF875F4A73C0B2A163BB8FBDA8B8B3D80",  // http://crbug.com/387169
          "A3BC37E2148AC4E99BE4B16AF9D42DD1E592BBBE",  // http://crbug.com/387169
@@ -23,8 +23,8 @@ Index: extensions/common/api/_permission_features.json
    "networkingPrivate": {
      "channel": "stable",
      "extension_types": ["extension", "legacy_packaged_app", "platform_app"],
--    "platforms": ["chromeos", "lacros", "mac", "win", "linux", "fuchsia"],
-+    "platforms": ["chromeos", "lacros", "mac", "win", "linux", "fuchsia", "openbsd", "freebsd"],
+-    "platforms": ["chromeos", "mac", "win", "linux", "fuchsia"],
++    "platforms": ["chromeos", "mac", "win", "linux", "fuchsia", "openbsd", "freebsd"],
      "allowlist": [
        // DO NOT ADD ANY MORE ENTRIES HERE.
        // networkingPrivate is being migrated to networking.onc.

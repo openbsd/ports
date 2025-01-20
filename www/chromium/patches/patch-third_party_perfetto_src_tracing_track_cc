@@ -13,7 +13,7 @@ Index: third_party/perfetto/src/tracing/track.cc
    std::string cmdline;
    if (base::ReadFile("/proc/self/cmdline", &cmdline)) {
      // Since cmdline is a zero-terminated list of arguments, this ends up
-@@ -155,7 +156,7 @@ namespace internal {
+@@ -170,7 +171,7 @@ namespace internal {
  namespace {
  
  uint64_t GetProcessStartTime() {

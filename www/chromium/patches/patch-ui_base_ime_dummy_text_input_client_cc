@@ -1,7 +1,7 @@
 Index: ui/base/ime/dummy_text_input_client.cc
 --- ui/base/ime/dummy_text_input_client.cc.orig
 +++ ui/base/ime/dummy_text_input_client.cc
-@@ -163,7 +163,7 @@ bool DummyTextInputClient::ShouldDoLearning() {
+@@ -175,7 +175,7 @@ bool DummyTextInputClient::ShouldDoLearning() {
    return false;
  }
  

@@ -1,7 +1,7 @@
 Index: headless/lib/browser/headless_web_contents_impl.cc
 --- headless/lib/browser/headless_web_contents_impl.cc.orig
 +++ headless/lib/browser/headless_web_contents_impl.cc
-@@ -62,7 +62,7 @@ namespace headless {
+@@ -69,7 +69,7 @@ BASE_FEATURE(kPrerender2InHeadlessMode,
  namespace {
  
  void UpdatePrefsFromSystemSettings(blink::RendererPreferences* prefs) {
