@@ -1,6 +1,7 @@
---- libexif.pc.in.orig	Thu May 19 16:34:15 2011
-+++ libexif.pc.in	Thu May 19 16:34:23 2011
-@@ -9,4 +9,4 @@ Requires:
+Index: libexif.pc.in
+--- libexif.pc.in.orig
++++ libexif.pc.in
+@@ -11,4 +11,4 @@ Requires:
  Version: @VERSION@
  Libs: -L${libdir} -lexif
  Libs.private: -lm

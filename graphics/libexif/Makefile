@@ -1,8 +1,7 @@
 COMMENT=	extract digital camera info tags from JPEG images
 
-V=		0.6.24
+V=		0.6.25
 DISTNAME=	libexif-$V
-R0EVISION=	0
 EXTRACT_SUFX=	.tar.bz2
 
 SHARED_LIBS=	exif	13.1
