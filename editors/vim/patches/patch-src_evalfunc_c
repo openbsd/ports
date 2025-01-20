@@ -4,7 +4,7 @@ segfaults seen, at least when using vim-airline
 Index: src/evalfunc.c
 --- src/evalfunc.c.orig
 +++ src/evalfunc.c
-@@ -11523,7 +11523,7 @@ f_substitute(typval_T *argvars, typval_T *rettv)
+@@ -11705,7 +11705,7 @@ f_substitute(typval_T *argvars, typval_T *rettv)
  								|| flg == NULL)
  	rettv->vval.v_string = NULL;
      else

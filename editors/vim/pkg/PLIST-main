@@ -18,6 +18,8 @@ bin/vimtutor
 @man man/man1/xxd.1
 share/vim/
 share/vim/${P}/
+share/vim/${P}/LICENSE
+share/vim/${P}/README.txt
 share/vim/${P}/autoload/
 share/vim/${P}/autoload/README.txt
 share/vim/${P}/autoload/RstFold.vim
@@ -52,9 +54,6 @@ share/vim/${P}/autoload/htmlcomplete.vim
 share/vim/${P}/autoload/javaformat.vim
 share/vim/${P}/autoload/javascriptcomplete.vim
 share/vim/${P}/autoload/modula2.vim
-share/vim/${P}/autoload/netrw.vim
-share/vim/${P}/autoload/netrwSettings.vim
-share/vim/${P}/autoload/netrw_gitignore.vim
 share/vim/${P}/autoload/paste.vim
 share/vim/${P}/autoload/phpcomplete.vim
 share/vim/${P}/autoload/python.vim
@@ -142,6 +141,7 @@ share/vim/${P}/colors/sorbet.vim
 share/vim/${P}/colors/tools/
 share/vim/${P}/colors/tools/check_colors.vim
 share/vim/${P}/colors/torte.vim
+share/vim/${P}/colors/unokai.vim
 share/vim/${P}/colors/wildcharm.vim
 share/vim/${P}/colors/zaibatsu.vim
 share/vim/${P}/colors/zellner.vim
@@ -370,7 +370,6 @@ share/vim/${P}/doc/starting.txt
 share/vim/${P}/doc/syntax.txt
 share/vim/${P}/doc/tabpage.txt
 share/vim/${P}/doc/tags
-share/vim/${P}/doc/tags-ru
 share/vim/${P}/doc/tagsrch.txt
 share/vim/${P}/doc/term.txt
 share/vim/${P}/doc/terminal.txt
@@ -378,7 +377,6 @@ share/vim/${P}/doc/testing.txt
 share/vim/${P}/doc/textprop.txt
 share/vim/${P}/doc/tips.txt
 share/vim/${P}/doc/todo.txt
-share/vim/${P}/doc/uganda.rux
 share/vim/${P}/doc/uganda.txt
 share/vim/${P}/doc/undo.txt
 share/vim/${P}/doc/userfunc.txt
@@ -604,6 +602,7 @@ share/vim/${P}/ftplugin/jsonc.vim
 share/vim/${P}/ftplugin/jsonnet.vim
 share/vim/${P}/ftplugin/jsp.vim
 share/vim/${P}/ftplugin/julia.vim
+share/vim/${P}/ftplugin/just.vim
 share/vim/${P}/ftplugin/karel.vim
 share/vim/${P}/ftplugin/kconfig.vim
 share/vim/${P}/ftplugin/kdl.vim
@@ -916,6 +915,7 @@ share/vim/${P}/indent/json5.vim
 share/vim/${P}/indent/jsonc.vim
 share/vim/${P}/indent/jsp.vim
 share/vim/${P}/indent/julia.vim
+share/vim/${P}/indent/just.vim
 share/vim/${P}/indent/kdl.vim
 share/vim/${P}/indent/kotlin.vim
 share/vim/${P}/indent/krl.vim
@@ -1196,6 +1196,19 @@ share/vim/${P}/pack/dist/opt/matchit/doc/matchit.txt
 share/vim/${P}/pack/dist/opt/matchit/doc/tags
 share/vim/${P}/pack/dist/opt/matchit/plugin/
 share/vim/${P}/pack/dist/opt/matchit/plugin/matchit.vim
+share/vim/${P}/pack/dist/opt/netrw/
+share/vim/${P}/pack/dist/opt/netrw/LICENSE.txt
+share/vim/${P}/pack/dist/opt/netrw/README.md
+share/vim/${P}/pack/dist/opt/netrw/autoload/
+share/vim/${P}/pack/dist/opt/netrw/autoload/netrw.vim
+share/vim/${P}/pack/dist/opt/netrw/autoload/netrwSettings.vim
+share/vim/${P}/pack/dist/opt/netrw/autoload/netrw_gitignore.vim
+share/vim/${P}/pack/dist/opt/netrw/doc/
+share/vim/${P}/pack/dist/opt/netrw/doc/netrw.txt
+share/vim/${P}/pack/dist/opt/netrw/plugin/
+share/vim/${P}/pack/dist/opt/netrw/plugin/netrwPlugin.vim
+share/vim/${P}/pack/dist/opt/netrw/syntax/
+share/vim/${P}/pack/dist/opt/netrw/syntax/netrw.vim
 share/vim/${P}/pack/dist/opt/nohlsearch/
 share/vim/${P}/pack/dist/opt/nohlsearch/plugin/
 share/vim/${P}/pack/dist/opt/nohlsearch/plugin/nohlsearch.vim
@@ -1583,6 +1596,7 @@ share/vim/${P}/syntax/json5.vim
 share/vim/${P}/syntax/jsonc.vim
 share/vim/${P}/syntax/jsp.vim
 share/vim/${P}/syntax/julia.vim
+share/vim/${P}/syntax/just.vim
 share/vim/${P}/syntax/karel.vim
 share/vim/${P}/syntax/kconfig.vim
 share/vim/${P}/syntax/kdl.vim
@@ -1695,7 +1709,6 @@ share/vim/${P}/syntax/ncf.vim
 share/vim/${P}/syntax/neomuttlog.vim
 share/vim/${P}/syntax/neomuttrc.vim
 share/vim/${P}/syntax/netrc.vim
-share/vim/${P}/syntax/netrw.vim
 share/vim/${P}/syntax/nginx.vim
 share/vim/${P}/syntax/ninja.vim
 share/vim/${P}/syntax/nix.vim

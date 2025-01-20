@@ -22,7 +22,7 @@ Index: src/eval.c
  }
  
  /*
-@@ -2259,7 +2261,7 @@ set_var_lval(
+@@ -2261,7 +2263,7 @@ set_var_lval(
  
  	    // handle +=, -=, *=, /=, %= and .=
  	    di = NULL;
@@ -31,7 +31,7 @@ Index: src/eval.c
  				 lp->ll_sid, &tv, &di, EVAL_VAR_VERBOSE) == OK)
  	    {
  		if (di != NULL && check_typval_is_value(&di->di_tv) == FAIL)
-@@ -6164,34 +6166,19 @@ jobchan_tv2string(
+@@ -6167,34 +6169,19 @@ jobchan_tv2string(
  class_tv2string(typval_T *tv, char_u **tofree)
  {
      char_u	*r = NULL;
@@ -75,7 +75,7 @@ Index: src/eval.c
      return r;
  }
  
-@@ -6223,7 +6210,7 @@ object_tv2string(
+@@ -6226,7 +6213,7 @@ object_tv2string(
      else if (copyID != 0 && obj->obj_copyID == copyID
  	    && obj->obj_class->class_obj_member_count != 0)
      {
@@ -84,7 +84,7 @@ Index: src/eval.c
  	r = alloc(n);
  	if (r != NULL)
  	    (void)vim_snprintf((char *)r, n, "object of %s {...}",
-@@ -6937,14 +6924,14 @@ make_expanded_name(
+@@ -6940,14 +6927,14 @@ make_expanded_name(
      temp_result = eval_to_string(expr_start + 1, FALSE, FALSE);
      if (temp_result != NULL)
      {
@@ -106,7 +106,7 @@ Index: src/eval.c
      }
      vim_free(temp_result);
  
-@@ -7636,17 +7623,21 @@ last_set_msg(sctx_T script_ctx)
+@@ -7639,17 +7626,21 @@ last_set_msg(sctx_T script_ctx)
      char_u *
  do_string_sub(
      char_u	*str,
@@ -131,7 +131,7 @@ Index: src/eval.c
  
      // Make 'cpoptions' empty, so that the 'l' flag doesn't work here
      save_cpo = p_cpo;
-@@ -7654,17 +7645,14 @@ do_string_sub(
+@@ -7657,17 +7648,14 @@ do_string_sub(
  
      ga_init2(&ga, 1, 200);
  
@@ -153,7 +153,7 @@ Index: src/eval.c
  	while (vim_regexec_nl(&regmatch, str, (colnr_T)(tail - str)))
  	{
  	    // Skip empty match except for first match.
-@@ -7719,20 +7707,12 @@ do_string_sub(
+@@ -7722,20 +7710,12 @@ do_string_sub(
  	}
  
  	if (ga.ga_data != NULL)
@@ -175,7 +175,7 @@ Index: src/eval.c
      ga_clear(&ga);
      if (p_cpo == empty_option)
  	p_cpo = save_cpo;
-@@ -7745,9 +7725,6 @@ do_string_sub(
+@@ -7748,9 +7728,6 @@ do_string_sub(
  	    set_option_value_give_err((char_u *)"cpo", 0L, save_cpo, 0);
  	free_string_option(save_cpo);
      }
