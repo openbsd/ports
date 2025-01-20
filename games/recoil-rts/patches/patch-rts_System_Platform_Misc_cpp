@@ -42,7 +42,7 @@ Index: rts/System/Platform/Misc.cpp
  		#else
  		#error implement this
  		#endif
-@@ -747,7 +770,7 @@ namespace Platform
+@@ -771,7 +794,7 @@ namespace Platform
  		return (GetMacType(macAddr, 0), macAddr);
  	}
  
@@ -51,7 +51,7 @@ Index: rts/System/Platform/Misc.cpp
  
  	std::array<uint8_t, 6> GetRawMacAddr() {
  		// TODO: http://lists.freebsd.org/pipermail/freebsd-hackers/2004-June/007415.html
-@@ -794,4 +817,11 @@ namespace Platform
+@@ -818,4 +841,11 @@ namespace Platform
  		snprintf(hexAddr.data(), hexAddr.size(), "%02x:%02x:%02x:%02x:%02x:%02x", rawAddr[0], rawAddr[1], rawAddr[2], rawAddr[3], rawAddr[4], rawAddr[5]);
  		return hexAddr;
  	}

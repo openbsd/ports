@@ -7,22 +7,11 @@ COMMENT =		real-time strategy game engine for Beyond All Reason
 #https://github.com/beyond-all-reason/BYAR-Chobby/blob/master/dist_cfg/config.json
 # under setups->package->id: "manual-linux", see downloads->resources or
 # launch->engine
-MJ =			105
-# don't reduce ${MN} to just single digit to avoid update-plist going berserk
-MN =			1.1
-BLD =			2590
-HASH =			gb9462a0
-V =			${MJ}.${MN}pl${BLD}
-# ${IN_ENGINE_V} is what recoil uses/displays internally
-IN_ENGINE_V =		"${MJ}.${MN}-${BLD}-${HASH} BAR${MJ}"
 
-# Prefix '0.' to avoid future EPOCH. Upstream has indicated future versioning
-# with YY.MM; once that has happened, remove '0.'
-PKGNAME =		recoil-rts-0.${V}
+V =			2025.01.5
+PKGNAME =		recoil-rts-${V}
 
-DIST_STRING =		spring_bar_%7BBAR${MJ}%7D${MAJ}.${MN}-${BLD}-${HASH}
-
-DIST_TUPLE +=		github beyond-all-reason spring ${DIST_STRING} .
+DIST_TUPLE +=		github beyond-all-reason spring ${V} .
 DIST_TUPLE +=		github mikke89 RmlUi \
 			7a06f27db04fe5d13a5dacc19b2b4544673a4eca \
 			rts/lib/RmlUi # MIT
@@ -47,9 +36,6 @@ DIST_TUPLE +=		github rlcevg CircuitAI \
 DIST_TUPLE +=		github rlcevg CircuitAI \
 			edc74149c281e2140f28c091ed74310c11611cc7 \
 			AI/Skirmish/CircuitAI # GPL-2.0
-DIST_TUPLE +=		github spring SpringMapConvNG \
-			0ddd86eaa8871dc0833c69f931f55cd856c5009d \
-			tools/mapcompile # GPL-2.0
 DIST_TUPLE +=		github beyond-all-reason pr-downloader \
 			bdac30330eccb5ec73da299922491f3f4ee8debe \
 			tools/pr-downloader # GPL-2.0
@@ -64,13 +50,14 @@ MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU IL ILU SDL2 X11 Xcursor
-WANTLIB += c curl execinfo fontconfig freetype jsoncpp m minizip ogg
+WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU IL SDL2 X11 Xcursor c curl
+WANTLIB += execinfo expat fontconfig freetype jsoncpp m minizip ogg
 WANTLIB += openal vorbis vorbisfile z
 
 FIX_CRLF_FILES = \
 	tools/pr-downloader/src/lib/readerwriterqueue/benchmarks/systemtime.h
 
+# needs std::format not in clang 16
 COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake
 
@@ -90,6 +77,9 @@ LIB_DEPENDS =		archivers/minizip \
 			graphics/glew \
 			net/curl
 
+# use fmt::format while clang doesn't support std::format yet
+BUILD_DEPENDS +=		devel/fmt
+
 # per upstream, build type RELWITHDEBINFO is preferred because of crashhandler
 CONFIGURE_ARGS =	-DAI_TYPES="NATIVE" \
 			-DCMAKE_BUILD_TYPE=RELWITHDEBINFO \
@@ -99,6 +89,7 @@ CONFIGURE_ARGS =	-DAI_TYPES="NATIVE" \
 			-DCMAKE_EXE_LINKER_FLAGS="${LDFLAGS} -lX11" \
 			-DCMAKE_SHARED_LINKER_FLAGS="${LDFLAGS}" \
 			-DCMAKE_SYSTEM_NAME=OpenBSD \
+			-DINSTALL_PORTABLE=FALSE \
 			-DLUA_USE_BSD=1 \
 			-DPRD_BINDIR="${PREFIX}/bin" \
 			-DTRACY_ENABLE=OFF
@@ -110,9 +101,7 @@ CXXFLAGS +=		-I${LOCALBASE}/include \
 LDFLAGS +=		-L${LOCALBASE}/lib \
 			-L${X11BASE}/lib
 
-WRKDIST =		${WRKDIR}/spring-${DIST_STRING:S/%7B/-/g:S/%7D/-/g}
-
-SUBST_VARS +=		IN_ENGINE_V
+SUBST_VARS +=		V
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/rts/build/cmake/ConfigureVersion.cmake

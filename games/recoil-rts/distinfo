@@ -1,6 +1,6 @@
 SHA256 (USCiLab-cereal-d1fcec807b372f04e4c1041b3058e11c12853e6e.tar.gz) = 1Es3qUX8IoNvYuZiUmm4ZfP8BZu3jSXXWqucH4r/Mmc=
 SHA256 (beyond-all-reason-pr-downloader-bdac30330eccb5ec73da299922491f3f4ee8debe.tar.gz) = gwxe0bl/0tEFJV/f/OWaB5rkQhN1UXomLOccEUFb660=
-SHA256 (beyond-all-reason-spring-spring_bar_%7BBAR105%7D.1.1-2590-gb9462a0.tar.gz) = 7tcmLJ/rTyVAgZq0IhCWJSg9o/vR+8QwiIf3iJ7DEuA=
+SHA256 (beyond-all-reason-spring-2025.01.5.tar.gz) = Cc9SsPVAwSEuZBVhkPgfuzvY//s0ueoW9flB8tqMk84=
 SHA256 (cameron314-readerwriterqueue-8e7627d18c2108aca178888d88514179899a044f.tar.gz) = zOGtadLg/b/tn6tvYPYrvR9SExfgr14gUVngVtjPR80=
 SHA256 (gflags-gflags-f8a0efe03aa69b3336d8e228b37d4ccb17324b88.tar.gz) = TSIvq48e3kcJzf9BfRWhM2+GLXM0qBq/dtCcFez5rNE=
 SHA256 (mikke89-RmlUi-7a06f27db04fe5d13a5dacc19b2b4544673a4eca.tar.gz) = APxuDXPlDQO7U9xHpk9OlsVvezjQY8HIDitWW6be5/A=
@@ -8,11 +8,10 @@ SHA256 (rlcevg-CircuitAI-3dee671176bdae7e6b1dd46a3c6c2c0d03c48755.tar.gz) = anC1
 SHA256 (rlcevg-CircuitAI-edc74149c281e2140f28c091ed74310c11611cc7.tar.gz) = GYOK6lYFsrtXEutfPc4mDu9zxPLvCeJNW/so3u49q5g=
 SHA256 (sammycage-lunasvg-d1eec967ec515395cfd669a1bfed8d5a6a119dde.tar.gz) = WR4iBS7Ic2An5UmzxCZHmZT7GjDbSWY6iHTsP+J0zB4=
 SHA256 (skypjack-entt-e4ccb878f47245a319704912435d3c89f34ad6be.tar.gz) = gjepEu03F+8u4ifBNNEHM8Tvo9UeizLvZ5Ni4b4HCdM=
-SHA256 (spring-SpringMapConvNG-0ddd86eaa8871dc0833c69f931f55cd856c5009d.tar.gz) = lYjmnme8KMbYUH8CuQrFvtTdi6rKHmWAaMxb7Cd/ssU=
 SHA256 (wolfpld-tracy-5a1f5371b792c12aea324213e1dc738b2923ae21.tar.gz) = ZJdi2a7Yha8LBWJdrdB0Jrn8/Y/5ASrs8FG2VsBm7NM=
 SIZE (USCiLab-cereal-d1fcec807b372f04e4c1041b3058e11c12853e6e.tar.gz) = 386786
 SIZE (beyond-all-reason-pr-downloader-bdac30330eccb5ec73da299922491f3f4ee8debe.tar.gz) = 342401
-SIZE (beyond-all-reason-spring-spring_bar_%7BBAR105%7D.1.1-2590-gb9462a0.tar.gz) = 23081796
+SIZE (beyond-all-reason-spring-2025.01.5.tar.gz) = 22981743
 SIZE (cameron314-readerwriterqueue-8e7627d18c2108aca178888d88514179899a044f.tar.gz) = 41260
 SIZE (gflags-gflags-f8a0efe03aa69b3336d8e228b37d4ccb17324b88.tar.gz) = 96474
 SIZE (mikke89-RmlUi-7a06f27db04fe5d13a5dacc19b2b4544673a4eca.tar.gz) = 3471102
@@ -20,5 +19,4 @@ SIZE (rlcevg-CircuitAI-3dee671176bdae7e6b1dd46a3c6c2c0d03c48755.tar.gz) = 156492
 SIZE (rlcevg-CircuitAI-edc74149c281e2140f28c091ed74310c11611cc7.tar.gz) = 1381839
 SIZE (sammycage-lunasvg-d1eec967ec515395cfd669a1bfed8d5a6a119dde.tar.gz) = 135647
 SIZE (skypjack-entt-e4ccb878f47245a319704912435d3c89f34ad6be.tar.gz) = 678128
-SIZE (spring-SpringMapConvNG-0ddd86eaa8871dc0833c69f931f55cd856c5009d.tar.gz) = 21487
 SIZE (wolfpld-tracy-5a1f5371b792c12aea324213e1dc738b2923ae21.tar.gz) = 5699395

@@ -1,0 +1,28 @@
+use fmt::format while clang doesn't support std::format yet
+
+Index: rts/Game/UI/TooltipConsole.cpp
+--- rts/Game/UI/TooltipConsole.cpp.orig
++++ rts/Game/UI/TooltipConsole.cpp
+@@ -214,7 +214,7 @@ std::string CTooltipConsole::MakeUnitStatsString(const
+ 	string s;
+ 	s.reserve(512);
+ 
+-	s += std::format
++	s += fmt::format
+ 		( "\nHealth {:.0f}/{:.0f}"
+ 		  "\nExperience {:.2f} Cost {:.0f} Range {:.0f}"
+ 		, stats.health, stats.maxHealth
+@@ -222,11 +222,11 @@ std::string CTooltipConsole::MakeUnitStatsString(const
+ 	);
+ 
+ 	for (int i = 0; i < SResourcePack::MAX_RESOURCES; ++i) {
+-		s += std::format("\n" BLUE "{}: " GREEN "+{:.1f}" GREY "/" RED "-{:.1f}"
++		s += fmt::format("\n" BLUE "{}: " GREEN "+{:.1f}" GREY "/" RED "-{:.1f}"
+ 			, resourceHandler->GetResource(i)->name, stats.resourceMake[i], stats.resourceUse[i]
+ 		);
+ 		if (stats.resourceHarvestMax[i] > 0.0f) {
+-			s += std::format(GREY " (" GREEN "{:.1f}" GREY "/" BLUE "{:.1f}" GREY ")"
++			s += fmt::format(GREY " (" GREEN "{:.1f}" GREY "/" BLUE "{:.1f}" GREY ")"
+ 				, stats.resourceHarvest[i], stats.resourceHarvestMax[i]
+ 			);
+ 		}

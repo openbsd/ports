@@ -9,7 +9,7 @@ Index: rts/build/cmake/ConfigureVersion.cmake
  # Fetch through git or from the VERSION file
 -fetch_spring_version(${SOURCE_ROOT} SPRING_ENGINE)
 +#fetch_spring_version(${SOURCE_ROOT} SPRING_ENGINE)
-+set(SPRING_ENGINE_VERSION "${IN_ENGINE_V}")
++set(SPRING_ENGINE_VERSION "${V}")
  parse_spring_version(SPRING_VERSION_ENGINE "${SPRING_ENGINE_VERSION}")
  
  # We define these, so it may be used in the to-be-configured files
