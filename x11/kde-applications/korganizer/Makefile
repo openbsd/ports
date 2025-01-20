@@ -1,6 +1,7 @@
 COMMENT =	calendar and scheduling component of kontact
 DISTNAME =	korganizer-${VERSION}
 CATEGORIES =	net www
+REVISION =	0
 
 SHARED_LIBS +=  korganizer_core         3.1 # 5.13.2
 SHARED_LIBS +=  korganizer_interfaces   1.1 # 5.13.2

@@ -1,6 +1,7 @@
 COMMENT =	PIM calendar support library
 DISTNAME =	calendarsupport-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=	KPim6CalendarSupport      0.0 # 0.0
 

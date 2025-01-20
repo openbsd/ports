@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	documentenal information management suite
 DISTNAME =	kontact-${VERSION}
 CATEGORIES =	net www
+REVISION =	0
 
 SHARED_LIBS +=  kontactprivate       3.0 # 5.13.2
 

@@ -1,6 +1,7 @@
 COMMENT =	addressbook viewer/frontend for KDE
 DISTNAME =	kaddressbook-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=	KPim6AddressbookImportExport 0.0 # 0.0
 SHARED_LIBS +=  kaddressbookprivate          5.0 # 5.13.2
