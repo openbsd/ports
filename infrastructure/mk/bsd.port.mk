@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1642 2025/01/14 15:06:49 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1643 2025/01/20 17:16:42 sthen Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -770,8 +770,8 @@ PATCHORIG ?= .orig.port
 PATCH_STRIP ?= -p0
 PATCH_DIST_STRIP ?= -p0
 
-PATCH_ARGS ?= -d ${WRKDIST} -z ${PATCHORIG} -E ${PATCH_STRIP}
-PATCH_DIST_ARGS ?= -z ${DISTORIG} -d ${WRKDIST} -E ${PATCH_DIST_STRIP}
+PATCH_ARGS ?= -d ${WRKDIST} -z ${PATCHORIG} -E ${PATCH_STRIP} --forward
+PATCH_DIST_ARGS ?= -d ${WRKDIST} -z ${DISTORIG}  -E ${PATCH_DIST_STRIP} --forward
 
 .if ${PATCH_CHECK_ONLY:L} == "yes"
 PATCH_ARGS += -C
