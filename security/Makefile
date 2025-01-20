@@ -216,6 +216,7 @@
      SUBDIR += p5-Digest-SHA1
      SUBDIR += p5-Digest-SHA3
      SUBDIR += p5-Digest-Skein
+     SUBDIR += p5-Digest-ssdeep
      SUBDIR += p5-File-Scan-ClamAV
      SUBDIR += p5-GPG
      SUBDIR += p5-GnuPG
