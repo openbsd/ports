@@ -41,6 +41,7 @@ share/puppetlabs/puppetserver/cli/apps/dropsonde
 share/puppetlabs/puppetserver/cli/apps/foreground
 share/puppetlabs/puppetserver/cli/apps/gem
 share/puppetlabs/puppetserver/cli/apps/irb
+share/puppetlabs/puppetserver/cli/apps/prune
 share/puppetlabs/puppetserver/cli/apps/reload
 share/puppetlabs/puppetserver/cli/apps/ruby
 share/puppetlabs/puppetserver/cli/apps/start
