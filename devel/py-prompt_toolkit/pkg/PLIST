@@ -1,5 +1,5 @@
-@pkgpath devel/py-prompt_toolkit,python3
 @conflict py-prompt_toolkit-*
+@pkgpath devel/py-prompt_toolkit,python3
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit/
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/prompt_toolkit-${MODPY_DISTV}.dist-info/AUTHORS.rst
