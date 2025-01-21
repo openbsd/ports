@@ -13,13 +13,13 @@ Index: ext/cli/delete-reports
 @@ -76,7 +76,7 @@ chown "$pg_user:$pg_user" "$tmp_dir"
  # Verify that the PuppetDB schema version is the expected value
  # so that we do not incorrectly delete the report data.
- expected_schema_ver=85
+ expected_schema_ver=88
 -su - "$pg_user" -s /bin/sh -c "$psql_cmd -p $pg_port -d $pdb_db_name -c 'COPY ( SELECT max(version) FROM schema_migrations ) TO STDOUT;' > $tmp_dir/schema_ver"
 +su - -s /bin/sh "$pg_user" -c "$psql_cmd -p $pg_port -d $pdb_db_name -c 'COPY ( SELECT max(version) FROM schema_migrations ) TO STDOUT;' > $tmp_dir/schema_ver"
  actual_schema_ver="$(cat "$tmp_dir/schema_ver")"
  if test "$actual_schema_ver" -ne $expected_schema_ver; then
    printerr "Current schema version '${actual_schema_ver}' does not match the expected version '$expected_schema_ver'."
-@@ -102,4 +102,4 @@ DELETE
+@@ -103,4 +103,4 @@ DELETE
  
  chown "$pg_user:$pg_user" "$tmp_dir/delete_reports.sql"
  
