@@ -1,0 +1,10 @@
+Index: docs/observe.n.man
+--- docs/observe.n.man.orig
++++ docs/observe.n.man
+@@ -1,5 +1,5 @@
+ [comment {-*- tcl -*- observe manpage}]
+-[manpage_begin observe n 2.5]
++[manpage_begin tkcon_observe n 2.5]
+ [copyright {Jeffrey Hobbs <jeff at hobbs.org>}]
+ [moddesc   {TkCon}]
+ [titledesc {Runtime debugging output in TkCon}]
