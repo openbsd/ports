@@ -1,10 +1,8 @@
 COMMENT=	Python bindings for LMDB
 
-MODPY_DISTV=	1.5.1
-
+MODPY_DISTV=	1.6.2
 DISTNAME=	lmdb-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	databases
 
@@ -16,9 +14,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += lmdb
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 # otherwise the cpython extension is not found, and py-lmdb falls back
 # to a cffi-based implementation
