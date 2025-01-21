@@ -1,8 +1,7 @@
-include/tclThread.h
-@lib lib/libtclthread${VER}.so.${LIBtclthread${VER}_VERSION}
-lib/tcl/tclthread/
-lib/tcl/tclthread/pkgIndex.tcl
-lib/tcl/tclthread/ttrace.tcl
+lib/tcl/thread/
+@so lib/tcl/thread/libthread${VER}.so
+lib/tcl/thread/pkgIndex.tcl
+lib/tcl/thread/ttrace.tcl
 @man man/mann/thread.n
 @man man/mann/tpool.n
 @man man/mann/tsv.n
