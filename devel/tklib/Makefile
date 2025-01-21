@@ -4,6 +4,7 @@ DISTNAME =	tklib-0.9pl0
 CATEGORIES =	devel x11/tk
 HOMEPAGE =	http://core.tcl.tk/tklib/home
 MAINTAINER =	Stuart Cassoff <stwo@users.sourceforge.net>
+REVISION =	0
 
 # BSD style
 PERMIT_PACKAGE =Yes
@@ -11,10 +12,11 @@ PERMIT_PACKAGE =Yes
 SITES =		https://chiselapp.com/user/stwo/repository/tarballia/uv/
 
 MODULES =	x11/tk
+MODTK_VERSION =	8.6
 BUILD_DEPENDS =	devel/tcllib
 RUN_DEPENDS =	devel/tcllib ${MODTK_RUN_DEPENDS}
 TEST_DEPENDS =	devel/tcllib ${MODTK_BUILD_DEPENDS}
-TEST_IS_INTERACTIVE =	X11
+TEST_IS_INTERACTIVE = X11
 SEPARATE_BUILD =Yes
 NO_BUILD =	Yes
 PKG_ARCH =	*
