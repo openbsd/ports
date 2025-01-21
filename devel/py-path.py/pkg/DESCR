@@ -1,2 +1,0 @@
-This package simply provides a wrapper around "path" to make it available
-at the old name "path.py" from before it was renamed.

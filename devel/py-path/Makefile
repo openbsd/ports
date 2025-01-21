@@ -3,6 +3,7 @@ COMMENT=	module wrapper for os.path
 MODPY_DISTV=	17.1.0
 DISTNAME=	path-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

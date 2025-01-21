@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1690 2025/01/18 16:45:13 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1691 2025/01/21 08:08:56 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -608,6 +608,7 @@ my $stem_extensions = {
 	'kcron-kf5' => 'kcron',
 	'dolphin-plugins-kf5' => 'dolphin-plugins',
 	'audiocd-kio-kf5' => 'audiocd-kio',
+	'py3-path.py' => 'py3-path',
 };
 
 my $obsolete_reason = {};

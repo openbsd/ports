@@ -20,7 +20,8 @@ RUN_DEPENDS=	www/py-cheroot \
 		devel/py-more-itertools \
 		devel/py-zc-lockfile \
 		devel/py-jaraco-collections
-TEST_DEPENDS=	devel/py-path.py \
+TEST_DEPENDS=	devel/py-objgraph \
+		devel/py-path \
 		devel/py-test-cov \
 		www/py-requests-toolbelt
 

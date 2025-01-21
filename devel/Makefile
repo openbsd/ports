@@ -1578,7 +1578,6 @@
      SUBDIR += py-parsing
      SUBDIR += py-parso
      SUBDIR += py-path
-     SUBDIR += py-path.py
      SUBDIR += py-pathable
      SUBDIR += py-pathspec
      SUBDIR += py-pathvalidate
