@@ -1,6 +1,6 @@
-@pkgpath www/py-CherryPy,python3
 @conflict py-CherryPy-<17.4.2p1
 @conflict py-cherrypy2-*
+@pkgpath www/py-CherryPy,python3
 bin/cherryd
 lib/python${MODPY_VERSION}/site-packages/CherryPy-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/CherryPy-${MODPY_DISTV}.dist-info/LICENSE.md
@@ -93,6 +93,8 @@ lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/${MODPY_PYCACHE}encoding.$
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/${MODPY_PYCACHE}encoding.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/${MODPY_PYCACHE}gctools.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/${MODPY_PYCACHE}gctools.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/${MODPY_PYCACHE}headers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/${MODPY_PYCACHE}headers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/${MODPY_PYCACHE}httputil.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/${MODPY_PYCACHE}httputil.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/${MODPY_PYCACHE}jsontools.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -117,6 +119,7 @@ lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/cpstats.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/cptools.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/encoding.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/gctools.py
+lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/headers.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/httputil.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/jsontools.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/lib/locking.py

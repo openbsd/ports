@@ -1,30 +1,22 @@
 COMMENT=	pythonic, object-oriented web development framework
 
-MODPY_DISTV=	18.8.0
-DISTNAME=	CherryPy-${MODPY_DISTV}
-PKGNAME=	py-${DISTNAME}
+MODPY_DISTV=	18.10.0
+DISTNAME=	cherrypy-${MODPY_DISTV}
+PKGNAME=	py-CherryPy-${MODPY_DISTV}
 CATEGORIES=	www
-REVISION=	2
 
+# https://github.com/cherrypy/cherrypy
 HOMEPAGE=	https://cherrypy.dev/
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PI=	Yes
-MODPY_PYTEST=	Yes
-
 MODPY_PYBUILD=	setuptools_scm
+MODPY_PI=	Yes
 
-# XXX ignore tests from test_wsgi_unix_socket.py as it prevents other tests from
-# running.
-MODPY_PYTEST_ARGS=	cherrypy/ \
-		--ignore cherrypy/test/test_wsgi_unix_socket.py \
-		--ignore cherrypy/test/test_auth_basic.py::BasicAuthTest::testBasic
-
-RUN_DEPENDS=	www/py-cheroot>=8.2.1 \
-		net/py-portend>=2.1.1 \
+RUN_DEPENDS=	www/py-cheroot \
+		net/py-portend \
 		devel/py-more-itertools \
 		devel/py-zc-lockfile \
 		devel/py-jaraco-collections
