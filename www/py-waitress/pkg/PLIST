@@ -1,5 +1,5 @@
-@pkgpath www/py-waitress,python3
 @conflict py-waitress-<1.4.4p0
+@pkgpath www/py-waitress,python3
 bin/waitress-serve
 lib/python${MODPY_VERSION}/site-packages/waitress/
 lib/python${MODPY_VERSION}/site-packages/waitress-${MODPY_DISTV}.dist-info/
