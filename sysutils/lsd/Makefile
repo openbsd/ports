@@ -2,8 +2,7 @@ COMMENT =	pretty ls alternative with support for icons and colors
 
 GH_ACCOUNT =	lsd-rs
 GH_PROJECT =	lsd
-GH_TAGNAME =	v1.0.0
-REVISION =	0
+GH_TAGNAME =	v1.1.5
 
 CATEGORIES =	sysutils
 
