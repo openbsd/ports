@@ -1,11 +1,8 @@
 COMMENT=	database migration tool for sqlalchemy
 
-MODPY_DISTV=	1.14.0
-#FIX_EXTRACT_PERMISSIONS= Yes
-
+MODPY_DISTV=	1.14.1
 DISTNAME=	alembic-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	databases
 
@@ -15,8 +12,8 @@ HOMEPAGE=	https://alembic.sqlalchemy.org
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 RUN_DEPENDS=	databases/py-sqlalchemy \
 		devel/py-typing-extensions \
