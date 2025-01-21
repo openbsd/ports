@@ -40,8 +40,7 @@ FIX_CRLF_FILES =	src/slic3r/GUI/GLCanvas3D.cpp
 COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake \
-			x11/gnome \
-			x11/tk
+			x11/gnome
 
 MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache
 
