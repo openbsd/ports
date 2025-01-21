@@ -43,28 +43,23 @@ ${GEM_LIB}/gems/${DISTNAME}/examples/enc/regexp_nodes/parameters/service/sandbox
 ${GEM_LIB}/gems/${DISTNAME}/examples/enc/regexp_nodes/regexp_nodes.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/hiera/
 ${GEM_LIB}/gems/${DISTNAME}/examples/hiera/README.md
-${GEM_LIB}/gems/${DISTNAME}/examples/hiera/etc/
-${GEM_LIB}/gems/${DISTNAME}/examples/hiera/etc/hiera.yaml
-${GEM_LIB}/gems/${DISTNAME}/examples/hiera/etc/hieradb/
-${GEM_LIB}/gems/${DISTNAME}/examples/hiera/etc/hieradb/common.yaml
-${GEM_LIB}/gems/${DISTNAME}/examples/hiera/etc/hieradb/dc1.yaml
-${GEM_LIB}/gems/${DISTNAME}/examples/hiera/etc/hieradb/development.yaml
-${GEM_LIB}/gems/${DISTNAME}/examples/hiera/etc/puppet.conf
+${GEM_LIB}/gems/${DISTNAME}/examples/hiera/data/
+${GEM_LIB}/gems/${DISTNAME}/examples/hiera/data/common.yaml
+${GEM_LIB}/gems/${DISTNAME}/examples/hiera/data/dc1.yaml
+${GEM_LIB}/gems/${DISTNAME}/examples/hiera/hiera.yaml
 ${GEM_LIB}/gems/${DISTNAME}/examples/hiera/modules/
-${GEM_LIB}/gems/${DISTNAME}/examples/hiera/modules/data/
-${GEM_LIB}/gems/${DISTNAME}/examples/hiera/modules/data/manifests/
-${GEM_LIB}/gems/${DISTNAME}/examples/hiera/modules/data/manifests/common.pp
 ${GEM_LIB}/gems/${DISTNAME}/examples/hiera/modules/ntp/
+${GEM_LIB}/gems/${DISTNAME}/examples/hiera/modules/ntp/data/
+${GEM_LIB}/gems/${DISTNAME}/examples/hiera/modules/ntp/data/common.yaml
+${GEM_LIB}/gems/${DISTNAME}/examples/hiera/modules/ntp/hiera.yaml
 ${GEM_LIB}/gems/${DISTNAME}/examples/hiera/modules/ntp/manifests/
 ${GEM_LIB}/gems/${DISTNAME}/examples/hiera/modules/ntp/manifests/config.pp
-${GEM_LIB}/gems/${DISTNAME}/examples/hiera/modules/ntp/manifests/data.pp
 ${GEM_LIB}/gems/${DISTNAME}/examples/hiera/modules/ntp/templates/
-${GEM_LIB}/gems/${DISTNAME}/examples/hiera/modules/ntp/templates/ntp.conf.erb
+${GEM_LIB}/gems/${DISTNAME}/examples/hiera/modules/ntp/templates/ntp.conf.epp
 ${GEM_LIB}/gems/${DISTNAME}/examples/hiera/modules/users/
 ${GEM_LIB}/gems/${DISTNAME}/examples/hiera/modules/users/manifests/
 ${GEM_LIB}/gems/${DISTNAME}/examples/hiera/modules/users/manifests/common.pp
 ${GEM_LIB}/gems/${DISTNAME}/examples/hiera/modules/users/manifests/dc1.pp
-${GEM_LIB}/gems/${DISTNAME}/examples/hiera/modules/users/manifests/development.pp
 ${GEM_LIB}/gems/${DISTNAME}/examples/hiera/site.pp
 ${GEM_LIB}/gems/${DISTNAME}/examples/nagios/
 ${GEM_LIB}/gems/${DISTNAME}/examples/nagios/check_puppet.rb
@@ -577,6 +572,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/node/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/node.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/node/environment.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/node/facts.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puppet/node/server_facts.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/pal/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/pal/catalog_compiler.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/pal/compiler.rb
@@ -943,6 +939,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/provider/package/windows.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/provider/package/windows/exe_package.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/provider/package/windows/msi_package.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/provider/package/windows/package.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puppet/provider/package/xbps.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/provider/package/yum.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/provider/package/zypper.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet/provider/package_targetable.rb
@@ -1281,17 +1278,6 @@ ${GEM_LIB}/gems/${DISTNAME}/man/man8/
 @man ${GEM_LIB}/gems/${DISTNAME}/man/man8/puppet-script.8
 @man ${GEM_LIB}/gems/${DISTNAME}/man/man8/puppet-ssl.8
 @man ${GEM_LIB}/gems/${DISTNAME}/man/man8/puppet.8
-${GEM_LIB}/gems/${DISTNAME}/tasks/
-${GEM_LIB}/gems/${DISTNAME}/tasks/benchmark.rake
-${GEM_LIB}/gems/${DISTNAME}/tasks/cfpropertylist.rake
-${GEM_LIB}/gems/${DISTNAME}/tasks/ci.rake
-${GEM_LIB}/gems/${DISTNAME}/tasks/generate_ast_model.rake
-${GEM_LIB}/gems/${DISTNAME}/tasks/generate_cert_fixtures.rake
-${GEM_LIB}/gems/${DISTNAME}/tasks/manpages.rake
-${GEM_LIB}/gems/${DISTNAME}/tasks/memwalk.rake
-${GEM_LIB}/gems/${DISTNAME}/tasks/parallel.rake
-${GEM_LIB}/gems/${DISTNAME}/tasks/parser.rake
-${GEM_LIB}/gems/${DISTNAME}/tasks/yard.rake
 ${GEM_LIB}/specifications/${DISTNAME}.gemspec
 @sample ${LOCALSTATEDIR}/puppetlabs/puppet/
 share/doc/pkg-readmes/${PKGSTEM}
