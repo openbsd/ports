@@ -2,7 +2,7 @@ COMMENT =	graphical IRC client
 
 V =		1.1.0
 DISTNAME =	irctk-$V
-REVISION =	0
+REVISION =	1
 CATEGORIES =	net
 HOMEPAGE =	https://lab.abiscuola.com/irctk/
 MAINTAINER =	Omar Polo <op@openbsd.org>
@@ -21,8 +21,7 @@ CONFIGURE_STYLE = simple
 
 BUILD_DEPENDS =	${MODTK_BUILD_DEPENDS}
 LIB_DEPENDS =	net/curl
-RUN_DEPENDS =	${MODTK_RUN_DEPENDS} \
-		devel/tcllib
+RUN_DEPENDS =	${MODTK_RUN_DEPENDS}
 
 FAKE_FLAGS =	PREFIX="${DESTDIR}${PREFIX}"
 
