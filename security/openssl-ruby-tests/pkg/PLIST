@@ -3,7 +3,6 @@ share/openssl-ruby-tests/BSDL
 share/openssl-ruby-tests/ext/
 share/openssl-ruby-tests/ext/openssl/
 share/openssl-ruby-tests/ext/openssl/extconf.rb
-share/openssl-ruby-tests/ext/openssl/openssl_missing.c
 share/openssl-ruby-tests/ext/openssl/openssl_missing.h
 share/openssl-ruby-tests/ext/openssl/ossl.c
 share/openssl-ruby-tests/ext/openssl/ossl.h
