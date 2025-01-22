@@ -10,6 +10,7 @@ include/igdgmm/GmmLib/CachePolicy/GmmGen12CachePolicy.h
 include/igdgmm/GmmLib/CachePolicy/GmmGen12dGPUCachePolicy.h
 include/igdgmm/GmmLib/CachePolicy/GmmGen8CachePolicy.h
 include/igdgmm/GmmLib/CachePolicy/GmmGen9CachePolicy.h
+include/igdgmm/GmmLib/CachePolicy/GmmXe2_LPGCachePolicy.h
 include/igdgmm/GmmLib/CachePolicy/GmmXe_LPGCachePolicy.h
 include/igdgmm/GmmLib/GlobalInfo/
 include/igdgmm/GmmLib/Platform/
@@ -38,6 +39,7 @@ include/igdgmm/GmmLib/inc/External/Common/CachePolicy/GmmCachePolicyGen12.h
 include/igdgmm/GmmLib/inc/External/Common/CachePolicy/GmmCachePolicyGen12dGPU.h
 include/igdgmm/GmmLib/inc/External/Common/CachePolicy/GmmCachePolicyGen8.h
 include/igdgmm/GmmLib/inc/External/Common/CachePolicy/GmmCachePolicyGen9.h
+include/igdgmm/GmmLib/inc/External/Common/CachePolicy/GmmCachePolicyXe2_LPG.h
 include/igdgmm/GmmLib/inc/External/Common/CachePolicy/GmmCachePolicyXe_LPG.h
 include/igdgmm/GmmLib/inc/External/Common/GmmCachePolicy.h
 include/igdgmm/GmmLib/inc/External/Common/GmmCachePolicyCommon.h

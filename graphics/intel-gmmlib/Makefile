@@ -2,7 +2,7 @@ ONLY_FOR_ARCHS =	amd64 i386
 
 COMMENT =	Intel Graphics Memory Management Library
 
-VERSION =	22.3.20
+VERSION =	22.5.5
 GH_ACCOUNT =	intel
 GH_PROJECT =	gmmlib
 GH_TAGNAME =	intel-gmmlib-${VERSION}
@@ -14,6 +14,8 @@ SHARED_LIBS +=  igdgmm                    0.0 # 0.0
 HOMEPAGE =	https://01.org/intel-media-for-linux
 
 CATEGORIES =	graphics multimedia
+
+MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
 WANTLIB += ${COMPILER_LIBCXX} m
 
