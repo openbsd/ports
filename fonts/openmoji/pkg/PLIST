@@ -1,0 +1,6 @@
+share/fonts/
+@fontdir share/fonts/openmoji/
+share/fonts/openmoji/OpenMoji-black-glyf.ttf
+share/fonts/openmoji/OpenMoji-color-colr1_svg.ttf
+share/openmoji/
+share/openmoji/90-openmoji-aliases.conf

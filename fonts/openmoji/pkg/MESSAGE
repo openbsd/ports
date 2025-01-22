@@ -1,0 +1,2 @@
+To use OpenMoji as your default system emoji font,
+    # ln -s ${PREFIX}/share/openmoji/90-openmoji-aliases.conf /etc/fonts/conf.d/
