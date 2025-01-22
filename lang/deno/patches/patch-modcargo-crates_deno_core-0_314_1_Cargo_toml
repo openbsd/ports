@@ -1,6 +1,6 @@
-Index: modcargo-crates/deno_core-0.330.0/Cargo.toml
---- modcargo-crates/deno_core-0.330.0/Cargo.toml.orig
-+++ modcargo-crates/deno_core-0.330.0/Cargo.toml
+Index: modcargo-crates/deno_core-0.331.0/Cargo.toml
+--- modcargo-crates/deno_core-0.331.0/Cargo.toml.orig
++++ modcargo-crates/deno_core-0.331.0/Cargo.toml
 @@ -212,8 +212,7 @@ version = "0"
  
  [features]
