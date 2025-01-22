@@ -3,6 +3,7 @@ COMMENT =		viewer for git and diff output
 GH_ACCOUNT =		dandavison
 GH_PROJECT =		delta
 GH_TAGNAME =		0.18.2
+REVISION =		0
 
 CATEGORIES =		textproc
 
@@ -25,9 +26,9 @@ CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/completions/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/vendor_completions.d/
 	${INSTALL_DATA} ${WRKSRC}/etc/completion/completion.fish \
-		${PREFIX}/share/fish/completions/delta.fish
+		${PREFIX}/share/fish/vendor_completions.d/delta.fish
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions/
 	${INSTALL_DATA} ${WRKSRC}/etc/completion/completion.zsh \
 		${PREFIX}/share/zsh/site-functions/_delta
