@@ -19,7 +19,7 @@ Index: media_softlet/media_top_cmake.cmake
  if(NOT DEFINED SKIP_GMM_CHECK)
      # checking dependencies
      pkg_check_modules(LIBGMM REQUIRED igdgmm>=12.0.0)
-@@ -264,7 +273,7 @@ set_target_properties(${LIB_NAME_STATIC} PROPERTIES PR
+@@ -266,7 +275,7 @@ set_target_properties(${LIB_NAME_STATIC} PROPERTIES PR
  bs_ufo_link_libraries_noBsymbolic(
      ${LIB_NAME}_softlet
      "${INCLUDED_LIBS}"
