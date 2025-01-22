@@ -3,6 +3,7 @@ COMMENT =		ls alternative written in Rust (fork of exa)
 GH_ACCOUNT =		eza-community
 GH_PROJECT =		eza
 GH_TAGNAME =		v0.20.16
+REVISION =		0
 
 HOMEPAGE =		https://eza.rocks/
 
@@ -30,11 +31,11 @@ post-install:
 .for sec name in 1 eza 5 eza_colors 5 eza_colors-explanation
 	lowdown -s -tman -m section=${sec} -mtitle=${name} -mvolume='' ${WRKSRC}/man/${name}.${sec}.md > ${PREFIX}/man/man${sec}/${name}.${sec}
 .endfor
-	cd ${PREFIX}/share; ${INSTALL_DATA_DIR} fish/completions \
+	cd ${PREFIX}/share; ${INSTALL_DATA_DIR} fish/vendor_completions.d \
 	    zsh/site-functions bash-completion/completions \
 	    examples/eza/completions/nushell \
 	    examples/eza/theme
-	${INSTALL_DATA} ${WRKSRC}/completions/fish/eza.fish ${PREFIX}/share/fish/completions/
+	${INSTALL_DATA} ${WRKSRC}/completions/fish/eza.fish ${PREFIX}/share/fish/vendor_completions.d/
 	${INSTALL_DATA} ${WRKSRC}/completions/zsh/_eza ${PREFIX}/share/zsh/site-functions/
 	${INSTALL_DATA} ${WRKSRC}/completions/bash/eza ${PREFIX}/share/bash-completion/completions/
 	${INSTALL_DATA} ${WRKSRC}/completions/nush/eza.nu ${PREFIX}/share/examples/eza/completions/nushell/
