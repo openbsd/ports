@@ -1,6 +1,6 @@
 COMMENT =	Lua support for fcitx5
 
-DISTNAME =	fcitx5-lua-5.0.12
+DISTNAME =	fcitx5-lua-5.0.13
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
 
 CATEGORIES =	inputmethods
@@ -13,6 +13,7 @@ MAINTAINER =	Yifei Zhan <openbsd@zhan.science>
 PERMIT_PACKAGE=	Yes
 
 SITES =  	https://download.fcitx-im.org/fcitx5/fcitx5-lua/
+EXTRACT_SUFX =	.tar.zst
 
 WANTLIB += ${COMPILER_LIBCXX} Fcitx5Config Fcitx5Core Fcitx5Utils
 WANTLIB += m
