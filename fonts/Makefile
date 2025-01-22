@@ -81,6 +81,7 @@
      SUBDIR += nerd-fonts
      SUBDIR += noto
      SUBDIR += opendyslexic
+     SUBDIR += openmoji
      SUBDIR += overpass
      SUBDIR += pkfonts
      SUBDIR += powerline-fonts
