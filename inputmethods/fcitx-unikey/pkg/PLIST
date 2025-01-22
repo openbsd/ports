@@ -1,6 +1,6 @@
 @so lib/fcitx5/libunikey.so
-@so lib/fcitx5/qt5/libfcitx5-unikey-keymap-editor.so
-@so lib/fcitx5/qt5/libfcitx5-unikey-macro-editor.so
+@so lib/fcitx5/qt6/libfcitx5-unikey-keymap-editor.so
+@so lib/fcitx5/qt6/libfcitx5-unikey-macro-editor.so
 share/fcitx5/addon/unikey.conf
 share/fcitx5/inputmethod/
 share/fcitx5/inputmethod/unikey.conf

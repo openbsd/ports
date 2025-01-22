@@ -1,12 +1,7 @@
 COMMENT =	unikey Vietnamese support for fcitx5
 
-V =		5.0.13
-PKGNAME =	fcitx-unikey-$V
-REVISION =      0
-
-GH_ACCOUNT =    fcitx
-GH_PROJECT =    fcitx5-unikey
-GH_TAGNAME =    $V
+DISTNAME =	fcitx5-unikey-5.1.5
+PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
 
 CATEGORIES =	inputmethods
 
@@ -14,11 +9,15 @@ HOMEPAGE =	https://github.com/fcitx/fcitx5-unikey
 
 MAINTAINER =	Yifei Zhan <openbsd@zhan.science>
 
+
+SITES =		https://download.fcitx-im.org/fcitx5/fcitx5-unikey/
+EXTRACT_SUFX =	.tar.zst
+
 # GPLv2.0+ and LGPLv2.0+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Fcitx5Config Fcitx5Core Fcitx5Utils
-WANTLIB += Fcitx5Qt5WidgetsAddons Qt5Core Qt5Gui Qt5Widgets m
+WANTLIB += ${COMPILER_LIBCXX} Fcitx5Config Fcitx5Core Fcitx5Qt6WidgetsAddons
+WANTLIB += Fcitx5Utils GL Qt6Core Qt6Gui Qt6Widgets m
 
 MODULES =       devel/kf5
 MODQT5_DEPS =	No
