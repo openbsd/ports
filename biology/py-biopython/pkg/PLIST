@@ -1467,7 +1467,6 @@ lib/python${MODPY_VERSION}/site-packages/biopython-${MODPY_DISTV}.dist-info/RECO
 lib/python${MODPY_VERSION}/site-packages/biopython-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/biopython-${MODPY_DISTV}.dist-info/top_level.txt
 share/doc/py-biopython/
-share/doc/py-biopython/Biopython_doc.pdf
 share/examples/py-biopython/
 share/examples/py-biopython/ACT_example.py
 share/examples/py-biopython/PF05371_seed.sth

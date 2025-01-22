@@ -1,10 +1,9 @@
 COMMENT =		Python tools for computational molecular biology
 
-MODPY_DISTV =	1.84
+MODPY_DISTV =		1.85
 DISTNAME =		biopython-${MODPY_DISTV}
 CATEGORIES =		biology
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 HOMEPAGE =		http://www.biopython.org/
 
@@ -28,7 +27,6 @@ CFLAGS +=	-fPIC
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/py-biopython/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-biopython/
-	${INSTALL_DATA} ${WRKSRC}/Doc/*.pdf ${PREFIX}/share/doc/py-biopython/
 	cd ${WRKSRC}/Doc/examples; tar cf - * | \
 		tar xf - -C ${PREFIX}/share/examples/py-biopython
 
