@@ -4,8 +4,8 @@ share/bash-completion/
 share/bash-completion/completions/
 share/bash-completion/completions/lsd
 share/fish/
-share/fish/completions/
-share/fish/completions/lsd.fish
+share/fish/vendor_completions.d/
+share/fish/vendor_completions.d/lsd.fish
 share/zsh/
 share/zsh/site-functions/
 share/zsh/site-functions/_lsd

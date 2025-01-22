@@ -3,6 +3,7 @@ COMMENT =	pretty ls alternative with support for icons and colors
 GH_ACCOUNT =	lsd-rs
 GH_PROJECT =	lsd
 GH_TAGNAME =	v1.1.5
+REVISION =	0
 
 CATEGORIES =	sysutils
 
@@ -31,9 +32,9 @@ post-install:
 	lowdown -s -tman -m section=1 -mtitle=lsd -mvolume='' \
 		${WRKBUILD}/lsd.md > ${PREFIX}/man/man1/lsd.1
 
-	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/completions/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/vendor_completions.d/
 	${INSTALL_DATA} ${WRKSRC}/completions/lsd.fish \
-		${PREFIX}/share/fish/completions/
+		${PREFIX}/share/fish/vendor_completions.d/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions/
 	${INSTALL_DATA} ${WRKSRC}/completions/_lsd \
 		${PREFIX}/share/zsh/site-functions/
