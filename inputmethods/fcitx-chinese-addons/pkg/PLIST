@@ -15,9 +15,8 @@ lib/cmake/Fcitx5ModulePunctuation/Fcitx5ModulePunctuationConfigVersion.cmake
 @so lib/fcitx5/libpinyinhelper.so
 @so lib/fcitx5/libpunctuation.so
 @so lib/fcitx5/libtable.so
-lib/fcitx5/qt5/
-@so lib/fcitx5/qt5/libcustomphraseeditor.so
-@so lib/fcitx5/qt5/libpinyindictmanager.so
+@so lib/fcitx5/qt6/libcustomphraseeditor.so
+@so lib/fcitx5/qt6/libpinyindictmanager.so
 share/fcitx5/addon/chttrans.conf
 share/fcitx5/addon/fullwidth.conf
 share/fcitx5/addon/pinyin.conf
@@ -41,7 +40,7 @@ share/fcitx5/lua/imeapi/extensions/
 share/fcitx5/lua/imeapi/extensions/pinyin.lua
 share/fcitx5/pinyin/
 share/fcitx5/pinyin/chaizi.dict
-share/fcitx5/pinyin/emoji.dict
+share/fcitx5/pinyin/symbols
 share/fcitx5/pinyinhelper/
 share/fcitx5/pinyinhelper/py_stroke.mb
 share/fcitx5/pinyinhelper/py_table.mb

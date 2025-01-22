@@ -1,7 +1,6 @@
 COMMENT =	addons related to Chinese with IME bundled inside fcitx
 
-V =		5.1.3
-DISTNAME =	fcitx5-chinese-addons-$V
+DISTNAME =	fcitx5-chinese-addons-5.1.7
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
 
 CATEGORIES =	inputmethods chinese
@@ -13,13 +12,13 @@ MAINTAINER =	Yifei Zhan <openbsd@zhan.science>
 # LGPLv2.1+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Fcitx5Config Fcitx5Core
-WANTLIB += Fcitx5Qt5WidgetsAddons Fcitx5Utils IMECore IMEPinyin
-WANTLIB += IMETable Qt5Concurrent Qt5Core Qt5Gui Qt5Widgets
-WANTLIB += boost_iostreams-mt boost_regex-mt c m opencc
+WANTLIB += ${COMPILER_LIBCXX} Fcitx5Config Fcitx5Core Fcitx5Qt6WidgetsAddons
+WANTLIB += Fcitx5Utils GL IMECore IMEPinyin IMETable Qt6Concurrent
+WANTLIB += Qt6Core Qt6Gui Qt6Widgets boost_container-mt boost_iostreams-mt
+WANTLIB += boost_json-mt boost_regex-mt c m opencc
 
 SITES =		https://download.fcitx-im.org/fcitx5/fcitx5-chinese-addons/
-DIST_SUBDIR =		fcitx
+EXTRACT_SUFX =		.tar.zst
 
 SITES.py =		https://download.fcitx-im.org/data/
 DISTFILES.py +=		py_table-20121124.tar.gz
@@ -48,8 +47,7 @@ CONFIGURE_ARGS =	-DENABLE_BROWSER=OFF \
 
 post-patch:
 	cp ${FULLDISTDIR}/py_table-20121124.tar.gz \
-		${WRKSRC}/modules/pinyinhelper/
-	cp ${FULLDISTDIR}/py_stroke-20121124.tar.gz \
-		${WRKSRC}/modules/pinyinhelper/
+	   ${FULLDISTDIR}/py_stroke-20121124.tar.gz \
+	${WRKSRC}/modules/pinyinhelper/
 
 .include <bsd.port.mk>
