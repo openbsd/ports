@@ -1,4 +1,4 @@
-SHA256 (docker-compose-v2.32.1.zip) = pHR3CPsD3f4PA/n4PvcoxJKmITfyfGs9xy3ILbfoBrY=
+SHA256 (docker-compose-v2.32.4.zip) = hebRd85XuusPneGw1YyMDkgjKd0QdUg8O3r2jTzdiHA=
 SHA256 (go_modules/cel.dev/expr/@v/v0.16.1.mod) = nN43vsJ7CvpFuOT9oPlejoNRU5cqc3osexcVSvqPDqo=
 SHA256 (go_modules/cel.dev/expr/@v/v0.16.1.zip) = TOfWotGQze/+Wc3hyHDXa12qL63HwMnUilh5exJXsUw=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.112.0.mod) = VtAE6OQgc1+TbaQH/PdS2hqai1NIJjtygRMQI9cMxwc=
@@ -376,8 +376,8 @@ SHA256 (go_modules/github.com/cncf/xds/go/@v/v0.0.0-20240905190251-b4127c9b8d78.
 SHA256 (go_modules/github.com/codahale/rfc6979/@v/v0.0.0-20141003034818-6a90f24967eb.mod) = x/z9qcumOCDuL/vNPhJQ3ERBRrIB86ObDK6Glo8/vCY=
 SHA256 (go_modules/github.com/codahale/rfc6979/@v/v0.0.0-20141003034818-6a90f24967eb.zip) = sVI4VU4uZuBF30QSUFW4z1f61FoDIbJbR8n8pI7MjjI=
 SHA256 (go_modules/github.com/compose-spec/compose-go/v2/@v/v2.4.4.mod) = LZrEW0z0NZn2dZU0aTJvZC9hyDXu1iYpUXx1XOJwqF8=
-SHA256 (go_modules/github.com/compose-spec/compose-go/v2/@v/v2.4.6.mod) = LZrEW0z0NZn2dZU0aTJvZC9hyDXu1iYpUXx1XOJwqF8=
-SHA256 (go_modules/github.com/compose-spec/compose-go/v2/@v/v2.4.6.zip) = z+ABBW8Us1RWoL3Qu95rTzbzsnsi+Kp3EIxft6JAh/k=
+SHA256 (go_modules/github.com/compose-spec/compose-go/v2/@v/v2.4.7.mod) = LZrEW0z0NZn2dZU0aTJvZC9hyDXu1iYpUXx1XOJwqF8=
+SHA256 (go_modules/github.com/compose-spec/compose-go/v2/@v/v2.4.7.zip) = VYhAXYVeugluwiF84gGkpra/6dGopfiFL2lHM1cnQ+4=
 SHA256 (go_modules/github.com/containerd/aufs/@v/v1.0.0.mod) = 272HxqB66ueMkae+lZMwW5a4j1JDxkhvmqjz+6fnuCw=
 SHA256 (go_modules/github.com/containerd/aufs/@v/v1.0.0.zip) = ZvY752ixbN7hLG0EDUqnwOivMGx2ILDBjB9jbISZrlI=
 SHA256 (go_modules/github.com/containerd/btrfs/v2/@v/v2.0.0.mod) = WCakefYO0lLeg4XXP1WPhqDNqsN1LKeoWy6HXFaWwTE=
@@ -1104,7 +1104,8 @@ SHA256 (go_modules/golang.org/x/net/@v/v0.21.0.mod) = Du8+n+f2aL5bTSTI8SUcbFAtEW
 SHA256 (go_modules/golang.org/x/net/@v/v0.23.0.mod) = Cz+667RmgBS03KX15YpFkWcFZ+9EKexf3k6u1mreb6w=
 SHA256 (go_modules/golang.org/x/net/@v/v0.26.0.mod) = 82mj44SGDykPhwGlhZt2CTrof6JdWHyMnIFqLC40p5w=
 SHA256 (go_modules/golang.org/x/net/@v/v0.29.0.mod) = ZWYSgbDtYjBY+S9NtVopTrqI0CxlykWlPrOix1l2Igc=
-SHA256 (go_modules/golang.org/x/net/@v/v0.29.0.zip) = /sCMpTxPPdsKgaC/7S99Nqayhn0lOA5MwCHHRv5Lci8=
+SHA256 (go_modules/golang.org/x/net/@v/v0.33.0.mod) = RiKZCCjFV/NMHmS5Z/3vXOC6bEOixGakrbsLyqyo5cE=
+SHA256 (go_modules/golang.org/x/net/@v/v0.33.0.zip) = qFAU53Np+Zw/nuvhKJtNB1fVgkjKEjN2QpI4GK4iyhk=
 SHA256 (go_modules/golang.org/x/net/@v/v0.7.0.mod) = Qex26iFy8+4wMeOPmlNZOaWE1rs170gIVP3LjCAmcBs=
 SHA256 (go_modules/golang.org/x/oauth2/@v/v0.10.0.mod) = s4hCz9tuhBBjsKNTKodPXdmOO4In4wHuVbJWgmAomQk=
 SHA256 (go_modules/golang.org/x/oauth2/@v/v0.11.0.mod) = ErhfdqpriKyeB4FHaajsCzrPQDKXe6xAXgAfBk+/uYc=
@@ -1335,7 +1336,7 @@ SHA256 (go_modules/tags.cncf.io/container-device-interface/@v/v0.8.0.zip) = MvnK
 SHA256 (go_modules/tags.cncf.io/container-device-interface/specs-go/@v/v0.7.0.mod) = cd5T9N06HQ/G+b/RbZCq+En4CS1db3vLKpTI1fXyEtU=
 SHA256 (go_modules/tags.cncf.io/container-device-interface/specs-go/@v/v0.8.0.mod) = ls01XNT8EFcJEXpXnTm9ba+iNZHtIEug4S8FLJT4cVQ=
 SHA256 (go_modules/tags.cncf.io/container-device-interface/specs-go/@v/v0.8.0.zip) = GcGueolLJMUcGaFPICznsg9pahAlIJQ7/cKE2s770T4=
-SIZE (docker-compose-v2.32.1.zip) = 675418
+SIZE (docker-compose-v2.32.4.zip) = 676324
 SIZE (go_modules/cel.dev/expr/@v/v0.16.1.mod) = 434
 SIZE (go_modules/cel.dev/expr/@v/v0.16.1.zip) = 195942
 SIZE (go_modules/cloud.google.com/go/@v/v0.112.0.mod) = 1812
@@ -1713,8 +1714,8 @@ SIZE (go_modules/github.com/cncf/xds/go/@v/v0.0.0-20240905190251-b4127c9b8d78.zi
 SIZE (go_modules/github.com/codahale/rfc6979/@v/v0.0.0-20141003034818-6a90f24967eb.mod) = 35
 SIZE (go_modules/github.com/codahale/rfc6979/@v/v0.0.0-20141003034818-6a90f24967eb.zip) = 17305
 SIZE (go_modules/github.com/compose-spec/compose-go/v2/@v/v2.4.4.mod) = 896
-SIZE (go_modules/github.com/compose-spec/compose-go/v2/@v/v2.4.6.mod) = 896
-SIZE (go_modules/github.com/compose-spec/compose-go/v2/@v/v2.4.6.zip) = 296950
+SIZE (go_modules/github.com/compose-spec/compose-go/v2/@v/v2.4.7.mod) = 896
+SIZE (go_modules/github.com/compose-spec/compose-go/v2/@v/v2.4.7.zip) = 297333
 SIZE (go_modules/github.com/containerd/aufs/@v/v1.0.0.mod) = 256
 SIZE (go_modules/github.com/containerd/aufs/@v/v1.0.0.zip) = 42845
 SIZE (go_modules/github.com/containerd/btrfs/v2/@v/v2.0.0.mod) = 80
@@ -2441,7 +2442,8 @@ SIZE (go_modules/golang.org/x/net/@v/v0.21.0.mod) = 155
 SIZE (go_modules/golang.org/x/net/@v/v0.23.0.mod) = 155
 SIZE (go_modules/golang.org/x/net/@v/v0.26.0.mod) = 155
 SIZE (go_modules/golang.org/x/net/@v/v0.29.0.mod) = 155
-SIZE (go_modules/golang.org/x/net/@v/v0.29.0.zip) = 1836724
+SIZE (go_modules/golang.org/x/net/@v/v0.33.0.mod) = 155
+SIZE (go_modules/golang.org/x/net/@v/v0.33.0.zip) = 1852131
 SIZE (go_modules/golang.org/x/net/@v/v0.7.0.mod) = 123
 SIZE (go_modules/golang.org/x/oauth2/@v/v0.10.0.mod) = 358
 SIZE (go_modules/golang.org/x/oauth2/@v/v0.11.0.mod) = 358

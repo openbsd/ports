@@ -181,7 +181,7 @@ MODGO_MODULES =	\
 	github.com/cloudflare/cfssl							 v0.0.0-20180223231731-4e2dcbde5004 \
 	github.com/cncf/xds/go								 v0.0.0-20240905190251-b4127c9b8d78 \
 	github.com/codahale/rfc6979							 v0.0.0-20141003034818-6a90f24967eb \
-	github.com/compose-spec/compose-go/v2						 v2.4.6 \
+	github.com/compose-spec/compose-go/v2						 v2.4.7 \
 	github.com/containerd/aufs							 v1.0.0 \
 	github.com/containerd/btrfs/v2							 v2.0.0 \
 	github.com/containerd/cgroups							 v1.1.0 \
@@ -442,7 +442,7 @@ MODGO_MODULES =	\
 	golang.org/x/crypto								 v0.31.0 \
 	golang.org/x/exp								 v0.0.0-20240909161429-701f63a606c0 \
 	golang.org/x/mod								 v0.21.0 \
-	golang.org/x/net								 v0.29.0 \
+	golang.org/x/net								 v0.33.0 \
 	golang.org/x/oauth2								 v0.23.0 \
 	golang.org/x/sync								 v0.10.0 \
 	golang.org/x/sys								 v0.28.0 \
@@ -709,6 +709,7 @@ MODGO_MODFILES =	\
 	golang.org/x/net								 v0.21.0 \
 	golang.org/x/net								 v0.23.0 \
 	golang.org/x/net								 v0.26.0 \
+	golang.org/x/net								 v0.29.0 \
 	golang.org/x/net								 v0.7.0 \
 	golang.org/x/oauth2								 v0.10.0 \
 	golang.org/x/oauth2								 v0.11.0 \
