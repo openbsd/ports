@@ -1,21 +1,21 @@
 @so lib/fcitx5/kkc.so
-@so lib/fcitx5/qt5/libfcitx5-kkc-config.so
+@so lib/fcitx5/qt6/libfcitx5-kkc-config.so
 share/fcitx5/addon/kkc.conf
 share/fcitx5/inputmethod/
 share/fcitx5/inputmethod/kkc.conf
 share/fcitx5/kkc/
 share/fcitx5/kkc/dictionary_list
 share/fcitx5/kkc/rule
-share/icons/hicolor/16x16/apps/fcitx-kkc.png
-share/icons/hicolor/16x16/apps/org.fcitx.Fcitx5.fcitx-kkc.png
-share/icons/hicolor/22x22/apps/fcitx-kkc.png
-share/icons/hicolor/22x22/apps/org.fcitx.Fcitx5.fcitx-kkc.png
-share/icons/hicolor/24x24/apps/fcitx-kkc.png
-share/icons/hicolor/24x24/apps/org.fcitx.Fcitx5.fcitx-kkc.png
-share/icons/hicolor/48x48/apps/fcitx-kkc.png
-share/icons/hicolor/48x48/apps/org.fcitx.Fcitx5.fcitx-kkc.png
-share/icons/hicolor/64x64/apps/fcitx-kkc.png
-share/icons/hicolor/64x64/apps/org.fcitx.Fcitx5.fcitx-kkc.png
+share/icons/hicolor/16x16/apps/fcitx_kkc.png
+share/icons/hicolor/16x16/apps/org.fcitx.Fcitx5.fcitx_kkc.png
+share/icons/hicolor/22x22/apps/fcitx_kkc.png
+share/icons/hicolor/22x22/apps/org.fcitx.Fcitx5.fcitx_kkc.png
+share/icons/hicolor/24x24/apps/fcitx_kkc.png
+share/icons/hicolor/24x24/apps/org.fcitx.Fcitx5.fcitx_kkc.png
+share/icons/hicolor/48x48/apps/fcitx_kkc.png
+share/icons/hicolor/48x48/apps/org.fcitx.Fcitx5.fcitx_kkc.png
+share/icons/hicolor/64x64/apps/fcitx_kkc.png
+share/icons/hicolor/64x64/apps/org.fcitx.Fcitx5.fcitx_kkc.png
 share/locale/ca/LC_MESSAGES/fcitx5-kkc.mo
 share/locale/da/LC_MESSAGES/fcitx5-kkc.mo
 share/locale/de/LC_MESSAGES/fcitx5-kkc.mo

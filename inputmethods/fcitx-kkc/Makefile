@@ -1,24 +1,22 @@
 COMMENT =	libkkc wrapper for fcitx5
 
-V =		5.0.12
-PKGNAME =	fcitx-kkc-$V
-REVISION =      0
-
-GH_ACCOUNT =    fcitx
-GH_PROJECT =    fcitx5-kkc
-GH_TAGNAME =    $V
+DISTNAME =	fcitx5-kkc-5.1.5
+PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
 
 CATEGORIES =	inputmethods japanese
 
 HOMEPAGE =	https://github.com/fcitx/fcitx5-kkc
+
+SITES =		https://download.fcitx-im.org/fcitx5/fcitx5-kkc/
+EXTRACT_SUFX =	.tar.zst
 
 MAINTAINER =	Yifei Zhan <openbsd@zhan.science>
 
 # GPLv3.0 or later
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Fcitx5Config Fcitx5Core Fcitx5Qt5WidgetsAddons
-WANTLIB += Fcitx5Utils Qt5Core Qt5Gui Qt5Widgets gee-0.8 gio-2.0
+WANTLIB += ${COMPILER_LIBCXX} Fcitx5Config Fcitx5Core Fcitx5Qt6WidgetsAddons
+WANTLIB += Fcitx5Utils GL Qt6Core Qt6Gui Qt6Widgets gee-0.8 gio-2.0
 WANTLIB += glib-2.0 gobject-2.0 intl json-glib-1.0 kkc m
 
 MODULES =       devel/kf5
@@ -38,8 +36,5 @@ LIB_DEPENDS =		inputmethods/fcitx \
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt
-
-# ninja: error: unknown target 'test'
-NO_TEST =		Yes
 
 .include <bsd.port.mk>
