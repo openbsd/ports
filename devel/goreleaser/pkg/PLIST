@@ -3,8 +3,8 @@ share/bash-completion/
 share/bash-completion/completions/
 share/bash-completion/completions/goreleaser
 share/fish/
-share/fish/completions/
-share/fish/completions/goreleaser.fish
+share/fish/vendor_completions.d/
+share/fish/vendor_completions.d/goreleaser.fish
 share/zsh/
 share/zsh/site-functions/
 share/zsh/site-functions/_goreleaser

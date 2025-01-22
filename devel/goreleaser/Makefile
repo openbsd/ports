@@ -2,6 +2,7 @@ COMMENT =	deliver Go binaries as fast and easily as possible
 
 MODGO_MODNAME =	github.com/goreleaser/goreleaser/v2
 MODGO_VERSION =	v2.5.0
+REVISION =	0
 
 DISTNAME =	goreleaser-${MODGO_VERSION}
 
@@ -32,9 +33,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/completion.bash \
 		${PREFIX}/share/bash-completion/completions/goreleaser
 
-	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/completions/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/vendor_completions.d/
 	${INSTALL_DATA} ${WRKSRC}/completion.fish \
-		${PREFIX}/share/fish/completions/goreleaser.fish
+		${PREFIX}/share/fish/vendor_completions.d/goreleaser.fish
 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions/
 	${INSTALL_DATA} ${WRKSRC}/completion.zsh \
