@@ -40,9 +40,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/scripts/shell_completions/bash/borg \
 		${PREFIX}/share/bash-completion/completions/
 
-	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/completions/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/vendor_completions.d/
 	${INSTALL_DATA} ${WRKSRC}/scripts/shell_completions/fish/borg.fish \
-		${PREFIX}/share/fish/completions/
+		${PREFIX}/share/fish/vendor_completions.d/
 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions/
 	${INSTALL_DATA} ${WRKSRC}/scripts/shell_completions/zsh/_borg \
