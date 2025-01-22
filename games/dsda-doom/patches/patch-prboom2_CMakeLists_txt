@@ -1,11 +1,19 @@
---- prboom2/CMakeLists.txt.orig	Sat Jun 10 20:04:25 2023
-+++ prboom2/CMakeLists.txt	Sat Jun 10 20:04:46 2023
+Ports that provide DOOM data files (WADs), like games/doomdata (with
+shareware game data) and games/freedoom (with free game data), install
+them at /usr/local/share/doom/.
+
+Ports for other DOOM engines, like games/crispy-doom, also expect WADs
+to be there.
+
+Index: prboom2/CMakeLists.txt
+--- prboom2/CMakeLists.txt.orig
++++ prboom2/CMakeLists.txt
 @@ -167,7 +167,7 @@ endif()
  if(WIN32)
      set(DEFAULT_WAD_DIR ".")
  else()
--    set(DEFAULT_WAD_DIR "${CMAKE_INSTALL_DATADIR}/games/doom")
-+    set(DEFAULT_WAD_DIR "${CMAKE_INSTALL_DATADIR}/doom")
+-    set(DEFAULT_WAD_DIR "share/games/doom")
++    set(DEFAULT_WAD_DIR "share/doom")
  endif()
  
  set(DSDAPWADDIR "${DEFAULT_WAD_DIR}" CACHE STRING "Path to install DSDA-Doom internal WAD, relative to CMAKE_INSTALL_PREFIX or absolute.")

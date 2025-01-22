@@ -1,6 +1,7 @@
---- prboom2/src/CMakeLists.txt.orig	Sat Jun 10 19:15:16 2023
-+++ prboom2/src/CMakeLists.txt	Sat Jun 10 19:15:22 2023
-@@ -540,7 +540,7 @@ function(AddGameExecutable TARGET SOURCES)
+Index: prboom2/src/CMakeLists.txt
+--- prboom2/src/CMakeLists.txt.orig
++++ prboom2/src/CMakeLists.txt
+@@ -547,7 +547,7 @@ function(AddGameExecutable TARGET SOURCES)
      target_link_libraries(${TARGET} PRIVATE
          libzip::zip
          ${SDL2_LIBRARIES}
@@ -9,7 +10,7 @@
          ZLIB::ZLIB
      )
  
-@@ -558,7 +558,7 @@ function(AddGameExecutable TARGET SOURCES)
+@@ -565,7 +565,7 @@ function(AddGameExecutable TARGET SOURCES)
      )
  
      if(HAVE_LIBSDL2_IMAGE)
