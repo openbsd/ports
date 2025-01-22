@@ -54,6 +54,8 @@ lib/cmake/Fcitx5Qt6WidgetsAddons/Fcitx5Qt6WidgetsAddonsConfig.cmake
 lib/cmake/Fcitx5Qt6WidgetsAddons/Fcitx5Qt6WidgetsAddonsConfigVersion.cmake
 lib/cmake/Fcitx5Qt6WidgetsAddons/Fcitx5Qt6WidgetsAddonsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Fcitx5Qt6WidgetsAddons/Fcitx5Qt6WidgetsAddonsTargets.cmake
+lib/fcitx5/qt5/
+@so lib/fcitx5/qt5/libfcitx-quickphrase-editor5.so
 lib/fcitx5/qt6/
 @so lib/fcitx5/qt6/libfcitx-quickphrase-editor5.so
 @lib lib/libFcitx5Qt5DBusAddons.so.${LIBFcitx5Qt5DBusAddons_VERSION}
