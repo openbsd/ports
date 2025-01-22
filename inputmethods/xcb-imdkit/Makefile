@@ -1,8 +1,8 @@
 COMMENT =	implementation of xim protocol in xcb
 
-DISTNAME =	xcb-imdkit-1.0.6
+DISTNAME =	xcb-imdkit-1.0.9
 
-SHARED_LIBS +=  xcb-imdkit		1.0 # 1.0
+SHARED_LIBS +=  xcb-imdkit		2.0 # 2.0
 
 CATEGORIES =	inputmethods
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += xcb xcb-util
 
 SITES =		https://download.fcitx-im.org/fcitx5/xcb-imdkit/
-EXTRACT_SUFX = .tar.xz
+EXTRACT_SUFX = .tar.zst
 
 # C11
 COMPILER =		base-clang ports-clang ports-gcc
