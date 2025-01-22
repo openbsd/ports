@@ -26,6 +26,7 @@ include/LibIME/libime/core/utils.h
 include/LibIME/libime/pinyin/
 include/LibIME/libime/pinyin/libimepinyin_export.h
 include/LibIME/libime/pinyin/pinyincontext.h
+include/LibIME/libime/pinyin/pinyincorrectionprofile.h
 include/LibIME/libime/pinyin/pinyindata.h
 include/LibIME/libime/pinyin/pinyindecoder.h
 include/LibIME/libime/pinyin/pinyindictionary.h

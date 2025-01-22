@@ -1,9 +1,9 @@
 COMMENT =	library to support generic input method implementation
 
-DISTNAME =	libime-1.1.5
+DISTNAME =	libime-1.1.9
 
-SHARED_LIBS +=	IMECore		0.1 # 0.0
-SHARED_LIBS +=	IMEPinyin	0.1 # 0.0
+SHARED_LIBS +=	IMECore		0.2 # 0.0
+SHARED_LIBS +=	IMEPinyin	0.2 # 0.0
 SHARED_LIBS +=	IMETable	1.0 # 0.0
 
 CATEGORIES =	inputmethods
@@ -24,13 +24,11 @@ SITES.data =		https://download.fcitx-im.org/data/
 # Dictionary and Language Model
 # Keep in sync with the post-patch section + upstream list
 # https://github.com/fcitx/libime/blob/master/data/CMakeLists.txt
-DISTFILES.data +=	dict-20230412.tar.xz
-DISTFILES.data +=	lm_sc.arpa-20230712.tar.xz
-DISTFILES.data +=	table-20240108.tar.gz
-DISTFILES.data +=	table.tar.gz
+DISTFILES.data +=	dict-20241001.tar.zst
+DISTFILES.data +=	lm_sc.arpa-20241001.tar.zst
+DISTFILES.data +=	table-20240108.tar.zst
 
-EXTRACT_SUFX = 		.tar.xz
-DIST_SUBDIR =		fcitx
+EXTRACT_SUFX = 		.tar.zst
 
 COMPILER =		base-clang ports-clang ports-gcc
 
@@ -47,12 +45,9 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 LIB_DEPENDS =		inputmethods/fcitx \
 			devel/boost
 post-patch:
-			@cp ${FULLDISTDIR}/dict-20230412.tar.xz \
+.for d in ${DISTFILES.data}
+			@cp ${FULLDISTDIR}/${d} \
 				${WRKSRC}/data/
-			@cp ${FULLDISTDIR}/lm_sc.arpa-20230712.tar.xz \
-				${WRKSRC}/data/
-			@cp ${FULLDISTDIR}/table-20240108.tar.gz \
-				${WRKSRC}/data/
-			@cp ${FULLDISTDIR}/table.tar.gz \
-				${WRKSRC}/data/
+.endfor
+
 .include <bsd.port.mk>
