@@ -1,7 +1,6 @@
 COMMENT =	extra table for Fcitx5
 
-V =		5.1.2
-DISTNAME =	fcitx5-table-extra-$V
+DISTNAME =	fcitx5-table-extra-5.1.6
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
 
 CATEGORIES =	inputmethods chinese
@@ -14,7 +13,7 @@ MAINTAINER =	Yifei Zhan <openbsd@zhan.science>
 PERMIT_PACKAGE=	Yes
 
 SITES =			https://download.fcitx-im.org/fcitx5/fcitx5-table-extra/
-DIST_SUBDIR =		fcitx
+EXTRACT_SUFX =		.tar.zst
 
 MODULES =		devel/kf5
 
