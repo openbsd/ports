@@ -1,8 +1,7 @@
 COMMENT =	convert between traditional and simplified Chinese
 
-V =		1.1.7
+V =		1.1.9
 DISTNAME =	opencc-$V
-REVISION =	0
 
 GH_ACCOUNT =	BYVoid
 GH_PROJECT =	OpenCC
