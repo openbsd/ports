@@ -23,7 +23,7 @@ with CJK support. To install noto-cjk:
 | M17N               | fcitx-m17n                             |
 | Vietnamese Telex   | fcitx-unikey                           |
 | Korean             | fcitx-hangul                           |
-| Japanese           | fcitx-skk / fcitx-kkc / fcitx-anthy    |
+| Japanese           | fcitx-kkc / fcitx-anthy                |
 | Symbols (e.g. IPA) | fcitx-table-other                      |
 | Other tables [1]   | fcitx-table-other                      |
 |=============================================================|
@@ -73,12 +73,22 @@ If using KDE Plasma, you can also setup your input method via:
 For more information, please refer to Fcitx's wiki page:
 https://www.fcitx-im.org/wiki/Setup_Fcitx_5
 
+You might be the only one speaking a particular language, please
+help improve the i18n support by reporting what works well and what does
+not. So that issues are known and a solution can be worked on.
+
 Troubleshooting
 ===============
 
 Fcitx includes fcitx5-diagnose, a tool to help you troubleshoot.
 If you need to send a bug report, remember to attach a copy of its
 output, with sensitive information removed.
+
+Known issues
+============
+
+- Some emoji characters cannot be rendered and will instead be
+  displayed as blank spaces
 
 Migrating from fcitx4
 =====================

@@ -1,11 +1,11 @@
 COMMENT =	flexible input method framework
 
-DISTNAME =	fcitx5-5.1.7
+DISTNAME =	fcitx5-5.1.11
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
 
 SHARED_LIBS +=  Fcitx5Config			0.0 # 0.0
-SHARED_LIBS +=  Fcitx5Core			1.0 # 0.0
-SHARED_LIBS +=  Fcitx5Utils			1.0 # 0.0
+SHARED_LIBS +=  Fcitx5Core			1.1 # 0.0
+SHARED_LIBS +=  Fcitx5Utils			1.1 # 0.0
 
 CATEGORIES =	inputmethods chinese japanese korean
 
@@ -28,7 +28,7 @@ SITES =		https://download.fcitx-im.org/fcitx5/fcitx5/
 SITES.data =	https://download.fcitx-im.org/data/
 DISTFILES.data= en_dict-20121020.tar.gz
 
-DIST_SUBDIR =	fcitx
+EXTRACT_SUFX =	.tar.zst
 
 MODULES =	devel/kf5
 MODQT5_DEPS =	No
