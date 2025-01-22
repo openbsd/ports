@@ -4,3 +4,4 @@
 @man man/man5/mcast-proxy.conf.5
 @man man/man8/mcast-proxy.8
 @bin sbin/mcast-proxy
+@extra ${SYSCONFDIR}/mcast-proxy.conf
