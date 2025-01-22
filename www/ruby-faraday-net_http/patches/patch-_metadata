@@ -1,0 +1,23 @@
+ruby 3.3 only has bundled 3.4.1 version, ruby 3.4
+will have proper version
+
+Index: .metadata
+--- .metadata.orig
++++ .metadata
+@@ -16,14 +16,14 @@ dependencies:
+     requirements:
+     - - ">="
+       - !ruby/object:Gem::Version
+-        version: 0.5.0
++        version: 0.4.0
+   type: :runtime
+   prerelease: false
+   version_requirements: !ruby/object:Gem::Requirement
+     requirements:
+     - - ">="
+       - !ruby/object:Gem::Version
+-        version: 0.5.0
++        version: 0.4.0
+ description: Faraday adapter for Net::HTTP
+ email:
+ - janvanderpas@gmail.com
