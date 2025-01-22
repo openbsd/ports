@@ -1,12 +1,7 @@
 COMMENT =	anthy wrapper for fcitx5
 
-V =		5.0.14
-PKGNAME =	fcitx-anthy-$V
-REVISION =      0
-
-GH_ACCOUNT =    fcitx
-GH_PROJECT =    fcitx5-anthy
-GH_TAGNAME =    $V
+DISTNAME =	fcitx5-anthy-5.1.5
+PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
 
 CATEGORIES =	inputmethods japanese
 
@@ -19,6 +14,9 @@ WANTLIB += anthy anthydic m
 
 # LGPL-2.1+
 PERMIT_PACKAGE=	Yes
+
+SITES =		https://download.fcitx-im.org/fcitx5/fcitx5-anthy/
+EXTRACT_SUFX =	.tar.zst
 
 MODULES =       devel/kf5
 MODQT5_DEPS =	No

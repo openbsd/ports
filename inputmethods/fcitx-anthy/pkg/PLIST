@@ -1,4 +1,4 @@
-@so lib/fcitx5/anthy.so
+@so lib/fcitx5/libanthy.so
 share/fcitx5/addon/anthy.conf
 share/fcitx5/anthy/
 share/fcitx5/anthy/101kana.sty
