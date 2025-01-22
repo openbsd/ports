@@ -1,17 +1,16 @@
 COMMENT =	m17n wrapper for fcitx5
 
-V =		5.0.11
-PKGNAME =	fcitx-m17n-$V
-
-GH_ACCOUNT =    fcitx
-GH_PROJECT =    fcitx5-m17n
-GH_TAGNAME =    $V
+DISTNAME =	fcitx5-m17n-5.1.2
+PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
 
 CATEGORIES =	inputmethods
 
 HOMEPAGE =	https://github.com/fcitx/fcitx5-m17n
 
 MAINTAINER =	Yifei Zhan <openbsd@zhan.science>
+
+SITES =		https://download.fcitx-im.org/fcitx5/fcitx5-m17n/
+EXTRACT_SUFX =	.tar.zst
 
 # LGPLv2.1 or later
 PERMIT_PACKAGE=	Yes
