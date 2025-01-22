@@ -1,18 +1,16 @@
 COMMENT =	Hangul wrapper for fcitx5
 
-V =		5.0.11
-PKGNAME =	fcitx-hangul-$V
-REVISION =      0
-
-GH_ACCOUNT =    fcitx
-GH_PROJECT =    fcitx5-hangul
-GH_TAGNAME =    $V
+DISTNAME =	fcitx5-hangul-5.1.5
+PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
 
 CATEGORIES =	inputmethods korean
 
 HOMEPAGE =	https://github.com/fcitx/fcitx5-hangul
 
 MAINTAINER =	Yifei Zhan <openbsd@zhan.science>
+
+SITES =		https://download.fcitx-im.org/fcitx5/fcitx5-hangul/
+EXTRACT_SUFX =		.tar.zst
 
 # LGPLv2.1 or later
 PERMIT_PACKAGE=	Yes
