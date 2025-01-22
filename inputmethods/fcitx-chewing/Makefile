@@ -1,12 +1,7 @@
 COMMENT =	chewing wrapper for fcitx5
 
-V =		5.1.1
-PKGNAME =	fcitx-chewing-$V
-
-GH_ACCOUNT =    fcitx
-GH_PROJECT =    fcitx5-chewing
-GH_TAGNAME =    $V
-
+DISTNAME =	fcitx5-chewing-5.1.6
+PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
 CATEGORIES =	inputmethods chinese
 
 HOMEPAGE =	https://github.com/fcitx/fcitx5-chewing
@@ -18,6 +13,9 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} Fcitx5Config Fcitx5Core Fcitx5Utils
 WANTLIB += chewing m
+
+SITES =		https://download.fcitx-im.org/fcitx5/fcitx5-chewing/
+EXTRACT_SUFX =	.tar.zst
 
 MODULES =       devel/kf5
 MODQT5_DEPS =	No
@@ -32,8 +30,5 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 
 LIB_DEPENDS =		inputmethods/fcitx \
 			chinese/libchewing
-
-# ninja: error: unknown target 'test'
-NO_TEST =		Yes
 
 .include <bsd.port.mk>
