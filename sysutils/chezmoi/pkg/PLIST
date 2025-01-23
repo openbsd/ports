@@ -3,8 +3,8 @@ share/bash-completion/
 share/bash-completion/completions/
 share/bash-completion/completions/chezmoi
 share/fish/
-share/fish/functions/
-share/fish/functions/chezmoi-completion.fish
+share/fish/vendor_completions.d/
+share/fish/vendor_completions.d/chezmoi.fish
 share/zsh/
 share/zsh/site-functions/
 share/zsh/site-functions/_chezmoi

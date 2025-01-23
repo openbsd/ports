@@ -2,6 +2,7 @@ COMMENT =		dotfiles manager across multiple diverse machines
 
 MODGO_MODNAME =		github.com/twpayne/chezmoi/v2
 MODGO_VERSION =		v2.53.1
+REVISION =		0
 
 DISTNAME =		chezmoi-${MODGO_VERSION}
 
@@ -26,9 +27,9 @@ post-install:
 	${INSTALL_DATA} ${WRKSRC}/completions/chezmoi.zsh \
 		${PREFIX}/share/zsh/site-functions/_chezmoi
 
-	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/functions
+	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/vendor_completions.d
 	${INSTALL_DATA} ${WRKSRC}/completions/chezmoi.fish \
-		${PREFIX}/share/fish/functions/chezmoi-completion.fish
+		${PREFIX}/share/fish/vendor_completions.d/chezmoi.fish
 
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions
 	${INSTALL_DATA} ${WRKSRC}/completions/chezmoi-completion.bash \
