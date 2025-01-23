@@ -1,16 +1,15 @@
 COMMENT =	mikmod sound library
 
-DISTNAME =	libmikmod-3.3.11.1
-SHARED_LIBS +=	mikmod               4.0      # .3.0
+DISTNAME =	libmikmod-3.3.12
+SHARED_LIBS +=	mikmod               4.0      # 6.0
 CATEGORIES =	audio devel
-REVISION =	1
 
 HOMEPAGE =	https://mikmod.sourceforge.net/
 
 # LGPLv2.1+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	m pthread sndio
+WANTLIB +=	pthread sndio
 
 SITES =		${SITE_SOURCEFORGE:=mikmod/}
 

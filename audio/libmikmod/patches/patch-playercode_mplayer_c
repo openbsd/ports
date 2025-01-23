@@ -1,6 +1,7 @@
---- playercode/mplayer.c.orig	Mon Apr 27 04:51:00 2015
-+++ playercode/mplayer.c	Fri Mar 18 07:39:21 2016
-@@ -368,9 +368,9 @@ static SWORD StartEnvelope(ENVPR *t,UBYTE flg,UBYTE pt
+Index: playercode/mplayer.c
+--- playercode/mplayer.c.orig
++++ playercode/mplayer.c
+@@ -380,9 +380,9 @@ static SWORD StartEnvelope(ENVPR *t,UBYTE flg,UBYTE pt
  	}
  
  	/* Fit in the envelope, still */
