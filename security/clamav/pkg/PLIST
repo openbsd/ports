@@ -195,6 +195,8 @@ share/doc/clamav/html/searchindex.json
 share/doc/clamav/html/sitemap.xml
 share/doc/clamav/html/theme-dawn.js
 share/doc/clamav/html/theme-tomorrow_night.js
+share/doc/clamav/html/toc.html
+share/doc/clamav/html/toc.js
 share/doc/clamav/html/tomorrow-night.css
 share/examples/clamav/
 share/examples/clamav/clamav-milter.conf.sample
