@@ -16,6 +16,7 @@
      SUBDIR += magic
      SUBDIR += necpp
      SUBDIR += netgen
+     SUBDIR += netgen-mesher
      SUBDIR += ngspice
      SUBDIR += opencascade
      SUBDIR += openscad
