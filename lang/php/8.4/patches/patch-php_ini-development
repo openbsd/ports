@@ -63,7 +63,7 @@ Index: php.ini-development
 +; Others (including database drivers) are packaged separately and must
 +; be enabled in your configuration; this is normally done by creating
 +; symlinks in ${SYSCONFDIR}/php-${PV}. See the package documentation in
-+; ${PREFIX}/share/doc/pkg-readmes/${PKSTEM} for more details.
++; ${TRUEPREFIX}/share/doc/pkg-readmes/${PKGSTEM} for more details.
  
 -; The MIBS data available in the PHP distribution must be installed.
 -; See https://www.php.net/manual/en/snmp.installation.php

@@ -42,7 +42,7 @@ Index: php.ini-development
 +; Others (including database drivers) are packaged separately and must
 +; be enabled in your configuration; this is normally done by creating
 +; symlinks in ${SYSCONFDIR}/php-${PV}. See the package documentation in
-+; ${PREFIX}/share/doc/pkg-readmes/${PKSTEM} for more details.
++; ${TRUEPREFIX}/share/doc/pkg-readmes/${PKGSTEM} for more details.
  
 -; The ldap extension must be before curl if OpenSSL 1.0.2 and OpenLDAP is used
 -; otherwise it results in segfault when unloading after using SASL.

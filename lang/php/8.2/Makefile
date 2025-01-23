@@ -1,6 +1,6 @@
 PHP_VERSION=	8.2.27
 AUTOCONF_VERSION= 2.72
-REVISION-main=	3
+REVISION-main=	4
 
 # keep all subpackages above 7.6-stable; @pkgpath markers, WANTLIB-gd
 REVISION=	0
