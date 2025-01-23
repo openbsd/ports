@@ -1,6 +1,5 @@
 COMMENT =	module audio player
-DISTNAME =	mikmod-3.2.8
-REVISION =	2
+DISTNAME =	mikmod-3.2.9
 
 CATEGORIES =	audio
 
@@ -9,7 +8,7 @@ HOMEPAGE =	https://mikmod.sourceforge.net/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=	c m mikmod curses pthread sndio
+WANTLIB +=	c mikmod curses pthread sndio
 
 SITES =		${SITE_SOURCEFORGE:=mikmod/}
 
