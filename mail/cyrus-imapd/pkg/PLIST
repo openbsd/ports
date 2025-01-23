@@ -20,6 +20,8 @@ cyrus/bin/sivtest
 cyrus/bin/smtptest
 cyrus/bin/synctest
 cyrus/libexec/
+@bin cyrus/libexec/backupd
+@bin cyrus/libexec/calalarmd
 @bin cyrus/libexec/fud
 @bin cyrus/libexec/httpd
 @bin cyrus/libexec/idled
@@ -35,6 +37,7 @@ cyrus/libexec/pop3proxyd
 cyrus/libexec/proxyd
 @bin cyrus/libexec/ptloader
 @bin cyrus/libexec/smmapd
+@bin cyrus/libexec/sync_server
 @bin cyrus/libexec/timsieved
 @mandir cyrus/man/
 cyrus/man/man1/
@@ -110,12 +113,16 @@ cyrus/man/man8/
 @man cyrus/man/man8/sieved.8
 @man cyrus/man/man8/smmapd.8
 @man cyrus/man/man8/squatter.8
+@man cyrus/man/man8/sync_client.8
+@man cyrus/man/man8/sync_reset.8
+@man cyrus/man/man8/sync_server.8
 @man cyrus/man/man8/timsieved.8
 @man cyrus/man/man8/tls_prune.8
 @man cyrus/man/man8/unexpunge.8
 cyrus/sbin/
 @bin cyrus/sbin/arbitron
 @bin cyrus/sbin/chk_cyrus
+@bin cyrus/sbin/ctl_backups
 @bin cyrus/sbin/ctl_conversationsdb
 @bin cyrus/sbin/ctl_cyrusdb
 @bin cyrus/sbin/ctl_deliver
@@ -123,6 +130,7 @@ cyrus/sbin/
 @bin cyrus/sbin/ctl_zoneinfo
 @bin cyrus/sbin/cvt_cyrusdb
 @bin cyrus/sbin/cvt_xlist_specialuse
+@bin cyrus/sbin/cyr_backup
 @bin cyrus/sbin/cyr_buildinfo
 cyrus/sbin/cyr_cd.sh
 @bin cyrus/sbin/cyr_dbtool
@@ -147,9 +155,12 @@ cyrus/sbin/cyr_cd.sh
 @bin cyrus/sbin/quota
 @bin cyrus/sbin/reconstruct
 @bin cyrus/sbin/relocate_by_id
+@bin cyrus/sbin/restore
 @bin cyrus/sbin/sievec
 @bin cyrus/sbin/sieved
 @bin cyrus/sbin/squatter
+@bin cyrus/sbin/sync_client
+@bin cyrus/sbin/sync_reset
 @bin cyrus/sbin/tls_prune
 @bin cyrus/sbin/unexpunge
 include/cyrus/
@@ -523,6 +534,7 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/3.10/x/3.10.0-beta2.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.10/x/3.10.0-rc1.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.10/x/3.10.0-rc2.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.10/x/3.10.0.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.10/x/3.10.1.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.11/
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.11/index.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.2/
@@ -585,6 +597,7 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/3.6/x/3.6.3.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.6/x/3.6.4.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.6/x/3.6.5.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.6/x/3.6.6.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.6/x/3.6.7.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.7/
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.7/index.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.7/x/
@@ -601,6 +614,7 @@ share/doc/cyrus-imapd/html/imap/download/release-notes/3.8/x/3.8.1.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.8/x/3.8.2.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.8/x/3.8.3.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.8/x/3.8.4.html
+share/doc/cyrus-imapd/html/imap/download/release-notes/3.8/x/3.8.5.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.9/
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.9/index.html
 share/doc/cyrus-imapd/html/imap/download/release-notes/3.9/x/
