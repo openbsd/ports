@@ -13,8 +13,8 @@ lib/python${MODPY_VERSION}/site-packages/repoze/who/
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/repoze/who/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/repoze/who/${MODPY_PYCACHE}_auth_tkt.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/repoze/who/${MODPY_PYCACHE}_auth_tkt.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/repoze/who/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/repoze/who/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/repoze/who/${MODPY_PYCACHE}_helpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/repoze/who/${MODPY_PYCACHE}_helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/repoze/who/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/repoze/who/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/repoze/who/${MODPY_PYCACHE}classifiers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -30,7 +30,7 @@ lib/python${MODPY_VERSION}/site-packages/repoze/who/${MODPY_PYCACHE}restrict.${M
 lib/python${MODPY_VERSION}/site-packages/repoze/who/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/repoze/who/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/repoze/who/_auth_tkt.py
-lib/python${MODPY_VERSION}/site-packages/repoze/who/_compat.py
+lib/python${MODPY_VERSION}/site-packages/repoze/who/_helpers.py
 lib/python${MODPY_VERSION}/site-packages/repoze/who/api.py
 lib/python${MODPY_VERSION}/site-packages/repoze/who/classifiers.py
 lib/python${MODPY_VERSION}/site-packages/repoze/who/config.py
@@ -73,10 +73,7 @@ lib/python${MODPY_VERSION}/site-packages/repoze/who/plugins/tests/fixtures/__ini
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/repoze/who/plugins/tests/fixtures/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/repoze/who/plugins/tests/fixtures/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/repoze/who/plugins/tests/fixtures/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/repoze/who/plugins/tests/fixtures/${MODPY_PYCACHE}testapp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/repoze/who/plugins/tests/fixtures/${MODPY_PYCACHE}testapp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/repoze/who/plugins/tests/fixtures/test.htpasswd
-lib/python${MODPY_VERSION}/site-packages/repoze/who/plugins/tests/fixtures/testapp.py
 lib/python${MODPY_VERSION}/site-packages/repoze/who/plugins/tests/test_authtkt.py
 lib/python${MODPY_VERSION}/site-packages/repoze/who/plugins/tests/test_basicauth.py
 lib/python${MODPY_VERSION}/site-packages/repoze/who/plugins/tests/test_htpasswd.py
@@ -90,8 +87,8 @@ lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/${MODPY_PYCACHE}__init
 lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/${MODPY_PYCACHE}test__auth_tkt.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/${MODPY_PYCACHE}test__auth_tkt.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/${MODPY_PYCACHE}test__compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/${MODPY_PYCACHE}test__compat.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/${MODPY_PYCACHE}test__helpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/${MODPY_PYCACHE}test__helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/${MODPY_PYCACHE}test_api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/${MODPY_PYCACHE}test_api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/${MODPY_PYCACHE}test_classifiers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -103,7 +100,7 @@ lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/${MODPY_PYCACHE}test_m
 lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/${MODPY_PYCACHE}test_restrict.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/${MODPY_PYCACHE}test_restrict.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/test__auth_tkt.py
-lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/test__compat.py
+lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/test__helpers.py
 lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/test_api.py
 lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/test_classifiers.py
 lib/python${MODPY_VERSION}/site-packages/repoze/who/tests/test_config.py

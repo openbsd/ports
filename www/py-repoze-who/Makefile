@@ -1,21 +1,19 @@
-COMMENT =	identification and authentication framework for WSGI
+COMMENT=	identification and authentication framework for WSGI
 
-MODPY_DISTV =	2.4.1
-DISTNAME =	repoze.who-${MODPY_DISTV}
-PKGNAME =	py-${DISTNAME:S/./-/}
-REVISION =	3
+MODPY_DISTV=	3.0.0
+DISTNAME=	repoze.who-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME:S/./-/}
 
-CATEGORIES =	www devel
+CATEGORIES=	www devel
 
 # BSD-derived
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =	lang/python
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
-MODPY_PYTEST_ARGS =	repoze/who/tests
-
-RUN_DEPENDS =		www/py-webob
+RUN_DEPENDS=	devel/py-zopeinterface \
+		www/py-webob
 
 .include <bsd.port.mk>
