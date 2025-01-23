@@ -1,0 +1,23 @@
+Moved into a new namespace in Vulkan-Headers v1.3.301.0.
+
+Index: vulkan/vulkan_context.cpp
+--- vulkan/vulkan_context.cpp.orig
++++ vulkan/vulkan_context.cpp
+@@ -6,7 +6,7 @@
+ namespace Vulkan
+ {
+ 
+-static std::unique_ptr<vk::DynamicLoader> dl;
++static std::unique_ptr<vk::detail::DynamicLoader> dl;
+ 
+ Context::Context()
+ {
+@@ -32,7 +32,7 @@ static bool load_loader()
+     if (dl)
+         return true;
+ 
+-    dl = std::make_unique<vk::DynamicLoader>();
++    dl = std::make_unique<vk::detail::DynamicLoader>();
+     if (!dl->success())
+     {
+         dl.reset();
