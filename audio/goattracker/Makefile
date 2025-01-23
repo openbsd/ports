@@ -1,6 +1,6 @@
 COMMENT =	crossplatform music editor for creating Commodore 64 music
 
-V =		2.76
+V =		2.77
 DISTNAME =	GoatTracker_${V}
 PKGNAME =	goattracker-${V}
 
@@ -32,6 +32,9 @@ MAKE_FLAGS =	CC="${CC}" CXX="${CXX}"
 MAKE_FILE =	makefile
 
 NO_TEST =	Yes
+
+post-extract:
+	rm -f ${WRKSRC}/*/*.o ${WRKSRC}/*.o
 
 do-install:
 	for f in goattrk2 gt2reloc ins2snd2 mod2sng sngspli2; do \
