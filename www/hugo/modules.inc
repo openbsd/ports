@@ -143,8 +143,8 @@ MODGO_MODULES =	\
 	github.com/!burnt!sushi/toml							 v0.3.1 \
 	github.com/!burnt!sushi/xgb							 v0.0.0-20160522181843-27f122750802 \
 	github.com/!google!cloud!platform/cloudsql-proxy				 v1.36.0 \
-	github.com/alecthomas/assert/v2							 v2.7.0 \
-	github.com/alecthomas/chroma/v2							 v2.14.0 \
+	github.com/alecthomas/assert/v2							 v2.11.0 \
+	github.com/alecthomas/chroma/v2							 v2.15.0 \
 	github.com/alecthomas/repr							 v0.4.0 \
 	github.com/armon/go-radix							 v1.0.1-0.20221118154546-54df44f2176c \
 	github.com/aws/aws-sdk-go							 v1.55.5 \
@@ -205,12 +205,12 @@ MODGO_MODULES =	\
 	github.com/davecgh/go-spew							 v1.1.1 \
 	github.com/disintegration/gift							 v1.2.1 \
 	github.com/djherbis/atime							 v1.1.0 \
-	github.com/dlclark/regexp2							 v1.11.0 \
+	github.com/dlclark/regexp2							 v1.11.4 \
 	github.com/dnaeon/go-vcr							 v1.2.0 \
 	github.com/dustin/go-humanize							 v1.0.1 \
 	github.com/envoyproxy/go-control-plane						 v0.13.0 \
 	github.com/envoyproxy/protoc-gen-validate					 v1.1.0 \
-	github.com/evanw/esbuild							 v0.24.0 \
+	github.com/evanw/esbuild							 v0.24.2 \
 	github.com/fatih/color								 v1.18.0 \
 	github.com/felixge/fgprof							 v0.9.3 \
 	github.com/felixge/httpsnoop							 v1.0.4 \
@@ -230,7 +230,7 @@ MODGO_MODULES =	\
 	github.com/gobuffalo/flect							 v1.0.3 \
 	github.com/gobwas/glob								 v0.2.3 \
 	github.com/gohugoio/go-i18n/v2							 v2.1.3-0.20230805085216-e63c13218d0e \
-	github.com/gohugoio/hashstructure						 v0.1.0 \
+	github.com/gohugoio/hashstructure						 v0.3.0 \
 	github.com/gohugoio/httpcache							 v0.7.0 \
 	github.com/gohugoio/hugo-goldmark-extensions/extras				 v0.2.0 \
 	github.com/gohugoio/hugo-goldmark-extensions/passthrough			 v0.3.0 \
@@ -344,21 +344,21 @@ MODGO_MODULES =	\
 	go.uber.org/multierr								 v1.11.0 \
 	go.uber.org/zap									 v1.27.0 \
 	gocloud.dev									 v0.40.0 \
-	golang.org/x/crypto								 v0.31.0 \
+	golang.org/x/crypto								 v0.32.0 \
 	golang.org/x/exp								 v0.0.0-20221031165847-c99f073a8326 \
 	golang.org/x/image								 v0.22.0 \
 	golang.org/x/lint								 v0.0.0-20201208152925-83fdc39ff7b5 \
 	golang.org/x/mobile								 v0.0.0-20190719004257-d2bd2a29d028 \
 	golang.org/x/mod								 v0.22.0 \
-	golang.org/x/net								 v0.33.0 \
+	golang.org/x/net								 v0.34.0 \
 	golang.org/x/oauth2								 v0.24.0 \
 	golang.org/x/sync								 v0.10.0 \
-	golang.org/x/sys								 v0.28.0 \
+	golang.org/x/sys								 v0.29.0 \
 	golang.org/x/telemetry								 v0.0.0-20240521205824-bda55230c457 \
-	golang.org/x/term								 v0.27.0 \
+	golang.org/x/term								 v0.28.0 \
 	golang.org/x/text								 v0.21.0 \
 	golang.org/x/time								 v0.8.0 \
-	golang.org/x/tools								 v0.28.0 \
+	golang.org/x/tools								 v0.29.0 \
 	golang.org/x/xerrors								 v0.0.0-20240716161551-93cc26a95ae9 \
 	google.golang.org/api								 v0.206.0 \
 	google.golang.org/appengine							 v1.6.8 \
@@ -377,6 +377,7 @@ MODGO_MODULES =	\
 	honnef.co/go/tools								 v0.0.1-2020.1.4 \
 	howett.net/plist								 v1.0.0 \
 	rsc.io/binaryregexp								 v0.2.0 \
+	rsc.io/qr									 v0.2.0 \
 	rsc.io/quote/v3									 v3.1.0 \
 	rsc.io/sampler									 v1.3.0 \
 	software.sslmate.com/src/go-pkcs12						 v0.2.0
@@ -723,7 +724,6 @@ MODGO_MODFILES =	\
 	golang.org/x/net								 v0.29.0 \
 	golang.org/x/net								 v0.30.0 \
 	golang.org/x/net								 v0.31.0 \
-	golang.org/x/net								 v0.32.0 \
 	golang.org/x/net								 v0.6.0 \
 	golang.org/x/oauth2								 v0.0.0-20180821212333-d2e6202438be \
 	golang.org/x/oauth2								 v0.0.0-20190226205417-e64efc72b421 \
