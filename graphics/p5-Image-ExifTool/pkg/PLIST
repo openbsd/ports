@@ -134,6 +134,7 @@ ${P5SITE}/Image/ExifTool/Lang/tr.pm
 ${P5SITE}/Image/ExifTool/Lang/zh_cn.pm
 ${P5SITE}/Image/ExifTool/Lang/zh_tw.pm
 ${P5SITE}/Image/ExifTool/Leaf.pm
+${P5SITE}/Image/ExifTool/LigoGPS.pm
 ${P5SITE}/Image/ExifTool/Lytro.pm
 ${P5SITE}/Image/ExifTool/M2TS.pm
 ${P5SITE}/Image/ExifTool/MIE.pm
@@ -219,6 +220,7 @@ ${P5SITE}/Image/ExifTool/Torrent.pm
 ${P5SITE}/Image/ExifTool/Unknown.pm
 ${P5SITE}/Image/ExifTool/VCard.pm
 ${P5SITE}/Image/ExifTool/Validate.pm
+${P5SITE}/Image/ExifTool/Vivo.pm
 ${P5SITE}/Image/ExifTool/Vorbis.pm
 ${P5SITE}/Image/ExifTool/WPG.pm
 ${P5SITE}/Image/ExifTool/WTV.pm
@@ -335,6 +337,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::Lang::zh_cn.3p
 @man man/man3p/Image::ExifTool::Lang::zh_tw.3p
 @man man/man3p/Image::ExifTool::Leaf.3p
+@man man/man3p/Image::ExifTool::LigoGPS.3p
 @man man/man3p/Image::ExifTool::Lytro.3p
 @man man/man3p/Image::ExifTool::M2TS.3p
 @man man/man3p/Image::ExifTool::MIE.3p
@@ -419,6 +422,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::Unknown.3p
 @man man/man3p/Image::ExifTool::VCard.3p
 @man man/man3p/Image::ExifTool::Validate.3p
+@man man/man3p/Image::ExifTool::Vivo.3p
 @man man/man3p/Image::ExifTool::Vorbis.3p
 @man man/man3p/Image::ExifTool::WPG.3p
 @man man/man3p/Image::ExifTool::WTV.3p
