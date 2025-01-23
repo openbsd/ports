@@ -1,0 +1,12 @@
+Index: ng/CMakeLists.txt
+--- ng/CMakeLists.txt.orig
++++ ng/CMakeLists.txt
+@@ -37,7 +37,7 @@ endif(USE_GUI)
+ if(USE_PYTHON)
+     add_library(ngpy SHARED netgenpy.cpp)
+     target_link_libraries( ngpy PUBLIC nglib PRIVATE "$<BUILD_INTERFACE:netgen_python>" )
+-    target_link_libraries( ngpy PRIVATE ${CMAKE_THREAD_LIBS_INIT} ${JPEG_LIBRARIES} ${MKL_LIBRARIES} ${ZLIB_LIBRARIES} occ_libs netgen_cgns )
++    target_link_libraries( ngpy PRIVATE ${CMAKE_THREAD_LIBS_INIT} ${JPEG_LIBRARIES} ${MKL_LIBRARIES} ${ZLIB_LIBRARIES} occ_libs netgen_cgns -L/usr/X11R6/lib)
+     if(APPLE)
+         set_target_properties( ngpy PROPERTIES SUFFIX ".so")
+     elseif(WIN32)

@@ -1,0 +1,11 @@
+Index: tutorials/CMakeLists.txt
+--- tutorials/CMakeLists.txt.orig
++++ tutorials/CMakeLists.txt
+@@ -7,6 +7,6 @@ install( FILES 
+         twobricks.geo twocubes.geo twocyl.geo boundarycondition.geo			   
+         hinge.stl  part1.stl frame.step  screw.step					   
+         squarehole.in2d squarecircle.in2d square.in2d
+-        DESTINATION ${NG_INSTALL_DIR_RES}/${NG_INSTALL_SUFFIX}
++        DESTINATION ${NG_INSTALL_DIR_RES}/examples/${NG_INSTALL_SUFFIX}
+         COMPONENT netgen_tutorial
+        )

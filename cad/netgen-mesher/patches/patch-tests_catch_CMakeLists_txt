@@ -1,0 +1,18 @@
+From catch2 version 3 and on, linking against Catch2's default main is done
+with the Catch2WithMain target.
+
+See https://github.com/catchorg/Catch2/blob/v3.0.1/docs/migrate-v2-to-v3.md#how-to-migrate-projects-from-v2-to-v3
+
+Index: tests/catch/CMakeLists.txt
+--- tests/catch/CMakeLists.txt.orig
++++ tests/catch/CMakeLists.txt
+@@ -7,7 +7,8 @@ include_directories(${CATCH_INCLUDE_DIR} ${CMAKE_CURRE
+ add_library(catch_main STATIC main.cpp)
+ set_target_properties(catch_main PROPERTIES CXX_STANDARD 17)
+ add_dependencies(unit_tests catch_main)
+-add_dependencies(catch_main project_catch)
++
++target_link_libraries(catch_main Catch2::Catch2WithMain)
+ 
+ # ensure the test targets are built before testing
+ add_test(NAME unit_tests_built COMMAND ${CMAKE_COMMAND} --build . --target unit_tests --config ${CMAKE_BUILD_TYPE} WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/../.. )

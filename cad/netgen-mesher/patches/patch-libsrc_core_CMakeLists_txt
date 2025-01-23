@@ -1,0 +1,22 @@
+Index: libsrc/core/CMakeLists.txt
+--- libsrc/core/CMakeLists.txt.orig
++++ libsrc/core/CMakeLists.txt
+@@ -58,8 +58,6 @@ if(WIN32)
+   get_WIN32_WINNT(ver)
+   target_compile_definitions(ngcore PUBLIC _WIN32_WINNT=${ver} WNT WNT_WINDOW NOMINMAX MSVC_EXPRESS _CRT_SECURE_NO_WARNINGS HAVE_STRUCT_TIMESPEC WIN32)
+   target_link_options(ngcore PUBLIC /ignore:4273 /ignore:4217 /ignore:4049)
+-else(WIN32)
+-  target_link_libraries(ngcore PUBLIC dl)
+ endif(WIN32)
+ 
+ target_compile_definitions(ngcore PRIVATE NGCORE_EXPORTS)
+@@ -85,7 +83,8 @@ endif(USE_NUMA)
+ 
+ install(TARGETS ngcore DESTINATION ${NG_INSTALL_DIR} COMPONENT netgen)
+ 
+-target_link_libraries(ngcore PRIVATE "$<BUILD_INTERFACE:netgen_python>" ${CMAKE_THREAD_LIBS_INIT})
++find_package(Backtrace)
++target_link_libraries(ngcore PRIVATE "$<BUILD_INTERFACE:netgen_python>" ${CMAKE_THREAD_LIBS_INIT} ${Backtrace_LIBRARIES})
+ 
+ install(FILES ngcore.hpp archive.hpp type_traits.hpp version.hpp ngcore_api.hpp logging.hpp memtracer.hpp
+   exception.hpp symboltable.hpp paje_trace.hpp utils.hpp profiler.hpp mpi_wrapper.hpp

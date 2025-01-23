@@ -1,0 +1,12 @@
+Index: nglib/CMakeLists.txt
+--- nglib/CMakeLists.txt.orig
++++ nglib/CMakeLists.txt
+@@ -11,7 +11,7 @@ if(EMSCRIPTEN)
+   target_include_directories(nglib PUBLIC $<TARGET_PROPERTY:ngcore,INTERFACE_INCLUDE_DIRECTORIES>)
+ else(EMSCRIPTEN)
+   target_link_libraries(nglib PUBLIC ngcore)
+-  target_link_libraries( nglib PRIVATE ${CMAKE_THREAD_LIBS_INIT} ${JPEG_LIBRARIES} ${MKL_LIBRARIES} ${ZLIB_LIBRARIES} occ_libs netgen_cgns )
++  target_link_libraries( nglib PRIVATE ${CMAKE_THREAD_LIBS_INIT} ${JPEG_LIBRARIES} ${MKL_LIBRARIES} ${ZLIB_LIBRARIES} occ_libs netgen_cgns -L/usr/X11R6/lib)
+ endif(EMSCRIPTEN)
+ 
+ install(TARGETS nglib netgen_cgns ${NG_INSTALL_DIR})

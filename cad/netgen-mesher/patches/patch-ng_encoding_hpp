@@ -1,0 +1,13 @@
+Index: ng/encoding.hpp
+--- ng/encoding.hpp.orig
++++ ng/encoding.hpp
+@@ -3,6 +3,9 @@
+ 
+ #ifdef FFMPEG
+ 
++#include <mystdlib.h>
++using namespace std;
++
+ extern "C" {
+ #include <libavutil/avassert.h>
+ #include <libavcodec/avcodec.h>

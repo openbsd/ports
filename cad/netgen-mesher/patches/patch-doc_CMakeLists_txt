@@ -1,0 +1,6 @@
+Index: doc/CMakeLists.txt
+--- doc/CMakeLists.txt.orig
++++ doc/CMakeLists.txt
+@@ -1 +1 @@
+-INSTALL(FILES ng4.pdf DESTINATION ${NG_INSTALL_DIR_RES}/${NG_INSTALL_SUFFIX}/doc COMPONENT netgen_doc)
++INSTALL(FILES ng4.pdf DESTINATION ${NG_INSTALL_DIR_RES}/doc/${NG_INSTALL_SUFFIX} COMPONENT netgen_doc)

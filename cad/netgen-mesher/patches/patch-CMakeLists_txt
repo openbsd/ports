@@ -1,0 +1,38 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -272,7 +272,6 @@ endif()
+ 
+ if (USE_GUI)
+     find_package(TCL 8.5 REQUIRED)
+-    find_package(TclStub 8.5 REQUIRED)
+     find_package(Threads REQUIRED)
+     if(APPLE)
+           set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -framework AppKit")
+@@ -417,6 +416,9 @@ if (USE_OCC)
+     if(WIN32 AND USE_GUI)
+       target_link_libraries(nggui PRIVATE occ_libs Ws2_32.lib)
+     endif(WIN32 AND USE_GUI)
++    if(USE_GUI)
++      target_link_libraries(nggui PRIVATE occ_libs -L/usr/X11R6/lib)
++    endif(USE_GUI)
+ endif (USE_OCC)
+ 
+ #######################################################################
+@@ -437,6 +439,7 @@ endif (USE_MPEG)
+ add_custom_target(ng_generate_version_file
+   ${CMAKE_COMMAND}
+     -DBDIR=${CMAKE_CURRENT_BINARY_DIR}
++    -DNETGEN_VERSION_GIT=${NETGEN_VERSION_GIT}
+     -P ${CMAKE_CURRENT_LIST_DIR}/cmake/generate_version_file.cmake
+     )
+ #######################################################################
+@@ -478,7 +481,7 @@ enable_testing()
+ include(CTest)
+ 
+ if(ENABLE_UNIT_TESTS)
+-  include(${CMAKE_CURRENT_LIST_DIR}/cmake/external_projects/catch.cmake)
++  find_package(Catch2 REQUIRED)
+ endif(ENABLE_UNIT_TESTS)
+ 
+ 

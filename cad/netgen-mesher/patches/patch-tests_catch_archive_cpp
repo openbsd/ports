@@ -1,0 +1,24 @@
+From catch2 version 3 and on, the catch.hpp header needs to be changed to
+catch_all.hpp.
+
+See https://github.com/catchorg/Catch2/blob/v3.0.1/docs/migrate-v2-to-v3.md#how-to-migrate-projects-from-v2-to-v3
+
+Index: tests/catch/archive.cpp
+--- tests/catch/archive.cpp.orig
++++ tests/catch/archive.cpp
+@@ -1,5 +1,5 @@
+ 
+-#include <catch2/catch.hpp>
++#include <catch2/catch_all.hpp>
+ #include <../core/ngcore.hpp>
+ #include <core/register_archive.hpp>
+ #include <core/logging.hpp>
+@@ -354,7 +354,7 @@ void testArchive(Archive& in, Archive& out)
+   SECTION("Not registered")
+     {
+       SharedPtrAndPtrHolder* p = new NotRegisteredForArchive;
+-      REQUIRE_THROWS(out & p, Catch::Contains("not registered for archive"));
++      REQUIRE_THROWS(out & p, Catch::Matchers::ContainsSubstring("not registered for archive"));
+     }
+   SECTION("Non-default constructor")
+     {
