@@ -5,6 +5,7 @@ COMMENT =	open source game engine based on FreeSpace 2
 
 V =		23.2.1
 PKGNAME =	fs2open-${V}
+REVISION =	0
 
 CATEGORIES =	games
 
@@ -17,7 +18,7 @@ PERMIT_DISTFILES =	no license at all
 # GL is dlopen'd
 WANTLIB += ${COMPILER_LIBCXX} GL SDL2 avcodec avformat avutil c freetype iconv
 WANTLIB += jansson jpeg ${MODLUA_WANTLIB} m openal png swresample swscale
-WANTLIB += usb-1.0 vulkan z
+WANTLIB += usb-1.0 z
 
 DIST_TUPLE +=	github scp-fs2open fs2open.github.com release_${V:S/./_/g} .
 DIST_TUPLE +=	github asarium cmake-modules \
@@ -36,15 +37,20 @@ LIB_DEPENDS =		audio/openal \
 			devel/libusb1 \
 			devel/sdl2 \
 			graphics/ffmpeg \
-			graphics/png \
-			graphics/vulkan-loader
+			graphics/png
 
 CXXFLAGS +=		-I${X11BASE}/include -I${LOCALBASE}/include
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 
 CONFIGURE_ARGS =	-DCMAKE_INSTALL_PREFIX=${LOCALBASE}/share/fs2open \
-			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=On \
-			-DFSO_BUILD_WITH_VULKAN=On
+			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=On
+
+# XXX: disable vulkan until upstream supports vulkan 1.4 API:
+#	error: assigning to 'vk::PFN_DebugReportCallbackEXT' (...) from
+#		incompatible type VkBool32 ...
+#	error: no template named 'ObjectDestroy' in namespace 'vk';
+#		did you mean 'vk::detail::ObjectDestroy'?
+CONFIGURE_ARGS +=	-DFSO_BUILD_WITH_VULKAN=Off
 
 # currently not building; would be ${WRKBUILD}/bin/unittests
 NO_TEST =		Yes
