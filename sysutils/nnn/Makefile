@@ -3,6 +3,7 @@ COMMENT =		the missing terminal file browser for X
 V =			5.0
 DISTNAME =		nnn-v${V}
 PKGNAME =		nnn-${V}
+REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -43,9 +44,9 @@ post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions/
 	${INSTALL_DATA} ${WRKSRC}/misc/auto-completion/bash/nnn-completion.bash \
 		${PREFIX}/share/bash-completion/completions/nnn
-	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/completions/
+	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/vendor_completions.d/
 	${INSTALL_DATA} ${WRKSRC}/misc/auto-completion/fish/nnn.fish \
-		${PREFIX}/share/fish/completions/
+		${PREFIX}/share/fish/vendor_completions.d/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions/
 	${INSTALL_DATA} ${WRKSRC}/misc/auto-completion/zsh/_nnn \
 		${PREFIX}/share/zsh/site-functions/
