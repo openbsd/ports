@@ -111,6 +111,13 @@ CXXFLAGS-i386 =		-fno-ret-protector -mno-retpoline
 CXXFLAGS-mips64 =	-fno-ret-protector -fomit-frame-pointer
 CXXFLAGS-mips64el =	-fno-ret-protector -fomit-frame-pointer
 CXXFLAGS-powerpc =	-fno-ret-protector
+
+# Avoid GOT overflow.
+.if ${LLVM_MAJOR} > 17
+CXXFLAGS-mips64 +=	-mxgot
+CXXFLAGS-mips64el +=	-mxgot
+.endif
+
 CXXFLAGS +=		${CXXFLAGS-${MACHINE_ARCH}}
 
 ALL_TARGET =		all docs-llvm-man docs-clang-man
