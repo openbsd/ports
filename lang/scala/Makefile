@@ -1,8 +1,8 @@
 COMMENT=	general purpose multi-paradigm programming language
 
-VERSION =	3.6.2
+VERSION=	3.6.3
 JNA_VERSION=	5.15.0
-JLINE_VERSION=	3.27.0
+JLINE_VERSION=	3.27.1
 SCALA2_VERSION=	2.13.15
 
 DISTNAME=	scala3-${VERSION}
