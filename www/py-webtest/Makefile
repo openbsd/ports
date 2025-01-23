@@ -1,31 +1,28 @@
-COMMENT =		helper to test wsgi applications
+COMMENT=	helper to test wsgi applications
 
-MODPY_DISTV =	2.0.35
-DISTNAME =		WebTest-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME:L}
-REVISION =		4
+MODPY_DISTV=	3.0.3
+DISTNAME=	webtest-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =		www devel
+CATEGORIES=	www devel
 
-HOMEPAGE =		http://webtest.pythonpaste.org/
+# https://github.com/Pylons/webtest
+HOMEPAGE=	https://docs.pylonsproject.org/projects/webtest/
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
-MODPY_PYTEST_ARGS =	tests
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS =		devel/py-six \
-			www/py-waitress \
-			www/py-beautifulsoup4 \
-			www/py-webob>=1.2
+RUN_DEPENDS=	www/py-waitress \
+		www/py-beautifulsoup4 \
+		www/py-webob
 
 # also needs WSGIProxy2 and PasteDeploy
-TEST_DEPENDS =		devel/py-coverage \
-			devel/py-mock \
-			www/py-query
+TEST_DEPENDS=	devel/py-test-cov \
+		www/py-query
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
-@pkgpath www/py-webtest,python3
 @conflict py-webtest-*
+@pkgpath www/py-webtest,python3
 lib/python${MODPY_VERSION}/site-packages/WebTest-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/WebTest-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/WebTest-${MODPY_DISTV}.dist-info/RECORD
