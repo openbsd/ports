@@ -5,6 +5,8 @@ PKGNAME =	wasi-libcxx-${LLVM_V}
 LIBPATH =	wasm32-wasi/libc++.a
 BUILDSUBDIR =	libcxx
 
+REVISION =	0
+
 # In transition from BSD-ish to Apache 2 + LLVM exceptions
 PERMIT_PACKAGE =	Yes
 

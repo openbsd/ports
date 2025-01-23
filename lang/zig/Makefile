@@ -11,6 +11,8 @@ GH_ACCOUNT =	ziglang
 GH_PROJECT =	zig
 GH_COMMIT =	${ZIG_COMMIT}
 
+REVISION =	0
+
 # see https://github.com/ziglang/zig/tree/0.13.0
 ZIG_VERSION =	0.13.0
 ZIG_COMMIT =	cf90dfd3098bef5b3c22d5ab026173b3c357f2dd
@@ -24,7 +26,7 @@ MAINTAINER =	Sebastien Marie <semarie@kapouay.eu.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =	${COMPILER_LIBCXX} c m
+WANTLIB =	c m pthread
 
 # C++17
 COMPILER =	ports-clang

@@ -5,6 +5,8 @@ GH_PROJECT =	Catch2
 GH_TAGNAME =	v3.7.1
 PKGNAME =	${DISTNAME:L}
 
+REVISION =	0
+
 CATEGORIES =	devel
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>

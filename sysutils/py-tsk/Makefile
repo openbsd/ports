@@ -3,7 +3,7 @@ COMMENT =	Python bindings for The Sleuth Kit (libtsk)
 MODPY_DISTV =	20200117
 DISTNAME =	pytsk3-${MODPY_DISTV}
 PKGNAME =	py-tsk-${MODPY_DISTV}
-REVISION =	7
+REVISION =	8
 
 CATEGORIES =	sysutils
 
@@ -21,7 +21,7 @@ MODULES += 		gnu
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-WANTLIB += pthread talloc tsk ${MODPY_WANTLIB}
+WANTLIB += talloc tsk ${MODPY_WANTLIB}
 
 # C++11
 COMPILER=	ports-clang ports-gcc

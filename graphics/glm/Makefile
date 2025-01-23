@@ -4,6 +4,8 @@ GH_TAGNAME=	0.9.9.8
 GH_PROJECT=	glm
 GH_ACCOUNT=	g-truc
 
+REVISION=	0
+
 CATEGORIES=	graphics math
 
 HOMEPAGE=	https://glm.g-truc.net/

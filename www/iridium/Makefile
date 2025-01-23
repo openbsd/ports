@@ -12,7 +12,7 @@ DPB_PROPERTIES+=	lonesome
 COMMENT=		Iridium browser
 
 V=			2024.11.131.1
-REVISION=		0
+REVISION=		1
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
@@ -50,14 +50,14 @@ COMPILER=		ports-clang
 # uses pledge()
 WANTLIB+=	GL X11 Xau Xcomposite Xdamage Xdmcp Xext Xfixes Xft Xi Xrandr
 WANTLIB+=	Xrender Xtst aom atk-1.0 atk-bridge-2.0 atspi c cairo
-WANTLIB+=	cbor crypto cups dav1d dbus-1 drm event execinfo expat ffi fido2
-WANTLIB+=	fontconfig freetype fribidi gbm gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB+=	gobject-2.0 graphite2 gthread-2.0 harfbuzz harfbuzz-gobject
-WANTLIB+=	harfbuzz-subset iconv icudata icui18n icuuc intl jpeg kvm m
-WANTLIB+=	nspr4 nss3 nssutil3 openh264 opus pango-1.0 pangocairo-1.0
-WANTLIB+=	pangoft2-1.0 pcre2-8 pixman-1 plc4 plds4 png pthread pthread smime3
-WANTLIB+=	sndio usbhid util vpx xcb xcb-render xcb-shm xkbcommon xml2
-WANTLIB+=	xshmfence xslt z
+WANTLIB+=	cbor crypto cups dav1d dbus-1 drm epoll-shim event execinfo
+WANTLIB+=	expat ffi fido2 fontconfig freetype fribidi gbm gio-2.0 glib-2.0
+WANTLIB+=	gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 harfbuzz 
+WANTLIB+=	harfbuzz-gobject harfbuzz-subset icudata icui18n icuuc intl jpeg
+WANTLIB+=	kvm lzma m nspr4 nss3 nssutil3 openh264 opus pango-1.0
+WANTLIB+=	pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 plc4 plds4 png
+WANTLIB+=	pthread smime3 sndio udev usbhid util vpx xcb xcb-render xcb-shm
+WANTLIB+=	xkbcommon xml2 xshmfence xslt z
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \

@@ -10,6 +10,7 @@ GH_PROJECT =		CompCert
 GH_TAGNAME =		v${V}
 DISTNAME =		${GH_PROJECT}-${V}
 PKGNAME =		${DISTNAME:L}
+REVISION =		0
 
 HOMEPAGE =		https://compcert.org/
 
@@ -18,7 +19,7 @@ CATEGORIES =		lang
 # INRIA Non-Commercial License Agreement.
 PERMIT_PACKAGE =	Yes
 
-WANTLIB	+= c m
+WANTLIB	+= c m pthread
 
 COMPILER	= ports-gcc
 
