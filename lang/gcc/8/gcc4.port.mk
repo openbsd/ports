@@ -26,7 +26,7 @@ _MODGCC4_LINKS =
 MODGCC4STDCPP = estdc++
 MODGCC4_CPPLIBDEP = lang/gcc/8,-libs>=8,<9
 MODGCC4_CPPDEP =    lang/gcc/8,-c++>=8,<9
-MODGCC4_CPPWANTLIB = estdc++>=19
+MODGCC4_CPPWANTLIB = estdc++>=19 pthread
 MODGCC4_ATOMICWANTLIB = atomic
 
 MODGCC4_FORTRANDEP = lang/gcc/8,-f95>=8,<9
@@ -50,7 +50,7 @@ COMPILER_LINKS += gcc ${LOCALBASE}/bin/egcc cc ${LOCALBASE}/bin/egcc
 .  if ${MODGCC4_LANGS:L:Mc++}
 BUILD_DEPENDS += ${MODGCC4_CPPDEP}
 LIB_DEPENDS += ${MODGCC4_CPPLIBDEP}
-WANTLIB += ${MODGCC4_CPPWANTLIB}
+LIBECXX = ${MODGCC4_CPPWANTLIB}
 # XXX ports-clang already defines this
 .    if !${COMPILER_LINKS:Mg++}
 COMPILER_LINKS += c++ ${LOCALBASE}/bin/eg++ g++ ${LOCALBASE}/bin/eg++
