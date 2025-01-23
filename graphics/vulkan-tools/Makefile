@@ -1,11 +1,10 @@
 COMMENT =	Vulkan Utilities and Tools
 
-V =		1.3.296.0
+V =		1.4.304.0
 PKGNAME =	vulkan-tools-${V}
 GH_TAGNAME =	vulkan-sdk-${V}
 GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	Vulkan-Tools
-REVISION =	1
 
 CATEGORIES =	devel graphics
 
@@ -29,11 +28,12 @@ MODPY_RUNDEP =	No
 BUILD_DEPENDS =	graphics/glslang \
 		graphics/volk \
 		graphics/vulkan-headers \
-		wayland/libinput-openbsd
+		wayland/libinput-openbsd \
+		wayland/wayland-protocols
 LIB_DEPENDS =	graphics/vulkan-loader \
 		wayland/wayland
 
-CONFIGURE_ARGS +=	-DGLSLANG_INSTALL_DIR="/usr/local"
+CONFIGURE_ARGS +=	-DGLSLANG_INSTALL_DIR="${LOCALBASE}"
 CONFIGURE_ENV +=	volk_DIR=${LOCALBASE}/lib/vulkan_volk/cmake/volk
 
 NO_TEST =	Yes

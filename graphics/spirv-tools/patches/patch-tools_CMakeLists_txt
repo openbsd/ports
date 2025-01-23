@@ -3,9 +3,9 @@ Add -lstdc++fs for ports-gcc
 Index: tools/CMakeLists.txt
 --- tools/CMakeLists.txt.orig
 +++ tools/CMakeLists.txt
-@@ -74,7 +74,7 @@ if (NOT ${SPIRV_SKIP_EXECUTABLES})
-                            objdump/extract_source.cpp
+@@ -77,7 +77,7 @@ if (NOT ${SPIRV_SKIP_EXECUTABLES})
                             util/cli_consumer.cpp
+                            io.cpp
                             ${COMMON_TOOLS_SRCS}
 -                      LIBS ${SPIRV_TOOLS_FULL_VISIBILITY})
 +                      LIBS ${SPIRV_TOOLS_FULL_VISIBILITY} ${ADDITIONAL_LIBRARIES})

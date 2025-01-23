@@ -1,6 +1,6 @@
 COMMENT =	Vulkan Validation Layers
 
-V =		1.3.296.0
+V =		1.4.304.0
 PKGNAME =	vulkan-validation-layers-${V}
 GH_TAGNAME =	vulkan-sdk-${V}
 GH_ACCOUNT =	KhronosGroup

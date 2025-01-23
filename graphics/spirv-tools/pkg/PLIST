@@ -9,7 +9,6 @@ bin/spirv-lesspipe.sh
 @bin bin/spirv-reduce
 @bin bin/spirv-val
 include/spirv-tools/
-include/spirv-tools/instrument.hpp
 include/spirv-tools/libspirv.h
 include/spirv-tools/libspirv.hpp
 include/spirv-tools/linker.hpp
