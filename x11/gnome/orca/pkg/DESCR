@@ -9,7 +9,7 @@ the Java platform's Swing toolkit, OpenOffice/LibreOffice, Gecko, and WebKitGtk.
 
 Optional dependencies:
 * brltty: support for braille
-* gstreamer1-plugins-good: support for sound
+* gst-plugins-good: support for sound
 * liblouis: support for contracted braille
 * libwnck3: support for mouse
 * speech-dispatcher: support for speech

@@ -1,5 +1,5 @@
 COMMENT =	modal webkit-based browser inspired by vim
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	fanglingsu
 GH_PROJECT =	vimb
