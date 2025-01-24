@@ -23,15 +23,13 @@ HOMEPAGE ?=		http://gstreamer.freedesktop.org/
 
 MAINTAINER ?=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-GST_PKGNAME_PREFIX=	gstreamer1
-
 # GPLv2 - GPLv2+ - LGPLv2
 PERMIT_PACKAGE ?=	Yes
 
 DIST_SUBDIR=		gstreamer
 SITE_GST=		http://gstreamer.freedesktop.org/src/
 EXTRACT_SUFX ?=		.tar.xz
-P=			multimedia/${GST_PKGNAME_PREFIX}
+P=			multimedia/gstreamer1
 
 COMPILER=		base-clang ports-gcc
 COMPILER_LANGS ?=	c
