@@ -1,0 +1,4 @@
+RESPX is a simple, yet powerful, utility for mocking out the HTTPX
+and HTTP Core libraries. It includes a decorator/context manager and
+respx_mock pytest fixture. It captures requests sent by HTTPX,
+filters and matches them against routes, and mocks their responses.
