@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1691 2025/01/21 08:08:56 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1692 2025/01/24 09:23:23 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -609,6 +609,11 @@ my $stem_extensions = {
 	'dolphin-plugins-kf5' => 'dolphin-plugins',
 	'audiocd-kio-kf5' => 'audiocd-kio',
 	'py3-path.py' => 'py3-path',
+	'gstreamer1-plugins-bad' => 'gst-plugins-bad',
+	'gstreamer1-plugins-base' => 'gst-plugins-base',
+	'gstreamer1-plugins-good' => 'gst-plugins-good',
+	'gstreamer1-plugins-libav' => 'gst-plugins-libav',
+	'gstreamer1-plugins-ugly' => 'gst-plugins-ugly',
 };
 
 my $obsolete_reason = {};
