@@ -1,6 +1,7 @@
 COMMENT =	neo simple X Image Viewer
 
 DIST_TUPLE =	github nsxiv nsxiv v32 .
+REVISION =	0
 
 CATEGORIES =	graphics x11
 
