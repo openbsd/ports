@@ -1,6 +1,6 @@
 COMMENT =		Python SSL and TLS library
 
-MODPY_DISTV =		0.8.1
+MODPY_DISTV =		0.8.2
 DISTNAME =		tlslite-ng-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/-beta/beta/}
 EPOCH =			0
