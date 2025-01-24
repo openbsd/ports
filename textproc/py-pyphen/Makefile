@@ -1,6 +1,6 @@
 COMMENT=	pure-Python hyphenation library
 
-MODPY_DISTV=	0.17.0
+MODPY_DISTV=	0.17.2
 DISTNAME=	pyphen-${MODPY_DISTV}
 PKGNAME=	py-pyphen-${MODPY_DISTV}
 
