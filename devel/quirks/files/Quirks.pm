@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1692 2025/01/24 09:23:23 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1693 2025/01/24 09:26:53 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -612,7 +612,7 @@ my $stem_extensions = {
 	'gstreamer1-plugins-bad' => 'gst-plugins-bad',
 	'gstreamer1-plugins-base' => 'gst-plugins-base',
 	'gstreamer1-plugins-good' => 'gst-plugins-good',
-	'gstreamer1-plugins-libav' => 'gst-plugins-libav',
+	'gstreamer1-plugins-libav' => 'gst-libav',
 	'gstreamer1-plugins-ugly' => 'gst-plugins-ugly',
 };
 
