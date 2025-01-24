@@ -1,6 +1,7 @@
     SUBDIR =
     SUBDIR += core
     SUBDIR += devtools
+    SUBDIR += docs
     SUBDIR += editing-services
     SUBDIR += libav
     SUBDIR += mm
