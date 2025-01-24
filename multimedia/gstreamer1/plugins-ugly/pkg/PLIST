@@ -1,3 +1,4 @@
+@conflict gstreamer1-plugins-ugly-*
 @so lib/gstreamer-${API}/libgstasf.so
 @so lib/gstreamer-${API}/libgstcdio.so
 @so lib/gstreamer-${API}/libgstdvdlpcmdec.so

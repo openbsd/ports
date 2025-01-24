@@ -1,3 +1,4 @@
+@conflict gstreamer1-plugins-bad-*
 @bin bin/gst-transcoder-${API}
 include/gstreamer-${API}/gst/analytics/
 include/gstreamer-${API}/gst/analytics/analytics-meta-prelude.h

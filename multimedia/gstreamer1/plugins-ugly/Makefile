@@ -1,7 +1,7 @@
 COMMENT=		ugly elements for GStreamer
 
 DISTNAME=		gst-plugins-ugly-${V}
-PKGNAME=		${GST_PKGNAME_PREFIX}-plugins-ugly-${V}
+REVISION=		0
 
 WANTLIB += cdio dvdread glib-2.0 gmodule-2.0 gobject-2.0 gstaudio-1.0
 WANTLIB += gstbase-1.0 gstpbutils-1.0 gstreamer-1.0 gstriff-1.0
