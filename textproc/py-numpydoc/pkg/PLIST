@@ -1,11 +1,12 @@
 @pkgpath textproc/py-numpydoc,python3
-@conflict py-numpydoc-*
+bin/numpydoc
 lib/python${MODPY_VERSION}/site-packages/numpydoc/
 lib/python${MODPY_VERSION}/site-packages/numpydoc-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/numpydoc-${MODPY_DISTV}.dist-info/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/numpydoc-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/numpydoc-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/numpydoc-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/numpydoc-${MODPY_DISTV}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/numpydoc-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/numpydoc/__init__.py
 lib/python${MODPY_VERSION}/site-packages/numpydoc/__main__.py
@@ -16,6 +17,8 @@ lib/python${MODPY_VERSION}/site-packages/numpydoc/${MODPY_PYCACHE}__main__.${MOD
 lib/python${MODPY_VERSION}/site-packages/numpydoc/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpydoc/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/numpydoc/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/numpydoc/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/numpydoc/${MODPY_PYCACHE}cli.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpydoc/${MODPY_PYCACHE}docscrape.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/numpydoc/${MODPY_PYCACHE}docscrape.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpydoc/${MODPY_PYCACHE}docscrape_sphinx.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -27,8 +30,20 @@ lib/python${MODPY_VERSION}/site-packages/numpydoc/${MODPY_PYCACHE}validate.${MOD
 lib/python${MODPY_VERSION}/site-packages/numpydoc/${MODPY_PYCACHE}xref.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/numpydoc/${MODPY_PYCACHE}xref.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numpydoc/_version.py
+lib/python${MODPY_VERSION}/site-packages/numpydoc/cli.py
 lib/python${MODPY_VERSION}/site-packages/numpydoc/docscrape.py
 lib/python${MODPY_VERSION}/site-packages/numpydoc/docscrape_sphinx.py
+lib/python${MODPY_VERSION}/site-packages/numpydoc/hooks/
+lib/python${MODPY_VERSION}/site-packages/numpydoc/hooks/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/numpydoc/hooks/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/numpydoc/hooks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/numpydoc/hooks/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/numpydoc/hooks/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/numpydoc/hooks/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/numpydoc/hooks/${MODPY_PYCACHE}validate_docstrings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/numpydoc/hooks/${MODPY_PYCACHE}validate_docstrings.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/numpydoc/hooks/utils.py
+lib/python${MODPY_VERSION}/site-packages/numpydoc/hooks/validate_docstrings.py
 lib/python${MODPY_VERSION}/site-packages/numpydoc/numpydoc.py
 lib/python${MODPY_VERSION}/site-packages/numpydoc/templates/
 lib/python${MODPY_VERSION}/site-packages/numpydoc/templates/numpydoc_docstring.rst
