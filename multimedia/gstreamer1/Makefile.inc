@@ -24,6 +24,7 @@ HOMEPAGE ?=		http://gstreamer.freedesktop.org/
 MAINTAINER ?=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # GPLv2 - GPLv2+ - LGPLv2
+# docs: BSD - CC-BY-SA-4.0 - LGPLv2.1 - MIT - OPL
 PERMIT_PACKAGE ?=	Yes
 
 DIST_SUBDIR=		gstreamer
