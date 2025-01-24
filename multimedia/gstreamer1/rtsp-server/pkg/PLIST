@@ -1,0 +1,31 @@
+include/gstreamer-${API}/gst/rtsp-server/
+include/gstreamer-${API}/gst/rtsp-server/rtsp-address-pool.h
+include/gstreamer-${API}/gst/rtsp-server/rtsp-auth.h
+include/gstreamer-${API}/gst/rtsp-server/rtsp-client.h
+include/gstreamer-${API}/gst/rtsp-server/rtsp-context.h
+include/gstreamer-${API}/gst/rtsp-server/rtsp-media-factory-uri.h
+include/gstreamer-${API}/gst/rtsp-server/rtsp-media-factory.h
+include/gstreamer-${API}/gst/rtsp-server/rtsp-media.h
+include/gstreamer-${API}/gst/rtsp-server/rtsp-mount-points.h
+include/gstreamer-${API}/gst/rtsp-server/rtsp-onvif-client.h
+include/gstreamer-${API}/gst/rtsp-server/rtsp-onvif-media-factory.h
+include/gstreamer-${API}/gst/rtsp-server/rtsp-onvif-media.h
+include/gstreamer-${API}/gst/rtsp-server/rtsp-onvif-server.h
+include/gstreamer-${API}/gst/rtsp-server/rtsp-params.h
+include/gstreamer-${API}/gst/rtsp-server/rtsp-permissions.h
+include/gstreamer-${API}/gst/rtsp-server/rtsp-sdp.h
+include/gstreamer-${API}/gst/rtsp-server/rtsp-server-object.h
+include/gstreamer-${API}/gst/rtsp-server/rtsp-server-prelude.h
+include/gstreamer-${API}/gst/rtsp-server/rtsp-server.h
+include/gstreamer-${API}/gst/rtsp-server/rtsp-session-media.h
+include/gstreamer-${API}/gst/rtsp-server/rtsp-session-pool.h
+include/gstreamer-${API}/gst/rtsp-server/rtsp-session.h
+include/gstreamer-${API}/gst/rtsp-server/rtsp-stream-transport.h
+include/gstreamer-${API}/gst/rtsp-server/rtsp-stream.h
+include/gstreamer-${API}/gst/rtsp-server/rtsp-thread-pool.h
+include/gstreamer-${API}/gst/rtsp-server/rtsp-token.h
+lib/girepository-${API}/GstRtspServer-${API}.typelib
+@so lib/gstreamer-${API}/libgstrtspclientsink.so
+@lib lib/libgstrtspserver-${API}.so.${LIBgstrtspserver-${API}_VERSION}
+lib/pkgconfig/gstreamer-rtsp-server-${API}.pc
+share/gir-${API}/GstRtspServer-${API}.gir
