@@ -1,0 +1,33 @@
+Pull in sshkey.c r1.148 to remove dependency on EC_GROUP_method_of()
+EC_METHOD_get_field_type().
+
+Index: sshkey.c
+--- sshkey.c.orig
++++ sshkey.c
+@@ -3197,14 +3197,6 @@ sshkey_ec_validate_public(const EC_GROUP *group, const
+ 		return SSH_ERR_ALLOC_FAIL;
+ 	BN_CTX_start(bnctx);
+ 
+-	/*
+-	 * We shouldn't ever hit this case because bignum_get_ecpoint()
+-	 * refuses to load GF2m points.
+-	 */
+-	if (EC_METHOD_get_field_type(EC_GROUP_method_of(group)) !=
+-	    NID_X9_62_prime_field)
+-		goto out;
+-
+ 	/* Q != infinity */
+ 	if (EC_POINT_is_at_infinity(group, public))
+ 		goto out;
+@@ -3311,11 +3303,6 @@ sshkey_dump_ec_point(const EC_GROUP *group, const EC_P
+ 	if ((x = BN_CTX_get(bnctx)) == NULL ||
+ 	    (y = BN_CTX_get(bnctx)) == NULL) {
+ 		fprintf(stderr, "%s: BN_CTX_get failed\n", __func__);
+-		return;
+-	}
+-	if (EC_METHOD_get_field_type(EC_GROUP_method_of(group)) !=
+-	    NID_X9_62_prime_field) {
+-		fprintf(stderr, "%s: group is not a prime field\n", __func__);
+ 		return;
+ 	}
+ 	if (EC_POINT_get_affine_coordinates_GFp(group, point, x, y,
