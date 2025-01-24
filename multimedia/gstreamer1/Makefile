@@ -2,10 +2,10 @@
     SUBDIR += core
     SUBDIR += devtools
     SUBDIR += editing-services
+    SUBDIR += libav
     SUBDIR += mm
     SUBDIR += plugins-base
     SUBDIR += plugins-good
-    SUBDIR += plugins-libav
     SUBDIR += plugins-ugly
     SUBDIR += plugins-bad
     SUBDIR += py-gstreamer
