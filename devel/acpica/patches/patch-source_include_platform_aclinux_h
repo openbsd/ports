@@ -1,7 +1,7 @@
 Index: source/include/platform/aclinux.h
 --- source/include/platform/aclinux.h.orig
 +++ source/include/platform/aclinux.h
-@@ -168,7 +168,11 @@
+@@ -60,7 +60,11 @@
  #define ACPI_USE_DO_WHILE_0
  #define ACPI_IGNORE_PACKAGE_RESOLUTION_ERRORS
  
@@ -13,7 +13,7 @@ Index: source/include/platform/aclinux.h
  #ifdef __KERNEL__
  
  #define ACPI_USE_SYSTEM_INTTYPES
-@@ -334,6 +338,7 @@
+@@ -226,6 +230,7 @@
  #if defined(__ia64__)    || (defined(__x86_64__) && !defined(__ILP32__)) ||\
      defined(__aarch64__) || defined(__PPC64__) ||\
      defined(__s390x__)   || defined(__loongarch__) ||\

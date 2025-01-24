@@ -1,6 +1,8 @@
 COMMENT =		reference implementation of ACPI tools
-DISTNAME =		acpica-unix-20230628
-PKGNAME =		${DISTNAME:S/-unix//}
+DISTNAME =		acpica-unix2-20241212
+PKGNAME =		${DISTNAME:S/-unix2//}
+
+FIX_EXTRACT_PERMISSIONS =	Yes
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
@@ -16,7 +18,7 @@ COMPILER_LANGS =	c
 
 WANTLIB =		c pthread
 
-SITES =			https://downloadmirror.intel.com/783534/
+SITES =			https://downloadmirror.intel.com/843390/
 
 USE_GMAKE =		Yes
 BUILD_DEPENDS =		devel/bison

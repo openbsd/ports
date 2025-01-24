@@ -1,7 +1,7 @@
 Index: generate/unix/Makefile.config
 --- generate/unix/Makefile.config.orig
 +++ generate/unix/Makefile.config
-@@ -229,11 +229,11 @@ CWARNINGFLAGS += \
+@@ -240,11 +240,11 @@ CWARNINGFLAGS += \
      -Wnested-externs\
      -Wold-style-definition\
      -Wno-format-nonliteral\
