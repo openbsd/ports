@@ -14,6 +14,11 @@ PKGNAME-cups=		gtk+4-cups-${GNOME_VERSION}
 PKGNAME-demos=		gtk+4-demos-${GNOME_VERSION}
 PKGNAME-guic=		gtk4-update-icon-cache-${GNOME_VERSION}
 PKGNAME-media=		gtk+4-media-${GNOME_VERSION}
+REVISION-cups=		0
+REVISION-demos=		0
+REVISION-guic=		0
+REVISION-main=		0
+REVISION-media=		0
 
 CATEGORIES=		x11 devel
 

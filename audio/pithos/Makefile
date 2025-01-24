@@ -1,7 +1,7 @@
 GH_ACCOUNT =	pithos
 GH_PROJECT =	pithos
 GH_TAGNAME =	1.1.2
-REVISION =	13
+REVISION =	14
 
 COMMENT =	Pandora client for GNOME
 CATEGORIES =	audio x11

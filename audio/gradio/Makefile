@@ -4,7 +4,7 @@ GH_ACCOUNT =	haecker-felix
 GH_PROJECT =	Gradio
 DISTNAME =	${GH_PROJECT:L}-${GH_TAGNAME:S/^v//}
 EPOCH =		0
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	audio www
 

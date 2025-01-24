@@ -4,7 +4,7 @@ MODPY_DISTV =	1.10.1
 GH_ACCOUNT =	otsaloma
 GH_PROJECT =	gaupol
 GH_TAGNAME =	${MODPY_DISTV}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	multimedia
 

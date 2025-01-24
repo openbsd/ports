@@ -3,7 +3,7 @@ COMMENT=	audio player and tagger for GTK+ with regex support
 MODPY_DISTV=	4.6.0
 DISTNAME=	quodlibet-${MODPY_DISTV}
 PORTROACH=	skipv:release-${MODPY_DISTV}
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	audio
 

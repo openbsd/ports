@@ -4,6 +4,9 @@ COMMENT-main =		Qt5 multimedia components
 KDE_COMMIT =		b7c7ff4ab8c0f43a03de51a76867aae691411410
 KDE_VERSION =		2
 
+REVISION-main =		0
+REVISION-examples =	0
+
 MULTI_PACKAGES =	-main -examples
 
 SHARED_LIBS +=  Qt5Multimedia             3.0 # 5.9

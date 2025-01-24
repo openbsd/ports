@@ -6,7 +6,7 @@ GH_PROJECT =	Clementine
 GH_TAGNAME =	1.4.0rc2
 EPOCH      =	0
 PKGNAME    =	clementine-${GH_TAGNAME}
-REVISION    =	1
+REVISION    =	2
 
 CATEGORIES =	audio x11
 

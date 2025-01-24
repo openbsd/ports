@@ -2,7 +2,7 @@ COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		3.4.8
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS += rhythmbox-core            0.0 # 10.0.0
 

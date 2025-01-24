@@ -4,7 +4,7 @@ GH_ACCOUNT=		trueos
 GH_PROJECT=		lumina
 GH_TAGNAME=		v1.4.0-p1
 PKGNAME=		lumina-1.4.0pl1
-REVISION=		7
+REVISION=		8
 
 CATEGORIES=		x11
 

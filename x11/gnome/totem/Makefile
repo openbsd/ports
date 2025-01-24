@@ -2,7 +2,7 @@ COMMENT=		official media player for GNOME
 
 GNOME_PROJECT=		totem
 GNOME_VERSION=		43.1
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS += totem                     0.0 # 0.0.0
 

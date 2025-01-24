@@ -1,6 +1,7 @@
 COMMENT=		RTSP server library based on GStreamer
 
 DISTNAME=		gst-rtsp-server-${V}
+REVISION=		0
 
 SHARED_LIBS += gstrtspserver-1.0         0.0 # 0.2411.0
 

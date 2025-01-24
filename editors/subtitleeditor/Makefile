@@ -2,7 +2,7 @@ COMMENT=		GTK+ subtitles editor
 
 V=			0.54.0
 DISTNAME=		subtitleeditor-${V}
-REVISION=		6
+REVISION=		7
 
 CATEGORIES=		graphics editors
 

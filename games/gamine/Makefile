@@ -1,7 +1,7 @@
 COMMENT=		interactive game for young children
 
 DISTNAME=		gamine-1.6
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		games
 

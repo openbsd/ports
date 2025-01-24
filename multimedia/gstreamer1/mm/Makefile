@@ -3,7 +3,7 @@ COMMENT=		C++ bindings for GStreamer
 GNOME_PROJECT=		gstreamermm
 GNOME_VERSION=		1.10.0
 PKGNAME=		gstreamer1mm-${GNOME_VERSION}
-REVISION=		9
+REVISION=		10
 
 SHARED_LIBS +=  gstreamermm-1.0      1.1      # 1.0
 

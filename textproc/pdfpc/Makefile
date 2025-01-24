@@ -4,6 +4,7 @@ GH_ACCOUNT=		pdfpc
 GH_PROJECT=		pdfpc
 GH_TAGNAME=		v4.6.0
 PKGNAME=		pdfpc-${GH_TAGNAME:S/v//:S/-/./:S/_/./}
+REVISION=		0
 
 CATEGORIES=		textproc
 

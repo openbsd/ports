@@ -3,7 +3,7 @@ COMMENT =	simple webbrowser based on webkit/gtk+
 DISTNAME =	surf-2.1
 CATEGORIES =	www
 HOMEPAGE =	http://surf.suckless.org/
-REVISION =	2
+REVISION =	3
 
 MAINTAINER=	Joerg Jung <jung@openbsd.org>
 

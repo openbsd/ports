@@ -1,7 +1,7 @@
 COMMENT=		extensions for Caja, the MATE file manager
 
 MATE_PROJECT=		caja-extensions
-REVISION=		0
+REVISION=		1
 
 # GPLv2
 PERMIT_PACKAGE=	Yes

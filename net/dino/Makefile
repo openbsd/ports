@@ -2,6 +2,7 @@ COMMENT=	XMPP desktop client
 VERSION=	0.4.4
 DISTNAME=	dino-${VERSION}
 CATEGORIES=	net x11
+REVISION=	0
 
 SHARED_LIBS +=	crypto-vala               0.0 # 0.0
 SHARED_LIBS +=	dino                      3.1 # 0.0

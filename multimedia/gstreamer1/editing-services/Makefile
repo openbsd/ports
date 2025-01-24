@@ -1,6 +1,7 @@
 COMMENT=		library for creating audio and video editors
 
 DISTNAME=		gst-editing-services-${V}
+REVISION=		0
 
 SHARED_LIBS += ges-1.0                   0.0 # 0.2411.0
 
