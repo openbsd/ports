@@ -94,7 +94,7 @@ RUN_DEPENDS-guic=	x11/hicolor-icon-theme
 # uses pledge()
 WANTLIB-guic += c gdk_pixbuf-2.0 glib-2.0 intl
 
-# gstreamer1-plugins-bad: gstplayer-1.0
+# gst-plugins-bad: gstplayer-1.0
 LIB_DEPENDS-media=	multimedia/gstreamer1/plugins-bad \
 			${BASE_PKGPATH},-main=${GNOME_VERSION}
 
