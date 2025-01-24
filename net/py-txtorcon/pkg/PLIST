@@ -116,6 +116,7 @@ share/examples/txtorcon/connect.py
 share/examples/txtorcon/disallow_streams_by_port.py
 share/examples/txtorcon/dns_lookups.py
 share/examples/txtorcon/hidden_echo.py
+share/examples/txtorcon/launch_onion.py
 share/examples/txtorcon/launch_tor.py
 share/examples/txtorcon/launch_tor2web.py
 share/examples/txtorcon/launch_tor_endpoint.py

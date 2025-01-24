@@ -1,23 +1,22 @@
-COMMENT =		control-spec implementation for Tor
+COMMENT=	control-spec implementation for Tor
 
-MODPY_DISTV =	22.0.0
-DISTNAME =		txtorcon-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-REVISION =		3
+MODPY_DISTV=	24.8.0
+DISTNAME=	txtorcon-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
-HOMEPAGE =		https://txtorcon.readthedocs.org
+HOMEPAGE=	https://txtorcon.readthedocs.org
 
-CATEGORIES =		net
+CATEGORIES=	net
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
-RUN_DEPENDS =		devel/py-automat \
-			devel/py-twisted
+RUN_DEPENDS=	devel/py-automat \
+		devel/py-twisted
 
 post-install:
 	mv ${PREFIX}/share/txtorcon/examples ${PREFIX}/share/examples/txtorcon
