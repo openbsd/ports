@@ -35,4 +35,7 @@ share/locale/it/LC_MESSAGES/upower.mo
 share/locale/pl/LC_MESSAGES/upower.mo
 share/locale/sv/LC_MESSAGES/upower.mo
 share/polkit-1/actions/org.freedesktop.upower.policy
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_upower
 @sample /var/db/upower/

@@ -2,10 +2,9 @@ ONLY_FOR_ARCHS =${APM_ARCHS}
 
 COMMENT =	userland power management interface
 
-V =	v1.90.6
+V =	v1.90.7
 DISTNAME =	upower-${V}
 PKGNAME =	upower-${V:S/v//}
-REVISION =	0
 
 CATEGORIES =	sysutils
 SHARED_LIBS +=  upower-glib          3.0
