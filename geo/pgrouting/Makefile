@@ -1,6 +1,6 @@
 COMMENT =	geospatial routing extension for PostgreSQL
 
-V =		3.7.1
+V =		3.7.2
 DISTNAME =	pgrouting-${V}
 SITES =		https://github.com/pgRouting/pgrouting/releases/download/v${V}/
 
