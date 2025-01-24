@@ -1,0 +1,3 @@
+@conflict gstreamer1-plugins-libav-*
+@pkgpath multimedia/gstreamer1/plugins-libav
+@so lib/gstreamer-${API}/libgstlibav.so
