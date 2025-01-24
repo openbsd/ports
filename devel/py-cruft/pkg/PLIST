@@ -2,11 +2,12 @@
 bin/cruft
 lib/python${MODPY_VERSION}/site-packages/cruft/
 lib/python${MODPY_VERSION}/site-packages/cruft-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/cruft-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/cruft-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/cruft-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/cruft-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/cruft-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/cruft-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/cruft-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/cruft/__init__.py
 lib/python${MODPY_VERSION}/site-packages/cruft/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cruft/${MODPY_PYCACHE}/
@@ -66,3 +67,4 @@ lib/python${MODPY_VERSION}/site-packages/cruft/_commands/utils/iohelper.py
 lib/python${MODPY_VERSION}/site-packages/cruft/_logo.py
 lib/python${MODPY_VERSION}/site-packages/cruft/_version.py
 lib/python${MODPY_VERSION}/site-packages/cruft/exceptions.py
+lib/python${MODPY_VERSION}/site-packages/cruft/py.typed

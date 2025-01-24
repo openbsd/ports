@@ -1,9 +1,8 @@
 COMMENT =		utility to create and maintain projects from templates
 
-MODPY_DISTV =	2.15.0
+MODPY_DISTV =		2.16.0
 DISTNAME =		cruft-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
 
 CATEGORIES =		devel
 
@@ -17,15 +16,13 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =		poetry-core
+MODPY_PYBUILD =		hatchling
 
 RUN_DEPENDS =		devel/git \
 			devel/py-click>=7.1.2 \
 			devel/py-cookiecutter>=1.7 \
 			devel/py-gitpython>=3 \
-			devel/py-poetry-core \
-			devel/py-typer \
-			textproc/py-toml>=0.10
+			devel/py-typer
 
 NO_TEST =		Yes
 
