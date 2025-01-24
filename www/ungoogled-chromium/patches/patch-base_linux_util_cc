@@ -8,7 +8,7 @@ Index: base/linux_util.cc
 +#if BUILDFLAG(IS_BSD)
 +  return false;
 +#else
-   // 25 > strlen("/proc//task") + strlen(std::to_string(INT_MAX)) + 1 = 22
+   // 25 > strlen("/proc//task") + strlen(base::NumberToString(INT_MAX)) + 1 = 22
    char buf[25];
    strings::SafeSPrintf(buf, "/proc/%d/task", pid);
    return GetThreadsFromProcessDir(buf, tids);

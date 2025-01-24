@@ -19,7 +19,7 @@ Index: gpu/command_buffer/service/shared_image/shared_image_factory.cc
    return gfx::GpuMemoryBufferType::NATIVE_PIXMAP;
  #elif BUILDFLAG(IS_WIN)
    return gfx::GpuMemoryBufferType::DXGI_SHARED_HANDLE;
-@@ -315,7 +315,7 @@ SharedImageFactory::SharedImageFactory(
+@@ -316,7 +316,7 @@ SharedImageFactory::SharedImageFactory(
          context_state_, workarounds_);
      factories_.push_back(std::move(ozone_factory));
    }

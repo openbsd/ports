@@ -28,7 +28,7 @@ Index: chrome/browser/task_manager/sampling/task_group.cc
          base::BindRepeating(&TaskGroup::OnOpenFdCountRefreshDone,
                              weak_ptr_factory_.GetWeakPtr()),
  #endif  // BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_MAC)
-@@ -325,7 +325,7 @@ void TaskGroup::OnRefreshNaClDebugStubPortDone(int nac
+@@ -324,7 +324,7 @@ void TaskGroup::OnRefreshNaClDebugStubPortDone(int nac
  }
  #endif  // BUILDFLAG(ENABLE_NACL)
  

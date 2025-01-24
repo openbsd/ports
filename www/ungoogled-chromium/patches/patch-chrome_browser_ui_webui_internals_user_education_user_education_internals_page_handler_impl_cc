@@ -19,7 +19,7 @@ Index: chrome/browser/ui/webui/internals/user_education/user_education_internals
    return g_browser_process->GetFeatures()->whats_new_registry();
  #else
    return nullptr;
-@@ -767,7 +767,7 @@ void UserEducationInternalsPageHandlerImpl::ClearWhats
+@@ -773,7 +773,7 @@ void UserEducationInternalsPageHandlerImpl::ClearWhats
  }
  
  void UserEducationInternalsPageHandlerImpl::LaunchWhatsNewStaging() {

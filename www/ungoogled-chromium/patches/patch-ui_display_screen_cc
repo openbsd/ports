@@ -5,8 +5,8 @@ Index: ui/display/screen.cc
    display_id_for_new_windows_ = display_id;
  }
  
--#if BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_LINUX)
-+#if BUILDFLAG(IS_CHROMEOS_LACROS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
+-#if BUILDFLAG(IS_LINUX)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  Screen::ScreenSaverSuspender::~ScreenSaverSuspender() = default;
  
  std::unique_ptr<Screen::ScreenSaverSuspender> Screen::SuspendScreenSaver() {

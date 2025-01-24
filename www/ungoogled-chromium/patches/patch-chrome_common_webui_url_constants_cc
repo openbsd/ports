@@ -27,7 +27,7 @@ Index: chrome/common/webui_url_constants.cc
        kChromeUISandboxHost,
  #endif
  #if BUILDFLAG(IS_WIN)
-@@ -284,7 +284,7 @@ base::span<const base::cstring_view> ChromeDebugURLs()
+@@ -282,7 +282,7 @@ base::span<const base::cstring_view> ChromeDebugURLs()
         blink::kChromeUIGpuJavaCrashURL,
         kChromeUIJavaCrashURL,
  #endif

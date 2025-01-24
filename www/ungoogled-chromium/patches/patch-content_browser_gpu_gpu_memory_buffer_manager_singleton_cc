@@ -10,7 +10,7 @@ Index: content/browser/gpu/gpu_memory_buffer_manager_singleton.cc
  bool IsGpuMemoryBufferNV12Supported() {
    static bool is_computed = false;
    static bool supported = false;
-@@ -98,7 +98,7 @@ GpuMemoryBufferManagerSingleton::GetInstance() {
+@@ -111,7 +111,7 @@ void GpuMemoryBufferManagerSingleton::RemoveObserver(
  }
  
  void GpuMemoryBufferManagerSingleton::OnGpuExtraInfoUpdate() {
