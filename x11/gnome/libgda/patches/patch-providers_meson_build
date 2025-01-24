@@ -1,0 +1,24 @@
+This port is only needed by textproc/gtranslator, so keep the dependencies to a
+minimum; there's no meson(1) option to disable these.
+
+Index: providers/meson.build
+--- providers/meson.build.orig
++++ providers/meson.build
+@@ -10,7 +10,7 @@ if sqlcipher_dep.found() and get_option('sqlcipher')
+ subdir('sqlcipher')
+ endif
+ 
+-if postgres_dep.found()
++if postgres_dep.found() and get_option('experimental')
+ subdir('postgres')
+ endif
+ 
+@@ -26,7 +26,7 @@ if lbdb_found and get_option('experimental')
+ subdir('bdb')
+ endif
+ 
+-if mysql_dep.found()
++if mysql_dep.found() and get_option('experimental')
+ subdir('mysql')
+ endif
+ 

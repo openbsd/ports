@@ -1,11 +1,14 @@
 @conflict libgda-db4-*
 @conflict libgda-ldap-*
 @conflict libgda-mysql-*
+@conflict libgda-pgsql-*
 @conflict libgda-ui-<5.1.1
 @pkgpath x11/gnome/libgda,-ldap
+@pkgpath x11/gnome/libgda,-main
 @pkgpath x11/gnome/libgda,-mdb
 @pkgpath x11/gnome/libgda,-mysql
 @pkgpath x11/gnome/libgda,-odbc
+@pkgpath x11/gnome/libgda,-pgsql
 include/libgda-6.0/
 include/libgda-6.0/libgda/
 include/libgda-6.0/libgda/gda-attributes-manager.h
@@ -178,5 +181,7 @@ share/locale/vi/LC_MESSAGES/libgda-6.0.mo
 share/locale/zh_CN/LC_MESSAGES/libgda-6.0.mo
 share/locale/zh_HK/LC_MESSAGES/libgda-6.0.mo
 share/locale/zh_TW/LC_MESSAGES/libgda-6.0.mo
+share/vala/
+share/vala/vapi/
 share/vala/vapi/libgda-6.0.deps
 share/vala/vapi/libgda-6.0.vapi
