@@ -489,6 +489,7 @@
      SUBDIR += py-requests-toolbelt
      SUBDIR += py-requests-unixsocket
      SUBDIR += py-responses
+     SUBDIR += py-respx
      SUBDIR += py-selenium
      SUBDIR += py-soupsieve
      SUBDIR += py-spotipy
