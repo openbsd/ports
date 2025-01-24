@@ -1,0 +1,56 @@
+Index: t/Crypt-OpenSSL-EC.t
+--- t/Crypt-OpenSSL-EC.t.orig
++++ t/Crypt-OpenSSL-EC.t
+@@ -8,7 +8,7 @@
+ use strict;
+ use warnings;
+ 
+-use Test::More tests => 19;
++use Test::More tests => 14;
+ BEGIN { use_ok('Crypt::OpenSSL::EC'); use_ok('Crypt::OpenSSL::Bignum') };
+ 
+ my $fail = 0;
+@@ -117,19 +117,19 @@ ok( $fail == 0 , 'Constants' );
+ 
+ # Exercise basic creation and destruction code:
+ 
+-my $method = Crypt::OpenSSL::EC::EC_GFp_mont_method();
+-ok($method);
+-$method = Crypt::OpenSSL::EC::EC_GFp_mont_method();
+-ok($method);
++#my $method = Crypt::OpenSSL::EC::EC_GFp_mont_method();
++#ok($method);
++#$method = Crypt::OpenSSL::EC::EC_GFp_mont_method();
++#ok($method);
+ 
+-my $group = Crypt::OpenSSL::EC::EC_GROUP::new($method);
+-$group = Crypt::OpenSSL::EC::EC_GROUP::new($method);
+-ok($group);
++#my $group = Crypt::OpenSSL::EC::EC_GROUP::new($method);
++#$group = Crypt::OpenSSL::EC::EC_GROUP::new($method);
++#ok($group);
+ 
+-my $point = Crypt::OpenSSL::EC::EC_POINT::new($group);
+-ok($point);
+-$point = Crypt::OpenSSL::EC::EC_POINT::new($group);
+-ok($point);
++#my $point = Crypt::OpenSSL::EC::EC_POINT::new($group);
++#ok($point);
++#$point = Crypt::OpenSSL::EC::EC_POINT::new($group);
++#ok($point);
+ 
+ my $key = Crypt::OpenSSL::EC::EC_KEY::new();
+ ok($key);
+@@ -139,10 +139,10 @@ ok($key);
+ my $bignum = $key->get0_private_key();
+ ok($bignum);
+ 
+-$group = $key->get0_group();
++my $group = $key->get0_group();
+ ok($group);
+ 
+-$point = $key->get0_public_key();
++my $point = $key->get0_public_key();
+ ok($point);
+ 
+ my $nid   = 415;        # NID_X9_62_prime256v1

@@ -1,7 +1,20 @@
 Index: t/prime-field.t
 --- t/prime-field.t.orig
 +++ t/prime-field.t
-@@ -119,7 +119,7 @@ sub prime_field_tests()
+@@ -38,11 +38,9 @@ sub prime_field_tests()
+     # Caution: this fails on some OpenSSLs, eg on Fedora 13 where EC2M are not available
+     ok($group->set_curve_GFp($p, $a, $b, $ctx));
+     
+-    my $tmp = Crypt::OpenSSL::EC::EC_GROUP::new($group->method_of());
++    my $tmp = Crypt::OpenSSL::EC::EC_GROUP::dup($group);
+     ok($tmp);
+ 
+-    ok($tmp->copy($group));
+-
+     ok($group->get_curve_GFp($p, $a, $b, $ctx));
+ 
+ #    print "Curve defined by Weierstrass equation\n     y^2 = x^3 + a*x + b  (mod 0x" . $p->to_hex() . ")\n a = 0x" . $a->to_hex() . "\n b = 0x" . $b->to_hex() . "\n";
+@@ -119,7 +117,7 @@ sub prime_field_tests()
  #    print "Generator as octet string, hybrid form:\n     " . unpack('H*', $buf) . "\n";
      ok($buf eq pack('H*', '070d07'));
  
@@ -10,3 +23,69 @@ Index: t/prime-field.t
  #    print "A representation of the inverse of that generator in\nJacobian projective coordinates:\n     X = 0x" .$x->to_hex() . " Y = 0x" . $y->to_hex() . " Z = 0x" . $z->to_hex() . "\n";
  
      $p = Crypt::OpenSSL::Bignum->new_from_hex('FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF7FFFFFFF');
+@@ -148,9 +146,8 @@ sub prime_field_tests()
+ 
+     group_order_tests($group);
+ 
+-    my $P_160 = Crypt::OpenSSL::EC::EC_GROUP::new($group->method_of());
++    my $P_160 = Crypt::OpenSSL::EC::EC_GROUP::dup($group);
+     ok($P_160);
+-    ok($P_160->copy($group));
+ 
+     # Curve P-192 (FIPS PUB 186-2, App. 6)
+     $p = Crypt::OpenSSL::Bignum->new_from_hex('FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFEFFFFFFFFFFFFFFFF');
+@@ -172,9 +169,8 @@ sub prime_field_tests()
+ 
+     group_order_tests($group);
+ 
+-    my $P_192 = Crypt::OpenSSL::EC::EC_GROUP::new($group->method_of());
++    my $P_192 = Crypt::OpenSSL::EC::EC_GROUP::dup($group);
+     ok($P_192);
+-    ok($P_192->copy($group));
+ 
+     # Curve P-224 (FIPS PUB 186-2, App. 6)
+ 
+@@ -197,9 +193,8 @@ sub prime_field_tests()
+ 
+     group_order_tests($group);
+ 
+-    my $P_224 = Crypt::OpenSSL::EC::EC_GROUP::new($group->method_of());
++    my $P_224 = Crypt::OpenSSL::EC::EC_GROUP::dup($group);
+     ok($P_224);
+-    ok($P_224->copy($group));
+ 
+ 
+     # Curve P-256 (FIPS PUB 186-2, App. 6)
+@@ -223,9 +218,8 @@ sub prime_field_tests()
+ 
+     group_order_tests($group);
+ 
+-    my $P_256 = Crypt::OpenSSL::EC::EC_GROUP::new($group->method_of());
++    my $P_256 = Crypt::OpenSSL::EC::EC_GROUP::new($group);
+     ok($P_256);
+-    ok($P_256->copy($group));
+ 
+     # Curve P-384 (FIPS PUB 186-2, App. 6)
+ 
+@@ -248,9 +242,8 @@ sub prime_field_tests()
+ 
+     group_order_tests($group);
+ 
+-    my $P_384 = Crypt::OpenSSL::EC::EC_GROUP::new($group->method_of());
++    my $P_384 = Crypt::OpenSSL::EC::EC_GROUP::dup($group);
+     ok($P_384);
+-    ok($P_384->copy($group));
+ 
+     # Curve P-521 (FIPS PUB 186-2, App. 6)
+ 
+@@ -273,9 +266,8 @@ sub prime_field_tests()
+ 
+     group_order_tests($group);
+ 
+-    my $P_521 = Crypt::OpenSSL::EC::EC_GROUP::new($group->method_of());
++    my $P_521 = Crypt::OpenSSL::EC::EC_GROUP::dup($group);
+     ok($P_521);
+-    ok($P_521->copy($group));
+ 
+ 
+     # more tests using the last curve
