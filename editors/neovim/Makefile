@@ -11,8 +11,7 @@ EMBED_LUAJIT =	No
 
 COMMENT =	continuation and extension of Vim
 
-DIST_TUPLE =	github neovim neovim v0.10.2 .
-REVISION =	0
+DIST_TUPLE =	github neovim neovim v0.10.3 .
 
 # embedded luajit
 USE_NOBTCFI =	Yes
@@ -192,7 +191,8 @@ pre-configure:
 		-DUSE_BUNDLED_TS_PARSERS=ON \
 		-DUSE_EXISTING_SRC_DIR:BOOL=ON
 	# The following line both builds *and* installs the parsers.
-	${MAKE_ENV} ${LOCALBASE}/bin/cmake --build ${PARSERS_WRKBUILD}
+	${MAKE_ENV} ${LOCALBASE}/bin/cmake --build ${PARSERS_WRKBUILD} \
+		-- VERBOSE=1
 	mkdir -p ${WRKBUILD}/lib/nvim/parser
 	cp -r ${PARSERS_WRKBUILD}/usr/lib/nvim/parser/*.so \
 		${WRKBUILD}/lib/nvim/parser/
