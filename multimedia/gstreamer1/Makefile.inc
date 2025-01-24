@@ -4,12 +4,12 @@
 # plugins-good	base audio, video and graphic codecs
 # plugins-ugly	dvd
 # plugins-bad	vaapi
-# plugins-libav	divx, mp3, mpeg4, h264, vp8 (same decoding capabilities as FFmpeg)
+# libav		mp3, mp4, h264, vp8 (same decoding capabilities as FFmpeg)
 #
 # Most applications that use GStreamer require:
-#     gstreamer1-plugins-base and gstreamer1-plugins-good
+#     gst-plugins-base and gst-plugins-good
 # Support for most audio and video codecs is provided by
-#     gstreamer1-plugins-libav
+#     gst-libav
 
 PORTROACH=		limitw:1,even
 
@@ -48,7 +48,7 @@ CONFIGURE_ARGS +=	-Dpackage-origin="https://www.openbsd.org/"
 CONFIGURE_ARGS +=	-Ddoc=disabled
 .endif
 
-.if ! ${.CURDIR:M*plugins-libav} && ! ${.CURDIR:M*plugins-ugly} && ! ${.CURDIR:M*py-gstreamer}
+.if ! ${.CURDIR:M*libav} && ! ${.CURDIR:M*plugins-ugly} && ! ${.CURDIR:M*py-gstreamer}
 # BDEP on gtk+3, gmp, gsl
 .  if ! ${.CURDIR:M*devtools}
 CONFIGURE_ARGS +=	-Dexamples=disabled
@@ -56,7 +56,7 @@ CONFIGURE_ARGS +=	-Dexamples=disabled
 CONFIGURE_ARGS +=	-Dtests=disabled
 .endif
 
-.if ! ${.CURDIR:M*plugins-libav} && ! ${.CURDIR:M*py-gstreamer}
+.if ! ${.CURDIR:M*libav} && ! ${.CURDIR:M*py-gstreamer}
 # requires hotdoc
 CONFIGURE_ARGS +=	-Ddoc=disabled
 .endif
