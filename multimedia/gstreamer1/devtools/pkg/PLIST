@@ -1,0 +1,94 @@
+@bin bin/gst-validate-${API}
+@bin bin/gst-validate-images-check-${API}
+bin/gst-validate-launcher
+@bin bin/gst-validate-media-check-${API}
+@bin bin/gst-validate-rtsp-server-${API}
+@bin bin/gst-validate-transcoding-${API}
+include/gstreamer-${API}/gst/validate/
+include/gstreamer-${API}/gst/validate/gst-validate-bin-monitor.h
+include/gstreamer-${API}/gst/validate/gst-validate-element-monitor.h
+include/gstreamer-${API}/gst/validate/gst-validate-enum-types.h
+include/gstreamer-${API}/gst/validate/gst-validate-enums.h
+include/gstreamer-${API}/gst/validate/gst-validate-media-info.h
+include/gstreamer-${API}/gst/validate/gst-validate-monitor-factory.h
+include/gstreamer-${API}/gst/validate/gst-validate-monitor.h
+include/gstreamer-${API}/gst/validate/gst-validate-override-registry.h
+include/gstreamer-${API}/gst/validate/gst-validate-override.h
+include/gstreamer-${API}/gst/validate/gst-validate-pad-monitor.h
+include/gstreamer-${API}/gst/validate/gst-validate-pipeline-monitor.h
+include/gstreamer-${API}/gst/validate/gst-validate-report.h
+include/gstreamer-${API}/gst/validate/gst-validate-reporter.h
+include/gstreamer-${API}/gst/validate/gst-validate-runner.h
+include/gstreamer-${API}/gst/validate/gst-validate-scenario.h
+include/gstreamer-${API}/gst/validate/gst-validate-types.h
+include/gstreamer-${API}/gst/validate/gst-validate-utils.h
+include/gstreamer-${API}/gst/validate/media-descriptor-parser.h
+include/gstreamer-${API}/gst/validate/media-descriptor-writer.h
+include/gstreamer-${API}/gst/validate/media-descriptor.h
+include/gstreamer-${API}/gst/validate/validate-prelude.h
+include/gstreamer-${API}/gst/validate/validate.h
+lib/girepository-${API}/GstValidate-${API}.typelib
+lib/gst-validate-launcher/
+lib/gst-validate-launcher/python/
+lib/gst-validate-launcher/python/launcher/
+lib/gst-validate-launcher/python/launcher/RangeHTTPServer.py
+lib/gst-validate-launcher/python/launcher/__init__.py
+lib/gst-validate-launcher/python/launcher/apps/
+lib/gst-validate-launcher/python/launcher/apps/__init__.py
+lib/gst-validate-launcher/python/launcher/apps/gstcheck.py
+lib/gst-validate-launcher/python/launcher/apps/gstvalidate.py
+lib/gst-validate-launcher/python/launcher/apps/pyunittest.py
+lib/gst-validate-launcher/python/launcher/baseclasses.py
+lib/gst-validate-launcher/python/launcher/config.py
+lib/gst-validate-launcher/python/launcher/httpserver.py
+lib/gst-validate-launcher/python/launcher/loggable.py
+lib/gst-validate-launcher/python/launcher/main.py
+lib/gst-validate-launcher/python/launcher/reporters.py
+lib/gst-validate-launcher/python/launcher/testsuites/
+lib/gst-validate-launcher/python/launcher/testsuites/check.py
+lib/gst-validate-launcher/python/launcher/testsuites/pyunittest.py
+lib/gst-validate-launcher/python/launcher/utils.py
+lib/gst-validate-launcher/python/launcher/vfb_server.py
+@so lib/gstreamer-${API}/libgstvalidatetracer.so
+lib/gstreamer-${API}/validate/
+@so lib/gstreamer-${API}/validate/libgstvalidategapplication.so
+@so lib/gstreamer-${API}/validate/libgstvalidategtk.so
+@so lib/gstreamer-${API}/validate/libgstvalidatessim.so
+@lib lib/libgstvalidate-${API}.so.${LIBgstvalidate-${API}_VERSION}
+@lib lib/libgstvalidate-default-overrides-${API}.so.${LIBgstvalidate-default-overrides-${API}_VERSION}
+lib/pkgconfig/gstreamer-validate-${API}.pc
+share/gir-${API}/GstValidate-${API}.gir
+share/gstreamer-${API}/validate/
+share/gstreamer-${API}/validate/scenarios/
+share/gstreamer-${API}/validate/scenarios/adaptive_video_framerate.scenario
+share/gstreamer-${API}/validate/scenarios/adaptive_video_framerate_size.scenario
+share/gstreamer-${API}/validate/scenarios/adaptive_video_size.scenario
+share/gstreamer-${API}/validate/scenarios/alternate_fast_backward_forward.scenario
+share/gstreamer-${API}/validate/scenarios/change_state_intensive.scenario
+share/gstreamer-${API}/validate/scenarios/disable_subtitle_track_while_paused.scenario
+share/gstreamer-${API}/validate/scenarios/fast_backward.scenario
+share/gstreamer-${API}/validate/scenarios/fast_forward.scenario
+share/gstreamer-${API}/validate/scenarios/force_key_unit.scenario
+share/gstreamer-${API}/validate/scenarios/force_rtsp2.scenario
+share/gstreamer-${API}/validate/scenarios/includes/
+share/gstreamer-${API}/validate/scenarios/includes/default-seek-flags.scenario
+share/gstreamer-${API}/validate/scenarios/pause_resume.scenario
+share/gstreamer-${API}/validate/scenarios/play_15s.scenario
+share/gstreamer-${API}/validate/scenarios/play_5s.scenario
+share/gstreamer-${API}/validate/scenarios/reverse_playback.scenario
+share/gstreamer-${API}/validate/scenarios/rtsp_overrides/
+share/gstreamer-${API}/validate/scenarios/rtsp_overrides/includes/
+share/gstreamer-${API}/validate/scenarios/rtsp_overrides/includes/default-seek-flags.scenario
+share/gstreamer-${API}/validate/scenarios/scrub_backward_seeking.scenario
+share/gstreamer-${API}/validate/scenarios/scrub_backward_seeking_full.scenario
+share/gstreamer-${API}/validate/scenarios/scrub_forward_seeking.scenario
+share/gstreamer-${API}/validate/scenarios/scrub_forward_seeking_full.scenario
+share/gstreamer-${API}/validate/scenarios/seek_backward.scenario
+share/gstreamer-${API}/validate/scenarios/seek_forward.scenario
+share/gstreamer-${API}/validate/scenarios/seek_forward_backward.scenario
+share/gstreamer-${API}/validate/scenarios/seek_with_stop.scenario
+share/gstreamer-${API}/validate/scenarios/simple_seeks.scenario
+share/gstreamer-${API}/validate/scenarios/switch_audio_track.scenario
+share/gstreamer-${API}/validate/scenarios/switch_audio_track_while_paused.scenario
+share/gstreamer-${API}/validate/scenarios/switch_subtitle_track.scenario
+share/gstreamer-${API}/validate/scenarios/switch_subtitle_track_while_paused.scenario
