@@ -4,7 +4,7 @@ MODPY_DISTV =	1.10.1
 GH_ACCOUNT =	otsaloma
 GH_PROJECT =	gaupol
 GH_TAGNAME =	${MODPY_DISTV}
-REVISION =	6
+REVISION =	7
 
 CATEGORIES =	multimedia
 
@@ -26,7 +26,7 @@ RUN_DEPENDS =	devel/iso-codes \
 		multimedia/gstreamer1/plugins-bad \
 		multimedia/gstreamer1/plugins-base \
 		multimedia/gstreamer1/plugins-good \
-		multimedia/gstreamer1/plugins-libav \
+		multimedia/gstreamer1/libav \
 		multimedia/gstreamer1/plugins-ugly \
 		multimedia/mpv \
 		textproc/gspell \

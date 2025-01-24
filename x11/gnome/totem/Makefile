@@ -2,7 +2,7 @@ COMMENT=		official media player for GNOME
 
 GNOME_PROJECT=		totem
 GNOME_VERSION=		43.1
-REVISION=		2
+REVISION=		3
 
 SHARED_LIBS += totem                     0.0 # 0.0.0
 
@@ -50,7 +50,7 @@ LIB_DEPENDS=		devel/gobject-introspection \
 # while the following are not "required" for totem to run, there's no
 # point in using a media player that can't play most modern media files
 RUN_DEPENDS +=		multimedia/gstreamer1/plugins-good \
-			multimedia/gstreamer1/plugins-libav
+			multimedia/gstreamer1/libav
 
 MODGNOME_TOOLS += desktop-file-utils gobject-introspection gtk-update-icon-cache
 MODGNOME_TOOLS += yelp

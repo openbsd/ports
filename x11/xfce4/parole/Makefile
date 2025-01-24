@@ -2,7 +2,7 @@ COMMENT =	Xfce4 media player
 
 XFCE_GOODIE =	parole
 XFCE_VERSION =	4.18.2
-REVISION =	0
+REVISION =	1
 
 CATEGORIES +=	audio
 
@@ -37,8 +37,8 @@ LIB_DEPENDS =	multimedia/gstreamer1/core \
 		audio/taglib \
 		devel/libnotify
 
-# plugins-libav needed to play vids and mp3
+# gst-libav needed to play videos and mp3
 RUN_DEPENDS +=	multimedia/gstreamer1/plugins-good \
-		multimedia/gstreamer1/plugins-libav
+		multimedia/gstreamer1/libav
 
 .include <bsd.port.mk>

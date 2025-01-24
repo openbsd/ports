@@ -2,7 +2,7 @@ COMMENT=		GTK+ subtitles editor
 
 V=			0.54.0
 DISTNAME=		subtitleeditor-${V}
-REVISION=		7
+REVISION=		8
 
 CATEGORIES=		graphics editors
 
@@ -41,7 +41,7 @@ LIB_DEPENDS=		multimedia/gstreamer1/mm \
 RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/iso-codes \
 			multimedia/gstreamer1/plugins-good \
-			multimedia/gstreamer1/plugins-libav \
+			multimedia/gstreamer1/libav \
 			x11/gtk+4,-guic
 
 MODULES=		textproc/intltool

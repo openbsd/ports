@@ -1,7 +1,7 @@
 COMMENT=	graphical mp3/ogg file splitter
 
 DISTNAME=	mp3splt-gtk-0.9.2
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	audio
 
@@ -32,7 +32,7 @@ LIB_DEPENDS=	audio/libmp3splt \
 BUILD_DEPENDS=	multimedia/gstreamer1/plugins-base
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		multimedia/gstreamer1/plugins-libav \
+		multimedia/gstreamer1/libav \
 		multimedia/gstreamer1/plugins-good
 
 CONFIGURE_STYLE= gnu

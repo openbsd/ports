@@ -3,7 +3,7 @@ COMMENT =		gtk3 audiobook player
 GH_ACCOUNT =		geigi
 GH_PROJECT =		cozy
 GH_TAGNAME =		1.3.0
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		audio
 
@@ -30,7 +30,7 @@ RUN_DEPENDS =		${COMMON_DEPENDS} \
 			devel/desktop-file-utils \
 			devel/py-tz \
 			multimedia/gstreamer1/plugins-good \
-			multimedia/gstreamer1/plugins-libav \
+			multimedia/gstreamer1/libav \
 			sysutils/py-packaging \
 			www/py-requests \
 			x11/gtk+4,-guic

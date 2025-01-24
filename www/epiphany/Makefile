@@ -2,7 +2,7 @@ COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
 GNOME_VERSION=	47.2
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	www
 
@@ -32,7 +32,7 @@ LIB_DEPENDS=	archivers/libarchive \
 		x11/gnome/libadwaita
 
 # webkit browsing
-RUN_DEPENDS +=	multimedia/gstreamer1/plugins-libav
+RUN_DEPENDS +=	multimedia/gstreamer1/libav
 
 # prevent WebKitWebProcess from crashing due to:
 # WebKit wasn't able to find a WebVTT encoder. Subtitles handling will be

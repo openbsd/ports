@@ -2,7 +2,7 @@ COMMENT=		integrated music management application for GNOME
 
 GNOME_PROJECT=		rhythmbox
 GNOME_VERSION=		3.4.8
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS += rhythmbox-core            0.0 # 10.0.0
 
@@ -52,7 +52,7 @@ RUN_DEPENDS +=		x11/gnome/grilo-plugins>=0.3.0
 RUN_DEPENDS +=		multimedia/gstreamer1/plugins-good
 
 # needed for mp3 support
-RUN_DEPENDS +=		multimedia/gstreamer1/plugins-libav
+RUN_DEPENDS +=		multimedia/gstreamer1/libav
 
 MODGNOME_TOOLS=		desktop-file-utils gi-docgen gobject-introspection \
 			gtk-update-icon-cache vala yelp

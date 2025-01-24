@@ -6,7 +6,7 @@ GH_PROJECT =	Clementine
 GH_TAGNAME =	1.4.0rc2
 EPOCH      =	0
 PKGNAME    =	clementine-${GH_TAGNAME}
-REVISION    =	2
+REVISION    =	3
 
 CATEGORIES =	audio x11
 
@@ -32,7 +32,7 @@ BUILD_DEPENDS =		devel/boost \
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			multimedia/gstreamer1/plugins-good \
-			multimedia/gstreamer1/plugins-libav \
+			multimedia/gstreamer1/libav \
 			x11/gtk+4,-guic
 
 LIB_DEPENDS =		audio/chromaprint \

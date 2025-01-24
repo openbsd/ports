@@ -2,7 +2,7 @@ COMMENT =	fast, small, webkit based browser written in lua
 
 V =		2.3.6
 DISTNAME =	luakit-${V}
-REVISION =	0
+REVISION =	1
 
 EPOCH =		1
 
@@ -58,7 +58,7 @@ TEST_TARGET =	run-tests
 
 # webkit browsing
 RUN_DEPENDS +=	multimedia/gstreamer1/plugins-good \
-		multimedia/gstreamer1/plugins-libav
+		multimedia/gstreamer1/libav
 
 MAKE_FLAGS +=	LUA_BIN_NAME=${MODLUA_BIN} \
 		XDGPREFIX=${PREFIX}/share/examples \

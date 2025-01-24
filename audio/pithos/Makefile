@@ -1,7 +1,7 @@
 GH_ACCOUNT =	pithos
 GH_PROJECT =	pithos
 GH_TAGNAME =	1.1.2
-REVISION =	14
+REVISION =	15
 
 COMMENT =	Pandora client for GNOME
 CATEGORIES =	audio x11
@@ -23,7 +23,7 @@ RUN_DEPENDS =	audio/py-last>=0.5.11 \
 		devel/py-gobject3 \
 		devel/py-xdg \
 		multimedia/gstreamer1/plugins-good \
-		multimedia/gstreamer1/plugins-libav \
+		multimedia/gstreamer1/libav \
 		x11/dbus-python \
 		x11/keybinder3 \
 		x11/gtk+4,-guic

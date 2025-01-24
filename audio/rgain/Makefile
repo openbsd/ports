@@ -3,7 +3,7 @@ COMMENT=	multi-format tools and Python module for ReplayGain
 MODPY_DISTV=	1.1.1
 DISTNAME=	rgain3-${MODPY_DISTV}
 EPOCH=		0
-REVISION=	7
+REVISION=	8
 
 CATEGORIES=	audio
 
@@ -20,7 +20,7 @@ BUILD_DEPENDS=	textproc/py-docutils
 RUN_DEPENDS=	audio/py-mutagen \
 		devel/py-gobject3 \
 		multimedia/gstreamer1/core \
-		multimedia/gstreamer1/plugins-libav \
+		multimedia/gstreamer1/libav \
 		multimedia/gstreamer1/plugins-base \
 		multimedia/gstreamer1/plugins-good
 

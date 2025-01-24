@@ -3,7 +3,7 @@ COMMENT=	audio player and tagger for GTK+ with regex support
 MODPY_DISTV=	4.6.0
 DISTNAME=	quodlibet-${MODPY_DISTV}
 PORTROACH=	skipv:release-${MODPY_DISTV}
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	audio
 
@@ -29,7 +29,7 @@ RUN_DEPENDS=	audio/py-musicbrainzngs \
 RUN_DEPENDS+=	devel/desktop-file-utils \
 		devel/libsoup3 \
 		multimedia/gstreamer1/plugins-good>=1.20.3p0 \
-		multimedia/gstreamer1/plugins-libav \
+		multimedia/gstreamer1/libav \
 		multimedia/xine-lib \
 		x11/gtk+4,-guic
 
