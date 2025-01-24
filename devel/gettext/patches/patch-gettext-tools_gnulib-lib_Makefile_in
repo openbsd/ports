@@ -3,7 +3,7 @@ Use standard shared library versioning.
 Index: gettext-tools/gnulib-lib/Makefile.in
 --- gettext-tools/gnulib-lib/Makefile.in.orig
 +++ gettext-tools/gnulib-lib/Makefile.in
-@@ -5540,7 +5540,7 @@ libgettextlib_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined
+@@ -5544,7 +5544,7 @@ libgettextlib_la_LDFLAGS = $(AM_LDFLAGS) -no-undefined
  	$(LTLIBINTL) $(LTLIBUNISTRING) $(MBRTOWC_LIB) \
  	$(POSIX_SPAWN_LIB) $(POW_LIBM) $(QCOPY_ACL_LIB) $(SERVENT_LIB) \
  	$(SETLOCALE_LIB) $(SETLOCALE_NULL_LIB) @INTL_MACOSX_LIBS@ \

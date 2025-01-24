@@ -3,7 +3,7 @@ Use standard shared library versioning.
 Index: gettext-tools/src/Makefile.in
 --- gettext-tools/src/Makefile.in.orig
 +++ gettext-tools/src/Makefile.in
-@@ -4412,7 +4412,7 @@ libgettextsrc_la_DEPENDENCIES = $(WOE32_LIBADD)
+@@ -4417,7 +4417,7 @@ libgettextsrc_la_DEPENDENCIES = $(WOE32_LIBADD)
  # Need @LTLIBINTL@ because many source files use gettext().
  # Need @LTLIBICONV@ because po-charset.c, read-po-lex.c, msgl-iconv.c,
  # write-po.c use iconv().
