@@ -1,7 +1,7 @@
 ONLY_FOR_ARCHS =	amd64
 COMMENT =		tool for managing events and logs
 
-V =			8.16.1
+V =			8.17.1
 DISTNAME =		logstash-oss-$V-darwin-x86_64
 PKGNAME =		logstash-$V
 EPOCH =			0
