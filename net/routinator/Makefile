@@ -10,12 +10,8 @@ GH_TAGNAME =	v0.14.1
 CATEGORIES =	net
 
 # code: BSD
-# ARIN TAL: ridiculous license. at runtime the file is not easily available
-# without agreeing to it, which seems to comply with what ARIN want, but it's
-# in the clear in the distfile (see requirements in "machine readable
-# format distribution"
 PERMIT_PACKAGE =	Yes
-PERMIT_DISTFILES =	includes bundled ARIN TAL which requires agreement with https://www.arin.net/resources/manage/rpki/rpa.pdf
+PERMIT_DISTFILES =	includes bundled ARIN TAL but without disclaimer of warranties
 
 WANTLIB +=		${MODCARGO_WANTLIB} m
 
