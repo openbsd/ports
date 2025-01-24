@@ -1,30 +1,30 @@
-COMMENT =	client library and CLI for Planet's public API
+COMMENT=	client library and CLI for Planet's public API
 
-MODPY_DISTV =	2.10.0
-DISTNAME =	planet-${MODPY_DISTV}
-PKGNAME =	py-${DISTNAME}
-REVISION =	0
+MODPY_DISTV=	2.13.1
+DISTNAME=	planet-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =	geo
+CATEGORIES=	geo
 
 # Apache 2.0
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =	lang/python
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
-MODPY_PI =	Yes
-MODPY_PYBUILD =	setuptools
-
-RUN_DEPENDS +=	devel/py-click \
-		devel/py-jsonschema \
-		devel/py-tqdm \
+RUN_DEPENDS=	devel/py-click \
 		geo/py-geojson \
+		www/py-httpx<0.28.0 \
+		devel/py-jsonschema \
 		www/py-jwt \
-		www/py-httpx \
-		www/py-requests \
-		www/py-requests-futures
-TEST_DEPENDS =	devel/py-mock \
-		www/py-requests-mock \
-		devel/py-tz
+		devel/py-tqdm \
+		devel/py-typing-extensions
+
+MODPY_PYTEST_ARGS= tests
+
+TEST_DEPENDS=	devel/py-test-cov \
+		net/py-anyio \
+		www/py-respx
 
 .include <bsd.port.mk>

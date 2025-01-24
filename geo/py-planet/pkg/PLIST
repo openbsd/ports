@@ -1,5 +1,5 @@
-@pkgpath geo/py-planet,python3
 @conflict py-planet-*
+@pkgpath geo/py-planet,python3
 bin/planet
 lib/python${MODPY_VERSION}/site-packages/planet/
 lib/python${MODPY_VERSION}/site-packages/planet-${MODPY_DISTV}.dist-info/
@@ -100,7 +100,7 @@ lib/python${MODPY_VERSION}/site-packages/planet/constants.py
 lib/python${MODPY_VERSION}/site-packages/planet/data/
 lib/python${MODPY_VERSION}/site-packages/planet/data/Feature.json
 lib/python${MODPY_VERSION}/site-packages/planet/data/README.md
-lib/python${MODPY_VERSION}/site-packages/planet/data/orders_product_bundle_2023-02-24.json
+lib/python${MODPY_VERSION}/site-packages/planet/data/orders_product_bundle_2024-08-12.json
 lib/python${MODPY_VERSION}/site-packages/planet/data_filter.py
 lib/python${MODPY_VERSION}/site-packages/planet/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/planet/geojson.py
@@ -111,3 +111,20 @@ lib/python${MODPY_VERSION}/site-packages/planet/order_request.py
 lib/python${MODPY_VERSION}/site-packages/planet/reporting.py
 lib/python${MODPY_VERSION}/site-packages/planet/specs.py
 lib/python${MODPY_VERSION}/site-packages/planet/subscription_request.py
+lib/python${MODPY_VERSION}/site-packages/planet/sync/
+lib/python${MODPY_VERSION}/site-packages/planet/sync/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/planet/sync/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/planet/sync/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/planet/sync/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/planet/sync/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/planet/sync/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/planet/sync/${MODPY_PYCACHE}data.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/planet/sync/${MODPY_PYCACHE}data.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/planet/sync/${MODPY_PYCACHE}orders.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/planet/sync/${MODPY_PYCACHE}orders.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/planet/sync/${MODPY_PYCACHE}subscriptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/planet/sync/${MODPY_PYCACHE}subscriptions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/planet/sync/client.py
+lib/python${MODPY_VERSION}/site-packages/planet/sync/data.py
+lib/python${MODPY_VERSION}/site-packages/planet/sync/orders.py
+lib/python${MODPY_VERSION}/site-packages/planet/sync/subscriptions.py
