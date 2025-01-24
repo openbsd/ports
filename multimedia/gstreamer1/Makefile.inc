@@ -43,7 +43,7 @@ BUILD_DEPENDS +=	devel/gettext,-tools # -Dnls
 CONFIGURE_ENV +=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
-.if ! ${.CURDIR:M*py-gstreamer}
+.if ! ${.CURDIR:M*py-gstreamer} && ! ${.CURDIR:M*editing-services} && ! ${.CURDIR:M*devtools}
 CONFIGURE_ARGS +=	-Dpackage-name="OpenBSD ${DISTNAME} package"
 CONFIGURE_ARGS +=	-Dpackage-origin="https://www.openbsd.org/"
 # requires hotdoc
@@ -52,7 +52,9 @@ CONFIGURE_ARGS +=	-Ddoc=disabled
 
 .if ! ${.CURDIR:M*plugins-libav} && ! ${.CURDIR:M*plugins-ugly} && ! ${.CURDIR:M*py-gstreamer}
 # BDEP on gtk+3, gmp, gsl
+.  if ! ${.CURDIR:M*devtools}
 CONFIGURE_ARGS +=	-Dexamples=disabled
+.  endif
 CONFIGURE_ARGS +=	-Dtests=disabled
 .endif
 
