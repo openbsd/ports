@@ -1,9 +1,8 @@
 COMMENT=	multi-platform push notification library and CLI tool
 
-MODPY_DISTV=	1.9.0
+MODPY_DISTV=	1.9.2
 DISTNAME=	apprise-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/py//}
-REVISION=	0
 
 CATEGORIES=	net
 
@@ -13,9 +12,8 @@ HOMEPAGE=	https://github.com/caronc/apprise
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 BUILD_DEPENDS=	devel/py-babel
 RUN_DEPENDS=	devel/py-certifi \
