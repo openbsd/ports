@@ -1,7 +1,7 @@
 V =		0.11.1
 COMMENT =	tools for using PIV tokens as an SSH agent, encryption, etc.
 DISTNAME =	pivy-$V
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://github.com/arekinath/pivy
 
