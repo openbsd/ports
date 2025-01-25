@@ -2,7 +2,7 @@ COMMENT=		easily hackable Common LISP window manager
 
 VERSION=		24.11
 DISTNAME=		stumpwm-${VERSION}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		x11
 
@@ -36,6 +36,7 @@ CONFIGURE_ARGS+=	--with-module-dir=${LOCALBASE}/share/stumpwm/modules \
 
 USE_GMAKE=		yes
 MAKE_ENV=		MAKEINFO=${PREFIX}/bin/gmakeinfo \
+			CL_SOURCE_REGISTRY=${WRKSRC} \
 			ASDF_OUTPUT_TRANSLATIONS=/:
 
 MAKE_FLAGS=		'-e'
