@@ -1,6 +1,6 @@
-Index: libvncserver/main.c
---- libvncserver/main.c.orig
-+++ libvncserver/main.c
+Index: src/libvncserver/main.c
+--- src/libvncserver/main.c.orig
++++ src/libvncserver/main.c
 @@ -20,6 +20,8 @@
  #include <stdarg.h>
  #include <errno.h>

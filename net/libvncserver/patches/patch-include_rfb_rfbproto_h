@@ -1,6 +1,6 @@
-Index: rfb/rfbproto.h
---- rfb/rfbproto.h.orig
-+++ rfb/rfbproto.h
+Index: include/rfb/rfbproto.h
+--- include/rfb/rfbproto.h.orig
++++ include/rfb/rfbproto.h
 @@ -79,7 +79,7 @@ typedef int8_t rfbBool;
  
  #if LIBVNCSERVER_HAVE_ENDIAN_H
