@@ -37,8 +37,6 @@ ungoogled-chromium/
 ungoogled-chromium/chrome_100_percent.pak
 ungoogled-chromium/chrome_200_percent.pak
 ungoogled-chromium/headless_command_resources.pak
-ungoogled-chromium/headless_lib_data.pak
-ungoogled-chromium/headless_lib_strings.pak
 @so ungoogled-chromium/libEGL.so
 @so ungoogled-chromium/libGLESv2.so
 %%component%%
