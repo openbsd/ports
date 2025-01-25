@@ -1,6 +1,8 @@
 our strftime doesn't error out with %-d but just outputs -d rather
 than doing whatever this test wants
 
+Fixes "dateutil.parser._parser.ParserError: Unknown string format: 2003-Sep--d"
+
 Index: tests/test_parser.py
 --- tests/test_parser.py.orig
 +++ tests/test_parser.py
@@ -8,7 +10,7 @@ Index: tests/test_parser.py
  except ValueError:
      pass
  
-+if sys.platform.startswith('openbsd'):
++if (datetime.now().strftime('%-d') == '-d'):
 +    PLATFORM_HAS_DASH_D = False
  
  @pytest.fixture(params=[True, False])
