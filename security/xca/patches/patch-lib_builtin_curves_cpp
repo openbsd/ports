@@ -1,0 +1,24 @@
+EC_METHOD_get_field_type() and EC_GROUP_method_of() no longer exist
+in LibreSSL >= 4.1.0. All builtin curves are prime curves.
+
+Index: lib/builtin_curves.cpp
+--- lib/builtin_curves.cpp.orig
++++ lib/builtin_curves.cpp
+@@ -151,6 +151,9 @@ builtin_curves::builtin_curves()
+ 		EC_GROUP *group = EC_GROUP_new_by_curve_name(nid);
+ 		EC_GROUP_get_order(group, order, NULL);
+ 
++#if defined(LIBRESSL_VERSION_NUMBER)
++		type = CKF_EC_F_P;
++#else
+ 		switch (EC_METHOD_get_field_type(EC_GROUP_method_of(group))) {
+ 		case NID_X9_62_prime_field:
+ 			type = CKF_EC_F_P;
+@@ -161,6 +164,7 @@ builtin_curves::builtin_curves()
+ 		default:
+ 			continue;
+ 		}
++#endif
+ #undef PRINT_KNOWN_CURVES
+ #ifdef PRINT_KNOWN_CURVES
+ 		qDebug() << QString(curves[i].comment).leftJustified(50)
