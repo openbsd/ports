@@ -1,6 +1,6 @@
 COMMENT=	Python module for GnuPG interface
 
-MODPY_DISTV=	0.5.3
+MODPY_DISTV=	0.5.4
 DISTNAME=	python-gnupg-${MODPY_DISTV}
 PKGNAME=	py-gnupg-${MODPY_DISTV}
 
