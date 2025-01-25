@@ -1,3 +1,4 @@
+@conflict bash-completion-<2.16.0p0
 @bin bin/secret-tool
 include/libsecret-1/
 include/libsecret-1/libsecret/
@@ -22,6 +23,7 @@ lib/girepository-1.0/Secret-1.typelib
 lib/pkgconfig/libsecret-1.pc
 lib/pkgconfig/libsecret-unstable.pc
 @man man/man1/secret-tool.1
+share/bash-completion/completions/secret-tool
 share/doc/libsecret-1/
 share/doc/libsecret-1/RedHatDisplay-Black.woff
 share/doc/libsecret-1/RedHatDisplay-Black.woff2
