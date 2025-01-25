@@ -5,7 +5,7 @@ COMMENT =		next generation GoldenDict
 CATEGORIES =		textproc education x11
 
 DIST_TUPLE =		github	xiaoyifang	goldendict-ng	\
-				v24.09.1-Release.ca9dd133	.
+				v25.02.0-Release.e895b18c	.
 PKGNAME =		${DISTNAME:C/-[[:alnum:].]*$//}
 
 # GPLv3+

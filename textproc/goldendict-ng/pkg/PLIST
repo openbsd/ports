@@ -24,6 +24,7 @@ share/goldendict-ng/locale/ie_001.qm
 share/goldendict-ng/locale/it_IT.qm
 share/goldendict-ng/locale/ja_JP.qm
 share/goldendict-ng/locale/jbo_EN.qm
+share/goldendict-ng/locale/kab_KAB.qm
 share/goldendict-ng/locale/ko_KR.qm
 share/goldendict-ng/locale/lt_LT.qm
 share/goldendict-ng/locale/mk_MK.qm
@@ -31,10 +32,6 @@ share/goldendict-ng/locale/nl_NL.qm
 share/goldendict-ng/locale/pl_PL.qm
 share/goldendict-ng/locale/pt_BR.qm
 share/goldendict-ng/locale/pt_PT.qm
-share/goldendict-ng/locale/qt_extra_es.qm
-share/goldendict-ng/locale/qt_extra_it.qm
-share/goldendict-ng/locale/qt_extra_lt.qm
-share/goldendict-ng/locale/qtwebengine_zh_CN.qm
 share/goldendict-ng/locale/qu_PE.qm
 share/goldendict-ng/locale/ru_RU.qm
 share/goldendict-ng/locale/sk_SK.qm
