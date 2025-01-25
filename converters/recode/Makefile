@@ -3,7 +3,7 @@ COMMENT=	convert files between character sets and usages
 V=		3.7.14
 DISTNAME=	recode-$V
 SHARED_LIBS +=	recode               1.0      # 10.12
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	converters textproc
 
@@ -12,7 +12,7 @@ HOMEPAGE=	https://github.com/rrthomas/recode
 # (L)GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c iconv intl
+WANTLIB=	c iconv intl pthread
 
 SITES=		https://github.com/rrthomas/recode/releases/download/v$V/
 
