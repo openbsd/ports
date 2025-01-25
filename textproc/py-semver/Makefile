@@ -1,9 +1,8 @@
-COMMENT=	python helper for Semantic Versioning
+COMMENT=	Python helper for Semantic Versioning
 
-MODPY_DISTV=	3.0.2
+MODPY_DISTV=	3.0.4
 DISTNAME=	semver-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	textproc
 
