@@ -4,10 +4,9 @@ ONLY_FOR_ARCHS=		amd64
 COMMENT=		future-based programming for GLib-based applications
 
 GNOME_PROJECT=		libdex
-GNOME_VERSION=		0.8.1
-REVISION=		1
+GNOME_VERSION=		0.9.0
 
-SHARED_LIBS += dex-1                     0.0 # 1.0.0
+SHARED_LIBS += dex-1                     0.1 # 1.0.0
 
 CATEGORIES=		devel
 
