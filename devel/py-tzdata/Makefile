@@ -1,10 +1,9 @@
 COMMENT=	IANA timezone data
 
-MODPY_DISTV=	2024.2
+MODPY_DISTV=	2025.1
 DISTNAME=	tzdata-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	0
 
 HOMEPAGE=	https://github.com/python/tzdata
 
@@ -12,8 +11,7 @@ HOMEPAGE=	https://github.com/python/tzdata
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 .include <bsd.port.mk>
