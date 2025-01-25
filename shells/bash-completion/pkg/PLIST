@@ -225,6 +225,7 @@ share/bash-completion/completions/_ruff
 share/bash-completion/completions/_runuser
 share/bash-completion/completions/_rustic
 share/bash-completion/completions/_rustup
+share/bash-completion/completions/_secret-tool
 share/bash-completion/completions/_sentry-cli
 share/bash-completion/completions/_sinker
 share/bash-completion/completions/_skaffold
@@ -903,7 +904,6 @@ share/bash-completion/completions/scp
 share/bash-completion/completions/screen
 share/bash-completion/completions/scrub
 share/bash-completion/completions/sdptool
-share/bash-completion/completions/secret-tool
 share/bash-completion/completions/set
 share/bash-completion/completions/setquota
 share/bash-completion/completions/sftp
