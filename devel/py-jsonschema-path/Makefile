@@ -1,11 +1,8 @@
 COMMENT=	object-oriented JSONSchema
 
-# was renamed from jsonschema-spec
-MODPY_DISTV=	0.3.3
-
+MODPY_DISTV=	0.3.4
 DISTNAME=	jsonschema_path-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
-REVISION=	1
 
 CATEGORIES=	devel
 
