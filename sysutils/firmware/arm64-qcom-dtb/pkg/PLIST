@@ -3,6 +3,12 @@ firmware/dtb/qcom/
 firmware/dtb/qcom/sc8280xp-lenovo-thinkpad-x13s.dtb
 firmware/dtb/qcom/x1e78100-lenovo-thinkpad-t14s.dtb
 firmware/dtb/qcom/x1e80100-asus-vivobook-s15.dtb
+firmware/dtb/qcom/x1e80100-crd.dtb
+firmware/dtb/qcom/x1e80100-dell-xps13-9345.dtb
+firmware/dtb/qcom/x1e80100-honor-magicbook-art-14.dtb
 firmware/dtb/qcom/x1e80100-hp-omnibook-x14.dtb
 firmware/dtb/qcom/x1e80100-lenovo-yoga-slim7x.dtb
+firmware/dtb/qcom/x1e80100-microsoft-romulus13.dtb
+firmware/dtb/qcom/x1e80100-microsoft-romulus15.dtb
+firmware/dtb/qcom/x1e80100-qcp.dtb
 firmware/dtb/qcom/x1e80100-samsung-galaxy-book4-edge.dtb

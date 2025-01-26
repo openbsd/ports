@@ -1,18 +1,15 @@
-Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
---- src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts.orig
-+++ src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
-@@ -19,6 +19,10 @@
- 	compatible = "lenovo,thinkpad-t14s", "qcom,x1e78100", "qcom,x1e80100";
- 	chassis-type = "laptop";
+Index: src/arm64/qcom/x1e80100-crd.dts
+--- src/arm64/qcom/x1e80100-crd.dts.orig
++++ src/arm64/qcom/x1e80100-crd.dts
+@@ -20,6 +20,7 @@
  
-+	aliases {
+ 	aliases {
+ 		serial0 = &uart21;
 +		serial1 = &uart14;
-+	};
-+
- 	gpio-keys {
- 		compatible = "gpio-keys";
+ 	};
  
-@@ -66,9 +70,17 @@
+ 	wcd938x: audio-codec {
+@@ -100,9 +101,17 @@
  					reg = <1>;
  
  					pmic_glink_ss0_ss_in: endpoint {
@@ -31,7 +28,7 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
  			};
  		};
  
-@@ -95,9 +107,17 @@
+@@ -129,9 +138,17 @@
  					reg = <1>;
  
  					pmic_glink_ss1_ss_in: endpoint {
@@ -49,8 +46,27 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
 +				};
  			};
  		};
+ 
+@@ -158,9 +175,17 @@
+ 					reg = <1>;
+ 
+ 					pmic_glink_ss2_ss_in: endpoint {
+-						remote-endpoint = <&usb_1_ss2_qmpphy_out>;
++						remote-endpoint = <&retimer_ss2_ss_out>;
+ 					};
+ 				};
++
++				port@2 {
++					reg = <2>;
++
++					pmic_glink_ss2_con_sbu_in: endpoint {
++						remote-endpoint = <&retimer_ss2_con_sbu_out>;
++					};
++				};
+ 			};
+ 		};
  	};
-@@ -143,6 +163,102 @@
+@@ -311,6 +336,150 @@
  		regulator-boot-on;
  	};
  
@@ -150,14 +166,61 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
 +		regulator-boot-on;
 +	};
 +
++	vreg_rtmr2_1p15: regulator-rtmr2-1p15 {
++		compatible = "regulator-fixed";
++
++		regulator-name = "VREG_RTMR2_1P15";
++		regulator-min-microvolt = <1150000>;
++		regulator-max-microvolt = <1150000>;
++
++		gpio = <&tlmm 189 GPIO_ACTIVE_HIGH>;
++		enable-active-high;
++
++		pinctrl-0 = <&usb2_pwr_1p15_reg_en>;
++		pinctrl-names = "default";
++
++		regulator-boot-on;
++	};
++
++	vreg_rtmr2_1p8: regulator-rtmr2-1p8 {
++		compatible = "regulator-fixed";
++
++		regulator-name = "VREG_RTMR2_1P8";
++		regulator-min-microvolt = <1800000>;
++		regulator-max-microvolt = <1800000>;
++
++		gpio = <&tlmm 126 GPIO_ACTIVE_HIGH>;
++		enable-active-high;
++
++		pinctrl-0 = <&usb2_pwr_1p8_reg_en>;
++		pinctrl-names = "default";
++
++		regulator-boot-on;
++	};
++
++	vreg_rtmr2_3p3: regulator-rtmr2-3p3 {
++		compatible = "regulator-fixed";
++
++		regulator-name = "VREG_RTMR2_3P3";
++		regulator-min-microvolt = <3300000>;
++		regulator-max-microvolt = <3300000>;
++
++		gpio = <&tlmm 187 GPIO_ACTIVE_HIGH>;
++		enable-active-high;
++
++		pinctrl-0 = <&usb2_pwr_3p3_reg_en>;
++		pinctrl-names = "default";
++
++		regulator-boot-on;
++	};
++
  	vph_pwr: regulator-vph-pwr {
  		compatible = "regulator-fixed";
  
-@@ -153,6 +269,107 @@
- 		regulator-always-on;
+@@ -322,6 +491,48 @@
  		regulator-boot-on;
  	};
-+
+ 
 +	vreg_wcn_3p3: regulator-wcn-3p3 {
 +		compatible = "regulator-fixed";
 +
@@ -199,6 +262,14 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
 +
 +		vin-supply = <&vreg_wcn_3p3>;
 +	};
++
+ 	vreg_wwan: regulator-wwan {
+ 		compatible = "regulator-fixed";
+ 
+@@ -337,6 +548,65 @@
+ 
+ 		regulator-boot-on;
+ 	};
 +
 +	wcn7850-pmu {
 +		compatible = "qcom,wcn7850-pmu";
@@ -261,10 +332,67 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
  };
  
  &apps_rsc {
-@@ -495,6 +712,169 @@
+@@ -735,6 +1005,178 @@
  	};
  };
  
++&i2c1 {
++	clock-frequency = <400000>;
++
++	status = "okay";
++
++	typec-mux@8 {
++		compatible = "parade,ps8830";
++		reg = <0x08>;
++
++		clocks = <&rpmhcc RPMH_RF_CLK5>;
++
++		vdd-supply = <&vreg_rtmr2_1p15>;
++		vdd33-supply = <&vreg_rtmr2_3p3>;
++		vdd33-cap-supply = <&vreg_rtmr2_3p3>;
++		vddar-supply = <&vreg_rtmr2_1p15>;
++		vddat-supply = <&vreg_rtmr2_1p15>;
++		vddio-supply = <&vreg_rtmr2_1p8>;
++
++		reset-gpios = <&tlmm 185 GPIO_ACTIVE_LOW>;
++
++		pinctrl-0 = <&rtmr2_default>;
++		pinctrl-names = "default";
++
++		orientation-switch;
++		retimer-switch;
++
++		ports {
++			#address-cells = <1>;
++			#size-cells = <0>;
++
++			port@0 {
++				reg = <0>;
++
++				retimer_ss2_ss_out: endpoint {
++					remote-endpoint = <&pmic_glink_ss2_ss_in>;
++				};
++			};
++
++			port@1 {
++				reg = <1>;
++
++				retimer_ss2_ss_in: endpoint {
++					remote-endpoint = <&usb_1_ss2_qmpphy_out>;
++				};
++			};
++
++			port@2 {
++				reg = <2>;
++
++				retimer_ss2_con_sbu_out: endpoint {
++					remote-endpoint = <&pmic_glink_ss2_con_sbu_in>;
++				};
++			};
++		};
++	};
++};
++
 +&i2c3 {
 +	clock-frequency = <400000>;
 +
@@ -288,8 +416,8 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
 +		pinctrl-0 = <&rtmr0_default>;
 +		pinctrl-names = "default";
 +
-+		orientation-switch;
 +		retimer-switch;
++		orientation-switch;
 +
 +		ports {
 +			#address-cells = <1>;
@@ -319,54 +447,6 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
 +				};
 +			};
 +		};
-+	};
-+};
-+
-+&i2c5 {
-+	clock-frequency = <400000>;
-+
-+	status = "okay";
-+
-+	eusb5_repeater: redriver@43 {
-+		compatible = "nxp,ptn3222";
-+		reg = <0x43>;
-+		#phy-cells = <0>;
-+
-+		vdd3v3-supply = <&vreg_l13b_3p0>;
-+		vdd1v8-supply = <&vreg_l4b_1p8>;
-+
-+		reset-gpios = <&tlmm 7 GPIO_ACTIVE_LOW>;
-+
-+		pinctrl-0 = <&eusb5_reset_n>;
-+		pinctrl-names = "default";
-+	};
-+
-+	eusb3_repeater: redriver@47 {
-+		compatible = "nxp,ptn3222";
-+		reg = <0x47>;
-+		#phy-cells = <0>;
-+
-+		vdd3v3-supply = <&vreg_l13b_3p0>;
-+		vdd1v8-supply = <&vreg_l4b_1p8>;
-+
-+		reset-gpios = <&tlmm 6 GPIO_ACTIVE_LOW>;
-+
-+		pinctrl-0 = <&eusb3_reset_n>;
-+		pinctrl-names = "default";
-+	};
-+
-+	eusb6_repeater: redriver@4f {
-+		compatible = "nxp,ptn3222";
-+		reg = <0x4f>;
-+		#phy-cells = <0>;
-+
-+		vdd3v3-supply = <&vreg_l13b_3p0>;
-+		vdd1v8-supply = <&vreg_l4b_1p8>;
-+
-+		reset-gpios = <&tlmm 184 GPIO_ACTIVE_LOW>;
-+
-+		pinctrl-0 = <&eusb6_reset_n>;
-+		pinctrl-names = "default";
 +	};
 +};
 +
@@ -431,7 +511,7 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
  &i2c8 {
  	clock-frequency = <400000>;
  
-@@ -519,6 +899,22 @@
+@@ -785,6 +1227,30 @@
  	status = "okay";
  };
  
@@ -451,10 +531,18 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
 +	data-lanes = <0 1>;
 +};
 +
++&mdss_dp2 {
++	status = "okay";
++};
++
++&mdss_dp2_out {
++	data-lanes = <0 1>;
++};
++
  &mdss_dp3 {
  	compatible = "qcom,x1e80100-dp";
  	/delete-property/ #sound-dai-cells;
-@@ -580,6 +976,23 @@
+@@ -845,6 +1311,23 @@
  	status = "okay";
  };
  
@@ -475,10 +563,10 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
 +	};
 +};
 +
- &pcie6a {
- 	perst-gpios = <&tlmm 152 GPIO_ACTIVE_LOW>;
- 	wake-gpios = <&tlmm 154 GPIO_ACTIVE_LOW>;
-@@ -599,6 +1012,37 @@
+ &pcie5 {
+ 	perst-gpios = <&tlmm 149 GPIO_ACTIVE_LOW>;
+ 	wake-gpios = <&tlmm 151 GPIO_ACTIVE_LOW>;
+@@ -883,6 +1366,26 @@
  	status = "okay";
  };
  
@@ -502,6 +590,13 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
 +	};
 +};
 +
+ &pm8550ve_8_gpios {
+ 	misc_3p3_reg_en: misc-3p3-reg-en-state {
+ 		pins = "gpio6";
+@@ -896,6 +1399,17 @@
+ 	};
+ };
+ 
 +&pm8550ve_9_gpios {
 +	usb0_1p8_reg_en: usb0-1p8-reg-en-state {
 +		pins = "gpio8";
@@ -516,7 +611,7 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
  &pmc8380_3_gpios {
  	edp_bl_en: edp-bl-en-state {
  		pins = "gpio4";
-@@ -609,6 +1053,17 @@
+@@ -906,6 +1420,17 @@
  	};
  };
  
@@ -534,38 +629,7 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
  &qupv3_0 {
  	status = "okay";
  };
-@@ -651,6 +1106,30 @@
- 			       <72 2>, /* Secure EC I2C connection (?) */
- 			       <238 1>; /* UFS Reset */
- 
-+	eusb3_reset_n: eusb3-reset-n-state {
-+		pins = "gpio6";
-+		function = "gpio";
-+		drive-strength = <2>;
-+		bias-disable;
-+		output-low;
-+	};
-+
-+	eusb5_reset_n: eusb5-reset-n-state {
-+		pins = "gpio7";
-+		function = "gpio";
-+		drive-strength = <2>;
-+		bias-disable;
-+		output-low;
-+	};
-+
-+	eusb6_reset_n: eusb6-reset-n-state {
-+		pins = "gpio184";
-+		function = "gpio";
-+		drive-strength = <2>;
-+		bias-disable;
-+		output-low;
-+	};
-+
- 	tpad_default: tpad-default-state {
- 		pins = "gpio3";
- 		function = "gpio";
-@@ -744,6 +1223,34 @@
+@@ -1135,6 +1660,20 @@
  		};
  	};
  
@@ -576,6 +640,20 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
 +		bias-disable;
 +	};
 +
++	rtmr2_default: rtmr2-reset-n-active-state {
++		pins = "gpio185";
++		function = "gpio";
++		drive-strength = <2>;
++		bias-disable;
++	};
++
+ 	tpad_default: tpad-default-state {
+ 		pins = "gpio3";
+ 		function = "gpio";
+@@ -1156,6 +1695,48 @@
+ 		};
+ 	};
+ 
 +	usb1_pwr_1p15_reg_en: usb1-pwr-1p15-reg-en-state {
 +		pins = "gpio188";
 +		function = "gpio";
@@ -597,27 +675,53 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
 +		bias-disable;
 +	};
 +
++	usb2_pwr_1p15_reg_en: usb2-pwr-1p15-reg-en-state {
++		pins = "gpio189";
++		function = "gpio";
++		drive-strength = <2>;
++		bias-disable;
++	};
++
++	usb2_pwr_1p8_reg_en: usb2-pwr-1p8-reg-en-state {
++		pins = "gpio126";
++		function = "gpio";
++		drive-strength = <2>;
++		bias-disable;
++	};
++
++	usb2_pwr_3p3_reg_en: usb2-pwr-3p3-reg-en-state {
++		pins = "gpio187";
++		function = "gpio";
++		drive-strength = <2>;
++		bias-disable;
++	};
++
  	wcd_default: wcd-reset-n-active-state {
  		pins = "gpio191";
  		function = "gpio";
-@@ -751,8 +1258,39 @@
- 		bias-disable;
+@@ -1164,6 +1745,20 @@
  		output-low;
  	};
+ 
++	wcn_sw_en: wcn-sw-en-state {
++		pins = "gpio214";
++		function = "gpio";
++		drive-strength = <2>;
++		bias-disable;
++	};
 +
-+        wcn_sw_en: wcn-sw-en-state {
-+                pins = "gpio214";
-+                function = "gpio";
-+                drive-strength = <2>;
-+                bias-disable;
-+        };
++	wcn_wlan_bt_en: wcn-wlan-bt-en-state {
++		pins = "gpio116", "gpio117";
++		function = "gpio";
++		drive-strength = <2>;
++		bias-disable;
++	};
 +
-+        wcn_wlan_bt_en: wcn-wlan-bt-en-state {
-+                pins = "gpio116", "gpio117";
-+                function = "gpio";
-+                drive-strength = <2>;
-+                bias-disable;
-+        };
+ 	wwan_sw_en: wwan-sw-en-state {
+ 		pins = "gpio221";
+ 		function = "gpio";
+@@ -1172,6 +1767,23 @@
+ 	};
  };
  
 +&uart14 {
@@ -637,10 +741,10 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
 +	};
 +};
 +
- &usb_1_ss0_hsphy {
- 	vdd-supply = <&vreg_l3j_0p8>;
- 	vdda12-supply = <&vreg_l2j_1p2>;
-@@ -763,7 +1301,7 @@
+ &uart21 {
+ 	compatible = "qcom,geni-debug-uart";
+ 	status = "okay";
+@@ -1187,7 +1799,7 @@
  };
  
  &usb_1_ss0_qmpphy {
@@ -649,7 +753,7 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
  	vdda-pll-supply = <&vreg_l1j_0p8>;
  
  	status = "okay";
-@@ -782,7 +1320,7 @@
+@@ -1206,7 +1818,7 @@
  };
  
  &usb_1_ss0_qmpphy_out {
@@ -658,7 +762,7 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
  };
  
  &usb_1_ss1_hsphy {
-@@ -795,7 +1333,7 @@
+@@ -1219,7 +1831,7 @@
  };
  
  &usb_1_ss1_qmpphy {
@@ -667,63 +771,28 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
  	vdda-pll-supply = <&vreg_l2d_0p9>;
  
  	status = "okay";
-@@ -814,5 +1352,58 @@
+@@ -1238,7 +1850,7 @@
  };
  
  &usb_1_ss1_qmpphy_out {
 -	remote-endpoint = <&pmic_glink_ss1_ss_in>;
 +	remote-endpoint = <&retimer_ss1_ss_in>;
-+};
-+
-+&usb_2 {
-+	status = "okay";
-+};
-+
-+&usb_2_dwc3 {
-+	dr_mode = "host";
-+};
-+
-+&usb_2_hsphy {
-+	vdd-supply = <&vreg_l2e_0p8>;
-+	vdda12-supply = <&vreg_l3e_1p2>;
-+
-+	phys = <&eusb5_repeater>;
-+
-+	status = "okay";
-+};
-+
-+&usb_mp {
-+	status = "okay";
-+};
-+
-+&usb_mp_hsphy0 {
-+	vdd-supply = <&vreg_l2e_0p8>;
-+	vdda12-supply = <&vreg_l3e_1p2>;
-+
-+	phys = <&eusb6_repeater>;
-+
-+	status = "okay";
-+};
-+
-+&usb_mp_qmpphy0 {
-+	vdda-phy-supply = <&vreg_l3e_1p2>;
-+	vdda-pll-supply = <&vreg_l3c_0p8>;
-+
-+	status = "okay";
-+};
-+
-+&usb_mp_hsphy1 {
-+	vdd-supply = <&vreg_l2e_0p8>;
-+	vdda12-supply = <&vreg_l3e_1p2>;
-+
-+	phys = <&eusb3_repeater>;
-+
-+	status = "okay";
-+};
-+
-+&usb_mp_qmpphy1 {
-+	vdda-phy-supply = <&vreg_l3e_1p2>;
-+	vdda-pll-supply = <&vreg_l3c_0p8>;
-+
-+	status = "okay";
+ };
+ 
+ &usb_1_ss2_hsphy {
+@@ -1251,7 +1863,7 @@
+ };
+ 
+ &usb_1_ss2_qmpphy {
+-	vdda-phy-supply = <&vreg_l3e_1p2>;
++	vdda-phy-supply = <&vreg_l2j_1p2>;
+ 	vdda-pll-supply = <&vreg_l2d_0p9>;
+ 
+ 	status = "okay";
+@@ -1270,5 +1882,5 @@
+ };
+ 
+ &usb_1_ss2_qmpphy_out {
+-	remote-endpoint = <&pmic_glink_ss2_ss_in>;
++	remote-endpoint = <&retimer_ss2_ss_in>;
  };

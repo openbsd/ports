@@ -1,7 +1,7 @@
 Index: src/arm64/qcom/sc8280xp-lenovo-thinkpad-x13s.dts
 --- src/arm64/qcom/sc8280xp-lenovo-thinkpad-x13s.dts.orig
 +++ src/arm64/qcom/sc8280xp-lenovo-thinkpad-x13s.dts
-@@ -847,14 +847,14 @@
+@@ -959,14 +959,14 @@
  	pinctrl-names = "default";
  	pinctrl-0 = <&pcie3a_default>;
  
@@ -18,7 +18,7 @@ Index: src/arm64/qcom/sc8280xp-lenovo-thinkpad-x13s.dts
  };
  
  &pcie4 {
-@@ -1299,7 +1299,7 @@
+@@ -1417,7 +1417,7 @@
  };
  
  &usb_2 {
