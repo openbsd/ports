@@ -1,0 +1,16 @@
+From 201c2d663ba537c5de4d134122617431b812a2fb Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Ball=C3=B3=20Gy=C3=B6rgy?= <ballogyor@gmail.com>
+Date: Sat, 17 Aug 2024 23:44:32 +0200
+Subject: [PATCH] Set prgname to application ID
+
+Index: pitivi/application.py
+--- pitivi/application.py.orig
++++ pitivi/application.py
+@@ -72,6 +72,7 @@ class Pitivi(Gtk.Application, Loggable):
+                                  application_id="org.pitivi.Pitivi",
+                                  flags=Gio.ApplicationFlags.NON_UNIQUE | Gio.ApplicationFlags.HANDLES_OPEN)
+         Loggable.__init__(self)
++        GLib.set_prgname("org.pitivi.Pitivi")
+ 
+         self.settings: Optional[GlobalSettings] = None
+         self.threads: Optional[ThreadMaster] = None

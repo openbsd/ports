@@ -1,0 +1,17 @@
+From 829e8d737c84769bf55caf22d547ee8f1eb2297a Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Ball=C3=B3=20Gy=C3=B6rgy?= <ballogyor@gmail.com>
+Date: Sat, 17 Aug 2024 22:44:36 +0200
+Subject: [PATCH] Fix icon name
+
+Index: pitivi/mainwindow.py
+--- pitivi/mainwindow.py.orig
++++ pitivi/mainwindow.py
+@@ -128,7 +128,7 @@ class MainWindow(Gtk.ApplicationWindow, Loggable):
+         """Sets up the various perspectives's UI."""
+         self.log("Setting up the perspectives.")
+ 
+-        self.set_icon_name("pitivi")
++        self.set_icon_name("org.pitivi.Pitivi")
+         self._create_actions()
+ 
+         self.greeter.setup_ui()

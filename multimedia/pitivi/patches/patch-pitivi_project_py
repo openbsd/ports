@@ -1,0 +1,26 @@
+From 829e8d737c84769bf55caf22d547ee8f1eb2297a Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Ball=C3=B3=20Gy=C3=B6rgy?= <ballogyor@gmail.com>
+Date: Sat, 17 Aug 2024 22:44:36 +0200
+Subject: [PATCH] Fix icon name
+
+Index: pitivi/project.py
+--- pitivi/project.py.orig
++++ pitivi/project.py
+@@ -196,7 +196,7 @@ class ProjectManager(GObject.Object, Loggable):
+                            _("Close Pitivi"), Gtk.ResponseType.CLOSE)
+ 
+         dialog.set_default_response(1)  # Default to "Save as"
+-        dialog.set_icon_name("pitivi")
++        dialog.set_icon_name("org.pitivi.Pitivi")
+         dialog.set_modal(True)
+         dialog.get_accessible().set_name("pitivi died")
+ 
+@@ -288,7 +288,7 @@ class ProjectManager(GObject.Object, Loggable):
+         ignore_backup_btn = dialog.add_button(_("Ignore backup"), Gtk.ResponseType.REJECT)
+         ignore_backup_btn.get_style_context().add_class("destructive-action")
+         dialog.add_button(_("Restore from backup"), Gtk.ResponseType.YES)
+-        dialog.set_icon_name("pitivi")
++        dialog.set_icon_name("org.pitivi.Pitivi")
+         dialog.set_modal(True)
+         dialog.set_default_response(Gtk.ResponseType.YES)
+         dialog.get_accessible().set_name("restore from backup dialog")

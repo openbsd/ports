@@ -1,0 +1,17 @@
+From 829e8d737c84769bf55caf22d547ee8f1eb2297a Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Ball=C3=B3=20Gy=C3=B6rgy?= <ballogyor@gmail.com>
+Date: Sat, 17 Aug 2024 22:44:36 +0200
+Subject: [PATCH] Fix icon name
+
+Index: pitivi/medialibrary.py
+--- pitivi/medialibrary.py.orig
++++ pitivi/medialibrary.py
+@@ -861,7 +861,7 @@ class MediaLibraryWidget(Gtk.Box, Loggable):
+         dialog = Gtk.FileChooserDialog()
+         dialog.set_title(_("Select One or More Files"))
+         dialog.set_action(Gtk.FileChooserAction.OPEN)
+-        dialog.set_icon_name("pitivi")
++        dialog.set_icon_name("org.pitivi.Pitivi")
+         dialog.add_buttons(_("Cancel"), Gtk.ResponseType.CANCEL,
+                            _("Add"), Gtk.ResponseType.OK)
+         dialog.props.extra_widget = FileChooserExtraWidget(self.app)
