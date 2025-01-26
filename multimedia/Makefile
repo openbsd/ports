@@ -63,6 +63,7 @@
      SUBDIR += phonon
      SUBDIR += phonon-backend
      SUBDIR += pipewire
+     SUBDIR += pitivi
      SUBDIR += py-caption
      SUBDIR += py-casttube
      SUBDIR += py-chromecast
