@@ -6,7 +6,7 @@ XXX push upstream
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -163,7 +163,7 @@ config_h.set('ENABLE_SEARCH_PROVIDER', get_option('sea
+@@ -171,7 +171,7 @@ config_h.set('ENABLE_SEARCH_PROVIDER', get_option('sea
  # Enable libc features
  
  libc_feature_defines = [
@@ -15,7 +15,7 @@ Index: meson.build
    ['_POSIX_C_SOURCE', '200809L'],
    ['_XOPEN_SOURCE', '700'],
    ['_XOPEN_SOURCE_EXTENDED', '1'],
-@@ -229,7 +229,11 @@ assert(get_option('b_lto') == false, 'LTO not supporte
+@@ -237,7 +237,11 @@ assert(get_option('b_lto') == false, 'LTO not supporte
  
  # Check for functions
  
