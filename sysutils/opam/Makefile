@@ -2,10 +2,9 @@ COMMENT =		OCaml source-based package manager
 
 CATEGORIES =		sysutils devel
 
-V =			2.2.0
+V =			2.3.0
 PKGNAME =		opam-${V}
 DISTNAME =		opam-full-${V}
-DISTFILES =		${DISTNAME}-2${EXTRACT_SUFX} #remove on next update
 
 SITES =			https://github.com/ocaml/opam/releases/download/${V}/
 

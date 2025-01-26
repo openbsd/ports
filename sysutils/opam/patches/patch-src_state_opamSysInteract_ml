@@ -1,0 +1,14 @@
+backport https://github.com/ocaml/opam/pull/6362
+
+Index: src/state/opamSysInteract.ml
+--- src/state/opamSysInteract.ml.orig
++++ src/state/opamSysInteract.ml
+@@ -972,7 +972,7 @@ let packages_status ?(env=OpamVariable.Map.empty) conf
+     compute_sets sys_installed
+   | Openbsd ->
+     let sys_installed =
+-      run_query_command "pkg_info" ["-mqP"]
++      run_query_command "pkg_info" ["-qP"]
+       |> package_set_of_pkgpath
+     in
+     compute_sets sys_installed
