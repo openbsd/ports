@@ -47,6 +47,7 @@ CONFIGURE_ARGS+=--disable-alsa \
 		--disable-gtk \
 		--disable-libcurl \
 		--disable-libunity \
+		--disable-mpcdec \
 		--disable-nasm \
 		--disable-sdlnet \
 		--disable-system-dialogs \
