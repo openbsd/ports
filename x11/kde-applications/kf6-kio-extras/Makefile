@@ -1,6 +1,7 @@
 COMMENT =	extra functionality for kioslaves
 DISTNAME =	kio-extras-${VERSION}
 PKGNAME =	kf6-kio-extras-${VERSION}
+REVISION =	0
 
 CATEGORIES =	productivity net
 
@@ -28,7 +29,6 @@ BUILD_DEPENDS =	devel/gperf \
 		devel/kf6/kpty
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		devel/gperf \
 		devel/kf6/kiconthemes \
 		devel/kf6/kpty \
 		misc/shared-mime-info
