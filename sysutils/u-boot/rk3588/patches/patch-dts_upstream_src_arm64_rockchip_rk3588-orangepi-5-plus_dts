@@ -1,0 +1,12 @@
+Index: dts/upstream/src/arm64/rockchip/rk3588-orangepi-5-plus.dts
+--- dts/upstream/src/arm64/rockchip/rk3588-orangepi-5-plus.dts.orig
++++ dts/upstream/src/arm64/rockchip/rk3588-orangepi-5-plus.dts
+@@ -22,7 +22,7 @@
+ 	};
+ 
+ 	chosen {
+-		stdout-path = "serial2:1500000n8";
++		stdout-path = "serial2:115200n8";
+ 	};
+ 
+ 	adc-keys-0 {
