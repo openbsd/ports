@@ -2,6 +2,7 @@ COMMENT=	implementation of HTTP/3
 
 V=		1.7.0
 DISTNAME=	nghttp3-$V
+REVISION=	0
 
 SHARED_LIBS +=	nghttp3              3.1     # 11.1
 
