@@ -3,7 +3,7 @@ COMMENT =		physics sandbox simulation
 # LuaJIT requires USE_NOBTCFI
 USE_NOBTCFI =		Yes
 
-V =			98.2.365
+V =			99.1.380
 PKGNAME =		powder-toy-${V}
 DIST_TUPLE +=		github The-Powder-Toy The-Powder-Toy v${V} .
 CATEGORIES =		games
@@ -28,10 +28,10 @@ LIB_DEPENDS =		archivers/bzip2 \
 			net/curl
 
 CONFIGURE_ARGS +=	-Dworkaround_elusive_bzip2=true \
-			-Dworkaround_elusive_bzip2_lib_dir=/usr/local/lib
-CONFIGURE_ENV +=	LIBRARY_PATH=/usr/local/lib LDFLAGS="${LDFLAGS}"
+			-Dworkaround_elusive_bzip2_lib_dir=${LOCALBASE}/lib
+CONFIGURE_ENV +=	LIBRARY_PATH=${LOCALBASE}/lib LDFLAGS="${LDFLAGS}"
 
-CFLAGS +=		-I/usr/local/include
+CXXFLAGS +=		-I${LOCALBASE}/include
 LDFLAGS +=		-lexecinfo
 
 .if ${MACHINE_ARCH:Mi386}
