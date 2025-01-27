@@ -7,9 +7,8 @@ COMMENT =	cross-platform library for building Telegram clients
 # track "unofficial minor versions" which are only present as commit hashes.
 GH_ACCOUNT =	tdlib
 GH_PROJECT =	td
-GH_COMMIT =	7eabd8ca60de025e45e99d4e5edd39f4ebd9467e
-DISTNAME =	tdlib-1.8.4
-REVISION =	0
+GH_COMMIT =	28c6f2e9c045372d50217919bf5768b7fbbe0294
+DISTNAME =	tdlib-1.8.44
 
 SHARED_LIBS +=	tdjson	0.1
 CATEGORIES =	net
@@ -35,6 +34,6 @@ COMMIT =	${GH_COMMIT}
 SUBST_VARS +=	COMMIT
 
 post-patch:
-	${SUBST_CMD} ${WRKSRC}/gen_git_commit_h.sh
+	${SUBST_CMD} ${WRKSRC}/CMake/GetGitRevisionDescription.cmake
 
 .include <bsd.port.mk>

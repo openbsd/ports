@@ -1,10 +1,10 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -73,8 +73,8 @@ if (POLICY CMP0069)
+@@ -78,8 +78,8 @@ if (POLICY CMP0069)
  endif()
  
- # Configure CCache if available
+ # Configure Ccache if available
 -find_program(CCACHE_FOUND ccache)
 -#set(CCACHE_FOUND 0)
 +#find_program(CCACHE_FOUND ccache)
