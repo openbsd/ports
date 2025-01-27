@@ -6,6 +6,8 @@
 @so lib/librustc_driver-${LIBRUST_HASH}11.so
 lib/rustlib/
 lib/rustlib/${TRIPLE_ARCH}/
+lib/rustlib/${TRIPLE_ARCH}/bin/
+@bin lib/rustlib/${TRIPLE_ARCH}/bin/rust-objcopy
 lib/rustlib/${TRIPLE_ARCH}/lib/
 lib/rustlib/${TRIPLE_ARCH}/lib/libaddr2line-${LIBRUST_HASH}00.rlib
 lib/rustlib/${TRIPLE_ARCH}/lib/libadler-${LIBRUST_HASH}01.rlib
@@ -67,7 +69,6 @@ lib/rustlib/${TRIPLE_ARCH}/lib/libunwind-${LIBRUST_HASH}1a.rlib
 @man man/man1/cargo-uninstall.1
 @man man/man1/cargo-update.1
 @man man/man1/cargo-vendor.1
-@man man/man1/cargo-verify-project.1
 @man man/man1/cargo-version.1
 @man man/man1/cargo-yank.1
 @man man/man1/cargo.1

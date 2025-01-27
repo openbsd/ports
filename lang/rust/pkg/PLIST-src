@@ -26,6 +26,8 @@ lib/rustlib/src/rust/library/alloc/src/alloc/tests.rs
 lib/rustlib/src/rust/library/alloc/src/borrow.rs
 lib/rustlib/src/rust/library/alloc/src/boxed/
 lib/rustlib/src/rust/library/alloc/src/boxed.rs
+lib/rustlib/src/rust/library/alloc/src/boxed/convert.rs
+lib/rustlib/src/rust/library/alloc/src/boxed/iter.rs
 lib/rustlib/src/rust/library/alloc/src/boxed/thin.rs
 lib/rustlib/src/rust/library/alloc/src/collections/
 lib/rustlib/src/rust/library/alloc/src/collections/binary_heap/
@@ -385,8 +387,8 @@ lib/rustlib/src/rust/library/core/src/hash/sip.rs
 lib/rustlib/src/rust/library/core/src/hint.rs
 lib/rustlib/src/rust/library/core/src/internal_macros.rs
 lib/rustlib/src/rust/library/core/src/intrinsics/
-lib/rustlib/src/rust/library/core/src/intrinsics.rs
 lib/rustlib/src/rust/library/core/src/intrinsics/mir.rs
+lib/rustlib/src/rust/library/core/src/intrinsics/mod.rs
 lib/rustlib/src/rust/library/core/src/intrinsics/simd.rs
 lib/rustlib/src/rust/library/core/src/io/
 lib/rustlib/src/rust/library/core/src/io/borrowed_buf.rs
@@ -714,6 +716,7 @@ lib/rustlib/src/rust/library/core/tests/num/ieee754.rs
 lib/rustlib/src/rust/library/core/tests/num/int_log.rs
 lib/rustlib/src/rust/library/core/tests/num/int_macros.rs
 lib/rustlib/src/rust/library/core/tests/num/int_sqrt.rs
+lib/rustlib/src/rust/library/core/tests/num/midpoint.rs
 lib/rustlib/src/rust/library/core/tests/num/mod.rs
 lib/rustlib/src/rust/library/core/tests/num/nan.rs
 lib/rustlib/src/rust/library/core/tests/num/ops.rs
@@ -903,6 +906,7 @@ lib/rustlib/src/rust/library/proc_macro/src/diagnostic.rs
 lib/rustlib/src/rust/library/proc_macro/src/escape.rs
 lib/rustlib/src/rust/library/proc_macro/src/lib.rs
 lib/rustlib/src/rust/library/proc_macro/src/quote.rs
+lib/rustlib/src/rust/library/proc_macro/src/to_tokens.rs
 lib/rustlib/src/rust/library/profiler_builtins/
 lib/rustlib/src/rust/library/profiler_builtins/Cargo.toml
 lib/rustlib/src/rust/library/profiler_builtins/build.rs
@@ -1549,6 +1553,7 @@ lib/rustlib/src/rust/library/std/src/sys/pal/windows/stdio/tests.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/windows/thread.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/windows/time.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/xous/
+lib/rustlib/src/rust/library/std/src/sys/pal/xous/args.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/xous/mod.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/xous/net/
 lib/rustlib/src/rust/library/std/src/sys/pal/xous/net/dns.rs
@@ -1556,7 +1561,11 @@ lib/rustlib/src/rust/library/std/src/sys/pal/xous/net/mod.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/xous/net/tcplistener.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/xous/net/tcpstream.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/xous/net/udp.rs
+lib/rustlib/src/rust/library/std/src/sys/pal/xous/os/
 lib/rustlib/src/rust/library/std/src/sys/pal/xous/os.rs
+lib/rustlib/src/rust/library/std/src/sys/pal/xous/os/params/
+lib/rustlib/src/rust/library/std/src/sys/pal/xous/os/params.rs
+lib/rustlib/src/rust/library/std/src/sys/pal/xous/os/params/tests.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/xous/stdio.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/xous/thread.rs
 lib/rustlib/src/rust/library/std/src/sys/pal/xous/time.rs
@@ -1691,6 +1700,7 @@ lib/rustlib/src/rust/library/std/src/thread/local/dynamic_tests.rs
 lib/rustlib/src/rust/library/std/src/thread/local/tests.rs
 lib/rustlib/src/rust/library/std/src/thread/mod.rs
 lib/rustlib/src/rust/library/std/src/thread/scoped.rs
+lib/rustlib/src/rust/library/std/src/thread/spawnhook.rs
 lib/rustlib/src/rust/library/std/src/thread/tests.rs
 lib/rustlib/src/rust/library/std/src/time/
 lib/rustlib/src/rust/library/std/src/time.rs
@@ -1783,7 +1793,6 @@ lib/rustlib/src/rust/library/stdarch/crates/core_arch/LICENSE-APACHE
 lib/rustlib/src/rust/library/stdarch/crates/core_arch/LICENSE-MIT
 lib/rustlib/src/rust/library/stdarch/crates/core_arch/MISSING.md
 lib/rustlib/src/rust/library/stdarch/crates/core_arch/README.md
-lib/rustlib/src/rust/library/stdarch/crates/core_arch/build.rs
 lib/rustlib/src/rust/library/stdarch/crates/core_arch/missing-x86.md
 lib/rustlib/src/rust/library/stdarch/crates/core_arch/rustfmt.toml
 lib/rustlib/src/rust/library/stdarch/crates/core_arch/src/

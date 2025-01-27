@@ -11,16 +11,15 @@ COMMENT-rustfmt =	Rust code formatter
 COMMENT-bootstrap =	Rust binary bootstrap
 COMMENT-src =		Rust source component
 
-V =			1.83.0
-REVISION =		0
+V =			1.84.0
 DISTNAME =		rustc-${V}-src
 
 # rustc bootstrap version
-BV-aarch64 =		1.83.0
-BV-amd64 =		1.83.0
+BV-aarch64 =		1.84.0
+BV-amd64 =		1.84.0
 BV-powerpc64 =		1.65.0-20221213
-BV-riscv64 =		1.82.0
-BV-sparc64 =		1.82.0
+BV-riscv64 =		1.83.0
+BV-sparc64 =		1.83.0p0
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
