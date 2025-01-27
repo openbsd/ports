@@ -1,0 +1,12 @@
+Index: Source/Core/Common/MinizipUtil.h
+--- Source/Core/Common/MinizipUtil.h.orig
++++ Source/Core/Common/MinizipUtil.h
+@@ -5,7 +5,7 @@
+ 
+ #include <algorithm>
+ 
+-#include <mz_compat.h>
++#include <unzip.h>
+ 
+ #include "Common/CommonTypes.h"
+ #include "Common/ScopeGuard.h"

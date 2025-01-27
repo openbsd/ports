@@ -1,0 +1,13 @@
+Index: Source/Core/DiscIO/VolumeVerifier.cpp
+--- Source/Core/DiscIO/VolumeVerifier.cpp.orig
++++ Source/Core/DiscIO/VolumeVerifier.cpp
+@@ -13,8 +13,8 @@
+ #include <unordered_set>
+ 
+ #include <mbedtls/md5.h>
+-#include <mz_compat.h>
+ #include <pugixml.hpp>
++#include <unzip.h>
+ 
+ #include "Common/Align.h"
+ #include "Common/Assert.h"

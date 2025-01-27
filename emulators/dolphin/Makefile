@@ -6,6 +6,7 @@ COMMENT-main =		Nintendo GameCube and Wii emulator with GUI
 COMMENT-nogui =		Nintendo GameCube and Wii emulator
 
 PKGNAME =		dolphin-5.0.0.20240524
+REVISION =		0
 DIST_TUPLE +=		github dolphin-emu dolphin \
 			222a3930807545d9ebffebfbd13c3a816f788434 . # GPLv2
 
@@ -136,7 +137,8 @@ CONFIGURE_ARGS +=	-DENABLE_ALSA=OFF \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON
 
 FIX_CRLF_FILES =	Externals/soundtouch/SoundTouch.cpp \
-			Externals/soundtouch/SoundTouch.h
+			Externals/soundtouch/SoundTouch.h \
+			Source/Core/Common/MinizipUtil.h
 
 post-configure:
 	@mv ${WRKSRC}/Externals/soundtouch/SoundTouch.h \
