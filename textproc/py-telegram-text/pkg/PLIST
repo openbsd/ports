@@ -1,0 +1,26 @@
+@pkgpath net/py-telegram,python3
+lib/python${MODPY_VERSION}/site-packages/telegram_text/
+lib/python${MODPY_VERSION}/site-packages/telegram_text-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/telegram_text-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/telegram_text-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/telegram_text-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/telegram_text-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/telegram_text/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/telegram_text/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/telegram_text/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/telegram_text/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/telegram_text/${MODPY_PYCACHE}bases.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/telegram_text/${MODPY_PYCACHE}bases.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/telegram_text/${MODPY_PYCACHE}custom.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/telegram_text/${MODPY_PYCACHE}custom.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/telegram_text/${MODPY_PYCACHE}elements.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/telegram_text/${MODPY_PYCACHE}elements.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/telegram_text/${MODPY_PYCACHE}markdown.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/telegram_text/${MODPY_PYCACHE}markdown.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/telegram_text/${MODPY_PYCACHE}styles.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/telegram_text/${MODPY_PYCACHE}styles.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/telegram_text/bases.py
+lib/python${MODPY_VERSION}/site-packages/telegram_text/custom.py
+lib/python${MODPY_VERSION}/site-packages/telegram_text/elements.py
+lib/python${MODPY_VERSION}/site-packages/telegram_text/markdown.py
+lib/python${MODPY_VERSION}/site-packages/telegram_text/styles.py
