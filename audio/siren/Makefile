@@ -1,5 +1,5 @@
 COMMENT =		text-based audio player
-DISTNAME =		siren-0.9
+DISTNAME =		siren-0.11
 CATEGORIES =		audio
 HOMEPAGE =		https://www.kariliq.nl/siren/
 MAINTAINER =		Alexandre Ratchov <alex@caoua.org>
