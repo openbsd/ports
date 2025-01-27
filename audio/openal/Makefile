@@ -1,6 +1,6 @@
 COMMENT =	cross-platform 3D audio API
 
-V =		1.23.1
+V =		1.24.1
 DISTNAME =	openal-soft-$V
 PKGNAME =	openal-$V
 EPOCH =		0
@@ -20,7 +20,7 @@ WANTLIB +=	c m mysofa pthread sndio z ${COMPILER_LIBCXX}
 SITES =		${HOMEPAGE}openal-releases/
 EXTRACT_SUFX =	.tar.bz2
 
-LIB_DEPENDS +=	audio/libmysofa
+LIB_DEPENDS +=	audio/libmysofa>=1.3.3
 
 CONFIGURE_ARGS =-DALSOFT_BACKEND_PIPEWIRE=Off \
 		-DALSOFT_BACKEND_WAVE=Off \

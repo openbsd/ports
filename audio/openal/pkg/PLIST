@@ -7,7 +7,6 @@ include/AL/alext.h
 include/AL/efx-creative.h
 include/AL/efx-presets.h
 include/AL/efx.h
-lib/cmake/
 lib/cmake/OpenAL/
 lib/cmake/OpenAL/OpenALConfig.cmake
 lib/cmake/OpenAL/OpenALTargets-openbsd.cmake
