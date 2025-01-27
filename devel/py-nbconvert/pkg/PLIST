@@ -1,5 +1,5 @@
-@pkgpath devel/py-nbconvert,python3
 @conflict py-nbconvert-*
+@pkgpath devel/py-nbconvert,python3
 bin/jupyter-dejavu
 bin/jupyter-nbconvert
 lib/python${MODPY_VERSION}/site-packages/nbconvert/
