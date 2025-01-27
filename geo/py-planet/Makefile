@@ -10,7 +10,7 @@ CATEGORIES=	geo
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PYBUILD=	setuptools
+MODPY_PYBUILD=	setuptools_scm
 MODPY_PI=	Yes
 
 RUN_DEPENDS=	devel/py-click \
