@@ -1,4 +1,4 @@
-SHA256 (aerc-0.19.0.zip) = UeAYzpPAIlPC6rlKAjX8mR1L/ASoZubXFogidLz0Q94=
+SHA256 (aerc-0.20.0.zip) = YuegFppRJho65kOyTSM084hSSygOrRCQuDdlmLBJgpU=
 SHA256 (go_modules/cloud.google.com/go/compute/metadata/@v/v0.3.0.mod) = ZmAMRI0rXFR3BnNIkO0YGJyCgLII2Gua8qsIENW2HSE=
 SHA256 (go_modules/cloud.google.com/go/compute/metadata/@v/v0.3.0.zip) = wKt5wwhwwaqZEvsP3LBD4ARHgoJZiOQPWUAdInl2tnc=
 SHA256 (go_modules/git.sr.ht/~rjarry/go-opt/v2/@v/v2.0.1.mod) = e3GlJhctDz59c9Pb/MYbxGI1HxAT8gZgCg/zrISsVZI=
@@ -289,7 +289,7 @@ SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) =
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SIZE (aerc-0.19.0.zip) = 718918
+SIZE (aerc-0.20.0.zip) = 720734
 SIZE (go_modules/cloud.google.com/go/compute/metadata/@v/v0.3.0.mod) = 53
 SIZE (go_modules/cloud.google.com/go/compute/metadata/@v/v0.3.0.zip) = 19692
 SIZE (go_modules/git.sr.ht/~rjarry/go-opt/v2/@v/v2.0.1.mod) = 235

@@ -4,9 +4,9 @@ ONLY_FOR_ARCHS = aarch64 arm amd64 i386
 COMMENT =	terminal email client
 
 MODGO_MODNAME =	git.sr.ht/~rjarry/aerc
-MODGO_VERSION =	v0.0.0-20250114220509-add9e15e475d
+MODGO_VERSION =	v0.0.0-20250125205548-962ca08f1d7a
 
-V =		0.19.0
+V =		0.20.0
 DISTNAME =	aerc-$V
 
 CATEGORIES =	mail
