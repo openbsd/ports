@@ -474,6 +474,7 @@
      SUBDIR += try_repeat
      SUBDIR += ttyload
      SUBDIR += ttyplot
+     SUBDIR += twc
      SUBDIR += u-boot
      SUBDIR += u-boot-asahi
      SUBDIR += udfclient
