@@ -5,6 +5,6 @@ Index: py_tutorials/CMakeLists.txt
  install( FILES 
          shaft.geo mesh.py exportNeutral.py
 -        DESTINATION ${NG_INSTALL_DIR_RES}/${NG_INSTALL_SUFFIX}/py_tutorials
-+        DESTINATION ${NG_INSTALL_DIR_RES}/examples/${NG_INSTALL_SUFFIX}/py_tutorials
++        DESTINATION ${NG_INSTALL_DIR_RES}/examples/${NG_INSTALL_SUFFIX}-mesher/py_tutorials
          COMPONENT netgen_tutorial
         )

@@ -6,6 +6,6 @@ Index: tutorials/CMakeLists.txt
          hinge.stl  part1.stl frame.step  screw.step					   
          squarehole.in2d squarecircle.in2d square.in2d
 -        DESTINATION ${NG_INSTALL_DIR_RES}/${NG_INSTALL_SUFFIX}
-+        DESTINATION ${NG_INSTALL_DIR_RES}/examples/${NG_INSTALL_SUFFIX}
++        DESTINATION ${NG_INSTALL_DIR_RES}/examples/${NG_INSTALL_SUFFIX}-mesher
          COMPONENT netgen_tutorial
         )
