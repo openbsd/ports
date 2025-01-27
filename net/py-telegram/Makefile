@@ -1,10 +1,9 @@
 COMMENT =	Python wrapper for Telegram tdlib
 
-MODPY_DISTV =	0.16.0
+MODPY_DISTV =	0.19.0
 
-DISTNAME =	python-telegram-${MODPY_DISTV}
-PKGNAME =	${DISTNAME:S/^python-/py-/}
-REVISION =	1
+DISTNAME =	python_telegram-${MODPY_DISTV}
+PKGNAME =	py-telegram-${MODPY_DISTV}
 
 CATEGORIES =	net
 
@@ -16,10 +15,10 @@ PERMIT_PACKAGE =	Yes
 MODULES =	lang/python
 
 MODPY_PI =	Yes
-MODPY_PYBUILD =	setuptools
+MODPY_PYBUILD =	setuptools_scm
 
-RUN_DEPENDS =	net/tdlib
-NO_TEST =	Yes
+RUN_DEPENDS =	net/tdlib \
+		textproc/py-telegram-text
 
 # remove bundled binaries
 post-install:
