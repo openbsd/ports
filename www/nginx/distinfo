@@ -9,6 +9,7 @@ SHA256 (nginx-modules-ngx_http_hmac_secure_link_module-48c4625fbbf51ed5a95bfec23
 SHA256 (nginx-njs-0.8.4.tar.gz) = /hl+JUIEwV6fHfCs83Wt1XvjQWkB7I17hzGdzLSQ+Q0=
 SHA256 (openresty-headers-more-nginx-module-v0.34.tar.gz) = DA0s7SzolbP0XrKyMM2QUIqyp3MpnxU94UpD5EwSCbM=
 SHA256 (openresty-lua-nginx-module-v0.10.11.tar.gz) = wPuR/P0cbn3sNMpkgm74H/66/e9hdNJURnY284BWZiY=
+SHA256 (owasp-modsecurity-ModSecurity-nginx-v1.0.3.tar.gz) = MqQiVmFsxnTcokyGVDlzkK3/FbiIt363TgaH8CPIdRs=
 SHA256 (vision5-ngx_devel_kit-v0.3.3.tar.gz) = +qL81RaLEHZNNQgTVlEdX4TbXFJqGqS2rdLblLaFOys=
 SIZE (FRiCKLE-ngx_cache_purge-2.3.tar.gz) = 11717
 SIZE (arut-nginx-rtmp-module-v1.2.2.tar.gz) = 519934
@@ -21,4 +22,5 @@ SIZE (nginx-modules-ngx_http_hmac_secure_link_module-48c4625fbbf51ed5a95bfec23fa
 SIZE (nginx-njs-0.8.4.tar.gz) = 743910
 SIZE (openresty-headers-more-nginx-module-v0.34.tar.gz) = 28827
 SIZE (openresty-lua-nginx-module-v0.10.11.tar.gz) = 616653
+SIZE (owasp-modsecurity-ModSecurity-nginx-v1.0.3.tar.gz) = 34063
 SIZE (vision5-ngx_devel_kit-v0.3.3.tar.gz) = 66561

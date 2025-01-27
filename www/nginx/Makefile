@@ -10,6 +10,7 @@ COMMENT-image_filter=	nginx image filter module
 COMMENT-ldap_auth=	nginx LDAP authentication module
 COMMENT-lua=		nginx lua scripting (lua-nginx-module and ngx_devel_kit)
 COMMENT-mailproxy=	nginx mail proxy module
+COMMENT-modsecurity=	nginx module for ModSecurity
 COMMENT-naxsi=		nginx web application firewall module
 COMMENT-njs=		nginx javascript scripting module
 COMMENT-passenger=	nginx passenger (ruby/python/nodejs) integration module
@@ -31,6 +32,7 @@ PKGNAME-image_filter=	nginx-image_filter-${VERSION}
 PKGNAME-ldap_auth=	nginx-ldap_auth-${VERSION}
 PKGNAME-lua=		nginx-lua-${VERSION}
 PKGNAME-mailproxy=	nginx-mailproxy-${VERSION}
+PKGNAME-modsecurity=	nginx-modsecurity-${VERSION}
 PKGNAME-naxsi=		nginx-naxsi-${VERSION}
 PKGNAME-njs=		nginx-njs-${VERSION}
 PKGNAME-passenger=	nginx-passenger-${VERSION}
@@ -57,6 +59,7 @@ DIST_TUPLE=	\
 	github nginx njs 0.8.4 njs \
 	github arut nginx-rtmp-module v1.2.2 nginx-rtmp-module \
 	github nginx-modules ngx_http_hmac_secure_link_module 48c4625fbbf51ed5a95bfec23fa444f6c3702e50 ngx_http_hmac_secure_link_module \
+	github owasp-modsecurity ModSecurity-nginx v1.0.3 ModSecurity-nginx
 
 HOMEPAGE=	https://nginx.org/
 
@@ -65,6 +68,7 @@ HOMEPAGE-geoip2=	https://github.com/leev/ngx_http_geoip2_module
 HOMEPAGE-headers_more=	https://github.com/openresty/headers-more-nginx-module
 HOMEPAGE-ldap_auth=	https://github.com/kvspb/nginx-auth-ldap
 HOMEPAGE-lua=		https://github.com/openresty/lua-nginx-module
+HOMEPAGE-modsecurity=	https://github.com/owasp-modsecurity/ModSecurity-nginx
 HOMEPAGE-naxsi=		https://github.com/wargio/naxsi
 HOMEPAGE-njs=		https://github.com/nginx/njs
 HOMEPAGE-passenger=	https://www.phusionpassenger.com/
@@ -73,18 +77,22 @@ HOMEPAGE-securelink=	https://github.com/nginx-modules/ngx_http_hmac_secure_link_
 
 MAINTAINER=	Robert Nagy <robert@openbsd.org>
 
-# BSD-like
+# nginx, cache_purge, geoip2, headers_more, ldap_auth, njs, rtmp: BSD-like
+# passenger: MIT
+# securelink: unlicensed
+# naxsi: GPLv3
+# modsecurity: Apache2
 PERMIT_PACKAGE=	Yes
 
 MULTI_PACKAGES =	-main -naxsi -perl ${MODULE_PACKAGES}
 
 MODULE_PACKAGES =	-cache_purge -geoip2 -headers_more \
 			-image_filter -ldap_auth -lua -mailproxy \
-			-njs -passenger -rtmp -securelink -stream \
-			-xslt
+			-modsecurity -njs -passenger -rtmp \
+			-securelink -stream -xslt
 
 FLAVOR ?=
-PSEUDO_FLAVORS =	no_lua no_njs no_passenger
+PSEUDO_FLAVORS =	no_lua no_modsecurity no_njs no_passenger
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -98,6 +106,7 @@ WANTLIB-image_filter=	gd
 WANTLIB-ldap_auth=	ldap
 WANTLIB-lua=		${MODLUA_WANTLIB} m pcre
 WANTLIB-mailproxy=
+WANTLIB-modsecurity=	modsecurity
 WANTLIB-naxsi=
 WANTLIB-njs=		exslt m xml2 xslt
 WANTLIB-passenger=	m pthread ${COMPILER_LIBCXX}
@@ -114,6 +123,7 @@ LIB_DEPENDS-image_filter=graphics/gd
 LIB_DEPENDS-ldap_auth=	databases/openldap
 LIB_DEPENDS-lua=	${MODLUA_LIB_DEPENDS} \
 			devel/pcre
+LIB_DEPENDS-modsecurity=	security/libmodsecurity
 LIB_DEPENDS-njs=	devel/pcre2 \
 			textproc/libxslt \
 			textproc/libxml
@@ -155,6 +165,12 @@ MODULES+=		lang/lua
 CONFIGURE_ENV+=		MODLUA_INCL_DIR=${MODLUA_INCL_DIR} \
 			MODLUA_LIB=${MODLUA_LIB}
 CONFIGURE_ARGS+=	--add-dynamic-module=${WRKSRC}/lua-nginx-module
+.endif
+
+.if ${BUILD_PACKAGES:M-modsecurity}
+CONFIGURE_ENV+=		MODSECURITY_INC=${LOCALBASE}/include/modsecurity \
+			MODSECURITY_LIB=${LOCALBASE}/lib
+CONFIGURE_ARGS+=	--add-dynamic-module=${WRKSRC}/ModSecurity-nginx
 .endif
 
 .if ${BUILD_PACKAGES:M-passenger}
