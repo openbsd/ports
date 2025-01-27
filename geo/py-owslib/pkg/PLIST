@@ -1,5 +1,5 @@
-@pkgpath geo/py-owslib,python3
 @conflict py-owslib-*
+@pkgpath geo/py-owslib,python3
 lib/python${MODPY_VERSION}/site-packages/OWSLib-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/OWSLib-${MODPY_DISTV}.dist-info/AUTHORS.rst
 lib/python${MODPY_VERSION}/site-packages/OWSLib-${MODPY_DISTV}.dist-info/LICENSE
