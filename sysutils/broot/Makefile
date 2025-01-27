@@ -2,7 +2,7 @@ COMMENT =		new way to see and navigate directory trees
 
 GH_ACCOUNT =		Canop
 GH_PROJECT =		broot
-GH_TAGNAME =		v1.44.5
+GH_TAGNAME =		v1.44.6
 
 CATEGORIES =		sysutils
 
@@ -14,7 +14,6 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${MODCARGO_WANTLIB} git2 m
 
 MODULES =		devel/cargo
-MODCARGO_CRATES_KEEP += libgit2-sys
 
 CONFIGURE_STYLE =	cargo
 
