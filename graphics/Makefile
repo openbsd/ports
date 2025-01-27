@@ -275,6 +275,7 @@
      SUBDIR += py-matplotlib
      SUBDIR += py-matplotlib-inline
      SUBDIR += py-opengl
+     SUBDIR += py-pivy
      SUBDIR += py-pygal
      SUBDIR += py-pyqrcode
      SUBDIR += py-pyqtgraph
