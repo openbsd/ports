@@ -496,6 +496,7 @@
      SUBDIR += py-sphinxcontrib
      SUBDIR += py-stache
      SUBDIR += py-stemmer
+     SUBDIR += py-telegram-text
      SUBDIR += py-textdistance
      SUBDIR += py-textfsm
      SUBDIR += py-texttable
