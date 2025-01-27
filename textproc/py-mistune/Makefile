@@ -1,8 +1,6 @@
 COMMENT=	markdown parser for Python
 
-# for 3.1.0, py-nbconvert must be updated to 7.16.5
-# https://github.com/lepture/mistune/issues/403
-MODPY_DISTV=	3.0.2
+MODPY_DISTV=	3.1.0
 DISTNAME=	mistune-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
