@@ -1,6 +1,6 @@
 COMMENT =	retro computer image library
 
-DISTNAME =	recoil-6.4.1
+DISTNAME =	recoil-6.4.5
 
 CATEGORIES =	graphics
 
