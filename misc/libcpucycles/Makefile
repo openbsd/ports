@@ -1,12 +1,11 @@
 COMMENT=		library for counting CPU cycles
 
-V=			20230115
+V=			20240318
 DISTNAME=		libcpucycles-${V}
 SHARED_LIBS+=		cpucycles	0.0	# 1.0
 CATEGORIES=		misc
 HOMEPAGE=		https://cpucycles.cr.yp.to/
 SITES=			${HOMEPAGE}
-REVISION=		0
 
 MAINTAINER=		Miguel Landaeta <miguel@miguel.cc>
 
@@ -14,6 +13,8 @@ MAINTAINER=		Miguel Landaeta <miguel@miguel.cc>
 PERMIT_PACKAGE=		Yes
 
 WANTLIB+=		c m
+
+# used for configure script
 MODULES+=		lang/python
 MODPY_RUNDEP=		No
 
