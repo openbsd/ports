@@ -27,10 +27,12 @@ share/c2sp-testvectors/README.md
 share/c2sp-testvectors/RFC6979/
 share/c2sp-testvectors/RFC6979/README.md
 share/c2sp-testvectors/age/
+share/c2sp-testvectors/age/.gitignore
 share/c2sp-testvectors/age/README.md
 share/c2sp-testvectors/age/age.go
 share/c2sp-testvectors/age/go.mod
 share/c2sp-testvectors/age/go.sum
+share/c2sp-testvectors/age/index.d.ts
 share/c2sp-testvectors/age/internal/
 share/c2sp-testvectors/age/internal/LICENSE
 share/c2sp-testvectors/age/internal/bech32/
@@ -116,6 +118,9 @@ share/c2sp-testvectors/age/internal/tests/stanza_no_arguments.go
 share/c2sp-testvectors/age/internal/tests/stanza_not_canonical.go
 share/c2sp-testvectors/age/internal/tests/stanza_spurious_cr.go
 share/c2sp-testvectors/age/internal/tests/stanza_valid_characters.go
+share/c2sp-testvectors/age/internal/tests/stream_257_chunks.go
+share/c2sp-testvectors/age/internal/tests/stream_257_chunks_full.go
+share/c2sp-testvectors/age/internal/tests/stream_258_chunks.go
 share/c2sp-testvectors/age/internal/tests/stream_bad_tag.go
 share/c2sp-testvectors/age/internal/tests/stream_bad_tag_second_chunk.go
 share/c2sp-testvectors/age/internal/tests/stream_bad_tag_second_chunk_full.go
@@ -138,6 +143,9 @@ share/c2sp-testvectors/age/internal/tests/stream_trailing_garbage_long.go
 share/c2sp-testvectors/age/internal/tests/stream_trailing_garbage_short.go
 share/c2sp-testvectors/age/internal/tests/stream_two_chunks.go
 share/c2sp-testvectors/age/internal/tests/stream_two_final_chunks.go
+share/c2sp-testvectors/age/internal/tests/stream_two_final_chunks_full.go
+share/c2sp-testvectors/age/internal/tests/stream_two_final_chunks_second.go
+share/c2sp-testvectors/age/internal/tests/stream_two_final_chunks_short.go
 share/c2sp-testvectors/age/internal/tests/version_unsupported.go
 share/c2sp-testvectors/age/internal/tests/x25519.go
 share/c2sp-testvectors/age/internal/tests/x25519_bad_tag.go
@@ -153,6 +161,7 @@ share/c2sp-testvectors/age/internal/tests/x25519_no_match.go
 share/c2sp-testvectors/age/internal/tests/x25519_not_canonical_body.go
 share/c2sp-testvectors/age/internal/tests/x25519_not_canonical_share.go
 share/c2sp-testvectors/age/internal/tests/x25519_short_share.go
+share/c2sp-testvectors/age/package.json
 share/c2sp-testvectors/age/testdata/
 share/c2sp-testvectors/age/testdata/armor
 share/c2sp-testvectors/age/testdata/armor_crlf
@@ -231,6 +240,9 @@ share/c2sp-testvectors/age/testdata/stanza_no_arguments
 share/c2sp-testvectors/age/testdata/stanza_not_canonical
 share/c2sp-testvectors/age/testdata/stanza_spurious_cr
 share/c2sp-testvectors/age/testdata/stanza_valid_characters
+share/c2sp-testvectors/age/testdata/stream_257_chunks
+share/c2sp-testvectors/age/testdata/stream_257_chunks_full
+share/c2sp-testvectors/age/testdata/stream_258_chunks
 share/c2sp-testvectors/age/testdata/stream_bad_tag
 share/c2sp-testvectors/age/testdata/stream_bad_tag_second_chunk
 share/c2sp-testvectors/age/testdata/stream_bad_tag_second_chunk_full
@@ -253,6 +265,9 @@ share/c2sp-testvectors/age/testdata/stream_trailing_garbage_long
 share/c2sp-testvectors/age/testdata/stream_trailing_garbage_short
 share/c2sp-testvectors/age/testdata/stream_two_chunks
 share/c2sp-testvectors/age/testdata/stream_two_final_chunks
+share/c2sp-testvectors/age/testdata/stream_two_final_chunks_full
+share/c2sp-testvectors/age/testdata/stream_two_final_chunks_second
+share/c2sp-testvectors/age/testdata/stream_two_final_chunks_short
 share/c2sp-testvectors/age/testdata/version_unsupported
 share/c2sp-testvectors/age/testdata/x25519
 share/c2sp-testvectors/age/testdata/x25519_bad_tag
