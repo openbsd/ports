@@ -1,7 +1,7 @@
 Index: Cargo.toml
 --- Cargo.toml.orig
 +++ Cargo.toml
-@@ -168,7 +168,7 @@ grass_compiler = { version = "0.13.4", default-feature
+@@ -175,7 +175,7 @@ grass_compiler = { version = "0.13.4", default-feature
  
  [patch.crates-io]
  # Patch yubico to remove duplicate crates of older versions
