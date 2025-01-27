@@ -332,7 +332,7 @@ _MODPY_PRE_BUILD_STEPS += ; if [ -e ${WRKSRC}/pyproject.toml ] && \
 .  if ${_MODPY_EXPECTED_BACKEND} != other
 _MODPY_PRE_BUILD_STEPS += ; if [ -e ${WRKSRC}/pyproject.toml ] && \
 	grep '^build-backend' ${WRKSRC}/pyproject.toml | \
-	grep -qv ${_MODPY_EXPECTED_BACKEND}; then \
+	grep -qvw ${_MODPY_EXPECTED_BACKEND}; then \
 	    (echo; echo '*** Check MODPY_PYBUILD setting (currently "${MODPY_PYBUILD}")'; \
 	        grep -H ^build-backend ${WRKSRC}/pyproject.toml; echo ) >> \
 	        ${WRKDIR}/.modpy-warn; \
