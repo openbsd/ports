@@ -1,10 +1,8 @@
 COMMENT=	Internet Relay Chat (IRC) protocol client library for Python
 
-GH_ACCOUNT=	sixohsix
-GH_PROJECT=	python-irclib
-GH_COMMIT=	acd5aa66f431550bd142e90590b64ff6840e6648
-DISTNAME=	py-irclib-0.4.8.20110306
-REVISION=	5
+MODPY_DISTV=	0.6.0
+DISTNAME=	py_irclib-${MODPY_DISTV}
+PKGNAME=	py-irclib-${MODPY_DISTV}
 
 CATEGORIES=	net
 
@@ -12,17 +10,11 @@ CATEGORIES=	net
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PYBUILD=	setuptools
+MODPY_PYBUILD=	hatchling
+MODPY_PI=	Yes
 
-NO_TEST=	Yes
-
-EXAMPLES=	dccreceive dccsend irccat irccat2 servermap testbot.py
-EXAMPLESDIR=	${PREFIX}/share/examples/py-irclib
-
-post-install:
-	${INSTALL_DATA_DIR} ${EXAMPLESDIR}
-.for f in ${EXAMPLES}
-	${INSTALL_DATA} ${WRKSRC}/${f} ${EXAMPLESDIR}
-.endfor
+# these tests need "irc-parser-tests"
+MODPY_PYTEST_ARGS= --ignore tests/parser_test.py \
+		   --ignore tests/test_masks.py
 
 .include <bsd.port.mk>
