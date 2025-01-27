@@ -1,0 +1,16 @@
+Fix build with llvm-19
+
+https://github.com/GNUAspell/aspell/pull/650
+
+Index: modules/speller/default/vector_hash-t.hpp
+--- modules/speller/default/vector_hash-t.hpp.orig
++++ modules/speller/default/vector_hash-t.hpp
+@@ -183,7 +183,7 @@ namespace aspeller {
+   template<class Parms>
+   void VectorHashTable<Parms>::recalc_size() {
+     size_ = 0;
+-    for (iterator i = begin(); i != this->e; ++i, ++this->_size);
++    for (iterator i = begin(), e = end(); i != e; ++i, ++size_);
+   }
+ 
+ }
