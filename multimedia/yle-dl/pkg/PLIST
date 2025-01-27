@@ -5,7 +5,6 @@ lib/python${MODPY_VERSION}/site-packages/yle_dl-${MODPY_DISTV}.dist-info/METADAT
 lib/python${MODPY_VERSION}/site-packages/yle_dl-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/yle_dl-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/yle_dl-${MODPY_DISTV}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/yle_dl-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/yledl/
 lib/python${MODPY_VERSION}/site-packages/yledl/__init__.py
 lib/python${MODPY_VERSION}/site-packages/yledl/__main__.py

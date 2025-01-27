@@ -1,8 +1,7 @@
 GH_ACCOUNT =		aajanki
 GH_PROJECT =		yle-dl
-GH_TAGNAME =		20220704
-MODPY_DISTV =	${GH_TAGNAME}
-REVISION =		3
+GH_TAGNAME =		${MODPY_DISTV}
+MODPY_DISTV =		20240927
 
 COMMENT =		download videos from YLE Areena
 
@@ -15,8 +14,8 @@ MAINTAINER =		Timo Myyra <timo.myyra@bittivirhe.fi>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-
-MODPY_PYBUILD =		setuptools
+#MODPY_PYBUILD =		flit_core
+MODPY_PYBUILD =		flit
 
 RUN_DEPENDS =		devel/py-attrs \
 			devel/py-configargparse \
@@ -25,9 +24,8 @@ RUN_DEPENDS =		devel/py-attrs \
 			net/wget \
 			textproc/py-lxml
 
+# tests need network access to download streams
+PORTHOME =		${WRKDIR}
 TEST_DEPENDS =		devel/py-test-runner
-
-TEST_IS_INTERACTIVE =	needs network access to download streams
-TEST_ENV =		HOME=/tmp
 
 .include <bsd.port.mk>
