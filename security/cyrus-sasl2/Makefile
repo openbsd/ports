@@ -5,6 +5,7 @@ COMMENT=		RFC 2222 SASL (Simple Authentication and Security Layer)
 
 V=			2.1.28
 DISTNAME=		cyrus-sasl-${V}
+REVISION=		0
 
 SHARED_LIBS +=  sasl2                3.1      # 3.0
 SHARED_LIBS +=	anonymous                 0.0 # 3.0
