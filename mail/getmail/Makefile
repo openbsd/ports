@@ -2,11 +2,10 @@ COMMENT=	IMAP/POP3/SDPS mail retriever
 
 GH_ACCOUNT=	getmail6
 GH_PROJECT=	getmail6
-GH_TAGNAME=	v6.19.05
-MODPY_DISTV=	6.19.5
+GH_TAGNAME=	v6.19.07
+MODPY_DISTV=	6.19.7
 PKGNAME=	getmail-${MODPY_DISTV}
 CATEGORIES=	mail
-REVISION=	0
 
 # https://github.com/getmail6/getmail6
 HOMEPAGE=	https://getmail6.org/
