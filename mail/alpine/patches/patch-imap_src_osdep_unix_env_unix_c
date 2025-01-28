@@ -31,3 +31,41 @@ Index: imap/src/osdep/unix/env_unix.c
    return myMailboxDir ? myMailboxDir : "";
  }
  
+@@ -1233,14 +1230,11 @@ long dotlock_lock (char *file,DOTLOCK *base,int fd)
+   case EACCES:			/* protection failure? */
+     MM_CRITICAL (NIL);		/* go critical */
+     if (closedBox || !lockpgm);	/* can't do on closed box or disabled */
+-    else if ((*lockpgm && stat (lockpgm,&sb)) ||
+-	     (!*lockpgm && stat (lockpgm = LOCKPGM1,&sb) &&
+-	      stat (lockpgm = LOCKPGM2,&sb) && stat (lockpgm = LOCKPGM3,&sb) &&
+-	      stat (lockpgm = LOCKPGM4,&sb)))
++    else if (*lockpgm && stat (lockpgm,&sb)) /* lockspool(1) on OBSD */
+       lockpgm = NIL;		/* disable if can't find lockpgm */
+     else if (pipe (pi) >= 0) {	/* make command pipes */
+       long cf;
+-      char *argv[4],arg[20];
++      char *argv[2];		/* lockspool(1) takes no addt'l arguments */
+ 				/* if input pipes usable create output pipes */
+       if ((pi[0] < FD_SETSIZE) && (pi[1] < FD_SETSIZE) && (pipe (po) >= 0)) {
+ 				/* make sure output pipes are usable */
+@@ -1249,9 +1243,7 @@ long dotlock_lock (char *file,DOTLOCK *base,int fd)
+ 	else if (!(j = fork ())) {
+ 	  if (!fork ()) {	/* make grandchild so it's inherited by init */
+ 				/* prepare argument vector */
+-	    sprintf (arg,"%d",fd);
+-	    argv[0] = lockpgm; argv[1] = arg;
+-	    argv[2] = file; argv[3] = NIL;
++	    argv[0] = lockpgm; argv[1] = NIL; /* no args for lockspool(1) */
+ 				/* set parent's I/O to my O/I */
+ 	    dup2 (pi[1],1); dup2 (pi[1],2); dup2 (po[0],0);
+ 				/* close all unnecessary descriptors */
+@@ -1273,7 +1265,8 @@ long dotlock_lock (char *file,DOTLOCK *base,int fd)
+ 	  grim_pid_reap (j,NIL);/* reap child; grandchild now owned by init */
+ 				/* read response from locking program */
+ 	  if (select (pi[0]+1,&rfd,0,0,&tmo) &&
+-	      (read (pi[0],tmp,1) == 1) && (tmp[0] == '+')) {
++	      (read (pi[0],tmp,1) == 1) && (tmp[0] == '1')) {
++	        /* OpenBSD lockspool(1) writes 1 to stdout on success */
+ 				/* success, record pipes */
+ 	    base->pipei = pi[0]; base->pipeo = po[1];
+ 				/* close child's side of the pipes */

@@ -56,7 +56,7 @@ Index: imap/src/osdep/unix/Makefile
  	 SPOOLDIR=/var \
  	 ACTIVEFILE=/usr/local/news/lib/active \
  	 RSHPATH=/usr/bin/rsh \
-+	 LOCKPGM=$(PREFIX)/libexec/mlock \
++	 LOCKPGM=/usr/libexec/lockspool \
  	 BASECFLAGS="$(GCCCFLAGS)"
  
  cvx:	# Convex

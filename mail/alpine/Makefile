@@ -17,7 +17,11 @@ PICO_V=			5.09
 # grep PILOT_VERSION ${WRKSRC}/pico/pilot.c
 PILOT_V=		2.99
 
-REVISION-main=		0
+REVISION-main=		1
+REVISION-c-client=	0
+REVISION-imap=		0
+REVISION-mailutil=	0
+
 REVISION-pico=		26
 REVISION-pilot=		26
 
