@@ -1,0 +1,42 @@
+c++17 is needed for gcc 8 to fix:
+
+../../src/astyle_main.cpp:2649:59: note: 'std::string_view' is only available from C++17 onwards
+
+Index: build/gcc/Makefile
+--- build/gcc/Makefile.orig
++++ build/gcc/Makefile
+@@ -36,7 +36,7 @@ SYSCONF_PATH=$(prefix)/share/doc/astyle
+ bindir = bin
+ objdir = obj
+ ipath=$(prefix)/bin
+-CBASEFLAGS = -Wall -Wextra -fno-rtti -fno-exceptions -std=c++11
++CBASEFLAGS = -Wall -Wextra -fno-rtti -fno-exceptions -std=c++17
+ JAVAINCS   = -I$(JAVA_HOME)/include -I$(JAVA_HOME)/include/linux
+ INSTALL=install -o $(USER) -g $(USER)
+ 
+@@ -59,7 +59,7 @@ ifdef CFLAGS
+     CFLAGSr   = -DNDEBUG $(CBASEFLAGS) $(CFLAGS)
+     CFLAGSd   = -g $(CBASEFLAGS) $(CFLAGS)
+ else
+-    CFLAGSr   = -DNDEBUG -O3 $(CBASEFLAGS)
++    CFLAGSr   = -DNDEBUG $(CBASEFLAGS)
+     CFLAGSd   = -g $(CBASEFLAGS)
+ endif
+ CFLAGSs   = -DASTYLE_LIB -fPIC $(CFLAGSr)
+@@ -210,14 +210,9 @@ cleanobj:
+ 
+ install:
+ 	$(INSTALL) -m 755 -d $(ipath)
+-	@$(INSTALL) -m 755 $(bindir)/astyle  $(ipath)
++	$(INSTALL) -m 755 $(bindir)/astyle  $(ipath)
+ 
+-	@if [ -d $(SYSCONF_PATH)/html ]; then \
+-		rm -rf  $(SYSCONF_PATH)/html; \
+-	fi
+-
+-	$(INSTALL) -m 755 -d $(SYSCONF_PATH)
+-	@mkdir -p $(SYSCONF_PATH)/html;
++	$(INSTALL) -m 755 -d $(SYSCONF_PATH)/html
+ 	@for files in astyle.html \
+                   install.html \
+                   news.html \
