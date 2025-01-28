@@ -1229,6 +1229,7 @@ share/vim/${P}/plugin/logiPat.vim
 share/vim/${P}/plugin/manpager.vim
 share/vim/${P}/plugin/matchparen.vim
 share/vim/${P}/plugin/netrwPlugin.vim
+share/vim/${P}/plugin/openPlugin.vim
 share/vim/${P}/plugin/rrhelper.vim
 share/vim/${P}/plugin/spellfile.vim
 share/vim/${P}/plugin/tarPlugin.vim

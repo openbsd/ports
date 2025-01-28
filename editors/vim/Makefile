@@ -3,7 +3,7 @@ COMMENT-lang=	vi clone, NLS subpackage
 
 # careful with PLISTs if updating; it usually works best if you use
 # a gui flavour rather than no_x11
-V=		9.1.1043
+V=		9.1.1055
 VS=		${V:C/\.0+/./}
 
 DIST_TUPLE+=	github vim vim v$V . \
@@ -41,6 +41,8 @@ FLAVORS+=	lua perl python3 ruby
 # bump deps if changing (RUN_DEPENDS in dependent ports picks this up)
 FLAVOR?=	gtk3
 
+DEBUG_PACKAGES=	-main
+
 .include <bsd.port.arch.mk>
 .if ${FLAVOR:Mno_x11}
 # knock out -lang on non-gui builds so that -lang includes manpages
@@ -62,7 +64,6 @@ CONFIGURE_ARGS+= --with-tlib="curses" \
 AUTOCONF_VERSION= 2.71
 BUILD_DEPENDS=	${MODGNU_AUTOCONF_DEPENDS} \
 		devel/gettext,-tools
-DEBUG_PACKAGES=	-main
 .if defined(DEBUG)
 MAKE_FLAGS+= STRIP=:
 .endif
