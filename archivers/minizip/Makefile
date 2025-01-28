@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		devel/cmake
 
-# C++
+# C++ in tests
 COMPILER =		base-clang ports-gcc
 
 CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=ON \
