@@ -5,6 +5,8 @@ COMMENT-main=	groupware server backend with RPC, IMAP, POP3 support
 COMMENT-mapi=	gromox MAPI extensions for PHP
 
 V=		2.38
+REVISION-main=	0
+REVISION-mapi=	0
 
 # required for mime.types
 MAILCAP_V=	2-1-54
@@ -72,7 +74,7 @@ BUILD_DEPENDS=	devel/cppunit \
 
 WANTLIB += HX iconv jsoncpp m pthread tinyxml2 vmime zstd
 
-WANTLIB-main += ${LIBCXX} ${WANTLIB} c crypto curl fmt icudata icuuc lber
+WANTLIB-main += ${COMPILER_LIBCXX} ${WANTLIB} c crypto curl fmt icudata icuuc lber
 WANTLIB-main += ldap lzma mariadb nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls
 WANTLIB-main += sasl2 sqlite3 ssl ssl xml2 xxhash z
 
