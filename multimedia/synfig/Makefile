@@ -6,6 +6,7 @@ COMMENT =		2D animation software
 V=			1.5.3
 DISTNAME =		synfig-$V
 API_V =			1.0
+REVISION =		0
 
 SHARED_LIBS +=  synfig                    3.0 # 0.0
 
