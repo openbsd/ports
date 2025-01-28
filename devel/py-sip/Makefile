@@ -7,7 +7,7 @@ MODPY_DISTV=	6.8.6
 
 DISTNAME=	sip-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 EPOCH=		0
 
@@ -17,8 +17,6 @@ HOMEPAGE=	https://www.riverbankcomputing.com/software/sip/intro
 
 # SIP license (Python like) or GPLv2/v3
 PERMIT_PACKAGE=	Yes
-
-COMPILER=	base-clang ports-gcc
 
 MODULES=	lang/python
 
