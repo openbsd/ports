@@ -6,6 +6,8 @@ PKGNAME=		gsoap-${V}
 EXTRACT_SUFX=		.zip
 WRKDIST=		${WRKDIR}/gsoap-${V:R}
 
+REVISION=		0
+
 SHARED_LIBS +=		gsoap++		0.0 # 0.0
 SHARED_LIBS +=		gsoap		0.0 # 0.0
 SHARED_LIBS +=		gsoapck++	0.0 # 0.0
@@ -23,8 +25,7 @@ PERMIT_PACKAGE=	Yes
 AUTOCONF_VERSION=	2.67
 AUTOMAKE_VERSION=	1.11
 
-
-WANTLIB += c crypto m pthread ssl ${LIBCXX} z
+WANTLIB += ${COMPILER_LIBCXX} c crypto m pthread ssl z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
