@@ -1,6 +1,7 @@
 COMMENT =	library to support generic input method implementation
 
 DISTNAME =	libime-1.1.9
+REVISION =	0
 
 SHARED_LIBS +=	IMECore		0.2 # 0.0
 SHARED_LIBS +=	IMEPinyin	0.2 # 0.0
@@ -30,7 +31,7 @@ DISTFILES.data +=	table-20240108.tar.zst
 
 EXTRACT_SUFX = 		.tar.zst
 
-COMPILER =		base-clang ports-clang ports-gcc
+COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/kf5
 MODQT5_DEPS =		No

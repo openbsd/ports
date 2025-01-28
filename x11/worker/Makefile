@@ -2,6 +2,7 @@ BROKEN-hppa =	no atomic ops
 COMMENT =	Midnight Commander-like file manager for X
 DISTNAME =	worker-5.0.2
 CATEGORIES =	x11
+REVISION =	0
 
 HOMEPAGE =	http://www.boomerangsworld.de/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
@@ -15,7 +16,7 @@ WANTLIB += c crypto expat fontconfig freetype m ssl xcb z
 SITES =		http://www.boomerangsworld.de/cms/worker/downloads/
 
 # C++14
-COMPILER =	base-clang ports-clang ports-gcc
+COMPILER =	base-clang ports-gcc
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/xli

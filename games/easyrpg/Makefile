@@ -5,6 +5,7 @@ GH_PROJECT =	Player
 GH_TAGNAME =	0.5.3
 PKGNAME =	easyrpg-${GH_TAGNAME}
 CATEGORIES =	games x11
+REVISION =	0
 
 HOMEPAGE =	https://easyrpg.org/
 
@@ -15,7 +16,7 @@ WANTLIB += ${COMPILER_LIBCXX} SDL2 SDL2_mixer c freetype harfbuzz
 WANTLIB += lcf m mpg123 opusfile pixman-1 png sndfile speexdsp
 WANTLIB += vorbisfile xmp z
 
-COMPILER =	base-clang ports-clang ports-gcc
+COMPILER =	base-clang ports-gcc
 
 MODULES +=	devel/cmake
 

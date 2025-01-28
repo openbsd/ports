@@ -2,6 +2,7 @@ COMMENT =		C++ toolkit for machine learning and data analysis
 
 VERSION =		19.24.6
 DISTNAME =		dlib-${VERSION}
+REVISION =		0
 
 DIST_TUPLE +=	github davisking dlib v${VERSION} .
 
@@ -22,7 +23,7 @@ WANTLIB += swscale z
 
 MODULES =		devel/cmake
 
-COMPILER =		base-clang ports-clang ports-gcc
+COMPILER =		base-clang ports-gcc
 
 BUILD_DEPENDS =		graphics/libwebp \
 			graphics/libjxl

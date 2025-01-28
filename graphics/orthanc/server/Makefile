@@ -2,7 +2,7 @@ COMMENT =		RESTful DICOM server for healthcare and medical research
 
 DISTNAME =		Orthanc-1.11.1
 PKGNAME =		${DISTNAME:L}
-REVISION =		8
+REVISION =		9
 
 HOMEPAGE =		https://www.orthanc-server.com/
 
@@ -18,7 +18,7 @@ WANTLIB += dcmtract dcmwlm i2d iconv ijg12 ijg16 ijg8 jpeg jsoncpp
 WANTLIB += lua5.1 m oflog ofstd png pugixml sqlite3 ssl uuid z
 
 # c++11
-COMPILER =		base-clang ports-clang ports-gcc
+COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake \
 			lang/lua \

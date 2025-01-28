@@ -4,7 +4,7 @@ COMMENT =	Qt port of the Scintilla source code editor
 VERSION =	2.14.1
 DISTNAME =	QScintilla_src-${VERSION}
 PKGNAME =	qscintilla-${VERSION}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	editors x11
 
@@ -31,7 +31,7 @@ FLAVORS = qt6
 FLAVOR?=
 
 # C++17 (at least)
-COMPILER=	base-clang ports-clang ports-gcc
+COMPILER=	base-clang ports-gcc
 WANTLIB =	${COMPILER_LIBCXX} GL m
 
 .if ${FLAVOR} == "qt6"

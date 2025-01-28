@@ -6,7 +6,7 @@ USE_NOBTCFI =	Yes
 COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${VERSION}
 CATEGORIES =	education math
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  cantorlibs                55.0 # 17.08
 
@@ -35,7 +35,7 @@ MODULES +=	fortran \
 
 MODFORTRAN_COMPILER =	gfortran
 
-COMPILER =	base-clang ports-clang ports-gcc
+COMPILER =	base-clang ports-gcc
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes

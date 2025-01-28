@@ -3,6 +3,7 @@ COMMENT =		REINER SCT cyberJack chipcard reader driver
 V =			3.99.5
 SP =			16
 DISTNAME =		pcsc-cyberjack-${V}final.SP${SP}
+REVISION =		0
 
 SHARED_LIBS =		ifd-cyberjack		0.1 # 6.0
 
@@ -21,7 +22,7 @@ SITES =			https://support.reiner-sct.de/downloads/LINUX/V${V}_SP${SP}/
 EXTRACT_SUFX =		.tar.bz2
 
 # -std=c++11
-COMPILER =		base-clang ports-clang ports-gcc
+COMPILER =		base-clang ports-gcc
 
 BUILD_DEPENDS =		security/pcsc-lite
 RUN_DEPENDS =		security/pcsc-lite

@@ -3,7 +3,7 @@ COMMENT =	C++ library providing transducers.
 GH_ACCOUNT =	arximboldi
 GH_PROJECT =	zug
 GH_TAGNAME =	v0.1.1
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	devel
 
@@ -13,7 +13,7 @@ HOMEPAGE =	https://sinusoid.es/zug
 PERMIT_PACKAGE =	Yes
 
 # C++14
-COMPILER =		base-clang ports-clang ports-gcc
+COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake \
 			lang/python

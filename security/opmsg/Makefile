@@ -2,7 +2,7 @@ COMMENT =	a replacement for gpg which can encrypt/sign/verify
 
 DISTNAME =	opmsg-1.78s
 EXTRACT_SUFX =	.tgz
-REVISION =	1
+REVISION =	2
 
 FIX_EXTRACT_PERMISSIONS = Yes
 
@@ -17,7 +17,7 @@ WANTLIB += ${COMPILER_LIBCXX} c crypto m
 
 SITES =			http://stealth.openwall.net/opmsg/
 
-COMPILER =		base-clang ports-clang ports-gcc
+COMPILER =		base-clang ports-gcc
 
 WRKDIST =		${WRKDIR}/opmsg
 WRKSRC =		${WRKDIST}/src

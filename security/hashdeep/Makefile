@@ -3,7 +3,7 @@ COMMENT =		tools to compute hashes recursively
 GH_ACCOUNT =		jessek
 GH_PROJECT =		hashdeep
 GH_TAGNAME =		v4.4
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		security
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} c m
 
 # C++11 nullptr
-COMPILER = base-clang ports-clang ports-gcc
+COMPILER = base-clang ports-gcc
 
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	autoreconf

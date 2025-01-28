@@ -14,7 +14,7 @@ V =			2.46.5
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk${API:S/.//}-${V}
 FULLPKGNAME =		${PKGNAME}
-REVISION =		0
+REVISION =		1
 
 EXTRACT_SUFX =		.tar.xz
 SUBST_VARS =		API
@@ -46,7 +46,7 @@ WANTLIB += webp webpdemux webpmux woff2dec xml2 xslt z
 
 SITES =			https://webkitgtk.org/releases/
 
-COMPILER =		base-clang ports-clang ports-gcc
+COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake \
 			lang/python \

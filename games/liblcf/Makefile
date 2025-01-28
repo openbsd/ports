@@ -4,7 +4,7 @@ COMMENT =	library for handling RPG Maker 2000/2003 data
 GH_ACCOUNT =	EasyRPG
 GH_PROJECT =	liblcf
 GH_TAGNAME =	0.5.3
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	games x11
 
@@ -17,7 +17,7 @@ PERMIT_PACKAGE =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} expat icudata icui18n icuuc m
 
-COMPILER =	base-clang ports-clang ports-gcc
+COMPILER =	base-clang ports-gcc
 
 LIB_DEPENDS =	textproc/icu4c
 

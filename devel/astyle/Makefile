@@ -2,6 +2,7 @@ COMMENT=		indenter and formatter of C/C++/Java source files
 DISTNAME=		astyle-3.5.2
 EXTRACT_SUFX =		.tar.bz2
 CATEGORIES=		devel
+REVISION=		0
 
 HOMEPAGE=		https://astyle.sourceforge.net/
 MAINTAINER=		Brian Callahan <bcallah@openbsd.org>
@@ -14,7 +15,7 @@ WANTLIB += ${COMPILER_LIBCXX} c m
 SITES=			${SITE_SOURCEFORGE:=astyle/}
 
 # C++11
-COMPILER=		base-clang ports-clang ports-gcc
+COMPILER=		base-clang ports-gcc
 
 USE_GMAKE=		Yes
 ALL_TARGET=		release

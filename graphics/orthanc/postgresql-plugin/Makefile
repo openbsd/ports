@@ -2,7 +2,7 @@ COMMENT =		PostgreSQL backend for Orthanc
 
 VERSION =		4.0
 PLUGIN =		PostgreSQL
-REVISION =		3
+REVISION =		4
 
 DISTNAME =		Orthanc${PLUGIN}-${VERSION}
 EXTRACT_ONLY =		${DISTNAME}${EXTRACT_SUFX}
@@ -16,7 +16,7 @@ WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt crypto
 WANTLIB += jsoncpp m pq ssl uuid z
 
 # __int128, zero-sized arrays (hard failure with base gcc)
-COMPILER =		base-clang ports-clang ports-gcc
+COMPILER =		base-clang ports-gcc
 
 MODULES =		lang/python
 
