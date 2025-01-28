@@ -20,6 +20,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB = c config m opus pthread sodium vpx
 
 MODULES =		devel/cmake
+# c++ in tests
 COMPILER =		base-clang ports-gcc
 
 BUILD_DEPENDS =		devel/gtest

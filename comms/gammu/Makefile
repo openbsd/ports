@@ -1,6 +1,7 @@
 COMMENT =		Gnu All Mobile Management Utilities
 
 DISTNAME =		gammu-1.42.0
+REVISION =		0
 
 SHARED_LIBS += 		Gammu 1.1 # 8.1
 SHARED_LIBS += 		gsmsd 1.0 # 8.1
@@ -21,6 +22,7 @@ SITES =			https://dl.cihar.com/gammu/releases/
 MODULES =		devel/cmake
 
 COMPILER = 		base-clang ports-gcc
+COMPILER_LANGS =	c
 
 BUILD_DEPENDS = 	devel/gettext,-tools
 RUN_DEPENDS =		misc/dialog

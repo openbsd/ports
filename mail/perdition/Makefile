@@ -9,10 +9,7 @@ PKGNAME-main=	perdition-${DISTVER:S/-//}
 PKGNAME-ldap=	perdition-ldap-${DISTVER:S/-//}
 PKGNAME-mysql=	perdition-mysql-${DISTVER:S/-//}
 PKGNAME-pgsql=	perdition-pgsql-${DISTVER:S/-//}
-REVISION-ldap=	5
-REVISION-main=	3
-REVISION-mysql=	4
-REVISION-pgsql=	4
+REVISION=	6
 
 CATEGORIES=	mail
 
@@ -56,6 +53,7 @@ FLAVOR?=
 MULTI_PACKAGES=		-main -mysql -pgsql -ldap
 
 COMPILER =		base-clang ports-gcc base-gcc
+COMPILER_LANGS =	c
 
 .include <bsd.port.arch.mk>
 

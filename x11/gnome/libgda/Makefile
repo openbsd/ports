@@ -4,7 +4,7 @@ GNOME_PROJECT=		libgda
 GNOME_VERSION=		6.0.0
 EPOCH=			2
 
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		databases
 
@@ -19,6 +19,7 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 intl sqlite3
 WANTLIB += xml2
 
 COMPILER=		base-clang ports-gcc base-gcc
+COMPILER_LANGS=		c
 
 MODULES=		devel/meson \
 			x11/gnome

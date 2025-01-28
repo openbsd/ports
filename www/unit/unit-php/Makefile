@@ -5,6 +5,8 @@ BROKEN-sparc64=	compile check for php-embed fails
 UNIT_MODNAME=	php${MODPHP_VERSION}
 UNIT_SHORTNAME=	${FLAVOR}
 
+REVISION=	0
+
 MODULES=	lang/php
 
 FLAVORS=	php82 php83 php84

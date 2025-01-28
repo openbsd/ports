@@ -3,6 +3,7 @@ COMMENT =	monitor GPU utilization for R600 and up
 GH_ACCOUNT =	clbr
 GH_PROJECT =	radeontop
 GH_TAGNAME =	v1.4
+REVISION =	0
 
 SHARED_LIBS =	radeontop_xcb		0.0	# 1.3
 
@@ -16,6 +17,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += c curses drm_amdgpu drm intl m pciaccess pthread xcb xcb-dri2
 
 COMPILER =		base-clang ports-gcc base-gcc
+COMPILER_LANGS =	c
 
 BUILD_DEPENDS =		devel/gettext,-tools
 

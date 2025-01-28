@@ -1,6 +1,7 @@
 COMMENT =	PostScript and PDF interpreter
 
 VERSION =	10.04.0
+REVISION =	0
 DISTNAME =	ghostpdl-${VERSION}
 PKGNAME =	ghostscript-${VERSION}
 EXTRACT_SUFX =	.tar.xz
@@ -51,6 +52,7 @@ ALL_TARGET =		so all
 INSTALL_TARGET =	soinstall install
 
 COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 CONFIGURE_STYLE =	simple
 
 CONFIGURE_ARGS =	--prefix=${PREFIX}

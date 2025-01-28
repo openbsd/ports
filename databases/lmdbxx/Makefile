@@ -18,6 +18,7 @@ MAINTAINER =	Aisha Tammy <aisha@openbsd.org>
 # Unlicense
 PERMIT_PACKAGE =	Yes
 
+# header-only lib; compiler only used for tests
 COMPILER =	base-clang ports-gcc
 
 NO_BUILD =	Yes

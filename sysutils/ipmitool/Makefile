@@ -5,7 +5,7 @@ GH_ACCOUNT=	ipmitool
 GH_PROJECT=	ipmitool
 GH_TAGNAME=	IPMITOOL_${V:S/./_/g}
 PKGNAME=	ipmitool-$V
-REVISION=	0
+REVISION=	1
 
 # renamed as the distfile was re-rolled
 DISTFILES=	ipmitool-IPMITOOL_1_8_19.0{ipmitool-IPMITOOL_1_8_19}.tar.gz
@@ -27,7 +27,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=	m curses edit crypto c
 
 # -std=gnu11
-COMPILER =	base-clang ports-gcc
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 SEPARATE_BUILD=	Yes
 CONFIGURE_STYLE= autoreconf

@@ -3,6 +3,7 @@ COMMENT =		sidescrolling space shmup
 V =			2.4
 DISTNAME =		starfighter-$V-src
 PKGNAME =		starfighter-$V
+REVISION =		0
 
 CATEGORIES =		games
 
@@ -19,6 +20,7 @@ WANTLIB += harfbuzz intl m pango-1.0 pthread
 SITES = https://github.com/pr-starfighter/starfighter/releases/download/v${V}/
 
 COMPILER =		base-clang ports-gcc base-gcc
+COMPILER_LANGS =	c
 
 LIB_DEPENDS =		devel/pango \
 			devel/sdl2-image \

@@ -12,7 +12,7 @@ GH_COMMIT =		2d59090ee244bc4d3a682ad45ae49dc7b4d4dfb7
 
 MODULES =		devel/cmake
 
-# C++
+# C++ static lib
 COMPILER =		base-clang ports-gcc
 
 .include <bsd.port.mk>

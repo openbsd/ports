@@ -2,7 +2,7 @@ COMMENT=		GNOME document viewer
 
 GNOME_PROJECT=		evince
 GNOME_VERSION=		46.3.1
-REVISION=		3
+REVISION=		4
 
 MAJ_V=			3.0
 SUBST_VARS=		MAJ_V
@@ -25,6 +25,7 @@ WANTLIB += gtk-3 handy-1 intl pango-1.0 pangocairo-1.0 poppler-glib
 WANTLIB += secret-1 synctex tiff xml2
 
 COMPILER=		base-clang ports-gcc base-gcc
+COMPILER_LANGS=		c
 
 MODULES=		devel/dconf \
 			devel/meson \

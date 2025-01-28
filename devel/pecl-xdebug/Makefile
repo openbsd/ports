@@ -3,6 +3,7 @@ COMMENT=	debug and development tools for PHP
 GH_ACCOUNT=	xdebug
 GH_PROJECT=	xdebug
 GH_TAGNAME=	3.4.1
+REVISION=	0
 
 CATEGORIES=	devel
 
@@ -14,6 +15,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=	m z
 
 COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 CONFIGURE_STYLE= gnu
 
 MODULES=	lang/php/pecl

@@ -20,7 +20,7 @@ PKGNAME-mysql=	monitoring-plugins-mysql-$V
 PKGNAME-pgsql=	monitoring-plugins-pgsql-$V
 PKGNAME-snmp=	monitoring-plugins-snmp-$V
 PKGNAME-radius=	monitoring-plugins-radius-$V
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net
 
@@ -34,6 +34,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=	c iconv intl pthread
 
 COMPILER=	base-clang ports-gcc base-gcc
+COMPILER_LANGS=	c
 
 SITES=		https://www.monitoring-plugins.org/download/
 

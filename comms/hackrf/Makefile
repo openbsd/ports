@@ -2,6 +2,7 @@ COMMENT =	host software for the HackRF One SDR
 
 V =		2024.02.1
 DISTNAME =	hackrf-$V
+REVISION =	0
 
 SHARED_LIBS +=  hackrf                    0.1 # 0.8
 
@@ -21,6 +22,7 @@ SITES =		https://github.com/mossmann/hackrf/releases/download/v$V/
 EXTRACT_SUFX =		.tar.xz
 
 COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 
 MODULES =		devel/cmake
 LIB_DEPENDS =		devel/libusb1 \

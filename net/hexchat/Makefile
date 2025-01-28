@@ -3,7 +3,7 @@ V =			2.16.2
 DISTNAME =		hexchat-$V
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		net x11
-REVISION =		3
+REVISION =		4
 
 HOMEPAGE =		https://hexchat.github.io/
 
@@ -18,8 +18,8 @@ WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gtk-x11-2.0
 WANTLIB += intl luajit-5.1 pango-1.0 perl ssl
 WANTLIB += ${MODPY_WANTLIB}
 
-# libproxy requires libestdc++
 COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 
 SITES =			https://github.com/hexchat/hexchat/releases/download/v$V/
 

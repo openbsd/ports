@@ -13,7 +13,7 @@ HOMEPAGE=	https://rapidjson.org/
 # MIT - BSD - JSON
 PERMIT_PACKAGE=	Yes
 
-# C++
+# C++ header-only lib
 COMPILER=	base-clang ports-gcc
 
 MODULES=	devel/cmake

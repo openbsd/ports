@@ -14,6 +14,7 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	devel/cmake
 
+# c++ header only lib + tests
 COMPILER=	base-clang ports-gcc
 
 # it's kind-of a NO_BUILD port, but doing so means you can't

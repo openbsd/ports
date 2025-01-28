@@ -1,10 +1,10 @@
 COMMENT =		fast NumPy array functions written in C
 
-MODPY_DISTV =	1.4.2
+MODPY_DISTV =		1.4.2
 DISTNAME =		bottleneck-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:L}
 CATEGORIES =		math
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Martin Reindl <martin@catai.org>
 
@@ -13,6 +13,7 @@ PERMIT_PACKAGE =	Yes
 
 # ICE with base-gcc
 COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 
 MODULES =		lang/python
 

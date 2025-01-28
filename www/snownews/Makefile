@@ -2,6 +2,7 @@ COMMENT=	text mode rss and atom newsreader
 CATEGORIES=	www
 
 DISTNAME=	snownews-1.11
+REVISION=	0
 
 # GPLv3 only
 PERMIT_PACKAGE=	Yes
@@ -11,6 +12,7 @@ FIX_EXTRACT_PERMISSIONS=	Yes
 
 # C11
 COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 WANTLIB += c crypto curl curses intl xml2
 

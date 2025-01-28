@@ -1,6 +1,7 @@
 COMMENT=	secure, fast, compliant, and very flexible web-server
 
 DISTNAME=	lighttpd-1.4.76
+REVISION=	0
 CATEGORIES=	www net
 SITES=		https://download.lighttpd.net/lighttpd/releases-1.4.x/
 EXTRACT_SUFX=	.tar.xz
@@ -15,6 +16,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=	c crypto m pcre2-8 ssl z ${MODLUA_WANTLIB}
 
 COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 MODULES=	devel/cmake \
 		lang/lua

@@ -4,6 +4,7 @@ CATEGORIES =	sysutils
 GH_ACCOUNT =	tavianator
 GH_PROJECT =	bfs
 GH_TAGNAME =	3.0.4
+REVISION =	0
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
@@ -16,6 +17,7 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 # C17
 COMPILER =	base-clang ports-gcc
+COMPILER_LANGS = c
 
 LIB_DEPENDS =	textproc/oniguruma
 

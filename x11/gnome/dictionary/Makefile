@@ -2,7 +2,7 @@ COMMENT=		GNOME dictionary application
 
 GNOME_PROJECT=		gnome-dictionary
 GNOME_VERSION=		40.0
-REVISION=		5
+REVISION=		6
 
 SHARED_LIBS +=  gdict-1.0            9.1      # 10.0
 
@@ -10,7 +10,7 @@ SHARED_LIBS +=  gdict-1.0            9.1      # 10.0
 PERMIT_PACKAGE=		Yes
 
 COMPILER=		base-clang ports-gcc
-COMPLER_LANGS=		c
+COMPILER_LANGS=		c
 
 WANTLIB += c cairo gdk-3 gio-2.0 glib-2.0 gobject-2.0 gtk-3 intl
 WANTLIB += m pango-1.0 pangocairo-1.0

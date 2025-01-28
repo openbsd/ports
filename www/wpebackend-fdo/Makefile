@@ -18,6 +18,7 @@ PERMIT_PACKAGE = Yes
 SITES=		https://wpewebkit.org/releases/
 EXTRACT_SUFX=	.tar.xz
 
+# COMPILER_LIBCXX?
 WANTLIB += c++ epoxy gio-2.0 glib-2.0 gobject-2.0 m wayland-client
 WANTLIB += wayland-egl wayland-server wpe-1.0
 

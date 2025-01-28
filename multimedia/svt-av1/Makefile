@@ -3,6 +3,7 @@ ONLY_FOR_ARCHS=	${LP64_ARCHS} i386
 COMMENT=	scalable AV1 encoder
 
 VER=		2.3.0
+REVISION=	0
 DISTNAME=	SVT-AV1-v${VER}
 PKGNAME=	svt-av1-${VER}
 CATEGORIES=	multimedia
@@ -21,6 +22,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB=	c m pthread
 
 COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 MODULES=	devel/cmake
 

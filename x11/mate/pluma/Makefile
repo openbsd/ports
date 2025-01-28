@@ -2,7 +2,7 @@ USE_WXNEEDED=		Yes
 
 COMMENT=		powerful text editor for the MATE desktop
 
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		textproc
 
@@ -20,6 +20,7 @@ WANTLIB += pango-1.0 pangocairo-1.0 peas-1.0 peas-gtk-1.0 pthread
 WANTLIB += startup-notification-1 xcb xcb-util xml2 z
 
 COMPILER =		base-clang ports-gcc base-gcc
+COMPILER_LANGS =	c
 
 MODULES=		devel/dconf \
 			lang/python \

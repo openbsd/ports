@@ -1,6 +1,7 @@
 COMMENT=	synchronize IMAP4 and maildir mailboxes
 
 DISTNAME=	isync-1.5.0
+REVISION=	0
 
 CATEGORIES=	mail
 SITES=		${SITE_SOURCEFORGE:=isync/}
@@ -23,6 +24,7 @@ WANTLIB= c crypto db sasl2 ssl z
 
 # on sparc64 ports-clang fails due to `-no-intergrated-as' default
 COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
 
 LIB_DEPENDS=		databases/db/v4 \
 			security/cyrus-sasl2

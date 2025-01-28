@@ -6,7 +6,7 @@ MODPY_DISTV=	3.10.1
 DISTNAME=	tables-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	math
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	https://www.pytables.org/
 MAINTAINER=	Martin Reindl <martin@catai.org>
@@ -15,6 +15,7 @@ MAINTAINER=	Martin Reindl <martin@catai.org>
 PERMIT_PACKAGE=	Yes
 
 COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools

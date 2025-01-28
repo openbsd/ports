@@ -1,6 +1,7 @@
 COMMENT=	audio/video converter and streamer
 
 V=		6.1.2
+REVISION=	0
 DISTNAME=	ffmpeg-${V}
 EPOCH=		1
 CATEGORIES=	graphics multimedia
@@ -32,6 +33,7 @@ WANTLIB += va-x11 vidstab vorbis vorbisenc vpx x264 x265 xcb xcb-shape
 WANTLIB += xcb-shm xcb-xfixes xml2 xvidcore z zimg
 
 COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 

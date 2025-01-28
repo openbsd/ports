@@ -2,7 +2,7 @@ COMMENT=		thin layer of graphic data types
 
 GNOME_PROJECT=		graphene
 GNOME_VERSION=		1.10.8
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS += graphene-1.0              2.1 # 0.1000.8
 
@@ -19,6 +19,7 @@ MODULES=		devel/meson \
 			x11/gnome
 
 COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
 
 MODGNOME_TOOLS=		gobject-introspection
 

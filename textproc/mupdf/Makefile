@@ -29,6 +29,7 @@ FLAVOR ?=
 # http://git.ghostscript.com/?p=mupdf.git;a=summary
 SITES =		https://mupdf.com/downloads/archive/
 
+# tessocr.cpp
 COMPILER =	base-clang ports-gcc
 
 BUILD_DEPENDS =	shells/bash

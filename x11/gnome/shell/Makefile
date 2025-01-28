@@ -6,6 +6,7 @@ GNOME_PROJECT=		gnome-shell
 # check/fix CONFIGURE_ARGS (-Dgnome_shell_version=XX) in x11/arc-theme on
 # major upgrade;
 GNOME_VERSION=		47.3
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -24,6 +25,7 @@ MODULES=		devel/dconf \
 			x11/gnome
 
 COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
 
 MODGNOME_TOOLS +=	desktop-file-utils docbook gobject-introspection gtk-update-icon-cache
 

@@ -1,6 +1,7 @@
 COMMENT=	utilities for dot.desktop entries
 
 DISTNAME=	desktop-file-utils-0.28
+REVISION=	0
 
 EXTRACT_SUFX=	.tar.xz
 
@@ -20,6 +21,7 @@ SITES=		https://freedesktop.org/software/desktop-file-utils/releases/
 
 # -std=gnu11
 COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 MODULES=	devel/meson
 

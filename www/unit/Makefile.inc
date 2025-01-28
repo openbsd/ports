@@ -12,6 +12,7 @@ MAINTAINER=	Sergey A. Osokin <osa@FreeBSD.org>
 PERMIT_PACKAGE=	Yes
 
 COMPILER=	base-clang ports-gcc
+COMPILER_LANGS ?= c
 
 CONFIGURE_STYLE=simple
 

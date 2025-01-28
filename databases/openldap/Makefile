@@ -2,6 +2,7 @@ COMMENT-main =	  LDAP client library and tools
 COMMENT-server =  LDAP directory server
 
 DISTNAME =	  openldap-2.6.9
+REVISION =	0
 
 MULTI_PACKAGES =  -main -server
 PKGNAME-main =	  ${DISTNAME:S/-/-client-/}
@@ -32,6 +33,7 @@ SITES =		https://openldap.org/software/download/OpenLDAP/openldap-release/ \
 		ftp://ftp.OpenLDAP.org/pub/OpenLDAP/openldap-release/
 
 COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 DPB_PROPERTIES =	parallel
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

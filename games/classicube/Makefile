@@ -5,6 +5,7 @@ COMMENT =		classic Minecraft client written in C
 
 V =			1.3.6
 PKGNAME =		classicube-${V}
+REVISION =		0
 
 DIST_TUPLE +=		github ClassiCube ClassiCube 1.3.6 .
 
@@ -18,6 +19,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=		GL X11 Xi c execinfo m pthread
 
 COMPILER =		base-clang ports-gcc base-gcc
+COMPILER_LANGS =	c
 
 BUILD_DEPENDS =		net/curl \
 			audio/openal

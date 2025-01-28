@@ -3,6 +3,7 @@ COMMENT =	small, embeddable JavaScript engine in C
 V =		2024.01.13
 DISTNAME =	quickjs-${V:S/./-/g}
 PKGNAME =	quickjs-${V}
+REVISION =	0
 
 CATEGORIES =	lang
 
@@ -19,6 +20,7 @@ EXTRACT_SUFX =	.tar.xz
 
 # Requires stdatomic
 COMPILER =	base-clang ports-gcc
+COMPILER_LANGS = c
 
 USE_GMAKE =	Yes
 MAKE_FLAGS =	CC="${CC}"

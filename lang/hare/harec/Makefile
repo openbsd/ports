@@ -1,10 +1,13 @@
 DISTNAME =	harec-${V}
 DISTFILES =	harec-{harec/archive/}${V}${EXTRACT_SUFX}
 
+REVISION =	0
+
 WANTLIB += c m
 
 # C11
 COMPILER =	base-clang ports-gcc
+COMPILER_LANGS =	c
 
 BUILD_DEPENDS =	${RUN_DEPENDS}
 

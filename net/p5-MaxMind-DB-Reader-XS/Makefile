@@ -3,6 +3,7 @@ ONLY_FOR_ARCHS = ${LP64_ARCHS}
 COMMENT =	fast XS implementation of MaxMind DB reader
 
 DISTNAME =	MaxMind-DB-Reader-XS-1.000009
+REVISION =	0
 
 CATEGORIES =	net
 
@@ -12,6 +13,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=	c maxminddb perl
 
 COMPILER =	base-clang ports-gcc
+COMPILER_LANGS = c
 
 MODULES =	cpan
 

@@ -7,11 +7,11 @@ COMMENT =		fast, feature full, GPU-based terminal emulator
 # it to be in the path (try PORTPATH=${WRKSRC}/linux-package/bin:${PATH})
 # build also fails if you have an older version of kitty installed -
 # it also wants to download go modules during build
-MODPY_DISTV =	0.26.5
+MODPY_DISTV =		0.26.5
 DISTNAME =		kitty-${MODPY_DISTV}
 CATEGORIES =		x11
 HOMEPAGE =		https://sw.kovidgoyal.net/kitty/
-REVISION =		2
+REVISION =		3
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
@@ -26,6 +26,7 @@ EXTRACT_SUFX =		.tar.xz
 
 # C11
 COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 
 CFLAGS +=		"-DOPENSSL_clear_free=freezero"
 

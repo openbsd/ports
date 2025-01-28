@@ -1,4 +1,5 @@
 V =		7.0.3
+REVISION =	0
 COMMENT =	implementation of POSIX bc with GNU and BSD extensions
 DISTNAME =	bc-${V}
 PKGNAME =	bc-gh-${V}
@@ -16,6 +17,7 @@ WANTLIB += c
 SITES =		https://github.com/gavinhoward/bc/releases/download/${V}/
 
 COMPILER =	base-clang ports-gcc
+COMPILER_LANGS = c
 
 # CONFIGURE_ARGS makes it so we don't run tests that need GNU bc to generate.
 CONFIGURE_STYLE =	simple

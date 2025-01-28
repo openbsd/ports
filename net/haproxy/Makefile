@@ -1,6 +1,7 @@
 COMMENT =	reliable, high performance TCP/HTTP load balancer
 
 DISTNAME =	haproxy-3.0.7
+REVISION =	0
 CATEGORIES =	net www
 HOMEPAGE =	https://www.haproxy.org/
 MAINTAINER =	Lucas Gabriel Vuotto <lucas@sexy.is>
@@ -23,7 +24,9 @@ MAKE_FLAGS +=	USE_LIBATOMIC=
 FAKE_FLAGS +=	DOCDIR="${PREFIX}/share/doc/haproxy"
 FAKE_FLAGS +=	MANDIR="${PREFIX}/man"
 
+# TLS
 COMPILER =	base-clang ports-gcc
+COMPILER_LANGS = c
 
 LIB_DEPENDS =	devel/pcre2
 

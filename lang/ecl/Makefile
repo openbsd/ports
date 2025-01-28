@@ -5,7 +5,7 @@ V =		24.5.10
 DISTNAME =	ecl-$V
 SHARED_LIBS +=	ecl	9.0
 
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://common-lisp.net/project/ecl/
 MAINTAINER =	Timo Myyra <timo.myyra@bittivirhe.fi>
@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 SITES =			${HOMEPAGE}static/files/release/
 
 COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 USE_GMAKE =		Yes
 CONFIGURE_STYLE =	gnu
 TEST_TARGET =		check

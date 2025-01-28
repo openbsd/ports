@@ -2,6 +2,7 @@ COMMENT=		interfaces for interacting with online accounts
 
 GNOME_PROJECT=		gnome-online-accounts
 GNOME_VERSION=		3.52.3.1
+REVISION=		0
 
 SHARED_LIBS += goa-1.0                   4.2 # 0.0.0
 SHARED_LIBS += goa-backend-1.0           4.2 # 2.0.0
@@ -13,6 +14,7 @@ WANTLIB += adwaita-1 c gio-2.0 glib-2.0 gobject-2.0 gtk-4 intl
 WANTLIB += json-glib-1.0 rest-1.0 secret-1 soup-3.0 xml2
 
 COMPILER=		base-clang ports-gcc base-gcc
+COMPILER_LANGS=		c
 
 MODULES=		devel/dconf \
 			devel/meson \

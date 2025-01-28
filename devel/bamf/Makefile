@@ -3,7 +3,7 @@ P =		4
 COMMENT =	application matching library
 DISTNAME =	bamf-${V}.${P}
 CATEGORIES =	devel
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=	bamf3                     0.0 # 2.0
 
@@ -25,6 +25,7 @@ WANTLIB += z
 SITES =		https://launchpad.net/bamf/${V}/${V}.${P}/+download/
 
 COMPILER =	base-clang ports-gcc
+COMPILER_LANGS = c
 
 BUILD_DEPENDS =	devel/gobject-introspection \
 		lang/vala

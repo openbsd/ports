@@ -13,6 +13,8 @@ PKGNAME-mysql =		rsyslog-mysql-$V
 PKGNAME-normalize =	rsyslog-normalize-$V
 PKGNAME-pgsql =		rsyslog-pgsql-$V
 PKGNAME-elasticsearch =	rsyslog-elasticsearch-$V
+REVISION =		0
+
 CATEGORIES =		sysutils
 
 HOMEPAGE =		https://www.rsyslog.com/
@@ -21,6 +23,7 @@ HOMEPAGE =		https://www.rsyslog.com/
 PERMIT_PACKAGE =	Yes
 
 COMPILER =		base-clang ports-gcc base-gcc
+COMPILER_LANGS =	c
 
 WANTLIB-main +=		c crypto curl estr fastjson gcrypt gmp gnutls
 WANTLIB-main +=		gpg-error hogweed iconv idn2 intl m nettle nghttp2

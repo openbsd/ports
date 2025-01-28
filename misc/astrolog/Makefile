@@ -2,7 +2,7 @@ COMMENT=	astrology program for X11 and text-based user interfaces
 
 DISTNAME=	ast71src
 PKGNAME=	astrolog-7.10
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	misc
 
@@ -18,6 +18,7 @@ WANTLIB += X11 c m
 
 # TLS
 COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 SITES=		https://www.astrolog.org/ftp/
 DISTFILES=	${DISTNAME}.zip \

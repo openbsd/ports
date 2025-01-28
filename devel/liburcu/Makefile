@@ -26,7 +26,7 @@ EXTRACT_SUFX =		.tar.bz2
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-# atomics, TLS (__thread), C++11
+# atomics, TLS (__thread), C++11 (in tests)
 COMPILER =		base-clang ports-gcc
 
 USE_GMAKE =		Yes

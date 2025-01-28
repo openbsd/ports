@@ -2,11 +2,11 @@ COMMENT=		command-line podcast downloader
 
 DISTNAME=		castget-2.0.1
 CATEGORIES=		net
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		https://castget.johndal.com/
 
-SITES=          	${SITE_SAVANNAH:=castget/}
+SITES=			${SITE_SAVANNAH:=castget/}
 
 EXTRACT_SUFX=		.tar.bz2
 
@@ -18,7 +18,8 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c crypto curl glib-2.0 iconv id3 intl lzma m nghttp2 pcre2-8 pthread
 WANTLIB += ssl xml2 z
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=		base-clang ports-gcc base-gcc
+COMPILER_LANGS=		c
 
 LIB_DEPENDS=            audio/id3lib \
 			devel/glib2 \

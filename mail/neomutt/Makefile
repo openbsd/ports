@@ -3,6 +3,7 @@ COMMENT=	tty-based e-mail client, forked from Mutt
 GH_ACCOUNT=	neomutt
 GH_PROJECT=	neomutt
 GH_TAGNAME=	20250113
+REVISION=	0
 
 DIST_TUPLE=	github neomutt neomutt-test-files \
 		7404f4423b11cd5da2d123b3636c7a310bbbed9f neomutt-test-files
@@ -16,6 +17,7 @@ EPOCH=		0
 PERMIT_PACKAGE=	Yes
 
 COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 # uses pledge()
 WANTLIB+=	c crypto curses iconv idn2 intl pcre2-8 ssl tdb z

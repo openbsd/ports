@@ -19,7 +19,7 @@ WANTLIB+=	pthread
 
 MODULES=	devel/cmake
 
-# C++
+# C++ in tests
 COMPILER=	base-clang ports-gcc
 
 BUILD_DEPENDS+=	devel/gtest

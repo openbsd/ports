@@ -16,6 +16,7 @@ PERMIT_PACKAGE=	Yes
 SITES=		https://wpewebkit.org/releases/
 EXTRACT_SUFX=	.tar.xz
 
+# COMPILER_LIBCXX? (no libc++ on gcc-only archs)
 WANTLIB += 	xkbcommon c++
 
 MODULES=	devel/meson

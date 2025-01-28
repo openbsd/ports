@@ -1,7 +1,7 @@
 COMMENT =	GPS track manager
 
 DISTNAME =	viking-1.10
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	geo x11
 
@@ -23,6 +23,7 @@ EXTRACT_SUFX = .tar.bz2
 MODULES =	textproc/intltool x11/gnome
 
 COMPILER =	base-clang ports-gcc
+COMPILER_LANGS = c
 
 CONFIGURE_STYLE =	gnu
 # to ensure X11 libs are found when checking for XSetErrorHandler

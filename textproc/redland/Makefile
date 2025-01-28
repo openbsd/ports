@@ -10,7 +10,7 @@ PKGNAME-main=		redland-$V
 PKGNAME-mysql=		redland-mysql-$V
 PKGNAME-pgsql=		redland-pgsql-$V
 
-REVISION=		9
+REVISION=		10
 
 CATEGORIES=		textproc
 
@@ -27,6 +27,7 @@ WANTLIB += crypto curl gcrypt gmp gpg-error iconv intl ltdl lzma m mpfr
 WANTLIB += nghttp2 pcre pthread raptor2 rasqal ssl uuid xml2 xslt yajl z
 
 COMPILER =		base-clang ports-gcc base-gcc
+COMPILER_LANGS =	c
 
 LIB_DEPENDS=		devel/libtool,-ltdl \
 			textproc/raptor \

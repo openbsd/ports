@@ -3,7 +3,7 @@ COMMENT=		library for automatic proxy configuration management
 GH_ACCOUNT=		libproxy
 GH_PROJECT=		libproxy
 GH_TAGNAME=		0.5.9
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		net
 
@@ -20,6 +20,7 @@ MODULES=		devel/meson \
 			lang/python
 
 COMPILER=		base-clang ports-gcc base-gcc
+COMPILER_LANGS=		c
 
 BUILD_DEPENDS=		devel/gobject-introspection \
 			devel/gsettings-desktop-schemas \

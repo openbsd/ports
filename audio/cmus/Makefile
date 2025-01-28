@@ -6,7 +6,7 @@ V=			2.10.0
 GH_ACCOUNT=		cmus
 GH_PROJECT=		cmus
 GH_TAGNAME=		v${V}
-REVISION=		1
+REVISION=		2
 CATEGORIES=		audio
 HOMEPAGE=		https://cmus.github.io/
 
@@ -24,6 +24,8 @@ WANTLIB-main+=		ogg vorbis
 
 # C11
 COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
+
 LIB_DEPENDS-main=	audio/flac \
 			audio/libcdio \
 			audio/libcdio-paranoia \

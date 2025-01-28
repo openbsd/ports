@@ -54,6 +54,7 @@ WANTLIB += tree-sitter unibilium util uv vterm
 WANTLIB += ${MODLUA_WANTLIB}
 .endif
 
+# c++abi for luajit
 COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake \

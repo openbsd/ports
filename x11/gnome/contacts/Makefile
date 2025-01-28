@@ -1,9 +1,10 @@
-# $OpenBSD: Makefile,v 1.104 2024/12/17 14:47:34 ajacoutot Exp $
+# $OpenBSD: Makefile,v 1.105 2025/01/28 11:22:04 sthen Exp $
 
 COMMENT=		contacts manager for GNOME
 
 GNOME_PROJECT=		gnome-contacts
 GNOME_VERSION=		47.1.1
+REVISION=		0
 
 CATEGORIES=		productivity
 
@@ -18,6 +19,7 @@ WANTLIB += gobject-2.0 gstreamer-1.0 gtk-4 intl pango-1.0 portal
 WANTLIB += portal-gtk4 qrencode
 
 COMPILER=		base-clang ports-gcc base-gcc
+COMPILER_LANGS=		c
 
 MODULES=		devel/meson \
 			x11/gnome \

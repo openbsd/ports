@@ -30,7 +30,7 @@ WANTLIB-tcl += ${MODTCL_WANTLIB}
 
 SITES=		https://www.weechat.org/files/src/
 
-# C++
+# C++ in tests
 COMPILER=	base-clang ports-gcc
 
 MULTI_PACKAGES=	-main -lua -python -ruby -tcl

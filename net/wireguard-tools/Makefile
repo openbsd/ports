@@ -2,7 +2,7 @@ COMMENT =	tools for use with WireGuard VPN
 
 DISTNAME =	wireguard-tools-1.0.20210914
 EPOCH =		0
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	net security
 
@@ -23,6 +23,7 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 # Uses __builtin_bswap* on big-endian archs
 COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 RUN_DEPENDS =		shells/bash
 
 MAKE_FLAGS =		WITH_WGQUICK=yes \

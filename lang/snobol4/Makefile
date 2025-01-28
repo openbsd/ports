@@ -1,4 +1,5 @@
 V =		2.3.2
+REVISION =	0
 COMMENT =	CSNOBOL4 suite including interpreter, debugger and utilities
 DISTNAME =	snobol4-${V}
 CATEGORIES =	lang
@@ -15,6 +16,7 @@ SITES =		https://ftp.regressive.org/snobol4/ \
 		https://ftp.regressive.org/snobol4/old/
 
 COMPILER =	base-clang ports-gcc
+COMPILER_LANGS = c
 
 LIB_DEPENDS =	databases/sqlite3 \
 		devel/libffi

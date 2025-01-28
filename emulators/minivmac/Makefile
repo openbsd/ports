@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS =	i386 amd64 powerpc
 COMMENT =		early macintosh emulator
 
 V =			36.04
-REVISION =		2
+REVISION =		3
 
 DISTNAME =		minivmac-${V}
 
@@ -21,7 +21,8 @@ SITES =			https://www.gryphel.com/d/minivmac/minivmac-${V}/
 
 EXTRACT_SUFX =		.src.tgz
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 USE_GMAKE =		Yes
 
 RUN_DEPENDS =		devel/desktop-file-utils

@@ -10,6 +10,7 @@ SHARED_LIBS +=	blosc2                     4.0 # 0.0
 GH_ACCOUNT =	Blosc
 GH_PROJECT =	c-blosc2
 GH_TAGNAME =	v${V}
+REVISION =	0
 
 HOMEPAGE =	https://blosc.org/
 MAINTAINER =	Martin Reindl <martin@catai.org>
@@ -20,6 +21,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=	m lz4 pthread z zstd
 
 COMPILER =	base-clang ports-gcc
+COMPILER_LANGS = c
 
 MODULES =	devel/cmake
 

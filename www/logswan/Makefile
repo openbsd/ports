@@ -1,6 +1,7 @@
 COMMENT =	fast web log analyzer using probabilistic data structures
 
 V =		2.1.14
+REVISION =	0
 DISTNAME =	logswan-$V
 
 CATEGORIES =	www
@@ -15,7 +16,9 @@ WANTLIB +=	c jansson m maxminddb
 
 SITES =		https://github.com/fcambus/logswan/releases/download/$V/
 
+# libmaxminddb
 COMPILER =	base-clang ports-gcc
+COMPILER_LANGS = c
 
 MODULES =	devel/cmake
 

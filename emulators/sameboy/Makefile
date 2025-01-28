@@ -5,7 +5,7 @@ PKGNAME-main =		sameboy-$V
 PKGNAME-libretro =	libretro-sameboy-$V
 
 V =		0.16.7
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	LIJI32
 GH_PROJECT =	SameBoy
@@ -31,6 +31,7 @@ WANTLIB-libretro += m
 
 # -std=gnu11
 COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 
 BUILD_DEPENDS =		devel/rgbds \
 			devel/xdg-utils

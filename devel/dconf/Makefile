@@ -2,7 +2,7 @@ COMMENT=		configuration backend system
 
 GNOME_PROJECT=		dconf
 GNOME_VERSION=		0.40.0
-REVISION=		1
+REVISION=		2
 
 SHARED_LIBS +=		dconf        1.3 # 1.0.0
 
@@ -16,6 +16,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c gio-2.0 glib-2.0 gobject-2.0
 
 COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
 
 MODULES=		devel/meson \
 			x11/gnome

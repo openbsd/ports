@@ -1,5 +1,6 @@
 COMMENT =	free remake of One Must Fall 2097 game engine
 DISTNAME =	openomf-0.6.5.2
+REVISION =	0
 CATEGORIES =	games x11
 
 HOMEPAGE =	https://www.openomf.org/
@@ -15,6 +16,7 @@ SITES =		https://mirrors.nycbug.org/pub/distfiles/
 
 # C11
 COMPILER =	base-clang ports-gcc
+COMPILER_LANGS = c
 
 MODULES =	devel/cmake
 

@@ -8,7 +8,7 @@ COMMENT-ga=	QEMU guest agent
 
 VERSION=	9.2.0
 DISTNAME=	qemu-${VERSION}
-REVISION=	0
+REVISION=	1
 CATEGORIES=	emulators
 SITES=		https://download.qemu.org/
 EXTRACT_SUFX=	.tar.xz
@@ -32,6 +32,7 @@ DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 # Using TLS emulation layer
 COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 MODULES=	lang/python
 MODPY_RUNDEP=	No

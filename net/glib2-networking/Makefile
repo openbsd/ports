@@ -3,6 +3,7 @@ COMMENT=		network-related gio modules for GLib
 GNOME_VERSION=		2.80.1
 GNOME_PROJECT=		glib-networking
 PKGNAME=		glib2-networking-${GNOME_VERSION}
+REVISION=		0
 
 CATEGORIES=		net
 
@@ -15,8 +16,8 @@ PERMIT_PACKAGE=		Yes
 
 WANTLIB += c gio-2.0 glib-2.0 gnutls gobject-2.0 intl proxy
 
-# c++11
 COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
 
 MODULES=		devel/meson \
 			x11/gnome

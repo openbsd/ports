@@ -1,6 +1,6 @@
 COMMENT =	Python implementation of the debug adapter protocol
 
-MODPY_DISTV=	1.8.6
+MODPY_DISTV=	1.8.9
 DISTNAME=	debugpy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 EXTRACT_SUFX=	.zip
@@ -12,11 +12,11 @@ CATEGORIES=	devel
 PERMIT_PACKAGE=	Yes
 
 COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 TEST_DEPENDS =	devel/py-trio \
 		devel/py-untangle \

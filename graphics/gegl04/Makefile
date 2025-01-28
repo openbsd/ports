@@ -6,7 +6,7 @@ V=			0.4.52
 DISTNAME=		gegl-${V}
 PKGNAME=		gegl04-${V}
 EXTRACT_SUFX=		.tar.xz
-REVISION=		0
+REVISION=		1
 
 SHARED_LIBS += gegl-0.4                  0.5 # 0.451.1
 
@@ -28,6 +28,7 @@ WANTLIB += pango-1.0 pangocairo-1.0 png poppler-glib raw rsvg-2
 WANTLIB += tiff webp umfpack
 
 COMPILER=		base-clang ports-gcc base-gcc
+COMPILER_LANGS=		c
 
 SITES=			http://download.gimp.org/pub/gegl/${API_VERSION}/
 

@@ -23,7 +23,7 @@ MODULES=	devel/meson \
 		lang/python \
 		x11/gnome
 
-# C++11
+# C++11 ???
 COMPILER =	base-clang ports-gcc
 
 BUILD_DEPENDS=	devel/py-gobject3

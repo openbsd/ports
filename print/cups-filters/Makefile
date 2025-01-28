@@ -20,7 +20,7 @@ WANTLIB += z
 
 SITES=	https://github.com/OpenPrinting/cups-filters/releases/download/${V}/
 
-# cc1plus: error: unrecognized command line option "-std=c++0x"
+# cc1plus: error: unrecognized command line option "-std=c++0x" ???
 COMPILER=		base-clang ports-gcc
 
 USE_GMAKE=		Yes

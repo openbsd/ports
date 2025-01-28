@@ -3,6 +3,7 @@ PORTROACH =		limit:[0-9]\.tar\.gz
 COMMENT =		command line client application for Mega
 
 DISTNAME =		megatools-1.11.1.20230212
+REVISION =		0
 
 CATEGORIES =		net
 
@@ -18,6 +19,7 @@ WANTLIB += c crypto curl gio-2.0 glib-2.0 gobject-2.0
 SITES =			https://megatools.megous.com/builds/
 
 COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 BUILD_DEPENDS =		devel/gobject-introspection \
 			textproc/asciidoc \
 			textproc/docbook2x

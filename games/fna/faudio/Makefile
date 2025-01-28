@@ -1,5 +1,6 @@
 COMMENT =	XAudio reimplementation for open platforms
 PKGNAME =	faudio-${V}
+REVISION =	0
 
 SHARED_LIBS =	FAudio		4.2	# 24.03
 
@@ -11,6 +12,7 @@ PERMIT_PACKAGE = Yes
 WANTLIB +=	SDL2
 
 COMPILER =	base-clang ports-gcc
+COMPILER_LANGS = c
 MODULES =	devel/cmake
 LIB_DEPENDS =	devel/sdl2
 

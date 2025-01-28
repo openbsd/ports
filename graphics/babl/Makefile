@@ -3,6 +3,7 @@ COMMENT=		dynamic pixel format conversion library
 V=			0.1.110
 DISTNAME=		babl-${V}
 EXTRACT_SUFX=		.tar.xz
+REVISION=		0
 
 API_VERSION=		${V:R}
 SUBST_VARS=		API_VERSION
@@ -28,6 +29,7 @@ MODULES=		devel/meson \
 MODGNOME_TOOLS=		gi-docgen gobject-introspection vala
 
 COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
 
 # rsvg-convert(1)
 BUILD_DEPENDS=		x11/gnome/librsvg

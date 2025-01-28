@@ -3,7 +3,7 @@ COMMENT=	fast array and numeric programming library for Python
 MODPY_DISTV=	1.26.4
 DISTNAME=	numpy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	math devel
 
@@ -12,8 +12,9 @@ HOMEPAGE=	https://numpy.org/
 # BSD
 PERMIT_PACKAGE=	Yes
 
-# C++
+# ?
 COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 WANTLIB += ${MODPY_WANTLIB} m pthread
 

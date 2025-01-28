@@ -6,6 +6,8 @@ PKGNAME =	k2pdfopt-${V}
 SITES =		https://willus.com/k2pdfopt/src/
 EXTRACT_SUFX =	.zip
 
+REVISION =	0
+
 SITES.deb =	${SITE_DEBIAN:=main/k/k2pdfopt/}
 DISTFILES.deb =	k2pdfopt_${V}+ds-2.debian.tar.xz
 
@@ -22,7 +24,8 @@ MODULES =	devel/cmake
 WANTLIB += c djvulibre freetype gsl gslcblas gumbo jasper jbig2dec
 WANTLIB += jpeg lcms leptonica m mupdf png pthread z
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =	base-clang ports-gcc
+COMPILER_LANGS = c
 
 LIB_DEPENDS +=	devel/gsl \
 		graphics/djvulibre \

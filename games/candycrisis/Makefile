@@ -5,6 +5,7 @@ CATEGORIES =	games x11
 GH_ACCOUNT =	jorio
 GH_PROJECT =	CandyCrisis
 GH_TAGNAME =	v3.0.1
+REVISION =	0
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
@@ -15,6 +16,7 @@ WANTLIB += SDL2 c m
 
 # C17
 COMPILER =	base-clang ports-gcc
+COMPILER_LANGS = c
 
 MODULES =	devel/cmake
 

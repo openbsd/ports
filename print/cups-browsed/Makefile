@@ -1,6 +1,7 @@
 COMMENT=		browse network for remote CUPS queues and IPP printers
 
 V=			2.1.1
+REVISION=		0
 DISTNAME=		cups-browsed-${V}
 
 CATEGORIES=		print
@@ -21,6 +22,7 @@ SITES=			https://github.com/OpenPrinting/cups-browsed/releases/download/${V}/
 
 # -std=gnu11
 COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
 
 USE_GMAKE=		Yes
 

@@ -3,8 +3,9 @@ COMMENT =	database designed to make SQL scalable for time-series data
 GH_ACCOUNT =	timescale
 GH_PROJECT =	timescaledb
 GH_TAGNAME =	2.17.2
+REVISION =	0
 
-EXTRAS_COMMIT =	52443a469a58d3f64a4e049889f468e8a149cc8f
+EXTRAS_COMMIT =	daf13d74b02e7dc7b29e250a43806b83c7498ba1
 DIST_TUPLE +=	github timescale timescaledb-extras ${EXTRAS_COMMIT} _extras
 
 CATEGORIES =	databases
@@ -21,6 +22,7 @@ SUBST_VARS +=	GH_TAGNAME
 WANTLIB =	pq
 
 COMPILER =	base-clang ports-gcc
+COMPILER_LANGS = c
 
 LIB_DEPENDS =	databases/postgresql
 BUILD_DEPENDS =	databases/postgresql,-server

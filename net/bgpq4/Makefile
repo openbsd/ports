@@ -1,6 +1,7 @@
 COMMENT=	generate access/prefix lists for BGP config
 
 DIST_TUPLE=	github bgp bgpq4 1.15 .
+REVISION=	0
 
 CATEGORIES=	net
 
@@ -11,6 +12,7 @@ WANTLIB += c
 
 # C11
 COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 CONFIGURE_STYLE= autoreconf
 AUTOCONF_VERSION= 2.71

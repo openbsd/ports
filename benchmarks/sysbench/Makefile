@@ -1,6 +1,6 @@
 COMMENT =	modular, cross-platform and multi-threaded benchmark tool
 DISTNAME =	sysbench-0.4.8
-REVISION =	16
+REVISION =	17
 CATEGORIES =	benchmarks
 SITES =		${SITE_SOURCEFORGE:=sysbench/}
 
@@ -9,9 +9,10 @@ HOMEPAGE =	https://sysbench.sourceforge.net/
 # GPL
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		m c pthread
+WANTLIB =		c m pthread
 
 COMPILER =		base-clang ports-gcc base-gcc
+COMPILER_LANGS =	c
 
 BUILD_DEPENDS =		textproc/docbook-xsl
 NO_TEST =		Yes

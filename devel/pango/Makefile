@@ -22,6 +22,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += X11 Xft Xrender c cairo fontconfig>=13.2 freetype fribidi
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 harfbuzz m
 
+# C++ used in tests
 COMPILER=		base-clang ports-gcc
 
 MODULES=		devel/meson \

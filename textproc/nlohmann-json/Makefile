@@ -15,7 +15,7 @@ HOMEPAGE =	https://nlohmann.github.io/json/
 # MIT
 PERMIT_PACKAGE =	Yes
 
-# C++11
+# C++11 header only lib
 COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake
