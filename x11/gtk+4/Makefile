@@ -107,6 +107,8 @@ TEST_IS_INTERACTIVE=	x11
 TEST_DEPENDS=		multimedia/pipewire/pipewire
 
 CONFIGURE_ARGS=		-Dman-pages=true
+# disable use of ifuncs to fix build with llvm 19
+CONFIGURE_ARGS+=	-Df16c=disabled
 
 .include <bsd.port.arch.mk>
 .if !${PROPERTIES:Mclang}
