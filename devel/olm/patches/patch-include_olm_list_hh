@@ -1,0 +1,14 @@
+Fix build with LLVM 19
+
+Index: include/olm/list.hh
+--- include/olm/list.hh.orig
++++ include/olm/list.hh
+@@ -99,7 +99,7 @@ class List { (public)
+             return *this;
+         }
+         T * this_pos = _data;
+-        T * const other_pos = other._data;
++        T const * other_pos = other._data;
+         while (other_pos != other._end) {
+             *this_pos = *other;
+             ++this_pos;
