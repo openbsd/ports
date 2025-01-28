@@ -1,5 +1,6 @@
 COMMENT =	Z80 cross assembler
 DISTNAME =	pasmo-0.5.5
+REVISION =	0
 
 CATEGORIES =	devel
 HOMEPAGE =	http://pasmo.speccy.org/
@@ -8,7 +9,7 @@ MAINTAINER =	Edd Barrett <edd@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c m ${LIBCXX}
+WANTLIB += c m ${COMPILER_LIBCXX}
 
 COMPILER =		base-clang ports-gcc base-gcc
 
