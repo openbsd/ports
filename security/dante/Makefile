@@ -1,12 +1,11 @@
 COMMENT=	SOCKS client and server
 
-DISTNAME=	dante-1.4.3
-REVISION=	1
+DISTNAME=	dante-1.4.4
 
 CATEGORIES=	security
 
-SHARED_LIBS=	dsocks	1.3 \
-		socks	1.3
+SHARED_LIBS=	dsocks	1.4 \
+		socks	1.4
 MODGNU_SHARED_LIBS=dsocks	'-export-dynamic' \
 		socks		''
 
