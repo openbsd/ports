@@ -7,14 +7,12 @@ PKGNAME =	${DISTNAME}
 CATEGORIES =	games
 SITES =		https://www.nethack.org/download/$V/
 DISTFILES =	nethack-${V:S/.//g}-src.tgz
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://nethack.org/
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
 WANTLIB +=	c curses
-
-COMPILER =		base-clang ports-gcc base-gcc
 
 FLAVORS = no_x11
 FLAVOR ?=

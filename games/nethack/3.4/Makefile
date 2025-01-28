@@ -2,7 +2,7 @@ COMMENT =	dungeon explorin', hackin', game.  Piece of cake
 V =		3.4.3
 DISTNAME =	nethack-$V
 PKGNAME =	${DISTNAME}
-REVISION =	17
+REVISION =	18
 CATEGORIES =	games
 
 SITES =		${SITE_SOURCEFORGE:=nethack/}
@@ -16,8 +16,6 @@ MAINTAINER =	Marc Espie <espie@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	c curses
-
-COMPILER =		base-clang ports-gcc base-gcc
 
 FAKE_FLAGS =	PREFIX=${PREFIX}
 
