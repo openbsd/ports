@@ -8,7 +8,7 @@ V=			1.1.0
 DISTNAME=		fsv2-$V
 PKGNAME=		fsv-$V
 CATEGORIES=		x11
-REVISION=		6
+REVISION=		7
 
 SHARED_LIBS +=	fsvui                     0.0 # 0.0
 
@@ -25,8 +25,9 @@ WANTLIB += gdkmm-2.4 gio-2.0 giomm-2.4 glapi glib-2.0 glibmm-2.4
 WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gthread-2.0 gtk-x11-2.0
 WANTLIB += gtkgl-2.0 gtkmm-2.4 harfbuzz iconv intl m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pangomm-1.4 pcre2-8 pixman-1 png pthread xshmfence
-WANTLIB += sigc-2.0 ${LIBCXX} xcb xcb-dri2 xcb-glx xcb-sync xcb-xfixes
+WANTLIB += sigc-2.0 xcb xcb-dri2 xcb-glx xcb-sync xcb-xfixes
 WANTLIB += xcb-render xcb-shm z fribidi jpeg xcb-dri3 xcb-present
+WANTLIB += ${COMPILER_LIBCXX}
 
 SITES=			http://fedorchenko.net/src/
 EXTRACT_SUFX=		.tar.bz2
