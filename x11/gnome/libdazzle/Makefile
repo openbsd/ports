@@ -15,7 +15,7 @@ WANTLIB += c cairo gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += gtk-3 intl m pango-1.0
 
 # -std=gnu11
-COMPILER=		base-clang ports-gcc ports-clang
+COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c
 
 MODULES=		devel/meson \

@@ -31,7 +31,7 @@ MULTI_PACKAGES=		-main -icu
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 # C++11
-COMPILER=		base-clang ports-gcc ports-clang
+COMPILER=		base-clang ports-gcc
 
 MODULES=		devel/meson \
 			lang/python

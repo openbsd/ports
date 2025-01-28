@@ -20,7 +20,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		${COMPILER_LIBCXX} m
 
 # C++11
-COMPILER =		base-clang ports-gcc ports-clang
+COMPILER =		base-clang ports-gcc
 
 MODULES =		lang/python
 MODPY_PI =		Yes

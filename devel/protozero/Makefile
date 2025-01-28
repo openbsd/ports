@@ -10,7 +10,7 @@ CATEGORIES =	devel
 # 3-clause BSD
 PERMIT_PACKAGE =	Yes
 
-COMPILER =	base-clang ports-gcc ports-clang
+COMPILER =	base-clang ports-gcc
 
 CONFIGURE_ARGS	= -DWERROR=NO
 

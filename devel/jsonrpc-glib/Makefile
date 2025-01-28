@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 json-glib-1.0
 
 # -std=gnu11
-COMPILER=		base-clang ports-gcc ports-clang
+COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c
 
 MODULES=		devel/meson \

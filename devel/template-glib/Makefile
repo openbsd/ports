@@ -16,7 +16,7 @@ WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gobject-2.0 intl
 WANTLIB += m
 
 # -std=gnu11
-COMPILER=		base-clang ports-gcc ports-clang
+COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c
 
 MODULES=		devel/meson \

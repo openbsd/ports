@@ -12,7 +12,7 @@ HOMEPAGE =	https://osmcode.org/libosmium/
 # Boost
 PERMIT_PACKAGE =	Yes
 
-COMPILER =	base-clang ports-gcc ports-clang
+COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/cmake
 BUILD_DEPENDS =	devel/boost \

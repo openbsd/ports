@@ -37,7 +37,7 @@ MODULES=		devel/dconf \
 			devel/meson \
 			x11/gnome
 
-COMPILER=		base-clang ports-gcc ports-clang
+COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c
 
 MODGNOME_TOOLS=		docbook gobject-introspection gtk-update-icon-cache \

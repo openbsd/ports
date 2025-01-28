@@ -24,7 +24,7 @@ WANTLIB += vncclient vncserver vte-2.91 winpr2
 MODULES=		devel/cmake \
 			lang/python
 
-COMPILER=		base-clang ports-gcc ports-clang
+COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c
 
 BUILD_DEPENDS=		devel/gettext,-tools \

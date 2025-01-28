@@ -24,7 +24,7 @@ WANTLIB += z
 
 SITES=			https://gitlab.freedesktop.org/spice/spice-gtk/uploads/e41347144c5d2f9947e215c894969f0e/
 
-COMPILER=		base-clang ports-gcc ports-clang
+COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c
 
 MODULES=		devel/meson \
