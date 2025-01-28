@@ -1,0 +1,12 @@
+Index: gsettings/Makefile.in
+--- gsettings/Makefile.in.orig
++++ gsettings/Makefile.in
+@@ -390,7 +390,7 @@ top_build_prefix = @top_build_prefix@
+ top_builddir = @top_builddir@
+ top_srcdir = @top_srcdir@
+ with_sysconfsubdir = @with_sysconfsubdir@
+-module_flags = -export_dynamic -avoid-version -module -no-undefined -export-symbols-regex '^g_io_module_(load|unload|query)'
++module_flags = -export-dynamic -avoid-version -module -no-undefined -export-symbols-regex '^g_io_module_(load|unload|query)'
+ giomodule_LTLIBRARIES = libgsettingsgconfbackend.la
+ giomoduledir = $(GIO_MODULE_DIR)
+ libgsettingsgconfbackend_la_SOURCES = \

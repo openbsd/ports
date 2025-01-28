@@ -25,7 +25,6 @@ lib/GConf/2/
 @so lib/GConf/2/libgconfbackend-oldxml.so
 @so lib/GConf/2/libgconfbackend-xml.so
 @so lib/gio/modules/libgsettingsgconfbackend.so
-lib/girepository-1.0/
 lib/girepository-1.0/GConf-2.0.typelib
 @static-lib lib/libgconf-2.a
 lib/libgconf-2.la
@@ -55,7 +54,6 @@ share/examples/gconf2/xdg/autostart/
 @sample ${SYSCONFDIR}/xdg/autostart/
 share/examples/gconf2/xdg/autostart/gsettings-data-convert.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/gsettings-data-convert.desktop
-share/gir-1.0/
 share/gir-1.0/GConf-2.0.gir
 share/gtk-doc/html/gconf/
 share/gtk-doc/html/gconf/ch01.html
