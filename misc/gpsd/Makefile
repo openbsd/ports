@@ -9,7 +9,7 @@ PKGNAME-x11=		gpsd-x11-${VERSION}
 PKGNAME-php=		gpsd-php-${VERSION}
 REVISION-main=		0
 REVISION-php=		0
-REVISION-x11=		0
+REVISION-x11=		1
 
 SHARED_LIBS +=		gps		23.0
 SHARED_LIBS +=		gpsdpacket	1.0

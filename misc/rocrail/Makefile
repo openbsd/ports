@@ -9,7 +9,7 @@ PKGNAME-main =		rocrail-${VERSION}.${REV}
 PKGNAME-gui =		rocview-${VERSION}.${REV}
 CATEGORIES =		misc x11
 
-REVISION-main =		10
+REVISION-main =		11
 REVISION-gui =		10
 
 HOMEPAGE =		http://www.rocrail.net/

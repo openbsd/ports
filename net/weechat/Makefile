@@ -6,11 +6,12 @@ COMMENT-tcl=	Tcl bindings for weechat
 
 V=		4.4.4
 DISTNAME=	weechat-${V}
+REVISION-python= 0
+REVISION-ruby=	0
 
 PKGNAME-main=	weechat-${V}
 PKGNAME-lua=	weechat-lua-${V}
 PKGNAME-python=	weechat-python-${V}
-REVISION-python= 0
 PKGNAME-ruby=	weechat-ruby-${V}
 PKGNAME-tcl=	weechat-tcl-${V}
 

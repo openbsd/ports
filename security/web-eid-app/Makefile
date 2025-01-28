@@ -4,6 +4,8 @@ COMMENT-firefox =	Firefox extension
 CATEGORIES =		security www
 
 V =			2.6.0
+REVISION-chrome =	0
+REVISION-firefox =	0
 DISTNAME =		web-eid_${V}.654-2004
 PKGNAME =		web-eid-${V}
 PKGNAME-main =		web-eid-native-${V}
@@ -42,9 +44,11 @@ RUN_DEPENDS-main =	devel/desktop-file-utils \
 
 RUN_DEPENDS-chrome =	${FULLPKGPATH-main}
 LIB_DEPENDS-chrome =	# empty
+WANTLIB-chrome =	# empty
 
 RUN_DEPENDS-firefox =	${FULLPKGPATH-main}
 LIB_DEPENDS-firefox =	# empty
+WANTLIB-firefox =	# empty
 
 TEST_IS_INTERACTIVE =	X11
 

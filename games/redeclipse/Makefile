@@ -4,6 +4,8 @@ COMMENT-main=	redeclipse client
 COMMENT-data=	redeclipse data
 CATEGORIES=	games x11
 
+REVISION-data=	0
+
 HOMEPAGE=	http://www.redeclipse.net/
 
 MULTI_PACKAGES=	-main -data

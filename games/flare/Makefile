@@ -1,6 +1,6 @@
 COMMENT-main =		free/libre action roleplaying engine
 COMMENT-data =		free/libre action roleplaying engine data
-REVISION-data =		0
+REVISION-data =		1
 REVISION-main =		0
 
 V = 			1.14

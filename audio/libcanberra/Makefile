@@ -5,7 +5,7 @@ V=		0.30
 DISTNAME=	libcanberra-${V}
 EXTRACT_SUFX=	.tar.xz
 
-REVISION-main=	6
+REVISION-main=	7
 REVISION-gtk3=	12
 
 SHARED_LIBS +=  canberra             2.0      # 2.5

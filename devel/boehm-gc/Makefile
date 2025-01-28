@@ -12,6 +12,8 @@ DISTNAME=	gc-${VERSION}
 PKGNAME-atomic=	libatomic_ops-${LIBAO_VERSION}
 PKGNAME-main=	boehm-gc-${VERSION}
 
+REVISION-atomic= 0
+
 DISTFILES.lib = libatomic_ops-${LIBAO_VERSION}${EXTRACT_SUFX}
 
 MULTI_PACKAGES=	-main -atomic

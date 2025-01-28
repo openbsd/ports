@@ -5,9 +5,9 @@ COMMENT-mutt =		Mutt integration for notmuch
 PKGNAME-main =		notmuch-${V}
 PKGNAME-emacs =		notmuch-emacs-${V}
 PKGNAME-mutt =		notmuch-mutt-${V}
-REVISION-emacs =	0
+REVISION-emacs =	1
 REVISION-main =		0
-REVISION-mutt =		0
+REVISION-mutt =		1
 
 SHARED_LIBS +=		notmuch	1.2
 

@@ -11,6 +11,7 @@ VERSION=		${GH_TAGNAME:S/v//:S/op/./}
 GH_ACCOUNT=		OpenPrinting
 GH_PROJECT=		cups
 GH_TAGNAME=		v2.4.11
+REVISION-libs=		0
 
 CATEGORIES=		print sysutils
 

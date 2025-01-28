@@ -14,8 +14,8 @@ FULLPKGPATH$i= ${PKGPATH},$i${FLAVOR_EXT:S/-gtkspell//:S/-/,/g}
 CATEGORIES=	net
 SITES=		${SITE_SOURCEFORGE:=pidgin/}
 EXTRACT_SUFX=	.tar.bz2
-REVISION-finch=	0
-REVISION-libpurple=1
+REVISION-finch=	1
+REVISION-libpurple= 2
 REVISION-main=	1
 
 SHARED_LIBS=	jabber		0.0 \
