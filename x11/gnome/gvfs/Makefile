@@ -14,11 +14,12 @@ PKGNAME-goa=		${GNOME_PROJECT}-goa-${GNOME_VERSION}
 PKGNAME-nfs=		${GNOME_PROJECT}-nfs-${GNOME_VERSION}
 PKGNAME-google=		${GNOME_PROJECT}-google-${GNOME_VERSION}
 PKGNAME-onedrive=	${GNOME_PROJECT}-onedrive-${GNOME_VERSION}
+
 REVISION-goa=		0
 REVISION-google=	0
 REVISION-main=		0
 REVISION-nfs=		0
-REVISION-onedrive=	0
+REVISION-onedrive=	1
 REVISION-smb=		0
 
 # LGPLv2
@@ -48,7 +49,7 @@ WANTLIB-google += ${WANTLIB}
 WANTLIB-google += gdata goa-1.0
 
 WANTLIB-onedrive += ${WANTLIB}
-WANTLIB-onedrive += goa-1.0 msgraph-0
+WANTLIB-onedrive += goa-1.0 msgraph-1
 
 MODGNOME_TOOLS=		docbook
 
