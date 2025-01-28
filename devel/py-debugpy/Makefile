@@ -1,10 +1,10 @@
 COMMENT =	Python implementation of the debug adapter protocol
 
-MODPY_DISTV=	1.8.9
+MODPY_DISTV=	1.8.6
 DISTNAME=	debugpy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 EXTRACT_SUFX=	.zip
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 
