@@ -18,13 +18,7 @@ post-configure:
 	cd ${WRKSRC} && ./configure ruby --ruby=${MODRUBY_FLAVOR} \
 	    --module=ruby${MODRUBY_REV}
 
-DEBUG_PACKAGES=	${BUILD_PACKAGES}
-
-.include <bsd.port.arch.mk>
-
-.if ${PROPERTIES:Mclang}
 # needed for ruby 3 on llvm
-CFLAGS+=	-fdeclspec
-.endif
+CFLAGS-base_clang+=	-fdeclspec
 
 .include <bsd.port.mk>
