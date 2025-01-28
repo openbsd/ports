@@ -2,7 +2,7 @@ COMMENT=	implementation of HTTP/3
 
 V=		1.7.0
 DISTNAME=	nghttp3-$V
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=	nghttp3              3.1     # 11.1
 
@@ -21,6 +21,7 @@ SEPARATE_BUILD=		Yes
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 COMPILER=		base-clang ports-gcc
+COMPILER_LANGS=		c
 
 CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--enable-lib-only
