@@ -2,7 +2,7 @@ COMMENT =		open source MPI-3.1 implementation
 
 V =			4.1.6
 DISTNAME =		openmpi-$V
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=  open-pal		9.0 # 70.3
 SHARED_LIBS +=  mca_common_sm		5.0 # 70.0

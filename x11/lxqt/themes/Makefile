@@ -1,4 +1,5 @@
 COMMENT =	themes, graphics and icons for LXQt
+REVISION =	0
 
 NAME =		lxqt-themes
 

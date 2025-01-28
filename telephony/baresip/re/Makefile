@@ -1,6 +1,7 @@
 COMMENT =		portable library for real-time communications
 
 GH_PROJECT =	re
+REVISION =	0
 
 SHARED_LIBS =		re	15.0 # 24.0
 CATEGORIES +=		devel

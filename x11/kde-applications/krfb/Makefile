@@ -2,6 +2,7 @@ BROKEN =	Missing KPipeWire
 COMMENT =	desktop sharing
 DISTNAME =	krfb-${VERSION}
 CATEGORIES =	net x11
+REVISION =	0
 
 SHARED_LIBS +=  krfbprivate               3.0 # 5.0
 

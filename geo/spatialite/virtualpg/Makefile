@@ -2,6 +2,7 @@ COMMENT =	loadable dynamic extension to both SQLite and SpatiaLite
 PROJECT =	virtualpg
 DISTNAME =	${PROJECT}-2.0.1
 SHARED_LIBS +=  virtualpg 0.0 # 1.1
+REVISION =	0
 
 COMPILER =		base-clang ports-gcc base-gcc
 

@@ -11,7 +11,7 @@ GH_ACCOUNT =	ziglang
 GH_PROJECT =	zig
 GH_COMMIT =	${ZIG_COMMIT}
 
-REVISION =	0
+REVISION =	1
 
 # see https://github.com/ziglang/zig/tree/0.13.0
 ZIG_VERSION =	0.13.0

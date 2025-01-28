@@ -10,6 +10,7 @@ EMBED_LUAJIT =	No
 .endif
 
 COMMENT =	continuation and extension of Vim
+REVISION =	0
 
 DIST_TUPLE =	github neovim neovim v0.10.3 .
 

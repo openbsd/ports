@@ -1,7 +1,7 @@
 COMMENT =	C++17 wrapper for Lightning Memory-Mapped Database
 
 VERSION =	1.0.0
-REVISION =	0
+REVISION =	1
 DISTNAME =	lmdbxx-${VERSION}
 
 CATEGORIES =	databases

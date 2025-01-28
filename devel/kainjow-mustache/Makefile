@@ -2,6 +2,7 @@ COMMENT =	header-only string template library
 
 PKGNAME =	kainjow-mustache-$V
 V =		4.1
+REVISION =	0
 
 GH_ACCOUNT =	kainjow
 GH_PROJECT =	Mustache

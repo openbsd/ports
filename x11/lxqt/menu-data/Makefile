@@ -1,4 +1,5 @@
 COMMENT =	menu files for LXQt panel
+REVISION =	0
 
 NAME =		lxqt-menu-data
 

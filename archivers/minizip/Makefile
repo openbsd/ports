@@ -5,6 +5,7 @@ GH_PROJECT =	minizip-ng
 GH_TAGNAME =	4.0.8
 
 PKGNAME =	minizip-${GH_TAGNAME}
+REVISION =	0
 
 SHARED_LIBS +=	minizip 3.2 # 4
 

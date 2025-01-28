@@ -4,6 +4,7 @@ COMMENT =	JSON for modern C++
 V =		3.11.2
 DIST_TUPLE =	github	nlohmann	json	v${V}	.
 PKGNAME =	nlohmann-json-${V}
+REVISION =	0
 
 TEST_DATA_DIR =	tests/test_data
 DIST_TUPLE +=	github	nlohmann	json_test_data	v3.1.0	${TEST_DATA_DIR}

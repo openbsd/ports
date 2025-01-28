@@ -3,7 +3,7 @@ COMMENT =	fast, flexible library for working with OpenStreetMap data
 GH_ACCOUNT =	osmcode
 GH_PROJECT =	libosmium
 GH_TAGNAME =	v2.20.0
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	geo
 

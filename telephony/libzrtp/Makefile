@@ -2,6 +2,7 @@ COMMENT =		ZRTP library
 
 DISTNAME =		libzrtp-0.20221005
 CATEGORIES =		telephony security
+REVISION =		0
 
 # AGPLv3
 PERMIT_PACKAGE =	Yes

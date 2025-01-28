@@ -1,6 +1,7 @@
 COMMENT =		guidelines support library
 DIST_TUPLE =		github	microsoft	GSL	v4.1.0	.
 CATEGORIES =		devel
+REVISION =		0
 
 # MIT
 PERMIT_PACKAGE =	Yes

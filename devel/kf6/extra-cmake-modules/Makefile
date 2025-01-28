@@ -1,6 +1,6 @@
 COMMENT =	CMake modules required by KDE and Qt
 DISTNAME =	extra-cmake-modules-${VERSION}
-REVISION =	0
+REVISION =	1
 
 PKG_ARCH =	*
 

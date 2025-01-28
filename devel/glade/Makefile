@@ -2,7 +2,7 @@ COMMENT=	user interface builder for the gtk+3 toolkit
 
 GNOME_PROJECT= 	glade
 GNOME_VERSION=	3.40.0
-REVISION=       6
+REVISION=       7
 
 CATEGORIES=	devel
 

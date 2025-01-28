@@ -7,6 +7,7 @@ GH_ACCOUNT =	rfht
 GH_PROJECT =	Steamworks-nosteam
 # checkout from 2023-01-03
 GH_COMMIT =	bcaa5eb0ff8d2e5c6c5841ad86dacfdbf2496fa2
+REVISION =	0
 
 SHARED_LIBS +=  cestub			0.0	# 0.4.1
 

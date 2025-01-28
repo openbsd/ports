@@ -2,6 +2,7 @@ COMMENT =	extra table for Fcitx5
 
 DISTNAME =	fcitx5-table-extra-5.1.6
 PKGNAME =	${DISTNAME:S/fcitx5/fcitx/}
+REVISION =	0
 
 CATEGORIES =	inputmethods chinese
 

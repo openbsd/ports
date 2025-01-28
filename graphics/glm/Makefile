@@ -3,7 +3,7 @@ COMMENT=	C++ mathematics header-only library for OpenGL software
 GH_TAGNAME=	0.9.9.8
 GH_PROJECT=	glm
 GH_ACCOUNT=	g-truc
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	graphics math
 

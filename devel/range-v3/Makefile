@@ -4,6 +4,7 @@ GH_ACCOUNT =		ericniebler
 GH_PROJECT =		range-v3
 GH_TAGNAME =		0.12.0
 CATEGORIES =		devel
+REVISION =		0
 
 # BSL 1.0 (boost software license)
 PERMIT_PACKAGE =	Yes

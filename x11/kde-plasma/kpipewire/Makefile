@@ -1,6 +1,7 @@
 BROKEN =	Depends on libva
 COMMENT =	components relating to pipewire use in Plasma
 DISTNAME =	kpipewire-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  KPipeWire                 0.0 # 0.0
 SHARED_LIBS +=  KPipeWireDmaBuf           0.0 # 0.0

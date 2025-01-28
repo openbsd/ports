@@ -3,6 +3,7 @@ PORTROACH=	limitw:1,even
 COMMENT=	WPE Backend for Wayland
 
 DISTNAME=	wpebackend-fdo-1.14.3
+REVISION=	0
 
 CATEGORIES=	www wayland
 

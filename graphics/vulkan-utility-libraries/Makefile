@@ -3,6 +3,7 @@ COMMENT =	Vulkan Utility Libraries
 V =		1.4.304.0
 PKGNAME =	vulkan-utility-libraries-${V}
 DIST_TUPLE =	github KhronosGroup Vulkan-Utility-Libraries vulkan-sdk-${V} .
+REVISION =	0
 
 CATEGORIES =	devel graphics
 

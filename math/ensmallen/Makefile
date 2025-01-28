@@ -3,6 +3,7 @@ DISTNAME = 	ensmallen-2.10.3
 CATEGORIES = 	math
 HOMEPAGE = 	http://www.ensmallen.org/
 MAINTAINER =	Marc Espie <espie@openbsd.org>
+REVISION =      0
 
 # BSD
 PERMIT_PACKAGE = Yes

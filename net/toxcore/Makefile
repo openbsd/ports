@@ -3,6 +3,7 @@ COMMENT =		Tox client library
 V =			0.2.19
 DISTNAME =		c-toxcore-$V
 PKGNAME =		${DISTNAME:S/c-//}
+REVISION =		0
 
 SHARED_LIBS +=		toxcore	4.0
 

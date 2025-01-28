@@ -5,6 +5,7 @@ GH_PROJECT =		expected
 GH_TAGNAME =		v1.1.0
 PKGNAME =		tl-${DISTNAME}
 CATEGORIES =		devel
+REVISION =		0
 
 DIST_SUBDIR =		tl-expected
 SITES.pr =		https://github.com/${GH_ACCOUNT}/${GH_PROJECT}/

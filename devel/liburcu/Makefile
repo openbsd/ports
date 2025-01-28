@@ -3,6 +3,7 @@ COMMENT =		user-level RCU implementation
 V =			0.15.0
 DISTNAME =		userspace-rcu-$V
 PKGNAME =		liburcu-$V
+REVISION =		0
 
 SHARED_LIBS +=  urcu-bp                   3.0 # 9.0
 SHARED_LIBS +=  urcu-cds                  2.1 # 9.0

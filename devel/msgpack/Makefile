@@ -6,7 +6,7 @@ V =			6.0.0
 DISTNAME =		msgpack-c-${V}
 PKGNAME =		msgpack-${V}
 
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=	msgpack-c                  0.0 # 2.0
 

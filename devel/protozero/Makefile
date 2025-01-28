@@ -3,7 +3,7 @@ COMMENT =	minimalist protocol buffer decoder and encoder in C++
 GH_ACCOUNT =	mapbox
 GH_PROJECT =	protozero
 GH_TAGNAME =	v1.7.0
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	devel
 

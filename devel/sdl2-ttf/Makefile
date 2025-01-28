@@ -3,6 +3,7 @@ COMMENT =	SDL2 TrueType fonts library
 DISTNAME =	SDL2_ttf-${V}
 PKGNAME =	sdl2-ttf-${V}
 CATEGORIES =	devel graphics fonts
+REVISION =	0
 
 SHARED_LIBS +=	SDL2_ttf		0.1 # 10.2
 

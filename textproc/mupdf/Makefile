@@ -5,6 +5,7 @@ SHARED_LIBS +=  mupdf                 12.1
 V =		1.25.4
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-${V:S/-rc/rc/}
+REVISION =	0
 
 CATEGORIES =	textproc x11
 

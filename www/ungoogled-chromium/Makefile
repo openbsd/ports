@@ -15,6 +15,7 @@ V=			132.0.6834.110
 UGV=			${V}-1
 
 DISTNAME=		ungoogled-chromium-${V}
+REVISION=		0
 
 DISTFILES+=		${CHROMIUM_DISTFILES} \
 			${REGRESS_DISTFILES}

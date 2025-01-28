@@ -2,7 +2,7 @@ VERSION =		11.4
 
 COMMENT =		MIME definition for application/x-love-game
 PKGNAME =		love-mime-0.1
-REVISION =		0
+REVISION =		1
 
 NO_BUILD =		Yes
 NO_TEST =		Yes

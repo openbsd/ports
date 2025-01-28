@@ -5,6 +5,7 @@ DISTNAME=	c-ares-${V}
 PKGNAME=	libcares-${V}
 CATEGORIES=	net devel
 SITES=		https://github.com/c-ares/c-ares/releases/download/v${V}/
+REVISION=	0
 
 SHARED_LIBS +=  cares                4.3      # 2.19.0
 

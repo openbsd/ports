@@ -1,6 +1,7 @@
 COMMENT=	general-purpose library for the WPE-flavored port of WebKit
 
 DISTNAME=	libwpe-1.16.1
+REVISION=	0
 
 CATEGORIES=	www wayland
 

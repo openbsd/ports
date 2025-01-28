@@ -6,6 +6,7 @@ GH_ACCOUNT =	KhronosGroup
 GH_PROJECT =	SPIRV-Headers
 GH_TAGNAME =	vulkan-sdk-${V}
 EPOCH =		0
+REVISION =	0
 
 CATEGORIES =	devel graphics
 
