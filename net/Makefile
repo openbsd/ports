@@ -328,6 +328,7 @@
      SUBDIR += nmap
      SUBDIR += no-ip
      SUBDIR += noVNC
+     SUBDIR += nomadnet
      SUBDIR += ns
      SUBDIR += nslint
      SUBDIR += nsping
@@ -581,6 +582,7 @@
      SUBDIR += py-junos-eznc
      SUBDIR += py-libcloud
      SUBDIR += py-libknot
+     SUBDIR += py-lxmf
      SUBDIR += py-minimalmodbus
      SUBDIR += py-modbus
      SUBDIR += py-msgpack
@@ -600,6 +602,7 @@
      SUBDIR += py-ripe.atlas.cousteau
      SUBDIR += py-ripe.atlas.sagan
      SUBDIR += py-ripe.atlas.tools
+     SUBDIR += py-rns
      SUBDIR += py-rrdtool
      SUBDIR += py-s3transfer
      SUBDIR += py-simplesoap
