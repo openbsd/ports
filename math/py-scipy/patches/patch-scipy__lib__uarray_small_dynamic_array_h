@@ -1,0 +1,14 @@
+https://github.com/scipy/scipy/pull/21069
+
+Index: scipy/_lib/_uarray/small_dynamic_array.h
+--- scipy/_lib/_uarray/small_dynamic_array.h.orig
++++ scipy/_lib/_uarray/small_dynamic_array.h
+@@ -142,7 +142,7 @@ class SmallDynamicArray { (public)
+ 
+     clear();
+ 
+-    size_ = copy.size;
++    size_ = copy.size_;
+     try {
+       allocate();
+     } catch (...) {
