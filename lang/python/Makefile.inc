@@ -42,6 +42,11 @@ MAINTAINER =	Kurt Mosiejczuk <kmos@openbsd.org>
 # A summary of changes to Python is required to be distributed
 PERMIT_PACKAGE =	Yes
 
+# XXX on archs with DEBUG_PACKAGES, -g in CFLAGS is carried through to
+# CFLAGS/OPT/PY_CFLAGS/etc in _sysconfigdata*.py, which means that it is
+# picked up when compiling Python extensions. it might be helpful to
+# sanitize these.
+
 .if ${VERSION} == "2.7"
 V_SUBDIR =		${VERSION}
 MULTI_PACKAGES =	-main -tests -tools -gdbm -idle -tkinter -bsddb
