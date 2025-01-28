@@ -5,12 +5,15 @@ PKGNAME-main =		sameboy-$V
 PKGNAME-libretro =	libretro-sameboy-$V
 
 V =		0.16.7
+REVISION =	0
 
 GH_ACCOUNT =	LIJI32
 GH_PROJECT =	SameBoy
 GH_TAGNAME =	v$V
 
 MULTI_PACKAGES =	-main -libretro
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 .include <bsd.port.arch.mk>
 
@@ -47,8 +50,6 @@ MAKE_FLAGS =		CC="${CC}" \
 FAKE_FLAGS =		PREFIX="${TRUEPREFIX}"
 
 USE_GMAKE =		Yes
-
-DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 NO_TEST =		Yes
 
