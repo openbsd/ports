@@ -13,6 +13,7 @@ share/examples/rsnapshot/utils/backup_mysql.sh
 share/examples/rsnapshot/utils/backup_pgsql.sh
 share/examples/rsnapshot/utils/backup_rsnapshot_cvsroot.sh
 share/examples/rsnapshot/utils/backup_smb_share.sh
+share/examples/rsnapshot/utils/backup_sqlite.sh
 share/examples/rsnapshot/utils/debug_moving_files.sh
 share/examples/rsnapshot/utils/make_cvs_snapshot.sh
 share/examples/rsnapshot/utils/mkmakefile.sh

@@ -2,7 +2,7 @@ COMMENT=		remote filesystem snapshot utility
 
 GH_ACCOUNT=		rsnapshot
 GH_PROJECT=		rsnapshot
-GH_TAGNAME=		1.4.5
+GH_TAGNAME=		1.5.1
 
 CATEGORIES=		net sysutils
 
@@ -21,12 +21,11 @@ RUN_DEPENDS=		devel/p5-Lchown \
 PKG_ARCH=		*
 
 CONFIGURE_STYLE=	autoreconf
-AUTOCONF_VERSION=	2.69
-AUTOMAKE_VERSION=	1.15
+AUTOCONF_VERSION=	2.72
+AUTOMAKE_VERSION=	1.17
 AUTORECONF=		./autogen.sh
 
-SAMPLES_DIR=		${PREFIX}/share/examples/rsnapshot
-FAKE_FLAGS=		sysconfdir=${SAMPLES_DIR}
+FAKE_FLAGS=		sysconfdir=${PREFIX}/share/examples/rsnapshot
 
 # needed for tests
 USE_GMAKE=		Yes
@@ -39,14 +38,8 @@ post-configure:
 		${WRKSRC}/utils/rsnapshotdb/rsnapshotDB.pl
 
 post-install:
-	${INSTALL_DATA_DIR} ${SAMPLES_DIR}/utils
-	${INSTALL_DATA_DIR} ${SAMPLES_DIR}/utils/rsnapshotdb
-	${INSTALL_DATA} ${WRKSRC}/README.md ${SAMPLES_DIR}
-	${INSTALL_DATA} ${WRKSRC}/utils/README ${SAMPLES_DIR}/utils
-	${INSTALL_DATA} ${WRKSRC}/utils/rsnapshot-copy ${SAMPLES_DIR}/utils
-	${INSTALL_DATA} ${WRKSRC}/utils/rsnaptar ${SAMPLES_DIR}/utils
-	${INSTALL_DATA} ${WRKSRC}/utils/*.pl ${SAMPLES_DIR}/utils
-	${INSTALL_DATA} ${WRKSRC}/utils/*.sh ${SAMPLES_DIR}/utils
-	${INSTALL_DATA} ${WRKSRC}/utils/rsnapshotdb/* ${SAMPLES_DIR}/utils/rsnapshotdb
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/rsnapshot/
+	${INSTALL_DATA} ${WRKSRC}/README.md ${PREFIX}/share/examples/rsnapshot/
+	cp -R ${WRKSRC}/utils/ ${PREFIX}/share/examples/rsnapshot/
 
 .include <bsd.port.mk>
