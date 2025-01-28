@@ -14,9 +14,9 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 # Apache v2
 PERMIT_PACKAGE =	Yes
 
-MODULES =		lang/python 
+MODULES =		lang/python
 # so that we get gawk poisoning in the sleuthkit part
-MODULES += 		gnu
+MODULES +=		gnu
 
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
@@ -24,7 +24,7 @@ MODPY_PYBUILD =		setuptools
 WANTLIB += talloc tsk ${MODPY_WANTLIB}
 
 # C++11
-COMPILER=	ports-clang ports-gcc
+COMPILER=	base-clang ports-gcc
 
 pre-configure:
 		${SUBST_DATA} ${WRKSRC}/setup.py ${WRKSRC}/setup.py.new
