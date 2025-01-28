@@ -1,0 +1,14 @@
+https://gitlab.com/inkscape/inkscape/-/commit/eb6dadcf1a5c660167ba43f3606c8e7cc6529787
+
+Index: src/util/gobjectptr.h
+--- src/util/gobjectptr.h.orig
++++ src/util/gobjectptr.h
+@@ -20,7 +20,7 @@ class GObjectPtr (public)
+     GObjectPtr() = default;
+     explicit GObjectPtr(T *p, bool add_ref = false) : _p(p) { if (add_ref) _ref(); }
+     GObjectPtr(GObjectPtr const &other) : _p(other._p) { _ref(); }
+-    GObjectPtr &operator=(GObjectPtr const &other) { if (&other != this) { _unref(); _p = other.p; _ref(); } return *this; }
++    GObjectPtr &operator=(GObjectPtr const &other) { if (&other != this) { _unref(); _p = other._p; _ref(); } return *this; }
+     GObjectPtr(GObjectPtr &&other) noexcept : _p(other._p) { other._p = nullptr; }
+     GObjectPtr &operator=(GObjectPtr &&other) { if (&other != this) { _unref(); _p = other._p; other._p = nullptr; } return *this; }
+     ~GObjectPtr() { _unref(); }
