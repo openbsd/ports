@@ -1,0 +1,17 @@
+From f1aa273b243cb41deba1916c843c783a7ff7de23 Mon Sep 17 00:00:00 2001
+From: Jan-Michael Brummer <jan-michael.brummer1@volkswagen.de>
+Date: Thu, 19 Sep 2024 11:04:30 +0200
+Subject: [PATCH] onedrive: Support Sharepoint drives
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -431,7 +431,7 @@ enable_onedrive = get_option('onedrive')
+ if enable_onedrive
+   assert(enable_goa, 'OneDrive backend requested but GOA is required')
+ 
+-  msgraph_dep = dependency('msgraph-0.1')
++  msgraph_dep = dependency('msgraph-1', version: '>= 0.3.0')
+ endif
+ 
+ # *** Check for gphoto2 ***
