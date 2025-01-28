@@ -34,7 +34,7 @@ CONFIGURE_ARGS=	--prefix=${PREFIX} \
 		--user=_unit \
 		--group=_unit
 
-DEBUG_PACKAGES=	${BUILD_PACKAGES}
+DEBUG_PACKAGES?= ${BUILD_PACKAGES}
 
 .if defined(UNIT_MODNAME)
 UNIT_SHORTNAME?= ${UNIT_MODNAME}

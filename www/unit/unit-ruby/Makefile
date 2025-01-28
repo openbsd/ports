@@ -2,6 +2,7 @@ BROKEN-sparc64=	doesn't detect Ruby library in configure
 
 UNIT_MODNAME=	ruby${MODRUBY_REV}
 UNIT_SHORTNAME=	ruby
+REVISION=	0
 
 MODULES+=	lang/ruby
 
@@ -16,6 +17,8 @@ SUBST_VARS=	MODRUBY_REV
 post-configure:
 	cd ${WRKSRC} && ./configure ruby --ruby=${MODRUBY_FLAVOR} \
 	    --module=ruby${MODRUBY_REV}
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 .include <bsd.port.arch.mk>
 
