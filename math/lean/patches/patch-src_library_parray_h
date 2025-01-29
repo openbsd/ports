@@ -1,0 +1,20 @@
+Fix build with llvm 19
+
+Index: src/library/parray.h
+--- src/library/parray.h.orig
++++ src/library/parray.h
+@@ -586,14 +586,6 @@ class parray { (public)
+         return *this;
+     }
+ 
+-    parray & operator=(parray && s) {
+-        if (m_cell)
+-            dec_ref(m_cell);
+-        m_cell = s.m_ptr;
+-        s.m_ptr = nullptr;
+-        return *this;
+-    }
+-
+     size_t size() const {
+         return size(m_cell);
+     }
