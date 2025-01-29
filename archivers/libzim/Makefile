@@ -22,6 +22,8 @@ COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/meson
 
+CXXFLAGS =		-Wno-deprecated-declarations
+
 BUILD_DEPENDS =		devel/gtest
 LIB_DEPENDS =		archivers/xz \
 			archivers/zstd \
