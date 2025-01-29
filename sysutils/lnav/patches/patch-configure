@@ -3,7 +3,7 @@ make sure we link with readline from ports
 Index: configure
 --- configure.orig
 +++ configure
-@@ -12480,7 +12480,7 @@ ac_res=$ac_cv_search_readline
+@@ -12914,7 +12914,7 @@ ac_res=$ac_cv_search_readline
  if test "$ac_res" != no
  then :
    test "$ac_res" = "none required" || LIBS="$ac_res $LIBS"

@@ -3,7 +3,7 @@ fix some 'vfprintf %s NULL'
 Index: src/base/lnav_log.cc
 --- src/base/lnav_log.cc.orig
 +++ src/base/lnav_log.cc
-@@ -229,11 +229,13 @@ log_host_info()
+@@ -228,11 +228,13 @@ log_host_info()
      log_info("  jittarget=%s", jittarget);
      log_info("Environment:");
      log_info("  HOME=%s", getenv("HOME"));

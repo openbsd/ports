@@ -3,7 +3,7 @@ replace use of ptsname_r by ptsname
 Index: src/readline_curses.cc
 --- src/readline_curses.cc.orig
 +++ src/readline_curses.cc
-@@ -840,10 +840,8 @@ readline_curses::start()
+@@ -843,10 +843,8 @@ readline_curses::start()
      this->rc_pty[RCF_MASTER] = openpt_res.unwrap();
      log_perror(grantpt(this->rc_pty[RCF_MASTER]));
      log_perror(unlockpt(this->rc_pty[RCF_MASTER]));

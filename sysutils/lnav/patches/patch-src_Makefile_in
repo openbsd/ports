@@ -3,7 +3,7 @@ no need to call this bash script
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -2422,9 +2422,6 @@ check-local:
+@@ -2456,9 +2456,6 @@ check-local:
  @HAVE_CHECK_JSONSCHEMA_TRUE@	$(CHECK_JSONSCHEMA) --schemafile $(top_srcdir)/docs/schemas/format-v1.schema.json $(FORMAT_FILES)
  @HAVE_CHECK_JSONSCHEMA_TRUE@	$(CHECK_JSONSCHEMA) --schemafile $(top_srcdir)/docs/schemas/config-v1.schema.json $(CONFIG_FILES)
  

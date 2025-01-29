@@ -2,7 +2,7 @@ BROKEN-sparc64 =	error: #error "unknown CPU architecture"
 
 COMMENT =	log file navigator
 
-V =		0.12.2
+V =		0.12.3
 DISTNAME =	lnav-${V}
 EXTRACT_SUFX =	.tar.bz2
 

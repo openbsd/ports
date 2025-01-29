@@ -1,7 +1,7 @@
 Index: TESTS_ENVIRONMENT.in
 --- TESTS_ENVIRONMENT.in.orig
 +++ TESTS_ENVIRONMENT.in
-@@ -87,7 +87,7 @@ has_errors=""
+@@ -97,7 +97,7 @@ has_errors=""
  #     run_test rktimes -V
  #
  run_test() {
@@ -10,7 +10,7 @@ Index: TESTS_ENVIRONMENT.in
      LAST_TEST=("test: $@")
      echo "${LAST_TEST[@]}"
      export test_num=`expr ${test_num} \+ 1`
-@@ -97,7 +97,7 @@ run_test() {
+@@ -107,7 +107,7 @@ run_test() {
  run_cap_test() {
      LAST_CAP_TEST=("test: $@")
      local full_cmd=$(echo "${LAST_CAP_TEST[@]}" | sed -e "s;${test_dir};{test_dir};g" -e "s;${top_srcdir};{top_srcdir};g")
@@ -19,7 +19,7 @@ Index: TESTS_ENVIRONMENT.in
      echo "${full_cmd}" > ${test_file_base}_${test_hash}.cmd
      "$@" > ${test_file_base}_${test_hash}.out 2> ${test_file_base}_${test_hash}.err
  
-@@ -109,7 +109,7 @@ run_cap_test() {
+@@ -123,7 +123,7 @@ run_cap_test() {
          -e "s;lnav-user-${UID}-work;lnav-user-{uid}-work;g" \
          ${test_file_base}_${test_hash}.out
      echo
