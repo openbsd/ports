@@ -150,8 +150,6 @@ lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}ci
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}cien.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}civitai.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}civitai.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}cohost.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}cohost.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}comicvine.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}comicvine.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -180,8 +178,6 @@ lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}fa
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}facebook.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}fanbox.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}fanbox.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}fanleaks.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}fanleaks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}fantia.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}fantia.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}fapachi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -324,6 +320,8 @@ lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}na
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}naver.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}naverwebtoon.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}naverwebtoon.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}nekohouse.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}nekohouse.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}newgrounds.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}newgrounds.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}nhentai.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -492,6 +490,8 @@ lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}wi
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}wikifeet.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}wikimedia.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}wikimedia.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}xfolio.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}xfolio.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}xhamster.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}xhamster.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/${MODPY_PYCACHE}xvideos.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -523,7 +523,6 @@ lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/catbox.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/chevereto.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/cien.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/civitai.py
-lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/cohost.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/comicvine.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/common.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/cyberdrop.py
@@ -538,7 +537,6 @@ lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/everia.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/exhentai.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/facebook.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/fanbox.py
-lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/fanleaks.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/fantia.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/fapachi.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/fapello.py
@@ -610,6 +608,7 @@ lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/myhentaigallery.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/myportfolio.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/naver.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/naverwebtoon.py
+lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/nekohouse.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/newgrounds.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/nhentai.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/nijie.py
@@ -694,6 +693,7 @@ lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/weibo.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/wikiart.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/wikifeet.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/wikimedia.py
+lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/xfolio.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/xhamster.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/xvideos.py
 lib/python${MODPY_VERSION}/site-packages/gallery_dl/extractor/yiffverse.py
