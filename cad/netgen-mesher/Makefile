@@ -2,6 +2,7 @@ COMMENT =		automatic 3d tetrahedral mesh generator
 
 V =			6.2.2404
 PKGNAME =		netgen-mesher-${V}
+REVISION =		0
 
 DIST_TUPLE +=		github NGSolve netgen v${V} .
 
