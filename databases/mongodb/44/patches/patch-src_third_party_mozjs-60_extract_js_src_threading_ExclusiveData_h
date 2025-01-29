@@ -1,0 +1,20 @@
+Fix build with llvm-19
+https://phabricator.services.mozilla.com/D209108
+
+Index: src/third_party/mozjs-60/extract/js/src/threading/ExclusiveData.h
+--- src/third_party/mozjs-60/extract/js/src/threading/ExclusiveData.h.orig
++++ src/third_party/mozjs-60/extract/js/src/threading/ExclusiveData.h
+@@ -120,13 +120,6 @@ class ExclusiveData
+         release();
+     }
+ 
+-    ExclusiveData(ExclusiveData&& rhs)
+-      : lock_(mozilla::Move(rhs.lock))
+-    {
+-        MOZ_ASSERT(&rhs != this, "self-move disallowed!");
+-        new (mozilla::KnownNotNull, value_.addr()) T(mozilla::Move(*rhs.value_.addr()));
+-    }
+-
+     ExclusiveData& operator=(ExclusiveData&& rhs) {
+         this->~ExclusiveData();
+         new (mozilla::KnownNotNull, this) ExclusiveData(mozilla::Move(rhs));
