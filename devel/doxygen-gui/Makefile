@@ -8,7 +8,7 @@ COMMENT=	GUI front-end for doxygen
 VERSION=	1.10.0
 DISTNAME=	doxygen-${VERSION}.src
 PKGNAME=	doxygen-gui-${VERSION}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel textproc
 
