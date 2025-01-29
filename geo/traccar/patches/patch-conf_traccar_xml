@@ -3,7 +3,7 @@ Index: conf/traccar.xml
 +++ conf/traccar.xml
 @@ -5,8 +5,11 @@
      <!-- Documentation: https://www.traccar.org/configuration-file/ -->
-
+ 
      <entry key='database.driver'>org.h2.Driver</entry>
 -    <entry key='database.url'>jdbc:h2:./data/database</entry>
 +    <entry key='database.url'>jdbc:h2:/var/db/traccar/database</entry>
@@ -12,5 +12,5 @@ Index: conf/traccar.xml
 +
 +    <entry key='web.address'>127.0.0.1</entry>
 +    <entry key='logger.file'>/var/log/traccar/tracker-server.log</entry>
-
+ 
  </properties>
