@@ -1,6 +1,7 @@
 COMMENT =		volleyball game with online play
 
 V =			1.1.1
+REVISION =		0
 
 GH_ACCOUNT =		danielknobe
 GH_PROJECT =		blobbyvolley2
