@@ -36,6 +36,7 @@
      SUBDIR += freefarsi-ttf
      SUBDIR += freefont-ttf
      SUBDIR += freefonts
+     SUBDIR += genei-latin
      SUBDIR += gentium
      SUBDIR += go-fonts
      SUBDIR += gohufont
