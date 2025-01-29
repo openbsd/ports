@@ -2,8 +2,8 @@ COMMENT=	command-line tools to work with RFCs and Internet Drafts
 
 GH_ACCOUNT=	paulehoffman
 GH_PROJECT=	ietf-cli
-GH_TAGNAME=	1.26
-REVISION=	2
+GH_TAGNAME=	1.29
+REVISION=	0
 
 CATEGORIES=	misc net books
 
@@ -13,7 +13,6 @@ MAINTAINER=	Klemens Nanni <kn@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_BUILDDEP=	Yes
 
 NO_BUILD=	Yes
 NO_TEST=	Yes
