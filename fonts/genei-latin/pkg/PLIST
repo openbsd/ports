@@ -1,0 +1,9 @@
+share/doc/genei-latin/
+share/doc/genei-latin/LICENSE.txt
+share/doc/genei-latin/readme_ja.txt
+share/fonts/
+@fontdir share/fonts/genei-latin/
+share/fonts/genei-latin/GenEiLateGoN_v2.ttf
+share/fonts/genei-latin/GenEiLateGoP_v2.ttf
+share/fonts/genei-latin/GenEiLateMinN_v2.ttf
+share/fonts/genei-latin/GenEiLateMinP_v2.ttf
