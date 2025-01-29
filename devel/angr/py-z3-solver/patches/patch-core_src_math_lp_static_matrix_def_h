@@ -1,0 +1,25 @@
+../src/math/lp/static_matrix_def.h:93:33: error: no member named 'get_value_of_column_cell' in 'static_matrix<T, X>'
+   93 |             set(col.var(), m, A.get_value_of_column_cell(col));
+      |                               ~ ^
+
+Index: core/src/math/lp/static_matrix_def.h
+--- core/src/math/lp/static_matrix_def.h.orig
++++ core/src/math/lp/static_matrix_def.h
+@@ -82,17 +82,6 @@ template <typename T, typename X> bool static_matrix<T
+ }
+ 
+ 
+-// constructor that copies columns of the basis from A
+-template <typename T, typename X>
+-static_matrix<T, X>::static_matrix(static_matrix const &A, unsigned * /* basis */) :
+-    m_vector_of_row_offsets(A.column_count(), numeric_traits<T>::zero()) {
+-    unsigned m = A.row_count();
+-    init_row_columns(m, m);
+-    for (; m-- > 0; ) 
+-        for (auto & col : A.m_columns[m]) 
+-            set(col.var(), m, A.get_value_of_column_cell(col));
+-}
+-
+ template <typename T, typename X> void static_matrix<T, X>::clear() {
+     m_vector_of_row_offsets.clear();
+     m_rows.clear();

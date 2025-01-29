@@ -1,0 +1,16 @@
+Fix build with llvm 19:
+
+../src/math/lp/tail_matrix.h:46:53: error: no member named 'get_elem' in 'tail_matrix<T, X>'        46 |         T operator[](unsigned j) const { return m_A.get_elem(m_row, j);}
+      |                                                 ~~~ ^
+
+Index: core/src/math/lp/tail_matrix.h
+--- core/src/math/lp/tail_matrix.h.orig
++++ core/src/math/lp/tail_matrix.h
+@@ -43,7 +43,6 @@ class tail_matrix (public)
+         const tail_matrix & m_A;
+         unsigned m_row;
+         ref_row(const tail_matrix& m, unsigned row): m_A(m), m_row(row) {}
+-        T operator[](unsigned j) const { return m_A.get_elem(m_row, j);}
+     };
+     ref_row operator[](unsigned i) const { return ref_row(*this, i);}
+ };
