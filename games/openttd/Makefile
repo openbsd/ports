@@ -5,6 +5,7 @@ COMMENT=	open source clone of the game Transport Tycoon Deluxe
 V =		14.1
 DISTNAME =	openttd-$V-source
 PKGNAME =	openttd-$V
+REVISION =	0
 
 CATEGORIES=	games
 

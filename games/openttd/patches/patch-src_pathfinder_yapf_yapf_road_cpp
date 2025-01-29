@@ -1,0 +1,15 @@
+Fix build with llvm 19
+https://github.com/OpenTTD/OpenTTD/pull/12876
+
+Index: src/pathfinder/yapf/yapf_road.cpp
+--- src/pathfinder/yapf/yapf_road.cpp.orig
++++ src/pathfinder/yapf/yapf_road.cpp
+@@ -462,7 +462,7 @@ class CYapfFollowRoadT (public)
+ 		/* set origin (tile, trackdir) */
+ 		TileIndex src_tile = v->tile;
+ 		Trackdir src_td = v->GetVehicleTrackdir();
+-		if (!HasTrackdir(GetTrackdirBitsForRoad(src_tile, this->IsTram() ? RTT_TRAM : RTT_ROAD), src_td)) {
++		if (!HasTrackdir(GetTrackdirBitsForRoad(src_tile, Yapf().IsTram() ? RTT_TRAM : RTT_ROAD), src_td)) {
+ 			/* sometimes the roadveh is not on the road (it resides on non-existing track)
+ 			 * how should we handle that situation? */
+ 			return false;
