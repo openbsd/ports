@@ -5,6 +5,7 @@ COMMENT =		image and point cloud processing library
 
 V =			1.14.1
 PKGNAME =		pcl-${V}
+REVISION =		0
 
 DIST_TUPLE +=		github PointCloudLibrary pcl ${PKGNAME} .
 DIST_TUPLE +=		github google googletest v1.15.2 ../gtest_dist
@@ -79,8 +80,6 @@ GTEST_WRKSRC =		${WRKDIR}/gtest_dist/googletest
 CONFIGURE_ARGS +=	-DGTEST_SRC_DIR=${GTEST_WRKSRC} \
 			-DGTEST_INCLUDE_DIR=${GTEST_WRKSRC}/include
 
-# Test #103 results are inconsistent
-# See https://github.com/PointCloudLibrary/pcl/issues/6178
 do-test:
 	${MODCMAKE_TEST_TARGET} --test-dir ${WRKBUILD}/test
 

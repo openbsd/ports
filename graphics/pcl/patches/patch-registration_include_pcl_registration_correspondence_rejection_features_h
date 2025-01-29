@@ -1,0 +1,18 @@
+https://github.com/PointCloudLibrary/pcl/pull/6113
+
+Index: registration/include/pcl/registration/correspondence_rejection_features.h
+--- registration/include/pcl/registration/correspondence_rejection_features.h.orig
++++ registration/include/pcl/registration/correspondence_rejection_features.h
+@@ -269,9 +269,9 @@ class PCL_EXPORTS CorrespondenceRejectorFeatures : pub
+       // Check if the representations are valid
+       if (!feature_representation_->isValid(feat_src) ||
+           !feature_representation_->isValid(feat_tgt)) {
+-        PCL_ERROR("[pcl::registration::%s::getCorrespondenceScore] Invalid feature "
+-                  "representation given!\n",
+-                  this->getClassName().c_str());
++        PCL_ERROR(
++            "[pcl::registration::CorrespondenceRejectorFeatures::FeatureContainer::"
++            "getCorrespondenceScore] Invalid feature representation given!\n");
+         return (std::numeric_limits<double>::max());
+       }
+ 
