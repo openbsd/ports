@@ -1,0 +1,23 @@
+Index: src/lnav_commands.cc
+--- src/lnav_commands.cc.orig
++++ src/lnav_commands.cc
+@@ -249,8 +249,8 @@ com_adjust_log_time(exec_context& ec,
+             snprintf(
+                 buffer,
+                 sizeof(buffer),
+-                "info: log timestamps will be adjusted by %ld.%06ld seconds",
+-                time_diff.tv_sec,
++                "info: log timestamps will be adjusted by %lld.%06ld seconds",
++                (long long)time_diff.tv_sec,
+                 (long) time_diff.tv_usec);
+ 
+             retval = buffer;
+@@ -307,7 +307,7 @@ com_unix_time(exec_context& ec,
+         {
+             u_time = mktime(&log_time);
+             parsed = true;
+-        } else if (sscanf(args[1].c_str(), "%ld", &u_time)) {
++        } else if (sscanf(args[1].c_str(), sizeof(time_t) == sizeof(long long) ? "%lld" : "%ld", &u_time)) {
+             if (localtime_r(&u_time, &log_time) == nullptr) {
+                 return ec.make_error(
+                     "invalid epoch time: {} -- {}", args[1], strerror(errno));

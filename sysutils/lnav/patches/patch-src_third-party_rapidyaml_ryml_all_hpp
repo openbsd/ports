@@ -1,0 +1,15 @@
+Index: src/third-party/rapidyaml/ryml_all.hpp
+--- src/third-party/rapidyaml/ryml_all.hpp.orig
++++ src/third-party/rapidyaml/ryml_all.hpp
+@@ -503,6 +503,11 @@ C4_FOR_EACH(PRN_STRUCT_OFFSETS, a, b, c);
+     #define C4_WORDSIZE 8
+     #define C4_BYTE_ORDER _C4EL
+ 
++#elif defined(__sparc64__)
++
++    #define C4_WORDSIZE 8
++    #define C4_BYTE_ORDER _C4EB
++
+ #elif defined(__EMSCRIPTEN__)
+ #   define C4_BYTE_ORDER _C4EL
+ #   define C4_WORDSIZE 4

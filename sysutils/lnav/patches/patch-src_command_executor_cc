@@ -1,0 +1,16 @@
+Index: src/command_executor.cc
+--- src/command_executor.cc.orig
++++ src/command_executor.cc
+@@ -509,10 +509,10 @@ execute_sql(exec_context& ec, const std::string& sql, 
+                 snprintf(row_count_buf,
+                          sizeof(row_count_buf),
+                          ANSI_BOLD("%'d") " row%s matched in " ANSI_BOLD(
+-                             "%ld.%03ld") " seconds",
++                             "%lld.%03ld") " seconds",
+                          row_count,
+                          row_count == 1 ? "" : "s",
+-                         diff_tv.tv_sec,
++                         (long long)diff_tv.tv_sec,
+                          std::max((long) diff_tv.tv_usec / 1000, 1L));
+                 retval = row_count_buf;
+                 if (dls.has_log_time_column()) {
