@@ -1011,8 +1011,8 @@ lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/${MODPY_PYCACHE}app
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/${MODPY_PYCACHE}appservice_ping.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/${MODPY_PYCACHE}auth.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/${MODPY_PYCACHE}auth.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/${MODPY_PYCACHE}auth_issuer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/${MODPY_PYCACHE}auth_issuer.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/${MODPY_PYCACHE}auth_metadata.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/${MODPY_PYCACHE}auth_metadata.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/${MODPY_PYCACHE}capabilities.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/${MODPY_PYCACHE}capabilities.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/${MODPY_PYCACHE}delayed_events.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1097,7 +1097,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/account_data.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/account_validity.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/appservice_ping.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/auth.py
-lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/auth_issuer.py
+lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/auth_metadata.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/capabilities.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/delayed_events.py
 lib/python${MODPY_VERSION}/site-packages/synapse/rest/client/devices.py
@@ -2117,6 +2117,7 @@ lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/87/02
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/87/03_current_state_index.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/88/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/88/01_add_delayed_events.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/88/01_custom_profile_fields.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/88/02_fix_sliding_sync_membership_snapshots_forgotten_column.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/88/03_add_otk_ts_added_index.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/88/04_current_state_delta_index.sql
