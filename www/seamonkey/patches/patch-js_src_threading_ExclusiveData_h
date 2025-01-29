@@ -1,0 +1,19 @@
+https://phabricator.services.mozilla.com/D209108
+
+Index: js/src/threading/ExclusiveData.h
+--- js/src/threading/ExclusiveData.h.orig
++++ js/src/threading/ExclusiveData.h
+@@ -120,13 +120,6 @@ class ExclusiveData
+         release();
+     }
+ 
+-    ExclusiveData(ExclusiveData&& rhs)
+-      : lock_(std::move(rhs.lock))
+-    {
+-        MOZ_ASSERT(&rhs != this, "self-move disallowed!");
+-        new (mozilla::KnownNotNull, value_.addr()) T(std::move(*rhs.value_.addr()));
+-    }
+-
+     ExclusiveData& operator=(ExclusiveData&& rhs) {
+         this->~ExclusiveData();
+         new (mozilla::KnownNotNull, this) ExclusiveData(std::move(rhs));
