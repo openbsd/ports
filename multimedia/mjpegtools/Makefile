@@ -1,7 +1,7 @@
 COMMENT=		tools to edit/modify/encode video streams
 
 DISTNAME=		mjpegtools-2.0.0
-REVISION=		14
+REVISION=		15
 CATEGORIES=		multimedia
 SITES=			${SITE_SOURCEFORGE:=mjpeg/}
 

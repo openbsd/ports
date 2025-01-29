@@ -1,0 +1,44 @@
+https://github.com/freebsd/freebsd-ports/commit/8cf728289caf3a06b225866707277d5ff170dff0
+
+Index: y4mdenoise/Region2D.hh
+--- y4mdenoise/Region2D.hh.orig
++++ y4mdenoise/Region2D.hh
+@@ -402,8 +402,8 @@ Region2D<INDEX,SIZE>::~Region2D()
+ 	// Nothing to do.
+ }
+ 
++#if 0
+ 
+-
+ // Add the given horizontal extent to the region.
+ template <class INDEX, class SIZE>
+ template <class REGION, class REGION_TEMP>
+@@ -481,8 +481,8 @@ error:
+ 	assert (false);
+ }
+ 
++#endif
+ 
+-
+ // Make the current region represent the union between itself
+ // and the other given region.
+ template <class INDEX, class SIZE>
+@@ -511,8 +511,8 @@ Region2D<INDEX,SIZE>::Union (Status_t &a_reStatus,
+ 	}
+ }
+ 
++#if 0
+ 
+-
+ // Make the current region represent the union between itself
+ // and the other given region.
+ template <class INDEX, class SIZE>
+@@ -687,7 +687,7 @@ error:
+ 	assert (false);
+ }
+ 
+-
++#endif
+ 
+ // Flood-fill the current region.
+ template <class INDEX, class SIZE>
