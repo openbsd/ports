@@ -1,19 +1,19 @@
 COMMENT =		weighted finite-state transducers library
 
-DISTNAME =		openfst-1.8.3
+DISTNAME =		openfst-1.8.4
 
-SHARED_LIBS +=		fst			3.0	# 26.0
-SHARED_LIBS +=		fstscript		3.0	# 26.0
-SHARED_LIBS +=		fstcompact		2.0	# 26.0
-SHARED_LIBS +=		fstcompressscript	2.0	# 26.0
+SHARED_LIBS +=		fst			4.0	# 26.0
+SHARED_LIBS +=		fstscript		4.0	# 26.0
+SHARED_LIBS +=		fstcompact		3.0	# 26.0
+SHARED_LIBS +=		fstcompressscript	3.0	# 26.0
 SHARED_LIBS +=		fstconst		2.0	# 26.0
 SHARED_LIBS +=		fstfar			1.0	# 26.0
-SHARED_LIBS +=		fstfarscript		2.0	# 26.0
-SHARED_LIBS +=		fstlinearscript		2.0	# 26.0
-SHARED_LIBS +=		fstlookahead		2.0	# 26.0
-SHARED_LIBS +=		fstpdtscript		2.0	# 26.0
-SHARED_LIBS +=		fstmpdtscript		2.0	# 26.0
-SHARED_LIBS +=		fstngram		2.0	# 26.0
+SHARED_LIBS +=		fstfarscript		3.0	# 26.0
+SHARED_LIBS +=		fstlinearscript		1.0	# 26.0
+SHARED_LIBS +=		fstlookahead		3.0	# 26.0
+SHARED_LIBS +=		fstpdtscript		3.0	# 26.0
+SHARED_LIBS +=		fstmpdtscript		2.1	# 26.0
+SHARED_LIBS +=		fstngram		3.0	# 26.0
 SHARED_LIBS +=		fstspecial		2.0	# 26.0
 
 CATEGORIES =		math devel textproc

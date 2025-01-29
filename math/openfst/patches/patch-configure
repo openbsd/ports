@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -13001,7 +13001,7 @@ then :
+@@ -13125,7 +13125,7 @@ then :
    printf %s "(cached) " >&6
  else $as_nop
    ac_check_lib_save_LIBS=$LIBS
@@ -10,7 +10,7 @@ Index: configure
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -13031,7 +13031,7 @@ fi
+@@ -13155,7 +13155,7 @@ fi
  printf "%s\n" "$ac_cv_lib_dl_dlopen" >&6; }
  if test "x$ac_cv_lib_dl_dlopen" = xyes
  then :
@@ -19,7 +19,7 @@ Index: configure
  else $as_nop
  
      lt_cv_dlopen=dyld
-@@ -13107,7 +13107,7 @@ then :
+@@ -13231,7 +13231,7 @@ then :
    printf %s "(cached) " >&6
  else $as_nop
    ac_check_lib_save_LIBS=$LIBS
@@ -28,7 +28,7 @@ Index: configure
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -13137,7 +13137,7 @@ fi
+@@ -13261,7 +13261,7 @@ fi
  printf "%s\n" "$ac_cv_lib_dl_dlopen" >&6; }
  if test "x$ac_cv_lib_dl_dlopen" = xyes
  then :
@@ -37,7 +37,7 @@ Index: configure
  else $as_nop
    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for dlopen in -lsvld" >&5
  printf %s "checking for dlopen in -lsvld... " >&6; }
-@@ -18038,7 +18038,7 @@ then :
+@@ -18129,7 +18129,7 @@ then :
    printf %s "(cached) " >&6
  else $as_nop
    ac_check_lib_save_LIBS=$LIBS
@@ -46,7 +46,7 @@ Index: configure
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -18067,7 +18067,7 @@ fi
+@@ -18158,7 +18158,7 @@ fi
  printf "%s\n" "$ac_cv_lib_dl_dlopen" >&6; }
  if test "x$ac_cv_lib_dl_dlopen" = xyes
  then :
