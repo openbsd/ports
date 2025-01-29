@@ -1,0 +1,16 @@
+Part of https://github.com/freebsd/freebsd-ports/commit/8cf728289caf3a06b225866707277d5ff170dff0
+
+Index: source/build/include/libdivide.h
+--- source/build/include/libdivide.h.orig
++++ source/build/include/libdivide.h
+@@ -2026,8 +2026,8 @@ class divider { (public)
+     }
+ 
+     bool operator==(const divider<T, ALGO>& other) const {
+-        return div.denom.magic == other.denom.magic &&
+-               div.denom.more == other.denom.more;
++        return div.denom.magic == other.div.denom.magic &&
++               div.denom.more == other.div.denom.more;
+     }
+ 
+     bool operator!=(const divider<T, ALGO>& other) const {

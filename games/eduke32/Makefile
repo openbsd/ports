@@ -5,7 +5,7 @@ DISTNAME =	eduke32_src_${RDATE}-${RTAG}
 PKGNAME =	eduke32-2.0.0.${RTAG:C/-.*$//}
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	games x11
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://www.eduke32.com/
 
