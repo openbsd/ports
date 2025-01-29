@@ -75,6 +75,7 @@
      SUBDIR += dep
      SUBDIR += detox
      SUBDIR += dfc
+     SUBDIR += dhcpd_leases_exporter
      SUBDIR += diffoscope
      SUBDIR += dinit
      SUBDIR += direnv
