@@ -1,0 +1,12 @@
+Index: configure
+--- configure.orig
++++ configure
+@@ -20314,7 +20314,7 @@ printf "%s\n" "yes" >&6; }
+ 
+ fi
+ 
+-MSD_PLUGIN_LDFLAGS="-export_dynamic -module -avoid-version -no-undefined"
++MSD_PLUGIN_LDFLAGS="-export-dynamic -module -avoid-version -no-undefined"
+ case $host_os in
+   darwin*)
+     MSD_PLUGIN_LDFLAGS="${MSD_PLUGIN_LDFLAGS} -Wl,-bundle_loader,\$(top_builddir)/mate-settings-daemon/mate-settings-daemon"
