@@ -1,0 +1,15 @@
+Fix error: reference to non-static member function must be called
+Inspired by gcc/fibonacci_heap.h from lang/gcc/8
+
+Index: gcc/fibonacci_heap.h
+--- gcc/fibonacci_heap.h.orig
++++ gcc/fibonacci_heap.h
+@@ -478,7 +478,7 @@ fibonacci_heap<K,V>::union_with (fibonacci_heap<K,V> *
+   heapa->m_nodes += heapb->m_nodes;
+ 
+   /* And set the new minimum, if it's changed.  */
+-  if (heapb->min->compare (heapa->min) < 0)
++  if (heapb->m_min->compare (heapa->m_min) < 0)
+     heapa->m_min = heapb->m_min;
+ 
+   delete (heapb);
