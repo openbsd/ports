@@ -1,0 +1,12 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/dhcpd_leases_exporter"
+daemon_user="_dhcpd_leases_exporter"
+
+. /etc/rc.d/rc.subr
+
+pexp="${daemon}.*"
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1

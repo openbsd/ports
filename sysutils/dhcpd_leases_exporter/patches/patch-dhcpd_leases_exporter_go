@@ -1,0 +1,14 @@
+Index: dhcpd_leases_exporter.go
+--- dhcpd_leases_exporter.go.orig
++++ dhcpd_leases_exporter.go
+@@ -22,8 +22,8 @@ var Version string
+ 
+ var (
+ 	dhcpdLeasesFile = kingpin.Flag(
+-		"dhcpd.leases", "Path of the dhcpd.leases file. Defaults to '/var/lib/dhcp/dhcpd.leases' ($DHCPD_LEASES_EXPORTER_LEASES_FILE)",
+-	).Envar("DHCPD_LEASES_EXPORTER_LEASES_FILE").Default("/var/lib/dhcp/dhcpd.leases").String()
++		"dhcpd.leases", "Path of the dhcpd.leases file. Defaults to '/var/db/dhcpd.leases' ($DHCPD_LEASES_EXPORTER_LEASES_FILE)",
++	).Envar("DHCPD_LEASES_EXPORTER_LEASES_FILE").Default("/var/db/dhcpd.leases").String()
+ 
+ 	filterCollectors = kingpin.Flag(
+ 		"filter.collectors", "Comma separated collectors to enable (Stats,Leases) ($DHCPD_LEASES_EXPORTER_FILTER_COLLECTORS)",

@@ -1,0 +1,13 @@
+This exporter consumes the dhcpd.leases file which is periodically
+written by the dameon.  It has two collectors:
+
+The Stats collector counts the number of leases PER UNIQUE IP found
+in dhcpd.leases. This means that if an IP was leased to client X,
+but is now leased to client Y, there will be only one entry counted
+(the most recent one). This is in line with how dhcpd reads the
+file.
+
+The Leases collector will create a vector gague for each client
+with an active DHCP lease found in dhcpd.leases. Because this
+collector may produce tons of short-lived vectors depending on how
+busy DHCPD is, it is disabled by default

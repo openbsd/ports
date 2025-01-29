@@ -1,0 +1,4 @@
+@newgroup _dhcpd_leases_exporter:546
+@newuser _dhcpd_leases_exporter:546:_dhcpd_leases_exporter::Prometheus DHCPD leases exporter:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/dhcpd_leases_exporter
+@bin bin/dhcpd_leases_exporter
