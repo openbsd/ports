@@ -1,6 +1,6 @@
 COMMENT =	cross-platform 3D audio API
 
-V =		1.24.1
+V =		1.24.2
 DISTNAME =	openal-soft-$V
 PKGNAME =	openal-$V
 EPOCH =		0

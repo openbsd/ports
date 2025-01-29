@@ -1,0 +1,17 @@
+Fix some casts for some 32-bit platforms
+9fdf662bcbd86cf26202f8718d6c5ca24655652e
+
+Index: utils/makemhr/loaddef.cpp
+--- utils/makemhr/loaddef.cpp.orig
++++ utils/makemhr/loaddef.cpp
+@@ -209,8 +209,8 @@ auto TrLoad(TokenReaderT *tr) -> int
+         // Load TRLoadSize (or less if at the end of the file) per read.
+         toLoad = TRLoadSize;
+ 
+-        const auto in = tr->mIn&TRRingMask;
+-        std::streamsize count{TRRingSize - in};
++        const auto in = tr->mIn & std::streamsize{TRRingMask};
++        const auto count = std::streamsize{TRRingSize} - in;
+         if(count < toLoad)
+         {
+             istream.read(al::to_address(tr->mRing.begin() + in), count);
