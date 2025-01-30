@@ -1,7 +1,6 @@
 COMMENT=		RTSP server library based on GStreamer
 
 DISTNAME=		gst-rtsp-server-${V}
-REVISION=		0
 
 SHARED_LIBS += gstrtspserver-1.0         0.0 # 0.2411.0
 
@@ -13,7 +12,7 @@ WANTLIB += gstvideo-1.0
 
 BUILD_DEPENDS=		devel/gobject-introspection
 
-LIB_DEPENDS=		${P}/plugins-base=${V}
+LIB_DEPENDS=		multimedia/gstreamer1/plugins-base=${V}
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 

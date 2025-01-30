@@ -2,7 +2,6 @@ COMMENT=		overrides for the gobject-introspection-based pygst bindings
 
 DISTNAME=		gst-python-${V}
 PKGNAME=		py-gstreamer1-${V}
-REVISION=		0
 
 HOMEPAGE=		http://gstreamer.freedesktop.org/modules/gst-python.html
 
@@ -16,11 +15,11 @@ MODULES=		devel/meson lang/python
 
 # MODPY_LIBDIR/gi/overrides/
 BUILD_DEPENDS=		devel/py-gobject3 \
-			${P}/plugins-base>=${V}
+			multimedia/gstreamer1/plugins-base>=${V}
 RUN_DEPENDS=		devel/py-gobject3 \
-			${P}/plugins-base>=${V}
+			multimedia/gstreamer1/plugins-base>=${V}
 
-LIB_DEPENDS=		${P}/core>=${V} \
+LIB_DEPENDS=		multimedia/gstreamer1/core>=${V} \
 			${MODPY_LIB_DEPENDS}
 
 CONFIGURE_ARGS=		-Dlibpython-dir=${LOCALBASE}/lib

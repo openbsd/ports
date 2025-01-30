@@ -1,7 +1,6 @@
 COMMENT=		good elements for GStreamer
 
 DISTNAME=		gst-plugins-good-${V}
-REVISION=		0
 
 SITES=			${SITE_GST:=gst-plugins-good/}
 
@@ -17,7 +16,7 @@ WANTLIB += gsttag-1.0 gstvideo-1.0 gtk-3 intl jpeg m mp3lame nettle
 WANTLIB += opencore-amrnb opencore-amrwb orc-0.4 png shout speex
 WANTLIB += tag twolame v4l2 vpx wavpack xml2 z
 
-LIB_DEPENDS=		${P}/plugins-base=${V} \
+LIB_DEPENDS=		multimedia/gstreamer1/plugins-base=${V} \
 			archivers/bzip2 \
 			audio/flac \
 			audio/lame \

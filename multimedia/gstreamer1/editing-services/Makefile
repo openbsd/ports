@@ -1,9 +1,8 @@
 COMMENT=		library for creating audio and video editors
 
 DISTNAME=		gst-editing-services-${V}
-REVISION=		0
 
-SHARED_LIBS += ges-1.0                   0.0 # 0.2411.0
+SHARED_LIBS += ges-1.0                   0.0 # 0.2412.0
 
 SITES=			${SITE_GST:=gst-editing-services/}
 
@@ -14,7 +13,7 @@ WANTLIB += gstvideo-1.0 m python3.12 xml2
 BUILD_DEPENDS=		devel/gobject-introspection \
 			shells/bash-completion
 
-LIB_DEPENDS=		${P}/devtools=${V}
+LIB_DEPENDS=		multimedia/gstreamer1/devtools=${V}
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 

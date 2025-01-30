@@ -1,10 +1,9 @@
 COMMENT=		GStreamer development and validation tools
 
 DISTNAME=		gst-devtools-${V}
-REVISION=		0
 
-SHARED_LIBS += gstvalidate-1.0           0.0 # 0.2411.0
-SHARED_LIBS += gstvalidate-default-overrides-1.0 0.0 # 0.2411.0
+SHARED_LIBS += gstvalidate-1.0           0.0 # 0.2412.0
+SHARED_LIBS += gstvalidate-default-overrides-1.0 0.0 # 0.2412.0
 
 SITES=			${SITE_GST:=gst-devtools/}
 
@@ -15,8 +14,8 @@ WANTLIB += gstvideo-1.0 gtk-3 json-glib-1.0 m
 
 BUILD_DEPENDS=		devel/gobject-introspection
 
-LIB_DEPENDS=		${P}/plugins-bad=${V} \
-			${P}/rtsp-server=${V} \
+LIB_DEPENDS=		multimedia/gstreamer1/plugins-bad=${V} \
+			multimedia/gstreamer1/rtsp-server=${V} \
 			x11/gtk+3
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}

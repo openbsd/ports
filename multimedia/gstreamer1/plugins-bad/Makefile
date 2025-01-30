@@ -1,28 +1,27 @@
 COMMENT=		bad elements for GStreamer
 
 DISTNAME=		gst-plugins-bad-${V}
-REVISION=		0
 
-SHARED_LIBS += gsturidownloader-1.0      5.2 # 0.2411.0
-SHARED_LIBS += gstadaptivedemux-1.0      4.2 # 0.2411.0
-SHARED_LIBS += gstbadaudio-1.0           3.2 # 0.2411.0
-SHARED_LIBS += gstanalytics-1.0          0.0 # 0.2411.0
-SHARED_LIBS += gstbasecamerabinsrc-1.0   6.2 # 0.2411.0
-SHARED_LIBS += gstcodecparsers-1.0       6.2 # 0.2411.0
-SHARED_LIBS += gstcodecs-1.0             1.2 # 0.2411.0
-SHARED_LIBS += gstdxva-1.0               0.0 # 0.2411.0
-SHARED_LIBS += gstinsertbin-1.0          5.2 # 0.2411.0
-SHARED_LIBS += gstmse-1.0                0.0 # 0.2411.0
-SHARED_LIBS += gstphotography-1.0        6.2 # 0.2411.0
-SHARED_LIBS += gstisoff-1.0              3.2 # 0.2411.0
-SHARED_LIBS += gstmpegts-1.0             5.2 # 0.2411.0
-SHARED_LIBS += gstplay-1.0               0.2 # 0.2411.0
-SHARED_LIBS += gstplayer-1.0             3.2 # 0.2411.0
-SHARED_LIBS += gstsctp-1.0               3.2 # 0.2411.0
+SHARED_LIBS += gsturidownloader-1.0      5.2 # 0.2412.0
+SHARED_LIBS += gstadaptivedemux-1.0      4.2 # 0.2412.0
+SHARED_LIBS += gstbadaudio-1.0           3.2 # 0.2412.0
+SHARED_LIBS += gstanalytics-1.0          0.0 # 0.2412.0
+SHARED_LIBS += gstbasecamerabinsrc-1.0   6.2 # 0.2412.0
+SHARED_LIBS += gstcodecparsers-1.0       6.2 # 0.2412.0
+SHARED_LIBS += gstcodecs-1.0             1.2 # 0.2412.0
+SHARED_LIBS += gstdxva-1.0               0.0 # 0.2412.0
+SHARED_LIBS += gstinsertbin-1.0          5.2 # 0.2412.0
+SHARED_LIBS += gstmse-1.0                0.0 # 0.2412.0
+SHARED_LIBS += gstphotography-1.0        6.2 # 0.2412.0
+SHARED_LIBS += gstisoff-1.0              3.2 # 0.2412.0
+SHARED_LIBS += gstmpegts-1.0             5.2 # 0.2412.0
+SHARED_LIBS += gstplay-1.0               0.2 # 0.2412.0
+SHARED_LIBS += gstplayer-1.0             3.2 # 0.2412.0
+SHARED_LIBS += gstsctp-1.0               3.2 # 0.2412.0
 SHARED_LIBS += gsttranscoder-1.0         1.2 # 0
-SHARED_LIBS += gstva-1.0                 0.0 # 0.2411.0
-SHARED_LIBS += gstwayland-1.0            0.1 # 0.2411.0
-SHARED_LIBS += gstwebrtc-1.0             3.2 # 0.2411.0
+SHARED_LIBS += gstva-1.0                 0.0 # 0.2412.0
+SHARED_LIBS += gstwayland-1.0            0.1 # 0.2412.0
+SHARED_LIBS += gstwebrtc-1.0             3.2 # 0.2412.0
 
 COMPILER_LANGS = c c++
 
@@ -42,7 +41,7 @@ BUILD_DEPENDS=		devel/gobject-introspection \
 # needed for ${WRKSRC}/tests/
 BUILD_DEPENDS +=	graphics/libexif
 
-LIB_DEPENDS=		${P}/plugins-base=${V} \
+LIB_DEPENDS=		multimedia/gstreamer1/plugins-base=${V} \
 			audio/libbs2b \
 			audio/opus \
 			audio/soundtouch \

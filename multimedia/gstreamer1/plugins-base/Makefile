@@ -1,20 +1,19 @@
 COMMENT=		base elements for GStreamer
 
 DISTNAME=		gst-plugins-base-${V}
-REVISION=		0
 
-SHARED_LIBS += gsttag-1.0                7.2 # 0.2411.0
-SHARED_LIBS += gstfft-1.0                7.2 # 0.2411.0
-SHARED_LIBS += gstvideo-1.0              7.2 # 0.2411.0
-SHARED_LIBS += gstaudio-1.0              7.2 # 0.2411.0
-SHARED_LIBS += gstrtp-1.0                7.2 # 0.2411.0
-SHARED_LIBS += gstpbutils-1.0            7.2 # 0.2411.0
-SHARED_LIBS += gstsdp-1.0                7.2 # 0.2411.0
-SHARED_LIBS += gstrtsp-1.0               7.2 # 0.2411.0
-SHARED_LIBS += gstriff-1.0               7.2 # 0.2411.0
-SHARED_LIBS += gstapp-1.0                7.2 # 0.2411.0
-SHARED_LIBS += gstallocators-1.0         6.2 # 0.2411.0
-SHARED_LIBS += gstgl-1.0                 6.2 # 0.2411.0
+SHARED_LIBS += gsttag-1.0                7.2 # 0.2412.0
+SHARED_LIBS += gstfft-1.0                7.2 # 0.2412.0
+SHARED_LIBS += gstvideo-1.0              7.2 # 0.2412.0
+SHARED_LIBS += gstaudio-1.0              7.2 # 0.2412.0
+SHARED_LIBS += gstrtp-1.0                7.2 # 0.2412.0
+SHARED_LIBS += gstpbutils-1.0            7.2 # 0.2412.0
+SHARED_LIBS += gstsdp-1.0                7.2 # 0.2412.0
+SHARED_LIBS += gstrtsp-1.0               7.2 # 0.2412.0
+SHARED_LIBS += gstriff-1.0               7.2 # 0.2412.0
+SHARED_LIBS += gstapp-1.0                7.2 # 0.2412.0
+SHARED_LIBS += gstallocators-1.0         6.2 # 0.2412.0
+SHARED_LIBS += gstgl-1.0                 6.2 # 0.2412.0
 
 SITES=			${SITE_GST:=gst-plugins-base/}
 
@@ -32,7 +31,7 @@ BUILD_DEPENDS=		devel/iso-codes \
 
 RUN_DEPENDS=		devel/iso-codes
 
-LIB_DEPENDS=		${P}/core=${V} \
+LIB_DEPENDS=		multimedia/gstreamer1/core=${V} \
 			audio/cdparanoia \
 			audio/libvorbis \
 			audio/opus \

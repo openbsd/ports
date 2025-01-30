@@ -13,7 +13,7 @@
 
 PORTROACH=		limitw:1,even
 
-V ?=			1.24.11
+V ?=			1.24.12
 API=			1.0
 SUBST_VARS +=		API
 
@@ -30,7 +30,6 @@ PERMIT_PACKAGE ?=	Yes
 DIST_SUBDIR=		gstreamer
 SITE_GST=		http://gstreamer.freedesktop.org/src/
 EXTRACT_SUFX ?=		.tar.xz
-P=			multimedia/gstreamer1
 
 COMPILER=		base-clang ports-gcc
 COMPILER_LANGS ?=	c
