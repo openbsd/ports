@@ -1,6 +1,6 @@
 DPB_PROPERTIES=		parallel
 
-PORTROACH=		skipv:3.90.0,3.92.1,3.93.0,3.94.0,3.98.0,3.98.1,3.98.2,3.98.3,3.98.4,3.98.5
+PORTROACH=		limit:^3\.24
 
 COMMENT-main=		multi-platform graphical toolkit
 COMMENT-cups=		gtk+3 CUPS print backend
