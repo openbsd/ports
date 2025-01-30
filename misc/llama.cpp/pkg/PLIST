@@ -1,0 +1,89 @@
+bin/convert_hf_to_gguf.py
+@bin bin/llama-batched
+@bin bin/llama-batched-bench
+@bin bin/llama-bench
+@bin bin/llama-cli
+@bin bin/llama-convert-llama2c-to-ggml
+@bin bin/llama-cvector-generator
+@bin bin/llama-embedding
+@bin bin/llama-eval-callback
+@bin bin/llama-export-lora
+@bin bin/llama-gbnf-validator
+@bin bin/llama-gen-docs
+@bin bin/llama-gguf
+@bin bin/llama-gguf-hash
+@bin bin/llama-gguf-split
+@bin bin/llama-gritlm
+@bin bin/llama-imatrix
+@bin bin/llama-infill
+@bin bin/llama-llava-cli
+@bin bin/llama-lookahead
+@bin bin/llama-lookup
+@bin bin/llama-lookup-create
+@bin bin/llama-lookup-merge
+@bin bin/llama-lookup-stats
+@bin bin/llama-minicpmv-cli
+@bin bin/llama-parallel
+@bin bin/llama-passkey
+@bin bin/llama-perplexity
+@bin bin/llama-quantize
+@bin bin/llama-quantize-stats
+@bin bin/llama-qwen2vl-cli
+@bin bin/llama-retrieval
+@bin bin/llama-run
+@bin bin/llama-save-load-state
+@bin bin/llama-server
+@bin bin/llama-simple
+@bin bin/llama-simple-chat
+@bin bin/llama-speculative
+@bin bin/llama-speculative-simple
+@bin bin/llama-tokenize
+@bin bin/llama-tts
+@bin bin/test-arg-parser
+@bin bin/test-autorelease
+@bin bin/test-backend-ops
+@bin bin/test-barrier
+@bin bin/test-chat-template
+@bin bin/test-gguf
+@bin bin/test-grammar-integration
+@bin bin/test-grammar-parser
+@bin bin/test-json-schema-to-grammar
+@bin bin/test-llama-grammar
+@bin bin/test-log
+@bin bin/test-model-load-cancel
+@bin bin/test-quantize-fns
+@bin bin/test-quantize-perf
+@bin bin/test-rope
+@bin bin/test-sampling
+@bin bin/test-tokenizer-0
+@bin bin/test-tokenizer-1-bpe
+@bin bin/test-tokenizer-1-spm
+include/ggml-alloc.h
+include/ggml-backend.h
+include/ggml-blas.h
+include/ggml-cann.h
+include/ggml-cpu.h
+include/ggml-cuda.h
+include/ggml-kompute.h
+include/ggml-metal.h
+include/ggml-opt.h
+include/ggml-rpc.h
+include/ggml-sycl.h
+include/ggml-vulkan.h
+include/ggml.h
+include/gguf.h
+include/llama-cpp.h
+include/llama.h
+lib/cmake/
+lib/cmake/ggml/
+lib/cmake/ggml/ggml-config.cmake
+lib/cmake/ggml/ggml-version.cmake
+lib/cmake/llama/
+lib/cmake/llama/llama-config.cmake
+lib/cmake/llama/llama-version.cmake
+@lib lib/libggml-base.so.${LIBggml-base_VERSION}
+@lib lib/libggml-cpu.so.${LIBggml-cpu_VERSION}
+@lib lib/libggml.so.${LIBggml_VERSION}
+@lib lib/libllama.so.${LIBllama_VERSION}
+@lib lib/libllava_shared.so.${LIBllava_shared_VERSION}
+lib/pkgconfig/llama.pc
