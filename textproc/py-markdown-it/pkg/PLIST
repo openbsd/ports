@@ -1,7 +1,5 @@
 @pkgpath textproc/py-markdown-it,python3
 bin/markdown-it
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/markdown_it/
 lib/python${MODPY_VERSION}/site-packages/markdown_it/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/markdown_it/${MODPY_PYCACHE}/
@@ -155,6 +153,8 @@ lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_core/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_core/${MODPY_PYCACHE}smartquotes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_core/${MODPY_PYCACHE}state_core.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_core/${MODPY_PYCACHE}state_core.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_core/${MODPY_PYCACHE}text_join.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_core/${MODPY_PYCACHE}text_join.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_core/block.py
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_core/inline.py
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_core/linkify.py
@@ -162,6 +162,7 @@ lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_core/normalize.py
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_core/replacements.py
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_core/smartquotes.py
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_core/state_core.py
+lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_core/text_join.py
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/${MODPY_PYCACHE}/
@@ -179,12 +180,16 @@ lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/${MODPY_PYCACHE}entity.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/${MODPY_PYCACHE}escape.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/${MODPY_PYCACHE}escape.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/${MODPY_PYCACHE}fragments_join.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/${MODPY_PYCACHE}fragments_join.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/${MODPY_PYCACHE}html_inline.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/${MODPY_PYCACHE}html_inline.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/${MODPY_PYCACHE}image.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/${MODPY_PYCACHE}image.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/${MODPY_PYCACHE}link.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/${MODPY_PYCACHE}link.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/${MODPY_PYCACHE}linkify.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/${MODPY_PYCACHE}linkify.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/${MODPY_PYCACHE}newline.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/${MODPY_PYCACHE}newline.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/${MODPY_PYCACHE}state_inline.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -193,22 +198,21 @@ lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/${MODPY_PYCACHE}strikethrough.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/${MODPY_PYCACHE}text.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/${MODPY_PYCACHE}text.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/${MODPY_PYCACHE}text_collapse.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/${MODPY_PYCACHE}text_collapse.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/autolink.py
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/backticks.py
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/balance_pairs.py
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/emphasis.py
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/entity.py
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/escape.py
+lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/fragments_join.py
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/html_inline.py
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/image.py
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/link.py
+lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/linkify.py
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/newline.py
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/state_inline.py
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/strikethrough.py
 lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/text.py
-lib/python${MODPY_VERSION}/site-packages/markdown_it/rules_inline/text_collapse.py
 lib/python${MODPY_VERSION}/site-packages/markdown_it/token.py
 lib/python${MODPY_VERSION}/site-packages/markdown_it/tree.py
 lib/python${MODPY_VERSION}/site-packages/markdown_it/utils.py
