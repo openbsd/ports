@@ -2,6 +2,7 @@ COMMENT=	embedded SQL implementation
 
 DISTNAME =	sqlite-autoconf-3480000
 PKGNAME=	sqlite3-3.48.0
+REVISION=	0
 
 # XXX needs bumps every time :-
 SHARED_LIBS +=  sqlite3                   37.30 # 8.6
@@ -40,6 +41,8 @@ BUILD_DEPENDS =	converters/sqlite2mdoc
 post-install:
 		${INSTALL_DATA_DIR} ${PREFIX}/man/man3
 		${LOCALBASE}/bin/sqlite2mdoc -p ${PREFIX}/man/man3 ${PREFIX}/include/sqlite3.h
+		# fix the .pc file
+		sed -i -e 's/^Libs.private:.*/Libs.private: -lz -lm -lpthread/' ${PREFIX}/lib/pkgconfig/sqlite3.pc
 
 NO_TEST=	Yes
 
