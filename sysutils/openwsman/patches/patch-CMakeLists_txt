@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -61,11 +61,13 @@ ENDIF ( DEFINED  LIB )
+@@ -68,11 +68,13 @@ ENDIF ( DEFINED  LIB )
  MESSAGE(STATUS "Libraries will be installed in ${LIB_INSTALL_DIR}" )
  SET( BIN_INSTALL_DIR "${CMAKE_INSTALL_PREFIX}/bin" )
  SET( INCLUDE_DIR "${CMAKE_INSTALL_PREFIX}/include" )

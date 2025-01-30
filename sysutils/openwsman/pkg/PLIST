@@ -68,7 +68,6 @@ lib/openwsman/authenticators/
 @lib lib/openwsman/authenticators/libwsman_file_auth.so.${LIBwsman_file_auth_VERSION}
 lib/openwsman/plugins/
 @lib lib/openwsman/plugins/libredirect.so.${LIBredirect_VERSION}
-@lib lib/openwsman/plugins/libwsman_cim_plugin.so.${LIBwsman_cim_plugin_VERSION}
 @lib lib/openwsman/plugins/libwsman_identify_plugin.so.${LIBwsman_identify_plugin_VERSION}
 @lib lib/openwsman/plugins/libwsman_test.so.${LIBwsman_test_VERSION}
 lib/pkgconfig/openwsman++.pc
