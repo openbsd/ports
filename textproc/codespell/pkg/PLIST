@@ -16,9 +16,15 @@ lib/python${MODPY_VERSION}/site-packages/codespell_lib/${MODPY_PYCACHE}__main__.
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/${MODPY_PYCACHE}__main__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/${MODPY_PYCACHE}_codespell.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/${MODPY_PYCACHE}_codespell.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/codespell_lib/${MODPY_PYCACHE}_spellchecker.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/codespell_lib/${MODPY_PYCACHE}_spellchecker.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/codespell_lib/${MODPY_PYCACHE}_text_util.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/codespell_lib/${MODPY_PYCACHE}_text_util.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/_codespell.py
+lib/python${MODPY_VERSION}/site-packages/codespell_lib/_spellchecker.py
+lib/python${MODPY_VERSION}/site-packages/codespell_lib/_text_util.py
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/_version.py
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/data/
 lib/python${MODPY_VERSION}/site-packages/codespell_lib/data/__init__.py
