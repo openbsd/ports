@@ -10,6 +10,8 @@ lib/python${MODPY_VERSION}/site-packages/geventhttpclient/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/geventhttpclient/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/${MODPY_PYCACHE}api.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/${MODPY_PYCACHE}connectionpool.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -18,6 +20,10 @@ lib/python${MODPY_VERSION}/site-packages/geventhttpclient/${MODPY_PYCACHE}header
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/${MODPY_PYCACHE}header.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/${MODPY_PYCACHE}httplib.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/${MODPY_PYCACHE}httplib.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/${MODPY_PYCACHE}httplib2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/${MODPY_PYCACHE}httplib2.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/${MODPY_PYCACHE}requests.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/${MODPY_PYCACHE}requests.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/${MODPY_PYCACHE}response.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/${MODPY_PYCACHE}response.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/${MODPY_PYCACHE}url.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -25,10 +31,13 @@ lib/python${MODPY_VERSION}/site-packages/geventhttpclient/${MODPY_PYCACHE}url.${
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/${MODPY_PYCACHE}useragent.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/${MODPY_PYCACHE}useragent.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/geventhttpclient/_parser.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/api.py
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/client.py
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/connectionpool.py
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/header.py
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/httplib.py
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/httplib2.py
+lib/python${MODPY_VERSION}/site-packages/geventhttpclient/requests.py
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/response.py
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/url.py
 lib/python${MODPY_VERSION}/site-packages/geventhttpclient/useragent.py

@@ -1,26 +1,30 @@
-COMMENT =		high performance, concurrent HTTP client library
+COMMENT=	high performance, concurrent HTTP client library
 
-MODPY_DISTV =	1.5.3
-DISTNAME =		geventhttpclient-${MODPY_DISTV}
-PKGNAME =		${MODPY_PY_PREFIX}${DISTNAME}
-CATEGORIES =		net devel
-REVISION =		3
+MODPY_DISTV=	2.3.3
+DISTNAME=	geventhttpclient-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
+CATEGORIES=	net devel
 
-HOMEPAGE =		https://github.com/gwik/geventhttpclient
+# sdist is missing various files under tests/ without which tests cannot run.
+# overlaying rather than using a github distfile directly due to submodule.
+DIST_TUPLE=	github gwik geventhttpclient ${MODPY_DISTV} .
+
+HOMEPAGE=	https://github.com/gwik/geventhttpclient
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=Yes
 
 WANTLIB += pthread ${MODPY_WANTLIB}
 
-MODULES =		lang/python
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
-MODPY_PYTEST_ARGS =	src/geventhttpclient/
+MODULES=	lang/python
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS +=		devel/py-gevent \
-			devel/py-certifi \
-			devel/py-six
-TEST_DEPENDS =		net/py-dpkt
+RUN_DEPENDS=	devel/py-gevent \
+		devel/py-certifi \
+		archivers/py-brotli \
+		www/py-urllib3
+TEST_DEPENDS=	net/py-dpkt \
+		www/py-requests
 
 .include <bsd.port.mk>
