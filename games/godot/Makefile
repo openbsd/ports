@@ -8,6 +8,7 @@ V =		3.6
 SHARPFILES_V =	3.5.2
 DISTNAME =	godot-${V}-stable
 PKGNAME =	godot-${V}
+REVISION =	0
 
 CATEGORIES =	games
 

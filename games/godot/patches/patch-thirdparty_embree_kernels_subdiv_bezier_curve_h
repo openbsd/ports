@@ -1,0 +1,14 @@
+https://github.com/RenderKit/embree/commit/cda4cf1919bb2a748e78915fbd6e421a1056638d
+
+Index: thirdparty/embree/kernels/subdiv/bezier_curve.h
+--- thirdparty/embree/kernels/subdiv/bezier_curve.h.orig
++++ thirdparty/embree/kernels/subdiv/bezier_curve.h
+@@ -135,7 +135,7 @@ namespace embree
+       }
+       
+       friend embree_ostream operator<<(embree_ostream cout, const QuadraticBezierCurve& a) {
+-        return cout << "QuadraticBezierCurve ( (" << a.u.lower << ", " << a.u.upper << "), " << a.v0 << ", " << a.v1 << ", " << a.v2 << ")";
++        return cout << "QuadraticBezierCurve (" << a.v0 << ", " << a.v1 << ", " << a.v2 << ")";
+       }
+     };
+   

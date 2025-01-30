@@ -1,0 +1,17 @@
+https://github.com/RenderKit/embree/commit/cda4cf1919bb2a748e78915fbd6e421a1056638d
+
+Index: thirdparty/embree/kernels/geometry/pointi.h
+--- thirdparty/embree/kernels/geometry/pointi.h.orig
++++ thirdparty/embree/kernels/geometry/pointi.h
+@@ -210,9 +210,9 @@ namespace embree
+     };
+ 
+     /*! output operator */
+-    friend __forceinline embree_ostream operator<<(embree_ostream cout, const PointMi& line)
++    friend __forceinline embree_ostream operator<<(embree_ostream cout, const PointMi& point)
+     {
+-      return cout << "Line" << M << "i {" << line.v0 << ", " << line.geomID() << ", " << line.primID() << "}";
++      return cout << "Point" << M << "i {" << point.geomID() << ", " << point.primID() << "}";
+     }
+ 
+    public:
