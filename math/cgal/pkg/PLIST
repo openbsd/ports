@@ -3306,7 +3306,6 @@ include/CGAL/boost/graph/backward_compatibility_functions.h
 include/CGAL/boost/graph/breadth_first_search.h
 include/CGAL/boost/graph/convert_nef_polyhedron_to_polygon_mesh.h
 include/CGAL/boost/graph/copy_face_graph.h
-include/CGAL/boost/graph/dijkstra_shortest_paths.h
 include/CGAL/boost/graph/generators.h
 include/CGAL/boost/graph/graph_concepts.h
 include/CGAL/boost/graph/graph_traits_Arrangement_2.h
