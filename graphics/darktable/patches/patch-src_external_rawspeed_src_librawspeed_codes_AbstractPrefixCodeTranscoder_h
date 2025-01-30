@@ -1,0 +1,17 @@
+src/external/rawspeed/src/librawspeed/decompressors/../codes/AbstractPrefixCodeTranscoder.h:96:43: error: no member named 'codeValues' in 'AbstractPrefixCodeTranscoder<CodeTag>'
+   96 |            code.Base::codeValues == other.codeValues;
+      |                                     ~~~~~ ^
+1 error generated.
+
+Index: src/external/rawspeed/src/librawspeed/codes/AbstractPrefixCodeTranscoder.h
+--- src/external/rawspeed/src/librawspeed/codes/AbstractPrefixCodeTranscoder.h.orig
++++ src/external/rawspeed/src/librawspeed/codes/AbstractPrefixCodeTranscoder.h
+@@ -93,7 +93,7 @@ template <typename CodeTag> class AbstractPrefixCodeTr
+ 
+   bool operator==(const AbstractPrefixCodeTranscoder& other) const {
+     return code.symbols == other.code.symbols &&
+-           code.Base::codeValues == other.codeValues;
++           code.Base::codeValues == other.code.Base::codeValues;
+   }
+ };
+ 

@@ -6,7 +6,7 @@ V=		4.8.1
 DISTNAME=	darktable-$V
 PORTROACH=	limitw:1,even skipv:release-$V
 EXTRACT_SUFX=	.tar.xz
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	graphics x11
 
