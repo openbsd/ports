@@ -26,7 +26,7 @@ LIB_DEPENDS =	archivers/libarchive \
 
 SITES =		https://github.com/tstack/lnav/releases/download/v${V}/
 
-# c++14
+# c++17
 COMPILER =	base-clang ports-gcc
 
 CONFIGURE_STYLE = gnu
@@ -35,7 +35,8 @@ CONFIGURE_ENV = CPPFLAGS="-I${LOCALBASE}/include/ereadline -I${LOCALBASE}/includ
 		LDFLAGS="-L${LOCALBASE}/lib -lereadline" \
 		ac_cv_path_CARGO_CMD= \
 		ac_cv_header_execinfo_h=no \
-		ac_cv_search_backtrace=
+		ac_cv_search_backtrace= \
+		${ADDITIONAL_LIBS}
 
 # tests running lnav-test crashes/hangs in an infinite loop and need to be killed
 #NO_TEST =	Yes
@@ -47,3 +48,7 @@ pre-test:
 USE_GMAKE =	Yes
 
 .include <bsd.port.mk>
+
+.if ${CHOSEN_COMPILER} == ports-gcc
+ADDITIONAL_LIBS=	LIBS="-lstdc++fs"
+.endif
