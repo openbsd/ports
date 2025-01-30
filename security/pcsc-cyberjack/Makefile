@@ -3,7 +3,7 @@ COMMENT =		REINER SCT cyberJack chipcard reader driver
 V =			3.99.5
 SP =			16
 DISTNAME =		pcsc-cyberjack-${V}final.SP${SP}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS =		ifd-cyberjack		0.1 # 6.0
 
