@@ -1,9 +1,10 @@
 COMMENT=	simple library for color and formatting in terminal
 
-MODPY_DISTV=	2.2.4
+MODPY_DISTV=	2.2.5
 DISTNAME=	colored-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
+
+HOMEPAGE=	https://dslackw.gitlab.io/colored/
 
 CATEGORIES=	textproc
 
@@ -11,8 +12,8 @@ CATEGORIES=	textproc
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PI=	Yes
 MODPY_PYBUILD=	flit_core
+MODPY_PI=	Yes
 
 NO_TEST=	Yes
 

@@ -37,4 +37,5 @@ lib/python${MODPY_VERSION}/site-packages/colored/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/colored/foreground.py
 lib/python${MODPY_VERSION}/site-packages/colored/hexadecimal.py
 lib/python${MODPY_VERSION}/site-packages/colored/library.py
+lib/python${MODPY_VERSION}/site-packages/colored/py.typed
 lib/python${MODPY_VERSION}/site-packages/colored/utilities.py
