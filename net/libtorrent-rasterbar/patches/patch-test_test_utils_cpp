@@ -1,0 +1,21 @@
+Index: test/test_utils.cpp
+--- test/test_utils.cpp.orig
++++ test/test_utils.cpp
+@@ -204,7 +204,7 @@ bool fs_supports_sparse_files()
+ 	printf("filesystem: %ld\n", long(st.f_type));
+ 	return sparse_filesystems.count(st.f_type);
+ #else
+-	printf("filesystem: (%d) %s\n", int(st.f_type), st.f_fstypename);
++	printf("filesystem: (%d) %s\n", int(42 /* st.f_type */), st.f_fstypename);
+ 	static const std::set<std::string> sparse_filesystems{
+ 		"ufs", "zfs", "ext4", "xfs", "apfs", "btrfs"};
+ 	return sparse_filesystems.count(st.f_fstypename);
+@@ -235,7 +235,7 @@ bool fs_supports_prealloc()
+ 	printf("filesystem: %ld\n", long(st.f_type));
+ 	return prealloc_filesystems.count(st.f_type);
+ #else
+-	printf("filesystem: (%d) %s\n", int(st.f_type), st.f_fstypename);
++	printf("filesystem: (%d) %s\n", int(42 /* st.f_type */), st.f_fstypename);
+ 	static const std::set<std::string> prealloc_filesystems{
+ 		"ufs", "ext4", "xfs", "apfs", "btrfs"};
+ 	return prealloc_filesystems.count(st.f_fstypename);

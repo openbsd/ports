@@ -1,7 +1,7 @@
 Index: include/libtorrent/config.hpp
 --- include/libtorrent/config.hpp.orig
 +++ include/libtorrent/config.hpp
-@@ -521,6 +521,10 @@ POSSIBILITY OF SUCH DAMAGE.
+@@ -525,6 +525,10 @@ POSSIBILITY OF SUCH DAMAGE.
  #define TORRENT_USE_UNC_PATHS 0
  #endif
  

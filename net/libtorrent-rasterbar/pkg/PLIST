@@ -7,7 +7,6 @@ include/libtorrent/announce_entry.hpp
 include/libtorrent/assert.hpp
 include/libtorrent/aux_/
 include/libtorrent/aux_/alert_manager.hpp
-include/libtorrent/aux_/aligned_storage.hpp
 include/libtorrent/aux_/aligned_union.hpp
 include/libtorrent/aux_/alloca.hpp
 include/libtorrent/aux_/allocating_handler.hpp
