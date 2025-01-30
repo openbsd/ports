@@ -1,0 +1,14 @@
+Fix typo in -export-symbols-regex that makes xfce4 unhappy
+
+Index: examples/tex-open-terminal/Makefile.in
+--- examples/tex-open-terminal/Makefile.in.orig
++++ examples/tex-open-terminal/Makefile.in
+@@ -503,7 +503,7 @@ tex_open_terminal_la_LIBADD = \
+ tex_open_terminal_la_LDFLAGS = \
+ 	-avoid-version							\
+ 	-export-dynamic							\
+-	-export-symbols-regex="^thunar_extension_(shutdown|initialize|list_types)" \
++	-export-symbols-regex "^thunar_extension_(shutdown|initialize|list_types)" \
+ 	-module								\
+ 	$(PLATFORM_LDFLAGS)
+ 

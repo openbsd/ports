@@ -1,0 +1,14 @@
+Appease LLVM 19
+
+Index: examples/tex-open-terminal/Makefile.am
+--- examples/tex-open-terminal/Makefile.am.orig
++++ examples/tex-open-terminal/Makefile.am
+@@ -30,7 +30,7 @@ tex_open_terminal_la_LIBADD =						\
+ tex_open_terminal_la_LDFLAGS =						\
+ 	-avoid-version							\
+ 	-export-dynamic							\
+-	-export-symbols-regex="^thunar_extension_(shutdown|initialize|list_types)" \
++	-export-symbols-regex "^thunar_extension_(shutdown|initialize|list_types)" \
+ 	-module								\
+ 	$(PLATFORM_LDFLAGS)
+ 
