@@ -1,0 +1,14 @@
+spotify_player is a fast, easy to use, and configurable terminal music player.
+
+Features:
+ * Minimalist UI with an intuitive paging and popup system.
+ * Highly configurable
+ * Feature parity with the official Spotify application.
+ * Supports remote control with Spotify Connect.
+ * Supports streaming songs directly from the terminal.
+ * Supports lyric for most songs.
+ * Supports cross-platform media control.
+ * Supports image rendering.
+ * Supports desktop notification.
+ * Supports running the application as a daemon
+ * Offers a wide range of CLI commands

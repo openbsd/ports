@@ -1,0 +1,4 @@
+@bin bin/spotify_player
+share/examples/spotify-player/
+share/examples/spotify-player/app.toml
+share/examples/spotify-player/theme.toml
