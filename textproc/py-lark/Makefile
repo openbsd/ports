@@ -1,22 +1,19 @@
-COMMENT=	parsing toolkit for python
+COMMENT=	parsing toolkit for Python
 
-MODPY_DISTV=	1.1.9
+MODPY_DISTV=	1.2.2
 DISTNAME=	lark-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	textproc devel
 
+# https://github.com/lark-parser/lark
 HOMEPAGE=	https://lark-parser.readthedocs.io/en/latest/
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-
-MODPY_PYTEST_ARGS=	--ignore tests/test_nearley
+MODPY_PI=	Yes
 
 .include <bsd.port.mk>
