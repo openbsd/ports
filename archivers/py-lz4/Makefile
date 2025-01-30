@@ -1,10 +1,8 @@
 COMMENT =		lz4 bindings for Python
 
-MODPY_DISTV =	4.3.3
-
+MODPY_DISTV =		4.4.3
 DISTNAME =		lz4-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		archivers
 
@@ -16,9 +14,9 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=		lz4 pthread
 
 MODULES =		lang/python
-
-MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
+MODPY_PI =		Yes
+
 MODPY_PYTEST_ARGS =	--ignore tests/stream
 
 BUILD_DEPENDS =		devel/py-pkgconfig
