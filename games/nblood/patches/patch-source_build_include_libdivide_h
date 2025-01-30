@@ -1,0 +1,14 @@
+Fix build with llvm 19
+
+Index: source/build/include/libdivide.h
+--- source/build/include/libdivide.h.orig
++++ source/build/include/libdivide.h
+@@ -3017,7 +3017,7 @@ class divider {
+     T recover() const { return div.recover(); }
+ 
+     bool operator==(const divider<T, ALGO> &other) const {
+-        return div.denom.magic == other.denom.magic && div.denom.more == other.denom.more;
++        return div.denom.magic == other.div.denom.magic && div.denom.more == other.div.denom.more;
+     }
+ 
+     bool operator!=(const divider<T, ALGO> &other) const { return !(*this == other); }
