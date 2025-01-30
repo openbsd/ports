@@ -1,6 +1,7 @@
 BROKEN-hppa =	ICE on moc_qtsingleapplication.cxx
 
 V =		3.6.2
+REVISION =	0
 COMMENT =	WYSIWYG music notation software (MuseScore)
 GH_ACCOUNT =	musescore
 GH_PROJECT =	MuseScore

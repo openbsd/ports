@@ -1,0 +1,21 @@
+Fix build with llvm 19
+https://github.com/freebsd/freebsd-ports/commit/2d51b2dc978c1a8ee9a203709ab0066e8e0b8ab1
+
+Index: thirdparty/dtl/dtl/Diff.hpp
+--- thirdparty/dtl/dtl/Diff.hpp.orig
++++ thirdparty/dtl/dtl/Diff.hpp
+@@ -162,14 +162,6 @@ namespace dtl {
+             return trivial;
+         }
+         
+-        void enableTrivial () const {
+-            this->trivial = true;
+-        }
+-        
+-        void disableTrivial () {
+-            this->trivial = false;
+-        }
+-        
+         void editDistanceOnlyEnabled () {
+             this->editDistanceOnly = true;
+         }
