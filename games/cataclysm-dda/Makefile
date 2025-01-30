@@ -5,6 +5,7 @@ V= 			0.H-RELEASE
 DIST_TUPLE+=		github CleverRaven Cataclysm-DDA ${V} .
 PKGNAME=		cataclysm-dda-${V:S/-RELEASE//}
 EPOCH=			0
+REVISION=		0
 
 HOMEPAGE=		https://cataclysmdda.org
 MAINTAINER=		Kirill Bychkov <kirby@openbsd.org>
