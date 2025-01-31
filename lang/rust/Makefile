@@ -11,12 +11,8 @@ COMMENT-rustfmt =	Rust code formatter
 COMMENT-bootstrap =	Rust binary bootstrap
 COMMENT-src =		Rust source component
 
-V =			1.84.0
+V =			1.84.1
 DISTNAME =		rustc-${V}-src
-
-REVISION-bootstrap =	0
-REVISION-gdb =		0
-REVISION-src =		0
 
 # rustc bootstrap version
 BV-aarch64 =		1.84.0
