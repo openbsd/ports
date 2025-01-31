@@ -46,6 +46,7 @@
      SUBDIR += libdivecomputer
      SUBDIR += libstubborn
      SUBDIR += lifelines
+     SUBDIR += llama.cpp
      SUBDIR += logjam
      SUBDIR += m17n
      SUBDIR += magicpoint
