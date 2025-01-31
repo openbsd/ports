@@ -2,20 +2,20 @@ ONLY_FOR_ARCHS =	amd64 i386
 
 GH_ACCOUNT =		dhewm
 GH_PROJECT =		dhewm3
-GH_TAGNAME =		1.5.3
+GH_TAGNAME =		1.5.4
 
 COMMENT =		open-source version of Doom 3
 
 CATEGORIES =		games
 
-HOMEPAGE =		https://github.com/dhewm/dhewm3
+HOMEPAGE =		https://dhewm3.org
 
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} SDL2 c curl m openal z
+WANTLIB += ${COMPILER_LIBCXX} SDL2 c curl m openal
 
 MODULES =		devel/cmake
 
