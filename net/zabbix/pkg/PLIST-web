@@ -1707,6 +1707,10 @@ zabbix/locale/sv_SE/
 zabbix/locale/sv_SE/LC_MESSAGES/
 zabbix/locale/sv_SE/LC_MESSAGES/frontend.mo
 zabbix/locale/sv_SE/LC_MESSAGES/frontend.po
+zabbix/locale/th/
+zabbix/locale/th/LC_MESSAGES/
+zabbix/locale/th/LC_MESSAGES/frontend.mo
+zabbix/locale/th/LC_MESSAGES/frontend.po
 zabbix/locale/tr/
 zabbix/locale/tr/LC_MESSAGES/
 zabbix/locale/tr/LC_MESSAGES/frontend.mo

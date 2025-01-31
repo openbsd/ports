@@ -9,34 +9,7 @@ Index: configure
  #include <sys/sensors.h>
  int
  main (void)
-@@ -13515,7 +13516,7 @@ if test ${with_libevent+y}
- then :
-   withval=$with_libevent;
- 			if test "x$withval" = "xyes"; then
--				if test -f /usr/local/include/event.h; then withval=/usr/local; else withval=/usr; fi
-+				if test -f /usr/local/include/event2/event.h; then withval=/usr/local; else withval=/usr; fi
- 			fi
- 
- 			LIBEVENT_CFLAGS="-I$withval/include"
-@@ -13554,7 +13555,7 @@ fi
- printf %s "checking for libevent support... " >&6; }
- 
- 	if test "x$ARCH" = "xopenbsd"; then
--		LIBEVENT_LIBS="-levent_core -levent_pthreads"
-+		LIBEVENT_LIBS="-levent_core -levent_pthreads -levent_extra"
- 	else
- 		LIBEVENT_LIBS="-levent -levent_pthreads"
- 	fi
-@@ -13586,7 +13587,7 @@ cat confdefs.h - <<_ACEOF >conftest.$ac_ext
- /* end confdefs.h.  */
- 
- #include <stdlib.h>
--#include <event.h>
-+#include <event2/event.h>
- #include <event2/thread.h>
- 
- int
-@@ -18980,16 +18981,16 @@ fi
+@@ -18979,16 +18980,16 @@ fi
  RANLIB="ranlib"
  
  

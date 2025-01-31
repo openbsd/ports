@@ -18,7 +18,7 @@ Index: conf/zabbix_server.conf
  
  ### Option: DBPort
  #	Database port when not using local socket.
-@@ -590,6 +591,7 @@ Timeout=4
+@@ -593,6 +594,7 @@ Timeout=4
  # Mandatory: no
  # Default:
  # AlertScriptsPath=${datadir}/zabbix/alertscripts
@@ -26,7 +26,7 @@ Index: conf/zabbix_server.conf
  
  ### Option: ExternalScripts
  #	Full path to location of external scripts.
-@@ -607,6 +609,7 @@ Timeout=4
+@@ -610,6 +612,7 @@ Timeout=4
  # Mandatory: no
  # Default:
  # FpingLocation=/usr/sbin/fping
@@ -34,7 +34,7 @@ Index: conf/zabbix_server.conf
  
  ### Option: Fping6Location
  #	Location of fping6.
-@@ -616,6 +619,7 @@ Timeout=4
+@@ -619,6 +622,7 @@ Timeout=4
  # Mandatory: no
  # Default:
  # Fping6Location=/usr/sbin/fping6
