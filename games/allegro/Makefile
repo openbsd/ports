@@ -4,7 +4,7 @@ COMMENT =	game programming library for C/C++ developers
 
 V =		4.2.3
 DISTNAME =	allegro-$V
-REVISION =	8
+REVISION =	9
 CATEGORIES =	games devel multimedia
 SHARED_LIBS =	alleg	1.0	# 4.2
 
@@ -25,8 +25,10 @@ AUTOCONF_VERSION =	2.63
 
 SUBST_VARS =		V
 
-WANTLIB =		X11 Xcursor Xext Xpm Xxf86dga Xxf86vm c m \
+WANTLIB =		${COMPILER_LIBCXX} X11 Xcursor Xext Xpm Xxf86dga Xxf86vm c m \
 			sndio pthread
+
+LDFLAGS +=		${COMPILER_LIBCXX:S/^/-l/}
 
 CONFIGURE_ARGS =	--enable-artsdigi=no \
 			--enable-esddigi=no \
@@ -38,8 +40,10 @@ CONFIGURE_ARGS =	--enable-artsdigi=no \
 # XXX work around bogus configure entry with clang
 CONFIGURE_ENV =		allegro_cv_support_include_prefix=yes
 
+CONFIGURE_ENV +=	LDFLAGS="${LDFLAGS}"
+
 .if ${MACHINE_ARCH} == "i386"
-CONFIGURE_ENV +=	LDFLAGS="-Wl,-znotext"
+LDFLAGS +=		-Wl,-znotext
 .endif
 
 MAKE_ENV +=		shared_major_minor=${LIBalleg_VERSION}

@@ -1,5 +1,6 @@
---- configure.in.orig	Sat Jul 14 21:46:22 2007
-+++ configure.in	Wed Jan 13 01:30:01 2010
+Index: configure.in
+--- configure.in.orig
++++ configure.in
 @@ -28,26 +28,26 @@ allegro_enable_asm=yes)
  dnl Enable 8-bpp color depth (default).
  AC_ARG_ENABLE(color8,
@@ -177,3 +178,12 @@
    fi
    ALLEGRO_SFLAGS="-x assembler-with-cpp"
    ALLEGRO_SHAREDLIB_CFLAGS="-fPIC -DALLEGRO_SHARED"
+@@ -858,7 +873,7 @@ AC_SUBST(ALLEGRO_SHAREDLIB_CFLAGS)
+ 
+ dnl How to compile C++ files.
+ if test "X$allegro_cv_support_cplusplus" = "Xyes"; then
+-  CXX="$CC"
++  CXX="${CXX}"
+   CXXFLAGS="-fno-exceptions $CFLAGS"
+   ALLEGRO_DEBUG_CXXFLAGS="-fno-exceptions $ALLEGRO_DEBUG_CFLAGS"
+   ALLEGRO_PROFILE_CXXFLAGS="-fno-exceptions $ALLEGRO_PROFILE_CFLAGS"
