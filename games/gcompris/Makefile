@@ -1,6 +1,6 @@
 COMMENT=	educational game for children
 
-V=		4.3
+V=		25.0
 DISTNAME=	gcompris-qt-${V}
 PKGNAME=	gcompris-${V}
 EPOCH=		0
@@ -16,28 +16,28 @@ MAINTAINER=	Antoine Jacoutot <ajacoutot@openbsd.org>
 # SIL Open Font License (OFL)
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Charts Qt5Core Qt5Gui Qt5Multimedia
-WANTLIB += Qt5Network Qt5Qml Qt5QmlModels Qt5QmlWorkerScript Qt5Quick
-WANTLIB += Qt5QuickControls2 Qt5QuickParticles Qt5QuickTemplates2
-WANTLIB += Qt5Sensors Qt5Svg Qt5Widgets c m
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Charts Qt6Core Qt6Gui Qt6Multimedia
+WANTLIB += Qt6Network Qt6OpenGL Qt6OpenGLWidgets Qt6Qml Qt6QmlModels
+WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6QuickControls2 Qt6QuickControls2Basic
+WANTLIB += Qt6QuickTemplates2 Qt6Sensors Qt6Svg Qt6WaylandClient
+WANTLIB += Qt6Widgets c m wayland-client wayland-cursor xkbcommon
 
 SITES=		http://gcompris.net/download/qt/src/
 
-MODULES=	devel/kf5
+MODULES=	devel/kf6
 
 BUILD_DEPENDS=	devel/gettext,-tools \
-		devel/kf5/kdoctools
+		devel/kf6/kdoctools
 
-LIB_DEPENDS=	x11/qt5/qtcharts \
-		x11/qt5/qtdeclarative \
-		x11/qt5/qtmultimedia \
-		x11/qt5/qtquickcontrols2 \
-		x11/qt5/qtsensors \
-		x11/qt5/qtsvg
+LIB_DEPENDS=	x11/qt6/qtcharts \
+		x11/qt6/qtdeclarative \
+		x11/qt6/qtmultimedia \
+		x11/qt6/qtsensors \
+		x11/qt6/qtsvg \
+		x11/qt6/qtwayland
 
 RUN_DEPENDS=	devel/desktop-file-utils \
-		x11/gtk+4,-guic \
-		x11/qt5/qtgraphicaleffects
+		x11/gtk+4,-guic
 
 CONFIGURE_ARGS=	-DQML_BOX2D_MODULE=disabled
 

@@ -181,6 +181,7 @@ share/gcompris-qt/rcc/scalesboard_weight.rcc
 share/gcompris-qt/rcc/scalesboard_weight_avoirdupois.rcc
 share/gcompris-qt/rcc/share.rcc
 share/gcompris-qt/rcc/simplepaint.rcc
+share/gcompris-qt/rcc/sketch.rcc
 share/gcompris-qt/rcc/smallnumbers.rcc
 share/gcompris-qt/rcc/smallnumbers2.rcc
 share/gcompris-qt/rcc/solar_system.rcc
@@ -189,12 +190,16 @@ share/gcompris-qt/rcc/sudoku.rcc
 share/gcompris-qt/rcc/superbrain.rcc
 share/gcompris-qt/rcc/tangram.rcc
 share/gcompris-qt/rcc/target.rcc
+share/gcompris-qt/rcc/tens_complement_calculate.rcc
 share/gcompris-qt/rcc/tens_complement_find.rcc
 share/gcompris-qt/rcc/tens_complement_swap.rcc
 share/gcompris-qt/rcc/tens_complement_use.rcc
 share/gcompris-qt/rcc/tic_tac_toe.rcc
 share/gcompris-qt/rcc/tic_tac_toe_2players.rcc
 share/gcompris-qt/rcc/traffic.rcc
+share/gcompris-qt/rcc/vertical_addition.rcc
+share/gcompris-qt/rcc/vertical_subtraction.rcc
+share/gcompris-qt/rcc/vertical_subtraction_compensation.rcc
 share/gcompris-qt/rcc/watercycle.rcc
 share/gcompris-qt/rcc/wordsgame.rcc
 share/gcompris-qt/translations/
@@ -222,6 +227,7 @@ share/gcompris-qt/translations/gcompris_hr.qm
 share/gcompris-qt/translations/gcompris_hu.qm
 share/gcompris-qt/translations/gcompris_id.qm
 share/gcompris-qt/translations/gcompris_it.qm
+share/gcompris-qt/translations/gcompris_ka.qm
 share/gcompris-qt/translations/gcompris_lt.qm
 share/gcompris-qt/translations/gcompris_lv.qm
 share/gcompris-qt/translations/gcompris_mk.qm
@@ -233,6 +239,7 @@ share/gcompris-qt/translations/gcompris_pt.qm
 share/gcompris-qt/translations/gcompris_pt_BR.qm
 share/gcompris-qt/translations/gcompris_ro.qm
 share/gcompris-qt/translations/gcompris_ru.qm
+share/gcompris-qt/translations/gcompris_sa.qm
 share/gcompris-qt/translations/gcompris_sk.qm
 share/gcompris-qt/translations/gcompris_sl.qm
 share/gcompris-qt/translations/gcompris_sq.qm
