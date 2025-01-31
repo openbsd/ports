@@ -1,14 +1,15 @@
-@pkgpath devel/py-isort,python3
 @conflict py-isort-<4.2.15p3
+@pkgpath devel/py-isort,python3
 bin/isort
 bin/isort-identify-imports
 lib/python${MODPY_VERSION}/site-packages/isort/
 lib/python${MODPY_VERSION}/site-packages/isort-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/isort-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/isort-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/isort-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/isort-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/isort-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/isort-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/isort-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/isort/__init__.py
 lib/python${MODPY_VERSION}/site-packages/isort/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/isort/${MODPY_PYCACHE}/
@@ -130,6 +131,8 @@ lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/${MODPY_PYCACHE}py311.${M
 lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/${MODPY_PYCACHE}py311.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/${MODPY_PYCACHE}py312.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/${MODPY_PYCACHE}py312.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/${MODPY_PYCACHE}py313.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/${MODPY_PYCACHE}py313.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/${MODPY_PYCACHE}py36.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/${MODPY_PYCACHE}py36.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/${MODPY_PYCACHE}py37.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -145,6 +148,7 @@ lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/py3.py
 lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/py310.py
 lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/py311.py
 lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/py312.py
+lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/py313.py
 lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/py36.py
 lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/py37.py
 lib/python${MODPY_VERSION}/site-packages/isort/stdlibs/py38.py
