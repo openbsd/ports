@@ -8,7 +8,7 @@ MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
 MOZILLA_CODENAME =	comm/mail
 EXTRACT_SUFX =		.tar.xz
-#DEBUG_PACKAGES =	${BUILD_PACKAGES}
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 PKGNAME =	${MOZILLA_PROJECT}-${MOZILLA_VERSION:S/esr//}
 
 # XXX badly formed debug in libxul ?
