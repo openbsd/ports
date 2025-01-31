@@ -1,6 +1,6 @@
 COMMENT =		Rakudo compiler for the Raku language
 
-V =			2024.01
+V =			2025.01
 DISTNAME =		rakudo-$V
 
 NQP_VERSION =		$V
@@ -34,7 +34,7 @@ MAKE_FLAGS +=		VERBOSE_BUILD=Yes
 
 post-install:
 	rm -rf ${PREFIX}/share/perl6/core/precomp/*
-	${INSTALL_SCRIPT} ${WRKSRC}/tools/install-dist.p6 \
+	${INSTALL_SCRIPT} ${WRKSRC}/tools/install-dist.raku \
 		${PREFIX}/bin/perl6-install-dist
 
 .include <bsd.port.mk>
