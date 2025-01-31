@@ -2,11 +2,11 @@ ONLY_FOR_ARCHS =	aarch64 amd64 arm i386 mips64 mips64el powerpc powerpc64 riscv6
 
 COMMENT =		virtual machine for nqp/rakudo
 
-V =			2024.01
+V =			2025.01
 DISTNAME =		MoarVM-$V
 PKGNAME =		moarvm-$V
 
-SHARED_LIBS =		moar	14.0
+SHARED_LIBS =		moar	15.0
 
 CATEGORIES =		lang
 

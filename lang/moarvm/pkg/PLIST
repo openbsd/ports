@@ -230,6 +230,7 @@ include/moar/strings/utf8.h
 include/moar/strings/utf8_c8.h
 include/moar/strings/windows1252.h
 include/moar/types.h
+lib/libmoar.so-gdb.py
 @lib lib/libmoar.so.${LIBmoar_VERSION}
 share/nqp/
 share/nqp/lib/
