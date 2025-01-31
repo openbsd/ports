@@ -1,0 +1,14 @@
+https://github.com/freebsd/freebsd-ports/commit/5a269b5cd4965710fa4e02fdb1cc2ffe6def6921
+
+Index: include/vigra/multi_iterator_coupled.hxx
+--- include/vigra/multi_iterator_coupled.hxx.orig
++++ include/vigra/multi_iterator_coupled.hxx
+@@ -490,7 +490,7 @@ class CoupledScanOrderIterator<N, HANDLES, 0>
+     CoupledScanOrderIterator operator--(int)
+     {
+         CoupledScanOrderIterator res(*this);
+-        --this;
++        --*this;
+         return res;
+     }
+ 

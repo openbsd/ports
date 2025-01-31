@@ -6,7 +6,7 @@ GH_ACCOUNT =		ukoethe
 GH_PROJECT =		vigra
 GH_TAGNAME =		Version-${V}
 DISTNAME =		vigra-${V:S/-/./g}
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS =		vigraimpex 0.0 # 5.1
 
