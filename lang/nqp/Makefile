@@ -1,6 +1,6 @@
 COMMENT =		Not Quite Perl
 
-V =			2024.01
+V =			2025.01
 DISTNAME =		nqp-$V
 
 MOAR_VERSION =		$V
