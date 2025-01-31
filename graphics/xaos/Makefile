@@ -1,6 +1,6 @@
 COMMENT =		interactive fractal zoomer and morpher
 
-V =			4.3.2
+V =			4.3.3
 GH_ACCOUNT =		xaos-project
 GH_PROJECT =		XaoS
 GH_TAGNAME =		release-$V
