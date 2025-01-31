@@ -1,7 +1,7 @@
 Index: chrome/updater/app/app_uninstall.cc
 --- chrome/updater/app/app_uninstall.cc.orig
 +++ chrome/updater/app/app_uninstall.cc
-@@ -161,7 +161,7 @@ void UninstallInThreadPool(UpdaterScope scope,
+@@ -157,7 +157,7 @@ void UninstallInThreadPool(UpdaterScope scope,
              }
              if (int result = UninstallOtherVersions(scope);
                  result != kErrorOk) {

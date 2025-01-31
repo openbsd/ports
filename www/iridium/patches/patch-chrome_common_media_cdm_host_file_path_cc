@@ -9,4 +9,4 @@ Index: chrome/common/media/cdm_host_file_path.cc
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
  
    base::FilePath chrome_exe_dir;
-   if (!base::PathService::Get(base::DIR_EXE, &chrome_exe_dir))
+   if (!base::PathService::Get(base::DIR_EXE, &chrome_exe_dir)) {

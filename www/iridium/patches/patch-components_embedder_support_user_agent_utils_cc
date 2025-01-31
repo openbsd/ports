@@ -1,7 +1,7 @@
 Index: components/embedder_support/user_agent_utils.cc
 --- components/embedder_support/user_agent_utils.cc.orig
 +++ components/embedder_support/user_agent_utils.cc
-@@ -445,6 +445,9 @@ std::string GetPlatformForUAMetadata() {
+@@ -500,6 +500,9 @@ std::string GetPlatformForUAMetadata() {
  # else
    return "Chromium OS";
  # endif

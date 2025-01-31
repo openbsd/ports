@@ -11,8 +11,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Iridium browser
 
-V=			2024.11.131.1
-REVISION=		2
+V=			2025.01.132.1
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
@@ -41,7 +40,7 @@ SITES.u=	http://nerd.hu/distfiles/
 
 MODULES=	lang/clang lang/python x11/qt5
 
-MODCLANG_VERSION=	17
+MODCLANG_VERSION=	19
 MODQT5_DEPS=		No
 MODPY_RUNDEP=		No
 
@@ -137,7 +136,6 @@ GN_ARGS=	enable_nacl=false \
 		optimize_webui=true \
 		enable_remoting=false \
 		enable_hangout_services_extension=true \
-		enable_log_error_not_reached=true \
 		use_kerberos=false \
 		use_sndio=true \
 		use_pulseaudio=true \
@@ -240,6 +238,7 @@ post-patch:
 	@ln -sf ${TRUEPREFIX}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
 	${SUBST_CMD} ${WRKSRC}/build/gn_run_binary.py \
 		${WRKSRC}/build/rust/rust_bindgen.gni \
+		${WRKSRC}/build/rust/rust_bindgen_generator.gni \
 		${WRKSRC}/v8/tools/run.py \
 		${WRKSRC}/tools/protoc_wrapper/protoc_wrapper.py \
 		${WRKSRC}/third_party/blink/renderer/build/scripts/run_with_pythonpath.py

@@ -9,7 +9,7 @@ Index: content/zygote/zygote_linux.cc
  
  #ifdef UNSAFE_BUFFERS_BUILD
  // TODO(crbug.com/342213636): Remove this and spanify to fix the errors.
-@@ -723,3 +724,4 @@ void Zygote::HandleReinitializeLoggingRequest(base::Pi
+@@ -710,3 +711,4 @@ void Zygote::HandleReinitializeLoggingRequest(base::Pi
  }
  
  }  // namespace content

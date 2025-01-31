@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/views/compose/compose_dialog_view.cc
 --- chrome/browser/ui/views/compose/compose_dialog_view.cc.orig
 +++ chrome/browser/ui/views/compose/compose_dialog_view.cc
-@@ -159,7 +159,7 @@ void ComposeDialogView::OnBeforeBubbleWidgetInit(
+@@ -160,7 +160,7 @@ void ComposeDialogView::OnBeforeBubbleWidgetInit(
      views::Widget::InitParams* params,
      views::Widget* widget) const {
    WebUIBubbleDialogView::OnBeforeBubbleWidgetInit(params, widget);

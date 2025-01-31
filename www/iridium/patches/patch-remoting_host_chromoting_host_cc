@@ -1,7 +1,7 @@
 Index: remoting/host/chromoting_host.cc
 --- remoting/host/chromoting_host.cc.orig
 +++ remoting/host/chromoting_host.cc
-@@ -132,7 +132,7 @@ void ChromotingHost::Start(const std::string& host_own
+@@ -135,7 +135,7 @@ void ChromotingHost::Start(const std::string& host_own
        &ChromotingHost::OnIncomingSession, base::Unretained(this)));
  }
  
