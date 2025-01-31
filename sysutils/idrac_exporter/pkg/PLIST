@@ -5,8 +5,6 @@
 share/examples/idrac_exporter/
 share/examples/idrac_exporter/sample-config.yml
 @sample ${SYSCONFDIR}/prometheus/
-@group _idrac-exporter
 @mode 640
+@group _idrac-exporter
 @sample ${SYSCONFDIR}/prometheus/idrac.yml
-@mode
-@group

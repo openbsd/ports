@@ -75,7 +75,9 @@ SHA256 (go_modules/gopkg.in/check.v1/@v/v1.0.0-20201130134442-10cb98267c6c.mod) 
 SHA256 (go_modules/gopkg.in/check.v1/@v/v1.0.0-20201130134442-10cb98267c6c.zip) = 9VVoTlxdrMKFDd2zRf7xuPk/VGtyaFWJeJ2m0rBicQ4=
 SHA256 (go_modules/gopkg.in/yaml.v2/@v/v2.4.0.mod) = w7EbqaB3X/m8bxHbtYoeSMweaLrDeKjNxiC+zGYdTDM=
 SHA256 (go_modules/gopkg.in/yaml.v2/@v/v2.4.0.zip) = 7eSeJ8TMps3S7HGa7Y6k02NxDM6z1BHnp4b73sDTkf0=
-SHA256 (idrac_exporter-v1.4.4.zip) = 51xzE8hhL20G+2kMtjPP7mA/DR+zwlkfupppKD5iz5Q=
+SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
+SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
+SHA256 (idrac_exporter-v1.5.0.zip) = DPqG/1ktoShnxHt9Jcb4F144ATPMLd80kn3izrmCbKs=
 SIZE (go_modules/github.com/alecthomas/kingpin/v2/@v/v2.4.0.mod) = 352
 SIZE (go_modules/github.com/alecthomas/kingpin/v2/@v/v2.4.0.zip) = 62260
 SIZE (go_modules/github.com/alecthomas/units/@v/v0.0.0-20211218093645-b94a6e3cc137.mod) = 88
@@ -153,4 +155,6 @@ SIZE (go_modules/gopkg.in/check.v1/@v/v1.0.0-20201130134442-10cb98267c6c.mod) = 
 SIZE (go_modules/gopkg.in/check.v1/@v/v1.0.0-20201130134442-10cb98267c6c.zip) = 42835
 SIZE (go_modules/gopkg.in/yaml.v2/@v/v2.4.0.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v2/@v/v2.4.0.zip) = 81183
-SIZE (idrac_exporter-v1.4.4.zip) = 3316863
+SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
+SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
+SIZE (idrac_exporter-v1.5.0.zip) = 3317147
