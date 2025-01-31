@@ -1,6 +1,0 @@
-@bin bin/sqlite
-include/sqlite.h
-lib/libsqlite.a
-lib/libsqlite.la
-@lib lib/libsqlite.so.${LIBsqlite_VERSION}
-lib/pkgconfig/sqlite.pc

@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1693 2025/01/24 09:26:53 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1694 2025/01/31 12:16:21 jca Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1230,6 +1230,7 @@ setup_obsolete_reason(
 	0 => 'burpsuite',
 	7 => 'govc',
 	7 => 'vcsim',
+	5 => 'sqlite',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

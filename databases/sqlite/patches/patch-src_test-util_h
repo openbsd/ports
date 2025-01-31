@@ -1,9 +1,0 @@
---- src/test-util.h.orig	Wed Dec 21 01:47:37 2005
-+++ src/test-util.h	Wed Dec 21 01:47:37 2005
-@@ -0,0 +1,6 @@
-+#ifndef TEST_UTIL_H
-+#define TEST_UTIL_H
-+
-+extern void *sqliteTextToPtr(const char *z);
-+
-+#endif /* TEST_UTIL_H */
