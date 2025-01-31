@@ -2,7 +2,7 @@ COMMENT =		lightweight Javascript interpreter
 
 SHARED_LIBS =		mujs 0.0
 
-V =			1.3.4
+V =			1.3.5
 DISTNAME =		mujs-$V
 
 CATEGORIES =		lang www
