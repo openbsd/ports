@@ -1,5 +1,5 @@
-@pkgpath devel/py-elftools,python3
 @conflict py-elftools-*
+@pkgpath devel/py-elftools,python3
 bin/readelf.py
 lib/python${MODPY_VERSION}/site-packages/elftools/
 lib/python${MODPY_VERSION}/site-packages/elftools/__init__.py
@@ -171,6 +171,7 @@ lib/python${MODPY_VERSION}/site-packages/elftools/elf/relocation.py
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/sections.py
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/segments.py
 lib/python${MODPY_VERSION}/site-packages/elftools/elf/structs.py
+lib/python${MODPY_VERSION}/site-packages/elftools/py.typed
 lib/python${MODPY_VERSION}/site-packages/pyelftools-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/pyelftools-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pyelftools-${MODPY_DISTV}.dist-info/METADATA
