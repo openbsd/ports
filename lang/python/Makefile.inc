@@ -174,8 +174,9 @@ do-gen:
 post-configure:
 	@cd ${WRKSRC} && ${MAKE_PROGRAM} Makefile
 
-ADJ_FILES = ${WRKSRC}/Tools/scripts/pydoc* ${WRKSRC}/python-gdb.py
+ADJ_FILES = ${WRKSRC}/python-gdb.py
 .if ${VERSION} == "2.7"
+ADJ_FILES += ${WRKSRC}/Tools/scripts/pydoc*
 ADJ_FILES += ${WRKSRC}/Tools/scripts/2to3
 .endif
 
