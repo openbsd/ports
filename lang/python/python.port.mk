@@ -320,7 +320,7 @@ MODPY_TEST_TARGET +=	${MODPY_TEST_SO_CMD};
 .endif
 
 .if ${MODPY_PYBUILD:L} != no
-.  if ! ${MODPY_PYBUILD:Msetuptools_scm}
+.  if ! ${MODPY_PYBUILD:Msetuptools_scm} && ! ${BUILD_DEPENDS:Mdevel/py-setuptools_scm}
 _MODPY_PRE_BUILD_STEPS += ; if [ -e ${WRKSRC}/pyproject.toml ] && \
 	(grep -A3 '^requires' ${WRKSRC}/pyproject.toml | \
 	grep -q 'setuptools[-_]scm'); then \
