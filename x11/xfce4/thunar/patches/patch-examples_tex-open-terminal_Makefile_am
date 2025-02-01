@@ -1,5 +1,7 @@
 Appease LLVM 19
 
+https://gitlab.xfce.org/xfce/thunar/-/commit/75d3417b2e5866bbb8946dea9123e4a33a7f3e44
+
 Index: examples/tex-open-terminal/Makefile.am
 --- examples/tex-open-terminal/Makefile.am.orig
 +++ examples/tex-open-terminal/Makefile.am
