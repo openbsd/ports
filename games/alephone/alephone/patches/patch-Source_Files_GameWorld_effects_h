@@ -1,0 +1,18 @@
+alext.h has variable names in prototypes (which is a pollution that is
+best avoided even if it hurts readability) and this clashes with the
+effects macro, which is an incredibly short/bad name for a macro in a
+header.
+
+Index: Source_Files/GameWorld/effects.h
+--- Source_Files/GameWorld/effects.h.orig
++++ Source_Files/GameWorld/effects.h
+@@ -40,6 +40,9 @@ Aug 30, 2000 (Loren Petrich):
+ 	Added stuff for unpacking and packing
+ */
+ 
++// XXX - avoid conflict between effects macro and variable names in prototypes
++#include <AL/alext.h>
++
+ // LP addition:
+ #include "dynamic_limits.h"
+ 
