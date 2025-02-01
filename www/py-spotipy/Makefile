@@ -1,10 +1,9 @@
 COMMENT =		lightweight library for the Spotify Web API
 
-MODPY_DISTV =	2.24.0
+MODPY_DISTV =		2.25.0
 DISTNAME =		spotipy-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		www audio
-REVISION =		0
 
 HOMEPAGE =		https://spotipy.readthedocs.io
 
