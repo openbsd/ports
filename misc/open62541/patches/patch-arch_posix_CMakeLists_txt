@@ -1,0 +1,14 @@
+Fix build with LLVM 19.  -Wconversion was also dropped in the 1.4 branch.
+
+Index: arch/posix/CMakeLists.txt
+--- arch/posix/CMakeLists.txt.orig
++++ arch/posix/CMakeLists.txt
+@@ -11,7 +11,7 @@ if (${_index} GREATER -1 OR "${UA_ARCHITECTURE}" STREQ
+ 
+     if("${UA_ARCHITECTURE}" STREQUAL "posix")
+         if(NOT CYGWIN AND NOT QNXNTO)
+-            ua_architecture_add_definitions(-Wshadow -Wconversion -fvisibility=hidden -fPIC)
++            ua_architecture_add_definitions(-Wshadow -fvisibility=hidden -fPIC)
+         endif()
+ 
+         if(QNXNTO)
