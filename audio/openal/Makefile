@@ -4,9 +4,10 @@ V =		1.24.2
 DISTNAME =	openal-soft-$V
 PKGNAME =	openal-$V
 EPOCH =		0
+REVISION =	0
 CATEGORIES =	audio
 
-SHARED_LIBS =	openal	5.0
+SHARED_LIBS =	openal	6.0
 
 HOMEPAGE =	https://openal-soft.org/
 
