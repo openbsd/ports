@@ -221,10 +221,13 @@ MODGO_MODULES =	\
 	github.com/armon/go-radix								 v1.0.0 \
 	github.com/asaskevich/govalidator							 v0.0.0-20230301143203-a9d515a09cc2 \
 	github.com/atomicgo/cursor								 v0.0.1 \
+	github.com/atomicgo/cursor								 v0.2.0 \
+	github.com/atomicgo/keyboard								 v0.2.9 \
+	github.com/atomicgo/schedule								 v0.1.0 \
 	github.com/atotto/clipboard								 v0.1.4 \
 	github.com/aws/aws-lambda-go								 v1.13.3 \
 	github.com/aws/aws-sdk-go								 v1.55.6 \
-	github.com/aws/aws-sdk-go-v2								 v1.33.0 \
+	github.com/aws/aws-sdk-go-v2								 v1.35.0 \
 	github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream					 v1.6.7 \
 	github.com/aws/aws-sdk-go-v2/config							 v1.29.1 \
 	github.com/aws/aws-sdk-go-v2/credentials						 v1.17.54 \
@@ -568,7 +571,7 @@ MODGO_MODULES =	\
 	github.com/prometheus/common								 v0.2.0 \
 	github.com/prometheus/procfs								 v0.0.0-20190117184657-bf6a532e95b1 \
 	github.com/pterm/pterm									 v0.12.80 \
-	github.com/puzpuzpuz/xsync/v3								 v3.4.1 \
+	github.com/puzpuzpuz/xsync/v3								 v3.5.0 \
 	github.com/redis/go-redis/v9								 v9.7.0 \
 	github.com/remyoudompheng/bigfft							 v0.0.0-20200410134404-eec4a21b6bb0 \
 	github.com/rivo/uniseg									 v0.4.7 \
@@ -1412,6 +1415,7 @@ MODGO_MODFILES =	\
 	github.com/aws/aws-sdk-go								 v1.55.5 \
 	github.com/aws/aws-sdk-go-v2								 v1.16.16 \
 	github.com/aws/aws-sdk-go-v2								 v1.32.7 \
+	github.com/aws/aws-sdk-go-v2								 v1.33.0 \
 	github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream					 v1.4.3 \
 	github.com/aws/aws-sdk-go-v2/config							 v1.15.13 \
 	github.com/aws/aws-sdk-go-v2/config							 v1.28.7 \
