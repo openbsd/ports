@@ -2,7 +2,7 @@ Disable GoLang
 Index: src/libs/gocmdbridge/server/CMakeLists.txt
 --- src/libs/gocmdbridge/server/CMakeLists.txt.orig
 +++ src/libs/gocmdbridge/server/CMakeLists.txt
-@@ -41,7 +41,7 @@ endfunction()
+@@ -45,7 +45,7 @@ endfunction()
  find_program(GO_BIN go)
  find_program(UPX_BIN upx)
  

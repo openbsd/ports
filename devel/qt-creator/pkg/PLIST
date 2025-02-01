@@ -148,7 +148,7 @@ lib/qtcreator/plugins/qmldesigner/
 libexec/qtcreator/
 @bin libexec/qtcreator/buildoutputparser
 @bin libexec/qtcreator/cpaster
-@bin libexec/qtcreator/qml2puppet-15.0.0
+@bin libexec/qtcreator/qml2puppet-15.0.1
 @bin libexec/qtcreator/qtc-askpass
 @bin libexec/qtcreator/qtcreator_process_stub
 @bin libexec/qtcreator/qtcreator_processlauncher
@@ -191,6 +191,7 @@ share/qtcreator/changelog/changes-14.0.0.md
 share/qtcreator/changelog/changes-14.0.1.md
 share/qtcreator/changelog/changes-14.0.2.md
 share/qtcreator/changelog/changes-15.0.0.md
+share/qtcreator/changelog/changes-15.0.1.md
 share/qtcreator/changelog/changes-2.0.0
 share/qtcreator/changelog/changes-2.0.1
 share/qtcreator/changelog/changes-2.1.0
