@@ -123,6 +123,7 @@
 @man man/man1/glab-stack-move.1
 @man man/man1/glab-stack-next.1
 @man man/man1/glab-stack-prev.1
+@man man/man1/glab-stack-reorder.1
 @man man/man1/glab-stack-save.1
 @man man/man1/glab-stack-switch.1
 @man man/man1/glab-stack-sync.1
