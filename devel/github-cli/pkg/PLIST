@@ -136,7 +136,9 @@
 @man man/man1/gh-release-view.1
 @man man/man1/gh-release.1
 @man man/man1/gh-repo-archive.1
+@man man/man1/gh-repo-autolink-create.1
 @man man/man1/gh-repo-autolink-list.1
+@man man/man1/gh-repo-autolink-view.1
 @man man/man1/gh-repo-autolink.1
 @man man/man1/gh-repo-clone.1
 @man man/man1/gh-repo-create.1
