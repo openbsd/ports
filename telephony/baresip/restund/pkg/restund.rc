@@ -1,6 +1,6 @@
 #!/bin/ksh
 
-daemon="${TRUEPREFIX}/sbin/restund"
+daemon="${TRUEPREFIX}/bin/restund"
 daemon_user="_restund"
 
 . /etc/rc.d/rc.subr

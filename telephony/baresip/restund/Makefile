@@ -1,94 +1,13 @@
 COMMENT =		modular and flexible STUN and TURN Server
 
-GH_ACCOUNT =		otalk
 GH_PROJECT =		restund
-GH_COMMIT =		c0ad4cc81fe534f9fbd9cf738a645a6e50120c69
-V =			0.4.12.0.20170302
-DISTNAME =		restund-${V}
-REVISION =		1
+GH_TAGNAME =	v3.9.0
 
-WANTLIB =		c crypto mariadb pthread re ssl z
+WANTLIB =		c crypto m mariadb pthread re ssl z
 LIB_DEPENDS =		telephony/baresip/re \
 			databases/mariadb,-main
 
-MAKE_FLAGS +=		USE_MYSQL=1 LIBS="-lcrypto -lssl -lz -lc -lre -lpthread"
-
-# those are set in ../Makefile.inc, override
-MODULES =
-GH_TAGNAME =
-CONFIGURE_STYLE =	none
-USE_GMAKE =		Yes
-
-MAKE_ENV +=		CC="${CC}"
-MAKE_ENV +=		LD="${CC}"
-MAKE_ENV +=		AR="${AR}"
-MAKE_ENV +=		APP_LFLAGS="-rdynamic"
-MAKE_ENV +=		AFLAGS="${ARFLAGS}"
-MAKE_ENV +=		BUILD="build-${ARCH}"
-MAKE_ENV +=		OS=openbsd
-MAKE_ENV +=		LFLAGS="-fPIC -L${LOCALBASE}/lib -L/${X11BASE}/lib"
-MAKE_ENV +=		SH_LFLAGS="-shared"
-MAKE_ENV +=		MOD_SUFFIX=".so"
-MAKE_ENV +=		SYSROOT="/usr"
-MAKE_ENV +=		V=Yes
-MAKE_ENV +=		LIBRE_MK=/dev/null
-MAKE_ENV +=		LIBRE_INC="${LOCALBASE}/include/re"
-MAKE_ENV +=		HAVE_ARC4RANDOM=1
-MAKE_ENV +=		HAVE_DLFCN_H=1
-MAKE_ENV +=		HAVE_EPOLL=
-MAKE_ENV +=		HAVE_GETIFADDRS=1
-MAKE_ENV +=		HAVE_GETOPT=1
-MAKE_ENV +=		HAVE_INET6=1
-MAKE_ENV +=		HAVE_INET_NTOP=1
-MAKE_ENV +=		HAVE_INET_PTON=1
-MAKE_ENV +=		HAVE_INTTYPES_H=1
-MAKE_ENV +=		HAVE_KQUEUE=1
-MAKE_ENV +=		HAVE_LIBPTHREAD=1
-MAKE_ENV +=		HAVE_NET_ROUTE_H=1
-MAKE_ENV +=		HAVE_PTHREAD=1
-MAKE_ENV +=		HAVE_PTHREAD_RWLOCK=1
-MAKE_ENV +=		HAVE_RESOLV=1
-MAKE_ENV +=		HAVE_STRERROR_R=1
-MAKE_ENV +=		HAVE_SYSLOG=1
-MAKE_ENV +=		HAVE_SYS_SYSCTL_H=1
-MAKE_ENV +=		USE_OPENSSL=yes
-MAKE_ENV +=		USE_OPENSSL_AES=yes
-MAKE_ENV +=		USE_OPENSSL_DTLS=yes
-MAKE_ENV +=		USE_OPENSSL_HMAC=yes
-MAKE_ENV +=		USE_OPENSSL_SRTP=yes
-MAKE_ENV +=		USE_TLS=yes
-MAKE_ENV +=		USE_ZLIB=yes
-
-FAKE_FLAGS +=		PREFIX=${PREFIX}
-
-CFLAGS +=		-I${X11BASE}/include -I${LOCALBASE}/include -fPIC \
-			-DARCH=\"${ARCH}\" -DOPENBSD -DOS=\"openbsd\" -std=c99 \
-			-DUSE_OPENSSL -DUSE_TLS -DUSE_OPENSSL_DTLS -DUSE_DTLS \
-			-DUSE_OPENSSL_SRTP -DUSE_DTLS_SRTP -DUSE_ZLIB \
-			-DHAVE_PTHREAD -DHAVE_GETIFADDRS -DHAVE_STRERROR_R \
-			-DHAVE_GETOPT -DHAVE_INTTYPES_H -DHAVE_NET_ROUTE_H \
-			-DHAVE_SYS_SYSCTL_H -DHAVE_STDBOOL_H -DHAVE_INET6 \
-			-DHAVE_RESOLV -DHAVE_SYSLOG -DHAVE_FORK \
-			-DHAVE_INET_NTOP -DHAVE_PWD_H -DHAVE_POLL \
-			-DHAVE_INET_PTON -DHAVE_SELECT -DHAVE_SELECT_H \
-			-DHAVE_SETRLIMIT -DHAVE_SIGNAL -DHAVE_SYS_TIME_H \
-			-DHAVE_KQUEUE -DHAVE_UNAME -DHAVE_UNISTD_H \
-			-DHAVE_STRINGS_H -DHAVE_GAI_STRERROR -DHAVE_ARC4RANDOM \
-			-DVERSION=\"$V\" -DHAVE_ROUTE_LIST
-
-NO_TEST =		Yes
-
-do-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/lib/restund/modules \
-	                    ${PREFIX}/share/doc/restund \
-	                    ${PREFIX}/share/examples/restund/munin
-	${INSTALL_PROGRAM} ${WRKBUILD}/restund ${PREFIX}/sbin
-	${INSTALL_DATA} ${WRKBUILD}/*.so ${PREFIX}/lib/restund/modules
-	${INSTALL_DATA} ${WRKBUILD}/etc/munin/* \
-		${PREFIX}/share/examples/restund/munin
-	${INSTALL_DATA} ${WRKDIST}/docs/README ${WRKDIST}/docs/restund.txt \
-		${PREFIX}/share/doc/restund
-	${INSTALL_DATA} ${WRKDIST}/etc/restund.conf \
-		${PREFIX}/share/examples/restund
+post-install:
+	mv ${PREFIX}/etc ${PREFIX}/share/examples/restund/
 
 .include <bsd.port.mk>

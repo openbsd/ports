@@ -1,0 +1,16 @@
+cmake uses -I/usr/local/include/mysql which already contains the subdir
+
+Index: modules/mysql_ser/mysql_ser.c
+--- modules/mysql_ser/mysql_ser.c.orig
++++ modules/mysql_ser/mysql_ser.c
+@@ -6,8 +6,8 @@
+ 
+ #include <stdlib.h>
+ #include <string.h>
+-#include <mysql/mysql.h>
+-#include <mysql/errmsg.h>
++#include <mysql.h>
++#include <errmsg.h>
+ #include <re.h>
+ #include <restund.h>
+ 
