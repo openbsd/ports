@@ -1,3 +1,5 @@
+ONLY_FOR_ARCHS =	${RUST_ARCHS}
+
 COMMENT =		suite of solitaire card games
 
 DIST_TUPLE =		gnome GNOME aisleriot 3.22.35 .
