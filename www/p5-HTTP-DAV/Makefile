@@ -2,9 +2,8 @@ COMMENT =	webdav client library for Perl
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	HTTP-DAV-0.49
+DISTNAME =	HTTP-DAV-0.50
 CATEGORIES =	www
-REVISION =	0
 
 MAINTAINER =	Giovanni Bechis <giovanni@openbsd.org>
 
