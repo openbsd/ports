@@ -2,8 +2,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	organizer for book/dvd/music collections
 
-DISTNAME =	tellico-4.0.1
-REVISION =	0
+DISTNAME =	tellico-4.1
 
 CATEGORIES =	x11
 
@@ -20,14 +19,13 @@ WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
 WANTLIB += KF6FileMetaData KF6GuiAddons KF6I18n KF6IconThemes
 WANTLIB += KF6IconWidgets KF6ItemModels KF6ItemViews KF6JobWidgets
 WANTLIB += KF6KIOCore KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets
-WANTLIB += KF6NewStuffCore KF6NewStuffWidgets KF6Service KF6Solid
-WANTLIB += KF6SonnetCore KF6SonnetUi KF6TextWidgets KF6WidgetsAddons
-WANTLIB += KF6XmlGui Qt6Charts Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Positioning Qt6PrintSupport
-WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6WebChannel Qt6WebEngineCore
+WANTLIB += KF6NewStuffWidgets KF6Service KF6Solid KF6SonnetCore
+WANTLIB += KF6SonnetUi KF6TextWidgets KF6WidgetsAddons KF6XmlGui
+WANTLIB += Qt6Charts Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
+WANTLIB += Qt6OpenGLWidgets Qt6Positioning Qt6PrintSupport Qt6Qml
+WANTLIB += Qt6QmlModels Qt6Quick Qt6WebChannel Qt6WebEngineCore
 WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml c cdio exempi
-WANTLIB += exslt iconv iso9660 m poppler poppler-qt6 tag xml2
-WANTLIB += xslt yaz
+WANTLIB += exslt m poppler poppler-qt6 tag xml2 xslt yaz
 
 SITES =		http://tellico-project.org/files/
 EXTRACT_SUFX =	.tar.xz
@@ -45,7 +43,6 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 LIB_DEPENDS =	audio/libcdio \
 		audio/taglib \
-		converters/libiconv \
 		devel/kf6/attica \
 		devel/kf6/karchive \
 		devel/kf6/kbookmarks \
