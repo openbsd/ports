@@ -1,3 +1,6 @@
 ${P5SITE}/Test/
 ${P5SITE}/Test/Warnings.pm
+${P5SITE}/Test2/
+${P5SITE}/Test2/Warnings.pm
+@man man/man3p/Test2::Warnings.3p
 @man man/man3p/Test::Warnings.3p

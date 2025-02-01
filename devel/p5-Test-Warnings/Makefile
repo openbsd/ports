@@ -1,6 +1,6 @@
 COMMENT =	test for warnings and the lack of them
 
-DISTNAME =	Test-Warnings-0.033
+DISTNAME =	Test-Warnings-0.037
 CATEGORIES =	devel
 MODULES =	cpan
 PKG_ARCH =	*
