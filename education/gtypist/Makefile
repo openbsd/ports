@@ -1,7 +1,6 @@
 COMMENT=	interactive typing tutor
 
-DISTNAME=	gtypist-2.10
-REVISION=	0
+DISTNAME=	gtypist-2.10.1
 CATEGORIES=	education
 HOMEPAGE=	https://www.gnu.org/software/gtypist/
 
