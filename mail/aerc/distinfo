@@ -1,4 +1,4 @@
-SHA256 (aerc-0.20.0.zip) = YuegFppRJho65kOyTSM084hSSygOrRCQuDdlmLBJgpU=
+SHA256 (aerc-0.20.1.zip) = 1eARJUI/l9ShY+OlrvgRkaWnBgvtyYTtlaV4bE3CnCM=
 SHA256 (go_modules/cloud.google.com/go/compute/metadata/@v/v0.3.0.mod) = ZmAMRI0rXFR3BnNIkO0YGJyCgLII2Gua8qsIENW2HSE=
 SHA256 (go_modules/cloud.google.com/go/compute/metadata/@v/v0.3.0.zip) = wKt5wwhwwaqZEvsP3LBD4ARHgoJZiOQPWUAdInl2tnc=
 SHA256 (go_modules/git.sr.ht/~rjarry/go-opt/v2/@v/v2.0.1.mod) = e3GlJhctDz59c9Pb/MYbxGI1HxAT8gZgCg/zrISsVZI=
@@ -96,6 +96,8 @@ SHA256 (go_modules/github.com/jaytaylor/html2text/@v/v0.0.0-20211105163654-bc68c
 SHA256 (go_modules/github.com/jaytaylor/html2text/@v/v0.0.0-20211105163654-bc68cce691ba.zip) = YWjsFJgBm01aglP7wWarXKIq3bfX4fVH4WvzQs4c2ok=
 SHA256 (go_modules/github.com/jhillyerd/enmime/@v/v0.11.0.mod) = Chwz5XdPCPalbSAxrU2o5jlY7KajwKYYYqAdtXoP9B4=
 SHA256 (go_modules/github.com/jhillyerd/enmime/@v/v0.11.0.zip) = mE28JJDd2OttHIpEDGJ3frLx2VMYsur0In1grFolfC4=
+SHA256 (go_modules/github.com/konimarti/jwz/@v/v0.0.0-20241106152221-81c07e9284c3.mod) = K+ADB0t2xsEAmwxSZgogmxmeXB1QsiqJxWpglXIy7RU=
+SHA256 (go_modules/github.com/konimarti/jwz/@v/v0.0.0-20241106152221-81c07e9284c3.zip) = WezvomC4XP7kPTDeWmGwIOydPzWeoqwXYNx9YiTZVAY=
 SHA256 (go_modules/github.com/kr/pretty/@v/v0.1.0.mod) = 49XUbS9qyUpmalS16GfsFr8ZnZ9LcAgnzXMWB+/dEJo=
 SHA256 (go_modules/github.com/kr/pretty/@v/v0.2.1.mod) = wq4ovVu46PkHaVUSZ2irehR5Ut7qn9vLNzxTzBiHD4I=
 SHA256 (go_modules/github.com/kr/pretty/@v/v0.3.0.mod) = Qud4TgS5ZSWGtfne3/b5UYN2t0V2Gp/RoMIXjrhtyXo=
@@ -289,7 +291,7 @@ SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) =
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SIZE (aerc-0.20.0.zip) = 720734
+SIZE (aerc-0.20.1.zip) = 720820
 SIZE (go_modules/cloud.google.com/go/compute/metadata/@v/v0.3.0.mod) = 53
 SIZE (go_modules/cloud.google.com/go/compute/metadata/@v/v0.3.0.zip) = 19692
 SIZE (go_modules/git.sr.ht/~rjarry/go-opt/v2/@v/v2.0.1.mod) = 235
@@ -387,6 +389,8 @@ SIZE (go_modules/github.com/jaytaylor/html2text/@v/v0.0.0-20211105163654-bc68cce
 SIZE (go_modules/github.com/jaytaylor/html2text/@v/v0.0.0-20211105163654-bc68cce691ba.zip) = 18422
 SIZE (go_modules/github.com/jhillyerd/enmime/@v/v0.11.0.mod) = 589
 SIZE (go_modules/github.com/jhillyerd/enmime/@v/v0.11.0.zip) = 245471
+SIZE (go_modules/github.com/konimarti/jwz/@v/v0.0.0-20241106152221-81c07e9284c3.mod) = 554
+SIZE (go_modules/github.com/konimarti/jwz/@v/v0.0.0-20241106152221-81c07e9284c3.zip) = 5118600
 SIZE (go_modules/github.com/kr/pretty/@v/v0.1.0.mod) = 67
 SIZE (go_modules/github.com/kr/pretty/@v/v0.2.1.mod) = 72
 SIZE (go_modules/github.com/kr/pretty/@v/v0.3.0.mod) = 117

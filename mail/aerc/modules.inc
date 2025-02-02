@@ -37,6 +37,7 @@ MODGO_MODULES =	\
 	github.com/hpcloud/tail			 v1.0.0 \
 	github.com/jaytaylor/html2text		 v0.0.0-20211105163654-bc68cce691ba \
 	github.com/jhillyerd/enmime		 v0.11.0 \
+	github.com/konimarti/jwz		 v0.0.0-20241106152221-81c07e9284c3 \
 	github.com/kr/pretty			 v0.3.0 \
 	github.com/kr/pty			 v1.1.1 \
 	github.com/kr/text			 v0.2.0 \
