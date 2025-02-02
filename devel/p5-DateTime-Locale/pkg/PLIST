@@ -1568,6 +1568,11 @@ ${P5SITE}/auto/share/dist/DateTime-Locale/jv-ID.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/jv.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/ka-GE.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/ka.pl
+${P5SITE}/auto/share/dist/DateTime-Locale/kaa-Cyrl-UZ.pl
+${P5SITE}/auto/share/dist/DateTime-Locale/kaa-Cyrl.pl
+${P5SITE}/auto/share/dist/DateTime-Locale/kaa-Latn-UZ.pl
+${P5SITE}/auto/share/dist/DateTime-Locale/kaa-Latn.pl
+${P5SITE}/auto/share/dist/DateTime-Locale/kaa.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/kab-DZ.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/kab.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/kaj-NG.pl
@@ -1588,6 +1593,10 @@ ${P5SITE}/auto/share/dist/DateTime-Locale/khq-ML.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/khq.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/ki-KE.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/ki.pl
+${P5SITE}/auto/share/dist/DateTime-Locale/kk-Arab-CN.pl
+${P5SITE}/auto/share/dist/DateTime-Locale/kk-Arab.pl
+${P5SITE}/auto/share/dist/DateTime-Locale/kk-Cyrl-KZ.pl
+${P5SITE}/auto/share/dist/DateTime-Locale/kk-Cyrl.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/kk-KZ.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/kk.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/kkj-CM.pl
@@ -1604,7 +1613,11 @@ ${P5SITE}/auto/share/dist/DateTime-Locale/ko-CN.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/ko-KP.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/ko-KR.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/ko.pl
+${P5SITE}/auto/share/dist/DateTime-Locale/kok-Deva-IN.pl
+${P5SITE}/auto/share/dist/DateTime-Locale/kok-Deva.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/kok-IN.pl
+${P5SITE}/auto/share/dist/DateTime-Locale/kok-Latn-IN.pl
+${P5SITE}/auto/share/dist/DateTime-Locale/kok-Latn.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/kok.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/kpe-GN.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/kpe-LR.pl
@@ -1647,6 +1660,8 @@ ${P5SITE}/auto/share/dist/DateTime-Locale/lij-IT.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/lij.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/lkt-US.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/lkt.pl
+${P5SITE}/auto/share/dist/DateTime-Locale/lld-IT.pl
+${P5SITE}/auto/share/dist/DateTime-Locale/lld.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/lmo-IT.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/lmo.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/ln-AO.pl
@@ -1661,6 +1676,8 @@ ${P5SITE}/auto/share/dist/DateTime-Locale/lrc-IR.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/lrc.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/lt-LT.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/lt.pl
+${P5SITE}/auto/share/dist/DateTime-Locale/ltg-LV.pl
+${P5SITE}/auto/share/dist/DateTime-Locale/ltg.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/lu-CD.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/lu.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/luo-KE.pl
@@ -1686,6 +1703,8 @@ ${P5SITE}/auto/share/dist/DateTime-Locale/mgh-MZ.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/mgh.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/mgo-CM.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/mgo.pl
+${P5SITE}/auto/share/dist/DateTime-Locale/mhn-IT.pl
+${P5SITE}/auto/share/dist/DateTime-Locale/mhn.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/mi-NZ.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/mi.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/mic-CA.pl
@@ -2069,6 +2088,7 @@ ${P5SITE}/auto/share/dist/DateTime-Locale/yrl-VE.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/yrl.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/yue-Hans-CN.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/yue-Hans.pl
+${P5SITE}/auto/share/dist/DateTime-Locale/yue-Hant-CN.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/yue-Hant-HK.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/yue-Hant.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/yue.pl
@@ -2078,11 +2098,15 @@ ${P5SITE}/auto/share/dist/DateTime-Locale/zgh-MA.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/zgh.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/zh-Hans-HK.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/zh-Hans-MO.pl
+${P5SITE}/auto/share/dist/DateTime-Locale/zh-Hans-MY.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/zh-Hans-SG.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/zh-Hans.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/zh-Hant-HK.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/zh-Hant-MO.pl
+${P5SITE}/auto/share/dist/DateTime-Locale/zh-Hant-MY.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/zh-Hant.pl
+${P5SITE}/auto/share/dist/DateTime-Locale/zh-Latn-CN.pl
+${P5SITE}/auto/share/dist/DateTime-Locale/zh-Latn.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/zh.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/zu-ZA.pl
 ${P5SITE}/auto/share/dist/DateTime-Locale/zu.pl

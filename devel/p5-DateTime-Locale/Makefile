@@ -2,7 +2,7 @@ COMMENT =		localization support for DateTime.pm
 
 MODULES =		cpan
 PKG_ARCH =		*
-DISTNAME =		DateTime-Locale-1.42
+DISTNAME =		DateTime-Locale-1.44
 CATEGORIES=		devel
 
 MAINTAINER =		Andrew Hewus Fresh <afresh1@openbsd.org>
@@ -22,7 +22,6 @@ TEST_DEPENDS =	devel/p5-CPAN-Meta-Check>=0.011 \
 		devel/p5-IPC-System-Simple \
 		devel/p5-Path-Tiny \
 		devel/p5-Test-File-ShareDir \
-		devel/p5-Test2-Plugin-NoWarnings \
-		devel/p5-Test2-Suite
+		devel/p5-Test2-Plugin-NoWarnings
 
 .include <bsd.port.mk>
