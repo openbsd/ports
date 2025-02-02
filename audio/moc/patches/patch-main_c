@@ -8,7 +8,7 @@ Index: main.c
  	if (params->foreground) {
  		set_me_server ();
  		server_init (params->debug, params->foreground);
-+		if (pledge("stdio rpath wpath cpath inet dns flock unix audio", NULL) == -1)
++		if (pledge("stdio rpath wpath cpath inet dns unix audio", NULL) == -1)
 +			fatal ("pledge() failed: %s", strerror(errno));
  		server_loop ();
  		return;
@@ -17,7 +17,7 @@ Index: main.c
  		case 0: /* child - start server */
  			set_me_server ();
  			server_init (params->debug, params->foreground);
-+			if (pledge("stdio rpath wpath cpath inet dns flock unix audio", NULL) == -1)
++			if (pledge("stdio rpath wpath cpath inet dns unix audio", NULL) == -1)
 +				fatal ("pledge() failed: %s", strerror(errno));
  			rc = write (notify_pipe[1], &i, sizeof(i));
  			if (rc < 0)
@@ -51,7 +51,7 @@ Index: main.c
  		start_moc (&params, args);
 -	else
 +	else {
-+		if (pledge("cpath rpath stdio unix", NULL) == -1)
++		if (pledge("cpath rpath stdio flock unix", NULL) == -1)
 +			fatal ("pledge() failed: %s", strerror(errno));
  		server_command (&params, args);
 +	}
