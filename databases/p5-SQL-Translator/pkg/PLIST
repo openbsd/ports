@@ -88,6 +88,7 @@ ${P5SITE}/SQL/Translator/Schema/Constants.pm
 ${P5SITE}/SQL/Translator/Schema/Constraint.pm
 ${P5SITE}/SQL/Translator/Schema/Field.pm
 ${P5SITE}/SQL/Translator/Schema/Index.pm
+${P5SITE}/SQL/Translator/Schema/IndexField.pm
 ${P5SITE}/SQL/Translator/Schema/Object.pm
 ${P5SITE}/SQL/Translator/Schema/Procedure.pm
 ${P5SITE}/SQL/Translator/Schema/Role/
@@ -190,6 +191,7 @@ ${P5SITE}/auto/share/dist/SQL-Translator/PrecompiledParsers/Parse/RecDescent/DDL
 @man man/man3p/SQL::Translator::Schema::Constraint.3p
 @man man/man3p/SQL::Translator::Schema::Field.3p
 @man man/man3p/SQL::Translator::Schema::Index.3p
+@man man/man3p/SQL::Translator::Schema::IndexField.3p
 @man man/man3p/SQL::Translator::Schema::Object.3p
 @man man/man3p/SQL::Translator::Schema::Procedure.3p
 @man man/man3p/SQL::Translator::Schema::Role::Compare.3p
