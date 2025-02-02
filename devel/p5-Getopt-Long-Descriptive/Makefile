@@ -2,7 +2,7 @@ COMMENT =	Getopt::Long, but simpler and more powerful
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	Getopt-Long-Descriptive-0.110
+DISTNAME =	Getopt-Long-Descriptive-0.116
 CATEGORIES =	devel
 
 MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
