@@ -1,8 +1,8 @@
 COMMENT =		WHATWG compliant and fast URL parser in modern C++
 
-DIST_TUPLE =		github	ada-url	ada	v2.9.2	.
+DIST_TUPLE =		github	ada-url	ada	v3.0.1	.
 
-SHARED_LIBS =		ada	0.0
+SHARED_LIBS =		ada	1.0
 
 CATEGORIES =		www devel
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		${COMPILER_LIBCXX} m
 
-# C++17
+# C++20
 COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake \
