@@ -1,6 +1,6 @@
 COMMENT=	Xfce4 sticky notes panel plugin
 
-XFCE_VERSION=	1.11.1
+XFCE_VERSION=	1.11.2
 XFCE_PLUGIN=	notes
 
 # GPLv2
