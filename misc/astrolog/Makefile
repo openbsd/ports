@@ -2,7 +2,7 @@ COMMENT=	astrology program for X11 and text-based user interfaces
 
 DISTNAME=	ast71src
 PKGNAME=	astrolog-7.10
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	misc
 
@@ -16,9 +16,8 @@ PERMIT_PACKAGE=	Yes
 # https://www.astro.com/swisseph/swephinfo_e.htm
 WANTLIB += X11 c m
 
-# TLS
+# C++ and TLS
 COMPILER=	base-clang ports-gcc
-COMPILER_LANGS=	c
 
 SITES=		https://www.astrolog.org/ftp/
 DISTFILES=	${DISTNAME}.zip \
