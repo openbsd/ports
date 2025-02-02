@@ -12,7 +12,8 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} icudata icui18n icuio icuuc m sqlite3 xapian z
 
-COMPILER=	base-clang ports-gcc
+# C++20
+COMPILER=	base-clang ports-clang
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 BUILD_DEPENDS=	mail/dovecot
