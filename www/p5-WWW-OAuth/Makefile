@@ -1,8 +1,7 @@
 COMMENT =	portable OAuth 1.0 authentication
-DISTNAME =	WWW-OAuth-1.000
+DISTNAME =	WWW-OAuth-1.002
 CATEGORIES =	www
 PKG_ARCH =	*
-REVISION =	0
 
 MAINTAINER =	Andrew Hewus Fresh <afresh1@openbsd.org>
 
@@ -13,7 +12,8 @@ MODULES =		cpan
 RUN_DEPENDS =	devel/p5-Class-Tiny-Chained \
 		devel/p5-Module-Runtime \
 		devel/p5-Role-Tiny>=2.0 \
-		www/p5-URI>=1.34 \
+		security/p5-Crypt-URandom>=0.37 \
+		www/p5-URI>=3.26 \
 		www/p5-WWW-Form-UrlEncoded>=0.23
 TEST_DEPENDS =	devel/p5-Test-Needs
 
