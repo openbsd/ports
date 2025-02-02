@@ -14,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 
 MODPY_PI=	Yes
-MODPY_PYBUILD=	hatchling
+MODPY_PYBUILD=	hatch-vcs
 
 MODPY_PYTEST_ARGS= \
 		--ignore tests/integration/test_hypothesmith.py \
