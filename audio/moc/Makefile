@@ -3,6 +3,7 @@ COMMENT =	console audio player
 DIST_TUPLE+=	gitlab tomaszg mocp fb0a63b564b40fa861204e2f804b696c6ee573da .
 PKGNAME =	moc-2.6alpha3
 CATEGORIES =	audio
+REVISION =	0
 
 # GPLv3+
 PERMIT_PACKAGE = Yes
