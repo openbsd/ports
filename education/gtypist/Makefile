@@ -1,6 +1,7 @@
 COMMENT=	interactive typing tutor
 
 DISTNAME=	gtypist-2.10.1
+REVISION=	0
 CATEGORIES=	education
 HOMEPAGE=	https://www.gnu.org/software/gtypist/
 
@@ -13,6 +14,8 @@ WANTLIB=	c curses iconv intl pthread
 
 SITES=		${SITE_GNU:=gtypist/}
 EXTRACT_SUFX=	.tar.xz
+# 2.10.1 was re-rolled
+DISTFILES=	gtypist-2.10.1-0{gtypist-2.10.1}.tar.xz
 
 LIB_DEPENDS=	devel/gettext,-runtime
 
