@@ -1,0 +1,21 @@
+Index: src/audio_core/openal_sink.cpp
+--- src/audio_core/openal_sink.cpp.orig
++++ src/audio_core/openal_sink.cpp
+@@ -22,7 +22,7 @@ struct OpenALSink::Impl {
+ 
+     std::function<void(s16*, std::size_t)> cb;
+ 
+-    static ALsizei Callback(void* impl_, void* buffer, ALsizei buffer_size_in_bytes);
++    static ALsizei Callback(void* impl_, void* buffer, ALsizei buffer_size_in_bytes) AL_API_NOEXCEPT17;
+ };
+ 
+ OpenALSink::OpenALSink(std::string device_name) : impl(std::make_unique<Impl>()) {
+@@ -142,7 +142,7 @@ void OpenALSink::SetCallback(std::function<void(s16*, 
+     impl->cb = cb;
+ }
+ 
+-ALsizei OpenALSink::Impl::Callback(void* impl_, void* buffer, ALsizei buffer_size_in_bytes) {
++ALsizei OpenALSink::Impl::Callback(void* impl_, void* buffer, ALsizei buffer_size_in_bytes) AL_API_NOEXCEPT17 {
+     auto impl = reinterpret_cast<Impl*>(impl_);
+     if (!impl || !impl->cb) {
+         return 0;
