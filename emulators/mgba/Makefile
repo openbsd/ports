@@ -8,6 +8,10 @@ GH_PROJECT =		mgba
 GH_TAGNAME =		$V
 PKGNAME-libretro =	libretro-mgba-$V
 
+REVISION-main =		0
+REVISION-qt =		0
+REVISION-libretro =	0
+
 MULTI_PACKAGES =	-main -qt -libretro
 DEBUG_PACKAGES =	-main -qt -libretro
 
@@ -49,6 +53,7 @@ RUN_DEPENDS-qt =	devel/desktop-file-utils \
 
 CONFIGURE_ARGS +=	-DBUILD_LIBRETRO=ON \
 			-DENABLE_SCRIPTING=OFF \
+			-DUSE_DISCORD_RPC=OFF \
 			-DUSE_PLEDGE_UNVEIL=ON \
 			-DUSE_MINIZIP=OFF
 
