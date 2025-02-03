@@ -1,7 +1,7 @@
 COMMENT=	Xfce4 desktop panel
 
 XFCE_PROJECT=	xfce4-panel
-REVISION=	0
+XFCE_VERSION=	4.20.2
 
 SHARED_LIBS=	xfce4panel-2.0	0.3 # 4.0
 
@@ -32,7 +32,7 @@ BUILD_DEPENDS += devel/gobject-introspection lang/vala
 LIB_DEPENDS=	x11/xfce4/exo>=0.11.2 \
 		x11/xfce4/libxfce4ui>=4.15.6 \
 		x11/xfce4/libxfce4util>=4.15.6 \
-		x11/xfce4/libxfce4windowing>=4.19.6 \
+		x11/xfce4/libxfce4windowing>=4.20.1 \
 		x11/xfce4/xfconf>=4.13.3 \
 		x11/xfce4/garcon>=0.5.0 \
 		x11/libdbusmenu \
