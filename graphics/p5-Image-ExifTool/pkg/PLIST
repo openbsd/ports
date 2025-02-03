@@ -217,10 +217,10 @@ ${P5SITE}/Image/ExifTool/TagNames.pod
 ${P5SITE}/Image/ExifTool/Text.pm
 ${P5SITE}/Image/ExifTool/Theora.pm
 ${P5SITE}/Image/ExifTool/Torrent.pm
+${P5SITE}/Image/ExifTool/Trailer.pm
 ${P5SITE}/Image/ExifTool/Unknown.pm
 ${P5SITE}/Image/ExifTool/VCard.pm
 ${P5SITE}/Image/ExifTool/Validate.pm
-${P5SITE}/Image/ExifTool/Vivo.pm
 ${P5SITE}/Image/ExifTool/Vorbis.pm
 ${P5SITE}/Image/ExifTool/WPG.pm
 ${P5SITE}/Image/ExifTool/WTV.pm
@@ -419,10 +419,10 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::Text.3p
 @man man/man3p/Image::ExifTool::Theora.3p
 @man man/man3p/Image::ExifTool::Torrent.3p
+@man man/man3p/Image::ExifTool::Trailer.3p
 @man man/man3p/Image::ExifTool::Unknown.3p
 @man man/man3p/Image::ExifTool::VCard.3p
 @man man/man3p/Image::ExifTool::Validate.3p
-@man man/man3p/Image::ExifTool::Vivo.3p
 @man man/man3p/Image::ExifTool::Vorbis.3p
 @man man/man3p/Image::ExifTool::WPG.3p
 @man man/man3p/Image::ExifTool::WTV.3p
