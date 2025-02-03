@@ -1,4 +1,4 @@
-SHA256 (fzf-0.58.0.zip) = MYCyBwfufqmCYdBVuUhQaS3uwrvVN62nuEijK2azZA0=
+SHA256 (fzf-0.59.0.zip) = /fuFdWK9D8rpiQhBkB7nWlF/Pl0G5/1IHZE1LMuThBE=
 SHA256 (go_modules/github.com/charlievieth/fastwalk/@v/v1.0.9.mod) = fvr4j8bZezS/ooNkLv+klw7D6jdNBYBXCRzS18q/SpM=
 SHA256 (go_modules/github.com/charlievieth/fastwalk/@v/v1.0.9.zip) = zEKvHsl+4g1s0BcsP6Zp/UIjYycDajn7hktqoIIlr3Y=
 SHA256 (go_modules/github.com/gdamore/encoding/@v/v1.0.1.mod) = Z2IawwIkfAvI+iS78TchCDbgwG1nxBFsjI+YHhY9AEM=
@@ -7,8 +7,8 @@ SHA256 (go_modules/github.com/gdamore/tcell/v2/@v/v2.8.1.mod) = bhQlSudRTXJI5DgK
 SHA256 (go_modules/github.com/gdamore/tcell/v2/@v/v2.8.1.zip) = KOyaGVw2lAWiZFMVk+HVw5S6PhkmeSorowaeF//nt6w=
 SHA256 (go_modules/github.com/google/go-cmp/@v/v0.6.0.mod) = 58dmnUod1Ym6PgJLon9D8pPbYR/gdc4g17iENw1j/r0=
 SHA256 (go_modules/github.com/google/go-cmp/@v/v0.6.0.zip) = S06b9sSCEQgGUbSR37SNaLc2xmowW8+UYFYG4bouqko=
-SHA256 (go_modules/github.com/junegunn/go-shellwords/@v/v0.0.0-20240813092932-a62c48c52e97.mod) = MrzMpb6Iq0ExYiFZvfjnv3VVJJ7cPgMTjx452F7UGek=
-SHA256 (go_modules/github.com/junegunn/go-shellwords/@v/v0.0.0-20240813092932-a62c48c52e97.zip) = Dp3WzHpwfV6nsjx79MBaqFG1rVcuI1WImrmtUjx89hI=
+SHA256 (go_modules/github.com/junegunn/go-shellwords/@v/v0.0.0-20250127100254-2aa3b3277741.mod) = MrzMpb6Iq0ExYiFZvfjnv3VVJJ7cPgMTjx452F7UGek=
+SHA256 (go_modules/github.com/junegunn/go-shellwords/@v/v0.0.0-20250127100254-2aa3b3277741.zip) = mMXEQQ1VXRJotASN3ZrK+SVmD7GeZddGpw8LpcYwhhY=
 SHA256 (go_modules/github.com/lucasb-eyer/go-colorful/@v/v1.2.0.mod) = hPnDjpiEqwE8g3yxau4TlQDT1cbMqwJDmIHbLs8o9mA=
 SHA256 (go_modules/github.com/lucasb-eyer/go-colorful/@v/v1.2.0.zip) = eNXQ4HN/D1S77Xe236hH2MhxvtJmip3EQyjHw0Ea2hA=
 SHA256 (go_modules/github.com/mattn/go-isatty/@v/v0.0.20.mod) = Huq+8bTZjbc8bCBzKJFjZJvJoERVKsqGudWS/oTqocg=
@@ -93,7 +93,7 @@ SHA256 (go_modules/golang.org/x/tools/@v/v0.21.1-0.20240508182429-e35e4ccd0d2d.z
 SHA256 (go_modules/golang.org/x/tools/@v/v0.6.0.mod) = gw7Xjc0+mSfEEuJkEjAwhEd0nVE9MQJNJ24kQ7IBZgk=
 SHA256 (go_modules/golang.org/x/xerrors/@v/v0.0.0-20190717185122-a985d3407aa7.mod) = ql4+ybt7n2gWCe+sAZ2d4ae6dxkkj/Hqon54iC2z1/U=
 SHA256 (go_modules/golang.org/x/xerrors/@v/v0.0.0-20190717185122-a985d3407aa7.zip) = xOnwY8/tVGyQ8AqWV96sT5FaiZT4y+bb0/GOeeuDAs8=
-SIZE (fzf-0.58.0.zip) = 358966
+SIZE (fzf-0.59.0.zip) = 373577
 SIZE (go_modules/github.com/charlievieth/fastwalk/@v/v1.0.9.mod) = 92
 SIZE (go_modules/github.com/charlievieth/fastwalk/@v/v1.0.9.zip) = 67891
 SIZE (go_modules/github.com/gdamore/encoding/@v/v1.0.1.mod) = 78
@@ -102,8 +102,8 @@ SIZE (go_modules/github.com/gdamore/tcell/v2/@v/v2.8.1.mod) = 298
 SIZE (go_modules/github.com/gdamore/tcell/v2/@v/v2.8.1.zip) = 274137
 SIZE (go_modules/github.com/google/go-cmp/@v/v0.6.0.mod) = 41
 SIZE (go_modules/github.com/google/go-cmp/@v/v0.6.0.zip) = 129773
-SIZE (go_modules/github.com/junegunn/go-shellwords/@v/v0.0.0-20240813092932-a62c48c52e97.mod) = 50
-SIZE (go_modules/github.com/junegunn/go-shellwords/@v/v0.0.0-20240813092932-a62c48c52e97.zip) = 10179
+SIZE (go_modules/github.com/junegunn/go-shellwords/@v/v0.0.0-20250127100254-2aa3b3277741.mod) = 50
+SIZE (go_modules/github.com/junegunn/go-shellwords/@v/v0.0.0-20250127100254-2aa3b3277741.zip) = 10171
 SIZE (go_modules/github.com/lucasb-eyer/go-colorful/@v/v1.2.0.mod) = 51
 SIZE (go_modules/github.com/lucasb-eyer/go-colorful/@v/v1.2.0.zip) = 958042
 SIZE (go_modules/github.com/mattn/go-isatty/@v/v0.0.20.mod) = 76
