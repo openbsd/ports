@@ -3,7 +3,7 @@
 Index: scripts/genie.lua
 --- scripts/genie.lua.orig
 +++ scripts/genie.lua
-@@ -810,7 +810,6 @@ end
+@@ -822,7 +822,6 @@ end
  -- if we are optimizing, include optimization options
  if _OPTIONS["OPTIMIZE"] then
  	buildoptions {

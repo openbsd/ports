@@ -1,7 +1,7 @@
 Index: makefile
 --- makefile.orig
 +++ makefile
-@@ -216,7 +216,7 @@ GENIEOS := freebsd
+@@ -215,7 +215,7 @@ GENIEOS := freebsd
  endif
  ifeq ($(firstword $(filter OpenBSD,$(UNAME))),OpenBSD)
  OS := openbsd
