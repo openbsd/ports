@@ -1,3 +1,5 @@
+BROKEN-sparc64 = "ICUTransService.hpp does not exist" while packaging
+
 COMMENT =	validating XML parser written in a portable subset of C++
 
 DISTNAME =	xerces-c-3.2.5
