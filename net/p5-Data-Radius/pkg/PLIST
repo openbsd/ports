@@ -1,0 +1,13 @@
+${P5SITE}/Data/Radius/
+${P5SITE}/Data/Radius.pm
+${P5SITE}/Data/Radius/Constants.pm
+${P5SITE}/Data/Radius/Decode.pm
+${P5SITE}/Data/Radius/Dictionary.pm
+${P5SITE}/Data/Radius/DictionaryParser.pm
+${P5SITE}/Data/Radius/Encode.pm
+${P5SITE}/Data/Radius/Packet.pm
+${P5SITE}/Data/Radius/Util.pm
+@man man/man3p/Data::Radius.3p
+@man man/man3p/Data::Radius::Constants.3p
+@man man/man3p/Data::Radius::Dictionary.3p
+@man man/man3p/Data::Radius::Packet.3p
