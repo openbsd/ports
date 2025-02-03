@@ -1,3 +1,5 @@
+BROKEN-sparc64 = undefined reference to `std::filesystem::__cxx11::path::*
+
 COMMENT=	FTS indexer for grommunio-web
 
 V=		1.0
