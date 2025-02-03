@@ -1,3 +1,5 @@
+BROKEN-sparc64 = undefined reference to std::filesystem::__cxx11::path::_M_split_cmpts()
+
 COMMENT =	engine recreation for Heroes of Might and Magic 2
 
 DIST_TUPLE =	github ihhub fheroes2 1.1.4 .
