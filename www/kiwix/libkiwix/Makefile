@@ -23,4 +23,6 @@ LIB_DEPENDS =		archivers/libzim \
 
 CONFIGURE_ENV =		CPPFLAGS=-I${LOCALBASE}/include
 
+CONFIGURE_ARGS =	-Dwerror=false
+
 .include <bsd.port.mk>
