@@ -16,7 +16,7 @@ PERMIT_PACKAGE=	Yes
 # https://www.astro.com/swisseph/swephinfo_e.htm
 WANTLIB += X11 c m
 
-# C++ and TLS
+# C++ (despite not link standard C++ lib) and TLS
 COMPILER=	base-clang ports-gcc
 
 SITES=		https://www.astrolog.org/ftp/
