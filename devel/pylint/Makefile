@@ -4,7 +4,7 @@ COMMENT=		lint-like code checker for Python code
 MODPY_DISTV=	3.1.0
 DISTNAME=	pylint-${MODPY_DISTV}
 PKGNAME=	pylint3-${MODPY_DISTV}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	devel
 
@@ -23,7 +23,7 @@ MODPY_PYBUILD=	setuptools
 RUN_DEPENDS=	devel/py-dill \
 		sysutils/py-platformdirs \
 		devel/py-astroid>=3.1.0,<3.2.0 \
-		devel/py-isort<6 \
+		devel/py-isort<7 \
 		devel/py-mccabe<0.8 \
 		textproc/py-tomlkit \
 		devel/py-typing-extensions
