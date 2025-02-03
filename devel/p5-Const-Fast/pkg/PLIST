@@ -1,0 +1,3 @@
+${P5SITE}/Const/
+${P5SITE}/Const/Fast.pm
+@man man/man3p/Const::Fast.3p
