@@ -621,6 +621,7 @@
      SUBDIR += p5-Config-Simple
      SUBDIR += p5-Config-Std
      SUBDIR += p5-Config-Tiny
+     SUBDIR += p5-Const-Fast
      SUBDIR += p5-Context-Preserve
      SUBDIR += p5-Coro
      SUBDIR += p5-Curses
