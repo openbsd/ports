@@ -29,5 +29,6 @@ lib/python${MODPY_VERSION}/site-packages/hpack/hpack.py
 lib/python${MODPY_VERSION}/site-packages/hpack/huffman.py
 lib/python${MODPY_VERSION}/site-packages/hpack/huffman_constants.py
 lib/python${MODPY_VERSION}/site-packages/hpack/huffman_table.py
+lib/python${MODPY_VERSION}/site-packages/hpack/py.typed
 lib/python${MODPY_VERSION}/site-packages/hpack/struct.py
 lib/python${MODPY_VERSION}/site-packages/hpack/table.py

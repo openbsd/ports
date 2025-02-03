@@ -1,9 +1,8 @@
 COMMENT =		pure-Python HTTP/2 Header Encoding
 
-MODPY_DISTV =	4.0.0
+MODPY_DISTV =		4.1.0
 DISTNAME =		hpack-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		www
 
