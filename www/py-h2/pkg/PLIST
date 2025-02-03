@@ -36,6 +36,7 @@ lib/python${MODPY_VERSION}/site-packages/h2/errors.py
 lib/python${MODPY_VERSION}/site-packages/h2/events.py
 lib/python${MODPY_VERSION}/site-packages/h2/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/h2/frame_buffer.py
+lib/python${MODPY_VERSION}/site-packages/h2/py.typed
 lib/python${MODPY_VERSION}/site-packages/h2/settings.py
 lib/python${MODPY_VERSION}/site-packages/h2/stream.py
 lib/python${MODPY_VERSION}/site-packages/h2/utilities.py
