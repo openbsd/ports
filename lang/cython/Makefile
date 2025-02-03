@@ -1,10 +1,10 @@
 COMMENT =		optimising static compiler for Python and Cython
 
-MODPY_DISTV =	3.0.11
+MODPY_DISTV =		3.0.11
 DISTNAME =		cython-${MODPY_DISTV}
 PKGNAME =		py-cython-${MODPY_DISTV}
 CATEGORIES =		lang
-REVISION =		0
+REVISION =		1
 
 EPOCH =			0
 
@@ -21,8 +21,11 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
 BUILD_DEPENDS =		devel/py-setuptools_git
+TEST_DEPENDS =		math/py-numpy
 
-TEST_DEPENDS +=		math/py-numpy
+# not needed for all use cases, but problems seen with DPB if Pythran
+# is installed and then junked while Cython runs.
+RUN_DEPENDS =		lang/pythran
 
 PORTHOME =		${WRKDIR}
 
