@@ -368,6 +368,7 @@
      SUBDIR += p5-Chatbot-Eliza
      SUBDIR += p5-DNS-ZoneParse
      SUBDIR += p5-Danga-Socket
+     SUBDIR += p5-Data-Radius
      SUBDIR += p5-Event-RPC
      SUBDIR += p5-Filesys-Virtual-DAAP
      SUBDIR += p5-GRID-Machine
