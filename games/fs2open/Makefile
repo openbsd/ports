@@ -5,7 +5,7 @@ COMMENT =	open source game engine based on FreeSpace 2
 
 V =		23.2.1
 PKGNAME =	fs2open-${V}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	games
 
