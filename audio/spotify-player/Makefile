@@ -18,8 +18,12 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODCARGO_WANTLIB} crypto dbus-1 m portaudio ssl
 
-MODULES =		devel/cargo
-BUILD_DEPENDS =		devel/llvm/18
+MODULES =		devel/cargo \
+			lang/clang
+
+# needed by the build script of aws-lc-sys
+BUILD_DEPENDS =		devel/cmake
+
 LIB_DEPENDS =		audio/portaudio-svn \
 			x11/dbus,-main
 
@@ -27,8 +31,9 @@ SEPARATE_BUILD =	Yes
 
 CONFIGURE_STYLE =	cargo
 
-# same branch as MODCLANG_VERSION used by lang/rust
-MAKE_ENV =		LIBCLANG_PATH=${LOCALBASE}/llvm18/lib
+# libclang needed for bindgen used from aws-lc-sys
+MAKE_ENV =		LIBCLANG_PATH=/usr/local/llvm${MODCLANG_VERSION}/lib
+MODCLANG_COMPILER_LINKS = no
 
 MODCARGO_NO_DEFAULT_FEATURES = Yes
 MODCARGO_FEATURES =	portaudio-backend media-control fzf

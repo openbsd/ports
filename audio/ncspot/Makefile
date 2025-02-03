@@ -13,6 +13,7 @@ COMMENT =		ncurses Spotify client
 GH_ACCOUNT =		hrkfdn
 GH_PROJECT =		ncspot
 GH_TAGNAME =		v1.2.1
+REVISION =		0
 
 CATEGORIES =		audio
 
@@ -21,13 +22,18 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		${MODCARGO_WANTLIB} crypto curses dbus-1 m portaudio ssl
 
-MODULES =		devel/cargo
+MODULES =		devel/cargo \
+			lang/clang
+
+# Needed by the build script of aws-lc-sys
+BUILD_DEPENDS =		devel/cmake
+
 LIB_DEPENDS=		audio/portaudio-svn \
 			x11/dbus,-main
 
-# same branch as MODCLANG_VERSION used by lang/rust
-BUILD_DEPENDS =		devel/llvm/18
-MAKE_ENV =		LIBCLANG_PATH=/usr/local/llvm18/lib
+# libclang needed for bindgen used from aws-lc-sys
+MAKE_ENV =		LIBCLANG_PATH=/usr/local/llvm${MODCLANG_VERSION}/lib
+MODCLANG_COMPILER_LINKS = no
 
 SEPARATE_BUILD =	Yes
 NO_TEST =		Yes
