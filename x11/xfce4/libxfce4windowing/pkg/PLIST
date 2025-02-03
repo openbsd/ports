@@ -95,6 +95,7 @@ share/locale/ga/LC_MESSAGES/libxfce4windowing.mo
 share/locale/gl/LC_MESSAGES/libxfce4windowing.mo
 share/locale/he/LC_MESSAGES/libxfce4windowing.mo
 share/locale/hr/LC_MESSAGES/libxfce4windowing.mo
+share/locale/hu/LC_MESSAGES/libxfce4windowing.mo
 share/locale/id/LC_MESSAGES/libxfce4windowing.mo
 share/locale/ie/LC_MESSAGES/libxfce4windowing.mo
 share/locale/it/LC_MESSAGES/libxfce4windowing.mo
@@ -110,6 +111,7 @@ share/locale/pt/LC_MESSAGES/libxfce4windowing.mo
 share/locale/pt_BR/LC_MESSAGES/libxfce4windowing.mo
 share/locale/ro/LC_MESSAGES/libxfce4windowing.mo
 share/locale/ru/LC_MESSAGES/libxfce4windowing.mo
+share/locale/sk/LC_MESSAGES/libxfce4windowing.mo
 share/locale/sl/LC_MESSAGES/libxfce4windowing.mo
 share/locale/sq/LC_MESSAGES/libxfce4windowing.mo
 share/locale/sr/LC_MESSAGES/libxfce4windowing.mo

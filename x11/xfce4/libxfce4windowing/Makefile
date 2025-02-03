@@ -1,7 +1,7 @@
 COMMENT=	Xfce4 windowing library
 
 XFCE_PROJECT=	libxfce4windowing
-REVISION=	0
+XFCE_VERSION=	4.20.2
 
 SHARED_LIBS +=  xfce4windowing-0          0.0 # 0.0
 SHARED_LIBS +=  xfce4windowingui-0        0.0 # 0.0
