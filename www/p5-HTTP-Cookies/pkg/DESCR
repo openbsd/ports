@@ -1,1 +1,3 @@
-HTTP Cookies jars
+This class is for objects that represent a "cookie jar" -- that is, a
+database of all the HTTP cookies that a given LWP::UserAgent object knows
+about.
