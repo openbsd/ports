@@ -15,8 +15,7 @@ FIX_EXTRACT_PERMISSIONS =	Yes
 
 RUN_DEPENDS =		devel/p5-Sub-Exporter-Progressive>=0.001007
 
-TEST_DEPENDS =		devel/p5-Test-Fatal \
-			devel/p5-Test-Script>=1.05
+TEST_DEPENDS =		devel/p5-Test-Fatal
 
 CONFIGURE_STYLE =	modbuild tiny
 
