@@ -1,9 +1,8 @@
 COMMENT =	check Uniform Resource Identifiers
 
-DISTNAME =	Test-URI-1.085
+DISTNAME =	Test-URI-1.086
 
 CATEGORIES =	devel
-
 
 # Artistic 2.0
 PERMIT_PACKAGE =	Yes
