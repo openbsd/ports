@@ -1,3 +1,5 @@
+BROKEN-sparc64 = is not a constant expression
+
 COMMENT =	abseil common libraries (C++)
 CATEGORIES =	devel
 
