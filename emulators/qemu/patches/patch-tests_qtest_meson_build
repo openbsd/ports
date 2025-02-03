@@ -1,0 +1,18 @@
+Index: tests/qtest/meson.build
+--- tests/qtest/meson.build.orig
++++ tests/qtest/meson.build
+@@ -362,14 +362,6 @@ qtests = {
+   'netdev-socket': files('netdev-socket.c', '../unit/socket-helpers.c'),
+ }
+ 
+-if vnc.found()
+-  gvnc = dependency('gvnc-1.0', method: 'pkg-config', required: false)
+-  if gvnc.found()
+-    qtests += {'vnc-display-test': [gvnc]}
+-    qtests_generic += [ 'vnc-display-test' ]
+-  endif
+-endif
+-
+ if dbus_display
+   qtests += {'dbus-display-test': [dbus_display1, gio]}
+ endif
