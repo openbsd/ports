@@ -1,7 +1,7 @@
 Index: variable.c
 --- variable.c.orig
 +++ variable.c
-@@ -1110,7 +1110,7 @@ void variable_set(const wchar_t *name, variable_T *var
+@@ -1107,7 +1107,7 @@ void variable_set(const wchar_t *name, variable_T *var
                      && var->v_value != NULL) {
                  unsigned long seed;
                  if (xwcstoul(var->v_value, 0, &seed)) {

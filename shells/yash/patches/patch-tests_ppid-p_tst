@@ -1,0 +1,12 @@
+Index: tests/ppid-p.tst
+--- tests/ppid-p.tst.orig
++++ tests/ppid-p.tst
+@@ -4,7 +4,7 @@ posix="true"
+ 
+ test_OE -e 0 'PPID is parent process ID'
+ echo $PPID >variable.out
+-echo $(ps -o ppid= $$) >ps.out
++echo $(ps -o ppid= -p $$) >ps.out
+ diff variable.out ps.out
+ __IN__
+ 
