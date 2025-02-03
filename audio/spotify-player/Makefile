@@ -1,3 +1,5 @@
+BROKEN-sparc64 = ring-core/target.h:64:2: error: #error Unknown target CPU
+
 # missing landing pads and xonly violations in aws-lc-{rs,sys}
 # Remove as soon as librespot switches back to ring as rustls backend
 USE_NOBTCFI =		Yes
