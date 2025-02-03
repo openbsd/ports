@@ -1,9 +1,9 @@
 Index: bin/solr.in.sh
 --- bin/solr.in.sh.orig
 +++ bin/solr.in.sh
-@@ -101,13 +101,16 @@
- #SOLR_OPTS="$SOLR_OPTS -Dsolr.autoCommit.maxTime=60000"
- #SOLR_OPTS="$SOLR_OPTS -Dsolr.clustering.enabled=true"
+@@ -110,13 +110,16 @@
+ # A naming convention is that SOLR_FOO_BAR maps to solr.foo.bar
+ #SOLR_CLUSTERING_ENABLED=true
  
 +# Bind only to localhost by default:
 +SOLR_OPTS="$SOLR_OPTS -Djetty.host=localhost"
@@ -20,7 +20,7 @@ Index: bin/solr.in.sh
  
  # Path to a directory that Solr will use as root for data folders for each core.
  # If not set, defaults to <instance_dir>/data. Overridable per core through 'dataDir' core property
-@@ -116,14 +119,14 @@
+@@ -125,14 +128,14 @@
  # Solr provides a default Log4J configuration xml file in server/resources
  # however, you may want to customize the log settings and file appender location
  # so you can point the script to use a different log4j2.xml file
