@@ -11,7 +11,7 @@ Index: lib/sigsegv.c
  #  if defined __powerpc64__ || defined __powerpc64_elfv2__ /* 64-bit */
  #   define SIGSEGV_FAULT_STACKPOINTER  ((ucontext_t *) ucp)->uc_mcontext.gp_regs[1]
  #  else /* 32-bit */
-@@ -608,7 +607,11 @@ int libsigsegv_version = LIBSIGSEGV_VERSION;
+@@ -612,7 +611,11 @@ int libsigsegv_version = LIBSIGSEGV_VERSION;
  /* See the definition of 'struct sigcontext' and 'struct trapframe' in
     openbsd-src/sys/arch/powerpc/include/signal.h.  */
  
