@@ -1,6 +1,6 @@
 COMMENT=	smartcard package for Python
 
-MODPY_DISTV=	2.2.0
+MODPY_DISTV=	2.2.1
 DISTNAME=	pyscard-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -12,9 +12,10 @@ HOMEPAGE=	https://pyscard.sourceforge.io/
 PERMIT_PACKAGE= Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
+
+MODPY_PYTEST_ARGS= test
 
 BUILD_DEPENDS=	devel/swig \
 		security/pcsc-lite
