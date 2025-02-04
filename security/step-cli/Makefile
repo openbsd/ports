@@ -1,11 +1,11 @@
-BROKEN =	syscall problems; 0.26.1 is also affected
+BROKEN =	syscall problems
 
 #BROKEN-i386 = ../../../go/pkg/mod/github.com/newrelic/go-agent/v3@v3.18.0/internal/utilization/utilization.go:214:25: undefined: sysinfo.PhysicalMemoryBytes
 #BROKEN-aarch64 = ../../../go/pkg/mod/github.com/newrelic/go-agent/v3@v3.18.0/internal/utilization/utilization.go:214:25: undefined: sysinfo.PhysicalMemoryBytes
 
 COMMENT =	swiss army knife for working with X509, OAuth, JWT, OATH OTP
 
-V =		0.25.1
+V =		0.28.2
 MODGO_MODNAME =	github.com/smallstep/cli
 MODGO_VERSION =	v${V}
 DISTNAME =	step-cli-${V}
