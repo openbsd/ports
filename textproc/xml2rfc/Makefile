@@ -1,8 +1,11 @@
 COMMENT=	convert memos written in XML to the RFC format
 
-MODPY_DISTV=	3.23.0
-DISTNAME=	xml2rfc-${MODPY_DISTV}
-REVISION=	1
+# XXX wrong ver upstream
+MODPY_DISTV=	3.25.0
+GH_ACCOUNT=	ietf-tools
+GH_PROJECT=	xml2rfc
+GH_TAGNAME=	v3.26.0
+#${MODPY_DISTV}
 
 CATEGORIES=	textproc
 
@@ -12,12 +15,10 @@ HOMEPAGE=	https://github.com/ietf-tools/xml2rfc
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 MODPY_PYTEST_ARGS= test.py
 
-# from requirements.txt
+# from pyproject.toml
 RUN_DEPENDS=	sysutils/py-platformdirs \
 		devel/py-configargparse \
 		geo/py-google-i18n-address>=3 \
