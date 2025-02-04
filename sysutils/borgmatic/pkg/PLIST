@@ -144,6 +144,8 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}list.${M
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}list.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}mount.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}mount.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}passcommand.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}passcommand.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}pattern.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}pattern.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/${MODPY_PYCACHE}prune.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -180,6 +182,7 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/flags.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/info.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/list.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/mount.py
+lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/passcommand.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/pattern.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/prune.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/borg/repo_create.py
@@ -268,6 +271,11 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/${MODPY_PYCACHE}command
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/${MODPY_PYCACHE}dispatch.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/${MODPY_PYCACHE}dispatch.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/command.py
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/credential/
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/credential/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/credential/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/credential/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/credential/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/${MODPY_PYCACHE}/
