@@ -2,6 +2,7 @@ COMMENT =	portable C compiler
 
 DISTNAME =	pcc-${DISTVER}
 PKGNAME =	pcc-${PKGVER}
+REVISION =	0
 
 WANTLIB += c
 

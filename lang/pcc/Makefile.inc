@@ -19,6 +19,10 @@ HOMEPAGE ?=	http://pcc.ludd.ltu.se/
 # BSD
 PERMIT_PACKAGE =	Yes
 
+# do not include OSREV
+CONFIG ?=		${MACHINE_ARCH:S/amd64/x86_64/}-unknown-openbsd
+
 CONFIGURE_STYLE ?=	gnu
+CONFIGURE_ARGS ?=	--build=${CONFIG}
 
 NO_TEST ?=		Yes
