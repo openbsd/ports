@@ -175,16 +175,12 @@ share/doc/py-paramiko/_static/custom.css
 share/doc/py-paramiko/_static/doctools.js
 share/doc/py-paramiko/_static/documentation_options.js
 share/doc/py-paramiko/_static/file.png
-share/doc/py-paramiko/_static/jquery-3.5.1.js
-share/doc/py-paramiko/_static/jquery.js
 share/doc/py-paramiko/_static/language_data.js
 share/doc/py-paramiko/_static/minus.png
 share/doc/py-paramiko/_static/plus.png
 share/doc/py-paramiko/_static/pygments.css
 share/doc/py-paramiko/_static/searchtools.js
 share/doc/py-paramiko/_static/sphinx_highlight.js
-share/doc/py-paramiko/_static/underscore-1.13.1.js
-share/doc/py-paramiko/_static/underscore.js
 share/doc/py-paramiko/api/
 share/doc/py-paramiko/api/agent.html
 share/doc/py-paramiko/api/auth.html

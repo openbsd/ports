@@ -1,29 +1,28 @@
 COMMENT =	low-level pure Python implementation of SSHv2
 
-MODPY_DISTV =	3.5.0
-DISTNAME =		paramiko-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-CATEGORIES =		security
-REVISION =		0
+MODPY_DISTV =	3.5.1
+DISTNAME =	paramiko-${MODPY_DISTV}
+PKGNAME =	py-${DISTNAME}
+CATEGORIES =	security
 
-HOMEPAGE =		https://www.paramiko.org/
+HOMEPAGE =	https://www.paramiko.org/
 
 # LGPL
 PERMIT_PACKAGE =	Yes
 
-MODPY_PI =		Yes
+MODPY_PI =	Yes
 
-MODULES =		lang/python
+MODULES =	lang/python
 
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =	setuptools
 
-RUN_DEPENDS =		devel/py-asn1 \
-			security/py-bcrypt \
-			security/py-cryptography \
-			security/py-PyNaCl
-TEST_DEPENDS =		devel/py-mock \
-			devel/py-invoke \
-			textproc/py-icecream
+RUN_DEPENDS =	devel/py-asn1 \
+		security/py-bcrypt \
+		security/py-cryptography \
+		security/py-PyNaCl
+TEST_DEPENDS =	devel/py-mock \
+		devel/py-invoke \
+		textproc/py-icecream
 
 MODPY_ADJ_FILES =	demos/*.py
 
