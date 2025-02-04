@@ -443,6 +443,7 @@ lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/global_wrapper.j
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/greasemonkey_wrapper.js
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/history.js
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/pac_utils.js
+lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/pdfjs_polyfills.js
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/position_caret.js
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/quirks/
 lib/python${MODPY_VERSION}/site-packages/qutebrowser/javascript/quirks/array_at.user.js
