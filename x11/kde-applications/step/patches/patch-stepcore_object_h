@@ -1,0 +1,12 @@
+Index: stepcore/object.h
+--- stepcore/object.h.orig
++++ stepcore/object.h
+@@ -249,7 +249,7 @@ class MetaObject (public)
+ /** Casts between pointers to Object */
+ template<class _Dst, class _Src> // XXX: implement it better
+ _Dst stepcore_cast(_Src src) {
+-    if(!src || !src->metaObject()->template inherits(_Dst())) return NULL;
++    if(!src || !src->metaObject()->inherits(_Dst())) return NULL;
+     return static_cast<_Dst>(src);
+ }
+ 
