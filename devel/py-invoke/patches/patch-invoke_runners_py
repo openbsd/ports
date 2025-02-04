@@ -1,7 +1,7 @@
 Index: invoke/runners.py
 --- invoke/runners.py.orig
 +++ invoke/runners.py
-@@ -320,7 +320,7 @@ class Runner(object):
+@@ -335,7 +335,7 @@ class Runner:
              Default: ``False``.
  
          :param str shell:

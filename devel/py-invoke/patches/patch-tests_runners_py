@@ -1,7 +1,7 @@
 Index: tests/runners.py
 --- tests/runners.py.orig
 +++ tests/runners.py
-@@ -83,7 +83,7 @@ def _expect_platform_shell(shell):
+@@ -81,7 +81,7 @@ def _expect_platform_shell(shell):
      if WINDOWS:
          assert shell.endswith("cmd.exe")
      else:
@@ -9,4 +9,4 @@ Index: tests/runners.py
 +        assert shell == "/bin/sh"
  
  
- def make_tcattrs(cc_is_ints=True, echo=False):
+ def _make_tcattrs(cc_is_ints=True, echo=False):

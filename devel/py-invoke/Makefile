@@ -1,24 +1,22 @@
-COMMENT =	Pythonic task execution
+COMMENT=	Pythonic task execution
 
-MODPY_DISTV =	1.7.3
-
+MODPY_DISTV =	2.2.0
 DISTNAME =	invoke-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
 
-CATEGORIES =	devel
+CATEGORIES=	devel
 
-HOMEPAGE =	https://www.pyinvoke.org/
+HOMEPAGE=	https://www.pyinvoke.org/
 
 # BSD
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =	lang/python
+MODULES=	lang/python
 
-MODPY_PI =	Yes
-MODPY_PYBUILD =	setuptools
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 # requires https://pypi.org/project/invocations/
-NO_TEST =	Yes
+NO_TEST=	Yes
 
 # some failures, possibly related to running under ports test framework
 # with captured stdio etc.
