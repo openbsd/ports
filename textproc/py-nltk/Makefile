@@ -1,15 +1,13 @@
 COMMENT=		Natural Language ToolKit
 
-MODPY_DISTV =	3.8.1
+MODPY_DISTV =		3.9.1
 DISTNAME=		nltk-${MODPY_DISTV}
-EXTRACT_SUFX=		.zip
 PKGNAME=		py-nltk-${MODPY_DISTV}
 CATEGORIES=		textproc
-REVISION=		1
 
 EPOCH =			0
 
-HOMEPAGE=		http://www.nltk.org/
+HOMEPAGE=		https://www.nltk.org/
 
 # Apache License, Version 2.0
 PERMIT_PACKAGE=	Yes
@@ -28,10 +26,9 @@ RUN_DEPENDS=		devel/py-click \
 			sysutils/py-joblib \
 			textproc/py-yaml
 
+# Need NLTK data for tests (run 'python3 -m nltk.downloader all'
+# and copy to ${WRKDIR}/nltk_data).
 TEST_DEPENDS=		devel/pylint
-
-# Need NLTK data for some tests (run python -m nltk.downloader)
-do-test:
-	cd ${WRKSRC}; ${LOCALBASE}/bin/nosetests nltk
+PORTHOME=		${WRKDIR}
 
 .include <bsd.port.mk>

@@ -1,5 +1,5 @@
-@pkgpath textproc/py-nltk,python3
 @conflict py-nltk-*
+@pkgpath textproc/py-nltk,python3
 bin/nltk
 lib/python${MODPY_VERSION}/site-packages/nltk/
 lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_DISTV}.dist-info/
@@ -48,6 +48,8 @@ lib/python${MODPY_VERSION}/site-packages/nltk/${MODPY_PYCACHE}lazyimport.${MODPY
 lib/python${MODPY_VERSION}/site-packages/nltk/${MODPY_PYCACHE}lazyimport.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/${MODPY_PYCACHE}probability.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nltk/${MODPY_PYCACHE}probability.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/nltk/${MODPY_PYCACHE}tabdata.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/nltk/${MODPY_PYCACHE}tabdata.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/${MODPY_PYCACHE}text.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nltk/${MODPY_PYCACHE}text.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nltk/${MODPY_PYCACHE}tgrep.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -697,6 +699,7 @@ lib/python${MODPY_VERSION}/site-packages/nltk/stem/rslp.py
 lib/python${MODPY_VERSION}/site-packages/nltk/stem/snowball.py
 lib/python${MODPY_VERSION}/site-packages/nltk/stem/util.py
 lib/python${MODPY_VERSION}/site-packages/nltk/stem/wordnet.py
+lib/python${MODPY_VERSION}/site-packages/nltk/tabdata.py
 lib/python${MODPY_VERSION}/site-packages/nltk/tag/
 lib/python${MODPY_VERSION}/site-packages/nltk/tag/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/nltk/tag/${MODPY_PYCACHE}/
