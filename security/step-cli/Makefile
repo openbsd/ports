@@ -1,4 +1,5 @@
-BROKEN =	syscall problems
+# quick test to replicate: "step base64"; makeRaw from golang.org/x/term fails
+BROKEN =	syscall problems? "error making raw terminal: function not implemented"
 
 #BROKEN-i386 = ../../../go/pkg/mod/github.com/newrelic/go-agent/v3@v3.18.0/internal/utilization/utilization.go:214:25: undefined: sysinfo.PhysicalMemoryBytes
 #BROKEN-aarch64 = ../../../go/pkg/mod/github.com/newrelic/go-agent/v3@v3.18.0/internal/utilization/utilization.go:214:25: undefined: sysinfo.PhysicalMemoryBytes
