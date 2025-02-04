@@ -1719,7 +1719,7 @@ SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.4.1.zip) = zoD3u+y
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 8ikTVRI4fWZj4fCZmkkiq3CN7UvcgExxzpPj1gK6ld0=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = CZ2G+OBNET1A9KFSzf4AFxFtfv6mjkF6nGRthgJj174=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 7wMf94/5twNuF07vSd+9d0aNxPCvtzpjm2H4qzocxCU=
-SHA256 (minio-v0.0.0-20250120144907-827004cd6d3d.zip) = JAyWBp6xUbQUo1CqyPhhSSRC/12iLfF2ei4cu/oA9dg=
+SHA256 (minio-v0.0.0-20250203210304-712fe1a8dfd6.zip) = BUOIYuhMXI0neNrAaQTf/4MceO089daTvNyeFe38bo0=
 SIZE (go_modules/aead.dev/mem/@v/v0.2.0.mod) = 29
 SIZE (go_modules/aead.dev/mem/@v/v0.2.0.zip) = 19860
 SIZE (go_modules/aead.dev/minisign/@v/v0.2.0.mod) = 222
@@ -3441,4 +3441,4 @@ SIZE (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.4.1.zip) = 329350
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = 133
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 222726
-SIZE (minio-v0.0.0-20250120144907-827004cd6d3d.zip) = 25050534
+SIZE (minio-v0.0.0-20250203210304-712fe1a8dfd6.zip) = 25050957
