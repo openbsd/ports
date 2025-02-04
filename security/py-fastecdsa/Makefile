@@ -1,6 +1,6 @@
 COMMENT =		fast elliptic curve digital signatures
 
-MODPY_DISTV =		3.0.0
+MODPY_DISTV =		3.0.1
 
 GH_ACCOUNT =		AntonKueltz
 GH_PROJECT =		fastecdsa
