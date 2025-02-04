@@ -1,9 +1,8 @@
 COMMENT=	datetime-iterator for cron-like formats
 
-MODPY_DISTV=	2.0.1
+MODPY_DISTV=	6.0.0
 DISTNAME=	croniter-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	sysutils
 
@@ -11,8 +10,8 @@ CATEGORIES=	sysutils
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 RUN_DEPENDS=	devel/py-dateutil \
 		devel/py-tz
