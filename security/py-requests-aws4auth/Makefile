@@ -1,10 +1,8 @@
 COMMENT =		AWS v4 authentication for py-requests
 
-MODPY_DISTV =	1.1.2
-
-DISTNAME =		requests-aws4auth-${MODPY_DISTV}
-PKGNAME =		${MODPY_PY_PREFIX}requests-aws4auth-${MODPY_DISTV}
-REVISION =		1
+MODPY_DISTV =		1.3.1
+DISTNAME =		requests_aws4auth-${MODPY_DISTV}
+PKGNAME =		py-${DISTNAME:S/_/-/g}
 
 CATEGORIES =		security
 
@@ -14,12 +12,10 @@ HOMEPAGE =		https://github.com/tedder/requests-aws4auth
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-
-MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
+MODPY_PI =		Yes
 
-RUN_DEPENDS =		devel/py-six \
-			www/py-requests
+RUN_DEPENDS =		www/py-requests
 
 NO_TEST =		Yes
 
