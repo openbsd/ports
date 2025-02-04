@@ -1,7 +1,7 @@
 COMMENT =	thin SQLite wrapper for Python
 
 # version 3.XX.Y.Z of apsw usually needs sqlite3 of at least 3.XX
-MODPY_DISTV =	3.47.2.0
+MODPY_DISTV =	3.48.0.0
 DISTNAME =	apsw-${MODPY_DISTV}
 PKGNAME =	py-apsw-${MODPY_DISTV}
 CATEGORIES =	databases
