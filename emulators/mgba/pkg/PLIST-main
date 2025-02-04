@@ -196,9 +196,7 @@ share/doc/mGBA/README_ES.md
 share/doc/mGBA/README_ZH_CN.md
 share/doc/mGBA/licenses/
 share/doc/mGBA/licenses/blip_buf.txt
-share/doc/mGBA/licenses/discord-rpc.txt
 share/doc/mGBA/licenses/inih.txt
-share/doc/mGBA/licenses/rapidjson.txt
 share/mgba/
 share/mgba/nointro.dat
 share/mgba/shaders/
