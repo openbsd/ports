@@ -10,9 +10,8 @@ EMBED_LUAJIT =	No
 .endif
 
 COMMENT =	continuation and extension of Vim
-REVISION =	0
 
-DIST_TUPLE =	github neovim neovim v0.10.3 .
+DIST_TUPLE =	github neovim neovim v0.10.4 .
 
 # embedded luajit
 USE_NOBTCFI =	Yes
@@ -204,9 +203,6 @@ pre-configure:
 #
 # Test_language_cmd fails due to:
 # https://github.com/neovim/neovim/issues/19331
-#
-# Test_linebreak_list test fails (test_breakindent.vim)
-#
 do-test:
 	true
 	${SETENV} LC_CTYPE=en_US.UTF-8 \
