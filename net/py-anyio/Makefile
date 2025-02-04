@@ -1,9 +1,9 @@
 COMMENT =		async library on top of asyncio or trio
 
-MODPY_DISTV =	3.7.1
+MODPY_DISTV =		3.7.1
 DISTNAME =		anyio-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		net
 
@@ -19,8 +19,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
 
-RUN_DEPENDS =		devel/py-exceptiongroup \
-			devel/py-sniffio \
+RUN_DEPENDS =		devel/py-sniffio \
 			devel/py-trio \
 			net/py-idna
 
