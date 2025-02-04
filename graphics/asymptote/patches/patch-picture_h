@@ -1,0 +1,19 @@
+Index: picture.h
+--- picture.h.orig
++++ picture.h
+@@ -88,6 +88,7 @@ class picture : public gc { (public)
+ 
+   void render(double size2, const triple &Min, const triple& Max,
+               double perspective, bool remesh) const;
++  __attribute__((optnone))
+   bool shipout3(const string& prefix, const string& format,
+                 double width, double height, double angle, double zoom,
+                 const triple& m, const triple& M, const pair& shift,
+@@ -96,6 +97,7 @@ class picture : public gc { (public)
+                 double *diffuse, double *specular, bool view);
+ 
+   // 3D output
++  __attribute__((optnone))
+   bool shipout3(const string& prefix, const string format);
+ 
+   bool reloadPDF(const string& Viewer, const string& outname) const;

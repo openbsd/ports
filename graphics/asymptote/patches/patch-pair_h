@@ -1,0 +1,27 @@
+Index: pair.h
+--- pair.h.orig
++++ pair.h
+@@ -70,6 +70,7 @@ class pair : public gc { (public)
+   }
+ 
+   // Complex multiplication
++  __attribute__((optnone))
+   friend pair operator* (const pair& z, const pair& w)
+   {
+     return pair(z.x*w.x-z.y*w.y,z.x*w.y+w.x*z.y);
+@@ -108,6 +109,7 @@ class pair : public gc { (public)
+     return *this;
+   }
+ 
++  __attribute__((optnone))
+   friend pair operator/ (const pair &z, double t)
+   {
+     if (t == 0.0)
+@@ -161,6 +163,7 @@ class pair : public gc { (public)
+     return z.angle(warn);
+   }
+ 
++  __attribute__((optnone))
+   friend pair unit(const pair& z)
+   {
+     double scale=z.length();
