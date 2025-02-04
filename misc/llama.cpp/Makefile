@@ -22,7 +22,10 @@ WANTLIB +=		m pthread ${COMPILER_LIBCXX}
 
 MODULES =		devel/cmake
 
+BUILD_DEPENDS =		devel/git
+
 CONFIGURE_ARGS =	-DGGML_CCACHE=Off \
-			-DGGML_NATIVE=Off
+			-DGGML_NATIVE=Off \
+			-DGGML_VULKAN=On
 
 .include <bsd.port.mk>
