@@ -1,7 +1,7 @@
 COMMENT=	graphical frontend for LaTeX (nearly WYSIWYG)
 
-DISTNAME=	lyx-2.4.2
-REVISION=	0
+DISTNAME=	lyx-2.4.3
+PORTROACH=	skipv:2.4.x
 
 CATEGORIES=	print editors
 
@@ -58,12 +58,11 @@ CONFIGURE_ENV+=	PYTHON=${MODPY_BIN} \
 pre-configure:
 	sed -i "s,python -tt,${MODPY_BIN} -tt," \
 		${WRKSRC}/src/support/os.cpp
-	perl -pi -e "s,#! ?/usr/bin/(env )?python,#!${MODPY_BIN}," \
+	perl -pi -e "s,#! ?/usr/bin/(env )?python3?,#!${MODPY_BIN}," \
 		${WRKSRC}/lib/lyx2lyx/lyx2lyx \
-		${WRKSRC}/lib/scripts/listerrors \
-		${WRKSRC}/src/graphics/GraphicsConverter.cpp
+		${WRKSRC}/lib/scripts/listerrors
 	find ${WRKSRC} -name "*.py" -exec \
-		perl -pi -e "s,#! ?/usr/bin/(env )?python,#!${MODPY_BIN}," {} +
+		perl -pi -e "s,#! ?/usr/bin/(env )?python3?,#!${MODPY_BIN}," {} +
 
 post-install:
 	${MODPY_COMPILEALL} ${PREFIX}/share/lyx
