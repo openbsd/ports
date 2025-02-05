@@ -1,5 +1,5 @@
 COMMENT =	user interface library from pwmt
-DISTNAME =	girara-0.4.4
+DISTNAME =	girara-0.4.5
 
 SHARED_LIBS += girara-gtk3               2.0 # 3.1
 
@@ -28,10 +28,11 @@ CONFIGURE_ARGS +=	-Ddocs=disabled \
 COMPILER =	base-clang ports-gcc
 COMPILER_LANGS =	c
 
-TEST_TARGET =	test
-TEST_DEPENDS =	devel/check
-TEST_FLAGS +=	VERBOSE=1
-TEST_FLAGS +=	HOME=${WRKDIR}
-TEST_IS_INTERACTIVE =X11
+# tests now need xvfb-run
+NO_TEST =	Yes
+#TEST_TARGET =	test
+#TEST_FLAGS +=	VERBOSE=1
+#TEST_FLAGS +=	HOME=${WRKDIR}
+#TEST_IS_INTERACTIVE =X11
 
 .include <bsd.port.mk>
