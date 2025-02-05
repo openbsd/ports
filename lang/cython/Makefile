@@ -4,7 +4,7 @@ MODPY_DISTV =		3.0.11
 DISTNAME =		cython-${MODPY_DISTV}
 PKGNAME =		py-cython-${MODPY_DISTV}
 CATEGORIES =		lang
-REVISION =		1
+REVISION =		2
 
 EPOCH =			0
 
@@ -23,12 +23,7 @@ MODPY_PYBUILD =		setuptools
 BUILD_DEPENDS =		devel/py-setuptools_git
 TEST_DEPENDS =		math/py-numpy
 
-# not needed for all use cases, but problems seen with DPB if Pythran
-# is installed and then junked while Cython runs.
-RUN_DEPENDS =		lang/pythran
-
 PORTHOME =		${WRKDIR}
-
 TEST_TARGET =		test
 
 MAKE_ENV +=		PYTHON=${MODPY_BIN}
