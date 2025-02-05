@@ -1,0 +1,6 @@
+Net::ASN provides functions for parsing autonomous system numbers (ASNs)
+as defined in RFC 1771 and extended by RFC4893, also converting between
+formats discussed in RFC5396.
+
+Both an OO implementation (method based) and non-OO (function based) are
+provided for convenience.
