@@ -227,7 +227,8 @@ _MODPY_USERBASE =	${WRKDIR}
 # DPB failure if junking occurs. Add a dep to avoid this. This is
 # conditional to avoid loops (currently seen with py-numpy).
 MODPY_CYTHON_PYTHRAN_RDEP ?= Yes
-.if ${BUILD_DEPENDS:Mlang/cython*} && ${MODPY_CYTHON_PYTHRAN_RDEP} == Yes
+.if defined(BUILD_DEPENDS) && ${BUILD_DEPENDS:Mlang/cython*} && \
+	${MODPY_CYTHON_PYTHRAN_RDEP} == Yes
 BUILD_DEPENDS +=	lang/pythran
 .endif
 
