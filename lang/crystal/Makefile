@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS=	amd64
 
 USE_NOBTCFI =	Yes
 
-V =		1.14.0
+V =		1.15.1
 V_SHARDS =	0.18.0
 V_MOLINILLO =	0.2.0
 
@@ -30,7 +30,7 @@ WANTLIB +=	yaml-0 llvm${MODCLANG_VERSION}/lib/LLVM
 # current version of Crystal there, then checking out the source for that
 # version, applying patches included in this port, and running:
 #
-# 	make crystal FLAGS="--cross-compile --target amd64-unknown-openbsd7.5"
+# 	make crystal FLAGS="--cross-compile --target amd64-unknown-openbsd7.6"
 #
 # The result will be built at .build/crystal.o
 #

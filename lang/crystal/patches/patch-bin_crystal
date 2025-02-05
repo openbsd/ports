@@ -7,12 +7,12 @@ Index: bin/crystal
  
  ################## https://github.com/mkropat/sh-realpath #####################
  #
-@@ -186,6 +186,8 @@ cd "$(realpath "$(pwd)")"
+@@ -188,6 +188,8 @@ esac
  
- if [ -x "$CRYSTAL_DIR/crystal" ]; then
-   __warning_msg "Using compiled compiler at ${CRYSTAL_DIR#"$PWD/"}/crystal"
+ if [ -x "$CRYSTAL_DIR/${CRYSTAL_BIN}" ]; then
+   __warning_msg "Using compiled compiler at ${CRYSTAL_DIR#"$PWD/"}/${CRYSTAL_BIN}"
 +  export LD_LIBRARY_PATH=/usr/local/llvm18/lib
 +  export LLVM_CONFIG=/usr/local/llvm18/bin/llvm-config
-   exec "$CRYSTAL_DIR/crystal" "$@"
- elif !($PARENT_CRYSTAL_EXISTS); then
+   exec "$CRYSTAL_DIR/${CRYSTAL_BIN}" "$@"
+ elif (! $PARENT_CRYSTAL_EXISTS); then
    __error_msg 'You need to have a crystal executable in your path! or set CRYSTAL env variable'
