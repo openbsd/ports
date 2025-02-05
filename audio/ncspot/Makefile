@@ -13,7 +13,7 @@ COMMENT =		ncurses Spotify client
 GH_ACCOUNT =		hrkfdn
 GH_PROJECT =		ncspot
 GH_TAGNAME =		v1.2.1
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		audio
 
@@ -46,6 +46,9 @@ MODCARGO_FEATURES =	cursive/termion-backend \
 			portaudio_backend
 
 .include "crates.inc"
+
+post-patch:
+	cp ${FILESDIR}/cpu_aarch64_openbsd.c ${MODCARGO_VENDOR_DIR}/aws-lc-sys-0.22.0/aws-lc/crypto/fipsmodule/cpucap/
 
 DOCDIR =	${PREFIX}/share/doc/ncspot/
 

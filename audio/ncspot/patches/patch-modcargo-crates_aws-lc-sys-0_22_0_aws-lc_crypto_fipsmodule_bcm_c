@@ -1,0 +1,21 @@
+Index: modcargo-crates/aws-lc-sys-0.22.0/aws-lc/crypto/fipsmodule/bcm.c
+--- modcargo-crates/aws-lc-sys-0.22.0/aws-lc/crypto/fipsmodule/bcm.c.orig
++++ modcargo-crates/aws-lc-sys-0.22.0/aws-lc/crypto/fipsmodule/bcm.c
+@@ -15,6 +15,9 @@
+ #if !defined(_GNU_SOURCE)
+ #define _GNU_SOURCE  // needed for syscall() on Linux.
+ #endif
++#if !defined(_BSD_SOURCE)
++#define _BSD_SOURCE  // needed for arc4random_buf() and bsd-style u_foo types
++#endif
+ 
+ #include <openssl/crypto.h>
+ 
+@@ -77,6 +80,7 @@
+ #include "cpucap/cpu_aarch64_apple.c"
+ #include "cpucap/cpu_aarch64_fuchsia.c"
+ #include "cpucap/cpu_aarch64_linux.c"
++#include "cpucap/cpu_aarch64_openbsd.c"
+ #include "cpucap/cpu_aarch64_win.c"
+ #include "cpucap/cpu_arm_freebsd.c"
+ #include "cpucap/cpu_arm_linux.c"
