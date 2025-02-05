@@ -1,5 +1,5 @@
 rdapper is a simple RDAP client. It uses Net::RDAP to retrieve data
-about internet resources (domain names, IP addresses, and autonymous
+about internet resources (domain names, IP addresses, and autonomous
 systems) and outputs the information in a human-readable format.
 
 You can pass any internet resource as an argument; this may be:
@@ -7,7 +7,7 @@ You can pass any internet resource as an argument; this may be:
 - a "forward" domain name such as example.com
 - a top-level domain such as com
 - a IPv4 or IPv6 address or CIDR prefix, such as 192.168.0.1 or 2001:DB8::/32
-- an Autonymous System Number such as AS65536
+- an Autonomous System Number such as AS65536
 - a "reverse" domain name such as 168.192.in-addr.arpa
 - the URL of an RDAP resource
 - the "tagged" handle of an entity, such as an LIR, registrar, or domain
