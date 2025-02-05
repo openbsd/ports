@@ -8,7 +8,7 @@ GH_PROJECT =		mgba
 GH_TAGNAME =		$V
 PKGNAME-libretro =	libretro-mgba-$V
 
-REVISION-main =		0
+REVISION-main =		1
 REVISION-qt =		0
 REVISION-libretro =	0
 
