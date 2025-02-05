@@ -3,6 +3,7 @@ COMMENT=	character set detector library
 MODPY_DISTV=	3.4.1
 DISTNAME=	charset_normalizer-${MODPY_DISTV}
 PKGNAME=	py-charset-normalizer-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	textproc
 
