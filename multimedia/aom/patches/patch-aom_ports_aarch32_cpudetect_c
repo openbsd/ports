@@ -21,7 +21,7 @@ Index: aom_ports/aarch32_cpudetect.c
 +  elf_aux_info(AT_HWCAP, &hwcap, sizeof(hwcap));
 +#else
    unsigned long hwcap = getauxval(AT_HWCAP);
-+#else
++#endif
  #if HAVE_NEON
    if (hwcap & AOM_AARCH32_HWCAP_NEON) flags |= HAS_NEON;
  #endif  // HAVE_NEON
