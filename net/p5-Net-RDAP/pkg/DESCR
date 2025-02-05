@@ -2,7 +2,7 @@ Net::RDAP provides an interface to the Registration Data Access Protocol
 (RDAP).
 
 RDAP is replacing Whois as the preferred way of obtainining information
-about Internet resources (IP addresses, autonymous system numbers,
+about Internet resources (IP addresses, autonomous system numbers,
 and domain names). As of writing, RDAP is fully supported by Regional
 Internet Registries (who are responsible for the allocation of IP
 addresses and AS numbers) and generic TLD operators (e.g. .com, .org,
