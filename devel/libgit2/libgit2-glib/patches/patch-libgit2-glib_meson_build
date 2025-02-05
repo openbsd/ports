@@ -1,0 +1,30 @@
+From 9c3002bd2f1594901e7d8c2c0edc5c7ce30a9a76 Mon Sep 17 00:00:00 2001
+From: Alberto Fanjul <albertofanjul@gmail.com>
+Date: Mon, 3 Feb 2025 23:46:24 +0100
+Subject: [PATCH] Compatibility changes for libgit2 >=1.8.0
+
+Index: libgit2-glib/meson.build
+--- libgit2-glib/meson.build.orig
++++ libgit2-glib/meson.build
+@@ -12,6 +12,13 @@ ggit_version_h = configure_file(
+         install: true,
+   configuration: version_data)
+ 
++ggit_types_18_h = 'ggit-types-pre18.h'
++if libgit2_version_19_or_more
++  ggit_types_18_h = 'ggit-types-19.h'
++elif libgit2_version_18_or_more
++  ggit_types_18_h = 'ggit-types-18.h'
++endif
++
+ headers = [
+   'ggit-annotated-commit.h',
+   'ggit-blame.h',
+@@ -80,6 +87,7 @@ headers = [
+   'ggit-tree-builder.h',
+   'ggit-tree-entry.h',
+   'ggit-types.h',
++  ggit_types_18_h,
+   ggit_version_h,
+ ]
+ 

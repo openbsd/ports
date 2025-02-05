@@ -1,4 +1,7 @@
-https://gitlab.gnome.org/GNOME/libgit2-glib/-/merge_requests/40
+From 9c3002bd2f1594901e7d8c2c0edc5c7ce30a9a76 Mon Sep 17 00:00:00 2001
+From: Alberto Fanjul <albertofanjul@gmail.com>
+Date: Mon, 3 Feb 2025 23:46:24 +0100
+Subject: [PATCH] Compatibility changes for libgit2 >=1.8.0
 
 Index: libgit2-glib/ggit-cred-ssh-interactive.c
 --- libgit2-glib/ggit-cred-ssh-interactive.c.orig

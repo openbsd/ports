@@ -1,4 +1,7 @@
-https://gitlab.gnome.org/GNOME/libgit2-glib/-/merge_requests/45
+From a95f38cba3e440bb4b418691af60dc9c209ed9ce Mon Sep 17 00:00:00 2001
+From: Antoine Jacoutot <ajacoutot@gnome.org>
+Date: Thu, 2 Jan 2025 14:03:41 +0100
+Subject: [PATCH] Fix definition of GGIT_MICRO_VERSION.
 
 Index: libgit2-glib/ggit-version.h.in
 --- libgit2-glib/ggit-version.h.in.orig

@@ -1,0 +1,28 @@
+From 9c3002bd2f1594901e7d8c2c0edc5c7ce30a9a76 Mon Sep 17 00:00:00 2001
+From: Alberto Fanjul <albertofanjul@gmail.com>
+Date: Mon, 3 Feb 2025 23:46:24 +0100
+Subject: [PATCH] Compatibility changes for libgit2 >=1.8.0
+
+Index: libgit2-glib/ggit-remote-callbacks.c
+--- libgit2-glib/ggit-remote-callbacks.c.orig
++++ libgit2-glib/ggit-remote-callbacks.c
+@@ -18,6 +18,10 @@
+  * along with libgit2-glib. If not, see <http://www.gnu.org/licenses/>.
+  */
+ 
++#include <git2.h>
++#if LIBGIT2_VER_MAJOR > 1 || (LIBGIT2_VER_MAJOR == 1 && LIBGIT2_VER_MINOR >= 8)
++#include <git2/sys/errors.h>
++#endif
+ #include "ggit-remote-callbacks.h"
+ #include "ggit-cred.h"
+ #include "ggit-transfer-progress.h"
+@@ -160,7 +164,7 @@ credentials_wrap (git_cred     **cred,
+ 		{
+ 			if (error)
+ 			{
+-#if LIBGIT2_VER_MAJOR > 0 || (LIBGIT2_VER_MAJOR == 0 && LIBGIT2_VER_MINOR >= 28)
++#if (LIBGIT2_VER_MAJOR > 0 && LIBGIT2_VER_MINOR < 8) || (LIBGIT2_VER_MAJOR == 0 && LIBGIT2_VER_MINOR >= 28)
+ 				git_error_set_str (GIT_ERROR, error->message);
+ #else
+ 				giterr_set_str (GIT_ERROR, error->message);

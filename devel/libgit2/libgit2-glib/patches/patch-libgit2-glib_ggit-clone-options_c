@@ -1,13 +1,36 @@
-https://gitlab.gnome.org/GNOME/libgit2-glib/-/merge_requests/40
+From 9c3002bd2f1594901e7d8c2c0edc5c7ce30a9a76 Mon Sep 17 00:00:00 2001
+From: Alberto Fanjul <albertofanjul@gmail.com>
+Date: Mon, 3 Feb 2025 23:46:24 +0100
+Subject: [PATCH] Compatibility changes for libgit2 >=1.8.0
 
 Index: libgit2-glib/ggit-clone-options.c
 --- libgit2-glib/ggit-clone-options.c.orig
 +++ libgit2-glib/ggit-clone-options.c
-@@ -19,6 +19,7 @@
+@@ -19,6 +19,9 @@
   */
  
  #include <git2.h>
++#if LIBGIT2_VER_MAJOR > 1 || (LIBGIT2_VER_MAJOR == 1 && LIBGIT2_VER_MINOR >= 8)
 +#include <git2/sys/errors.h>
++#endif
  #include <gio/gio.h>
  
  #include "ggit-clone-options.h"
+@@ -149,7 +152,7 @@ create_repository_wrapper (git_repository **out,
+ 
+ 	if (error != NULL)
+ 	{
+-#if LIBGIT2_VER_MAJOR > 0 || (LIBGIT2_VER_MAJOR == 0 && LIBGIT2_VER_MINOR >= 28)
++#if (LIBGIT2_VER_MAJOR > 0 && LIBGIT2_VER_MINOR < 8) || (LIBGIT2_VER_MAJOR == 0 && LIBGIT2_VER_MINOR >= 28)
+ 		git_error_set_str (GIT_ERROR, error->message);
+ #else
+ 		giterr_set_str (GIT_ERROR, error->message);
+@@ -191,7 +194,7 @@ create_remote_wrapper (git_remote     **out,
+ 
+ 	if (error)
+ 	{
+-#if LIBGIT2_VER_MAJOR > 0 || (LIBGIT2_VER_MAJOR == 0 && LIBGIT2_VER_MINOR >= 28)
++#if (LIBGIT2_VER_MAJOR > 0 && LIBGIT2_VER_MINOR < 8) || (LIBGIT2_VER_MAJOR == 0 && LIBGIT2_VER_MINOR >= 28)
+ 		git_error_set_str (GIT_ERROR, error->message);
+ #else
+ 		giterr_set_str (GIT_ERROR, error->message);
