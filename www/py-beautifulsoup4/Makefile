@@ -1,6 +1,6 @@
 COMMENT=	HTML/XML parser that supports invalid markup
 
-MODPY_DISTV=	4.13.1
+MODPY_DISTV=	4.13.3
 DISTNAME=	beautifulsoup4-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
