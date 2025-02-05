@@ -10,6 +10,7 @@ COMMENT =		Spotify TUI client
 GH_ACCOUNT =		aome510
 GH_PROJECT =		spotify-player
 GH_TAGNAME =		v0.20.4
+REVISION =		0
 
 CATEGORIES =		audio
 
@@ -42,6 +43,9 @@ MODCARGO_FEATURES =	portaudio-backend media-control fzf
 MODCARGO_INSTALL_TARGET_PATHS =	./spotify_player
 
 .include "crates.inc"
+
+post-patch:
+	cp ${FILESDIR}/cpu_aarch64_openbsd.c ${MODCARGO_VENDOR_DIR}/aws-lc-sys-0.23.1/aws-lc/crypto/fipsmodule/cpucap/
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/spotify-player
