@@ -1,9 +1,8 @@
 COMMENT=	optional static type checker for Python
 
-MODPY_DISTV=	1.14.1
+MODPY_DISTV=	1.15.0
 DISTNAME=	mypy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	devel
 
