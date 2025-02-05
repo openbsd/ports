@@ -14,7 +14,6 @@ share/easy-rsa/doc/Hacking.md
 share/easy-rsa/doc/Intro-To-PKI.md
 share/easy-rsa/easyrsa
 share/easy-rsa/gpl-2.0.txt
-share/easy-rsa/mktemp.txt
 share/easy-rsa/openssl-easyrsa.cnf
 share/easy-rsa/vars.example
 share/easy-rsa/x509-types/
