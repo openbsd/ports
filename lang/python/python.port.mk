@@ -223,6 +223,14 @@ _MODPY_USERBASE =	${WRKDIR}
 #DPB_PROPERTIES +=	nojunk
 #.endif
 
+# cython picks up pythran at run time in some cases, resulting in
+# DPB failure if junking occurs. Add a dep to avoid this. This is
+# conditional to avoid loops (currently seen with py-numpy).
+MODPY_CYTHON_PYTHRAN_RDEP ?= Yes
+.if ${BUILD_DEPENDS:Mlang/cython*} && ${MODPY_CYTHON_PYTHRAN_RDEP} == Yes
+BUILD_DEPENDS +=	lang/pythran
+.endif
+
 .if ${MODPY_PI:L} == "yes"
 _MODPY_EGG_NAME =	${DISTNAME:S/-${MODPY_DISTV}//}
 MODPY_PI_DIR ?=		${DISTNAME:C/^([a-zA-Z0-9]).*/\1/}/${_MODPY_EGG_NAME}

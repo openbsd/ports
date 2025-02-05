@@ -26,6 +26,11 @@ MODULES=	lang/python
 MODPY_PYBUILD=	mesonpy
 MODPY_PI=	Yes
 
+# cython picks up pythran at runtime, so normally a dependency is
+# enforced via python.port.mk to avoid problems with DPB junking.
+# disable, to avoid a loop: cython -> pythran -> py-numpy -> cython
+MODPY_CYTHON_PYTHRAN_RDEP= No
+
 BUILD_DEPENDS=	devel/gas \
 		lang/cython
 
