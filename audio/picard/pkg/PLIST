@@ -818,6 +818,7 @@ share/locale/kn/LC_MESSAGES/picard.mo
 share/locale/ko/LC_MESSAGES/picard-constants.mo
 share/locale/ko/LC_MESSAGES/picard-countries.mo
 share/locale/ko/LC_MESSAGES/picard.mo
+share/locale/lt/LC_MESSAGES/picard-attributes.mo
 share/locale/lt/LC_MESSAGES/picard-constants.mo
 share/locale/lt/LC_MESSAGES/picard-countries.mo
 share/locale/lt/LC_MESSAGES/picard.mo
@@ -917,7 +918,9 @@ share/locale/zh_CN/LC_MESSAGES/picard.mo
 share/locale/zh_Hans/LC_MESSAGES/picard-attributes.mo
 share/locale/zh_Hans/LC_MESSAGES/picard-constants.mo
 share/locale/zh_Hans/LC_MESSAGES/picard-countries.mo
+share/locale/zh_Hant/LC_MESSAGES/picard-attributes.mo
 share/locale/zh_Hant/LC_MESSAGES/picard-constants.mo
+share/locale/zh_Hant/LC_MESSAGES/picard-countries.mo
 share/locale/zh_TW/LC_MESSAGES/picard-attributes.mo
 share/locale/zh_TW/LC_MESSAGES/picard-countries.mo
 share/locale/zh_TW/LC_MESSAGES/picard.mo
