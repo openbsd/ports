@@ -381,10 +381,12 @@
      SUBDIR += p5-IP-Country
      SUBDIR += p5-IP-Country-DB_File
      SUBDIR += p5-IRC-Utils
+     SUBDIR += p5-LWP-Online
      SUBDIR += p5-MaxMind-DB-Common
      SUBDIR += p5-MaxMind-DB-Reader
      SUBDIR += p5-MaxMind-DB-Reader-XS
      SUBDIR += p5-MaxMind-DB-Writer
+     SUBDIR += p5-Net-ASN
      SUBDIR += p5-Net-Amazon
      SUBDIR += p5-Net-BGP
      SUBDIR += p5-Net-CIDR
@@ -440,6 +442,7 @@
      SUBDIR += p5-Net-Pcap-Reassemble
      SUBDIR += p5-Net-PcapWriter
      SUBDIR += p5-Net-Ping-External
+     SUBDIR += p5-Net-RDAP
      SUBDIR += p5-Net-Radius
      SUBDIR += p5-Net-RawIP
      SUBDIR += p5-Net-SCP
@@ -640,6 +643,7 @@
      SUBDIR += rabbitmq-c
      SUBDIR += radcli
      SUBDIR += rbldnsd
+     SUBDIR += rdapper
      SUBDIR += routinator
      SUBDIR += rpkitouch
      SUBDIR += rrdpit
