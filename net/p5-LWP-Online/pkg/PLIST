@@ -1,0 +1,3 @@
+${P5SITE}/LWP/
+${P5SITE}/LWP/Online.pm
+@man man/man3p/LWP::Online.3p
