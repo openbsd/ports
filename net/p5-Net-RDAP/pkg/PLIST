@@ -1,0 +1,63 @@
+${P5SITE}/Net/RDAP/
+${P5SITE}/Net/RDAP.pm
+${P5SITE}/Net/RDAP/Base.pm
+${P5SITE}/Net/RDAP/EPPStatusMap.pm
+${P5SITE}/Net/RDAP/Error.pm
+${P5SITE}/Net/RDAP/Event.pm
+${P5SITE}/Net/RDAP/Help.pm
+${P5SITE}/Net/RDAP/ID.pm
+${P5SITE}/Net/RDAP/JCard/
+${P5SITE}/Net/RDAP/JCard.pm
+${P5SITE}/Net/RDAP/JCard/Address.pm
+${P5SITE}/Net/RDAP/JCard/Property.pm
+${P5SITE}/Net/RDAP/Link.pm
+${P5SITE}/Net/RDAP/Notice.pm
+${P5SITE}/Net/RDAP/Object/
+${P5SITE}/Net/RDAP/Object.pm
+${P5SITE}/Net/RDAP/Object/Autnum.pm
+${P5SITE}/Net/RDAP/Object/Domain.pm
+${P5SITE}/Net/RDAP/Object/Entity.pm
+${P5SITE}/Net/RDAP/Object/IPNetwork.pm
+${P5SITE}/Net/RDAP/Object/Nameserver.pm
+${P5SITE}/Net/RDAP/Redaction.pm
+${P5SITE}/Net/RDAP/Registry/
+${P5SITE}/Net/RDAP/Registry.pm
+${P5SITE}/Net/RDAP/Registry/IANARegistry/
+${P5SITE}/Net/RDAP/Registry/IANARegistry.pm
+${P5SITE}/Net/RDAP/Registry/IANARegistry/Service.pm
+${P5SITE}/Net/RDAP/Remark.pm
+${P5SITE}/Net/RDAP/SearchResult.pm
+${P5SITE}/Net/RDAP/Service.pm
+${P5SITE}/Net/RDAP/UA.pm
+${P5SITE}/Net/RDAP/Values.pm
+${P5SITE}/Net/RDAP/Variant.pm
+${P5SITE}/Net/RDAP/VariantName.pm
+@man man/man3p/Net::RDAP.3p
+@man man/man3p/Net::RDAP::Base.3p
+@man man/man3p/Net::RDAP::EPPStatusMap.3p
+@man man/man3p/Net::RDAP::Error.3p
+@man man/man3p/Net::RDAP::Event.3p
+@man man/man3p/Net::RDAP::Help.3p
+@man man/man3p/Net::RDAP::ID.3p
+@man man/man3p/Net::RDAP::JCard.3p
+@man man/man3p/Net::RDAP::JCard::Address.3p
+@man man/man3p/Net::RDAP::JCard::Property.3p
+@man man/man3p/Net::RDAP::Link.3p
+@man man/man3p/Net::RDAP::Notice.3p
+@man man/man3p/Net::RDAP::Object.3p
+@man man/man3p/Net::RDAP::Object::Autnum.3p
+@man man/man3p/Net::RDAP::Object::Domain.3p
+@man man/man3p/Net::RDAP::Object::Entity.3p
+@man man/man3p/Net::RDAP::Object::IPNetwork.3p
+@man man/man3p/Net::RDAP::Object::Nameserver.3p
+@man man/man3p/Net::RDAP::Redaction.3p
+@man man/man3p/Net::RDAP::Registry.3p
+@man man/man3p/Net::RDAP::Registry::IANARegistry.3p
+@man man/man3p/Net::RDAP::Registry::IANARegistry::Service.3p
+@man man/man3p/Net::RDAP::Remark.3p
+@man man/man3p/Net::RDAP::SearchResult.3p
+@man man/man3p/Net::RDAP::Service.3p
+@man man/man3p/Net::RDAP::UA.3p
+@man man/man3p/Net::RDAP::Values.3p
+@man man/man3p/Net::RDAP::Variant.3p
+@man man/man3p/Net::RDAP::VariantName.3p
