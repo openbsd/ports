@@ -1,4 +1,4 @@
-V =			0.5.8
+V =			0.5.11
 COMMENT =		document viewer for PDF and other formats with a vi-like UI
 DISTNAME =		zathura-${V}
 CATEGORIES =		textproc x11
@@ -22,7 +22,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/gtk+4,-guic
 LIB_DEPENDS =	databases/sqlite3 \
 		devel/libmagic \
-		x11/girara>=0.4.3 \
+		x11/girara>=0.4.5 \
 		print/texlive/base,-synctex
 
 COMPILER =	base-clang ports-gcc
