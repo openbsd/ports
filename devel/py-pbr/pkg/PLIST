@@ -1,5 +1,5 @@
-@pkgpath devel/py-pbr,python3
 @conflict py-pbr-<4.0.2p2
+@pkgpath devel/py-pbr,python3
 bin/pbr
 lib/python${MODPY_VERSION}/site-packages/pbr/
 lib/python${MODPY_VERSION}/site-packages/pbr-${MODPY_DISTV}.dist-info/
