@@ -1,8 +1,7 @@
 COMMENT =		radically simple IT automation
 
-MODPY_DISTV =	11.1.0
+MODPY_DISTV =		11.2.0
 DISTNAME =		ansible-${MODPY_DISTV}
-REVISION =		0
 
 CATEGORIES =		sysutils
 
