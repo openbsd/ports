@@ -58,6 +58,7 @@ bin/convert_hf_to_gguf.py
 @bin bin/test-tokenizer-0
 @bin bin/test-tokenizer-1-bpe
 @bin bin/test-tokenizer-1-spm
+@bin bin/vulkan-shaders-gen
 include/ggml-alloc.h
 include/ggml-backend.h
 include/ggml-blas.h
@@ -74,7 +75,6 @@ include/ggml.h
 include/gguf.h
 include/llama-cpp.h
 include/llama.h
-lib/cmake/
 lib/cmake/ggml/
 lib/cmake/ggml/ggml-config.cmake
 lib/cmake/ggml/ggml-version.cmake
@@ -83,6 +83,7 @@ lib/cmake/llama/llama-config.cmake
 lib/cmake/llama/llama-version.cmake
 @lib lib/libggml-base.so.${LIBggml-base_VERSION}
 @lib lib/libggml-cpu.so.${LIBggml-cpu_VERSION}
+@lib lib/libggml-vulkan.so.${LIBggml-vulkan_VERSION}
 @lib lib/libggml.so.${LIBggml_VERSION}
 @lib lib/libllama.so.${LIBllama_VERSION}
 @lib lib/libllava_shared.so.${LIBllava_shared_VERSION}
