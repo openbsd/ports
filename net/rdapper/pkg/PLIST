@@ -1,0 +1,4 @@
+bin/rdapper
+${P5SITE}/App/
+${P5SITE}/App/rdapper.pm
+@man man/man3p/App::rdapper.3p
