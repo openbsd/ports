@@ -3,8 +3,9 @@ add proper classpaths for i2p and wrapper
 add library path for wrapper
 set runtime dirs
 
---- installer/resources/wrapper.config.orig	Mon May 25 18:07:54 2020
-+++ installer/resources/wrapper.config	Sat Aug  1 15:07:01 2020
+Index: installer/resources/wrapper.config
+--- installer/resources/wrapper.config.orig
++++ installer/resources/wrapper.config
 @@ -27,7 +27,7 @@
  #
  #********************************************************************
@@ -46,5 +47,5 @@ set runtime dirs
 +wrapper.java.additional.5=-Di2p.dir.router="${DB_DIR}"
 +wrapper.java.additional.5.stripquotes=TRUE
  
- # Prevent the JVM from exporting stats (and thereby causing hundreds of
- # ms long pauses during GC)
+ # Suppress JNI warning in JRE 24+, and eventual restriction
+ # See https://openjdk.org/jeps/472

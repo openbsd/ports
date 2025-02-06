@@ -29,7 +29,6 @@ share/i2p/certificates/family/mibhq.crt
 share/i2p/certificates/family/stormycloud.crt
 share/i2p/certificates/family/volatile.crt
 share/i2p/certificates/news/
-share/i2p/certificates/news/ampernand_at_gmail.com.crt
 share/i2p/certificates/news/echelon_at_mail.i2p.crt
 share/i2p/certificates/news/hankhill19580_at_gmail.com.crt
 share/i2p/certificates/news/zzz_at_mail.i2p.crt
@@ -321,6 +320,7 @@ share/i2p/eepsite/docroot/help/index_el.html
 share/i2p/eepsite/docroot/help/index_es.html
 share/i2p/eepsite/docroot/help/index_fa.html
 share/i2p/eepsite/docroot/help/index_fr.html
+share/i2p/eepsite/docroot/help/index_gan.html
 share/i2p/eepsite/docroot/help/index_hu.html
 share/i2p/eepsite/docroot/help/index_in.html
 share/i2p/eepsite/docroot/help/index_it.html
