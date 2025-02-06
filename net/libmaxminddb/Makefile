@@ -18,9 +18,9 @@ PKGNAME-db =	geolite2-country-${D}
 PKGNAME-city =	geolite2-city-${D}
 PKGNAME-asn =	geolite2-asn-${D}
 DISTFILES.d =	geolite2-data-$D.tar.xz
-REVISION-db =	2
-REVISION-city = 2
-REVISION-asn =  2
+REVISION-db =	3
+REVISION-city = 3
+REVISION-asn =  3
 
 SHARED_LIBS +=	maxminddb	0.0	# 0.7
 
