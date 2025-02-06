@@ -262,7 +262,6 @@
      SUBDIR += p5-Regexp-Assemble
      SUBDIR += p5-Regexp-Common
      SUBDIR += p5-Regexp-DefaultFlags
-     SUBDIR += p5-SWISH-API
      SUBDIR += p5-Search-QueryParser
      SUBDIR += p5-Sort-Versions
      SUBDIR += p5-Sourcecode-Spellchecker
@@ -587,7 +586,6 @@
      SUBDIR += spiff
      SUBDIR += stringtemplate
      SUBDIR += svndumptool
-     SUBDIR += swish-e
      SUBDIR += sword
      SUBDIR += syrics
      SUBDIR += tcpdf
