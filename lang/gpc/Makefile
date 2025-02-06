@@ -3,7 +3,7 @@ NOT_FOR_ARCHS =	aarch64 m88k mips64 powerpc64 riscv64
 
 COMMENT =	GNU Pascal compiler
 DISTNAME =	gpc-20070904
-REVISION =	17
+REVISION =	18
 CATEGORIES =	lang
 
 HOMEPAGE =	https://www.gnu-pascal.de/gpc/h-index.html
@@ -27,6 +27,8 @@ LIB_DEPENDS =	devel/gmp \
 # libgpc doesn't work.
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS = \
+	--build=${CONFIG} \
+	--host=${CONFIG} \
 	--verbose \
 	--disable-nls  \
 	--disable-checking \
@@ -62,7 +64,8 @@ PKG_ARGS += -DPPC=1
 PKG_ARGS += -DPPC=0
 .endif
 
-CONFIG =	${MACHINE_ARCH}-unknown-openbsd${OSREV}
+# do not include OSREV
+CONFIG =	${MACHINE_ARCH}-unknown-openbsd
 SUBST_VARS +=	CONFIG
 
 # We don't really want gcc-4.2.4 laying around...
