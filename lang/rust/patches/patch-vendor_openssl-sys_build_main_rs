@@ -8,7 +8,7 @@ Index: vendor/openssl-sys-0.9.102/build/main.rs
              (3, 9, 0) => ('3', '9', '0'),
              (3, 9, _) => ('3', '9', 'x'),
 -            _ => version_error(),
-+            _ => ('4', '0', 'x'),
++            _ => ('4', '1', 'x'),
          };
  
          println!("cargo:libressl=true");

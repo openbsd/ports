@@ -1,0 +1,13 @@
+https://github.com/sfackler/rust-openssl/pull/2356
+
+Index: vendor/openssl-sys-0.9.102/src/handwritten/ec.rs
+--- vendor/openssl-sys-0.9.102/src/handwritten/ec.rs.orig
++++ vendor/openssl-sys-0.9.102/src/handwritten/ec.rs
+@@ -17,6 +17,7 @@ extern "C" {
+     #[cfg(not(osslconf = "OPENSSL_NO_EC2M"))]
+     pub fn EC_GF2m_simple_method() -> *const EC_METHOD;
+ 
++    #[cfg(not(libressl410))]
+     pub fn EC_GROUP_new(meth: *const EC_METHOD) -> *mut EC_GROUP;
+ 
+     pub fn EC_GROUP_free(group: *mut EC_GROUP);
