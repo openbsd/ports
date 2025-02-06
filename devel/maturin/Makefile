@@ -2,7 +2,7 @@ COMMENT=	develop crates with pyo3, rust-cpython and cffi bindings
 
 GH_ACCOUNT=	PyO3
 GH_PROJECT=	maturin
-GH_TAGNAME=	v1.8.1
+GH_TAGNAME=	v1.8.2
 
 CATEGORIES=	devel
 
