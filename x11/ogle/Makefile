@@ -4,7 +4,7 @@ CATEGORIES =	x11
 
 COMMENT =	DVD player
 DISTNAME =	ogle-0.9.2
-REVISION =	23
+REVISION =	24
 SHARED_LIBS =	dvdcontrol	11.0 \
 		msgevents	8.0
 HOMEPAGE =	http://www.dtek.chalmers.se/groups/dvd/
