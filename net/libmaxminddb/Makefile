@@ -6,7 +6,7 @@ COMMENT-asn =	GeoIP2 GeoLite2 database: IPv4/v6 address to AS number
 V =		1.12.2
 DISTNAME =	libmaxminddb-${V}
 PKGNAME-main =	libmaxminddb-${V}
-REVISION-main =	0
+REVISION-main =	1
 
 # Last version prior to license change
 # https://blog.maxmind.com/2019/12/significant-changes-to-accessing-and-using-geolite2-databases/
