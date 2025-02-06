@@ -1,9 +1,8 @@
 COMMENT=	distribution utilities
 
-MODPY_DISTV=	0.3.7
+MODPY_DISTV=	0.3.9
 DISTNAME=	distlib-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	sysutils
 
@@ -14,11 +13,11 @@ HOMEPAGE=	https://distlib.readthedocs.io/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 # various networks tests fail with PORTS_PRIVSEP
 MODPY_PYTEST=	Yes
+PORTHOME=	${WRKDIR}
 
 .include <bsd.port.mk>
