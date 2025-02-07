@@ -1922,6 +1922,7 @@
      SUBDIR += sharness
      SUBDIR += shellcheck
      SUBDIR += shfmt
+     SUBDIR += shrinkray
      SUBDIR += shtool
      SUBDIR += shunit2
      SUBDIR += silc-toolkit
