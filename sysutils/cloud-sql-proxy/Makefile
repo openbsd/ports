@@ -22,6 +22,6 @@ WANTLIB += c pthread
 MODULES=		lang/go
 
 # .build/gcs_upload.yaml
-MODGO_LDFLAGS +=	-X main.metadataString=openbsd.${_GOARCH}
+MODGO_LDFLAGS +=	-X main.metadataString=openbsd.${MODGO_ARCH}
 
 .include <bsd.port.mk>
