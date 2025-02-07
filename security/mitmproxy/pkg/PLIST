@@ -809,6 +809,7 @@ lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/web/static/vendor.js
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/web/static_viewer.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/web/templates/
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/web/templates/index.html
+lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/web/templates/login.html
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/web/web_columns.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/tools/web/webaddons.py
 lib/python${MODPY_VERSION}/site-packages/mitmproxy/types.py

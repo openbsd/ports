@@ -1,6 +1,6 @@
 COMMENT =		interactive intercepting HTTP proxy
 
-MODPY_DISTV =		11.1.0
+MODPY_DISTV =		11.1.2
 
 DISTNAME =		mitmproxy-${MODPY_DISTV}
 
@@ -20,6 +20,7 @@ MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		www/py-aioquic \
+			security/py-argon2-cffi \
 			www/py-asgiref \
 			archivers/py-brotli \
 			devel/py-certifi \
