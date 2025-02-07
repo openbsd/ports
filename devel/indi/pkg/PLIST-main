@@ -50,6 +50,7 @@ bin/indi_eq500x_telescope
 bin/indi_ioptronHC8406
 @bin bin/indi_ioptron_wheel
 @bin bin/indi_ioptronv3_telescope
+@bin bin/indi_ipx800v4
 @bin bin/indi_lacerta_mfoc_fmc_focus
 @bin bin/indi_lacerta_mfoc_focus
 @bin bin/indi_lakeside_focus
