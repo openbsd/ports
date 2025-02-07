@@ -1,5 +1,6 @@
 Use sio_flush() instead of sio_stop() to improve controls responsiveness.
 
+Report the the actual volume, fixes volume increment/decrement.
 Index: modules/audio_output/sndio.c
 --- modules/audio_output/sndio.c.orig
 +++ modules/audio_output/sndio.c
@@ -12,3 +13,20 @@ Index: modules/audio_output/sndio.c
      sys->started = 0;
      sys->delay = 0;
      sio_start (sys->hdl);
+@@ -276,6 +276,8 @@ static int VolumeSet (audio_output_t *aout, float fvol
+     if (!sys->mute && !sio_setvol (sys->hdl, volume))
+         return -1;
+     sys->volume = volume;
++    aout_VolumeReport (aout, (float)sys->volume / SIO_MAXVOL);
++    aout_MuteReport (aout, sys->volume == 0);
+     return 0;
+ }
+ 
+@@ -287,6 +289,7 @@ static int MuteSet (audio_output_t *aout, bool mute)
+         return -1;
+ 
+     sys->mute = mute;
++    aout_MuteReport (aout, mute);
+     return 0;
+ }
+ 
