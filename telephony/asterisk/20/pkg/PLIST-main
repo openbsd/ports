@@ -414,6 +414,7 @@ lib/asterisk/modules/
 @so lib/asterisk/modules/func_talkdetect.so
 @so lib/asterisk/modules/func_timeout.so
 @so lib/asterisk/modules/func_uri.so
+@so lib/asterisk/modules/func_uuid.so
 @so lib/asterisk/modules/func_version.so
 @so lib/asterisk/modules/func_vmcount.so
 @so lib/asterisk/modules/func_volume.so
