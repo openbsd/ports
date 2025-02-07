@@ -1711,6 +1711,7 @@
      SUBDIR += py-test-subtests
      SUBDIR += py-test-timeout
      SUBDIR += py-test-tornasync
+     SUBDIR += py-test-trio
      SUBDIR += py-test-vcr
      SUBDIR += py-test-xdist
      SUBDIR += py-test-xprocess
