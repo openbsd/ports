@@ -1,9 +1,9 @@
 COMMENT=		Abstract Syntax Notation One structure parser library
 
-DISTNAME=		libtasn1-4.19.0
+DISTNAME=		libtasn1-4.20.0
 CATEGORIES=		security
 
-SHARED_LIBS +=  tasn1                4.2      # 12.3
+SHARED_LIBS +=  tasn1                4.2      # 12.4
 
 HOMEPAGE=		https://www.gnu.org/software/libtasn1/
 
