@@ -1,0 +1,12 @@
+#!/bin/ksh
+
+daemon="${LOCALBASE}/sbin/ergo"
+daemon_user="_ergo"
+daemon_flags="run --conf ${SYSCONFDIR}/ergo.yaml"
+daemon_execdir="${LOCALSTATEDIR}/ergo"
+
+. ${RCDIR}/rc.subr
+
+rc_bg=YES
+
+rc_cmd $1

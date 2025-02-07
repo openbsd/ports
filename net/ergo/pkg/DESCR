@@ -1,0 +1,4 @@
+Ergo is a modern, experimental IRC server written in Go. It's
+designed to be simple to setup and use, and it includes features such as
+UTF-8 nicks and channel names, client accounts with SASL, integrated
+bouncer features, and other assorted IRCv3 support.
