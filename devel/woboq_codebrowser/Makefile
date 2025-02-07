@@ -1,11 +1,11 @@
 COMMENT =	generator for the woboq code browser
 
-DISTNAME =	woboq_codebrowser-2.1pl20231117
+DISTNAME =	woboq_codebrowser-2.1pl20241209
 
 GH_ACCOUNT =	KDAB
 GH_PROJECT =	codebrowser
 # support LLVM version we have in ports
-GH_COMMIT =	1808e96d4c62417952389d536576d53bb6da4053
+GH_COMMIT =	6f78f5ffa6439dae4e5a26ca09841df07d93ab57
 
 CATEGORIES =	devel
 
@@ -22,7 +22,7 @@ HOMEPAGE =	https://woboq.com/codebrowser.html
 PERMIT_PACKAGE =	Yes
 
 # uses pledge()
-WANTLIB =		${COMPILER_LIBCXX} c m llvm16/lib/clang-cpp
+WANTLIB =		${COMPILER_LIBCXX} c m llvm${MODCLANG_VERSION}/lib/clang-cpp
 
 COMPILER =		base-clang ports-clang
 
@@ -30,8 +30,11 @@ MODULES =		devel/cmake \
 			lang/clang
 LIB_DEPENDS =		${MODCLANG_LIB_DEPENDS}
 MODCLANG_RUNDEP =	Yes
+MODCLANG_VERSION =	18
 
 NO_TEST =		Yes
+
+CONFIGURE_ARGS +=	-DLLVM_DIR=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib/cmake/llvm
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/woboq_codebrowser
