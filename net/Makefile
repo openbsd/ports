@@ -95,6 +95,7 @@
      SUBDIR += epic4
      SUBDIR += epic5
      SUBDIR += epic5,python
+     SUBDIR += ergo
      SUBDIR += ettercap
      SUBDIR += ettercap,no_x11
      SUBDIR += exabgp

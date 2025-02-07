@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.457 2025/01/29 17:01:59 pascal Exp $
+$OpenBSD: user.list,v 1.458 2025/02/07 18:44:15 denis Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -409,3 +409,4 @@ id  user		group		port
 898 _icingadb		_icingadb	net/icinga/icingadb
 899 _openhab		_openhab	misc/openhab
 900 _z2m		_z2m		comms/zigbee2mqtt
+901 _ergo		_ergo		net/ergo
