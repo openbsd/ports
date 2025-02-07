@@ -1488,6 +1488,7 @@
      SUBDIR += py-helpdev
      SUBDIR += py-html5lib
      SUBDIR += py-hypothesis
+     SUBDIR += py-hypothesmith
      SUBDIR += py-icalendar
      SUBDIR += py-identify
      SUBDIR += py-immutabledict
@@ -1531,6 +1532,7 @@
      SUBDIR += py-kiwisolver
      SUBDIR += py-lazy-loader
      SUBDIR += py-lazy-object-proxy
+     SUBDIR += py-libcst
      SUBDIR += py-liblarch
      SUBDIR += py-lief
      SUBDIR += py-littleutils
