@@ -2,8 +2,8 @@ COMMENT=	Prometheus exporter for SNMP metrics
 
 # updating: bump V version, "make makesum", "make patch" (fix patches
 # if needed), "make mibs", update M version, "make makesum".
-V=		0.27.0
-M=		0.27.0
+V=		0.28.0
+M=		0.28.0
 GH_ACCOUNT=	prometheus
 GH_PROJECT=	snmp_exporter
 GH_TAGNAME=	v$V
@@ -54,7 +54,7 @@ do-test:
 	    mkdir -p gentest; \
 	    cd gentest; \
 	    cp ../generator.yml .; \
-	    MIBDIRS=+../mibs ${PREFIX}/bin/snmp_generator generate
+	    MIBDIRS=../mibs ${PREFIX}/bin/snmp_generator generate
 
 mibs: patch
 	${_PBUILD} ln -fs ${LOCALBASE}/bin/gtar ${WRKDIR}/bin/tar

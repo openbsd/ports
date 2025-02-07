@@ -20,4 +20,4 @@ Index: generator/generator.yml
 +    #context_name: context
  
  modules:
-   # Default IF-MIB interfaces table with ifIndex.
+   # SNMPv2-MIB for things like sysDescr, sysUpTime, etc.
