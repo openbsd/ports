@@ -1,17 +1,17 @@
 COMMENT=	library for writing opensmtpd filters
 
-V=		0.7
+V=		0.8
 PKGNAME=	libopensmtpd-${V}
 DISTNAME=	libopensmtpd-${V}
 
-SHARED_LIBS=	opensmtpd 0.1
+SHARED_LIBS=	opensmtpd 1.0
 
 CATEGORIES=	mail
-HOMEPAGE=	http://imperialat.at/dev/libopensmtpd
+HOMEPAGE=	https://src.imperialat.at/?action=summary&path=libopensmtpd.git
 
 MAINTAINER=	Martijn van Duren <martijn@openbsd.org>
 
-SITES=		https://distfiles.sigtrap.nl/
+SITES=		https://src.imperialat.at/releases/
 INSTALL_TARGET=	includes install
 
 # ISC
