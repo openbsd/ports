@@ -1,12 +1,10 @@
-# building uses "esbuild" as a node module, which fetches a binary.
-# in the version used (0.21.2) only amd64 is available (and it fails on
-# BTI archs). if upstream updates to newer esbuild this should be able
-# to be removed. https://github.com/Koenkk/zigbee2mqtt/issues/25787
-ONLY_FOR_ARCHS=	amd64
+# building uses "esbuild" as a node module, which fetches a binary
+# (compiled golang). 0.24.2 has aarch64 and amd64.
+ONLY_FOR_ARCHS=	aarch64 amd64
 
 COMMENT=	Zigbee to MQTT bridge
 
-V=		2.0.0
+V=		2.1.1
 GH_ACCOUNT=	Koenkk
 GH_PROJECT=	zigbee2mqtt
 GH_TAGNAME=	$V
