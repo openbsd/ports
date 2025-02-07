@@ -1,6 +1,6 @@
 COMMENT =		RPKI "relying party" software
 
-V =			1.6.5
+V =			1.6.6
 DISTNAME =		fort-$V
 
 CATEGORIES =		net
