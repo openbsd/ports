@@ -24,21 +24,21 @@ BUILD_DEPENDS +=	${MODGO_BUILD_DEPENDS}
 .endif
 
 .if ${MACHINE_ARCH} == "aarch64"
-_GOARCH =	arm64
+MODGO_ARCH =	arm64
 .elif ${MACHINE_ARCH} == "amd64"
-_GOARCH =	amd64
+MODGO_ARCH =	amd64
 .elif ${MACHINE_ARCH} == "arm"
-_GOARCH =	arm
+MODGO_ARCH =	arm
 .elif ${MACHINE_ARCH} == "i386"
-_GOARCH =	386
+MODGO_ARCH =	386
 .elif ${MACHINE_ARCH} == "riscv64"
-_GOARCH =	riscv64
+MODGO_ARCH =	riscv64
 .endif
 
 MODGO_PACKAGE_PATH =	${PREFIX}/go-pkg
-MODGO_PACKAGES =	go-pkg/pkg/openbsd_${_GOARCH}
+MODGO_PACKAGES =	go-pkg/pkg/openbsd_${MODGO_ARCH}
 MODGO_SOURCES =		go-pkg/src
-MODGO_TOOLS =		go-pkg/tool/openbsd_${_GOARCH}
+MODGO_TOOLS =		go-pkg/tool/openbsd_${MODGO_ARCH}
 
 SUBST_VARS +=		MODGO_TOOLS MODGO_PACKAGES MODGO_SOURCES
 
