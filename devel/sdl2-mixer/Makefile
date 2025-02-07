@@ -2,7 +2,7 @@ V =		2.8.0
 COMMENT =	SDL2 multi-channel audio mixer library
 DISTNAME =	SDL2_mixer-${V}
 PKGNAME =	sdl2-mixer-${V}
-REVISION =	1
+REVISION =	2
 CATEGORIES =	devel audio
 
 SHARED_LIBS +=  SDL2_mixer		1.1	# 2.8.0
@@ -30,7 +30,9 @@ LIB_DEPENDS =	audio/libxmp \
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--disable-music-midi-fluidsynth \
 			--disable-music-mod-modplug-shared \
-			--disable-music-opus-shared
+			--disable-music-ogg-stb \
+			--disable-music-opus-shared \
+			--enable-music-ogg-vorbis
 
 USE_GMAKE =	Yes
 
