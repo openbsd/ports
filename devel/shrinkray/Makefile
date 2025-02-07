@@ -30,11 +30,9 @@ TEST_DEPENDS=	devel/py-hypothesis \
 		devel/py-hypothesmith \
 		devel/py-mypy-extensions \
 		devel/py-test-asyncio \
+		devel/py-test-trio \
 		math/minisat \
 		textproc/py-black
-
-# Some tests fail with "Hypothesis doesn't know how to run async
-# test functions" unless py-test-trio is available (not yet imported).
 
 # Tests expect the python interpreter to be `python`.
 #
