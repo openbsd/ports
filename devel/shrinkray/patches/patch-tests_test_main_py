@@ -1,0 +1,34 @@
+Fix invalid permissions in tests.
+
+https://github.com/DRMacIver/shrinkray/pull/17
+
+Index: tests/test_main.py
+--- tests/test_main.py.orig
++++ tests/test_main.py
+@@ -67,7 +67,7 @@ except AssertionError:
+     sys.exit(0)
+     """.strip()
+     )
+-    script.chmod(0x777)
++    script.chmod(0o777)
+ 
+     subprocess.check_call(
+         [
+@@ -103,7 +103,7 @@ if sys.argv[1] != {repr(str(target))}:
+     sys.exit(1)
+     """.strip(), encoding='utf-8'
+     )
+-    script.chmod(0x777)
++    script.chmod(0o777)
+ 
+     subprocess.check_call([script, target])
+ 
+@@ -133,7 +133,7 @@ print("Hello world")
+ sys.exit(1)
+     """.strip(), encoding='utf-8'
+     )
+-    script.chmod(0x777)
++    script.chmod(0o777)
+ 
+     with pytest.raises(subprocess.CalledProcessError) as excinfo:
+         subprocess.run(
