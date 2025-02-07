@@ -1,0 +1,47 @@
+Index: crypto/sm4/asm/sm4-armv8.pl
+--- crypto/sm4/asm/sm4-armv8.pl.orig
++++ crypto/sm4/asm/sm4-armv8.pl
+@@ -113,7 +113,7 @@ ___
+ $code=<<___;
+ #include "arm_arch.h"
+ .arch	armv8-a+crypto
+-.text
++.rodata
+ ___
+ 
+ {{{
+@@ -140,15 +140,18 @@ my ($key0,$key1,$key2,$key3,$key4,$key5,$key6,$key7)=m
+ my ($const0,$const1,$const2,$const3,$const4,$const5,$const6,$const7)=map("v$_",(16..23));
+ my ($fkconst) = ("v24");
+ $code.=<<___;
++.text
+ .globl	${prefix}_set_encrypt_key
+ .type	${prefix}_set_encrypt_key,%function
+ .align	5
+ ${prefix}_set_encrypt_key:
+ 	AARCH64_VALID_CALL_TARGET
+ 	ld1	{$key0.4s},[$key]
+-	adr	$tmp,.Lfk
++	adrp	$tmp,.Lfk
++	add	$tmp,$tmp,:lo12:.Lfk
+ 	ld1	{$fkconst.4s},[$tmp]
+-	adr	$tmp,.Lck
++	adrp	$tmp,.Lck
++	add	$tmp,$tmp,:lo12:.Lck
+ 	ld1	{$const0.4s,$const1.4s,$const2.4s,$const3.4s},[$tmp],64
+ ___
+ 	&rev32($key0, $key0);
+@@ -183,9 +186,11 @@ $code.=<<___;
+ ${prefix}_set_decrypt_key:
+ 	AARCH64_VALID_CALL_TARGET
+ 	ld1	{$key0.4s},[$key]
+-	adr	$tmp,.Lfk
++	adrp	$tmp,.Lfk
++	add	$tmp,$tmp,:lo12:.Lfk
+ 	ld1	{$fkconst.4s},[$tmp]
+-	adr	$tmp, .Lck
++	adrp	$tmp,.Lck
++	add	$tmp,$tmp,:lo12:.Lck
+ 	ld1	{$const0.4s,$const1.4s,$const2.4s,$const3.4s},[$tmp],64
+ ___
+ 	&rev32($key0, $key0);
