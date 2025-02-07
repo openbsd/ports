@@ -1,0 +1,21 @@
+Index: crypto/sm3/asm/sm3-armv8.pl
+--- crypto/sm3/asm/sm3-armv8.pl.orig
++++ crypto/sm3/asm/sm3-armv8.pl
+@@ -136,7 +136,8 @@ ossl_hwsm3_block_data_order:
+ 	ext     $state1.16b, $state1.16b, $state1.16b, #8
+ 	ext     $state2.16b, $state2.16b, $state2.16b, #8
+ 
+-	adr     $constaddr, .Tj
++	adrp    $constaddr, .Tj
++	add     $constaddr, $constaddr, :lo12:.Tj
+ 	ldp     $sconst1, $sconst2, [$constaddr]
+ 
+ .Loop:
+@@ -210,6 +211,7 @@ $code.=<<___;
+ 	ret
+ .size	ossl_hwsm3_block_data_order,.-ossl_hwsm3_block_data_order
+ 
++.rodata
+ .align	3
+ .Tj:
+ .word	0x79cc4519, 0x9d8a7a87
