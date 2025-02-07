@@ -9,7 +9,7 @@ V=		3.3.0
 DISTNAME=	openssl-${V}-quic1
 WRKDIST=	${WRKDIR}/openssl-${DISTNAME}
 EOPENSSL_V=	qopenssl33
-REVISION=	0
+REVISION=	1
 
 SITES=		https://github.com/quictls/openssl/archive/refs/tags/
 PKGNAME=	quictls-${V}
