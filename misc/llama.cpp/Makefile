@@ -1,3 +1,9 @@
+# "error: non-constant-expression cannot be narrowed from type 'int64_t'
+# (aka 'long long') to 'size_t' (aka 'unsigned long') in initializer list",
+# but also this really isn't going to be of much use without large amounts
+# of RAM.
+ONLY_FOR_ARCHS =	${LP64_ARCHS}
+
 COMMENT =		LLM inference system
 
 GH_ACCOUNT =		ggerganov
