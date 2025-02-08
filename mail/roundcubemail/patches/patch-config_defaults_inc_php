@@ -1,13 +1,9 @@
 Index: config/defaults.inc.php
 --- config/defaults.inc.php.orig
 +++ config/defaults.inc.php
-@@ -936,10 +936,10 @@ $config['spellcheck_dictionary'] = false;
- // - 'pspell'  - requires the PHP Pspell module and aspell installed
- // - 'enchant' - requires the PHP Enchant module
- // - 'atd'     - install your own After the Deadline server or check with the people at http://www.afterthedeadline.com before using their API
--// Since Google shut down their public spell checking service, the default settings
-+// Since Google shut down their public spell checking service, the default settings for 'googie'
- // connect to http://spell.roundcube.net which is a hosted service provided by Roundcube.
+@@ -946,7 +946,7 @@ $config['spellcheck_dictionary'] = false;
+ // Since Google shut down their public spell checking service, the default settings
+ // connect to https://spell.roundcube.net which is a hosted service provided by Roundcube.
  // You can connect to any other googie-compliant service by setting 'spellcheck_uri' accordingly.
 -$config['spellcheck_engine'] = 'googie';
 +$config['spellcheck_engine'] = 'pspell';

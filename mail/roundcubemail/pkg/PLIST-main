@@ -1375,6 +1375,7 @@ roundcubemail/plugins/password/drivers/kpasswd.php
 roundcubemail/plugins/password/drivers/ldap.php
 roundcubemail/plugins/password/drivers/ldap_exop.php
 roundcubemail/plugins/password/drivers/ldap_ppolicy.php
+roundcubemail/plugins/password/drivers/ldap_samba_ad.php
 roundcubemail/plugins/password/drivers/ldap_simple.php
 roundcubemail/plugins/password/drivers/mailcow.php
 roundcubemail/plugins/password/drivers/miab.php
