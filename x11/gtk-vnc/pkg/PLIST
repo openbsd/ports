@@ -101,6 +101,7 @@ share/doc/gtk-vnc/method.Display.get_keyboard_grab.html
 share/doc/gtk-vnc/method.Display.get_lossy_encoding.html
 share/doc/gtk-vnc/method.Display.get_name.html
 share/doc/gtk-vnc/method.Display.get_pixbuf.html
+share/doc/gtk-vnc/method.Display.get_pointer_force_visible.html
 share/doc/gtk-vnc/method.Display.get_pointer_grab.html
 share/doc/gtk-vnc/method.Display.get_pointer_local.html
 share/doc/gtk-vnc/method.Display.get_read_only.html
@@ -128,6 +129,7 @@ share/doc/gtk-vnc/method.Display.set_grab_keys.html
 share/doc/gtk-vnc/method.Display.set_keep_aspect_ratio.html
 share/doc/gtk-vnc/method.Display.set_keyboard_grab.html
 share/doc/gtk-vnc/method.Display.set_lossy_encoding.html
+share/doc/gtk-vnc/method.Display.set_pointer_force_visible.html
 share/doc/gtk-vnc/method.Display.set_pointer_grab.html
 share/doc/gtk-vnc/method.Display.set_pointer_local.html
 share/doc/gtk-vnc/method.Display.set_read_only.html
@@ -318,6 +320,7 @@ share/doc/gvnc/method.Cursor.get_height.html
 share/doc/gvnc/method.Cursor.get_hotx.html
 share/doc/gvnc/method.Cursor.get_hoty.html
 share/doc/gvnc/method.Cursor.get_width.html
+share/doc/gvnc/method.Cursor.is_visible.html
 share/doc/gvnc/method.Framebuffer.blt.html
 share/doc/gvnc/method.Framebuffer.copyrect.html
 share/doc/gvnc/method.Framebuffer.fill.html
