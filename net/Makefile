@@ -785,6 +785,7 @@
      SUBDIR += wmnetload
      SUBDIR += wol
      SUBDIR += wormhole-william
+     SUBDIR += wstunnel
      SUBDIR += xl2tpd
      SUBDIR += xmlrpc-epi
      SUBDIR += yafc
