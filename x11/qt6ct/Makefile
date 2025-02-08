@@ -1,20 +1,18 @@
-COMMENT =	Qt6 configuration tool
+COMMENT =		Qt6 configuration tool
 
-GH_ACCOUNT =		trialuser02
-GH_PROJECT =		qt6ct
-GH_TAGNAME =		0.9
+DIST_TUPLE =		github	ilya-fedin	qt6ct	0.10	.
 
 CATEGORIES =		x11
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
-SHARED_LIBS +=		qt6ct-common              0.1 # 0
+SHARED_LIBS =		qt6ct-common              1.0
 
-WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Widgets c m
-WANTLIB += xkbcommon
+WANTLIB =		${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network \
+			Qt6OpenGL Qt6Widgets c m xkbcommon
 
 # BSD
-PERMIT_PACKAGE=		Yes
+PERMIT_PACKAGE =	Yes
 
 MODULES =		devel/cmake \
 			x11/qt6
