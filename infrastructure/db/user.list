@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.458 2025/02/07 18:44:15 denis Exp $
+$OpenBSD: user.list,v 1.459 2025/02/08 16:02:50 bket Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -92,7 +92,7 @@ id  user		group		port
 #581 _gonzui		_gonzui		textproc/gonzui
 582 _tabled		_tabled		sysutils/tabled
 #583			_kdesud		x11/kde/base3
-#584 _nepenthes		_nepenthes	net/nepenthes
+584 _wstunnel		_wstunnel	net/wstunnel
 585 _lighttpd		_lighttpd	www/lighttpd
 586 _gnugk		_gnugk		net/gnugk
 587 _darkstat		_darkstat	net/darkstat
