@@ -1,7 +1,7 @@
 COMMENT=	transfer files with FTP, HTTP, HTTPS, etc.
 
-DISTNAME=	curl-8.11.1
-SHARED_LIBS=	curl                 26.29    # 12.0
+DISTNAME=	curl-8.12.0
+SHARED_LIBS=	curl                 26.30    # 12.0
 CATEGORIES=	net
 HOMEPAGE=	https://curl.se/
 
@@ -24,7 +24,6 @@ CONFIGURE_ARGS=	--disable-ldap \
 		--with-openssl \
 		--with-ca-bundle=/etc/ssl/cert.pem \
 		--without-brotli \
-		--without-hyper \
 		--without-libgsasl \
 		--without-libidn2 \
 		--without-libpsl \

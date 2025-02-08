@@ -1,0 +1,19 @@
+lib: include necessary headers for inet_ntop/inet_pton
+https://github.com/curl/curl/commit/6fc703904b2ed5e320abd66c9ef1efc894578fe9
+
+Index: lib/inet_ntop.h
+--- lib/inet_ntop.h.orig
++++ lib/inet_ntop.h
+@@ -29,6 +29,12 @@
+ char *Curl_inet_ntop(int af, const void *addr, char *buf, size_t size);
+ 
+ #ifdef HAVE_INET_NTOP
++#ifdef HAVE_NETINET_IN_H
++#include <netinet/in.h>
++#endif
++#ifdef HAVE_SYS_SOCKET_H
++#include <sys/socket.h>
++#endif
+ #ifdef HAVE_ARPA_INET_H
+ #include <arpa/inet.h>
+ #endif
