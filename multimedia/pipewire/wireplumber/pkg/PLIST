@@ -202,6 +202,7 @@ share/wireplumber/scripts/node/filter-forward-format.lua
 share/wireplumber/scripts/node/software-dsp.lua
 share/wireplumber/scripts/node/state-stream.lua
 share/wireplumber/scripts/node/suspend-node.lua
+share/wireplumber/scripts/session-services.lua
 share/wireplumber/scripts/sm-objects.lua
 share/wireplumber/wireplumber.conf
 share/wireplumber/wireplumber.conf.d/
