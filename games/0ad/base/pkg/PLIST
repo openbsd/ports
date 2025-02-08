@@ -1,27 +1,15 @@
 bin/0ad
 @bin bin/pyrogenesis
+@so lib/libAtlasUI.so
 @so lib/libCollada.so
-@static-lib lib/libatlas.a
-@static-lib lib/libengine.a
-@static-lib lib/libgladwrapper.a
-@static-lib lib/libglooxwrapper.a
-@static-lib lib/libgraphics.a
-@static-lib lib/libgui.a
-@static-lib lib/liblobby.a
-@static-lib lib/liblowlevel.a
-@static-lib lib/libmocks_real.a
-@static-lib lib/libmongoose.a
-@lib lib/libmozjs78-ps-release.so.${LIBmozjs78-ps-release_VERSION}
-@static-lib lib/libnetwork.a
-@static-lib lib/librlinterface.a
-@static-lib lib/libscriptinterface.a
-@static-lib lib/libsimulation2.a
-@static-lib lib/libtinygettext.a
+@lib lib/libmozjs115-release.so.${LIBmozjs115-release_VERSION}
+@so lib/libnvcore.so
+@so lib/libnvimage.so
+@so lib/libnvmath.so
+@so lib/libnvtt.so
 share/0ad/l10n/
 share/0ad/l10n/.tx/
 share/0ad/l10n/.tx/config
-share/0ad/l10n/ast.engine.po
-share/0ad/l10n/ca.engine.po
 share/0ad/l10n/cs.engine.po
 share/0ad/l10n/de.engine.po
 share/0ad/l10n/el.engine.po
@@ -31,7 +19,7 @@ share/0ad/l10n/es.engine.po
 share/0ad/l10n/eu.engine.po
 share/0ad/l10n/fi.engine.po
 share/0ad/l10n/fr.engine.po
-share/0ad/l10n/gd.engine.po
+share/0ad/l10n/gl.engine.po
 share/0ad/l10n/hu.engine.po
 share/0ad/l10n/id.engine.po
 share/0ad/l10n/it.engine.po
@@ -39,6 +27,7 @@ share/0ad/l10n/messages.json
 share/0ad/l10n/nl.engine.po
 share/0ad/l10n/pl.engine.po
 share/0ad/l10n/pt_BR.engine.po
+share/0ad/l10n/pt_PT.engine.po
 share/0ad/l10n/ru.engine.po
 share/0ad/l10n/sk.engine.po
 share/0ad/l10n/sv.engine.po
@@ -73,8 +62,6 @@ share/0ad/mods/_test.gui/gui/regainFocus/pushWithPopOnInit.js
 share/0ad/mods/_test.gui/gui/regainFocus/pushWithPopOnInit.xml
 share/0ad/mods/_test.minimal/
 share/0ad/mods/_test.minimal/art/
-share/0ad/mods/_test.minimal/art/actors/
-share/0ad/mods/_test.minimal/art/meshes/
 share/0ad/mods/_test.minimal/art/textures/
 share/0ad/mods/_test.minimal/art/textures/particles/
 share/0ad/mods/_test.minimal/art/textures/particles/sprite.tga
@@ -121,6 +108,10 @@ share/0ad/mods/_test.minimal/shaders/postouv1.vs
 share/0ad/mods/_test.minimal/shaders/water_high.fs
 share/0ad/mods/_test.minimal/shaders/water_high.vs
 share/0ad/mods/_test.minimal/shaders/water_high.xml
+share/0ad/mods/_test.scriptinterface/
+share/0ad/mods/_test.scriptinterface/promises/
+share/0ad/mods/_test.scriptinterface/promises/reject.js
+share/0ad/mods/_test.scriptinterface/promises/simple.js
 share/0ad/mods/_test.sim/
 share/0ad/mods/_test.sim/globalscripts/
 share/0ad/mods/_test.sim/globalscripts/test-global-helper.js

@@ -1,0 +1,29 @@
+Index: libraries/source/premake-core/build.sh
+--- libraries/source/premake-core/build.sh.orig
++++ libraries/source/premake-core/build.sh
+@@ -9,6 +9,7 @@ cd "$(dirname "$0")"
+ 
+ PV=5.0.0-beta3
+ LIB_VERSION=${PV}+wfg1
++TAR=${TAR:-tar}
+ 
+ fetch()
+ {
+@@ -44,7 +45,7 @@ fi
+ 
+ # unpack
+ rm -Rf "premake-core-${PV}"
+-tar -xf "premake-core-${PV}.tar.gz"
++$TAR -xf "premake-core-${PV}.tar.gz"
+ 
+ # patch
+ # ffcb7790f013bdceacc14ba5fda1c5cd107aac08
+@@ -57,6 +58,8 @@ patch -d "premake-core-${PV}" -p1 <patches/0003-Add-su
+ patch -d "premake-core-${PV}" -p1 <patches/0004-Add-support-for-loongarch64-2363.patch
+ # 5c524b6d53307bcb4ba7b02c9dba20100df68943
+ patch -d "premake-core-${PV}" -p1 <patches/0005-premake.h-added-e2k-definition-2349.patch
++
++patch -d "premake-core-${PV}" <patches/0006-disable_gethostname_r.diff
+ 
+ #build
+ (

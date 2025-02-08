@@ -1,41 +1,47 @@
 Index: libraries/source/spidermonkey/build.sh
 --- libraries/source/spidermonkey/build.sh.orig
 +++ libraries/source/spidermonkey/build.sh
-@@ -128,8 +128,8 @@ else
-   cd "$FOLDER"
- fi
+@@ -8,6 +8,7 @@ FOLDER="mozjs-115.16.1"
+ # If same-version changes are needed, increment this.
+ LIB_VERSION="115.16.1+1"
+ LIB_NAME="mozjs115"
++TAR=${TAR:-tar}
  
--# Debug version of SM is broken on FreeBSD.
--if [ "$(uname -s)" != "FreeBSD" ]; then
-+# Debug version of SM is broken on OpenBSD.
-+if [ "$(uname -s)" != "OpenBSD" ]; then
-   mkdir -p build-debug
-   cd build-debug
-   # SM configure checks for autoconf, but we don't actually need it.
-@@ -171,7 +171,7 @@ else
-   STATIC_LIB_SUFFIX=.a
-   if [ "`uname -s`" = "OpenBSD" ];
-   then
--    LIB_SUFFIX=.so.1.0
-+    LIB_SUFFIX=.so.$SO_VERSION
-   elif [ "`uname -s`" = "Darwin" ];
-   then
-     LIB_SUFFIX=.a
-@@ -197,7 +197,7 @@ fi
- mkdir -p "${INCLUDE_DIR_RELEASE}"
- cp -R -L "${FOLDER}"/build-release/dist/include/* "${INCLUDE_DIR_RELEASE}/"
+ fetch()
+ {
+@@ -47,7 +48,7 @@ fi
  
--if [ "$(uname -s)" != "FreeBSD" ]; then
-+if [ "$(uname -s)" != "OpenBSD" ]; then
-   mkdir -p "${INCLUDE_DIR_DEBUG}"
-   cp -R -L "${FOLDER}"/build-debug/dist/include/* "${INCLUDE_DIR_DEBUG}/"
+ # unpack
+ rm -Rf "${FOLDER}"
+-tar xfJ "${FOLDER}.tar.xz"
++$TAR xfJ "${FOLDER}.tar.xz"
+ 
+ # patch
+ (
+@@ -158,7 +159,7 @@ else
+ 	LIB_SUFFIX=.so
+ 	STATIC_LIB_SUFFIX=.a
+ 	if [ "${OS}" = "OpenBSD" ]; then
+-		LIB_SUFFIX=.so.1.0
++		LIB_SUFFIX=.so.$SO_VERSION
+ 	elif [ "${OS}" = "Darwin" ]; then
+ 		LIB_SUFFIX=.a
+ 	fi
+@@ -188,7 +189,7 @@ fi
+ mkdir include-release
+ cp -R -L "${FOLDER}"/build-release/dist/include/* include-release/
+ 
+-if [ "${OS}" != "FreeBSD" ]; then
++if [ "${OS}" != "OpenBSD" ]; then
+ 	mkdir include-debug
+ 	cp -R -L "${FOLDER}"/build-debug/dist/include/* include-debug/
  fi
-@@ -238,7 +238,7 @@ else
-   # Copy shared libs to both lib/ and binaries/ so the compiler and executable (resp.) can find them.
-   cp -L "${FOLDER}/build-${REL}/js/src/build/${LIB_PREFIX}${LIB_NAME}-${REL}${LIB_SUFFIX}" "lib/${LIB_PREFIX}${LIB_NAME}-${REL}${LIB_SUFFIX}"
-   cp -L "${FOLDER}/build-${REL}/js/src/build/${LIB_PREFIX}${LIB_NAME}-${REL}${LIB_SUFFIX}" "../../../binaries/system/${LIB_PREFIX}${LIB_NAME}-${REL}${LIB_SUFFIX}"
--  if [ "$(uname -s)" != "FreeBSD" ]; then
-+  if [ "$(uname -s)" != "OpenBSD" ]; then
-     cp -L "${FOLDER}/build-${DEB}/js/src/build/${LIB_PREFIX}${LIB_NAME}-${DEB}${LIB_SUFFIX}" "../../../binaries/system/${LIB_PREFIX}${LIB_NAME}-${DEB}${LIB_SUFFIX}"
-     cp -L "${FOLDER}/build-${DEB}/js/src/build/${LIB_PREFIX}${LIB_NAME}-${DEB}${LIB_SUFFIX}" "lib/${LIB_PREFIX}${LIB_NAME}-${DEB}${LIB_SUFFIX}"
-   fi
+@@ -220,7 +221,7 @@ elif [ "${OS}" = "Windows_NT" ]; then
+ else
+ 	# Copy shared libs to lib/, they will also be copied to binaries/system, so the compiler and executable (resp.) can find them.
+ 	cp -L "${FOLDER}/build-${REL}/js/src/build/${LIB_PREFIX}${LIB_NAME}-${REL}${LIB_SUFFIX}" "lib/${LIB_PREFIX}${LIB_NAME}-${REL}${LIB_SUFFIX}"
+-	if [ "${OS}" != "FreeBSD" ]; then
++	if [ "${OS}" != "OpenBSD" ]; then
+ 		cp -L "${FOLDER}/build-${DEB}/js/src/build/${LIB_PREFIX}${LIB_NAME}-${DEB}${LIB_SUFFIX}" "lib/${LIB_PREFIX}${LIB_NAME}-${DEB}${LIB_SUFFIX}"
+ 	fi
+ fi

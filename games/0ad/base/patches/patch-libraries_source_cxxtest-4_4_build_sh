@@ -1,0 +1,12 @@
+Index: libraries/source/cxxtest-4.4/build.sh
+--- libraries/source/cxxtest-4.4/build.sh.orig
++++ libraries/source/cxxtest-4.4/build.sh
+@@ -40,7 +40,7 @@ fi
+ 
+ # unpack
+ rm -Rf "cxxtest-${PV}"
+-tar -xf "cxxtest-${PV}.tar.gz"
++tar -xzf "cxxtest-${PV}.tar.gz"
+ 
+ # patch
+ patch -d "cxxtest-${PV}" -p1 <patches/0001-Add-Debian-python3-patch.patch

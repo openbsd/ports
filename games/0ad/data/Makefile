@@ -1,6 +1,6 @@
 COMMENT =		historical real-time strategy game data
 
-DISTNAME =		0ad-${V}-alpha-unix-data
+DISTNAME =		0ad-${V}-unix-data
 PKGNAME =		0ad-data-${V}
 
 PKG_ARCH =		*
@@ -11,6 +11,6 @@ EXTRACT_ONLY =
 
 do-install:
 	tar -zxf ${FULLDISTDIR}/${DISTFILES} -C ${PREFIX}/share \
-		-s ",0ad-${V}-alpha/binaries/data/,0ad/,g"
+		-s ",0ad-${V}/binaries/data/,0ad/,g"
 
 .include <bsd.port.mk>

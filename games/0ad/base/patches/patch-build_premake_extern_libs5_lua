@@ -1,12 +1,16 @@
 Index: build/premake/extern_libs5.lua
 --- build/premake/extern_libs5.lua.orig
 +++ build/premake/extern_libs5.lua
-@@ -675,7 +675,7 @@ extern_lib_defs = {
- 				-- TODO: We need to force linking with these as currently
- 				-- they need to be loaded explicitly on execution
+@@ -719,12 +719,6 @@ extern_lib_defs = {
  				add_default_links({
--					unix_names = { "ogg", "vorbis" },
-+					unix_names = { "ogg", "vorbis", "vorbisfile" },
+ 					win_names  = { "libvorbisfile" },
  				})
+-			elseif os.getversion().description == "OpenBSD" then
+-				-- TODO: We need to force linking with these as currently
+-				-- they need to be loaded explicitly on execution
+-				add_default_links({
+-					unix_names = { "ogg", "vorbis" },
+-				})
  			else
  				pkgconfig.add_links("vorbisfile")
+ 			end

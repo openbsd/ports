@@ -1,0 +1,16 @@
+Index: libraries/source/premake-core/patches/0006-disable_gethostname_r.diff
+--- libraries/source/premake-core/patches/0006-disable_gethostname_r.diff.orig
++++ libraries/source/premake-core/patches/0006-disable_gethostname_r.diff
+@@ -0,0 +1,12 @@
++--- contrib/curl/lib/config-linux.h.orig	Tue Feb  4 18:37:46 2025
+++++ contrib/curl/lib/config-linux.h	Tue Feb  4 18:38:14 2025
++@@ -185,7 +185,9 @@
++ #define HAVE_GETHOSTBYNAME 1
++ 
++ /* Define to 1 if you have the gethostbyname_r function. */
+++#if !defined(__OpenBSD__) && !defined(__NetBSD__) && !defined(__sun__)
++ #define HAVE_GETHOSTBYNAME_R 1
+++#endif
++ 
++ /* gethostbyname_r() takes 3 args */
++ /* #undef HAVE_GETHOSTBYNAME_R_3 */

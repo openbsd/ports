@@ -1,0 +1,20 @@
+Index: libraries/source/nvtt/build.sh
+--- libraries/source/nvtt/build.sh.orig
++++ libraries/source/nvtt/build.sh
+@@ -5,6 +5,7 @@ cd "$(dirname "$0")"
+ 
+ PV=28209
+ LIB_VERSION=${PV}
++TAR=${TAR:-tar}
+ 
+ fetch()
+ {
+@@ -42,7 +43,7 @@ fi
+ 
+ # unpack
+ rm -Rf nvtt-${PV}
+-tar xf nvtt-${PV}.tar.xz
++$TAR xf nvtt-${PV}.tar.xz
+ 
+ # build
+ (
