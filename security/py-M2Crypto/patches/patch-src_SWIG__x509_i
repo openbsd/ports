@@ -1,4 +1,4 @@
-X509_check_trust() was removed from the public API
+X509_check_trust() and X509_NAME_print() were removed from the public API
 
 Index: src/SWIG/_x509.i
 --- src/SWIG/_x509.i.orig
@@ -14,3 +14,15 @@ Index: src/SWIG/_x509.i
  
  %rename(x509_write_pem) PEM_write_bio_X509;
  %threadallow PEM_write_bio_X509;
+@@ -144,9 +146,11 @@ extern int X509V3_EXT_print(BIO *, X509_EXTENSION *, u
+ extern X509_NAME *X509_NAME_new( void );
+ %rename(x509_name_free) X509_NAME_free;
+ extern void X509_NAME_free(X509_NAME *);
++#ifndef LIBRESSL_VERSION_NUMBER
+ %rename(x509_name_print) X509_NAME_print;
+ %threadallow X509_NAME_print;
+ extern int X509_NAME_print(BIO *, X509_NAME *, int);
++#endif
+ %rename(x509_name_get_entry) X509_NAME_get_entry;
+ extern X509_NAME_ENTRY *X509_NAME_get_entry(X509_NAME *, int);
+ %rename(x509_name_entry_count) X509_NAME_entry_count;

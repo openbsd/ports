@@ -3,7 +3,7 @@ COMMENT=	crypto and TLS toolkit for Python
 MODPY_DISTV=	0.41.0
 DISTNAME=	M2Crypto-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	security
 
