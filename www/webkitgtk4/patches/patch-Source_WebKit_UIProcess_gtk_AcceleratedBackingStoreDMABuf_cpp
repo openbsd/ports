@@ -3,7 +3,7 @@ No dma-buf on OpenBSD.
 Index: Source/WebKit/UIProcess/gtk/AcceleratedBackingStoreDMABuf.cpp
 --- Source/WebKit/UIProcess/gtk/AcceleratedBackingStoreDMABuf.cpp.orig
 +++ Source/WebKit/UIProcess/gtk/AcceleratedBackingStoreDMABuf.cpp
-@@ -71,7 +71,11 @@ OptionSet<DMABufRendererBufferMode> AcceleratedBacking
+@@ -72,7 +72,11 @@ OptionSet<DMABufRendererBufferMode> AcceleratedBacking
      static OptionSet<DMABufRendererBufferMode> mode;
      static std::once_flag onceFlag;
      std::call_once(onceFlag, [] {
