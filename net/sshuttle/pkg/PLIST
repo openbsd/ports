@@ -66,11 +66,14 @@ lib/python${MODPY_VERSION}/site-packages/sshuttle/methods/${MODPY_PYCACHE}pf.${M
 lib/python${MODPY_VERSION}/site-packages/sshuttle/methods/${MODPY_PYCACHE}pf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sshuttle/methods/${MODPY_PYCACHE}tproxy.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sshuttle/methods/${MODPY_PYCACHE}tproxy.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sshuttle/methods/${MODPY_PYCACHE}windivert.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/sshuttle/methods/${MODPY_PYCACHE}windivert.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sshuttle/methods/ipfw.py
 lib/python${MODPY_VERSION}/site-packages/sshuttle/methods/nat.py
 lib/python${MODPY_VERSION}/site-packages/sshuttle/methods/nft.py
 lib/python${MODPY_VERSION}/site-packages/sshuttle/methods/pf.py
 lib/python${MODPY_VERSION}/site-packages/sshuttle/methods/tproxy.py
+lib/python${MODPY_VERSION}/site-packages/sshuttle/methods/windivert.py
 lib/python${MODPY_VERSION}/site-packages/sshuttle/options.py
 lib/python${MODPY_VERSION}/site-packages/sshuttle/sdnotify.py
 lib/python${MODPY_VERSION}/site-packages/sshuttle/server.py
