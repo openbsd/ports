@@ -1,0 +1,4 @@
+@newgroup _wstunnel:584
+@newuser _wstunnel:584:584::wstunnel daemon:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/wstunnel
+@bin bin/wstunnel
