@@ -1,10 +1,12 @@
 COMMENT=		library to handle keyboard descriptions
 
-DISTNAME=		libxkbcommon-1.7.0
+V=			1.8.0
+DIST_TUPLE=		github xkbcommon libxkbcommon xkbcommon-${V} .
+PKGNAME=		libxkbcommon-${V}
 
-SHARED_LIBS += xkbcommon                 2.1 # 0.0.0
-SHARED_LIBS += xkbcommon-x11             2.1 # 0.0.0
-SHARED_LIBS += xkbregistry               1.1 # 0.0.0
+SHARED_LIBS += xkbcommon                 3.0 # 0.8.0
+SHARED_LIBS += xkbcommon-x11             2.2 # 0.8.0
+SHARED_LIBS += xkbregistry               1.2 # 0.8.0
 
 CATEGORIES=		x11 inputmethods
 
@@ -18,8 +20,7 @@ PERMIT_PACKAGE=	Yes
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
-SITES=			${HOMEPAGE}/download/
-EXTRACT_SUFX=		.tar.xz
+#EXTRACT_SUFX=		.tar.xz
 
 MODULES=		devel/meson
 
