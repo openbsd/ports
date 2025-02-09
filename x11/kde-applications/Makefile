@@ -1,7 +1,6 @@
      SUBDIR =
 
      # New in KDE Gear/24.12
-     #SUBDIR += calligra
      #SUBDIR += kunifiedpush
 
      # New in KDE Gear/24.08
@@ -228,7 +227,6 @@
      SUBDIR += akonadi-contacts
      SUBDIR += akonadi-import-wizard
      SUBDIR += akonadi-mime
-     SUBDIR += akonadi-notes
      SUBDIR += akonadi-search
      SUBDIR += akonadiconsole
      SUBDIR += baloo-widgets
@@ -277,7 +275,6 @@
      SUBDIR += libkexiv2
      SUBDIR += kf6-libkexiv2
 
-     SUBDIR += ksanecore
      SUBDIR += kf6-ksanecore
 
      SUBDIR += libkdcraw
@@ -285,10 +282,6 @@
 
      SUBDIR += kf6-kaccounts-integration
 
-     # libkgapi still needs a Qt 5 version for kio-gdrive and a Qt 6 version
-     # for pim bits (it's co-installable except for the sasl plugin, which can be
-     # disabled for one Qt version via -DBUILD_SASL_PLUGIN=OFF (since 24.01.95/23.08.5
-     # or 3f293301)
      SUBDIR += libkgapi
 
      SUBDIR += kf6-kio-extras
@@ -296,7 +289,6 @@
      # audiocd-kio
      # kio-zeroconf
      #kio-gdrive
-     SUBDIR += libkcompactdisc
      SUBDIR += kf6-libkcompactdisc
 
      SUBDIR += libkcddb
@@ -309,6 +301,7 @@
      # life outside of x11/kde-applications
      # devel/kdevelop
      # editors/ghostwriter
+     # editors/calligra
      # graphics/skanlite
      # net/kdeconnect-kde
      # net/konversation

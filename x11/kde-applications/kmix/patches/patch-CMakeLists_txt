@@ -4,7 +4,7 @@ https://invent.kde.org/multimedia/kmix/-/merge_requests/32
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -81,6 +81,15 @@ endif ()
+@@ -91,6 +91,15 @@ find_package(KF6 ${KF_MIN_VERSION} REQUIRED COMPONENTS
  ########### sound backend support ##################################################################
  ####################################################################################################
  
@@ -20,7 +20,7 @@ Index: CMakeLists.txt
  # Sun Audio, only for that platform
  check_include_file("sys/audioio.h" HAVE_SYS_AUDIOIO_H)
  if (HAVE_SYS_AUDIOIO_H)
-@@ -99,7 +108,7 @@ endif ()
+@@ -109,7 +118,7 @@ endif ()
  
  check_include_file("soundcard.h" HAVE_SOUNDCARD_H)
  check_include_file("sys/soundcard.h" HAVE_SYS_SOUNDCARD_H)
@@ -29,7 +29,7 @@ Index: CMakeLists.txt
    add_definitions(-DHAVE_OSS_MIXER)
    set(HAVE_OSS_MIXER true)
    if (HAVE_SOUNDCARD_H)
-@@ -152,7 +161,7 @@ if (HAVE_SOUNDCARD_H OR HAVE_SYS_SOUNDCARD_H)
+@@ -162,7 +171,7 @@ if (HAVE_SOUNDCARD_H OR HAVE_SYS_SOUNDCARD_H)
  endif ()
  
  # PulseAudio, optional
@@ -38,7 +38,7 @@ Index: CMakeLists.txt
  if (PulseAudio_FOUND)
    message(STATUS "Building with PulseAudio support")
    set(HAVE_PULSEAUDIO true)
-@@ -251,6 +260,10 @@ if (HAVE_PULSEAUDIO)
+@@ -265,6 +274,10 @@ if (HAVE_PULSEAUDIO)
    set(kmix_backend_SRCS ${kmix_backend_SRCS} backends/mixer_pulse.cpp)
  endif ()
  
@@ -49,7 +49,7 @@ Index: CMakeLists.txt
  if (HAVE_SUN_MIXER)
    set(kmix_backend_SRCS ${kmix_backend_SRCS} backends/mixer_sun.cpp)
  endif ()
-@@ -313,6 +326,10 @@ endif ()
+@@ -327,6 +340,10 @@ endif ()
  
  if (HAVE_PULSEAUDIO)
    target_link_libraries(kmixcore PRIVATE PulseAudio::PulseAudio)

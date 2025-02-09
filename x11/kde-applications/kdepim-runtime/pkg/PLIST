@@ -1,5 +1,4 @@
 @conflict kdepim-runtime-kf5-*
-@bin bin/akonadi_akonotes_resource
 @bin bin/akonadi_birthdays_resource
 @bin bin/akonadi_contacts_resource
 @bin bin/akonadi_davgroupware_resource
@@ -15,7 +14,6 @@
 @bin bin/akonadi_migration_agent
 @bin bin/akonadi_mixedmaildir_resource
 @bin bin/akonadi_newmailnotifier_agent
-@bin bin/akonadi_notes_resource
 @bin bin/akonadi_openxchange_resource
 @bin bin/akonadi_pop3_resource
 @bin bin/akonadi_vcard_resource
@@ -29,7 +27,6 @@
 @lib lib/libnewmailnotifier.so.${LIBnewmailnotifier_VERSION}
 @so lib/qt6/plugins/kf6/kio/akonadi.so
 lib/qt6/plugins/pim6/akonadi/config/
-@so lib/qt6/plugins/pim6/akonadi/config/akonotesconfig.so
 @so lib/qt6/plugins/pim6/akonadi/config/birthdaysconfig.so
 @so lib/qt6/plugins/pim6/akonadi/config/contactsconfig.so
 @so lib/qt6/plugins/pim6/akonadi/config/googleconfig.so
@@ -40,7 +37,6 @@ lib/qt6/plugins/pim6/akonadi/config/
 @so lib/qt6/plugins/pim6/akonadi/config/mboxconfig.so
 @so lib/qt6/plugins/pim6/akonadi/config/mixedmaildirconfig.so
 @so lib/qt6/plugins/pim6/akonadi/config/newmailnotifierconfig.so
-@so lib/qt6/plugins/pim6/akonadi/config/notesconfig.so
 @so lib/qt6/plugins/pim6/akonadi/config/openxchangeconfig.so
 @so lib/qt6/plugins/pim6/akonadi/config/pop3config.so
 @so lib/qt6/plugins/pim6/akonadi/config/vcardconfig.so
@@ -49,7 +45,6 @@ lib/qt6/plugins/pim6/kcms/
 lib/qt6/plugins/pim6/kcms/kaddressbook/
 @so lib/qt6/plugins/pim6/kcms/kaddressbook/kcm_ldap.so
 @so lib/qt6/plugins/pim6/mailtransport/mailtransport_akonadiplugin.so
-share/akonadi/agents/akonotesresource.desktop
 share/akonadi/agents/birthdaysresource.desktop
 share/akonadi/agents/contactsresource.desktop
 share/akonadi/agents/davgroupwareresource.desktop
@@ -65,7 +60,6 @@ share/akonadi/agents/mboxresource.desktop
 share/akonadi/agents/migrationagent.desktop
 share/akonadi/agents/mixedmaildirresource.desktop
 share/akonadi/agents/newmailnotifieragent.desktop
-share/akonadi/agents/notesresource.desktop
 share/akonadi/agents/openxchangeresource.desktop
 share/akonadi/agents/pop3resource.desktop
 share/akonadi/agents/vcarddirresource.desktop
@@ -89,7 +83,6 @@ share/akonadi/firstrun/
 share/akonadi/firstrun/birthdaycalendar
 share/akonadi/firstrun/defaultaddressbook
 share/akonadi/firstrun/defaultcalendar
-share/akonadi/firstrun/defaultnotebook
 share/applications/org.kde.akonadi_contacts_resource.desktop
 share/applications/org.kde.akonadi_davgroupware_resource.desktop
 share/applications/org.kde.akonadi_ews_resource.desktop

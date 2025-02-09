@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -101,7 +101,6 @@ install(EXPORT KSaneCore${KSANECORE_SUFFFIX}Targets
+@@ -95,7 +95,6 @@ install(EXPORT KSaneCore${KSANECORE_SUFFFIX}Targets
      NAMESPACE KSane${KSANECORE_SUFFFIX}::
  )
  

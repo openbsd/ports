@@ -10,6 +10,7 @@ include/KPim6/MimeTreeParserCore/MimeTreeParserCore/MessagePart
 include/KPim6/MimeTreeParserCore/MimeTreeParserCore/ObjectTreeParser
 include/KPim6/MimeTreeParserCore/MimeTreeParserCore/PartMetaData
 include/KPim6/MimeTreeParserCore/MimeTreeParserCore/PartModel
+include/KPim6/MimeTreeParserCore/MimeTreeParserCore/UrlHandler
 include/KPim6/MimeTreeParserCore/mimetreeparsercore/
 include/KPim6/MimeTreeParserCore/mimetreeparsercore/attachmentmodel.h
 include/KPim6/MimeTreeParserCore/mimetreeparsercore/cryptohelper.h
@@ -22,6 +23,7 @@ include/KPim6/MimeTreeParserCore/mimetreeparsercore/mimetreeparser_core_export.h
 include/KPim6/MimeTreeParserCore/mimetreeparsercore/objecttreeparser.h
 include/KPim6/MimeTreeParserCore/mimetreeparsercore/partmetadata.h
 include/KPim6/MimeTreeParserCore/mimetreeparsercore/partmodel.h
+include/KPim6/MimeTreeParserCore/mimetreeparsercore/urlhandler.h
 include/KPim6/MimeTreeParserCore/mimetreeparserng_version.h
 include/KPim6/MimeTreeParserWidgets/
 include/KPim6/MimeTreeParserWidgets/MimeTreeParserWidgets/
@@ -85,8 +87,10 @@ share/locale/ja/LC_MESSAGES/mimetreeparser6.mo
 share/locale/ka/LC_MESSAGES/mimetreeparser6.mo
 share/locale/ko/LC_MESSAGES/mimetreeparser6.mo
 share/locale/lt/LC_MESSAGES/mimetreeparser6.mo
+share/locale/lv/LC_MESSAGES/mimetreeparser6.mo
 share/locale/nl/LC_MESSAGES/mimetreeparser6.mo
 share/locale/pl/LC_MESSAGES/mimetreeparser6.mo
+share/locale/pt_BR/LC_MESSAGES/mimetreeparser6.mo
 share/locale/ru/LC_MESSAGES/mimetreeparser6.mo
 share/locale/sk/LC_MESSAGES/mimetreeparser6.mo
 share/locale/sl/LC_MESSAGES/mimetreeparser6.mo

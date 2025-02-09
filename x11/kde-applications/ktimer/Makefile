@@ -6,10 +6,10 @@ HOMEPAGE =	https://kde.org/applications/utilities/org.kde.ktimer
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
-WANTLIB += KF6DBusAddons KF6I18n KF6JobWidgets KF6KIOCore KF6KIOGui
-WANTLIB += KF6KIOWidgets KF6Notifications KF6Service KF6Solid
-WANTLIB += KF6StatusNotifierItem KF6WidgetsAddons Qt6Core Qt6DBus
-WANTLIB += Qt6Gui Qt6Network Qt6Widgets c m
+WANTLIB += KF6Crash KF6DBusAddons KF6I18n KF6JobWidgets KF6KIOCore
+WANTLIB += KF6KIOGui KF6KIOWidgets KF6Notifications KF6Service
+WANTLIB += KF6Solid KF6StatusNotifierItem KF6WidgetsAddons Qt6Core
+WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6Widgets c m
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes
@@ -30,6 +30,7 @@ LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kio \
 		devel/kf6/kjobwidgets \
 		devel/kf6/knotifications \
+		devel/kf6/kcrash \
 		devel/kf6/kservice \
 		devel/kf6/kstatusnotifieritem \
 		devel/kf6/kwidgetsaddons \

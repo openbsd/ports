@@ -1,16 +1,15 @@
-USE_NOBTCFI-aarch64 =	Yes# fortran
+USE_NOBTCFI-aarch64 =	Yes # fortran
 
 COMMENT =	KDE image viewer
 DISTNAME =	gwenview-${VERSION}
 CATEGORIES =	graphics x11
-REVISION =	0
 
 SHARED_LIBS +=  gwenviewlib               60.0 # 4.97
 
 WANTLIB += ${COMPILER_LIBCXX} GL KDcrawQt6 KF6Baloo KF6Bookmarks
 WANTLIB += KF6ColorScheme KF6Completion KF6ConfigCore KF6ConfigGui
-WANTLIB += KF6ConfigWidgets KF6CoreAddons KF6FileMetaData KF6GuiAddons
-WANTLIB += KF6I18n KF6IconThemes KF6IconWidgets KF6ItemModels
+WANTLIB += KF6ConfigWidgets KF6CoreAddons KF6Crash KF6FileMetaData
+WANTLIB += KF6GuiAddons KF6I18n KF6IconThemes KF6IconWidgets KF6ItemModels
 WANTLIB += KF6ItemViews KF6JobWidgets KF6KIOCore KF6KIOFileWidgets
 WANTLIB += KF6KIOGui KF6KIOWidgets KF6Notifications KF6Parts KF6Purpose
 WANTLIB += KF6PurposeWidgets KF6Service KF6Solid KF6WidgetsAddons
@@ -59,6 +58,7 @@ LIB_DEPENDS =	devel/kf6/baloo \
 		devel/kf6/kxmlgui \
 		devel/kf6/purpose \
 		devel/kf6/solid \
+		devel/kf6/kcrash \
 		graphics/exiv2 \
 		graphics/jpeg \
 		graphics/kimageannotator>=0.7 \

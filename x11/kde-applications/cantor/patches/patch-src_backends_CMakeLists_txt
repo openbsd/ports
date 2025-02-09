@@ -4,7 +4,7 @@ https://cmake.org/cmake/help/v3.25/module/FindPython3.html
 Index: src/backends/CMakeLists.txt
 --- src/backends/CMakeLists.txt.orig
 +++ src/backends/CMakeLists.txt
-@@ -65,7 +65,7 @@ endif(QALCULATE_FOUND)
+@@ -67,7 +67,7 @@ endif(QALCULATE_FOUND)
  set_package_properties(Python3 PROPERTIES TYPE OPTIONAL
      PURPOSE "Backend to use Python with Cantor.")
  

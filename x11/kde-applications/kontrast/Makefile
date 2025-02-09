@@ -1,12 +1,11 @@
 COMMENT =	color contrast checker
 DISTNAME =	kontrast-${VERSION}
 CATEGORIES =	x11 graphics
-REVISION =	0
 
-WANTLIB += ${COMPILER_LIBCXX} GL KF6CoreAddons KF6I18n QCoro6Core
-WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml
-WANTLIB += Qt6QmlModels Qt6Quick Qt6QuickControls2 Qt6Sql Qt6Svg
-WANTLIB += Qt6Widgets c futuresql6 m
+WANTLIB += ${COMPILER_LIBCXX} GL KF6CoreAddons KF6Crash KF6I18n
+WANTLIB += QCoro6Core Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
+WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickControls2 Qt6Sql
+WANTLIB += Qt6Svg Qt6Widgets c futuresql6 m
 
 MODKDE_TRANSLATIONS = yes
 MODKDE_DESKTOP_FILE = yes
@@ -26,6 +25,7 @@ LIB_DEPENDS =	databases/futuresql \
 		devel/kf6/ki18n \
 		devel/qcoro,qt6 \
 		x11/qt6/qtdeclarative \
+		devel/kf6/kcrash \
 		x11/qt6/qtsvg
 
 .include <bsd.port.mk>

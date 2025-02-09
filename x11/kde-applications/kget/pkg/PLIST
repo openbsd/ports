@@ -213,7 +213,6 @@ share/kget/pics/kget_splash.png
 share/kio/
 share/kio/servicemenus/
 share/kio/servicemenus/kget_download.desktop
-share/kio/servicemenus/kget_plugin.desktop
 share/knotifications6/kget.notifyrc
 share/locale/af/LC_MESSAGES/kget.mo
 share/locale/ar/LC_MESSAGES/kget.mo

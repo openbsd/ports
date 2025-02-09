@@ -6,11 +6,11 @@ SHARED_LIBS +=  kolourpaint_lgpl           2.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Bookmarks KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
-WANTLIB += KF6GuiAddons KF6I18n KF6ItemViews KF6JobWidgets KF6KIOCore
-WANTLIB += KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets KF6Service
-WANTLIB += KF6Solid KF6SonnetUi KF6TextWidgets KF6WidgetsAddons
-WANTLIB += KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6PrintSupport
-WANTLIB += Qt6Widgets Qt6Xml c m
+WANTLIB += KF6Crash KF6GuiAddons KF6I18n KF6ItemViews KF6JobWidgets
+WANTLIB += KF6KIOCore KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets
+WANTLIB += KF6Service KF6Solid KF6WidgetsAddons KF6XmlGui KSaneWidgets6
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6PrintSupport Qt6Widgets
+WANTLIB += Qt6Xml c m
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes
@@ -31,10 +31,10 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/kitemviews \
 		devel/kf6/kjobwidgets \
 		devel/kf6/kservice \
-		devel/kf6/ktextwidgets \
+		devel/kf6/kcrash \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \
-		devel/kf6/sonnet
+		x11/kde-applications/libksane>=${MODKDE_GEAR_VERSION}
 
 .include <bsd.port.mk>

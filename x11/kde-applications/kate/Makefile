@@ -12,11 +12,11 @@ WANTLIB += KF6ConfigWidgets KF6CoreAddons KF6Crash KF6DBusAddons
 WANTLIB += KF6GuiAddons KF6I18n KF6IconThemes KF6IconWidgets KF6ItemViews
 WANTLIB += KF6JobWidgets KF6KIOCore KF6KIOFileWidgets KF6KIOGui
 WANTLIB += KF6KIOWidgets KF6NewStuffCore KF6NewStuffWidgets KF6Parts
-WANTLIB += KF6Service KF6Solid KF6SonnetUi KF6SyntaxHighlighting
-WANTLIB += KF6TextEditor KF6TextWidgets KF6UserFeedbackCore KF6UserFeedbackWidgets
-WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui Qt6Concurrent
-WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Qml Qt6Sql Qt6Widgets
-WANTLIB += Qt6Xml X11 c intl m qt6keychain xkbcommon
+WANTLIB += KF6Service KF6Solid KF6SyntaxHighlighting KF6TextEditor
+WANTLIB += KF6UserFeedbackCore KF6UserFeedbackWidgets KF6WidgetsAddons
+WANTLIB += KF6WindowSystem KF6XmlGui Qt6Concurrent Qt6Core Qt6DBus
+WANTLIB += Qt6Gui Qt6Network Qt6Qml Qt6Sql Qt6Widgets Qt6Xml X11
+WANTLIB += c intl m qt6keychain xkbcommon
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes
@@ -47,13 +47,11 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/kparts \
 		devel/kf6/kservice \
 		devel/kf6/ktexteditor \
-		devel/kf6/ktextwidgets \
 		devel/kf6/kuserfeedback \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kwindowsystem \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \
-		devel/kf6/sonnet \
 		devel/kf6/syntax-highlighting \
 		security/qtkeychain,qt6 \
 		x11/qt6/qtdeclarative \

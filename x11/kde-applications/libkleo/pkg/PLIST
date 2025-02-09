@@ -22,6 +22,8 @@ include/KPim6/Libkleo/Libkleo/Dn
 include/KPim6/Libkleo/Libkleo/DocAction
 include/KPim6/Libkleo/Libkleo/EditDirectoryServiceDialog
 include/KPim6/Libkleo/Libkleo/Enum
+include/KPim6/Libkleo/Libkleo/ErrorLabel
+include/KPim6/Libkleo/Libkleo/Expiration
 include/KPim6/Libkleo/Libkleo/ExpiryChecker
 include/KPim6/Libkleo/Libkleo/ExpiryCheckerConfig
 include/KPim6/Libkleo/Libkleo/ExpiryCheckerSettings
@@ -44,6 +46,7 @@ include/KPim6/Libkleo/Libkleo/KeyListModel
 include/KPim6/Libkleo/Libkleo/KeyListModelInterface
 include/KPim6/Libkleo/Libkleo/KeyListSortFilterProxyModel
 include/KPim6/Libkleo/Libkleo/KeyListView
+include/KPim6/Libkleo/Libkleo/KeyParameters
 include/KPim6/Libkleo/Libkleo/KeyRearrangeColumnsProxyModel
 include/KPim6/Libkleo/Libkleo/KeyRequester
 include/KPim6/Libkleo/Libkleo/KeyResolver
@@ -54,8 +57,10 @@ include/KPim6/Libkleo/Libkleo/KeyUsage
 include/KPim6/Libkleo/Libkleo/KeyserverConfig
 include/KPim6/Libkleo/Libkleo/KleoException
 include/KPim6/Libkleo/Libkleo/MessageBox
+include/KPim6/Libkleo/Libkleo/NameAndEmailWidget
 include/KPim6/Libkleo/Libkleo/NewKeyApprovalDialog
 include/KPim6/Libkleo/Libkleo/OidMap
+include/KPim6/Libkleo/Libkleo/OpenPGPCertificateCreationDialog
 include/KPim6/Libkleo/Libkleo/Predicates
 include/KPim6/Libkleo/Libkleo/ProgressDialog
 include/KPim6/Libkleo/Libkleo/QtStlHelpers
@@ -73,6 +78,7 @@ include/KPim6/Libkleo/Libkleo/UserIDListModel
 include/KPim6/Libkleo/Libkleo/UserIDListProxyModel
 include/KPim6/Libkleo/Libkleo/UserIDProxyModel
 include/KPim6/Libkleo/Libkleo/UserIDSelectionCombo
+include/KPim6/Libkleo/Libkleo/Validation
 include/KPim6/Libkleo/libkleo/
 include/KPim6/Libkleo/libkleo/adjustingscrollarea.h
 include/KPim6/Libkleo/libkleo/algorithm.h
@@ -96,6 +102,8 @@ include/KPim6/Libkleo/libkleo/dnattributeorderconfigwidget.h
 include/KPim6/Libkleo/libkleo/docaction.h
 include/KPim6/Libkleo/libkleo/editdirectoryservicedialog.h
 include/KPim6/Libkleo/libkleo/enum.h
+include/KPim6/Libkleo/libkleo/errorlabel.h
+include/KPim6/Libkleo/libkleo/expiration.h
 include/KPim6/Libkleo/libkleo/expirychecker.h
 include/KPim6/Libkleo/libkleo/expirycheckerconfig.h
 include/KPim6/Libkleo/libkleo/expirycheckerconfigbase.h
@@ -119,6 +127,7 @@ include/KPim6/Libkleo/libkleo/keylistmodel.h
 include/KPim6/Libkleo/libkleo/keylistmodelinterface.h
 include/KPim6/Libkleo/libkleo/keylistsortfilterproxymodel.h
 include/KPim6/Libkleo/libkleo/keylistview.h
+include/KPim6/Libkleo/libkleo/keyparameters.h
 include/KPim6/Libkleo/libkleo/keyrearrangecolumnsproxymodel.h
 include/KPim6/Libkleo/libkleo/keyrequester.h
 include/KPim6/Libkleo/libkleo/keyresolver.h
@@ -130,8 +139,10 @@ include/KPim6/Libkleo/libkleo/keyusage.h
 include/KPim6/Libkleo/libkleo/kleo_export.h
 include/KPim6/Libkleo/libkleo/kleoexception.h
 include/KPim6/Libkleo/libkleo/messagebox.h
+include/KPim6/Libkleo/libkleo/nameandemailwidget.h
 include/KPim6/Libkleo/libkleo/newkeyapprovaldialog.h
 include/KPim6/Libkleo/libkleo/oidmap.h
+include/KPim6/Libkleo/libkleo/openpgpcertificatecreationdialog.h
 include/KPim6/Libkleo/libkleo/predicates.h
 include/KPim6/Libkleo/libkleo/progressdialog.h
 include/KPim6/Libkleo/libkleo/qtstlhelpers.h
@@ -149,6 +160,7 @@ include/KPim6/Libkleo/libkleo/useridlistmodel.h
 include/KPim6/Libkleo/libkleo/useridlistproxymodel.h
 include/KPim6/Libkleo/libkleo/useridproxymodel.h
 include/KPim6/Libkleo/libkleo/useridselectioncombo.h
+include/KPim6/Libkleo/libkleo/validation.h
 include/KPim6/Libkleo/libkleo_version.h
 lib/cmake/KPim6Libkleo/
 lib/cmake/KPim6Libkleo/KPim6LibkleoConfig.cmake
@@ -156,23 +168,16 @@ lib/cmake/KPim6Libkleo/KPim6LibkleoConfigVersion.cmake
 lib/cmake/KPim6Libkleo/KPim6LibkleoTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KPim6Libkleo/KPim6LibkleoTargets.cmake
 @lib lib/libKPim6Libkleo.so.${LIBKPim6Libkleo_VERSION}
+share/KPim6Libkleo/
+share/KPim6Libkleo/find-modules/
+share/KPim6Libkleo/find-modules/FindLibAssuan.cmake
+share/KPim6Libkleo/find-modules/FindLibGpgError.cmake
 share/examples/libkleo/
 share/examples/libkleo/xdg/
 share/examples/libkleo/xdg/libkleopatrarc
 @sample ${SYSCONFDIR}/xdg/libkleopatrarc
 share/libkleopatra/
 share/libkleopatra/pics/
-share/libkleopatra/pics/chiasmus_chi.png
-share/libkleopatra/pics/hi16-app-gpg.png
-share/libkleopatra/pics/hi16-app-gpgsm.png
-share/libkleopatra/pics/hi22-app-gpg.png
-share/libkleopatra/pics/hi22-app-gpgsm.png
-share/libkleopatra/pics/hi32-app-gpg.png
-share/libkleopatra/pics/hi32-app-gpgsm.png
-share/libkleopatra/pics/key.png
-share/libkleopatra/pics/key_bad.png
-share/libkleopatra/pics/key_ok.png
-share/libkleopatra/pics/key_unknown.png
 share/libkleopatra/pics/smartcard.xpm
 share/locale/ar/LC_MESSAGES/libkleopatra6.mo
 share/locale/ast/LC_MESSAGES/libkleopatra6.mo

@@ -118,6 +118,7 @@ share/icons/hicolor/scalable/apps/kanagram.svgz
 share/kanagram/
 share/kanagram/ui/
 share/kanagram/ui/Blackboard.qml
+share/kanagram/ui/IconButton.qml
 share/kanagram/ui/LetterButton.qml
 share/kanagram/ui/icons/
 share/kanagram/ui/icons/1player.png

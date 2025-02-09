@@ -13,16 +13,14 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6CoreAddons KF6Crash KF6DBusAddons
 WANTLIB += KF6I18n KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets
 WANTLIB += KF6Notifications KF6Purpose KF6Service KF6Solid KF6WidgetsAddons
-WANTLIB += KF6WindowSystem Kirigami KirigamiPlatform MpvQt Qt6Core
-WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels
-WANTLIB += Qt6Quick Qt6QuickControls2 Qt6WebSockets Qt6WebView
-WANTLIB += Qt6Widgets X11 c m mpv qt6keychain
+WANTLIB += KF6WindowSystem Kirigami KirigamiAddonsStatefulApp
+WANTLIB += KirigamiPlatform MpvQt Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickControls2
+WANTLIB += Qt6WebSockets Qt6WebView Qt6Widgets X11 c m mpv qt6keychain
 
-BUILD_DEPENDS =	graphics/kirigami-addons \
-		devel/kf6/qqc2-desktop-style \
+BUILD_DEPENDS =	devel/kf6/qqc2-desktop-style \
 
-RUN_DEPENDS =	graphics/kirigami-addons \
-		devel/kf6/qqc2-desktop-style \
+RUN_DEPENDS =	devel/kf6/qqc2-desktop-style \
 
 LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kcompletion \
@@ -38,6 +36,7 @@ LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kwindowsystem \
 		devel/kf6/purpose \
+		graphics/kirigami-addons \
 		devel/kf6/solid \
 		security/qtkeychain,qt6 \
 		devel/kf6/kcrash \

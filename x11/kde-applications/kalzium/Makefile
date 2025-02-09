@@ -8,11 +8,11 @@ SHARED_LIBS +=  science                   4.0 # 5.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
-WANTLIB += KF6I18n KF6ItemViews KF6JobWidgets KF6KIOCore KF6KIOGui
-WANTLIB += KF6KIOWidgets KF6Plotting KF6Service KF6Solid KF6SonnetUi
-WANTLIB += KF6TextWidgets KF6UnitConversion KF6WidgetsAddons KF6XmlGui
-WANTLIB += Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network Qt6StateMachine
-WANTLIB += Qt6Svg Qt6Widgets Qt6Xml c m
+WANTLIB += KF6Crash KF6I18n KF6ItemViews KF6JobWidgets KF6KIOCore
+WANTLIB += KF6KIOGui KF6KIOWidgets KF6Plotting KF6Service KF6Solid
+WANTLIB += KF6SonnetUi KF6TextWidgets KF6UnitConversion KF6WidgetsAddons
+WANTLIB += KF6XmlGui Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6StateMachine Qt6Svg Qt6Widgets Qt6Xml c m
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes
@@ -54,6 +54,7 @@ LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \
 		devel/kf6/sonnet \
+		devel/kf6/kcrash \
 		x11/qt6/qt5compat \
 		x11/qt6/qtscxml \
 		x11/qt6/qtsvg

@@ -47,14 +47,14 @@ include/KPim6/KLDAPCore/kldapcore/ldif.h
 include/KPim6/KLDAPWidgets/
 include/KPim6/KLDAPWidgets/KLDAPWidgets/
 include/KPim6/KLDAPWidgets/KLDAPWidgets/AddHostDialog
+include/KPim6/KLDAPWidgets/KLDAPWidgets/LdapActivitiesAbstractPlugin
 include/KPim6/KLDAPWidgets/KLDAPWidgets/LdapConfigWidget
-include/KPim6/KLDAPWidgets/KLDAPWidgets/LdapConfigureWidget
 include/KPim6/KLDAPWidgets/KLDAPWidgets/LdapConfigureWidgetNg
 include/KPim6/KLDAPWidgets/kldap_widgets_version.h
 include/KPim6/KLDAPWidgets/kldapwidgets/
 include/KPim6/KLDAPWidgets/kldapwidgets/addhostdialog.h
 include/KPim6/KLDAPWidgets/kldapwidgets/kldapwidgets_export.h
-include/KPim6/KLDAPWidgets/kldapwidgets/ldapconfigurewidget.h
+include/KPim6/KLDAPWidgets/kldapwidgets/ldapactivitiesabstractplugin.h
 include/KPim6/KLDAPWidgets/kldapwidgets/ldapconfigurewidgetng.h
 include/KPim6/KLDAPWidgets/kldapwidgets/ldapconfigwidget.h
 lib/cmake/KPim6LdapCore/

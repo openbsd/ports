@@ -6,26 +6,23 @@ USE_NOBTCFI =	Yes
 COMMENT =	KDE mathematical applications
 DISTNAME =	cantor-${VERSION}
 CATEGORIES =	education math
-REVISION =	1
 
 SHARED_LIBS +=  cantorlibs                55.0 # 17.08
 
-MODKDE_KF5 = 	Yes
-
-WANTLIB += ${COMPILER_LIBCXX} KF5Archive KF5Attica KF5Auth KF5AuthCore
-WANTLIB += KF5Bookmarks KF5Codecs KF5Completion KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
-WANTLIB += KF5I18n KF5IconThemes KF5ItemViews KF5JobWidgets KF5KIOCore
-WANTLIB += KF5KIOFileWidgets KF5KIOGui KF5KIOWidgets KF5NewStuff
-WANTLIB += KF5NewStuffCore KF5NewStuffWidgets KF5Parts KF5Service
-WANTLIB += KF5Solid KF5SonnetUi KF5SyntaxHighlighting KF5TextEditor
-WANTLIB += KF5TextWidgets KF5WidgetsAddons KF5WindowSystem KF5XmlGui
-WANTLIB += Qt5Concurrent Qt5Core Qt5DBus Qt5Gui Qt5Help Qt5Network
-WANTLIB += Qt5Positioning Qt5PrintSupport Qt5Qml Qt5QmlModels
-WANTLIB += Qt5Quick Qt5Sql Qt5Svg Qt5WebChannel Qt5WebEngine Qt5WebEngineCore
-WANTLIB += Qt5WebEngineWidgets Qt5Widgets Qt5Xml Qt5XmlPatterns
-WANTLIB += X11 c intl luajit-5.1 m poppler poppler-qt5 ${MODPY_WANTLIB}
-WANTLIB += qalculate spectre util
+WANTLIB += ${COMPILER_LIBCXX} Analitza AnalitzaGui GL KF6Archive
+WANTLIB += KF6Attica KF6Bookmarks KF6ColorScheme KF6Completion
+WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
+WANTLIB += KF6Crash KF6I18n KF6IconThemes KF6IconWidgets KF6ItemViews
+WANTLIB += KF6JobWidgets KF6KIOCore KF6KIOFileWidgets KF6KIOGui
+WANTLIB += KF6KIOWidgets KF6NewStuffCore KF6NewStuffWidgets KF6Parts
+WANTLIB += KF6Service KF6Solid KF6SonnetUi KF6SyntaxHighlighting
+WANTLIB += KF6TextEditor KF6TextWidgets KF6WidgetsAddons KF6XmlGui
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Help Qt6Network Qt6OpenGL
+WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlModels
+WANTLIB += Qt6Quick Qt6Sql Qt6Svg Qt6WebChannel Qt6WebEngineCore
+WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml c intl luajit-${MODLUA_VERSION}
+WANTLIB += m poppler poppler-qt6 ${MODPY_WANTLIB} qalculate spectre
+WANTLIB += util xml2 xslt
 
 WANTLIB += lib/R/lib/R lib/R/lib/Rblas lib/R/lib/Rlapack
 
@@ -46,48 +43,42 @@ MODKDE_DOCS = yes
 RUN_DEPENDS =	misc/shared-mime-info
 
 LIB_DEPENDS =	devel/gettext,-runtime \
-		devel/kf5/attica \
-		devel/kf5/karchive \
-		devel/kf5/kauth \
-		devel/kf5/kbookmarks \
-		devel/kf5/kcodecs \
-		devel/kf5/kcompletion \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kcrash \
-		devel/kf5/ki18n \
-		devel/kf5/kiconthemes \
-		devel/kf5/kio \
-		devel/kf5/kitemviews \
-		devel/kf5/kjobwidgets \
-		devel/kf5/knewstuff \
-		devel/kf5/kparts \
-		devel/kf5/kservice \
-		devel/kf5/ktexteditor \
-		devel/kf5/ktextwidgets \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kwindowsystem \
-		devel/kf5/kxmlgui \
-		devel/kf5/solid \
-		devel/kf5/sonnet \
-		devel/kf5/syntax-highlighting \
+		devel/kf6/attica \
+		devel/kf6/karchive \
+		devel/kf6/kbookmarks \
+		devel/kf6/kcompletion \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/ki18n \
+		devel/kf6/kiconthemes \
+		devel/kf6/kio \
+		devel/kf6/kitemviews \
+		devel/kf6/kjobwidgets \
+		devel/kf6/knewstuff \
+		devel/kf6/kparts \
+		devel/kf6/kservice \
+		devel/kf6/ktexteditor \
+		devel/kf6/ktextwidgets \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kxmlgui \
+		devel/kf6/solid \
+		devel/kf6/sonnet \
+		devel/kf6/syntax-highlighting \
 		lang/luajit \
 		math/libqalculate \
 		math/libqalculate \
 		print/libspectre \
-		print/poppler,-qt5 \
-		x11/qt5/qtdeclarative \
-		x11/qt5/qtlocation \
-		x11/qt5/qtsvg \
-		x11/qt5/qttools \
-		x11/qt5/qtwebchannel \
-		x11/qt5/qtwebengine \
-		x11/qt5/qtxmlpatterns
+		print/poppler,-qt6 \
+		x11/qt6/qtdeclarative \
+		x11/qt6/qtsvg \
+		x11/qt6/qttools \
+		x11/qt6/qtwebchannel \
+		x11/qt6/qtwebengine \
+		x11/kde-applications/analitza>=${MODKDE_GEAR_VERSION}
 
 LIB_DEPENDS +=	math/R
-
-#x11/kde-applications/analitza>=${MODKDE_GEAR_VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 

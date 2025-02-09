@@ -20,7 +20,6 @@ WANTLIB += KPim6MimeTreeParser KPim6PimCommon Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Network Qt6PrintSupport Qt6Sql Qt6Widgets
 WANTLIB += Qt6Xml assuan c gpgme gpgmepp m qgpgmeqt6 xapian
 
-
 MODKDE_TRANSLATIONS = yes
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes

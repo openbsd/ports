@@ -2,13 +2,13 @@ COMMENT =	KDE PIM messaging library
 DISTNAME =	messagelib-${VERSION}
 CATEGORIES =	devel
 
-SHARED_LIBS +=	KPim6MessageComposer      1.0 # 0.0
-SHARED_LIBS +=	KPim6MessageCore          1.0 # 0.0
-SHARED_LIBS +=	KPim6MessageList          1.0 # 0.0
-SHARED_LIBS +=	KPim6MessageViewer        1.0 # 0.0
-SHARED_LIBS +=	KPim6MimeTreeParser       1.0 # 0.0
-SHARED_LIBS +=	KPim6TemplateParser       0.0 # 0.0
-SHARED_LIBS +=	KPim6WebEngineViewer      1.0 # 0.0
+SHARED_LIBS +=	KPim6MessageComposer      2.0 # 0.0
+SHARED_LIBS +=	KPim6MessageCore          2.0 # 0.0
+SHARED_LIBS +=	KPim6MessageList          2.0 # 0.0
+SHARED_LIBS +=	KPim6MessageViewer        2.0 # 0.0
+SHARED_LIBS +=	KPim6MimeTreeParser       2.0 # 0.0
+SHARED_LIBS +=	KPim6TemplateParser       1.0 # 0.0
+SHARED_LIBS +=	KPim6WebEngineViewer      2.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Bookmarks KF6CalendarCore
 WANTLIB += KF6Codecs KF6ColorScheme KF6Completion KF6ConfigCore
@@ -29,10 +29,10 @@ WANTLIB += KPim6Mime KPim6PimCommon KPim6PimCommonAkonadi KPim6TextEdit
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning
 WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlModels Qt6Quick Qt6WebChannel
 WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets Qt6Xml
-WANTLIB += assuan gpgme gpgmepp m qca-qt6 qgpgmeqt6
+WANTLIB += assuan gpgme gpgmepp m qgpgmeqt6
 
 WANTLIB += lib/inotify/inotify
-
+WANTLIB += lib/eopenssl33/crypto lib/eopenssl33/ssl
 
 
 MODKDE_TRANSLATIONS = yes
@@ -71,7 +71,6 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/syntax-highlighting \
 		security/gpgme,-qt \
 		security/libassuan \
-		security/qca-qt6 \
 		textproc/ktextaddons \
 		x11/kde-applications/akonadi-contacts>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/akonadi-mime>=${MODKDE_GEAR_VERSION} \
@@ -93,8 +92,13 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		x11/qt6/qtwebchannel \
 		x11/qt6/qtwebengine
 
+LIB_DEPENDS +=	security/openssl/3.3
+
 TEST_IS_INTERACTIVE =	X11
 
-CXXFLAGS +=        -I${LOCALBASE}/include/inotify/
+CONFIGURE_ENV	= OPENSSL_ROOT_DIR=${LOCALBASE}/lib/eopenssl33
+
+CXXFLAGS =	-I${LOCALBASE}/include/inotify/ -I${LOCALBASE}/include/eopenssl33
+LDFLAGS =	-L${LOCALBASE}/lib/eopenssl33 -Wl,-rpath,${LOCALBASE}/lib/eopenssl33
 
 .include <bsd.port.mk>

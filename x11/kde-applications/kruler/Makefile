@@ -5,8 +5,8 @@ CATEGORIES =	graphics
 HOMEPAGE =	https://www.kde.org/applications/graphics/kruler/
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
-WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6I18n
-WANTLIB += KF6Notifications KF6StatusNotifierItem KF6WidgetsAddons
+WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
+WANTLIB += KF6I18n KF6Notifications KF6StatusNotifierItem KF6WidgetsAddons
 WANTLIB += KF6WindowSystem KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Widgets
 WANTLIB += Qt6Xml X11 c m xcb xkbcommon
 
@@ -27,6 +27,7 @@ LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kwindowsystem \
 		devel/kf6/kxmlgui \
+		devel/kf6/kcrash \
 		x11/xkbcommon
 
 .include <bsd.port.mk>

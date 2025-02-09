@@ -3,8 +3,6 @@
 @bin bin/kmixctrl
 bin/kmixremote
 @lib lib/libkmixcore.so.${LIBkmixcore_VERSION}
-lib/qt5/plugins/kf5/kded/
-@so lib/qt5/plugins/kf5/kded/kmixd.so
 share/applications/org.kde.kmix.desktop
 share/config.kcfg/
 share/config.kcfg/kmixsettings.kcfg
@@ -140,6 +138,8 @@ share/kmix/pics/mixer-pcm-default.png
 share/kmix/pics/mixer-pcm.png
 share/kmix/pics/mixer-surround.png
 share/kmix/pics/mixer-video.png
+share/kmix/pics/settings-channels.png
+share/kmix/pics/settings-master.png
 share/kmix/pics/show-mixer.png
 share/kmix/profiles/
 share/kmix/profiles/ALSA.TerraTec_DMX6Fire.1.default.xml
@@ -150,10 +150,8 @@ share/kmix/profiles/MPRIS2.default.xml
 share/kmix/profiles/OSS.default.xml
 share/kmix/profiles/PulseAudio.default.xml
 share/kmix/profiles/SUNAudio.default.xml
-share/knotifications5/
-share/knotifications5/kmix.notifyrc
-share/kservices5/
-share/kservices5/kmixctrl_restore.desktop
+share/knotifications6/
+share/knotifications6/kmix.notifyrc
 share/kxmlgui5/
 share/kxmlgui5/kmix/
 share/kxmlgui5/kmix/kmixui.rc
@@ -236,4 +234,4 @@ share/metainfo/
 share/metainfo/org.kde.kmix.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
-share/qlogging-categories5/kmix.categories
+share/qlogging-categories6/kmix.categories

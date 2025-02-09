@@ -58,6 +58,7 @@ include/KPim6/AkonadiCore/Akonadi/AgentConfigurationFactoryBase
 include/KPim6/AkonadiCore/Akonadi/AgentFilterProxyModel
 include/KPim6/AkonadiCore/Akonadi/AgentInstance
 include/KPim6/AkonadiCore/Akonadi/AgentInstanceCreateJob
+include/KPim6/AkonadiCore/Akonadi/AgentInstanceFilterProxyModel
 include/KPim6/AkonadiCore/Akonadi/AgentInstanceModel
 include/KPim6/AkonadiCore/Akonadi/AgentManager
 include/KPim6/AkonadiCore/Akonadi/AgentType
@@ -159,6 +160,7 @@ include/KPim6/AkonadiCore/akonadi/agentconfigurationfactorybase.h
 include/KPim6/AkonadiCore/akonadi/agentfilterproxymodel.h
 include/KPim6/AkonadiCore/akonadi/agentinstance.h
 include/KPim6/AkonadiCore/akonadi/agentinstancecreatejob.h
+include/KPim6/AkonadiCore/akonadi/agentinstancefilterproxymodel.h
 include/KPim6/AkonadiCore/akonadi/agentinstancemodel.h
 include/KPim6/AkonadiCore/akonadi/agentmanager.h
 include/KPim6/AkonadiCore/akonadi/agenttype.h
@@ -418,6 +420,7 @@ share/locale/da/LC_MESSAGES/libakonadi6.mo
 share/locale/de/LC_MESSAGES/akonadi-db-migrator.mo
 share/locale/de/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/de/LC_MESSAGES/libakonadi6.mo
+share/locale/el/LC_MESSAGES/akonadi-db-migrator.mo
 share/locale/el/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/el/LC_MESSAGES/libakonadi6.mo
 share/locale/en_GB/LC_MESSAGES/akonadi-db-migrator.mo
@@ -494,6 +497,7 @@ share/locale/nl/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/nl/LC_MESSAGES/libakonadi6.mo
 share/locale/nn/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/nn/LC_MESSAGES/libakonadi6.mo
+share/locale/pa/LC_MESSAGES/akonadi-db-migrator.mo
 share/locale/pa/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/pa/LC_MESSAGES/libakonadi6.mo
 share/locale/pl/LC_MESSAGES/akonadi-db-migrator.mo
@@ -501,6 +505,7 @@ share/locale/pl/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/pl/LC_MESSAGES/libakonadi6.mo
 share/locale/pt/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/pt/LC_MESSAGES/libakonadi6.mo
+share/locale/pt_BR/LC_MESSAGES/akonadi-db-migrator.mo
 share/locale/pt_BR/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/pt_BR/LC_MESSAGES/libakonadi6.mo
 share/locale/ro/LC_MESSAGES/akonadi_knut_resource.mo
@@ -509,6 +514,7 @@ share/locale/ru/LC_MESSAGES/akonadi-db-migrator.mo
 share/locale/ru/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/ru/LC_MESSAGES/libakonadi6.mo
 share/locale/se/LC_MESSAGES/libakonadi6.mo
+share/locale/sk/LC_MESSAGES/akonadi-db-migrator.mo
 share/locale/sk/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/sk/LC_MESSAGES/libakonadi6.mo
 share/locale/sl/LC_MESSAGES/akonadi-db-migrator.mo

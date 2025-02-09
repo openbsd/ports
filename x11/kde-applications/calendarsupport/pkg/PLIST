@@ -19,7 +19,6 @@ include/KPim6/CalendarSupport/CalendarSupport/IdentityManager
 include/KPim6/CalendarSupport/CalendarSupport/IncidenceViewer
 include/KPim6/CalendarSupport/CalendarSupport/KCalPrefs
 include/KPim6/CalendarSupport/CalendarSupport/MessageWidget
-include/KPim6/CalendarSupport/CalendarSupport/NoteEditDialog
 include/KPim6/CalendarSupport/CalendarSupport/PrintPlugin
 include/KPim6/CalendarSupport/CalendarSupport/UriHandler
 include/KPim6/CalendarSupport/CalendarSupport/Utils
@@ -43,7 +42,6 @@ include/KPim6/CalendarSupport/calendarsupport/incidenceviewer.h
 include/KPim6/CalendarSupport/calendarsupport/kcalprefs.h
 include/KPim6/CalendarSupport/calendarsupport/kcalprefs_base.h
 include/KPim6/CalendarSupport/calendarsupport/messagewidget.h
-include/KPim6/CalendarSupport/calendarsupport/noteeditdialog.h
 include/KPim6/CalendarSupport/calendarsupport/printplugin.h
 include/KPim6/CalendarSupport/calendarsupport/ui_calprintdayconfig_base.h
 include/KPim6/CalendarSupport/calendarsupport/ui_calprintincidenceconfig_base.h

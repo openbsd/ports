@@ -1,7 +1,7 @@
 Index: sheets/engine/Value.h
 --- sheets/engine/Value.h.orig
 +++ sheets/engine/Value.h
-@@ -84,11 +84,6 @@ class CALLIGRA_SHEETS_ENGINE_EXPORT Value (public)
+@@ -94,11 +94,6 @@ class CALLIGRA_SHEETS_ENGINE_EXPORT Value (public)
       */
      explicit Value(bool b);
  

@@ -1,0 +1,12 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -168,7 +168,7 @@ if(NOT KPim6AkonadiSearch_FOUND)
+     set(FORCE_DISABLE_AKONADI_SEARCH TRUE)
+ endif()
+ 
+-find_package(OpenSSL ${OPENSSL_VERSION} REQUIRED)
++find_package(OpenSSL REQUIRED)
+ 
+ ecm_set_disabled_deprecation_versions(QT 6.8.0 KF 6.8.0)
+ add_definitions(-DQT_NO_CONTEXTLESS_CONNECT)

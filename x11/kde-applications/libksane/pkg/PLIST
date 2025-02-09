@@ -1,15 +1,16 @@
 @conflict libksane-<=4
-include/KF5/KSane/
-include/KF5/KSane/KSaneWidget
-include/KF5/KSane/ksane_export.h
-include/KF5/KSane/ksane_version.h
-include/KF5/KSane/ksanewidget.h
-lib/cmake/KF5Sane/
-lib/cmake/KF5Sane/KF5SaneConfig.cmake
-lib/cmake/KF5Sane/KF5SaneConfigVersion.cmake
-lib/cmake/KF5Sane/KF5SaneTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/KF5Sane/KF5SaneTargets.cmake
-@lib lib/libKF5Sane.so.${LIBKF5Sane_VERSION}
+@conflict libksane-kf5-*
+include/KSaneWidgets6/
+include/KSaneWidgets6/KSaneWidget
+include/KSaneWidgets6/ksane_export.h
+include/KSaneWidgets6/ksane_version.h
+include/KSaneWidgets6/ksanewidget.h
+lib/cmake/KSaneWidgets6/
+lib/cmake/KSaneWidgets6/KSaneWidgets6Config.cmake
+lib/cmake/KSaneWidgets6/KSaneWidgets6ConfigVersion.cmake
+lib/cmake/KSaneWidgets6/KSaneWidgets6Targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KSaneWidgets6/KSaneWidgets6Targets.cmake
+@lib lib/libKSaneWidgets6.so.${LIBKSaneWidgets6_VERSION}
 share/icons/hicolor/16x16/actions/black-white.png
 share/icons/hicolor/16x16/actions/color.png
 share/icons/hicolor/16x16/actions/gray-scale.png
@@ -32,6 +33,7 @@ share/locale/fi/LC_MESSAGES/libksane.mo
 share/locale/fr/LC_MESSAGES/libksane.mo
 share/locale/ga/LC_MESSAGES/libksane.mo
 share/locale/gl/LC_MESSAGES/libksane.mo
+share/locale/he/LC_MESSAGES/libksane.mo
 share/locale/hi/LC_MESSAGES/libksane.mo
 share/locale/hne/LC_MESSAGES/libksane.mo
 share/locale/hr/LC_MESSAGES/libksane.mo

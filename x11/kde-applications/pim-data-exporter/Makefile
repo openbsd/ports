@@ -14,7 +14,7 @@ WANTLIB += KF6StatusNotifierItem KF6TextAutoCorrectionCore KF6TextAutoCorrection
 WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6UserFeedbackCore
 WANTLIB += KF6UserFeedbackWidgets KF6WidgetsAddons KF6XmlGui KPim6AkonadiContactCore
 WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiCore KPim6AkonadiMime
-WANTLIB += KPim6AkonadiNotes KPim6AkonadiWidgets KPim6GrantleeTheme
+WANTLIB +=  KPim6AkonadiWidgets KPim6GrantleeTheme
 WANTLIB += KPim6IMAP KPim6IdentityManagementCore KPim6IdentityManagementWidgets
 WANTLIB += KPim6Libkdepim KPim6Libkleo KPim6MailCommon KPim6MailTransport
 WANTLIB += KPim6MessageComposer KPim6MessageCore KPim6Mime KPim6PimCommon
@@ -57,7 +57,6 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kiconthemes \
 		x11/kde-applications/akonadi-contacts>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/akonadi-mime>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/akonadi-notes>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/akonadi>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/grantleetheme>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/kidentitymanagement>=${MODKDE_GEAR_VERSION} \

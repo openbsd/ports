@@ -1,7 +1,6 @@
 COMMENT =	KDE app localization tools
 DISTNAME =	lokalize-${VERSION}
 CATEGORIES =	x11 devel
-REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/office/org.kde.lokalize
 
@@ -23,8 +22,7 @@ WANTLIB += Qt6Xml c hunspell-1.7 m
 
 MODULES +=	lang/python
 
-LIB_DEPENDS =	 \
-		devel/kf6/kbookmarks \
+LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/kcolorscheme \
 		devel/kf6/kcompletion \
 		devel/kf6/kconfig \

@@ -8,12 +8,12 @@ HOMEPAGE =	https://kde.org/applications/internet/org.kde.krdc
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Bookmarks KF6BookmarksWidgets
 WANTLIB += KF6ColorScheme KF6Completion KF6ConfigCore KF6ConfigGui
-WANTLIB += KF6ConfigWidgets KF6CoreAddons KF6DNSSD KF6I18n KF6IconThemes
-WANTLIB += KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick
-WANTLIB += KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Notifications
-WANTLIB += KF6NotifyConfig KF6Service KF6Solid KF6StatusNotifierItem
-WANTLIB += KF6Wallet KF6WidgetsAddons KF6WindowSystem KF6XmlGui
-WANTLIB += PlasmaActivities Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB += KF6ConfigWidgets KF6CoreAddons KF6Crash KF6DNSSD KF6I18n
+WANTLIB += KF6IconThemes KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore
+WANTLIB += KF6KCMUtilsQuick KF6KIOCore KF6KIOGui KF6KIOWidgets
+WANTLIB += KF6Notifications KF6NotifyConfig KF6Service KF6Solid
+WANTLIB += KF6StatusNotifierItem KF6Wallet KF6WidgetsAddons KF6WindowSystem
+WANTLIB += KF6XmlGui PlasmaActivities Qt6Core Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6Qml Qt6WaylandClient Qt6Widgets Qt6Xml X11 c freerdp-client2
 WANTLIB += freerdp2 m sndio ssh vncclient wayland-client wayland-cursor
 WANTLIB += winpr2 xkbcommon
@@ -23,6 +23,8 @@ MODKDE_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes
 MODKF5_L10N_CONFLICT = yes
 MODKDE_DOCS = yes
+
+RUN_DEPENDS +=	misc/shared-mime-info
 
 LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/kcmutils \
@@ -45,6 +47,7 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/kwindowsystem \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \
+		devel/kf6/kcrash \
 		net/libvncserver \
 		security/libssh \
 		wayland/wayland \

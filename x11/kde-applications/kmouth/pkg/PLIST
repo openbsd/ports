@@ -101,16 +101,14 @@ share/examples/kmouth/
 share/examples/kmouth/xdg/
 share/examples/kmouth/xdg/kmouthrc
 @sample ${SYSCONFDIR}/xdg/kmouthrc
+share/icons/hicolor/128x128/apps/kmouth.png
 share/icons/hicolor/16x16/actions/phrase.png
 share/icons/hicolor/16x16/actions/phrasebook.png
-share/icons/hicolor/16x16/apps/kmouth.png
 share/icons/hicolor/22x22/actions/phrase.png
 share/icons/hicolor/22x22/actions/phrasebook.png
-share/icons/hicolor/22x22/apps/kmouth.png
 share/icons/hicolor/32x32/actions/phrase.png
 share/icons/hicolor/32x32/actions/phrasebook.png
-share/icons/hicolor/32x32/apps/kmouth.png
-share/icons/hicolor/48x48/apps/kmouth.png
+share/icons/hicolor/scalable/apps/kmouth.svg
 share/kmouth/
 share/kmouth/books/
 share/kmouth/books/ca/

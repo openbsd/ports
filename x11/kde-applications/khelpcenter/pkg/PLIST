@@ -1,6 +1,6 @@
 @conflict kde-baseapps-*
 @bin bin/khelpcenter
-libexec/khc_mansearch.pl
+libexec/khc_mansearch.py
 @bin libexec/khc_xapianindexer
 @bin libexec/khc_xapiansearch
 share/applications/org.kde.khelpcenter.desktop

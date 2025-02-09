@@ -1,8 +1,8 @@
 @conflict kcron-kf5-*
 lib/qt6/plugins/plasma/
 lib/qt6/plugins/plasma/kcms/
-lib/qt6/plugins/plasma/kcms/systemsettings_qwidgets/
-@so lib/qt6/plugins/plasma/kcms/systemsettings_qwidgets/kcm_cron.so
+lib/qt6/plugins/plasma/kcms/systemsettings/
+@so lib/qt6/plugins/plasma/kcms/systemsettings/kcm_cron.so
 @bin libexec/kf6/kauth/kcron_helper
 share/applications/kcm_cron.desktop
 share/dbus-1/system-services/local.kcron.crontab.service

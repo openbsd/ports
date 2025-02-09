@@ -6,11 +6,11 @@ SHARED_LIBS +=	KPim6IncidenceEditor      0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CalendarCore KF6Codecs KF6ColorScheme
 WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
-WANTLIB += KF6Contacts KF6CoreAddons KF6I18n KF6IconThemes KF6ItemModels
-WANTLIB += KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Service
-WANTLIB += KF6Solid KF6SonnetUi KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
-WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6TextWidgets
-WANTLIB += KF6WidgetsAddons KF6XmlGui KGantt6 KPim6AkonadiCalendar
+WANTLIB += KF6Contacts KF6CoreAddons KF6GuiAddons KF6I18n KF6IconThemes
+WANTLIB += KF6ItemModels KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets
+WANTLIB += KF6Service KF6Solid KF6SonnetUi KF6TextAutoCorrectionCore
+WANTLIB += KF6TextAutoCorrectionWidgets KF6TextCustomEditor KF6TextTemplate
+WANTLIB += KF6TextWidgets KF6WidgetsAddons KF6XmlGui KGantt6 KPim6AkonadiCalendar
 WANTLIB += KPim6AkonadiContactCore KPim6AkonadiContactWidgets
 WANTLIB += KPim6AkonadiCore KPim6AkonadiMime KPim6AkonadiWidgets
 WANTLIB += KPim6CalendarSupport KPim6CalendarUtils KPim6EventViews
@@ -46,6 +46,7 @@ LIB_DEPENDS =	graphics/kdiagram-qt6 \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \
 		devel/kf6/sonnet \
+		devel/kf6/kguiaddons \
 		textproc/ktextaddons \
 		x11/kde-applications/akonadi-calendar>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/akonadi-contacts>=${MODKDE_GEAR_VERSION} \

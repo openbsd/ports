@@ -185,4 +185,6 @@ share/locale/zh_HK/LC_MESSAGES/krdc.mo
 share/locale/zh_TW/LC_MESSAGES/krdc.mo
 share/metainfo/
 share/metainfo/org.kde.krdc.appdata.xml
+share/mime/packages/org.kde.krdc-mime.xml
 share/qlogging-categories6/krdc.categories
+@tag update-mime-database

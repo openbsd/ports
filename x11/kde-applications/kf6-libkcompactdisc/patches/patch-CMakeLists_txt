@@ -1,11 +1,11 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -58,6 +58,6 @@ if(BUILD_TESTING)
+@@ -49,6 +49,6 @@ if(BUILD_TESTING)
      add_subdirectory(tests)
  endif()
  
 -ki18n_install(po)
 +#ki18n_install(po)
- 
+ kde_configure_git_pre_commit_hook(CHECKS CLANG_FORMAT)
  feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)

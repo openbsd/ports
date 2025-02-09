@@ -6,6 +6,7 @@ include/KPim6/PimCommon/PimCommon/BroadcastStatus
 include/KPim6/PimCommon/PimCommon/ConfigureImmutableWidgetUtils
 include/KPim6/PimCommon/PimCommon/ConfigurePluginDialog
 include/KPim6/PimCommon/PimCommon/ConfigurePluginsListWidget
+include/KPim6/PimCommon/PimCommon/ConfigurePluginsTreeWidgetDelegate
 include/KPim6/PimCommon/PimCommon/ConfigurePluginsWidget
 include/KPim6/PimCommon/PimCommon/CustomLogWidget
 include/KPim6/PimCommon/PimCommon/CustomToolsPlugin
@@ -31,6 +32,12 @@ include/KPim6/PimCommon/PimCommon/SimpleStringListEditor
 include/KPim6/PimCommon/PimCommon/SpellCheckLineEdit
 include/KPim6/PimCommon/PimCommon/TemplateListWidget
 include/KPim6/PimCommon/PimCommon/TemplateManager
+include/KPim6/PimCommon/PimCommon/VerifyNewVersionWidget
+include/KPim6/PimCommon/PimCommon/WhatsNewComboBoxWidget
+include/KPim6/PimCommon/PimCommon/WhatsNewDialog
+include/KPim6/PimCommon/PimCommon/WhatsNewInfo
+include/KPim6/PimCommon/PimCommon/WhatsNewMessageWidget
+include/KPim6/PimCommon/PimCommon/WhatsNewTranslationsBase
 include/KPim6/PimCommon/pimcommon/
 include/KPim6/PimCommon/pimcommon/abstractgenericplugin.h
 include/KPim6/PimCommon/pimcommon/abstractgenericplugininterface.h
@@ -38,6 +45,7 @@ include/KPim6/PimCommon/pimcommon/broadcaststatus.h
 include/KPim6/PimCommon/pimcommon/configureimmutablewidgetutils.h
 include/KPim6/PimCommon/pimcommon/configureplugindialog.h
 include/KPim6/PimCommon/pimcommon/configurepluginslistwidget.h
+include/KPim6/PimCommon/pimcommon/configurepluginstreewidgetdelegate.h
 include/KPim6/PimCommon/pimcommon/configurepluginswidget.h
 include/KPim6/PimCommon/pimcommon/customlogwidget.h
 include/KPim6/PimCommon/pimcommon/customtoolsplugin.h
@@ -65,7 +73,22 @@ include/KPim6/PimCommon/pimcommon/simplestringlisteditor.h
 include/KPim6/PimCommon/pimcommon/spellchecklineedit.h
 include/KPim6/PimCommon/pimcommon/templatelistwidget.h
 include/KPim6/PimCommon/pimcommon/templatemanager.h
+include/KPim6/PimCommon/pimcommon/verifynewversionwidget.h
+include/KPim6/PimCommon/pimcommon/whatsnewcomboboxwidget.h
+include/KPim6/PimCommon/pimcommon/whatsnewdialog.h
+include/KPim6/PimCommon/pimcommon/whatsnewinfo.h
+include/KPim6/PimCommon/pimcommon/whatsnewmessagewidget.h
+include/KPim6/PimCommon/pimcommon/whatsnewtranslationsbase.h
 include/KPim6/PimCommon/pimcommon_version.h
+include/KPim6/PimCommonActivities/
+include/KPim6/PimCommonActivities/PimCommonActivities/
+include/KPim6/PimCommonActivities/PimCommonActivities/ActivitiesBaseManager
+include/KPim6/PimCommonActivities/PimCommonActivities/ConfigureActivitiesWidget
+include/KPim6/PimCommonActivities/pimcommonactivities/
+include/KPim6/PimCommonActivities/pimcommonactivities/activitiesbasemanager.h
+include/KPim6/PimCommonActivities/pimcommonactivities/configureactivitieswidget.h
+include/KPim6/PimCommonActivities/pimcommonactivities/pimcommonactivities_export.h
+include/KPim6/PimCommonActivities/pimcommonactivities_version.h
 include/KPim6/PimCommonAkonadi/
 include/KPim6/PimCommonAkonadi/PimCommonAkonadi/
 include/KPim6/PimCommonAkonadi/PimCommonAkonadi/AddresseeLineEdit
@@ -114,12 +137,18 @@ lib/cmake/KPim6PimCommon/KPim6PimCommonConfig.cmake
 lib/cmake/KPim6PimCommon/KPim6PimCommonConfigVersion.cmake
 lib/cmake/KPim6PimCommon/KPim6PimCommonTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KPim6PimCommon/KPim6PimCommonTargets.cmake
+lib/cmake/KPim6PimCommonActivities/
+lib/cmake/KPim6PimCommonActivities/KPim6PimCommonActivitiesConfig.cmake
+lib/cmake/KPim6PimCommonActivities/KPim6PimCommonActivitiesConfigVersion.cmake
+lib/cmake/KPim6PimCommonActivities/KPim6PimCommonActivitiesTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KPim6PimCommonActivities/KPim6PimCommonActivitiesTargets.cmake
 lib/cmake/KPim6PimCommonAkonadi/
 lib/cmake/KPim6PimCommonAkonadi/KPim6PimCommonAkonadiConfig.cmake
 lib/cmake/KPim6PimCommonAkonadi/KPim6PimCommonAkonadiConfigVersion.cmake
 lib/cmake/KPim6PimCommonAkonadi/KPim6PimCommonAkonadiTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KPim6PimCommonAkonadi/KPim6PimCommonAkonadiTargets.cmake
 @lib lib/libKPim6PimCommon.so.${LIBKPim6PimCommon_VERSION}
+@lib lib/libKPim6PimCommonActivities.so.${LIBKPim6PimCommonActivities_VERSION}
 @lib lib/libKPim6PimCommonAkonadi.so.${LIBKPim6PimCommonAkonadi_VERSION}
 @so lib/qt6/plugins/designer/pimcommon6akonadiwidgets.so
 @so lib/qt6/plugins/designer/pimcommon6widgets.so

@@ -1,5 +1,7 @@
 @bin bin/kalarm
 @bin bin/kalarmautostart
+lib/kconf_update_bin/
+@bin lib/kconf_update_bin/kalarm-3.10.0-run_mode
 @lib lib/libkalarmcalendar.so.${LIBkalarmcalendar_VERSION}
 @lib lib/libkalarmplugin.so.${LIBkalarmplugin_VERSION}
 lib/qt6/plugins/pim6/kalarm/
@@ -81,6 +83,8 @@ share/kalarm/icons/oxygen/22x22/
 share/kalarm/icons/oxygen/22x22/actions/
 share/kalarm/icons/oxygen/22x22/actions/document-new-from-template.png
 share/kalarm/icons/oxygen/22x22/actions/kalarm.png
+share/kconf_update/
+share/kconf_update/kalarm.upd
 share/knotifications6/kalarm.notifyrc
 share/locale/af/LC_MESSAGES/kalarm.mo
 share/locale/ar/LC_MESSAGES/kalarm.mo

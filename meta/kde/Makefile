@@ -30,12 +30,6 @@ PKGNAME-utils =		kde-utils-${MODKDE_GEAR_VERSION}
 PKGNAME-plasma =	kde-plasma-${MODKDE_PLASMA_VERSION}
 PKGNAME-plasma-extras =	kde-plasma-extras-${MODKDE_PLASMA_VERSION}
 
-REVISION-main =		0
-REVISION-pim =		0
-REVISION-admin =	0
-REVISION-plasma-extras =0
-REVISION-multimedia =	0
-
 MULTI_PACKAGES +=	-main \
 			-games \
 			-admin \
@@ -217,7 +211,6 @@ KDE_AKONADI = \
 	x11/kde-applications/akonadi-contacts \
 	x11/kde-applications/akonadi-import-wizard \
 	x11/kde-applications/akonadi-mime \
-	x11/kde-applications/akonadi-notes \
 	x11/kde-applications/akonadi-search \
 	x11/kde-applications/akonadiconsole
 
@@ -297,7 +290,6 @@ RUN_DEPENDS-development = \
 	x11/kde-applications/ktnef \
 	x11/kde-applications/libgravatar \
 	x11/kde-applications/libkcddb \
-	x11/kde-applications/libkcompactdisc \
 	x11/kde-applications/libkdcraw \
 	x11/kde-applications/libkdegames \
 	x11/kde-applications/libkdepim \

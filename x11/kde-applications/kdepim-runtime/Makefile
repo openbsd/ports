@@ -3,11 +3,10 @@ USE_WXNEEDED =	Yes
 COMMENT =	KDE PIM mail related libraries
 DISTNAME =	kdepim-runtime-${VERSION}
 CATEGORIES =	devel
-REVISION =	2
 
-SHARED_LIBS +=  akonadi-filestore           1.0 # 5.13.2
-SHARED_LIBS +=  akonadi-singlefileresource  2.0 # 5.13.2
-SHARED_LIBS +=  folderarchivesettings       1.0 # 5.13.2
+SHARED_LIBS +=  akonadi-filestore           2.0 # 5.13.2
+SHARED_LIBS +=  akonadi-singlefileresource  3.0 # 5.13.2
+SHARED_LIBS +=  folderarchivesettings       2.0 # 5.13.2
 SHARED_LIBS +=  kmindexreader               1.0 # 5.13.2
 SHARED_LIBS +=  maildir                     1.0 # 5.13.2
 SHARED_LIBS +=	newmailnotifier             0.0 # 0.0
@@ -18,9 +17,9 @@ WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6Contacts KF6CoreAddons
 WANTLIB += KF6DAV KF6I18n KF6ItemModels KF6ItemViews KF6JobWidgets
 WANTLIB += KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore
 WANTLIB += KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets KF6Notifications
-WANTLIB += KF6NotifyConfig KF6Service KF6Solid KF6SonnetUi KF6TextCustomEditor
-WANTLIB += KF6TextTemplate KF6TextWidgets KF6Wallet KF6WidgetsAddons
-WANTLIB += KF6WindowSystem KF6XmlGui KPim6AkonadiAgentBase KPim6AkonadiCalendar
+WANTLIB += KF6NotifyConfig KF6Service KF6Solid KF6TextCustomEditor
+WANTLIB += KF6TextTemplate KF6Wallet KF6WidgetsAddons KF6WindowSystem
+WANTLIB += KF6XmlGui KPim6AkonadiAgentBase KPim6AkonadiCalendar
 WANTLIB += KPim6AkonadiContactCore KPim6AkonadiContactWidgets
 WANTLIB += KPim6AkonadiCore KPim6AkonadiMime KPim6AkonadiWidgets
 WANTLIB += KPim6GAPICalendar KPim6GAPICore KPim6GAPIPeople KPim6GAPITasks
@@ -40,15 +39,9 @@ MODKDE_ICON_CACHE = yes
 MODKF5_L10N_CONFLICT = yes
 MODKF5_I18N_CONFLICT = yes
 
-BUILD_DEPENDS =	devel/boost \
-		devel/kf6/kholidays \
-		x11/kde-applications/akonadi-notes>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/libkdepim>=${MODKDE_GEAR_VERSION}
+BUILD_DEPENDS =	devel/boost
 
-RUN_DEPENDS =	misc/shared-mime-info \
-		devel/kf6/kholidays \
-		x11/kde-applications/akonadi-notes>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/libkdepim>=${MODKDE_GEAR_VERSION}
+RUN_DEPENDS =	misc/shared-mime-info
 
 LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/kcalendarcore \
@@ -70,13 +63,11 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/knotifyconfig \
 		devel/kf6/kservice \
 		devel/kf6/ktexttemplate \
-		devel/kf6/ktextwidgets \
 		devel/kf6/kwallet \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kwindowsystem \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \
-		devel/kf6/sonnet \
 		security/cyrus-sasl2 \
 		security/qca-qt6 \
 		security/qtkeychain,qt6 \
@@ -102,8 +93,6 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		x11/qt6/qtwebengine
 
 TEST_IS_INTERACTIVE =	X11
-
-CXXFLAGS =	-Wno-enum-constexpr-conversion
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

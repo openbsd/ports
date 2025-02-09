@@ -12,13 +12,23 @@ WANTLIB += KF6CoreAddons KF6Crash KF6JobWidgets KF6KIOCore KF6KIOGui
 WANTLIB += KF6KIOWidgets KF6Purpose KF6PurposeWidgets KF6Service
 WANTLIB += KF6Solid KF6Wallet KF6WidgetsAddons Qt6Core Qt6Core5Compat
 WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning
-WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickWidgets
-WANTLIB += Qt6Sql Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
-WANTLIB += Qt6Widgets c crypto execinfo intl m xcb
+WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
+WANTLIB += Qt6Quick Qt6QuickWidgets Qt6Sql Qt6WebChannel Qt6WebEngineCore
+WANTLIB += Qt6WebEngineWidgets Qt6Widgets c crypto execinfo intl
+WANTLIB += m pyside6.abi3 ${MODPY_WANTLIB} shiboken6.abi3 util xcb
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes
 MODKDE_TRANSLATIONS = yes
+
+MODULES =	lang/python
+
+# Python plugins
+BUILD_DEPENDS =	x11/qt6/pyside6/pyside \
+		x11/qt6/pyside6/shiboken \
+		x11/qt6/pyside6/tools
+
+RUN_DEPENDS =	x11/qt6/pyside6/pyside
 
 LIB_DEPENDS =	devel/gettext,-runtime \
 		devel/kf6/karchive \
@@ -40,5 +50,7 @@ LIB_DEPENDS =	devel/gettext,-runtime \
 		x11/qt6/qtwebengine
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 .include <bsd.port.mk>

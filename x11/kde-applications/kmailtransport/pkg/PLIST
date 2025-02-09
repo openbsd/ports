@@ -7,6 +7,7 @@ include/KPim6/MailTransport/MailTransport/ServerTest
 include/KPim6/MailTransport/MailTransport/Transport
 include/KPim6/MailTransport/MailTransport/TransportAbstractPlugin
 include/KPim6/MailTransport/MailTransport/TransportActivitiesAbstract
+include/KPim6/MailTransport/MailTransport/TransportActivitiesAbstractPlugin
 include/KPim6/MailTransport/MailTransport/TransportComboBox
 include/KPim6/MailTransport/MailTransport/TransportConfigWidget
 include/KPim6/MailTransport/MailTransport/TransportJob
@@ -24,6 +25,7 @@ include/KPim6/MailTransport/mailtransport/servertest.h
 include/KPim6/MailTransport/mailtransport/transport.h
 include/KPim6/MailTransport/mailtransport/transportabstractplugin.h
 include/KPim6/MailTransport/mailtransport/transportactivitiesabstract.h
+include/KPim6/MailTransport/mailtransport/transportactivitiesabstractplugin.h
 include/KPim6/MailTransport/mailtransport/transportbase.h
 include/KPim6/MailTransport/mailtransport/transportcombobox.h
 include/KPim6/MailTransport/mailtransport/transportconfigwidget.h

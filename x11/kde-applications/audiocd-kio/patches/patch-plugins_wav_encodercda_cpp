@@ -3,7 +3,7 @@ fix conflict with /usr/include/sys/endian.h
 Index: plugins/wav/encodercda.cpp
 --- plugins/wav/encodercda.cpp.orig
 +++ plugins/wav/encodercda.cpp
-@@ -43,11 +43,6 @@ extern "C" {
+@@ -44,11 +44,6 @@ extern "C" {
  #include "cdda_interface.hpp"
  }
  

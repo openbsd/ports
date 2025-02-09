@@ -12,7 +12,7 @@ WANTLIB += KF6KIOGui KF6KIOWidgets KF6NewStuffCore KF6NewStuffWidgets
 WANTLIB += KF6Plotting KF6Service KF6Solid KF6SonnetUi KF6TextWidgets
 WANTLIB += KF6WidgetsAddons KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Widgets Qt6Xml c gsl
-WANTLIB += gslcblas m
+WANTLIB += gslcblas m qalculate
 
 MODKDE_ICON_CACHE = yes
 MODKDE_TRANSLATIONS = yes
@@ -43,6 +43,7 @@ LIB_DEPENDS =	devel/gsl \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \
-		devel/kf6/sonnet
+		devel/kf6/sonnet \
+		math/libqalculate
 
 .include <bsd.port.mk>

@@ -2,12 +2,11 @@ COMMENT =	PIM Akonadi calendar tools
 DISTNAME =	akonadi-calendar-tools-${VERSION}
 CATEGORIES =	devel
 
-WANTLIB += ${COMPILER_LIBCXX} GL KF6CalendarCore KF6ColorScheme
-WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
-WANTLIB += KF6I18n KF6ItemModels KF6WidgetsAddons KPim6AkonadiCalendar
-WANTLIB += KPim6AkonadiCore KPim6CalendarSupport KPim6IdentityManagementCore
-WANTLIB += KPim6Mime Qt6Core Qt6DBus Qt6Gui Qt6PrintSupport Qt6Widgets
-WANTLIB += c m
+WANTLIB += ${COMPILER_LIBCXX} GL KF6CalendarCore KF6ConfigCore
+WANTLIB += KF6ConfigGui KF6CoreAddons KF6I18n KF6ItemModels KF6WidgetsAddons
+WANTLIB += KPim6AkonadiCalendar KPim6AkonadiCore KPim6CalendarSupport
+WANTLIB += KPim6IdentityManagementCore KPim6Mime Qt6Core Qt6DBus
+WANTLIB += Qt6Gui Qt6PrintSupport Qt6Widgets c m
 
 MODKDE_TRANSLATIONS = yes
 MODKDE_ICON_CACHE = yes
@@ -20,8 +19,6 @@ BUILD_DEPENDS =	devel/boost
 
 LIB_DEPENDS =	devel/kf6/kconfig \
 		devel/kf6/kcalendarcore \
-		devel/kf6/kcolorscheme \
-		devel/kf6/kconfigwidgets \
 		devel/kf6/kcoreaddons \
 		devel/kf6/ki18n \
 		devel/kf6/kitemmodels \

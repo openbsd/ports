@@ -50,6 +50,9 @@ share/doc/HTML/pt_BR/kompare/index.docbook
 share/doc/HTML/ru/kompare/
 share/doc/HTML/ru/kompare/index.cache.bz2
 share/doc/HTML/ru/kompare/index.docbook
+share/doc/HTML/sl/kompare/
+share/doc/HTML/sl/kompare/index.cache.bz2
+share/doc/HTML/sl/kompare/index.docbook
 share/doc/HTML/sv/kompare/
 share/doc/HTML/sv/kompare/index.cache.bz2
 share/doc/HTML/sv/kompare/index.docbook
@@ -105,6 +108,7 @@ share/locale/hi/LC_MESSAGES/kompare.mo
 share/locale/hne/LC_MESSAGES/kompare.mo
 share/locale/hr/LC_MESSAGES/kompare.mo
 share/locale/hu/LC_MESSAGES/kompare.mo
+share/locale/ia/LC_MESSAGES/kompare.mo
 share/locale/is/LC_MESSAGES/kompare.mo
 share/locale/it/LC_MESSAGES/kompare.mo
 share/locale/ja/LC_MESSAGES/kompare.mo

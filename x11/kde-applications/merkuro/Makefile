@@ -19,21 +19,21 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CalendarCore KF6Codecs KF6ColorScheme
 WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
-WANTLIB += KF6Contacts KF6CoreAddons KF6DBusAddons KF6I18n KF6ItemModels
-WANTLIB += KF6KIOCore KF6Notifications KF6TextAutoCorrectionCore
-WANTLIB += KF6TextAutoCorrectionWidgets KF6TextCustomEditor KF6TextTemplate
-WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui KPim6AkonadiCalendar
-WANTLIB += KPim6AkonadiContactCore KPim6AkonadiContactWidgets
-WANTLIB += KPim6AkonadiCore KPim6AkonadiMime KPim6AkonadiWidgets
-WANTLIB += KPim6CalendarUtils KPim6GrantleeTheme KPim6IMAP KPim6IdentityManagementCore
-WANTLIB += KPim6IdentityManagementQuick KPim6IdentityManagementWidgets
-WANTLIB += KPim6Libkdepim KPim6Libkleo KPim6MailCommon KPim6MailTransport
-WANTLIB += KPim6Mbox KPim6MessageComposer KPim6MessageCore KPim6Mime
-WANTLIB += KPim6MimeTreeParserCore KPim6PimCommon KPim6PimCommonAkonadi
-WANTLIB += KPim6TextEdit KirigamiAddonsStatefulApp Qt6Core Qt6DBus
-WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick
-WANTLIB += Qt6QuickControls2 Qt6Widgets Qt6Xml X11 assuan c gpgme
-WANTLIB += gpgmepp m qgpgmeqt6
+WANTLIB += KF6Contacts KF6CoreAddons KF6Crash KF6DBusAddons KF6I18n
+WANTLIB += KF6I18nQml KF6ItemModels KF6KIOCore KF6Notifications
+WANTLIB += KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
+WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6WidgetsAddons
+WANTLIB += KF6WindowSystem KF6XmlGui KPim6AkonadiCalendar KPim6AkonadiContactCore
+WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiCore KPim6AkonadiMime
+WANTLIB += KPim6AkonadiWidgets KPim6CalendarUtils KPim6GrantleeTheme
+WANTLIB += KPim6IMAP KPim6IdentityManagementCore KPim6IdentityManagementQuick
+WANTLIB += KPim6IdentityManagementWidgets KPim6Libkdepim KPim6Libkleo
+WANTLIB += KPim6MailCommon KPim6MailTransport KPim6Mbox KPim6MessageComposer
+WANTLIB += KPim6MessageCore KPim6Mime KPim6MimeTreeParserCore
+WANTLIB += KPim6PimCommon KPim6PimCommonAkonadi KPim6TextEdit
+WANTLIB += KirigamiAddonsStatefulApp Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickControls2
+WANTLIB += Qt6Widgets Qt6Xml X11 assuan c gpgme gpgmepp m qgpgmeqt6
 
 BUILD_DEPENDS =	devel/boost \
 		devel/gettext,-tools \
@@ -47,14 +47,12 @@ BUILD_DEPENDS =	devel/boost \
 		devel/kf6/qqc2-desktop-style \
 		devel/kf6/solid \
 		devel/kf6/sonnet \
-		graphics/kirigami-addons \
 		misc/shared-mime-info
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/kf6/kirigami \
 		x11/kde-plasma/libplasma \
 		devel/kf6/qqc2-desktop-style \
-		graphics/kirigami-addons \
 		x11/gtk+4,-guic
 
 LIB_DEPENDS =	devel/kf6/kcalendarcore \
@@ -78,6 +76,7 @@ LIB_DEPENDS =	devel/kf6/kcalendarcore \
 		security/gpgme \
 		security/libassuan \
 		textproc/ktextaddons \
+		devel/kf6/kcrash \
 		security/gpgme,-qt \
 		x11/kde-applications/akonadi-calendar>=${MODKDE_GEAR_VERSION} \
 		x11/kde-applications/akonadi-contacts>=${MODKDE_GEAR_VERSION} \

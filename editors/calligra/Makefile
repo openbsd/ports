@@ -1,8 +1,8 @@
-COMMENT =	K Desktop Environment, office suite
+COMMENT =	KDE office suite
 
 HOMEPAGE =	https://www.calligra.org
 
-DISTNAME =	calligra-4.0.1
+DISTNAME =	calligra-${MODKDE_GEAR_VERSION}
 
 CATEGORIES =	editors
 
@@ -19,7 +19,7 @@ SHARED_LIBS +=  komsooxml                 52.0 # 13.0
 SHARED_LIBS +=  koodf                     52.0 # 0.0
 SHARED_LIBS +=  koodf2                    52.0 # 13.0
 SHARED_LIBS +=  koodfreader               51.0 # 13.0
-SHARED_LIBS +=  kopageapp                 52.0 # 0.0
+SHARED_LIBS +=  kopageapp                 53.0 # 0.0
 SHARED_LIBS +=  koplugin                  51.0 # 0.0
 SHARED_LIBS +=  kotext                    53.0 # 0.0
 SHARED_LIBS +=  kotextlayout              52.0 # 13.0
@@ -44,9 +44,7 @@ SHARED_LIBS +=  calligrasheetsui          0.0 # 0.0
 SHARED_LIBS +=  kookularGenerator_odp     0.0 # 0.0
 SHARED_LIBS +=  kookularGenerator_odt     0.0 # 0.0
 
-DIST_SUBDIR =	kde
-
-SITES =		${SITE_KDE:=stable/calligra/}
+SITES =	${SITE_KDE:=stable/release-service/${MODKDE_GEAR_VERSION}/src/}
 EXTRACT_SUFX =		.tar.xz
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
@@ -70,7 +68,7 @@ WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickControls2 Qt6Sql
 WANTLIB += Qt6Svg Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
 WANTLIB += Qt6Widgets Qt6Xml X11 c crypto fontconfig freetype
 WANTLIB += gsl gslcblas lcms2 m phonon4qt6 phonon4qt6experimental
-WANTLIB += poppler-qt6 qt6keychain ssl z
+WANTLIB += poppler poppler-qt6 qca-qt6 qt6keychain ssl z
 
 MODULES =	x11/kde
 
@@ -121,6 +119,7 @@ LIB_DEPENDS =	devel/gsl \
 		graphics/lcms2 \
 		math/imath \
 		print/poppler,-qt6 \
+		security/qca-qt6 \
 		security/qtkeychain,qt6 \
 		x11/kde-applications/okular \
 		x11/qt6/qtdeclarative \

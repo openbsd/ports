@@ -6,17 +6,18 @@ SHARED_LIBS +=	KPim6AkonadiCalendar      0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CalendarCore KF6Codecs KF6ColorScheme
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6Contacts
-WANTLIB += KF6CoreAddons KF6DBusAddons KF6I18n KF6ItemModels KF6JobWidgets
-WANTLIB += KF6KIOCore KF6KIOGui KF6Notifications KF6Service KF6TextAutoCorrectionCore
-WANTLIB += KF6TextAutoCorrectionWidgets KF6TextCustomEditor KF6TextTemplate
-WANTLIB += KF6WidgetsAddons KF6XmlGui KPim6AkonadiContactCore
-WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiCore KPim6AkonadiMime
-WANTLIB += KPim6AkonadiWidgets KPim6CalendarUtils KPim6GrantleeTheme
-WANTLIB += KPim6IMAP KPim6IdentityManagementCore KPim6IdentityManagementWidgets
-WANTLIB += KPim6Libkdepim KPim6Libkleo KPim6MailTransport KPim6MessageComposer
-WANTLIB += KPim6MessageCore KPim6Mime KPim6PimCommon KPim6PimCommonAkonadi
-WANTLIB += KPim6TextEdit Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets
-WANTLIB += Qt6Xml assuan c gpgme gpgmepp m qgpgmeqt6
+WANTLIB += KF6CoreAddons KF6Crash KF6DBusAddons KF6I18n KF6ItemModels
+WANTLIB += KF6JobWidgets KF6KIOCore KF6KIOGui KF6Notifications
+WANTLIB += KF6Service KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
+WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6WidgetsAddons
+WANTLIB += KF6XmlGui KPim6AkonadiContactCore KPim6AkonadiContactWidgets
+WANTLIB += KPim6AkonadiCore KPim6AkonadiMime KPim6AkonadiWidgets
+WANTLIB += KPim6CalendarUtils KPim6GrantleeTheme KPim6IMAP KPim6IdentityManagementCore
+WANTLIB += KPim6IdentityManagementWidgets KPim6Libkdepim KPim6Libkleo
+WANTLIB += KPim6MailTransport KPim6MessageComposer KPim6MessageCore
+WANTLIB += KPim6Mime KPim6PimCommon KPim6PimCommonAkonadi KPim6TextEdit
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets Qt6Xml
+WANTLIB += assuan c gpgme gpgmepp m qgpgmeqt6
 
 MODKDE_TRANSLATIONS = yes
 
@@ -37,6 +38,7 @@ LIB_DEPENDS =	devel/kf6/kcalendarcore \
 		devel/kf6/knotifications \
 		devel/kf6/kservice \
 		devel/kf6/ktexttemplate \
+		devel/kf6/kcrash \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
 		security/gpgme,-qt \

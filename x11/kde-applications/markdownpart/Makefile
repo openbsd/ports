@@ -20,6 +20,5 @@ LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kparts \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui
-		
 
 .include <bsd.port.mk>

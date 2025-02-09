@@ -64,6 +64,7 @@ include/KPim6/MailCommon/mailcommon/collectiongeneralpage.h
 include/KPim6/MailCommon/mailcommon/collectiongeneralwidget.h
 include/KPim6/MailCommon/mailcommon/collectiontemplateswidget.h
 include/KPim6/MailCommon/mailcommon/collectionviewwidget.h
+include/KPim6/MailCommon/mailcommon/config-mailcommon.h
 include/KPim6/MailCommon/mailcommon/cryptoutils.h
 include/KPim6/MailCommon/mailcommon/dbusoperators.h
 include/KPim6/MailCommon/mailcommon/entitycollectionorderproxymodel.h

@@ -58,6 +58,12 @@ lib/qt6/qml/org/kde/kdeconnect/RemoteKeyboard.qml
 lib/qt6/qml/org/kde/kdeconnect/kde-qmlmodule.version
 lib/qt6/qml/org/kde/kdeconnect/kdeconnectdeclarativeplugin.qmltypes
 @so lib/qt6/qml/org/kde/kdeconnect/libkdeconnectdeclarativeplugin.so
+lib/qt6/qml/org/kde/kdeconnect/private/
+lib/qt6/qml/org/kde/kdeconnect/private/findthisdevice/
+lib/qt6/qml/org/kde/kdeconnect/private/findthisdevice/kde-qmlmodule.version
+lib/qt6/qml/org/kde/kdeconnect/private/findthisdevice/kdeconnect_findthisdevice_qmlhelper.qmltypes
+@so lib/qt6/qml/org/kde/kdeconnect/private/findthisdevice/libkdeconnect_findthisdevice_qmlhelper.so
+lib/qt6/qml/org/kde/kdeconnect/private/findthisdevice/qmldir
 lib/qt6/qml/org/kde/kdeconnect/qmldir
 share/Thunar/
 share/Thunar/sendto/
@@ -929,7 +935,6 @@ share/locale/zh_TW/LC_MESSAGES/kdeconnect-settings.mo
 share/locale/zh_TW/LC_MESSAGES/kdeconnect-sms.mo
 share/locale/zh_TW/LC_MESSAGES/kdeconnect-urlhandler.mo
 share/locale/zh_TW/LC_MESSAGES/plasma_applet_org.kde.kdeconnect.mo
-share/metainfo/
 share/metainfo/org.kde.kdeconnect.appdata.xml
 share/metainfo/org.kde.kdeconnect.metainfo.xml
 share/nautilus-python/

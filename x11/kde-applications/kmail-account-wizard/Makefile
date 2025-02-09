@@ -6,8 +6,8 @@ SHARED_LIBS +=  kmailprivate       2.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
-WANTLIB += KF6DBusAddons KF6I18n KF6IconThemes KF6ItemModels KF6KIOCore
-WANTLIB += KF6WidgetsAddons KPim6AkonadiCore KPim6AkonadiWidgets
+WANTLIB += KF6DBusAddons KF6I18n KF6I18nQml KF6IconThemes KF6ItemModels
+WANTLIB += KF6KIOCore KF6WidgetsAddons KPim6AkonadiCore KPim6AkonadiWidgets
 WANTLIB += KPim6IdentityManagementCore KPim6MailTransport KPim6Mime
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml
 WANTLIB += Qt6QmlModels Qt6Quick Qt6QuickControls2 Qt6Widgets

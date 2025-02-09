@@ -4,12 +4,21 @@ Index: src/lib/localeHandling.cpp
 @@ -15,7 +15,7 @@ auto LocaleHandling::setLocale(const QString &lcName) 
      QList<QString> localesToTest;
      localesToTest << lcName << lcName + ".utf-8" << lcName + ".UTF-8" << lcName + ".utf8" << lcName + ".UTF8";
-     for (const auto &locale : qAsConst(localesToTest)) {
+     for (const auto &locale : std::as_const(localesToTest)) {
 -#ifdef Q_OS_FREEBSD
 +#if defined(Q_OS_FREEBSD) || defined(Q_OS_OPENBSD)
          auto *result = setlocale(MLT_LC_CATEGORY, locale.toStdString().c_str());
  #else
          auto *result = std::setlocale(MLT_LC_CATEGORY, locale.toStdString().c_str());
+@@ -38,7 +38,7 @@ void LocaleHandling::resetLocale()
+     // const QString decimalPoint = QLocale().decimalPoint();
+     std::setlocale(MLT_LC_CATEGORY, "en_US.UTF-8");
+     ::qputenv(MLT_LC_NAME, "en_US.UTF-8");
+-#elif defined(Q_OS_FREEBSD)
++#elif defined(Q_OS_FREEBSD) || defined(Q_OS_OPENBSD)
+     setlocale(MLT_LC_CATEGORY, "C");
+     ::qputenv(MLT_LC_NAME, "C");
+ #else
 @@ -49,7 +49,7 @@ void LocaleHandling::resetLocale()
  
  void LocaleHandling::resetAllLocale()
