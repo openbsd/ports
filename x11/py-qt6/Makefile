@@ -1,9 +1,8 @@
 COMMENT=	Python bindings for Qt6
 
-MODPY_DISTV=	6.7.1
+MODPY_DISTV=	6.8.0
 DISTNAME=	PyQt6-${MODPY_DISTV}
 PKGNAME=	py-qt6-${MODPY_DISTV}
-REVISION=	0
 
 CATEGORIES=	x11 devel
 
@@ -22,14 +21,15 @@ WANTLIB += Qt6Quick3DUtils Qt6QuickWidgets Qt6RemoteObjects Qt6Sensors
 WANTLIB += Qt6SerialPort Qt6ShaderTools Qt6SpatialAudio Qt6Sql
 WANTLIB += Qt6Svg Qt6SvgWidgets Qt6Test Qt6TextToSpeech Qt6WebChannel
 WANTLIB += Qt6WebSockets Qt6Widgets Qt6Xml dbus-1 m ${MODPY_WANTLIB}
+WANTLIB += Qt6QmlMeta Qt6QmlWorkerScript
 
-BUILD_DEPENDS=	devel/py-qt-builder \
-		x11/py-sip-qt6>=13.8 \
+BUILD_DEPENDS=	devel/py-qt-builder>=1.18.0\
+		x11/py-sip-qt6>=13.10.0 \
 		x11/dbus-python \
 		graphics/vulkan-loader
 
-RUN_DEPENDS=	devel/py-sip>=5.5.0v0 \
-		x11/py-sip-qt6>=13.8 \
+RUN_DEPENDS=	devel/py-sip>=6.10.0v0 \
+		x11/py-sip-qt6>=13.10.0 \
 		devel/py-ply \
 		x11/dbus-python
 
@@ -58,7 +58,7 @@ MODPY_PI=	Yes
 # https://www.riverbankcomputing.com/static/Docs/PyQt6/installation.html#building-pyqt6
 CONFIGURE_STYLE= simple
 CONFIGURE_SCRIPT= ${LOCALBASE}/bin/sip-build
-CONFIGURE_ARGS =	--verbose --confirm-license
+CONFIGURE_ARGS =	--verbose --confirm-license --pep484-pyi
 
 MAKE_FLAGS=	-C build \
 		CC=${CC} \

@@ -303,6 +303,7 @@ lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qpaintengine.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qpainter.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qpainterpath.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qpalette.sip
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qpdfoutputintent.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qpdfwriter.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qpen.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qpicture.sip
@@ -312,6 +313,7 @@ lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qpixmapcache.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qpointingdevice.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qpolygon.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qpygui_qlist.sip
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qpygui_vulkan.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qquaternion.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qrasterwindow.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtGui/qrawfont.sip
@@ -349,6 +351,7 @@ lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtHelp/
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtHelp/QtHelp.toml
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtHelp/QtHelpmod.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtHelp/qcompressedhelpinfo.sip
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtHelp/qhelpcontentitem.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtHelp/qhelpcontentwidget.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtHelp/qhelpengine.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtHelp/qhelpenginecore.sip
@@ -358,13 +361,17 @@ lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtHelp/qhelpfiltersettin
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtHelp/qhelpindexwidget.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtHelp/qhelplink.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtHelp/qhelpsearchengine.sip
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtHelp/qhelpsearchenginecore.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtHelp/qhelpsearchquerywidget.sip
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtHelp/qhelpsearchresult.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtHelp/qhelpsearchresultwidget.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtMultimedia/
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtMultimedia/QtMultimedia.toml
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtMultimedia/QtMultimediamod.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtMultimedia/qaudio.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtMultimedia/qaudiobuffer.sip
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtMultimedia/qaudiobufferinput.sip
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtMultimedia/qaudiobufferoutput.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtMultimedia/qaudiodecoder.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtMultimedia/qaudiodevice.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtMultimedia/qaudioformat.sip
@@ -389,6 +396,7 @@ lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtMultimedia/qsoundeffec
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtMultimedia/qtvideo.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtMultimedia/qvideoframe.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtMultimedia/qvideoframeformat.sip
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtMultimedia/qvideoframeinput.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtMultimedia/qvideosink.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtMultimedia/qwindowcapture.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtMultimediaWidgets/
@@ -403,6 +411,7 @@ lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qabstractnetwo
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qabstractsocket.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qauthenticator.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qdnslookup.sip
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qformdatabuilder.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qhostaddress.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qhostinfo.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qhstspolicy.sip
@@ -422,11 +431,14 @@ lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qnetworkinterf
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qnetworkproxy.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qnetworkreply.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qnetworkrequest.sip
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qnetworkrequestfactory.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qocspresponse.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qpassworddigestor.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qpynetwork_qhash.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qpynetwork_qlist.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qpynetwork_qmap.sip
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qrestaccessmanager.sip
+lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qrestreply.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qssl.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qsslcertificate.sip
 lib/python${MODPY_VERSION}/site-packages/PyQt6/bindings/QtNetwork/qsslcertificateextension.sip

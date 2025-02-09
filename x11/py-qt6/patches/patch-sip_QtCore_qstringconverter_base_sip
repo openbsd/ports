@@ -1,0 +1,12 @@
+Index: sip/QtCore/qstringconverter_base.sip
+--- sip/QtCore/qstringconverter_base.sip.orig
++++ sip/QtCore/qstringconverter_base.sip
+@@ -22,7 +22,7 @@
+ 
+ %If (Qt_6_4_0 -)
+ 
+-class QStringConverterBase
++class QStringConverterBase /NoDefaultCtors/
+ {
+ %TypeHeaderCode
+ #include <qstringconverter_base.h>

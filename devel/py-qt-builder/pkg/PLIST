@@ -91,6 +91,8 @@ lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/${MODPY_PYCACHE}pyqt6_charts.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/${MODPY_PYCACHE}pyqt6_datavisualization.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/${MODPY_PYCACHE}pyqt6_datavisualization.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/${MODPY_PYCACHE}pyqt6_graphs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/${MODPY_PYCACHE}pyqt6_graphs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/${MODPY_PYCACHE}pyqt6_networkauth.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/${MODPY_PYCACHE}pyqt6_networkauth.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/${MODPY_PYCACHE}pyqt6_webengine.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -112,6 +114,7 @@ lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/pyqt6.py
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/pyqt6_3d.py
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/pyqt6_charts.py
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/pyqt6_datavisualization.py
+lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/pyqt6_graphs.py
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/pyqt6_networkauth.py
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/pyqt6_webengine.py
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/pyqtchart.py
@@ -122,7 +125,8 @@ lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/packages/pyqtwebengine
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/qt_metadata.py
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/qt_wheel.py
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/qt_wheel_distinfo/
-lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/qt_wheel_distinfo/LICENSE
+lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/qt_wheel_distinfo/LICENSE.gpl3
+lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/qt_wheel_distinfo/LICENSE.lgpl3
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/qt_wheel_distinfo/METADATA
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/qt_wheel_distinfo/WHEEL
 lib/python${MODPY_VERSION}/site-packages/pyqtbuild/bundle/qt_wheel_main.py

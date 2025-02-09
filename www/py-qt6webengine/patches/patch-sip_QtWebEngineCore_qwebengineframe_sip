@@ -1,0 +1,11 @@
+Index: sip/QtWebEngineCore/qwebengineframe.sip
+--- sip/QtWebEngineCore/qwebengineframe.sip.orig
++++ sip/QtWebEngineCore/qwebengineframe.sip
+@@ -25,6 +25,7 @@
+ class QWebEngineFrame /NoDefaultCtors/
+ {
+ %TypeHeaderCode
++#include <qvariant.h>
+ #include <qwebengineframe.h>
+ %End
+ 

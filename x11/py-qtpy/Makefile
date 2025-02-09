@@ -1,10 +1,9 @@
 COMMENT =		provides an abstraction layer of various Qt bindings
 
-MODPY_DISTV =	2.4.0
-DISTNAME =		QtPy-${MODPY_DISTV}
+MODPY_DISTV =		2.4.2
+DISTNAME =		qtpy-${MODPY_DISTV}
 PKGNAME =		py-qtpy-${MODPY_DISTV}
 CATEGORIES =		x11
-REVISION =		1
 
 HOMEPAGE =		https://github.com/spyder-ide/qtpy
 

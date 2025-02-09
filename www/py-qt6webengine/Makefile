@@ -1,9 +1,8 @@
 COMMENT =	python Qt6WebEngine bindings
 
-MODPY_DISTV =	6.7.0
+MODPY_DISTV =	6.8.0
 DISTNAME =	PyQt6_WebEngine-${MODPY_DISTV}
 PKGNAME =	py-qt6webengine-${MODPY_DISTV}
-REVISION =	0
 
 CATEGORIES =	www devel
 

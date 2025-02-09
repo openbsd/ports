@@ -9,12 +9,14 @@ lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qtw
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebenginecertificateerror.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebengineclientcertificateselection.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebengineclientcertificatestore.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebengineclienthints.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebenginecontextmenurequest.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebenginecookiestore.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebenginedesktopmediarequest.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebenginedownloadrequest.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebenginefilesystemaccessrequest.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebenginefindtextresult.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebengineframe.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebenginefullscreenrequest.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebengineglobalsettings.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebenginehistory.sip
@@ -24,6 +26,7 @@ lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwe
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebenginenewwindowrequest.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebenginenotification.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebenginepage.sip
+lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebenginepermission.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebengineprofile.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebenginequotarequest.sip
 lib/python${MODPY_VERSION}/site-packages/${PYQTVER}/bindings/QtWebEngineCore/qwebengineregisterprotocolhandlerrequest.sip

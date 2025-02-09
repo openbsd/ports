@@ -1,5 +1,5 @@
-@pkgpath x11/py-sip-qt5,python3
 @conflict ${MODPY_PY_PREFIX}sip-<5.5.0v0
+@pkgpath x11/py-sip-qt5,python3
 lib/python${MODPY_VERSION}/site-packages/PyQt5/
 @so lib/python${MODPY_VERSION}/site-packages/PyQt5/sip.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/PyQt5_sip-${MODPY_DISTV}.dist-info/
