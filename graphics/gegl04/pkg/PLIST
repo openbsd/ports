@@ -818,6 +818,7 @@ share/doc/gegl-${API_VERSION}/vfunc.MetadataStore.pspec.html
 share/doc/gegl-${API_VERSION}/vfunc.MetadataStore.register_hook.html
 share/doc/gegl-${API_VERSION}/vfunc.MetadataStore.set_value.html
 share/gir-1.0/Gegl-${API_VERSION}.gir
+share/locale/bg/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/bs/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/ca/LC_MESSAGES/gegl-${API_VERSION}.mo
 share/locale/da/LC_MESSAGES/gegl-${API_VERSION}.mo
