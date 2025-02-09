@@ -247,6 +247,7 @@ lib/qt6/plugins/digikam/generic/
 @so lib/qt6/plugins/digikam/generic/Generic_Box_Plugin.so
 @so lib/qt6/plugins/digikam/generic/Generic_Calendar_Plugin.so
 @so lib/qt6/plugins/digikam/generic/Generic_DNGConverter_Plugin.so
+@so lib/qt6/plugins/digikam/generic/Generic_DigitalScanner_Plugin.so
 @so lib/qt6/plugins/digikam/generic/Generic_DropBox_Plugin.so
 @so lib/qt6/plugins/digikam/generic/Generic_ExpoBlending_Plugin.so
 @so lib/qt6/plugins/digikam/generic/Generic_FileCopy_Plugin.so

@@ -8,6 +8,7 @@ V =		8.5.0
 PKGNAME =	digikam-${V}
 DISTNAME =	digiKam-${V}
 CATEGORIES =	graphics
+REVISION =	0
 
 HOMEPAGE =	https://www.digikam.org/
 
@@ -26,19 +27,20 @@ WANTLIB += KF6CoreAddons KF6FileMetaData KF6I18n KF6IconThemes
 WANTLIB += KF6IconWidgets KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets
 WANTLIB += KF6Notifications KF6NotifyConfig KF6Service KF6Solid
 WANTLIB += KF6SonnetCore KF6SonnetUi KF6ThreadWeaver KF6WidgetsAddons
-WANTLIB += KF6WindowSystem KF6XmlGui Magick++-6.Q16 MagickCore-6.Q16
-WANTLIB += MagickWand-6.Q16 Qt6Concurrent Qt6Core Qt6DBus Qt6Gui
-WANTLIB += Qt6Multimedia Qt6MultimediaWidgets Qt6Network Qt6NetworkAuth
-WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Positioning Qt6PrintSupport
-WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6Sql Qt6StateMachine
-WANTLIB += Qt6Svg Qt6SvgWidgets Qt6WebChannel Qt6WebEngineCore
-WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml SM X11 Xext avcodec
-WANTLIB += avdevice avfilter avformat avutil c exiv2 expat exslt
-WANTLIB += glib-2.0 gphoto2 gphoto2_port heif jasper jpeg jxl
-WANTLIB += jxl_threads lcms2 lensfun m opencv_calib3d opencv_core
-WANTLIB += opencv_dnn opencv_features2d opencv_flann opencv_imgcodecs
-WANTLIB += opencv_imgproc opencv_ml opencv_objdetect png swresample
-WANTLIB += swscale tiff usb-1.0 x265 xml2 xslt z
+WANTLIB += KF6WindowSystem KF6XmlGui KSaneWidgets6 Magick++-6.Q16
+WANTLIB += MagickCore-6.Q16 MagickWand-6.Q16 Qt6Concurrent Qt6Core
+WANTLIB += Qt6DBus Qt6Gui Qt6Multimedia Qt6MultimediaWidgets Qt6Network
+WANTLIB += Qt6NetworkAuth Qt6OpenGL Qt6OpenGLWidgets Qt6Positioning
+WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlModels Qt6Quick Qt6Sql
+WANTLIB += Qt6StateMachine Qt6Svg Qt6SvgWidgets Qt6WebChannel
+WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets Qt6Xml
+WANTLIB += SM X11 Xext avcodec avdevice avfilter avformat avutil
+WANTLIB += c exiv2 expat exslt glib-2.0 gphoto2 gphoto2_port heif
+WANTLIB += jasper jpeg jxl jxl_threads lcms2 lensfun m opencv_calib3d
+WANTLIB += opencv_core opencv_dnn opencv_features2d opencv_flann
+WANTLIB += opencv_imgcodecs opencv_imgproc opencv_ml opencv_objdetect
+WANTLIB += png swresample swscale tiff usb-1.0 x265 xml2 xslt
+WANTLIB += z
 
 SITES =		${SITE_KDE:=stable/digikam/${V}/}
 EXTRACT_SUFX ?=		.tar.xz
@@ -55,7 +57,6 @@ BUILD_DEPENDS =	devel/bison \
 		devel/kf6/kdoctools \
 		math/eigen3 \
 		misc/shared-desktop-ontologies \
-		x11/kde-applications/kf6-ksanecore \
 		x11/qt6/qtwebview
 
 RUN_DEPENDS =	databases/sqlite3 \
@@ -112,7 +113,8 @@ LIB_DEPENDS =	devel/glib2 \
 		x11/qt6/qtscxml \
 		x11/qt6/qtsvg \
 		x11/qt6/qtwebchannel \
-		x11/qt6/qtwebengine
+		x11/qt6/qtwebengine \
+		x11/kde-applications/libksane
 
 WRKDIST =		${WRKDIR}/${PKGNAME}
 
