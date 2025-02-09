@@ -89,12 +89,7 @@ ${LOCALBASE}/bin/ck-launch-session dbus-run-session \
 
 Known issues
 ============
-- You can't unlock your session when the screensaver has locked it. I get the
-  graphical message "Something wrong happened. Run # ck-unlock-session ...".
-  So you will end up with a freezen session that you have to completely kill.
-  **It is recommended to disable KDE screen locking** for now.
 - The first start may take a little longer.
-- The sound mixer Kmix works only on the main channel.
 
 Not yet ported Plasma applications/plugins
 ==========================================
