@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/third_party/webrtc/modules/video_capture/BUILD.gn
+--- src/3rdparty/chromium/third_party/webrtc/modules/video_capture/BUILD.gn.orig
++++ src/3rdparty/chromium/third_party/webrtc/modules/video_capture/BUILD.gn
+@@ -163,7 +163,7 @@ if (!build_with_chromium || is_linux || is_chromeos) {
+           "-lm",
+         ]
+       }
+-      if (is_linux || is_chromeos) {
++      if ((is_linux || is_chromeos) && !is_bsd) {
+         ldflags += [
+           "-lrt",
+           "-lXext",

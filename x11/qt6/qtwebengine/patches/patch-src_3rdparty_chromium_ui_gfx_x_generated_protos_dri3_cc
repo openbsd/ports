@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/ui/gfx/x/generated_protos/dri3.cc
 --- src/3rdparty/chromium/ui/gfx/x/generated_protos/dri3.cc.orig
 +++ src/3rdparty/chromium/ui/gfx/x/generated_protos/dri3.cc
-@@ -44,6 +44,8 @@
+@@ -27,6 +27,8 @@
  #include <xcb/xcb.h>
  #include <xcb/xcbext.h>
  
@@ -9,4 +9,4 @@ Index: src/3rdparty/chromium/ui/gfx/x/generated_protos/dri3.cc
 +
  #include "base/logging.h"
  #include "base/posix/eintr_wrapper.h"
- #include "ui/gfx/x/xproto_internal.h"
+ #include "ui/gfx/x/connection.h"

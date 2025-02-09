@@ -9,6 +9,8 @@ include/X11/qt6/QtNetworkAuth/${VERSION}/QtNetworkAuth/private/qoauth1_p.h
 include/X11/qt6/QtNetworkAuth/${VERSION}/QtNetworkAuth/private/qoauth1signature_p.h
 include/X11/qt6/QtNetworkAuth/${VERSION}/QtNetworkAuth/private/qoauth2authorizationcodeflow_p.h
 include/X11/qt6/QtNetworkAuth/${VERSION}/QtNetworkAuth/private/qoauthhttpserverreplyhandler_p.h
+include/X11/qt6/QtNetworkAuth/${VERSION}/QtNetworkAuth/private/qoauthoobreplyhandler_p.h
+include/X11/qt6/QtNetworkAuth/${VERSION}/QtNetworkAuth/private/qtnetworkauth-config_p.h
 include/X11/qt6/QtNetworkAuth/QAbstractOAuth
 include/X11/qt6/QtNetworkAuth/QAbstractOAuth2
 include/X11/qt6/QtNetworkAuth/QAbstractOAuthReplyHandler
@@ -17,6 +19,7 @@ include/X11/qt6/QtNetworkAuth/QOAuth1Signature
 include/X11/qt6/QtNetworkAuth/QOAuth2AuthorizationCodeFlow
 include/X11/qt6/QtNetworkAuth/QOAuthHttpServerReplyHandler
 include/X11/qt6/QtNetworkAuth/QOAuthOobReplyHandler
+include/X11/qt6/QtNetworkAuth/QOAuthUriSchemeReplyHandler
 include/X11/qt6/QtNetworkAuth/QtNetworkAuth
 include/X11/qt6/QtNetworkAuth/QtNetworkAuthDepends
 include/X11/qt6/QtNetworkAuth/QtNetworkAuthVersion
@@ -29,6 +32,8 @@ include/X11/qt6/QtNetworkAuth/qoauth2authorizationcodeflow.h
 include/X11/qt6/QtNetworkAuth/qoauthglobal.h
 include/X11/qt6/QtNetworkAuth/qoauthhttpserverreplyhandler.h
 include/X11/qt6/QtNetworkAuth/qoauthoobreplyhandler.h
+include/X11/qt6/QtNetworkAuth/qoauthurischemereplyhandler.h
+include/X11/qt6/QtNetworkAuth/qtnetworkauth-config.h
 include/X11/qt6/QtNetworkAuth/qtnetworkauthversion.h
 lib/cmake/Qt6BuildInternals/StandaloneTests/QtNetworkAuthTestsConfig.cmake
 lib/cmake/Qt6NetworkAuth/
@@ -39,6 +44,7 @@ lib/cmake/Qt6NetworkAuth/Qt6NetworkAuthConfigVersionImpl.cmake
 lib/cmake/Qt6NetworkAuth/Qt6NetworkAuthDependencies.cmake
 lib/cmake/Qt6NetworkAuth/Qt6NetworkAuthTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6NetworkAuth/Qt6NetworkAuthTargets.cmake
+lib/cmake/Qt6NetworkAuth/Qt6NetworkAuthVersionlessAliasTargets.cmake
 lib/cmake/Qt6NetworkAuth/Qt6NetworkAuthVersionlessTargets.cmake
 lib/libQt6NetworkAuth.prl
 @lib lib/libQt6NetworkAuth.so.${LIBQt6NetworkAuth_VERSION}

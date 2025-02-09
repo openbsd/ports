@@ -1,12 +1,12 @@
 Index: src/3rdparty/chromium/tools/licenses/licenses.py
 --- src/3rdparty/chromium/tools/licenses/licenses.py.orig
 +++ src/3rdparty/chromium/tools/licenses/licenses.py
-@@ -751,6 +751,8 @@ def _GnBinary():
+@@ -814,7 +814,7 @@ def FindThirdPartyDirsWithFiles(root):
+ # //buildtools.
+ def _GnBinary():
    exe = 'gn'
-   if sys.platform.startswith('linux'):
+-  if sys.platform.startswith('linux'):
++  if sys.platform.startswith(tuple(['linux', 'openbsd', 'freebsd'])):
      subdir = 'linux64'
-+  if sys.platform.startswith('openbsd'):
-+    subdir = 'linux64'
    elif sys.platform == 'darwin':
      subdir = 'mac'
-   elif sys.platform == 'win32':

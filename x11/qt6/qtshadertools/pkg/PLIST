@@ -6,7 +6,6 @@ include/X11/qt6/QtShaderTools/${VERSION}/QtShaderTools/private/qshaderrewriter_p
 include/X11/qt6/QtShaderTools/${VERSION}/QtShaderTools/private/qspirvcompiler_p.h
 include/X11/qt6/QtShaderTools/${VERSION}/QtShaderTools/private/qspirvshader_p.h
 include/X11/qt6/QtShaderTools/${VERSION}/QtShaderTools/private/qspirvshaderremap_p.h
-include/X11/qt6/QtShaderTools/${VERSION}/QtShaderTools/private/qtshadertoolsexports_p.h
 include/X11/qt6/QtShaderTools/${VERSION}/QtShaderTools/private/qtshadertoolsglobal_p.h
 include/X11/qt6/QtShaderTools/${VERSION}/QtShaderTools/rhi/
 include/X11/qt6/QtShaderTools/${VERSION}/QtShaderTools/rhi/qshaderbaker.h
@@ -25,6 +24,7 @@ lib/cmake/Qt6ShaderTools/Qt6ShaderToolsConfigVersionImpl.cmake
 lib/cmake/Qt6ShaderTools/Qt6ShaderToolsDependencies.cmake
 lib/cmake/Qt6ShaderTools/Qt6ShaderToolsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6ShaderTools/Qt6ShaderToolsTargets.cmake
+lib/cmake/Qt6ShaderTools/Qt6ShaderToolsVersionlessAliasTargets.cmake
 lib/cmake/Qt6ShaderTools/Qt6ShaderToolsVersionlessTargets.cmake
 lib/cmake/Qt6ShaderToolsTools/
 lib/cmake/Qt6ShaderToolsTools/Qt6ShaderToolsMacros.cmake

@@ -1,0 +1,12 @@
+Index: src/3rdparty/chromium/components/supervised_user/core/common/features.cc
+--- src/3rdparty/chromium/components/supervised_user/core/common/features.cc.orig
++++ src/3rdparty/chromium/components/supervised_user/core/common/features.cc
+@@ -96,7 +96,7 @@ BASE_FEATURE(kEnableManagedByParentUi,
+              base::FEATURE_DISABLED_BY_DEFAULT);
+ #endif
+ 
+-#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN)
++#if BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
+ BASE_FEATURE(kEnableExtensionsPermissionsForSupervisedUsersOnDesktop,
+              "EnableExtensionsPermissionsForSupervisedUsersOnDesktop",
+              base::FEATURE_DISABLED_BY_DEFAULT);

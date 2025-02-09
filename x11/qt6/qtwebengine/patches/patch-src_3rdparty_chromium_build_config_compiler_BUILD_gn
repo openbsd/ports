@@ -1,7 +1,16 @@
 Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
 --- src/3rdparty/chromium/build/config/compiler/BUILD.gn.orig
 +++ src/3rdparty/chromium/build/config/compiler/BUILD.gn
-@@ -262,13 +262,16 @@ config("default_include_dirs") {
+@@ -210,7 +210,7 @@ declare_args() {
+   # This greatly reduces the size of debug builds, at the cost of
+   # debugging information which is required by some specialized
+   # debugging tools.
+-  simple_template_names = is_clang && !is_nacl && !is_win && !is_apple
++  simple_template_names = is_clang && !is_nacl && !is_win && !is_apple && !is_bsd
+ }
+ 
+ declare_args() {
+@@ -274,13 +274,16 @@ config("default_include_dirs") {
  # Compiler instrumentation can introduce dependencies in DSOs to symbols in
  # the executable they are loaded into, so they are unresolved at link-time.
  config("no_unresolved_symbols") {
@@ -14,32 +23,23 @@ Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
      ]
    }
 +  if (current_cpu == "x86" && is_openbsd) {
-+     ldflags = [ "-Wl,-z,notext" ]
++    ldflags = [ "-Wl,-z,notext", "-Wl,--strip-all" ]
 +  }
  }
  
  # compiler ---------------------------------------------------------------------
-@@ -555,6 +558,10 @@ config("compiler") {
+@@ -568,6 +571,10 @@ config("compiler") {
      }
    }
  
 +  if (is_openbsd) {
-+    ldflags += [ "-Wl,-z,wxneeded", "-Wl,-z,nobtcfi" ]
++    ldflags += [ "-Wl,-z,wxneeded" ]
 +  }
 +
    # Linux-specific compiler flags setup.
    # ------------------------------------
    if (use_gold) {
-@@ -630,7 +637,7 @@ config("compiler") {
-     ldflags += [ "-Wl,-z,keep-text-section-prefix" ]
-   }
- 
--  if (is_clang && !is_nacl && current_os != "zos" && !is_qtwebengine) {
-+  if (is_clang && !is_nacl && current_os != "zos" && !is_bsd) {
-     cflags += [ "-fcrash-diagnostics-dir=" + clang_diagnostic_dir ]
-     if (save_reproducers_on_lld_crash && use_lld) {
-       ldflags += [
-@@ -1170,7 +1177,7 @@ config("compiler_cpu_abi") {
+@@ -1232,7 +1239,7 @@ config("compiler_cpu_abi") {
          ]
        }
      } else if (current_cpu == "arm") {
@@ -48,16 +48,20 @@ Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
            !(is_chromeos_lacros && is_chromeos_device)) {
          cflags += [ "--target=arm-linux-gnueabihf" ]
          ldflags += [ "--target=arm-linux-gnueabihf" ]
-@@ -1188,7 +1195,7 @@ config("compiler_cpu_abi") {
+@@ -1249,12 +1256,6 @@ config("compiler_cpu_abi") {
+       if (arm_tune != "") {
          cflags += [ "-mtune=$arm_tune" ]
        }
-     } else if (current_cpu == "arm64") {
+-    } else if (current_cpu == "arm64") {
 -      if (is_clang && !is_android && !is_nacl && !is_fuchsia &&
-+      if (is_clang && !is_android && !is_nacl && !is_fuchsia && !is_bsd &&
-           !(is_chromeos_lacros && is_chromeos_device)) {
-         cflags += [ "--target=aarch64-linux-gnu" ]
-         ldflags += [ "--target=aarch64-linux-gnu" ]
-@@ -1523,7 +1530,7 @@ config("compiler_deterministic") {
+-          !(is_chromeos_lacros && is_chromeos_device)) {
+-        cflags += [ "--target=aarch64-linux-gnu" ]
+-        ldflags += [ "--target=aarch64-linux-gnu" ]
+-      }
+     } else if (current_cpu == "mipsel" && !is_nacl) {
+       ldflags += [ "-Wl,--hash-style=sysv" ]
+       if (custom_toolchain == "") {
+@@ -1585,7 +1586,7 @@ config("compiler_deterministic") {
      # different build directory like "out/feature_a" and "out/feature_b" if
      # we build same files with same compile flag.
      # Other paths are already given in relative, no need to normalize them.
@@ -66,7 +70,7 @@ Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
        # TODO(https://crbug.com/1231236): Use -ffile-compilation-dir= here.
        cflags += [
          "-Xclang",
-@@ -1575,7 +1582,7 @@ config("compiler_deterministic") {
+@@ -1637,7 +1638,7 @@ config("compiler_deterministic") {
  }
  
  config("clang_revision") {
@@ -75,16 +79,21 @@ Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
      update_args = [
        "--print-revision",
        "--verify-version=$clang_version",
-@@ -2005,7 +2012,7 @@ config("default_warnings") {
-         "-Wno-ignored-pragma-optimize",
+@@ -2102,12 +2103,9 @@ config("default_warnings") {
+ 
+         # TODO(crbug.com/1494809): Evaluate and possibly enable.
+         "-Wno-vla-extension",
+-
+-        # TODO(https://crbug.com/1490607): Fix and re-enable.
+-        "-Wno-thread-safety-reference-return",
        ]
  
 -      if (!is_nacl) {
 +      if (!is_nacl && !is_bsd) {
-         cflags += [
-           # TODO(crbug.com/1343975) Evaluate and possibly enable.
-           "-Wno-deprecated-builtins",
-@@ -2218,7 +2225,7 @@ config("no_chromium_code") {
+         cflags_cc += [
+           # TODO(https://crbug.com/1513724): Fix and re-enable.
+           "-Wno-c++11-narrowing-const-reference",
+@@ -2295,7 +2293,7 @@ config("no_chromium_code") {
        # third-party libraries.
        "-Wno-c++11-narrowing",
      ]
@@ -93,7 +102,7 @@ Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
        cflags += [
          # Disabled for similar reasons as -Wunused-variable.
          "-Wno-unused-but-set-variable",
-@@ -2736,7 +2743,7 @@ config("afdo_optimize_size") {
+@@ -2832,7 +2830,7 @@ config("afdo_optimize_size") {
  # There are some targeted places that AFDO regresses, so we provide a separate
  # config to allow AFDO to be disabled per-target.
  config("afdo") {
@@ -102,7 +111,7 @@ Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
      cflags = []
      if (clang_emit_debug_info_for_profiling) {
        # Add the following flags to generate debug info for profiling.
-@@ -2763,7 +2770,7 @@ config("afdo") {
+@@ -2859,7 +2857,7 @@ config("afdo") {
        cflags += [ "-Wno-backend-plugin" ]
        inputs = [ _clang_sample_profile ]
      }
@@ -111,7 +120,7 @@ Index: src/3rdparty/chromium/build/config/compiler/BUILD.gn
      cflags = [ "-fauto-profile=${auto_profile_path}" ]
      inputs = [ auto_profile_path ]
    }
-@@ -2927,7 +2934,8 @@ config("symbols") {
+@@ -3023,7 +3021,8 @@ config("symbols") {
      configs += [ "//build/config:compress_debug_sections" ]
    }
  

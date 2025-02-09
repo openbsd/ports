@@ -52,6 +52,7 @@ include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandinput
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandinputmethodcontext_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandintegration_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandnativeinterface_p.h
+include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandplatformservices_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandpointergestures_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandprimaryselectionv1_p.h
 include/X11/qt6/QtWaylandClient/${VERSION}/QtWaylandClient/private/qwaylandqtkey_p.h
@@ -131,6 +132,7 @@ include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwayl
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwayland-server-viewporter.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwayland-server-wayland.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwayland-server-xdg-decoration-unstable-v1.h
+include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwayland-server-xdg-dialog-v1.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwayland-server-xdg-output-unstable-v1.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwayland-server-xdg-shell.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandcompositor_p.h
@@ -159,6 +161,7 @@ include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwayl
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandquicksurface_p.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandseat_p.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandshell_p.h
+include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandshellsurface_p.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandsurface_p.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandtextinput_p.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandtextinputmanager_p.h
@@ -171,6 +174,7 @@ include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwayl
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandwlshell_p.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandwlshellintegration_p.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandxdgdecorationv1_p.h
+include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandxdgdialogv1_p.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandxdgoutputv1_p.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandxdgshell_p.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/qwaylandxdgshellintegration_p.h
@@ -211,6 +215,7 @@ include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/wayla
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/wayland-viewporter-server-protocol.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/wayland-wayland-server-protocol.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/wayland-xdg-decoration-unstable-v1-server-protocol.h
+include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/wayland-xdg-dialog-v1-server-protocol.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/wayland-xdg-output-unstable-v1-server-protocol.h
 include/X11/qt6/QtWaylandCompositor/${VERSION}/QtWaylandCompositor/private/wayland-xdg-shell-server-protocol.h
 include/X11/qt6/QtWaylandCompositor/QWaylandBufferRef
@@ -318,6 +323,42 @@ include/X11/qt6/QtWaylandCompositor/qwaylandwlshell.h
 include/X11/qt6/QtWaylandCompositor/qwaylandxdgdecorationv1.h
 include/X11/qt6/QtWaylandCompositor/qwaylandxdgoutputv1.h
 include/X11/qt6/QtWaylandCompositor/qwaylandxdgshell.h
+include/X11/qt6/QtWaylandCompositorIviapplication/
+include/X11/qt6/QtWaylandCompositorIviapplication/${VERSION}/
+include/X11/qt6/QtWaylandCompositorIviapplication/${VERSION}/QtWaylandCompositorIviapplication/
+include/X11/qt6/QtWaylandCompositorIviapplication/${VERSION}/QtWaylandCompositorIviapplication/private/
+include/X11/qt6/QtWaylandCompositorIviapplication/${VERSION}/QtWaylandCompositorIviapplication/private/qwaylandcompositoriviapplicationforeign_p.h
+include/X11/qt6/QtWaylandCompositorIviapplication/QtWaylandCompositorIviapplication
+include/X11/qt6/QtWaylandCompositorIviapplication/QtWaylandCompositorIviapplicationDepends
+include/X11/qt6/QtWaylandCompositorIviapplication/QtWaylandCompositorIviapplicationVersion
+include/X11/qt6/QtWaylandCompositorIviapplication/qtwaylandcompositoriviapplicationversion.h
+include/X11/qt6/QtWaylandCompositorPresentationTime/
+include/X11/qt6/QtWaylandCompositorPresentationTime/${VERSION}/
+include/X11/qt6/QtWaylandCompositorPresentationTime/${VERSION}/QtWaylandCompositorPresentationTime/
+include/X11/qt6/QtWaylandCompositorPresentationTime/${VERSION}/QtWaylandCompositorPresentationTime/private/
+include/X11/qt6/QtWaylandCompositorPresentationTime/${VERSION}/QtWaylandCompositorPresentationTime/private/qwaylandcompositorpresentationtimeforeign_p.h
+include/X11/qt6/QtWaylandCompositorPresentationTime/QtWaylandCompositorPresentationTime
+include/X11/qt6/QtWaylandCompositorPresentationTime/QtWaylandCompositorPresentationTimeDepends
+include/X11/qt6/QtWaylandCompositorPresentationTime/QtWaylandCompositorPresentationTimeVersion
+include/X11/qt6/QtWaylandCompositorPresentationTime/qtwaylandcompositorpresentationtimeversion.h
+include/X11/qt6/QtWaylandCompositorWLShell/
+include/X11/qt6/QtWaylandCompositorWLShell/${VERSION}/
+include/X11/qt6/QtWaylandCompositorWLShell/${VERSION}/QtWaylandCompositorWLShell/
+include/X11/qt6/QtWaylandCompositorWLShell/${VERSION}/QtWaylandCompositorWLShell/private/
+include/X11/qt6/QtWaylandCompositorWLShell/${VERSION}/QtWaylandCompositorWLShell/private/qwaylandcompositorwlshell_p.h
+include/X11/qt6/QtWaylandCompositorWLShell/QtWaylandCompositorWLShell
+include/X11/qt6/QtWaylandCompositorWLShell/QtWaylandCompositorWLShellDepends
+include/X11/qt6/QtWaylandCompositorWLShell/QtWaylandCompositorWLShellVersion
+include/X11/qt6/QtWaylandCompositorWLShell/qtwaylandcompositorwlshellversion.h
+include/X11/qt6/QtWaylandCompositorXdgShell/
+include/X11/qt6/QtWaylandCompositorXdgShell/${VERSION}/
+include/X11/qt6/QtWaylandCompositorXdgShell/${VERSION}/QtWaylandCompositorXdgShell/
+include/X11/qt6/QtWaylandCompositorXdgShell/${VERSION}/QtWaylandCompositorXdgShell/private/
+include/X11/qt6/QtWaylandCompositorXdgShell/${VERSION}/QtWaylandCompositorXdgShell/private/qwaylandcompositorxdgshell_p.h
+include/X11/qt6/QtWaylandCompositorXdgShell/QtWaylandCompositorXdgShell
+include/X11/qt6/QtWaylandCompositorXdgShell/QtWaylandCompositorXdgShellDepends
+include/X11/qt6/QtWaylandCompositorXdgShell/QtWaylandCompositorXdgShellVersion
+include/X11/qt6/QtWaylandCompositorXdgShell/qtwaylandcompositorxdgshellversion.h
 include/X11/qt6/QtWaylandEglClientHwIntegration/
 include/X11/qt6/QtWaylandEglClientHwIntegration/${VERSION}/
 include/X11/qt6/QtWaylandEglClientHwIntegration/${VERSION}/QtWaylandEglClientHwIntegration/
@@ -375,36 +416,36 @@ lib/cmake/Qt6Gui/Qt6QWaylandIntegrationPluginConfigVersion.cmake
 lib/cmake/Qt6Gui/Qt6QWaylandIntegrationPluginConfigVersionImpl.cmake
 lib/cmake/Qt6Gui/Qt6QWaylandIntegrationPluginTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Gui/Qt6QWaylandIntegrationPluginTargets.cmake
-lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorIviapplicationAdditionalTargetInfo.cmake
-lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorIviapplicationConfig.cmake
-lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorIviapplicationConfigVersion.cmake
-lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorIviapplicationConfigVersionImpl.cmake
-lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorIviapplicationTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorIviapplicationTargets.cmake
-lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorPresentationTimeAdditionalTargetInfo.cmake
-lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorPresentationTimeConfig.cmake
-lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorPresentationTimeConfigVersion.cmake
-lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorPresentationTimeConfigVersionImpl.cmake
-lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorPresentationTimeTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorPresentationTimeTargets.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorIviapplicationpluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorIviapplicationpluginConfig.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorIviapplicationpluginConfigVersion.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorIviapplicationpluginConfigVersionImpl.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorIviapplicationpluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorIviapplicationpluginTargets.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorPresentationTimepluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorPresentationTimepluginConfig.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorPresentationTimepluginConfigVersion.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorPresentationTimepluginConfigVersionImpl.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorPresentationTimepluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorPresentationTimepluginTargets.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorQtShellAdditionalTargetInfo.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorQtShellConfig.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorQtShellConfigVersion.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorQtShellConfigVersionImpl.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorQtShellTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorQtShellTargets.cmake
-lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorWLShellAdditionalTargetInfo.cmake
-lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorWLShellConfig.cmake
-lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorWLShellConfigVersion.cmake
-lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorWLShellConfigVersionImpl.cmake
-lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorWLShellTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorWLShellTargets.cmake
-lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorXdgShellAdditionalTargetInfo.cmake
-lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorXdgShellConfig.cmake
-lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorXdgShellConfigVersion.cmake
-lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorXdgShellConfigVersionImpl.cmake
-lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorXdgShellTargets${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorXdgShellTargets.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorWLShellpluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorWLShellpluginConfig.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorWLShellpluginConfigVersion.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorWLShellpluginConfigVersionImpl.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorWLShellpluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorWLShellpluginTargets.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorXdgShellpluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorXdgShellpluginConfig.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorXdgShellpluginConfigVersion.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorXdgShellpluginConfigVersionImpl.cmake
+lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorXdgShellpluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandCompositorXdgShellpluginTargets.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandTextureSharingAdditionalTargetInfo.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandTextureSharingConfig.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6WaylandTextureSharingConfigVersion.cmake
@@ -436,6 +477,12 @@ lib/cmake/Qt6WaylandClient/Qt6DrmEglServerBufferPluginConfigVersion.cmake
 lib/cmake/Qt6WaylandClient/Qt6DrmEglServerBufferPluginConfigVersionImpl.cmake
 lib/cmake/Qt6WaylandClient/Qt6DrmEglServerBufferPluginTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6WaylandClient/Qt6DrmEglServerBufferPluginTargets.cmake
+lib/cmake/Qt6WaylandClient/Qt6QWaylandAdwaitaDecorationPluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6WaylandClient/Qt6QWaylandAdwaitaDecorationPluginConfig.cmake
+lib/cmake/Qt6WaylandClient/Qt6QWaylandAdwaitaDecorationPluginConfigVersion.cmake
+lib/cmake/Qt6WaylandClient/Qt6QWaylandAdwaitaDecorationPluginConfigVersionImpl.cmake
+lib/cmake/Qt6WaylandClient/Qt6QWaylandAdwaitaDecorationPluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6WaylandClient/Qt6QWaylandAdwaitaDecorationPluginTargets.cmake
 lib/cmake/Qt6WaylandClient/Qt6QWaylandBradientDecorationPluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6WaylandClient/Qt6QWaylandBradientDecorationPluginConfig.cmake
 lib/cmake/Qt6WaylandClient/Qt6QWaylandBradientDecorationPluginConfigVersion.cmake
@@ -499,6 +546,7 @@ lib/cmake/Qt6WaylandClient/Qt6WaylandClientMacros.cmake
 lib/cmake/Qt6WaylandClient/Qt6WaylandClientPlugins.cmake
 lib/cmake/Qt6WaylandClient/Qt6WaylandClientTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6WaylandClient/Qt6WaylandClientTargets.cmake
+lib/cmake/Qt6WaylandClient/Qt6WaylandClientVersionlessAliasTargets.cmake
 lib/cmake/Qt6WaylandClient/Qt6WaylandClientVersionlessTargets.cmake
 lib/cmake/Qt6WaylandCompositor/
 lib/cmake/Qt6WaylandCompositor/Qt6DmaBufServerBufferIntegrationPluginAdditionalTargetInfo.cmake
@@ -552,7 +600,48 @@ lib/cmake/Qt6WaylandCompositor/Qt6WaylandCompositorMacros.cmake
 lib/cmake/Qt6WaylandCompositor/Qt6WaylandCompositorPlugins.cmake
 lib/cmake/Qt6WaylandCompositor/Qt6WaylandCompositorTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6WaylandCompositor/Qt6WaylandCompositorTargets.cmake
+lib/cmake/Qt6WaylandCompositor/Qt6WaylandCompositorVersionlessAliasTargets.cmake
 lib/cmake/Qt6WaylandCompositor/Qt6WaylandCompositorVersionlessTargets.cmake
+lib/cmake/Qt6WaylandCompositorIviapplication/
+lib/cmake/Qt6WaylandCompositorIviapplication/Qt6WaylandCompositorIviapplicationAdditionalTargetInfo.cmake
+lib/cmake/Qt6WaylandCompositorIviapplication/Qt6WaylandCompositorIviapplicationConfig.cmake
+lib/cmake/Qt6WaylandCompositorIviapplication/Qt6WaylandCompositorIviapplicationConfigVersion.cmake
+lib/cmake/Qt6WaylandCompositorIviapplication/Qt6WaylandCompositorIviapplicationConfigVersionImpl.cmake
+lib/cmake/Qt6WaylandCompositorIviapplication/Qt6WaylandCompositorIviapplicationDependencies.cmake
+lib/cmake/Qt6WaylandCompositorIviapplication/Qt6WaylandCompositorIviapplicationTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6WaylandCompositorIviapplication/Qt6WaylandCompositorIviapplicationTargets.cmake
+lib/cmake/Qt6WaylandCompositorIviapplication/Qt6WaylandCompositorIviapplicationVersionlessAliasTargets.cmake
+lib/cmake/Qt6WaylandCompositorIviapplication/Qt6WaylandCompositorIviapplicationVersionlessTargets.cmake
+lib/cmake/Qt6WaylandCompositorPresentationTime/
+lib/cmake/Qt6WaylandCompositorPresentationTime/Qt6WaylandCompositorPresentationTimeAdditionalTargetInfo.cmake
+lib/cmake/Qt6WaylandCompositorPresentationTime/Qt6WaylandCompositorPresentationTimeConfig.cmake
+lib/cmake/Qt6WaylandCompositorPresentationTime/Qt6WaylandCompositorPresentationTimeConfigVersion.cmake
+lib/cmake/Qt6WaylandCompositorPresentationTime/Qt6WaylandCompositorPresentationTimeConfigVersionImpl.cmake
+lib/cmake/Qt6WaylandCompositorPresentationTime/Qt6WaylandCompositorPresentationTimeDependencies.cmake
+lib/cmake/Qt6WaylandCompositorPresentationTime/Qt6WaylandCompositorPresentationTimeTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6WaylandCompositorPresentationTime/Qt6WaylandCompositorPresentationTimeTargets.cmake
+lib/cmake/Qt6WaylandCompositorPresentationTime/Qt6WaylandCompositorPresentationTimeVersionlessAliasTargets.cmake
+lib/cmake/Qt6WaylandCompositorPresentationTime/Qt6WaylandCompositorPresentationTimeVersionlessTargets.cmake
+lib/cmake/Qt6WaylandCompositorWLShell/
+lib/cmake/Qt6WaylandCompositorWLShell/Qt6WaylandCompositorWLShellAdditionalTargetInfo.cmake
+lib/cmake/Qt6WaylandCompositorWLShell/Qt6WaylandCompositorWLShellConfig.cmake
+lib/cmake/Qt6WaylandCompositorWLShell/Qt6WaylandCompositorWLShellConfigVersion.cmake
+lib/cmake/Qt6WaylandCompositorWLShell/Qt6WaylandCompositorWLShellConfigVersionImpl.cmake
+lib/cmake/Qt6WaylandCompositorWLShell/Qt6WaylandCompositorWLShellDependencies.cmake
+lib/cmake/Qt6WaylandCompositorWLShell/Qt6WaylandCompositorWLShellTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6WaylandCompositorWLShell/Qt6WaylandCompositorWLShellTargets.cmake
+lib/cmake/Qt6WaylandCompositorWLShell/Qt6WaylandCompositorWLShellVersionlessAliasTargets.cmake
+lib/cmake/Qt6WaylandCompositorWLShell/Qt6WaylandCompositorWLShellVersionlessTargets.cmake
+lib/cmake/Qt6WaylandCompositorXdgShell/
+lib/cmake/Qt6WaylandCompositorXdgShell/Qt6WaylandCompositorXdgShellAdditionalTargetInfo.cmake
+lib/cmake/Qt6WaylandCompositorXdgShell/Qt6WaylandCompositorXdgShellConfig.cmake
+lib/cmake/Qt6WaylandCompositorXdgShell/Qt6WaylandCompositorXdgShellConfigVersion.cmake
+lib/cmake/Qt6WaylandCompositorXdgShell/Qt6WaylandCompositorXdgShellConfigVersionImpl.cmake
+lib/cmake/Qt6WaylandCompositorXdgShell/Qt6WaylandCompositorXdgShellDependencies.cmake
+lib/cmake/Qt6WaylandCompositorXdgShell/Qt6WaylandCompositorXdgShellTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6WaylandCompositorXdgShell/Qt6WaylandCompositorXdgShellTargets.cmake
+lib/cmake/Qt6WaylandCompositorXdgShell/Qt6WaylandCompositorXdgShellVersionlessAliasTargets.cmake
+lib/cmake/Qt6WaylandCompositorXdgShell/Qt6WaylandCompositorXdgShellVersionlessTargets.cmake
 lib/cmake/Qt6WaylandEglClientHwIntegrationPrivate/
 lib/cmake/Qt6WaylandEglClientHwIntegrationPrivate/Qt6WaylandEglClientHwIntegrationPrivateAdditionalTargetInfo.cmake
 lib/cmake/Qt6WaylandEglClientHwIntegrationPrivate/Qt6WaylandEglClientHwIntegrationPrivateConfig.cmake
@@ -561,6 +650,7 @@ lib/cmake/Qt6WaylandEglClientHwIntegrationPrivate/Qt6WaylandEglClientHwIntegrati
 lib/cmake/Qt6WaylandEglClientHwIntegrationPrivate/Qt6WaylandEglClientHwIntegrationPrivateDependencies.cmake
 lib/cmake/Qt6WaylandEglClientHwIntegrationPrivate/Qt6WaylandEglClientHwIntegrationPrivateTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6WaylandEglClientHwIntegrationPrivate/Qt6WaylandEglClientHwIntegrationPrivateTargets.cmake
+lib/cmake/Qt6WaylandEglClientHwIntegrationPrivate/Qt6WaylandEglClientHwIntegrationPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6WaylandEglClientHwIntegrationPrivate/Qt6WaylandEglClientHwIntegrationPrivateVersionlessTargets.cmake
 lib/cmake/Qt6WaylandEglCompositorHwIntegrationPrivate/
 lib/cmake/Qt6WaylandEglCompositorHwIntegrationPrivate/Qt6WaylandEglCompositorHwIntegrationPrivateAdditionalTargetInfo.cmake
@@ -570,6 +660,7 @@ lib/cmake/Qt6WaylandEglCompositorHwIntegrationPrivate/Qt6WaylandEglCompositorHwI
 lib/cmake/Qt6WaylandEglCompositorHwIntegrationPrivate/Qt6WaylandEglCompositorHwIntegrationPrivateDependencies.cmake
 lib/cmake/Qt6WaylandEglCompositorHwIntegrationPrivate/Qt6WaylandEglCompositorHwIntegrationPrivateTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6WaylandEglCompositorHwIntegrationPrivate/Qt6WaylandEglCompositorHwIntegrationPrivateTargets.cmake
+lib/cmake/Qt6WaylandEglCompositorHwIntegrationPrivate/Qt6WaylandEglCompositorHwIntegrationPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6WaylandEglCompositorHwIntegrationPrivate/Qt6WaylandEglCompositorHwIntegrationPrivateVersionlessTargets.cmake
 lib/cmake/Qt6WaylandGlobalPrivate/
 lib/cmake/Qt6WaylandGlobalPrivate/Qt6WaylandGlobalPrivateAdditionalTargetInfo.cmake
@@ -577,6 +668,7 @@ lib/cmake/Qt6WaylandGlobalPrivate/Qt6WaylandGlobalPrivateConfig.cmake
 lib/cmake/Qt6WaylandGlobalPrivate/Qt6WaylandGlobalPrivateConfigVersion.cmake
 lib/cmake/Qt6WaylandGlobalPrivate/Qt6WaylandGlobalPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6WaylandGlobalPrivate/Qt6WaylandGlobalPrivateTargets.cmake
+lib/cmake/Qt6WaylandGlobalPrivate/Qt6WaylandGlobalPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6WaylandGlobalPrivate/Qt6WaylandGlobalPrivateVersionlessTargets.cmake
 lib/cmake/Qt6WaylandScannerTools/
 lib/cmake/Qt6WaylandScannerTools/Qt6WaylandScannerToolsAdditionalTargetInfo.cmake
@@ -595,11 +687,20 @@ lib/cmake/Qt6WlShellIntegrationPrivate/Qt6WlShellIntegrationPrivateConfigVersion
 lib/cmake/Qt6WlShellIntegrationPrivate/Qt6WlShellIntegrationPrivateDependencies.cmake
 lib/cmake/Qt6WlShellIntegrationPrivate/Qt6WlShellIntegrationPrivateTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6WlShellIntegrationPrivate/Qt6WlShellIntegrationPrivateTargets.cmake
+lib/cmake/Qt6WlShellIntegrationPrivate/Qt6WlShellIntegrationPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6WlShellIntegrationPrivate/Qt6WlShellIntegrationPrivateVersionlessTargets.cmake
 lib/libQt6WaylandClient.prl
 @lib lib/libQt6WaylandClient.so.${LIBQt6WaylandClient_VERSION}
 lib/libQt6WaylandCompositor.prl
 @lib lib/libQt6WaylandCompositor.so.${LIBQt6WaylandCompositor_VERSION}
+lib/libQt6WaylandCompositorIviapplication.prl
+@lib lib/libQt6WaylandCompositorIviapplication.so.${LIBQt6WaylandCompositorIviapplication_VERSION}
+lib/libQt6WaylandCompositorPresentationTime.prl
+@lib lib/libQt6WaylandCompositorPresentationTime.so.${LIBQt6WaylandCompositorPresentationTime_VERSION}
+lib/libQt6WaylandCompositorWLShell.prl
+@lib lib/libQt6WaylandCompositorWLShell.so.${LIBQt6WaylandCompositorWLShell_VERSION}
+lib/libQt6WaylandCompositorXdgShell.prl
+@lib lib/libQt6WaylandCompositorXdgShell.so.${LIBQt6WaylandCompositorXdgShell_VERSION}
 lib/libQt6WaylandEglClientHwIntegration.prl
 @lib lib/libQt6WaylandEglClientHwIntegration.so.${LIBQt6WaylandEglClientHwIntegration_VERSION}
 lib/libQt6WaylandEglCompositorHwIntegration.prl
@@ -608,9 +709,17 @@ lib/libQt6WlShellIntegration.prl
 @lib lib/libQt6WlShellIntegration.so.${LIBQt6WlShellIntegration_VERSION}
 lib/pkgconfig/Qt6WaylandClient.pc
 lib/pkgconfig/Qt6WaylandCompositor.pc
+lib/pkgconfig/Qt6WaylandCompositorIviapplication.pc
+lib/pkgconfig/Qt6WaylandCompositorPresentationTime.pc
+lib/pkgconfig/Qt6WaylandCompositorWLShell.pc
+lib/pkgconfig/Qt6WaylandCompositorXdgShell.pc
 @bin lib/qt6/libexec/qtwaylandscanner
 lib/qt6/metatypes/qt6waylandclient_release_metatypes.json
 lib/qt6/metatypes/qt6waylandcompositor_release_metatypes.json
+lib/qt6/metatypes/qt6waylandcompositoriviapplication_release_metatypes.json
+lib/qt6/metatypes/qt6waylandcompositorpresentationtime_release_metatypes.json
+lib/qt6/metatypes/qt6waylandcompositorwlshell_release_metatypes.json
+lib/qt6/metatypes/qt6waylandcompositorxdgshell_release_metatypes.json
 lib/qt6/metatypes/qt6waylandeglclienthwintegrationprivate_release_metatypes.json
 lib/qt6/metatypes/qt6waylandeglcompositorhwintegrationprivate_release_metatypes.json
 lib/qt6/metatypes/qt6wlshellintegrationprivate_release_metatypes.json
@@ -620,10 +729,22 @@ lib/qt6/mkspecs/modules/qt_lib_waylandclient.pri
 lib/qt6/mkspecs/modules/qt_lib_waylandclient_private.pri
 lib/qt6/mkspecs/modules/qt_lib_waylandcompositor.pri
 lib/qt6/mkspecs/modules/qt_lib_waylandcompositor_private.pri
+lib/qt6/mkspecs/modules/qt_lib_waylandcompositoriviapplication.pri
+lib/qt6/mkspecs/modules/qt_lib_waylandcompositoriviapplication_private.pri
+lib/qt6/mkspecs/modules/qt_lib_waylandcompositorpresentationtime.pri
+lib/qt6/mkspecs/modules/qt_lib_waylandcompositorpresentationtime_private.pri
+lib/qt6/mkspecs/modules/qt_lib_waylandcompositorwlshell.pri
+lib/qt6/mkspecs/modules/qt_lib_waylandcompositorwlshell_private.pri
+lib/qt6/mkspecs/modules/qt_lib_waylandcompositorxdgshell.pri
+lib/qt6/mkspecs/modules/qt_lib_waylandcompositorxdgshell_private.pri
 lib/qt6/mkspecs/modules/qt_lib_waylandglobal_private.pri
 lib/qt6/mkspecs/modules/qt_lib_wl_shell_integration_private.pri
 lib/qt6/modules/WaylandClient.json
 lib/qt6/modules/WaylandCompositor.json
+lib/qt6/modules/WaylandCompositorIviapplication.json
+lib/qt6/modules/WaylandCompositorPresentationTime.json
+lib/qt6/modules/WaylandCompositorWLShell.json
+lib/qt6/modules/WaylandCompositorXdgShell.json
 lib/qt6/modules/WaylandEglClientHwIntegrationPrivate.json
 lib/qt6/modules/WaylandEglCompositorHwIntegrationPrivate.json
 lib/qt6/modules/WaylandGlobalPrivate.json
@@ -631,6 +752,7 @@ lib/qt6/modules/WlShellIntegrationPrivate.json
 @so lib/qt6/plugins/platforms/libqwayland-egl.so
 @so lib/qt6/plugins/platforms/libqwayland-generic.so
 lib/qt6/plugins/wayland-decoration-client/
+@so lib/qt6/plugins/wayland-decoration-client/libadwaita.so
 @so lib/qt6/plugins/wayland-decoration-client/libbradient.so
 lib/qt6/plugins/wayland-graphics-integration-client/
 @so lib/qt6/plugins/wayland-graphics-integration-client/libdmabuf-server.so
@@ -664,6 +786,7 @@ lib/qt6/qml/QtWayland/Compositor/IviApplication/plugins.qmltypes
 lib/qt6/qml/QtWayland/Compositor/IviApplication/qmldir
 lib/qt6/qml/QtWayland/Compositor/PresentationTime/
 @so lib/qt6/qml/QtWayland/Compositor/PresentationTime/libwaylandcompositorpresentationtimeplugin.so
+lib/qt6/qml/QtWayland/Compositor/PresentationTime/plugins.qmltypes
 lib/qt6/qml/QtWayland/Compositor/PresentationTime/qmldir
 lib/qt6/qml/QtWayland/Compositor/QtShell/
 @so lib/qt6/qml/QtWayland/Compositor/QtShell/libwaylandcompositorqtshellplugin.so

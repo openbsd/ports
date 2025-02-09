@@ -1,23 +1,19 @@
 Index: src/3rdparty/chromium/build/config/BUILD.gn
 --- src/3rdparty/chromium/build/config/BUILD.gn.orig
 +++ src/3rdparty/chromium/build/config/BUILD.gn
-@@ -218,13 +218,15 @@ config("default_libs") {
+@@ -218,11 +218,13 @@ config("default_libs") {
      # Targets should choose to explicitly link frameworks they require. Since
      # linking can have run-time side effects, nothing should be listed here.
      libs = []
--  } else if (is_linux || is_chromeos) {
-+  } else if ((is_linux && !is_bsd) || is_chromeos) {
++  } else if (is_bsd) {
++    libs = [
++      "pthread",
++    ]
+   } else if (is_linux || is_chromeos) {
      libs = [
 -      "dl",
        "pthread",
 -      "rt",
      ]
--  }
-+  } else if (is_bsd) {
-+    libs = [
-+      "pthread",
-+    ]
-+ }
+   }
  }
- 
- group("common_deps") {

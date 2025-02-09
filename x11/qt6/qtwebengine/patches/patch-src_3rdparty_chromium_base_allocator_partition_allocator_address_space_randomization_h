@@ -1,6 +1,6 @@
-Index: src/3rdparty/chromium/base/allocator/partition_allocator/address_space_randomization.h
---- src/3rdparty/chromium/base/allocator/partition_allocator/address_space_randomization.h.orig
-+++ src/3rdparty/chromium/base/allocator/partition_allocator/address_space_randomization.h
+Index: src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/address_space_randomization.h
+--- src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/address_space_randomization.h.orig
++++ src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/address_space_randomization.h
 @@ -38,7 +38,7 @@ AslrMask(uintptr_t bits) {
  
  #if defined(ARCH_CPU_64_BITS)
@@ -10,7 +10,7 @@ Index: src/3rdparty/chromium/base/allocator/partition_allocator/address_space_ra
  
      // We shouldn't allocate system pages at all for sanitizer builds. However,
      // we do, and if random hint addresses interfere with address ranges
-@@ -124,7 +124,7 @@ AslrMask(uintptr_t bits) {
+@@ -126,7 +126,7 @@ AslrMask(uintptr_t bits) {
          return AslrAddress(0x20000000ULL);
        }
  

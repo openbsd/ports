@@ -42,6 +42,7 @@ share/doc/qt6/config/exampleurl-qtxmlpatterns.qdocconf
 share/doc/qt6/global/
 share/doc/qt6/global/compat.qdocconf
 share/doc/qt6/global/config.qdocconf
+share/doc/qt6/global/cpp-doc-macros.qdocconf
 share/doc/qt6/global/externalsites/
 share/doc/qt6/global/externalsites.qdocconf
 share/doc/qt6/global/externalsites/external-resources.qdoc
@@ -50,6 +51,7 @@ share/doc/qt6/global/externalsites/qtcreator.qdoc
 share/doc/qt6/global/externalsites/qtdesignstudio.qdoc
 share/doc/qt6/global/externalsites/rfc.qdoc
 share/doc/qt6/global/fileextensions.qdocconf
+share/doc/qt6/global/grid.qdocconf
 share/doc/qt6/global/html-config.qdocconf
 share/doc/qt6/global/html-footer-online.qdocconf
 share/doc/qt6/global/html-footer.qdocconf

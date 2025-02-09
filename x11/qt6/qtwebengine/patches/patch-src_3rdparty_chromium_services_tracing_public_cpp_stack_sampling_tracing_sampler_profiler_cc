@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/services/tracing/public/cpp/stack_sampling/tracing_sampler_profiler.cc
 --- src/3rdparty/chromium/services/tracing/public/cpp/stack_sampling/tracing_sampler_profiler.cc.orig
 +++ src/3rdparty/chromium/services/tracing/public/cpp/stack_sampling/tracing_sampler_profiler.cc
-@@ -39,7 +39,7 @@
+@@ -40,7 +40,7 @@
  #include "third_party/perfetto/protos/perfetto/trace/track_event/process_descriptor.pbzero.h"
  #include "third_party/perfetto/protos/perfetto/trace/track_event/thread_descriptor.pbzero.h"
  

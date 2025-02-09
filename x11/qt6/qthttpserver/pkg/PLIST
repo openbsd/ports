@@ -4,6 +4,8 @@ include/X11/qt6/QtHttpServer/${VERSION}/QtHttpServer/
 include/X11/qt6/QtHttpServer/${VERSION}/QtHttpServer/private/
 include/X11/qt6/QtHttpServer/${VERSION}/QtHttpServer/private/qabstracthttpserver_p.h
 include/X11/qt6/QtHttpServer/${VERSION}/QtHttpServer/private/qhttpserver_p.h
+include/X11/qt6/QtHttpServer/${VERSION}/QtHttpServer/private/qhttpserverhttp1protocolhandler_p.h
+include/X11/qt6/QtHttpServer/${VERSION}/QtHttpServer/private/qhttpserverhttp2protocolhandler_p.h
 include/X11/qt6/QtHttpServer/${VERSION}/QtHttpServer/private/qhttpserverliterals_p.h
 include/X11/qt6/QtHttpServer/${VERSION}/QtHttpServer/private/qhttpserverrequest_p.h
 include/X11/qt6/QtHttpServer/${VERSION}/QtHttpServer/private/qhttpserverresponder_p.h
@@ -13,13 +15,13 @@ include/X11/qt6/QtHttpServer/${VERSION}/QtHttpServer/private/qhttpserverrouterru
 include/X11/qt6/QtHttpServer/${VERSION}/QtHttpServer/private/qhttpserverstream_p.h
 include/X11/qt6/QtHttpServer/QAbstractHttpServer
 include/X11/qt6/QtHttpServer/QHttpServer
-include/X11/qt6/QtHttpServer/QHttpServerAfterRequestViewTraits
 include/X11/qt6/QtHttpServer/QHttpServerRequest
 include/X11/qt6/QtHttpServer/QHttpServerResponder
 include/X11/qt6/QtHttpServer/QHttpServerResponse
 include/X11/qt6/QtHttpServer/QHttpServerRouter
 include/X11/qt6/QtHttpServer/QHttpServerRouterRule
 include/X11/qt6/QtHttpServer/QHttpServerRouterViewTraits
+include/X11/qt6/QtHttpServer/QHttpServerWebSocketUpgradeResponse
 include/X11/qt6/QtHttpServer/QtHttpServer
 include/X11/qt6/QtHttpServer/QtHttpServerDepends
 include/X11/qt6/QtHttpServer/QtHttpServerVersion
@@ -31,8 +33,8 @@ include/X11/qt6/QtHttpServer/qhttpserverresponse.h
 include/X11/qt6/QtHttpServer/qhttpserverrouter.h
 include/X11/qt6/QtHttpServer/qhttpserverrouterrule.h
 include/X11/qt6/QtHttpServer/qhttpserverrouterviewtraits.h
-include/X11/qt6/QtHttpServer/qhttpserverviewtraits.h
 include/X11/qt6/QtHttpServer/qhttpserverviewtraits_impl.h
+include/X11/qt6/QtHttpServer/qhttpserverwebsocketupgraderesponse.h
 include/X11/qt6/QtHttpServer/qthttpserverexports.h
 include/X11/qt6/QtHttpServer/qthttpserverglobal.h
 include/X11/qt6/QtHttpServer/qthttpserverversion.h
@@ -45,6 +47,7 @@ lib/cmake/Qt6HttpServer/Qt6HttpServerConfigVersionImpl.cmake
 lib/cmake/Qt6HttpServer/Qt6HttpServerDependencies.cmake
 lib/cmake/Qt6HttpServer/Qt6HttpServerTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6HttpServer/Qt6HttpServerTargets.cmake
+lib/cmake/Qt6HttpServer/Qt6HttpServerVersionlessAliasTargets.cmake
 lib/cmake/Qt6HttpServer/Qt6HttpServerVersionlessTargets.cmake
 lib/libQt6HttpServer.prl
 @lib lib/libQt6HttpServer.so.${LIBQt6HttpServer_VERSION}

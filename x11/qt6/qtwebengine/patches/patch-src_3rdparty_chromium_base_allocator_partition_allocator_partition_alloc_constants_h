@@ -1,19 +1,19 @@
-Index: src/3rdparty/chromium/base/allocator/partition_allocator/partition_alloc_constants.h
---- src/3rdparty/chromium/base/allocator/partition_allocator/partition_alloc_constants.h.orig
-+++ src/3rdparty/chromium/base/allocator/partition_allocator/partition_alloc_constants.h
-@@ -95,7 +95,7 @@ PartitionPageShift() {
-   return 18;  // 256 KiB
+Index: src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_constants.h
+--- src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_constants.h.orig
++++ src/3rdparty/chromium/base/allocator/partition_allocator/src/partition_alloc/partition_alloc_constants.h
+@@ -112,7 +112,7 @@ PartitionPageShift() {
  }
  #elif (BUILDFLAG(IS_APPLE) && defined(ARCH_CPU_64_BITS)) || \
+     (BUILDFLAG(IS_ANDROID) && defined(ARCH_CPU_ARM64)) ||   \
 -    (BUILDFLAG(IS_LINUX) && defined(ARCH_CPU_ARM64))
 +    ((BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && defined(ARCH_CPU_ARM64))
  PA_ALWAYS_INLINE PAGE_ALLOCATOR_CONSTANTS_DECLARE_CONSTEXPR size_t
  PartitionPageShift() {
    return PageAllocationGranularityShift() + 2;
-@@ -297,7 +297,8 @@ constexpr size_t kNumPools = kMaxPoolHandle - 1;
- // 8GB for each of the glued pools).
- #if BUILDFLAG(HAS_64_BIT_POINTERS)
- #if BUILDFLAG(IS_ANDROID) || BUILDFLAG(IS_IOS) || \
+@@ -316,7 +316,8 @@ constexpr size_t kNumPools = kMaxPoolHandle - 1;
+ #if BUILDFLAG(IS_IOS)
+ constexpr size_t kPoolMaxSize = 1 * kGiB;
+ #elif BUILDFLAG(IS_ANDROID) || \
 -    BUILDFLAG(ENABLE_POINTER_COMPRESSION)
 +    BUILDFLAG(ENABLE_POINTER_COMPRESSION) || \
 +    BUILDFLAG(IS_BSD)

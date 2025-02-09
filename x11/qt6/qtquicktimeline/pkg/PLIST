@@ -6,7 +6,6 @@ include/X11/qt6/QtQuickTimeline/${VERSION}/QtQuickTimeline/private/qquickkeyfram
 include/X11/qt6/QtQuickTimeline/${VERSION}/QtQuickTimeline/private/qquickkeyframedatautils_p.h
 include/X11/qt6/QtQuickTimeline/${VERSION}/QtQuickTimeline/private/qquicktimeline_p.h
 include/X11/qt6/QtQuickTimeline/${VERSION}/QtQuickTimeline/private/qquicktimelineanimation_p.h
-include/X11/qt6/QtQuickTimeline/${VERSION}/QtQuickTimeline/private/qtquicktimelineexports_p.h
 include/X11/qt6/QtQuickTimeline/${VERSION}/QtQuickTimeline/private/qtquicktimelineglobal_p.h
 include/X11/qt6/QtQuickTimeline/QtQuickTimeline
 include/X11/qt6/QtQuickTimeline/QtQuickTimelineDepends
@@ -21,7 +20,6 @@ include/X11/qt6/QtQuickTimelineBlendTrees/${VERSION}/QtQuickTimelineBlendTrees/p
 include/X11/qt6/QtQuickTimelineBlendTrees/${VERSION}/QtQuickTimelineBlendTrees/private/qblendanimationnode_p.h
 include/X11/qt6/QtQuickTimelineBlendTrees/${VERSION}/QtQuickTimelineBlendTrees/private/qblendtreenode_p.h
 include/X11/qt6/QtQuickTimelineBlendTrees/${VERSION}/QtQuickTimelineBlendTrees/private/qtimelineanimationnode_p.h
-include/X11/qt6/QtQuickTimelineBlendTrees/${VERSION}/QtQuickTimelineBlendTrees/private/qtquicktimelineblendtreesexports_p.h
 include/X11/qt6/QtQuickTimelineBlendTrees/${VERSION}/QtQuickTimelineBlendTrees/private/qtquicktimelineblendtreesglobal_p.h
 include/X11/qt6/QtQuickTimelineBlendTrees/QtQuickTimelineBlendTrees
 include/X11/qt6/QtQuickTimelineBlendTrees/QtQuickTimelineBlendTreesDepends
@@ -50,6 +48,7 @@ lib/cmake/Qt6QuickTimeline/Qt6QuickTimelineConfigVersionImpl.cmake
 lib/cmake/Qt6QuickTimeline/Qt6QuickTimelineDependencies.cmake
 lib/cmake/Qt6QuickTimeline/Qt6QuickTimelineTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6QuickTimeline/Qt6QuickTimelineTargets.cmake
+lib/cmake/Qt6QuickTimeline/Qt6QuickTimelineVersionlessAliasTargets.cmake
 lib/cmake/Qt6QuickTimeline/Qt6QuickTimelineVersionlessTargets.cmake
 lib/cmake/Qt6QuickTimelineBlendTrees/
 lib/cmake/Qt6QuickTimelineBlendTrees/Qt6QuickTimelineBlendTreesAdditionalTargetInfo.cmake
@@ -59,6 +58,7 @@ lib/cmake/Qt6QuickTimelineBlendTrees/Qt6QuickTimelineBlendTreesConfigVersionImpl
 lib/cmake/Qt6QuickTimelineBlendTrees/Qt6QuickTimelineBlendTreesDependencies.cmake
 lib/cmake/Qt6QuickTimelineBlendTrees/Qt6QuickTimelineBlendTreesTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6QuickTimelineBlendTrees/Qt6QuickTimelineBlendTreesTargets.cmake
+lib/cmake/Qt6QuickTimelineBlendTrees/Qt6QuickTimelineBlendTreesVersionlessAliasTargets.cmake
 lib/cmake/Qt6QuickTimelineBlendTrees/Qt6QuickTimelineBlendTreesVersionlessTargets.cmake
 lib/libQt6QuickTimeline.prl
 @lib lib/libQt6QuickTimeline.so.${LIBQt6QuickTimeline_VERSION}

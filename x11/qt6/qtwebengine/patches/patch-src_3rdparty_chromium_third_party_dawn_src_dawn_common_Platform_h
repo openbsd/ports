@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/third_party/dawn/src/dawn/common/Platform.h
 --- src/3rdparty/chromium/third_party/dawn/src/dawn/common/Platform.h.orig
 +++ src/3rdparty/chromium/third_party/dawn/src/dawn/common/Platform.h
-@@ -46,6 +46,11 @@
+@@ -59,6 +59,11 @@
  #error "Unsupported Windows platform."
  #endif
  

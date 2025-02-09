@@ -1,7 +1,7 @@
 Index: cmake/QtMkspecHelpers.cmake
 --- cmake/QtMkspecHelpers.cmake.orig
 +++ cmake/QtMkspecHelpers.cmake
-@@ -88,7 +88,11 @@ macro(qt_internal_setup_platform_definitions_and_mkspe
+@@ -90,7 +90,11 @@ macro(qt_internal_setup_platform_definitions_and_mkspe
      elseif(NETBSD)
          set(QT_DEFAULT_MKSPEC netbsd-g++)
      elseif(OPENBSD)

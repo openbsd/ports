@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/base/files/file_path_watcher_unittest.cc
 --- src/3rdparty/chromium/base/files/file_path_watcher_unittest.cc.orig
 +++ src/3rdparty/chromium/base/files/file_path_watcher_unittest.cc
-@@ -586,7 +586,7 @@ TEST_F(FilePathWatcherTest, WatchDirectory) {
+@@ -847,7 +847,7 @@ TEST_F(FilePathWatcherTest, WatchDirectory) {
    }
    delegate.RunUntilEventsMatch(event_expecter);
  
@@ -10,7 +10,7 @@ Index: src/3rdparty/chromium/base/files/file_path_watcher_unittest.cc
    ASSERT_TRUE(WriteFile(file1, "content v2"));
    // Mac implementation does not detect files modified in a directory.
    // TODO(https://crbug.com/1432064): Expect that no events are fired on Mac.
-@@ -1525,7 +1525,7 @@ namespace {
+@@ -1783,7 +1783,7 @@ namespace {
  
  enum Permission { Read, Write, Execute };
  
@@ -19,7 +19,7 @@ Index: src/3rdparty/chromium/base/files/file_path_watcher_unittest.cc
  bool ChangeFilePermissions(const FilePath& path, Permission perm, bool allow) {
    struct stat stat_buf;
  
-@@ -1559,7 +1559,7 @@ bool ChangeFilePermissions(const FilePath& path, Permi
+@@ -1817,7 +1817,7 @@ bool ChangeFilePermissions(const FilePath& path, Permi
  
  }  // namespace
  

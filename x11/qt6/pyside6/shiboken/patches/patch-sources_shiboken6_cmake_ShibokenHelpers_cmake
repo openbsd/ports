@@ -1,7 +1,7 @@
 Index: sources/shiboken6/cmake/ShibokenHelpers.cmake
 --- sources/shiboken6/cmake/ShibokenHelpers.cmake.orig
 +++ sources/shiboken6/cmake/ShibokenHelpers.cmake
-@@ -768,13 +768,13 @@ set PATH=${path_dirs_native};%PATH%
+@@ -785,13 +785,13 @@ set PATH=${path_dirs_native};%PATH%
  %*")
      elseif(CMAKE_HOST_APPLE)
          string(REPLACE ";" ":" path_dirs_native "${path_dirs_native}")

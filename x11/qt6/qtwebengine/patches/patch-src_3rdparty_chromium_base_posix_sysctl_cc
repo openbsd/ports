@@ -1,0 +1,11 @@
+Index: src/3rdparty/chromium/base/posix/sysctl.cc
+--- src/3rdparty/chromium/base/posix/sysctl.cc.orig
++++ src/3rdparty/chromium/base/posix/sysctl.cc
+@@ -4,6 +4,7 @@
+ 
+ #include "base/posix/sysctl.h"
+ 
++#include <sys/types.h>
+ #include <sys/sysctl.h>
+ 
+ #include <initializer_list>

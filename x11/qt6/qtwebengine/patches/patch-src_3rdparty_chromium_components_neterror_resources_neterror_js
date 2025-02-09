@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/components/neterror/resources/neterror.js
 --- src/3rdparty/chromium/components/neterror/resources/neterror.js.orig
 +++ src/3rdparty/chromium/components/neterror/resources/neterror.js
-@@ -137,7 +137,7 @@ function detailsButtonClick() {
+@@ -142,7 +142,7 @@ function detailsButtonClick() {
  
  let primaryControlOnLeft = true;
  // clang-format off

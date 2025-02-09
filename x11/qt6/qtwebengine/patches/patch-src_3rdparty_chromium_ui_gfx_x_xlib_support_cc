@@ -1,9 +1,9 @@
 Index: src/3rdparty/chromium/ui/gfx/x/xlib_support.cc
 --- src/3rdparty/chromium/ui/gfx/x/xlib_support.cc.orig
 +++ src/3rdparty/chromium/ui/gfx/x/xlib_support.cc
-@@ -42,10 +42,18 @@ void InitXlib() {
-   if (xlib_loader->loaded())
+@@ -43,10 +43,18 @@ void InitXlib() {
      return;
+   }
  
 +#if BUILDFLAG(IS_BSD)
 +  CHECK(xlib_loader->Load("libX11.so"));

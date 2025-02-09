@@ -1,7 +1,7 @@
-Index: src/3rdparty/chromium/chrome/browser/ui/webui/about_ui.cc
---- src/3rdparty/chromium/chrome/browser/ui/webui/about_ui.cc.orig
-+++ src/3rdparty/chromium/chrome/browser/ui/webui/about_ui.cc
-@@ -635,7 +635,7 @@ std::string ChromeURLs() {
+Index: src/3rdparty/chromium/chrome/browser/ui/webui/about/about_ui.cc
+--- src/3rdparty/chromium/chrome/browser/ui/webui/about/about_ui.cc.orig
++++ src/3rdparty/chromium/chrome/browser/ui/webui/about/about_ui.cc
+@@ -592,7 +592,7 @@ std::string ChromeURLs(content::BrowserContext* browse
    return html;
  }
  
@@ -10,7 +10,7 @@ Index: src/3rdparty/chromium/chrome/browser/ui/webui/about_ui.cc
  std::string AboutLinuxProxyConfig() {
    std::string data;
    AppendHeader(&data,
-@@ -689,7 +689,7 @@ void AboutUIHTMLSource::StartDataRequest(
+@@ -646,7 +646,7 @@ void AboutUIHTMLSource::StartDataRequest(
        response =
            ui::ResourceBundle::GetSharedInstance().LoadDataResourceString(idr);
      }

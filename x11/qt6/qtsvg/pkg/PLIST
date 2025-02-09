@@ -12,7 +12,6 @@ include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qsvgstructure_p.h
 include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qsvgstyle_p.h
 include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qsvgtinydocument_p.h
 include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qsvgvisitor_p.h
-include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qtsvgexports_p.h
 include/X11/qt6/QtSvg/${VERSION}/QtSvg/private/qtsvgglobal_p.h
 include/X11/qt6/QtSvg/QSvgGenerator
 include/X11/qt6/QtSvg/QSvgRenderer
@@ -56,6 +55,7 @@ lib/cmake/Qt6Svg/Qt6SvgConfigVersionImpl.cmake
 lib/cmake/Qt6Svg/Qt6SvgDependencies.cmake
 lib/cmake/Qt6Svg/Qt6SvgTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Svg/Qt6SvgTargets.cmake
+lib/cmake/Qt6Svg/Qt6SvgVersionlessAliasTargets.cmake
 lib/cmake/Qt6Svg/Qt6SvgVersionlessTargets.cmake
 lib/cmake/Qt6SvgWidgets/
 lib/cmake/Qt6SvgWidgets/Qt6SvgWidgetsAdditionalTargetInfo.cmake
@@ -65,6 +65,7 @@ lib/cmake/Qt6SvgWidgets/Qt6SvgWidgetsConfigVersionImpl.cmake
 lib/cmake/Qt6SvgWidgets/Qt6SvgWidgetsDependencies.cmake
 lib/cmake/Qt6SvgWidgets/Qt6SvgWidgetsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6SvgWidgets/Qt6SvgWidgetsTargets.cmake
+lib/cmake/Qt6SvgWidgets/Qt6SvgWidgetsVersionlessAliasTargets.cmake
 lib/cmake/Qt6SvgWidgets/Qt6SvgWidgetsVersionlessTargets.cmake
 lib/libQt6Svg.prl
 @lib lib/libQt6Svg.so.${LIBQt6Svg_VERSION}

@@ -45,6 +45,7 @@ lib/cmake/Qt6WebSockets/Qt6WebSocketsConfigVersionImpl.cmake
 lib/cmake/Qt6WebSockets/Qt6WebSocketsDependencies.cmake
 lib/cmake/Qt6WebSockets/Qt6WebSocketsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6WebSockets/Qt6WebSocketsTargets.cmake
+lib/cmake/Qt6WebSockets/Qt6WebSocketsVersionlessAliasTargets.cmake
 lib/cmake/Qt6WebSockets/Qt6WebSocketsVersionlessTargets.cmake
 lib/libQt6WebSockets.prl
 @lib lib/libQt6WebSockets.so.${LIBQt6WebSockets_VERSION}

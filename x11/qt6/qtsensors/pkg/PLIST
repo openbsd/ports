@@ -128,7 +128,6 @@ include/X11/qt6/QtSensorsQuick/${VERSION}/QtSensorsQuick/private/qmlsensorrange_
 include/X11/qt6/QtSensorsQuick/${VERSION}/QtSensorsQuick/private/qmltapsensor_p.h
 include/X11/qt6/QtSensorsQuick/${VERSION}/QtSensorsQuick/private/qmltiltsensor_p.h
 include/X11/qt6/QtSensorsQuick/${VERSION}/QtSensorsQuick/private/qsensorsquickglobal_p.h
-include/X11/qt6/QtSensorsQuick/${VERSION}/QtSensorsQuick/private/qtsensorsquickexports_p.h
 include/X11/qt6/QtSensorsQuick/QtSensorsQuick
 include/X11/qt6/QtSensorsQuick/QtSensorsQuickDepends
 include/X11/qt6/QtSensorsQuick/QtSensorsQuickVersion
@@ -151,6 +150,7 @@ lib/cmake/Qt6Sensors/Qt6SensorsDependencies.cmake
 lib/cmake/Qt6Sensors/Qt6SensorsPlugins.cmake
 lib/cmake/Qt6Sensors/Qt6SensorsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Sensors/Qt6SensorsTargets.cmake
+lib/cmake/Qt6Sensors/Qt6SensorsVersionlessAliasTargets.cmake
 lib/cmake/Qt6Sensors/Qt6SensorsVersionlessTargets.cmake
 lib/cmake/Qt6Sensors/Qt6genericSensorPluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Sensors/Qt6genericSensorPluginConfig.cmake
@@ -166,6 +166,7 @@ lib/cmake/Qt6SensorsQuick/Qt6SensorsQuickConfigVersionImpl.cmake
 lib/cmake/Qt6SensorsQuick/Qt6SensorsQuickDependencies.cmake
 lib/cmake/Qt6SensorsQuick/Qt6SensorsQuickTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6SensorsQuick/Qt6SensorsQuickTargets.cmake
+lib/cmake/Qt6SensorsQuick/Qt6SensorsQuickVersionlessAliasTargets.cmake
 lib/cmake/Qt6SensorsQuick/Qt6SensorsQuickVersionlessTargets.cmake
 lib/libQt6Sensors.prl
 @lib lib/libQt6Sensors.so.${LIBQt6Sensors_VERSION}

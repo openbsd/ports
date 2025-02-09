@@ -95,7 +95,6 @@ include/X11/qt6/QtLocation/${VERSION}/QtLocation/private/qplacesearchrequest_p.h
 include/X11/qt6/QtLocation/${VERSION}/QtLocation/private/qplacesearchresult_p.h
 include/X11/qt6/QtLocation/${VERSION}/QtLocation/private/qplacesupplier_p.h
 include/X11/qt6/QtLocation/${VERSION}/QtLocation/private/qplaceuser_p.h
-include/X11/qt6/QtLocation/${VERSION}/QtLocation/private/qtlocationexports_p.h
 include/X11/qt6/QtLocation/${VERSION}/QtLocation/private/unsupportedreplies_p.h
 include/X11/qt6/QtLocation/QGeoCodeReply
 include/X11/qt6/QtLocation/QGeoCodingManager
@@ -187,6 +186,7 @@ lib/cmake/Qt6Location/Qt6LocationDependencies.cmake
 lib/cmake/Qt6Location/Qt6LocationPlugins.cmake
 lib/cmake/Qt6Location/Qt6LocationTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Location/Qt6LocationTargets.cmake
+lib/cmake/Qt6Location/Qt6LocationVersionlessAliasTargets.cmake
 lib/cmake/Qt6Location/Qt6LocationVersionlessTargets.cmake
 lib/cmake/Qt6Location/Qt6QGeoServiceProviderFactoryItemsOverlayPluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Location/Qt6QGeoServiceProviderFactoryItemsOverlayPluginConfig.cmake

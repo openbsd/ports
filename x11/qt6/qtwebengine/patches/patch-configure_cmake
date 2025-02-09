@@ -1,16 +1,7 @@
 Index: configure.cmake
 --- configure.cmake.orig
 +++ configure.cmake
-@@ -68,7 +68,7 @@ if(Python3_EXECUTABLE)
- endif()
- 
- #### Tests
--if(LINUX)
-+if(UNIX)
-    check_for_ulimit()
- endif()
- 
-@@ -175,29 +175,7 @@ int main() {
+@@ -180,29 +180,6 @@ int main() {
  }"
  )
  
@@ -26,7 +17,7 @@ Index: configure.cmake
 -    return 0;
 -}"
 -)
- 
+-
 -qt_config_compile_test(khr
 -    LABEL "khr"
 -    CODE
@@ -40,16 +31,16 @@ Index: configure.cmake
  qt_config_compile_test(libavformat
      LABEL "libavformat"
      LIBRARIES
-@@ -429,7 +407,7 @@ qt_feature("webengine-system-libpci" PRIVATE
+@@ -434,7 +411,7 @@ qt_feature("webengine-system-libpci" PRIVATE
  
  qt_feature("webengine-ozone-x11" PRIVATE
-     LABEL "Support GLX on qpa-xcb"
+     LABEL "Support X11 on qpa-xcb"
 -    CONDITION LINUX
 +    CONDITION UNIX
          AND TARGET Qt::Gui
          AND QT_FEATURE_xcb
          AND X11_FOUND
-@@ -467,12 +445,12 @@ assertTargets(
+@@ -474,15 +451,15 @@ assertTargets(
  )
  add_check_for_support(
     MODULES QtWebEngine
@@ -63,17 +54,12 @@ Index: configure.cmake
 +   CONDITION UNIX OR (WIN32 AND NOT WIN_ARM_64) OR MACOS OR IOS OR ANDROID
     MESSAGE "Build can be done only on Linux, Windows, macO, iOS and Android."
  )
- if(LINUX AND CMAKE_CROSSCOMPILING)
-@@ -496,7 +474,7 @@ add_check_for_support(
- )
- add_check_for_support(
-     MODULES QtWebEngine
--    CONDITION NOT (Nodejs_ARCH STREQUAL "ia32") AND
-+    CONDITION NOT (Nodejs_ARCH STREQUAL "i386") AND
-               NOT (Nodejs_ARCH STREQUAL "x86") AND
-               NOT (Nodejs_ARCH STREQUAL "arm")
-     MESSAGE "32bit version of Nodejs is not supported."
-@@ -528,7 +506,7 @@ add_check_for_support(
+-if(LINUX AND CMAKE_CROSSCOMPILING)
++if(UNIX AND CMAKE_CROSSCOMPILING)
+    set(supportedTargets "arm" "arm64" "armv7-a" "x86_64")
+    add_check_for_support(
+        MODULES QtWebEngine QtPdf
+@@ -535,7 +512,7 @@ add_check_for_support(
  )
  add_check_for_support(
     MODULES QtWebEngine QtPdf
@@ -82,7 +68,7 @@ Index: configure.cmake
     MESSAGE "A pkg-config support is required."
  )
  add_check_for_support(
-@@ -543,22 +521,22 @@ add_check_for_support(
+@@ -550,30 +527,30 @@ add_check_for_support(
  )
  add_check_for_support(
     MODULES QtWebEngine
@@ -108,16 +94,7 @@ Index: configure.cmake
 +    CONDITION NOT UNIX OR NOT QT_FEATURE_webengine_system_ffmpeg OR TEST_libavformat
      MESSAGE "Unmodified ffmpeg >= 5.0 is not supported."
  )
- # FIXME: This prevents non XCB Linux builds from building:
-@@ -572,15 +550,15 @@ foreach(xs ${xcbSupport})
- endforeach()
- add_check_for_support(
-    MODULES QtWebEngine
--   CONDITION NOT LINUX OR NOT QT_FEATURE_xcb OR QT_FEATURE_webengine_ozone_x11
-+   CONDITION NOT UNIX OR NOT QT_FEATURE_xcb OR QT_FEATURE_webengine_ozone_x11
-    MESSAGE "Could not find all necessary libraries for qpa-xcb support.\
- ${xcbErrorMessage}"
- )
+ 
  add_check_for_support(
     MODULES QtWebEngine
     CONDITION MSVC OR
@@ -128,7 +105,7 @@ Index: configure.cmake
         (MACOS AND CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang")
     MESSAGE
         "${CMAKE_CXX_COMPILER_ID} compiler is not supported."
-@@ -589,8 +567,8 @@ add_check_for_support(
+@@ -582,8 +559,8 @@ add_check_for_support(
  add_check_for_support(
     MODULES QtPdf
     CONDITION MSVC OR
@@ -139,3 +116,21 @@ Index: configure.cmake
         (APPLE AND CMAKE_CXX_COMPILER_ID STREQUAL "AppleClang") OR
         (ANDROID AND CMAKE_CXX_COMPILER_ID STREQUAL "Clang") OR
         (MINGW AND CMAKE_CXX_COMPILER_ID STREQUAL "GNU") OR
+@@ -592,7 +569,7 @@ add_check_for_support(
+        "${CMAKE_CXX_COMPILER_ID} compiler is not supported."
+ )
+ 
+-if (LINUX OR MINGW)
++if (UNIX OR MINGW)
+     add_check_for_support(
+         MODULES QtWebEngine QtPdf
+         CONDITION NOT CMAKE_CXX_COMPILER_ID STREQUAL "GNU" OR
+@@ -705,7 +682,7 @@ qt_configure_add_report_entry(
+     CONDITION IOS AND simulator AND device AND QT_FEATURE_qtpdf_build
+ )
+ 
+-if(LINUX AND QT_FEATURE_xcb AND TARGET Qt::Gui)
++if(UNIX AND QT_FEATURE_xcb AND TARGET Qt::Gui)
+     set(ozone_x11_support X11 LIBDRM XCOMPOSITE XCURSOR XRANDR XI XPROTO XSHMFENCE XTST XKBCOMMON XKBFILE)
+     set(ozone_x11_error OFF)
+     foreach(xs ${ozone_x11_support})

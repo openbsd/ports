@@ -16,12 +16,10 @@ Index: src/3rdparty/chromium/sandbox/linux/BUILD.gn
  
    # On Android, use plain GTest.
    use_base_test_suite = is_linux || is_chromeos
-@@ -377,6 +377,17 @@ component("sandbox_services") {
-     sources += [
-       "services/libc_interceptor.cc",
+@@ -379,6 +379,17 @@ component("sandbox_services") {
        "services/libc_interceptor.h",
-+    ]
-+  }
+     ]
+   }
 +
 +  if (is_bsd) {
 +    sources -= [
@@ -31,6 +29,8 @@ Index: src/3rdparty/chromium/sandbox/linux/BUILD.gn
 +      "services/syscall_wrappers.h",
 +      "services/yama.cc",
 +      "services/yama.h",
-     ]
-   }
++     ]
++   }
  }
+ 
+ source_set("sandbox_services_headers") {

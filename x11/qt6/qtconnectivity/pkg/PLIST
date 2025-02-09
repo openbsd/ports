@@ -18,7 +18,6 @@ include/X11/qt6/QtBluetooth/${VERSION}/QtBluetooth/private/qlowenergycontrollerb
 include/X11/qt6/QtBluetooth/${VERSION}/QtBluetooth/private/qlowenergyserviceprivate_p.h
 include/X11/qt6/QtBluetooth/${VERSION}/QtBluetooth/private/qprivatelinearbuffer_p.h
 include/X11/qt6/QtBluetooth/${VERSION}/QtBluetooth/private/qtbluetooth-config_p.h
-include/X11/qt6/QtBluetooth/${VERSION}/QtBluetooth/private/qtbluetoothexports_p.h
 include/X11/qt6/QtBluetooth/${VERSION}/QtBluetooth/private/qtbluetoothglobal_p.h
 include/X11/qt6/QtBluetooth/QBluetoothAddress
 include/X11/qt6/QtBluetooth/QBluetoothDeviceDiscoveryAgent
@@ -122,6 +121,7 @@ lib/cmake/Qt6Bluetooth/Qt6BluetoothConfigVersionImpl.cmake
 lib/cmake/Qt6Bluetooth/Qt6BluetoothDependencies.cmake
 lib/cmake/Qt6Bluetooth/Qt6BluetoothTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Bluetooth/Qt6BluetoothTargets.cmake
+lib/cmake/Qt6Bluetooth/Qt6BluetoothVersionlessAliasTargets.cmake
 lib/cmake/Qt6Bluetooth/Qt6BluetoothVersionlessTargets.cmake
 lib/cmake/Qt6BuildInternals/StandaloneTests/QtConnectivityTestsConfig.cmake
 lib/cmake/Qt6Nfc/
@@ -132,6 +132,7 @@ lib/cmake/Qt6Nfc/Qt6NfcConfigVersionImpl.cmake
 lib/cmake/Qt6Nfc/Qt6NfcDependencies.cmake
 lib/cmake/Qt6Nfc/Qt6NfcTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Nfc/Qt6NfcTargets.cmake
+lib/cmake/Qt6Nfc/Qt6NfcVersionlessAliasTargets.cmake
 lib/cmake/Qt6Nfc/Qt6NfcVersionlessTargets.cmake
 lib/libQt6Bluetooth.prl
 @lib lib/libQt6Bluetooth.so.${LIBQt6Bluetooth_VERSION}

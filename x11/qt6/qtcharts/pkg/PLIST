@@ -132,7 +132,6 @@ include/X11/qt6/QtCharts/${VERSION}/QtCharts/private/qscatterseries_p.h
 include/X11/qt6/QtCharts/${VERSION}/QtCharts/private/qsplineseries_p.h
 include/X11/qt6/QtCharts/${VERSION}/QtCharts/private/qstackedbarseries_p.h
 include/X11/qt6/QtCharts/${VERSION}/QtCharts/private/qtcharts-config_p.h
-include/X11/qt6/QtCharts/${VERSION}/QtCharts/private/qtchartsexports_p.h
 include/X11/qt6/QtCharts/${VERSION}/QtCharts/private/qvalueaxis_p.h
 include/X11/qt6/QtCharts/${VERSION}/QtCharts/private/qxylegendmarker_p.h
 include/X11/qt6/QtCharts/${VERSION}/QtCharts/private/qxymodelmapper_p.h
@@ -289,7 +288,6 @@ include/X11/qt6/QtChartsQml/${VERSION}/QtChartsQml/private/declarativescatterser
 include/X11/qt6/QtChartsQml/${VERSION}/QtChartsQml/private/declarativesplineseries_p.h
 include/X11/qt6/QtChartsQml/${VERSION}/QtChartsQml/private/declarativexypoint_p.h
 include/X11/qt6/QtChartsQml/${VERSION}/QtChartsQml/private/declarativexyseries_p.h
-include/X11/qt6/QtChartsQml/${VERSION}/QtChartsQml/private/qtchartsqmlexports_p.h
 include/X11/qt6/QtChartsQml/QtChartsQml
 include/X11/qt6/QtChartsQml/QtChartsQmlDepends
 include/X11/qt6/QtChartsQml/QtChartsQmlVersion
@@ -304,6 +302,7 @@ lib/cmake/Qt6Charts/Qt6ChartsConfigVersionImpl.cmake
 lib/cmake/Qt6Charts/Qt6ChartsDependencies.cmake
 lib/cmake/Qt6Charts/Qt6ChartsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Charts/Qt6ChartsTargets.cmake
+lib/cmake/Qt6Charts/Qt6ChartsVersionlessAliasTargets.cmake
 lib/cmake/Qt6Charts/Qt6ChartsVersionlessTargets.cmake
 lib/cmake/Qt6ChartsQml/
 lib/cmake/Qt6ChartsQml/Qt6ChartsQmlAdditionalTargetInfo.cmake
@@ -313,6 +312,7 @@ lib/cmake/Qt6ChartsQml/Qt6ChartsQmlConfigVersionImpl.cmake
 lib/cmake/Qt6ChartsQml/Qt6ChartsQmlDependencies.cmake
 lib/cmake/Qt6ChartsQml/Qt6ChartsQmlTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6ChartsQml/Qt6ChartsQmlTargets.cmake
+lib/cmake/Qt6ChartsQml/Qt6ChartsQmlVersionlessAliasTargets.cmake
 lib/cmake/Qt6ChartsQml/Qt6ChartsQmlVersionlessTargets.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtchartsqml2AdditionalTargetInfo.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtchartsqml2Config.cmake

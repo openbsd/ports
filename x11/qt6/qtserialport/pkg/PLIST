@@ -25,6 +25,7 @@ lib/cmake/Qt6SerialPort/Qt6SerialPortConfigVersionImpl.cmake
 lib/cmake/Qt6SerialPort/Qt6SerialPortDependencies.cmake
 lib/cmake/Qt6SerialPort/Qt6SerialPortTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6SerialPort/Qt6SerialPortTargets.cmake
+lib/cmake/Qt6SerialPort/Qt6SerialPortVersionlessAliasTargets.cmake
 lib/cmake/Qt6SerialPort/Qt6SerialPortVersionlessTargets.cmake
 lib/libQt6SerialPort.prl
 @lib lib/libQt6SerialPort.so.${LIBQt6SerialPort_VERSION}

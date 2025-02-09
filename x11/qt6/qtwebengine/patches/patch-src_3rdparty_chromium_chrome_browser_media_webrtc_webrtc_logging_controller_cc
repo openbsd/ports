@@ -14,7 +14,7 @@ Index: src/3rdparty/chromium/chrome/browser/media/webrtc/webrtc_logging_controll
  
  using webrtc_event_logging::WebRtcEventLogManager;
  
-@@ -285,7 +285,7 @@ void WebRtcLoggingController::StartEventLogging(
+@@ -303,7 +303,7 @@ void WebRtcLoggingController::StartEventLogging(
          web_app_id, callback);
  }
  
@@ -23,7 +23,7 @@ Index: src/3rdparty/chromium/chrome/browser/media/webrtc/webrtc_logging_controll
  void WebRtcLoggingController::GetLogsDirectory(
      LogsDirectoryCallback callback,
      LogsDirectoryErrorCallback error_callback) {
-@@ -330,7 +330,7 @@ void WebRtcLoggingController::GrantLogsDirectoryAccess
+@@ -351,7 +351,7 @@ void WebRtcLoggingController::GrantLogsDirectoryAccess
        FROM_HERE,
        base::BindOnce(std::move(callback), file_system.id(), registered_name));
  }

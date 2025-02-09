@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/third_party/ffmpeg/configure
 --- src/3rdparty/chromium/third_party/ffmpeg/configure.orig
 +++ src/3rdparty/chromium/third_party/ffmpeg/configure
-@@ -5613,6 +5613,7 @@ case $target_os in
+@@ -5615,6 +5615,7 @@ case $target_os in
          disable symver
          ;;
      freebsd)

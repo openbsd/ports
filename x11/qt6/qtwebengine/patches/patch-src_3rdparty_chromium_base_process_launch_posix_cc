@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/base/process/launch_posix.cc
 --- src/3rdparty/chromium/base/process/launch_posix.cc.orig
 +++ src/3rdparty/chromium/base/process/launch_posix.cc
-@@ -64,6 +64,9 @@
+@@ -61,6 +61,9 @@
  #error "macOS should use launch_mac.cc"
  #endif
  

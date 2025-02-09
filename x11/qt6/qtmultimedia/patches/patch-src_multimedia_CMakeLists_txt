@@ -1,7 +1,7 @@
 Index: src/multimedia/CMakeLists.txt
 --- src/multimedia/CMakeLists.txt.orig
 +++ src/multimedia/CMakeLists.txt
-@@ -109,7 +109,7 @@ qt_internal_add_module(Multimedia
+@@ -120,7 +120,7 @@ qt_internal_extend_target(Multimedia CONDITION QT_FEAT
  )
  
  qt_internal_extend_target(Multimedia

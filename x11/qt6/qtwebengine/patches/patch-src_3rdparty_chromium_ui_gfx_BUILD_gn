@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/ui/gfx/BUILD.gn
 --- src/3rdparty/chromium/ui/gfx/BUILD.gn.orig
 +++ src/3rdparty/chromium/ui/gfx/BUILD.gn
-@@ -646,7 +646,7 @@ jumbo_source_set("memory_buffer_sources") {
+@@ -665,7 +665,7 @@ jumbo_source_set("memory_buffer_sources") {
      deps += [ "//build/config/linux/libdrm" ]
    }
  

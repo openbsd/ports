@@ -1,0 +1,17 @@
+Index: src/3rdparty/chromium/content/child/BUILD.gn
+--- src/3rdparty/chromium/content/child/BUILD.gn.orig
++++ src/3rdparty/chromium/content/child/BUILD.gn
+@@ -132,6 +132,13 @@ target(link_target_type, "child") {
+     ]
+   }
+ 
++  if (is_bsd) {
++    sources -= [
++      "sandboxed_process_thread_type_handler.cc",
++      "sandboxed_process_thread_type_handler.h",
++    ]
++  }
++
+   if (is_win) {
+     sources += [
+       "dwrite_font_proxy/dwrite_font_proxy_init_impl_win.cc",

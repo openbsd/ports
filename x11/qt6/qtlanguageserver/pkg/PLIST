@@ -1,3 +1,4 @@
+include/X11/qt6/
 include/X11/qt6/QtJsonRpc/
 include/X11/qt6/QtJsonRpc/${VERSION}/
 include/X11/qt6/QtJsonRpc/${VERSION}/QtJsonRpc/
@@ -32,6 +33,9 @@ include/X11/qt6/QtLanguageServer/QtLanguageServerDepends
 include/X11/qt6/QtLanguageServer/QtLanguageServerVersion
 include/X11/qt6/QtLanguageServer/qtlanguageserverglobal.h
 include/X11/qt6/QtLanguageServer/qtlanguageserverversion.h
+lib/cmake/
+lib/cmake/Qt6BuildInternals/
+lib/cmake/Qt6BuildInternals/StandaloneTests/
 lib/cmake/Qt6BuildInternals/StandaloneTests/QtLanguageServerTestsConfig.cmake
 lib/cmake/Qt6JsonRpcPrivate/
 lib/cmake/Qt6JsonRpcPrivate/Qt6JsonRpcPrivateAdditionalTargetInfo.cmake
@@ -41,6 +45,7 @@ lib/cmake/Qt6JsonRpcPrivate/Qt6JsonRpcPrivateConfigVersionImpl.cmake
 lib/cmake/Qt6JsonRpcPrivate/Qt6JsonRpcPrivateDependencies.cmake
 lib/cmake/Qt6JsonRpcPrivate/Qt6JsonRpcPrivateTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6JsonRpcPrivate/Qt6JsonRpcPrivateTargets.cmake
+lib/cmake/Qt6JsonRpcPrivate/Qt6JsonRpcPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6JsonRpcPrivate/Qt6JsonRpcPrivateVersionlessTargets.cmake
 lib/cmake/Qt6LanguageServerPrivate/
 lib/cmake/Qt6LanguageServerPrivate/Qt6LanguageServerPrivateAdditionalTargetInfo.cmake
@@ -50,14 +55,21 @@ lib/cmake/Qt6LanguageServerPrivate/Qt6LanguageServerPrivateConfigVersionImpl.cma
 lib/cmake/Qt6LanguageServerPrivate/Qt6LanguageServerPrivateDependencies.cmake
 lib/cmake/Qt6LanguageServerPrivate/Qt6LanguageServerPrivateTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6LanguageServerPrivate/Qt6LanguageServerPrivateTargets.cmake
+lib/cmake/Qt6LanguageServerPrivate/Qt6LanguageServerPrivateVersionlessAliasTargets.cmake
 lib/cmake/Qt6LanguageServerPrivate/Qt6LanguageServerPrivateVersionlessTargets.cmake
+@static-lib lib/libQt6JsonRpc.a
 lib/libQt6JsonRpc.prl
-@lib lib/libQt6JsonRpc.so.${LIBQt6JsonRpc_VERSION}
+@static-lib lib/libQt6LanguageServer.a
 lib/libQt6LanguageServer.prl
-@lib lib/libQt6LanguageServer.so.${LIBQt6LanguageServer_VERSION}
+lib/qt6/
+lib/qt6/libexec/
+lib/qt6/metatypes/
 lib/qt6/metatypes/qt6jsonrpcprivate_release_metatypes.json
 lib/qt6/metatypes/qt6languageserverprivate_release_metatypes.json
+lib/qt6/mkspecs/
+lib/qt6/mkspecs/modules/
 lib/qt6/mkspecs/modules/qt_lib_jsonrpc_private.pri
 lib/qt6/mkspecs/modules/qt_lib_languageserver_private.pri
+lib/qt6/modules/
 lib/qt6/modules/JsonRpcPrivate.json
 lib/qt6/modules/LanguageServerPrivate.json

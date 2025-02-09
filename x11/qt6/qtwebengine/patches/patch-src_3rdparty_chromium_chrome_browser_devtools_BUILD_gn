@@ -1,0 +1,11 @@
+Index: src/3rdparty/chromium/chrome/browser/devtools/BUILD.gn
+--- src/3rdparty/chromium/chrome/browser/devtools/BUILD.gn.orig
++++ src/3rdparty/chromium/chrome/browser/devtools/BUILD.gn
+@@ -113,6 +113,7 @@ static_library("devtools") {
+     "//chrome/browser/autofill:autofill",
+     "//components/autofill/content/browser:browser",
+     "//components/autofill/core/browser:browser",
++    "//components/enterprise/buildflags",
+     "//components/paint_preview/buildflags:buildflags",
+     "//content/public/browser",
+     "//net",

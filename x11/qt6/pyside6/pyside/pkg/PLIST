@@ -33,6 +33,8 @@ include/PySide6/QtDesigner/qpydesignerextensions.h
 include/PySide6/QtGraphs/
 include/PySide6/QtGraphs/pyside6_qtgraphs_python.h
 include/PySide6/QtGraphs/qtgraphs_helper.h
+include/PySide6/QtGraphsWidgets/
+include/PySide6/QtGraphsWidgets/pyside6_qtgraphswidgets_python.h
 include/PySide6/QtGui/
 include/PySide6/QtGui/pyside6_qtgui_python.h
 include/PySide6/QtGui/qpytextobject.h
@@ -119,8 +121,8 @@ include/PySide6/QtXml/
 include/PySide6/QtXml/pyside6_qtxml_python.h
 include/PySide6/class_property.h
 include/PySide6/dynamicqmetaobject.h
+include/PySide6/dynamicslot_p.h
 include/PySide6/feature_select.h
-include/PySide6/globalreceiverv2.h
 include/PySide6/pyside.h
 include/PySide6/pyside6_global.h
 include/PySide6/pyside_numpy.h
@@ -223,6 +225,8 @@ lib/python${MODPY_VERSION}/site-packages/PySide6/QtDesigner.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PySide6/QtExampleIcons${MODPY_ABI3SO}.so
 @so lib/python${MODPY_VERSION}/site-packages/PySide6/QtGraphs${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/PySide6/QtGraphs.pyi
+@so lib/python${MODPY_VERSION}/site-packages/PySide6/QtGraphsWidgets${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PySide6/QtGraphsWidgets.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PySide6/QtGui${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/PySide6/QtGui.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PySide6/QtHelp${MODPY_ABI3SO}.so
@@ -328,6 +332,12 @@ lib/python${MODPY_VERSION}/site-packages/PySide6/support/deprecated.py
 lib/python${MODPY_VERSION}/site-packages/PySide6/support/generate_pyi.py
 @so lib/qt6/plugins/designer/libPySidePlugin.so
 share/PySide6/
+share/PySide6/doc/
+share/PySide6/doc/qtcore.rst
+share/PySide6/doc/qtqml.rst
+share/PySide6/doc/qtquicktest.rst
+share/PySide6/doc/qtuitools.rst
+share/PySide6/doc/qtwebenginecore.rst
 share/PySide6/glue/
 share/PySide6/glue/qtcharts.cpp
 share/PySide6/glue/qtcore.cpp
@@ -343,6 +353,7 @@ share/PySide6/glue/qtpositioning.cpp
 share/PySide6/glue/qtprintsupport.cpp
 share/PySide6/glue/qtqml.cpp
 share/PySide6/glue/qtquick.cpp
+share/PySide6/glue/qtquick3d.cpp
 share/PySide6/glue/qtquicktest.cpp
 share/PySide6/glue/qtserialbus.cpp
 share/PySide6/glue/qtsql.cpp
@@ -350,7 +361,6 @@ share/PySide6/glue/qtstatemachine.cpp
 share/PySide6/glue/qttest.cpp
 share/PySide6/glue/qtuitools.cpp
 share/PySide6/glue/qtwebenginecore.cpp
-share/PySide6/glue/qtwebenginewidgets.cpp
 share/PySide6/glue/qtwidgets.cpp
 share/PySide6/glue/qtxml.cpp
 share/PySide6/typesystems/
@@ -383,6 +393,7 @@ share/PySide6/typesystems/typesystem_glgeti_v_modifications.xml
 share/PySide6/typesystems/typesystem_glgetv_includes.xml
 share/PySide6/typesystems/typesystem_glgetv_modifications.xml
 share/PySide6/typesystems/typesystem_graphs.xml
+share/PySide6/typesystems/typesystem_graphswidgets.xml
 share/PySide6/typesystems/typesystem_gui.xml
 share/PySide6/typesystems/typesystem_gui_common.xml
 share/PySide6/typesystems/typesystem_gui_mac.xml

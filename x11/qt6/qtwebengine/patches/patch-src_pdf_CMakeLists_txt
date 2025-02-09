@@ -1,7 +1,9 @@
+- https://github.com/qt/qtwebengine/commit/e372bb3dad121465d61cc15de18c06c85f938072
+- https://github.com/qt/qtwebengine/commit/8f7b00ee89f383cbf6eeda47560a4cecc897e9be
 Index: src/pdf/CMakeLists.txt
 --- src/pdf/CMakeLists.txt.orig
 +++ src/pdf/CMakeLists.txt
-@@ -71,7 +71,7 @@ add_dependencies(prepare_docs_Pdf generate_pdf_attribu
+@@ -70,7 +70,7 @@ add_dependencies(prepare_docs_Pdf generate_pdf_attribu
  #   TOOLCHAIN SETUP
  ##
  
@@ -10,7 +12,16 @@ Index: src/pdf/CMakeLists.txt
      setup_toolchains()
  endif()
  
-@@ -138,7 +138,7 @@ foreach(arch ${archs})
+@@ -120,6 +120,8 @@ foreach(arch ${archs})
+           qt_libjpeg_config="${buildDir}/${config}/${arch}:qt_libjpeg_config"
+           qt_harfbuzz_config="${buildDir}/${config}/${arch}:qt_harfbuzz_config"
+           qt_freetype_config="${buildDir}/${config}/${arch}:qt_freetype_config"
++          is_qtwebengine=true
++          is_qtpdf=true
+           enable_swiftshader=false
+           enable_swiftshader_vulkan=false
+           angle_enable_swiftshader=false
+@@ -138,7 +140,7 @@ foreach(arch ${archs})
            v8_enable_webassembly=false
          )
  
@@ -19,3 +30,11 @@ Index: src/pdf/CMakeLists.txt
              list(APPEND gnArgArg
                  is_cfi=false
                  ozone_auto_platforms=false
+@@ -253,6 +255,7 @@ add_gn_build_artifacts_to_target(
+     CMAKE_TARGET Pdf
+     NINJA_TARGET QtPdf
+     MODULE pdf
++    DEPENDS Pdf_sync_headers
+     BUILDDIR ${buildDir}
+     COMPLETE_STATIC TRUE
+     NINJA_STAMP QtPdf.stamp

@@ -20,7 +20,6 @@ include/X11/qt6/QtSerialBus/${VERSION}/QtSerialBus/private/qmodbusserver_p.h
 include/X11/qt6/QtSerialBus/${VERSION}/QtSerialBus/private/qmodbustcpclient_p.h
 include/X11/qt6/QtSerialBus/${VERSION}/QtSerialBus/private/qmodbustcpserver_p.h
 include/X11/qt6/QtSerialBus/${VERSION}/QtSerialBus/private/qtserialbus-config_p.h
-include/X11/qt6/QtSerialBus/${VERSION}/QtSerialBus/private/qtserialbusexports_p.h
 include/X11/qt6/QtSerialBus/QCanBus
 include/X11/qt6/QtSerialBus/QCanBusDevice
 include/X11/qt6/QtSerialBus/QCanBusDeviceInfo
@@ -100,6 +99,7 @@ lib/cmake/Qt6SerialBus/Qt6SerialBusDependencies.cmake
 lib/cmake/Qt6SerialBus/Qt6SerialBusPlugins.cmake
 lib/cmake/Qt6SerialBus/Qt6SerialBusTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6SerialBus/Qt6SerialBusTargets.cmake
+lib/cmake/Qt6SerialBus/Qt6SerialBusVersionlessAliasTargets.cmake
 lib/cmake/Qt6SerialBus/Qt6SerialBusVersionlessTargets.cmake
 lib/cmake/Qt6SerialBus/Qt6TinyCanBusPluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6SerialBus/Qt6TinyCanBusPluginConfig.cmake

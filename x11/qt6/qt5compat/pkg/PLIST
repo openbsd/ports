@@ -17,7 +17,6 @@ include/X11/qt6/QtCore5Compat/${VERSION}/QtCore5Compat/private/qtsciicodec_p.h
 include/X11/qt6/QtCore5Compat/${VERSION}/QtCore5Compat/private/qutfcodec_p.h
 include/X11/qt6/QtCore5Compat/${VERSION}/QtCore5Compat/private/qxml_p.h
 include/X11/qt6/QtCore5Compat/QBinaryJson
-include/X11/qt6/QtCore5Compat/QConcatenable
 include/X11/qt6/QtCore5Compat/QLinkedList
 include/X11/qt6/QtCore5Compat/QLinkedListData
 include/X11/qt6/QtCore5Compat/QLinkedListIterator
@@ -64,6 +63,7 @@ lib/cmake/Qt6Core5Compat/Qt6Core5CompatConfigVersionImpl.cmake
 lib/cmake/Qt6Core5Compat/Qt6Core5CompatDependencies.cmake
 lib/cmake/Qt6Core5Compat/Qt6Core5CompatTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Core5Compat/Qt6Core5CompatTargets.cmake
+lib/cmake/Qt6Core5Compat/Qt6Core5CompatVersionlessAliasTargets.cmake
 lib/cmake/Qt6Core5Compat/Qt6Core5CompatVersionlessTargets.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6qtgraphicaleffectspluginConfig.cmake

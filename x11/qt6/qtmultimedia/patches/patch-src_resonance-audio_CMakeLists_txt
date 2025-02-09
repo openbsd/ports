@@ -4,7 +4,7 @@ Fixes missing altivec compilation error on macppc.
 Index: src/resonance-audio/CMakeLists.txt
 --- src/resonance-audio/CMakeLists.txt.orig
 +++ src/resonance-audio/CMakeLists.txt
-@@ -215,13 +215,13 @@ qt_internal_add_3rdparty_library(BundledResonanceAudio
+@@ -219,13 +219,13 @@ qt_internal_add_3rdparty_library(BundledResonanceAudio
  )
  
  # Required by pffft on certain PowerPC archs

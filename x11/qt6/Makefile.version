@@ -1,7 +1,7 @@
 # Common source for Qt6 version
-QT6_VERSION =		6.7.3
-PYSIDE_VERSION =	6.7.3
+QT6_VERSION =		6.8.2
+PYSIDE_VERSION =	6.8.2
 
 # This one is used for building dependencies for examples and documentation,
 # which obviously should be in sync with core packages.
-QT6_NEXT_VERSION =	6.8.0
+QT6_NEXT_VERSION =	6.9.0

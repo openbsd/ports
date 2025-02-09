@@ -1,0 +1,10 @@
+Index: src/3rdparty/chromium/components/services/screen_ai/buildflags/features.gni
+--- src/3rdparty/chromium/components/services/screen_ai/buildflags/features.gni.orig
++++ src/3rdparty/chromium/components/services/screen_ai/buildflags/features.gni
+@@ -7,5 +7,5 @@ import("//build/config/chromeos/ui_mode.gni")
+ 
+ declare_args() {
+   # Screen AI service is only supported on desktop platforms.
+-  enable_screen_ai_service = is_linux || is_mac || is_chromeos || is_win
++  enable_screen_ai_service = is_linux || is_mac || is_chromeos || is_win || is_bsd
+ }

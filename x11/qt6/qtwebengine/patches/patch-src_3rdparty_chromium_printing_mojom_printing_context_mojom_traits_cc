@@ -19,12 +19,12 @@ Index: src/3rdparty/chromium/printing/mojom/printing_context_mojom_traits.cc
    DCHECK(out->advanced_settings().empty());
    if (!data.ReadAdvancedSettings(&out->advanced_settings()))
      return false;
-@@ -239,7 +239,7 @@ bool StructTraits<
+@@ -238,7 +238,7 @@ bool StructTraits<
+     if (system_print_dialog_data.size() != dictionary_entries) {
        return false;
      }
- 
 -#elif BUILDFLAG(IS_LINUX)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
      // The dictionary must contain three strings.
-     base::Value* value = system_print_dialog_data.Find(
+     const base::Value* value = system_print_dialog_data.Find(
          printing::kLinuxSystemPrintDialogDataPrinter);

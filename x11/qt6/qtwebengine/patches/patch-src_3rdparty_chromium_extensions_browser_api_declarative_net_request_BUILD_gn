@@ -1,0 +1,11 @@
+Index: src/3rdparty/chromium/extensions/browser/api/declarative_net_request/BUILD.gn
+--- src/3rdparty/chromium/extensions/browser/api/declarative_net_request/BUILD.gn.orig
++++ src/3rdparty/chromium/extensions/browser/api/declarative_net_request/BUILD.gn
+@@ -23,6 +23,7 @@ source_set("declarative_net_request") {
+     "//extensions/common",
+     "//extensions/common/api",
+     "//services/preferences/public/cpp",
++    "//components/web_cache/browser",
+   ]
+ 
+   public_deps = [ "//extensions/browser:browser_sources" ]

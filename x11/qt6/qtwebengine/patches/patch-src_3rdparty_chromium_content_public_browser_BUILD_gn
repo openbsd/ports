@@ -1,0 +1,11 @@
+Index: src/3rdparty/chromium/content/public/browser/BUILD.gn
+--- src/3rdparty/chromium/content/public/browser/BUILD.gn.orig
++++ src/3rdparty/chromium/content/public/browser/BUILD.gn
+@@ -551,6 +551,7 @@ jumbo_source_set("browser_sources") {
+     "//components/services/storage/public/cpp",
+     "//components/variations:variations",
+     "//components/viz/host",
++    "//components/spellcheck:buildflags",
+     "//content/browser",  # Must not be public_deps!
+     "//device/fido",
+     "//gpu",

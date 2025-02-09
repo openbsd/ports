@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/content/app/content_main.cc
 --- src/3rdparty/chromium/content/app/content_main.cc.orig
 +++ src/3rdparty/chromium/content/app/content_main.cc
-@@ -207,7 +207,7 @@ RunContentProcess(ContentMainParams params,
+@@ -209,7 +209,7 @@ RunContentProcess(ContentMainParams params,
      base::EnableTerminationOnOutOfMemory();
  #endif
  

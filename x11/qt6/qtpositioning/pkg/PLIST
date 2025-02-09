@@ -24,7 +24,6 @@ include/X11/qt6/QtPositioning/${VERSION}/QtPositioning/private/qnmeapositioninfo
 include/X11/qt6/QtPositioning/${VERSION}/QtPositioning/private/qnmeasatelliteinfosource_p.h
 include/X11/qt6/QtPositioning/${VERSION}/QtPositioning/private/qpositioningglobal_p.h
 include/X11/qt6/QtPositioning/${VERSION}/QtPositioning/private/qtpositioning-config_p.h
-include/X11/qt6/QtPositioning/${VERSION}/QtPositioning/private/qtpositioningexports_p.h
 include/X11/qt6/QtPositioning/${VERSION}/QtPositioning/private/qwebmercator_p.h
 include/X11/qt6/QtPositioning/QGeoAddress
 include/X11/qt6/QtPositioning/QGeoAreaMonitorInfo
@@ -82,7 +81,6 @@ include/X11/qt6/QtPositioningQuick/${VERSION}/QtPositioningQuick/private/qpositi
 include/X11/qt6/QtPositioningQuick/${VERSION}/QtPositioningQuick/private/qpositioningquickmodule_p.h
 include/X11/qt6/QtPositioningQuick/${VERSION}/QtPositioningQuick/private/qquickgeocoordinateanimation_p.h
 include/X11/qt6/QtPositioningQuick/${VERSION}/QtPositioningQuick/private/qquickgeocoordinateanimation_p_p.h
-include/X11/qt6/QtPositioningQuick/${VERSION}/QtPositioningQuick/private/qtpositioningquickexports_p.h
 include/X11/qt6/QtPositioningQuick/QtPositioningQuick
 include/X11/qt6/QtPositioningQuick/QtPositioningQuickDepends
 include/X11/qt6/QtPositioningQuick/QtPositioningQuickVersion
@@ -103,6 +101,7 @@ lib/cmake/Qt6Positioning/Qt6PositioningDependencies.cmake
 lib/cmake/Qt6Positioning/Qt6PositioningPlugins.cmake
 lib/cmake/Qt6Positioning/Qt6PositioningTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Positioning/Qt6PositioningTargets.cmake
+lib/cmake/Qt6Positioning/Qt6PositioningVersionlessAliasTargets.cmake
 lib/cmake/Qt6Positioning/Qt6PositioningVersionlessTargets.cmake
 lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryGeoclue2PluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Positioning/Qt6QGeoPositionInfoSourceFactoryGeoclue2PluginConfig.cmake
@@ -130,6 +129,7 @@ lib/cmake/Qt6PositioningQuick/Qt6PositioningQuickConfigVersionImpl.cmake
 lib/cmake/Qt6PositioningQuick/Qt6PositioningQuickDependencies.cmake
 lib/cmake/Qt6PositioningQuick/Qt6PositioningQuickTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6PositioningQuick/Qt6PositioningQuickTargets.cmake
+lib/cmake/Qt6PositioningQuick/Qt6PositioningQuickVersionlessAliasTargets.cmake
 lib/cmake/Qt6PositioningQuick/Qt6PositioningQuickVersionlessTargets.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6positioningquickpluginAdditionalTargetInfo.cmake
 lib/cmake/Qt6Qml/QmlPlugins/Qt6positioningquickpluginConfig.cmake

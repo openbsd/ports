@@ -19,7 +19,7 @@ Index: src/3rdparty/chromium/net/tools/cert_verify_tool/cert_verify_comparision_
    // On Linux, use a fixed ProxyConfigService, since the default one
    // depends on glib.
    //
-@@ -126,7 +126,7 @@ class CertVerifyImpl {
+@@ -123,7 +123,7 @@ class CertVerifyImpl {
  std::unique_ptr<CertVerifyImpl> CreateCertVerifyImplFromName(
      base::StringPiece impl_name,
      scoped_refptr<net::CertNetFetcher> cert_net_fetcher) {

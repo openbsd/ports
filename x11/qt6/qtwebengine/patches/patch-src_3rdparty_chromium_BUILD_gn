@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/BUILD.gn
 --- src/3rdparty/chromium/BUILD.gn.orig
 +++ src/3rdparty/chromium/BUILD.gn
-@@ -62,7 +62,7 @@ declare_args() {
+@@ -64,7 +64,7 @@ declare_args() {
    qtwebengine_target = "//tools/gn"
  }
  
@@ -10,7 +10,15 @@ Index: src/3rdparty/chromium/BUILD.gn
    # An official (maximally optimized!) component (optimized for build times)
    # build doesn't make sense and usually doesn't work.
    assert(!is_component_build)
-@@ -418,7 +418,7 @@ group("gn_all") {
+@@ -96,7 +96,6 @@ group("gn_all") {
+       "//codelabs",
+       "//components:components_unittests",
+       "//components/gwp_asan:gwp_asan_unittests",
+-      "//infra/orchestrator:orchestrator_all",
+       "//net:net_unittests",
+       "//sandbox:sandbox_unittests",
+       "//services:services_unittests",
+@@ -426,7 +425,7 @@ group("gn_all") {
        }
      }
  
@@ -19,7 +27,23 @@ Index: src/3rdparty/chromium/BUILD.gn
        deps += [
          "//third_party/breakpad:breakpad_unittests",
          "//third_party/breakpad:core-2-minidump",
-@@ -667,7 +667,7 @@ group("gn_all") {
+@@ -626,6 +625,15 @@ group("gn_all") {
+       }
+     }
+ 
++    if (is_bsd) {
++      deps -= [
++        "//third_party/breakpad:dump_syms($host_toolchain)",
++        "//third_party/breakpad:microdump_stackwalk($host_toolchain)",
++        "//third_party/breakpad:minidump_dump($host_toolchain)",
++        "//third_party/breakpad:minidump_stackwalk($host_toolchain)",
++      ]
++    }
++
+     if (is_mac) {
+       deps += [
+         "//third_party/breakpad:dump_syms",
+@@ -672,7 +680,7 @@ group("gn_all") {
            host_os == "win") {
          deps += [ "//chrome/test/mini_installer:mini_installer_tests" ]
        }
@@ -28,7 +52,16 @@ Index: src/3rdparty/chromium/BUILD.gn
        deps += [ "//third_party/breakpad:symupload($host_toolchain)" ]
      }
  
-@@ -1185,7 +1185,7 @@ if (use_blink && !is_cronet_build) {
+@@ -1093,7 +1101,7 @@ if (use_blink && !is_cronet_build) {
+     ]
+   }
+ 
+-  if (!is_chromeos_ash && !is_ios && !is_fuchsia && !is_android && !is_castos) {
++  if (!is_chromeos_ash && !is_ios && !is_fuchsia && !is_android && !is_castos && !is_bsd) {
+     script_test("chrome_wpt_tests") {
+       script = "//third_party/blink/tools/run_wpt_tests.py"
+       args = [
+@@ -1184,7 +1192,7 @@ if (use_blink && !is_cronet_build) {
        data_deps += [ "//content/web_test:web_test_common_mojom_js_data_deps" ]
      }
  
@@ -37,16 +70,16 @@ Index: src/3rdparty/chromium/BUILD.gn
        data_deps +=
            [ "//third_party/breakpad:minidump_stackwalk($host_toolchain)" ]
      }
-@@ -1194,7 +1194,7 @@ if (use_blink && !is_cronet_build) {
+@@ -1193,7 +1201,7 @@ if (use_blink && !is_cronet_build) {
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
 -    if (is_linux || is_chromeos) {
-+    if (is_linux || is_chromeos && !is_bsd) {
++    if ((is_linux && !is_bsd) || is_chromeos) {
        data_deps += [ "//third_party/breakpad:dump_syms($host_toolchain)" ]
      }
  
-@@ -1654,7 +1654,7 @@ group("chromium_builder_perf") {
+@@ -1643,7 +1651,7 @@ group("chromium_builder_perf") {
        data_deps += [ "//chrome/test:performance_browser_tests" ]
      }
  

@@ -1,7 +1,7 @@
 Index: src/3rdparty/chromium/net/dns/public/BUILD.gn
 --- src/3rdparty/chromium/net/dns/public/BUILD.gn.orig
 +++ src/3rdparty/chromium/net/dns/public/BUILD.gn
-@@ -76,7 +76,7 @@ source_set("tests") {
+@@ -77,7 +77,7 @@ source_set("tests") {
      "doh_provider_entry_unittest.cc",
    ]
  

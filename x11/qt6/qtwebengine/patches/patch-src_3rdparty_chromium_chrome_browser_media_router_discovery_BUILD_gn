@@ -1,9 +1,9 @@
 Index: src/3rdparty/chromium/chrome/browser/media/router/discovery/BUILD.gn
 --- src/3rdparty/chromium/chrome/browser/media/router/discovery/BUILD.gn.orig
 +++ src/3rdparty/chromium/chrome/browser/media/router/discovery/BUILD.gn
-@@ -80,7 +80,7 @@ static_library("discovery") {
-     "media_sink_discovery_metrics.h",
+@@ -81,7 +81,7 @@ static_library("discovery") {
    ]
+   configs += [ "//build/config/compiler:wexit_time_destructors" ]
  
 -  if (is_linux || is_chromeos) {
 +  if ((is_linux || is_chromeos) && !is_bsd) {

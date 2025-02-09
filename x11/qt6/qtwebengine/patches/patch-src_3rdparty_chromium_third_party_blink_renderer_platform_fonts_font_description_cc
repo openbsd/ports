@@ -10,9 +10,9 @@ Index: src/3rdparty/chromium/third_party/blink/renderer/platform/fonts/font_desc
  #include "third_party/blink/renderer/platform/fonts/font_cache.h"
  #endif
  
-@@ -274,7 +274,7 @@ FontCacheKey FontDescription::CacheKey(
-       static_cast<unsigned>(fields_.orientation_) << 1 |          // bit 2-3
-       static_cast<unsigned>(fields_.subpixel_text_position_);     // bit 1
+@@ -277,7 +277,7 @@ FontCacheKey FontDescription::CacheKey(
+       static_cast<unsigned>(fields_.orientation_) << 1 |            // bit 2-3
+       static_cast<unsigned>(fields_.subpixel_text_position_);       // bit 1
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)

@@ -110,7 +110,7 @@ Index: src/3rdparty/chromium/content/browser/child_process_launcher_helper_linux
  }
  
  void ChildProcessLauncherHelper::SetProcessPriorityOnLauncherThread(
-@@ -178,11 +198,13 @@ void ChildProcessLauncherHelper::SetProcessPriorityOnL
+@@ -179,11 +199,13 @@ void ChildProcessLauncherHelper::SetProcessPriorityOnL
    }
  }
  
