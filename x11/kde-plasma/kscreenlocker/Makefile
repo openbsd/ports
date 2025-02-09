@@ -1,5 +1,6 @@
 COMMENT =	library for secure lock screen architecture
 DISTNAME =	kscreenlocker-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  KScreenLocker         1.0 # 5.22.5
 
@@ -48,9 +49,13 @@ LIB_DEPENDS =	devel/kf6/kconfig \
 
 TEST_IS_INTERACTIVE =	X11
 
-CFLAGS +=	-I${LOCALBASE}/include/
 CXXFLAGS +=	-I${LOCALBASE}/include/
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
+
+post-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/kscreenlocker/etc/pam.d
+	${INSTALL_DATA} ${FILESDIR}/kde* \
+		${PREFIX}/share/examples/kscreenlocker/etc/pam.d
 
 .include <bsd.port.mk>

@@ -16,10 +16,25 @@ lib/qt6/plugins/plasma/
 lib/qt6/plugins/plasma/kcms/
 lib/qt6/plugins/plasma/kcms/systemsettings/
 @so lib/qt6/plugins/plasma/kcms/systemsettings/kcm_screenlocker.so
+@mode g+s
+@group auth
 @bin libexec/kscreenlocker_greet
+@mode
+@group
 share/applications/kcm_screenlocker.desktop
 share/dbus-1/interfaces/kf6_org.freedesktop.ScreenSaver.xml
 share/dbus-1/interfaces/org.kde.screensaver.xml
+share/examples/kscreenlocker/
+share/examples/kscreenlocker/etc/
+share/examples/kscreenlocker/etc/pam.d/
+@mode 0444
+share/examples/kscreenlocker/etc/pam.d/kde
+@sample ${SYSCONFDIR}/pam.d/kde
+share/examples/kscreenlocker/etc/pam.d/kde-fingerprint
+@sample ${SYSCONFDIR}/pam.d/kde-fingerprint
+share/examples/kscreenlocker/etc/pam.d/kde-smartcard
+@sample ${SYSCONFDIR}/pam.d/kde-smartcard
+@mode
 share/knotifications6/ksmserver.notifyrc
 share/ksmserver/
 share/ksmserver/screenlocker/

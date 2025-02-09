@@ -1,0 +1,10 @@
+# kde (kscreenlocker) settings for pam(3)
+
+auth		include		system
+
+account		required	pam_nologin.so
+account		include		system
+
+password	include		system
+
+session		include		system
