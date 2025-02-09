@@ -201,6 +201,9 @@ share/mlt-7/plus/filter_dance.yml
 share/mlt-7/plus/filter_dynamic_loudness.yml
 share/mlt-7/plus/filter_dynamictext.yml
 share/mlt-7/plus/filter_fft.yml
+share/mlt-7/plus/filter_gradientmap.yml
+share/mlt-7/plus/filter_hslprimaries.yml
+share/mlt-7/plus/filter_hslrange.yml
 share/mlt-7/plus/filter_invert.yml
 share/mlt-7/plus/filter_lift_gamma_gain.yml
 share/mlt-7/plus/filter_loudness.yml
@@ -211,6 +214,8 @@ share/mlt-7/plus/filter_sepia.yml
 share/mlt-7/plus/filter_shape.yml
 share/mlt-7/plus/filter_spot_remover.yml
 share/mlt-7/plus/filter_strobe.yml
+share/mlt-7/plus/filter_subtitle.yml
+share/mlt-7/plus/filter_subtitle_feed.yml
 share/mlt-7/plus/filter_text.yml
 share/mlt-7/plus/filter_threshold.yml
 share/mlt-7/plus/filter_timer.yml
@@ -232,6 +237,7 @@ share/mlt-7/presets/consumer/avformat/MP3
 share/mlt-7/presets/consumer/avformat/MPEG-2
 share/mlt-7/presets/consumer/avformat/MPEG-4
 share/mlt-7/presets/consumer/avformat/MPEG-4-ASP
+share/mlt-7/presets/consumer/avformat/SVT-AV1
 share/mlt-7/presets/consumer/avformat/Slide-Deck-H264
 share/mlt-7/presets/consumer/avformat/Slide-Deck-HEVC
 share/mlt-7/presets/consumer/avformat/Sony-PSP
@@ -339,6 +345,7 @@ share/mlt-7/presets/consumer/avformat/ten_bit/FFV1
 share/mlt-7/presets/consumer/avformat/ten_bit/ProRes 422
 share/mlt-7/presets/consumer/avformat/ten_bit/ProRes 444
 share/mlt-7/presets/consumer/avformat/ten_bit/ProRes HQ
+share/mlt-7/presets/consumer/avformat/ten_bit/SVT-AV1
 share/mlt-7/presets/consumer/avformat/ten_bit/x264-high10
 share/mlt-7/presets/consumer/avformat/ten_bit/x265-main10
 share/mlt-7/presets/consumer/avformat/vp9
@@ -443,6 +450,8 @@ share/mlt-7/profiles/vcd_ntsc
 share/mlt-7/profiles/vcd_pal
 share/mlt-7/profiles/vertical_hd_30
 share/mlt-7/profiles/vertical_hd_60
+share/mlt-7/qt/filter_dropshadow.yml
+share/mlt-7/qt6/filter_dropshadow.yml
 share/mlt-7/resample/
 share/mlt-7/resample/link_resample.yml
 share/mlt-7/sdl/
@@ -464,6 +473,7 @@ share/mlt-7/xine/link_deinterlace.yml
 share/mlt-7/xml/
 share/mlt-7/xml/consumer_xml.yml
 share/mlt-7/xml/mlt-xml.dtd
+share/mlt-7/xml/producer_xml-clip.yml
 share/mlt-7/xml/producer_xml-nogl.yml
 share/mlt-7/xml/producer_xml-string.yml
 share/mlt-7/xml/producer_xml.yml
