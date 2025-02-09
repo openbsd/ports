@@ -2,7 +2,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	stand-alone photo geotagging program
 
-V =		1.6.0
+V =		1.7.0
 DISTNAME =	kgeotag-${V}
 CATEGORIES =	geo x11
 
@@ -13,39 +13,42 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # GPL and many others
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} KF5Auth KF5AuthCore KF5Codecs KF5ConfigCore
-WANTLIB += KF5ConfigGui KF5ConfigWidgets KF5CoreAddons KF5Crash
-WANTLIB += KF5I18n KF5KExiv2 KF5WidgetsAddons KF5XmlGui Qt5Core
-WANTLIB += Qt5DBus Qt5Gui Qt5Network Qt5Positioning Qt5PrintSupport
-WANTLIB += Qt5Qml Qt5QmlModels Qt5Quick Qt5WebChannel Qt5WebEngine
-WANTLIB += Qt5WebEngineCore Qt5WebEngineWidgets Qt5Widgets Qt5Xml
-WANTLIB += c m marblewidget-qt5
+WANTLIB += ${COMPILER_LIBCXX} GL KExiv2Qt6 KF6ColorScheme KF6ConfigCore
+WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
+WANTLIB += KF6I18n KF6WidgetsAddons KF6XmlGui Qt6Core Qt6Core5Compat
+WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning
+WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlModels Qt6Quick Qt6WebChannel
+WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets Qt6Xml
+WANTLIB += c m marblewidget-qt6
 
 SITES =		${SITE_KDE:=stable/kgeotag/${V}/}
+EXTRACT_SUFX =	.tar.xz
 
-MODULES =	devel/kf5
+MODULES =	devel/kf6
 
-BUILD_DEPENDS =	devel/kf5/kdoctools \
+BUILD_DEPENDS =	devel/kf6/kdoctools \
 		devel/gettext,-tools
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		devel/kf5/kdoctools \
+		devel/kf6/kdoctools \
 		x11/gtk+4,-guic
 
-LIB_DEPENDS =	devel/kf5/kauth \
-		devel/kf5/kcodecs \
-		devel/kf5/kconfig \
-		devel/kf5/kconfigwidgets \
-		devel/kf5/kcoreaddons \
-		devel/kf5/kcrash \
-		devel/kf5/ki18n \
-		devel/kf5/kwidgetsaddons \
-		devel/kf5/kxmlgui \
-		x11/kde-applications/libkexiv2 \
+LIB_DEPENDS =	devel/kf6/kcolorscheme \
+		devel/kf6/kconfig \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kcoreaddons \
+		devel/kf6/kcrash \
+		devel/kf6/ki18n \
+		devel/kf6/kwidgetsaddons \
+		devel/kf6/kxmlgui \
 		x11/kde-applications/marble \
-		x11/qt5/qtdeclarative \
-		x11/qt5/qtlocation \
-		x11/qt5/qtwebchannel \
-		x11/qt5/qtwebengine
+		x11/qt6/qt5compat \
+		x11/qt6/qtdeclarative \
+		x11/qt6/qtpositioning \
+		x11/qt6/qtwebchannel \
+		x11/qt6/qtwebengine \
+		x11/kde-applications/kf6-libkexiv2
+
+CONFIGURE_ARGS =	-DQT_MAJOR_VERSION=6
 
 .include <bsd.port.mk>
