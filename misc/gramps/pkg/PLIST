@@ -3988,6 +3988,7 @@ share/locale/hu/LC_MESSAGES/gramps.mo
 share/locale/is/LC_MESSAGES/gramps.mo
 share/locale/it/LC_MESSAGES/gramps.mo
 share/locale/ja/LC_MESSAGES/gramps.mo
+share/locale/ko/LC_MESSAGES/gramps.mo
 share/locale/lt/LC_MESSAGES/gramps.mo
 share/locale/nb/LC_MESSAGES/gramps.mo
 share/locale/nl/LC_MESSAGES/gramps.mo
@@ -4003,7 +4004,6 @@ share/locale/sl/LC_MESSAGES/gramps.mo
 share/locale/sq/LC_MESSAGES/gramps.mo
 share/locale/sr/LC_MESSAGES/gramps.mo
 share/locale/sv/LC_MESSAGES/gramps.mo
-share/locale/ta/LC_MESSAGES/gramps.mo
 share/locale/tr/LC_MESSAGES/gramps.mo
 share/locale/uk/LC_MESSAGES/gramps.mo
 share/locale/vi/LC_MESSAGES/gramps.mo
