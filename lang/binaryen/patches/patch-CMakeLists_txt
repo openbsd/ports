@@ -4,14 +4,14 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -319,10 +319,6 @@ else()
-     # explicitly undefine it:
-     add_nondebug_compile_flag("-UNDEBUG")
+@@ -431,10 +431,6 @@ else() # MSVC
+     add_compile_flag("-Wno-error=missing-field-initializers")
    endif()
+ 
 -  if(NOT APPLE AND NOT "${CMAKE_CXX_FLAGS}" MATCHES "-fsanitize")
 -    # This flag only applies to shared libraries so don't use add_link_flag
 -    set(CMAKE_SHARED_LINKER_FLAGS "${CMAKE_SHARED_LINKER_FLAGS} -Wl,--no-undefined")
 -  endif()
+ 
  endif()
  
- if(EMSCRIPTEN)
