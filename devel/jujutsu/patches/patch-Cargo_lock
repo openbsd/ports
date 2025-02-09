@@ -1,7 +1,7 @@
 Index: Cargo.lock
 --- Cargo.lock.orig
 +++ Cargo.lock
-@@ -913,9 +913,9 @@ checksum = "40ecd4077b5ae9fd2e9e169b102c6c330d0605168e
+@@ -1109,9 +1109,9 @@ checksum = "40ecd4077b5ae9fd2e9e169b102c6c330d0605168e
  
  [[package]]
  name = "git2"
@@ -11,9 +11,9 @@ Index: Cargo.lock
 -checksum = "b903b73e45dc0c6c596f2d37eccece7c1c8bb6e4407b001096387c63d0d93724"
 +checksum = "3fda788993cc341f69012feba8bf45c0ba4f3291fcc08e214b4d5a7332d88aff"
  dependencies = [
-  "bitflags",
+  "bitflags 2.6.0",
   "libc",
-@@ -2110,9 +2110,9 @@ checksum = "b5aba8db14291edd000dfcc4d620c7ebfb122c613a
+@@ -2395,9 +2395,9 @@ checksum = "b5aba8db14291edd000dfcc4d620c7ebfb122c613a
  
  [[package]]
  name = "libgit2-sys"
