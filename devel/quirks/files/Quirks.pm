@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1696 2025/02/09 01:58:02 afresh1 Exp $
+# $OpenBSD: Quirks.pm,v 1.1697 2025/02/09 08:57:12 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -616,6 +616,8 @@ my $stem_extensions = {
 	'gstreamer1-plugins-good' => 'gst-plugins-good',
 	'gstreamer1-plugins-libav' => 'gst-libav',
 	'gstreamer1-plugins-ugly' => 'gst-plugins-ugly',
+	'libksane-kf5' => 'libksane',
+	'marble-kf5' => 'marble',
 };
 
 my $obsolete_reason = {};
