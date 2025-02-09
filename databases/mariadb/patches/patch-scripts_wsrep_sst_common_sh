@@ -18,7 +18,7 @@ Index: scripts/wsrep_sst_common.sh
  trim_string()
  {
      if [ -n "$BASH_VERSION" ]; then
-@@ -1212,6 +1222,7 @@ check_sockets_utils()
+@@ -1230,6 +1240,7 @@ check_sockets_utils()
      lsof_available=0
      sockstat_available=0
      ss_available=0
@@ -26,7 +26,7 @@ Index: scripts/wsrep_sst_common.sh
  
      socket_utility="$(commandex ss)"
      if [ -n "$socket_utility" ]; then
-@@ -1236,23 +1247,30 @@ check_sockets_utils()
+@@ -1254,23 +1265,30 @@ check_sockets_utils()
                  sockstat_opts='-46lq -P tcp -p'
              fi
          else
@@ -71,7 +71,7 @@ Index: scripts/wsrep_sst_common.sh
              fi
          fi
      fi
-@@ -1302,6 +1320,8 @@ check_port()
+@@ -1320,6 +1338,8 @@ check_port()
              $socket_utility $sockstat_opts "$port" 2>/dev/null | \
                  grep -q -E "^[^[:space:]]+[[:space:]]+($utils)[^[:space:]]*[[:space:]]+$pid([[:space:]].+)?[[:space:]]LISTEN([[:space:]]|\$)" && rc=0
          fi

@@ -2,12 +2,12 @@ COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 
-VERSION=	11.4.4
+VERSION=	11.4.5
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
 EPOCH=		1
 CATEGORIES=	databases
-SITES=		https://downloads.mariadb.com/MariaDB/${DISTNAME}/source/ \
+SITES=		https://dlm.mariadb.com/4047800/MariaDB/${DISTNAME}/source/ \
 		https://ftp.osuosl.org/pub/mariadb/${DISTNAME}/source/ \
 		https://archive.mariadb.org/${DISTNAME}/source/
 

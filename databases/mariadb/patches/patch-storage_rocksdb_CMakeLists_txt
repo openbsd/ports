@@ -1,7 +1,7 @@
 Index: storage/rocksdb/CMakeLists.txt
 --- storage/rocksdb/CMakeLists.txt.orig
 +++ storage/rocksdb/CMakeLists.txt
-@@ -32,6 +32,16 @@ IF(HAVE_SCHED_GETCPU)
+@@ -33,6 +33,16 @@ IF(HAVE_SCHED_GETCPU)
    ADD_DEFINITIONS(-DHAVE_SCHED_GETCPU=1 -DROCKSDB_SCHED_GETCPU_PRESENT)
  ENDIF()
  
@@ -18,7 +18,7 @@ Index: storage/rocksdb/CMakeLists.txt
  IF(WITH_VALGRIND)
    ADD_DEFINITIONS(-DROCKSDB_VALGRIND_RUN=1)
  ENDIF()
-@@ -62,15 +72,6 @@ IF (WIN32 AND CMAKE_SIZEOF_VOID_P EQUAL 4)
+@@ -63,15 +73,6 @@ IF (WIN32 AND CMAKE_SIZEOF_VOID_P EQUAL 4)
  ENDIF()
  IF(MSVC_ARM64)
   SKIP_ROCKSDB_PLUGIN("Windows ARM64 not supported")
