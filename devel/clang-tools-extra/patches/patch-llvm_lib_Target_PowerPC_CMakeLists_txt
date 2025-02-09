@@ -1,8 +1,8 @@
 Index: llvm/lib/Target/PowerPC/CMakeLists.txt
 --- llvm/lib/Target/PowerPC/CMakeLists.txt.orig
 +++ llvm/lib/Target/PowerPC/CMakeLists.txt
-@@ -43,6 +43,7 @@ add_llvm_target(PowerPCCodeGen
-   PPCMacroFusion.cpp
+@@ -44,6 +44,7 @@ add_llvm_target(PowerPCCodeGen
+   PPCMergeStringPool.cpp
    PPCMIPeephole.cpp
    PPCRegisterInfo.cpp
 +  PPCReturnProtectorLowering.cpp

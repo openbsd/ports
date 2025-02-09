@@ -1,7 +1,7 @@
 Index: llvm/lib/Target/X86/X86Subtarget.h
 --- llvm/lib/Target/X86/X86Subtarget.h.orig
 +++ llvm/lib/Target/X86/X86Subtarget.h
-@@ -139,6 +139,8 @@ class X86Subtarget final : public X86GenSubtargetInfo 
+@@ -133,6 +133,8 @@ class X86Subtarget final : public X86GenSubtargetInfo 
      return &getInstrInfo()->getRegisterInfo();
    }
  

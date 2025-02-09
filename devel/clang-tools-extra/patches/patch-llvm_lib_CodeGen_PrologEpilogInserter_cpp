@@ -1,7 +1,7 @@
 Index: llvm/lib/CodeGen/PrologEpilogInserter.cpp
 --- llvm/lib/CodeGen/PrologEpilogInserter.cpp.orig
 +++ llvm/lib/CodeGen/PrologEpilogInserter.cpp
-@@ -224,7 +224,11 @@ bool PEI::runOnMachineFunction(MachineFunction &MF) {
+@@ -223,7 +223,11 @@ bool PEI::runOnMachineFunction(MachineFunction &MF) {
    const Function &F = MF.getFunction();
    const TargetRegisterInfo *TRI = MF.getSubtarget().getRegisterInfo();
    const TargetFrameLowering *TFI = MF.getSubtarget().getFrameLowering();
@@ -13,7 +13,7 @@ Index: llvm/lib/CodeGen/PrologEpilogInserter.cpp
    RS = TRI->requiresRegisterScavenging(MF) ? new RegScavenger() : nullptr;
    FrameIndexVirtualScavenging = TRI->requiresFrameIndexScavenging(MF);
    ORE = &getAnalysis<MachineOptimizationRemarkEmitterPass>().getORE();
-@@ -262,6 +266,10 @@ bool PEI::runOnMachineFunction(MachineFunction &MF) {
+@@ -260,6 +264,10 @@ bool PEI::runOnMachineFunction(MachineFunction &MF) {
    if (!F.hasFnAttribute(Attribute::Naked))
      insertPrologEpilogCode(MF);
  
@@ -24,7 +24,7 @@ Index: llvm/lib/CodeGen/PrologEpilogInserter.cpp
    // Reinsert stashed debug values at the start of the entry blocks.
    for (auto &I : EntryDbgValues)
      I.first->insert(I.first->begin(), I.second.begin(), I.second.end());
-@@ -393,7 +401,9 @@ void PEI::calculateCallFrameInfo(MachineFunction &MF) 
+@@ -396,7 +404,9 @@ void PEI::calculateCallFrameInfo(MachineFunction &MF) 
  /// Compute the sets of entry and return blocks for saving and restoring
  /// callee-saved registers, and placing prolog and epilog code.
  void PEI::calculateSaveRestoreBlocks(MachineFunction &MF) {
@@ -35,7 +35,7 @@ Index: llvm/lib/CodeGen/PrologEpilogInserter.cpp
  
    // Even when we do not change any CSR, we still want to insert the
    // prologue and epilogue of the function.
-@@ -409,7 +419,18 @@ void PEI::calculateSaveRestoreBlocks(MachineFunction &
+@@ -412,7 +422,18 @@ void PEI::calculateSaveRestoreBlocks(MachineFunction &
      // epilogue.
      if (!RestoreBlock->succ_empty() || RestoreBlock->isReturnBlock())
        RestoreBlocks.push_back(RestoreBlock);
@@ -55,7 +55,7 @@ Index: llvm/lib/CodeGen/PrologEpilogInserter.cpp
    }
  
    // Save refs to entry and return blocks.
-@@ -420,6 +441,9 @@ void PEI::calculateSaveRestoreBlocks(MachineFunction &
+@@ -423,6 +444,9 @@ void PEI::calculateSaveRestoreBlocks(MachineFunction &
      if (MBB.isReturnBlock())
        RestoreBlocks.push_back(&MBB);
    }
@@ -65,7 +65,7 @@ Index: llvm/lib/CodeGen/PrologEpilogInserter.cpp
  }
  
  static void assignCalleeSavedSpillSlots(MachineFunction &F,
-@@ -457,6 +481,10 @@ static void assignCalleeSavedSpillSlots(MachineFunctio
+@@ -460,6 +484,10 @@ static void assignCalleeSavedSpillSlots(MachineFunctio
  
    const TargetFrameLowering *TFI = F.getSubtarget().getFrameLowering();
    MachineFrameInfo &MFI = F.getFrameInfo();
@@ -76,3 +76,19 @@ Index: llvm/lib/CodeGen/PrologEpilogInserter.cpp
    if (!TFI->assignCalleeSavedSpillSlots(F, RegInfo, CSI, MinCSFrameIndex,
                                          MaxCSFrameIndex)) {
      // If target doesn't implement this, use generic code.
+@@ -1327,6 +1355,15 @@ void PEI::insertZeroCallUsedRegs(MachineFunction &MF) 
+        MCPhysReg CSReg = *CSRegs; ++CSRegs)
+     for (MCRegister Reg : TRI.sub_and_superregs_inclusive(CSReg))
+       RegsToZero.reset(Reg);
++
++  // Don't touch the return protector register if it is used
++  const MachineFrameInfo &MFI = MF.getFrameInfo();
++  if (MFI.hasReturnProtectorRegister()) {
++    MCRegister RGReg = MCRegister(MFI.getReturnProtectorRegister());
++    for (MCRegister Reg : TRI.sub_and_superregs_inclusive(RGReg)) {
++      RegsToZero.reset(Reg);
++    }
++  }
+ 
+   const TargetFrameLowering &TFI = *MF.getSubtarget().getFrameLowering();
+   for (MachineBasicBlock &MBB : MF)

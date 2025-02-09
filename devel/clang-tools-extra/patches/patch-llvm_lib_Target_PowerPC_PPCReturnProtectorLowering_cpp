@@ -1,7 +1,7 @@
 Index: llvm/lib/Target/PowerPC/PPCReturnProtectorLowering.cpp
 --- llvm/lib/Target/PowerPC/PPCReturnProtectorLowering.cpp.orig
 +++ llvm/lib/Target/PowerPC/PPCReturnProtectorLowering.cpp
-@@ -0,0 +1,278 @@
+@@ -0,0 +1,279 @@
 +//===-- PPCReturnProtectorLowering.cpp --------------------------------===//
 +//
 +//                     The LLVM Compiler Infrastructure
@@ -27,6 +27,7 @@ Index: llvm/lib/Target/PowerPC/PPCReturnProtectorLowering.cpp
 +#include "llvm/CodeGen/MachineModuleInfo.h"
 +#include "llvm/CodeGen/MachineRegisterInfo.h"
 +#include "llvm/IR/Function.h"
++#include "llvm/IR/GlobalVariable.h"
 +#include "llvm/MC/MCSymbol.h"
 +#include "llvm/Support/Debug.h"
 +#include "llvm/Target/TargetOptions.h"

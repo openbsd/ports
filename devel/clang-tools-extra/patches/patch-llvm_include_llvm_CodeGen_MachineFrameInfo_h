@@ -17,7 +17,7 @@ Index: llvm/include/llvm/CodeGen/MachineFrameInfo.h
    /// The frame index for the function context. Used for SjLj exceptions.
    int FunctionContextIdx = -1;
  
-@@ -358,6 +367,17 @@ class MachineFrameInfo { (private)
+@@ -360,6 +369,17 @@ class MachineFrameInfo { (private)
    int getStackProtectorIndex() const { return StackProtectorIdx; }
    void setStackProtectorIndex(int I) { StackProtectorIdx = I; }
    bool hasStackProtectorIndex() const { return StackProtectorIdx != -1; }

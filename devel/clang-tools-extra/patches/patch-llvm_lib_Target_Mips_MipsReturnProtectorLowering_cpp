@@ -1,7 +1,7 @@
 Index: llvm/lib/Target/Mips/MipsReturnProtectorLowering.cpp
 --- llvm/lib/Target/Mips/MipsReturnProtectorLowering.cpp.orig
 +++ llvm/lib/Target/Mips/MipsReturnProtectorLowering.cpp
-@@ -0,0 +1,273 @@
+@@ -0,0 +1,274 @@
 +//===-- MipsReturnProtectorLowering.cpp --------------------------------===//
 +//
 +//                     The LLVM Compiler Infrastructure
@@ -26,6 +26,7 @@ Index: llvm/lib/Target/Mips/MipsReturnProtectorLowering.cpp
 +#include "llvm/CodeGen/MachineModuleInfo.h"
 +#include "llvm/CodeGen/MachineRegisterInfo.h"
 +#include "llvm/IR/Function.h"
++#include "llvm/IR/GlobalVariable.h"
 +#include "llvm/MC/MCSymbol.h"
 +#include "llvm/Support/Debug.h"
 +#include "llvm/Target/TargetOptions.h"

@@ -9,11 +9,11 @@ Index: llvm/lib/Target/Mips/Mips.h
  FunctionPass *createMipsModuleISelDagPass();
  FunctionPass *createMipsOptimizePICCallPass();
  FunctionPass *createMipsDelaySlotFillerPass();
-@@ -45,6 +46,7 @@ InstructionSelector *createMipsInstructionSelector(con
-                                                    MipsSubtarget &,
-                                                    MipsRegisterBankInfo &);
+@@ -45,6 +46,7 @@ InstructionSelector *
+ createMipsInstructionSelector(const MipsTargetMachine &, const MipsSubtarget &,
+                               const MipsRegisterBankInfo &);
  
 +void initializeMipsLoongson2FBTBFixPass(PassRegistry &);
  void initializeMicroMipsSizeReducePass(PassRegistry &);
  void initializeMipsBranchExpansionPass(PassRegistry &);
- void initializeMipsDAGToDAGISelPass(PassRegistry &);
+ void initializeMipsDAGToDAGISelLegacyPass(PassRegistry &);

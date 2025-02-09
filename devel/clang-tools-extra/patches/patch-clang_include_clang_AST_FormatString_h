@@ -1,7 +1,7 @@
 Index: clang/include/clang/AST/FormatString.h
 --- clang/include/clang/AST/FormatString.h.orig
 +++ clang/include/clang/AST/FormatString.h
-@@ -232,8 +232,10 @@ class ConversionSpecifier { (public)
+@@ -240,8 +240,10 @@ class ConversionSpecifier { (public)
  
    bool isIntArg() const { return (kind >= IntArgBeg && kind <= IntArgEnd) ||
      kind == FreeBSDrArg || kind == FreeBSDyArg; }

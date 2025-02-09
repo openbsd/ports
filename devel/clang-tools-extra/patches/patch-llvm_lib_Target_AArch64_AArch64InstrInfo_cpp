@@ -1,7 +1,7 @@
 Index: llvm/lib/Target/AArch64/AArch64InstrInfo.cpp
 --- llvm/lib/Target/AArch64/AArch64InstrInfo.cpp.orig
 +++ llvm/lib/Target/AArch64/AArch64InstrInfo.cpp
-@@ -108,6 +108,9 @@ unsigned AArch64InstrInfo::getInstSizeInBytes(const Ma
+@@ -119,6 +119,9 @@ unsigned AArch64InstrInfo::getInstSizeInBytes(const Ma
      // with fixed constant size but not specified in .td file) is a normal
      // 4-byte insn.
      NumBytes = 4;

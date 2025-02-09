@@ -1,7 +1,7 @@
 Index: llvm/lib/Target/PowerPC/PPCISelDAGToDAG.cpp
 --- llvm/lib/Target/PowerPC/PPCISelDAGToDAG.cpp.orig
 +++ llvm/lib/Target/PowerPC/PPCISelDAGToDAG.cpp
-@@ -5293,7 +5293,8 @@ void PPCDAGToDAGISel::Select(SDNode *N) {
+@@ -5473,7 +5473,8 @@ void PPCDAGToDAGISel::Select(SDNode *N) {
      // generate secure plt code for TLS symbols.
      getGlobalBaseReg();
    } break;

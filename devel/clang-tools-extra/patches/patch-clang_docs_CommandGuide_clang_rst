@@ -9,7 +9,7 @@ Index: clang/docs/CommandGuide/clang.rst
  
  SYNOPSIS
  --------
-@@ -697,4 +697,4 @@ output of the compiler, along with information to repr
+@@ -756,4 +756,4 @@ output of the compiler, along with information to repr
  SEE ALSO
  --------
  

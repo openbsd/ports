@@ -1,7 +1,7 @@
 Index: llvm/lib/Target/AArch64/AArch64ReturnProtectorLowering.cpp
 --- llvm/lib/Target/AArch64/AArch64ReturnProtectorLowering.cpp.orig
 +++ llvm/lib/Target/AArch64/AArch64ReturnProtectorLowering.cpp
-@@ -0,0 +1,124 @@
+@@ -0,0 +1,125 @@
 +//===-- AArch64ReturnProtectorLowering.cpp --------------------------------===//
 +//
 +//                     The LLVM Compiler Infrastructure
@@ -27,6 +27,7 @@ Index: llvm/lib/Target/AArch64/AArch64ReturnProtectorLowering.cpp
 +#include "llvm/CodeGen/MachineModuleInfo.h"
 +#include "llvm/CodeGen/MachineRegisterInfo.h"
 +#include "llvm/IR/Function.h"
++#include "llvm/IR/GlobalVariable.h"
 +#include "llvm/MC/MCAsmInfo.h"
 +#include "llvm/MC/MCSymbol.h"
 +#include "llvm/Support/Debug.h"

@@ -1,13 +1,13 @@
 Index: clang/lib/Driver/Driver.cpp
 --- clang/lib/Driver/Driver.cpp.orig
 +++ clang/lib/Driver/Driver.cpp
-@@ -5826,7 +5826,50 @@ const char *Driver::GetNamedOutputPath(Compilation &C,
+@@ -6148,7 +6148,50 @@ const char *Driver::GetNamedOutputPath(Compilation &C,
    return C.addResultFile(NamedOutput, &JA);
  }
  
 +
 +namespace {
-+static Optional<std::string> findFile(StringRef path1, const Twine &path2) {
++static std::optional<std::string> findFile(StringRef path1, const Twine &path2) {
 +  SmallString<128> s;
 +  llvm::sys::path::append(s, path1, path2);
 +
@@ -17,7 +17,7 @@ Index: clang/lib/Driver/Driver.cpp
 +}
 +
 +// Must be in sync with findMajMinShlib in lld/ELF/DriverUtils.cpp.
-+llvm::Optional<std::string> findMajMinShlib(StringRef dir, const Twine& libNameSo) {
++std::optional<std::string> findMajMinShlib(StringRef dir, const Twine& libNameSo) {
 +  // Handle OpenBSD-style maj/min shlib scheme
 +  llvm::SmallString<128> Scratch;
 +  const StringRef LibName = (libNameSo + ".").toStringRef(Scratch);
@@ -27,7 +27,7 @@ Index: clang/lib/Driver/Driver.cpp
 +       LI != LE; LI = LI.increment(EC)) {
 +    StringRef FilePath = LI->path();
 +    StringRef FileName = llvm::sys::path::filename(FilePath);
-+    if (!(FileName.startswith(LibName)))
++    if (!(FileName.starts_with(LibName)))
 +      continue;
 +    std::pair<StringRef, StringRef> MajMin =
 +      FileName.substr(LibName.size()).split('.');
@@ -48,11 +48,11 @@ Index: clang/lib/Driver/Driver.cpp
 +}  // namespace
 +
  std::string Driver::GetFilePath(StringRef Name, const ToolChain &TC) const {
-+  const bool lookForLibDotSo = Name.startswith("lib") && Name.endswith(".so");
++  const bool lookForLibDotSo = Name.starts_with("lib") && Name.ends_with(".so");
    // Search for Name in a list of paths.
    auto SearchPaths = [&](const llvm::SmallVectorImpl<std::string> &P)
        -> std::optional<std::string> {
-@@ -5836,9 +5879,14 @@ std::string Driver::GetFilePath(StringRef Name, const 
+@@ -6158,9 +6201,14 @@ std::string Driver::GetFilePath(StringRef Name, const 
        if (Dir.empty())
          continue;
        SmallString<128> P(Dir[0] == '=' ? SysRoot + Dir.substr(1) : Dir);

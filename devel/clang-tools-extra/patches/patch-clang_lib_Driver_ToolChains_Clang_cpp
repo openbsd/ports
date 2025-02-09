@@ -1,7 +1,7 @@
 Index: clang/lib/Driver/ToolChains/Clang.cpp
 --- clang/lib/Driver/ToolChains/Clang.cpp.orig
 +++ clang/lib/Driver/ToolChains/Clang.cpp
-@@ -1566,15 +1566,21 @@ void AddUnalignedAccessWarning(ArgStringList &CmdArgs)
+@@ -1527,15 +1527,21 @@ static void handlePAuthABI(const ArgList &DriverArgs, 
  
  static void CollectARMPACBTIOptions(const ToolChain &TC, const ArgList &Args,
                                      ArgStringList &CmdArgs, bool isAArch64) {
@@ -25,7 +25,7 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
    if (!(isAArch64 || (Triple.isArmT32() && Triple.isArmMClass())))
      D.Diag(diag::warn_incompatible_branch_protection_option)
          << Triple.getArchName();
-@@ -1588,7 +1594,10 @@ static void CollectARMPACBTIOptions(const ToolChain &T
+@@ -1549,7 +1555,10 @@ static void CollectARMPACBTIOptions(const ToolChain &T
        D.Diag(diag::err_drv_unsupported_option_argument)
            << A->getSpelling() << Scope;
      Key = "a_key";
@@ -34,14 +34,14 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
 +      IndirectBranches = true;
 +    else
 +      IndirectBranches = false;
+     BranchProtectionPAuthLR = false;
+     GuardedControlStack = false;
    } else {
-     StringRef DiagMsg;
-     llvm::ARM::ParsedBranchProtection PBP;
-@@ -2536,6 +2545,11 @@ static void CollectArgsForIntegratedAssembler(Compilat
+@@ -2664,6 +2673,11 @@ static void CollectArgsForIntegratedAssembler(Compilat
            CmdArgs.push_back("-soft-float");
            continue;
          }
-+        if (Value.startswith("-mfix-loongson2f-btb")) {
++        if (Value.starts_with("-mfix-loongson2f-btb")) {
 +          CmdArgs.push_back("-mllvm");
 +          CmdArgs.push_back("-fix-loongson2f-btb");
 +          continue;
@@ -49,22 +49,21 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
  
          MipsTargetFeature = llvm::StringSwitch<const char *>(Value)
                                  .Case("-mips1", "+mips1")
-@@ -5289,9 +5303,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -5799,8 +5813,12 @@ void Clang::ConstructJob(Compilation &C, const JobActi
        OFastEnabled ? options::OPT_Ofast : options::OPT_fstrict_aliasing;
-   // We turn strict aliasing off by default if we're in CL mode, since MSVC
+   // We turn strict aliasing off by default if we're Windows MSVC since MSVC
    // doesn't do any TBAA.
--  bool TBAAOnByDefault = !D.IsCLMode();
-+  bool StrictAliasingDefault = !D.IsCLMode();
++  bool StrictAliasingDefault = !IsWindowsMSVC;
 +  // We also turn off strict aliasing on OpenBSD.
 +  if (getToolChain().getTriple().isOSOpenBSD())
 +    StrictAliasingDefault = false;
    if (!Args.hasFlag(options::OPT_fstrict_aliasing, StrictAliasingAliasOption,
--                    options::OPT_fno_strict_aliasing, TBAAOnByDefault))
+-                    options::OPT_fno_strict_aliasing, !IsWindowsMSVC))
 +                    options::OPT_fno_strict_aliasing, StrictAliasingDefault))
      CmdArgs.push_back("-relaxed-aliasing");
-   if (!Args.hasFlag(options::OPT_fstruct_path_tbaa,
-                     options::OPT_fno_struct_path_tbaa, true))
-@@ -6321,7 +6338,8 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+   if (Args.hasFlag(options::OPT_fpointer_tbaa, options::OPT_fno_pointer_tbaa,
+                    false))
+@@ -6844,7 +6862,8 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                                        options::OPT_fno_strict_overflow)) {
      if (A->getOption().matches(options::OPT_fno_strict_overflow))
        CmdArgs.push_back("-fwrapv");
@@ -72,9 +71,9 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
 +  } else if (getToolChain().getTriple().isOSOpenBSD())
 +    CmdArgs.push_back("-fwrapv");
  
-   if (Arg *A = Args.getLastArg(options::OPT_freroll_loops,
-                                options::OPT_fno_reroll_loops))
-@@ -6342,7 +6360,48 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+   Args.AddLastArg(CmdArgs, options::OPT_ffinite_loops,
+                   options::OPT_fno_finite_loops);
+@@ -6860,7 +6879,58 @@ void Clang::ConstructJob(Compilation &C, const JobActi
    Args.addOptInFlag(CmdArgs, options::OPT_mspeculative_load_hardening,
                      options::OPT_mno_speculative_load_hardening);
  
@@ -121,10 +120,20 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
 +      CmdArgs.push_back(Args.MakeArgString(Twine("-x86-fixup-gadgets=true")));
 +  }
 +
++  // -ret-clean
++  if (Arg *A = Args.getLastArg(options::OPT_fno_ret_clean,
++                               options::OPT_fret_clean)) {
++    CmdArgs.push_back(Args.MakeArgString(Twine("-mllvm")));
++    if (A->getOption().matches(options::OPT_fno_ret_clean))
++      CmdArgs.push_back(Args.MakeArgString(Twine("-x86-ret-clean=false")));
++    else if (A->getOption().matches(options::OPT_fret_clean))
++      CmdArgs.push_back(Args.MakeArgString(Twine("-x86-ret-clean=true")));
++  }
++
    RenderSCPOptions(TC, Args, CmdArgs);
    RenderTrivialAutoVarInitOptions(D, TC, Args, CmdArgs);
  
-@@ -6417,6 +6476,11 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -6938,6 +7008,11 @@ void Clang::ConstructJob(Compilation &C, const JobActi
    if (Arg *A = Args.getLastArg(options::OPT_fcf_protection_EQ)) {
      CmdArgs.push_back(
          Args.MakeArgString(Twine("-fcf-protection=") + A->getValue()));
@@ -136,7 +145,7 @@ Index: clang/lib/Driver/ToolChains/Clang.cpp
    }
  
    if (Arg *A = Args.getLastArg(options::OPT_mfunction_return_EQ))
-@@ -6895,6 +6959,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
+@@ -7466,6 +7541,18 @@ void Clang::ConstructJob(Compilation &C, const JobActi
                                       options::OPT_fno_rewrite_imports, false);
    if (RewriteImports)
      CmdArgs.push_back("-frewrite-imports");

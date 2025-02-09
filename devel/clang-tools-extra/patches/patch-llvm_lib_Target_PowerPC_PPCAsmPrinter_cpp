@@ -1,7 +1,7 @@
 Index: llvm/lib/Target/PowerPC/PPCAsmPrinter.cpp
 --- llvm/lib/Target/PowerPC/PPCAsmPrinter.cpp.orig
 +++ llvm/lib/Target/PowerPC/PPCAsmPrinter.cpp
-@@ -835,6 +835,85 @@ void PPCAsmPrinter::emitInstruction(const MachineInstr
+@@ -1030,6 +1030,85 @@ void PPCAsmPrinter::emitInstruction(const MachineInstr
        return;
      }
    }

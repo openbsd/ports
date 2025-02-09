@@ -1,7 +1,7 @@
 Index: clang/lib/Sema/SemaDeclAttr.cpp
 --- clang/lib/Sema/SemaDeclAttr.cpp.orig
 +++ clang/lib/Sema/SemaDeclAttr.cpp
-@@ -3819,6 +3819,7 @@ static FormatAttrKind getFormatAttrKind(StringRef Form
+@@ -3394,6 +3394,7 @@ static FormatAttrKind getFormatAttrKind(StringRef Form
        .Case("freebsd_kprintf", SupportedFormat) // FreeBSD.
        .Case("os_trace", SupportedFormat)
        .Case("os_log", SupportedFormat)

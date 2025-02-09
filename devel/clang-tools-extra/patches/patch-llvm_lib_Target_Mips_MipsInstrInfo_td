@@ -1,7 +1,7 @@
 Index: llvm/lib/Target/Mips/MipsInstrInfo.td
 --- llvm/lib/Target/Mips/MipsInstrInfo.td.orig
 +++ llvm/lib/Target/Mips/MipsInstrInfo.td
-@@ -2016,6 +2016,31 @@ def LONG_BRANCH_ADDiu2Op : PseudoSE<(outs GPR32Opnd:$d
+@@ -2017,6 +2017,31 @@ def LONG_BRANCH_ADDiu2Op : PseudoSE<(outs GPR32Opnd:$d
    bit hasNoSchedulingInfo = 1;
  }
  

@@ -14,7 +14,9 @@ bin/git-clang-format
 @bin bin/pp-trace
 bin/run-clang-tidy
 share/clang/
-share/clang/clang-doc-default-stylesheet.css
+share/clang-doc/
+share/clang-doc/clang-doc-default-stylesheet.css
+share/clang-doc/index.js
 share/clang/clang-format-bbedit.applescript
 share/clang/clang-format-diff.py
 share/clang/clang-format-sublime.py
@@ -23,5 +25,4 @@ share/clang/clang-format.py
 share/clang/clang-include-fixer.el
 share/clang/clang-include-fixer.py
 share/clang/clang-tidy-diff.py
-share/clang/index.js
 share/clang/run-find-all-symbols.py

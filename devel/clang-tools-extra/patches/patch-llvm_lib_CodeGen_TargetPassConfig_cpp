@@ -1,9 +1,9 @@
 Index: llvm/lib/CodeGen/TargetPassConfig.cpp
 --- llvm/lib/CodeGen/TargetPassConfig.cpp.orig
 +++ llvm/lib/CodeGen/TargetPassConfig.cpp
-@@ -977,6 +977,8 @@ void TargetPassConfig::addISelPrepare() {
-   if (requiresCodeGenSCCOrder())
-     addPass(new DummyCGSCCPass);
+@@ -955,6 +955,8 @@ void TargetPassConfig::addISelPrepare() {
+ 
+   addPass(createCallBrPass());
  
 +  addPass(createReturnProtectorPass());
 +

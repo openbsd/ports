@@ -1,7 +1,7 @@
 Index: llvm/lib/Target/Mips/MCTargetDesc/MipsABIInfo.cpp
 --- llvm/lib/Target/Mips/MCTargetDesc/MipsABIInfo.cpp.orig
 +++ llvm/lib/Target/Mips/MCTargetDesc/MipsABIInfo.cpp
-@@ -23,6 +23,11 @@ EmitJalrReloc("mips-jalr-reloc", cl::Hidden,
+@@ -22,6 +22,11 @@ EmitJalrReloc("mips-jalr-reloc", cl::Hidden,
                cl::desc("MIPS: Emit R_{MICRO}MIPS_JALR relocation with jalr"),
                cl::init(true));
  

@@ -1,7 +1,7 @@
 Index: llvm/lib/Target/X86/X86FixupGadgets.cpp
 --- llvm/lib/Target/X86/X86FixupGadgets.cpp.orig
 +++ llvm/lib/Target/X86/X86FixupGadgets.cpp
-@@ -0,0 +1,704 @@
+@@ -0,0 +1,701 @@
 +//===-- X86FixupGadgets.cpp - Fixup Instructions that make ROP Gadgets ----===//
 +//
 +//                     The LLVM Compiler Infrastructure
@@ -207,9 +207,6 @@ Index: llvm/lib/Target/X86/X86FixupGadgets.cpp
 +    case X86::ADD16ri_DB:
 +    case X86::ADD32ri_DB:
 +    case X86::ADD64ri32_DB:
-+    case X86::ADD16ri8_DB:
-+    case X86::ADD32ri8_DB:
-+    case X86::ADD64ri8_DB:
 +      goto Handle_MRMXr;
 +    default:
 +      break;

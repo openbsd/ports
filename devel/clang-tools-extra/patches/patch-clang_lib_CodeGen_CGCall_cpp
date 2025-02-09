@@ -1,7 +1,7 @@
 Index: clang/lib/CodeGen/CGCall.cpp
 --- clang/lib/CodeGen/CGCall.cpp.orig
 +++ clang/lib/CodeGen/CGCall.cpp
-@@ -2347,6 +2347,9 @@ void CodeGenModule::ConstructAttributeList(StringRef N
+@@ -2538,6 +2538,9 @@ void CodeGenModule::ConstructAttributeList(StringRef N
      // CPU/feature overrides.  addDefaultFunctionDefinitionAttributes
      // handles these separately to set them based on the global defaults.
      GetCPUAndFeaturesAttributes(CalleeInfo.getCalleeDecl(), FuncAttrs);

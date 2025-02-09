@@ -1,7 +1,7 @@
 Index: llvm/lib/Target/X86/X86IndirectThunks.cpp
 --- llvm/lib/Target/X86/X86IndirectThunks.cpp.orig
 +++ llvm/lib/Target/X86/X86IndirectThunks.cpp
-@@ -257,6 +257,7 @@ void RetpolineThunkInserter::populateThunk(MachineFunc
+@@ -239,6 +239,7 @@ void RetpolineThunkInserter::populateThunk(MachineFunc
  
    CallTarget->back().setPreInstrSymbol(MF, TargetSym);
    BuildMI(CallTarget, DebugLoc(), TII->get(RetOpc));

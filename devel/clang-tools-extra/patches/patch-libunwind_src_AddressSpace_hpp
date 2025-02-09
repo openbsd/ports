@@ -9,7 +9,7 @@ Index: libunwind/src/AddressSpace.hpp
  
  #include "libunwind.h"
  #include "config.h"
-@@ -148,7 +149,63 @@ struct UnwindInfoSections {
+@@ -152,7 +153,63 @@ struct UnwindInfoSections {
  #endif
  };
  
@@ -73,7 +73,7 @@ Index: libunwind/src/AddressSpace.hpp
  /// LocalAddressSpace is used as a template parameter to UnwindCursor when
  /// unwinding a thread in the same process.  The wrappers compile away,
  /// making local unwinds fast.
-@@ -269,6 +326,10 @@ LocalAddressSpace::getEncodedP(pint_t &addr, pint_t en
+@@ -273,6 +330,10 @@ LocalAddressSpace::getEncodedP(pint_t &addr, pint_t en
    pint_t startAddr = addr;
    const uint8_t *p = (uint8_t *)addr;
    pint_t result;

@@ -1,7 +1,7 @@
 Index: llvm/lib/MC/MCELFStreamer.cpp
 --- llvm/lib/MC/MCELFStreamer.cpp.orig
 +++ llvm/lib/MC/MCELFStreamer.cpp
-@@ -94,8 +94,11 @@ void MCELFStreamer::initSections(bool NoExecStack, con
+@@ -60,8 +60,11 @@ void MCELFStreamer::initSections(bool NoExecStack, con
    emitCodeAlignment(Align(Ctx.getObjectFileInfo()->getTextSectionAlignment()),
                      &STI);
  

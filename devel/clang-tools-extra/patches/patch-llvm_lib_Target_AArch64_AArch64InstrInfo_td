@@ -1,7 +1,7 @@
 Index: llvm/lib/Target/AArch64/AArch64InstrInfo.td
 --- llvm/lib/Target/AArch64/AArch64InstrInfo.td.orig
 +++ llvm/lib/Target/AArch64/AArch64InstrInfo.td
-@@ -918,6 +918,14 @@ def ADDlowTLS
+@@ -1119,6 +1119,14 @@ def ADDlowTLS
  
  } // isReMaterializable, isCodeGenOnly
  

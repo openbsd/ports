@@ -1,7 +1,7 @@
 Index: llvm/lib/Target/X86/MCTargetDesc/X86AsmBackend.cpp
 --- llvm/lib/Target/X86/MCTargetDesc/X86AsmBackend.cpp.orig
 +++ llvm/lib/Target/X86/MCTargetDesc/X86AsmBackend.cpp
-@@ -1018,56 +1018,23 @@ unsigned X86AsmBackend::getMaximumNopSize(const MCSubt
+@@ -994,56 +994,22 @@ unsigned X86AsmBackend::getMaximumNopSize(const MCSubt
  /// \return - true on success, false on failure
  bool X86AsmBackend::writeNopData(raw_ostream &OS, uint64_t Count,
                                   const MCSubtargetInfo *STI) const {
@@ -27,7 +27,7 @@ Index: llvm/lib/Target/X86/MCTargetDesc/X86AsmBackend.cpp
 -      // nopw %cs:0L(%[re]ax,%[re]ax,1)
 -      "\x66\x2e\x0f\x1f\x84\x00\x00\x00\x00\x00",
 -  };
- 
+-
 -  // 16-bit mode uses different nop patterns than 32-bit.
 -  static const char Nops16Bit[4][11] = {
 -      // nop
@@ -41,7 +41,7 @@ Index: llvm/lib/Target/X86/MCTargetDesc/X86AsmBackend.cpp
 -  };
 -
 -  const char(*Nops)[11] =
--      STI->getFeatureBits()[X86::Is16Bit] ? Nops16Bit : Nops32Bit;
+-      STI->hasFeature(X86::Is16Bit) ? Nops16Bit : Nops32Bit;
 -
 -  uint64_t MaxNopLength = (uint64_t)getMaximumNopSize(*STI);
 -

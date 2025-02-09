@@ -1,10 +1,10 @@
 Index: llvm/tools/llvm-ar/llvm-ar.cpp
 --- llvm/tools/llvm-ar/llvm-ar.cpp.orig
 +++ llvm/tools/llvm-ar/llvm-ar.cpp
-@@ -1432,8 +1432,12 @@ static int ranlib_main(int argc, char **argv) {
-         } else if (arg.front() == 'v') {
-           cl::PrintVersionMessage();
-           return 0;
+@@ -1463,8 +1463,12 @@ static int ranlib_main(int argc, char **argv) {
+                  " option not supported on non AIX OS");
+           }
+           break;
 +        } else if (arg.front() == 't') {
 +          // GNU ranlib also supports a -t flag, but does nothing
 +          // because it just returns true without touching the

@@ -1,14 +1,18 @@
 Index: llvm/lib/Target/X86/X86.h
 --- llvm/lib/Target/X86/X86.h.orig
 +++ llvm/lib/Target/X86/X86.h
-@@ -128,6 +128,10 @@ FunctionPass *createX86FixupBWInsts();
- /// to another, when profitable.
- FunctionPass *createX86DomainReassignmentPass();
+@@ -124,6 +124,14 @@ FunctionPass *createX86ExpandPseudoPass();
+ /// This pass converts X86 cmov instructions into branch when profitable.
+ FunctionPass *createX86CmovConverterPass();
  
 +/// Return a Machine Function pass that attempts to replace
 +/// ROP friendly instructions with alternatives.
 +FunctionPass *createX86FixupGadgetsPass();
 +
- /// This pass replaces EVEX encoded of AVX-512 instructiosn by VEX
- /// encoding when possible in order to reduce code size.
- FunctionPass *createX86EvexToVexInsts();
++/// Return a Machine Function pass that attempts to replace
++/// RET instructions with a cleaning sequence
++FunctionPass *createX86RetCleanPass();
++
+ /// Return a Machine IR pass that selectively replaces
+ /// certain byte and word instructions by equivalent 32 bit instructions,
+ /// in order to eliminate partial register usage, false dependences on

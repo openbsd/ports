@@ -12,11 +12,9 @@ DPB_PROPERTIES =	parallel
 
 COMMENT=	Clang extra tools
 
-LLVM_V =	16.0.6
-LLVM_BASE =	llvm16
+LLVM_V =	19.1.7
 DISTNAME =	llvm-project-${LLVM_V}.src
 PKGNAME=	clang-tools-extra-${LLVM_V}
-REVISION=	0
 
 CATEGORIES =	devel
 
@@ -29,6 +27,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} c m
 WANTLIB += llvm${MODCLANG_VERSION}/lib/clang-cpp
+WANTLIB += llvm${MODCLANG_VERSION}/lib/LLVM
 
 SITES =		https://github.com/llvm/llvm-project/releases/download/llvmorg-${LLVM_V}/
 EXTRACT_SUFX =	.tar.xz
@@ -39,9 +38,9 @@ MODULES =		devel/cmake \
 			lang/clang \
 			lang/python
 
+MODCLANG_VERSION =		19
 MODCLANG_COMPILER_LINKS =	No
 MODCLANG_BUILDDEP =		No
-MODCLANG_RUNDEP =		No
 
 CONFIGURE_STYLE =	cmake
 
@@ -53,9 +52,6 @@ LIB_DEPENDS =	${MODCLANG_LIB_DEPENDS}
 BUILD_DEPENDS +=	devel/swig \
 			textproc/py-sphinx \
 			textproc/py-recommonmark
-
-CLANG_INCLUDE_PATH =	${LLVM_BASE}/lib/clang/16/include
-SUBST_VARS +=		CLANG_INCLUDE_PATH LLVM_V
 
 CONFIGURE_ARGS +=	-DLLVM_ENABLE_BACKTRACES=OFF \
 			-DLLVM_ENABLE_FFI=OFF \
@@ -97,6 +93,9 @@ CXXFLAGS +=		${CXXFLAGS-${MACHINE_ARCH}}
 # hack to disable the use of -Bsymbolic-functions
 OPENBSD_LD_IS_LLD =	FALSE
 SUBST_VARS +=		OPENBSD_LD_IS_LLD
+
+CLANG_INCLUDE_PATH =	llvm${MODCLANG_VERSION}/lib/clang/${MODCLANG_VERSION}/include
+SUBST_VARS +=		CLANG_INCLUDE_PATH LLVM_V
 
 ALL_TARGET =	clang-change-namespace clang-apply-replacements
 ALL_TARGET +=	clang-doc clang-format clang-include-fixer clang-move
