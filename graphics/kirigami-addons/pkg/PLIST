@@ -7,6 +7,7 @@ include/KirigamiAddonsStatefulApp/kirigamiaddonsstatefulapp_export.h
 lib/cmake/KF6KirigamiAddons/
 lib/cmake/KF6KirigamiAddons/KF6KirigamiAddonsConfig.cmake
 lib/cmake/KF6KirigamiAddons/KF6KirigamiAddonsConfigVersion.cmake
+lib/cmake/KF6KirigamiAddons/KirigamiAddonsMacros.cmake
 lib/cmake/KF6KirigamiAddons/KirigamiAddonsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF6KirigamiAddons/KirigamiAddonsTargets.cmake
 @lib lib/libKirigamiAddonsStatefulApp.so.${LIBKirigamiAddonsStatefulApp_VERSION}
@@ -16,16 +17,22 @@ lib/qt6/qml/org/kde/kirigamiaddons/components/Avatar.qml
 lib/qt6/qml/org/kde/kirigamiaddons/components/AvatarButton.qml
 lib/qt6/qml/org/kde/kirigamiaddons/components/Banner.qml
 lib/qt6/qml/org/kde/kirigamiaddons/components/BottomDrawer.qml
+lib/qt6/qml/org/kde/kirigamiaddons/components/ConvergentContextMenu.qml
 lib/qt6/qml/org/kde/kirigamiaddons/components/DialogRoundedBackground.qml
 lib/qt6/qml/org/kde/kirigamiaddons/components/DoubleFloatingButton.qml
 lib/qt6/qml/org/kde/kirigamiaddons/components/FloatingButton.qml
 lib/qt6/qml/org/kde/kirigamiaddons/components/FloatingToolBar.qml
 lib/qt6/qml/org/kde/kirigamiaddons/components/MessageDialog.qml
+lib/qt6/qml/org/kde/kirigamiaddons/components/RadioSelector.qml
 lib/qt6/qml/org/kde/kirigamiaddons/components/SearchPopupField.qml
 lib/qt6/qml/org/kde/kirigamiaddons/components/SegmentedButton.qml
 lib/qt6/qml/org/kde/kirigamiaddons/components/componentsplugin.qmltypes
 lib/qt6/qml/org/kde/kirigamiaddons/components/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/kirigamiaddons/components/libcomponentsplugin.so
+lib/qt6/qml/org/kde/kirigamiaddons/components/private/
+lib/qt6/qml/org/kde/kirigamiaddons/components/private/ActionMenuItem.qml
+lib/qt6/qml/org/kde/kirigamiaddons/components/private/ActionsMenu.qml
+lib/qt6/qml/org/kde/kirigamiaddons/components/private/ContextMenuPage.qml
 lib/qt6/qml/org/kde/kirigamiaddons/components/qmldir
 lib/qt6/qml/org/kde/kirigamiaddons/dateandtime/
 lib/qt6/qml/org/kde/kirigamiaddons/dateandtime/DatePopup.qml
@@ -51,6 +58,7 @@ lib/qt6/qml/org/kde/kirigamiaddons/delegates/kde-qmlmodule.version
 lib/qt6/qml/org/kde/kirigamiaddons/delegates/qmldir
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/AboutKDE.qml
+lib/qt6/qml/org/kde/kirigamiaddons/formcard/AboutKDEPage.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/AboutPage.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/AbstractFormDelegate.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormArrow.qml
@@ -67,7 +75,9 @@ lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormDelegateSeparator.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormGridContainer.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormHeader.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormPasswordFieldDelegate.qml
+lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormPlaceholderMessageDelegate.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormRadioDelegate.qml
+lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormRadioSelectorDelegate.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormSectionText.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormSpinBoxDelegate.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/FormSwitchDelegate.qml
@@ -79,6 +89,7 @@ lib/qt6/qml/org/kde/kirigamiaddons/formcard/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/kirigamiaddons/formcard/libformcardplugin.so
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/private/
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/private/ContentItemLoader.qml
+lib/qt6/qml/org/kde/kirigamiaddons/formcard/private/FormCardUnits.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/private/SpinButton.qml
 lib/qt6/qml/org/kde/kirigamiaddons/formcard/qmldir
 lib/qt6/qml/org/kde/kirigamiaddons/labs/
@@ -102,6 +113,7 @@ lib/qt6/qml/org/kde/kirigamiaddons/settings/CategorizedSettings.qml
 lib/qt6/qml/org/kde/kirigamiaddons/settings/ConfigurationModule.qml
 lib/qt6/qml/org/kde/kirigamiaddons/settings/ConfigurationView.qml
 lib/qt6/qml/org/kde/kirigamiaddons/settings/SettingAction.qml
+lib/qt6/qml/org/kde/kirigamiaddons/settings/ShortcutsConfigurationModule.qml
 lib/qt6/qml/org/kde/kirigamiaddons/settings/SpellcheckingConfigurationModule.qml
 lib/qt6/qml/org/kde/kirigamiaddons/settings/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/kirigamiaddons/settings/libsettingsplugin.so
@@ -167,8 +179,10 @@ lib/qt6/qml/org/kde/kirigamiaddons/treeview/styles/org.kde.desktop/
 lib/qt6/qml/org/kde/kirigamiaddons/treeview/styles/org.kde.desktop/TreeViewDecoration.qml
 lib/qt6/qml/org/kde/kirigamiaddons/treeview/treeviewplugin.qmltypes
 share/kdevappwizard/templates/kirigamiaddons6.tar.bz2
+share/kdevappwizard/templates/librarymanager6.tar.bz2
 share/locale/ar/LC_MESSAGES/kirigami-addons6.mo
 share/locale/ast/LC_MESSAGES/kirigami-addons6.mo
+share/locale/az/LC_MESSAGES/kirigami-addons6.mo
 share/locale/bg/LC_MESSAGES/kirigami-addons6.mo
 share/locale/ca/LC_MESSAGES/kirigami-addons6.mo
 share/locale/ca@valencia/LC_MESSAGES/kirigami-addons6.mo
@@ -183,6 +197,7 @@ share/locale/fi/LC_MESSAGES/kirigami-addons6.mo
 share/locale/fr/LC_MESSAGES/kirigami-addons6.mo
 share/locale/gl/LC_MESSAGES/kirigami-addons6.mo
 share/locale/he/LC_MESSAGES/kirigami-addons6.mo
+share/locale/hi/LC_MESSAGES/kirigami-addons6.mo
 share/locale/hu/LC_MESSAGES/kirigami-addons6.mo
 share/locale/ia/LC_MESSAGES/kirigami-addons6.mo
 share/locale/is/LC_MESSAGES/kirigami-addons6.mo
@@ -199,6 +214,7 @@ share/locale/pt/LC_MESSAGES/kirigami-addons6.mo
 share/locale/pt_BR/LC_MESSAGES/kirigami-addons6.mo
 share/locale/ro/LC_MESSAGES/kirigami-addons6.mo
 share/locale/ru/LC_MESSAGES/kirigami-addons6.mo
+share/locale/sa/LC_MESSAGES/kirigami-addons6.mo
 share/locale/sk/LC_MESSAGES/kirigami-addons6.mo
 share/locale/sl/LC_MESSAGES/kirigami-addons6.mo
 share/locale/sv/LC_MESSAGES/kirigami-addons6.mo
