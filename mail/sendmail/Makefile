@@ -1,7 +1,7 @@
 COMMENT-main =		mother of Mail Transfer Agents
 COMMENT-libmilter =	mail filter support library for sendmail
 
-V=			8.18.1
+V=			8.18.1.9
 DISTNAME =		sendmail.${V}
 PKGNAME-main =		sendmail-${V}
 PKGNAME-libmilter =	libmilter-${V}
