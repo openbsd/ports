@@ -1,4 +1,4 @@
-VERSION =	2.479.2
+VERSION =	2.492.1
 SITES =		https://get.jenkins.io/war-stable/${VERSION}/
 DIST_SUBDIR =	jenkins-stable
 
