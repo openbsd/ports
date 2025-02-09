@@ -1,3 +1,16 @@
 An implementation of the Double Ratchet cryptographic ratchet described by
 https://whispersystems.org/docs/specifications/doubleratchet/, written in C and
 C++11 and exposed as a C API.
+
+IMPORTANT: libolm is now deprecated.
+
+libolm was Matrix's first implementation of the Double Ratchet algorithm,
+dating back to 2015. It is not written in memory-safe langauges (C and C++11),
+resulting in several CVEs over the years (e.g. CVE-2021-34813 and
+CVE-2021-44538). It also depends on simplistic cryptography primitive
+implementations which are intended for pragmatic and education purposes rather
+than security - e.g. Brad Conte's crypto-algorithms.
+
+As a result, the libolm team rewrote libolm in Rust in December 2021 - the
+result being vodozemac, and announced it as the recommended successor to libolm
+after its audit by Least Authority in May 2022.
