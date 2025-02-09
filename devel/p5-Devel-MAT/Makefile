@@ -1,6 +1,7 @@
 COMMENT =	perl memory analysis tool
 
 DISTNAME =	Devel-MAT-0.53
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -24,7 +25,6 @@ RUN_DEPENDS =		devel/p5-Commandable>=0.04 \
 			devel/p5-Struct-Dumb>=0.07 \
 			devel/p5-Syntax-Keyword-Match \
 			textproc/p5-List-UtilsBy
-TEST_DEPENDS =		devel/p5-Test2-Suite
 
 CONFIGURE_STYLE =	modbuild
 

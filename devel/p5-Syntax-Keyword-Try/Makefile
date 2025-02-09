@@ -1,6 +1,7 @@
 COMMENT =	try/catch/finally syntax for perl
 
 DISTNAME =	Syntax-Keyword-Try-0.30
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -15,8 +16,7 @@ MODULES =		cpan
 
 BUILD_DEPENDS =		devel/p5-XS-Parse-Keyword>=0.35
 RUN_DEPENDS =		devel/p5-XS-Parse-Keyword>=0.35
-TEST_DEPENDS =		devel/p5-Syntax-Keyword-Defer>=0.02 \
-			devel/p5-Test2-Suite
+TEST_DEPENDS =		devel/p5-Syntax-Keyword-Defer>=0.02
 
 CONFIGURE_STYLE =	modbuild
 

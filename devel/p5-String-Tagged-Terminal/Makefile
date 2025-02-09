@@ -1,6 +1,7 @@
 COMMENT =	format terminal output using String::Tagged
 
 DISTNAME =	String-Tagged-Terminal-0.08
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -14,7 +15,6 @@ MODULES =		cpan
 RUN_DEPENDS =		converters/p5-Convert-Color \
 			converters/p5-Convert-Color-XTerm \
 			devel/p5-String-Tagged
-TEST_DEPENDS =		devel/p5-Test2-Suite
 
 CONFIGURE_STYLE =	modbuild
 

@@ -2,6 +2,7 @@ COMMENT = 	DateTime parser for ISO8601 date formats
 
 DISTNAME =	DateTime-Format-ISO8601-0.16
 EPOCH =		0
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -14,7 +15,6 @@ RUN_DEPENDS =		devel/p5-DateTime>=1.45 \
 			devel/p5-Params-ValidationCompiler>=0.26 \
 			devel/p5-Specio>=0.18 \
 			devel/p5-namespace-autoclean
-TEST_DEPENDS =		devel/p5-Test2-Suite
 
 PKG_ARCH =		*
 

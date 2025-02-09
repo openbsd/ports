@@ -1,6 +1,7 @@
 COMMENT =	build an optimized subroutine parameter validator
 
 DISTNAME =	Params-ValidationCompiler-0.31
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -16,7 +17,6 @@ TEST_DEPENDS =		devel/p5-Moose \
 			devel/p5-Specio>=0.14 \
 			devel/p5-Test-Without-Module \
 			devel/p5-Test2-Plugin-NoWarnings \
-			devel/p5-Test2-Suite \
 			devel/p5-Type-Tiny
 
 PKG_ARCH =		*

@@ -1,7 +1,7 @@
 COMMENT =	watch for changes to files, cross-platform style
 
 DISTNAME =	File-ChangeNotify-0.31
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
@@ -17,8 +17,7 @@ RUN_DEPENDS =		devel/p5-Module-Pluggable \
 			devel/p5-namespace-autoclean
 
 TEST_DEPENDS =		devel/p5-Test-Requires \
-			devel/p5-Test-Without-Module \
-			devel/p5-Test2-Suite
+			devel/p5-Test-Without-Module
 
 PKG_ARCH =		*
 

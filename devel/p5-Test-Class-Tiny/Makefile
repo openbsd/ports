@@ -1,6 +1,7 @@
 COMMENT =	xUnit in Perl, simplified
 
 DISTNAME =	Test-Class-Tiny-0.03
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -11,8 +12,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 
-TEST_DEPENDS =		devel/p5-Test-Deep \
-			devel/p5-Test2-Suite
+TEST_DEPENDS =		devel/p5-Test-Deep
 
 PKG_ARCH =		*
 

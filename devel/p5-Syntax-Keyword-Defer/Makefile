@@ -1,6 +1,7 @@
 COMMENT =	execute code when leaving a block
 
 DISTNAME =	Syntax-Keyword-Defer-0.11
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -15,8 +16,7 @@ MODULES =		cpan
 
 BUILD_DEPENDS =		devel/p5-XS-Parse-Keyword>=0.13
 RUN_DEPENDS =		devel/p5-XS-Parse-Keyword>=0.13
-TEST_DEPENDS =		devel/p5-Syntax-Keyword-Try>=0.18 \
-			devel/p5-Test2-Suite
+TEST_DEPENDS =		devel/p5-Syntax-Keyword-Try>=0.18
 
 CONFIGURE_STYLE =	modbuild
 

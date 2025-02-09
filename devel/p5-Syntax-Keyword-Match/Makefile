@@ -1,6 +1,7 @@
 COMMENT =	match/case syntax for perl
 
 DISTNAME =	Syntax-Keyword-Match-0.15
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -15,7 +16,6 @@ MODULES =		cpan
 
 BUILD_DEPENDS =		devel/p5-XS-Parse-Keyword>=0.36
 RUN_DEPENDS =		devel/p5-XS-Parse-Keyword>=0.36
-TEST_DEPENDS =		devel/p5-Test2-Suite>=0.000147
 
 CONFIGURE_STYLE =	modbuild
 

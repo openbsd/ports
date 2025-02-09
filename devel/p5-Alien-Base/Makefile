@@ -4,6 +4,7 @@ MODULES =	cpan
 PKG_ARCH =	*
 
 V =		2.84
+REVISION =	0
 
 PKGNAME =	p5-Alien-Base-${V}
 DISTNAME =	Alien-Build-${V}
@@ -17,7 +18,6 @@ BUILD_DEPENDS =	sysutils/p5-File-Which
 RUN_DEPENDS =	devel/p5-FFI-CheckLib \
 		devel/p5-File-chdir \
 		devel/p5-Path-Tiny \
-		devel/p5-Test2-Suite \
 		sysutils/p5-File-Which \
 		sysutils/p5-Capture-Tiny
 TEST_DEPENDS =	devel/p5-Alien-Base-ModuleBuild

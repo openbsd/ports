@@ -2,7 +2,7 @@ COMMENT =	explain tools for Perl's Test2 framework
 
 CPAN_AUTHOR =	PETDANCE
 DISTNAME =	Test2-Tools-Explain-0.02
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 
@@ -10,8 +10,6 @@ CATEGORIES =	devel
 PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
-
-RUN_DEPENDS =		devel/p5-Test2-Suite
 
 PKG_ARCH =		*
 

@@ -1,6 +1,7 @@
 COMMENT =	string buffers with value tags on extents
 
 DISTNAME =	String-Tagged-0.24
+REVISION =	0
 
 CATEGORIES =	devel
 
@@ -10,8 +11,6 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
-
-TEST_DEPENDS =		devel/p5-Test2-Suite
 
 CONFIGURE_STYLE =	modbuild
 

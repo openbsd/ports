@@ -1,6 +1,7 @@
 COMMENT =	fail if tests warn
 
 DISTNAME =	Test2-Plugin-NoWarnings-0.10
+REVISION =	0
 CPAN_AUTHOR =	DROLSKY
 
 CATEGORIES =	devel
@@ -10,8 +11,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
 
-TEST_DEPENDS =		devel/p5-IPC-Run3 \
-			devel/p5-Test2-Suite
+TEST_DEPENDS =		devel/p5-IPC-Run3
 
 PKG_ARCH =		*
 
