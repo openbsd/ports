@@ -107,5 +107,6 @@ share/doc/clazy/manuallevel/README-unneeded-cast.md
 share/doc/clazy/manuallevel/README-unused-result-check.md
 share/doc/clazy/manuallevel/README-use-arrow-operator-instead-of-data.md
 share/doc/clazy/manuallevel/README-use-chrono-in-qtimer.md
+share/doc/clazy/manuallevel/README-used-qunused-variable.md
 share/metainfo/
 share/metainfo/org.kde.clazy.metainfo.xml
