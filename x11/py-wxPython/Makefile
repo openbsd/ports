@@ -77,7 +77,7 @@ NO_TEST=		Yes
 
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODPY_BIN} build.py --nodoc \
-		sip build_py --use_syswx --release --jobs=${MAKE_JOBS}
+		build_py --use_syswx --release --jobs=${MAKE_JOBS}
 # substitute 2 above lines with this one when rebuilding after a fix, error...
 #		${MODPY_BIN} build.py build_py --use_syswx --jobs=${MAKE_JOBS}
 
