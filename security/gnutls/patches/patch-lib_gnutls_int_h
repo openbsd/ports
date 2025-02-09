@@ -1,0 +1,16 @@
+https://gitlab.com/gnutls/gnutls/-/merge_requests/1930
+
+Index: lib/gnutls_int.h
+--- lib/gnutls_int.h.orig
++++ lib/gnutls_int.h
+@@ -1658,6 +1658,10 @@ typedef struct {
+ 	/* Compression method for certificate compression */
+ 	gnutls_compression_method_t compress_certificate_method;
+ 
++	/* To shuffle extension sending order */
++	extensions_t client_hello_exts[MAX_EXT_TYPES];
++	bool client_hello_exts_set;
++
+ 	/* If you add anything here, check _gnutls_handshake_internal_state_clear().
+ 	 */
+ } internals_st;
