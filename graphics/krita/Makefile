@@ -1,21 +1,21 @@
 COMMENT =	advanced drawing and image manipulation
 
-VERSION =	5.2.6
+VERSION =	5.2.9
 DISTNAME =	krita-${VERSION}
 
 SHARED_LIBS +=  kritabasicflakes          4.1 # 16.0
 SHARED_LIBS +=  kritacolord               2.0 # 16.0
-SHARED_LIBS +=  kritaflake                11.1 # 16.0
+SHARED_LIBS +=  kritaflake                12.0 # 16.0
 SHARED_LIBS +=  kritapigment              9.0 # 16.0
 SHARED_LIBS +=  kritaplugin               3.0 # 16.0
 SHARED_LIBS +=  kritastore                4.0 # 16.0
 SHARED_LIBS +=  kritaversion              1.1 # 16.0
 SHARED_LIBS +=  kritawidgets              9.0 # 16.0
-SHARED_LIBS +=  kritawidgetutils          9.0 # 16.0
-SHARED_LIBS +=  kritacommand              5.0 # 16.0
+SHARED_LIBS +=  kritawidgetutils          9.1 # 16.0
+SHARED_LIBS +=  kritacommand              5.1 # 16.0
 SHARED_LIBS +=  kritaimpex                2.1 # 16.0
 SHARED_LIBS +=  kritalibkis               4.0 # 16.0
-SHARED_LIBS +=  kritalibkra               7.0 # 16.0
+SHARED_LIBS +=  kritalibkra               8.0 # 16.0
 SHARED_LIBS +=  kritaqml                  3.0 # 16.0
 SHARED_LIBS +=  kritametadata             2.0 # 18.0
 SHARED_LIBS +=  kritaqmicinterface        1.0 # 17.0
@@ -29,10 +29,10 @@ SHARED_LIBS +=  kritamultiarch            0.1 # 0.0
 SHARED_LIBS +=  kritapsd                  5.0 # 14.0
 SHARED_LIBS +=  kritacolor                3.0 # 14.0
 SHARED_LIBS +=  kritaglobal               6.1 # 14.0
-SHARED_LIBS +=  kritaimage                66.0 # 0.0
-SHARED_LIBS +=  kritalibbrush             59.1 # 0.0
-SHARED_LIBS +=  kritalibpaintop           59.0 # 0.0
-SHARED_LIBS +=  kritaui                   70.0 # 0.0
+SHARED_LIBS +=  kritaimage                68.0 # 0.0
+SHARED_LIBS +=  kritalibbrush             59.2 # 0.0
+SHARED_LIBS +=  kritalibpaintop           60.0 # 0.0
+SHARED_LIBS +=  kritaui                   71.0 # 0.0
 
 CATEGORIES =	graphics
 

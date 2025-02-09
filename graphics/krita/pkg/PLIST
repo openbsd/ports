@@ -593,6 +593,10 @@ share/krita/pics/light_template_ratio_43.png
 share/krita/pics/light_template_texture.png
 share/krita/pics/light_template_web_design.png
 share/krita/predefined_image_sizes/
+share/krita/predefined_image_sizes/A1__300_ppi_.predefinedimage
+share/krita/predefined_image_sizes/A1__600_ppi_.predefinedimage
+share/krita/predefined_image_sizes/A2__300_ppi_.predefinedimage
+share/krita/predefined_image_sizes/A2__600_ppi_.predefinedimage
 share/krita/predefined_image_sizes/A3__300_ppi_.predefinedimage
 share/krita/predefined_image_sizes/A3__600_ppi_.predefinedimage
 share/krita/predefined_image_sizes/A4__300_ppi_.predefinedimage
