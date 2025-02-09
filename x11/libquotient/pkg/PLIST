@@ -17,6 +17,7 @@ include/Quotient/csapi/account-data.h
 include/Quotient/csapi/admin.h
 include/Quotient/csapi/administrative_contact.h
 include/Quotient/csapi/appservice_room_directory.h
+include/Quotient/csapi/authed-content-repo.h
 include/Quotient/csapi/banning.h
 include/Quotient/csapi/capabilities.h
 include/Quotient/csapi/content-repo.h
@@ -40,6 +41,7 @@ include/Quotient/csapi/definitions/request_token_response.h
 include/Quotient/csapi/definitions/room_event_filter.h
 include/Quotient/csapi/definitions/room_key_backup.h
 include/Quotient/csapi/definitions/sync_filter.h
+include/Quotient/csapi/definitions/tag.h
 include/Quotient/csapi/definitions/third_party_signed.h
 include/Quotient/csapi/definitions/user_identifier.h
 include/Quotient/csapi/definitions/wellknown/
@@ -86,6 +88,7 @@ include/Quotient/csapi/rooms.h
 include/Quotient/csapi/search.h
 include/Quotient/csapi/space_hierarchy.h
 include/Quotient/csapi/sso_login_redirect.h
+include/Quotient/csapi/support.h
 include/Quotient/csapi/tags.h
 include/Quotient/csapi/third_party_lookup.h
 include/Quotient/csapi/third_party_membership.h
@@ -117,7 +120,6 @@ include/Quotient/events/encryptedevent.h
 include/Quotient/events/encryptionevent.h
 include/Quotient/events/event.h
 include/Quotient/events/eventcontent.h
-include/Quotient/events/eventloader.h
 include/Quotient/events/eventrelation.h
 include/Quotient/events/filesourceinfo.h
 include/Quotient/events/keyverificationevent.h
@@ -141,16 +143,14 @@ include/Quotient/events/typingevent.h
 include/Quotient/eventstats.h
 include/Quotient/expected.h
 include/Quotient/function_traits.h
-include/Quotient/identity/
-include/Quotient/identity/definitions/
-include/Quotient/identity/definitions/request_email_validation.h
-include/Quotient/identity/definitions/request_msisdn_validation.h
 include/Quotient/jobs/
 include/Quotient/jobs/basejob.h
 include/Quotient/jobs/downloadfilejob.h
+include/Quotient/jobs/jobhandle.h
 include/Quotient/jobs/mediathumbnailjob.h
 include/Quotient/jobs/requestdata.h
 include/Quotient/jobs/syncjob.h
+include/Quotient/keyimport.h
 include/Quotient/keyverificationsession.h
 include/Quotient/logging_categories_p.h
 include/Quotient/mxcreply.h
@@ -160,12 +160,14 @@ include/Quotient/omittable.h
 include/Quotient/qt_connection_util.h
 include/Quotient/quotient_common.h
 include/Quotient/quotient_export.h
+include/Quotient/ranges_extras.h
 include/Quotient/room.h
 include/Quotient/roommember.h
 include/Quotient/roomstateview.h
 include/Quotient/settings.h
 include/Quotient/ssosession.h
 include/Quotient/syncdata.h
+include/Quotient/thread.h
 include/Quotient/uri.h
 include/Quotient/uriresolver.h
 include/Quotient/user.h
