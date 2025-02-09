@@ -1,13 +1,14 @@
 COMMENT =	KDE framework for sharing additional application data
 DISTNAME =	knewstuff-${VERSION}
 
-SHARED_LIBS +=  KF6NewStuffCore           0.0 # 0.0
+SHARED_LIBS +=  KF6NewStuffCore           1.0 # 0.0
 SHARED_LIBS +=  KF6NewStuffWidgets        0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Attica KF6ConfigCore
-WANTLIB += KF6CoreAddons KF6I18n KF6Package KF6Syndication KF6WidgetsAddons
-WANTLIB += Qt6Core Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels
-WANTLIB += Qt6Quick Qt6QuickWidgets Qt6Widgets Qt6Xml c m
+WANTLIB += KF6CoreAddons KF6I18n KF6I18nQml KF6Package KF6Syndication
+WANTLIB += KF6WidgetsAddons Qt6Core Qt6Gui Qt6Network Qt6OpenGL
+WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickWidgets Qt6Widgets
+WANTLIB += Qt6Xml c m
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf6/kirigami>=${MODKF6_VERSION}

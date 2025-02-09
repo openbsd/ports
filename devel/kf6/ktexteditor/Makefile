@@ -1,7 +1,7 @@
 COMMENT =	fully featured text editor component
 DISTNAME =	ktexteditor-${VERSION}
 
-SHARED_LIBS +=  KF6TextEditor             0.0 # 0.0
+SHARED_LIBS +=  KF6TextEditor             1.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6AuthCore KF6Codecs
 WANTLIB += KF6ColorScheme KF6Completion KF6ConfigCore KF6ConfigGui

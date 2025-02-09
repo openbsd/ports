@@ -1,7 +1,7 @@
-COMMENT =		widgets for KDE configuration dialogs
-DISTNAME =		kconfigwidgets-${VERSION}
+COMMENT =	widgets for KDE configuration dialogs
+DISTNAME =	kconfigwidgets-${VERSION}
 
-SHARED_LIBS +=  KF6ConfigWidgets          0.0 # 0.0
+SHARED_LIBS +=  KF6ConfigWidgets          0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Codecs KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6CoreAddons KF6GuiAddons KF6I18n KF6WidgetsAddons

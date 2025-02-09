@@ -5,10 +5,11 @@ SHARED_LIBS +=  KF6Purpose                0.0 # 0.0
 SHARED_LIBS +=  KF6PurposeWidgets         0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Completion KF6ConfigCore KF6CoreAddons
-WANTLIB += KF6I18n KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets
-WANTLIB += KF6Notifications KF6Service KF6Solid KF6WidgetsAddons
-WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Qml Qt6Widgets
-WANTLIB += Qt6Xml accounts-qt6 c kaccounts6 m
+WANTLIB += KF6I18n KF6I18nQml KF6JobWidgets KF6KIOCore KF6KIOGui
+WANTLIB += KF6KIOWidgets KF6Notifications KF6Service KF6Solid
+WANTLIB += KF6WidgetsAddons Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6Qml Qt6Widgets Qt6Xml accounts-qt6 c kaccounts6
+WANTLIB += m
 
 # Special case, KAccounts depends on intltool-merge
 MODULES +=	textproc/intltool

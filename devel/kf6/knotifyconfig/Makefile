@@ -9,14 +9,9 @@ WANTLIB += KF6Service KF6Solid KF6WidgetsAddons Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Network Qt6Widgets canberra m
 
 BUILD_DEPENDS =	devel/gettext,-tools \
-		devel/kf6/kconfigwidgets>=${MODKF6_VERSION} \
-		devel/kf6/knotifications>=${MODKF6_VERSION} \
-		devel/kf6/kxmlgui>=${MODKF6_VERSION} \
-		multimedia/phonon \
-		x11/qt6/qtspeech
+		devel/kf6/knotifications>=${MODKF6_VERSION}
 
-RUN_DEPENDS =	multimedia/phonon \
-		x11/qt6/qtspeech
+RUN_DEPENDS =	devel/kf6/knotifications>=${MODKF6_VERSION}
 
 LIB_DEPENDS =	audio/libcanberra \
 		devel/kf6/kcompletion>=${MODKF6_VERSION} \
@@ -28,5 +23,7 @@ LIB_DEPENDS =	audio/libcanberra \
 		devel/kf6/kservice>=${MODKF6_VERSION} \
 		devel/kf6/solid>=${MODKF6_VERSION} \
 		devel/kf6/kwidgetsaddons>=${MODKF6_VERSION}
+
+TEST_DEPENDS =	devel/kf6/kxmlgui>=${MODKF6_VERSION}
 
 .include <bsd.port.mk>

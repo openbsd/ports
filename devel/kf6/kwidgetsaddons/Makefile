@@ -1,7 +1,7 @@
 COMMENT =	large set of KDE widgets
 DISTNAME =	kwidgetsaddons-${VERSION}
 
-SHARED_LIBS +=  KF6WidgetsAddons          0.0 # 0.0
+SHARED_LIBS +=  KF6WidgetsAddons          0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Widgets m
 

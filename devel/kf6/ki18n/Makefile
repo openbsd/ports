@@ -1,6 +1,5 @@
 COMMENT =	KDE gettext-based UI text internationalization
 DISTNAME =	ki18n-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  KF6I18n                   0.0 # 0.0
 SHARED_LIBS +=  KF6I18nLocaleData         0.0 # 0.0

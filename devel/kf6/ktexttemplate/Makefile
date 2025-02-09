@@ -1,7 +1,7 @@
 COMMENT =	KDE configuration system
 DISTNAME =	ktexttemplate-${VERSION}
 
-SHARED_LIBS +=  KF6TextTemplate           0.0 # 0.0
+SHARED_LIBS +=  KF6TextTemplate           0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt6Core Qt6Network Qt6Qml m
 

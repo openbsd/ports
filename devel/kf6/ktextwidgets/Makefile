@@ -12,9 +12,7 @@ BUILD_DEPENDS =	devel/gettext,-tools \
 		x11/qt6/qtwebengine
 
 LIB_DEPENDS =	devel/kf6/kcompletion>=${MODKF6_VERSION} \
-		devel/kf6/kcompletion>=${MODKF6_VERSION} \
 		devel/kf6/kconfig>=${MODKF6_VERSION} \
-		devel/kf6/kconfigwidgets>=${MODKF6_VERSION} \
 		devel/kf6/ki18n>=${MODKF6_VERSION} \
 		devel/kf6/kwidgetsaddons>=${MODKF6_VERSION} \
 		devel/kf6/kcolorscheme>=${MODKF6_VERSION} \

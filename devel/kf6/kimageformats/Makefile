@@ -3,7 +3,8 @@ DISTNAME =	kimageformats-${VERSION}
 
 WANTLIB += ${COMPILER_LIBCXX} GL Iex-3_3 IlmThread-3_3 Imath-3_1
 WANTLIB += KF6Archive OpenEXR-3_3 OpenEXRCore-3_3 Qt6Core Qt6Gui
-WANTLIB += Qt6PrintSupport Qt6Widgets avif jxl jxl_threads m raw
+WANTLIB += Qt6PrintSupport Qt6Widgets avif jxl jxl_cms jxl_threads
+WANTLIB += m raw
 
 LIB_DEPENDS =	devel/kf6/karchive>=${MODKF6_VERSION} \
 		graphics/libavif \

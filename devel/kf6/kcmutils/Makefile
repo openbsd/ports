@@ -7,10 +7,10 @@ SHARED_LIBS +=  KF6KCMUtilsQuick          0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6GuiAddons
-WANTLIB += KF6I18n KF6ItemViews KF6KIOCore KF6KIOGui KF6Service
-WANTLIB += KF6WidgetsAddons KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickWidgets
-WANTLIB += Qt6Widgets Qt6Xml c m
+WANTLIB += KF6I18n KF6I18nQml KF6ItemViews KF6KIOCore KF6KIOGui
+WANTLIB += KF6Service KF6WidgetsAddons KF6XmlGui Qt6Core Qt6DBus
+WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick
+WANTLIB += Qt6QuickWidgets Qt6Widgets Qt6Xml c m
 
 BUILD_DEPENDS =	devel/gettext,-tools
 

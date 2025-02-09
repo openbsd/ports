@@ -1,7 +1,7 @@
 COMMENT =	core KDE extensions to Qt classes
 DISTNAME =	kcoreaddons-${VERSION}
 
-SHARED_LIBS +=  KF6CoreAddons             0.0 # 0.0
+SHARED_LIBS +=  KF6CoreAddons             0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt6Core Qt6DBus Qt6Network Qt6Qml
 WANTLIB += m

@@ -1,5 +1,6 @@
 @so lib/qt6/plugins/imageformats/kimg_ani.so
 @so lib/qt6/plugins/imageformats/kimg_avif.so
+@so lib/qt6/plugins/imageformats/kimg_dds.so
 @so lib/qt6/plugins/imageformats/kimg_eps.so
 @so lib/qt6/plugins/imageformats/kimg_exr.so
 @so lib/qt6/plugins/imageformats/kimg_hdr.so
@@ -15,5 +16,6 @@
 @so lib/qt6/plugins/imageformats/kimg_ras.so
 @so lib/qt6/plugins/imageformats/kimg_raw.so
 @so lib/qt6/plugins/imageformats/kimg_rgb.so
+@so lib/qt6/plugins/imageformats/kimg_sct.so
 @so lib/qt6/plugins/imageformats/kimg_tga.so
 @so lib/qt6/plugins/imageformats/kimg_xcf.so

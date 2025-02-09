@@ -1,7 +1,7 @@
 COMMENT =	KDE framework for Plasma runners
 DISTNAME =	krunner-${VERSION}
 
-SHARED_LIBS +=  KF6Runner                 0.0 # 0.0
+SHARED_LIBS +=  KF6Runner                 0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ConfigCore KF6CoreAddons KF6I18n
 WANTLIB += KF6ItemModels Qt6Core Qt6DBus Qt6Gui m
