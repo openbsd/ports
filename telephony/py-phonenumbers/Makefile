@@ -1,9 +1,8 @@
 COMMENT =	port of Google's libphonenumber library
 
-MODPY_DISTV =	8.13.52
+MODPY_DISTV =	8.13.54
 DISTNAME =	phonenumbers-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
 
 CATEGORIES =	telephony devel
 
