@@ -49,13 +49,11 @@ MODULES =		devel/cmake \
 BUILD_DEPENDS =		databases/postgresql,-server \
 			devel/gettext,-tools \
 			devel/kf6/breeze-icons \
-			devel/kf5/karchive \
-			x11/kde-applications/marble
+			devel/kf5/karchive
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/kf6/breeze-icons \
-			devel/kf5/kservice \
-			x11/kde-applications/marble
+			devel/kf5/kservice
 
 LIB_DEPENDS =		databases/kdb>=3.2.0 \
 			devel/kf5/kcodecs \
