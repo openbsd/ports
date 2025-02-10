@@ -1,0 +1,25 @@
+bin/adf2hdf
+@bin bin/cgnscheck
+@bin bin/cgnscompress
+@bin bin/cgnsconvert
+@bin bin/cgnsdiff
+@bin bin/cgnslist
+@bin bin/cgnsnames
+bin/cgnsupdate
+bin/hdf2adf
+include/cgnsBuild.defs
+include/cgns_io.h
+include/cgnsconfig.h
+include/cgnslib.h
+include/cgnstypes.h
+include/cgnstypes_f.h
+include/cgnstypes_f03.h
+include/cgnswin_f.h
+lib/cmake/
+lib/cmake/cgns/
+lib/cmake/cgns/cgns-config-version.cmake
+lib/cmake/cgns/cgns-config.cmake
+lib/cmake/cgns/cgns-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/cgns/cgns-targets.cmake
+@static-lib lib/libcgns.a
+@lib lib/libcgns.so.${LIBcgns_VERSION}
