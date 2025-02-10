@@ -1660,7 +1660,7 @@ gitea/assets/css/colorpicker.ec78e358.css
 gitea/assets/css/contributors-graph.28546d77.css
 gitea/assets/css/dropzone.5a752d14.css
 gitea/assets/css/index.css
-gitea/assets/css/katex.94d26766.css
+gitea/assets/css/katex.41d5cba5.css
 gitea/assets/css/monaco.5612f696.css
 gitea/assets/css/recent-commits-graph.bbc896f6.css
 gitea/assets/css/swagger.css
@@ -2129,8 +2129,8 @@ gitea/assets/js/dropzone.6ba4ca5d.js
 gitea/assets/js/easymde.7ca7e3f8.js
 gitea/assets/js/eventsource.sharedworker.js
 gitea/assets/js/index.js
-gitea/assets/js/index.js.b096d628.map
-gitea/assets/js/katex-.5cde9ea6.js
+gitea/assets/js/index.js.8d5b087b.map
+gitea/assets/js/katex-.3544f890.js
 gitea/assets/js/katex.6ad51582.js
 gitea/assets/js/mcaptcha-vanilla-glue.53a504bd.js
 gitea/assets/js/mermaid.204078cd.js
