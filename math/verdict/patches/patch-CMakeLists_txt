@@ -1,0 +1,12 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -121,7 +121,7 @@ endif ()
+ # Install documentation
+ install(FILES
+   README.md
+-  DESTINATION ${verdict_INSTALL_DOC_DIR}/verdict/${verdict_VERSION}/ COMPONENT VerdictDevelopment)
++  DESTINATION ${verdict_INSTALL_DOC_DIR}/ COMPONENT VerdictDevelopment)
+ 
+ # Install required header files
+ install(FILES

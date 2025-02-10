@@ -1,0 +1,11 @@
+include/verdict.h
+include/verdict_config.h
+lib/cmake/
+lib/cmake/verdict/
+lib/cmake/verdict/VerdictConfig.cmake
+lib/cmake/verdict/VerdictConfigVersion.cmake
+lib/cmake/verdict/VerdictTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/verdict/VerdictTargets.cmake
+@lib lib/libverdict.so.${LIBverdict_VERSION}
+share/doc/verdict/
+share/doc/verdict/README.md
