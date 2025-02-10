@@ -144,6 +144,7 @@ share/accerciser/plugins/ipython_view.py
 share/accerciser/plugins/quick_select.py
 share/accerciser/plugins/validate.py
 share/accerciser/plugins/validate.ui
+share/accerciser/wnck-window-infos.py
 share/applications/accerciser.desktop
 share/glib-2.0/schemas/org.a11y.Accerciser.gschema.xml
 share/gnome-shell/
