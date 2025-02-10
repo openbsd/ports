@@ -4,9 +4,7 @@ ONLY_FOR_ARCHS=	${LLD_ARCHS}
 COMMENT-main=	groupware server backend with RPC, IMAP, POP3 support
 COMMENT-mapi=	gromox MAPI extensions for PHP
 
-V=		2.38
-REVISION-main=	0
-REVISION-mapi=	0
+V=		2.41
 
 # required for mime.types
 MAILCAP_V=	2-1-54
