@@ -1,7 +1,7 @@
 Index: vendor/composer/autoload_classmap.php
 --- vendor/composer/autoload_classmap.php.orig
 +++ vendor/composer/autoload_classmap.php
-@@ -6,15 +6,15 @@ $vendorDir = dirname(__DIR__);
+@@ -6,16 +6,16 @@ $vendorDir = dirname(__DIR__);
  $baseDir = dirname($vendorDir);
  
  return array(
@@ -26,4 +26,5 @@ Index: vendor/composer/autoload_classmap.php
 +    'TaskRecurrence' => UMAPI_PATH . '/class.taskrecurrence.php',
 +    'TaskRequest' => UMAPI_PATH . '/class.taskrequest.php',
 +    'Token' => UMAPI_PATH . '/class.token.php',
+     'resource' => '/var/www/grommunio-mapi-header-php/dev/php-mapi-stub.php',
  );

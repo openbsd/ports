@@ -13,6 +13,8 @@ grommunio-dav/composer.json
 grommunio-dav/composer.lock
 grommunio-dav/config.php.dist
 @sample grommunio-dav/config.php
+grommunio-dav/doc/
+grommunio-dav/doc/changelog.rst
 grommunio-dav/glogger.ini.dist
 @sample grommunio-dav/glogger.ini
 grommunio-dav/lib/

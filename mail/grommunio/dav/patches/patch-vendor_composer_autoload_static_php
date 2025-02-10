@@ -1,7 +1,7 @@
 Index: vendor/composer/autoload_static.php
 --- vendor/composer/autoload_static.php.orig
 +++ vendor/composer/autoload_static.php
-@@ -16,10 +16,10 @@ class ComposerStaticInit8d44bfa54223056069c233d8145363
+@@ -16,10 +16,10 @@ class ComposerStaticInitc975b6680c2c098dd3e9273a01df8d
          'ebdb698ed4152ae445614b69b5e4bb6a' => __DIR__ . '/..' . '/sabre/http/lib/functions.php',
          '777dc149d682152f9ab0caaeffcdbb27' => __DIR__ . '/../..' . '/config.php',
          '32a4f751fbcde8755e5f28bd96eed397' => __DIR__ . '/../..' . '/version.php',
@@ -16,7 +16,7 @@ Index: vendor/composer/autoload_static.php
      );
  
      public static $prefixLengthsPsr4 = array (
-@@ -101,17 +101,17 @@ class ComposerStaticInit8d44bfa54223056069c233d8145363
+@@ -101,18 +101,18 @@ class ComposerStaticInitc975b6680c2c098dd3e9273a01df8d
      );
  
      public static $classMap = array (
@@ -33,6 +33,7 @@ Index: vendor/composer/autoload_static.php
 -        'TaskRecurrence' => '/var/www/grommunio-mapi-header-php/class.taskrecurrence.php',
 -        'TaskRequest' => '/var/www/grommunio-mapi-header-php/class.taskrequest.php',
 -        'Token' => '/var/www/grommunio-mapi-header-php/class.token.php',
+-        'resource' => '/var/www/grommunio-mapi-header-php/dev/php-mapi-stub.php',
 +        'FreeBusy' => UMAPI_PATH . '/class.freebusy.php',
 +        'KeyCloak' => UMAPI_PATH . '/class.keycloak.php',
 +        'MAPIException' => UMAPI_PATH . '/class.mapiexception.php',
@@ -41,6 +42,7 @@ Index: vendor/composer/autoload_static.php
 +        'TaskRecurrence' => UMAPI_PATH . '/class.taskrecurrence.php',
 +        'TaskRequest' => UMAPI_PATH . '/class.taskrequest.php',
 +        'Token' => UMAPI_PATH . '/class.token.php',
++        'resource' => UMAPI_PATH . '/dev/php-mapi-stub.php',
      );
  
      public static function getInitializer(ClassLoader $loader)
