@@ -8,7 +8,7 @@ COMMENT =		real-time strategy game engine for Beyond All Reason
 # under setups->package->id: "manual-linux", see downloads->resources or
 # launch->engine
 
-V =			2025.01.5
+V =			2025.01.6
 PKGNAME =		recoil-rts-${V}
 
 DIST_TUPLE +=		github beyond-all-reason spring ${V} .
@@ -98,6 +98,9 @@ CFLAGS +=		-I${LOCALBASE}/include \
 			-I${X11BASE}/include
 CXXFLAGS +=		-I${LOCALBASE}/include \
 			-I${X11BASE}/include
+# -ffp-exception-bevavior=strict: needed to prevent desyncs when connected
+# with !OpenBSD in multiplayer
+CXXFLAGS +=		-ffp-exception-behavior=strict
 LDFLAGS +=		-L${LOCALBASE}/lib \
 			-L${X11BASE}/lib
 
