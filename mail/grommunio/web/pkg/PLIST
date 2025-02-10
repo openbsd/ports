@@ -1316,6 +1316,7 @@ grommunio-web/client/tinymce/plugins/searchreplace/index.js
 grommunio-web/client/tinymce/plugins/searchreplace/plugin.js
 grommunio-web/client/tinymce/plugins/searchreplace/plugin.min.js
 grommunio-web/client/tinymce/plugins/table/
+grommunio-web/client/tinymce/plugins/table/plugin.js
 grommunio-web/client/tinymce/plugins/table/plugin.min.js
 grommunio-web/client/tinymce/plugins/visualchars/
 grommunio-web/client/tinymce/plugins/visualchars/index.js

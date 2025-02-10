@@ -47,7 +47,7 @@ Index: Makefile
  
  $(DESTDIR)/%.php: %.php
 -	php -l $<
-+	$(PHP) -l $<
++#	$(PHP) -l $<
  	mkdir -p $$(dirname $@)
  	cp $< $@
  
