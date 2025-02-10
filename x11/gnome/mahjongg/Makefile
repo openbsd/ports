@@ -1,7 +1,7 @@
 COMMENT =		mahjongg game for GNOME
 
 GNOME_PROJECT =		gnome-mahjongg
-GNOME_VERSION =		47.1
+GNOME_VERSION =		47.2
 
 CATEGORIES =		games
 
