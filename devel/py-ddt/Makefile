@@ -1,18 +1,19 @@
-COMMENT =		multiply test cases
+COMMENT=	multiply test cases
 
-MODPY_DISTV =	1.6.0
-DISTNAME =		ddt-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-REVISION =		1
+MODPY_DISTV=	1.7.2
+DISTNAME=	ddt-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =		devel
+CATEGORIES=	devel
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+# needs aiounittest
+MODPY_PYTEST_ARGS= --ignore test/test_async.py
 
 .include <bsd.port.mk>
