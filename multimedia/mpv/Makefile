@@ -2,9 +2,8 @@ COMMENT =		movie player based on MPlayer/mplayer2
 
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
-GH_TAGNAME =		v0.38.0
+GH_TAGNAME =		v0.39.0
 USE_NOBTCFI =		Yes
-REVISION =		1
 
 SHARED_LIBS +=		mpv		2.0
 
@@ -90,6 +89,10 @@ CONFIGURE_ARGS =	-Dalsa=disabled \
 			-Djavascript=disabled \
 			-Dlibmpv=true \
 			-Dlua=lua${MODLUA_DEP_VERSION} \
+			-Dmacos-10-15-4-features=disabled \
+			-Dmacos-11-features=disabled \
+			-Dmacos-11-3-features=disabled \
+			-Dmacos-12-features=disabled \
 			-Dmacos-cocoa-cb=disabled \
 			-Dmacos-media-player=disabled \
 			-Dmacos-touchbar=disabled \
@@ -118,7 +121,6 @@ CONFIGURE_ARGS =	-Dalsa=disabled \
 			-Dvdpau=disabled \
 			-Dvideotoolbox-gl=disabled \
 			-Dvideotoolbox-pl=disabled \
-			-Dvulkan-interop=disabled \
 			-Dvulkan=enabled \
 			-Dwasapi=disabled \
 			-Dwayland=disabled \

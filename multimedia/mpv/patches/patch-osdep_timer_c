@@ -4,12 +4,12 @@ required clocks, but we do have enough for mpv.
 Index: osdep/timer.c
 --- osdep/timer.c.orig
 +++ osdep/timer.c
-@@ -18,6 +18,8 @@
+@@ -16,6 +16,8 @@
+  */
+ 
  #include <stdlib.h>
- #include <time.h>
- #include <unistd.h>
 +#undef _POSIX_TIMERS
 +#define _POSIX_TIMERS 1
- #include <sys/time.h>
+ #include <time.h>
  #include <limits.h>
  #include <assert.h>
