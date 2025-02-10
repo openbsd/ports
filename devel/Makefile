@@ -79,6 +79,7 @@
      SUBDIR += cjose
      SUBDIR += cjson
      SUBDIR += clang-tools-extra
+     SUBDIR += cli11
      SUBDIR += cln
      SUBDIR += cmake
      SUBDIR += cmocka
