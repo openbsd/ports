@@ -1,0 +1,5 @@
+The C++ Mathematical Expression Toolkit Library (ExprTk) is a
+versatile, simple to use, easy to integrate and extremely efficient
+runtime mathematical expression parser and evaluation engine. ExprTk
+supports numerous forms of functional, logical and vector processing
+semantics and is very easily extendible.
