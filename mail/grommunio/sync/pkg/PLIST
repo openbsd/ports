@@ -26,6 +26,8 @@ grommunio-sync/composer/installed.json
 grommunio-sync/composer/installed.php
 grommunio-sync/config.php.dist
 @sample grommunio-sync/config.php
+grommunio-sync/doc/
+grommunio-sync/doc/changelog.rst
 grommunio-sync/grommunio-sync-top
 grommunio-sync/grommunio-sync-top.php
 grommunio-sync/index.php
