@@ -13,6 +13,7 @@
      SUBDIR += cfitsio
      SUBDIR += cgal
      SUBDIR += cglm
+     SUBDIR += cgns
      SUBDIR += coq
      SUBDIR += datamash
      SUBDIR += dieharder
@@ -20,6 +21,7 @@
      SUBDIR += ecm
      SUBDIR += eigen3
      SUBDIR += ensmallen
+     SUBDIR += exprtk
      SUBDIR += fann
      SUBDIR += fftw
      SUBDIR += fftw3
@@ -164,6 +166,7 @@
      SUBDIR += suitesparse
      SUBDIR += superlu
      SUBDIR += udunits
+     SUBDIR += verdict
      SUBDIR += veusz
      SUBDIR += visidata
      SUBDIR += wcalc
