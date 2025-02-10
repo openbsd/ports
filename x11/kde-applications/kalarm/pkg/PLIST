@@ -69,6 +69,8 @@ share/examples/kalarm/xdg/autostart/kalarm.autostart.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/kalarm.autostart.desktop
 share/icons/hicolor/128x128/apps/kalarm.png
 share/icons/hicolor/16x16/apps/kalarm.png
+share/icons/hicolor/22x22/actions/kalarm-disabled.png
+share/icons/hicolor/22x22/actions/kalarm-partdisabled.png
 share/icons/hicolor/22x22/apps/kalarm.png
 share/icons/hicolor/32x32/apps/kalarm.png
 share/icons/hicolor/48x48/apps/kalarm.png

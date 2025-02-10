@@ -17,8 +17,9 @@ WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6WidgetsAddons
 WANTLIB += KF6XmlGui KPim6GrantleeTheme KPim6KontactInterface
 WANTLIB += KPim6Libkdepim KPim6PimCommon Qt6Core Qt6DBus Qt6Gui
 WANTLIB += Qt6Network Qt6OpenGL Qt6Positioning Qt6PrintSupport
-WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6WebChannel Qt6WebEngineCore
-WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml c m
+WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
+WANTLIB += Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
+WANTLIB += Qt6Widgets Qt6Xml c m
 
 MODKDE_ICON_CACHE = yes
 MODKDE_TRANSLATIONS = yes

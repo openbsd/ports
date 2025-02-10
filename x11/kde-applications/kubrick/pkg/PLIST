@@ -77,6 +77,7 @@ share/kubrick/p333X2.kbk
 share/kubrick/p333X6.kbk
 share/kubrick/themes/
 share/kubrick/themes/default.svgz
+share/locale/ar/LC_MESSAGES/kubrick.mo
 share/locale/ast/LC_MESSAGES/kubrick.mo
 share/locale/bg/LC_MESSAGES/kubrick.mo
 share/locale/bs/LC_MESSAGES/kubrick.mo

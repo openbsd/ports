@@ -18,9 +18,9 @@ WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiCore KPim6AkonadiMime
 WANTLIB += KPim6GrantleeTheme KPim6Libkleo KPim6MessageCore KPim6MessageViewer
 WANTLIB += KPim6Mime KPim6MimeTreeParser KPim6PimCommon Qt6Core
 WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning
-WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlModels Qt6Quick Qt6WebChannel
-WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets Qt6Xml
-WANTLIB += assuan c gpgme gpgmepp m qgpgmeqt6
+WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
+WANTLIB += Qt6Quick Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
+WANTLIB += Qt6Widgets Qt6Xml assuan c gpgme gpgmepp m qgpgmeqt6
 
 MODKDE_TRANSLATIONS = yes
 MODKDE_DESKTOP_FILE = yes

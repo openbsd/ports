@@ -393,6 +393,7 @@ share/kf6/akonadi/akonadi-xml.xsd
 share/kf6/akonadi/kcfg2dbus.xsl
 share/kf6/akonadi_knut_resource/
 share/kf6/akonadi_knut_resource/knut-template.xml
+share/locale/ar/LC_MESSAGES/akonadi-db-migrator.mo
 share/locale/ar/LC_MESSAGES/akonadi_knut_resource.mo
 share/locale/ar/LC_MESSAGES/libakonadi6.mo
 share/locale/ast/LC_MESSAGES/akonadi-db-migrator.mo

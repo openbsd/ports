@@ -6,8 +6,8 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6AuthCore KF6Completion KF6ConfigCore
 WANTLIB += KF6CoreAddons KF6I18n KF6JobWidgets KF6KIOCore KF6KIOGui
 WANTLIB += KF6KIOWidgets KF6Service KF6Solid KF6WidgetsAddons
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml
-WANTLIB += Qt6QmlModels Qt6Quick Qt6QuickWidgets Qt6Widgets c
-WANTLIB += m
+WANTLIB += Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
+WANTLIB += Qt6QuickWidgets Qt6Widgets c m
 
 MODKDE_TRANSLATIONS = yes
 MODKF5_I18N_CONFLICT = yes

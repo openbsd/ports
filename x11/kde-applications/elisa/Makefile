@@ -12,8 +12,9 @@ WANTLIB += KF6Crash KF6DBusAddons KF6FileMetaData KF6I18n KF6IconThemes
 WANTLIB += KF6ItemViews KF6JobWidgets KF6KIOCore KF6KIOFileWidgets
 WANTLIB += KF6KIOGui KF6KIOWidgets KF6Service KF6Solid KF6WidgetsAddons
 WANTLIB += KF6XmlGui Qt6Concurrent Qt6Core Qt6DBus Qt6Gui Qt6Multimedia
-WANTLIB += Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickControls2
-WANTLIB += Qt6Sql Qt6Widgets Qt6Xml c m vlc
+WANTLIB += Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels
+WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6QuickControls2 Qt6Sql
+WANTLIB += Qt6Widgets Qt6Xml c m vlc
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes

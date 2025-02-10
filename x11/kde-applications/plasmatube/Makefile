@@ -5,8 +5,8 @@ CATEGORIES =	multimedia net x11
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ConfigCore KF6ConfigGui KF6CoreAddons
 WANTLIB += KF6DBusAddons KF6I18n KF6WindowSystem MpvQt Qt6Concurrent
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml
-WANTLIB += Qt6QmlModels Qt6Quick Qt6QuickControls2 Qt6Widgets
-WANTLIB += X11 c m mpv qt6keychain
+WANTLIB += Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
+WANTLIB += Qt6QuickControls2 Qt6Widgets X11 c m mpv qt6keychain
 
 MODKDE_DESKTOP_FILE =	Yes
 MODKDE_ICON_CACHE =	Yes

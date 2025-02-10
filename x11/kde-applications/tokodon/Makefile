@@ -15,8 +15,9 @@ WANTLIB += KF6I18n KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets
 WANTLIB += KF6Notifications KF6Purpose KF6Service KF6Solid KF6WidgetsAddons
 WANTLIB += KF6WindowSystem Kirigami KirigamiAddonsStatefulApp
 WANTLIB += KirigamiPlatform MpvQt Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickControls2
-WANTLIB += Qt6WebSockets Qt6WebView Qt6Widgets X11 c m mpv qt6keychain
+WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
+WANTLIB += Qt6Quick Qt6QuickControls2 Qt6WebSockets Qt6WebView
+WANTLIB += Qt6Widgets X11 c m mpv qt6keychain
 
 BUILD_DEPENDS =	devel/kf6/qqc2-desktop-style \
 

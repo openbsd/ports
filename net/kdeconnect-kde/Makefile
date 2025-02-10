@@ -21,10 +21,10 @@ WANTLIB += KF6KIOGui KF6KIOWidgets KF6Notifications KF6People
 WANTLIB += KF6PulseAudioQt KF6Service KF6Solid KF6StatusNotifierItem
 WANTLIB += KF6WidgetsAddons KF6WindowSystem Qt6Bluetooth Qt6Core
 WANTLIB += Qt6DBus Qt6Gui Qt6Multimedia Qt6Network Qt6OpenGL Qt6Qml
-WANTLIB += Qt6QmlModels Qt6Quick Qt6QuickControls2 Qt6QuickWidgets
-WANTLIB += Qt6WaylandClient Qt6Widgets Qt6Xml SM X11 Xext Xtst
-WANTLIB += c crypto dbus-1 fakekey m wayland-client wayland-cursor
-WANTLIB += xkbcommon
+WANTLIB += Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
+WANTLIB += Qt6QuickControls2 Qt6QuickWidgets Qt6WaylandClient
+WANTLIB += Qt6Widgets Qt6Xml SM X11 Xext Xtst c crypto dbus-1
+WANTLIB += fakekey m wayland-client wayland-cursor xkbcommon
 
 SITES =		${SITE_KDE:=stable/release-service/${MODKDE_GEAR_VERSION}/src/}
 EXTRACT_SUFX =		.tar.xz

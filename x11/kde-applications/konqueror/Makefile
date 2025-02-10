@@ -19,9 +19,10 @@ WANTLIB += KF6KIOWidgets KF6Notifications KF6Parts KF6Pty KF6Service
 WANTLIB += KF6Solid KF6SonnetCore KF6SonnetUi KF6Su KF6TextWidgets
 WANTLIB += KF6Wallet KF6WidgetsAddons KF6WindowSystem KF6XmlGui
 WANTLIB += PlasmaActivities Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6OpenGL Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlModels
-WANTLIB += Qt6Quick Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
-WANTLIB += Qt6Widgets Qt6Xml X11 c m xkbcommon z
+WANTLIB += Qt6OpenGL Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlMeta
+WANTLIB += Qt6QmlModels Qt6QmlWorkerScript Qt6Quick Qt6WebChannel
+WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets Qt6Xml
+WANTLIB += X11 c m xkbcommon z
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes

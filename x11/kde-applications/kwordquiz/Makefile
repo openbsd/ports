@@ -7,9 +7,9 @@ HOMEPAGE =	https://www.kde.org/applications/games/kwordquiz
 WANTLIB += ${COMPILER_LIBCXX} GL KEduVocDocument KF6Attica KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6CoreAddons KF6Crash KF6DBusAddons KF6I18n
 WANTLIB += KF6NewStuffCore Qt6Core Qt6DBus Qt6Gui Qt6Multimedia
-WANTLIB += Qt6Network Qt6OpenGL Qt6PrintSupport Qt6Qml Qt6QmlModels
-WANTLIB += Qt6Quick Qt6QuickControls2 Qt6Svg Qt6Widgets Qt6Xml
-WANTLIB += c m
+WANTLIB += Qt6Network Qt6OpenGL Qt6PrintSupport Qt6Qml Qt6QmlMeta
+WANTLIB += Qt6QmlModels Qt6QmlWorkerScript Qt6Quick Qt6QuickControls2
+WANTLIB += Qt6Svg Qt6Widgets Qt6Xml c m
 
 MODKDE_ICON_CACHE = yes
 MODKDE_TRANSLATIONS = yes

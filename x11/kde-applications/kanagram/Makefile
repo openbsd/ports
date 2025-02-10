@@ -10,8 +10,9 @@ WANTLIB += ${COMPILER_LIBCXX} GL KEduVocDocument KF6Attica KF6ColorScheme
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
 WANTLIB += KF6Crash KF6I18n KF6NewStuffCore KF6NewStuffWidgets
 WANTLIB += KF6SonnetCore KF6WidgetsAddons KF6XmlGui Qt6Core Qt6DBus
-WANTLIB += Qt6Gui Qt6Multimedia Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels
-WANTLIB += Qt6Quick Qt6TextToSpeech Qt6Widgets Qt6Xml c m
+WANTLIB += Qt6Gui Qt6Multimedia Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta
+WANTLIB += Qt6QmlModels Qt6QmlWorkerScript Qt6Quick Qt6TextToSpeech
+WANTLIB += Qt6Widgets Qt6Xml c m
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes

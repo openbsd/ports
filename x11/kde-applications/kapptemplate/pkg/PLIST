@@ -57,8 +57,6 @@ share/icons/hicolor/32x32/apps/kapptemplate.png
 share/icons/hicolor/48x48/apps/kapptemplate.png
 share/icons/hicolor/64x64/apps/kapptemplate.png
 share/icons/hicolor/scalable/apps/kapptemplate.svg
-share/kdevappwizard/
-share/kdevappwizard/templates/
 share/kdevappwizard/templates/kde-frameworks6-simple.tar.bz2
 share/kdevappwizard/templates/kde-frameworks6.tar.bz2
 share/locale/ast/LC_MESSAGES/kapptemplate.mo

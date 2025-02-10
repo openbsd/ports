@@ -6,7 +6,8 @@ HOMEPAGE =	https://kde.org/applications/development/org.kde.kapptemplate
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6ConfigCore KF6ConfigGui
 WANTLIB += KF6CoreAddons KF6I18n Qt6Core Qt6Gui Qt6Network Qt6OpenGL
-WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6Widgets c m
+WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
+WANTLIB += Qt6Widgets c m
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes

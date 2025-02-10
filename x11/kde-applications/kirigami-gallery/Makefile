@@ -6,8 +6,9 @@ CATEGORIES =	devel
 HOMEPAGE =	https://apps.kde.org/de/kirigami2.gallery/
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ItemModels Kirigami KirigamiPlatform
-WANTLIB += Qt6Core Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels
-WANTLIB += Qt6Quick Qt6QuickControls2 Qt6Svg Qt6Widgets c m
+WANTLIB += Qt6Core Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta
+WANTLIB += Qt6QmlModels Qt6QmlWorkerScript Qt6Quick Qt6QuickControls2
+WANTLIB += Qt6Svg Qt6Widgets c m
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_TRANSLATIONS = yes

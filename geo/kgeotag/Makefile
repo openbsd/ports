@@ -17,9 +17,9 @@ WANTLIB += ${COMPILER_LIBCXX} GL KExiv2Qt6 KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
 WANTLIB += KF6I18n KF6WidgetsAddons KF6XmlGui Qt6Core Qt6Core5Compat
 WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning
-WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlModels Qt6Quick Qt6WebChannel
-WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets Qt6Xml
-WANTLIB += c m marblewidget-qt6
+WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
+WANTLIB += Qt6Quick Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
+WANTLIB += Qt6Widgets Qt6Xml c m marblewidget-qt6
 
 SITES =		${SITE_KDE:=stable/kgeotag/${V}/}
 EXTRACT_SUFX =	.tar.xz

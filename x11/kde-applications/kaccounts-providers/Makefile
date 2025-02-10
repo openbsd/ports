@@ -10,9 +10,10 @@ MODKDE_ICON_CACHE = yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CoreAddons KF6I18n KF6KIOCore
 WANTLIB += KF6Package QCoro6Core Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6OpenGL Qt6Positioning Qt6Qml Qt6QmlModels Qt6Quick
-WANTLIB += Qt6WebChannel Qt6WebChannelQuick Qt6WebEngineCore Qt6WebEngineQuick
-WANTLIB += Qt6Xml accounts-qt6 kaccounts6 m
+WANTLIB += Qt6OpenGL Qt6Positioning Qt6Qml Qt6QmlMeta Qt6QmlModels
+WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6WebChannel Qt6WebChannelQuick
+WANTLIB += Qt6WebEngineCore Qt6WebEngineQuick Qt6Xml accounts-qt6
+WANTLIB += kaccounts6 m
 
 MODULES +=	textproc/intltool
 

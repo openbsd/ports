@@ -26,10 +26,10 @@ WANTLIB += KF6Parts KF6Plotting KF6Service KF6Solid KF6SonnetUi
 WANTLIB += KF6StatusNotifierItem KF6Syndication KF6TextWidgets
 WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui KTorrent6
 WANTLIB += Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
-WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlModels
-WANTLIB += Qt6Quick Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
-WANTLIB += Qt6Widgets Qt6Xml X11 c gcrypt gmp m maxminddb phonon4qt6
-WANTLIB += tag
+WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels
+WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6WebChannel Qt6WebEngineCore
+WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml X11 c gcrypt
+WANTLIB += gmp m maxminddb phonon4qt6 tag
 
 SITES =		${SITE_KDE:=stable/release-service/${MODKDE_GEAR_VERSION}/src/}
 EXTRACT_SUFX =	.tar.xz

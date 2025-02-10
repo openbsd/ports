@@ -32,8 +32,9 @@ WANTLIB += KPim6MailCommon KPim6MailTransport KPim6Mbox KPim6MessageComposer
 WANTLIB += KPim6MessageCore KPim6Mime KPim6MimeTreeParserCore
 WANTLIB += KPim6PimCommon KPim6PimCommonAkonadi KPim6TextEdit
 WANTLIB += KirigamiAddonsStatefulApp Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickControls2
-WANTLIB += Qt6Widgets Qt6Xml X11 assuan c gpgme gpgmepp m qgpgmeqt6
+WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
+WANTLIB += Qt6Quick Qt6QuickControls2 Qt6Widgets Qt6Xml X11 assuan
+WANTLIB += c gpgme gpgmepp m qgpgmeqt6
 
 BUILD_DEPENDS =	devel/boost \
 		devel/gettext,-tools \

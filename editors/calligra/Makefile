@@ -64,11 +64,12 @@ WANTLIB += KF6KIOWidgets KF6Notifications KF6NotifyConfig KF6Service
 WANTLIB += KF6Solid KF6SonnetCore KF6SonnetUi KF6TextWidgets KF6WidgetsAddons
 WANTLIB += KF6WindowSystem KF6XmlGui Okular6Core Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning Qt6PrintSupport
-WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickControls2 Qt6Sql
-WANTLIB += Qt6Svg Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
-WANTLIB += Qt6Widgets Qt6Xml X11 c crypto fontconfig freetype
-WANTLIB += gsl gslcblas lcms2 m phonon4qt6 phonon4qt6experimental
-WANTLIB += poppler poppler-qt6 qca-qt6 qt6keychain ssl z
+WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
+WANTLIB += Qt6QuickControls2 Qt6Sql Qt6Svg Qt6WebChannel Qt6WebEngineCore
+WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml X11 c crypto
+WANTLIB += fontconfig freetype gsl gslcblas lcms2 m phonon4qt6
+WANTLIB += phonon4qt6experimental poppler poppler-qt6 qca-qt6
+WANTLIB += qt6keychain ssl z
 
 MODULES =	x11/kde
 

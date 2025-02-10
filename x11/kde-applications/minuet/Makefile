@@ -7,8 +7,9 @@ HOMEPAGE =	https://minuet.kde.org/
 SHARED_LIBS +=  minuetinterfaces          3.1 # 0.3
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CoreAddons KF6Crash KF6I18n
-WANTLIB += Qt6Core Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels
-WANTLIB += Qt6Quick Qt6QuickControls2 Qt6Svg c fluidsynth m
+WANTLIB += Qt6Core Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta
+WANTLIB += Qt6QmlModels Qt6QmlWorkerScript Qt6Quick Qt6QuickControls2
+WANTLIB += Qt6Svg c fluidsynth m
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes

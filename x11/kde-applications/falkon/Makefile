@@ -23,13 +23,6 @@ MODKDE_TRANSLATIONS = yes
 
 MODULES =	lang/python
 
-# Python plugins
-BUILD_DEPENDS =	x11/qt6/pyside6/pyside \
-		x11/qt6/pyside6/shiboken \
-		x11/qt6/pyside6/tools
-
-RUN_DEPENDS =	x11/qt6/pyside6/pyside
-
 LIB_DEPENDS =	devel/gettext,-runtime \
 		devel/kf6/karchive \
 		devel/kf6/kcompletion \
@@ -43,6 +36,8 @@ LIB_DEPENDS =	devel/gettext,-runtime \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/purpose \
 		devel/kf6/solid \
+		x11/qt6/pyside6/pyside \
+		x11/qt6/pyside6/shiboken \
 		x11/qt6/qt5compat \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtpositioning \

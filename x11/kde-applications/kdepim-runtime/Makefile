@@ -27,10 +27,10 @@ WANTLIB += KPim6GrantleeTheme KPim6IMAP KPim6IdentityManagementCore
 WANTLIB += KPim6IdentityManagementWidgets KPim6LdapCore KPim6LdapWidgets
 WANTLIB += KPim6MailTransport KPim6Mbox KPim6Mime Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Multimedia Qt6Network Qt6NetworkAuth Qt6OpenGL
-WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlModels
-WANTLIB += Qt6Quick Qt6TextToSpeech Qt6WebChannel Qt6WebEngineCore
-WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml X11 c m qca-qt6
-WANTLIB += qt6keychain sasl2
+WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels
+WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6TextToSpeech Qt6WebChannel
+WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets Qt6Xml
+WANTLIB += X11 c m qca-qt6 qt6keychain sasl2
 
 MODKDE_TRANSLATIONS = yes
 MODKDE_DESKTOP_FILE = yes

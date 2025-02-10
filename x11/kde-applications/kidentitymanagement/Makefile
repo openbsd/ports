@@ -11,8 +11,8 @@ WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
 WANTLIB += KF6I18n KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets
 WANTLIB += KF6Service KF6Solid KF6TextCustomEditor KF6WidgetsAddons
 WANTLIB += KF6XmlGui KPim6TextEdit Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick Qt6Widgets Qt6Xml
-WANTLIB += m
+WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
+WANTLIB += Qt6Quick Qt6Widgets Qt6Xml m
 
 MODKDE_TRANSLATIONS = yes
 

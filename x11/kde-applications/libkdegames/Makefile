@@ -11,8 +11,8 @@ WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
 WANTLIB += KF6CoreAddons KF6DNSSD KF6GuiAddons KF6I18n KF6IconThemes
 WANTLIB += KF6NewStuffCore KF6NewStuffWidgets KF6WidgetsAddons
 WANTLIB += KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
-WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6Svg Qt6Widgets Qt6Xml
-WANTLIB += m openal sndfile
+WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
+WANTLIB += Qt6Svg Qt6Widgets Qt6Xml m openal sndfile
 
 MODKDE_TRANSLATIONS = yes
 

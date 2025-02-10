@@ -71,7 +71,6 @@ share/applications/okularApplication_pdf.desktop
 share/applications/okularApplication_tiff.desktop
 share/applications/okularApplication_txt.desktop
 share/applications/okularApplication_xps.desktop
-share/applications/org.kde.mobile.okular_dvi.desktop
 share/applications/org.kde.okular.desktop
 share/config.kcfg/
 share/config.kcfg/gssettings.kcfg

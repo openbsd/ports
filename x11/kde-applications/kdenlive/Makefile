@@ -15,9 +15,9 @@ WANTLIB += KF6NewStuffWidgets KF6Notifications KF6NotifyConfig
 WANTLIB += KF6Purpose KF6PurposeWidgets KF6Service KF6Solid KF6SonnetUi
 WANTLIB += KF6TextWidgets KF6WidgetsAddons KF6XmlGui Qt6Concurrent
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Multimedia Qt6Network Qt6NetworkAuth
-WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickControls2
-WANTLIB += Qt6QuickWidgets Qt6Svg Qt6SvgWidgets Qt6Widgets Qt6Xml
-WANTLIB += c m mlt++-7 mlt-7
+WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
+WANTLIB += Qt6Quick Qt6QuickControls2 Qt6QuickWidgets Qt6Svg Qt6SvgWidgets
+WANTLIB += Qt6Widgets Qt6Xml c m mlt++-7 mlt-7
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes

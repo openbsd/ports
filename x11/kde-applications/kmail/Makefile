@@ -33,9 +33,10 @@ WANTLIB += KPim6MessageCore KPim6MessageList KPim6MessageViewer
 WANTLIB += KPim6Mime KPim6MimeTreeParser KPim6PimCommon KPim6PimCommonAkonadi
 WANTLIB += KPim6TemplateParser KPim6TextEdit KPim6Tnef KPim6WebEngineViewer
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning
-WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlModels Qt6Quick Qt6WebChannel
-WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets Qt6Xml
-WANTLIB += X11 assuan c gpg-error gpgme gpgmepp m qgpgmeqt6 qt6keychain
+WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
+WANTLIB += Qt6Quick Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
+WANTLIB += Qt6Widgets Qt6Xml X11 assuan c gpg-error gpgme gpgmepp
+WANTLIB += m qgpgmeqt6 qt6keychain
 
 
 MODKDE_ICON_CACHE = yes
