@@ -1,6 +1,6 @@
-COMMENT=	Oython bindings for C wc(s)width
+COMMENT=	Python bindings for C wc(s)width
 
-MODPY_DISTV=	0.1.9
+MODPY_DISTV=	0.1.10
 DISTNAME=	cwcwidth-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -16,6 +16,7 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_TEST_LINK_SO= Yes
 
 BUILD_DEPENDS=	lang/cython
 TEST_DEPENDS=	devel/py-test-cov
