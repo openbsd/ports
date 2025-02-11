@@ -1,5 +1,6 @@
 COMMENT =		DeaDBeeF is an audio player
 DISTNAME =		deadbeef-1.9.6
+REVISION =		0
 CATEGORIES =		audio
 
 HOMEPAGE =		https://deadbeef.sourceforge.io/
@@ -105,6 +106,7 @@ MAKE_FLAGS +=		INTL_LIBS=-lintl
 post-patch:
 	@mkdir -p ${WRKSRC}/plugins/sndio
 	@cp ${FILESDIR}/{Makefile.am,sndio.c} ${WRKSRC}/plugins/sndio
+	sed -i 's/-msse3//' ${WRKSRC}/external/ddb_dsp_libretro/Makefile.am
 
 pre-configure:
 	cd ${WRKSRC}; intltoolize --force
