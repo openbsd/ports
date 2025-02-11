@@ -149,6 +149,7 @@ PREFIX$i=	${NGINX_DIR}/modules
 .endfor
 
 CFLAGS+=	-Wall -Wpointer-arith \
+		-I ${WRKSRC}/njs/src \
 		-I "${LOCALBASE}/include/libxml2" \
 		-I "${LOCALBASE}/include"
 LDFLAGS+=	-L ${LOCALBASE}/lib -L ${X11BASE}/lib
