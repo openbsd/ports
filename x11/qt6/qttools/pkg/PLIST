@@ -341,6 +341,12 @@ lib/cmake/Qt6Help/Qt6HelpTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Help/Qt6HelpTargets.cmake
 lib/cmake/Qt6Help/Qt6HelpVersionlessAliasTargets.cmake
 lib/cmake/Qt6Help/Qt6HelpVersionlessTargets.cmake
+lib/cmake/Qt6Help/Qt6QHelpEnginePluginAdditionalTargetInfo.cmake
+lib/cmake/Qt6Help/Qt6QHelpEnginePluginConfig.cmake
+lib/cmake/Qt6Help/Qt6QHelpEnginePluginConfigVersion.cmake
+lib/cmake/Qt6Help/Qt6QHelpEnginePluginConfigVersionImpl.cmake
+lib/cmake/Qt6Help/Qt6QHelpEnginePluginTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/Qt6Help/Qt6QHelpEnginePluginTargets.cmake
 lib/cmake/Qt6Linguist/
 lib/cmake/Qt6Linguist/Qt6LinguistAdditionalTargetInfo.cmake
 lib/cmake/Qt6Linguist/Qt6LinguistConfig.cmake
@@ -483,6 +489,8 @@ lib/qt6/modules/UiPlugin.json
 lib/qt6/modules/UiTools.json
 lib/qt6/plugins/designer/
 @so lib/qt6/plugins/designer/libqquickwidget.so
+lib/qt6/plugins/help/
+@so lib/qt6/plugins/help/libhelpplugin.so
 share/qt6/
 share/qt6/phrasebooks/
 share/qt6/phrasebooks/danish.qph

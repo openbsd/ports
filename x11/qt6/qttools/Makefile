@@ -1,7 +1,7 @@
 QT6NAME =	QtTools
 COMMENT =	Qt6 development tools
 PKGSPEC =	qt6-qttools-${QT6_PKGSPEC}
-REVISION =	1
+REVISION =	2
 
 SHARED_LIBS +=  Qt6Designer             3.1 # 6.7
 SHARED_LIBS +=  Qt6DesignerComponents   2.0 # 6.7
@@ -26,7 +26,10 @@ MODCLANG_COMPILER_LINKS =	Yes
 MODCLANG_BUILDDEP =		No
 MODCLANG_RUNDEP =		No
 
-BUILD_DEPENDS =	graphics/vulkan-loader
+BUILD_DEPENDS =	graphics/vulkan-loader \
+		x11/qt6/qtlanguageserver
+
+RUN_DEPENDS =	x11/qt6/qtlanguageserver
 
 LIB_DEPENDS =	${MODCLANG_LIB_DEPENDS} \
 		archivers/zstd \
