@@ -1,7 +1,7 @@
 Index: crypto/bn/asm/armv8-mont.pl
 --- crypto/bn/asm/armv8-mont.pl.orig
 +++ crypto/bn/asm/armv8-mont.pl
-@@ -1898,6 +1898,7 @@ __bn_mul4x_mont:
+@@ -1900,6 +1900,7 @@ __bn_mul4x_mont:
  ___
  }
  $code.=<<___;
