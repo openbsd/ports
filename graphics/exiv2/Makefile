@@ -2,7 +2,7 @@ COMMENT=		image metadata manipulation
 
 CATEGORIES=		graphics devel
 
-DIST_TUPLE=		github Exiv2 exiv2 v0.28.3 .
+DIST_TUPLE=		github Exiv2 exiv2 v0.28.4 .
 EPOCH=			0
 
 SHARED_LIBS +=  exiv2                13.0
@@ -15,7 +15,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=		Yes
 
 WANTLIB += ${COMPILER_LIBCXX} INIReader brotlicommon brotlidec
-WANTLIB += c expat iconv inih intl m z
+WANTLIB += c curl expat iconv inih intl m z
 
 COMPILER=		base-clang ports-gcc base-gcc
 
@@ -25,11 +25,13 @@ BUILD_DEPENDS=		devel/gettext,-tools
 
 LIB_DEPENDS=		archivers/brotli \
 			devel/gettext,-runtime \
+			net/curl \
 			textproc/libinih
 
 # default meson(1) options
 CONFIGURE_ARGS=		-DEXIV2_ENABLE_NLS=ON \
-			-DEXIV2_ENABLE_WEBREADY=ON
+			-DEXIV2_ENABLE_WEBREADY=ON \
+			-DEXIV2_ENABLE_CURL=ON
 
 FIX_CRLF_FILES=		cmake/compilerFlags.cmake
 
