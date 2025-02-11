@@ -1,22 +1,21 @@
-COMMENT =	low memory library for creating large XML files
+COMMENT=	low memory library for creating large XML files
 
-MODPY_DISTV =	1.1.0
+MODPY_DISTV=	2.0.0
+DISTNAME=	et_xmlfile-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
-DISTNAME =	et_xmlfile-${MODPY_DISTV}
-PKGNAME =	py-${DISTNAME}
-REVISION =	3
+CATEGORIES=	textproc
 
-CATEGORIES =	textproc
+HOMEPAGE=	https://foss.heptapod.net/openpyxl/et_xmlfile
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =	lang/python
-
-MODPY_PI =	Yes
-MODPY_PYBUILD =	setuptools
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 # not in the distfile
-NO_TEST =	Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>
