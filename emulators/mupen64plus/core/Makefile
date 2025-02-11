@@ -1,6 +1,6 @@
 COMMENT =		n64 emulator core
 SHARED_LIBS =		mupen64plus 2.4 # 2.5.9
-REVISION =		1
+REVISION =		2
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
@@ -18,5 +18,8 @@ MUPEN64PLUS_MOD =	core
 MAKE_FLAGS +=		TARGET=libmupen64plus.so.${LIBmupen64plus_VERSION} \
 			SONAME=libmupen64plus.so \
 			NO_ASM=1
+.if ${MACHINE_ARCH} == aarch64
+MAKE_FLAGS +=		HOST_CPU="aarch64"
+.endif
 
 .include <bsd.port.mk>
