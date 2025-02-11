@@ -14,3 +14,16 @@ Index: external/skia/Library_skia.mk
      -lX11-xcb \
      -lX11 \
  ))
+@@ -216,9 +216,9 @@ $(eval $(call gb_Library_add_generated_exception_objec
+     UnpackedTarball/skia/src/utils/SkGetExecutablePath_mac \
+ ))
+ else
+-$(eval $(call gb_Library_add_generated_exception_objects,skia,\
+-    UnpackedTarball/skia/src/utils/SkGetExecutablePath_linux \
+-))
++#$(eval $(call gb_Library_add_generated_exception_objects,skia,\
++#    UnpackedTarball/skia/src/utils/SkGetExecutablePath_linux \
++#))
+ endif
+ 
+ # from file skia/gn/BUILD.gn:1278, target "optional("png_decode")"

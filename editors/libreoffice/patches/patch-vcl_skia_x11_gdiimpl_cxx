@@ -1,9 +1,9 @@
 Index: vcl/skia/x11/gdiimpl.cxx
 --- vcl/skia/x11/gdiimpl.cxx.orig
 +++ vcl/skia/x11/gdiimpl.cxx
-@@ -68,7 +68,7 @@ X11SkiaSalGraphicsImpl::createWindowContext(Display* d
+@@ -69,7 +69,7 @@ X11SkiaSalGraphicsImpl::createWindowContext(Display* d
      SkiaZone zone;
-     sk_app::DisplayParams displayParams;
+     skwindow::DisplayParams displayParams;
      displayParams.fColorType = kN32_SkColorType;
 -#if defined LINUX
 +#if defined LINUX || defined OPENBSD

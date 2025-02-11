@@ -37,7 +37,7 @@ Index: shell/source/unix/misc/senddoc.sh
                      ;;
                  --attach)
 -                    if [ "$MAILER" = "/usr/bin/xdg-email" ]; then
-+                    if e "$MAILER" = "/usr/local/bin/xdg-email" ]; then
-                         MAILTO="${MAILTO:-}${MAILTO:+&}attach="$(echo "file://$2" | "${URI_ENCODE}")
++                    if [ "$MAILER" = "/usr/local/bin/xdg-email" ]; then
+                         MAILTO="${MAILTO:-}${MAILTO:+&}attach="$(printf file://%s "$2" | "${URI_ENCODE}")
                      else
-                         MAILTO="${MAILTO:-}${MAILTO:+&}attachment="$(echo "file://$2" | "${URI_ENCODE}")
+                         MAILTO="${MAILTO:-}${MAILTO:+&}attachment="$(printf file://%s "$2" | "${URI_ENCODE}")

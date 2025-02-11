@@ -7,7 +7,7 @@ COMMENT-main=	multi-platform productivity suite
 COMMENT-kde=	optional integration of LibreOffice to the KDE environment
 COMMENT-java=	optional integration of LibreOffice java features
 
-SHARED_LIBS +=  etonyek-0.1-lo            1.10 # 1.10
+SHARED_LIBS +=  etonyek-0.1-lo            1.12 # 1.12
 SHARED_LIBS +=  langtag-lo                5.1 # 5.1
 SHARED_LIBS +=  mwaw-0.3-lo               3.22 # 3.22
 SHARED_LIBS +=  odfgen-0.1-lo             1.8 # 1.8
@@ -22,13 +22,12 @@ SHARED_LIBS +=  uno_salhelpergcc3         3.0 # 3.0
 SHARED_LIBS +=  wpg-0.3-lo                3.4 # 3.4
 SHARED_LIBS +=  wps-0.4-lo                4.14 # 4.14
 
-BV=		24.8
-VERSION=	${BV}.2.1
+BV=		25.2
+VERSION=	${BV}.0.3
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 CATEGORIES=	editors productivity
 DPB_PROPERTIES=	parallel
-REVISION=	2
 
 EPOCH=		0
 
@@ -73,8 +72,8 @@ DISTFILES.a += 798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip
 DISTFILES.a += 8ce2fcd72becf06c41f7201d15373ed9-librepository-1.1.6.zip
 DISTFILES.a += 97b2d4dba862397f446b217e2b623e71-libloader-1.1.6.zip
 DISTFILES.a += Amiri-1.000.zip
-DISTFILES.a += Java-WebSocket-1.5.6.tar.gz
-DISTFILES.a += NotoSans-v2.013.zip
+DISTFILES.a += Java-WebSocket-1.6.0.tar.gz
+DISTFILES.a += NotoSans-v2.015.zip
 DISTFILES.a += NotoKufiArabic-v2.109.zip
 DISTFILES.a += NotoSansArabic-v2.010.zip
 DISTFILES.a += NotoSansArmenian-v2.008.zip
@@ -82,7 +81,7 @@ DISTFILES.a += NotoSansGeorgian-v2.005.zip
 DISTFILES.a += NotoSansHebrew-v3.001.zip
 DISTFILES.a += NotoSansLao-v2.003.zip
 DISTFILES.a += NotoSansLisu-v2.102.zip
-DISTFILES.a += NotoSerif-v2.013.zip
+DISTFILES.a += NotoSerif-v2.015.zip
 DISTFILES.a += NotoSerifArmenian-v2.008.zip
 DISTFILES.a += NotoSerifGeorgian-v2.003.zip
 DISTFILES.a += NotoSerifHebrew-v2.004.zip
@@ -98,7 +97,7 @@ DISTFILES.a += box2d-2.4.1.tar.gz
 DISTFILES.a += bsh-2.1.1-src.zip
 DISTFILES.a += c74b7223abe75949b4af367942d96c7a-crosextrafonts-carlito-20130920.tar.gz
 DISTFILES.a += cppunit-1.15.1.tar.gz
-DISTFILES.a += culmus-0.133.tar.gz
+DISTFILES.a += culmus-0.140.tar.gz
 DISTFILES.a += d8bd5eed178db6e2b18eeed243f85aa8-flute-1.1.6.zip
 DISTFILES.a += db60e4fde8dd6d6807523deb71ee34dc-liblayout-0.2.10.zip
 DISTFILES.a += dragonbox-1.1.3.tar.gz
@@ -107,16 +106,16 @@ DISTFILES.a += e7a384790b13c29113e22e596ade9687-LinLibertineG-20120116.zip
 DISTFILES.a += eeb2c7ddf0d302fba4bfc6e97eac9624-libbase-1.1.6.zip
 DISTFILES.a += f543e6e2d7275557a839a164941c0a86e5f2c3f2a0042bfc434c88c6dde9e140-opens___.ttf
 DISTFILES.a += f94d9870737518e3b597f9265f4e9803-libserializer-1.1.6.zip
-DISTFILES.a += frozen-1.1.1.tar.gz
-DISTFILES.a += language-subtag-registry-2024-06-14.tar.bz2
+DISTFILES.a += frozen-1.2.0.tar.gz
+DISTFILES.a += language-subtag-registry-2025-01-21.tar.bz2
 DISTFILES.a += libabw-0.1.3.tar.xz
-DISTFILES.a += libcdr-0.1.7.tar.xz
+DISTFILES.a += libcdr-0.1.8.tar.xz
 DISTFILES.a += libcmis-0.6.2.tar.xz
 DISTFILES.a += libe-book-0.1.3.tar.xz
 DISTFILES.a += libepubgen-0.1.1.tar.xz
 DISTFILES.a += liberation-fonts-ttf-2.1.5.tar.gz
 DISTFILES.a += liberation-narrow-fonts-ttf-1.07.6.tar.gz
-DISTFILES.a += libetonyek-0.1.10.tar.xz
+DISTFILES.a += libetonyek-0.1.12.tar.xz
 DISTFILES.a += libexttextcat-3.4.7.tar.xz
 DISTFILES.a += libfreehand-0.1.2.tar.xz
 DISTFILES.a += liblangtag-0.6.7.tar.bz2
@@ -129,17 +128,17 @@ DISTFILES.a += libpagemaker-0.0.4.tar.xz
 DISTFILES.a += libqxp-0.0.2.tar.xz
 DISTFILES.a += libre-hebrew-1.0.tar.gz
 DISTFILES.a += libstaroffice-0.0.7.tar.xz
-DISTFILES.a += libvisio-0.1.7.tar.xz
+DISTFILES.a += libvisio-0.1.8.tar.xz
 DISTFILES.a += libwpg-0.3.4.tar.xz
 DISTFILES.a += libwps-0.4.14.tar.xz
 DISTFILES.a += libzmf-0.0.2.tar.xz
 DISTFILES.a += mdds-2.1.1.tar.xz
 DISTFILES.a += mythes-1.2.5.tar.xz
 DISTFILES.a += noto-fonts-20171024.tar.gz
-DISTFILES.a += pdfium-6425.tar.bz2
+DISTFILES.a += pdfium-6764.tar.bz2
 DISTFILES.a += phc-winner-argon2-20190702.tar.gz
-DISTFILES.a += skia-m116-2ddcf183eb260f63698aa74d1bb380f247ad7ccd.tar.xz
-DISTFILES.a += xmlsec1-1.3.5.tar.gz
+DISTFILES.a += skia-m130-3c64459d5df2fa9794b277f0959ed8a92552bf4c.tar.xz
+DISTFILES.a += xmlsec1-1.3.6.tar.gz
 DISTFILES.a += zxcvbn-c-2.5.tar.gz
 DISTFILES.a += zxing-cpp-2.2.1.tar.gz
 
@@ -366,7 +365,8 @@ CONFIGURE_ARGS+=\
 		--without-system-beanshell \
 		--without-system-hsqldb \
 		--without-system-jfreereport \
-		--without-system-orcus
+		--without-system-orcus \
+		--without-system-java-websocket
 
 .if ${BUILD_PACKAGES:M-java}
 BUILD_DEPENDS+=	devel/apache-ant

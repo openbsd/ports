@@ -1,7 +1,7 @@
 Index: vcl/Library_vclplug_qt5.mk
 --- vcl/Library_vclplug_qt5.mk.orig
 +++ vcl/Library_vclplug_qt5.mk
-@@ -118,10 +118,10 @@ $(eval $(call gb_Library_add_exception_objects,vclplug
+@@ -142,10 +142,10 @@ $(eval $(call gb_Library_add_exception_objects,vclplug
      ) \
  ))
  

@@ -3,7 +3,6 @@ lib/libreoffice/program/classes/
 lib/libreoffice/program/classes/ScriptFramework.jar
 lib/libreoffice/program/classes/ScriptProviderForBeanShell.jar
 lib/libreoffice/program/classes/ScriptProviderForJava.jar
-lib/libreoffice/program/classes/XMergeBridge.jar
 lib/libreoffice/program/classes/bsh.jar
 lib/libreoffice/program/classes/commonwizards.jar
 lib/libreoffice/program/classes/flow-engine.jar
@@ -34,7 +33,6 @@ lib/libreoffice/program/classes/smoketest.jar
 lib/libreoffice/program/classes/table.jar
 lib/libreoffice/program/classes/unoil.jar
 lib/libreoffice/program/classes/unoloader.jar
-lib/libreoffice/program/classes/xmerge.jar
 @bin lib/libreoffice/program/javaldx
 lib/libreoffice/program/javavendors.xml
 lib/libreoffice/program/jvmfwk3rc

@@ -1,7 +1,7 @@
 Index: desktop/source/app/app.cxx
 --- desktop/source/app/app.cxx.orig
 +++ desktop/source/app/app.cxx
-@@ -556,6 +556,7 @@ void Desktop::InitFinished()
+@@ -595,6 +595,7 @@ void Desktop::InitFinished()
  
  void Desktop::DeInit()
  {
@@ -9,7 +9,7 @@ Index: desktop/source/app/app.cxx
      try {
          // instead of removing of the configManager just let it commit all the changes
          utl::ConfigManager::storeConfigItems();
-@@ -572,7 +573,9 @@ void Desktop::DeInit()
+@@ -611,7 +612,9 @@ void Desktop::DeInit()
          // clear lockfile
          m_xLockfile.reset();
  

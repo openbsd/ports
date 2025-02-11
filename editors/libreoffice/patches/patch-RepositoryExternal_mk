@@ -1,7 +1,7 @@
 Index: RepositoryExternal.mk
 --- RepositoryExternal.mk.orig
 +++ RepositoryExternal.mk
-@@ -3754,6 +3754,10 @@ endif # ENABLE_GPGMEPP
+@@ -3774,6 +3774,10 @@ endif # ENABLE_GPGMEPP
  
  define gb_LinkTarget__use_dconf
  $(call gb_LinkTarget_set_include,$(1),\

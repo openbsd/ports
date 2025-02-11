@@ -1,12 +1,21 @@
 Index: connectivity/source/drivers/odbc/OConnection.cxx
 --- connectivity/source/drivers/odbc/OConnection.cxx.orig
 +++ connectivity/source/drivers/odbc/OConnection.cxx
-@@ -102,7 +102,7 @@ SQLRETURN OConnection::OpenConnection(const OUString& 
+@@ -97,7 +97,7 @@ SQLRETURN OConnection::OpenConnection(const OUString& 
      (void)nTimeOut; /* WaE */
  #endif
  
 -#ifdef LINUX
 +#if defined LINUX || defined OPENBSD
-     (void) bSilent;
-     nSQLRETURN = N3SQLDriverConnect(m_aConnectionHandle,
-                       nullptr,
+     bSilent = true;
+ #endif //LINUX
+     SQLUSMALLINT nSilent =  bSilent ? SQL_DRIVER_NOPROMPT : SQL_DRIVER_COMPLETE;
+@@ -130,7 +130,7 @@ SQLRETURN OConnection::OpenConnection(const OUString& 
+                           &cbConnStrOut,
+                           nSilent);
+     }
+-#ifdef LINUX
++#if defined LINUX || defined OPENBSD
+     if (nSQLRETURN == SQL_ERROR || nSQLRETURN == SQL_NO_DATA || SQL_SUCCESS_WITH_INFO == nSQLRETURN)
+ #else
+     if (nSQLRETURN == SQL_ERROR || nSQLRETURN == SQL_NO_DATA)

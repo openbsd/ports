@@ -1,7 +1,7 @@
 Index: sal/cppunittester/cppunittester.cxx
 --- sal/cppunittester/cppunittester.cxx.orig
 +++ sal/cppunittester/cppunittester.cxx
-@@ -383,6 +383,7 @@ void reportResourceUsage([[maybe_unused]] const OUStri
+@@ -385,6 +385,7 @@ void reportResourceUsage([[maybe_unused]] const OUStri
  
  static bool main2()
  {
