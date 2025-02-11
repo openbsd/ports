@@ -1,10 +1,9 @@
 COMMENT=	parse dates from HTML pages
 
-MODPY_DISTV=	1.2.0
+MODPY_DISTV=	1.2.1
 DISTNAME=	dateparser-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
-REVISION=	1
 
 HOMEPAGE=	https://github.com/scrapinghub/dateparser/
 
@@ -12,9 +11,9 @@ HOMEPAGE=	https://github.com/scrapinghub/dateparser/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
+
 RUN_DEPENDS=	devel/py-tzlocal \
 		devel/py-tz \
 		devel/py-regex \
