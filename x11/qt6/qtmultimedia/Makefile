@@ -55,4 +55,12 @@ CONFIGURE_ARGS =	-DQT_FEATURE_ffmpeg=ON \
 
 MODCMAKE_LDFLAGS +=	-L${X11BASE}/lib
 
+# avoid error: always_inline function '_mm_add_ps' requires target feature
+# 'sse', but would be inlined into function 'AddPointwise' that is compiled
+# without support for 'sse' (in src/3rdparty/resonance-audio)
+.if ${MACHINE_ARCH} == i386
+CFLAGS +=	-msse
+CXXFLAGS +=	-msse
+.endif
+
 .include <bsd.port.mk>
