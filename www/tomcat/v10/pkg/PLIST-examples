@@ -1059,6 +1059,7 @@ webapps/docs/api/org/apache/coyote/Constants.html
 webapps/docs/api/org/apache/coyote/ContinueResponseTiming.html
 webapps/docs/api/org/apache/coyote/ErrorState.html
 webapps/docs/api/org/apache/coyote/InputBuffer.html
+webapps/docs/api/org/apache/coyote/NonPipeliningProcessor.html
 webapps/docs/api/org/apache/coyote/OutputBuffer.html
 webapps/docs/api/org/apache/coyote/Processor.html
 webapps/docs/api/org/apache/coyote/ProtocolException.html
