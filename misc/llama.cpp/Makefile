@@ -10,6 +10,7 @@ GH_ACCOUNT =		ggerganov
 GH_PROJECT =		llama.cpp
 GH_TAGNAME =		b4589
 PKGNAME =		llama-cpp-0.0.${GH_TAGNAME:S/b//}
+REVISION =		0
 
 SHARED_LIBS +=		ggml-base 0.0
 SHARED_LIBS +=		ggml-cpu 0.0
