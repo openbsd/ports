@@ -12,7 +12,6 @@ bin/tth-hash
 bin/whirlpool-hash
 include/rhash.h
 include/rhash_torrent.h
-@static-lib lib/librhash.a
 @lib lib/librhash.so.${LIBrhash_VERSION}
 @man man/man1/ed2k-link.1
 @man man/man1/edonr256-hash.1

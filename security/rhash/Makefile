@@ -1,23 +1,18 @@
 COMMENT =	utility and library for computing hash sums
 
-DISTNAME =	rhash-1.4.4-src
-PKGNAME =	${DISTNAME:S/-src$//}
-REVISION =	0
+GH_ACCOUNT =	rhash
+GH_PROJECT =	RHash
+GH_TAGNAME =	v1.4.5
+PKGNAME =	${DISTNAME:L}
 
-SHARED_LIBS =	rhash 1.0
+SHARED_LIBS =	rhash 1.1
 
 CATEGORIES =	security
-
-HOMEPAGE =	https://rhash.sourceforge.io/
 
 # BSD
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =	c
-
-SITES =		${SITE_SOURCEFORGE:=rhash/}
-
-TEST_DEPENDS =	sysutils/ggrep
 
 CONFIGURE_STYLE =	simple
 CONFIGURE_ARGS =	--enable-lib-static \
@@ -29,18 +24,22 @@ CONFIGURE_ARGS =	--enable-lib-static \
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-WRKDIST =	${WRKDIR}/${PKGNAME:S/^rhash/RHash/}
+FAKE_FLAGS =		SYSCONFDIR=${WRKINST}${PREFIX}/share/examples/rhash
 
-post-extract:
-	sed -i 's,grep,ggrep,g' ${WRKSRC}/tests/test_rhash.sh
+TEST_DEPENDS =		sysutils/ggrep
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/common_func.h \
 		${WRKSRC}/configure
 
+# can't just remove --enable-lib-static otherwise headers are missed
+post-install:
+	rm ${PREFIX}/lib/librhash.a
+
 do-test:
-	cd ${WRKSRC}/tests && env \
-	LD_PRELOAD=${WRKBUILD}/librhash/librhash.so.${LIBrhash_VERSION} \
+	ln -fs ${LOCALBASE}/bin/ggrep ${WRKDIR}/bin/grep
+	cd ${WRKSRC}/tests && env ${ALL_TEST_ENV} \
+		LD_LIBRARY_PATH=${WRKBUILD}/librhash \
 		./test_rhash.sh --full ../rhash
 
 .include <bsd.port.mk>
