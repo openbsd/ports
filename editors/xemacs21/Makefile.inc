@@ -17,4 +17,5 @@ AUTOCONF_VERSION=2.13
 CONFIGURE_STYLE=autoconf old dest no-autoheader
 
 SUBST_VARS=	GCCARCH BRANCH VERSION
-GCCARCH=	${MACHINE_ARCH}-unknown-openbsd${OSREV}
+# do not include OSREV
+GCCARCH=	${MACHINE_ARCH}-unknown-openbsd
