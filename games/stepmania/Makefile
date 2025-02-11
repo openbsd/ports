@@ -1,5 +1,3 @@
-BROKEN-sparc64 =	Uses -msse2
-
 COMMENT = 	dance music game
 CATEGORIES = 	games emulators
 
@@ -28,6 +26,9 @@ MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 CONFIGURE_ARGS +=	-Wno-dev
 CONFIGURE_ARGS +=	-DWITH_SYSTEM_FFMPEG=Yes
 CONFIGURE_ARGS +=	-DCMAKE_INSTALL_PREFIX=${PREFIX}/libdata
+.if ${MACHINE_ARCH} != amd64 && ${MACHINE_ARCH} != i386
+CONFIGURE_ARGS +=	-DWITH_SSE2=OFF
+.endif
 
 NO_TEST =	Yes
 
