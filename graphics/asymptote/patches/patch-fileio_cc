@@ -1,3 +1,6 @@
+Allow compilation without libtirpc-devel (disables XDR and V3D support).
+https://github.com/vectorgraphics/asymptote/commit/3e1e10f75af1d549c40320c57763690c08b22c62
+
 Index: fileio.cc
 --- fileio.cc.orig
 +++ fileio.cc
