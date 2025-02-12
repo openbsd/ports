@@ -1,0 +1,11 @@
+Index: prc/include/prc/oPRCFile.h
+--- prc/include/prc/oPRCFile.h.orig
++++ prc/include/prc/oPRCFile.h
+@@ -734,6 +734,7 @@ class oPRCFile
+     std::vector<std::string> lastgroupnames;
+     std::string calculate_unique_name(const ContentPRCBase *prc_entity,const ContentPRCBase *prc_occurence);
+ 
++    __attribute__((optnone))
+     bool finish();
+     uint32_t getSize();
+ 
