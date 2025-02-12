@@ -276,6 +276,12 @@ lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/credential/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/credential/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/credential/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/credential/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/credential/${MODPY_PYCACHE}parse.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/credential/${MODPY_PYCACHE}parse.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/credential/${MODPY_PYCACHE}systemd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/credential/${MODPY_PYCACHE}systemd.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/credential/parse.py
+lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/credential/systemd.py
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/
 lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/borgmatic/hooks/data_source/${MODPY_PYCACHE}/
