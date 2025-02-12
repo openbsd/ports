@@ -389,7 +389,7 @@ SHA256 (cargo/zeroize-1.7.0.tar.gz) = UltOwULGtootEPAfe79nVVmco/gepTuEMbfdNI9f2y
 SHA256 (cargo/zeroize_derive-1.4.2.tar.gz) = zjbmWw0pmdKq+smJ+ySRiaFBruH1PGEsHzfXJjGVn2k=
 SHA256 (cargo/zerovec-0.10.4.tar.gz) = qiuJPXnfI7+xLVRhAY1AjqGd+v52wsfvbU66YU+P8Hk=
 SHA256 (cargo/zerovec-derive-0.10.3.tar.gz) = bq+m37F1hOo+K9bnbgzBWtevErCavdHKVZYb7ZsQY8Y=
-SHA256 (gleam-1.8.0.tar.gz) = KWoE4nyN8WdQw21NFnZGlnou1x4+Lhrm5yTGMaIsmd8=
+SHA256 (gleam-1.8.1.tar.gz) = WtJDwJL7Ip0K53IUvqpGLNmlMBjlU97LmxKi6h+rZJQ=
 SIZE (cargo/addr2line-0.22.0.tar.gz) = 39156
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/aead-0.5.2.tar.gz) = 15509
@@ -781,4 +781,4 @@ SIZE (cargo/zeroize-1.7.0.tar.gz) = 19039
 SIZE (cargo/zeroize_derive-1.4.2.tar.gz) = 11141
 SIZE (cargo/zerovec-0.10.4.tar.gz) = 126398
 SIZE (cargo/zerovec-derive-0.10.3.tar.gz) = 19438
-SIZE (gleam-1.8.0.tar.gz) = 1247749
+SIZE (gleam-1.8.1.tar.gz) = 1246102
