@@ -5,9 +5,9 @@ HOMEPAGE=	https://certbot.eff.org/
 DISTNAME=	acme-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
-RUN_DEPENDS=	security/py-cryptography>=0.8 \
+RUN_DEPENDS=	security/py-cryptography>=43.0.0 \
 		security/py-josepy \
-		security/py-openssl>=0.15 \
+		security/py-openssl>=25.0.0 \
 		textproc/py-pyRFC3339 \
 		devel/py-tz \
 		www/py-requests \
