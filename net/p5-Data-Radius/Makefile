@@ -2,6 +2,8 @@ COMMENT =	module to encode/decode RADIUS messages
 
 DISTNAME =	Data-Radius-1.2.8
 
+REVISION =	0
+
 CATEGORIES =	net
 
 # Artistic 2.0
