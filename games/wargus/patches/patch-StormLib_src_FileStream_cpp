@@ -1,0 +1,81 @@
+Index: StormLib/src/FileStream.cpp
+--- StormLib/src/FileStream.cpp.orig
++++ StormLib/src/FileStream.cpp
+@@ -109,7 +109,7 @@ static bool BaseFile_Create(TFileStream * pStream)
+     {
+         intptr_t handle;
+ 
+-        handle = open(pStream->szFileName, O_RDWR | O_CREAT | O_TRUNC | O_LARGEFILE, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
++        handle = open(pStream->szFileName, O_RDWR | O_CREAT | O_TRUNC, S_IRUSR | S_IWUSR | S_IRGRP | S_IROTH);
+         if(handle == -1)
+         {
+             pStream->Base.File.hFile = INVALID_HANDLE_VALUE;
+@@ -157,12 +157,12 @@ static bool BaseFile_Open(TFileStream * pStream, const
+ 
+ #if defined(STORMLIB_MAC) || defined(STORMLIB_LINUX)
+     {
+-        struct stat64 fileinfo;
++        struct stat fileinfo;
+         int oflag = (dwStreamFlags & STREAM_FLAG_READ_ONLY) ? O_RDONLY : O_RDWR;
+         intptr_t handle;
+ 
+         // Open the file
+-        handle = open(szFileName, oflag | O_LARGEFILE);
++        handle = open(szFileName, oflag);
+         if(handle == -1)
+         {
+             pStream->Base.File.hFile = INVALID_HANDLE_VALUE;
+@@ -171,7 +171,7 @@ static bool BaseFile_Open(TFileStream * pStream, const
+         }
+ 
+         // Get the file size
+-        if(fstat64(handle, &fileinfo) == -1)
++        if(fstat(handle, &fileinfo) == -1)
+         {
+             pStream->Base.File.hFile = INVALID_HANDLE_VALUE;
+             dwLastError = errno;
+@@ -234,7 +234,7 @@ static bool BaseFile_Read(
+         // we have to update the file position   xxx
+         if(ByteOffset != pStream->Base.File.FilePos)
+         {
+-            lseek64((intptr_t)pStream->Base.File.hFile, (off64_t)(ByteOffset), SEEK_SET);
++            lseek((intptr_t)pStream->Base.File.hFile, (off_t)(ByteOffset), SEEK_SET);
+             pStream->Base.File.FilePos = ByteOffset;
+         }
+ 
+@@ -305,7 +305,7 @@ static bool BaseFile_Write(TFileStream * pStream, ULON
+         // we have to update the file position
+         if(ByteOffset != pStream->Base.File.FilePos)
+         {
+-            lseek64((intptr_t)pStream->Base.File.hFile, (off64_t)(ByteOffset), SEEK_SET);
++            lseek((intptr_t)pStream->Base.File.hFile, (off_t)(ByteOffset), SEEK_SET);
+             pStream->Base.File.FilePos = ByteOffset;
+         }
+ 
+@@ -366,7 +366,7 @@ static bool BaseFile_Resize(TFileStream * pStream, ULO
+ 
+ #if defined(STORMLIB_MAC) || defined(STORMLIB_LINUX)
+     {
+-        if(ftruncate64((intptr_t)pStream->Base.File.hFile, (off64_t)NewFileSize) == -1)
++        if(ftruncate((intptr_t)pStream->Base.File.hFile, (off_t)NewFileSize) == -1)
+         {
+             dwLastError = errno;
+             return false;
+@@ -566,7 +566,7 @@ static bool BaseMap_Open(TFileStream * pStream, LPCTST
+ 
+ #elif defined(STORMLIB_HAS_MMAP)
+ 
+-    struct stat64 fileinfo;
++    struct stat fileinfo;
+     intptr_t handle;
+     bool bResult = false;
+ 
+@@ -575,7 +575,7 @@ static bool BaseMap_Open(TFileStream * pStream, LPCTST
+     if(handle != -1)
+     {
+         // Get the file size
+-        if(fstat64(handle, &fileinfo) != -1)
++        if(fstat(handle, &fileinfo) != -1)
+         {
+             pStream->Base.Map.pbFile = (LPBYTE)mmap(NULL, (size_t)fileinfo.st_size, PROT_READ, MAP_PRIVATE, handle, 0);
+             if(pStream->Base.Map.pbFile != NULL)
