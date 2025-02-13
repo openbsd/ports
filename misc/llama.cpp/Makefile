@@ -8,16 +8,15 @@ COMMENT =		LLM inference system
 
 GH_ACCOUNT =		ggerganov
 GH_PROJECT =		llama.cpp
-GH_TAGNAME =		b4589
+GH_TAGNAME =		b4706
 PKGNAME =		llama-cpp-0.0.${GH_TAGNAME:S/b//}
-REVISION =		0
 
 SHARED_LIBS +=		ggml-base 0.0
 SHARED_LIBS +=		ggml-cpu 0.0
 SHARED_LIBS +=		ggml 0.0
-SHARED_LIBS +=		llama 0.0
-SHARED_LIBS +=		llava_shared 0.0
-SHARED_LIBS +=		ggml-vulkan 0.0
+SHARED_LIBS +=		llama 1.0
+SHARED_LIBS +=		llava_shared 0.1
+SHARED_LIBS +=		ggml-vulkan 1.0
 
 CATEGORIES =		misc
 
@@ -26,17 +25,22 @@ HOMEPAGE =		https://github.com/ggerganov/llama.cpp
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		m pthread vulkan ${COMPILER_LIBCXX}
+WANTLIB +=		c m pthread vulkan ${COMPILER_LIBCXX}
 
 MODULES =		devel/cmake
 
 LIB_DEPENDS =		graphics/vulkan-loader
 
-BUILD_DEPENDS =		devel/git
-BUILD_DEPENDS +=	graphics/shaderc
+BUILD_DEPENDS =		graphics/shaderc
 
 CONFIGURE_ARGS =	-DGGML_CCACHE=Off \
 			-DGGML_NATIVE=Off \
-			-DGGML_VULKAN=On
+			-DGGML_VULKAN=On \
+
+# avoid requiring git during build
+CONFIGURE_ARGS +=	-DGGML_BUILD_NUMBER=""
+
+post-install:
+	rm ${PREFIX}/bin/test-*
 
 .include <bsd.port.mk>

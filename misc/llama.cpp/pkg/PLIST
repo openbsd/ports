@@ -17,6 +17,7 @@ bin/convert_hf_to_gguf.py
 @bin bin/llama-imatrix
 @bin bin/llama-infill
 @bin bin/llama-llava-cli
+@bin bin/llama-llava-clip-quantize-cli
 @bin bin/llama-lookahead
 @bin bin/llama-lookup
 @bin bin/llama-lookup-create
@@ -39,25 +40,6 @@ bin/convert_hf_to_gguf.py
 @bin bin/llama-speculative-simple
 @bin bin/llama-tokenize
 @bin bin/llama-tts
-@bin bin/test-arg-parser
-@bin bin/test-autorelease
-@bin bin/test-backend-ops
-@bin bin/test-barrier
-@bin bin/test-chat-template
-@bin bin/test-gguf
-@bin bin/test-grammar-integration
-@bin bin/test-grammar-parser
-@bin bin/test-json-schema-to-grammar
-@bin bin/test-llama-grammar
-@bin bin/test-log
-@bin bin/test-model-load-cancel
-@bin bin/test-quantize-fns
-@bin bin/test-quantize-perf
-@bin bin/test-rope
-@bin bin/test-sampling
-@bin bin/test-tokenizer-0
-@bin bin/test-tokenizer-1-bpe
-@bin bin/test-tokenizer-1-spm
 @bin bin/vulkan-shaders-gen
 include/ggml-alloc.h
 include/ggml-backend.h
