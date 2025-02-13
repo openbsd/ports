@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1697 2025/02/09 08:57:12 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1698 2025/02/13 15:43:27 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1237,6 +1237,7 @@ setup_obsolete_reason(
 	5 => 'sqlite',
 	3 => 'swish-e',
 	3 => 'p5-SWISH-API',
+	3 => 'akonadi-notes',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
