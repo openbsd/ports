@@ -1,6 +1,6 @@
 COMMENT =		database access library
 
-DISTNAME =		sqlbox-0.1.12
+DISTNAME =		sqlbox-0.2.0
 CATEGORIES =		databases
 
 MAINTAINER =		James Turner <james@calminferno.net>
