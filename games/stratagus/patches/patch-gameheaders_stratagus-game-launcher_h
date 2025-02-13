@@ -1,0 +1,21 @@
+Index: gameheaders/stratagus-game-launcher.h
+--- gameheaders/stratagus-game-launcher.h.orig
++++ gameheaders/stratagus-game-launcher.h
+@@ -330,7 +330,7 @@ static void ExtractData(char* extractor_tool, char *co
+ 			std::vector<std::wstring> argv = {L"-i", fs::path(datafile).wstring()};
+ #else
+ 			const char *file = "innoextract";
+-			char *argv[] = {"-i", (char*)datafile.c_str(), NULL};
++			char *argv[] = {"innoextract", "-i", (char*)datafile.c_str(), NULL};
+ #endif
+ 			if (runCommand(file, argv) == 0) {
+ 				// innoextract exists and this exe file is an innosetup file
+@@ -351,7 +351,7 @@ static void ExtractData(char* extractor_tool, char *co
+ #ifdef WIN32
+ 						argv[0] = L"-m";
+ #else
+-						argv[0] = "-m";
++						argv[1] = "-m";
+ #endif
+ 						success = runCommand(file, argv) == 0;
+ #ifdef WIN32

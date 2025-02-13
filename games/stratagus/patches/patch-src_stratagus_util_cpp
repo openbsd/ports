@@ -1,0 +1,25 @@
+Index: src/stratagus/util.cpp
+--- src/stratagus/util.cpp.orig
++++ src/stratagus/util.cpp
+@@ -41,7 +41,6 @@
+ #include <stdlib.h>
+ #include <stdarg.h>
+ 
+-#include <malloc.h>
+ #ifdef WIN32
+ #include <windows.h>
+ #include <intrin.h>
+@@ -630,13 +629,7 @@ bool supportsAVX()
+ 
+ void *aligned_malloc(size_t alignment, size_t size)
+ {
+-#ifdef WIN32
+-	return _aligned_malloc(size, alignment);
+-#elif _ISOC11_SOURCE
+ 	return aligned_alloc(alignment, size);
+-#else
+-	return memalign(alignment, size);
+-#endif
+ }
+ 
+ void aligned_free(void *block)

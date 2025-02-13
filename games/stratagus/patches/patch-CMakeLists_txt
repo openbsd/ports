@@ -1,0 +1,20 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -71,6 +71,7 @@ endif()
+ # Stratagus sources
+ 
+ include_directories(
++	/usr/X11R6/include
+ 	src/include
+ 	src/guichan/include
+ 	src/guichan/include/guichan
+@@ -656,7 +657,7 @@ if(APPLE)
+ 	list(APPEND CMAKE_PREFIX_PATH /opt/homebrew/)
+ endif()
+ 
+-if(NOT WIN32 OR NOT MSVC)
++if(NOT CMAKE_SYSTEM_NAME MATCHES BSD)
+ 	include(CheckCXXSourceCompiles)
+ 	set(FS_SRC "
+ 	#include <experimental/filesystem> 

@@ -1,0 +1,21 @@
+Index: gameheaders/stratagus-gameutils.h
+--- gameheaders/stratagus-gameutils.h.orig
++++ gameheaders/stratagus-gameutils.h
+@@ -68,11 +68,12 @@ void copy_dir(const char *source_folder, const char *t
+ // PathRemoveFileSpec on a drive (e.g. when extracting from CD) will leave the trailing \... remove that
+ #define parentdir(x) PathRemoveFileSpec(x); if (x[strlen(x) - 1] == '\\') x[strlen(x) - 1] = '\0'
+ #else
+-#if defined(USE_MAC)
+-#define parentdir(x) strcpy(x, dirname(x))
+-#else
+-#define parentdir(x) dirname(x)
+-#endif
++#define parentdir(x) do {		\
++	char *ptr;			\
++	ptr = dirname(x);		\
++	if (ptr != (x))			\
++		strcpy((x), ptr);	\
++} while(0);
+ #endif
+ 
+ #ifdef WIN32

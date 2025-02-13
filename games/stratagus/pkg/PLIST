@@ -1,0 +1,6 @@
+@bin bin/png2stratagus
+@bin bin/stratagus
+include/stratagus-game-installer.nsi
+include/stratagus-game-launcher.h
+include/stratagus-gameutils.h
+include/stratagus-tinyfiledialogs.h
