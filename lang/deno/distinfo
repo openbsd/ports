@@ -130,7 +130,7 @@ SHA256 (cargo/deno-tower-lsp-macros-0.9.0.tar.gz) = BdWaHP1EX9hvY2FhJ6Q0qrygAOA9
 SHA256 (cargo/deno_ast-0.44.0.tar.gz) = 7rx6qr/bPdytMq7hti0lAUncizXfvcy7El3yvcYtqVI=
 SHA256 (cargo/deno_cache_dir-0.17.0.tar.gz) = J0KdpNDmAbqqQUFaQ0aNSaWGZF0TSX8S6Kk0b59rE0c=
 SHA256 (cargo/deno_config-0.46.0.tar.gz) = CP5RKnLEMAvZl8aElFCh8FDaDJCaKk+9xEiRZHOSus8=
-SHA256 (cargo/deno_core-0.333.0.tar.gz) = Lmf2+HRAHzuPs+hRdDxA7hQBRkjbZoWyM7NPeD9pWeg=
+SHA256 (cargo/deno_core-0.336.0.tar.gz) = /dUEdsQyXV+lK7kGgEoeNbEn0qHc9nTjRHtT3PJVJb8=
 SHA256 (cargo/deno_core_icudata-0.74.0.tar.gz) = /k3MthR7s/O6DHpI6ZO/65mdLC5HqBut7oDis3DI1pU=
 SHA256 (cargo/deno_doc-0.164.0.tar.gz) = rR7bAmA8fopAA8hK8kgqBeXto6FPGvJ1Q0/aiSI/BU0=
 SHA256 (cargo/deno_error-0.5.5.tar.gz) = nCPbxG1YBIFLCLRnWDj5iE46UpFph+xRBa821C+ZEbU=
@@ -141,7 +141,7 @@ SHA256 (cargo/deno_lockfile-0.24.0.tar.gz) = Yy6DWlPtZn1i/ddmxXgP6DYcgx0+P78adgo
 SHA256 (cargo/deno_media_type-0.2.5.tar.gz) = YAIi0FmrMf8xGCs+EmFd8hNKngFgWDa3itjfkbo56rM=
 SHA256 (cargo/deno_native_certs-0.3.0.tar.gz) = yGdgPSpd/qMfVc7Ou1clVMqjlUN3htBY+qmigUyNbrk=
 SHA256 (cargo/deno_npm-0.27.2.tar.gz) = StzrTDTxDoN9Djrnbojd3vsT6DwFwe8WmfpVGSQcnSc=
-SHA256 (cargo/deno_ops-0.209.0.tar.gz) = +9p0G6JnolK62GFT0WyFnDqOGyGbMAobTwomMsCkZc8=
+SHA256 (cargo/deno_ops-0.212.0.tar.gz) = wtMoBnE5kJqoFSKl2Q8Rk2i1Qfvd1zq2MOTZ93eGXw0=
 SHA256 (cargo/deno_package_json-0.4.2.tar.gz) = 0H0m2/zAHmNq74b5uv9/r1M4OY500oPY/gHjkGj0gEk=
 SHA256 (cargo/deno_path_util-0.3.1.tar.gz) = yHuJlpZq4bE+6cICGbHRD8U5BblXD6rmrfo0YU/RUiQ=
 SHA256 (cargo/deno_semver-0.7.1.tar.gz) = R3UnH5tWAkgmmPdtJOqe2Lonr39Yen6ah2kWMAxUJDU=
@@ -557,7 +557,7 @@ SHA256 (cargo/serde_derive-1.0.205.tar.gz) = aS1vWskCIBYdZ3TbMMZiICch5krtkFjSw5T
 SHA256 (cargo/serde_json-1.0.122.tar.gz) = eEtiA5UcV/90hHaxJsy16OKVmlwZ5cYXqxlWvj28aNo=
 SHA256 (cargo/serde_repr-0.1.16.tar.gz) = hyXh362zpQ9+XOCxpUBGb27T/noPyirCuLgx0xMWvQA=
 SHA256 (cargo/serde_urlencoded-0.7.1.tar.gz) = 00kcFHFcoilMTWqI8V6Ec5eIwdAw7tjBEENqr9qi8/0=
-SHA256 (cargo/serde_v8-0.242.0.tar.gz) = qp1k7B/cMxbLZcpgzLtaOpFPAUzLC19x/JKAUG/Sgkc=
+SHA256 (cargo/serde_v8-0.245.0.tar.gz) = lF+TyR4MfkeZtf7/8HZ1YUGq6S4mLE3EgzMQ3T0thF4=
 SHA256 (cargo/serdect-0.2.0.tar.gz) = qE8UoZ6aAUu59FEkiNmCmmjgTsq/+w+ZBM0azpRZgXc=
 SHA256 (cargo/sha1-0.10.6.tar.gz) = 47+Cmi1Rq0pd3xNS2EcMFAytyDAbKuF4nbAj8Bzt1ro=
 SHA256 (cargo/sha1_smol-1.0.0.tar.gz) = rhpHGGwDoyF3BC5V28X9Wu6QC44AaajXD7qWqTdc0BI=
@@ -797,7 +797,7 @@ SHA256 (cargo/zip-2.1.6.tar.gz) = QN2Mku/Clihs4fvRZlfF2+//RPG0ygHMX1F9i3s9Pi4=
 SHA256 (cargo/zstd-0.12.4.tar.gz) = GidZXhc2QRcfx0oSMrexx6fLbhgiLBHp37mIj6QkxTw=
 SHA256 (cargo/zstd-safe-6.0.6.tar.gz) = 7pj/0LSO6V5sUWgYjkSlRVCxVk2dUw7iHV8OrtEGlYE=
 SHA256 (cargo/zstd-sys-2.0.10+zstd.1.5.6.tar.gz) = wlOkkUr1uvyPqMhu5ACCfoPPbsARlewfHthEG/ANZao=
-SHA256 (deno-2.1.9.tar.gz) = U20JKwHrQ+UasvnL8r06vt4+efyOmgCcoNFF+WrtBzg=
+SHA256 (deno-2.1.10.tar.gz) = SyIksZf+AdeNRRBI6YS5DTb90J8+yFGfO8ow7u9lcyw=
 SIZE (cargo/Inflector-0.11.4.tar.gz) = 17438
 SIZE (cargo/addr2line-0.22.0.tar.gz) = 39156
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
@@ -930,7 +930,7 @@ SIZE (cargo/deno-tower-lsp-macros-0.9.0.tar.gz) = 2898
 SIZE (cargo/deno_ast-0.44.0.tar.gz) = 84314
 SIZE (cargo/deno_cache_dir-0.17.0.tar.gz) = 34157
 SIZE (cargo/deno_config-0.46.0.tar.gz) = 73729
-SIZE (cargo/deno_core-0.333.0.tar.gz) = 297153
+SIZE (cargo/deno_core-0.336.0.tar.gz) = 298778
 SIZE (cargo/deno_core_icudata-0.74.0.tar.gz) = 4581089
 SIZE (cargo/deno_doc-0.164.0.tar.gz) = 326680
 SIZE (cargo/deno_error-0.5.5.tar.gz) = 10320
@@ -941,7 +941,7 @@ SIZE (cargo/deno_lockfile-0.24.0.tar.gz) = 58862
 SIZE (cargo/deno_media_type-0.2.5.tar.gz) = 11223
 SIZE (cargo/deno_native_certs-0.3.0.tar.gz) = 7544
 SIZE (cargo/deno_npm-0.27.2.tar.gz) = 51049
-SIZE (cargo/deno_ops-0.209.0.tar.gz) = 78269
+SIZE (cargo/deno_ops-0.212.0.tar.gz) = 78558
 SIZE (cargo/deno_package_json-0.4.2.tar.gz) = 8165
 SIZE (cargo/deno_path_util-0.3.1.tar.gz) = 10238
 SIZE (cargo/deno_semver-0.7.1.tar.gz) = 29660
@@ -1357,7 +1357,7 @@ SIZE (cargo/serde_derive-1.0.205.tar.gz) = 55886
 SIZE (cargo/serde_json-1.0.122.tar.gz) = 147200
 SIZE (cargo/serde_repr-0.1.16.tar.gz) = 9629
 SIZE (cargo/serde_urlencoded-0.7.1.tar.gz) = 12822
-SIZE (cargo/serde_v8-0.242.0.tar.gz) = 35712
+SIZE (cargo/serde_v8-0.245.0.tar.gz) = 35709
 SIZE (cargo/serdect-0.2.0.tar.gz) = 11691
 SIZE (cargo/sha1-0.10.6.tar.gz) = 13517
 SIZE (cargo/sha1_smol-1.0.0.tar.gz) = 9782
@@ -1597,4 +1597,4 @@ SIZE (cargo/zip-2.1.6.tar.gz) = 107876
 SIZE (cargo/zstd-0.12.4.tar.gz) = 30434
 SIZE (cargo/zstd-safe-6.0.6.tar.gz) = 20828
 SIZE (cargo/zstd-sys-2.0.10+zstd.1.5.6.tar.gz) = 749088
-SIZE (deno-2.1.9.tar.gz) = 24930014
+SIZE (deno-2.1.10.tar.gz) = 24986417
