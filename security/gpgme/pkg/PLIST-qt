@@ -147,7 +147,6 @@ include/qgpgme-qt6/qgpgme/wkdlookupjob.h
 include/qgpgme-qt6/qgpgme/wkdlookupresult.h
 include/qgpgme-qt6/qgpgme/wkdrefreshjob.h
 include/qgpgme-qt6/qgpgme/wkspublishjob.h
-lib/cmake/
 lib/cmake/Gpgmepp/
 lib/cmake/Gpgmepp/GpgmeppConfig.cmake
 lib/cmake/Gpgmepp/GpgmeppConfigVersion.cmake
