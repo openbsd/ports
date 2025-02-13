@@ -1,0 +1,12 @@
+Index: go.env
+--- go.env.orig
++++ go.env
+@@ -7,6 +7,6 @@
+ GOPROXY=https://proxy.golang.org,direct
+ GOSUMDB=sum.golang.org
+ 
+-# Automatically download newer toolchains as directed by go.mod files.
++# Only use the bundled toolchain, rather than downloading newer toolchains as directed by go.mod files.
+ # See https://go.dev/doc/toolchain for details.
+-GOTOOLCHAIN=auto
++GOTOOLCHAIN=local
