@@ -318,6 +318,7 @@
      SUBDIR += stockfish
      SUBDIR += stone-soup
      SUBDIR += stone-soup,no_x11
+     SUBDIR += stratagus
      SUBDIR += sudognu
      SUBDIR += sudoku
      SUBDIR += sumwars
@@ -357,6 +358,8 @@
      SUBDIR += vodovod
      SUBDIR += vvvvvv
      SUBDIR += wanderer
+     SUBDIR += war1gus
+     SUBDIR += wargus
      SUBDIR += warmux
      SUBDIR += warzone2100
      SUBDIR += wesnoth
