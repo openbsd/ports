@@ -12,7 +12,7 @@ HOMEPAGE =	https://xerces.apache.org/xerces-c/
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
-SITES =		https://www.apache.org/dist/xerces/c/3/sources/
+SITES =		${SITE_APACHE:=xerces/c/3/sources/}
 
 WANTLIB += ${COMPILER_LIBCXX} icudata icui18n icuuc m
 
