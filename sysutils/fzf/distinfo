@@ -1,4 +1,4 @@
-SHA256 (fzf-0.59.0.zip) = /fuFdWK9D8rpiQhBkB7nWlF/Pl0G5/1IHZE1LMuThBE=
+SHA256 (fzf-0.60.0.zip) = o5AzKCdYoApGlmfF5LxXxXac6eIXjLTS+KVAiUDLd50=
 SHA256 (go_modules/github.com/charlievieth/fastwalk/@v/v1.0.9.mod) = fvr4j8bZezS/ooNkLv+klw7D6jdNBYBXCRzS18q/SpM=
 SHA256 (go_modules/github.com/charlievieth/fastwalk/@v/v1.0.9.zip) = zEKvHsl+4g1s0BcsP6Zp/UIjYycDajn7hktqoIIlr3Y=
 SHA256 (go_modules/github.com/gdamore/encoding/@v/v1.0.1.mod) = Z2IawwIkfAvI+iS78TchCDbgwG1nxBFsjI+YHhY9AEM=
@@ -59,7 +59,8 @@ SHA256 (go_modules/golang.org/x/sys/@v/v0.12.0.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7
 SHA256 (go_modules/golang.org/x/sys/@v/v0.17.0.mod) = 0iezJfYh9OvijTm6dz6pm4cPOTt8CcNFksNlsW3VYN4=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.20.0.mod) = 0iezJfYh9OvijTm6dz6pm4cPOTt8CcNFksNlsW3VYN4=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.29.0.mod) = 0iezJfYh9OvijTm6dz6pm4cPOTt8CcNFksNlsW3VYN4=
-SHA256 (go_modules/golang.org/x/sys/@v/v0.29.0.zip) = HXWcAX0JMopNrN1KGgFwzyFkGZXG48ofliEzadc8aEY=
+SHA256 (go_modules/golang.org/x/sys/@v/v0.30.0.mod) = 0iezJfYh9OvijTm6dz6pm4cPOTt8CcNFksNlsW3VYN4=
+SHA256 (go_modules/golang.org/x/sys/@v/v0.30.0.zip) = 9SFL/smPAOVDLaaLvs4D6YYA+kFZTtAmVWy96Py298k=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.5.0.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7/nc5E0BFvDt85KUCQ=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.6.0.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7/nc5E0BFvDt85KUCQ=
 SHA256 (go_modules/golang.org/x/sys/@v/v0.8.0.mod) = 8DMzMJb+GY8xUd7tk/LeunTlC7/nc5E0BFvDt85KUCQ=
@@ -71,7 +72,8 @@ SHA256 (go_modules/golang.org/x/term/@v/v0.12.0.mod) = wpIGWJdMmcgFJ4+azIRDYmbw9
 SHA256 (go_modules/golang.org/x/term/@v/v0.17.0.mod) = 2+oCJUqsLPP9D3LHxgLlQ8X7rS0A2vwvgZwoqTUlgZk=
 SHA256 (go_modules/golang.org/x/term/@v/v0.20.0.mod) = popv0up5oDshapIJPgQ6AnvvRuJ19M4MpNIh3f0kTwE=
 SHA256 (go_modules/golang.org/x/term/@v/v0.28.0.mod) = FH0Wla7dfolUS8ghuRFgiQNUcHDmpNa4rGWLcYpRvuY=
-SHA256 (go_modules/golang.org/x/term/@v/v0.28.0.zip) = 7eWknqwJRtEAUXA/oZ+fBcTKw6IX5VtzE+JLbBWt6RQ=
+SHA256 (go_modules/golang.org/x/term/@v/v0.29.0.mod) = 2f4sMTEhoaDx6oAo5sS/vYr72PNOZ+rP0tHTeWSkyJ0=
+SHA256 (go_modules/golang.org/x/term/@v/v0.29.0.zip) = nZLFg9IiETrGU4SLMxn/VZ0tupL4Iyuv8D0I/JwLhhk=
 SHA256 (go_modules/golang.org/x/term/@v/v0.5.0.mod) = DW9YIoqtwaZSjmdV2gGFFlZuOuXFIB963hdz9W+o2TQ=
 SHA256 (go_modules/golang.org/x/term/@v/v0.8.0.mod) = XTYtaoNFP3Akcl6CTAXFlJYk749MsT9dfj1Lfxygsyc=
 SHA256 (go_modules/golang.org/x/text/@v/v0.13.0.mod) = FR5qGDlJHEtQ3+nDNFHwYyjVUYvY7koAYd4Ct60zL7I=
@@ -93,7 +95,7 @@ SHA256 (go_modules/golang.org/x/tools/@v/v0.21.1-0.20240508182429-e35e4ccd0d2d.z
 SHA256 (go_modules/golang.org/x/tools/@v/v0.6.0.mod) = gw7Xjc0+mSfEEuJkEjAwhEd0nVE9MQJNJ24kQ7IBZgk=
 SHA256 (go_modules/golang.org/x/xerrors/@v/v0.0.0-20190717185122-a985d3407aa7.mod) = ql4+ybt7n2gWCe+sAZ2d4ae6dxkkj/Hqon54iC2z1/U=
 SHA256 (go_modules/golang.org/x/xerrors/@v/v0.0.0-20190717185122-a985d3407aa7.zip) = xOnwY8/tVGyQ8AqWV96sT5FaiZT4y+bb0/GOeeuDAs8=
-SIZE (fzf-0.59.0.zip) = 373577
+SIZE (fzf-0.60.0.zip) = 376955
 SIZE (go_modules/github.com/charlievieth/fastwalk/@v/v1.0.9.mod) = 92
 SIZE (go_modules/github.com/charlievieth/fastwalk/@v/v1.0.9.zip) = 67891
 SIZE (go_modules/github.com/gdamore/encoding/@v/v1.0.1.mod) = 78
@@ -154,7 +156,8 @@ SIZE (go_modules/golang.org/x/sys/@v/v0.12.0.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.17.0.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.20.0.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.29.0.mod) = 33
-SIZE (go_modules/golang.org/x/sys/@v/v0.29.0.zip) = 1983637
+SIZE (go_modules/golang.org/x/sys/@v/v0.30.0.mod) = 33
+SIZE (go_modules/golang.org/x/sys/@v/v0.30.0.zip) = 1987982
 SIZE (go_modules/golang.org/x/sys/@v/v0.5.0.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.6.0.mod) = 33
 SIZE (go_modules/golang.org/x/sys/@v/v0.8.0.mod) = 33
@@ -166,7 +169,8 @@ SIZE (go_modules/golang.org/x/term/@v/v0.12.0.mod) = 68
 SIZE (go_modules/golang.org/x/term/@v/v0.17.0.mod) = 68
 SIZE (go_modules/golang.org/x/term/@v/v0.20.0.mod) = 68
 SIZE (go_modules/golang.org/x/term/@v/v0.28.0.mod) = 68
-SIZE (go_modules/golang.org/x/term/@v/v0.28.0.zip) = 19810
+SIZE (go_modules/golang.org/x/term/@v/v0.29.0.mod) = 68
+SIZE (go_modules/golang.org/x/term/@v/v0.29.0.zip) = 19810
 SIZE (go_modules/golang.org/x/term/@v/v0.5.0.mod) = 67
 SIZE (go_modules/golang.org/x/term/@v/v0.8.0.mod) = 67
 SIZE (go_modules/golang.org/x/text/@v/v0.13.0.mod) = 197

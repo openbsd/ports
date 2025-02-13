@@ -13,9 +13,9 @@ MODGO_MODULES =	\
 	golang.org/x/mod			 v0.17.0 \
 	golang.org/x/net			 v0.25.0 \
 	golang.org/x/sync			 v0.10.0 \
-	golang.org/x/sys			 v0.29.0 \
+	golang.org/x/sys			 v0.30.0 \
 	golang.org/x/telemetry			 v0.0.0-20240228155512-f48c80bd79b2 \
-	golang.org/x/term			 v0.28.0 \
+	golang.org/x/term			 v0.29.0 \
 	golang.org/x/text			 v0.21.0 \
 	golang.org/x/tools			 v0.21.1-0.20240508182429-e35e4ccd0d2d \
 	golang.org/x/xerrors			 v0.0.0-20190717185122-a985d3407aa7
@@ -52,6 +52,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sys	 v0.12.0 \
 	golang.org/x/sys	 v0.17.0 \
 	golang.org/x/sys	 v0.20.0 \
+	golang.org/x/sys	 v0.29.0 \
 	golang.org/x/sys	 v0.5.0 \
 	golang.org/x/sys	 v0.6.0 \
 	golang.org/x/sys	 v0.8.0 \
@@ -60,6 +61,7 @@ MODGO_MODFILES =	\
 	golang.org/x/term	 v0.12.0 \
 	golang.org/x/term	 v0.17.0 \
 	golang.org/x/term	 v0.20.0 \
+	golang.org/x/term	 v0.28.0 \
 	golang.org/x/term	 v0.5.0 \
 	golang.org/x/term	 v0.8.0 \
 	golang.org/x/text	 v0.13.0 \
