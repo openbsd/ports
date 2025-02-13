@@ -1,7 +1,7 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -2008,7 +2008,7 @@ top_build_prefix = @top_build_prefix@
+@@ -2181,7 +2181,7 @@ top_build_prefix = @top_build_prefix@
  top_builddir = @top_builddir@
  top_srcdir = @top_srcdir@
  SUBDIRS = lib include libwget examples src $(am__append_1) \
@@ -10,3 +10,11 @@ Index: Makefile.in
  ACLOCAL_AMFLAGS = -I m4 ${ACLOCAL_FLAGS}
  pkgconfigdir = $(libdir)/pkgconfig
  pkgconfig_DATA = libwget.pc
+@@ -2878,7 +2878,6 @@ check-local:
+ 
+ # ppl often forget to run ldconfig after an install, so let's do it here
+ install-exec-hook:
+-	$(AM_V_at)$(LDCONFIG) || :
+ 
+ # Tell versions [3.59,3.63) of GNU make to not export all variables.
+ # Otherwise a system limit (for SysV at least) may be exceeded.
