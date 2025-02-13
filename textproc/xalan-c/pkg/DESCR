@@ -1,0 +1,7 @@
+Xalan-C++ version is a robust implementation of the W3C Recommendations
+for XSL Transformations (XSLT) and the XML Path Language (XPath).
+It works with the Xerces-C++ XML parser.
+
+The Xalan-C++ project creates and distributes a standard XSLT library
+and a simple Xalan command-line utility for transforming XML
+documents.
