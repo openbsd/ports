@@ -2,6 +2,8 @@
 # Patched with security patches up to Chromium version: 131.0.6778.70
 ONLY_FOR_ARCHS =	amd64 aarch64 i386
 
+BROKEN-i386 =		"WARNING: QtWebEngine won't be built. 32bit version of Nodejs is not supported"
+
 USE_WXNEEDED =		Yes
 USE_NOBTCFI =		Yes
 
