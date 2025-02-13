@@ -1,14 +1,16 @@
 COMMENT =	provide non blocking randomness
 
-DISTNAME =	Crypt-URandom-0.40
+DISTNAME =	Crypt-URandom-0.53
 
 CATEGORIES =	security
 
 # Perl
 PERMIT_PACKAGE =	Yes
 
+WANTLIB =		c perl
+
 MODULES =		cpan
 
-PKG_ARCH =		*
+TEST_DEPENDS =		devel/p5-Test-Pod>=1.14
 
 .include <bsd.port.mk>
