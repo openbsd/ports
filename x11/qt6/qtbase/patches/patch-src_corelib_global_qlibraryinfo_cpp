@@ -1,0 +1,36 @@
+QLibraryInfo: speed up checking if ":/qt/etc/qt.conf" resource exists
+
+Go straight for QResource, because this is run very early in Qt's
+initialization, usually as a result of some debug message, via
+QLoggingRegistry::initializeRules(). This bypasses the need to create
+QResourceFileEnginePrivate, QResourceFileEngine, QFileInfoPrivate, and
+QFileInfo, all of which would end up in this .isValid() call.
+
+Additionally, I'm making it query in the C locale, which will also avoid
+initializing the system & default QLocales. If a resource exists in any
+language, the C locale query will find it.
+
+Task-number: QTBUG-133206
+
+https://invent.kde.org/qt/qt/qtbase/-/commit/a43c7e58046604796aa69974ea1c5d3e2648c755
+
+Index: src/corelib/global/qlibraryinfo.cpp
+--- src/corelib/global/qlibraryinfo.cpp.orig
++++ src/corelib/global/qlibraryinfo.cpp
+@@ -6,6 +6,7 @@
+ #include "qstringlist.h"
+ #include "qfile.h"
+ #if QT_CONFIG(settings)
++#include "qresource.h"
+ #include "qsettings.h"
+ #endif
+ #include "qlibraryinfo.h"
+@@ -103,7 +104,7 @@ static std::unique_ptr<QSettings> findConfiguration()
+         return std::make_unique<QSettings>(*qtconfManualPath, QSettings::IniFormat);
+ 
+     QString qtconfig = QStringLiteral(":/qt/etc/qt.conf");
+-    if (QFile::exists(qtconfig))
++    if (QResource(qtconfig, QLocale::c()).isValid())
+         return std::make_unique<QSettings>(qtconfig, QSettings::IniFormat);
+ #ifdef Q_OS_DARWIN
+     CFBundleRef bundleRef = CFBundleGetMainBundle();
