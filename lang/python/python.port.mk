@@ -208,20 +208,15 @@ _MODPY_PRE_BUILD_STEPS +=	\
 _MODPY_USERBASE =	${WRKDIR}
 .endif
 
-# XXX  If we run into too many problems with setuptools ports and junking
-# XXX  then this can be enabled, however if a "nojunk" port fails to build,
-# XXX  DPB will no longer junk on that node, likely resulting in running
-# XXX  out of disk space in /usr/local. So far it has only happened very
-# XXX  occasionally and a single port failure is easier to clean up, and
-# XXX  setuptools use is decreasing, so trying to avoid this!
-#
-#.if ${MODPY_SETUPTOOLS:L} == "yes" || ${MODPY_PYBUILD:Msetuptools*}
+.if ${MODPY_SETUPTOOLS:L} == "yes" || ${MODPY_PYBUILD:Msetuptools*}
 # Setuptools opportunistically picks up plugins. If it picks one up that
 # uses finalize_distribution_options (usually setuptools_scm), junking
 # that plugin will cause failure at the end of build.
 # In the absence of a targetted means of disabling this, use a big hammer:
-#DPB_PROPERTIES +=	nojunk
-#.endif
+DPB_PROPERTIES +=	nojunk
+# XXX if a "nojunk" port fails to build, DPB will no longer junk on that
+# XXX node, likely resulting in running out of disk space in /usr/local.
+.endif
 
 # cython picks up pythran at run time in some cases, resulting in
 # DPB failure if junking occurs. Add a dep to avoid this. This is
