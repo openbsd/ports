@@ -1,7 +1,7 @@
 Index: src/cmd/link/internal/ld/lib.go
 --- src/cmd/link/internal/ld/lib.go.orig
 +++ src/cmd/link/internal/ld/lib.go
-@@ -1472,10 +1472,12 @@ func (ctxt *Link) hostlink() {
+@@ -1485,10 +1485,12 @@ func (ctxt *Link) hostlink() {
  		if ctxt.BuildMode != BuildModePIE {
  			argv = append(argv, "-Wl,-nopie")
  		}

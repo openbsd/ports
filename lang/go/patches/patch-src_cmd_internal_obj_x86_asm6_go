@@ -91,7 +91,7 @@ Index: src/cmd/internal/obj/x86/asm6.go
  	}
  
  	var count int64 // rough count of number of instructions
-@@ -4890,7 +4929,11 @@ func (ab *AsmBuf) doasm(ctxt *obj.Link, cursym *obj.LS
+@@ -4885,7 +4924,11 @@ func (ab *AsmBuf) doasm(ctxt *obj.Link, cursym *obj.LS
  					// LEAQ -16(SP), BP
  					ab.Put(bpduff1)
  				}
@@ -101,6 +101,6 @@ Index: src/cmd/internal/obj/x86/asm6.go
 +				} else {
 +					ab.Put1(byte(op))
 +				}
- 				r = obj.Addrel(cursym)
- 				r.Off = int32(p.Pc + int64(ab.Len()))
- 				r.Sym = p.To.Sym
+ 				cursym.AddRel(ctxt, obj.Reloc{
+ 					Type: objabi.R_CALL,
+ 					Off:  int32(p.Pc + int64(ab.Len())),
