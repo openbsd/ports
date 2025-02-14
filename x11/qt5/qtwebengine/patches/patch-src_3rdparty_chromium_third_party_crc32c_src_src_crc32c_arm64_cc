@@ -1,0 +1,16 @@
+Avoid clang 19 error:
+
+... crc32c_arm64.cc:89:20: error: always_inline function 'vmull_p64' requires target feature 'aes', but would be inlined into function 'ExtendArm64' that is compiled without support for 'aes'
+
+Index: src/3rdparty/chromium/third_party/crc32c/src/src/crc32c_arm64.cc
+--- src/3rdparty/chromium/third_party/crc32c/src/src/crc32c_arm64.cc.orig
++++ src/3rdparty/chromium/third_party/crc32c/src/src/crc32c_arm64.cc
+@@ -62,7 +62,7 @@
+ 
+ namespace crc32c {
+ 
+-uint32_t ExtendArm64(uint32_t crc, const uint8_t *buf, size_t size) {
++uint32_t ExtendArm64(uint32_t crc, const uint8_t *buf, size_t size) __attribute__((target("aes"))) {
+   int64_t length = size;
+   uint32_t crc0, crc1, crc2, crc3;
+   uint64_t t0, t1, t2;
