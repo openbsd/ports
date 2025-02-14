@@ -1,6 +1,6 @@
 COMMENT =		cargo helper to build and install c-like libraries
 
-V =			0.10.7
+V =			0.10.9
 PKGNAME =		cargo-c-$V
 GH_ACCOUNT =		lu-zero
 GH_PROJECT =		cargo-c
