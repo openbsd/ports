@@ -11,7 +11,7 @@ DISTFILES =	openmp-${LLVM_VERSION}.src.tar.xz \
 		cmake-${LLVM_VERSION}.src.tar.xz
 SUPDISTFILES =  ${DISTFILES:S/$/.sig/}
 PKGNAME =	llvm-openmp-${LLVM_VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS =	omp	0.0
 
