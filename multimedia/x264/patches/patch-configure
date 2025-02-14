@@ -7,7 +7,7 @@ Index: configure
  
  if test x"$1" = x"-h" -o x"$1" = x"--help" ; then
  cat <<EOF
-@@ -1360,10 +1360,6 @@ if [ "$pic" = "yes" ] ; then
+@@ -1364,10 +1364,6 @@ if [ "$pic" = "yes" ] ; then
      [ $SYS = SunOS -a "$ARCH" = "X86" ] && SOFLAGS="$SOFLAGS -mimpure-text"
  fi
  
@@ -18,7 +18,7 @@ Index: configure
  if [ "$strip" = "yes" ]; then
      LDFLAGS="$LDFLAGS -s"
  fi
-@@ -1372,11 +1368,11 @@ if [ "$debug" = "yes" ]; then
+@@ -1376,11 +1372,11 @@ if [ "$debug" = "yes" ]; then
      CFLAGS="-O1 -g $CFLAGS"
      RCFLAGS="$RCFLAGS -DDEBUG"
  else
@@ -32,7 +32,7 @@ Index: configure
      fi
  fi
  [ "$lto" = "auto" ] && lto="no"
-@@ -1608,7 +1604,6 @@ if [ "$cli" = "yes" ]; then
+@@ -1612,7 +1608,6 @@ if [ "$cli" = "yes" ]; then
  fi
  
  if [ "$shared" = "yes" ]; then
