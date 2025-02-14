@@ -1,4 +1,4 @@
-Hide libevdev-openbsd from build 
+Hide libevdev-openbsd from build ; see XXX in wayland/libevdev-openbsd/Makefile
 
 Index: meson.build
 --- meson.build.orig
