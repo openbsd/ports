@@ -5,3 +5,5 @@ It works with the Xerces-C++ XML parser.
 The Xalan-C++ project creates and distributes a standard XSLT library
 and a simple Xalan command-line utility for transforming XML
 documents.
+
+Note: The project is unmaintained, but kept as a dependency.
