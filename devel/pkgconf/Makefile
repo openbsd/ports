@@ -11,7 +11,7 @@ HOMEPAGE =		https://gitea.treehouse.systems/ariadne/pkgconf
 
 MAINTAINER =		Adam Steen <adam@adamsteen.com.au>
 
-# GPLv2+
+# ISC
 PERMIT_PACKAGE =	Yes
 
 WANTLIB =		c
