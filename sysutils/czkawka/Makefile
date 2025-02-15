@@ -1,3 +1,6 @@
+# slint segfaults in custom build command
+NOT_FOR_ARCHS =		${BE_ARCHS}
+
 COMMENT-main =		remove unnecessary/duplicate files
 COMMENT-gui =		GUI to remove unnecessary/duplicate files
 
