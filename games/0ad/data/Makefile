@@ -7,10 +7,10 @@ PKG_ARCH =		*
 
 NO_BUILD =		Yes
 NO_TEST =		Yes
-EXTRACT_ONLY =
+EXTRACT_ONLY =		# empty
 
 do-install:
-	tar -zxf ${FULLDISTDIR}/${DISTFILES} -C ${PREFIX}/share \
-		-s ",0ad-${V}/binaries/data/,0ad/,g"
+	xz -T${MAKE_JOBS} -d <${FULLDISTDIR}/${DISTFILES} | ${TAR} -xf - \
+	    -C ${PREFIX}/share/ -s ',0ad-${V}/binaries/data/,0ad/,g'
 
 .include <bsd.port.mk>
