@@ -1,6 +1,6 @@
 COMMENT =	command-line encryption using scrypt key derivation function
 
-DISTNAME =	scrypt-1.3.2
+DISTNAME =	scrypt-1.3.3
 
 SHARED_LIBS +=	scrypt-kdf                0.0 # 1.0
 
