@@ -269,11 +269,11 @@ MODGO_MODULES =	\
 	github.com/cespare/xxhash								 v1.1.0 \
 	github.com/cespare/xxhash/v2								 v2.3.0 \
 	github.com/charmbracelet/bubbles							 v0.20.0 \
-	github.com/charmbracelet/bubbletea							 v1.2.4 \
+	github.com/charmbracelet/bubbletea							 v1.3.3 \
 	github.com/charmbracelet/glamour							 v0.8.0 \
 	github.com/charmbracelet/harmonica							 v0.2.0 \
 	github.com/charmbracelet/lipgloss							 v1.0.0 \
-	github.com/charmbracelet/x/ansi								 v0.7.0 \
+	github.com/charmbracelet/x/ansi								 v0.8.0 \
 	github.com/charmbracelet/x/exp/golden							 v0.0.0-20240815200342-61de596daa2b \
 	github.com/charmbracelet/x/term								 v0.2.1 \
 	github.com/cheggaaa/pb									 v1.0.27 \
@@ -538,7 +538,7 @@ MODGO_MODULES =	\
 	github.com/muesli/ansi									 v0.0.0-20230316100256-276c6243b2f6 \
 	github.com/muesli/cancelreader								 v0.2.2 \
 	github.com/muesli/reflow								 v0.3.0 \
-	github.com/muesli/termenv								 v0.15.3-0.20240618155329-98d742f6907a \
+	github.com/muesli/termenv								 v0.15.3-0.20241212154518-8c990cd6cf4b \
 	github.com/munnerz/goautoneg								 v0.0.0-20191010083416-a7dc8b61c822 \
 	github.com/mwitkow/go-conntrack								 v0.0.0-20161129095857-cc309e4a2223 \
 	github.com/mxk/go-flowrate								 v0.0.0-20140419014527-cca7078d478f \
@@ -664,7 +664,7 @@ MODGO_MODULES =	\
 	golang.org/x/image									 v0.0.0-20220302094943-723b81ca9867 \
 	golang.org/x/lint									 v0.0.0-20210508222113-6edffad5e616 \
 	golang.org/x/mobile									 v0.0.0-20190719004257-d2bd2a29d028 \
-	golang.org/x/mod									 v0.22.0 \
+	golang.org/x/mod									 v0.23.0 \
 	golang.org/x/net									 v0.34.0 \
 	golang.org/x/oauth2									 v0.26.0 \
 	golang.org/x/sync									 v0.11.0 \
@@ -1457,7 +1457,6 @@ MODGO_MODFILES =	\
 	github.com/charmbracelet/x/ansi								 v0.1.4 \
 	github.com/charmbracelet/x/ansi								 v0.2.3 \
 	github.com/charmbracelet/x/ansi								 v0.4.2 \
-	github.com/charmbracelet/x/ansi								 v0.4.5 \
 	github.com/charmbracelet/x/exp/golden							 v0.0.0-20240715153702-9ba8adf781c4 \
 	github.com/charmbracelet/x/exp/golden							 v0.0.0-20240806155701-69247e0abc2a \
 	github.com/charmbracelet/x/term								 v0.2.0 \
@@ -1779,6 +1778,7 @@ MODGO_MODFILES =	\
 	github.com/modern-go/reflect2								 v0.0.0-20180701023420-4b7aa43c6742 \
 	github.com/modern-go/reflect2								 v1.0.1 \
 	github.com/muesli/termenv								 v0.15.2 \
+	github.com/muesli/termenv								 v0.15.3-0.20240618155329-98d742f6907a \
 	github.com/munnerz/goautoneg								 v0.0.0-20120707110453-a547fc61f48d \
 	github.com/oklog/run									 v1.0.0 \
 	github.com/onsi/ginkgo									 v0.0.0-20170829012221-11459a886d9c \
@@ -2038,6 +2038,7 @@ MODGO_MODFILES =	\
 	golang.org/x/mod									 v0.17.0 \
 	golang.org/x/mod									 v0.19.0 \
 	golang.org/x/mod									 v0.2.0 \
+	golang.org/x/mod									 v0.22.0 \
 	golang.org/x/mod									 v0.3.0 \
 	golang.org/x/mod									 v0.4.0 \
 	golang.org/x/mod									 v0.4.1 \
@@ -2187,7 +2188,6 @@ MODGO_MODFILES =	\
 	golang.org/x/sync									 v0.6.0 \
 	golang.org/x/sync									 v0.7.0 \
 	golang.org/x/sync									 v0.8.0 \
-	golang.org/x/sync									 v0.9.0 \
 	golang.org/x/sys									 v0.0.0-20170830134202-bb24a47a89ea \
 	golang.org/x/sys									 v0.0.0-20180830151530-49385e6e1522 \
 	golang.org/x/sys									 v0.0.0-20180905080454-ebe1bf3edb33 \
