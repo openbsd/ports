@@ -13,6 +13,7 @@ COMMENT =		WebRTC build for Telegram
 DIST_TUPLE =		github	desktop-app	tg_owt	\
 			8198c4d8b91e22d68eb5c7327fd408e3b6abcc79	.
 PKGNAME =		tg_owt-0.0.0.20241028
+REVISION =		0
 
 CATEGORIES =		net
 
@@ -60,9 +61,10 @@ WANTLIB += absl_log_severity absl_low_level_hash absl_malloc_internal
 WANTLIB += absl_raw_hash_set absl_raw_logging_internal absl_spinlock_wait
 WANTLIB += absl_stacktrace absl_str_format_internal absl_string_view
 WANTLIB += absl_strings absl_strings_internal absl_symbolize absl_synchronization
-WANTLIB += absl_throw_delegate absl_time absl_time_zone absl_utf8_for_code_point
-WANTLIB += avcodec avformat avutil crc32c crypto jpeg m openh264
-WANTLIB += opus srtp2 ssl swresample swscale vpx
+WANTLIB += absl_throw_delegate absl_time absl_time_zone absl_tracing_internal
+WANTLIB += absl_utf8_for_code_point avcodec avformat avutil crc32c
+WANTLIB += crypto jpeg m openh264 opus srtp2 ssl swresample swscale
+WANTLIB += vpx
 
 # C++20
 COMPILER =		base-clang ports-gcc
@@ -78,7 +80,7 @@ BUILD_DEPENDS =		devel/yasm
 
 LIB_DEPENDS =		audio/opus \
 			devel/crc32c \
-			devel/abseil-cpp>=20230125.3 \
+			devel/abseil-cpp>=20250127.0 \
 			graphics/ffmpeg \
 			graphics/jpeg \
 			multimedia/libvpx>=1.10.0 \
