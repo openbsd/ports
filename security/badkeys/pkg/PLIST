@@ -15,6 +15,8 @@ lib/python${MODPY_VERSION}/site-packages/badkeys/${MODPY_PYCACHE}checks.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/badkeys/${MODPY_PYCACHE}checks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/badkeys/${MODPY_PYCACHE}dkim.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/badkeys/${MODPY_PYCACHE}dkim.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/badkeys/${MODPY_PYCACHE}jwk.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/badkeys/${MODPY_PYCACHE}jwk.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/badkeys/${MODPY_PYCACHE}runcli.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/badkeys/${MODPY_PYCACHE}runcli.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/badkeys/${MODPY_PYCACHE}scanssh.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -23,6 +25,8 @@ lib/python${MODPY_VERSION}/site-packages/badkeys/${MODPY_PYCACHE}scantls.${MODPY
 lib/python${MODPY_VERSION}/site-packages/badkeys/${MODPY_PYCACHE}scantls.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/badkeys/${MODPY_PYCACHE}update.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/badkeys/${MODPY_PYCACHE}update.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/badkeys/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/badkeys/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/badkeys/allkeys/
 lib/python${MODPY_VERSION}/site-packages/badkeys/allkeys/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/badkeys/allkeys/${MODPY_PYCACHE}/
@@ -33,6 +37,7 @@ lib/python${MODPY_VERSION}/site-packages/badkeys/allkeys/${MODPY_PYCACHE}block.$
 lib/python${MODPY_VERSION}/site-packages/badkeys/allkeys/block.py
 lib/python${MODPY_VERSION}/site-packages/badkeys/checks.py
 lib/python${MODPY_VERSION}/site-packages/badkeys/dkim.py
+lib/python${MODPY_VERSION}/site-packages/badkeys/jwk.py
 lib/python${MODPY_VERSION}/site-packages/badkeys/keydata/
 lib/python${MODPY_VERSION}/site-packages/badkeys/keydata/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/badkeys/keydata/${MODPY_PYCACHE}/
@@ -76,3 +81,4 @@ lib/python${MODPY_VERSION}/site-packages/badkeys/runcli.py
 lib/python${MODPY_VERSION}/site-packages/badkeys/scanssh.py
 lib/python${MODPY_VERSION}/site-packages/badkeys/scantls.py
 lib/python${MODPY_VERSION}/site-packages/badkeys/update.py
+lib/python${MODPY_VERSION}/site-packages/badkeys/utils.py

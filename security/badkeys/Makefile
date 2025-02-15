@@ -1,9 +1,8 @@
 COMMENT=	check cryptographic keys for known weaknesses
 
-MODPY_DISTV=	0.0.12
+MODPY_DISTV=	0.0.13
 # standalone; no py- prefix/FLAVOR
 DISTNAME=	badkeys-${MODPY_DISTV}
-REVISION=	0
 
 CATEGORIES=	security
 
@@ -13,10 +12,10 @@ HOMEPAGE=	https://badkeys.info/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
+MODPY_PI=	Yes
 
-PORTHOME=	${WRKSRC}
+PORTHOME=	${WRKDIR}
 
 RUN_DEPENDS=	math/py-gmpy2 \
 		security/py-cryptography \
