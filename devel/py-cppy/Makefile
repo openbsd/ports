@@ -1,6 +1,6 @@
-COMMENT=	C++ helper library for python extension modules
+COMMENT=	C++ helper library for Python extension modules
 
-MODPY_DISTV=	1.3.0
+MODPY_DISTV=	1.3.1
 DISTNAME=	cppy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
