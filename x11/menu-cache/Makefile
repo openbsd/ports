@@ -1,10 +1,8 @@
 COMMENT=		caching mechanism for freedesktop.org compliant menus
 
-DISTNAME=		menu-cache-1.1.0
-EXTRACT_SUFX=		.tar.xz
-REVISION=		3
+DIST_TUPLE=		github lxde menu-cache 1.1.1 .
 
-SHARED_LIBS +=  menu-cache           1.0      # 4.1
+SHARED_LIBS +=  menu-cache           1.1      # 5.1
 
 CATEGORIES=		x11
 
@@ -18,10 +16,13 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += c ffi fm-extra gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
 WANTLIB += gthread-2.0 iconv intl m pcre2-8 pthread z
 
-SITES=			${SITE_SOURCEFORGE:=lxde/}
+BUILD_DEPENDS=		textproc/gtk-doc
 
 LIB_DEPENDS=		x11/libfm-extra
 
-CONFIGURE_STYLE=	gnu
+AUTOCONF_VERSION=	2.72
+AUTOMAKE_VERSION=	1.17
+
+CONFIGURE_STYLE=	autoreconf
 
 .include <bsd.port.mk>
