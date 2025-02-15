@@ -1852,6 +1852,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_openssl-src}/.github/workflows/
 share/rust-openssl-tests/modcargo-crates/${VER_openssl-src}/.github/workflows/main.yml
 share/rust-openssl-tests/modcargo-crates/${VER_openssl-src}/.gitignore
 share/rust-openssl-tests/modcargo-crates/${VER_openssl-src}/.gitmodules
+share/rust-openssl-tests/modcargo-crates/${VER_openssl-src}/Cargo.lock
 share/rust-openssl-tests/modcargo-crates/${VER_openssl-src}/Cargo.toml
 share/rust-openssl-tests/modcargo-crates/${VER_openssl-src}/Cargo.toml.orig
 share/rust-openssl-tests/modcargo-crates/${VER_openssl-src}/LICENSE-APACHE
@@ -8355,6 +8356,7 @@ share/rust-openssl-tests/openssl-sys/src/x509v3.rs
 share/rust-openssl-tests/openssl/CHANGELOG.md
 share/rust-openssl-tests/openssl/Cargo.toml
 share/rust-openssl-tests/openssl/LICENSE
+share/rust-openssl-tests/openssl/LICENSE-APACHE
 share/rust-openssl-tests/openssl/README.md
 share/rust-openssl-tests/openssl/build.rs
 share/rust-openssl-tests/openssl/examples/
