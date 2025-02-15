@@ -1,7 +1,6 @@
 COMMENT=		python mocking and patching library for testing
 
-MODPY_DISTV=	4.0.3
-REVISION=		4
+MODPY_DISTV=		5.1.0
 DISTNAME=		mock-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
