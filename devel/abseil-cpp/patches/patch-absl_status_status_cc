@@ -1,3 +1,5 @@
+OpenBSD has no ENOLINK
+
 Index: absl/status/status.cc
 --- absl/status/status.cc.orig
 +++ absl/status/status.cc

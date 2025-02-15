@@ -45,6 +45,7 @@ include/absl/base/internal/strerror.h
 include/absl/base/internal/sysinfo.h
 include/absl/base/internal/thread_identity.h
 include/absl/base/internal/throw_delegate.h
+include/absl/base/internal/tracing.h
 include/absl/base/internal/tsan_mutex_interface.h
 include/absl/base/internal/unaligned_access.h
 include/absl/base/internal/unscaledcycleclock.h
@@ -215,6 +216,7 @@ include/absl/log/internal/nullstream.h
 include/absl/log/internal/proto.h
 include/absl/log/internal/strip.h
 include/absl/log/internal/structured.h
+include/absl/log/internal/structured_proto.h
 include/absl/log/internal/test_actions.h
 include/absl/log/internal/test_helpers.h
 include/absl/log/internal/test_matchers.h
@@ -431,6 +433,7 @@ lib/cmake/absl/abslConfigVersion.cmake
 lib/cmake/absl/abslTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/absl/abslTargets.cmake
 @lib lib/libabsl_atomic_hook_test_helper.so.${LIBabsl_atomic_hook_test_helper_VERSION}
+@lib lib/libabsl_bad_any_cast_impl.so.${LIBabsl_bad_any_cast_impl_VERSION}
 @lib lib/libabsl_bad_optional_access.so.${LIBabsl_bad_optional_access_VERSION}
 @lib lib/libabsl_bad_variant_access.so.${LIBabsl_bad_variant_access_VERSION}
 @lib lib/libabsl_base.so.${LIBabsl_base_VERSION}
@@ -472,6 +475,7 @@ lib/cmake/absl/abslTargets.cmake
 @lib lib/libabsl_hashtablez_sampler.so.${LIBabsl_hashtablez_sampler_VERSION}
 @lib lib/libabsl_int128.so.${LIBabsl_int128_VERSION}
 @lib lib/libabsl_kernel_timeout_internal.so.${LIBabsl_kernel_timeout_internal_VERSION}
+@lib lib/libabsl_leak_check.so.${LIBabsl_leak_check_VERSION}
 @lib lib/libabsl_log_entry.so.${LIBabsl_log_entry_VERSION}
 @lib lib/libabsl_log_flags.so.${LIBabsl_log_flags_VERSION}
 @lib lib/libabsl_log_globals.so.${LIBabsl_log_globals_VERSION}
@@ -485,6 +489,7 @@ lib/cmake/absl/abslTargets.cmake
 @lib lib/libabsl_log_internal_message.so.${LIBabsl_log_internal_message_VERSION}
 @lib lib/libabsl_log_internal_nullguard.so.${LIBabsl_log_internal_nullguard_VERSION}
 @lib lib/libabsl_log_internal_proto.so.${LIBabsl_log_internal_proto_VERSION}
+@lib lib/libabsl_log_internal_structured_proto.so.${LIBabsl_log_internal_structured_proto_VERSION}
 @lib lib/libabsl_log_internal_test_actions.so.${LIBabsl_log_internal_test_actions_VERSION}
 @lib lib/libabsl_log_internal_test_helpers.so.${LIBabsl_log_internal_test_helpers_VERSION}
 @lib lib/libabsl_log_internal_test_matchers.so.${LIBabsl_log_internal_test_matchers_VERSION}
@@ -530,6 +535,7 @@ lib/cmake/absl/abslTargets.cmake
 @lib lib/libabsl_time.so.${LIBabsl_time_VERSION}
 @lib lib/libabsl_time_internal_test_util.so.${LIBabsl_time_internal_test_util_VERSION}
 @lib lib/libabsl_time_zone.so.${LIBabsl_time_zone_VERSION}
+@lib lib/libabsl_tracing_internal.so.${LIBabsl_tracing_internal_VERSION}
 @lib lib/libabsl_utf8_for_code_point.so.${LIBabsl_utf8_for_code_point_VERSION}
 @lib lib/libabsl_vlog_config_internal.so.${LIBabsl_vlog_config_internal_VERSION}
 lib/pkgconfig/absl_absl_check.pc
@@ -537,9 +543,12 @@ lib/pkgconfig/absl_absl_log.pc
 lib/pkgconfig/absl_absl_vlog_is_on.pc
 lib/pkgconfig/absl_algorithm.pc
 lib/pkgconfig/absl_algorithm_container.pc
+lib/pkgconfig/absl_any.pc
 lib/pkgconfig/absl_any_invocable.pc
 lib/pkgconfig/absl_atomic_hook.pc
 lib/pkgconfig/absl_atomic_hook_test_helper.pc
+lib/pkgconfig/absl_bad_any_cast.pc
+lib/pkgconfig/absl_bad_any_cast_impl.pc
 lib/pkgconfig/absl_bad_optional_access.pc
 lib/pkgconfig/absl_bad_variant_access.pc
 lib/pkgconfig/absl_base.pc
@@ -578,6 +587,7 @@ lib/pkgconfig/absl_crc32c.pc
 lib/pkgconfig/absl_crc_cord_state.pc
 lib/pkgconfig/absl_crc_cpu_detect.pc
 lib/pkgconfig/absl_crc_internal.pc
+lib/pkgconfig/absl_debugging.pc
 lib/pkgconfig/absl_debugging_internal.pc
 lib/pkgconfig/absl_decode_rust_punycode.pc
 lib/pkgconfig/absl_demangle_internal.pc
@@ -627,6 +637,7 @@ lib/pkgconfig/absl_inlined_vector_internal.pc
 lib/pkgconfig/absl_int128.pc
 lib/pkgconfig/absl_kernel_timeout_internal.pc
 lib/pkgconfig/absl_layout.pc
+lib/pkgconfig/absl_leak_check.pc
 lib/pkgconfig/absl_log.pc
 lib/pkgconfig/absl_log_entry.pc
 lib/pkgconfig/absl_log_flags.pc
@@ -649,6 +660,7 @@ lib/pkgconfig/absl_log_internal_nullstream.pc
 lib/pkgconfig/absl_log_internal_proto.pc
 lib/pkgconfig/absl_log_internal_strip.pc
 lib/pkgconfig/absl_log_internal_structured.pc
+lib/pkgconfig/absl_log_internal_structured_proto.pc
 lib/pkgconfig/absl_log_internal_test_actions.pc
 lib/pkgconfig/absl_log_internal_test_helpers.pc
 lib/pkgconfig/absl_log_internal_test_matchers.pc
@@ -740,6 +752,7 @@ lib/pkgconfig/absl_throw_delegate.pc
 lib/pkgconfig/absl_time.pc
 lib/pkgconfig/absl_time_internal_test_util.pc
 lib/pkgconfig/absl_time_zone.pc
+lib/pkgconfig/absl_tracing_internal.pc
 lib/pkgconfig/absl_tracked.pc
 lib/pkgconfig/absl_type_traits.pc
 lib/pkgconfig/absl_unordered_map_constructor_test.pc
