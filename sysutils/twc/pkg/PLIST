@@ -92,9 +92,9 @@ lib/python${MODPY_VERSION}/site-packages/twc/fmt.py
 lib/python${MODPY_VERSION}/site-packages/twc/typerx.py
 lib/python${MODPY_VERSION}/site-packages/twc/utils.py
 lib/python${MODPY_VERSION}/site-packages/twc/vars.py
-lib/python${MODPY_VERSION}/site-packages/twc_cli-2.7.0.dist-info/
-lib/python${MODPY_VERSION}/site-packages/twc_cli-2.7.0.dist-info/COPYING
-lib/python${MODPY_VERSION}/site-packages/twc_cli-2.7.0.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/twc_cli-2.7.0.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/twc_cli-2.7.0.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/twc_cli-2.7.0.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/twc_cli-${V}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/twc_cli-${V}.dist-info/COPYING
+lib/python${MODPY_VERSION}/site-packages/twc_cli-${V}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/twc_cli-${V}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/twc_cli-${V}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/twc_cli-${V}.dist-info/entry_points.txt

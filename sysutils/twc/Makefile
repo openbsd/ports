@@ -1,5 +1,5 @@
 COMMENT =		Timeweb Cloud CLI
-V =			2.7.0
+V =			2.8.0
 DISTNAME =		twc_cli-${V}
 PKGNAME =		${DISTNAME:S/_cli//}
 CATEGORIES =		sysutils net
@@ -22,5 +22,7 @@ RUN_DEPENDS =		devel/py-colorama \
 			textproc/py-toml \
 			textproc/py-yaml \
 			www/py-requests
+
+SUBST_VARS =		V
 
 .include <bsd.port.mk>
