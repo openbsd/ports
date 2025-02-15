@@ -8,7 +8,7 @@ Index: doc/ranger.1
  .IX Item "W3MIMGDISPLAY_PATH"
  By changing this variable, you can change the path of the executable file for
 -image previews.  By default, it is set to \fI/usr/lib/w3m/w3mimgdisplay\fR.
-+image previews.  By default, it is set to \fI${LOCALBASE}/libexec/w3m/w3mimgdisplay\fR.
++image previews.  By default, it is set to \fI/usr/local/libexec/w3m/w3mimgdisplay\fR.
  .SH "EXAMPLES"
  .IX Header "EXAMPLES"
  There are various examples on how to extend ranger with plugins or combine

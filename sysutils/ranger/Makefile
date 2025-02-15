@@ -1,8 +1,7 @@
 COMMENT =	minimalistic console file manager
 
-MODPY_DISTV =	1.9.3
+MODPY_DISTV =	1.9.4
 DISTNAME =	ranger-${MODPY_DISTV}
-REVISION =	6
 
 CATEGORIES =	sysutils misc
 
@@ -32,8 +31,5 @@ TEST_ENV =	HOME=${WRKDIR} \
 
 # tests
 USE_GMAKE =	Yes
-
-pre-configure:
-	${SUBST_CMD} ${WRKSRC}/{doc/ranger.1,ranger/ext/img_display.py}
 
 .include <bsd.port.mk>
