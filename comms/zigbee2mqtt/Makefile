@@ -1,5 +1,6 @@
 # building uses "esbuild" as a node module, which fetches a binary
-# (compiled golang). 0.24.2 has aarch64 and amd64.
+# (compiled golang). 0.24.2 has aarch64 and amd64. this probably will
+# build on arm64 if it has network access during build.
 ONLY_FOR_ARCHS=	amd64
 
 COMMENT=	Zigbee to MQTT bridge
