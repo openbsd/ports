@@ -1,11 +1,11 @@
 COMMENT=	free lossless audio codec
 
-VERSION=	1.4.3
+VERSION=	1.5.0
 DISTNAME=	flac-${VERSION}
 CATEGORIES=	audio archivers
 HOMEPAGE=	https://www.xiph.org/flac/
-SHARED_LIBS +=  FLAC                 13.1     # 13.0
-SHARED_LIBS +=  FLAC++               11.0     # 10.1
+SHARED_LIBS +=  FLAC                 14.0     # 14.0
+SHARED_LIBS +=  FLAC++               12.0     # 11.0
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 
