@@ -1,9 +1,8 @@
 COMMENT =		high-performance diff and patch library
 
-MODPY_DISTV =	20230430
-DISTNAME =		diff-match-patch-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-REVISION =		0
+MODPY_DISTV =		20241021
+DISTNAME =		diff_match_patch-${MODPY_DISTV}
+PKGNAME =		py-${DISTNAME:S/_/-/g}
 
 CATEGORIES =		textproc
 
