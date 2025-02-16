@@ -49,7 +49,7 @@ Index: configure.ac
      # Any changes made here should be reflected in the GCC+Darwin case below
      PGO_PROF_GEN_FLAG="-fprofile-instr-generate"
      PGO_PROF_USE_FLAG="-fprofile-instr-use=\"\$(shell pwd)/code.profclangd\""
-@@ -4128,11 +4129,7 @@ dnl Detect Tcl/Tk. Use pkg-config if available.
+@@ -4149,11 +4150,7 @@ dnl Detect Tcl/Tk. Use pkg-config if available.
  dnl
  found_tcltk=no
  for _QUERY in \
