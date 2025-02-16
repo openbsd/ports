@@ -1,7 +1,6 @@
 COMMENT=	cryptographic recipes and primitives for Python
 
-MODPY_DISTV=	44.0.0
-REVISION=	0
+MODPY_DISTV=	44.0.1
 DISTNAME=	cryptography-${MODPY_DISTV}
 DISTFILES=	cryptography-${MODPY_DISTV}${EXTRACT_SUFX}
 PKGNAME=	${MODPY_PY_PREFIX}${DISTNAME}
@@ -40,6 +39,7 @@ TEST_DEPENDS=	devel/py-certifi \
 		textproc/py-iso8601
 
 MODCARGO_CARGOTOML= ${WRKSRC}/src/rust/Cargo.toml
+MODCARGO_CARGOLOCK= ${WRKSRC}/Cargo.lock
 
 post-install:
 	rm -r ${WRKINST}${MODPY_SITEPKG}/rust
