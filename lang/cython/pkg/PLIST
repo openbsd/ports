@@ -1,6 +1,5 @@
-@pkgpath lang/cython,python3
-@conflict ${MODPY_PY_PREFIX}cython-<0.29.21p1
 @conflict py-cython-*
+@pkgpath lang/cython,python3
 bin/cygdb
 bin/cython
 bin/cythonize
