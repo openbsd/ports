@@ -3,7 +3,7 @@ COMMENT =		XML/XSLT library
 V =			1.12
 DISTNAME =		xalan_c-$V
 PKGNAME =		xalan-c-$V
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=  xalan-c                   0.0 # 0.0
 SHARED_LIBS +=  xalanMsg                  0.0 # 0.0

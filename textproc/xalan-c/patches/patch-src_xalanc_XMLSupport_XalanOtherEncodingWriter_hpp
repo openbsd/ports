@@ -1,0 +1,59 @@
+Fix build with clang 19 by removing never instantiated function
+that doesn't compile:
+
+/tmp/pobj/xalan-c-1.12/xalan_c-1.12/src/xalanc/XMLSupport/XalanOtherEncodingWriter.hpp:323:31: error: no member named 'm_isPresentable' in 'XalanOtherEncodingWriter<Predicate, ConstantsType>'
+  323 |                     if (this->m_isPresentable(value))
+      |                         ~~~~  ^
+/tmp/pobj/xalan-c-1.12/xalan_c-1.12/src/xalanc/XMLSupport/XalanOtherEncodingWriter.hpp:329:31: error: no member named 'writeNumberedEntityReference' in 'XalanOtherEncodingWriter<Predicate, ConstantsType>'
+  329 |                         this->writeNumberedEntityReference(value);
+      |                         ~~~~  ^
+1 warning and 2 errors generated.
+
+Index: src/xalanc/XMLSupport/XalanOtherEncodingWriter.hpp
+--- src/xalanc/XMLSupport/XalanOtherEncodingWriter.hpp.orig
++++ src/xalanc/XMLSupport/XalanOtherEncodingWriter.hpp
+@@ -302,44 +302,6 @@ class XalanOtherEncodingWriter : public XalanFormatter
+     }
+ 
+     void
+-    writeSafe(
+-            const XalanDOMChar*     theChars,
+-            size_type               theLength)
+-    {
+-        for(size_type i = 0; i < theLength; ++i)
+-        {
+-            const XalanDOMChar  ch = theChars[i];
+-
+-            if (isUTF16HighSurrogate(ch) == true)
+-            {
+-                if (i + 1 >= theLength)
+-                {
+-                    throwInvalidUTF16SurrogateException(ch, 0,  getMemoryManager());
+-                }
+-                else 
+-                {
+-                    XalanUnicodeChar    value = decodeUTF16SurrogatePair(ch, theChars[i+1],  getMemoryManager());
+-
+-                    if (this->m_isPresentable(value))
+-                    {
+-                        write(value);
+-                    }
+-                    else
+-                    {
+-                        this->writeNumberedEntityReference(value);
+-                    }
+-
+-                    ++i;
+-                }
+-            }
+-            else
+-            {
+-                write(static_cast<XalanUnicodeChar>(ch));
+-            }
+-        }
+-    }
+-
+-    void
+     write(const XalanDOMChar*     theChars)
+     {
+         write(theChars, XalanDOMString::length(theChars));
