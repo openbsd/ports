@@ -1,7 +1,7 @@
 COMMENT =		define and run multi-container applications with Docker
 
 MODGO_MODNAME =		github.com/docker/compose/v2
-MODGO_VERSION =		v2.32.4
+MODGO_VERSION =		v2.33.0
 DISTNAME =		docker-compose-${MODGO_VERSION}
 
 CATEGORIES =		sysutils
