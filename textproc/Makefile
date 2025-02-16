@@ -578,6 +578,7 @@
      SUBDIR += sim
      SUBDIR += simpleini
      SUBDIR += slides
+     SUBDIR += slipshow
      SUBDIR += solr
      SUBDIR += source-highlight
      SUBDIR += sp
