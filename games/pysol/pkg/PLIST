@@ -25116,6 +25116,7 @@ share/PySolFC/images/buttons/bluecurve/
 share/PySolFC/images/buttons/bluecurve/apply.png
 share/PySolFC/images/buttons/bluecurve/back.png
 share/PySolFC/images/buttons/bluecurve/cancel.png
+share/PySolFC/images/buttons/bluecurve/clear.png
 share/PySolFC/images/buttons/bluecurve/color.png
 share/PySolFC/images/buttons/bluecurve/help.png
 share/PySolFC/images/buttons/bluecurve/new.png
@@ -25128,6 +25129,7 @@ share/PySolFC/images/buttons/remix/
 share/PySolFC/images/buttons/remix/apply.png
 share/PySolFC/images/buttons/remix/back.png
 share/PySolFC/images/buttons/remix/cancel.png
+share/PySolFC/images/buttons/remix/clear.png
 share/PySolFC/images/buttons/remix/color.png
 share/PySolFC/images/buttons/remix/help.png
 share/PySolFC/images/buttons/remix/new.png

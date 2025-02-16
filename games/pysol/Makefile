@@ -1,9 +1,8 @@
 COMMENT =		solitaire card games collection
 
-MODPY_DISTV =	3.1.0
+MODPY_DISTV =		3.2.0
 DISTNAME =		PySolFC-${MODPY_DISTV}
 PKGNAME =		pysol-${MODPY_DISTV}
-REVISION =		0
 
 CATEGORIES =		games
 
