@@ -1,10 +1,10 @@
 COMMENT =		Python library for managing github repos
 
-MODPY_DISTV =	2.4.0
+MODPY_DISTV =		2.6.0
 DISTNAME =		pygithub-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+
 CATEGORIES =		devel
-REVISION =		0
 
 HOMEPAGE =		https://pygithub.readthedocs.io/en/stable/
 
@@ -26,6 +26,6 @@ RUN_DEPENDS =		devel/py-deprecated \
 			www/py-urllib3
 
 TEST_DEPENDS =		devel/py-test-cov \
-			www/py-httpretty
+			www/py-responses
 
 .include <bsd.port.mk>
