@@ -1,8 +1,7 @@
 COMMENT =		c protocol buffers
 
-V =			1.5.0
+V =			1.5.1
 DISTNAME =		protobuf-c-$V
-REVISION =		0
 
 SHARED_LIBS =		protobuf-c 2.0	# 1.0
 
@@ -51,7 +50,7 @@ CXXFLAGS +=		-std=gnu++17
 LIB_DEPENDS =		devel/protobuf
 
 CONFIGURE_STYLE =	autoconf
-AUTOCONF_VERSION =	2.71
+AUTOCONF_VERSION =	2.72
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
