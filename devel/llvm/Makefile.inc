@@ -136,11 +136,8 @@ MODPY_ADJ_FILES +=	\
 
 # XXX sync
 GCC_VER =		8.4.0
-.if ${MACHINE_ARCH} == "amd64"
-GCC_CONFIG =		x86_64-unknown-openbsd${OSREV}
-.else
-GCC_CONFIG =		${MACHINE_ARCH}-unknown-openbsd${OSREV}
-.endif
+# do not include OSREV
+GCC_CONFIG =		${MACHINE_ARCH:S/amd64/x86_64/}-unknown-openbsd
 
 .if ${LLVM_MAJOR} > 13
 CLANG_INCLUDE_PATH =	${LLVM_BASE}/lib/clang/${LLVM_MAJOR}/include

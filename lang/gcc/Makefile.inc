@@ -40,5 +40,9 @@ DESCR-dlang ?=	${PORTSDIR}/lang/gcc/DESCR-dlang
 HOMEPAGE?=	https://gcc.gnu.org/
 
 DIST_SUBDIR=gcc
-CONFIG=${MACHINE_ARCH}-unknown-openbsd${OSREV}
+
+# do not include OSREV
+CONFIG=${MACHINE_ARCH:S/amd64/x86_64/}-unknown-openbsd
 SUBST_VARS+=CONFIG V
+
+CONFIGURE_ARGS=	--build=${CONFIG}

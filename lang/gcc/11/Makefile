@@ -18,8 +18,8 @@ USE_NOEXECONLY = Yes
 V = 11.2.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
-REVISION = 14
-REVISION-c++ = 15
+REVISION = 15
+REVISION-c++ = 16
 
 ADASTRAP-amd64 = adastrap-amd64-$V-4.tar.xz
 ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
@@ -241,10 +241,6 @@ LIB_DEPENDS +=		devel/gmp,no_cxx,bootstrap \
 			devel/mpfr \
 			devel/libmpc
 LIB_DEPENDS-libs =
-
-.if ${MACHINE_ARCH:Mamd64}
-CONFIG = x86_64-unknown-openbsd${OSREV}
-.endif
 
 post-extract:
 .for f in egcc eg++

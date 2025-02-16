@@ -25,7 +25,7 @@ USE_NOEXECONLY = Yes
 V = 8.4.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
-REVISION = 25
+REVISION = 26
 
 ADASTRAP-amd64 = adastrap-amd64-$V-3.tar.xz
 ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
@@ -213,10 +213,6 @@ LIB_DEPENDS +=		devel/gmp,no_cxx,bootstrap \
 			devel/mpfr \
 			devel/libmpc
 LIB_DEPENDS-libs =
-
-.if ${MACHINE_ARCH:Mamd64}
-CONFIG = x86_64-unknown-openbsd${OSREV}
-.endif
 
 post-extract:
 .for f in egcc eg++
