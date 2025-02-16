@@ -2,6 +2,7 @@ COMMENT=		Foreign Function Interface
 
 V=			3.4.7
 DISTNAME=		libffi-$V
+REVISION=		0
 
 SHARED_LIBS +=  ffi                  2.2      # 9.4
 

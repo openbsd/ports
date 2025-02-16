@@ -1,0 +1,14 @@
+https://github.com/libffi/libffi/issues/879
+https://gitweb.gentoo.org/repo/gentoo.git/tree/dev-libs/libffi/files/libffi-3.4.7-Revert-Fix-x86-ffi64-calls-with-6-gp-and-some-sse-re.patch
+
+Index: testsuite/libffi.call/struct_int_float.c
+--- testsuite/libffi.call/struct_int_float.c.orig
++++ testsuite/libffi.call/struct_int_float.c
+@@ -5,6 +5,7 @@
+    Originator:	kellda  */
+ 
+ /* { dg-do run } */
++/* { dg-skip-if "libffi bug #879" { *-*-* } { "*" } } */
+ #include "ffitest.h"
+ 
+ typedef struct
