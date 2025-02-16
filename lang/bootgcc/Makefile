@@ -5,7 +5,7 @@ DPB_PROPERTIES = parallel
 V = 8.4.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
-REVISION = 7
+REVISION = 8
 
 COMMENT =	GNU Compiler Collection; bootstrap package
 PKGNAME =	bootgcc-${FULL_PKGVERSION}
@@ -17,7 +17,7 @@ MAINTAINER =	Pascal Stumpf <pascal@stumpf.co>
 DISTNAME =   	gcc-${FULL_VERSION}
 EXTRACT_SUFX =	.tar.xz
 DIST_SUBDIR =	gcc
-CONFIG =	${MACHINE_ARCH}-unknown-openbsd${OSREV}
+CONFIG =	${MACHINE_ARCH}-unknown-openbsd
 SUBST_VARS +=	CONFIG V
 
 # GPLv3+
@@ -49,6 +49,7 @@ CFLAGS = -O2 -g
 PREFIX = ${LOCALBASE}/bootstrap-gcc
 
 CONFIGURE_ARGS += \
+	--build=${CONFIG} \
 	--verbose \
 	--disable-nls  \
 	--with-system-zlib \
@@ -90,7 +91,7 @@ LIB_DEPENDS +=		devel/gmp,no_cxx,bootstrap \
 			devel/libmpc
 
 .if ${MACHINE_ARCH:Mamd64}
-CONFIG = x86_64-unknown-openbsd${OSREV}
+CONFIG = x86_64-unknown-openbsd
 .endif
 
 post-patch:
