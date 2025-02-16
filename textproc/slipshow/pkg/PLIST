@@ -1,0 +1,8 @@
+@bin bin/slipshow
+doc/
+doc/slipshow/
+doc/slipshow/CHANGELOG.md
+doc/slipshow/LICENSE
+doc/slipshow/README.md
+doc/slipshow/odoc-pages/
+doc/slipshow/odoc-pages/index.mld
