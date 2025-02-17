@@ -1,5 +1,7 @@
 # WARNING: this port does NOT use the x11/gnustep MODULE
 
+USE_NOBTCFI-aarch64 =	Yes
+
 COMMENT=	GNUstep makefile package
 
 REVISION=	0
