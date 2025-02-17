@@ -1,8 +1,7 @@
 COMMENT =	extensible HTTP/1-2-3 web server
 
 PKGNAME =	caddy-${V}
-V =		2.8.4
-REVISION =	0
+V =		2.9.1
 
 CATEGORIES =	www
 
@@ -21,7 +20,7 @@ MODULES =		lang/go
 
 MODGO_WORKSPACE =	${WRKDIR}
 WRKSRC =		${WRKDIST}
-MODGO_FLAGS +=		-ldflags "-X github.com/caddyserver/caddy/v2.CustomVersion=v${V}"
+MODGO_LDFLAGS +=	-X "github.com/caddyserver/caddy/v2.CustomVersion=v${V}"
 
 CONFIGURE_STYLE =	none
 
