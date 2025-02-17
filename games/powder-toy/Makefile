@@ -3,7 +3,7 @@ COMMENT =		physics sandbox simulation
 # LuaJIT requires USE_NOBTCFI
 USE_NOBTCFI =		Yes
 
-V =			99.1.380
+V =			99.2.382
 PKGNAME =		powder-toy-${V}
 DIST_TUPLE +=		github The-Powder-Toy The-Powder-Toy v${V} .
 CATEGORIES =		games
