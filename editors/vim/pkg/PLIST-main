@@ -528,6 +528,7 @@ share/vim/${P}/ftplugin/erlang.vim
 share/vim/${P}/ftplugin/eruby.vim
 share/vim/${P}/ftplugin/eterm.vim
 share/vim/${P}/ftplugin/expect.vim
+share/vim/${P}/ftplugin/exports.vim
 share/vim/${P}/ftplugin/falcon.vim
 share/vim/${P}/ftplugin/fennel.vim
 share/vim/${P}/ftplugin/fetchmail.vim
@@ -734,6 +735,7 @@ share/vim/${P}/ftplugin/rrst.vim
 share/vim/${P}/ftplugin/rst.vim
 share/vim/${P}/ftplugin/ruby.vim
 share/vim/${P}/ftplugin/rust.vim
+share/vim/${P}/ftplugin/samba.vim
 share/vim/${P}/ftplugin/sass.vim
 share/vim/${P}/ftplugin/sbt.vim
 share/vim/${P}/ftplugin/scala.vim
@@ -1095,6 +1097,7 @@ share/vim/${P}/keymap/thaana.vim
 share/vim/${P}/keymap/turkish-f.vim
 share/vim/${P}/keymap/turkish-q.vim
 share/vim/${P}/keymap/ukrainian-dvorak.vim
+share/vim/${P}/keymap/ukrainian-enhanced.vim
 share/vim/${P}/keymap/ukrainian-jcuken.vim
 share/vim/${P}/keymap/vietnamese-telex_utf-8.vim
 share/vim/${P}/keymap/vietnamese-viqr_utf-8.vim
@@ -1200,7 +1203,9 @@ share/vim/${P}/pack/dist/opt/netrw/
 share/vim/${P}/pack/dist/opt/netrw/LICENSE.txt
 share/vim/${P}/pack/dist/opt/netrw/README.md
 share/vim/${P}/pack/dist/opt/netrw/autoload/
+share/vim/${P}/pack/dist/opt/netrw/autoload/netrw/
 share/vim/${P}/pack/dist/opt/netrw/autoload/netrw.vim
+share/vim/${P}/pack/dist/opt/netrw/autoload/netrw/own.vim
 share/vim/${P}/pack/dist/opt/netrw/autoload/netrwSettings.vim
 share/vim/${P}/pack/dist/opt/netrw/autoload/netrw_gitignore.vim
 share/vim/${P}/pack/dist/opt/netrw/doc/

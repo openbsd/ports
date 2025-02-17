@@ -1,13 +1,13 @@
 COMMENT-main=	vi clone, many additional features
 COMMENT-lang=	vi clone, NLS subpackage
 
-# careful with PLISTs if updating; it usually works best if you use
-# a gui flavour rather than no_x11
-V=		9.1.1055
+# careful with PLISTs if updating; it usually works best if you
+# use a gui flavour rather than no_x11
+V=		9.1.1119
 VS=		${V:C/\.0+/./}
 
-DIST_TUPLE+=	github vim vim v$V . \
-		github vim colorschemes	661b1a62a4ebe4a65de79f1bb1c40571fe6a1b58 .
+DIST_TUPLE+=	github vim vim v$V .
+DIST_TUPLE+=	github vim colorschemes	661b1a62a4ebe4a65de79f1bb1c40571fe6a1b58 .
 
 PKGNAME=	vim-${VS}
 FULLPKGNAME-lang= vim-lang-${VS}

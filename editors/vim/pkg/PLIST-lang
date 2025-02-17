@@ -610,6 +610,9 @@ share/vim/${P}/tutor/README.ru.utf-8.txt
 share/vim/${P}/tutor/it/
 share/vim/${P}/tutor/it/vim-01-beginner.tutor
 share/vim/${P}/tutor/it/vim-01-beginner.tutor.json
+share/vim/${P}/tutor/sr/
+share/vim/${P}/tutor/sr/vim-01-beginner.tutor
+share/vim/${P}/tutor/sr/vim-01-beginner.tutor.json
 share/vim/${P}/tutor/tutor1.bar
 share/vim/${P}/tutor/tutor1.bar.utf-8
 share/vim/${P}/tutor/tutor1.bg.utf-8
@@ -680,3 +683,4 @@ share/vim/${P}/tutor/tutor1.zh_cn.utf-8
 share/vim/${P}/tutor/tutor1.zh_tw.utf-8
 share/vim/${P}/tutor/tutor2.it
 share/vim/${P}/tutor/tutor2.it.utf-8
+share/vim/${P}/tutor/tutor2.sr.utf-8
