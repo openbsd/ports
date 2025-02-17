@@ -1,31 +1,24 @@
 COMMENT =	argon2 password hashing for Python
 
-# 21.2.0+ moves the CFFI bindings to a separate project
-# (argon2-cffi-bindings), and changes PEP517 backend to flit_core
-MODPY_DISTV =	21.1.0
-REVISION =	3
-DISTNAME =	argon2-cffi-${MODPY_DISTV}
-PKGNAME =	py-${DISTNAME}
+MODPY_DISTV =	23.1.0
+DISTNAME =	argon2_cffi-${MODPY_DISTV}
+PKGNAME =	py-argon2-cffi-${MODPY_DISTV}
 
 CATEGORIES =	security
 
+# https://github.com/hynek/argon2-cffi/
 HOMEPAGE =	https://argon2-cffi.readthedocs.io/
 
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =	argon2 pthread
-
 MODULES =	lang/python
-
+MODPY_PYBUILD =	hatch-vcs
 MODPY_PI =	Yes
-MODPY_PYBUILD =	setuptools
 
-BUILD_DEPENDS =	devel/py-cffi
-RUN_DEPENDS =	devel/py-cffi
+RUN_DEPENDS =	security/py-argon2-cffi-bindings
 
-LIB_DEPENDS =	security/argon2
-
-TEST_DEPENDS =	devel/py-hypothesis
+TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH} \
+		devel/py-hypothesis \
 
 .include <bsd.port.mk>
