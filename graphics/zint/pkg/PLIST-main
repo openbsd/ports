@@ -3,9 +3,6 @@ include/zint.h
 @lib lib/libzint.so.${LIBzint_VERSION}
 @man man/man1/zint.1
 @comment share/applications/
-share/cmake/
-share/cmake/Modules/
-share/cmake/Modules/FindZint.cmake
 share/zint/
 share/zint/zint-config.cmake
 share/zint/zint-targets${MODCMAKE_BUILD_SUFFIX}
