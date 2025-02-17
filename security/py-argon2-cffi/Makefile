@@ -18,6 +18,7 @@ MODPY_PI =	Yes
 
 RUN_DEPENDS =	security/py-argon2-cffi-bindings
 
+# self TDEP required for checks in tests/test_packaging.py
 TEST_DEPENDS =	${FULLPKGNAME}:${BUILD_PKGPATH} \
 		devel/py-hypothesis \
 
