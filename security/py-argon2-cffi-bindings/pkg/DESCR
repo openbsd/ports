@@ -1,0 +1,6 @@
+Argon2 is a secure password hashing algorithm. Is is designed to
+have both a configurable runtime as well as memory consumption.
+
+This package provides low-level python CFFI bindings for Argon2 and
+is primarily intended to be used by the higher level "argon2-cffi"
+module.
