@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1700 2025/02/16 14:25:34 tb Exp $
+# $OpenBSD: Quirks.pm,v 1.1701 2025/02/17 14:40:20 thfr Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1119,7 +1119,6 @@ setup_obsolete_reason(
 	3 => 'monotone',
 	3 => 'botan',
 	3 => 'bg5ps',
-	9 => 'haxe',
 	1 => 'libxcvt',
 	1 => 'ocaml-camlp4',
 	1 => 'ocaml-camlp5',
