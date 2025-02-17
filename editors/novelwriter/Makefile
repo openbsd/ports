@@ -1,10 +1,9 @@
 COMMENT =		markdown-like text editor for planning and writing novels
-MODPY_DISTV =	2.5.3
+MODPY_DISTV =		2.6.3
 DISTNAME =		novelwriter-${MODPY_DISTV}
 CATEGORIES =		editors
 HOMEPAGE =		https://novelwriter.io/
 MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
-REVISION =		0
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
