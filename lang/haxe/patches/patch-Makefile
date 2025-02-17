@@ -1,0 +1,14 @@
+honor CFLAGS
+
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -114,7 +114,7 @@ haxelib_unix:
+ 	cd $(CURDIR)/extra/haxelib_src && \
+ 	HAXE_STD_PATH=$(CURDIR)/std $(CURDIR)/$(HAXE_OUTPUT) client.hxml && \
+ 	nekotools boot -c run.n
+-	$(CC) $(CURDIR)/extra/haxelib_src/run.c -o $(HAXELIB_OUTPUT) -lneko $(HAXELIB_LFLAGS)
++	$(CC) $(CFLAGS) $(CURDIR)/extra/haxelib_src/run.c -o $(HAXELIB_OUTPUT) -lneko $(HAXELIB_LFLAGS)
+ 
+ # haxelib should depends on haxe, but we don't want to do that...
+ ifeq ($(SYSTEM_NAME),Windows)

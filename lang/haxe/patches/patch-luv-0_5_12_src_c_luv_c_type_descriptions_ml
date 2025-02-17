@@ -1,0 +1,14 @@
+Index: luv-0.5.12/src/c/luv_c_type_descriptions.ml
+--- luv-0.5.12/src/c/luv_c_type_descriptions.ml.orig
++++ luv-0.5.12/src/c/luv_c_type_descriptions.ml
+@@ -736,8 +736,8 @@ struct
+         let canonname = constant "AI_CANONNAME" int
+         let numerichost = constant "AI_NUMERICHOST" int
+         let numericserv = constant "AI_NUMERICSERV" int
+-        let v4mapped = constant "AI_V4MAPPED" int
+-        let all = constant "AI_ALL" int
++        let v4mapped = constant "0" int
++        let all = constant "0" int
+         let addrconfig = constant "AI_ADDRCONFIG" int
+       end
+     end

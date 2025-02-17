@@ -1,0 +1,10 @@
+Haxe consists of a high-level, open source programming language and a compiler.
+It allows compilation of programs, written using an ECMAScript-oriented syntax,
+to multiple target languages. Employing proper abstraction, it is possible to
+maintain a single code-base which compiles to multiple targets.
+
+Haxe is strongly typed but the typing system can be subverted where required.
+Utilizing type information, the Haxe type system can detect errors at
+compile-time which would only be noticeable at run-time in the target language.
+Furthermore, type information can be used by the compiler to generate optimized
+and robust code.

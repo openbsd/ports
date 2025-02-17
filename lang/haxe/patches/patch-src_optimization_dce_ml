@@ -1,0 +1,14 @@
+fix syntax according to https://github.com/HaxeFoundation/haxe/issues/11787
+
+Index: src/optimization/dce.ml
+--- src/optimization/dce.ml.orig
++++ src/optimization/dce.ml
+@@ -76,7 +76,7 @@ let overrides_extern_field cf c =
+ 	loop c cf
+ 
+ let is_std_file dce file =
+-	List.exists (ExtString.String.starts_with file) dce.std_dirs
++	List.exists (fun s -> ExtString.String.starts_with file s) dce.std_dirs
+ 
+ let keep_metas = [Meta.Keep;Meta.Expose]
+ 
