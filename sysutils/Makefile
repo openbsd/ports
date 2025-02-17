@@ -423,6 +423,7 @@
      SUBDIR += shunt
      SUBDIR += simple-mtpfs
      SUBDIR += skill
+     SUBDIR += skim
      SUBDIR += slant
      SUBDIR += sleuthkit
      SUBDIR += smartmontools
