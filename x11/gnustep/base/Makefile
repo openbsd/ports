@@ -4,7 +4,7 @@ GH_TAGNAME=     1.30.0
 GH_ACCOUNT=     gnustep
 GH_PROJECT=     libs-base
 DISTNAME=       gnustep-base-${GH_TAGNAME}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS=	gnustep-base 10.7
 CATEGORIES=	devel
@@ -15,7 +15,7 @@ SUBST_VARS=	LIBDIR
 HOMEPAGE=	http://www.gnustep.org/
 
 WANTLIB += avahi-client avahi-common c ffi gmp gnutls iberty iconv icudata
-WANTLIB += curl icui18n icuuc m objc2 pthread xml2 xslt z
+WANTLIB += curl icui18n icuuc m objc2 pthread xml2 xslt z zstd
 WANTLIB += ${COMPILER_LIBCXX}
 
 .if ${MACHINE_ARCH} != "i386" && ${MACHINE_ARCH} != "amd64"
