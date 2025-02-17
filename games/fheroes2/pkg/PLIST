@@ -1,5 +1,4 @@
 @bin bin/fheroes2
-share/applications/
 share/applications/fheroes2.desktop
 share/doc/fheroes2/
 share/doc/fheroes2/LICENSE
@@ -36,10 +35,6 @@ share/fheroes2/files/lang/sv.mo
 share/fheroes2/files/lang/tr.mo
 share/fheroes2/files/lang/uk.mo
 share/fheroes2/files/lang/vi.mo
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/fheroes2.png
 share/metainfo/
 share/metainfo/fheroes2.metainfo.xml
