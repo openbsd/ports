@@ -16,6 +16,7 @@ MODULES =	lang/python
 MODPY_PYBUILD =	hatch-vcs
 MODPY_PI =	Yes
 
+BUILD_DEPENDS =	devel/py-hatch-fancy-pypi-readme
 RUN_DEPENDS =	security/py-argon2-cffi-bindings
 
 # self TDEP required for checks in tests/test_packaging.py
