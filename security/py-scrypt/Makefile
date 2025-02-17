@@ -1,14 +1,13 @@
 COMMENT=	support for the scrypt key derivation function
 
 MODPY_DISTV=	0.8.27
-
 DISTNAME=	scrypt-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	security
 
-HOMEPAGE=	http://bitbucket.org/mhallin/py-scrypt
+HOMEPAGE=	https://github.com/holgern/py-scrypt
 
 # BSD
 PERMIT_PACKAGE=	Yes
@@ -19,6 +18,6 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-MODPY_PYTEST_ARGS=	scrypt/tests
+#MODPY_PYTEST_ARGS=	scrypt/tests
 
 .include <bsd.port.mk>
