@@ -273,6 +273,7 @@
      SUBDIR += py-PyNaCl
      SUBDIR += py-aes
      SUBDIR += py-argon2-cffi
+     SUBDIR += py-argon2-cffi-bindings
      SUBDIR += py-artifacts
      SUBDIR += py-asn1crypto
      SUBDIR += py-axolotl
