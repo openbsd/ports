@@ -36,9 +36,6 @@ CONFIGURE_ENV =	ac_cv_lib_pam_pam_start=false \
 		MAKE=/usr/bin/make \
 		YACC=bison
 
-post-extract:
-	cd ${WRKSRC} && 2to3 -w do_auth.py
-
 post-install:
 	${INSTALL_DATA} ${FILESDIR}/tac_plus.conf.sample ${PREFIX}/share/tacacs
 	rm ${PREFIX}/bin/tac_pwd ${PREFIX}/man/man8/tac_pwd.8 # only works with des/md5 crypt
