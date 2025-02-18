@@ -1,16 +1,27 @@
+apply 2to3 and additional fixes
+
 Index: testmodule.py
 --- testmodule.py.orig
 +++ testmodule.py
-@@ -1,5 +1,4 @@
+@@ -1,13 +1,13 @@
  import rcsparse
 -import md5
  
  f=rcsparse.rcsfile('test,v')
- print f.head
-@@ -10,4 +9,5 @@ print s.items()
+-print f.head
+-print f.branch
++print(f.head)
++print(f.branch)
+ s=f.symbols
+-print s['RELENG_4']
+-print s.items()
++print(s['RELENG_4'])
++print(list(s.items()))
  r=f.revs
- i=r.items()
- print i
+-i=r.items()
+-print i
 -print f.getlog(f.sym2rev('RELENG_4'))
-+print f.getlog(f.sym2rev('RELENG_4')).decode('ascii')
-+print '1.1' in r
++i=list(r.items())
++print(i)
++print(f.getlog(f.sym2rev('RELENG_4')).decode('ascii'))
++print('1.1' in r)
