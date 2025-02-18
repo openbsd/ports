@@ -9,9 +9,10 @@ MODOPAM_INSTALL ?=	Yes
 MODOPAM_WITH_DOC ?=	No
 MODOPAM_WITH_TEST ?=	No
 
-# Add sysutils/opam to BUILD_DEPENDS.
+# Add sysutils/opam to BUILD_DEPENDS, and net/rsync to copying local repositories.
 .if ${MODOPAM_BUILDDEP:L} == "yes"
-BUILD_DEPENDS +=	sysutils/opam>=2.3
+BUILD_DEPENDS +=	sysutils/opam>=2.3 \
+			net/rsync
 .endif
 
 # Default location of opam binary (provided by sysutils/opam).
