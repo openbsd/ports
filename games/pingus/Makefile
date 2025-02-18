@@ -29,9 +29,6 @@ NO_TEST=	Yes
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/src/pingus/pingus_main.cpp
 
-pre-patch:
-	2to3 -w ${WRKSRC}/SConscript
-
 do-build:
 	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} ${MODSCONS_BIN} \
 		${MODSCONS_ENV} \

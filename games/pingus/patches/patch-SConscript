@@ -1,3 +1,4 @@
+apply 2to3
 Switched to boost::signals2
 
 Index: SConscript
@@ -11,6 +12,23 @@ Index: SConscript
          self.opts.Add('LINKFLAGS',  'Linker Compiler flags', [])
  
          self.opts.Add(BoolVariable('with_opengl',        'Build with OpenGL support', True))
+@@ -126,12 +125,12 @@ class Project:
+     def configure_end(self):
+         self.env = self.conf.Finish()
+ 
+-        print "Reports:"
+-        print self.reports
++        print("Reports:")
++        print(self.reports)
+ 
+         if not self.fatal_error == "":
+-            print "Fatal Errors:"
+-            print self.fatal_error
++            print("Fatal Errors:")
++            print(self.fatal_error)
+             Exit(1)
+ 
+     def configure_gxx(self): 
 @@ -182,14 +181,13 @@ class Project:
          else:
              self.reports += "  * XInput support: yes\n"
