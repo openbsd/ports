@@ -1,0 +1,32 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -96,6 +96,7 @@ cmake_policy(SET CMP0048 NEW)
+ if(${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION} VERSION_GREATER_EQUAL 3.29)
+ cmake_policy(SET CMP0167 NEW)
+ endif()
++cmake_policy(SET CMP0167 OLD)
+ 
+ #=======================================================================================================================
+ #================================================ Other preliminaries =================================================
+@@ -339,7 +340,7 @@ if(WIN32)
+ #   set(CMAKE_EXE_LINKER_FLAGS "-static-libgcc -static-libstdc++ -static")
+ endif()
+ 
+-if(APPLE)
++if(UNIX)
+    # As explained at https://stackoverflow.com/questions/5582211/what-does-define-gnu-source-imply, defining _GNU_SOURCE
+    # gives access to various non-standard GNU/Linux extension functions and changes the behaviour of some POSIX
+    # functions.
+@@ -707,9 +708,9 @@ message(STATUS "Using Qt version " ${Qt6Core_VERSION})
+ set(Boost_USE_STATIC_LIBS ON)
+ if(WIN32)
+    find_package(Boost 1.79.0 REQUIRED)
+-elseif(APPLE)
++elseif(UNIX)
+    find_package(Boost 1.79.0 REQUIRED)
+-else()
++elseif(LINUX)
+    # Note that header-only libraries don't have a component
+    find_package(Boost 1.79.0 REQUIRED COMPONENTS stacktrace_backtrace)
+ endif()

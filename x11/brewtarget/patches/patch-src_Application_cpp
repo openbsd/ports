@@ -1,0 +1,14 @@
+Index: src/Application.cpp
+--- src/Application.cpp.orig
++++ src/Application.cpp
+@@ -241,8 +241,8 @@ namespace {
+          path += "../data/";
+       } else {
+ 
+-#if defined(Q_OS_LINUX)
+-         // === Linux ===
++#if defined(Q_OS_UNIX)
++         // === Unix ===
+          // We'll assume the return value from QCoreApplication::applicationDirPath is invalid if it does not end in
+          // /bin (because there's no way it would make sense for us to be in an sbin directory
+          if (path.endsWith("/bin/")) {
