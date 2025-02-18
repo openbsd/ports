@@ -1,5 +1,5 @@
-@pkgpath sysutils/py-pushover,python3
 @conflict pushover-*
+@pkgpath sysutils/py-pushover,python3
 bin/pushover
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pushover.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}pushover.${MODPY_PYC_MAGIC_TAG}pyc
