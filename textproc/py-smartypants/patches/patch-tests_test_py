@@ -1,0 +1,26 @@
+From ea46bf36343044a7a61ba3acce4a7f188d986ec5 Mon Sep 17 00:00:00 2001
+From: =?UTF-8?q?Ond=C5=99ej=20S=C3=BAkup?= <mimi.vx@gmail.com>
+Date: Mon, 25 Sep 2023 10:31:37 +0200
+Subject: [PATCH] Fix regexps and tests for python3.12
+
+Index: tests/test.py
+--- tests/test.py.orig
++++ tests/test.py
+@@ -24,7 +24,7 @@ class SmartyPantsTestCase(unittest.TestCase):
+ 
+         T = sp(TEXT)
+         E = '&#8220;foo&#8221; -- bar'
+-        self.assertEquals(T, E)
++        self.assertEqual(T, E)
+ 
+         attr = Attr.q | Attr.d
+         Attr.default = attr
+@@ -32,7 +32,7 @@ class SmartyPantsTestCase(unittest.TestCase):
+ 
+         T = sp(TEXT)
+         E = '&#8220;foo&#8221; &#8212; bar'
+-        self.assertEquals(T, E)
++        self.assertEqual(T, E)
+ 
+     def test_dates(self):
+ 
