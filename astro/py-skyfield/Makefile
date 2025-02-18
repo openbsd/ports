@@ -1,10 +1,8 @@
 COMMENT=	computes positions for the stars, planets, and satellites
 
-MODPY_DISTV =	1.49
-
+MODPY_DISTV =	1.50
 DISTNAME=	skyfield-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	astro
 
