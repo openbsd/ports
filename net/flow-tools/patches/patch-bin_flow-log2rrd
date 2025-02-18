@@ -1,0 +1,26 @@
+apply 2to3 conversions (this file is not packaged here, but easier to add
+this while still using a version of Python that includes 2to3)
+
+Index: bin/flow-log2rrd
+--- bin/flow-log2rrd.orig
++++ bin/flow-log2rrd
+@@ -40,8 +40,8 @@ while line :
+   elif fields[4][5:12] == 'capture' :
+     name='capture'
+   else :
+-    raise ValueError, "Expecting flow-capture or flow-fanout logs, got %s" %\
+-      fields[4]
++    raise ValueError("Expecting flow-capture or flow-fanout logs, got %s" %\
++      fields[4])
+ 
+   tv = {}
+   for f in fields :
+@@ -65,7 +65,7 @@ while line :
+ 
+     if not os.access(rrdFile, os.F_OK) :
+ 
+-      print 'Creating RRD ', rrdFile
++      print('Creating RRD ', rrdFile)
+ 
+       if name == 'capture' :
+ 

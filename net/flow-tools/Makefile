@@ -9,7 +9,7 @@ DISTNAME=	flow-tools-0.68.6pl20210211
 EPOCH=		0
 CATEGORIES=	net
 
-REVISION=	6
+REVISION=	7
 
 # BSD
 PERMIT_PACKAGE=	Yes
@@ -47,7 +47,5 @@ pre-configure:
 	rm -f ${WRKSRC}/lib/ftconfig.h
 	sed -i -e 's,/usr/local/netflow/var/sym/,${SYSCONFDIR}/sym/,;' \
 	    ${WRKSRC}/bin/flow-rptfmt
-	2to3 --fix=all --no-diffs --nobackups --verbose --write \
-	    ${WRKSRC}/bin/flow-*
 
 .include <bsd.port.mk>

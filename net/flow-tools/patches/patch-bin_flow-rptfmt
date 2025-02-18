@@ -1,0 +1,301 @@
+apply 2to3 conversions
+
+Index: bin/flow-rptfmt
+--- bin/flow-rptfmt.orig
++++ bin/flow-rptfmt
+@@ -109,52 +109,52 @@ class ftrptfmt:
+   def _fmt_summary_detail(self):
+ 
+     if self.got_totals:
+-      print "Ignores:                 %s" % self.field_vals['ignores']
+-      print "Total Flows:             %s" % self.field_vals['flows']
+-      print "Total Octets:            %s" % self.field_vals['octets']
+-      print "Total Packets:           %s" % self.field_vals['packets']
+-      print "Total Duration (ms):     %s" % self.field_vals['duration']
+-    print "Real Time:               %s" % self.field_vals['time_real']
+-    print "Average Flow Time:       %s" % self.field_vals['aflowtime']
+-    print "Average Packets/Second:  %s" % self.field_vals['aps']
+-    print "Average Flows/Second:    %s" % self.field_vals['afs']
+-    print "Average Packets/Flow:    %s" % self.field_vals['apf']
+-    print "Flows/Second:            %s" % self.field_vals['fps']
+-    print "Flows/Second (real):     %s" % self.field_vals['fps_real']
++      print("Ignores:                 %s" % self.field_vals['ignores'])
++      print("Total Flows:             %s" % self.field_vals['flows'])
++      print("Total Octets:            %s" % self.field_vals['octets'])
++      print("Total Packets:           %s" % self.field_vals['packets'])
++      print("Total Duration (ms):     %s" % self.field_vals['duration'])
++    print("Real Time:               %s" % self.field_vals['time_real'])
++    print("Average Flow Time:       %s" % self.field_vals['aflowtime'])
++    print("Average Packets/Second:  %s" % self.field_vals['aps'])
++    print("Average Flows/Second:    %s" % self.field_vals['afs'])
++    print("Average Packets/Flow:    %s" % self.field_vals['apf'])
++    print("Flows/Second:            %s" % self.field_vals['fps'])
++    print("Flows/Second (real):     %s" % self.field_vals['fps_real'])
+ 
+-    print "\nAverage IP packet size distribution:"
+-    print "\n   1-32   64   96  128  160  192  224  256  288  320  352  384  416  448  480\n  ",
++    print("\nAverage IP packet size distribution:")
++    print("\n   1-32   64   96  128  160  192  224  256  288  320  352  384  416  448  480\n  ", end=' ')
+     for x in range(7,22):
+-      print ("%-3.3f" % float(self.field_vals[x]))[1:],
+-    print "\n\n    512  544  576 1024 1536 2048 2560 3072 3584 4096 4608\n  ",
++      print(("%-3.3f" % float(self.field_vals[x]))[1:], end=' ')
++    print("\n\n    512  544  576 1024 1536 2048 2560 3072 3584 4096 4608\n  ", end=' ')
+     for x in range(22,33):
+-      print ("%-3.3f" % float(self.field_vals[x]))[1:],
++      print(("%-3.3f" % float(self.field_vals[x]))[1:], end=' ')
+ 
+-    print "\n\nPackets per flow distribution:"
+-    print "\n      1    2    4    8   12   16   20   24   28   32   36   40   44   48   52\n  ",
++    print("\n\nPackets per flow distribution:")
++    print("\n      1    2    4    8   12   16   20   24   28   32   36   40   44   48   52\n  ", end=' ')
+     for x in range(33,48):
+-      print ("%-3.3f" % float(self.field_vals[x]))[1:],
+-    print "\n\n     60  100  200  300  400  500  600  700  800  900 >900\n   ",
++      print(("%-3.3f" % float(self.field_vals[x]))[1:], end=' ')
++    print("\n\n     60  100  200  300  400  500  600  700  800  900 >900\n   ", end=' ')
+     for x in range(48,59):
+-      print ("%-3.3f" % float(self.field_vals[x]))[1:],
++      print(("%-3.3f" % float(self.field_vals[x]))[1:], end=' ')
+ 
+-    print "\n\nOctets per flow distribution:"
+-    print "\n     32   64  128  256  512 1280 2048 2816 3584 4352 5120 5888 6656 7424 8192\n  ",
++    print("\n\nOctets per flow distribution:")
++    print("\n     32   64  128  256  512 1280 2048 2816 3584 4352 5120 5888 6656 7424 8192\n  ", end=' ')
+     for x in range(59,74):
+-      print ("%-3.3f" % float(self.field_vals[x]))[1:],
+-    print "\n\n   8960 9728 10496 11264 12032 12800 13568 14336 15104 15872 >15872\n  ",
+-    print ("%-3.3f" % float(self.field_vals[74]))[1:],
++      print(("%-3.3f" % float(self.field_vals[x]))[1:], end=' ')
++    print("\n\n   8960 9728 10496 11264 12032 12800 13568 14336 15104 15872 >15872\n  ", end=' ')
++    print(("%-3.3f" % float(self.field_vals[74]))[1:], end=' ')
+     for x in range(75,85):
+-      print ("%-3.3f " % float(self.field_vals[x]))[1:],
++      print(("%-3.3f " % float(self.field_vals[x]))[1:], end=' ')
+ 
+-    print "\n\nFlow Time Distribution (ms):"
+-    print "\n    10    50  100  200  500 1000 2000 3000 4000 5000 6000 7000 8000 9000 10000\n  ",
++    print("\n\nFlow Time Distribution (ms):")
++    print("\n    10    50  100  200  500 1000 2000 3000 4000 5000 6000 7000 8000 9000 10000\n  ", end=' ')
+     for x in range(85,100):
+-      print ("%-3.3f" % float(self.field_vals[x]))[1:],
+-    print "\n\n  12000 14000 16000 18000 20000 22000 24000 26000 28000 30000 >30000\n  ",
++      print(("%-3.3f" % float(self.field_vals[x]))[1:], end=' ')
++    print("\n\n  12000 14000 16000 18000 20000 22000 24000 26000 28000 30000 >30000\n  ", end=' ')
+     for x in range(100,111):
+-      print ("%-3.3f " % float(self.field_vals[x]))[1:],
+-    print
++      print(("%-3.3f " % float(self.field_vals[x]))[1:], end=' ')
++    print()
+ 
+ #
+ #
+@@ -167,16 +167,16 @@ class ftrptfmt:
+       line = int(self.max_lines)
+ 
+       for x in self.field_iter:
+-        for y in xrange(self.field_total):
++        for y in range(self.field_total):
+           if self.field_display[y]:
+ #            print "x=",x,"y=",y,"#"
+             i = self.field_avals[x][y]
+-            print i.ljust(self.field_lens[y]),
++            print(i.ljust(self.field_lens[y]), end=' ')
+         if line:
+           line = line - 1
+           if not line:
+             break
+-        print
++        print()
+ 
+     else:
+ 
+@@ -193,23 +193,23 @@ class ftrptfmt:
+     for i in self.header_info:
+       if i[0:7] == '# rec1:':
+         break
+-      print i;
++      print(i);
+ 
+-    print "# ", sys.argv
++    print("# ", sys.argv)
+ 
+     # summary-detail is a special format
+     if self.display_summary_detail != 1:
+-      for x in xrange(self.field_total):
++      for x in range(self.field_total):
+         if self.field_display[x]:
+           i = self.field_names[x]
+           l = self.field_lens[x] 
+-          print i.ljust(l),
+-      print
++          print(i.ljust(l), end=' ')
++      print()
+ #
+ #
+ #
+   def fmt_ascii_footer(self) :
+-    print "\n",
++    print("\n", end=' ')
+ 
+ #
+ # HTML
+@@ -219,20 +219,20 @@ class ftrptfmt:
+  
+     if self.display_header:
+ 
+-      print '''<pre>''' 
++      print('''<pre>''') 
+       for i in self.header_info:
+         if i[0:7] == '#rec1:':
+           break
+-        print i
+-      print '''</pre>''' 
++        print(i)
++      print('''</pre>''') 
+ 
+-    print "<table border cellspacing=0 cellpadding=5>"
+-    print "<tr>"
++    print("<table border cellspacing=0 cellpadding=5>")
++    print("<tr>")
+     if self.display_summary_detail != 1:
+-      for x in xrange(self.field_total):
++      for x in range(self.field_total):
+         if self.field_display[x]:
+-          print " <th>", self.field_names[x], '''</th>'''
+-    print '''</tr>'''
++          print(" <th>", self.field_names[x], '''</th>''')
++    print('''</tr>''')
+   
+ #
+ #
+@@ -244,26 +244,26 @@ class ftrptfmt:
+       line = int(self.max_lines)
+       
+       for x in self.field_iter:
+-        print "<tr>"
+-        for y in xrange(self.field_total):
++        print("<tr>")
++        for y in range(self.field_total):
+           if self.field_display[y]:   
+             i = self.field_avals[x][y]
+-            print "  <td>", i, '''</td>'''
++            print("  <td>", i, '''</td>''')
+         if line:
+           line = line - 1
+           if not line:
+             break
+-        print '''</tr>'''
++        print('''</tr>''')
+ 
+     else:
+-      print '''<pre>''' 
++      print('''<pre>''') 
+       self._fmt_summary_detail()
+-      print '''</pre>''' 
++      print('''</pre>''') 
+ #
+ #
+ #
+   def fmt_html_footer(self) :
+-    print '''</table>'''
++    print('''</table>''')
+   
+ 
+ #
+@@ -347,7 +347,7 @@ class ftrptfmt:
+     
+           splt = line.split(',')
+     
+-          for i in xrange(self.field_total):
++          for i in range(self.field_total):
+ 
+             if len(splt[i]) > self.field_lens[i]:
+               self.field_lens[i] = len(splt[i])
+@@ -364,7 +364,7 @@ class ftrptfmt:
+         break;
+ 
+     # default to sequentially as read
+-    self.field_iter = range(self.recno)
++    self.field_iter = list(range(self.recno))
+ 
+ #
+ #
+@@ -377,10 +377,10 @@ class ftrptfmt:
+     
+     # figure out which fields are okay to print
+     if self.field_use['all'] == 1:
+-      for x in xrange(self.field_total):
++      for x in range(self.field_total):
+         self.field_display[x] = 1
+     else:
+-      for x in xrange(self.field_total):
++      for x in range(self.field_total):
+         self.field_display[x] = self.field_use.get(self.field_names[x],0)
+ 
+ #
+@@ -404,8 +404,8 @@ class ftrptfmt:
+           self.field_iter.sort(lambda a,b: cmp(self.field_avals[a][i],
+             self.field_avals[b][i]))
+         else:
+-          self.field_iter.sort(lambda a,b: cmp(long(self.field_avals[a][i]),
+-            long(self.field_avals[b][i])))
++          self.field_iter.sort(lambda a,b: cmp(int(self.field_avals[a][i]),
++            int(self.field_avals[b][i])))
+ 
+       elif sort_field[0] == '-':
+ 
+@@ -418,8 +418,8 @@ class ftrptfmt:
+             self.field_avals[b][i]))
+ 
+         else:
+-          self.field_iter.sort(lambda b,a: cmp(long(self.field_avals[a][i]),
+-            long(self.field_avals[b][i])))
++          self.field_iter.sort(lambda b,a: cmp(int(self.field_avals[a][i]),
++            int(self.field_avals[b][i])))
+ 
+ #
+ #
+@@ -427,7 +427,7 @@ class ftrptfmt:
+   def mapsym(self):
+     
+     # foreach key field try to map in symbols
+-    for i in self.field_keys.keys():
++    for i in list(self.field_keys.keys()):
+       if self.field_display[i] != 1:
+         continue
+       n = self.field_names[i]
+@@ -444,14 +444,14 @@ class ftrptfmt:
+   def percent(self):
+ 
+     # foreach field
+-    for i in xrange(self.field_total):
++    for i in range(self.field_total):
+       # skip key fields
+       if self.field_keys.get(i,0) == 1:
+         continue
+       # for each value for the field
+       self.field_totals[i] = 0
+       for j in self.field_iter:
+-        self.field_totals[i] += long(self.field_avals[j][i])
++        self.field_totals[i] += int(self.field_avals[j][i])
+       for j in self.field_iter:
+         self.field_avals[j][i] = "%5.6f" % (float(self.field_avals[j][i]) / float(self.field_totals[i]) * 100)
+         # readjust field len
+@@ -514,13 +514,13 @@ for o,v in opts:
+   elif o == '-s':
+     opt_sort_field = v
+   elif o == '-h':
+-    print "Usage: flow-rptfmt [-hHnp] [-a alarm] [-f format] [-F display_fields]"
+-    print "                   [-m max_lines] [-s sort_field]"
++    print("Usage: flow-rptfmt [-hHnp] [-a alarm] [-f format] [-F display_fields]")
++    print("                   [-m max_lines] [-s sort_field]")
+     sys.exit(0)
+ 
+ 
+ def sig_alarm(sig, stack):
+-  print "flow-rptfmt exceeded CPU time, consider running report offline."
++  print("flow-rptfmt exceeded CPU time, consider running report offline.")
+   sys.exit(0)
+ 
+ signal.signal(signal.SIGALRM, sig_alarm)

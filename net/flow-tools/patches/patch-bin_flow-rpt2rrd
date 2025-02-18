@@ -1,0 +1,104 @@
+apply 2to3 conversions (this file is not packaged here, but easier to add
+this while still using a version of Python that includes 2to3)
+
+Index: bin/flow-rpt2rrd
+--- bin/flow-rpt2rrd.orig
++++ bin/flow-rpt2rrd
+@@ -155,13 +155,13 @@ class ftrpt2rrd:
+     # exists?
+     if not os.access(rrdFile, os.F_OK):
+ 
+-      print "Creating RRD", rrdFile
++      print("Creating RRD", rrdFile)
+ 
+       rrdParams = []
+       t = str(int(self.start_time) - 300)
+       rrdParams.append('--start')
+       rrdParams.append(t)
+-      for i in use_fields_index.keys():
++      for i in list(use_fields_index.keys()):
+         rrdParams.append("DS:%s:ABSOLUTE:600:U:U" % use_fields_index[i])
+       if (self.rrd_5min):
+         rrdParams.append('RRA:AVERAGE:0.5:1:%s' % self.rrd_5min)
+@@ -178,18 +178,18 @@ class ftrpt2rrd:
+ 
+       rrdtool.create(rrdFile, *rrdParams)
+       if self.debug:
+-        print >>sys.stderr, rrdParams.join(' ')
++        print(rrdParams.join(' '), file=sys.stderr)
+ 
+     # foreach value
+ 
+     update = self.start_time
+-    for i in use_fields_index.keys():
++    for i in list(use_fields_index.keys()):
+       update = "%s:%s" % (update,vals[i])
+     if self.debug:
+-      print >>sys.stderr, "update", update
++      print("update", update, file=sys.stderr)
+ 
+     if (self.verbose):
+-      print "Updating RRD", rrdFile
++      print("Updating RRD", rrdFile)
+ 
+     rrdtool.update(rrdFile,update)
+     
+@@ -248,16 +248,16 @@ class ftrpt2rrd:
+ 
+           # start time must be set by now
+           if (self.start_time == 0):
+-            raise ValueError, "Start time not found, make sure flow-report is including the header"
++            raise ValueError("Start time not found, make sure flow-report is including the header")
+ 
+           # load symbol tables
+           if self.mapsym == 1:
+-            for i in self.field_keys.keys():
++            for i in list(self.field_keys.keys()):
+               self.sym[i] = ftsym(self.field_names[i])
+ 
+           # convert use_fields to use_fields_index for easier access
+           self.use_fields_index = {}
+-          for i in self.use_fields.keys():
++          for i in list(self.use_fields.keys()):
+             if self.use_fields[i] and self.field_names2.get(i,'x') != 'x':
+               self.use_fields_index[self.field_names2[i]] = i
+ 
+@@ -270,7 +270,7 @@ class ftrpt2rrd:
+ 
+           # combine the key fields to form one key
+           k = ''
+-          for i in self.field_keys.keys():
++          for i in list(self.field_keys.keys()):
+             # try a symbol table lookup
+             if self.mapsym == 1:
+               t = self.sym[i].findbyval(splt[i])
+@@ -300,9 +300,9 @@ class ftrpt2rrd:
+ 
+     # keys which were not available in the report also need to be
+     # updated with 0 values.
+-    for i in xrange(len(splt)):
++    for i in range(len(splt)):
+       splt[i] = 0
+-    for x in self.use_key_names.keys():
++    for x in list(self.use_key_names.keys()):
+       if not (self.use_key_names[x] & 2):
+         self.update_rrd(x, splt, self.use_fields_index)
+ 
+@@ -344,13 +344,13 @@ for o,v in opts:
+   elif o == '-v':
+     opt_verbose = 1
+   elif o == '-h':
+-    print "Usage: flow-rpt2rrd [-nv] [-k keys] [-K keyfile] [-f fields]"
+-    print "                    [-p rrd_path] [-P fname_postfix]"
+-    print "                    [-r rrd_storage 5_min:30_min:2_hr:1_day ]"
++    print("Usage: flow-rpt2rrd [-nv] [-k keys] [-K keyfile] [-f fields]")
++    print("                    [-p rrd_path] [-P fname_postfix]")
++    print("                    [-r rrd_storage 5_min:30_min:2_hr:1_day ]")
+     sys.exit(0)
+ 
+ if opt_keys == '':
+-  print >>sys.stderr, "Keys must be defined with -k or -K."
++  print("Keys must be defined with -k or -K.", file=sys.stderr)
+   sys.exit(1)
+ 
+ ftrrd = ftrpt2rrd()
