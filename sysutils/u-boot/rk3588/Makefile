@@ -1,4 +1,5 @@
 VERSION=	2025.01
+REVISION=	0
 
 SOC=		rk3588
 
@@ -18,8 +19,8 @@ BUILD_DEPENDS+= devel/arm-none-eabi/gcc,aarch64 \
 		sysutils/e2fsprogs
 CROSS_COMPILE=	aarch64-none-elf-
 
-RK3588_TPL=	rk3588_ddr_lp4_2112MHz_lp5_2400MHz_v1.16.bin
-RK3588_BL31=	rk3588_bl31_v1.45.elf
+RK3588_TPL=	rk3588_ddr_lp4_2112MHz_lp5_2400MHz_v1.18.bin
+RK3588_BL31=	rk3588_bl31_v1.48.elf
 
 DISTFILES.rkbin= ${RK3588_TPL} ${RK3588_BL31}
 SITES.rkbin=	https://github.com/rockchip-linux/rkbin/raw/master/bin/rk35/
