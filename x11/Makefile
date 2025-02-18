@@ -30,6 +30,7 @@
      SUBDIR += blackbox
      SUBDIR += blast
      SUBDIR += blueprint-compiler
+     SUBDIR += brewtarget
      SUBDIR += bricons
      SUBDIR += bspwm
      SUBDIR += bwidget
