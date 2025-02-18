@@ -3,7 +3,7 @@ COMMENT-main=	scan ports and fingerprint stack of network hosts
 MODPY_DISTV=	7.92
 DISTNAME=	nmap-${MODPY_DISTV}
 PKGNAME-main=	${DISTNAME}
-REVISION-main=	0
+REVISION-main=	1
 
 CATEGORIES=	net security
 SITES=		${HOMEPAGE}/dist/
@@ -59,8 +59,6 @@ BUILD_DEPENDS=	devel/bison \
 
 post-extract:
 	@cd ${WRKSRC} && rm -rf liblua/ libpcre/
-	2to3 --fix=all --no-diffs --nobackups --verbose --write \
-		${WRKSRC}/ndiff/*py ${WRKSRC}/ndiff/scripts/ndiff
 
 pre-configure:
 	@cd ${WRKSRC}/nping ; env PATH=${PORTPATH} \
