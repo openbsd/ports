@@ -2,10 +2,10 @@ BROKEN-sparc64 = "ICUTransService.hpp does not exist" while packaging
 
 COMMENT =	validating XML parser written in a portable subset of C++
 
-DISTNAME =	xerces-c-3.2.5
+DISTNAME =	xerces-c-3.3.0
 CATEGORIES =	textproc devel
 
-SHARED_LIBS =	xerces-c	1.0
+SHARED_LIBS =	xerces-c	2.0
 
 HOMEPAGE =	https://xerces.apache.org/xerces-c/
 
