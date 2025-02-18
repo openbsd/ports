@@ -8,6 +8,6 @@ Index: pyproject.toml
  [project]
  name = "jellyfish"
 +version = "${MODPY_DISTV}"
- requires-python = ">=3.7"
+ requires-python = ">=3.8"
  classifiers = [
-     "Programming Language :: Rust",
+   "Programming Language :: Rust",

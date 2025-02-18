@@ -1,7 +1,6 @@
 COMMENT =		Python library for approximate and phonetic string matching
 
-MODPY_DISTV =		1.1.0
-REVISION =		2
+MODPY_DISTV =		1.1.3
 DISTNAME =		jellyfish-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/g}
 
@@ -17,6 +16,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${MODCARGO_WANTLIB}
 
 MODULES =		lang/python
+
 MODPY_PI =		Yes
 MODPY_PYBUILD =		maturin
 
