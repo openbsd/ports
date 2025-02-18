@@ -1,5 +1,4 @@
 @pkgpath devel/py-rcsparse,python3
-@conflict rcsparse-*
 lib/python${MODPY_VERSION}/site-packages/rcsparse-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/rcsparse-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/rcsparse-${MODPY_DISTV}.dist-info/RECORD
