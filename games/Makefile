@@ -121,6 +121,7 @@
      SUBDIR += freebee
      SUBDIR += freeblocks
      SUBDIR += freeciv
+     SUBDIR += freeciv21
      SUBDIR += freecol
      SUBDIR += freedink
      SUBDIR += freedoom
