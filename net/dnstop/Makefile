@@ -1,11 +1,11 @@
 COMMENT =		pcap-based DNS query monitor
 
-DISTNAME =		dnstop-20220113
+DISTNAME =		dnstop-20240708
 CATEGORIES =		net
 
 GH_ACCOUNT =		measurement-factory
 GH_PROJECT =		dnstop
-GH_COMMIT =		9a16dd4814d680d0a9949ee52398461a1e0f72dc
+GH_COMMIT =		aaf21ba3426b9cc612e7bc8c87ed5beb160e0cdc
 
 # 3-clause BSD
 PERMIT_PACKAGE =	Yes
