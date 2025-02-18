@@ -1,5 +1,6 @@
 @pkgpath www/py-tempita,python3
 lib/python${MODPY_VERSION}/site-packages/Tempita-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/Tempita-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/Tempita-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/Tempita-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/Tempita-${MODPY_DISTV}.dist-info/WHEEL

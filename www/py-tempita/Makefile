@@ -1,29 +1,19 @@
-COMMENT =	very small text templating language
+COMMENT=	very small text templating language
 
-MODPY_DISTV =	0.5.2
-DISTNAME =	Tempita-${MODPY_DISTV}
-PKGNAME =	py-${DISTNAME:L}
-REVISION =	11
+MODPY_DISTV=	0.6.0
+DISTNAME=	tempita-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =	www
+CATEGORIES=	www
 
-HOMEPAGE =	http://pythonpaste.org/tempita/
+HOMEPAGE=	https://github.com/TurboGears/tempita
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODPY_PI =	Yes
-
-MODULES =	lang/python
-
-MODPY_PYBUILD =	setuptools
-
-TEST_DEPENDS = devel/py-nose
-
-post-patch:
-	cd ${WRKSRC}; 2to3 -w tempita/*py
-
-do-test:
-	cd ${WRKSRC}; ${LOCALBASE}/bin/nosetests
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
+MODPY_PYTEST_ARGS= tests/test*.py
 
 .include <bsd.port.mk>
