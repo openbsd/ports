@@ -288,7 +288,6 @@
      SUBDIR += py-wand
      SUBDIR += py2-Pillow
      SUBDIR += py2-cairo
-     SUBDIR += pycha
      SUBDIR += qiv
      SUBDIR += qr-code-generator
      SUBDIR += quesoglc
