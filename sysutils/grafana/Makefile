@@ -1,3 +1,6 @@
+# various undefined functions/constants in modernc.org/sqlite/lib
+NOT_FOR_ARCHS =	i386
+
 COMMENT =	monitoring and metric analytics dashboards
 
 V =		11.5.1
@@ -5,8 +8,6 @@ DISTNAME =	grafana+vendor-$V
 WRKDIST =	${WRKDIR}/grafana-$V
 EXTRACT_SUFX =	.tar.zst
 PKGNAME =	grafana-$V
-# running into the too long filenames now
-TAR =		${LOCALBASE}/bin/gtar
 
 MAINTAINER = Lucas Raab <tuftedocelot@fastmail.fm>
 
@@ -34,8 +35,7 @@ WANTLIB +=	c pthread
 
 MODGO_GO111MODULE = on
 MODGO_FLAGS += -ldflags="-w -X main.version=$V"
-
-BUILD_DEPENDS =	archivers/gtar
+MAKE_ENV =	GOMAXPROCS=${MAKE_JOBS}
 
 post-extract:
 	mv ${WRKDIR}/grafana-v${V}/public/build \
