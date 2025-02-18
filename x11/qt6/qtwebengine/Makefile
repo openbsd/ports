@@ -2,8 +2,6 @@
 # Patched with security patches up to Chromium version: 131.0.6778.70
 ONLY_FOR_ARCHS =	amd64 aarch64 i386
 
-BROKEN-i386 =		"RuntimeError: Command '/usr/local/bin/node ../../../../../qtwebengine-everywhere-src-6.8.2/src/3rdparty/chromium/third_party/devtools-frontend/src/scripts/build/compress_files.js --file_list __third_party_devtools-frontend_src_compress__pobj_qt6-qtwebengine-6.8.2_build-i386_src_core_target_toolchain_target__rule..rsp' failed"
-
 USE_WXNEEDED =		Yes
 USE_NOBTCFI =		Yes
 
@@ -16,7 +14,7 @@ QT6NAME =	QtWebEngine
 COMMENT =	Qt chromium based web engine
 VERSION =	${QT6_VERSION}
 PKGSPEC =	qt6-qtwebengine-${QT6_PKGSPEC}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  Qt6Pdf                        2.0 # 0.0
 SHARED_LIBS +=  Qt6PdfQuick                   1.0 # 0.0
