@@ -51,6 +51,7 @@ lib/python${MODPY_VERSION}/site-packages/sgp4/model.py
 lib/python${MODPY_VERSION}/site-packages/sgp4/omm.py
 lib/python${MODPY_VERSION}/site-packages/sgp4/propagation.py
 lib/python${MODPY_VERSION}/site-packages/sgp4/sample_omm.csv
+lib/python${MODPY_VERSION}/site-packages/sgp4/sample_omm.json
 lib/python${MODPY_VERSION}/site-packages/sgp4/sample_omm.xml
 lib/python${MODPY_VERSION}/site-packages/sgp4/tcppver.out
 lib/python${MODPY_VERSION}/site-packages/sgp4/tests.py

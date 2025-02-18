@@ -1,27 +1,26 @@
-COMMENT =	Python implementation of SGP4 satellite tracking algorithm
+COMMENT=	Python implementation of SGP4 satellite tracking algorithm
 
-MODPY_DISTV =	2.23
+MODPY_DISTV=	2.24
+DISTNAME=	sgp4-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
-DISTNAME =	sgp4-${MODPY_DISTV}
-PKGNAME =	py-${DISTNAME}
-REVISION =	2
+CATEGORIES=	astro
 
-CATEGORIES =	astro
-
-HOMEPAGE =	https://github.com/brandon-rhodes/python-sgp4
+HOMEPAGE=	https://github.com/brandon-rhodes/python-sgp4
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} m
 
-COMPILER =	base-clang ports-gcc
+COMPILER=	base-clang ports-gcc
 
-MODULES =	lang/python
-MODPY_PYBUILD =	setuptools
-MODPY_PI =	Yes
-MODPY_PYTEST_ARGS = sgp4/tests.py
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
-RUN_DEPENDS =	math/py-numpy
+MODPY_PYTEST_ARGS= sgp4/tests.py
+
+RUN_DEPENDS=	math/py-numpy
 
 .include <bsd.port.mk>
