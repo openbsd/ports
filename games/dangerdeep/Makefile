@@ -44,9 +44,6 @@ MODSCONS_FLAGS =	debug=1 \
 			datadir=${TRUEPREFIX}/share/dangerdeep \
 			installbindir=${PREFIX}/bin
 
-pre-patch:
-	2to3 -w ${WRKSRC}/SConstruct
-
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/SConstruct
 

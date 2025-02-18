@@ -36,9 +36,6 @@ NO_TEST=	Yes
 DATA_DIR=	campaigns graphics intro languages maps patches \
 		scripts sounds units
 
-pre-patch:
-	2to3 -w ${WRKSRC}/SConstruct
-
 # the shipped images are considered broken by newer libpng: use opting
 # to fix them
 pre-configure:
