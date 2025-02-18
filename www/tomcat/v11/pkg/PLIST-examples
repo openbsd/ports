@@ -1302,6 +1302,8 @@ webapps/docs/api/org/apache/juli/DateFormatCache.html
 webapps/docs/api/org/apache/juli/FileHandler.ThreadFactory.html
 webapps/docs/api/org/apache/juli/FileHandler.html
 webapps/docs/api/org/apache/juli/JdkLoggerFormatter.html
+webapps/docs/api/org/apache/juli/JsonFormatter.JSONFilter.html
+webapps/docs/api/org/apache/juli/JsonFormatter.html
 webapps/docs/api/org/apache/juli/OneLineFormatter.html
 webapps/docs/api/org/apache/juli/VerbatimFormatter.html
 webapps/docs/api/org/apache/juli/WebappProperties.html
