@@ -1,6 +1,7 @@
 # Based on Chromium version: 122.0.6261.171
 # Patched with security patches up to Chromium version: 131.0.6778.70
 ONLY_FOR_ARCHS =	amd64 aarch64 i386
+BROKEN-i386 =		reloc problems with embedded FFmpeg (relocation R_386_32 cannot be used against local symbol)
 
 USE_WXNEEDED =		Yes
 USE_NOBTCFI =		Yes
