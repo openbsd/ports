@@ -1586,10 +1586,13 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/ndr/${MODPY_PYCACHE}gkdi.${
 lib/python${MODPY_VERSION}/site-packages/samba/tests/ndr/${MODPY_PYCACHE}gkdi.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/ndr/${MODPY_PYCACHE}gmsa.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/ndr/${MODPY_PYCACHE}gmsa.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/ndr/${MODPY_PYCACHE}sd.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/ndr/${MODPY_PYCACHE}sd.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/ndr/${MODPY_PYCACHE}wbint.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/ndr/${MODPY_PYCACHE}wbint.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/ndr/gkdi.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/ndr/gmsa.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/ndr/sd.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/ndr/wbint.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/net_join.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/net_join_no_spnego.py
@@ -1950,6 +1953,7 @@ lib/samba/ldb/
 @so lib/samba/libtdb-wrap-private-samba.so
 @so lib/samba/libtime-basic-private-samba.so
 @so lib/samba/libtorture-private-samba.so
+@so lib/samba/libutil-crypt-private-samba.so
 @so lib/samba/libutil-reg-private-samba.so
 @so lib/samba/libutil-setid-private-samba.so
 @so lib/samba/libutil-tdb-private-samba.so

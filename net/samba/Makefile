@@ -1,7 +1,6 @@
-VERSION =		4.21.3
+VERSION =		4.21.4
 DISTNAME =		samba-${VERSION}
 EPOCH =			0
-REVISION =		0
 
 COMMENT-main =		SMB and CIFS client and server for UNIX
 COMMENT-docs =		additional documentation and examples for Samba
@@ -29,7 +28,7 @@ SHARED_LIBS =		dcerpc			1.2 \
 			samba-util		11.0 \
 			samdb			4.0 \
 			smbclient		6.2 \
-			smbconf			16.0 \
+			smbconf			16.1 \
 			smbldap			1.0 \
 			tevent			2.3 \
 			tevent-util		2.0 \
