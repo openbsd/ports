@@ -3,7 +3,6 @@ COMMENT=	fast, secure sendmail replacement
 DISTNAME=	postfix-${VERSION}
 PKGNAME=	postfix-${VERSION:S/-/./}
 CATEGORIES=	mail
-REVISION=	0
 
 SITE_POSTFIX= \
 		https://archive.mgm51.com/mirrors/postfix-source/ \
