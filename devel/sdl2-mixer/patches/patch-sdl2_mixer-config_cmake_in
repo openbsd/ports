@@ -1,7 +1,7 @@
 Index: sdl2_mixer-config.cmake.in
 --- sdl2_mixer-config.cmake.in.orig
 +++ sdl2_mixer-config.cmake.in
-@@ -111,7 +111,7 @@ if(NOT TARGET SDL2_mixer::SDL2_mixer)
+@@ -156,7 +156,7 @@ if(NOT TARGET SDL2_mixer::SDL2_mixer)
          unset(_sdl2mixer_dll)
          unset(_sdl2mixer_imp)
      else()
