@@ -1,13 +1,14 @@
 Index: base/test/test_file_util_linux.cc
 --- base/test/test_file_util_linux.cc.orig
 +++ base/test/test_file_util_linux.cc
-@@ -54,8 +54,10 @@ bool EvictFileFromSystemCache(const FilePath& file) {
+@@ -56,9 +56,11 @@ bool EvictFileFromSystemCache(const FilePath& file) {
+   if (fdatasync(fd.get()) != 0) {
      return false;
-   if (fdatasync(fd.get()) != 0)
-     return false;
+   }
 +#if !BUILDFLAG(IS_BSD)
-   if (posix_fadvise(fd.get(), 0, 0, POSIX_FADV_DONTNEED) != 0)
+   if (posix_fadvise(fd.get(), 0, 0, POSIX_FADV_DONTNEED) != 0) {
      return false;
+   }
 +#endif
    return true;
  }

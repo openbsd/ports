@@ -1,7 +1,7 @@
 Index: mojo/public/tools/bindings/mojom.gni
 --- mojo/public/tools/bindings/mojom.gni.orig
 +++ mojo/public/tools/bindings/mojom.gni
-@@ -791,6 +791,16 @@ template("mojom") {
+@@ -796,6 +796,16 @@ template("mojom") {
        enabled_features += [ "is_apple" ]
      }
  
@@ -15,6 +15,6 @@ Index: mojo/public/tools/bindings/mojom.gni
 +      enabled_features += [ "is_bsd" ]
 +    }
 +
-     action(parser_target_name) {
-       allow_remote = true
- 
+     action_outputs = []
+     foreach(base_path, output_file_base_paths) {
+       filename = get_path_info(base_path, "file")

@@ -8,5 +8,5 @@ Index: base/allocator/partition_allocator/src/partition_alloc/partition_alloc_ba
 -#if PA_BUILDFLAG(IS_LINUX) || PA_BUILDFLAG(IS_CHROMEOS)
 +#if PA_BUILDFLAG(IS_LINUX) || PA_BUILDFLAG(IS_CHROMEOS) || PA_BUILDFLAG(IS_BSD)
  #include <sys/syscall.h>
+ 
  #include <atomic>
- #endif

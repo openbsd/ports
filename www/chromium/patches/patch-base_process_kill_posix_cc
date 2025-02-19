@@ -1,7 +1,7 @@
 Index: base/process/kill_posix.cc
 --- base/process/kill_posix.cc.orig
 +++ base/process/kill_posix.cc
-@@ -157,7 +157,7 @@ void EnsureProcessTerminated(Process process) {
+@@ -161,7 +161,7 @@ void EnsureProcessTerminated(Process process) {
        0, new BackgroundReaper(std::move(process), Seconds(2)));
  }
  

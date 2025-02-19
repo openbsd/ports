@@ -1,8 +1,8 @@
 Index: services/device/serial/BUILD.gn
 --- services/device/serial/BUILD.gn.orig
 +++ services/device/serial/BUILD.gn
-@@ -5,7 +5,7 @@
- import("//build/config/chromeos/ui_mode.gni")
+@@ -4,7 +4,7 @@
+ 
  import("//build/config/features.gni")
  
 -if (is_win || ((is_linux || is_chromeos) && use_udev) || is_mac) {

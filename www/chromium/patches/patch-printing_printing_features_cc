@@ -16,3 +16,12 @@ Index: printing/printing_features.cc
               base::FEATURE_DISABLED_BY_DEFAULT
  #else
               base::FEATURE_ENABLED_BY_DEFAULT
+@@ -69,7 +69,7 @@ BASE_FEATURE(kUseXpsForPrintingFromPdf,
+ // out-of-process.
+ BASE_FEATURE(kEnableOopPrintDrivers,
+              "EnableOopPrintDrivers",
+-#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
++#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
+              base::FEATURE_ENABLED_BY_DEFAULT
+ #else
+              base::FEATURE_DISABLED_BY_DEFAULT

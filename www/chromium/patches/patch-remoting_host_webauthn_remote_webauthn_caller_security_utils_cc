@@ -19,7 +19,7 @@ Index: remoting/host/webauthn/remote_webauthn_caller_security_utils.cc
  
  constexpr auto kAllowedCallerPrograms =
      base::MakeFixedFlatSet<base::FilePath::StringPieceType>({
-@@ -82,7 +82,7 @@ bool IsLaunchedByTrustedProcess() {
+@@ -83,7 +83,7 @@ bool IsLaunchedByTrustedProcess() {
  #if !defined(NDEBUG)
    // Just return true on debug builds for the convenience of development.
    return true;

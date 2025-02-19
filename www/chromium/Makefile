@@ -10,8 +10,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser
 
-V=			132.0.6834.159
-REVISION=		0
+V=			133.0.6943.126
 
 DISTNAME=		chromium-${V}
 
@@ -21,8 +20,7 @@ DISTFILES+=		${CHROMIUM_DISTFILES} \
 CHROMIUM_DISTFILES+=	chromium-${V}${EXTRACT_SUFX}
 REGRESS_DISTFILES+=	chromium-${V}-testdata${EXTRACT_SUFX}
 
-EXTRACT_ONLY=		${CHROMIUM_DISTFILES} \
-			${PROFILE_DISTFILES}
+EXTRACT_ONLY=		${CHROMIUM_DISTFILES}
 
 CATEGORIES=		www
 
@@ -142,7 +140,6 @@ GN_SYSTEM_LIBS=	dav1d \
 		fontconfig \
 		icu \
 		libaom \
-		libevent \
 		libjpeg \
 		libpng \
 		libvpx \
