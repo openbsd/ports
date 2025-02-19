@@ -1,8 +1,45 @@
-Sorry: TabError: inconsistent use of tabs and spaces in indentation
+apply 2to3
+fix TabError: inconsistent use of tabs and spaces in indentation
 
 Index: control.py
 --- control.py.orig
 +++ control.py
+@@ -20,7 +20,7 @@
+ # system imports
+ 
+ import os, wx, re, copy
+-import time, thread, tempfile, subprocess, signal
++import time, _thread, tempfile, subprocess, signal
+ 
+ # local imports
+ 
+@@ -130,7 +130,7 @@ class Prover9:
+         return solutions.count('== PROOF ==')
+ 
+     def exit_message(self, code):
+-        if code in self.exits.keys():
++        if code in list(self.exits.keys()):
+             return self.exits[code]
+         else:
+             return 'unknown exit code: %d' % code
+@@ -219,7 +219,7 @@ class Mace4:
+         return solutions.count('interpretation')
+ 
+     def exit_message(self, code):
+-        if code in self.exits.keys():
++        if code in list(self.exits.keys()):
+             return self.exits[code]
+         else:
+             return 'unknown exit code: %d' % code
+@@ -440,7 +440,7 @@ class Run_program:
+         self.saved_output   = [False]
+         self.saved_solution = [False]
+ 
+-        thread.start_new_thread(self.run, ())
++        _thread.start_new_thread(self.run, ())
+ 
+     def run(self):
+         #
 @@ -524,7 +524,7 @@ class Run_program:
                  os.kill(self.process.pid, signal.SIGKILL)
  
@@ -12,6 +49,24 @@ Index: control.py
              self.fin.close()
              self.fout.close()
              self.ferr.close()
+@@ -566,7 +566,7 @@ class Program_panel(wx.Panel):
+             self.time_ctrl.SetValue(opt[Default])
+         else:
+             error_dialog('error sharing max_second option (%s)' % program.name)
+-            self.time_ctrl = wx.SpinCtrl(self, id, min=-1, max=sys.maxint,
++            self.time_ctrl = wx.SpinCtrl(self, id, min=-1, max=sys.maxsize,
+                                          size=(75,-1))
+             self.time_ctrl.SetValue(60)
+ 
+@@ -610,7 +610,7 @@ class Program_panel(wx.Panel):
+ 
+         # State line
+ 
+-        width = max_width(program.exits.values(), self)
++        width = max_width(list(program.exits.values()), self)
+         self.state_text = wx.StaticText(self, -1, 'Ready',
+                                         size=(width, -1))
+ 
 @@ -628,8 +628,8 @@ class Program_panel(wx.Panel):
          self.info_btn.Enable(False)
          
@@ -23,3 +78,12 @@ Index: control.py
                'The choices refer to the most recent %s search.' % program.name)
          self.Bind(wx.EVT_BUTTON, self.on_show_save, self.show_save_btn)
          self.show_save_btn.Enable(False)
+@@ -1011,7 +1011,7 @@ class Isofilter_frame(wx.Frame):
+             self.command = command
+             self.start_btn.Disable()
+             self.bar.start()
+-            thread.start_new_thread(self.run, ())
++            _thread.start_new_thread(self.run, ())
+ 
+     def run(self):
+         #

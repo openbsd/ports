@@ -1,0 +1,14 @@
+apply 2to3
+
+Index: wx_utilities.py
+--- wx_utilities.py.orig
++++ wx_utilities.py
+@@ -187,7 +187,7 @@ class Text_frame(wx.Frame):
+                 # Do not update to_top(self).current_path
+                 if self.saved_flag:
+                     self.saved_flag[0] = True
+-            except IOError, e:
++            except IOError as e:
+                 error_dialog('Error opening file %s for writing.' % path)
+ 
+         dlg.Destroy()

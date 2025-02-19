@@ -44,7 +44,6 @@ do-install:
 		pax -rw . ${SAMPLES_DIR}
 .for m in ${MODPY_ADJ_FILES}
 	${INSTALL_SCRIPT} ${WRKSRC}/$m ${LIBEXEC_DIR}
-	2to3 -wn --no-diffs ${LIBEXEC_DIR}/*
 .endfor
 	${MODPY_COMPILEALL} ${LIBEXEC_DIR}
 

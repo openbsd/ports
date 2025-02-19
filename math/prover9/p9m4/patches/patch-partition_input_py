@@ -1,4 +1,5 @@
-MODPY_ADJ_FILES only works on the file line.
+apply 2to3
+MODPY_ADJ_FILES only works on the first line.
 
 Index: partition_input.py
 --- partition_input.py.orig
@@ -9,12 +10,28 @@ Index: partition_input.py
  #     Copyright (C) 2007 William McCune
  #
  #     This file is part of the LADR Deduction Library.
-@@ -16,8 +18,6 @@
- #     along with the LADR Deduction Library; if not, write to the Free Software
+@@ -17,8 +19,6 @@
  #     Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, MA 02110-1301 USA.
  #
--
--#!/usr/bin/python
  
+-#!/usr/bin/python
+-
  import re, sys
  
+ import utilities
+@@ -145,9 +145,9 @@ if __name__ == '__main__':
+ 
+     (p9,m4,a,g,opt,other) = partition(input)
+ 
+-    print '% p9:\n' + p9
+-    print '% m4:\n' + m4
+-    print '% assumptions:\n' + a
+-    print '% goals:\n' + g
+-    print '% options:\n' + opt
+-    print '% other:\n' + other
++    print('% p9:\n' + p9)
++    print('% m4:\n' + m4)
++    print('% assumptions:\n' + a)
++    print('% goals:\n' + g)
++    print('% options:\n' + opt)
++    print('% other:\n' + other)
