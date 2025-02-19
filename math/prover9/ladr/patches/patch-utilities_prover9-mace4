@@ -1,0 +1,20 @@
+apply 2to3
+
+Index: utilities/prover9-mace4
+--- utilities/prover9-mace4.orig
++++ utilities/prover9-mace4
+@@ -23,12 +23,12 @@ import subprocess
+ def code_to_message(program, code):
+ 
+     if program == 'Mace4':
+-        if code in mace4_exits.keys():
++        if code in list(mace4_exits.keys()):
+             message = mace4_exits[code]
+         else:
+             message = 'unknown'
+     elif program == 'Prover9':
+-        if code in prover9_exits.keys():
++        if code in list(prover9_exits.keys()):
+             message = prover9_exits[code]
+         else:
+             message = 'unknown'

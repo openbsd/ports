@@ -1,0 +1,71 @@
+apply 2to3
+
+Index: utilities/gvizify
+--- utilities/gvizify.orig
++++ utilities/gvizify
+@@ -74,7 +74,7 @@ def recombine(ls, maxlen):
+   while True:  # Loop and 1/2 - anneal list until all recombined
+     changed = False
+     oldls = newls[:]
+-    for i in reversed(range(len(oldls))):
++    for i in reversed(list(range(len(oldls)))):
+       if i < len(oldls)-1: # If there's a line after line i...
+         newstr = oldls[i] + " " + oldls[i+1]
+         if len(newstr) <= realmax: # If smaller, recombine.
+@@ -194,7 +194,7 @@ Parameters may be optionally included in the environme
+     if options.name == "":
+       options.name = args[0].replace(".xml","")
+   else:
+-    print "Sorry, must provide at most 1 argument (the XML's filename)"
++    print("Sorry, must provide at most 1 argument (the XML's filename)")
+     exit(1)
+   if options.name == "":
+     options.name = "Graph"
+@@ -203,22 +203,22 @@ Parameters may be optionally included in the environme
+ def generate_results():
+   "Parse XML from datasource, and write to stdout the graphviz results"
+   # Generate header:
+-  print "strict digraph \"%s\" {" % (options.name.replace('"', r'\"') ,)
+-  print " rotate=%s;" % (options.rotation,)
++  print("strict digraph \"%s\" {" % (options.name.replace('"', r'\"') ,))
++  print(" rotate=%s;" % (options.rotation,))
+   if options.multipage:
+-    print " page=\"%s\";" % (options.size,)
++    print(" page=\"%s\";" % (options.size,))
+   else:
+     force="" if options.relax else "!"
+-    print " size=\"%s%s\";" % (options.size, force)
+-  print " margin=\"%s\";" % (options.margin,)
++    print(" size=\"%s%s\";" % (options.size, force))
++  print(" margin=\"%s\";" % (options.margin,))
+   if options.command != "":
+-    print options.command
++    print(options.command)
+   
+   # Process XML file:
+   doc = parse(datasource)  # [0] is the program name.
+   prooflist = doc.getElementsByTagName("proof")
+   if (prooflist.length != 1):
+-    print "Error! Must be exactly 1 proof item in the XML file"
++    print("Error! Must be exactly 1 proof item in the XML file")
+     exit(1)
+   proof=prooflist.item(0)
+   for clause in proof.getElementsByTagName("clause"):
+@@ -264,13 +264,13 @@ def generate_results():
+     else:
+       extras=',' + options.defaultstep
+ 
+-    print " %s [label=\"%s\"%s];" % (step, result, extras)
++    print(" %s [label=\"%s\"%s];" % (step, result, extras))
+     for edge in parentlist:
+-      print " %s -> %s;" % (edge, step)
++      print(" %s -> %s;" % (edge, step))
+ 
+   # Done with the graph; generate graph footer.
+-  print " root=%s; // last step is plausible root" % step
+-  print "}"
++  print(" root=%s; // last step is plausible root" % step)
++  print("}")
+ 
+ def test():
+   import doctest

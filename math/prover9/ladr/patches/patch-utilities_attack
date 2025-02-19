@@ -1,0 +1,23 @@
+apply 2to3
+
+Index: utilities/attack
+--- utilities/attack.orig
++++ utilities/attack
+@@ -33,7 +33,7 @@ from subprocess import *
+ def runjob4(command_and_args, stdin_string=None):
+ 
+     if debug:
+-        print "Starting job:", command_and_args
++        print("Starting job:", command_and_args)
+ 
+     # Must have stdin arg; otherwise, it uses this process's stdin.
+     p1 = Popen(command_and_args, stdin=PIPE, stdout=PIPE, stderr=PIPE)
+@@ -45,7 +45,7 @@ def runjob4(command_and_args, stdin_string=None):
+     if debug:
+         sys.stdout.writelines(out)
+         sys.stdout.writelines(err)
+-        print "pid=%d, exit_code=%d" % (pid,exit_code)
++        print("pid=%d, exit_code=%d" % (pid,exit_code))
+ 
+     return (pid, exit_code, out, err)
+ 

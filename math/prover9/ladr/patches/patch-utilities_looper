@@ -1,0 +1,47 @@
+apply 2to3
+
+Index: utilities/looper
+--- utilities/looper.orig
++++ utilities/looper
+@@ -30,7 +30,7 @@ from subprocess import *
+ def runjob4(command_and_args, stdin_string=None):
+ 
+     if debug:
+-        print "Starting job:", command_and_args
++        print("Starting job:", command_and_args)
+ 
+     # Must have stdin arg; otherwise, it uses this process's stdin.
+     p1 = Popen(command_and_args, stdin=PIPE, stdout=PIPE, stderr=PIPE)
+@@ -42,7 +42,7 @@ def runjob4(command_and_args, stdin_string=None):
+     if debug:
+         sys.stdout.writelines(out)
+         sys.stdout.writelines(err)
+-        print "pid=%d, exit_code=%d" % (pid,exit_code)
++        print("pid=%d, exit_code=%d" % (pid,exit_code))
+ 
+     return (pid, exit_code, out, err)
+ 
+@@ -106,11 +106,11 @@ prover9_error_exits = [1, 101, 102]
+ date = time.strftime('%A, %b %d, %I:%M %p %Y', time.localtime())
+ host = socket.gethostname()
+ 
+-print "Started %s %s on %s." % (scriptname,date,host)
++print("Started %s %s on %s." % (scriptname,date,host))
+ 
+-print "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% HEAD FILE %%%%%%%%%"
++print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% HEAD FILE %%%%%%%%%")
+ echo_file(head_fname)
+-print "%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% end of head file %%%%%"
++print("%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%% end of head file %%%%%")
+ 
+ if (program == 'prover9'):
+     command_list = [program, '-f', head_fname, cand_fname]
+@@ -175,7 +175,7 @@ os.remove(cand_fname)
+ 
+ date = time.strftime('%A, %b %d, %I:%M %p %Y', time.localtime())
+ 
+-print "\nFinished %s, processed %d, successes %d, failures %d.\n" % (date,n,successes,failures)
++print("\nFinished %s, processed %d, successes %d, failures %d.\n" % (date,n,successes,failures))
+ 
+ sys.exit(0)
+ 
