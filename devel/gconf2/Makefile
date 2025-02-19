@@ -41,8 +41,6 @@ FAKE_FLAGS=		sysgconfdir=${PREFIX}/share/examples/gconf2 \
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/gsettings/gsettings-data-convert.1
-	${LOCALBASE}/bin/2to3 --write --nobackup \
-		${WRKSRC}/gsettings/gsettings-schema-convert
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/schemas/
