@@ -115,6 +115,8 @@ include/PySide6/QtWebEngineWidgets/
 include/PySide6/QtWebEngineWidgets/pyside6_qtwebenginewidgets_python.h
 include/PySide6/QtWebSockets/
 include/PySide6/QtWebSockets/pyside6_qtwebsockets_python.h
+include/PySide6/QtWebView/
+include/PySide6/QtWebView/pyside6_qtwebview_python.h
 include/PySide6/QtWidgets/
 include/PySide6/QtWidgets/pyside6_qtwidgets_python.h
 include/PySide6/QtXml/
@@ -305,6 +307,8 @@ lib/python${MODPY_VERSION}/site-packages/PySide6/QtWebEngineQuick.pyi
 lib/python${MODPY_VERSION}/site-packages/PySide6/QtWebEngineWidgets.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PySide6/QtWebSockets${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/PySide6/QtWebSockets.pyi
+@so lib/python${MODPY_VERSION}/site-packages/PySide6/QtWebView${MODPY_ABI3SO}.so
+lib/python${MODPY_VERSION}/site-packages/PySide6/QtWebView.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PySide6/QtWidgets${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/PySide6/QtWidgets.pyi
 @so lib/python${MODPY_VERSION}/site-packages/PySide6/QtXml${MODPY_ABI3SO}.so
@@ -461,6 +465,7 @@ share/PySide6/typesystems/typesystem_webenginecore.xml
 share/PySide6/typesystems/typesystem_webenginequick.xml
 share/PySide6/typesystems/typesystem_webenginewidgets.xml
 share/PySide6/typesystems/typesystem_websockets.xml
+share/PySide6/typesystems/typesystem_webview.xml
 share/PySide6/typesystems/typesystem_widgets.xml
 share/PySide6/typesystems/typesystem_widgets_common.xml
 share/PySide6/typesystems/typesystem_xml.xml

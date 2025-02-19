@@ -18,8 +18,8 @@ WANTLIB += Qt6RemoteObjects Qt6Scxml Qt6Sensors Qt6SerialBus Qt6SerialPort
 WANTLIB += Qt6ShaderTools Qt6SpatialAudio Qt6Sql Qt6StateMachine
 WANTLIB += Qt6Svg Qt6SvgWidgets Qt6Test Qt6TextToSpeech Qt6UiTools
 WANTLIB += Qt6WebChannel Qt6WebChannelQuick Qt6WebEngineCore Qt6WebEngineQuick
-WANTLIB += Qt6WebEngineWidgets Qt6WebSockets Qt6Widgets Qt6Xml
-WANTLIB += c m shiboken6.abi3 xkbcommon
+WANTLIB += Qt6WebEngineWidgets Qt6WebSockets Qt6WebView Qt6Widgets
+WANTLIB += Qt6Xml c m shiboken6.abi3 xkbcommon
 
 MODULES +=		lang/python
 
@@ -49,9 +49,14 @@ LIB_DEPENDS =		x11/qt6/pyside6/shiboken \
 			x11/qt6/qtwebchannel \
 			x11/qt6/qtwebengine \
 			x11/qt6/qtwebsockets \
+			x11/qt6/qtwebview \
 			x11/xkbcommon
 
 RUN_DEPENDS =		graphics/vulkan-headers
+
+CONFIGURE_ARGS +=	-DBUILD_TESTS=ON \
+			-DBUILD_DOCS=OFF \
+			-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON
 
 WRKSRC =		${WRKDIST}/sources/pyside6
 

@@ -11,3 +11,5 @@ PERMIT_PACKAGE =	Yes
 
 QTSRC =			https://download.qt.io/official_releases/QtForPython
 SITES =			${QTSRC}/pyside6/PySide6-${VERSION}-src/
+
+WRKDIST =		${WRKDIR}/${DISTNAME:R}
