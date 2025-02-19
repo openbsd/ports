@@ -29,8 +29,8 @@ MODOPAM_REPO_NAME =	slipshow-opam-20250201
 SITES.opamrepo =	https://kapouay.eu.org/pub/opam/
 DISTFILES.opamrepo =	${MODOPAM_REPO_NAME}.tar.gz
 
-# see modopam-external
-BUILD_DEPENDS +=	devel/gmp,-main
+BUILD_DEPENDS +=	devel/gmp,-main \
+			devel/libffi
 LIB_DEPENDS +=		devel/libev
 
 CONFIGURE_STYLE +=	opam
