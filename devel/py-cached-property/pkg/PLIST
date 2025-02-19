@@ -3,7 +3,7 @@ lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}cached_property.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}cached_property.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cached_property-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/cached_property-${MODPY_DISTV}.dist-info/AUTHORS.rst
+lib/python${MODPY_VERSION}/site-packages/cached_property-${MODPY_DISTV}.dist-info/AUTHORS.md
 lib/python${MODPY_VERSION}/site-packages/cached_property-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/cached_property-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/cached_property-${MODPY_DISTV}.dist-info/RECORD
