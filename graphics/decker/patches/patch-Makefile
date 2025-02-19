@@ -1,10 +1,11 @@
  - drop -O2 and respect CFLAGS
  - make building verbose
-
+ - allow implicit-const-int-float-conversion
+ 
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -27,7 +27,7 @@ endif
+@@ -34,10 +34,10 @@ endif
  ifeq ($(UNAME),OpenBSD)
  	OPEN=xdg-open
  	COMPILER=clang
@@ -12,8 +13,12 @@ Index: Makefile
 +	FLAGS=-Wall -Werror -Wextra -Wpedantic ${CFLAGS}
  	# -Wno-misleading-indentation silences warnings which are entirely spurious.
  	FLAGS:=$(FLAGS) -Wno-misleading-indentation -Wno-unknown-warning-option
- 	FLAGS:=$(FLAGS) -lm
-@@ -46,16 +46,16 @@ endif
+-	FLAGS:=$(FLAGS) -lm
++	FLAGS:=$(FLAGS) -lm -Wno-implicit-const-int-float-conversion
+ endif
+ ifneq ("$(EXTRA_FLAGS)","")
+ 	FLAGS:=$(FLAGS) $(EXTRA_FLAGS)
+@@ -47,16 +47,16 @@ endif
  # FLAGS:=$(FLAGS) -DDANGER_ZONE
  
  resources:
@@ -36,7 +41,7 @@ Index: Makefile
  
  clean:
  	@rm -rf ./c/build/
-@@ -63,21 +63,21 @@ clean:
+@@ -64,21 +64,21 @@ clean:
  	@rm -f docs/*.html
  
  install:
