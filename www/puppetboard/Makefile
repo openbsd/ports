@@ -1,9 +1,8 @@
 COMMENT=		web interface to PuppetDB
 
-MODPY_DISTV=	5.4.0
+MODPY_DISTV=		6.0.1
 DISTNAME=		puppetboard-${MODPY_DISTV}
 CATEGORIES=		www
-REVISION=		1
 
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 
@@ -29,9 +28,10 @@ RUN_DEPENDS=		databases/py-puppetdb>=3.2 \
 
 PREFIX=			${LOCALSTATEDIR}/www
 INSTDIR=		${PREFIX}/puppetboard
-SUBST_VARS+=		INSTDIR
+SUBST_VARS+=		INSTDIR MODPY_DISTV
 
 do-install:
+	${SUBST_CMD} ${WRKSRC}/puppetboard/version.py
 	cp -Rp ${WRKSRC} ${INSTDIR}
 	mv ${INSTDIR}/puppetboard/default_settings.py \
 		${INSTDIR}/puppetboard/default_settings.py.dist

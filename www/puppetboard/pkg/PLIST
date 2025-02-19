@@ -1,19 +1,10 @@
 @newuser _puppetboard:739:www::Puppetboard user:/nonexistent:/sbin/nologin
 @rcscript ${RCDIR}/puppetboard
 puppetboard/
-puppetboard/CHANGELOG.md
 puppetboard/LICENSE
-puppetboard/MANIFEST.in
 puppetboard/PKG-INFO
 puppetboard/README.md
 puppetboard/puppetboard/
-puppetboard/puppetboard.egg-info/
-puppetboard/puppetboard.egg-info/PKG-INFO
-puppetboard/puppetboard.egg-info/SOURCES.txt
-puppetboard/puppetboard.egg-info/dependency_links.txt
-puppetboard/puppetboard.egg-info/not-zip-safe
-puppetboard/puppetboard.egg-info/requires.txt
-puppetboard/puppetboard.egg-info/top_level.txt
 puppetboard/puppetboard/__init__.py
 puppetboard/puppetboard/app.py
 puppetboard/puppetboard/core.py
@@ -23,13 +14,17 @@ puppetboard/puppetboard/docker_settings.py
 puppetboard/puppetboard/errors.py
 puppetboard/puppetboard/forms.py
 puppetboard/puppetboard/public/
+puppetboard/puppetboard/schedulers/
+puppetboard/puppetboard/schedulers/classes.py
 puppetboard/puppetboard/static/
 puppetboard/puppetboard/static/css/
 puppetboard/puppetboard/static/css/fonts.css
 puppetboard/puppetboard/static/css/puppetboard.css
 puppetboard/puppetboard/static/css/radiator.css
+puppetboard/puppetboard/static/custom-natural/
 puppetboard/puppetboard/static/custom-natural-time-delta/
 puppetboard/puppetboard/static/custom-natural-time-delta/natural-time-delta.js
+puppetboard/puppetboard/static/custom-natural/natural.js
 puppetboard/puppetboard/static/favicon.ico
 puppetboard/puppetboard/static/favicon.svg
 puppetboard/puppetboard/static/fonts/
@@ -118,6 +113,7 @@ puppetboard/puppetboard/templates/403.html
 puppetboard/puppetboard/templates/404.html
 puppetboard/puppetboard/templates/412.html
 puppetboard/puppetboard/templates/500.html
+puppetboard/puppetboard/templates/_facts_sorter.html
 puppetboard/puppetboard/templates/_macros.html
 puppetboard/puppetboard/templates/_static_offline.html
 puppetboard/puppetboard/templates/_static_online.html
@@ -162,17 +158,6 @@ puppetboard/puppetboard/views/query.py
 puppetboard/puppetboard/views/radiator.py
 puppetboard/puppetboard/views/reports.py
 puppetboard/puppetboard_wsgi.py
-puppetboard/requirements-docker.txt
-puppetboard/requirements-test.txt
-puppetboard/requirements.txt
-puppetboard/setup.cfg
-puppetboard/setup.py
-puppetboard/test/
-puppetboard/test/test_app.py
-puppetboard/test/test_app_error.py
-puppetboard/test/test_core.py
-puppetboard/test/test_docker_settings.py
-puppetboard/test/test_form.py
-puppetboard/test/test_utils.py
+puppetboard/pyproject.toml
 @cwd ${LOCALBASE}/share/doc/pkg-readmes
 ${PKGSTEM}
