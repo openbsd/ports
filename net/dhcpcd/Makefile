@@ -14,6 +14,9 @@ SITES=		https://github.com/NetworkConfiguration/dhcpcd/releases/download/v$V/
 # BSD-2
 PERMIT_PACKAGE=	Yes
 
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 # uses pledge()
 WANTLIB += c
 
