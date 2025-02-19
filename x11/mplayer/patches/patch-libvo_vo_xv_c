@@ -1,15 +1,78 @@
-Revert "Use appropriate shared memory permissions."
-r38419
+Implement XShm 1.2
 
 Index: libvo/vo_xv.c
 --- libvo/vo_xv.c.orig
 +++ libvo/vo_xv.c
-@@ -279,7 +279,7 @@ static void allocate_xvimage(int foo)
+@@ -74,7 +74,11 @@ const LIBVO_EXTERN(xv)
+ #ifdef HAVE_SHM
+ #include <sys/ipc.h>
+ #include <sys/shm.h>
++#include <sys/mman.h>
+ #include <X11/extensions/XShm.h>
++#include <X11/Xlib-xcb.h>
++#include <xcb/shm.h>
++#include <unistd.h>
+ 
+ static XShmSegmentInfo Shminfo[NUM_BUFFERS];
+ static int Shmem_Flag;
+@@ -97,6 +101,9 @@ static int num_buffers = 1;     // default
+ static int visible_buf = -1;    // -1 means: no buffer was drawn yet
+ static XvImage *xvimage[NUM_BUFFERS];
+ 
++#ifdef HAVE_SHM
++static  char myshmname[128];
++#endif
+ 
+ static uint32_t image_width;
+ static uint32_t image_height;
+@@ -110,6 +117,18 @@ static uint32_t max_width = 0, max_height = 0; // zero
+ 
+ static vo_draw_alpha_func draw_alpha_func;
+ 
++#ifdef HAVE_SHM
++static Bool XShmAttachFd(Display *dpy, XShmSegmentInfo *shminfo)
++{
++    xcb_connection_t *xcb_conn = XGetXCBConnection(dpy);
++        
++    shminfo->shmseg = xcb_generate_id(xcb_conn);
++    xcb_shm_attach_fd(xcb_conn, shminfo->shmseg,
++                      shminfo->shmid, shminfo->readOnly);
++    return 1;
++}
++#endif
++
+ static void fixup_osd_position(int *x0, int *y0, int *w, int *h)
+ {
+     *x0 += image_width * (vo_panscan_x >> 1) / (vo_dwidth + vo_panscan_x);
+@@ -278,15 +297,18 @@ static void allocate_xvimage(int foo)
+                                          NULL, image_width, image_height,
                                           &Shminfo[foo]);
  
-         Shminfo[foo].shmid =
+-        Shminfo[foo].shmid =
 -            shmget(IPC_PRIVATE, xvimage[foo]->data_size, IPC_CREAT | SHM_R | SHM_W);
-+            shmget(IPC_PRIVATE, xvimage[foo]->data_size, IPC_CREAT | 0777);
-         Shminfo[foo].shmaddr = (char *) shmat(Shminfo[foo].shmid, 0, 0);
+-        Shminfo[foo].shmaddr = (char *) shmat(Shminfo[foo].shmid, 0, 0);
++	memcpy(myshmname, "/tmp/mplayer-xv-XXXXXXXXXX", sizeof(myshmname));
++	Shminfo[foo].shmid = shm_mkstemp(myshmname);
++        Shminfo[foo].shmaddr = mmap(NULL, xvimage[foo]->data_size,
++	    PROT_READ | PROT_WRITE, MAP_SHARED|__MAP_NOFAULT,
++	    Shminfo[foo].shmid, 0);
++	ftruncate(Shminfo[foo].shmid, xvimage[foo]->data_size);
          Shminfo[foo].readOnly = False;
  
+         xvimage[foo]->data = Shminfo[foo].shmaddr;
+-        XShmAttach(mDisplay, &Shminfo[foo]);
++        XShmAttachFd(mDisplay, &Shminfo[foo]);
+         XSync(mDisplay, False);
+-        shmctl(Shminfo[foo].shmid, IPC_RMID, 0);
++	shm_unlink(myshmname);
+     } else
+ #endif
+     {
+@@ -306,6 +328,7 @@ static void deallocate_xvimage(int foo)
+     if (Shmem_Flag)
+     {
+         XShmDetach(mDisplay, &Shminfo[foo]);
++	close(Shminfo[foo].shmid);
+         shmdt(Shminfo[foo].shmaddr);
+     } else
+ #endif

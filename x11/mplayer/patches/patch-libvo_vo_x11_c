@@ -1,15 +1,117 @@
-Revert "Use appropriate shared memory permissions."
-r38419
+Implement XShm 1.2
 
 Index: libvo/vo_x11.c
 --- libvo/vo_x11.c.orig
 +++ libvo/vo_x11.c
-@@ -150,7 +150,7 @@ static void getMyXImage(void)
+@@ -38,7 +38,11 @@
+ #ifdef HAVE_SHM
+ #include <sys/ipc.h>
+ #include <sys/shm.h>
++#include <sys/mman.h>
+ #include <X11/extensions/XShm.h>
++#include <X11/Xlib-xcb.h>
++#include <xcb/shm.h>
++#include <unistd.h>
+ 
+ static int Shmem_Flag;
+ 
+@@ -78,7 +82,9 @@ static unsigned char *ImageDataOrig;
+ static XImage *myximage = NULL;
+ static int depth, bpp;
+ static XWindowAttributes attribs;
+-
++#ifdef HAVE_SHM
++static  char myshmname[128];
++#endif
+ static int int_pause;
+ 
+ static int Flip_Flag;
+@@ -123,9 +129,23 @@ static int dst_width;
+ 
+ static XVisualInfo vinfo;
+ 
++#ifdef HAVE_SHM
++static Bool XShmAttachFd(Display *dpy, XShmSegmentInfo *shminfo)
++{
++    xcb_connection_t *xcb_conn = XGetXCBConnection(dpy);
++        
++    shminfo->shmseg = xcb_generate_id(xcb_conn);
++    xcb_shm_attach_fd(xcb_conn, shminfo->shmseg,
++                      shminfo->shmid, shminfo->readOnly);
++    return 1;
++}
++#endif
++
+ static void getMyXImage(void)
+ {
+ #ifdef HAVE_SHM
++    size_t len;
++
+     if (mLocalDisplay && XShmQueryExtension(mDisplay))
+         Shmem_Flag = 1;
+     else
+@@ -148,33 +168,40 @@ static void getMyXImage(void)
+                    "Shared memory error,disabling ( Ximage error )\n");
+             goto shmemerror;
          }
-         Shminfo[0].shmid = shmget(IPC_PRIVATE,
-                                   myximage->bytes_per_line *
+-        Shminfo[0].shmid = shmget(IPC_PRIVATE,
+-                                  myximage->bytes_per_line *
 -                                  myximage->height, IPC_CREAT | SHM_R | SHM_W);
-+                                  myximage->height, IPC_CREAT | 0777);
-         if (Shminfo[0].shmid < 0)
+-        if (Shminfo[0].shmid < 0)
++	memcpy(myshmname, "/tmp/mplayer-x11-XXXXXXXXXX", sizeof(myshmname));
++	Shminfo[0].shmid = shm_mkstemp(myshmname);
++	if (Shminfo[0].shmid < 0)
          {
              XDestroyImage(myximage);
+             mp_msg(MSGT_VO, MSGL_V, "%s\n", strerror(errno));
+             //perror( strerror( errno ) );
+             mp_msg(MSGT_VO, MSGL_WARN,
+-                   "Shared memory error,disabling ( seg id error )\n");
++                   "Shared memory error,disabling ( shm_open error )\n");
+             goto shmemerror;
+         }
+-        Shminfo[0].shmaddr = (char *) shmat(Shminfo[0].shmid, 0, 0);
+-
+-        if (Shminfo[0].shmaddr == ((char *) -1))
++	len = myximage->bytes_per_line * myximage->height;
++	
++        Shminfo[0].shmaddr = mmap(NULL, len, PROT_READ | PROT_WRITE,
++            MAP_SHARED|__MAP_NOFAULT, Shminfo[0].shmid, 0);
++	
++        if (Shminfo[0].shmaddr == MAP_FAILED)
+         {
+             XDestroyImage(myximage);
+-            if (Shminfo[0].shmaddr != ((char *) -1))
+-                shmdt(Shminfo[0].shmaddr);
+             mp_msg(MSGT_VO, MSGL_WARN,
+-                   "Shared memory error,disabling ( address error )\n");
++                   "Shared memory error,disabling ( mmap error )\n");
+             goto shmemerror;
+         }
++	if (ftruncate(Shminfo[0].shmid, len) == -1)
++	{
++            XDestroyImage(myximage);
++            mp_msg(MSGT_VO, MSGL_WARN,
++                   "Shared memory error,disabling ( fruncate error )\n");
++            goto shmemerror;
++	}
+         myximage->data = Shminfo[0].shmaddr;
+         ImageData = (unsigned char *) myximage->data;
+         Shminfo[0].readOnly = False;
+-        XShmAttach(mDisplay, &Shminfo[0]);
++        XShmAttachFd(mDisplay, &Shminfo[0]);
+ 
+         XSync(mDisplay, False);
+ 
+@@ -218,9 +245,10 @@ static void freeMyXImage(void)
+ #ifdef HAVE_SHM
+     if (Shmem_Flag)
+     {
++	close(Shminfo[0].shmid);
++	shm_unlink(myshmname);
+         XShmDetach(mDisplay, &Shminfo[0]);
+         XDestroyImage(myximage);
+-        shmdt(Shminfo[0].shmaddr);
+     } else
+ #endif
+     {

@@ -3,7 +3,7 @@ COMMENT=	movie player supporting many formats
 V=		20240803
 FFMPEG_V=	6.1.2
 DISTNAME=	mplayer-${V}
-REVISION=	1
+REVISION=	2
 CATEGORIES=	x11 multimedia
 SITES=		https://comstyle.com/source/
 EXTRACT_SUFX=	.tar.xz
@@ -17,12 +17,12 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	EGL GL SDL X11 Xext Xinerama Xss Xv Xxf86dga Xxf86vm ass \
+WANTLIB=	EGL GL SDL X11 X11-xcb Xext Xinerama Xss Xv Xxf86dga Xxf86vm ass \
 		avcodec avformat avutil bluray bs2b bz2 c cdda_interface \
 		cdda_paranoia crypto dv dvdnav dvdread enca fontconfig \
 		freetype fribidi gif iconv jpeg m mng mp3lame curses png \
 		postproc pthread sndio ssl swscale swresample util x264 \
-		xvidcore z
+		xcb xcb-shm xvidcore z
 
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
