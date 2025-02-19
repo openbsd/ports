@@ -1,7 +1,7 @@
 Index: makedefs
 --- makedefs.orig
 +++ makedefs
-@@ -349,22 +349,7 @@ case "$SYSTEM.$RELEASE" in
+@@ -353,22 +353,7 @@ case "$SYSTEM.$RELEASE" in
  		;;
   DragonFly.*)	SYSTYPE=DRAGONFLY
  		;;

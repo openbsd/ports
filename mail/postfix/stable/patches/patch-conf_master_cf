@@ -21,9 +21,9 @@ Index: conf/master.cf
 +#127.0.0.1:submission inet n -   y       -       -       smtpd
 +#submission inet n       -       y       -       -       smtpd
  #  -o syslog_name=postfix/submission
+ #  -o smtpd_forbid_unauth_pipelining=no
  #  -o smtpd_tls_security_level=encrypt
- #  -o smtpd_sasl_auth_enable=yes
-@@ -34,8 +34,8 @@ smtp      inet  n       -       n       -       -     
+@@ -36,8 +36,8 @@ smtp      inet  n       -       n       -       -     
  #  -o smtpd_recipient_restrictions=permit_sasl_authenticated,reject
  #  -o milter_macro_daemon_name=ORIGINATING
  # Choose one: enable submissions for loopback clients only, or for any client.
@@ -32,9 +32,9 @@ Index: conf/master.cf
 +#127.0.0.1:submissions inet n  -       y       -       -       smtpd
 +#submissions     inet  n       -       y       -       -       smtpd
  #  -o syslog_name=postfix/submissions
+ #  -o smtpd_forbid_unauth_pipelining=no
  #  -o smtpd_tls_wrappermode=yes
- #  -o smtpd_sasl_auth_enable=yes
-@@ -51,33 +51,33 @@ smtp      inet  n       -       n       -       -     
+@@ -55,33 +55,33 @@ smtp      inet  n       -       n       -       -     
  #  -o smtpd_relay_restrictions=
  #  -o smtpd_recipient_restrictions=permit_sasl_authenticated,reject
  #  -o milter_macro_daemon_name=ORIGINATING
@@ -89,7 +89,7 @@ Index: conf/master.cf
  postlog   unix-dgram n  -       n       -       1       postlogd
  #
  # ====================================================================
-@@ -112,21 +112,21 @@ postlog   unix-dgram n  -       n       -       1     
+@@ -116,21 +116,21 @@ postlog   unix-dgram n  -       n       -       1     
  # Also specify in main.cf: cyrus_destination_recipient_limit=1
  #
  #cyrus     unix  -       n       n       -       -       pipe
