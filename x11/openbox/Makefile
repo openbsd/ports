@@ -54,7 +54,5 @@ CONFIGURE_ENV =	CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/data/autostart/autostart.in
-	2to3 --fix=all --no-diffs --nobackups --verbose --write \
-	    ${WRKSRC}/data/autostart/openbox-xdg-autostart
 
 .include <bsd.port.mk>
