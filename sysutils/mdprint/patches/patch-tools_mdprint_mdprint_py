@@ -1,3 +1,5 @@
+apply 2to3
+
 Use equality tests instead of identity checks with literals to fix Python 3.8+
 SyntaxWarning messages.
 
@@ -15,6 +17,15 @@ Adapt sloppy conversion of tuples into hex encoded strings likewise.
 Index: tools/mdprint/mdprint.py
 --- tools/mdprint/mdprint.py.orig
 +++ tools/mdprint/mdprint.py
+@@ -88,7 +88,7 @@ class MDPrintApp:
+         for node_string in node_strings:
+             tokens = node_string.split('.')
+             node_name = tokens.pop(0)
+-            prop_names = filter(lambda (s): s, tokens) # remove empty strings
++            prop_names = [s for s in tokens if s] # remove empty strings
+             if node_name not in nodes:
+                 nodes[node_name] = prop_names
+             else:
 @@ -106,7 +106,7 @@ class MDPrintApp:
          arg = dspri_info()
          f = open(MDPrintApp.DefaultPRIFilePath, mode="rb")
@@ -24,6 +35,15 @@ Index: tools/mdprint/mdprint.py
              rv = arg.size
          else:
              rv = -1
+@@ -155,7 +155,7 @@ class Parser(dict):
+         self.data_blk_off = None
+ 
+     def node_ids(self):
+-        return self.keys()
++        return list(self.keys())
+ 
+     def parse_header(self):
+         (self.major, self.minor, self.node_blk_sz, self.name_blk_sz,
 @@ -165,7 +165,7 @@ class Parser(dict):
          self.name_blk_off = self.node_blk_off + self.node_blk_sz
          self.data_blk_off = self.name_blk_off + self.name_blk_sz
@@ -74,6 +94,30 @@ Index: tools/mdprint/mdprint.py
  
  class Element:
  
+@@ -379,18 +379,18 @@ class Printer:
+ 
+         # Print arcs, ordered by target node type.
+         # Use this lambda function to sort by node type.
+-        f = lambda (node_id, node): node.type
+-        arc_name_f = lambda (t):t[0]
++        f = lambda node_id_node: node_id_node[1].type
++        arc_name_f = lambda t:t[0]
+ 
+         if self.settings.backlinks:
+-            for _, target_node in sorted(node.backs.iteritems(), key=f):
++            for _, target_node in sorted(iter(node.backs.items()), key=f):
+                 if (not subgraph) or target_node.in_subgraph:
+                     self.print_back_arc(md, node, target_node, self.settings)
+ 
+-        for _, target_node in sorted(node.fwds.iteritems(), key=f):
++        for _, target_node in sorted(iter(node.fwds.items()), key=f):
+             self.print_fwd_arc(md, node, target_node, self.settings)
+ 
+-        for (arc_name, _), target_node in sorted(node.named_arcs.iteritems(),
++        for (arc_name, _), target_node in sorted(iter(node.named_arcs.items()),
+             key=arc_name_f):
+             self.print_named_arc(md, node, arc_name, target_node, self.settings)
+ 
 @@ -495,7 +495,7 @@ class ParsablePrinter(Printer):
              self.p(node.type)
  
@@ -93,16 +137,37 @@ Index: tools/mdprint/mdprint.py
  
          self.p("}")
  
-@@ -552,7 +553,7 @@ class TextPrinter(Printer):
+@@ -548,22 +549,22 @@ class TextPrinter(Printer):
+ 
+     def node_start(self, md, node, settings):
+         if settings.nodeids:
+-            print("%s (node 0x%x) {" % (node.type, node.node_id))
++            print(("%s (node 0x%x) {" % (node.type, node.node_id)))
          else:
-             print("%s {" % node.type)
+-            print("%s {" % node.type)
++            print(("%s {" % node.type))
      def print_str_prop(self, md, node, prop_name, prop_val):
 -        print("\t%s = \"%s\"" % (prop_name, prop_val))
-+        print("\t%s = \"%s\"" % (prop_name, prop_val.decode('utf-8')))
++        print(("\t%s = \"%s\"" % (prop_name, prop_val.decode('utf-8'))))
      def print_val_prop(self, md, node, prop_name, prop_val):
-         print("\t%s = 0x%x /* %d */" % (prop_name, prop_val, prop_val))
+-        print("\t%s = 0x%x /* %d */" % (prop_name, prop_val, prop_val))
++        print(("\t%s = 0x%x /* %d */" % (prop_name, prop_val, prop_val)))
      def print_data_prop(self, md, node, prop_name, prop_val):
-@@ -572,7 +573,7 @@ class TextPrinter(Printer):
+ 
+-        print "\t%s = {" % prop_name
++        print("\t%s = {" % prop_name)
+ 
+         strings = Parser.get_string_list(prop_val)
+         if strings:
+             for s in strings[:-1]:
+-                print "\t\t\"%s\"," % s
+-            print "\t\t\"%s\"" % strings[-1]
++                print("\t\t\"%s\"," % s)
++            print("\t\t\"%s\"" % strings[-1])
+ 
+         else:
+             print_byte = lambda b:"0x%02x" % b
+@@ -572,33 +573,33 @@ class TextPrinter(Printer):
              # Some magic to print 8 columns of bytes: for each
              # chunk of 8 bytes in the byte array, get an array
              # slice 8-long and join it with a space.
@@ -110,25 +175,128 @@ Index: tools/mdprint/mdprint.py
 +            for i in range(0, (len(prop_val)+bpl-1)//bpl):
                  raw = "%s" % ' '.join(map(print_byte,
                      prop_val[i * bpl:(i+1) * bpl]))
-                 print "\t\t%s" % raw
-@@ -623,7 +624,7 @@ class HTMLPrinter(Printer):
-             md.counts[node.type], node.type))
+-                print "\t\t%s" % raw
++                print("\t\t%s" % raw)
+ 
+-        print "\t}"
++        print("\t}")
+ 
+     def print_named_arc(self, md, node, arc_name, target_node, settings):
+         if settings.nodeids:
+-            print("\t%s --> %s (node 0x%x)" %
+-                (arc_name, target_node.type, target_node.node_id))
++            print(("\t%s --> %s (node 0x%x)" %
++                (arc_name, target_node.type, target_node.node_id)))
+         else:
+-            print("\t%s --> %s" % (arc_name, target_node.type))
++            print(("\t%s --> %s" % (arc_name, target_node.type)))
+ 
+     def print_fwd_arc(self, md, node, target_node, settings):
+         if settings.nodeids:
+-            print("\tfwd --> %s (node 0x%x)" %
+-                (target_node.type, target_node.node_id))
++            print(("\tfwd --> %s (node 0x%x)" %
++                (target_node.type, target_node.node_id)))
+         else:
+-            print("\tfwd --> %s" % target_node.type)
++            print(("\tfwd --> %s" % target_node.type))
+ 
+     def print_back_arc(self, md, node, target_node, settings):
+         if settings.nodeids:
+-            print("\tbak <-- %s (node 0x%x)" %
+-                (target_node.type, target_node.node_id))
++            print(("\tbak <-- %s (node 0x%x)" %
++                (target_node.type, target_node.node_id)))
+         else:
+-            print("\tbak <-- %s" % target_node.type)
++            print(("\tbak <-- %s" % target_node.type))
+ 
+     def node_end(self, md, node):
+         print("}")
+@@ -612,29 +613,29 @@ class HTMLPrinter(Printer):
+         self.header_string = header
+ 
+     def md_start(self, md):
+-        print "<html><head><title>MD</title><body>"
++        print("<html><head><title>MD</title><body>")
+         if self.header_string:
+-            print "<pre>" + header + "</pre>"
++            print("<pre>" + header + "</pre>")
+ 
+     def node_start(self, md, node, settings):
+-        print ("<div class=node><p><b><a href=#0x%x name=0x%x>%s</b></a> "
++        print(("<div class=node><p><b><a href=#0x%x name=0x%x>%s</b></a> "
+                 "<i>node 0x%x</i> <i>(%d %s nodes)</i>" %
+                 (node.node_id, node.node_id, node.type, node.node_id,
+-            md.counts[node.type], node.type))
++            md.counts[node.type], node.type)))
  
      def print_str_prop(self, md, node, prop_name, prop_val):
 -        print("<br>%s = \"%s\"" % (prop_name, prop_val))
-+        print("<br>%s = \"%s\"" % (prop_name, prop_val.decode('utf-8')))
++        print(("<br>%s = \"%s\"" % (prop_name, prop_val.decode('utf-8'))))
  
      def print_val_prop(self, md, node, prop_name, prop_val):
-         print("<br>%s = 0x%x /* %d */" % (prop_name, prop_val, prop_val))
-@@ -642,7 +643,7 @@ class HTMLPrinter(Printer):
+-        print("<br>%s = 0x%x /* %d */" % (prop_name, prop_val, prop_val))
++        print(("<br>%s = 0x%x /* %d */" % (prop_name, prop_val, prop_val)))
+ 
+     def print_data_prop(self, md, node, prop_name, prop_val):
+-        print("<br>%s = {" % prop_name)
++        print(("<br>%s = {" % prop_name))
+ 
+         strings = Parser.get_string_list(prop_val)
+         if strings:
+             for s in strings:
+-                print "<br>&nbsp;\"%s\"" % s
++                print("<br>&nbsp;\"%s\"" % s)
+         else:
+             print_byte = lambda b:"0x%02x" % b
+             bpl = 8 # bytes per line
+@@ -642,32 +643,32 @@ class HTMLPrinter(Printer):
              # Some magic to print 8 columns of bytes: for each
              # chunk of 8 bytes in the byte array, get an array
              # slice 8-long and join it with a space.
 -            for i in range(0, (len(prop_val)+bpl-1)/bpl):
+-                print "<br>&nbsp;", ', '.join(map(print_byte,
+-                    prop_val[i * bpl:(i+1) * bpl]))
 +            for i in range(0, (len(prop_val)+bpl-1)//bpl):
-                 print "<br>&nbsp;", ', '.join(map(print_byte,
-                     prop_val[i * bpl:(i+1) * bpl]))
++                print("<br>&nbsp;", ', '.join(map(print_byte,
++                    prop_val[i * bpl:(i+1) * bpl])))
  
+         print("<br>}")
+ 
+     def print_fwd_arc(self, md, node, target_node, settings):
+-        print ("<br>&rarr; <a href=#0x%x><b>%s</b></a> <i>node_0x%x</i>" %
+-            (target_node.node_id, target_node.type, target_node.node_id))
++        print(("<br>&rarr; <a href=#0x%x><b>%s</b></a> <i>node_0x%x</i>" %
++            (target_node.node_id, target_node.type, target_node.node_id)))
+ 
+     def print_back_arc(self, md, node, target_node, settings):
+-        print ("<br>&larr; <a href=#0x%x><b>%s</b></a> <i>node_0x%x</i>" %
+-            (target_node.node_id, target_node.type, target_node.node_id))
++        print(("<br>&larr; <a href=#0x%x><b>%s</b></a> <i>node_0x%x</i>" %
++            (target_node.node_id, target_node.type, target_node.node_id)))
+ 
+     def print_named_arc(self, md, node, arc_name, target_node, settings):
+-        print ("<br>%s &rarr; <a href=#0x%x><b>%s</b></a> <i>node_0x%x</i>" %
++        print(("<br>%s &rarr; <a href=#0x%x><b>%s</b></a> <i>node_0x%x</i>" %
+             (arc_name, target_node.node_id, target_node.type,
+-            target_node.node_id))
++            target_node.node_id)))
+ 
+     def node_end(self, md, node):
+-        print "</p>"
+-        print "</div>"
+-        print "<hr>"
++        print("</p>")
++        print("</div>")
++        print("<hr>")
+ 
+     def md_end(self, md):
+-        print '</body></html>'
++        print('</body></html>')
+ 
+ class PrintSettings:
+     def __init__(self, parsable, backlinks, node_ids):
 @@ -753,7 +754,7 @@ if __name__ == "__main__":
      # Binary mode can not be used with display options or input files
      if (flags.print_binary and
@@ -183,3 +351,21 @@ Index: tools/mdprint/mdprint.py
                  MDPrintApp.err("Couldn't read PRI size from \"%s\"\n" %
                      mdfilename)
                  option_parser.print_help()
+@@ -916,7 +917,7 @@ if __name__ == "__main__":
+                 (md[flags.root].type, flags.root)
+         if node_filter.grep:
+             header += "Limiting output to\n"
+-            for node in node_filter.grep.keys():
++            for node in list(node_filter.grep.keys()):
+                 if len(node_filter.grep[node]) == 0:
+                     props = '*'
+                 else:
+@@ -944,7 +945,7 @@ if __name__ == "__main__":
+             printer.print_subgraph(md, flags.root)
+         else:
+             printer.print_md(md)
+-    except IOError, e:
++    except IOError as e:
+         if e.errno != errno.EPIPE:
+             raise
+ 

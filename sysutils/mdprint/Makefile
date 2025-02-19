@@ -21,19 +21,15 @@ EXTRACT_FILES =		${DISTNAME}.tar
 MODULES =		lang/python
 MODPY_ADJ_FILES =	${MDPRINT}
 
-SEPARATE_BUILD =	Yes
-
 MDPRINT =		tools/mdprint/mdprint.py
 
+NO_BUILD =		Yes
 NO_TEST =		Yes
 
 post-extract:
 	cd ${WRKDIR} && ${TAR} -xf${EXTRACT_FILES} ${DISTNAME}/${MDPRINT}
 
-do-build:
-	2to3-${MODPY_VERSION} -j${MAKE_JOBS} -Wno${WRKBUILD} ${WRKSRC}/${MDPRINT}
-
 do-install:
-	${INSTALL_SCRIPT} ${WRKBUILD}/mdprint.py ${PREFIX}/bin/mdprint
+	${INSTALL_SCRIPT} ${WRKSRC}/${MDPRINT} ${PREFIX}/bin/mdprint
 
 .include <bsd.port.mk>
