@@ -8,7 +8,9 @@ COMMENT =		small build system with a focus on speed
 GH_ACCOUNT =		ninja-build
 GH_PROJECT =		ninja
 GH_TAGNAME =		v1.11.1
-# known breakage with 1.12.0: chromium iridium fcitx
+# chromium fails with 1.12.0/1.12.1:
+# In file included from ../../net/dns/dns_config_service_posix.cc:44:
+# ../../sandbox/policy/switches.h:12:10: fatal error: 'services/screen_ai/buildflags/buildflags.h' file not found
 REVISION =		0
 
 CATEGORIES =		devel
