@@ -1,6 +1,10 @@
 # build only on ocaml native (and it simplifies packaging)
 ONLY_FOR_ARCHS =	${OCAML_NATIVE_ARCHS}
 
+# - slipshow -> ppx_blob -> ppxlib -> sexplib0
+# unmet availability conditions: 'arch != "arm32" & arch != "x86_32"'
+NOT_FOR_ARCHS =		i386
+
 COMMENT =		compiler from markdown to slipshow
 
 GH_ACCOUNT =		panglesd
