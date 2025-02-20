@@ -1,0 +1,10 @@
+CMake is a cross-platform software development tool for compiling, testing
+and packaging/installing applications.
+
+It controls the software compilation process using platform- and compiler-
+independent configuration files. It generates files for various native build
+systems including Makefiles, Ninja, Visual Studio and XCode.
+
+CMake is quite sophisticated: it is possible to support complex environments
+requiring system configuration, pre-processor generation, code generation,
+and template instantiation.
