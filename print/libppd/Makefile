@@ -1,6 +1,6 @@
 COMMENT=		library for retro-fitting legacy printer drivers
 
-V=			2.1.0
+V=			2.1.1
 DISTNAME=		libppd-${V}
 
 SHARED_LIBS +=  ppd                  0.0      # 2.0
@@ -17,10 +17,9 @@ PERMIT_PACKAGE=		Yes
 SITES=		https://github.com/OpenPrinting/libppd/releases/download/${V}/
 
 WANTLIB += ${COMPILER_LIBCXX} avahi-client avahi-common c crypto
-WANTLIB += cups cupsfilters dbus-1 execinfo exif expat fontconfig
+WANTLIB += cups cupsfilters dbus-1 exif expat fontconfig z
 WANTLIB += freetype gmp hogweed iconv idn2 intl jpeg lcms2 m nettle
 WANTLIB += p11-kit png poppler-cpp qpdf ssl tasn1 tiff unistring
-WANTLIB += z
 
 # -std=gnu11
 COMPILER=		base-clang ports-gcc
