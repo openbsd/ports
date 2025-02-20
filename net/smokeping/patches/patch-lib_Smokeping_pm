@@ -11,7 +11,7 @@ numeric locales with , instead of . (etc) and we don't do those anyway.
 Index: lib/Smokeping.pm
 --- lib/Smokeping.pm.orig
 +++ lib/Smokeping.pm
-@@ -37,36 +37,6 @@ setlogsock('unix')
+@@ -38,36 +38,6 @@ setlogsock('unix')
  my $xssBadRx = qr/[<>%&'";]/;
  
  $ENV{'LC_NUMERIC'}='C';

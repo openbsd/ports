@@ -1,8 +1,7 @@
 COMMENT=	latency logging and graphing system
 
-V=		2.8.2
+V=		2.9.0
 DISTNAME=	smokeping-$V
-REVISION=	5
 
 CATEGORIES=	net
 

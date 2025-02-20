@@ -1,7 +1,7 @@
 Index: bin/tSmoke
 --- bin/tSmoke.orig
 +++ bin/tSmoke
-@@ -63,7 +63,7 @@ use Pod::Usage;
+@@ -64,7 +64,7 @@ use Pod::Usage;
  use RRDs;
  
  # Point to your Smokeping config file

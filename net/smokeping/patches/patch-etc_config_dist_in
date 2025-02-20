@@ -49,8 +49,8 @@ Index: etc/config.dist.in
 +
  htmltitle = yes
  graphborders = no
- 
-@@ -107,10 +108,10 @@ unison_tolerance = 2
+ # If enabled, treat all filter menu queries as literal strings instead of regex
+@@ -109,10 +110,10 @@ unison_tolerance = 2
  
  + FPing
  
