@@ -54,11 +54,13 @@ share/doc/libnotify-0/enum.Urgency.html
 share/doc/libnotify-0/fonts.css
 share/doc/libnotify-0/func.ACTION_CALLBACK.html
 share/doc/libnotify-0/func.CHECK_VERSION.html
+share/doc/libnotify-0/func.get_app_icon.html
 share/doc/libnotify-0/func.get_app_name.html
 share/doc/libnotify-0/func.get_server_caps.html
 share/doc/libnotify-0/func.get_server_info.html
 share/doc/libnotify-0/func.init.html
 share/doc/libnotify-0/func.is_initted.html
+share/doc/libnotify-0/func.set_app_icon.html
 share/doc/libnotify-0/func.set_app_name.html
 share/doc/libnotify-0/func.uninit.html
 share/doc/libnotify-0/fzy.js
@@ -73,6 +75,7 @@ share/doc/libnotify-0/method.Notification.clear_hints.html
 share/doc/libnotify-0/method.Notification.close.html
 share/doc/libnotify-0/method.Notification.get_activation_token.html
 share/doc/libnotify-0/method.Notification.get_closed_reason.html
+share/doc/libnotify-0/method.Notification.set_app_icon.html
 share/doc/libnotify-0/method.Notification.set_app_name.html
 share/doc/libnotify-0/method.Notification.set_category.html
 share/doc/libnotify-0/method.Notification.set_hint.html
