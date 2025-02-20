@@ -2,6 +2,7 @@
 bin/zxcvbn
 lib/python${MODPY_VERSION}/site-packages/zxcvbn/
 lib/python${MODPY_VERSION}/site-packages/zxcvbn-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/zxcvbn-${MODPY_DISTV}.dist-info/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/zxcvbn-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/zxcvbn-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/zxcvbn-${MODPY_DISTV}.dist-info/WHEEL
