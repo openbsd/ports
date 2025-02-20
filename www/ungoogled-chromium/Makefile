@@ -11,9 +11,8 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser sans integration with Google
 
-V=			132.0.6834.159
+V=			133.0.6943.126
 UGV=			${V}-1
-REVISION=		0
 
 DISTNAME=		ungoogled-chromium-${V}
 
@@ -147,7 +146,6 @@ GN_SYSTEM_LIBS=	dav1d \
 		fontconfig \
 		icu \
 		libaom \
-		libevent \
 		libjpeg \
 		libpng \
 		libvpx \

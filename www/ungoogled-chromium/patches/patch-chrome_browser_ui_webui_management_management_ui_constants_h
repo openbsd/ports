@@ -1,9 +1,9 @@
 Index: chrome/browser/ui/webui/management/management_ui_constants.h
 --- chrome/browser/ui/webui/management/management_ui_constants.h.orig
 +++ chrome/browser/ui/webui/management/management_ui_constants.h
-@@ -8,14 +8,14 @@
+@@ -7,14 +7,14 @@
+ 
  #include "build/build_config.h"
- #include "build/chromeos_buildflags.h"
  
 -#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)

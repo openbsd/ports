@@ -1,7 +1,7 @@
 Index: third_party/sqlite/BUILD.gn
 --- third_party/sqlite/BUILD.gn.orig
 +++ third_party/sqlite/BUILD.gn
-@@ -142,7 +142,7 @@ config("sqlite_warnings") {
+@@ -153,7 +153,7 @@ config("sqlite_warnings") {
        ]
      }
    }

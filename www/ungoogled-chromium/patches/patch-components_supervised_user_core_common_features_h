@@ -21,10 +21,10 @@ Index: components/supervised_user/core/common/features.h
  
 -#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_BSD)
- // This hides the following guest mode entry points for supervised users:
- //
- // * In the Profile menu for supervised profiles
-@@ -71,7 +71,7 @@ BASE_DECLARE_FEATURE(kHideGuestModeForSupervisedUsers)
+ // Uses supervised user strings on the signout dialog.
+ BASE_DECLARE_FEATURE(kEnableSupervisedUserVersionSignOutDialog);
+ 
+@@ -74,7 +74,7 @@ BASE_DECLARE_FEATURE(kHideGuestModeForSupervisedUsers)
  // unauthenticated (e.g. signed out of the content area) account.
  BASE_DECLARE_FEATURE(kForceSafeSearchForUnauthenticatedSupervisedUsers);
  

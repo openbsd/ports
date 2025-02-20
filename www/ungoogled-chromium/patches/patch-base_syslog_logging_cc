@@ -10,10 +10,10 @@ Index: base/syslog_logging.cc
  // <syslog.h> defines LOG_INFO, LOG_WARNING macros that could conflict with
  // base::LOG_INFO, base::LOG_WARNING.
  #include <syslog.h>
-@@ -149,7 +149,7 @@ EventLogMessage::~EventLogMessage() {
- 
-   if (user_sid != nullptr)
+@@ -151,7 +151,7 @@ EventLogMessage::~EventLogMessage() {
+   if (user_sid != nullptr) {
      ::LocalFree(user_sid);
+   }
 -#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_BSD)
    const char kEventSource[] = "chrome";
