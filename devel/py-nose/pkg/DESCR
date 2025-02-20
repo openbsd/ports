@@ -1,3 +1,6 @@
 Nose provides an alternate test discovery and running process for
 unittest, one that is intended to mimic the behavior of py.test as
 much as is reasonably possible without resorting to too much magic.
+
+This package provide "pynose", an updated fork which is compatible
+with recent versions of Python.
