@@ -42,6 +42,8 @@ include/mruby/throw.h
 include/mruby/value.h
 include/mruby/variable.h
 include/mruby/version.h
+@static-lib lib/libmruby.a
+@static-lib lib/libmruby_core.a
 lib/mruby/
 lib/mruby/mrbgems/
 lib/mruby/mrbgems/default-no-fpu.gembox

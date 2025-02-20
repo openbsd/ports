@@ -6,7 +6,7 @@ GH_ACCOUNT =		mruby
 GH_PROJECT =		mruby
 GH_TAGNAME =		3.3.0
 
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		lang
 HOMEPAGE =		https://mruby.org/
@@ -32,6 +32,7 @@ do-build:
 do-install:
 	${INSTALL_PROGRAM} ${WRKSRC}/bin/* ${PREFIX}/bin/
 	${INSTALL_DATA_DIR} ${PREFIX}/{lib,include,share/doc}/mruby/ 
+	${INSTALL_DATA} ${WRKSRC}/build/host/lib/libmruby*.a ${PREFIX}/lib/
 	cp -R ${WRKSRC}/mrb{lib,gems} ${PREFIX}/lib/mruby/
 	cp -R ${WRKSRC}/include/* ${PREFIX}/include
 	${INSTALL_DATA} ${WRKSRC}/doc/guides/* ${PREFIX}/share/doc/mruby/ 
