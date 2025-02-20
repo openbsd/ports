@@ -551,6 +551,8 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}digita
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}digitalconcerthall.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}digiteka.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}digiteka.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}digiview.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}digiview.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}discogs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}discogs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/${MODPY_PYCACHE}disney.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2376,6 +2378,7 @@ lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/dfb.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/dhm.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/digitalconcerthall.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/digiteka.py
+lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/digiview.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/discogs.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/disney.py
 lib/python${MODPY_VERSION}/site-packages/yt_dlp/extractor/dispeak.py
