@@ -1,5 +1,5 @@
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
-ONLY_FOR_ARCHS =	${LLVM_ARCHS}
+ONLY_FOR_ARCHS ?=	${LLVM_ARCHS}
 
 DPB_PROPERTIES =	parallel
 
