@@ -1,9 +1,9 @@
-MODPY_DISTV =	1.0.1
 COMMENT =	self-contained ISO 3166-1 country definitions library
+
+MODPY_DISTV =	2.1.1
 DISTNAME =	iso3166-${MODPY_DISTV}
 PKGNAME =	py-iso3166-${MODPY_DISTV}
 CATEGORIES =	devel
-REVISION =	7
 
 HOMEPAGE =	https://github.com/deactivated/python-iso3166
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
