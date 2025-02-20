@@ -25,7 +25,7 @@ MODULES =		devel/cargo \
 			lang/clang
 
 # needed by the build script of aws-lc-sys
-BUILD_DEPENDS =		devel/cmake
+BUILD_DEPENDS =		devel/cmake/core
 
 LIB_DEPENDS =		audio/portaudio-svn \
 			x11/dbus,-main

@@ -17,7 +17,7 @@ WANTLIB += wx_baseu_net-3.2 wx_baseu_xml-3.2 xml2 z
 
 BUILD_DEPENDS =		archivers/gtar \
 			archivers/zip \
-			devel/cmake \
+			devel/cmake/core \
 			shells/bash \
 
 LIB_DEPENDS =		audio/libogg \

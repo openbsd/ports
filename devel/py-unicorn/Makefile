@@ -19,7 +19,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB =		m pthread
 
-BUILD_DEPENDS =		devel/cmake
+BUILD_DEPENDS =		devel/cmake/core
 MODULES =		lang/python
 
 MODPY_PI =		Yes

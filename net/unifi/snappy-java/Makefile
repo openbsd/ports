@@ -36,7 +36,7 @@ MODULES=	java
 MODJAVA_VER=	17+
 
 # not MODULES; it is run from a Makefile
-BUILD_DEPENDS=	devel/cmake
+BUILD_DEPENDS=	devel/cmake/core
 
 USE_GMAKE=	Yes
 MAKE_ENV=	JAVA_HOME=${JAVA_HOME}

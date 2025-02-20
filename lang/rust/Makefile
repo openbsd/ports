@@ -133,7 +133,7 @@ MODULES +=		lang/python \
 
 MODPY_RUNDEP =		No
 
-BUILD_DEPENDS +=	devel/cmake
+BUILD_DEPENDS +=	devel/cmake/core
 BUILD_DEPENDS +=	shells/bash
 BUILD_DEPENDS +=	devel/ninja
 BUILD_DEPENDS +=	devel/gdb

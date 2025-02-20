@@ -47,7 +47,7 @@ MODPY_ADJ_FILES=	auxil/btest/btest \
 			auxil/zeekctl/auxil/trace-summary/trace-summary
 
 BUILD_DEPENDS=		devel/bison \
-			devel/cmake \
+			devel/cmake/core \
 			devel/swig
 
 LIB_DEPENDS=		${MODPY_LIB_DEPENDS} \

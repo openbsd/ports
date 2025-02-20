@@ -29,6 +29,6 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_SETUPTOOLS =	Yes
 
-BUILD_DEPENDS =		devel/cmake
+BUILD_DEPENDS =		devel/cmake/core
 
 .include <bsd.port.mk>

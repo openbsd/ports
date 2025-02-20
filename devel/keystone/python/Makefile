@@ -18,7 +18,7 @@ FLAVOR ?=
 
 COMPILER =	base-clang ports-gcc
 
-BUILD_DEPENDS =	devel/cmake
+BUILD_DEPENDS =	devel/cmake/core
 RUN_DEPENDS =	devel/keystone/main
 
 NO_TEST =	Yes

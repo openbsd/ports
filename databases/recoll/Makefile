@@ -38,9 +38,7 @@ MODULES=	devel/meson \
 		x11/qt6
 MODPY_ADJ_FILES=filters/*.py filters/rclepub
 
-#LIBTOOL_FLAGS=		--tag=disable-static
-
-BUILD_DEPENDS=		devel/cmake \
+BUILD_DEPENDS=		devel/cmake/core \
 			devel/gmake \
 			devel/py-setuptools \
 			textproc/aspell/core

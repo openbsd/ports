@@ -1,4 +1,4 @@
-BUILD_DEPENDS+=	devel/cmake
+BUILD_DEPENDS+=	devel/cmake/core
 
 .for _n _v in ${SHARED_LIBS}
 CONFIGURE_ENV +=LIB${_n}_VERSION=${_v}

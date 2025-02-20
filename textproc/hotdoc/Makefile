@@ -19,7 +19,7 @@ MODULES=		lang/python
 MODPY_PI=		Yes
 MODPY_PYBUILD=		setuptools
 
-BUILD_DEPENDS=		devel/cmake
+BUILD_DEPENDS=		devel/cmake/core
 
 LIB_DEPENDS=		devel/json-glib \
 			textproc/libxml

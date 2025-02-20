@@ -24,8 +24,8 @@ CONFIGURE_ARGS =-Dtests=disabled
 RUN_DEPENDS +=	graphics/glm
 BUILD_DEPENDS =	wayland/libinput-openbsd \
 		wayland/wayland \
-		wayland/wayland-protocols\
-		devel/cmake \
+		wayland/wayland-protocols \
+		devel/cmake/core \
 		graphics/glm
 LIB_DEPENDS =	textproc/libxml \
 		wayland/libevdev-openbsd>=20231111

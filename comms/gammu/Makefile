@@ -30,7 +30,7 @@ LIB_DEPENDS =		databases/libdbi \
 			devel/glib2 \
 			devel/libusb1 \
 			net/curl
-TEST_DEPENDS = 		devel/cmake
+TEST_DEPENDS = 		devel/cmake/core
 
 CONFIGURE_ARGS +=	-DINSTALL_MAN_DIR:STRING=man \
 			-DINSTALL_BASH_COMPLETION=OFF \

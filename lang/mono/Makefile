@@ -43,7 +43,7 @@ USE_LIBTOOL=	gnu
 SUBST_VARS=	LIBTOOL
 
 BUILD_DEPENDS=	devel/bison \
-		devel/cmake \
+		devel/cmake/core \
 		devel/gettext,-tools \
 		lang/gawk \
 		shells/bash \

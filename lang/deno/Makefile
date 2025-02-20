@@ -49,7 +49,7 @@ COMPILER =		base-clang
 WANTLIB +=		${MODCARGO_WANTLIB} ${COMPILER_LIBCXX} m execinfo ffi onig zstd
 
 BUILD_DEPENDS =		databases/sqlite3 \
-			devel/cmake \
+			devel/cmake/core \
 			devel/gmake \
 			devel/gn \
 			devel/ninja \

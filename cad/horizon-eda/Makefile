@@ -28,7 +28,7 @@ COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/meson
 
-BUILD_DEPENDS =		devel/cmake \
+BUILD_DEPENDS =		devel/cmake/core \
 			graphics/glm \
 			net/cppzmq
 RUN_DEPENDS =		devel/desktop-file-utils \

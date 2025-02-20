@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 BUILD_DEPENDS =		${RUN_DEPENDS} \
-			devel/cmake
+			devel/cmake/core
 
 RUN_DEPENDS =		math/py-numpy	\
 			math/py-scipy	\
