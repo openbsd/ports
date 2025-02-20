@@ -1,6 +1,6 @@
 COMMENT=	arrays of booleans
 
-MODPY_DISTV=	3.0.0
+MODPY_DISTV=	3.1.0
 DISTNAME=	bitarray-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -16,5 +16,7 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 MODPY_TEST_LINK_SO= Yes
+# FileTests.test_mmap_2 failure looks like it's a problem with OS
+# that don't have cache coherency between mmap and file access
 
 .include <bsd.port.mk>
