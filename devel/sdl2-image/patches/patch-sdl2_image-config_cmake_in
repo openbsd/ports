@@ -1,7 +1,7 @@
 Index: sdl2_image-config.cmake.in
 --- sdl2_image-config.cmake.in.orig
 +++ sdl2_image-config.cmake.in
-@@ -78,7 +78,7 @@ if(NOT TARGET SDL2_image::SDL2_image)
+@@ -105,7 +105,7 @@ if(NOT TARGET SDL2_image::SDL2_image)
      else()
          set_target_properties(SDL2_image::SDL2_image
              PROPERTIES
