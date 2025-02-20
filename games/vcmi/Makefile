@@ -2,6 +2,8 @@ COMMENT =	HoMM3 engine rewrite
 
 CATEGORIES =	games
 
+REVISION =	0
+
 HOMEPAGE =	https://vcmi.eu/
 
 MAINTAINER =	Kirill Bychkov <kirby@openbsd.org>
