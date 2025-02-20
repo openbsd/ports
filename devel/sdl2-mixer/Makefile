@@ -2,6 +2,7 @@ V =		2.8.1
 COMMENT =	SDL2 multi-channel audio mixer library
 DISTNAME =	SDL2_mixer-${V}
 PKGNAME =	sdl2-mixer-${V}
+REVISION =	0
 CATEGORIES =	devel audio
 
 SHARED_LIBS +=  SDL2_mixer		1.1	# 2.8.0
@@ -15,12 +16,13 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += SDL2 X11 Xcursor Xext Xfixes Xi Xrandr Xrender Xss
 WANTLIB += c iconv m ogg opus opusfile pthread samplerate sndio
 WANTLIB += usbhid xcb
-# wavpack and xmp SO loaded via SDL_LoadObject, that is dlopen(3)
-WANTLIB += wavpack xmp
+# vorbis, wavpack and xmp SO loaded via SDL_LoadObject, that is dlopen(3)
+WANTLIB += vorbis wavpack xmp
 
 SITES =		https://www.libsdl.org/projects/SDL_mixer/release/
 
-LIB_DEPENDS =	audio/libxmp \
+LIB_DEPENDS =	audio/libvorbis \
+		audio/libxmp \
 		audio/opusfile \
 		audio/wavpack \
 		converters/libiconv \
