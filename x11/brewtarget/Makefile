@@ -25,6 +25,7 @@ COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake \
 			x11/qt6
 
+BUILD_DEPENDS =		devel/boost
 LIB_DEPENDS =		textproc/xalan-c \
 			x11/qt6/qtmultimedia \
 			x11/qt6/qtsvg
