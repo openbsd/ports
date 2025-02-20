@@ -4,6 +4,9 @@
 @comment bin/fuzzplayground
 @comment bin/generate-checksum
 @comment bin/integration-test
+@bin bin/memogen
 @bin bin/nuclei
 @comment bin/sign-templates
+@bin bin/scan-charts
+@bin bin/signer
 @bin bin/tmc
