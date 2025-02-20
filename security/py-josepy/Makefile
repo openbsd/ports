@@ -2,6 +2,7 @@ COMMENT=	Javascript Object Signing and Encryption (JOSE)
 
 CATEGORIES=	security devel
 
+# security/letsencrypt/py-acme needs <2 (as of 3.2.0)
 MODPY_DISTV=	1.15.0
 DISTNAME=	josepy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
