@@ -12,6 +12,7 @@ MAINTAINER=		Chaz Kettleson <chaz@pyr3x.com>
 # GPLv2+
 PERMIT_PACKAGE=		Yes
 
+# uses pledge() and unveil()
 WANTLIB=		c crypto ssl
 
 CONFIGURE_STYLE=	gnu
