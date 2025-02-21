@@ -1,0 +1,36 @@
+Don't overquote m4 macros
+uname -o is not portable
+test(1) -a is not portable
+
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -31,10 +31,10 @@ m4_define([gtk_required_version], [3.12.0])
+ m4_define([pango_required_version], [1.32.4])
+ m4_define([cairo_required_version], [1.12.0])
+ 
+-PKG_CHECK_MODULES(GTK, [gtk+-3.0 >= [gtk_required_version]])
+-PKG_CHECK_MODULES(GDK, [gdk-3.0 >= [gtk_required_version]])
+-PKG_CHECK_MODULES(PANGO, [pango >= [pango_required_version]])
+-PKG_CHECK_MODULES(CAIRO, [cairo >= [cairo_required_version]])
++PKG_CHECK_MODULES(GTK, [gtk+-3.0 >= gtk_required_version])
++PKG_CHECK_MODULES(GDK, [gdk-3.0 >= gtk_required_version])
++PKG_CHECK_MODULES(PANGO, [pango >= pango_required_version])
++PKG_CHECK_MODULES(CAIRO, [cairo >= cairo_required_version])
+ AC_SUBST(GTK_CFLAGS)
+ AC_SUBST(GTK_LIBS)
+ 
+@@ -46,8 +46,11 @@ AC_SUBST(GETTEXT_PACKAGE)
+ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE,"$GETTEXT_PACKAGE", [Gettext package.])
+ AC_DEFINE(ENABLE_NLS,"1",[enable nls])
+ 
+-AM_CONDITIONAL(IS_WIN, test `uname -o` = "Msys")
+-AM_CONDITIONAL(IS_POSIX, test  `uname -o` != "Msys" -a `uname -o` != "Darwin")
++# uname -o isn't supported on all systems
++osname=`uname -o`
++AS_IF([test "$osname" = "" ], [osname=`uname -s`])
++AM_CONDITIONAL(IS_WIN, test "$osname" = "Msys")
++AM_CONDITIONAL(IS_POSIX, test "$osname" != "Msys" && test "$osname" != "Darwin")
+ 
+ AC_CONFIG_FILES([Makefile
+ 		src/Makefile

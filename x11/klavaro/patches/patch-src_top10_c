@@ -1,0 +1,32 @@
+Fix time_t printing
+
+Index: src/top10.c
+--- src/top10.c.orig
++++ src/top10.c
+@@ -363,7 +363,7 @@ top10_merge_stats_from_file (gchar * file)
+ 		n = fread (&top10.when, sizeof (gint32), 1, fh);
+ 		if (n == 0)
+ 		{
+-			g_message ("Problem: when = %li", top10.when);
++			g_message ("Problem: when = %lld", (long long)top10.when);
+ 			break;
+ 		}
+ 
+@@ -479,7 +479,7 @@ top10_read_stats_from_file (gboolean locally, gchar * 
+ 		n = fread (&top10[i].when, sizeof (gint32), 1, fh);
+ 		if (n == 0)
+ 		{
+-			g_message ("Problem: when = %li", top10[i].when);
++			g_message ("Problem: when = %lld", (long long)top10[i].when);
+ 			break;
+ 		}
+ 
+@@ -676,7 +676,7 @@ top10_show_stat (Statistics * stat)
+ {
+ 	g_print ("Language: %c%c\n", stat->lang[0], stat->lang[1]);
+ 	g_print ("Graphical environment: %s\n", stat->genv == 'x' ? "Linux" : "Windows");
+-	g_print ("When: %li\n", stat->when);
++	g_print ("When: %lld\n", (long long)stat->when);
+ 	g_print ("# of characters: %i\n", stat->nchars);
+ 	g_print ("Accuracy: %2.1f\n", stat->accur);
+ 	g_print ("Velocity: %2.1f\n", stat->velo);
