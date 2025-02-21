@@ -1,0 +1,4 @@
+tinyhtml5 is a HTML5 parser that transforms a possibly malformed HTML
+document into an ElementTree tree.
+
+This module is a simplified fork of html5lib.
