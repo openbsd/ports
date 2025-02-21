@@ -1,22 +1,21 @@
-COMMENT=		PEP 621 metadata parsing
+COMMENT=	PEP 621 metadata parsing
 
 MODPY_DISTV=	0.9.0
-DISTNAME=		pyproject_metadata-${MODPY_DISTV}
-PKGNAME=		py-${DISTNAME:S/_/-/}
-REVISION=		0
+DISTNAME=	pyproject_metadata-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME:S/_/-/}
+REVISION=	1
 
-CATEGORIES=		devel
+CATEGORIES=	devel
 
-HOMEPAGE=		https://github.com/FFY00/python-pyproject-metadata
+HOMEPAGE=	https://github.com/FFY00/python-pyproject-metadata
 
 # MIT
-PERMIT_PACKAGE=		Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES=		lang/python
+MODULES=	lang/python
+MODPY_PYBUILD=	flit_core
+MODPY_PI=	Yes
 
-MODPY_PI=		Yes
-MODPY_PYBUILD=		flit_core
-
-RUN_DEPENDS=		sysutils/py-packaging
+RUN_DEPENDS=	sysutils/py-packaging
 
 .include <bsd.port.mk>

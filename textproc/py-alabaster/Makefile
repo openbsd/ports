@@ -3,7 +3,7 @@ COMMENT=	configurable sidebar-enabled Sphinx theme
 MODPY_DISTV=	1.0.0
 DISTNAME=	alabaster-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc
 
@@ -11,9 +11,8 @@ CATEGORIES=	textproc
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	flit_core
+MODPY_PI=	Yes
 
 NO_TEST=	Yes
 

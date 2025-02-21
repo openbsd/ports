@@ -4,7 +4,7 @@ MODPY_DISTV=	0.21.2
 DISTNAME=	docutils-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://docutils.sourceforge.io/
 
@@ -12,9 +12,8 @@ HOMEPAGE=	https://docutils.sourceforge.io/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	flit_core
+MODPY_PI=	Yes
 
 RUN_DEPENDS=	textproc/py-pygments
 

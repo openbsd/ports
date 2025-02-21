@@ -1,10 +1,9 @@
 COMMENT=	simple, correct PEP 517 build frontend
 
 MODPY_DISTV=	1.2.2.post1
-
 DISTNAME=	build-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

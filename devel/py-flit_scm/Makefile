@@ -3,7 +3,7 @@ COMMENT=	PEP 518 backend, using setuptools_scm and flit_core
 MODPY_DISTV=	1.7.0
 DISTNAME=	flit_scm-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	devel
 

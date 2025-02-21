@@ -1,9 +1,9 @@
 COMMENT =		backported type hints for python >= 3.5
 
-MODPY_DISTV =	4.12.2
+MODPY_DISTV =		4.12.2
 DISTNAME =		typing_extensions-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://github.com/python/typing_extensions/
 

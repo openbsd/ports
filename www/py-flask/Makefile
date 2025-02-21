@@ -3,6 +3,7 @@ COMMENT=	microframework based on Werkzeug and Jinja 2
 MODPY_DISTV=	3.1.0
 DISTNAME=	flask-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	www devel
 

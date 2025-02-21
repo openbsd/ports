@@ -6,11 +6,12 @@ bin/sphinx-build
 bin/sphinx-quickstart
 lib/python${MODPY_VERSION}/site-packages/sphinx/
 lib/python${MODPY_VERSION}/site-packages/sphinx-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/sphinx-${MODPY_DISTV}.dist-info/LICENSE.rst
 lib/python${MODPY_VERSION}/site-packages/sphinx-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/sphinx-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/sphinx-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/sphinx-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/sphinx-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/sphinx-${MODPY_DISTV}.dist-info/licenses/LICENSE.rst
 lib/python${MODPY_VERSION}/site-packages/sphinx/__init__.py
 lib/python${MODPY_VERSION}/site-packages/sphinx/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sphinx/${MODPY_PYCACHE}/

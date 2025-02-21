@@ -5,7 +5,7 @@ EPOCH=		0
 
 DISTNAME=	pyproject_hooks-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

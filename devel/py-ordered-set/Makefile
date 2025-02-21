@@ -1,9 +1,9 @@
 COMMENT=		ordered sets in Python
 
-MODPY_DISTV=	4.1.0
+MODPY_DISTV=		4.1.0
 DISTNAME=		ordered-set-${MODPY_DISTV}
 PKGNAME=		py-ordered-set-${MODPY_DISTV}
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		devel
 
@@ -15,7 +15,6 @@ HOMEPAGE=		https://github.com/rspeer/ordered-set
 PERMIT_PACKAGE=		Yes
 
 MODULES=		lang/python
-
 MODPY_PYBUILD=		flit_core
 MODPY_PI=		Yes
 

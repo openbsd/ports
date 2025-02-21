@@ -233,3 +233,5 @@ lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_serializinghtml-${MODPY_D
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_serializinghtml-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_serializinghtml-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_serializinghtml-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_serializinghtml-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/sphinxcontrib_serializinghtml-${MODPY_DISTV}.dist-info/licenses/LICENCE.rst

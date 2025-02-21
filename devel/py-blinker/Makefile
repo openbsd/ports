@@ -3,6 +3,7 @@ COMMENT=	fast, simple object-to-object and broadcast signaling
 MODPY_DISTV=	1.9.0
 DISTNAME=	blinker-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

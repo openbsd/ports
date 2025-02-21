@@ -1,25 +1,23 @@
-COMMENT =		Sphinx extension to build a 404 page with absolute URLs
+COMMENT=	Sphinx extension to build a 404 page with absolute URLs
 
-MODPY_DISTV =	0.8.3
-DISTNAME =		sphinx-notfound-page-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
+MODPY_DISTV=	0.8.3
+DISTNAME=	sphinx-notfound-page-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
+REVISION=	5
 
-REVISION =		4
+CATEGORIES=	textproc
 
-CATEGORIES =		textproc
-
-HOMEPAGE =		https://github.com/readthedocs/sphinx-notfound-page
+HOMEPAGE=	https://github.com/readthedocs/sphinx-notfound-page
 
 # MIT
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
+MODPY_PYBUILD=	flit_core
+MODPY_PI=	Yes
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		flit_core
+RUN_DEPENDS=	textproc/py-sphinx
 
-RUN_DEPENDS =		textproc/py-sphinx
-
-NO_TEST =		Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

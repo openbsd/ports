@@ -4,6 +4,8 @@ lib/python${MODPY_VERSION}/site-packages/ordered_set-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/ordered_set-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/ordered_set-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/ordered_set-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/ordered_set-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/ordered_set-${MODPY_DISTV}.dist-info/licenses/MIT-LICENSE
 lib/python${MODPY_VERSION}/site-packages/ordered_set/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ordered_set/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/ordered_set/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

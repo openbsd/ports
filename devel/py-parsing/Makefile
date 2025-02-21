@@ -4,6 +4,7 @@ MODPY_DISTV=	3.2.1
 DISTNAME=	pyparsing-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/py/py-/}
 CATEGORIES=	devel
+REVISION=	0
 
 HOMEPAGE=	https://github.com/pyparsing/pyparsing/
 
@@ -11,8 +12,8 @@ HOMEPAGE=	https://github.com/pyparsing/pyparsing/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PI=	Yes
 MODPY_PYBUILD=	flit_core
+MODPY_PI=	Yes
 
 # test_diagram needs railroad (some others want it too, but test_diagram
 # makes test collection fail)

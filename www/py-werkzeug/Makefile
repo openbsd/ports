@@ -3,6 +3,7 @@ COMMENT=	WSGI utility collection
 MODPY_DISTV=	3.1.3
 DISTNAME=	werkzeug-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 EPOCH=		0
 
@@ -12,7 +13,7 @@ CATEGORIES=	www devel
 HOMEPAGE=	https://palletsprojects.com/projects/werkzeug/
 
 # BSD
-PERMIT_PACKAGE=Yes
+PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 MODPY_PYBUILD=	flit_core

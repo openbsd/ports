@@ -97,7 +97,8 @@ lib/python${MODPY_VERSION}/site-packages/PyPDF2/py.typed
 lib/python${MODPY_VERSION}/site-packages/PyPDF2/types.py
 lib/python${MODPY_VERSION}/site-packages/PyPDF2/xmp.py
 lib/python${MODPY_VERSION}/site-packages/pypdf2-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pypdf2-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pypdf2-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/pypdf2-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/pypdf2-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pypdf2-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/pypdf2-${MODPY_DISTV}.dist-info/licenses/LICENSE

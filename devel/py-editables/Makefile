@@ -4,7 +4,7 @@ MODPY_DISTV=	0.5
 
 DISTNAME=	editables-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	devel
 
@@ -14,9 +14,8 @@ HOMEPAGE=	https://github.com/pfmoore/editables
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PI=	Yes
-
 MODPY_PYBUILD=	flit_core
+MODPY_PI=	Yes
 
 NO_TEST=	Yes
 

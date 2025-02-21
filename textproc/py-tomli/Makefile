@@ -6,7 +6,7 @@ MODPY_DISTV=	2.2.1
 # a backport of tomllib
 DISTNAME=	tomli-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc
 

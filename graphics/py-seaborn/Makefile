@@ -3,6 +3,7 @@ COMMENT=	statistical data visualization
 MODPY_DISTV=	0.13.2
 DISTNAME=	seaborn-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	graphics math
 

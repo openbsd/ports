@@ -4,6 +4,7 @@ MODPY_DISTV =		0.21.0
 
 DISTNAME =		aiosqlite-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		databases
 

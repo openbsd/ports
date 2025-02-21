@@ -3,6 +3,7 @@ COMMENT=	simple TOML writer
 MODPY_DISTV=	1.2.0
 DISTNAME=	tomli_w-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	textproc
 

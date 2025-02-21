@@ -3,6 +3,7 @@ COMMENT=	fast, optionally sandboxed, Python template engine
 MODPY_DISTV=	3.1.5
 DISTNAME=	jinja2-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	www devel
 

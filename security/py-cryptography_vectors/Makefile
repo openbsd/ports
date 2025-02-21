@@ -4,6 +4,7 @@ MODPY_DISTV=	44.0.1
 DISTNAME=	cryptography_vectors-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	security
+REVISION=	0
 
 HOMEPAGE=	https://cryptography.io/
 

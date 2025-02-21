@@ -3,7 +3,7 @@ COMMENT=	helpers to pass trusted data to untrusted environments
 MODPY_DISTV=	2.2.0
 DISTNAME=	itsdangerous-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www devel
 

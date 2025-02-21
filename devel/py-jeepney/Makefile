@@ -1,9 +1,9 @@
 COMMENT=		low-level, pure Python DBus protocol wrapper
 
-MODPY_DISTV=	0.8.0
+MODPY_DISTV=		0.8.0
 DISTNAME=		jeepney-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		devel
 
@@ -13,8 +13,7 @@ HOMEPAGE=		https://gitlab.com/takluyver/jeepney
 PERMIT_PACKAGE=		Yes
 
 MODULES=		lang/python
-
-MODPY_PI=		Yes
 MODPY_PYBUILD=		flit_core
+MODPY_PI=		Yes
 
 .include <bsd.port.mk>

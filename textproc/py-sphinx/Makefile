@@ -3,6 +3,7 @@ COMMENT=	Python documentation generator
 MODPY_DISTV=	8.1.3
 DISTNAME=	sphinx-${MODPY_DISTV}
 PKGNAME=	py-sphinx-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	textproc
 

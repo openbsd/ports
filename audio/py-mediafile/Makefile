@@ -3,6 +3,7 @@ COMMENT=	read and write audio file tags in Python
 MODPY_DISTV=	0.13.0
 DISTNAME=	mediafile-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	audio
 

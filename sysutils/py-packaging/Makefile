@@ -4,7 +4,7 @@ MODPY_DISTV=	24.2
 
 DISTNAME=	packaging-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	sysutils
 
@@ -14,7 +14,6 @@ HOMEPAGE=	https://github.com/pypa/packaging
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
 MODPY_PI=	Yes
 MODPY_PYTEST=	Yes
 

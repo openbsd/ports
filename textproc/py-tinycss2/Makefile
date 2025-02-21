@@ -3,7 +3,7 @@ COMMENT=	tiny CSS parser
 MODPY_DISTV=	1.4.0
 DISTNAME=	tinycss2-${MODPY_DISTV}
 PKGNAME=	py-tinycss2-${MODPY_DISTV}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc
 

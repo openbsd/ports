@@ -4,7 +4,7 @@ MODPY_DISTV=	0.7.0
 
 DISTNAME=	installer-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	devel
 
@@ -14,7 +14,6 @@ HOMEPAGE=	https://installer.readthedocs.io/en/stable/
 PERMIT_PACKAGE= Yes
 
 MODULES=	lang/python
-
 MODPY_PI=	Yes
 MODPY_PYTEST=	Yes
 

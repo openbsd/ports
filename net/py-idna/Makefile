@@ -4,7 +4,7 @@ MODPY_DISTV=	3.10
 DISTNAME=	idna-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	net
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://github.com/kjd/idna
 
@@ -12,8 +12,7 @@ HOMEPAGE=	https://github.com/kjd/idna
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	flit_core
+MODPY_PI=	Yes
 
 .include <bsd.port.mk>

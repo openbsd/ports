@@ -4,6 +4,7 @@ MODPY_DISTV=	3.0.0
 DISTNAME=	markdown-it-py-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/-py//}
 CATEGORIES=	textproc
+REVISION=	0
 
 # BSD
 PERMIT_PACKAGE=	Yes

@@ -3,7 +3,7 @@ COMMENT=	sqlalchemy support for flask
 MODPY_DISTV=	3.1.1
 DISTNAME=	flask_sqlalchemy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	databases www
 
