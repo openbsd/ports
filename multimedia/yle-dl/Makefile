@@ -14,8 +14,7 @@ MAINTAINER =		Timo Myyra <timo.myyra@bittivirhe.fi>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-#MODPY_PYBUILD =		flit_core
-MODPY_PYBUILD =		flit
+MODPY_PYBUILD =		flit_core
 
 RUN_DEPENDS =		devel/py-attrs \
 			devel/py-configargparse \
