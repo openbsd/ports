@@ -1,24 +1,11 @@
 Index: gtk/Makefile.in
 --- gtk/Makefile.in.orig
 +++ gtk/Makefile.in
-@@ -231,7 +231,6 @@ libgtkdatabox_la_SOURCES = \
- 
- libgtkdatabox_la_LDFLAGS = \
- 		        -version-info $(LT_CURRENT)\
--			-release $(LT_RELEASE)\
- 			@GTK_LIBS@
- 
- include_HEADERS = \
-@@ -255,12 +254,9 @@ INCLUDES = \
+@@ -418,7 +418,6 @@ AM_CPPFLAGS = \
  			-I$(top_srcdir)
  
  AM_CFLAGS = \
 -			-O2\
  			-W -Wall -pedantic\
- 			-DG_DISABLE_DEPRECATED\
--			-DGDK_DISABLE_DEPRECATED\
- 			-DGDK_PIXBUF_DISABLE_DEPRECATED\
--			-DGTK_DISABLE_DEPRECATED\
+ 			-DGDK_MIN_VERSION_REQUIRED=GDK_VERSION_3_4\
  			-DGTK_MULTIHEAD_SAFE=1\
- 			`pkg-config gtk+-2.0 --cflags`
- 
