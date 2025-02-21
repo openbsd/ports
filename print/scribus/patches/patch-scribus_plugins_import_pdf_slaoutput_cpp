@@ -1,6 +1,6 @@
-Fix build with poppler-24.10.0 and 25.01.0.
+Fix build with poppler-24.10.0, 25.01.0, 25.02.0.
 
-From upstream commits 26325, 26327, 26392 and 26394.
+From upstream commits 26325, 26327, 26392 26394 and 26666.
 
 Index: scribus/plugins/import/pdf/slaoutput.cpp
 --- scribus/plugins/import/pdf/slaoutput.cpp.orig
@@ -156,7 +156,16 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  							int fl = impo->getFlags();
  							if (fl == 0)
  								ite->annotation().setHTML(0);
-@@ -3049,13 +3063,14 @@ void SlaOutputDev::updateFont(GfxState *state)
+@@ -2908,7 +2922,7 @@ void SlaOutputDev::beginMarkedContent(POPPLER_CONST ch
+ 	{
+ 		if (dictRef->isNull())
+ 			return;
+-		OCGs *contentConfig = m_catalog->getOptContentConfig();
++		POPPLER_CONST_25_02 OCGs *contentConfig = m_catalog->getOptContentConfig();
+ 		OptionalContentGroup *oc;
+ 		if (dictRef->isRef())
+ 		{
+@@ -3049,14 +3063,19 @@ void SlaOutputDev::updateFont(GfxState *state)
  	char* tmpBuf = nullptr;
  #endif
  	GfxFontType fontType;
@@ -171,10 +180,15 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
 -#if POPPLER_ENCODED_VERSION < POPPLER_VERSION_ENCODE(22, 4, 0)
 -	int tmpBufLen = 0;
 -#endif
++#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(25, 2, 0)
++	std::vector<int> codeToGID;
++#else
  	int *codeToGID = nullptr;
++#endif
  	const double *textMat = nullptr;
  	double m11, m12, m21, m22, fontSize;
-@@ -3066,11 +3081,7 @@ void SlaOutputDev::updateFont(GfxState *state)
+ 	SplashCoord mat[4] = { 1.0, 0.0, 0.0, 1.0 };
+@@ -3066,11 +3085,7 @@ void SlaOutputDev::updateFont(GfxState *state)
  
  	m_font = nullptr;
  
@@ -186,7 +200,7 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  	if (!gfxFont)
  		goto err1;
  
-@@ -3079,9 +3090,15 @@ void SlaOutputDev::updateFont(GfxState *state)
+@@ -3079,9 +3094,15 @@ void SlaOutputDev::updateFont(GfxState *state)
  		goto err1;
  
  	// check the font file cache
@@ -202,7 +216,7 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  	else
  	{
  		fontLoc = gfxFont->locateFont(m_xref ? m_xref : m_pdfDoc->getXRef(), nullptr);
-@@ -3135,30 +3152,59 @@ void SlaOutputDev::updateFont(GfxState *state)
+@@ -3135,30 +3156,59 @@ void SlaOutputDev::updateFont(GfxState *state)
  		// load the font file
  		switch (fontType) {
  		case fontType1:
@@ -263,11 +277,24 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  				ff = FoFiTrueType::load(fileName.c_str());
  			else
  				ff = FoFiTrueType::make(fontsrc->buf.data(), fontsrc->buf.size());
-@@ -3184,19 +3230,35 @@ void SlaOutputDev::updateFont(GfxState *state)
+@@ -3181,24 +3231,62 @@ void SlaOutputDev::updateFont(GfxState *state)
+ 			}
+ 			else
+ 			{
++#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(25, 2, 0)
++				codeToGID.clear();
++#else
  				codeToGID = nullptr;
++#endif
  				n = 0;
  			}
-+#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(24, 11, 0)
++#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(25, 2, 0)
++			if (!(fontFile = m_fontEngine->loadTrueTypeFont(std::move(id), fontsrc, std::move(codeToGID), fontLoc->fontNum)))
++			{
++				error(errSyntaxError, -1, "Couldn't create a font for '{0:s}'", gfxFont->getName() ? gfxFont->getName()->c_str() : "(unnamed)");
++				goto err2;
++			}
++#elif POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(24, 11, 0)
 +			if (!(fontFile = m_fontEngine->loadTrueTypeFont(std::move(id), fontsrc, codeToGID, n, fontLoc->fontNum)))
 +			{
 +				error(errSyntaxError, -1, "Couldn't create a font for '{0:s}'", gfxFont->getName() ? gfxFont->getName()->c_str() : "(unnamed)");
@@ -298,12 +325,34 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
 +#endif
  			break;
  		case fontCIDType0COT:
++#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(25, 2, 0)
++			if (((GfxCIDFont*) gfxFont)->getCIDToGIDLen() > 0)
++			{
++				codeToGID = ((GfxCIDFont*) gfxFont)->getCIDToGID();
++				n = codeToGID.size();
++			}
++			else
++			{
++				codeToGID.clear();
++				n = 0;
++			}
++#else
  			if (((GfxCIDFont *) gfxFont)->getCIDToGID())
-@@ -3210,12 +3272,21 @@ void SlaOutputDev::updateFont(GfxState *state)
+ 			{
+ 				n = ((GfxCIDFont *) gfxFont)->getCIDToGIDLen();
+@@ -3210,15 +3298,41 @@ void SlaOutputDev::updateFont(GfxState *state)
  				codeToGID = nullptr;
  				n = 0;
  			}
-+#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(24, 11, 0)
++#endif
++#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(25, 2, 0)
++			if (!(fontFile = m_fontEngine->loadOpenTypeCFFFont(std::move(id), fontsrc, std::move(codeToGID), fontLoc->fontNum)))
++			{
++				error(errSyntaxError, -1, "Couldn't create a font for '{0:s}'",
++					gfxFont->getName() ? gfxFont->getName()->c_str() : "(unnamed)");
++				goto err2;
++			}
++#elif POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(24, 11, 0)
 +			if (!(fontFile = m_fontEngine->loadOpenTypeCFFFont(std::move(id), fontsrc, codeToGID, n, fontLoc->fontNum)))
 +			{
 +				error(errSyntaxError, -1, "Couldn't create a font for '{0:s}'",
@@ -321,8 +370,23 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  			break;
  		case fontCIDType2:
  		case fontCIDType2OT:
-@@ -3232,8 +3303,13 @@ void SlaOutputDev::updateFont(GfxState *state)
++#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(25, 2, 0)
++			codeToGID.clear();
++			n = 0;
++			if (((GfxCIDFont*) gfxFont)->getCIDToGIDLen() > 0)
++			{
++				codeToGID = ((GfxCIDFont*) gfxFont)->getCIDToGID();
++				n = codeToGID.size();
++			}
++#else
+ 			codeToGID = nullptr;
+ 			n = 0;
+ 			if (((GfxCIDFont *) gfxFont)->getCIDToGID())
+@@ -3230,10 +3344,16 @@ void SlaOutputDev::updateFont(GfxState *state)
+ 					memcpy(codeToGID, ((GfxCIDFont *)gfxFont)->getCIDToGID(), n * sizeof(*codeToGID));
+ 				}
  			}
++#endif
  			else
  			{
 -#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(22, 4, 0)
@@ -336,11 +400,26 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  					ff = FoFiTrueType::load(fileName.c_str());
  				else
  					ff = FoFiTrueType::make(fontsrc->buf.data(), fontsrc->buf.size());
-@@ -3253,11 +3329,19 @@ void SlaOutputDev::updateFont(GfxState *state)
- 				delete ff;
+@@ -3245,19 +3365,28 @@ void SlaOutputDev::updateFont(GfxState *state)
  #endif
+ 				if (! ff)
+ 					goto err2;
+-#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(22, 2, 0)
+-				codeToGID = ((GfxCIDFont*) gfxFont)->getCodeToGIDMap(ff.get(), &n);
++				codeToGID = ((GfxCIDFont*) gfxFont)->getCodeToGIDMap(ff.get());
+ 				ff.reset();
+-#else
+-				codeToGID = ((GfxCIDFont *)gfxFont)->getCodeToGIDMap(ff, &n);
+-				delete ff;
+-#endif
  			}
-+#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(24, 11, 0)
++#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(25, 2, 0)
++			if (!(fontFile = m_fontEngine->loadTrueTypeFont(std::move(id), fontsrc, std::move(codeToGID), fontLoc->fontNum)))
++			{
++				error(errSyntaxError, -1, "Couldn't create a font for '{0:s}'", gfxFont->getName() ? gfxFont->getName()->c_str() : "(unnamed)");
++				goto err2;
++			}
++#elif POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(24, 11, 0)
 +			if (!(fontFile = m_fontEngine->loadTrueTypeFont(std::move(id), fontsrc, codeToGID, n, fontLoc->fontNum)))
 +			{
 +				error(errSyntaxError, -1, "Couldn't create a font for '{0:s}'", gfxFont->getName() ? gfxFont->getName()->c_str() : "(unnamed)");
@@ -356,7 +435,7 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  			break;
  		default:
  			// this shouldn't happen
-@@ -3292,7 +3376,11 @@ void SlaOutputDev::updateFont(GfxState *state)
+@@ -3292,7 +3421,11 @@ void SlaOutputDev::updateFont(GfxState *state)
  	return;
  
  err2:
