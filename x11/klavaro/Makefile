@@ -1,6 +1,7 @@
 COMMENT =	touch typing tutor program
 
 DISTNAME =	klavaro-3.14
+REVISION =	0
 
 CATEGORIES =	x11
 
@@ -33,7 +34,7 @@ USE_GMAKE =	Yes
 BUILD_DEPENDS =	devel/gettext,-tools
 LIB_DEPENDS = 	devel/gettext,-runtime \
 		x11/gtk+3 \
-		x11/gtkdatabox \
+		x11/gtkdatabox>=1.0.0 \
 		net/curl
 RUN_DEPENDS =	x11/gtk+4,-guic
 
