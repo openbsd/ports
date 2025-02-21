@@ -1,9 +1,8 @@
 COMMENT=	advanced music player
 
-VERSION=	1.2
+VERSION=	2.0
 DISTNAME=	aqualung-${VERSION}
 EPOCH=		0
-REVISION=	0
 CATEGORIES=	audio
 
 HOMEPAGE=	https://github.com/jeremyevans/aqualung
@@ -18,17 +17,12 @@ WANTLIB += Xrandr Xrender atk-1.0 bz2 c cairo fontconfig
 WANTLIB += freetype gio-2.0 glib-2.0 gobject-2.0 gthread-2.0
 WANTLIB += harfbuzz iconv intl m mp3lame ogg pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pthread samplerate sndfile sndio ${COMPILER_LIBCXX}
-WANTLIB += vorbis vorbisenc vorbisfile z gtk-x11-2.0 gdk-x11-2.0
+WANTLIB += vorbis vorbisenc vorbisfile z cairo-gobject gdk-3 gtk-3
 WANTLIB += gdk_pixbuf-2.0 xml2 MAC mad mpcdec FLAC avcodec
-WANTLIB += avformat avutil wavpack lrdf oggz speex cddb cdio
-WANTLIB += cdio_cdda cdio_paranoia modplug ${MODLUA_WANTLIB}
+WANTLIB += avformat avutil wavpack lrdf oggz speex cddb
+WANTLIB += modplug ${MODLUA_WANTLIB}
 
 SITES=	https://github.com/jeremyevans/aqualung/releases/download/${VERSION}/
-SITES.github =	https://github.com/jeremyevans/aqualung/commit/
-PATCHFILES.github =	aqualung-lavc-fix{0ecc6721d5078c0bc9cae771d485c8d676443c23}.diff \
-			aqualung-mac-fix1{a991c13d0df734a5d0fea7db6b181176858f3e58}.diff \
-			aqualung-mac-fix2{d2c88317b6042a05c236faf3c09f600337c6379e}.diff
-PATCH_DIST_STRIP=       -p1
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -38,8 +32,6 @@ MODLUA_SA=	Yes
 
 LIB_DEPENDS=	audio/flac \
 		audio/lame \
-		audio/libcdio \
-		audio/libcdio-paranoia \
 		audio/libcddb \
 		audio/libmad \
 		audio/libmodplug \
@@ -54,7 +46,7 @@ LIB_DEPENDS=	audio/flac \
 		multimedia/oggz \
 		textproc/liblrdf \
 		textproc/libxml \
-		x11/gtk+2 \
+		x11/gtk+3 \
 		${MODLUA_LIB_DEPENDS}
 
 RUN_DEPENDS=	devel/desktop-file-utils
@@ -64,7 +56,7 @@ CFLAGS+=	-DPTHREAD_MIN_PRIORITY=0 -DPTHREAD_MAX_PRIORITY=31 \
 		-I${LOCALBASE}/include -I${MODLUA_INCL_DIR}
 
 BUILD_DEPENDS=	devel/gettext,-tools
-AUTOCONF_VERSION=2.69
+AUTOCONF_VERSION=2.71
 AUTOMAKE_VERSION=1.16
 CONFIGURE_STYLE= gnu autoreconf
 CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib " \
@@ -72,8 +64,7 @@ CONFIGURE_ENV=	LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib " \
 		lua_LIBS="`pkg-config --libs ${MODLUA_DEP}`"
 
 # ifp (requires libifp) - no package
-CONFIGURE_ARGS=	--with-cdda \
-		--with-cddb \
+CONFIGURE_ARGS=	--with-cddb \
 		--with-flac \
 		--with-ladspa \
 		--with-lame \
@@ -91,6 +82,7 @@ CONFIGURE_ARGS=	--with-cdda \
 		--with-vorbisenc \
 		--with-wavpack \
 		--without-alsa \
+		--without-cdda \
 		--without-ifp \
 		--without-jack \
 		--without-oss \
