@@ -1,10 +1,9 @@
 COMMENT=	simple packaging tool for simple packages
 
-MODPY_DISTV=	3.10.1
+MODPY_DISTV=	3.11.0
 
 DISTNAME=	flit-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	devel
 
