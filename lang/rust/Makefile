@@ -11,17 +11,15 @@ COMMENT-rustfmt =	Rust code formatter
 COMMENT-bootstrap =	Rust binary bootstrap
 COMMENT-src =		Rust source component
 
-V =			1.84.1
+V =			1.85.0
 DISTNAME =		rustc-${V}-src
 
-REVISION-main =		0
-
 # rustc bootstrap version
-BV-aarch64 =		1.84.0
-BV-amd64 =		1.84.0
+BV-aarch64 =		1.85.0
+BV-amd64 =		1.85.0
 BV-powerpc64 =		1.65.0-20221213
-BV-riscv64 =		1.83.0
-BV-sparc64 =		1.83.0
+BV-riscv64 =		1.84.0
+BV-sparc64 =		1.84.1
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -43,7 +41,7 @@ MAINTAINER =		Sebastien Marie <semarie@kapouay.eu.org>
 # with portions covered by various BSD-like licenses
 PERMIT_PACKAGE =	Yes
 
-WANTLIB-main =		${COMPILER_LIBCXX} c crypto curl m pthread ssh2 ssl z
+WANTLIB-main =		${COMPILER_LIBCXX} c crypto curl m pthread ssl z
 WANTLIB-clippy =	${COMPILER_LIBCXX} c m pthread
 WANTLIB-rustfmt =	${COMPILER_LIBCXX} c m pthread
 
@@ -140,7 +138,7 @@ BUILD_DEPENDS +=	devel/gdb
 
 .if !${USE_EMB_LLVM:L:Myes}
 MODULES +=			lang/clang
-MODCLANG_VERSION =		18
+MODCLANG_VERSION =		19
 MODCLANG_COMPILER_LINKS =	No
 .else
 WANTLIB-main +=		execinfo
@@ -154,7 +152,7 @@ RUN_DEPENDS-gdb +=	${FULLPKGNAME-main}:${FULLPKGPATH-main} \
 			devel/gdb
 # BUILD_LLDB is defined by /usr/share/mk/bsd.own.mk
 .if ${BUILD_LLDB:L} == yes
-RUN_DEPENDS-gdb +=	devel/llvm/18,-lldb
+RUN_DEPENDS-gdb +=	devel/llvm/19,-lldb
 .endif
 RUN_DEPENDS-clippy +=	${FULLPKGNAME-main}:${FULLPKGPATH-main}
 RUN_DEPENDS-rustfmt +=	${FULLPKGNAME-main}:${FULLPKGPATH-main}
@@ -162,10 +160,9 @@ RUN_DEPENDS-src +=	${FULLPKGNAME-main}:${FULLPKGPATH-main}
 
 PKG_ARCH-src =		*
 
-MAKE_ENV +=	LD_LIBRARY_PATH="${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${BV}/lib" \
+MAKE_ENV +=	LD_LIBRARY_PATH="${WRKDIR}/rust-bootstrap-${BV}/lib" \
 		CARGO_HOME=${WRKBUILD}/cargo-home \
-		TMPDIR=${WRKBUILD} \
-		LIBSSH2_SYS_USE_PKG_CONFIG=1
+		TMPDIR=${WRKBUILD}
 
 TEST_ENV +=	RUST_BACKTRACE=0
 
@@ -197,15 +194,18 @@ pre-configure:
 
 # - generate config.toml file
 do-configure:
-	echo 'change-id = 125535' >${WRKBUILD}/config.toml
+	[ ! -d "${WRKDIR}/rust-bootstrap-${BV}" ] && \
+		ln -fs "${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${BV}" \
+			"${WRKDIR}/rust-bootstrap-${BV}"
+	echo 'change-id = 134650' >${WRKBUILD}/config.toml
 	echo '[build]' >>${WRKBUILD}/config.toml
 .if ${FLAVOR} == native_bootstrap
 	echo 'rustc = "${LOCALBASE}/bin/rustc"' >>${WRKBUILD}/config.toml
 	echo 'cargo = "${LOCALBASE}/bin/cargo"' >>${WRKBUILD}/config.toml
 .else
-	echo 'rustc = "${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${BV}/bin/rustc"' \
+	echo 'rustc = "${WRKDIR}/rust-bootstrap-${BV}/bin/rustc"' \
 		>>${WRKBUILD}/config.toml
-	echo 'cargo = "${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${BV}/bin/cargo"' \
+	echo 'cargo = "${WRKDIR}/rust-bootstrap-${BV}/bin/cargo"' \
 		>>${WRKBUILD}/config.toml
 .endif
 	echo 'python = "${MODPY_BIN}"' >>${WRKBUILD}/config.toml
@@ -228,6 +228,7 @@ do-configure:
 	echo 'codegen-tests = false' >>${WRKBUILD}/config.toml
 	echo 'verbose-tests = true' >>${WRKBUILD}/config.toml
 	echo 'deny-warnings = false' >>${WRKBUILD}/config.toml
+	echo 'lld = false' >>${WRKBUILD}/config.toml
 
 	echo '[dist]' >>${WRKBUILD}/config.toml
 	echo 'compression-formats = ["gz"]' >>${WRKBUILD}/config.toml
@@ -286,14 +287,14 @@ do-install:
 	# create a bootstrap tarball
 	cd ${PREFIX} && pax -w \
 		-f ${PREFIX}/lib/rustc-bootstrap-${MACHINE_ARCH}.tar \
-		-s ',^,rustc-bootstrap-${MACHINE_ARCH}-${V}/,' \
+		-s ',^,${FULLPKGNAME-bootstrap}/,' \
 		bin/{rustc,rustdoc,cargo} \
 		lib/rustlib/${TRIPLE_ARCH}/
 	cd ${PREFIX} && ldd bin/{rustc,rustdoc,cargo} \
 	| awk '$$3 == "rlib" { print $$7 }' | sort -u \
 	| pax -wa \
 		-f ${PREFIX}/lib/rustc-bootstrap-${MACHINE_ARCH}.tar \
-		-s ',^.*/,rustc-bootstrap-${MACHINE_ARCH}-${V}/lib/,' \
+		-s ',^.*/,${FULLPKGNAME-bootstrap}/lib/,' \
 	# replace libraries by link
 	for lib in ${PREFIX}/lib/lib*.* ; do \
 		libname=$${lib##*/} ; \

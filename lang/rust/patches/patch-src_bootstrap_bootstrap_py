@@ -3,13 +3,13 @@ Workaround for sparc64: bootstrap segfaults without -O3
 Index: src/bootstrap/bootstrap.py
 --- src/bootstrap/bootstrap.py.orig
 +++ src/bootstrap/bootstrap.py
-@@ -1023,6 +1023,9 @@ class RustBuild(object):
+@@ -1118,6 +1118,9 @@ class RustBuild(object):
          if "RUSTFLAGS_BOOTSTRAP" in env:
              env["RUSTFLAGS"] += " " + env["RUSTFLAGS_BOOTSTRAP"]
  
 +        if self.build_triple() == "sparc64-unknown-openbsd":
 +            env["RUSTFLAGS"] += " -Copt-level=3"
 +
-         env["PATH"] = os.path.join(self.bin_root(), "bin") + \
-             os.pathsep + env["PATH"]
+         env["PATH"] = os.path.join(self.bin_root(), "bin") + os.pathsep + env["PATH"]
          if not os.path.isfile(self.cargo()):
+             raise Exception("no cargo executable found at `{}`".format(self.cargo()))
