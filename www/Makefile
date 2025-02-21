@@ -495,6 +495,7 @@
      SUBDIR += py-spotipy
      SUBDIR += py-tempita
      SUBDIR += py-terminado
+     SUBDIR += py-tinyhtml5
      SUBDIR += py-tornado
      SUBDIR += py-treq
      SUBDIR += py-uri-template
