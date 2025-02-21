@@ -1,14 +1,21 @@
 @pkgpath devel/py-flit_core,python3
 lib/python${MODPY_VERSION}/site-packages/flit_core/
 lib/python${MODPY_VERSION}/site-packages/flit_core-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/flit_core-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/flit_core-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/flit_core-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/flit_core-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/flit_core-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/flit_core-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/flit_core-${MODPY_DISTV}.dist-info/licenses/flit_core/
+lib/python${MODPY_VERSION}/site-packages/flit_core-${MODPY_DISTV}.dist-info/licenses/flit_core/vendor/
+lib/python${MODPY_VERSION}/site-packages/flit_core-${MODPY_DISTV}.dist-info/licenses/flit_core/vendor/tomli-1.2.3.dist-info/
+lib/python${MODPY_VERSION}/site-packages/flit_core-${MODPY_DISTV}.dist-info/licenses/flit_core/vendor/tomli-1.2.3.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/flit_core/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/flit_core/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/flit_core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flit_core/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/flit_core/${MODPY_PYCACHE}_spdx_data.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/flit_core/${MODPY_PYCACHE}_spdx_data.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flit_core/${MODPY_PYCACHE}buildapi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flit_core/${MODPY_PYCACHE}buildapi.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flit_core/${MODPY_PYCACHE}common.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -21,6 +28,7 @@ lib/python${MODPY_VERSION}/site-packages/flit_core/${MODPY_PYCACHE}versionno.${M
 lib/python${MODPY_VERSION}/site-packages/flit_core/${MODPY_PYCACHE}versionno.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/flit_core/${MODPY_PYCACHE}wheel.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/flit_core/${MODPY_PYCACHE}wheel.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/flit_core/_spdx_data.py
 lib/python${MODPY_VERSION}/site-packages/flit_core/buildapi.py
 lib/python${MODPY_VERSION}/site-packages/flit_core/common.py
 lib/python${MODPY_VERSION}/site-packages/flit_core/config.py
