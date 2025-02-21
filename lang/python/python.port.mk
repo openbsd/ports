@@ -141,7 +141,7 @@ BUILD_DEPENDS +=	devel/py-build \
 .  if ${MODPY_PYBUILD} == flit
 BUILD_DEPENDS +=	devel/py-flit
 .  elif ${MODPY_PYBUILD} == flit_core
-BUILD_DEPENDS +=	devel/py-flit_core
+BUILD_DEPENDS +=	devel/py-flit_core>=3.11.0
 .  elif ${MODPY_PYBUILD} == flit_scm
 BUILD_DEPENDS +=	devel/py-flit_scm
 .  elif ${MODPY_PYBUILD} == hatch-vcs
