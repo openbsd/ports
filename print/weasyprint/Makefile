@@ -1,9 +1,7 @@
 COMMENT=	create PDFs from markdown or HTML
 
-# 63.0+: tinyhtml5 2.0.0+ is now needed, instead of html5lib
-MODPY_DISTV=	62.3
+MODPY_DISTV=	64.1
 DISTNAME=	weasyprint-${MODPY_DISTV}
-REVISION=	1
 
 CATEGORIES=	print
 
@@ -15,19 +13,19 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 MODPY_PYBUILD=	flit_core
 MODPY_PI=	Yes
-MODPY_TEST_DIR=	${WRKSRC}/tests
 
 RUN_DEPENDS=	devel/pango \
+		print/py-pydyf>=0.11.0 \
 		devel/py-cffi \
-		devel/py-html5lib \
-		archivers/py-zopfli \
-		print/py-fonttools \
-		print/py-pydyf>=0.10.0 \
+		www/py-tinyhtml5 \
 		textproc/py-tinycss2 \
 		textproc/py-cssselect2 \
 		textproc/py-pyphen \
-		graphics/py-Pillow
+		graphics/py-Pillow \
+		print/py-fonttools \
+		archivers/py-zopfli
 
+MODPY_TEST_DIR=	${WRKSRC}/tests
 TEST_DEPENDS=	devel/py-test-flake8 \
 		devel/py-test-isort \
 		devel/py-test-xdist \
