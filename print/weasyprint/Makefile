@@ -1,5 +1,6 @@
 COMMENT=	create PDFs from markdown or HTML
 
+# 63.0+: tinyhtml5 2.0.0+ is now needed, instead of html5lib
 MODPY_DISTV=	62.3
 DISTNAME=	weasyprint-${MODPY_DISTV}
 REVISION=	1
@@ -16,7 +17,6 @@ MODPY_PYBUILD=	flit_core
 MODPY_PI=	Yes
 MODPY_TEST_DIR=	${WRKSRC}/tests
 
-BUILD_DEPENDS=	${RUN_DEPENDS}
 RUN_DEPENDS=	devel/pango \
 		devel/py-cffi \
 		devel/py-html5lib \
