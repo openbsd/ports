@@ -1,15 +1,17 @@
-Fix passing --export-dynamic to the linker.
+For upstream: -rdynamic is implemented by at least gcc and clang.
+Using -export-dynamic with gcc only worked because of what was initially
+a gcc implementation quirk.  -rdynamic isn't used at compile time anyway,
+so using -rdynamic or -Wl,--export-dynamic in LDFLAGS would be enough.
 
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -194,7 +194,8 @@ AM_CPPFLAGS = @PACKAGE_CFLAGS@ \
- 	-DPACKAGE_DATA_DIR=\""$(datadir)"\" \
- 	-DPACKAGE_LOCALE_DIR=\""$(prefix)/$(DATADIRNAME)/locale"\"
- 
--AM_CFLAGS = -export-dynamic -Wall
-+AM_CFLAGS = -Wall
-+AM_LDFLAGS = -rdynamic
- all: all-am
- 
- .SUFFIXES:
+@@ -89,7 +89,7 @@ POST_UNINSTALL = :
+ build_triplet = @build@
+ host_triplet = @host@
+ bin_PROGRAMS = klavaro$(EXEEXT)
+-@IS_POSIX_TRUE@am__append_1 = -export-dynamic
++@IS_POSIX_TRUE@am__append_1 =
+ @IS_WIN_TRUE@am__append_2 = -mwindows
+ subdir = src
+ ACLOCAL_M4 = $(top_srcdir)/aclocal.m4

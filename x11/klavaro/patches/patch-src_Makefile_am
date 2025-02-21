@@ -1,15 +1,16 @@
-For upstream: fix passing --export-dynamic to the linker. -rdynamic is
-implemented by at least gcc and clang.  Using -export-dynamic with gcc
-only worked because of an implementation quirk that was since acknowledged.
+For upstream: -rdynamic is implemented by at least gcc and clang.
+Using -export-dynamic with gcc only worked because of what was initially
+a gcc implementation quirk.  -rdynamic isn't used at compile time anyway,
+so using -rdynamic or -Wl,--export-dynamic in LDFLAGS would be enough.
 
 Index: src/Makefile.am
 --- src/Makefile.am.orig
 +++ src/Makefile.am
-@@ -24,5 +24,6 @@ AM_CPPFLAGS = @PACKAGE_CFLAGS@ \
- 	-DPACKAGE_DATA_DIR=\""$(datadir)"\" \
- 	-DPACKAGE_LOCALE_DIR=\""$(prefix)/$(DATADIRNAME)/locale"\"
+@@ -32,7 +32,6 @@ klavaro_LDADD = \
+ 		-lgmodule-2.0
  
--AM_CFLAGS = -export-dynamic -Wall
-+AM_CFLAGS = -Wall
-+AM_LDFLAGS = -rdynamic
+ if IS_POSIX
+-AM_CPPFLAGS += -export-dynamic
+ AM_LDFLAGS = -Wl,--export-dynamic
+ endif
  
