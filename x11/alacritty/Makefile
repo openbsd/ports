@@ -5,7 +5,7 @@ MAINTAINER =	Eric Auge <eau+obsd@unix4fun.net>
 
 GH_ACCOUNT =	alacritty
 GH_PROJECT =	alacritty
-GH_TAGNAME =	v0.15.0
+GH_TAGNAME =	v0.15.1
 
 HOMEPAGE =	https://alacritty.org/
 
@@ -51,9 +51,9 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/bash-completion/completions
 	${INSTALL_DATA} ${EXTRA_DIR}/completions/alacritty.bash \
 		${PREFIX}/share/bash-completion/completions/alacritty
-	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/completions
+	${INSTALL_DATA_DIR} ${PREFIX}/share/fish/vendor_completions.d
 	${INSTALL_DATA} ${EXTRA_DIR}/completions/alacritty.fish \
-		${PREFIX}/share/fish/completions/
+		${PREFIX}/share/fish/vendor_completions.d/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/zsh/site-functions
 	${INSTALL_DATA} ${EXTRA_DIR}/completions/_alacritty \
 		${PREFIX}/share/zsh/site-functions/_alacritty

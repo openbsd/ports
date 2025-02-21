@@ -7,8 +7,8 @@ share/applications/Alacritty.desktop
 share/bash-completion/completions/alacritty
 share/doc/pkg-readmes/${PKGSTEM}
 share/fish/
-share/fish/completions/
-share/fish/completions/alacritty.fish
+share/fish/vendor_completions.d/
+share/fish/vendor_completions.d/alacritty.fish
 share/pixmaps/
 share/pixmaps/Alacritty.svg
 share/terminfo/
