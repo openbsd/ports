@@ -1,5 +1,4 @@
 @pkgpath www/py-autobahn,python3
-@conflict py-autobahn-*
 bin/wamp
 bin/xbrnetwork
 bin/xbrnetwork-ui
