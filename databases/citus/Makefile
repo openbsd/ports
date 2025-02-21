@@ -1,10 +1,8 @@
-BROKEN =		No support yet for PostgreSQL 17
-
 COMMENT =		extension to horizontally scale PostgreSQL
 
 GH_ACCOUNT =		citusdata
 GH_PROJECT =		citus
-GH_TAGNAME =		v12.1.5
+GH_TAGNAME =		v13.0.1
 
 CATEGORIES =		databases
 HOMEPAGE =		https://www.citusdata.com/
