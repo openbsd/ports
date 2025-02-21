@@ -3,7 +3,7 @@ COMMENT =	customizable and lightweight notification-daemon
 GH_ACCOUNT =	dunst-project
 GH_PROJECT =	dunst
 GH_TAGNAME =	v1.9.2
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	x11
 
@@ -15,7 +15,7 @@ MAINTAINER =	Timo Myyra <timo.myyra@bittivirhe.fi>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += X11 Xext Xinerama Xrandr Xss c cairo gdk_pixbuf-2.0
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 harfbuzz intl m notify
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 harfbuzz intl m
 WANTLIB += pango-1.0 pangocairo-1.0 pthread
 
 # C11 with GNU extensions
@@ -30,7 +30,6 @@ BUILD_DEPENDS =	graphics/png \
 
 LIB_DEPENDS +=	devel/gettext,-runtime \
 		devel/glib2 \
-		devel/libnotify \
 		devel/pango \
 		graphics/cairo \
 		graphics/gdk-pixbuf2
@@ -39,7 +38,8 @@ RUN_DEPENDS +=	x11/dbus
 
 TEST_DEPENDS =	shells/bash
 
-MAKE_FLAGS =	WAYLAND=0
+MAKE_FLAGS =	WAYLAND=0 \
+		DUNSTIFY=0
 
 FAKE_FLAGS =	PREFIX="${PREFIX}" \
 		MANPREFIX="${PREFIX}/man" \

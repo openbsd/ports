@@ -1,6 +1,5 @@
 @bin bin/dunst
 bin/dunstctl
-@bin bin/dunstify
 @man man/man1/dunst.1
 @man man/man1/dunstctl.1
 @man man/man5/dunst.5
