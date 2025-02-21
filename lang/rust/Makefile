@@ -14,6 +14,8 @@ COMMENT-src =		Rust source component
 V =			1.85.0
 DISTNAME =		rustc-${V}-src
 
+REVISION-main =		0
+
 # rustc bootstrap version
 BV-aarch64 =		1.85.0
 BV-amd64 =		1.85.0
@@ -145,8 +147,7 @@ WANTLIB-main +=		execinfo
 .endif
 
 LIB_DEPENDS-main +=	${LIB_DEPENDS} \
-			net/curl \
-			security/libssh2
+			net/curl
 
 RUN_DEPENDS-gdb +=	${FULLPKGNAME-main}:${FULLPKGPATH-main} \
 			devel/gdb
