@@ -1,0 +1,13 @@
+See https://gitlab.kitware.com/vtk/vtk/-/issues/19561
+
+Index: Rendering/GL2PSOpenGL2/vtkOpenGLGL2PSHelperImpl.cxx
+--- Rendering/GL2PSOpenGL2/vtkOpenGLGL2PSHelperImpl.cxx.orig
++++ Rendering/GL2PSOpenGL2/vtkOpenGLGL2PSHelperImpl.cxx
+@@ -2,6 +2,7 @@
+ // SPDX-License-Identifier: BSD-3-Clause
+ 
+ #include "vtkOpenGLGL2PSHelperImpl.h"
++#include "vtk_glad.h"
+ 
+ #include "vtkActor.h"
+ #include "vtkCamera.h"

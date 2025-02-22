@@ -1,0 +1,12 @@
+Index: CMake/VTKDetermineVersion.cmake
+--- CMake/VTKDetermineVersion.cmake.orig
++++ CMake/VTKDetermineVersion.cmake
+@@ -25,7 +25,7 @@ function(determine_version source_dir git_command var_
+     # this function.
+     return ()
+   elseif (NOT VTK_GIT_DESCRIBE AND
+-          EXISTS ${git_command} AND
++          EXISTS "${git_command}" AND
+           EXISTS ${source_dir}/.git)
+     execute_process(
+       COMMAND ${git_command} describe
