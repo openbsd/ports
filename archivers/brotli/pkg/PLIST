@@ -4,13 +4,18 @@ include/brotli/decode.h
 include/brotli/encode.h
 include/brotli/port.h
 include/brotli/types.h
-@static-lib lib/libbrotlicommon-static.a
+@static-lib lib/libbrotlicommon.a
+@comment lib/libbrotlicommon.la
 @lib lib/libbrotlicommon.so.${LIBbrotlicommon_VERSION}
-@static-lib lib/libbrotlidec-static.a
+@static-lib lib/libbrotlidec.a
+@comment lib/libbrotlidec.la
 @lib lib/libbrotlidec.so.${LIBbrotlidec_VERSION}
-@static-lib lib/libbrotlienc-static.a
+@static-lib lib/libbrotlienc.a
+@comment lib/libbrotlienc.la
 @lib lib/libbrotlienc.so.${LIBbrotlienc_VERSION}
 lib/pkgconfig/libbrotlicommon.pc
 lib/pkgconfig/libbrotlidec.pc
 lib/pkgconfig/libbrotlienc.pc
 @man man/man1/brotli.1
+share/doc/brotli/
+share/doc/brotli/README
