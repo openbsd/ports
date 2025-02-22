@@ -4,12 +4,11 @@ COMMENT =	mesh data abstration library
 
 GH_ACCOUNT=	lutraconsulting
 GH_PROJECT =	MDAL
-GH_TAGNAME =	release-1.3.0
+GH_TAGNAME =	release-1.3.1
 
 PKGNAME =	${GH_PROJECT:L}-${GH_TAGNAME:S/release-//}
-REVISION =	0
 
-SHARED_LIBS =	mdal 10.0
+SHARED_LIBS =	mdal 11.0
 
 CATEGORIES =	geo devel textproc
 
