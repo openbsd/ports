@@ -195,9 +195,10 @@ pre-configure:
 
 # - generate config.toml file
 do-configure:
-	[ ! -d "${WRKDIR}/rust-bootstrap-${BV}" ] && \
+	if [ ! -d "${WRKDIR}/rust-bootstrap-${BV}" ] ; then \
 		ln -fs "${WRKDIR}/rustc-bootstrap-${MACHINE_ARCH}-${BV}" \
-			"${WRKDIR}/rust-bootstrap-${BV}"
+			"${WRKDIR}/rust-bootstrap-${BV}" ; \
+	fi
 	echo 'change-id = 134650' >${WRKBUILD}/config.toml
 	echo '[build]' >>${WRKBUILD}/config.toml
 .if ${FLAVOR} == native_bootstrap
