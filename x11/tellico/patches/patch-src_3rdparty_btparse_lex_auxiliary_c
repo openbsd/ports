@@ -1,0 +1,11 @@
+Index: src/3rdparty/btparse/lex_auxiliary.c
+--- src/3rdparty/btparse/lex_auxiliary.c.orig
++++ src/3rdparty/btparse/lex_auxiliary.c
+@@ -42,6 +42,7 @@
+ #include "stdpccts.h"
+ #include "error.h"
+ #include "prototypes.h"
++#include <strings.h>
+ /*#include "my_dmalloc.h"*/
+ 
+ #define DUPE_TEXT 0

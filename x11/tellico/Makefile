@@ -2,8 +2,7 @@ USE_WXNEEDED =	Yes
 
 COMMENT =	organizer for book/dvd/music collections
 
-DISTNAME =	tellico-4.1
-REVISION =	0
+DISTNAME =	tellico-4.1.1
 
 CATEGORIES =	x11
 
@@ -26,8 +25,8 @@ WANTLIB += KF6XmlGui KSaneWidgets6 Qt6Charts Qt6Core Qt6DBus Qt6Gui
 WANTLIB += Qt6Network Qt6OpenGL Qt6OpenGLWidgets Qt6Positioning
 WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
 WANTLIB += Qt6Quick Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
-WANTLIB += Qt6Widgets Qt6Xml c cdio exempi exslt m poppler poppler-qt6
-WANTLIB += tag xml2 xslt yaz
+WANTLIB += Qt6Widgets Qt6Xml c cdio exempi exslt m tag xml2 xslt
+WANTLIB += yaz
 
 SITES =		http://tellico-project.org/files/
 EXTRACT_SUFX =	.tar.xz
@@ -71,7 +70,6 @@ LIB_DEPENDS =	audio/libcdio \
 		devel/kf6/solid \
 		devel/kf6/sonnet \
 		net/yaz \
-		print/poppler,-qt6 \
 		textproc/exempi \
 		textproc/libxml \
 		textproc/libxslt \
