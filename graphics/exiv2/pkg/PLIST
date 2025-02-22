@@ -52,8 +52,8 @@ lib/cmake/
 lib/cmake/exiv2/
 lib/cmake/exiv2/exiv2Config.cmake
 lib/cmake/exiv2/exiv2ConfigVersion.cmake
-lib/cmake/exiv2/exiv2Export${MODCMAKE_BUILD_SUFFIX}
-lib/cmake/exiv2/exiv2Export.cmake
+lib/cmake/exiv2/exiv2Targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/exiv2/exiv2Targets.cmake
 @lib lib/libexiv2.so.${LIBexiv2_VERSION}
 lib/pkgconfig/exiv2.pc
 @man man/man1/exiv2.1
