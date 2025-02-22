@@ -101,6 +101,7 @@ share/ECM/modules/ECMGeneratePriFile.cmake
 share/ECM/modules/ECMGeneratePythonBindings.cmake
 share/ECM/modules/ECMGeneratePythonBindings.toml.in
 share/ECM/modules/ECMGeneratePythonBindings.toml.in.license
+share/ECM/modules/ECMGenerateQDoc.cmake
 share/ECM/modules/ECMGenerateQmlTypes.cmake
 share/ECM/modules/ECMInstallIcons.cmake
 share/ECM/modules/ECMMarkAsTest.cmake
@@ -229,6 +230,7 @@ share/doc/ECM/html/_sources/module/ECMGenerateHeaders.rst.txt
 share/doc/ECM/html/_sources/module/ECMGeneratePkgConfigFile.rst.txt
 share/doc/ECM/html/_sources/module/ECMGeneratePriFile.rst.txt
 share/doc/ECM/html/_sources/module/ECMGeneratePythonBindings.rst.txt
+share/doc/ECM/html/_sources/module/ECMGenerateQDoc.rst.txt
 share/doc/ECM/html/_sources/module/ECMGenerateQmlTypes.rst.txt
 share/doc/ECM/html/_sources/module/ECMInstallIcons.rst.txt
 share/doc/ECM/html/_sources/module/ECMMarkAsTest.rst.txt
@@ -338,6 +340,7 @@ share/doc/ECM/html/module/ECMGenerateHeaders.html
 share/doc/ECM/html/module/ECMGeneratePkgConfigFile.html
 share/doc/ECM/html/module/ECMGeneratePriFile.html
 share/doc/ECM/html/module/ECMGeneratePythonBindings.html
+share/doc/ECM/html/module/ECMGenerateQDoc.html
 share/doc/ECM/html/module/ECMGenerateQmlTypes.html
 share/doc/ECM/html/module/ECMInstallIcons.html
 share/doc/ECM/html/module/ECMMarkAsTest.html

@@ -54,7 +54,6 @@ lib/qt6/qml/org/kde/guiaddons/kguiaddonsqml.qmltypes
 lib/qt6/qml/org/kde/guiaddons/qmldir
 share/applications/google-maps-geo-handler.desktop
 share/applications/openstreetmap-geo-handler.desktop
-share/applications/qwant-maps-geo-handler.desktop
 share/applications/wheelmap-geo-handler.desktop
 share/qlogging-categories6/
 share/qlogging-categories6/kguiaddons.categories

@@ -9,4 +9,6 @@ WANTLIB += Qt6Gui Qt6Widgets X11 m xkbcommon
 LIB_DEPENDS =	devel/kf6/kwindowsystem \
 		x11/xkbcommon
 
+CONFIGURE_ARGS +=	-DBUILD_PYTHON_BINDINGS=OFF
+
 .include <bsd.port.mk>

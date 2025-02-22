@@ -10,6 +10,8 @@ LIB_DEPENDS =	audio/libcanberra \
 		devel/kf6/kconfig>=${MODKF6_VERSION} \
 		x11/qt6/qtdeclarative
 
+CONFIGURE_ARGS +=	-DBUILD_PYTHON_BINDINGS=OFF
+
 PORTHOME =	${WRKDIR}
 
 .include <bsd.port.mk>

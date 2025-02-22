@@ -12,4 +12,6 @@ LIB_DEPENDS =	devel/kf6/ki18n>=${MODKF6_VERSION}
 # for tests
 PORTHOME =	${WRKDIR}
 
+CONFIGURE_ARGS +=	-DBUILD_PYTHON_BINDINGS=OFF
+
 .include <bsd.port.mk>

@@ -18,4 +18,6 @@ LIB_DEPENDS =		x11/qt6/qtwayland \
 
 TEST_IS_INTERACTIVE =	X11
 
+CONFIGURE_ARGS +=	-DBUILD_PYTHON_BINDINGS=OFF
+
 .include <bsd.port.mk>

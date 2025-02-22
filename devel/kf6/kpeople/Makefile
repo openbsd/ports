@@ -7,8 +7,8 @@ SHARED_LIBS +=  KF6PeopleWidgets          0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Contacts KF6CoreAddons KF6I18n
 WANTLIB += KF6ItemViews KF6WidgetsAddons Qt6Core Qt6DBus Qt6Gui
-WANTLIB += Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick Qt6Sql
-WANTLIB += Qt6Widgets m
+WANTLIB += Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels
+WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6Sql Qt6Widgets m
 
 BUILD_DEPENDS =	devel/gettext,-tools
 
