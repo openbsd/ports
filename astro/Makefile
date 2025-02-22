@@ -20,6 +20,7 @@
      SUBDIR += py-skyfield
      SUBDIR += siril
      SUBDIR += stellarium
+     SUBDIR += stellarsolver
      SUBDIR += sunclock
      SUBDIR += wcslib
      SUBDIR += wmglobe
