@@ -19,7 +19,6 @@ WANTLIB+=	ssl z
 
 AUTOCONF_VERSION=2.71
 CONFIGURE_STYLE=autoconf
-# Beware of circular dependency curl -> brotli -> cmake -> curl
 CONFIGURE_ARGS=	--disable-ldap \
 		--with-openssl \
 		--with-ca-bundle=/etc/ssl/cert.pem \
