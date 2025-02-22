@@ -115,6 +115,7 @@ share/postgresql/extension/dict_int.control
 share/postgresql/extension/dict_xsyn--1.0.sql
 share/postgresql/extension/dict_xsyn.control
 share/postgresql/extension/earthdistance--1.0--1.1.sql
+share/postgresql/extension/earthdistance--1.1--1.2.sql
 share/postgresql/extension/earthdistance--1.1.sql
 share/postgresql/extension/earthdistance.control
 share/postgresql/extension/file_fdw--1.0.sql
