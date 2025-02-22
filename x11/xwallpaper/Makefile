@@ -1,6 +1,6 @@
 COMMENT =	wallpaper setting utility for X
 
-V =		0.7.5
+V =		0.7.6
 DISTNAME =	xwallpaper-${V}
 
 CATEGORIES =	x11 graphics
