@@ -1,0 +1,4 @@
+StellarSolver is an astrometric plate solver based on Astrometry.net and SEP
+(SExtractor). It functions as an internal library for plate. The tool processes
+image data directly - it loads image data extracts points, and works out where
+in the sky the image is located..

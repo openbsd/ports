@@ -1,0 +1,12 @@
+Index: stellarsolver/stellarsolver.cpp
+--- stellarsolver/stellarsolver.cpp.orig
++++ stellarsolver/stellarsolver.cpp
+@@ -1009,6 +1009,8 @@ bool StellarSolver::getAvailableRAM(double &availableR
+     memory = p.readAllStandardOutput();
+     totalRAM = memory.toLong() * 1024.0; //It is in kB on this system
+     p.close();
++#elif defined(Q_OS_OPENBSD)
++    return false;
+ #else
+     MEMORYSTATUSEX memory_status;
+     ZeroMemory(&memory_status, sizeof(MEMORYSTATUSEX));
