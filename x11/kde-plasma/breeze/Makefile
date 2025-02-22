@@ -9,8 +9,8 @@ WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6GuiAddons
 WANTLIB += KF6I18n KF6IconThemes KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick
 WANTLIB += KF6Style KF6WidgetsAddons KF6WindowSystem KirigamiPlatform
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml
-WANTLIB += Qt6QmlModels Qt6Quick Qt6Widgets X11 c kdecorations2
-WANTLIB += m
+WANTLIB += Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
+WANTLIB += Qt6Svg Qt6Widgets X11 c kdecorations3 m
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/kf6/breeze-icons
@@ -27,7 +27,8 @@ LIB_DEPENDS =	devel/kf6/frameworkintegration \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kwindowsystem \
 		x11/kde-plasma/kdecoration>=${VERSION} \
-		x11/qt6/qtdeclarative
+		x11/qt6/qtdeclarative \
+		x11/qt6/qtsvg
 
 CONFIGURE_ARGS =	-DBUILD_QT6=ON \
 			-DBUILD_QT5=OFF

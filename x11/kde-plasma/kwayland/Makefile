@@ -9,11 +9,11 @@ WANTLIB += Qt6WaylandClient m wayland-client wayland-cursor xkbcommon
 
 BUILD_DEPENDS =		wayland/libinput-openbsd \
 			wayland/plasma-wayland-protocols>=1.14.0 \
-			wayland/wayland-protocols
+			wayland/wayland-protocols>=1.40
 
 RUN_DEPENDS =		wayland/libinput-openbsd \
 			wayland/plasma-wayland-protocols>=1.14.0 \
-			wayland/wayland-protocols
+			wayland/wayland-protocols>=1.40
 
 LIB_DEPENDS =		wayland/wayland \
 			x11/qt6/qtwayland \

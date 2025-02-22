@@ -8,7 +8,8 @@ WANTLIB += KF6KIOGui KF6KIOWidgets KF6Package KF6Parts KF6Service
 WANTLIB += KF6Solid KF6SyntaxHighlighting KF6TextEditor KF6WidgetsAddons
 WANTLIB += KF6WindowSystem KF6XmlGui Plasma Plasma5Support PlasmaQuick
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml
-WANTLIB += Qt6QmlModels Qt6Quick Qt6Widgets Qt6Xml X11 c m
+WANTLIB += Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
+WANTLIB += Qt6Widgets Qt6Xml X11 c m
 
 MODKDE_TRANSLATIONS =	Yes
 

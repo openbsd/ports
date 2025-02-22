@@ -6,13 +6,14 @@ SHARED_LIBS +=  systemsettingsview        1.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6AuthCore KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
-WANTLIB += KF6Crash KF6DBusAddons KF6GuiAddons KF6I18n KF6IconThemes
-WANTLIB += KF6ItemModels KF6ItemViews KF6JobWidgets KF6KCMUtils
-WANTLIB += KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore KF6KIOGui
-WANTLIB += KF6KIOWidgets KF6Runner KF6Service KF6Solid KF6WidgetsAddons
-WANTLIB += KF6WindowSystem KF6XmlGui PlasmaActivities Qt6Core
-WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels
-WANTLIB += Qt6Quick Qt6QuickWidgets Qt6Widgets Qt6Xml X11 c m
+WANTLIB += KF6Crash KF6DBusAddons KF6GuiAddons KF6I18n KF6I18nQml
+WANTLIB += KF6IconThemes KF6ItemModels KF6ItemViews KF6JobWidgets
+WANTLIB += KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore
+WANTLIB += KF6KIOGui KF6KIOWidgets KF6Runner KF6Service KF6Solid
+WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui PlasmaActivities
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml
+WANTLIB += Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
+WANTLIB += Qt6QuickWidgets Qt6Widgets Qt6Xml X11 c m
 
 MODKDE_TRANSLATIONS =	Yes
 MODKDE_DOCS = Yes

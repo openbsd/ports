@@ -7,10 +7,10 @@ WANTLIB += KF6GuiAddons KF6I18n KF6IconThemes KF6ItemViews KF6JobWidgets
 WANTLIB += KF6KIOCore KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets
 WANTLIB += KF6Notifications KF6Service KF6Solid KF6StatusNotifierItem
 WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui Qt6Core
-WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels
-WANTLIB += Qt6Quick Qt6QuickControls2 Qt6WaylandClient Qt6Widgets
-WANTLIB += Qt6Xml X11 Xcursor m wayland-client wayland-cursor
-WANTLIB += xcb xkbcommon
+WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta
+WANTLIB += Qt6QmlModels Qt6QmlWorkerScript Qt6Quick Qt6QuickControls2
+WANTLIB += Qt6WaylandClient Qt6Widgets Qt6Xml X11 Xcursor m wayland-client
+WANTLIB += wayland-cursor xcb xkbcommon
 
 MODKDE_TRANSLATIONS =	Yes
 MODKDE_DOCS = Yes

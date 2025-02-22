@@ -10,21 +10,22 @@ SHARED_LIBS +=  kwinxrenderutils          1.0 # 0.0
 WANTLIB += ${COMPILER_LIBCXX} EGL GL ICE KF6Attica KF6AuthCore
 WANTLIB += KF6ColorScheme KF6ConfigCore KF6ConfigGui KF6ConfigQml
 WANTLIB += KF6ConfigWidgets KF6CoreAddons KF6Crash KF6DBusAddons
-WANTLIB += KF6GlobalAccel KF6GuiAddons KF6I18n KF6IdleTime KF6KCMUtils
-WANTLIB += KF6KCMUtilsCore KF6KCMUtilsQuick KF6NewStuffCore KF6NewStuffWidgets
-WANTLIB += KF6Notifications KF6Package KF6Service KF6Svg KF6WidgetsAddons
-WANTLIB += KF6WindowSystem KF6XmlGui KGlobalAccelD KWaylandClient
-WANTLIB += PlasmaActivities Qt6Concurrent Qt6Core Qt6DBus Qt6Gui
-WANTLIB += Qt6Network Qt6OpenGL Qt6OpenGLWidgets Qt6Qml Qt6QmlModels
-WANTLIB += Qt6Quick Qt6Sensors Qt6Svg Qt6UiTools Qt6WaylandClient
-WANTLIB += Qt6Widgets Qt6Xml SM X11 Xext Xi c canberra display-info
-WANTLIB += drm eis epoll-shim epoxy fontconfig freetype gbm input
-WANTLIB += kdecorations2 kdecorations2private lcms2 m pipewire-0.3
-WANTLIB += qaccessibilityclient-qt6 udev wayland-client wayland-cursor
-WANTLIB += wayland-server xcb xcb-composite xcb-cursor xcb-damage
-WANTLIB += xcb-dri3 xcb-glx xcb-icccm xcb-keysyms xcb-present
-WANTLIB += xcb-randr xcb-render xcb-shape xcb-shm xcb-sync xcb-xfixes
-WANTLIB += xcb-xinerama xcb-xinput xcb-xkb xcvt xkbcommon xkbcommon-x11
+WANTLIB += KF6GlobalAccel KF6GuiAddons KF6I18n KF6I18nQml KF6IdleTime
+WANTLIB += KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick KF6NewStuffCore
+WANTLIB += KF6NewStuffWidgets KF6Notifications KF6Package KF6Service
+WANTLIB += KF6Svg KF6WidgetsAddons KF6WindowSystem KF6XmlGui KGlobalAccelD
+WANTLIB += KScreenLocker KWaylandClient PlasmaActivities Qt6Concurrent
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6OpenGLWidgets
+WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
+WANTLIB += Qt6Sensors Qt6Svg Qt6UiTools Qt6WaylandClient Qt6Widgets
+WANTLIB += Qt6Xml SM X11 Xext Xi c canberra display-info drm eis
+WANTLIB += epoll-shim epoxy fontconfig freetype gbm input kdecorations3
+WANTLIB += kdecorations3private lcms2 m pipewire-0.3 qaccessibilityclient-qt6
+WANTLIB += udev wayland-client wayland-cursor wayland-server xcb
+WANTLIB += xcb-composite xcb-cursor xcb-damage xcb-dri3 xcb-glx
+WANTLIB += xcb-icccm xcb-keysyms xcb-present xcb-randr xcb-render
+WANTLIB += xcb-shape xcb-shm xcb-sync xcb-xfixes xcb-xinerama
+WANTLIB += xcb-xinput xcb-xkb xcvt xkbcommon xkbcommon-x11
 
 MODKDE_TRANSLATIONS =	Yes
 MODKDE_ICON_CACHE =	Yes
@@ -76,6 +77,7 @@ LIB_DEPENDS =	audio/libcanberra \
 		x11/kde-plasma/kglobalacceld>=${VERSION} \
 		x11/kde-plasma/kwayland>=${VERSION} \
 		x11/kde-plasma/plasma-activities>=${VERSION} \
+		x11/kde-plasma/kscreenlocker>=${VERSION} \
 		x11/libqaccessibilityclient \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtsensors \
@@ -89,9 +91,6 @@ MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib -lepoll-shim
 CONFIGURE_ENV +=	KFWaylandServer_DIR=${MODQT6_LIBDIR}/cmake
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
-
-# XXX Need more work
-CONFIGURE_ARGS =	-DKWIN_BUILD_SCREENLOCKER=OFF
 
 TEST_ENV +=		XDG_RUNTIME_DIR=${WRKBUILD}
 

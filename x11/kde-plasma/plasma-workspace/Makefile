@@ -18,26 +18,27 @@ WANTLIB += KF6ColorScheme KF6Completion KF6ConfigCore KF6ConfigGui
 WANTLIB += KF6ConfigQml KF6ConfigWidgets KF6CoreAddons KF6Crash
 WANTLIB += KF6DBusAddons KF6FileMetaData KF6GlobalAccel KF6GuiAddons
 WANTLIB += KF6Holidays KF6I18n KF6I18nLocaleData KF6IconThemes
-WANTLIB += KF6IconWidgets KF6IdleTime KF6ItemModels KF6ItemViews
-WANTLIB += KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick
-WANTLIB += KF6KIOCore KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets
-WANTLIB += KF6NewStuffCore KF6NewStuffWidgets KF6Notifications
-WANTLIB += KF6NotifyConfig KF6Package KF6Parts KF6Prison KF6Runner
-WANTLIB += KF6Screen KF6Service KF6Solid KF6SonnetUi KF6StatusNotifierItem
-WANTLIB += KF6Svg KF6SyntaxHighlighting KF6TextEditor KF6TextWidgets
-WANTLIB += KF6UnitConversion KF6UserFeedbackCore KF6Wallet KF6WidgetsAddons
-WANTLIB += KF6WindowSystem KF6XmlGui KScreenLocker KSysGuardFormatter
-WANTLIB += KSysGuardSensorFaces KSysGuardSensors KWaylandClient
-WANTLIB += LayerShellQtInterface Plasma Plasma5Support PlasmaActivities
-WANTLIB += PlasmaActivitiesStats PlasmaQuick QCoro6Core Qt6Concurrent
-WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning
-WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickWidgets
-WANTLIB += Qt6Sql Qt6Svg Qt6WaylandClient Qt6Widgets Qt6Xml SM
-WANTLIB += X11 Xau Xcursor Xext Xfixes Xft Xi Xrender Xtst c canberra
-WANTLIB += dbus-1 fontconfig freetype icui18n icuuc m phonon4qt6
-WANTLIB += processcore qalculate udev wayland-client wayland-cursor
-WANTLIB += xcb xcb-composite xcb-damage xcb-image xcb-randr xcb-render
-WANTLIB += xcb-shape xcb-shm xcb-util xcb-xfixes xkbcommon z
+WANTLIB += KF6IconWidgets KF6ItemModels KF6ItemViews KF6JobWidgets
+WANTLIB += KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore
+WANTLIB += KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets KF6NewStuffCore
+WANTLIB += KF6NewStuffWidgets KF6Notifications KF6NotifyConfig
+WANTLIB += KF6Package KF6Parts KF6Prison KF6Runner KF6Screen KF6Service
+WANTLIB += KF6Solid KF6SonnetUi KF6StatusNotifierItem KF6Svg KF6SyntaxHighlighting
+WANTLIB += KF6TextEditor KF6TextWidgets KF6UnitConversion KF6UserFeedbackCore
+WANTLIB += KF6Wallet KF6WidgetsAddons KF6WindowSystem KF6XmlGui
+WANTLIB += KScreenLocker KSysGuardFormatter KSysGuardSensorFaces
+WANTLIB += KSysGuardSensors KWaylandClient LayerShellQtInterface
+WANTLIB += Plasma Plasma5Support PlasmaActivities PlasmaActivitiesStats
+WANTLIB += PlasmaQuick QCoro6Core Qt6Concurrent Qt6Core Qt6DBus
+WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning Qt6PrintSupport
+WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
+WANTLIB += Qt6QuickWidgets Qt6Sql Qt6Svg Qt6WaylandClient Qt6Widgets
+WANTLIB += Qt6Xml SM X11 Xau Xcursor Xext Xfixes Xft Xi Xrender
+WANTLIB += Xtst c canberra dbus-1 fontconfig freetype icui18n
+WANTLIB += icuuc m phonon4qt6 processcore qalculate udev wayland-client
+WANTLIB += wayland-cursor xcb xcb-composite xcb-cursor xcb-damage
+WANTLIB += xcb-image xcb-randr xcb-render xcb-shape xcb-shm xcb-util
+WANTLIB += xcb-xfixes xkbcommon z
 
 MODKDE_TRANSLATIONS = Yes
 MODKDE_ICON_CACHE = Yes
@@ -77,7 +78,6 @@ LIB_DEPENDS =	audio/libcanberra \
 		devel/kf6/kholidays \
 		devel/kf6/ki18n \
 		devel/kf6/kiconthemes \
-		devel/kf6/kidletime \
 		devel/kf6/kio \
 		devel/kf6/kitemmodels \
 		devel/kf6/kitemviews \

@@ -10,9 +10,9 @@ WANTLIB += KF6Notifications KF6Runner KF6Screen KF6ScreenDpms
 WANTLIB += KF6Service KF6Solid KF6WidgetsAddons KF6XmlGui Kirigami
 WANTLIB += KirigamiPlatform Plasma PlasmaActivities QCoro6Core
 WANTLIB += QCoro6DBus Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
-WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6WaylandClient Qt6Widgets
-WANTLIB += Qt6Xml c kworkspace6 m udev wayland-client wayland-cursor
-WANTLIB += xcb xcb-dpms xkbcommon
+WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
+WANTLIB += Qt6WaylandClient Qt6Widgets Qt6Xml c kworkspace6 m
+WANTLIB += udev wayland-client wayland-cursor xcb xcb-dpms xkbcommon
 
 SHARED_LIBS +=  powerdevilconfigcommonprivate 1.0 # 0.0
 SHARED_LIBS +=  powerdevilcore                1.0 # 0.0

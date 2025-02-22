@@ -4,8 +4,8 @@ DISTNAME =	plasma-nano-${VERSION}
 MODKDE_TRANSLATIONS =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Service KF6WindowSystem KWaylandClient
-WANTLIB += Qt6Core Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels
-WANTLIB += Qt6Quick X11 m
+WANTLIB += Qt6Core Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta
+WANTLIB += Qt6QmlModels Qt6QmlWorkerScript Qt6Quick X11 m
 
 BUILD_DEPENDS =	devel/kf6/kitemmodels \
 		devel/kf6/ki18n \

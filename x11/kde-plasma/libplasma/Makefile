@@ -8,25 +8,26 @@ MODKDE_TRANSLATIONS = Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL ICE KF6Archive KF6ColorScheme
 WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigQml
-WANTLIB += KF6ConfigWidgets KF6CoreAddons KF6GlobalAccel KF6GuiAddons
-WANTLIB += KF6I18n KF6IconThemes KF6JobWidgets KF6KCMUtilsCore
-WANTLIB += KF6KCMUtilsQuick KF6KIOCore KF6KIOGui KF6KIOWidgets
-WANTLIB += KF6Notifications KF6Package KF6Service KF6Solid KF6Svg
-WANTLIB += KF6WidgetsAddons KF6WindowSystem KirigamiPlatform PlasmaActivities
-WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml
-WANTLIB += Qt6QmlModels Qt6Quick Qt6Svg Qt6WaylandClient Qt6Widgets
-WANTLIB += SM X11 Xext m wayland-client wayland-cursor xcb xcb-composite
-WANTLIB += xcb-damage xcb-render xcb-shape xcb-xfixes xkbcommon
+WANTLIB += KF6CoreAddons KF6GlobalAccel KF6GuiAddons KF6I18n KF6I18nQml
+WANTLIB += KF6IconThemes KF6JobWidgets KF6KCMUtilsCore KF6KCMUtilsQuick
+WANTLIB += KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Notifications
+WANTLIB += KF6Package KF6Service KF6Solid KF6Svg KF6WidgetsAddons
+WANTLIB += KF6WindowSystem KirigamiPlatform PlasmaActivities Qt6Core
+WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta
+WANTLIB += Qt6QmlModels Qt6QmlWorkerScript Qt6Quick Qt6Svg Qt6WaylandClient
+WANTLIB += Qt6Widgets SM X11 Xext m wayland-client wayland-cursor
+WANTLIB += xcb xcb-composite xcb-damage xcb-render xcb-shape xcb-xfixes
+WANTLIB += xkbcommon
 
 BUILD_DEPENDS =	archivers/gtar \
-		wayland/wayland-protocols \
+		wayland/wayland-protocols>=1.40 \
 		wayland/plasma-wayland-protocols
 
 LIB_DEPENDS =	devel/kf6/kcmutils \
 		devel/kf6/karchive \
 		devel/kf6/kcolorscheme \
 		devel/kf6/kcompletion \
-		devel/kf6/kconfigwidgets \
+		devel/kf6/kconfig \
 		devel/kf6/kcoreaddons \
 		devel/kf6/kglobalaccel \
 		devel/kf6/kguiaddons \

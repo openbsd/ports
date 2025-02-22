@@ -243,6 +243,15 @@ share/wallpapers/Mountain/contents/images_dark/
 share/wallpapers/Mountain/contents/images_dark/1080x1920.png
 share/wallpapers/Mountain/contents/images_dark/5120x2880.png
 share/wallpapers/Mountain/metadata.json
+share/wallpapers/Nexus/
+share/wallpapers/Nexus/contents/
+share/wallpapers/Nexus/contents/images/
+share/wallpapers/Nexus/contents/images/1080x1920.png
+share/wallpapers/Nexus/contents/images/5120x2880.png
+share/wallpapers/Nexus/contents/images_dark/
+share/wallpapers/Nexus/contents/images_dark/1080x1920.png
+share/wallpapers/Nexus/contents/images_dark/5120x2880.png
+share/wallpapers/Nexus/metadata.json
 share/wallpapers/OneStandsOut/
 share/wallpapers/OneStandsOut/contents/
 share/wallpapers/OneStandsOut/contents/images/

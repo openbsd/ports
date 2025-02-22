@@ -10,7 +10,8 @@ SHARED_LIBS +=  processcore                1.0 # 5.22.5
 WANTLIB += ${COMPILER_LIBCXX} GL KF6AuthCore KF6ConfigCore KF6ConfigGui
 WANTLIB += KF6ConfigQml KF6CoreAddons KF6I18n KF6Package KF6Service
 WANTLIB += KF6Solid Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
-WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick c m z
+WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
+WANTLIB += c m z
 
 MODKDE_TRANSLATIONS =	Yes
 

@@ -6,7 +6,7 @@ WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
 WANTLIB += KF6I18n KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick
 WANTLIB += KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Service KF6Solid
 WANTLIB += KF6WidgetsAddons Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6Qml Qt6Widgets c m usb-1.0
+WANTLIB += Qt6Qml Qt6Widgets c drm m usb-1.0
 
 MODKDE_TRANSLATIONS = Yes
 MODKDE_DOCS = Yes

@@ -13,6 +13,7 @@ share/applications/org.kde.iconexplorer.desktop
 share/applications/org.kde.plasma.themeexplorer.desktop
 share/applications/org.kde.plasmaengineexplorer.desktop
 share/applications/org.kde.plasmoidviewer.desktop
+share/icons/hicolor/scalable/apps/org.kde.iconexplorer.svg
 share/kpackage/
 share/kpackage/genericqml/
 share/kpackage/genericqml/org.kde.plasma.lookandfeelexplorer/
@@ -216,6 +217,11 @@ share/locale/he/LC_MESSAGES/org.kde.plasma.themeexplorer.mo
 share/locale/he/LC_MESSAGES/plasma_shell_org.kde.plasmoidviewershell.mo
 share/locale/he/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/he/LC_MESSAGES/plasmoidviewer.mo
+share/locale/hi/LC_MESSAGES/cuttlefish_editorplugin.mo
+share/locale/hi/LC_MESSAGES/iconexplorer.mo
+share/locale/hi/LC_MESSAGES/org.kde.plasma.lookandfeelexplorer.mo
+share/locale/hi/LC_MESSAGES/org.kde.plasma.themeexplorer.mo
+share/locale/hi/LC_MESSAGES/plasma_shell_org.kde.plasmoidviewershell.mo
 share/locale/hi/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/hi/LC_MESSAGES/plasmoidviewer.mo
 share/locale/hne/LC_MESSAGES/plasmoidviewer.mo
@@ -360,6 +366,13 @@ share/locale/ru/LC_MESSAGES/org.kde.plasma.themeexplorer.mo
 share/locale/ru/LC_MESSAGES/plasma_shell_org.kde.plasmoidviewershell.mo
 share/locale/ru/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/ru/LC_MESSAGES/plasmoidviewer.mo
+share/locale/sa/LC_MESSAGES/cuttlefish_editorplugin.mo
+share/locale/sa/LC_MESSAGES/iconexplorer.mo
+share/locale/sa/LC_MESSAGES/org.kde.plasma.lookandfeelexplorer.mo
+share/locale/sa/LC_MESSAGES/org.kde.plasma.themeexplorer.mo
+share/locale/sa/LC_MESSAGES/plasma_shell_org.kde.plasmoidviewershell.mo
+share/locale/sa/LC_MESSAGES/plasmaengineexplorer.mo
+share/locale/sa/LC_MESSAGES/plasmoidviewer.mo
 share/locale/se/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/si/LC_MESSAGES/plasmaengineexplorer.mo
 share/locale/si/LC_MESSAGES/plasmoidviewer.mo
@@ -492,3 +505,4 @@ share/plasma/shells/org.kde.plasma.plasmoidviewershell/metadata.json
 @tag update-desktop-database
 share/zsh/site-functions/_kqml
 share/zsh/site-functions/_plasmoidviewer
+@tag gtk-update-icon-cache %D/share/icons/hicolor

@@ -1,13 +1,14 @@
 @bin bin/breeze-settings6
+@bin bin/kcursorgen
 lib/cmake/Breeze/
 lib/cmake/Breeze/BreezeConfig.cmake
 lib/cmake/Breeze/BreezeConfigVersion.cmake
 lib/qt6/plugins/kstyle_config/
 @so lib/qt6/plugins/kstyle_config/breezestyleconfig.so
-lib/qt6/plugins/org.kde.kdecoration2/
-lib/qt6/plugins/org.kde.kdecoration2.kcm/
-@so lib/qt6/plugins/org.kde.kdecoration2.kcm/kcm_breezedecoration.so
-@so lib/qt6/plugins/org.kde.kdecoration2/org.kde.breeze.so
+lib/qt6/plugins/org.kde.kdecoration3/
+lib/qt6/plugins/org.kde.kdecoration3.kcm/
+@so lib/qt6/plugins/org.kde.kdecoration3.kcm/kcm_breezedecoration.so
+@so lib/qt6/plugins/org.kde.kdecoration3/org.kde.breeze.so
 lib/qt6/plugins/styles/
 @so lib/qt6/plugins/styles/breeze6.so
 share/QtCurve/
@@ -850,6 +851,8 @@ share/locale/ro/LC_MESSAGES/breeze_kwin_deco.mo
 share/locale/ro/LC_MESSAGES/breeze_style_config.mo
 share/locale/ru/LC_MESSAGES/breeze_kwin_deco.mo
 share/locale/ru/LC_MESSAGES/breeze_style_config.mo
+share/locale/sa/LC_MESSAGES/breeze_kwin_deco.mo
+share/locale/sa/LC_MESSAGES/breeze_style_config.mo
 share/locale/se/LC_MESSAGES/breeze_kwin_deco.mo
 share/locale/sk/LC_MESSAGES/breeze_kwin_deco.mo
 share/locale/sk/LC_MESSAGES/breeze_style_config.mo

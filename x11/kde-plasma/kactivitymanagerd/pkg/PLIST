@@ -7,7 +7,6 @@ lib/qt6/plugins/kactivitymanagerd1/
 @so lib/qt6/plugins/kactivitymanagerd1/org.kde.ActivityManager.RecentlyUsedEventSpy.so
 @so lib/qt6/plugins/kactivitymanagerd1/org.kde.ActivityManager.ResourceScoring.so
 @so lib/qt6/plugins/kactivitymanagerd1/org.kde.ActivityManager.RunApplication.so
-@so lib/qt6/plugins/kactivitymanagerd1/org.kde.ActivityManager.VirtualDesktopSwitch.so
 lib/systemd/user/plasma-kactivitymanagerd.service
 @bin libexec/kactivitymanagerd
 share/dbus-1/services/org.kde.ActivityManager.service

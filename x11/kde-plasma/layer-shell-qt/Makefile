@@ -8,7 +8,7 @@ MODKDE_TRANSLATIONS =	Yes
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6Qml
 WANTLIB += Qt6WaylandClient m wayland-client wayland-cursor xkbcommon
 
-BUILD_DEPENDS =	wayland/wayland-protocols \
+BUILD_DEPENDS =	wayland/wayland-protocols>=1.40 \
 		wayland/plasma-wayland-protocols
 
 LIB_DEPENDS =	x11/qt6/qtwayland \

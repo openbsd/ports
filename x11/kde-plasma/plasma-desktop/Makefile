@@ -1,6 +1,5 @@
 COMMENT =	KDE tools and widgets for the desktop
 DISTNAME =	plasma-desktop-${VERSION}
-REVISION =	0
 
 MODKDE_TRANSLATIONS =	Yes
 MODKDE_ICON_CACHE =	Yes
@@ -19,20 +18,18 @@ WANTLIB += KF6Service KF6Solid KF6SonnetCore KF6SonnetUi KF6Svg
 WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui KSysGuardFormatter
 WANTLIB += Plasma PlasmaActivities PlasmaActivitiesStats PlasmaQuick
 WANTLIB += Qt6Concurrent Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
-WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickWidgets Qt6Sql
-WANTLIB += Qt6WaylandClient Qt6Widgets Qt6Xml SDL2 X11 Xext Xi
-WANTLIB += accounts-qt6 c canberra gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += gthread-2.0 ibus-1.0 icui18n icuuc intl kaccounts6
-WANTLIB += kworkspace6 m notificationmanager processcore taskmanager
-WANTLIB += wayland-client wayland-cursor xcb xcb-keysyms xcb-xkb
-WANTLIB += xkbcommon xkbfile xkbregistry
+WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
+WANTLIB += Qt6QuickWidgets Qt6Sql Qt6Widgets Qt6Xml SDL2 X11 Xext
+WANTLIB += Xi accounts-qt6 c gio-2.0 glib-2.0 gobject-2.0 gthread-2.0
+WANTLIB += ibus-1.0 icui18n icuuc intl kaccounts6 kworkspace6
+WANTLIB += m notificationmanager processcore taskmanager xcb xcb-keysyms
+WANTLIB += xcb-xkb xkbcommon xkbfile xkbregistry
 
 BUILD_DEPENDS =	devel/kf6/kirigami \
 		devel/kf6/qqc2-desktop-style \
 		textproc/intltool \
 		wayland/libevdev-openbsd \
 		wayland/plasma-wayland-protocols \
-		wayland/wayland-protocols \
 		x11/kde-plasma/kwin>=${VERSION} \
 		x11/kde-plasma/plasma5support>=${VERSION}
 
@@ -42,8 +39,7 @@ RUN_DEPENDS =	devel/kf6/kirigami \
 		devel/desktop-file-utils \
 		x11/dbus,-suid
 
-LIB_DEPENDS =	audio/libcanberra \
-		devel/kf6/attica \
+LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/baloo \
 		devel/kf6/kauth \
 		devel/kf6/kbookmarks \
@@ -80,7 +76,6 @@ LIB_DEPENDS =	audio/libcanberra \
 		devel/sdl2 \
 		inputmethods/ibus \
 		net/libaccounts-qt,qt6 \
-		wayland/wayland \
 		textproc/icu4c \
 		x11/kde-applications/kf6-kaccounts-integration \
 		x11/kde-plasma/libksysguard>=${VERSION} \
@@ -89,14 +84,15 @@ LIB_DEPENDS =	audio/libcanberra \
 		x11/kde-plasma/plasma-activities>=${VERSION} \
 		x11/kde-plasma/plasma-workspace>=${VERSION} \
 		x11/qt6/qtdeclarative \
-		x11/qt6/qtwayland \
 		x11/xkbcommon
 
 CONFIGURE_ARGS += \
 	-DCMAKE_DISABLE_FIND_PACKAGE_KF5NetworkManagerQt=Yes
 
 CONFIGURE_ARGS +=	-DBUILD_KCM_MOUSE_X11=OFF \
-			-DBUILD_KCM_TOUCHPAD_X11=OFF
+			-DBUILD_KCM_TOUCHPAD_X11=OFF \
+			-DBUILD_KCM_TABLET=OFF
+
 
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 

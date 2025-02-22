@@ -13,9 +13,9 @@ WANTLIB += KF6Notifications KF6Package KF6Runner KF6Service KF6Solid
 WANTLIB += KF6SonnetCore KF6UnitConversion KF6WidgetsAddons KF6WindowSystem
 WANTLIB += KF6XmlGui Plasma Plasma5Support PlasmaQuick Qt6Core
 WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning
-WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6WebChannel Qt6WebChannelQuick
-WANTLIB += Qt6WebEngineCore Qt6WebEngineQuick Qt6Widgets Qt6Xml
-WANTLIB += X11 c icui18n icuuc m
+WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
+WANTLIB += Qt6WebChannel Qt6WebChannelQuick Qt6WebEngineCore Qt6WebEngineQuick
+WANTLIB += Qt6Widgets Qt6Xml X11 c icui18n icuuc m
 
 MODKDE_TRANSLATIONS =	Yes
 MODKDE_ICON_CACHE = Yes

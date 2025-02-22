@@ -4,8 +4,9 @@ DISTNAME =	milou-${VERSION}
 SHARED_LIBS =   milou    1.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ConfigCore KF6CoreAddons KF6Runner
-WANTLIB += Qt6Core Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels
-WANTLIB += Qt6Quick Qt6Widgets m
+WANTLIB += Qt6Core Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta
+WANTLIB += Qt6QmlModels Qt6QmlWorkerScript Qt6Quick Qt6Widgets
+WANTLIB += m
 
 MODKDE_TRANSLATIONS =	Yes
 

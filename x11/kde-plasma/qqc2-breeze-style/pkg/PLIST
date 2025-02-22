@@ -1,6 +1,8 @@
 lib/cmake/QQC2BreezeStyle/
 lib/cmake/QQC2BreezeStyle/QQC2BreezeStyleConfig.cmake
 lib/cmake/QQC2BreezeStyle/QQC2BreezeStyleConfigVersion.cmake
+lib/cmake/QQC2BreezeStyle/QQC2BreezeStyleTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/QQC2BreezeStyle/QQC2BreezeStyleTargets.cmake
 lib/qt6/plugins/kf6/kirigami/
 lib/qt6/plugins/kf6/kirigami/platform/
 @so lib/qt6/plugins/kf6/kirigami/platform/org.kde.breeze.so

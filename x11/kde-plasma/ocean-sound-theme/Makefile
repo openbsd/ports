@@ -1,6 +1,5 @@
 COMMENT =	Plasma ocean sound theme
 DISTNAME =	ocean-sound-theme-${VERSION}
-REVISION =	0
 
 PKG_ARCH =	*
 

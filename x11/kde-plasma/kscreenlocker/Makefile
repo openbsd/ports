@@ -1,6 +1,5 @@
 COMMENT =	library for secure lock screen architecture
 DISTNAME =	kscreenlocker-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  KScreenLocker         1.0 # 5.22.5
 
@@ -8,11 +7,12 @@ MODKDE_TRANSLATIONS =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigQml KF6ConfigWidgets KF6CoreAddons
-WANTLIB += KF6Crash KF6GlobalAccel KF6I18n KF6IdleTime KF6KCMUtilsCore
-WANTLIB += KF6KCMUtilsQuick KF6KIOCore KF6Notifications KF6Package
-WANTLIB += KF6ScreenDpms KF6WidgetsAddons KF6WindowSystem KF6XmlGui
-WANTLIB += LayerShellQtInterface Plasma PlasmaQuick Qt6Core Qt6DBus
-WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick
+WANTLIB += KF6Crash KF6GlobalAccel KF6I18n KF6I18nQml KF6IdleTime
+WANTLIB += KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore KF6Notifications
+WANTLIB += KF6Package KF6ScreenDpms KF6WidgetsAddons KF6WindowSystem
+WANTLIB += KF6XmlGui LayerShellQtInterface Plasma PlasmaQuick
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml
+WANTLIB += Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
 WANTLIB += Qt6Widgets Qt6Xml X11 Xext Xi c m pam wayland-client
 WANTLIB += wayland-server xcb xcb-keysyms xkbcommon
 
@@ -21,7 +21,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 
 BUILD_DEPENDS =	sysutils/consolekit \
 		wayland/plasma-wayland-protocols \
-		wayland/wayland-protocols \
+		wayland/wayland-protocols>=1.40 \
 		x11/kde-plasma/kscreen>=${VERSION}
 
 LIB_DEPENDS =	devel/kf6/kconfig \

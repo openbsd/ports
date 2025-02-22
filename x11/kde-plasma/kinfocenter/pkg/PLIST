@@ -7,6 +7,7 @@ lib/qt6/plugins/plasma/kcms/kinfocenter/
 @so lib/qt6/plugins/plasma/kcms/kinfocenter/kcm_audio_information.so
 @so lib/qt6/plugins/plasma/kcms/kinfocenter/kcm_block_devices.so
 @so lib/qt6/plugins/plasma/kcms/kinfocenter/kcm_cpu.so
+@so lib/qt6/plugins/plasma/kcms/kinfocenter/kcm_edid.so
 @so lib/qt6/plugins/plasma/kcms/kinfocenter/kcm_egl.so
 @so lib/qt6/plugins/plasma/kcms/kinfocenter/kcm_firmware_security.so
 @so lib/qt6/plugins/plasma/kcms/kinfocenter/kcm_glx.so
@@ -26,13 +27,12 @@ lib/qt6/qml/org/kde/kinfocenter/private/
 lib/qt6/qml/org/kde/kinfocenter/private/CommandOutputKCM.qml
 lib/qt6/qml/org/kde/kinfocenter/private/qmldir
 @bin libexec/kf6/kauth/kinfocenter-dmidecode-helper
+@bin libexec/kinfocenter-opengl-helper
 share/applications/kcm_about-distro.desktop
 share/applications/org.kde.kinfocenter.desktop
 share/dbus-1/system-services/org.kde.kinfocenter.dmidecode.service
 share/dbus-1/system.d/org.kde.kinfocenter.dmidecode.conf
 @sample ${SYSCONFDIR}/dbus-1/system.d/org.kde.kinfocenter.dmidecode.conf
-share/desktop-directories/
-share/desktop-directories/kinfocenter.directory
 share/doc/HTML/ca/kinfocenter/
 share/doc/HTML/ca/kinfocenter/index.cache.bz2
 share/doc/HTML/ca/kinfocenter/index.docbook
@@ -87,11 +87,6 @@ share/doc/HTML/uk/kinfocenter/
 share/doc/HTML/uk/kinfocenter/index.cache.bz2
 share/doc/HTML/uk/kinfocenter/index.docbook
 share/doc/HTML/uk/kinfocenter/kinfocenter.png
-share/examples/kinfocenter/
-share/examples/kinfocenter/xdg/
-share/examples/kinfocenter/xdg/menus/
-share/examples/kinfocenter/xdg/menus/kinfocenter.menu
-@sample ${SYSCONFDIR}/xdg/menus/kinfocenter.menu
 share/kinfocenter/
 share/kinfocenter/categories/
 share/kinfocenter/categories/basicinformation.desktop
@@ -99,6 +94,8 @@ share/kinfocenter/categories/deviceinfocategory.desktop
 share/kinfocenter/categories/graphicalinfocategory.desktop
 share/kinfocenter/categories/lostfoundcategory.desktop
 share/kinfocenter/categories/networkinfocategory.desktop
+share/kinfocenter/edid/
+share/kinfocenter/edid/edid.sh
 share/kinfocenter/firmware_security/
 share/kinfocenter/firmware_security/fwupdmgr.sh
 share/locale/af/LC_MESSAGES/kcm_samba.mo
@@ -217,8 +214,11 @@ share/locale/he/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/he/LC_MESSAGES/kcm_samba.mo
 share/locale/he/LC_MESSAGES/kcmusb.mo
 share/locale/he/LC_MESSAGES/kinfocenter.mo
+share/locale/hi/LC_MESSAGES/kcm_about-distro.mo
+share/locale/hi/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/hi/LC_MESSAGES/kcm_samba.mo
 share/locale/hi/LC_MESSAGES/kcmusb.mo
+share/locale/hi/LC_MESSAGES/kinfocenter.mo
 share/locale/hne/LC_MESSAGES/kcm_samba.mo
 share/locale/hne/LC_MESSAGES/kcmusb.mo
 share/locale/hr/LC_MESSAGES/kcm_samba.mo
@@ -274,8 +274,11 @@ share/locale/lt/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/lt/LC_MESSAGES/kcm_samba.mo
 share/locale/lt/LC_MESSAGES/kcmusb.mo
 share/locale/lt/LC_MESSAGES/kinfocenter.mo
+share/locale/lv/LC_MESSAGES/kcm_about-distro.mo
+share/locale/lv/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/lv/LC_MESSAGES/kcm_samba.mo
 share/locale/lv/LC_MESSAGES/kcmusb.mo
+share/locale/lv/LC_MESSAGES/kinfocenter.mo
 share/locale/mai/LC_MESSAGES/kcm_samba.mo
 share/locale/mai/LC_MESSAGES/kcmusb.mo
 share/locale/mk/LC_MESSAGES/kcm_samba.mo
@@ -292,6 +295,7 @@ share/locale/nb/LC_MESSAGES/kcm_about-distro.mo
 share/locale/nb/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/nb/LC_MESSAGES/kcm_samba.mo
 share/locale/nb/LC_MESSAGES/kcmusb.mo
+share/locale/nb/LC_MESSAGES/kinfocenter.mo
 share/locale/nds/LC_MESSAGES/kcm_samba.mo
 share/locale/nds/LC_MESSAGES/kcmusb.mo
 share/locale/ne/LC_MESSAGES/kcm_samba.mo
@@ -339,6 +343,11 @@ share/locale/ru/LC_MESSAGES/kcm_energyinfo.mo
 share/locale/ru/LC_MESSAGES/kcm_samba.mo
 share/locale/ru/LC_MESSAGES/kcmusb.mo
 share/locale/ru/LC_MESSAGES/kinfocenter.mo
+share/locale/sa/LC_MESSAGES/kcm_about-distro.mo
+share/locale/sa/LC_MESSAGES/kcm_energyinfo.mo
+share/locale/sa/LC_MESSAGES/kcm_samba.mo
+share/locale/sa/LC_MESSAGES/kcmusb.mo
+share/locale/sa/LC_MESSAGES/kinfocenter.mo
 share/locale/se/LC_MESSAGES/kcm_samba.mo
 share/locale/se/LC_MESSAGES/kcmusb.mo
 share/locale/si/LC_MESSAGES/kcm_samba.mo

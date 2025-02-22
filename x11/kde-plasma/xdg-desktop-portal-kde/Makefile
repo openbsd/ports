@@ -10,9 +10,9 @@ WANTLIB += KF6KIOCore KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets
 WANTLIB += KF6Notifications KF6Service KF6Solid KF6StatusNotifierItem
 WANTLIB += KF6WidgetsAddons KF6WindowSystem KWaylandClient Qt6Concurrent
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6PrintSupport
-WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6QuickWidgets Qt6WaylandClient
-WANTLIB += Qt6Widgets Qt6Xml X11 c m wayland-client wayland-cursor
-WANTLIB += xkbcommon
+WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
+WANTLIB += Qt6QuickWidgets Qt6WaylandClient Qt6Widgets Qt6Xml
+WANTLIB += X11 c m wayland-client wayland-cursor xkbcommon
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/kf6/kirigami

@@ -5,7 +5,7 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6CoreAddons KF6DBusAddons KF6GuiAddons KF6WindowSystem
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Svg X11 atk-1.0 c cairo cairo-gobject
 WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-3
-WANTLIB += harfbuzz intl kdecorations2 kdecorations2private m
+WANTLIB += harfbuzz intl kdecorations3 kdecorations3private m
 WANTLIB += pango-1.0 pangocairo-1.0
 
 BUILD_DEPENDS =	www/libsass \
