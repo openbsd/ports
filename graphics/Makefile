@@ -338,6 +338,7 @@
      SUBDIR += viewnior
      SUBDIR += vigra
      SUBDIR += volk
+     SUBDIR += vtk
      SUBDIR += vulkan-headers
      SUBDIR += vulkan-loader
      SUBDIR += vulkan-tools
