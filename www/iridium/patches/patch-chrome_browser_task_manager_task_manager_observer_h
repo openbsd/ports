@@ -1,7 +1,7 @@
 Index: chrome/browser/task_manager/task_manager_observer.h
 --- chrome/browser/task_manager/task_manager_observer.h.orig
 +++ chrome/browser/task_manager/task_manager_observer.h
-@@ -47,7 +47,7 @@ enum RefreshType {
+@@ -50,7 +50,7 @@ enum RefreshType {
    // or backgrounded.
    REFRESH_TYPE_PRIORITY = 1 << 13,
  

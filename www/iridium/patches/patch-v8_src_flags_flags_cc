@@ -9,7 +9,7 @@ Index: v8/src/flags/flags.cc
 +#include <sys/mman.h>
 +#endif
 +
- #include "src/base/functional.h"
+ #include "src/base/hashing.h"
  #include "src/base/lazy-instance.h"
  #include "src/base/platform/platform.h"
 @@ -816,6 +820,10 @@ void FlagList::FreezeFlags() {

@@ -11,7 +11,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Iridium browser
 
-V=			2025.01.132.1
+V=			2025.02.133
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}
@@ -120,7 +120,6 @@ GN_SYSTEM_LIBS=	dav1d \
 		fontconfig \
 		icu \
 		libaom \
-		libevent \
 		libjpeg \
 		libpng \
 		libvpx \
