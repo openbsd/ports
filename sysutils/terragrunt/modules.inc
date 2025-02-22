@@ -571,7 +571,7 @@ MODGO_MODULES =	\
 	github.com/prometheus/common								 v0.2.0 \
 	github.com/prometheus/procfs								 v0.0.0-20190117184657-bf6a532e95b1 \
 	github.com/pterm/pterm									 v0.12.80 \
-	github.com/puzpuzpuz/xsync/v3								 v3.5.0 \
+	github.com/puzpuzpuz/xsync/v3								 v3.5.1 \
 	github.com/redis/go-redis/v9								 v9.7.0 \
 	github.com/remyoudompheng/bigfft							 v0.0.0-20200410134404-eec4a21b6bb0 \
 	github.com/rivo/uniseg									 v0.4.7 \
@@ -659,13 +659,13 @@ MODGO_MODULES =	\
 	go.uber.org/goleak									 v1.3.0 \
 	go.uber.org/multierr									 v1.1.0 \
 	go.uber.org/zap										 v1.9.1 \
-	golang.org/x/crypto									 v0.32.0 \
+	golang.org/x/crypto									 v0.33.0 \
 	golang.org/x/exp									 v0.0.0-20250106191152-7588d65b2ba8 \
 	golang.org/x/image									 v0.0.0-20220302094943-723b81ca9867 \
 	golang.org/x/lint									 v0.0.0-20210508222113-6edffad5e616 \
 	golang.org/x/mobile									 v0.0.0-20190719004257-d2bd2a29d028 \
 	golang.org/x/mod									 v0.23.0 \
-	golang.org/x/net									 v0.34.0 \
+	golang.org/x/net									 v0.35.0 \
 	golang.org/x/oauth2									 v0.26.0 \
 	golang.org/x/sync									 v0.11.0 \
 	golang.org/x/sys									 v0.30.0 \
@@ -678,12 +678,12 @@ MODGO_MODULES =	\
 	gonum.org/v1/gonum									 v0.11.0 \
 	gonum.org/v1/netlib									 v0.0.0-20190313105609-8cb42192e0e0 \
 	gonum.org/v1/plot									 v0.10.1 \
-	google.golang.org/api									 v0.220.0 \
+	google.golang.org/api									 v0.221.0 \
 	google.golang.org/appengine								 v1.6.8 \
 	google.golang.org/genproto								 v0.0.0-20250204164813-702378808489 \
 	google.golang.org/genproto/googleapis/api						 v0.0.0-20250204164813-702378808489 \
-	google.golang.org/genproto/googleapis/bytestream					 v0.0.0-20250127172529-29210b9bc287 \
-	google.golang.org/genproto/googleapis/rpc						 v0.0.0-20250204164813-702378808489 \
+	google.golang.org/genproto/googleapis/bytestream					 v0.0.0-20250207221924-e9438ea467c6 \
+	google.golang.org/genproto/googleapis/rpc						 v0.0.0-20250207221924-e9438ea467c6 \
 	google.golang.org/grpc									 v1.70.0 \
 	google.golang.org/grpc/cmd/protoc-gen-go-grpc						 v1.1.0 \
 	google.golang.org/grpc/stats/opentelemetry						 v0.0.0-20241014145745-ad81c20503be \
@@ -1986,6 +1986,7 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto									 v0.26.0 \
 	golang.org/x/crypto									 v0.28.0 \
 	golang.org/x/crypto									 v0.31.0 \
+	golang.org/x/crypto									 v0.32.0 \
 	golang.org/x/crypto									 v0.7.0 \
 	golang.org/x/exp									 v0.0.0-20180321215751-8460e604b9de \
 	golang.org/x/exp									 v0.0.0-20180807140117-3d87b88a115f \
@@ -2123,6 +2124,7 @@ MODGO_MODFILES =	\
 	golang.org/x/net									 v0.30.0 \
 	golang.org/x/net									 v0.32.0 \
 	golang.org/x/net									 v0.33.0 \
+	golang.org/x/net									 v0.34.0 \
 	golang.org/x/net									 v0.4.0 \
 	golang.org/x/net									 v0.5.0 \
 	golang.org/x/net									 v0.6.0 \
