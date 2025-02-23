@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1701 2025/02/17 14:40:20 thfr Exp $
+# $OpenBSD: Quirks.pm,v 1.1702 2025/02/23 15:47:49 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1237,6 +1237,7 @@ setup_obsolete_reason(
 	3 => 'p5-SWISH-API',
 	3 => 'akonadi-notes',
 	3 => 'quictls',
+	6 => 'py3-setuptools-git',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually

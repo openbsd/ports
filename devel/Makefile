@@ -1655,7 +1655,6 @@
      SUBDIR += py-setuptools
      SUBDIR += py-setuptools-git-versioning
      SUBDIR += py-setuptools-rust
-     SUBDIR += py-setuptools_git
      SUBDIR += py-setuptools_scm
      SUBDIR += py-setuptools_trial
      SUBDIR += py-sh
