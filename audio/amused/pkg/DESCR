@@ -3,3 +3,5 @@ features but instead aims to work well with other standard Unix tools.
 It supports flac, mp3, ogg vorbis and opus files.
 
 amused-web is a simple web interface to control amused remotely.
+
+amused-mpris2 is a dbus control interface for amused.
