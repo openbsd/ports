@@ -8,18 +8,18 @@ COMMENT =	desktop geographical information system
 
 DPB_PROPERTIES =	parallel parallel2
 
-DISTNAME =	qgis-3.40.3
+DISTNAME =	qgis-3.42.0
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	geo x11
 DEBUG_PACKAGES =${BUILD_PACKAGES}
 
-SHARED_LIBS =	qgis_core	80.0 \
-		qgis_app	51.1 \
-		qgis_gui	58.2 \
-		qgis_analysis	27.0 \
-		qgis_server	20.0 \
+SHARED_LIBS =	qgis_core	81.0 \
+		qgis_app	52.0 \
+		qgis_gui	59.0 \
+		qgis_analysis	28.0 \
+		qgis_server	21.0 \
 		qgispython	6.0 \
-		qgis_3d		19.0 \
+		qgis_3d		20.0 \
 		qgis_native	0.3
 
 HOMEPAGE =	https://www.qgis.org/
@@ -45,6 +45,7 @@ CONFIGURE_ARGS =-DBUILD_WITH_QT6=ON \
 LIB_DEPENDS +=	x11/qt6/qtwebengine
 WANTLIB +=	Qt6Core5Compat Qt6OpenGL Qt6OpenGLWidgets Qt6SvgWidgets
 WANTLIB +=	Qt6UiTools Qt6WebChannel Qt6WebEngineCore qwt-qt6
+WANTLIB +=	Qt6QmlMeta Qt6QmlWorkerScript Qt6WebEngineWidgets
 .else
 QTVER =		qt5
 UQTV=		Qt5
@@ -113,7 +114,7 @@ WANTLIB += ${UQTV}Positioning ${UQTV}PrintSupport ${UQTV}Qml ${UQTV}QmlModels
 WANTLIB += ${UQTV}Quick ${UQTV}QuickWidgets ${UQTV}SerialPort ${UQTV}Sql ${UQTV}Svg
 WANTLIB += ${UQTV}Test ${UQTV}Widgets ${UQTV}Xml
 
-WANTLIB += c draco exiv2 expat fcgi freexl gdal geos_c gsl gslcblas iconv m
+WANTLIB += c draco exiv2 expat fcgi freexl gdal geos_c gsl gslcblas iconv intl m
 WANTLIB += mdal minizip pdalcpp pq proj protobuf-lite ${MODPY_WANTLIB}
 WANTLIB += qca-${QTVER} qscintilla2_${QTVER} ${QTVER}keychain rttopo spatialindex
 WANTLIB += spatialite sqlite3 util zip hdf5 xml2 z zstd GL
@@ -148,6 +149,8 @@ WANTLIB += absl_random_internal_randen absl_random_internal_randen_hwaes
 WANTLIB += absl_random_internal_randen_hwaes_impl absl_random_internal_randen_slow
 WANTLIB += absl_random_internal_seed_material absl_random_seed_gen_exception
 WANTLIB += absl_random_seed_sequences absl_utf8_for_code_point
+WANTLIB += absl_leak_check absl_log_internal_structured_proto
+WANTLIB += absl_tracing_internal
 
 CONFIGURE_ENV+=	VERBOSE=1
 CONFIGURE_ARGS +=-DPYTHON_EXECUTABLE=${MODPY_BIN} \

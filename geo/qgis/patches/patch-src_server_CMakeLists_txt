@@ -3,7 +3,7 @@ install qgis_server additional files to share/qgis
 Index: src/server/CMakeLists.txt
 --- src/server/CMakeLists.txt.orig
 +++ src/server/CMakeLists.txt
-@@ -179,7 +179,7 @@ install(TARGETS
+@@ -184,7 +184,7 @@ install(TARGETS
  )
  
  install(FILES
