@@ -1,6 +1,6 @@
 COMMENT=	plugin to manage your versions by scm tags
 
-MODPY_DISTV=	8.1.0
+MODPY_DISTV=	8.2.0
 DISTNAME=	setuptools_scm-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
@@ -11,7 +11,7 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 MODPY_PI=	Yes
 # uses own in-tree backend which wraps setuptools
-MODPY_PYBUILD=	setuptools
+MODPY_PYBUILD=	other
 
 RUN_DEPENDS=	devel/py-setuptools \
 		sysutils/py-packaging
