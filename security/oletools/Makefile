@@ -1,9 +1,8 @@
 COMMENT =	python tools to analyze OLE files
 
-MODPY_DISTV =	0.60.1
+MODPY_DISTV =	0.60.2
 DISTNAME =	oletools-${MODPY_DISTV}
 EXTRACT_SUFX =	.zip
-REVISION =	1
 
 CATEGORIES =	security
 
