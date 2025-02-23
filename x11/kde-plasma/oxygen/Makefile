@@ -1,5 +1,5 @@
-COMMENT =		style for Qt/KDE Applications
-DISTNAME =		oxygen-${VERSION}
+COMMENT =	style for Qt/KDE Applications
+DISTNAME =	oxygen-${VERSION}
 
 SHARED_LIBS =   oxygenstyle5              1.0 # 0.0
 SHARED_LIBS +=  oxygenstyleconfig5        0.0 # 0.0
@@ -45,7 +45,7 @@ LIB_DEPENDS =	devel/kf5/frameworkintegration \
 		x11/qt5/qtdeclarative \
 		x11/qt5/qtx11extras
 
-# KDE5
+# KDE6
 LIB_DEPENDS +=	devel/kf6/kcolorscheme \
 		devel/kf6/frameworkintegration \
 		devel/kf6/kcmutils \
