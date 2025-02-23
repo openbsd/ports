@@ -13,6 +13,7 @@ MODGO_MODULES =	\
 	github.com/containerd/console		 v1.0.4-0.20230313162750-1ae8d489ac81 \
 	github.com/dustin/go-humanize		 v1.0.1 \
 	github.com/erikgeiser/coninput		 v0.0.0-20211004153227-1c3628e74d0f \
+	github.com/expr-lang/expr		 v1.16.9 \
 	github.com/kylelemons/godebug		 v1.1.0 \
 	github.com/lucasb-eyer/go-colorful	 v1.2.0 \
 	github.com/mattn/go-isatty		 v0.0.20 \

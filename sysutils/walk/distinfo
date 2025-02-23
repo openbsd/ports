@@ -32,6 +32,8 @@ SHA256 (go_modules/github.com/dustin/go-humanize/@v/v1.0.1.mod) = QyWZnQpoQQMSWK
 SHA256 (go_modules/github.com/dustin/go-humanize/@v/v1.0.1.zip) = MZQE6oTIpOLT2D8wmIsAbn3QSXbePhoakEhK2UZ5+kY=
 SHA256 (go_modules/github.com/erikgeiser/coninput/@v/v0.0.0-20211004153227-1c3628e74d0f.mod) = SMbOZDpMVuVQ6NVzX7oHdrRg2c+4PoDRelpQBXO5aS8=
 SHA256 (go_modules/github.com/erikgeiser/coninput/@v/v0.0.0-20211004153227-1c3628e74d0f.zip) = vX+aYjdNxNERhjSRcpdjoOr83EQNSm6+rWHTr0osPy8=
+SHA256 (go_modules/github.com/expr-lang/expr/@v/v1.16.9.mod) = JX7Iv1iMqjPcMQ4m7hxnY3Wa07f8Cp2o5u+kPahHtVg=
+SHA256 (go_modules/github.com/expr-lang/expr/@v/v1.16.9.zip) = xpwYbtLODh+JaaLbRekAlz8iXfLjGS4FP5s0oOGalxM=
 SHA256 (go_modules/github.com/kylelemons/godebug/@v/v1.1.0.mod) = FgWHHolTMaOfWVJVnrvJEijYa4EANU+Fe1YoZuyluxM=
 SHA256 (go_modules/github.com/kylelemons/godebug/@v/v1.1.0.zip) = 270M6ML0kyuwNwTXMCayGvEr1o1bj0eY2/EKSHorbRM=
 SHA256 (go_modules/github.com/lucasb-eyer/go-colorful/@v/v1.2.0.mod) = hPnDjpiEqwE8g3yxau4TlQDT1cbMqwJDmIHbLs8o9mA=
@@ -87,7 +89,7 @@ SHA256 (go_modules/golang.org/x/text/@v/v0.16.0.zip) = m3wFdciUIkvH+F36LvsO+T19V
 SHA256 (go_modules/golang.org/x/text/@v/v0.3.8.mod) = DAbo1LwMTt3OD5ygGth92f90ytf6i6Fm/pfZfR3rJ64=
 SHA256 (go_modules/golang.org/x/tools/@v/v0.21.1-0.20240508182429-e35e4ccd0d2d.mod) = RSXa1PVyPR5An2o5jBrn/V4sY31DpcrrSYRAd7kcnus=
 SHA256 (go_modules/golang.org/x/tools/@v/v0.21.1-0.20240508182429-e35e4ccd0d2d.zip) = gL7sZroSTW0JesTud+VNsOzUfsyb80dKBMgfTo/S3Uo=
-SHA256 (walk-v1.10.0.zip) = C/wTCJOF3Au0zCQN7owNk/SYhaHoGLZzERMbHlOurmc=
+SHA256 (walk-v1.12.0.zip) = Bp0bC2XWMlpBhko+tEE09Z7fZZABjt9Ars3QOO0bm2o=
 SIZE (go_modules/github.com/antonmedv/clipboard/@v/v1.0.1.mod) = 47
 SIZE (go_modules/github.com/antonmedv/clipboard/@v/v1.0.1.zip) = 6442
 SIZE (go_modules/github.com/atotto/clipboard/@v/v0.1.4.mod) = 35
@@ -122,6 +124,8 @@ SIZE (go_modules/github.com/dustin/go-humanize/@v/v1.0.1.mod) = 46
 SIZE (go_modules/github.com/dustin/go-humanize/@v/v1.0.1.zip) = 27015
 SIZE (go_modules/github.com/erikgeiser/coninput/@v/v0.0.0-20211004153227-1c3628e74d0f.mod) = 108
 SIZE (go_modules/github.com/erikgeiser/coninput/@v/v0.0.0-20211004153227-1c3628e74d0f.zip) = 11748
+SIZE (go_modules/github.com/expr-lang/expr/@v/v1.16.9.mod) = 42
+SIZE (go_modules/github.com/expr-lang/expr/@v/v1.16.9.zip) = 1966280
 SIZE (go_modules/github.com/kylelemons/godebug/@v/v1.1.0.mod) = 46
 SIZE (go_modules/github.com/kylelemons/godebug/@v/v1.1.0.zip) = 25634
 SIZE (go_modules/github.com/lucasb-eyer/go-colorful/@v/v1.2.0.mod) = 51
@@ -177,4 +181,4 @@ SIZE (go_modules/golang.org/x/text/@v/v0.16.0.zip) = 9235305
 SIZE (go_modules/golang.org/x/text/@v/v0.3.8.mod) = 234
 SIZE (go_modules/golang.org/x/tools/@v/v0.21.1-0.20240508182429-e35e4ccd0d2d.mod) = 339
 SIZE (go_modules/golang.org/x/tools/@v/v0.21.1-0.20240508182429-e35e4ccd0d2d.zip) = 3236577
-SIZE (walk-v1.10.0.zip) = 1405423
+SIZE (walk-v1.12.0.zip) = 1449828
