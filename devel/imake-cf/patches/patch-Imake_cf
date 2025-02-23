@@ -1,6 +1,7 @@
---- Imake.cf.orig	Tue Dec 22 02:28:02 2015
-+++ Imake.cf	Wed Sep  7 12:00:22 2016
-@@ -132,18 +132,27 @@ XCOMM $XFree86: xc/config/cf/Imake.cf,v 3.88 2003/12/1
+Index: Imake.cf
+--- Imake.cf.orig
++++ Imake.cf
+@@ -136,18 +136,27 @@ XCOMM $XFree86: xc/config/cf/Imake.cf,v 3.88 2003/12/1
  #   define Sparc64Architecture
  #  endif
  #  undef sparc
@@ -28,7 +29,7 @@
  # endif
  # if defined(__alpha__) || defined(alpha)
  #   define AlphaArchitecture
-@@ -156,6 +165,10 @@ XCOMM $XFree86: xc/config/cf/Imake.cf,v 3.88 2003/12/1
+@@ -160,6 +169,10 @@ XCOMM $XFree86: xc/config/cf/Imake.cf,v 3.88 2003/12/1
  #   undef __x86_64__
  #   undef amd64
  # endif
@@ -39,7 +40,7 @@
  # if defined(__mc68020__) || defined(mc68020)
  #  define Mc68020Architecture
  #  if defined(amiga)
-@@ -180,11 +193,19 @@ XCOMM $XFree86: xc/config/cf/Imake.cf,v 3.88 2003/12/1
+@@ -184,11 +197,19 @@ XCOMM $XFree86: xc/config/cf/Imake.cf,v 3.88 2003/12/1
  #  endif
  #  undef mc68000
  # endif

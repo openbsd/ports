@@ -44,6 +44,7 @@ lib/X11/config/darwinLib.rules
 lib/X11/config/darwinLib.tmpl
 lib/X11/config/date.def
 lib/X11/config/dmx.cf
+lib/X11/config/empty.def
 lib/X11/config/fujitsu.cf
 lib/X11/config/generic.cf
 lib/X11/config/gnu.cf

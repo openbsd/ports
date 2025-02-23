@@ -1,10 +1,9 @@
 PKG_ARCH =	*
 COMMENT =	config files for imake
 CATEGORIES =	devel x11
-V =		1.0.7
+V =		1.0.8
 DISTNAME =	xorg-cf-files-${V}
 PKGNAME =	imake-cf-${V}
-REVISION =	0
 SITES =		${SITE_XORG:=util/}
 
 PERMIT_PACKAGE =	Yes
