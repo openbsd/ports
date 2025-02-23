@@ -1,13 +1,13 @@
 COMMENT =	matrix homeserver written in Go
 
-MODGO_MODNAME =	github.com/matrix-org/dendrite
-MODGO_VERSION =	v0.13.7
+MODGO_MODNAME =	github.com/element-hq/dendrite
+MODGO_VERSION =	v0.14.1
 
 DISTNAME =	dendrite-${MODGO_VERSION}
 
 CATEGORIES =	net
 
-HOMEPAGE =	https://github.com/matrix-org/dendrite
+HOMEPAGE =	https://github.com/element-hq/dendrite
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
