@@ -1,5 +1,5 @@
 COMMENT =	KDE Oxygen-style icon theme
-VERSION =	6.0.0
+VERSION =	6.1.0
 DISTNAME =	oxygen-icons-${VERSION}
 
 SITES =		${SITE_KDE:=stable/oxygen-icons/}
