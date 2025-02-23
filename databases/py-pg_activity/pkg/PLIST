@@ -1,4 +1,3 @@
-@conflict py-pg_activity-*
 bin/pg_activity
 lib/python${MODPY_VERSION}/site-packages/pg_activity-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/pg_activity-${MODPY_DISTV}.dist-info/AUTHORS.md
@@ -72,6 +71,7 @@ lib/python${MODPY_VERSION}/site-packages/pgactivity/queries/get_blocking_post_09
 lib/python${MODPY_VERSION}/site-packages/pgactivity/queries/get_data_directory.sql
 lib/python${MODPY_VERSION}/site-packages/pgactivity/queries/get_pg_activity_oldest.sql
 lib/python${MODPY_VERSION}/site-packages/pgactivity/queries/get_pg_activity_post_090200.sql
+lib/python${MODPY_VERSION}/site-packages/pgactivity/queries/get_pg_activity_post_090400.sql
 lib/python${MODPY_VERSION}/site-packages/pgactivity/queries/get_pg_activity_post_090600.sql
 lib/python${MODPY_VERSION}/site-packages/pgactivity/queries/get_pg_activity_post_100000.sql
 lib/python${MODPY_VERSION}/site-packages/pgactivity/queries/get_pg_activity_post_110000.sql
@@ -101,5 +101,3 @@ lib/python${MODPY_VERSION}/site-packages/pgactivity/utils.py
 lib/python${MODPY_VERSION}/site-packages/pgactivity/views.py
 lib/python${MODPY_VERSION}/site-packages/pgactivity/widgets.py
 @man man/man1/pg_activity.1
-share/doc/py-pg_activity/
-share/doc/py-pg_activity/LICENSE.txt
