@@ -4,15 +4,13 @@ CATEGORIES =		graphics devel
 COMMENT-main =		library for computer vision real-time processing
 COMMENT-java =		Java bindings for OpenCV
 
-V =			4.10.0
+V =			4.11.0
 GH_ACCOUNT =		opencv
 GH_PROJECT =		opencv
 GH_TAGNAME =		${V}
 
 PKGNAME-main =		opencv-${V}
 PKGNAME-java =		opencv-java-${V}
-REVISION-main =		4
-REVISION-java =		1
 
 HOMEPAGE =		https://www.opencv.org/
 
@@ -22,15 +20,15 @@ MAINTAINER =		Rafael Sadowski <rsadowski@openbsd.org>
   opencv_flann opencv_highgui opencv_imgproc opencv_ml opencv_objdetect \
   opencv_photo opencv_stitching opencv_video opencv_imgcodecs \
   opencv_videoio opencv_dnn
-SHARED_LIBS += $i 13.0
+SHARED_LIBS += $i 14.0
 .endfor
 
 WANTLIB-main += ${COMPILER_LIBCXX} OpenEXR-3_3 absl_hash absl_log_internal_message
-WANTLIB-main += absl_log_internal_nullguard absl_spinlock_wait avcodec
-WANTLIB-main += avformat avutil c cairo gdk-3 gdk_pixbuf-2.0 glib-2.0
-WANTLIB-main += gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstpbutils-1.0
-WANTLIB-main += gstreamer-1.0 gstriff-1.0 gstvideo-1.0 gtk-3 jpeg m
-WANTLIB-main += openjp2 png protobuf swscale tiff webp z
+WANTLIB-main += absl_log_internal_nullguard avcodec avformat avif avutil
+WANTLIB-main += c cairo gdk-3 gdk_pixbuf-2.0 glib-2.0 gobject-2.0 gstapp-1.0
+WANTLIB-main += gstaudio-1.0 gstbase-1.0 gstpbutils-1.0 gstreamer-1.0
+WANTLIB-main += gstriff-1.0 gstvideo-1.0 gtk-3 jpeg lapack m openjp2
+WANTLIB-main += png protobuf swscale tiff webp webpdemux webpmux z
 
 WANTLIB-java += ${COMPILER_LIBCXX} opencv_calib3d opencv_core opencv_dnn
 WANTLIB-java += opencv_features2d opencv_flann opencv_imgcodecs opencv_imgproc
@@ -57,6 +55,7 @@ RUN_DEPENDS-main =	math/py-numpy
 RUN_DEPENDS-java =	${MODJAVA_RUN_DEPENDS}
 
 LIB_DEPENDS-main =	${LIB_DEPENDS} \
+			graphics/libavif \
 			graphics/ffmpeg \
 			graphics/jpeg \
 			graphics/libwebp \
@@ -130,6 +129,8 @@ NO_TEST =	Yes
 CONFIGURE_ARGS +=	-DOPENCV_SKIP_CMAKE_CXX_STANDARD=ON \
 			-DBUILD_PROTOBUF=OFF \
 			-DPROTOBUF_UPDATE_FILES=ON
+
+CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON
 
 post-patch:
 	perl -pi -e 's@^.*(#\s*include)@$$1@' \
