@@ -15,11 +15,9 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += pthread ${MODPY_WANTLIB}
 
 MODULES =		lang/python
-
-MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
+MODPY_PI =		Yes
 
-BUILD_DEPENDS =		devel/py-setuptools_git
 TEST_DEPENDS =		math/py-numpy
 
 PORTHOME =		${WRKDIR}
