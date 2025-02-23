@@ -28,8 +28,11 @@ share/doc/honk/activitypub.7.html
 share/doc/honk/changelog.txt
 share/doc/honk/encrypted-messages.txt
 share/doc/honk/filter.png
+@sample ${LOCALSTATEDIR}/honk/docs/filter.png
 share/doc/honk/filtermemes.png
+@sample ${LOCALSTATEDIR}/honk/docs/filtermemes.png
 share/doc/honk/followhonk.png
+@sample ${LOCALSTATEDIR}/honk/docs/followhonk.png
 share/doc/honk/hfcs.1.html
 @sample ${LOCALSTATEDIR}/honk/docs/hfcs.1.html
 share/doc/honk/honk.1.html
@@ -52,7 +55,9 @@ share/doc/honk/screenshot-compose.png
 share/doc/honk/screenshot-honk.png
 @sample ${LOCALSTATEDIR}/honk/docs/screenshot-honk.png
 share/doc/honk/tagcombo.png
+@sample ${LOCALSTATEDIR}/honk/docs/tagcombo.png
 share/doc/honk/tagrss.png
+@sample ${LOCALSTATEDIR}/honk/docs/tagrss.png
 share/doc/honk/toys/
 share/doc/honk/toys/README
 share/doc/honk/vim.3.html
