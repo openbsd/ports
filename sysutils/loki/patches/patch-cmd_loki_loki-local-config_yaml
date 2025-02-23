@@ -1,7 +1,7 @@
 Index: cmd/loki/loki-local-config.yaml
 --- cmd/loki/loki-local-config.yaml.orig
 +++ cmd/loki/loki-local-config.yaml
-@@ -6,11 +6,11 @@ server:
+@@ -8,11 +8,11 @@ server:
  
  common:
    instance_addr: 127.0.0.1
