@@ -192,6 +192,10 @@ lib/python${MODPY_VERSION}/site-packages/barman/utils.py
 lib/python${MODPY_VERSION}/site-packages/barman/version.py
 lib/python${MODPY_VERSION}/site-packages/barman/wal_archiver.py
 lib/python${MODPY_VERSION}/site-packages/barman/xlog.py
+@man man/man1/barman-archive-wal.1
+@man man/man1/barman-backup.1
+@man man/man1/barman-check-backup.1
+@man man/man1/barman-check.1
 @man man/man1/barman-cloud-backup-delete.1
 @man man/man1/barman-cloud-backup-keep.1
 @man man/man1/barman-cloud-backup-list.1
@@ -201,6 +205,33 @@ lib/python${MODPY_VERSION}/site-packages/barman/xlog.py
 @man man/man1/barman-cloud-restore.1
 @man man/man1/barman-cloud-wal-archive.1
 @man man/man1/barman-cloud-wal-restore.1
+@man man/man1/barman-config-switch.1
+@man man/man1/barman-config-update.1
+@man man/man1/barman-cron.1
+@man man/man1/barman-delete.1
+@man man/man1/barman-diagnose.1
+@man man/man1/barman-generate-manifest.1
+@man man/man1/barman-get-wal.1
+@man man/man1/barman-keep.1
+@man man/man1/barman-list-files.1
+@man man/man1/barman-list-servers.1
+@man man/man1/barman-list_backups.1
+@man man/man1/barman-lock-directory-cleanup.1
+@man man/man1/barman-put-wal.1
+@man man/man1/barman-rebuild-xlogdb.1
+@man man/man1/barman-receive-wal.1
+@man man/man1/barman-replication-status.1
+@man man/man1/barman-restore.1
+@man man/man1/barman-show-backup.1
+@man man/man1/barman-show-servers.1
+@man man/man1/barman-status.1
+@man man/man1/barman-switch-wal.1
+@man man/man1/barman-switch-xlog.1
+@man man/man1/barman-sync-backup.1
+@man man/man1/barman-sync-info.1
+@man man/man1/barman-sync-wals.1
+@man man/man1/barman-verify-backup.1
+@man man/man1/barman-verify.1
 @man man/man1/barman-wal-archive.1
 @man man/man1/barman-wal-restore.1
 @man man/man1/barman.1

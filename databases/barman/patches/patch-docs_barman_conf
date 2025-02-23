@@ -1,5 +1,6 @@
---- doc/barman.conf.orig	Fri Sep 23 14:56:55 2016
-+++ doc/barman.conf	Fri Dec  9 19:57:53 2016
+Index: docs/barman.conf
+--- docs/barman.conf.orig
++++ docs/barman.conf
 @@ -5,17 +5,17 @@
  
  [barman]

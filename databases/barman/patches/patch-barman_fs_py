@@ -1,20 +1,13 @@
 Index: barman/fs.py
 --- barman/fs.py.orig
 +++ barman/fs.py
-@@ -19,6 +19,7 @@
- import logging
- import re
- import shutil
-+import sys
- from abc import ABCMeta, abstractmethod
- 
- from barman import output
-@@ -147,7 +148,7 @@ class UnixLocalCommand(object):
-         if not self.exists(path):
-             raise FsOperationFailed("Following path does not exist: %s" % path)
-         args = ["-c", "%a", path]
--        if self.is_osx():
-+        if self.is_osx() or sys.platform.startswith("openbsd"):
+@@ -151,6 +151,9 @@ class UnixLocalCommand(object):
+         if self.is_osx():
              print("is osx")
              args = ["-f", "%Lp", path]
++        if sys.platform.startswith("openbsd"):
++            print("is openbsd")
++            args = ["-f", "%Lp", path]
          cmd_ret = self.cmd("stat", args=args)
+         if cmd_ret != 0:
+             raise FsOperationFailed(

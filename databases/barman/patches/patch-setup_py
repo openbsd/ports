@@ -1,21 +1,21 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -61,7 +61,7 @@ setup(
+@@ -60,7 +60,7 @@ setup(
      packages=find_packages(exclude=["tests"]),
      data_files=[
          (
 -            "share/man/man1",
 +            "man/man1",
              [
-                 "doc/barman.1",
-                 "doc/barman-cloud-backup.1",
-@@ -77,7 +77,7 @@ setup(
-                 "doc/barman-wal-restore.1",
+                 "docs/_build/man/barman.1",
+                 "docs/_build/man/barman-archive-wal.1",
+@@ -107,7 +107,7 @@ setup(
+                 "docs/_build/man/barman-wal-archive.1",
              ],
          ),
--        ("share/man/man5", ["doc/barman.5"]),
-+        ("man/man5", ["doc/barman.5"]),
+-        ("share/man/man5", ["docs/_build/man/barman.5"]),
++        ("man/man5", ["docs/_build/man/barman.5"]),
      ],
      entry_points={
          "console_scripts": [

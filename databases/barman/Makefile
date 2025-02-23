@@ -1,12 +1,10 @@
 COMMENT =	backup and restoration manager for PostgreSQL
 
-MODPY_DISTV =	3.10.0
-
+MODPY_DISTV =	3.13.0
 GH_ACCOUNT =	EnterpriseDB
 GH_PROJECT =	barman
 GH_TAGNAME =	release/${MODPY_DISTV}
 DISTNAME =	barman-${MODPY_DISTV}
-REVISION =	1
 
 CATEGORIES =	databases
 HOMEPAGE =	https://www.pgbarman.org/
@@ -19,18 +17,20 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
 MODPY_PYBUILD =	setuptools
-RUN_DEPENDS =	databases/py-psycopg2 \
+RUN_DEPENDS =	archivers/py-zstandard \
+		databases/py-psycopg2 \
 		databases/postgresql \
 		net/rsync \
 		devel/py-dateutil \
 		devel/py-argcomplete
 
-TEST_DEPENDS =	devel/py-test-timeout \
+TEST_DEPENDS =	archivers/py-lz4 \
+		devel/py-test-timeout \
 		devel/py-mock \
 		devel/py-test-runner
 
 # some cloud-related deps are not ported (esp for google/azure); pytest's
-# collection of tets errors out if some of these are not ignored, and avoid
+# collection of tests errors out if some of these are not ignored, and avoid
 # noise from others
 MODPY_PYTEST_ARGS=	--ignore tests/test_barman_cloud_backup.py \
 			--ignore tests/test_barman_cloud_backup_show.py \
@@ -44,7 +44,7 @@ MODPY_PYTEST_ARGS=	--ignore tests/test_barman_cloud_backup.py \
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/barman
-	${INSTALL_DATA}	${WRKSRC}/doc/barman.conf \
+	${INSTALL_DATA}	${WRKSRC}/docs/barman.conf \
 	    ${PREFIX}/share/examples/barman
 
 .include <bsd.port.mk>
