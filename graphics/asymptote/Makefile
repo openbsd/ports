@@ -18,7 +18,9 @@ MODULES=		lang/python
 
 COMPILER =		base-clang ports-gcc
 
-BUILD_DEPENDS=		graphics/glm \
+BUILD_DEPENDS=		devel/py-click \
+			graphics/glew \
+			graphics/glm \
 			print/texinfo \
 			print/texlive/base \
 			print/texlive/texmf,-main \
