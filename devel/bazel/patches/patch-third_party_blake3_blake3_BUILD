@@ -1,0 +1,13 @@
+Index: third_party/blake3/blake3.BUILD
+--- third_party/blake3/blake3.BUILD.orig
++++ third_party/blake3/blake3.BUILD
+@@ -39,6 +39,9 @@ cc_library(
+         "@bazel_tools//src/conditions:linux_aarch64": [
+             "c/blake3_neon.c",
+         ],
++        "@bazel_tools//src/conditions:openbsd_aarch64": [
++            "c/blake3_neon.c",
++        ],
+         "@bazel_tools//src/conditions:windows_x64": [
+             "c/blake3_avx2_x86-64_windows_msvc.asm",
+             "c/blake3_avx512_x86-64_windows_msvc.asm",

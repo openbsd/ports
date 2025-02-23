@@ -37,18 +37,16 @@ Index: distdir_deps.bzl
      "re2": {
          "archive": "aecba11114cf1fac5497aeb844b6966106de3eb6.tar.gz",
          "sha256": "9f385e146410a8150b6f4cb1a57eab7ec806ced48d427554b1e754877ff26c3e",
-@@ -229,17 +221,24 @@ DIST_DEPS = {
+@@ -229,16 +221,23 @@ DIST_DEPS = {
          ],
      },
      "com_google_absl": {
--        "archive": "20211102.0.tar.gz",
--        "sha256": "dcf71b9cba8dc0ca9940c4b316a0c796be8fab42b070bb6b7cab62b48f0e66c4",
+-        "archive": "20230802.0.tar.gz",
+-        "sha256": "59d2976af9d6ecf001a81a35749a6e551a335b949d34918cfade07737b9d93c5",
 +        "archive": "20230802.1.tar.gz",
 +        "sha256": "987ce98f02eefbaf930d6e38ab16aa05737234d7afbab2d5c4ea7adbe50c28ed",
          "urls": [
--            "https://mirror.bazel.build/github.com/abseil/abseil-cpp/archive/refs/tags/20211102.0.tar.gz",
--            "https://github.com/abseil/abseil-cpp/archive/refs/tags/20211102.0.tar.gz",
-+            "https://mirror.bazel.build/github.com/abseil/abseil-cpp/archive/refs/tags/20230802.1.tar.gz",
+-            "https://github.com/abseil/abseil-cpp/archive/refs/tags/20230802.0.tar.gz",
 +            "https://github.com/abseil/abseil-cpp/archive/refs/tags/20230802.1.tar.gz",
          ],
 +        "patch_args": ["-p0"],
@@ -62,7 +60,7 @@ Index: distdir_deps.bzl
              "additional_distfiles",
              "test_WORKSPACE_files",
          ],
--        "strip_prefix": "abseil-cpp-20211102.0",
+-        "strip_prefix": "abseil-cpp-20230802.0",
 +        "strip_prefix": "abseil-cpp-20230802.1",
      },
      "zstd-jni": {

@@ -1,0 +1,19 @@
+Index: src/conditions/BUILD
+--- src/conditions/BUILD.orig
++++ src/conditions/BUILD
+@@ -31,6 +31,15 @@ config_setting(
+ )
+ 
+ config_setting(
++    name = "openbsd_aarch64",
++    constraint_values = [
++        "@platforms//os:openbsd",
++        "@platforms//cpu:aarch64",
++    ],
++    visibility = ["//visibility:public"],
++)
++
++config_setting(
+     name = "linux_arm",
+     constraint_values = [
+         "@platforms//os:linux",

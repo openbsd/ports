@@ -1,0 +1,19 @@
+Index: src/conditions/BUILD.tools
+--- src/conditions/BUILD.tools.orig
++++ src/conditions/BUILD.tools
+@@ -88,6 +88,15 @@ config_setting(
+ )
+ 
+ config_setting(
++    name = "openbsd_aarch64",
++    constraint_values = [
++        "@platforms//os:openbsd",
++        "@platforms//cpu:aarch64",
++    ],
++    visibility = ["//visibility:public"],
++)
++
++config_setting(
+     name = "darwin_x86_64",
+     constraint_values = [
+         "@platforms//os:macos",

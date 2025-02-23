@@ -3,8 +3,7 @@ BROKEN-sparc64 = libsingle_line_formatter.jar failed: Worker process did not ret
 # ./src/tools/singlejar/mapped_file_posix.inc only supports 64-bit UNIX.
 ONLY_FOR_ARCHS =	${LP64_ARCHS}
 
-VERSION =		6.3.2
-REVISION =		2
+VERSION =		6.5.0
 
 COMMENT =		polyglot build tool
 HOMEPAGE =		https://bazel.build/
@@ -28,7 +27,7 @@ ABSEIL_VER =		20230802.1
 DIST_TUPLE =		github abseil abseil-cpp ${ABSEIL_VER} .
 
 MODULES =		java lang/python
-MODJAVA_VER =		11
+MODJAVA_VER =		17
 
 BUILD_DEPENDS =		archivers/zip \
 			shells/bash
