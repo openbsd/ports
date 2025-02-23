@@ -1,7 +1,7 @@
 QT6NAME =	QtTools
 COMMENT =	Qt6 development tools
 PKGSPEC =	qt6-qttools-${QT6_PKGSPEC}
-REVISION =	2
+REVISION =	3
 
 SHARED_LIBS +=  Qt6Designer             3.1 # 6.7
 SHARED_LIBS +=  Qt6DesignerComponents   2.0 # 6.7
@@ -21,7 +21,7 @@ WANTLIB += llvm${MODCLANG_VERSION}/lib/clang-cpp
 MODQT6_DEPS =	No
 
 MODULES +=			lang/clang
-MODCLANG_VERSION =		18
+MODCLANG_VERSION =		19
 MODCLANG_COMPILER_LINKS =	Yes
 MODCLANG_BUILDDEP =		No
 MODCLANG_RUNDEP =		No
