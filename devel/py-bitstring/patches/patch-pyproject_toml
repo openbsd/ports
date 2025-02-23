@@ -1,0 +1,12 @@
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -27,7 +27,7 @@ classifiers = [
+ ]
+ keywords = ["binary", "bitarray", "bitvector", "bitfield"]
+ dependencies = [
+-  "bitarray >= 3.0.0, < 3.1"
++  "bitarray >= 3.0.0"
+ ]
+ 
+ [project.urls]
