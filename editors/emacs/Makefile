@@ -1,10 +1,7 @@
 COMMENT=		GNU editor: extensible, customizable, self-documenting
 
-# XXX 29.4 was released with a .texi file newer than emacs.info
-# Zap post-extract when updating
-VERSION=		29.4
+VERSION=		30.1
 DISTNAME=		emacs-${VERSION}
-REVISION=		2
 
 CATEGORIES=		editors
 
@@ -15,8 +12,7 @@ MAINTAINER=		Jeremie Courreges-Anglas <jca@wxcvbn.org>
 # GPLv3+
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += c curses execinfo gmp gnutls jansson m pthread sqlite3
-WANTLIB += tree-sitter xml2 z
+WANTLIB += c curses execinfo gmp gnutls m pthread sqlite3 tree-sitter xml2 z
 
 SITES=			${SITE_GNU:=emacs/}
 EXTRACT_SUFX=		.tar.xz
@@ -45,7 +41,6 @@ SUBST_VARS=		GCCARCH VERSION
 
 USE_GMAKE=		Yes
 LIB_DEPENDS=		databases/sqlite3 \
-			devel/jansson \
 			devel/gmp \
 			security/gnutls \
 			textproc/libxml \
@@ -79,21 +74,23 @@ CONFIGURE_ARGS+=	--with-x-toolkit=athena
 LIB_DEPENDS+=		x11/Xaw3d
 LIB_DEPENDS+=		misc/m17n/lib
 WANTLIB += ICE SM X11 X11-xcb Xaw3d Xcomposite Xext Xfixes Xi
-WANTLIB += Xinerama Xmu Xpm Xrandr Xrender Xt cairo dbus-1 fontconfig
-WANTLIB += freetype gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += harfbuzz intl jpeg lcms2 m17n-core m17n-flt otf png
-WANTLIB += rsvg-2 tiff webpdecoder webpdemux xcb xcb-shape xcb-util
+WANTLIB += Xinerama Xmu Xpm Xrandr Xrender Xt cairo cairo-gobject
+WANTLIB += dbus-1 fontconfig freetype gdk_pixbuf-2.0 gif gio-2.0
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 harfbuzz intl jpeg
+WANTLIB += lcms2 m17n-core m17n-flt otf pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 png rsvg-2 tiff webpdecoder webpdemux
+WANTLIB += xcb xcb-shape
 . elif ${FLAVOR} == "gtk2"
 CONFIGURE_ARGS+=	--with-x-toolkit=gtk2
 LIB_DEPENDS+=		x11/gtk+2
 LIB_DEPENDS+=		misc/m17n/lib
 WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage Xext
 WANTLIB += Xfixes Xi Xinerama Xpm Xrandr Xrender atk-1.0 cairo
-WANTLIB += dbus-1 fontconfig freetype gdk-x11-2.0 gdk_pixbuf-2.0
-WANTLIB += gif gio-2.0 glib-2.0 gobject-2.0 gtk-x11-2.0 harfbuzz
-WANTLIB += intl jpeg lcms2 m17n-core m17n-flt otf pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 png rsvg-2 tiff webpdecoder webpdemux
-WANTLIB += xcb xcb-shape xcb-util
+WANTLIB += cairo-gobject dbus-1 fontconfig freetype gdk-x11-2.0
+WANTLIB += gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
+WANTLIB += gtk-x11-2.0 harfbuzz intl jpeg lcms2 m17n-core m17n-flt
+WANTLIB += otf pango-1.0 pangocairo-1.0 pangoft2-1.0 png rsvg-2
+WANTLIB += tiff webpdecoder webpdemux xcb xcb-shape
 . elif ${FLAVOR} == "gtk3"
 CONFIGURE_ARGS+=	--with-x-toolkit=gtk3
 LIB_DEPENDS+=		x11/gtk+3
@@ -101,28 +98,33 @@ LIB_DEPENDS+=		misc/m17n/lib
 WANTLIB += ICE SM X11 X11-xcb Xcomposite Xext Xfixes Xi Xinerama
 WANTLIB += Xpm Xrandr Xrender atk-1.0 cairo cairo-gobject dbus-1
 WANTLIB += fontconfig freetype gdk-3 gdk_pixbuf-2.0 gif gio-2.0
-WANTLIB += glib-2.0 gobject-2.0 gtk-3 harfbuzz intl jpeg lcms2
-WANTLIB += m17n-core m17n-flt otf pango-1.0 pangocairo-1.0 png
-WANTLIB += rsvg-2 tiff webpdecoder webpdemux xcb xcb-shape xcb-util
+WANTLIB += glib-2.0 gmodule-2.0 gobject-2.0 gtk-3 harfbuzz intl
+WANTLIB += jpeg lcms2 m17n-core m17n-flt otf pango-1.0 pangocairo-1.0
+WANTLIB += pangoft2-1.0 png rsvg-2 tiff webpdecoder webpdemux
+WANTLIB += xcb xcb-shape
 . elif ${FLAVOR} == "pgtk"
 CONFIGURE_ARGS+=	--with-pgtk
 LIB_DEPENDS+=		x11/gtk+3
 WANTLIB += atk-1.0 cairo cairo-gobject dbus-1 fontconfig freetype
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gobject-2.0
-WANTLIB += gtk-3 harfbuzz intl jpeg lcms2 otf pango-1.0 pangocairo-1.0
-WANTLIB += png rsvg-2 tiff webpdecoder webpdemux
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gif gio-2.0 glib-2.0 gmodule-2.0
+WANTLIB += gobject-2.0 gtk-3 harfbuzz intl jpeg lcms2 otf pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 png rsvg-2 tiff webpdecoder
+WANTLIB += webpdemux
 . else
 ERRORS+=		"Fatal: Conflicting flavor: ${FLAVOR}"
 . endif
 .endif
 
 post-extract:
-	touch ${WRKSRC}/info/emacs.info
+	# XXX workaround to avoid needlessly rebuild elisp.info
+	cp ${WRKSRC}/doc/lispref/elisp_type_hierarchy.* ${WRKBUILD}/info
+	touch -c ${WRKSRC}/info/elisp.info
 
 post-install:
 	chmod -t ${PREFIX}/bin/emacs-${VERSION}
 	mv ${PREFIX}/libexec/emacs/${VERSION}/${GCCARCH}/emacs-*.pdmp \
 	    ${PREFIX}/libexec/emacs/${VERSION}/${GCCARCH}/emacs.pdmp
+	rm ${PREFIX}/info/elisp_type_hierarchy.*
 .if ${FLAVOR:Mno_x11}
 	rm -Rf ${PREFIX}/share/applications/ ${PREFIX}/share/icons/
 .endif
