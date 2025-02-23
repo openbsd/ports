@@ -2,11 +2,10 @@ USE_NOBTCFI-aarch64 =	Yes# fortran
 
 COMMENT=	Python package to manage extremely large amounts of data
 
-MODPY_DISTV=	3.10.1
+MODPY_DISTV=	3.10.2
 DISTNAME=	tables-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	math
-REVISION=	3
 
 HOMEPAGE=	https://www.pytables.org/
 MAINTAINER=	Martin Reindl <martin@catai.org>

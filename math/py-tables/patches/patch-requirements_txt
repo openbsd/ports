@@ -1,20 +1,37 @@
 Index: requirements.txt
 --- requirements.txt.orig
 +++ requirements.txt
-@@ -4,7 +4,6 @@
- #
- #    pip-compile --generate-hashes requirements.in
- #
--blosc2==2.7.1 \
-     --hash=sha256:06e0933855a6cba347692f08de1aaa51a8858dda67e7c5eaeaab59663b897879 \
-     --hash=sha256:150030e81bd5037f802ce7844281a37ff67e0998aa1735c48b02f3c6401bf0a1 \
-     --hash=sha256:18770f75174a3aae5712f53e9cb5885b258b730b281cbb3bf1e7a74ea3d94fae \
-@@ -123,7 +122,7 @@ numexpr==2.10.1 \
+@@ -7,24 +7,6 @@
+ anyio==4.7.0 \
+     --hash=sha256:2f834749c602966b7d456a7567cafcb309f96482b5081d14ac93ccd457f9dd48 \
+     --hash=sha256:ea60c3723ab42ba6fff7e8ccb0488c898ec538ff4df1f1d5e642c3601d07e352
+-    # via httpx
+-blosc2==3.0.0 \
+-    --hash=sha256:027158b6c6de85a5c7d2e60066819df58efb6a0d0108b613db2118453d0e3a8f \
+-    --hash=sha256:3213763e8ed8f0dd81393e5ecf70fa6a498160aaec6611eb7d37d462b2814824 \
+-    --hash=sha256:37de3eab82df2738b2d81fa2fbfa46efdb108b7b54b37f1255f358f90ab7212d \
+-    --hash=sha256:3a209aec1f365063f0a887a3fb6f37690da11d0f35411cc538bab25fd3d71498 \
+-    --hash=sha256:4d2a11c4241e4f718931d0ed7ce2519badd9a326c1cf631ac1355b6921d732f9 \
+-    --hash=sha256:5567bc9d966f7215a81f4e2ba24628d5d9e66c87b79a3d011ffdd2ffe40b74ee \
+-    --hash=sha256:5a23b23dab715a3918564c70ffc2f75d0c103f80be41718959fa55bc805f66b6 \
+-    --hash=sha256:5d949e86522a6001ed8e8bca0a29c8638c5b3a0900376a48a9536864cccb4b89 \
+-    --hash=sha256:8da04add23d4229bbfdd2a3be3baaa0c8e3035eec02ff484a9ca97c76aff2ed7 \
+-    --hash=sha256:a8ba5eb416d125f4dac9ae89fe1915b7ef0d84ee876e42815cb3093f998cb4e5 \
+-    --hash=sha256:b7e5220b83cf336391f883eba745206450efae766ed40c237b9ea41877306ae0 \
+-    --hash=sha256:c3514427c04f8f3180b07807eab736d694db21dea518ffde6e36359657deb922 \
+-    --hash=sha256:c5e7cdad6c2361d2e2ed2de33f18ef073a3d4dc7a9beb4d1db172005e09b229e \
+-    --hash=sha256:d8c03a09ed11b644b48bf050bd108972ec56ac9cbc3f2aedca077255ed81ac69 \
+-    --hash=sha256:ecba37aa87b2a2974a8bc1316d7c85e1d42e2f4e0aef38267ae1e3d55d8cdf30 \
+-    --hash=sha256:ff945f653c111aa02008bc530b48565499a806899f3ff5ff6ea7f9e73e9a660b
+     # via -r requirements.in
+ certifi==2024.12.14 \
+     --hash=sha256:1275f7a45be9464efc1173084eaa30f866fe2e47d389406136d332ed4967ec56 \
+@@ -209,7 +191,7 @@ numexpr==2.10.2 \
      # via
      #   -r requirements.in
      #   blosc2
--numpy==2.0.1 \
-+numpy>=1.26.4 \
-     --hash=sha256:08458fbf403bff5e2b45f08eda195d4b0c9b35682311da5a5a0a0925b11b9bd8 \
-     --hash=sha256:0fbb536eac80e27a2793ffd787895242b7f18ef792563d742c2d673bfcb75134 \
-     --hash=sha256:12f5d865d60fb9734e60a60f1d5afa6d962d8d4467c120a1c0cda6eb2964437d \
+-numpy==2.2.1 \
++numpy==1.26.4 \
+     --hash=sha256:059e6a747ae84fce488c3ee397cee7e5f905fd1bda5fb18c66bc41807ff119b2 \
+     --hash=sha256:08ef779aed40dbc52729d6ffe7dd51df85796a702afbf68a4f4e41fafdc8bda5 \
+     --hash=sha256:164a829b6aacf79ca47ba4814b130c4020b202522a93d7bff2202bfb33b61c60 \
