@@ -7,7 +7,7 @@ CATEGORIES ?=		security
 MAINTAINER ?=		Bob Beck <beck@openbsd.org>, \
 			Theo Buehler <tb@openbsd.org>
 
-# ISC
+# ISC (fips), Apache 2.0 (head)
 PERMIT_PACKAGE ?=	Yes
 
 PORTHOME ?=		${WRKDIR}

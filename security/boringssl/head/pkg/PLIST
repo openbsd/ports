@@ -72,6 +72,7 @@ eboringssl/include/openssl/pkcs7.h
 eboringssl/include/openssl/pkcs8.h
 eboringssl/include/openssl/pki/
 eboringssl/include/openssl/pki/certificate.h
+eboringssl/include/openssl/pki/ocsp.h
 eboringssl/include/openssl/pki/signature_verify_cache.h
 eboringssl/include/openssl/pki/verify.h
 eboringssl/include/openssl/pki/verify_error.h

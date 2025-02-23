@@ -2,8 +2,8 @@
 
 GH_ACCOUNT =	google
 GH_PROJECT =	boringssl
-GH_COMMIT =	8e07cc4d884ccd2381938e309cd5c86a0c1b8cc8
-DISTNAME =	boringssl-20241211
+GH_COMMIT =	daa03aac8d88f67c8b8d293ebc11d57f61ca6f8a
+DISTNAME =	boringssl-20250223
 
 SITES.mods =	https://proxy.golang.org/
 
@@ -11,12 +11,11 @@ DISTFILES +=	${GH_DISTFILE}
 # can't use GH_DISTFILE because EXTRACT_ONLY does not understand DISTFILES {}
 EXTRACT_ONLY =	${ALL_DISTFILES:Mboringssl*}
 
-BORING_GOMOD +=	filippo.io/mlkem768	v0.0.0-20240821141156-859a9b3f2ff6
-BORING_GOMOD +=	golang.org/x/crypto	v0.26.0
-BORING_GOMOD +=	golang.org/x/net	v0.27.0
 BORING_GOMOD +=	filippo.io/edwards25519	v1.1.0
-BORING_GOMOD +=	golang.org/x/sys	v0.24.0
-BORING_GOMOD +=	golang.org/x/term	v0.23.0
+BORING_GOMOD +=	golang.org/x/crypto	v0.31.0
+BORING_GOMOD +=	golang.org/x/net	v0.27.0
+BORING_GOMOD +=	golang.org/x/sys	v0.28.0
+BORING_GOMOD +=	golang.org/x/term	v0.27.0
 
 .for _modpath _modver in ${BORING_GOMOD}
 DISTFILES.mods +=	go_modules/{}${_modpath}/@v/${_modver}.zip
