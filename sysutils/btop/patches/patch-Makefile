@@ -1,7 +1,7 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -62,7 +62,7 @@ endif
+@@ -63,7 +63,7 @@ endif
  override CXX_VERSION := $(shell $(CXX) -dumpfullversion -dumpversion || echo 0)
  override CXX_VERSION_MAJOR := $(shell echo $(CXX_VERSION) | cut -d '.' -f 1)
  
@@ -10,7 +10,7 @@ Index: Makefile
  GCC_WORKS = false
  MIN_CLANG_VERSION = 16
  
-@@ -143,7 +143,7 @@ else ifeq ($(PLATFORM_LC),macos)
+@@ -149,7 +149,7 @@ else ifeq ($(PLATFORM_LC),macos)
  else ifeq ($(PLATFORM_LC),openbsd)
  	PLATFORM_DIR := openbsd
  	THREADS	:= $(shell sysctl -n hw.ncpu || echo 1)
@@ -18,8 +18,8 @@ Index: Makefile
 +	override ADDFLAGS += -lkvm
  	export MAKE = gmake
  	SU_GROUP := wheel
- else
-@@ -152,9 +152,6 @@ endif
+ else ifeq ($(PLATFORM_LC),netbsd)
+@@ -164,9 +164,6 @@ endif
  
  #? Use all CPU cores (will only be set if using Make 4.3+)
  MAKEFLAGS := --jobs=$(THREADS)
@@ -29,7 +29,23 @@ Index: Makefile
  
  #? LTO command line
  ifeq ($(CLANG_WORKS),true)
-@@ -280,22 +277,16 @@ distclean: clean
+@@ -272,7 +269,6 @@ info:
+ endif
+ 
+ info-quiet: | info rocm_smi
+-	@printf "\n\033[1;92mBuilding btop++ \033[91m(\033[97mv$(BTOP_VERSION)\033[91m) \033[93m$(PLATFORM) \033[96m$(ARCH)\033[0m\n"
+ 
+ help:
+ 	@printf " $(BANNER)\n"
+@@ -305,7 +301,6 @@ $(BUILDDIR)/config.h: $(SRCDIR)/config.h.in | director
+ #? Man page
+ btop.1: manpage.md | directories
+ ifeq ($(shell command -v lowdown >/dev/null; echo $$?),0)
+-	@printf "\n\033[1;92mGenerating man page $@\033[37m...\033[0m\n"
+ 	lowdown -s -Tman -o $@ $<
+ else
+ 	@printf "\n\033[1;93mCommand 'lowdown' not found: skipping generating man page $@\033[0m\n"
+@@ -324,26 +319,19 @@ distclean: clean
  	@test -e lib/rocm_smi_lib/build && rm -rf lib/rocm_smi_lib/build || true
  
  install:
@@ -51,8 +67,12 @@ Index: Makefile
 -	@printf "\033[1;92mInstalling SVG icon to: \033[1;97m$(DESTDIR)$(PREFIX)/share/icons/hicolor/scalable/apps/btop.svg\n"
  	@mkdir -p $(DESTDIR)$(PREFIX)/share/icons/hicolor/scalable/apps
  	@cp -p Img/icon.svg $(DESTDIR)$(PREFIX)/share/icons/hicolor/scalable/apps/btop.svg
- 
-@@ -352,23 +343,16 @@ endif
+ ifneq ($(wildcard btop.1),)
+-	@printf "\033[1;92mInstalling man page to: \033[1;97m$(DESTDIR)$(PREFIX)/share/man/man1/btop.1\n"
+ 	@mkdir -p $(DESTDIR)$(PREFIX)/share/man/man1
+ 	@cp -p btop.1 $(DESTDIR)$(PREFIX)/share/man/man1/btop.1
+ endif
+@@ -409,33 +397,23 @@ endif
  #? Link
  .ONESHELL:
  btop: $(OBJECTS) | rocm_smi directories
@@ -66,7 +86,7 @@ Index: Makefile
  
  #? Compile
  .ONESHELL:
- $(BUILDDIR)/%.$(OBJEXT): $(SRCDIR)/%.$(SRCEXT) | rocm_smi directories
+ $(BUILDDIR)/%.$(OBJEXT): $(SRCDIR)/%.$(SRCEXT) | rocm_smi directories config.h
 -	@sleep 0.3 2>/dev/null || true
 -	@TSTAMP=$$(date +%s 2>/dev/null || echo "0")
  	@$(QUIET) || printf "\033[1;97mCompiling $<\033[0m\n"
@@ -74,5 +94,15 @@ Index: Makefile
  	@$(CXX) $(CXXFLAGS) $(INC) -MMD -c -o $@ $< || exit 1
 -	@printf "\033[1;92m$$($(PROGRESS))$(P)\033[10D\033[5C-> \033[1;37m$@ \033[100D\033[38C\033[1;93m(\033[1;97m$$(du -ah $@ | cut -f1)iB\033[1;93m) \033[92m(\033[97m$$($(DATE_CMD) -d @$$(expr $$($(DATE_CMD) +%s 2>/dev/null || echo "0") - $${TSTAMP} 2>/dev/null) -u +%Mm:%Ss 2>/dev/null | sed 's/^00m://' || echo '')\033[92m)\033[0m\n"
  
+ #? Compile intel_gpu_top C sources for Intel GPU support
+ .ONESHELL:
+ $(BUILDDIR)/%.c.o: $(SRCDIR)/$(PLATFORM_DIR)/intel_gpu_top/%.c | directories
+-	@sleep 0.3 2>/dev/null || true
+-	@TSTAMP=$$(date +%s 2>/dev/null || echo "0")
+ 	@$(QUIET) || printf "\033[1;97mCompiling $<\033[0m\n"
+ 	@$(VERBOSE) || printf "$(CC) $(INC) -c -o $@ $<\n"
+ 	@$(CC) $(INC) -w -c -o $@ $< || exit 1
+-	@printf "\033[1;92m$$($(PROGRESS))$(P)\033[10D\033[5C-> \033[1;37m$@ \033[100D\033[38C\033[1;93m(\033[1;97m$$(du -ah $@ | cut -f1)iB\033[1;93m) \033[92m(\033[97m$$($(DATE_CMD) -d @$$(expr $$($(DATE_CMD) +%s 2>/dev/null || echo "0") - $${TSTAMP} 2>/dev/null) -u +%Mm:%Ss 2>/dev/null | sed 's/^00m://' || echo '')\033[92m)\033[0m\n"
+ 
+ 
  #? Non-File Targets
- .PHONY: all msg help pre

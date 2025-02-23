@@ -2,7 +2,7 @@ COMMENT=	resource monitor
 
 GH_ACCOUNT=	aristocratos
 GH_PROJECT=	btop
-GH_TAGNAME=	v1.3.2
+GH_TAGNAME=	v1.4.0
 
 CATEGORIES=	sysutils
 
@@ -14,6 +14,7 @@ WANTLIB += ${COMPILER_LIBCXX} c kvm m
 # C++23
 COMPILER =	base-clang
 
+BUILD_DEPENDS=	textproc/lowdown
 RUN_DEPENDS=	devel/desktop-file-utils \
 		x11/gtk+4,-guic
 

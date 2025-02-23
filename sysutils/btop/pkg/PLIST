@@ -17,6 +17,7 @@ share/btop/themes/flat-remix.theme
 share/btop/themes/greyscale.theme
 share/btop/themes/gruvbox_dark.theme
 share/btop/themes/gruvbox_dark_v2.theme
+share/btop/themes/gruvbox_light.theme
 share/btop/themes/gruvbox_material_dark.theme
 share/btop/themes/horizon.theme
 share/btop/themes/kyli0x.theme
@@ -26,6 +27,7 @@ share/btop/themes/night-owl.theme
 share/btop/themes/nord.theme
 share/btop/themes/onedark.theme
 share/btop/themes/paper.theme
+share/btop/themes/phoenix-night.theme
 share/btop/themes/solarized_dark.theme
 share/btop/themes/solarized_light.theme
 share/btop/themes/tokyo-night.theme
@@ -36,3 +38,6 @@ share/icons/hicolor/48x48/apps/btop.png
 share/icons/hicolor/scalable/apps/btop.svg
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
+@mandir share/man/
+share/man/man1/
+@man share/man/man1/btop.1
