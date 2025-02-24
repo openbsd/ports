@@ -336,6 +336,10 @@ share/shotcut/qml/filters/gradient/icon.webp
 share/shotcut/qml/filters/gradient/meta.qml
 share/shotcut/qml/filters/gradient/ui.qml
 share/shotcut/qml/filters/gradient/vui.qml
+share/shotcut/qml/filters/gradientmap/
+share/shotcut/qml/filters/gradientmap/icon.webp
+share/shotcut/qml/filters/gradientmap/meta.qml
+share/shotcut/qml/filters/gradientmap/ui.qml
 share/shotcut/qml/filters/grain/
 share/shotcut/qml/filters/grain/meta.qml
 share/shotcut/qml/filters/grain/ui.qml
@@ -351,6 +355,14 @@ share/shotcut/qml/filters/hqdn3d/
 share/shotcut/qml/filters/hqdn3d/icon.webp
 share/shotcut/qml/filters/hqdn3d/meta.qml
 share/shotcut/qml/filters/hqdn3d/ui.qml
+share/shotcut/qml/filters/hslprimaries/
+share/shotcut/qml/filters/hslprimaries/icon.webp
+share/shotcut/qml/filters/hslprimaries/meta.qml
+share/shotcut/qml/filters/hslprimaries/ui.qml
+share/shotcut/qml/filters/hslrange/
+share/shotcut/qml/filters/hslrange/icon.webp
+share/shotcut/qml/filters/hslrange/meta.qml
+share/shotcut/qml/filters/hslrange/ui.qml
 share/shotcut/qml/filters/hue_lightness_saturation/
 share/shotcut/qml/filters/hue_lightness_saturation/icon.webp
 share/shotcut/qml/filters/hue_lightness_saturation/meta.qml
@@ -614,6 +626,7 @@ share/shotcut/qml/modules/Shotcut/Controls/
 share/shotcut/qml/modules/Shotcut/Controls/Button.qml
 share/shotcut/qml/modules/Shotcut/Controls/ColorPicker.qml
 share/shotcut/qml/modules/Shotcut/Controls/ComboBox.qml
+share/shotcut/qml/modules/Shotcut/Controls/CurveComboBox.qml
 share/shotcut/qml/modules/Shotcut/Controls/DoubleSpinBox.qml
 share/shotcut/qml/modules/Shotcut/Controls/EditMenu.qml
 share/shotcut/qml/modules/Shotcut/Controls/Gauge.qml
@@ -686,6 +699,7 @@ share/shotcut/translations/shotcut_et.qm
 share/shotcut/translations/shotcut_eu.qm
 share/shotcut/translations/shotcut_fi.qm
 share/shotcut/translations/shotcut_fr.qm
+share/shotcut/translations/shotcut_ga.qm
 share/shotcut/translations/shotcut_gd.qm
 share/shotcut/translations/shotcut_gl.qm
 share/shotcut/translations/shotcut_he_IL.qm

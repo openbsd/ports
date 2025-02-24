@@ -1,19 +1,10 @@
 Index: src/mainwindow.cpp
 --- src/mainwindow.cpp.orig
 +++ src/mainwindow.cpp
-@@ -141,7 +141,7 @@ MainWindow::MainWindow()
+@@ -139,7 +139,7 @@ MainWindow::MainWindow()
      , m_keyframesDock(0)
  {
  #if defined(Q_OS_UNIX) && !defined(Q_OS_MAC)
--    QLibrary libJack("libjack.so.0");
-+    QLibrary libJack("libjack.so");
-     if (!libJack.load()) {
-         QMessageBox::critical(this, qApp->applicationName(),
-                               tr("Error: This program requires the JACK 1 library.\n\nPlease install it using your package manager. It may be named libjack0, jack-audio-connection-kit, jack, or similar."));
-@@ -149,7 +149,7 @@ MainWindow::MainWindow()
-     } else {
-         libJack.unload();
-     }
 -    QLibrary libSDL("libSDL2-2.0.so.0");
 +    QLibrary libSDL("libSDL2.so");
      if (!libSDL.load()) {

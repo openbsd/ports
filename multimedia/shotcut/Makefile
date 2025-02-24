@@ -4,7 +4,7 @@ COMMENT =	video editor
 
 GH_ACCOUNT =	mltframework
 GH_PROJECT =	shotcut
-GH_TAGNAME =	v24.10.29
+GH_TAGNAME =	v25.01.25
 
 CATEGORIES =	multimedia
 
@@ -15,9 +15,10 @@ PERMIT_PACKAGE =	Yes
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Charts Qt6Core Qt6Gui Qt6Multimedia
-WANTLIB += Qt6Network Qt6OpenGL Qt6OpenGLWidgets Qt6Qml Qt6QmlModels
-WANTLIB += Qt6Quick Qt6QuickControls2 Qt6QuickWidgets Qt6Sql Qt6Widgets
-WANTLIB += Qt6Xml c fftw3 m mlt++-7 mlt-7
+WANTLIB += Qt6Network Qt6OpenGL Qt6OpenGLWidgets Qt6Qml Qt6QmlMeta
+WANTLIB += Qt6QmlModels Qt6QmlWorkerScript Qt6Quick Qt6QuickControls2
+WANTLIB += Qt6QuickWidgets Qt6Sql Qt6Widgets Qt6Xml c fftw3 m
+WANTLIB += mlt++-7 mlt-7
 
 MODULES =		devel/cmake \
 			x11/qt6
