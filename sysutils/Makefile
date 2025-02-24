@@ -435,6 +435,7 @@
      SUBDIR += ssh-copy-id
      SUBDIR += sshfs-fuse
      SUBDIR += sshpass
+     SUBDIR += ssl_exporter
      SUBDIR += sslmate
      SUBDIR += stan
      SUBDIR += stow
