@@ -2,9 +2,10 @@
 
 VERSION =		${PYSIDE_VERSION}
 DISTNAME =		pyside-setup-everywhere-src-${VERSION}
+REVISION =		0
 
 HOMEPAGE =		https://wiki.qt.io/Qt_for_Python
-MAINTAINER =		Johannes Thyssen Tishman <ports@thyssentishman.com>
+MAINTAINER =		Johannes Thyssen Tishman <jtt@openbsd.org>
 
 # BSD 3-clause GPLv2 LGPL2 LGPL3
 PERMIT_PACKAGE =	Yes

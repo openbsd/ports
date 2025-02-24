@@ -2,13 +2,13 @@ COMMENT =	parametric 2D/3D CAD program
 V =		3.1
 DISTNAME =	solvespace-${V}
 CATEGORIES =	cad
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=	slvs	0.0
 
 HOMEPAGE =	https://solvespace.com/
 
-MAINTAINER =	Johannes Thyssen Tishman <ports@thyssentishman.com>
+MAINTAINER =	Johannes Thyssen Tishman <jtt@openbsd.org>
 
 SITES =	https://github.com/solvespace/solvespace/releases/download/v${V}/
 EXTRACT_SUFX =	.tar.xz

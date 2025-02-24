@@ -3,11 +3,11 @@ COMMENT =		pytest plugin that allows multiple failures per test
 MODPY_DISTV =		2.4.1
 DISTNAME =		pytest_check-${MODPY_DISTV}
 PKGNAME =		py-test-check-${MODPY_DISTV}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 HOMEPAGE =		https://github.com/okken/pytest-check
-MAINTAINER =		Johannes Thyssen Tishman <ports@thyssentishman.com>
+MAINTAINER =		Johannes Thyssen Tishman <jtt@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE =	Yes

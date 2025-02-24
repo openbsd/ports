@@ -3,6 +3,7 @@ COMMENT =		visualization toolkit
 V =			9.4.1
 DISTNAME =		VTK-${V}
 PKGNAME =		${DISTNAME:L}
+REVISION =		0
 
 .for LIB in vtkChartsCore vtkCommonColor vtkCommonComputationalGeometry \
         vtkCommonCore vtkCommonDataModel vtkCommonExecutionModel \
@@ -51,7 +52,7 @@ SHARED_LIBS += ${LIB} 0.0 # 0.0
 
 CATEGORIES =		graphics
 HOMEPAGE =		https://vtk.org/
-MAINTAINER =		Johannes Thyssen Tishman <ports@thyssentishman.com>
+MAINTAINER =		Johannes Thyssen Tishman <jtt@openbsd.org>
 
 # BSD 3-clause
 PERMIT_PACKAGE =	Yes

@@ -4,11 +4,13 @@ GH_ACCOUNT =		CGNS
 GH_PROJECT =		CGNS
 GH_TAGNAME =		v4.5.0
 
+REVISION =		0
+
 SHARED_LIBS +=  	cgns 0.0	# 0.0
 
 CATEGORIES =		math
 HOMEPAGE =		https://cgns.github.io/
-MAINTAINER =		Johannes Thyssen Tishman <ports@thyssentishman.com>
+MAINTAINER =		Johannes Thyssen Tishman <jtt@openbsd.org>
 
 # Zlib
 PERMIT_PACKAGE =	Yes

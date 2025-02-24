@@ -3,6 +3,7 @@ DPB_PROPERTIES =	parallel
 
 V =			7.8.1
 DISTNAME =		opencascade-${V}
+REVISION =		0
 
 .for LIB in TKBO TKBRep TKBin TKBinL TKBinTObj TKBinXCAF TKBool TKCAF TKCDF \
 	TKDCAF TKDE TKDECascade TKDEGLTF TKDEIGES TKDEOBJ TKDEPLY TKDESTEP \
@@ -19,7 +20,7 @@ SHARED_LIBS +=		${LIB} 3.0
 
 CATEGORIES =		cad
 HOMEPAGE =		https://www.opencascade.com/
-MAINTAINER = 		Johannes Thyssen Tishman <ports@thyssentishman.com>
+MAINTAINER = 		Johannes Thyssen Tishman <jtt@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes

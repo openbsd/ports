@@ -6,9 +6,11 @@ GH_ACCOUNT =		CLIUtils
 GH_PROJECT =		CLI11
 GH_TAGNAME =		v2.4.2
 
+REVISION =		0
+
 CATEGORIES =		devel
 HOMEPAGE =		https://cliutils.github.io/CLI11/book/
-MAINTAINER =		Johannes Thyssen Tishman <ports@thyssentishman.com>
+MAINTAINER =		Johannes Thyssen Tishman <jtt@openbsd.org>
 
 # BSD 3-clause
 PERMIT_PACKAGE =	Yes

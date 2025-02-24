@@ -8,12 +8,13 @@ MODGO_VERSION =	v0.0.0-20250127210717-2ecb8770224a
 
 V =		0.20.1
 DISTNAME =	aerc-$V
+REVISION =	0
 
 CATEGORIES =	mail
 
 HOMEPAGE =	https://aerc-mail.org
 
-MAINTAINER =	Johannes Thyssen Tishman <ports@thyssentishman.com>
+MAINTAINER =	Johannes Thyssen Tishman <jtt@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE = Yes

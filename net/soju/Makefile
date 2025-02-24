@@ -3,10 +3,11 @@ COMMENT =		user-friendly IRC bouncer
 MODGO_MODNAME =		codeberg.org/emersion/soju
 MODGO_VERSION =		v0.8.2
 DISTNAME =		soju-${MODGO_VERSION}
+REVISION =		0
 
 CATEGORIES =		net
 HOMEPAGE =		https://soju.im/
-MAINTAINER =		Johannes Thyssen Tishman <ports@thyssentishman.com>
+MAINTAINER =		Johannes Thyssen Tishman <jtt@openbsd.org>
 
 # AGPLv3
 PERMIT_PACKAGE =	Yes

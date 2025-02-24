@@ -1,8 +1,10 @@
 COMMENT =		output a Graph::Easy as Scalable Vector Graphics (SVG)
 
 DISTNAME =		Graph-Easy-As_svg-0.28
+REVISION =		0
+
 CATEGORIES = 		math graphics
-MAINTAINER = 		Johannes Thyssen Tishman <ports@thyssentishman.com>
+MAINTAINER = 		Johannes Thyssen Tishman <jtt@openbsd.org>
 
 # GPLv2 only
 PERMIT_PACKAGE = 	Yes

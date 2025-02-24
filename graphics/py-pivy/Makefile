@@ -2,11 +2,12 @@ COMMENT =		Python bindings for coin
 
 MODPY_DISTV =		0.6.9
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 DIST_TUPLE +=		github coin3d pivy ${MODPY_DISTV} .
 
 CATEGORIES =		graphics
-MAINTAINER =		Johannes Thyssen Tishman <ports@thyssentishman.com>
+MAINTAINER =		Johannes Thyssen Tishman <jtt@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE =	Yes

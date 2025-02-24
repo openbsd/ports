@@ -3,9 +3,10 @@ COMMENT =		modern terminal IRC client
 MODGO_MODNAME =		git.sr.ht/~taiite/senpai
 MODGO_VERSION =		v0.3.0
 DISTNAME =		senpai-${MODGO_VERSION}
+REVISION =		0
 
 CATEGORIES =		net
-MAINTAINER =		Johannes Thyssen Tishman <ports@thyssentishman.com>
+MAINTAINER =		Johannes Thyssen Tishman <jtt@openbsd.org>
 
 # ISC
 PERMIT_PACKAGE =	Yes

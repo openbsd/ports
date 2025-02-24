@@ -2,13 +2,13 @@ COMMENT =		automatic 3d tetrahedral mesh generator
 
 V =			6.2.2404
 PKGNAME =		netgen-mesher-${V}
-REVISION =		0
+REVISION =		1
 
 DIST_TUPLE +=		github NGSolve netgen v${V} .
 
 CATEGORIES =		cad
 HOMEPAGE =		https://ngsolve.org/
-MAINTAINER =		Johannes Thyssen Tishman <ports@thyssentishman.com>
+MAINTAINER =		Johannes Thyssen Tishman <jtt@openbsd.org>
 
 # LGPLv2.1
 PERMIT_PACKAGE =	Yes

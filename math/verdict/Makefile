@@ -4,10 +4,12 @@ GH_ACCOUNT =		sandialabs
 GH_PROJECT =		verdict
 GH_TAGNAME =		1.4.2
 
+REVISION =		0
+
 SHARED_LIBS +=  	verdict		0.0 # 0.0
 
 CATEGORIES =		math
-MAINTAINER =		Johannes Thyssen Tishman <ports@thyssentishman.com>
+MAINTAINER =		Johannes Thyssen Tishman <jtt@openbsd.org>
 
 # BSD 3-clause
 PERMIT_PACKAGE =	Yes

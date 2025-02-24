@@ -5,7 +5,7 @@ COMMENT =		image and point cloud processing library
 
 V =			1.14.1
 PKGNAME =		pcl-${V}
-REVISION =		0
+REVISION =		1
 
 DIST_TUPLE +=		github PointCloudLibrary pcl ${PKGNAME} .
 DIST_TUPLE +=		github google googletest v1.15.2 ../gtest_dist
@@ -30,7 +30,7 @@ SHARED_LIBS +=  	pcl_tracking		0.0 # 0.0
 
 CATEGORIES =		graphics
 HOMEPAGE =		https://pointclouds.org/
-MAINTAINER =		Johannes Thyssen Tishman <ports@thyssentishman.com>
+MAINTAINER =		Johannes Thyssen Tishman <jtt@openbsd.org>
 
 # BSD 3-clause
 PERMIT_PACKAGE =	Yes

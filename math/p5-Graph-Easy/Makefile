@@ -1,8 +1,10 @@
 COMMENT =		render/convert graphs in/from various formats
 
 DISTNAME =		Graph-Easy-0.76
+REVISION =		0
+
 CATEGORIES =		math graphics
-MAINTAINER =		Johannes Thyssen Tishman <ports@thyssentishman.com>
+MAINTAINER =		Johannes Thyssen Tishman <jtt@openbsd.org>
 
 # GPLv2 only
 PERMIT_PACKAGE =	Yes

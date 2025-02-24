@@ -1,14 +1,15 @@
 COMMENT =		fast library for approximate nearest neighbors
 
+REVISION =		1
+
 DIST_TUPLE +=		github flann-lib flann 1.9.2 .
-REVISION =		0
 
 SHARED_LIBS +=  	flann		0.0 # 0.0
 SHARED_LIBS +=  	flann_cpp	0.0 # 0.0
 
 CATEGORIES =		math
 HOMEPAGE =		https://www.cs.ubc.ca/research/flann/
-MAINTAINER =		Johannes Thyssen Tishman <ports@thyssentishman.com>
+MAINTAINER =		Johannes Thyssen Tishman <jtt@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes

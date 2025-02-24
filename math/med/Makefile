@@ -4,7 +4,7 @@ COMMENT =		library for reading and writing MED files
 
 V =			5.0.0
 PKGNAME =		med-${V}
-REVISION =		0
+REVISION =		1
 
 # Official sources site seems down:
 # https://files.salome-platform.org/Salome/medfile/med-${V}.tar.bz2
@@ -17,7 +17,7 @@ SHARED_LIBS +=		medimport	0.0 # 0.0
 
 CATEGORIES =		math
 HOMEPAGE =		https://www.salome-platform.org/
-MAINTAINER =		Johannes Thyssen Tishman <ports@thyssentishman.com>
+MAINTAINER =		Johannes Thyssen Tishman <jtt@openbsd.org>
 
 # LGPLv3
 PERMIT_PACKAGE =	Yes
