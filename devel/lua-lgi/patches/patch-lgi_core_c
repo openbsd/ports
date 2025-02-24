@@ -1,6 +1,7 @@
---- lgi/core.c.orig	Tue Feb 28 11:57:18 2017
-+++ lgi/core.c	Tue Feb 28 11:58:03 2017
-@@ -673,7 +673,7 @@ set_resident (lua_State *L)
+Index: lgi/core.c
+--- lgi/core.c.orig
++++ lgi/core.c
+@@ -684,7 +684,7 @@ set_resident (lua_State *L)
  }
  
  G_MODULE_EXPORT int

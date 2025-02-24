@@ -1,5 +1,6 @@
---- lgi/Makefile.orig	Fri May 27 21:56:36 2016
-+++ lgi/Makefile	Tue Feb 28 11:53:21 2017
+Index: lgi/Makefile
+--- lgi/Makefile.orig
++++ lgi/Makefile
 @@ -8,8 +8,8 @@
  PREFIX = /usr/local
  HOST_OS = $(shell uname -s | tr A-Z a-z)
@@ -13,7 +14,7 @@
  GINAME = gobject-introspection-1.0
 @@ -27,7 +27,7 @@ LIBFLAG = -bundle -undefined dynamic_lookup
  CCSHARED = -fno-common
- GOBJECT_INTROSPECTION_LIBDIR = $(shell pkg-config --variable=libdir $(GINAME))
+ GOBJECT_INTROSPECTION_LIBDIR = $(shell $(PKG_CONFIG) --variable=libdir $(GINAME))
  else
 -CORE = corelgilua51.so
 +CORE = corelgilua${MODLUA_DEP_VERSION}.so

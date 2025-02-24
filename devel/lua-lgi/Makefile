@@ -2,10 +2,9 @@ COMMENT=	lua bindings to libraries using GObject-Introspection
 
 GH_ACCOUNT=	pavouk
 GH_PROJECT=	lgi
-GH_TAGNAME=	0.9.1
+GH_TAGNAME=	0.9.2
 
 PKGNAME=	lua-${DISTNAME}
-REVISION=	1
 CATEGORIES=	devel
 
 # MIT

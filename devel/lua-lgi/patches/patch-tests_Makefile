@@ -1,7 +1,8 @@
 - Ensure the libraries needed by libregress.so can also be located and are preloaded.
 
---- tests/Makefile.orig	Tue Feb 28 11:55:06 2017
-+++ tests/Makefile	Tue Feb 28 11:57:01 2017
+Index: tests/Makefile
+--- tests/Makefile.orig
++++ tests/Makefile
 @@ -26,7 +26,7 @@ endif
  endif
  
@@ -18,8 +19,8 @@
 -	cd .. && LD_LIBRARY_PATH=tests:$$LD_LIBRARY_PATH \
 +	cd .. && LD_PRELOAD=/usr/lib/libpthread.so LD_LIBRARY_PATH=tests:$$LD_LIBRARY_PATH \
  	    GI_TYPELIB_PATH=tests:$$GI_TYPELIB_PATH \
- 	    LUA_PATH=./?.lua\;`$(LUA) -e "print(package.path)"` \
- 	    LUA_CPATH=./?.so\;`$(LUA) -e "print(package.cpath)"` \
+ 	    LUA_PATH="./?.lua;${LUA_PATH};" \
+ 	    LUA_CPATH="./?.so;${LUA_CPATH};" \
 @@ -76,7 +76,7 @@ Regress-1.0.gir : $(REGRESS)
  	  --namespace=Regress --nsversion=1.0				\
  	  --include=cairo-1.0 --include=Gio-2.0				\
