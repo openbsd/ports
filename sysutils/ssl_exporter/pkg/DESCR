@@ -1,0 +1,12 @@
+This Prometheus exporter exports metrics for certificates collected
+from various sources:
+
+* TCP probes
+* HTTPS probes
+* PEM files
+* Remote PEM files
+* Kubernetes secrets
+* Kubeconfig files
+
+The metrics are labelled with fields from the certificate, which
+allows for informational dashboards and flexible alert routing.

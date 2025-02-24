@@ -1,0 +1,4 @@
+@newgroup _ssl_exporter:569
+@newuser _ssl_exporter:569:_ssl_exporter::Prometheus SSL exporter:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/ssl_exporter
+@bin bin/ssl_exporter
