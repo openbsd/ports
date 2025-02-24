@@ -96,4 +96,6 @@ share/doc/mdbook/searchindex.js
 share/doc/mdbook/searchindex.json
 share/doc/mdbook/theme-dawn.js
 share/doc/mdbook/theme-tomorrow_night.js
+share/doc/mdbook/toc.html
+share/doc/mdbook/toc.js
 share/doc/mdbook/tomorrow-night.css
