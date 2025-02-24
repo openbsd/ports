@@ -5,6 +5,13 @@
 @bin bin/freeciv21-ruledit
 @bin bin/freeciv21-ruleup
 @bin bin/freeciv21-server
+@man man/man6/freeciv21-client.6
+@man man/man6/freeciv21-game-manual.6
+@man man/man6/freeciv21-manual.6
+@man man/man6/freeciv21-modpack-qt.6
+@man man/man6/freeciv21-modpack.6
+@man man/man6/freeciv21-ruleup.6
+@man man/man6/freeciv21-server.6
 share/applications/net.longturn.freeciv21.desktop
 share/applications/net.longturn.freeciv21.modpack.desktop
 share/applications/net.longturn.freeciv21.ruledit.desktop

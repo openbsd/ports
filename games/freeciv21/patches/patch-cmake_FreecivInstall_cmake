@@ -1,0 +1,32 @@
+set correct mandir
+
+Index: cmake/FreecivInstall.cmake
+--- cmake/FreecivInstall.cmake.orig
++++ cmake/FreecivInstall.cmake
+@@ -185,7 +185,7 @@ if(UNIX AND NOT APPLE)
+       install(
+         FILES
+         ${CMAKE_BINARY_DIR}/docs/man/freeciv21-client.6
+-        DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/man/man6
++        DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man6
+         COMPONENT freeciv21
+       )
+     endif()
+@@ -218,7 +218,7 @@ if(UNIX AND NOT APPLE)
+         ${CMAKE_BINARY_DIR}/docs/man/freeciv21-game-manual.6
+         ${CMAKE_BINARY_DIR}/docs/man/freeciv21-manual.6
+         ${CMAKE_BINARY_DIR}/docs/man/freeciv21-ruleup.6
+-        DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/man/man6
++        DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man6
+         COMPONENT freeciv21
+       )
+     endif()
+@@ -249,7 +249,7 @@ if(UNIX AND NOT APPLE)
+         FILES
+         ${CMAKE_BINARY_DIR}/docs/man/freeciv21-modpack-qt.6
+         ${CMAKE_BINARY_DIR}/docs/man/freeciv21-modpack.6
+-        DESTINATION ${CMAKE_INSTALL_DATAROOTDIR}/man/man6
++        DESTINATION ${CMAKE_INSTALL_PREFIX}/man/man6
+         COMPONENT freeciv21
+       )
+     endif()

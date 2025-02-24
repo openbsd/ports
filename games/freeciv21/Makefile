@@ -6,6 +6,7 @@ LIBERTINUS =	7.040
 
 DISTNAME =	Freeciv21-v${V}
 PKGNAME =	freeciv21-${V:S/-patch./pl/:S/-rc./rc/}
+REVISION =	0
 CATEGORIES =	games
 
 HOMEPAGE =	https://github.com/longturn/freeciv21
@@ -32,7 +33,8 @@ MODULES =	devel/cmake \
 
 MODLUA_VERSION = 5.3
 
-BUILD_DEPENDS =	devel/gettext,-tools
+BUILD_DEPENDS =	devel/gettext,-tools \
+		textproc/py-sphinx
 RUN_DEPENDS =	devel/desktop-file-utils
 LIB_DEPENDS =	devel/kf5/karchive \
 		devel/sdl2-mixer \
