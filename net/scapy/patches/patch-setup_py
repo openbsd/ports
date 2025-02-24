@@ -1,12 +1,12 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -34,7 +34,7 @@ setup(
-     name='scapy',
-     version=__import__('scapy').VERSION,
-     packages=find_packages(),
+@@ -83,7 +83,7 @@ class BuildPy(build_py):
+ 
+ setup(
+     cmdclass={'sdist': SDist, 'build_py': BuildPy},
 -    data_files=[('share/man/man1', ["doc/scapy.1"])],
 +    data_files=[('man/man1', ["doc/scapy.1"])],
-     package_data={
-         'scapy': ['VERSION'],
-     },
+     long_description=get_long_description(),
+     long_description_content_type='text/markdown',
+ )

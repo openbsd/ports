@@ -1,0 +1,28 @@
+https://patch-diff.githubusercontent.com/raw/secdev/scapy/pull/4670
+
+From b194a7a93919400bbf5257dd79f8c0be3a9d4d8a Mon Sep 17 00:00:00 2001
+From: gpotter2 <10530980+gpotter2@users.noreply.github.com>
+Date: Sat, 22 Feb 2025 18:16:17 +0100
+Subject: [PATCH] Fix compile_filter on *BSD with non-ether linktypes
+
+Index: scapy/arch/common.py
+--- scapy/arch/common.py.orig
++++ scapy/arch/common.py
+@@ -12,7 +12,7 @@ import re
+ import socket
+ 
+ from scapy.config import conf
+-from scapy.data import MTU, ARPHDR_ETHER, ARPHRD_TO_DLT
++from scapy.data import MTU, ARPHRD_TO_DLT
+ from scapy.error import Scapy_Exception, warning
+ from scapy.interfaces import network_name, resolve_iface, NetworkInterface
+ from scapy.libs.structures import bpf_program
+@@ -105,8 +105,6 @@ def compile_filter(filter_exp,  # type: str
+         except Exception:
+             # Failed to use linktype: use the interface
+             pass
+-        if not linktype and conf.use_bpf:
+-            linktype = ARPHDR_ETHER
+     if linktype is not None:
+         ret = pcap_compile_nopcap(
+             MTU, linktype, ctypes.byref(bpf), bpf_filter, 1, -1
