@@ -6,6 +6,8 @@ DISTNAME=	squid-$V
 EXTRACT_SUFX=	.tar.xz
 DPB_PROPERTIES=	parallel
 
+REVISION=	0
+
 # subpackages aren't flavoured, so overwrite the default name/path
 FULLPKGNAME-ldap= squid-ldap-$V
 FULLPKGPATH-ldap= ${PKGPATH},-ldap
@@ -14,7 +16,8 @@ RUN_DEPENDS-ldap += squid-$Vv0:www/squid
 EPOCH=		0
 CATEGORIES=	www
 
-HOMEPAGE=	http://www.squid-cache.org/
+# https://github.com/squid-cache/squid
+HOMEPAGE=	https://www.squid-cache.org/
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
@@ -22,17 +25,7 @@ PERMIT_PACKAGE=	Yes
 COMMONLIB=	${COMPILER_LIBCXX} c execinfo gmp gnutls hogweed iconv \
 		idn2 intl m nettle p11-kit pthread ssl tasn1 unistring
 
-# repo at https://github.com/squid-cache/squid
-SITES=		https://github.com/squid-cache/squid/releases/download/SQUID_${V:S/./_/}/ \
-		${HOMEPAGE}Versions/v${V:R:R}/ \
-		https://ftp.mirrorservice.org/sites/ftp.squid-cache.org/pub/archive/${V:R:R}/
-
-# cope with missing translations in re-rolled 6.7 release
-#DISTFILES.lang=	squid-langpack-20231227.tar.gz
-#SITES.lang=	http://www.squid-cache.org/Versions/langpack/
-#EXTRACT_ONLY=   ${ALL_DISTFILES:N*langpack*}
-#post-extract:
-#	cd ${WRKSRC}/errors; tar xzf ${FULLDISTDIR}/squid-langpack-20231227.tar.gz
+SITES=		https://github.com/squid-cache/squid/releases/download/SQUID_${V:S/./_/}/
 
 # C++17
 COMPILER=	base-clang ports-gcc
