@@ -1,6 +1,6 @@
 COMMENT=	simplify usage of decorators
 
-MODPY_DISTV=	5.2.0
+MODPY_DISTV=	5.2.1
 DISTNAME=	decorator-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
