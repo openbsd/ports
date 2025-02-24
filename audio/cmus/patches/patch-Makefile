@@ -3,7 +3,7 @@ Fix install(1) usage.
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -272,17 +272,21 @@ plugins: $(ip-y) $(op-y)
+@@ -275,17 +275,21 @@ plugins: $(ip-y) $(op-y)
  man: $(man1) $(man7)
  
  install-main: main
