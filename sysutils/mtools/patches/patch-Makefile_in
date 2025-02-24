@@ -1,8 +1,8 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -264,7 +264,7 @@ install-links: $(DESTDIR)$(bindir)/mtools
- install-scripts: $(DESTDIR)$(bindir)/mtools
+@@ -267,7 +267,7 @@ install-links: $(DESTDIR)$(bindir)/mtools$(EXEEXT)
+ install-scripts: $(DESTDIR)$(bindir)/mtools$(EXEEXT)
  	@$(top_srcdir)/mkinstalldirs $(DESTDIR)$(bindir)
  	@for j in $(SCRIPTS) ; do \
 -		$(INSTALL_PROGRAM) $(srcdir)/scripts/$$j $(DESTDIR)$(bindir)/$$j ; \

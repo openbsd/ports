@@ -1,5 +1,5 @@
 COMMENT=	read/write/list/format DOS disks under Unix
-DISTNAME=	mtools-4.0.47
+DISTNAME=	mtools-4.0.48
 
 CATEGORIES=	sysutils
 
@@ -31,5 +31,7 @@ WANTLIB+=		X11 Xau
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/mtools/
 	${INSTALL_DATA} ${WRKSRC}/mtools.conf ${PREFIX}/share/examples/mtools/
+	${INSTALL_MAN} ${WRKBUILD}/mtools.1 ${PREFIX}/man/man1
+	${INSTALL_MAN} ${WRKBUILD}/mtools.5 ${PREFIX}/man/man5
 
 .include <bsd.port.mk>
