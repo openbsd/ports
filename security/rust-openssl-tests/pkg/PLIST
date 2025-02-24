@@ -489,6 +489,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_either}/.github/
 share/rust-openssl-tests/modcargo-crates/${VER_either}/.github/workflows/
 share/rust-openssl-tests/modcargo-crates/${VER_either}/.github/workflows/ci.yml
 share/rust-openssl-tests/modcargo-crates/${VER_either}/.gitignore
+share/rust-openssl-tests/modcargo-crates/${VER_either}/Cargo.lock
 share/rust-openssl-tests/modcargo-crates/${VER_either}/Cargo.toml
 share/rust-openssl-tests/modcargo-crates/${VER_either}/Cargo.toml.orig
 share/rust-openssl-tests/modcargo-crates/${VER_either}/LICENSE-APACHE
@@ -888,6 +889,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_libc}/.gitignore
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/.release-plz.toml
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/CHANGELOG.md
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/CONTRIBUTING.md
+share/rust-openssl-tests/modcargo-crates/${VER_libc}/Cargo.lock
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/Cargo.toml
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/Cargo.toml.orig
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/LICENSE-APACHE
@@ -896,7 +898,6 @@ share/rust-openssl-tests/modcargo-crates/${VER_libc}/README.md
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/build.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/rustfmt.toml
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/
-share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/fixed_width_ints.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/fuchsia/
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/fuchsia/aarch64.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/fuchsia/mod.rs
@@ -905,6 +906,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/fuchsia/x86_64.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/hermit.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/lib.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/macros.rs
+share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/primitives.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/psp.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/sgx.rs
 share/rust-openssl-tests/modcargo-crates/${VER_libc}/src/solid/
@@ -1587,6 +1589,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_log}/.github/workflows/
 share/rust-openssl-tests/modcargo-crates/${VER_log}/.github/workflows/main.yml
 share/rust-openssl-tests/modcargo-crates/${VER_log}/.gitignore
 share/rust-openssl-tests/modcargo-crates/${VER_log}/CHANGELOG.md
+share/rust-openssl-tests/modcargo-crates/${VER_log}/Cargo.lock
 share/rust-openssl-tests/modcargo-crates/${VER_log}/Cargo.toml
 share/rust-openssl-tests/modcargo-crates/${VER_log}/Cargo.toml.orig
 share/rust-openssl-tests/modcargo-crates/${VER_log}/LICENSE-APACHE
