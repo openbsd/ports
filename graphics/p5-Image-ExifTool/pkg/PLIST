@@ -185,6 +185,7 @@ ${P5SITE}/Image/ExifTool/PhaseOne.pm
 ${P5SITE}/Image/ExifTool/PhotoCD.pm
 ${P5SITE}/Image/ExifTool/PhotoMechanic.pm
 ${P5SITE}/Image/ExifTool/Photoshop.pm
+${P5SITE}/Image/ExifTool/Plot.pm
 ${P5SITE}/Image/ExifTool/PostScript.pm
 ${P5SITE}/Image/ExifTool/PrintIM.pm
 ${P5SITE}/Image/ExifTool/Protobuf.pm
@@ -388,6 +389,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::PhotoCD.3p
 @man man/man3p/Image::ExifTool::PhotoMechanic.3p
 @man man/man3p/Image::ExifTool::Photoshop.3p
+@man man/man3p/Image::ExifTool::Plot.3p
 @man man/man3p/Image::ExifTool::PostScript.3p
 @man man/man3p/Image::ExifTool::PrintIM.3p
 @man man/man3p/Image::ExifTool::Protobuf.3p
