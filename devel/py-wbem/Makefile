@@ -4,7 +4,7 @@ MODPY_DISTV=	1.7.2
 DISTNAME=	pywbem-${MODPY_DISTV}
 PKGNAME=	py-wbem-${MODPY_DISTV}
 CATEGORIES=	devel
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://pywbem.github.io/
 
@@ -16,6 +16,7 @@ MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
 
 RUN_DEPENDS=	devel/py-ply \
+		devel/py-six \
 		textproc/py-yaml \
 		textproc/py-yamlloader \
 		www/py-requests
