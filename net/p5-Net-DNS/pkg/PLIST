@@ -60,6 +60,7 @@ ${P5SITE}/Net/DNS/RR/OPENPGPKEY.pm
 ${P5SITE}/Net/DNS/RR/OPT.pm
 ${P5SITE}/Net/DNS/RR/PTR.pm
 ${P5SITE}/Net/DNS/RR/PX.pm
+${P5SITE}/Net/DNS/RR/RESINFO.pm
 ${P5SITE}/Net/DNS/RR/RP.pm
 ${P5SITE}/Net/DNS/RR/RRSIG.pm
 ${P5SITE}/Net/DNS/RR/RT.pm
@@ -148,6 +149,7 @@ ${P5SITE}/Net/DNS/ZoneFile.pm
 @man man/man3p/Net::DNS::RR::OPT.3p
 @man man/man3p/Net::DNS::RR::PTR.3p
 @man man/man3p/Net::DNS::RR::PX.3p
+@man man/man3p/Net::DNS::RR::RESINFO.3p
 @man man/man3p/Net::DNS::RR::RP.3p
 @man man/man3p/Net::DNS::RR::RRSIG.3p
 @man man/man3p/Net::DNS::RR::RT.3p
