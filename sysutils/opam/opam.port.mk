@@ -49,6 +49,9 @@ MODOPAM_ENV +=	OPAMROOT=${MODOPAM_OPAMROOT} \
 MODOPAM_ENV +=	OCAMLFIND_DESTDIR=${MODOPAM_OPAMROOT}/${_MODOPAM_SWITCH}/lib
 .endif
 
+# build of ocamlbuild in opam will fail if devel/ocamlbuild is installed
+MODOPAM_ENV +=	CHECK_IF_PREINSTALLED=false
+
 .if ${MODOPAM_WITH_DOC:L} == "yes"
 MODOPAM_ENV +=	OPAMWITHDOC=true
 _MODOPAM_LIST_ARGS +=	--with-doc
