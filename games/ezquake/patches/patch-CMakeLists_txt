@@ -3,7 +3,7 @@ Set binary name to ezquake instead of ezquake-OpenBSD-<arch>
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -885,6 +885,8 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+@@ -898,6 +898,8 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
      string(TOLOWER "ezQuake" EXECUTABLE_NAME)
  elseif(CMAKE_SYSTEM_NAME STREQUAL "Windows")
      string(TOLOWER "ezquake" EXECUTABLE_NAME)
