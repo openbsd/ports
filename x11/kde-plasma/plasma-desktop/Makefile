@@ -1,5 +1,6 @@
 COMMENT =	KDE tools and widgets for the desktop
-DISTNAME =	plasma-desktop-${VERSION}
+BUGFIX_VERSION =	6.3.1.1
+DISTNAME =	plasma-desktop-${BUGFIX_VERSION}
 
 MODKDE_TRANSLATIONS =	Yes
 MODKDE_ICON_CACHE =	Yes
