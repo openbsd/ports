@@ -1,7 +1,7 @@
 COMMENT =		prometheus exporter for Dell iDRAC
 
 MODGO_MODNAME =		github.com/mrlhansen/idrac_exporter
-MODGO_VERSION =		v1.5.0
+MODGO_VERSION =		v1.6.1
 
 DISTNAME =		idrac_exporter-${MODGO_VERSION}
 
