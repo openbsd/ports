@@ -5,7 +5,7 @@ COMMENT=	Nagios plugin to monitor Squid proxies
 GH_ACCOUNT=	DinoTools
 GH_PROJECT=	monitoring-check_squid
 GH_COMMIT=	9e7936bc6f396ea9395b289ab38df96dd044c634
-REVISION=	0
+REVISION=	1
 
 V=		1.1.1pl20220729
 DISTNAME=	monitoring-check_squid-$V
@@ -19,6 +19,7 @@ NO_BUILD=	Yes
 NO_TEST=	Yes
 
 RUN_DEPENDS+=	net/nagios/p5-Nagios-Plugin \
+		www/p5-libwww \
 		www/squid
 
 do-install:

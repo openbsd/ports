@@ -1,28 +1,60 @@
+Hunk 1: avoid duplicate getopts arg, this comes from Monitoring::Plugin
+and newer perl warns about the duplicate.
+
+Hunk 2 on: ignore --squidclient, use libwww-perl to fetch directly instead.
+squidclient is removed in squid 7.x.
+
 Index: check_squid
 --- check_squid.orig
 +++ check_squid
-@@ -122,7 +122,7 @@ $mp->add_arg(
- $mp->add_arg(
- 	spec => 'squidclient|s=s',
- 	help => "-s, --squidclient=<squidclient_path>\n"
--	. "	Path of squidclient (default: Use which to get command path and if not found set /usr/sbin/squidclient)",
-+	. "	Path of squidclient (default: Use which to get command path and if not found set /usr/local/bin/squidclient)",
+@@ -126,13 +126,6 @@ $mp->add_arg(
  	required => 0,
  );
  
-@@ -154,13 +154,13 @@ $critical = undef if (defined($critical) and $critical
+-$mp->add_arg(
+-	spec => 'verbose|v',
+-	help => "-v, --verbose\n"
+-	. "	For debugging purpose",
+-	required => 0,
+-);
+-
+ $mp->getopts;
+ 
+ my $verbose = $mp->opts->verbose;
+@@ -143,7 +136,6 @@ my $user = $mp->opts->user;
+ my $password = $mp->opts->password;
+ my $critical = $mp->opts->critical;
+ my $warning = $mp->opts->warning;
+-my $squidclient = $mp->opts->squidclient;
+ 
+ $host = 'localhost' if (!defined($host) or $host eq '');
+ $port = 3128 if (!defined($port) or $port eq '');
+@@ -152,24 +144,13 @@ $user = 'root' if (!defined($user) or $user eq '');
+ $password = '' if (!defined($password));
+ $critical = undef if (defined($critical) and $critical eq '');
  $warning = undef if (defined($warning) and $warning eq '');
- $squidclient = `which squidclient` if (!defined($squidclient) or $squidclient eq '');
- $squidclient =~ s/^\s+|\s+$//g;
+-$squidclient = `which squidclient` if (!defined($squidclient) or $squidclient eq '');
+-$squidclient =~ s/^\s+|\s+$//g;
 -$squidclient = '/usr/sbin/squidclient' if (!defined($squidclient) or $squidclient eq '');
-+$squidclient = '/usr/local/bin/squidclient' if (!defined($squidclient) or $squidclient eq '');
  
  $mp->set_thresholds(critical => $critical, warning => $warning);
  
- # squidclient -h localhost -p 8080 -U root -W FPSlsker mgr:info
- 
+-# squidclient -h localhost -p 8080 -U root -W FPSlsker mgr:info
+-
 -my @exec = ("-h", "\Q$host", "-p", "\Q$port", "-U", "\Q$user", "-W", "\Q$password", "mgr:info");
-+my @exec = ("-h", "\Q$host", "-p", "\Q$port", "-U", "\Q$user", "-W", "\Q$password", "/squid-internal-mgr/info");
+-
+-if (! -x $squidclient) {
+-	die "$squidclient not found";
+-}
+-
+-my $cmd = sprintf('%s %s 2>&1', $squidclient, join(" ", @exec));
+-my @result = `$cmd`;
+-
+-if($? > 0) { wrap_exit('CRITICAL', $result[0]); }
++use LWP::Simple;
++my $resp = get('http://' . $user . ':' . $password . '@' . $host . ':' . $port . '/squid-internal-mgr/info');
++if (!defined $resp) { wrap_exit('CRITICAL', "could not fetch mgr:info"); }
++my @result = split("\r", $resp);
  
- if (! -x $squidclient) {
- 	die "$squidclient not found";
+ my $fd_available;
+ my $fd_used;
