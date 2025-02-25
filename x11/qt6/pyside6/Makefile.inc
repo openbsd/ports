@@ -2,7 +2,6 @@
 
 VERSION =		${PYSIDE_VERSION}
 DISTNAME =		pyside-setup-everywhere-src-${VERSION}
-REVISION =		0
 
 HOMEPAGE =		https://wiki.qt.io/Qt_for_Python
 MAINTAINER =		Johannes Thyssen Tishman <jtt@openbsd.org>
