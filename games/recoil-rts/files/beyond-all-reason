@@ -17,14 +17,19 @@ if [ $(ulimit -Sd) -lt ${DATASIZE} ]; then
 		[ $? -eq 0 ] || exit
 fi
 
+# fix setup, go online again
+if [[ -f ${CONFIG_FILE} ]] &&
+    ! grep -q server4.beyondallreason.info ${CONFIG_FILE}; then
+	rm ${CONFIG_FILE}
+	sed -i '/serverAddress/d' ${GAME_DIR}/LuaMenu/Config/IGL_data.lua
+fi
+
 # setup
-# XXX: empty server address to disallow multiplayer while desyncs
-#      once solved, set address to "server4.beyondallreason.info"
 [[ -d ${GAME_DIR} ]] || mkdir -p ${GAME_DIR}
 [[ -f ${CONFIG_FILE} ]] || cat > ${CONFIG_FILE} <<EOF
 {
   "server": {
-    "address": "",
+    "address": "server4.beyondallreason.info",
     "port": 8200,
     "protocol": "spring",
     "serverName": "BAR"
@@ -33,7 +38,7 @@ fi
 }
 EOF
 [[ -f ${SETTINGS_FILE} ]] || cat > ${SETTINGS_FILE} <<EOF
-RapidTagResolutionOrder = repos-cdn.beyondallreason.dev;repos.beyondallreason.dev
+RapidTagResolutionOrder=repos-cdn.beyondallreason.dev;repos.beyondallreason.dev
 EOF
 
 # update
