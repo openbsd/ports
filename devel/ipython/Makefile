@@ -1,6 +1,6 @@
 COMMENT =		enhanced interactive Python shell
 
-MODPY_DISTV =	8.31.0
+MODPY_DISTV =		8.32.0
 DISTNAME =		ipython-${MODPY_DISTV}
 PKGNAME =		ipython${MODPY_MAJOR_VERSION}-${MODPY_DISTV}
 
@@ -23,13 +23,11 @@ MODPY_PYBUILD =		setuptools
 RUN_DEPENDS =		databases/py-pickleshare \
 			devel/desktop-file-utils \
 			devel/py-decorator \
-			devel/py-exceptiongroup \
 			devel/py-jedi>=0.16 \
 			devel/py-pexpect>=4.3 \
 			devel/py-prompt_toolkit>=3.0.41v1,<3.1.0v1 \
 			devel/py-stack_data \
 			devel/py-traitlets>=5.13.0 \
-			devel/py-typing-extensions \
 			graphics/py-matplotlib-inline \
 			textproc/py-pygments>=2.4.0
 
@@ -38,7 +36,7 @@ TEST_DEPENDS =		devel/py-ipykernel \
 			devel/py-curio \
 			devel/py-nbformat \
 			devel/py-testpath \
-			devel/py-test-asyncio<0.22 \
+			devel/py-test-asyncio \
 			devel/py-trio \
 			graphics/py-matplotlib \
 			math/py-numpy>=1.23 \
