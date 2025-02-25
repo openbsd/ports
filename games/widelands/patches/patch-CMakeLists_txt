@@ -4,7 +4,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -190,7 +190,7 @@ elseif((CMAKE_BUILD_TYPE STREQUAL "Release") OR (CMAKE
+@@ -191,7 +191,7 @@ elseif((CMAKE_BUILD_TYPE STREQUAL "Release") OR (CMAKE
    elseif(MSVC)
      set(WL_OPTIMIZE_FLAGS "/O2")
    else()
@@ -13,9 +13,9 @@ Index: CMakeLists.txt
    endif()
    if(("${CMAKE_CXX_COMPILER_ID}" STREQUAL "GNU") AND (CMAKE_CXX_COMPILER_VERSION VERSION_LESS 7.6))
      message(WARNING "GCC <7.6.0 is known to cause segfaults in release builds. Please consider upgrading to GCC version 7.6 or newer or using Clang. Adding selected overrides to suppress reporting of known bugs.")
-@@ -544,15 +544,6 @@ install(
+@@ -559,15 +559,6 @@ install(
    DESTINATION ${WL_INSTALL_BASEDIR}
-   CONFIGURATIONS Debug;Release;None
+   CONFIGURATIONS Debug;Release;RelWithDebInfo;None
    COMPONENT CoreLicenseFiles
 -)
 -

@@ -2,9 +2,8 @@ COMMENT =	economic and military simulation game
 
 GH_ACCOUNT = 	widelands
 GH_PROJECT = 	widelands
-GH_TAGNAME = 	v1.2
+GH_TAGNAME = 	v1.2.1
 CATEGORIES =	games
-REVISION =      0
 
 HOMEPAGE =	https://www.widelands.org/
 
