@@ -132,6 +132,8 @@ iridium/resources/accessibility/reading_mode_gdocs_helper_manifest.json
 iridium/resources/inspector_overlay/
 iridium/resources/inspector_overlay/inspector_overlay_resources.grd
 iridium/resources/inspector_overlay/main.js
+iridium/resources/tts_engine/
+iridium/resources/tts_engine/background.js
 iridium/snapshot_blob.bin
 %%swiftshader%%
 iridium/v8_context_snapshot.bin

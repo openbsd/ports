@@ -218,6 +218,8 @@ ungoogled-chromium/resources/accessibility/reading_mode_gdocs_helper_manifest.js
 ungoogled-chromium/resources/inspector_overlay/
 ungoogled-chromium/resources/inspector_overlay/inspector_overlay_resources.grd
 ungoogled-chromium/resources/inspector_overlay/main.js
+ungoogled-chromium/resources/tts_engine/
+ungoogled-chromium/resources/tts_engine/background.js
 ungoogled-chromium/snapshot_blob.bin
 %%swiftshader%%
 @bin ungoogled-chromium/ungoogled-chromium
