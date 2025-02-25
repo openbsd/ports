@@ -1,12 +1,12 @@
 Index: setup.py
 --- setup.py.orig
 +++ setup.py
-@@ -77,7 +77,7 @@ def include_file(file):
+@@ -102,7 +102,7 @@ def include_file(file):
  def collect_data_files():
  	# Search for data files to be installed in share/
  	data_files = [
 -		('share/man/man1', ['man/zim.1']),
 +		('man/man1', ['man/zim.1']),
- 		('share/applications', ['xdg/zim.desktop']),
- 		('share/mime/packages', ['xdg/zim.xml']),
+ 		('share/applications', ['xdg/org.zim_wiki.Zim.desktop']),
+ 		('share/mime/packages', ['xdg/org.zim_wiki.Zim.xml']),
  		('share/metainfo', ['xdg/org.zim_wiki.Zim.appdata.xml']),
