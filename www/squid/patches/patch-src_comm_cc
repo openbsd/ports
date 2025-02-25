@@ -2,6 +2,9 @@ Raise size of socket buffer for UDS sockets, which are used for (at
 least) comms with squid-coordinator.ipc. Avoids errors like "FD 14
 write failure: (40) Message too long." when SMP workers are used.
 
+Possibly not needed since kern/uipc_usrreq.c r1.210 (which raised
+the default for SOCK_DGRAM to 8k).
+
 Index: src/comm.cc
 --- src/comm.cc.orig
 +++ src/comm.cc
