@@ -145,6 +145,7 @@
      SUBDIR += gpioflicker
      SUBDIR += grafana
      SUBDIR += grive2
+     SUBDIR += grizzly
      SUBDIR += gsmartcontrol
      SUBDIR += hcloud
      SUBDIR += hotplug-diskmount
