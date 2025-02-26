@@ -1,14 +1,13 @@
 COMMENT=	system monitoring daemon
 
-DISTNAME=	monitord-1.93
+DISTNAME=	monitord-1.95
 CATEGORIES=	sysutils
-REVISION=	0
 
-HOMEPAGE=	http://www.estpak.ee/~risto/monitord/
+HOMEPAGE=	https://ristov.github.io/monitord/
 
 MAINTAINER=	Okan Demirmen <okan@openbsd.org>
 
-# GPL
+# GPLv2+
 PERMIT_PACKAGE=	Yes
 
 SITES=		${HOMEPAGE}
