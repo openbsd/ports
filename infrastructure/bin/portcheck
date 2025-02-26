@@ -1,6 +1,6 @@
 #!/bin/ksh
 #
-# $OpenBSD: portcheck,v 1.148 2024/11/01 09:17:30 landry Exp $
+# $OpenBSD: portcheck,v 1.149 2025/02/26 14:22:53 sthen Exp $
 # Copyright (c) 2013 Vadim Zhukov
 # 
 # Permission to use, copy, modify, and distribute this software for any
@@ -1732,7 +1732,7 @@ check_hardcoded() {
 		    }
 		    END { $? = $ec; }' \
 		"$1" || err "hardcoded paths detected in $1, consider using" \
-		    "SUBST_VARS and TRUEPREFIX/LOCALBASE/LOCALSTATEDIR/VARBASE"
+		    "SUBST_VARS and TRUEPREFIX/LOCALBASE/LOCALSTATEDIR"
 }
 
 # Checks made:
