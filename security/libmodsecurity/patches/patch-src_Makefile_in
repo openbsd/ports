@@ -1,7 +1,7 @@
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -1186,7 +1186,6 @@ libmodsecurity_la_CPPFLAGS = \
+@@ -1189,7 +1189,6 @@ libmodsecurity_la_CPPFLAGS = \
  	-I../others \
  	-I../others/mbedtls/include \
  	-fPIC \

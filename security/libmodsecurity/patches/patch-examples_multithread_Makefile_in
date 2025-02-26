@@ -1,7 +1,7 @@
 Index: examples/multithread/Makefile.in
 --- examples/multithread/Makefile.in.orig
 +++ examples/multithread/Makefile.in
-@@ -457,7 +457,6 @@ multithread_LDFLAGS = \
+@@ -461,7 +461,6 @@ multithread_LDFLAGS = \
  	-lmodsecurity \
  	-lpthread \
  	-lm \
@@ -9,7 +9,7 @@ Index: examples/multithread/Makefile.in
  	$(LMDB_LDFLAGS) \
  	$(LUA_LDFLAGS) \
  	$(MAXMIND_LDFLAGS) \
-@@ -471,7 +470,6 @@ multithread_CPPFLAGS = \
+@@ -475,7 +474,6 @@ multithread_CPPFLAGS = \
  	-g \
  	-I../others \
  	-fPIC \

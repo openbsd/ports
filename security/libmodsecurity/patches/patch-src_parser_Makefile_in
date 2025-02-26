@@ -1,7 +1,7 @@
 Index: src/parser/Makefile.in
 --- src/parser/Makefile.in.orig
 +++ src/parser/Makefile.in
-@@ -486,7 +486,6 @@ libmodsec_parser_la_CPPFLAGS = \
+@@ -490,7 +490,6 @@ libmodsec_parser_la_CPPFLAGS = \
  	-I.. \
  	-g \
  	-fPIC \

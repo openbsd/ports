@@ -1,7 +1,7 @@
 Index: test/benchmark/Makefile.in
 --- test/benchmark/Makefile.in.orig
 +++ test/benchmark/Makefile.in
-@@ -457,7 +457,6 @@ benchmark_LDFLAGS = \
+@@ -461,7 +461,6 @@ benchmark_LDFLAGS = \
  	-lmodsecurity \
  	-lpthread \
  	-lm \

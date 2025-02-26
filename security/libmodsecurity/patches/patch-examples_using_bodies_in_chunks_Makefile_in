@@ -1,7 +1,7 @@
 Index: examples/using_bodies_in_chunks/Makefile.in
 --- examples/using_bodies_in_chunks/Makefile.in.orig
 +++ examples/using_bodies_in_chunks/Makefile.in
-@@ -458,7 +458,6 @@ simple_request_LDFLAGS = \
+@@ -462,7 +462,6 @@ simple_request_LDFLAGS = \
  	$(GEOIP_LDFLAGS) \
  	-lmodsecurity \
  	-lm \
@@ -9,7 +9,7 @@ Index: examples/using_bodies_in_chunks/Makefile.in
  	$(MAXMIND_LDFLAGS) \
  	$(LMDB_LDFLAGS) \
  	$(LUA_LDFLAGS) \
-@@ -472,7 +471,6 @@ simple_request_CPPFLAGS = \
+@@ -476,7 +475,6 @@ simple_request_CPPFLAGS = \
  	-g \
  	-I../others \
  	-fPIC \

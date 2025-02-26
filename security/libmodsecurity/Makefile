@@ -1,11 +1,11 @@
 COMMENT =	intrusion detection and prevention engine
 
-VERSION =	3.0.13
+VERSION =	3.0.14
 DISTNAME =	modsecurity-v${VERSION}
 PKGNAME  =	libmodsecurity-${VERSION}
-SUPDISTFILES =	${DISTFILES:S/$/.asc/}
+SUPDISTFILES =	${DISTFILES:S/$/.sig/}
 
-SHARED_LIBS =	modsecurity	1.0
+SHARED_LIBS =	modsecurity	2.0	# 3.14
 
 CATEGORIES =	security
 
@@ -14,9 +14,9 @@ HOMEPAGE =	https://www.modsecurity.org
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		${COMPILER_LIBCXX} c crypto curl iconv lzma m ssl z \
-			maxminddb nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls \
-			pcre pcre2-8 xml2 yajl
+WANTLIB =	${COMPILER_LIBCXX} c crypto curl iconv lzma m ssl z \
+		maxminddb nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls \
+		pcre pcre2-8 xml2 yajl
 
 SITES =	https://github.com/SpiderLabs/ModSecurity/releases/download/v${VERSION}/
 
@@ -36,6 +36,8 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--without-lmdb \
 			--without-ssdeep \
 			--without-lua
+
+# some tests need network access
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/modsecurity/

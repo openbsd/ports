@@ -1,7 +1,7 @@
 Index: examples/multiprocess_c/Makefile.in
 --- examples/multiprocess_c/Makefile.in.orig
 +++ examples/multiprocess_c/Makefile.in
-@@ -447,7 +447,6 @@ multi_LDFLAGS = \
+@@ -451,7 +451,6 @@ multi_LDFLAGS = \
  	$(GEOIP_LDFLAGS) \
  	-lmodsecurity \
  	-lm \

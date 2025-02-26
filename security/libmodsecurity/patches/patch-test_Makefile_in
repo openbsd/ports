@@ -1,7 +1,7 @@
 Index: test/Makefile.in
 --- test/Makefile.in.orig
 +++ test/Makefile.in
-@@ -567,7 +567,6 @@ unit_tests_LDFLAGS = \
+@@ -574,7 +574,6 @@ unit_tests_LDFLAGS = \
  	-lmodsecurity \
  	-lpthread \
  	-lm \
@@ -9,7 +9,7 @@ Index: test/Makefile.in
  	$(MAXMIND_LDFLAGS) \
  	$(LMDB_LDFLAGS) \
  	$(LUA_LDFLAGS) \
-@@ -616,7 +615,6 @@ regression_tests_LDFLAGS = \
+@@ -623,7 +622,6 @@ regression_tests_LDFLAGS = \
  	-lmodsecurity \
  	-lpthread \
  	-lm \
@@ -17,7 +17,7 @@ Index: test/Makefile.in
  	$(MAXMIND_LDFLAGS) \
  	$(YAJL_LDFLAGS) \
  	$(LMDB_LDFLAGS) \
-@@ -663,7 +661,6 @@ rules_optimization_LDFLAGS = \
+@@ -670,7 +668,6 @@ rules_optimization_LDFLAGS = \
  	-lmodsecurity \
  	-lpthread \
  	-lm \
