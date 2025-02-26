@@ -1,6 +1,6 @@
 COMMENT=	computes positions for the stars, planets, and satellites
 
-MODPY_DISTV =	1.50
+MODPY_DISTV =	1.51
 DISTNAME=	skyfield-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 

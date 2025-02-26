@@ -207,6 +207,8 @@ lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_io.
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_io.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_io_parsing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_io_parsing.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_jpllib.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_jpllib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_keplerlib.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_keplerlib.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_magnitudes.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -242,6 +244,7 @@ lib/python${MODPY_VERSION}/site-packages/skyfield/tests/${MODPY_PYCACHE}test_vec
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/conventions.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/data/
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/data/de430-2015-03-02.bsp
+lib/python${MODPY_VERSION}/site-packages/skyfield/tests/data/de441-1969.bsp
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/data/jup310-2015-03-02.bsp
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/data/jup310-2053-10-08.bsp
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/fixes.py
@@ -265,6 +268,7 @@ lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_functions.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_geometry.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_io.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_io_parsing.py
+lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_jpllib.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_keplerlib.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_magnitudes.py
 lib/python${MODPY_VERSION}/site-packages/skyfield/tests/test_magnitudes_raw.py
