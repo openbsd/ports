@@ -15,7 +15,8 @@ bin/synctl
 bin/update_synapse_database
 lib/python${MODPY_VERSION}/site-packages/matrix_synapse-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/matrix_synapse-${MODPY_DISTV}.dist-info/AUTHORS.rst
-lib/python${MODPY_VERSION}/site-packages/matrix_synapse-${MODPY_DISTV}.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/matrix_synapse-${MODPY_DISTV}.dist-info/LICENSE-AGPL-3.0
+lib/python${MODPY_VERSION}/site-packages/matrix_synapse-${MODPY_DISTV}.dist-info/LICENSE-COMMERCIAL
 lib/python${MODPY_VERSION}/site-packages/matrix_synapse-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/matrix_synapse-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/matrix_synapse-${MODPY_DISTV}.dist-info/WHEEL
@@ -1517,9 +1518,12 @@ lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/state/${MODPY
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/state/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/state/${MODPY_PYCACHE}bg_updates.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/state/${MODPY_PYCACHE}bg_updates.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/state/${MODPY_PYCACHE}deletion.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/state/${MODPY_PYCACHE}deletion.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/state/${MODPY_PYCACHE}store.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/state/${MODPY_PYCACHE}store.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/state/bg_updates.py
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/state/deletion.py
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/databases/state/store.py
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/engines/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/engines/__init__.py
@@ -2150,6 +2154,8 @@ lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/state/delta/61/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/state/delta/61/02state_groups_state_n_distinct.sql.postgres
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/state/delta/70/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/state/delta/70/08_state_group_edges_unique.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/state/delta/89/
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/state/delta/89/01_state_groups_deletion.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/state/full_schemas/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/state/full_schemas/72/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/state/full_schemas/72/full.sql.postgres
