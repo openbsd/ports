@@ -1,0 +1,75 @@
+From 09501e55cfde0b10f8950adb2a94762198b5fcc9 Mon Sep 17 00:00:00 2001
+From: bynect <68197565+bynect@users.noreply.github.com>
+Date: Mon, 24 Feb 2025 17:45:03 +0100
+Subject: [PATCH 1/2] Use properties instead of private fields in dunstify
+
+From 20992966f6c00edb4b0233906971307d8d73148c Mon Sep 17 00:00:00 2001
+From: bynect <68197565+bynect@users.noreply.github.com>
+Date: Tue, 25 Feb 2025 19:38:02 +0100
+Subject: [PATCH 2/2] Fix warning with cast
+
+Index: dunstify.c
+--- dunstify.c.orig
++++ dunstify.c
+@@ -171,53 +171,20 @@ void parse_commandline(int argc, char *argv[])
+     }
+ }
+ 
+-typedef struct _NotifyNotificationPrivate
+-{
+-        guint32         id;
+-        char           *app_name;
+-        char           *summary;
+-        char           *body;
+-
+-        /* NULL to use icon data. Anything else to have server lookup icon */
+-        char           *icon_name;
+-
+-        /*
+-         * -1   = use server default
+-         *  0   = never timeout
+-         *  > 0 = Number of milliseconds before we timeout
+-         */
+-        gint            timeout;
+-
+-        GSList         *actions;
+-        GHashTable     *action_map;
+-        GHashTable     *hints;
+-
+-        gboolean        has_nondefault_actions;
+-        gboolean        updates_pending;
+-
+-        gulong          proxy_signal_handler;
+-
+-        gint            closed_reason;
+-} knickers;
+-
+ int get_id(NotifyNotification *n)
+ {
+-    knickers *kn = n->priv;
+-
+-    /* I'm sorry for taking a peek */
+-    return kn->id;
++    GValue value = G_VALUE_INIT;
++    g_value_init(&value, G_TYPE_UINT);
++    g_object_get_property(G_OBJECT(n), "id", &value);
++    return g_value_get_int(&value);
+ }
+ 
+ void put_id(NotifyNotification *n, guint32 id)
+ {
+-    knickers *kn = n->priv;
+-
+-    /* And know I'm putting stuff into
+-     * your knickers. I'm sorry.
+-     * I'm so sorry.
+-     * */
+-
+-    kn->id = id;
++    GValue value = G_VALUE_INIT;
++    g_value_init(&value, G_TYPE_UINT);
++    g_value_set_uint(&value, id);
++    g_object_set_property(G_OBJECT(n), "id", &value);
+ }
+ 
+ void actioned(NotifyNotification *n, char *a, gpointer foo)
