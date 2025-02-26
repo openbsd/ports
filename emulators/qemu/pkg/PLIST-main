@@ -455,7 +455,6 @@ share/qemu/firmware/60-edk2-aarch64.json
 share/qemu/firmware/60-edk2-arm.json
 share/qemu/firmware/60-edk2-i386.json
 share/qemu/firmware/60-edk2-loongarch64.json
-share/qemu/firmware/60-edk2-riscv64.json
 share/qemu/firmware/60-edk2-x86_64.json
 share/qemu/hppa-firmware.img
 share/qemu/hppa-firmware64.img
