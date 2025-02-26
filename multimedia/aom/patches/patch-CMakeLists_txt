@@ -1,13 +1,12 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -858,7 +858,8 @@ if(BUILD_SHARED_LIBS)
+@@ -865,7 +865,7 @@ if(BUILD_SHARED_LIBS)
+   # https://clang.llvm.org/docs/AddressSanitizer.html#usage. Similarly, see
    # https://clang.llvm.org/docs/MemorySanitizer.html#usage.
-   if(NOT WIN32
-      AND NOT APPLE
--     AND NOT (CMAKE_C_COMPILER_ID MATCHES "Clang" AND SANITIZE))
-+     AND NOT (CMAKE_C_COMPILER_ID MATCHES "Clang" AND SANITIZE)
-+     AND NOT CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
+   if(NOT
+-     (APPLE OR CYGWIN OR WIN32)
++     (APPLE OR CYGWIN OR WIN32 OR CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
+      AND NOT (CMAKE_C_COMPILER_ID MATCHES "Clang" AND SANITIZE))
      # The -z defs linker option reports unresolved symbol references from object
      # files when building a shared library.
-     if("${CMAKE_VERSION}" VERSION_LESS "3.13")
