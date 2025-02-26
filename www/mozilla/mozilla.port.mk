@@ -94,6 +94,13 @@ MODMOZ_WANTLIB +=	ffi
 CONFIGURE_ARGS +=	--with-system-ffi
 .endif
 
+.if defined(MOZILLA_USE_SYSTEM_AV1)
+MODMOZ_LIB_DEPENDS +=	multimedia/dav1d
+MODMOZ_LIB_DEPENDS +=	multimedia/aom
+MODMOZ_WANTLIB +=	aom dav1d
+CONFIGURE_ARGS +=	--with-system-av1
+.endif
+
 .if !defined(MOZILLA_USE_DBUS)
 CONFIGURE_ARGS +=	--disable-dbus
 .else
