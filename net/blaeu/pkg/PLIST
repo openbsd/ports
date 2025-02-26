@@ -14,4 +14,5 @@ lib/python${MODPY_VERSION}/site-packages/blaeu-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/blaeu-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/blaeu-${MODPY_DISTV}.dist-info/top_level.txt
 share/blaeu/
-share/blaeu/README.rst
+share/blaeu/EXAMPLES.md
+share/blaeu/README.md
