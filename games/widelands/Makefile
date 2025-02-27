@@ -4,6 +4,7 @@ GH_ACCOUNT = 	widelands
 GH_PROJECT = 	widelands
 GH_TAGNAME = 	v1.2.1
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.widelands.org/
 
@@ -19,7 +20,7 @@ COMPILER =	base-clang ports-gcc
 BUILD_DEPENDS =	devel/asio \
 		devel/gettext,-tools
 
-LIB_DEPENDS =	archivers/minizip \
+LIB_DEPENDS =	archivers/minizip>=4.0.8 \
 		devel/gettext,-runtime \
 		devel/sdl2-image \
 		devel/sdl2-mixer \
