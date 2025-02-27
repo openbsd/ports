@@ -1,6 +1,6 @@
 COMMENT=		VirtualBox client with remote management
 
-DISTNAME=		RemoteBox-3.4
+DISTNAME=		RemoteBox-3.5
 PKGNAME=		${DISTNAME:L}
 EXTRACT_SUFX=		.tar.bz2
 
@@ -21,6 +21,8 @@ PKG_ARCH=		*
 
 RUN_DEPENDS=		devel/desktop-file-utils \
 			devel/xdg-utils \
+			sysutils/p5-File-Which \
+			textproc/p5-Regexp-Common \
 			www/p5-SOAP-Lite \
 			www/p5-libwww \
 			x11/freerdp \

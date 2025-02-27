@@ -91,6 +91,7 @@ share/remotebox/icons/ide_add_16px.png
 share/remotebox/icons/import_16px.png
 share/remotebox/icons/keyboard_16px.png
 share/remotebox/icons/keyboard_32px.png
+share/remotebox/icons/log_viewer_clear_32px.png
 share/remotebox/icons/log_viewer_refresh_32px.png
 share/remotebox/icons/log_viewer_save_32px.png
 share/remotebox/icons/machine_16px.png
@@ -293,6 +294,7 @@ share/remotebox/icons/os/Windows2012_64.png
 share/remotebox/icons/os/Windows2016_64.png
 share/remotebox/icons/os/Windows2019_64.png
 share/remotebox/icons/os/Windows2022_64.png
+share/remotebox/icons/os/Windows2025_64.png
 share/remotebox/icons/os/Windows31.png
 share/remotebox/icons/os/Windows7.png
 share/remotebox/icons/os/Windows7_64.png
@@ -338,7 +340,7 @@ share/remotebox/icons/progress_start_90px.png
 share/remotebox/icons/progress_state_restore_90px.png
 share/remotebox/icons/progress_state_save_90px.png
 share/remotebox/icons/rb_settings_16px.png
-share/remotebox/icons/rdp_presets_16px.png
+share/remotebox/icons/rdp_preset_16px.png
 share/remotebox/icons/refresh_16px.png
 share/remotebox/icons/refresh_22px.png
 share/remotebox/icons/refresh_32px.png
@@ -450,7 +452,6 @@ share/remotebox/rbox_main.pl
 share/remotebox/rbox_newguest.pl
 share/remotebox/rbox_prefs.pl
 share/remotebox/rbox_vmm.pl
-share/remotebox/remotebox.xml
 share/remotebox/vboxService.pm
 share/remotebox/vboxserializers.pl
 @tag update-desktop-database
