@@ -1,9 +1,9 @@
 COMMENT =		zstandard fast real-time compression algorithm
 
-V =			1.5.6
+V =			1.5.7
 DISTNAME =		zstd-${V}
 
-SHARED_LIBS =		zstd	6.4	# 1.5.6
+SHARED_LIBS =		zstd	7.0	# 1.5.7
 
 CATEGORIES =		archivers
 
@@ -31,7 +31,10 @@ MAKE_FLAGS =		SHARED_EXT_VER="so.$(LIBzstd_VERSION)" \
 FAKE_FLAGS =		PREFIX="${PREFIX}"
 
 # Avoid unaligned access; use memcpy.
-CPPFLAGS +=		-DMEM_FORCE_MEMORY_ACCESS=0
+CPPFLAGS +=		-DMEM_FORCE_MEMORY_ACCESS=0 -DXXH_FORCE_MEMORY_ACCESS=0
+# the magic in libzstd.mk fails, so add noexecstack here to make regress pass
+LDFLAGS_base-gcc =	-Wl,-z,noexecstack
+LDFLAGS +=		${LDFLAGS_${CHOSEN_COMPILER}}
 
 USE_GMAKE =		Yes
 
