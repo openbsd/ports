@@ -1,0 +1,14 @@
+ld: error: unable to find library -lltdl
+
+Index: src/modules/Makefile.in
+--- src/modules/Makefile.in.orig
++++ src/modules/Makefile.in
+@@ -832,7 +832,7 @@ module_utils_play_CPPFLAGS = $(AM_CPPFLAGS) \
+ 	$(SNDFILE_CFLAGS)
+ 
+ sd_skeleton0_SOURCES = skeleton0.c
+-sd_skeleton0_LDADD = libspeechd_module.la
++sd_skeleton0_LDADD = -L${LOCALBASE}/lib libspeechd_module.la
+ sd_skeleton_config_SOURCES = skeleton_config.c $(common_SOURCES)
+ sd_skeleton_config_LDADD = $(top_builddir)/src/common/libcommon.la \
+ 	libspeechd_module.la \

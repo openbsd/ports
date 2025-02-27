@@ -6,6 +6,7 @@ include/speech-dispatcher/
 include/speech-dispatcher/libspeechd.h
 include/speech-dispatcher/libspeechd_version.h
 include/speech-dispatcher/spd_audio_plugin.h
+include/speech-dispatcher/spd_module_main.h
 include/speech-dispatcher/speechd_defines.h
 include/speech-dispatcher/speechd_types.h
 @info info/spd-say.info
@@ -15,17 +16,24 @@ include/speech-dispatcher/speechd_types.h
 @static-lib lib/libspeechd.a
 lib/libspeechd.la
 @lib lib/libspeechd.so.${LIBspeechd_VERSION}
+@static-lib lib/libspeechd_module.a
+lib/libspeechd_module.la
+@lib lib/libspeechd_module.so.${LIBspeechd_module_VERSION}
 lib/pkgconfig/speech-dispatcher.pc
 lib/python${MODPY_VERSION}/site-packages/speechd/
 lib/python${MODPY_VERSION}/site-packages/speechd/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/speechd/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/speechd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/speechd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/python${MODPY_VERSION}/site-packages/speechd/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/speechd/${MODPY_PYCACHE}_test.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/speechd/${MODPY_PYCACHE}_test.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/python${MODPY_VERSION}/site-packages/speechd/${MODPY_PYCACHE}_test.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/speechd/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/speechd/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/python${MODPY_VERSION}/site-packages/speechd/${MODPY_PYCACHE}client.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/speechd/${MODPY_PYCACHE}paths.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/speechd/${MODPY_PYCACHE}paths.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/python${MODPY_VERSION}/site-packages/speechd/${MODPY_PYCACHE}paths.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/speechd/_test.py
 lib/python${MODPY_VERSION}/site-packages/speechd/client.py
@@ -34,10 +42,13 @@ lib/python${MODPY_VERSION}/site-packages/speechd_config/
 lib/python${MODPY_VERSION}/site-packages/speechd_config/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/speechd_config/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/speechd_config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/speechd_config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/python${MODPY_VERSION}/site-packages/speechd_config/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/speechd_config/${MODPY_PYCACHE}buildconfig.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/speechd_config/${MODPY_PYCACHE}buildconfig.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/python${MODPY_VERSION}/site-packages/speechd_config/${MODPY_PYCACHE}buildconfig.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/speechd_config/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/speechd_config/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}opt-2.pyc
 lib/python${MODPY_VERSION}/site-packages/speechd_config/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/speechd_config/buildconfig.py
 lib/python${MODPY_VERSION}/site-packages/speechd_config/config.py
@@ -50,6 +61,7 @@ libexec/speech-dispatcher-modules/
 libexec/speech-dispatcher-modules/sd_espeak-ng-mbrola
 @bin libexec/speech-dispatcher-modules/sd_festival
 @bin libexec/speech-dispatcher-modules/sd_generic
+@bin libexec/speech-dispatcher-modules/sd_openjtalk
 share/examples/speech-dispatcher/
 share/examples/speech-dispatcher/speech-dispatcher/
 @sample ${SYSCONFDIR}/speech-dispatcher/
@@ -84,6 +96,7 @@ share/examples/speech-dispatcher/speech-dispatcher/modules/llia_phon-generic.con
 share/examples/speech-dispatcher/speech-dispatcher/modules/mary-generic.conf
 @sample ${SYSCONFDIR}/speech-dispatcher/modules/mary-generic.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/mimic3-generic.conf
+share/examples/speech-dispatcher/speech-dispatcher/modules/openjtalk.conf
 share/examples/speech-dispatcher/speech-dispatcher/modules/swift-generic.conf
 @sample ${SYSCONFDIR}/speech-dispatcher/modules/swift-generic.conf
 share/examples/speech-dispatcher/speech-dispatcher/speechd.conf
@@ -93,10 +106,13 @@ share/locale/de/LC_MESSAGES/speech-dispatcher.mo
 share/locale/eo/LC_MESSAGES/speech-dispatcher.mo
 share/locale/fr/LC_MESSAGES/speech-dispatcher.mo
 share/locale/hu/LC_MESSAGES/speech-dispatcher.mo
+share/locale/ka/LC_MESSAGES/speech-dispatcher.mo
 share/locale/nb_NO/LC_MESSAGES/speech-dispatcher.mo
 share/locale/pt/LC_MESSAGES/speech-dispatcher.mo
 share/locale/pt_BR/LC_MESSAGES/speech-dispatcher.mo
 share/locale/ru/LC_MESSAGES/speech-dispatcher.mo
+share/locale/sv/LC_MESSAGES/speech-dispatcher.mo
+share/locale/tr/LC_MESSAGES/speech-dispatcher.mo
 share/sounds/
 share/sounds/speech-dispatcher/
 share/sounds/speech-dispatcher/dummy-message.wav
@@ -142,11 +158,13 @@ share/speech-dispatcher/locale/base/
 share/speech-dispatcher/locale/base/font-variants.dic
 share/speech-dispatcher/locale/base/orca-chars.dic
 share/speech-dispatcher/locale/base/orca.dic
-share/speech-dispatcher/locale/base/symbols.dic
+share/speech-dispatcher/locale/base/symbols-fallback.dic
 share/speech-dispatcher/locale/be/
 share/speech-dispatcher/locale/be/emojis.dic
 share/speech-dispatcher/locale/be/orca-chars.dic
 share/speech-dispatcher/locale/be/orca.dic
+share/speech-dispatcher/locale/bew/
+share/speech-dispatcher/locale/bew/emojis.dic
 share/speech-dispatcher/locale/bg/
 share/speech-dispatcher/locale/bg/emojis.dic
 share/speech-dispatcher/locale/bg/orca-chars.dic
@@ -190,6 +208,8 @@ share/speech-dispatcher/locale/cs/emojis.dic
 share/speech-dispatcher/locale/cs/orca-chars.dic
 share/speech-dispatcher/locale/cs/orca.dic
 share/speech-dispatcher/locale/cs/symbols.dic
+share/speech-dispatcher/locale/cv/
+share/speech-dispatcher/locale/cv/emojis.dic
 share/speech-dispatcher/locale/cy/
 share/speech-dispatcher/locale/cy/emojis.dic
 share/speech-dispatcher/locale/da/
@@ -500,6 +520,8 @@ share/speech-dispatcher/locale/qu/
 share/speech-dispatcher/locale/qu/emojis.dic
 share/speech-dispatcher/locale/quc/
 share/speech-dispatcher/locale/quc/emojis.dic
+share/speech-dispatcher/locale/rhg/
+share/speech-dispatcher/locale/rhg/emojis.dic
 share/speech-dispatcher/locale/rm/
 share/speech-dispatcher/locale/rm/emojis.dic
 share/speech-dispatcher/locale/ro/
@@ -563,6 +585,7 @@ share/speech-dispatcher/locale/sw_KE/emojis.dic
 share/speech-dispatcher/locale/ta/
 share/speech-dispatcher/locale/ta/emojis.dic
 share/speech-dispatcher/locale/ta/orca-chars.dic
+share/speech-dispatcher/locale/ta/orca.dic
 share/speech-dispatcher/locale/ta/symbols.dic
 share/speech-dispatcher/locale/te/
 share/speech-dispatcher/locale/te/emojis.dic

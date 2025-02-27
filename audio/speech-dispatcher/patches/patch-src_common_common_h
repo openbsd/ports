@@ -1,0 +1,12 @@
+Index: src/common/common.h
+--- src/common/common.h.orig
++++ src/common/common.h
+@@ -21,6 +21,8 @@
+ #ifndef _COMMON_H
+ #define _COMMON_H 1
+ 
++#include <pthread.h> /* pthread_t, pthread_attr_t */
++
+ #ifdef __cplusplus
+ extern "C" {
+ #endif

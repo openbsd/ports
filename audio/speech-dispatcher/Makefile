@@ -1,9 +1,9 @@
 COMMENT=	common interface to speech synthesis
 
-V=		0.11.5
+V=		0.12.0
 DISTNAME=	speech-dispatcher-${V}
-REVISION=	2
 
+SHARED_LIBS +=  speechd_module       0.0      # .0.0
 SHARED_LIBS +=  speechd              2.3      # .8.0
 
 CATEGORIES=	audio
@@ -55,6 +55,9 @@ CONFIGURE_ARGS=	--without-pulse \
 		--without-ibmtts \
 		--without-voxin
 
+# XXX pipewire produces no sound yet (no sndio(7) support)
+CONFIGURE_ARGS +=	--without-pipewire
+
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples/speech-dispatcher
 
 # XXX speech-dispatcher.texi:3023:
@@ -71,6 +74,6 @@ pre-configure:
 		${WRKSRC}/config/modules/*.conf
 
 post-install:
-	rm ${PREFIX}/lib/speech-dispatcher/spd_libao.{a,la}
+	rm ${PREFIX}/lib/speech-dispatcher/*.{a,la}
 
 .include <bsd.port.mk>
