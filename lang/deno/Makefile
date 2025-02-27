@@ -6,7 +6,7 @@ DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
 
-VERSION =		2.1.10
+VERSION =		2.2.2
 HOMEPAGE =		https://deno.com/runtime
 
 DISTNAME =		deno-${VERSION}
@@ -53,7 +53,8 @@ BUILD_DEPENDS =		databases/sqlite3 \
 			devel/gmake \
 			devel/gn \
 			devel/ninja \
-			devel/protobuf-c
+			devel/protobuf-c \
+			lang/rust,-rustfmt
 
 LIB_DEPENDS =		archivers/zstd \
 			devel/libffi \
@@ -70,7 +71,7 @@ PORTHOME =		${WRKSRC}
 
 DENO_CORE_ICUDATA_V =	0.74.0
 DENO_TS_V =		0.20.2
-V8_CARGO_V =		130.0.7
+V8_CARGO_V =		134.4.0
 
 V8_DISTDIR =		${MODCARGO_VENDOR_DIR}/v8-${V8_CARGO_V}
 V8_BPGO_DIR =		${V8_DISTDIR}/v8/tools/builtins-pgo
