@@ -1,10 +1,9 @@
 COMMENT=		GLib library wrapping libgit2
 
-V=			1.2.0
+V=			1.2.1
 DISTNAME=		libgit2-glib-$V
-REVISION=		4
 
-SHARED_LIBS += git2-glib-1.0             6.1 # 0.200.0
+SHARED_LIBS += git2-glib-1.0             6.1 # 0.200.1
 
 SUBDIR=			sources/libgit2-glib/${V:R}/
 SITES=			${SITE_GNOME:=${SUBDIR}}
