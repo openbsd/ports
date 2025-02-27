@@ -1,0 +1,82 @@
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
+@@ -820,7 +820,6 @@ fi
+ # Xft is optional, allows text rotation in plots
+ 
+ if test "x$no_x" != xyes ; then
+-    X_CFLAGS="$X_CFLAGS -I/usr/include/freetype2"
+     AC_CHECK_LIB([Xaw], [main], [X_LIBS="$X_LIBS -lXaw"],
+         [AC_MSG_ERROR([Couldn't find Xaw library])], [$X_LIBS $X_EXTRA_LIBS])
+     AC_CHECK_LIB([Xmu], [main], [X_LIBS="$X_LIBS -lXmu"],
+@@ -829,21 +828,9 @@ if test "x$no_x" != xyes ; then
+     AC_CHECK_LIB([Xext], [XShmAttach], [X_LIBS="$X_LIBS -lXext"],
+         [AC_MSG_ERROR([Couldn't find Xext library])], [$X_LIBS $X_EXTRA_LIBS])
+     X_LIBS="$X_LIBS -lX11"
+-	AC_CHECK_LIB([Xft], [main],
+-        [AC_DEFINE([HAVE_LIBXFT], [1], [Have xft routines in libxft])]
+-        X_LIBS="$X_LIBS -lXft -lfontconfig -lXrender -lfreetype"
+-        has_xft=yes,
+-        [has_xft=no], [$X_LIBS $X_EXTRA_LIBS])
++    PKG_CHECK_MODULES([XFT], [xft], [X_CFLAGS="$X_CFLAGS $XFT_CFLAGS"; X_LIBS="$X_LIBS $XFT_LIBS"],
++                      [AC_MSG_ERROR([Couldn't find freetype library])])
+ 
+-    if test "x$has_xft" = xyes ; then
+-        AC_CHECK_LIB([fontconfig], [main], [],
+-            [AC_MSG_ERROR([Couldn't find fontconfig library])], [$X_LIBS $X_EXTRA_LIBS])
+-#        AC_CHECK_LIB([Xrender], [main], [],
+-#            [AC_MSG_ERROR([Couldn't find Xrender library])], [$X_LIBS $X_EXTRA_LIBS])
+-        AC_CHECK_LIB([freetype], [main], [],
+-            [AC_MSG_ERROR([Couldn't find freetype library])], [$X_LIBS $X_EXTRA_LIBS])
+-    fi
+-
+     has_no_x=false
+ else
+     AC_DEFINE([X_DISPLAY_MISSING])
+@@ -864,9 +851,27 @@ AM_CONDITIONAL([NO_X], [test "x$has_no_x" = xtrue])
+ AM_CONDITIONAL([NO_HELP], [test "x$has_no_help" = xtrue])
+ 
+ # Additional libs of hicum group
+-AC_CHECK_LIB(stdc++, main, XTRALIBS="$XTRALIBS -lstdc++",,)
+-AC_SUBST(XTRALIBS, $XTRALIBS)
++#AC_CHECK_LIB(stdc++, main, XTRALIBS="$XTRALIBS -lstdc++",,)
++#AC_SUBST(XTRALIBS, $XTRALIBS)
++# Determine which C++ standard library to use based on the compiler
++AC_MSG_CHECKING([which C++ standard library to use])
++case `$CXX --version` in
++  *clang*)
++    AC_CHECK_LIB(c++, main, XTRALIBS="$XTRALIBS -lc++ -pthread",,)
++    AC_SUBST(XTRALIBS, $XTRALIBS)
++    ;;
++  *g++*)
++    AC_CHECK_LIB(stdc++, main, XTRALIBS="$XTRALIBS -lestdc++",,)
++    AC_SUBST(XTRALIBS, $XTRALIBS)
++    ;;
++  *)
++    AC_MSG_ERROR([Unknown C++ compiler])
++    ;;
++esac
+ 
++#AC_SUBST(XTRALIBS, $XTRALIBS)
++
++
+ LIBS="$LIBS $XTRALIBS"
+ 
+ # enabling making of the old and outdated applications
+@@ -1112,7 +1117,7 @@ if test "x$enable_xspice" = xno; then
+                 XSPICEDLLIBS=""
+                 ;;
+             * )
+-                XSPICEDLLIBS="-ldl"
++                XSPICEDLLIBS=""
+                 ;;
+         esac
+     fi
+@@ -1135,7 +1140,6 @@ else
+             ;;
+         *openbsd* )
+             AC_DEFINE([IPC_UNIX_SOCKETS], [1], [Client-Server via socket.])
+-            XSPICEDLLIBS="-ldl"
+             ;;
+         *solaris* )
+             AC_DEFINE([IPC_UNIX_SOCKETS], [1], [Client-Server via socket.])

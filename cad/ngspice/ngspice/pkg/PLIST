@@ -1,8 +1,26 @@
 @pkgpath cad/ngspice
 @bin bin/ngspice
+lib/ngspice/
+@bin lib/ngspice/analog.cm
+@bin lib/ngspice/digital.cm
+@bin lib/ngspice/spice2poly.cm
+@bin lib/ngspice/table.cm
+@bin lib/ngspice/xtradev.cm
+@bin lib/ngspice/xtraevt.cm
 @man man/man1/ngspice.1
 share/ngspice/
 share/ngspice/scripts/
+share/ngspice/scripts/ciderinit
+share/ngspice/scripts/devaxis
+share/ngspice/scripts/devload
 share/ngspice/scripts/setplot
 share/ngspice/scripts/spectrum
 share/ngspice/scripts/spinit
+share/ngspice/scripts/src/
+share/ngspice/scripts/src/ngspice/
+share/ngspice/scripts/src/ngspice/cmtypes.h
+share/ngspice/scripts/src/ngspice/cosim.h
+share/ngspice/scripts/src/ngspice/miftypes.h
+share/ngspice/scripts/src/verilator_main.cpp
+share/ngspice/scripts/src/verilator_shim.cpp
+share/ngspice/scripts/vlnggen

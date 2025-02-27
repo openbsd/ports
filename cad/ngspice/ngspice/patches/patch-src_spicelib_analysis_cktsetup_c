@@ -1,0 +1,11 @@
+Index: src/spicelib/analysis/cktsetup.c
+--- src/spicelib/analysis/cktsetup.c.orig
++++ src/spicelib/analysis/cktsetup.c
+@@ -21,7 +21,6 @@ Author: 1985 Thomas L. Quarles
+ #endif
+ 
+ #ifdef USE_OMP
+-#include <omp.h>
+ #include "ngspice/cpextern.h"
+ int nthreads;
+ #endif

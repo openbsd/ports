@@ -1,10 +1,9 @@
-COMMENT =		circuit simulator, based on Berkeley SPICE
+COMMENT =	circuit simulator, based on Berkeley SPICE
 
-REVISION =	1
+WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xaw Xdmcp Xext Xft
+WANTLIB += Xmu Xpm Xrender Xt c curses expat fontconfig freetype
+WANTLIB += m readline xcb z
 
-WANTLIB += ICE SM X11 Xau Xaw Xdmcp Xext Xmu Xpm Xt c m xcb
-
-post-install:
-	@rm -r ${PREFIX}/include/ngspice
+CONFIGURE_ARGS +=	--with-x
 
 .include <bsd.port.mk>
