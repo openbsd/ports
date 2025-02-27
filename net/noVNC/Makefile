@@ -4,11 +4,11 @@ DISTNAME=	noVNC-20160209
 GH_ACCOUNT=	kelleyk
 GH_PROJECT=	noVNC
 GH_COMMIT=	9ade40e815b15c7dcf732e24f6870cd0d88547c2
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	net www
 
-HOMEPAGE=	http://novnc.com/
+HOMEPAGE=	https://github.com/kelleyk/noVNC
 
 # core: MPL 2.0
 # (plus some others for included files)
