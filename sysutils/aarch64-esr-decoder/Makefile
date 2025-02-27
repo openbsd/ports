@@ -1,9 +1,9 @@
 COMMENT =		decode AArch64 ESR register values
 
-V =			0.2.3pl20250218
+V =			0.2.3pl20250227
 GH_ACCOUNT =		google
 GH_PROJECT =		aarch64-esr-decoder
-GH_COMMIT =		87d758c91971993e395c3f0089f08abbbe895277
+GH_COMMIT =		344d60e5b345c41a993911a621e09eb0a438698d
 DISTNAME =		${GH_PROJECT}-$V
 
 HOMEPAGE =		https://esr.arm64.dev/
