@@ -1,11 +1,6 @@
-@pkgpath www/py-webpy,python3
 @conflict py-webpy-*
+@pkgpath www/py-webpy,python3
 lib/python${MODPY_VERSION}/site-packages/web/
-lib/python${MODPY_VERSION}/site-packages/web.py-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/web.py-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/web.py-${MODPY_DISTV}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/web.py-${MODPY_DISTV}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/web.py-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/web/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/web/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/web/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -63,3 +58,9 @@ lib/python${MODPY_VERSION}/site-packages/web/test.py
 lib/python${MODPY_VERSION}/site-packages/web/utils.py
 lib/python${MODPY_VERSION}/site-packages/web/webapi.py
 lib/python${MODPY_VERSION}/site-packages/web/wsgi.py
+lib/python${MODPY_VERSION}/site-packages/web_py-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/web_py-${MODPY_DISTV}.dist-info/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/web_py-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/web_py-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/web_py-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/web_py-${MODPY_DISTV}.dist-info/top_level.txt

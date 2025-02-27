@@ -1,9 +1,11 @@
 COMMENT=	web framework for python
 
-MODPY_DISTV=	0.61
-DISTNAME=	web.py-${MODPY_DISTV}
-PKGNAME=	py-webpy-${MODPY_DISTV}
-REVISION=	5
+MODPY_DISTV=	0.70
+GH_ACCOUNT =	webpy
+GH_PROJECT =	webpy
+GH_TAGNAME =	webpy-${MODPY_DISTV}
+DISTNAME=	webpy-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
 CATEGORIES=	www
 
@@ -16,9 +18,9 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 
-MODPY_PI=	Yes
 MODPY_PYBUILD =	setuptools
 
-RUN_DEPENDS=	www/py-cheroot
+RUN_DEPENDS=	www/py-cheroot \
+		www/py-multipart
 
 .include <bsd.port.mk>
