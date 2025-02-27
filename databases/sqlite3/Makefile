@@ -2,10 +2,10 @@ COMMENT=	embedded SQL implementation
 
 DISTNAME =	sqlite-autoconf-3480000
 PKGNAME=	sqlite3-3.48.0
-REVISION=	0
+REVISION=	1
 
 # XXX needs bumps every time :-
-SHARED_LIBS +=  sqlite3                   37.30 # 8.6
+SHARED_LIBS +=  sqlite3                   37.31 # 8.6
 # sqlite suggests that users might like to assert() that library and header
 # versions match, so bumps are needed even if function signatures don't change.
 # ... at the current time the only one noticed is a < check (in subversion)
@@ -35,7 +35,9 @@ CONFIGURE_ARGS +=	--enable-fts5
 CFLAGS+=	-DSQLITE_ENABLE_UNLOCK_NOTIFY \
 		-DSQLITE_ENABLE_FTS3 \
 		-DSQLITE_ENABLE_DBSTAT_VTAB \
-		-DSQLITE_ENABLE_COLUMN_METADATA=1
+		-DSQLITE_ENABLE_COLUMN_METADATA=1 \
+		-DSQLITE_ENABLE_SESSION \
+		-DSQLITE_ENABLE_PREUPDATE_HOOK
 
 BUILD_DEPENDS =	converters/sqlite2mdoc
 post-install:
