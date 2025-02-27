@@ -1,1 +1,2 @@
 @bin bin/mediainfo
+@man man/man1/mediainfo.1

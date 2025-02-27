@@ -3,6 +3,7 @@ COMMENT=	utility for reading information from audio/video files
 VERSION=	24.12
 PKGNAME=	mediainfo-${VERSION}
 CATEGORIES=	multimedia
+REVISION=	0
 
 HOMEPAGE=	https://mediaarea.net/en/MediaInfo
 
@@ -31,5 +32,11 @@ AUTOCONF_DIR=	${WRKBUILD}
 
 WRKDIST=	${WRKDIR}/MediaInfo
 WRKBUILD=	${WRKSRC}/Project/GNU/CLI
+
+post-build:
+	pod2man ${WRKSRC}/debian/mediainfo.pod ${WRKBUILD}/mediainfo.1
+
+post-install:
+	${INSTALL_DATA} ${WRKBUILD}/mediainfo.1 ${PREFIX}/man/man1
 
 .include <bsd.port.mk>
