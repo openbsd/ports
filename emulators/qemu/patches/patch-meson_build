@@ -24,7 +24,7 @@ Index: meson.build
  config_host_data.set_quoted('CONFIG_QEMU_MODDIR', get_option('prefix') / qemu_moddir)
  config_host_data.set_quoted('CONFIG_SYSCONFDIR', get_option('prefix') / get_option('sysconfdir'))
  
-@@ -4561,9 +4560,6 @@ if have_rust
+@@ -4564,9 +4563,6 @@ if have_rust
    summary_info += {'bindgen version': bindgen.version()}
  endif
  option_cflags = (get_option('debug') ? ['-g'] : [])
