@@ -1,0 +1,66 @@
+Index: utils/novnc_proxy
+--- utils/novnc_proxy.orig
++++ utils/novnc_proxy
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/ksh
+ 
+ # Copyright (C) 2018 The noVNC Authors
+ # Licensed under MPL 2.0 or any later version (see LICENSE.txt)
+@@ -118,14 +118,8 @@ fi
+ 
+ # Sanity checks
+ if [ -z "${HOST}" ]; then
+-    if bash -c "exec 7<>/dev/tcp/localhost/${PORT}" &> /dev/null; then
+-        exec 7<&-
+-        exec 7>&-
+-        die "Port ${PORT} in use. Try --listen PORT"
+-    else
+-        exec 7<&-
+-        exec 7>&-
+-    fi
++    netstat -ln -p tcp | grep -qs "\.${PORT} .*LISTEN" \
++        && die "Port ${PORT} in use. Try --listen PORT"
+ fi
+ 
+ trap "cleanup" TERM QUIT INT EXIT
+@@ -169,38 +163,7 @@ if [ -n "${KEY}" ]; then
+     fi
+ fi
+ 
+-# try to find websockify (prefer local, try global, then download local)
+-if [[ -d ${HERE}/websockify ]]; then
+-    WEBSOCKIFY=${HERE}/websockify/run
+-
+-    if [[ ! -x $WEBSOCKIFY ]]; then
+-        echo "The path ${HERE}/websockify exists, but $WEBSOCKIFY either does not exist or is not executable."
+-        echo "If you intended to use an installed websockify package, please remove ${HERE}/websockify."
+-        exit 1
+-    fi
+-
+-    echo "Using local websockify at $WEBSOCKIFY"
+-else
+-    WEBSOCKIFY_FROMSYSTEM=$(which websockify 2>/dev/null)
+-    WEBSOCKIFY_FROMSNAP=${HERE}/../usr/bin/python2-websockify
+-    [ -f $WEBSOCKIFY_FROMSYSTEM ] && WEBSOCKIFY=$WEBSOCKIFY_FROMSYSTEM
+-    [ -f $WEBSOCKIFY_FROMSNAP ] && WEBSOCKIFY=$WEBSOCKIFY_FROMSNAP
+-
+-    if [ ! -f "$WEBSOCKIFY" ]; then
+-        echo "No installed websockify, attempting to clone websockify..."
+-        WEBSOCKIFY=${HERE}/websockify/run
+-        git clone https://github.com/novnc/websockify ${HERE}/websockify
+-
+-        if [[ ! -e $WEBSOCKIFY ]]; then
+-            echo "Unable to locate ${HERE}/websockify/run after downloading"
+-            exit 1
+-        fi
+-
+-        echo "Using local websockify at $WEBSOCKIFY"
+-    else
+-        echo "Using installed websockify at $WEBSOCKIFY"
+-    fi
+-fi
++WEBSOCKIFY=/usr/local/bin/websockify
+ 
+ # Make all file paths absolute as websockify changes working directory
+ WEB=`realpath "${WEB}"`

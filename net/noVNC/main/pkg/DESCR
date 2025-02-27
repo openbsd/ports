@@ -1,0 +1,16 @@
+noVNC is both a HTML VNC client JavaScript library and an application
+built on top of that library. noVNC runs well in any modern browser
+including mobile browsers (iOS and Android).
+
+- Supports scaling, clipping and resizing the desktop
+- Supports back & forward mouse buttons
+- Local cursor rendering
+- Clipboard copy/paste with full Unicode support
+- Translations
+- Touch gestures for emulating common mouse actions
+
+Supported authentication methods: none, classical VNC, RealVNC's RSA-AES,
+Tight, VeNCrypt Plain, XVP, Apple's Diffie-Hellman, UltraVNC's MSLogonII.
+
+Supported VNC encodings: raw, copyrect, rre, hextile, tight, tightPNG,
+ZRLE, JPEG, Zlib, H.264.
