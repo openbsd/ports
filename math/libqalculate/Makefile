@@ -3,11 +3,11 @@ BROKEN-sparc64 = localpointer.h:561:31: error: 'auto' parameter not permitted in
 COMMENT =	applied math library and CLI calculator
 CATEGORIES =	math devel
 
-V =		5.2.0
+V =		5.5.1
 DISTNAME =	libqalculate-$V
 HOMEPAGE =	https://qalculate.github.io/
 
-SHARED_LIBS +=  qalculate            8.1      # 24.0
+SHARED_LIBS +=  qalculate            9.0      # 26.3
 
 # GPLv2+
 PERMIT_PACKAGE = Yes
@@ -32,6 +32,7 @@ LIB_DEPENDS =	devel/gettext,-runtime \
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.72
 USE_GMAKE =		Yes
+PORTHOME =		${WRKDIR}
 
 CONFIGURE_ARGS =	--with-readline=ereadline
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include/ereadline -I${LOCALBASE}/include" \

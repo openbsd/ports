@@ -1,5 +1,3 @@
-OpenBSD: patch-configure_ac,v 1.1 2021/01/10 16:10:37 sthen Exp $
-
 - neuter test for doxygen, there's no way to forcibly disable
 - handle readline under the name "ereadline"
 
@@ -37,7 +35,7 @@ Index: configure.ac
     AC_CHECK_HEADERS(readline/readline.h readline/history.h)
     if test "x${ac_cv_header_readline_readline_h}" != "xyes" -o "x${ac_cv_header_readline_history_h}" != "xyes"; then
       AC_MSG_WARN([Could not find the headers for libreadline.])
-@@ -238,6 +244,7 @@ if test "x$enable_textport" = "xyes" ; then
+@@ -247,6 +253,7 @@ if test "x$enable_textport" = "xyes" ; then
        AC_MSG_WARN([Could not find libreadline.])
      fi
     fi
