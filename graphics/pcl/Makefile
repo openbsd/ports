@@ -3,30 +3,18 @@ ONLY_FOR_ARCHS =	${LP64_ARCHS}
 
 COMMENT =		image and point cloud processing library
 
-V =			1.14.1
+V =			1.15.0
 PKGNAME =		pcl-${V}
-REVISION =		1
 
 DIST_TUPLE +=		github PointCloudLibrary pcl ${PKGNAME} .
 DIST_TUPLE +=		github google googletest v1.15.2 ../gtest_dist
 
-SHARED_LIBS +=		pcl_common		0.0 # 0.0
-SHARED_LIBS +=  	pcl_features		0.0 # 0.0
-SHARED_LIBS +=  	pcl_filters		0.0 # 0.0
-SHARED_LIBS +=  	pcl_io			0.0 # 0.0
-SHARED_LIBS +=  	pcl_io_ply		0.0 # 0.0
-SHARED_LIBS +=  	pcl_kdtree		0.0 # 0.0
-SHARED_LIBS +=  	pcl_keypoints		0.0 # 0.0
-SHARED_LIBS +=  	pcl_ml			0.0 # 0.0
-SHARED_LIBS +=  	pcl_octree		0.0 # 0.0
-SHARED_LIBS +=  	pcl_recognition		0.0 # 0.0
-SHARED_LIBS +=  	pcl_registration	0.0 # 0.0
-SHARED_LIBS +=  	pcl_sample_consensus	0.0 # 0.0
-SHARED_LIBS +=  	pcl_search		0.0 # 0.0
-SHARED_LIBS +=  	pcl_segmentation	0.0 # 0.0
-SHARED_LIBS +=  	pcl_stereo		0.0 # 0.0
-SHARED_LIBS +=  	pcl_surface		0.0 # 0.0
-SHARED_LIBS +=  	pcl_tracking		0.0 # 0.0
+.for LIB in pcl_common pcl_features pcl_filters pcl_io pcl_io_ply pcl_kdtree \
+        pcl_keypoints pcl_ml pcl_octree pcl_recognition pcl_registration \
+        pcl_sample_consensus pcl_search pcl_segmentation pcl_stereo \
+        pcl_surface pcl_tracking
+SHARED_LIBS += ${LIB} 1.0 # 0.0
+.endfor
 
 CATEGORIES =		graphics
 HOMEPAGE =		https://pointclouds.org/
@@ -35,9 +23,8 @@ MAINTAINER =		Johannes Thyssen Tishman <jtt@openbsd.org>
 # BSD 3-clause
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} boost_filesystem-mt boost_iostreams-mt
-WANTLIB += boost_regex-mt c flann_cpp lz4 m pcap png qhull_r usb-1.0
-WANTLIB += z
+WANTLIB += ${COMPILER_LIBCXX} boost_iostreams-mt boost_regex-mt
+WANTLIB += c flann_cpp lz4 m pcap png qhull_r usb-1.0 z
 
 COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake
@@ -45,9 +32,7 @@ MODULES =		devel/cmake
 PCLVER =		pcl-${V:R}
 SUBST_VARS +=		PCLVER
 
-BUILD_DEPENDS =		graphics/freeglut \
-			graphics/glew \
-			math/eigen3 \
+BUILD_DEPENDS =		math/eigen3 \
 			x11/xkbcommon
 
 LIB_DEPENDS =		devel/boost \
@@ -56,11 +41,15 @@ LIB_DEPENDS =		devel/boost \
 			math/flann \
 			math/qhull
 
+# OpenGL, freeglut and GLEW are only needed by subsystems that are either
+# disabled by default (apps, simulation) or due to an external dependency
+# (visualization --> WITH_VTK=OFF).
+# https://github.com/PointCloudLibrary/pcl/issues/2641
 CONFIGURE_ARGS =	-DWITH_LIBUSB=ON \
-			-DWITH_OPENGL=ON \
 			-DWITH_PCAP=ON \
 			-DWITH_PNG=ON \
 			-DWITH_QHULL=ON \
+			-DWITH_OPENGL=OFF \
 			-DWITH_OPENMP=OFF \
 			-DWITH_CUDA=OFF \
 			-DWITH_VTK=OFF \
@@ -73,7 +62,8 @@ CONFIGURE_ARGS =	-DWITH_LIBUSB=ON \
 			-DWITH_RSSDK2=OFF \
 			-DWITH_QT=OFF \
 			-DWITH_DOCS=OFF \
-			-DBUILD_global_tests=ON
+			-DBUILD_global_tests=ON \
+			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
 
 # GTest's source is needed for tests
 GTEST_WRKSRC =		${WRKDIR}/gtest_dist/googletest

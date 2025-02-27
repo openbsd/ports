@@ -1,4 +1,5 @@
 @bin bin/pcl_add_gaussian_noise
+@bin bin/pcl_bilateral_upsampling
 @bin bin/pcl_boundary_estimation
 @bin bin/pcl_cluster_extraction
 @bin bin/pcl_compute_cloud_error
@@ -82,7 +83,6 @@ include/${PCLVER}/pcl/cloud_iterator.h
 include/${PCLVER}/pcl/common/
 include/${PCLVER}/pcl/common/angles.h
 include/${PCLVER}/pcl/common/bivariate_polynomial.h
-include/${PCLVER}/pcl/common/boost.h
 include/${PCLVER}/pcl/common/centroid.h
 include/${PCLVER}/pcl/common/colors.h
 include/${PCLVER}/pcl/common/common.h
@@ -162,14 +162,12 @@ include/${PCLVER}/pcl/exceptions.h
 include/${PCLVER}/pcl/features/
 include/${PCLVER}/pcl/features/3dsc.h
 include/${PCLVER}/pcl/features/board.h
-include/${PCLVER}/pcl/features/boost.h
 include/${PCLVER}/pcl/features/boundary.h
 include/${PCLVER}/pcl/features/brisk_2d.h
 include/${PCLVER}/pcl/features/cppf.h
 include/${PCLVER}/pcl/features/crh.h
 include/${PCLVER}/pcl/features/cvfh.h
 include/${PCLVER}/pcl/features/don.h
-include/${PCLVER}/pcl/features/eigen.h
 include/${PCLVER}/pcl/features/esf.h
 include/${PCLVER}/pcl/features/feature.h
 include/${PCLVER}/pcl/features/flare.h
@@ -263,7 +261,6 @@ include/${PCLVER}/pcl/features/vfh.h
 include/${PCLVER}/pcl/filters/
 include/${PCLVER}/pcl/filters/approximate_voxel_grid.h
 include/${PCLVER}/pcl/filters/bilateral.h
-include/${PCLVER}/pcl/filters/boost.h
 include/${PCLVER}/pcl/filters/box_clipper3D.h
 include/${PCLVER}/pcl/filters/clipper3D.h
 include/${PCLVER}/pcl/filters/conditional_removal.h
@@ -340,7 +337,6 @@ include/${PCLVER}/pcl/filters/voxel_grid_occlusion_estimation.h
 include/${PCLVER}/pcl/for_each_type.h
 include/${PCLVER}/pcl/geometry/
 include/${PCLVER}/pcl/geometry/boost.h
-include/${PCLVER}/pcl/geometry/eigen.h
 include/${PCLVER}/pcl/geometry/get_boundary.h
 include/${PCLVER}/pcl/geometry/impl/
 include/${PCLVER}/pcl/geometry/impl/polygon_operations.hpp
@@ -366,10 +362,8 @@ include/${PCLVER}/pcl/impl/point_types.hpp
 include/${PCLVER}/pcl/io/
 include/${PCLVER}/pcl/io/ascii_io.h
 include/${PCLVER}/pcl/io/auto_io.h
-include/${PCLVER}/pcl/io/boost.h
 include/${PCLVER}/pcl/io/debayer.h
 include/${PCLVER}/pcl/io/dinast_grabber.h
-include/${PCLVER}/pcl/io/eigen.h
 include/${PCLVER}/pcl/io/file_grabber.h
 include/${PCLVER}/pcl/io/file_io.h
 include/${PCLVER}/pcl/io/fotonic_grabber.h
@@ -386,7 +380,6 @@ include/${PCLVER}/pcl/io/impl/octree_pointcloud_compression.hpp
 include/${PCLVER}/pcl/io/impl/pcd_io.hpp
 include/${PCLVER}/pcl/io/impl/point_cloud_image_extractors.hpp
 include/${PCLVER}/pcl/io/impl/synchronized_queue.hpp
-include/${PCLVER}/pcl/io/io.h
 include/${PCLVER}/pcl/io/io_exception.h
 include/${PCLVER}/pcl/io/low_level_io.h
 include/${PCLVER}/pcl/io/lzf.h
@@ -441,8 +434,6 @@ include/${PCLVER}/pcl/keypoints/smoothed_surfaces_keypoint.h
 include/${PCLVER}/pcl/keypoints/susan.h
 include/${PCLVER}/pcl/keypoints/trajkovic_2d.h
 include/${PCLVER}/pcl/keypoints/trajkovic_3d.h
-include/${PCLVER}/pcl/keypoints/uniform_sampling.h
-include/${PCLVER}/pcl/make_shared.h
 include/${PCLVER}/pcl/memory.h
 include/${PCLVER}/pcl/ml/
 include/${PCLVER}/pcl/ml/branch_estimator.h
@@ -485,7 +476,6 @@ include/${PCLVER}/pcl/ml/stats_estimator.h
 include/${PCLVER}/pcl/ml/svm.h
 include/${PCLVER}/pcl/ml/svm_wrapper.h
 include/${PCLVER}/pcl/octree/
-include/${PCLVER}/pcl/octree/boost.h
 include/${PCLVER}/pcl/octree/impl/
 include/${PCLVER}/pcl/octree/impl/octree2buf_base.hpp
 include/${PCLVER}/pcl/octree/impl/octree_base.hpp
@@ -520,7 +510,6 @@ include/${PCLVER}/pcl/pcl_tests.h
 include/${PCLVER}/pcl/point_cloud.h
 include/${PCLVER}/pcl/point_representation.h
 include/${PCLVER}/pcl/point_struct_traits.h
-include/${PCLVER}/pcl/point_traits.h
 include/${PCLVER}/pcl/point_types.h
 include/${PCLVER}/pcl/point_types_conversion.h
 include/${PCLVER}/pcl/range_image/
@@ -544,9 +533,6 @@ include/${PCLVER}/pcl/recognition/3rdparty/metslib/observer.hh
 include/${PCLVER}/pcl/recognition/3rdparty/metslib/simulated-annealing.hh
 include/${PCLVER}/pcl/recognition/3rdparty/metslib/tabu-search.hh
 include/${PCLVER}/pcl/recognition/3rdparty/metslib/termination-criteria.hh
-include/${PCLVER}/pcl/recognition/auxiliary.h
-include/${PCLVER}/pcl/recognition/boost.h
-include/${PCLVER}/pcl/recognition/bvh.h
 include/${PCLVER}/pcl/recognition/cg/
 include/${PCLVER}/pcl/recognition/cg/correspondence_grouping.h
 include/${PCLVER}/pcl/recognition/cg/geometric_consistency.h
@@ -570,7 +556,6 @@ include/${PCLVER}/pcl/recognition/hv/hv_go.h
 include/${PCLVER}/pcl/recognition/hv/hv_papazov.h
 include/${PCLVER}/pcl/recognition/hv/hypotheses_verification.h
 include/${PCLVER}/pcl/recognition/hv/occlusion_reasoning.h
-include/${PCLVER}/pcl/recognition/hypothesis.h
 include/${PCLVER}/pcl/recognition/impl/
 include/${PCLVER}/pcl/recognition/impl/cg/
 include/${PCLVER}/pcl/recognition/impl/cg/correspondence_grouping.hpp
@@ -582,25 +567,16 @@ include/${PCLVER}/pcl/recognition/impl/hv/hv_go.hpp
 include/${PCLVER}/pcl/recognition/impl/hv/hv_papazov.hpp
 include/${PCLVER}/pcl/recognition/impl/hv/occlusion_reasoning.hpp
 include/${PCLVER}/pcl/recognition/impl/implicit_shape_model.hpp
-include/${PCLVER}/pcl/recognition/impl/line_rgbd.hpp
 include/${PCLVER}/pcl/recognition/impl/linemod/
 include/${PCLVER}/pcl/recognition/impl/linemod/line_rgbd.hpp
 include/${PCLVER}/pcl/recognition/impl/ransac_based/
 include/${PCLVER}/pcl/recognition/impl/ransac_based/simple_octree.hpp
 include/${PCLVER}/pcl/recognition/impl/ransac_based/voxel_structure.hpp
-include/${PCLVER}/pcl/recognition/impl/simple_octree.hpp
-include/${PCLVER}/pcl/recognition/impl/voxel_structure.hpp
 include/${PCLVER}/pcl/recognition/implicit_shape_model.h
-include/${PCLVER}/pcl/recognition/line_rgbd.h
 include/${PCLVER}/pcl/recognition/linemod/
 include/${PCLVER}/pcl/recognition/linemod.h
 include/${PCLVER}/pcl/recognition/linemod/line_rgbd.h
 include/${PCLVER}/pcl/recognition/mask_map.h
-include/${PCLVER}/pcl/recognition/model_library.h
-include/${PCLVER}/pcl/recognition/obj_rec_ransac.h
-include/${PCLVER}/pcl/recognition/orr_graph.h
-include/${PCLVER}/pcl/recognition/orr_octree.h
-include/${PCLVER}/pcl/recognition/orr_octree_zprojection.h
 include/${PCLVER}/pcl/recognition/point_types.h
 include/${PCLVER}/pcl/recognition/quantizable_modality.h
 include/${PCLVER}/pcl/recognition/quantized_map.h
@@ -618,16 +594,11 @@ include/${PCLVER}/pcl/recognition/ransac_based/simple_octree.h
 include/${PCLVER}/pcl/recognition/ransac_based/trimmed_icp.h
 include/${PCLVER}/pcl/recognition/ransac_based/voxel_structure.h
 include/${PCLVER}/pcl/recognition/region_xy.h
-include/${PCLVER}/pcl/recognition/rigid_transform_space.h
-include/${PCLVER}/pcl/recognition/simple_octree.h
 include/${PCLVER}/pcl/recognition/sparse_quantized_multi_mod_template.h
 include/${PCLVER}/pcl/recognition/surface_normal_modality.h
-include/${PCLVER}/pcl/recognition/trimmed_icp.h
-include/${PCLVER}/pcl/recognition/voxel_structure.h
 include/${PCLVER}/pcl/register_point_struct.h
 include/${PCLVER}/pcl/registration/
 include/${PCLVER}/pcl/registration/bfgs.h
-include/${PCLVER}/pcl/registration/boost.h
 include/${PCLVER}/pcl/registration/boost_graph.h
 include/${PCLVER}/pcl/registration/convergence_criteria.h
 include/${PCLVER}/pcl/registration/correspondence_estimation.h
@@ -650,7 +621,6 @@ include/${PCLVER}/pcl/registration/correspondence_sorting.h
 include/${PCLVER}/pcl/registration/correspondence_types.h
 include/${PCLVER}/pcl/registration/default_convergence_criteria.h
 include/${PCLVER}/pcl/registration/distances.h
-include/${PCLVER}/pcl/registration/eigen.h
 include/${PCLVER}/pcl/registration/elch.h
 include/${PCLVER}/pcl/registration/exceptions.h
 include/${PCLVER}/pcl/registration/gicp.h
@@ -665,17 +635,10 @@ include/${PCLVER}/pcl/registration/impl/correspondence_estimation.hpp
 include/${PCLVER}/pcl/registration/impl/correspondence_estimation_backprojection.hpp
 include/${PCLVER}/pcl/registration/impl/correspondence_estimation_normal_shooting.hpp
 include/${PCLVER}/pcl/registration/impl/correspondence_estimation_organized_projection.hpp
-include/${PCLVER}/pcl/registration/impl/correspondence_rejection_distance.hpp
 include/${PCLVER}/pcl/registration/impl/correspondence_rejection_features.hpp
-include/${PCLVER}/pcl/registration/impl/correspondence_rejection_median_distance.hpp
-include/${PCLVER}/pcl/registration/impl/correspondence_rejection_one_to_one.hpp
-include/${PCLVER}/pcl/registration/impl/correspondence_rejection_organized_boundary.hpp
 include/${PCLVER}/pcl/registration/impl/correspondence_rejection_poly.hpp
 include/${PCLVER}/pcl/registration/impl/correspondence_rejection_sample_consensus.hpp
 include/${PCLVER}/pcl/registration/impl/correspondence_rejection_sample_consensus_2d.hpp
-include/${PCLVER}/pcl/registration/impl/correspondence_rejection_surface_normal.hpp
-include/${PCLVER}/pcl/registration/impl/correspondence_rejection_trimmed.hpp
-include/${PCLVER}/pcl/registration/impl/correspondence_rejection_var_trimmed.hpp
 include/${PCLVER}/pcl/registration/impl/correspondence_types.hpp
 include/${PCLVER}/pcl/registration/impl/default_convergence_criteria.hpp
 include/${PCLVER}/pcl/registration/impl/elch.hpp
@@ -732,13 +695,10 @@ include/${PCLVER}/pcl/registration/transformation_estimation_svd_scale.h
 include/${PCLVER}/pcl/registration/transformation_estimation_symmetric_point_to_plane_lls.h
 include/${PCLVER}/pcl/registration/transformation_validation.h
 include/${PCLVER}/pcl/registration/transformation_validation_euclidean.h
-include/${PCLVER}/pcl/registration/transforms.h
 include/${PCLVER}/pcl/registration/warp_point_rigid.h
 include/${PCLVER}/pcl/registration/warp_point_rigid_3d.h
 include/${PCLVER}/pcl/registration/warp_point_rigid_6d.h
 include/${PCLVER}/pcl/sample_consensus/
-include/${PCLVER}/pcl/sample_consensus/boost.h
-include/${PCLVER}/pcl/sample_consensus/eigen.h
 include/${PCLVER}/pcl/sample_consensus/impl/
 include/${PCLVER}/pcl/sample_consensus/impl/lmeds.hpp
 include/${PCLVER}/pcl/sample_consensus/impl/mlesac.hpp
@@ -764,6 +724,7 @@ include/${PCLVER}/pcl/sample_consensus/impl/sac_model_registration.hpp
 include/${PCLVER}/pcl/sample_consensus/impl/sac_model_registration_2d.hpp
 include/${PCLVER}/pcl/sample_consensus/impl/sac_model_sphere.hpp
 include/${PCLVER}/pcl/sample_consensus/impl/sac_model_stick.hpp
+include/${PCLVER}/pcl/sample_consensus/impl/sac_model_torus.hpp
 include/${PCLVER}/pcl/sample_consensus/lmeds.h
 include/${PCLVER}/pcl/sample_consensus/method_types.h
 include/${PCLVER}/pcl/sample_consensus/mlesac.h
@@ -792,6 +753,7 @@ include/${PCLVER}/pcl/sample_consensus/sac_model_registration.h
 include/${PCLVER}/pcl/sample_consensus/sac_model_registration_2d.h
 include/${PCLVER}/pcl/sample_consensus/sac_model_sphere.h
 include/${PCLVER}/pcl/sample_consensus/sac_model_stick.h
+include/${PCLVER}/pcl/sample_consensus/sac_model_torus.h
 include/${PCLVER}/pcl/search/
 include/${PCLVER}/pcl/search/brute_force.h
 include/${PCLVER}/pcl/search/flann_search.h
@@ -808,7 +770,6 @@ include/${PCLVER}/pcl/search/pcl_search.h
 include/${PCLVER}/pcl/search/search.h
 include/${PCLVER}/pcl/segmentation/
 include/${PCLVER}/pcl/segmentation/approximate_progressive_morphological_filter.h
-include/${PCLVER}/pcl/segmentation/boost.h
 include/${PCLVER}/pcl/segmentation/comparator.h
 include/${PCLVER}/pcl/segmentation/conditional_euclidean_clustering.h
 include/${PCLVER}/pcl/segmentation/cpc_segmentation.h
@@ -902,11 +863,9 @@ include/${PCLVER}/pcl/surface/3rdparty/poisson4/sparse_matrix.hpp
 include/${PCLVER}/pcl/surface/3rdparty/poisson4/vector.h
 include/${PCLVER}/pcl/surface/3rdparty/poisson4/vector.hpp
 include/${PCLVER}/pcl/surface/bilateral_upsampling.h
-include/${PCLVER}/pcl/surface/boost.h
 include/${PCLVER}/pcl/surface/concave_hull.h
 include/${PCLVER}/pcl/surface/convex_hull.h
 include/${PCLVER}/pcl/surface/ear_clipping.h
-include/${PCLVER}/pcl/surface/eigen.h
 include/${PCLVER}/pcl/surface/gp3.h
 include/${PCLVER}/pcl/surface/grid_projection.h
 include/${PCLVER}/pcl/surface/impl/
@@ -990,6 +949,7 @@ lib/pkgconfig/pcl_features.pc
 lib/pkgconfig/pcl_filters.pc
 lib/pkgconfig/pcl_geometry.pc
 lib/pkgconfig/pcl_io.pc
+lib/pkgconfig/pcl_io_ply.pc
 lib/pkgconfig/pcl_kdtree.pc
 lib/pkgconfig/pcl_keypoints.pc
 lib/pkgconfig/pcl_ml.pc
@@ -1004,13 +964,10 @@ lib/pkgconfig/pcl_surface.pc
 lib/pkgconfig/pcl_tracking.pc
 share/${PCLVER}/
 share/${PCLVER}/Modules/
-share/${PCLVER}/Modules/AdditionalBoostVersions.cmake
 share/${PCLVER}/Modules/FindClangFormat.cmake
 share/${PCLVER}/Modules/FindDSSDK.cmake
 share/${PCLVER}/Modules/FindEnsenso.cmake
 share/${PCLVER}/Modules/FindFLANN.cmake
-share/${PCLVER}/Modules/FindGLEW.cmake
-share/${PCLVER}/Modules/FindOpenMP.cmake
 share/${PCLVER}/Modules/FindOpenNI.cmake
 share/${PCLVER}/Modules/FindOpenNI2.cmake
 share/${PCLVER}/Modules/FindPcap.cmake

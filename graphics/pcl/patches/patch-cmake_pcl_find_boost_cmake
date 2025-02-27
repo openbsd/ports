@@ -1,0 +1,16 @@
+Our devel/boost does not include a BoostConfig.cmake file.
+
+Index: cmake/pcl_find_boost.cmake
+--- cmake/pcl_find_boost.cmake.orig
++++ cmake/pcl_find_boost.cmake
+@@ -25,8 +25,8 @@ else()
+   set(BOOST_REQUIRED_MODULES iostreams system)
+ endif()
+ 
+-find_package(Boost 1.71.0 QUIET COMPONENTS ${BOOST_OPTIONAL_MODULES} CONFIG)
+-find_package(Boost 1.71.0 REQUIRED COMPONENTS ${BOOST_REQUIRED_MODULES} CONFIG)
++find_package(Boost 1.71.0 QUIET COMPONENTS ${BOOST_OPTIONAL_MODULES})
++find_package(Boost 1.71.0 REQUIRED COMPONENTS ${BOOST_REQUIRED_MODULES})
+ 
+ if(Boost_FOUND)
+   set(BOOST_FOUND TRUE)
