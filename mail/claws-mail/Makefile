@@ -2,9 +2,8 @@ COMMENT-main=		mail and news client
 COMMENT-bogofilter=	bogofilter plugin
 COMMENT-spamassassin=	spamassassin plugin
 COMMENT-pdfviewer=	pdfviewer plugin
-REVISION-main=		0
 
-V=			4.3.0
+V=			4.3.1
 DISTNAME=		claws-mail-${V}
 
 CATEGORIES=		mail news
@@ -53,7 +52,8 @@ WANTLIB-main += sasl2 ssl startup-notification-1 tasn1 unistring
 WANTLIB-main += vorbis vorbisfile xcb-util xml2 zstd
 
 WANTLIB-pdfviewer = ${WANTLIB}
-WANTLIB-pdfviewer += lcms2 lzma openjp2 png poppler poppler-glib tiff zstd
+WANTLIB-pdfviewer += Lerc lcms2 lzma openjp2 png poppler poppler-glib
+WANTLIB-pdfviewer += tiff zstd
 
 
 LIB_DEPENDS=		devel/glib2 \
@@ -101,7 +101,7 @@ USE_GMAKE=		Yes
 LIBTOOL_FLAGS=		--tag=disable-static
 CONFIGURE_STYLE=	autoconf
 
-AUTOCONF_VERSION=	2.71
+AUTOCONF_VERSION=	2.72
 CONFIGURE_ENV+=		CPPFLAGS="-I${LOCALBASE}/include -I${X11BASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
 
