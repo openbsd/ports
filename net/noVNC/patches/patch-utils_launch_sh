@@ -1,8 +1,18 @@
---- utils/launch.sh.orig	Fri Jan 29 17:17:15 2016
-+++ utils/launch.sh	Fri Jan 29 17:17:17 2016
+Index: utils/launch.sh
+--- utils/launch.sh.orig
++++ utils/launch.sh
 @@ -1,4 +1,4 @@
 -#!/usr/bin/env bash
 +#!/bin/ksh
  
  usage() {
      if [ "$*" ]; then
+@@ -65,7 +65,7 @@ done
+ which netstat >/dev/null 2>&1 \
+     || die "Must have netstat installed"
+ 
+-netstat -ltn | grep -qs "${PORT} .*LISTEN" \
++netstat -ln -p tcp | grep -qs "\.${PORT} .*LISTEN" \
+     && die "Port ${PORT} in use. Try --listen PORT"
+ 
+ trap "cleanup" TERM QUIT INT EXIT
