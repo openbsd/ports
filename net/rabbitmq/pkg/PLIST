@@ -905,6 +905,7 @@ lib/rabbitmq/plugins/rabbitmq_amqp1_0-${V}/ebin/rabbitmq_amqp1_0.app
 lib/rabbitmq/plugins/rabbitmq_amqp1_0-${V}/ebin/rabbitmq_amqp1_0_noop.beam
 lib/rabbitmq/plugins/rabbitmq_auth_backend_cache-${V}/
 lib/rabbitmq/plugins/rabbitmq_auth_backend_cache-${V}/ebin/
+lib/rabbitmq/plugins/rabbitmq_auth_backend_cache-${V}/ebin/Elixir.RabbitMQ.CLI.Ctl.Commands.ClearAuthBackendCacheCommand.beam
 lib/rabbitmq/plugins/rabbitmq_auth_backend_cache-${V}/ebin/rabbit_auth_backend_cache.beam
 lib/rabbitmq/plugins/rabbitmq_auth_backend_cache-${V}/ebin/rabbit_auth_backend_cache_app.beam
 lib/rabbitmq/plugins/rabbitmq_auth_backend_cache-${V}/ebin/rabbit_auth_cache.beam
