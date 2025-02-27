@@ -1,6 +1,6 @@
 COMMENT =		graphical client for the SoulSeek peer-to-peer system
 
-MODPY_DISTV =		3.3.7
+MODPY_DISTV =		3.3.8
 GH_ACCOUNT =		Nicotine-Plus
 GH_PROJECT =		nicotine-plus
 GH_TAGNAME =		${MODPY_DISTV}
@@ -14,6 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
+
 BUILD_DEPENDS =		devel/gettext,-tools
 RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/py-gobject3 \

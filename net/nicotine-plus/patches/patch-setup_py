@@ -8,5 +8,5 @@ Index: setup.py
 -            ("share/man/man1", ["data/nicotine.1"]),
 +            ("man/man1", ["data/nicotine.1"]),
              ("share/icons/hicolor/16x16/apps",
-                 ["pynicotine/gtkgui/icons/hicolor/16x16/apps/org.nicotine_plus.Nicotine.svg"]),
+                 ["pynicotine/gtkgui/icons/hicolor/16x16/apps/org.nicotine_plus.Nicotine.png"]),
              ("share/icons/hicolor/16x16@2/apps",
