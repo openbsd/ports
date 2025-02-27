@@ -1,12 +1,12 @@
 # keep in sync with list from cad/kicad/Makefile
 BROKEN-powerpc =	segfaults when trying to run the PCB editor
-BROKEN =		likely needing update to recent 8.x for Python 3.12
+BROKEN =		Needs _LIBCXXABI_FORGIVING_DYNAMIC_CAST in base libcxxabi
 
 NOT_FOR_ARCHS =		powerpc
 
 PKG_ARCH ?=		*
 
-V ?=			6.0.11
+V ?=			8.0.9
 EXTRACT_SUFX ?=		.tar.bz2
 
 DISTNAME=		kicad-${KICAD_PROJECT}-$V

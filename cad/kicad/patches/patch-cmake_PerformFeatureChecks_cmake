@@ -1,0 +1,12 @@
+Index: cmake/PerformFeatureChecks.cmake
+--- cmake/PerformFeatureChecks.cmake.orig
++++ cmake/PerformFeatureChecks.cmake
+@@ -99,7 +99,7 @@ macro( perform_feature_checks )
+     check_cxx_source_compiles( "#include <cmath>\nint main(int argc, char** argv)\n{\n  (void)argv;\n  std::isinf(1.0);  (void)argc;\n  return 0;\n}\n"  HAVE_CMATH_ISINF )
+ 
+     #check_symbol_exists( clock_gettime "time.h" HAVE_CLOCK_GETTIME ) non-standard library, does not work
+-    check_library_exists( rt clock_gettime "" HAVE_CLOCK_GETTIME )
++    #check_library_exists( rt clock_gettime "" HAVE_CLOCK_GETTIME )
+ 
+     # HAVE_GETTIMEOFDAY is already in use within 2.9 wxWidgets, so use HAVE_GETTIMEOFDAY_FUNC
+     check_symbol_exists( gettimeofday "sys/time.h" HAVE_GETTIMEOFDAY_FUNC )

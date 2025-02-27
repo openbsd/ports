@@ -1,0 +1,15 @@
+From NetBSD:
+Force proper LDFLAGS for MODULE, as cmake doesn't set rpath for these
+Index: plugins/3d/vrml/CMakeLists.txt
+--- plugins/3d/vrml/CMakeLists.txt.orig
++++ plugins/3d/vrml/CMakeLists.txt
+@@ -76,6 +76,9 @@ if( APPLE )
+     )
+ endif()
+ 
++set_property(TARGET s3d_plugin_vrml APPEND_STRING
++       PROPERTY LINK_FLAGS " $ENV{LDFLAGS}")
++
+ install( TARGETS
+     s3d_plugin_vrml
+     DESTINATION ${KICAD_USER_PLUGIN}/3d

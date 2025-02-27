@@ -1,0 +1,12 @@
+Index: cmake/Findngspice.cmake
+--- cmake/Findngspice.cmake.orig
++++ cmake/Findngspice.cmake
+@@ -65,7 +65,7 @@ find_path( NGSPICE_INCLUDE_DIR ngspice/sharedspice.h
+ )
+ 
+ if( UNIX )
+-    set( NGSPICE_LIB_NAME libngspice.so.0 CACHE STRING "Optionally versioned name of the shared library" )
++    set( NGSPICE_LIB_NAME ngspice CACHE STRING "Optionally versioned name of the shared library" )
+ else()
+     set( NGSPICE_LIB_NAME ngspice CACHE STRING "Optionally versioned name of the shared library" )
+ endif()

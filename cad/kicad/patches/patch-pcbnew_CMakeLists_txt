@@ -1,10 +1,7 @@
-chunk 1: remove unneeded bits to fix build with swig 4.1
-from https://gitlab.com/kicad/code/kicad/-/issues/12414
-
 Index: pcbnew/CMakeLists.txt
 --- pcbnew/CMakeLists.txt.orig
 +++ pcbnew/CMakeLists.txt
-@@ -501,7 +501,7 @@ add_custom_command( OUTPUT ${CMAKE_CURRENT_BINARY_DIR}
+@@ -493,7 +493,7 @@ add_custom_command( OUTPUT ${CMAKE_CURRENT_BINARY_DIR}
      )
  
  if( UNIX AND NOT APPLE )

@@ -1,7 +1,7 @@
-Index: CMakeModules/config.h.cmake
---- CMakeModules/config.h.cmake.orig
-+++ CMakeModules/config.h.cmake
-@@ -38,7 +38,7 @@
+Index: cmake/config.h.cmake
+--- cmake/config.h.cmake.orig
++++ cmake/config.h.cmake
+@@ -46,7 +46,7 @@
  #cmakedefine HAVE_ISO646_H
  
  #if defined( HAVE_ISO646_H )

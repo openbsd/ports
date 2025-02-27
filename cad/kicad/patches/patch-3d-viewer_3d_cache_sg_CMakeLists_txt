@@ -1,0 +1,15 @@
+From NetBSD:
+Force proper LDFLAGS for MODULE, as cmake doesn't set rpath for these
+Index: 3d-viewer/3d_cache/sg/CMakeLists.txt
+--- 3d-viewer/3d_cache/sg/CMakeLists.txt.orig
++++ 3d-viewer/3d_cache/sg/CMakeLists.txt
+@@ -43,6 +43,9 @@ if( APPLE )
+     )
+ endif()
+ 
++set_property(TARGET kicad_3dsg APPEND_STRING
++       PROPERTY LINK_FLAGS " $ENV{LDFLAGS}")
++
+ find_file( S3DSG_VERSION_FILE sg_version.h
+         PATHS ${CMAKE_SOURCE_DIR}/include/plugins/3dapi NO_DEFAULT_PATH NO_CMAKE_FIND_ROOT_PATH)
+ 

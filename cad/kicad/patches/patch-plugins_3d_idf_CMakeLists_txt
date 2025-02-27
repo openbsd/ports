@@ -1,0 +1,22 @@
+From NetBSD:
+Force proper LDFLAGS for MODULE, as cmake doesn't set rpath for these
+Index: plugins/3d/idf/CMakeLists.txt
+--- plugins/3d/idf/CMakeLists.txt.orig
++++ plugins/3d/idf/CMakeLists.txt
+@@ -36,6 +36,9 @@ if( APPLE )
+     )
+ endif()
+ 
++set_property(TARGET s3d_plugin_idf APPEND_STRING
++       PROPERTY LINK_FLAGS " $ENV{LDFLAGS}")
++
+ install( TARGETS
+     s3d_plugin_idf
+     DESTINATION ${KICAD_USER_PLUGIN}/3d
+@@ -45,4 +48,4 @@ install( TARGETS
+ if( KICAD_WIN32_INSTALL_PDBS )
+     # Get the PDBs to copy over for MSVC
+     install(FILES $<TARGET_PDB_FILE:s3d_plugin_idf> DESTINATION ${KICAD_USER_PLUGIN}/3d)
+-endif()
+\ No newline at end of file
++endif()

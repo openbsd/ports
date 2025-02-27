@@ -1,0 +1,15 @@
+From NetBSD:
+Force proper LDFLAGS for MODULE, as cmake doesn't set rpath for these
+Index: pcb_calculator/CMakeLists.txt
+--- pcb_calculator/CMakeLists.txt.orig
++++ pcb_calculator/CMakeLists.txt
+@@ -135,6 +135,9 @@ target_link_options( pcb_calculator_kiface PRIVATE
+     $<$<BOOL:${KICAD_MAKE_LINK_MAPS}>:-Wl,--cref,-Map=_pcb_calculator.kiface.map>
+     )
+ 
++set_property(TARGET pcb_calculator_kiface APPEND_STRING
++      PROPERTY LINK_FLAGS " $ENV{LDFLAGS}")
++
+ # if building pcb_calculator, then also build pcb_calculator_kiface if out of date.
+ add_dependencies( pcb_calculator pcb_calculator_kiface )
+ 

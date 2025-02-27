@@ -1,0 +1,12 @@
+Index: kicad/kicad_cli.cpp
+--- kicad/kicad_cli.cpp.orig
++++ kicad/kicad_cli.cpp
+@@ -503,7 +503,7 @@ struct APP_KICAD_CLI : public wxAppConsole
+     {
+         program.OnPgmExit();
+ 
+-#if defined( __FreeBSD__ )
++#if defined( __FreeBSD__ ) || defined(__OpenBSD__)
+         // Avoid wxLog crashing when used in destructors.
+         wxLog::EnableLogging( false );
+ #endif
