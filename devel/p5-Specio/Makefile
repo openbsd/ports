@@ -1,6 +1,6 @@
 COMMENT =	type constraints and coercions for Perl
 
-DISTNAME =	Specio-0.48
+DISTNAME =	Specio-0.50
 CPAN_AUTHOR =	DROLSKY
 
 CATEGORIES =	devel
@@ -11,7 +11,8 @@ MAINTAINER =	Wen Heping <wenheping2000@hotmail.com>
 PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
-RUN_DEPENDS =		devel/p5-Devel-StackTrace \
+RUN_DEPENDS =		devel/p5-Clone \
+			devel/p5-Devel-StackTrace \
 			devel/p5-Eval-Closure \
 			devel/p5-MRO-Compat \
 			devel/p5-Module-Runtime \
