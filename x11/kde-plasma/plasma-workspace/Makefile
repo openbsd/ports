@@ -35,7 +35,7 @@ WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
 WANTLIB += Qt6QuickWidgets Qt6Sql Qt6Svg Qt6WaylandClient Qt6Widgets
 WANTLIB += Qt6Xml SM X11 Xau Xcursor Xext Xfixes Xft Xi Xrender
 WANTLIB += Xtst c canberra dbus-1 fontconfig freetype icui18n
-WANTLIB += icuuc m phonon4qt6 processcore qalculate udev wayland-client
+WANTLIB += icuuc m phonon4qt6 processcore udev wayland-client
 WANTLIB += wayland-cursor xcb xcb-composite xcb-cursor xcb-damage
 WANTLIB += xcb-image xcb-randr xcb-render xcb-shape xcb-shm xcb-util
 WANTLIB += xcb-xfixes xkbcommon z
@@ -104,7 +104,6 @@ LIB_DEPENDS =	audio/libcanberra \
 		devel/kf6/sonnet \
 		devel/kf6/syntax-highlighting \
 		devel/qcoro,qt6 \
-		math/libqalculate \
 		multimedia/phonon,qt6 \
 		sysutils/libudev-openbsd \
 		textproc/icu4c \
