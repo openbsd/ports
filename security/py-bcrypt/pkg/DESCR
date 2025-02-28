@@ -9,3 +9,8 @@ The computation cost of the algorithm is parametised, so it can be
 increased as computers get faster. The intent is to make a compromise
 of a password database less likely to result in an attacker gaining
 knowledge of the plaintext passwords (e.g. using John the Ripper).
+
+While bcrypt remains an acceptable choice for password storage,
+depending on your specific use case you may also want to consider using
+scrypt (either via standard library or cryptography) or argon2id via
+argon2_cffi.
