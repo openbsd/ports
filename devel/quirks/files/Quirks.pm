@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1702 2025/02/23 15:47:49 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1703 2025/02/28 01:40:56 afresh1 Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -62,6 +62,7 @@ my $base_exceptions = {
 	'libexecinfo' => '/usr/include/execinfo.h',
 # 7.7
 	'p5-Test2-Suite' => '/usr/libdata/perl5/Test2/Suite.pm',
+	'p5-Term-Table' => '/usr/libdata/perl5/Term/Table.pm',
 };
 
 my $stem_extensions = {
