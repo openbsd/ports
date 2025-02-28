@@ -477,6 +477,7 @@
      SUBDIR += py-rebulk
      SUBDIR += py-recommonmark
      SUBDIR += py-referencing
+     SUBDIR += py-roman-numerals
      SUBDIR += py-rst2ansi
      SUBDIR += py-ruamel.yaml
      SUBDIR += py-ruamel.yaml.clib
