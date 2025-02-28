@@ -1,4 +1,5 @@
 ONLY_FOR_ARCHS =	${RUST_ARCHS}
+USE_NOBTCFI-aarch64 =	Yes
 
 BROKEN-powerpc64 =	needs new bootstrap
 
@@ -14,10 +15,10 @@ COMMENT-src =		Rust source component
 V =			1.85.0
 DISTNAME =		rustc-${V}-src
 
-REVISION-main =		0
+REVISION =		1
 
 # rustc bootstrap version
-BV-aarch64 =		1.85.0
+BV-aarch64 =		1.85.0-20250227
 BV-amd64 =		1.85.0
 BV-powerpc64 =		1.65.0-20221213
 BV-riscv64 =		1.84.0
