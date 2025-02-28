@@ -1,6 +1,6 @@
 COMMENT=	mailfilter to identify and mark spam
 
-DISTNAME=	mimedefang-3.5
+DISTNAME=	mimedefang-3.6
 
 CATEGORIES=	mail
 
