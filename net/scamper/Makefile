@@ -1,12 +1,12 @@
 COMMENT=	parallel internet measurement utility
 
 # https://mailman.caida.org/pipermail/scamper-announce/
-V=		20250106
+V=		20250227
 DISTNAME=	scamper-cvs-$V
 PKGNAME=	scamper-$V
 
-SHARED_LIBS +=	scamperfile               9.1 # 11.1
-SHARED_LIBS +=  scamperctrl               2.2 # 3.4
+SHARED_LIBS +=  scamperfile               10.0 # 12.0
+SHARED_LIBS +=  scamperctrl               3.0 # 4.0
 
 CATEGORIES=	net benchmarks
 
