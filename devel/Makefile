@@ -1139,7 +1139,6 @@
      SUBDIR += p5-Term-Size
      SUBDIR += p5-Term-Size-Any
      SUBDIR += p5-Term-Size-Perl
-     SUBDIR += p5-Term-Table
      SUBDIR += p5-Test-API
      SUBDIR += p5-Test-Assertions
      SUBDIR += p5-Test-Base
