@@ -96,8 +96,8 @@ as expected, and don't forget to rotate/archive them as appropriate.
 Patch to unmodified Tomcat sample configuration
 ===============================================
 
---- context.xml.orig	Sat Jun 29 13:13:37 2019
-+++ context.xml	Sat Jun 29 13:13:37 2019
+--- context.xml.orig
++++ context.xml
 @@ -16,7 +16,7 @@
    limitations under the License.
  -->
@@ -107,8 +107,8 @@ Patch to unmodified Tomcat sample configuration
  
      <!-- Default set of monitored resources. If one of these changes, the    -->
      <!-- web application will be reloaded.                                   -->
---- web.xml.orig	Sat Jun 29 13:13:37 2019
-+++ web.xml	Sat Jun 29 13:13:37 2019
+--- web.xml.orig
++++ web.xml
 @@ -1,4 +1,8 @@
  <?xml version="1.0" encoding="UTF-8"?>
 +<!DOCTYPE root [
@@ -118,8 +118,8 @@ Patch to unmodified Tomcat sample configuration
  <!--
    Licensed to the Apache Software Foundation (ASF) under one or more
    contributor license agreements.  See the NOTICE file distributed with
-@@ -4732,9 +4736,11 @@
-   <!-- to use within your application.                                       -->
+@@ -4747,9 +4751,11 @@
+   <!-- to use within your application.                                      -->
  
      <welcome-file-list>
 +        <welcome-file>index.cfm</welcome-file>

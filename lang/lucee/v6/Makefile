@@ -1,9 +1,13 @@
-V=		6.1.1.118
+V=		6.2.0.321
 
-# jdk 11 preferred, but should still run with 1.8 for now (unsure about
-# support for newer versions at this point). tomcat v10 is a big change
-# for lucee and modules so probably not until a newer lucee major.
-RUN_DEPENDS=	jdk->=1.8v0,<12v0:devel/jdk/11 \
+# N.B. tomcat must be started using a JDK version that is compatible
+# with lucee; if it picks up the wrong one by default, you'll need to
+# edit /var/db/pkg/tomcat*/+REQUIRING so that javaPathHelper picks
+# it up.
+#
+# supposedly lucee 6.2 should be able to handle tomcat 10+, though it
+# didn't work for me in initial tests, so leaving at 9 for now.
+RUN_DEPENDS=	jdk->=11v0,<22v0:devel/jdk/21 \
 		www/tomcat/v9
 
 .include <bsd.port.mk>
