@@ -1,9 +1,11 @@
 COMMENT =		friendly interactive shell
 
-V =			3.7.1
+V =			4.0.0
 
-DISTNAME =		fish-$V
-REVISION =		2
+DISTNAME =		fish-${V}
+
+SITES =			https://github.com/fish-shell/fish-shell/releases/download/${V}/
+DIST_TUPLE +=		github fish-shell rust-pcre2 0.2.9-utf32 .
 
 CATEGORIES =		shells
 
@@ -16,14 +18,15 @@ PERMIT_PACKAGE =	Yes
 
 EXTRACT_SUFX =		.tar.xz
 
-WANTLIB += ${COMPILER_LIBCXX} c curses intl m pcre2-32
+WANTLIB += ${MODCARGO_WANTLIB} intl m pcre2-32 pcre2-8
 
-SITES =		https://github.com/fish-shell/fish-shell/releases/download/${V}/
+# C
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
 
-# C++11
-COMPILER =		base-clang ports-gcc base-gcc
-
+# order matters: use default cmake targets.
 MODULES =		devel/cmake \
+			devel/cargo \
 			lang/python
 
 BUILD_DEPENDS =		devel/gettext,-tools \
@@ -42,7 +45,10 @@ MODPY_ADJ_FILES =	share/tools/create_manpage_completions.py \
 MAKE_FLAGS =		V=1
 
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+			LDFLAGS="-L${LOCALBASE}/lib" \
+			-DFISH_USE_SYSTEM_PCRE2=ON
+
+CONFIGURE_STYLE =	cmake
 
 PORTHOME =		${WRKDIR}
 
@@ -52,14 +58,25 @@ PORTHOME =		${WRKDIR}
 TEST_DEPENDS =		sysutils/coreutils \
 			${PKGPATH}=${V}
 
-do-test:
-	ln -fs ${LOCALBASE}/bin/ghead ${WRKDIR}/bin/head
-	${MODCMAKE_BUILD_TARGET} -t ${TEST_TARGET}
+TEST_TARGET =		fish_run_tests
+
+post-patch:
+	${SUBST_CMD} ${WRKSRC}/src/common.rs
+
+pre-configure:
+	@${MODCARGO_configure}
 
 post-install:
 	${MODPY_COMPILEALL} ${PREFIX}/share/fish/tools
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/fish
-	mv ${PREFIX}/etc/fish/config.fish ${PREFIX}/share/examples/fish/
-	rm -Rf ${PREFIX}/etc/
+	${INSTALL_DATA} ${WRKSRC}/etc/config.fish ${PREFIX}/share/examples/fish/
 
+pre-test:
+	ln -fs ${LOCALBASE}/bin/ghead ${WRKDIR}/bin/head
+
+do-test:
+	${MODCMAKE_BUILD_TARGET} -t ${TEST_TARGET}
+
+
+.include "crates.inc"
 .include <bsd.port.mk>

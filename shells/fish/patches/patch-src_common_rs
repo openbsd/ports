@@ -1,0 +1,12 @@
+Index: src/common.rs
+--- src/common.rs.orig
++++ src/common.rs
+@@ -1675,7 +1675,7 @@ pub fn get_executable_path(argv0: impl AsRef<Path>) ->
+         }
+         return path;
+     }
+-    argv0.as_ref().to_owned()
++    PathBuf::from("${PREFIX}/bin/fish")
+ }
+ 
+ /// A RAII cleanup object. Unlike in C++ where there is no borrow checker, we can't just provide a
