@@ -4,7 +4,7 @@ DPB_PROPERTIES=		parallel
 COMMENT-main=		message bus system
 COMMENT-suid=		DBus setuid helper for starting system services
 
-V=			1.16.0
+V=			1.16.2
 DISTNAME=		dbus-${V}
 EXTRACT_SUFX=		.tar.xz
 EPOCH-main=		0
