@@ -337,7 +337,7 @@ MODGO_MODULES =	\
 	github.com/go-fonts/stix								 v0.1.0 \
 	github.com/go-gl/glfw									 v0.0.0-20190409004039-e6da0acd62b1 \
 	github.com/go-gl/glfw/v3.3/glfw								 v0.0.0-20200222043503-6f7a984d4dc4 \
-	github.com/go-jose/go-jose/v4								 v4.0.4 \
+	github.com/go-jose/go-jose/v4								 v4.0.5 \
 	github.com/go-kit/kit									 v0.8.0 \
 	github.com/go-latex/latex								 v0.0.0-20210823091927-c0d11ff05a81 \
 	github.com/go-logfmt/logfmt								 v0.3.0 \
@@ -1523,6 +1523,7 @@ MODGO_MODFILES =	\
 	github.com/go-fonts/liberation								 v0.1.1 \
 	github.com/go-gl/glfw/v3.3/glfw								 v0.0.0-20191125211704-12ad95a8df72 \
 	github.com/go-jose/go-jose/v4								 v4.0.1 \
+	github.com/go-jose/go-jose/v4								 v4.0.4 \
 	github.com/go-latex/latex								 v0.0.0-20210118124228-b3d85cf34e07 \
 	github.com/go-logr/logr									 v0.1.0 \
 	github.com/go-logr/logr									 v1.2.2 \
