@@ -1,7 +1,6 @@
 COMMENT=	BBS terminal program
 
-DISTNAME=	syncterm-1.1
-REVISION=	4
+DISTNAME=	syncterm-1.6
 
 CATEGORIES=	comms net
 
@@ -29,6 +28,7 @@ MAKE_FLAGS=	RELEASE=1 \
 		WITHOUT_CRYPTLIB=1 \
 		USE_SDL=1 \
 		SDL_CONFIG=${LOCALBASE}/bin/sdl2-config \
+		MANPREFIX=${PREFIX} \
 		QUIET=
 CFLAGS+=	-DN_CURSES_LIB
 CFLAGS+=	${PICFLAG}

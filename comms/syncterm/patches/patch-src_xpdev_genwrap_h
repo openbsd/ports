@@ -3,12 +3,12 @@ ARCHITECTURE_DESC is unused, no need to error out for that.
 Index: src/xpdev/genwrap.h
 --- src/xpdev/genwrap.h.orig
 +++ src/xpdev/genwrap.h
-@@ -208,7 +208,7 @@ extern "C" {
- #elif defined(_M_IA64) || defined(__ia64__)
- 	#define ARCHITECTURE_DESC "ia64"
- #else
--	#error "Need to describe target architecture"
-+	#define ARCHITECTURE_DESC "unknown"
+@@ -228,7 +228,7 @@ extern "C" {
+ 	#ifdef UNAME_ARCHITECTURE_DESC
+ 		#define ARCHITECTURE_DESC UNAME_ARCHITECTURE_DESC
+ 	#else
+-		#error "Need to describe target architecture"
++		#define ARCHITECTURE_DESC "unknown"
+ 	#endif
  #endif
  
- /*********************/

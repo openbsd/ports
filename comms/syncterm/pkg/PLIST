@@ -1,11 +1,15 @@
 @bin bin/syncterm
 @man man/man1/syncterm.1
-share/applications/
 share/applications/syncterm.desktop
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
+share/icons/hicolor/16x16/apps/syncterm.png
+share/icons/hicolor/22x22/apps/syncterm.png
+share/icons/hicolor/24x24/apps/syncterm.png
+share/icons/hicolor/256x256/apps/syncterm.png
+share/icons/hicolor/32x32/apps/syncterm.png
+share/icons/hicolor/36x36/apps/syncterm.png
+share/icons/hicolor/48x48/apps/syncterm.png
 share/icons/hicolor/64x64/apps/syncterm.png
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/icons/hicolor/scalable/apps/syncterm-mini.svg
+share/icons/hicolor/scalable/apps/syncterm.svg

@@ -1,23 +1,23 @@
 Don't hardcode -fpic, some of our architectures need -fPIC.
-Don't hardcode -O2.
+Don't hardcode -O3.
 
 Index: src/build/Common.gmake
 --- src/build/Common.gmake.orig
 +++ src/build/Common.gmake
-@@ -225,7 +225,6 @@ endif
- ifeq ($(machine),x86_64)
-  machine	:= x64
+@@ -279,7 +279,6 @@ ifeq ($(machine_uname),x86_64)
+  machine_uname	:= x64
  endif
--CFLAGS +=	-fpic
- ifeq ($(machine),sparc64)
+ ifndef win
+- CFLAGS +=	-fpic
+ endif
+ ifeq ($(machine_uname),sparc64)
   CFLAGS +=      -D__BIG_ENDIAN__
- endif
-@@ -433,7 +432,7 @@ ifdef DEBUG
+@@ -524,7 +523,7 @@ ifdef DEBUG
  else # RELEASE
-  # -finline functions breaks the baja build badly.
-  # This also means that -O3 won't work either.
-- CFLAGS	:= -O2 -fomit-frame-pointer -ffast-math -funroll-loops $(CFLAGS)
-+ CFLAGS	:= -fomit-frame-pointer -ffast-math -funroll-loops $(CFLAGS)
- endif
- 
- -include targets.mk
+  # -finline-functions (used to) break the baja build badly.
+  # This also meant that -O3 wouldn't work either.
+- CFLAGS	:= -O3 -Wno-unused-result -ffast-math -funroll-loops $(CFLAGS) -DNDEBUG
++ CFLAGS	:= -Wno-unused-result -ffast-math -funroll-loops $(CFLAGS) -DNDEBUG
+  ifndef NO_LTO
+   # Not Yet... this requires more care with library ordering.
+   # CFLAGS += -flto
