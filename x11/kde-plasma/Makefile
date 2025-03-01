@@ -1,10 +1,10 @@
      SUBDIR =
      SUBDIR += kdecoration
 
-     # Tars that need Qt5 and Qt6 build
-     SUBDIR += breeze
+     # ports that need Qt5 and Qt6 build
      SUBDIR += oxygen
 
+     SUBDIR += breeze
      SUBDIR += plasma-activities
      SUBDIR += plasma-activities-stats
      SUBDIR += kwayland
