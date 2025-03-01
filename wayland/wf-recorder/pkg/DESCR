@@ -1,0 +1,4 @@
+wf-recorder is a utility program for screen recording of wayland compositors
+that support the wlr-screencopy-v1 and xdg-output protocols.
+
+Audio recording is currently disabled on OpenBSD.

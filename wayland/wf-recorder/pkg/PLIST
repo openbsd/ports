@@ -1,0 +1,2 @@
+@bin bin/wf-recorder
+@man man/man1/wf-recorder.1

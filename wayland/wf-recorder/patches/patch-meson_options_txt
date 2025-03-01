@@ -1,0 +1,12 @@
+Index: meson_options.txt
+--- meson_options.txt.orig
++++ meson_options.txt
+@@ -4,6 +4,6 @@ option('default_audio_codec', type: 'string', value: '
+ option('default_audio_sample_rate', type: 'integer', value: 48000, description: 'Audio sample rate that will be used by default')
+ option('default_container_format', type: 'string', value: 'mkv', description: 'Container file format that will be used by default')
+ option('fallback_audio_sample_fmt', type: 'string', value: 's16', description: 'Fallback audio sample format that will be used if wf-recorder cannot determine the sample formats supported by a codec')
+-option('pulse', type: 'feature', value: 'auto', description: 'Enable Pulseaudio')
+-option('pipewire', type: 'feature', value: 'auto', description: 'Enable PipeWire')
++option('pulse', type: 'feature', value: 'disabled', description: 'Enable Pulseaudio')
++option('pipewire', type: 'feature', value: 'disabled', description: 'Enable PipeWire')
+ option('default_audio_backend', type: 'combo', choices: ['auto', 'pulse', 'pipewire'], value: 'auto', description: 'Default audio backend')
