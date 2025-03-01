@@ -23,11 +23,11 @@
      SUBDIR += wcm
      SUBDIR += wev
      SUBDIR += wf-config
+     SUBDIR += wf-recorder
      SUBDIR += wf-shell
      SUBDIR += wlopm
      SUBDIR += wlroots
      SUBDIR += wlr-randr
-     SUBDIR += wofi
      SUBDIR += wmenu
      SUBDIR += xwayland
 
