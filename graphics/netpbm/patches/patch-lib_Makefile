@@ -11,7 +11,7 @@ Index: lib/Makefile
  MANUALS3 = libnetpbm
  MANUALS5 = pbm pgm ppm pnm pam
  
-@@ -92,13 +95,16 @@ extra_staticlib: $(EXTRA_STATICLIB)
+@@ -92,7 +95,7 @@ extra_staticlib: $(EXTRA_STATICLIB)
  # type, but request a static library in addition.
  #----------------------------------------------------------------------------
  
@@ -20,16 +20,17 @@ Index: lib/Makefile
  
  libpbm3.o: CFLAGS_TARGET+=$(CFLAGS_SSE)
  
- $(LIBOBJECTS): %.o: %.c importinc
+@@ -102,6 +105,9 @@ libpbm3.o: CFLAGS_TARGET+=$(CFLAGS_SSE)
+ $(LIBOBJECTS) libsystem_dummy.o: %.o: %.c importinc
  	$(CC) -c $(INCLUDES) $(CFLAGS_ALL) -o $@ $<
  
-+$(SHLIBOBJECTS): %.lo: %.c importinc
++$(SHLIBOBJECTS) libsystem_dummy.lo: %.lo: %.c importinc
 +	$(CC) -c $(INCLUDES) $(CFLAGS_ALL) -o $@ $<
 +
  # The major number increases when there is a non-backward-compatible change
  # to the library at the binary level, meaning any client of the library needs
  # to keep using the old library until it has been recompiled for the new
-@@ -145,7 +151,7 @@ endif
+@@ -148,7 +154,7 @@ endif
  
  ifeq ($(NETPBMLIBTYPE),unixshared)
  # The libxxx.so link is needed to link the executables.
@@ -38,18 +39,18 @@ Index: lib/Makefile
  	rm -f $@
  	$(SYMLINK) $< $@
  # The $(SONAME) link is needed only to test the programs without
-@@ -154,8 +160,8 @@ libnetpbm.$(NETPBMLIBSUFFIX): $(SONAME)
+@@ -157,8 +163,8 @@ libnetpbm.$(NETPBMLIBSUFFIX): $(SONAME)
  $(SONAME): libnetpbm.$(NETPBMLIBSUFFIX).$(MAJ).$(MIN)
  	rm -f $@
  	$(SYMLINK) $< $@
 -libnetpbm.$(NETPBMLIBSUFFIX).$(MAJ).$(MIN): $(LIBOBJECTS) $(LIBOBJECTS_X)
--	$(LD) $(LDSHLIB) -o $@ $(LIBOBJECTS) $(LIBOBJECTS_X) \
+-	$(LD) $(LDSHLIB) $(LDFLAGS) -o $@ $(LIBOBJECTS) $(LIBOBJECTS_X) \
 +libnetpbm.$(NETPBMLIBSUFFIX).$(LIBnetpbm_VERSION): $(SHLIBOBJECTS) $(SHLIBOBJECTS_X)
-+	$(LD) $(LDSHLIB) -o $@ $(SHLIBOBJECTS) $(SHLIBOBJECTS_X) \
++	$(LD) $(LDSHLIB) $(LDFLAGS) -o $@ $(SHLIBOBJECTS) $(SHLIBOBJECTS_X) \
            $(SHLIB_CLIB) -lm $(LADD)
  endif
  
-@@ -234,25 +240,21 @@ standardppmdfont.c:
+@@ -237,25 +243,21 @@ standardppmdfont.c:
  compile.h:
  	$(SRCDIR)/buildtools/stamp-date >$@ || rm $@
  
@@ -79,7 +80,7 @@ Index: lib/Makefile
  endif
  ifeq ($(NETPBMLIBTYPE),dll)
  #install a Windows DLL shared library
-@@ -288,9 +290,9 @@ $(INTERFACE_HEADERS:%=%_installhdr): $(PKGDIR)/include
+@@ -291,9 +293,9 @@ $(INTERFACE_HEADERS:%=%_installhdr): $(PKGDIR)/include
  	  $(SRCDIR)/lib/$(@:%_installhdr=%) $(PKGDIR)/include/netpbm/
  
  .PHONY: install.staticlib

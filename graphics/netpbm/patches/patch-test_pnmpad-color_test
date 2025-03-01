@@ -1,0 +1,12 @@
+Index: test/pnmpad-color.test
+--- test/pnmpad-color.test.orig
++++ test/pnmpad-color.test
+@@ -34,7 +34,7 @@ ptop="-top 1"
+ 
+ # define function
+ cmptarget () { pamcut -top 0 -left 0 -height 1 -width 1 $@ |\
+-                cmp -s ${target_ppm} - && echo "match" || echo "failure";  }
++                cmp -s ${target_pnm} - && echo "match" || echo "failure";  }
+ 
+ echo "Test 1. PBM white infile"
+ 

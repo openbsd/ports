@@ -1,0 +1,21 @@
+Index: test/pbmtext-utf8.test
+--- test/pbmtext-utf8.test.orig
++++ test/pbmtext-utf8.test
+@@ -100,7 +100,7 @@ awk 'BEGIN { for (i=32; i<=126;++i) printf("%c",i); pr
+              for (i=161;i<=191;++i) printf("%c%c",194,i);      \
+              for (i=128;i<=191;++i) printf("%c%c",195,i); print ""}' | \
+     LC_ALL=${locale_for_test} pbmtext -builtin bdf -wchar -text-dump | \
+-    cmp --quiet - ${output}
++    cmp -s - ${output}
+ 
+ echo ${PIPESTATUS[@]} ":" $?
+ rm ${output}
+@@ -127,7 +127,7 @@ echo "Test 5 Invalid"
+ long_txt=${tmpdir}/long.txt
+ test_out=${tmpdir}/test_out
+ 
+-head -c 4999 /dev/zero | sed 's@\x00@\xc2\xbe@g' > ${long_txt}
++perl -e 'print "\xc2\xbe" x 4999' > ${long_txt}
+ cat ${long_txt} | wc -c | tr -d ' '
+ 
+ cat ${long_txt} | \

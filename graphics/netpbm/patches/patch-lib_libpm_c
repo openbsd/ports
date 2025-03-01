@@ -9,7 +9,7 @@ Index: lib/libpm.c
  
  #include "netpbm/pm_config.h"
  
-@@ -832,7 +833,7 @@ pm_arg0toprogname(const char arg0[]) {
+@@ -837,7 +838,7 @@ pm_arg0toprogname(const char arg0[]) {
  unsigned int
  pm_randseed(void) {
  
