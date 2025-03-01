@@ -27,6 +27,7 @@
      SUBDIR += wlopm
      SUBDIR += wlroots
      SUBDIR += wlr-randr
+     SUBDIR += wofi
      SUBDIR += wmenu
      SUBDIR += xwayland
 
