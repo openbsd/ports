@@ -49,11 +49,6 @@
      # libva
      SUBDIR += kpipewire
 
-     # kwayland-integration remains Qt 5 only as its features have been moved
-     # into kwindowsystem, this is still released and should still be packaged for
-     # compatibility with Qt 5 apps.
-     # XXX SUBDIR += kwayland-integration
-
     # Not ported yet
     # SUBDIR +=bluedevil
     # SUBDIR +=breeze-plymouth
