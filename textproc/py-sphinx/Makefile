@@ -1,9 +1,8 @@
 COMMENT=	Python documentation generator
 
-MODPY_DISTV=	8.1.3
+MODPY_DISTV=	8.2.1
 DISTNAME=	sphinx-${MODPY_DISTV}
 PKGNAME=	py-sphinx-${MODPY_DISTV}
-REVISION=	0
 
 CATEGORIES=	textproc
 
@@ -32,11 +31,16 @@ RUN_DEPENDS+=	textproc/py-sphinxcontrib/applehelp \
 		textproc/py-alabaster \
 		graphics/py-imagesize \
 		www/py-requests \
+		textproc/py-roman-numerals \
 		sysutils/py-packaging
 
 BUILD_DEPENDS=	devel/gettext,-tools
-TEST_DEPENDS=	devel/py-mock \
-		devel/py-html5lib \
+TEST_DEPENDS=	devel/py-test-xdist \
+		sysutils/py-psutil \
+		textproc/py-defusedxml \
+		lang/cython \
+		devel/py-setuptools \
+		devel/py-typing-extensions \
 		print/texlive/texmf,-full
 PORTHOME=	${WRKDIR}
 
