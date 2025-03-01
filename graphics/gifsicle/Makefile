@@ -1,6 +1,6 @@
 COMMENT =	creating & editing GIF images and animations
 
-DISTNAME =	gifsicle-1.95
+DISTNAME =	gifsicle-1.96
 
 CATEGORIES =	graphics
 
