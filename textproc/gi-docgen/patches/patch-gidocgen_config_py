@@ -1,7 +1,7 @@
 Index: gidocgen/config.py
 --- gidocgen/config.py.orig
 +++ gidocgen/config.py
-@@ -202,6 +202,11 @@ class GIDocConfig:
+@@ -206,6 +206,11 @@ class GIDocConfig:
  
      @property
      def show_class_hierarchy(self):
