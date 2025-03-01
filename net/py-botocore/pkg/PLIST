@@ -30,6 +30,8 @@ lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}configloader.$
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}configloader.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}configprovider.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}configprovider.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}context.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}context.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}credentials.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}credentials.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/botocore/${MODPY_PYCACHE}discovery.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -100,6 +102,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/compress.py
 lib/python${MODPY_VERSION}/site-packages/botocore/config.py
 lib/python${MODPY_VERSION}/site-packages/botocore/configloader.py
 lib/python${MODPY_VERSION}/site-packages/botocore/configprovider.py
+lib/python${MODPY_VERSION}/site-packages/botocore/context.py
 lib/python${MODPY_VERSION}/site-packages/botocore/credentials.py
 lib/python${MODPY_VERSION}/site-packages/botocore/crt/
 lib/python${MODPY_VERSION}/site-packages/botocore/crt/__init__.py
@@ -1063,12 +1066,6 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/eks/2017-11-01/paginators
 lib/python${MODPY_VERSION}/site-packages/botocore/data/eks/2017-11-01/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/eks/2017-11-01/service-2.sdk-extras.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/eks/2017-11-01/waiters-2.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/elastic-inference/
-lib/python${MODPY_VERSION}/site-packages/botocore/data/elastic-inference/2017-07-25/
-lib/python${MODPY_VERSION}/site-packages/botocore/data/elastic-inference/2017-07-25/endpoint-rule-set-1.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/elastic-inference/2017-07-25/examples-1.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/elastic-inference/2017-07-25/paginators-1.json
-lib/python${MODPY_VERSION}/site-packages/botocore/data/elastic-inference/2017-07-25/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/elasticache/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/elasticache/2014-09-30/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/elasticache/2014-09-30/endpoint-rule-set-1.json
