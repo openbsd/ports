@@ -1,7 +1,8 @@
 COMMENT-main=		GNOME terminal
 COMMENT-nautilus=	GNOME Terminal extension for Nautilus
 
-DIST_TUPLE=		gnome GNOME gnome-terminal 3.54.3 .
+GNOME_PROJECT=		gnome-terminal
+GNOME_VERSION=		3.54.4
 
 PKGNAME-nautilus=	${GNOME_PROJECT}-nautilus-${GNOME_VERSION}
 
