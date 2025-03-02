@@ -6,6 +6,7 @@ share/doc/nestopia/ChangeLog
 share/doc/nestopia/README.md
 share/doc/nestopia/readme.html
 share/icons/hicolor/128x128/apps/nestopia.png
+share/icons/hicolor/256x256/apps/nestopia.png
 share/icons/hicolor/32x32/apps/nestopia.png
 share/icons/hicolor/48x48/apps/nestopia.png
 share/icons/hicolor/64x64/apps/nestopia.png
@@ -16,3 +17,18 @@ share/nestopia/
 share/nestopia/NstDatabase.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/nestopia/palettes/
+share/nestopia/palettes/Digital_Prime_FBX.pal
+share/nestopia/palettes/Magnum_FBX.pal
+share/nestopia/palettes/Nobilitea.pal
+share/nestopia/palettes/PVM_Style_D93_FBX.pal
+share/nestopia/palettes/Royaltea.pal
+share/nestopia/palettes/SONY_CXA2025AS_US.pal
+share/nestopia/palettes/Smooth_V2_FBX.pal
+share/nestopia/shaders/
+share/nestopia/shaders/crtea.fs
+share/nestopia/shaders/default.fs
+share/nestopia/shaders/default.vs
+share/nestopia/shaders/mmpx.fs
+share/nestopia/shaders/omniscale.fs
+share/nestopia/shaders/sharp-bilinear.fs

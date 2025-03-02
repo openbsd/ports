@@ -2,7 +2,7 @@ COMMENT =		accurate Nintendo Entertainment System emulator
 
 GH_ACCOUNT =		0ldsk00l
 GH_PROJECT =		nestopia
-GH_TAGNAME =		1.52.1
+GH_TAGNAME =		1.53.0
 
 .include <bsd.port.arch.mk>
 
@@ -15,15 +15,16 @@ PERMIT_PACKAGE =		Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += GL GLU SDL2 X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xinerama
-WANTLIB += archive c fltk fltk_gl fltk_images fontconfig jpeg
-WANTLIB += m png z
+WANTLIB += Xrender archive c epoxy fltk fltk_gl fltk_images fontconfig
+WANTLIB += jpeg m png samplerate z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
 BUILD_DEPENDS =		devel/autoconf-archive
 RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+4,-guic
-LIB_DEPENDS =		archivers/libarchive \
+LIB_DEPENDS =		audio/libsamplerate \
+			archivers/libarchive \
 			devel/sdl2 \
 			x11/fltk
 
