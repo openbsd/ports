@@ -4,6 +4,7 @@ GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
 GH_TAGNAME =		v0.39.0
 USE_NOBTCFI =		Yes
+REVISION =		0
 
 SHARED_LIBS +=		mpv		2.0
 
@@ -19,6 +20,7 @@ WANTLIB += Xss Xv archive ass avcodec avdevice avfilter avformat
 WANTLIB += avutil bluray c cdio cdio_cdda cdio_paranoia drm dvdnav
 WANTLIB += iconv jpeg lcms2 m placebo pthread sndio swresample
 WANTLIB += swscale va va-drm va-x11 vulkan z zimg
+WANTLIB += X11-xcb xcb xcb-shm
 
 MODULES =		devel/meson \
 			lang/lua \

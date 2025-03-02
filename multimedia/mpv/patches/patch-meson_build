@@ -1,5 +1,6 @@
 fix over-zealous detection of libatomic (it was picked up at configure
 time if present at all, rather than only if needed)
+Support for xcb-shm
 
 Index: meson.build
 --- meson.build.orig
@@ -25,3 +26,15 @@ Index: meson.build
  
  cplugins = get_option('cplugins').require(
      win32 or (features['libdl'] and cc.has_link_argument('-rdynamic')),
+@@ -1065,7 +1077,10 @@ x11 = {
+              dependency('xscrnsaver', version: '>= 1.0.0', required: x11_opt),
+              dependency('xext', version: '>= 1.0.0', required: x11_opt),
+              dependency('xpresent', version: '>= 1.0.0', required: x11_opt),
+-             dependency('xrandr', version: '>= 1.4.0', required: x11_opt)],
++             dependency('xrandr', version: '>= 1.4.0', required: x11_opt),
++             dependency('x11-xcb', version: '>= 1.8.9', required: x11_opt),
++             dependency('xcb-shm', version: '>= 1.16', required: x11_opt),
++             dependency('xcb', version: '>= 1.16', required: x11_opt),]
+ }
+ x11_deps = true
+ foreach dep: x11['deps']
