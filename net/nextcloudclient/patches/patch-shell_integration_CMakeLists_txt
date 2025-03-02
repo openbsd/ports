@@ -1,0 +1,12 @@
+Never use KF5
+Index: shell_integration/CMakeLists.txt
+--- shell_integration/CMakeLists.txt.orig
++++ shell_integration/CMakeLists.txt
+@@ -11,7 +11,6 @@ if( UNIX AND NOT APPLE )
+   endif()
+ 
+   if(BUILD_SHELL_INTEGRATION_DOLPHIN)
+-    find_package(KF5KIO "5.16" CONFIG QUIET)
+     find_package(KF6KIO "5.240" CONFIG QUIET)
+     if(KF5KIO_FOUND OR KF6KIO_FOUND)
+       add_subdirectory(dolphin)
