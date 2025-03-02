@@ -18,8 +18,6 @@ MODULES =		devel/cargo
 # for riscv64 and powerpc64, please keep: libc >= 0.2.113
 MODCARGO_CRATES_UPDATE =	libc
 
-.include "modules.inc"
-
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
@@ -31,9 +29,9 @@ RELEASE_DIR =		${MODCARGO_TARGET_DIR}/release
 pre-fake:
 	cd ${WRKSRC}/guide && ${RELEASE_DIR}/mdbook build
 
-do-install:
-	${INSTALL_PROGRAM} ${RELEASE_DIR}/mdbook ${PREFIX}/bin/
+post-install:
 	cp -r ${WRKSRC}/guide/book ${PREFIX}/share/doc/mdbook/
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/share/doc/mdbook/
 
+.include "crates.inc"
 .include <bsd.port.mk>
