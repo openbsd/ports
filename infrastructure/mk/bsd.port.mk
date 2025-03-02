@@ -1,6 +1,6 @@
 #-*- mode: Makefile; tab-width: 4; -*-
 # ex:ts=4 sw=4 filetype=make:
-#	$OpenBSD: bsd.port.mk,v 1.1643 2025/01/20 17:16:42 sthen Exp $
+#	$OpenBSD: bsd.port.mk,v 1.1644 2025/03/02 13:16:48 landry Exp $
 #
 #	bsd.port.mk - 940820 Jordan K. Hubbard.
 #	This file is in the public domain.
@@ -3566,6 +3566,7 @@ wantlib-args:
 		then \
 			echo 1>&2 "${_check_msg}: Libraries in packing-lists in the ports tree"; \
 			echo 1>&2 "       and libraries from installed packages don't match"; \
+			echo 1>&2 "       (see DIAGNOSTICS in bsd.port.mk(5)"; \
 			diff 1>&2 -u $$a $$b ${_check_error}; \
 		fi; \
 		cat $$b; \
