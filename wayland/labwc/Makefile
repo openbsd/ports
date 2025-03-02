@@ -2,8 +2,7 @@ COMMENT =	window-stacking Wayland compositor
 
 GH_ACCOUNT =	labwc
 GH_PROJECT =	labwc
-GH_TAGNAME =	0.8.1
-REVISION =	1
+GH_TAGNAME =	0.8.3
 
 CATEGORIES =	wayland
 
