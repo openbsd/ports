@@ -2,6 +2,7 @@ COMMENT=	Xfce4 notification daemon
 
 XFCE_VERSION=	0.9.7
 XFCE_GOODIE=	xfce4-notifyd
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -15,8 +16,7 @@ MODXFCE_WANTLIB =	xfce4panel-2.0
 LIB_DEPENDS=	x11/xfce4/xfce4-panel \
 		devel/libnotify
 CONFIGURE_ARGS =	--enable-dbus-start-daemon \
-		--disable-sound \
-		--disable-wayland
+		--disable-sound
 
 FAKE_FLAGS =	autostartdir=${PREFIX}/share/examples/xfce4-notifyd
 
