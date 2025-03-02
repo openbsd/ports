@@ -45,6 +45,7 @@ MODKDE_ICON_CACHE = Yes
 MODKDE_DOCS = Yes
 
 BUILD_DEPENDS =	x11/kde-plasma/kwin>=${VERSION} \
+		math/libqalculate \
 		graphics/kirigami-addons \
 		x11/xdotool \
 		devel/kf6/kquickcharts
