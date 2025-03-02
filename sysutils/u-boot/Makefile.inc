@@ -23,6 +23,8 @@ BUILD_DEPENDS+=	devel/bison \
 
 # for pkg_resources used in tools/binman/control.py
 BUILD_DEPENDS+=	devel/py-setuptools
+# dpb junking can break the build
+BUILD_DEPENDS+= lang/pythran
 
 MODULES=	lang/python
 MODPY_RUNDEP=	No
