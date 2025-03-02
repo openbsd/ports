@@ -1,6 +1,7 @@
 COMMENT =	Utility program for screen recording of wayland compositors
 
 V =		0.5.0
+REVISION =	0
 
 GH_ACCOUNT = ammen99
 GH_PROJECT = wf-recorder
@@ -16,7 +17,10 @@ COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/meson
 
-LIB_DEPENDS = graphics/ffmpeg wayland/wayland
+LIB_DEPENDS =  graphics/ffmpeg \
+               wayland/wayland
+CONFIGURE_ARGS =       -Dpulse=disabled \
+                       -Dpipewire=disabled
 
 WANTLIB += ${COMPILER_LIBCXX} avcodec avdevice avfilter avformat
 WANTLIB += avutil c drm gbm wayland-client
