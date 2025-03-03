@@ -1,6 +1,6 @@
 COMMENT=	Python utility / library to sort Python imports
 
-MODPY_DISTV=	6.0.0
+MODPY_DISTV=	6.0.1
 DISTNAME=	isort-${MODPY_DISTV}
 PKGNAME=	py-isort-${MODPY_DISTV}
 
