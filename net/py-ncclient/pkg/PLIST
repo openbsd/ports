@@ -33,6 +33,8 @@ lib/python${MODPY_VERSION}/site-packages/ncclient/devices/${MODPY_PYCACHE}__init
 lib/python${MODPY_VERSION}/site-packages/ncclient/devices/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ncclient/devices/${MODPY_PYCACHE}alu.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ncclient/devices/${MODPY_PYCACHE}alu.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ncclient/devices/${MODPY_PYCACHE}ciena.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ncclient/devices/${MODPY_PYCACHE}ciena.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ncclient/devices/${MODPY_PYCACHE}csr.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ncclient/devices/${MODPY_PYCACHE}csr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ncclient/devices/${MODPY_PYCACHE}default.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -58,6 +60,7 @@ lib/python${MODPY_VERSION}/site-packages/ncclient/devices/${MODPY_PYCACHE}nexus.
 lib/python${MODPY_VERSION}/site-packages/ncclient/devices/${MODPY_PYCACHE}sros.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ncclient/devices/${MODPY_PYCACHE}sros.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ncclient/devices/alu.py
+lib/python${MODPY_VERSION}/site-packages/ncclient/devices/ciena.py
 lib/python${MODPY_VERSION}/site-packages/ncclient/devices/csr.py
 lib/python${MODPY_VERSION}/site-packages/ncclient/devices/default.py
 lib/python${MODPY_VERSION}/site-packages/ncclient/devices/ericsson.py
@@ -190,6 +193,8 @@ lib/python${MODPY_VERSION}/site-packages/ncclient/transport/${MODPY_PYCACHE}ssh.
 lib/python${MODPY_VERSION}/site-packages/ncclient/transport/${MODPY_PYCACHE}ssh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ncclient/transport/${MODPY_PYCACHE}tls.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/ncclient/transport/${MODPY_PYCACHE}tls.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ncclient/transport/${MODPY_PYCACHE}unixSocket.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/ncclient/transport/${MODPY_PYCACHE}unixSocket.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/ncclient/transport/errors.py
 lib/python${MODPY_VERSION}/site-packages/ncclient/transport/notify.py
 lib/python${MODPY_VERSION}/site-packages/ncclient/transport/parser.py
@@ -212,4 +217,5 @@ lib/python${MODPY_VERSION}/site-packages/ncclient/transport/third_party/junos/${
 lib/python${MODPY_VERSION}/site-packages/ncclient/transport/third_party/junos/ioproc.py
 lib/python${MODPY_VERSION}/site-packages/ncclient/transport/third_party/junos/parser.py
 lib/python${MODPY_VERSION}/site-packages/ncclient/transport/tls.py
+lib/python${MODPY_VERSION}/site-packages/ncclient/transport/unixSocket.py
 lib/python${MODPY_VERSION}/site-packages/ncclient/xml_.py

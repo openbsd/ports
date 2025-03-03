@@ -1,29 +1,26 @@
-COMMENT =		Python library for NETCONF clients
+COMMENT=	Python library for NETCONF clients
 
-MODPY_DISTV =	0.6.15
+MODPY_DISTV=	0.6.18
 
 # using github distfile for tests
-GH_ACCOUNT =		ncclient
-GH_PROJECT =		ncclient
-GH_TAGNAME =		v0.6.15
+GH_ACCOUNT=	ncclient
+GH_PROJECT=	ncclient
+GH_TAGNAME=	v${MODPY_DISTV}
 
-DISTNAME =		ncclient-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-REVISION =		1
+DISTNAME=	ncclient-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =		net
+CATEGORIES=	net
 
-HOMEPAGE =		https://ncclient.readthedocs.io/en/latest/
+HOMEPAGE=	https://ncclient.readthedocs.io/en/latest/
 
 # Apache2
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
 
-MODPY_PYBUILD =		setuptools
-
-RUN_DEPENDS =		security/py-paramiko \
-			devel/py-six \
-			textproc/py-lxml
+RUN_DEPENDS=	security/py-paramiko \
+		textproc/py-lxml
 
 .include <bsd.port.mk>
