@@ -6,6 +6,9 @@ SHARED_LIBS +=  ngspice                0.0 # 0.0
 
 WANTLIB += m pthread
 
+# C++
+COMPILER =		base-clang ports-gcc
+
 CONFIGURE_ARGS +=	--with-ngshared \
 			--enable-shared
 
