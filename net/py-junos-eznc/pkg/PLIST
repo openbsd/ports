@@ -184,6 +184,8 @@ lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/${MODPY_PYCACHE}person
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/${MODPY_PYCACHE}personality.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/${MODPY_PYCACHE}swver.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/${MODPY_PYCACHE}swver.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/${MODPY_PYCACHE}vmhost.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/${MODPY_PYCACHE}vmhost.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/current_re.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/domain.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/ethernet_mac_table.py
@@ -198,6 +200,7 @@ lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/iri_mapping.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/is_linux.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/personality.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/swver.py
+lib/python${MODPY_VERSION}/site-packages/jnpr/junos/facts/vmhost.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/jxml.py
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/ofacts/
 lib/python${MODPY_VERSION}/site-packages/jnpr/junos/ofacts/__init__.py

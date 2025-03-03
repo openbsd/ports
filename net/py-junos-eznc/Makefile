@@ -1,34 +1,33 @@
-COMMENT =		library for Junos automation
+COMMENT=	library for Junos automation
 
-MODPY_DISTV =	2.7.0
-DISTNAME =		junos-eznc-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-REVISION =		1
+MODPY_DISTV=	2.7.3
+DISTNAME=	junos-eznc-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
-CATEGORIES =		net
+CATEGORIES=	net
 
 # Apache2
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
 # tests need "nose2".
 # tests not present in pypi distfile, only github.
-NO_TEST =		Yes
+NO_TEST=	Yes
 
-RUN_DEPENDS =		devel/py-parsing \
-			devel/py-serial \
-			devel/py-six \
-			devel/py-transitions \
-			net/py-ncclient \
-			security/py-paramiko \
-			security/py-scp \
-			textproc/py-lxml \
-			textproc/py-yaml \
-			textproc/py-yamlordereddictloader \
-			www/py-jinja2
+RUN_DEPENDS=	textproc/py-lxml \
+		net/py-ncclient \
+		security/py-scp \
+		www/py-jinja2 \
+		textproc/py-yaml \
+		security/py-paramiko \
+		devel/py-six \
+		devel/py-serial \
+		textproc/py-yamlordereddictloader \
+		devel/py-parsing \
+		devel/py-transitions
 
 .include <bsd.port.mk>
