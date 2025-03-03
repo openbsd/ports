@@ -3,12 +3,6 @@ Neuter git(1) usage, replace timestamp for with static "OpenBSD" string
 Index: singleheader/amalgamate.py
 --- singleheader/amalgamate.py.orig
 +++ singleheader/amalgamate.py
-@@ -1,4 +1,4 @@
--#!/usr/bin/env python3
-+#!/usr/local/bin/python3.12
- #
- # Creates the amalgamated source files.
- #
 @@ -98,9 +98,7 @@ def dofile(fid: str, prepath: str, filename: str) -> N
  # between gnu date and busybox date.
  try:
