@@ -45,6 +45,8 @@ CFLAGS+=	-DSQLITE_ENABLE_UNLOCK_NOTIFY \
 		-DSQLITE_ENABLE_DBSTAT_VTAB \
 		-DSQLITE_ENABLE_COLUMN_METADATA
 
+# base-gcc + ld.bfd don't like "-rpath /usr/local/lib"
+MAKE_FLAGS=	LDFLAGS.rpath="-Wl,-rpath,${PREFIX}/lib"
 
 post-install:
 		rm ${PREFIX}/lib/libsqlite3.so{,.0}
