@@ -4,7 +4,7 @@
 Index: tests/CMakeLists.txt
 --- tests/CMakeLists.txt.orig
 +++ tests/CMakeLists.txt
-@@ -112,7 +112,6 @@ else()
+@@ -131,7 +131,6 @@ else()
          -Wcast-align
          -Wconversion
          -Wctor-dtor-privacy
@@ -12,7 +12,7 @@ Index: tests/CMakeLists.txt
          -Wextra
          -Wpedantic
          -Wshadow
-@@ -170,7 +169,7 @@ endif(MSVC)
+@@ -196,7 +195,7 @@ endif()
  
  # for tests to find the gtest header
  target_include_directories(gsl_tests_config SYSTEM INTERFACE
@@ -21,7 +21,7 @@ Index: tests/CMakeLists.txt
  )
  
  add_executable(gsl_tests
-@@ -191,7 +190,7 @@ add_executable(gsl_tests
+@@ -218,7 +217,7 @@ add_executable(gsl_tests
  target_link_libraries(gsl_tests
      Microsoft.GSL::GSL
      gsl_tests_config
@@ -30,7 +30,7 @@ Index: tests/CMakeLists.txt
  )
  add_test(gsl_tests gsl_tests)
  
-@@ -236,7 +235,6 @@ else()
+@@ -273,7 +272,6 @@ else()
          -Wcast-align
          -Wconversion
          -Wctor-dtor-privacy
