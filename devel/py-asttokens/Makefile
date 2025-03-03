@@ -1,10 +1,8 @@
 COMMENT =	annotate Python ASTs with source text and token information
 
-MODPY_DISTV =	2.4.1
-
+MODPY_DISTV =	3.0.0
 DISTNAME =	asttokens-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
 
 CATEGORIES =	devel
 
@@ -14,12 +12,9 @@ HOMEPAGE =	https://github.com/gristlabs/asttokens
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-
-MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
-MODPY_PYTEST =		Yes
+MODPY_PI =		Yes
 
-RUN_DEPENDS =		devel/py-six
 TEST_DEPENDS =		devel/py-astroid
 
 .include <bsd.port.mk>
