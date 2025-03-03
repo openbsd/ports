@@ -3,8 +3,7 @@ PORTROACH=		limit:^3 skipv:3.90.0,3.92.0
 COMMENT=		library for bits of crypto UI and parsing
 
 GNOME_PROJECT=		gcr
-GNOME_VERSION=		3.41.1
-REVISION=		5
+GNOME_VERSION=		3.41.2
 
 SHARED_LIBS += gck-1                     2.1 # 0.0.0
 SHARED_LIBS += gcr-base-3                3.1 # 1.0.0

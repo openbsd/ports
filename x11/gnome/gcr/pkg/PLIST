@@ -1069,6 +1069,7 @@ share/icons/hicolor/48x48/apps/gcr-key-pair.png
 share/icons/hicolor/48x48/apps/gcr-key.png
 share/icons/hicolor/48x48/apps/gcr-password.png
 share/icons/hicolor/48x48/apps/gcr-smart-card.png
+share/locale/ab/LC_MESSAGES/gcr.mo
 share/locale/af/LC_MESSAGES/gcr.mo
 share/locale/ar/LC_MESSAGES/gcr.mo
 share/locale/as/LC_MESSAGES/gcr.mo
