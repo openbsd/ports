@@ -117,6 +117,8 @@ lib/python${MODPY_VERSION}/site-packages/bokeh/_sri/3.3.0.json
 lib/python${MODPY_VERSION}/site-packages/bokeh/_sri/3.4.0.json
 lib/python${MODPY_VERSION}/site-packages/bokeh/_sri/3.5.0.json
 lib/python${MODPY_VERSION}/site-packages/bokeh/_sri/3.6.0.json
+lib/python${MODPY_VERSION}/site-packages/bokeh/_sri/3.6.1.json
+lib/python${MODPY_VERSION}/site-packages/bokeh/_sri/3.6.2.json
 lib/python${MODPY_VERSION}/site-packages/bokeh/_sri/${MODPY_DISTV}.json
 lib/python${MODPY_VERSION}/site-packages/bokeh/application/
 lib/python${MODPY_VERSION}/site-packages/bokeh/application/__init__.py
