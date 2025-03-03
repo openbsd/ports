@@ -3,7 +3,6 @@
 include/sqlite3.h
 include/sqlite3ext.h
 @static-lib lib/libsqlite3.a
-lib/libsqlite3.la
 @lib lib/libsqlite3.so.${LIBsqlite3_VERSION}
 lib/pkgconfig/sqlite3.pc
 @man man/man1/sqlite3.1
