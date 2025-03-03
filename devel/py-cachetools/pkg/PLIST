@@ -10,11 +10,12 @@ lib/python${MODPY_VERSION}/site-packages/cachetools/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cachetools/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/cachetools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cachetools/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cachetools/${MODPY_PYCACHE}_decorators.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/cachetools/${MODPY_PYCACHE}_decorators.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cachetools/${MODPY_PYCACHE}func.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cachetools/${MODPY_PYCACHE}func.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/cachetools/${MODPY_PYCACHE}keys.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/cachetools/${MODPY_PYCACHE}keys.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/cachetools/_decorators.py
 lib/python${MODPY_VERSION}/site-packages/cachetools/func.py
 lib/python${MODPY_VERSION}/site-packages/cachetools/keys.py
-share/doc/${MODPY_PY_PREFIX}cachetools/
-share/doc/${MODPY_PY_PREFIX}cachetools/README.rst
