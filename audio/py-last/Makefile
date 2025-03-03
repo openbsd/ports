@@ -1,27 +1,25 @@
-COMMENT =		Python last.fm library
+COMMENT=	Python last.fm library
 
-MODPY_DISTV =	5.3.0
-DISTNAME =		pylast-${MODPY_DISTV}
-PKGNAME =		py-last-${MODPY_DISTV}
-CATEGORIES =		audio net
-REVISION =		0
+MODPY_DISTV=	5.4.0
+DISTNAME=	pylast-${MODPY_DISTV}
+PKGNAME=	py-last-${MODPY_DISTV}
+CATEGORIES=	audio net
 
-HOMEPAGE =		https://github.com/pylast/pylast
+HOMEPAGE=	https://github.com/pylast/pylast
 
 # Apache 2.0
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		hatch-vcs
+MODULES=	lang/python
+MODPY_PYBUILD=	hatch-vcs
+MODPY_PI=	Yes
 
-MODULES =		lang/python
+RUN_DEPENDS=	www/py-httpx
 
-RUN_DEPENDS =		www/py-httpx
-
-TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH} \
-			devel/py-flaky \
-			devel/py-test-cov \
-			textproc/py-yaml
+TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH} \
+		devel/py-flaky \
+		devel/py-test-cov \
+		textproc/py-yaml
 
 pre-test:
 	@if ! [ -r ${WRKSRC}/test_pylast.yaml ]; then echo; \
