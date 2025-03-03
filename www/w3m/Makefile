@@ -2,6 +2,7 @@ COMMENT=	pager/text-based web browser
 
 DIST_TUPLE=	srht rkta w3m 36005bf6ef17b0094e0c67a280edb5046383208d .
 PKGNAME=	w3m-0.5.3pl20241116
+REVISION=	0
 
 CATEGORIES=	www
 
