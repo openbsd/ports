@@ -1,13 +1,12 @@
 COMMENT=	XMPP desktop client
-VERSION=	0.4.4
+VERSION=	0.4.5
 DISTNAME=	dino-${VERSION}
 CATEGORIES=	net x11
-REVISION=	0
 
-SHARED_LIBS +=	crypto-vala               0.0 # 0.0
-SHARED_LIBS +=	dino                      3.1 # 0.0
-SHARED_LIBS +=	qlite                     0.0 # 0.1
-SHARED_LIBS +=	xmpp-vala                 3.1 # 0.1
+SHARED_LIBS +=	crypto-vala               0.1 # 0.0
+SHARED_LIBS +=	dino                      3.2 # 0.0
+SHARED_LIBS +=	qlite                     0.1 # 0.1
+SHARED_LIBS +=	xmpp-vala                 3.2 # 0.1
 
 HOMEPAGE=	https://dino.im/
 
@@ -42,11 +41,11 @@ WANTLIB += gee-0.8 gio-2.0 glib-2.0 gmodule-2.0 gnutls gobject-2.0
 WANTLIB += gpgme graphene-1.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0
 WANTLIB += gstreamer-1.0 gstrtp-1.0 gstvideo-1.0 gtk-4 harfbuzz
 WANTLIB += icudata icuuc intl m nice pango-1.0 pangocairo-1.0
-WANTLIB += qrencode signal-protocol-c soup-3.0 sqlite3 srtp2
+WANTLIB += qrencode signal-protocol-c soup-3.0 sqlite3 srtp2 vulkan
 
 
 CONFIGURE_ARGS =	-DBUILD_TESTS=ON \
-			-DUSE_SOUP3=yes \
+			-DUSE_SOUP3=ON \
 			-DENABLED_PLUGINS=notification-sound
 
 MODCMAKE_LDFLAGS =		-L${LOCALBASE}/lib
