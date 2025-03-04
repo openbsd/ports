@@ -1,9 +1,9 @@
 COMMENT=	distributed, versioned backups solution
 
 MODGO_MODNAME=	github.com/PlakarKorp/plakar
-MODGO_VERSION=	v1.0.0-beta.2
+MODGO_VERSION=	v1.0.0-beta.3
 DISTNAME=	plakar-${MODGO_VERSION}
-PKGNAME=	plakar-1.0.0beta2
+PKGNAME=	plakar-1.0.0beta3
 
 # for patches
 WRKDIST=	${WRKDIR}/github.com/PlakarKorp/plakar@${MODGO_VERSION}

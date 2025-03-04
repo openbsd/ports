@@ -26,7 +26,6 @@ MODGO_MODULES =	\
 	github.com/aymanbagabas/go-osc52/v2						 v2.0.1 \
 	github.com/aymanbagabas/go-udiff						 v0.2.0 \
 	github.com/aymerick/douceur							 v0.2.0 \
-	github.com/beevik/ntp								 v1.4.3 \
 	github.com/beorn7/perks								 v1.0.1 \
 	github.com/cespare/xxhash/v2							 v2.3.0 \
 	github.com/cevatbarisyilmaz/ara							 v0.0.4 \
@@ -335,7 +334,6 @@ MODGO_MODFILES =	\
 	golang.org/x/net				 v0.19.0 \
 	golang.org/x/net				 v0.21.0 \
 	golang.org/x/net				 v0.23.0 \
-	golang.org/x/net				 v0.25.0 \
 	golang.org/x/net				 v0.26.0 \
 	golang.org/x/net				 v0.27.0 \
 	golang.org/x/net				 v0.28.0 \

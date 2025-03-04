@@ -55,8 +55,6 @@ SHA256 (go_modules/github.com/aymanbagabas/go-udiff/@v/v0.2.0.mod) = 8HbrxTvRjka
 SHA256 (go_modules/github.com/aymanbagabas/go-udiff/@v/v0.2.0.zip) = +uBoPHOD2ZuJgnmD3ykxtgzOWzoSdLtJjOA9PKfkWkM=
 SHA256 (go_modules/github.com/aymerick/douceur/@v/v0.2.0.mod) = XgRUJBwle0xPnb3chOeOmeKcUnWzz67or9K7R25ySJc=
 SHA256 (go_modules/github.com/aymerick/douceur/@v/v0.2.0.zip) = 3L9pdgzBqLMjhElUOOEIbkw9ZpsuvA3r2S4YZf/WvmA=
-SHA256 (go_modules/github.com/beevik/ntp/@v/v1.4.3.mod) = s+97uKTWW908bkRDkeammL9MawHHpM60iaOCtXg0CgQ=
-SHA256 (go_modules/github.com/beevik/ntp/@v/v1.4.3.zip) = glxB1zqjY/ENlJAMBLc7n/bkO/z++zZm/aqozolDQ0k=
 SHA256 (go_modules/github.com/beorn7/perks/@v/v1.0.1.mod) = yHCz/lC2lE+rCVsGII2ciJh2PpFzyx7tMljD1YMJumY=
 SHA256 (go_modules/github.com/beorn7/perks/@v/v1.0.1.zip) = Jb2eLZSsp3Dm28H1NyX4T2r0Qy9jHTXdLEb5bvBRLxo=
 SHA256 (go_modules/github.com/cespare/xxhash/v2/@v/v2.2.0.mod) = oJD46q9ZzCrfFjKZ6+/nl+Hco/at0sjoimo7kLpTiwI=
@@ -490,7 +488,6 @@ SHA256 (go_modules/golang.org/x/net/@v/v0.12.0.mod) = CBr+VirQKbz5pSjq2tofIQ11qq
 SHA256 (go_modules/golang.org/x/net/@v/v0.19.0.mod) = qN2kNAkwuAhR6X8yv6atuGvhhaSu6p/HZqb+cvEn8QE=
 SHA256 (go_modules/golang.org/x/net/@v/v0.21.0.mod) = Du8+n+f2aL5bTSTI8SUcbFAtEWiVPICBrJ3D85nGTwY=
 SHA256 (go_modules/golang.org/x/net/@v/v0.23.0.mod) = Cz+667RmgBS03KX15YpFkWcFZ+9EKexf3k6u1mreb6w=
-SHA256 (go_modules/golang.org/x/net/@v/v0.25.0.mod) = E37lK1TBC0eevmuIegIG+09UWB9Uuik7f0u2gs9Sn2c=
 SHA256 (go_modules/golang.org/x/net/@v/v0.26.0.mod) = 82mj44SGDykPhwGlhZt2CTrof6JdWHyMnIFqLC40p5w=
 SHA256 (go_modules/golang.org/x/net/@v/v0.27.0.mod) = LjIf087e3YmSxRktE5mvTgkA3rytu6J+OgZCBheHnxc=
 SHA256 (go_modules/golang.org/x/net/@v/v0.28.0.mod) = ueHcxrg60dl7Q0j5HjBBPHreIKpa0fd+S/3fSsRiWeM=
@@ -670,7 +667,7 @@ SHA256 (go_modules/modernc.org/strutil/@v/v1.2.0.mod) = sny24PKwv0CoCbIONHXso6sh
 SHA256 (go_modules/modernc.org/strutil/@v/v1.2.0.zip) = HqILgc8/1u+tS7G3kSVcwv1IYRHV6fLLDlUenTmqP48=
 SHA256 (go_modules/modernc.org/token/@v/v1.1.0.mod) = evOzXO1S6tSw7Q4iEB2VvABh0g4T3Q2aoHFhZKj12xw=
 SHA256 (go_modules/modernc.org/token/@v/v1.1.0.zip) = Pvqknp+xBWnangnnhfojDNXA9Q/PYF87VDnfzWFXfFg=
-SHA256 (plakar-v1.0.0-beta.2.zip) = WxJCKplNwn+B7ucwUQpJiVOtjnWcvINZi1mk3eLwVRc=
+SHA256 (plakar-v1.0.0-beta.3.zip) = uh5iLchvis9ZNOIhWJvPEdF8Az4sE6eAXTtBXZvlkgw=
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.10.mod) = 1349
 SIZE (go_modules/cloud.google.com/go/@v/v0.112.1.mod) = 1812
 SIZE (go_modules/cloud.google.com/go/@v/v0.112.1.zip) = 318714
@@ -728,8 +725,6 @@ SIZE (go_modules/github.com/aymanbagabas/go-udiff/@v/v0.2.0.mod) = 49
 SIZE (go_modules/github.com/aymanbagabas/go-udiff/@v/v0.2.0.zip) = 41930
 SIZE (go_modules/github.com/aymerick/douceur/@v/v0.2.0.mod) = 35
 SIZE (go_modules/github.com/aymerick/douceur/@v/v0.2.0.zip) = 25606
-SIZE (go_modules/github.com/beevik/ntp/@v/v1.4.3.mod) = 298
-SIZE (go_modules/github.com/beevik/ntp/@v/v1.4.3.zip) = 27210
 SIZE (go_modules/github.com/beorn7/perks/@v/v1.0.1.mod) = 40
 SIZE (go_modules/github.com/beorn7/perks/@v/v1.0.1.zip) = 14678
 SIZE (go_modules/github.com/cespare/xxhash/v2/@v/v2.2.0.mod) = 45
@@ -1163,7 +1158,6 @@ SIZE (go_modules/golang.org/x/net/@v/v0.12.0.mod) = 155
 SIZE (go_modules/golang.org/x/net/@v/v0.19.0.mod) = 155
 SIZE (go_modules/golang.org/x/net/@v/v0.21.0.mod) = 155
 SIZE (go_modules/golang.org/x/net/@v/v0.23.0.mod) = 155
-SIZE (go_modules/golang.org/x/net/@v/v0.25.0.mod) = 155
 SIZE (go_modules/golang.org/x/net/@v/v0.26.0.mod) = 155
 SIZE (go_modules/golang.org/x/net/@v/v0.27.0.mod) = 155
 SIZE (go_modules/golang.org/x/net/@v/v0.28.0.mod) = 155
@@ -1343,4 +1337,4 @@ SIZE (go_modules/modernc.org/strutil/@v/v1.2.0.mod) = 162
 SIZE (go_modules/modernc.org/strutil/@v/v1.2.0.zip) = 11620
 SIZE (go_modules/modernc.org/token/@v/v1.1.0.mod) = 25
 SIZE (go_modules/modernc.org/token/@v/v1.1.0.zip) = 6860
-SIZE (plakar-v1.0.0-beta.2.zip) = 1123588
+SIZE (plakar-v1.0.0-beta.3.zip) = 1123054
