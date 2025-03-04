@@ -15,8 +15,8 @@ SHA256 (go_modules/github.com/bwesterb/go-ristretto/@v/v1.2.3.mod) = NorKF1e+h0X
 SHA256 (go_modules/github.com/bwesterb/go-ristretto/@v/v1.2.3.zip) = ToAJtAKuZJbmazogNwAtwS8abq0JAOchM5D7er/AOUw=
 SHA256 (go_modules/github.com/cloudflare/circl/@v/v1.3.7.mod) = muCoSwYWZOyFibpqYcGMg8iQISByoY5Iybawup5o2ow=
 SHA256 (go_modules/github.com/cloudflare/circl/@v/v1.3.7.zip) = RJcJPLdUTTDp1ddBpeYsFPuJicQnHKCpoKA6c1cLO4M=
-SHA256 (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.4.mod) = FMOvou9iNVXBtINNH4ixTfd1Sa/uheV1DBkQJGW3iro=
-SHA256 (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.4.zip) = mtuqF/F9vjauRk2AYqy7+5z4U7/r7UJENag0orC+2RA=
+SHA256 (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.6.mod) = u4Gp4tFNmlhvBZGFO9qtIw2M3w2Nb/px3driSa1XPMk=
+SHA256 (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.6.zip) = uAWTFuOLz9KLadLCsy00uegAzKof9LWmECLL6Y+nxxA=
 SHA256 (go_modules/github.com/cyphar/filepath-securejoin/@v/v0.3.6.mod) = DaGgUxsSzbWyh8hRIHL/4+4t2joDvXw5FpetgYVRAiE=
 SHA256 (go_modules/github.com/cyphar/filepath-securejoin/@v/v0.3.6.zip) = Ckh1aOpaWKK3/dwa78JUHOymWZKCUChxGqCcGcqYrsQ=
 SHA256 (go_modules/github.com/davecgh/go-spew/@v/v1.1.0.mod) = vLKTkyUSN7eaF7bBm/KRNPQ+j0OMMZiYj81GGhzfBcw=
@@ -82,10 +82,10 @@ SHA256 (go_modules/github.com/sirupsen/logrus/@v/v1.9.3.mod) = AeghItVH0SKBUaYj/
 SHA256 (go_modules/github.com/sirupsen/logrus/@v/v1.9.3.zip) = RQH05rhYv92ZdnH83S9kejF4sptrTRNEyqfAdRcSHdA=
 SHA256 (go_modules/github.com/skeema/knownhosts/@v/v1.3.0.mod) = qlAmo8lp4jXRleCbgbubTeRY1MghcVFk5vYc0omNPyg=
 SHA256 (go_modules/github.com/skeema/knownhosts/@v/v1.3.0.zip) = P1kCHpP2J/I7/AHtGn/9k0ZWeTrmbM+PzA7EvyA5xNA=
-SHA256 (go_modules/github.com/spf13/cobra/@v/v1.8.1.mod) = aL1N5xFXnGSzgnftGo9MXpeks8jkgWBMHx4hyvvpSag=
-SHA256 (go_modules/github.com/spf13/cobra/@v/v1.8.1.zip) = vyeidvhyV8k7wFcwnfMCZaGb7vw9X8iHy9j8ma01Rmo=
-SHA256 (go_modules/github.com/spf13/pflag/@v/v1.0.5.mod) = FsbfwOtY6zyRE84ZfUYMZyXGR+RoisJtMcjtafHrvGg=
-SHA256 (go_modules/github.com/spf13/pflag/@v/v1.0.5.zip) = /G5wTy9qhN3Nzm3gQE5TQPogyGdhgb9dOBsXiIEHuoQ=
+SHA256 (go_modules/github.com/spf13/cobra/@v/v1.9.1.mod) = xrEVcrBMh67mZP2qvZHpTNP7jEtp2BHVmLBnR77QRmM=
+SHA256 (go_modules/github.com/spf13/cobra/@v/v1.9.1.zip) = 5EoxnRZ/CWvTugvQwTzxfY3At9Uax4T6dEDQBd0u1cs=
+SHA256 (go_modules/github.com/spf13/pflag/@v/v1.0.6.mod) = FsbfwOtY6zyRE84ZfUYMZyXGR+RoisJtMcjtafHrvGg=
+SHA256 (go_modules/github.com/spf13/pflag/@v/v1.0.6.zip) = 2NrBEVwX+mZ6k9UPNN3zdkjutrkkRvQpxhIHd6qDlng=
 SHA256 (go_modules/github.com/stretchr/objx/@v/v0.1.0.mod) = E1A1TVLSKHpiM27MDVYjLUxHaZr5u6ScZ8K0glTamPE=
 SHA256 (go_modules/github.com/stretchr/objx/@v/v0.5.2.mod) = WOylTSZyhCeAb0CQiCjodi01LMOwoLC2DcYM5hdn//Y=
 SHA256 (go_modules/github.com/stretchr/objx/@v/v0.5.2.zip) = PCLB0cTEAk6xahLwGHd1ZAvzXVGwoGZJ/rx3lxGUUcA=
@@ -173,7 +173,7 @@ SHA256 (go_modules/gopkg.in/yaml.v2/@v/v2.4.0.zip) = 7eSeJ8TMps3S7HGa7Y6k02NxDM6
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SHA256 (squealer-v1.2.10.zip) = aOBNJxYQEh00EozRsaj0G6Cu1/PczvWozzhx4eCllxE=
+SHA256 (squealer-v1.2.11.zip) = UQWLMBHliiej9i7zb5W9F0OwbrT8iI2+e9SgRZjkv9U=
 SIZE (go_modules/dario.cat/mergo/@v/v1.0.0.mod) = 65
 SIZE (go_modules/dario.cat/mergo/@v/v1.0.0.zip) = 49320
 SIZE (go_modules/github.com/!microsoft/go-winio/@v/v0.5.2.mod) = 147
@@ -191,8 +191,8 @@ SIZE (go_modules/github.com/bwesterb/go-ristretto/@v/v1.2.3.mod) = 49
 SIZE (go_modules/github.com/bwesterb/go-ristretto/@v/v1.2.3.zip) = 167051
 SIZE (go_modules/github.com/cloudflare/circl/@v/v1.3.7.mod) = 153
 SIZE (go_modules/github.com/cloudflare/circl/@v/v1.3.7.zip) = 4936771
-SIZE (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.4.mod) = 100
-SIZE (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.4.zip) = 13136
+SIZE (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.6.mod) = 100
+SIZE (go_modules/github.com/cpuguy83/go-md2man/v2/@v/v2.0.6.zip) = 14810
 SIZE (go_modules/github.com/cyphar/filepath-securejoin/@v/v0.3.6.mod) = 276
 SIZE (go_modules/github.com/cyphar/filepath-securejoin/@v/v0.3.6.zip) = 65940
 SIZE (go_modules/github.com/davecgh/go-spew/@v/v1.1.0.mod) = 34
@@ -258,10 +258,10 @@ SIZE (go_modules/github.com/sirupsen/logrus/@v/v1.9.3.mod) = 192
 SIZE (go_modules/github.com/sirupsen/logrus/@v/v1.9.3.zip) = 69937
 SIZE (go_modules/github.com/skeema/knownhosts/@v/v1.3.0.mod) = 128
 SIZE (go_modules/github.com/skeema/knownhosts/@v/v1.3.0.zip) = 25687
-SIZE (go_modules/github.com/spf13/cobra/@v/v1.8.1.mod) = 194
-SIZE (go_modules/github.com/spf13/cobra/@v/v1.8.1.zip) = 231907
-SIZE (go_modules/github.com/spf13/pflag/@v/v1.0.5.mod) = 39
-SIZE (go_modules/github.com/spf13/pflag/@v/v1.0.5.zip) = 88931
+SIZE (go_modules/github.com/spf13/cobra/@v/v1.9.1.mod) = 194
+SIZE (go_modules/github.com/spf13/cobra/@v/v1.9.1.zip) = 237545
+SIZE (go_modules/github.com/spf13/pflag/@v/v1.0.6.mod) = 39
+SIZE (go_modules/github.com/spf13/pflag/@v/v1.0.6.zip) = 94062
 SIZE (go_modules/github.com/stretchr/objx/@v/v0.1.0.mod) = 32
 SIZE (go_modules/github.com/stretchr/objx/@v/v0.5.2.mod) = 276
 SIZE (go_modules/github.com/stretchr/objx/@v/v0.5.2.zip) = 43974
@@ -349,4 +349,4 @@ SIZE (go_modules/gopkg.in/yaml.v2/@v/v2.4.0.zip) = 81183
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
-SIZE (squealer-v1.2.10.zip) = 46020233
+SIZE (squealer-v1.2.11.zip) = 1609229

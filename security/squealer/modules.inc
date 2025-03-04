@@ -7,7 +7,7 @@ MODGO_MODULES =	\
 	github.com/armon/go-socks5			 v0.0.0-20160902184237-e75332964ef5 \
 	github.com/bwesterb/go-ristretto		 v1.2.3 \
 	github.com/cloudflare/circl			 v1.3.7 \
-	github.com/cpuguy83/go-md2man/v2		 v2.0.4 \
+	github.com/cpuguy83/go-md2man/v2		 v2.0.6 \
 	github.com/cyphar/filepath-securejoin		 v0.3.6 \
 	github.com/davecgh/go-spew			 v1.1.1 \
 	github.com/elazarl/goproxy			 v1.4.0 \
@@ -37,8 +37,8 @@ MODGO_MODULES =	\
 	github.com/sergi/go-diff			 v1.3.2-0.20230802210424-5b0b94c5c0d3 \
 	github.com/sirupsen/logrus			 v1.9.3 \
 	github.com/skeema/knownhosts			 v1.3.0 \
-	github.com/spf13/cobra				 v1.8.1 \
-	github.com/spf13/pflag				 v1.0.5 \
+	github.com/spf13/cobra				 v1.9.1 \
+	github.com/spf13/pflag				 v1.0.6 \
 	github.com/stretchr/objx			 v0.5.2 \
 	github.com/stretchr/testify			 v1.10.0 \
 	github.com/vmihailenco/msgpack/v4		 v4.3.12 \
