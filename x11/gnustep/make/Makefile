@@ -4,11 +4,10 @@ USE_NOBTCFI-aarch64 =	Yes
 
 COMMENT=	GNUstep makefile package
 
-REVISION=	0
 CATEGORIES=	devel x11/gnustep
 GH_ACCOUNT=	gnustep
 GH_PROJECT=	tools-make
-GH_TAGNAME=	2.9.2
+GH_TAGNAME=	2.9.3
 DISTNAME=	gnustep-make-${GH_TAGNAME}
 HOMEPAGE=	http://www.gnustep.org/
 
