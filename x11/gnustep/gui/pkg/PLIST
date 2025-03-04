@@ -163,6 +163,7 @@ include/AppKit/NSMediaLibraryBrowserController.h
 include/AppKit/NSMenu.h
 include/AppKit/NSMenuItem.h
 include/AppKit/NSMenuItemCell.h
+include/AppKit/NSMenuToolbarItem.h
 include/AppKit/NSMenuView.h
 include/AppKit/NSMovie.h
 include/AppKit/NSMovieView.h
@@ -528,6 +529,7 @@ lib/GNUstep/Images/common_ImageFolder.tiff
 lib/GNUstep/Images/common_Info.tiff
 lib/GNUstep/Images/common_LeftTabStop.tiff
 lib/GNUstep/Images/common_LibraryFolder.tiff
+lib/GNUstep/Images/common_MenuToolbarItem.tiff
 lib/GNUstep/Images/common_MiniWindowTile.tiff
 lib/GNUstep/Images/common_Miniaturize.tiff
 lib/GNUstep/Images/common_MiniaturizeH.tiff
