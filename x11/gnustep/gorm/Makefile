@@ -1,6 +1,6 @@
 COMMENT=	GNUstep graphical object relationship modeller
 
-GH_TAGNAME=     1.4.0
+GH_TAGNAME=     1.5.0
 GH_ACCOUNT=     gnustep
 GH_PROJECT=     apps-gorm
 DISTNAME=       gorm-${GH_TAGNAME:S/./_/g}

@@ -9,6 +9,7 @@ include/GormObjCHeaderParser/OCHeaderParser.h
 include/GormObjCHeaderParser/OCIVar.h
 include/GormObjCHeaderParser/OCIVarDecl.h
 include/GormObjCHeaderParser/OCMethod.h
+include/GormObjCHeaderParser/OCProperty.h
 include/GormObjCHeaderParser/ParserFunctions.h
 include/InterfaceBuilder/
 include/InterfaceBuilder/IBApplicationAdditions.h
@@ -77,6 +78,7 @@ lib/GNUstep/Frameworks/GormCore.framework/Versions/0.2/Headers/GormNSSplitViewIn
 lib/GNUstep/Frameworks/GormCore.framework/Versions/0.2/Headers/GormNSWindow.h
 lib/GNUstep/Frameworks/GormCore.framework/Versions/0.2/Headers/GormObjectEditor.h
 lib/GNUstep/Frameworks/GormCore.framework/Versions/0.2/Headers/GormObjectInspector.h
+lib/GNUstep/Frameworks/GormCore.framework/Versions/0.2/Headers/GormObjectViewController.h
 lib/GNUstep/Frameworks/GormCore.framework/Versions/0.2/Headers/GormOpenGLView.h
 lib/GNUstep/Frameworks/GormCore.framework/Versions/0.2/Headers/GormOutlineView.h
 lib/GNUstep/Frameworks/GormCore.framework/Versions/0.2/Headers/GormPalettesManager.h
@@ -176,6 +178,13 @@ lib/GNUstep/Frameworks/GormCore.framework/Versions/0.2/Resources/English.lproj/G
 lib/GNUstep/Frameworks/GormCore.framework/Versions/0.2/Resources/English.lproj/GormObjectInspector.gorm/data.classes
 lib/GNUstep/Frameworks/GormCore.framework/Versions/0.2/Resources/English.lproj/GormObjectInspector.gorm/data.info
 lib/GNUstep/Frameworks/GormCore.framework/Versions/0.2/Resources/English.lproj/GormObjectInspector.gorm/objects.gorm
+lib/GNUstep/Frameworks/GormCore.framework/Versions/0.2/Resources/English.lproj/GormObjectOutlineView.gorm/
+lib/GNUstep/Frameworks/GormCore.framework/Versions/0.2/Resources/English.lproj/GormObjectOutlineView.gorm/data.classes
+lib/GNUstep/Frameworks/GormCore.framework/Versions/0.2/Resources/English.lproj/GormObjectOutlineView.gorm/data.info
+lib/GNUstep/Frameworks/GormCore.framework/Versions/0.2/Resources/English.lproj/GormObjectOutlineView.gorm/editor.tiff
+lib/GNUstep/Frameworks/GormCore.framework/Versions/0.2/Resources/English.lproj/GormObjectOutlineView.gorm/iconView.tiff
+lib/GNUstep/Frameworks/GormCore.framework/Versions/0.2/Resources/English.lproj/GormObjectOutlineView.gorm/objects.gorm
+lib/GNUstep/Frameworks/GormCore.framework/Versions/0.2/Resources/English.lproj/GormObjectOutlineView.gorm/outlineView.tiff
 lib/GNUstep/Frameworks/GormCore.framework/Versions/0.2/Resources/English.lproj/GormPalettePanel.gorm/
 lib/GNUstep/Frameworks/GormCore.framework/Versions/0.2/Resources/English.lproj/GormPalettePanel.gorm/data.classes
 lib/GNUstep/Frameworks/GormCore.framework/Versions/0.2/Resources/English.lproj/GormPalettePanel.gorm/data.info
@@ -283,6 +292,8 @@ lib/GNUstep/Frameworks/GormCore.framework/Versions/0.2/Resources/Xib.plugin/Reso
 @bin lib/GNUstep/Frameworks/GormCore.framework/Versions/0.2/Resources/Xib.plugin/Xib
 lib/GNUstep/Frameworks/GormCore.framework/Versions/0.2/Resources/Xib.plugin/stamp.make
 lib/GNUstep/Frameworks/GormCore.framework/Versions/0.2/Resources/browserView.tiff
+lib/GNUstep/Frameworks/GormCore.framework/Versions/0.2/Resources/editor.tiff
+lib/GNUstep/Frameworks/GormCore.framework/Versions/0.2/Resources/iconView.tiff
 lib/GNUstep/Frameworks/GormCore.framework/Versions/0.2/Resources/outlineView.tiff
 @lib lib/GNUstep/Frameworks/GormCore.framework/Versions/0.2/libGormCore.so.${LIBGormCore_VERSION}
 lib/GNUstep/Frameworks/GormCore.framework/Versions/Current
