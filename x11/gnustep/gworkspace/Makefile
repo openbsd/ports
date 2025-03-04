@@ -1,7 +1,6 @@
 COMMENT=	GNUstep workspace manager
 
-DISTNAME =	gworkspace-1.0.0
-REVISION =	0
+DISTNAME =	gworkspace-1.1.0
 
 CATEGORIES=	x11
 
