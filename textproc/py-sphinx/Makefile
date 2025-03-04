@@ -1,6 +1,6 @@
 COMMENT=	Python documentation generator
 
-MODPY_DISTV=	8.2.1
+MODPY_DISTV=	8.2.3
 DISTNAME=	sphinx-${MODPY_DISTV}
 PKGNAME=	py-sphinx-${MODPY_DISTV}
 
