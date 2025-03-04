@@ -1,0 +1,5 @@
+Plakar is a free and opensource utility to create distributed, versioned backups
+with compression, encryption and data deduplication.
+
+/!\ Plakar is currently NOT production ready yet but it is most definitely
+/!\ stable enough to be tested by others.
