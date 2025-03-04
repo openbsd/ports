@@ -2,9 +2,7 @@ COMMENT=	command line client to run WS-Management requests
 
 GH_ACCOUNT=	Openwsman
 GH_PROJECT=	wsmancli
-#GH_TAGNAME=	v2.6.2
-GH_COMMIT=	50f8d2f0c387a7e9f42c74b541625ac244bf3219
-DISTNAME=	wsmancli-2.8.0pre20241206
+GH_TAGNAME=	v2.8.0
 
 CATEGORIES=	sysutils
 
