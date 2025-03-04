@@ -1,7 +1,8 @@
 COMMENT=	embedded SQL implementation
 
-DISTNAME =	sqlite-autoconf-3490100
+DISTNAME=	sqlite-autoconf-3490100
 PKGNAME=	sqlite3-3.49.1
+REVISION=	0
 
 # XXX needs bumps every time :-/
 SHARED_LIBS +=  sqlite3                   37.32 # 8.6
@@ -20,12 +21,12 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c curses m pthread readline z
 
-SITES =		${HOMEPAGE}2025/
+SITES=		${HOMEPAGE}2025/
 
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 MODULES=	lang/tcl
-BUILD_DEPENDS =	converters/sqlite2mdoc \
+BUILD_DEPENDS=	converters/sqlite2mdoc \
 		${MODTCL_BUILD_DEPENDS}
 
 CONFIGURE_STYLE= simple
@@ -37,7 +38,7 @@ CONFIGURE_ARGS=	--disable-static-shell \
 		--localstatedir=${LOCALSTATEDIR} \
 		--enable-all
 
-CONFIGURE_ENV =	CCACHE=None \
+CONFIGURE_ENV=	CCACHE=None \
 		CFLAGS='${CFLAGS}' \
 		autosetup_tclsh={MODTCL_BIN}
 
@@ -47,6 +48,8 @@ CFLAGS+=	-DSQLITE_ENABLE_UNLOCK_NOTIFY \
 
 # base-gcc + ld.bfd don't like "-rpath /usr/local/lib"
 MAKE_FLAGS=	LDFLAGS.rpath="-Wl,-rpath,${PREFIX}/lib"
+# don't strip the binary
+MAKE_FLAGS+=	INSTALL.strip.0="${INSTALL_PROGRAM}"
 
 post-install:
 		rm ${PREFIX}/lib/libsqlite3.so{,.0}
