@@ -1,7 +1,7 @@
 COMMENT =	Utility program for screen recording of wayland compositors
 
 V =		0.5.0
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT = ammen99
 GH_PROJECT = wf-recorder
@@ -16,6 +16,8 @@ PERMIT_PACKAGE = Yes
 COMPILER =	base-clang ports-gcc
 
 MODULES =	devel/meson
+
+BUILD_DEPENDS = wayland/wayland-protocols
 
 LIB_DEPENDS =  graphics/ffmpeg \
                wayland/wayland
