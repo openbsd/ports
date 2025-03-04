@@ -16,7 +16,7 @@ MODPY_PYBUILD=	hatchling
 MODPY_PI=	Yes
 
 BUILD_DEPENDS=	devel/py-babel \
-		drvel/py-setuptools
+		devel/py-setuptools
 RUN_DEPENDS=	devel/py-dateutil
 
 # optional rdep email_validator (not ported) needed for some tests
