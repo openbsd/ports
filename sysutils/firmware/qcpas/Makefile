@@ -1,5 +1,5 @@
 FW_DRIVER=	qcpas
-FW_VER=		20230625
+FW_VER=		20250211
 DISTNAME=	linux-firmware-${FW_VER}
 EXTRACT_SUFX=	.tar.xz
 # broad enough to reduce WRKSRC size but specific enough to match all DISTFILES
@@ -18,8 +18,13 @@ PERMIT_DISTFILES= Yes
 
 do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/firmware/qcom/sc8280xp/LENOVO/21BX/
+	${INSTALL_DATA_DIR} ${PREFIX}/firmware/qcom/x1e80100/LENOVO/21N1/
 	${INSTALL_DATA} ${WRKSRC}/qcom/sc8280xp/LENOVO/21BX/*.mbn \
 	    ${PREFIX}/firmware/qcom/sc8280xp/LENOVO/21BX/
+	${INSTALL_DATA} ${WRKSRC}/qcom/x1e80100/LENOVO/21N1/*.mbn \
+	    ${PREFIX}/firmware/qcom/x1e80100/LENOVO/21N1/
+	${INSTALL_DATA} ${WRKSRC}/qcom/x1e80100/LENOVO/21N1/*.elf \
+	    ${PREFIX}/firmware/qcom/x1e80100/LENOVO/21N1/
 
 	${INSTALL_DATA} ${WRKSRC}/LICENSE.qcom \
 	    ${PREFIX}/firmware/qcpas-license

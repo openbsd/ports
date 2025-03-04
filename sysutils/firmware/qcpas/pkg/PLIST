@@ -6,4 +6,12 @@ firmware/qcom/sc8280xp/LENOVO/21BX/qcadsp8280.mbn
 firmware/qcom/sc8280xp/LENOVO/21BX/qccdsp8280.mbn
 firmware/qcom/sc8280xp/LENOVO/21BX/qcdxkmsuc8280.mbn
 firmware/qcom/sc8280xp/LENOVO/21BX/qcslpi8280.mbn
+firmware/qcom/x1e80100/
+firmware/qcom/x1e80100/LENOVO/
+firmware/qcom/x1e80100/LENOVO/21N1/
+firmware/qcom/x1e80100/LENOVO/21N1/adsp_dtbs.elf
+firmware/qcom/x1e80100/LENOVO/21N1/cdsp_dtbs.elf
+firmware/qcom/x1e80100/LENOVO/21N1/qcadsp8380.mbn
+firmware/qcom/x1e80100/LENOVO/21N1/qccdsp8380.mbn
+firmware/qcom/x1e80100/LENOVO/21N1/qcdxkmsuc8380.mbn
 firmware/qcpas-license
