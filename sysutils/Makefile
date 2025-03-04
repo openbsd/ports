@@ -295,6 +295,7 @@
      SUBDIR += pftop
      SUBDIR += pick
      SUBDIR += pkg_mgr
+     SUBDIR += plakar
      SUBDIR += planor
      SUBDIR += polkit
      SUBDIR += portroach-cli
