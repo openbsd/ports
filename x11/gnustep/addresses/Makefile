@@ -1,9 +1,9 @@
 COMMENT=	GNUstep address book
 
-DISTNAME=	Addresses-0.4.8
-REVISION =	15
+VERSION =	0.5.0
+DISTNAME=	Addresses-${VERSION}
 
-SHARED_LIBS+=	Addresses 0.1	# .0.1
+SHARED_LIBS+=	Addresses 0.2	# .0.1
 SHARED_LIBS+=	AddressView 0.1	# .0.1
 
 CATEGORIES=	mail
@@ -26,5 +26,7 @@ MAKE_FLAGS+=	Addresses_VERSION=${LIBAddresses_VERSION} \
 
 ALL_TARGET =	all goodies
 INSTALL_TARGET = install goodies-install
+
+SUBST_VARS +=	VERSION
 
 .include <bsd.port.mk>
