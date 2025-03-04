@@ -1,12 +1,11 @@
 COMMENT=	GNUstep base library
 
-GH_TAGNAME=     1.30.0
+GH_TAGNAME=     1.31.1
 GH_ACCOUNT=     gnustep
 GH_PROJECT=     libs-base
 DISTNAME=       gnustep-base-${GH_TAGNAME}
-REVISION =	1
 
-SHARED_LIBS=	gnustep-base 10.7
+SHARED_LIBS=	gnustep-base 10.8
 CATEGORIES=	devel
 
 LIBDIR=		lib/GNUstep/Libraries/gnustep-base/Versions/${LIBgnustep-base_VERSION}
@@ -23,7 +22,7 @@ WANTLIB += iberty
 .endif
 
 #SITES=	${SITE_GNUSTEP:=core/}
-SITES=	https://github.com/gnustep/libs-base/releases/download/base-1_30_0/
+SITES=	https://github.com/gnustep/libs-base/releases/download/base-${GH_TAGNAME:S/./_/g}/
 
 MODULES =	x11/gnustep
 MODGNUSTEP_NEEDS_GUI=	No

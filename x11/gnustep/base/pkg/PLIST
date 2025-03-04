@@ -2,6 +2,7 @@
 @rcscript ${RCDIR}/gdomap
 @bin bin/HTMLLinker
 @bin bin/autogsdoc
+@bin bin/classes
 @bin bin/cvtenc
 @bin bin/defaults
 @bin bin/gdnc
@@ -20,6 +21,8 @@
 @bin bin/plutil
 @bin bin/sfparse
 @bin bin/xmlparse
+include/CoreFoundation/
+include/CoreFoundation/CFCGTypes.h
 include/Foundation/
 include/Foundation/Foundation.h
 include/Foundation/FoundationErrors.h
@@ -198,7 +201,6 @@ include/GNUstepBase/GSFunctions.h
 include/GNUstepBase/GSIArray.h
 include/GNUstepBase/GSIMap.h
 include/GNUstepBase/GSLocale.h
-include/GNUstepBase/GSLock.h
 include/GNUstepBase/GSMime.h
 include/GNUstepBase/GSObjCRuntime.h
 include/GNUstepBase/GSTLS.h
@@ -213,7 +215,6 @@ include/GNUstepBase/NSData+GNUstepBase.h
 include/GNUstepBase/NSDebug+GNUstepBase.h
 include/GNUstepBase/NSFileHandle+GNUstepBase.h
 include/GNUstepBase/NSHashTable+GNUstepBase.h
-include/GNUstepBase/NSLock+GNUstepBase.h
 include/GNUstepBase/NSMutableString+GNUstepBase.h
 include/GNUstepBase/NSNetServices+GNUstepBase.h
 include/GNUstepBase/NSNumber+GNUstepBase.h
@@ -938,12 +939,17 @@ ${LIBDIR}/Resources/NSTimeZones/zones/Zulu
 ${LIBDIR}/Resources/NSTimeZones/zones/root/
 ${LIBDIR}/Resources/NSTimeZones/zones/root/etc/
 ${LIBDIR}/Resources/NSTimeZones/zones/root/etc/localtime
+${LIBDIR}/Resources/NSTimeZones/zones/zonenow.tab
 ${LIBDIR}/Resources/SimplifiedChinese.lproj/
 ${LIBDIR}/Resources/SimplifiedChinese.lproj/Localizable.strings
 ${LIBDIR}/Resources/Spanish.lproj/
 ${LIBDIR}/Resources/Spanish.lproj/Localizable.strings
 ${LIBDIR}/Resources/TraditionalChinese.lproj/
 ${LIBDIR}/Resources/TraditionalChinese.lproj/Localizable.strings
+lib/GNUstep/Tools/
+lib/GNUstep/Tools/Resources/
+lib/GNUstep/Tools/Resources/autogsdoc/
+lib/GNUstep/Tools/Resources/autogsdoc/default-styles.css
 @lib lib/libgnustep-base.so.${LIBgnustep-base_VERSION}
 lib/pkgconfig/gnustep-base.pc
 @man man/man1/HTMLLinker.1
