@@ -1,4 +1,4 @@
-SHA256 (dnscontrol-v4.15.2.zip) = 06J7IyllM+4++LsrMoSjSNFIjvavZwrAqAGA4dj6zlY=
+SHA256 (dnscontrol-v4.16.0.zip) = h615giprVyz7tPfbA8Nmmls1doZHRgbfwpfm0bfp1MQ=
 SHA256 (go_modules/cel.dev/expr/@v/v0.16.0.mod) = 0232HEIabYEuaJjQ22bXEnitPVOBRNeBskPYR2G4/Qo=
 SHA256 (go_modules/cel.dev/expr/@v/v0.16.0.zip) = fD61kzmOeOyvjkyrBzx8sFKvp+17p1MfNi9vGV5YFcM=
 SHA256 (go_modules/cloud.google.com/go/@v/v0.112.2.mod) = ji1034QGPF/QAww2p1hk68JatDbtykhLexEgv6sg+UQ=
@@ -1106,7 +1106,7 @@ SHA256 (go_modules/moul.io/http2curl/@v/v1.0.0.mod) = fF8HjJNEQzI/1JnLIJYJanB53w
 SHA256 (go_modules/moul.io/http2curl/@v/v1.0.0.zip) = Qi4riDMImwAdoCxtcjXstMBZG7WF/uEly9DXKxNx26U=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.5.0.mod) = +/Vbaah9WjkQgv2brl5MdYEEH+Cbi7k7D+Fs3f6FzpU=
 SHA256 (go_modules/software.sslmate.com/src/go-pkcs12/@v/v0.5.0.zip) = PO2aCB5tpMWRAojyTJnfEM+y4brsG1tgMnMBF5iWrQA=
-SIZE (dnscontrol-v4.15.2.zip) = 5497365
+SIZE (dnscontrol-v4.16.0.zip) = 5506304
 SIZE (go_modules/cel.dev/expr/@v/v0.16.0.mod) = 156
 SIZE (go_modules/cel.dev/expr/@v/v0.16.0.zip) = 190847
 SIZE (go_modules/cloud.google.com/go/@v/v0.112.2.mod) = 1812
