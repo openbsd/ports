@@ -21,7 +21,8 @@ SITES =		https://repo1.maven.org/maven2/org/jruby/jruby-dist/${V}/
 SITES.jffi =	https://github.com/jnr/jffi/archive/refs/tags/
 SITES.gem =	${SITE_RUBYGEMS}
 
-MODULES =	java
+MODULES =	java gnu
+MODGNU_CONFIG_GUESS_DIRS = ${WRKSRC}/jffi/jni/libffi
 MODJAVA_VER =	17+
 MODJAVA_BUILD =	ant
 USE_GMAKE =	Yes
@@ -35,7 +36,8 @@ RUN_DEPENDS =	java/javaPathHelper
 
 JRUBY_HOME =	${PREFIX}/jruby
 
-MAKE_ENV+=	CXX=${CXX}
+MAKE_ENV+=	CXX=${CXX} \
+		ax_enable_builddir_sed=/usr/bin/sed
 WRKDIST =	${WRKDIR}/jruby-${V}
 JFFI_HOME =	${WRKDIST}/jffi
 JFFI_ARCH =	${MACHINE_ARCH:S/amd64/x86_64/}-OpenBSD
@@ -57,7 +59,7 @@ post-extract:
 do-configure:
 	${SUBST_CMD} ${WRKSRC}/jruby-launcher/jrubyexe.cpp \
 		${WRKSRC}/jruby-launcher/unixlauncher.cpp
-	cd ${WRKSRC}/jruby-launcher/ && ${SET_ENV} ${MAKE_ENV} \
+	cd ${WRKSRC}/jruby-launcher/ && ${SETENV} ${MAKE_ENV} \
 		../bin/jruby extconf.rb
 	perl -pi -e '$$. == 1 && s|^.*env j?ruby.*$$|\#!${LOCALBASE}/bin/jruby|;' \
                 -e '$$. == 1 && s|^.*bin/j?ruby.*$$|\#!${LOCALBASE}/bin/jruby|;' \
@@ -71,7 +73,8 @@ do-build:
 		${WRKSRC}/lib/jni/${JFFI_ARCH}
 	cd ${WRKSRC}/lib/ruby/stdlib/ffi/platform && \
 		rm -r !(${FFI_ARCH}|*.ffi)
-	cd ${WRKSRC}/jruby-launcher/ && CXX=${CXX} gmake && mv jruby ../bin
+	cd ${WRKSRC}/jruby-launcher/ && ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} ${MAKE_FLAGS} \
+		&& mv jruby ../bin
 
 do-install:
 	ln -s ${TRUEPREFIX}/jruby/bin/jruby ${PREFIX}/bin/jruby
