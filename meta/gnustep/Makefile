@@ -1,6 +1,6 @@
 COMMENT =	GNUstep desktop meta-package
 
-VERSION =	1.0.0
+VERSION =	1.1.0
 PKGNAME =	gnustep-desktop-${VERSION}
 
 RUN_DEPENDS += \
