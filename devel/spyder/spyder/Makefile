@@ -3,7 +3,7 @@ COMMENT =	Scientific PYthon Development EnviRonment
 MODPY_DISTV =	5.5.6
 DISTNAME =	spyder-${MODPY_DISTV}
 PKGNAME =	spyder3-${MODPY_DISTV}
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://github.com/spyder-ide/spyder
 
@@ -38,7 +38,7 @@ RUN_DEPENDS +=	databases/py-pickleshare>=0.4 \
 		textproc/py-jellyfish>=0.7 \
 		textproc/py-numpydoc>=0.6.0 \
 		textproc/py-pygments>=2.0 \
-		textproc/py-sphinx>=0.6.6 \
+		textproc/py-sphinx \
 		textproc/py-textdistance>=4.2.0 \
 		x11/py-qt5>=5.10,<5.16 \
 		www/py-qtwebengine>=5.10,<5.16 \

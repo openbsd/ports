@@ -17,7 +17,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
 
-BUILD_DEPENDS =		textproc/py-sphinx>=4.0.2 \
+BUILD_DEPENDS =		textproc/py-sphinx \
 			${RUN_DEPENDS}
 
 RUN_DEPENDS =		devel/py-atomicwrites \

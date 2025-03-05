@@ -26,7 +26,7 @@ MODULES =	devel/cmake \
 DEBUG_PACKAGES =${BUILD_PACKAGES}
 
 BUILD_DEPENDS =	${RUN_DEPENDS} \
-		textproc/py-sphinx>=4.0.2 \
+		textproc/py-sphinx \
 		x11/i3
 
 LIB_DEPENDS =	audio/libmpdclient \
