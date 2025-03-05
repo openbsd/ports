@@ -25,9 +25,6 @@ lib/libgromox_common.la
 @static-lib lib/libgromox_dbop.a
 lib/libgromox_dbop.la
 @lib lib/libgromox_dbop.so.${LIBgromox_dbop_VERSION}
-@static-lib lib/libgromox_email.a
-lib/libgromox_email.la
-@lib lib/libgromox_email.so.${LIBgromox_email_VERSION}
 @static-lib lib/libgromox_epoll.a
 lib/libgromox_epoll.la
 @lib lib/libgromox_epoll.so.${LIBgromox_epoll_VERSION}
@@ -93,6 +90,8 @@ lib/libgxs_timer_agent.la
 @lib lib/libgxs_timer_agent.so.${LIBgxs_timer_agent_VERSION}
 lib/systemd/
 lib/systemd/system/
+lib/systemd/system/gromox-cleaner.service
+lib/systemd/system/gromox-cleaner.timer
 lib/systemd/system/gromox-delivery-queue.service
 lib/systemd/system/gromox-delivery.service
 lib/systemd/system/gromox-event.service
@@ -161,6 +160,7 @@ man/man8/delivery.8gx
 man/man8/event.8gx
 @man man/man8/gromox-abktconv.8
 @man man/man8/gromox-abktpull.8
+@man man/man8/gromox-cleaner.service.8
 @man man/man8/gromox-compress.8
 @man man/man8/gromox-dbop.8
 @man man/man8/gromox-dscli.8

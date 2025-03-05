@@ -1,0 +1,17 @@
+From 68622bc4ec49f2d034f3f17b95728fdfdf3b4a1b Mon Sep 17 00:00:00 2001
+From: Jan Engelhardt <jengelh@inai.de>
+Date: Tue, 4 Mar 2025 10:54:32 +0100
+Subject: [PATCH] build: resolve clang complaining about rtf.cpp
+
+Index: lib/mapi/rtf.cpp
+--- lib/mapi/rtf.cpp.orig
++++ lib/mapi/rtf.cpp
+@@ -546,7 +546,7 @@ static void rtf_delete_tree_node(SIMPLE_TREE_NODE *pno
+ 	free(pnode);
+ }
+ 
+-RTF_READER::~RTF_READER()
++rtf_reader::~rtf_reader()
+ {
+ 	auto preader = this;
+ 	auto proot = preader->element_tree.get_root();

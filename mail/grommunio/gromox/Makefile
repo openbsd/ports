@@ -4,8 +4,7 @@ ONLY_FOR_ARCHS=	${LLD_ARCHS}
 COMMENT-main=	groupware server backend with RPC, IMAP, POP3 support
 COMMENT-mapi=	gromox MAPI extensions for PHP
 
-V=		2.41
-REVISION-main=	0
+V=		2.42
 
 # required for mime.types
 MAILCAP_V=	2-1-54
@@ -17,7 +16,7 @@ PKGNAME-mapi=	gromox-mapi-${V}
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	gromox
-GH_COMMIT=	89632305390e1e07e8aa90658cb7452da9345ac8
+GH_COMMIT=	6adbe14437b97d8146d75ff5da1d38667a9d7693
 
 SITES.a=	https://pagure.io/mailcap/archive/r${MAILCAP_V}/
 DISTFILES.a=	mailcap-r${MAILCAP_V}.tar.gz
@@ -29,7 +28,6 @@ SHARED_LIBS +=  gromox_authz              0.0 # 0.0
 SHARED_LIBS +=  gromox_common             0.0 # 0.0
 SHARED_LIBS +=  gromox_cplus              0.0 # 0.0
 SHARED_LIBS +=  gromox_dbop               0.0 # 0.0
-SHARED_LIBS +=  gromox_email              0.0 # 0.0
 SHARED_LIBS +=  gromox_epoll              0.0 # 0.0
 SHARED_LIBS +=  gromox_exrpc              0.0 # 0.0
 SHARED_LIBS +=  gromox_mapi               0.0 # 0.0
@@ -73,8 +71,8 @@ BUILD_DEPENDS=	devel/cppunit \
 
 WANTLIB += HX iconv jsoncpp m pthread tinyxml2 vmime zstd
 
-WANTLIB-main += ${COMPILER_LIBCXX} ${WANTLIB} c crypto curl fmt icudata icuuc lber
-WANTLIB-main += ldap ldns lzma mariadb nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls
+WANTLIB-main += ${COMPILER_LIBCXX} ${WANTLIB} c cares crypto curl fmt icudata icuuc
+WANTLIB-main += lber ldap lzma mariadb nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls
 WANTLIB-main += sasl2 sqlite3 ssl ssl xml2 xxhash z
 
 # Do not substitute MODULE_NAME
@@ -89,13 +87,13 @@ LIB_DEPENDS-main=	archivers/zstd \
 			devel/jsoncpp \
 			devel/libHX \
 			devel/libvmime>=20240611p0 \
+			net/libcares \
 			net/curl \
-			net/ldns \
 			sysutils/xxhash \
 			textproc/libxml \
 			textproc/tinyxml2
 
-WANTLIB-mapi += ${WANTLIB} HX crypto fmt gromox_common gromox_email
+WANTLIB-mapi += ${WANTLIB} HX crypto fmt gromox_common
 WANTLIB-mapi += gromox_mapi lzma m sqlite3 ssl xml2 z
 
 LIB_DEPENDS-mapi=	${BASE_PKGPATH}>=${V} \
@@ -108,11 +106,12 @@ RUN_DEPENDS-mapi=	${MODPHP_RUN_DEPENDS}
 
 USE_GMAKE=	Yes
 
-#USE_NOEXECONLY=	Yes
-#USE_WXNEEDED=	Yes
-
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
+
+CONFIGURE_ENV+=		vmime_CFLAGS="$(pkg-config vmime --cflags)" \
+			vmime_LIBS="$(pkg-config vmime --libs)"
+
 
 CONFIGURE_STYLE=	autoreconf
 
