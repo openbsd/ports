@@ -535,8 +535,8 @@ SHA256 (go_modules/github.com/go-asn1-ber/asn1-ber/@v/v1.5.7.zip) = U1A8jto5eG/e
 SHA256 (go_modules/github.com/go-ini/ini/@v/v1.67.0.mod) = N68DixhDQ+XhM/VMULINgNQx3EuNJKd9l1+dMDafLHc=
 SHA256 (go_modules/github.com/go-ini/ini/@v/v1.67.0.zip) = 13/htTey5ttAQL1Ri0dVl5AG1a9+gq4DWqK8XUDA/1U=
 SHA256 (go_modules/github.com/go-jose/go-jose/v4/@v/v4.0.2.mod) = 9Y7SiHjVUwfCQxqNmI6/7S39dEHKHB1nj/gJ/7IMpeg=
-SHA256 (go_modules/github.com/go-jose/go-jose/v4/@v/v4.0.4.mod) = KbiohBwTM489xv+D0m/Dw3F1Ve1YLvhFHlvl3klem+o=
-SHA256 (go_modules/github.com/go-jose/go-jose/v4/@v/v4.0.4.zip) = UoSlcI0Xcfx/ebZBZixUpNGVPIF/aBdRIZoFCnnk1ac=
+SHA256 (go_modules/github.com/go-jose/go-jose/v4/@v/v4.0.5.mod) = aja1hxUh5hTmjTqZMnQguALVy6w17HzugPb8PSnujIU=
+SHA256 (go_modules/github.com/go-jose/go-jose/v4/@v/v4.0.5.zip) = e7AgXCNaS8K7ynKaCNLYbzGsAZnPwccLLXgPdZQ2ZAc=
 SHA256 (go_modules/github.com/go-ldap/ldap/v3/@v/v3.4.8.mod) = HwJ70QhkLAIrKnCsWrg6js/NcFN1LId1NDeyCD9cQ1Y=
 SHA256 (go_modules/github.com/go-ldap/ldap/v3/@v/v3.4.8.zip) = QTamGNggOhSOsmQsoG5gBm4U5yK6AuArIQMZkH56oNM=
 SHA256 (go_modules/github.com/go-logr/logr/@v/v1.2.2.mod) = UZsdbaXu72dbShhX1ijwXxEKK4yzxCO3Ff6oDQl1pRg=
@@ -923,7 +923,8 @@ SHA256 (go_modules/github.com/minio/kms-go/kms/@v/v0.4.0.zip) = xqr0opa0ZwWjonZN
 SHA256 (go_modules/github.com/minio/madmin-go/v3/@v/v3.0.78.mod) = Q6Gpfyo5MmpTDiwv50e40A+zr5s4ldbKUc8lqbUrRbI=
 SHA256 (go_modules/github.com/minio/madmin-go/v3/@v/v3.0.89.mod) = U4YaOR0EoS3LA7TZRhwKJv5mf4yVeKXs+jKA/pC0CF8=
 SHA256 (go_modules/github.com/minio/madmin-go/v3/@v/v3.0.91.mod) = U4YaOR0EoS3LA7TZRhwKJv5mf4yVeKXs+jKA/pC0CF8=
-SHA256 (go_modules/github.com/minio/madmin-go/v3/@v/v3.0.91.zip) = faO2zXQoDJ502BsF/UKOp//upI2Lo2pEFLpb7ADcC7Y=
+SHA256 (go_modules/github.com/minio/madmin-go/v3/@v/v3.0.94.mod) = U4YaOR0EoS3LA7TZRhwKJv5mf4yVeKXs+jKA/pC0CF8=
+SHA256 (go_modules/github.com/minio/madmin-go/v3/@v/v3.0.94.zip) = ZFEwPwIUkPAwPbQwRVrok30rAE5cBYYtqSp/5g2UJfM=
 SHA256 (go_modules/github.com/minio/mc/@v/v0.0.0-20250208210632-10c50368c526.mod) = c0dGPAfGdwyqE1vX5sw7Es0uB3TZTN5B1Jv4wTNI3Ns=
 SHA256 (go_modules/github.com/minio/mc/@v/v0.0.0-20250208210632-10c50368c526.zip) = JbA0qWMYZyj/5A782lT9fRvrzg0BPWl5jiJ7J3ow9pw=
 SHA256 (go_modules/github.com/minio/md5-simd/@v/v1.1.2.mod) = dmXwdbg8y4HGbemA2l8j5U4UeUcqrdQWbfwm+BSKL6M=
@@ -1386,7 +1387,8 @@ SHA256 (go_modules/golang.org/x/crypto/@v/v0.29.0.mod) = k9lCkG9W608ojslpnms2A+s
 SHA256 (go_modules/golang.org/x/crypto/@v/v0.31.0.mod) = 2bd+OUpoB1h3y1O1A0UXvP9aDVN+dYzeV45e0gcTpew=
 SHA256 (go_modules/golang.org/x/crypto/@v/v0.32.0.mod) = P9Trc7FrAHV2XHy1GNpTULSOkjoySjbKcL74nBfTMdU=
 SHA256 (go_modules/golang.org/x/crypto/@v/v0.33.0.mod) = 9trUgUYnEbDEHxR6oXUIfzZWWRxZM2JC/cn66V0PxZ4=
-SHA256 (go_modules/golang.org/x/crypto/@v/v0.33.0.zip) = OwwZwdJZ6TRk9UAWVHDehych5fxmzj8NNv/SfTB+xbs=
+SHA256 (go_modules/golang.org/x/crypto/@v/v0.35.0.mod) = f5npHB2xrbhOLily/1vZW8fehN2xIJ5d6O4iaWlRvgQ=
+SHA256 (go_modules/golang.org/x/crypto/@v/v0.35.0.zip) = ncmMGo3jHwCk1i5/IFJ1ovtiY/WbLBTqw6u4hlCk4UY=
 SHA256 (go_modules/golang.org/x/crypto/@v/v0.5.0.mod) = 9EcFRrmHcXYX8bZj9EKPBE/UXhsqFBFzRJjBIq+lWas=
 SHA256 (go_modules/golang.org/x/crypto/@v/v0.6.0.mod) = G2poNFWjuIK2rFPyJ1KWDoe9kQQKlNbyxcthJh4jidg=
 SHA256 (go_modules/golang.org/x/crypto/@v/v0.7.0.mod) = yJ/iLnPawmoAplasEf9MbhprbNKrzFftzazew/va2C0=
@@ -1721,7 +1723,7 @@ SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.4.1.zip) = zoD3u+y
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 8ikTVRI4fWZj4fCZmkkiq3CN7UvcgExxzpPj1gK6ld0=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = CZ2G+OBNET1A9KFSzf4AFxFtfv6mjkF6nGRthgJj174=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 7wMf94/5twNuF07vSd+9d0aNxPCvtzpjm2H4qzocxCU=
-SHA256 (minio-v0.0.0-20250218162555-90f5e1e5f62c.zip) = pn5SWpVVWcVHKD+zjjnfFLOR0xHsfAxMu68HRrRQEaQ=
+SHA256 (minio-v0.0.0-20250228095516-8c2c92f7afdc.zip) = Ywozcc2plJ6IGBYb8LIvlWdnRwDV0W0kd5Tu4L42R5w=
 SIZE (go_modules/aead.dev/mem/@v/v0.2.0.mod) = 29
 SIZE (go_modules/aead.dev/mem/@v/v0.2.0.zip) = 19860
 SIZE (go_modules/aead.dev/minisign/@v/v0.2.0.mod) = 222
@@ -2259,8 +2261,8 @@ SIZE (go_modules/github.com/go-asn1-ber/asn1-ber/@v/v1.5.7.zip) = 36352
 SIZE (go_modules/github.com/go-ini/ini/@v/v1.67.0.mod) = 29
 SIZE (go_modules/github.com/go-ini/ini/@v/v1.67.0.zip) = 72309
 SIZE (go_modules/github.com/go-jose/go-jose/v4/@v/v4.0.2.mod) = 304
-SIZE (go_modules/github.com/go-jose/go-jose/v4/@v/v4.0.4.mod) = 304
-SIZE (go_modules/github.com/go-jose/go-jose/v4/@v/v4.0.4.zip) = 366051
+SIZE (go_modules/github.com/go-jose/go-jose/v4/@v/v4.0.5.mod) = 305
+SIZE (go_modules/github.com/go-jose/go-jose/v4/@v/v4.0.5.zip) = 365752
 SIZE (go_modules/github.com/go-ldap/ldap/v3/@v/v3.4.8.mod) = 369
 SIZE (go_modules/github.com/go-ldap/ldap/v3/@v/v3.4.8.zip) = 86339
 SIZE (go_modules/github.com/go-logr/logr/@v/v1.2.2.mod) = 40
@@ -2647,7 +2649,8 @@ SIZE (go_modules/github.com/minio/kms-go/kms/@v/v0.4.0.zip) = 71060
 SIZE (go_modules/github.com/minio/madmin-go/v3/@v/v3.0.78.mod) = 1900
 SIZE (go_modules/github.com/minio/madmin-go/v3/@v/v3.0.89.mod) = 1928
 SIZE (go_modules/github.com/minio/madmin-go/v3/@v/v3.0.91.mod) = 1928
-SIZE (go_modules/github.com/minio/madmin-go/v3/@v/v3.0.91.zip) = 368461
+SIZE (go_modules/github.com/minio/madmin-go/v3/@v/v3.0.94.mod) = 1928
+SIZE (go_modules/github.com/minio/madmin-go/v3/@v/v3.0.94.zip) = 370171
 SIZE (go_modules/github.com/minio/mc/@v/v0.0.0-20250208210632-10c50368c526.mod) = 5206
 SIZE (go_modules/github.com/minio/mc/@v/v0.0.0-20250208210632-10c50368c526.zip) = 1022641
 SIZE (go_modules/github.com/minio/md5-simd/@v/v1.1.2.mod) = 88
@@ -3110,7 +3113,8 @@ SIZE (go_modules/golang.org/x/crypto/@v/v0.29.0.mod) = 190
 SIZE (go_modules/golang.org/x/crypto/@v/v0.31.0.mod) = 190
 SIZE (go_modules/golang.org/x/crypto/@v/v0.32.0.mod) = 190
 SIZE (go_modules/golang.org/x/crypto/@v/v0.33.0.mod) = 190
-SIZE (go_modules/golang.org/x/crypto/@v/v0.33.0.zip) = 1793598
+SIZE (go_modules/golang.org/x/crypto/@v/v0.35.0.mod) = 192
+SIZE (go_modules/golang.org/x/crypto/@v/v0.35.0.zip) = 1794181
 SIZE (go_modules/golang.org/x/crypto/@v/v0.5.0.mod) = 171
 SIZE (go_modules/golang.org/x/crypto/@v/v0.6.0.mod) = 171
 SIZE (go_modules/golang.org/x/crypto/@v/v0.7.0.mod) = 171
@@ -3445,4 +3449,4 @@ SIZE (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.4.1.zip) = 329350
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = 133
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 222726
-SIZE (minio-v0.0.0-20250218162555-90f5e1e5f62c.zip) = 25054341
+SIZE (minio-v0.0.0-20250228095516-8c2c92f7afdc.zip) = 25055259

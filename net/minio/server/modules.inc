@@ -235,7 +235,7 @@ MODGO_MODULES =	\
 	github.com/ghodss/yaml									 v1.0.0 \
 	github.com/go-asn1-ber/asn1-ber								 v1.5.7 \
 	github.com/go-ini/ini									 v1.67.0 \
-	github.com/go-jose/go-jose/v4								 v4.0.4 \
+	github.com/go-jose/go-jose/v4								 v4.0.5 \
 	github.com/go-ldap/ldap/v3								 v3.4.8 \
 	github.com/go-logr/logr									 v1.4.2 \
 	github.com/go-logr/stdr									 v1.2.2 \
@@ -379,7 +379,7 @@ MODGO_MODULES =	\
 	github.com/minio/kes									 v0.24.0 \
 	github.com/minio/kms-go/kes								 v0.3.1 \
 	github.com/minio/kms-go/kms								 v0.4.0 \
-	github.com/minio/madmin-go/v3								 v3.0.91 \
+	github.com/minio/madmin-go/v3								 v3.0.94 \
 	github.com/minio/mc									 v0.0.0-20250208210632-10c50368c526 \
 	github.com/minio/md5-simd								 v1.1.2 \
 	github.com/minio/minio-go/v6								 v6.0.46 \
@@ -540,7 +540,7 @@ MODGO_MODULES =	\
 	go.uber.org/multierr									 v1.11.0 \
 	go.uber.org/zap										 v1.27.0 \
 	goftp.io/server/v2									 v2.0.1 \
-	golang.org/x/crypto									 v0.33.0 \
+	golang.org/x/crypto									 v0.35.0 \
 	golang.org/x/exp									 v0.0.0-20240119083558-1b970713d09a \
 	golang.org/x/lint									 v0.0.0-20190313153728-d0100b6bd8b3 \
 	golang.org/x/mod									 v0.22.0 \
@@ -748,6 +748,7 @@ MODGO_MODFILES =	\
 	github.com/minio/highwayhash								 v1.0.2 \
 	github.com/minio/madmin-go/v3								 v3.0.78 \
 	github.com/minio/madmin-go/v3								 v3.0.89 \
+	github.com/minio/madmin-go/v3								 v3.0.91 \
 	github.com/minio/minio-go/v7								 v7.0.82 \
 	github.com/minio/minio-go/v7								 v7.0.83-0.20241230094935-5757f2c8544a \
 	github.com/minio/minio-go/v7								 v7.0.84 \
@@ -889,6 +890,7 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto									 v0.29.0 \
 	golang.org/x/crypto									 v0.31.0 \
 	golang.org/x/crypto									 v0.32.0 \
+	golang.org/x/crypto									 v0.33.0 \
 	golang.org/x/crypto									 v0.5.0 \
 	golang.org/x/crypto									 v0.6.0 \
 	golang.org/x/crypto									 v0.7.0 \
