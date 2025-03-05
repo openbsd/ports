@@ -1,4 +1,7 @@
 clang doesn't have __builtin_riscv_pause()
+Use raw instruction encoding like in src/sys CPU_BUSY_CYCLE(),
+no idea how to cleanly access the "pause" instruction from the
+Zihintpause extension.
 
 Index: include/my_cpu.h
 --- include/my_cpu.h.orig
