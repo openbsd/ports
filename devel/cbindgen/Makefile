@@ -2,11 +2,11 @@ COMMENT =		C bindings generator from rust code
 
 GH_ACCOUNT =		eqrion
 GH_PROJECT =		cbindgen
-GH_TAGNAME =		v0.26.0
-REVISION =		0
+GH_TAGNAME =		v0.28.0
 
 CATEGORIES =		devel
 
+MAINTAINER =		Landry Breuil <landry@openbsd.org>
 # MPL-2.0
 PERMIT_PACKAGE =	Yes
 
