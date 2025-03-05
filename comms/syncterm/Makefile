@@ -9,6 +9,10 @@ HOMEPAGE=	http://syncterm.bbsdev.net/
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
+# C11
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 # sdl2 is dlopen()'d
 WANTLIB +=	SDL2 c curses m ossaudio pthread util
 
