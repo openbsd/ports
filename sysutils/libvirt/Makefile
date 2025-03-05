@@ -1,13 +1,13 @@
 COMMENT=		tool/library for managing platform virtualization
 
-DISTNAME=		libvirt-11.0.0
+DISTNAME=		libvirt-11.1.0
 
 CATEGORIES=		sysutils devel emulators
 
-SHARED_LIBS += virt                      2.5 # 0.11000.0
-SHARED_LIBS += virt-qemu                 2.3 # 0.11000.0
-SHARED_LIBS += virt-lxc                  2.2 # 0.11000.0
-SHARED_LIBS += virt-admin                2.2 # 0.11000.0
+SHARED_LIBS += virt                      2.5 # 0.11001.0
+SHARED_LIBS += virt-qemu                 2.3 # 0.11001.0
+SHARED_LIBS += virt-lxc                  2.2 # 0.11001.0
+SHARED_LIBS += virt-admin                2.2 # 0.11001.0
 
 HOMEPAGE=		https://libvirt.org/
 
@@ -34,7 +34,7 @@ MODULES=		devel/meson
 
 BUILD_DEPENDS=		devel/gettext,-tools
 
-# rst2html-3
+# rst2html5
 MODULES +=		lang/python
 MODPY_RUNDEP=		No
 BUILD_DEPENDS +=	textproc/py-docutils
@@ -72,7 +72,7 @@ DISABLED_FEATURES=	wireshark_dissector apparmor attr audit capng fuse \
 			openwsman selinux_mount selinux udev readline \
 			driver_bhyve driver_hyperv driver_interface ssh_proxy \
 			driver_libxl driver_lxc driver_openvz driver_vz \
-			secdriver_apparmor secdriver_selinux nbdkit \
+			secdriver_apparmor secdriver_selinux nbdkit driver_ch \
 			login_shell driver_network nss sysctl_config \
 			git_werror libnl apparmor_profiles sanlock firewalld \
 			firewalld_zone nbdkit_config_default userfaultfd_sysctl
@@ -102,9 +102,6 @@ CONFIGURE_ARGS +=	-Dlibssh=disabled
 CONFIGURE_ARGS +=	-Dblkid=disabled
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
-
-pre-configure:
-	cd ${WRKDIR}/bin && ln -sf ${LOCALBASE}/bin/rst2html-3 rst2html5
 
 post-install:
 	rm -rf ${WRKINST}/var/{cache/libvirt,lib}

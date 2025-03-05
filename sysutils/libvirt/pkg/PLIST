@@ -43,13 +43,13 @@ lib/libvirt/lock-driver/
 lib/libvirt/storage-backend/
 @so lib/libvirt/storage-backend/libvirt_storage_backend_fs.so
 lib/libvirt/storage-file/
-@so lib/libvirt/storage-file/libvirt_storage_file_fs.so
 lib/pkgconfig/libvirt-admin.pc
 lib/pkgconfig/libvirt-lxc.pc
 lib/pkgconfig/libvirt-qemu.pc
 lib/pkgconfig/libvirt.pc
 lib/sysusers.d/
 lib/sysusers.d/libvirt-qemu.conf
+lib/sysusers.d/libvirt.conf
 libexec/libvirt-guests.sh
 @bin libexec/libvirt_iohelper
 @man man/man1/virsh.1
