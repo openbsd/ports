@@ -2,12 +2,10 @@ COMMENT-main=		compiler for the GObject type system
 COMMENT-valadoc=	Vala documentation generator
 
 GNOME_PROJECT=		vala
-GNOME_VERSION=		0.56.17
+GNOME_VERSION=		0.56.18
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-valadoc=	valadoc-${GNOME_VERSION}
-REVISION-main=		0
-REVISION-valadoc=	0
 
 # !!! XXX API_V is used by x11/elementary/code
 API_V=			0.56
