@@ -237,7 +237,7 @@ SHA256 (cargo/zerofrom-derive-0.1.5.tar.gz) = WV7tmC99NVvrhYN/ZR+iLpCzwESELcfywo
 SHA256 (cargo/zeroize-1.8.1.tar.gz) = ztNniih5swMG0yP0VCYmaXpGSpfAoHya6/frymXNTd4=
 SHA256 (cargo/zerovec-0.10.4.tar.gz) = qiuJPXnfI7+xLVRhAY1AjqGd+v52wsfvbU66YU+P8Hk=
 SHA256 (cargo/zerovec-derive-0.10.3.tar.gz) = bq+m37F1hOo+K9bnbgzBWtevErCavdHKVZYb7ZsQY8Y=
-SHA256 (routinator-0.14.1.tar.gz) = SzqvZH7GH3CF5Irxy8NQzAvfziCC2uKc2haVDPT0rp0=
+SHA256 (routinator-0.14.2.tar.gz) = /om+Haios0Z8YnAQwKXa4kG+zv/EJ8F+8WUBrd3rtq0=
 SIZE (cargo/addr2line-0.24.2.tar.gz) = 39015
 SIZE (cargo/adler2-2.0.0.tar.gz) = 13529
 SIZE (cargo/android-tzdata-0.1.1.tar.gz) = 7674
@@ -477,4 +477,4 @@ SIZE (cargo/zerofrom-derive-0.1.5.tar.gz) = 8285
 SIZE (cargo/zeroize-1.8.1.tar.gz) = 20029
 SIZE (cargo/zerovec-0.10.4.tar.gz) = 126398
 SIZE (cargo/zerovec-derive-0.10.3.tar.gz) = 19438
-SIZE (routinator-0.14.1.tar.gz) = 5550812
+SIZE (routinator-0.14.2.tar.gz) = 5550847
