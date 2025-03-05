@@ -1,7 +1,7 @@
 Index: ui/gfx/BUILD.gn
 --- ui/gfx/BUILD.gn.orig
 +++ ui/gfx/BUILD.gn
-@@ -653,7 +653,7 @@ source_set("memory_buffer_sources") {
+@@ -656,7 +656,7 @@ source_set("memory_buffer_sources") {
      deps += [ "//build/config/linux/libdrm" ]
    }
  

@@ -133,8 +133,6 @@ chrome/resources/accessibility/reading_mode_gdocs_helper_manifest.json
 chrome/resources/inspector_overlay/
 chrome/resources/inspector_overlay/inspector_overlay_resources.grd
 chrome/resources/inspector_overlay/main.js
-chrome/resources/tts_engine/
-chrome/resources/tts_engine/background.js
 chrome/snapshot_blob.bin
 %%swiftshader%%
 chrome/v8_context_snapshot.bin

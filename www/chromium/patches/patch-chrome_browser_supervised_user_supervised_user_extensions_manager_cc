@@ -10,7 +10,7 @@ Index: chrome/browser/supervised_user/supervised_user_extensions_manager.cc
    MaybeMarkExtensionsLocallyParentApproved();
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
  }
-@@ -471,7 +471,7 @@ bool SupervisedUserExtensionsManager::ShouldBlockExten
+@@ -470,7 +470,7 @@ bool SupervisedUserExtensionsManager::ShouldBlockExten
    return false;
  }
  
