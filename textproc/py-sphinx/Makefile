@@ -1,12 +1,14 @@
 COMMENT=	Python documentation generator
 
-MODPY_DISTV=	8.2.3
+MODPY_DISTV=	8.2.1
 DISTNAME=	sphinx-${MODPY_DISTV}
 PKGNAME=	py-sphinx-${MODPY_DISTV}
 
 CATEGORIES=	textproc
 
 HOMEPAGE=	https://www.sphinx-doc.org/
+
+EPOCH=		0
 
 # BSD
 PERMIT_PACKAGE=	Yes
