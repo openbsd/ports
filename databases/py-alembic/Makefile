@@ -1,11 +1,12 @@
 COMMENT=	database migration tool for sqlalchemy
 
-MODPY_DISTV=	1.14.1
+MODPY_DISTV=	1.15.1
 DISTNAME=	alembic-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
 CATEGORIES=	databases
 
+# https://github.com/sqlalchemy/alembic
 HOMEPAGE=	https://alembic.sqlalchemy.org
 
 # MIT
