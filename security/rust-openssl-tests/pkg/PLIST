@@ -1901,6 +1901,7 @@ share/rust-openssl-tests/modcargo-crates/${VER_pkg-config}/.github/workflows/
 share/rust-openssl-tests/modcargo-crates/${VER_pkg-config}/.github/workflows/ci.yml
 share/rust-openssl-tests/modcargo-crates/${VER_pkg-config}/.gitignore
 share/rust-openssl-tests/modcargo-crates/${VER_pkg-config}/CHANGELOG.md
+share/rust-openssl-tests/modcargo-crates/${VER_pkg-config}/Cargo.lock
 share/rust-openssl-tests/modcargo-crates/${VER_pkg-config}/Cargo.lock.msrv
 share/rust-openssl-tests/modcargo-crates/${VER_pkg-config}/Cargo.toml
 share/rust-openssl-tests/modcargo-crates/${VER_pkg-config}/Cargo.toml.orig
