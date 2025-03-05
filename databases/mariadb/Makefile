@@ -1,3 +1,5 @@
+DPB_PROPERTIES=	parallel
+
 COMMENT-main=	multithreaded SQL database (client)
 COMMENT-server=	multithreaded SQL database (server)
 COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
