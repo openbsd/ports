@@ -1,6 +1,6 @@
 COMMENT=	small SSH server and client
 
-DISTNAME=	dropbear-2024.86
+DISTNAME=	dropbear-2025.87
 EXTRACT_SUFX=	.tar.bz2
 
 CATEGORIES=	security net
