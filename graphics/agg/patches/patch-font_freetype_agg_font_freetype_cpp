@@ -1,0 +1,14 @@
+Fix build with freetype 2.13.3
+
+Index: font_freetype/agg_font_freetype.cpp
+--- font_freetype/agg_font_freetype.cpp.orig
++++ font_freetype/agg_font_freetype.cpp
+@@ -186,7 +186,7 @@ namespace agg
+             v_control = v_start;
+ 
+             point = outline.points + first;
+-            tags  = outline.tags  + first;
++            tags  = reinterpret_cast<char*>(outline.tags)  + first;
+             tag   = FT_CURVE_TAG(tags[0]);
+ 
+             // A contour cannot start with a cubic control point!
