@@ -1,5 +1,5 @@
-@pkgpath devel/py-wbem,python3
 @conflict py-wbem-*
+@pkgpath devel/py-wbem,python3
 bin/mof_compiler
 lib/python${MODPY_VERSION}/site-packages/pywbem/
 lib/python${MODPY_VERSION}/site-packages/pywbem-${MODPY_DISTV}.dist-info/
@@ -63,6 +63,8 @@ lib/python${MODPY_VERSION}/site-packages/pywbem/${MODPY_PYCACHE}_valuemapping.${
 lib/python${MODPY_VERSION}/site-packages/pywbem/${MODPY_PYCACHE}_valuemapping.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pywbem/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pywbem/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pywbem/${MODPY_PYCACHE}_version_scm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/pywbem/${MODPY_PYCACHE}_version_scm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pywbem/${MODPY_PYCACHE}_warnings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pywbem/${MODPY_PYCACHE}_warnings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pywbem/${MODPY_PYCACHE}config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -130,6 +132,7 @@ lib/python${MODPY_VERSION}/site-packages/pywbem/_vendor/nocaselist/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/pywbem/_vendor/nocaselist/_nocaselist.py
 lib/python${MODPY_VERSION}/site-packages/pywbem/_vendor/nocaselist/_version.py
 lib/python${MODPY_VERSION}/site-packages/pywbem/_version.py
+lib/python${MODPY_VERSION}/site-packages/pywbem/_version_scm.py
 lib/python${MODPY_VERSION}/site-packages/pywbem/_warnings.py
 lib/python${MODPY_VERSION}/site-packages/pywbem/config.py
 lib/python${MODPY_VERSION}/site-packages/pywbem_mock/
