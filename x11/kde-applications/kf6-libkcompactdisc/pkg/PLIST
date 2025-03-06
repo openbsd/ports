@@ -1,3 +1,4 @@
+@conflict libkcompactdisc-kf5-*
 include/KCompactDisc6/
 include/KCompactDisc6/KCompactDisc
 include/KCompactDisc6/kcompactdisc.h

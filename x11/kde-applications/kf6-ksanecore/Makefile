@@ -2,6 +2,7 @@ COMMENT =	KDE SANE (scanner) core library
 
 DISTNAME =	ksanecore-${VERSION}
 PKGNAME =	kf6-ksanecore-${VERSION}
+REVISION =	0
 
 CATEGORIES =	graphics devel
 
