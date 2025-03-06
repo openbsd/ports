@@ -1,7 +1,7 @@
 Index: LibreNMS/wrapper.py
 --- LibreNMS/wrapper.py.orig
 +++ LibreNMS/wrapper.py
-@@ -282,7 +282,7 @@ def poll_worker(
+@@ -282,11 +282,11 @@ def poll_worker(
                      os.path.dirname(os.path.dirname(os.path.realpath(__file__))),
                      wrappers[wrapper_type]["executable"],
                  )
@@ -10,3 +10,8 @@ Index: LibreNMS/wrapper.py
                      executable, wrappers[wrapper_type]["option"], device_id
                  )
                  if modules is not None and len(str(modules).strip()):
+-                    module_str = re.sub("\s", "", str(modules).strip())
++                    module_str = re.sub(r"\s", "", str(modules).strip())
+                     command = command + " -m {}".format(module_str)
+ 
+                 # enable debug output otherwise, set -q for lnms commands
