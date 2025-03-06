@@ -1,6 +1,6 @@
 COMMENT=	allow connecting with Happy Eyeballs (RFC 8305)
 
-MODPY_DISTV=	2.4.6
+MODPY_DISTV=	2.5.0
 DISTNAME=	aiohappyeyeballs-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
