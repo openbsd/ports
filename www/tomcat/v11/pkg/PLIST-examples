@@ -907,6 +907,7 @@ webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.FirstByteTime
 webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.HeaderElement.html
 webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.HostElement.html
 webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.HttpStatusCodeElement.html
+webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.IdentifierElement.html
 webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.LocalAddrElement.html
 webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.LocalServerNameElement.html
 webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.LogicalUserNameElement.html
@@ -1853,6 +1854,7 @@ webapps/docs/api/org/apache/tomcat/util/http/parser/Priority.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Ranges.Entry.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Ranges.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/StructuredField.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/TE.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/TokenList.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Upgrade.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/package-summary.html
