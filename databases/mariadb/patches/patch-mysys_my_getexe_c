@@ -1,0 +1,14 @@
+Do not try getting the executable path of our own pid.
+
+Index: mysys/my_getexe.c
+--- mysys/my_getexe.c.orig
++++ mysys/my_getexe.c
+@@ -58,6 +58,8 @@ int my_get_exepath(char *buf, size_t size, const char 
+   int mib[4] = {CTL_KERN, KERN_PROC_ARGS, -1, KERN_PROC_PATHNAME };
+   if (sysctl(mib, 4, buf, &size, NULL, 0) == 0)
+     return 0;
++#elif defined(__OpenBSD__)
++  return 1;
+ #endif
+ 
+   if (argv0)

@@ -7,6 +7,7 @@ COMMENT-tests=	multithreaded SQL database (regression test suite/benchmark)
 VERSION=	11.4.5
 DISTNAME=	mariadb-${VERSION}
 PKGNAME-main=	mariadb-client-${VERSION}
+REVISION-server= 0
 EPOCH=		1
 CATEGORIES=	databases
 SITES=		https://dlm.mariadb.com/4047800/MariaDB/${DISTNAME}/source/ \
