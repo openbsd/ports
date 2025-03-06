@@ -48,7 +48,6 @@
 @man man/man1/jj-git-remote.1
 @man man/man1/jj-git.1
 @man man/man1/jj-help.1
-@man man/man1/jj-init.1
 @man man/man1/jj-interdiff.1
 @man man/man1/jj-log.1
 @man man/man1/jj-new.1
@@ -67,6 +66,7 @@
 @man man/man1/jj-restore.1
 @man man/man1/jj-root.1
 @man man/man1/jj-show.1
+@man man/man1/jj-sign.1
 @man man/man1/jj-simplify-parents.1
 @man man/man1/jj-sparse-edit.1
 @man man/man1/jj-sparse-list.1
@@ -79,6 +79,7 @@
 @man man/man1/jj-tag-list.1
 @man man/man1/jj-tag.1
 @man man/man1/jj-undo.1
+@man man/man1/jj-unsign.1
 @man man/man1/jj-util-completion.1
 @man man/man1/jj-util-config-schema.1
 @man man/man1/jj-util-exec.1
@@ -98,9 +99,5 @@
 share/bash-completion/
 share/bash-completion/completions/
 share/bash-completion/completions/jj
-share/fish/
-share/fish/vendor_completions.d/
 share/fish/vendor_completions.d/jj.fish
-share/zsh/
-share/zsh/site-functions/
 share/zsh/site-functions/_jj

@@ -1,6 +1,6 @@
 COMMENT =		version control system with git compatibility backend
 
-V =			0.26.0
+V =			0.27.0
 PKGNAME =		jujutsu-$V
 
 DIST_TUPLE =		github jj-vcs jj v$V .
@@ -22,8 +22,11 @@ SEPARATE_BUILD =	Yes
 
 LIB_DEPENDS =		devel/libgit2/libgit2 \
 			security/libssh2
+RUN_DEPENDS =		devel/git
 
 MAKE_ENV =		LIBGIT2_NO_VENDOR=1
+
+MODCARGO_INSTALL_TARGET_PATHS = cli
 
 post-build:
 	${WRKBUILD}/target/release/jj util install-man-pages ${WRKBUILD}
@@ -44,9 +47,6 @@ post-install:
 		${PREFIX}/share/fish/vendor_completions.d/jj.fish
 	${INSTALL_DATA} ${WRKBUILD}/jj.zsh \
 		${PREFIX}/share/zsh/site-functions/_jj
-
-
-MODCARGO_INSTALL_TARGET_PATHS = cli
 
 .include "crates.inc"
 
