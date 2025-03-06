@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-134.4.0/build/config/BUILDCONFIG.gn
---- modcargo-crates/v8-134.4.0/build/config/BUILDCONFIG.gn.orig
-+++ modcargo-crates/v8-134.4.0/build/config/BUILDCONFIG.gn
+Index: modcargo-crates/v8-134.5.0/build/config/BUILDCONFIG.gn
+--- modcargo-crates/v8-134.5.0/build/config/BUILDCONFIG.gn.orig
++++ modcargo-crates/v8-134.5.0/build/config/BUILDCONFIG.gn
 @@ -136,7 +136,7 @@ declare_args() {
    is_official_build = false
  

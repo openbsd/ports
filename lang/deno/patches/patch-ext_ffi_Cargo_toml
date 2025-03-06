@@ -5,9 +5,9 @@ Index: ext/ffi/Cargo.toml
 @@ -21,7 +21,7 @@ deno_error.workspace = true
  deno_permissions.workspace = true
  dlopen2.workspace = true
- libffi = "=3.2.0"
--libffi-sys = "=2.3.0"
-+libffi-sys = { version = "2.3.0", features = ["system"] }
+ libffi.workspace = true
+-libffi-sys.workspace = true
++libffi-sys = { workspace = true, features = ["system"] }
  log.workspace = true
- memmap2 = "0.9"
+ memmap2.workspace = true
  num-bigint.workspace = true

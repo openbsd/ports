@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-134.4.0/build/config/clang/BUILD.gn
---- modcargo-crates/v8-134.4.0/build/config/clang/BUILD.gn.orig
-+++ modcargo-crates/v8-134.4.0/build/config/clang/BUILD.gn
+Index: modcargo-crates/v8-134.5.0/build/config/clang/BUILD.gn
+--- modcargo-crates/v8-134.5.0/build/config/clang/BUILD.gn.orig
++++ modcargo-crates/v8-134.5.0/build/config/clang/BUILD.gn
 @@ -221,7 +221,7 @@ clang_lib("compiler_builtins") {
        libname = "ios"
      }

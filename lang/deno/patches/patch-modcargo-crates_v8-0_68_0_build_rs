@@ -1,6 +1,6 @@
-Index: modcargo-crates/v8-134.4.0/build.rs
---- modcargo-crates/v8-134.4.0/build.rs.orig
-+++ modcargo-crates/v8-134.4.0/build.rs
+Index: modcargo-crates/v8-134.5.0/build.rs
+--- modcargo-crates/v8-134.5.0/build.rs.orig
++++ modcargo-crates/v8-134.5.0/build.rs
 @@ -246,16 +246,10 @@ fn build_v8(is_asan: bool) {
    // cross-compilation setup
    if target_arch == "aarch64" {
