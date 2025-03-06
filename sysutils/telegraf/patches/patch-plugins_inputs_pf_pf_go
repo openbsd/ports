@@ -1,7 +1,7 @@
 Index: plugins/inputs/pf/pf.go
 --- plugins/inputs/pf/pf.go.orig
 +++ plugins/inputs/pf/pf.go
-@@ -207,9 +207,9 @@ func (pf *PF) buildPfctlCmd() (string, []string, error
+@@ -203,9 +203,9 @@ func (pf *PF) buildPfctlCmd() (string, []string, error
  	args := []string{"-s", "info"}
  	if pf.UseSudo {
  		args = append([]string{cmd}, args...)
