@@ -1,7 +1,7 @@
 Index: Makefile.bsd
 --- Makefile.bsd.orig
 +++ Makefile.bsd
-@@ -145,7 +145,7 @@ clean:
+@@ -143,7 +143,7 @@ clean:
  	$(RM) $(TESTMINISSDPOBJS)
  	$(RM) validateupnppermissions validategetifaddr validatessdppktgen
  
