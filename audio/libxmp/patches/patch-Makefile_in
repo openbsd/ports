@@ -1,7 +1,7 @@
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -38,7 +38,7 @@ DDIRS		= docs include src loaders prowiz depackers tes
+@@ -39,7 +39,7 @@ DDIRS		= docs include src loaders prowiz depackers lha
  V		= 0
  LIB		= libxmp.a
  SOLIB		= libxmp.so
@@ -10,7 +10,7 @@ Index: Makefile.in
  SONAME		= $(SOLIB).$(VERSION_MAJOR)
  DLL		= libxmp.dll
  IMPLIB		= libxmp.dll.a
-@@ -111,7 +111,7 @@ lib/$(LIB): $(ALL_OBJS)
+@@ -136,7 +136,7 @@ lib/$(LIB): $(ALL_OBJS)
  
  lib/$(SHLIB): $(LOBJS)
  	@mkdir -p lib
@@ -19,12 +19,12 @@ Index: Makefile.in
  	if [ "$(V)" -gt 0 ]; then echo $$CMD; else echo LD $@ ; fi; \
  	eval $$CMD
  	ln -sf $(SHLIB) lib/$(SONAME)
-@@ -170,8 +170,6 @@ install: all
+@@ -232,8 +232,6 @@ install: all
  	@if [ -f lib/$(SHLIB) ]; then \
  		echo "Installing $(SHLIB)..."; \
- 		$(INSTALL) -m644 lib/$(SHLIB) $(DESTDIR)$(LIBDIR); \
+ 		$(INSTALL) -m755 lib/$(SHLIB) $(DESTDIR)$(LIBDIR); \
 -		ln -sf $(SHLIB) $(DESTDIR)$(LIBDIR)/$(SONAME); \
 -		ln -sf $(SONAME) $(DESTDIR)$(LIBDIR)/$(SOLIB); \
  	fi
- 	@echo "Installing xmp.h..."
- 	@$(INSTALL) -m644 include/xmp.h $(DESTDIR)$(INCLUDEDIR)
+ 	@if [ -f lib/$(LIB_LITE) ]; then \
+ 		echo "Installing $(LIB_LITE)..."; \
