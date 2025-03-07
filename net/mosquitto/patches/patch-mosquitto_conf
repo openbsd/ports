@@ -10,7 +10,7 @@ Index: mosquitto.conf
  
  # =================================================================
  # Listeners
-@@ -468,7 +468,7 @@
+@@ -469,7 +469,7 @@
  # Note that if the broker is running as a Windows service it will default to
  # "log_dest none" and neither stdout nor stderr logging is available.
  # Use "log_dest none" if you wish to disable logging.
