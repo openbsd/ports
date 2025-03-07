@@ -1,6 +1,6 @@
 COMMENT =		efficient duplicate file finder
 
-DIST_TUPLE =		github pkolaczk fclones v0.34.0 .
+DIST_TUPLE =		github pkolaczk fclones v0.35.0 .
 
 CATEGORIES =		sysutils
 
