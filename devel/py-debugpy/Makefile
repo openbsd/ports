@@ -1,10 +1,8 @@
 COMMENT =	Python implementation of the debug adapter protocol
 
-MODPY_DISTV=	1.8.6
+MODPY_DISTV=	1.8.12
 DISTNAME=	debugpy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-EXTRACT_SUFX=	.zip
-REVISION=	1
 
 CATEGORIES=	devel
 
@@ -18,7 +16,9 @@ MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 
-TEST_DEPENDS =	devel/py-trio \
+# no tests in pypi sdist, only in git
+NO_TEST=	Yes
+TEST_DEPENDS=	devel/py-trio \
 		devel/py-untangle \
 		math/py-numpy \
 		sysutils/py-psutil \

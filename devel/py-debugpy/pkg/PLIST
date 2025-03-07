@@ -464,6 +464,7 @@ lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_sys_mo
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_sys_monitoring/${MODPY_PYCACHE}pydevd_sys_monitoring.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_sys_monitoring/_pydevd_sys_monitoring.py
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_sys_monitoring/_pydevd_sys_monitoring_cython.c
+@so lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_sys_monitoring/_pydevd_sys_monitoring_cython.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_sys_monitoring/_pydevd_sys_monitoring_cython.pxd
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_sys_monitoring/_pydevd_sys_monitoring_cython.pyx
 lib/python${MODPY_VERSION}/site-packages/debugpy/_vendored/pydevd/_pydevd_sys_monitoring/pydevd_sys_monitoring.py
