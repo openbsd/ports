@@ -1,9 +1,7 @@
-Remove RAND_set_rand_engine()
-
 Index: src/nrpe.c
 --- src/nrpe.c.orig
 +++ src/nrpe.c
-@@ -84,7 +84,7 @@ struct addrinfo *listen_addrs = NULL;
+@@ -76,7 +76,7 @@ struct addrinfo *listen_addrs = NULL;
  int       listen_socks[MAX_LISTEN_SOCKS];
  char      remote_host[MAX_HOST_ADDRESS_LENGTH];
  char     *macro_argv[MAX_COMMAND_ARGUMENTS];
@@ -12,15 +10,3 @@ Index: src/nrpe.c
  char      server_address[NI_MAXHOST] = "";
  char     *command_name = NULL;
  int       log_facility = LOG_DAEMON;
-@@ -291,9 +291,11 @@ void init_ssl(void)
- 	/* initialize SSL */
- 	SSL_load_error_strings();
- 	SSL_library_init();
-+#ifndef OPENSSL_NO_ENGINE
- 	ENGINE_load_builtin_engines();
- 	RAND_set_rand_engine(NULL);
-  	ENGINE_register_all_complete();
-+#endif
- 
- 	meth = SSLv23_server_method();
- 

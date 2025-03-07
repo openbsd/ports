@@ -1,8 +1,7 @@
 COMMENT=	Nagios Remote Plugin Executor
 
-DISTNAME=	nrpe-4.1.0
+DISTNAME=	nrpe-4.1.3
 CATEGORIES=	net
-REVISION=	0
 
 HOMEPAGE=	https://github.com/NagiosEnterprises/nrpe
 
