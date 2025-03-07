@@ -1699,6 +1699,7 @@ webapps/docs/api/org/apache/tomcat/util/collections/SynchronizedStack.html
 webapps/docs/api/org/apache/tomcat/util/collections/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/collections/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/compat/
+webapps/docs/api/org/apache/tomcat/util/compat/Jre12Compat.html
 webapps/docs/api/org/apache/tomcat/util/compat/Jre19Compat.html
 webapps/docs/api/org/apache/tomcat/util/compat/Jre21Compat.html
 webapps/docs/api/org/apache/tomcat/util/compat/Jre22Compat.html
@@ -1905,6 +1906,7 @@ webapps/docs/api/org/apache/tomcat/util/http/parser/Priority.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Ranges.Entry.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Ranges.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/StructuredField.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/TE.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/TokenList.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Upgrade.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Vary.html
