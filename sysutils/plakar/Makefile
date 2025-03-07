@@ -1,3 +1,6 @@
+# modernc.org/sqlite does not support
+NOT_FOR_ARCHS=	i386
+
 COMMENT=	distributed, versioned backups solution
 
 MODGO_MODNAME=	github.com/PlakarKorp/plakar
