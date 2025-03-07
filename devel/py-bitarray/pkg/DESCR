@@ -1,3 +1,23 @@
-Bitarray provides an object type which efficiently represents an array of
-booleans. Bitarrays are sequence types and behave very much like usual lists.
-Eight bits are represented by one byte in a contiguous block of memory.
+Bitarray provides an object type which efficiently represents an array
+of booleans. Bitarrays are sequence types and behave very much like
+usual lists. Eight bits are represented by one byte in a contiguous
+block of memory (endianness can be specified).
+
+Methods for accessing the machine representation are provided, including
+the ability to import and export buffers. This allows creating bitarrays
+that are mapped to other objects, including memory-mapped files.
+
+* Sequence methods: slicing (including slice assignment and deletion),
+  operations +, *, +=, *=, the 'in' operator, len()
+* Bitwise operations: ~, &, |, ^, <<, >> (as well as their in-place
+  versions &=, |=, ^=, <<=, >>=).
+* Fast methods for encoding and decoding variable bit length prefix codes.
+* Bitarray objects support the buffer protocol
+* Packing and unpacking to other binary data formats, e.g. numpy.ndarray.
+* Pickling and unpickling of bitarray objects.
+* Immutable frozenbitarray objects which are hashable
+* Sequential search
+
+Utility functions include conversion to/from hex strings and integers,
+(de-)serialization, pretty printing, creating Huffman codes, compression
+of sparse bitarrays, various count functions and more.
