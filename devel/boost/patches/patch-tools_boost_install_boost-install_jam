@@ -1,0 +1,14 @@
+Fix relative path to ${LOCALBASE}/include in boost_*-config.cmake files.
+
+Index: tools/boost_install/boost-install.jam
+--- tools/boost_install/boost-install.jam.orig
++++ tools/boost_install/boost-install.jam
+@@ -797,7 +797,7 @@ rule generate-cmake-config- ( target : sources * : pro
+             : true ;
+     }
+ 
+-    get-dir "_BOOST_INCLUDEDIR" : $(includedir) ;
++    get-dir "_BOOST_INCLUDEDIR" : "$(includedir)/local/include" ;
+ 
+     if $(library-type) = INTERFACE
+     {

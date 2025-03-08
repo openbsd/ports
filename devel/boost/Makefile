@@ -8,7 +8,7 @@ COMMENT-md=	machine-dependent libraries for boost
 VERSION=	1.84.0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME=	boost-${VERSION}
-REVISION=	7
+REVISION=	8
 EPOCH=		0
 CATEGORIES=	devel
 SITES=		https://archives.boost.io/release/${VERSION}/source/
@@ -64,8 +64,7 @@ SHARED_LIBS+=	${_lib} ${SO_VERSION}
 
 HOMEPAGE=	https://www.boost.org/
 
-MAINTAINER=	Brad Smith <brad@comstyle.com> \
-		Rafael Sadowski <rsadowski@openbsd.org>
+MAINTAINER=	Brad Smith <brad@comstyle.com>
 
 # Boost
 PERMIT_PACKAGE=	Yes
@@ -126,7 +125,7 @@ CONFIGURE_ENV=	BJAM_CONFIG="${BJAM_CONFIG}" \
 
 NO_TEST=	Yes
 
-SUBST_VARS+=	SO_VERSION
+SUBST_VARS+=	VERSION SO_VERSION
 
 # Revert back to Boost::Context 1.80.0 ASM code for i386
 # and add new support for sparc64
@@ -135,7 +134,7 @@ post-extract:
 
 do-configure:
 	echo "using ${TOOLSET} : : ${CXX} ;" >>${WRKSRC}/tools/build/src/user-config.jam
-	${SUBST_CMD} ${WRKSRC}/Jamroot
+	${SUBST_CMD} ${WRKSRC}/boostcpp.jam
 	@cd ${WRKSRC}/libs/config && \
 		${SETENV} ${CONFIGURE_ENV} /bin/sh ./configure
 	@cd ${WRKSRC}/tools/build/src/engine && ${SETENV} ${CONFIGURE_ENV} \
@@ -153,6 +152,8 @@ do-install:
 		pax -rw -s ':^.*${PATCHORIG}$$::' . ${PREFIX}/include/boost
 	find ${PREFIX}/include/boost -type d -exec chmod ${DIRMODE} {} +
 	find ${PREFIX}/include/boost -type f -exec chmod ${SHAREMODE} {} +
+	# CMake files:
+	cd ${WRKSRC}/stage/lib && pax -rw cmake ${PREFIX}/lib
 	# boost-build:
 	${INSTALL_PROGRAM} ${WRKSRC}/tools/build/src/engine/b2 \
 		${PREFIX}/bin
