@@ -1,7 +1,7 @@
 Index: spa/plugins/support/cpu.c
 --- spa/plugins/support/cpu.c.orig
 +++ spa/plugins/support/cpu.c
-@@ -10,7 +10,7 @@
+@@ -12,7 +12,7 @@
  #include <sched.h>
  #include <fcntl.h>
  
@@ -10,7 +10,7 @@ Index: spa/plugins/support/cpu.c
  #include <sys/sysctl.h>
  #endif
  
-@@ -86,7 +86,7 @@ impl_cpu_force_flags(void *object, uint32_t flags)
+@@ -92,7 +92,7 @@ impl_cpu_force_flags(void *object, uint32_t flags)
  	return 0;
  }
  

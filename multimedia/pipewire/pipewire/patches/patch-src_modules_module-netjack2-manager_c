@@ -1,26 +1,17 @@
 Index: src/modules/module-netjack2-manager.c
 --- src/modules/module-netjack2-manager.c.orig
 +++ src/modules/module-netjack2-manager.c
-@@ -268,6 +268,10 @@ struct impl {
- 	unsigned int do_disconnect:1;
- };
- 
-+#if defined(__FreeBSD__) || defined(__OpenBSD__)
-+#define ifr_ifindex ifr_index
-+#endif
-+
- static void reset_volume(struct volume *vol, uint32_t n_volumes)
- {
- 	uint32_t i;
-@@ -814,9 +818,9 @@ static int make_announce_socket(struct sockaddr_storag
+@@ -803,8 +803,13 @@ static int make_announce_socket(struct sockaddr_storag
+ 	}
  	spa_zero(req);
  	if (ifname) {
++#ifdef SIOCGIFINDEX
  		snprintf(req.ifr_name, sizeof(req.ifr_name), "%s", ifname);
--		res = ioctl(fd, SIOCGIFINDEX, &req);
-+		res = pw_if_nametoindex(ifname, fd);
+ 		res = ioctl(fd, SIOCGIFINDEX, &req);
++#else
++		if ((res = if_nametoindex(ifname)) == 0)
++			res = -1;
++#endif
  	        if (res < 0)
--	                pw_log_warn("SIOCGIFINDEX %s failed: %m", ifname);
-+	                pw_log_warn("pw_if_nametoindex %s failed: %m", ifname);
+ 	                pw_log_warn("SIOCGIFINDEX %s failed: %m", ifname);
  	}
- 	res = 0;
- 	if (af == AF_INET) {

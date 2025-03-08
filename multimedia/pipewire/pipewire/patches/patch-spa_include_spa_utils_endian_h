@@ -1,0 +1,15 @@
+Index: spa/include/spa/utils/endian.h
+--- spa/include/spa/utils/endian.h.orig
++++ spa/include/spa/utils/endian.h
+@@ -10,6 +10,11 @@
+ #define bswap_16 bswap16
+ #define bswap_32 bswap32
+ #define bswap_64 bswap64
++#elif defined(__OpenBSD__)
++#include <endian.h>
++#define bswap_16 swap16
++#define bswap_32 swap32
++#define bswap_64 swap64
+ #elif defined(_MSC_VER) && defined(_WIN32)
+ #include <stdlib.h>
+ #define __LITTLE_ENDIAN 1234

@@ -2,20 +2,17 @@ COMMENT-main=		low-level multimedia framework - client & server
 COMMENT-libs=		low-level multimedia framework - libraries
 
 PW_PROJECT=		pipewire
-PW_VERSION=		1.2.7
+PW_VERSION=		1.4.0
 PKGNAME-libs=		lib${PW_PROJECT}-${PW_VERSION}
-REVISION-libs=		0
 
-REVISION-main=		1
-
-SHARED_LIBS += pipewire-0.3              0.2 # 0.1207.0
+SHARED_LIBS += pipewire-0.3              0.3 # 0.1400.0
 
 MULTI_PACKAGES=		-main -libs
 
 WANTLIB-main += X11 Xfixes c canberra curses dbus-1 epoll-shim gio-2.0
 WANTLIB-main += glib-2.0 gobject-2.0 gstallocators-1.0 gstaudio-1.0
 WANTLIB-main += gstbase-1.0 gstreamer-1.0 gstvideo-1.0 m opus pipewire-0.3
-WANTLIB-main += pthread readline sndfile stdthreads
+WANTLIB-main += pthread readline sndfile ebur128
 
 WANTLIB-libs += intl pthread
 
@@ -26,13 +23,14 @@ MODPY_RUNDEP=		No
 
 BUILD_DEPENDS=		devel/doxygen \
 			devel/gettext,-tools \
+			devel/libstdthreads \
 			textproc/py-docutils
 
 LIB_DEPENDS-main=	${BASE_PKGPATH},-libs \
 			audio/libcanberra \
+			audio/libebur128 \
 			audio/libsndfile \
 			devel/epoll-shim \
-			devel/libstdthreads \
 			multimedia/gstreamer1/plugins-base \
 			x11/dbus
 

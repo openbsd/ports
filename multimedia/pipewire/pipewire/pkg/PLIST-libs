@@ -71,6 +71,7 @@ include/spa-0.2/spa/buffer/type-info.h
 include/spa-0.2/spa/control/
 include/spa-0.2/spa/control/control.h
 include/spa-0.2/spa/control/type-info.h
+include/spa-0.2/spa/control/ump-utils.h
 include/spa-0.2/spa/debug/
 include/spa-0.2/spa/debug/buffer.h
 include/spa-0.2/spa/debug/context.h
@@ -82,6 +83,8 @@ include/spa-0.2/spa/debug/mem.h
 include/spa-0.2/spa/debug/node.h
 include/spa-0.2/spa/debug/pod.h
 include/spa-0.2/spa/debug/types.h
+include/spa-0.2/spa/filter-graph/
+include/spa-0.2/spa/filter-graph/filter-graph.h
 include/spa-0.2/spa/graph/
 include/spa-0.2/spa/graph/graph.h
 include/spa-0.2/spa/interfaces/
@@ -131,6 +134,7 @@ include/spa-0.2/spa/param/audio/mp3.h
 include/spa-0.2/spa/param/audio/opus.h
 include/spa-0.2/spa/param/audio/ra-utils.h
 include/spa-0.2/spa/param/audio/ra.h
+include/spa-0.2/spa/param/audio/raw-json.h
 include/spa-0.2/spa/param/audio/raw-types.h
 include/spa-0.2/spa/param/audio/raw-utils.h
 include/spa-0.2/spa/param/audio/raw.h
@@ -213,8 +217,10 @@ include/spa-0.2/spa/utils/cleanup.h
 include/spa-0.2/spa/utils/defs.h
 include/spa-0.2/spa/utils/dict.h
 include/spa-0.2/spa/utils/dll.h
+include/spa-0.2/spa/utils/endian.h
 include/spa-0.2/spa/utils/enum-types.h
 include/spa-0.2/spa/utils/hook.h
+include/spa-0.2/spa/utils/json-core.h
 include/spa-0.2/spa/utils/json-pod.h
 include/spa-0.2/spa/utils/json.h
 include/spa-0.2/spa/utils/keys.h

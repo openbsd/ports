@@ -27,7 +27,7 @@ Index: src/pipewire/pipewire.c
  {
  	const char *str;
  	struct spa_dict_item items[6];
-@@ -596,7 +600,7 @@ done:
+@@ -599,7 +603,7 @@ done:
   * used again after being deinitialized with a new pw_init() call.
   */
  SPA_EXPORT
@@ -36,7 +36,7 @@ Index: src/pipewire/pipewire.c
  {
  	struct support *support = &global_support;
  	struct registry *registry = &support->registry;
-@@ -622,6 +626,21 @@ done:
+@@ -625,6 +629,21 @@ done:
  
  }
  
@@ -58,7 +58,7 @@ Index: src/pipewire/pipewire.c
  /** Check if a debug category is enabled
   *
   * \param name the name of the category to check
-@@ -669,7 +688,7 @@ static void init_prgname(void)
+@@ -672,7 +691,7 @@ static void init_prgname(void)
  		}
  	}
  #endif
@@ -67,7 +67,7 @@ Index: src/pipewire/pipewire.c
  	{
  		if (prctl(PR_GET_NAME, (unsigned long) name, 0, 0, 0) == 0) {
  			prgname = name;
-@@ -787,4 +806,21 @@ SPA_EXPORT
+@@ -790,4 +809,21 @@ SPA_EXPORT
  const struct spa_type_info * pw_type_info(void)
  {
  	return type_info;

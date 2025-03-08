@@ -70,6 +70,12 @@ lib/spa-0.2/audiotestsrc/
 @so lib/spa-0.2/audiotestsrc/libspa-audiotestsrc.so
 lib/spa-0.2/control/
 @so lib/spa-0.2/control/libspa-control.so
+lib/spa-0.2/filter-graph/
+@so lib/spa-0.2/filter-graph/libspa-filter-graph-plugin-builtin.so
+@so lib/spa-0.2/filter-graph/libspa-filter-graph-plugin-ebur128.so
+@so lib/spa-0.2/filter-graph/libspa-filter-graph-plugin-ladspa.so
+@so lib/spa-0.2/filter-graph/libspa-filter-graph.so
+@so lib/spa-0.2/libspa.so
 lib/spa-0.2/support/
 @so lib/spa-0.2/support/libspa-dbus.so
 @so lib/spa-0.2/support/libspa-support.so
@@ -144,6 +150,10 @@ lib/spa-0.2/videotestsrc/
 @man man/man7/libpipewire-module-rtp-source.7
 @man man/man7/libpipewire-module-session-manager.7
 @man man/man7/libpipewire-module-snapcast-discover.7
+@man man/man7/libpipewire-module-spa-device-factory.7
+@man man/man7/libpipewire-module-spa-device.7
+@man man/man7/libpipewire-module-spa-node-factory.7
+@man man/man7/libpipewire-module-spa-node.7
 @man man/man7/libpipewire-module-vban-recv.7
 @man man/man7/libpipewire-module-vban-send.7
 @man man/man7/libpipewire-module-x11-bell.7
@@ -228,6 +238,7 @@ share/locale/ro/LC_MESSAGES/pipewire.mo
 share/locale/ru/LC_MESSAGES/pipewire.mo
 share/locale/si/LC_MESSAGES/pipewire.mo
 share/locale/sk/LC_MESSAGES/pipewire.mo
+share/locale/sl/LC_MESSAGES/pipewire.mo
 share/locale/sr/LC_MESSAGES/pipewire.mo
 share/locale/sr@latin/LC_MESSAGES/pipewire.mo
 share/locale/sv/LC_MESSAGES/pipewire.mo
@@ -238,9 +249,6 @@ share/locale/uk/LC_MESSAGES/pipewire.mo
 share/locale/zh_CN/LC_MESSAGES/pipewire.mo
 share/locale/zh_TW/LC_MESSAGES/pipewire.mo
 share/pipewire/
-share/pipewire/client-rt.conf
-share/pipewire/client-rt.conf.avail/
-share/pipewire/client-rt.conf.avail/20-upmix.conf
 share/pipewire/client.conf
 share/pipewire/client.conf.avail/
 share/pipewire/client.conf.avail/20-upmix.conf
@@ -252,6 +260,7 @@ share/pipewire/filter-chain/sink-eq6.conf
 share/pipewire/filter-chain/sink-make-LFE.conf
 share/pipewire/filter-chain/sink-matrix-spatialiser.conf
 share/pipewire/filter-chain/sink-mix-FL-FR.conf
+share/pipewire/filter-chain/sink-upmix-5.1-filter.conf
 share/pipewire/filter-chain/sink-virtual-surround-5.1-kemar.conf
 share/pipewire/filter-chain/sink-virtual-surround-7.1-hesuvi.conf
 share/pipewire/filter-chain/source-duplicate-FL.conf

@@ -8,5 +8,5 @@ Index: spa/plugins/support/logger.c
 -#if defined(__FreeBSD__) || defined(__MidnightBSD__)
 +#if defined(__FreeBSD__) || defined(__MidnightBSD__) || defined(__OpenBSD__)
  #define CLOCK_MONOTONIC_RAW CLOCK_MONOTONIC
- #endif
- 
+ #elif defined(_MSC_VER)
+ static inline void setlinebuf(FILE* stream) {

@@ -14,14 +14,14 @@ Index: src/pipewire/thread.c
  #include <spa/utils/dict.h>
  #include <spa/utils/defs.h>
  #include <spa/utils/list.h>
-@@ -28,6 +32,7 @@ do {									\
+@@ -29,6 +33,7 @@ do {									\
  	}								\
  } while(false);
  
 +#ifndef __OpenBSD__
  static int parse_affinity(const char *affinity, cpu_set_t *set)
  {
- 	struct spa_json it[2];
+ 	struct spa_json it[1];
 @@ -44,6 +49,7 @@ static int parse_affinity(const char *affinity, cpu_se
          }
  	return 0;
@@ -61,7 +61,7 @@ Index: src/pipewire/thread.c
 +#ifndef __OpenBSD__
  		if ((str = spa_dict_lookup(props, SPA_KEY_THREAD_AFFINITY)) != NULL &&
  		    (err = thread_setaffinity(pt, str)) != 0)
- 			pw_log_warn("pthread_setaffinity error: %s", strerror(err));
+ 			pw_log_warn("pthread_setaffinity error: %s", strerror(-err));
 +#endif
  	}
  	return (struct spa_thread*)pt;

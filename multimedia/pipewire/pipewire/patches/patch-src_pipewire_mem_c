@@ -1,7 +1,7 @@
 Index: src/pipewire/mem.c
 --- src/pipewire/mem.c.orig
 +++ src/pipewire/mem.c
-@@ -25,8 +25,8 @@
+@@ -26,8 +26,8 @@
  PW_LOG_TOPIC_EXTERN(log_mem);
  #define PW_LOG_TOPIC_DEFAULT log_mem
  
@@ -12,7 +12,7 @@ Index: src/pipewire/mem.c
  /*
   * No glibc wrappers exist for memfd_create(2), so provide our own.
   *
-@@ -43,7 +43,7 @@ static inline int memfd_create(const char *name, unsig
+@@ -44,7 +44,7 @@ static inline int memfd_create(const char *name, unsig
  #define HAVE_MEMFD_CREATE 1
  #endif
  
@@ -21,7 +21,7 @@ Index: src/pipewire/mem.c
  #define MAP_LOCKED 0
  #endif
  
-@@ -566,7 +566,7 @@ struct pw_memblock * pw_mempool_alloc(struct pw_mempoo
+@@ -567,7 +567,7 @@ struct pw_memblock * pw_mempool_alloc(struct pw_mempoo
  #else
  	char filename[128];
  	snprintf(filename, sizeof(filename),
