@@ -19,7 +19,7 @@ MODGO_MODULES =	\
 	cloud.google.com/go/artifactregistry							 v1.16.1 \
 	cloud.google.com/go/asset								 v1.20.4 \
 	cloud.google.com/go/assuredworkloads							 v1.12.3 \
-	cloud.google.com/go/auth								 v0.14.1 \
+	cloud.google.com/go/auth								 v0.15.0 \
 	cloud.google.com/go/auth/oauth2adapt							 v0.2.7 \
 	cloud.google.com/go/automl								 v1.14.4 \
 	cloud.google.com/go/baremetalsolution							 v1.3.3 \
@@ -184,7 +184,7 @@ MODGO_MODULES =	\
 	github.com/!netflix/go-expect								 v0.0.0-20220104043353-73e0943537d2 \
 	github.com/!nvveen/!gotty								 v0.0.0-20120604004816-cd527374f1e5 \
 	github.com/!one!of!one/xxhash								 v1.2.2 \
-	github.com/!proton!mail/go-crypto							 v1.1.5 \
+	github.com/!proton!mail/go-crypto							 v1.1.6 \
 	github.com/!puerkito!bio/purell								 v1.0.0 \
 	github.com/!puerkito!bio/urlesc								 v0.0.0-20160726150825-5bd2802263f2 \
 	github.com/!qcloud!api/qcloud_sign_golang						 v0.0.0-20141224014652-e4130a326409 \
@@ -227,7 +227,7 @@ MODGO_MODULES =	\
 	github.com/atotto/clipboard								 v0.1.4 \
 	github.com/aws/aws-lambda-go								 v1.13.3 \
 	github.com/aws/aws-sdk-go								 v1.55.6 \
-	github.com/aws/aws-sdk-go-v2								 v1.36.1 \
+	github.com/aws/aws-sdk-go-v2								 v1.36.3 \
 	github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream					 v1.6.7 \
 	github.com/aws/aws-sdk-go-v2/config							 v1.29.6 \
 	github.com/aws/aws-sdk-go-v2/credentials						 v1.17.59 \
@@ -269,7 +269,7 @@ MODGO_MODULES =	\
 	github.com/cespare/xxhash								 v1.1.0 \
 	github.com/cespare/xxhash/v2								 v2.3.0 \
 	github.com/charmbracelet/bubbles							 v0.20.0 \
-	github.com/charmbracelet/bubbletea							 v1.3.3 \
+	github.com/charmbracelet/bubbletea							 v1.3.4 \
 	github.com/charmbracelet/glamour							 v0.8.0 \
 	github.com/charmbracelet/harmonica							 v0.2.0 \
 	github.com/charmbracelet/lipgloss							 v1.0.0 \
@@ -373,7 +373,7 @@ MODGO_MODULES =	\
 	github.com/google/btree									 v1.0.0 \
 	github.com/google/flatbuffers								 v2.0.8+incompatible \
 	github.com/google/gnostic-models							 v0.6.8 \
-	github.com/google/go-cmp								 v0.6.0 \
+	github.com/google/go-cmp								 v0.7.0 \
 	github.com/google/go-containerregistry							 v0.6.0 \
 	github.com/google/go-github/v29								 v29.0.2 \
 	github.com/google/go-github/v44								 v44.1.0 \
@@ -678,12 +678,12 @@ MODGO_MODULES =	\
 	gonum.org/v1/gonum									 v0.11.0 \
 	gonum.org/v1/netlib									 v0.0.0-20190313105609-8cb42192e0e0 \
 	gonum.org/v1/plot									 v0.10.1 \
-	google.golang.org/api									 v0.221.0 \
+	google.golang.org/api									 v0.223.0 \
 	google.golang.org/appengine								 v1.6.8 \
 	google.golang.org/genproto								 v0.0.0-20250204164813-702378808489 \
 	google.golang.org/genproto/googleapis/api						 v0.0.0-20250204164813-702378808489 \
-	google.golang.org/genproto/googleapis/bytestream					 v0.0.0-20250207221924-e9438ea467c6 \
-	google.golang.org/genproto/googleapis/rpc						 v0.0.0-20250207221924-e9438ea467c6 \
+	google.golang.org/genproto/googleapis/bytestream					 v0.0.0-20250219182151-9fdb1cabc7b2 \
+	google.golang.org/genproto/googleapis/rpc						 v0.0.0-20250219182151-9fdb1cabc7b2 \
 	google.golang.org/grpc									 v1.70.0 \
 	google.golang.org/grpc/cmd/protoc-gen-go-grpc						 v1.1.0 \
 	google.golang.org/grpc/stats/opentelemetry						 v0.0.0-20241014145745-ad81c20503be \
@@ -1401,6 +1401,7 @@ MODGO_MODFILES =	\
 	github.com/!masterminds/sprig/v3							 v3.2.1 \
 	github.com/!n!y!times/gziphandler							 v0.0.0-20170623195520-56545f4a5d46 \
 	github.com/!proton!mail/go-crypto							 v0.0.0-20230217124315-7d5c6f04bbb8 \
+	github.com/!proton!mail/go-crypto							 v1.1.5 \
 	github.com/agext/levenshtein								 v1.2.1 \
 	github.com/agext/levenshtein								 v1.2.2 \
 	github.com/ajstarks/svgo								 v0.0.0-20180226025133-644b8db467af \
@@ -1415,6 +1416,7 @@ MODGO_MODFILES =	\
 	github.com/aws/aws-sdk-go								 v1.55.5 \
 	github.com/aws/aws-sdk-go-v2								 v1.16.16 \
 	github.com/aws/aws-sdk-go-v2								 v1.33.0 \
+	github.com/aws/aws-sdk-go-v2								 v1.36.1 \
 	github.com/aws/aws-sdk-go-v2/aws/protocol/eventstream					 v1.4.3 \
 	github.com/aws/aws-sdk-go-v2/config							 v1.15.13 \
 	github.com/aws/aws-sdk-go-v2/config							 v1.29.1 \
@@ -1597,6 +1599,7 @@ MODGO_MODFILES =	\
 	github.com/google/go-cmp								 v0.5.7 \
 	github.com/google/go-cmp								 v0.5.8 \
 	github.com/google/go-cmp								 v0.5.9 \
+	github.com/google/go-cmp								 v0.6.0 \
 	github.com/google/go-querystring							 v1.0.0 \
 	github.com/google/gofuzz								 v0.0.0-20161122191042-44d81051d367 \
 	github.com/google/gofuzz								 v0.0.0-20170612174753-24818f796faf \
