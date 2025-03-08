@@ -1216,6 +1216,12 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/gamelift/2015-10-01/endpo
 lib/python${MODPY_VERSION}/site-packages/botocore/data/gamelift/2015-10-01/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/gamelift/2015-10-01/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/gamelift/2015-10-01/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/gameliftstreams/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/gameliftstreams/2018-05-10/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/gameliftstreams/2018-05-10/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/gameliftstreams/2018-05-10/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/gameliftstreams/2018-05-10/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/gameliftstreams/2018-05-10/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/geo-maps/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/geo-maps/2020-11-19/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/geo-maps/2020-11-19/endpoint-rule-set-1.json
@@ -1364,6 +1370,11 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/iot-jobs-data/2017-09-29/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot-jobs-data/2017-09-29/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot-jobs-data/2017-09-29/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot-jobs-data/2017-09-29/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iot-managed-integrations/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iot-managed-integrations/2025-03-03/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iot-managed-integrations/2025-03-03/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iot-managed-integrations/2025-03-03/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/iot-managed-integrations/2025-03-03/service-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot/2015-05-28/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot/2015-05-28/endpoint-rule-set-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/iot/2015-05-28/examples-1.json
