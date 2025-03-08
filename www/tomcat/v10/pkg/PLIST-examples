@@ -921,6 +921,7 @@ webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.FirstByteTime
 webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.HeaderElement.html
 webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.HostElement.html
 webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.HttpStatusCodeElement.html
+webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.IdentifierElement.html
 webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.LocalAddrElement.html
 webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.LocalServerNameElement.html
 webapps/docs/api/org/apache/catalina/valves/AbstractAccessLogValve.LogicalUserNameElement.html
@@ -1325,6 +1326,8 @@ webapps/docs/api/org/apache/juli/DateFormatCache.html
 webapps/docs/api/org/apache/juli/FileHandler.ThreadFactory.html
 webapps/docs/api/org/apache/juli/FileHandler.html
 webapps/docs/api/org/apache/juli/JdkLoggerFormatter.html
+webapps/docs/api/org/apache/juli/JsonFormatter.JSONFilter.html
+webapps/docs/api/org/apache/juli/JsonFormatter.html
 webapps/docs/api/org/apache/juli/OneLineFormatter.html
 webapps/docs/api/org/apache/juli/VerbatimFormatter.html
 webapps/docs/api/org/apache/juli/WebappProperties.html
@@ -1685,6 +1688,7 @@ webapps/docs/api/org/apache/tomcat/util/collections/SynchronizedStack.html
 webapps/docs/api/org/apache/tomcat/util/collections/package-summary.html
 webapps/docs/api/org/apache/tomcat/util/collections/package-tree.html
 webapps/docs/api/org/apache/tomcat/util/compat/
+webapps/docs/api/org/apache/tomcat/util/compat/Jre12Compat.html
 webapps/docs/api/org/apache/tomcat/util/compat/Jre19Compat.html
 webapps/docs/api/org/apache/tomcat/util/compat/Jre21Compat.html
 webapps/docs/api/org/apache/tomcat/util/compat/Jre22Compat.html
@@ -1888,6 +1892,7 @@ webapps/docs/api/org/apache/tomcat/util/http/parser/Priority.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Ranges.Entry.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Ranges.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/StructuredField.html
+webapps/docs/api/org/apache/tomcat/util/http/parser/TE.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/TokenList.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/Upgrade.html
 webapps/docs/api/org/apache/tomcat/util/http/parser/package-summary.html
