@@ -1138,6 +1138,8 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/${MODPY_PYCACHE}registry.${
 lib/python${MODPY_VERSION}/site-packages/samba/tests/${MODPY_PYCACHE}registry.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/${MODPY_PYCACHE}reparsepoints.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/${MODPY_PYCACHE}reparsepoints.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/${MODPY_PYCACHE}rust.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/${MODPY_PYCACHE}rust.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/${MODPY_PYCACHE}s3_net_join.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/${MODPY_PYCACHE}s3_net_join.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/${MODPY_PYCACHE}s3idmapdb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1486,6 +1488,8 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/${MODPY_PYCACHE}lockou
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/${MODPY_PYCACHE}lockout_tests.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/${MODPY_PYCACHE}ms_kile_client_principal_lookup_tests.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/${MODPY_PYCACHE}ms_kile_client_principal_lookup_tests.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/${MODPY_PYCACHE}netlogon.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/${MODPY_PYCACHE}netlogon.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/${MODPY_PYCACHE}nt_hash_tests.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/${MODPY_PYCACHE}nt_hash_tests.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/${MODPY_PYCACHE}pac_align_tests.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1548,6 +1552,7 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/kdc_tgt_tests.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/kpasswd_tests.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/lockout_tests.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/ms_kile_client_principal_lookup_tests.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/netlogon.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/nt_hash_tests.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/pac_align_tests.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/krb5/pkinit_tests.py
@@ -1626,6 +1631,7 @@ lib/python${MODPY_VERSION}/site-packages/samba/tests/pso.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/py_credentials.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/registry.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/reparsepoints.py
+lib/python${MODPY_VERSION}/site-packages/samba/tests/rust.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/s3_net_join.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/s3idmapdb.py
 lib/python${MODPY_VERSION}/site-packages/samba/tests/s3param.py

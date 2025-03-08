@@ -3,7 +3,7 @@ Add a hack to force addition of -I/usr/include before any other include path dis
 Index: buildtools/wafsamba/wscript
 --- buildtools/wafsamba/wscript.orig
 +++ buildtools/wafsamba/wscript
-@@ -148,6 +148,11 @@ Currently the only tested value is 'smbtorture,smbd/sm
+@@ -155,6 +155,11 @@ Currently the only tested value is 'smbtorture,smbd/sm
                     help=("Disable use of gettext"),
                     action="store_true", dest='disable_gettext', default=False)
  

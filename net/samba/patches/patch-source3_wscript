@@ -21,7 +21,7 @@ Index: source3/wscript
          conf.ADD_LDFLAGS("-Wl,--export-dynamic", testflags=True)
  
      # We crash without vfs_default
-@@ -1732,7 +1733,7 @@ int main(void) {
+@@ -1745,7 +1746,7 @@ int main(void) {
          else:
              conf.fatal('AFS headers not available, but --with-fake-kaserver was specified')
  
