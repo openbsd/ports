@@ -5,6 +5,7 @@ COMMENT =		image and point cloud processing library
 
 V =			1.15.0
 PKGNAME =		pcl-${V}
+REVISION =		0
 
 DIST_TUPLE +=		github PointCloudLibrary pcl ${PKGNAME} .
 DIST_TUPLE +=		github google googletest v1.15.2 ../gtest_dist
@@ -23,8 +24,9 @@ MAINTAINER =		Johannes Thyssen Tishman <jtt@openbsd.org>
 # BSD 3-clause
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} boost_iostreams-mt boost_regex-mt
-WANTLIB += c flann_cpp lz4 m pcap png qhull_r usb-1.0 z
+WANTLIB += ${COMPILER_LIBCXX} boost_atomic-mt boost_filesystem-mt
+WANTLIB += boost_iostreams-mt c flann_cpp lz4 m pcap png qhull_r
+WANTLIB += usb-1.0 z
 
 COMPILER =		base-clang ports-gcc
 MODULES =		devel/cmake
