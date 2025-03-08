@@ -1,0 +1,3 @@
+A CLI GlobalProtect VPN client, written in Rust, based on OpenConnect
+and Tauri, supports SSO with MFA, Yubikey, and client certificate
+authentication, etc.
