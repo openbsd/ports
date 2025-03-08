@@ -128,6 +128,7 @@
      SUBDIR += gopher
      SUBDIR += gophernicus
      SUBDIR += gotthard
+     SUBDIR += gp-openconnect
      SUBDIR += gpodder
      SUBDIR += grake
      SUBDIR += grsync
