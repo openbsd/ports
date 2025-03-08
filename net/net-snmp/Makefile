@@ -2,6 +2,7 @@ COMMENT-main=	extendable SNMP implementation
 COMMENT-tkmib=	graphical SNMP MIB browser
 
 V=		5.9.4
+REVISION=	0
 DISTNAME=	net-snmp-${V:S/pre/.pre/}
 MULTI_PACKAGES=	-main -tkmib
 PKGNAME-main=	net-snmp-$V
@@ -23,7 +24,7 @@ CATEGORIES=	net perl5
 PORTROACH=	site:https://github.com/net-snmp/net-snmp/releases/
 SITES=		${SITE_SOURCEFORGE:=net-snmp/}
 
-HOMEPAGE=	http://www.net-snmp.org/
+HOMEPAGE=	https://www.net-snmp.org/
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
@@ -46,8 +47,9 @@ NET_SNMP_MIB_LIST=	mibII/mta_sendmail
 # - net-snmp default mibs (include/net-snmp/net-snmp-config.h.in)
 # - this is checked in pre-configure as we don't want it to get out of sync
 DEFAULT_MIBS=		IP-MIB:IF-MIB:TCP-MIB:UDP-MIB:SNMPv2-MIB:RFC1213-MIB
-# - base OpenBSD mibs (/usr/share/snmp/mibs), SNMPD-CONF pulls in the rest
-OPENBSD_MIBS=		OPENBSD-SNMPD-CONF
+# - base OpenBSD mibs (/usr/share/snmp/mibs) and others supported by snmpd
+OPENBSD_MIBS=		OPENBSD-BASE-MIB:OPENBSD-PF-MIB:OPENBSD-SENSORS-MIB:OPENBSD-RELAYD-MIB:OPENBSD-MEM-MIB:OPENBSD-CARP-MIB
+OTHER_SNMPD_MIBS=	IP-FORWARD-MIB:BRIDGE-MIB:HOST-RESOURCES-MIB
 
 CONFIGURE_STYLE=  gnu
 CONFIGURE_ARGS=   --enable-ipv6 \
@@ -55,7 +57,7 @@ CONFIGURE_ARGS=   --enable-ipv6 \
 	--enable-mfd-rewrites \
 	--with-copy-persistent-files="no" \
 	--with-mib-modules="${NET_SNMP_MIB_LIST}" \
-	--with-mibs="${DEFAULT_MIBS}:${OPENBSD_MIBS}" \
+	--with-mibs="${DEFAULT_MIBS}:${OPENBSD_MIBS}:${OTHER_SNMPD_MIBS}" \
 	--with-mibdirs="\$$HOME/.snmp/mibs:/usr/share/snmp/mibs:${TRUEPREFIX}/share/snmp/mibs" \
 	--with-default-snmp-version="3" \
 	--with-sys-contact="nobody@nowhere.invalid" \
