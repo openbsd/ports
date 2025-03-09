@@ -1,5 +1,5 @@
 COMMENT =	X Window Protocol Viewer
-DISTNAME =	xscope-1.4.4
+DISTNAME =	xscope-1.4.5
 CATEGORIES =	x11
 
 HOMEPAGE =	https://gitlab.freedesktop.org/xorg/app/xscope
@@ -7,9 +7,9 @@ HOMEPAGE =	https://gitlab.freedesktop.org/xorg/app/xscope
 MAINTAINER =	Matthieu Herrb <matthieu@openbsd.org>
 
 # X11
-PERMIT_PACKAGE =		Yes
+PERMIT_PACKAGE =	Yes
 
-SITES =		${SITE_XORG:=app/}
+SITES =			${SITE_XORG:=app/}
 
 WANTLIB =		c
 
