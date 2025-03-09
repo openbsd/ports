@@ -4,6 +4,7 @@ COMMENT-main =		Qt development tools
 
 KDE_COMMIT =		15deb8f202b838b4dd1b2ff84e852171e8587881
 KDE_VERSION =		3
+REVISION =		0
 
 DPB_PROPERTIES =	parallel
 
@@ -22,6 +23,7 @@ WANTLIB-main += llvm${MODCLANG_VERSION}/lib/clang
 MODQT5_DEPS =	No
 
 MODULES+=			lang/clang
+MODCLANG_VERSION =		19
 MODCLANG_COMPILER_LINKS =	No
 MODCLANG_BUILDDEP =		No
 MODCLANG_RUNDEP =		No
@@ -36,7 +38,8 @@ FLAVORS =		debug
 PSEUDO_FLAVORS =	bootstrap no_examples
 FLAVOR ?=		bootstrap no_examples
 
-CONFIGURE_ENV =		LLVM_INSTALL_DIR=${LOCALBASE}/llvm${MODCLANG_VERSION}
+CONFIGURE_ENV =	LLVM_INSTALL_DIR=${LOCALBASE}/llvm${MODCLANG_VERSION}
+MODCMAKE_LDFLAGS = -L${LOCALBASE}/llvm${MODCLANG_VERSION}/lib -Wl,-rpath=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
 
 .include <bsd.port.arch.mk>
 
