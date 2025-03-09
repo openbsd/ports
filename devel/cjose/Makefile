@@ -3,7 +3,7 @@ COMMENT =		Javascript Object Signing and Encryption library
 GH_ACCOUNT =		cisco
 GH_PROJECT =		cjose
 GH_TAGNAME =		0.6.1
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS =		cjose 0.0
 
