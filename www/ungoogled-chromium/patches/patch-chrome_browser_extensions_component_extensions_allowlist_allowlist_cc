@@ -8,9 +8,9 @@ Index: chrome/browser/extensions/component_extensions_allowlist/allowlist.cc
 -#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
 +#if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_BSD)
        extension_misc::kTTSEngineExtensionId,
+       extension_misc::kComponentUpdaterTTSEngineExtensionId,
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_MAC)
-   });
-@@ -83,7 +83,7 @@ bool IsComponentExtensionAllowlisted(int manifest_reso
+@@ -84,7 +84,7 @@ bool IsComponentExtensionAllowlisted(int manifest_reso
      case IDR_NETWORK_SPEECH_SYNTHESIS_MANIFEST:
      case IDR_NETWORK_SPEECH_SYNTHESIS_MANIFEST_MV3:
      case IDR_READING_MODE_GDOCS_HELPER_MANIFEST:

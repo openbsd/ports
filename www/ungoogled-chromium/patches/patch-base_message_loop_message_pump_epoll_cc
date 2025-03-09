@@ -1,7 +1,7 @@
 Index: base/message_loop/message_pump_epoll.cc
 --- base/message_loop/message_pump_epoll.cc.orig
 +++ base/message_loop/message_pump_epoll.cc
-@@ -42,7 +42,7 @@ std::atomic_bool g_use_batched_version = false;
+@@ -47,7 +47,7 @@ std::atomic_bool g_use_batched_version = false;
  std::atomic_bool g_use_poll = false;
  
  constexpr std::pair<uint32_t, short int> kEpollToPollEvents[] = {

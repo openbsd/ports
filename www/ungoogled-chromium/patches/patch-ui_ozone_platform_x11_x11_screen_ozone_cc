@@ -19,7 +19,7 @@ Index: ui/ozone/platform/x11/x11_screen_ozone.cc
    if (auto* linux_ui = ui::LinuxUi::instance()) {
      display_scale_factor_observer_.Observe(linux_ui);
    }
-@@ -260,7 +260,7 @@ void X11ScreenOzone::OnEvent(const x11::Event& xev) {
+@@ -267,7 +267,7 @@ void X11ScreenOzone::OnEvent(const x11::Event& xev) {
    x11_display_manager_->OnEvent(xev);
  }
  

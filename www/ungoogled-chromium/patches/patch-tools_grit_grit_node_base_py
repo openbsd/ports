@@ -1,7 +1,7 @@
 Index: tools/grit/grit/node/base.py
 --- tools/grit/grit/node/base.py.orig
 +++ tools/grit/grit/node/base.py
-@@ -498,7 +498,8 @@ class Node:
+@@ -499,7 +499,8 @@ class Node:
          value = defs
  
        elif name == 'is_linux':

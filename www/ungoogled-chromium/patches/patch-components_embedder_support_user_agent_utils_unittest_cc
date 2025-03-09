@@ -19,7 +19,7 @@ Index: components/embedder_support/user_agent_utils_unittest.cc
    // Post-UA Reduction there is a single <unifiedPlatform> value for Linux:
    // X11; Linux x86_64
    ASSERT_EQ(2u, pieces.size());
-@@ -727,7 +727,7 @@ TEST_F(UserAgentUtilsTest, UserAgentMetadata) {
+@@ -703,7 +703,7 @@ TEST_F(UserAgentUtilsTest, UserAgentMetadata) {
  #endif
  #elif BUILDFLAG(IS_ANDROID)
    EXPECT_EQ(metadata.platform, "Android");

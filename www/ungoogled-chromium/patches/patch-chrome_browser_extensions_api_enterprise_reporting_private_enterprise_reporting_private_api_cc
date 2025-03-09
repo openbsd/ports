@@ -1,7 +1,7 @@
 Index: chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.cc
 --- chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.cc.orig
 +++ chrome/browser/extensions/api/enterprise_reporting_private/enterprise_reporting_private_api.cc
-@@ -43,7 +43,7 @@
+@@ -40,7 +40,7 @@
  #include "components/reporting/util/statusor.h"
  #endif
  
@@ -10,7 +10,7 @@ Index: chrome/browser/extensions/api/enterprise_reporting_private/enterprise_rep
  #include <optional>
  
  #include "base/strings/string_util.h"
-@@ -118,7 +118,7 @@ api::enterprise_reporting_private::ContextInfo ToConte
+@@ -115,7 +115,7 @@ api::enterprise_reporting_private::ContextInfo ToConte
  }
  
  bool AllowClientCertificateReportingForUsers() {
@@ -19,7 +19,7 @@ Index: chrome/browser/extensions/api/enterprise_reporting_private/enterprise_rep
    return base::FeatureList::IsEnabled(
        enterprise_signals::features::kAllowClientCertificateReportingForUsers);
  #else
-@@ -131,7 +131,7 @@ bool IsProfilePrefManaged(Profile* profile, std::strin
+@@ -128,7 +128,7 @@ bool IsProfilePrefManaged(Profile* profile, std::strin
    return pref && pref->IsManaged();
  }
  
@@ -28,7 +28,7 @@ Index: chrome/browser/extensions/api/enterprise_reporting_private/enterprise_rep
  
  device_signals::SignalsAggregationRequest CreateAggregationRequest(
      device_signals::SignalName signal_name) {
-@@ -193,7 +193,7 @@ EnterpriseReportingPrivateGetDeviceIdFunction::
+@@ -190,7 +190,7 @@ EnterpriseReportingPrivateGetDeviceIdFunction::
  
  // getPersistentSecret
  
@@ -37,7 +37,7 @@ Index: chrome/browser/extensions/api/enterprise_reporting_private/enterprise_rep
  
  EnterpriseReportingPrivateGetPersistentSecretFunction::
      EnterpriseReportingPrivateGetPersistentSecretFunction() = default;
-@@ -631,7 +631,7 @@ void EnterpriseReportingPrivateEnqueueRecordFunction::
+@@ -630,7 +630,7 @@ void EnterpriseReportingPrivateEnqueueRecordFunction::
  }
  #endif
  

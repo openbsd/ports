@@ -14,4 +14,4 @@ Index: content/child/BUILD.gn
 +
    if (is_win) {
      sources += [
-       "dwrite_font_proxy/dwrite_font_proxy_init_impl_win.cc",
+       "child_process_sandbox_support_impl_win.cc",

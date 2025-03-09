@@ -1,7 +1,7 @@
 Index: chrome/browser/metrics/perf/cpu_identity.cc
 --- chrome/browser/metrics/perf/cpu_identity.cc.orig
 +++ chrome/browser/metrics/perf/cpu_identity.cc
-@@ -147,7 +147,7 @@ CPUIdentity GetCPUIdentity() {
+@@ -146,7 +146,7 @@ CPUIdentity GetCPUIdentity() {
    result.release =
  #if BUILDFLAG(IS_CHROMEOS_ASH)
        base::SysInfo::KernelVersion();
