@@ -262,7 +262,7 @@ SHA256 (cargo/zerocopy-0.7.35.tar.gz) = G5tP0Yq8grgTaDjaXVC6573qU3xXTY3Bo07QmNbB
 SHA256 (cargo/zerocopy-derive-0.7.35.tar.gz) = +k+AgDRNRnH7ToMaE60eaAknSDh9/E9V41YkL64Szj4=
 SHA256 (cargo/zune-core-0.4.12.tar.gz) = P0I6LBcCmWSHDPqrsfE9+rfQkqYqKaiSZPTTaZDKQUo=
 SHA256 (cargo/zune-jpeg-0.4.13.tar.gz) = FgmUGGALTY8ChiL3P/bj3qq9/zMPuaKhMd6nge6LB2g=
-SHA256 (sugyan-tuisky-v0.1.5.tar.gz) = vXdxILIGGMcsbf4GTKKffeIeExT66b6FUPPFJ67F3qc=
+SHA256 (sugyan-tuisky-v0.2.0.tar.gz) = zt/Erjlq8NrcNX+TtlqfNc/aOvyhpa1B2dJ8wpO8jfQ=
 SIZE (cargo/addr2line-0.21.0.tar.gz) = 40807
 SIZE (cargo/adler-1.0.2.tar.gz) = 12778
 SIZE (cargo/adler2-2.0.0.tar.gz) = 13529
@@ -527,4 +527,4 @@ SIZE (cargo/zerocopy-0.7.35.tar.gz) = 152645
 SIZE (cargo/zerocopy-derive-0.7.35.tar.gz) = 37829
 SIZE (cargo/zune-core-0.4.12.tar.gz) = 17355
 SIZE (cargo/zune-jpeg-0.4.13.tar.gz) = 62999
-SIZE (sugyan-tuisky-v0.1.5.tar.gz) = 52783
+SIZE (sugyan-tuisky-v0.2.0.tar.gz) = 53155

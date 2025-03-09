@@ -1,7 +1,7 @@
 COMMENT =	TUI client for Bluesky
 
 DISTNAME =	tuisky-${V}
-V =		0.1.5
+V =		0.2.0
 
 DIST_TUPLE +=	github sugyan tuisky v${V} .
 
