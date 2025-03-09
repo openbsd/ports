@@ -61,3 +61,12 @@ Index: src/crypto/tls_openssl.c
  		/*
  		 * This should not be reached since earlier cert_cb should have
  		 * terminated the handshake. Keep this check here for extra
+@@ -5329,7 +5345,7 @@ int tls_global_set_params(void *tls_ctx,
+  * commented out unless explicitly needed for EAP-FAST in order to be able to
+  * build this file with unmodified openssl. */
+ 
+-#if (defined(OPENSSL_IS_BORINGSSL) || OPENSSL_VERSION_NUMBER >= 0x10100000L) && !defined(LIBRESSL_VERSION_NUMBER)
++#if (defined(OPENSSL_IS_BORINGSSL) || OPENSSL_VERSION_NUMBER >= 0x10100000L)
+ static int tls_sess_sec_cb(SSL *s, void *secret, int *secret_len,
+ 			   STACK_OF(SSL_CIPHER) *peer_ciphers,
+ 			   const SSL_CIPHER **cipher, void *arg)
