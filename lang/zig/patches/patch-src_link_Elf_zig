@@ -3,7 +3,7 @@ Force -znobtcfi on linker invocation.
 Index: src/link/Elf.zig
 --- src/link/Elf.zig.orig
 +++ src/link/Elf.zig
-@@ -2347,6 +2347,9 @@ fn linkWithLLD(self: *Elf, arena: Allocator, prog_node
+@@ -1702,6 +1702,9 @@ fn linkWithLLD(self: *Elf, arena: Allocator, tid: Zcu.
  
          try argv.append("--error-limit=0");
  
