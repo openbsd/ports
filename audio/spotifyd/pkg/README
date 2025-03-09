@@ -1,12 +1,21 @@
-With credentials in an XDG configuration file spotifyd is ready to run, e.g.
-as daemon in ~/.xsession or on-demand via clients such as "spotify-qt":
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
 
-  [spotifyd]
-  username = "user@example.com"
-  password = "secret"
+Spotify OAuth authentication
+============================
 
-Alternatively, the rc.d(8) script runs as dedicated user on the system D-Bus
-where user keyring services (running on its session D-Bus) are unavailable.
+Authentication via OAuth must be set up using 
+
+$ spotifyd authenticate -c .
+
+This will redirect you to a web browser to complete the OAuth process, then
+place a credentials.json file in the current directory.
+
+Copy this file to ${HOME_DIR}/cache/oauth for use by the systemwide instance.
+
+Sharing of sndio(7) authentication cookie
+=========================================
 
 Follow sndio(7) Authentication if both dedicated and your own user shall be
 able to play audio at the same time, e.g. on a desktop system:
