@@ -1,11 +1,13 @@
 # building uses "esbuild" as a node module, which fetches a binary
-# (compiled golang). 0.24.2 has aarch64 and amd64. this probably will
-# build on arm64 if it has network access during build.
+# (compiled golang program). as of esbuild 0.24.2, aarch64 and amd64
+# binaries are available. preparing an npm cache distfile for offline
+# builds that works on both aarch64 and amd64 is a bit awkward;
+# currently I've done this but can't guarantee to keep on doing so.
 ONLY_FOR_ARCHS=	amd64
 
 COMMENT=	Zigbee to MQTT bridge
 
-V=		2.1.1
+V=		2.1.3
 GH_ACCOUNT=	Koenkk
 GH_PROJECT=	zigbee2mqtt
 GH_TAGNAME=	$V
@@ -31,7 +33,7 @@ RUN_DEPENDS=	lang/node
 
 NO_TEST=	Yes
 
-post-extract:
+do-configure:
 	@echo - installing npm deps from cache to WRKDIR
 	cd ${WRKSRC}; env -i HOME=${WRKDIR} PATH=$$PATH npm install \
 		-dd --audit=false --include=dev --cache=${WRKDIR}/npm-cache \
@@ -50,7 +52,11 @@ do-install:
 	ln -s /var/db/zigbee2mqtt ${PREFIX}/lib/node_modules/zigbee2mqtt/data
 	rm -rf ${PREFIX}/lib/node_modules/zigbee2mqtt/node_modules/@serialport/bindings-cpp/prebuilds
 
-# maintainer convenience target
+# maintainer target - npm normally expects to work online, but ports
+# must be able to build without network access so we work around this
+# by running build steps online, and saving the npm cache directory.
+# extra mess because this has to be done on amd64 *and* aarch64 because
+# the different archs download different files.
 dist: ${FULLDISTDIR}/${GH_DISTFILE}
 	@set -x; \
 	t=`mktemp -d /tmp/zigbee2mqtt.XXXXXXXXXX`; \
@@ -63,9 +69,16 @@ dist: ${FULLDISTDIR}/${GH_DISTFILE}
 	npm run build -dd --cache=$$t/npm-cache; \
 	npm install -dd --exclude=dev --global --cache=$$t/npm-cache --prefix=$$t/inst --install-links; \
 	cd -; \
+	rsync -av $$t/ 10.15.5.52:$$t/; \
+	ssh 10.15.5.52 "cd $$t/${WRKDIST:C,^.*/,,}; \
+	npm install -dd --include=dev --cache=$$t/npm-cache; \
+	npm run build -dd --cache=$$t/npm-cache; \
+	npm install -dd --exclude=dev --global --cache=$$t/npm-cache --prefix=$$t/inst --install-links"; \
+	rsync -av 10.15.5.52:$$t/ $$t/; \
 	rm -r npm-cache/_logs; \
 	tar cf - npm-cache | xz -T 0 > $$f; \
 	scp $$f naiad:mirrors/; \
 	rm -rf $$t
+# maybe use nfs rather than rsync?
 
 .include <bsd.port.mk>
