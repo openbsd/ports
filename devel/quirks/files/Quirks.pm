@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1704 2025/03/06 09:49:53 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1705 2025/03/10 10:08:24 tb Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1241,6 +1241,7 @@ setup_obsolete_reason(
 	3 => 'akonadi-notes',
 	3 => 'quictls',
 	6 => 'py3-setuptools-git',
+	11 => 'rpki-data',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
