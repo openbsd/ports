@@ -2,11 +2,11 @@ COMMENT=	debug and development tools for PHP
 
 GH_ACCOUNT=	xdebug
 GH_PROJECT=	xdebug
-GH_TAGNAME=	3.4.1
-REVISION=	0
+GH_TAGNAME=	3.4.2
 
 CATEGORIES=	devel
 
+# https://xdebug.org/updates
 HOMEPAGE=	https://xdebug.org/
 
 # own license based on PHP's, see LICENSE
