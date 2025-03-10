@@ -1,4 +1,5 @@
 ONLY_FOR_ARCHS =	amd64
+BROKEN =		blows with pinsyscalls
 
 COMMENT =		instrumentation framework for dynamic analysis tools
 CATEGORIES =		devel
