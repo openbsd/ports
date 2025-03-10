@@ -1,4 +1,5 @@
 VERSION=	3.10.0
+REVISION=	0
 
 EPOCH=		0
 
