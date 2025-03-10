@@ -2,7 +2,7 @@ COMMENT =		automatic 3d tetrahedral mesh generator
 
 V =			6.2.2404
 PKGNAME =		netgen-mesher-${V}
-REVISION =		1
+REVISION =		2
 
 DIST_TUPLE +=		github NGSolve netgen v${V} .
 
@@ -64,7 +64,6 @@ CONFIGURE_ARGS +=	-DCMAKE_INSTALL_PREFIX=${PREFIX} \
 			-DTK_STUB_LIBRARY=${LOCALBASE}/lib/libtkstub${MODTK_VERSION:S/.//}.a
 
 post-install:
-	mv ${PREFIX}/bin/netgen ${PREFIX}/bin/netgen-mesher
 	${MODPY_COMPILEALL} \
 		${WRKINST}${MODPY_SITEPKG}/netgen \
 		${WRKINST}${MODPY_SITEPKG}/pyngcore
