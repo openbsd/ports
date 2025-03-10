@@ -1,6 +1,6 @@
 COMMENT=	HTTP server for pytest
 
-MODPY_DISTV=	1.1.1
+MODPY_DISTV=	1.1.2
 DISTNAME=	pytest_httpserver-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/pytest_/py-test-/}
 CATEGORIES=	devel
