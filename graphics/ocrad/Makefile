@@ -1,6 +1,6 @@
 COMMENT=	OCR program for pnm/PNG files
 
-DISTNAME=	ocrad-0.28
+DISTNAME=	ocrad-0.29
 
 CATEGORIES=	graphics
 EXTRACT_SUFX=	.tar.lz
