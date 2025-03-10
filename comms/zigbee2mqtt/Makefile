@@ -3,7 +3,7 @@
 # binaries are available. preparing an npm cache distfile for offline
 # builds that works on both aarch64 and amd64 is a bit awkward;
 # currently I've done this but can't guarantee to keep on doing so.
-ONLY_FOR_ARCHS=	amd64
+ONLY_FOR_ARCHS=	amd64 aarch64
 
 COMMENT=	Zigbee to MQTT bridge
 
