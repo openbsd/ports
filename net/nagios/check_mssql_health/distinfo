@@ -1,2 +1,4 @@
-SHA256 (check_mssql_health-2.7.6.1.tar.gz) = cZ+oHqX/VIO5Ym1gMaLR1uTg2EEBdrBcBt9zzHj6eFY=
-SIZE (check_mssql_health-2.7.6.1.tar.gz) = 162835
+SHA256 (check_mssql_health-2.7.8.tar.gz) = whri2h7Uw1yqk6lisR0IJW/f0ug78I7HfPBP8b5h+FE=
+SHA256 (lausser-GLPlugin-2ae352b7a99caf54b2d4cfab3c72e72312c256e4.tar.gz) = ndw2nmpxD4PeQ3G4FFZ2dO9QhSkbAsolp9Imw4wiC5w=
+SIZE (check_mssql_health-2.7.8.tar.gz) = 100259
+SIZE (lausser-GLPlugin-2ae352b7a99caf54b2d4cfab3c72e72312c256e4.tar.gz) = 1304139
