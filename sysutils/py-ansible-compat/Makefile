@@ -1,9 +1,8 @@
 COMMENT=	functions for working with Ansible from Python
 
-MODPY_DISTV=	4.1.11
-DISTNAME=	ansible-compat-${MODPY_DISTV}
-PKGNAME=	py-${DISTNAME}
-REVISION=	1
+MODPY_DISTV=	25.1.3
+DISTNAME=	ansible_compat-${MODPY_DISTV}
+PKGNAME=	py-ansible-compat-${MODPY_DISTV}
 
 CATEGORIES=	sysutils
 
@@ -11,7 +10,6 @@ CATEGORIES=	sysutils
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
 MODPY_PYBUILD=	setuptools_scm
 MODPY_PI=	Yes
 
