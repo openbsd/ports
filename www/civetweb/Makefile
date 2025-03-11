@@ -2,10 +2,10 @@ COMMENT =	embedded C/C++ web server
 
 GH_ACCOUNT =	civetweb
 GH_PROJECT =	civetweb
-GH_TAGNAME =	v1.15
+GH_TAGNAME =	v1.16
 
-SHARED_LIBS +=  civetweb                  0.0 # 0.0
-SHARED_LIBS +=  civetweb-cpp              0.0 # 0.0
+SHARED_LIBS +=  civetweb                  0.1 # 0.0
+SHARED_LIBS +=  civetweb-cpp              0.1 # 0.0
 
 CATEGORIES =	www
 
