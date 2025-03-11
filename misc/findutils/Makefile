@@ -1,30 +1,31 @@
-COMMENT=		finds and then operates on files
+COMMENT=	finds and then operates on files
 
-DISTNAME=		findutils-4.9.0
-CATEGORIES=		misc
-REVISION=		0
+DISTNAME=	findutils-4.10.0
+CATEGORIES=	misc
 
-HOMEPAGE=		https://www.gnu.org/software/findutils/
+HOMEPAGE=	https://www.gnu.org/software/findutils/
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		c iconv intl m
+WANTLIB=	c iconv intl m
 
-SITES=			${SITE_GNU:=findutils/}
-EXTRACT_SUFX=		.tar.xz
+SITES=		${SITE_GNU:=findutils/}
+EXTRACT_SUFX=	.tar.xz
 
-LIB_DEPENDS=		devel/gettext,-runtime
+LIB_DEPENDS=	devel/gettext,-runtime
 
-CONFIGURE_STYLE=	gnu
-CONFIGURE_ARGS=		--program-prefix="g"
-CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
-			LDFLAGS="-L${LOCALBASE}/lib"
+CONFIGURE_STYLE= gnu
+CONFIGURE_ARGS=	--program-prefix="g"
+CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
+		LDFLAGS="-L${LOCALBASE}/lib"
 # only used for testsuite
-CONFIGURE_ENV+=		PYTHON=:
+CONFIGURE_ENV+=	PYTHON=:
 
-LOCALSTATEDIR=		${BASELOCALSTATEDIR}/db
+# test-sigusr depends on linux and errors out during build
 
-PORTHOME=		${WRKDIR}
+LOCALSTATEDIR=	${BASELOCALSTATEDIR}/db
+
+PORTHOME=	${WRKDIR}
 
 .include <bsd.port.mk>
