@@ -1,6 +1,6 @@
 COMMENT=	Python documentation generator
 
-MODPY_DISTV=	8.2.1
+MODPY_DISTV=	8.2.3
 DISTNAME=	sphinx-${MODPY_DISTV}
 PKGNAME=	py-sphinx-${MODPY_DISTV}
 
@@ -17,6 +17,11 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	flit_core
+
+BUILD_DEPENDS=	devel/gettext,-tools
+
+# needed until flit_core is updated
+BUILD_DEPENDS+=	${RUN_DEPENDS}
 
 RUN_DEPENDS+=	textproc/py-sphinxcontrib/applehelp \
 		textproc/py-sphinxcontrib/devhelp \
@@ -36,7 +41,6 @@ RUN_DEPENDS+=	textproc/py-sphinxcontrib/applehelp \
 		textproc/py-roman-numerals \
 		sysutils/py-packaging
 
-BUILD_DEPENDS=	devel/gettext,-tools
 TEST_DEPENDS=	devel/py-test-xdist \
 		sysutils/py-psutil \
 		textproc/py-defusedxml \
