@@ -1,6 +1,6 @@
 COMMENT=	graphical client for the SoulSeek peer-to-peer system
 
-MODPY_DISTV=	3.3.9
+MODPY_DISTV=	3.3.10
 GH_ACCOUNT=	Nicotine-Plus
 GH_PROJECT=	nicotine-plus
 GH_TAGNAME=	${MODPY_DISTV}
