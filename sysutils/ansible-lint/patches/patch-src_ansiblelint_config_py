@@ -3,7 +3,7 @@ neuter online version-check
 Index: src/ansiblelint/config.py
 --- src/ansiblelint/config.py.orig
 +++ src/ansiblelint/config.py
-@@ -291,6 +291,9 @@ def get_version_warning() -> str:
+@@ -292,6 +292,9 @@ def get_version_warning() -> str:
      if not pip:
          return ""
  

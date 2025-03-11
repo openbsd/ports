@@ -1,6 +1,6 @@
 COMMENT =		best practices checker for ansible
 
-MODPY_DISTV =		24.12.2
+MODPY_DISTV =		25.1.3
 DISTNAME =		ansible_lint-${MODPY_DISTV}
 PKGNAME =		ansible-lint-${MODPY_DISTV}
 
@@ -10,23 +10,24 @@ CATEGORIES =		sysutils
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-
 MODPY_PYBUILD =		setuptools_scm
 MODPY_PI =		Yes
 
 RUN_DEPENDS =		devel/git \
 			sysutils/ansible-core \
+			sysutils/py-ansible-compat>=25.1.3 \
 			textproc/py-black \
 			sysutils/py-filelock \
+			devel/py-importlib-metadata \
 			devel/py-jsonschema \
 			sysutils/py-packaging \
+			devel/py-pathspec \
 			textproc/py-yaml \
-			devel/py-rich \
 			textproc/py-ruamel.yaml \
-			sysutils/py-ansible-compat>=4.1.11 \
+			textproc/py-referencing \
 			sysutils/py-subprocess-tee \
 			devel/py-yamllint \
-			devel/py-wcmatch \
+			devel/py-wcmatch
 
 PORTHOME =		${WRKDIR}
 # tests need network
