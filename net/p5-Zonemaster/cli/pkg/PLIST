@@ -18,6 +18,9 @@ ${P5SITE}/auto/share/dist/Zonemaster-CLI/locale/fr/LC_MESSAGES/Zonemaster-CLI.mo
 ${P5SITE}/auto/share/dist/Zonemaster-CLI/locale/nb/
 ${P5SITE}/auto/share/dist/Zonemaster-CLI/locale/nb/LC_MESSAGES/
 ${P5SITE}/auto/share/dist/Zonemaster-CLI/locale/nb/LC_MESSAGES/Zonemaster-CLI.mo
+${P5SITE}/auto/share/dist/Zonemaster-CLI/locale/sl/
+${P5SITE}/auto/share/dist/Zonemaster-CLI/locale/sl/LC_MESSAGES/
+${P5SITE}/auto/share/dist/Zonemaster-CLI/locale/sl/LC_MESSAGES/Zonemaster-CLI.mo
 ${P5SITE}/auto/share/dist/Zonemaster-CLI/locale/sv/
 ${P5SITE}/auto/share/dist/Zonemaster-CLI/locale/sv/LC_MESSAGES/
 ${P5SITE}/auto/share/dist/Zonemaster-CLI/locale/sv/LC_MESSAGES/Zonemaster-CLI.mo
