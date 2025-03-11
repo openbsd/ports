@@ -254,6 +254,7 @@ share/vim/${P}/compiler/spotbugs.vim
 share/vim/${P}/compiler/stack.vim
 share/vim/${P}/compiler/standard.vim
 share/vim/${P}/compiler/stylelint.vim
+share/vim/${P}/compiler/svelte-check.vim
 share/vim/${P}/compiler/tcl.vim
 share/vim/${P}/compiler/tex.vim
 share/vim/${P}/compiler/tidy.vim
@@ -511,6 +512,7 @@ share/vim/${P}/ftplugin/dictconf.vim
 share/vim/${P}/ftplugin/dictdconf.vim
 share/vim/${P}/ftplugin/diff.vim
 share/vim/${P}/ftplugin/dircolors.vim
+share/vim/${P}/ftplugin/dnsmasq.vim
 share/vim/${P}/ftplugin/docbk.vim
 share/vim/${P}/ftplugin/dockerfile.vim
 share/vim/${P}/ftplugin/dosbatch.vim
@@ -634,6 +636,7 @@ share/vim/${P}/ftplugin/lprolog.vim
 share/vim/${P}/ftplugin/lua.vim
 share/vim/${P}/ftplugin/luau.vim
 share/vim/${P}/ftplugin/lynx.vim
+share/vim/${P}/ftplugin/m17ndb.vim
 share/vim/${P}/ftplugin/m3build.vim
 share/vim/${P}/ftplugin/m3quake.vim
 share/vim/${P}/ftplugin/m4.vim
@@ -693,6 +696,7 @@ share/vim/${P}/ftplugin/perl.vim
 share/vim/${P}/ftplugin/php.vim
 share/vim/${P}/ftplugin/pinfo.vim
 share/vim/${P}/ftplugin/plaintex.vim
+share/vim/${P}/ftplugin/plsql.vim
 share/vim/${P}/ftplugin/pod.vim
 share/vim/${P}/ftplugin/poefilter.vim
 share/vim/${P}/ftplugin/poke.vim
@@ -780,6 +784,7 @@ share/vim/${P}/ftplugin/systemverilog.vim
 share/vim/${P}/ftplugin/tap.vim
 share/vim/${P}/ftplugin/tcl.vim
 share/vim/${P}/ftplugin/tcsh.vim
+share/vim/${P}/ftplugin/tera.vim
 share/vim/${P}/ftplugin/terminfo.vim
 share/vim/${P}/ftplugin/terraform.vim
 share/vim/${P}/ftplugin/tex.vim
@@ -930,6 +935,7 @@ share/vim/${P}/indent/livebook.vim
 share/vim/${P}/indent/logtalk.vim
 share/vim/${P}/indent/lua.vim
 share/vim/${P}/indent/luau.vim
+share/vim/${P}/indent/m17ndb.vim
 share/vim/${P}/indent/mail.vim
 share/vim/${P}/indent/make.vim
 share/vim/${P}/indent/matlab.vim
@@ -1205,7 +1211,9 @@ share/vim/${P}/pack/dist/opt/netrw/README.md
 share/vim/${P}/pack/dist/opt/netrw/autoload/
 share/vim/${P}/pack/dist/opt/netrw/autoload/netrw/
 share/vim/${P}/pack/dist/opt/netrw/autoload/netrw.vim
-share/vim/${P}/pack/dist/opt/netrw/autoload/netrw/own.vim
+share/vim/${P}/pack/dist/opt/netrw/autoload/netrw/fs.vim
+share/vim/${P}/pack/dist/opt/netrw/autoload/netrw/msg.vim
+share/vim/${P}/pack/dist/opt/netrw/autoload/netrw/os.vim
 share/vim/${P}/pack/dist/opt/netrw/autoload/netrwSettings.vim
 share/vim/${P}/pack/dist/opt/netrw/autoload/netrw_gitignore.vim
 share/vim/${P}/pack/dist/opt/netrw/doc/
@@ -1302,6 +1310,7 @@ share/vim/${P}/syntax/abap.vim
 share/vim/${P}/syntax/abaqus.vim
 share/vim/${P}/syntax/abc.vim
 share/vim/${P}/syntax/abel.vim
+share/vim/${P}/syntax/abnf.vim
 share/vim/${P}/syntax/acedb.vim
 share/vim/${P}/syntax/ada.vim
 share/vim/${P}/syntax/aflex.vim
@@ -1649,6 +1658,7 @@ share/vim/${P}/syntax/lua.vim
 share/vim/${P}/syntax/luau.vim
 share/vim/${P}/syntax/lynx.vim
 share/vim/${P}/syntax/lyrics.vim
+share/vim/${P}/syntax/m17ndb.vim
 share/vim/${P}/syntax/m3build.vim
 share/vim/${P}/syntax/m3quake.vim
 share/vim/${P}/syntax/m4.vim
@@ -1951,6 +1961,7 @@ share/vim/${P}/syntax/tasm.vim
 share/vim/${P}/syntax/tcl.vim
 share/vim/${P}/syntax/tcsh.vim
 share/vim/${P}/syntax/template.vim
+share/vim/${P}/syntax/tera.vim
 share/vim/${P}/syntax/teraterm.vim
 share/vim/${P}/syntax/terminfo.vim
 share/vim/${P}/syntax/terraform.vim
@@ -2083,6 +2094,8 @@ share/vim/${P}/tutor/README.txt
 share/vim/${P}/tutor/en/
 share/vim/${P}/tutor/en/vim-01-beginner.tutor
 share/vim/${P}/tutor/en/vim-01-beginner.tutor.json
+share/vim/${P}/tutor/en/vim-02-beginner.tutor
+share/vim/${P}/tutor/en/vim-02-beginner.tutor.json
 share/vim/${P}/tutor/tutor.tutor
 share/vim/${P}/tutor/tutor.tutor.json
 share/vim/${P}/tutor/tutor.vim
