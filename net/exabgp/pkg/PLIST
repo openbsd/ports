@@ -972,10 +972,6 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/${MODPY_PYCACHE}__init
 lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/${MODPY_PYCACHE}bitstring.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/${MODPY_PYCACHE}bitstring.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/${MODPY_PYCACHE}cmd2.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/${MODPY_PYCACHE}cmd2.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/${MODPY_PYCACHE}counter.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/${MODPY_PYCACHE}counter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/${MODPY_PYCACHE}docopt.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/${MODPY_PYCACHE}docopt.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/${MODPY_PYCACHE}gcdump.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -990,13 +986,9 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/${MODPY_PYCACHE}ordere
 lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/${MODPY_PYCACHE}ordereddict.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/${MODPY_PYCACHE}profiler.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/${MODPY_PYCACHE}profiler.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/${MODPY_PYCACHE}pyparsing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/${MODPY_PYCACHE}pyparsing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/${MODPY_PYCACHE}six.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/${MODPY_PYCACHE}six.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/bitstring.py
-lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/cmd2.py
-lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/counter.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/docopt.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/gcdump.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/ipaddress.py
@@ -1004,7 +996,6 @@ lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/lsprofcalltree.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/objgraph.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/ordereddict.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/profiler.py
-lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/pyparsing.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/vendoring/six.py
 lib/python${MODPY_VERSION}/site-packages/exabgp/version.py
 @man man/man1/exabgp.1

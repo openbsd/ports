@@ -1,7 +1,7 @@
 Index: lib/exabgp/application/bgp.py
 --- lib/exabgp/application/bgp.py.orig
 +++ lib/exabgp/application/bgp.py
-@@ -151,7 +151,7 @@ def main():
+@@ -152,7 +152,7 @@ def main():
          options, ['/bin/exabgp', '/sbin/exabgp', '/lib/exabgp/application/bgp.py', '/lib/exabgp/application/control.py']
      )
      prefix = '' if root == '/usr' else root

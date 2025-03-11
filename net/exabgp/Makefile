@@ -1,23 +1,21 @@
-COMMENT=		BGP route injector (supporting flow routes, etc)
+COMMENT=	BGP route injector (supporting flow routes, etc)
 
-MODPY_DISTV=	4.2.22
-GH_ACCOUNT=		exa-networks
-GH_PROJECT=		exabgp
-GH_TAGNAME=		${MODPY_DISTV}
-REVISION=		0
+MODPY_DISTV=	4.2.24
+GH_ACCOUNT=	exa-networks
+GH_PROJECT=	exabgp
+GH_TAGNAME=	${MODPY_DISTV}
 
-CATEGORIES=		net
+CATEGORIES=	net
 
 # BSD
 PERMIT_PACKAGE=	Yes
 
-MODULES=		lang/python
-MODPY_PYBUILD=		setuptools
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
 
-TEST_DEPENDS=		devel/py-coverage \
-			devel/py-nose \
-			devel/py-six \
-			sysutils/py-psutil
+TEST_DEPENDS=	devel/py-coverage \
+		devel/py-nose \
+		sysutils/py-psutil
 
 # Generate current version's exabgp.env in post-extract so we can patch
 # it rather than using a static copy in FILESDIR. The rc script uses
