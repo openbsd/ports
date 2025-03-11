@@ -1,9 +1,9 @@
 Index: src/slic3r/GUI/Plater.cpp
 --- src/slic3r/GUI/Plater.cpp.orig
 +++ src/slic3r/GUI/Plater.cpp
-@@ -4106,7 +4106,7 @@ void Plater::load_project(const wxString& filename)
- 
-     p->reset();
+@@ -4420,7 +4420,7 @@ void Plater::load_project(const wxString& filename)
+     s_multiple_beds.set_loading_project_flag(true);
+     ScopeGuard guard([](){ s_multiple_beds.set_loading_project_flag(false);});
  
 -    if (! load_files({ into_path(filename) }).empty()) {
 +    if (! load_files((const std::vector<boost::filesystem::path>){ into_path(filename) }).empty()) {

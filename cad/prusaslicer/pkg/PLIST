@@ -44,6 +44,7 @@ share/PrusaSlicer/icons/align_vertical_bottom.svg
 share/PrusaSlicer/icons/align_vertical_center.svg
 share/PrusaSlicer/icons/align_vertical_top.svg
 share/PrusaSlicer/icons/arrange.svg
+share/PrusaSlicer/icons/arrange_current.svg
 share/PrusaSlicer/icons/attention.svg
 share/PrusaSlicer/icons/browse.svg
 share/PrusaSlicer/icons/bullet_black.png
@@ -132,6 +133,8 @@ share/PrusaSlicer/icons/flag_green.svg
 share/PrusaSlicer/icons/flag_red.svg
 share/PrusaSlicer/icons/funnel.svg
 share/PrusaSlicer/icons/fuzzy_skin.svg
+share/PrusaSlicer/icons/fuzzy_skin_painting.svg
+share/PrusaSlicer/icons/fuzzy_skin_painting_.svg
 share/PrusaSlicer/icons/gcode.icns
 share/PrusaSlicer/icons/hollow.svg
 share/PrusaSlicer/icons/hollowing.svg
@@ -212,7 +215,9 @@ share/PrusaSlicer/icons/notification_preferences_hover.svg
 share/PrusaSlicer/icons/notification_right.svg
 share/PrusaSlicer/icons/notification_right_hover.svg
 share/PrusaSlicer/icons/notification_warning.svg
+share/PrusaSlicer/icons/notification_warning_grey.svg
 share/PrusaSlicer/icons/number_of_copies.svg
+share/PrusaSlicer/icons/numbers.png
 share/PrusaSlicer/icons/objlist_info.svg
 share/PrusaSlicer/icons/open.svg
 share/PrusaSlicer/icons/open_browser.svg
@@ -227,6 +232,9 @@ share/PrusaSlicer/icons/plater.svg
 share/PrusaSlicer/icons/plug.svg
 share/PrusaSlicer/icons/preview.svg
 share/PrusaSlicer/icons/preview_menu.svg
+share/PrusaSlicer/icons/print_finished.svg
+share/PrusaSlicer/icons/print_idle.svg
+share/PrusaSlicer/icons/print_running.svg
 share/PrusaSlicer/icons/printer.svg
 share/PrusaSlicer/icons/printer_available.svg
 share/PrusaSlicer/icons/printer_busy.svg
@@ -268,6 +276,7 @@ share/PrusaSlicer/icons/sla_printer_offline.svg
 share/PrusaSlicer/icons/sla_supports.svg
 share/PrusaSlicer/icons/sla_view_original.svg
 share/PrusaSlicer/icons/sla_view_processed.svg
+share/PrusaSlicer/icons/slice_all.svg
 share/PrusaSlicer/icons/snap.svg
 share/PrusaSlicer/icons/spin_dec.svg
 share/PrusaSlicer/icons/spin_dec_act.svg
@@ -629,6 +638,8 @@ share/PrusaSlicer/profiles/FLSun/QQSP_thumbnail.png
 share/PrusaSlicer/profiles/Geeetech/
 share/PrusaSlicer/profiles/Geeetech.idx
 share/PrusaSlicer/profiles/Geeetech.ini
+share/PrusaSlicer/profiles/Geeetech/105x105.stl
+share/PrusaSlicer/profiles/Geeetech/105x105.svg
 share/PrusaSlicer/profiles/Geeetech/125X130.stl
 share/PrusaSlicer/profiles/Geeetech/125x130.svg
 share/PrusaSlicer/profiles/Geeetech/150x150.stl
@@ -663,6 +674,8 @@ share/PrusaSlicer/profiles/Geeetech/GiantArmD200_thumbnail.png
 share/PrusaSlicer/profiles/Geeetech/I3ProB_thumbnail.png
 share/PrusaSlicer/profiles/Geeetech/I3ProC_thumbnail.png
 share/PrusaSlicer/profiles/Geeetech/I3ProW_thumbnail.png
+share/PrusaSlicer/profiles/Geeetech/M1.svg
+share/PrusaSlicer/profiles/Geeetech/M1_thumbnail.png
 share/PrusaSlicer/profiles/Geeetech/MeCreator2_thumbnail.png
 share/PrusaSlicer/profiles/Geeetech/MeCreator_thumbnail.png
 share/PrusaSlicer/profiles/Geeetech/MeDucer_thumbnail.png
@@ -838,6 +851,7 @@ share/PrusaSlicer/profiles/RatRig/rr-vminion.stl
 share/PrusaSlicer/profiles/RatRig/rr-vminion.svg
 share/PrusaSlicer/profiles/RatRig/vc4-corexy.png
 share/PrusaSlicer/profiles/RatRig/vc4-hybrid.png
+share/PrusaSlicer/profiles/RatRig/vc4-idex.png
 share/PrusaSlicer/profiles/Rigid3D/
 share/PrusaSlicer/profiles/Rigid3D.idx
 share/PrusaSlicer/profiles/Rigid3D.ini
@@ -1127,9 +1141,11 @@ share/PrusaSlicer/shapes/torus.stl
 share/PrusaSlicer/shapes/universal wall mount hole.png
 share/PrusaSlicer/shapes/universal wall mount hole.stl
 share/PrusaSlicer/web/
+share/PrusaSlicer/web/connect_error.html
 share/PrusaSlicer/web/connect_loading.html
-share/PrusaSlicer/web/connection_failed.html
-share/PrusaSlicer/web/loading.html
+share/PrusaSlicer/web/error_no_reload.html
+share/PrusaSlicer/web/other_error.html
+share/PrusaSlicer/web/other_loading.html
 share/applications/PrusaGcodeviewer.desktop
 share/applications/PrusaSlicer.desktop
 share/icons/hicolor/128x128/apps/PrusaSlicer-gcodeviewer.png

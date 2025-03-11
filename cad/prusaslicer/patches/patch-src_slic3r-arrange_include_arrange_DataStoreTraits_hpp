@@ -1,9 +1,9 @@
 Fix build with llvm-19
 https://github.com/freebsd/freebsd-ports/commit/778f3f32a33da38f6b526acdddfd6d805a9d0535
 
-Index: src/libslic3r/Arrange/Core/DataStoreTraits.hpp
---- src/libslic3r/Arrange/Core/DataStoreTraits.hpp.orig
-+++ src/libslic3r/Arrange/Core/DataStoreTraits.hpp
+Index: src/slic3r-arrange/include/arrange/DataStoreTraits.hpp
+--- src/slic3r-arrange/include/arrange/DataStoreTraits.hpp.orig
++++ src/slic3r-arrange/include/arrange/DataStoreTraits.hpp
 @@ -71,7 +71,7 @@ template<class T, class TT = T> using WritableDataStor
  template<class T, class ArrItem>
  void set_data(ArrItem &itm, const std::string &key, T &&data)

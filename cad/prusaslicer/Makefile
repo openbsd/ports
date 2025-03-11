@@ -2,9 +2,8 @@ COMMENT =	g-code generator for 3D printers
 ONLY_FOR_ARCHS = ${LP64_ARCHS}
 DPB_PROPERTIES = parallel
 
-V =		2.8.1
+V =		2.9.0
 PKGNAME =	prusaslicer-${V}
-REVISION =	1
 
 GH_ACCOUNT =	prusa3d
 GH_PROJECT =	PrusaSlicer
@@ -74,8 +73,5 @@ CONFIGURE_ARGS +=	-DCMAKE_BUILD_TYPE=RelWithDebInfo \
 			-DSLIC3R_FHS=1 \
 			-DSLIC3R_GTK=3 \
 			-DSLIC3R_PCH=OFF
-
-post-extract:
-	rm ${WRKDIST}/cmake/modules/FindEigen3.cmake
 
 .include <bsd.port.mk>

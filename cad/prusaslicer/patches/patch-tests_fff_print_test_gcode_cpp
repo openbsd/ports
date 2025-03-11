@@ -1,7 +1,7 @@
 Index: tests/fff_print/test_gcode.cpp
 --- tests/fff_print/test_gcode.cpp.orig
 +++ tests/fff_print/test_gcode.cpp
-@@ -66,7 +66,7 @@ TEST_CASE("Wiping speeds", "[GCode]") {
+@@ -65,7 +65,7 @@ TEST_CASE("Wiping speeds", "[GCode]") {
          INFO("Wipe moves don\'t retract faster than configured speed");
          CHECK(retract_speed < expected_retract_speed);
      }
