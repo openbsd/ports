@@ -28,3 +28,4 @@ lib/python${MODPY_VERSION}/site-packages/pytest_check/check_raises.py
 lib/python${MODPY_VERSION}/site-packages/pytest_check/context_manager.py
 lib/python${MODPY_VERSION}/site-packages/pytest_check/plugin.py
 lib/python${MODPY_VERSION}/site-packages/pytest_check/pseudo_traceback.py
+lib/python${MODPY_VERSION}/site-packages/pytest_check/py.typed
