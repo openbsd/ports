@@ -1,13 +1,11 @@
 COMMENT-main=		implementation of the iCalendar protocols and data units
 COMMENT-glib=		GObject wrapper for libical library
 
-V=			3.0.19
+V=			3.0.20
 DISTNAME=		libical-${V}
 
 PKGNAME-main=		${PKGNAME}
 PKGNAME-glib=		libical-glib-${V}
-
-REVISION-glib=		0
 
 SHARED_LIBS +=  ical                 4.5
 SHARED_LIBS +=  icalss               4.0
