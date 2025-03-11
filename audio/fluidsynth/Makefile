@@ -2,9 +2,9 @@ COMMENT =		SoundFont2 software synthesizer
 
 GH_ACCOUNT =		FluidSynth
 GH_PROJECT =		fluidsynth
-GH_TAGNAME =		v2.4.0
+GH_TAGNAME =		v2.4.3
 
-SHARED_LIBS +=	fluidsynth           3.1      # 6.0
+SHARED_LIBS +=	fluidsynth           3.2      # 3.3
 
 CATEGORIES =		audio
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} SDL2 c glib-2.0 gthread-2.0 intl
 WANTLIB += m readline sndfile sndio
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER =		base-clang ports-gcc
 
 MODULES =		devel/cmake
 
