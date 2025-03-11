@@ -1,0 +1,11 @@
+Index: cvs2cl.pl
+--- cvs2cl.pl.orig
++++ cvs2cl.pl
+@@ -1,6 +1,4 @@
+-#!/bin/sh
+-exec perl -w -x "$0" ${1+"$@"} # -*- mode: perl; perl-indent-level: 2; -*-
+-#!perl -w
++#!/usr/bin/perl
+ 
+ 
+ ##############################################################
