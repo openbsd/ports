@@ -60,6 +60,9 @@ ${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/fr/LC_MESSAGES/Zonemaster-Eng
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/nb/
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/nb/LC_MESSAGES/
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/nb/LC_MESSAGES/Zonemaster-Engine.mo
+${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/sl/
+${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/sl/LC_MESSAGES/
+${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/sl/LC_MESSAGES/Zonemaster-Engine.mo
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/sv/
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/sv/LC_MESSAGES/
 ${P5SITE}/auto/share/dist/Zonemaster-Engine/locale/sv/LC_MESSAGES/Zonemaster-Engine.mo
