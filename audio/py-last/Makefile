@@ -1,10 +1,11 @@
 COMMENT=	Python last.fm library
 
-MODPY_DISTV=	5.4.0
+MODPY_DISTV=	5.5.0
 DISTNAME=	pylast-${MODPY_DISTV}
 PKGNAME=	py-last-${MODPY_DISTV}
 CATEGORIES=	audio net
 
+# https://github.com/pylast/pylast/releases
 HOMEPAGE=	https://github.com/pylast/pylast
 
 # Apache 2.0
