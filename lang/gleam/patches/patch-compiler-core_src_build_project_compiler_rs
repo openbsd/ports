@@ -1,7 +1,7 @@
 Index: compiler-core/src/build/project_compiler.rs
 --- compiler-core/src/build/project_compiler.rs.orig
 +++ compiler-core/src/build/project_compiler.rs
-@@ -42,7 +42,7 @@ use camino::{Utf8Path, Utf8PathBuf};
+@@ -46,7 +46,7 @@ use camino::{Utf8Path, Utf8PathBuf};
  // On Windows we have to call rebar3 via a little wrapper script.
  //
  #[cfg(not(target_os = "windows"))]

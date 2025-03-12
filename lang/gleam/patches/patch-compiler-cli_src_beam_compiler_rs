@@ -1,40 +1,40 @@
 Index: compiler-cli/src/beam_compiler.rs
 --- compiler-cli/src/beam_compiler.rs.orig
 +++ compiler-cli/src/beam_compiler.rs
-@@ -61,7 +61,7 @@ impl BeamCompiler {
+@@ -59,7 +59,7 @@ impl BeamCompiler {
          tracing::debug!(args=?args, "call_beam_compiler");
  
          writeln!(inner.stdin, "{}.", args).map_err(|e| Error::ShellCommand {
 -            program: "escript".into(),
 +            program: "escript${MODERL_VERSION}".into(),
-             err: Some(e.kind()),
+             reason: ShellCommandFailureReason::IoError(e.kind()),
          })?;
  
-@@ -71,7 +71,7 @@ impl BeamCompiler {
-                 "gleam-compile-result-ok" => return Ok(()),
+@@ -73,7 +73,7 @@ impl BeamCompiler {
+                 }
                  "gleam-compile-result-error" => {
                      return Err(Error::ShellCommand {
 -                        program: "escript".into(),
 +                        program: "escript${MODERL_VERSION}".into(),
-                         err: None,
-                     })
+                         reason: ShellCommandFailureReason::Unknown,
+                     });
                  }
-@@ -86,7 +86,7 @@ impl BeamCompiler {
+@@ -93,7 +93,7 @@ impl BeamCompiler {
  
          // if we get here, stdout got closed before we got an "ok" or "err".
          Err(Error::ShellCommand {
 -            program: "escript".into(),
 +            program: "escript${MODERL_VERSION}".into(),
-             err: None,
+             reason: ShellCommandFailureReason::Unknown,
          })
      }
-@@ -105,18 +105,18 @@ impl BeamCompiler {
+@@ -112,18 +112,18 @@ impl BeamCompiler {
  
          tracing::trace!(escript_path=?escript_path, "spawn_beam_compiler");
  
 -        let mut process = std::process::Command::new("escript")
 +        let mut process = std::process::Command::new("escript${MODERL_VERSION}")
-             .args([escript_path])
+             .arg(escript_path)
              .stdin(std::process::Stdio::piped())
              .stdout(std::process::Stdio::piped())
              .spawn()
@@ -47,6 +47,6 @@ Index: compiler-cli/src/beam_compiler.rs
                  other => Error::ShellCommand {
 -                    program: "escript".into(),
 +                    program: "escript${MODERL_VERSION}".into(),
-                     err: Some(other),
+                     reason: ShellCommandFailureReason::IoError(other),
                  },
              })?;

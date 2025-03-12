@@ -2,12 +2,12 @@ Consider MODERL_VERSION
 Index: compiler-cli/src/run.rs
 --- compiler-cli/src/run.rs.orig
 +++ compiler-cli/src/run.rs
-@@ -165,7 +165,7 @@ fn run_erlang(
-         args.push(argument);
+@@ -186,7 +186,7 @@ fn run_erlang_command(
      }
  
--    ProjectIO::new().exec("erl", &args, &[], None, Stdio::Inherit)
-+    ProjectIO::new().exec("erl${MODERL_VERSION}", &args, &[], None, Stdio::Inherit)
- }
- 
- fn run_javascript_bun(
+     Ok(Command {
+-        program: "erl".to_string(),
++        program: "erl${MODERL_VERSION}".to_string(),
+         args,
+         env: vec![],
+         cwd: None,
