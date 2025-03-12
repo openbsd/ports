@@ -1,11 +1,10 @@
 COMMENT=		XSLT C Library for GNOME
 
-GNOME_VERSION=		1.1.42
+GNOME_VERSION=		1.1.43
 GNOME_PROJECT=		libxslt
-REVISION=		0
 
-SHARED_LIBS +=  xslt                 4.1      # 2.42
-SHARED_LIBS +=  exslt                9.8      # 8.23
+SHARED_LIBS +=  xslt                 4.1      # 2.43
+SHARED_LIBS +=  exslt                9.8      # 8.24
 
 CATEGORIES=		textproc
 
@@ -25,6 +24,9 @@ CONFIGURE_STYLE=	gnu
 CONFIGURE_ARGS=		--with-libxml-include-prefix="${LOCALBASE}/include/libxml2" \
 			--without-python
 CONFIGURE_ENV=		XML_CONFIG="${LOCALBASE}/bin/xml2-config"
+
+# XXX temporary
+CONFIGURE_ARGS +=	--with-crypto
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 

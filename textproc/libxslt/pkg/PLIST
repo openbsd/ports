@@ -33,7 +33,6 @@ lib/cmake/libxslt/libxslt-config.cmake
 @static-lib lib/libexslt.a
 lib/libexslt.la
 @lib lib/libexslt.so.${LIBexslt_VERSION}
-lib/libxslt-plugins/
 @static-lib lib/libxslt.a
 lib/libxslt.la
 @lib lib/libxslt.so.${LIBxslt_VERSION}
