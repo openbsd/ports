@@ -1,0 +1,26 @@
+Index: libs/kiplatform/os/unix/io.cpp
+--- libs/kiplatform/os/unix/io.cpp.orig
++++ libs/kiplatform/os/unix/io.cpp
+@@ -32,6 +32,7 @@ FILE* KIPLATFORM::IO::SeqFOpen( const wxString& aPath,
+ {
+     FILE* fp = wxFopen( aPath, aMode );
+ 
++#if !defined(__OpenBSD__)
+     if( fp )
+     {
+         if( posix_fadvise( fileno( fp ), 0, 0, POSIX_FADV_SEQUENTIAL ) != 0 )
+@@ -40,6 +41,7 @@ FILE* KIPLATFORM::IO::SeqFOpen( const wxString& aPath,
+             fp = nullptr;
+         }
+     }
++#endif
+ 
+     return fp;
+ }
+@@ -78,4 +80,4 @@ bool KIPLATFORM::IO::IsFileHidden( const wxString& aFi
+ void KIPLATFORM::IO::LongPathAdjustment( wxFileName& aFilename )
+ {
+     // no-op
+-}
+\ No newline at end of file
++}

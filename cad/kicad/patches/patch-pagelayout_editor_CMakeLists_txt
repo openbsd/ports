@@ -3,7 +3,7 @@ Force proper LDFLAGS for MODULE, as cmake doesn't set rpath for these
 Index: pagelayout_editor/CMakeLists.txt
 --- pagelayout_editor/CMakeLists.txt.orig
 +++ pagelayout_editor/CMakeLists.txt
-@@ -126,6 +126,9 @@ target_link_options( pl_editor_kiface PRIVATE
+@@ -117,6 +117,9 @@ target_link_options( pl_editor_kiface PRIVATE
      $<$<BOOL:${KICAD_MAKE_LINK_MAPS}>:-Wl,--cref,-Map=_pl_editor.kiface.map>
      )
  

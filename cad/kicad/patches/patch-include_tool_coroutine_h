@@ -1,7 +1,7 @@
 Index: include/tool/coroutine.h
 --- include/tool/coroutine.h.orig
 +++ include/tool/coroutine.h
-@@ -214,6 +214,8 @@ class COROUTINE (public)
+@@ -216,6 +216,8 @@ class COROUTINE (public)
  
      ~COROUTINE()
      {
@@ -10,7 +10,7 @@ Index: include/tool/coroutine.h
  #ifdef KICAD_USE_VALGRIND
          VALGRIND_STACK_DEREGISTER( m_valgrind_stack );
  #endif
-@@ -382,7 +384,6 @@ class COROUTINE (public)
+@@ -384,7 +386,6 @@ class COROUTINE (public)
  
          wxLogTrace( kicadTraceCoroutineStack, wxT( "COROUTINE::doCall" ) );
  
@@ -18,7 +18,7 @@ Index: include/tool/coroutine.h
          assert( !m_stack );
  
          const std::size_t systemPageSize = SystemPageSize();
-@@ -406,7 +407,6 @@ class COROUTINE (public)
+@@ -408,7 +409,6 @@ class COROUTINE (public)
  #ifdef KICAD_USE_VALGRIND
          m_valgrind_stack = VALGRIND_STACK_REGISTER( sp, m_stack.get() );
  #endif
@@ -26,7 +26,7 @@ Index: include/tool/coroutine.h
  
  #ifdef KICAD_SANITIZE_THREADS
          // Create a new fiber to go with the new context
-@@ -465,9 +465,8 @@ class COROUTINE (public)
+@@ -469,9 +469,8 @@ class COROUTINE (public)
          if( !mem )
              throw std::bad_alloc();
  #else

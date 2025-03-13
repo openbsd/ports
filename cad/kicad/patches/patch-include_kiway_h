@@ -1,7 +1,7 @@
 Index: include/kiway.h
 --- include/kiway.h.orig
 +++ include/kiway.h
-@@ -115,7 +115,7 @@
+@@ -114,7 +114,7 @@
  #define KIFACE_INSTANCE_NAME_AND_VERSION   "KIFACE_1"
  
  #ifndef SWIG

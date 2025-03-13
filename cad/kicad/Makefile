@@ -1,12 +1,10 @@
 # Sync cad/kicad-share/Makefile.inc with archs where kicad is broken
-BROKEN-powerpc =       segfaults when trying to run the PCB editor
-BROKEN =		Needs _LIBCXXABI_FORGIVING_DYNAMIC_CAST in base libcxxabi
 
 USE_NOBTCFI =		Yes
 
 DPB_PROPERTIES =	parallel
 
-V =			8.0.9
+V =			9.0.0
 COMMENT =		schematic and PCB editing software
 DISTNAME =		kicad-${V}
 EPOCH =			0
@@ -14,6 +12,7 @@ EPOCH =			0
 SHARED_LIBS +=  kicad_3dsg                2.0 # 2.0
 SHARED_LIBS +=  kicommon                  0.0 # 0.0
 SHARED_LIBS +=  kigal                     0.0 # 0.0
+SHARED_LIBS +=  kiapi                     0.0 # 0.0
 
 CATEGORIES =		cad
 
@@ -24,18 +23,47 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GL GLU TKBO TKBRep TKBin TKBinL
 WANTLIB += TKBinTObj TKBinXCAF TKBool TKCAF TKCDF TKDEGLTF TKDEIGES
-WANTLIB += TKDESTEP TKDESTL TKFeat TKFillet TKG2d TKG3d TKGeomAlgo
-WANTLIB += TKGeomBase TKHLR TKLCAF TKMath TKMesh TKMeshVS TKOffset
-WANTLIB += TKOpenGl TKPrim TKRWMesh TKService TKShHealing TKTObj
-WANTLIB += TKTopAlgo TKV3d TKXCAF TKXMesh TKXSBase TKXml TKXmlL
-WANTLIB += TKXmlTObj TKXmlXCAF TKernel atk-1.0 boost_locale-mt
-WANTLIB += c cairo cairo-gobject curl fontconfig freetype gdk-3
+WANTLIB += TKDEPLY TKDESTEP TKDESTL TKDEVRML TKFeat TKFillet TKG2d
+WANTLIB += TKG3d TKGeomAlgo TKGeomBase TKHLR TKLCAF TKMath TKMesh
+WANTLIB += TKMeshVS TKOffset TKOpenGl TKPrim TKRWMesh TKService
+WANTLIB += TKShHealing TKTObj TKTopAlgo TKV3d TKXCAF TKXMesh TKXSBase
+WANTLIB += TKXml TKXmlL TKXmlTObj TKXmlXCAF TKernel absl_bad_optional_access
+WANTLIB += absl_bad_variant_access absl_base absl_city absl_civil_time
+WANTLIB += absl_cord absl_cord_internal absl_cordz_functions absl_cordz_handle
+WANTLIB += absl_cordz_info absl_crc32c absl_crc_cord_state absl_crc_cpu_detect
+WANTLIB += absl_crc_internal absl_debugging_internal absl_decode_rust_punycode
+WANTLIB += absl_demangle_internal absl_demangle_rust absl_die_if_null
+WANTLIB += absl_examine_stack absl_exponential_biased absl_flags_commandlineflag
+WANTLIB += absl_flags_commandlineflag_internal absl_flags_config
+WANTLIB += absl_flags_internal absl_flags_marshalling absl_flags_private_handle_accessor
+WANTLIB += absl_flags_program_name absl_flags_reflection absl_graphcycles_internal
+WANTLIB += absl_hash absl_hashtablez_sampler absl_int128 absl_kernel_timeout_internal
+WANTLIB += absl_leak_check absl_log_entry absl_log_globals absl_log_initialize
+WANTLIB += absl_log_internal_check_op absl_log_internal_conditions
+WANTLIB += absl_log_internal_fnmatch absl_log_internal_format
+WANTLIB += absl_log_internal_globals absl_log_internal_log_sink_set
+WANTLIB += absl_log_internal_message absl_log_internal_nullguard
+WANTLIB += absl_log_internal_proto absl_log_internal_structured_proto
+WANTLIB += absl_log_severity absl_log_sink absl_low_level_hash
+WANTLIB += absl_malloc_internal absl_random_distributions absl_random_internal_platform
+WANTLIB += absl_random_internal_pool_urbg absl_random_internal_randen
+WANTLIB += absl_random_internal_randen_hwaes absl_random_internal_randen_hwaes_impl
+WANTLIB += absl_random_internal_randen_slow absl_random_internal_seed_material
+WANTLIB += absl_random_seed_gen_exception absl_random_seed_sequences
+WANTLIB += absl_raw_hash_set absl_raw_logging_internal absl_spinlock_wait
+WANTLIB += absl_stacktrace absl_status absl_statusor absl_str_format_internal
+WANTLIB += absl_strerror absl_string_view absl_strings absl_strings_internal
+WANTLIB += absl_symbolize absl_synchronization absl_throw_delegate
+WANTLIB += absl_time absl_time_zone absl_tracing_internal absl_utf8_for_code_point
+WANTLIB += absl_vlog_config_internal atk-1.0 boost_locale-mt c
+WANTLIB += cairo cairo-gobject curl fontconfig freetype gdk-3
 WANTLIB += gdk_pixbuf-2.0 gio-2.0 git2 glib-2.0 gobject-2.0 gtk-3
-WANTLIB += harfbuzz intl iodbc m ngspice pango-1.0 pangocairo-1.0
-WANTLIB += pixman-1 python3.12 secret-1 wx_baseu-3.2 wx_baseu_net-3.2
-WANTLIB += wx_baseu_xml-3.2 wx_gtk3u_aui-3.2 wx_gtk3u_core-3.2
-WANTLIB += wx_gtk3u_gl-3.2 wx_gtk3u_html-3.2 wx_gtk3u_propgrid-3.2
-WANTLIB += wx_gtk3u_richtext-3.2 wx_gtk3u_stc-3.2 z
+WANTLIB += harfbuzz intl iodbc m ngspice nng pango-1.0 pangocairo-1.0
+WANTLIB += pixman-1 protobuf python3.12 secret-1 wx_baseu-3.2
+WANTLIB += wx_baseu_net-3.2 wx_baseu_xml-3.2 wx_gtk3u_aui-3.2
+WANTLIB += wx_gtk3u_core-3.2 wx_gtk3u_gl-3.2 wx_gtk3u_html-3.2
+WANTLIB += wx_gtk3u_propgrid-3.2 wx_gtk3u_richtext-3.2 wx_gtk3u_stc-3.2
+WANTLIB += z zstd
 
 SITES =			https://gitlab.com/kicad/code/kicad/-/archive/${V}/
 
@@ -64,14 +92,17 @@ LIB_DEPENDS =		cad/ngspice/libngspice \
 			cad/opencascade \
 			databases/iodbc \
 			devel/boost \
+			devel/abseil-cpp \
 			devel/gettext,-runtime \
 			devel/glib2 \
 			devel/harfbuzz \
 			devel/libgit2/libgit2 \
+			devel/protobuf \
 			devel/pango \
 			graphics/cairo \
 			graphics/gdk-pixbuf2 \
 			net/curl \
+			net/nng \
 			x11/gnome/at-spi2-core \
 			x11/gnome/libsecret \
 			x11/gtk+3 \
@@ -96,6 +127,8 @@ CONFIGURE_ARGS +=	-DKICAD_BUILD_I18N=ON \
 			-DKICAD_WAYLAND=OFF
 
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 # KHR/khrplatform.h
 CFLAGS +=		-I${X11BASE}/include

@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -733,7 +733,7 @@ endif()
+@@ -759,7 +759,7 @@ endif()
  # Find OpenGL library, required
  #
  if( KICAD_USE_EGL )

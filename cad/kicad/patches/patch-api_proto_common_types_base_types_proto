@@ -1,0 +1,16 @@
+Index: api/proto/common/types/base_types.proto
+--- api/proto/common/types/base_types.proto.orig
++++ api/proto/common/types/base_types.proto
+@@ -46,9 +46,9 @@ message CommandStatusResponse
+  */
+ message KiCadVersion
+ {
+-  uint32 major = 1;
+-  uint32 minor = 2;
+-  uint32 patch = 3;
++  uint32 vmajor = 1;
++  uint32 vminor = 2;
++  uint32 vpatch = 3;
+ 
+   // Full identifier string, potentially containing git hashes, packager-added info, etc.
+   string full_version = 4;

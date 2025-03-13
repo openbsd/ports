@@ -3,7 +3,7 @@ Force proper LDFLAGS for MODULE, as cmake doesn't set rpath for these
 Index: gerbview/CMakeLists.txt
 --- gerbview/CMakeLists.txt.orig
 +++ gerbview/CMakeLists.txt
-@@ -184,6 +184,9 @@ target_link_options( gerbview_kiface PRIVATE
+@@ -178,6 +178,9 @@ target_link_options( gerbview_kiface PRIVATE
  # if building gerbview, then also build gerbview_kiface if out of date.
  add_dependencies( gerbview gerbview_kiface )
  

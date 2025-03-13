@@ -3,7 +3,7 @@ Force proper LDFLAGS for MODULE, as cmake doesn't set rpath for these
 Index: pcb_calculator/CMakeLists.txt
 --- pcb_calculator/CMakeLists.txt.orig
 +++ pcb_calculator/CMakeLists.txt
-@@ -135,6 +135,9 @@ target_link_options( pcb_calculator_kiface PRIVATE
+@@ -128,6 +128,9 @@ target_link_options( pcb_calculator_kiface PRIVATE
      $<$<BOOL:${KICAD_MAKE_LINK_MAPS}>:-Wl,--cref,-Map=_pcb_calculator.kiface.map>
      )
  

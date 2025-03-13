@@ -27,6 +27,7 @@ lib/kicad/plugins/3d/
 @so lib/kicad/plugins/3d/libs3d_plugin_idf.so
 @so lib/kicad/plugins/3d/libs3d_plugin_oce.so
 @so lib/kicad/plugins/3d/libs3d_plugin_vrml.so
+@lib lib/libkiapi.so.${LIBkiapi_VERSION}
 @lib lib/libkicad_3dsg.so.${LIBkicad_3dsg_VERSION}
 @lib lib/libkicommon.so.${LIBkicommon_VERSION}
 @lib lib/libkigal.so.${LIBkigal_VERSION}
@@ -161,7 +162,18 @@ share/kicad/demos/complex_hierarchy/ampli_ht.kicad_sch
 share/kicad/demos/complex_hierarchy/complex_hierarchy.kicad_pcb
 share/kicad/demos/complex_hierarchy/complex_hierarchy.kicad_pro
 share/kicad/demos/complex_hierarchy/complex_hierarchy.kicad_sch
-share/kicad/demos/complex_hierarchy/complex_hierarchy_schlib.kicad_sym
+share/kicad/demos/complex_hierarchy/complex_hierarchy.kicad_sym
+share/kicad/demos/complex_hierarchy/complex_hierarchy.pretty/
+share/kicad/demos/complex_hierarchy/complex_hierarchy.pretty/Altech_AK300_1x02_P5.00mm_45-Degree.kicad_mod
+share/kicad/demos/complex_hierarchy/complex_hierarchy.pretty/CP_Axial_L10.0mm_D4.5mm_P15.00mm_Horizontal.kicad_mod
+share/kicad/demos/complex_hierarchy/complex_hierarchy.pretty/CP_Axial_L11.0mm_D6.0mm_P18.00mm_Horizontal.kicad_mod
+share/kicad/demos/complex_hierarchy/complex_hierarchy.pretty/C_Disc_D5.0mm_W2.5mm_P5.00mm.kicad_mod
+share/kicad/demos/complex_hierarchy/complex_hierarchy.pretty/DIP-8_W7.62mm_LongPads.kicad_mod
+share/kicad/demos/complex_hierarchy/complex_hierarchy.pretty/D_DO-35_SOD27_P7.62mm_Horizontal.kicad_mod
+share/kicad/demos/complex_hierarchy/complex_hierarchy.pretty/D_DO-41_SOD81_P12.70mm_Horizontal.kicad_mod
+share/kicad/demos/complex_hierarchy/complex_hierarchy.pretty/Potentiometer_Bourns_3266W_Vertical.kicad_mod
+share/kicad/demos/complex_hierarchy/complex_hierarchy.pretty/R_Axial_DIN0204_L3.6mm_D1.6mm_P7.62mm_Horizontal.kicad_mod
+share/kicad/demos/complex_hierarchy/complex_hierarchy.pretty/TO-92_HandSolder.kicad_mod
 share/kicad/demos/complex_hierarchy/fp-lib-table
 share/kicad/demos/complex_hierarchy/sym-lib-table
 share/kicad/demos/custom_pads_test/
@@ -169,6 +181,13 @@ share/kicad/demos/custom_pads_test/custom_pads_schlib.kicad_sym
 share/kicad/demos/custom_pads_test/custom_pads_test.kicad_pcb
 share/kicad/demos/custom_pads_test/custom_pads_test.kicad_pro
 share/kicad/demos/custom_pads_test/custom_pads_test.kicad_sch
+share/kicad/demos/custom_pads_test/custom_pads_test.kicad_sym
+share/kicad/demos/custom_pads_test/custom_pads_test.pretty/
+share/kicad/demos/custom_pads_test/custom_pads_test.pretty/1pin.kicad_mod
+share/kicad/demos/custom_pads_test/custom_pads_test.pretty/C2.kicad_mod
+share/kicad/demos/custom_pads_test/custom_pads_test.pretty/DIP-14__300_ELL.kicad_mod
+share/kicad/demos/custom_pads_test/custom_pads_test.pretty/DO-214AB.kicad_mod
+share/kicad/demos/custom_pads_test/fp-lib-table
 share/kicad/demos/custom_pads_test/sym-lib-table
 share/kicad/demos/ecc83/
 share/kicad/demos/ecc83/3d_shapes/
@@ -176,13 +195,19 @@ share/kicad/demos/ecc83/3d_shapes/ecc83.wrl
 share/kicad/demos/ecc83/ecc83-pp.kicad_pcb
 share/kicad/demos/ecc83/ecc83-pp.kicad_pro
 share/kicad/demos/ecc83/ecc83-pp.kicad_sch
+share/kicad/demos/ecc83/ecc83-pp.kicad_sym
 share/kicad/demos/ecc83/ecc83-pp_v2.kicad_pcb
 share/kicad/demos/ecc83/ecc83-pp_v2.kicad_pro
 share/kicad/demos/ecc83/ecc83-pp_v2.kicad_sch
-share/kicad/demos/ecc83/ecc83_schlib.kicad_sym
 share/kicad/demos/ecc83/footprints.pretty/
 share/kicad/demos/ecc83/footprints.pretty/Altech_AK300_1x02_P5.00mm_45-Degree.kicad_mod
+share/kicad/demos/ecc83/footprints.pretty/CP_Radial_D10.0mm_P5.00mm.kicad_mod
+share/kicad/demos/ecc83/footprints.pretty/CP_Radial_D12.5mm_P7.50mm.kicad_mod
+share/kicad/demos/ecc83/footprints.pretty/C_Axial_L12.0mm_D6.5mm_P20.00mm_Horizontal.kicad_mod
+share/kicad/demos/ecc83/footprints.pretty/C_Disc_D4.7mm_W2.5mm_P5.00mm.kicad_mod
 share/kicad/demos/ecc83/footprints.pretty/MountingHole_3.2mm_M3_DIN965_Pad.kicad_mod
+share/kicad/demos/ecc83/footprints.pretty/PinHeader_1x02_P2.54mm_Vertical.kicad_mod
+share/kicad/demos/ecc83/footprints.pretty/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.kicad_mod
 share/kicad/demos/ecc83/footprints.pretty/Valve_ECC-83-1.kicad_mod
 share/kicad/demos/ecc83/footprints.pretty/Valve_ECC-83-2.kicad_mod
 share/kicad/demos/ecc83/fp-lib-table
@@ -191,15 +216,28 @@ share/kicad/demos/flat_hierarchy/
 share/kicad/demos/flat_hierarchy/flat_hierarchy.kicad_pcb
 share/kicad/demos/flat_hierarchy/flat_hierarchy.kicad_pro
 share/kicad/demos/flat_hierarchy/flat_hierarchy.kicad_sch
+share/kicad/demos/flat_hierarchy/flat_hierarchy.kicad_sym
 share/kicad/demos/flat_hierarchy/fp-lib-table
 share/kicad/demos/flat_hierarchy/libs/
 share/kicad/demos/flat_hierarchy/libs/3d_shapes/
 share/kicad/demos/flat_hierarchy/libs/3d_shapes/adjustable_rx2v4.wrl
-share/kicad/demos/flat_hierarchy/libs/flat_hierarchy_schlib.kicad_sym
 share/kicad/demos/flat_hierarchy/libs/pic_programmer_fp.pretty/
+share/kicad/demos/flat_hierarchy/libs/pic_programmer_fp.pretty/Altech_AK300_1x02_P5.00mm_45-Degree.kicad_mod
+share/kicad/demos/flat_hierarchy/libs/pic_programmer_fp.pretty/CP_Axial_L11.0mm_D6.0mm_P18.00mm_Horizontal.kicad_mod
+share/kicad/demos/flat_hierarchy/libs/pic_programmer_fp.pretty/CP_Axial_L18.0mm_D6.5mm_P25.00mm_Horizontal.kicad_mod
+share/kicad/demos/flat_hierarchy/libs/pic_programmer_fp.pretty/C_Disc_D5.1mm_W3.2mm_P5.00mm.kicad_mod
+share/kicad/demos/flat_hierarchy/libs/pic_programmer_fp.pretty/DIP-14_W7.62mm_LongPads.kicad_mod
+share/kicad/demos/flat_hierarchy/libs/pic_programmer_fp.pretty/DIP-18_W7.62mm_Socket_LongPads.kicad_mod
+share/kicad/demos/flat_hierarchy/libs/pic_programmer_fp.pretty/DIP-28_W7.62mm_Socket_LongPads.kicad_mod
+share/kicad/demos/flat_hierarchy/libs/pic_programmer_fp.pretty/DIP-40_W15.24mm_Socket_LongPads.kicad_mod
+share/kicad/demos/flat_hierarchy/libs/pic_programmer_fp.pretty/DIP-8_W7.62mm_LongPads.kicad_mod
+share/kicad/demos/flat_hierarchy/libs/pic_programmer_fp.pretty/DSUB-9_Female_Horizontal_P2.77x2.84mm_EdgePinOffset7.70mm_Housed_MountingHolesOffset9.12mm.kicad_mod
+share/kicad/demos/flat_hierarchy/libs/pic_programmer_fp.pretty/D_DO-35_SOD27_P12.70mm_Horizontal.kicad_mod
 share/kicad/demos/flat_hierarchy/libs/pic_programmer_fp.pretty/D_DO-35_SOD27_P7.62mm_Horizontal.kicad_mod
 share/kicad/demos/flat_hierarchy/libs/pic_programmer_fp.pretty/INDUCTOR_V.kicad_mod
+share/kicad/demos/flat_hierarchy/libs/pic_programmer_fp.pretty/LED_D5.0mm.kicad_mod
 share/kicad/demos/flat_hierarchy/libs/pic_programmer_fp.pretty/MountingHole_4.3mm_M4_DIN965.kicad_mod
+share/kicad/demos/flat_hierarchy/libs/pic_programmer_fp.pretty/PinHeader_1x02_P2.54mm_Vertical.kicad_mod
 share/kicad/demos/flat_hierarchy/libs/pic_programmer_fp.pretty/RV2X4.kicad_mod
 share/kicad/demos/flat_hierarchy/libs/pic_programmer_fp.pretty/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.kicad_mod
 share/kicad/demos/flat_hierarchy/libs/pic_programmer_fp.pretty/TO-220-3_Horizontal_TabDown.kicad_mod
@@ -212,11 +250,22 @@ share/kicad/demos/interf_u/fp-lib-table
 share/kicad/demos/interf_u/interf_u.kicad_pcb
 share/kicad/demos/interf_u/interf_u.kicad_pro
 share/kicad/demos/interf_u/interf_u.kicad_sch
+share/kicad/demos/interf_u/interf_u.kicad_sym
 share/kicad/demos/interf_u/interf_u.pretty/
 share/kicad/demos/interf_u/interf_u.pretty/BUS_PC.kicad_mod
+share/kicad/demos/interf_u/interf_u.pretty/CP_Axial_L10.0mm_D4.5mm_P15.00mm_Horizontal.kicad_mod
+share/kicad/demos/interf_u/interf_u.pretty/C_Disc_D3.0mm_W2.0mm_P2.50mm.kicad_mod
+share/kicad/demos/interf_u/interf_u.pretty/Crystal_HC18-U_Horizontal.kicad_mod
+share/kicad/demos/interf_u/interf_u.pretty/DIP-20_W7.62mm.kicad_mod
+share/kicad/demos/interf_u/interf_u.pretty/DIP-24_W7.62mm.kicad_mod
+share/kicad/demos/interf_u/interf_u.pretty/DIP-32_W15.24mm.kicad_mod
+share/kicad/demos/interf_u/interf_u.pretty/DSUB-25_Female_Horizontal_P2.77x2.84mm_EdgePinOffset9.90mm_Housed_MountingHolesOffset11.32mm.kicad_mod
+share/kicad/demos/interf_u/interf_u.pretty/LED_D5.0mm.kicad_mod
 share/kicad/demos/interf_u/interf_u.pretty/PGA120.kicad_mod
+share/kicad/demos/interf_u/interf_u.pretty/PinHeader_2x08_P2.54mm_Vertical.kicad_mod
+share/kicad/demos/interf_u/interf_u.pretty/R_Array_SIP10.kicad_mod
+share/kicad/demos/interf_u/interf_u.pretty/R_Axial_DIN0207_L6.3mm_D2.5mm_P7.62mm_Horizontal.kicad_mod
 share/kicad/demos/interf_u/interf_u.pretty/tux.kicad_mod
-share/kicad/demos/interf_u/interf_u_schlib.kicad_sym
 share/kicad/demos/interf_u/pagelayout_logo.kicad_wks
 share/kicad/demos/interf_u/sym-lib-table
 share/kicad/demos/interf_u/tux.bmp
@@ -228,21 +277,48 @@ share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-coldfire_schlib.kicad_sym
 share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire-xilinx_5213.kicad_pcb
 share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire-xilinx_5213.kicad_pro
 share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire-xilinx_5213.kicad_sch
+share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire-xilinx_5213.kicad_sym
 share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/
+share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/Altech_AK300_1x02_P5.00mm_45-Degree.kicad_mod
+share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/CP_Radial_D8.0mm_P5.00mm.kicad_mod
+share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/C_0805_2012Metric.kicad_mod
+share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/Crystal_HC18-U_Horizontal.kicad_mod
+share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/DSUB-9_Female_Horizontal_P2.77x2.84mm_EdgePinOffset7.70mm_Housed_MountingHolesOffset9.12mm.kicad_mod
+share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/D_DO-15_P12.70mm_Horizontal.kicad_mod
 share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/D_SOT-23_ANK.kicad_mod
 share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/FSUPCMS.kicad_mod
 share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/JACK_ALIM.kicad_mod
+share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/LED_1206_3216Metric.kicad_mod
+share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/LQFP-100_14x14mm_P0.5mm.kicad_mod
+share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/PinHeader_1x01_P2.54mm_Vertical.kicad_mod
+share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/PinHeader_1x02_P2.54mm_Vertical.kicad_mod
+share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/PinHeader_1x03_P2.54mm_Vertical.kicad_mod
+share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/PinHeader_1x06_P2.54mm_Vertical.kicad_mod
+share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/PinHeader_2x02_P2.54mm_Vertical.kicad_mod
+share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/PinHeader_2x03_P2.54mm_Vertical.kicad_mod
+share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/PinHeader_2x04_P2.54mm_Vertical.kicad_mod
+share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/PinHeader_2x13_P2.54mm_Vertical.kicad_mod
+share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/PinHeader_2x20_P2.54mm_Vertical.kicad_mod
+share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/PinHeader_2x30_P2.54mm_Vertical.kicad_mod
+share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/R_0805_2012Metric.kicad_mod
+share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/R_1206_3216Metric_Pad1.30x1.75mm_HandSolder.kicad_mod
+share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.kicad_mod
 share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/SM1206POL.kicad_mod
+share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/SOIC-14_3.9x8.7mm_P1.27mm.kicad_mod
+share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/SOIC-16_3.9x9.9mm_P1.27mm.kicad_mod
+share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/SOIC-8_3.9x4.9mm_P1.27mm.kicad_mod
 share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/SOT23EBC.kicad_mod
 share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/SOT353.kicad_mod
 share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/SW_PUSH_SMALL.kicad_mod
 share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/SW_SPDT.kicad_mod
+share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/TO-263-5_TabPin3.kicad_mod
+share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/TO-92.kicad_mod
+share/kicad/demos/kit-dev-coldfire-xilinx_5213/kit-dev-coldfire.pretty/TQFP-144_20x20mm_P0.5mm.kicad_mod
 share/kicad/demos/kit-dev-coldfire-xilinx_5213/prj.3dshapes/
 share/kicad/demos/kit-dev-coldfire-xilinx_5213/prj.3dshapes/Device.switch_toggle_horizontal_right_angle_PC_terminal.wings
 share/kicad/demos/kit-dev-coldfire-xilinx_5213/prj.3dshapes/Device.switch_toggle_horizontal_right_angle_PC_terminal.wrl
 share/kicad/demos/kit-dev-coldfire-xilinx_5213/prj.3dshapes/Jack.wings
 share/kicad/demos/kit-dev-coldfire-xilinx_5213/prj.3dshapes/Jack.wrl
-share/kicad/demos/kit-dev-coldfire-xilinx_5213/prj.3dshapes/db9_female_pin90deg.wrl
 share/kicad/demos/kit-dev-coldfire-xilinx_5213/prj.3dshapes/push_butt_4pads.wings
 share/kicad/demos/kit-dev-coldfire-xilinx_5213/prj.3dshapes/push_butt_4pads.wrl
 share/kicad/demos/kit-dev-coldfire-xilinx_5213/sym-lib-table
@@ -259,11 +335,30 @@ share/kicad/demos/pic_programmer/libs/3d_shapes/adjustable_rx2v4.wrl
 share/kicad/demos/pic_programmer/libs/3d_shapes/textool_40.wrl
 share/kicad/demos/pic_programmer/libs/pic_programmer_fp.pretty/
 share/kicad/demos/pic_programmer/libs/pic_programmer_fp.pretty/40tex-Ell600.kicad_mod
+share/kicad/demos/pic_programmer/libs/pic_programmer_fp.pretty/Altech_AK300_1x02_P5.00mm_45-Degree.kicad_mod
+share/kicad/demos/pic_programmer/libs/pic_programmer_fp.pretty/CP_Axial_L18.0mm_D6.5mm_P25.00mm_Horizontal.kicad_mod
+share/kicad/demos/pic_programmer/libs/pic_programmer_fp.pretty/C_Axial_L12.0mm_D6.5mm_P20.00mm_Horizontal.kicad_mod
+share/kicad/demos/pic_programmer/libs/pic_programmer_fp.pretty/C_Disc_D5.1mm_W3.2mm_P5.00mm.kicad_mod
+share/kicad/demos/pic_programmer/libs/pic_programmer_fp.pretty/DIP-14_W7.62mm_LongPads.kicad_mod
+share/kicad/demos/pic_programmer/libs/pic_programmer_fp.pretty/DIP-18_W7.62mm_Socket_LongPads.kicad_mod
+share/kicad/demos/pic_programmer/libs/pic_programmer_fp.pretty/DIP-28_W7.62mm_Socket_LongPads.kicad_mod
+share/kicad/demos/pic_programmer/libs/pic_programmer_fp.pretty/DIP-8_W7.62mm_LongPads.kicad_mod
+share/kicad/demos/pic_programmer/libs/pic_programmer_fp.pretty/DIP-8_W7.62mm_Socket_LongPads.kicad_mod
+share/kicad/demos/pic_programmer/libs/pic_programmer_fp.pretty/DSUB-9_Female_Horizontal_P2.77x2.84mm_EdgePinOffset7.70mm_Housed_MountingHolesOffset9.12mm.kicad_mod
+share/kicad/demos/pic_programmer/libs/pic_programmer_fp.pretty/D_DO-35_SOD27_P12.70mm_Horizontal.kicad_mod
+share/kicad/demos/pic_programmer/libs/pic_programmer_fp.pretty/D_DO-35_SOD27_P7.62mm_Horizontal.kicad_mod
+share/kicad/demos/pic_programmer/libs/pic_programmer_fp.pretty/LED_D5.0mm.kicad_mod
+share/kicad/demos/pic_programmer/libs/pic_programmer_fp.pretty/L_Radial_D7.8mm_P5.00mm_Fastron_07HCP.kicad_mod
+share/kicad/demos/pic_programmer/libs/pic_programmer_fp.pretty/MountingHole_4.3mm_M4.kicad_mod
 share/kicad/demos/pic_programmer/libs/pic_programmer_fp.pretty/RV2X4.kicad_mod
-share/kicad/demos/pic_programmer/libs/pic_programmer_schlib.kicad_sym
+share/kicad/demos/pic_programmer/libs/pic_programmer_fp.pretty/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.kicad_mod
+share/kicad/demos/pic_programmer/libs/pic_programmer_fp.pretty/SolderJumper-2_P1.3mm_Open_TrianglePad1.0x1.5mm.kicad_mod
+share/kicad/demos/pic_programmer/libs/pic_programmer_fp.pretty/TO-220-3_Horizontal_TabDown.kicad_mod
+share/kicad/demos/pic_programmer/libs/pic_programmer_fp.pretty/TO-92.kicad_mod
 share/kicad/demos/pic_programmer/pic_programmer.kicad_pcb
 share/kicad/demos/pic_programmer/pic_programmer.kicad_pro
 share/kicad/demos/pic_programmer/pic_programmer.kicad_sch
+share/kicad/demos/pic_programmer/pic_programmer.kicad_sym
 share/kicad/demos/pic_programmer/pic_sockets.kicad_sch
 share/kicad/demos/pic_programmer/sym-lib-table
 share/kicad/demos/python_scripts_examples/
@@ -306,6 +401,8 @@ share/kicad/demos/simulation/gain_control/sym-lib-table
 share/kicad/demos/simulation/gain_control/vca810.lib
 share/kicad/demos/simulation/generic_models/
 share/kicad/demos/simulation/generic_models/generic_opamp_bip.kicad_pro
+share/kicad/demos/simulation/generic_models/generic_opamp_bip.kicad_sch
+share/kicad/demos/simulation/generic_models/generic_opamp_bip.wbk
 share/kicad/demos/simulation/ibis/
 share/kicad/demos/simulation/ibis/ibis.kicad_pro
 share/kicad/demos/simulation/ibis/ibis.kicad_sch
@@ -380,9 +477,12 @@ share/kicad/demos/simulation/sallen_key/sallen_key.kicad_sch
 share/kicad/demos/simulation/sallen_key/sallen_key_schlib.kicad_sym
 share/kicad/demos/simulation/sallen_key/sym-lib-table
 share/kicad/demos/simulation/subsheets/
+share/kicad/demos/simulation/subsheets/mainsheet.kicad_pro
+share/kicad/demos/simulation/subsheets/mainsheet.kicad_sch
+share/kicad/demos/simulation/subsheets/project.kicad_sym
 share/kicad/demos/simulation/subsheets/subsheet1.kicad_sch
 share/kicad/demos/simulation/subsheets/subsheet2.kicad_sch
-share/kicad/demos/simulation/subsheets/subsheets.kicad_sch
+share/kicad/demos/simulation/subsheets/sym-lib-table
 share/kicad/demos/simulation/up-down-counter/
 share/kicad/demos/simulation/up-down-counter/README
 share/kicad/demos/simulation/up-down-counter/state-3bit-count.in
@@ -401,7 +501,16 @@ share/kicad/demos/sonde xilinx/fp-lib-table
 share/kicad/demos/sonde xilinx/sonde xilinx.kicad_pcb
 share/kicad/demos/sonde xilinx/sonde xilinx.kicad_pro
 share/kicad/demos/sonde xilinx/sonde xilinx.kicad_sch
-share/kicad/demos/sonde xilinx/sonde_xilinx_schlib.kicad_sym
+share/kicad/demos/sonde xilinx/sonde-xilinx.pretty/
+share/kicad/demos/sonde xilinx/sonde-xilinx.pretty/C_Axial_L5.1mm_D3.1mm_P12.50mm_Horizontal.kicad_mod
+share/kicad/demos/sonde xilinx/sonde-xilinx.pretty/C_Disc_D5.1mm_W3.2mm_P5.00mm.kicad_mod
+share/kicad/demos/sonde xilinx/sonde-xilinx.pretty/DIP-14_W7.62mm_LongPads.kicad_mod
+share/kicad/demos/sonde xilinx/sonde-xilinx.pretty/DSUB-25_Male_EdgeMount_P2.77mm.kicad_mod
+share/kicad/demos/sonde xilinx/sonde-xilinx.pretty/DSUB-9_Male_EdgeMount_P2.77mm.kicad_mod
+share/kicad/demos/sonde xilinx/sonde-xilinx.pretty/D_A-405_P7.62mm_Horizontal.kicad_mod
+share/kicad/demos/sonde xilinx/sonde-xilinx.pretty/PinHeader_1x06_P2.54mm_Vertical.kicad_mod
+share/kicad/demos/sonde xilinx/sonde-xilinx.pretty/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.kicad_mod
+share/kicad/demos/sonde xilinx/sonde_xilinx.kicad_sym
 share/kicad/demos/sonde xilinx/sym-lib-table
 share/kicad/demos/stickhub/
 share/kicad/demos/stickhub/3dmodels/
@@ -427,11 +536,13 @@ share/kicad/demos/stickhub/footprints.pretty/Creative_Commons_CC_Mask.kicad_mod
 share/kicad/demos/stickhub/footprints.pretty/Creative_Commons_NC_Mask.kicad_mod
 share/kicad/demos/stickhub/footprints.pretty/Creative_Commons_SA_Mask.kicad_mod
 share/kicad/demos/stickhub/footprints.pretty/Crystal_4-SMD_2.5x2mm.kicad_mod
+share/kicad/demos/stickhub/footprints.pretty/D_0402.kicad_mod
 share/kicad/demos/stickhub/footprints.pretty/Duo_LED_1.6x0.8_Kingbright_APHB1608LZGKSURKC.kicad_mod
 share/kicad/demos/stickhub/footprints.pretty/JP-2_1.5x1.5.kicad_mod
 share/kicad/demos/stickhub/footprints.pretty/JST_SH_SM04B-SRSS-TB_1x04-1MP_P1.00mm_Horizontal.kicad_mod
 share/kicad/demos/stickhub/footprints.pretty/LQFP-48_7x7mm_P0.5mm.kicad_mod
 share/kicad/demos/stickhub/footprints.pretty/Plain_Hole_3mm.kicad_mod
+share/kicad/demos/stickhub/footprints.pretty/R_1005_C.kicad_mod
 share/kicad/demos/stickhub/footprints.pretty/TDFN-8_1.5x2mm_Fused-Lead_JEDEC_MO-252_W2015D.kicad_mod
 share/kicad/demos/stickhub/footprints.pretty/USB_A_PCB_traces_small.kicad_mod
 share/kicad/demos/stickhub/fp-lib-table
@@ -452,8 +563,25 @@ share/kicad/demos/test_xil_95108/carte_test.kicad_pro
 share/kicad/demos/test_xil_95108/carte_test.kicad_sch
 share/kicad/demos/test_xil_95108/carte_test_schlib.kicad_sym
 share/kicad/demos/test_xil_95108/footprints.pretty/
+share/kicad/demos/test_xil_95108/footprints.pretty/CP_Axial_L10.0mm_D4.5mm_P15.00mm_Horizontal.kicad_mod
+share/kicad/demos/test_xil_95108/footprints.pretty/C_1206_3216Metric_Pad1.33x1.80mm_HandSolder.kicad_mod
+share/kicad/demos/test_xil_95108/footprints.pretty/Crystal_HC18-U_Horizontal.kicad_mod
+share/kicad/demos/test_xil_95108/footprints.pretty/DIP-14_W7.62mm_LongPads.kicad_mod
+share/kicad/demos/test_xil_95108/footprints.pretty/DIP-16_W7.62mm_Socket_LongPads.kicad_mod
 share/kicad/demos/test_xil_95108/footprints.pretty/DIP-28__300__600_ELL.kicad_mod
+share/kicad/demos/test_xil_95108/footprints.pretty/DIP-8_W7.62mm_LongPads.kicad_mod
+share/kicad/demos/test_xil_95108/footprints.pretty/DSUB-25_Female_Horizontal_P2.77x2.84mm_EdgePinOffset9.90mm_Housed_MountingHolesOffset11.32mm.kicad_mod
+share/kicad/demos/test_xil_95108/footprints.pretty/DSUB-9_Female_Horizontal_P2.77x2.84mm_EdgePinOffset7.70mm_Housed_MountingHolesOffset9.12mm.kicad_mod
+share/kicad/demos/test_xil_95108/footprints.pretty/D_DO-35_SOD27_P12.70mm_Horizontal.kicad_mod
+share/kicad/demos/test_xil_95108/footprints.pretty/LED_D5.0mm.kicad_mod
 share/kicad/demos/test_xil_95108/footprints.pretty/PLCC84.kicad_mod
+share/kicad/demos/test_xil_95108/footprints.pretty/PinHeader_1x03_P2.54mm_Vertical.kicad_mod
+share/kicad/demos/test_xil_95108/footprints.pretty/PinHeader_2x02_P2.54mm_Vertical.kicad_mod
+share/kicad/demos/test_xil_95108/footprints.pretty/R_Axial_DIN0207_L6.3mm_D2.5mm_P10.16mm_Horizontal.kicad_mod
+share/kicad/demos/test_xil_95108/footprints.pretty/SW_PUSH_6mm_H4.3mm.kicad_mod
+share/kicad/demos/test_xil_95108/footprints.pretty/TO-220-3_Horizontal_TabDown.kicad_mod
+share/kicad/demos/test_xil_95108/footprints.pretty/TerminalBlock_Phoenix_MKDS-1,5-2-5.08_1x02_P5.08mm_Horizontal.kicad_mod
+share/kicad/demos/test_xil_95108/footprints.pretty/TerminalBlock_Phoenix_MKDS-1,5-3-5.08_1x03_P5.08mm_Horizontal.kicad_mod
 share/kicad/demos/test_xil_95108/fp-lib-table
 share/kicad/demos/test_xil_95108/sym-lib-table
 share/kicad/demos/tiny_tapeout/
@@ -532,14 +660,35 @@ share/kicad/demos/video/graphic.kicad_sch
 share/kicad/demos/video/libs/
 share/kicad/demos/video/libs/footprints.pretty/
 share/kicad/demos/video/libs/footprints.pretty/BUSPCI.kicad_mod
+share/kicad/demos/video/libs/footprints.pretty/CP_EIA-3528-21_Kemet-B_Pad1.50x2.35mm_HandSolder.kicad_mod
 share/kicad/demos/video/libs/footprints.pretty/CV3-30PF.kicad_mod
+share/kicad/demos/video/libs/footprints.pretty/C_Disc_D3.0mm_W2.0mm_P2.50mm.kicad_mod
+share/kicad/demos/video/libs/footprints.pretty/Crystal_HC18-U_Horizontal.kicad_mod
+share/kicad/demos/video/libs/footprints.pretty/Crystal_HC18-U_Vertical.kicad_mod
+share/kicad/demos/video/libs/footprints.pretty/DIP-8_W7.62mm.kicad_mod
+share/kicad/demos/video/libs/footprints.pretty/DSUB-9_Female_Horizontal_P2.77x2.84mm_EdgePinOffset14.56mm_Housed_MountingHolesOffset15.98mm.kicad_mod
 share/kicad/demos/video/libs/footprints.pretty/D_DO-34_SOD68_P7.62mm_Horizontal.kicad_mod
 share/kicad/demos/video/libs/footprints.pretty/LED_D3.0mm.kicad_mod
 share/kicad/demos/video/libs/footprints.pretty/LRTDK.kicad_mod
 share/kicad/demos/video/libs/footprints.pretty/PLCC68.kicad_mod
 share/kicad/demos/video/libs/footprints.pretty/PLCC84.kicad_mod
+share/kicad/demos/video/libs/footprints.pretty/PQFP-100_14x20mm_P0.65mm.kicad_mod
+share/kicad/demos/video/libs/footprints.pretty/PQFP-160_28x28mm_P0.65mm.kicad_mod
+share/kicad/demos/video/libs/footprints.pretty/PinHeader_1x01_P2.54mm_Vertical.kicad_mod
+share/kicad/demos/video/libs/footprints.pretty/PinHeader_1x02_P2.54mm_Vertical.kicad_mod
+share/kicad/demos/video/libs/footprints.pretty/PinHeader_1x05_P2.54mm_Vertical.kicad_mod
+share/kicad/demos/video/libs/footprints.pretty/Potentiometer_Bourns_3314G_Vertical.kicad_mod
+share/kicad/demos/video/libs/footprints.pretty/R_1206_3216Metric_Pad1.30x1.75mm_HandSolder.kicad_mod
+share/kicad/demos/video/libs/footprints.pretty/R_1210_3225Metric_Pad1.30x2.65mm_HandSolder.kicad_mod
+share/kicad/demos/video/libs/footprints.pretty/R_1812_4532Metric_Pad1.30x3.40mm_HandSolder.kicad_mod
+share/kicad/demos/video/libs/footprints.pretty/R_Array_SIP9.kicad_mod
+share/kicad/demos/video/libs/footprints.pretty/SOIC-20W_7.5x12.8mm_P1.27mm.kicad_mod
+share/kicad/demos/video/libs/footprints.pretty/SOIC-24W_7.5x15.4mm_P1.27mm.kicad_mod
+share/kicad/demos/video/libs/footprints.pretty/SOIC-28W_7.5x17.9mm_P1.27mm.kicad_mod
 share/kicad/demos/video/libs/footprints.pretty/SOT23EBC.kicad_mod
+share/kicad/demos/video/libs/footprints.pretty/SSOP-8_3.95x5.21x3.27mm_P1.27mm.kicad_mod
 share/kicad/demos/video/libs/footprints.pretty/SolderJumper-2_P1.3mm_Open_Pad1.0x1.5mm.kicad_mod
+share/kicad/demos/video/libs/footprints.pretty/TQFP-100_14x14mm_P0.5mm.kicad_mod
 share/kicad/demos/video/libs/footprints.pretty/sim72.kicad_mod
 share/kicad/demos/video/libs/footprints.pretty/subclick.kicad_mod
 share/kicad/demos/video/libs/fp.3dshapes/
@@ -555,16 +704,8 @@ share/kicad/demos/video/video.kicad_pcb
 share/kicad/demos/video/video.kicad_pro
 share/kicad/demos/video/video.kicad_sch
 share/kicad/internat/
-share/kicad/internat/ar/
-share/kicad/internat/ar/kicad.mo
-share/kicad/internat/bg/
-share/kicad/internat/bg/kicad.mo
-share/kicad/internat/ca/
-share/kicad/internat/ca/kicad.mo
 share/kicad/internat/cs/
 share/kicad/internat/cs/kicad.mo
-share/kicad/internat/da/
-share/kicad/internat/da/kicad.mo
 share/kicad/internat/de/
 share/kicad/internat/de/kicad.mo
 share/kicad/internat/el/
@@ -581,54 +722,30 @@ share/kicad/internat/fi/
 share/kicad/internat/fi/kicad.mo
 share/kicad/internat/fr/
 share/kicad/internat/fr/kicad.mo
-share/kicad/internat/hu/
-share/kicad/internat/hu/kicad.mo
-share/kicad/internat/id/
-share/kicad/internat/id/kicad.mo
 share/kicad/internat/it/
 share/kicad/internat/it/kicad.mo
 share/kicad/internat/ja/
 share/kicad/internat/ja/kicad.mo
-share/kicad/internat/ka/
-share/kicad/internat/ka/kicad.mo
 share/kicad/internat/ko/
 share/kicad/internat/ko/kicad.mo
 share/kicad/internat/lt/
 share/kicad/internat/lt/kicad.mo
-share/kicad/internat/lv/
-share/kicad/internat/lv/kicad.mo
 share/kicad/internat/nl/
 share/kicad/internat/nl/kicad.mo
-share/kicad/internat/no/
-share/kicad/internat/no/kicad.mo
 share/kicad/internat/pl/
 share/kicad/internat/pl/kicad.mo
 share/kicad/internat/pt/
 share/kicad/internat/pt/kicad.mo
 share/kicad/internat/pt_BR/
 share/kicad/internat/pt_BR/kicad.mo
-share/kicad/internat/ro/
-share/kicad/internat/ro/kicad.mo
 share/kicad/internat/ru/
 share/kicad/internat/ru/kicad.mo
-share/kicad/internat/sk/
-share/kicad/internat/sk/kicad.mo
-share/kicad/internat/sl/
-share/kicad/internat/sl/kicad.mo
-share/kicad/internat/sr/
-share/kicad/internat/sr/kicad.mo
 share/kicad/internat/sv/
 share/kicad/internat/sv/kicad.mo
-share/kicad/internat/ta/
-share/kicad/internat/ta/kicad.mo
 share/kicad/internat/th/
 share/kicad/internat/th/kicad.mo
-share/kicad/internat/tr/
-share/kicad/internat/tr/kicad.mo
 share/kicad/internat/uk/
 share/kicad/internat/uk/kicad.mo
-share/kicad/internat/vi/
-share/kicad/internat/vi/kicad.mo
 share/kicad/internat/zh_CN/
 share/kicad/internat/zh_CN/kicad.mo
 share/kicad/internat/zh_TW/
@@ -666,6 +783,7 @@ share/kicad/plugins/kicad_utils.py
 share/kicad/resources/
 share/kicad/resources/images.tar.gz
 share/kicad/schemas/
+share/kicad/schemas/api.v1.schema.json
 share/kicad/schemas/pcm.v1.schema.json
 share/kicad/scripting/
 share/kicad/scripting/kicad_pyshell/
@@ -708,6 +826,8 @@ share/kicad/scripting/plugins/${MODPY_PYCACHE}qfp_wizard.${MODPY_PYC_MAGIC_TAG}$
 share/kicad/scripting/plugins/${MODPY_PYCACHE}qfp_wizard.${MODPY_PYC_MAGIC_TAG}pyc
 share/kicad/scripting/plugins/${MODPY_PYCACHE}qrcode_footprint_wizard.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/kicad/scripting/plugins/${MODPY_PYCACHE}qrcode_footprint_wizard.${MODPY_PYC_MAGIC_TAG}pyc
+share/kicad/scripting/plugins/${MODPY_PYCACHE}scrollwheel_wizard.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/kicad/scripting/plugins/${MODPY_PYCACHE}scrollwheel_wizard.${MODPY_PYC_MAGIC_TAG}pyc
 share/kicad/scripting/plugins/${MODPY_PYCACHE}sdip_wizard.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/kicad/scripting/plugins/${MODPY_PYCACHE}sdip_wizard.${MODPY_PYC_MAGIC_TAG}pyc
 share/kicad/scripting/plugins/${MODPY_PYCACHE}touch_slider_wizard.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -725,6 +845,7 @@ share/kicad/scripting/plugins/mutualcap_button_wizard.py
 share/kicad/scripting/plugins/qfn_wizard.py
 share/kicad/scripting/plugins/qfp_wizard.py
 share/kicad/scripting/plugins/qrcode_footprint_wizard.py
+share/kicad/scripting/plugins/scrollwheel_wizard.py
 share/kicad/scripting/plugins/sdip_wizard.py
 share/kicad/scripting/plugins/touch_slider_wizard.py
 share/kicad/scripting/plugins/uss39_barcode.py
