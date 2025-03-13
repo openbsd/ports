@@ -11,6 +11,9 @@ HOMEPAGE=	https://matt.ucc.asn.au/dropbear/dropbear.html
 # unrestrictive, mostly MIT-like, see LICENSE
 PERMIT_PACKAGE=	Yes
 
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
+
 WANTLIB += c util z
 
 SITES=		https://matt.ucc.asn.au/dropbear/releases/
