@@ -1,16 +1,16 @@
 Index: sys/va/meson.build
 --- sys/va/meson.build.orig
 +++ sys/va/meson.build
-@@ -34,7 +34,7 @@ va_win32_sources = [
-   'gstvadevice_win32.cpp'
- ]
+@@ -88,7 +88,7 @@ plugin_sources += {
+   'va': pathsep.join(doc_sources)
+ }
  
 -if host_system not in ['linux', 'windows']
 +if host_system not in ['linux', 'windows', 'openbsd']
    subdir_done()
  endif
  
-@@ -55,7 +55,7 @@ extra_args = [
+@@ -109,7 +109,7 @@ extra_args = [
  extra_dep = []
  c_std_arg = ['c_std=c99']
  

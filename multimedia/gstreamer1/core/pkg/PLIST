@@ -77,6 +77,7 @@ include/gstreamer-${API}/gst/gsterror.h
 include/gstreamer-${API}/gst/gstevent.h
 include/gstreamer-${API}/gst/gstformat.h
 include/gstreamer-${API}/gst/gstghostpad.h
+include/gstreamer-${API}/gst/gstidstr.h
 include/gstreamer-${API}/gst/gstinfo.h
 include/gstreamer-${API}/gst/gstiterator.h
 include/gstreamer-${API}/gst/gstmacros.h
@@ -118,6 +119,7 @@ include/gstreamer-${API}/gst/gsttypefindfactory.h
 include/gstreamer-${API}/gst/gsturi.h
 include/gstreamer-${API}/gst/gstutils.h
 include/gstreamer-${API}/gst/gstvalue.h
+include/gstreamer-${API}/gst/gstvecdeque.h
 include/gstreamer-${API}/gst/gstversion.h
 include/gstreamer-${API}/gst/math-compat.h
 include/gstreamer-${API}/gst/net/
@@ -163,7 +165,9 @@ share/bash-completion/completions/gst-inspect-${API}
 share/bash-completion/completions/gst-launch-${API}
 share/bash-completion/helpers/
 share/bash-completion/helpers/gst
-share/gdb/auto-load/usr/local/lib/libgstreamer-${API}.so.0.2412.0-gdb.py
+share/cmake/
+share/cmake/FindGStreamer.cmake
+share/gdb/auto-load/usr/local/lib/libgstreamer-${API}.so.0.2600.0-gdb.py
 share/gir-${API}/Gst-${API}.gir
 share/gir-${API}/GstBase-${API}.gir
 share/gir-${API}/GstCheck-${API}.gir

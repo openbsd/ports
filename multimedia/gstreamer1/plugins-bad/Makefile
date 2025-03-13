@@ -2,26 +2,26 @@ COMMENT=		bad elements for GStreamer
 
 DISTNAME=		gst-plugins-bad-${V}
 
-SHARED_LIBS += gsturidownloader-1.0      5.2 # 0.2412.0
-SHARED_LIBS += gstadaptivedemux-1.0      4.2 # 0.2412.0
-SHARED_LIBS += gstbadaudio-1.0           3.2 # 0.2412.0
-SHARED_LIBS += gstanalytics-1.0          0.0 # 0.2412.0
-SHARED_LIBS += gstbasecamerabinsrc-1.0   6.2 # 0.2412.0
-SHARED_LIBS += gstcodecparsers-1.0       6.2 # 0.2412.0
-SHARED_LIBS += gstcodecs-1.0             1.2 # 0.2412.0
-SHARED_LIBS += gstdxva-1.0               0.0 # 0.2412.0
-SHARED_LIBS += gstinsertbin-1.0          5.2 # 0.2412.0
-SHARED_LIBS += gstmse-1.0                0.0 # 0.2412.0
-SHARED_LIBS += gstphotography-1.0        6.2 # 0.2412.0
-SHARED_LIBS += gstisoff-1.0              3.2 # 0.2412.0
-SHARED_LIBS += gstmpegts-1.0             5.2 # 0.2412.0
-SHARED_LIBS += gstplay-1.0               0.2 # 0.2412.0
-SHARED_LIBS += gstplayer-1.0             3.2 # 0.2412.0
-SHARED_LIBS += gstsctp-1.0               3.2 # 0.2412.0
-SHARED_LIBS += gsttranscoder-1.0         1.2 # 0
-SHARED_LIBS += gstva-1.0                 0.0 # 0.2412.0
-SHARED_LIBS += gstwayland-1.0            0.1 # 0.2412.0
-SHARED_LIBS += gstwebrtc-1.0             3.2 # 0.2412.0
+SHARED_LIBS += gstadaptivedemux-1.0      4.3 # 0.2600.0
+SHARED_LIBS += gstanalytics-1.0          0.1 # 0.2600.0
+SHARED_LIBS += gstbadaudio-1.0           3.3 # 0.2600.0
+SHARED_LIBS += gstbasecamerabinsrc-1.0   6.3 # 0.2600.0
+SHARED_LIBS += gstcodecparsers-1.0       6.3 # 0.2600.0
+SHARED_LIBS += gstcodecs-1.0             1.3 # 0.2600.0
+SHARED_LIBS += gstdxva-1.0               0.1 # 0.2600.0
+SHARED_LIBS += gstinsertbin-1.0          5.3 # 0.2600.0
+SHARED_LIBS += gstisoff-1.0              3.3 # 0.2600.0
+SHARED_LIBS += gstmpegts-1.0             5.3 # 0.2600.0
+SHARED_LIBS += gstmse-1.0                0.1 # 0.2600.0
+SHARED_LIBS += gstphotography-1.0        6.3 # 0.2600.0
+SHARED_LIBS += gstplay-1.0               0.3 # 0.2600.0
+SHARED_LIBS += gstplayer-1.0             3.3 # 0.2600.0
+SHARED_LIBS += gstsctp-1.0               3.3 # 0.2600.0
+SHARED_LIBS += gsttranscoder-1.0         1.3 # 0
+SHARED_LIBS += gsturidownloader-1.0      5.3 # 0.2600.0
+SHARED_LIBS += gstva-1.0                 0.1 # 0.2600.0
+SHARED_LIBS += gstwayland-1.0            0.2 # 0.2600.0
+SHARED_LIBS += gstwebrtc-1.0             3.3 # 0.2600.0
 
 COMPILER_LANGS = c c++
 
@@ -64,7 +64,7 @@ DISABLED +=		webrtc webrtcdsp wildmidi winks winscreencap wpe x265
 DISABLED +=		zbar magicleap v4l2codecs wasapi2 avtp microdns
 DISABLED +=		svthevcenc zxing qroverlay timecode amfcodec directshow
 DISABLED +=		nvcodec qsv gtk3 dvbsuboverlay siren uvcgadget qt6d3d11
-DISABLED +=		svtav1
+DISABLED +=		svtav1 lcevcdecoder lcevcencoder svtjpegxs
 
 .for d in ${DISABLED}
 CONFIGURE_ARGS +=	-D${d}=disabled

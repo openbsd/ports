@@ -7,6 +7,9 @@ include/gstreamer-${API}/gst/analytics/gstanalyticsclassificationmtd.h
 include/gstreamer-${API}/gst/analytics/gstanalyticsmeta.h
 include/gstreamer-${API}/gst/analytics/gstanalyticsobjectdetectionmtd.h
 include/gstreamer-${API}/gst/analytics/gstanalyticsobjecttrackingmtd.h
+include/gstreamer-${API}/gst/analytics/gstanalyticssegmentationmtd.h
+include/gstreamer-${API}/gst/analytics/gsttensor.h
+include/gstreamer-${API}/gst/analytics/gsttensormeta.h
 include/gstreamer-${API}/gst/audio/audio-bad-prelude.h
 include/gstreamer-${API}/gst/audio/gstnonstreamaudiodecoder.h
 include/gstreamer-${API}/gst/audio/gstplanaraudioadapter.h
@@ -20,8 +23,10 @@ include/gstreamer-${API}/gst/codecparsers/codecparsers-prelude.h
 include/gstreamer-${API}/gst/codecparsers/gstav1parser.h
 include/gstreamer-${API}/gst/codecparsers/gsth264parser.h
 include/gstreamer-${API}/gst/codecparsers/gsth265parser.h
+include/gstreamer-${API}/gst/codecparsers/gsth266parser.h
 include/gstreamer-${API}/gst/codecparsers/gstjpeg2000sampling.h
 include/gstreamer-${API}/gst/codecparsers/gstjpegparser.h
+include/gstreamer-${API}/gst/codecparsers/gstlcevcmeta.h
 include/gstreamer-${API}/gst/codecparsers/gstmpeg4parser.h
 include/gstreamer-${API}/gst/codecparsers/gstmpegvideometa.h
 include/gstreamer-${API}/gst/codecparsers/gstmpegvideoparser.h
@@ -44,8 +49,6 @@ include/gstreamer-${API}/gst/mpegts/gst-dvb-descriptor.h
 include/gstreamer-${API}/gst/mpegts/gst-dvb-section.h
 include/gstreamer-${API}/gst/mpegts/gst-hdmv-section.h
 include/gstreamer-${API}/gst/mpegts/gst-isdb-descriptor.h
-include/gstreamer-${API}/gst/mpegts/gst-metadata-descriptor.h
-include/gstreamer-${API}/gst/mpegts/gst-mpegtspesmetadatameta.h
 include/gstreamer-${API}/gst/mpegts/gst-scte-section.h
 include/gstreamer-${API}/gst/mpegts/gstmpegts-enumtypes.h
 include/gstreamer-${API}/gst/mpegts/gstmpegtsdescriptor.h
@@ -219,6 +222,7 @@ lib/girepository-${API}/GstWebRTC-${API}.typelib
 @so lib/gstreamer-${API}/libgstspeed.so
 @so lib/gstreamer-${API}/libgstsubenc.so
 @so lib/gstreamer-${API}/libgstswitchbin.so
+@so lib/gstreamer-${API}/libgsttensordecoders.so
 @so lib/gstreamer-${API}/libgsttranscode.so
 @so lib/gstreamer-${API}/libgstttmlsubs.so
 @so lib/gstreamer-${API}/libgstunixfd.so

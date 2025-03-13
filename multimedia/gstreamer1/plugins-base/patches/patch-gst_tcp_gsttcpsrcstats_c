@@ -1,0 +1,14 @@
+In file included from ../gst-plugins-base-1.26.0/gst/tcp/gsttcpsrcstats.c:9:
+/usr/include/netinet/tcp.h:42:9: error: unknown type name 'u_int32_t'; did you mean '__int128_t'?
+
+Index: gst/tcp/gsttcpsrcstats.c
+--- gst/tcp/gsttcpsrcstats.c.orig
++++ gst/tcp/gsttcpsrcstats.c
+@@ -6,6 +6,7 @@
+ 
+ /* macOS and iOS have the .h files but the tcp_info struct is private API */
+ #if defined(HAVE_NETINET_TCP_H) && defined(HAVE_NETINET_IN_H) && defined(HAVE_SYS_SOCKET_H)
++#include <sys/types.h>
+ #include <netinet/tcp.h>
+ #include <netinet/in.h>
+ #include <sys/socket.h>
