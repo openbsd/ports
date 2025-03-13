@@ -1,7 +1,7 @@
 COMMENT =	Prusa Block & Binary G-code reader / writer / converter
 
-COMMIT =	d33a277a3ce2c0a7f9ba325caac6d730e0f7a412
-PKGNAME =	libbgcode-20241024
+COMMIT =	5041c093b33e2748e76d6b326f2251310823f3df
+PKGNAME =	libbgcode-20250220
 
 DIST_TUPLE =	github prusa3d libbgcode ${COMMIT} .
 
@@ -25,7 +25,6 @@ BUILD_DEPENDS =		devel/catch2 \
 
 LIB_DEPENDS =		devel/boost
 
-CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=ON \
-			-DLibBGCode_BUILD_TESTS=OFF
+CONFIGURE_ARGS +=	-DBUILD_SHARED_LIBS=ON
 
 .include <bsd.port.mk>
