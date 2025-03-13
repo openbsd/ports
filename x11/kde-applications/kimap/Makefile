@@ -13,6 +13,6 @@ LIB_DEPENDS =	devel/kf6/kcoreaddons \
 		devel/kf6/ki18n \
 		devel/kf6/kio \
 		security/cyrus-sasl2 \
-		x11/kde-applications/kmime>=${MODKDE_GEAR_VERSION}
+		x11/kde-applications/kmime>=${VERSION}
 
 .include <bsd.port.mk>

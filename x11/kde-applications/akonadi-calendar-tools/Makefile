@@ -23,10 +23,10 @@ LIB_DEPENDS =	devel/kf6/kconfig \
 		devel/kf6/ki18n \
 		devel/kf6/kitemmodels \
 		devel/kf6/kwidgetsaddons \
-		x11/kde-applications/akonadi-calendar>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/akonadi>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/calendarsupport>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kidentitymanagement>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kmime>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/akonadi-calendar>=${VERSION} \
+		x11/kde-applications/akonadi>=${VERSION} \
+		x11/kde-applications/calendarsupport>=${VERSION} \
+		x11/kde-applications/kidentitymanagement>=${VERSION} \
+		x11/kde-applications/kmime>=${VERSION} \
 
 .include <bsd.port.mk>

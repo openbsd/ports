@@ -14,12 +14,12 @@ MODKDE_DOCS = yes
 
 BUILD_DEPENDS =	devel/kf6/kconfig \
 		devel/kf6/kpty \
-		x11/kde-applications/libkmahjongg>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/libkmahjongg>=${VERSION} \
 		devel/py-twisted \
 		x11/py-qt6
 
 RUN_DEPENDS =	devel/py-twisted \
-		x11/kde-applications/libkmahjongg>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/libkmahjongg>=${VERSION} \
 		audio/vorbis-tools \
 		x11/py-qt6
 

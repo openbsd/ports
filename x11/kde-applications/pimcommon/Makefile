@@ -50,14 +50,14 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/solid \
 		x11/kde-plasma/plasma-activities \
 		textproc/ktextaddons \
-		x11/kde-applications/akonadi-contacts>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/akonadi-search>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/akonadi>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/grantleetheme>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kimap>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kldap>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kmime>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/libkdepim>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/akonadi-contacts>=${VERSION} \
+		x11/kde-applications/akonadi-search>=${VERSION} \
+		x11/kde-applications/akonadi>=${VERSION} \
+		x11/kde-applications/grantleetheme>=${VERSION} \
+		x11/kde-applications/kimap>=${VERSION} \
+		x11/kde-applications/kldap>=${VERSION} \
+		x11/kde-applications/kmime>=${VERSION} \
+		x11/kde-applications/libkdepim>=${VERSION} \
 		x11/qt6/qtdeclarative
 
 TEST_IS_INTERACTIVE =	X11

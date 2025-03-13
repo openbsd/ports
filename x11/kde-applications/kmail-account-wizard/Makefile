@@ -21,11 +21,11 @@ MODKDE_ICON_CACHE = yes
 BUILD_DEPENDS =	devel/boost \
 		devel/kf6/knotifyconfig \
 		devel/kf6/ktexteditor \
-		x11/kde-applications/akonadi-mime>=${MODKDE_GEAR_VERSION}
+		x11/kde-applications/akonadi-mime>=${VERSION}
 
 RUN_DEPENDS =	devel/kf6/knotifyconfig \
 		misc/shared-mime-info \
-		x11/kde-applications/akonadi-mime>=${MODKDE_GEAR_VERSION}
+		x11/kde-applications/akonadi-mime>=${VERSION}
 
 LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kconfig \
@@ -38,10 +38,10 @@ LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kitemmodels \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kiconthemes \
-		x11/kde-applications/akonadi>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kidentitymanagement>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kmailtransport>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kmime>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/akonadi>=${VERSION} \
+		x11/kde-applications/kidentitymanagement>=${VERSION} \
+		x11/kde-applications/kmailtransport>=${VERSION} \
+		x11/kde-applications/kmime>=${VERSION} \
 		x11/qt6/qtdeclarative
 
 TEST_IS_INTERACTIVE =	X11

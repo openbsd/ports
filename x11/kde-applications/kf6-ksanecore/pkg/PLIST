@@ -1,4 +1,5 @@
 @conflict ksanecore-*
+@pkgpath x11/kde-applications/ksanecore
 include/KSaneCore6/
 include/KSaneCore6/KSaneCore/
 include/KSaneCore6/KSaneCore/DeviceInformation

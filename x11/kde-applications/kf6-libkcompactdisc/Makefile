@@ -2,7 +2,6 @@ COMMENT =	library for interfacing with CDs
 
 DISTNAME =	libkcompactdisc-${VERSION}
 PKGNAME =	kf6-libkcompactdisc-${VERSION}
-REVISION =	0
 
 CATEGORIES =	devel multimedia
 

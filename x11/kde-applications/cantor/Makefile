@@ -76,7 +76,7 @@ LIB_DEPENDS =	devel/gettext,-runtime \
 		x11/qt6/qttools \
 		x11/qt6/qtwebchannel \
 		x11/qt6/qtwebengine \
-		x11/kde-applications/analitza>=${MODKDE_GEAR_VERSION}
+		x11/kde-applications/analitza>=${VERSION}
 
 LIB_DEPENDS +=	math/R
 

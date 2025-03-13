@@ -25,8 +25,8 @@ WANTLIB += KF6XmlGui KSaneWidgets6 Qt6Charts Qt6Core Qt6DBus Qt6Gui
 WANTLIB += Qt6Network Qt6OpenGL Qt6OpenGLWidgets Qt6Positioning
 WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
 WANTLIB += Qt6Quick Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
-WANTLIB += Qt6Widgets Qt6Xml c cdio exempi exslt m tag xml2 xslt
-WANTLIB += yaz
+WANTLIB += Qt6Widgets Qt6Xml c cdio exempi exslt m poppler poppler-qt6
+WANTLIB += tag xml2 xslt yaz
 
 SITES =		http://tellico-project.org/files/
 EXTRACT_SUFX =	.tar.xz

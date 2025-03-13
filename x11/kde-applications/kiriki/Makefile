@@ -28,6 +28,6 @@ LIB_DEPENDS =	 \
 		devel/kf6/kcolorscheme \
 		devel/kf6/kwidgetsaddons \
 		x11/qt6/qtdeclarative \
-		x11/kde-applications/libkdegames>=${MODKDE_GEAR_VERSION}
+		x11/kde-applications/libkdegames>=${VERSION}
 
 .include <bsd.port.mk>

@@ -32,10 +32,10 @@ BUILD_DEPENDS =	print/poppler,-qt6 \
 
 RUN_DEPENDS =	devel/kf6/kfilemetadata \
 		misc/shared-mime-info \
-		x11/kde-applications/ffmpegthumbs>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kdesdk-thumbnailers>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kf6-kio-extras>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/konsole>=${MODKDE_GEAR_VERSION}
+		x11/kde-applications/ffmpegthumbs>=${VERSION} \
+		x11/kde-applications/kdesdk-thumbnailers>=${VERSION} \
+		x11/kde-applications/kf6-kio-extras>=${VERSION} \
+		x11/kde-applications/konsole>=${VERSION}
 
 LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/baloo \
@@ -68,7 +68,7 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/solid \
 		devel/kf6/sonnet \
 		multimedia/phonon,qt6 \
-		x11/kde-applications/baloo-widgets>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/baloo-widgets>=${VERSION} \
 		x11/qt6/qtdeclarative \
 		x11/xkbcommon
 

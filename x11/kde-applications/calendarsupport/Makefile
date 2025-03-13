@@ -1,7 +1,6 @@
 COMMENT =	PIM calendar support library
 DISTNAME =	calendarsupport-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 SHARED_LIBS +=	KPim6CalendarSupport      1.0 # 0.0
 
@@ -19,7 +18,7 @@ WANTLIB += Qt6Gui Qt6Network Qt6PrintSupport Qt6Widgets m
 
 BUILD_DEPENDS =	devel/boost
 
-RUN_DEPENDS =	x11/kde-applications/kdepim-runtime>=${MODKDE_GEAR_VERSION}
+RUN_DEPENDS =	x11/kde-applications/kdepim-runtime>=${VERSION}
 
 LIB_DEPENDS =	devel/kf6/kcalendarcore \
 		devel/kf6/kcodecs \
@@ -38,11 +37,11 @@ LIB_DEPENDS =	devel/kf6/kcalendarcore \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/solid \
 		textproc/ktextaddons \
-		x11/kde-applications/akonadi-calendar>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/akonadi>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kcalutils>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kidentitymanagement>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kmime>=${MODKDE_GEAR_VERSION}
+		x11/kde-applications/akonadi-calendar>=${VERSION} \
+		x11/kde-applications/akonadi>=${VERSION} \
+		x11/kde-applications/kcalutils>=${VERSION} \
+		x11/kde-applications/kidentitymanagement>=${VERSION} \
+		x11/kde-applications/kmime>=${VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 

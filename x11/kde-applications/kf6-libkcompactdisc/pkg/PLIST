@@ -1,4 +1,5 @@
 @conflict libkcompactdisc-kf5-*
+@pkgpath x11/kde-applications/libkcompactdisc
 include/KCompactDisc6/
 include/KCompactDisc6/KCompactDisc
 include/KCompactDisc6/kcompactdisc.h

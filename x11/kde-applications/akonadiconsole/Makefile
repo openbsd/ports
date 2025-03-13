@@ -50,19 +50,19 @@ LIB_DEPENDS =	databases/xapian-core \
 		security/gpgme,-qt \
 		security/libassuan \
 		textproc/ktextaddons \
-		x11/kde-applications/akonadi-calendar>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/akonadi-contacts>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/akonadi-mime>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/akonadi-search>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/akonadi>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/calendarsupport>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/grantleetheme>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kidentitymanagement>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kmime>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/libkdepim>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/libkleo>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/messagelib>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/pimcommon>=${MODKDE_GEAR_VERSION}
+		x11/kde-applications/akonadi-calendar>=${VERSION} \
+		x11/kde-applications/akonadi-contacts>=${VERSION} \
+		x11/kde-applications/akonadi-mime>=${VERSION} \
+		x11/kde-applications/akonadi-search>=${VERSION} \
+		x11/kde-applications/akonadi>=${VERSION} \
+		x11/kde-applications/calendarsupport>=${VERSION} \
+		x11/kde-applications/grantleetheme>=${VERSION} \
+		x11/kde-applications/kidentitymanagement>=${VERSION} \
+		x11/kde-applications/kmime>=${VERSION} \
+		x11/kde-applications/libkdepim>=${VERSION} \
+		x11/kde-applications/libkleo>=${VERSION} \
+		x11/kde-applications/messagelib>=${VERSION} \
+		x11/kde-applications/pimcommon>=${VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 

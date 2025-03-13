@@ -25,7 +25,7 @@ MODCLANG_COMPILER_LINKS = no
 
 MODKDE_KF5 = yes
 
-MODULES +=	lang/clang lang/python
+MODULES +=	lang/python
 
 RUN_DEPENDS =	math/graphviz
 
@@ -59,9 +59,10 @@ LIB_DEPENDS =	devel/kf5/ki18n \
 CONFIGURE_ARGS =	-DBUILD_APIDOC=OFF \
 			-DBUILD_PHP_IMPORT=OFF \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON \
-			-DClang_DIR=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib/cmake/clang
 
 TEST_IS_INTERACTIVE =	X11
+# Depends on clang
+CONFIGURE_ARGS +=	-DBUILD_TESTING=OFF
 
 post-install:
 	${MODPY_COMPILEALL} ${PREFIX}/share/umbrello5/headings/

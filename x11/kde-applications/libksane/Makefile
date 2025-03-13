@@ -18,6 +18,6 @@ LIB_DEPENDS =	devel/kf6/ki18n \
 		devel/kf6/kwallet \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/sonnet \
-		x11/kde-applications/kf6-ksanecore>=${MODKDE_GEAR_VERSION}
+		x11/kde-applications/kf6-ksanecore>=${VERSION}
 
 .include <bsd.port.mk>

@@ -23,7 +23,7 @@ LIB_DEPENDS =	devel/kf6/kcoreaddons \
 		devel/kf6/kpackage \
 		devel/qcoro,qt6 \
 		net/libaccounts-qt,qt6 \
-		x11/kde-applications/kf6-kaccounts-integration>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kf6-kaccounts-integration>=${VERSION} \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtpositioning \
 		x11/qt6/qtwebchannel \

@@ -50,20 +50,20 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		security/libassuan \
 		security/qtkeychain,qt6 \
 		textproc/ktextaddons \
-		x11/kde-applications/akonadi-contacts>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/akonadi-mime>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/akonadi>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/grantleetheme>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kidentitymanagement>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kimap>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kmailtransport>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kmime>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kpimtextedit>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/libkdepim>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/libkleo>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/mailcommon>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/mailimporter>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/messagelib>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/pimcommon>=${MODKDE_GEAR_VERSION}
+		x11/kde-applications/akonadi-contacts>=${VERSION} \
+		x11/kde-applications/akonadi-mime>=${VERSION} \
+		x11/kde-applications/akonadi>=${VERSION} \
+		x11/kde-applications/grantleetheme>=${VERSION} \
+		x11/kde-applications/kidentitymanagement>=${VERSION} \
+		x11/kde-applications/kimap>=${VERSION} \
+		x11/kde-applications/kmailtransport>=${VERSION} \
+		x11/kde-applications/kmime>=${VERSION} \
+		x11/kde-applications/kpimtextedit>=${VERSION} \
+		x11/kde-applications/libkdepim>=${VERSION} \
+		x11/kde-applications/libkleo>=${VERSION} \
+		x11/kde-applications/mailcommon>=${VERSION} \
+		x11/kde-applications/mailimporter>=${VERSION} \
+		x11/kde-applications/messagelib>=${VERSION} \
+		x11/kde-applications/pimcommon>=${VERSION}
 
 .include <bsd.port.mk>

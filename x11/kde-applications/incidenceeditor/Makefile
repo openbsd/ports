@@ -48,21 +48,21 @@ LIB_DEPENDS =	graphics/kdiagram-qt6 \
 		devel/kf6/sonnet \
 		devel/kf6/kguiaddons \
 		textproc/ktextaddons \
-		x11/kde-applications/akonadi-calendar>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/akonadi-contacts>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/akonadi-mime>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/akonadi>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/calendarsupport>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/eventviews>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/grantleetheme>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kcalutils>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kidentitymanagement>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kimap>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kldap>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kmime>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kpimtextedit>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/libkdepim>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/pimcommon>=${MODKDE_GEAR_VERSION}
+		x11/kde-applications/akonadi-calendar>=${VERSION} \
+		x11/kde-applications/akonadi-contacts>=${VERSION} \
+		x11/kde-applications/akonadi-mime>=${VERSION} \
+		x11/kde-applications/akonadi>=${VERSION} \
+		x11/kde-applications/calendarsupport>=${VERSION} \
+		x11/kde-applications/eventviews>=${VERSION} \
+		x11/kde-applications/grantleetheme>=${VERSION} \
+		x11/kde-applications/kcalutils>=${VERSION} \
+		x11/kde-applications/kidentitymanagement>=${VERSION} \
+		x11/kde-applications/kimap>=${VERSION} \
+		x11/kde-applications/kldap>=${VERSION} \
+		x11/kde-applications/kmime>=${VERSION} \
+		x11/kde-applications/kpimtextedit>=${VERSION} \
+		x11/kde-applications/libkdepim>=${VERSION} \
+		x11/kde-applications/pimcommon>=${VERSION}
 
 TEST_IS_INTERACTIVE =	X11
 

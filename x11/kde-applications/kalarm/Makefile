@@ -1,7 +1,6 @@
 COMMENT =	personal alarm message, command and email scheduler
 DISTNAME =	kalarm-${VERSION}
 CATEGORIES =	productivity
-REVISION =	0
 
 SHARED_LIBS +=  kalarmcalendar           4.0 # 0.0
 SHARED_LIBS +=  kalarmplugin             3.0 # 0.0
@@ -31,11 +30,11 @@ WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets Qt6Xml
 WANTLIB += X11 c m vlc
 
 BUILD_DEPENDS =	devel/boost \
-		x11/kde-applications/mailcommon>=${MODKDE_GEAR_VERSION}
+		x11/kde-applications/mailcommon>=${VERSION}
 
 RUN_DEPENDS =	x11/dbus,-suid \
-		x11/kde-applications/kdepim-runtime>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/mailcommon>=${MODKDE_GEAR_VERSION}
+		x11/kde-applications/kdepim-runtime>=${VERSION} \
+		x11/kde-applications/mailcommon>=${VERSION}
 
 LIB_DEPENDS =	devel/kf6/kauth \
 		devel/kf6/kbookmarks \
@@ -71,13 +70,13 @@ LIB_DEPENDS =	devel/kf6/kauth \
 		textproc/ktextaddons \
 		devel/kf6/kiconthemes \
 		x11/vlc \
-		x11/kde-applications/akonadi-contacts>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/akonadi-mime>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/akonadi>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/grantleetheme>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kcalutils>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kidentitymanagement>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kmailtransport>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kmime>=${MODKDE_GEAR_VERSION}
+		x11/kde-applications/akonadi-contacts>=${VERSION} \
+		x11/kde-applications/akonadi-mime>=${VERSION} \
+		x11/kde-applications/akonadi>=${VERSION} \
+		x11/kde-applications/grantleetheme>=${VERSION} \
+		x11/kde-applications/kcalutils>=${VERSION} \
+		x11/kde-applications/kidentitymanagement>=${VERSION} \
+		x11/kde-applications/kmailtransport>=${VERSION} \
+		x11/kde-applications/kmime>=${VERSION}
 
 .include <bsd.port.mk>

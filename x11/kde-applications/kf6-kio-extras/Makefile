@@ -1,7 +1,6 @@
 COMMENT =	extra functionality for kioslaves
 DISTNAME =	kio-extras-${VERSION}
 PKGNAME =	kf6-kio-extras-${VERSION}
-REVISION =	0
 
 CATEGORIES =	productivity net
 
@@ -64,7 +63,7 @@ LIB_DEPENDS =	audio/taglib \
 		net/kdsoap-ws-discovery-client \
 		net/samba \
 		security/libssh \
-		x11/kde-applications/kf6-libkexiv2>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/kf6-libkexiv2>=${VERSION} \
 		x11/kde-plasma/plasma-activities \
 		x11/kde-plasma/plasma-activities-stats \
 		x11/qt6/qt5compat \

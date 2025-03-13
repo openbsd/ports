@@ -1,7 +1,6 @@
 COMMENT =	calendar and scheduling component of kontact
 DISTNAME =	korganizer-${VERSION}
 CATEGORIES =	net www
-REVISION =	0
 
 SHARED_LIBS +=  korganizer_core         3.1 # 5.13.2
 SHARED_LIBS +=  korganizer_interfaces   1.1 # 5.13.2
@@ -36,7 +35,7 @@ MODKF5_I18N_CONFLICT = yes
 
 BUILD_DEPENDS =	devel/boost
 
-RUN_DEPENDS =	x11/kde-applications/kdepim-runtime>=${MODKDE_GEAR_VERSION}
+RUN_DEPENDS =	x11/kde-applications/kdepim-runtime>=${VERSION}
 
 LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/kcalendarcore \
@@ -65,23 +64,23 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \
 		textproc/ktextaddons \
-		x11/kde-applications/akonadi-calendar>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/akonadi-contacts>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/akonadi-mime>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/akonadi>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/calendarsupport>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/eventviews>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/akonadi-calendar>=${VERSION} \
+		x11/kde-applications/akonadi-contacts>=${VERSION} \
+		x11/kde-applications/akonadi-mime>=${VERSION} \
+		x11/kde-applications/akonadi>=${VERSION} \
+		x11/kde-applications/calendarsupport>=${VERSION} \
+		x11/kde-applications/eventviews>=${VERSION} \
 		x11/kde-applications/grantleetheme \
-		x11/kde-applications/incidenceeditor>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kcalutils>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kidentitymanagement>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kimap>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kldap>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kmailtransport>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kmime>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kontactinterface>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/libkdepim>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/pimcommon>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/incidenceeditor>=${VERSION} \
+		x11/kde-applications/kcalutils>=${VERSION} \
+		x11/kde-applications/kidentitymanagement>=${VERSION} \
+		x11/kde-applications/kimap>=${VERSION} \
+		x11/kde-applications/kldap>=${VERSION} \
+		x11/kde-applications/kmailtransport>=${VERSION} \
+		x11/kde-applications/kmime>=${VERSION} \
+		x11/kde-applications/kontactinterface>=${VERSION} \
+		x11/kde-applications/libkdepim>=${VERSION} \
+		x11/kde-applications/pimcommon>=${VERSION} \
 		x11/qt6/qtdeclarative
 
 TEST_IS_INTERACTIVE =	X11

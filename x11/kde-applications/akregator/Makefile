@@ -3,7 +3,6 @@ USE_WXNEEDED =	Yes
 COMMENT =	news feed reader
 DISTNAME =	akregator-${VERSION}
 CATEGORIES =	net www
-REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/akregator
 
@@ -41,16 +40,16 @@ MODKF5_I18N_CONFLICT = yes
 BUILD_DEPENDS =	devel/boost \
 		devel/kf6/kitemviews \
 		devel/kf6/ktexteditor \
-		x11/kde-applications/akonadi-contacts>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kimap>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/mailcommon>=${MODKDE_GEAR_VERSION}
+		x11/kde-applications/akonadi-contacts>=${VERSION} \
+		x11/kde-applications/kimap>=${VERSION} \
+		x11/kde-applications/mailcommon>=${VERSION}
 
 RUN_DEPENDS =	devel/kf6/kitemviews \
 		devel/kf6/ktexteditor \
-		x11/kde-applications/akonadi-contacts>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kdepim-runtime>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kimap>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/mailcommon>=${MODKDE_GEAR_VERSION}
+		x11/kde-applications/akonadi-contacts>=${VERSION} \
+		x11/kde-applications/kdepim-runtime>=${VERSION} \
+		x11/kde-applications/kimap>=${VERSION} \
+		x11/kde-applications/mailcommon>=${VERSION}
 
 LIB_DEPENDS =	devel/kf6/kcmutils \
 		devel/kf6/kcodecs \
@@ -81,15 +80,15 @@ LIB_DEPENDS =	devel/kf6/kcmutils \
 		security/gpgme,-qt \
 		security/libassuan \
 		textproc/ktextaddons \
-		x11/kde-applications/akonadi-mime>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/akonadi>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/grantleetheme>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kmime>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kontactinterface>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/libkdepim>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/libkleo>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/messagelib>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/pimcommon>=${MODKDE_GEAR_VERSION} \
+		x11/kde-applications/akonadi-mime>=${VERSION} \
+		x11/kde-applications/akonadi>=${VERSION} \
+		x11/kde-applications/grantleetheme>=${VERSION} \
+		x11/kde-applications/kmime>=${VERSION} \
+		x11/kde-applications/kontactinterface>=${VERSION} \
+		x11/kde-applications/libkdepim>=${VERSION} \
+		x11/kde-applications/libkleo>=${VERSION} \
+		x11/kde-applications/messagelib>=${VERSION} \
+		x11/kde-applications/pimcommon>=${VERSION} \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtpositioning \
 		x11/qt6/qtwebchannel \

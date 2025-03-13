@@ -12,8 +12,8 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kcoreaddons \
 		devel/kf6/kio \
 		devel/kf6/kservice \
-		x11/kde-applications/kf6-kdegraphics-mobipocket>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kf6-libkdcraw>=${MODKDE_GEAR_VERSION} \
-		x11/kde-applications/kf6-libkexiv2>=${MODKDE_GEAR_VERSION}
+		x11/kde-applications/kf6-kdegraphics-mobipocket>=${VERSION} \
+		x11/kde-applications/kf6-libkdcraw>=${VERSION} \
+		x11/kde-applications/kf6-libkexiv2>=${VERSION}
 
 .include <bsd.port.mk>

@@ -13,7 +13,6 @@ lib/qt6/plugins/kerfuffle/
 lib/qt6/plugins/kf6/kfileitemaction/
 @so lib/qt6/plugins/kf6/kfileitemaction/compressfileitemaction.so
 @so lib/qt6/plugins/kf6/kfileitemaction/extractfileitemaction.so
-lib/qt6/plugins/kf6/kio_dnd/
 @so lib/qt6/plugins/kf6/kio_dnd/extracthere.so
 lib/qt6/plugins/kf6/parts/
 @so lib/qt6/plugins/kf6/parts/arkpart.so

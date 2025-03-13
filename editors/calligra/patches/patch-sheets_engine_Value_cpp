@@ -14,5 +14,5 @@ Index: sheets/engine/Value.cpp
 -    d->format = fmt_Number;
 -}
  
+ #if QT_POINTER_SIZE != 4
  // create an integer value
- Value::Value(int i)

@@ -37,7 +37,7 @@ LIB_DEPENDS =	devel/kf6/kcodecs \
 		devel/kf6/solid \
 		devel/kf6/syntax-highlighting \
 		devel/kf6/kcolorscheme \
-		x11/kde-applications/libkomparediff2>=${MODKDE_GEAR_VERSION}
+		x11/kde-applications/libkomparediff2>=${VERSION}
 
 SUBST_VARS +=	LIBkompareinterface_VERSION \
 		LIBkomparedialogpages_VERSION
