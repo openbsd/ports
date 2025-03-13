@@ -328,6 +328,7 @@
      SUBDIR += nicotine-plus
      SUBDIR += nload
      SUBDIR += nmap
+     SUBDIR += nng
      SUBDIR += no-ip
      SUBDIR += noVNC
      SUBDIR += nomadnet
