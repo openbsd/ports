@@ -42,5 +42,12 @@ lib/pkgconfig/lowdown.pc
 share/lowdown/
 share/lowdown/html/
 share/lowdown/html/default.html
+share/lowdown/html/sblg.xml
+share/lowdown/latex/
+share/lowdown/latex/default.latex
+share/lowdown/man/
+share/lowdown/man/default.man
+share/lowdown/ms/
+share/lowdown/ms/default.ms
 share/lowdown/odt/
 share/lowdown/odt/styles.xml

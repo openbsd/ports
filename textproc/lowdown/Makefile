@@ -1,5 +1,5 @@
 COMMENT =	simple markdown translator
-DISTNAME =	lowdown-1.4.0
+DISTNAME =	lowdown-2.0.2
 CATEGORIES =	textproc
 
 SHARED_LIBS =	lowdown		3.0	# 3
