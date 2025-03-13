@@ -1,12 +1,12 @@
 Index: src/CMakeLists.txt
 --- src/CMakeLists.txt.orig
 +++ src/CMakeLists.txt
-@@ -138,6 +138,8 @@ target_link_libraries(PrusaSlicer libslic3r_gui)
-         target_link_libraries(PrusaSlicer ws2_32 uxtheme setupapi)
+@@ -167,6 +167,8 @@ if (SLIC3R_GUI)
+         target_link_libraries(PrusaSlicer PRIVATE ws2_32 uxtheme setupapi)
      elseif (APPLE)
-         target_link_libraries(PrusaSlicer "-framework OpenGL")
+         target_link_libraries(PrusaSlicer PRIVATE "-framework OpenGL")
 +    elseif (CMAKE_SYSTEM_NAME STREQUAL "OpenBSD")
 +        # no-op
      else ()
-         target_link_libraries(PrusaSlicer -ldl)
+         target_link_libraries(PrusaSlicer PRIVATE -ldl)
      endif ()

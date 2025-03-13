@@ -2,7 +2,7 @@ COMMENT =	g-code generator for 3D printers
 ONLY_FOR_ARCHS = ${LP64_ARCHS}
 DPB_PROPERTIES = parallel
 
-V =		2.9.0
+V =		2.9.1
 PKGNAME =	prusaslicer-${V}
 
 GH_ACCOUNT =	prusa3d
@@ -33,7 +33,7 @@ WANTLIB += intl javascriptcoregtk-4.1 jpeg m mpfr nlopt openvdb
 WANTLIB += pango-1.0 pangocairo-1.0 png qhull_r soup-3.0 ssl tbb
 WANTLIB += tbbmalloc wayland-client wayland-egl webkit2gtk-4.1
 WANTLIB += wx_baseu-3.2 wx_gtk3u_core-3.2 wx_gtk3u_gl-3.2 wx_gtk3u_html-3.2
-WANTLIB += wx_gtk3u_webview-3.2 z
+WANTLIB += wx_gtk3u_webview-3.2 z z3
 
 FIX_CRLF_FILES =	src/slic3r/GUI/GLCanvas3D.cpp
 
@@ -62,6 +62,7 @@ LIB_DEPENDS = 		cad/opencascade \
 			graphics/png \
 			math/nlopt \
 			math/qhull \
+			math/z3 \
 			net/curl \
 			wayland/wayland \
 			x11/dbus \

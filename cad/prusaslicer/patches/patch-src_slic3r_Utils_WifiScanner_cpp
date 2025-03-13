@@ -1,7 +1,7 @@
 Index: src/slic3r/Utils/WifiScanner.cpp
 --- src/slic3r/Utils/WifiScanner.cpp.orig
 +++ src/slic3r/Utils/WifiScanner.cpp
-@@ -16,7 +16,7 @@
+@@ -18,7 +18,7 @@
  #include "WifiScannerMac.h"
  #endif 
  

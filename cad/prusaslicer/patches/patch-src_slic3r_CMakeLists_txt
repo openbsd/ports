@@ -1,7 +1,7 @@
 Index: src/slic3r/CMakeLists.txt
 --- src/slic3r/CMakeLists.txt.orig
 +++ src/slic3r/CMakeLists.txt
-@@ -393,7 +393,7 @@ set(SLIC3R_GUI_SOURCES
+@@ -395,7 +395,7 @@ set(SLIC3R_GUI_SOURCES
  )
  
  find_package(NanoSVG REQUIRED)
@@ -10,7 +10,7 @@ Index: src/slic3r/CMakeLists.txt
      find_package(OpenSSL REQUIRED)
  endif()
  
-@@ -434,6 +434,9 @@ endforeach()
+@@ -436,6 +436,9 @@ endforeach()
  
  encoding_check(libslic3r_gui)
  
@@ -20,7 +20,7 @@ Index: src/slic3r/CMakeLists.txt
  target_link_libraries(
      libslic3r_gui
      PUBLIC
-@@ -457,7 +460,7 @@ target_link_libraries(
+@@ -459,7 +462,7 @@ target_link_libraries(
  
  if (MSVC)
      target_link_libraries(libslic3r_gui PUBLIC Setupapi.lib)
@@ -29,7 +29,7 @@ Index: src/slic3r/CMakeLists.txt
      target_link_libraries(libslic3r_gui PUBLIC
          ${DBus1_LIBRARIES}
          OpenSSL::SSL
-@@ -484,7 +487,7 @@ if (UNIX AND NOT APPLE)
+@@ -486,7 +489,7 @@ if (UNIX AND NOT APPLE)
      find_package(GTK${SLIC3R_GTK} REQUIRED)
      find_package(PkgConfig REQUIRED)
  
