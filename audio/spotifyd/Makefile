@@ -5,7 +5,7 @@ USE_NOEXECONLY =	Yes
 COMMENT =		Spotify client running as UNIX daemon
 GH_ACCOUNT =		Spotifyd
 GH_PROJECT =		spotifyd
-GH_TAGNAME =		v0.4.0
+GH_TAGNAME =		v0.4.1
 CATEGORIES =		audio net
 
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
