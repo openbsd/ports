@@ -5,7 +5,7 @@ Index: utils/novnc_proxy
 -#!/usr/bin/env bash
 +#!/bin/ksh
  
- # Copyright (C) 2018 The noVNC Authors
+ # Copyright (C) 2018 The noVNC authors
  # Licensed under MPL 2.0 or any later version (see LICENSE.txt)
 @@ -118,14 +118,8 @@ fi
  

@@ -2,7 +2,7 @@ COMMENT=	VNC client using HTML5 (Web Sockets, Canvas)
 
 GH_ACCOUNT=	novnc
 GH_PROJECT=	noVNC
-GH_TAGNAME=	v1.5.0
+GH_TAGNAME=	v1.6.0
 
 CATEGORIES=	net www
 
@@ -28,6 +28,8 @@ do-install:
 	chown -R ${SHAREOWN}:${SHAREGRP} ${PREFIX}/noVNC
 	chmod a=rX,u+w ${PREFIX}/noVNC
 	find ${PREFIX}/noVNC -name '*${PATCHORIG}' -delete
+	mv ${PREFIX}/noVNC/defaults.json{,.dist}
+	mv ${PREFIX}/noVNC/mandatory.json{,.dist}
 	ln -s ${TRUEPREFIX}/noVNC/utils/novnc_proxy \
 		${WRKINST}/usr/local/bin/
 	mv ${PREFIX}/noVNC/docs/novnc_proxy.1 \

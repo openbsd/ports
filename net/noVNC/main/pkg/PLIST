@@ -69,6 +69,7 @@ noVNC/app/styles/
 noVNC/app/styles/Orbitron700.ttf
 noVNC/app/styles/Orbitron700.woff
 noVNC/app/styles/base.css
+noVNC/app/styles/constants.css
 noVNC/app/styles/input.css
 noVNC/app/ui.js
 noVNC/app/webutil.js
@@ -84,12 +85,14 @@ noVNC/core/crypto/md5.js
 noVNC/core/crypto/rsa.js
 noVNC/core/decoders/
 noVNC/core/decoders/copyrect.js
+noVNC/core/decoders/h264.js
 noVNC/core/decoders/hextile.js
 noVNC/core/decoders/jpeg.js
 noVNC/core/decoders/raw.js
 noVNC/core/decoders/rre.js
 noVNC/core/decoders/tight.js
 noVNC/core/decoders/tightpng.js
+noVNC/core/decoders/zlib.js
 noVNC/core/decoders/zrle.js
 noVNC/core/deflator.js
 noVNC/core/display.js
@@ -117,6 +120,8 @@ noVNC/core/util/int.js
 noVNC/core/util/logging.js
 noVNC/core/util/strings.js
 noVNC/core/websock.js
+noVNC/defaults.json.dist
+@sample noVNC/defaults.json
 noVNC/docs/
 noVNC/docs/API-internal.md
 noVNC/docs/API.md
@@ -135,6 +140,8 @@ noVNC/docs/rfbproto-3.7.pdf
 noVNC/docs/rfbproto-3.8.pdf
 noVNC/eslint.config.mjs
 noVNC/karma.conf.js
+noVNC/mandatory.json.dist
+@sample noVNC/mandatory.json
 noVNC/package.json
 noVNC/po/
 noVNC/po/Makefile
@@ -174,6 +181,7 @@ noVNC/tests/test.copyrect.js
 noVNC/tests/test.deflator.js
 noVNC/tests/test.display.js
 noVNC/tests/test.gesturehandler.js
+noVNC/tests/test.h264.js
 noVNC/tests/test.helper.js
 noVNC/tests/test.hextile.js
 noVNC/tests/test.inflator.js
@@ -189,6 +197,7 @@ noVNC/tests/test.tightpng.js
 noVNC/tests/test.util.js
 noVNC/tests/test.websock.js
 noVNC/tests/test.webutil.js
+noVNC/tests/test.zlib.js
 noVNC/tests/test.zrle.js
 noVNC/tests/vnc_playback.html
 noVNC/utils/
@@ -222,6 +231,4 @@ noVNC/vnc.html
 noVNC/vnc_lite.html
 @cwd /usr/local
 bin/novnc_proxy
-man/man1/novnc_proxy.1
-
-
+@man man/man1/novnc_proxy.1
