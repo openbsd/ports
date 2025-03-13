@@ -1,6 +1,6 @@
 COMMENT=	classes without boilerplate
 
-MODPY_DISTV=	25.1.0
+MODPY_DISTV=	25.2.0
 DISTNAME=	attrs-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
