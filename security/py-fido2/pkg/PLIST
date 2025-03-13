@@ -134,10 +134,12 @@ share/examples/${MODPY_PY_PREFIX}fido2/acr1252u.py
 share/examples/${MODPY_PY_PREFIX}fido2/bio_enrollment.py
 share/examples/${MODPY_PY_PREFIX}fido2/cred_blob.py
 share/examples/${MODPY_PY_PREFIX}fido2/credential.py
+share/examples/${MODPY_PY_PREFIX}fido2/exampleutils.py
 share/examples/${MODPY_PY_PREFIX}fido2/get_info.py
 share/examples/${MODPY_PY_PREFIX}fido2/hmac_secret.py
 share/examples/${MODPY_PY_PREFIX}fido2/large_blobs.py
 share/examples/${MODPY_PY_PREFIX}fido2/multi_device.py
+share/examples/${MODPY_PY_PREFIX}fido2/prf.py
 share/examples/${MODPY_PY_PREFIX}fido2/resident_key.py
 share/examples/${MODPY_PY_PREFIX}fido2/u2f_nfc.py
 share/examples/${MODPY_PY_PREFIX}fido2/verify_attestation.py
