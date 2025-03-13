@@ -1,5 +1,6 @@
 COMMENT=	statistical and novel interactive HTML plots for Python
 
+# 3.7.0 needs narwhals
 MODPY_DISTV=	3.6.3
 DISTNAME=	bokeh-${MODPY_DISTV}
 PKGNAME=	py-bokeh-${MODPY_DISTV}
@@ -21,16 +22,17 @@ NO_TEST=	Yes
 BUILD_DEPENDS=	devel/py-colorama \
 		devel/py-setuptools-git-versioning
 
-RUN_DEPENDS=	devel/py-typing-extensions>=3.10.0.0 \
-		geo/py-xyzservices \
-		graphics/py-Pillow \
+RUN_DEPENDS=	www/py-jinja2 \
 		math/py-contourpy \
 		math/py-numpy \
-		math/py-pandas \
 		sysutils/py-packaging \
+		math/py-pandas \
+		graphics/py-Pillow \
 		textproc/py-yaml \
-		www/py-jinja2 \
-		www/py-tornado
+		www/py-tornado \
+		geo/py-xyzservices
+# not listed in pyproject.toml but still needed
+RUN_DEPENDS+=	devel/py-typing-extensions>=3.10.0.0
 
 TEST_DEPENDS=	devel/ipython \
 		devel/py-flaky \
