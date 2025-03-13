@@ -1,6 +1,6 @@
 COMMENT =		PySide6 development tools
 PKGNAME =		pyside6-tools-${VERSION}
-REVISION =		0
+REVISION =		1
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Concurrent Qt6Core Qt6Designer
 WANTLIB += Qt6DesignerComponents Qt6Gui Qt6Help Qt6Network Qt6OpenGL
@@ -15,6 +15,7 @@ WANTLIB += llvm${MODCLANG_VERSION}/lib/clang
 
 MODULES +=		lang/clang \
 			lang/python
+MODCLANG_VERSION =	19
 
 LIB_DEPENDS =		archivers/zstd \
 			x11/qt6/qtquick3d \
