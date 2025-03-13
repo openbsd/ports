@@ -1,6 +1,6 @@
 COMMENT=	microcode update binaries for AMD CPUs
 FW_DRIVER=	amd
-FW_VER=		20241210
+FW_VER=		20250311
 #DISTNAME=	linux-firmware-76af388fd7011dd3ab05b637cfb510a10d440487
 DISTNAME=	linux-firmware-${FW_VER}
 EXTRACT_SUFX=	.tar.xz
