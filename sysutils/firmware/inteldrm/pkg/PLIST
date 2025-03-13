@@ -13,7 +13,6 @@ firmware/i915/cml_huc_4.0.0.bin
 firmware/i915/dg1_dmc_ver2_02.bin
 firmware/i915/dg1_guc_70.bin
 firmware/i915/dg1_huc.bin
-firmware/i915/dg2_dmc_ver2_07.bin
 firmware/i915/dg2_dmc_ver2_08.bin
 firmware/i915/dg2_guc_70.bin
 firmware/i915/dg2_huc_gsc.bin
