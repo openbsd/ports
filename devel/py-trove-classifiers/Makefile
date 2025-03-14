@@ -1,6 +1,6 @@
 COMMENT=	implementation of JSON Schema validation for Python
 
-MODPY_DISTV=	2025.3.3.18
+MODPY_DISTV=	2025.3.13.13
 DISTNAME=	trove_classifiers-${MODPY_DISTV}
 PKGNAME=	py-trove-classifiers-${MODPY_DISTV}
 
@@ -12,8 +12,8 @@ HOMEPAGE=	https://github.com/pypa/trove-classifiers
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
+MODPY_PI=	Yes
 
 BUILD_DEPENDS=	devel/py-calver
 
