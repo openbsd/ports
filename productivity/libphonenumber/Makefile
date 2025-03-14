@@ -2,7 +2,7 @@ COMMENT =	C++ library to parse/format/validate phone numbers
 
 GH_ACCOUNT =	google
 GH_PROJECT =	libphonenumber
-GH_TAGNAME =	v9.0.0
+GH_TAGNAME =	v9.0.1
 
 SHARED_LIBS +=  geocoding                 0.1 # 8.12
 SHARED_LIBS +=  phonenumber               0.1 # 8.12
@@ -26,10 +26,9 @@ WANTLIB += absl_low_level_hash absl_malloc_internal absl_raw_hash_set
 WANTLIB += absl_raw_logging_internal absl_spinlock_wait absl_stacktrace
 WANTLIB += absl_str_format_internal absl_string_view absl_strings
 WANTLIB += absl_strings_internal absl_symbolize absl_synchronization
-WANTLIB += absl_throw_delegate absl_time absl_time_zone absl_utf8_for_code_point
-WANTLIB += boost_atomic-mt boost_chrono-mt boost_date_time-mt
-WANTLIB += boost_system-mt boost_thread-mt icui18n icuuc m protobuf
-WANTLIB += absl_tracing_internal
+WANTLIB += absl_throw_delegate absl_time absl_time_zone absl_tracing_internal
+WANTLIB += absl_utf8_for_code_point boost_date_time-mt boost_system-mt
+WANTLIB += boost_thread-mt icui18n icuuc m protobuf
 
 MODULES =		devel/cmake
 
