@@ -1,6 +1,6 @@
-COMMENT =	window manager for KDE Plasma Desktops
-BUGFIX_VERSION =	6.3.2.1
-DISTNAME =	kwin-${BUGFIX_VERSION}
+COMMENT =		window manager for KDE Plasma Desktops
+BUGFIX_VERSION =	6.3.3.1
+DISTNAME =		kwin-${BUGFIX_VERSION}
 
 SHARED_LIBS +=  kcmkwincommon             1.0 # 0.0
 SHARED_LIBS +=  kwin                      1.0 # 0.0
