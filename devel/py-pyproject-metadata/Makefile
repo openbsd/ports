@@ -1,9 +1,8 @@
 COMMENT=	PEP 621 metadata parsing
 
-MODPY_DISTV=	0.9.0
+MODPY_DISTV=	0.9.1
 DISTNAME=	pyproject_metadata-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
-REVISION=	1
 
 CATEGORIES=	devel
 
