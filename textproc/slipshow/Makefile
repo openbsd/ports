@@ -38,7 +38,8 @@ SITES.opamrepo =	https://kapouay.eu.org/pub/opam/
 DISTFILES.opamrepo =	${MODOPAM_REPO_NAME}.tar.gz
 
 BUILD_DEPENDS +=	devel/gmp,-main \
-			devel/libffi
+			devel/libffi \
+			shells/bash
 LIB_DEPENDS +=		devel/libev
 
 CONFIGURE_STYLE +=	opam
