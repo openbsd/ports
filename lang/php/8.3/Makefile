@@ -1,4 +1,4 @@
-PHP_VERSION=	8.3.17
+PHP_VERSION=	8.3.18
 AUTOCONF_VERSION= 2.71
 
 # keep -gd above 7.6-stable; WANTLIB
