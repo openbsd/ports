@@ -1,12 +1,14 @@
 COMMENT =	perl implementation of the SSH1 and SSH2 protocols
 
 MODULES =	cpan
-DISTNAME =	Net-SSH-Perl-2.14
-REVISION =	1
+DISTNAME =	Net-SSH-Perl-2.143
+CPAN_AUTHOR =	BRIANDFOY
 CATEGORIES =	net security
 
 # perl
 PERMIT_PACKAGE =	Yes
+
+HOMEPAGE =	https://github.com/briandfoy/net-ssh-perl
 
 WANTLIB += c perl
 
@@ -20,9 +22,8 @@ RUN_DEPENDS +=	devel/p5-File-HomeDir \
 		security/p5-CryptX \
 		security/p5-Crypt-Curve25519
 
-# 03-packet.t needs this, but then it just hangs in test 2, known since
-# early 2004 (https://rt.cpan.org/Public/Bug/Display.html?id=67586)
-#TEST_ENV=	HOME=${WRKDIST}
+# 03-packet.t needs this
+TEST_ENV =	HOME=${WRKDIST}
 
 MODCPAN_EXAMPLES =	Yes
 MODCPAN_EXAMPLES_DIST =	eg

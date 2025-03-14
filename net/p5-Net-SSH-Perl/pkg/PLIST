@@ -89,7 +89,7 @@ ${P5ARCH}/Net/SSH/Perl/Util/Win32.pm
 ${P5ARCH}/auto/Net/
 ${P5ARCH}/auto/Net/SSH/
 ${P5ARCH}/auto/Net/SSH/Perl/
-${P5ARCH}/auto/Net/SSH/Perl/Perl.so
+@so ${P5ARCH}/auto/Net/SSH/Perl/Perl.so
 @man man/man3p/Net::SSH::Perl.3p
 @man man/man3p/Net::SSH::Perl::Agent.3p
 @man man/man3p/Net::SSH::Perl::Auth.3p
