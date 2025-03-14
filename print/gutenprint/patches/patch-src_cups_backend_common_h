@@ -1,7 +1,7 @@
 Index: src/cups/backend_common.h
 --- src/cups/backend_common.h.orig
 +++ src/cups/backend_common.h
-@@ -44,6 +44,16 @@
+@@ -45,6 +45,16 @@
  #include <config.h>
  #endif
  

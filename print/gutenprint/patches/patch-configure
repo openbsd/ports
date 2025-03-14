@@ -6,16 +6,7 @@ Don't enforce compiler optimizations.
 Index: configure
 --- configure.orig
 +++ configure
-@@ -18629,7 +18629,7 @@ _ACEOF
- 
- if test x$ac_compiler_gnu = "xyes"; then
- 
--  for stp_ac_arg in -Wall -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Wwrite-strings -Werror-implicit-function-declaration -Winline -Wformat=2 -finline-limit=131072 -Wformat -Werror=format-security -D_POSIX_C_SOURCE=200809L -std=c99 ; do
-+  for stp_ac_arg in -Wall -Wcast-align -Wstrict-prototypes -Wmissing-prototypes -Wmissing-declarations -Wnested-externs -Wwrite-strings -Werror-implicit-function-declaration -Winline -Wformat=2 -finline-limit=131072 -Wformat -Werror=format-security -std=c99 ; do
- 
-   { $as_echo "$as_me:${as_lineno-$LINENO}: checking if ${CC} supports ${stp_ac_arg}" >&5
- $as_echo_n "checking if ${CC} supports ${stp_ac_arg}... " >&6; }
-@@ -18731,7 +18731,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.$
+@@ -20454,7 +20454,7 @@ rm -f core conftest.err conftest.$ac_objext conftest.b
  
    else
  
@@ -23,4 +14,13 @@ Index: configure
 +  for stp_ac_arg in '' ; do
      stp_ac_save_CFLAGS="${CFLAGS}"
  
-   { $as_echo "$as_me:${as_lineno-$LINENO}: checking if ${CC} supports ${stp_ac_arg}" >&5
+   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking if ${CC} supports ${stp_ac_arg}" >&5
+@@ -20636,7 +20636,7 @@ fi
+ 
+ # C99 + POSIX extras
+ 
+-  for stp_ac_arg in -D_POSIX_C_SOURCE=200809L -std=c99 ; do
++  for stp_ac_arg in -std=c99 ; do
+ 
+   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking if ${CC} supports ${stp_ac_arg}" >&5
+ printf %s "checking if ${CC} supports ${stp_ac_arg}... " >&6; }

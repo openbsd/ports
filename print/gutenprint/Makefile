@@ -1,8 +1,7 @@
 COMMENT=		suite of printer drivers for UNIX
 
-V=			5.3.4
+V=			5.3.5
 DISTNAME=		gutenprint-${V}
-REVISION=		3
 
 MAJOR_V=		${V:C/^([0-9]+\.[0-9]+).*/\1/}
 SUBST_VARS=		MAJOR_V
@@ -24,8 +23,7 @@ COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
 WANTLIB += avahi-client avahi-common c crypto cups curses dbus-1
-WANTLIB += execinfo iconv intl m pthread readline ssl usb-1.0
-WANTLIB += z
+WANTLIB += iconv intl m pthread readline ssl usb-1.0 z
 
 SITES=			${SITE_SOURCEFORGE:=gimp-print/}
 

@@ -43,6 +43,7 @@ lib/pkgconfig/gutenprint.pc
 @mode
 @bin libexec/cups/driver/gutenprint.${MAJOR_V}
 @bin libexec/cups/filter/commandtocanon
+@bin libexec/cups/filter/commandtodyesub
 @bin libexec/cups/filter/commandtoepson
 @bin libexec/cups/filter/rastertogutenprint.${MAJOR_V}
 @man man/man1/escputil.1
@@ -65,6 +66,24 @@ share/doc/gutenprint/gutenprint-users-manual.odt
 share/doc/gutenprint/gutenprint-users-manual.pdf
 share/doc/gutenprint/gutenprint.pdf
 share/doc/gutenprint/reference-html/
+share/doc/gutenprint/reference-html/a2128.html
+share/doc/gutenprint/reference-html/book1.html
+share/doc/gutenprint/reference-html/c1723.html
+share/doc/gutenprint/reference-html/c193.html
+share/doc/gutenprint/reference-html/c1974.html
+share/doc/gutenprint/reference-html/c199.html
+share/doc/gutenprint/reference-html/c38.html
+share/doc/gutenprint/reference-html/c463.html
+share/doc/gutenprint/reference-html/c47.html
+share/doc/gutenprint/reference-html/f14.html
+share/doc/gutenprint/reference-html/ln10.html
+share/doc/gutenprint/reference-html/x1675.html
+share/doc/gutenprint/reference-html/x1740.html
+share/doc/gutenprint/reference-html/x2159.html
+share/doc/gutenprint/reference-html/x270.html
+share/doc/gutenprint/reference-html/x66.html
+share/doc/gutenprint/reference-html/x78.html
+share/doc/gutenprint/reference-html/x961.html
 share/examples/gutenprint/
 share/examples/gutenprint/command.types
 @sample ${SYSCONFDIR}/cups/command.types
@@ -111,6 +130,7 @@ share/gutenprint/${MAJOR_V}/xml/escp2/inks/pro_gen1.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/pro_gen2.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/pro_pigment.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/pro_ultrachrome.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/inks/pro_ultrachrome_d6s.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/pro_ultrachrome_k3.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/pro_ultrachrome_k34.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/pro_ultrachrome_k3v.xml
@@ -118,6 +138,8 @@ share/gutenprint/${MAJOR_V}/xml/escp2/inks/pro_ultrachrome_k3v10.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/pro_ultrachrome_k3v10a.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/pro_ultrachrome_k3v10b.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/pro_ultrachrome_k3v4.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/inks/pro_ultrachrome_t913x_ce.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/inks/pro_ultrachrome_t913x_se.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/standard.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/standard_gen0.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inks/sx445.xml
@@ -133,6 +155,7 @@ share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/cd.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/cd_cutter_roll_feed.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/cd_roll_feed.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/cutter_roll_feed.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/cutter_roll_only.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/default-duplex.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/default.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/inputslots/pro3880.xml
@@ -181,11 +204,14 @@ share/gutenprint/${MAJOR_V}/xml/escp2/media/pro_gen1.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/pro_gen2.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/pro_pigment.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/pro_ultrachrome.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/media/pro_ultrachrome_d6s.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/pro_ultrachrome_k3.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/pro_ultrachrome_k3v.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/pro_ultrachrome_k3v10.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/pro_ultrachrome_k3v10a.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/pro_ultrachrome_k3v10b.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/media/pro_ultrachrome_t913x_ce.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/media/pro_ultrachrome_t913x_se.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/r800.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/standard.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/media/standard_gen0.xml
@@ -216,6 +242,8 @@ share/gutenprint/${MAJOR_V}/xml/escp2/model/base/pro_ultrachrome_k3v10.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/base/pro_ultrachrome_k3v10_base.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/base/pro_ultrachrome_k3v10a.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/base/pro_ultrachrome_k3v10b.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/pro_ultrachrome_t913x_ce.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/base/pro_ultrachrome_t913x_se.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/base/pro_x000.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/base/pro_x500.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/base/pro_x600.xml
@@ -271,6 +299,9 @@ share/gutenprint/${MAJOR_V}/xml/escp2/model/model_132.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_133.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_134.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_135.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/model_136.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/model_137.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/model/model_138.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_14.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_15.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/model/model_16.xml
@@ -367,6 +398,7 @@ share/gutenprint/${MAJOR_V}/xml/escp2/qualitypresets/p1_5.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/qualitypresets/picturemate.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/qualitypresets/prox900.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/qualitypresets/standard.xml
+share/gutenprint/${MAJOR_V}/xml/escp2/qualitypresets/surelab.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/qualitypresets/v2880.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/qualitypresets/wf40.xml
 share/gutenprint/${MAJOR_V}/xml/escp2/resolutions/
@@ -427,10 +459,14 @@ share/locale/hr/LC_MESSAGES/gutenprint.mo
 share/locale/hr/gutenprint_hr.po
 share/locale/hu/LC_MESSAGES/gutenprint.mo
 share/locale/hu/gutenprint_hu.po
+share/locale/is/LC_MESSAGES/gutenprint.mo
+share/locale/is/gutenprint_is.po
 share/locale/it/LC_MESSAGES/gutenprint.mo
 share/locale/it/gutenprint_it.po
 share/locale/ja/LC_MESSAGES/gutenprint.mo
 share/locale/ja/gutenprint_ja.po
+share/locale/ka/LC_MESSAGES/gutenprint.mo
+share/locale/ka/gutenprint_ka.po
 share/locale/nb/LC_MESSAGES/gutenprint.mo
 share/locale/nb/gutenprint_nb.po
 share/locale/nl/LC_MESSAGES/gutenprint.mo
@@ -439,6 +475,8 @@ share/locale/pl/LC_MESSAGES/gutenprint.mo
 share/locale/pl/gutenprint_pl.po
 share/locale/pt/LC_MESSAGES/gutenprint.mo
 share/locale/pt/gutenprint_pt.po
+share/locale/ro/LC_MESSAGES/gutenprint.mo
+share/locale/ro/gutenprint_ro.po
 share/locale/ru/LC_MESSAGES/gutenprint.mo
 share/locale/ru/gutenprint_ru.po
 share/locale/sk/LC_MESSAGES/gutenprint.mo
