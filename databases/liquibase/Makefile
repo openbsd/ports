@@ -5,10 +5,9 @@ DISTNAME =		liquibase-${VERSION}-bin
 PKGNAME =		liquibase-${VERSION}
 WRKDIST =		${WRKDIR}
 CATEGORIES =		databases
-REVISION =		2
+REVISION =		3
 
 HOMEPAGE =		http://liquibase.org/
-MAINTAINER =		Bryan Everly <bryan@bceassociates.com>
 
 # Apache 2.0
 PERMIT_PACKAGE=	Yes

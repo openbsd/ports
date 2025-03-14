@@ -4,9 +4,7 @@ MODPY_DISTV=	0.9.23
 DISTNAME=		dnslib-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		net
-REVISION=		2
-
-MAINTAINER=		Bryan Everly <bryan@bceassociates.com>
+REVISION=		3
 
 # BSD
 PERMIT_PACKAGE=	Yes

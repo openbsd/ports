@@ -4,13 +4,11 @@ GH_ACCOUNT=		trueos
 GH_PROJECT=		lumina
 GH_TAGNAME=		v1.4.0-p1
 PKGNAME=		lumina-1.4.0pl1
-REVISION=		8
+REVISION=		9
 
 CATEGORIES=		x11
 
 HOMEPAGE=		https://lumina-desktop.org/
-
-MAINTAINER=		Bryan C. Everly <bryan@bceassociates.com>
 
 # BSD
 PERMIT_PACKAGE=	Yes

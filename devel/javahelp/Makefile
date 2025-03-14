@@ -6,10 +6,9 @@ DISTNAME =		javahelp${VERSION}
 DISTFILES =		javahelp${VERSION_}.zip
 PKGNAME =		javahelp-${VERSION}
 CATEGORIES =		devel
-REVISION =		3
+REVISION =		4
 
 HOMEPAGE =		https://javahelp.java.net/
-MAINTAINER =		Bryan Everly <bryan@bceassociates.com>
 
 MODULES =		java
 MODJAVA_VER =		1.8+
