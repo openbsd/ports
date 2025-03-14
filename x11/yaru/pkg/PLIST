@@ -3,224 +3,22 @@ share/gnome-shell/modes/
 share/gnome-shell/modes/yaru.json
 share/gnome-shell/theme/
 share/gnome-shell/theme/Yaru/
-share/gnome-shell/theme/Yaru-blue/
-share/gnome-shell/theme/Yaru-blue-dark/
-share/gnome-shell/theme/Yaru-blue-dark/calendar-today-light.svg
-share/gnome-shell/theme/Yaru-blue-dark/calendar-today.svg
-share/gnome-shell/theme/Yaru-blue-dark/dash-placeholder.svg
-share/gnome-shell/theme/Yaru-blue-dark/gnome-shell-high-contrast.css
-share/gnome-shell/theme/Yaru-blue-dark/gnome-shell-start.svg
-share/gnome-shell/theme/Yaru-blue-dark/gnome-shell.css
-share/gnome-shell/theme/Yaru-blue-dark/pad-osd.css
-share/gnome-shell/theme/Yaru-blue-dark/process-working-dark.svg
-share/gnome-shell/theme/Yaru-blue-dark/process-working-light.svg
-share/gnome-shell/theme/Yaru-blue-dark/running-indicator.svg
-share/gnome-shell/theme/Yaru-blue-dark/workspace-placeholder.svg
-share/gnome-shell/theme/Yaru-blue/calendar-today-light.svg
-share/gnome-shell/theme/Yaru-blue/calendar-today.svg
-share/gnome-shell/theme/Yaru-blue/dash-placeholder.svg
-share/gnome-shell/theme/Yaru-blue/gnome-shell-start.svg
-share/gnome-shell/theme/Yaru-blue/gnome-shell.css
-share/gnome-shell/theme/Yaru-blue/pad-osd.css
-share/gnome-shell/theme/Yaru-blue/process-working-dark.svg
-share/gnome-shell/theme/Yaru-blue/process-working-light.svg
-share/gnome-shell/theme/Yaru-blue/running-indicator.svg
-share/gnome-shell/theme/Yaru-blue/workspace-placeholder.svg
 share/gnome-shell/theme/Yaru-dark/
 share/gnome-shell/theme/Yaru-dark/calendar-today-light.svg
 share/gnome-shell/theme/Yaru-dark/calendar-today.svg
 share/gnome-shell/theme/Yaru-dark/dash-placeholder.svg
+share/gnome-shell/theme/Yaru-dark/gnome-shell-high-contrast.css
 share/gnome-shell/theme/Yaru-dark/gnome-shell-start.svg
 share/gnome-shell/theme/Yaru-dark/gnome-shell.css
 share/gnome-shell/theme/Yaru-dark/pad-osd.css
-share/gnome-shell/theme/Yaru-dark/process-working-dark.svg
-share/gnome-shell/theme/Yaru-dark/process-working-light.svg
 share/gnome-shell/theme/Yaru-dark/running-indicator.svg
 share/gnome-shell/theme/Yaru-dark/workspace-placeholder.svg
-share/gnome-shell/theme/Yaru-magenta/
-share/gnome-shell/theme/Yaru-magenta-dark/
-share/gnome-shell/theme/Yaru-magenta-dark/calendar-today-light.svg
-share/gnome-shell/theme/Yaru-magenta-dark/calendar-today.svg
-share/gnome-shell/theme/Yaru-magenta-dark/dash-placeholder.svg
-share/gnome-shell/theme/Yaru-magenta-dark/gnome-shell-start.svg
-share/gnome-shell/theme/Yaru-magenta-dark/gnome-shell.css
-share/gnome-shell/theme/Yaru-magenta-dark/pad-osd.css
-share/gnome-shell/theme/Yaru-magenta-dark/process-working-dark.svg
-share/gnome-shell/theme/Yaru-magenta-dark/process-working-light.svg
-share/gnome-shell/theme/Yaru-magenta-dark/running-indicator.svg
-share/gnome-shell/theme/Yaru-magenta-dark/workspace-placeholder.svg
-share/gnome-shell/theme/Yaru-magenta/calendar-today-light.svg
-share/gnome-shell/theme/Yaru-magenta/calendar-today.svg
-share/gnome-shell/theme/Yaru-magenta/dash-placeholder.svg
-share/gnome-shell/theme/Yaru-magenta/gnome-shell-start.svg
-share/gnome-shell/theme/Yaru-magenta/gnome-shell.css
-share/gnome-shell/theme/Yaru-magenta/pad-osd.css
-share/gnome-shell/theme/Yaru-magenta/process-working-dark.svg
-share/gnome-shell/theme/Yaru-magenta/process-working-light.svg
-share/gnome-shell/theme/Yaru-magenta/running-indicator.svg
-share/gnome-shell/theme/Yaru-magenta/workspace-placeholder.svg
-share/gnome-shell/theme/Yaru-olive/
-share/gnome-shell/theme/Yaru-olive-dark/
-share/gnome-shell/theme/Yaru-olive-dark/calendar-today-light.svg
-share/gnome-shell/theme/Yaru-olive-dark/calendar-today.svg
-share/gnome-shell/theme/Yaru-olive-dark/dash-placeholder.svg
-share/gnome-shell/theme/Yaru-olive-dark/gnome-shell-start.svg
-share/gnome-shell/theme/Yaru-olive-dark/gnome-shell.css
-share/gnome-shell/theme/Yaru-olive-dark/pad-osd.css
-share/gnome-shell/theme/Yaru-olive-dark/process-working-dark.svg
-share/gnome-shell/theme/Yaru-olive-dark/process-working-light.svg
-share/gnome-shell/theme/Yaru-olive-dark/running-indicator.svg
-share/gnome-shell/theme/Yaru-olive-dark/workspace-placeholder.svg
-share/gnome-shell/theme/Yaru-olive/calendar-today-light.svg
-share/gnome-shell/theme/Yaru-olive/calendar-today.svg
-share/gnome-shell/theme/Yaru-olive/dash-placeholder.svg
-share/gnome-shell/theme/Yaru-olive/gnome-shell-start.svg
-share/gnome-shell/theme/Yaru-olive/gnome-shell.css
-share/gnome-shell/theme/Yaru-olive/pad-osd.css
-share/gnome-shell/theme/Yaru-olive/process-working-dark.svg
-share/gnome-shell/theme/Yaru-olive/process-working-light.svg
-share/gnome-shell/theme/Yaru-olive/running-indicator.svg
-share/gnome-shell/theme/Yaru-olive/workspace-placeholder.svg
-share/gnome-shell/theme/Yaru-prussiangreen/
-share/gnome-shell/theme/Yaru-prussiangreen-dark/
-share/gnome-shell/theme/Yaru-prussiangreen-dark/calendar-today-light.svg
-share/gnome-shell/theme/Yaru-prussiangreen-dark/calendar-today.svg
-share/gnome-shell/theme/Yaru-prussiangreen-dark/dash-placeholder.svg
-share/gnome-shell/theme/Yaru-prussiangreen-dark/gnome-shell-start.svg
-share/gnome-shell/theme/Yaru-prussiangreen-dark/gnome-shell.css
-share/gnome-shell/theme/Yaru-prussiangreen-dark/pad-osd.css
-share/gnome-shell/theme/Yaru-prussiangreen-dark/process-working-dark.svg
-share/gnome-shell/theme/Yaru-prussiangreen-dark/process-working-light.svg
-share/gnome-shell/theme/Yaru-prussiangreen-dark/running-indicator.svg
-share/gnome-shell/theme/Yaru-prussiangreen-dark/workspace-placeholder.svg
-share/gnome-shell/theme/Yaru-prussiangreen/calendar-today-light.svg
-share/gnome-shell/theme/Yaru-prussiangreen/calendar-today.svg
-share/gnome-shell/theme/Yaru-prussiangreen/dash-placeholder.svg
-share/gnome-shell/theme/Yaru-prussiangreen/gnome-shell-start.svg
-share/gnome-shell/theme/Yaru-prussiangreen/gnome-shell.css
-share/gnome-shell/theme/Yaru-prussiangreen/pad-osd.css
-share/gnome-shell/theme/Yaru-prussiangreen/process-working-dark.svg
-share/gnome-shell/theme/Yaru-prussiangreen/process-working-light.svg
-share/gnome-shell/theme/Yaru-prussiangreen/running-indicator.svg
-share/gnome-shell/theme/Yaru-prussiangreen/workspace-placeholder.svg
-share/gnome-shell/theme/Yaru-purple/
-share/gnome-shell/theme/Yaru-purple-dark/
-share/gnome-shell/theme/Yaru-purple-dark/calendar-today-light.svg
-share/gnome-shell/theme/Yaru-purple-dark/calendar-today.svg
-share/gnome-shell/theme/Yaru-purple-dark/dash-placeholder.svg
-share/gnome-shell/theme/Yaru-purple-dark/gnome-shell-start.svg
-share/gnome-shell/theme/Yaru-purple-dark/gnome-shell.css
-share/gnome-shell/theme/Yaru-purple-dark/pad-osd.css
-share/gnome-shell/theme/Yaru-purple-dark/process-working-dark.svg
-share/gnome-shell/theme/Yaru-purple-dark/process-working-light.svg
-share/gnome-shell/theme/Yaru-purple-dark/running-indicator.svg
-share/gnome-shell/theme/Yaru-purple-dark/workspace-placeholder.svg
-share/gnome-shell/theme/Yaru-purple/calendar-today-light.svg
-share/gnome-shell/theme/Yaru-purple/calendar-today.svg
-share/gnome-shell/theme/Yaru-purple/dash-placeholder.svg
-share/gnome-shell/theme/Yaru-purple/gnome-shell-start.svg
-share/gnome-shell/theme/Yaru-purple/gnome-shell.css
-share/gnome-shell/theme/Yaru-purple/pad-osd.css
-share/gnome-shell/theme/Yaru-purple/process-working-dark.svg
-share/gnome-shell/theme/Yaru-purple/process-working-light.svg
-share/gnome-shell/theme/Yaru-purple/running-indicator.svg
-share/gnome-shell/theme/Yaru-purple/workspace-placeholder.svg
-share/gnome-shell/theme/Yaru-red/
-share/gnome-shell/theme/Yaru-red-dark/
-share/gnome-shell/theme/Yaru-red-dark/calendar-today-light.svg
-share/gnome-shell/theme/Yaru-red-dark/calendar-today.svg
-share/gnome-shell/theme/Yaru-red-dark/dash-placeholder.svg
-share/gnome-shell/theme/Yaru-red-dark/gnome-shell-start.svg
-share/gnome-shell/theme/Yaru-red-dark/gnome-shell.css
-share/gnome-shell/theme/Yaru-red-dark/pad-osd.css
-share/gnome-shell/theme/Yaru-red-dark/process-working-dark.svg
-share/gnome-shell/theme/Yaru-red-dark/process-working-light.svg
-share/gnome-shell/theme/Yaru-red-dark/running-indicator.svg
-share/gnome-shell/theme/Yaru-red-dark/workspace-placeholder.svg
-share/gnome-shell/theme/Yaru-red/calendar-today-light.svg
-share/gnome-shell/theme/Yaru-red/calendar-today.svg
-share/gnome-shell/theme/Yaru-red/dash-placeholder.svg
-share/gnome-shell/theme/Yaru-red/gnome-shell-start.svg
-share/gnome-shell/theme/Yaru-red/gnome-shell.css
-share/gnome-shell/theme/Yaru-red/pad-osd.css
-share/gnome-shell/theme/Yaru-red/process-working-dark.svg
-share/gnome-shell/theme/Yaru-red/process-working-light.svg
-share/gnome-shell/theme/Yaru-red/running-indicator.svg
-share/gnome-shell/theme/Yaru-red/workspace-placeholder.svg
-share/gnome-shell/theme/Yaru-sage/
-share/gnome-shell/theme/Yaru-sage-dark/
-share/gnome-shell/theme/Yaru-sage-dark/calendar-today-light.svg
-share/gnome-shell/theme/Yaru-sage-dark/calendar-today.svg
-share/gnome-shell/theme/Yaru-sage-dark/dash-placeholder.svg
-share/gnome-shell/theme/Yaru-sage-dark/gnome-shell-start.svg
-share/gnome-shell/theme/Yaru-sage-dark/gnome-shell.css
-share/gnome-shell/theme/Yaru-sage-dark/pad-osd.css
-share/gnome-shell/theme/Yaru-sage-dark/process-working-dark.svg
-share/gnome-shell/theme/Yaru-sage-dark/process-working-light.svg
-share/gnome-shell/theme/Yaru-sage-dark/running-indicator.svg
-share/gnome-shell/theme/Yaru-sage-dark/workspace-placeholder.svg
-share/gnome-shell/theme/Yaru-sage/calendar-today-light.svg
-share/gnome-shell/theme/Yaru-sage/calendar-today.svg
-share/gnome-shell/theme/Yaru-sage/dash-placeholder.svg
-share/gnome-shell/theme/Yaru-sage/gnome-shell-start.svg
-share/gnome-shell/theme/Yaru-sage/gnome-shell.css
-share/gnome-shell/theme/Yaru-sage/pad-osd.css
-share/gnome-shell/theme/Yaru-sage/process-working-dark.svg
-share/gnome-shell/theme/Yaru-sage/process-working-light.svg
-share/gnome-shell/theme/Yaru-sage/running-indicator.svg
-share/gnome-shell/theme/Yaru-sage/workspace-placeholder.svg
-share/gnome-shell/theme/Yaru-wartybrown/
-share/gnome-shell/theme/Yaru-wartybrown-dark/
-share/gnome-shell/theme/Yaru-wartybrown-dark/calendar-today-light.svg
-share/gnome-shell/theme/Yaru-wartybrown-dark/calendar-today.svg
-share/gnome-shell/theme/Yaru-wartybrown-dark/dash-placeholder.svg
-share/gnome-shell/theme/Yaru-wartybrown-dark/gnome-shell-start.svg
-share/gnome-shell/theme/Yaru-wartybrown-dark/gnome-shell.css
-share/gnome-shell/theme/Yaru-wartybrown-dark/pad-osd.css
-share/gnome-shell/theme/Yaru-wartybrown-dark/process-working-dark.svg
-share/gnome-shell/theme/Yaru-wartybrown-dark/process-working-light.svg
-share/gnome-shell/theme/Yaru-wartybrown-dark/running-indicator.svg
-share/gnome-shell/theme/Yaru-wartybrown-dark/workspace-placeholder.svg
-share/gnome-shell/theme/Yaru-wartybrown/calendar-today-light.svg
-share/gnome-shell/theme/Yaru-wartybrown/calendar-today.svg
-share/gnome-shell/theme/Yaru-wartybrown/dash-placeholder.svg
-share/gnome-shell/theme/Yaru-wartybrown/gnome-shell-start.svg
-share/gnome-shell/theme/Yaru-wartybrown/gnome-shell.css
-share/gnome-shell/theme/Yaru-wartybrown/pad-osd.css
-share/gnome-shell/theme/Yaru-wartybrown/process-working-dark.svg
-share/gnome-shell/theme/Yaru-wartybrown/process-working-light.svg
-share/gnome-shell/theme/Yaru-wartybrown/running-indicator.svg
-share/gnome-shell/theme/Yaru-wartybrown/workspace-placeholder.svg
-share/gnome-shell/theme/Yaru-yellow/
-share/gnome-shell/theme/Yaru-yellow-dark/
-share/gnome-shell/theme/Yaru-yellow-dark/calendar-today-light.svg
-share/gnome-shell/theme/Yaru-yellow-dark/calendar-today.svg
-share/gnome-shell/theme/Yaru-yellow-dark/dash-placeholder.svg
-share/gnome-shell/theme/Yaru-yellow-dark/gnome-shell-start.svg
-share/gnome-shell/theme/Yaru-yellow-dark/gnome-shell.css
-share/gnome-shell/theme/Yaru-yellow-dark/pad-osd.css
-share/gnome-shell/theme/Yaru-yellow-dark/process-working-dark.svg
-share/gnome-shell/theme/Yaru-yellow-dark/process-working-light.svg
-share/gnome-shell/theme/Yaru-yellow-dark/running-indicator.svg
-share/gnome-shell/theme/Yaru-yellow-dark/workspace-placeholder.svg
-share/gnome-shell/theme/Yaru-yellow/calendar-today-light.svg
-share/gnome-shell/theme/Yaru-yellow/calendar-today.svg
-share/gnome-shell/theme/Yaru-yellow/dash-placeholder.svg
-share/gnome-shell/theme/Yaru-yellow/gnome-shell-start.svg
-share/gnome-shell/theme/Yaru-yellow/gnome-shell.css
-share/gnome-shell/theme/Yaru-yellow/pad-osd.css
-share/gnome-shell/theme/Yaru-yellow/process-working-dark.svg
-share/gnome-shell/theme/Yaru-yellow/process-working-light.svg
-share/gnome-shell/theme/Yaru-yellow/running-indicator.svg
-share/gnome-shell/theme/Yaru-yellow/workspace-placeholder.svg
 share/gnome-shell/theme/Yaru/calendar-today-light.svg
 share/gnome-shell/theme/Yaru/calendar-today.svg
 share/gnome-shell/theme/Yaru/dash-placeholder.svg
 share/gnome-shell/theme/Yaru/gnome-shell-start.svg
 share/gnome-shell/theme/Yaru/gnome-shell.css
 share/gnome-shell/theme/Yaru/pad-osd.css
-share/gnome-shell/theme/Yaru/process-working-dark.svg
-share/gnome-shell/theme/Yaru/process-working-light.svg
 share/gnome-shell/theme/Yaru/running-indicator.svg
 share/gnome-shell/theme/Yaru/workspace-placeholder.svg
 share/gtksourceview-2.0/
@@ -262,6 +60,7 @@ share/icons/Yaru-blue/16x16/apps/filemanager-app.png
 share/icons/Yaru-blue/16x16/apps/gnome-tweak-tool.png
 share/icons/Yaru-blue/16x16/apps/nautilus.png
 share/icons/Yaru-blue/16x16/apps/org.gnome.Nautilus.png
+share/icons/Yaru-blue/16x16/apps/org.gnome.Sysprof.png
 share/icons/Yaru-blue/16x16/apps/org.gnome.Tweaks.png
 share/icons/Yaru-blue/16x16/apps/org.gnome.tweaks.png
 share/icons/Yaru-blue/16x16/apps/preferences-desktop.png
@@ -312,6 +111,7 @@ share/icons/Yaru-blue/16x16@2x/apps/filemanager-app.png
 share/icons/Yaru-blue/16x16@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-blue/16x16@2x/apps/nautilus.png
 share/icons/Yaru-blue/16x16@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-blue/16x16@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-blue/16x16@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-blue/16x16@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-blue/16x16@2x/apps/preferences-desktop.png
@@ -381,6 +181,7 @@ share/icons/Yaru-blue/24x24/apps/filemanager-app.png
 share/icons/Yaru-blue/24x24/apps/gnome-tweak-tool.png
 share/icons/Yaru-blue/24x24/apps/nautilus.png
 share/icons/Yaru-blue/24x24/apps/org.gnome.Nautilus.png
+share/icons/Yaru-blue/24x24/apps/org.gnome.Sysprof.png
 share/icons/Yaru-blue/24x24/apps/org.gnome.Tweaks.png
 share/icons/Yaru-blue/24x24/apps/org.gnome.tweaks.png
 share/icons/Yaru-blue/24x24/apps/preferences-desktop.png
@@ -431,6 +232,7 @@ share/icons/Yaru-blue/24x24@2x/apps/filemanager-app.png
 share/icons/Yaru-blue/24x24@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-blue/24x24@2x/apps/nautilus.png
 share/icons/Yaru-blue/24x24@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-blue/24x24@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-blue/24x24@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-blue/24x24@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-blue/24x24@2x/apps/preferences-desktop.png
@@ -481,6 +283,7 @@ share/icons/Yaru-blue/256x256/apps/filemanager-app.png
 share/icons/Yaru-blue/256x256/apps/gnome-tweak-tool.png
 share/icons/Yaru-blue/256x256/apps/nautilus.png
 share/icons/Yaru-blue/256x256/apps/org.gnome.Nautilus.png
+share/icons/Yaru-blue/256x256/apps/org.gnome.Sysprof.png
 share/icons/Yaru-blue/256x256/apps/org.gnome.Tweaks.png
 share/icons/Yaru-blue/256x256/apps/org.gnome.tweaks.png
 share/icons/Yaru-blue/256x256/apps/preferences-desktop.png
@@ -531,6 +334,7 @@ share/icons/Yaru-blue/256x256@2x/apps/filemanager-app.png
 share/icons/Yaru-blue/256x256@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-blue/256x256@2x/apps/nautilus.png
 share/icons/Yaru-blue/256x256@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-blue/256x256@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-blue/256x256@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-blue/256x256@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-blue/256x256@2x/apps/preferences-desktop.png
@@ -581,6 +385,7 @@ share/icons/Yaru-blue/32x32/apps/filemanager-app.png
 share/icons/Yaru-blue/32x32/apps/gnome-tweak-tool.png
 share/icons/Yaru-blue/32x32/apps/nautilus.png
 share/icons/Yaru-blue/32x32/apps/org.gnome.Nautilus.png
+share/icons/Yaru-blue/32x32/apps/org.gnome.Sysprof.png
 share/icons/Yaru-blue/32x32/apps/org.gnome.Tweaks.png
 share/icons/Yaru-blue/32x32/apps/org.gnome.tweaks.png
 share/icons/Yaru-blue/32x32/apps/preferences-desktop.png
@@ -631,6 +436,7 @@ share/icons/Yaru-blue/32x32@2x/apps/filemanager-app.png
 share/icons/Yaru-blue/32x32@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-blue/32x32@2x/apps/nautilus.png
 share/icons/Yaru-blue/32x32@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-blue/32x32@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-blue/32x32@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-blue/32x32@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-blue/32x32@2x/apps/preferences-desktop.png
@@ -681,6 +487,7 @@ share/icons/Yaru-blue/48x48/apps/filemanager-app.png
 share/icons/Yaru-blue/48x48/apps/gnome-tweak-tool.png
 share/icons/Yaru-blue/48x48/apps/nautilus.png
 share/icons/Yaru-blue/48x48/apps/org.gnome.Nautilus.png
+share/icons/Yaru-blue/48x48/apps/org.gnome.Sysprof.png
 share/icons/Yaru-blue/48x48/apps/org.gnome.Tweaks.png
 share/icons/Yaru-blue/48x48/apps/org.gnome.tweaks.png
 share/icons/Yaru-blue/48x48/apps/preferences-desktop.png
@@ -731,6 +538,7 @@ share/icons/Yaru-blue/48x48@2x/apps/filemanager-app.png
 share/icons/Yaru-blue/48x48@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-blue/48x48@2x/apps/nautilus.png
 share/icons/Yaru-blue/48x48@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-blue/48x48@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-blue/48x48@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-blue/48x48@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-blue/48x48@2x/apps/preferences-desktop.png
@@ -2431,6 +2239,7 @@ share/icons/Yaru-magenta/16x16/apps/filemanager-app.png
 share/icons/Yaru-magenta/16x16/apps/gnome-tweak-tool.png
 share/icons/Yaru-magenta/16x16/apps/nautilus.png
 share/icons/Yaru-magenta/16x16/apps/org.gnome.Nautilus.png
+share/icons/Yaru-magenta/16x16/apps/org.gnome.Sysprof.png
 share/icons/Yaru-magenta/16x16/apps/org.gnome.Tweaks.png
 share/icons/Yaru-magenta/16x16/apps/org.gnome.tweaks.png
 share/icons/Yaru-magenta/16x16/apps/preferences-desktop.png
@@ -2481,6 +2290,7 @@ share/icons/Yaru-magenta/16x16@2x/apps/filemanager-app.png
 share/icons/Yaru-magenta/16x16@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-magenta/16x16@2x/apps/nautilus.png
 share/icons/Yaru-magenta/16x16@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-magenta/16x16@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-magenta/16x16@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-magenta/16x16@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-magenta/16x16@2x/apps/preferences-desktop.png
@@ -2550,6 +2360,7 @@ share/icons/Yaru-magenta/24x24/apps/filemanager-app.png
 share/icons/Yaru-magenta/24x24/apps/gnome-tweak-tool.png
 share/icons/Yaru-magenta/24x24/apps/nautilus.png
 share/icons/Yaru-magenta/24x24/apps/org.gnome.Nautilus.png
+share/icons/Yaru-magenta/24x24/apps/org.gnome.Sysprof.png
 share/icons/Yaru-magenta/24x24/apps/org.gnome.Tweaks.png
 share/icons/Yaru-magenta/24x24/apps/org.gnome.tweaks.png
 share/icons/Yaru-magenta/24x24/apps/preferences-desktop.png
@@ -2600,6 +2411,7 @@ share/icons/Yaru-magenta/24x24@2x/apps/filemanager-app.png
 share/icons/Yaru-magenta/24x24@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-magenta/24x24@2x/apps/nautilus.png
 share/icons/Yaru-magenta/24x24@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-magenta/24x24@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-magenta/24x24@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-magenta/24x24@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-magenta/24x24@2x/apps/preferences-desktop.png
@@ -2650,6 +2462,7 @@ share/icons/Yaru-magenta/256x256/apps/filemanager-app.png
 share/icons/Yaru-magenta/256x256/apps/gnome-tweak-tool.png
 share/icons/Yaru-magenta/256x256/apps/nautilus.png
 share/icons/Yaru-magenta/256x256/apps/org.gnome.Nautilus.png
+share/icons/Yaru-magenta/256x256/apps/org.gnome.Sysprof.png
 share/icons/Yaru-magenta/256x256/apps/org.gnome.Tweaks.png
 share/icons/Yaru-magenta/256x256/apps/org.gnome.tweaks.png
 share/icons/Yaru-magenta/256x256/apps/preferences-desktop.png
@@ -2700,6 +2513,7 @@ share/icons/Yaru-magenta/256x256@2x/apps/filemanager-app.png
 share/icons/Yaru-magenta/256x256@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-magenta/256x256@2x/apps/nautilus.png
 share/icons/Yaru-magenta/256x256@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-magenta/256x256@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-magenta/256x256@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-magenta/256x256@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-magenta/256x256@2x/apps/preferences-desktop.png
@@ -2750,6 +2564,7 @@ share/icons/Yaru-magenta/32x32/apps/filemanager-app.png
 share/icons/Yaru-magenta/32x32/apps/gnome-tweak-tool.png
 share/icons/Yaru-magenta/32x32/apps/nautilus.png
 share/icons/Yaru-magenta/32x32/apps/org.gnome.Nautilus.png
+share/icons/Yaru-magenta/32x32/apps/org.gnome.Sysprof.png
 share/icons/Yaru-magenta/32x32/apps/org.gnome.Tweaks.png
 share/icons/Yaru-magenta/32x32/apps/org.gnome.tweaks.png
 share/icons/Yaru-magenta/32x32/apps/preferences-desktop.png
@@ -2800,6 +2615,7 @@ share/icons/Yaru-magenta/32x32@2x/apps/filemanager-app.png
 share/icons/Yaru-magenta/32x32@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-magenta/32x32@2x/apps/nautilus.png
 share/icons/Yaru-magenta/32x32@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-magenta/32x32@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-magenta/32x32@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-magenta/32x32@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-magenta/32x32@2x/apps/preferences-desktop.png
@@ -2850,6 +2666,7 @@ share/icons/Yaru-magenta/48x48/apps/filemanager-app.png
 share/icons/Yaru-magenta/48x48/apps/gnome-tweak-tool.png
 share/icons/Yaru-magenta/48x48/apps/nautilus.png
 share/icons/Yaru-magenta/48x48/apps/org.gnome.Nautilus.png
+share/icons/Yaru-magenta/48x48/apps/org.gnome.Sysprof.png
 share/icons/Yaru-magenta/48x48/apps/org.gnome.Tweaks.png
 share/icons/Yaru-magenta/48x48/apps/org.gnome.tweaks.png
 share/icons/Yaru-magenta/48x48/apps/preferences-desktop.png
@@ -2900,6 +2717,7 @@ share/icons/Yaru-magenta/48x48@2x/apps/filemanager-app.png
 share/icons/Yaru-magenta/48x48@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-magenta/48x48@2x/apps/nautilus.png
 share/icons/Yaru-magenta/48x48@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-magenta/48x48@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-magenta/48x48@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-magenta/48x48@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-magenta/48x48@2x/apps/preferences-desktop.png
@@ -2972,6 +2790,7 @@ share/icons/Yaru-olive/16x16/apps/filemanager-app.png
 share/icons/Yaru-olive/16x16/apps/gnome-tweak-tool.png
 share/icons/Yaru-olive/16x16/apps/nautilus.png
 share/icons/Yaru-olive/16x16/apps/org.gnome.Nautilus.png
+share/icons/Yaru-olive/16x16/apps/org.gnome.Sysprof.png
 share/icons/Yaru-olive/16x16/apps/org.gnome.Tweaks.png
 share/icons/Yaru-olive/16x16/apps/org.gnome.tweaks.png
 share/icons/Yaru-olive/16x16/apps/preferences-desktop.png
@@ -3022,6 +2841,7 @@ share/icons/Yaru-olive/16x16@2x/apps/filemanager-app.png
 share/icons/Yaru-olive/16x16@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-olive/16x16@2x/apps/nautilus.png
 share/icons/Yaru-olive/16x16@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-olive/16x16@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-olive/16x16@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-olive/16x16@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-olive/16x16@2x/apps/preferences-desktop.png
@@ -3091,6 +2911,7 @@ share/icons/Yaru-olive/24x24/apps/filemanager-app.png
 share/icons/Yaru-olive/24x24/apps/gnome-tweak-tool.png
 share/icons/Yaru-olive/24x24/apps/nautilus.png
 share/icons/Yaru-olive/24x24/apps/org.gnome.Nautilus.png
+share/icons/Yaru-olive/24x24/apps/org.gnome.Sysprof.png
 share/icons/Yaru-olive/24x24/apps/org.gnome.Tweaks.png
 share/icons/Yaru-olive/24x24/apps/org.gnome.tweaks.png
 share/icons/Yaru-olive/24x24/apps/preferences-desktop.png
@@ -3141,6 +2962,7 @@ share/icons/Yaru-olive/24x24@2x/apps/filemanager-app.png
 share/icons/Yaru-olive/24x24@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-olive/24x24@2x/apps/nautilus.png
 share/icons/Yaru-olive/24x24@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-olive/24x24@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-olive/24x24@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-olive/24x24@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-olive/24x24@2x/apps/preferences-desktop.png
@@ -3191,6 +3013,7 @@ share/icons/Yaru-olive/256x256/apps/filemanager-app.png
 share/icons/Yaru-olive/256x256/apps/gnome-tweak-tool.png
 share/icons/Yaru-olive/256x256/apps/nautilus.png
 share/icons/Yaru-olive/256x256/apps/org.gnome.Nautilus.png
+share/icons/Yaru-olive/256x256/apps/org.gnome.Sysprof.png
 share/icons/Yaru-olive/256x256/apps/org.gnome.Tweaks.png
 share/icons/Yaru-olive/256x256/apps/org.gnome.tweaks.png
 share/icons/Yaru-olive/256x256/apps/preferences-desktop.png
@@ -3241,6 +3064,7 @@ share/icons/Yaru-olive/256x256@2x/apps/filemanager-app.png
 share/icons/Yaru-olive/256x256@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-olive/256x256@2x/apps/nautilus.png
 share/icons/Yaru-olive/256x256@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-olive/256x256@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-olive/256x256@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-olive/256x256@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-olive/256x256@2x/apps/preferences-desktop.png
@@ -3291,6 +3115,7 @@ share/icons/Yaru-olive/32x32/apps/filemanager-app.png
 share/icons/Yaru-olive/32x32/apps/gnome-tweak-tool.png
 share/icons/Yaru-olive/32x32/apps/nautilus.png
 share/icons/Yaru-olive/32x32/apps/org.gnome.Nautilus.png
+share/icons/Yaru-olive/32x32/apps/org.gnome.Sysprof.png
 share/icons/Yaru-olive/32x32/apps/org.gnome.Tweaks.png
 share/icons/Yaru-olive/32x32/apps/org.gnome.tweaks.png
 share/icons/Yaru-olive/32x32/apps/preferences-desktop.png
@@ -3341,6 +3166,7 @@ share/icons/Yaru-olive/32x32@2x/apps/filemanager-app.png
 share/icons/Yaru-olive/32x32@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-olive/32x32@2x/apps/nautilus.png
 share/icons/Yaru-olive/32x32@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-olive/32x32@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-olive/32x32@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-olive/32x32@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-olive/32x32@2x/apps/preferences-desktop.png
@@ -3391,6 +3217,7 @@ share/icons/Yaru-olive/48x48/apps/filemanager-app.png
 share/icons/Yaru-olive/48x48/apps/gnome-tweak-tool.png
 share/icons/Yaru-olive/48x48/apps/nautilus.png
 share/icons/Yaru-olive/48x48/apps/org.gnome.Nautilus.png
+share/icons/Yaru-olive/48x48/apps/org.gnome.Sysprof.png
 share/icons/Yaru-olive/48x48/apps/org.gnome.Tweaks.png
 share/icons/Yaru-olive/48x48/apps/org.gnome.tweaks.png
 share/icons/Yaru-olive/48x48/apps/preferences-desktop.png
@@ -3441,6 +3268,7 @@ share/icons/Yaru-olive/48x48@2x/apps/filemanager-app.png
 share/icons/Yaru-olive/48x48@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-olive/48x48@2x/apps/nautilus.png
 share/icons/Yaru-olive/48x48@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-olive/48x48@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-olive/48x48@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-olive/48x48@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-olive/48x48@2x/apps/preferences-desktop.png
@@ -3513,6 +3341,7 @@ share/icons/Yaru-prussiangreen/16x16/apps/filemanager-app.png
 share/icons/Yaru-prussiangreen/16x16/apps/gnome-tweak-tool.png
 share/icons/Yaru-prussiangreen/16x16/apps/nautilus.png
 share/icons/Yaru-prussiangreen/16x16/apps/org.gnome.Nautilus.png
+share/icons/Yaru-prussiangreen/16x16/apps/org.gnome.Sysprof.png
 share/icons/Yaru-prussiangreen/16x16/apps/org.gnome.Tweaks.png
 share/icons/Yaru-prussiangreen/16x16/apps/org.gnome.tweaks.png
 share/icons/Yaru-prussiangreen/16x16/apps/preferences-desktop.png
@@ -3563,6 +3392,7 @@ share/icons/Yaru-prussiangreen/16x16@2x/apps/filemanager-app.png
 share/icons/Yaru-prussiangreen/16x16@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-prussiangreen/16x16@2x/apps/nautilus.png
 share/icons/Yaru-prussiangreen/16x16@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-prussiangreen/16x16@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-prussiangreen/16x16@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-prussiangreen/16x16@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-prussiangreen/16x16@2x/apps/preferences-desktop.png
@@ -3632,6 +3462,7 @@ share/icons/Yaru-prussiangreen/24x24/apps/filemanager-app.png
 share/icons/Yaru-prussiangreen/24x24/apps/gnome-tweak-tool.png
 share/icons/Yaru-prussiangreen/24x24/apps/nautilus.png
 share/icons/Yaru-prussiangreen/24x24/apps/org.gnome.Nautilus.png
+share/icons/Yaru-prussiangreen/24x24/apps/org.gnome.Sysprof.png
 share/icons/Yaru-prussiangreen/24x24/apps/org.gnome.Tweaks.png
 share/icons/Yaru-prussiangreen/24x24/apps/org.gnome.tweaks.png
 share/icons/Yaru-prussiangreen/24x24/apps/preferences-desktop.png
@@ -3682,6 +3513,7 @@ share/icons/Yaru-prussiangreen/24x24@2x/apps/filemanager-app.png
 share/icons/Yaru-prussiangreen/24x24@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-prussiangreen/24x24@2x/apps/nautilus.png
 share/icons/Yaru-prussiangreen/24x24@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-prussiangreen/24x24@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-prussiangreen/24x24@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-prussiangreen/24x24@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-prussiangreen/24x24@2x/apps/preferences-desktop.png
@@ -3732,6 +3564,7 @@ share/icons/Yaru-prussiangreen/256x256/apps/filemanager-app.png
 share/icons/Yaru-prussiangreen/256x256/apps/gnome-tweak-tool.png
 share/icons/Yaru-prussiangreen/256x256/apps/nautilus.png
 share/icons/Yaru-prussiangreen/256x256/apps/org.gnome.Nautilus.png
+share/icons/Yaru-prussiangreen/256x256/apps/org.gnome.Sysprof.png
 share/icons/Yaru-prussiangreen/256x256/apps/org.gnome.Tweaks.png
 share/icons/Yaru-prussiangreen/256x256/apps/org.gnome.tweaks.png
 share/icons/Yaru-prussiangreen/256x256/apps/preferences-desktop.png
@@ -3782,6 +3615,7 @@ share/icons/Yaru-prussiangreen/256x256@2x/apps/filemanager-app.png
 share/icons/Yaru-prussiangreen/256x256@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-prussiangreen/256x256@2x/apps/nautilus.png
 share/icons/Yaru-prussiangreen/256x256@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-prussiangreen/256x256@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-prussiangreen/256x256@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-prussiangreen/256x256@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-prussiangreen/256x256@2x/apps/preferences-desktop.png
@@ -3832,6 +3666,7 @@ share/icons/Yaru-prussiangreen/32x32/apps/filemanager-app.png
 share/icons/Yaru-prussiangreen/32x32/apps/gnome-tweak-tool.png
 share/icons/Yaru-prussiangreen/32x32/apps/nautilus.png
 share/icons/Yaru-prussiangreen/32x32/apps/org.gnome.Nautilus.png
+share/icons/Yaru-prussiangreen/32x32/apps/org.gnome.Sysprof.png
 share/icons/Yaru-prussiangreen/32x32/apps/org.gnome.Tweaks.png
 share/icons/Yaru-prussiangreen/32x32/apps/org.gnome.tweaks.png
 share/icons/Yaru-prussiangreen/32x32/apps/preferences-desktop.png
@@ -3882,6 +3717,7 @@ share/icons/Yaru-prussiangreen/32x32@2x/apps/filemanager-app.png
 share/icons/Yaru-prussiangreen/32x32@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-prussiangreen/32x32@2x/apps/nautilus.png
 share/icons/Yaru-prussiangreen/32x32@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-prussiangreen/32x32@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-prussiangreen/32x32@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-prussiangreen/32x32@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-prussiangreen/32x32@2x/apps/preferences-desktop.png
@@ -3932,6 +3768,7 @@ share/icons/Yaru-prussiangreen/48x48/apps/filemanager-app.png
 share/icons/Yaru-prussiangreen/48x48/apps/gnome-tweak-tool.png
 share/icons/Yaru-prussiangreen/48x48/apps/nautilus.png
 share/icons/Yaru-prussiangreen/48x48/apps/org.gnome.Nautilus.png
+share/icons/Yaru-prussiangreen/48x48/apps/org.gnome.Sysprof.png
 share/icons/Yaru-prussiangreen/48x48/apps/org.gnome.Tweaks.png
 share/icons/Yaru-prussiangreen/48x48/apps/org.gnome.tweaks.png
 share/icons/Yaru-prussiangreen/48x48/apps/preferences-desktop.png
@@ -3982,6 +3819,7 @@ share/icons/Yaru-prussiangreen/48x48@2x/apps/filemanager-app.png
 share/icons/Yaru-prussiangreen/48x48@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-prussiangreen/48x48@2x/apps/nautilus.png
 share/icons/Yaru-prussiangreen/48x48@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-prussiangreen/48x48@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-prussiangreen/48x48@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-prussiangreen/48x48@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-prussiangreen/48x48@2x/apps/preferences-desktop.png
@@ -4054,6 +3892,7 @@ share/icons/Yaru-purple/16x16/apps/filemanager-app.png
 share/icons/Yaru-purple/16x16/apps/gnome-tweak-tool.png
 share/icons/Yaru-purple/16x16/apps/nautilus.png
 share/icons/Yaru-purple/16x16/apps/org.gnome.Nautilus.png
+share/icons/Yaru-purple/16x16/apps/org.gnome.Sysprof.png
 share/icons/Yaru-purple/16x16/apps/org.gnome.Tweaks.png
 share/icons/Yaru-purple/16x16/apps/org.gnome.tweaks.png
 share/icons/Yaru-purple/16x16/apps/preferences-desktop.png
@@ -4104,6 +3943,7 @@ share/icons/Yaru-purple/16x16@2x/apps/filemanager-app.png
 share/icons/Yaru-purple/16x16@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-purple/16x16@2x/apps/nautilus.png
 share/icons/Yaru-purple/16x16@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-purple/16x16@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-purple/16x16@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-purple/16x16@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-purple/16x16@2x/apps/preferences-desktop.png
@@ -4173,6 +4013,7 @@ share/icons/Yaru-purple/24x24/apps/filemanager-app.png
 share/icons/Yaru-purple/24x24/apps/gnome-tweak-tool.png
 share/icons/Yaru-purple/24x24/apps/nautilus.png
 share/icons/Yaru-purple/24x24/apps/org.gnome.Nautilus.png
+share/icons/Yaru-purple/24x24/apps/org.gnome.Sysprof.png
 share/icons/Yaru-purple/24x24/apps/org.gnome.Tweaks.png
 share/icons/Yaru-purple/24x24/apps/org.gnome.tweaks.png
 share/icons/Yaru-purple/24x24/apps/preferences-desktop.png
@@ -4223,6 +4064,7 @@ share/icons/Yaru-purple/24x24@2x/apps/filemanager-app.png
 share/icons/Yaru-purple/24x24@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-purple/24x24@2x/apps/nautilus.png
 share/icons/Yaru-purple/24x24@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-purple/24x24@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-purple/24x24@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-purple/24x24@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-purple/24x24@2x/apps/preferences-desktop.png
@@ -4273,6 +4115,7 @@ share/icons/Yaru-purple/256x256/apps/filemanager-app.png
 share/icons/Yaru-purple/256x256/apps/gnome-tweak-tool.png
 share/icons/Yaru-purple/256x256/apps/nautilus.png
 share/icons/Yaru-purple/256x256/apps/org.gnome.Nautilus.png
+share/icons/Yaru-purple/256x256/apps/org.gnome.Sysprof.png
 share/icons/Yaru-purple/256x256/apps/org.gnome.Tweaks.png
 share/icons/Yaru-purple/256x256/apps/org.gnome.tweaks.png
 share/icons/Yaru-purple/256x256/apps/preferences-desktop.png
@@ -4323,6 +4166,7 @@ share/icons/Yaru-purple/256x256@2x/apps/filemanager-app.png
 share/icons/Yaru-purple/256x256@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-purple/256x256@2x/apps/nautilus.png
 share/icons/Yaru-purple/256x256@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-purple/256x256@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-purple/256x256@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-purple/256x256@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-purple/256x256@2x/apps/preferences-desktop.png
@@ -4373,6 +4217,7 @@ share/icons/Yaru-purple/32x32/apps/filemanager-app.png
 share/icons/Yaru-purple/32x32/apps/gnome-tweak-tool.png
 share/icons/Yaru-purple/32x32/apps/nautilus.png
 share/icons/Yaru-purple/32x32/apps/org.gnome.Nautilus.png
+share/icons/Yaru-purple/32x32/apps/org.gnome.Sysprof.png
 share/icons/Yaru-purple/32x32/apps/org.gnome.Tweaks.png
 share/icons/Yaru-purple/32x32/apps/org.gnome.tweaks.png
 share/icons/Yaru-purple/32x32/apps/preferences-desktop.png
@@ -4423,6 +4268,7 @@ share/icons/Yaru-purple/32x32@2x/apps/filemanager-app.png
 share/icons/Yaru-purple/32x32@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-purple/32x32@2x/apps/nautilus.png
 share/icons/Yaru-purple/32x32@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-purple/32x32@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-purple/32x32@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-purple/32x32@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-purple/32x32@2x/apps/preferences-desktop.png
@@ -4473,6 +4319,7 @@ share/icons/Yaru-purple/48x48/apps/filemanager-app.png
 share/icons/Yaru-purple/48x48/apps/gnome-tweak-tool.png
 share/icons/Yaru-purple/48x48/apps/nautilus.png
 share/icons/Yaru-purple/48x48/apps/org.gnome.Nautilus.png
+share/icons/Yaru-purple/48x48/apps/org.gnome.Sysprof.png
 share/icons/Yaru-purple/48x48/apps/org.gnome.Tweaks.png
 share/icons/Yaru-purple/48x48/apps/org.gnome.tweaks.png
 share/icons/Yaru-purple/48x48/apps/preferences-desktop.png
@@ -4523,6 +4370,7 @@ share/icons/Yaru-purple/48x48@2x/apps/filemanager-app.png
 share/icons/Yaru-purple/48x48@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-purple/48x48@2x/apps/nautilus.png
 share/icons/Yaru-purple/48x48@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-purple/48x48@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-purple/48x48@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-purple/48x48@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-purple/48x48@2x/apps/preferences-desktop.png
@@ -4595,6 +4443,7 @@ share/icons/Yaru-red/16x16/apps/filemanager-app.png
 share/icons/Yaru-red/16x16/apps/gnome-tweak-tool.png
 share/icons/Yaru-red/16x16/apps/nautilus.png
 share/icons/Yaru-red/16x16/apps/org.gnome.Nautilus.png
+share/icons/Yaru-red/16x16/apps/org.gnome.Sysprof.png
 share/icons/Yaru-red/16x16/apps/org.gnome.Tweaks.png
 share/icons/Yaru-red/16x16/apps/org.gnome.tweaks.png
 share/icons/Yaru-red/16x16/apps/preferences-desktop.png
@@ -4645,6 +4494,7 @@ share/icons/Yaru-red/16x16@2x/apps/filemanager-app.png
 share/icons/Yaru-red/16x16@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-red/16x16@2x/apps/nautilus.png
 share/icons/Yaru-red/16x16@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-red/16x16@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-red/16x16@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-red/16x16@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-red/16x16@2x/apps/preferences-desktop.png
@@ -4714,6 +4564,7 @@ share/icons/Yaru-red/24x24/apps/filemanager-app.png
 share/icons/Yaru-red/24x24/apps/gnome-tweak-tool.png
 share/icons/Yaru-red/24x24/apps/nautilus.png
 share/icons/Yaru-red/24x24/apps/org.gnome.Nautilus.png
+share/icons/Yaru-red/24x24/apps/org.gnome.Sysprof.png
 share/icons/Yaru-red/24x24/apps/org.gnome.Tweaks.png
 share/icons/Yaru-red/24x24/apps/org.gnome.tweaks.png
 share/icons/Yaru-red/24x24/apps/preferences-desktop.png
@@ -4764,6 +4615,7 @@ share/icons/Yaru-red/24x24@2x/apps/filemanager-app.png
 share/icons/Yaru-red/24x24@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-red/24x24@2x/apps/nautilus.png
 share/icons/Yaru-red/24x24@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-red/24x24@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-red/24x24@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-red/24x24@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-red/24x24@2x/apps/preferences-desktop.png
@@ -4814,6 +4666,7 @@ share/icons/Yaru-red/256x256/apps/filemanager-app.png
 share/icons/Yaru-red/256x256/apps/gnome-tweak-tool.png
 share/icons/Yaru-red/256x256/apps/nautilus.png
 share/icons/Yaru-red/256x256/apps/org.gnome.Nautilus.png
+share/icons/Yaru-red/256x256/apps/org.gnome.Sysprof.png
 share/icons/Yaru-red/256x256/apps/org.gnome.Tweaks.png
 share/icons/Yaru-red/256x256/apps/org.gnome.tweaks.png
 share/icons/Yaru-red/256x256/apps/preferences-desktop.png
@@ -4864,6 +4717,7 @@ share/icons/Yaru-red/256x256@2x/apps/filemanager-app.png
 share/icons/Yaru-red/256x256@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-red/256x256@2x/apps/nautilus.png
 share/icons/Yaru-red/256x256@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-red/256x256@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-red/256x256@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-red/256x256@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-red/256x256@2x/apps/preferences-desktop.png
@@ -4914,6 +4768,7 @@ share/icons/Yaru-red/32x32/apps/filemanager-app.png
 share/icons/Yaru-red/32x32/apps/gnome-tweak-tool.png
 share/icons/Yaru-red/32x32/apps/nautilus.png
 share/icons/Yaru-red/32x32/apps/org.gnome.Nautilus.png
+share/icons/Yaru-red/32x32/apps/org.gnome.Sysprof.png
 share/icons/Yaru-red/32x32/apps/org.gnome.Tweaks.png
 share/icons/Yaru-red/32x32/apps/org.gnome.tweaks.png
 share/icons/Yaru-red/32x32/apps/preferences-desktop.png
@@ -4964,6 +4819,7 @@ share/icons/Yaru-red/32x32@2x/apps/filemanager-app.png
 share/icons/Yaru-red/32x32@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-red/32x32@2x/apps/nautilus.png
 share/icons/Yaru-red/32x32@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-red/32x32@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-red/32x32@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-red/32x32@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-red/32x32@2x/apps/preferences-desktop.png
@@ -5014,6 +4870,7 @@ share/icons/Yaru-red/48x48/apps/filemanager-app.png
 share/icons/Yaru-red/48x48/apps/gnome-tweak-tool.png
 share/icons/Yaru-red/48x48/apps/nautilus.png
 share/icons/Yaru-red/48x48/apps/org.gnome.Nautilus.png
+share/icons/Yaru-red/48x48/apps/org.gnome.Sysprof.png
 share/icons/Yaru-red/48x48/apps/org.gnome.Tweaks.png
 share/icons/Yaru-red/48x48/apps/org.gnome.tweaks.png
 share/icons/Yaru-red/48x48/apps/preferences-desktop.png
@@ -5064,6 +4921,7 @@ share/icons/Yaru-red/48x48@2x/apps/filemanager-app.png
 share/icons/Yaru-red/48x48@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-red/48x48@2x/apps/nautilus.png
 share/icons/Yaru-red/48x48@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-red/48x48@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-red/48x48@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-red/48x48@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-red/48x48@2x/apps/preferences-desktop.png
@@ -5136,6 +4994,7 @@ share/icons/Yaru-sage/16x16/apps/filemanager-app.png
 share/icons/Yaru-sage/16x16/apps/gnome-tweak-tool.png
 share/icons/Yaru-sage/16x16/apps/nautilus.png
 share/icons/Yaru-sage/16x16/apps/org.gnome.Nautilus.png
+share/icons/Yaru-sage/16x16/apps/org.gnome.Sysprof.png
 share/icons/Yaru-sage/16x16/apps/org.gnome.Tweaks.png
 share/icons/Yaru-sage/16x16/apps/org.gnome.tweaks.png
 share/icons/Yaru-sage/16x16/apps/preferences-desktop.png
@@ -5186,6 +5045,7 @@ share/icons/Yaru-sage/16x16@2x/apps/filemanager-app.png
 share/icons/Yaru-sage/16x16@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-sage/16x16@2x/apps/nautilus.png
 share/icons/Yaru-sage/16x16@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-sage/16x16@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-sage/16x16@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-sage/16x16@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-sage/16x16@2x/apps/preferences-desktop.png
@@ -5255,6 +5115,7 @@ share/icons/Yaru-sage/24x24/apps/filemanager-app.png
 share/icons/Yaru-sage/24x24/apps/gnome-tweak-tool.png
 share/icons/Yaru-sage/24x24/apps/nautilus.png
 share/icons/Yaru-sage/24x24/apps/org.gnome.Nautilus.png
+share/icons/Yaru-sage/24x24/apps/org.gnome.Sysprof.png
 share/icons/Yaru-sage/24x24/apps/org.gnome.Tweaks.png
 share/icons/Yaru-sage/24x24/apps/org.gnome.tweaks.png
 share/icons/Yaru-sage/24x24/apps/preferences-desktop.png
@@ -5305,6 +5166,7 @@ share/icons/Yaru-sage/24x24@2x/apps/filemanager-app.png
 share/icons/Yaru-sage/24x24@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-sage/24x24@2x/apps/nautilus.png
 share/icons/Yaru-sage/24x24@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-sage/24x24@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-sage/24x24@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-sage/24x24@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-sage/24x24@2x/apps/preferences-desktop.png
@@ -5355,6 +5217,7 @@ share/icons/Yaru-sage/256x256/apps/filemanager-app.png
 share/icons/Yaru-sage/256x256/apps/gnome-tweak-tool.png
 share/icons/Yaru-sage/256x256/apps/nautilus.png
 share/icons/Yaru-sage/256x256/apps/org.gnome.Nautilus.png
+share/icons/Yaru-sage/256x256/apps/org.gnome.Sysprof.png
 share/icons/Yaru-sage/256x256/apps/org.gnome.Tweaks.png
 share/icons/Yaru-sage/256x256/apps/org.gnome.tweaks.png
 share/icons/Yaru-sage/256x256/apps/preferences-desktop.png
@@ -5405,6 +5268,7 @@ share/icons/Yaru-sage/256x256@2x/apps/filemanager-app.png
 share/icons/Yaru-sage/256x256@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-sage/256x256@2x/apps/nautilus.png
 share/icons/Yaru-sage/256x256@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-sage/256x256@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-sage/256x256@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-sage/256x256@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-sage/256x256@2x/apps/preferences-desktop.png
@@ -5455,6 +5319,7 @@ share/icons/Yaru-sage/32x32/apps/filemanager-app.png
 share/icons/Yaru-sage/32x32/apps/gnome-tweak-tool.png
 share/icons/Yaru-sage/32x32/apps/nautilus.png
 share/icons/Yaru-sage/32x32/apps/org.gnome.Nautilus.png
+share/icons/Yaru-sage/32x32/apps/org.gnome.Sysprof.png
 share/icons/Yaru-sage/32x32/apps/org.gnome.Tweaks.png
 share/icons/Yaru-sage/32x32/apps/org.gnome.tweaks.png
 share/icons/Yaru-sage/32x32/apps/preferences-desktop.png
@@ -5505,6 +5370,7 @@ share/icons/Yaru-sage/32x32@2x/apps/filemanager-app.png
 share/icons/Yaru-sage/32x32@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-sage/32x32@2x/apps/nautilus.png
 share/icons/Yaru-sage/32x32@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-sage/32x32@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-sage/32x32@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-sage/32x32@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-sage/32x32@2x/apps/preferences-desktop.png
@@ -5555,6 +5421,7 @@ share/icons/Yaru-sage/48x48/apps/filemanager-app.png
 share/icons/Yaru-sage/48x48/apps/gnome-tweak-tool.png
 share/icons/Yaru-sage/48x48/apps/nautilus.png
 share/icons/Yaru-sage/48x48/apps/org.gnome.Nautilus.png
+share/icons/Yaru-sage/48x48/apps/org.gnome.Sysprof.png
 share/icons/Yaru-sage/48x48/apps/org.gnome.Tweaks.png
 share/icons/Yaru-sage/48x48/apps/org.gnome.tweaks.png
 share/icons/Yaru-sage/48x48/apps/preferences-desktop.png
@@ -5605,6 +5472,7 @@ share/icons/Yaru-sage/48x48@2x/apps/filemanager-app.png
 share/icons/Yaru-sage/48x48@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-sage/48x48@2x/apps/nautilus.png
 share/icons/Yaru-sage/48x48@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-sage/48x48@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-sage/48x48@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-sage/48x48@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-sage/48x48@2x/apps/preferences-desktop.png
@@ -5677,6 +5545,7 @@ share/icons/Yaru-wartybrown/16x16/apps/filemanager-app.png
 share/icons/Yaru-wartybrown/16x16/apps/gnome-tweak-tool.png
 share/icons/Yaru-wartybrown/16x16/apps/nautilus.png
 share/icons/Yaru-wartybrown/16x16/apps/org.gnome.Nautilus.png
+share/icons/Yaru-wartybrown/16x16/apps/org.gnome.Sysprof.png
 share/icons/Yaru-wartybrown/16x16/apps/org.gnome.Tweaks.png
 share/icons/Yaru-wartybrown/16x16/apps/org.gnome.tweaks.png
 share/icons/Yaru-wartybrown/16x16/apps/preferences-desktop.png
@@ -5727,6 +5596,7 @@ share/icons/Yaru-wartybrown/16x16@2x/apps/filemanager-app.png
 share/icons/Yaru-wartybrown/16x16@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-wartybrown/16x16@2x/apps/nautilus.png
 share/icons/Yaru-wartybrown/16x16@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-wartybrown/16x16@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-wartybrown/16x16@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-wartybrown/16x16@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-wartybrown/16x16@2x/apps/preferences-desktop.png
@@ -5796,6 +5666,7 @@ share/icons/Yaru-wartybrown/24x24/apps/filemanager-app.png
 share/icons/Yaru-wartybrown/24x24/apps/gnome-tweak-tool.png
 share/icons/Yaru-wartybrown/24x24/apps/nautilus.png
 share/icons/Yaru-wartybrown/24x24/apps/org.gnome.Nautilus.png
+share/icons/Yaru-wartybrown/24x24/apps/org.gnome.Sysprof.png
 share/icons/Yaru-wartybrown/24x24/apps/org.gnome.Tweaks.png
 share/icons/Yaru-wartybrown/24x24/apps/org.gnome.tweaks.png
 share/icons/Yaru-wartybrown/24x24/apps/preferences-desktop.png
@@ -5846,6 +5717,7 @@ share/icons/Yaru-wartybrown/24x24@2x/apps/filemanager-app.png
 share/icons/Yaru-wartybrown/24x24@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-wartybrown/24x24@2x/apps/nautilus.png
 share/icons/Yaru-wartybrown/24x24@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-wartybrown/24x24@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-wartybrown/24x24@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-wartybrown/24x24@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-wartybrown/24x24@2x/apps/preferences-desktop.png
@@ -5896,6 +5768,7 @@ share/icons/Yaru-wartybrown/256x256/apps/filemanager-app.png
 share/icons/Yaru-wartybrown/256x256/apps/gnome-tweak-tool.png
 share/icons/Yaru-wartybrown/256x256/apps/nautilus.png
 share/icons/Yaru-wartybrown/256x256/apps/org.gnome.Nautilus.png
+share/icons/Yaru-wartybrown/256x256/apps/org.gnome.Sysprof.png
 share/icons/Yaru-wartybrown/256x256/apps/org.gnome.Tweaks.png
 share/icons/Yaru-wartybrown/256x256/apps/org.gnome.tweaks.png
 share/icons/Yaru-wartybrown/256x256/apps/preferences-desktop.png
@@ -5946,6 +5819,7 @@ share/icons/Yaru-wartybrown/256x256@2x/apps/filemanager-app.png
 share/icons/Yaru-wartybrown/256x256@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-wartybrown/256x256@2x/apps/nautilus.png
 share/icons/Yaru-wartybrown/256x256@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-wartybrown/256x256@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-wartybrown/256x256@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-wartybrown/256x256@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-wartybrown/256x256@2x/apps/preferences-desktop.png
@@ -5996,6 +5870,7 @@ share/icons/Yaru-wartybrown/32x32/apps/filemanager-app.png
 share/icons/Yaru-wartybrown/32x32/apps/gnome-tweak-tool.png
 share/icons/Yaru-wartybrown/32x32/apps/nautilus.png
 share/icons/Yaru-wartybrown/32x32/apps/org.gnome.Nautilus.png
+share/icons/Yaru-wartybrown/32x32/apps/org.gnome.Sysprof.png
 share/icons/Yaru-wartybrown/32x32/apps/org.gnome.Tweaks.png
 share/icons/Yaru-wartybrown/32x32/apps/org.gnome.tweaks.png
 share/icons/Yaru-wartybrown/32x32/apps/preferences-desktop.png
@@ -6046,6 +5921,7 @@ share/icons/Yaru-wartybrown/32x32@2x/apps/filemanager-app.png
 share/icons/Yaru-wartybrown/32x32@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-wartybrown/32x32@2x/apps/nautilus.png
 share/icons/Yaru-wartybrown/32x32@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-wartybrown/32x32@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-wartybrown/32x32@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-wartybrown/32x32@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-wartybrown/32x32@2x/apps/preferences-desktop.png
@@ -6096,6 +5972,7 @@ share/icons/Yaru-wartybrown/48x48/apps/filemanager-app.png
 share/icons/Yaru-wartybrown/48x48/apps/gnome-tweak-tool.png
 share/icons/Yaru-wartybrown/48x48/apps/nautilus.png
 share/icons/Yaru-wartybrown/48x48/apps/org.gnome.Nautilus.png
+share/icons/Yaru-wartybrown/48x48/apps/org.gnome.Sysprof.png
 share/icons/Yaru-wartybrown/48x48/apps/org.gnome.Tweaks.png
 share/icons/Yaru-wartybrown/48x48/apps/org.gnome.tweaks.png
 share/icons/Yaru-wartybrown/48x48/apps/preferences-desktop.png
@@ -6146,6 +6023,7 @@ share/icons/Yaru-wartybrown/48x48@2x/apps/filemanager-app.png
 share/icons/Yaru-wartybrown/48x48@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-wartybrown/48x48@2x/apps/nautilus.png
 share/icons/Yaru-wartybrown/48x48@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-wartybrown/48x48@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-wartybrown/48x48@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-wartybrown/48x48@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-wartybrown/48x48@2x/apps/preferences-desktop.png
@@ -6218,6 +6096,7 @@ share/icons/Yaru-yellow/16x16/apps/filemanager-app.png
 share/icons/Yaru-yellow/16x16/apps/gnome-tweak-tool.png
 share/icons/Yaru-yellow/16x16/apps/nautilus.png
 share/icons/Yaru-yellow/16x16/apps/org.gnome.Nautilus.png
+share/icons/Yaru-yellow/16x16/apps/org.gnome.Sysprof.png
 share/icons/Yaru-yellow/16x16/apps/org.gnome.Tweaks.png
 share/icons/Yaru-yellow/16x16/apps/org.gnome.tweaks.png
 share/icons/Yaru-yellow/16x16/apps/preferences-desktop.png
@@ -6268,6 +6147,7 @@ share/icons/Yaru-yellow/16x16@2x/apps/filemanager-app.png
 share/icons/Yaru-yellow/16x16@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-yellow/16x16@2x/apps/nautilus.png
 share/icons/Yaru-yellow/16x16@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-yellow/16x16@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-yellow/16x16@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-yellow/16x16@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-yellow/16x16@2x/apps/preferences-desktop.png
@@ -6337,6 +6217,7 @@ share/icons/Yaru-yellow/24x24/apps/filemanager-app.png
 share/icons/Yaru-yellow/24x24/apps/gnome-tweak-tool.png
 share/icons/Yaru-yellow/24x24/apps/nautilus.png
 share/icons/Yaru-yellow/24x24/apps/org.gnome.Nautilus.png
+share/icons/Yaru-yellow/24x24/apps/org.gnome.Sysprof.png
 share/icons/Yaru-yellow/24x24/apps/org.gnome.Tweaks.png
 share/icons/Yaru-yellow/24x24/apps/org.gnome.tweaks.png
 share/icons/Yaru-yellow/24x24/apps/preferences-desktop.png
@@ -6387,6 +6268,7 @@ share/icons/Yaru-yellow/24x24@2x/apps/filemanager-app.png
 share/icons/Yaru-yellow/24x24@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-yellow/24x24@2x/apps/nautilus.png
 share/icons/Yaru-yellow/24x24@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-yellow/24x24@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-yellow/24x24@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-yellow/24x24@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-yellow/24x24@2x/apps/preferences-desktop.png
@@ -6437,6 +6319,7 @@ share/icons/Yaru-yellow/256x256/apps/filemanager-app.png
 share/icons/Yaru-yellow/256x256/apps/gnome-tweak-tool.png
 share/icons/Yaru-yellow/256x256/apps/nautilus.png
 share/icons/Yaru-yellow/256x256/apps/org.gnome.Nautilus.png
+share/icons/Yaru-yellow/256x256/apps/org.gnome.Sysprof.png
 share/icons/Yaru-yellow/256x256/apps/org.gnome.Tweaks.png
 share/icons/Yaru-yellow/256x256/apps/org.gnome.tweaks.png
 share/icons/Yaru-yellow/256x256/apps/preferences-desktop.png
@@ -6487,6 +6370,7 @@ share/icons/Yaru-yellow/256x256@2x/apps/filemanager-app.png
 share/icons/Yaru-yellow/256x256@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-yellow/256x256@2x/apps/nautilus.png
 share/icons/Yaru-yellow/256x256@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-yellow/256x256@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-yellow/256x256@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-yellow/256x256@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-yellow/256x256@2x/apps/preferences-desktop.png
@@ -6537,6 +6421,7 @@ share/icons/Yaru-yellow/32x32/apps/filemanager-app.png
 share/icons/Yaru-yellow/32x32/apps/gnome-tweak-tool.png
 share/icons/Yaru-yellow/32x32/apps/nautilus.png
 share/icons/Yaru-yellow/32x32/apps/org.gnome.Nautilus.png
+share/icons/Yaru-yellow/32x32/apps/org.gnome.Sysprof.png
 share/icons/Yaru-yellow/32x32/apps/org.gnome.Tweaks.png
 share/icons/Yaru-yellow/32x32/apps/org.gnome.tweaks.png
 share/icons/Yaru-yellow/32x32/apps/preferences-desktop.png
@@ -6587,6 +6472,7 @@ share/icons/Yaru-yellow/32x32@2x/apps/filemanager-app.png
 share/icons/Yaru-yellow/32x32@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-yellow/32x32@2x/apps/nautilus.png
 share/icons/Yaru-yellow/32x32@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-yellow/32x32@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-yellow/32x32@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-yellow/32x32@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-yellow/32x32@2x/apps/preferences-desktop.png
@@ -6637,6 +6523,7 @@ share/icons/Yaru-yellow/48x48/apps/filemanager-app.png
 share/icons/Yaru-yellow/48x48/apps/gnome-tweak-tool.png
 share/icons/Yaru-yellow/48x48/apps/nautilus.png
 share/icons/Yaru-yellow/48x48/apps/org.gnome.Nautilus.png
+share/icons/Yaru-yellow/48x48/apps/org.gnome.Sysprof.png
 share/icons/Yaru-yellow/48x48/apps/org.gnome.Tweaks.png
 share/icons/Yaru-yellow/48x48/apps/org.gnome.tweaks.png
 share/icons/Yaru-yellow/48x48/apps/preferences-desktop.png
@@ -6687,6 +6574,7 @@ share/icons/Yaru-yellow/48x48@2x/apps/filemanager-app.png
 share/icons/Yaru-yellow/48x48@2x/apps/gnome-tweak-tool.png
 share/icons/Yaru-yellow/48x48@2x/apps/nautilus.png
 share/icons/Yaru-yellow/48x48@2x/apps/org.gnome.Nautilus.png
+share/icons/Yaru-yellow/48x48@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru-yellow/48x48@2x/apps/org.gnome.Tweaks.png
 share/icons/Yaru-yellow/48x48@2x/apps/org.gnome.tweaks.png
 share/icons/Yaru-yellow/48x48@2x/apps/preferences-desktop.png
@@ -6924,6 +6812,7 @@ share/icons/Yaru/16x16/apps/accessories-dictionary.png
 share/icons/Yaru/16x16/apps/accessories-text-editor.png
 share/icons/Yaru/16x16/apps/address-book-app.png
 share/icons/Yaru/16x16/apps/app-center.png
+share/icons/Yaru/16x16/apps/app.drey.EarTag.png
 share/icons/Yaru/16x16/apps/applets-screenshooter.png
 share/icons/Yaru/16x16/apps/applications-multimedia.png
 share/icons/Yaru/16x16/apps/applications-office.png
@@ -7067,6 +6956,7 @@ share/icons/Yaru/16x16/apps/org.gnome.Settings.png
 share/icons/Yaru/16x16/apps/org.gnome.Shell.Extensions.png
 share/icons/Yaru/16x16/apps/org.gnome.Shotwell.png
 share/icons/Yaru/16x16/apps/org.gnome.SimpleScan.png
+share/icons/Yaru/16x16/apps/org.gnome.Snapshot.png
 share/icons/Yaru/16x16/apps/org.gnome.Software.Create.png
 share/icons/Yaru/16x16/apps/org.gnome.Software.Develop.png
 share/icons/Yaru/16x16/apps/org.gnome.Software.Learn.png
@@ -7076,6 +6966,7 @@ share/icons/Yaru/16x16/apps/org.gnome.Software.Work.png
 share/icons/Yaru/16x16/apps/org.gnome.Software.png
 share/icons/Yaru/16x16/apps/org.gnome.SoundRecorder.png
 share/icons/Yaru/16x16/apps/org.gnome.Sudoku.png
+share/icons/Yaru/16x16/apps/org.gnome.Sysprof.png
 share/icons/Yaru/16x16/apps/org.gnome.SystemMonitor.png
 share/icons/Yaru/16x16/apps/org.gnome.Terminal.png
 share/icons/Yaru/16x16/apps/org.gnome.TextEditor.png
@@ -7751,6 +7642,7 @@ share/icons/Yaru/16x16/mimetypes/text-richtext.png
 share/icons/Yaru/16x16/mimetypes/text-ruby.png
 share/icons/Yaru/16x16/mimetypes/text-rust.png
 share/icons/Yaru/16x16/mimetypes/text-spreadsheet.png
+share/icons/Yaru/16x16/mimetypes/text-vnd.typst.png
 share/icons/Yaru/16x16/mimetypes/text-x-arduino.png
 share/icons/Yaru/16x16/mimetypes/text-x-authors.png
 share/icons/Yaru/16x16/mimetypes/text-x-c++.png
@@ -8327,6 +8219,7 @@ share/icons/Yaru/16x16@2x/apps/accessories-dictionary.png
 share/icons/Yaru/16x16@2x/apps/accessories-text-editor.png
 share/icons/Yaru/16x16@2x/apps/address-book-app.png
 share/icons/Yaru/16x16@2x/apps/app-center.png
+share/icons/Yaru/16x16@2x/apps/app.drey.EarTag.png
 share/icons/Yaru/16x16@2x/apps/applets-screenshooter.png
 share/icons/Yaru/16x16@2x/apps/applications-multimedia.png
 share/icons/Yaru/16x16@2x/apps/applications-office.png
@@ -8470,6 +8363,7 @@ share/icons/Yaru/16x16@2x/apps/org.gnome.Settings.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.Shell.Extensions.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.Shotwell.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.SimpleScan.png
+share/icons/Yaru/16x16@2x/apps/org.gnome.Snapshot.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.Software.Create.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.Software.Develop.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.Software.Learn.png
@@ -8479,6 +8373,7 @@ share/icons/Yaru/16x16@2x/apps/org.gnome.Software.Work.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.Software.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.SoundRecorder.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.Sudoku.png
+share/icons/Yaru/16x16@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.SystemMonitor.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.Terminal.png
 share/icons/Yaru/16x16@2x/apps/org.gnome.TextEditor.png
@@ -8946,6 +8841,7 @@ share/icons/Yaru/16x16@2x/mimetypes/text-richtext.png
 share/icons/Yaru/16x16@2x/mimetypes/text-ruby.png
 share/icons/Yaru/16x16@2x/mimetypes/text-rust.png
 share/icons/Yaru/16x16@2x/mimetypes/text-spreadsheet.png
+share/icons/Yaru/16x16@2x/mimetypes/text-vnd.typst.png
 share/icons/Yaru/16x16@2x/mimetypes/text-x-arduino.png
 share/icons/Yaru/16x16@2x/mimetypes/text-x-authors.png
 share/icons/Yaru/16x16@2x/mimetypes/text-x-c++.png
@@ -10484,6 +10380,7 @@ share/icons/Yaru/24x24/apps/accessories-dictionary.png
 share/icons/Yaru/24x24/apps/accessories-text-editor.png
 share/icons/Yaru/24x24/apps/address-book-app.png
 share/icons/Yaru/24x24/apps/app-center.png
+share/icons/Yaru/24x24/apps/app.drey.EarTag.png
 share/icons/Yaru/24x24/apps/applets-screenshooter.png
 share/icons/Yaru/24x24/apps/applications-multimedia.png
 share/icons/Yaru/24x24/apps/applications-office.png
@@ -10627,6 +10524,7 @@ share/icons/Yaru/24x24/apps/org.gnome.Settings.png
 share/icons/Yaru/24x24/apps/org.gnome.Shell.Extensions.png
 share/icons/Yaru/24x24/apps/org.gnome.Shotwell.png
 share/icons/Yaru/24x24/apps/org.gnome.SimpleScan.png
+share/icons/Yaru/24x24/apps/org.gnome.Snapshot.png
 share/icons/Yaru/24x24/apps/org.gnome.Software.Create.png
 share/icons/Yaru/24x24/apps/org.gnome.Software.Develop.png
 share/icons/Yaru/24x24/apps/org.gnome.Software.Learn.png
@@ -10636,6 +10534,7 @@ share/icons/Yaru/24x24/apps/org.gnome.Software.Work.png
 share/icons/Yaru/24x24/apps/org.gnome.Software.png
 share/icons/Yaru/24x24/apps/org.gnome.SoundRecorder.png
 share/icons/Yaru/24x24/apps/org.gnome.Sudoku.png
+share/icons/Yaru/24x24/apps/org.gnome.Sysprof.png
 share/icons/Yaru/24x24/apps/org.gnome.SystemMonitor.png
 share/icons/Yaru/24x24/apps/org.gnome.Terminal.png
 share/icons/Yaru/24x24/apps/org.gnome.TextEditor.png
@@ -11154,6 +11053,7 @@ share/icons/Yaru/24x24/mimetypes/text-richtext.png
 share/icons/Yaru/24x24/mimetypes/text-ruby.png
 share/icons/Yaru/24x24/mimetypes/text-rust.png
 share/icons/Yaru/24x24/mimetypes/text-spreadsheet.png
+share/icons/Yaru/24x24/mimetypes/text-vnd.typst.png
 share/icons/Yaru/24x24/mimetypes/text-x-arduino.png
 share/icons/Yaru/24x24/mimetypes/text-x-authors.png
 share/icons/Yaru/24x24/mimetypes/text-x-c++.png
@@ -11797,6 +11697,7 @@ share/icons/Yaru/24x24@2x/apps/accessories-dictionary.png
 share/icons/Yaru/24x24@2x/apps/accessories-text-editor.png
 share/icons/Yaru/24x24@2x/apps/address-book-app.png
 share/icons/Yaru/24x24@2x/apps/app-center.png
+share/icons/Yaru/24x24@2x/apps/app.drey.EarTag.png
 share/icons/Yaru/24x24@2x/apps/applets-screenshooter.png
 share/icons/Yaru/24x24@2x/apps/applications-multimedia.png
 share/icons/Yaru/24x24@2x/apps/applications-office.png
@@ -11940,6 +11841,7 @@ share/icons/Yaru/24x24@2x/apps/org.gnome.Settings.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.Shell.Extensions.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.Shotwell.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.SimpleScan.png
+share/icons/Yaru/24x24@2x/apps/org.gnome.Snapshot.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.Software.Create.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.Software.Develop.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.Software.Learn.png
@@ -11949,6 +11851,7 @@ share/icons/Yaru/24x24@2x/apps/org.gnome.Software.Work.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.Software.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.SoundRecorder.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.Sudoku.png
+share/icons/Yaru/24x24@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.SystemMonitor.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.Terminal.png
 share/icons/Yaru/24x24@2x/apps/org.gnome.TextEditor.png
@@ -12416,6 +12319,7 @@ share/icons/Yaru/24x24@2x/mimetypes/text-richtext.png
 share/icons/Yaru/24x24@2x/mimetypes/text-ruby.png
 share/icons/Yaru/24x24@2x/mimetypes/text-rust.png
 share/icons/Yaru/24x24@2x/mimetypes/text-spreadsheet.png
+share/icons/Yaru/24x24@2x/mimetypes/text-vnd.typst.png
 share/icons/Yaru/24x24@2x/mimetypes/text-x-arduino.png
 share/icons/Yaru/24x24@2x/mimetypes/text-x-authors.png
 share/icons/Yaru/24x24@2x/mimetypes/text-x-c++.png
@@ -12724,6 +12628,7 @@ share/icons/Yaru/256x256/apps/accessories-dictionary.png
 share/icons/Yaru/256x256/apps/accessories-text-editor.png
 share/icons/Yaru/256x256/apps/address-book-app.png
 share/icons/Yaru/256x256/apps/app-center.png
+share/icons/Yaru/256x256/apps/app.drey.EarTag.png
 share/icons/Yaru/256x256/apps/applets-screenshooter.png
 share/icons/Yaru/256x256/apps/applications-multimedia.png
 share/icons/Yaru/256x256/apps/applications-office.png
@@ -12867,6 +12772,7 @@ share/icons/Yaru/256x256/apps/org.gnome.Settings.png
 share/icons/Yaru/256x256/apps/org.gnome.Shell.Extensions.png
 share/icons/Yaru/256x256/apps/org.gnome.Shotwell.png
 share/icons/Yaru/256x256/apps/org.gnome.SimpleScan.png
+share/icons/Yaru/256x256/apps/org.gnome.Snapshot.png
 share/icons/Yaru/256x256/apps/org.gnome.Software.Create.png
 share/icons/Yaru/256x256/apps/org.gnome.Software.Develop.png
 share/icons/Yaru/256x256/apps/org.gnome.Software.Learn.png
@@ -12876,6 +12782,7 @@ share/icons/Yaru/256x256/apps/org.gnome.Software.Work.png
 share/icons/Yaru/256x256/apps/org.gnome.Software.png
 share/icons/Yaru/256x256/apps/org.gnome.SoundRecorder.png
 share/icons/Yaru/256x256/apps/org.gnome.Sudoku.png
+share/icons/Yaru/256x256/apps/org.gnome.Sysprof.png
 share/icons/Yaru/256x256/apps/org.gnome.SystemMonitor.png
 share/icons/Yaru/256x256/apps/org.gnome.Terminal.png
 share/icons/Yaru/256x256/apps/org.gnome.TextEditor.png
@@ -13343,6 +13250,7 @@ share/icons/Yaru/256x256/mimetypes/text-richtext.png
 share/icons/Yaru/256x256/mimetypes/text-ruby.png
 share/icons/Yaru/256x256/mimetypes/text-rust.png
 share/icons/Yaru/256x256/mimetypes/text-spreadsheet.png
+share/icons/Yaru/256x256/mimetypes/text-vnd.typst.png
 share/icons/Yaru/256x256/mimetypes/text-x-arduino.png
 share/icons/Yaru/256x256/mimetypes/text-x-authors.png
 share/icons/Yaru/256x256/mimetypes/text-x-c++.png
@@ -13651,6 +13559,7 @@ share/icons/Yaru/256x256@2x/apps/accessories-dictionary.png
 share/icons/Yaru/256x256@2x/apps/accessories-text-editor.png
 share/icons/Yaru/256x256@2x/apps/address-book-app.png
 share/icons/Yaru/256x256@2x/apps/app-center.png
+share/icons/Yaru/256x256@2x/apps/app.drey.EarTag.png
 share/icons/Yaru/256x256@2x/apps/applets-screenshooter.png
 share/icons/Yaru/256x256@2x/apps/applications-multimedia.png
 share/icons/Yaru/256x256@2x/apps/applications-office.png
@@ -13794,6 +13703,7 @@ share/icons/Yaru/256x256@2x/apps/org.gnome.Settings.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.Shell.Extensions.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.Shotwell.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.SimpleScan.png
+share/icons/Yaru/256x256@2x/apps/org.gnome.Snapshot.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.Software.Create.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.Software.Develop.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.Software.Learn.png
@@ -13803,6 +13713,7 @@ share/icons/Yaru/256x256@2x/apps/org.gnome.Software.Work.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.Software.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.SoundRecorder.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.Sudoku.png
+share/icons/Yaru/256x256@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.SystemMonitor.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.Terminal.png
 share/icons/Yaru/256x256@2x/apps/org.gnome.TextEditor.png
@@ -14270,6 +14181,7 @@ share/icons/Yaru/256x256@2x/mimetypes/text-richtext.png
 share/icons/Yaru/256x256@2x/mimetypes/text-ruby.png
 share/icons/Yaru/256x256@2x/mimetypes/text-rust.png
 share/icons/Yaru/256x256@2x/mimetypes/text-spreadsheet.png
+share/icons/Yaru/256x256@2x/mimetypes/text-vnd.typst.png
 share/icons/Yaru/256x256@2x/mimetypes/text-x-arduino.png
 share/icons/Yaru/256x256@2x/mimetypes/text-x-authors.png
 share/icons/Yaru/256x256@2x/mimetypes/text-x-c++.png
@@ -14578,6 +14490,7 @@ share/icons/Yaru/32x32/apps/accessories-dictionary.png
 share/icons/Yaru/32x32/apps/accessories-text-editor.png
 share/icons/Yaru/32x32/apps/address-book-app.png
 share/icons/Yaru/32x32/apps/app-center.png
+share/icons/Yaru/32x32/apps/app.drey.EarTag.png
 share/icons/Yaru/32x32/apps/applets-screenshooter.png
 share/icons/Yaru/32x32/apps/applications-multimedia.png
 share/icons/Yaru/32x32/apps/applications-office.png
@@ -14721,6 +14634,7 @@ share/icons/Yaru/32x32/apps/org.gnome.Settings.png
 share/icons/Yaru/32x32/apps/org.gnome.Shell.Extensions.png
 share/icons/Yaru/32x32/apps/org.gnome.Shotwell.png
 share/icons/Yaru/32x32/apps/org.gnome.SimpleScan.png
+share/icons/Yaru/32x32/apps/org.gnome.Snapshot.png
 share/icons/Yaru/32x32/apps/org.gnome.Software.Create.png
 share/icons/Yaru/32x32/apps/org.gnome.Software.Develop.png
 share/icons/Yaru/32x32/apps/org.gnome.Software.Learn.png
@@ -14730,6 +14644,7 @@ share/icons/Yaru/32x32/apps/org.gnome.Software.Work.png
 share/icons/Yaru/32x32/apps/org.gnome.Software.png
 share/icons/Yaru/32x32/apps/org.gnome.SoundRecorder.png
 share/icons/Yaru/32x32/apps/org.gnome.Sudoku.png
+share/icons/Yaru/32x32/apps/org.gnome.Sysprof.png
 share/icons/Yaru/32x32/apps/org.gnome.SystemMonitor.png
 share/icons/Yaru/32x32/apps/org.gnome.Terminal.png
 share/icons/Yaru/32x32/apps/org.gnome.TextEditor.png
@@ -15197,6 +15112,7 @@ share/icons/Yaru/32x32/mimetypes/text-richtext.png
 share/icons/Yaru/32x32/mimetypes/text-ruby.png
 share/icons/Yaru/32x32/mimetypes/text-rust.png
 share/icons/Yaru/32x32/mimetypes/text-spreadsheet.png
+share/icons/Yaru/32x32/mimetypes/text-vnd.typst.png
 share/icons/Yaru/32x32/mimetypes/text-x-arduino.png
 share/icons/Yaru/32x32/mimetypes/text-x-authors.png
 share/icons/Yaru/32x32/mimetypes/text-x-c++.png
@@ -15505,6 +15421,7 @@ share/icons/Yaru/32x32@2x/apps/accessories-dictionary.png
 share/icons/Yaru/32x32@2x/apps/accessories-text-editor.png
 share/icons/Yaru/32x32@2x/apps/address-book-app.png
 share/icons/Yaru/32x32@2x/apps/app-center.png
+share/icons/Yaru/32x32@2x/apps/app.drey.EarTag.png
 share/icons/Yaru/32x32@2x/apps/applets-screenshooter.png
 share/icons/Yaru/32x32@2x/apps/applications-multimedia.png
 share/icons/Yaru/32x32@2x/apps/applications-office.png
@@ -15648,6 +15565,7 @@ share/icons/Yaru/32x32@2x/apps/org.gnome.Settings.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.Shell.Extensions.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.Shotwell.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.SimpleScan.png
+share/icons/Yaru/32x32@2x/apps/org.gnome.Snapshot.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.Software.Create.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.Software.Develop.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.Software.Learn.png
@@ -15657,6 +15575,7 @@ share/icons/Yaru/32x32@2x/apps/org.gnome.Software.Work.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.Software.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.SoundRecorder.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.Sudoku.png
+share/icons/Yaru/32x32@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.SystemMonitor.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.Terminal.png
 share/icons/Yaru/32x32@2x/apps/org.gnome.TextEditor.png
@@ -16124,6 +16043,7 @@ share/icons/Yaru/32x32@2x/mimetypes/text-richtext.png
 share/icons/Yaru/32x32@2x/mimetypes/text-ruby.png
 share/icons/Yaru/32x32@2x/mimetypes/text-rust.png
 share/icons/Yaru/32x32@2x/mimetypes/text-spreadsheet.png
+share/icons/Yaru/32x32@2x/mimetypes/text-vnd.typst.png
 share/icons/Yaru/32x32@2x/mimetypes/text-x-arduino.png
 share/icons/Yaru/32x32@2x/mimetypes/text-x-authors.png
 share/icons/Yaru/32x32@2x/mimetypes/text-x-c++.png
@@ -16432,6 +16352,7 @@ share/icons/Yaru/48x48/apps/accessories-dictionary.png
 share/icons/Yaru/48x48/apps/accessories-text-editor.png
 share/icons/Yaru/48x48/apps/address-book-app.png
 share/icons/Yaru/48x48/apps/app-center.png
+share/icons/Yaru/48x48/apps/app.drey.EarTag.png
 share/icons/Yaru/48x48/apps/applets-screenshooter.png
 share/icons/Yaru/48x48/apps/applications-multimedia.png
 share/icons/Yaru/48x48/apps/applications-office.png
@@ -16575,6 +16496,7 @@ share/icons/Yaru/48x48/apps/org.gnome.Settings.png
 share/icons/Yaru/48x48/apps/org.gnome.Shell.Extensions.png
 share/icons/Yaru/48x48/apps/org.gnome.Shotwell.png
 share/icons/Yaru/48x48/apps/org.gnome.SimpleScan.png
+share/icons/Yaru/48x48/apps/org.gnome.Snapshot.png
 share/icons/Yaru/48x48/apps/org.gnome.Software.Create.png
 share/icons/Yaru/48x48/apps/org.gnome.Software.Develop.png
 share/icons/Yaru/48x48/apps/org.gnome.Software.Learn.png
@@ -16584,6 +16506,7 @@ share/icons/Yaru/48x48/apps/org.gnome.Software.Work.png
 share/icons/Yaru/48x48/apps/org.gnome.Software.png
 share/icons/Yaru/48x48/apps/org.gnome.SoundRecorder.png
 share/icons/Yaru/48x48/apps/org.gnome.Sudoku.png
+share/icons/Yaru/48x48/apps/org.gnome.Sysprof.png
 share/icons/Yaru/48x48/apps/org.gnome.SystemMonitor.png
 share/icons/Yaru/48x48/apps/org.gnome.Terminal.png
 share/icons/Yaru/48x48/apps/org.gnome.TextEditor.png
@@ -17051,6 +16974,7 @@ share/icons/Yaru/48x48/mimetypes/text-richtext.png
 share/icons/Yaru/48x48/mimetypes/text-ruby.png
 share/icons/Yaru/48x48/mimetypes/text-rust.png
 share/icons/Yaru/48x48/mimetypes/text-spreadsheet.png
+share/icons/Yaru/48x48/mimetypes/text-vnd.typst.png
 share/icons/Yaru/48x48/mimetypes/text-x-arduino.png
 share/icons/Yaru/48x48/mimetypes/text-x-authors.png
 share/icons/Yaru/48x48/mimetypes/text-x-c++.png
@@ -17359,6 +17283,7 @@ share/icons/Yaru/48x48@2x/apps/accessories-dictionary.png
 share/icons/Yaru/48x48@2x/apps/accessories-text-editor.png
 share/icons/Yaru/48x48@2x/apps/address-book-app.png
 share/icons/Yaru/48x48@2x/apps/app-center.png
+share/icons/Yaru/48x48@2x/apps/app.drey.EarTag.png
 share/icons/Yaru/48x48@2x/apps/applets-screenshooter.png
 share/icons/Yaru/48x48@2x/apps/applications-multimedia.png
 share/icons/Yaru/48x48@2x/apps/applications-office.png
@@ -17502,6 +17427,7 @@ share/icons/Yaru/48x48@2x/apps/org.gnome.Settings.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.Shell.Extensions.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.Shotwell.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.SimpleScan.png
+share/icons/Yaru/48x48@2x/apps/org.gnome.Snapshot.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.Software.Create.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.Software.Develop.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.Software.Learn.png
@@ -17511,6 +17437,7 @@ share/icons/Yaru/48x48@2x/apps/org.gnome.Software.Work.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.Software.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.SoundRecorder.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.Sudoku.png
+share/icons/Yaru/48x48@2x/apps/org.gnome.Sysprof.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.SystemMonitor.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.Terminal.png
 share/icons/Yaru/48x48@2x/apps/org.gnome.TextEditor.png
@@ -17978,6 +17905,7 @@ share/icons/Yaru/48x48@2x/mimetypes/text-richtext.png
 share/icons/Yaru/48x48@2x/mimetypes/text-ruby.png
 share/icons/Yaru/48x48@2x/mimetypes/text-rust.png
 share/icons/Yaru/48x48@2x/mimetypes/text-spreadsheet.png
+share/icons/Yaru/48x48@2x/mimetypes/text-vnd.typst.png
 share/icons/Yaru/48x48@2x/mimetypes/text-x-arduino.png
 share/icons/Yaru/48x48@2x/mimetypes/text-x-authors.png
 share/icons/Yaru/48x48@2x/mimetypes/text-x-c++.png
@@ -18545,6 +18473,8 @@ share/icons/Yaru/scalable/actions/builder-view-left-pane-symbolic.svg
 share/icons/Yaru/scalable/actions/call-start-symbolic.svg
 share/icons/Yaru/scalable/actions/call-stop-symbolic.svg
 share/icons/Yaru/scalable/actions/camera-switch-symbolic.svg
+share/icons/Yaru/scalable/actions/camera-timer-symbolic.svg
+share/icons/Yaru/scalable/actions/cameras-symbolic.svg
 share/icons/Yaru/scalable/actions/carousel-arrow-next-symbolic.svg
 share/icons/Yaru/scalable/actions/carousel-arrow-previous-symbolic.svg
 share/icons/Yaru/scalable/actions/chat-message-new-symbolic.svg
@@ -18554,7 +18484,9 @@ share/icons/Yaru/scalable/actions/contact-new-symbolic.svg
 share/icons/Yaru/scalable/actions/contact-symbolic.svg
 share/icons/Yaru/scalable/actions/crop-pivot-reticle-symbolic.svg
 share/icons/Yaru/scalable/actions/crop-symbolic.svg
+share/icons/Yaru/scalable/actions/dbus-symbolic.svg
 share/icons/Yaru/scalable/actions/detach-symbolic.svg
+share/icons/Yaru/scalable/actions/document-admin-symbolic.svg
 share/icons/Yaru/scalable/actions/document-edit-symbolic.svg
 share/icons/Yaru/scalable/actions/document-new-symbolic.svg
 share/icons/Yaru/scalable/actions/document-open-recent-symbolic.svg
@@ -18590,6 +18522,11 @@ share/icons/Yaru/scalable/actions/edit-undo-rtl-symbolic.svg
 share/icons/Yaru/scalable/actions/edit-undo-symbolic-rtl.svg
 share/icons/Yaru/scalable/actions/edit-undo-symbolic.svg
 share/icons/Yaru/scalable/actions/eog-image-gallery-symbolic.svg
+share/icons/Yaru/scalable/actions/ephy-bookmark-tag-symbolic.svg
+share/icons/Yaru/scalable/actions/ephy-globe-alt2-symbolic.svg
+share/icons/Yaru/scalable/actions/ephy-library-symbolic.svg
+share/icons/Yaru/scalable/actions/ephy-open-link-symbolic.svg
+share/icons/Yaru/scalable/actions/ephy-webpage-symbolic.svg
 share/icons/Yaru/scalable/actions/error-correct-symbolic.svg
 share/icons/Yaru/scalable/actions/events-merge-symbolic.svg
 share/icons/Yaru/scalable/actions/favorite-new-symbolic.svg
@@ -18655,6 +18592,7 @@ share/icons/Yaru/scalable/actions/go-previous-symbolic-rtl.svg
 share/icons/Yaru/scalable/actions/go-previous-symbolic.svg
 share/icons/Yaru/scalable/actions/go-top-symbolic.svg
 share/icons/Yaru/scalable/actions/go-up-symbolic.svg
+share/icons/Yaru/scalable/actions/graphics-symbolic.svg
 share/icons/Yaru/scalable/actions/help-about-symbolic.svg
 share/icons/Yaru/scalable/actions/image-adjust-color-symbolic.svg
 share/icons/Yaru/scalable/actions/image-auto-adjust-symbolic.svg
@@ -18696,6 +18634,7 @@ share/icons/Yaru/scalable/actions/mail-send-symbolic.svg
 share/icons/Yaru/scalable/actions/mail-sent-symbolic-rtl.svg
 share/icons/Yaru/scalable/actions/mail-sent-symbolic.svg
 share/icons/Yaru/scalable/actions/mail-spam-symbolic.svg
+share/icons/Yaru/scalable/actions/mark-chart-symbolic.svg
 share/icons/Yaru/scalable/actions/mark-location-symbolic.svg
 share/icons/Yaru/scalable/actions/marker-symbolic.svg
 share/icons/Yaru/scalable/actions/media-eject-symbolic.svg
@@ -18734,6 +18673,7 @@ share/icons/Yaru/scalable/actions/one-tag-symbolic.svg
 share/icons/Yaru/scalable/actions/open-menu-symbolic.svg
 share/icons/Yaru/scalable/actions/org.gnome.Lollypop-equalizer-symbolic.svg
 share/icons/Yaru/scalable/actions/outline-symbolic.svg
+share/icons/Yaru/scalable/actions/power-saving-symbolic.svg
 share/icons/Yaru/scalable/actions/process-stop-symbolic.svg
 share/icons/Yaru/scalable/actions/qr-code-symbolic.svg
 share/icons/Yaru/scalable/actions/review-rate-negative-symbolic.svg
@@ -18815,6 +18755,7 @@ share/icons/Yaru/scalable/apps/accessories-camera-symbolic.svg
 share/icons/Yaru/scalable/apps/accessories-character-map-symbolic.svg
 share/icons/Yaru/scalable/apps/accessories-text-editor-symbolic.svg
 share/icons/Yaru/scalable/apps/address-book-app-symbolic.svg
+share/icons/Yaru/scalable/apps/app.drey.EarTag-symbolic.svg
 share/icons/Yaru/scalable/apps/applets-screenshooter-symbolic.svg
 share/icons/Yaru/scalable/apps/application-x-executable-symbolic.svg
 share/icons/Yaru/scalable/apps/applications-system-symbolic.svg
@@ -18967,8 +18908,10 @@ share/icons/Yaru/scalable/apps/org.gnome.Shell.CaptivePortal-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Shell.Extensions-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Shotwell-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.SimpleScan-symbolic.svg
+share/icons/Yaru/scalable/apps/org.gnome.Snapshot-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Software-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Sudoku-symbolic.svg
+share/icons/Yaru/scalable/apps/org.gnome.Sysprof-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.SystemMonitor-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.Terminal-symbolic.svg
 share/icons/Yaru/scalable/apps/org.gnome.TextEditor-symbolic.svg
@@ -19108,6 +19051,11 @@ share/icons/Yaru/scalable/categories/emoji-people-symbolic.svg
 share/icons/Yaru/scalable/categories/emoji-recent-symbolic.svg
 share/icons/Yaru/scalable/categories/emoji-symbols-symbolic.svg
 share/icons/Yaru/scalable/categories/emoji-travel-symbolic.svg
+share/icons/Yaru/scalable/categories/ephy-permission-camera-symbolic.svg
+share/icons/Yaru/scalable/categories/ephy-permission-generic-symbolic.svg
+share/icons/Yaru/scalable/categories/ephy-permission-location-symbolic.svg
+share/icons/Yaru/scalable/categories/ephy-permission-microphone-symbolic.svg
+share/icons/Yaru/scalable/categories/ephy-permission-notifications-symbolic.svg
 share/icons/Yaru/scalable/categories/goa-panel-symbolic.svg
 share/icons/Yaru/scalable/categories/location-symbolic.svg
 share/icons/Yaru/scalable/categories/lock-symbolic.svg
@@ -19117,7 +19065,9 @@ share/icons/Yaru/scalable/categories/org.gnome.Settings-device-diagnostics-symbo
 share/icons/Yaru/scalable/categories/org.gnome.Settings-device-security-symbolic.svg
 share/icons/Yaru/scalable/categories/org.gnome.Settings-location-access-symbolic.svg
 share/icons/Yaru/scalable/categories/org.gnome.Settings-network-proxy-symbolic.svg
+share/icons/Yaru/scalable/categories/org.gnome.Settings-network-workgroup-symbolic.svg
 share/icons/Yaru/scalable/categories/org.gnome.Settings-removable-media-symbolic.svg
+share/icons/Yaru/scalable/categories/org.gnome.Settings-screen-lock-symbolic.svg
 share/icons/Yaru/scalable/categories/org.gnome.Settings-thunderbolt-access-symbolic.svg
 share/icons/Yaru/scalable/categories/org.gnome.Settings-trash-file-history-symbolic.svg
 share/icons/Yaru/scalable/categories/package-flatpak-symbolic.svg
@@ -19274,9 +19224,12 @@ share/icons/Yaru/scalable/emblems/emblem-important-symbolic.svg
 share/icons/Yaru/scalable/emblems/emblem-music-symbolic.svg
 share/icons/Yaru/scalable/emblems/emblem-ok-symbolic.svg
 share/icons/Yaru/scalable/emblems/emblem-photos-symbolic.svg
+share/icons/Yaru/scalable/emblems/emblem-readonly-symbolic.svg
 share/icons/Yaru/scalable/emblems/emblem-shared-symbolic.svg
+share/icons/Yaru/scalable/emblems/emblem-symbolic-link-symbolic.svg
 share/icons/Yaru/scalable/emblems/emblem-synchronizing-symbolic.svg
 share/icons/Yaru/scalable/emblems/emblem-system-symbolic.svg
+share/icons/Yaru/scalable/emblems/emblem-unwriteable-symbolic.svg
 share/icons/Yaru/scalable/emblems/emblem-videos-symbolic.svg
 share/icons/Yaru/scalable/emblems/explore-symbolic.svg
 share/icons/Yaru/scalable/emblems/explore2-symbolic.svg
@@ -19415,6 +19368,7 @@ share/icons/Yaru/scalable/org.gnome.Nautilus/
 share/icons/Yaru/scalable/org.gnome.Nautilus/cancel-operation-symbolic.svg
 share/icons/Yaru/scalable/org.gnome.Nautilus/file-operation-cancelled-symbolic.svg
 share/icons/Yaru/scalable/org.gnome.Nautilus/file-operation-finished-symbolic.svg
+share/icons/Yaru/scalable/org.gnome.Nautilus/nautilus-file-chooser-options-symbolic.svg
 share/icons/Yaru/scalable/org.gnome.Nautilus/nautilus-folder-search-symbolic.svg
 share/icons/Yaru/scalable/org.gnome.Nautilus/nautilus-search-filters-symbolic.svg
 share/icons/Yaru/scalable/org.gnome.Nautilus/network-computer-symbolic.svg
@@ -19581,6 +19535,13 @@ share/icons/Yaru/scalable/status/dialog-password-symbolic.svg
 share/icons/Yaru/scalable/status/dialog-question-symbolic.svg
 share/icons/Yaru/scalable/status/dialog-warning-symbolic.svg
 share/icons/Yaru/scalable/status/display-brightness-symbolic.svg
+share/icons/Yaru/scalable/status/ephy-audio-muted-symbolic.svg
+share/icons/Yaru/scalable/status/ephy-audio-playing-symbolic.svg
+share/icons/Yaru/scalable/status/ephy-eye-open-negative-filled-symbolic.svg
+share/icons/Yaru/scalable/status/ephy-non-starred-symbolic.svg
+share/icons/Yaru/scalable/status/ephy-reader-mode-symbolic.svg
+share/icons/Yaru/scalable/status/ephy-shield-safe-symbolic.svg
+share/icons/Yaru/scalable/status/ephy-starred-symbolic.svg
 share/icons/Yaru/scalable/status/eye-not-looking-symbolic.svg
 share/icons/Yaru/scalable/status/eye-open-negative-filled-symbolic.svg
 share/icons/Yaru/scalable/status/fingerprint-detection-complete-symbolic.svg
@@ -19811,34 +19772,25 @@ share/icons/Yaru/scalable/time/week-symbolic.svg
 share/icons/Yaru/scalable/time/year-alt-symbolic.svg
 share/icons/Yaru/scalable/time/year-symbolic.svg
 share/icons/Yaru/scalable/ui/
-share/icons/Yaru/scalable/ui/adw-expander-arrow-symbolic.svg
 share/icons/Yaru/scalable/ui/checkbox-checked-symbolic.svg
 share/icons/Yaru/scalable/ui/checkbox-mixed-symbolic.svg
 share/icons/Yaru/scalable/ui/checkbox-symbolic.svg
-share/icons/Yaru/scalable/ui/cross-small-symbolic.svg
-share/icons/Yaru/scalable/ui/drag-handle-symbolic.svg
 share/icons/Yaru/scalable/ui/focus-legacy-systray-symbolic.svg
 share/icons/Yaru/scalable/ui/focus-top-bar-symbolic.svg
 share/icons/Yaru/scalable/ui/focus-windows-symbolic.svg
-share/icons/Yaru/scalable/ui/hdy-expander-arrow-symbolic.svg
 share/icons/Yaru/scalable/ui/list-drag-handle-symbolic.svg
 share/icons/Yaru/scalable/ui/pan-down-large-symbolic.svg
 share/icons/Yaru/scalable/ui/pan-down-symbolic.svg
 share/icons/Yaru/scalable/ui/pan-end-large-symbolic.svg
-share/icons/Yaru/scalable/ui/pan-end-symbolic-rtl.svg
 share/icons/Yaru/scalable/ui/pan-end-symbolic.svg
 share/icons/Yaru/scalable/ui/pan-start-large-symbolic.svg
-share/icons/Yaru/scalable/ui/pan-start-symbolic-rtl.svg
 share/icons/Yaru/scalable/ui/pan-start-symbolic.svg
 share/icons/Yaru/scalable/ui/pan-up-large-symbolic.svg
 share/icons/Yaru/scalable/ui/pan-up-symbolic.svg
 share/icons/Yaru/scalable/ui/radio-checked-symbolic.svg
 share/icons/Yaru/scalable/ui/radio-mixed-symbolic.svg
 share/icons/Yaru/scalable/ui/radio-symbolic.svg
-share/icons/Yaru/scalable/ui/right-large-symbolic.svg
-share/icons/Yaru/scalable/ui/selection-end-symbolic-rtl.svg
 share/icons/Yaru/scalable/ui/selection-end-symbolic.svg
-share/icons/Yaru/scalable/ui/selection-start-symbolic-rtl.svg
 share/icons/Yaru/scalable/ui/selection-start-symbolic.svg
 share/icons/Yaru/scalable/ui/tab-new-symbolic.svg
 share/icons/Yaru/scalable/ui/window-close-symbolic.svg
@@ -19877,7 +19829,6 @@ share/themes/
 share/themes/Yaru/
 share/themes/Yaru-blue/
 share/themes/Yaru-blue-dark/
-share/themes/Yaru-blue-dark/gnome-shell
 share/themes/Yaru-blue-dark/gtk-2.0/
 share/themes/Yaru-blue-dark/gtk-2.0/apps.rc
 share/themes/Yaru-blue-dark/gtk-2.0/assets/
@@ -20058,7 +20009,6 @@ share/themes/Yaru-blue-dark/gtk-4.0/gtk-dark.css
 share/themes/Yaru-blue-dark/gtk-4.0/gtk.css
 share/themes/Yaru-blue-dark/gtk-4.0/gtk.gresource
 share/themes/Yaru-blue-dark/index.theme
-share/themes/Yaru-blue/gnome-shell
 share/themes/Yaru-blue/gtk-2.0/
 share/themes/Yaru-blue/gtk-2.0/apps.rc
 share/themes/Yaru-blue/gtk-2.0/assets/
@@ -20457,7 +20407,6 @@ share/themes/Yaru-dark/metacity-1/unmaximize_unfocused_prelight.svg
 share/themes/Yaru-dark/metacity-1/unmaximize_unfocused_pressed.svg
 share/themes/Yaru-magenta/
 share/themes/Yaru-magenta-dark/
-share/themes/Yaru-magenta-dark/gnome-shell
 share/themes/Yaru-magenta-dark/gtk-2.0/
 share/themes/Yaru-magenta-dark/gtk-2.0/apps.rc
 share/themes/Yaru-magenta-dark/gtk-2.0/assets/
@@ -20638,7 +20587,6 @@ share/themes/Yaru-magenta-dark/gtk-4.0/gtk-dark.css
 share/themes/Yaru-magenta-dark/gtk-4.0/gtk.css
 share/themes/Yaru-magenta-dark/gtk-4.0/gtk.gresource
 share/themes/Yaru-magenta-dark/index.theme
-share/themes/Yaru-magenta/gnome-shell
 share/themes/Yaru-magenta/gtk-2.0/
 share/themes/Yaru-magenta/gtk-2.0/apps.rc
 share/themes/Yaru-magenta/gtk-2.0/assets/
@@ -20821,7 +20769,6 @@ share/themes/Yaru-magenta/gtk-4.0/gtk.gresource
 share/themes/Yaru-magenta/index.theme
 share/themes/Yaru-olive/
 share/themes/Yaru-olive-dark/
-share/themes/Yaru-olive-dark/gnome-shell
 share/themes/Yaru-olive-dark/gtk-2.0/
 share/themes/Yaru-olive-dark/gtk-2.0/apps.rc
 share/themes/Yaru-olive-dark/gtk-2.0/assets/
@@ -21002,7 +20949,6 @@ share/themes/Yaru-olive-dark/gtk-4.0/gtk-dark.css
 share/themes/Yaru-olive-dark/gtk-4.0/gtk.css
 share/themes/Yaru-olive-dark/gtk-4.0/gtk.gresource
 share/themes/Yaru-olive-dark/index.theme
-share/themes/Yaru-olive/gnome-shell
 share/themes/Yaru-olive/gtk-2.0/
 share/themes/Yaru-olive/gtk-2.0/apps.rc
 share/themes/Yaru-olive/gtk-2.0/assets/
@@ -21185,7 +21131,6 @@ share/themes/Yaru-olive/gtk-4.0/gtk.gresource
 share/themes/Yaru-olive/index.theme
 share/themes/Yaru-prussiangreen/
 share/themes/Yaru-prussiangreen-dark/
-share/themes/Yaru-prussiangreen-dark/gnome-shell
 share/themes/Yaru-prussiangreen-dark/gtk-2.0/
 share/themes/Yaru-prussiangreen-dark/gtk-2.0/apps.rc
 share/themes/Yaru-prussiangreen-dark/gtk-2.0/assets/
@@ -21366,7 +21311,6 @@ share/themes/Yaru-prussiangreen-dark/gtk-4.0/gtk-dark.css
 share/themes/Yaru-prussiangreen-dark/gtk-4.0/gtk.css
 share/themes/Yaru-prussiangreen-dark/gtk-4.0/gtk.gresource
 share/themes/Yaru-prussiangreen-dark/index.theme
-share/themes/Yaru-prussiangreen/gnome-shell
 share/themes/Yaru-prussiangreen/gtk-2.0/
 share/themes/Yaru-prussiangreen/gtk-2.0/apps.rc
 share/themes/Yaru-prussiangreen/gtk-2.0/assets/
@@ -21549,7 +21493,6 @@ share/themes/Yaru-prussiangreen/gtk-4.0/gtk.gresource
 share/themes/Yaru-prussiangreen/index.theme
 share/themes/Yaru-purple/
 share/themes/Yaru-purple-dark/
-share/themes/Yaru-purple-dark/gnome-shell
 share/themes/Yaru-purple-dark/gtk-2.0/
 share/themes/Yaru-purple-dark/gtk-2.0/apps.rc
 share/themes/Yaru-purple-dark/gtk-2.0/assets/
@@ -21730,7 +21673,6 @@ share/themes/Yaru-purple-dark/gtk-4.0/gtk-dark.css
 share/themes/Yaru-purple-dark/gtk-4.0/gtk.css
 share/themes/Yaru-purple-dark/gtk-4.0/gtk.gresource
 share/themes/Yaru-purple-dark/index.theme
-share/themes/Yaru-purple/gnome-shell
 share/themes/Yaru-purple/gtk-2.0/
 share/themes/Yaru-purple/gtk-2.0/apps.rc
 share/themes/Yaru-purple/gtk-2.0/assets/
@@ -21913,7 +21855,6 @@ share/themes/Yaru-purple/gtk-4.0/gtk.gresource
 share/themes/Yaru-purple/index.theme
 share/themes/Yaru-red/
 share/themes/Yaru-red-dark/
-share/themes/Yaru-red-dark/gnome-shell
 share/themes/Yaru-red-dark/gtk-2.0/
 share/themes/Yaru-red-dark/gtk-2.0/apps.rc
 share/themes/Yaru-red-dark/gtk-2.0/assets/
@@ -22094,7 +22035,6 @@ share/themes/Yaru-red-dark/gtk-4.0/gtk-dark.css
 share/themes/Yaru-red-dark/gtk-4.0/gtk.css
 share/themes/Yaru-red-dark/gtk-4.0/gtk.gresource
 share/themes/Yaru-red-dark/index.theme
-share/themes/Yaru-red/gnome-shell
 share/themes/Yaru-red/gtk-2.0/
 share/themes/Yaru-red/gtk-2.0/apps.rc
 share/themes/Yaru-red/gtk-2.0/assets/
@@ -22277,7 +22217,6 @@ share/themes/Yaru-red/gtk-4.0/gtk.gresource
 share/themes/Yaru-red/index.theme
 share/themes/Yaru-sage/
 share/themes/Yaru-sage-dark/
-share/themes/Yaru-sage-dark/gnome-shell
 share/themes/Yaru-sage-dark/gtk-2.0/
 share/themes/Yaru-sage-dark/gtk-2.0/apps.rc
 share/themes/Yaru-sage-dark/gtk-2.0/assets/
@@ -22458,7 +22397,6 @@ share/themes/Yaru-sage-dark/gtk-4.0/gtk-dark.css
 share/themes/Yaru-sage-dark/gtk-4.0/gtk.css
 share/themes/Yaru-sage-dark/gtk-4.0/gtk.gresource
 share/themes/Yaru-sage-dark/index.theme
-share/themes/Yaru-sage/gnome-shell
 share/themes/Yaru-sage/gtk-2.0/
 share/themes/Yaru-sage/gtk-2.0/apps.rc
 share/themes/Yaru-sage/gtk-2.0/assets/
@@ -22641,7 +22579,6 @@ share/themes/Yaru-sage/gtk-4.0/gtk.gresource
 share/themes/Yaru-sage/index.theme
 share/themes/Yaru-wartybrown/
 share/themes/Yaru-wartybrown-dark/
-share/themes/Yaru-wartybrown-dark/gnome-shell
 share/themes/Yaru-wartybrown-dark/gtk-2.0/
 share/themes/Yaru-wartybrown-dark/gtk-2.0/apps.rc
 share/themes/Yaru-wartybrown-dark/gtk-2.0/assets/
@@ -22822,7 +22759,6 @@ share/themes/Yaru-wartybrown-dark/gtk-4.0/gtk-dark.css
 share/themes/Yaru-wartybrown-dark/gtk-4.0/gtk.css
 share/themes/Yaru-wartybrown-dark/gtk-4.0/gtk.gresource
 share/themes/Yaru-wartybrown-dark/index.theme
-share/themes/Yaru-wartybrown/gnome-shell
 share/themes/Yaru-wartybrown/gtk-2.0/
 share/themes/Yaru-wartybrown/gtk-2.0/apps.rc
 share/themes/Yaru-wartybrown/gtk-2.0/assets/
@@ -23005,7 +22941,6 @@ share/themes/Yaru-wartybrown/gtk-4.0/gtk.gresource
 share/themes/Yaru-wartybrown/index.theme
 share/themes/Yaru-yellow/
 share/themes/Yaru-yellow-dark/
-share/themes/Yaru-yellow-dark/gnome-shell
 share/themes/Yaru-yellow-dark/gtk-2.0/
 share/themes/Yaru-yellow-dark/gtk-2.0/apps.rc
 share/themes/Yaru-yellow-dark/gtk-2.0/assets/
@@ -23186,7 +23121,6 @@ share/themes/Yaru-yellow-dark/gtk-4.0/gtk-dark.css
 share/themes/Yaru-yellow-dark/gtk-4.0/gtk.css
 share/themes/Yaru-yellow-dark/gtk-4.0/gtk.gresource
 share/themes/Yaru-yellow-dark/index.theme
-share/themes/Yaru-yellow/gnome-shell
 share/themes/Yaru-yellow/gtk-2.0/
 share/themes/Yaru-yellow/gtk-2.0/apps.rc
 share/themes/Yaru-yellow/gtk-2.0/assets/

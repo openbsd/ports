@@ -1,7 +1,7 @@
 Index: gnome-shell/src/meson.build
 --- gnome-shell/src/meson.build.orig
 +++ gnome-shell/src/meson.build
-@@ -64,7 +64,7 @@ foreach src: theme_sources
+@@ -57,7 +57,7 @@ foreach src: theme_sources
      command: [
        'bash', '-c',
        ';'.join([
