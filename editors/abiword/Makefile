@@ -10,7 +10,7 @@ WRKDIST=	${WRKDIR}/AbiWord-542cb5c8aa0a97efd033f78d29f706d1fbae74e7
 
 VERSION=	3.0.6.0.20241101
 DISTNAME=	abiword-${VERSION}
-REVISION=	0
+REVISION=	1
 
 SHARED_LIBS +=  abiword-3.1-test          0.0 # 0.0
 
@@ -27,7 +27,7 @@ WANTLIB += ${COMPILER_LIBCXX} ICE SM X11 Xau Xcomposite Xcursor
 WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
 WANTLIB += aspell atk-1.0 atk-bridge-2.0 atspi avahi-common bz2
 WANTLIB += c cairo cairo-gobject crypto curl dbus-1 enchant-2
-WANTLIB += epoll-shim epoxy execinfo expat ffi fontconfig freetype
+WANTLIB += epoll-shim epoxy expat ffi fontconfig freetype
 WANTLIB += fribidi gcrypt gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
 WANTLIB += gmodule-2.0 gmp gobject-2.0 goffice-0.10 gpg-error
 WANTLIB += graphite2 gs gsf-1 gthread-2.0 gtk-3 harfbuzz iconv
