@@ -1,10 +1,9 @@
 COMMENT =		Python implementation of ECDSA cryptography
 
-MODPY_DISTV =		0.19.0
+MODPY_DISTV =		0.19.1
 DISTNAME = 		ecdsa-${MODPY_DISTV}
 PKGNAME = 		py-${DISTNAME}
 CATEGORIES = 		security
-REVISION =              1
 
 HOMEPAGE = 		https://github.com/warner/python-ecdsa
 
