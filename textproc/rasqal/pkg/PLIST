@@ -3,7 +3,7 @@ bin/rasqal-config
 @bin bin/roqet
 include/rasqal/
 include/rasqal/rasqal.h
-lib/librasqal.a
+@static-lib lib/librasqal.a
 lib/librasqal.la
 @lib lib/librasqal.so.${LIBrasqal_VERSION}
 lib/pkgconfig/rasqal.pc
