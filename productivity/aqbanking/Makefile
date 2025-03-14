@@ -1,6 +1,7 @@
 COMMENT=	online banking interface and financial data framework
 
 DISTNAME=	aqbanking-6.5.3
+REVISION=	0
 
 SHARED_LIBS +=  aqbanking            4.0      # .46.2
 
@@ -11,9 +12,9 @@ HOMEPAGE=	https://www.aquamaniac.de
 # GPLv2 or GPLv3
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =  brotlidec brotlienc c ffi gcrypt gmp gnutls gpg-error
-WANTLIB += gwenhywfar hogweed iconv idn2 intl ltdl lzma m nettle p11-kit
-WANTLIB += pthread tasn1 unistring xml2 xmlsec1 xslt z zstd
+WANTLIB += c gcrypt gmp gnutls gpg-error gwenhywfar hogweed iconv
+WANTLIB += idn2 intl ltdl lzma m nettle p11-kit pthread tasn1
+WANTLIB += unistring xml2 xmlsec1 xslt z
 
 SITES=			https://www.aquamaniac.de/rdm/attachments/download/467/
 
