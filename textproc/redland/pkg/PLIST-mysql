@@ -1,1 +1,1 @@
-lib/redland/librdf_storage_mysql.so
+@so lib/redland/librdf_storage_mysql.so
