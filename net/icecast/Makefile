@@ -2,7 +2,7 @@ COMMENT=	server for streaming various media formats
 CATEGORIES=	net audio
 
 DISTNAME=	icecast-2.4.4
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://icecast.org/
 
@@ -23,6 +23,7 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 LIB_DEPENDS =	archivers/xz \
 		audio/libvorbis \
 		audio/speex \
+		devel/gettext,-runtime \
 		multimedia/libtheora \
 		net/curl \
 		textproc/libxslt
