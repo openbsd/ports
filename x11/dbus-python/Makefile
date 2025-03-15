@@ -4,6 +4,7 @@ V =			1.4.0
 DISTNAME =		dbus-python-${V}
 EXTRACT_SUFX=		.tar.xz
 PKGNAME =		py-dbus-${V}
+REVISION =		0
 
 CATEGORIES =		x11
 
@@ -21,12 +22,13 @@ SITES =			http://dbus.freedesktop.org/releases/dbus-python/
 MODULES =		devel/meson \
 			lang/python
 
+BUILD_DEPENDS =		devel/py-gobject3
+
 LIB_DEPENDS =		devel/glib2 \
 			x11/dbus
 
-RUN_DEPENDS =		x11/dbus
-
-TEST_DEPENDS =		devel/py-gobject3
+RUN_DEPENDS =		devel/py-gobject3 \
+			x11/dbus
 
 pre-configure:
 	sed -i "s,/bin/bash,/bin/sh,g" \
