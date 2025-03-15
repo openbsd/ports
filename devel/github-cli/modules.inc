@@ -126,7 +126,7 @@ MODGO_MODULES =	\
 	github.com/gdamore/tcell/v2								 v2.5.4 \
 	github.com/go-chi/chi									 v4.1.2+incompatible \
 	github.com/go-jose/go-jose/v3								 v3.0.3 \
-	github.com/go-jose/go-jose/v4								 v4.0.2 \
+	github.com/go-jose/go-jose/v4								 v4.0.5 \
 	github.com/go-logr/logr									 v1.4.2 \
 	github.com/go-logr/stdr									 v1.2.2 \
 	github.com/go-openapi/analysis								 v0.23.0 \
@@ -320,7 +320,7 @@ MODGO_MODULES =	\
 	github.com/spf13/afero									 v1.11.0 \
 	github.com/spf13/cast									 v1.7.0 \
 	github.com/spf13/cobra									 v1.8.1 \
-	github.com/spf13/pflag									 v1.0.5 \
+	github.com/spf13/pflag									 v1.0.6 \
 	github.com/spf13/viper									 v1.19.0 \
 	github.com/spiffe/go-spiffe/v2								 v2.1.3 \
 	github.com/stretchr/objx								 v0.5.2 \
@@ -415,7 +415,7 @@ MODGO_MODULES =	\
 	google.golang.org/genproto/googleapis/api						 v0.0.0-20241209162323-e6fa225c2576 \
 	google.golang.org/genproto/googleapis/rpc						 v0.0.0-20250102185135-69823020774d \
 	google.golang.org/grpc									 v1.69.4 \
-	google.golang.org/protobuf								 v1.36.4 \
+	google.golang.org/protobuf								 v1.36.5 \
 	gopkg.in/check.v1									 v1.0.0-20201130134442-10cb98267c6c \
 	gopkg.in/cheggaaa/pb.v1									 v1.0.28 \
 	gopkg.in/go-jose/go-jose.v2								 v2.6.3 \
@@ -496,6 +496,7 @@ MODGO_MODFILES =	\
 	github.com/gdamore/tcell/v2							 v2.4.1-0.20210905002822-f057f0a857a1 \
 	github.com/go-jose/go-jose/v3							 v3.0.0 \
 	github.com/go-jose/go-jose/v4							 v4.0.1 \
+	github.com/go-jose/go-jose/v4							 v4.0.2 \
 	github.com/go-logr/logr								 v1.2.2 \
 	github.com/go-logr/logr								 v1.3.0 \
 	github.com/go-logr/logr								 v1.4.1 \
@@ -563,6 +564,7 @@ MODGO_MODFILES =	\
 	github.com/sigstore/sigstore							 v1.8.4 \
 	github.com/spf13/cast								 v1.6.0 \
 	github.com/spf13/cobra								 v1.7.0 \
+	github.com/spf13/pflag								 v1.0.5 \
 	github.com/stretchr/objx							 v0.1.0 \
 	github.com/stretchr/objx							 v0.4.0 \
 	github.com/stretchr/objx							 v0.5.0 \
@@ -618,7 +620,6 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto								 v0.0.0-20220321153916-2c7772ba3064 \
 	golang.org/x/crypto								 v0.16.0 \
 	golang.org/x/crypto								 v0.17.0 \
-	golang.org/x/crypto								 v0.19.0 \
 	golang.org/x/crypto								 v0.21.0 \
 	golang.org/x/crypto								 v0.23.0 \
 	golang.org/x/crypto								 v0.31.0 \
