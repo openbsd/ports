@@ -1,6 +1,6 @@
 USE_WXNEEDED=		Yes
 
-REVISION=		2
+REVISION=		3
 
 COMMENT=		document viewer for the MATE desktop
 
@@ -30,7 +30,7 @@ WANTLIB += icudata icui18n icuuc idn2 jpeg lcms2
 WANTLIB += lz4 lzma openjp2 orc-0.4 pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 png poppler-glib poppler psl secret-1
 WANTLIB += spectre tasn1 tiff unistring webp xml2
-WANTLIB += z xslt aspell
+WANTLIB += z xslt aspell Lerc webpmux
 WANTLIB += gstgl-1.0 kpathsea synctex
 WANTLIB += Xau Xdmcp b2
 WANTLIB += brotlicommon brotlidec fribidi webpdemux woff2common
