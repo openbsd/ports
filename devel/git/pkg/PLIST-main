@@ -27,6 +27,7 @@ libexec/git/
 @bin libexec/git/git-apply
 libexec/git/git-archimport
 @bin libexec/git/git-archive
+@bin libexec/git/git-backfill
 @bin libexec/git/git-bisect
 @bin libexec/git/git-blame
 @bin libexec/git/git-branch
@@ -223,6 +224,7 @@ libexec/git/mergetools/xxdiff
 @man man/man1/git-apply.1
 @man man/man1/git-archimport.1
 @man man/man1/git-archive.1
+@man man/man1/git-backfill.1
 @man man/man1/git-bisect.1
 @man man/man1/git-blame.1
 @man man/man1/git-branch.1
