@@ -442,8 +442,7 @@ CONFIGURE_ARGS+=	--with-tidy=shared,${LOCALBASE}
 COMMENT-xsl=		XSL functions for php
 HOMEPAGE-xsl=		https://www.php.net/xsl
 LIB_DEPENDS-xsl=	textproc/libxslt
-WANTLIB-xsl+=		exslt gcrypt gpg-error iconv intl lzma m pthread \
-			xml2 xslt z
+WANTLIB-xsl+=		exslt iconv lzma m pthread xml2 xslt z
 .if ${BUILD_PACKAGES:M-xsl}
 CONFIGURE_ARGS+=	--with-xsl=shared --enable-dom
 .endif

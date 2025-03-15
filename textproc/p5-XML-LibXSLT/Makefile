@@ -1,6 +1,7 @@
 COMMENT =	interface to GNOME libxslt library
 
 DISTNAME =	XML-LibXSLT-2.003000
+REVISION =	0
 
 CATEGORIES =	textproc
 
@@ -9,8 +10,7 @@ MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 # Perl, MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		c exslt>=7 gcrypt gpg-error iconv intl lzma m perl \
-			pthread xml2>=6 xslt>=1 z
+WANTLIB += c exslt m perl xml2 xslt z
 
 MODULES =		cpan
 RUN_DEPENDS =		textproc/p5-XML-LibXML>=1.70
