@@ -1,9 +1,9 @@
 COMMENT =		dbus bindings for Python
 
-V =			1.3.2
+V =			1.4.0
 DISTNAME =		dbus-python-${V}
+EXTRACT_SUFX=		.tar.xz
 PKGNAME =		py-dbus-${V}
-REVISION =		3
 
 CATEGORIES =		x11
 
@@ -16,7 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += dbus-1 glib-2.0
 
-SITES =			${HOMEPAGE}releases/dbus-python/
+SITES =			http://dbus.freedesktop.org/releases/dbus-python/
 
 MODULES =		devel/meson \
 			lang/python
