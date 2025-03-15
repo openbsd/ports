@@ -12,6 +12,9 @@ CATEGORIES =	www
 # MIT
 PERMIT_PACKAGE =	Yes
 
+# C++
+COMPILER =		base-clang ports-gcc
+
 WANTLIB += ${COMPILER_LIBCXX} c m z
 
 MODULES =		devel/cmake
