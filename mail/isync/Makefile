@@ -1,7 +1,6 @@
 COMMENT=	synchronize IMAP4 and maildir mailboxes
 
-DISTNAME=	isync-1.5.0
-REVISION=	0
+DISTNAME=	isync-1.5.1
 
 CATEGORIES=	mail
 SITES=		${SITE_SOURCEFORGE:=isync/}
