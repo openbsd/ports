@@ -1728,13 +1728,20 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/cognito-idp/sign-up.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cognito-idp/start-user-import-job.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cognito-idp/start-web-authn-registration.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cognito-idp/stop-user-import-job.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cognito-idp/tag-resource.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cognito-idp/untag-resource.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cognito-idp/update-auth-event-feedback.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cognito-idp/update-device-status.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cognito-idp/update-group.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cognito-idp/update-identity-provider.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cognito-idp/update-managed-login-branding.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cognito-idp/update-resource-server.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cognito-idp/update-user-attributes.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cognito-idp/update-user-pool-client.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cognito-idp/update-user-pool-domain.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/cognito-idp/update-user-pool.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cognito-idp/verify-software-token.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/cognito-idp/verify-user-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/comprehend/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/comprehend/batch-detect-dominant-language.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/comprehend/batch-detect-entities.rst
@@ -2264,6 +2271,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/associate-instance-
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/associate-ipam-resource-discovery.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/associate-nat-gateway-address.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/associate-route-table.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/associate-security-group-vpc.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/associate-subnet-cidr-block.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/associate-transit-gateway-multicast-domain.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/associate-transit-gateway-route-table.rst
@@ -2549,6 +2557,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-scheduled-
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-scheduled-instances.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-security-group-references.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-security-group-rules.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-security-group-vpc-associations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-security-groups.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-snapshot-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-snapshot-tier-status.rst
@@ -2587,6 +2596,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-volumes.rs
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-vpc-attribute.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-vpc-classic-link-dns-support.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-vpc-classic-link.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-vpc-endpoint-associations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-vpc-endpoint-connection-notifications.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-vpc-endpoint-connections.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/describe-vpc-endpoint-service-configurations.rst
@@ -2610,6 +2620,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-fast-launch
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-fast-snapshot-restores.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-image-block-public-access.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-image-deprecation.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-image-deregistration-protection.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-image.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-ipam-organization-admin-account.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disable-serial-console-access.rst
@@ -2625,6 +2636,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disassociate-instan
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disassociate-ipam-resource-discovery.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disassociate-nat-gateway-address.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disassociate-route-table.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disassociate-security-group-vpc.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disassociate-subnet-cidr-block.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disassociate-transit-gateway-multicast-domain.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/disassociate-transit-gateway-route-table.rst
@@ -2636,6 +2648,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-fast-launch.
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-fast-snapshot-restores.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-image-block-public-access.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-image-deprecation.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-image-deregistration-protection.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-image.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-ipam-organization-admin-account.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/ec2/enable-reachability-analyzer-organization-sharing.rst
@@ -6553,6 +6566,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/verifiedpermissions/upd
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/verifiedpermissions/update-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/create-listener.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/create-resource-configuration.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/create-resource-gateway.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/create-service-network-service-association.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/create-service-network-vpc-association.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/create-service-network.rst
@@ -6560,6 +6575,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/create-serv
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/create-target-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/delete-auth-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/delete-listener.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/delete-resource-configuration.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/delete-resource-gateway.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/delete-service-network-service-association.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/delete-service-network-vpc-association.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/delete-service-network.rst
@@ -6568,14 +6585,20 @@ lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/delete-targ
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/deregister-targets.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/get-auth-policy.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/get-listener.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/get-resource-configuration.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/get-resource-gateway.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/get-service-network-service-association.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/get-service-network-vpc-association.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/get-service-network.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/get-service.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/get-target-group.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/list-listeners.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/list-resource-configurations.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/list-resource-endpoint-associations.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/list-resource-gateways.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/list-service-network-service-associations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/list-service-network-vpc-associations.rst
+lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/list-service-network-vpc-endpoint-associations.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/list-service-networks.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/list-services.rst
 lib/python${MODPY_VERSION}/site-packages/awscli/examples/vpc-lattice/list-target-groups.rst
