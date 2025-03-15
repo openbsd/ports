@@ -1,13 +1,11 @@
 COMMENT=	Python WSGI compliant interface module for Apache2
 
-PKGNAME=	ap2-mod_wsgi-${GH_TAGNAME}
-REVISION=	2
-
 CATEGORIES=	www
 
 GH_ACCOUNT=	GrahamDumpleton
 GH_PROJECT=	mod_wsgi
-GH_TAGNAME=	4.9.4
+GH_TAGNAME=	5.0.2
+PKGNAME=	ap2-${DISTNAME}
 
 HOMEPAGE=	https://modwsgi.readthedocs.io/
 
