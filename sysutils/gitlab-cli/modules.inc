@@ -29,6 +29,7 @@ MODGO_MODULES =	\
 	github.com/coreos/go-systemd/v22						 v22.3.2 \
 	github.com/cpuguy83/go-md2man/v2						 v2.0.4 \
 	github.com/creack/pty								 v1.1.17 \
+	github.com/cyphar/filepath-securejoin						 v0.4.1 \
 	github.com/danieljoos/wincred							 v1.2.2 \
 	github.com/davecgh/go-spew							 v1.1.2-0.20180830191138-d8f796af33cc \
 	github.com/dlclark/regexp2							 v1.11.0 \
@@ -143,7 +144,7 @@ MODGO_MODULES =	\
 	github.com/yuin/goldmark							 v1.7.4 \
 	github.com/yuin/goldmark-emoji							 v1.0.3 \
 	github.com/zalando/go-keyring							 v0.2.6 \
-	gitlab.com/gitlab-org/api/client-go						 v0.116.0 \
+	gitlab.com/gitlab-org/api/client-go						 v0.122.0 \
 	go.etcd.io/etcd/api/v3								 v3.5.12 \
 	go.etcd.io/etcd/client/pkg/v3							 v3.5.12 \
 	go.etcd.io/etcd/client/v2							 v2.305.12 \
@@ -163,12 +164,12 @@ MODGO_MODULES =	\
 	golang.org/x/exp								 v0.0.0-20240416160154-fe59bbe5cc7f \
 	golang.org/x/mod								 v0.18.0 \
 	golang.org/x/net								 v0.33.0 \
-	golang.org/x/oauth2								 v0.25.0 \
-	golang.org/x/sync								 v0.10.0 \
+	golang.org/x/oauth2								 v0.26.0 \
+	golang.org/x/sync								 v0.11.0 \
 	golang.org/x/sys								 v0.29.0 \
 	golang.org/x/term								 v0.28.0 \
-	golang.org/x/text								 v0.21.0 \
-	golang.org/x/time								 v0.7.0 \
+	golang.org/x/text								 v0.22.0 \
+	golang.org/x/time								 v0.9.0 \
 	golang.org/x/tools								 v0.26.0 \
 	golang.org/x/xerrors								 v0.0.0-20220907171357-04be3eba64a2 \
 	google.golang.org/api								 v0.171.0 \
@@ -183,9 +184,9 @@ MODGO_MODULES =	\
 	gopkg.in/inf.v0									 v0.9.1 \
 	gopkg.in/ini.v1									 v1.67.0 \
 	gopkg.in/yaml.v3								 v3.0.1 \
-	k8s.io/api									 v0.32.0 \
+	k8s.io/api									 v0.32.1 \
 	k8s.io/apimachinery								 v0.32.1 \
-	k8s.io/client-go								 v0.32.0 \
+	k8s.io/client-go								 v0.32.1 \
 	k8s.io/klog/v2									 v2.130.1 \
 	k8s.io/kube-openapi								 v0.0.0-20241105132330-32ad38e42d3f \
 	k8s.io/utils									 v0.0.0-20241104100929-3ea5e8cea738 \
@@ -275,11 +276,10 @@ MODGO_MODFILES =	\
 	golang.org/x/net				 v0.27.0 \
 	golang.org/x/net				 v0.30.0 \
 	golang.org/x/net				 v0.6.0 \
-	golang.org/x/net				 v0.8.0 \
 	golang.org/x/oauth2				 v0.15.0 \
 	golang.org/x/oauth2				 v0.18.0 \
 	golang.org/x/oauth2				 v0.23.0 \
-	golang.org/x/oauth2				 v0.6.0 \
+	golang.org/x/oauth2				 v0.25.0 \
 	golang.org/x/sync				 v0.0.0-20190423024810-112230192c58 \
 	golang.org/x/sync				 v0.0.0-20190911185100-cd5d95a43a6e \
 	golang.org/x/sync				 v0.0.0-20201020160332-67f06af15bc9 \
@@ -323,13 +323,14 @@ MODGO_MODFILES =	\
 	golang.org/x/text				 v0.12.0 \
 	golang.org/x/text				 v0.14.0 \
 	golang.org/x/text				 v0.19.0 \
+	golang.org/x/text				 v0.21.0 \
 	golang.org/x/text				 v0.3.0 \
 	golang.org/x/text				 v0.3.3 \
 	golang.org/x/text				 v0.3.7 \
 	golang.org/x/text				 v0.4.0 \
 	golang.org/x/text				 v0.7.0 \
-	golang.org/x/time				 v0.3.0 \
 	golang.org/x/time				 v0.5.0 \
+	golang.org/x/time				 v0.7.0 \
 	golang.org/x/tools				 v0.0.0-20180917221912-90fa682c2a6e \
 	golang.org/x/tools				 v0.0.0-20191119224855-298f0cb1881e \
 	golang.org/x/tools				 v0.0.0-20200619180055-7c47624df98f \
@@ -349,12 +350,10 @@ MODGO_MODFILES =	\
 	google.golang.org/genproto/googleapis/api	 v0.0.0-20231106174013-bbf56f31fb17 \
 	google.golang.org/genproto/googleapis/rpc	 v0.0.0-20231120223509-83a465c0220f \
 	google.golang.org/grpc				 v1.59.0 \
-	google.golang.org/protobuf			 v1.29.1 \
 	google.golang.org/protobuf			 v1.31.0 \
 	google.golang.org/protobuf			 v1.33.0 \
 	gopkg.in/check.v1				 v0.0.0-20161208181325-20d25e280405 \
 	gopkg.in/check.v1				 v1.0.0-20180628173108-788fd7840127 \
 	gopkg.in/yaml.v3				 v3.0.0-20200313102051-9f266ea9e77c \
-	k8s.io/apimachinery				 v0.32.0 \
 	k8s.io/klog/v2					 v2.80.1
 

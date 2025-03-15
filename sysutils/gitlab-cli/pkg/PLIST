@@ -10,6 +10,9 @@
 @man man/man1/glab-changelog-generate.1
 @man man/man1/glab-changelog.1
 @man man/man1/glab-check-update.1
+@man man/man1/glab-ci-cancel-job.1
+@man man/man1/glab-ci-cancel-pipeline.1
+@man man/man1/glab-ci-cancel.1
 @man man/man1/glab-ci-config-compile.1
 @man man/man1/glab-ci-config.1
 @man man/man1/glab-ci-delete.1
@@ -62,6 +65,7 @@
 @man man/man1/glab-job-artifact.1
 @man man/man1/glab-job.1
 @man man/man1/glab-label-create.1
+@man man/man1/glab-label-delete.1
 @man man/man1/glab-label-list.1
 @man man/man1/glab-label.1
 @man man/man1/glab-mr-approve.1
@@ -107,6 +111,7 @@
 @man man/man1/glab-schedule-delete.1
 @man man/man1/glab-schedule-list.1
 @man man/man1/glab-schedule-run.1
+@man man/man1/glab-schedule-update.1
 @man man/man1/glab-schedule.1
 @man man/man1/glab-snippet-create.1
 @man man/man1/glab-snippet.1
