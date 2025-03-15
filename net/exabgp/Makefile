@@ -52,7 +52,10 @@ post-install:
 .endfor
 
 do-test:
-	cd ${WRKSRC}; exabgp_log_enable=false nosetests --with-coverage ./qa/tests/*_test.py
-	cd ${WRKSRC}; ./qa/bin/functional run
+	-cd ${WRKSRC}; exabgp_log_enable=false nosetests --with-coverage ./qa/tests/*_test.py
+	-cd ${WRKSRC}; ./qa/bin/functional run
+	@pgrep -qf exabgp && \
+	echo warning, tests may have left behind running exabgp processes && \
+	echo you may want to run: pkill -f exabgp
 
 .include <bsd.port.mk>
