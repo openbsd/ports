@@ -2,7 +2,7 @@ COMMENT=		GNOME help browser
 
 GNOME_PROJECT=		yelp
 GNOME_VERSION=		42.2
-REVISION=		5
+REVISION=		6
 
 SHARED_LIBS +=  yelp                 0.0      # unknown
 
@@ -30,7 +30,7 @@ WANTLIB += wayland-client wayland-cursor wayland-egl wayland-server
 WANTLIB += webkit2gtk-4.1 webp webpdemux woff2common woff2dec
 WANTLIB += xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-randr
 WANTLIB += xcb-render xcb-shm xcb-sync xcb-xfixes xkbcommon xml2
-WANTLIB += xshmfence xslt z
+WANTLIB += xshmfence xslt z webpmux
 
 COMPILER=		base-clang ports-gcc base-gcc
 
