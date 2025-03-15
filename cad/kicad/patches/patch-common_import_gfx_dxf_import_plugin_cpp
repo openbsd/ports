@@ -1,3 +1,5 @@
+avoid conflict with major/minor macros in sys/types.h
+
 Index: common/import_gfx/dxf_import_plugin.cpp
 --- common/import_gfx/dxf_import_plugin.cpp.orig
 +++ common/import_gfx/dxf_import_plugin.cpp
