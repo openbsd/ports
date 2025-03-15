@@ -5,6 +5,9 @@ VERSION=	1.3.6
 DISTNAME=	xmlsec1-${VERSION}
 PKGNAME-main=	xmlsec-${VERSION}
 PKGNAME-docs=	xmlsec-docs-${VERSION}
+
+REVISION-main=	0
+
 CATEGORIES=	security
 SHARED_LIBS=	xmlsec1-gnutls	7.0 \
 		xmlsec1-openssl	6.0 \
@@ -19,9 +22,9 @@ PERMIT_PACKAGE=	Yes
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
 
-WANTLIB += brotlidec brotlienc c crypto gcrypt gmp gnutls gpg-error
-WANTLIB += hogweed iconv idn2 intl ltdl lzma m nettle p11-kit
-WANTLIB += pthread ssl tasn1 unistring xml2 xslt z zstd
+WANTLIB += c crypto gcrypt gmp gnutls gpg-error hogweed iconv
+WANTLIB += idn2 intl ltdl lzma m nettle p11-kit pthread ssl tasn1
+WANTLIB += unistring xml2 xslt z
 
 SITES=		${HOMEPAGE}download/
 
@@ -33,8 +36,9 @@ LIB_DEPENDS-docs=
 RUN_DEPENDS-docs=
 
 LIB_DEPENDS=	devel/libtool,-ltdl \
-		textproc/libxslt \
-		security/gnutls
+		security/libgcrypt \
+		security/gnutls \
+		textproc/libxslt
 LIBTOOL_FLAGS=	--tag=disable-static
 
 USE_GMAKE=	Yes
