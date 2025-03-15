@@ -2,10 +2,9 @@ COMMENT =	graphic library, pdf parser, viewer and utilities
 
 SHARED_LIBS +=  mupdf                 12.1
 
-V =		1.25.4
+V =		1.25.5
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-${V:S/-rc/rc/}
-REVISION =	0
 
 CATEGORIES =	textproc x11
 
