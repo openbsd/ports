@@ -1,6 +1,8 @@
 COMMENT=		HTML, XML, SAX and Reader parser
 
 DISTNAME=		nokogiri-1.16.5
+REVISION=		0
+
 CATEGORIES=		textproc
 
 HOMEPAGE=		http://nokogiri.org/
@@ -10,7 +12,8 @@ MAINTAINER =		Jeremy Evans <jeremy@openbsd.org>
 # MIT
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=		exslt xml2 xslt gcrypt gpg-error z
+WANTLIB += c++abi exslt xml2 xslt z
+
 LIB_DEPENDS=		textproc/libxslt
 BUILD_DEPENDS=		devel/ruby-mini_portile2,${MODRUBY_FLAVOR}>=2.8.2,<2.9
 
