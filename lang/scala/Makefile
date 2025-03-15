@@ -1,9 +1,6 @@
 COMMENT=	general purpose multi-paradigm programming language
 
-VERSION=	3.6.3
-JNA_VERSION=	5.15.0
-JLINE_VERSION=	3.27.1
-SCALA2_VERSION=	2.13.15
+VERSION=	3.6.4
 
 DISTNAME=	scala3-${VERSION}
 PKGNAME=	${DISTNAME:S/scala3-/scala-/}
@@ -27,7 +24,7 @@ RUN_DEPENDS=	java/javaPathHelper \
 SCALA_HOME=	${PREFIX}/scala/
 SCALA_SCRIPTS=	scala scalac scaladoc
 
-SUBST_VARS+=	VERSION JNA_VERSION JLINE_VERSION SCALA2_VERSION
+SUBST_VARS+=	VERSION
 
 NO_BUILD=	Yes
 NO_TEST=	Yes
