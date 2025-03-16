@@ -4,7 +4,7 @@ COMMENT=		free open source planetarium
 
 V=			24.4
 DISTNAME=		stellarium-${V}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		astro x11
 
@@ -20,7 +20,7 @@ WANTLIB += Qt6Core Qt6Gui Qt6Multimedia Qt6MultimediaWidgets Qt6Network
 WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Positioning Qt6PrintSupport
 WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick Qt6SerialPort Qt6WebChannel
 WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets c exiv2
-WANTLIB += gps indiclient m nlopt xkbcommon z
+WANTLIB += gps indiclient m nlopt xkbcommon z Qt6QmlMeta Qt6QmlWorkerScript
 
 SITES=			https://github.com/Stellarium/stellarium/releases/download/v${V}/
 
