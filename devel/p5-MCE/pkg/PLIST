@@ -12,6 +12,7 @@ ${P5SITE}/MCE/Channel/Threads.pm
 ${P5SITE}/MCE/Channel/ThreadsFast.pm
 ${P5SITE}/MCE/Child.pm
 ${P5SITE}/MCE/Core/
+${P5SITE}/MCE/Core.pm
 ${P5SITE}/MCE/Core.pod
 ${P5SITE}/MCE/Core/Input/
 ${P5SITE}/MCE/Core/Input/Generator.pm
