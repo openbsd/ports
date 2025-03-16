@@ -9,7 +9,7 @@ PKGNAME-gui =		czkawka-gui-${GH_TAGNAME}
 
 GH_ACCOUNT =		qarmin
 GH_PROJECT =		czkawka
-GH_TAGNAME =		8.0.0
+GH_TAGNAME =		9.0.0
 
 CATEGORIES =		sysutils
 
