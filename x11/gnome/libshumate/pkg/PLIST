@@ -312,6 +312,7 @@ share/doc/libshumate-1.0/method.Scale.set_max_width.html
 share/doc/libshumate-1.0/method.Scale.set_unit.html
 share/doc/libshumate-1.0/method.Scale.set_viewport.html
 share/doc/libshumate-1.0/method.SimpleMap.add_overlay_layer.html
+share/doc/libshumate-1.0/method.SimpleMap.get_base_map_layer.html
 share/doc/libshumate-1.0/method.SimpleMap.get_compass.html
 share/doc/libshumate-1.0/method.SimpleMap.get_license.html
 share/doc/libshumate-1.0/method.SimpleMap.get_map.html
@@ -519,6 +520,7 @@ share/locale/kk/LC_MESSAGES/shumate1.mo
 share/locale/ko/LC_MESSAGES/shumate1.mo
 share/locale/lt/LC_MESSAGES/shumate1.mo
 share/locale/lv/LC_MESSAGES/shumate1.mo
+share/locale/ml/LC_MESSAGES/shumate1.mo
 share/locale/ne/LC_MESSAGES/shumate1.mo
 share/locale/nl/LC_MESSAGES/shumate1.mo
 share/locale/oc/LC_MESSAGES/shumate1.mo
