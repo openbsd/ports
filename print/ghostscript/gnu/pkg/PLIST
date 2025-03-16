@@ -12,7 +12,6 @@ bin/gslj
 bin/gslp
 bin/gsnd
 bin/lprsetup.sh
-bin/pdf2dsc
 bin/pdf2ps
 bin/pf2afm
 bin/pfbtopfa
@@ -45,7 +44,6 @@ include/ghostscript/plapi.h
 @man man/man1/gslj.1
 @man man/man1/gslp.1
 @man man/man1/gsnd.1
-@man man/man1/pdf2dsc.1
 @man man/man1/pdf2ps.1
 @man man/man1/pf2afm.1
 @man man/man1/pfbtopfa.1
@@ -158,7 +156,6 @@ share/ghostscript/${VERSION}/lib/lines.ps
 share/ghostscript/${VERSION}/lib/mkcidfm.ps
 share/ghostscript/${VERSION}/lib/necp2x.upp
 share/ghostscript/${VERSION}/lib/necp2x6.upp
-share/ghostscript/${VERSION}/lib/pdf2dsc.ps
 share/ghostscript/${VERSION}/lib/pdf_info.ps
 share/ghostscript/${VERSION}/lib/pf2afm.ps
 share/ghostscript/${VERSION}/lib/pfbtopfa.ps
@@ -223,4 +220,5 @@ share/ghostscript/${VERSION}/lib/viewpcx.ps
 share/ghostscript/${VERSION}/lib/viewps2a.ps
 share/ghostscript/${VERSION}/lib/winmaps.ps
 share/ghostscript/${VERSION}/lib/zeroline.ps
+share/ghostscript/${VERSION}/lib/zugferd.ps
 %%gtk%%
