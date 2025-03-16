@@ -1,3 +1,4 @@
+@bin bin/kfilemetadata_dump6
 include/KF6/KFileMetaData/
 include/KF6/KFileMetaData/KFileMetaData/
 include/KF6/KFileMetaData/KFileMetaData/EmbeddedImageData

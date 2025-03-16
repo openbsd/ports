@@ -5,9 +5,10 @@ SHARED_LIBS +=  KF6Parts                  0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
-WANTLIB += KF6I18n KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets
-WANTLIB += KF6Service KF6Solid KF6WidgetsAddons KF6XmlGui Qt6Core
-WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6Widgets Qt6Xml m
+WANTLIB += KF6GuiAddons KF6I18n KF6JobWidgets KF6KIOCore KF6KIOGui
+WANTLIB += KF6KIOWidgets KF6Service KF6Solid KF6WidgetsAddons
+WANTLIB += KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets
+WANTLIB += Qt6Xml m
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		archivers/gtar
@@ -33,3 +34,4 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 MODKF6_BUILD_TESTING =	Yes
 
 .include <bsd.port.mk>
+LIB_DEPENDS += devel/kf6/kguiaddons 

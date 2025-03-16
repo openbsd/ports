@@ -6,7 +6,8 @@ SHARED_LIBS +=  KF6FileMetaData           0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Codecs KF6CoreAddons
 WANTLIB += KF6I18n QMobipocket6 Qt6Core Qt6Gui Qt6Xml avcodec
-WANTLIB += avformat avutil epub exiv2 m poppler poppler-qt6 tag
+WANTLIB += avformat avutil c epub exiv2 m poppler poppler-qt6
+WANTLIB += tag
 
 MODULES +=	lang/python
 # required only for externalextractortest and externalwritertest

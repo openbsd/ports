@@ -1,6 +1,5 @@
 COMMENT =	string encoding/decoding for KDE
 DISTNAME =	kcodecs-${VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  KF6Codecs                 0.0 # 0.0
 

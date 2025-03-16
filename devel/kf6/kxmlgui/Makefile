@@ -7,7 +7,7 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6GlobalAccel
 WANTLIB += KF6GuiAddons KF6I18n KF6IconThemes KF6IconWidgets KF6ItemViews
 WANTLIB += KF6WidgetsAddons Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6PrintSupport Qt6Widgets Qt6Xml
+WANTLIB += Qt6PrintSupport Qt6Widgets Qt6Xml m
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf6/ktextwidgets>=${MODKF6_VERSION}
