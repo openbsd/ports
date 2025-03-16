@@ -1,8 +1,7 @@
 COMMENT = 	DateTime parser for ISO8601 date formats
 
-DISTNAME =	DateTime-Format-ISO8601-0.16
+DISTNAME =	DateTime-Format-ISO8601-0.17
 EPOCH =		0
-REVISION =	0
 
 CATEGORIES =	devel
 
