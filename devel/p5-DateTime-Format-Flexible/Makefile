@@ -1,6 +1,6 @@
 COMMENT =	flexibly parse strings and turn them into DateTime objects
 
-DISTNAME =	DateTime-Format-Flexible-0.36
+DISTNAME =	DateTime-Format-Flexible-0.37
 
 CATEGORIES =	devel
 
@@ -11,8 +11,7 @@ MODULES =		cpan
 
 RUN_DEPENDS =		devel/p5-DateTime \
 			devel/p5-DateTime-Format-Builder>=0.74 \
-			devel/p5-DateTime-TimeZone \
-			devel/p5-List-MoreUtils
+			devel/p5-DateTime-TimeZone
 TEST_DEPENDS =		devel/p5-Test-Exception \
 			devel/p5-Test-MockTime \
 			devel/p5-Test-NoWarnings
