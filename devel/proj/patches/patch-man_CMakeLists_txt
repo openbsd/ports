@@ -1,9 +1,0 @@
-Index: man/CMakeLists.txt
---- man/CMakeLists.txt.orig
-+++ man/CMakeLists.txt
-@@ -6,4 +6,4 @@ install(FILES
-   man1/gie.1
-   man1/projinfo.1
-   man1/projsync.1
--  DESTINATION ${CMAKE_INSTALL_MANDIR}/man1)
-+  DESTINATION man/man1)

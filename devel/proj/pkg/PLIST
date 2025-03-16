@@ -46,6 +46,9 @@ lib/pkgconfig/proj.pc
 @man man/man1/proj.1
 @man man/man1/projinfo.1
 @man man/man1/projsync.1
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/projinfo
 share/doc/pkg-readmes/${PKGSTEM}
 share/doc/proj/
 share/doc/proj/AUTHORS.md
