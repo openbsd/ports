@@ -167,6 +167,7 @@ ${P5SITE}/Image/ExifTool/Olympus.pm
 ${P5SITE}/Image/ExifTool/OpenEXR.pm
 ${P5SITE}/Image/ExifTool/Opus.pm
 ${P5SITE}/Image/ExifTool/Other.pm
+${P5SITE}/Image/ExifTool/PCAP.pm
 ${P5SITE}/Image/ExifTool/PCX.pm
 ${P5SITE}/Image/ExifTool/PDF.pm
 ${P5SITE}/Image/ExifTool/PGF.pm
@@ -371,6 +372,7 @@ ${P5SITE}/Image/ExifTool/iWork.pm
 @man man/man3p/Image::ExifTool::OpenEXR.3p
 @man man/man3p/Image::ExifTool::Opus.3p
 @man man/man3p/Image::ExifTool::Other.3p
+@man man/man3p/Image::ExifTool::PCAP.3p
 @man man/man3p/Image::ExifTool::PCX.3p
 @man man/man3p/Image::ExifTool::PDF.3p
 @man man/man3p/Image::ExifTool::PGF.3p
