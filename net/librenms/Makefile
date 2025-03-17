@@ -3,8 +3,7 @@ COMMENT=	auto-discovering network management/monitoring system
 # changelogs at https://github.com/librenms/librenms/releases
 GH_ACCOUNT=	librenms
 GH_PROJECT=	librenms
-GH_TAGNAME=	25.2.0
-REVISION=	0
+GH_TAGNAME=	25.3.0
 
 DISTFILES.dep=	librenms-${GH_TAGNAME:R}-vendor.tar.xz
 EPOCH=		0
@@ -107,11 +106,12 @@ COMPOSER=	${MODPHP_BIN} \
 # maintainer convenience target
 dist: ${FULLDISTDIR}/${GH_DISTFILE}
 	@set -x; t=`mktemp -d /tmp/librenms.XXXXXXXXXX`; \
-		f=$$t/librenms-${GH_TAGNAME:R}-vendor.tar.xz; \
+	f=$$t/librenms-${GH_TAGNAME:R}-vendor.tar.xz; \
 	cd $$t; \
 	tar xzf ${FULLDISTDIR}/${GH_DISTFILE:C,\{.*,,}; \
 	cd ${WRKDIST:C,^.*/,,}; \
-	sed -i 's,whereis -b ,whereis ,' LibreNMS/Config.php; \
+	sed -i 's,whereis -b ,whereis ,' LibreNMS/Config.php \
+	    app/ConfigRepository.php; \
 	${COMPOSER} install --no-dev; \
 	echo tarring; tar cf - vendor | xz -T 0 > $$f; \
 	scp $$f naiad:mirrors/; \

@@ -1,12 +1,7 @@
-From 862f1b5cd12d2061878e110cdbdd6d75350dbb3d Mon Sep 17 00:00:00 2001
-From: Stuart Henderson <sthen@users.noreply.github.com>
-Date: Thu, 6 Mar 2025 21:08:24 +0000
-Subject: [PATCH] use raw string for Python regex (#17235)
-
 Index: LibreNMS/wrapper.py
 --- LibreNMS/wrapper.py.orig
 +++ LibreNMS/wrapper.py
-@@ -282,11 +282,11 @@ def poll_worker(
+@@ -282,7 +282,7 @@ def poll_worker(
                      os.path.dirname(os.path.dirname(os.path.realpath(__file__))),
                      wrappers[wrapper_type]["executable"],
                  )
@@ -15,8 +10,3 @@ Index: LibreNMS/wrapper.py
                      executable, wrappers[wrapper_type]["option"], device_id
                  )
                  if modules is not None and len(str(modules).strip()):
--                    module_str = re.sub("\s", "", str(modules).strip())
-+                    module_str = re.sub(r"\s", "", str(modules).strip())
-                     command = command + " -m {}".format(module_str)
- 
-                 # enable debug output otherwise, set -q for lnms commands
