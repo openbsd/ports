@@ -1,9 +1,8 @@
 COMMENT=	self-contained cryptographic library for Python
 
-MODPY_DISTV=	3.21.0
+MODPY_DISTV=	3.22.0
 DISTNAME=	pycryptodome-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/py//}
-REVISION=	1
 
 CATEGORIES=	security
 
@@ -15,7 +14,6 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
