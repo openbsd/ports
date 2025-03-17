@@ -2,6 +2,7 @@ COMMENT-main=	SSH and telnet client
 COMMENT-gui=	PuTTY GUI clients
 
 V=		0.83
+REVISION=	0
 DISTNAME=	putty-$V
 PKGNAME-main=	${DISTNAME}
 PKGNAME-gui=	${DISTNAME:S/putty/putty-gui/}
