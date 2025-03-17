@@ -3,7 +3,9 @@ NOT_FOR_ARCHS =	sparc64
 
 COMMENT =		tunnel all your traffic over Websocket or HTTP2
 
-DIST_TUPLE +=		github erebe wstunnel v10.1.9 .
+GH_ACCOUNT =		erebe
+GH_PROJECT =		wstunnel
+GH_TAGNAME =		v10.1.10
 
 CATEGORIES =		net
 
