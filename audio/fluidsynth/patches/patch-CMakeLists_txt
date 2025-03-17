@@ -1,15 +1,15 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -96,6 +96,7 @@ option ( enable-waveout "compile Windows WaveOut suppo
- option ( enable-winmidi "compile Windows MIDI support (if it is available)" on )
+@@ -97,6 +97,7 @@ option ( enable-winmidi "compile Windows MIDI support 
  option ( enable-sdl2 "compile SDL2 audio support (if it is available)" off )
+ option ( enable-sdl3 "compile SDL3 audio support (if it is available)" on )
  option ( enable-pulseaudio "compile PulseAudio support (if it is available)" on )
 +option ( enable-sndio "compile sndio support (if it is available)" on )
  option ( enable-pipewire "compile PipeWire support (if it is available)" on )
  option ( enable-readline "compile readline lib line editing (if it is available)" on )
  option ( enable-threads "enable multi-threading support (such as parallel voice synthesis)" on )
-@@ -199,8 +200,6 @@ if ( CMAKE_COMPILER_IS_GNUCC OR CMAKE_C_COMPILER_ID MA
+@@ -200,8 +201,6 @@ if ( CMAKE_COMPILER_IS_GNUCC OR CMAKE_C_COMPILER_ID MA
    if ( NOT APPLE AND NOT OS2 AND NOT EMSCRIPTEN )
      set ( CMAKE_EXE_LINKER_FLAGS
            "${CMAKE_EXE_LINKER_FLAGS} -Wl,--as-needed" )
@@ -18,7 +18,7 @@ Index: CMakeLists.txt
    endif ( NOT APPLE AND NOT OS2 AND NOT EMSCRIPTEN )
  
    # define some warning flags
-@@ -567,6 +566,18 @@ if ( enable-libsndfile )
+@@ -570,6 +569,18 @@ if ( enable-libsndfile )
      endif ( LIBSNDFILE_SUPPORT )
      #set(CMAKE_FIND_DEBUG_MODE OFF)
  endif ( enable-libsndfile )

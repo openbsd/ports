@@ -1,9 +1,9 @@
 Index: cmake_admin/report.cmake
 --- cmake_admin/report.cmake.orig
 +++ cmake_admin/report.cmake
-@@ -92,6 +92,12 @@ else ( SDL2_SUPPORT )
-     set ( AUDIO_MIDI_REPORT "${AUDIO_MIDI_REPORT}  SDL2:                  no\n" )
- endif ( SDL2_SUPPORT )
+@@ -98,6 +98,12 @@ else ( SDL3_SUPPORT )
+     set ( AUDIO_MIDI_REPORT "${AUDIO_MIDI_REPORT}  SDL3:                  no\n" )
+ endif ( SDL3_SUPPORT )
  
 +if ( SNDIO_SUPPORT )
 +    set ( AUDIO_MIDI_REPORT "${AUDIO_MIDI_REPORT}  sndio                  yes\n" )

@@ -1,10 +1,11 @@
 COMMENT =		SoundFont2 software synthesizer
 
+# 2.5.x is expected to remove SDL2 support in favour of SDL3
 GH_ACCOUNT =		FluidSynth
 GH_PROJECT =		fluidsynth
-GH_TAGNAME =		v2.4.3
+GH_TAGNAME =		v2.4.4
 
-SHARED_LIBS +=	fluidsynth           3.2      # 3.3
+SHARED_LIBS +=	fluidsynth           4.0      # 3.3 (grep LIB_VERSION CMakeLists.txt)
 
 CATEGORIES =		audio
 
@@ -35,7 +36,8 @@ CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=On \
 			-Denable-midishare=OFF \
 			-Denable-oss=OFF \
 			-Denable-pipewire=OFF \
-			-Denable-pulseaudio=OFF
+			-Denable-pulseaudio=OFF \
+			-Denable-sdl3=OFF
 
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
