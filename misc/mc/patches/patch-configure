@@ -1,16 +1,16 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -19807,7 +19807,7 @@ then :
- else $as_nop
- 
+@@ -20307,7 +20307,7 @@ then :
+ else case e in #(
+   e)
  	ac_save_LIBS="$LIBS"
 -	LIBS="$LIBS -lslang"
 +	LIBS="$LIBS -lslang -ltermcap"
  	cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  
-@@ -27349,7 +27349,7 @@ if test -n "$EXT2FS_CFLAGS"; then
+@@ -28124,7 +28124,7 @@ if test -n "$EXT2FS_CFLAGS"; then
    ac_status=$?
    printf "%s\n" "$as_me:${as_lineno-$LINENO}: \$? = $ac_status" >&5
    test $ac_status = 0; }; then
@@ -19,21 +19,21 @@ Index: configure
  		      test "x$?" != "x0" && pkg_failed=yes
  else
    pkg_failed=yes
-@@ -27604,7 +27604,7 @@ done
+@@ -28380,7 +28380,7 @@ done
    done
  IFS=$as_save_IFS
  
 -  test -z "$ac_cv_path_ZIP" && ac_cv_path_ZIP="/usr/bin/zip"
 +  ac_cv_path_ZIP="${LOCALBASE}/bin/zip"
    ;;
+ esac ;;
  esac
- fi
-@@ -27650,7 +27650,7 @@ done
+@@ -28427,7 +28427,7 @@ done
    done
  IFS=$as_save_IFS
  
 -  test -z "$ac_cv_path_UNZIP" && ac_cv_path_UNZIP="/usr/bin/unzip"
 +  ac_cv_path_UNZIP="${LOCALBASE}/bin/unzip"
    ;;
+ esac ;;
  esac
- fi

@@ -1,10 +1,10 @@
 COMMENT=		free Norton Commander clone with many useful features
 
-DISTNAME=		mc-4.8.31
+DISTNAME=		mc-4.8.33
 CATEGORIES=		misc
 
-HOMEPAGE=		https://www.midnight-commander.org/
-SITES=			${HOMEPAGE}downloads/
+HOMEPAGE=		https://midnight-commander.org/
+SITES=			https://ftp.osuosl.org/pub/midnightcommander/
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
 
 EXTRACT_SUFX=		.tar.xz
