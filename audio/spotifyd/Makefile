@@ -15,6 +15,9 @@ HOMEPAGE =		https://spotifyd.rs
 # GPLv3.0
 PERMIT_PACKAGE =	Yes
 
+# C1x
+COMPILER =		base-clang ports-gcc
+
 # uses pledge()
 WANTLIB =		${MODCARGO_WANTLIB} dbus-1 m portaudio
 
