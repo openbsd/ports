@@ -1,10 +1,9 @@
 COMMENT=	BGP route injector (supporting flow routes, etc)
 
-MODPY_DISTV=	4.2.24
+MODPY_DISTV=	4.2.25
 GH_ACCOUNT=	exa-networks
 GH_PROJECT=	exabgp
 GH_TAGNAME=	${MODPY_DISTV}
-REVISION=	1
 
 CATEGORIES=	net
 
@@ -24,7 +23,8 @@ TEST_DEPENDS=	devel/py-coverage \
 # separate to default exabgp.env to avoid getting in the way of ad-hoc
 # "foreground" configurations.
 post-extract:
-	sh ${WRKSRC}/sbin/exabgp --fi > ${WRKSRC}/exabgp.env
+	ln -s /usr/bin/false ${WRKDIR}/bin/git
+	env PATH=${WRKDIR}/bin:$$PATH sh ${WRKSRC}/sbin/exabgp --fi > ${WRKSRC}/exabgp.env
 	cp ${WRKSRC}/exabgp.env ${WRKSRC}/exabgp.daemon.env
 
 pre-configure:
