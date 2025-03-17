@@ -8,7 +8,7 @@ Index: examples/cli.ini
 +# Use text interface instead of ncurses/dialog(1)
 +text = True
 +
- # Uncomment to use the standalone authenticator on port 443
+ # Uncomment to use the standalone authenticator on port 80
  # authenticator = standalone
  
  # Uncomment to use the webroot authenticator. Replace webroot-path with the

@@ -398,7 +398,6 @@ lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/ocsp_issuer_cert
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/ocsp_responder_certificate.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/os-release
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/rsa2048_key.pem
-lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/rsa256_key.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/rsa512_key.pem
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/sample-archive/
 lib/python${MODPY_VERSION}/site-packages/certbot/tests/testdata/sample-archive-ec/
