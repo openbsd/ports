@@ -5,6 +5,8 @@ PKGNAME =		qt5-docs-${QT5_VERSION}
 PKGNAME-html =		qt5-html-${QT5_VERSION}
 PKGNAME-qch =		qt5-qch-${QT5_VERSION}
 
+REVISION-html =		0
+
 MULTI_PACKAGES =	-html -qch
 SUBPACKAGE ?=		-html
 
