@@ -1,9 +1,8 @@
 COMMENT=	pure Python implementation of Git file formats and protocols
 
-MODPY_DISTV=	0.22.7
+MODPY_DISTV=	0.22.8
 DISTNAME=	dulwich-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	devel
 
@@ -28,7 +27,7 @@ TEST_DEPENDS=	devel/git,-main \
 
 MAKE_ENV +=	LC_CTYPE=en_US.UTF-8
 
-MODPY_PYTEST_ARGS=	--ignore tests/contrib/test_swift_smoke.py
+MODPY_PYTEST_ARGS= --ignore tests/contrib/test_swift_smoke.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/dulwich/tutorial
