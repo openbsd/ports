@@ -1,12 +1,11 @@
 COMMENT =		C++ toolkit for machine learning and data analysis
 
-VERSION =		19.24.6
+VERSION =		19.24.8
 DISTNAME =		dlib-${VERSION}
-REVISION =		0
 
 DIST_TUPLE +=	github davisking dlib v${VERSION} .
 
-SHARED_LIBS +=  dlib                      6.0 # 19.24
+SHARED_LIBS +=  dlib                      7.0 # 19.24
 
 CATEGORIES =		devel
 

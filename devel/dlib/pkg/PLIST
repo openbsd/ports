@@ -171,6 +171,7 @@ include/dlib/cuda/curand_dlibapi.h
 include/dlib/cuda/cusolver_dlibapi.h
 include/dlib/cuda/gpu_data.h
 include/dlib/cuda/gpu_data_abstract.h
+include/dlib/cuda/operation_mode.h
 include/dlib/cuda/tensor.h
 include/dlib/cuda/tensor_abstract.h
 include/dlib/cuda/tensor_tools.h
