@@ -3,6 +3,7 @@ COMMENT =		Python implementation of ECDSA cryptography
 MODPY_DISTV =		0.19.1
 DISTNAME = 		ecdsa-${MODPY_DISTV}
 PKGNAME = 		py-${DISTNAME}
+REVISION =		0
 CATEGORIES = 		security
 
 HOMEPAGE = 		https://github.com/warner/python-ecdsa
@@ -18,6 +19,7 @@ MODULES =		lang/python
 MODPY_PYBUILD =		setuptools
 MODPY_PYTEST_ARGS =	src/ecdsa
 
+RUN_DEPENDS =		devel/py-six
 TEST_DEPENDS =		devel/py-hypothesis
 
 .include <bsd.port.mk>
