@@ -1,6 +1,6 @@
 COMMENT=	http client/server for asyncio
 
-MODPY_DISTV=	3.11.13
+MODPY_DISTV=	3.11.14
 DISTNAME=	aiohttp-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -46,6 +46,8 @@ TEST_DEPENDS=	devel/py-freezegun \
 		devel/py-test-xdist \
 		security/py-trustme \
 		www/py-gunicorn
+
+MODPY_TEST_LINK_SO= Yes
 
 # cython files relating to upstream's build environment; unsure
 # exactly what they're for but don't seem useful to package
