@@ -4,7 +4,7 @@ MODPY_DISTV=	4.2.24
 GH_ACCOUNT=	exa-networks
 GH_PROJECT=	exabgp
 GH_TAGNAME=	${MODPY_DISTV}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	net
 
@@ -14,7 +14,6 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS=	devel/py-docopt
 TEST_DEPENDS=	devel/py-coverage \
 		devel/py-nose \
 		sysutils/py-psutil

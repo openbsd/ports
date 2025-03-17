@@ -1,15 +1,6 @@
 Index: lib/exabgp/application/cli.py
 --- lib/exabgp/application/cli.py.orig
 +++ lib/exabgp/application/cli.py
-@@ -24,7 +24,7 @@ from exabgp.application.control import check_fifo
- from exabgp.reactor.network.error import error
- from exabgp.reactor.api.response.answer import Answer
- 
--from exabgp.vendoring import docopt
-+import docopt
- 
- errno_block = set(
-     (
 @@ -130,7 +130,7 @@ def main():
  
      root = root_folder(options, ['/bin/exabgpcli', '/sbin/exabgpcli', '/lib/exabgp/application/cli.py'])
