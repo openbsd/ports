@@ -2,11 +2,14 @@ COMMENT=	Perl interface to the Registration Data Access Protocol
 
 MODULES=	cpan
 DISTNAME=	Net-RDAP-0.34
+REVISION=	0
 CATEGORIES=	net
 PKG_ARCH=	*
 
 # BSD
 PERMIT_PACKAGE=	Yes
+
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 RUN_DEPENDS=	devel/p5-DateTime-Format-ISO8601 \
 		devel/p5-File-Slurp \
