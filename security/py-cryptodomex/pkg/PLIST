@@ -321,6 +321,7 @@ lib/python${MODPY_VERSION}/site-packages/Cryptodome/Math/${MODPY_PYCACHE}__init_
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/Protocol/
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/Protocol/DH.py
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/Protocol/DH.pyi
+lib/python${MODPY_VERSION}/site-packages/Cryptodome/Protocol/HPKE.py
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/Protocol/KDF.py
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/Protocol/KDF.pyi
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/Protocol/SecretSharing.py
@@ -330,6 +331,8 @@ lib/python${MODPY_VERSION}/site-packages/Cryptodome/Protocol/__init__.pyi
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Cryptodome/Protocol/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/Protocol/${MODPY_PYCACHE}DH.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/Protocol/${MODPY_PYCACHE}DH.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Cryptodome/Protocol/${MODPY_PYCACHE}HPKE.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Cryptodome/Protocol/${MODPY_PYCACHE}HPKE.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/Protocol/${MODPY_PYCACHE}KDF.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/Protocol/${MODPY_PYCACHE}KDF.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/Protocol/${MODPY_PYCACHE}SecretSharing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -582,6 +585,8 @@ lib/python${MODPY_VERSION}/site-packages/Cryptodome/SelfTest/Protocol/__init__.p
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/Cryptodome/SelfTest/Protocol/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/SelfTest/Protocol/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/SelfTest/Protocol/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Cryptodome/SelfTest/Protocol/${MODPY_PYCACHE}test_HPKE.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Cryptodome/SelfTest/Protocol/${MODPY_PYCACHE}test_HPKE.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/SelfTest/Protocol/${MODPY_PYCACHE}test_KDF.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/SelfTest/Protocol/${MODPY_PYCACHE}test_KDF.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/SelfTest/Protocol/${MODPY_PYCACHE}test_SecretSharing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -590,6 +595,7 @@ lib/python${MODPY_VERSION}/site-packages/Cryptodome/SelfTest/Protocol/${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/SelfTest/Protocol/${MODPY_PYCACHE}test_ecdh.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/SelfTest/Protocol/${MODPY_PYCACHE}test_rfc1751.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/SelfTest/Protocol/${MODPY_PYCACHE}test_rfc1751.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Cryptodome/SelfTest/Protocol/test_HPKE.py
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/SelfTest/Protocol/test_KDF.py
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/SelfTest/Protocol/test_SecretSharing.py
 lib/python${MODPY_VERSION}/site-packages/Cryptodome/SelfTest/Protocol/test_ecdh.py

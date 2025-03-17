@@ -1,7 +1,6 @@
 COMMENT=	self-contained cryptographic library for Python
 
-MODPY_DISTV=	3.21.0
-REVISION=	3
+MODPY_DISTV=	3.22.0
 DISTNAME=	pycryptodomex-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/py//}
 
@@ -15,9 +14,8 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH} \
 		security/py-cryptodome-test-vectors
