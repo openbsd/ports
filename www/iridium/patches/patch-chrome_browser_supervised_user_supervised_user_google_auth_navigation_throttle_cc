@@ -16,7 +16,7 @@ Index: chrome/browser/supervised_user/supervised_user_google_auth_navigation_thr
  namespace {
  bool IsYouTubeInfrastructureSubframe(content::NavigationHandle* handle) {
    if (handle->GetNavigatingFrameType() != content::FrameType::kSubframe) {
-@@ -162,7 +162,7 @@ SupervisedUserGoogleAuthNavigationThrottle::ShouldProc
+@@ -161,7 +161,7 @@ SupervisedUserGoogleAuthNavigationThrottle::ShouldProc
      return content::NavigationThrottle::DEFER;
    }
  

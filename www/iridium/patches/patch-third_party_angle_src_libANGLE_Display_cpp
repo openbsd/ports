@@ -46,7 +46,7 @@ Index: third_party/angle/src/libANGLE/Display.cpp
      extensions.platformSurfacelessMESA = true;
  #endif
  
-@@ -2185,7 +2185,7 @@ static ClientExtensions GenerateClientExtensions()
+@@ -2186,7 +2186,7 @@ static ClientExtensions GenerateClientExtensions()
      extensions.x11Visual = true;
  #endif
  
