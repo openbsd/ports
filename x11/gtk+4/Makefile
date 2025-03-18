@@ -7,22 +7,17 @@ COMMENT-guic=		gtk+ icon theme caching utility
 COMMENT-media=		gtk+ media engine
 
 GNOME_PROJECT=		gtk
-GNOME_VERSION=		4.16.12
+GNOME_VERSION=		4.18.2
 
 PKGNAME-main=		gtk+4-${GNOME_VERSION}
 PKGNAME-cups=		gtk+4-cups-${GNOME_VERSION}
 PKGNAME-demos=		gtk+4-demos-${GNOME_VERSION}
 PKGNAME-guic=		gtk4-update-icon-cache-${GNOME_VERSION}
 PKGNAME-media=		gtk+4-media-${GNOME_VERSION}
-REVISION-cups=		0
-REVISION-demos=		0
-REVISION-guic=		0
-REVISION-main=		0
-REVISION-media=		0
 
 CATEGORIES=		x11 devel
 
-SHARED_LIBS += gtk-4                     5.3 # 1.1600.12
+SHARED_LIBS += gtk-4                     5.4 # 1.1800.2
 
 HOMEPAGE=		http://www.gtk.org/
 
@@ -48,7 +43,7 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 BUILD_DEPENDS=		devel/py-gobject3 \
 			graphics/shaderc \
 			textproc/py-docutils \
-			wayland/wayland-protocols \
+			wayland/wayland-protocols>=1.41p0 \
 			www/sassc
 
 # needs BTN_LEFT

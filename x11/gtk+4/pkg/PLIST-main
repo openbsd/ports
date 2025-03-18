@@ -101,6 +101,7 @@ include/gtk-4.0/gsk/
 include/gtk-4.0/gsk/gl/
 include/gtk-4.0/gsk/gl/gskglrenderer.h
 include/gtk-4.0/gsk/gpu/
+include/gtk-4.0/gsk/gpu/gskglrenderer.h
 include/gtk-4.0/gsk/gpu/gskvulkanrenderer.h
 include/gtk-4.0/gsk/gsk.h
 include/gtk-4.0/gsk/gskcairorenderer.h
@@ -171,6 +172,11 @@ include/gtk-4.0/gtk/deprecated/gtkliststore.h
 include/gtk-4.0/gtk/deprecated/gtklockbutton.h
 include/gtk-4.0/gtk/deprecated/gtkmessagedialog.h
 include/gtk-4.0/gtk/deprecated/gtkrender.h
+include/gtk-4.0/gtk/deprecated/gtkshortcutlabel.h
+include/gtk-4.0/gtk/deprecated/gtkshortcutsgroup.h
+include/gtk-4.0/gtk/deprecated/gtkshortcutssection.h
+include/gtk-4.0/gtk/deprecated/gtkshortcutsshortcut.h
+include/gtk-4.0/gtk/deprecated/gtkshortcutswindow.h
 include/gtk-4.0/gtk/deprecated/gtkshow.h
 include/gtk-4.0/gtk/deprecated/gtkstatusbar.h
 include/gtk-4.0/gtk/deprecated/gtkstylecontext.h
@@ -348,12 +354,7 @@ include/gtk-4.0/gtk/gtksettings.h
 include/gtk-4.0/gtk/gtkshortcut.h
 include/gtk-4.0/gtk/gtkshortcutaction.h
 include/gtk-4.0/gtk/gtkshortcutcontroller.h
-include/gtk-4.0/gtk/gtkshortcutlabel.h
 include/gtk-4.0/gtk/gtkshortcutmanager.h
-include/gtk-4.0/gtk/gtkshortcutsgroup.h
-include/gtk-4.0/gtk/gtkshortcutssection.h
-include/gtk-4.0/gtk/gtkshortcutsshortcut.h
-include/gtk-4.0/gtk/gtkshortcutswindow.h
 include/gtk-4.0/gtk/gtkshortcuttrigger.h
 include/gtk-4.0/gtk/gtksignallistitemfactory.h
 include/gtk-4.0/gtk/gtksingleselection.h
