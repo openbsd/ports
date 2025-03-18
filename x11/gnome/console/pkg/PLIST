@@ -5,6 +5,7 @@ share/glib-2.0/schemas/org.gnome.Console.gschema.xml
 share/icons/hicolor/scalable/apps/org.gnome.Console.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Console-symbolic.svg
 share/locale/ab/LC_MESSAGES/kgx.mo
+share/locale/ar/LC_MESSAGES/kgx.mo
 share/locale/be/LC_MESSAGES/kgx.mo
 share/locale/bg/LC_MESSAGES/kgx.mo
 share/locale/ca/LC_MESSAGES/kgx.mo
@@ -50,6 +51,7 @@ share/locale/sl/LC_MESSAGES/kgx.mo
 share/locale/sr/LC_MESSAGES/kgx.mo
 share/locale/sr@latin/LC_MESSAGES/kgx.mo
 share/locale/sv/LC_MESSAGES/kgx.mo
+share/locale/th/LC_MESSAGES/kgx.mo
 share/locale/tr/LC_MESSAGES/kgx.mo
 share/locale/uk/LC_MESSAGES/kgx.mo
 share/locale/vi/LC_MESSAGES/kgx.mo
