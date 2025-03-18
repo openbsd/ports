@@ -352,6 +352,7 @@
      SUBDIR += onionshare
      SUBDIR += openconnect
      SUBDIR += openconnect,light
+     SUBDIR += openrdap
      SUBDIR += openfire
      SUBDIR += openmdns
      SUBDIR += openvmps
