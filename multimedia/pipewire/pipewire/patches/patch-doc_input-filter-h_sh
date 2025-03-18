@@ -1,0 +1,9 @@
+Index: doc/input-filter-h.sh
+--- doc/input-filter-h.sh.orig
++++ doc/input-filter-h.sh
+@@ -1,4 +1,4 @@
+-#!/usr/bin/env bash
++#!/bin/sh
+ #
+ # Doxygen input filter, which tries to fix documentation of callback
+ # method macros.
