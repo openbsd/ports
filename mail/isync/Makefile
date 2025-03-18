@@ -1,6 +1,7 @@
 COMMENT=	synchronize IMAP4 and maildir mailboxes
 
 DISTNAME=	isync-1.5.1
+REVISION=	0
 
 CATEGORIES=	mail
 SITES=		${SITE_SOURCEFORGE:=isync/}
@@ -8,12 +9,6 @@ SITES=		${SITE_SOURCEFORGE:=isync/}
 HOMEPAGE=	https://isync.sourceforge.net/
 
 MAINTAINER=	Klemens Nanni <kn@openbsd.org>
-
-# Backout "make DNS lookup asynchronous" doing fork(2) for async getaddrinfo(3)
-# to avoid pledging "proc".
-SITES.fix=		https://git.sr.ht/~klemens/isync/commit/
-PATCHFILES.fix= 	ec50c55c36887b86b0143a265acae4b22d117fe9.patch
-PATCH_DIST_STRIP=	-R -p1
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
