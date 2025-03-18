@@ -1,0 +1,6 @@
+Registration Data Access Protocol (RDAP) is replacing Whois as the
+preferred way of obtaining information about Internet resources
+(IP addresses, autonomous system numbers, and domain names).
+
+OpenRDAP is an command line RDAP client implementation in Go, with
+text, JSON and WHOIS-style output.
