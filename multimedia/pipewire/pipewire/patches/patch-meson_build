@@ -1,3 +1,6 @@
+Last hunk: Don't assume that getauxval is available when sys/auxv.h is present.
+Instead, properly detect availability of getauxval(3) and elf_aux_info(3).
+
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
@@ -27,3 +30,12 @@ Index: meson.build
      ? dependency('libinotify', required: true)
      : dependency('', required: false))
  
+@@ -534,6 +541,8 @@ check_functions = [
+   ['XSetIOErrorExitHandler', '#include <X11/Xlib.h>', [], [x11_dep]],
+   ['malloc_trim', '#include <malloc.h>', [], []],
+   ['malloc_info', '#include <malloc.h>', [], []],
++  ['getauxval', '#include <sys/auxv.h>', [], []],
++  ['elf_aux_info', '#include <sys/auxv.h>', [], []],
+ ]
+ 
+ foreach f : check_functions
