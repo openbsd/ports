@@ -1,0 +1,399 @@
+Backout ec50c55c36887b86b0143a265acae4b22d117fe9 "make DNS lookup asynchronous"
+doing fork(2) for async getaddrinfo(3) to avoid pledging "proc".
+
+Index: src/socket.c
+--- src/socket.c.orig
++++ src/socket.c
+@@ -28,7 +28,6 @@
+ #endif
+ 
+ enum {
+-	SCK_RESOLVING,
+ 	SCK_CONNECTING,
+ #ifdef HAVE_LIBSSL
+ 	SCK_STARTTLS,
+@@ -416,7 +415,6 @@ static void socket_fd_cb( int, void * );
+ static void socket_fake_cb( void * );
+ static void socket_timeout_cb( void * );
+ 
+-static void socket_resolve( conn_t * );
+ static void socket_connect_one( conn_t * );
+ static void socket_connect_next( conn_t * );
+ static void socket_connect_failed( conn_t * );
+@@ -424,22 +422,16 @@ static void socket_connected( conn_t * );
+ static void socket_connect_bail( conn_t * );
+ 
+ static void
+-socket_register_internal( conn_t *sock, int fd )
++socket_open_internal( conn_t *sock, int fd )
+ {
+ 	sock->fd = fd;
++	fcntl( fd, F_SETFL, O_NONBLOCK );
+ 	init_notifier( &sock->notify, fd, socket_fd_cb, sock );
+ 	init_wakeup( &sock->fd_fake, socket_fake_cb, sock );
+ 	init_wakeup( &sock->fd_timeout, socket_timeout_cb, sock );
+ }
+ 
+ static void
+-socket_open_internal( conn_t *sock, int fd )
+-{
+-	fcntl( fd, F_SETFL, O_NONBLOCK );
+-	socket_register_internal( sock, fd );
+-}
+-
+-static void
+ socket_close_internal( conn_t *sock )
+ {
+ 	wipe_notifier( &sock->notify );
+@@ -449,6 +441,32 @@ socket_close_internal( conn_t *sock )
+ 	sock->fd = -1;
+ }
+ 
++#ifndef HAVE_IPV6
++struct addr_info {
++	struct addr_info *ai_next;
++	struct sockaddr_in ai_addr[1];
++};
++
++#define freeaddrinfo(ai) free( ai )
++
++static struct addr_info *
++init_addrinfo( struct hostent *he )
++{
++	uint naddr = 0;
++	for (char **addr = he->h_addr_list; *addr; addr++)
++		naddr++;
++	struct addr_info *caddr = nfzalloc( naddr * sizeof(struct addrinfo) );
++	struct addr_info *ret, **caddrp = &ret;
++	for (char **addr = he->h_addr_list; *addr; addr++, caddr++) {
++		caddr->ai_addr->sin_family = AF_INET;
++		memcpy( &caddr->ai_addr->sin_addr.s_addr, *addr, sizeof(struct in_addr) );
++		*caddrp = caddr;
++		caddrp = &caddr->ai_next;
++	}
++	return ret;
++}
++#endif
++
+ void
+ socket_connect( conn_t *sock, void (*cb)( int ok, void *aux ) )
+ {
+@@ -483,202 +501,77 @@ socket_connect( conn_t *sock, void (*cb)( int ok, void
+ 		info( "\vok\n" );
+ 		socket_connected( sock );
+ 	} else {
+-		socket_resolve( sock );
+-	}
+-}
++#ifdef HAVE_IPV6
++		int gaierr;
++		struct addrinfo hints;
+ 
+-static void
+-pipe_write( int fd, void *buf, int len )
+-{
+-	do {
+-		int wrote = write( fd, buf, len );
+-		if (wrote < 0) {
+-			perror( "write" );
+-			_exit( 1 );
++		memset( &hints, 0, sizeof(hints) );
++		hints.ai_family = AF_UNSPEC;
++		hints.ai_socktype = SOCK_STREAM;
++		hints.ai_flags = AI_ADDRCONFIG;
++		infon( "Resolving %s... ", conf->host );
++		if ((gaierr = getaddrinfo( conf->host, NULL, &hints, &sock->addrs ))) {
++			error( "Error: Cannot resolve server '%s': %s\n", conf->host, gai_strerror( gaierr ) );
++			socket_connect_bail( sock );
++			return;
+ 		}
+-		buf = ((char *)buf) + wrote;
+-		len -= wrote;
+-	} while (len);
+-}
+-
+-static void
+-socket_resolve( conn_t *sock )
+-{
+-	info( "Resolving %s...\n", sock->conf->host );
+-
+-	int pfd[2];
+-	if (pipe( pfd )) {
+-		perror( "pipe" );
+-		exit( 1 );
+-	}
+-	switch (fork()) {
+-	case -1:
+-		perror( "fork" );
+-		exit( 1 );
+-	case 0:
+-		break;
+-	default:
+-		close( pfd[1] );
+-		socket_register_internal( sock, pfd[0] );
+-		sock->state = SCK_RESOLVING;
+-		conf_notifier( &sock->notify, 0, POLLIN );
+-		socket_expect_activity( sock, 1 );
+-		return;
+-	}
+-
+-#ifdef HAVE_IPV6
+-	struct addrinfo *res, hints = { 0 };
+-	hints.ai_family = AF_UNSPEC;
+-	hints.ai_socktype = SOCK_STREAM;
+-	hints.ai_flags = AI_ADDRCONFIG;
+-	int gaierr = getaddrinfo( sock->conf->host, NULL, &hints, &res );
+-	pipe_write( pfd[1], &gaierr, sizeof(gaierr) );
+-	if (gaierr)
+-		_exit( 1 );
+-	static_assert( sizeof(((struct addrinfo){ 0 }).ai_family) == sizeof(int), "unexpected size of ai_family" );
+-	static_assert( sizeof(struct in_addr) % sizeof(int) == 0, "unexpected size of struct in_addr" );
+-	static_assert( sizeof(struct in6_addr) % sizeof(int) == 0, "unexpected size of struct in6_addr" );
+-	int nbytes = 0;
+-	for (struct addrinfo *cres = res; cres; cres = cres->ai_next) {
+-		if (cres->ai_family == AF_INET) {
+-			nbytes += sizeof(int) + sizeof(struct in_addr);
+-		} else {
+-			assert( cres->ai_family == AF_INET6 );
+-			nbytes += sizeof(int) + sizeof(struct in6_addr);
+-		}
+-	}
+-	pipe_write( pfd[1], &nbytes, sizeof(nbytes) );
+-	for (struct addrinfo *cres = res; cres; cres = cres->ai_next) {
+-		pipe_write( pfd[1], &cres->ai_family, sizeof(int) );
+-		if (cres->ai_family == AF_INET)
+-			pipe_write( pfd[1], &((struct sockaddr_in *)cres->ai_addr)->sin_addr, sizeof(struct in_addr) );
+-		else
+-			pipe_write( pfd[1], &((struct sockaddr_in6 *)cres->ai_addr)->sin6_addr, sizeof(struct in6_addr) );
+-	}
++		info( "\vok\n" );
+ #else
+-	struct hostent *he = gethostbyname( sock->conf->host );
+-	int herrno = he ? 0 : h_errno;
+-	pipe_write( pfd[1], &herrno, sizeof(herrno) );
+-	if (!he)
+-		_exit( 1 );
+-	static_assert( sizeof(struct in_addr) % sizeof(int) == 0, "unexpected size of struct in_addr" );
+-	int nbytes = 0;
+-	for (char **addr = he->h_addr_list; *addr; addr++)
+-		nbytes += sizeof(struct in_addr);
+-	pipe_write( pfd[1], &nbytes, sizeof(nbytes) );
+-	for (char **addr = he->h_addr_list; *addr; addr++)
+-		pipe_write( pfd[1], *addr, sizeof(struct in_addr) );
+-#endif
+-	_exit( 0 );
+-}
++		struct hostent *he;
+ 
+-static void
+-pipe_read( int fd, void *buf, int len )
+-{
+-	do {
+-		int didrd = read( fd, buf, len );
+-		if (didrd < 0) {
+-			sys_error( "read" );
+-			exit( 1 );
++		infon( "Resolving %s... ", conf->host );
++		he = gethostbyname( conf->host );
++		if (!he) {
++			error( "Error: Cannot resolve server '%s': %s\n", conf->host, hstrerror( h_errno ) );
++			socket_connect_bail( sock );
++			return;
+ 		}
+-		if (!didrd) {
+-			error( "read: unexpected EOF\n" );
+-			exit( 1 );
+-		}
+-		buf = ((char *)buf) + didrd;
+-		len -= didrd;
+-	} while (len);
+-}
++		info( "\vok\n" );
+ 
+-static void
+-socket_resolve_finalize( conn_t *sock )
+-{
+-	int errcode;
+-	pipe_read( sock->fd, &errcode, sizeof(errcode) );
+-	if (errcode) {
+-#ifdef HAVE_IPV6
+-		const char *err = gai_strerror( errcode );
+-#else
+-		const char *err = hstrerror( errcode );
++		sock->addrs = init_addrinfo( he );
+ #endif
+-		error( "Error: Cannot resolve server '%s': %s\n", sock->conf->host, err );
+-		socket_close_internal( sock );
+-		socket_connect_bail( sock );
+-		return;
++		sock->curr_addr = sock->addrs;
++		socket_connect_one( sock );
+ 	}
+-
+-	int nbytes;
+-	pipe_read( sock->fd, &nbytes, sizeof(nbytes) );
+-	char *addrs = nfmalloc( nbytes );
+-	pipe_read( sock->fd, addrs, nbytes );
+-	sock->curr_addr = sock->addrs = addrs;
+-	sock->addrs_end = addrs + nbytes;
+-	socket_close_internal( sock );  // Get rid of the pipe
+-	socket_connect_one( sock );
+ }
+ 
+ static void
+-socket_resolve_timeout( conn_t *sock )
+-{
+-	error( "Error: Cannot resolve server '%s': timeout.\n", sock->conf->host );
+-	socket_close_internal( sock );
+-	socket_connect_bail( sock );
+-}
+-
+-static void
+ socket_connect_one( conn_t *sock )
+ {
+-	char *ai = sock->curr_addr;
+-	if (ai == sock->addrs_end) {
++	int s;
++#ifdef HAVE_IPV6
++	struct addrinfo *ai;
++#else
++	struct addr_info *ai;
++#endif
++
++	if (!(ai = sock->curr_addr)) {
+ 		error( "No working address found for %s\n", sock->conf->host );
+ 		socket_connect_bail( sock );
+ 		return;
+ 	}
+ 
+-	union {
+-		struct sockaddr any;
+-		struct sockaddr_in ip4;
+ #ifdef HAVE_IPV6
+-		struct sockaddr_in6 ip6;
+-#endif
+-	} addr;
+-
+-#ifdef HAVE_IPV6
+-	int fam = *(int *)ai;
+-	ai += sizeof(int);
+-	int addr_len;
+-	if (fam == AF_INET6) {
+-		addr_len = sizeof(addr.ip6);
+-		addr.ip6.sin6_addr = *(struct in6_addr *)ai;
+-		addr.ip6.sin6_flowinfo = 0;
+-		addr.ip6.sin6_scope_id = 0;
+-		ai += sizeof(struct in6_addr);
+-	} else {
+-		addr_len = sizeof(addr.ip4);
+-#else
+-	const int fam = AF_INET;
+-	const int addr_len = sizeof(addr.ip4);
+-	{
+-#endif
+-		addr.ip4.sin_addr = *(struct in_addr *)ai;
+-		ai += sizeof(struct in_addr);
+-	}
+-	sock->curr_addr = ai;
+-
+-#ifdef HAVE_IPV6
+-	if (fam == AF_INET6) {
++	if (ai->ai_family == AF_INET6) {
++		struct sockaddr_in6 *in6 = ((struct sockaddr_in6 *)ai->ai_addr);
+ 		char sockname[64];
+-		inet_ntop( fam, &addr.ip6.sin6_addr, sockname, sizeof(sockname) );
++		in6->sin6_port = htons( sock->conf->port );
+ 		nfasprintf( &sock->name, "%s ([%s]:%hu)",
+-		            sock->conf->host, sockname, sock->conf->port );
++		            sock->conf->host, inet_ntop( AF_INET6, &in6->sin6_addr, sockname, sizeof(sockname) ), sock->conf->port );
+ 	} else
+ #endif
+ 	{
++		struct sockaddr_in *in = ((struct sockaddr_in *)ai->ai_addr);
++		in->sin_port = htons( sock->conf->port );
+ 		nfasprintf( &sock->name, "%s (%s:%hu)",
+-		            sock->conf->host, inet_ntoa( addr.ip4.sin_addr ), sock->conf->port );
++		            sock->conf->host, inet_ntoa( in->sin_addr ), sock->conf->port );
+ 	}
+ 
+-	int s = socket( fam, SOCK_STREAM, 0 );
++#ifdef HAVE_IPV6
++	s = socket( ai->ai_family, SOCK_STREAM, 0 );
++#else
++	s = socket( PF_INET, SOCK_STREAM, 0 );
++#endif
+ 	if (s < 0) {
+ 		socket_connect_next( sock );
+ 		return;
+@@ -686,9 +579,11 @@ socket_connect_one( conn_t *sock )
+ 	socket_open_internal( sock, s );
+ 
+ 	infon( "Connecting to %s... ", sock->name );
+-	addr.any.sa_family = fam;
+-	addr.ip4.sin_port = htons( sock->conf->port );  // Aliased for ip6
+-	if (connect( s, &addr.any, addr_len )) {
++#ifdef HAVE_IPV6
++	if (connect( s, ai->ai_addr, ai->ai_addrlen )) {
++#else
++	if (connect( s, ai->ai_addr, sizeof(*ai->ai_addr) )) {
++#endif
+ 		if (errno != EINPROGRESS) {
+ 			socket_connect_failed( sock );
+ 			return;
+@@ -709,6 +604,7 @@ socket_connect_next( conn_t *conn )
+ 	sys_error( "Cannot connect to %s", conn->name );
+ 	free( conn->name );
+ 	conn->name = NULL;
++	conn->curr_addr = conn->curr_addr->ai_next;
+ 	socket_connect_one( conn );
+ }
+ 
+@@ -722,8 +618,10 @@ socket_connect_failed( conn_t *conn )
+ static void
+ socket_connected( conn_t *conn )
+ {
+-	free( conn->addrs );
+-	conn->addrs = NULL;
++	if (conn->addrs) {
++		freeaddrinfo( conn->addrs );
++		conn->addrs = NULL;
++	}
+ 	conf_notifier( &conn->notify, 0, POLLIN );
+ 	socket_expect_activity( conn, 0 );
+ 	conn->state = SCK_READY;
+@@ -733,8 +631,10 @@ socket_connected( conn_t *conn )
+ static void
+ socket_cleanup_names( conn_t *conn )
+ {
+-	free( conn->addrs );
+-	conn->addrs = NULL;
++	if (conn->addrs) {
++		freeaddrinfo( conn->addrs );
++		conn->addrs = NULL;
++	}
+ 	free( conn->name );
+ 	conn->name = NULL;
+ }
+@@ -1208,11 +1108,6 @@ socket_fd_cb( int events, void *aux )
+ {
+ 	conn_t *conn = (conn_t *)aux;
+ 
+-	if (conn->state == SCK_RESOLVING) {
+-		socket_resolve_finalize( conn );
+-		return;
+-	}
+-
+ 	if ((events & POLLERR) || conn->state == SCK_CONNECTING) {
+ 		int soerr;
+ 		socklen_t selen = sizeof(soerr);
+@@ -1275,9 +1170,7 @@ socket_timeout_cb( void *aux )
+ {
+ 	conn_t *conn = (conn_t *)aux;
+ 
+-	if (conn->state == SCK_RESOLVING) {
+-		socket_resolve_timeout( conn );
+-	} else if (conn->state == SCK_CONNECTING) {
++	if (conn->state == SCK_CONNECTING) {
+ 		errno = ETIMEDOUT;
+ 		socket_connect_failed( conn );
+ 	} else {

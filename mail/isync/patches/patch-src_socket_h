@@ -1,0 +1,19 @@
+Backout ec50c55c36887b86b0143a265acae4b22d117fe9 "make DNS lookup asynchronous"
+doing fork(2) for async getaddrinfo(3) to avoid pledging "proc".
+
+Index: src/socket.h
+--- src/socket.h.orig
++++ src/socket.h
+@@ -57,7 +57,11 @@ typedef struct {
+ 	int fd;
+ 	int state;
+ 	const server_conf_t *conf; /* needed during connect */
+-	char *addrs, *addrs_end, *curr_addr;  // needed during connect; assumed to be int-aligned
++#ifdef HAVE_IPV6
++	struct addrinfo *addrs, *curr_addr; /* needed during connect */
++#else
++	struct addr_info *addrs, *curr_addr; /* needed during connect */
++#endif
+ 	char *name;
+ #ifdef HAVE_LIBSSL
+ 	SSL *ssl;
