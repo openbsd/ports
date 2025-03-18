@@ -1,6 +1,5 @@
 # https://download.lucee.org/changelog/
-V=		5.4.6.9
-REVISION=	0
+V=		5.4.7.2
 
 # N.B. tomcat must be started using a JDK version that is compatible
 # with lucee; if it picks up the wrong one by default, you'll need to
