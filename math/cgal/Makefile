@@ -22,7 +22,6 @@ RUN_DEPENDS =		devel/boost \
 			devel/gmp \
 			devel/mpfr
 
-NO_BUILD =		Yes
 NO_TEST =		Yes
 
 post-install:
