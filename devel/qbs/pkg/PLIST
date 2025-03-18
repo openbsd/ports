@@ -529,6 +529,7 @@ share/qbs/imports/qbs/base/NetModule.qbs
 share/qbs/imports/qbs/base/NodeJSApplication.qbs
 share/qbs/imports/qbs/base/QtApplication.qbs
 share/qbs/imports/qbs/base/QtGuiApplication.qbs
+share/qbs/imports/qbs/base/QtLupdateRunner.qbs
 share/qbs/imports/qbs/base/QtModule.qbs
 share/qbs/imports/qbs/base/QtPlugin.qbs
 share/qbs/imports/qbs/base/StaticLibrary.qbs
