@@ -98,7 +98,6 @@ lib/qtcreator/plugins/
 @so lib/qtcreator/plugins/libLua.so
 @so lib/qtcreator/plugins/libLuaLanguageClient.so
 @so lib/qtcreator/plugins/libMacros.so
-@so lib/qtcreator/plugins/libMarketplace.so
 @so lib/qtcreator/plugins/libMcuSupport.so
 @so lib/qtcreator/plugins/libMercurial.so
 @so lib/qtcreator/plugins/libMesonProjectManager.so
@@ -148,10 +147,9 @@ lib/qtcreator/plugins/qmldesigner/
 libexec/qtcreator/
 @bin libexec/qtcreator/buildoutputparser
 @bin libexec/qtcreator/cpaster
-@bin libexec/qtcreator/qml2puppet-15.0.1
+@bin libexec/qtcreator/qmlpuppet-16.0.0
 @bin libexec/qtcreator/qtc-askpass
 @bin libexec/qtcreator/qtcreator_process_stub
-@bin libexec/qtcreator/qtcreator_processlauncher
 @bin libexec/qtcreator/qtpromaker
 @bin libexec/qtcreator/sdktool
 share/applications/org.qt-project.qtcreator.desktop
@@ -192,6 +190,7 @@ share/qtcreator/changelog/changes-14.0.1.md
 share/qtcreator/changelog/changes-14.0.2.md
 share/qtcreator/changelog/changes-15.0.0.md
 share/qtcreator/changelog/changes-15.0.1.md
+share/qtcreator/changelog/changes-16.0.0.md
 share/qtcreator/changelog/changes-2.0.0
 share/qtcreator/changelog/changes-2.0.1
 share/qtcreator/changelog/changes-2.1.0
@@ -455,6 +454,7 @@ share/qtcreator/lua-plugins/luatests/qtctest.lua
 share/qtcreator/lua-plugins/luatests/tests.lua
 share/qtcreator/lua-plugins/luatests/tst_aspectcontainer.lua
 share/qtcreator/lua-plugins/luatests/tst_fetch.lua
+share/qtcreator/lua-plugins/luatests/tst_markdownbrowser.lua
 share/qtcreator/lua-plugins/luatests/tst_texteditor.lua
 share/qtcreator/lua-plugins/luatests/tst_utils.lua
 share/qtcreator/lua-plugins/rustls/
@@ -556,14 +556,40 @@ share/qtcreator/qmldesigner/contentLibraryQmlSource/DownloadPane.qml
 share/qtcreator/qmldesigner/contentLibraryQmlSource/TextureProgressBar.qml
 share/qtcreator/qmldesigner/contentLibraryQmlSource/UnimportBundleItemDialog.qml
 share/qtcreator/qmldesigner/designericons.json
+share/qtcreator/qmldesigner/designsystem/
+share/qtcreator/qmldesigner/designsystem/Main.qml
+share/qtcreator/qmldesigner/designsystem/imports/
+share/qtcreator/qmldesigner/designsystem/imports/DesignSystemControls/
+share/qtcreator/qmldesigner/designsystem/imports/DesignSystemControls/MenuItem.qml
+share/qtcreator/qmldesigner/designsystem/imports/DesignSystemControls/Switch.qml
+share/qtcreator/qmldesigner/designsystem/imports/DesignSystemControls/TextField.qml
+share/qtcreator/qmldesigner/designsystem/imports/DesignSystemControls/qmldir
+share/qtcreator/qmldesigner/devicemanager/
+share/qtcreator/qmldesigner/devicemanager/Main.qml
+share/qtcreator/qmldesigner/devicemanager/images/
+share/qtcreator/qmldesigner/devicemanager/images/GetItOnGooglePlay_Badge_Web_color_English.png
+share/qtcreator/qmldesigner/devicemanager/imports/
+share/qtcreator/qmldesigner/devicemanager/imports/DeviceManagerControls/
+share/qtcreator/qmldesigner/devicemanager/imports/DeviceManagerControls/ButtonInput.qml
+share/qtcreator/qmldesigner/devicemanager/imports/DeviceManagerControls/Dropdown.qml
+share/qtcreator/qmldesigner/devicemanager/imports/DeviceManagerControls/Switch.qml
+share/qtcreator/qmldesigner/devicemanager/imports/DeviceManagerControls/ToolbarButton.qml
+share/qtcreator/qmldesigner/devicemanager/imports/DeviceManagerControls/qmldir
 share/qtcreator/qmldesigner/edit3dQmlSource/
 share/qtcreator/qmldesigner/edit3dQmlSource/BakeLightsProgressDialog.qml
 share/qtcreator/qmldesigner/edit3dQmlSource/BakeLightsSetupDialog.qml
 share/qtcreator/qmldesigner/edit3dQmlSource/CameraSpeedConfigurationDialog.qml
 share/qtcreator/qmldesigner/edit3dQmlSource/SnapConfigurationDialog.qml
 share/qtcreator/qmldesigner/effectComposerQmlSources/
+share/qtcreator/qmldesigner/effectComposerQmlSources/AddPropertyForm.qml
 share/qtcreator/qmldesigner/effectComposerQmlSources/BlurHelper.qml
+share/qtcreator/qmldesigner/effectComposerQmlSources/CodeEditorFooter.qml
+share/qtcreator/qmldesigner/effectComposerQmlSources/CodeEditorHeader.qml
+share/qtcreator/qmldesigner/effectComposerQmlSources/CodeEditorTabs.qml
+share/qtcreator/qmldesigner/effectComposerQmlSources/CodeEditorUniformsView.qml
+share/qtcreator/qmldesigner/effectComposerQmlSources/ColumnChooser.qml
 share/qtcreator/qmldesigner/effectComposerQmlSources/ConfirmClearAllDialog.qml
+share/qtcreator/qmldesigner/effectComposerQmlSources/ConfirmPropertyRemoveForm.qml
 share/qtcreator/qmldesigner/effectComposerQmlSources/EffectComposer.qml
 share/qtcreator/qmldesigner/effectComposerQmlSources/EffectComposerPreview.qml
 share/qtcreator/qmldesigner/effectComposerQmlSources/EffectComposerTopBar.qml
@@ -571,6 +597,8 @@ share/qtcreator/qmldesigner/effectComposerQmlSources/EffectCompositionNode.qml
 share/qtcreator/qmldesigner/effectComposerQmlSources/EffectCompositionNodeUniform.qml
 share/qtcreator/qmldesigner/effectComposerQmlSources/EffectNode.qml
 share/qtcreator/qmldesigner/effectComposerQmlSources/EffectNodesComboBox.qml
+share/qtcreator/qmldesigner/effectComposerQmlSources/HeaderColumnController.qml
+share/qtcreator/qmldesigner/effectComposerQmlSources/PreviewError.qml
 share/qtcreator/qmldesigner/effectComposerQmlSources/PreviewImagesComboBox.qml
 share/qtcreator/qmldesigner/effectComposerQmlSources/SaveAsDialog.qml
 share/qtcreator/qmldesigner/effectComposerQmlSources/SaveChangesDialog.qml
@@ -1074,9 +1102,77 @@ share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/WindowSpecifics.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/emptyPane.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick/project.qmlproject
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/AbstractLightSection.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/BakedLightmapSection.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/BakedLightmapSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/BufferInputSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/BufferInputSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/BufferSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/BufferSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/CameraSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/CubeMapTextureSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/CustomCameraSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/CustomMaterialSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/CustomMaterialSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/DebugSettingsSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/DebugSettingsSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/DefaultMaterialSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/DefaultMaterialSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/DirectionalLightSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/DirectionalLightSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/EffectSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/EffectSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/FileInstancingSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/FileInstancingSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/FogSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/FogSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/FrustumCameraSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/FrustumCameraSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/InstanceListEntrySection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/InstanceListEntrySpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/InstanceListSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/InstanceListSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/InstancingSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/JointSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/JointSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/LightmapperSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/LightmapperSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/Loader3DSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/Loader3DSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/MaterialSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/ModelSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/ModelSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/MorphTargetSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/MorphTargetSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/NodeSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/NodeSpecifics.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/Object3DPane.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/Object3DSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/OrthographicCameraSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/OrthographicCameraSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/PassSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/PassSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/PerspectiveCameraSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/PerspectiveCameraSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/PointLightSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/PointLightSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/PrincipledMaterialSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/PrincipledMaterialSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/ReflectionProbeSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/ReflectionProbeSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/Repeater3DSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/Repeater3DSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/ResourceLoaderSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/ResourceLoaderSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/SceneEnvironmentSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/SceneEnvironmentSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/SetUniformValueSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/SetUniformValueSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/ShaderSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/ShaderSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/ShadowSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/SkinSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/SkinSpecifics.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/SpatialAudio/
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/SpatialAudio/AmbientSoundSection.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/SpatialAudio/AmbientSoundSpecifics.qml
@@ -1088,6 +1184,21 @@ share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/SpatialAudio/Audi
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/SpatialAudio/NodeSection.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/SpatialAudio/SpatialSoundSection.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/SpatialAudio/SpatialSoundSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/SpecularGlossyMaterialSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/SpecularGlossyMaterialSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/SpotLightSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/SpotLightSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/TextureInputSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/TextureInputSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/TextureSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/TextureSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/View3DSection.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/View3DSpecifics.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/source/
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/source/custom_material_default_shader.frag
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/source/effect_default_shader.frag
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/source/effect_template.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/QtQuick3D/source/view3D_template.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/RegExpValidator.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/HelperWidgets/
@@ -1199,6 +1310,7 @@ share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/Dial
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/DialogButtonBox.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/FilterComboBox.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/IconIndicator.qml
+share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/IconTextButton.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/Indicator.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/InfinityLoopIndicator.qml
 share/qtcreator/qmldesigner/propertyEditorQmlSources/imports/StudioControls/ItemDelegate.qml
@@ -1335,16 +1447,6 @@ share/qtcreator/qmldesigner/studio_templates/files/customswitch/custom_switch.pn
 share/qtcreator/qmldesigner/studio_templates/files/customswitch/custom_switch@2.png
 share/qtcreator/qmldesigner/studio_templates/files/customswitch/file.qml.tpl
 share/qtcreator/qmldesigner/studio_templates/files/customswitch/wizard.json
-share/qtcreator/qmldesigner/studio_templates/files/flowitem/
-share/qtcreator/qmldesigner/studio_templates/files/flowitem/file.qml.tpl
-share/qtcreator/qmldesigner/studio_templates/files/flowitem/flow_item.png
-share/qtcreator/qmldesigner/studio_templates/files/flowitem/flow_item@2.png
-share/qtcreator/qmldesigner/studio_templates/files/flowitem/wizard.json
-share/qtcreator/qmldesigner/studio_templates/files/flowview/
-share/qtcreator/qmldesigner/studio_templates/files/flowview/file.qml.tpl
-share/qtcreator/qmldesigner/studio_templates/files/flowview/flow_view.png
-share/qtcreator/qmldesigner/studio_templates/files/flowview/flowview2.png
-share/qtcreator/qmldesigner/studio_templates/files/flowview/wizard.json
 share/qtcreator/qmldesigner/studio_templates/files/javascript/
 share/qtcreator/qmldesigner/studio_templates/files/javascript/file.js.tpl
 share/qtcreator/qmldesigner/studio_templates/files/javascript/file_javascript.png
@@ -1486,6 +1588,7 @@ share/qtcreator/qmldesigner/studio_templates/projects/common/App.qml.tpl
 share/qtcreator/qmldesigner/studio_templates/projects/common/app.qmlproject.tpl
 share/qtcreator/qmldesigner/studio_templates/projects/common/asset_imports.txt
 share/qtcreator/qmldesigner/studio_templates/projects/common/fonts.txt
+share/qtcreator/qmldesigner/studio_templates/projects/common/images.txt
 share/qtcreator/qmldesigner/studio_templates/projects/common/qtquickcontrols2.conf.tpl
 share/qtcreator/qmldesigner/studio_templates/projects/defaults/
 share/qtcreator/qmldesigner/studio_templates/projects/defaults/qmlapplication-project-page.json
@@ -1540,7 +1643,12 @@ share/qtcreator/qmldesigner/toolbar/
 share/qtcreator/qmldesigner/toolbar/CrumbleBar.qml
 share/qtcreator/qmldesigner/toolbar/CrumbleBread.qml
 share/qtcreator/qmldesigner/toolbar/Main.qml
+share/qtcreator/qmldesigner/toolbar/MenuItemDelegate.qml
+share/qtcreator/qmldesigner/toolbar/ShareNotification.qml
+share/qtcreator/qmldesigner/toolbar/SplitButton.qml
 share/qtcreator/qmldesigner/toolbar/ToolbarButton.qml
+share/qtcreator/qmldesigner/translationhelper/
+share/qtcreator/qmldesigner/translationhelper/itemlibrary.qml
 share/qtcreator/qmldesigner/welcomepage/
 share/qtcreator/qmldesigner/welcomepage/BrandBar.qml
 share/qtcreator/qmldesigner/welcomepage/CheckButton.ui.qml
@@ -1631,16 +1739,11 @@ share/qtcreator/qmldesigner/welcomepage/mockData/usagestatistics/UsageStatisticM
 share/qtcreator/qmldesigner/welcomepage/mockData/usagestatistics/qmldir
 share/qtcreator/qmldesigner/welcomepage/qtquickcontrols2.conf
 share/qtcreator/qmldesigner/workspacePresets/
+share/qtcreator/qmldesigner/workspacePresets/Advanced-2D.wrk
 share/qtcreator/qmldesigner/workspacePresets/Advanced-3D.wrk
-share/qtcreator/qmldesigner/workspacePresets/Animation-2D.wrk
-share/qtcreator/qmldesigner/workspacePresets/Animation-3D.wrk
-share/qtcreator/qmldesigner/workspacePresets/Basic.wrk
-share/qtcreator/qmldesigner/workspacePresets/Code.wrk
-share/qtcreator/qmldesigner/workspacePresets/Essentials-3D.wrk
-share/qtcreator/qmldesigner/workspacePresets/Essentials.wrk
+share/qtcreator/qmldesigner/workspacePresets/Basic-2D.wrk
+share/qtcreator/qmldesigner/workspacePresets/Basic-3D.wrk
 share/qtcreator/qmldesigner/workspacePresets/Lite-QML-Designer.wrk
-share/qtcreator/qmldesigner/workspacePresets/UX-Design.wrk
-share/qtcreator/qmldesigner/workspacePresets/Views-All.wrk
 share/qtcreator/qmldesigner/workspacePresets/order.json
 share/qtcreator/qmlicons/
 share/qtcreator/qmlicons/Qt/
@@ -2033,12 +2136,20 @@ share/qtcreator/templates/wizards/projects/vcs/subversion/
 share/qtcreator/templates/wizards/projects/vcs/subversion/icon.png
 share/qtcreator/templates/wizards/projects/vcs/subversion/icon@2x.png
 share/qtcreator/templates/wizards/projects/vcs/subversion/wizard.json
+share/qtcreator/templates/wizards/projects/xrapplication/
+share/qtcreator/templates/wizards/projects/xrapplication/AndroidManifest.xml.tpl
+share/qtcreator/templates/wizards/projects/xrapplication/CMakeLists.txt
+share/qtcreator/templates/wizards/projects/xrapplication/MacOSXBundleInfo.plist.in
+share/qtcreator/templates/wizards/projects/xrapplication/Main.qml.tpl
+share/qtcreator/templates/wizards/projects/xrapplication/icon.png
+share/qtcreator/templates/wizards/projects/xrapplication/icon@2x.png
+share/qtcreator/templates/wizards/projects/xrapplication/main.cpp
+share/qtcreator/templates/wizards/projects/xrapplication/qtquickcontrols2.conf
+share/qtcreator/templates/wizards/projects/xrapplication/wizard.json
 share/qtcreator/templates/wizards/qtcreatorplugin/
 share/qtcreator/templates/wizards/qtcreatorplugin/CMakeLists.txt
 share/qtcreator/templates/wizards/qtcreatorplugin/MyPlugin.json.in
 share/qtcreator/templates/wizards/qtcreatorplugin/README.md
-share/qtcreator/templates/wizards/qtcreatorplugin/github_scripts_plugin.json
-share/qtcreator/templates/wizards/qtcreatorplugin/github_scripts_registerPlugin.js
 share/qtcreator/templates/wizards/qtcreatorplugin/github_workflows_README.md
 share/qtcreator/templates/wizards/qtcreatorplugin/github_workflows_build_cmake.yml
 share/qtcreator/templates/wizards/qtcreatorplugin/myplugin.cpp
@@ -2061,6 +2172,7 @@ share/qtcreator/themes/flat.creatortheme
 share/qtcreator/themes/light-2024.creatortheme
 share/qtcreator/themes/light-palette.inc
 share/qtcreator/themes/light.figmatokens
+share/qtcreator/themes/primitive-colors.inc
 share/qtcreator/translations/
 share/qtcreator/translations/qtcreator_cs.qm
 share/qtcreator/translations/qtcreator_da.qm
