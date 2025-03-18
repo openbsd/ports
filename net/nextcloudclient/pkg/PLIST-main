@@ -1,3 +1,4 @@
+@pkgpath net/nextcloudclient
 @bin bin/nextcloud
 @bin bin/nextcloudcmd
 include/nextcloudsync/

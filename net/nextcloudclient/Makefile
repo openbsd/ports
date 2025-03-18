@@ -7,6 +7,7 @@ V =		3.15.3
 GH_ACCOUNT =	nextcloud
 GH_PROJECT =	desktop
 GH_TAGNAME =	v${V}
+REVISION-main =	0
 
 DISTNAME =		nextcloudclient-${V}
 PKGNAME-main =		nextcloudclient-${V}
