@@ -5,17 +5,17 @@ PW_PROJECT=		pipewire
 PW_VERSION=		1.4.1
 PKGNAME-libs=		lib${PW_PROJECT}-${PW_VERSION}
 
-REVISION-main=		0
+REVISION-main=		1
 REVISION-libs=		0
 
 SHARED_LIBS += pipewire-0.3              0.3 # 0.1401.0
 
 MULTI_PACKAGES=		-main -libs
 
-WANTLIB-main += X11 Xfixes c canberra curses dbus-1 epoll-shim gio-2.0
-WANTLIB-main += glib-2.0 gobject-2.0 gstallocators-1.0 gstaudio-1.0
-WANTLIB-main += gstbase-1.0 gstreamer-1.0 gstvideo-1.0 m opus pipewire-0.3
-WANTLIB-main += pthread readline sndfile ebur128
+WANTLIB-main += X11 Xfixes c canberra curses dbus-1 ebur128 epoll-shim
+WANTLIB-main += fftw3f gio-2.0 glib-2.0 gobject-2.0 gstallocators-1.0
+WANTLIB-main += gstaudio-1.0 gstbase-1.0 gstreamer-1.0 gstvideo-1.0
+WANTLIB-main += m opus pipewire-0.3 pthread readline sndfile
 
 WANTLIB-libs += intl pthread
 
@@ -34,6 +34,7 @@ LIB_DEPENDS-main=	${BASE_PKGPATH},-libs \
 			audio/libebur128 \
 			audio/libsndfile \
 			devel/epoll-shim \
+			math/fftw3,-main,float \
 			multimedia/gstreamer1/plugins-base \
 			x11/dbus
 
