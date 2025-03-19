@@ -1,36 +1,40 @@
---- tools/find_sts_main.c.orig	Thu Dec 26 09:18:30 2002
-+++ tools/find_sts_main.c	Wed Dec  9 19:23:23 2009
-@@ -75,6 +75,11 @@ cst_sts *find_sts(cst_wave *sig, cst_track *lpc)
-     double *resd;
-     int size,start,end;
-     short *sigplus;
-+    struct dummy {
-+    	unsigned short *frame;
-+	int size;
-+	unsigned char *residual;
-+    } *stsw;
+Index: tools/find_sts_main.c
+--- tools/find_sts_main.c.orig
++++ tools/find_sts_main.c
+@@ -107,6 +107,12 @@ cst_sts *find_sts(cst_wave *sig, cst_track *lpc)
+     int frame_size;
+ #endif
  
++    struct dummy {
++       unsigned short *frame;
++       int size;
++       unsigned char *residual;
++    } *stsw;
++
      sts = cst_alloc(cst_sts,lpc->num_frames);
-     start = 0;
-@@ -93,14 +98,16 @@ cst_sts *find_sts(cst_wave *sig, cst_track *lpc)
+     sigplus = cst_alloc(short,sig->num_samples+lpc->num_channels);
+     memset(sigplus,0,sizeof(short)*lpc->num_channels);
+@@ -132,16 +138,18 @@ cst_sts *find_sts(cst_wave *sig, cst_track *lpc)
  			lpc->frames[i],lpc->num_channels,
  			resd,
  			size);
 -	sts[i].size = size;
 -	sts[i].frame = cst_alloc(unsigned short,lpc->num_channels-1);
 +
-+	stsw = (struct dummy *)(sts+i);
-+	stsw->size = size;
-+	stsw->frame = cst_alloc(unsigned short,lpc->num_channels-1);
++       stsw = (struct dummy *)(sts+i);
++       stsw->size = size;
++       stsw->frame = cst_alloc(unsigned short,lpc->num_channels-1);
  	for (j=1; j < lpc->num_channels; j++)
 -	    sts[i].frame[j-1] = (unsigned short)
 +	    stsw->frame[j-1] = (unsigned short)
  		(((lpc->frames[i][j]-lpc_min)/lpc_range)*65535);
--	sts[i].residual = cst_alloc(unsigned char,size);
-+	stsw->residual = cst_alloc(unsigned char,size);
- 	for (j=0; j < size; j++)
--	    sts[i].residual[j] = cst_short_to_ulaw((short)resd[j]);
-+	    stsw->residual[j] = cst_short_to_ulaw((short)resd[j]);
- 	start = end;
-     }
- 
+         if (cst_streq(residual_codec,"ulaw"))
+         {
+-            sts[i].residual = cst_alloc(unsigned char,size);
++	    stsw->residual = cst_alloc(unsigned char,size);
+             for (j=0; j < size; j++)
+-                sts[i].residual[j] = cst_short_to_ulaw((short)resd[j]);
++                stsw->residual[j] = cst_short_to_ulaw((short)resd[j]);
+         }
+         else if (cst_streq(residual_codec,"g721"))
+         {

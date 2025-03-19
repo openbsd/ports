@@ -1,11 +1,12 @@
---- src/audio/Makefile.orig	Wed Dec  9 19:24:16 2009
-+++ src/audio/Makefile	Wed Dec  9 19:24:35 2009
-@@ -45,7 +45,7 @@ BASESRCS = auclient.c auserver.c audio.c 
- SRCS = $(BASESRCS) $(AUDIODRIVER:%=au_%.c)
+Index: src/audio/Makefile
+--- src/audio/Makefile.orig
++++ src/audio/Makefile
+@@ -46,7 +46,7 @@ SRCS = $(BASESRCS) $(AUDIODRIVER:%=au_%.c)
  OBJS = $(SRCS:.c=.o)
- FILES = Makefile $(H) $(BASESRCS) au_alsa.c au_command.c au_none.c \
--	au_oss.c au_sun.c au_wince.c
-+	au_oss.c au_sun.c au_wince.c au_sndio.c
+ FILES = Makefile $(H) $(BASESRCS) au_command.c au_none.c \
+ 	au_oss.c au_sun.c au_wince.c au_palmos.c au_alsa.c \
+-        au_pulseaudio.c au_win.c
++        au_pulseaudio.c au_win.c au_sndio.c
  LIBNAME = flite
  
  LOCAL_INCLUDES = -I. $(AUDIODEFS)

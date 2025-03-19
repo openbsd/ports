@@ -1,21 +1,30 @@
 @bin bin/flite
+@bin bin/flite_cmu_time_awb
+@bin bin/flite_cmu_us_awb
+@bin bin/flite_cmu_us_kal
+@bin bin/flite_cmu_us_kal16
+@bin bin/flite_cmu_us_rms
+@bin bin/flite_cmu_us_slt
 @bin bin/flite_time
 include/flite/
 include/flite/cst_alloc.h
 include/flite/cst_args.h
 include/flite/cst_audio.h
 include/flite/cst_cart.h
+include/flite/cst_cg.h
 include/flite/cst_clunits.h
 include/flite/cst_diphone.h
 include/flite/cst_endian.h
 include/flite/cst_error.h
 include/flite/cst_features.h
+include/flite/cst_ffeatures.h
 include/flite/cst_file.h
 include/flite/cst_hrg.h
 include/flite/cst_item.h
 include/flite/cst_lexicon.h
 include/flite/cst_lts.h
 include/flite/cst_lts_rewrites.h
+include/flite/cst_math.h
 include/flite/cst_phoneset.h
 include/flite/cst_regex.h
 include/flite/cst_relation.h
@@ -36,17 +45,32 @@ include/flite/cst_val_defs.h
 include/flite/cst_viterbi.h
 include/flite/cst_voice.h
 include/flite/cst_wave.h
+include/flite/cst_wchar.h
 include/flite/flite.h
 include/flite/flite_version.h
-lib/libflite.a
+@static-lib lib/libflite.a
 @lib lib/libflite.so.${LIBflite_VERSION}
-lib/libflite_cmu_time_awb.a
+@static-lib lib/libflite_cmu_grapheme_lang.a
+@lib lib/libflite_cmu_grapheme_lang.so.${LIBflite_cmu_grapheme_lang_VERSION}
+@static-lib lib/libflite_cmu_grapheme_lex.a
+@lib lib/libflite_cmu_grapheme_lex.so.${LIBflite_cmu_grapheme_lex_VERSION}
+@static-lib lib/libflite_cmu_indic_lang.a
+@lib lib/libflite_cmu_indic_lang.so.${LIBflite_cmu_indic_lang_VERSION}
+@static-lib lib/libflite_cmu_indic_lex.a
+@lib lib/libflite_cmu_indic_lex.so.${LIBflite_cmu_indic_lex_VERSION}
+@static-lib lib/libflite_cmu_time_awb.a
 @lib lib/libflite_cmu_time_awb.so.${LIBflite_cmu_time_awb_VERSION}
-lib/libflite_cmu_us_kal.a
+@static-lib lib/libflite_cmu_us_awb.a
+@lib lib/libflite_cmu_us_awb.so.${LIBflite_cmu_us_awb_VERSION}
+@static-lib lib/libflite_cmu_us_kal.a
 @lib lib/libflite_cmu_us_kal.so.${LIBflite_cmu_us_kal_VERSION}
-lib/libflite_cmu_us_kal16.a
+@static-lib lib/libflite_cmu_us_kal16.a
 @lib lib/libflite_cmu_us_kal16.so.${LIBflite_cmu_us_kal16_VERSION}
-lib/libflite_cmulex.a
+@static-lib lib/libflite_cmu_us_rms.a
+@lib lib/libflite_cmu_us_rms.so.${LIBflite_cmu_us_rms_VERSION}
+@static-lib lib/libflite_cmu_us_slt.a
+@lib lib/libflite_cmu_us_slt.so.${LIBflite_cmu_us_slt_VERSION}
+@static-lib lib/libflite_cmulex.a
 @lib lib/libflite_cmulex.so.${LIBflite_cmulex_VERSION}
-lib/libflite_usenglish.a
+@static-lib lib/libflite_usenglish.a
 @lib lib/libflite_usenglish.so.${LIBflite_usenglish_VERSION}

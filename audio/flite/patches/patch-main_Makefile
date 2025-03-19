@@ -1,0 +1,24 @@
+Index: main/Makefile
+--- main/Makefile.orig
++++ main/Makefile
+@@ -70,8 +70,7 @@ SHAREDMODS = $(flite_MODS:%=$(LIBDIR)/lib%.so)
+ SHAREDusenMODS = $(LIBDIR)/libflite_cmu_time_awb.so $(LIBDIR)/libflite_cmu_us_awb.so $(LIBDIR)/libflite_cmu_us_kal16.so $(LIBDIR)/libflite_cmu_us_kal.so $(LIBDIR)/libflite_cmu_us_rms.so $(LIBDIR)/libflite_cmu_us_slt.so $(LIBDIR)/libflite_cmu_indic_lang.so
+ SHAREDcmulexMODS = $(LIBDIR)/libflite_cmu_time_awb.so $(LIBDIR)/libflite_cmu_us_awb.so $(LIBDIR)/libflite_cmu_us_kal16.so $(LIBDIR)/libflite_cmu_us_kal.so $(LIBDIR)/libflite_cmu_us_rms.so $(LIBDIR)/libflite_cmu_us_slt.so  $(LIBDIR)/libflite_cmu_indic_lex.so
+ SHAREDindicMODS = $(LIBDIR)/libflite_cmu_indic_lex.so
+-VERSIONSHAREDLIBS = $(SHAREDLIBS:%=%.${PROJECT_VERSION}) \
+-                    $(SHAREDLIBS:%=%.${PROJECT_SHLIB_VERSION})
++VERSIONSHAREDLIBS = $(SHAREDLIBS:%=%.${PROJECT_SHLIB_VERSION})
+ 
+ flite_time_LIBS = flite_cmu_time_awb flite_usenglish flite_cmulex
+ flite_time_LIBS_flags = -L$(LIBDIR) $(flite_time_LIBS:%=-l%)
+@@ -152,8 +151,8 @@ install:
+ 	done
+ 	$(INSTALL) -m 755 $(BINDIR)/flite_time $(DESTDIR)$(INSTALLBINDIR)
+ #       The libraries: static and shared (if built)
+-	cp -pd $(flite_LIBS_deps) $(DESTDIR)$(INSTALLLIBDIR)
++	cp -p $(flite_LIBS_deps) $(DESTDIR)$(INSTALLLIBDIR)
+ ifdef SHFLAGS
+-	cp -pd $(SHAREDLIBS) $(VERSIONSHAREDLIBS) $(DESTDIR)$(INSTALLLIBDIR)
++	cp -p $(VERSIONSHAREDLIBS) $(DESTDIR)$(INSTALLLIBDIR)
+ endif
+ 

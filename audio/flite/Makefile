@@ -2,40 +2,46 @@ BROKEN-m88k=	out of memory compiling cmu_us_kal_diphone.c
 
 COMMENT=	text to speech utility
 
-VERSION=	1.2
-DISTNAME=	flite-${VERSION}-release
-PKGNAME=	flite-${VERSION}
-REVISION=	8
-SHARED_LIBS=	flite			1.2 \
-		flite_cmu_time_awb	1.2 \
-		flite_cmu_us_kal	1.2 \
-		flite_cmu_us_kal16	1.2 \
-		flite_cmulex		1.2 \
-		flite_usenglish		1.2
+GH_ACCOUNT=	festvox
+GH_PROJECT=	flite
+GH_TAGNAME=	v2.2
 
-MAKE_FLAGS=	LIBlibflite.so_VERSION=${LIBflite_VERSION} \
-	LIBlibflite_cmu_time_awb.so_VERSION=${LIBflite_cmu_time_awb_VERSION} \
-	LIBlibflite_cmu_us_kal.so_VERSION=${LIBflite_cmu_us_kal_VERSION} \
-	LIBlibflite_cmu_us_kal16.so_VERSION=${LIBflite_cmu_us_kal16_VERSION} \
-	LIBlibflite_cmulex.so_VERSION=${LIBflite_cmulex_VERSION} \
-	LIBlibflite_usenglish.so_VERSION=${LIBflite_usenglish_VERSION}
+# sync shared libs;
+# see pre-configure, patch-config_common_make_rules and patch-config_project_mak
+SHARED_LIBS +=  flite                     2.0 # 1
+SHARED_LIBS +=	flite_cmu_grapheme_lang   2.0 # 1
+SHARED_LIBS +=	flite_cmu_grapheme_lex    2.0 # 1
+SHARED_LIBS +=	flite_cmu_indic_lang      2.0 # 1
+SHARED_LIBS +=	flite_cmu_indic_lex       2.0 # 1
+SHARED_LIBS +=	flite_cmu_time_awb        2.0 # 1
+SHARED_LIBS +=	flite_cmu_us_awb          2.0 # 1
+SHARED_LIBS +=	flite_cmu_us_kal          2.0 # 1
+SHARED_LIBS +=	flite_cmu_us_kal16        2.0 # 1
+SHARED_LIBS +=	flite_cmu_us_rms          2.0 # 1
+SHARED_LIBS +=	flite_cmu_us_slt          2.0 # 1
+SHARED_LIBS +=	flite_cmulex              2.0 # 1
+SHARED_LIBS +=	flite_usenglish           2.0 # 1
 
 CATEGORIES=	audio
 
-HOMEPAGE=	http://www.cmuflite.org/
+HOMEPAGE=	http://www.festvox.org/flite/
 
 PERMIT_PACKAGE=	Yes
-WANTLIB=		c m sndio
 
-SITES=		http://www.speech.cs.cmu.edu/flite/packed/flite-${VERSION}/
+WANTLIB += c m sndio
 
-CONFIGURE_STYLE= gnu dest
-CONFIGURE_ARGS= --enable-shared --with-audio=sndio
+CONFIGURE_STYLE= gnu
+
+CONFIGURE_ARGS=	--enable-shared \
+		--with-audio=sndio
 
 USE_GMAKE=	Yes
 NO_TEST=	Yes
 
 post-extract:
 	cp ${FILESDIR}/au_sndio.c ${WRKSRC}/src/audio
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/{config/project.mak,include/flite_version.h}
 
 .include <bsd.port.mk>

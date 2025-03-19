@@ -1,0 +1,9 @@
+Index: config/project.mak
+--- config/project.mak.orig
++++ config/project.mak
+@@ -40,4 +40,4 @@ PROJECT_VERSION = 2.2
+ PROJECT_DATE = Sep 2018
+ PROJECT_STATE = current
+ 
+-PROJECT_SHLIB_VERSION = 1
++PROJECT_SHLIB_VERSION = ${LIBflite_VERSION}

@@ -1,17 +1,17 @@
---- config/common_make_rules.orig	Tue Feb 18 17:17:21 2003
-+++ config/common_make_rules	Sat Dec 24 16:54:14 2005
-@@ -86,11 +86,10 @@ nothing:
- %.so: %.shared.a
+Index: config/common_make_rules
+--- config/common_make_rules.orig
++++ config/common_make_rules
+@@ -121,11 +121,9 @@ $(OBJDIR)/.build_so: $(FULLSHOBJS)
+ $(LIBDIR)/%.so: $(LIBDIR)/%.shared.a
  	@ echo making $@
  	@ rm -rf shared_os && mkdir shared_os
--	@ rm -f $@ $(LIBDIR)/$@.${PROJECT_VERSION} $(LIBDIR)/$@.${PROJECT_SHLIB_VERSION} 
-+	@ rm -f $@ $(LIBDIR)/$@.${LIB$@_VERSION}
+-	@ rm -f $@ $@.${PROJECT_VERSION} $@.${PROJECT_SHLIB_VERSION} 
++	@ rm -f $@.${PROJECT_SHLIB_VERSION} 
  	@ (cd shared_os && ar x ../$<)
--	@ (cd shared_os && $(CC) -shared -Wl,-soname,$@.${PROJECT_SHLIB_VERSION} -o ../$@.${PROJECT_VERSION} *.os)
--	@ ln -s $(LIBDIR)/$@.${PROJECT_VERSION} $(LIBDIR)/$@.${PROJECT_SHLIB_VERSION}
--	@ ln -s $(LIBDIR)/$@.${PROJECT_SHLIB_VERSION} $(LIBDIR)/$@
-+	@ (cd shared_os && $(CC) -shared -o ../$@.${LIB$@_VERSION} *.os)
-+	@ ln -s $(LIBDIR)/$@.${LIB$@_VERSION} $(LIBDIR)/$@
+-	@ (cd shared_os && $(CC) -shared -Wl,-soname,`basename $@`.${PROJECT_SHLIB_VERSION} -o ../$@.${PROJECT_VERSION} *.os $(LDFLAGS))
+-	@ (cd $(LIBDIR) && ln -s `basename $@.${PROJECT_VERSION}` `basename $@.${PROJECT_SHLIB_VERSION}` )
+-	@ (cd $(LIBDIR) && ln -s `basename $@.${PROJECT_SHLIB_VERSION}` `basename $@` )
++	@ (cd shared_os && $(CC) -shared -o ../$@.${PROJECT_SHLIB_VERSION} *.os $(LDFLAGS))
  	@ rm -rf shared_os
  
- .make_build_dirs:
+ $(OBJDIR)/.make_build_dirs:

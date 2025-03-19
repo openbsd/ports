@@ -1,11 +1,12 @@
---- main/flite_main.c.orig	Thu Dec 28 12:45:59 2006
-+++ main/flite_main.c	Thu Dec 28 12:46:57 2006
-@@ -58,6 +58,8 @@ static void flite_version()
- 	   FLITE_PROJECT_STATE,
- 	   FLITE_PROJECT_DATE);
-     printf("  CMU Copyright 1999-2003, all rights reserved\n");
+Index: main/flite_main.c
+--- main/flite_main.c.orig
++++ main/flite_main.c
+@@ -58,6 +58,8 @@ cst_lexicon *cmu_lex_init(void);
+ static void flite_version()
+ {
+     printf("  Carnegie Mellon University, Copyright (c) 1999-2016, all rights reserved\n");
 +    printf("  Modified from the original for the OpenBSD project\n");
 +    printf("  See https://cvsweb.openbsd.org/ports/audio/flite/patches/\n");
- }
- 
- static void flite_usage()
+     printf("  version: %s-%s-%s %s (http://cmuflite.org)\n",
+ 	   FLITE_PROJECT_PREFIX,
+ 	   FLITE_PROJECT_VERSION,

@@ -1,0 +1,9 @@
+Index: include/flite_version.h
+--- include/flite_version.h.orig
++++ include/flite_version.h
+@@ -3,4 +3,4 @@
+ #define FLITE_PROJECT_VERSION "2.2"
+ #define FLITE_PROJECT_DATE "Sep 2018"
+ #define FLITE_PROJECT_STATE "current"
+-#define FLITE_PROJECT_SHLIB_VERSION "1"
++#define FLITE_PROJECT_SHLIB_VERSION "${LIBflite_VERSION}"
