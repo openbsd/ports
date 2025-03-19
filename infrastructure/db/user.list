@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.460 2025/02/24 19:19:55 pascal Exp $
+$OpenBSD: user.list,v 1.461 2025/03/19 11:30:19 sthen Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -97,7 +97,7 @@ id  user		group		port
 586 _gnugk		_gnugk		net/gnugk
 587 _darkstat		_darkstat	net/darkstat
 588 _dansguardian	_dansguardian	www/dansguardian
-#589 _sdpd		_sdpd		net/bluetooth-tools
+589 _mollysocket	_mollysocket	net/mollysocket
 590 _smsd		_smsd		comms/smstools
 591 _bacula		_bacula		sysutils/bacula
 592 _imapproxy		_imapproxy	mail/imapproxy
