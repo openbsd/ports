@@ -15,8 +15,10 @@ PERMIT_PACKAGE = Yes
 MODULES =	font
 MODFONT_FONTFILES =	*.otf
 
-SITES =	https://brailleinstitute.org/wp-content/uploads/atkinson-hyperlegible-font/
-SITES.doc =	https://brailleinstitute.org/wp-content/uploads/2020/11/
+# mirrored from https://www.brailleinstitute.org/freefont/#download, this was
+# previously available under plain download but is now front-ended by a form
+SITES =		https://spacehopper.org/mirrors/
+SITES.doc =	https://spacehopper.org/mirrors/
 DISTFILES.doc =	Atkinson-Hyperlegible-Font-License-2020-1104.pdf
 
 EXTRACT_ONLY =	${DISTFILES}
