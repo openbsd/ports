@@ -1,6 +1,6 @@
 COMMENT =		R procedural language for PostgreSQL
 
-VERSION =		8.4.1
+VERSION =		8.4.7
 GH_ACCOUNT =		postgres-plr
 GH_PROJECT =		plr
 GH_TAGNAME =		REL${VERSION:S/./_/g}
@@ -19,7 +19,12 @@ RUN_DEPENDS =		databases/postgresql,-server
 LIB_DEPENDS =		math/R
 
 MAKE_ENV =		USE_PGXS=1
+MAKE_FLAGS =		SHLIB_LINK="-Wl,-rpath=/usr/local/lib/R/lib -L /usr/local/lib/R/lib -lR"
 
 USE_GMAKE =		Yes
+
+MODULES =		databases/postgresql
+TEST_TARGET =		installcheck
+TEST_DEPENDS =		${BUILD_PKGPATH}
 
 .include <bsd.port.mk>
