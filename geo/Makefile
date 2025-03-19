@@ -72,6 +72,7 @@
      SUBDIR += qgis,qt6
      SUBDIR += qmapshack
      SUBDIR += routino
+     SUBDIR += sfcgal
      SUBDIR += spatialindex
      SUBDIR += spatialite
      SUBDIR += traccar
