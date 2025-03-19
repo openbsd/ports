@@ -1,6 +1,6 @@
 COMMENT=	library and CLI tool (ykman) for configuring a YubiKey
 
-MODPY_DISTV=	5.6.0
+MODPY_DISTV=	5.6.1
 
 DISTNAME=	yubikey_manager-${MODPY_DISTV}
 PKGNAME=	yubikey-manager-${MODPY_DISTV}
