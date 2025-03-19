@@ -9,7 +9,7 @@ CATEGORIES=	x11
 SITES=		https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
 REVISION-jack=	0
-REVISION-main=	1
+REVISION-main=	2
 
 USE_NOBTCFI=	Yes
 
@@ -226,7 +226,6 @@ CONFIGURE_ARGS+=--disable-a52 \
 CONFIGURE_ENV+=	BUILDCC="${CC}" \
 		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 		LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib" \
-		LIBS_libvlccore="-lexecinfo" \
 		PKG_CONFIG_PATH="${LOCALBASE}/lib/qt5/pkgconfig" \
 		RCC="${LOCALBASE}/bin/rcc-qt5" \
 		LUAC="${LOCALBASE}/bin/luac${MODLUA_DEP_VERSION}"
