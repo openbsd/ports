@@ -1,0 +1,2 @@
+SFCGAL is a C++ wrapper library around CGAL supporting ISO 19107:2019
+and OGC Simple Features for 3D operations.
