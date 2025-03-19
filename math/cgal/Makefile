@@ -3,9 +3,11 @@ COMMENT =		Computational Geometry Algorithms Library
 V =			5.6.2
 DISTNAME =		CGAL-${V}
 PKGNAME =		${DISTNAME:L}
-EPOCH =			0
+REVISION =		0
 
 CATEGORIES =		math
+
+EPOCH =			0
 
 HOMEPAGE =		https://www.cgal.org/
 
@@ -15,16 +17,12 @@ PERMIT_PACKAGE =	Yes
 SITES =			https://github.com/CGAL/cgal/releases/download/v${V}/
 EXTRACT_SUFX =		.tar.xz
 
-MODULES =		devel/cmake \
-			lang/python
+MODULES =		devel/cmake
 
 RUN_DEPENDS =		devel/boost \
 			devel/gmp \
 			devel/mpfr
 
 NO_TEST =		Yes
-
-post-install:
-	${MODPY_COMPILEALL} ${PREFIX}/lib/cmake/CGAL/Help
 
 .include <bsd.port.mk>

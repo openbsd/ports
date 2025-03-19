@@ -3797,7 +3797,6 @@ include/CGAL/vtkSurfaceMesherContourFilter.h
 include/CGAL/width_assertions.h
 include/CGAL/wlop_simplify_and_regularize_point_set.h
 include/CGAL/wmult.h
-lib/cmake/
 lib/cmake/CGAL/
 lib/cmake/CGAL/CGALConfig.cmake
 lib/cmake/CGAL/CGALConfigBuildVersion.cmake
@@ -3883,13 +3882,8 @@ lib/cmake/CGAL/Help/CGAL_SetupCGAL_ImageIODependencies.rst
 lib/cmake/CGAL/Help/CGAL_SetupCGAL_Qt5Dependencies.rst
 lib/cmake/CGAL/Help/CGAL_SetupGMP.rst
 lib/cmake/CGAL/Help/CGAL_SetupLEDA.rst
-${MODPY_COMMENT}lib/cmake/CGAL/Help/${MODPY_PYCACHE}/
-lib/cmake/CGAL/Help/${MODPY_PYCACHE}cmake.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/cmake/CGAL/Help/${MODPY_PYCACHE}cmake.${MODPY_PYC_MAGIC_TAG}pyc
-lib/cmake/CGAL/Help/${MODPY_PYCACHE}conf.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/cmake/CGAL/Help/${MODPY_PYCACHE}conf.${MODPY_PYC_MAGIC_TAG}pyc
-lib/cmake/CGAL/Help/cmake.py
-lib/cmake/CGAL/Help/conf.py
+@comment lib/cmake/CGAL/Help/cmake.py
+@comment lib/cmake/CGAL/Help/conf.py
 lib/cmake/CGAL/Help/index.rst
 lib/cmake/CGAL/Makefile
 lib/cmake/CGAL/UseCGAL.cmake
