@@ -5,7 +5,7 @@ DISTNAME =	WebServices-${VERSION}
 PKGNAME =	gnustep-webservices-${VERSION}
 CATEGORIES =	www
 SHARED_LIBS +=  WebServices	0.5
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	http://wiki.gnustep.org/index.php/WebServices
 SITES =		${SITE_GNUSTEP:=libs/}
@@ -17,7 +17,8 @@ LIB_DEPENDS =		x11/gnustep/performance
 MODGNUSTEP_IS_FRAMEWORK = Yes
 
 CONFIGURE_STYLE =	gnu
-MAKE_FLAGS +=	WebServices_INTERFACE_VERSION=${LIBWebServices_VERSION}
+MAKE_FLAGS +=	WebServices_INTERFACE_VERSION=${LIBWebServices_VERSION} \
+		AUTOGSDOC=echo
 
 NO_TEST =	No
 do-test:

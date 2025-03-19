@@ -10,25 +10,3 @@ include/Performance/GSTicker.h
 include/Performance/GSUniqued.h
 @lib lib/libPerformance.so.${LIBPerformance_VERSION}
 share/doc/GNUstep/
-share/doc/GNUstep/Performance/
-share/doc/GNUstep/Performance/GSCache.gsdoc
-share/doc/GNUstep/Performance/GSCache.html
-share/doc/GNUstep/Performance/GSFIFO.gsdoc
-share/doc/GNUstep/Performance/GSFIFO.html
-share/doc/GNUstep/Performance/GSIOThreadPool.gsdoc
-share/doc/GNUstep/Performance/GSIOThreadPool.html
-share/doc/GNUstep/Performance/GSLinkedList.gsdoc
-share/doc/GNUstep/Performance/GSLinkedList.html
-share/doc/GNUstep/Performance/GSSkipMutableArray.gsdoc
-share/doc/GNUstep/Performance/GSSkipMutableArray.html
-share/doc/GNUstep/Performance/GSThreadPool.gsdoc
-share/doc/GNUstep/Performance/GSThreadPool.html
-share/doc/GNUstep/Performance/GSThroughput.gsdoc
-share/doc/GNUstep/Performance/GSThroughput.html
-share/doc/GNUstep/Performance/GSTicker.gsdoc
-share/doc/GNUstep/Performance/GSTicker.html
-share/doc/GNUstep/Performance/GSUniqued.gsdoc
-share/doc/GNUstep/Performance/GSUniqued.html
-share/doc/GNUstep/Performance/OrderedSymbolDeclarations.plist
-share/doc/GNUstep/Performance/Performance.igsdoc
-share/doc/GNUstep/Performance/dependencies
