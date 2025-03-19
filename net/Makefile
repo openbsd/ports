@@ -287,6 +287,7 @@
      SUBDIR += mirmon
      SUBDIR += mktorrent
      SUBDIR += mlvpn
+     SUBDIR += mollysocket
      SUBDIR += mon
      SUBDIR += monitoring-plugins
      SUBDIR += mosh
