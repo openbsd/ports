@@ -1,22 +1,21 @@
 COMMENT-main=	multi-protocol instant messaging client
 COMMENT-finch=	multi-protocol instant messaging client, console client
 COMMENT-libpurple= multi-protocol instant messaging library
+COMMENT-bonjour= Bonjour protocol support for libpurple
 
-VERSION=	2.14.13
+VERSION=	2.14.14
 DISTNAME=	pidgin-${VERSION}
 PKGNAME-main=	pidgin-${VERSION}
 PKGNAME-finch=	finch-${VERSION}
 PKGNAME-libpurple= libpurple-${VERSION}
-.for i in -finch -libpurple
+PKGNAME-bonjour= libpurple-bonjour-${VERSION}
+.for i in -finch -libpurple -bonjour
 FULLPKGNAME$i= ${PKGNAME$i}${FLAVOR_EXT:S/-gtkspell//}
 FULLPKGPATH$i= ${PKGPATH},$i${FLAVOR_EXT:S/-gtkspell//:S/-/,/g}
 .endfor
 CATEGORIES=	net
 SITES=		${SITE_SOURCEFORGE:=pidgin/}
 EXTRACT_SUFX=	.tar.bz2
-REVISION-finch=	1
-REVISION-libpurple= 2
-REVISION-main=	1
 
 SHARED_LIBS=	jabber		0.0 \
 		purple		7.1 \
@@ -31,24 +30,28 @@ PERMIT_PACKAGE=	Yes
 
 COMPILER=	base-clang ports-gcc
 
-WANTLIB=	c dbus-1 dbus-glib-1 execinfo ffi gio-2.0 glib-2.0 gmodule-2.0 \
-		gobject-2.0 gthread-2.0 iconv idn intl lzma m pcre2-8 pthread \
+WANTLIB=	dbus-1 execinfo ffi glib-2.0 gmodule-2.0 \
+		gobject-2.0 gthread-2.0 iconv intl lzma m pcre2-8 pthread \
 		xml2 z
 WANTLIB-main=	X11 Xau Xdmcp ICE SM Xcomposite Xcursor Xdamage Xext Xfixes \
-		Xi Xinerama Xrandr Xrender Xss atk-1.0 cairo expat fontconfig \
-		freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0 graphite2 \
-		gtk-x11-2.0 harfbuzz jpeg pango-1.0 pangocairo-1.0 \
-		pangoft2-1.0 pixman-1 png purple xcb-render xcb-shm xcb \
-		${COMPILER_LIBCXX} ${WANTLIB}
-WANTLIB-libpurple= crypto gadu meanwhile ssl silc silcclient ${WANTLIB}
-WANTLIB-finch=	X11 curses gnt panel purple xcb ${WANTLIB}
+		Xi Xinerama Xrandr Xrender Xss atk-1.0 c cairo dbus-glib-1 \
+		expat fontconfig freetype fribidi gdk-x11-2.0 gdk_pixbuf-2.0 \
+		gio-2.0 graphite2 gtk-x11-2.0 harfbuzz idn jpeg pango-1.0 \
+		pangocairo-1.0 pangoft2-1.0 pixman-1 png purple xcb-render \
+		xcb-shm xcb ${COMPILER_LIBCXX} ${WANTLIB}
+WANTLIB-libpurple= c crypto dbus-glib-1 gadu gio-2.0 idn meanwhile ssl silc \
+		   silcclient ${WANTLIB}
+WANTLIB-finch=	X11 c curses dbus-glib-1 gio-2.0 gnt idn panel purple xcb \
+		${WANTLIB}
+WANTLIB-bonjour= avahi-client avahi-common avahi-glib ${WANTLIB}
 
 MODULES=	textproc/intltool \
 		lang/python \
 		devel/gconf2
 
 BUILD_DEPENDS=		x11/dbus-python
-LIB_DEPENDS=		devel/glib2
+LIB_DEPENDS=		devel/glib2 \
+			textproc/libxml
 RUN_DEPENDS-main=	x11/dbus-python \
 			devel/desktop-file-utils \
 			x11/gtk+4,-guic
@@ -64,6 +67,10 @@ LIB_DEPENDS-libpurple=	${LIB_DEPENDS} \
 			devel/silc-toolkit \
 			net/meanwhile \
 			net/libgadu
+RUN_DEPENDS-bonjour=	net/pidgin,-libpurple
+LIB_DEPENDS-bonjour=	${LIB_DEPENDS} \
+			net/avahi,-glib \
+			net/avahi,-libs
 
 MODGCONF2_SCHEMAS_DIR=	pidgin
 MODGCONF2_LIBDEP=	No
@@ -71,10 +78,9 @@ MODGCONF2_LIBDEP=	No
 SEPARATE_BUILD=	Yes
 USE_GMAKE=	Yes
 CONFIGURE_STYLE= autoreconf
-AUTOCONF_VERSION= 2.71
+AUTOCONF_VERSION= 2.72
 AUTOMAKE_VERSION= 1.16
-CONFIGURE_ARGS+= --disable-avahi \
-		 --disable-cap \
+CONFIGURE_ARGS+= --disable-cap \
 		 --disable-doxygen \
 		 --disable-farstream \
 		 --disable-gevolution \
@@ -98,7 +104,7 @@ MAKE_ENV=	CXX="${CXX}"
 FLAVORS=	audio debug gtkspell
 FLAVOR?=
 
-MULTI_PACKAGES= -main -finch -libpurple
+MULTI_PACKAGES= -main -finch -libpurple -bonjour
 
 .if ${FLAVOR:Maudio}
 LIB_DEPENDS+=		multimedia/gstreamer1/plugins-base
