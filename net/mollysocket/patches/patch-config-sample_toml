@@ -1,0 +1,11 @@
+Index: config-sample.toml
+--- config-sample.toml.orig
++++ config-sample.toml
+@@ -1,5 +1,6 @@
+-db = '/opt/mollysocket/mollysocket.db'
++db = '/var/db/mollysocket/mollysocket.db'
+ allowed_endpoints = ['*']
+ allowed_uuids = ['*']
+ webserver = true
+ port = 8020
++vapid_privkey = 'changeme'

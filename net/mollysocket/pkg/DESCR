@@ -1,0 +1,4 @@
+MollySocket allows getting Signal notifications via UnifiedPush.
+It works like a linked device, which doesn't have an encryption key,
+connected to the Signal server. Everytime it receives an encrypted event,
+it notifies your mobile via UnifiedPush.

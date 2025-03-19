@@ -1,0 +1,74 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+Scope of mollysocket
+====================
+
+mollysocket is targeted at Signal users that want to use the Signal chat app on
+android without google dependencies. mollysocket itself is only a single part
+of a multi-program setup, some of which are optional.
+
+Required software
+-----------------
+
+For de-googling your Signal experience, you will need:
+
+- Molly, a fork of Signal, installed from one of the official sources:
+  https://molly.im/get.html .
+- An UnifiedPush client app on the same android device. See https://ntfy.sh for
+  reference. This will default to using the public ntfy.sh server for
+  notifications. If you'd like to self-host that as well, net/ntfy is available
+  in the ports tree.
+- An optional reverse-proxy setup in front of mollysocket, if you'd like Molly
+  to be able to communicate with mollysocket. relayd can be used for this.
+  Even if optional, this is recommended. Otherwise, you'd need to setup
+  mollysocket in 'airgapped' mode. Refer to upstream documentation for this.
+- mollysocket on the same host as the (optional) reverse proxy.
+
+Finish mollysocket install
+==========================
+
+Before running mollysocket for the first time, you need to generate a VAPID
+key and append it to ${SYSCONFDIR}/mollysocket.conf . To do this, you may run:
+
+# sed -i "s|changeme|$(mollysocket vapid gen)|" ${SYSCONFDIR}/mollysocket.conf
+
+Since ${SYSCONFDIR}/mollysocket.conf now contains a secret, take care that
+permissions on that file stay restrictive.
+
+relayd in front of mollysocket
+==============================
+
+By default, mollysocket listens on port 8020 for http connections. This
+snippet should get you started with relayd:
+
+    table <mollysocket> { 127.0.0.1 }
+
+    http protocol "wwwsecure" {
+	...
+	pass request quick header "Host" value "mollysocket.example.org" \
+	    forward to <mollysocket>
+	...
+    }
+
+    relay "https4" {
+	...
+	protocol wwwsecure
+	forward to <mollysocket> port 8020
+	...
+    }
+
+Custom UnifiedPush endpoint
+===========================
+
+For configuring a custom, possibly self-hosted endpoint, you need to configure
+allowed_endpoints in ${SYSCONFDIR}/mollysocket.conf .
+
+Post-setup steps
+================
+
+After configuring mollysocket on your box, you need to setup the UnifiedPush
+notification backend in the Molly app. This will show you a device ID which
+you can set in / add to ${SYSCONFDIR}/mollysocket.conf as allowed_uuids ,
+preventing any other Molly user from using your mollysocket instance.

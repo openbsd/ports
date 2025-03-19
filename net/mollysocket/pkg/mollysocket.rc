@@ -1,0 +1,13 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/bin/mollysocket"
+daemon_logger="daemon.error"
+daemon_user="_mollysocket"
+daemon_flags="-c ${SYSCONFDIR}/mollysocket.conf server"
+
+. /etc/rc.d/rc.subr
+
+rc_bg=YES
+rc_reload=NO
+
+rc_cmd $1

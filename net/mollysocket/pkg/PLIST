@@ -1,0 +1,13 @@
+@newgroup _mollysocket:589
+@newuser _mollysocket:589:589::mollysocket daemon:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/mollysocket
+@bin bin/mollysocket
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/mollysocket/
+share/examples/mollysocket/mollysocket.conf
+@mode 0640
+@group _mollysocket
+@sample ${SYSCONFDIR}/mollysocket.conf
+@mode 0700
+@owner _mollysocket
+@sample /var/db/mollysocket/
