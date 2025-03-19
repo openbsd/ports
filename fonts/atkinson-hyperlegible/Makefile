@@ -1,10 +1,12 @@
 COMMENT =	greater legibility and readability for low vision readers
 
 MODFONT_FAMILY =	atkinson-hyperlegible
-VDIST =		2020-0514
-MODFONT_VERSION =	${VDIST:S/-/./}
-REVISION =	1
-DISTNAME =	Atkinson-Hyperlegible-Font-Print-and-Web-${VDIST}
+MODFONT_VERSION =	2025.01
+DISTNAME =	Atkinson-Hyperlegible-Font-Print-and-Web-2020-0514
+DISTFILES =	${DISTNAME}.zip \
+		Atkinson-Hyperlegible-Mono_Final.zip \
+		Atkinson-Hyperlegible-Next_Final.zip
+
 CATEGORIES =	fonts
 
 HOMEPAGE =	https://brailleinstitute.org/freefont
@@ -13,7 +15,7 @@ HOMEPAGE =	https://brailleinstitute.org/freefont
 PERMIT_PACKAGE = Yes
 
 MODULES =	font
-MODFONT_FONTFILES =	*.otf
+MODFONT_FONTFILES =	*.otf ../../*Next/*.otf ../../*Mono/*.otf
 
 # mirrored from https://www.brailleinstitute.org/freefont/#download, this was
 # previously available under plain download but is now front-ended by a form

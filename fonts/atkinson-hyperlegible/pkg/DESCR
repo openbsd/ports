@@ -7,3 +7,12 @@ traditional grotesque sans-serif at its core. It departs from tradition
 to incorporate umambiguous, distinctive and at times, unexpected always
 with the goal of increasing character recognition, and ultimately
 improve reading.
+
+Three choices are included in the package:
+
+- Atkinson Hyperlegible Next (recommended for most users, comes with
+accent support for over 150 languages, and is available in 7 weights)
+
+- Atkinson Hyperlegible Mono (a monospaced font in the same style)
+
+- and the original Atkinson Hyperlegible
