@@ -6,6 +6,7 @@ COMMENT =		get Signal notifications via UnifiedPush
 GH_ACCOUNT =		mollyim
 GH_PROJECT =		mollysocket
 GH_TAGNAME =		1.6.0
+REVISION =		0
 
 CATEGORIES =		net
 

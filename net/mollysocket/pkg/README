@@ -12,10 +12,10 @@ of a multi-program setup, some of which are optional.
 Required software
 -----------------
 
-For de-googling your Signal experience, you will need:
+For de-googling your Signal experience, as well as mollysocket, you will need:
 
 - Molly, a fork of Signal, installed from one of the official sources:
-  https://molly.im/get.html .
+  https://molly.im/get.html
 - An UnifiedPush client app on the same android device. See https://ntfy.sh for
   reference. This will default to using the public ntfy.sh server for
   notifications. If you'd like to self-host that as well, net/ntfy is available
@@ -24,24 +24,24 @@ For de-googling your Signal experience, you will need:
   to be able to communicate with mollysocket. relayd can be used for this.
   Even if optional, this is recommended. Otherwise, you'd need to setup
   mollysocket in 'airgapped' mode. Refer to upstream documentation for this.
-- mollysocket on the same host as the (optional) reverse proxy.
 
 Finish mollysocket install
 ==========================
 
 Before running mollysocket for the first time, you need to generate a VAPID
-key and append it to ${SYSCONFDIR}/mollysocket.conf . To do this, you may run:
+key and append it to ${SYSCONFDIR}/mollysocket.conf. To do this, you may run:
 
 # sed -i "s|changeme|$(mollysocket vapid gen)|" ${SYSCONFDIR}/mollysocket.conf
 
 Since ${SYSCONFDIR}/mollysocket.conf now contains a secret, take care that
 permissions on that file stay restrictive.
 
-relayd in front of mollysocket
-==============================
+Reverse proxy in front of mollysocket
+=====================================
 
-By default, mollysocket listens on port 8020 for http connections. This
-snippet should get you started with relayd:
+By default, mollysocket listens to port 8020 on localhost for http
+connections and expects to have an external reverse proxy adding https.
+If using relayd, this snippet should get you started:
 
     table <mollysocket> { 127.0.0.1 }
 
@@ -59,16 +59,19 @@ snippet should get you started with relayd:
 	...
     }
 
+Other reverse proxies can be used (nginx is common).
+
 Custom UnifiedPush endpoint
 ===========================
 
-For configuring a custom, possibly self-hosted endpoint, you need to configure
-allowed_endpoints in ${SYSCONFDIR}/mollysocket.conf .
+The default option is to use the public endpoint run at https://ntfy.sh/.
+Others (public or otherwise) can be used; set "allowed_endpoints" in
+${SYSCONFDIR}/mollysocket.conf.
 
 Post-setup steps
 ================
 
 After configuring mollysocket on your box, you need to setup the UnifiedPush
-notification backend in the Molly app. This will show you a device ID which
-you can set in / add to ${SYSCONFDIR}/mollysocket.conf as allowed_uuids ,
-preventing any other Molly user from using your mollysocket instance.
+notification backend in the Molly app. This will show a device ID which you
+can optionally set in "allowed_uuids" in ${SYSCONFDIR}/mollysocket.conf, preventing
+any other Molly user from using your mollysocket instance.
