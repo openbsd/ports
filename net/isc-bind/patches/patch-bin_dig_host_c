@@ -12,7 +12,7 @@ Index: bin/dig/host.c
  
  #include <isc/attributes.h>
  #include <isc/commandline.h>
-@@ -899,6 +900,15 @@ main(int argc, char **argv) {
+@@ -910,6 +911,15 @@ main(int argc, char **argv) {
  	dighost_trying = trying;
  	dighost_shutdown = host_shutdown;
  
@@ -28,7 +28,7 @@ Index: bin/dig/host.c
  	debug("main()");
  	progname = argv[0];
  	pre_parse_args(argc, argv);
-@@ -909,6 +919,20 @@ main(int argc, char **argv) {
+@@ -920,6 +930,20 @@ main(int argc, char **argv) {
  		setup_file_key();
  	} else if (keysecret[0] != 0) {
  		setup_text_key();
