@@ -9,7 +9,7 @@ Disable download_from_network()
 Index: base/utils.py
 --- base/utils.py.orig
 +++ base/utils.py
-@@ -139,11 +139,11 @@ for s in EXPECT_WORD_LIST:
+@@ -170,11 +170,11 @@ for s in EXPECT_WORD_LIST:
  def get_cups_systemgroup_list():
      lis = []
      try:
@@ -24,7 +24,7 @@ Index: base/utils.py
          except OSError:
              return lis
  
-@@ -586,7 +586,7 @@ class UserSettings(object): # Note: Deprecated after 2
+@@ -617,7 +617,7 @@ class UserSettings(object): # Note: Deprecated after 2
          if len(path):
              self.cmd_pcard = 'hp-unload -d %DEVICE_URI%'
          else:
@@ -33,7 +33,7 @@ Index: base/utils.py
  
          # Copy
          path = which('hp-makecopies')
-@@ -594,7 +594,7 @@ class UserSettings(object): # Note: Deprecated after 2
+@@ -625,7 +625,7 @@ class UserSettings(object): # Note: Deprecated after 2
          if len(path):
              self.cmd_copy = 'hp-makecopies -d %DEVICE_URI%'
          else:
@@ -42,7 +42,7 @@ Index: base/utils.py
  
          # Fax
          path = which('hp-sendfax')
-@@ -602,7 +602,7 @@ class UserSettings(object): # Note: Deprecated after 2
+@@ -633,7 +633,7 @@ class UserSettings(object): # Note: Deprecated after 2
          if len(path):
              self.cmd_fax = 'hp-sendfax -d %FAX_URI%'
          else:
@@ -51,7 +51,7 @@ Index: base/utils.py
  
          # Fax Address Book
          path = which('hp-fab')
-@@ -610,7 +610,7 @@ class UserSettings(object): # Note: Deprecated after 2
+@@ -641,7 +641,7 @@ class UserSettings(object): # Note: Deprecated after 2
          if len(path):
              self.cmd_fab = 'hp-fab'
          else:
@@ -60,7 +60,7 @@ Index: base/utils.py
  
      def load(self):
          self.loadDefaults()
-@@ -955,10 +955,7 @@ else:
+@@ -986,10 +986,7 @@ else:
  
  
  def printable(s):
@@ -72,7 +72,7 @@ Index: base/utils.py
  
  
  def any(S,f=lambda x:x):
-@@ -972,10 +969,9 @@ def all(S,f=lambda x:x):
+@@ -1003,10 +1000,9 @@ def all(S,f=lambda x:x):
          if not f(x): return False
      return True
  
@@ -85,7 +85,7 @@ Index: base/utils.py
  def find_browser():
      if platform_avail and platform.system() == 'Darwin':
          return "open"
-@@ -2059,46 +2055,47 @@ def chunk_write(response, out_fd, chunk_size =8192, st
+@@ -2090,46 +2086,47 @@ def chunk_write(response, out_fd, chunk_size =8192, st
  def download_from_network(weburl, outputFile = None, useURLLIB=False):
      retValue = -1
  
@@ -166,7 +166,7 @@ Index: base/utils.py
  
  
  
-@@ -2199,7 +2196,7 @@ def check_user_groups(required_grps_str, avl_grps):
+@@ -2230,7 +2227,7 @@ def check_user_groups(required_grps_str, avl_grps):
          grps =re.sub(r'\s', '', str(grps))
          exp_grp_list = grps.split(',')
      else:
@@ -175,7 +175,7 @@ Index: base/utils.py
  
      log.debug("Requied groups list =[%s]"%exp_grp_list)
  
-@@ -2626,6 +2623,8 @@ def readAuthType():
+@@ -2664,6 +2661,8 @@ def readAuthType():
              authType = 'sudo'
          else:
              authType = 'su'

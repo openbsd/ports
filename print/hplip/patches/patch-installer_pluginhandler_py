@@ -1,8 +1,8 @@
 Index: installer/pluginhandler.py
 --- installer/pluginhandler.py.orig
 +++ installer/pluginhandler.py
-@@ -42,7 +42,7 @@ except ImportError:
-         return sha.new(s).hexdigest()
+@@ -35,7 +35,7 @@ def get_checksum(s):
+     return hashlib.sha256(s).hexdigest()
  
  
 -PLUGIN_STATE_FILE = '/var/lib/hp/hplip.state'
@@ -10,7 +10,7 @@ Index: installer/pluginhandler.py
  PLUGIN_FALLBACK_LOCATION = 'https://developers.hp.com/sites/default/files/'
  
  
-@@ -97,11 +97,11 @@ class PluginHandle(object):
+@@ -90,11 +90,11 @@ class PluginHandle(object):
              ARCH = 'x86_%d' % BITNESS
  
          if BITNESS == 64:
@@ -26,7 +26,7 @@ Index: installer/pluginhandler.py
  
          copies = []
  
-@@ -239,8 +239,8 @@ class PluginHandle(object):
+@@ -232,8 +232,8 @@ class PluginHandle(object):
      def __setPluginConfFile(self):
          home = sys_conf.get('dirs', 'home')
  

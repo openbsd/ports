@@ -7,13 +7,9 @@ COMMENT-hpcups=		HP native CUPS driver
 COMMENT-hpijs=		HP ghostscript driver (spooler independent)
 COMMENT-gui=		HPLIP graphical tools
 
-V=			3.24.4
+V=			3.25.2
 DISTNAME=		hplip-${V}
 SUBST_VARS=		V
-
-REVISION-main=		0
-REVISION-hpaio=		0
-REVISION-gui=		0
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-common=		hplip-common-${V}
@@ -58,7 +54,7 @@ cWANTLIB += crypto m pthread
 
 ### -main
 WANTLIB-main += ${cWANTLIB} ${COMPILER_LIBCXX}
-WANTLIB-main += avahi-client avahi-common cups dbus-1 hpmud netsnmp execinfo
+WANTLIB-main += avahi-client avahi-common cups dbus-1 hpmud netsnmp
 WANTLIB-main += usb-1.0 z ssl hpdiscovery hpipp iconv intl avahi-core c
 WANTLIB-main += hpdiscovery hpipp iconv intl
 
@@ -81,7 +77,7 @@ RUN_DEPENDS-main +=	print/cups
 ### -common
 WANTLIB-common += ${cWANTLIB} netsnmp usb-1.0 avahi-client
 WANTLIB-common += avahi-common avahi-core dbus-1 iconv intl
-WANTLIB-common += execinfo ssl
+WANTLIB-common += ssl
 
 LIB_DEPENDS-common= 	devel/libusb1 \
 			net/avahi,-libs \
@@ -93,7 +89,7 @@ RUN_DEPENDS-common=	# empty
 WANTLIB-hpaio += ${cWANTLIB}
 WANTLIB-hpaio += avahi-client avahi-common cups dbus-1 hpip hpipp ssl
 WANTLIB-hpaio += hpmud netsnmp sane usb-1.0 z hpdiscovery iconv intl
-WANTLIB-hpaio += lzma xml2 avahi-core execinfo
+WANTLIB-hpaio += lzma xml2 avahi-core
 
 LIB_DEPENDS-hpaio=	print/hplip,-common \
 			print/cups,-libs \
@@ -102,7 +98,7 @@ LIB_DEPENDS-hpaio=	print/hplip,-common \
 RUN_DEPENDS-hpaio=	# empty
 
 ### -hpcups
-WANTLIB-hpcups += ${cWANTLIB} z netsnmp hpdiscovery iconv intl execinfo ssl
+WANTLIB-hpcups += ${cWANTLIB} z netsnmp hpdiscovery iconv intl ssl
 WANTLIB-hpcups += c jpeg ${COMPILER_LIBCXX} hpip cups cupsimage dbus-1
 WANTLIB-hpcups += z usb-1.0 avahi-client avahi-common hpmud avahi-core
 
@@ -116,7 +112,7 @@ RUN_DEPENDS-hpcups=	# empty
 ### -hpijs
 WANTLIB-hpijs += ${cWANTLIB} hpip usb-1.0 hpdiscovery avahi-core
 WANTLIB-hpijs += c jpeg netsnmp ${COMPILER_LIBCXX} dbus-1 hpmud
-WANTLIB-hpijs += avahi-client avahi-common iconv intl execinfo ssl
+WANTLIB-hpijs += avahi-client avahi-common iconv intl ssl
 
 LIB_DEPENDS-hpijs=	print/hplip,-common \
 			graphics/jpeg \
