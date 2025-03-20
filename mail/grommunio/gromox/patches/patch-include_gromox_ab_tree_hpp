@@ -1,8 +1,8 @@
 Index: include/gromox/ab_tree.hpp
 --- include/gromox/ab_tree.hpp.orig
 +++ include/gromox/ab_tree.hpp
-@@ -175,7 +175,7 @@ class ab_base
- 		{ mid = minid(it.index() == 0 ? minid::domain : minid::address, std::visit([](auto &i) { return i->id; }, it)); }
+@@ -187,7 +187,7 @@ class ab_base {
+ 		}
  
  		constexpr bool operator==(const iterator &other) const = default;
 -		constexpr auto operator<=>(const iterator &other) const { return it <=> other.it; }
