@@ -1,7 +1,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -7,9 +7,9 @@ find_package(PkgConfig REQUIRED)
+@@ -19,9 +19,9 @@ find_package(PkgConfig REQUIRED)
  
  set(PHP_FPM_SERVICE "php-fpm.service" CACHE STRING "Name of the PHP FPM service")
  
@@ -13,7 +13,7 @@ Index: CMakeLists.txt
  set(INSTALLDIR ${CMAKE_INSTALL_FULL_DATADIR}/grommunio-admin-api)
  set(NGINXDIR ${COMMONDIR}/nginx.d)
  pkg_get_variable(TMPFILESDIR systemd tmpfilesdir)
-@@ -35,13 +35,13 @@ install(FILES data/api-config.ini ${CMAKE_CURRENT_BINA
+@@ -47,13 +47,13 @@ install(FILES data/api-config.ini ${CMAKE_CURRENT_BINA
  install(FILES data/polkit-10-grommunio.rules DESTINATION ${CMAKE_INSTALL_FULL_DATADIR}/polkit-1/rules.d RENAME 10-grommunio.rules)
  install(FILES ${CMAKE_CURRENT_BINARY_DIR}/grommunio-admin TYPE SBIN)
  
