@@ -4,27 +4,45 @@
 Index: doc/CMakeLists.txt
 --- doc/CMakeLists.txt.orig
 +++ doc/CMakeLists.txt
-@@ -16,9 +16,6 @@ string(TIMESTAMP DATE "%d-%m-%Y")
- string(TIMESTAMP YEAR "%Y")
- 
- find_package(Python REQUIRED)
--find_program(EPSTOPDF NAMES epstopdf )
--find_program(PDFLATEX NAMES pdflatex )
--find_program(MAKEINDEX NAMES makeindex )
- include(GNUInstallDirs)
- 
- if (doxygen_BINARY_DIR)
-@@ -157,9 +154,6 @@ endforeach()
- configure_file(${PROJECT_SOURCE_DIR}/doc/manual.sty         ${PROJECT_BINARY_DIR}/doc/manual.sty COPYONLY)
- configure_file(${PROJECT_SOURCE_DIR}/doc/doxygen_manual.tex ${PROJECT_BINARY_DIR}/doc/doxygen_manual.tex COPYONLY)
+@@ -18,9 +18,6 @@ string(TIMESTAMP YEAR "%Y")
+ # Always install man pages
+ file(MAKE_DIRECTORY ${PROJECT_BINARY_DIR}/man)
  configure_file(${PROJECT_SOURCE_DIR}/doc/doxygen.1          ${PROJECT_BINARY_DIR}/man/doxygen.1)
 -configure_file(${PROJECT_SOURCE_DIR}/doc/doxywizard.1       ${PROJECT_BINARY_DIR}/man/doxywizard.1)
 -configure_file(${PROJECT_SOURCE_DIR}/doc/doxysearch.1       ${PROJECT_BINARY_DIR}/man/doxysearch.1)
 -configure_file(${PROJECT_SOURCE_DIR}/doc/doxyindexer.1      ${PROJECT_BINARY_DIR}/man/doxyindexer.1)
- configure_file(${PROJECT_SOURCE_DIR}/templates/icon/doxygen.ico ${PROJECT_BINARY_DIR}/doc/doxygen.ico COPYONLY)
  
- # Call the main page "Introduction" in LaTeX, which is more appropriate for that format.
-@@ -185,43 +179,7 @@ add_custom_command(
+ 
+ include(GNUInstallDirs)
+@@ -28,27 +25,7 @@ install(FILES
+     "${PROJECT_BINARY_DIR}/man/doxygen.1"
+     DESTINATION ${CMAKE_INSTALL_MANDIR}/man1)
+ 
+-if (build_search)
+-    install(FILES
+-        "${PROJECT_BINARY_DIR}/man/doxyindexer.1"
+-        "${PROJECT_BINARY_DIR}/man/doxysearch.1"
+-        DESTINATION ${CMAKE_INSTALL_MANDIR}/man1)
+-endif()
+-if (build_wizard)
+-    install(FILES
+-        "${PROJECT_BINARY_DIR}/man/doxywizard.1"
+-        DESTINATION ${CMAKE_INSTALL_MANDIR}/man1)
+-endif()
+-
+-# The rest of this file is only for when built documentation is requested.
+-if (NOT build_doc)
+-    return()
+-endif()
+-
+ find_package(Python REQUIRED)
+-find_program(EPSTOPDF NAMES epstopdf )
+-find_program(PDFLATEX NAMES pdflatex )
+-find_program(MAKEINDEX NAMES makeindex )
+ 
+ if (doxygen_BINARY_DIR)
+     set(DOXYGEN_EXECUTABLE ${doxygen_BINARY_DIR}/bin/doxygen)
+@@ -209,91 +186,3 @@ add_custom_command(
          WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/doc/
  )
  set_source_files_properties(config.dox PROPERTIES GENERATED 1)
@@ -39,7 +57,7 @@ Index: doc/CMakeLists.txt
 -        DEPENDS doxygen
 -        WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/doc/
 -)
- 
+-
 -add_custom_target(doxygen_pdf
 -        COMMENT "Generating Doxygen Manual PDF."
 -        COMMAND ${CMAKE_COMMAND} -E remove refman.tex
@@ -47,11 +65,11 @@ Index: doc/CMakeLists.txt
 -        COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_SOURCE_DIR}/doc/doxygen_logo.pdf  .
 -        COMMAND ${CMAKE_COMMAND} -E chdir ${PROJECT_BINARY_DIR}/latex ${Python_EXECUTABLE} ${PROJECT_SOURCE_DIR}/doc/replace_version.py "${PROJECT_BINARY_DIR}/doc/doxygen_manual.tex" "${PROJECT_BINARY_DIR}/latex/doxygen_manual.tex" "${VERSION}"
 -        COMMAND ${CMAKE_COMMAND} -E chdir ${PROJECT_BINARY_DIR}/latex ${Python_EXECUTABLE} ${PROJECT_SOURCE_DIR}/doc/replace_version.py "${PROJECT_BINARY_DIR}/doc/manual.sty" "${PROJECT_BINARY_DIR}/latex/manual.sty" "${VERSION}"
--        COMMAND ${PDFLATEX}  -shell-escape doxygen_manual.tex
+-        COMMAND ${PDFLATEX}  -shell-escape doxygen_manual.tex || (${CMAKE_COMMAND} -E echo "See ${PROJECT_BINARY_DIR}/latex/doxygen_manual.log for error messages" && ${CMAKE_COMMAND} -E false)
 -        COMMAND ${MAKEINDEX} doxygen_manual.idx
--        COMMAND ${PDFLATEX}  -shell-escape doxygen_manual.tex
+-        COMMAND ${PDFLATEX}  -shell-escape doxygen_manual.tex || (${CMAKE_COMMAND} -E echo "See ${PROJECT_BINARY_DIR}/latex/doxygen_manual.log for error messages" && ${CMAKE_COMMAND} -E false)
 -        COMMAND ${MAKEINDEX} doxygen_manual.idx
--        COMMAND ${PDFLATEX}  -shell-escape doxygen_manual.tex
+-        COMMAND ${PDFLATEX}  -shell-escape doxygen_manual.tex || (${CMAKE_COMMAND} -E echo "See ${PROJECT_BINARY_DIR}/latex/doxygen_manual.log for error messages" && ${CMAKE_COMMAND} -E false)
 -        DEPENDS ${PROJECT_BINARY_DIR}/doc/manual.sty ${PROJECT_SOURCE_DIR}/doc/doxygen_logo.pdf
 -        DEPENDS run_doxygen ${PROJECT_SOURCE_DIR}/doc/replace_version.py ${PROJECT_BINARY_DIR}/doc/doxygen_manual.tex
 -        WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/latex
@@ -65,19 +83,31 @@ Index: doc/CMakeLists.txt
 -        VERBATIM
 -        )
 -
- # return status of ${HTML_HELP_COMPILER} is not correct, so we have to do a trick with an "or" statement
- # output is redirected to "nul" as we are on windows no problem
- if (build_doc_chm)
-@@ -249,35 +207,5 @@ endif ()
- ################################################################################
- install(FILES
-         "${PROJECT_BINARY_DIR}/man/doxygen.1"
--        "${PROJECT_BINARY_DIR}/man/doxywizard.1"
--        "${PROJECT_BINARY_DIR}/man/doxysearch.1"
--        "${PROJECT_BINARY_DIR}/man/doxyindexer.1"
-         DESTINATION ${CMAKE_INSTALL_MANDIR}/man1
+-# return status of ${HTML_HELP_COMPILER} is not correct, so we have to do a trick with an "or" statement
+-# output is redirected to "nul" as we are on windows no problem
+-if (build_doc_chm)
+-add_custom_target(docs_chm
+-    COMMENT "Generating CHM documentation."
+-    COMMAND ${CMAKE_COMMAND} -E env VERSION=${VERSION} HTML_HELP_COMPILER=${HTML_HELP_COMPILER} INDEX_DOC=index_html.dox ${DOXYGEN_EXECUTABLE} Doxyfile_chm
+-    COMMAND ${CMAKE_COMMAND} -E copy_directory ${PROJECT_BINARY_DIR}/chm/html/examples ${PROJECT_BINARY_DIR}/chm/examples
+-    COMMAND ${CMAKE_COMMAND} -E copy ${PROJECT_BINARY_DIR}/chm/index.hhp ${PROJECT_BINARY_DIR}/chm/doxygen_manual.hhp
+-    COMMAND ${CMAKE_COMMAND} -E echo "import os" > ${PROJECT_BINARY_DIR}/chm/doxygen_manual_examples_chm.py
+-    COMMAND ${CMAKE_COMMAND} -E echo "for root, dirs, files in os.walk('examples'):" >> ${PROJECT_BINARY_DIR}/chm/doxygen_manual_examples_chm.py
+-    COMMAND ${CMAKE_COMMAND} -E echo "    for file in files:" >> ${PROJECT_BINARY_DIR}/chm/doxygen_manual_examples_chm.py
+-    COMMAND ${CMAKE_COMMAND} -E echo "        if file.endswith('.html') or file.endswith('.png') or file.endswith('.svg') or file.endswith('.css') or file.endswith('.gif'):" >> ${PROJECT_BINARY_DIR}/chm/doxygen_manual_examples_chm.py
+-    COMMAND ${CMAKE_COMMAND} -E echo "            print(os.path.join(root, file))" >> ${PROJECT_BINARY_DIR}/chm/doxygen_manual_examples_chm.py
+-    COMMAND ${CMAKE_COMMAND} -E chdir  ${PROJECT_BINARY_DIR}/chm ${Python_EXECUTABLE} ${PROJECT_BINARY_DIR}/chm/doxygen_manual_examples_chm.py >> ${PROJECT_BINARY_DIR}/chm/doxygen_manual.hhp
+-    COMMAND ${CMAKE_COMMAND} -E chdir ${PROJECT_BINARY_DIR}/chm "${HTML_HELP_COMPILER}" doxygen_manual.hhp || echo > nul
+-    COMMAND ${CMAKE_COMMAND} -E rename ${PROJECT_BINARY_DIR}/chm/index.chm ${PROJECT_BINARY_DIR}/chm/doxygen_manual.chm
+-        DEPENDS ${PROJECT_BINARY_DIR}/doc/language.dox ${PROJECT_BINARY_DIR}/doc/config.dox
+-        DEPENDS ${OUT_DOC_FILES}
+-        DEPENDS ${OUT_DOC_CHM_FILES}
+-        DEPENDS examples_chm
+-        DEPENDS doxygen
+-        WORKING_DIRECTORY ${PROJECT_BINARY_DIR}/doc/
 -)
--
+-endif ()
+-################################################################################
 -install(CODE "if(NOT EXISTS \"${PROJECT_BINARY_DIR}/latex/doxygen_manual.pdf\")
 -    message(FATAL_ERROR \"\nTerminating:\n    documentation has not been generated, \n    create documentation by using the 'docs' target followed by an 'install'\n\")
 -endif()"
@@ -103,4 +133,4 @@ Index: doc/CMakeLists.txt
 -install(DIRECTORY
 -        "${PROJECT_BINARY_DIR}/html"
 -        DESTINATION "${CMAKE_INSTALL_PREFIX}/${DOC_INSTALL_DIR}"
- )
+-)

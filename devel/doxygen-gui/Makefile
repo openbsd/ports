@@ -5,10 +5,9 @@ BROKEN-alpha=	.got subsegment exceeds 64K
 
 COMMENT=	GUI front-end for doxygen
 
-VERSION=	1.10.0
+VERSION=	1.13.2
 DISTNAME=	doxygen-${VERSION}.src
 PKGNAME=	doxygen-gui-${VERSION}
-REVISION=	1
 
 CATEGORIES=	devel textproc
 
@@ -19,7 +18,7 @@ MAINTAINER=	Rafael Sadowski <rsadowski@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Core Qt5Gui Qt5Widgets Qt5Xml
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Widgets Qt6Xml
 WANTLIB += c m
 
 COMPILER =	base-clang ports-gcc base-gcc
@@ -29,7 +28,7 @@ SITES=		https://doxygen.nl/files/
 LIB_DEPENDS=	${MODQT_LIB_DEPENDS}
 
 MODULES=	devel/cmake \
-		x11/qt5 \
+		x11/qt6 \
 		lang/python
 
 MODPY_RUNDEP=	No
@@ -44,12 +43,13 @@ BUILD_DEPENDS+=	devel/bison \
 
 RUN_DEPENDS=	devel/doxygen
 
-CONFIGURE_ARGS=	-Dbuild_wizard=ON
+CONFIGURE_ARGS=	-Dbuild_wizard=ON \
+		-Dforce_qt=Qt6
 
 WRKDIST=	${WRKDIR}/doxygen-${VERSION}
 
 do-install:
 	${INSTALL_PROGRAM} ${WRKBUILD}/bin/doxywizard ${PREFIX}/bin
-	${INSTALL_MAN} ${WRKSRC}/doc/doxywizard.1 ${PREFIX}/man/man1/
+	${INSTALL_MAN} ${WRKBUILD}/man/doxywizard.1 ${PREFIX}/man/man1/
 
 .include <bsd.port.mk>
