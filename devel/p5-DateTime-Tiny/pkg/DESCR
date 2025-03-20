@@ -1,0 +1,10 @@
+The DateTime::Tiny Perl module implements an extremely lightweight
+object that represents a datetime.
+
+Compared to the larger DateTime module, DateTime::Tiny is faster and
+uses much less memory.
+
+The API is intended to be as close as possible to that for DateTime,
+but DateTime::Tiny implements less of it: it provides the functionality
+required to represent a date as an object, to stringify the date and
+to parse it back in, but does not allow you to modify the dates.
