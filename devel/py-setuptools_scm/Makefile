@@ -1,6 +1,6 @@
 COMMENT=	plugin to manage your versions by scm tags
 
-MODPY_DISTV=	8.2.0
+MODPY_DISTV=	8.2.1
 DISTNAME=	setuptools_scm-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
