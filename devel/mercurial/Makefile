@@ -1,7 +1,7 @@
 COMMENT-main =		fast, lightweight source control management
 COMMENT-x11 =		graphical tooling for mercurial
 
-MODPY_DISTV =		6.9.3
+MODPY_DISTV =		6.9.4
 DISTNAME =		mercurial-${MODPY_DISTV}
 CATEGORIES =		devel
 
