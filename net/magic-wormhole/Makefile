@@ -1,9 +1,6 @@
 COMMENT =		securely transfer data between computers
 
-MODPY_DISTV =	0.17.0
-DISTNAME =		magic_wormhole-${MODPY_DISTV}
-PKGNAME =		${DISTNAME:S/_/-/}
-REVISION =		0
+DIST_TUPLE =		github	magic-wormhole	magic-wormhole	0.18.0	.
 
 HOMEPAGE =		https://magic-wormhole.readthedocs.io
 
@@ -15,8 +12,9 @@ PERMIT_PACKAGE =	Yes
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 MODULES =		lang/python
-MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
+
+BUILD_DEPENDS =		devel/py-versioneer
 
 RUN_DEPENDS =		archivers/py-zipstream-ng \
 			devel/py-attrs \

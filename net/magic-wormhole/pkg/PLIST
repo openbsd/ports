@@ -1,11 +1,11 @@
 bin/wormhole
-lib/python${MODPY_VERSION}/site-packages/magic_wormhole-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/magic_wormhole-${MODPY_DISTV}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/magic_wormhole-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/magic_wormhole-${MODPY_DISTV}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/magic_wormhole-${MODPY_DISTV}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/magic_wormhole-${MODPY_DISTV}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/magic_wormhole-${MODPY_DISTV}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/magic_wormhole-0.18.0.dist-info/
+lib/python${MODPY_VERSION}/site-packages/magic_wormhole-0.18.0.dist-info/LICENSE
+lib/python${MODPY_VERSION}/site-packages/magic_wormhole-0.18.0.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/magic_wormhole-0.18.0.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/magic_wormhole-0.18.0.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/magic_wormhole-0.18.0.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/magic_wormhole-0.18.0.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/wormhole/
 lib/python${MODPY_VERSION}/site-packages/wormhole/__init__.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/__main__.py
@@ -44,8 +44,6 @@ lib/python${MODPY_VERSION}/site-packages/wormhole/${MODPY_PYCACHE}_rlcompleter.$
 lib/python${MODPY_VERSION}/site-packages/wormhole/${MODPY_PYCACHE}_rlcompleter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wormhole/${MODPY_PYCACHE}_send.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wormhole/${MODPY_PYCACHE}_send.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/wormhole/${MODPY_PYCACHE}_status.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/wormhole/${MODPY_PYCACHE}_status.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wormhole/${MODPY_PYCACHE}_terminator.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/wormhole/${MODPY_PYCACHE}_terminator.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/wormhole/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -121,7 +119,6 @@ lib/python${MODPY_VERSION}/site-packages/wormhole/_receive.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/_rendezvous.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/_rlcompleter.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/_send.py
-lib/python${MODPY_VERSION}/site-packages/wormhole/_status.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/_terminator.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/_version.py
 lib/python${MODPY_VERSION}/site-packages/wormhole/_wordlist.py
