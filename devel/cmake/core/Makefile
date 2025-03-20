@@ -10,7 +10,6 @@ COMMENT-help =	files for CMake --help
 MULTI_PACKAGES =	-main -help
 
 COMPILER =		base-clang ports-gcc
-CONFIGURE_STYLE =	simple
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += ${COMPILER_LIBCXX} archive c curl curses expat form

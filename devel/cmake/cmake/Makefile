@@ -2,7 +2,6 @@ COMMENT =	CMake build system (meta package)
 
 CATEGORIES =	devel meta
 PKGNAME =	cmake-${VER}
-REVISION =	2
 EPOCH =		1
 DISTFILES =
 
