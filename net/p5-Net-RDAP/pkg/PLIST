@@ -10,6 +10,7 @@ ${P5SITE}/Net/RDAP/JCard/
 ${P5SITE}/Net/RDAP/JCard.pm
 ${P5SITE}/Net/RDAP/JCard/Address.pm
 ${P5SITE}/Net/RDAP/JCard/Property.pm
+${P5SITE}/Net/RDAP/JSON.pm
 ${P5SITE}/Net/RDAP/Link.pm
 ${P5SITE}/Net/RDAP/Notice.pm
 ${P5SITE}/Net/RDAP/Object/
@@ -42,6 +43,7 @@ ${P5SITE}/Net/RDAP/VariantName.pm
 @man man/man3p/Net::RDAP::JCard.3p
 @man man/man3p/Net::RDAP::JCard::Address.3p
 @man man/man3p/Net::RDAP::JCard::Property.3p
+@man man/man3p/Net::RDAP::JSON.3p
 @man man/man3p/Net::RDAP::Link.3p
 @man man/man3p/Net::RDAP::Notice.3p
 @man man/man3p/Net::RDAP::Object.3p

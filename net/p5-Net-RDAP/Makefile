@@ -1,8 +1,7 @@
 COMMENT=	Perl interface to the Registration Data Access Protocol
 
 MODULES=	cpan
-DISTNAME=	Net-RDAP-0.34
-REVISION=	0
+DISTNAME=	Net-RDAP-0.36
 CATEGORIES=	net
 PKG_ARCH=	*
 
@@ -11,8 +10,7 @@ PERMIT_PACKAGE=	Yes
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
-RUN_DEPENDS=	devel/p5-DateTime-Format-ISO8601 \
-		devel/p5-File-Slurp \
+RUN_DEPENDS=	devel/p5-File-Slurp \
 		www/p5-HTTP-Date \
 		www/p5-HTTP-Message \
 		www/p5-LWP-Protocol-https \
@@ -23,8 +21,7 @@ RUN_DEPENDS=	devel/p5-DateTime-Format-ISO8601 \
 		net/p5-Net-DNS \
 		net/p5-Net-IP \
 		www/p5-URI \
-		textproc/p5-XML-LibXML \
-		textproc/p5-Text-vCard
+		textproc/p5-XML-LibXML
 
 TEST_DEPENDS=	net/p5-LWP-Online
 
