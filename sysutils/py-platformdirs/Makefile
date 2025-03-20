@@ -1,9 +1,8 @@
 COMMENT=	determine appropriate platform-specific directories
 
-MODPY_DISTV=	4.3.6
+MODPY_DISTV=	4.3.7
 DISTNAME=	platformdirs-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	sysutils
 
