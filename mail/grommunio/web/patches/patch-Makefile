@@ -24,7 +24,7 @@ Index: Makefile
  
  build: node_modules deploy
  
-@@ -89,20 +91,20 @@ css:
+@@ -96,20 +98,20 @@ css:
  svgo: node_modules
  	find client plugins -type f -name "*.svg" -exec $(SVGCOMPRESS) --multipass {} \;
  
@@ -51,7 +51,7 @@ Index: Makefile
  	mkdir -p $$(dirname $@)
  	cp $< $@
  
-@@ -289,7 +291,7 @@ phplintci:
+@@ -296,7 +298,7 @@ phplintci:
  vendor: node_modules
  
  node_modules:
@@ -60,7 +60,7 @@ Index: Makefile
  
  # Icons
  
-@@ -337,11 +339,11 @@ tokenizr: node_modules
+@@ -344,11 +346,11 @@ tokenizr: node_modules
  
  .PHONY: plugins
  plugins:
