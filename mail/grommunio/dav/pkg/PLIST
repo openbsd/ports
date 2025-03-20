@@ -509,10 +509,8 @@ grommunio-dav/vendor/sabre/dav/lib/DAVACL/Xml/Request/PrincipalMatchReport.php
 grommunio-dav/vendor/sabre/dav/lib/DAVACL/Xml/Request/PrincipalPropertySearchReport.php
 grommunio-dav/vendor/sabre/dav/lib/DAVACL/Xml/Request/PrincipalSearchPropertySetReport.php
 grommunio-dav/vendor/sabre/event/
-grommunio-dav/vendor/sabre/event/.php_cs.dist
+grommunio-dav/vendor/sabre/event/.php-cs-fixer.dist.php
 grommunio-dav/vendor/sabre/event/LICENSE
-grommunio-dav/vendor/sabre/event/bin/
-grommunio-dav/vendor/sabre/event/bin/.empty
 grommunio-dav/vendor/sabre/event/composer.json
 grommunio-dav/vendor/sabre/event/lib/
 grommunio-dav/vendor/sabre/event/lib/Emitter.php
@@ -530,8 +528,8 @@ grommunio-dav/vendor/sabre/event/lib/Version.php
 grommunio-dav/vendor/sabre/event/lib/WildcardEmitter.php
 grommunio-dav/vendor/sabre/event/lib/WildcardEmitterTrait.php
 grommunio-dav/vendor/sabre/event/lib/coroutine.php
-grommunio-dav/vendor/sabre/event/phpstan.neon
 grommunio-dav/vendor/sabre/http/
+grommunio-dav/vendor/sabre/http/.php-cs-fixer.dist.php
 grommunio-dav/vendor/sabre/http/.php_cs.dist
 grommunio-dav/vendor/sabre/http/CHANGELOG.md
 grommunio-dav/vendor/sabre/http/LICENSE
@@ -719,6 +717,7 @@ grommunio-dav/vendor/sabre/vobject/resources/schema/
 grommunio-dav/vendor/sabre/vobject/resources/schema/xcal.rng
 grommunio-dav/vendor/sabre/vobject/resources/schema/xcard.rng
 grommunio-dav/vendor/sabre/xml/
+grommunio-dav/vendor/sabre/xml/.php-cs-fixer.dist.php
 grommunio-dav/vendor/sabre/xml/LICENSE
 grommunio-dav/vendor/sabre/xml/README.md
 grommunio-dav/vendor/sabre/xml/bin/
