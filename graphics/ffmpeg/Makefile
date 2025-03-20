@@ -1,8 +1,8 @@
 COMMENT=	audio/video converter and streamer
 
 V=		6.1.2
-REVISION=	0
 DISTNAME=	ffmpeg-${V}
+REVISION=	1
 EPOCH=		1
 CATEGORIES=	graphics multimedia
 SITES=		https://ffmpeg.org/releases/
@@ -29,8 +29,9 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += SDL2 X11 Xext Xv aom ass bz2 c crypto dav1d fontconfig
 WANTLIB += freetype fribidi gsm iconv lzma m mp3lame opus pthread
 WANTLIB += sndio speex ssl theoradec theoraenc v4l2 va va-drm
-WANTLIB += va-x11 vidstab vorbis vorbisenc vpx x264 x265 xcb xcb-shape
-WANTLIB += xcb-shm xcb-xfixes xml2 xvidcore z zimg
+WANTLIB += va-x11 vidstab vorbis vorbisenc vpx webp webpmux x264
+WANTLIB += x265 xcb xcb-shape xcb-shm xcb-xfixes xml2 xvidcore z
+WANTLIB += zimg
 
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
@@ -52,6 +53,7 @@ LIB_DEPENDS=	archivers/bzip2 \
 		audio/gsm \
 		converters/libiconv \
 		devel/sdl2 \
+		graphics/libwebp \
 		graphics/zimg \
 		multimedia/aom \
 		multimedia/dav1d \
@@ -68,8 +70,8 @@ LIB_DEPENDS=	archivers/bzip2 \
 # inter-library dependencies for the current configuration
 LIBavcodec_EXTRALIBS=-L${LOCALBASE}/lib -L${X11BASE}/lib -laom -ldav1d -lgsm -liconv -llzma
 LIBavcodec_EXTRALIBS+=-lmp3lame -lopus -lspeex -ltheoradec -ltheoraenc -lvorbis
-LIBavcodec_EXTRALIBS+=-lvorbisenc -lvpx -lx264 -lx265 -lxvidcore -lm -lz -lva
-LIBavcodec_EXTRALIBS+=-lva-drm -pthread
+LIBavcodec_EXTRALIBS+=-lvorbisenc -lvpx -lwebp -lwebpmux -lx264 -lx265 -lxvidcore
+LIBavcodec_EXTRALIBS+=-lm -lz -lva -lva-drm -pthread
 
 LIBavdevice_EXTRALIBS=-L${LOCALBASE}/lib -L${X11BASE}/lib -lX11 -lXext -lXv
 LIBavdevice_EXTRALIBS+=-lxcb-shape -lxcb-shm -lxcb-xfixes -lxcb -lsndio -lv4l2 -lm
@@ -125,6 +127,7 @@ CONFIGURE_ARGS+=--enable-shared \
 		--enable-libv4l2 \
 		--enable-libvorbis \
 		--enable-libvpx \
+		--enable-libwebp \
 		--enable-libx264 \
 		--enable-libx265 \
 		--enable-libxml2 \
