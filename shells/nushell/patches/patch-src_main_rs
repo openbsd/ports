@@ -1,7 +1,7 @@
 Index: src/main.rs
 --- src/main.rs.orig
 +++ src/main.rs
-@@ -47,8 +47,7 @@ fn get_engine_state() -> EngineState {
+@@ -33,8 +33,7 @@ use std::{path::PathBuf, str::FromStr, sync::Arc};
  
  /// Get the directory where the Nushell executable is located.
  fn current_exe_directory() -> PathBuf {
