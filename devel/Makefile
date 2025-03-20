@@ -694,6 +694,7 @@
      SUBDIR += p5-DateTime-Precise
      SUBDIR += p5-DateTime-Set
      SUBDIR += p5-DateTime-TimeZone
+     SUBDIR += p5-DateTime-Tiny
      SUBDIR += p5-Declare-Constraints-Simple
      SUBDIR += p5-Devel-Caller
      SUBDIR += p5-Devel-CheckBin
