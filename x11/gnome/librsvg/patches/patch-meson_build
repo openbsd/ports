@@ -1,0 +1,16 @@
+XXX ld: error: undefined reference: _Unwind_Resume;
+might be because the version map created by nm excludes unwind symbols
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -197,6 +197,9 @@ library_dependencies_sole = [
+   cairo_dep,
+ ]
+ private_libraries = []
++if host_system == 'openbsd'
++  private_libraries += cc.find_library('c++abi', required: true)
++endif
+ # these dependencies are not exported in the ABI
+ private_dependencies = [
+   cairogobj_dep,
