@@ -1,5 +1,5 @@
 COMMENT=		client for the tarsnap.com online encrypted backup service
-V=			1.0.40
+V=			1.0.41
 DISTNAME=		tarsnap-autoconf-${V}
 PKGNAME=		tarsnap-${V}
 CATEGORIES=		sysutils
