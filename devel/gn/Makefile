@@ -5,11 +5,10 @@ DPB_PROPERTIES=	parallel
 
 CATEGORIES =	devel
 
-DATE =		20230419
+DATE =		20250321
 VERSION =	0.0.${DATE}
 DISTNAME =	gn-${DATE}
 PKGNAME =	gn-${VERSION}
-REVISION =	1
 
 # gn.googlesource.com does not provide stable snapshots
 SITES =		https://codeberg.org/vlkrs/gn/archive/
