@@ -1,0 +1,22 @@
+Fix build with protobuf 6.30
+
+Index: third-party/nanopb/generator/nanopb_generator.py
+--- third-party/nanopb/generator/nanopb_generator.py.orig
++++ third-party/nanopb/generator/nanopb_generator.py
+@@ -15,6 +15,7 @@ import tempfile
+ import shutil
+ import os
+ from functools import reduce
++from google.protobuf import message_factory
+ 
+ try:
+     # Add some dummy imports to keep packaging tools happy.
+@@ -1455,7 +1456,7 @@ class Message(ProtoElement):
+         optional_only.name += str(id(self))
+ 
+         desc = google.protobuf.descriptor.MakeDescriptor(optional_only)
+-        msg = reflection.MakeClass(desc)()
++        msg = message_factory.GetMessageClass(desc)()
+ 
+         for field in optional_only.field:
+             if field.type == FieldD.TYPE_STRING:
