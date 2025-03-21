@@ -4,6 +4,7 @@ COMMENT =	static source code analyzer for Qt-based C++
 
 V =		1.13
 DISTNAME =	clazy-${V}
+REVISION =	0
 
 CATEGORIES =	lang devel
 
@@ -21,6 +22,7 @@ COMPILER =		base-clang ports-gcc
 
 MODULES =		lang/clang devel/cmake
 
+MODCLANG_VERSION =		19
 MODCLANG_COMPILER_LINKS = 	No
 MODCLANG_RUNDEP =		Yes
 
