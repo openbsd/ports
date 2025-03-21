@@ -22,6 +22,7 @@ share/applications/fish.desktop
 share/doc/fish/
 share/doc/fish/.buildinfo
 share/doc/fish/CHANGELOG.rst
+share/doc/fish/_sources/
 share/doc/fish/_static/
 share/doc/fish/_static/basic.css
 share/doc/fish/_static/classic.css
