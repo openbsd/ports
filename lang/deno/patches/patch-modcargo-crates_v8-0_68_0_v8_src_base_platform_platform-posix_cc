@@ -1,7 +1,7 @@
-Index: modcargo-crates/v8-134.5.0/v8/src/base/platform/platform-posix.cc
---- modcargo-crates/v8-134.5.0/v8/src/base/platform/platform-posix.cc.orig
-+++ modcargo-crates/v8-134.5.0/v8/src/base/platform/platform-posix.cc
-@@ -75,7 +75,7 @@
+Index: modcargo-crates/v8-135.0.0/v8/src/base/platform/platform-posix.cc
+--- modcargo-crates/v8-135.0.0/v8/src/base/platform/platform-posix.cc.orig
++++ modcargo-crates/v8-135.0.0/v8/src/base/platform/platform-posix.cc
+@@ -76,7 +76,7 @@
  #include <sys/syscall.h>
  #endif
  
@@ -10,7 +10,7 @@ Index: modcargo-crates/v8-134.5.0/v8/src/base/platform/platform-posix.cc
  #define MAP_ANONYMOUS MAP_ANON
  #endif
  
-@@ -314,6 +314,13 @@ void OS::SetRandomMmapSeed(int64_t seed) {
+@@ -315,6 +315,13 @@ void OS::SetRandomMmapSeed(int64_t seed) {
    }
  }
  
@@ -24,7 +24,7 @@ Index: modcargo-crates/v8-134.5.0/v8/src/base/platform/platform-posix.cc
  // static
  void* OS::GetRandomMmapAddr() {
    uintptr_t raw_addr;
-@@ -412,6 +419,7 @@ void* OS::GetRandomMmapAddr() {
+@@ -413,6 +420,7 @@ void* OS::GetRandomMmapAddr() {
  #endif
    return reinterpret_cast<void*>(raw_addr);
  }
@@ -32,7 +32,7 @@ Index: modcargo-crates/v8-134.5.0/v8/src/base/platform/platform-posix.cc
  
  // TODO(bbudge) Move Cygwin and Fuchsia stuff into platform-specific files.
  #if !V8_OS_CYGWIN && !V8_OS_FUCHSIA
-@@ -700,7 +708,7 @@ void OS::DestroySharedMemoryHandle(PlatformSharedMemor
+@@ -701,7 +709,7 @@ void OS::DestroySharedMemoryHandle(PlatformSharedMemor
  #if !V8_OS_ZOS
  // static
  bool OS::HasLazyCommits() {
