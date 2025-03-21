@@ -1,6 +1,6 @@
 COMMENT=	Python implementation of Mustache templating system
 
-MODPY_DISTV=	0.6.7
+MODPY_DISTV=	0.6.8
 DISTNAME=	pystache-${MODPY_DISTV}
 PKGNAME=	py-stache-${MODPY_DISTV}
 
