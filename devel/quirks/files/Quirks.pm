@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1706 2025/03/12 11:01:48 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1707 2025/03/21 16:02:48 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1243,6 +1243,7 @@ setup_obsolete_reason(
 	6 => 'py3-setuptools-git',
 	11 => 'rpki-data',
 	5 => 'pycha',
+	10 => 'gotosocial',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
@@ -1276,6 +1277,7 @@ my $obsolete_message = {
 	7 => "removed in favor of using the language's package manager",
 	8 => "no longer maintained upstream, consider mapproxy as an alternative",
 	9 => "removed, needs a port maintainer",
+	10 => "other OS suggested, or see https://docs.gotosocial.org/en/latest/advanced/builds/nowasm/",
 	11 => "no longer packageable",
 	13 => "has a dependency on obsolete software",
 	15 => "use rspamd's internal milter support instead",
