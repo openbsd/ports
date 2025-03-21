@@ -52,7 +52,6 @@
      SUBDIR += geckodriver
      SUBDIR += gitea
      SUBDIR += goaccess
-     SUBDIR += gotosocial
      SUBDIR += gumbo
      SUBDIR += haserl
      SUBDIR += haserl,no_lua
