@@ -1,9 +1,3 @@
-# to figure out dependencies, meson(1) uses pkg-config(1) then fallback to
-# cmake(1); we do not want to enforce a dependency on devel/cmake, so teach
-# dpb(1) to not junk at configure time (which could create a race between
-# finding foo.cmake and junking it if cmake is found & used)
-DPB_PROPERTIES +=	noconfigurejunk
-
 BUILD_DEPENDS +=	devel/meson>=1.7.0v0
 SEPARATE_BUILD ?=	Yes
 
@@ -52,6 +46,16 @@ MODMESON_CONFIGURE_ARGS += ${_MODMESON_STRIP${DEBUG_PACKAGES}}
 .endif
 
 .if ${CONFIGURE_STYLE} == "meson"
+# to figure out dependencies, meson(1) uses pkg-config(1) then fallback to
+# cmake(1); we do not want to enforce a dependency on devel/cmake, and dpb(1)
+# might junk it at configure time (which could create a race between finding
+# foo.cmake and junking it if cmake is found & used);
+# also the devel/cmake module makes sure not to pick up llvm-ar-${LLVM_VERSION}
+# which is not the case here since we're not using the module; so disable cmake
+.if !empty(BUILD_DEPENDS) && !${BUILD_DEPENDS:Mdevel/cmake/core*}
+MODMESON_post-patch=	@ln -sf /usr/bin/false ${WRKDIR}/bin/cmake
+.endif
+
 CONFIGURE_ARGS +=	${MODMESON_CONFIGURE_ARGS}
 CONFIGURE_ENV +=	${MODMESON_CONFIGURE_ENV}
 MODMESON_configure=	${SETENV} ${CONFIGURE_ENV} ${LOCALBASE}/bin/meson setup \
