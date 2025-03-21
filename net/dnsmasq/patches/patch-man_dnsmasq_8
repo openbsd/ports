@@ -1,7 +1,7 @@
 Index: man/dnsmasq.8
 --- man/dnsmasq.8.orig
 +++ man/dnsmasq.8
-@@ -166,13 +166,12 @@ Specify an alternate path for dnsmasq to record its pr
+@@ -167,13 +167,12 @@ Specify an alternate path for dnsmasq to record its pr
  .TP
  .B \-u, --user=<username>
  Specify the userid to which dnsmasq will change after startup. Dnsmasq must normally be started as root, but it will drop root 
@@ -17,7 +17,7 @@ Index: man/dnsmasq.8
  .TP
  .B \-v, --version
  Print the version number.
-@@ -2276,7 +2275,7 @@ handle each TCP request. The default maximum is 20.
+@@ -2294,7 +2293,7 @@ handle each TCP request. The default maximum is 20.
  
  .SH CONFIG FILE
  At startup, dnsmasq reads
@@ -26,7 +26,7 @@ Index: man/dnsmasq.8
  if it exists. (On
  FreeBSD, the file is 
  .I /usr/local/etc/dnsmasq.conf
-@@ -2726,7 +2725,7 @@ dnsmasq has no direct way of determining the charset i
+@@ -2763,7 +2762,7 @@ dnsmasq has no direct way of determining the charset i
  assume that it is the system default. 
   
  .SH FILES
