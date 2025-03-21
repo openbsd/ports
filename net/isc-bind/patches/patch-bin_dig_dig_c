@@ -1,5 +1,6 @@
 Patch to use pledge on OpenBSD.
 locale is needed for idn2.
+cert.pem is needed for DoT.
 
 Index: bin/dig/dig.c
 --- bin/dig/dig.c.orig
@@ -28,7 +29,7 @@ Index: bin/dig/dig.c
  	debug("dig_setup()");
  
  	/* setup dighost callbacks */
-@@ -3399,6 +3409,21 @@ dig_query_setup(bool is_batchfile, bool config_only, i
+@@ -3399,6 +3409,25 @@ dig_query_setup(bool is_batchfile, bool config_only, i
  	} else if (keysecret[0] != 0) {
  		setup_text_key();
  	}
@@ -37,10 +38,14 @@ Index: bin/dig/dig.c
 +		perror("unveil /usr/share/locale");
 +		exit(1);
 +	}
++	if (unveil("/etc/ssl/cert.pem", "r") == -1) {
++		perror("unveil /etc/ssl/cert.pem");
++		exit(1);
++	}
 +	/*
 +	 * dns:   resolv.conf, also allows port 53 sockets
 +	 * inet:  needed if we query on port != 53
-+	 * rpath: locale
++	 * rpath: locale and cert.pem
 +	 */
 +	if (pledge("stdio rpath inet dns", NULL) == -1) {
 +		perror("pledge");

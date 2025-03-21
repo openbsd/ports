@@ -9,7 +9,7 @@ EXTRACT_SUFX=	.tar.xz
 EPOCH=		3
 
 # keep above 7.6-stable; Python ver bumped
-REVISION=	0
+REVISION=	1
 
 DISTNAME=	bind-$V
 PKGNAME=	isc-bind-${V:S/-P/pl/}
