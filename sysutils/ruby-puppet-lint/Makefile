@@ -1,6 +1,6 @@
 COMMENT=	ensure your Puppet manifests conform with the style guide
 
-DISTNAME=	puppet-lint-4.2.4
+DISTNAME=	puppet-lint-4.3.0
 
 CATEGORIES=	sysutils
 

@@ -67,6 +67,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins/check_whitespace/80chars.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins/check_whitespace/arrow_alignment.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins/check_whitespace/hard_tabs.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins/check_whitespace/line_length.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins/check_whitespace/space_before_arrow.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins/check_whitespace/trailing_whitespace.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins/legacy_facts/
 ${GEM_LIB}/gems/${DISTNAME}/lib/puppet-lint/plugins/legacy_facts/legacy_facts.rb
@@ -96,6 +97,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/ignore_reason.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/init.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/malformed.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/mismatched_control_comment.pp
+${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/top_scope_variables.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/two_warnings.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/unterminated_control_comment.pp
 ${GEM_LIB}/gems/${DISTNAME}/spec/fixtures/test/manifests/url_interpolation.pp
@@ -162,6 +164,7 @@ ${GEM_LIB}/gems/${DISTNAME}/spec/unit/puppet-lint/plugins/check_whitespace/2sp_s
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/puppet-lint/plugins/check_whitespace/80chars_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/puppet-lint/plugins/check_whitespace/arrow_alignment_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/puppet-lint/plugins/check_whitespace/hard_tabs_spec.rb
+${GEM_LIB}/gems/${DISTNAME}/spec/unit/puppet-lint/plugins/check_whitespace/space_before_arrow_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/puppet-lint/plugins/check_whitespace/trailing_whitespace_spec.rb
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/puppet-lint/plugins/legacy_facts/
 ${GEM_LIB}/gems/${DISTNAME}/spec/unit/puppet-lint/plugins/legacy_facts/legacy_facts_spec.rb
