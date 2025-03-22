@@ -10,6 +10,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/actionable_error.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/all.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/array_inquirer.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/backtrace_cleaner.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/active_support/benchmark.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/benchmarkable.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/broadcast_logger.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/builder.rb
@@ -27,6 +28,7 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/cache/strategy/
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/cache/strategy/local_cache.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/cache/strategy/local_cache_middleware.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/callbacks.rb
+${GEM_LIB}/gems/${DISTNAME}/lib/active_support/class_attribute.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/code_generator.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/concern.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/concurrency/
@@ -286,7 +288,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/option_merger.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/ordered_hash.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/ordered_options.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/parameter_filter.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/active_support/proxy_object.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/rails.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/railtie.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/reloader.rb
@@ -316,7 +317,6 @@ ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/parallelization/worker.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/parallelize_executor.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/setup_and_teardown.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/stream.rb
-${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/strict_warnings.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/tagged_logging.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/tests_without_assertions.rb
 ${GEM_LIB}/gems/${DISTNAME}/lib/active_support/testing/time_helpers.rb
