@@ -26,8 +26,6 @@ lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}exceptions.${MOD
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}exceptions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}http.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}http.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}idlequeue.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}idlequeue.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}language.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}language.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/${MODPY_PYCACHE}namespaces.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -70,7 +68,6 @@ lib/python${MODPY_VERSION}/site-packages/nbxmpp/dispatcher.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/errors.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/exceptions.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/http.py
-lib/python${MODPY_VERSION}/site-packages/nbxmpp/idlequeue.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/language.py
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/
 lib/python${MODPY_VERSION}/site-packages/nbxmpp/modules/__init__.py
