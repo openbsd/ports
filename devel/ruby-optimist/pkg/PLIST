@@ -21,6 +21,7 @@ ${GEM_LIB}/gems/${DISTNAME}/examples/alt_names.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/banners1.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/banners2.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/banners3.rb
+${GEM_LIB}/gems/${DISTNAME}/examples/boolean.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/constraints.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/didyoumean.rb
 ${GEM_LIB}/gems/${DISTNAME}/examples/medium_example.rb
