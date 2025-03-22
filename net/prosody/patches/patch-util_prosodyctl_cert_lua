@@ -11,4 +11,4 @@ Index: util/prosodyctl/cert.lua
 +		owner = configmanager.get("*", "prosody_user") or "_prosody";
  		group = configmanager.get("*", "prosody_group") or owner;
  	end
- 	local cm = require "core.certmanager";
+ 	local cm = require "prosody.core.certmanager";

@@ -1,8 +1,8 @@
 Index: util-src/table.c
 --- util-src/table.c.orig
 +++ util-src/table.c
-@@ -8,10 +8,12 @@ static int Lcreate_table(lua_State *L) {
- 
+@@ -14,10 +14,12 @@ static int Lcreate_table(lua_State *L) {
+ /* COMPAT: w/ Lua pre-5.2 */
  static int Lpack(lua_State *L) {
  	unsigned int n_args = lua_gettop(L);
 +	int arg;
