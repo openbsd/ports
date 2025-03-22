@@ -1,6 +1,6 @@
 COMMENT =	get memory usage of a process
 
-DISTNAME =	get_process_mem-0.2.7
+DISTNAME =	get_process_mem-1.0.0
 CATEGORIES =	devel
 HOMEPAGE =	https://github.com/schneems/get_process_mem
 MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
