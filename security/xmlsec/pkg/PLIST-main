@@ -11,10 +11,6 @@ include/xmlsec1/xmlsec/crypto.h
 include/xmlsec1/xmlsec/dl.h
 include/xmlsec1/xmlsec/errors.h
 include/xmlsec1/xmlsec/exports.h
-include/xmlsec1/xmlsec/gcrypt/
-include/xmlsec1/xmlsec/gcrypt/app.h
-include/xmlsec1/xmlsec/gcrypt/crypto.h
-include/xmlsec1/xmlsec/gcrypt/symbols.h
 include/xmlsec1/xmlsec/gnutls/
 include/xmlsec1/xmlsec/gnutls/app.h
 include/xmlsec1/xmlsec/gnutls/crypto.h
@@ -47,15 +43,12 @@ include/xmlsec1/xmlsec/xmldsig.h
 include/xmlsec1/xmlsec/xmlenc.h
 include/xmlsec1/xmlsec/xmlsec.h
 include/xmlsec1/xmlsec/xmltree.h
-lib/libxmlsec1-gcrypt.la
-@lib lib/libxmlsec1-gcrypt.so.${LIBxmlsec1-gcrypt_VERSION}
 lib/libxmlsec1-gnutls.la
 @lib lib/libxmlsec1-gnutls.so.${LIBxmlsec1-gnutls_VERSION}
 lib/libxmlsec1-openssl.la
 @lib lib/libxmlsec1-openssl.so.${LIBxmlsec1-openssl_VERSION}
 lib/libxmlsec1.la
 @lib lib/libxmlsec1.so.${LIBxmlsec1_VERSION}
-lib/pkgconfig/xmlsec1-gcrypt.pc
 lib/pkgconfig/xmlsec1-gnutls.pc
 lib/pkgconfig/xmlsec1-openssl.pc
 lib/pkgconfig/xmlsec1.pc

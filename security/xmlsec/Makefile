@@ -1,17 +1,14 @@
 COMMENT-main=	XML security library
 COMMENT-docs=	XML security library documentation
 
-VERSION=	1.3.6
+VERSION=	1.3.7
 DISTNAME=	xmlsec1-${VERSION}
 PKGNAME-main=	xmlsec-${VERSION}
 PKGNAME-docs=	xmlsec-docs-${VERSION}
 
-REVISION-main=	0
-
 CATEGORIES=	security
 SHARED_LIBS=	xmlsec1-gnutls	7.0 \
-		xmlsec1-openssl	6.0 \
-		xmlsec1-gcrypt	2.0 \
+		xmlsec1-openssl	7.0 \
 		xmlsec1		10.0
 
 HOMEPAGE=	https://www.aleksey.com/xmlsec/
@@ -22,9 +19,9 @@ PERMIT_PACKAGE=	Yes
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
 
-WANTLIB += c crypto gcrypt gmp gnutls gpg-error hogweed iconv
-WANTLIB += idn2 intl ltdl lzma m nettle p11-kit pthread ssl tasn1
-WANTLIB += unistring xml2 xslt z
+WANTLIB-main += c crypto gmp gnutls hogweed iconv idn2 intl ltdl lzma
+WANTLIB-main += m nettle p11-kit pthread ssl tasn1 unistring xml2 xslt
+WANTLIB-main += z
 
 SITES=		${HOMEPAGE}download/
 
@@ -36,7 +33,6 @@ LIB_DEPENDS-docs=
 RUN_DEPENDS-docs=
 
 LIB_DEPENDS=	devel/libtool,-ltdl \
-		security/libgcrypt \
 		security/gnutls \
 		textproc/libxslt
 LIBTOOL_FLAGS=	--tag=disable-static

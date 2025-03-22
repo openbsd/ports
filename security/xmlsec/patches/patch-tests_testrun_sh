@@ -6,14 +6,14 @@ Index: tests/testrun.sh
 --- tests/testrun.sh.orig
 +++ tests/testrun.sh
 @@ -1,6 +1,6 @@
- #!/bin/sh
+ #!/bin/sh -x
  
 -OS_ARCH=`uname -o`
 +OS_ARCH=`uname -s`
  OS_KERNEL=`uname -s`
  
  #
-@@ -723,7 +723,9 @@ execEncTest() {
+@@ -747,7 +747,9 @@ execEncTestWithCryptoConfig() {
                  cat $tmpfile | $outputTransform > $tmpfile.2
                  mv $tmpfile.2 $tmpfile
              fi
@@ -24,7 +24,7 @@ Index: tests/testrun.sh
              printRes $expected_res $?
          else
              printRes $expected_res $res
-@@ -755,7 +757,9 @@ execEncTest() {
+@@ -779,7 +781,9 @@ execEncTestWithCryptoConfig() {
                  cat $tmpfile.2 | $outputTransform > $tmpfile
                  mv $tmpfile $tmpfile.2
              fi
@@ -35,7 +35,7 @@ Index: tests/testrun.sh
              printRes $res_success $?
          else
              printRes $res_success $res
-@@ -779,7 +783,7 @@ execEncTest() {
+@@ -803,7 +807,7 @@ execEncTestWithCryptoConfig() {
  rm -rf $tmpfile $tmpfile.2 $tmpfile.3
  
  # run tests
