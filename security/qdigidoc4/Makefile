@@ -4,7 +4,7 @@ PORTROACH =		skipv:4.6.1	# Windows-only
 V =			4.7.0
 DISTNAME =		qdigidoc4-${V}
 CATEGORIES =		security x11
-REVISION =		0
+REVISION =		1
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
@@ -20,7 +20,7 @@ EXTRACT_ONLY =		${DISTFILES:S/{}//}
 
 
 SITES.eesti =		https://id.eesti.ee/
-CONFIG_NAME =		config-20241210110015Z
+CONFIG_NAME =		config-20250321070515Z
 # need to be in sync due to CONFIG_URL handling
 .for _suffix in json pub rsa
 DISTFILES.eesti +=	${CONFIG_NAME}{config}.${_suffix}
