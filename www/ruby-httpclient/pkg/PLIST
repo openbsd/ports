@@ -35,6 +35,7 @@ ${GEM_LIB}/gems/${DISTNAME}/sample/async.rb
 ${GEM_LIB}/gems/${DISTNAME}/sample/auth.rb
 ${GEM_LIB}/gems/${DISTNAME}/sample/cookie.rb
 ${GEM_LIB}/gems/${DISTNAME}/sample/dav.rb
+${GEM_LIB}/gems/${DISTNAME}/sample/generate_test_keys.rb
 ${GEM_LIB}/gems/${DISTNAME}/sample/howto.rb
 ${GEM_LIB}/gems/${DISTNAME}/sample/jsonclient.rb
 ${GEM_LIB}/gems/${DISTNAME}/sample/oauth_buzz.rb
@@ -55,9 +56,16 @@ ${GEM_LIB}/gems/${DISTNAME}/sample/wcat.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/
 ${GEM_LIB}/gems/${DISTNAME}/test/ca-chain.pem
 ${GEM_LIB}/gems/${DISTNAME}/test/ca.cert
+${GEM_LIB}/gems/${DISTNAME}/test/ca.key
+${GEM_LIB}/gems/${DISTNAME}/test/ca.srl
 ${GEM_LIB}/gems/${DISTNAME}/test/client-pass.key
 ${GEM_LIB}/gems/${DISTNAME}/test/client.cert
 ${GEM_LIB}/gems/${DISTNAME}/test/client.key
+${GEM_LIB}/gems/${DISTNAME}/test/fixtures/
+${GEM_LIB}/gems/${DISTNAME}/test/fixtures/verify.alt.cert
+${GEM_LIB}/gems/${DISTNAME}/test/fixtures/verify.foo.cert
+${GEM_LIB}/gems/${DISTNAME}/test/fixtures/verify.key
+${GEM_LIB}/gems/${DISTNAME}/test/fixtures/verify.localhost.cert
 ${GEM_LIB}/gems/${DISTNAME}/test/helper.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/htdigest
 ${GEM_LIB}/gems/${DISTNAME}/test/htpasswd
@@ -68,6 +76,8 @@ ${GEM_LIB}/gems/${DISTNAME}/test/server.cert
 ${GEM_LIB}/gems/${DISTNAME}/test/server.key
 ${GEM_LIB}/gems/${DISTNAME}/test/sslsvr.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/subca.cert
+${GEM_LIB}/gems/${DISTNAME}/test/subca.key
+${GEM_LIB}/gems/${DISTNAME}/test/subca.srl
 ${GEM_LIB}/gems/${DISTNAME}/test/test_auth.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_cookie.rb
 ${GEM_LIB}/gems/${DISTNAME}/test/test_hexdump.rb
