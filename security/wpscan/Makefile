@@ -1,6 +1,6 @@
 COMMENT =	WordPress security scanner
 
-DISTNAME =	wpscan-3.8.27
+DISTNAME =	wpscan-3.8.28
 CATEGORIES =	security
 
 HOMEPAGE =	https://wpscan.org/
@@ -11,7 +11,7 @@ MAINTAINER =	Sebastian Reitenbach <sebastia@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 BUILD_DEPENDS +=	${RUN_DEPENDS}
-RUN_DEPENDS +=		security/ruby-cms_scanner,${MODRUBY_FLAVOR},>=0.14.3,<0.15
+RUN_DEPENDS +=		security/ruby-cms_scanner,${MODRUBY_FLAVOR},>=0.15.0,<0.16
 
 
 MODULES =	lang/ruby
