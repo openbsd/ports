@@ -2,6 +2,7 @@ COMMENT =	experimental fully end-to-end encrypted IPv6 network
 
 MODGO_MODNAME =	github.com/yggdrasil-network/yggdrasil-go
 MODGO_VERSION =	v0.5.12
+REVISION =	0
 
 DISTNAME =	yggdrasil-go-${MODGO_VERSION}
 
@@ -10,7 +11,7 @@ WRKDIST =		${WRKSRC}
 
 SITES.gh =		https://${MODGO_MODNAME}/
 # https://github.com/yggdrasil-network/yggdrasil-go/pull/1215
-# pending "Use pledge(2) on OpenBSD"
+# merged "Use pledge(2) on OpenBSD"
 PATCHFILES.gh =		pledge-{commit/}7a0ed69.patch
 PATCH_DIST_STRIP =	-p1
 
