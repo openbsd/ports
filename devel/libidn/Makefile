@@ -1,8 +1,8 @@
 COMMENT=		internationalized string handling
 
-DISTNAME=		libidn-1.42
+DISTNAME=		libidn-1.43
 
-SHARED_LIBS +=  idn                  18.0     # 18.5
+SHARED_LIBS +=  idn                  18.0     # 18.6
 
 CATEGORIES=		devel
 
@@ -13,7 +13,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv3
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c iconv intl
+WANTLIB += c iconv intl pthread
 
 SITES=			${SITE_GNU:=libidn/}
 

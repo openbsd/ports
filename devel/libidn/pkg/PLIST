@@ -7,7 +7,7 @@ include/punycode.h
 include/stringprep.h
 include/tld.h
 info/libidn-components.png
-@info info/libidn.info
+info/libidn.info
 @static-lib lib/libidn.a
 lib/libidn.la
 @lib lib/libidn.so.${LIBidn_VERSION}
