@@ -1,11 +1,11 @@
 COMMENT =		authoritative DNS server
 
 # update net/py-libknot when updating this
-DISTNAME =		knot-3.3.9
+DISTNAME =		knot-3.4.5
 
-SHARED_LIBS +=	dnssec               3.1      # .9.0
-SHARED_LIBS +=	knot                 10.0     # .14.0
-SHARED_LIBS +=	zscanner             1.1      # .4.0
+SHARED_LIBS +=  dnssec               4.0      # 9.0
+SHARED_LIBS +=  knot                 11.0     # 15.0
+SHARED_LIBS +=  zscanner             2.0      # 4.0
 
 CATEGORIES =		net
 
@@ -16,9 +16,9 @@ MAINTAINER =		Aisha Tammy <aisha@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c curses edit gmp gnutls hogweed iconv idn2 intl
-WANTLIB += lmdb m nettle nghttp2 p11-kit pthread tasn1 unistring urcu
-WANTLIB += urcu-common brotlidec brotlienc z zstd
+WANTLIB += c curses edit gmp gnutls hogweed iconv idn2 intl lmdb
+WANTLIB += m nettle nghttp2 p11-kit pthread tasn1 unistring urcu
+WANTLIB += urcu-common
 
 SITES =			https://secure.nic.cz/files/knot-dns/
 EXTRACT_SUFX =		.tar.xz
