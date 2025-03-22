@@ -1,0 +1,21 @@
+Index: options.c
+--- options.c.orig
++++ options.c
+@@ -149,7 +149,6 @@
+   static char MINUS_D[] = "-d";
+   static char MINUS_F[] = "-f";
+   static char MINUS_O[] = "-o";
+-  static char MAX_READ[] = "max_read=32768";
+ 
+   assert (NULL != mountpoint);
+   static char *argv[MAXARGS];
+@@ -167,9 +166,6 @@
+   if (nofork)
+ #endif
+     argv[argc++] = MINUS_F;
+-
+-  argv[argc++] = MINUS_O;
+-  argv[argc++] = MAX_READ;
+ 
+   if ((NULL != options) && ('\0' != options[0]))
+   {

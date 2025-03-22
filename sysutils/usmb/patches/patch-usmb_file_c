@@ -1,10 +1,75 @@
 Index: usmb_file.c
 --- usmb_file.c.orig
 +++ usmb_file.c
-@@ -202,6 +202,30 @@ int usmb_write (const char *filename UNUSED, const cha
+@@ -60,7 +60,18 @@
+   return (NULL == dirent);
  }
  
++static bool change_blksiz(struct stat *st)
++{
++  if (st == NULL)
++    return false;
  
++  if (S_ISREG(st->st_mode)) {
++    st->st_blksize = 32768;
++    return true;
++  }
++  return false;
++}
++
+ int usmb_getattr (const char *filename, struct stat *st)
+ {
+   char *url = make_url (filename);
+@@ -74,6 +85,8 @@
+   if ((0 > ret) || !fix_nlink (url, st))
+     ret = -errno;
+ 
++  change_blksiz(st);
++
+   free (url);
+   return ret;
+ }
+@@ -101,6 +114,8 @@
+       return -errno;
+   }
+ 
++  change_blksiz(st);
++
+   return 0;
+ }
+ 
+@@ -147,8 +162,6 @@
+ int usmb_read (const char *filename UNUSED, char *buff, size_t len, off_t off,
+                struct fuse_file_info *fi)
+ {
+-  assert (32768 >= len);
+-
+   SMBCFILE *file = fd_to_smbcfile (fi->fh);
+   DEBUG (fprintf (stderr, "read (%p, %p, %llu, %lld) ",
+                   (void *)file, buff, (unsigned long long)len, (long long)off));
+@@ -178,14 +191,11 @@
+   size_t written = 0;
+   int bytes = 0;
+ 
+-  // No idea whether Windows servers don't like > 32768 byte writes
+-  // (cf. usmb_read), but taking no chances...
+-
+   const smbc_write_fn write_fn = smbc_getFunctionWrite (ctx);
+ 
+   while (written < len)
+   {
+-    bytes = write_fn (ctx, file, (char *)buff, (len > 32768) ? 32768 : len);
++    bytes = write_fn (ctx, file, (char *)buff, len);
+     if (0 > bytes)
+       break;
+ 
+@@ -199,6 +209,30 @@
+ 
+   DEBUG (fprintf (stderr, "= %d\n", (0 > bytes) ? -errno : (int)written));
+   return (0 > bytes) ? -errno : (int)written;
++}
++
++
 +/* File systems must support mknod on OpenBSD */
 +int usmb_mknod (const char *filename, mode_t mode, __attribute__((unused)) dev_t dev)
 +{
@@ -26,9 +91,4 @@ Index: usmb_file.c
 +    smbc_getFunctionClose (ctx) (ctx, file);
 +  free (url);
 +  return ret;
-+}
-+
-+
- int usmb_create (const char *filename, mode_t mode, struct fuse_file_info *fi)
- {
-   char *url = make_url (filename);
+ }
