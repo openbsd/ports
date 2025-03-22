@@ -1,0 +1,70 @@
+LibreSSL doesn't provide OSSL_PARAM*
+
+Index: util-src/crypto.c
+--- util-src/crypto.c.orig
++++ util-src/crypto.c
+@@ -27,9 +27,18 @@ typedef unsigned __int32 uint32_t;
+ #include <openssl/err.h>
+ #include <openssl/evp.h>
+ #include <openssl/obj_mac.h>
+-#include <openssl/param_build.h>
+ #include <openssl/pem.h>
+ 
++#include <openssl/opensslv.h>
++#if OPENSSL_VERSION_NUMBER >= 0x30000000
++#define HAVE_OSSL_PARAM
++#endif
++
++#ifdef HAVE_OSSL_PARAM
++#include <openssl/param_build.h>
++#endif
++
++
+ #if (LUA_VERSION_NUM == 501)
+ #define luaL_setfuncs(L, R, N) luaL_register(L, NULL, R)
+ #endif
+@@ -199,6 +208,7 @@ cleanup:
+ }
+ 
+ static int Lpkey_meth_public_raw(lua_State *L) {
++#ifdef HAVE_OSSL_PARAM
+ 	OSSL_PARAM *params;
+ 	EVP_PKEY *pkey = pkey_from_arg(L, 1, 0, 0);
+ 
+@@ -218,6 +228,12 @@ static int Lpkey_meth_public_raw(lua_State *L) {
+ 	}
+ 
+ 	return 1;
++#else
++	EVP_PKEY *pkey = pkey_from_arg(L, 1, 0, 0);
++	lua_pushnil(L);
++
++	return 1;
++#endif
+ }
+ 
+ static int Lpkey_meth_public_pem(lua_State *L) {
+@@ -334,6 +350,7 @@ static int Limport_private_pem(lua_State *L) {
+ }
+ 
+ static int Limport_public_ec_raw(lua_State *L) {
++#ifdef HAVE_OSSL_PARAM
+ 	OSSL_PARAM_BLD *param_bld = NULL;
+ 	OSSL_PARAM *params = NULL;
+ 	EVP_PKEY_CTX *ctx = NULL;
+@@ -367,6 +384,15 @@ err:
+ 	if (param_bld) OSSL_PARAM_BLD_free(param_bld);
+ 	lua_pushnil(L);
+ 	return 1;
++#else
++	size_t pubkey_bytes;
++	const char* pubkey_data = luaL_checklstring(L, 1, &pubkey_bytes);
++	const char* curve = luaL_checkstring(L, 2);
++
++	lua_pushnil(L);
++
++	return 1;
++#endif
+ }
+ 
+ static int Limport_public_pem(lua_State *L) {

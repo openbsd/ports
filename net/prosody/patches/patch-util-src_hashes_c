@@ -1,0 +1,54 @@
+LibreSSL doesn't implement blake2.
+
+Index: util-src/hashes.c
+--- util-src/hashes.c.orig
++++ util-src/hashes.c
+@@ -115,14 +115,6 @@ static int Lmd5(lua_State *L) {
+ 	return Levp_hash(L, EVP_md5());
+ }
+ 
+-static int Lblake2s256(lua_State *L) {
+-	return Levp_hash(L, EVP_blake2s256());
+-}
+-
+-static int Lblake2b512(lua_State *L) {
+-	return Levp_hash(L, EVP_blake2b512());
+-}
+-
+ static int Lsha3_256(lua_State *L) {
+ 	return Levp_hash(L, EVP_sha3_256());
+ }
+@@ -188,15 +180,7 @@ static int Lhmac_sha3_512(lua_State *L) {
+ 	return Levp_hmac(L, EVP_sha3_512());
+ }
+ 
+-static int Lhmac_blake2s256(lua_State *L) {
+-	return Levp_hmac(L, EVP_blake2s256());
+-}
+ 
+-static int Lhmac_blake2b512(lua_State *L) {
+-	return Levp_hmac(L, EVP_blake2b512());
+-}
+-
+-
+ static int Levp_pbkdf2(lua_State *L, const EVP_MD *evp, size_t out_len) {
+ 	unsigned char out[EVP_MAX_MD_SIZE];
+ 
+@@ -292,8 +276,6 @@ static const luaL_Reg Reg[] = {
+ 	{ "md5",		Lmd5		},
+ 	{ "sha3_256",		Lsha3_256	},
+ 	{ "sha3_512",		Lsha3_512	},
+-	{ "blake2s256",		Lblake2s256	},
+-	{ "blake2b512",		Lblake2b512	},
+ 	{ "hmac_sha1",		Lhmac_sha1	},
+ 	{ "hmac_sha224",	Lhmac_sha224	},
+ 	{ "hmac_sha256",	Lhmac_sha256	},
+@@ -302,8 +284,6 @@ static const luaL_Reg Reg[] = {
+ 	{ "hmac_md5",		Lhmac_md5	},
+ 	{ "hmac_sha3_256",	Lhmac_sha3_256	},
+ 	{ "hmac_sha3_512",	Lhmac_sha3_512	},
+-	{ "hmac_blake2s256",	Lhmac_blake2s256	},
+-	{ "hmac_blake2b512",	Lhmac_blake2b512	},
+ 	{ "scram_Hi_sha1",	Lpbkdf2_sha1	}, /* COMPAT */
+ 	{ "pbkdf2_hmac_sha1",	Lpbkdf2_sha1	},
+ 	{ "pbkdf2_hmac_sha256",	Lpbkdf2_sha256	},

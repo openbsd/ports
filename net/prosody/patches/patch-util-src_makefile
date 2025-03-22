@@ -1,0 +1,34 @@
+Fix util-src/makefile to work with our make
+
+Index: util-src/makefile
+--- util-src/makefile.orig
++++ util-src/makefile
+@@ -7,7 +7,7 @@ TARGET?=../util/
+ 
+ ALL=encodings.so hashes.so net.so pposix.so signal.so table.so \
+     ringbuffer.so time.so poll.so compat.so strbitop.so \
+-    struct.so
++    struct.so crypto.so
+ 
+ .ifdef $(RANDOM)
+ ALL+=crand.so
+@@ -22,7 +22,7 @@ install: $(ALL)
+ 	$(INSTALL_DATA) $(ALL) $(TARGET)
+ 
+ clean:
+-	rm -f $(ALL) $(patsubst %.so,%.o,$(ALL))
++	rm -f $(ALL) $(ALL:.so=.o)
+ 
+ encodings.o: encodings.c
+ 	$(CC) $(CFLAGS) $(IDNA_FLAGS) -c -o $@ $<
+@@ -38,8 +38,8 @@ crand.o: crand.c
+ crand.so: crand.o
+ 	$(LD) $(LDFLAGS) -o $@ $< $(LDLIBS) $(RANDOM_LIBS)
+ 
+-%.so: %.o
+-	$(LD) $(LDFLAGS) -o $@ $< $(LDLIBS)
++crypto.so: crypto.o
++	$(LD) $(LDFLAGS) -o $@ $< $(LDLIBS) $(OPENSSL_LIBS)
+ 
+ .c.o:
+ 	$(CC) $(CFLAGS) -c -o $@ $<
