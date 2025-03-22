@@ -1,6 +1,6 @@
 COMMENT =	Z3 theorem prover
 
-DIST_TUPLE =	github	Z3Prover	z3	z3-4.14.0	.
+DIST_TUPLE =	github	Z3Prover	z3	z3-4.14.1	.
 PKGNAME =	${DISTNAME:S/z3-//}
 
 SHARED_LIBS =	z3	4.14
