@@ -1,8 +1,8 @@
 COMMENT=	asynchronous parallel SSH client library
 
-MODPY_DISTV=	2.12.0
-DISTNAME=	parallel-ssh-${MODPY_DISTV}
-PKGNAME=	py-${DISTNAME}
+MODPY_DISTV=	2.14.0
+DISTNAME=	parallel_ssh-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME:S/_/-/}
 
 CATEGORIES=	sysutils
 
@@ -18,10 +18,5 @@ RUN_DEPENDS=	security/py-paramiko \
 		devel/py-greenlet
 
 BUILD_DEPENDS=	${RUN_DEPENDS}
-
-# override old versioneer.py that doesn't support py312
-BUILD_DEPENDS+=	devel/py-versioneer
-post-extract:
-	rm  ${WRKSRC}/versioneer.py
 
 .include <bsd.port.mk>
