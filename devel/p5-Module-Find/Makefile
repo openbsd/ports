@@ -2,7 +2,7 @@ COMMENT=		find and use installed modules in a (sub)category
 
 MODULES=		cpan
 PKG_ARCH=		*
-DISTNAME =		Module-Find-0.16
+DISTNAME =		Module-Find-0.17
 CATEGORIES=		devel
 
 # Artistic
