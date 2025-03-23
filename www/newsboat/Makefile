@@ -1,11 +1,11 @@
 COMMENT =	RSS/Atom feed reader for text terminals
 
-V =		2.38
+V =		2.39
 DISTNAME =	newsboat-$V
 
 CATEGORIES =	www
 
-HOMEPAGE =	https://www.newsboat.org/
+HOMEPAGE =	https://newsboat.org/
 
 MAINTAINER =	Frederic Cambus <fcambus@openbsd.org>
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB +=	${COMPILER_LIBCXX} ${MODCARGO_WANTLIB} crypto curl curses iconv intl
 WANTLIB +=	json-c m sqlite3 ssl stfl xml2
 
-SITES =		https://www.newsboat.org/releases/$V/
+SITES =		https://newsboat.org/releases/$V/
 
 EXTRACT_SUFX =	.tar.xz
 

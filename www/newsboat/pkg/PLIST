@@ -55,6 +55,7 @@ share/doc/newsboat/contrib/linkding/linkding.rb
 share/doc/newsboat/contrib/miniflux/
 share/doc/newsboat/contrib/miniflux/docker-compose.yml
 share/doc/newsboat/contrib/move_url.py
+share/doc/newsboat/contrib/newsboat-idlefeeds.sh
 share/doc/newsboat/contrib/newsboat_reorganize.py
 share/doc/newsboat/contrib/pinboard.pl
 share/doc/newsboat/contrib/readeck/
