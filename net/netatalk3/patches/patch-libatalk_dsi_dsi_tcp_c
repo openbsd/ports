@@ -1,15 +1,12 @@
-http://sourceforge.net/p/netatalk/code/ci/0b7f7fe6e is wrong for OpenBSD.
-
 Index: libatalk/dsi/dsi_tcp.c
 --- libatalk/dsi/dsi_tcp.c.orig
 +++ libatalk/dsi/dsi_tcp.c
-@@ -451,7 +451,12 @@ int dsi_tcp_init(DSI *dsi, const char *hostname, const
+@@ -451,7 +451,11 @@ int dsi_tcp_init(DSI *dsi, const char *hostname, const
  
      if (!address) {
          hints.ai_flags |= AI_PASSIVE;
-+#if defined(__OpenBSD__)
-+        /* IPv6 sockets only accept IPv6 connections on OpenBSD */
-+        hints.ai_family = AF_INET;
++#ifdef __OpenBSD__ /* no IPv4/v6 dual stack on OpenBSD */
++        hints.ai_family = AF_UNSPEC;
 +#else
          hints.ai_family = AF_INET6;
 +#endif

@@ -5,9 +5,3 @@ AFP is the primary file sharing protocol used on Apple II, Classic Mac OS, and
 Mac OS X, as well as one of several supported protocols on macOS.
 A *NIX/*BSD system running Netatalk provides high-speed AppleShare file sharing
 for macOS and Classic Mac OS clients.
-
-If you need Netatalk to provide AFP over AppleTalk (DDP) in order to do file
-sharing with very old Macs or Apple II computers, please install the old stable
-netatalk-2.x package.
-AppleTalk support was removed in Netatalk 3.0, however 2.x is still being
-actively maintained.

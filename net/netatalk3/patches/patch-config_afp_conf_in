@@ -1,15 +1,23 @@
 Index: config/afp.conf.in
 --- config/afp.conf.in.orig
 +++ config/afp.conf.in
-@@ -4,6 +4,7 @@
- 
+@@ -5,6 +5,15 @@
  [Global]
  ; Global server settings
-+; mimic model = TimeCapsule6,106
  
++; Specifies the IP address that the server should advertise and listens to.
++; The default is advertise the first IP address of the system, but to listen for
++; any incoming request.
++; OpenBSD does not support dual stack and will only listen on v4 by default;
++; The network address may be specified either in dotted-decimal format for IPv4
++; or in hexadecimal format for IPv6.
++; IPv6 address + port combination must use the URL format using square brackets [IPv6]:port
++; afp listen = ::
++
  [Homes]
  basedir regex = @homedir@
-@@ -14,3 +15,4 @@ basedir regex = @homedir@
+ 
+@@ -14,3 +23,4 @@ basedir regex = @homedir@
  ; [My Time Machine Volume]
  ; path = /path/to/backup
  ; time machine = yes
