@@ -23,6 +23,7 @@ ${P5SITE}/DateTime/Format/Natural/Wrappers.pm
 @man man/man3p/DateTime::Format::Natural::Calc.3p
 @man man/man3p/DateTime::Format::Natural::Compat.3p
 @man man/man3p/DateTime::Format::Natural::Duration.3p
+@man man/man3p/DateTime::Format::Natural::Duration::Checks.3p
 @man man/man3p/DateTime::Format::Natural::Expand.3p
 @man man/man3p/DateTime::Format::Natural::Extract.3p
 @man man/man3p/DateTime::Format::Natural::Formatted.3p
