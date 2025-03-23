@@ -1,6 +1,6 @@
 COMMENT=		simple base package from which to inherit
 
-DISTNAME =		Package-New-0.09
+DISTNAME =		Package-New-0.10
 
 CATEGORIES=		devel
 
