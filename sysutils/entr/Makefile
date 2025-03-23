@@ -1,6 +1,6 @@
 COMMENT =	run arbitrary commands when files change
 
-DISTNAME =	entr-5.6
+DISTNAME =	entr-5.7
 
 CATEGORIES =	sysutils
 
@@ -23,9 +23,7 @@ TEST_DEPENDS =	devel/git \
 		editors/vim
 
 # Scripts are executed from there, default /tmp may be mounted "noexec".
-# tmux(1) requires a shell to start, _pbuild's nologin(8) won't work.
-TEST_ENV =	TMPDIR=${WRKDIR} \
-		SHELL=/bin/sh
+TEST_ENV =	TMPDIR=${WRKDIR}
 
 TEST_TARGET =	test check
 
