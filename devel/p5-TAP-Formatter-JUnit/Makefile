@@ -2,7 +2,7 @@ COMMENT =	format TAP::Harness output as JUnit XML
 
 MODULES =	cpan
 PKG_ARCH =	*
-DISTNAME =	TAP-Formatter-JUnit-0.16
+DISTNAME =	TAP-Formatter-JUnit-0.17
 CATEGORIES =	devel
 
 # perl
