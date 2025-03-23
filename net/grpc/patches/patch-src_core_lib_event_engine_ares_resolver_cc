@@ -1,0 +1,21 @@
+Index: src/core/lib/event_engine/ares_resolver.cc
+--- src/core/lib/event_engine/ares_resolver.cc.orig
++++ src/core/lib/event_engine/ares_resolver.cc
+@@ -369,7 +369,7 @@ void AresResolver::LookupSRV(
+   grpc_core::MutexLock lock(&mutex_);
+   callback_map_.emplace(++id_, std::move(callback));
+   auto* resolver_arg = new QueryArg(this, id_, host);
+-  ares_query(channel_, std::string(host).c_str(), ns_c_in, ns_t_srv,
++  ares_query(channel_, std::string(host).c_str(), C_IN, T_SRV,
+              &AresResolver::OnSRVQueryDoneLocked, resolver_arg);
+   CheckSocketsLocked();
+   MaybeStartTimerLocked();
+@@ -404,7 +404,7 @@ void AresResolver::LookupTXT(
+   grpc_core::MutexLock lock(&mutex_);
+   callback_map_.emplace(++id_, std::move(callback));
+   auto* resolver_arg = new QueryArg(this, id_, host);
+-  ares_search(channel_, std::string(host).c_str(), ns_c_in, ns_t_txt,
++  ares_search(channel_, std::string(host).c_str(), C_IN, T_TXT,
+               &AresResolver::OnTXTDoneLocked, resolver_arg);
+   CheckSocketsLocked();
+   MaybeStartTimerLocked();

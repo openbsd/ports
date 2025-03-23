@@ -1,0 +1,15 @@
+Index: src/core/lib/security/security_connector/ssl_utils.cc
+--- src/core/lib/security/security_connector/ssl_utils.cc.orig
++++ src/core/lib/security/security_connector/ssl_utils.cc
+@@ -52,7 +52,10 @@
+ 
+ // -- Constants. --
+ 
+-#if defined(GRPC_ROOT_PEM_PATH)
++
++#if defined(__OpenBSD__)
++static const char* installed_roots_path = "/etc/ssl/cert.pem";
++#elif defined(GRPC_ROOT_PEM_PATH)
+ static const char* installed_roots_path = GRPC_ROOT_PEM_PATH;
+ #elif defined(INSTALL_PREFIX)
+ static const char* installed_roots_path =

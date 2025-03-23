@@ -1,0 +1,16 @@
+Do not install grpc's copy of mozilla's CA bundle
+
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -51217,8 +51217,8 @@ install(FILES
+   DESTINATION ${gRPC_INSTALL_CMAKEDIR}/modules
+ )
+ 
+-install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/etc/roots.pem
+-  DESTINATION ${gRPC_INSTALL_SHAREDIR})
++#install(FILES ${CMAKE_CURRENT_SOURCE_DIR}/etc/roots.pem
++  #DESTINATION ${gRPC_INSTALL_SHAREDIR})
+ 
+ # Function to generate pkg-config files.
+ function(generate_pkgconfig name description version requires requires_private
