@@ -131,6 +131,7 @@
      SUBDIR += gp-openconnect
      SUBDIR += gpodder
      SUBDIR += grake
+     SUBDIR += grpc
      SUBDIR += grsync
      SUBDIR += gssdp
      SUBDIR += gtk-gnutella
