@@ -71,13 +71,13 @@ CLANG_COMPILERS=	33 34 35 36 37 38 39 40 50 60 70 80 90 10 11 12 13 14 \
 			15 16 17 18 19 20
 GNU_COMPILERS=		34 42 43 44 45 46 47 48 49 5 6 7 8 9 10 11 12 13 14 15
 
-COMPILERS=		cc c++ CC clang clang++ ${CLANG_COMPILERS:S|^|clang|} \
+ALL_COMPILERS=		cc c++ CC clang clang++ ${CLANG_COMPILERS:S|^|clang|} \
 			${CLANG_COMPILERS:S|^|clang++|} \
 			${CLANG_COMPILERS:S|^|cpp|} gcc g++ \
 			${GNU_COMPILERS:S|^|gcc|} ${GNU_COMPILERS:S|^|g++|} \
 			${GNU_COMPILERS:S|^|cpp|} icc icpc llvm-gcc llvm-c++ \
 			llvm-g++
-WRAPPERS=		${COMPILERS} R ar as bison ctangle cweave f77 flex \
+WRAPPERS=		${ALL_COMPILERS} R ar as bison ctangle cweave f77 flex \
 			gfortran ld lex lint m2c makeinfo nm objcopy objdump pc \
 			ranlib readelf strip tangle tex tex2dvi weave yacc
 
