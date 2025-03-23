@@ -47,6 +47,7 @@
      SUBDIR += bashunit
      SUBDIR += bats
      SUBDIR += bazel
+     SUBDIR += bear
      SUBDIR += binutils
      SUBDIR += bison
      SUBDIR += blame
