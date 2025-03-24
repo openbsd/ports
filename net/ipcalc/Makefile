@@ -9,7 +9,7 @@ HOMEPAGE=	https://github.com/pyr/ipcalc
 # BSD
 PERMIT_PACKAGE=	Yes
 
-SITES=		https://github.com/downloads/pyr/ipcalc/
+SITES=		https://spacehopper.org/mirrors/
 
 FAKE_FLAGS=	MANDIR="${PREFIX}/man/man"
 
