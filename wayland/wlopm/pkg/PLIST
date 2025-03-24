@@ -1,2 +1,5 @@
 @bin bin/wlopm
 @man man/man1/wlopm.1
+share/bash-completion/
+share/bash-completion/completions/
+share/bash-completion/completions/wlopm

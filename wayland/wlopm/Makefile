@@ -1,8 +1,8 @@
 COMMENT =	Simple client for display power management under Wayland
 
-V = 		0.1.0
+V = 		1.0.0
 DISTNAME =	wlopm-${V}
-DIST_TUPLE =	srht  leon_plickat wlopm v0.1.0 .
+DIST_TUPLE =	srht  leon_plickat wlopm v${V} .
 
 CATEGORIES =	wayland
 
