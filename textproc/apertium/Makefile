@@ -2,7 +2,7 @@ COMMENT =		rule-based machine translation platform
 
 V =			3.9.4
 DISTNAME =		apertium-$V
-REVISION =		1
+REVISION =		2
 
 SHARED_LIBS +=  apertium                 1.0 # 3.0
 
@@ -36,6 +36,7 @@ MODULES =		lang/python
 BUILD_DEPENDS =		${RUN_DEPENDS} \
 			devel/utfcpp
 RUN_DEPENDS =		shells/bash \
+			textproc/apertium-lex-tools \
 			textproc/libxslt
 LIB_DEPENDS =		converters/libiconv \
 			textproc/icu4c \
