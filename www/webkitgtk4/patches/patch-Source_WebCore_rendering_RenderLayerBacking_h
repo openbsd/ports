@@ -1,8 +1,8 @@
 Index: Source/WebCore/rendering/RenderLayerBacking.h
 --- Source/WebCore/rendering/RenderLayerBacking.h.orig
 +++ Source/WebCore/rendering/RenderLayerBacking.h
-@@ -34,6 +34,12 @@
- #include "ScrollingCoordinator.h"
+@@ -35,6 +35,12 @@
+ #include <wtf/TZoneMalloc.h>
  #include <wtf/WeakListHashSet.h>
  
 +#if defined(_LP64)

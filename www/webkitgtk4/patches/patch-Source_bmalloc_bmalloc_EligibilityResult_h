@@ -9,7 +9,7 @@ In file included from /usr/ports/pobj/webkitgtk60-2.46.1-webkitgtk60/build-amd64
 Index: Source/bmalloc/bmalloc/EligibilityResult.h
 --- Source/bmalloc/bmalloc/EligibilityResult.h.orig
 +++ Source/bmalloc/bmalloc/EligibilityResult.h
-@@ -32,7 +32,7 @@
+@@ -39,7 +39,7 @@
  namespace bmalloc {
  
  enum class EligibilityKind {
@@ -18,7 +18,7 @@ Index: Source/bmalloc/bmalloc/EligibilityResult.h
      Full,
      OutOfMemory
  };
-@@ -44,7 +44,7 @@ struct EligibilityResult {
+@@ -51,7 +51,7 @@ struct EligibilityResult {
      EligibilityResult(EligibilityKind);
      EligibilityResult(IsoPage<Config>*);
      

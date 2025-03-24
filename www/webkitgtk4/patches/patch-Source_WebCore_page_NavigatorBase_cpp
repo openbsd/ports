@@ -1,7 +1,7 @@
 Index: Source/WebCore/page/NavigatorBase.cpp
 --- Source/WebCore/page/NavigatorBase.cpp.orig
 +++ Source/WebCore/page/NavigatorBase.cpp
-@@ -41,7 +41,7 @@
+@@ -44,7 +44,7 @@
  #include <wtf/text/MakeString.h>
  #include <wtf/text/WTFString.h>
  
@@ -10,7 +10,7 @@ Index: Source/WebCore/page/NavigatorBase.cpp
  #include "sys/utsname.h"
  #include <wtf/StdLibExtras.h>
  #endif
-@@ -89,7 +89,7 @@ String NavigatorBase::appVersion() const
+@@ -94,7 +94,7 @@ String NavigatorBase::appVersion() const
  
  String NavigatorBase::platform() const
  {

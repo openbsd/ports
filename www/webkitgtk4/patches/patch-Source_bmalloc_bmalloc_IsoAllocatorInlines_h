@@ -9,7 +9,7 @@ In file included from /usr/ports/pobj/webkitgtk60-2.46.1-webkitgtk60/build-amd64
 Index: Source/bmalloc/bmalloc/IsoAllocatorInlines.h
 --- Source/bmalloc/bmalloc/IsoAllocatorInlines.h.orig
 +++ Source/bmalloc/bmalloc/IsoAllocatorInlines.h
-@@ -76,7 +76,7 @@ BNO_INLINE void* IsoAllocator<Config>::allocateSlow(Is
+@@ -78,7 +78,7 @@ BNO_INLINE void* IsoAllocator<Config>::allocateSlow(Is
      BASSERT(allocationMode == AllocationMode::Fast);
      
      EligibilityResult<Config> result = heap.takeFirstEligible(locker);

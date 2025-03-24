@@ -1,7 +1,7 @@
 Index: Source/WTF/wtf/glib/FileSystemGlib.cpp
 --- Source/WTF/wtf/glib/FileSystemGlib.cpp.orig
 +++ Source/WTF/wtf/glib/FileSystemGlib.cpp
-@@ -73,6 +73,11 @@ CString currentExecutablePath()
+@@ -75,6 +75,11 @@ CString currentExecutablePath()
  {
      return { };
  }

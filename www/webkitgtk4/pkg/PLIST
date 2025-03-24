@@ -78,6 +78,7 @@ include/webkitgtk-${API}/webkit/WebKitUserMessage.h
 include/webkitgtk-${API}/webkit/WebKitVersion.h
 include/webkitgtk-${API}/webkit/WebKitWebContext.h
 include/webkitgtk-${API}/webkit/WebKitWebEditor.h
+include/webkitgtk-${API}/webkit/WebKitWebExtensionMatchPattern.h
 include/webkitgtk-${API}/webkit/WebKitWebFormManager.h
 include/webkitgtk-${API}/webkit/WebKitWebHitTestResult.h
 include/webkitgtk-${API}/webkit/WebKitWebInspector.h
@@ -133,6 +134,7 @@ share/doc/javascriptcoregtk-${API}/callback.ClassGetPropertyFunction.html
 share/doc/javascriptcoregtk-${API}/callback.ClassHasPropertyFunction.html
 share/doc/javascriptcoregtk-${API}/callback.ClassSetPropertyFunction.html
 share/doc/javascriptcoregtk-${API}/callback.ExceptionHandler.html
+share/doc/javascriptcoregtk-${API}/callback.Executor.html
 share/doc/javascriptcoregtk-${API}/callback.OptionsFunc.html
 share/doc/javascriptcoregtk-${API}/class.Class.html
 share/doc/javascriptcoregtk-${API}/class.Context.html
@@ -168,6 +170,7 @@ share/doc/javascriptcoregtk-${API}/ctor.Value.new_functionv.html
 share/doc/javascriptcoregtk-${API}/ctor.Value.new_null.html
 share/doc/javascriptcoregtk-${API}/ctor.Value.new_number.html
 share/doc/javascriptcoregtk-${API}/ctor.Value.new_object.html
+share/doc/javascriptcoregtk-${API}/ctor.Value.new_promise.html
 share/doc/javascriptcoregtk-${API}/ctor.Value.new_string.html
 share/doc/javascriptcoregtk-${API}/ctor.Value.new_string_from_bytes.html
 share/doc/javascriptcoregtk-${API}/ctor.Value.new_typed_array.html

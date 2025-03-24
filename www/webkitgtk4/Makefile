@@ -10,7 +10,7 @@ PORTROACH =		limitw:1,even
 
 COMMENT =		GTK+ port of the WebKit (${API}) rendering engine
 
-V =			2.46.6
+V =			2.48.0
 DISTNAME =		webkitgtk-${V}
 PKGNAME =		webkitgtk${API:S/.//}-${V}
 FULLPKGNAME =		${PKGNAME}
@@ -33,7 +33,11 @@ MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 avif c cairo cairo-gobject drm
-WANTLIB += enchant-2 epoll-shim epoxy fontconfig freetype gbm
+WANTLIB += enchant-2 epoll-shim epoxy expat flite flite_cmu_grapheme_lang
+WANTLIB += flite_cmu_grapheme_lex flite_cmu_indic_lang flite_cmu_indic_lex
+WANTLIB += flite_cmu_time_awb flite_cmu_us_awb flite_cmu_us_kal
+WANTLIB += flite_cmu_us_kal16 flite_cmu_us_rms flite_cmu_us_slt
+WANTLIB += flite_cmulex flite_usenglish fontconfig freetype gbm
 WANTLIB += gcrypt gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gpg-error gstallocators-1.0 gstapp-1.0
 WANTLIB += gstaudio-1.0 gstbase-1.0 gstfft-1.0 gstgl-1.0 gstpbutils-1.0
@@ -70,6 +74,7 @@ RUN_DEPENDS =		geo/geoclue2 \
 			multimedia/gstreamer1/plugins-good
 
 LIB_DEPENDS =		archivers/woff2 \
+			audio/flite \
 			devel/harfbuzz,-icu \
 			graphics/libavif \
 			graphics/libjxl \
@@ -113,9 +118,8 @@ CONFIGURE_ARGS +=	-DENABLE_GAMEPAD=OFF
 
 # sync with Source/JavaScriptCore/assembler/MacroAssembler.h
 .if ${MACHINE_ARCH} != "aarch64" && ${MACHINE_ARCH} != "amd64" && \
-    ${MACHINE_ARCH} != "arm" && ${MACHINE_ARCH} != "i386" && \
-    ${MACHINE_ARCH} != "mips64" && ${MACHINE_ARCH} != "mips64el" && \
-    ${MACHINE_ARCH} != "riscv64"
+    ${MACHINE_ARCH} != "arm" && ${MACHINE_ARCH} != "mips64" && \
+    ${MACHINE_ARCH} != "mips64el" && ${MACHINE_ARCH} != "riscv64"
 # #error "The MacroAssembler is not supported on this platform."
 CONFIGURE_ARGS +=	-DENABLE_JIT=OFF
 CONFIGURE_ARGS +=	-DENABLE_C_LOOP=ON

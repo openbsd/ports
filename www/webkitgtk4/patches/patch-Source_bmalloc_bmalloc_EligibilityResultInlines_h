@@ -9,7 +9,7 @@ In file included from /usr/ports/pobj/webkitgtk60-2.46.1-webkitgtk60/build-amd64
 Index: Source/bmalloc/bmalloc/EligibilityResultInlines.h
 --- Source/bmalloc/bmalloc/EligibilityResultInlines.h.orig
 +++ Source/bmalloc/bmalloc/EligibilityResultInlines.h
-@@ -39,7 +39,7 @@ EligibilityResult<Config>::EligibilityResult(Eligibili
+@@ -41,7 +41,7 @@ EligibilityResult<Config>::EligibilityResult(Eligibili
  
  template<typename Config>
  EligibilityResult<Config>::EligibilityResult(IsoPage<Config>* page)

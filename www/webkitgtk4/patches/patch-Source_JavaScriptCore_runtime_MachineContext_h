@@ -1,7 +1,7 @@
 Index: Source/JavaScriptCore/runtime/MachineContext.h
 --- Source/JavaScriptCore/runtime/MachineContext.h.orig
 +++ Source/JavaScriptCore/runtime/MachineContext.h
-@@ -194,6 +194,24 @@ static inline void*& stackPointerImpl(mcontext_t& mach
+@@ -182,6 +182,24 @@ static inline void*& stackPointerImpl(mcontext_t& mach
  #error Unknown Architecture
  #endif
  
@@ -23,10 +23,10 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
 +#error Unknown Architecture
 +#endif
 +
- #elif OS(FUCHSIA) || OS(LINUX)
+ #elif OS(FUCHSIA) || OS(LINUX) || OS(HURD)
  
- #if CPU(X86)
-@@ -339,6 +357,24 @@ static inline void*& framePointerImpl(mcontext_t& mach
+ #if CPU(X86_64)
+@@ -305,6 +323,24 @@ static inline void*& framePointerImpl(mcontext_t& mach
  #error Unknown Architecture
  #endif
  
@@ -48,10 +48,10 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
 +#error Unknown Architecture
 +#endif
 +
- #elif OS(FUCHSIA) || OS(LINUX)
+ #elif OS(FUCHSIA) || OS(LINUX) || OS(HURD)
  
  // The following sequence depends on glibc's sys/ucontext.h.
-@@ -519,6 +555,24 @@ static inline void*& instructionPointerImpl(mcontext_t
+@@ -467,6 +503,24 @@ static inline void*& instructionPointerImpl(mcontext_t
  #error Unknown Architecture
  #endif
  
@@ -73,10 +73,10 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
 +#error Unknown Architecture
 +#endif
 +
- #elif OS(FUCHSIA) || OS(LINUX)
+ #elif OS(FUCHSIA) || OS(LINUX) || OS(HURD)
  
  // The following sequence depends on glibc's sys/ucontext.h.
-@@ -684,6 +738,24 @@ inline void*& argumentPointer<1>(mcontext_t& machineCo
+@@ -655,6 +709,24 @@ inline void*& argumentPointer<1>(mcontext_t& machineCo
  #error Unknown Architecture
  #endif
  
@@ -98,13 +98,38 @@ Index: Source/JavaScriptCore/runtime/MachineContext.h
 +#error Unknown Architecture
 +#endif
 +
- #elif OS(FUCHSIA) || OS(LINUX)
+ #elif OS(FUCHSIA) || OS(LINUX) || OS(HURD)
  
  // The following sequence depends on glibc's sys/ucontext.h.
-@@ -808,6 +880,24 @@ inline void*& llintInstructionPointer(mcontext_t& mach
-     return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_gpregs.gp_x[4]);
- #elif CPU(MIPS)
-     return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_regs[12]);
+@@ -712,6 +784,24 @@ inline void* wasmInstancePointer(const mcontext_t& mac
+ #error Unknown Architecture
+ #endif
+ 
++#elif OS(OPENBSD)
++
++#if CPU(X86)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.sc_esi);
++#elif CPU(X86_64)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.sc_rbx);
++#elif CPU(ARM) 
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.__gregs[_REG_R10]);
++#elif CPU(ARM64)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.sc_x[19]);
++#elif CPU(MIPS)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.mc_regs[19]);
++#elif CPU(RISCV64)
++    return reinterpret_cast<void*&>((uintptr_t&) machineContext.sc_a[19]);
++#else
++#error Unknown Architecture
++#endif
++
+ #elif OS(FUCHSIA) || OS(LINUX) || OS(HURD)
+ 
+ // The following sequence depends on glibc's sys/ucontext.h.
+@@ -830,6 +920,24 @@ inline void*& llintInstructionPointer(mcontext_t& mach
+     return reinterpret_cast<void*&>((uintptr_t&) machineContext.__gregs[_REG_R8]);
+ #elif CPU(ARM64)
+     return reinterpret_cast<void*&>((uintptr_t&) machineContext.__gregs[_REG_X4]);
 +#else
 +#error Unknown Architecture
 +#endif

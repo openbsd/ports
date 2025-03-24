@@ -15,6 +15,7 @@ lib/webkitgtk-${API}/injected-bundle/
 @so lib/webkitgtk-${API}/injected-bundle/libwebkitgtkinjectedbundle.so
 libexec/webkitgtk-${API}/
 @bin libexec/webkitgtk-${API}/MiniBrowser
+@bin libexec/webkitgtk-${API}/WebKitGPUProcess
 @bin libexec/webkitgtk-${API}/WebKitNetworkProcess
 @bin libexec/webkitgtk-${API}/WebKitWebProcess
 @bin libexec/webkitgtk-${API}/jsc
@@ -146,6 +147,10 @@ share/doc/webkitgtk-${API}/ctor.UserScript.new_for_world.html
 share/doc/webkitgtk-${API}/ctor.UserStyleSheet.new.html
 share/doc/webkitgtk-${API}/ctor.UserStyleSheet.new_for_world.html
 share/doc/webkitgtk-${API}/ctor.WebContext.new.html
+share/doc/webkitgtk-${API}/ctor.WebExtensionMatchPattern.new_all_hosts_and_schemes.html
+share/doc/webkitgtk-${API}/ctor.WebExtensionMatchPattern.new_all_urls.html
+share/doc/webkitgtk-${API}/ctor.WebExtensionMatchPattern.new_with_scheme.html
+share/doc/webkitgtk-${API}/ctor.WebExtensionMatchPattern.new_with_string.html
 share/doc/webkitgtk-${API}/ctor.WebView.new.html
 share/doc/webkitgtk-${API}/ctor.WebViewSessionState.new.html
 share/doc/webkitgtk-${API}/ctor.WebsitePolicies.new.html
@@ -178,6 +183,7 @@ share/doc/webkitgtk-${API}/enum.UserScriptInjectionTime.html
 share/doc/webkitgtk-${API}/enum.UserStyleLevel.html
 share/doc/webkitgtk-${API}/enum.WebExtensionMode.html
 share/doc/webkitgtk-${API}/enum.WebProcessTerminationReason.html
+share/doc/webkitgtk-${API}/environment-variables.html
 share/doc/webkitgtk-${API}/error.DownloadError.html
 share/doc/webkitgtk-${API}/error.FaviconDatabaseError.html
 share/doc/webkitgtk-${API}/error.JavascriptError.html
@@ -188,11 +194,13 @@ share/doc/webkitgtk-${API}/error.PrintError.html
 share/doc/webkitgtk-${API}/error.SnapshotError.html
 share/doc/webkitgtk-${API}/error.UserContentFilterError.html
 share/doc/webkitgtk-${API}/error.UserMessageError.html
+share/doc/webkitgtk-${API}/error.WebExtensionMatchPatternError.html
 share/doc/webkitgtk-${API}/flags.EditorTypingAttributes.html
 share/doc/webkitgtk-${API}/flags.FindOptions.html
 share/doc/webkitgtk-${API}/flags.HitTestResultContext.html
 share/doc/webkitgtk-${API}/flags.InputHints.html
 share/doc/webkitgtk-${API}/flags.SnapshotOptions.html
+share/doc/webkitgtk-${API}/flags.WebExtensionMatchPatternOptions.html
 share/doc/webkitgtk-${API}/flags.WebsiteDataTypes.html
 share/doc/webkitgtk-${API}/fonts.css
 share/doc/webkitgtk-${API}/func.CHECK_VERSION.html
@@ -559,6 +567,7 @@ share/doc/webkitgtk-${API}/method.Settings.get_print_backgrounds.html
 share/doc/webkitgtk-${API}/method.Settings.get_sans_serif_font_family.html
 share/doc/webkitgtk-${API}/method.Settings.get_serif_font_family.html
 share/doc/webkitgtk-${API}/method.Settings.get_user_agent.html
+share/doc/webkitgtk-${API}/method.Settings.get_webrtc_udp_ports_range.html
 share/doc/webkitgtk-${API}/method.Settings.get_zoom_text_only.html
 share/doc/webkitgtk-${API}/method.Settings.set_allow_file_access_from_file_urls.html
 share/doc/webkitgtk-${API}/method.Settings.set_allow_modal_dialogs.html
@@ -617,6 +626,7 @@ share/doc/webkitgtk-${API}/method.Settings.set_sans_serif_font_family.html
 share/doc/webkitgtk-${API}/method.Settings.set_serif_font_family.html
 share/doc/webkitgtk-${API}/method.Settings.set_user_agent.html
 share/doc/webkitgtk-${API}/method.Settings.set_user_agent_with_application_details.html
+share/doc/webkitgtk-${API}/method.Settings.set_webrtc_udp_ports_range.html
 share/doc/webkitgtk-${API}/method.Settings.set_zoom_text_only.html
 share/doc/webkitgtk-${API}/method.URIRequest.get_http_headers.html
 share/doc/webkitgtk-${API}/method.URIRequest.get_http_method.html
@@ -695,6 +705,16 @@ share/doc/webkitgtk-${API}/method.WebContext.set_spell_checking_enabled.html
 share/doc/webkitgtk-${API}/method.WebContext.set_spell_checking_languages.html
 share/doc/webkitgtk-${API}/method.WebContext.set_web_process_extensions_directory.html
 share/doc/webkitgtk-${API}/method.WebContext.set_web_process_extensions_initialization_user_data.html
+share/doc/webkitgtk-${API}/method.WebExtensionMatchPattern.get_host.html
+share/doc/webkitgtk-${API}/method.WebExtensionMatchPattern.get_matches_all_hosts.html
+share/doc/webkitgtk-${API}/method.WebExtensionMatchPattern.get_matches_all_urls.html
+share/doc/webkitgtk-${API}/method.WebExtensionMatchPattern.get_path.html
+share/doc/webkitgtk-${API}/method.WebExtensionMatchPattern.get_scheme.html
+share/doc/webkitgtk-${API}/method.WebExtensionMatchPattern.get_string.html
+share/doc/webkitgtk-${API}/method.WebExtensionMatchPattern.matches_pattern.html
+share/doc/webkitgtk-${API}/method.WebExtensionMatchPattern.matches_url.html
+share/doc/webkitgtk-${API}/method.WebExtensionMatchPattern.ref.html
+share/doc/webkitgtk-${API}/method.WebExtensionMatchPattern.unref.html
 share/doc/webkitgtk-${API}/method.WebInspector.attach.html
 share/doc/webkitgtk-${API}/method.WebInspector.close.html
 share/doc/webkitgtk-${API}/method.WebInspector.detach.html
@@ -822,6 +842,8 @@ share/doc/webkitgtk-${API}/method.WindowProperties.get_scrollbars_visible.html
 share/doc/webkitgtk-${API}/method.WindowProperties.get_statusbar_visible.html
 share/doc/webkitgtk-${API}/method.WindowProperties.get_toolbar_visible.html
 share/doc/webkitgtk-${API}/migrating-to-webkitgtk-${API}.html
+share/doc/webkitgtk-${API}/overview.html
+share/doc/webkitgtk-${API}/profiling.html
 share/doc/webkitgtk-${API}/property.AutomationSession.id.html
 share/doc/webkitgtk-${API}/property.ColorChooserRequest.rgba.html
 share/doc/webkitgtk-${API}/property.Download.allow-overwrite.html
@@ -914,6 +936,7 @@ share/doc/webkitgtk-${API}/property.Settings.print-backgrounds.html
 share/doc/webkitgtk-${API}/property.Settings.sans-serif-font-family.html
 share/doc/webkitgtk-${API}/property.Settings.serif-font-family.html
 share/doc/webkitgtk-${API}/property.Settings.user-agent.html
+share/doc/webkitgtk-${API}/property.Settings.webrtc-udp-ports-range.html
 share/doc/webkitgtk-${API}/property.Settings.zoom-text-only.html
 share/doc/webkitgtk-${API}/property.URIRequest.uri.html
 share/doc/webkitgtk-${API}/property.URIResponse.content-length.html
@@ -975,6 +998,7 @@ share/doc/webkitgtk-${API}/property.WindowProperties.resizable.html
 share/doc/webkitgtk-${API}/property.WindowProperties.scrollbars-visible.html
 share/doc/webkitgtk-${API}/property.WindowProperties.statusbar-visible.html
 share/doc/webkitgtk-${API}/property.WindowProperties.toolbar-visible.html
+share/doc/webkitgtk-${API}/remote-inspector.html
 share/doc/webkitgtk-${API}/search.js
 share/doc/webkitgtk-${API}/signal.AuthenticationRequest.authenticated.html
 share/doc/webkitgtk-${API}/signal.AuthenticationRequest.cancelled.html
@@ -1069,6 +1093,7 @@ share/doc/webkitgtk-${API}/struct.SecurityOrigin.html
 share/doc/webkitgtk-${API}/struct.UserContentFilter.html
 share/doc/webkitgtk-${API}/struct.UserScript.html
 share/doc/webkitgtk-${API}/struct.UserStyleSheet.html
+share/doc/webkitgtk-${API}/struct.WebExtensionMatchPattern.html
 share/doc/webkitgtk-${API}/struct.WebViewSessionState.html
 share/doc/webkitgtk-${API}/struct.WebsiteData.html
 share/doc/webkitgtk-${API}/style.css
@@ -1090,6 +1115,8 @@ share/doc/webkitgtk-${API}/type_func.SnapshotError.quark.html
 share/doc/webkitgtk-${API}/type_func.UserContentFilterError.quark.html
 share/doc/webkitgtk-${API}/type_func.UserMessageError.quark.html
 share/doc/webkitgtk-${API}/type_func.WebContext.get_default.html
+share/doc/webkitgtk-${API}/type_func.WebExtensionMatchPattern.register_custom_URL_scheme.html
+share/doc/webkitgtk-${API}/type_func.WebExtensionMatchPatternError.quark.html
 share/doc/webkitgtk-${API}/vfunc.InputMethodContext.committed.html
 share/doc/webkitgtk-${API}/vfunc.InputMethodContext.delete_surrounding.html
 share/doc/webkitgtk-${API}/vfunc.InputMethodContext.filter_key_event.html
