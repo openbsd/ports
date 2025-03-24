@@ -1,6 +1,6 @@
 COMMENT =	ansi and ascii art to png converter
 
-V =		4.2.0
+V =		4.2.1
 DISTNAME =	ansilove-$V
 
 CATEGORIES =	graphics
