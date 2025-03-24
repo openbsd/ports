@@ -1,19 +1,15 @@
 @pkgpath devel/py-tenacity,python3
 lib/python${MODPY_VERSION}/site-packages/tenacity/
 lib/python${MODPY_VERSION}/site-packages/tenacity-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/tenacity-${MODPY_DISTV}.dist-info/AUTHORS
 lib/python${MODPY_VERSION}/site-packages/tenacity-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/tenacity-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/tenacity-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/tenacity-${MODPY_DISTV}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/tenacity-${MODPY_DISTV}.dist-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/tenacity-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/tenacity/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tenacity/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/tenacity/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tenacity/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/tenacity/${MODPY_PYCACHE}_asyncio.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/tenacity/${MODPY_PYCACHE}_asyncio.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tenacity/${MODPY_PYCACHE}_utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tenacity/${MODPY_PYCACHE}_utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tenacity/${MODPY_PYCACHE}after.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -32,9 +28,16 @@ lib/python${MODPY_VERSION}/site-packages/tenacity/${MODPY_PYCACHE}tornadoweb.${M
 lib/python${MODPY_VERSION}/site-packages/tenacity/${MODPY_PYCACHE}tornadoweb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tenacity/${MODPY_PYCACHE}wait.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tenacity/${MODPY_PYCACHE}wait.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/tenacity/_asyncio.py
 lib/python${MODPY_VERSION}/site-packages/tenacity/_utils.py
 lib/python${MODPY_VERSION}/site-packages/tenacity/after.py
+lib/python${MODPY_VERSION}/site-packages/tenacity/asyncio/
+lib/python${MODPY_VERSION}/site-packages/tenacity/asyncio/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tenacity/asyncio/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/tenacity/asyncio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/tenacity/asyncio/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tenacity/asyncio/${MODPY_PYCACHE}retry.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/tenacity/asyncio/${MODPY_PYCACHE}retry.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tenacity/asyncio/retry.py
 lib/python${MODPY_VERSION}/site-packages/tenacity/before.py
 lib/python${MODPY_VERSION}/site-packages/tenacity/before_sleep.py
 lib/python${MODPY_VERSION}/site-packages/tenacity/nap.py
