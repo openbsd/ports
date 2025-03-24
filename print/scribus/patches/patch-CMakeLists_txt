@@ -3,7 +3,7 @@ Enforce C++20 for poppler-24.05.0.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -407,17 +407,8 @@ endif()
+@@ -420,17 +420,8 @@ endif()
  
  #C++11 Support
  #as of 1.5.5.svn, require C++11

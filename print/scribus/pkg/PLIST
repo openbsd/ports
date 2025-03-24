@@ -1811,6 +1811,7 @@ share/scribus/dicts/hyph/README_es_ES.txt
 share/scribus/dicts/hyph/README_fi_FI.txt
 share/scribus/dicts/hyph/README_hu_HU.txt
 share/scribus/dicts/hyph/README_hyph_da_DK.txt
+share/scribus/dicts/hyph/README_hyph_de_AT.txt
 share/scribus/dicts/hyph/README_hyph_de_CH.txt
 share/scribus/dicts/hyph/README_hyph_de_DE.txt
 share/scribus/dicts/hyph/README_hyph_en_GB.txt
@@ -1838,9 +1839,10 @@ share/scribus/dicts/hyph/hyph_bg.dic
 share/scribus/dicts/hyph/hyph_ca.dic
 share/scribus/dicts/hyph/hyph_cs.dic
 share/scribus/dicts/hyph/hyph_da.dic
-share/scribus/dicts/hyph/hyph_de.dic
 share/scribus/dicts/hyph/hyph_de_1901.dic
+share/scribus/dicts/hyph/hyph_de_AT.dic
 share/scribus/dicts/hyph/hyph_de_CH.dic
+share/scribus/dicts/hyph/hyph_de_DE.dic
 share/scribus/dicts/hyph/hyph_el.dic
 share/scribus/dicts/hyph/hyph_en_GB.dic
 share/scribus/dicts/hyph/hyph_en_US.dic
@@ -3632,7 +3634,6 @@ share/scribus/translations/scribus.nn_NO.qm
 share/scribus/translations/scribus.oc.qm
 share/scribus/translations/scribus.pl_PL.qm
 share/scribus/translations/scribus.pms.qm
-share/scribus/translations/scribus.pt.qm
 share/scribus/translations/scribus.pt_BR.qm
 share/scribus/translations/scribus.pt_PT.qm
 share/scribus/translations/scribus.ro.qm

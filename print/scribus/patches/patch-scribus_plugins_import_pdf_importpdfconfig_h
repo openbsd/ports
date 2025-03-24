@@ -13,6 +13,6 @@ Index: scribus/plugins/import/pdf/importpdfconfig.h
 +#define POPPLER_CONST_25_02
 +#endif
 +
- #if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(0, 64, 0)
- #define POPPLER_CONST const
+ #if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(0, 82, 0)
+ #define POPPLER_CONST_082 const
  #else
