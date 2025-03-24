@@ -1,0 +1,12 @@
+@bin bin/md2html
+include/md4c-html.h
+include/md4c.h
+lib/cmake/
+lib/cmake/md4c/
+lib/cmake/md4c/md4cConfig${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/md4c/md4cConfig.cmake
+@lib lib/libmd4c-html.so.${LIBmd4c-html_VERSION}
+@lib lib/libmd4c.so.${LIBmd4c_VERSION}
+lib/pkgconfig/md4c-html.pc
+lib/pkgconfig/md4c.pc
+@man man/man1/md2html.1
