@@ -5,26 +5,26 @@ make sure rpath is set in the resulting binary for libinotify.so
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -41,7 +41,7 @@ xkb = dependency('xkbcommon')
+@@ -42,7 +42,7 @@ xkb = dependency('xkbcommon')
  fontconfig = dependency('fontconfig')
  freetype = dependency('freetype2')
  threads = dependency('threads')
 -rt = cc.find_library('rt')
 +# rt = cc.find_library('rt')
+ m = cc.find_library('m')
  
  # optional dependencies: file formats support
- exr = dependency('OpenEXR', version: '>=3.1', required: get_option('exr'))
-@@ -234,7 +234,7 @@ executable(
-   sources,
+@@ -263,7 +263,7 @@ executable(
    dependencies: [
      # runtime
+     m,
 -    rt,
 +    # rt,
      threads,
      wlcln,
      epoll,
-@@ -256,5 +256,6 @@ executable(
-     tiff,
+@@ -287,5 +287,6 @@ executable(
+     raw,
      webp, webp_demux,
    ],
 +  install_rpath : '${LOCALBASE}/lib/inotify',
