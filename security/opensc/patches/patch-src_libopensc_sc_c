@@ -1,45 +1,36 @@
-Avoid mlock; not really useful unless non-default vm.swapencrypt.enable=0
-is used, and prevents opensc being used by pledge()'d callers.
+Avoid mlock(2); not really useful unless non-default vm.swapencrypt.enable=0
+is used, and prevents opensc being used by pledge(2)'d callers.
 
-Belt and braces with calloc_conceal: upstream already uses explicit_bzero,
-but we might as well use this which conceals secure allocations from dumps.
+Belt and braces with mmap(2) MAP_CONCEAL: upstream already uses
+explicit_bzero(3), but we might as well use this which conceals secure
+allocations from dumps.
 
 Index: src/libopensc/sc.c
 --- src/libopensc/sc.c.orig
 +++ src/libopensc/sc.c
-@@ -923,14 +923,18 @@ void *sc_mem_secure_alloc(size_t len)
- 		len = pages * page_size;
+@@ -907,11 +907,15 @@ void *sc_mem_secure_alloc(size_t len)
+ 		VirtualLock(p, len);
  	}
- 
-+#ifdef HAVE_CALLOC_CONCEAL
-+	p = calloc_conceal(1, len);
-+#else
- 	p = calloc(1, len);
- 	if (p == NULL) {
- 		return NULL;
+ #else
++# ifdef __OpenBSD__
++	p = mmap(NULL, len, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS | MAP_CONCEAL, -1, 0);
++# else
+ 	p = mmap(NULL, len, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
+ 	if (p != NULL)
+ 	{
+ 		mlock(p, len);
  	}
--#ifdef _WIN32
-+#  ifdef _WIN32
- 	VirtualLock(p, len);
--#else
-+#  else
- 	mlock(p, len);
-+#  endif
++# endif
  #endif
  
  	return p;
-@@ -938,10 +942,14 @@ void *sc_mem_secure_alloc(size_t len)
- 
- void sc_mem_secure_free(void *ptr, size_t len)
- {
-+#ifdef HAVE_CALLOC_CONCEAL
-+	/* do nothing */
-+#else
- #ifdef _WIN32
+@@ -923,7 +927,9 @@ void sc_mem_secure_free(void *ptr, size_t len)
  	VirtualUnlock(ptr, len);
+ 	VirtualFree(ptr, 0, MEM_RELEASE);
  #else
++# ifndef __OpenBSD__
  	munlock(ptr, len);
-+#endif
++# endif
+ 	munmap(ptr, len);
  #endif
- 	free(ptr);
  }

@@ -1,6 +1,7 @@
 @bin bin/cardos-tool
 @bin bin/cryptoflex-tool
 @bin bin/dnie-tool
+@bin bin/dtrust-tool
 @bin bin/egk-tool
 @bin bin/eidenv
 @bin bin/gids-tool
@@ -31,6 +32,7 @@ lib/pkgconfig/libopensc.pc
 @man man/man1/cardos-tool.1
 @man man/man1/cryptoflex-tool.1
 @man man/man1/dnie-tool.1
+@man man/man1/dtrust-tool.1
 @man man/man1/egk-tool.1
 @man man/man1/eidenv.1
 @man man/man1/gids-tool.1
@@ -57,6 +59,7 @@ share/applications/org.opensc.notify.desktop
 share/bash-completion/completions/cardos-tool
 share/bash-completion/completions/cryptoflex-tool
 share/bash-completion/completions/dnie-tool
+share/bash-completion/completions/dtrust-tool
 share/bash-completion/completions/egk-tool
 share/bash-completion/completions/eidenv
 share/bash-completion/completions/gids-tool
@@ -91,7 +94,6 @@ share/opensc/entersafe.profile
 share/opensc/epass2003.profile
 share/opensc/flex.profile
 share/opensc/gids.profile
-share/opensc/gpk.profile
 share/opensc/ias_adele_admin1.profile
 share/opensc/ias_adele_admin2.profile
 share/opensc/ias_adele_common.profile
@@ -99,7 +101,6 @@ share/opensc/iasecc.profile
 share/opensc/iasecc_admin_eid.profile
 share/opensc/iasecc_generic_oberthur.profile
 share/opensc/iasecc_generic_pki.profile
-share/opensc/incrypto34.profile
 share/opensc/isoApplet.profile
 share/opensc/muscle.profile
 share/opensc/myeid.profile
@@ -112,5 +113,4 @@ share/opensc/rutoken_lite.profile
 share/opensc/sc-hsm.profile
 share/opensc/setcos.profile
 share/opensc/starcos.profile
-share/opensc/westcos.profile
 @tag update-desktop-database
