@@ -40,6 +40,7 @@ share/foot/themes/electrophoretic
 share/foot/themes/gruvbox-dark
 share/foot/themes/gruvbox-light
 share/foot/themes/hacktober
+share/foot/themes/iterm
 share/foot/themes/jetbrains-darcula
 share/foot/themes/kitty
 share/foot/themes/material-amber
@@ -63,6 +64,8 @@ share/foot/themes/paper-color-light
 share/foot/themes/poimandres
 share/foot/themes/rezza
 share/foot/themes/rose-pine
+share/foot/themes/rose-pine-dawn
+share/foot/themes/rose-pine-moon
 share/foot/themes/selenized-black
 share/foot/themes/selenized-dark
 share/foot/themes/selenized-light
@@ -89,7 +92,7 @@ share/foot/themes/tempus-tempest
 share/foot/themes/tempus-totus
 share/foot/themes/tempus-warp
 share/foot/themes/tempus-winter
-share/foot/themes/tokyonight-day
+share/foot/themes/tokyonight-light
 share/foot/themes/tokyonight-night
 share/foot/themes/tokyonight-storm
 share/foot/themes/visibone

@@ -3,7 +3,7 @@ Use libstdthreads
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -125,7 +125,7 @@ if cc.has_argument('-fmacro-prefix-map=/foo=')
+@@ -129,7 +129,7 @@ if cc.has_argument('-fmacro-prefix-map=/foo=')
  endif
  
  math = cc.find_library('m')
@@ -11,28 +11,26 @@ Index: meson.build
 +stdthreads = dependency('stdthreads')
  libepoll = dependency('epoll-shim', required: false)
  pixman = dependency('pixman-1')
- wayland_protocols = dependency('wayland-protocols', version: '>=1.32',
-@@ -213,7 +213,8 @@ common = static_library(
-   'char32.c', 'char32.h',
-   'debug.c', 'debug.h',
+ wayland_protocols = dependency('wayland-protocols', version: '>=1.41',
+@@ -229,7 +229,8 @@ common = static_library(
+   'macros.h',
    'xmalloc.c', 'xmalloc.h',
--  'xsnprintf.c', 'xsnprintf.h'
-+  'xsnprintf.c', 'xsnprintf.h',
+   'xsnprintf.c', 'xsnprintf.h',
+-  dependencies: [utf8proc]
++  dependencies: [utf8proc],
 +  dependencies: [stdthreads]
  )
  
  misc = static_library(
-@@ -221,7 +222,8 @@ misc = static_library(
-   'hsl.c', 'hsl.h',
-   'macros.h',
+@@ -239,6 +240,7 @@ misc = static_library(
    'misc.c', 'misc.h',
--  'uri.c', 'uri.h'
-+  'uri.c', 'uri.h',
+   'uri.c', 'uri.h',
+   dependencies: [utf8proc],
 +  dependencies: [stdthreads],
+   link_with: [common]
  )
  
- vtlib = static_library(
-@@ -263,7 +265,7 @@ if get_option('b_pgo') == 'generate'
+@@ -282,7 +284,7 @@ if get_option('b_pgo') == 'generate'
      'pgo',
      'pgo/pgo.c',
      wl_proto_src + wl_proto_headers,
@@ -41,7 +39,7 @@ Index: meson.build
      link_with: pgolib,
    )
  endif
-@@ -296,7 +298,7 @@ executable(
+@@ -315,7 +317,7 @@ executable(
    'user-notification.c', 'user-notification.h',
    'wayland.c', 'wayland.h', 'shm-formats.h',
    wl_proto_src + wl_proto_headers, version,
