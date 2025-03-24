@@ -1,7 +1,7 @@
 COMMENT=	Xfce4 session manager
 
 XFCE_PROJECT=	xfce4-session
-REVISION=	0
+XFCE_VERSION=	4.20.2
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
