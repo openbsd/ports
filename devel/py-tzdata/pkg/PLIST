@@ -122,6 +122,7 @@ lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Ciudad_Juarez
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Coral_Harbour
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Cordoba
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Costa_Rica
+lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Coyhaique
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Creston
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Cuiaba
 lib/python${MODPY_VERSION}/site-packages/tzdata/zoneinfo/America/Curacao
