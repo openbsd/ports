@@ -1,5 +1,5 @@
 COMMENT =	CGI interface for FastCGI
-DISTNAME =	CGI-Fast-2.16
+DISTNAME =	CGI-Fast-2.17
 CATEGORIES =	www
 
 MAINTAINER =	Mikolaj Kucharski <mikolaj@kucharski.name>
