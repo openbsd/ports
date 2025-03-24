@@ -1,14 +1,14 @@
 COMMENT = 	small font loading and glyph rasterization library
 
 DISTNAME =	fcft-$V
-V =		3.1.7
+V =		3.3.1
 
 SITES =		https://codeberg.org/dnkl/fcft/archive/
 DISTFILES =     fcft-{}${V}${EXTRACT_SUFX}
 
 CATEGORIES =	graphics
 
-SHARED_LIBS +=  fcft 0.0 # 0.0
+SHARED_LIBS +=  fcft 0.1 # 0.0
 
 WRKDIST =	${WRKDIR}/fcft
 
@@ -32,6 +32,6 @@ LIB_DEPENDS =	www/netsurf/libutf8proc \
 
 CONFIGURE_ENV =		CPPFLAGS=-I${LOCALBASE}/include/libutf8proc
 
-CONFIGURE_FLAGS =	-Drun-shaping=enabled
+CONFIGURE_ARGS =	-Drun-shaping=enabled
 
 .include <bsd.port.mk>

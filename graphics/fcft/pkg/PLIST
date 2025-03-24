@@ -7,7 +7,10 @@ lib/pkgconfig/fcft.pc
 @man man/man3/fcft_clone.3
 @man man/man3/fcft_destroy.3
 @man man/man3/fcft_fini.3
+@man man/man3/fcft_font_options_create.3
+@man man/man3/fcft_font_options_destroy.3
 @man man/man3/fcft_from_name.3
+@man man/man3/fcft_from_name2.3
 @man man/man3/fcft_init.3
 @man man/man3/fcft_kerning.3
 @man man/man3/fcft_log_init.3
