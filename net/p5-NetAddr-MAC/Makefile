@@ -1,12 +1,12 @@
 COMMENT =	module to handle hardware MAC addresses
 
-DISTNAME =	NetAddr-MAC-0.97
+DISTNAME =	NetAddr-MAC-0.98
 
 CATEGORIES =	net
 
 MAINTAINER =	Mikolaj Kucharski <mikolaj@kucharski.name>
 
-# Perl
+# MIT
 PERMIT_PACKAGE =	Yes
 
 MODULES =		cpan
