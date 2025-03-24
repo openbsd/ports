@@ -447,6 +447,7 @@
      SUBDIR += maturin
      SUBDIR += maven
      SUBDIR += mcs
+     SUBDIR += md4c
      SUBDIR += mercurial
      SUBDIR += meson
      SUBDIR += meson-python
