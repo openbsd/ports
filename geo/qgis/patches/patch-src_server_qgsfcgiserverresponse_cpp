@@ -3,48 +3,20 @@ https://github.com/qgis/QGIS/pull/61142
 Index: src/server/qgsfcgiserverresponse.cpp
 --- src/server/qgsfcgiserverresponse.cpp.orig
 +++ src/server/qgsfcgiserverresponse.cpp
-@@ -114,7 +114,7 @@ void QgsSocketMonitoringThread::run()
+@@ -23,6 +23,7 @@
+ #include "qgsmessagelog.h"
+ #include <fcgi_stdio.h>
+ #include <QDebug>
++#include <QThread>
+ 
+ #include "qgslogger.h"
+ 
+@@ -114,7 +115,7 @@ void QgsSocketMonitoringThread::run()
    }
  
  #if defined( Q_OS_UNIX ) && !defined( Q_OS_ANDROID )
 -  const pid_t threadId = gettid();
-+  const pthread_t threadId = pthread_self();
++  quint64 threadId = reinterpret_cast<quint64>( QThread::currentThreadId() );
  
    mShouldStop.store( false );
    char c;
-@@ -136,7 +136,7 @@ void QgsSocketMonitoringThread::run()
-     {
-       // socket closed, nothing can be read
-       QgsMessageLog::logMessage( QStringLiteral( "FCGIServer %1: remote socket has been closed (select)! errno: %2" ) //
--                                   .arg( threadId )
-+                                   .arg( (long long) threadId )
-                                    .arg( errno ),
-                                  QStringLiteral( "FCGIServer" ), Qgis::MessageLevel::Warning );
-       mFeedback->cancel();
-@@ -151,7 +151,7 @@ void QgsSocketMonitoringThread::run()
-       {
-         // Ie. we are still connected but we have an 'error' as there is nothing to read
-         QgsDebugMsgLevel( QStringLiteral( "FCGIServer %1: remote socket still connected. errno: %2, x: %3" ) //
--                            .arg( threadId )
-+                            .arg( (long long) threadId )
-                             .arg( errno )
-                             .arg( x ),
-                           5 );
-@@ -160,7 +160,7 @@ void QgsSocketMonitoringThread::run()
-       {
-         // socket closed, nothing can be read
-         QgsMessageLog::logMessage( QStringLiteral( "FCGIServer %1: remote socket has been closed (recv)! errno: %2, x: %3" ) //
--                                     .arg( threadId )
-+                                     .arg( (long long) threadId )
-                                      .arg( errno )
-                                      .arg( x ),
-                                    QStringLiteral( "FCGIServer" ), Qgis::MessageLevel::Warning );
-@@ -182,7 +182,7 @@ void QgsSocketMonitoringThread::run()
-   else
-   {
-     QgsMessageLog::logMessage( QStringLiteral( "FCGIServer::run %1: socket monitoring quits: no more socket." ) //
--                                 .arg( threadId ),                                                              //
-+                                 .arg( (long long) threadId ),                                                              //
-                                QStringLiteral( "FCGIServer" ), Qgis::MessageLevel::Warning );
-   }
- #endif
