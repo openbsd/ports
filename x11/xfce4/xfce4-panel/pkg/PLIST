@@ -52,15 +52,8 @@ share/gtk-doc/html/libxfce4panel-2.0/XfceArrowButton.html
 share/gtk-doc/html/libxfce4panel-2.0/XfcePanelImage.html
 share/gtk-doc/html/libxfce4panel-2.0/XfcePanelPlugin.html
 share/gtk-doc/html/libxfce4panel-2.0/annotation-glossary.html
-share/gtk-doc/html/libxfce4panel-2.0/api-index-4-10.html
-share/gtk-doc/html/libxfce4panel-2.0/api-index-4-14.html
-share/gtk-doc/html/libxfce4panel-2.0/api-index-4-18.html
-share/gtk-doc/html/libxfce4panel-2.0/api-index-4-20.html
-share/gtk-doc/html/libxfce4panel-2.0/api-index-4-22.html
-share/gtk-doc/html/libxfce4panel-2.0/api-index-4-6.html
-share/gtk-doc/html/libxfce4panel-2.0/api-index-4-8.html
-share/gtk-doc/html/libxfce4panel-2.0/api-index-deprecated.html
 share/gtk-doc/html/libxfce4panel-2.0/api-index-full.html
+share/gtk-doc/html/libxfce4panel-2.0/ch01.html
 share/gtk-doc/html/libxfce4panel-2.0/home.png
 share/gtk-doc/html/libxfce4panel-2.0/index.html
 share/gtk-doc/html/libxfce4panel-2.0/left-insensitive.png
@@ -72,10 +65,7 @@ share/gtk-doc/html/libxfce4panel-2.0/libxfce4panel-GObject-Oriented-Panel-Plugin
 share/gtk-doc/html/libxfce4panel-2.0/libxfce4panel-Panel-Plugin-Register-Macros.html
 share/gtk-doc/html/libxfce4panel-2.0/libxfce4panel-Standard-Enumerations.html
 share/gtk-doc/html/libxfce4panel-2.0/libxfce4panel-Version-Information.html
-share/gtk-doc/html/libxfce4panel-2.0/libxfce4panel-fundamentals.html
-share/gtk-doc/html/libxfce4panel-2.0/libxfce4panel-miscelleanous.html
-share/gtk-doc/html/libxfce4panel-2.0/libxfce4panel-plugins.html
-share/gtk-doc/html/libxfce4panel-2.0/libxfce4panel-widgets.html
+share/gtk-doc/html/libxfce4panel-2.0/object-tree.html
 share/gtk-doc/html/libxfce4panel-2.0/right-insensitive.png
 share/gtk-doc/html/libxfce4panel-2.0/right.png
 share/gtk-doc/html/libxfce4panel-2.0/style.css
@@ -236,6 +226,7 @@ share/locale/ug/LC_MESSAGES/xfce4-panel.mo
 share/locale/uk/LC_MESSAGES/xfce4-panel.mo
 share/locale/ur/LC_MESSAGES/xfce4-panel.mo
 share/locale/ur_PK/LC_MESSAGES/xfce4-panel.mo
+share/locale/vec/LC_MESSAGES/xfce4-panel.mo
 share/locale/vi/LC_MESSAGES/xfce4-panel.mo
 share/locale/zh_CN/LC_MESSAGES/xfce4-panel.mo
 share/locale/zh_HK/LC_MESSAGES/xfce4-panel.mo

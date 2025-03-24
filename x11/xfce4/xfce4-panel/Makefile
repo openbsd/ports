@@ -1,7 +1,7 @@
 COMMENT=	Xfce4 desktop panel
 
 XFCE_PROJECT=	xfce4-panel
-XFCE_VERSION=	4.20.3
+XFCE_VERSION=	4.20.4
 
 SHARED_LIBS=	xfce4panel-2.0	0.4 # 4.0
 
@@ -28,7 +28,6 @@ MODXFCE_DESKTOP_FILE=	Yes
 MODXFCE_ICON_CACHE=	Yes
 MODXFCE_PURGE_LA =	lib/xfce4/panel/plugins
 BUILD_DEPENDS += devel/gobject-introspection lang/vala
-BUILD_DEPENDS += x11/xfce4/xfce4-dev-tools
 
 LIB_DEPENDS=	x11/xfce4/exo>=0.11.2 \
 		x11/xfce4/libxfce4ui>=4.15.6 \
