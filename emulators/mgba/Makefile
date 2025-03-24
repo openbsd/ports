@@ -2,15 +2,11 @@ COMMENT-main =		Game Boy Color/Advance emulator
 COMMENT-qt =		Game Boy Color/Advance emulator with GUI
 COMMENT-libretro =	Game Boy Color/Advance core for retroarch
 
-V =			0.10.3
+V =			0.10.5
 GH_ACCOUNT =		mgba-emu
 GH_PROJECT =		mgba
 GH_TAGNAME =		$V
 PKGNAME-libretro =	libretro-mgba-$V
-
-REVISION-main =		1
-REVISION-qt =		0
-REVISION-libretro =	0
 
 MULTI_PACKAGES =	-main -qt -libretro
 DEBUG_PACKAGES =	-main -qt -libretro

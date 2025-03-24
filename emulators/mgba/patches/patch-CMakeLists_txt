@@ -27,7 +27,7 @@ Index: CMakeLists.txt
  if(USE_FFMPEG)
  	list(APPEND FEATURES FFMPEG)
  	if(LIBSWRESAMPLE_FOUND)
-@@ -1281,6 +1290,7 @@ if(NOT QUIET AND NOT LIBMGBA_ONLY)
+@@ -1282,6 +1291,7 @@ if(NOT QUIET AND NOT LIBMGBA_ONLY)
  		message(STATUS "	CLI debugger: ${USE_EDITLINE}")
  	endif()
  	message(STATUS "	GDB stub: ${USE_GDB_STUB}")
