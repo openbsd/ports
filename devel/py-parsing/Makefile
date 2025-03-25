@@ -1,10 +1,9 @@
 COMMENT=	classes and methods to define and execute parsing grammars
 
-MODPY_DISTV=	3.2.1
+MODPY_DISTV=	3.2.3
 DISTNAME=	pyparsing-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/py/py-/}
 CATEGORIES=	devel
-REVISION=	0
 
 HOMEPAGE=	https://github.com/pyparsing/pyparsing/
 
