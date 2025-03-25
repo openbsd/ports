@@ -1,5 +1,11 @@
 pytz brings the Olson tz database into Python. This library allows
-accurate and cross platform timezone calculations using Python 2.3 or
-higher. It also solves the issue of ambiguous times at the end of
+accurate and cross platform timezone calculations using Python 2.4
+or higher. It also solves the issue of ambiguous times at the end of
 daylight savings, which you can read more about in the Python Library
 Reference (datetime.tzinfo).
+
+Projects using Python 3.9 or later should be using the support now
+included as part of the standard library, and third party packages
+work with it such as https://pypi.org/project/tzdata/. pytz offers no
+advantages beyond backwards compatibility with code written for earlier
+versions of Python.

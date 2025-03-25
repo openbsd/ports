@@ -1,6 +1,6 @@
 COMMENT=	Python API for dealing with timezones
 
-MODPY_DISTV=	2025.1
+MODPY_DISTV=	2025.2
 DISTNAME=	pytz-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/^py/py-/}
 CATEGORIES=	devel
