@@ -1,12 +1,21 @@
---- passlib/hosts.py.orig	Wed Nov 23 03:20:22 2016
-+++ passlib/hosts.py	Mon Jan 16 14:26:12 2017
-@@ -47,7 +47,8 @@ linux_context = linux2_context = LazyCryptContext(
+Index: passlib/hosts.py
+--- passlib/hosts.py.orig
++++ passlib/hosts.py
+@@ -33,14 +33,15 @@ linux_context = linux2_context = LazyCryptContext(
  # referencing source via -http://fxr.googlebit.com
  # freebsd 6,7,8 - des, md5, bcrypt, bsd_nthash
  # netbsd - des, ext, md5, bcrypt, sha1
 -# openbsd - des, ext, md5, bcrypt
-+# XXX openbsd 5.9+ - bcrypt (no $2$; accepts $2a$, native $2b$)
++# openbsd 5.9+ - bcrypt (no $2$; accepts $2a$, native $2b$)
 +# older openbsd - des, ext, md5, bcrypt
  
- freebsd_context = LazyCryptContext(["bcrypt", "md5_crypt", "bsd_nthash",
-                                     "des_crypt", "unix_disabled"])
+ freebsd_context = LazyCryptContext(
+     ["bcrypt", "md5_crypt", "bsd_nthash", "des_crypt", "unix_disabled"]
+ )
+ 
+ openbsd_context = LazyCryptContext(
+-    ["bcrypt", "md5_crypt", "bsdi_crypt", "des_crypt", "unix_disabled"]
++    ["bcrypt", "unix_disabled"]
+ )
+ 
+ netbsd_context = LazyCryptContext(
