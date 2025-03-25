@@ -51,8 +51,8 @@ SHA256 (go_modules/github.com/alecthomas/units/@v/v0.0.0-20211218093645-b94a6e3c
 SHA256 (go_modules/github.com/alecthomas/units/@v/v0.0.0-20211218093645-b94a6e3cc137.zip) = tiQ310pSMImvRroBFezhzhG8peMh/h4dTJduzKbueKo=
 SHA256 (go_modules/github.com/anacrolix/envpprof/@v/v1.3.0.mod) = cpOl3Dyk8a72AoVrDP4mcD5LVnE85Mx4l6MwAIPZKOw=
 SHA256 (go_modules/github.com/anacrolix/envpprof/@v/v1.3.0.zip) = yys3qokOSAz9xnRwaVBex+v0+qlA1pmDu7HF43LVQic=
-SHA256 (go_modules/github.com/anacrolix/fuse/@v/v0.4.0.mod) = lvSgjkiK+1SZ2IH5rwNjBKCA8oJeyjJ+zQQZxM6+EnI=
-SHA256 (go_modules/github.com/anacrolix/fuse/@v/v0.4.0.zip) = EYktfR4/MNY6Wibg4RbfCTVclwCVio9zGqcsHeZkYYI=
+SHA256 (go_modules/github.com/anacrolix/fuse/@v/v0.3.1.mod) = lvSgjkiK+1SZ2IH5rwNjBKCA8oJeyjJ+zQQZxM6+EnI=
+SHA256 (go_modules/github.com/anacrolix/fuse/@v/v0.3.1.zip) = kzujbh7naYq3SEWH06dqeihPLRVfaNRb8dpfBVYtmbc=
 SHA256 (go_modules/github.com/anacrolix/generics/@v/v0.0.0-20230113004304-d6428d516633.mod) = 23fAT/adzjqMyIV9El0L5Hd5kH7j3WhtGes+z6wvCUo=
 SHA256 (go_modules/github.com/anacrolix/generics/@v/v0.0.0-20230113004304-d6428d516633.zip) = 1fmXwxs5TWA4fBcIxGnGCKAdLoSdKnplO/cZ38cExgk=
 SHA256 (go_modules/github.com/anacrolix/log/@v/v0.13.1.mod) = U6/Wa3aYruBMvdghYlLn8Y9YJsn5JYxkYbxs055F+9k=
@@ -172,8 +172,8 @@ SHA256 (go_modules/github.com/goccy/go-json/@v/v0.10.5.mod) = kCfIPvweseH039wOzQ
 SHA256 (go_modules/github.com/goccy/go-json/@v/v0.10.5.zip) = luQX1Ek3BfRw9/KYWKCc2+aDMPLX50zQJPus5HRcBhU=
 SHA256 (go_modules/github.com/gogo/protobuf/@v/v1.3.2.mod) = lm6k32HphWCWdkI+68++XwjIZlLTqt3294woxyyB6dw=
 SHA256 (go_modules/github.com/gogo/protobuf/@v/v1.3.2.zip) = 3Stz8WPIGDlBYmNgGWyPhErd2VQj00GgQS4bItAQT/c=
-SHA256 (go_modules/github.com/golang-jwt/jwt/v5/@v/v5.2.1.mod) = PqmkgQEE/ra/wm7oBefkJ6AY7klwZeexsRfAEx5O4wo=
-SHA256 (go_modules/github.com/golang-jwt/jwt/v5/@v/v5.2.1.zip) = rVzcXGusVioriQ6WNHII/9swqUAkO1WEZat96QkToYA=
+SHA256 (go_modules/github.com/golang-jwt/jwt/v5/@v/v5.2.2.mod) = PqmkgQEE/ra/wm7oBefkJ6AY7klwZeexsRfAEx5O4wo=
+SHA256 (go_modules/github.com/golang-jwt/jwt/v5/@v/v5.2.2.zip) = J4mA2eUkmLfFS68h/tIDuUKqHQi39i7sSUEQthtv08k=
 SHA256 (go_modules/github.com/golang/groupcache/@v/v0.0.0-20210331224755-41bb18bfe9da.mod) = URfiu4bxzHzHSJ+fJYD6F7LvHjoKNGv2TtgGPKe4dmM=
 SHA256 (go_modules/github.com/golang/groupcache/@v/v0.0.0-20210331224755-41bb18bfe9da.zip) = snA06PwBNidUPhrQmM/GUynyiW3z2lzzJmzJFm+T86U=
 SHA256 (go_modules/github.com/golang/protobuf/@v/v1.2.0.mod) = wKIDG/J3CHdJ2MzEMkSfaxN1eH6shkHdL5MAdCMar7Q=
@@ -722,7 +722,7 @@ SHA256 (go_modules/modernc.org/strutil/@v/v1.2.1.mod) = hXcXRceFHU6hakG/ae6hVRzs
 SHA256 (go_modules/modernc.org/strutil/@v/v1.2.1.zip) = W4+mHKQUHF/YIYP61Lx6Ra+CN7b7HfymXOeWCgPEg8Q=
 SHA256 (go_modules/modernc.org/token/@v/v1.1.0.mod) = evOzXO1S6tSw7Q4iEB2VvABh0g4T3Q2aoHFhZKj12xw=
 SHA256 (go_modules/modernc.org/token/@v/v1.1.0.zip) = Pvqknp+xBWnangnnhfojDNXA9Q/PYF87VDnfzWFXfFg=
-SHA256 (plakar-v1.0.1-beta.12.zip) = XW9uwlrKjTRcQiiBvaoIdgNLB585X0ORRhoUKuQaGM0=
+SHA256 (plakar-v1.0.1-beta.13.zip) = PTFRrrHfWzVVngLYmbw7MaLNbh5kzNa+jHkg6Yk4UjE=
 SIZE (go_modules/cel.dev/expr/@v/v0.16.1.mod) = 434
 SIZE (go_modules/cel.dev/expr/@v/v0.16.1.zip) = 195942
 SIZE (go_modules/cloud.google.com/go/@v/v0.112.1.mod) = 1812
@@ -776,8 +776,8 @@ SIZE (go_modules/github.com/alecthomas/units/@v/v0.0.0-20211218093645-b94a6e3cc1
 SIZE (go_modules/github.com/alecthomas/units/@v/v0.0.0-20211218093645-b94a6e3cc137.zip) = 8236
 SIZE (go_modules/github.com/anacrolix/envpprof/@v/v1.3.0.mod) = 88
 SIZE (go_modules/github.com/anacrolix/envpprof/@v/v1.3.0.zip) = 5269
-SIZE (go_modules/github.com/anacrolix/fuse/@v/v0.4.0.mod) = 401
-SIZE (go_modules/github.com/anacrolix/fuse/@v/v0.4.0.zip) = 265553
+SIZE (go_modules/github.com/anacrolix/fuse/@v/v0.3.1.mod) = 401
+SIZE (go_modules/github.com/anacrolix/fuse/@v/v0.3.1.zip) = 265553
 SIZE (go_modules/github.com/anacrolix/generics/@v/v0.0.0-20230113004304-d6428d516633.mod) = 107
 SIZE (go_modules/github.com/anacrolix/generics/@v/v0.0.0-20230113004304-d6428d516633.zip) = 9843
 SIZE (go_modules/github.com/anacrolix/log/@v/v0.13.1.mod) = 296
@@ -897,8 +897,8 @@ SIZE (go_modules/github.com/goccy/go-json/@v/v0.10.5.mod) = 41
 SIZE (go_modules/github.com/goccy/go-json/@v/v0.10.5.zip) = 309039
 SIZE (go_modules/github.com/gogo/protobuf/@v/v1.3.2.mod) = 215
 SIZE (go_modules/github.com/gogo/protobuf/@v/v1.3.2.zip) = 2700673
-SIZE (go_modules/github.com/golang-jwt/jwt/v5/@v/v5.2.1.mod) = 45
-SIZE (go_modules/github.com/golang-jwt/jwt/v5/@v/v5.2.1.zip) = 88765
+SIZE (go_modules/github.com/golang-jwt/jwt/v5/@v/v5.2.2.mod) = 45
+SIZE (go_modules/github.com/golang-jwt/jwt/v5/@v/v5.2.2.zip) = 89822
 SIZE (go_modules/github.com/golang/groupcache/@v/v0.0.0-20210331224755-41bb18bfe9da.mod) = 36
 SIZE (go_modules/github.com/golang/groupcache/@v/v0.0.0-20210331224755-41bb18bfe9da.zip) = 39744
 SIZE (go_modules/github.com/golang/protobuf/@v/v1.2.0.mod) = 34
@@ -1447,4 +1447,4 @@ SIZE (go_modules/modernc.org/strutil/@v/v1.2.1.mod) = 162
 SIZE (go_modules/modernc.org/strutil/@v/v1.2.1.zip) = 11900
 SIZE (go_modules/modernc.org/token/@v/v1.1.0.mod) = 25
 SIZE (go_modules/modernc.org/token/@v/v1.1.0.zip) = 6860
-SIZE (plakar-v1.0.1-beta.12.zip) = 1169332
+SIZE (plakar-v1.0.1-beta.13.zip) = 1171067

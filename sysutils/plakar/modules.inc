@@ -24,7 +24,7 @@ MODGO_MODULES =	\
 	github.com/alecthomas/repr								 v0.4.0 \
 	github.com/alecthomas/units								 v0.0.0-20211218093645-b94a6e3cc137 \
 	github.com/anacrolix/envpprof								 v1.3.0 \
-	github.com/anacrolix/fuse								 v0.4.0 \
+	github.com/anacrolix/fuse								 v0.3.1 \
 	github.com/anacrolix/generics								 v0.0.0-20230113004304-d6428d516633 \
 	github.com/anacrolix/log								 v0.14.1 \
 	github.com/armon/go-metrics								 v0.4.1 \
@@ -76,7 +76,7 @@ MODGO_MODULES =	\
 	github.com/gobwas/glob									 v0.2.3 \
 	github.com/goccy/go-json								 v0.10.5 \
 	github.com/gogo/protobuf								 v1.3.2 \
-	github.com/golang-jwt/jwt/v5								 v5.2.1 \
+	github.com/golang-jwt/jwt/v5								 v5.2.2 \
 	github.com/golang/groupcache								 v0.0.0-20210331224755-41bb18bfe9da \
 	github.com/golang/protobuf								 v1.5.3 \
 	github.com/golang/snappy								 v1.0.0 \
