@@ -1,29 +1,26 @@
-COMMENT =		MQTT Python client library
+COMMENT=	MQTT Python client library
 
-MODPY_DISTV =	1.6.1
-DISTNAME =		paho-mqtt-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-REVISION =		3
+MODPY_DISTV=	2.1.0
+DISTNAME=	paho_mqtt-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME:S/_/-/g}
 
-HOMEPAGE =		http://www.eclipse.org/paho/clients/python/
+# https://github.com/eclipse-paho/paho.mqtt.python
+HOMEPAGE=	https://eclipse.dev/paho/clients/python/
 
-CATEGORIES =		net
+CATEGORIES=	net
 
 # EPL/EDL
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=Yes
 
-MODULES =		lang/python
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
-# not in pypi tarball.
-#TEST_DEPENDS =		devel/py-test-runner
-NO_TEST =		Yes
+MODULES=	lang/python
+MODPY_PYBUILD=	hatchling
+MODPY_PI=	Yes
 
-MODPY_ADJ_FILES =	examples/*.py
+MODPY_ADJ_FILES=examples/*.py
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${MODPY_PY_PREFIX}paho-mqtt
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-paho-mqtt
 	${INSTALL_DATA} ${WRKSRC}/examples/*.py \
-		${PREFIX}/share/examples/${MODPY_PY_PREFIX}paho-mqtt
+		${PREFIX}/share/examples/py-paho-mqtt
 
 .include <bsd.port.mk>
