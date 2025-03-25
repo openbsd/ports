@@ -1,12 +1,22 @@
+@conflict c-icap-clamav-*
+@conflict c-icap-urlcheck-*
+@pkgpath www/c-icap/modules,-main
+@pkgpath www/c-icap/modules,-urlcheck
+@bin bin/c-icap-mods-sguardDB
 @so lib/c_icap/clamav_mod.so
 @so lib/c_icap/clamd_mod.so
 @so lib/c_icap/srv_content_filtering.so
+@so lib/c_icap/srv_url_check.so
 @so lib/c_icap/virus_scan.so
+@man man/man8/c-icap-mods-sguardDB.8
 share/c_icap/
 share/c_icap/templates/
 share/c_icap/templates/srv_content_filtering/
 share/c_icap/templates/srv_content_filtering/en/
 share/c_icap/templates/srv_content_filtering/en/BLOCK
+share/c_icap/templates/srv_url_check/
+share/c_icap/templates/srv_url_check/en/
+share/c_icap/templates/srv_url_check/en/DENY
 share/c_icap/templates/virus_scan/
 share/c_icap/templates/virus_scan/en/
 share/c_icap/templates/virus_scan/en/VIRUS_FOUND
@@ -18,5 +28,9 @@ share/examples/c-icap/clamav_mod.conf
 @sample ${SYSCONFDIR}/clamav_mod.conf
 share/examples/c-icap/clamd_mod.conf
 @sample ${SYSCONFDIR}/clamd_mod.conf
+share/examples/c-icap/srv_content_filtering.conf
+@sample ${SYSCONFDIR}/srv_content_filtering.conf
+share/examples/c-icap/srv_url_check.conf
+@sample ${SYSCONFDIR}/srv_url_check.conf
 share/examples/c-icap/virus_scan.conf
 @sample ${SYSCONFDIR}/virus_scan.conf

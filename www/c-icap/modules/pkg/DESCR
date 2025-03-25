@@ -1,0 +1,16 @@
+This package provides various filtering modules for use with c-icap.
+Policy profiles are available based on c-icap ACLs.
+
+srv_content_filtering: score-based content filtering
+- uses perl-compatible regexps in url/headers/body
+- block pages or replace text
+
+srv_url_check: database-based URL filtering
+- allow/block URLs
+- support for legacy squidGuard databases
+
+virus_scan: virus scanning, with sub-modules:
+- clamd-mod uses an existing clamd instance (possibly not working)
+- clamav-mod uses libclamav directly
+(also see the separate "squidclamav" package for an alternative
+using clamd)

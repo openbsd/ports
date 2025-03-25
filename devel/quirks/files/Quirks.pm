@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1707 2025/03/21 16:02:48 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1708 2025/03/25 17:17:16 sthen Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -621,6 +621,8 @@ my $stem_extensions = {
 	'marble-kf5' => 'marble',
 	'ksanecore' => 'kf6-ksanecore',
 	'libkcompactdisc-kf5' => 'kf6-libkcompactdisc',
+	'c-icap-clamav' => 'c-icap-modules',
+	'c-icap-urlcheck' => 'c-icap-modules',
 };
 
 my $obsolete_reason = {};

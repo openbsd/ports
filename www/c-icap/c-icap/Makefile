@@ -4,18 +4,19 @@ COMMENT-db=	Berkeley DB module for c-icap
 COMMENT-ldap=	LDAP module for c-icap
 
 V=		0.5.13
-DISTNAME=	c_icap-$V
-PKGNAME-main=	c-icap-$V
-PKGNAME-db=	c-icap-db-$V
-PKGNAME-ldap=	c-icap-ldap-$V
+REVISION=	0
+
+GH_ACCOUNT=	c-icap
+GH_PROJECT=	c-icap-server
+GH_TAGNAME=	C_ICAP_$V
+PKGNAME=	c-icap-$V
+
+COMPILER=	base-clang ports-gcc
+COMPILER_LANGS=	c
 
 SHARED_LIBS +=	icapapi                   2.1 # 5.2
 
 WANTLIB += brotlicommon brotlidec brotlienc bz2 pcre pthread z zstd
-
-# override ../Makefile.inc
-CONFIGURE_STYLE=  autoconf
-AUTOCONF_VERSION= 2.71
 
 CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include/db4 -I${LOCALBASE}/include" \
 		LDFLAGS="-L${LOCALBASE}/lib"
