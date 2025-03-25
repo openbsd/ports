@@ -29,8 +29,9 @@ DISTFILES.eesti +=	${CONFIG_NAME}{config}.${_suffix}
 CONFIGURE_ENV +=	CONFIG_URL=file://${FULLDISTDIR}/${CONFIG_NAME}.json
 
 SITES.eu =		https://ec.europa.eu/tools/lotl/
-DISTFILES.eu =		eu-lotl.xml
-CONFIGURE_ENV +=	TSL_URL=file://${FULLDISTDIR}/${DISTFILES.eu}
+EU_V =			20250317
+DISTFILES.eu =		eu-lotl-${EU_V}{eu-lotl}.xml
+CONFIGURE_ENV +=	TSL_URL=file://${FULLDISTDIR}/eu-lotl-${EU_V}.xml
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
