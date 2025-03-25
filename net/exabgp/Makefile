@@ -13,7 +13,8 @@ PERMIT_PACKAGE=	Yes
 MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
 
-TEST_DEPENDS=	devel/py-coverage \
+TEST_DEPENDS=	devel/py-asyncore \
+		devel/py-coverage \
 		devel/py-nose \
 		sysutils/py-psutil
 
@@ -51,10 +52,7 @@ post-install:
 .endfor
 
 do-test:
-	-cd ${WRKSRC}; exabgp_log_enable=false nosetests --with-coverage ./qa/tests/*_test.py
-	-cd ${WRKSRC}; ./qa/bin/functional run
-	@pgrep -qf exabgp && \
-	echo warning, tests may have left behind running exabgp processes && \
-	echo you may want to run: pkill -f exabgp
+	cd ${WRKSRC}; exabgp_log_enable=false nosetests --with-coverage ./qa/tests/*_test.py
+	cd ${WRKSRC}; ./qa/bin/functional run
 
 .include <bsd.port.mk>
