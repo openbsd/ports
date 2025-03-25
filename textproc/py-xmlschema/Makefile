@@ -1,6 +1,6 @@
 COMMENT=	an XML Schema validator and decoder
 
-MODPY_DISTV=	3.4.4
+MODPY_DISTV=	3.4.5
 DISTNAME=	xmlschema-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
