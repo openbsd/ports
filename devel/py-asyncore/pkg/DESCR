@@ -1,0 +1,4 @@
+This package contains the asyncore module as found in Python versions
+prior to 3.12. It is provided so that existing code relying on import
+asyncore is able to continue being used without significant refactoring.
+It should not be used for new projects.
