@@ -1,10 +1,8 @@
 COMMENT=	brain-dead simple config-ini parsing
 
-MODPY_DISTV=	2.0.0
-
+MODPY_DISTV=	2.1.0
 DISTNAME=	iniconfig-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	textproc
 
@@ -14,8 +12,10 @@ HOMEPAGE=	http://github.com/RonnyPfannschmidt/iniconfig
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	hatch-vcs
+MODPY_PI=	Yes
+
+# missing from sdist
+NO_TEST=	Yes
 
 .include <bsd.port.mk>
