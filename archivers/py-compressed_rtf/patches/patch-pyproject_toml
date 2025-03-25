@@ -1,0 +1,12 @@
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -7,7 +7,7 @@ name = "compressed-rtf"
+ dynamic = ["version"]
+ description = "Compressed Rich Text Format (RTF) compression and decompression package"
+ readme = "README.md"
+-license = "MIT"
++license = {text = "MIT"}
+ authors = [
+     { name = "Dmitry Alimov" },
+ ]
