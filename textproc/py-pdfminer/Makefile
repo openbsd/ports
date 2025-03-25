@@ -1,6 +1,6 @@
 COMMENT=	PDF parser and analyzer
 
-MODPY_DISTV=	20240706
+MODPY_DISTV=	20250324
 DISTNAME=	pdfminer.six-${MODPY_DISTV}
 PKGNAME=	py-pdfminer-${MODPY_DISTV}
 
@@ -19,7 +19,8 @@ BUILD_DEPENDS=	devel/py-setuptools-git-versioning
 RUN_DEPENDS=	security/py-cryptography \
 		textproc/py-charset-normalizer
 
-# tests aren't included in the pypi distfiles
+# some test files missing from sdist (samples/, plus a couple of
+# non-test_* files in tests/)
 NO_TEST=	Yes
 
 .include <bsd.port.mk>
