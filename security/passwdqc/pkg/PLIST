@@ -4,6 +4,7 @@
 include/passwdqc.h
 @comment lib/libpasswdqc.so
 @lib lib/libpasswdqc.so.${LIBpasswdqc_VERSION}
+lib/pkgconfig/passwdqc.pc
 @man man/man1/pwqcheck.1
 @man man/man1/pwqfilter.1
 @man man/man1/pwqgen.1

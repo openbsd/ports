@@ -1,7 +1,7 @@
 Index: passwdqc.conf.5
 --- passwdqc.conf.5.orig
 +++ passwdqc.conf.5
-@@ -286,8 +286,7 @@ logging.
+@@ -294,8 +294,7 @@ logging.
  option).
  .Sh SEE ALSO
  .Xr getpwnam 3 ,

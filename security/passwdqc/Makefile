@@ -1,6 +1,6 @@
 COMMENT=	complexity checker for passwd(1) and password generator
 
-DISTNAME=	passwdqc-2.0.2
+DISTNAME=	passwdqc-2.0.3
 CATEGORIES=	security sysutils
 
 SHARED_LIBS=	passwdqc 0.1 # .0
@@ -17,7 +17,9 @@ FIX_EXTRACT_PERMISSIONS= Yes
 
 NO_TEST=	Yes
 
-ALL_TARGET=	utils
+USE_GMAKE=	Yes
+
+ALL_TARGET=	utils passwdqc.pc
 INSTALL_TARGET=	install_lib install_utils
 
 MAKE_FLAGS=	CC="${CC}" \
