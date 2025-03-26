@@ -184,8 +184,6 @@ icinga-web2/application/views/scripts/group/
 icinga-web2/application/views/scripts/group/form.phtml
 icinga-web2/application/views/scripts/group/list.phtml
 icinga-web2/application/views/scripts/group/show.phtml
-icinga-web2/application/views/scripts/iframe/
-icinga-web2/application/views/scripts/iframe/index.phtml
 icinga-web2/application/views/scripts/index/
 icinga-web2/application/views/scripts/index/welcome.phtml
 icinga-web2/application/views/scripts/inline.phtml
