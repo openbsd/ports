@@ -1,6 +1,6 @@
 COMMENT=		VPN over an SSH tunnel
 
-MODPY_DISTV=		1.3.0
+MODPY_DISTV=		1.3.1
 DISTNAME=		sshuttle-${MODPY_DISTV}
 
 FIX_EXTRACT_PERMISSIONS=Yes
@@ -15,7 +15,7 @@ PERMIT_PACKAGE=		Yes
 MODULES=		lang/python
 
 MODPY_PI=		Yes
-MODPY_PYBUILD=		poetry-core
+MODPY_PYBUILD=		hatchling
 
 USE_GMAKE=		Yes
 

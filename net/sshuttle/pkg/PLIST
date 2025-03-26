@@ -2,11 +2,12 @@
 bin/sshuttle
 lib/python${MODPY_VERSION}/site-packages/sshuttle/
 lib/python${MODPY_VERSION}/site-packages/sshuttle-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/sshuttle-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/sshuttle-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/sshuttle-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/sshuttle-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/sshuttle-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/sshuttle-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/sshuttle-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/sshuttle/__init__.py
 lib/python${MODPY_VERSION}/site-packages/sshuttle/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sshuttle/${MODPY_PYCACHE}/
@@ -44,8 +45,6 @@ lib/python${MODPY_VERSION}/site-packages/sshuttle/${MODPY_PYCACHE}ssyslog.${MODP
 lib/python${MODPY_VERSION}/site-packages/sshuttle/${MODPY_PYCACHE}ssyslog.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sshuttle/${MODPY_PYCACHE}sudoers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sshuttle/${MODPY_PYCACHE}sudoers.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/sshuttle/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/sshuttle/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sshuttle/assembler.py
 lib/python${MODPY_VERSION}/site-packages/sshuttle/client.py
 lib/python${MODPY_VERSION}/site-packages/sshuttle/cmdline.py
@@ -84,4 +83,3 @@ lib/python${MODPY_VERSION}/site-packages/sshuttle/ssh.py
 lib/python${MODPY_VERSION}/site-packages/sshuttle/ssnet.py
 lib/python${MODPY_VERSION}/site-packages/sshuttle/ssyslog.py
 lib/python${MODPY_VERSION}/site-packages/sshuttle/sudoers.py
-lib/python${MODPY_VERSION}/site-packages/sshuttle/version.py
