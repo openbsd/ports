@@ -6,8 +6,6 @@ include/libfswatch/c++/event.hpp
 include/libfswatch/c++/filter.hpp
 include/libfswatch/c++/kqueue_monitor.hpp
 include/libfswatch/c++/libfswatch_exception.hpp
-include/libfswatch/c++/libfswatch_map.hpp
-include/libfswatch/c++/libfswatch_set.hpp
 include/libfswatch/c++/monitor.hpp
 include/libfswatch/c++/monitor_factory.hpp
 include/libfswatch/c++/path_utils.hpp

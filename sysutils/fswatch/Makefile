@@ -1,9 +1,9 @@
 COMMENT =	file change monitor
 
 DISTNAME =	fswatch-${V}
-V =		1.17.1
+V =		1.18.3
 
-SHARED_LIBS +=	fswatch	0.0 # 13.0
+SHARED_LIBS +=	fswatch	0.1 # 13.0
 
 CATEGORIES =	sysutils
 
