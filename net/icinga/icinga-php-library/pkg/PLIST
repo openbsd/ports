@@ -177,12 +177,10 @@ icinga-php/ipl/vendor/doctrine/collections/lib/Doctrine/Common/Collections/Selec
 icinga-php/ipl/vendor/doctrine/deprecations/
 icinga-php/ipl/vendor/doctrine/deprecations/LICENSE
 icinga-php/ipl/vendor/doctrine/deprecations/composer.json
-icinga-php/ipl/vendor/doctrine/deprecations/lib/
-icinga-php/ipl/vendor/doctrine/deprecations/lib/Doctrine/
-icinga-php/ipl/vendor/doctrine/deprecations/lib/Doctrine/Deprecations/
-icinga-php/ipl/vendor/doctrine/deprecations/lib/Doctrine/Deprecations/Deprecation.php
-icinga-php/ipl/vendor/doctrine/deprecations/lib/Doctrine/Deprecations/PHPUnit/
-icinga-php/ipl/vendor/doctrine/deprecations/lib/Doctrine/Deprecations/PHPUnit/VerifyDeprecations.php
+icinga-php/ipl/vendor/doctrine/deprecations/src/
+icinga-php/ipl/vendor/doctrine/deprecations/src/Deprecation.php
+icinga-php/ipl/vendor/doctrine/deprecations/src/PHPUnit/
+icinga-php/ipl/vendor/doctrine/deprecations/src/PHPUnit/VerifyDeprecations.php
 icinga-php/ipl/vendor/dragonmantank/
 icinga-php/ipl/vendor/dragonmantank/cron-expression/
 icinga-php/ipl/vendor/dragonmantank/cron-expression/LICENSE
