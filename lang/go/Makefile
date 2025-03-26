@@ -7,7 +7,7 @@ COMMENT =		Go programming language
 
 # increment _MODGO_SYSTEM_VERSION in go.port.mk after updating to a new
 # version, to trigger updates of go-compiled ports
-VERSION =		1.24.0
+VERSION =		1.24.1
 DISTNAME =		go${VERSION}.src
 PKGNAME =		go-${VERSION}
 PKGSPEC =		${FULLPKGNAME:S/go-/go-=/}
@@ -128,7 +128,7 @@ do-test:
 do-install:
 	${INSTALL_PROGRAM_DIR} ${GOROOT}/bin
 
-	find ${WRKDIST} -maxdepth 1 -type f \
+	find ${WRKDIST} -maxdepth 1 -type f -not -name "*.orig.port" \
 		-exec ${INSTALL_DATA} -p {} ${GOROOT} \;
 
 	cd ${WRKDIST} && \
