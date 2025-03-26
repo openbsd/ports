@@ -1,5 +1,5 @@
 COMMENT =		Timeweb Cloud CLI
-V =			2.9.2
+V =			2.10.1
 DISTNAME =		twc_cli-${V}
 PKGNAME =		${DISTNAME:S/_cli//}
 CATEGORIES =		sysutils net
