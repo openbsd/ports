@@ -6,7 +6,7 @@ GH_COMMIT =	dfe44eb2c5b6fc3c48a39ed826fe0e4459cdf6ef
 
 V =		1.1pre20210430
 DISTNAME =	endlessh-$V
-REVISION =	1
+REVISION =	2
 CATEGORIES =	net security
 
 MAINTAINER =	Michael <michi+openbsd@dataswamp.org>

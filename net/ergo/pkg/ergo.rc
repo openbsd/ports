@@ -1,6 +1,6 @@
 #!/bin/ksh
 
-daemon="${LOCALBASE}/sbin/ergo"
+daemon="${TRUEPREFIX}/sbin/ergo"
 daemon_user="_ergo"
 daemon_flags="run --conf ${SYSCONFDIR}/ergo.yaml"
 daemon_execdir="${LOCALSTATEDIR}/ergo"

@@ -1,6 +1,6 @@
 #!/bin/ksh
 
-daemon="${LOCALBASE}/bin/stayrtr"
+daemon="${TRUEPREFIX}/bin/stayrtr"
 daemon_user="_stayrtr"
 daemon_logger="daemon.info"
 

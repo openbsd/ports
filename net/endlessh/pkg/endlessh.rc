@@ -1,6 +1,6 @@
 #!/bin/ksh
 
-daemon="${LOCALBASE}/bin/endlessh"
+daemon="${TRUEPREFIX}/bin/endlessh"
 daemon_flags="-s -4"
 daemon_user=_endlessh
 rc_bg=YES
