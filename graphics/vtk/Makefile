@@ -1,3 +1,5 @@
+DPB_PROPERTIES =	parallel
+
 COMMENT =		visualization toolkit
 
 V =			9.4.1
