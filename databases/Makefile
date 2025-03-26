@@ -34,6 +34,9 @@
      SUBDIR += luadbi,lua54
      SUBDIR += lualdap
      SUBDIR += luasqlite3
+     SUBDIR += luasqlite3,lua52
+     SUBDIR += luasqlite3,lua53
+     SUBDIR += luasqlite3,lua54
      SUBDIR += mariadb
      SUBDIR += mdbtools
      SUBDIR += mongo-tools
