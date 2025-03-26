@@ -19,8 +19,8 @@ MODPY_PI=	Yes
 MODPY_ADJ_FILES=examples/*.py
 
 post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/py-paho-mqtt
+	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/${MODPY_PY_PREFIX}paho-mqtt
 	${INSTALL_DATA} ${WRKSRC}/examples/*.py \
-		${PREFIX}/share/examples/py-paho-mqtt
+		${PREFIX}/share/examples/${MODPY_PY_PREFIX}paho-mqtt
 
 .include <bsd.port.mk>
