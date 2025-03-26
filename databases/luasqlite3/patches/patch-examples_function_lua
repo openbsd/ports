@@ -1,8 +1,0 @@
---- examples/function.lua.orig	Fri Jul 28 21:58:56 2006
-+++ examples/function.lua	Fri Jul 28 21:59:32 2006
-@@ -1,5 +1,4 @@
- 
--require "path"
- require "sqlite3"
- 
- 

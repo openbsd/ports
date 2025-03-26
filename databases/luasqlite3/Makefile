@@ -1,42 +1,39 @@
 COMMENT=	binding of sqlite3 for lua
-PKGNAME=	luasqlite3-0.4.1
-REVISION=	7
-DISTNAME=	lua-sqlite3-0.4.1
+V=		0.9.6
+PKGNAME=	luasqlite3-${V}
+DISTNAME=	lsqlite3-v${V:S/\.//g}
+EXTRACT_SUFX=	.zip
 CATEGORIES=	databases
-SITES=		${HOMEPAGE}
+SITES=		http://lua.sqlite.org/index.cgi/zip/
 
-HOMEPAGE=	http://www.nessie.de/mroth/lua-sqlite3/
+HOMEPAGE=	http://lua.sqlite.org/
 
 # MIT
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += sqlite3>=8
+WANTLIB += sqlite3
 
 MODULES=	lang/lua
+FLAVORS=	lua52 lua53 lua54
+FLAVOR?=
+
+MODLUA_BUILD_DEPENDS= devel/luarocks
 LIB_DEPENDS=	databases/sqlite3
 
 USE_GMAKE=	Yes
-CONFIGURE_STYLE=gnu
-CONFIGURE_ARGS+=--with-lua-dir=${PREFIX} \
-		--with-lua=${MODLUA_BIN} \
-		--with-lua-includedir=${MODLUA_INCL_DIR} \
-		--with-sqlite3-dir=${LOCALBASE}
-CFLAGS+=	-fPIC -DPIC
 
-TEST_DEPENDS=${BASE_PKGPATH}
-TEST_TARGET=	check
+PORTHOME=	${WRKDIR}
 
-pre-install:
-	rm ${WRKSRC}/examples/path.lua
+# tests need lunitx
+NO_TEST=	Yes
+
+pre-configure:
+	ln -s ${LOCALBASE}/bin/luarocks-${MODLUA_VERSION} ${WRKDIR}/bin/luarocks
 
 do-install:
-	${INSTALL_DATA_DIR} ${MODLUA_DATADIR} ${MODLUA_LIBDIR}/sqlite3
-	${INSTALL_DATA_DIR} ${MODLUA_DOCDIR} ${MODLUA_EXAMPLEDIR}
-	${INSTALL_DATA_DIR} ${MODLUA_EXAMPLEDIR}
-	${INSTALL_DATA} ${WRKSRC}/sqlite3.lua ${MODLUA_DATADIR}
-	${INSTALL_DATA} ${WRKSRC}/libluasqlite3.so \
-		${MODLUA_LIBDIR}/sqlite3/core.so
-	${INSTALL_DATA} ${WRKSRC}/documentation.html ${MODLUA_DOCDIR}
+	${INSTALL_DATA_DIR} ${MODLUA_LIBDIR} ${MODLUA_EXAMPLEDIR}
+	${INSTALL_DATA} ${WRKDIR}/.luarocks/lib/lua/${MODLUA_VERSION}/lsqlite3.so \
+		${MODLUA_LIBDIR}/lsqlite3.so
 	${INSTALL_DATA} ${WRKSRC}/examples/*.lua ${MODLUA_EXAMPLEDIR}
 
 .include <bsd.port.mk>

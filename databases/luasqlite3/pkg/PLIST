@@ -1,13 +1,11 @@
-lib/lua/${MODLUA_VERSION}/sqlite3/
-lib/lua/${MODLUA_VERSION}/sqlite3/core.so
-share/doc/${FULLPKGNAME}/
-share/doc/${FULLPKGNAME}/documentation.html
+@so lib/lua/${MODLUA_VERSION}/lsqlite3.so
 share/examples/${FULLPKGNAME}/
 share/examples/${FULLPKGNAME}/aggregate.lua
 share/examples/${FULLPKGNAME}/function.lua
+share/examples/${FULLPKGNAME}/hooks_advanced.lua
 share/examples/${FULLPKGNAME}/order.lua
 share/examples/${FULLPKGNAME}/simple.lua
 share/examples/${FULLPKGNAME}/smart.lua
 share/examples/${FULLPKGNAME}/statement.lua
 share/examples/${FULLPKGNAME}/tracing.lua
-share/lua/${MODLUA_VERSION}/sqlite3.lua
+share/examples/${FULLPKGNAME}/update_hook.lua

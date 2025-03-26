@@ -1,8 +1,0 @@
---- examples/aggregate.lua.orig	Fri Jul 28 21:58:46 2006
-+++ examples/aggregate.lua	Fri Jul 28 21:59:30 2006
-@@ -1,5 +1,4 @@
- 
--require "path"
- require "sqlite3"
- 
- 

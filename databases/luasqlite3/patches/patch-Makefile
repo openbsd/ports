@@ -1,0 +1,12 @@
+Index: Makefile
+--- Makefile.orig
++++ Makefile
+@@ -9,7 +9,7 @@ ROCKSPEC= $(shell find . -name $(LIBNAME)-*-*.rockspec
+ all: install
+ 
+ install:
+-	luarocks make $(ROCKSPEC)
++	luarocks --local make $(ROCKSPEC)
+ 
+ test: 
+ 	$(LUAEXE) test/test.lua
