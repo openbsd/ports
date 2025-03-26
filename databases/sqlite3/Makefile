@@ -2,7 +2,7 @@ COMMENT=	embedded SQL implementation
 
 DISTNAME=	sqlite-autoconf-3490100
 PKGNAME=	sqlite3-3.49.1
-REVISION=	0
+REVISION=	1
 
 # XXX needs bumps every time :-/
 SHARED_LIBS +=  sqlite3                   37.32 # 8.6
@@ -26,6 +26,8 @@ SITES=		${HOMEPAGE}2025/
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 MODULES=	lang/tcl
+MODTCL_VERSION=	8.6
+
 BUILD_DEPENDS=	converters/sqlite2mdoc \
 		${MODTCL_BUILD_DEPENDS}
 
@@ -40,7 +42,7 @@ CONFIGURE_ARGS=	--disable-static-shell \
 
 CONFIGURE_ENV=	CCACHE=None \
 		CFLAGS='${CFLAGS}' \
-		autosetup_tclsh={MODTCL_BIN}
+		autosetup_tclsh=${MODTCL_BIN}
 
 CFLAGS+=	-DSQLITE_ENABLE_UNLOCK_NOTIFY \
 		-DSQLITE_ENABLE_DBSTAT_VTAB \
