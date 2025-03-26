@@ -16,7 +16,9 @@ share/examples/mpv/mplayer-input.conf
 share/examples/mpv/mpv.conf
 share/examples/mpv/mpv_identify.sh
 share/examples/mpv/restore-old-bindings.conf
+share/examples/mpv/restore-osc-bindings.conf
 share/examples/mpv/umpv
+share/fish/vendor_completions.d/mpv.fish
 share/icons/hicolor/128x128/apps/mpv.png
 share/icons/hicolor/16x16/apps/mpv.png
 share/icons/hicolor/32x32/apps/mpv.png

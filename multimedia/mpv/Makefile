@@ -2,9 +2,8 @@ COMMENT =		movie player based on MPlayer/mplayer2
 
 GH_ACCOUNT =		mpv-player
 GH_PROJECT =		mpv
-GH_TAGNAME =		v0.39.0
+GH_TAGNAME =		v0.40.0
 USE_NOBTCFI =		Yes
-REVISION =		0
 
 SHARED_LIBS +=		mpv		2.0
 
@@ -15,12 +14,12 @@ HOMEPAGE =		https://mpv.io/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${MODLUA_WANTLIB} EGL SDL2 X11 Xext Xpresent Xrandr
+WANTLIB += ${MODLUA_WANTLIB} EGL SDL2 X11 X11-xcb Xext Xpresent Xrandr
 WANTLIB += Xss Xv archive ass avcodec avdevice avfilter avformat
-WANTLIB += avutil bluray c cdio cdio_cdda cdio_paranoia drm dvdnav
-WANTLIB += iconv jpeg lcms2 m placebo pthread sndio swresample
-WANTLIB += swscale va va-drm va-x11 vulkan z zimg
-WANTLIB += X11-xcb xcb xcb-shm
+WANTLIB += avutil bluray c cdio cdio_cdda cdio_paranoia display-info
+WANTLIB += drm dvdnav iconv jpeg lcms2 m placebo pthread sndio
+WANTLIB += swresample swscale va va-drm va-x11 vulkan xcb xcb-shm z
+WANTLIB += zimg
 
 MODULES =		devel/meson \
 			lang/lua \
@@ -39,7 +38,7 @@ LIB_DEPENDS =		archivers/libarchive \
 			audio/libcdio-paranoia \
 			converters/libiconv \
 			devel/sdl2 \
-			graphics/ffmpeg>=4.4.4p6 \
+			graphics/ffmpeg \
 			graphics/jpeg \
 			graphics/lcms2 \
 			graphics/libplacebo \
@@ -47,7 +46,8 @@ LIB_DEPENDS =		archivers/libarchive \
 			graphics/zimg \
 			multimedia/libass \
 			multimedia/libbluray \
-			multimedia/libdvdnav
+			multimedia/libdvdnav \
+			sysutils/libdisplay-info
 
 MODPY_RUNDEP =		No
 RUN_DEPENDS =		devel/desktop-file-utils \
@@ -60,7 +60,6 @@ CONFIGURE_ARGS =	-Dalsa=disabled \
 			-Daudiounit=disabled \
 			-Davfoundation=disabled \
 			-Dcaca=disabled \
-			-Dcdda=enabled \
 			-Dcocoa=disabled \
 			-Dcoreaudio=disabled \
 			-Dcuda-hwaccel=disabled \
@@ -70,26 +69,21 @@ CONFIGURE_ARGS =	-Dalsa=disabled \
 			-Dd3d9-hwaccel=disabled \
 			-Ddirect3d=disabled \
 			-Ddmabuf-wayland=disabled \
-			-Ddrm=enabled \
 			-Ddvbin=disabled \
-			-Ddvdnav=enabled \
 			-Degl-android=disabled \
 			-Degl-angle-lib=disabled \
 			-Degl-angle-win32=disabled \
 			-Degl-angle=disabled  \
 			-Degl-drm=disabled \
 			-Degl-wayland=disabled \
-			-Degl=enabled \
 			-Dgbm=disabled \
 			-Dgl-cocoa=disabled \
 			-Dgl-dxinterop-d3d9=disabled \
 			-Dgl-dxinterop=disabled \
 			-Dgl-win32=disabled \
-			-Dgl-x11=disabled \
 			-Dios-gl=disabled \
 			-Djack=disabled \
 			-Djavascript=disabled \
-			-Dlibmpv=true \
 			-Dlua=lua${MODLUA_DEP_VERSION} \
 			-Dmacos-10-15-4-features=disabled \
 			-Dmacos-11-features=disabled \
@@ -108,28 +102,23 @@ CONFIGURE_ARGS =	-Dalsa=disabled \
 			-Dsdl2=enabled \
 			-Dshaderc=disabled \
 			-Dsixel=disabled \
-			-Dsndio=enabled \
 			-Dspirv-cross=disabled \
 			-Dswift-build=disabled \
 			-Dswift-flags=disabled \
 			-Duchardet=disabled \
-			-Dvaapi-drm=enabled \
 			-Dvaapi-wayland=disabled \
 			-Dvaapi-win32=disabled \
-			-Dvaapi-x11=enabled \
-			-Dvaapi=enabled \
 			-Dvapoursynth=disabled \
 			-Dvdpau-gl-x11=disabled \
 			-Dvdpau=disabled \
 			-Dvideotoolbox-gl=disabled \
 			-Dvideotoolbox-pl=disabled \
-			-Dvulkan=enabled \
 			-Dwasapi=disabled \
 			-Dwayland=disabled \
 			-Dwin32-threads=disabled
 
-CFLAGS +=		-I${LOCALBASE}/include -I${X11BASE}/include
-LDFLAGS +=		-L${LOCALBASE}/lib -L${X11BASE}/lib
+CFLAGS +=		-I${LOCALBASE}/include
+LDFLAGS +=		-L${LOCALBASE}/lib
 
 MODMESON_CONFIGURE_ENV +=	CFLAGS="${CFLAGS}" \
 				LDFLAGS="${LDFLAGS}"

@@ -5,7 +5,7 @@ Support for xcb-shm
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -348,7 +348,19 @@ if features['libdl']
+@@ -358,7 +358,19 @@ if features['libdl']
  endif
  
  # C11 atomics are mandatory but linking to the library is not always required.
@@ -26,7 +26,7 @@ Index: meson.build
  
  cplugins = get_option('cplugins').require(
      win32 or (features['libdl'] and cc.has_link_argument('-rdynamic')),
-@@ -1065,7 +1077,10 @@ x11 = {
+@@ -1070,7 +1082,10 @@ x11 = {
               dependency('xscrnsaver', version: '>= 1.0.0', required: x11_opt),
               dependency('xext', version: '>= 1.0.0', required: x11_opt),
               dependency('xpresent', version: '>= 1.0.0', required: x11_opt),
