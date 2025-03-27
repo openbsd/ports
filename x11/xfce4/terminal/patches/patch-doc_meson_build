@@ -1,11 +1,15 @@
 https://gitlab.xfce.org/apps/xfce4-terminal/-/issues/358
+https://gitlab.xfce.org/apps/xfce4-terminal/-/issues/357
 
 Index: doc/meson.build
 --- doc/meson.build.orig
 +++ doc/meson.build
-@@ -4,5 +4,5 @@ custom_target(
+@@ -2,7 +2,7 @@ custom_target(
+   'xfce4-terminal.1',
+   input: 'xfce4-terminal.xml',
    output: 'xfce4-terminal.1',
-   command: [xsltproc, '--nonet', '--output', '@OUTPUT@', 'http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl', '@INPUT@'],
+-  command: [xsltproc, '--nonet', '--output', '@OUTPUT@', 'http://docbook.sourceforge.net/release/xsl/current/manpages/docbook.xsl', '@INPUT@'],
++  command: [xsltproc, '--nonet', '--output', '@OUTPUT@', '/usr/local/share/xsl/docbook/manpages/docbook.xsl', '@INPUT@'],
    install: true,
 -  install_dir: get_option('prefix') / get_option('datadir') / 'man' / 'man1',
 +  install_dir: get_option('prefix') / get_option('mandir') / 'man1',
