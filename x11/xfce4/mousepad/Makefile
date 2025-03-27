@@ -2,7 +2,6 @@ COMMENT=	Xfce4 simple text editor
 
 XFCE_VERSION=	0.6.4
 XFCE_GOODIE=	mousepad
-EXTRACT_SUFX=	.tar.xz
 
 SHARED_LIBS +=	mousepad	1.0 # 0.0
 
@@ -10,7 +9,6 @@ SHARED_LIBS +=	mousepad	1.0 # 0.0
 PERMIT_PACKAGE=	Yes
 
 MODULES=	x11/xfce4 devel/meson
-CONFIGURE_STYLE=	meson
 MODXFCE_DESKTOP_FILE=	Yes
 MODXFCE_ICON_CACHE=	Yes
 
