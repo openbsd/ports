@@ -1,4 +1,7 @@
 firmware/qwx-license
+firmware/qwx-qca2066-hw2.1-amss
+firmware/qwx-qca2066-hw2.1-board-2
+firmware/qwx-qca2066-hw2.1-m3
 firmware/qwx-wcn6855-hw2.0-amss
 firmware/qwx-wcn6855-hw2.0-board-2
 firmware/qwx-wcn6855-hw2.0-m3
