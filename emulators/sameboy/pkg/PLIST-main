@@ -1,4 +1,5 @@
 @bin bin/sameboy
+@bin bin/sameboy-thumbnailer
 share/applications/sameboy.desktop
 share/icons/hicolor/128x128/apps/sameboy.png
 share/icons/hicolor/128x128/mimetypes/x-gameboy-color-rom.png
@@ -18,15 +19,23 @@ share/icons/hicolor/512x512/mimetypes/x-gameboy-rom.png
 share/icons/hicolor/64x64/apps/sameboy.png
 share/icons/hicolor/64x64/mimetypes/x-gameboy-color-rom.png
 share/icons/hicolor/64x64/mimetypes/x-gameboy-rom.png
-share/mime/packages/sameboy.xml
+share/mime/sameboy.xml
 share/sameboy/
+share/sameboy/BootROMs/
 share/sameboy/LICENSE
 share/sameboy/Palettes/
+share/sameboy/Palettes/Canyon.sbp
 share/sameboy/Palettes/Desert.sbp
 share/sameboy/Palettes/Evening.sbp
 share/sameboy/Palettes/Fog.sbp
+share/sameboy/Palettes/Green Slate.sbp
+share/sameboy/Palettes/Green Tea.sbp
+share/sameboy/Palettes/Lavender.sbp
 share/sameboy/Palettes/Magic Eggplant.sbp
+share/sameboy/Palettes/Mystic Blue.sbp
+share/sameboy/Palettes/Pink Pop.sbp
 share/sameboy/Palettes/Radioactive Pea.sbp
+share/sameboy/Palettes/Rose.sbp
 share/sameboy/Palettes/Seaweed.sbp
 share/sameboy/Palettes/Twilight.sbp
 share/sameboy/Shaders/
@@ -55,6 +64,7 @@ share/sameboy/mgb_boot.bin
 share/sameboy/registers.sym
 share/sameboy/sgb2_boot.bin
 share/sameboy/sgb_boot.bin
+share/thumbnailers/sameboy.thumbnailer
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-mime-database

@@ -4,8 +4,7 @@ COMMENT-libretro =	accurate Nintendo Game Boy core for retroarch
 PKGNAME-main =		sameboy-$V
 PKGNAME-libretro =	libretro-sameboy-$V
 
-V =		0.16.7
-REVISION =	1
+V =		1.0
 
 GH_ACCOUNT =	LIJI32
 GH_PROJECT =	SameBoy
@@ -27,6 +26,7 @@ MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB-main += GL SDL2 c m openal pthread
+WANTLIB-main += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 intl
 WANTLIB-libretro += m
 
 # -std=gnu11
@@ -47,7 +47,8 @@ RUN_DEPENDS =		devel/desktop-file-utils \
 			x11/gtk+4,-guic
 
 MAKE_FLAGS =		CC="${CC}" \
-			DATA_DIR=${PREFIX}/share/sameboy/
+			DATA_DIR=${PREFIX}/share/sameboy/ \
+			STRIP=true
 FAKE_FLAGS =		PREFIX="${TRUEPREFIX}"
 
 USE_GMAKE =		Yes

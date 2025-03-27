@@ -1,21 +1,33 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -170,7 +170,7 @@ OPEN_DIALOG = OpenDialog/cocoa.m
+@@ -185,7 +185,7 @@ OPEN_DIALOG = OpenDialog/cocoa.m
  endif
  
  # These must come before the -Wno- flags
 -WARNINGS += -Werror -Wall -Wno-unknown-warning -Wno-unknown-warning-option -Wno-missing-braces
 +WARNINGS += -Wall -Wno-unknown-warning -Wno-unknown-warning-option -Wno-missing-braces
- WARNINGS += -Wno-nonnull -Wno-unused-result -Wno-multichar -Wno-int-in-bool-context -Wno-format-truncation
+ WARNINGS += -Wno-nonnull -Wno-unused-result -Wno-multichar -Wno-int-in-bool-context -Wno-format-truncation -Wno-nullability-completeness
  
  # Only add this flag if the compiler supports it
-@@ -237,7 +237,7 @@ LDFLAGS += -lxaudio2_9redist
- sdl: $(BIN)/SDL/xaudio2_9redist.dll
+@@ -285,9 +285,11 @@ else
+ LDFLAGS += -lc -lm
+ # libdl is not available as a standalone library in Haiku
+ ifneq ($(PLATFORM),Haiku)
++ifneq ($(PLATFORM),OpenBSD)
+ LDFLAGS += -ldl
  endif
- else
--LDFLAGS += -lc -lm -ldl
-+LDFLAGS += -lc -lm
  endif
++endif
  
  ifeq ($(MAKECMDGOALS),_ios)
+ OBJ := build/obj-ios
+@@ -758,7 +760,7 @@ $(BIN)/BootROMs/%.bin: BootROMs/%.asm $(OBJ)/BootROMs/
+ 
+ # Libretro Core (uses its own build system)
+ libretro:
+-	CC=$(CC) CFLAGS="$(WARNINGS)" $(MAKE) -C libretro BOOTROMS_DIR=$(abspath $(BOOTROMS_DIR)) BIN=$(abspath $(BIN))
++	CC=$(CC) CFLAGS="$(WARNINGS) $(CFLAGS)" $(MAKE) -C libretro BOOTROMS_DIR=$(abspath $(BOOTROMS_DIR)) BIN=$(abspath $(BIN))
+ 
+ # Install for Linux, and other FreeDesktop platforms.
+ ifneq ($(FREEDESKTOP),)
