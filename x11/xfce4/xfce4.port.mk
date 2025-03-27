@@ -14,6 +14,12 @@ LIBTOOL_FLAGS?=	--tag=disable-static
 MODULES+=	textproc/intltool
 .endif
 
+# defaults for releases built with meson since 4.21
+.if ${MODULES:M*devel/meson*}
+EXTRACT_SUFX=	.tar.xz
+CONFIGURE_STYLE=meson
+.endif
+
 # if version is not defined, it's the DE version
 .if !defined(XFCE_VERSION)
 XFCE_VERSION=	${XFCE_DESKTOP_VERSION}
