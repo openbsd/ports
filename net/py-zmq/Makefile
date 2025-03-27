@@ -1,10 +1,9 @@
 COMMENT =		Python bindings for ZeroMQ
 
 # 26+ requires scikit-build-core
-MODPY_DISTV =	25.1.1
+MODPY_DISTV =		25.1.2
 DISTNAME =		pyzmq-${MODPY_DISTV}
 PKGNAME =		${DISTNAME:S/py/py-/}
-REVISION =		1
 
 CATEGORIES =		net devel
 
@@ -28,9 +27,7 @@ LIB_DEPENDS =		${MODPY_LIB_DEPENDS} \
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools_scm
 MAKE_ENV =		LC_CTYPE=en_US.UTF-8
-# verbose because we've seen cores in some cases and they're hard to
-# identify in a large test_XXX file
-MODPY_PYTEST_ARGS =	-v build/lib.*
+MODPY_PYTEST_ARGS =	build/lib.*
 
 # ulimit -n 1024
 TEST_DEPENDS =		math/py-numpy \

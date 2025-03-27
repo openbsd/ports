@@ -1,5 +1,4 @@
 @pkgpath net/py-zmq,python3
-@conflict py-zmq-*
 lib/python${MODPY_VERSION}/site-packages/pyzmq-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/pyzmq-${MODPY_DISTV}.dist-info/AUTHORS.md
 lib/python${MODPY_VERSION}/site-packages/pyzmq-${MODPY_DISTV}.dist-info/LICENSE.BSD
