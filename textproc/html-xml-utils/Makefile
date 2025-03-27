@@ -1,6 +1,6 @@
 COMMENT =		simple utilities for manipulating HTML and XML files
 
-DISTNAME =		html-xml-utils-8.6
+DISTNAME =		html-xml-utils-8.7
 
 CATEGORIES =		textproc
 
@@ -11,7 +11,7 @@ MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 # W3C license
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += c crypto curl iconv idn nghttp2 ssl z
+WANTLIB += c curl iconv idn
 
 SITES =			https://www.w3.org/Tools/HTML-XML-utils/
 
