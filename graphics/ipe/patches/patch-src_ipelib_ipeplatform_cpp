@@ -11,7 +11,7 @@ Index: src/ipelib/ipeplatform.cpp
  
  #ifdef IPE_GSL
  #include <gsl/gsl_errno.h>
-@@ -671,6 +674,8 @@ static double ipestrtod(const char *s, char ** fin)
+@@ -667,6 +670,8 @@ static double ipestrtod(const char *s, char ** fin)
      return p_strtod_l(s, fin, ipeLocale);
    else
      return strtod(s, fin);

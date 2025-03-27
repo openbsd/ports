@@ -1,7 +1,7 @@
 Index: src/common.mak
 --- src/common.mak.orig
 +++ src/common.mak
-@@ -217,11 +217,10 @@ else	
+@@ -220,11 +220,10 @@ else	
    CXXFLAGS	 += -g -O2
    DLL_LDFLAGS	 += -shared 
    PLUGIN_LDFLAGS += -shared

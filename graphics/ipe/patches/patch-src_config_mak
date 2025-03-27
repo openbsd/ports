@@ -1,12 +1,12 @@
 Index: src/config.mak
 --- src/config.mak.orig
 +++ src/config.mak
-@@ -15,7 +15,7 @@
+@@ -17,7 +17,7 @@ PKG_CONFIG ?= pkg-config
  #
- # The name of the Lua package (it could be "lua", "lua53", or "lua5.3")
+ # The name of the Lua package (it could be "lua", "lua54", or "lua5.4")
  #
--LUA_PACKAGE   ?= lua5.3
+-LUA_PACKAGE   ?= lua5.4
 +LUA_PACKAGE   ?= lua${MODLUA_DEP_VERSION}
  #
- ZLIB_CFLAGS   ?=
- ZLIB_LIBS     ?= -lz
+ # Add spell checking? (you'll need to set SPELL_CFLAGS and SPELL_LIBS below)
+ #

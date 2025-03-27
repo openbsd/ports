@@ -1,11 +1,11 @@
 Index: src/ipeui/Makefile
 --- src/ipeui/Makefile.orig
 +++ src/ipeui/Makefile
-@@ -11,6 +11,7 @@ SONAME = $(call soname,ipeui)
- INSTALL_SYMLINKS = $(call install_symlinks,ipeui)
- 
- CXXFLAGS += $(UI_CFLAGS) $(LUA_CFLAGS) $(DLL_CFLAGS)
+@@ -15,6 +15,7 @@ ifdef IPE_SPELLCHECK
+ CPPFLAGS += -DIPE_SPELLCHECK
+ endif
+ CXXFLAGS += $(UI_CFLAGS) $(LUA_CFLAGS) $(DLL_CFLAGS) $(SPELL_CFLAGS)
 +CPPFLAGS += $(CXXFLAGS)
- LIBS += $(UI_LIBS) $(LUA_LIBS)
+ LIBS += $(UI_LIBS) $(LUA_LIBS) $(SPELL_LIBS)
  
  all: $(TARGET)
