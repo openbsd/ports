@@ -81,7 +81,7 @@ SHA256 (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = WJ9tqExkYgR0fRJwoqVmHqZu0cztJ
 SHA256 (cargo/wit-bindgen-rt-0.33.0.tar.gz) = Mmjz2GZFi3h/OQz2H0u7VjuSLQkTWflgiEKZnq7jlDw=
 SHA256 (cargo/zerocopy-0.8.17.tar.gz) = qpFAfazOOmjFbeA6vidgFZWCuEbGpKzS9FZhgIfxJxM=
 SHA256 (cargo/zerocopy-derive-0.8.17.tar.gz) = BnGKFoNlytPV/wuxM6rTRpWaIHS9SoXBISVaETBKhiY=
-SHA256 (synapse-1.127.0.tar.gz) = 3JpG4HMPQpJSYYInasUsrp/ROoZpGlER9iYBSanODCY=
+SHA256 (synapse-1.127.1.tar.gz) = +EKnc/Cy5A8Q0+QLOcSH+XQibsHpDNJSTRDR/a0KZSc=
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
 SIZE (cargo/anyhow-1.0.97.tar.gz) = 52221
 SIZE (cargo/arc-swap-1.7.1.tar.gz) = 68512
@@ -165,4 +165,4 @@ SIZE (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = 832564
 SIZE (cargo/wit-bindgen-rt-0.33.0.tar.gz) = 3357
 SIZE (cargo/zerocopy-0.8.17.tar.gz) = 230971
 SIZE (cargo/zerocopy-derive-0.8.17.tar.gz) = 81373
-SIZE (synapse-1.127.0.tar.gz) = 8885163
+SIZE (synapse-1.127.1.tar.gz) = 8885485
