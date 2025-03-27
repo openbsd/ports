@@ -101,7 +101,10 @@ lib/bear/wrapper.d/cpp90
 lib/bear/wrapper.d/ctangle
 lib/bear/wrapper.d/cweave
 lib/bear/wrapper.d/f77
+lib/bear/wrapper.d/flang
+lib/bear/wrapper.d/flang-new
 lib/bear/wrapper.d/flex
+lib/bear/wrapper.d/ftnfe
 lib/bear/wrapper.d/g++
 lib/bear/wrapper.d/g++10
 lib/bear/wrapper.d/g++11
@@ -147,6 +150,8 @@ lib/bear/wrapper.d/gcc9
 lib/bear/wrapper.d/gfortran
 lib/bear/wrapper.d/icc
 lib/bear/wrapper.d/icpc
+lib/bear/wrapper.d/ifort
+lib/bear/wrapper.d/ifx
 lib/bear/wrapper.d/ld
 lib/bear/wrapper.d/lex
 lib/bear/wrapper.d/lint
