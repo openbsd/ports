@@ -1,7 +1,7 @@
 COMMENT-main =		fast, lightweight source control management
 COMMENT-x11 =		graphical tooling for mercurial
 
-MODPY_DISTV =		6.9.4
+MODPY_DISTV =		7.0
 DISTNAME =		mercurial-${MODPY_DISTV}
 CATEGORIES =		devel
 
@@ -13,7 +13,7 @@ PERMIT_PACKAGE =	Yes
 SITES =			https://www.mercurial-scm.org/release/
 
 MODULES =		lang/python x11/tk
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		setuptools_scm
 
 USE_GMAKE =		Yes
 
