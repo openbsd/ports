@@ -1,0 +1,21 @@
+Anubis acts as middleware between a reverse proxy and backend web server.
+It assesses whether a connection is likely to be from a scraper bot and,
+if this seems that there's a chance of this, it issues a SHA-256 proof-
+of-work challenge before allowing the connection to proceed.
+
+As of 1.14.x, Anubis decides to present a challenge using this logic:
+
+    User-Agent contains "Mozilla"
+    Request path is not in /.well-known, /robots.txt, or /favicon.ico
+    Request path is not obviously an RSS feed (ends with .rss, .xml, or .atom)
+
+This should ensure that git clients, RSS readers, and other low-harm
+clients can get through without issue, but high-risk clients such as
+browsers and AI scraper bots impersonating browsers will get blocked.
+
+When a challenge is passed, a signed JSON Web Token (JWT) is provided
+as a cookie, allowing future requests to pass without triggering the
+challenge.
+
+Using Anubis will likely result in your website not being indexed by
+some search engines. This is considered a feature, not a bug.
