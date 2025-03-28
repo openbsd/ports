@@ -9,5 +9,5 @@ Index: config/jvm.options
 +-Djava.library.path=${TRUEPREFIX}/jruby/lib/jni/x86_64-OpenBSD
 +
  # set the I/O temp directory
- #-Djava.io.tmpdir=$HOME
+ #-Djava.io.tmpdir=${HOME}
  
