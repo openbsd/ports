@@ -10,6 +10,7 @@
 # XXX
 
 # If adding drivers, also sync the possible_drivers list in OpenBSD/FwUpdate.pm
+# and the driver list printed by src/usr.sbin/fw_update/patterns.c
 
      SUBDIR =
      SUBDIR += acx
