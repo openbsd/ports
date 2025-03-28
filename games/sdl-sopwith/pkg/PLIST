@@ -1,0 +1,12 @@
+@bin bin/sopwith
+@man man/man5/sopwith-mission.5
+@man man/man5/sopwith.cfg.5
+@man man/man6/sopwith.6
+share/applications/sopwith.desktop
+share/doc/sdl-sopwith/
+share/doc/sdl-sopwith/origdoc.txt
+share/icons/hicolor/128x128/apps/sopwith.png
+share/metainfo/
+share/metainfo/io.github.fragglet.sdl_sopwith.metainfo.xml
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database
