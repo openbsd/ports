@@ -291,6 +291,7 @@
      SUBDIR += scummvm
      SUBDIR += scummvm-tools
      SUBDIR += sdl-jstest
+     SUBDIR += sdl-sopwith
      SUBDIR += sdlpop
      SUBDIR += sdlroids
      SUBDIR += sdlzombies
