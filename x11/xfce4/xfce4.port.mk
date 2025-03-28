@@ -5,7 +5,6 @@ XFCE_DESKTOP_VERSION=	4.20.0
 CATEGORIES+=	x11/xfce4
 
 USE_GMAKE?=	Yes
-EXTRACT_SUFX?=	.tar.bz2
 
 # needed for all ports but *-themes
 .if !defined(XFCE_NO_SRC)
@@ -16,8 +15,10 @@ MODULES+=	textproc/intltool
 
 # defaults for releases built with meson since 4.21
 .if ${MODULES:M*devel/meson*}
-EXTRACT_SUFX=	.tar.xz
+EXTRACT_SUFX?=	.tar.xz
 CONFIGURE_STYLE=meson
+.else
+EXTRACT_SUFX?=	.tar.bz2
 .endif
 
 # if version is not defined, it's the DE version
