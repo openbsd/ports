@@ -1,6 +1,6 @@
 COMMENT =	backup and restoration manager for PostgreSQL
 
-MODPY_DISTV =	3.13.0
+MODPY_DISTV =	3.13.2
 GH_ACCOUNT =	EnterpriseDB
 GH_PROJECT =	barman
 GH_TAGNAME =	release/${MODPY_DISTV}
