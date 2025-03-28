@@ -24,6 +24,7 @@
      SUBDIR += intel
      SUBDIR += inteldrm
      SUBDIR += ipw
+     SUBDIR += ice
      SUBDIR += iwi
      SUBDIR += iwm
      SUBDIR += iwn
