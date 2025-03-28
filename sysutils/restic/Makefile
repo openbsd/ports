@@ -1,7 +1,7 @@
 COMMENT=	fast, efficient and secure backup program
 
 MODGO_MODNAME=	github.com/restic/restic
-MODGO_VERSION=	v0.17.3
+MODGO_VERSION=	v0.18.0
 
 DISTNAME=	restic-${MODGO_VERSION}
 
@@ -18,10 +18,6 @@ WANTLIB += c pthread
 
 MODULES=	lang/go
 TEST_DEPENDS=	lang/python/3
-
-# allow cleanup after test, which runs the go compiler without the correct
-# flags so -modcacherw (and -p=${MAKE_JOBS} are lost.
-#FIX_CLEANUP_PERMISSIONS= Yes
 
 do-test:
 	ln -fs ${LOCALBASE}/bin/python3 ${WRKDIR}/bin/python
