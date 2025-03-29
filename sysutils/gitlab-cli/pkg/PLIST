@@ -4,6 +4,7 @@
 @man man/man1/glab-alias-set.1
 @man man/man1/glab-alias.1
 @man man/man1/glab-api.1
+@man man/man1/glab-auth-dpop-gen.1
 @man man/man1/glab-auth-login.1
 @man man/man1/glab-auth-status.1
 @man man/man1/glab-auth.1
@@ -35,6 +36,7 @@
 @man man/man1/glab-cluster-agent.1
 @man man/man1/glab-cluster.1
 @man man/man1/glab-completion.1
+@man man/man1/glab-config-edit.1
 @man man/man1/glab-config-get.1
 @man man/man1/glab-config-set.1
 @man man/man1/glab-config.1
@@ -103,6 +105,8 @@
 @man man/man1/glab-repo-fork.1
 @man man/man1/glab-repo-list.1
 @man man/man1/glab-repo-mirror.1
+@man man/man1/glab-repo-publish-catalog.1
+@man man/man1/glab-repo-publish.1
 @man man/man1/glab-repo-search.1
 @man man/man1/glab-repo-transfer.1
 @man man/man1/glab-repo-view.1
