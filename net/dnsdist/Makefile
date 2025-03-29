@@ -2,7 +2,7 @@ COMMENT=		highly DNS-, DoS- and abuse-aware loadbalancer
 
 DISTNAME=		dnsdist-1.9.8
 EXTRACT_SUFX=		.tar.bz2
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		net
 
@@ -75,9 +75,7 @@ CONFIGURE_ARGS+=	--with-libcrypto=${LOCALBASE}/eboringssl \
 CONFIGURE_ENV+=		LIBSSL_CFLAGS="-I${LOCALBASE}/eboringssl/include \
 				-DDISABLE_OCSP_STAPLING" \
 			LIBSSL_LIBS="${LOCALBASE}/eboringssl/lib/libssl.a \
-				${LOCALBASE}/eboringssl/lib/libcrypto.a" \
-			QUICHE_CFLAGS=" " \
-			QUICHE_LIBS='-lquiche'
+				${LOCALBASE}/eboringssl/lib/libcrypto.a"
 BUILD_DEPENDS+=		net/quiche \
 			security/boringssl/head
 .else

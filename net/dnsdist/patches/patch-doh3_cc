@@ -1,0 +1,15 @@
+Index: doh3.cc
+--- doh3.cc.orig
++++ doh3.cc
+@@ -751,7 +751,11 @@ static void processH3HeaderEvent(ClientState& clientSt
+   }
+ 
+   if (headers.at(":method") == "POST") {
++#if defined(HAVE_QUICHE_H3_EVENT_HEADERS_HAS_MORE_FRAMES)
++    if (!quiche_h3_event_headers_has_more_frames(event)) {
++#else
+     if (!quiche_h3_event_headers_has_body(event)) {
++#endif
+       handleImmediateError("Empty POST query");
+     }
+     return;
