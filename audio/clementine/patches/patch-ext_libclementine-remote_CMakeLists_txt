@@ -1,0 +1,13 @@
+abseil-cpp requires at least C++14
+
+Index: ext/libclementine-remote/CMakeLists.txt
+--- ext/libclementine-remote/CMakeLists.txt.orig
++++ ext/libclementine-remote/CMakeLists.txt
+@@ -1,6 +1,6 @@
+ include_directories(${PROTOBUF_INCLUDE_DIRS})
+ 
+-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=c++0x")
++set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=c++17")
+ 
+ set(MESSAGES
+   remotecontrolmessages.proto

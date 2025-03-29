@@ -1,0 +1,44 @@
+std::random_shuffle is removed since C++17, use std::shuffle
+
+Index: src/playlist/playlist.cpp
+--- src/playlist/playlist.cpp.orig
++++ src/playlist/playlist.cpp
+@@ -33,6 +33,7 @@
+ #include <functional>
+ #include <memory>
+ #include <unordered_map>
++#include <random>
+ 
+ #if (QT_VERSION >= QT_VERSION_CHECK(5, 10, 0))
+ #include <QRandomGenerator>
+@@ -2074,6 +2075,10 @@ void Playlist::ReshuffleIndices() {
+   // only shuffle items that haven't been played yet.
+   QList<int>::iterator begin = virtual_items_.begin();
+   QList<int>::iterator end = virtual_items_.end();
++
++  std::random_device rd;
++  std::mt19937 g(rd());
++
+   if (current_virtual_index_ != -1)
+     std::advance(begin, current_virtual_index_ + 1);
+ 
+@@ -2084,7 +2089,7 @@ void Playlist::ReshuffleIndices() {
+ 
+     case PlaylistSequence::Shuffle_All:
+     case PlaylistSequence::Shuffle_InsideAlbum:
+-      std::random_shuffle(begin, end);
++      std::shuffle(begin, end, g);
+       break;
+ 
+     case PlaylistSequence::Shuffle_Albums: {
+@@ -2101,8 +2106,8 @@ void Playlist::ReshuffleIndices() {
+ 
+       // Shuffle them
+       QStringList shuffled_album_keys = album_key_set.values();
+-      std::random_shuffle(shuffled_album_keys.begin(),
+-                          shuffled_album_keys.end());
++      std::shuffle(shuffled_album_keys.begin(),
++                   shuffled_album_keys.end(), g);
+ 
+       // If the user is currently playing a song, force its album to be first
+       // Or if the song was not playing but it was selected, force its album

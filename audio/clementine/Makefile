@@ -1,12 +1,10 @@
-BROKEN =	needs fixing for newer protobuf
 COMMENT =	music player
 
 GH_ACCOUNT =	clementine-player
 GH_PROJECT =	Clementine
-GH_TAGNAME =	1.4.0rc2
+GH_TAGNAME =	1.4.1
 EPOCH      =	0
 PKGNAME    =	clementine-${GH_TAGNAME}
-REVISION    =	3
 
 CATEGORIES =	audio x11
 
@@ -22,6 +20,10 @@ WANTLIB += execinfo fftw3 gio-2.0 glib-2.0 gobject-2.0
 WANTLIB += gpod gstapp-1.0 gstaudio-1.0 gstbase-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 iconv intl lastfm5
 WANTLIB += m mtp mygpo-qt5 protobuf pulse sqlite3 tag z
+
+# C++17
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c++
 
 MODULES =		devel/cmake \
 			x11/qt5

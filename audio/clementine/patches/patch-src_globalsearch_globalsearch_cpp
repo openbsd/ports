@@ -1,0 +1,32 @@
+std::random_shuffle is removed since C++17, use std::shuffle
+
+Index: src/globalsearch/globalsearch.cpp
+--- src/globalsearch/globalsearch.cpp.orig
++++ src/globalsearch/globalsearch.cpp
+@@ -22,6 +22,7 @@
+ #include <QTimerEvent>
+ #include <QUrl>
+ #include <algorithm>
++#include <random>
+ 
+ #include "core/application.h"
+ #include "core/logging.h"
+@@ -357,6 +358,9 @@ void GlobalSearch::SaveProvidersSettings() {
+ QStringList GlobalSearch::GetSuggestions(int count) {
+   QStringList ret;
+ 
++  std::random_device rd;
++  std::mt19937 g(rd());
++
+   // Get count suggestions from each provider
+   for (SearchProvider* provider : providers_.keys()) {
+     if (is_provider_enabled(provider) && provider->can_give_suggestions()) {
+@@ -371,7 +375,7 @@ QStringList GlobalSearch::GetSuggestions(int count) {
+   }
+ 
+   // Randomize the suggestions
+-  std::random_shuffle(ret.begin(), ret.end());
++  std::shuffle(ret.begin(), ret.end(), g);
+ 
+   // Only return the first count
+   while (ret.length() > count) {
