@@ -6,6 +6,7 @@
 include/dico/
 include/dico/argcv.h
 include/dico/assoc.h
+include/dico/conv.h
 include/dico/diag.h
 include/dico/dico.h
 include/dico/filter.h
@@ -29,6 +30,8 @@ lib/dico/echo.la
 @so lib/dico/echo.so
 lib/dico/gcide.la
 @so lib/dico/gcide.so
+lib/dico/greek_kbd.la
+@so lib/dico/greek_kbd.so
 lib/dico/ldap.la
 @so lib/dico/ldap.so
 lib/dico/metaphone2.la
@@ -74,6 +77,7 @@ share/locale/fi/LC_MESSAGES/dico.mo
 share/locale/fr/LC_MESSAGES/dico.mo
 share/locale/pl/LC_MESSAGES/dico.mo
 share/locale/pt_BR/LC_MESSAGES/dico.mo
+share/locale/ro/LC_MESSAGES/dico.mo
 share/locale/sr/LC_MESSAGES/dico.mo
 share/locale/sv/LC_MESSAGES/dico.mo
 share/locale/uk/LC_MESSAGES/dico.mo

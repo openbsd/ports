@@ -1,10 +1,9 @@
 COMMENT =	GNU dictionary server
 
-V =		2.11
+V =		2.12
 DISTNAME =	dico-$V
-REVISION =	1
 
-SHARED_LIBS +=  dico                      0.0 # 2.0
+SHARED_LIBS +=  dico                      1.0 # 2.0
 
 CATEGORIES =	net
 
@@ -16,8 +15,8 @@ MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${MODPY_WANTLIB}
-WANTLIB += c crypto curses gcrypt gpg-error gsasl iconv idn intl
-WANTLIB += lber ldap ltdl m pam pcre pthread readline sasl2 ssl
+WANTLIB += c crypto curses gsasl iconv idn intl
+WANTLIB += lber ldap ltdl m pam pcre2-8 pthread readline sasl2 ssl
 WANTLIB += util z
 
 SITES =			${SITE_GNU:=dico/}
@@ -26,7 +25,7 @@ MODULES =		lang/python
 LIB_DEPENDS =		databases/openldap \
 			devel/gettext,-runtime \
 			devel/libtool,-ltdl \
-			devel/pcre \
+			devel/pcre2 \
 			security/libgsasl \
 			security/openpam
 
