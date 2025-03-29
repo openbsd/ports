@@ -2,7 +2,7 @@ COMMENT =		c++ protocol buffers
 
 CPPMAJOR =		5
 PROTOBUF_VERSION =	29.4
-REVISION =		1
+REVISION =		2
 
 V =			${CPPMAJOR}.${PROTOBUF_VERSION}
 TAG =			v${PROTOBUF_VERSION:S/rc-/rc/}
