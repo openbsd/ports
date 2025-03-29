@@ -1,6 +1,7 @@
 COMMENT=	Xfce4 calendar
 
 XFCE_GOODIE=	orage
+XFCE_VERSION=	4.20.1
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
