@@ -1,6 +1,7 @@
-COMMENT =	clone of 1980's side-scrolling WWI dogfighing game
+COMMENT =	classic 1980s side-scrolling WWI dogfighting game
 DISTNAME =	sdl-sopwith-2.8.0
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://fragglet.github.io/sdl-sopwith/
 
