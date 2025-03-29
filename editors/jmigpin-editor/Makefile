@@ -1,7 +1,7 @@
 COMMENT =	graphical acme-like text editor
 
 DISTNAME =	jmigpin-editor-${V}
-V =		3.10
+V =		3.11
 
 CATEGORIES =	editors
 
