@@ -1,11 +1,14 @@
-COMMENT =		read microsoft Access MDB
+COMMENT =	read Microsoft Access MDB databases
 
-GH_ACCOUNT =		mdbtools
-GH_PROJECT =		mdbtools
-GH_TAGNAME =		v1.0.0
-EPOCH =			0
+V =		1.0.1
+DISTNAME =	mdbtools-$V
+SITES =		https://github.com/mdbtools/mdbtools/releases/download/v$V/
 
-CATEGORIES =		databases converters
+HOMEPAGE =	https://mdbtools.github.io/
+
+EPOCH =		0
+
+CATEGORIES =	databases converters
 
 SHARED_LIBS +=  mdb                  3.0      # 4.0
 SHARED_LIBS +=  mdbsql               3.0      # 4.0
@@ -27,10 +30,8 @@ LIB_DEPENDS =		databases/iodbc,-main \
 			devel/glib2
 
 YACC=			bison -y
-CONFIGURE_STYLE =	autoreconf
+CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--with-iodbc=${LOCALBASE}
-AUTOCONF_VERSION =	2.69
-AUTOMAKE_VERSION =	1.15
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 

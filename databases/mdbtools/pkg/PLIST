@@ -41,9 +41,6 @@ lib/pkgconfig/libmdbsql.pc
 @man man/man1/mdb-sql.1
 @man man/man1/mdb-tables.1
 @man man/man1/mdb-ver.1
-@comment man/mant/
-share/bash-completion/
-share/bash-completion/completions/
 share/bash-completion/completions/mdb-count
 share/bash-completion/completions/mdb-export
 share/bash-completion/completions/mdb-hexdump
