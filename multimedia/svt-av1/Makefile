@@ -30,6 +30,12 @@ MODULES=	devel/cmake
 BUILD_DEPENDS+=	devel/nasm
 .endif
 
+# LLVM ERROR: Invalid size request on a scalable vector.
+# with 16, 18, 19
+.if ${MACHINE_ARCH} == "aarch64"
+CONFIGURE_ARGS+=-DENABLE_SVE=OFF
+.endif
+
 NO_TEST=	Yes
 
 .include <bsd.port.mk>
