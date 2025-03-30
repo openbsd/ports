@@ -1,10 +1,13 @@
 #!/bin/ksh
 
-daemon="${TRUEPREFIX}/bin/squeezelite -z"
+daemon="${TRUEPREFIX}/bin/squeezelite"
 daemon_user="_squeezelite"
 
 . /etc/rc.d/rc.subr
 
-rc_reload=NO
+# Although squeezelite does support deamonisation with -z, we let rc.subr do
+# the daemonisation so that we can catch startup errors at rc_start time (e.g.
+# when there is no access to sndiod, it just exits non-zero).
+rc_bg=YES
 
 rc_cmd $1
