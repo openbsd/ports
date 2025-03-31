@@ -3,7 +3,7 @@ Add sndio volume backend.
 Index: src/sndio.c
 --- src/sndio.c.orig
 +++ src/sndio.c
-@@ -0,0 +1,201 @@
+@@ -0,0 +1,202 @@
 +#include <poll.h>
 +#include <sndio.h>
 +#include <stdio.h>
@@ -183,6 +183,7 @@ Index: src/sndio.c
 +            if (sioctl_revents(hdl, pfds) & POLLHUP) {
 +                fprintf(stderr, "sndio: disconnected\n");
 +                cleanup();
++                initialized = 0;
 +                return -1;
 +            }
 +        }

@@ -59,7 +59,7 @@ Index: src/print_volume.c
  #else
          warn("OSS: Cannot open mixer");
 @@ -267,7 +286,7 @@ void print_volume(volume_ctx_t *ctx) {
-     if (mixer_idx > 0)
+     if (ctx->mixer_idx > 0)
          free(mixerpath);
  
 -#if defined(__NetBSD__) || defined(__OpenBSD__)
