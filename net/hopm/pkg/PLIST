@@ -5,7 +5,10 @@
 share/examples/hopm/
 share/examples/hopm/reference.conf
 @sample ${SYSCONFDIR}/hopm/
+@mode 0640
+@group _hopm
 @sample ${SYSCONFDIR}/hopm/hopm.conf
+@mode
 @owner _hopm
 @group _hopm
 @sample /var/log/hopm/
