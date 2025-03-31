@@ -1,7 +1,7 @@
 Index: doc/en/conf.py
 --- doc/en/conf.py.orig
 +++ doc/en/conf.py
-@@ -27,16 +27,10 @@ release = ".".join(version.split(".")[:2])
+@@ -27,24 +27,11 @@ release = ".".join(version.split(".")[:2])
  
  root_doc = "index"
  extensions = [
@@ -16,5 +16,13 @@ Index: doc/en/conf.py
 -    "sphinxcontrib.towncrier.ext",  # provides `towncrier-draft-entries` directive
 -    "sphinx_issues",  # implements `:issue:`, `:pr:` and other GH-related roles
  ]
+-
+-# Building PDF docs on readthedocs requires inkscape for svg to pdf
+-# conversion. The relevant plugin is not useful for normal HTML builds, but
+-# it still raises warnings and fails CI if inkscape is not available. So
+-# only use the plugin if inkscape is actually available.
+-if shutil.which("inkscape"):
+-    extensions.append("sphinxcontrib.inkscapeconverter")
  
- # Building PDF docs on readthedocs requires inkscape for svg to pdf
+ exclude_patterns = [
+     "_build",
