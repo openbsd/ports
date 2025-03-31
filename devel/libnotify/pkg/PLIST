@@ -92,6 +92,7 @@ share/doc/libnotify-0/method.Notification.set_urgency.html
 share/doc/libnotify-0/method.Notification.show.html
 share/doc/libnotify-0/method.Notification.update.html
 share/doc/libnotify-0/opensearch.xml
+share/doc/libnotify-0/property.Notification.app-icon.html
 share/doc/libnotify-0/property.Notification.app-name.html
 share/doc/libnotify-0/property.Notification.body.html
 share/doc/libnotify-0/property.Notification.closed-reason.html
