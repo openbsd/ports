@@ -1,0 +1,14 @@
+https://gitlab.xfce.org/xfce/xfce4-session/-/merge_requests/79
+
+Index: scripts/xflock4
+--- scripts/xflock4.orig
++++ scripts/xflock4
+@@ -52,7 +52,7 @@ esac
+ ret=$(echo $(dbus-send --session \
+                        --dest=org.xfce.SessionManager \
+                        --print-reply=literal \
+-                       --reply-timeout=$((2**31 - 1)) \
++                       --reply-timeout=$(((1<<31)-1)) \
+                        --type=method_call \
+                        /org/xfce/SessionManager \
+                        org.xfce.Session.Manager.Lock))
