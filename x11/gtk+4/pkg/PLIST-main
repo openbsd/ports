@@ -449,6 +449,7 @@ share/gir-1.0/GdkWayland-4.0.gir
 share/gir-1.0/GdkX11-4.0.gir
 share/gir-1.0/Gsk-4.0.gir
 share/gir-1.0/Gtk-4.0.gir
+share/glib-2.0/schemas/org.gtk.gtk4.Inspector.gschema.xml
 share/glib-2.0/schemas/org.gtk.gtk4.Settings.ColorChooser.gschema.xml
 share/glib-2.0/schemas/org.gtk.gtk4.Settings.Debug.gschema.xml
 share/glib-2.0/schemas/org.gtk.gtk4.Settings.EmojiChooser.gschema.xml
