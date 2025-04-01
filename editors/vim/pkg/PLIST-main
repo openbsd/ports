@@ -763,6 +763,7 @@ share/vim/${P}/ftplugin/slpspi.vim
 share/vim/${P}/ftplugin/snakemake.vim
 share/vim/${P}/ftplugin/solidity.vim
 share/vim/${P}/ftplugin/solution.vim
+share/vim/${P}/ftplugin/spajson.vim
 share/vim/${P}/ftplugin/spec.vim
 share/vim/${P}/ftplugin/sql.vim
 share/vim/${P}/ftplugin/squirrel.vim
@@ -987,6 +988,7 @@ share/vim/${P}/indent/sdl.vim
 share/vim/${P}/indent/sh.vim
 share/vim/${P}/indent/sml.vim
 share/vim/${P}/indent/solidity.vim
+share/vim/${P}/indent/spajson.vim
 share/vim/${P}/indent/sql.vim
 share/vim/${P}/indent/sqlanywhere.vim
 share/vim/${P}/indent/sshconfig.vim
@@ -1194,6 +1196,9 @@ share/vim/${P}/pack/dist/opt/helptoc/autoload/
 share/vim/${P}/pack/dist/opt/helptoc/autoload/helptoc.vim
 share/vim/${P}/pack/dist/opt/helptoc/plugin/
 share/vim/${P}/pack/dist/opt/helptoc/plugin/helptoc.vim
+share/vim/${P}/pack/dist/opt/hlyank/
+share/vim/${P}/pack/dist/opt/hlyank/plugin/
+share/vim/${P}/pack/dist/opt/hlyank/plugin/hlyank.vim
 share/vim/${P}/pack/dist/opt/justify/
 share/vim/${P}/pack/dist/opt/justify/plugin/
 share/vim/${P}/pack/dist/opt/justify/plugin/justify.vim
@@ -1792,6 +1797,7 @@ share/vim/${P}/syntax/prolog.vim
 share/vim/${P}/syntax/promela.vim
 share/vim/${P}/syntax/proto.vim
 share/vim/${P}/syntax/protocols.vim
+share/vim/${P}/syntax/prql.vim
 share/vim/${P}/syntax/ps1.vim
 share/vim/${P}/syntax/ps1xml.vim
 share/vim/${P}/syntax/psf.vim
@@ -1908,6 +1914,7 @@ share/vim/${P}/syntax/snnspat.vim
 share/vim/${P}/syntax/snnsres.vim
 share/vim/${P}/syntax/snobol4.vim
 share/vim/${P}/syntax/solidity.vim
+share/vim/${P}/syntax/spajson.vim
 share/vim/${P}/syntax/spec.vim
 share/vim/${P}/syntax/specman.vim
 share/vim/${P}/syntax/spice.vim
@@ -2096,6 +2103,13 @@ share/vim/${P}/tutor/en/vim-01-beginner.tutor
 share/vim/${P}/tutor/en/vim-01-beginner.tutor.json
 share/vim/${P}/tutor/en/vim-02-beginner.tutor
 share/vim/${P}/tutor/en/vim-02-beginner.tutor.json
+share/vim/${P}/tutor/ru/
+share/vim/${P}/tutor/ru/vim-01-beginner.tutor
+share/vim/${P}/tutor/ru/vim-01-beginner.tutor.json
+share/vim/${P}/tutor/ru/vim-02-beginner.tutor
+share/vim/${P}/tutor/ru/vim-02-beginner.tutor.json
+share/vim/${P}/tutor/sr/vim-02-beginner.tutor
+share/vim/${P}/tutor/sr/vim-02-beginner.tutor.json
 share/vim/${P}/tutor/tutor.tutor
 share/vim/${P}/tutor/tutor.tutor.json
 share/vim/${P}/tutor/tutor.vim

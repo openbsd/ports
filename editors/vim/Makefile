@@ -3,7 +3,7 @@ COMMENT-lang=	vi clone, NLS subpackage
 
 # careful with PLISTs if updating; it usually works best if you
 # use a gui flavour rather than no_x11
-V=		9.1.1199
+V=		9.1.1265
 VS=		${V:C/\.0+/./}
 
 GH_PROJECT=	vim
