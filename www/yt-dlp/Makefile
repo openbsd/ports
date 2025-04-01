@@ -1,6 +1,6 @@
 COMMENT =	CLI program to download videos from YouTube and other sites
 
-VERSION =	2025.03.21
+VERSION =	2025.03.31
 # XXX - remove comment after 7.7-current unlock
 # on backport keep REVISION above -stable for 7.6 (no cryptodomex in -stable)
 MODPY_DISTV =	${VERSION:S/.0/./g}
