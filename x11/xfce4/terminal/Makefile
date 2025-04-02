@@ -14,7 +14,7 @@ LIB_DEPENDS=	x11/xfce4/libxfce4ui \
 		x11/xfce4/xfconf \
 		wayland/gtk-layer-shell \
 		devel/vte3
-BUILD_DEPENDS =	textproc/libxslt
+BUILD_DEPENDS =	textproc/docbook-xsl
 
 CONFIGURE_ARGS +=	-Dlibutempter=disabled
 
