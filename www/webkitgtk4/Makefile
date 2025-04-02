@@ -127,7 +127,7 @@ CONFIGURE_ARGS +=	-DENABLE_C_LOOP=ON
 
 .if ${MACHINE_ARCH} == riscv64
 # WEBASSEMBLY and FTL_JIT need at least one of OMGJIT/BBQJIT
-# check Source/WTF/wtf/PlatformEnable.h
+# Check patches/patch-Source_WTF_wtf_PlatformEnable_h
 CONFIGURE_ARGS +=	-DENABLE_WEBASSEMBLY=OFF
 CONFIGURE_ARGS +=	-DENABLE_FTL_JIT=OFF
 .endif
