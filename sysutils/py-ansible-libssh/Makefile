@@ -1,9 +1,8 @@
-MODPY_DISTV =		1.2.2
+MODPY_DISTV =		1.2.3
 COMMENT =		Python bindings for libssh specific to Ansible use case
-DISTNAME =		ansible-pylibssh-${MODPY_DISTV}
-PKGNAME =		py-ansible-libssh-${MODPY_DISTV}
+DIST_TUPLE =		github ansible pylibssh baa2ab830d44760c95348081603fbde3e23507a4 .
+PKGNAME =		py-ansible-libssh-${MODPY_DISTV}pre20250327
 CATEGORIES =		sysutils
-REVISION =		0
 
 MAINTAINER =		Denis Fondras <denis@openbsd.org>
 
@@ -16,6 +15,8 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 # uses own in-tree backend which wraps setuptools
 MODPY_PYBUILD =		setuptools_scm
+
+DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 CFLAGS +=		-I${LOCALBASE}/include
 BUILD_DEPENDS =		sysutils/py-expandvars \

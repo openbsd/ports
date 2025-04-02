@@ -1,10 +1,10 @@
 @pkgpath sysutils/py-ansible-libssh,python3
-lib/python${MODPY_VERSION}/site-packages/ansible_pylibssh-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/ansible_pylibssh-${MODPY_DISTV}.dist-info/LICENSE.rst
-lib/python${MODPY_VERSION}/site-packages/ansible_pylibssh-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/ansible_pylibssh-${MODPY_DISTV}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/ansible_pylibssh-${MODPY_DISTV}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/ansible_pylibssh-${MODPY_DISTV}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/ansible_pylibssh-${MODPY_DISTV}.dev167+gbaa2ab830.dist-info/
+lib/python${MODPY_VERSION}/site-packages/ansible_pylibssh-${MODPY_DISTV}.dev167+gbaa2ab830.dist-info/LICENSE.rst
+lib/python${MODPY_VERSION}/site-packages/ansible_pylibssh-${MODPY_DISTV}.dev167+gbaa2ab830.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/ansible_pylibssh-${MODPY_DISTV}.dev167+gbaa2ab830.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/ansible_pylibssh-${MODPY_DISTV}.dev167+gbaa2ab830.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/ansible_pylibssh-${MODPY_DISTV}.dev167+gbaa2ab830.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/.gitignore
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/__init__.py
@@ -15,13 +15,16 @@ lib/python${MODPY_VERSION}/site-packages/pylibsshext/${MODPY_PYCACHE}_scm_versio
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/${MODPY_PYCACHE}_scm_version.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/${MODPY_PYCACHE}_version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/pylibsshext/_libssh_version.c
 @so lib/python${MODPY_VERSION}/site-packages/pylibsshext/_libssh_version.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/_libssh_version.pyx
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/_scm_version.py
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/_version.py
+lib/python${MODPY_VERSION}/site-packages/pylibsshext/channel.c
 @so lib/python${MODPY_VERSION}/site-packages/pylibsshext/channel.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/channel.pxd
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/channel.pyx
+lib/python${MODPY_VERSION}/site-packages/pylibsshext/errors.c
 @so lib/python${MODPY_VERSION}/site-packages/pylibsshext/errors.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/errors.pxd
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/errors.pyx
@@ -33,12 +36,15 @@ lib/python${MODPY_VERSION}/site-packages/pylibsshext/includes/${MODPY_PYCACHE}__
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/includes/callbacks.pxd
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/includes/libssh.pxd
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/includes/sftp.pxd
+lib/python${MODPY_VERSION}/site-packages/pylibsshext/scp.c
 @so lib/python${MODPY_VERSION}/site-packages/pylibsshext/scp.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/scp.pxd
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/scp.pyx
+lib/python${MODPY_VERSION}/site-packages/pylibsshext/session.c
 @so lib/python${MODPY_VERSION}/site-packages/pylibsshext/session.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/session.pxd
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/session.pyx
+lib/python${MODPY_VERSION}/site-packages/pylibsshext/sftp.c
 @so lib/python${MODPY_VERSION}/site-packages/pylibsshext/sftp.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/sftp.pxd
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/sftp.pyx
