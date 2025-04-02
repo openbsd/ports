@@ -1,6 +1,6 @@
 COMMENT =		utility for creating secure pipes between socket addresses
 
-DISTNAME =		spiped-1.6.3
+DISTNAME =		spiped-1.6.4
 CATEGORIES =		security sysutils
 
 MAINTAINER =		James Turner <james@calminferno.net>
