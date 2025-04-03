@@ -2,6 +2,7 @@ COMMENT=	library and tools for XZ and LZMA compressed files
 
 VERSION=	5.6.4
 DISTNAME=	xz-${VERSION}
+REVISION=	0
 SHARED_LIBS=	lzma                 2.3      # 11.4
 CATEGORIES=	archivers
 DPB_PROPERTIES=	parallel
