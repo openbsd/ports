@@ -1,3 +1,5 @@
+BROKEN-arm=	build frozen for over 12 hours
+
 COMMENT=	single window & tabbed version of the ZynAddSubFX interface
 
 PKGNAME=	mruby-zest-20210207
