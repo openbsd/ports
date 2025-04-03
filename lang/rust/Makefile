@@ -12,17 +12,15 @@ COMMENT-rustfmt =	Rust code formatter
 COMMENT-bootstrap =	Rust binary bootstrap
 COMMENT-src =		Rust source component
 
-V =			1.85.0
+V =			1.86.0
 DISTNAME =		rustc-${V}-src
-
-REVISION =		1
 
 # rustc bootstrap version
 BV-aarch64 =		1.85.0-20250227
-BV-amd64 =		1.85.0
+BV-amd64 =		1.86.0
 BV-powerpc64 =		1.65.0-20221213
-BV-riscv64 =		1.84.0
-BV-sparc64 =		1.84.1
+BV-riscv64 =		1.85.0p1
+BV-sparc64 =		1.85.0p1
 BV =			${BV-${MACHINE_ARCH}}
 
 PKGNAME =		rust-${V}
@@ -93,7 +91,7 @@ SUBST_VARS +=		TRIPLE_ARCH \
 
 # list of libraries with a hash in plist
 LIBRUST_REHASH +=	addr2line
-LIBRUST_REHASH +=	adler
+LIBRUST_REHASH +=	adler2
 LIBRUST_REHASH +=	alloc
 LIBRUST_REHASH +=	cfg_if
 LIBRUST_REHASH +=	compiler_builtins

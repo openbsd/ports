@@ -4,8 +4,8 @@ aarch64: make -Z branch-protection=bti,pac-ret the default
 Index: compiler/rustc_session/src/options.rs
 --- compiler/rustc_session/src/options.rs.orig
 +++ compiler/rustc_session/src/options.rs
-@@ -1672,6 +1672,25 @@ options! {
-     // - src/doc/rustc/src/codegen-options/index.md
+@@ -1922,6 +1922,25 @@ pub mod parse {
+     }
  }
  
 +#[cfg(all(target_os="openbsd", target_arch="x86_64"))]
@@ -28,9 +28,9 @@ Index: compiler/rustc_session/src/options.rs
 +const DEFAULT_BRANCH_PROTECTION: Option<BranchProtection> = None;
 +
  options! {
-     UnstableOptions, Z_OPTIONS, dbopts, "Z", "unstable",
+     CodegenOptions, CodegenOptionsTargetModifiers, CG_OPTIONS, cgopts, "C", "codegen",
  
-@@ -1695,9 +1714,9 @@ options! {
+@@ -2102,9 +2121,9 @@ options! {
          (default: no)"),
      box_noalias: bool = (true, parse_bool, [TRACKED],
          "emit noalias metadata for box (default: yes)"),

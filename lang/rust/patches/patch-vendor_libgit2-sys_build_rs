@@ -1,9 +1,9 @@
 libgit2: force embedded version
 
-Index: vendor/libgit2-sys-0.17.0+1.8.1/build.rs
---- vendor/libgit2-sys-0.17.0+1.8.1/build.rs.orig
-+++ vendor/libgit2-sys-0.17.0+1.8.1/build.rs
-@@ -26,6 +26,7 @@ fn main() {
+Index: vendor/libgit2-sys-0.18.0+1.9.0/build.rs
+--- vendor/libgit2-sys-0.18.0+1.9.0/build.rs.orig
++++ vendor/libgit2-sys-0.18.0+1.9.0/build.rs
+@@ -32,6 +32,7 @@ fn main() {
      let ssh = env::var("CARGO_FEATURE_SSH").is_ok();
      let vendored = env::var("CARGO_FEATURE_VENDORED").is_ok();
      let zlib_ng_compat = env::var("CARGO_FEATURE_ZLIB_NG_COMPAT").is_ok();
@@ -11,7 +11,7 @@ Index: vendor/libgit2-sys-0.17.0+1.8.1/build.rs
  
      // Specify `LIBGIT2_NO_VENDOR` to force to use system libgit2.
      // Due to the additive nature of Cargo features, if some crate in the
-@@ -49,7 +50,7 @@ The build is now aborting. To disable, unset the varia
+@@ -55,7 +56,7 @@ The build is now aborting. To disable, unset the varia
      }
  
      // To use zlib-ng in zlib-compat mode, we have to build libgit2 ourselves.
