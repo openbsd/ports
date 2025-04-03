@@ -1606,6 +1606,10 @@ share/gimp/${V}/icons/Default/scalable/apps/gimp-text-dir-ttb-rtl-upright.svg
 share/gimp/${V}/icons/Default/scalable/apps/gimp-text-dir-ttb-rtl.svg
 share/gimp/${V}/icons/Default/scalable/apps/gimp-text-layer-symbolic.svg
 share/gimp/${V}/icons/Default/scalable/apps/gimp-text-layer.svg
+share/gimp/${V}/icons/Default/scalable/apps/gimp-toggle-off-symbolic.svg
+share/gimp/${V}/icons/Default/scalable/apps/gimp-toggle-off.svg
+share/gimp/${V}/icons/Default/scalable/apps/gimp-toggle-on-symbolic.svg
+share/gimp/${V}/icons/Default/scalable/apps/gimp-toggle-on.svg
 share/gimp/${V}/icons/Default/scalable/apps/gimp-toilet-paper-symbolic.svg
 share/gimp/${V}/icons/Default/scalable/apps/gimp-toilet-paper.svg
 share/gimp/${V}/icons/Default/scalable/apps/gimp-tool-airbrush-symbolic.svg
@@ -2267,6 +2271,10 @@ share/gimp/${V}/icons/Legacy/scalable/apps/gimp-prefs-playground.svg
 share/gimp/${V}/icons/Legacy/scalable/apps/gimp-shred.svg
 share/gimp/${V}/icons/Legacy/scalable/apps/gimp-smartphone.svg
 share/gimp/${V}/icons/Legacy/scalable/apps/gimp-symmetry.svg
+share/gimp/${V}/icons/Legacy/scalable/apps/gimp-toggle-off-symbolic.svg
+share/gimp/${V}/icons/Legacy/scalable/apps/gimp-toggle-off.svg
+share/gimp/${V}/icons/Legacy/scalable/apps/gimp-toggle-on-symbolic.svg
+share/gimp/${V}/icons/Legacy/scalable/apps/gimp-toggle-on.svg
 share/gimp/${V}/icons/Legacy/scalable/apps/gimp-tool-airbrush.svg
 share/gimp/${V}/icons/Legacy/scalable/apps/gimp-tool-align.svg
 share/gimp/${V}/icons/Legacy/scalable/apps/gimp-tool-blur.svg

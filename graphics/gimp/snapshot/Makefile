@@ -6,8 +6,7 @@ COMMENT=	GNU Image Manipulation Program
 ONLY_FOR_ARCHS=	${RUST_ARCHS}
 
 V=		3.0
-DISTNAME=	gimp-${V}.0-RC3
-PKGNAME =	gimp-${V}.0rc3
+DISTNAME=	gimp-${V}.2
 
 .for i in gimp gimpbase gimpcolor gimpconfig gimpmath gimpmodule \
 	gimpthumb gimpui gimpwidgets gimp-scriptfu
