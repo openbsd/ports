@@ -408,6 +408,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLOPT_UPKEEP_INTERVAL_MS.3
 @man man/man3/CURLOPT_UPLOAD.3
 @man man/man3/CURLOPT_UPLOAD_BUFFERSIZE.3
+@man man/man3/CURLOPT_UPLOAD_FLAGS.3
 @man man/man3/CURLOPT_URL.3
 @man man/man3/CURLOPT_USERAGENT.3
 @man man/man3/CURLOPT_USERNAME.3
