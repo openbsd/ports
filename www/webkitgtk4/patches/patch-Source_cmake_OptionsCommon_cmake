@@ -4,7 +4,7 @@ build with an older webkitgtk4 package installed.
 Index: Source/cmake/OptionsCommon.cmake
 --- Source/cmake/OptionsCommon.cmake.orig
 +++ Source/cmake/OptionsCommon.cmake
-@@ -282,6 +282,9 @@ elseif (NOT ENABLE_ASSERTS)
+@@ -296,6 +296,9 @@ elseif (NOT ENABLE_ASSERTS)
      WEBKIT_PREPEND_GLOBAL_COMPILER_FLAGS(-DASSERT_ENABLED=0)
  endif ()
  

@@ -1,7 +1,7 @@
 Index: Source/JavaScriptCore/offlineasm/arm64.rb
 --- Source/JavaScriptCore/offlineasm/arm64.rb.orig
 +++ Source/JavaScriptCore/offlineasm/arm64.rb
-@@ -1376,7 +1376,7 @@ class Instruction
+@@ -1390,7 +1390,7 @@ class Instruction
              $asm.putStr("#endif")
  
              # On Linux, use ELF GOT relocation specifiers.
