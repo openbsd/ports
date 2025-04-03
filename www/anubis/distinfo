@@ -1,4 +1,4 @@
-SHA256 (anubis-v1.15.0.zip) = HlSg5gujS3de4pIkMB52SU6pSXkRmE+V7B9evvdeaRc=
+SHA256 (anubis-v1.15.1.zip) = bY6vjNBRZncgUxS11XZKKaWkTNvrEcGqGcos7ijovIU=
 SHA256 (go_modules/github.com/!puerkito!bio/goquery/@v/v1.10.1.mod) = hHPM4EHwqFsmWz1ShOfbuhECBrp2vyarcZVm3/DEtwQ=
 SHA256 (go_modules/github.com/!puerkito!bio/goquery/@v/v1.10.1.zip) = HfrRFHPpua7xSZgKs+H5P0DmFuA4PucHz7uhQsm9R88=
 SHA256 (go_modules/github.com/a-h/htmlformat/@v/v0.0.0-20231108124658-5bd994fe268e.mod) = 4hCmNckY4iRhPrRZUTfxS/DlElcNBssp8VG4GmA22EI=
@@ -235,7 +235,7 @@ SHA256 (go_modules/gopkg.in/yaml.v2/@v/v2.4.0.zip) = 7eSeJ8TMps3S7HGa7Y6k02NxDM6
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.0-20200313102051-9f266ea9e77c.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHdhG3HAX5vzupDauTk=
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
-SIZE (anubis-v1.15.0.zip) = 1207073
+SIZE (anubis-v1.15.1.zip) = 1207282
 SIZE (go_modules/github.com/!puerkito!bio/goquery/@v/v1.10.1.mod) = 126
 SIZE (go_modules/github.com/!puerkito!bio/goquery/@v/v1.10.1.zip) = 136076
 SIZE (go_modules/github.com/a-h/htmlformat/@v/v0.0.0-20231108124658-5bd994fe268e.mod) = 117
