@@ -1,7 +1,7 @@
 Index: ui/views/style/platform_style.cc
 --- ui/views/style/platform_style.cc.orig
 +++ ui/views/style/platform_style.cc
-@@ -16,7 +16,7 @@
+@@ -23,7 +23,7 @@
  #include "ui/views/controls/focusable_border.h"
  #include "ui/views/controls/scrollbar/scroll_bar_views.h"
  
@@ -9,8 +9,8 @@ Index: ui/views/style/platform_style.cc
 +#if BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  #include "ui/views/controls/scrollbar/overlay_scroll_bar.h"
  #endif
- 
-@@ -27,7 +27,7 @@ namespace views {
+ #endif
+@@ -35,7 +35,7 @@ namespace views {
  // static
  std::unique_ptr<ScrollBar> PlatformStyle::CreateScrollBar(
      ScrollBar::Orientation orientation) {

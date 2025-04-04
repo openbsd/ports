@@ -1,7 +1,7 @@
 Index: chrome/browser/enterprise/connectors/device_trust/signals/signals_service_factory.cc
 --- chrome/browser/enterprise/connectors/device_trust/signals/signals_service_factory.cc.orig
 +++ chrome/browser/enterprise/connectors/device_trust/signals/signals_service_factory.cc
-@@ -24,7 +24,7 @@
+@@ -23,7 +23,7 @@
  #include "chrome/browser/enterprise/connectors/connectors_service.h"
  #endif  // BUILDFLAG(ENTERPRISE_CLOUD_CONTENT_ANALYSIS)
  
@@ -10,7 +10,7 @@ Index: chrome/browser/enterprise/connectors/device_trust/signals/signals_service
  #include "base/check.h"
  #include "chrome/browser/enterprise/connectors/device_trust/signals/decorators/browser/browser_signals_decorator.h"
  #include "chrome/browser/enterprise/core/dependency_factory_impl.h"
-@@ -64,7 +64,7 @@ std::unique_ptr<SignalsService> CreateSignalsService(P
+@@ -63,7 +63,7 @@ std::unique_ptr<SignalsService> CreateSignalsService(P
            profile, ConnectorsServiceFactory::GetForBrowserContext(profile))));
  #endif  // BUILDFLAG(ENTERPRISE_CLOUD_CONTENT_ANALYSIS)
  

@@ -10,7 +10,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser
 
-V=			134.0.6998.165
+V=			135.0.7049.52
 
 DISTNAME=		chromium-${V}
 
@@ -346,7 +346,8 @@ pre-test:
 	@${ECHO_MSG} "Extracting ${_d}"
 	@case ${_d} in \
 	*testdata*.tar.xz) \
-		xzdec <${FULLDISTDIR}/${_d} | ${TAR} -C ${WRKDIR} -xf -;; \
+		test -d ${WRKSRC}/base/tracing/test/data || \
+			xzdec <${FULLDISTDIR}/${_d} | ${TAR} -C ${WRKDIR} -xf -;; \
 	esac;
 .endfor
 

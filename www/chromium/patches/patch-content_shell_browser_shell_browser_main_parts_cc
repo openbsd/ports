@@ -6,7 +6,7 @@ Index: content/shell/browser/shell_browser_main_parts.cc
  #endif
  
 -#if BUILDFLAG(IS_LINUX) && defined(USE_AURA)
-+#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD) && defined(USE_AURA)
++#if (BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)) && defined(USE_AURA)
  #include "ui/base/ime/init/input_method_initializer.h"
  #endif
  

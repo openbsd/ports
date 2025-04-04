@@ -1,7 +1,7 @@
 Index: chrome/browser/enterprise/util/managed_browser_utils.cc
 --- chrome/browser/enterprise/util/managed_browser_utils.cc.orig
 +++ chrome/browser/enterprise/util/managed_browser_utils.cc
-@@ -222,7 +222,7 @@ void SetUserAcceptedAccountManagement(Profile* profile
+@@ -224,7 +224,7 @@ void SetUserAcceptedAccountManagement(Profile* profile
            .GetProfileAttributesWithPath(profile->GetPath());
    if (entry) {
      entry->SetUserAcceptedAccountManagement(accepted);

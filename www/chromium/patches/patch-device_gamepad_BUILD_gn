@@ -1,7 +1,7 @@
 Index: device/gamepad/BUILD.gn
 --- device/gamepad/BUILD.gn.orig
 +++ device/gamepad/BUILD.gn
-@@ -99,7 +99,7 @@ component("gamepad") {
+@@ -98,7 +98,7 @@ component("gamepad") {
        "hid_writer_linux.cc",
        "hid_writer_linux.h",
      ]

@@ -19,7 +19,7 @@ Index: printing/backend/print_backend_cups.cc
  // This may be removed when Amazon Linux 2 reaches EOL (30 Jun 2025).
  bool AreNewerCupsFunctionsAvailable() {
    return cupsFindDestDefault && cupsFindDestSupported && cupsUserAgent &&
-@@ -292,7 +292,7 @@ bool PrintBackendCUPS::IsValidPrinter(const std::strin
+@@ -286,7 +286,7 @@ bool PrintBackendCUPS::IsValidPrinter(const std::strin
  #if !BUILDFLAG(IS_CHROMEOS)
  scoped_refptr<PrintBackend> PrintBackend::CreateInstanceImpl(
      const std::string& locale) {
