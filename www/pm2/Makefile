@@ -2,9 +2,7 @@ COMMENT =		production process manager with a built-in load balancer
 
 GH_ACCOUNT =		Unitech
 GH_PROJECT =		pm2
-GH_TAGNAME =		v5.4.2
-
-REVISION =		0
+GH_TAGNAME =		v6.0.5
 
 CATEGORIES =		www
 
