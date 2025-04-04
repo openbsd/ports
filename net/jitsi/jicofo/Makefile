@@ -2,7 +2,7 @@ COMMENT =	server-side focus component used in Jitsi Meet conferences
 
 CATEGORIES =	net
 
-VERSION =	2.0.9646
+VERSION =	2.0.10133
 PKGNAME =	jicofo-${VERSION}
 
 GH_ACCOUNT =	jitsi
