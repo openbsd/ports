@@ -40,7 +40,7 @@ share/jitsi-prosody-plugins/mod_muc_filter_access.lua
 share/jitsi-prosody-plugins/mod_muc_flip.lua
 share/jitsi-prosody-plugins/mod_muc_hide_all.lua
 share/jitsi-prosody-plugins/mod_muc_jigasi_invite.lua
-share/jitsi-prosody-plugins/mod_muc_kick_jigasi.lua
+share/jitsi-prosody-plugins/mod_muc_kick_participant.lua
 share/jitsi-prosody-plugins/mod_muc_limit_messages.lua
 share/jitsi-prosody-plugins/mod_muc_lobby_rooms.lua
 share/jitsi-prosody-plugins/mod_muc_max_occupants.lua
@@ -50,7 +50,6 @@ share/jitsi-prosody-plugins/mod_muc_password_whitelist.lua
 share/jitsi-prosody-plugins/mod_muc_poltergeist.lua
 share/jitsi-prosody-plugins/mod_muc_rate_limit.lua
 share/jitsi-prosody-plugins/mod_muc_size.lua
-share/jitsi-prosody-plugins/mod_muc_transcription_filter.lua
 share/jitsi-prosody-plugins/mod_muc_wait_for_host.lua
 share/jitsi-prosody-plugins/mod_persistent_lobby.lua
 share/jitsi-prosody-plugins/mod_polls.lua
