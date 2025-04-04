@@ -1,7 +1,7 @@
 Index: core/certmanager.lua
 --- core/certmanager.lua.orig
 +++ core/certmanager.lua
-@@ -181,7 +181,7 @@ end
+@@ -184,7 +184,7 @@ end
  
  -- Built-in defaults
  local core_defaults = {
