@@ -93,7 +93,9 @@ www/jitsi-meet/lang/main-lv.json
 www/jitsi-meet/lang/main-ml.json
 www/jitsi-meet/lang/main-mn.json
 www/jitsi-meet/lang/main-mr.json
+www/jitsi-meet/lang/main-nb.json
 www/jitsi-meet/lang/main-nl.json
+www/jitsi-meet/lang/main-no.json
 www/jitsi-meet/lang/main-oc.json
 www/jitsi-meet/lang/main-pl.json
 www/jitsi-meet/lang/main-pt.json
@@ -119,8 +121,6 @@ www/jitsi-meet/lang/update-translation.js
 www/jitsi-meet/libs/
 www/jitsi-meet/libs/alwaysontop.min.js
 www/jitsi-meet/libs/alwaysontop.min.js.map
-www/jitsi-meet/libs/analytics-ga.min.js
-www/jitsi-meet/libs/analytics-ga.min.js.map
 www/jitsi-meet/libs/app.bundle.min.js
 www/jitsi-meet/libs/app.bundle.min.js.map
 www/jitsi-meet/libs/blazeface-front.bin
@@ -266,6 +266,8 @@ www/jitsi-meet/sounds/reactions-crickets.mp3
 www/jitsi-meet/sounds/reactions-crickets.opus
 www/jitsi-meet/sounds/reactions-laughter.mp3
 www/jitsi-meet/sounds/reactions-laughter.opus
+www/jitsi-meet/sounds/reactions-love.mp3
+www/jitsi-meet/sounds/reactions-love.opus
 www/jitsi-meet/sounds/reactions-raised-hand.mp3
 www/jitsi-meet/sounds/reactions-raised-hand.opus
 www/jitsi-meet/sounds/reactions-surprise.mp3
