@@ -2,7 +2,7 @@ COMMENT =		production process manager with a built-in load balancer
 
 GH_ACCOUNT =		Unitech
 GH_PROJECT =		pm2
-GH_TAGNAME =		v6.0.5
+GH_TAGNAME =		v5.4.2
 
 CATEGORIES =		www
 
@@ -12,6 +12,8 @@ MAINTAINER =		Aisha Tammy <aisha@openbsd.org>
 
 # AGPL-3.0
 PERMIT_PACKAGE =	Yes
+
+EPOCH =			0
 
 SITES.deps =		https://files.bsd.ac/openbsd-distfiles/
 DISTFILES.deps =	pm2-${GH_TAGNAME}.npm-cache.tar.bz2
@@ -25,7 +27,7 @@ RUN_DEPENDS =		lang/node
 
 deps-cache:
 	HOME=${WRKDIR} npm config set cache "${WRKDIR}/npm-cache"
-	cd ${WRKSRC} && env HOME=${WRKDIR} npm install --omit=dev
+	cd ${WRKSRC} && env HOME=${WRKDIR} npm -dd install --omit=dev
 
 deps-tarball: deps-cache
 	cd ${WRKDIR} && \
