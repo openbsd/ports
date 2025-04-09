@@ -32,8 +32,8 @@ MODULES=		devel/dconf \
 			devel/meson \
 			x11/gnome
 
+# gtk+4 is just C, but C++ used for a test program
 COMPILER=		base-clang ports-gcc
-COMPILER_LANGS=		c
 
 MODGNOME_TOOLS=		docbook gobject-introspection gtk-update-icon-cache \
 			desktop-file-utils
