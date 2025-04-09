@@ -8,6 +8,8 @@
 /dev/video6 rw
 /dev/video7 rw
 
+/dev/dri rw
+
 # needed for FIDO authentication
 /dev/fido rw
 
