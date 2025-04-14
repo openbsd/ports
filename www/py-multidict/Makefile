@@ -1,10 +1,9 @@
 COMMENT=	multidict implementation
 
-MODPY_DISTV=	6.1.0
+MODPY_DISTV=	6.4.2
 DISTNAME=	multidict-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	www devel
-REVISION=	0
 
 WANTLIB +=	pthread ${MODPY_WANTLIB}
 
@@ -16,7 +15,9 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-TEST_DEPENDS=	devel/py-test-cov
+TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH} \
+		devel/py-test-cov \
+		devel/py-objgraph
 MODPY_TEST_LINK_SO= Yes
 
 .include <bsd.port.mk>
