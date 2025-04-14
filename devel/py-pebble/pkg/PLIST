@@ -69,3 +69,4 @@ lib/python${MODPY_VERSION}/site-packages/pebble/pool/base_pool.py
 lib/python${MODPY_VERSION}/site-packages/pebble/pool/channel.py
 lib/python${MODPY_VERSION}/site-packages/pebble/pool/process.py
 lib/python${MODPY_VERSION}/site-packages/pebble/pool/thread.py
+lib/python${MODPY_VERSION}/site-packages/pebble/py.typed

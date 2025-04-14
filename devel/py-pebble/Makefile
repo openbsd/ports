@@ -1,8 +1,8 @@
 COMMENT=	threading and multiprocessing eye-candy
 
-MODPY_DISTV=	5.1.0
-DISTNAME=	Pebble-${MODPY_DISTV}
-PKGNAME=	py-${DISTNAME:L}
+MODPY_DISTV=	5.1.1
+DISTNAME=	pebble-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
 
 CATEGORIES=	devel
 
