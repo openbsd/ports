@@ -11,7 +11,6 @@ lib/cmake/c-ares/c-ares-config.cmake
 lib/cmake/c-ares/c-ares-targets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/c-ares/c-ares-targets.cmake
 @lib lib/libcares.so.${LIBcares_VERSION}
-@static-lib lib/libcares_static.a
 lib/pkgconfig/libcares.pc
 @man man/man3/ares_cancel.3
 @man man/man3/ares_create_query.3
