@@ -1,3 +1,8 @@
-The Docker command-line tool allows you to control Docker hosts. You
-can use it to build docker images, start docker containers, execute
+The Docker command-line tool allows you to control remote Docker hosts.
+You can use it to build docker images, start docker containers, execute
 commands inside containers, see running containers, and view logs.
+
+Note that Docker cannot be run natively on OpenBSD because it is
+Linux-specific, but you can run Linux+Docker in an OpenBSD vm.
+One description of how to do so can be found at
+https://www.tumfatig.net/2022/running-docker-host-openbsd-vmd/

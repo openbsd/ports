@@ -3,6 +3,7 @@ COMMENT =		command-line tool for controlling Docker
 V =			28.0.4
 DIST_TUPLE =		github docker cli v${V} .
 PKGNAME =		docker-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		sysutils
 
