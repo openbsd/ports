@@ -2,14 +2,15 @@ COMMENT=	tty-based e-mail client, forked from Mutt
 
 GH_ACCOUNT=	neomutt
 GH_PROJECT=	neomutt
-GH_TAGNAME=	20250113
-REVISION=	0
+GH_TAGNAME=	20250404
 
 DIST_TUPLE=	github neomutt neomutt-test-files \
 		7404f4423b11cd5da2d123b3636c7a310bbbed9f neomutt-test-files
 
 CATEGORIES=	mail
 HOMEPAGE=	https://neomutt.org/
+
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 EPOCH=		0
 

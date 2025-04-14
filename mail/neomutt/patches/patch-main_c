@@ -3,13 +3,14 @@ Pledge
 Index: main.c
 --- main.c.orig
 +++ main.c
-@@ -720,6 +720,30 @@ main
-     }
-   }
+@@ -1132,6 +1132,33 @@ int main(int argc, char *argv[], char *envp[])
+   if (!show_help(&cli->help))
+     goto main_ok;
  
 +#ifdef USE_SASL_CYRUS
 +  {
 +    int ret;
++    mutt_debug(LL_DEBUG1, "Starting SASL early for pledge\n");
 +    if ((ret = mutt_sasl_start()) != SASL_OK) {
 +      fprintf(stderr, "%s: mutt_sasl_start: %d\n", argv[0], ret);
 +      exit(1);
@@ -18,12 +19,14 @@ Index: main.c
 +#endif
 +
 +#ifdef CRYPT_BACKEND_GPGME
++  mutt_debug(LL_DEBUG1, "Pledging (GPGME build)\n");
 +  if (pledge("stdio rpath wpath cpath flock fattr getpw tty inet dns "
 +	    "proc exec sendfd recvfd", NULL) == -1) {
 +    fprintf(stderr, "%s: pledge: %s\n", argv[0], strerror(errno));
 +    exit(1);
 +  }
 +#else
++  mutt_debug(LL_DEBUG1, "Pledging (non-GPGME build)\n");
 +  if (pledge("stdio rpath wpath cpath flock fattr getpw tty inet dns "
 +	    "proc exec", NULL) == -1) {
 +    fprintf(stderr, "%s: pledge: %s\n", argv[0], strerror(errno));
@@ -31,6 +34,6 @@ Index: main.c
 +  }
 +#endif /* CRYPT_BACKEND_GPGME */
 +
-   /* collapse remaining argv */
-   while (optind < argc)
-     argv[nargc++] = argv[optind++];
+   // Change the current umask, and save the original one
+   NeoMutt->user_default_umask = umask(077);
+   subjrx_init();
