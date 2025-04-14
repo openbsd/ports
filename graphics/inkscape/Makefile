@@ -1,8 +1,7 @@
 COMMENT =	SVG vector drawing application
 
-VERSION =	1.4
+VERSION =	1.4.1
 DISTNAME =	inkscape-${VERSION}
-REVISION =	4
 
 CATEGORIES =	graphics
 
@@ -10,17 +9,17 @@ HOMEPAGE =	https://www.inkscape.org/
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
-SHARED_LIBS +=  inkscape_base             0.0 # 0.0
+SHARED_LIBS +=  inkscape_base             1.0 # 0.0
 
 # GPLv2 and LGPLv2.1
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} 2geom ICE Magick++-6.Q16 MagickCore-6.Q16
-WANTLIB += MagickWand-6.Q16 SM X11 Xext atk-1.0 atkmm-1.6 boost_filesystem-mt
-WANTLIB += c cairo cairo-gobject cairomm-1.0 enchant-2 epoxy fontconfig
-WANTLIB += freetype gc gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0
-WANTLIB += giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0 gobject-2.0
-WANTLIB += gsl gslcblas gspell-1 gtk-3 gtkmm-3.0 gtksourceview-4
+WANTLIB += MagickWand-6.Q16 SM X11 Xext atk-1.0 atkmm-1.6 boost_atomic-mt
+WANTLIB += boost_filesystem-mt c cairo cairo-gobject cairomm-1.0
+WANTLIB += enchant-2 epoxy fontconfig freetype gc gdk-3 gdk_pixbuf-2.0
+WANTLIB += gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0
+WANTLIB += gobject-2.0 gsl gslcblas gspell-1 gtk-3 gtkmm-3.0 gtksourceview-4
 WANTLIB += harfbuzz iconv intl jpeg lcms2 m pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pangomm-1.4 png poppler poppler-glib potrace
 WANTLIB += sigc-2.0 xml2 xslt z
@@ -71,7 +70,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		www/py-requests \
 		x11/gtk+4,-guic
 
-WRKDIST =	${WRKDIR}/inkscape-${VERSION}_2024-10-09_e7c3feb100
+WRKDIST =	${WRKDIR}/inkscape-${VERSION}_2025-03-30_93de688d07
 
 SUBST_VARS +=	RUBY MODRUBY_REV
 
