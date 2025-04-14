@@ -2,8 +2,7 @@ COMMENT=	Javascript Object Signing and Encryption (JOSE)
 
 CATEGORIES=	security devel
 
-# security/letsencrypt/py-acme needs <2 (as of 3.2.0)
-MODPY_DISTV=	1.15.0
+MODPY_DISTV=	2.0.0
 DISTNAME=	josepy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -11,13 +10,10 @@ PKGNAME=	py-${DISTNAME}
 PERMIT_PACKAGE= Yes
 
 MODULES=	lang/python
-MODPY_PI=	Yes
 MODPY_PYBUILD=	poetry-core
+MODPY_PI=	Yes
 
-RUN_DEPENDS=	security/py-cryptography \
-		security/py-openssl
-
-BUILD_DEPENDS=	${RUN_DEPENDS}
+RUN_DEPENDS=	security/py-cryptography
 
 TEST_DEPENDS=	devel/py-test-flake8
 
