@@ -1,5 +1,5 @@
 COMMENT =		Timeweb Cloud CLI
-V =			2.10.1
+V =			2.12.0
 DISTNAME =		twc_cli-${V}
 PKGNAME =		${DISTNAME:S/_cli//}
 CATEGORIES =		sysutils net
@@ -10,7 +10,7 @@ PERMIT_PACKAGE =	Yes
 SITES =			https://github.com/timeweb-cloud/twc/releases/download/v${V}/
 HOMEPAGE =		https://timeweb.cloud/docs/twc-cli
 
-MAINTAINER =		Klemens Nanni <kn@opensd.org>
+MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 MODULES =		lang/python
 MODPY_PYBUILD =		poetry-core
