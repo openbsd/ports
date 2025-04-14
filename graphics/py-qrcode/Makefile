@@ -1,9 +1,8 @@
 COMMENT=	QR Code image generator
 
-MODPY_DISTV=	8.0
+MODPY_DISTV=	8.1
 DISTNAME=	qrcode-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	graphics textproc
 
@@ -11,8 +10,8 @@ CATEGORIES=	graphics textproc
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PI=	Yes
 MODPY_PYBUILD=	poetry-core
+MODPY_PI=	Yes
 
 RUN_DEPENDS=	graphics/py-Pillow
 TEST_DEPENDS=	devel/py-mock \

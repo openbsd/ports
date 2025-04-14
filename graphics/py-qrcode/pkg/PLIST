@@ -1,5 +1,4 @@
 @pkgpath graphics/py-qrcode,python3
-@conflict py-qrcode-*
 bin/qr
 lib/python${MODPY_VERSION}/site-packages/qrcode/
 lib/python${MODPY_VERSION}/site-packages/qrcode-${MODPY_DISTV}.dist-info/
