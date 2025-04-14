@@ -117,6 +117,7 @@ share/qt6/translations/qt_it.qm
 share/qt6/translations/qt_ja.qm
 share/qt6/translations/qt_ka.qm
 share/qt6/translations/qt_ko.qm
+share/qt6/translations/qt_lg.qm
 share/qt6/translations/qt_lt.qm
 share/qt6/translations/qt_lv.qm
 share/qt6/translations/qt_nl.qm
@@ -151,6 +152,7 @@ share/qt6/translations/qtbase_it.qm
 share/qt6/translations/qtbase_ja.qm
 share/qt6/translations/qtbase_ka.qm
 share/qt6/translations/qtbase_ko.qm
+share/qt6/translations/qtbase_lg.qm
 share/qt6/translations/qtbase_lv.qm
 share/qt6/translations/qtbase_nl.qm
 share/qt6/translations/qtbase_nn.qm

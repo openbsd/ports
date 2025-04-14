@@ -1,12 +1,22 @@
 Index: src/3rdparty/chromium/third_party/lzma_sdk/C/CpuArch.c
 --- src/3rdparty/chromium/third_party/lzma_sdk/C/CpuArch.c.orig
 +++ src/3rdparty/chromium/third_party/lzma_sdk/C/CpuArch.c
-@@ -412,12 +412,40 @@ BoolInt CPU_IsSupported_SHA1(void) { return APPLE_CRYP
+@@ -789,7 +789,6 @@ BoolInt CPU_IsSupported_CRYPTO(void) { return IsProces
+ BoolInt CPU_IsSupported_NEON(void)   { return IsProcessorFeaturePresent(PF_ARM_NEON_INSTRUCTIONS_AVAILABLE) ? 1 : 0; }
+ 
+ #else
+-
+ #if defined(__APPLE__)
+ 
+ /*
+@@ -853,6 +852,36 @@ BoolInt CPU_IsSupported_SHA3(void)
+ BoolInt CPU_IsSupported_SHA1(void) { return APPLE_CRYPTO_SUPPORT_VAL; }
  BoolInt CPU_IsSupported_SHA2(void) { return APPLE_CRYPTO_SUPPORT_VAL; }
  BoolInt CPU_IsSupported_AES (void) { return APPLE_CRYPTO_SUPPORT_VAL; }
- 
++
++
 +#elif defined(__OpenBSD__)
- 
++
 +#include <sys/param.h>
 +#include <sys/sysctl.h>
 +#include <machine/cpu.h>
@@ -33,13 +43,6 @@ Index: src/3rdparty/chromium/third_party/lzma_sdk/C/CpuArch.c
 +MY_HWCAP_CHECK_FUNC (SHA1)
 +MY_HWCAP_CHECK_FUNC (SHA2)
 +MY_HWCAP_CHECK_FUNC (AES)
-+
+ 
+ 
  #else // __APPLE__
- 
- #include <sys/auxv.h>
- 
--#if !defined(ARMV8_OS_FUCHSIA)
-+#if !defined(ARMV8_OS_FUCHSIA) && !defined(__FreeBSD__)
- #define USE_HWCAP
- #endif // !defined(ARMV8_OS_FUCHSIA)
- 

@@ -1,5 +1,3 @@
-- https://github.com/qt/qtwebengine/commit/e372bb3dad121465d61cc15de18c06c85f938072
-- https://github.com/qt/qtwebengine/commit/8f7b00ee89f383cbf6eeda47560a4cecc897e9be
 Index: src/pdf/CMakeLists.txt
 --- src/pdf/CMakeLists.txt.orig
 +++ src/pdf/CMakeLists.txt
@@ -30,11 +28,3 @@ Index: src/pdf/CMakeLists.txt
              list(APPEND gnArgArg
                  is_cfi=false
                  ozone_auto_platforms=false
-@@ -253,6 +255,7 @@ add_gn_build_artifacts_to_target(
-     CMAKE_TARGET Pdf
-     NINJA_TARGET QtPdf
-     MODULE pdf
-+    DEPENDS Pdf_sync_headers
-     BUILDDIR ${buildDir}
-     COMPLETE_STATIC TRUE
-     NINJA_STAMP QtPdf.stamp

@@ -1,21 +1,16 @@
 # Based on Chromium version: 122.0.6261.171
 # Patched with security patches up to Chromium version: 131.0.6778.70
-ONLY_FOR_ARCHS =	amd64 aarch64 i386
-BROKEN-i386 =		reloc problems with embedded FFmpeg (relocation R_386_32 cannot be used against local symbol)
+ONLY_FOR_ARCHS =	amd64 aarch64
 
 USE_WXNEEDED =		Yes
 USE_NOBTCFI =		Yes
 
 DPB_PROPERTIES =	parallel parallel2
-.if ${MACHINE_ARCH} == "i386"
-DPB_PROPERTIES +=	lonesome
-.endif
 
 QT6NAME =	QtWebEngine
 COMMENT =	Qt chromium based web engine
 VERSION =	${QT6_VERSION}
 PKGSPEC =	qt6-qtwebengine-${QT6_PKGSPEC}
-REVISION =	1
 
 SHARED_LIBS +=  Qt6Pdf                        2.0 # 0.0
 SHARED_LIBS +=  Qt6PdfQuick                   1.0 # 0.0
@@ -148,9 +143,6 @@ FFMPEG_TARGET=	arm64
 .elif ${MACHINE_ARCH} == "amd64"
 BUILD_DEPENDS+=	devel/nasm
 FFMPEG_TARGET=	x64
-.elif ${MACHINE_ARCH} == "i386"
-BUILD_DEPENDS+=	devel/nasm
-FFMPEG_TARGET=	ia32
 .endif
 
 FFMPEG_BRAND=	Chrome

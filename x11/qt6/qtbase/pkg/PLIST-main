@@ -598,6 +598,7 @@ include/X11/qt6/QtCore/QtPreprocessorSupport
 include/X11/qt6/QtCore/QtProcessorDetection
 include/X11/qt6/QtCore/QtResource
 include/X11/qt6/QtCore/QtStartUpFunction
+include/X11/qt6/QtCore/QtStdLibDetection
 include/X11/qt6/QtCore/QtSwap
 include/X11/qt6/QtCore/QtSystemDetection
 include/X11/qt6/QtCore/QtTranslation
@@ -612,6 +613,7 @@ include/X11/qt6/QtCore/q20iterator.h
 include/X11/qt6/QtCore/q20map.h
 include/X11/qt6/QtCore/q20memory.h
 include/X11/qt6/QtCore/q20type_traits.h
+include/X11/qt6/QtCore/q20utility.h
 include/X11/qt6/QtCore/q20vector.h
 include/X11/qt6/QtCore/q23functional.h
 include/X11/qt6/QtCore/q23utility.h
@@ -796,6 +798,7 @@ include/X11/qt6/QtCore/qspan.h
 include/X11/qt6/QtCore/qstack.h
 include/X11/qt6/QtCore/qstandardpaths.h
 include/X11/qt6/QtCore/qstaticlatin1stringmatcher.h
+include/X11/qt6/QtCore/qstdlibdetection.h
 include/X11/qt6/QtCore/qstorageinfo.h
 include/X11/qt6/QtCore/qstring.h
 include/X11/qt6/QtCore/qstringalgorithms.h
@@ -2777,6 +2780,7 @@ lib/cmake/Qt6/QtPublicSbomLicenseHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomOpsHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomPurlHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomPythonHelpers.cmake
+lib/cmake/Qt6/QtPublicSbomQtEntityHelpers.cmake
 lib/cmake/Qt6/QtPublicSbomSystemDepHelpers.cmake
 lib/cmake/Qt6/QtPublicTargetHelpers.cmake
 lib/cmake/Qt6/QtPublicTestHelpers.cmake
@@ -3234,6 +3238,17 @@ lib/cmake/Qt6Test/Qt6TestTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/Qt6Test/Qt6TestTargets.cmake
 lib/cmake/Qt6Test/Qt6TestVersionlessAliasTargets.cmake
 lib/cmake/Qt6Test/Qt6TestVersionlessTargets.cmake
+lib/cmake/Qt6TestInternalsPrivate/
+lib/cmake/Qt6TestInternalsPrivate/3rdparty/
+lib/cmake/Qt6TestInternalsPrivate/3rdparty/cmake/
+lib/cmake/Qt6TestInternalsPrivate/3rdparty/cmake/QtRunCMakeTestHelpers.cmake
+lib/cmake/Qt6TestInternalsPrivate/3rdparty/cmake/RunCMake.cmake
+lib/cmake/Qt6TestInternalsPrivate/Qt6TestInternalsPrivateConfig.cmake
+lib/cmake/Qt6TestInternalsPrivate/Qt6TestInternalsPrivateConfigVersion.cmake
+lib/cmake/Qt6TestInternalsPrivate/Qt6TestInternalsPrivateConfigVersionImpl.cmake
+lib/cmake/Qt6TestInternalsPrivate/Qt6TestInternalsPrivateTargets.cmake
+lib/cmake/Qt6TestInternalsPrivate/Qt6TestInternalsPrivateVersionlessAliasTargets.cmake
+lib/cmake/Qt6TestInternalsPrivate/Qt6TestInternalsPrivateVersionlessTargets.cmake
 lib/cmake/Qt6Widgets/
 lib/cmake/Qt6Widgets/Qt6WidgetsAdditionalTargetInfo.cmake
 lib/cmake/Qt6Widgets/Qt6WidgetsConfig.cmake
@@ -3639,8 +3654,6 @@ lib/qt6/mkspecs/features/data/
 lib/qt6/mkspecs/features/data/configure.json
 lib/qt6/mkspecs/features/data/dummy.cpp
 lib/qt6/mkspecs/features/data/dumpvcvars.bat
-lib/qt6/mkspecs/features/data/mac/
-lib/qt6/mkspecs/features/data/mac/objc_namespace.sh
 lib/qt6/mkspecs/features/data/macros.cpp
 lib/qt6/mkspecs/features/data/testserver/
 lib/qt6/mkspecs/features/data/testserver/Dockerfile
@@ -3915,6 +3928,7 @@ lib/qt6/mkspecs/modules/qt_lib_printsupport.pri
 lib/qt6/mkspecs/modules/qt_lib_printsupport_private.pri
 lib/qt6/mkspecs/modules/qt_lib_sql.pri
 lib/qt6/mkspecs/modules/qt_lib_sql_private.pri
+lib/qt6/mkspecs/modules/qt_lib_testinternals_private.pri
 lib/qt6/mkspecs/modules/qt_lib_testlib.pri
 lib/qt6/mkspecs/modules/qt_lib_testlib_private.pri
 lib/qt6/mkspecs/modules/qt_lib_widgets.pri
@@ -4044,6 +4058,7 @@ lib/qt6/modules/OpenGLWidgets.json
 lib/qt6/modules/PrintSupport.json
 lib/qt6/modules/Sql.json
 lib/qt6/modules/Test.json
+lib/qt6/modules/TestInternalsPrivate.json
 lib/qt6/modules/Widgets.json
 lib/qt6/modules/XcbQpaPrivate.json
 lib/qt6/modules/Xml.json

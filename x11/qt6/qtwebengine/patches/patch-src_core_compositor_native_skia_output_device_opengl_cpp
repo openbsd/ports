@@ -1,7 +1,7 @@
 Index: src/core/compositor/native_skia_output_device_opengl.cpp
 --- src/core/compositor/native_skia_output_device_opengl.cpp.orig
 +++ src/core/compositor/native_skia_output_device_opengl.cpp
-@@ -289,7 +289,7 @@ QSGTexture *NativeSkiaOutputDeviceOpenGL::texture(QQui
+@@ -299,7 +299,7 @@ QSGTexture *NativeSkiaOutputDeviceOpenGL::texture(QQui
                  EGL_LINUX_DRM_FOURCC_EXT, drmFormat,
                  EGL_DMA_BUF_PLANE0_FD_EXT, scopedFd.get(),
                  EGL_DMA_BUF_PLANE0_OFFSET_EXT, static_cast<EGLAttrib>(nativePixmap->GetDmaBufOffset(0)),

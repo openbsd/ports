@@ -1,5 +1,3 @@
-- https://github.com/qt/qtwebengine/commit/e372bb3dad121465d61cc15de18c06c85f938072
-- https://github.com/qt/qtwebengine/commit/8f7b00ee89f383cbf6eeda47560a4cecc897e9be
 Index: src/core/CMakeLists.txt
 --- src/core/CMakeLists.txt.orig
 +++ src/core/CMakeLists.txt
@@ -48,22 +46,16 @@ Index: src/core/CMakeLists.txt
              list(APPEND gnArgArg
                  angle_enable_gl=true
                  use_gtk=false # GTK toolkit bindings
-@@ -506,6 +508,10 @@ foreach(arch ${archs})
+@@ -506,7 +508,11 @@ foreach(arch ${archs})
                  CONDITION QT_FEATURE_webengine_system_pulseaudio
              )
              extend_gn_list(gnArgArg
-+                ARGS use_sndio
+-                ARGS use_system_minigbm
++                ARGS use_system_sndi
 +                CONDITION QT_FEATURE_webengine_system_sndio
 +            )
 +            extend_gn_list(gnArgArg
-                 ARGS use_system_minigbm
++                ARGS use_sndio
                  CONDITION QT_FEATURE_webengine_system_gbm
              )
-@@ -597,6 +603,7 @@ add_gn_build_artifacts_to_target(
-     CMAKE_TARGET WebEngineCore
-     NINJA_TARGET QtWebEngineCore
-     MODULE core
-+    DEPENDS WebEngineCore_sync_headers
-     BUILDDIR ${buildDir}
-     COMPLETE_STATIC FALSE
-     NINJA_STAMP QtWebEngineCore.stamp
+             extend_gn_list(gnArgArg

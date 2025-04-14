@@ -65,6 +65,7 @@ include/X11/qt6/QtProtobuf/${VERSION}/QtProtobuf/private/protobuffieldpresencech
 include/X11/qt6/QtProtobuf/${VERSION}/QtProtobuf/private/protobufscalarjsonserializers_p.h
 include/X11/qt6/QtProtobuf/${VERSION}/QtProtobuf/private/protobufscalarserializers_p.h
 include/X11/qt6/QtProtobuf/${VERSION}/QtProtobuf/private/qprotobufdeserializerbase_p.h
+include/X11/qt6/QtProtobuf/${VERSION}/QtProtobuf/private/qprotobufjsonserializer_p.h
 include/X11/qt6/QtProtobuf/${VERSION}/QtProtobuf/private/qprotobufmessage_p.h
 include/X11/qt6/QtProtobuf/${VERSION}/QtProtobuf/private/qprotobufpropertyorderingbuilder_p.h
 include/X11/qt6/QtProtobuf/${VERSION}/QtProtobuf/private/qprotobufregistration_p.h
@@ -144,6 +145,10 @@ include/X11/qt6/QtProtobufQuick/QtProtobufQuickVersion
 include/X11/qt6/QtProtobufQuick/qtprotobufquickexports.h
 include/X11/qt6/QtProtobufQuick/qtprotobufquickversion.h
 include/X11/qt6/QtProtobufWellKnownTypes/
+include/X11/qt6/QtProtobufWellKnownTypes/${VERSION}/
+include/X11/qt6/QtProtobufWellKnownTypes/${VERSION}/QtProtobufWellKnownTypes/
+include/X11/qt6/QtProtobufWellKnownTypes/${VERSION}/QtProtobufWellKnownTypes/private/
+include/X11/qt6/QtProtobufWellKnownTypes/${VERSION}/QtProtobufWellKnownTypes/private/qprotobufwellknowntypesjsonserializers_p.h
 include/X11/qt6/QtProtobufWellKnownTypes/QtProtobufWellKnownTypes
 include/X11/qt6/QtProtobufWellKnownTypes/QtProtobufWellKnownTypesDepends
 include/X11/qt6/QtProtobufWellKnownTypes/QtProtobufWellKnownTypesVersion

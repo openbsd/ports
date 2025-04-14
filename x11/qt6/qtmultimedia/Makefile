@@ -18,7 +18,8 @@ WANTLIB += gstbase-1.0 gstgl-1.0 gstpbutils-1.0 gstphotography-1.0
 WANTLIB += gstplay-1.0 gstreamer-1.0 gstvideo-1.0 iconv intl lzma
 WANTLIB += m mp3lame opus pulse speex ssl swresample swscale theoradec
 WANTLIB += theoraenc va va-drm va-x11 vorbis vorbisenc vpx wayland-client
-WANTLIB += wayland-egl x264 x265 xcb xkbcommon xml2 xvidcore z
+WANTLIB += wayland-egl webp webpmux x264 x265 xcb xkbcommon xml2
+WANTLIB += xvidcore z
 
 BUILD_DEPENDS =	graphics/vulkan-loader \
 		x11/qt6/qtshadertools \

@@ -58,12 +58,6 @@ CONFIGURE_STYLE = cmake
 
 MODQT6_DEPS =	No
 
-#.if ${MACHINE_ARCH} == "amd64" || ${MACHINE_ARCH} == "i386"
-#PKG_ARGS+=      -Dx86=1
-#.else
-#PKG_ARGS+=      -Dx86=0
-#.endif
-
 BUILD_DEPENDS =	graphics/vulkan-loader \
 		x11/qt6/qtlanguageserver \
 		x11/qt6/qtshadertools

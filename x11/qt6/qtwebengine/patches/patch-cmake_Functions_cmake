@@ -1,5 +1,3 @@
-- https://github.com/qt/qtwebengine/commit/e372bb3dad121465d61cc15de18c06c85f938072
-- https://github.com/qt/qtwebengine/commit/8f7b00ee89f383cbf6eeda47560a4cecc897e9be
 Index: cmake/Functions.cmake
 --- cmake/Functions.cmake.orig
 +++ cmake/Functions.cmake
@@ -48,7 +46,7 @@ Index: cmake/Functions.cmake
      )
      extend_gn_list(gnArgArg
          ARGS dcheck_always_on
-@@ -939,7 +941,7 @@ macro(append_compiler_linker_sdk_setup)
+@@ -962,7 +964,7 @@ macro(append_compiler_linker_sdk_setup)
                  use_libcxx=true
              )
          endif()
@@ -57,7 +55,7 @@ Index: cmake/Functions.cmake
              extend_gn_list(gnArgArg ARGS use_libcxx
                  CONDITION QT_FEATURE_stdlib_libcpp
              )
-@@ -977,7 +979,7 @@ macro(append_compiler_linker_sdk_setup)
+@@ -1000,7 +1002,7 @@ macro(append_compiler_linker_sdk_setup)
          )
      endif()
      get_gn_arch(cpu ${TEST_architecture_arch})
@@ -66,7 +64,7 @@ Index: cmake/Functions.cmake
  
          extend_gn_list_cflag(gnArgArg
              ARG arm_tune
-@@ -1067,7 +1069,7 @@ macro(append_toolchain_setup)
+@@ -1090,7 +1092,7 @@ macro(append_toolchain_setup)
                  host_cpu="${cpu}"
              )
          endif()
@@ -75,40 +73,7 @@ Index: cmake/Functions.cmake
          get_gn_arch(cpu ${TEST_architecture_arch})
          list(APPEND gnArgArg
              custom_toolchain="${buildDir}/target_toolchain:target"
-@@ -1122,7 +1124,7 @@ endmacro()
- 
- function(add_ninja_command)
-     cmake_parse_arguments(PARSE_ARGV 0 arg
--        "" "TARGET;BUILDDIR;MODULE" "OUTPUT;BYPRODUCTS"
-+        "" "TARGET;BUILDDIR;MODULE" "OUTPUT;BYPRODUCTS;DEPENDS"
-     )
-     _qt_internal_validate_all_args_are_parsed(arg)
- 
-@@ -1142,7 +1144,7 @@ function(add_ninja_command)
-         USES_TERMINAL
-         VERBATIM
-         COMMAND_EXPAND_LISTS
--        DEPENDS run_${arg_MODULE}_NinjaReady
-+        DEPENDS run_${arg_MODULE}_NinjaReady ${arg_DEPENDS}
-     )
- endfunction()
- 
-@@ -1172,7 +1174,7 @@ endfunction()
- 
- function(add_gn_build_artifacts_to_target)
-     cmake_parse_arguments(PARSE_ARGV 0 arg
--        "" "CMAKE_TARGET;NINJA_TARGET;BUILDDIR;MODULE;COMPLETE_STATIC;NINJA_STAMP;NINJA_DATA_STAMP" ""
-+        "" "CMAKE_TARGET;NINJA_TARGET;BUILDDIR;MODULE;COMPLETE_STATIC;NINJA_STAMP;NINJA_DATA_STAMP;DEPENDS" ""
-     )
-     _qt_internal_validate_all_args_are_parsed(arg)
- 
-@@ -1200,11 +1202,26 @@ function(add_gn_build_artifacts_to_target)
-                 OUTPUT ${stamps}
-                 BUILDDIR ${arg_BUILDDIR}/${config}/${arch}
-                 MODULE ${arg_MODULE}
-+                DEPENDS ${arg_DEPENDS}
-             )
-             add_dependencies(run_${arg_MODULE}_NinjaDone ${target})
+@@ -1229,6 +1231,20 @@ function(add_gn_build_artifacts_to_target)
              set_target_properties(${arg_CMAKE_TARGET} PROPERTIES
                  LINK_DEPENDS ${arg_BUILDDIR}/${config}/${arch}/${arg_NINJA_STAMP}
              )
@@ -129,7 +94,7 @@ Index: cmake/Functions.cmake
              if(QT_IS_MACOS_UNIVERSAL)
                  add_intermediate_archive(${target} ${arg_BUILDDIR}/${config}/${arch} ${arg_COMPLETE_STATIC})
              elseif(IOS)
-@@ -1331,7 +1348,7 @@ endfunction()
+@@ -1355,7 +1371,7 @@ endfunction()
  
  function(check_for_ulimit)
      message("-- Checking 'ulimit -n'")
@@ -138,7 +103,7 @@ Index: cmake/Functions.cmake
          OUTPUT_VARIABLE ulimitOutput
      )
      string(REGEX MATCHALL "[0-9]+" limit "${ulimitOutput}")
-@@ -1340,7 +1357,7 @@ function(check_for_ulimit)
+@@ -1364,7 +1380,7 @@ function(check_for_ulimit)
          if(NOT ${CMAKE_VERSION} VERSION_LESS "3.21.0")
              message(" -- Creating linker launcher")
              file(GENERATE OUTPUT ${PROJECT_BINARY_DIR}/linker_ulimit.sh
