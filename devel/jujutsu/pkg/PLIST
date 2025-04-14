@@ -1,7 +1,6 @@
 @bin bin/jj
 @man man/man1/jj-abandon.1
 @man man/man1/jj-absorb.1
-@man man/man1/jj-backout.1
 @man man/man1/jj-bookmark-create.1
 @man man/man1/jj-bookmark-delete.1
 @man man/man1/jj-bookmark-forget.1
@@ -46,6 +45,7 @@
 @man man/man1/jj-git-remote-rename.1
 @man man/man1/jj-git-remote-set-url.1
 @man man/man1/jj-git-remote.1
+@man man/man1/jj-git-root.1
 @man man/man1/jj-git.1
 @man man/man1/jj-help.1
 @man man/man1/jj-interdiff.1
@@ -64,6 +64,7 @@
 @man man/man1/jj-rebase.1
 @man man/man1/jj-resolve.1
 @man man/man1/jj-restore.1
+@man man/man1/jj-revert.1
 @man man/man1/jj-root.1
 @man man/man1/jj-show.1
 @man man/man1/jj-sign.1
