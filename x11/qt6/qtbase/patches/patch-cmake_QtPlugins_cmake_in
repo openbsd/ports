@@ -1,0 +1,14 @@
+Enable QT_SKIP_AUTO_PLUGIN_INCLUSION and QT_SKIP_AUTO_QML_PLUGIN_INCLUSION by
+default
+Index: cmake/QtPlugins.cmake.in
+--- cmake/QtPlugins.cmake.in.orig
++++ cmake/QtPlugins.cmake.in
+@@ -6,7 +6,7 @@ include_guard(DIRECTORY)
+ 
+ # Distributions should probably change this default.
+ if(NOT DEFINED QT_SKIP_AUTO_PLUGIN_INCLUSION)
+-    set(QT_SKIP_AUTO_PLUGIN_INCLUSION OFF)
++    set(QT_SKIP_AUTO_PLUGIN_INCLUSION ON)
+ endif()
+ 
+ if(NOT QT_NO_CREATE_TARGETS AND NOT QT_SKIP_AUTO_PLUGIN_INCLUSION)
