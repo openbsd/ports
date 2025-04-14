@@ -6,12 +6,12 @@ MODKDE_TRANSLATIONS =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6DBusAddons
-WANTLIB += KF6I18n KF6KCMUtilsCore KF6KCMUtilsQuick KF6Screen
-WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui LayerShellQtInterface
-WANTLIB += Plasma PlasmaQuick Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
-WANTLIB += Qt6Quick Qt6Sensors Qt6Widgets Qt6Xml X11 X11-xcb Xext
-WANTLIB += Xi c m xcb xcb-util xkbcommon
+WANTLIB += KF6GuiAddons KF6I18n KF6KCMUtilsCore KF6KCMUtilsQuick
+WANTLIB += KF6Screen KF6WidgetsAddons KF6WindowSystem KF6XmlGui
+WANTLIB += LayerShellQtInterface Plasma PlasmaQuick Qt6Core Qt6DBus
+WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels
+WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6Sensors Qt6Widgets Qt6Xml
+WANTLIB += X11 X11-xcb Xext Xi c m xcb xcb-util xkbcommon
 
 BUILD_DEPENDS =	devel/kf6/kcmutils
 
@@ -27,6 +27,7 @@ LIB_DEPENDS =	devel/kf6/kconfig \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kwindowsystem \
 		devel/kf6/kxmlgui \
+		devel/kf6/kguiaddons \
 		x11/kde-plasma/layer-shell-qt>=${VERSION} \
 		x11/kde-plasma/libkscreen>=${VERSION} \
 		x11/kde-plasma/libplasma>=${VERSION} \

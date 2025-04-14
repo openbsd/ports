@@ -45,7 +45,6 @@ MODKDE_ICON_CACHE = Yes
 MODKDE_DOCS = Yes
 
 BUILD_DEPENDS =	x11/kde-plasma/kwin>=${VERSION} \
-		math/libqalculate \
 		graphics/kirigami-addons \
 		x11/xdotool \
 		devel/kf6/kquickcharts
@@ -105,6 +104,7 @@ LIB_DEPENDS =	audio/libcanberra \
 		devel/kf6/sonnet \
 		devel/kf6/syntax-highlighting \
 		devel/qcoro,qt6 \
+		math/libqalculate \
 		multimedia/phonon,qt6 \
 		sysutils/libudev-openbsd \
 		textproc/icu4c \
@@ -145,5 +145,4 @@ post-install:
 #	${MODPY_COMPILEALL} \
 #		${PREFIX}/share/kconf_update/migrate-calendar-to-plugin-id.py
 
-LIB_DEPENDS += math/libqalculate
 .include <bsd.port.mk>

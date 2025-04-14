@@ -3,12 +3,12 @@ DISTNAME =	plasma-sdk-${VERSION}
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
-WANTLIB += KF6DBusAddons KF6I18n KF6IconThemes KF6JobWidgets KF6KIOCore
-WANTLIB += KF6KIOGui KF6KIOWidgets KF6Package KF6Parts KF6Service
-WANTLIB += KF6Solid KF6SyntaxHighlighting KF6TextEditor KF6WidgetsAddons
-WANTLIB += KF6WindowSystem KF6XmlGui Plasma Plasma5Support PlasmaQuick
-WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Qml
-WANTLIB += Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
+WANTLIB += KF6DBusAddons KF6GuiAddons KF6I18n KF6IconThemes KF6JobWidgets
+WANTLIB += KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Package KF6Parts
+WANTLIB += KF6Service KF6Solid KF6SyntaxHighlighting KF6TextEditor
+WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui Plasma Plasma5Support
+WANTLIB += PlasmaQuick Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
+WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
 WANTLIB += Qt6Widgets Qt6Xml X11 c m
 
 MODKDE_TRANSLATIONS =	Yes
@@ -38,6 +38,7 @@ LIB_DEPENDS +=	devel/kf6/karchive \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kwindowsystem \
 		devel/kf6/kxmlgui \
+		devel/kf6/kguiaddons \
 		devel/kf6/solid \
 		devel/kf6/syntax-highlighting \
 		x11/kde-plasma/libplasma>=${VERSION} \
