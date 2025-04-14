@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1708 2025/03/25 17:17:16 sthen Exp $
+# $OpenBSD: Quirks.pm,v 1.1709 2025/04/14 20:05:29 kn Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1246,6 +1246,7 @@ setup_obsolete_reason(
 	11 => 'rpki-data',
 	5 => 'pycha',
 	10 => 'gotosocial',
+	5 => 'xsd',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
