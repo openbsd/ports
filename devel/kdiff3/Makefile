@@ -37,6 +37,7 @@ LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kcompletion \
 		devel/kf6/kconfig \
 		devel/kf6/kconfigwidgets \
+		devel/kf6/kguiaddons \
 		devel/kf6/kcoreaddons \
 		devel/kf6/kcrash \
 		devel/kf6/ki18n \
@@ -51,4 +52,3 @@ LIB_DEPENDS =	devel/kf6/kcolorscheme \
 TEST_IS_INTERACTIVE =	X11
 
 .include <bsd.port.mk>
-LIB_DEPENDS += devel/kf6/kguiaddons 
