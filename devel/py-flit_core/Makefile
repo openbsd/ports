@@ -1,7 +1,6 @@
 COMMENT=	distribution-building parts of Flit
 
-MODPY_DISTV=	3.11.0
-
+MODPY_DISTV=	3.12.0
 DISTNAME=	flit_core-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
