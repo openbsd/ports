@@ -1,8 +1,6 @@
 @newgroup _ejabberd:594
 @newuser _ejabberd:594:_ejabberd::ejabberd account:${LOCALSTATEDIR}/db/ejabberd:/sbin/nologin
-@mode 0755
 @rcscript ${RCDIR}/ejabberd
-@mode
 lib/ejabberd/
 lib/ejabberd/base64url-${MODERL_MODULE_base64url_VERSION}/
 lib/ejabberd/base64url-${MODERL_MODULE_base64url_VERSION}/ebin/
@@ -134,6 +132,8 @@ lib/ejabberd/ejabberd-${V}/ebin/gen_pubsub_nodetree.beam
 lib/ejabberd/ejabberd-${V}/ebin/jd2ejd.beam
 lib/ejabberd/ejabberd-${V}/ebin/misc.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_adhoc.beam
+lib/ejabberd/ejabberd-${V}/ebin/mod_adhoc_api.beam
+lib/ejabberd/ejabberd-${V}/ebin/mod_adhoc_api_opt.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_adhoc_opt.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_admin_extra.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_admin_update_sql.beam
@@ -162,6 +162,7 @@ lib/ejabberd/ejabberd-${V}/ebin/mod_carboncopy.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_client_state.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_client_state_opt.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_configure.beam
+lib/ejabberd/ejabberd-${V}/ebin/mod_configure_opt.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_conversejs.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_conversejs_opt.beam
 lib/ejabberd/ejabberd-${V}/ebin/mod_delegation.beam
@@ -413,6 +414,7 @@ lib/ejabberd/ejabberd-${V}/priv/msgs/ru.msg
 lib/ejabberd/ejabberd-${V}/priv/msgs/sk.msg
 lib/ejabberd/ejabberd-${V}/priv/msgs/sq.msg
 lib/ejabberd/ejabberd-${V}/priv/msgs/sv.msg
+lib/ejabberd/ejabberd-${V}/priv/msgs/ta.msg
 lib/ejabberd/ejabberd-${V}/priv/msgs/th.msg
 lib/ejabberd/ejabberd-${V}/priv/msgs/tr.msg
 lib/ejabberd/ejabberd-${V}/priv/msgs/uk.msg
@@ -657,17 +659,17 @@ lib/ejabberd/p1_acme-${MODERL_MODULE_p1_acme_VERSION}/ebin/
 lib/ejabberd/p1_acme-${MODERL_MODULE_p1_acme_VERSION}/ebin/p1_acme.app
 lib/ejabberd/p1_acme-${MODERL_MODULE_p1_acme_VERSION}/ebin/p1_acme.beam
 lib/ejabberd/p1_acme-${MODERL_MODULE_p1_acme_VERSION}/ebin/p1_acme_codec.beam
-lib/ejabberd/p1_mysql-1.0.24/
-lib/ejabberd/p1_mysql-1.0.24/ebin/
-lib/ejabberd/p1_mysql-1.0.24/ebin/p1_mysql.app
-lib/ejabberd/p1_mysql-1.0.24/ebin/p1_mysql.beam
-lib/ejabberd/p1_mysql-1.0.24/ebin/p1_mysql_app.beam
-lib/ejabberd/p1_mysql-1.0.24/ebin/p1_mysql_auth.beam
-lib/ejabberd/p1_mysql-1.0.24/ebin/p1_mysql_bin.beam
-lib/ejabberd/p1_mysql-1.0.24/ebin/p1_mysql_conn.beam
-lib/ejabberd/p1_mysql-1.0.24/ebin/p1_mysql_sup.beam
-lib/ejabberd/p1_mysql-1.0.24/include/
-lib/ejabberd/p1_mysql-1.0.24/include/p1_mysql.hrl
+lib/ejabberd/p1_mysql-${MODERL_MODULE_p1_mysql_VERSION}/
+lib/ejabberd/p1_mysql-${MODERL_MODULE_p1_mysql_VERSION}/ebin/
+lib/ejabberd/p1_mysql-${MODERL_MODULE_p1_mysql_VERSION}/ebin/p1_mysql.app
+lib/ejabberd/p1_mysql-${MODERL_MODULE_p1_mysql_VERSION}/ebin/p1_mysql.beam
+lib/ejabberd/p1_mysql-${MODERL_MODULE_p1_mysql_VERSION}/ebin/p1_mysql_app.beam
+lib/ejabberd/p1_mysql-${MODERL_MODULE_p1_mysql_VERSION}/ebin/p1_mysql_auth.beam
+lib/ejabberd/p1_mysql-${MODERL_MODULE_p1_mysql_VERSION}/ebin/p1_mysql_bin.beam
+lib/ejabberd/p1_mysql-${MODERL_MODULE_p1_mysql_VERSION}/ebin/p1_mysql_conn.beam
+lib/ejabberd/p1_mysql-${MODERL_MODULE_p1_mysql_VERSION}/ebin/p1_mysql_sup.beam
+lib/ejabberd/p1_mysql-${MODERL_MODULE_p1_mysql_VERSION}/include/
+lib/ejabberd/p1_mysql-${MODERL_MODULE_p1_mysql_VERSION}/include/p1_mysql.hrl
 lib/ejabberd/p1_oauth2-${MODERL_MODULE_p1_oauth2_VERSION}/
 lib/ejabberd/p1_oauth2-${MODERL_MODULE_p1_oauth2_VERSION}/ebin/
 lib/ejabberd/p1_oauth2-${MODERL_MODULE_p1_oauth2_VERSION}/ebin/oauth2.beam
@@ -729,8 +731,6 @@ lib/ejabberd/stringprep-${MODERL_MODULE_stringprep_VERSION}/
 lib/ejabberd/stringprep-${MODERL_MODULE_stringprep_VERSION}/ebin/
 lib/ejabberd/stringprep-${MODERL_MODULE_stringprep_VERSION}/ebin/stringprep.app
 lib/ejabberd/stringprep-${MODERL_MODULE_stringprep_VERSION}/ebin/stringprep.beam
-lib/ejabberd/stringprep-${MODERL_MODULE_stringprep_VERSION}/ebin/stringprep_app.beam
-lib/ejabberd/stringprep-${MODERL_MODULE_stringprep_VERSION}/ebin/stringprep_sup.beam
 lib/ejabberd/stringprep-${MODERL_MODULE_stringprep_VERSION}/priv/
 lib/ejabberd/stringprep-${MODERL_MODULE_stringprep_VERSION}/priv/lib/
 @so lib/ejabberd/stringprep-${MODERL_MODULE_stringprep_VERSION}/priv/lib/stringprep.so
