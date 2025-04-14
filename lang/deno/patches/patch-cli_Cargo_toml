@@ -1,4 +1,5 @@
-deno's upgrade feature cannot work on OpenBSD, directly disable it
+* deno's upgrade feature cannot work on OpenBSD, directly disable it
+* disable deno_panic
 
 Index: cli/Cargo.toml
 --- cli/Cargo.toml.orig
@@ -12,3 +13,11 @@ Index: cli/Cargo.toml
  # A feature that enables heap profiling with dhat on Linux.
  # 1. Compile with `cargo build --profile=release-with-debug --features=dhat-heap`
  # 2. Run the executable. It will output a dhat-heap.json file.
+@@ -81,7 +81,6 @@ deno_media_type = { workspace = true, features = ["dat
+ deno_npm.workspace = true
+ deno_npm_cache.workspace = true
+ deno_package_json = { workspace = true, features = ["sync"] }
+-deno_panic = "0.1.0"
+ deno_path_util.workspace = true
+ deno_resolver = { workspace = true, features = ["sync"] }
+ deno_runtime = { workspace = true, features = ["include_js_files_for_snapshotting"] }

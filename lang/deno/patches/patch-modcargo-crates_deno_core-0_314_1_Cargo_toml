@@ -1,6 +1,6 @@
-Index: modcargo-crates/deno_core-0.341.0/Cargo.toml
---- modcargo-crates/deno_core-0.341.0/Cargo.toml.orig
-+++ modcargo-crates/deno_core-0.341.0/Cargo.toml
+Index: modcargo-crates/deno_core-0.343.0/Cargo.toml
+--- modcargo-crates/deno_core-0.343.0/Cargo.toml.orig
++++ modcargo-crates/deno_core-0.343.0/Cargo.toml
 @@ -28,8 +28,7 @@ resolver = "2"
  
  [features]
