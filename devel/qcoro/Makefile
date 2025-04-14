@@ -1,6 +1,6 @@
 COMMENT =	C++ coroutines for Qt
 
-V =		0.11.0
+V =		0.12.0
 GH_ACCOUNT =	danvratil
 GH_PROJECT =	qcoro
 GH_TAGNAME =	v${V}
