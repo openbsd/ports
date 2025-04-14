@@ -2,7 +2,7 @@
 
 PKG_ARCH ?=		*
 
-V ?=			9.0.0
+V ?=			9.0.1
 EXTRACT_SUFX ?=		.tar.bz2
 
 DISTNAME=		kicad-${KICAD_PROJECT}-$V
