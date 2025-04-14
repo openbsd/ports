@@ -24,10 +24,12 @@ share/examples/krill/krill-hsm.conf
 share/examples/krill/krill-multi-user.conf
 share/examples/krill/krill-pubd.conf
 share/examples/krill/krill-testbed.conf
-share/examples/krill/rbac.polar
-share/examples/krill/roles.polar
-share/examples/krill/rules.polar
 share/examples/krill/krill.conf
 @mode 0640
 @group _krill
 @sample ${SYSCONFDIR}/krill.conf
+@mode
+@group
+share/examples/krill/rbac.polar
+share/examples/krill/roles.polar
+share/examples/krill/rules.polar
