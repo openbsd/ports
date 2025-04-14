@@ -1,6 +1,6 @@
 COMMENT =	libmpv wrapper for QtQuick2 and QML
 
-DISTNAME =	mpvqt-1.0.1
+DISTNAME =	mpvqt-1.1.0
 
 CATEGORIES =	multimedia
 
@@ -8,14 +8,15 @@ HOMEPAGE =	https://invent.kde.org/libraries/mpvqt
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
-SHARED_LIBS +=  MpvQt                     1.0 # 0.0
+SHARED_LIBS +=  MpvQt                     2.0 # 0.0
 
 # usual KDE rules:
 # LGPLv2.1+, GPLv2+, GPLv3
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Network Qt6OpenGL
-WANTLIB += Qt6Qml Qt6QmlModels Qt6Quick m mpv
+WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
+WANTLIB += m mpv
 
 SITES =		${SITE_KDE:=stable/mpvqt/}
 EXTRACT_SUFX =	.tar.xz
