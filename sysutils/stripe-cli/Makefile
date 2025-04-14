@@ -1,7 +1,7 @@
 
 COMMENT =	build, test, and manage your Stripe integration
 
-V =		1.22.0
+V =		1.26.1
 MODGO_MODNAME =	github.com/stripe/stripe-cli
 MODGO_VERSION =	v${V}
 
@@ -20,5 +20,4 @@ MODULES =		lang/go
 WANTLIB += c pthread
 
 .include "modules.inc"
-    
 .include <bsd.port.mk>
