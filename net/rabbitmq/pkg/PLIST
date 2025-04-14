@@ -177,6 +177,9 @@ lib/rabbitmq/plugins/${RABBIT_CREDENTIALS_OBFUSCATION}/ebin/credentials_obfuscat
 lib/rabbitmq/plugins/${RABBIT_CREDENTIALS_OBFUSCATION}/include/
 lib/rabbitmq/plugins/${RABBIT_CREDENTIALS_OBFUSCATION}/include/credentials_obfuscation.hrl
 lib/rabbitmq/plugins/${RABBIT_CREDENTIALS_OBFUSCATION}/include/otp_crypto.hrl
+lib/rabbitmq/plugins/${RABBIT_CREDENTIALS_OBFUSCATION}/priv/
+lib/rabbitmq/plugins/${RABBIT_CREDENTIALS_OBFUSCATION}/priv/schema/
+lib/rabbitmq/plugins/${RABBIT_CREDENTIALS_OBFUSCATION}/priv/schema/credentials_obfuscation.schema
 lib/rabbitmq/plugins/${RABBIT_CUTTLEFISH}/
 lib/rabbitmq/plugins/${RABBIT_CUTTLEFISH}/ebin/
 lib/rabbitmq/plugins/${RABBIT_CUTTLEFISH}/ebin/conf_parse.beam
@@ -1620,6 +1623,9 @@ lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/ebin/webmachine_log.beam
 lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/ebin/webmachine_log_handler.beam
 lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/include/
 lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/include/rabbitmq_web_dispatch_records.hrl
+lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/priv/
+lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/priv/schema/
+lib/rabbitmq/plugins/rabbitmq_web_dispatch-${V}/priv/schema/rabbitmq_web_dispatch.schema
 lib/rabbitmq/plugins/rabbitmq_web_mqtt-${V}/
 lib/rabbitmq/plugins/rabbitmq_web_mqtt-${V}/ebin/
 lib/rabbitmq/plugins/rabbitmq_web_mqtt-${V}/ebin/Elixir.RabbitMQ.CLI.Ctl.Commands.ListWebMqttConnectionsCommand.beam

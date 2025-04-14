@@ -3,9 +3,9 @@ quieten upstream's tar check
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -337,9 +337,9 @@ $(SOURCE_DIST).manifest: $(SOURCE_DIST)
- 	$(gen_verbose) cd $(dir $(SOURCE_DIST)) && \
- 		find $(notdir $(SOURCE_DIST)) | LC_COLLATE=C sort > $@
+@@ -218,9 +218,9 @@ ZIP_V_1 =
+ ZIP_V_2 =
+ ZIP_V = $(ZIP_V_$(V))
  
 -ifeq ($(shell tar --version | grep -c "GNU tar"),0)
 +ifeq ($(shell tar --version 2>/dev/null | grep -c "GNU tar"),0)
