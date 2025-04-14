@@ -1,8 +1,7 @@
 COMMENT =		c protocol buffers
 
-V =			1.5.1
+V =			1.5.2
 DISTNAME =		protobuf-c-$V
-REVISION =		0
 
 SHARED_LIBS =		protobuf-c 2.0	# 1.0
 
@@ -26,22 +25,23 @@ WANTLIB += absl_flags_commandlineflag_internal absl_flags_config
 WANTLIB += absl_flags_internal absl_flags_marshalling absl_flags_private_handle_accessor
 WANTLIB += absl_flags_program_name absl_flags_reflection absl_graphcycles_internal
 WANTLIB += absl_hash absl_hashtablez_sampler absl_int128 absl_kernel_timeout_internal
-WANTLIB += absl_log_entry absl_log_globals absl_log_initialize
+WANTLIB += absl_leak_check absl_log_entry absl_log_globals absl_log_initialize
 WANTLIB += absl_log_internal_check_op absl_log_internal_conditions
 WANTLIB += absl_log_internal_fnmatch absl_log_internal_format
 WANTLIB += absl_log_internal_globals absl_log_internal_log_sink_set
 WANTLIB += absl_log_internal_message absl_log_internal_nullguard
-WANTLIB += absl_log_internal_proto absl_log_severity absl_log_sink
-WANTLIB += absl_low_level_hash absl_malloc_internal absl_random_distributions
-WANTLIB += absl_random_internal_platform absl_random_internal_pool_urbg
-WANTLIB += absl_random_internal_randen absl_random_internal_randen_hwaes
-WANTLIB += absl_random_internal_randen_hwaes_impl absl_random_internal_randen_slow
-WANTLIB += absl_random_internal_seed_material absl_random_seed_gen_exception
-WANTLIB += absl_random_seed_sequences absl_raw_hash_set absl_raw_logging_internal
-WANTLIB += absl_spinlock_wait absl_stacktrace absl_status absl_statusor
-WANTLIB += absl_str_format_internal absl_strerror absl_string_view
-WANTLIB += absl_strings absl_strings_internal absl_symbolize absl_synchronization
-WANTLIB += absl_throw_delegate absl_time absl_time_zone absl_utf8_for_code_point
+WANTLIB += absl_log_internal_proto absl_log_internal_structured_proto
+WANTLIB += absl_log_severity absl_log_sink absl_low_level_hash
+WANTLIB += absl_malloc_internal absl_random_distributions absl_random_internal_platform
+WANTLIB += absl_random_internal_pool_urbg absl_random_internal_randen
+WANTLIB += absl_random_internal_randen_hwaes absl_random_internal_randen_hwaes_impl
+WANTLIB += absl_random_internal_randen_slow absl_random_internal_seed_material
+WANTLIB += absl_random_seed_gen_exception absl_random_seed_sequences
+WANTLIB += absl_raw_hash_set absl_raw_logging_internal absl_spinlock_wait
+WANTLIB += absl_stacktrace absl_status absl_statusor absl_str_format_internal
+WANTLIB += absl_strerror absl_string_view absl_strings absl_strings_internal
+WANTLIB += absl_symbolize absl_synchronization absl_throw_delegate
+WANTLIB += absl_time absl_time_zone absl_tracing_internal absl_utf8_for_code_point
 WANTLIB += absl_vlog_config_internal c execinfo m protobuf protoc
 WANTLIB += utf8_range utf8_validity z
 
