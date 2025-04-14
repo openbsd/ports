@@ -1,9 +1,8 @@
 COMMENT=	utility for reading information from audio/video files
 
-VERSION=	24.12
+VERSION=	25.03
 PKGNAME=	mediainfo-${VERSION}
 CATEGORIES=	multimedia
-REVISION=	0
 
 HOMEPAGE=	https://mediaarea.net/en/MediaInfo
 
