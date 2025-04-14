@@ -5,8 +5,6 @@ daemon_user="_minidlna"
 
 . /etc/rc.d/rc.subr
 
-rc_reload=NO
-
 rc_pre() {
 	install -d -o ${daemon_user} /var/run/minidlna
 }
