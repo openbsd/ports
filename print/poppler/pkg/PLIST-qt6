@@ -1,5 +1,6 @@
 include/poppler/qt6/
 include/poppler/qt6/poppler-annotation.h
+include/poppler/qt6/poppler-converter.h
 include/poppler/qt6/poppler-export.h
 include/poppler/qt6/poppler-form.h
 include/poppler/qt6/poppler-link.h

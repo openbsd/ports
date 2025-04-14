@@ -1,4 +1,5 @@
 @conflict poppler-qt-<0.5.4p0
+@conflict poppler-qt6-<25.04.0
 @pkgpath print/poppler
 include/poppler/
 include/poppler/Annot.h
@@ -117,7 +118,6 @@ include/poppler/goo/grandom.h
 include/poppler/goo/gstrtod.h
 include/poppler/poppler-config.h
 include/poppler/poppler_private_export.h
-include/poppler/qt6/poppler-converter.h
 include/poppler/splash/
 include/poppler/splash/Splash.h
 include/poppler/splash/SplashBitmap.h
