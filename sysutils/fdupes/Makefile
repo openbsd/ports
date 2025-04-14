@@ -1,6 +1,6 @@
 COMMENT=	identify or delete duplicate files
 
-V=		2.3.2
+V=		2.4.0
 DISTNAME=	fdupes-$V
 CATEGORIES=	sysutils
 
