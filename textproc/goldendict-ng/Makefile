@@ -5,7 +5,7 @@ COMMENT =		next generation GoldenDict
 CATEGORIES =		textproc education x11
 
 DIST_TUPLE =		github	xiaoyifang	goldendict-ng	\
-				v25.02.0-Release.e895b18c	.
+				v25.05.0-Release.2a2b0e16	.
 PKGNAME =		${DISTNAME:C/-[[:alnum:].]*$//}
 
 # GPLv3+
@@ -15,12 +15,12 @@ MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 WANTLIB += ${COMPILER_LIBCXX} GL ICE Qt6Concurrent Qt6Core Qt6Core5Compat
 WANTLIB += Qt6Gui Qt6Multimedia Qt6Network Qt6OpenGL Qt6Positioning
-WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlModels Qt6Quick Qt6Svg
-WANTLIB += Qt6TextToSpeech Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
-WANTLIB += Qt6Widgets Qt6Xml SM X11 Xext Xtst avcodec avformat
-WANTLIB += avutil bz2 c fmt hunspell-1.7 iconv icudata icui18n
-WANTLIB += icuuc lzma lzo2 m opencc swresample vorbis vorbisfile
-WANTLIB += xapian z zim zstd
+WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
+WANTLIB += Qt6Quick Qt6Svg Qt6TextToSpeech Qt6WebChannel Qt6WebEngineCore
+WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml SM X11 Xext Xtst
+WANTLIB += avcodec avformat avutil bz2 c fmt hunspell-1.7 iconv
+WANTLIB += icudata icui18n icuuc lzma lzo2 m opencc swresample
+WANTLIB += vorbis vorbisfile xapian z zim zstd
 
 # C++17
 COMPILER =		base-clang ports-gcc
