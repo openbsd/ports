@@ -3,7 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	organizer for book/dvd/music collections
 
 DISTNAME =	tellico-4.1.1
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	x11
 
@@ -71,6 +71,7 @@ LIB_DEPENDS =	audio/libcdio \
 		devel/kf6/solid \
 		devel/kf6/sonnet \
 		net/yaz \
+		print/poppler,-qt6 \
 		textproc/exempi \
 		textproc/libxml \
 		textproc/libxslt \
@@ -80,7 +81,7 @@ LIB_DEPENDS =	audio/libcdio \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtpositioning \
 		x11/qt6/qtwebchannel \
-		x11/qt6/qtwebengine \
+		x11/qt6/qtwebengine
 
 TEST_IS_INTERACTIVE =	X11
 

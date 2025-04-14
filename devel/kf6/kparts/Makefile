@@ -1,5 +1,6 @@
 COMMENT =	KDE plugin framework for user interface components
 DISTNAME =	kparts-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  KF6Parts                  0.0 # 0.0
 
@@ -19,6 +20,7 @@ LIB_DEPENDS =	devel/kf6/kconfig>=${MODKF6_VERSION} \
 		devel/kf6/kconfigwidgets>=${MODKF6_VERSION} \
 		devel/kf6/kcoreaddons>=${MODKF6_VERSION} \
 		devel/kf6/ki18n>=${MODKF6_VERSION} \
+		devel/kf6/kguiaddons>=${MODKF6_VERSION} \
 		devel/kf6/kio>=${MODKF6_VERSION} \
 		devel/kf6/kjobwidgets>=${MODKF6_VERSION} \
 		devel/kf6/kservice>=${MODKF6_VERSION} \
@@ -34,4 +36,3 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 MODKF6_BUILD_TESTING =	Yes
 
 .include <bsd.port.mk>
-LIB_DEPENDS += devel/kf6/kguiaddons 

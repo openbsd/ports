@@ -2,6 +2,7 @@ COMMENT =	drop-down terminal emulator based on KDE Konsole
 
 DISTNAME =	yakuake-${MODKDE_GEAR_VERSION}
 EPOCH =		0
+REVISION =	0
 
 CATEGORIES =	x11 sysutils
 
@@ -18,11 +19,12 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Attica KF6ColorScheme
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
-WANTLIB += KF6Crash KF6DBusAddons KF6GlobalAccel KF6I18n KF6IconThemes
-WANTLIB += KF6KIOCore KF6NewStuffCore KF6NewStuffWidgets KF6Notifications
-WANTLIB += KF6NotifyConfig KF6Parts KF6StatusNotifierItem KF6WidgetsAddons
-WANTLIB += KF6WindowSystem KF6XmlGui KWaylandClient Qt6Core Qt6DBus
-WANTLIB += Qt6Gui Qt6Network Qt6Widgets Qt6Xml X11 c m xkbcommon
+WANTLIB += KF6Crash KF6DBusAddons KF6GlobalAccel KF6GuiAddons
+WANTLIB += KF6I18n KF6IconThemes KF6KIOCore KF6NewStuffCore KF6NewStuffWidgets
+WANTLIB += KF6Notifications KF6NotifyConfig KF6Parts KF6StatusNotifierItem
+WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui KWaylandClient
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets Qt6Xml
+WANTLIB += X11 c m xkbcommon
 
 MODULES =	x11/kde
 
@@ -47,6 +49,7 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/ki18n \
 		devel/kf6/kiconthemes \
 		devel/kf6/kio \
+		devel/kf6/kguiaddons \
 		devel/kf6/knewstuff \
 		devel/kf6/knotifications \
 		devel/kf6/knotifyconfig \

@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	BitTorrent Client
 
 DISTNAME =	ktorrent-${MODKDE_GEAR_VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  ktcore                    4.0 # 0.0
 
@@ -19,11 +20,11 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Bookmarks KF6ColorScheme
 WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
 WANTLIB += KF6CoreAddons KF6Crash KF6DBusAddons KF6DNSSD KF6GlobalAccel
-WANTLIB += KF6I18n KF6IconThemes KF6ItemViews KF6JobWidgets KF6KCMUtils
-WANTLIB += KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore KF6KIOFileWidgets
-WANTLIB += KF6KIOGui KF6KIOWidgets KF6Notifications KF6NotifyConfig
-WANTLIB += KF6Parts KF6Plotting KF6Service KF6Solid KF6SonnetUi
-WANTLIB += KF6StatusNotifierItem KF6Syndication KF6TextWidgets
+WANTLIB += KF6GuiAddons KF6I18n KF6IconThemes KF6ItemViews KF6JobWidgets
+WANTLIB += KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore
+WANTLIB += KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets KF6Notifications
+WANTLIB += KF6NotifyConfig KF6Parts KF6Plotting KF6Service KF6Solid
+WANTLIB += KF6SonnetUi KF6StatusNotifierItem KF6Syndication KF6TextWidgets
 WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui KTorrent6
 WANTLIB += Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
 WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels
@@ -68,6 +69,7 @@ LIB_DEPENDS =		audio/taglib \
 			devel/kf6/kservice \
 			devel/kf6/kstatusnotifieritem \
 			devel/kf6/ktextwidgets \
+			devel/kf6/kguiaddons \
 			devel/kf6/kwidgetsaddons \
 			devel/kf6/kwindowsystem \
 			devel/kf6/kxmlgui \
