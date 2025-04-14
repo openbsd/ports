@@ -1,4 +1,4 @@
-PHP_VERSION=	8.3.19
+PHP_VERSION=	8.3.20
 AUTOCONF_VERSION= 2.71
 
 # keep -gd and -xsl above 7.6-stable; WANTLIB
