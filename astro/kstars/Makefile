@@ -2,10 +2,9 @@ USE_NOBTCFI-aarch64 =	Yes# fortran
 
 COMMENT =	planetarium simulator for KDE
 
-V =		3.7.5
+V =		3.7.6
 DISTNAME =	kstars-${V}
 EPOCH =		0
-REVISION =	0
 
 CATEGORIES =	astro education
 
