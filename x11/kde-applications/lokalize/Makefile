@@ -1,6 +1,7 @@
 COMMENT =	KDE app localization tools
 DISTNAME =	lokalize-${VERSION}
 CATEGORIES =	x11 devel
+REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/office/org.kde.lokalize
 
@@ -13,12 +14,12 @@ MODKDE_DOCS = yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Bookmarks KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
-WANTLIB += KF6Crash KF6DBusAddons KF6I18n KF6ItemViews KF6JobWidgets
-WANTLIB += KF6KIOCore KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets
-WANTLIB += KF6Notifications KF6Service KF6Solid KF6SonnetCore
-WANTLIB += KF6SonnetUi KF6TextWidgets KF6WidgetsAddons KF6XmlGui
-WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Sql Qt6Widgets
-WANTLIB += Qt6Xml c hunspell-1.7 m
+WANTLIB += KF6Crash KF6DBusAddons KF6GuiAddons KF6I18n KF6ItemViews
+WANTLIB += KF6JobWidgets KF6KIOCore KF6KIOFileWidgets KF6KIOGui
+WANTLIB += KF6KIOWidgets KF6Notifications KF6Service KF6Solid
+WANTLIB += KF6SonnetCore KF6SonnetUi KF6TextWidgets KF6WidgetsAddons
+WANTLIB += KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Sql
+WANTLIB += Qt6Widgets Qt6Xml c hunspell-1.7 m
 
 MODULES +=	lang/python
 
@@ -37,6 +38,7 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/knotifications \
 		devel/kf6/kservice \
 		devel/kf6/ktextwidgets \
+		devel/kf6/kguiaddons \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \

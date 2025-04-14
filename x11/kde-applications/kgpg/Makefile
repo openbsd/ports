@@ -1,18 +1,19 @@
 COMMENT =	KDE interface to GnuPG
 DISTNAME =	kgpg-${VERSION}
 CATEGORIES =	x11
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Bookmarks KF6Codecs
 WANTLIB += KF6ColorScheme KF6Completion KF6ConfigCore KF6ConfigGui
 WANTLIB += KF6ConfigWidgets KF6Contacts KF6CoreAddons KF6Crash
-WANTLIB += KF6DBusAddons KF6I18n KF6ItemModels KF6ItemViews KF6JobWidgets
-WANTLIB += KF6KIOCore KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets
-WANTLIB += KF6Notifications KF6Service KF6Solid KF6SonnetUi KF6StatusNotifierItem
-WANTLIB += KF6TextTemplate KF6TextWidgets KF6WidgetsAddons KF6WindowSystem
-WANTLIB += KF6XmlGui KPim6AkonadiContactCore KPim6AkonadiContactWidgets
-WANTLIB += KPim6AkonadiCore KPim6GrantleeTheme Qt6Core Qt6DBus
-WANTLIB += Qt6Gui Qt6Network Qt6PrintSupport Qt6Widgets Qt6Xml
-WANTLIB += X11 c m
+WANTLIB += KF6DBusAddons KF6GuiAddons KF6I18n KF6ItemModels KF6ItemViews
+WANTLIB += KF6JobWidgets KF6KIOCore KF6KIOFileWidgets KF6KIOGui
+WANTLIB += KF6KIOWidgets KF6Notifications KF6Service KF6Solid
+WANTLIB += KF6SonnetUi KF6StatusNotifierItem KF6TextTemplate KF6TextWidgets
+WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui KPim6AkonadiContactCore
+WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiCore KPim6GrantleeTheme
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6PrintSupport Qt6Widgets
+WANTLIB += Qt6Xml X11 c m
 
 MODKDE_TRANSLATIONS = yes
 MODKDE_DESKTOP_FILE = yes
@@ -42,6 +43,7 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kitemmodels \
 		devel/kf6/kitemviews \
 		devel/kf6/kjobwidgets \
+		devel/kf6/kguiaddons \
 		devel/kf6/knotifications \
 		devel/kf6/kservice \
 		devel/kf6/kstatusnotifieritem \

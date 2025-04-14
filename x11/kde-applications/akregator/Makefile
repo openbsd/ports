@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	news feed reader
 DISTNAME =	akregator-${VERSION}
 CATEGORIES =	net www
+REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/akregator
 
@@ -11,13 +12,14 @@ SHARED_LIBS +=  akregatorprivate          4.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Codecs KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6Contacts
-WANTLIB += KF6CoreAddons KF6Crash KF6I18n KF6IconThemes KF6ItemModels
-WANTLIB += KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick
-WANTLIB += KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Notifications
-WANTLIB += KF6NotifyConfig KF6Parts KF6Service KF6Solid KF6StatusNotifierItem
-WANTLIB += KF6Syndication KF6TextAddonsWidgets KF6TextAutoCorrectionCore
-WANTLIB += KF6TextAutoCorrectionWidgets KF6TextCustomEditor KF6TextEditTextToSpeech
-WANTLIB += KF6TextTemplate KF6TextUtils KF6UserFeedbackCore KF6UserFeedbackWidgets
+WANTLIB += KF6CoreAddons KF6Crash KF6GuiAddons KF6I18n KF6IconThemes
+WANTLIB += KF6ItemModels KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore
+WANTLIB += KF6KCMUtilsQuick KF6KIOCore KF6KIOGui KF6KIOWidgets
+WANTLIB += KF6Notifications KF6NotifyConfig KF6Parts KF6Service
+WANTLIB += KF6Solid KF6StatusNotifierItem KF6Syndication KF6TextAddonsWidgets
+WANTLIB += KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
+WANTLIB += KF6TextCustomEditor KF6TextEditTextToSpeech KF6TextTemplate
+WANTLIB += KF6TextUtils KF6UserFeedbackCore KF6UserFeedbackWidgets
 WANTLIB += KF6WidgetsAddons KF6XmlGui KPim6AkonadiCore KPim6AkonadiMime
 WANTLIB += KPim6GrantleeTheme KPim6KontactInterface KPim6Libkdepim
 WANTLIB += KPim6Libkleo KPim6MessageCore KPim6MessageViewer KPim6Mime
@@ -74,6 +76,7 @@ LIB_DEPENDS =	devel/kf6/kcmutils \
 		devel/kf6/kiconthemes \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
+		devel/kf6/kguiaddons \
 		devel/kf6/solid \
 		x11/kde-plasma/plasma-activities \
 		devel/kf6/syndication \

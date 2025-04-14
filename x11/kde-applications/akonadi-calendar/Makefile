@@ -1,13 +1,14 @@
 COMMENT =	PIM Akonadi calendar support library
 DISTNAME =	akonadi-calendar-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=	KPim6AkonadiCalendar      0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CalendarCore KF6Codecs KF6ColorScheme
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6Contacts
-WANTLIB += KF6CoreAddons KF6Crash KF6DBusAddons KF6I18n KF6ItemModels
-WANTLIB += KF6JobWidgets KF6KIOCore KF6KIOGui KF6Notifications
+WANTLIB += KF6CoreAddons KF6Crash KF6DBusAddons KF6GuiAddons KF6I18n
+WANTLIB += KF6ItemModels KF6JobWidgets KF6KIOCore KF6KIOGui KF6Notifications
 WANTLIB += KF6Service KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
 WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6WidgetsAddons
 WANTLIB += KF6XmlGui KPim6AkonadiContactCore KPim6AkonadiContactWidgets
@@ -36,6 +37,7 @@ LIB_DEPENDS =	devel/kf6/kcalendarcore \
 		devel/kf6/kitemmodels \
 		devel/kf6/kjobwidgets \
 		devel/kf6/knotifications \
+		devel/kf6/kguiaddons \
 		devel/kf6/kservice \
 		devel/kf6/ktexttemplate \
 		devel/kf6/kcrash \

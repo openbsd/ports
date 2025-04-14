@@ -1,17 +1,19 @@
 COMMENT =	reversi board game
 DISTNAME =	kreversi-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/kreversi
 
 WANTLIB += ${COMPILER_LIBCXX} GL KDEGames6 KF6Bookmarks KF6ColorScheme
 WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
-WANTLIB += KF6CoreAddons KF6Crash KF6DBusAddons KF6I18n KF6IconThemes
-WANTLIB += KF6ItemViews KF6JobWidgets KF6KIOCore KF6KIOFileWidgets
-WANTLIB += KF6KIOGui KF6KIOWidgets KF6Service KF6Solid KF6WidgetsAddons
-WANTLIB += KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
-WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
-WANTLIB += Qt6QuickWidgets Qt6Svg Qt6Widgets Qt6Xml c m
+WANTLIB += KF6CoreAddons KF6Crash KF6DBusAddons KF6GuiAddons KF6I18n
+WANTLIB += KF6IconThemes KF6ItemViews KF6JobWidgets KF6KIOCore
+WANTLIB += KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets KF6Service
+WANTLIB += KF6Solid KF6WidgetsAddons KF6XmlGui Qt6Core Qt6DBus
+WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels
+WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6QuickWidgets Qt6Svg
+WANTLIB += Qt6Widgets Qt6Xml c m
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes
@@ -29,6 +31,7 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/kdbusaddons \
 		devel/kf6/ki18n \
 		devel/kf6/kiconthemes \
+		devel/kf6/kguiaddons \
 		devel/kf6/kio \
 		devel/kf6/kitemviews \
 		devel/kf6/kjobwidgets \

@@ -1,6 +1,7 @@
 COMMENT =	calendar and scheduling component of kontact
 DISTNAME =	korganizer-${VERSION}
 CATEGORIES =	net www
+REVISION =	0
 
 SHARED_LIBS +=  korganizer_core         3.1 # 5.13.2
 SHARED_LIBS +=  korganizer_interfaces   1.1 # 5.13.2
@@ -8,22 +9,23 @@ SHARED_LIBS +=  korganizerprivate       8.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Attica KF6CalendarCore KF6ColorScheme
 WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
-WANTLIB += KF6Contacts KF6CoreAddons KF6Crash KF6Holidays KF6I18n
-WANTLIB += KF6IconThemes KF6IconWidgets KF6ItemModels KF6ItemViews
-WANTLIB += KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick
-WANTLIB += KF6KIOCore KF6KIOGui KF6KIOWidgets KF6NewStuffCore
-WANTLIB += KF6NewStuffWidgets KF6Parts KF6Service KF6Solid KF6TextAutoCorrectionCore
-WANTLIB += KF6TextAutoCorrectionWidgets KF6TextCustomEditor KF6TextTemplate
-WANTLIB += KF6UserFeedbackCore KF6UserFeedbackWidgets KF6WidgetsAddons
-WANTLIB += KF6WindowSystem KF6XmlGui KPim6AkonadiCalendar KPim6AkonadiContactCore
+WANTLIB += KF6Contacts KF6CoreAddons KF6Crash KF6GuiAddons KF6Holidays
+WANTLIB += KF6I18n KF6IconThemes KF6IconWidgets KF6ItemModels
+WANTLIB += KF6ItemViews KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore
+WANTLIB += KF6KCMUtilsQuick KF6KIOCore KF6KIOGui KF6KIOWidgets
+WANTLIB += KF6NewStuffCore KF6NewStuffWidgets KF6Parts KF6Service
+WANTLIB += KF6Solid KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
+WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6UserFeedbackCore
+WANTLIB += KF6UserFeedbackWidgets KF6WidgetsAddons KF6WindowSystem
+WANTLIB += KF6XmlGui KPim6AkonadiCalendar KPim6AkonadiContactCore
 WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiCore KPim6AkonadiMime
-WANTLIB +=  KPim6AkonadiWidgets KPim6CalendarSupport
-WANTLIB += KPim6CalendarUtils KPim6EventViews KPim6GrantleeTheme
-WANTLIB += KPim6IMAP KPim6IdentityManagementCore KPim6IncidenceEditor
-WANTLIB += KPim6KontactInterface KPim6LdapCore KPim6LdapWidgets
-WANTLIB += KPim6Libkdepim KPim6MailTransport KPim6Mime KPim6PimCommon
-WANTLIB += KPim6PimCommonAkonadi Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6PrintSupport Qt6Qml Qt6Widgets Qt6Xml X11 c m
+WANTLIB += KPim6AkonadiWidgets KPim6CalendarSupport KPim6CalendarUtils
+WANTLIB += KPim6EventViews KPim6GrantleeTheme KPim6IMAP KPim6IdentityManagementCore
+WANTLIB += KPim6IncidenceEditor KPim6KontactInterface KPim6LdapCore
+WANTLIB += KPim6LdapWidgets KPim6Libkdepim KPim6MailTransport
+WANTLIB += KPim6Mime KPim6PimCommon KPim6PimCommonAkonadi Qt6Core
+WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6PrintSupport Qt6Qml Qt6Widgets
+WANTLIB += Qt6Xml X11 c m
 
 MODKDE_ICON_CACHE = yes
 MODKDE_TRANSLATIONS = yes
@@ -56,6 +58,7 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/kjobwidgets \
 		devel/kf6/knewstuff \
 		devel/kf6/kparts \
+		devel/kf6/kguiaddons \
 		devel/kf6/kservice \
 		devel/kf6/ktexttemplate \
 		devel/kf6/kuserfeedback \

@@ -1,6 +1,7 @@
 COMMENT =	2D space arcade game for KDE
 DISTNAME =	kspaceduel-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/kspaceduel
 
@@ -13,15 +14,16 @@ MODKDE_DOCS = yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL KDEGames6 KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
-WANTLIB += KF6Crash KF6DBusAddons KF6I18n KF6WidgetsAddons KF6XmlGui
-WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Qml Qt6Svg Qt6SvgWidgets
-WANTLIB += Qt6Widgets Qt6Xml c m
+WANTLIB += KF6Crash KF6DBusAddons KF6GuiAddons KF6I18n KF6WidgetsAddons
+WANTLIB += KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Qml
+WANTLIB += Qt6Svg Qt6SvgWidgets Qt6Widgets Qt6Xml c m
 
 LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kcompletion \
 		devel/kf6/kconfig \
 		devel/kf6/kconfigwidgets \
 		devel/kf6/kcoreaddons \
+		devel/kf6/kguiaddons \
 		devel/kf6/kcrash \
 		devel/kf6/kdbusaddons \
 		devel/kf6/ki18n \

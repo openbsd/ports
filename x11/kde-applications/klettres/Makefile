@@ -1,13 +1,14 @@
 COMMENT =	alphabet learning application for KDE
 DISTNAME =	klettres-${VERSION}
+REVISION =	0
 
 CATEGORIES =	education
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Attica KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
-WANTLIB += KF6I18n KF6NewStuffCore KF6NewStuffWidgets KF6WidgetsAddons
-WANTLIB += KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Svg
-WANTLIB += Qt6Widgets Qt6Xml c m phonon4qt6
+WANTLIB += KF6GuiAddons KF6I18n KF6NewStuffCore KF6NewStuffWidgets
+WANTLIB += KF6WidgetsAddons KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6Svg Qt6Widgets Qt6Xml c m phonon4qt6
 
 MODKDE_ICON_CACHE = yes
 MODKDE_TRANSLATIONS = yes
@@ -22,6 +23,7 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/kconfigwidgets \
 		devel/kf6/kcoreaddons \
 		devel/kf6/kcrash \
+		devel/kf6/kguiaddons \
 		devel/kf6/ki18n \
 		devel/kf6/knewstuff \
 		devel/kf6/kwidgetsaddons \

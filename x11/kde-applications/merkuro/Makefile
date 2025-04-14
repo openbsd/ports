@@ -1,5 +1,6 @@
 USE_NOBTCFI =	Yes
 USE_WXNEEDED =	Yes
+REVISION =	0
 
 COMMENT =	calendar email todo and task application
 
@@ -19,8 +20,8 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CalendarCore KF6Codecs KF6ColorScheme
 WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
-WANTLIB += KF6Contacts KF6CoreAddons KF6Crash KF6DBusAddons KF6I18n
-WANTLIB += KF6I18nQml KF6ItemModels KF6KIOCore KF6Notifications
+WANTLIB += KF6Contacts KF6CoreAddons KF6Crash KF6DBusAddons KF6GuiAddons
+WANTLIB += KF6I18n KF6I18nQml KF6ItemModels KF6KIOCore KF6Notifications
 WANTLIB += KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
 WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6WidgetsAddons
 WANTLIB += KF6WindowSystem KF6XmlGui KPim6AkonadiCalendar KPim6AkonadiContactCore
@@ -69,6 +70,7 @@ LIB_DEPENDS =	devel/kf6/kcalendarcore \
 		devel/kf6/kio \
 		devel/kf6/kitemmodels \
 		devel/kf6/ktexttemplate \
+		devel/kf6/kguiaddons \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/knotifications \
 		graphics/kirigami-addons \

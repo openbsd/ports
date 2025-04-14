@@ -1,18 +1,19 @@
 COMMENT =	music collection manager and player for KDE
 DISTNAME =	juk-${VERSION}
 CATEGORIES =	audio
+REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/multimedia/org.kde.juk
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Bookmarks KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
-WANTLIB += KF6Crash KF6DBusAddons KF6GlobalAccel KF6I18n KF6IconThemes
-WANTLIB += KF6ItemViews KF6JobWidgets KF6KIOCore KF6KIOFileWidgets
-WANTLIB += KF6KIOGui KF6KIOWidgets KF6Notifications KF6Service
-WANTLIB += KF6Solid KF6SonnetUi KF6StatusNotifierItem KF6TextWidgets
-WANTLIB += KF6Wallet KF6WidgetsAddons KF6WindowSystem KF6XmlGui
-WANTLIB += Qt6Concurrent Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Svg
-WANTLIB += Qt6Widgets Qt6Xml X11 c m phonon4qt6 tag
+WANTLIB += KF6Crash KF6DBusAddons KF6GlobalAccel KF6GuiAddons
+WANTLIB += KF6I18n KF6IconThemes KF6ItemViews KF6JobWidgets KF6KIOCore
+WANTLIB += KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets KF6Notifications
+WANTLIB += KF6Service KF6Solid KF6SonnetUi KF6StatusNotifierItem
+WANTLIB += KF6TextWidgets KF6Wallet KF6WidgetsAddons KF6WindowSystem
+WANTLIB += KF6XmlGui Qt6Concurrent Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6Svg Qt6Widgets Qt6Xml X11 c m phonon4qt6 tag
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes
@@ -34,6 +35,7 @@ LIB_DEPENDS =	audio/taglib \
 		devel/kf6/ki18n \
 		devel/kf6/kiconthemes \
 		devel/kf6/kio \
+		devel/kf6/kguiaddons \
 		devel/kf6/kitemviews \
 		devel/kf6/kjobwidgets \
 		devel/kf6/knotifications \

@@ -3,12 +3,13 @@ USE_WXNEEDED =	Yes
 COMMENT =	letter order game
 DISTNAME =	kanagram-${VERSION}
 CATEGORIES =	education x11
+REVISION =	0
 
 HOMEPAGE =	https://edu.kde.org/kanagram/
 
 WANTLIB += ${COMPILER_LIBCXX} GL KEduVocDocument KF6Attica KF6ColorScheme
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
-WANTLIB += KF6Crash KF6I18n KF6NewStuffCore KF6NewStuffWidgets
+WANTLIB += KF6Crash KF6GuiAddons KF6I18n KF6NewStuffCore KF6NewStuffWidgets
 WANTLIB += KF6SonnetCore KF6WidgetsAddons KF6XmlGui Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Multimedia Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta
 WANTLIB += Qt6QmlModels Qt6QmlWorkerScript Qt6Quick Qt6TextToSpeech
@@ -30,6 +31,7 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/kconfig \
 		devel/kf6/kconfigwidgets \
 		devel/kf6/kcoreaddons \
+		devel/kf6/kguiaddons \
 		devel/kf6/kcrash \
 		devel/kf6/ki18n \
 		devel/kf6/knewstuff \

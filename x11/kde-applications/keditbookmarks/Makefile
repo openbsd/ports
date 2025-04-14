@@ -1,15 +1,16 @@
 COMMENT =	KDE bookmarks editor
 DISTNAME =	keditbookmarks-${VERSION}
 CATEGORIES =	x11
+REVISION =	0
 
 SHARED_LIBS +=  kbookmarkmodel_private    2.0 # 5.97
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Bookmarks KF6Codecs KF6ColorScheme
 WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
-WANTLIB += KF6CoreAddons KF6Crash KF6I18n KF6IconThemes KF6IconWidgets
-WANTLIB += KF6KIOCore KF6KIOGui KF6Parts KF6Service KF6WidgetsAddons
-WANTLIB += KF6WindowSystem KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6Widgets Qt6Xml X11 c m
+WANTLIB += KF6CoreAddons KF6Crash KF6GuiAddons KF6I18n KF6IconThemes
+WANTLIB += KF6IconWidgets KF6KIOCore KF6KIOGui KF6Parts KF6Service
+WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui Qt6Core
+WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6Widgets Qt6Xml X11 c m
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_TRANSLATIONS = yes
@@ -26,6 +27,7 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/kcoreaddons \
 		devel/kf6/ki18n \
 		devel/kf6/kiconthemes \
+		devel/kf6/kguiaddons \
 		devel/kf6/kio \
 		devel/kf6/kparts \
 		devel/kf6/kservice \

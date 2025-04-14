@@ -1,13 +1,14 @@
 COMMENT =	PIM Akonadi import wizard
 DISTNAME =	akonadi-import-wizard-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=	KPim6ImportWizard         0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6Contacts
-WANTLIB += KF6CoreAddons KF6Crash KF6DBusAddons KF6I18n KF6IconThemes
-WANTLIB += KF6ItemModels KF6KIOCore KF6Service KF6TextAutoCorrectionCore
+WANTLIB += KF6CoreAddons KF6Crash KF6DBusAddons KF6GuiAddons KF6I18n
+WANTLIB += KF6IconThemes KF6ItemModels KF6KIOCore KF6Service KF6TextAutoCorrectionCore
 WANTLIB += KF6TextAutoCorrectionWidgets KF6TextCustomEditor KF6TextTemplate
 WANTLIB += KF6WidgetsAddons KF6XmlGui KPim6AkonadiContactCore
 WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiCore KPim6AkonadiMime
@@ -43,6 +44,7 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kitemmodels \
 		devel/kf6/kservice \
 		devel/kf6/ktexttemplate \
+		devel/kf6/kguiaddons \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kiconthemes \
 		devel/kf6/kxmlgui \

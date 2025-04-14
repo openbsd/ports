@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	virtual globe and world atlas
 DISTNAME =	marble-${VERSION}
 CATEGORIES =	geo
+REVISION =	0
 
 HOMEPAGE =	https://marble.kde.org/
 
@@ -18,17 +19,17 @@ MODKDE_DOCS = yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
-WANTLIB += KF6I18n KF6KIOCore KF6KIOGui KF6Parts KF6Runner KF6Service
-WANTLIB += KF6WidgetsAddons KF6XmlGui Qt6Concurrent Qt6Core Qt6Core5Compat
-WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning
-WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
-WANTLIB += Qt6Quick Qt6SerialPort Qt6Sql Qt6Svg Qt6SvgWidgets
-WANTLIB += Qt6WebChannel Qt6WebChannelQuick Qt6WebEngineCore Qt6WebEngineQuick
-WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml absl_bad_optional_access
-WANTLIB += absl_bad_variant_access absl_base absl_city absl_civil_time
-WANTLIB += absl_debugging_internal absl_decode_rust_punycode absl_demangle_internal
-WANTLIB += absl_demangle_rust absl_examine_stack absl_graphcycles_internal
-WANTLIB += absl_hash absl_int128 absl_kernel_timeout_internal
+WANTLIB += KF6GuiAddons KF6I18n KF6KIOCore KF6KIOGui KF6Parts
+WANTLIB += KF6Runner KF6Service KF6WidgetsAddons KF6XmlGui Qt6Concurrent
+WANTLIB += Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network Qt6OpenGL
+WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels
+WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6SerialPort Qt6Sql Qt6Svg
+WANTLIB += Qt6SvgWidgets Qt6WebChannel Qt6WebChannelQuick Qt6WebEngineCore
+WANTLIB += Qt6WebEngineQuick Qt6WebEngineWidgets Qt6Widgets Qt6Xml
+WANTLIB += absl_bad_optional_access absl_bad_variant_access absl_base
+WANTLIB += absl_city absl_civil_time absl_debugging_internal absl_decode_rust_punycode
+WANTLIB += absl_demangle_internal absl_demangle_rust absl_examine_stack
+WANTLIB += absl_graphcycles_internal absl_hash absl_int128 absl_kernel_timeout_internal
 WANTLIB += absl_leak_check absl_log_entry absl_log_globals absl_log_internal_check_op
 WANTLIB += absl_log_internal_fnmatch absl_log_internal_format
 WANTLIB += absl_log_internal_globals absl_log_internal_log_sink_set
@@ -61,6 +62,7 @@ LIB_DEPENDS =	devel/abseil-cpp \
 		devel/kf6/krunner \
 		devel/kf6/kservice \
 		devel/kf6/kwidgetsaddons \
+		devel/kf6/kguiaddons \
 		devel/kf6/kxmlgui \
 		devel/protobuf \
 		devel/shapelib \

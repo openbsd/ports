@@ -1,6 +1,7 @@
 COMMENT =	VNC and RDP  desktop client
 DISTNAME =	krdc-${VERSION}
 CATEGORIES =	net x11
+REVISION =	0
 
 SHARED_LIBS +=  krdccore               3.1 # 5.0
 
@@ -8,8 +9,8 @@ HOMEPAGE =	https://kde.org/applications/internet/org.kde.krdc
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Bookmarks KF6BookmarksWidgets
 WANTLIB += KF6ColorScheme KF6Completion KF6ConfigCore KF6ConfigGui
-WANTLIB += KF6ConfigWidgets KF6CoreAddons KF6Crash KF6DNSSD KF6I18n
-WANTLIB += KF6IconThemes KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore
+WANTLIB += KF6ConfigWidgets KF6CoreAddons KF6Crash KF6DNSSD KF6GuiAddons
+WANTLIB += KF6I18n KF6IconThemes KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore
 WANTLIB += KF6KCMUtilsQuick KF6KIOCore KF6KIOGui KF6KIOWidgets
 WANTLIB += KF6Notifications KF6NotifyConfig KF6Service KF6Solid
 WANTLIB += KF6StatusNotifierItem KF6Wallet KF6WidgetsAddons KF6WindowSystem
@@ -36,6 +37,7 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/kdnssd \
 		devel/kf6/ki18n \
 		devel/kf6/kiconthemes \
+		devel/kf6/kguiaddons \
 		devel/kf6/kio \
 		devel/kf6/kjobwidgets \
 		devel/kf6/knotifications \

@@ -3,14 +3,15 @@ USE_WXNEEDED =	Yes
 COMMENT =	utilities and tools to manage themes in KDE PIM applications
 DISTNAME =	grantlee-editor-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  grantleethemeeditor       1.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6Contacts
-WANTLIB += KF6CoreAddons KF6Crash KF6DBusAddons KF6I18n KF6ItemModels
-WANTLIB += KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Service
-WANTLIB += KF6Solid KF6SyntaxHighlighting KF6TextAutoCorrectionCore
+WANTLIB += KF6CoreAddons KF6Crash KF6DBusAddons KF6GuiAddons KF6I18n
+WANTLIB += KF6ItemModels KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets
+WANTLIB += KF6Service KF6Solid KF6SyntaxHighlighting KF6TextAutoCorrectionCore
 WANTLIB += KF6TextAutoCorrectionWidgets KF6TextCustomEditor KF6TextTemplate
 WANTLIB += KF6WidgetsAddons KF6XmlGui KPim6AkonadiContactCore
 WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiCore KPim6AkonadiMime
@@ -50,6 +51,7 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \
+		devel/kf6/kguiaddons \
 		devel/kf6/syntax-highlighting \
 		security/gpgme,-qt \
 		security/libassuan \

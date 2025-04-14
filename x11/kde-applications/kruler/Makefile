@@ -1,14 +1,15 @@
 COMMENT =	screen ruler for KDE
 DISTNAME =	kruler-${VERSION}
 CATEGORIES =	graphics
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/graphics/kruler/
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
-WANTLIB += KF6I18n KF6Notifications KF6StatusNotifierItem KF6WidgetsAddons
-WANTLIB += KF6WindowSystem KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Widgets
-WANTLIB += Qt6Xml X11 c m xcb xkbcommon
+WANTLIB += KF6GuiAddons KF6I18n KF6Notifications KF6StatusNotifierItem
+WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui Qt6Core
+WANTLIB += Qt6DBus Qt6Gui Qt6Widgets Qt6Xml X11 c m xcb xkbcommon
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes
@@ -23,6 +24,7 @@ LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kcoreaddons \
 		devel/kf6/ki18n \
 		devel/kf6/knotifications \
+		devel/kf6/kguiaddons \
 		devel/kf6/kstatusnotifieritem \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kwindowsystem \

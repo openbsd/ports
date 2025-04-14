@@ -1,26 +1,27 @@
 COMMENT =	KDE PIM data exporter
 DISTNAME =	pim-data-exporter-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  pimdataexporterprivate    1.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Bookmarks KF6CalendarCore
 WANTLIB += KF6ColorScheme KF6Completion KF6ConfigCore KF6ConfigGui
 WANTLIB += KF6ConfigWidgets KF6Contacts KF6CoreAddons KF6Crash
-WANTLIB += KF6DBusAddons KF6I18n KF6IconThemes KF6ItemModels KF6ItemViews
-WANTLIB += KF6JobWidgets KF6KIOCore KF6KIOFileWidgets KF6KIOGui
-WANTLIB += KF6KIOWidgets KF6Notifications KF6Service KF6Solid
-WANTLIB += KF6StatusNotifierItem KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
-WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6UserFeedbackCore
-WANTLIB += KF6UserFeedbackWidgets KF6WidgetsAddons KF6XmlGui KPim6AkonadiContactCore
-WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiCore KPim6AkonadiMime
-WANTLIB +=  KPim6AkonadiWidgets KPim6GrantleeTheme
-WANTLIB += KPim6IMAP KPim6IdentityManagementCore KPim6IdentityManagementWidgets
-WANTLIB += KPim6Libkdepim KPim6Libkleo KPim6MailCommon KPim6MailTransport
-WANTLIB += KPim6MessageComposer KPim6MessageCore KPim6Mime KPim6PimCommon
-WANTLIB += KPim6PimCommonAkonadi KPim6TextEdit Qt6Core Qt6DBus
-WANTLIB += Qt6Gui Qt6Network Qt6Widgets Qt6Xml assuan c gpgme
-WANTLIB += gpgmepp m qgpgmeqt6
+WANTLIB += KF6DBusAddons KF6GuiAddons KF6I18n KF6IconThemes KF6ItemModels
+WANTLIB += KF6ItemViews KF6JobWidgets KF6KIOCore KF6KIOFileWidgets
+WANTLIB += KF6KIOGui KF6KIOWidgets KF6Notifications KF6Service
+WANTLIB += KF6Solid KF6StatusNotifierItem KF6TextAutoCorrectionCore
+WANTLIB += KF6TextAutoCorrectionWidgets KF6TextCustomEditor KF6TextTemplate
+WANTLIB += KF6UserFeedbackCore KF6UserFeedbackWidgets KF6WidgetsAddons
+WANTLIB += KF6XmlGui KPim6AkonadiContactCore KPim6AkonadiContactWidgets
+WANTLIB += KPim6AkonadiCore KPim6AkonadiMime KPim6AkonadiWidgets
+WANTLIB += KPim6GrantleeTheme KPim6IMAP KPim6IdentityManagementCore
+WANTLIB += KPim6IdentityManagementWidgets KPim6Libkdepim KPim6Libkleo
+WANTLIB += KPim6MailCommon KPim6MailTransport KPim6MessageComposer
+WANTLIB += KPim6MessageCore KPim6Mime KPim6PimCommon KPim6PimCommonAkonadi
+WANTLIB += KPim6TextEdit Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets
+WANTLIB += Qt6Xml assuan c gpgme gpgmepp m qgpgmeqt6
 
 MODKDE_TRANSLATIONS = yes
 MODKDE_DESKTOP_FILE = yes
@@ -47,6 +48,7 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kservice \
 		devel/kf6/kstatusnotifieritem \
 		devel/kf6/ktexttemplate \
+		devel/kf6/kguiaddons \
 		devel/kf6/kuserfeedback \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \

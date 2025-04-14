@@ -1,17 +1,18 @@
 COMMENT =	KDE password wallet manager
 DISTNAME =	kwalletmanager-${VERSION}
 CATEGORIES =	x11 security
+REVISION =	0
 
 HOMEPAGE =	https://userbase.kde.org/KDE_Wallet_Manager
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6AuthCore KF6Codecs
 WANTLIB += KF6ColorScheme KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
-WANTLIB += KF6CoreAddons KF6Crash KF6DBusAddons KF6I18n KF6ItemViews
-WANTLIB += KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore
-WANTLIB += KF6KIOGui KF6Service KF6StatusNotifierItem KF6Wallet
-WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui Qt6Core
-WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6Qml Qt6Widgets Qt6Xml
-WANTLIB += X11 c m
+WANTLIB += KF6CoreAddons KF6Crash KF6DBusAddons KF6GuiAddons KF6I18n
+WANTLIB += KF6ItemViews KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick
+WANTLIB += KF6KIOCore KF6KIOGui KF6Service KF6StatusNotifierItem
+WANTLIB += KF6Wallet KF6WidgetsAddons KF6WindowSystem KF6XmlGui
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Qml Qt6Widgets
+WANTLIB += Qt6Xml X11 c m
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_TRANSLATIONS = yes
@@ -39,6 +40,7 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kio \
 		devel/kf6/kitemviews \
 		devel/kf6/kservice \
+		devel/kf6/kguiaddons \
 		devel/kf6/kstatusnotifieritem \
 		devel/kf6/kwallet \
 		devel/kf6/kwidgetsaddons \

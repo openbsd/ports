@@ -1,13 +1,14 @@
 COMMENT =	Go board game
 DISTNAME =	kigo-${VERSION}
 CATEGORIES =	games
+REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/kigo
 
 WANTLIB += ${COMPILER_LIBCXX} GL KDEGames6 KF6Attica KF6ColorScheme
 WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
-WANTLIB += KF6CoreAddons KF6Crash KF6DBusAddons KF6I18n KF6JobWidgets
-WANTLIB += KF6KIOCore KF6KIOGui KF6KIOWidgets KF6NewStuffCore
+WANTLIB += KF6CoreAddons KF6Crash KF6DBusAddons KF6GuiAddons KF6I18n
+WANTLIB += KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets KF6NewStuffCore
 WANTLIB += KF6NewStuffWidgets KF6Service KF6Solid KF6SonnetUi
 WANTLIB += KF6TextWidgets KF6WidgetsAddons KF6XmlGui Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Network Qt6Qml Qt6Svg Qt6Widgets Qt6Xml c
@@ -32,6 +33,7 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/ki18n \
 		devel/kf6/kio \
 		devel/kf6/kjobwidgets \
+		devel/kf6/kguiaddons \
 		devel/kf6/knewstuff \
 		devel/kf6/kservice \
 		devel/kf6/ktextwidgets \

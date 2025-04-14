@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	KDE PIM mail related libraries
 DISTNAME =	kdepim-runtime-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  akonadi-filestore           2.0 # 5.13.2
 SHARED_LIBS +=  akonadi-singlefileresource  3.0 # 5.13.2
@@ -14,12 +15,12 @@ SHARED_LIBS +=	newmailnotifier             0.0 # 0.0
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Bookmarks KF6CalendarCore
 WANTLIB += KF6Codecs KF6ColorScheme KF6Completion KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6Contacts KF6CoreAddons
-WANTLIB += KF6DAV KF6I18n KF6ItemModels KF6ItemViews KF6JobWidgets
-WANTLIB += KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore
-WANTLIB += KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets KF6Notifications
-WANTLIB += KF6NotifyConfig KF6Service KF6Solid KF6TextCustomEditor
-WANTLIB += KF6TextTemplate KF6Wallet KF6WidgetsAddons KF6WindowSystem
-WANTLIB += KF6XmlGui KPim6AkonadiAgentBase KPim6AkonadiCalendar
+WANTLIB += KF6DAV KF6GuiAddons KF6I18n KF6ItemModels KF6ItemViews
+WANTLIB += KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick
+WANTLIB += KF6KIOCore KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets
+WANTLIB += KF6Notifications KF6NotifyConfig KF6Service KF6Solid
+WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6Wallet KF6WidgetsAddons
+WANTLIB += KF6WindowSystem KF6XmlGui KPim6AkonadiAgentBase KPim6AkonadiCalendar
 WANTLIB += KPim6AkonadiContactCore KPim6AkonadiContactWidgets
 WANTLIB += KPim6AkonadiCore KPim6AkonadiMime KPim6AkonadiWidgets
 WANTLIB += KPim6GAPICalendar KPim6GAPICore KPim6GAPIPeople KPim6GAPITasks
@@ -63,6 +64,7 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/knotifyconfig \
 		devel/kf6/kservice \
 		devel/kf6/ktexttemplate \
+		devel/kf6/kguiaddons \
 		devel/kf6/kwallet \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kwindowsystem \

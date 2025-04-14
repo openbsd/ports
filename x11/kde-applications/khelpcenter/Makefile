@@ -1,12 +1,13 @@
 COMMENT =	KDE help center
 DISTNAME =	khelpcenter-${VERSION}
 CATEGORIES =	x11
+REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Bookmarks KF6BookmarksWidgets
 WANTLIB += KF6ColorScheme KF6Completion KF6ConfigCore KF6ConfigGui
 WANTLIB += KF6ConfigWidgets KF6CoreAddons KF6DBusAddons KF6DocTools
-WANTLIB += KF6I18n KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets
-WANTLIB += KF6Service KF6Solid KF6TextTemplate KF6WidgetsAddons
+WANTLIB += KF6GuiAddons KF6I18n KF6JobWidgets KF6KIOCore KF6KIOGui
+WANTLIB += KF6KIOWidgets KF6Service KF6Solid KF6TextTemplate KF6WidgetsAddons
 WANTLIB += KF6WindowSystem KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6OpenGL Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlMeta
 WANTLIB += Qt6QmlModels Qt6QmlWorkerScript Qt6Quick Qt6WebChannel
@@ -31,6 +32,7 @@ LIB_DEPENDS =	databases/xapian-core \
 		devel/kf6/kdoctools \
 		devel/kf6/ki18n \
 		devel/kf6/kio \
+		devel/kf6/kguiaddons \
 		devel/kf6/kjobwidgets \
 		devel/kf6/kservice \
 		devel/kf6/ktexttemplate \

@@ -1,6 +1,7 @@
 COMMENT =	sound channel mixer and volume control
 DISTNAME =	kmix-${VERSION}
 CATEGORIES =	audio
+REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/kmix
 
@@ -8,7 +9,7 @@ SHARED_LIBS +=  kmixcore                4.0 # 5.13.80
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
-WANTLIB += KF6DBusAddons KF6GlobalAccel KF6I18n KF6Notifications
+WANTLIB += KF6DBusAddons KF6GlobalAccel KF6GuiAddons KF6I18n KF6Notifications
 WANTLIB += KF6Solid KF6StatusNotifierItem KF6WidgetsAddons KF6WindowSystem
 WANTLIB += KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Widgets Qt6Xml
 WANTLIB += X11 c canberra m sndio
@@ -30,6 +31,7 @@ LIB_DEPENDS +=	audio/libcanberra \
 		devel/kf6/kcoreaddons \
 		devel/kf6/kcrash \
 		devel/kf6/kdbusaddons \
+		devel/kf6/kguiaddons \
 		devel/kf6/kglobalaccel \
 		devel/kf6/ki18n \
 		devel/kf6/knotifications \

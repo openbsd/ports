@@ -1,14 +1,15 @@
 COMMENT =	Akonadi management and debugging console
 DISTNAME =	akonadiconsole-${VERSION}
 CATEGORIES =	devel
+REVISION =	0
 
 SHARED_LIBS +=  akonadiconsole            2.0 # 5.13.2
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CalendarCore KF6ColorScheme
 WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
-WANTLIB += KF6Contacts KF6CoreAddons KF6Crash KF6DBusAddons KF6I18n
-WANTLIB += KF6ItemModels KF6ItemViews KF6KIOCore KF6Service KF6SonnetUi
-WANTLIB += KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
+WANTLIB += KF6Contacts KF6CoreAddons KF6Crash KF6DBusAddons KF6GuiAddons
+WANTLIB += KF6I18n KF6ItemModels KF6ItemViews KF6KIOCore KF6Service
+WANTLIB += KF6SonnetUi KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
 WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6TextWidgets
 WANTLIB += KF6WidgetsAddons KF6XmlGui KPim6AkonadiCalendar KPim6AkonadiContactCore
 WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiCore KPim6AkonadiMime
@@ -35,6 +36,7 @@ LIB_DEPENDS =	databases/xapian-core \
 		devel/kf6/kconfigwidgets \
 		devel/kf6/kcontacts \
 		devel/kf6/kcoreaddons \
+		devel/kf6/kguiaddons \
 		devel/kf6/kcrash \
 		devel/kf6/kdbusaddons \
 		devel/kf6/ki18n \

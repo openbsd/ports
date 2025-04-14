@@ -1,6 +1,7 @@
 COMMENT =	download manager for KDE
 DISTNAME =	kget-${VERSION}
 CATEGORIES =	net www
+REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/kget
 
@@ -8,15 +9,15 @@ SHARED_LIBS +=  kgetcore                  4.1 # 5.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
-WANTLIB += KF6Crash KF6DBusAddons KF6I18n KF6I18nLocaleData KF6IconThemes
-WANTLIB += KF6IconWidgets KF6ItemViews KF6JobWidgets KF6KCMUtils
-WANTLIB += KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore KF6KIOGui
-WANTLIB += KF6KIOWidgets KF6Notifications KF6NotifyConfig KF6Service
-WANTLIB += KF6Solid KF6StatusNotifierItem KF6Wallet KF6WidgetsAddons
-WANTLIB += KF6WindowSystem KF6XmlGui KTorrent6 Qt6Core Qt6Core5Compat
-WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6Qml Qt6Sql Qt6Widgets
-WANTLIB += Qt6Xml X11 assuan c gcrypt gmp gpgme gpgmepp m mms
-WANTLIB += qgpgmeqt6
+WANTLIB += KF6Crash KF6DBusAddons KF6GuiAddons KF6I18n KF6I18nLocaleData
+WANTLIB += KF6IconThemes KF6IconWidgets KF6ItemViews KF6JobWidgets
+WANTLIB += KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore
+WANTLIB += KF6KIOGui KF6KIOWidgets KF6Notifications KF6NotifyConfig
+WANTLIB += KF6Service KF6Solid KF6StatusNotifierItem KF6Wallet
+WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui KTorrent6
+WANTLIB += Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network Qt6Qml
+WANTLIB += Qt6Sql Qt6Widgets Qt6Xml X11 assuan c gcrypt gmp gpgme
+WANTLIB += gpgmepp m mms qgpgmeqt6
 
 MODKDE_ICON_CACHE = yes
 MODKDE_TRANSLATIONS = yes
@@ -46,6 +47,7 @@ LIB_DEPENDS =	devel/gmp \
 		devel/kf6/kcrash \
 		devel/kf6/kdbusaddons \
 		devel/kf6/ki18n \
+		devel/kf6/kguiaddons \
 		devel/kf6/kiconthemes \
 		devel/kf6/kio \
 		devel/kf6/kitemviews \
