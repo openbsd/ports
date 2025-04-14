@@ -3,7 +3,7 @@ DPB_PROPERTIES =	parallel
 
 COMMENT =		cross-platform IDE for use with Qt
 
-V =			16.0.0
+V =			16.0.1
 DISTNAME =		qt-creator-opensource-src-${V}
 PKGNAME =		qt-creator-${V}
 
@@ -15,7 +15,7 @@ SHARED_LIBS +=  LanguageUtils             4.0 # 0.0
 SHARED_LIBS +=  QmlDebug                  7.0 # 0.0
 SHARED_LIBS +=  QmlEditorWidgets          4.0 # 0.0
 SHARED_LIBS +=  QmlJS                     15.0 # 0.0
-SHARED_LIBS +=  Utils                     15.0 # 0.0
+SHARED_LIBS +=  Utils                     16.0 # 0.0
 SHARED_LIBS +=  Sqlite                    12.0 # 1.0
 SHARED_LIBS +=  Modeling                  10.0 # 1.0
 SHARED_LIBS +=  Tracing                   5.0 # 4.7
@@ -24,12 +24,12 @@ SHARED_LIBS +=  AdvancedDockingSystem     5.1 # 4.12
 SHARED_LIBS +=  qlitehtml                 5.1 # 4.15
 SHARED_LIBS +=  ProParser                 5.0 # 4.15
 SHARED_LIBS +=  KSyntaxHighlighting       3.0 # 0.0
-SHARED_LIBS +=  TerminalLib               1.3 # 0.0
+SHARED_LIBS +=  TerminalLib               1.4 # 0.0
 SHARED_LIBS +=  Nanotrace                 0.0 # 0.0
 SHARED_LIBS +=  qtkeychain                0.0 # 0.0
 SHARED_LIBS +=  CmdBridgeClient           1.0 # 0.0
 SHARED_LIBS +=  QmlDesignerCore           1.0 # 0.0
-SHARED_LIBS +=  Zip                       0.0 # 0.0
+SHARED_LIBS +=  Zip                       1.0 # 0.0
 
 CATEGORIES =	devel editors
 
@@ -50,7 +50,7 @@ WANTLIB += Qt6Quick3DUtils Qt6QuickWidgets Qt6SerialPort Qt6ShaderTools
 WANTLIB += Qt6Sql Qt6Svg Qt6SvgWidgets Qt6Test Qt6WebChannel Qt6WebEngineCore
 WANTLIB += Qt6WebEngineWidgets Qt6WebSockets Qt6Widgets Qt6Xml
 WANTLIB += c gio-2.0 glib-2.0 gobject-2.0 intl m secret-1 xkbcommon
-WANTLIB += yaml-cpp
+WANTLIB += yaml-cpp z
 
 
 SITES =	https://download.qt.io/official_releases/qtcreator/${V:R}/${V}/ \
