@@ -3,7 +3,7 @@ OpenBSD (and NetBSD) whereis don't support -b
 Index: LibreNMS/Validations/System.php
 --- LibreNMS/Validations/System.php.orig
 +++ LibreNMS/Validations/System.php
-@@ -40,7 +40,7 @@ class System extends BaseValidation
+@@ -41,7 +41,7 @@ class System extends BaseValidation
      {
          $install_dir = $validator->getBaseDir();
  
@@ -12,7 +12,7 @@ Index: LibreNMS/Validations/System.php
          $path = rtrim(`echo "\$PATH"`);
  
          // if couldn't find lnms and we have PATH
-@@ -55,7 +55,7 @@ class System extends BaseValidation
+@@ -56,7 +56,7 @@ class System extends BaseValidation
              $validator->warn('Global lnms shortcut not installed. lnms command must be run with full path', "sudo ln -s $install_dir/lnms $bin/lnms");
          }
  
