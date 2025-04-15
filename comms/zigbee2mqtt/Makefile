@@ -7,7 +7,7 @@ ONLY_FOR_ARCHS=	amd64 aarch64
 
 COMMENT=	Zigbee to MQTT bridge
 
-V=		2.1.3
+V=		2.2.1
 GH_ACCOUNT=	Koenkk
 GH_PROJECT=	zigbee2mqtt
 GH_TAGNAME=	$V
@@ -69,12 +69,12 @@ dist: ${FULLDISTDIR}/${GH_DISTFILE}
 	npm run build -dd --cache=$$t/npm-cache; \
 	npm install -dd --exclude=dev --global --cache=$$t/npm-cache --prefix=$$t/inst --install-links; \
 	cd -; \
-	rsync -av $$t/ 10.15.5.52:$$t/; \
-	ssh 10.15.5.52 "cd $$t/${WRKDIST:C,^.*/,,}; \
+	rsync -av $$t/ m27:$$t/; \
+	ssh m27 "cd $$t/${WRKDIST:C,^.*/,,}; \
 	npm install -dd --include=dev --cache=$$t/npm-cache; \
 	npm run build -dd --cache=$$t/npm-cache; \
 	npm install -dd --exclude=dev --global --cache=$$t/npm-cache --prefix=$$t/inst --install-links"; \
-	rsync -av 10.15.5.52:$$t/ $$t/; \
+	rsync -av m27:$$t/ $$t/; \
 	rm -r npm-cache/_logs; \
 	tar cf - npm-cache | xz -T 0 > $$f; \
 	scp $$f naiad:mirrors/; \
