@@ -1,6 +1,6 @@
 COMMENT =	command-line fuzzy finder
 
-V =		0.60.3
+V =		0.61.1
 
 MODGO_MODNAME =	github.com/junegunn/fzf
 MODGO_VERSION =	v${V}
