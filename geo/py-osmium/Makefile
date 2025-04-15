@@ -1,11 +1,10 @@
 COMMENT =	Python bindings for libosmium
 
-MODPY_DISTV =	4.0.1
+MODPY_DISTV =	4.0.2
 GH_TAGNAME =	v${MODPY_DISTV}
 GH_ACCOUNT =	osmcode
 GH_PROJECT =	pyosmium
 PKGNAME =	py-osmium-${MODPY_DISTV}
-REVISION =	0
 
 CATEGORIES =	geo
 
