@@ -7,7 +7,7 @@ Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
 @@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0)
- project(Hiawatha VERSION 11.4 LANGUAGES C)
+ project(Hiawatha VERSION 11.7 LANGUAGES C)
  
  # Compiler
 -set(CMAKE_C_FLAGS "-O2 -Wall -Wextra ${CMAKE_C_FLAGS} -gdwarf-4")
@@ -15,7 +15,7 @@ Index: CMakeLists.txt
  set(CMAKE_BUILD_TYPE "RelWithDebInfo")
  
  # Options
-@@ -171,15 +171,15 @@ endforeach()
+@@ -175,15 +175,15 @@ endforeach()
  
  install(FILES extra/index.html DESTINATION ${WEBROOT_DIR})
  
