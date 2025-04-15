@@ -1,0 +1,5 @@
+Morecantile is like geo/mercantile (the best tool to work with Web
+Mercator tile indexes), but with support for other TileMatrixSet grids.
+
+Morecantile follows the OGC Two Dimensional Tile Matrix Set
+specification 2.0 found in https://docs.ogc.org/is/17-083r4/17-083r4.html
