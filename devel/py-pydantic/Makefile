@@ -3,7 +3,7 @@ COMMENT =		data validation using Python type hints
 MODPY_DISTV =	2.9.2
 DISTNAME =		pydantic-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 
