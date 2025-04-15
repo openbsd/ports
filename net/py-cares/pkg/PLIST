@@ -22,4 +22,5 @@ lib/python${MODPY_VERSION}/site-packages/pycares/${MODPY_PYCACHE}utils.${MODPY_P
 @so lib/python${MODPY_VERSION}/site-packages/pycares/_cares${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/pycares/_version.py
 lib/python${MODPY_VERSION}/site-packages/pycares/errno.py
+lib/python${MODPY_VERSION}/site-packages/pycares/py.typed
 lib/python${MODPY_VERSION}/site-packages/pycares/utils.py
