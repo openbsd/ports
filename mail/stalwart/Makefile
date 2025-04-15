@@ -13,7 +13,7 @@ GH_PROJECT =		mail-server
 CATEGORIES =		mail
 # AGPLv3
 PERMIT_PACKAGE =	Yes
-GH_TAGNAME =		v0.11.1
+GH_TAGNAME =		v0.11.7
 PKGNAME =		stalwart-mail-${GH_TAGNAME:S/v//}
 
 HOMEPAGE =	https://stalw.art/
