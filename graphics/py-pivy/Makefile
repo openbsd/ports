@@ -1,8 +1,7 @@
 COMMENT =		Python bindings for coin
 
-MODPY_DISTV =		0.6.9
+MODPY_DISTV =		0.6.10
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 DIST_TUPLE +=		github coin3d pivy ${MODPY_DISTV} .
 
@@ -19,14 +18,16 @@ MODULES =		lang/python \
 			devel/cmake
 
 MODPY_PYBUILD =		setuptools
-MODPY_TEST_LINK_SO =    Yes
+MODPY_TEST_LINK_SO =	Yes
 
 # other tests require various combinations of X, additional deps,
 # and not running with PORTS_PRIVSEP
-MODPY_PYTEST_ARGS =     -v tests/coin_tests.py
+MODPY_TEST_DIR =	${WRKSRC}/tests
+MODPY_PYTEST_ARGS =	-v coin_tests.py
 
 BUILD_DEPENDS =		devel/swig
 LIB_DEPENDS =		graphics/coin
+TEST_DEPENDS =		${BUILD_PKGPATH}
 
 CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_SoQt=ON
 MAKE_ENV =		CPPFLAGS="-I${X11BASE}/include"
