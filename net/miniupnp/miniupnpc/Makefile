@@ -1,6 +1,8 @@
 COMMENT=	UPnP IGD client lightweight library
 
-DISTNAME=	miniupnpc-2.2.6
+# newer versions change API_VERSION and some dependent ports need patching
+# (some changes result in build failures, others result in subtler breakage)
+DISTNAME=	miniupnpc-2.2.7
 
 SHARED_LIBS += miniupnpc 3.1
 
