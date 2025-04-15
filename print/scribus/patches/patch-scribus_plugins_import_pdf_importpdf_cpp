@@ -1,9 +1,9 @@
-Fix build with poppler-25.02.0. From upstream commit 26666.
+https://github.com/scribusproject/scribus/commit/188d030acd0cb71e89dbb57695fe52158b6a0959
 
 Index: scribus/plugins/import/pdf/importpdf.cpp
 --- scribus/plugins/import/pdf/importpdf.cpp.orig
 +++ scribus/plugins/import/pdf/importpdf.cpp
-@@ -462,11 +462,11 @@ bool PdfPlug::convert(const QString& fn)
+@@ -416,11 +416,11 @@ bool PdfPlug::convert(const QString& fn)
  
  			if (dev->isOk())
  			{

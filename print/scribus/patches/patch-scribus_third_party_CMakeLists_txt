@@ -1,0 +1,13 @@
+dont build the bundled version
+
+Index: scribus/third_party/CMakeLists.txt
+--- scribus/third_party/CMakeLists.txt.orig
++++ scribus/third_party/CMakeLists.txt
+@@ -1,7 +1,3 @@
+-#if(WANT_QTADS)
+-add_subdirectory(Qt-Advanced-Docking-System)
+-#endif()
+-
+ if(HAVE_OSG)
+   add_subdirectory(prc)
+ endif ()

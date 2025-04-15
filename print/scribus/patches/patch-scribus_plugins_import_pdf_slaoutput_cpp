@@ -1,22 +1,9 @@
-Fix build with poppler-25.02.0. From upstream commit 26666.
-
-https://github.com/scribusproject/scribus/commit/3f0f902d6e47adb45d280947f448bcca6c4e2556.patch
+https://github.com/scribusproject/scribus/commit/188d030acd0cb71e89dbb57695fe52158b6a0959
 
 Index: scribus/plugins/import/pdf/slaoutput.cpp
 --- scribus/plugins/import/pdf/slaoutput.cpp.orig
 +++ scribus/plugins/import/pdf/slaoutput.cpp
-@@ -2393,8 +2393,9 @@ bool SlaOutputDev::tilingPatternFill(GfxState *state, 
- #endif
- 	m_graphicStack.top().clipPath = savedClip;
- 	m_inPattern--;
--	gElements = m_groupStack.pop();
- 	m_doc->m_Selection->clear();
-+
-+	gElements = m_groupStack.pop();
- 	if (gElements.Items.count() > 0)
- 	{
- 		for (int dre = 0; dre < gElements.Items.count(); ++dre)
-@@ -2932,7 +2933,7 @@ void SlaOutputDev::beginMarkedContent(const char *name
+@@ -2791,7 +2791,7 @@ void SlaOutputDev::beginMarkedContent(const char *name
  	{
  		if (dictRef->isNull())
  			return;
@@ -25,10 +12,10 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  		OptionalContentGroup *oc;
  		if (dictRef->isRef())
  		{
-@@ -3084,7 +3085,11 @@ void SlaOutputDev::updateFont(GfxState *state)
- #if POPPLER_ENCODED_VERSION < POPPLER_VERSION_ENCODE(22, 4, 0)
- 	int tmpBufLen = 0;
- #endif
+@@ -2928,7 +2928,11 @@ void SlaOutputDev::updateFont(GfxState *state)
+ 	SplashFontFile *fontFile;
+ 	SplashFontSrc *fontsrc = nullptr;
+ 	Object refObj, strObj;
 +#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(25, 2, 0)
 +	std::vector<int> codeToGID;
 +#else
@@ -37,7 +24,7 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  	const double *textMat = nullptr;
  	double m11, m12, m21, m22, fontSize;
  	SplashCoord mat[4] = { 1.0, 0.0, 0.0, 1.0 };
-@@ -3244,10 +3249,20 @@ void SlaOutputDev::updateFont(GfxState *state)
+@@ -3055,10 +3059,20 @@ void SlaOutputDev::updateFont(GfxState *state)
  			}
  			else
  			{
@@ -59,7 +46,7 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  			if (!(fontFile = m_fontEngine->loadTrueTypeFont(std::move(id), fontsrc, codeToGID, n, fontLoc->fontNum)))
  			{
  				error(errSyntaxError, -1, "Couldn't create a font for '{0:s}'", gfxFont->getName() ? gfxFont->getName()->c_str() : "(unnamed)");
-@@ -3278,6 +3293,18 @@ void SlaOutputDev::updateFont(GfxState *state)
+@@ -3089,6 +3103,18 @@ void SlaOutputDev::updateFont(GfxState *state)
  #endif
  			break;
  		case fontCIDType0COT:
@@ -78,7 +65,7 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  			if (((GfxCIDFont *) gfxFont)->getCIDToGID())
  			{
  				n = ((GfxCIDFont *) gfxFont)->getCIDToGIDLen();
-@@ -3289,7 +3316,15 @@ void SlaOutputDev::updateFont(GfxState *state)
+@@ -3100,7 +3126,15 @@ void SlaOutputDev::updateFont(GfxState *state)
  				codeToGID = nullptr;
  				n = 0;
  			}
@@ -95,7 +82,7 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  			if (!(fontFile = m_fontEngine->loadOpenTypeCFFFont(std::move(id), fontsrc, codeToGID, n, fontLoc->fontNum)))
  			{
  				error(errSyntaxError, -1, "Couldn't create a font for '{0:s}'",
-@@ -3307,6 +3342,15 @@ void SlaOutputDev::updateFont(GfxState *state)
+@@ -3118,6 +3152,15 @@ void SlaOutputDev::updateFont(GfxState *state)
  			break;
  		case fontCIDType2:
  		case fontCIDType2OT:
@@ -111,7 +98,7 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  			codeToGID = nullptr;
  			n = 0;
  			if (((GfxCIDFont *) gfxFont)->getCIDToGID())
-@@ -3318,6 +3362,7 @@ void SlaOutputDev::updateFont(GfxState *state)
+@@ -3129,6 +3172,7 @@ void SlaOutputDev::updateFont(GfxState *state)
  					memcpy(codeToGID, ((GfxCIDFont *)gfxFont)->getCIDToGID(), n * sizeof(*codeToGID));
  				}
  			}
@@ -119,20 +106,16 @@ Index: scribus/plugins/import/pdf/slaoutput.cpp
  			else
  			{
  #if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(24, 11, 0)
-@@ -3338,7 +3383,9 @@ void SlaOutputDev::updateFont(GfxState *state)
+@@ -3144,10 +3188,20 @@ void SlaOutputDev::updateFont(GfxState *state)
  #endif
  				if (! ff)
  					goto err2;
--#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(22, 2, 0)
 +#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(25, 2, 0)
 +				codeToGID = ((GfxCIDFont*) gfxFont)->getCodeToGIDMap(ff.get());
-+#elif POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(22, 2, 0)
++#else
  				codeToGID = ((GfxCIDFont*) gfxFont)->getCodeToGIDMap(ff.get(), &n);
++#endif
  				ff.reset();
- #else
-@@ -3346,7 +3393,13 @@ void SlaOutputDev::updateFont(GfxState *state)
- 				delete ff;
- #endif
  			}
 -#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(24, 11, 0)
 +#if POPPLER_ENCODED_VERSION >= POPPLER_VERSION_ENCODE(25, 2, 0)

@@ -1,0 +1,17 @@
+dont link against bundled qtadvanceddockingsystem
+
+Index: scribus/CMakeLists.txt
+--- scribus/CMakeLists.txt.orig
++++ scribus/CMakeLists.txt
+@@ -60,8 +60,9 @@ set_property(SOURCE third_party/fparser/file.hh PROPER
+ set_property(SOURCE third_party/fparser/fparser.hh PROPERTY SKIP_AUTOGEN ON)
+ 
+ #if(WANT_QTADS)
+-  MESSAGE(STATUS "Qt Advanced Docking System included")
+-  link_directories(${CMAKE_CURRENT_BINARY_DIR}/third_party/Qt-Advanced-Docking-System)
++#  MESSAGE(STATUS "Qt Advanced Docking System included")
++#  link_directories(${CMAKE_CURRENT_BINARY_DIR}/third_party/Qt-Advanced-Docking-System)
++#  link_directories("/usr/X11R6/lib")
+ #endif()
+ 
+ link_directories(

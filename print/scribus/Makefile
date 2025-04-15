@@ -1,7 +1,7 @@
 DPB_PROPERTIES=	parallel
 
 COMMENT=	desktop publishing program
-DISTNAME=	scribus-1.6.3
+DISTNAME=	scribus-1.7.0
 CATEGORIES=	print
 
 HOMEPAGE=	https://www.scribus.net/
@@ -9,17 +9,18 @@ HOMEPAGE=	https://www.scribus.net/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB}
-WANTLIB += Qt5Core Qt5Gui Qt5Network Qt5OpenGL Qt5PrintSupport
-WANTLIB += Qt5Widgets Qt5Xml c cairo cups execinfo fontconfig
+WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB} GL Qt6Core5Compat
+WANTLIB += Qt6Core Qt6Gui Qt6Network Qt6PrintSupport Qt6Svg
+WANTLIB += Qt6Widgets Qt6Xml c cairo cups execinfo fontconfig
 WANTLIB += freetype harfbuzz harfbuzz-icu hunspell-1.7 icudata
 WANTLIB += icuuc jpeg lcms2 m png podofo poppler tiff util xml2
 WANTLIB += z harfbuzz-subset
+WANTLIB += qt6advanceddocking
 
 SITES=		${SITE_SOURCEFORGE:=scribus/}
 EXTRACT_SUFX=	.tar.xz
 
-MODULES=	x11/qt5 \
+MODULES=	x11/qt6 \
 		devel/cmake \
 		lang/python
 
@@ -42,12 +43,14 @@ LIB_DEPENDS=	graphics/lcms2 \
 		textproc/libxml \
 		textproc/podofo \
 		graphics/jpeg \
+		x11/qt6/qt5compat \
+		x11/qt6/qtsvg \
+		x11/qtadvanceddocking \
 		${MODPY_LIB_DEPENDS}
 
 CXXFLAGS+=	-D CMS_NO_REGISTER_KEYWORD
-# For newer versions of scribus, -DWANT_CPP20=ON will probably be
-# necessary.
 CONFIGURE_ARGS+=	-DCMAKE_INSTALL_MANDIR="${LOCALBASE}/man/" \
+			-DWANT_CPP20=ON \
 			-DWANT_NOOSG=1
 #DEBUG_CONFIGURE_ARGS +=	-DWANT_DEBUG=1
 
