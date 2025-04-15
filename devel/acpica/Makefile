@@ -1,5 +1,8 @@
 COMMENT =		reference implementation of ACPI tools
-DISTNAME =		acpica-unix2-20241212
+DISTNAME =		acpica-unix2-20250404
+# SITES needs updating; check -unix2 href in
+# https://www.intel.com/content/www/us/en/download/776307/acpi-component-architecture-downloads-unix-format-source-code-and-build-environment-with-a-dual-license.html
+SITES =			https://downloadmirror.intel.com/852046/
 PKGNAME =		${DISTNAME:S/-unix2//}
 
 FIX_EXTRACT_PERMISSIONS =	Yes
@@ -17,8 +20,6 @@ COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
 WANTLIB =		c pthread
-
-SITES =			https://downloadmirror.intel.com/843390/
 
 USE_GMAKE =		Yes
 BUILD_DEPENDS =		devel/bison
