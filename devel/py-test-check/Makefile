@@ -16,6 +16,6 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		hatchling
 
 RUN_DEPENDS =		devel/py-test
-TEST_DEPENDS =		${BUILD_PKGPATH}
+TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
 
 .include <bsd.port.mk>
