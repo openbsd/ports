@@ -1,6 +1,6 @@
 COMMENT =	cli browser for keepassx databases
 
-DISTNAME =	kpcli-4.1.2
+DISTNAME =	kpcli-4.1.3
 CATEGORIES =	security
 EXTRACT_SUFX =	.pl
 EXTRACT_ONLY =
