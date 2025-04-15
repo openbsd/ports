@@ -2,7 +2,7 @@ COMMENT=		Elementary icon theme for Xfce
 
 GH_ACCOUNT=		shimmerproject
 GH_PROJECT=		elementary-xfce
-GH_TAGNAME=		v0.20
+GH_TAGNAME=		v0.21
 PKGNAME =		${GH_PROJECT}-icon-theme-${GH_TAGNAME:S/v//}
 
 CATEGORIES=		x11
