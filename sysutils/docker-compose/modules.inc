@@ -12,7 +12,7 @@ MODGO_MODULES =	\
 	github.com/!azure/azure-sdk-for-go/sdk/storage/azblob				 v1.5.0 \
 	github.com/!azure/go-ansiterm							 v0.0.0-20250102033503-faa5f7b0171c \
 	github.com/!burnt!sushi/toml							 v0.3.1 \
-	github.com/!defang!labs/secret-detector						 v0.0.0-20250108223530-c2b44d4c1f8f \
+	github.com/!defang!labs/secret-detector						 v0.0.0-20250403165618-22662109213e \
 	github.com/!google!cloud!platform/opentelemetry-operations-go/detectors/gcp	 v1.25.0 \
 	github.com/!masterminds/semver/v3						 v3.2.1 \
 	github.com/!microsoft/go-winio							 v0.6.2 \
@@ -67,12 +67,12 @@ MODGO_MODULES =	\
 	github.com/cloudflare/cfssl							 v0.0.0-20180223231731-4e2dcbde5004 \
 	github.com/cncf/xds/go								 v0.0.0-20241223141626-cff3c89139a3 \
 	github.com/codahale/rfc6979							 v0.0.0-20141003034818-6a90f24967eb \
-	github.com/compose-spec/compose-go/v2						 v2.4.9 \
+	github.com/compose-spec/compose-go/v2						 v2.6.0 \
 	github.com/containerd/btrfs/v2							 v2.0.0 \
 	github.com/containerd/cgroups/v3						 v3.0.5 \
 	github.com/containerd/console							 v1.0.4 \
 	github.com/containerd/containerd/api						 v1.8.0 \
-	github.com/containerd/containerd/v2						 v2.0.3 \
+	github.com/containerd/containerd/v2						 v2.0.4 \
 	github.com/containerd/continuity						 v0.4.5 \
 	github.com/containerd/errdefs							 v1.0.0 \
 	github.com/containerd/errdefs/pkg						 v0.3.0 \
@@ -103,11 +103,11 @@ MODGO_MODULES =	\
 	github.com/denisenkom/go-mssqldb						 v0.0.0-20191128021309-1d7a30a10f73 \
 	github.com/dimchansky/utfbom							 v1.1.1 \
 	github.com/distribution/reference						 v0.6.0 \
-	github.com/docker/buildx							 v0.21.2 \
-	github.com/docker/cli								 v28.0.1+incompatible \
+	github.com/docker/buildx							 v0.22.0 \
+	github.com/docker/cli								 v28.0.4+incompatible \
 	github.com/docker/cli-docs-tool							 v0.9.0 \
 	github.com/docker/distribution							 v2.8.3+incompatible \
-	github.com/docker/docker							 v28.0.1+incompatible \
+	github.com/docker/docker							 v28.0.4+incompatible \
 	github.com/docker/docker-credential-helpers					 v0.8.2 \
 	github.com/docker/go								 v1.5.1-1.0.20160303222718-d30aec9fd63c \
 	github.com/docker/go-connections						 v0.5.0 \
@@ -145,8 +145,7 @@ MODGO_MODULES =	\
 	github.com/godbus/dbus/v5							 v5.1.0 \
 	github.com/gofrs/flock								 v0.12.1 \
 	github.com/gogo/protobuf							 v1.3.2 \
-	github.com/golang-jwt/jwt							 v3.2.2+incompatible \
-	github.com/golang-jwt/jwt/v5							 v5.2.1 \
+	github.com/golang-jwt/jwt/v5							 v5.2.2 \
 	github.com/golang-sql/civil							 v0.0.0-20190719163853-cb61b32ac6fe \
 	github.com/golang/glog								 v1.2.4 \
 	github.com/golang/groupcache							 v0.0.0-20210331224755-41bb18bfe9da \
@@ -226,6 +225,7 @@ MODGO_MODULES =	\
 	github.com/moby/locker								 v1.0.1 \
 	github.com/moby/patternmatcher							 v0.6.0 \
 	github.com/moby/spdystream							 v0.4.0 \
+	github.com/moby/sys/atomicwriter						 v0.1.0 \
 	github.com/moby/sys/capability							 v0.4.0 \
 	github.com/moby/sys/mount							 v0.3.4 \
 	github.com/moby/sys/mountinfo							 v0.7.2 \
@@ -348,8 +348,8 @@ MODGO_MODULES =	\
 	golang.org/x/mod								 v0.22.0 \
 	golang.org/x/net								 v0.34.0 \
 	golang.org/x/oauth2								 v0.25.0 \
-	golang.org/x/sync								 v0.12.0 \
-	golang.org/x/sys								 v0.31.0 \
+	golang.org/x/sync								 v0.13.0 \
+	golang.org/x/sys								 v0.32.0 \
 	golang.org/x/term								 v0.28.0 \
 	golang.org/x/text								 v0.21.0 \
 	golang.org/x/time								 v0.6.0 \
@@ -370,7 +370,7 @@ MODGO_MODULES =	\
 	gopkg.in/fsnotify.v1								 v1.4.7 \
 	gopkg.in/gemnasium/logrus-airbrake-hook.v2					 v2.1.2 \
 	gopkg.in/inf.v0									 v0.9.1 \
-	gopkg.in/ini.v1									 v1.66.2 \
+	gopkg.in/ini.v1									 v1.67.0 \
 	gopkg.in/rethinkdb/rethinkdb-go.v6						 v6.2.1 \
 	gopkg.in/square/go-jose.v2							 v2.4.1 \
 	gopkg.in/tomb.v1								 v1.0.0-20141024135613-dd632973f1e7 \
@@ -393,7 +393,7 @@ MODGO_MODULES =	\
 	sigs.k8s.io/json								 v0.0.0-20221116044647-bc3834ca7abd \
 	sigs.k8s.io/structured-merge-diff/v4						 v4.4.1 \
 	sigs.k8s.io/yaml								 v1.4.0 \
-	tags.cncf.io/container-device-interface						 v1.0.0 \
+	tags.cncf.io/container-device-interface						 v1.0.1 \
 	tags.cncf.io/container-device-interface/specs-go				 v1.0.0
 
 MODGO_MODFILES =	\
@@ -406,9 +406,9 @@ MODGO_MODFILES =	\
 	github.com/beorn7/perks					 v0.0.0-20180321164747-3a771d992973 \
 	github.com/beorn7/perks					 v1.0.0 \
 	github.com/cespare/xxhash/v2				 v2.2.0 \
-	github.com/compose-spec/compose-go/v2			 v2.4.7 \
+	github.com/compose-spec/compose-go/v2			 v2.4.8 \
 	github.com/containerd/cgroups/v3			 v3.0.3 \
-	github.com/containerd/containerd/v2			 v2.0.2 \
+	github.com/containerd/containerd/v2			 v2.0.3 \
 	github.com/containerd/continuity			 v0.4.1 \
 	github.com/containerd/continuity			 v0.4.4 \
 	github.com/containerd/errdefs				 v0.3.0 \
@@ -424,10 +424,10 @@ MODGO_MODFILES =	\
 	github.com/davecgh/go-spew				 v1.1.1 \
 	github.com/distribution/reference			 v0.5.0 \
 	github.com/docker/cli					 v27.5.1+incompatible \
-	github.com/docker/cli					 v28.0.0-rc.2+incompatible \
+	github.com/docker/cli					 v28.0.1+incompatible \
 	github.com/docker/distribution				 v2.7.1+incompatible \
 	github.com/docker/docker				 v27.5.1+incompatible \
-	github.com/docker/docker				 v28.0.0-rc.2+incompatible \
+	github.com/docker/docker				 v28.0.1+incompatible \
 	github.com/docker/go-connections			 v0.4.0 \
 	github.com/docker/go-metrics				 v0.0.0-20180209012529-399ea8c73916 \
 	github.com/emicklei/go-restful/v3			 v3.8.0 \
@@ -443,6 +443,7 @@ MODGO_MODFILES =	\
 	github.com/go-openapi/swag				 v0.22.3 \
 	github.com/gogo/protobuf				 v1.0.0 \
 	github.com/gogo/protobuf				 v1.1.1 \
+	github.com/golang-jwt/jwt/v5				 v5.2.1 \
 	github.com/golang/protobuf				 v1.2.0 \
 	github.com/golang/protobuf				 v1.3.1 \
 	github.com/golang/protobuf				 v1.3.2 \
@@ -480,7 +481,6 @@ MODGO_MODFILES =	\
 	github.com/mattn/go-isatty				 v0.0.8 \
 	github.com/miekg/pkcs11					 v1.0.2 \
 	github.com/mitchellh/mapstructure			 v0.0.0-20150613213606-2caf8efc9366 \
-	github.com/moby/buildkit				 v0.20.0 \
 	github.com/moby/patternmatcher				 v0.5.0 \
 	github.com/modern-go/concurrent				 v0.0.0-20180228061459-e0a39a4cb421 \
 	github.com/modern-go/reflect2				 v0.0.0-20180701023420-4b7aa43c6742 \
@@ -570,7 +570,6 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto					 v0.0.0-20211209193657-4570a0811e8b \
 	golang.org/x/crypto					 v0.31.0 \
 	golang.org/x/exp					 v0.0.0-20231214170342-aacd6d4b4611 \
-	golang.org/x/exp					 v0.0.0-20240112132812-db7319d0e0e3 \
 	golang.org/x/mod					 v0.12.0 \
 	golang.org/x/mod					 v0.15.0 \
 	golang.org/x/mod					 v0.17.0 \
@@ -720,6 +719,7 @@ MODGO_MODFILES =	\
 	gopkg.in/check.v1					 v1.0.0-20180628173108-788fd7840127 \
 	gopkg.in/check.v1					 v1.0.0-20190902080502-41f04d3bba15 \
 	gopkg.in/check.v1					 v1.0.0-20200227125254-8fa46927fb4f \
+	gopkg.in/ini.v1						 v1.66.2 \
 	gopkg.in/yaml.v2					 v2.2.1 \
 	gopkg.in/yaml.v2					 v2.2.2 \
 	gopkg.in/yaml.v2					 v2.2.4 \
@@ -732,7 +732,6 @@ MODGO_MODFILES =	\
 	k8s.io/utils						 v0.0.0-20230726121419-3b25d923346b \
 	sigs.k8s.io/structured-merge-diff/v4			 v4.2.3 \
 	sigs.k8s.io/yaml					 v1.2.0 \
-	sigs.k8s.io/yaml					 v1.3.0 \
 	tags.cncf.io/container-device-interface			 v0.8.1 \
 	tags.cncf.io/container-device-interface/specs-go	 v0.8.0
 
