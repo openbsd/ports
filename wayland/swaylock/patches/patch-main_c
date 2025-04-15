@@ -3,7 +3,7 @@ https://github.com/swaywm/swaylock/pull/325
 Index: main.c
 --- main.c.orig
 +++ main.c
-@@ -15,7 +15,6 @@
+@@ -14,7 +14,6 @@
  #include <time.h>
  #include <unistd.h>
  #include <wayland-client.h>
@@ -11,7 +11,7 @@ Index: main.c
  #include "background-image.h"
  #include "cairo.h"
  #include "comm.h"
-@@ -358,23 +357,6 @@ static cairo_surface_t *select_image(struct swaylock_s
+@@ -319,23 +318,6 @@ static cairo_surface_t *select_image(struct swaylock_s
  	return default_image;
  }
  
@@ -35,7 +35,7 @@ Index: main.c
  static void load_image(char *arg, struct swaylock_state *state) {
  	// [[<output>]:]<path>
  	struct swaylock_image *image = calloc(1, sizeof(struct swaylock_image));
-@@ -408,21 +390,12 @@ static void load_image(char *arg, struct swaylock_stat
+@@ -369,21 +351,12 @@ static void load_image(char *arg, struct swaylock_stat
  		}
  	}
  
@@ -57,7 +57,7 @@ Index: main.c
  
  	// Load the actual image
  	image->cairo_surface = load_background_image(image->path);
-@@ -992,32 +965,57 @@ static bool file_exists(const char *path) {
+@@ -953,32 +926,57 @@ static bool file_exists(const char *path) {
  	return path && access(path, R_OK) != -1;
  }
  
