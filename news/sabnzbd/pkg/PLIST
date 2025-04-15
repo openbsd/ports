@@ -38,6 +38,7 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/badfetch-ro.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/badfetch-ru.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/badfetch-sr.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/badfetch-sv.tmpl
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/badfetch-tr.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/badfetch-zh_CN.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/email-cs.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/email-da.tmpl
@@ -56,6 +57,7 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/email-ro.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/email-ru.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/email-sr.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/email-sv.tmpl
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/email-tr.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/email-zh_CN.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/rss-cs.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/rss-da.tmpl
@@ -74,6 +76,7 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/rss-ro.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/rss-ru.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/rss-sr.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/rss-sv.tmpl
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/rss-tr.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/email/rss-zh_CN.tmpl
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/icons/logo-arrow.svg
@@ -281,6 +284,9 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/sr/LC_MESSAGES/SABnzbd.m
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/sv/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/sv/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/sv/LC_MESSAGES/SABnzbd.mo
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/tr/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/tr/LC_MESSAGES/
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/tr/LC_MESSAGES/SABnzbd.mo
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/zh_CN/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/zh_CN/LC_MESSAGES/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/locale/zh_CN/LC_MESSAGES/SABnzbd.mo
@@ -304,6 +310,7 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/email/ro.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/email/ru.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/email/sr.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/email/sv.po
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/email/tr.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/email/zh_CN.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/main/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/main/SABnzbd.pot
@@ -324,6 +331,7 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/main/ro.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/main/ru.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/main/sr.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/main/sv.po
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/main/tr.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/main/zh_CN.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/nsis/
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/nsis/SABnsis.pot
@@ -344,6 +352,7 @@ lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/nsis/ro.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/nsis/ru.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/nsis/sr.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/nsis/sv.po
+lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/nsis/tr.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/po/nsis/zh_CN.po
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/requirements.txt
 lib/python${MODPY_VERSION}/site-packages/sabnzbd/sabnzbd/
