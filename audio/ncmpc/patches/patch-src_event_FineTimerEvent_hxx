@@ -1,0 +1,24 @@
+revert https://github.com/MusicPlayerDaemon/ncmpc/commit/63e3372775c7b1330d07e7e2be38170ad9076cae
+
+to revisit when base libcxx is updated ?
+Index: src/event/FineTimerEvent.hxx
+--- src/event/FineTimerEvent.hxx.orig
++++ src/event/FineTimerEvent.hxx
+@@ -7,7 +7,7 @@
+ #include "Chrono.hxx"
+ #include "event/Features.h"
+ #include "util/BindMethod.hxx"
+-#include "util/IntrusiveTreeSet.hxx"
++#include <boost/intrusive/set_hook.hpp>
+ 
+ #include <cassert>
+ 
+@@ -25,7 +25,7 @@ class EventLoop;
+  * as thread-safe.
+  */
+ class FineTimerEvent final :
+-	public IntrusiveTreeSetHook<IntrusiveHookMode::AUTO_UNLINK>
++	public boost::intrusive::set_base_hook<boost::intrusive::link_mode<boost::intrusive::auto_unlink>>
+ {
+ 	friend class TimerList;
+ 

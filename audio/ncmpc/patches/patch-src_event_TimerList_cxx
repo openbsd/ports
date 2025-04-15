@@ -1,0 +1,30 @@
+revert https://github.com/MusicPlayerDaemon/ncmpc/commit/63e3372775c7b1330d07e7e2be38170ad9076cae
+
+to revisit when base libcxx is updated ?
+Index: src/event/TimerList.cxx
+--- src/event/TimerList.cxx.orig
++++ src/event/TimerList.cxx
+@@ -5,10 +5,11 @@
+ #include "TimerList.hxx"
+ #include "FineTimerEvent.hxx"
+ 
+-constexpr Event::TimePoint
+-TimerList::GetDue::operator()(const FineTimerEvent &timer) const noexcept
++constexpr bool
++TimerList::Compare::operator()(const FineTimerEvent &a,
++			       const FineTimerEvent &b) const noexcept
+ {
+-	return timer.GetDue();
++	return a.due < b.due;
+ }
+ 
+ TimerList::TimerList() = default;
+@@ -37,7 +38,7 @@ TimerList::Run(const Event::TimePoint now) noexcept
+ 		if (timeout > timeout.zero())
+ 			return timeout;
+ 
+-		timers.pop_front();
++		timers.erase(i);
+ 
+ 		t.Run();
+ 	}

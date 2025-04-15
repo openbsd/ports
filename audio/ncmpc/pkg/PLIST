@@ -40,5 +40,8 @@ share/locale/pt_BR/LC_MESSAGES/ncmpc.mo
 share/locale/ru/LC_MESSAGES/ncmpc.mo
 share/locale/sk/LC_MESSAGES/ncmpc.mo
 share/locale/sv/LC_MESSAGES/ncmpc.mo
+share/locale/ta/
+share/locale/ta/LC_MESSAGES/
+share/locale/ta/LC_MESSAGES/ncmpc.mo
 share/locale/uk/LC_MESSAGES/ncmpc.mo
 share/locale/zh_CN/LC_MESSAGES/ncmpc.mo
