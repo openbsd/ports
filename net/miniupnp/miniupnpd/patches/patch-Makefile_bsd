@@ -1,12 +1,12 @@
 Index: Makefile.bsd
 --- Makefile.bsd.orig
 +++ Makefile.bsd
-@@ -143,7 +143,7 @@ clean:
- 	$(RM) $(TESTMINISSDPOBJS)
- 	$(RM) validateupnppermissions validategetifaddr validatessdppktgen
- 
--install:	miniupnpd genuuid
-+install:	miniupnpd
- 	$(STRIP) miniupnpd
- 	$(INSTALL) -d $(DESTDIR)$(INSTALLBINDIR)
+@@ -151,7 +151,7 @@ install:	miniupnpd
  	$(INSTALL) -m 755 miniupnpd $(DESTDIR)$(INSTALLBINDIR)
+ 	$(INSTALL) -d $(DESTDIR)$(INSTALLETCDIR)
+ 	$(INSTALL) -b miniupnpd.conf $(DESTDIR)$(INSTALLETCDIR)/miniupnpd.conf.sample
+-	sed -i '' -e "s/^uuid=[-0-9a-fA-F]*/uuid=`$(UUIDBIN)`/" $(DESTDIR)$(INSTALLETCDIR)/miniupnpd.conf.sample
++	sed -i -e "s/^uuid=[-0-9a-fA-F]*/uuid=`$(UUIDBIN)`/" $(DESTDIR)$(INSTALLETCDIR)/miniupnpd.conf.sample
+ 	$(INSTALL) -d $(DESTDIR)$(INSTALLMANDIR)/man8
+ 	$(INSTALL) -m 644 $(SRCDIR)/miniupnpd.8 $(DESTDIR)$(INSTALLMANDIR)/man8/miniupnpd.8
+ 

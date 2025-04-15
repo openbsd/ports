@@ -3,5 +3,5 @@
 @bin sbin/miniupnpd
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/miniupnpd/
-share/examples/miniupnpd/miniupnpd.conf
+share/examples/miniupnpd/miniupnpd.conf.sample
 @sample ${SYSCONFDIR}/miniupnpd.conf
