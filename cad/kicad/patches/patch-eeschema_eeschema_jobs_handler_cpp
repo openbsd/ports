@@ -1,15 +1,15 @@
 Index: eeschema/eeschema_jobs_handler.cpp
 --- eeschema/eeschema_jobs_handler.cpp.orig
 +++ eeschema/eeschema_jobs_handler.cpp
-@@ -248,7 +248,7 @@ void EESCHEMA_JOBS_HANDLER::InitRenderSettings( SCH_RE
+@@ -247,7 +247,7 @@ void EESCHEMA_JOBS_HANDLER::InitRenderSettings( SCH_RE
  
  int EESCHEMA_JOBS_HANDLER::JobExportPlot( JOB* aJob )
  {
 -    JOB_EXPORT_SCH_PLOT* aPlotJob = dynamic_cast<JOB_EXPORT_SCH_PLOT*>( aJob );
 +    JOB_EXPORT_SCH_PLOT* aPlotJob = static_cast<JOB_EXPORT_SCH_PLOT*>( aJob );
  
-     if( !aPlotJob )
-         return CLI::EXIT_CODES::ERR_UNKNOWN;
+     wxCHECK( aPlotJob, CLI::EXIT_CODES::ERR_UNKNOWN );
+ 
 @@ -368,7 +368,7 @@ int EESCHEMA_JOBS_HANDLER::JobExportPlot( JOB* aJob )
  
  int EESCHEMA_JOBS_HANDLER::JobExportNetlist( JOB* aJob )
@@ -17,50 +17,50 @@ Index: eeschema/eeschema_jobs_handler.cpp
 -    JOB_EXPORT_SCH_NETLIST* aNetJob = dynamic_cast<JOB_EXPORT_SCH_NETLIST*>( aJob );
 +    JOB_EXPORT_SCH_NETLIST* aNetJob = static_cast<JOB_EXPORT_SCH_NETLIST*>( aJob );
  
-     if( !aNetJob )
-         return CLI::EXIT_CODES::ERR_UNKNOWN;
-@@ -487,7 +487,7 @@ int EESCHEMA_JOBS_HANDLER::JobExportNetlist( JOB* aJob
+     wxCHECK( aNetJob, CLI::EXIT_CODES::ERR_UNKNOWN );
+ 
+@@ -486,7 +486,7 @@ int EESCHEMA_JOBS_HANDLER::JobExportNetlist( JOB* aJob
  
  int EESCHEMA_JOBS_HANDLER::JobExportBom( JOB* aJob )
  {
 -    JOB_EXPORT_SCH_BOM* aBomJob = dynamic_cast<JOB_EXPORT_SCH_BOM*>( aJob );
 +    JOB_EXPORT_SCH_BOM* aBomJob = static_cast<JOB_EXPORT_SCH_BOM*>( aJob );
  
-     if( !aBomJob )
-         return CLI::EXIT_CODES::ERR_UNKNOWN;
-@@ -770,7 +770,7 @@ int EESCHEMA_JOBS_HANDLER::JobExportBom( JOB* aJob )
+     wxCHECK( aBomJob, CLI::EXIT_CODES::ERR_UNKNOWN );
+ 
+@@ -766,7 +766,7 @@ int EESCHEMA_JOBS_HANDLER::JobExportBom( JOB* aJob )
  
  int EESCHEMA_JOBS_HANDLER::JobExportPythonBom( JOB* aJob )
  {
 -    JOB_EXPORT_SCH_PYTHONBOM* aNetJob = dynamic_cast<JOB_EXPORT_SCH_PYTHONBOM*>( aJob );
 +    JOB_EXPORT_SCH_PYTHONBOM* aNetJob = static_cast<JOB_EXPORT_SCH_PYTHONBOM*>( aJob );
  
-     if( !aNetJob )
-         return CLI::EXIT_CODES::ERR_UNKNOWN;
-@@ -958,7 +958,7 @@ int EESCHEMA_JOBS_HANDLER::doSymExportSvg( JOB_SYM_EXP
+     wxCHECK( aNetJob, CLI::EXIT_CODES::ERR_UNKNOWN );
+ 
+@@ -945,7 +945,7 @@ int EESCHEMA_JOBS_HANDLER::doSymExportSvg( JOB_SYM_EXP
  
  int EESCHEMA_JOBS_HANDLER::JobSymExportSvg( JOB* aJob )
  {
 -    JOB_SYM_EXPORT_SVG* svgJob = dynamic_cast<JOB_SYM_EXPORT_SVG*>( aJob );
 +    JOB_SYM_EXPORT_SVG* svgJob = static_cast<JOB_SYM_EXPORT_SVG*>( aJob );
  
-     if( !svgJob )
-         return CLI::EXIT_CODES::ERR_UNKNOWN;
-@@ -1031,7 +1031,7 @@ int EESCHEMA_JOBS_HANDLER::JobSymExportSvg( JOB* aJob 
+     wxCHECK( svgJob, CLI::EXIT_CODES::ERR_UNKNOWN );
+ 
+@@ -1017,7 +1017,7 @@ int EESCHEMA_JOBS_HANDLER::JobSymExportSvg( JOB* aJob 
  
  int EESCHEMA_JOBS_HANDLER::JobSymUpgrade( JOB* aJob )
  {
 -    JOB_SYM_UPGRADE* upgradeJob = dynamic_cast<JOB_SYM_UPGRADE*>( aJob );
 +    JOB_SYM_UPGRADE* upgradeJob = static_cast<JOB_SYM_UPGRADE*>( aJob );
  
-     if( !upgradeJob )
-         return CLI::EXIT_CODES::ERR_UNKNOWN;
-@@ -1121,7 +1121,7 @@ int EESCHEMA_JOBS_HANDLER::JobSymUpgrade( JOB* aJob )
+     wxCHECK( upgradeJob, CLI::EXIT_CODES::ERR_UNKNOWN );
+ 
+@@ -1106,7 +1106,7 @@ int EESCHEMA_JOBS_HANDLER::JobSymUpgrade( JOB* aJob )
  
  int EESCHEMA_JOBS_HANDLER::JobSchErc( JOB* aJob )
  {
 -    JOB_SCH_ERC* ercJob = dynamic_cast<JOB_SCH_ERC*>( aJob );
 +    JOB_SCH_ERC* ercJob = static_cast<JOB_SCH_ERC*>( aJob );
  
-     if( !ercJob )
-         return CLI::EXIT_CODES::ERR_UNKNOWN;
+     wxCHECK( ercJob, CLI::EXIT_CODES::ERR_UNKNOWN );
+ 
