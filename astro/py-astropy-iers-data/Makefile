@@ -1,6 +1,6 @@
 COMMENT=	IERS earth rotation and leap second tables for astropy
 
-MODPY_DISTV=	0.2025.3.17.0.34.53
+MODPY_DISTV=	0.2025.4.14.0.37.22
 DISTNAME=	astropy_iers_data-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/g}
 
