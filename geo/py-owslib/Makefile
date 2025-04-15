@@ -1,12 +1,12 @@
 COMMENT =		library for accessing OGC Web Services
 
-MODPY_DISTV =	0.32.1
-DISTNAME =		OWSLib-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME:L}
+MODPY_DISTV =	0.33.0
+DISTNAME =		owslib-${MODPY_DISTV}
+PKGNAME =		py-${DISTNAME}
 
 CATEGORIES =		geo devel
 
-HOMEPAGE =	http://geopython.github.io/OWSLib
+HOMEPAGE =	https://owslib.readthedocs.io/en/${MODPY_DISTV}/
 # BSD
 PERMIT_PACKAGE =	Yes
 
@@ -21,6 +21,7 @@ RUN_DEPENDS =	www/py-requests \
 		devel/py-tz \
 		devel/py-dateutil
 
-TEST_DEPENDS =	devel/py-test
+TEST_DEPENDS =	devel/py-test \
+		devel/py-test-httpserver
 
 .include <bsd.port.mk>
