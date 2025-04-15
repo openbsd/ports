@@ -5,9 +5,9 @@ COMMENT =	parser generator tool and incremental parsing library
 
 GH_ACCOUNT =		tree-sitter
 GH_PROJECT =		tree-sitter
-GH_TAGNAME =		v0.22.6
+GH_TAGNAME =		v0.25.3
 
-SHARED_LIBS +=		tree-sitter	4.0 # 0.22.6
+SHARED_LIBS +=		tree-sitter	5.0 # 0.25.3
 
 CATEGORIES =		textproc
 
