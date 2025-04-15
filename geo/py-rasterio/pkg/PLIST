@@ -1,5 +1,5 @@
-@pkgpath geo/py-rasterio,python3
 @conflict py-rasterio-*
+@pkgpath geo/py-rasterio,python3
 bin/rio
 lib/python${MODPY_VERSION}/site-packages/rasterio/
 lib/python${MODPY_VERSION}/site-packages/rasterio-${MODPY_DISTV}.dist-info/
@@ -18,6 +18,8 @@ lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}_path.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}_path.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}_show_versions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}_show_versions.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}abc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}abc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}control.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}control.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}coords.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -54,6 +56,8 @@ lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}sample.${MODPY
 lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}sample.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}session.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}session.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}stack.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}stack.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}tools.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}tools.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}transform.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -75,8 +79,18 @@ lib/python${MODPY_VERSION}/site-packages/rasterio/${MODPY_PYCACHE}windows.${MODP
 lib/python${MODPY_VERSION}/site-packages/rasterio/_path.py
 lib/python${MODPY_VERSION}/site-packages/rasterio/_show_versions.py
 @so lib/python${MODPY_VERSION}/site-packages/rasterio/_transform.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/rasterio/_vendor/
+lib/python${MODPY_VERSION}/site-packages/rasterio/_vendor/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/rasterio/_vendor/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/rasterio/_vendor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/rasterio/_vendor/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rasterio/_vendor/${MODPY_PYCACHE}snuggs.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/rasterio/_vendor/${MODPY_PYCACHE}snuggs.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rasterio/_vendor/snuggs.py
 @so lib/python${MODPY_VERSION}/site-packages/rasterio/_version.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/rasterio/_vsiopener.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/rasterio/_warp.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/rasterio/abc.py
 lib/python${MODPY_VERSION}/site-packages/rasterio/control.py
 lib/python${MODPY_VERSION}/site-packages/rasterio/coords.py
 @so lib/python${MODPY_VERSION}/site-packages/rasterio/crs.${MODPY_PYC_MAGIC_TAG}so
@@ -108,6 +122,8 @@ lib/python${MODPY_VERSION}/site-packages/rasterio/rio/${MODPY_PYCACHE}clip.${MOD
 lib/python${MODPY_VERSION}/site-packages/rasterio/rio/${MODPY_PYCACHE}clip.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rasterio/rio/${MODPY_PYCACHE}convert.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rasterio/rio/${MODPY_PYCACHE}convert.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/rasterio/rio/${MODPY_PYCACHE}create.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/rasterio/rio/${MODPY_PYCACHE}create.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rasterio/rio/${MODPY_PYCACHE}edit_info.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/rasterio/rio/${MODPY_PYCACHE}edit_info.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/rasterio/rio/${MODPY_PYCACHE}env.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -149,6 +165,7 @@ lib/python${MODPY_VERSION}/site-packages/rasterio/rio/bounds.py
 lib/python${MODPY_VERSION}/site-packages/rasterio/rio/calc.py
 lib/python${MODPY_VERSION}/site-packages/rasterio/rio/clip.py
 lib/python${MODPY_VERSION}/site-packages/rasterio/rio/convert.py
+lib/python${MODPY_VERSION}/site-packages/rasterio/rio/create.py
 lib/python${MODPY_VERSION}/site-packages/rasterio/rio/edit_info.py
 lib/python${MODPY_VERSION}/site-packages/rasterio/rio/env.py
 lib/python${MODPY_VERSION}/site-packages/rasterio/rio/gcps.py
@@ -171,6 +188,7 @@ lib/python${MODPY_VERSION}/site-packages/rasterio/rpc.py
 lib/python${MODPY_VERSION}/site-packages/rasterio/sample.py
 lib/python${MODPY_VERSION}/site-packages/rasterio/session.py
 @so lib/python${MODPY_VERSION}/site-packages/rasterio/shutil.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/rasterio/stack.py
 lib/python${MODPY_VERSION}/site-packages/rasterio/tools.py
 lib/python${MODPY_VERSION}/site-packages/rasterio/transform.py
 lib/python${MODPY_VERSION}/site-packages/rasterio/vrt.py
