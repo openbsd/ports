@@ -1,8 +1,8 @@
-Index: chrome/browser/background/background_mode_manager.cc
---- chrome/browser/background/background_mode_manager.cc.orig
-+++ chrome/browser/background/background_mode_manager.cc
-@@ -872,7 +872,7 @@ gfx::ImageSkia GetStatusTrayIcon() {
-     return gfx::ImageSkia();
+Index: chrome/browser/background/extensions/background_mode_manager.cc
+--- chrome/browser/background/extensions/background_mode_manager.cc.orig
++++ chrome/browser/background/extensions/background_mode_manager.cc
+@@ -893,7 +893,7 @@ gfx::ImageSkia GetStatusTrayIcon() {
+   }
  
    return family->CreateExact(size).AsImageSkia();
 -#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS)

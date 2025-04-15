@@ -1,7 +1,7 @@
 Index: media/base/audio_latency.cc
 --- media/base/audio_latency.cc.orig
 +++ media/base/audio_latency.cc
-@@ -148,7 +148,7 @@ int AudioLatency::GetRtcBufferSize(int sample_rate, in
+@@ -147,7 +147,7 @@ int AudioLatency::GetRtcBufferSize(int sample_rate, in
    }
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_CHROMEOS) || BUILDFLAG(IS_APPLE) || \

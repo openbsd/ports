@@ -1,7 +1,7 @@
 Index: media/gpu/test/video_frame_validator.cc
 --- media/gpu/test/video_frame_validator.cc.orig
 +++ media/gpu/test/video_frame_validator.cc
-@@ -33,7 +33,7 @@
+@@ -34,7 +34,7 @@
  #include "testing/gtest/include/gtest/gtest.h"
  #include "ui/gfx/gpu_memory_buffer.h"
  

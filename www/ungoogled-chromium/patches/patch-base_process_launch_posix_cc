@@ -1,7 +1,7 @@
 Index: base/process/launch_posix.cc
 --- base/process/launch_posix.cc.orig
 +++ base/process/launch_posix.cc
-@@ -67,6 +67,9 @@
+@@ -62,6 +62,9 @@
  #error "macOS should use launch_mac.cc"
  #endif
  

@@ -28,7 +28,7 @@ Index: chrome/browser/signin/accounts_policy_manager.cc
    profile_pref_change_registrar_.RemoveAll();
  #endif  // BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX)
    local_state_pref_registrar_.RemoveAll();
-@@ -320,7 +320,7 @@ void AccountsPolicyManager::OnUserConfirmedProfileDele
+@@ -311,7 +311,7 @@ void AccountsPolicyManager::OnUserConfirmedProfileDele
  }
  #endif  // defined(TOOLKIT_VIEWS) && !BUILDFLAG(IS_CHROMEOS)
  

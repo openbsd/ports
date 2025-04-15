@@ -21,7 +21,7 @@ Index: base/message_loop/message_pump_glib.cc
 +  return pthread_main_np();
 +#else
    auto pid = getpid();
-   auto tid = PlatformThread::CurrentId();
+   auto tid = PlatformThread::CurrentId().raw();
    return pid > 0 && tid > 0 && pid == tid;
 +#endif
  }
