@@ -63,7 +63,7 @@ SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = IVeYYKIDBvz0OxvSNNH7oxlJnHd
 SHA256 (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = qrj7xOYwDqCOav4crqGKIckMefSJ9SxT4vIEMfGpoBU=
 SHA256 (go_modules/mvdan.cc/xurls/v2/@v/v2.5.0.mod) = JaaqDMOKAOz/km2vfiH95k+pESDtUtDeu5XLFhWcCZQ=
 SHA256 (go_modules/mvdan.cc/xurls/v2/@v/v2.5.0.zip) = rMhwwY8KELdTgl7872PtzbE6nJsVQZaVuq/xw5nJNWI=
-SHA256 (senpai-v0.4.0.zip) = vw8zmc6cxZMoCpWtnzV8KVkNF0ZfkD+QO0QefRnmjOM=
+SHA256 (senpai-v0.4.1.zip) = 3xQ3UgwI1aNI6rd4iF1Z+Zxdn7hbT4XbVXzSI+qxjT4=
 SIZE (go_modules/codeberg.org/emersion/go-scfg/@v/v0.1.0.mod) = 89
 SIZE (go_modules/codeberg.org/emersion/go-scfg/@v/v0.1.0.zip) = 12308
 SIZE (go_modules/git.sr.ht/~rockorager/vaxis/@v/v0.13.0.mod) = 566
@@ -129,4 +129,4 @@ SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.mod) = 95
 SIZE (go_modules/gopkg.in/yaml.v3/@v/v3.0.1.zip) = 104623
 SIZE (go_modules/mvdan.cc/xurls/v2/@v/v2.5.0.mod) = 140
 SIZE (go_modules/mvdan.cc/xurls/v2/@v/v2.5.0.zip) = 33829
-SIZE (senpai-v0.4.0.zip) = 304203
+SIZE (senpai-v0.4.1.zip) = 304422

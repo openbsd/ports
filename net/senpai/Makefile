@@ -1,7 +1,7 @@
 COMMENT =		modern terminal IRC client
 
 MODGO_MODNAME =		git.sr.ht/~delthas/senpai
-MODGO_VERSION =		v0.4.0
+MODGO_VERSION =		v0.4.1
 DISTNAME =		senpai-${MODGO_VERSION}
 
 CATEGORIES =		net
