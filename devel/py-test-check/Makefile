@@ -1,6 +1,6 @@
 COMMENT =		pytest plugin that allows multiple failures per test
 
-MODPY_DISTV =		2.5.0
+MODPY_DISTV =		2.5.3
 DISTNAME =		pytest_check-${MODPY_DISTV}
 PKGNAME =		py-test-check-${MODPY_DISTV}
 
@@ -16,5 +16,6 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		hatchling
 
 RUN_DEPENDS =		devel/py-test
+TEST_DEPENDS =		${BUILD_PKGPATH}
 
 .include <bsd.port.mk>
