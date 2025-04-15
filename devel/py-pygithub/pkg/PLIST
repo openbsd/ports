@@ -36,6 +36,7 @@ lib/python${MODPY_VERSION}/site-packages/github/CodeScanAlertInstanceLocation.py
 lib/python${MODPY_VERSION}/site-packages/github/CodeScanRule.py
 lib/python${MODPY_VERSION}/site-packages/github/CodeScanTool.py
 lib/python${MODPY_VERSION}/site-packages/github/CodeSecurityConfig.py
+lib/python${MODPY_VERSION}/site-packages/github/CodeSecurityConfigRepository.py
 lib/python${MODPY_VERSION}/site-packages/github/Commit.py
 lib/python${MODPY_VERSION}/site-packages/github/CommitCombinedStatus.py
 lib/python${MODPY_VERSION}/site-packages/github/CommitComment.py
@@ -229,6 +230,8 @@ lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}CodeScanTool.${M
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}CodeScanTool.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}CodeSecurityConfig.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}CodeSecurityConfig.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}CodeSecurityConfigRepository.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}CodeSecurityConfigRepository.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}Commit.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}Commit.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/github/${MODPY_PYCACHE}CommitCombinedStatus.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
