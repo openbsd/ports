@@ -1,0 +1,13 @@
+/usr/include/netinet/ip.h:67:19: error: field has incomplete type 'struct in_addr'
+
+Index: src/net/DscpParser.cxx
+--- src/net/DscpParser.cxx.orig
++++ src/net/DscpParser.cxx
+@@ -9,6 +9,7 @@
+ #ifdef _WIN32
+ #include <ws2tcpip.h>
+ #else
++#include <netinet/in.h>
+ #include <netinet/ip.h>
+ #endif
+ 

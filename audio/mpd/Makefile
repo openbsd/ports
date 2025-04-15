@@ -1,6 +1,6 @@
 BROKEN-hppa =		no atomic ops
 COMMENT =		Music Player Daemon
-VER =			0.23.16
+VER =			0.24.3
 DISTNAME =		mpd-${VER}
 EXTRACT_SUFX =		.tar.xz
 CATEGORIES =		audio
@@ -9,20 +9,24 @@ HOMEPAGE =		https://www.musicpd.org/
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
+MAINTAINER =		Landry Breuil <landry@openbsd.org>
+
 WANTLIB =		FLAC audiofile avcodec avfilter avformat avutil \
 			bz2 c cdio cdio_cdda cdio_paranoia curl \
 			expat faad fmt icui18n icuuc \
 			id3tag iso9660 m mikmod mp3lame mpcdec \
 			mpdclient ogg opus pcre2-8 pthread samplerate \
 			shout sndfile sndio sqlite3 \
-			vorbis vorbisenc yajl z ${COMPILER_LIBCXX}
+			vorbis vorbisenc z ${COMPILER_LIBCXX}
 
 SITES =			https://www.musicpd.org/download/mpd/${VER:R}/
 
+# needs libcxx update ?
 COMPILER =		base-clang ports-gcc
 
 BUILD_DEPENDS =		devel/boost
 BUILD_DEPENDS +=	textproc/py-sphinx
+BUILD_DEPENDS +=	textproc/nlohmann-json
 
 LIB_DEPENDS =		audio/faad>=2.6.1p0 \
 			audio/flac \
@@ -40,7 +44,6 @@ LIB_DEPENDS =		audio/faad>=2.6.1p0 \
 			databases/sqlite3 \
 			devel/fmt \
 			devel/libaudiofile \
-			devel/libyajl \
 			devel/pcre2 \
 			graphics/ffmpeg \
 			net/curl \
@@ -56,6 +59,7 @@ CONFIGURE_ARGS +=	-Dsystemd=disabled \
 			-Dupnp=disabled \
 			-Dlibmpdclient=enabled \
 			-Dneighbor=false \
+			-Ddoxygen=false \
 			-Dhtml_manual=false
 # storage
 CONFIGURE_ARGS +=	-Dudisks=disabled \
@@ -72,8 +76,7 @@ CONFIGURE_ARGS +=	-Dcdio_paranoia=enabled \
 			-Dsmbclient=disabled
 
 # commercial
-CONFIGURE_ARGS +=	-Dqobuz=disabled \
-			-Dsoundcloud=enabled
+CONFIGURE_ARGS +=	-Dqobuz=disabled
 
 # archive
 CONFIGURE_ARGS +=	-Dbzip2=enabled \
@@ -136,9 +139,9 @@ CONFIGURE_ARGS +=	-Ddbus=disabled \
 			-Dexpat=enabled \
 			-Dicu=enabled \
 			-Diconv=enabled \
+			-Dnlohmann_json=enabled \
 			-Dpcre=enabled \
 			-Dsqlite=enabled \
-			-Dyajl=enabled \
 			-Dzlib=enabled \
 			-Dzeroconf=disabled
 

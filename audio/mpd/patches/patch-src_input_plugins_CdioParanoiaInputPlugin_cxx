@@ -1,0 +1,14 @@
+otherwise NULL is defined to (void*)0 by cdio/types.h
+
+Index: src/input/plugins/CdioParanoiaInputPlugin.cxx
+--- src/input/plugins/CdioParanoiaInputPlugin.cxx.orig
++++ src/input/plugins/CdioParanoiaInputPlugin.cxx
+@@ -5,6 +5,8 @@
+  * CD-Audio handling (requires libcdio_paranoia)
+  */
+ 
++#include <cstddef>
++
+ #include "CdioParanoiaInputPlugin.hxx"
+ #include "lib/cdio/Paranoia.hxx"
+ #include "lib/fmt/RuntimeError.hxx"
