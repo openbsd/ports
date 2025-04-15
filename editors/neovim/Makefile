@@ -11,7 +11,7 @@ EMBED_LUAJIT =	No
 
 COMMENT =	continuation and extension of Vim
 
-DIST_TUPLE =	github neovim neovim v0.10.4 .
+DIST_TUPLE =	github neovim neovim v0.11.0 .
 
 # embedded luajit
 USE_NOBTCFI =	Yes
@@ -22,23 +22,25 @@ MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
 # The versions listed here must match those in cmake.deps/deps.txt.
 STATIC_DEPS_WRKSRC =		${WRKDIST}/static-deps/
-DIST_TUPLE +=	github luvit luv 1.48.0-2 ${STATIC_DEPS_WRKSRC}/luv
-DIST_TUPLE +=	github LuaJIT LuaJIT 75e92777988017fe47c5eb290998021bbf972d1f \
+DIST_TUPLE +=	github luvit luv 1.50.0-1 ${STATIC_DEPS_WRKSRC}/luv
+DIST_TUPLE +=	github LuaJIT LuaJIT 538a82133ad6fddfd0ca64de167c4aca3bc1a2da \
 		${STATIC_DEPS_WRKSRC}/luajit
 DIST_TUPLE +=	github keplerproject lua-compat-5.3 v0.13 \
 		${STATIC_DEPS_WRKSRC}/lua-compat-5.3
-DIST_TUPLE +=	github tree-sitter tree-sitter-c v0.21.3 \
+DIST_TUPLE +=	github tree-sitter tree-sitter-c v0.23.4 \
  		${STATIC_DEPS_WRKSRC}/parsers/treesitter_c
-DIST_TUPLE +=	github tree-sitter-grammars tree-sitter-lua v0.1.0 \
+DIST_TUPLE +=	github tree-sitter-grammars tree-sitter-lua v0.3.0 \
  		${STATIC_DEPS_WRKSRC}/parsers/treesitter_lua
-DIST_TUPLE +=	github neovim tree-sitter-vim v0.4.0 \
+DIST_TUPLE +=	github neovim tree-sitter-vim v0.5.0 \
  		${STATIC_DEPS_WRKSRC}/parsers/treesitter_vim
-DIST_TUPLE +=	github neovim tree-sitter-vimdoc v3.0.0 \
+DIST_TUPLE +=	github neovim tree-sitter-vimdoc v3.0.1 \
  		${STATIC_DEPS_WRKSRC}/parsers/treesitter_vimdoc
-DIST_TUPLE +=	github tree-sitter-grammars tree-sitter-query v0.4.0 \
+DIST_TUPLE +=	github tree-sitter-grammars tree-sitter-query v0.5.1 \
  		${STATIC_DEPS_WRKSRC}/parsers/treesitter_query
-DIST_TUPLE +=	github MDeiml tree-sitter-markdown v0.2.3 \
+DIST_TUPLE +=	github MDeiml tree-sitter-markdown v0.4.1 \
  		${STATIC_DEPS_WRKSRC}/parsers/treesitter_markdown
+DIST_TUPLE +=	github JuliaStrings utf8proc v2.10.0 \
+		${STATIC_DEPS_WRKSRC}/utf8proc
 
 # Neovim: Apache 2.0 + Vim License
 # LuaJIT: MIT + public domain
@@ -47,8 +49,8 @@ PERMIT_PACKAGE =	Yes
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-WANTLIB += c iconv intl m msgpack-c pthread
-WANTLIB += tree-sitter unibilium util uv vterm
+WANTLIB += c iconv intl m pthread
+WANTLIB += tree-sitter unibilium util uv
 
 .if ${EMBED_LUAJIT} != "Yes"
 WANTLIB += ${MODLUA_WANTLIB}
@@ -73,10 +75,8 @@ BUILD_DEPENDS =		${RUN_DEPENDS} \
 
 LIB_DEPENDS =		devel/gettext,-runtime \
 			devel/libuv \
-			devel/libvterm>=0.3.3 \
-			devel/msgpack \
 			devel/unibilium \
-			textproc/tree-sitter>=0.20.9
+			textproc/tree-sitter>=0.25.3
 
 RUN_DEPENDS +=		devel/libmpack/lua \
 			devel/libmpack/main \
@@ -88,7 +88,9 @@ RUN_DEPENDS +=		devel/libmpack/lua \
 SEPARATE_BUILD =	Yes
 CONFIGURE_ARGS +=	-DUSE_BUNDLED=OFF \
 			-DLUV_INCLUDE_DIR=${STATIC_DEPS_INST}/include \
-			-DLUV_LIBRARY=${STATIC_DEPS_INST}/lib/libluv.a
+			-DLUV_LIBRARY=${STATIC_DEPS_INST}/lib/libluv.a \
+			-DUTF8PROC_LIBRARY=${STATIC_DEPS_INST}/lib/libutf8proc.a \
+			-DUTF8PROC_INCLUDE_DIR=${STATIC_DEPS_INST}/include/utf8proc
 .if ${EMBED_LUAJIT} == "Yes"
 CONFIGURE_ARGS +=	-DLUA_PRG=${STATIC_DEPS_INST}/bin/luajit \
 			-DLUAJIT_INCLUDE_DIR=${STATIC_DEPS_INST}/include/luajit-2.1 \
@@ -197,6 +199,19 @@ pre-configure:
 	mkdir -p ${WRKBUILD}/lib/nvim/parser
 	cp -r ${PARSERS_WRKBUILD}/usr/lib/nvim/parser/*.so \
 		${WRKBUILD}/lib/nvim/parser/
+
+	# Build utf8proc.
+	mkdir -p ${STATIC_DEPS_WRKBUILD}/utf8proc
+	${MAKE_ENV} ${LOCALBASE}/bin/cmake -S ${STATIC_DEPS_WRKSRC}/utf8proc \
+		-B ${STATIC_DEPS_WRKBUILD}/utf8proc
+	${MAKE_ENV} ${LOCALBASE}/bin/cmake --build \
+		${STATIC_DEPS_WRKBUILD}/utf8proc -- VERBOSE=1
+
+	mkdir -p ${STATIC_DEPS_INST}/lib
+	cp ${STATIC_DEPS_WRKBUILD}/utf8proc/libutf8proc.a ${STATIC_DEPS_INST}/lib/
+	mkdir -p ${STATIC_DEPS_INST}/include/utf8proc
+	cp ${STATIC_DEPS_WRKSRC}/utf8proc/utf8proc.h \
+		${STATIC_DEPS_INST}/include/utf8proc
 
 # These are the "old tests". There is also a new suite, but we would need the
 # "busted" test suite for Lua, which is not yet ported.
