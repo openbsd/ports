@@ -1,0 +1,11 @@
+Index: util/perl/OpenSSL/config.pm
+--- util/perl/OpenSSL/config.pm.orig
++++ util/perl/OpenSSL/config.pm
+@@ -807,7 +807,6 @@ EOF
+       [ 'ia64-.*-openbsd.*',      { target => "BSD-nodef-ia64" } ],
+       [ 'ia64-.*-.*bsd.*',        { target => "BSD-ia64" } ],
+       [ 'x86_64-.*-dragonfly.*',  { target => "BSD-x86_64" } ],
+-      [ 'amd64-.*-openbsd.*',     { target => "BSD-nodef-x86_64" } ],
+       [ 'amd64-.*-.*bsd.*',       { target => "BSD-x86_64" } ],
+       [ 'arm64-.*-.*bsd.*',       { target => "BSD-aarch64" } ],
+       [ 'armv6-.*-.*bsd.*',       { target => "BSD-armv4" } ],
