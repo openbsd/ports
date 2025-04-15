@@ -3,6 +3,7 @@
 include/python${MODPY_VERSION}/ImPlatform.h
 include/python${MODPY_VERSION}/Imaging.h
 lib/python${MODPY_VERSION}/site-packages/PIL/
+lib/python${MODPY_VERSION}/site-packages/PIL/AvifImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/BdfFontFile.py
 lib/python${MODPY_VERSION}/site-packages/PIL/BlpImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/BmpImagePlugin.py
@@ -91,6 +92,8 @@ lib/python${MODPY_VERSION}/site-packages/PIL/XpmImagePlugin.py
 lib/python${MODPY_VERSION}/site-packages/PIL/__init__.py
 lib/python${MODPY_VERSION}/site-packages/PIL/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}AvifImagePlugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}AvifImagePlugin.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}BdfFontFile.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}BdfFontFile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}BlpImagePlugin.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -281,6 +284,7 @@ lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}features.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}features.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}report.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/PIL/${MODPY_PYCACHE}report.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/PIL/_avif.pyi
 lib/python${MODPY_VERSION}/site-packages/PIL/_binary.py
 lib/python${MODPY_VERSION}/site-packages/PIL/_deprecate.py
 @so lib/python${MODPY_VERSION}/site-packages/PIL/_imaging.${MODPY_PYC_MAGIC_TAG}so

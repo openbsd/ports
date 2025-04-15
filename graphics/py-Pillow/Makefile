@@ -1,6 +1,6 @@
 COMMENT=	Python Imaging Library (friendly fork of PIL)
 
-MODPY_DISTV=	11.1.0
+MODPY_DISTV=	11.2.1
 DISTNAME=	pillow-${MODPY_DISTV}
 PKGNAME=	py-Pillow-${MODPY_DISTV}
 CATEGORIES=	graphics
