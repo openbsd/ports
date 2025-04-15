@@ -58,7 +58,7 @@
      SUBDIR += py-google-i18n-address
      SUBDIR += py-laspy
      SUBDIR += py-mercantile
-     SUBDIR += py-morcantile
+     SUBDIR += py-morecantile
      SUBDIR += py-osmium
      SUBDIR += py-owslib
      SUBDIR += py-planet
