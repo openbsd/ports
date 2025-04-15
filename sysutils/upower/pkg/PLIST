@@ -32,6 +32,7 @@ share/examples/upower/UPower/UPower.conf
 share/gir-1.0/UPowerGlib-1.0.gir
 share/locale/fr/LC_MESSAGES/upower.mo
 share/locale/it/LC_MESSAGES/upower.mo
+share/locale/ka/LC_MESSAGES/upower.mo
 share/locale/pl/LC_MESSAGES/upower.mo
 share/locale/sv/LC_MESSAGES/upower.mo
 share/polkit-1/actions/org.freedesktop.upower.policy
