@@ -25,7 +25,7 @@ The database must be configured. Please refer to the documentation
 section "Setting up the Database" in
 ${PREFIX}/share/doc/icingadb/doc/02-Installation.md
 or online at
-https://icinga.com/docs/icinga-db/latest/doc/02-Installation/03-Debian/#setting-up-the-database
+https://icinga.com/docs/icinga-db/latest/doc/02-Installation/Debian/#setting-up-the-database
 
 Afterwards, a database schema must be imported. Schema and updates for
 MySQL and PostgreSQL are found in ${PREFIX}/share/examples/icingadb/schema/.
