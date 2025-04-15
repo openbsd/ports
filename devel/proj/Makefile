@@ -23,7 +23,8 @@ MODULES +=		devel/cmake
 LIB_DEPENDS =		databases/sqlite3 \
 			net/curl \
 			graphics/tiff
-BUILD_DEPENDS =		devel/gtest>=1.8.1
+BUILD_DEPENDS =		devel/gtest>=1.8.1 \
+			textproc/nlohmann-json
 WANTLIB=		c curl m pthread ${COMPILER_LIBCXX} sqlite3 tiff
 CONFIGURE_ARGS =	-DUSE_EXTERNAL_GTEST=1 \
 			-DCMAKE_INSTALL_MANDIR=man
