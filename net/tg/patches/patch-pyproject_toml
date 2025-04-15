@@ -1,0 +1,12 @@
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -28,7 +28,7 @@ ruff = "^0.11.5"
+ tg = "tg.__main__:main"
+ 
+ [build-system]
+-requires = ["poetry-core>=1.0.0,<2.0.0"]
++requires = ["poetry-core>=1.0.0"]
+ build-backend = "poetry.core.masonry.api"
+ 
+ [tool.mypy]

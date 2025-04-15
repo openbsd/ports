@@ -1,9 +1,7 @@
 COMMENT =	ncurses Telegram client
 
-MODPY_DISTV =	0.19.0
-
+MODPY_DISTV =	0.22.0
 DISTNAME =	tg-${MODPY_DISTV}
-REVISION =	3
 
 CATEGORIES =	net
 
@@ -13,9 +11,9 @@ HOMEPAGE =	https://github.com/paul-nameless/tg
 PERMIT_PACKAGE =	Yes
 
 MODULES =		lang/python
-
-MODPY_PI =		Yes
 MODPY_PYBUILD =		poetry-core
+MODPY_PI =		Yes
+
 NO_TEST =		Yes
 
 RUN_DEPENDS =		net/py-telegram

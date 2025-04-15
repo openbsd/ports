@@ -1,0 +1,12 @@
+Index: tg/config.py
+--- tg/config.py.orig
++++ tg/config.py
+@@ -69,7 +69,7 @@ TDLIB_VERBOSITY = 0
+ MAX_DOWNLOAD_SIZE = "10MB"
+ 
+ # TODO: check platform
+-NOTIFY_CMD = "/usr/local/bin/terminal-notifier -title {title} -subtitle {subtitle} -message {msg} -appIcon {icon_path}"
++NOTIFY_CMD = "/usr/local/bin/terminal-notifier -title {title} -subtitle {subtitle} -message {msg} -appIcon {icon_path} 2>/dev/null"
+ 
+ VIEW_TEXT_CMD = "less"
+ FZF = "fzf"
