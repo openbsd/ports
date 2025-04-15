@@ -1,11 +1,11 @@
 COMMENT =	desktop components for Wayland using the Layer Shell proto
 
-GH_TAGNAME =	v1.0.4
+GH_TAGNAME =	v1.1.1
 GH_ACCOUNT =	wmww
 GH_PROJECT =	gtk4-layer-shell
 
 CATEGORIES =	wayland
-SHARED_LIBS +=	gtk4-layer-shell 0.0 # 0.0
+SHARED_LIBS +=	gtk4-layer-shell 1.0 # 0.0
 
 # MIT
 PERMIT_PACKAGE =	Yes
