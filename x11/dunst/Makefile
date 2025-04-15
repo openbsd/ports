@@ -2,8 +2,7 @@ COMMENT =	customizable and lightweight notification-daemon
 
 GH_ACCOUNT =	dunst-project
 GH_PROJECT =	dunst
-GH_TAGNAME =	v1.9.2
-REVISION =	2
+GH_TAGNAME =	v1.12.2
 
 CATEGORIES =	x11
 
@@ -52,5 +51,8 @@ pre-configure:
 
 post-install:
 	mv ${WRKINST}/${SYSCONFDIR}/dunst ${PREFIX}/share
+	mv ${PREFIX}/share/examples/bash-completion ${PREFIX}/share/bash-completion
+	mv ${PREFIX}/share/examples/fish ${PREFIX}/share/fish
+	mv ${PREFIX}/share/examples/zsh ${PREFIX}/share/zsh
 
 .include <bsd.port.mk>

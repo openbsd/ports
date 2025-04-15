@@ -3,7 +3,10 @@ bin/dunstctl
 @bin bin/dunstify
 @man man/man1/dunst.1
 @man man/man1/dunstctl.1
+@man man/man1/dunstify.1
 @man man/man5/dunst.5
+share/bash-completion/completions/dunst
+share/bash-completion/completions/dunstctl
 share/dunst/
 @sample ${SYSCONFDIR}/dunst/
 share/dunst/dunstrc
@@ -11,3 +14,12 @@ share/dunst/dunstrc
 share/examples/dbus-1/
 share/examples/dbus-1/services/
 share/examples/dbus-1/services/org.knopwob.dunst.service
+share/fish/
+share/fish/vendor_completions.d/
+share/fish/vendor_completions.d/dunst.fish
+share/fish/vendor_completions.d/dunstctl.fish
+share/fish/vendor_completions.d/dunstify.fish
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_dunst
+share/zsh/site-functions/_dunstctl

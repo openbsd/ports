@@ -1,16 +1,16 @@
 Index: dunstrc
 --- dunstrc.orig
 +++ dunstrc
-@@ -217,7 +217,7 @@
+@@ -238,7 +238,7 @@
      max_icon_size = 128
  
-     # Paths to default icons (only neccesary when not using recursive icon lookup)
+     # Paths to default icons (only necessary when not using recursive icon lookup)
 -    icon_path = /usr/share/icons/gnome/16x16/status/:/usr/share/icons/gnome/16x16/devices/
 +    icon_path = ${LOCALBASE}/share/icons/gnome/16x16/status/:${LOCALBASE}/share/icons/gnome/16x16/devices/
  
      ### History ###
  
-@@ -231,10 +231,10 @@
+@@ -252,10 +252,10 @@
      ### Misc/Advanced ###
  
      # dmenu path.

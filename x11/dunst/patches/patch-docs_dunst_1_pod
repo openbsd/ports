@@ -1,7 +1,7 @@
 Index: docs/dunst.1.pod
 --- docs/dunst.1.pod.orig
 +++ docs/dunst.1.pod
-@@ -61,7 +61,7 @@ Display a notification on startup.
+@@ -94,7 +94,7 @@ Set notification timeout time.
  
  A default configuration file is included (usually ##SYSCONFDIR##/dunst/dunstrc)
  and serves as the least important configuration file. Note: this was previously
