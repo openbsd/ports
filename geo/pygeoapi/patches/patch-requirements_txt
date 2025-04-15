@@ -1,4 +1,4 @@
-https://github.com/geopython/pygeoapi/pull/1353
+https://github.com/geopython/pygeoapi/commit/04b8f3f7889d04fe68e11756dd820f701733dec7
 
 Index: requirements.txt
 --- requirements.txt.orig
@@ -8,12 +8,7 @@ Index: requirements.txt
  jinja2
  jsonschema
 -pydantic<2.0
-+pydantic
++pydantic>2.0
  pygeofilter
  pygeoif
  pyproj
-@@ -16,3 +16,4 @@ requests
- shapely
- SQLAlchemy<2.0.0
- tinydb
-+typing-extensions
