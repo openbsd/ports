@@ -1,0 +1,4 @@
+jjui is a terminal user interface for working with the Jujutsu
+version control system. It has support for changing the revset
+with autocomplete, rebase, showing revision details, bookmarks,
+op log and other features in a self-explanatory interface.
