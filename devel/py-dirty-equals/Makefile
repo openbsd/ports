@@ -1,9 +1,8 @@
 COMMENT=	simplify asserts in tests by misusing __eq__
 
-MODPY_DISTV=	0.8.0
+MODPY_DISTV=	0.9.0
 DISTNAME=	dirty_equals-${MODPY_DISTV}
 PKGNAME=	py-dirty-equals-${MODPY_DISTV}
-REVISION=	0
 
 CATEGORIES=	devel
 
