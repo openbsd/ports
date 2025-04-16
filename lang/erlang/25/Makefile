@@ -4,7 +4,7 @@ USE_NOBTCFI=	Yes
 COMMENT-main=	${COMMENT}
 COMMENT-wx=	WxWidgets bindings for Erlang
 
-V=		25.3.2.19
+V=		25.3.2.20
 PORTROACH=	limit:^OTP-25\.
 DISTNAME=	otp_src_$V
 PKGNAME=	erlang-$V
@@ -93,7 +93,7 @@ RELTOOL_VSN     0.9.1.1 \
 RUNTIME_TOOLS_VSN       1.19 \
 SASL_VSN        4.2 \
 SNMP_VSN        5.13.5 \
-SSH_VSN 4.15.3.11 \
+SSH_VSN 4.15.3.12 \
 SSL_VSN 10.9.1.7 \
 STDLIB_VSN      4.3.1.6 \
 SYNTAX_TOOLS_VSN        3.0.1 \
