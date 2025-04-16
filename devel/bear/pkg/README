@@ -10,6 +10,6 @@ For instance, the database generator on the kernel build can be launched with:
 
 	cd /usr/src/sys/arch/`uname -m`/conf && config GENERIC.MP
 	cd /usr/src/sys/arch/`uname -m`/compile/GENERIC.MP
-	make clean && bear -- make
+	make clean && bear --force-wrapper -- make
 
 The output file called compile_commands.json is saved in the current directory.

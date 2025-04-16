@@ -3,6 +3,7 @@ COMMENT =	clang database generator
 V =		3.1.6
 DIST_TUPLE +=	github rizsotto Bear ${V} .
 DISTNAME =	bear-${V}
+REVISION =	0
 
 CATEGORIES =	devel
 
