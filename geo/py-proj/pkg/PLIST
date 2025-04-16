@@ -1,5 +1,5 @@
-@pkgpath geo/py-proj,python3
 @conflict py-proj-*
+@pkgpath geo/py-proj,python3
 bin/pyproj
 lib/python${MODPY_VERSION}/site-packages/pyproj/
 lib/python${MODPY_VERSION}/site-packages/pyproj-${MODPY_DISTV}.dist-info/
