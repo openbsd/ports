@@ -1753,6 +1753,7 @@
      SUBDIR += py-virtualenv
      SUBDIR += py-voluptuous
      SUBDIR += py-vulture
+     SUBDIR += py-wapiti_swagger
      SUBDIR += py-wbem
      SUBDIR += py-wcmatch
      SUBDIR += py-wcwidth
