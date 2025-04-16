@@ -1,6 +1,6 @@
 COMMENT =	construct and use map tile grids
 
-MODPY_DISTV =	6.1.0
+MODPY_DISTV =	6.2.0
 DISTNAME =	morecantile-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 
