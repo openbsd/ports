@@ -2,12 +2,11 @@ PORTROACH =		limit:[0-9]\.tar\.gz
 
 COMMENT =		command line client application for Mega
 
-DISTNAME =		megatools-1.11.1.20230212
-REVISION =		0
+DISTNAME =		megatools-1.11.3.20250401
 
 CATEGORIES =		net
 
-HOMEPAGE =		https://megatools.megous.com/
+HOMEPAGE =		https://xff.cz/megatools/
 
 MAINTAINER =		Anthony J. Bentley <anthony@anjbe.name>
 
@@ -16,7 +15,7 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += c crypto curl gio-2.0 glib-2.0 gobject-2.0
 
-SITES =			https://megatools.megous.com/builds/
+SITES =			https://xff.cz/megatools/builds/
 
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
