@@ -1,6 +1,6 @@
-Index: chrome/browser/background/background_mode_optimizer.cc
---- chrome/browser/background/background_mode_optimizer.cc.orig
-+++ chrome/browser/background/background_mode_optimizer.cc
+Index: chrome/browser/background/extensions/background_mode_optimizer.cc
+--- chrome/browser/background/extensions/background_mode_optimizer.cc.orig
++++ chrome/browser/background/extensions/background_mode_optimizer.cc
 @@ -31,7 +31,7 @@ std::unique_ptr<BackgroundModeOptimizer> BackgroundMod
      return nullptr;
    }

@@ -18,7 +18,7 @@ Index: remoting/host/webauthn/remote_webauthn_caller_security_utils.cc
 +#elif BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
  
  constexpr auto kAllowedCallerPrograms =
-     base::MakeFixedFlatSet<base::FilePath::StringPieceType>({
+     base::MakeFixedFlatSet<base::FilePath::StringViewType>({
 @@ -83,7 +83,7 @@ bool IsLaunchedByTrustedProcess() {
  #if !defined(NDEBUG)
    // Just return true on debug builds for the convenience of development.

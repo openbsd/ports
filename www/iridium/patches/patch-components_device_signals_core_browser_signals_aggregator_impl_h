@@ -1,7 +1,7 @@
 Index: components/device_signals/core/browser/signals_aggregator_impl.h
 --- components/device_signals/core/browser/signals_aggregator_impl.h.orig
 +++ components/device_signals/core/browser/signals_aggregator_impl.h
-@@ -29,7 +29,7 @@ class SignalsAggregatorImpl : public SignalsAggregator
+@@ -30,7 +30,7 @@ class SignalsAggregatorImpl : public SignalsAggregator
    ~SignalsAggregatorImpl() override;
  
    // SignalsAggregator:

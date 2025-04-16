@@ -1,8 +1,8 @@
 Index: components/device_signals/core/common/signals_features.h
 --- components/device_signals/core/common/signals_features.h.orig
 +++ components/device_signals/core/common/signals_features.h
-@@ -14,7 +14,7 @@ namespace enterprise_signals::features {
- BASE_DECLARE_FEATURE(kAllowClientCertificateReportingForUsers);
+@@ -24,7 +24,7 @@ bool IsProfileSignalsReportingEnabled();
+ bool IsBrowserSignalsReportingEnabled();
  
  #if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || \
 -    BUILDFLAG(IS_CHROMEOS)

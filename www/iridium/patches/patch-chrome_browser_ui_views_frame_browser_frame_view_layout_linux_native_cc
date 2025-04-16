@@ -8,5 +8,5 @@ Index: chrome/browser/ui/views/frame/browser_frame_view_layout_linux_native.cc
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
    const bool tiled = delegate_->IsTiled();
+   const bool maximized = delegate_->IsMaximized();
  #else
-   const bool tiled = false;

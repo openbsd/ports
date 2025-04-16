@@ -1,7 +1,7 @@
 Index: net/third_party/quiche/BUILD.gn
 --- net/third_party/quiche/BUILD.gn.orig
 +++ net/third_party/quiche/BUILD.gn
-@@ -29,7 +29,7 @@ import("//net/third_party/quiche/src/build/source_list
+@@ -28,7 +28,7 @@ import("//net/third_party/quiche/src/build/source_list
  import("//testing/libfuzzer/fuzzer_test.gni")
  import("//third_party/protobuf/proto_library.gni")
  

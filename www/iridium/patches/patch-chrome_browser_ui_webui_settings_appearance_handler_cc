@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/webui/settings/appearance_handler.cc
 --- chrome/browser/ui/webui/settings/appearance_handler.cc.orig
 +++ chrome/browser/ui/webui/settings/appearance_handler.cc
-@@ -33,7 +33,7 @@ void AppearanceHandler::RegisterMessages() {
+@@ -32,7 +32,7 @@ void AppearanceHandler::RegisterMessages() {
        "useDefaultTheme",
        base::BindRepeating(&AppearanceHandler::HandleUseTheme,
                            base::Unretained(this), ui::SystemTheme::kDefault));

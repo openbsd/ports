@@ -1,0 +1,12 @@
+Index: headless/BUILD.gn
+--- headless/BUILD.gn.orig
++++ headless/BUILD.gn
+@@ -474,7 +474,7 @@ component("headless_non_renderer") {
+     }
+   }
+ 
+-  if (!is_fuchsia) {
++  if (!is_fuchsia && !is_bsd) {
+     deps += [
+       "//components/crash/content/browser",
+       "//components/crash/core/app",

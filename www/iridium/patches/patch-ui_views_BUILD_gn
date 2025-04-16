@@ -1,0 +1,11 @@
+Index: ui/views/BUILD.gn
+--- ui/views/BUILD.gn.orig
++++ ui/views/BUILD.gn
+@@ -836,7 +836,6 @@ component("views") {
+       sources += [ "accessibility/widget_ax_tree_id_map.cc" ]
+     }
+     deps += [
+-      "//components/crash/core/common:crash_key",
+       "//ui/aura",
+       "//ui/base/cursor/mojom:cursor_type_shared",
+       "//ui/events",

@@ -11,9 +11,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Iridium browser
 
-V=			2025.03.134.2
-
-REVISION=		0
+V=			2025.04.135.1
 
 DISTNAME=		iridium-browser-${V}
 PKGNAME=		iridium-${V}

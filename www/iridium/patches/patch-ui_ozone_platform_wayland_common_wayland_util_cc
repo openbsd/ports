@@ -1,7 +1,7 @@
 Index: ui/ozone/platform/wayland/common/wayland_util.cc
 --- ui/ozone/platform/wayland/common/wayland_util.cc.orig
 +++ ui/ozone/platform/wayland/common/wayland_util.cc
-@@ -420,6 +420,7 @@ void RecordConnectionMetrics(wl_display* display) {
+@@ -424,6 +424,7 @@ void RecordConnectionMetrics(wl_display* display) {
          {"weston", WaylandCompositor::kWeston},
      };
  
@@ -9,7 +9,7 @@ Index: ui/ozone/platform/wayland/common/wayland_util.cc
      const int fd = wl_display_get_fd(display);
      if (fd == -1) {
        return WaylandCompositor::kUnknown;
-@@ -445,6 +446,7 @@ void RecordConnectionMetrics(wl_display* display) {
+@@ -449,6 +450,7 @@ void RecordConnectionMetrics(wl_display* display) {
          return compositor;
        }
      }
