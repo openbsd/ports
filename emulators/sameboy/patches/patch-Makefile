@@ -10,7 +10,7 @@ Index: Makefile
  WARNINGS += -Wno-nonnull -Wno-unused-result -Wno-multichar -Wno-int-in-bool-context -Wno-format-truncation -Wno-nullability-completeness
  
  # Only add this flag if the compiler supports it
-@@ -285,9 +285,11 @@ else
+@@ -284,9 +284,11 @@ else
  LDFLAGS += -lc -lm
  # libdl is not available as a standalone library in Haiku
  ifneq ($(PLATFORM),Haiku)
@@ -22,7 +22,7 @@ Index: Makefile
  
  ifeq ($(MAKECMDGOALS),_ios)
  OBJ := build/obj-ios
-@@ -758,7 +760,7 @@ $(BIN)/BootROMs/%.bin: BootROMs/%.asm $(OBJ)/BootROMs/
+@@ -771,7 +773,7 @@ $(BIN)/BootROMs/%.bin: BootROMs/%.asm $(OBJ)/BootROMs/
  
  # Libretro Core (uses its own build system)
  libretro:
