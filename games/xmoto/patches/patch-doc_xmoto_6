@@ -1,7 +1,7 @@
 Index: doc/xmoto.6
 --- doc/xmoto.6.orig
 +++ doc/xmoto.6
-@@ -265,13 +265,13 @@ Change video size (1=full, 2=50%, 4=25%).
+@@ -262,13 +262,13 @@ Change video size (1=full, 2=50%, 4=25%).
  .B      \-\-videoRecordingFramerate FRAMERATE
  Change video framerate.
  .TP

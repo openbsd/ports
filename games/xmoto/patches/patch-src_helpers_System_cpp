@@ -1,7 +1,7 @@
 Index: src/helpers/System.cpp
 --- src/helpers/System.cpp.orig
 +++ src/helpers/System.cpp
-@@ -85,7 +85,7 @@ std::string System::getMemoryInfo() {
+@@ -100,7 +100,7 @@ std::string System::getMemoryInfo() {
    std::string v_res;
  
  // note that apple don't know getline

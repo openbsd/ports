@@ -2,13 +2,11 @@ COMMENT =	challenging 2D motocross platform game
 
 BROKEN-sparc64 = Always hangs for 8 hours and gets killed
 
-GH_ACCOUNT = 	xmoto
-GH_PROJECT = 	xmoto
-GH_TAGNAME = 	v0.6.2
+DIST_TUPLE = 	github xmoto xmoto v0.6.3 .
 
 CATEGORIES =	games
 
-HOMEPAGE =	https://xmoto.tuxfamily.org/
+HOMEPAGE =	https://xmoto.org/
 
 MAINTAINER =	Kirill Bychkov <kirby@openbsd.org>
 
