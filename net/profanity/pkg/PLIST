@@ -72,6 +72,7 @@ lib/libprofanity.la
 @man man/man1/profanity-quit.1
 @man man/man1/profanity-receipts.1
 @man man/man1/profanity-reconnect.1
+@man man/man1/profanity-redraw.1
 @man man/man1/profanity-register.1
 @man man/man1/profanity-reload.1
 @man man/man1/profanity-resource.1

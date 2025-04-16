@@ -4,7 +4,7 @@ Use ${LOCALBASE} instead of hard-coded /usr/local
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -104,7 +104,7 @@ elif test "x$enable_python_plugins" != xno; then
+@@ -110,7 +110,7 @@ elif test "x$enable_python_plugins" != xno; then
          rm -f Python.framework
          ln -s $PYTHON_FRAMEWORK Python.framework ])
      PKG_CHECK_MODULES([python], [python-embed], [PYTHON_CONFIG_EXISTS=yes], [PYTHON_CONFIG_EXISTS=no])
@@ -13,7 +13,7 @@ Index: configure.ac
      if test "$PYTHON_CONFIG_EXISTS" = "yes" || test "$PYTHON3_CONFIG_EXISTS" = "yes"; then
          AM_CONDITIONAL([BUILD_PYTHON_API], [true])
          AC_DEFINE([HAVE_PYTHON], [1], [Python support])
-@@ -223,10 +223,10 @@ AS_IF([test "x$PLATFORM" = xosx],
+@@ -229,10 +229,10 @@ AS_IF([test "x$PLATFORM" = xosx],
          [AC_MSG_ERROR([libreadline is required for profanity. Install it with Homebrew, MacPorts, or manually into /usr/local])])],
  
        [test "x$PLATFORM" = xopenbsd],

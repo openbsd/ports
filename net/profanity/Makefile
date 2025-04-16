@@ -1,6 +1,5 @@
 COMMENT =	console based XMPP client
-DISTNAME =	profanity-0.14.0
-REVISION =	3
+DISTNAME =	profanity-0.15.0
 CATEGORIES =	net
 
 HOMEPAGE =	https://profanity-im.github.io/
@@ -35,6 +34,8 @@ LIB_DEPENDS +=	databases/sqlite3 \
 # Only needed for tests, but cannot be a TEST_DEPENDS.
 # Check must be present at build time for tests to work.
 BUILD_DEPENDS +=	devel/cmocka
+
+USE_GMAKE = Yes
 
 CONFIGURE_STYLE =	autoconf
 AUTOCONF_VERSION =	2.71
