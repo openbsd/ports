@@ -1,14 +1,12 @@
 COMMENT =		n64 emulator video plugin
 
-REVISION =		1
-
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
 COMPILER =		base-clang ports-gcc
 
-WANTLIB =		GL SDL2 boost_filesystem boost_system c m png pthread z ${COMPILER_LIBCXX}
-LIB_DEPENDS =		devel/boost devel/sdl2 graphics/png
+WANTLIB =		GL SDL2 c m png pthread z ${COMPILER_LIBCXX}
+LIB_DEPENDS =		devel/sdl2 graphics/png
 
 MUPEN64PLUS_MOD = 	video-glide64mk2
 

@@ -1,7 +1,5 @@
 COMMENT =		n64 emulator sdl audio plugin
 
-REVISION =		0
-
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 

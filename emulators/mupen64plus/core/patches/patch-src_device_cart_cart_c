@@ -1,0 +1,28 @@
+"Add bounds checking to some DMA operations"
+https://github.com/mupen64plus/mupen64plus-core/pull/1122
+
+Index: src/device/cart/cart.c
+--- src/device/cart/cart.c.orig
++++ src/device/cart/cart.c
+@@ -26,6 +26,8 @@
+ 
+ #include "main/rom.h"
+ 
++#include "device/r4300/r4300_core.h"
++
+ #include <stdint.h>
+ #include <string.h>
+ 
+@@ -129,10 +131,10 @@ void init_cart(struct cart* cart,
+ 
+     init_flashram(&cart->flashram,
+         flashram_type,
+-        flashram_storage, iflashram_storage);
++        flashram_storage, iflashram_storage, r4300->rdram);
+ 
+     init_sram(&cart->sram,
+-        sram_storage, isram_storage);
++        sram_storage, isram_storage, r4300->rdram);
+ 
+     if (ROM_SETTINGS.savetype == SAVETYPE_SRAM)
+         cart->use_flashram = -1;

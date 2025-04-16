@@ -1,9 +1,9 @@
 COMMENT =		n64 emulator command-line ui plugin
-REVISION =		0
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
+# uses pledge()
 WANTLIB = 		SDL2 c pthread
 LIB_DEPENDS =		devel/sdl2
 

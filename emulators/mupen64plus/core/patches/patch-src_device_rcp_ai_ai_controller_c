@@ -1,0 +1,27 @@
+"Implement register mirroring"
+https://github.com/mupen64plus/mupen64plus-core/pull/1119
+
+Index: src/device/rcp/ai/ai_controller.c
+--- src/device/rcp/ai/ai_controller.c.orig
++++ src/device/rcp/ai/ai_controller.c
+@@ -180,7 +180,7 @@ void read_ai_regs(void* opaque, uint32_t address, uint
+             ai->last_read = *value;
+         }
+     }
+-    else
++    else if (reg < AI_REGS_COUNT)
+     {
+         *value = ai->regs[reg];
+     }
+@@ -216,7 +216,10 @@ void write_ai_regs(void* opaque, uint32_t address, uin
+         return;
+     }
+ 
+-    masked_write(&ai->regs[reg], value, mask);
++    if (reg < AI_REGS_COUNT)
++    {
++        masked_write(&ai->regs[reg], value, mask);
++    }
+ }
+ 
+ void ai_end_of_dma_event(void* opaque)

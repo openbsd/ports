@@ -1,5 +1,5 @@
 ONLY_FOR_ARCHS ?=	amd64 i386 powerpc arm arm64
-VERSION ?= 		2.5.9
+VERSION ?= 		2.6.0
 DISTNAME ?=		mupen64plus-${MUPEN64PLUS_MOD}-src-${VERSION}
 PKGNAME ?= 		mupen64plus-${MUPEN64PLUS_MOD}-${VERSION}
 HOMEPAGE ?=		https://mupen64plus.org/

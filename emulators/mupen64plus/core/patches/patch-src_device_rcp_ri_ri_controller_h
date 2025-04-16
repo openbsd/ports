@@ -1,0 +1,15 @@
+"Implement register mirroring"
+https://github.com/mupen64plus/mupen64plus-core/pull/1119
+
+Index: src/device/rcp/ri/ri_controller.h
+--- src/device/rcp/ri/ri_controller.h.orig
++++ src/device/rcp/ri/ri_controller.h
+@@ -51,7 +51,7 @@ struct ri_controller
+ 
+ static osal_inline uint32_t ri_reg(uint32_t address)
+ {
+-    return (address & 0xffff) >> 2;
++    return (address & 0x1f) >> 2;
+ }
+ 
+ static osal_inline uint16_t ri_address_to_id_field(uint32_t address)

@@ -1,7 +1,5 @@
 COMMENT =		n64 emulator video plugin
 
-REVISION =		2
-
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 

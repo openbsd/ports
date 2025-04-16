@@ -1,7 +1,5 @@
 COMMENT =		n64 emulator input plugin
 
-REVISION =		1
-
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 

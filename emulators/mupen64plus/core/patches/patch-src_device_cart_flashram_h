@@ -1,0 +1,21 @@
+"Add bounds checking to some DMA operations"
+https://github.com/mupen64plus/mupen64plus-core/pull/1122
+
+Index: src/device/cart/flashram.h
+--- src/device/cart/flashram.h.orig
++++ src/device/cart/flashram.h
+@@ -61,12 +61,13 @@ struct flashram
+ 
+     void* storage;
+     const struct storage_backend_interface* istorage;
++    struct rdram* rdram;
+ };
+ 
+ void init_flashram(struct flashram* flashram,
+                    uint32_t flashram_id,
+                    void* storage,
+-                   const struct storage_backend_interface* istorage);
++                   const struct storage_backend_interface* istorage, struct rdram* rdram);
+ 
+ void poweron_flashram(struct flashram* flashram);
+ 

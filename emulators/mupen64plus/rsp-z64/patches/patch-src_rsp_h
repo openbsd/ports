@@ -4,7 +4,7 @@ is only used for debug output that isn't compiled in anyway.
 Index: src/rsp.h
 --- src/rsp.h.orig
 +++ src/rsp.h
-@@ -374,7 +374,6 @@ INLINE void n64_dp_reg_w(UINT32 offset, UINT32 data, U
+@@ -380,7 +380,6 @@ INLINE void n64_dp_reg_w(UINT32 offset, UINT32 data, U
      }
  }
  

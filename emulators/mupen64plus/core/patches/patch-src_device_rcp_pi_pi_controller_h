@@ -1,0 +1,15 @@
+"Implement register mirroring"
+https://github.com/mupen64plus/mupen64plus-core/pull/1119
+
+Index: src/device/rcp/pi/pi_controller.h
+--- src/device/rcp/pi/pi_controller.h.orig
++++ src/device/rcp/pi/pi_controller.h
+@@ -87,7 +87,7 @@ struct pi_controller
+ 
+ static osal_inline uint32_t pi_reg(uint32_t address)
+ {
+-    return (address & 0xffff) >> 2;
++    return (address & 0x3f) >> 2;
+ }
+ 
+ 

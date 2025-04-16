@@ -1,7 +1,7 @@
 COMMENT-main=	n64 emulator (default plugins)
 COMMENT-extra=	n64 emulator (all plugins)
 
-V=		2.5.9
+V=		2.6.0
 PKGNAME=	mupen64plus-$V
 
 PKGNAME-main=	mupen64plus-$V

@@ -1,17 +1,18 @@
 COMMENT =		n64 emulator core
 SHARED_LIBS =		mupen64plus 2.4 # 2.5.9
-REVISION =		2
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB =		GL GLU c m ${COMPILER_LIBCXX} z freetype minizip png pthread SDL2
+WANTLIB += ${COMPILER_LIBCXX}
+WANTLIB += GL GLU SDL2 c freetype m minizip png vulkan z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
 LIB_DEPENDS =		devel/sdl2 \
 			archivers/minizip \
-			graphics/png
+			graphics/png \
+			graphics/vulkan-loader
 
 MUPEN64PLUS_MOD =	core
 

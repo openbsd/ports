@@ -1,7 +1,5 @@
 COMMENT =		n64 emulator MSP communications simulator
 
-REVISION =		1
-
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
