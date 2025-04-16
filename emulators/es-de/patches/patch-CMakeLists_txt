@@ -3,7 +3,7 @@ Don't strip debug symbols.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -212,7 +212,7 @@ else()
+@@ -225,7 +225,7 @@ else()
          if(APPLE)
              set(CMAKE_EXE_LINKER_FLAGS "${CMAKE_EXE_LINKER_FLAGS} -O2")
          else()

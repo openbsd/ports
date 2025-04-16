@@ -6,6 +6,7 @@ share/es-de/
 share/es-de/LICENSE
 share/es-de/licenses/
 share/es-de/licenses/Akrobat_Fontfabric.pdf
+share/es-de/licenses/BlueZ
 share/es-de/licenses/CImg
 share/es-de/licenses/DejaVu
 share/es-de/licenses/DroidSans
@@ -25,6 +26,7 @@ share/es-de/licenses/NotoEmoji
 share/es-de/licenses/Ogg
 share/es-de/licenses/OpenSans
 share/es-de/licenses/Opus
+share/es-de/licenses/PhosphorIcons
 share/es-de/licenses/Poppler
 share/es-de/licenses/UTF8-CPP
 share/es-de/licenses/Vorbis
@@ -114,8 +116,6 @@ share/es-de/resources/graphics/controllers/unknown.svg
 share/es-de/resources/graphics/controllers/wii_remote_and_nunchuk_nintendo.svg
 share/es-de/resources/graphics/controllers/wii_remote_nintendo.svg
 share/es-de/resources/graphics/controllers/xbox_kinect.svg
-share/es-de/resources/graphics/frame.png
-share/es-de/resources/graphics/frame.svg
 share/es-de/resources/graphics/help/
 share/es-de/resources/graphics/help/button_a_PS.svg
 share/es-de/resources/graphics/help/button_a_SNES.svg
@@ -203,6 +203,15 @@ share/es-de/resources/graphics/slider_knob.svg
 share/es-de/resources/graphics/splash.svg
 share/es-de/resources/graphics/star_filled.svg
 share/es-de/resources/graphics/star_unfilled.svg
+share/es-de/resources/graphics/systemstatus/
+share/es-de/resources/graphics/systemstatus/battery_charging.svg
+share/es-de/resources/graphics/systemstatus/battery_full.svg
+share/es-de/resources/graphics/systemstatus/battery_high.svg
+share/es-de/resources/graphics/systemstatus/battery_low.svg
+share/es-de/resources/graphics/systemstatus/battery_medium.svg
+share/es-de/resources/graphics/systemstatus/bluetooth.svg
+share/es-de/resources/graphics/systemstatus/cellular.svg
+share/es-de/resources/graphics/systemstatus/wifi.svg
 share/es-de/resources/graphics/textinput.svg
 share/es-de/resources/graphics/textinput_focused.svg
 share/es-de/resources/graphics/white.png
@@ -256,6 +265,9 @@ share/es-de/resources/locale/sv_SE/LC_MESSAGES/sv_SE.mo
 share/es-de/resources/locale/zh_CN/
 share/es-de/resources/locale/zh_CN/LC_MESSAGES/
 share/es-de/resources/locale/zh_CN/LC_MESSAGES/zh_CN.mo
+share/es-de/resources/locale/zh_TW/
+share/es-de/resources/locale/zh_TW/LC_MESSAGES/
+share/es-de/resources/locale/zh_TW/LC_MESSAGES/zh_TW.mo
 share/es-de/resources/shaders/
 share/es-de/resources/shaders/glsl/
 share/es-de/resources/shaders/glsl/blur_horizontal.glsl
@@ -427,6 +439,7 @@ share/es-de/themes/linear-es-de/system/logos/lutro.svg
 share/es-de/themes/linear-es-de/system/logos/macintosh.svg
 share/es-de/themes/linear-es-de/system/logos/mame-advmame.svg
 share/es-de/themes/linear-es-de/system/logos/mame.svg
+share/es-de/themes/linear-es-de/system/logos/mark3.svg
 share/es-de/themes/linear-es-de/system/logos/mastersystem.svg
 share/es-de/themes/linear-es-de/system/logos/megacd.svg
 share/es-de/themes/linear-es-de/system/logos/megacdjp.svg
@@ -522,6 +535,7 @@ share/es-de/themes/linear-es-de/system/logos/uzebox.svg
 share/es-de/themes/linear-es-de/system/logos/vectrex.svg
 share/es-de/themes/linear-es-de/system/logos/vic20.svg
 share/es-de/themes/linear-es-de/system/logos/videopac.svg
+share/es-de/themes/linear-es-de/system/logos/vircon32.svg
 share/es-de/themes/linear-es-de/system/logos/virtualboy.svg
 share/es-de/themes/linear-es-de/system/logos/vpinball.svg
 share/es-de/themes/linear-es-de/system/logos/vsmile.svg
@@ -537,6 +551,7 @@ share/es-de/themes/linear-es-de/system/logos/x1.svg
 share/es-de/themes/linear-es-de/system/logos/x68000.svg
 share/es-de/themes/linear-es-de/system/logos/xbox.svg
 share/es-de/themes/linear-es-de/system/logos/xbox360.svg
+share/es-de/themes/linear-es-de/system/logos/xboxone.svg
 share/es-de/themes/linear-es-de/system/logos/zmachine.svg
 share/es-de/themes/linear-es-de/system/logos/zx81.svg
 share/es-de/themes/linear-es-de/system/logos/zxnext.svg
@@ -630,6 +645,7 @@ share/es-de/themes/linear-es-de/system/metadata-custom/lutro.xml
 share/es-de/themes/linear-es-de/system/metadata-custom/macintosh.xml
 share/es-de/themes/linear-es-de/system/metadata-custom/mame-advmame.xml
 share/es-de/themes/linear-es-de/system/metadata-custom/mame.xml
+share/es-de/themes/linear-es-de/system/metadata-custom/mark3.xml
 share/es-de/themes/linear-es-de/system/metadata-custom/mastersystem.xml
 share/es-de/themes/linear-es-de/system/metadata-custom/megacd.xml
 share/es-de/themes/linear-es-de/system/metadata-custom/megacdjp.xml
@@ -722,6 +738,7 @@ share/es-de/themes/linear-es-de/system/metadata-custom/uzebox.xml
 share/es-de/themes/linear-es-de/system/metadata-custom/vectrex.xml
 share/es-de/themes/linear-es-de/system/metadata-custom/vic20.xml
 share/es-de/themes/linear-es-de/system/metadata-custom/videopac.xml
+share/es-de/themes/linear-es-de/system/metadata-custom/vircon32.xml
 share/es-de/themes/linear-es-de/system/metadata-custom/virtualboy.xml
 share/es-de/themes/linear-es-de/system/metadata-custom/vpinball.xml
 share/es-de/themes/linear-es-de/system/metadata-custom/vsmile.xml
@@ -737,6 +754,7 @@ share/es-de/themes/linear-es-de/system/metadata-custom/x1.xml
 share/es-de/themes/linear-es-de/system/metadata-custom/x68000.xml
 share/es-de/themes/linear-es-de/system/metadata-custom/xbox.xml
 share/es-de/themes/linear-es-de/system/metadata-custom/xbox360.xml
+share/es-de/themes/linear-es-de/system/metadata-custom/xboxone.xml
 share/es-de/themes/linear-es-de/system/metadata-custom/zmachine.xml
 share/es-de/themes/linear-es-de/system/metadata-custom/zx81.xml
 share/es-de/themes/linear-es-de/system/metadata-custom/zxnext.xml
@@ -815,9 +833,13 @@ share/es-de/themes/linear-es-de/system/metadata/gamecom.xml
 share/es-de/themes/linear-es-de/system/metadata/gamegear.xml
 share/es-de/themes/linear-es-de/system/metadata/gb.xml
 share/es-de/themes/linear-es-de/system/metadata/gba.xml
+share/es-de/themes/linear-es-de/system/metadata/gbah.xml
 share/es-de/themes/linear-es-de/system/metadata/gbc.xml
+share/es-de/themes/linear-es-de/system/metadata/gbch.xml
+share/es-de/themes/linear-es-de/system/metadata/gbh.xml
 share/es-de/themes/linear-es-de/system/metadata/gc.xml
 share/es-de/themes/linear-es-de/system/metadata/genesis.xml
+share/es-de/themes/linear-es-de/system/metadata/genh.xml
 share/es-de/themes/linear-es-de/system/metadata/gmaster.xml
 share/es-de/themes/linear-es-de/system/metadata/gx4000.xml
 share/es-de/themes/linear-es-de/system/metadata/intellivision.xml
@@ -831,6 +853,7 @@ share/es-de/themes/linear-es-de/system/metadata/lutro.xml
 share/es-de/themes/linear-es-de/system/metadata/macintosh.xml
 share/es-de/themes/linear-es-de/system/metadata/mame-advmame.xml
 share/es-de/themes/linear-es-de/system/metadata/mame.xml
+share/es-de/themes/linear-es-de/system/metadata/mark3.xml
 share/es-de/themes/linear-es-de/system/metadata/mastersystem.xml
 share/es-de/themes/linear-es-de/system/metadata/megacd.xml
 share/es-de/themes/linear-es-de/system/metadata/megacdjp.xml
@@ -859,6 +882,7 @@ share/es-de/themes/linear-es-de/system/metadata/neogeo.xml
 share/es-de/themes/linear-es-de/system/metadata/neogeocd.xml
 share/es-de/themes/linear-es-de/system/metadata/neogeocdjp.xml
 share/es-de/themes/linear-es-de/system/metadata/nes.xml
+share/es-de/themes/linear-es-de/system/metadata/nesh.xml
 share/es-de/themes/linear-es-de/system/metadata/ngage.xml
 share/es-de/themes/linear-es-de/system/metadata/ngp.xml
 share/es-de/themes/linear-es-de/system/metadata/ngpc.xml
@@ -901,7 +925,9 @@ share/es-de/themes/linear-es-de/system/metadata/sfc.xml
 share/es-de/themes/linear-es-de/system/metadata/sg-1000.xml
 share/es-de/themes/linear-es-de/system/metadata/sgb.xml
 share/es-de/themes/linear-es-de/system/metadata/snes.xml
+share/es-de/themes/linear-es-de/system/metadata/snesh.xml
 share/es-de/themes/linear-es-de/system/metadata/snesna.xml
+share/es-de/themes/linear-es-de/system/metadata/snesnah.xml
 share/es-de/themes/linear-es-de/system/metadata/solarus.xml
 share/es-de/themes/linear-es-de/system/metadata/spectravideo.xml
 share/es-de/themes/linear-es-de/system/metadata/steam.xml
@@ -927,6 +953,7 @@ share/es-de/themes/linear-es-de/system/metadata/uzebox.xml
 share/es-de/themes/linear-es-de/system/metadata/vectrex.xml
 share/es-de/themes/linear-es-de/system/metadata/vic20.xml
 share/es-de/themes/linear-es-de/system/metadata/videopac.xml
+share/es-de/themes/linear-es-de/system/metadata/vircon32.xml
 share/es-de/themes/linear-es-de/system/metadata/virtualboy.xml
 share/es-de/themes/linear-es-de/system/metadata/vpinball.xml
 share/es-de/themes/linear-es-de/system/metadata/vsmile.xml
@@ -942,6 +969,7 @@ share/es-de/themes/linear-es-de/system/metadata/x1.xml
 share/es-de/themes/linear-es-de/system/metadata/x68000.xml
 share/es-de/themes/linear-es-de/system/metadata/xbox.xml
 share/es-de/themes/linear-es-de/system/metadata/xbox360.xml
+share/es-de/themes/linear-es-de/system/metadata/xboxone.xml
 share/es-de/themes/linear-es-de/system/metadata/zmachine.xml
 share/es-de/themes/linear-es-de/system/metadata/zx81.xml
 share/es-de/themes/linear-es-de/system/metadata/zxnext.xml
@@ -1035,6 +1063,7 @@ share/es-de/themes/linear-es-de/system/systemart/macintosh.webp
 share/es-de/themes/linear-es-de/system/systemart/mame-advmame.webp
 share/es-de/themes/linear-es-de/system/systemart/mame.webp
 share/es-de/themes/linear-es-de/system/systemart/mario.webp
+share/es-de/themes/linear-es-de/system/systemart/mark3.webp
 share/es-de/themes/linear-es-de/system/systemart/mastersystem.webp
 share/es-de/themes/linear-es-de/system/systemart/megacd.webp
 share/es-de/themes/linear-es-de/system/systemart/megacdjp.webp
@@ -1127,6 +1156,7 @@ share/es-de/themes/linear-es-de/system/systemart/uzebox.webp
 share/es-de/themes/linear-es-de/system/systemart/vectrex.webp
 share/es-de/themes/linear-es-de/system/systemart/vic20.webp
 share/es-de/themes/linear-es-de/system/systemart/videopac.webp
+share/es-de/themes/linear-es-de/system/systemart/vircon32.webp
 share/es-de/themes/linear-es-de/system/systemart/virtualboy.webp
 share/es-de/themes/linear-es-de/system/systemart/vpinball.webp
 share/es-de/themes/linear-es-de/system/systemart/vsmile.webp
@@ -1142,6 +1172,7 @@ share/es-de/themes/linear-es-de/system/systemart/x1.webp
 share/es-de/themes/linear-es-de/system/systemart/x68000.webp
 share/es-de/themes/linear-es-de/system/systemart/xbox.webp
 share/es-de/themes/linear-es-de/system/systemart/xbox360.webp
+share/es-de/themes/linear-es-de/system/systemart/xboxone.webp
 share/es-de/themes/linear-es-de/system/systemart/zelda.webp
 share/es-de/themes/linear-es-de/system/systemart/zmachine.webp
 share/es-de/themes/linear-es-de/system/systemart/zx81.webp
@@ -1240,6 +1271,7 @@ share/es-de/themes/modern-es-de/art/lutro.webp
 share/es-de/themes/modern-es-de/art/macintosh.webp
 share/es-de/themes/modern-es-de/art/mame-advmame.webp
 share/es-de/themes/modern-es-de/art/mame.webp
+share/es-de/themes/modern-es-de/art/mark3.webp
 share/es-de/themes/modern-es-de/art/mastersystem.webp
 share/es-de/themes/modern-es-de/art/megacd.webp
 share/es-de/themes/modern-es-de/art/megacdjp.webp
@@ -1332,6 +1364,7 @@ share/es-de/themes/modern-es-de/art/uzebox.webp
 share/es-de/themes/modern-es-de/art/vectrex.webp
 share/es-de/themes/modern-es-de/art/vic20.webp
 share/es-de/themes/modern-es-de/art/videopac.webp
+share/es-de/themes/modern-es-de/art/vircon32.webp
 share/es-de/themes/modern-es-de/art/virtualboy.webp
 share/es-de/themes/modern-es-de/art/vpinball.webp
 share/es-de/themes/modern-es-de/art/vsmile.webp
@@ -1347,6 +1380,7 @@ share/es-de/themes/modern-es-de/art/x1.webp
 share/es-de/themes/modern-es-de/art/x68000.webp
 share/es-de/themes/modern-es-de/art/xbox.webp
 share/es-de/themes/modern-es-de/art/xbox360.webp
+share/es-de/themes/modern-es-de/art/xboxone.webp
 share/es-de/themes/modern-es-de/art/zmachine.webp
 share/es-de/themes/modern-es-de/art/zx81.webp
 share/es-de/themes/modern-es-de/art/zxnext.webp
@@ -1442,6 +1476,7 @@ share/es-de/themes/modern-es-de/art_legacy/macintosh.webp
 share/es-de/themes/modern-es-de/art_legacy/mame-advmame.webp
 share/es-de/themes/modern-es-de/art_legacy/mame-libretro.webp
 share/es-de/themes/modern-es-de/art_legacy/mame.webp
+share/es-de/themes/modern-es-de/art_legacy/mark3.webp
 share/es-de/themes/modern-es-de/art_legacy/mastersystem.webp
 share/es-de/themes/modern-es-de/art_legacy/megacd.webp
 share/es-de/themes/modern-es-de/art_legacy/megacdjp.webp
@@ -1536,6 +1571,7 @@ share/es-de/themes/modern-es-de/art_legacy/uzebox.webp
 share/es-de/themes/modern-es-de/art_legacy/vectrex.webp
 share/es-de/themes/modern-es-de/art_legacy/vic20.webp
 share/es-de/themes/modern-es-de/art_legacy/videopac.webp
+share/es-de/themes/modern-es-de/art_legacy/vircon32.webp
 share/es-de/themes/modern-es-de/art_legacy/virtualboy.webp
 share/es-de/themes/modern-es-de/art_legacy/vpinball.webp
 share/es-de/themes/modern-es-de/art_legacy/vsmile.webp
@@ -1552,6 +1588,7 @@ share/es-de/themes/modern-es-de/art_legacy/x1.webp
 share/es-de/themes/modern-es-de/art_legacy/x68000.webp
 share/es-de/themes/modern-es-de/art_legacy/xbox.webp
 share/es-de/themes/modern-es-de/art_legacy/xbox360.webp
+share/es-de/themes/modern-es-de/art_legacy/xboxone.webp
 share/es-de/themes/modern-es-de/art_legacy/zmachine.webp
 share/es-de/themes/modern-es-de/art_legacy/zx81.webp
 share/es-de/themes/modern-es-de/art_legacy/zxnext.webp
@@ -2161,6 +2198,11 @@ share/es-de/themes/slate-es-de/mame/images/consolegame.svg
 share/es-de/themes/slate-es-de/mame/images/controller.svg
 share/es-de/themes/slate-es-de/mame/images/logo.svg
 share/es-de/themes/slate-es-de/mame/systeminfo.xml
+share/es-de/themes/slate-es-de/mark3/
+share/es-de/themes/slate-es-de/mark3/colors.xml
+share/es-de/themes/slate-es-de/mark3/images/
+share/es-de/themes/slate-es-de/mark3/images/logo.svg
+share/es-de/themes/slate-es-de/mark3/systeminfo.xml
 share/es-de/themes/slate-es-de/mastersystem/
 share/es-de/themes/slate-es-de/mastersystem/colors.xml
 share/es-de/themes/slate-es-de/mastersystem/images/
@@ -2703,6 +2745,11 @@ share/es-de/themes/slate-es-de/videopac/images/consolegame.svg
 share/es-de/themes/slate-es-de/videopac/images/controller.svg
 share/es-de/themes/slate-es-de/videopac/images/logo.svg
 share/es-de/themes/slate-es-de/videopac/systeminfo.xml
+share/es-de/themes/slate-es-de/vircon32/
+share/es-de/themes/slate-es-de/vircon32/colors.xml
+share/es-de/themes/slate-es-de/vircon32/images/
+share/es-de/themes/slate-es-de/vircon32/images/logo.svg
+share/es-de/themes/slate-es-de/vircon32/systeminfo.xml
 share/es-de/themes/slate-es-de/virtualboy/
 share/es-de/themes/slate-es-de/virtualboy/colors.xml
 share/es-de/themes/slate-es-de/virtualboy/images/
@@ -2792,6 +2839,11 @@ share/es-de/themes/slate-es-de/xbox360/images/consolegame.svg
 share/es-de/themes/slate-es-de/xbox360/images/controller.svg
 share/es-de/themes/slate-es-de/xbox360/images/logo.svg
 share/es-de/themes/slate-es-de/xbox360/systeminfo.xml
+share/es-de/themes/slate-es-de/xboxone/
+share/es-de/themes/slate-es-de/xboxone/colors.xml
+share/es-de/themes/slate-es-de/xboxone/images/
+share/es-de/themes/slate-es-de/xboxone/images/logo.svg
+share/es-de/themes/slate-es-de/xboxone/systeminfo.xml
 share/es-de/themes/slate-es-de/zmachine/
 share/es-de/themes/slate-es-de/zmachine/colors.xml
 share/es-de/themes/slate-es-de/zmachine/images/

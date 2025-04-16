@@ -1,8 +1,8 @@
 COMMENT =	emulator frontend
 
 PKGNAME =	es-de-$V
-V =		3.1.1
-REV =		a59b8016be3ccaab0a678a552128d06b32e7dc01
+V =		3.2.0
+REV =		d77f3fbc97bd67d5c9f6834cb2e0ebd4b325a393
 
 DIST_TUPLE +=	gitlab es-de emulationstation-de v$V .
 
