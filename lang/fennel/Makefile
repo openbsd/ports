@@ -1,7 +1,7 @@
 COMMENT-main =	Lisp dialect that runs on Lua ${MODLUA_VERSION}
 COMMENT-docs =	Documentation for fennel
 
-V =			1.5.1
+V =			1.5.3
 DIST_TUPLE =		srht technomancy fennel $V .
 FULLPKGPATH-main =	lang/fennel,-main,${FLAVOR}
 FULLPKGNAME-main =	fennel-${FLAVOR}-${V}
