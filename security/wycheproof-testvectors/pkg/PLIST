@@ -362,6 +362,7 @@ share/wycheproof/testvectors_v1/hmac_sha512_test.json
 share/wycheproof/testvectors_v1/hmac_sm3_test.json
 share/wycheproof/testvectors_v1/kmac128_no_customization_test.json
 share/wycheproof/testvectors_v1/kmac256_no_customization_test.json
+share/wycheproof/testvectors_v1/mlkem_test.json
 share/wycheproof/testvectors_v1/morus1280_test.json
 share/wycheproof/testvectors_v1/morus640_test.json
 share/wycheproof/testvectors_v1/pbes2_hmacsha1_aes_128_test.json
