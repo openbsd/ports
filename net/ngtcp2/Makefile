@@ -1,10 +1,10 @@
 COMMENT=	implementation of the RFC 9000 QUIC protocol
 
-V=		1.11.0
+V=		1.12.0
 DISTNAME=	ngtcp2-$V
 
-SHARED_LIBS+=	ngtcp2			4.0	# 18.0
-SHARED_LIBS+=	ngtcp2_crypto_quictls	0.2	# 4.0
+SHARED_LIBS+=	ngtcp2			4.0	# 19.0
+SHARED_LIBS+=	ngtcp2_crypto_quictls	0.2	# 5.0
 
 CATEGORIES=	net
 
