@@ -246,6 +246,7 @@
      SUBDIR += jdk
      SUBDIR += jenkins
      SUBDIR += jimarc4random
+     SUBDIR += jjui
      SUBDIR += json-c
      SUBDIR += json-glib
      SUBDIR += jsoncpp
