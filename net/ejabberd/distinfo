@@ -23,6 +23,7 @@ SHA256 (hex_modules/p1_utils-1.0.27.tar) = 8a+UKwpivPoNWfvjBnm+T/614kGgxJ7V8JTbL
 SHA256 (hex_modules/pc-1.15.0.tar) = TA+tT2Q3yuNT1RfaIY/ng0e4/6RLmBeIdJTKquVFlbM=
 SHA256 (hex_modules/pkix-1.0.10.tar) = 4CFk+DCUyxJMQbGrKJiKYV1Uua3DhXXwDxmll6OsXQ4=
 SHA256 (hex_modules/provider_asn1-0.2.0.tar) = +JpUSUEpyCf7UokQXEDcLmBAPKUvnYOnE4xH7VvH/E4=
+SHA256 (hex_modules/rebar3_fmt-1.18.0.tar) = BdOUVfPVXQpVMi4kM8dAgSm50pgPoMVs/WGAPkU2KWI=
 SHA256 (hex_modules/rebar3_hex-7.0.8.tar) = aEY0EEZwRHp6AAuE1pSfm5RjBjU+PaaJuKp7fvXRiBc=
 SHA256 (hex_modules/sqlite3-1.1.15.tar) = PAuk4TMiwq1J3k4t3SgxE2at3lS+ro26nZ44iPadKFc=
 SHA256 (hex_modules/stringprep-1.0.31.tar) = 6WmciOjbFrOkHw5FrGh0pNqBpuSFSnfXbt5tCbCONTA=
@@ -31,7 +32,7 @@ SHA256 (hex_modules/unicode_util_compat-0.7.0.tar) = Je7m1n32GWDPanlCOVZlmbCeF+Z
 SHA256 (hex_modules/verl-1.1.1.tar) = CSXlHNkqCovicXZbAkMLLiz/isMO8k0SO9DVhRHo+xg=
 SHA256 (hex_modules/xmpp-1.10.0.tar) = zurkO4/pdknY+FRrP38rOOz8kxwM3Vx0Rf+z+A/LfYU=
 SHA256 (hex_modules/yconf-1.0.18.tar) = +pUOxlA/ktZBf7jMHZgkA/BBaX6OG79NRYj7kZuVYuo=
-SHA256 (processone-ejabberd-25.03.tar.gz) = J98e2BI+zDE5pXPuJU6KWEOS91n1wjoIJWYsod8Mtiw=
+SHA256 (processone-ejabberd-25.04.tar.gz) = VL6uPncp/aqx1Xip1ZBG8x2M4xyFGuWsqVMoIf8iy0U=
 SIZE (hex_modules/base64url-1.0.1.tar) = 7168
 SIZE (hex_modules/cache_tab-1.0.31.tar) = 23552
 SIZE (hex_modules/eimp-1.0.24.tar) = 59904
@@ -57,6 +58,7 @@ SIZE (hex_modules/p1_utils-1.0.27.tar) = 45056
 SIZE (hex_modules/pc-1.15.0.tar) = 18944
 SIZE (hex_modules/pkix-1.0.10.tar) = 147968
 SIZE (hex_modules/provider_asn1-0.2.0.tar) = 10240
+SIZE (hex_modules/rebar3_fmt-1.18.0.tar) = 69632
 SIZE (hex_modules/rebar3_hex-7.0.8.tar) = 50688
 SIZE (hex_modules/sqlite3-1.1.15.tar) = 1679872
 SIZE (hex_modules/stringprep-1.0.31.tar) = 91136
@@ -65,4 +67,4 @@ SIZE (hex_modules/unicode_util_compat-0.7.0.tar) = 104960
 SIZE (hex_modules/verl-1.1.1.tar) = 15360
 SIZE (hex_modules/xmpp-1.10.0.tar) = 381952
 SIZE (hex_modules/yconf-1.0.18.tar) = 22016
-SIZE (processone-ejabberd-25.03.tar.gz) = 2593226
+SIZE (processone-ejabberd-25.04.tar.gz) = 2595583

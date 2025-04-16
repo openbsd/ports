@@ -1,5 +1,6 @@
 MODERL_PLUGINS =	provider_asn1		0.2.0 \
 			rebar3_hex		7.0.8 \
+			rebar3_fmt		1.18.0 \
 			verl			1.1.1 \
 			pc			1.15.0 \
 			hex_core		0.10.1
