@@ -1739,6 +1739,7 @@
      SUBDIR += py-types-psutil
      SUBDIR += py-types-setuptools
      SUBDIR += py-typing-extensions
+     SUBDIR += py-typing-inspection
      SUBDIR += py-tz
      SUBDIR += py-tzdata
      SUBDIR += py-tzlocal
