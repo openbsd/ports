@@ -1,6 +1,6 @@
 COMMENT =	Lisp-1 dialect for the Java Virtual Machine
 
-V =		1.11.4.1474
+V =		1.12.0.1530
 DISTNAME =	clojure-tools-$V
 PKGNAME =	clojure-$V
 
