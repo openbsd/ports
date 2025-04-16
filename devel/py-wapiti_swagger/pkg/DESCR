@@ -1,0 +1,16 @@
+The Wapiti Swagger Parser is a Python library designed to parse Swagger
+(OpenAPI) specifications and extract the necessary information to
+generate valid HTTP requests. It focuses on providing a clean,
+programmatic interface for analyzing Swagger files and creating request
+templates without relying on external tools for OpenAPI processing.
+
+This library is particularly useful for scenarios where only the request
+generation requirements are of interest, such as:
+
+Automated testing and validation of APIs.
+ - Dynamic request generation for web vulnerability scanners.
+ - Custom API tooling.
+
+The library is lightweight, relying only on Python's built-in json
+library and PyYAML for file parsing, and it avoids heavy dependencies on
+larger OpenAPI frameworks.
