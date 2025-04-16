@@ -1,20 +1,18 @@
 COMMENT=	EAS (Exchange ActiveSync) interface for grommunio
 
-V=		2.1
+V=		2.2
 DISTNAME=	grommunio-sync-${V}
 
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	grommunio-sync
-GH_COMMIT=	22f21191d73788abd8337e3709f4debd386d52b1
-
-REVISION=	0
+GH_COMMIT=	adea62a6a5b9b885a9236ffe8dbd39d27a90c66d
 
 DISTFILES=	${GH_DISTFILE}
 DISTFILES.a= 	${GH_PROJECT}-${GH_COMMIT}-vendor.tar.gz
 
 CATEGORIES=	mail www
 
-SITES.a=		https://nerd.hu/distfiles/
+SITES.a=	https://nerd.hu/distfiles/
 
 MODULES=	lang/php
 
