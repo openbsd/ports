@@ -7,7 +7,6 @@ lib/python${MODPY_VERSION}/site-packages/multidict-${MODPY_DISTV}.dist-info/RECO
 lib/python${MODPY_VERSION}/site-packages/multidict-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/multidict-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/multidict/__init__.py
-lib/python${MODPY_VERSION}/site-packages/multidict/__init__.pyi
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/multidict/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/multidict/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/multidict/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
@@ -15,13 +14,10 @@ lib/python${MODPY_VERSION}/site-packages/multidict/${MODPY_PYCACHE}_abc.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/multidict/${MODPY_PYCACHE}_abc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/multidict/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/multidict/${MODPY_PYCACHE}_compat.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/multidict/${MODPY_PYCACHE}_multidict_base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/multidict/${MODPY_PYCACHE}_multidict_base.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/multidict/${MODPY_PYCACHE}_multidict_py.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/multidict/${MODPY_PYCACHE}_multidict_py.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/multidict/_abc.py
 lib/python${MODPY_VERSION}/site-packages/multidict/_compat.py
 @so lib/python${MODPY_VERSION}/site-packages/multidict/_multidict.${MODPY_PYC_MAGIC_TAG}so
-lib/python${MODPY_VERSION}/site-packages/multidict/_multidict_base.py
 lib/python${MODPY_VERSION}/site-packages/multidict/_multidict_py.py
 lib/python${MODPY_VERSION}/site-packages/multidict/py.typed
