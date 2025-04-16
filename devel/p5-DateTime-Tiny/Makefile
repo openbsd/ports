@@ -1,7 +1,7 @@
 COMMENT=	lightweight date and time object for Perl
 
 MODULES=	cpan
-DISTNAME=	DateTime-Tiny-1.07
+DISTNAME=	DateTime-Tiny-1.08
 CATEGORIES=	devel
 
 # Perl
