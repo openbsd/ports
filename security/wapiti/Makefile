@@ -1,9 +1,8 @@
 COMMENT =	web-application vulnerability scanner
 
-MODPY_DISTV =	3.2.2
+MODPY_DISTV =	3.2.4
 DISTNAME =	wapiti3-${MODPY_DISTV}
 PKGNAME =	wapiti-${MODPY_DISTV}
-REVISION =	1
 
 CATEGORIES =	security www
 
@@ -26,7 +25,7 @@ RUN_DEPENDS =		archivers/py-brotli \
 			devel/py-aiocache \
 			devel/py-asn1 \
 			devel/py-loguru \
-			devel/py-prance \
+			devel/py-wapiti_swagger \
 			devel/py-typing-extensions \
 			net/py-dnspython \
 			net/py-tld \
