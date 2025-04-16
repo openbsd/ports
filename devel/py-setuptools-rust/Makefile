@@ -1,6 +1,6 @@
 COMMENT=	setuptools Rust extension plugin
 
-MODPY_DISTV=	1.11.0
+MODPY_DISTV=	1.11.1
 DISTNAME=	setuptools_rust-${MODPY_DISTV}
 PKGNAME=	py-setuptools-rust-${MODPY_DISTV}
 
