@@ -46,31 +46,8 @@ Index: Makefile
  	rm $(DESTDIR)/client/extjs/ext-base.js $(DESTDIR)/client/extjs/ext-base-debug.js $(DESTDIR)/client/extjs/ext-all.js $(DESTDIR)/client/filepreviewer/pdfjs/web/debugger.js
  
  $(DESTDIR)/%.php: %.php
--	php -l $<
-+#	$(PHP) -l $<
+-	${PHP} -l $<
++	#${PHP} -l $<
  	mkdir -p $$(dirname $@)
  	cp $< $@
- 
-@@ -296,7 +298,7 @@ phplintci:
- vendor: node_modules
- 
- node_modules:
--	$(NPM) install
-+	#$(NPM) install
- 
- # Icons
- 
-@@ -344,11 +346,11 @@ tokenizr: node_modules
- 
- .PHONY: plugins
- plugins:
--	make -C plugins
-+	$(MAKE) -C plugins
- 
- .PHONY: clean
- clean:
--	make -C plugins clean
-+	$(MAKE) -C plugins clean
- 	@rm -rf deploy
- 	@rm -rf node_modules
  

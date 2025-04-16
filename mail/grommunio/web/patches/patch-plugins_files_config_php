@@ -1,7 +1,7 @@
 Index: plugins/files/config.php
 --- plugins/files/config.php.orig
 +++ plugins/files/config.php
-@@ -28,7 +28,7 @@ define('PLUGIN_FILES_ASK_BEFORE_DELETE', true);
+@@ -29,7 +29,7 @@ define('PLUGIN_FILES_ASK_BEFORE_DELETE', true);
   * The directory where to save cache files for phpfastcache.
   * This is a fallback setting, redis should be always available.
   */
