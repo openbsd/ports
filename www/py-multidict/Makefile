@@ -1,6 +1,6 @@
 COMMENT=	multidict implementation
 
-MODPY_DISTV=	6.4.2
+MODPY_DISTV=	6.4.3
 DISTNAME=	multidict-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	www devel
