@@ -1,6 +1,6 @@
 COMMENT =	libmpv wrapper for QtQuick2 and QML
 
-DISTNAME =	mpvqt-1.1.0
+DISTNAME =	mpvqt-1.1.1
 
 CATEGORIES =	multimedia
 
