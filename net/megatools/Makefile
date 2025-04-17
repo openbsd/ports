@@ -2,7 +2,7 @@ PORTROACH =		limit:[0-9]\.tar\.gz
 
 COMMENT =		command line client application for Mega
 
-DISTNAME =		megatools-1.11.3.20250401
+DISTNAME =		megatools-1.11.4.20250411
 
 CATEGORIES =		net
 
@@ -26,6 +26,8 @@ LIB_DEPENDS =		devel/glib2 \
 			net/curl
 
 MODULES =		devel/meson
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 # tests require network access
 NO_TEST =		Yes
