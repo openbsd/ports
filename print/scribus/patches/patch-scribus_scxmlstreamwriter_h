@@ -1,0 +1,17 @@
+https://github.com/scribusproject/scribus/issues/196
+
+revert https://github.com/scribusproject/scribus/commit/8ace404c3e88ea470e4a1d9ebbbcc5f81f40a877
+and https://github.com/scribusproject/scribus/commit/949d8d9c53a35302ce3a245080aaa6b084699375
+Index: scribus/scxmlstreamwriter.h
+--- scribus/scxmlstreamwriter.h.orig
++++ scribus/scxmlstreamwriter.h
+@@ -26,9 +26,7 @@ class SCRIBUS_API ScXmlStreamWriter : public QXmlStrea
+ 	void writeAttribute(const QString & name, qint64 value)    { QXmlStreamWriter::writeAttribute(name, QString::number(value)); }
+ 	void writeAttribute(const QString & name, uint value)   { QXmlStreamWriter::writeAttribute(name, QString::number(value)); }
+ 	void writeAttribute(const QString & name, quint64 value)   { QXmlStreamWriter::writeAttribute(name, QString::number(value)); }
+-#if !defined(Q_OS_WIN) && (Q_PROCESSOR_WORDSIZE != 4)
+ 	void writeAttribute(const QString & name, size_t value)   { QXmlStreamWriter::writeAttribute(name, QString::number(value)); }
+-#endif
+ 	void writeAttribute(const QString & name, double value) { QXmlStreamWriter::writeAttribute(name, QString::number(value, 'g', 15)); }
+ };
+ 

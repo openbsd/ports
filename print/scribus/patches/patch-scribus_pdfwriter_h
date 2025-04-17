@@ -1,0 +1,17 @@
+fix build on i386
+
+https://github.com/scribusproject/scribus/issues/196
+
+Index: scribus/pdfwriter.h
+--- scribus/pdfwriter.h.orig
++++ scribus/pdfwriter.h
+@@ -83,9 +83,7 @@ namespace Pdf
+ 	/**
+ 	 Cf. PDF32000-2008, 7.3.3
+ 	 */
+-#if !defined(Q_OS_WIN) && (Q_PROCESSOR_WORDSIZE != 4)
+ 	QByteArray toPdf(size_t v);
+-#endif
+ 	
+ 	/**
+ 	 Cf. PDF32000-2008, 7.3.3

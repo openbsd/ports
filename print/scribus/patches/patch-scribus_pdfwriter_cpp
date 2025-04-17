@@ -1,0 +1,20 @@
+https://github.com/scribusproject/scribus/issues/196
+
+revert https://github.com/scribusproject/scribus/commit/8ace404c3e88ea470e4a1d9ebbbcc5f81f40a877
+and https://github.com/scribusproject/scribus/commit/949d8d9c53a35302ce3a245080aaa6b084699375
+Index: scribus/pdfwriter.cpp
+--- scribus/pdfwriter.cpp.orig
++++ scribus/pdfwriter.cpp
+@@ -329,12 +329,10 @@ namespace Pdf
+ 		return QByteArray::number(v);
+ 	}
+ 
+-#if !defined(Q_OS_WIN) && (Q_PROCESSOR_WORDSIZE != 4)
+ 	QByteArray toPdf(size_t v)
+ 	{
+ 		return QByteArray::number(v);
+ 	}
+-#endif
+ 
+ 	QByteArray toPdf(double v)
+ 	{
