@@ -1,0 +1,12 @@
+Index: sdl2_net-config.cmake.in
+--- sdl2_net-config.cmake.in.orig
++++ sdl2_net-config.cmake.in
+@@ -50,7 +50,7 @@ if(NOT TARGET SDL2_net::SDL2_net)
+     else()
+         set_target_properties(SDL2_net::SDL2_net
+             PROPERTIES
+-                IMPORTED_LOCATION "${_sdl2net_libdir}/${CMAKE_SHARED_LIBRARY_PREFIX}SDL2_net${CMAKE_SHARED_LIBRARY_SUFFIX}"
++                IMPORTED_LOCATION "${_sdl2net_libdir}/${CMAKE_SHARED_LIBRARY_PREFIX}SDL2_net${CMAKE_SHARED_LIBRARY_SUFFIX}.${LIBSDL2_net_VERSION}"
+         )
+     endif()
+ endif()

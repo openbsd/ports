@@ -3,6 +3,7 @@ COMMENT =	SDL2 cross-platform networking library
 DISTNAME =	SDL2_net-${V}
 PKGNAME =	sdl2-net-${V}
 CATEGORIES =	devel net
+REVISION =	0
 
 SHARED_LIBS +=	SDL2_net		1.0 # 0.0
 
@@ -23,5 +24,8 @@ CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS +=	--disable-gui
 
 SEPARATE_BUILD =	Yes
+
+pre-configure:
+	${SUBST_CMD} ${WRKSRC}/sdl2_net-config.cmake.in
 
 .include <bsd.port.mk>
