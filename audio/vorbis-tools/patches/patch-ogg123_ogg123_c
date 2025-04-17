@@ -4,7 +4,7 @@ reach this point.  Do not try to unlock it again.
 Index: ogg123/ogg123.c
 --- ogg123/ogg123.c.orig
 +++ ogg123/ogg123.c
-@@ -742,7 +742,6 @@ void play (const char *source_string)
+@@ -752,7 +752,6 @@ int play (const char *source_string)
  
    format->cleanup(decoder);
    transport->close(source);

@@ -1,8 +1,7 @@
 COMMENT=	play, encode, and manage Ogg Vorbis files
 
-DISTNAME=	vorbis-tools-1.4.2
-REVISION=	0
-CATEGORIES=    	audio
+DISTNAME=	vorbis-tools-1.4.3
+CATEGORIES=	audio
 HOMEPAGE=	https://xiph.org/vorbis/
 
 MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
@@ -20,7 +19,8 @@ LIB_DEPENDS=	audio/flac \
 		devel/gettext,-runtime \
 		net/curl
 
-WANTLIB=	FLAC ao c crypto curl iconv intl m nghttp2 ogg opus opusfile \
+WANTLIB=	FLAC ao c crypto curl iconv intl m nghttp2 nghttp3 \
+		ngtcp2 ngtcp2_crypto_quictls ogg opus opusfile \
 		pthread speex ssl vorbis vorbisenc vorbisfile z
 
 CONFIGURE_STYLE=gnu

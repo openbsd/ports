@@ -1,7 +1,7 @@
 Index: ogg123/Makefile.in
 --- ogg123/Makefile.in.orig
 +++ ogg123/Makefile.in
-@@ -816,7 +816,7 @@ info: info-am
+@@ -856,7 +856,7 @@ info: info-am
  
  info-am:
  

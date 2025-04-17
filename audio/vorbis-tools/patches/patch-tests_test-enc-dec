@@ -1,0 +1,12 @@
+Index: tests/test-enc-dec
+--- tests/test-enc-dec.orig
++++ tests/test-enc-dec
+@@ -8,7 +8,7 @@ retval=0
+ 
+ testfile=1.ogg
+ 
+-head -c 500000 /dev/zero | ${VALGRIND} oggenc -Q -r -o $testfile -
++dd bs=10000 count=50 if=/dev/zero | ${VALGRIND} oggenc -Q -r -o $testfile -
+ echo success: oggenc generated $testfile
+ ${VALGRIND} oggdec -o zeros.raw $testfile
+ echo success: oggdec decoded $testfile to zeros.raw
