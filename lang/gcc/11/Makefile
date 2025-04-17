@@ -19,6 +19,7 @@ V = 11.2.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
 REVISION = 15
+REVISION-ada = 16
 REVISION-c++ = 16
 
 ADASTRAP-amd64 = adastrap-amd64-$V-4.tar.xz
@@ -52,7 +53,7 @@ SHARED_LIBS =	estdc++		20.0 \
 		gdruntime	0.0
 
 PSEUDO_FLAVORS = no_ada full
-FLAVOR ?= 
+FLAVOR ?=
 
 MULTI_PACKAGES = -main -libs -f95 -objc -c++ -ada -dlang
 
@@ -162,7 +163,7 @@ CONFIGURE_ARGS += \
 	--disable-libstdcxx-pch \
 	--enable-default-pie \
 	--enable-standard-branch-protection \
-	--without-isl	
+	--without-isl
 
 # Enable the stack protector by default where supported
 .if ${MACHINE_ARCH} != "riscv64"
