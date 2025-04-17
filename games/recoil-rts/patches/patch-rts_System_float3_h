@@ -12,7 +12,7 @@ Index: rts/System/float3.h
  #include "System/BranchPrediction.h"
  #include "lib/streflop/streflop_cond.h"
  #include "System/creg/creg_cond.h"
-@@ -806,7 +808,7 @@ class float3 (public)
+@@ -830,7 +832,7 @@ class float3 (public)
  	static constexpr float nrm_eps() { return 1e-12f; }
  
  	std::string str() const {

@@ -8,9 +8,8 @@ COMMENT =		real-time strategy game engine for Beyond All Reason
 # under setups->package->id: "manual-linux", see downloads->resources or
 # launch->engine
 
-V =			2025.01.6
+V =			2025.03.9
 PKGNAME =		recoil-rts-${V}
-REVISION =		0
 
 DIST_TUPLE +=		github beyond-all-reason spring ${V} .
 DIST_TUPLE +=		github mikke89 RmlUi \
@@ -29,10 +28,10 @@ DIST_TUPLE +=		github sammycage lunasvg \
 			d1eec967ec515395cfd669a1bfed8d5a6a119dde \
 			rts/lib/lunasvg # MIT
 DIST_TUPLE +=		github wolfpld tracy \
-			5a1f5371b792c12aea324213e1dc738b2923ae21 \
+			5d542dc09f3d9378d005092a4ad446bd405f819a \
 			rts/lib/tracy # BSD-3
 DIST_TUPLE +=		github rlcevg CircuitAI \
-			3dee671176bdae7e6b1dd46a3c6c2c0d03c48755 \
+			371f7874dbd61947cb761a0335a9a412e25a029b \
 			AI/Skirmish/BARb # GPL-2.0
 DIST_TUPLE +=		github rlcevg CircuitAI \
 			edc74149c281e2140f28c091ed74310c11611cc7 \
@@ -51,7 +50,7 @@ MAINTAINER =		Thomas Frohwein <thfr@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU IL SDL2 X11 Xcursor c curl
+WANTLIB += ${COMPILER_LIBCXX} GL GLU IL SDL2 X11 Xcursor c curl
 WANTLIB += execinfo expat fontconfig freetype jsoncpp m minizip ogg
 WANTLIB += openal vorbis vorbisfile z
 
@@ -75,7 +74,6 @@ LIB_DEPENDS =		archivers/minizip \
 			devel/jsoncpp \
 			devel/sdl2 \
 			graphics/DevIL \
-			graphics/glew \
 			net/curl
 
 # use fmt::format while clang doesn't support std::format yet

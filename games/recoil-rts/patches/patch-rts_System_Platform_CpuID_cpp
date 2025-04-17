@@ -3,7 +3,7 @@ implement EnumerateCores()
 Index: rts/System/Platform/CpuID.cpp
 --- rts/System/Platform/CpuID.cpp.orig
 +++ rts/System/Platform/CpuID.cpp
-@@ -11,6 +11,11 @@
+@@ -10,6 +10,11 @@
  	#include <intrin.h>
  #endif
  
@@ -15,7 +15,7 @@ Index: rts/System/Platform/CpuID.cpp
  #include "System/Threading/SpringThreading.h"
  #include "System/UnorderedSet.hpp"
  
-@@ -33,7 +38,7 @@ namespace springproc {
+@@ -34,7 +39,7 @@ namespace springproc {
  	// NOLINTNEXTLINE{readability-non-const-parameter}
  	_noinline void ExecCPUID(unsigned int* a, unsigned int* b, unsigned int* c, unsigned int* d)
  	{
@@ -24,28 +24,28 @@ Index: rts/System/Platform/CpuID.cpp
  		__asm__ __volatile__(
  			"cpuid"
  			: "=a" (*a), "=b" (*b), "=c" (*c), "=d" (*d)
-@@ -111,6 +116,16 @@ namespace springproc {
+@@ -96,6 +101,16 @@ namespace springproc {
  	}
  
  	void CPUID::EnumerateCores() {
 +#ifdef __OpenBSD__
 +		int mib[2] = { CTL_HW, HW_NCPUONLINE };
 +		size_t len = sizeof(numLogicalCores);
-+
 +		// XXX: currently assumes that hyperthreading is disabled and numLogicalCores == numPhysicalCores
 +		if (sysctl(mib, 2, &numLogicalCores, &len, (void *) 0, 0) != 0) std::abort();
 +
 +		numPhysicalCores = numLogicalCores;
-+		availableProceesorAffinityMask = 0;
++		numPerformanceCores = 0;	// XXX: not supported at the moment
++		smtDetected = 0;	// XXX: assumed as disabled for now
 +#else
- 		const auto oldAffinity = Threading::GetAffinity();
+ 		processorMasks = cpu_topology::GetProcessorMasks();
+ 		processorCaches = cpu_topology::GetProcessorCache();
  
- 		LOG("%s: thread affinity %x", __func__, Threading::GetAffinity());
-@@ -165,6 +180,7 @@ namespace springproc {
- 			// ignore case PURPOSE_EFFICIENCY:
- 			}
- 		}
+@@ -119,6 +134,7 @@ namespace springproc {
+ 		numPerformanceCores = std::popcount(perfCoreCountMask);
+ 
+ 		smtDetected = !!( processorMasks.hyperThreadLowMask | processorMasks.hyperThreadHighMask );
 +#endif
  	}
  
- 	void CPUID::SetDefault()
+ }

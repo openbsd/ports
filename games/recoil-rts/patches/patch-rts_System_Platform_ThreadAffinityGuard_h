@@ -1,0 +1,15 @@
+stub thread affinity stuff
+
+Index: rts/System/Platform/ThreadAffinityGuard.h
+--- rts/System/Platform/ThreadAffinityGuard.h.orig
++++ rts/System/Platform/ThreadAffinityGuard.h
+@@ -13,7 +13,9 @@ class ThreadAffinityGuard { (private)
+ 	DWORD_PTR savedAffinity;
+ 	HANDLE threadHandle;
+ #else
++#ifndef __OpenBSD__
+ 	cpu_set_t savedAffinity;
++#endif
+ 	pid_t tid;
+ #endif
+ 	bool affinitySaved;

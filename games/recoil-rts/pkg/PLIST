@@ -150,14 +150,17 @@ include/client/
 include/client/TracyArmCpuTable.hpp
 include/client/TracyCallstack.h
 include/client/TracyCallstack.hpp
+include/client/TracyCpuid.hpp
 include/client/TracyDebug.hpp
 include/client/TracyDxt1.hpp
 include/client/TracyFastVector.hpp
+include/client/TracyKCore.hpp
 include/client/TracyLock.hpp
 include/client/TracyProfiler.hpp
 include/client/TracyRingBuffer.hpp
 include/client/TracyScoped.hpp
 include/client/TracyStringHelpers.hpp
+include/client/TracySysPower.hpp
 include/client/TracySysTime.hpp
 include/client/TracySysTrace.hpp
 include/client/TracyThread.hpp
@@ -180,10 +183,6 @@ include/common/TracyUwp.hpp
 include/common/TracyYield.hpp
 include/common/tracy_lz4.hpp
 include/common/tracy_lz4hc.hpp
-include/libcpuid/
-include/libcpuid/libcpuid.h
-include/libcpuid/libcpuid_constants.h
-include/libcpuid/libcpuid_types.h
 include/lunasvg.h
 include/readerwriterqueue/
 include/readerwriterqueue/LICENSE.md
@@ -214,22 +213,16 @@ lib/cmake/RmlUi/Modules/FindSDL2_image.cmake
 lib/cmake/RmlUi/Modules/Findlunasvg.cmake
 lib/cmake/RmlUi/RmlUiConfig.cmake
 lib/cmake/RmlUi/RmlUiConfigVersion.cmake
-lib/cmake/cpuid/
-lib/cmake/cpuid/cpuidConfig.cmake
-lib/cmake/cpuid/cpuidConfigVersion.cmake
-lib/cmake/cpuid/cpuidTargets-relwithdebinfo.cmake
-lib/cmake/cpuid/cpuidTargets.cmake
 @static-lib lib/libTracyClient.a
-@static-lib lib/libcpuid.a
 @static-lib lib/liblunasvg.a
 @static-lib lib/librmlui.a
 @static-lib lib/librmlui_debugger.a
 @so lib/libunitsync.so
 lib/pkgconfig/gflags.pc
-lib/pkgconfig/libcpuid.pc
 share/Tracy/
-share/Tracy/TracyConfig-relwithdebinfo.cmake
 share/Tracy/TracyConfig.cmake
+share/Tracy/TracyTargets-relwithdebinfo.cmake
+share/Tracy/TracyTargets.cmake
 share/applications/spring.desktop
 share/doc/pkg-readmes/${PKGSTEM}
 share/games/
@@ -398,6 +391,7 @@ share/games/spring/examples/Widgets/camera_shake.lua
 share/games/spring/examples/Widgets/camera_smooth_move.lua
 share/games/spring/examples/Widgets/download.lua
 share/games/spring/examples/Widgets/game_messages.lua
+share/games/spring/examples/Widgets/gui_autoshowmetal.lua
 share/games/spring/examples/Widgets/gui_buildspacing.lua
 share/games/spring/examples/Widgets/gui_hilight_unit.lua
 share/games/spring/examples/Widgets/gui_selbuttons.lua
@@ -407,6 +401,7 @@ share/games/spring/examples/Widgets/headless_setup.lua
 share/games/spring/examples/Widgets/init_start_marker.lua
 share/games/spring/examples/Widgets/luasocket.lua
 share/games/spring/examples/Widgets/luasocket_console.lua
+share/games/spring/examples/Widgets/minimap_follow_cam.lua
 share/games/spring/examples/Widgets/minimap_relative.lua
 share/games/spring/examples/Widgets/minimap_startbox.lua
 share/games/spring/examples/Widgets/unit_factory_guard.lua
@@ -421,7 +416,6 @@ share/games/spring/fonts/CREDITS
 share/games/spring/fonts/FreeSansBold.otf
 share/games/spring/fonts/README
 share/games/spring/luaui.lua
-share/games/spring/socket.lua
 share/mime/packages/spring.xml
 share/pixmaps/
 share/pixmaps/application-x-spring-demo.png

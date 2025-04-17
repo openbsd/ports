@@ -3,7 +3,7 @@ use fmt::format while clang doesn't support std::format yet
 Index: rts/System/Matrix44f.h
 --- rts/System/Matrix44f.h.orig
 +++ rts/System/Matrix44f.h
-@@ -165,7 +165,7 @@ class CMatrix44f (public)
+@@ -173,7 +173,7 @@ class CMatrix44f (public)
  	};
  
  	std::string str() const {

@@ -3,7 +3,7 @@ use fmt::format while clang doesn't support std::format yet
 Index: rts/System/float4.h
 --- rts/System/float4.h.orig
 +++ rts/System/float4.h
-@@ -104,7 +104,7 @@ struct float4 : public float3
+@@ -108,7 +108,7 @@ struct float4 : public float3
  	}
  
  	std::string str() const {

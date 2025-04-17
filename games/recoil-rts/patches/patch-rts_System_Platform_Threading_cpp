@@ -1,0 +1,16 @@
+Index: rts/System/Platform/Threading.cpp
+--- rts/System/Platform/Threading.cpp.orig
++++ rts/System/Platform/Threading.cpp
+@@ -432,8 +432,12 @@ namespace Threading {
+ 		tracy::SetThreadName(newname.c_str());
+ 	#endif
+ 	#ifndef _WIN32
++	  #ifdef __OpenBSD__
++		pthread_set_name_np(pthread_self(), newname.c_str());
++	  #else
+ 		//alternative: pthread_setname_np(pthread_self(), newname.c_str());
+ 		prctl(PR_SET_NAME, newname.c_str(), 0, 0, 0);
++	  #endif
+ 	#else
+ 		// adapted from SDL2 code
+ 		DllLib k32Lib("kernel32.dll");
