@@ -4,6 +4,7 @@ NOT_FOR_ARCHS=	m88k
 COMMENT=	Fast-Light Tool Kit
 
 VER=		1.3.9
+REVISION=	0
 DISTNAME=	fltk-${VER}
 EXTRACT_SUFX=	-source.tar.gz
 
@@ -40,6 +41,8 @@ CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" \
 		LIBS="-L${LOCALBASE}/lib" \
 		FL_DSO_VERSION="${LIBfltk_VERSION}"
 MAKE_FLAGS=	FL_DSO_VERSION="${LIBfltk_VERSION}"
+
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 pre-build:
 	${SUBST_CMD} ${WRKSRC}/src/Fl_Preferences.cxx
