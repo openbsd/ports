@@ -55,7 +55,7 @@ SHARED_LIBS =	estdc++		19.0 \
 		cp1plugin	0.0
 
 PSEUDO_FLAVORS = no_ada full
-FLAVOR ?= 
+FLAVOR ?=
 
 MULTI_PACKAGES = -main -libs -f95 -objc -c++ -ada
 
