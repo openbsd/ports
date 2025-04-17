@@ -1,13 +1,13 @@
 COMMENT =	apertium text translation API in Python
 
-DISTNAME =	apertium-apy-${MODPY_DISTV}
+DISTNAME =	apertium_apy-${MODPY_DISTV}
+PKGNAME =	apertium-apy-${MODPY_DISTV}
 
-MODPY_DISTV =	0.12.0
-REVISION =		1
+MODPY_DISTV =	0.13.0
 
 CATEGORIES =	www
 
-HOMEPAGE =	http://wiki.apertium.org/wiki/Apertium-apy
+HOMEPAGE =	https://wiki.apertium.org/wiki/Apertium-apy
 
 MAINTAINER =	Anthony J. Bentley <anthony@anjbe.name>
 

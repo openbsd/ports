@@ -41,6 +41,8 @@ lib/python${MODPY_VERSION}/site-packages/apertium_apy/handlers/${MODPY_PYCACHE}c
 lib/python${MODPY_VERSION}/site-packages/apertium_apy/handlers/${MODPY_PYCACHE}coverage.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/apertium_apy/handlers/${MODPY_PYCACHE}generate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/apertium_apy/handlers/${MODPY_PYCACHE}generate.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/apertium_apy/handlers/${MODPY_PYCACHE}guesser.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/apertium_apy/handlers/${MODPY_PYCACHE}guesser.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/apertium_apy/handlers/${MODPY_PYCACHE}identify_lang.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/apertium_apy/handlers/${MODPY_PYCACHE}identify_lang.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/apertium_apy/handlers/${MODPY_PYCACHE}list_language_names.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -71,6 +73,7 @@ lib/python${MODPY_VERSION}/site-packages/apertium_apy/handlers/analyze.py
 lib/python${MODPY_VERSION}/site-packages/apertium_apy/handlers/base.py
 lib/python${MODPY_VERSION}/site-packages/apertium_apy/handlers/coverage.py
 lib/python${MODPY_VERSION}/site-packages/apertium_apy/handlers/generate.py
+lib/python${MODPY_VERSION}/site-packages/apertium_apy/handlers/guesser.py
 lib/python${MODPY_VERSION}/site-packages/apertium_apy/handlers/identify_lang.py
 lib/python${MODPY_VERSION}/site-packages/apertium_apy/handlers/list_language_names.py
 lib/python${MODPY_VERSION}/site-packages/apertium_apy/handlers/list_modes.py
@@ -104,6 +107,8 @@ share/apertium-apy/COPYING
 share/apertium-apy/README.md
 share/apertium-apy/index.html
 share/apertium-apy/langNames.db
+share/apertium-apy/lid.beta.ftz
+share/apertium-apy/lid.release.ftz
 share/apertium-apy/tools/
 share/apertium-apy/tools/apertium-recaptcha-test.html
 share/apertium-apy/tools/apertium-viewer.html
@@ -113,11 +118,5 @@ share/apertium-apy/tools/systemd/README
 share/apertium-apy/tools/systemd/apy.service
 share/apertium-apy/tools/sysvinit/
 share/apertium-apy/tools/sysvinit/apy.sh
-share/apertium-apy/tools/upstart/
-share/apertium-apy/tools/upstart/apertium
-share/apertium-apy/tools/upstart/apertium-all.conf
-share/apertium-apy/tools/upstart/apertium-apy-gateway.conf
-share/apertium-apy/tools/upstart/apertium-apy.conf
-share/apertium-apy/tools/upstart/apertium-html-tools.conf
 share/examples/login.conf.d/apertium_apy
 @sample ${SYSCONFDIR}/login.conf.d/apertium_apy
