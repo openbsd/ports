@@ -6,8 +6,8 @@ ONLY_FOR_ARCHS = aarch64 amd64 mips64 riscv64
 
 COMMENT =	scan your project's dependencies for vulnerabilities
 
-V =		1.9.2
-MODGO_MODNAME =	github.com/google/osv-scanner
+V =		2.0.1
+MODGO_MODNAME =	github.com/google/osv-scanner/v2
 MODGO_VERSION =	v${V}
 
 DISTNAME =	osv-scanner-${V}
