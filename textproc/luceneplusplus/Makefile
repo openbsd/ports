@@ -1,7 +1,7 @@
 V =		3.0.8
 PKGNAME =	luceneplusplus-${V}
 COMMENT =	C++ port of the Java Lucene library, the text search engine
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	luceneplusplus
 GH_PROJECT =	LucenePlusPlus
