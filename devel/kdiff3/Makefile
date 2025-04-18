@@ -1,6 +1,7 @@
 COMMENT =	compares and merges multiple files or directories
 
 DISTNAME =	kdiff3-1.12.2
+REVISION =	0
 
 CATEGORIES =	devel
 
