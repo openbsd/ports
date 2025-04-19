@@ -228,6 +228,7 @@
      SUBDIR += libnice
      SUBDIR += libnids
      SUBDIR += liboauth
+     SUBDIR += libomemo-c
      SUBDIR += liboping
      SUBDIR += libpcapnav
      SUBDIR += libproxy
