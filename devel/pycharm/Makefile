@@ -4,10 +4,9 @@ V=			2024.3.5
 DISTNAME=		pycharm-community-${V}
 PKGNAME=		pycharm-${V}
 CATEGORIES=		devel
+REVISION =		0
 
 HOMEPAGE=		https://www.jetbrains.com/pycharm/
-
-MAINTAINER =		Lucas Raab <tuftedocelot@fastmail.fm>
 
 # Apache v2.0
 PERMIT_PACKAGE=	Yes

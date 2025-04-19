@@ -5,9 +5,9 @@ DIST_VER=		243.26053.27
 DISTNAME=		ideaIC-${V}
 PKGNAME=		intellij-${V}
 CATEGORIES=		devel
+REVISION =		0
 
 HOMEPAGE=		https://www.jetbrains.com/idea/
-MAINTAINER=		Lucas Raab <tuftedocelot@fastmail.fm>
 
 # Apache v2.0
 PERMIT_PACKAGE=	Yes
