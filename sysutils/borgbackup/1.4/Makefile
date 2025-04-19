@@ -1,5 +1,4 @@
-MODPY_DISTV =	1.4.0
-REVISION =	1
+MODPY_DISTV =	1.4.1
 
 WANTLIB =		crypto
 
