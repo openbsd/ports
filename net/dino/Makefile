@@ -1,21 +1,23 @@
 COMMENT=	XMPP desktop client
-VERSION=	0.4.5
+VERSION=	0.5.0
 DISTNAME=	dino-${VERSION}
 CATEGORIES=	net x11
 
-SHARED_LIBS +=	crypto-vala               0.1 # 0.0
-SHARED_LIBS +=	dino                      3.2 # 0.0
-SHARED_LIBS +=	qlite                     0.1 # 0.1
-SHARED_LIBS +=	xmpp-vala                 3.2 # 0.1
+SHARED_LIBS +=	crypto-vala               1.0 # 0.0
+SHARED_LIBS +=	dino                      4.0 # 0.0
+SHARED_LIBS +=	qlite                     1.0 # 0.1
+SHARED_LIBS +=	xmpp-vala                 4.0 # 0.1
 
 HOMEPAGE=	https://dino.im/
 
 SITES=		https://github.com/dino/dino/releases/download/v${VERSION}/
 
+MAINTAINER=	Kirill A. Korinsky <kirill@korins.ky>
+
 # GPLv3 only
 PERMIT_PACKAGE=	Yes
 
-MODULES=	devel/cmake
+MODULES=	devel/meson
 BUILD_DEPENDS=	devel/gettext,-tools \
 		lang/vala
 RUN_DEPENDS=	devel/desktop-file-utils \
@@ -27,7 +29,7 @@ LIB_DEPENDS=	audio/libcanberra,-main \
 		graphics/libqrencode \
 		multimedia/gstreamer1/plugins-base \
 		net/libnice \
-		net/libsignal-protocol-c \
+		net/libomemo-c \
 		security/gnutls \
 		security/gpgme \
 		security/libgcrypt \
@@ -36,21 +38,13 @@ LIB_DEPENDS=	audio/libcanberra,-main \
 		x11/gnome/libadwaita \
 		x11/gtk+4
 
-WANTLIB += adwaita-1 c cairo cairo-gobject canberra gcrypt gdk_pixbuf-2.0
-WANTLIB += gee-0.8 gio-2.0 glib-2.0 gmodule-2.0 gnutls gobject-2.0
-WANTLIB += gpgme graphene-1.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0
-WANTLIB += gstreamer-1.0 gstrtp-1.0 gstvideo-1.0 gtk-4 harfbuzz
-WANTLIB += icudata icuuc intl m nice pango-1.0 pangocairo-1.0
-WANTLIB += qrencode signal-protocol-c soup-3.0 sqlite3 srtp2 vulkan
+WANTLIB += adwaita-1 c cairo canberra gcrypt gdk_pixbuf-2.0 gee-0.8
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gnutls gobject-2.0 gpgme
+WANTLIB += graphene-1.0 gstapp-1.0 gstbase-1.0 gstreamer-1.0 gstrtp-1.0
+WANTLIB += gstvideo-1.0 gtk-4 icuuc intl m nice pango-1.0 qrencode
+WANTLIB += omemo-c soup-3.0 sqlite3 srtp2
 
-
-CONFIGURE_ARGS =	-DBUILD_TESTS=ON \
-			-DUSE_SOUP3=ON \
-			-DENABLED_PLUGINS=notification-sound
-
-MODCMAKE_LDFLAGS =		-L${LOCALBASE}/lib
-
-do-test:
-	find ${WRKBUILD} -type f -perm -+x -name \*-test -print -exec {} \;
+CONFIGURE_ARGS=	-Dplugin-notification-sound=enabled \
+		-Dplugin-rtp-webrtc-audio-processing=disabled
 
 .include <bsd.port.mk>
