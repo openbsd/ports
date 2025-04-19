@@ -1,8 +1,13 @@
 A library to encode/decode DNS wire-format packets.
-Support for encoding/decoding DNS packets between wire format,
-python objects, and Zone/DiG textual representation (dnslib.dns)
-A server framework allowing the simple creation of custom DNS
+
+- Support for encoding/decoding DNS packets between wire format,
+Python objects, and Zone/DiG textual representation (dnslib.dns)
+
+- Server framework allowing the simple creation of custom DNS
 resolvers (dnslib.server) and a number of example servers
 created using this framework
-A number of utilities for testing (dnslib.client, dnslib.proxy,
+
+- Various utilities for testing (dnslib.client, dnslib.proxy,
 dnslib.intercept)
+
+dnslib is now in maintenance mode and not actively developed.
