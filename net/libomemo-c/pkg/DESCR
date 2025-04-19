@@ -1,0 +1,4 @@
+This is a fork of libsignal-protocol-c, an implementation of Signal's
+ratcheting forward secrecy protocol that works in synchronous and
+asynchronous messaging. The fork adds support for OMEMO as defined in
+XEP-0384 versions 0.3.0 and later.

@@ -1,0 +1,18 @@
+include/omemo/
+include/omemo/curve.h
+include/omemo/hkdf.h
+include/omemo/key_helper.h
+include/omemo/protocol.h
+include/omemo/ratchet.h
+include/omemo/sender_key.h
+include/omemo/sender_key_record.h
+include/omemo/sender_key_state.h
+include/omemo/session_builder.h
+include/omemo/session_cipher.h
+include/omemo/session_pre_key.h
+include/omemo/session_record.h
+include/omemo/session_state.h
+include/omemo/signal_protocol.h
+include/omemo/signal_protocol_types.h
+@lib lib/libomemo-c.so.${LIBomemo-c_VERSION}
+lib/pkgconfig/libomemo-c.pc
