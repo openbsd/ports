@@ -1,13 +1,13 @@
 COMMENT=	search engine library
 
-V=		1.4.27
+V=		1.4.29
 PORTROACH=	limitw:1,even
 DISTNAME=	xapian-core-${V}
 # the other xapian ports should be kept in-sync:
 #   databases/xapian-bindings
 #   www/xapian-omega
 
-SHARED_LIBS +=  xapian               5.2      # 40.2
+SHARED_LIBS +=  xapian               6.0      # 44.1
 
 CATEGORIES=	databases textproc
 
