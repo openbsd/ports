@@ -1,8 +1,10 @@
 COMMENT =		graphical frontend for sigrok logic analyzer
-REVISION =		0
+REVISION =		1
 
 SIGROK_PROJECT =	pulseview
 SIGROK_VERSION =	0.4.2
+
+FIX_EXTRACT_PERMISSIONS = yes
 
 WANTLIB += ${COMPILER_LIBCXX}
 WANTLIB += Qt5Core Qt5Gui Qt5Svg Qt5Widgets boost_filesystem-mt
