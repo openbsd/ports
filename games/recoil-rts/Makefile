@@ -8,7 +8,7 @@ COMMENT =		real-time strategy game engine for Beyond All Reason
 # under setups->package->id: "manual-linux", see downloads->resources or
 # launch->engine
 
-V =			2025.03.9
+V =			2025.04.01
 PKGNAME =		recoil-rts-${V}
 
 DIST_TUPLE +=		github beyond-all-reason spring ${V} .
@@ -31,7 +31,7 @@ DIST_TUPLE +=		github wolfpld tracy \
 			5d542dc09f3d9378d005092a4ad446bd405f819a \
 			rts/lib/tracy # BSD-3
 DIST_TUPLE +=		github rlcevg CircuitAI \
-			371f7874dbd61947cb761a0335a9a412e25a029b \
+			6d05ca04666618e3906301dc8e9ba0893180ba25 \
 			AI/Skirmish/BARb # GPL-2.0
 DIST_TUPLE +=		github rlcevg CircuitAI \
 			edc74149c281e2140f28c091ed74310c11611cc7 \
