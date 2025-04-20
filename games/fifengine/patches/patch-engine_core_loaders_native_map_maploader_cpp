@@ -1,0 +1,16 @@
+https://github.com/fifengine/fifengine/issues/1085
+
+Index: engine/core/loaders/native/map/maploader.cpp
+--- engine/core/loaders/native/map/maploader.cpp.orig
++++ engine/core/loaders/native/map/maploader.cpp
+@@ -838,7 +838,9 @@ namespace FIFE {
+ 			for (iter = files.begin(); iter != files.end(); ++iter) {
+ 				// TODO - vtchill - may need a way to allow clients to load things other
+ 				// than .xml and .zip files
+-				std::string ext = bfs::extension(*iter);
++				bfs::path p = *iter;
++				std::string ext = p.extension().string();
++
+ 				if (ext == ".xml" || ext == ".zip") {
+ 					loadImportFile(*iter, importDirectoryString);
+ 				}

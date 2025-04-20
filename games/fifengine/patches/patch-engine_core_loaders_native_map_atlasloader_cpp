@@ -1,0 +1,15 @@
+https://github.com/fifengine/fifengine/issues/1085
+
+Index: engine/core/loaders/native/map/atlasloader.cpp
+--- engine/core/loaders/native/map/atlasloader.cpp.orig
++++ engine/core/loaders/native/map/atlasloader.cpp
+@@ -312,7 +312,8 @@ namespace FIFE {
+ 				atlasElem->QueryValueAttribute("subimage_width", &subimageWidth);
+ 				atlasElem->QueryValueAttribute("subimage_height", &subimageHeight);
+ 				// file extension of the atlas is also used as subimage extension
+-				std::string extension = bfs::extension(*atlasSource);
++				bfs::path p = *atlasSource;
++				std::string extension = p.extension().string();
+ 				// we need an atlas id
+ 				if (!atlasId) {
+ 					atlasId = atlasSource;

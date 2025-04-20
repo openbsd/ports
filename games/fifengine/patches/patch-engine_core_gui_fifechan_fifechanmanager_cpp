@@ -1,0 +1,16 @@
+https://github.com/fifengine/fifengine/issues/1085
+
+Index: engine/core/gui/fifechan/fifechanmanager.cpp
+--- engine/core/gui/fifechan/fifechanmanager.cpp.orig
++++ engine/core/gui/fifechan/fifechanmanager.cpp
+@@ -249,7 +249,9 @@ namespace FIFE {
+ 
+ 		IFont* font = NULL;
+ 		GuiFont* guifont = NULL;
+-		if( bfs::extension(fontpath) == ".ttf" || bfs::extension(fontpath) == ".ttc" ) {
++		bfs::path p = fontpath;
++		std::string s = p.extension().string();
++		if( s == ".ttf" || s == ".ttc" ) {
+ 			font = new TrueTypeFont(fontpath, fontsize);
+ 		} else {
+ 			font = new SubImageFont(fontpath, fontglyphs);
