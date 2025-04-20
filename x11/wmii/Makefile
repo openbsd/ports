@@ -1,15 +1,15 @@
 COMMENT=	dynamic window manager
 
 DISTNAME=	wmii-3.6
-REVISION=	7
+REVISION=	8
 CATEGORIES=	x11
 
-HOMEPAGE=	http://wmii.suckless.org/
+HOMEPAGE=	https://github.com/0intro/wmii
 
 # MIT/X
 PERMIT_PACKAGE=	Yes
 
-SITES=		http://dl.suckless.org/wmii/
+SITES=		https://dl.suckless.org/wmii/
 
 WANTLIB += X11 Xext c iconv m
 
