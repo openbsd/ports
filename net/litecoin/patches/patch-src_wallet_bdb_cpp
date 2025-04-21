@@ -1,3 +1,6 @@
+Last hunk build fix for boost 1.87 from FreeBSD
+https://github.com/freebsd/freebsd-ports/commit/880b364108f5a935b6e62264a5b6a62428476d99
+
 Index: src/wallet/bdb.cpp
 --- src/wallet/bdb.cpp.orig
 +++ src/wallet/bdb.cpp
@@ -21,3 +24,12 @@ Index: src/wallet/bdb.cpp
      int ret = dbenv->open(nullptr,
                           DB_CREATE |
                               DB_INIT_LOCK |
+@@ -627,7 +631,7 @@ bool BerkeleyDatabase::Backup(const std::string& strDe
+                         return false;
+                     }
+ 
+-                    fs::copy_file(pathSrc, pathDest, fs::copy_option::overwrite_if_exists);
++                    fs::copy_file(pathSrc, pathDest, fs::copy_options::overwrite_existing);
+                     LogPrintf("copied %s to %s\n", strFile, pathDest.string());
+                     return true;
+                 } catch (const fs::filesystem_error& e) {
