@@ -1,5 +1,5 @@
-@pkgpath devel/py-jedi,python3
 @conflict py-jedi-*
+@pkgpath devel/py-jedi,python3
 lib/python${MODPY_VERSION}/site-packages/jedi/
 lib/python${MODPY_VERSION}/site-packages/jedi-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/jedi-${MODPY_DISTV}.dist-info/AUTHORS.txt
