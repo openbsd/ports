@@ -3,7 +3,7 @@ COMMENT	=		library implementing QUIC and HTTP/3
 # ring-v0.17 does not support this arch
 NOT_FOR_ARCHS =		sparc64
 
-VERSION =		0.22.0
+VERSION =		0.23.4
 GH_ACCOUNT =		cloudflare
 GH_PROJECT =		quiche
 GH_TAGNAME =		${VERSION}
@@ -26,8 +26,7 @@ MODCARGO_INSTALL =	No
 
 do-install:
 	${INSTALL_DATA} ${WRKSRC}/quiche/include/quiche.h ${PREFIX}/include
-	${INSTALL_DATA} ${WRKBUILD}/target/release/libquiche.a  ${PREFIX}/lib
-
+	${INSTALL_DATA} ${WRKBUILD}/target/release/libquiche.a ${PREFIX}/lib
 
 SUBST_VARS +=	VERSION
 
