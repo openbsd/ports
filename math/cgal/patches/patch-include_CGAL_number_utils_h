@@ -1,0 +1,14 @@
+Fixes build of sfcgal with boost 1.88
+https://github.com/CGAL/cgal/commit/138b06ca1188c9aaa734801cdda7f7a6cac54602
+
+Index: include/CGAL/number_utils.h
+--- include/CGAL/number_utils.h.orig
++++ include/CGAL/number_utils.h
+@@ -21,6 +21,7 @@
+ #include <CGAL/Algebraic_structure_traits.h>
+ #include <CGAL/Real_embeddable_traits.h>
+ #include <CGAL/Kernel/Same_uncertainty.h>
++#include <boost/mpl/if.hpp>
+ 
+ namespace CGAL {
+ CGAL_NTS_BEGIN_NAMESPACE
