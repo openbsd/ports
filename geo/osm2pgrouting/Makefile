@@ -1,6 +1,7 @@
 GH_ACCOUNT =		pgRouting
 GH_PROJECT =		osm2pgrouting
 GH_TAGNAME =		v2.3.8
+REVISION =		0
 
 COMMENT =		convert OSM data to PgRouting format
 CATEGORIES =		geo

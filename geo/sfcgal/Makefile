@@ -3,6 +3,7 @@ COMMENT =		C++ wrapper around CGAL
 V =			v2.0.0
 DISTNAME =		SFCGAL-${V}
 PKGNAME =		${DISTNAME:L:S/v//}
+REVISION =		0
 SHARED_LIBS +=	SFCGAL	0.0 # 0.0
 
 CATEGORIES =		geo math
