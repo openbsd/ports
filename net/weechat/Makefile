@@ -4,7 +4,7 @@ COMMENT-python=	Python bindings for weechat
 COMMENT-ruby=	Ruby bindings for weechat
 COMMENT-tcl=	Tcl bindings for weechat
 
-V=		4.6.1
+V=		4.6.2
 DISTNAME=	weechat-${V}
 
 PKGNAME-main=	weechat-${V}
@@ -26,6 +26,8 @@ WANTLIB-main += m perl pthread z zstd
 WANTLIB-lua += ${MODLUA_WANTLIB} m
 WANTLIB-python += ${MODPY_WANTLIB}
 WANTLIB-tcl += ${MODTCL_WANTLIB}
+# uses link libruby*.so
+WANTLIB-ruby += ${MODRUBY_WANTLIB}
 
 SITES=		https://www.weechat.org/files/src/
 
