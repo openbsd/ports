@@ -2,9 +2,9 @@ opt levels / debug should be under control of ports
 disable -Werror as it often causes build issues on less-common archs
 
 Index: auto/cc/test
---- auto/cc/test.orig	Wed Nov 27 15:30:38 2024
-+++ auto/cc/test	Wed Nov 27 15:31:32 2024
-@@ -69,7 +69,7 @@
+--- auto/cc/test.orig
++++ auto/cc/test
+@@ -71,7 +71,7 @@ case $NXT_CC_NAME in
  
          NXT_CFLAGS="$NXT_CFLAGS -std=gnu11"
  
@@ -13,7 +13,7 @@ Index: auto/cc/test
          NXT_CFLAGS="$NXT_CFLAGS -Wall -Wextra"
  
          #NXT_CFLAGS="$NXT_CFLAGS -Wunused-result"
-@@ -111,7 +111,7 @@
+@@ -115,7 +115,7 @@ case $NXT_CC_NAME in
  
          NXT_CFLAGS="$NXT_CFLAGS -std=gnu11"
  
