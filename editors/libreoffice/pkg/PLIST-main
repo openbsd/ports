@@ -10940,7 +10940,8 @@ lib/libreoffice/share/extensions/dict-en/pythonpath/lightproof_impl_en.py
 lib/libreoffice/share/extensions/dict-en/pythonpath/lightproof_opts_en.py
 lib/libreoffice/share/extensions/dict-en/th_en_US_v2.dat
 lib/libreoffice/share/extensions/dict-en/th_en_US_v2.idx
-lib/libreoffice/share/extensions/dict-es/RLA-ES.png
+lib/libreoffice/share/extensions/dict-es/images/
+lib/libreoffice/share/extensions/dict-es/images/RLA-ES.png
 lib/libreoffice/share/extensions/dict-fa/
 lib/libreoffice/share/extensions/dict-fa/LICENSE
 lib/libreoffice/share/extensions/dict-fa/META-INF/
