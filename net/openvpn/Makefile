@@ -1,6 +1,7 @@
 COMMENT=	easy-to-use, robust, and highly configurable VPN
 
 DISTNAME=	openvpn-2.6.14
+REVISION=	0
 
 CATEGORIES=	net security
 
@@ -39,7 +40,8 @@ WANTLIB += mbedcrypto mbedtls mbedx509 pthread
 # ensure 'pkcs11-providers .../p11-kit-proxy.so' as default
 BUILD_DEPENDS+=	security/p11-kit
 LIB_DEPENDS+=	security/pkcs11-helper
-CONFIGURE_ARGS+= --enable-pkcs11
+CONFIGURE_ARGS+= --enable-pkcs11 \
+		--enable-x509-alt-username
 WANTLIB += crypto pkcs11-helper ssl
 .endif
 
