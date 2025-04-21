@@ -1,4 +1,5 @@
 Add missing semicolon in fallback code.
+https://github.com/WebKit/WebKit/commit/8bee9eb95ae24c6a410f9cd614976f4653d020d9
 
 Index: Source/WebCore/platform/audio/DenormalDisabler.cpp
 --- Source/WebCore/platform/audio/DenormalDisabler.cpp.orig
