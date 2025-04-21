@@ -1,0 +1,12 @@
+Index: src/mainwindow.cpp
+--- src/mainwindow.cpp.orig
++++ src/mainwindow.cpp
+@@ -384,7 +384,7 @@ Main::Main(QWidget *parent) : QMainWindow(parent)
+     // After startup, schedule looking for updates AFTER
+     // release notes have been downloaded
+     // (avoid race condition with simultanously receiving cookies)
+-    checkUpdatesAfterReleaseNotes = true;
++    checkUpdatesAfterReleaseNotes = false;
+ 
+ #if defined(VYM_DBUS)
+     // Announce myself on DBUS
