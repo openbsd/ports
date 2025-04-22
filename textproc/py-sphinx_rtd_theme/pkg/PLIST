@@ -123,5 +123,6 @@ lib/python${MODPY_VERSION}/site-packages/sphinx_rtd_theme/static/css/theme.css
 lib/python${MODPY_VERSION}/site-packages/sphinx_rtd_theme/static/js/
 lib/python${MODPY_VERSION}/site-packages/sphinx_rtd_theme/static/js/badge_only.js
 lib/python${MODPY_VERSION}/site-packages/sphinx_rtd_theme/static/js/theme.js
+lib/python${MODPY_VERSION}/site-packages/sphinx_rtd_theme/static/js/versions.js_t
 lib/python${MODPY_VERSION}/site-packages/sphinx_rtd_theme/theme.conf
 lib/python${MODPY_VERSION}/site-packages/sphinx_rtd_theme/versions.html
