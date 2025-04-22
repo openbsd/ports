@@ -11,7 +11,6 @@
      SUBDIR += libnsutils
      SUBDIR += libparserutils
      SUBDIR += libsvgtiny
-     SUBDIR += libutf8proc
      SUBDIR += libwapcaplet
      SUBDIR += netsurf-fb
      SUBDIR += nsgenbind

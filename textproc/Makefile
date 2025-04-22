@@ -128,6 +128,7 @@
      SUBDIR += libstemmer
      SUBDIR += libtextcat
      SUBDIR += libtranslate
+     SUBDIR += libutf8proc
      SUBDIR += libunibreak
      SUBDIR += libunicode
      SUBDIR += libuninameslist

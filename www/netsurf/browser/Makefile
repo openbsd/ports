@@ -2,7 +2,7 @@ COMMENT =		lightweight web browser, with GTK interface
 
 NETSURF_PROJECT =	netsurf
 NETSURF_VERSION =	3.11
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		https://www.netsurf-browser.org/
 SITES =		https://download.netsurf-browser.org/netsurf/releases/source/
@@ -12,6 +12,7 @@ BUILD_DEPENDS =		editors/vim \
 			www/p5-HTML-Parser
 LIB_DEPENDS =		graphics/libjxl \
 			graphics/libwebp \
+			textproc/libutf8proc \
 			www/netsurf/hubbub>=0.3.4 \
 			www/netsurf/libcss>=0.7.0 \
 			www/netsurf/libnsgif>=0.2.0 \
@@ -20,7 +21,6 @@ LIB_DEPENDS =		graphics/libjxl \
 			www/netsurf/libdom>=0.3.2 \
 			www/netsurf/libnspsl>=0.1.2 \
 			www/netsurf/libnsutils>=0.0.3 \
-			www/netsurf/libutf8proc>=1.3.1p0 \
 			x11/gtk+3 \
 			x11/gnome/librsvg \
 			net/curl
