@@ -1,23 +1,18 @@
 COMMENT=	manage and configure devices that support IPMI
 
 V=		1.8.19
-GH_ACCOUNT=	ipmitool
-GH_PROJECT=	ipmitool
-GH_TAGNAME=	IPMITOOL_${V:S/./_/g}
+TAG=		IPMITOOL_${V:S/./_/g}
+DIST_TUPLE=	codeberg IPMITool ipmitool ${TAG} .
 PKGNAME=	ipmitool-$V
-REVISION=	1
-
-# renamed as the distfile was re-rolled
-DISTFILES=	ipmitool-IPMITOOL_1_8_19.0{ipmitool-IPMITOOL_1_8_19}.tar.gz
+REVISION=	2
 
 SITES.sh=	https://spacehopper.org/mirrors/
 DISTFILES.sh=	enterprise-numbers.20220204.gz
-EXTRACT_ONLY=	ipmitool-IPMITOOL_1_8_19.0.tar.gz
+EXTRACT_ONLY=	IPMITool-ipmitool-${TAG}.tar.gz
 
 CATEGORIES=	sysutils
 
-# https://sourceforge.net/projects/ipmitool/
-HOMEPAGE=	https://github.com/ipmitool/ipmitool
+HOMEPAGE=	https://codeberg.org/IPMITool/ipmitool
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
@@ -25,6 +20,8 @@ MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB=	m curses edit crypto c
+
+DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
 # -std=gnu11
 COMPILER=	base-clang ports-gcc
@@ -44,6 +41,7 @@ CONFIGURE_ARGS+= --enable-intf-lan \
 		--disable-intf-lipmi \
 		--disable-intf-bmc \
 		--disable-intf-dummy
+CONFIGURE_ENV+=	ac_cv_prog_CURL=curl
 USE_GMAKE=	Yes
 
 .if ${MACHINE_ARCH} == "aarch64" || ${MACHINE_ARCH} == "amd64" || \
@@ -53,10 +51,11 @@ CONFIGURE_ARGS+=	--enable-intf-open
 CONFIGURE_ARGS+=	--disable-intf-open
 .endif
 
+WRKDIST=	${WRKDIR}/ipmitool
+
 pre-configure:
 	cd ${WRKSRC}/contrib; sed -i 's,^#!/bin/bash,#!/bin/sh,' bmclanconf *.sh
 
-CONFIGURE_ENV+=	ac_cv_prog_CURL=curl
 post-configure:
 	gzcat < ${FULLDISTDIR}/enterprise-numbers.20220204.gz > ${WRKBUILD}/enterprise-numbers
 
