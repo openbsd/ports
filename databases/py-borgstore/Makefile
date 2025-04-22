@@ -1,9 +1,8 @@
 COMMENT =		key/value store implementation in Python
 
-MODPY_DISTV =	0.1.0
+MODPY_DISTV =		0.2.0
 DISTNAME =		borgstore-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		databases
 
@@ -18,7 +17,8 @@ MODULES =		lang/python
 MODPY_PYBUILD =		setuptools_scm
 MODPY_PI =		Yes
 
-RUN_DEPENDS =		security/py-paramiko \
+RUN_DEPENDS =		net/py-boto3 \
+			security/py-paramiko \
 			www/py-requests
 
 # tests not included in pypi tarball

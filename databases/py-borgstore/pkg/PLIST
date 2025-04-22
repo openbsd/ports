@@ -33,12 +33,15 @@ lib/python${MODPY_VERSION}/site-packages/borgstore/backends/${MODPY_PYCACHE}posi
 lib/python${MODPY_VERSION}/site-packages/borgstore/backends/${MODPY_PYCACHE}posixfs.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgstore/backends/${MODPY_PYCACHE}rclone.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgstore/backends/${MODPY_PYCACHE}rclone.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/borgstore/backends/${MODPY_PYCACHE}s3.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/borgstore/backends/${MODPY_PYCACHE}s3.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgstore/backends/${MODPY_PYCACHE}sftp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/borgstore/backends/${MODPY_PYCACHE}sftp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/borgstore/backends/_base.py
 lib/python${MODPY_VERSION}/site-packages/borgstore/backends/errors.py
 lib/python${MODPY_VERSION}/site-packages/borgstore/backends/posixfs.py
 lib/python${MODPY_VERSION}/site-packages/borgstore/backends/rclone.py
+lib/python${MODPY_VERSION}/site-packages/borgstore/backends/s3.py
 lib/python${MODPY_VERSION}/site-packages/borgstore/backends/sftp.py
 lib/python${MODPY_VERSION}/site-packages/borgstore/constants.py
 lib/python${MODPY_VERSION}/site-packages/borgstore/store.py
