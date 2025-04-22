@@ -11,8 +11,7 @@ MOZILLA_CODENAME =	browser
 EXTRACT_SUFX =		.tar.xz
 
 PKGNAME =		${TB_PREFIX}-browser-${TB_VERSION:S/a/alpha/}
-DISTNAME =		src-firefox-tor-browser-128.9.0esr-14.0-2-build2
-REVISION =		0
+DISTNAME =		src-firefox-tor-browser-128.9.0esr-14.5-1-build4
 
 FIX_EXTRACT_PERMISSIONS	= Yes
 DISTFILES +=		${DISTNAME}.tar.xz \
@@ -187,10 +186,6 @@ post-install:
 		${PREFIX}/share/${BROWSER_NAME}/torrc-defaults
 
 	# install fonts.conf and fonts
-	${INSTALL_DATA_DIR} ${BROWSER_DIR}/browser/fontconfig
-	${SUBST_DATA} \
-	    ${WRKSRC}/tor-browser-linux64/Browser/fontconfig/fonts.conf \
-	    ${BROWSER_DIR}/browser/fontconfig/fonts.conf
 	cp ${WRKSRC}/tor-browser-linux64/Browser/fonts/* \
 	    ${BROWSER_DIR}/fonts
 

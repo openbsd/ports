@@ -41,8 +41,6 @@ lib/${BROWSER_NAME}/browser/defaults/preferences/unveil.socket
 lib/${BROWSER_NAME}/browser/defaults/preferences/unveil.utility
 lib/${BROWSER_NAME}/browser/defaults/profile/
 lib/${BROWSER_NAME}/browser/defaults/profile/bookmarks.html
-lib/${BROWSER_NAME}/browser/fontconfig/
-lib/${BROWSER_NAME}/browser/fontconfig/fonts.conf
 lib/${BROWSER_NAME}/browser/omni.ja
 lib/${BROWSER_NAME}/defaults/
 lib/${BROWSER_NAME}/defaults/pref/
@@ -111,7 +109,6 @@ lib/${BROWSER_NAME}/fonts/NotoSansModi-Regular.ttf
 lib/${BROWSER_NAME}/fonts/NotoSansMongolian-Regular.ttf
 lib/${BROWSER_NAME}/fonts/NotoSansMro-Regular.ttf
 lib/${BROWSER_NAME}/fonts/NotoSansMultani-Regular.ttf
-lib/${BROWSER_NAME}/fonts/NotoSansMyanmar-Regular.ttf
 lib/${BROWSER_NAME}/fonts/NotoSansNKo-Regular.ttf
 lib/${BROWSER_NAME}/fonts/NotoSansNewTaiLue-Regular.ttf
 lib/${BROWSER_NAME}/fonts/NotoSansNewa-Regular.ttf
@@ -189,12 +186,14 @@ lib/${BROWSER_NAME}/fonts/NotoSerifTelugu-Regular.ttf
 lib/${BROWSER_NAME}/fonts/NotoSerifThai-Regular.ttf
 lib/${BROWSER_NAME}/fonts/NotoSerifTibetan-Regular.ttf
 lib/${BROWSER_NAME}/fonts/NotoSerifYezidi-Regular.ttf
+lib/${BROWSER_NAME}/fonts/Pyidaungsu-2.5.3_Regular.ttf
 lib/${BROWSER_NAME}/fonts/STIXTwoMath-Regular.otf
 lib/${BROWSER_NAME}/fonts/Tinos-Bold.ttf
 lib/${BROWSER_NAME}/fonts/Tinos-BoldItalic.ttf
 lib/${BROWSER_NAME}/fonts/Tinos-Italic.ttf
 lib/${BROWSER_NAME}/fonts/Tinos-Regular.ttf
 lib/${BROWSER_NAME}/fonts/TwemojiMozilla.ttf
+lib/${BROWSER_NAME}/fonts/fonts.conf
 @bin lib/${BROWSER_NAME}/glxtest
 @lib lib/${BROWSER_NAME}/libfreebl3.so.${LIBfreebl3_VERSION}
 @lib lib/${BROWSER_NAME}/libgkcodecs.so.${LIBgkcodecs_VERSION}
