@@ -5,6 +5,7 @@ PKGNAME =		retroarch-${GH_TAGNAME:S/v//}
 GH_ACCOUNT =		libretro
 GH_PROJECT =		RetroArch
 GH_TAGNAME =		v1.18.0
+REVISION =		0
 
 # crashes when recording videos due to ffmpeg
 USE_NOBTCFI-amd64 =	Yes
@@ -57,6 +58,7 @@ CONFIGURE_ARGS =	--disable-discord \
 			--disable-v4l2 \
 			--disable-caca \
 			--disable-flac \
+			--disable-sixel \
 			--enable-al
 
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
