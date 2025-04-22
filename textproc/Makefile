@@ -475,6 +475,7 @@
      SUBDIR += py-pypandoc
      SUBDIR += py-pyphen
      SUBDIR += py-python-json-logger
+     SUBDIR += py-pyuca
      SUBDIR += py-rebulk
      SUBDIR += py-recommonmark
      SUBDIR += py-referencing
