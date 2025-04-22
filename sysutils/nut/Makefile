@@ -3,22 +3,20 @@ COMMENT-cgi=	CGIs for monitoring Nut-based UPSs
 COMMENT-snmp=	driver for monitoring UPS via SNMP
 COMMENT-xml=	driver for monitoring UPS via XML/HTTP
 
-V=		2.8.2
-DISTNAME=	nut-${V}
+V=		2.8.3
+DISTNAME=	nut-${V:C/-rc.*//}
+PKGNAME=	nut-${V:S/-rc/rc/}
+SITES=		https://github.com/networkupstools/nut/releases/download/v$V/
 
 PKGNAME-main=	${PKGNAME}
 PKGNAME-cgi=	${PKGNAME:S/-/-cgi-/}
 PKGNAME-snmp=	${PKGNAME:S/-/-snmp-/}
 PKGNAME-xml=	${PKGNAME:S/-/-xml-/}
-REVISION-cgi=	0
-REVISION-main=	1
-REVISION-snmp=	0
-REVISION-xml=	0
 
-SHARED_LIBS +=  upsclient            4.0      # .6.1
-SHARED_LIBS +=  nutclient            1.0      # .2.2
+SHARED_LIBS +=  upsclient            4.1      # .6.2
+SHARED_LIBS +=  nutclient            1.1      # .2.2
 SHARED_LIBS +=  nutclientstub        1.0      # .1.1
-SHARED_LIBS +=  nutscan              3.0      # .2.5
+SHARED_LIBS +=  nutscan              3.1      # .2.6
 
 CATEGORIES=	sysutils
 HOMEPAGE=	https://networkupstools.org/
@@ -35,8 +33,6 @@ WANTLIB-xml +=	${COMMON} expat iconv intl neon proxy ssl z \
 WANTLIB-snmp +=	${COMMON} m netsnmp ssl
 WANTLIB-cgi +=	${COMMON} X11 expat fontconfig iconv intl
 WANTLIB-cgi +=	freetype gd jpeg m png ssl upsclient xcb z
-
-SITES=		https://github.com/networkupstools/nut/releases/download/v$V/
 
 MODULES=	lang/python
 MODPY_RUNDEP=	No
