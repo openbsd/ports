@@ -5,7 +5,7 @@ PKGNAME =		retroarch-${GH_TAGNAME:S/v//}
 GH_ACCOUNT =		libretro
 GH_PROJECT =		RetroArch
 GH_TAGNAME =		v1.18.0
-REVISION =		0
+REVISION =		1
 
 # crashes when recording videos due to ffmpeg
 USE_NOBTCFI-amd64 =	Yes
@@ -19,17 +19,16 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} EGL GL Qt5Concurrent Qt5Core Qt5Gui
 WANTLIB += Qt5Network Qt5Widgets SDL2 X11 X11-xcb Xext Xinerama
-WANTLIB += Xrandr Xv Xxf86vm ass avcodec avformat avutil c crypto
-WANTLIB += drm fontconfig freetype fribidi gbm m openal ssl swresample
-WANTLIB += swscale usb-1.0 xcb xkbcommon
-WANTLIB += mbedcrypto mbedtls mbedx509
+WANTLIB += Xrandr Xxf86vm ass avcodec avformat avutil c crypto
+WANTLIB += drm fontconfig freetype fribidi gbm lzma m mbedcrypto
+WANTLIB += mbedtls mbedx509 openal ssl swresample swscale xcb
+WANTLIB += xkbcommon
 
 MODULES =		x11/qt5
 RUN_DEPENDS =		devel/desktop-file-utils
 
 BUILD_DEPENDS =		graphics/vulkan-tools
 LIB_DEPENDS =		audio/openal \
-			devel/libusb1 \
 			devel/sdl2 \
 			graphics/ffmpeg \
 			security/polarssl \
