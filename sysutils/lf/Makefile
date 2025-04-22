@@ -1,9 +1,9 @@
 COMMENT =	terminal file manager inspired by ranger written in Go
 
 MODGO_MODNAME =	github.com/gokcehan/lf
-MODGO_VERSION =	v0.0.0-20240331195418-d26eb0108a63
+MODGO_VERSION =	v0.0.0-20250209115006-c25647d364e7
 
-R =		32
+R =		34
 DISTNAME =	lf-${R}
 
 CATEGORIES =	sysutils
@@ -16,6 +16,8 @@ MAINTAINER =	Chang, Chu-Kuan <cckuan@changchukuan.name>
 PERMIT_PACKAGE =	Yes
 
 WANTLIB +=		c pthread
+
+MODGO_LDFLAGS +=	-X 'main.gVersion=r${R}'
 
 MODULES =		lang/go
 
