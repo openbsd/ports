@@ -1,10 +1,12 @@
 COMMENT=	dynamic window manager
 
 DISTNAME=	wmii-3.6
-REVISION=	8
+REVISION=	9
 CATEGORIES=	x11
 
 HOMEPAGE=	https://github.com/0intro/wmii
+
+MAINTAINER=	Rares Aioanei <schaiba@gmail.com>
 
 # MIT/X
 PERMIT_PACKAGE=	Yes
