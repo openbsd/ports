@@ -1,6 +1,6 @@
 COMMENT =		Python library for approximate and phonetic string matching
 
-MODPY_DISTV =		1.1.3
+MODPY_DISTV =		1.2.0
 DISTNAME =		jellyfish-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/g}
 
