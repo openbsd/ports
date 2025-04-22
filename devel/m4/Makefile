@@ -4,6 +4,7 @@ DISTNAME=	m4-1.4.19
 CATEGORIES=	devel
 SITES=		${SITE_GNU:=m4/}
 EXTRACT_SUFX=	.tar.xz
+REVISION=	0
 
 HOMEPAGE=	https://www.gnu.org/software/m4/
 

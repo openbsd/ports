@@ -1,0 +1,23 @@
+Fix stack pointer definition on powerpc64.
+
+Index: lib/sigsegv.c
+--- lib/sigsegv.c.orig
++++ lib/sigsegv.c
+@@ -512,9 +512,15 @@ int libsigsegv_version = LIBSIGSEGV_VERSION;
+ # elif defined __powerpc__ || defined __powerpc64__
+ 
+ /* See the definition of 'struct sigcontext' and 'struct trapframe' in
+-   openbsd-src/sys/arch/powerpc/include/signal.h.  */
++   openbsd-src/sys/arch/powerpc/include/signal.h
++   and the definition of 'struct sigcontext' in
++   openbsd-src/sys/arch/powerpc64/include/signal.h.  */
+ 
+-#  define SIGSEGV_FAULT_STACKPOINTER  scp->sc_frame.fixreg[1]
++#  if defined __powerpc64__ /* 64-bit */
++#   define SIGSEGV_FAULT_STACKPOINTER  scp->sc_sp
++#  else /* 32-bit */
++#   define SIGSEGV_FAULT_STACKPOINTER  scp->sc_frame.fixreg[1]
++#  endif
+ 
+ # elif defined __sh__
+ 
