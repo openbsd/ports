@@ -1,10 +1,9 @@
 COMMENT=	common base representation of Python source code
 
 # py-astroid and pylint usually need keeping in-sync
-MODPY_DISTV=	3.1.0
+MODPY_DISTV=	3.3.9
 DISTNAME=	astroid-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	devel
 
@@ -18,6 +17,6 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS=	devel/py-typing-extensions
+TEST_DEPENDS=	devel/py-mypy
 
 .include <bsd.port.mk>

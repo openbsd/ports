@@ -1,5 +1,5 @@
-@pkgpath devel/py-astroid,python3
 @conflict py-astroid-*
+@pkgpath devel/py-astroid,python3
 lib/python${MODPY_VERSION}/site-packages/astroid/
 lib/python${MODPY_VERSION}/site-packages/astroid-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/astroid-${MODPY_DISTV}.dist-info/CONTRIBUTORS.txt
@@ -95,8 +95,6 @@ lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_dat
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_datetime.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_dateutil.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_dateutil.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_fstrings.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_fstrings.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_functools.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_functools.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/${MODPY_PYCACHE}brain_gi.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -190,7 +188,6 @@ lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_curses.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_dataclasses.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_datetime.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_dateutil.py
-lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_fstrings.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_functools.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_gi.py
 lib/python${MODPY_VERSION}/site-packages/astroid/brain/brain_hashlib.py
