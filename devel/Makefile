@@ -1706,6 +1706,7 @@
      SUBDIR += py-test-lazy-fixture
      SUBDIR += py-test-localserver
      SUBDIR += py-test-mock
+     SUBDIR += py-test-order
      SUBDIR += py-test-openfiles
      SUBDIR += py-test-relaxed
      SUBDIR += py-test-remotedata
