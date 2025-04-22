@@ -3,7 +3,7 @@ COMMENT =	open-source reimplementation of Impulse Tracker
 GH_ACCOUNT =	schismtracker
 GH_PROJECT =	schismtracker
 GH_TAGNAME =	20250313
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	audio x11
 
@@ -26,7 +26,7 @@ MODPY_RUNDEP =	No
 RUN_DEPENDS =	devel/desktop-file-utils
 
 LIB_DEPENDS =	devel/sdl2 \
-		www/netsurf/libutf8proc
+		textproc/libutf8proc
 
 CONFIGURE_STYLE =	autoreconf
 AUTOCONF_VERSION =	2.69
