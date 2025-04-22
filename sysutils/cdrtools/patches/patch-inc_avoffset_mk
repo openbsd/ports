@@ -1,0 +1,15 @@
+Avoid stack scanning: unportable and undefined behavior, frequently breaks
+with compiler updates.
+
+Index: inc/avoffset.mk
+--- inc/avoffset.mk.orig
++++ inc/avoffset.mk
+@@ -8,7 +8,7 @@ include		$(SRCROOT)/$(RULESDIR)/rules.top
+ INSDIR=		include/schily/$(OARCH)
+ TARGET=		avoffset.h
+ TARGETC=	avoffset
+-CPPOPTS +=	-DUSE_SCANSTACK
++CPPOPTS +=	-DNO_SCANSTACK
+ CPPOPTS +=	-D__OPRINTF__
+ CFILES=		avoffset.c
+ 

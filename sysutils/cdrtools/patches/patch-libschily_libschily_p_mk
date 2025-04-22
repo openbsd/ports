@@ -1,0 +1,15 @@
+Avoid stack scanning: unportable and undefined behavior, frequently breaks
+with compiler updates.
+
+Index: libschily/libschily_p.mk
+--- libschily/libschily_p.mk.orig
++++ libschily/libschily_p.mk
+@@ -12,7 +12,7 @@ VPATH=		.:stdio:$(ARCHDIR)
+ INSDIR=		lib
+ TARGETLIB=	schily
+ CPPOPTS +=	-Istdio
+-CPPOPTS +=	-DUSE_SCANSTACK	# Try to scan stack frames
++CPPOPTS +=	-DNO_SCANSTACK	# Try to scan stack frames
+ CPPOPTS +=	-DPORT_ONLY	# Add missing funcs line snprintf for porting
+ COPTS +=	$(COPTGPROF)
+ include		Targets
