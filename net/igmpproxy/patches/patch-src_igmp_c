@@ -1,6 +1,24 @@
 Index: src/igmp.c
 --- src/igmp.c.orig
 +++ src/igmp.c
+@@ -84,7 +84,7 @@ void initIgmp(void) {
+ *   Finds the textual name of the supplied IGMP request.
+ */
+ static const char *igmpPacketKind(unsigned int type, unsigned int code) {
+-    static char unknown[20];
++    static char unknown[32];
+ 
+     switch (type) {
+     case IGMP_MEMBERSHIP_QUERY:     return  "Membership query  ";
+@@ -94,7 +94,7 @@ static const char *igmpPacketKind(unsigned int type, u
+     case IGMP_V2_LEAVE_GROUP:        return "Leave message     ";
+ 
+     default:
+-        sprintf(unknown, "unk: 0x%02x/0x%02x    ", type, code);
++        snprintf(unknown, sizeof unknown, "unk: 0x%02x/0x%02x    ", type, code);
+         return unknown;
+     }
+ }
 @@ -132,6 +132,7 @@ void acceptIgmp(int recvlen) {
          }
          else {

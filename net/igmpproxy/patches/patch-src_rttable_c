@@ -404,7 +404,24 @@ Index: src/rttable.c
  
              // We append the activity counter to the age, and continue...
              croute->ageValue = croute->ageActivity;
-@@ -718,39 +704,61 @@ int internAgeRoute(struct RouteTable*  croute) {
+@@ -704,13 +690,15 @@ int internAgeRoute(struct RouteTable*  croute) {
+ 
+             // No activity was registered within the timelimit, so remove the route.
+             removeRoute(croute);
++            croute = NULL;
+         }
+         // Tell that the route was updated...
+         result = 1;
+     }
+ 
+     // The aging vif bits must be reset for each round...
+-    BIT_ZERO(croute->ageVifBits);
++    if (croute != NULL)
++        BIT_ZERO(croute->ageVifBits);
+ 
+     return result;
+ }
+@@ -718,39 +706,61 @@ int internAgeRoute(struct RouteTable*  croute) {
  /**
  *   Updates the Kernel routing table. If activate is 1, the route
  *   is (re-)activated. If activate is false, the route is removed.
@@ -480,7 +497,7 @@ Index: src/rttable.c
          }
  
          // Do the actual Kernel route update...
-@@ -772,7 +780,7 @@ int internUpdateKernelRoute(struct RouteTable *route, 
+@@ -772,7 +782,7 @@ int internUpdateKernelRoute(struct RouteTable *route, 
  */
  void logRouteTable(const char *header) {
          struct Config       *conf = getCommonConfig();
@@ -489,7 +506,7 @@ Index: src/rttable.c
          unsigned            rcount = 0;
  
          my_log(LOG_DEBUG, 0, "");
-@@ -781,30 +789,22 @@ void logRouteTable(const char *header) {
+@@ -781,30 +791,22 @@ void logRouteTable(const char *header) {
          if(croute==NULL) {
              my_log(LOG_DEBUG, 0, "No routes in table...");
          } else {
