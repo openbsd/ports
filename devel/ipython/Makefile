@@ -1,6 +1,7 @@
 COMMENT =		enhanced interactive Python shell
 
-MODPY_DISTV =		8.32.0
+# spyder does not support ipython 9.x yet
+MODPY_DISTV =		8.35.0
 DISTNAME =		ipython-${MODPY_DISTV}
 PKGNAME =		ipython${MODPY_MAJOR_VERSION}-${MODPY_DISTV}
 
@@ -18,10 +19,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-# XXX: pickleshare is optional as of 8.17, but keep as RDEP for now.
-# If pickleshare is ever removed as an RDEP, it needs to become a TDEP
-RUN_DEPENDS =		databases/py-pickleshare \
-			devel/desktop-file-utils \
+RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/py-decorator \
 			devel/py-jedi>=0.16 \
 			devel/py-pexpect>=4.3 \
@@ -32,7 +30,9 @@ RUN_DEPENDS =		databases/py-pickleshare \
 			textproc/py-pygments>=2.4.0
 
 # Note that if you have pdb++ installed, tests will fail.
-TEST_DEPENDS =		devel/py-ipykernel \
+# Could benefit from having jupyter_ai
+TEST_DEPENDS =		databases/py-pickleshare \
+			devel/py-ipykernel \
 			devel/py-curio \
 			devel/py-nbformat \
 			devel/py-testpath \

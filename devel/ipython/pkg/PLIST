@@ -586,6 +586,8 @@ lib/python${MODPY_VERSION}/site-packages/IPython/terminal/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/IPython/terminal/tests/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/tests/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/terminal/tests/${MODPY_PYCACHE}fake_llm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/IPython/terminal/tests/${MODPY_PYCACHE}fake_llm.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/tests/${MODPY_PYCACHE}test_debug_magic.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/tests/${MODPY_PYCACHE}test_debug_magic.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/tests/${MODPY_PYCACHE}test_embed.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -598,6 +600,7 @@ lib/python${MODPY_VERSION}/site-packages/IPython/terminal/tests/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/tests/${MODPY_PYCACHE}test_pt_inputhooks.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/tests/${MODPY_PYCACHE}test_shortcuts.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/tests/${MODPY_PYCACHE}test_shortcuts.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/IPython/terminal/tests/fake_llm.py
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/tests/test_debug_magic.py
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/tests/test_embed.py
 lib/python${MODPY_VERSION}/site-packages/IPython/terminal/tests/test_help.py
