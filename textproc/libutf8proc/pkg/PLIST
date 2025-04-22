@@ -1,0 +1,4 @@
+@pkgpath www/netsurf/libutf8proc
+include/utf8proc.h
+@lib lib/libutf8proc.so.${LIButf8proc_VERSION}
+lib/pkgconfig/libutf8proc.pc
