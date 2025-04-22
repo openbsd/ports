@@ -276,6 +276,7 @@
      SUBDIR += py-argon2-cffi-bindings
      SUBDIR += py-artifacts
      SUBDIR += py-asn1crypto
+     SUBDIR += py-asyncssh
      SUBDIR += py-axolotl
      SUBDIR += py-axolotl-curve25519
      SUBDIR += py-bcrypt
