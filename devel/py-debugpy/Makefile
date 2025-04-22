@@ -1,10 +1,12 @@
 COMMENT =	Python implementation of the debug adapter protocol
 
-MODPY_DISTV=	1.8.13
+MODPY_DISTV=	1.8.14
 DISTNAME=	debugpy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
 CATEGORIES=	devel
+
+MAINTAINER=	Daniel Dickman <daniel@openbsd.org>
 
 # MIT
 PERMIT_PACKAGE=	Yes

@@ -1,5 +1,6 @@
 @pkgpath devel/py-debugpy,python3
 bin/debugpy
+bin/debugpy-adapter
 lib/python${MODPY_VERSION}/site-packages/debugpy/
 lib/python${MODPY_VERSION}/site-packages/debugpy-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/debugpy-${MODPY_DISTV}.dist-info/LICENSE
