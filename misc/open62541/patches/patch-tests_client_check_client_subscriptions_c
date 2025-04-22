@@ -1,3 +1,6 @@
+fix(test): client async connect is not instant
+https://github.com/open62541/open62541/commit/a540be9ce8a64fe856600a404755e4ddf986e9d2
+
 Index: tests/client/check_client_subscriptions.c
 --- tests/client/check_client_subscriptions.c.orig
 +++ tests/client/check_client_subscriptions.c

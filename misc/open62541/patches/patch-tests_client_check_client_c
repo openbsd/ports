@@ -1,5 +1,7 @@
-fix(tests): network is not instant 
+fix(tests): network is not instant
 https://github.com/open62541/open62541/commit/d40ce0724b82a22228b7e5c32b4bb401cb8e7a1c
+fix(test): client async connect is not instant
+https://github.com/open62541/open62541/commit/a540be9ce8a64fe856600a404755e4ddf986e9d2
 
 Index: tests/client/check_client.c
 --- tests/client/check_client.c.orig
