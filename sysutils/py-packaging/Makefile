@@ -1,10 +1,8 @@
 COMMENT=	core utilities for Python packaging
 
-MODPY_DISTV=	24.2
-
+MODPY_DISTV=	25.0
 DISTNAME=	packaging-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	sysutils
 
