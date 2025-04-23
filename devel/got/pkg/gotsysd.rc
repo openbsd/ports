@@ -1,0 +1,15 @@
+#!/bin/ksh
+
+daemon="${TRUEPREFIX}/sbin/gotsysd"
+
+. /etc/rc.d/rc.subr
+
+pexp="gotsysd: parent"
+
+rc_configtest() {
+	${daemon} -n ${daemon_flags}
+}
+
+rc_reload=NO
+
+rc_cmd $1

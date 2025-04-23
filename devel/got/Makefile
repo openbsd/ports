@@ -2,13 +2,14 @@ COMMENT-main =		game of trees version control system
 COMMENT-server =	game of trees repository server
 COMMENT-webd =		game of trees repository fast-cgi server
 COMMENT-gitwrapper =	invoke an appropriate Git repository server
+COMMENT-sysd =		game of trees system management daemon
 
-V =			0.110
-REVISION =		0
+V =			0.111
 DISTNAME =		got-${V}
 PKGNAME-server =	gotd-${V}
 PKGNAME-webd =		gotwebd-${V}
 PKGNAME-gitwrapper =	gitwrapper-${V}
+PKGNAME-sysd =		gotsysd-${V}
 CATEGORIES =		devel
 HOMEPAGE =		https://gameoftrees.org
 MAINTAINER =		Stefan Sperling <stsp@openbsd.org>
@@ -17,18 +18,20 @@ MAINTAINER =		Stefan Sperling <stsp@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS-server =	devel/got,-gitwrapper
+RUN_DEPENDS-webd =	devel/got,-main
 
-MULTI_PACKAGES =	-main -server -webd -gitwrapper
+MULTI_PACKAGES =	-main -server -webd -gitwrapper -sysd
 
 # uses pledge()
 WANTLIB-main =		c curses m panel pthread tls util z
 WANTLIB-server =	c crypto event m tls util z
 WANTLIB-webd =		c event m util z
 WANTLIB-gitwrapper =	c
+WANTLIB-sysd =		c event m util z
 
 MAKE_FLAGS =		CC="${CC}"
-ALL_TARGET =		all server webd
-INSTALL_TARGET =	install server-install webd-install
+ALL_TARGET =		all server webd sysd
+INSTALL_TARGET =	install server-install webd-install sysd-install
 
 SITES =			https://gameoftrees.org/releases/
 

@@ -1,0 +1,20 @@
+@newgroup _gotsysd:600
+@newuser _gotsysd:600:_gotsysd::Game of Trees System Daemon:/nonexistent:/sbin/nologin
+@rcscript ${RCDIR}/gotsysd
+@bin libexec/gotsys-apply
+@bin libexec/gotsys-apply-conf
+@bin libexec/gotsys-check
+@bin libexec/gotsys-groupadd
+@bin libexec/gotsys-read-conf
+@bin libexec/gotsys-repo-create
+@bin libexec/gotsys-rmkeys
+@bin libexec/gotsys-sshdconfig
+@bin libexec/gotsys-useradd
+@bin libexec/gotsys-userhome
+@bin libexec/gotsys-userkeys
+@bin libexec/gotsys-write-conf
+@man man/man5/gotsysd.conf.5
+@bin sbin/gotsysctl
+@bin sbin/gotsysd
+@man man/man8/gotsysctl.8
+@man man/man8/gotsysd.8

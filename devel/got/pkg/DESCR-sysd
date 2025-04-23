@@ -1,0 +1,10 @@
+gotsysd(8) is the Game of Trees System management daemon.
+
+gotsysd(8) allows managing a gotd(8) server without having direct shell
+access to the OpenBSD system which runs gotd(8). Service administrators
+manage the gotd(8) server by committing changes to gotsys.conf(5) in the
+special gotsys.git repository, rather than via a root shell.
+
+gotsysd(8) supports the creation of Git repositories, the creation of
+user accounts running gotsh(1), setting repository access permissions,
+and more.

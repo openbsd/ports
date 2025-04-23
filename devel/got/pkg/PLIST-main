@@ -1,6 +1,7 @@
 @pkgpath devel/got
 @bin bin/got
 @bin bin/gotadmin
+@bin bin/gotsys
 @bin bin/tog
 @bin libexec/got-fetch-http
 @bin libexec/got-fetch-pack
@@ -17,7 +18,9 @@
 @bin libexec/got-send-pack
 @man man/man1/got.1
 @man man/man1/gotadmin.1
+@man man/man1/gotsys.1
 @man man/man1/tog.1
 @man man/man5/git-repository.5
 @man man/man5/got-worktree.5
 @man man/man5/got.conf.5
+@man man/man5/gotsys.conf.5
