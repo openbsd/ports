@@ -17,7 +17,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =		flit_core
+MODPY_PYBUILD =		hatchling
 
 RUN_DEPENDS =		devel/py-typing-extensions
 
