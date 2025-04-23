@@ -1,5 +1,6 @@
---- configure.ac.orig	Sun Nov 17 07:09:38 2019
-+++ configure.ac	Sat Feb  3 15:47:48 2024
+Index: configure.ac
+--- configure.ac.orig
++++ configure.ac
 @@ -201,7 +201,7 @@ fi
  
  PKG_CHECK_MODULES(
@@ -18,3 +19,18 @@
  fi
  
  PKG_CHECK_MODULES(
+@@ -310,11 +310,11 @@ fi
+ AC_SUBST(XOPEN_DEFINES)
+ 
+ # Look for imsg in libutil. compat/imsg.c is linked by Makefile.am if missing.
+-AC_SEARCH_LIBS(imsg_init, util, found_imsg_init=yes, found_imsg_init=no)
+-if test "x$found_imsg_init" = xyes; then
++AC_SEARCH_LIBS(imsgbuf_init, util, found_imsgbuf_init=yes, found_imsgbuf_init=no)
++if test "x$found_imsgbuf_init" = xyes; then
+ 	AC_DEFINE(HAVE_IMSG)
+ fi
+-AM_CONDITIONAL(NO_IMSG, [test "x$found_imsg_init" = xno])
++AM_CONDITIONAL(NO_IMSG, [test "x$found_imsgbuf_init" = xno])
+ 
+ # Look for forkpty in libutil. compat/forkpty-*.c is linked if not found.
+ AC_SEARCH_LIBS(forkpty, util, found_forkpty=yes, found_forkpty=no)

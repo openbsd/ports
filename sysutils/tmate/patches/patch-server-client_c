@@ -1,0 +1,14 @@
+Index: server-client.c
+--- server-client.c.orig
++++ server-client.c
+@@ -1238,8 +1238,8 @@ server_client_dispatch_identify(struct client *c, stru
+ 	case MSG_IDENTIFY_STDIN:
+ 		if (datalen != 0)
+ 			fatalx("bad MSG_IDENTIFY_STDIN size");
+-		c->fd = imsg->fd;
+-		log_debug("client %p IDENTIFY_STDIN %d", c, imsg->fd);
++		c->fd = imsg_get_fd(imsg);
++		log_debug("client %p IDENTIFY_STDIN %d", c, c->fd);
+ 		break;
+ 	case MSG_IDENTIFY_ENVIRON:
+ 		if (datalen == 0 || data[datalen - 1] != '\0')

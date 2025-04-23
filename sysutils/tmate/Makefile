@@ -4,7 +4,7 @@ GH_ACCOUNT =	tmate-io
 GH_PROJECT =	tmate
 GH_TAGNAME =	2.4.0
 CATEGORIES =	sysutils
-REVISION =	8
+REVISION =	9
 
 SITES.p =	https://github.com/tmate-io/tmate/commit/
 PATCHFILES.p =	tmate-bad-fingerprint{cbec43f56dfb48c2fb6e00faa2cb85443d4b7d8f}.patch \
