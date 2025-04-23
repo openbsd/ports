@@ -1,5 +1,5 @@
-refactor(client): Refactor NetworkCallback to make the unit tests work
-https://github.com/open62541/open62541/commit/de9d691906547c9fc99e0a77198a80fe5bba54b1
+fix(client): use after free in client asyncServiceCalls
+https://github.com/open62541/open62541/commit/4874837ea15fd83a346684bfc2c1be1ec664695d
 
 Index: src/client/ua_client_internal.h
 --- src/client/ua_client_internal.h.orig
