@@ -1,7 +1,7 @@
 # XXX If broken on an architecture, remove the arch from LLVM_ARCHS.
 ONLY_FOR_ARCHS ?=	${LLVM_ARCHS}
 
-DPB_PROPERTIES =	parallel
+DPB_PROPERTIES =	parallel parallel2
 
 COMMENT-main =		modular, fast C/C++/ObjC compiler, static analyzer and tools
 COMMENT-lldb =		LLDB debugger
