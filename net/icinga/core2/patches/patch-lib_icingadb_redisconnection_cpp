@@ -1,0 +1,120 @@
+Support Boost 1.87
+https://github.com/Icinga/icinga2/pull/10278
+
+Index: lib/icingadb/redisconnection.cpp
+--- lib/icingadb/redisconnection.cpp.orig
++++ lib/icingadb/redisconnection.cpp
+@@ -377,8 +377,6 @@ void RedisConnection::Connect(asio::yield_context& yc)
+ 			}
+ 
+ 			break;
+-		} catch (const boost::coroutines::detail::forced_unwind&) {
+-			throw;
+ 		} catch (const std::exception& ex) {
+ 			Log(LogCritical, "IcingaDB")
+ 				<< "Cannot connect to " << m_Host << ":" << m_Port << ": " << ex.what();
+@@ -408,18 +406,11 @@ void RedisConnection::ReadLoop(asio::yield_context& yc
+ 						for (auto i (item.Amount); i; --i) {
+ 							ReadOne(yc);
+ 						}
+-					} catch (const boost::coroutines::detail::forced_unwind&) {
+-						throw;
+ 					} catch (const std::exception& ex) {
+ 						Log(LogCritical, "IcingaDB")
+ 							<< "Error during receiving the response to a query which has been fired and forgotten: " << ex.what();
+ 
+ 						continue;
+-					} catch (...) {
+-						Log(LogCritical, "IcingaDB")
+-							<< "Error during receiving the response to a query which has been fired and forgotten";
+-
+-						continue;
+ 					}
+ 
+ 					break;
+@@ -432,9 +423,7 @@ void RedisConnection::ReadLoop(asio::yield_context& yc
+ 
+ 						try {
+ 							reply = ReadOne(yc);
+-						} catch (const boost::coroutines::detail::forced_unwind&) {
+-							throw;
+-						} catch (...) {
++						} catch (const std::exception&) {
+ 							promise.set_exception(std::current_exception());
+ 
+ 							continue;
+@@ -455,9 +444,7 @@ void RedisConnection::ReadLoop(asio::yield_context& yc
+ 						for (auto i (item.Amount); i; --i) {
+ 							try {
+ 								replies.emplace_back(ReadOne(yc));
+-							} catch (const boost::coroutines::detail::forced_unwind&) {
+-								throw;
+-							} catch (...) {
++							} catch (const std::exception&) {
+ 								promise.set_exception(std::current_exception());
+ 								break;
+ 							}
+@@ -551,20 +538,12 @@ void RedisConnection::WriteItem(boost::asio::yield_con
+ 
+ 		try {
+ 			WriteOne(item, yc);
+-		} catch (const boost::coroutines::detail::forced_unwind&) {
+-			throw;
+ 		} catch (const std::exception& ex) {
+ 			Log msg (LogCritical, "IcingaDB", "Error during sending query");
+ 			LogQuery(item, msg);
+ 			msg << " which has been fired and forgotten: " << ex.what();
+ 
+ 			return;
+-		} catch (...) {
+-			Log msg (LogCritical, "IcingaDB", "Error during sending query");
+-			LogQuery(item, msg);
+-			msg << " which has been fired and forgotten";
+-
+-			return;
+ 		}
+ 
+ 		if (m_Queues.FutureResponseActions.empty() || m_Queues.FutureResponseActions.back().Action != ResponseAction::Ignore) {
+@@ -587,20 +566,12 @@ void RedisConnection::WriteItem(boost::asio::yield_con
+ 				WriteOne(query, yc);
+ 				++i;
+ 			}
+-		} catch (const boost::coroutines::detail::forced_unwind&) {
+-			throw;
+ 		} catch (const std::exception& ex) {
+ 			Log msg (LogCritical, "IcingaDB", "Error during sending query");
+ 			LogQuery(item[i], msg);
+ 			msg << " which has been fired and forgotten: " << ex.what();
+ 
+ 			return;
+-		} catch (...) {
+-			Log msg (LogCritical, "IcingaDB", "Error during sending query");
+-			LogQuery(item[i], msg);
+-			msg << " which has been fired and forgotten";
+-
+-			return;
+ 		}
+ 
+ 		if (m_Queues.FutureResponseActions.empty() || m_Queues.FutureResponseActions.back().Action != ResponseAction::Ignore) {
+@@ -618,9 +589,7 @@ void RedisConnection::WriteItem(boost::asio::yield_con
+ 
+ 		try {
+ 			WriteOne(item.first, yc);
+-		} catch (const boost::coroutines::detail::forced_unwind&) {
+-			throw;
+-		} catch (...) {
++		} catch (const std::exception&) {
+ 			item.second.set_exception(std::current_exception());
+ 
+ 			return;
+@@ -645,9 +614,7 @@ void RedisConnection::WriteItem(boost::asio::yield_con
+ 			for (auto& query : item.first) {
+ 				WriteOne(query, yc);
+ 			}
+-		} catch (const boost::coroutines::detail::forced_unwind&) {
+-			throw;
+-		} catch (...) {
++		} catch (const std::exception&) {
+ 			item.second.set_exception(std::current_exception());
+ 
+ 			return;

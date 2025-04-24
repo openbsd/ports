@@ -1,0 +1,28 @@
+Support Boost 1.87
+https://github.com/Icinga/icinga2/pull/10278
+
+Index: lib/icingadb/redisconnection.hpp
+--- lib/icingadb/redisconnection.hpp.orig
++++ lib/icingadb/redisconnection.hpp
+@@ -388,9 +388,7 @@ RedisConnection::Reply RedisConnection::ReadOne(Stream
+ 
+ 	try {
+ 		return ReadRESP(*strm, yc);
+-	} catch (const boost::coroutines::detail::forced_unwind&) {
+-		throw;
+-	} catch (...) {
++	} catch (const std::exception&) {
+ 		if (m_Connecting.exchange(false)) {
+ 			m_Connected.store(false);
+ 			stream = nullptr;
+@@ -426,9 +424,7 @@ void RedisConnection::WriteOne(StreamPtr& stream, Redi
+ 	try {
+ 		WriteRESP(*strm, query, yc);
+ 		strm->async_flush(yc);
+-	} catch (const boost::coroutines::detail::forced_unwind&) {
+-		throw;
+-	} catch (...) {
++	} catch (const std::exception&) {
+ 		if (m_Connecting.exchange(false)) {
+ 			m_Connected.store(false);
+ 			stream = nullptr;
