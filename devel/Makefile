@@ -1952,6 +1952,7 @@
      SUBDIR += startup-notification
      SUBDIR += stfl
      SUBDIR += stp
+     SUBDIR += stylua
      SUBDIR += subversion
      SUBDIR += swig
      SUBDIR += t1lib
