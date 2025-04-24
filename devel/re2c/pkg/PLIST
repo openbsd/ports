@@ -6,6 +6,7 @@
 @bin bin/re2ocaml
 @bin bin/re2py
 @bin bin/re2rust
+@bin bin/re2swift
 @bin bin/re2v
 @bin bin/re2zig
 @man man/man1/re2c.1
@@ -16,6 +17,7 @@
 @man man/man1/re2ocaml.1
 @man man/man1/re2py.1
 @man man/man1/re2rust.1
+@man man/man1/re2swift.1
 @man man/man1/re2v.1
 @man man/man1/re2zig.1
 share/re2c/
@@ -29,6 +31,7 @@ share/re2c/stdlib/js
 share/re2c/stdlib/ocaml
 share/re2c/stdlib/python
 share/re2c/stdlib/rust
+share/re2c/stdlib/swift
 share/re2c/stdlib/unicode_categories.re
 share/re2c/stdlib/v
 share/re2c/stdlib/zig

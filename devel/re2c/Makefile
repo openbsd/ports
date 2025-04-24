@@ -1,11 +1,12 @@
 COMMENT=	C-based regular expression scanner generator
 
-V=		4.1
+V=		4.2
 DISTNAME=	re2c-$V
 EXTRACT_SUFX=	.tar.xz
 CATEGORIES=	devel
 
 HOMEPAGE=	https://re2c.org/
+SITES=		https://github.com/skvadrik/re2c/releases/download/$V/
 
 # public domain
 PERMIT_PACKAGE=	Yes
@@ -14,8 +15,6 @@ WANTLIB += c m ${COMPILER_LIBCXX}
 
 # C++11
 COMPILER=	base-clang ports-gcc
-
-SITES=		https://github.com/skvadrik/re2c/releases/download/$V/
 
 TEST_DEPENDS=	shells/bash
 
