@@ -298,7 +298,8 @@ libexec/visualvm/visualvm/config/Modules/org-graalvm-visualvm-lib-profiler-utili
 libexec/visualvm/visualvm/config/Modules/org-graalvm-visualvm-lib-profiler.xml
 libexec/visualvm/visualvm/config/Modules/org-graalvm-visualvm-lib-ui.xml
 libexec/visualvm/visualvm/config/Modules/org-graalvm-visualvm-modules-appui.xml
-libexec/visualvm/visualvm/config/Modules/org-graalvm-visualvm-modules-nashorn-jdk15.xml
+libexec/visualvm/visualvm/config/Modules/org-graalvm-visualvm-modules-killapp.xml
+libexec/visualvm/visualvm/config/Modules/org-graalvm-visualvm-nashorn-jdk15.xml
 libexec/visualvm/visualvm/config/Modules/org-graalvm-visualvm-pluginimporter.xml
 libexec/visualvm/visualvm/config/Modules/org-graalvm-visualvm-profiler.xml
 libexec/visualvm/visualvm/config/Modules/org-graalvm-visualvm-profiling.xml
@@ -362,7 +363,7 @@ libexec/visualvm/visualvm/lib/jfluid-server-15.jar
 libexec/visualvm/visualvm/lib/jfluid-server.jar
 libexec/visualvm/visualvm/modules/
 libexec/visualvm/visualvm/modules/ext/
-libexec/visualvm/visualvm/modules/ext/asm-util-9.5.jar
+libexec/visualvm/visualvm/modules/ext/asm-util-9.7.jar
 libexec/visualvm/visualvm/modules/ext/common-8.3.1.jar
 libexec/visualvm/visualvm/modules/ext/encoder-1.2.3.jar
 libexec/visualvm/visualvm/modules/ext/flightrecorder-8.3.1.jar
@@ -412,7 +413,8 @@ libexec/visualvm/visualvm/modules/org-graalvm-visualvm-lib-profiler-utilities.ja
 libexec/visualvm/visualvm/modules/org-graalvm-visualvm-lib-profiler.jar
 libexec/visualvm/visualvm/modules/org-graalvm-visualvm-lib-ui.jar
 libexec/visualvm/visualvm/modules/org-graalvm-visualvm-modules-appui.jar
-libexec/visualvm/visualvm/modules/org-graalvm-visualvm-modules-nashorn-jdk15.jar
+libexec/visualvm/visualvm/modules/org-graalvm-visualvm-modules-killapp.jar
+libexec/visualvm/visualvm/modules/org-graalvm-visualvm-nashorn-jdk15.jar
 libexec/visualvm/visualvm/modules/org-graalvm-visualvm-pluginimporter.jar
 libexec/visualvm/visualvm/modules/org-graalvm-visualvm-profiler.jar
 libexec/visualvm/visualvm/modules/org-graalvm-visualvm-profiling.jar
@@ -458,8 +460,9 @@ libexec/visualvm/visualvm/update_tracking/org-graalvm-visualvm-lib-profiler-util
 libexec/visualvm/visualvm/update_tracking/org-graalvm-visualvm-lib-profiler.xml
 libexec/visualvm/visualvm/update_tracking/org-graalvm-visualvm-lib-ui.xml
 libexec/visualvm/visualvm/update_tracking/org-graalvm-visualvm-modules-appui.xml
-libexec/visualvm/visualvm/update_tracking/org-graalvm-visualvm-modules-nashorn-jdk15.xml
+libexec/visualvm/visualvm/update_tracking/org-graalvm-visualvm-modules-killapp.xml
 libexec/visualvm/visualvm/update_tracking/org-graalvm-visualvm-modules-startup.xml
+libexec/visualvm/visualvm/update_tracking/org-graalvm-visualvm-nashorn-jdk15.xml
 libexec/visualvm/visualvm/update_tracking/org-graalvm-visualvm-pluginimporter.xml
 libexec/visualvm/visualvm/update_tracking/org-graalvm-visualvm-profiler.xml
 libexec/visualvm/visualvm/update_tracking/org-graalvm-visualvm-profiling.xml
