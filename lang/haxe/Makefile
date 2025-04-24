@@ -1,3 +1,7 @@
+# - haxe -> sedlex -> ppxlib -> sexplib0
+# unmet availability conditions: 'arch != "arm32" & arch != "x86_32"'
+NOT_FOR_ARCHS =	i386 armv7
+
 COMMENT =	toolkit for the Haxe programming language
 
 V =		4.3.6
