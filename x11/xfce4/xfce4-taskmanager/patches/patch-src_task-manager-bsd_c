@@ -1,0 +1,23 @@
+P_ZOMBIE macro was removed 
+
+Index: src/task-manager-bsd.c
+--- src/task-manager-bsd.c.orig
++++ src/task-manager-bsd.c
+@@ -35,7 +35,7 @@
+ #include <string.h>
+ /* for getpagesize() */
+ #include <unistd.h>
+-/* for P_ZOMBIE & SSLEEP */
++/* for PS_ZOMBIE & SSLEEP */
+ #include <sys/proc.h>
+ /* for struct vmtotal */
+ #include <sys/vmmeter.h>
+@@ -117,7 +117,7 @@ get_task_list (GArray *task_list)
+ 		g_snprintf (t.state, sizeof t.state, "%s", state_abbrev[p.p_stat]);
+ 		g_strlcpy (t.name, p.p_comm, strlen (p.p_comm) + 1);
+ 		/* shamelessly stolen from top/machine.c */
+-		if (!P_ZOMBIE (&p))
++		if ((p.p_psflags & PS_ZOMBIE) == 0)
+ 		{
+ 			size = 1024;
+ 			if ((args = malloc (size)) == NULL)
