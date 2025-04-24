@@ -1,5 +1,8 @@
 USE_WXNEEDED =	Yes
 
+# https://github.com/rstudio/rstudio/issues/15688
+BROKEN =	doesnt build with boost 1.87, needs update
+
 # XXX: patches/patch-src_cpp_core_r_util_REnvironmentPosix_cpp
 # must be kept in sync with math/R shlib bumps.
 
