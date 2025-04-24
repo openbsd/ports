@@ -10,3 +10,12 @@ Index: src/processes.c
  #endif
  #endif
  
+@@ -2544,7 +2544,7 @@ static int ps_read(void) {
+ 
+       proc_ptr = &(procs[i]);
+       /* Don't probe zombie processes  */
+-      if (!P_ZOMBIE(proc_ptr)) {
++      if ((proc_ptr->p_psflags & PS_ZOMBIE) == 0) {
+         char **argv;
+         int argc;
+         int status;
