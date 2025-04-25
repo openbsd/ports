@@ -1638,6 +1638,7 @@ lib/R/library/tools/html/00Index.html
 lib/R/library/tools/html/R.css
 lib/R/library/tools/libs/
 @so lib/R/library/tools/libs/tools.so
+lib/R/library/tools/wre.txt
 lib/R/library/translations/
 lib/R/library/translations/DESCRIPTION
 lib/R/library/translations/ar/
@@ -1806,20 +1807,26 @@ lib/R/library/translations/en_GB/LC_MESSAGES/utils.mo
 lib/R/library/translations/es/
 lib/R/library/translations/es/LC_MESSAGES/
 lib/R/library/translations/es/LC_MESSAGES/R-base.mo
+lib/R/library/translations/es/LC_MESSAGES/R-compiler.mo
 lib/R/library/translations/es/LC_MESSAGES/R-grDevices.mo
 lib/R/library/translations/es/LC_MESSAGES/R-graphics.mo
 lib/R/library/translations/es/LC_MESSAGES/R-grid.mo
 lib/R/library/translations/es/LC_MESSAGES/R-methods.mo
 lib/R/library/translations/es/LC_MESSAGES/R-parallel.mo
+lib/R/library/translations/es/LC_MESSAGES/R-splines.mo
 lib/R/library/translations/es/LC_MESSAGES/R-stats.mo
 lib/R/library/translations/es/LC_MESSAGES/R-stats4.mo
+lib/R/library/translations/es/LC_MESSAGES/R-tcltk.mo
 lib/R/library/translations/es/LC_MESSAGES/R-tools.mo
 lib/R/library/translations/es/LC_MESSAGES/R-utils.mo
 lib/R/library/translations/es/LC_MESSAGES/R.mo
 lib/R/library/translations/es/LC_MESSAGES/RGui.mo
 lib/R/library/translations/es/LC_MESSAGES/grDevices.mo
 lib/R/library/translations/es/LC_MESSAGES/graphics.mo
+lib/R/library/translations/es/LC_MESSAGES/grid.mo
+lib/R/library/translations/es/LC_MESSAGES/methods.mo
 lib/R/library/translations/es/LC_MESSAGES/parallel.mo
+lib/R/library/translations/es/LC_MESSAGES/splines.mo
 lib/R/library/translations/es/LC_MESSAGES/stats.mo
 lib/R/library/translations/es/LC_MESSAGES/tcltk.mo
 lib/R/library/translations/es/LC_MESSAGES/tools.mo
@@ -1877,10 +1884,13 @@ lib/R/library/translations/hi/LC_MESSAGES/utils.mo
 lib/R/library/translations/hu/
 lib/R/library/translations/hu/LC_MESSAGES/
 lib/R/library/translations/hu/LC_MESSAGES/R-base.mo
+lib/R/library/translations/hu/LC_MESSAGES/R-compiler.mo
 lib/R/library/translations/hu/LC_MESSAGES/R-graphics.mo
+lib/R/library/translations/hu/LC_MESSAGES/R-methods.mo
 lib/R/library/translations/hu/LC_MESSAGES/R-parallel.mo
 lib/R/library/translations/hu/LC_MESSAGES/R-splines.mo
 lib/R/library/translations/hu/LC_MESSAGES/R-stats.mo
+lib/R/library/translations/hu/LC_MESSAGES/R-stats4.mo
 lib/R/library/translations/hu/LC_MESSAGES/R-tcltk.mo
 lib/R/library/translations/hu/LC_MESSAGES/R-tools.mo
 lib/R/library/translations/hu/LC_MESSAGES/R-utils.mo
@@ -1890,6 +1900,7 @@ lib/R/library/translations/hu/LC_MESSAGES/grDevices.mo
 lib/R/library/translations/hu/LC_MESSAGES/graphics.mo
 lib/R/library/translations/hu/LC_MESSAGES/grid.mo
 lib/R/library/translations/hu/LC_MESSAGES/parallel.mo
+lib/R/library/translations/hu/LC_MESSAGES/splines.mo
 lib/R/library/translations/hu/LC_MESSAGES/stats.mo
 lib/R/library/translations/hu/LC_MESSAGES/tcltk.mo
 lib/R/library/translations/hu/LC_MESSAGES/tools.mo
@@ -2006,7 +2017,12 @@ lib/R/library/translations/lt/LC_MESSAGES/tools.mo
 lib/R/library/translations/lt/LC_MESSAGES/utils.mo
 lib/R/library/translations/ne/
 lib/R/library/translations/ne/LC_MESSAGES/
+lib/R/library/translations/ne/LC_MESSAGES/R-base.mo
 lib/R/library/translations/ne/LC_MESSAGES/R-compiler.mo
+lib/R/library/translations/ne/LC_MESSAGES/R-parallel.mo
+lib/R/library/translations/ne/LC_MESSAGES/R-tcltk.mo
+lib/R/library/translations/ne/LC_MESSAGES/R-tools.mo
+lib/R/library/translations/ne/LC_MESSAGES/R-utils.mo
 lib/R/library/translations/ne/LC_MESSAGES/R.mo
 lib/R/library/translations/ne/LC_MESSAGES/RGui.mo
 lib/R/library/translations/nn/
@@ -2370,6 +2386,7 @@ share/doc/R/html/prism.css
 share/doc/R/html/prism.js
 share/doc/R/html/resources.html
 share/doc/R/html/right.jpg
+share/doc/R/html/ror.svg
 share/doc/R/html/up.jpg
 share/doc/R/manual/
 share/doc/R/manual/R-FAQ.html

@@ -1,10 +1,9 @@
 COMMENT=	powerful math/statistics/graphics language
-DISTNAME=	R-4.4.2
-REVISION=	0
+DISTNAME=	R-4.5.0
 
 # When bumping SO_VERSION, adjust
 # math/rstudio/patches/patch-src_cpp_core_r_util_REnvironmentPosix_cpp
-SO_VERSION=	40.0
+SO_VERSION=	41.0
 .for _lib in R Rblas Rlapack
 SHARED_LIBS +=	${_lib} ${SO_VERSION}
 .endfor
@@ -21,7 +20,7 @@ WANTLIB += ${COMPILER_LIBCXX} ${MODTK_WANTLIB} ${MODFORTRAN_WANTLIB}
 WANTLIB += ICE SM X11 Xext Xmu Xss Xt bz2 c cairo curl deflate glib-2.0
 WANTLIB += gobject-2.0 harfbuzz iconv icui18n icuuc intl jpeg
 WANTLIB += lzma m pango-1.0 pangocairo-1.0 pcre2-8 png pthread
-WANTLIB += readline tiff z
+WANTLIB += readline tiff z zstd
 
 COMPILER =	base-clang ports-gcc base-gcc
 
