@@ -2,15 +2,15 @@ COMMENT =		widgets library for graphics engines
 
 V =			0.8.7
 DISTNAME =		cegui-${V}
-REVISION =		0
+REVISION =		1
 
-SHARED_LIBS +=  CEGUIBase-0			1.0 # 3.1
-SHARED_LIBS +=  CEGUICommonDialogs-0		1.0 # 3.1
-SHARED_LIBS +=  CEGUIIrrlichtRenderer-0		1.0 # 3.1
-SHARED_LIBS +=  CEGUIOgreRenderer-0		1.0 # 3.1
-SHARED_LIBS +=  CEGUIOpenGLRenderer-0		1.0 # 3.1
-SHARED_LIBS +=	CEGUIFreeImageImageCodec	1.0
-SHARED_LIBS +=	CEGUIExpatParser		1.0
+SHARED_LIBS +=	CEGUIBase-0			2.0 # 3.1
+SHARED_LIBS +=	CEGUICommonDialogs-0		2.0 # 3.1
+SHARED_LIBS +=	CEGUIIrrlichtRenderer-0		2.0 # 3.1
+SHARED_LIBS +=	CEGUIOgreRenderer-0		2.0 # 3.1
+SHARED_LIBS +=	CEGUIOpenGLRenderer-0		2.0 # 3.1
+SHARED_LIBS +=	CEGUIFreeImageImageCodec	2.0
+SHARED_LIBS +=	CEGUIExpatParser		2.0
 
 CATEGORIES =		x11
 
