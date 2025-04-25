@@ -1,6 +1,7 @@
 COMMENT =		modern, open-source flight simulator
 
 DISTNAME =		flightgear-${V}
+REVISION =		0
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW GLU ICE OpenThreads SM SimGearCore
 WANTLIB += SimGearScene X11 Xext Xi Xmu c dbus-1 event_core execinfo
