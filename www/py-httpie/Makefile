@@ -6,7 +6,7 @@ GH_TAGNAME=	${MODPY_DISTV}
 GH_ACCOUNT=	httpie
 GH_PROJECT=	httpie
 WRKDIST=	${WRKDIR}/cli-${MODPY_DISTV}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www net
 
@@ -31,11 +31,11 @@ RUN_DEPENDS=	net/py-socks \
 		textproc/py-pygments \
 		www/py-multidict \
 		www/py-requests \
-		www/py-requests-toolbelt
+		www/py-requests-toolbelt \
+		devel/py-rich
 TEST_DEPENDS=	devel/py-test-httpbin \
 		devel/py-test-mock \
 		devel/py-mock \
-		devel/py-rich \
 		www/py-responses
 PORTHOME=	${WRKSRC}
 
