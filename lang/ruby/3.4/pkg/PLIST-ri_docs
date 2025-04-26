@@ -344,7 +344,6 @@ share/ri/${REV}/system/Bundler/load-c.ri
 share/ri/${REV}/system/Bundler/load_gemspec-c.ri
 share/ri/${REV}/system/Bundler/load_gemspec_uncached-c.ri
 share/ri/${REV}/system/Bundler/load_marshal-c.ri
-share/ri/${REV}/system/Bundler/load_plugins-c.ri
 share/ri/${REV}/system/Bundler/local_platform-c.ri
 share/ri/${REV}/system/Bundler/locked_gems-c.ri
 share/ri/${REV}/system/Bundler/mkdir_p-c.ri
@@ -3051,16 +3050,6 @@ share/ri/${REV}/system/Gem/QueryUtils/spec_loaded_from-i.ri
 share/ri/${REV}/system/Gem/QueryUtils/spec_platforms-i.ri
 share/ri/${REV}/system/Gem/QueryUtils/spec_summary-i.ri
 share/ri/${REV}/system/Gem/QueryUtils/specs_type-i.ri
-share/ri/${REV}/system/Gem/RDoc/
-share/ri/${REV}/system/Gem/RDoc/cdesc-RDoc.ri
-share/ri/${REV}/system/Gem/RDoc/default_gem%3f-c.ri
-share/ri/${REV}/system/Gem/RDoc/force-i.ri
-share/ri/${REV}/system/Gem/RDoc/generate-i.ri
-share/ri/${REV}/system/Gem/RDoc/generate_rdoc-i.ri
-share/ri/${REV}/system/Gem/RDoc/generate_ri-i.ri
-share/ri/${REV}/system/Gem/RDoc/generation_hook-c.ri
-share/ri/${REV}/system/Gem/RDoc/new-c.ri
-share/ri/${REV}/system/Gem/RDoc/remove-i.ri
 share/ri/${REV}/system/Gem/RemoteError/
 share/ri/${REV}/system/Gem/RemoteError/cdesc-RemoteError.ri
 share/ri/${REV}/system/Gem/RemoteFetcher/
@@ -16063,7 +16052,6 @@ share/ri/${REV}/system/URI/Generic/host%3d-i.ri
 share/ri/${REV}/system/URI/Generic/host-i.ri
 share/ri/${REV}/system/URI/Generic/hostname%3d-i.ri
 share/ri/${REV}/system/URI/Generic/hostname-i.ri
-share/ri/${REV}/system/URI/Generic/inspect-i.ri
 share/ri/${REV}/system/URI/Generic/merge%21-i.ri
 share/ri/${REV}/system/URI/Generic/merge-i.ri
 share/ri/${REV}/system/URI/Generic/merge_path-i.ri
@@ -16081,7 +16069,6 @@ share/ri/${REV}/system/URI/Generic/port%3d-i.ri
 share/ri/${REV}/system/URI/Generic/port-i.ri
 share/ri/${REV}/system/URI/Generic/query%3d-i.ri
 share/ri/${REV}/system/URI/Generic/query-i.ri
-share/ri/${REV}/system/URI/Generic/registry%3d-i.ri
 share/ri/${REV}/system/URI/Generic/relative%3f-i.ri
 share/ri/${REV}/system/URI/Generic/replace%21-i.ri
 share/ri/${REV}/system/URI/Generic/route_from-i.ri
@@ -16164,7 +16151,6 @@ share/ri/${REV}/system/URI/RFC2396_Parser/escape-i.ri
 share/ri/${REV}/system/URI/RFC2396_Parser/extract-i.ri
 share/ri/${REV}/system/URI/RFC2396_Parser/initialize_pattern-i.ri
 share/ri/${REV}/system/URI/RFC2396_Parser/initialize_regexp-i.ri
-share/ri/${REV}/system/URI/RFC2396_Parser/inspect-i.ri
 share/ri/${REV}/system/URI/RFC2396_Parser/join-i.ri
 share/ri/${REV}/system/URI/RFC2396_Parser/make_regexp-i.ri
 share/ri/${REV}/system/URI/RFC2396_Parser/new-c.ri
@@ -16177,8 +16163,6 @@ share/ri/${REV}/system/URI/RFC2396_REGEXP/
 share/ri/${REV}/system/URI/RFC2396_REGEXP/PATTERN/
 share/ri/${REV}/system/URI/RFC2396_REGEXP/PATTERN/cdesc-PATTERN.ri
 share/ri/${REV}/system/URI/RFC2396_REGEXP/cdesc-RFC2396_REGEXP.ri
-share/ri/${REV}/system/URI/Schemes/
-share/ri/${REV}/system/URI/Schemes/cdesc-Schemes.ri
 share/ri/${REV}/system/URI/WS/
 share/ri/${REV}/system/URI/WS/build-c.ri
 share/ri/${REV}/system/URI/WS/cdesc-WS.ri
@@ -16188,7 +16172,6 @@ share/ri/${REV}/system/URI/WSS/cdesc-WSS.ri
 share/ri/${REV}/system/URI/_decode_uri_component-c.ri
 share/ri/${REV}/system/URI/_encode_uri_component-c.ri
 share/ri/${REV}/system/URI/cdesc-URI.ri
-share/ri/${REV}/system/URI/const_missing-c.ri
 share/ri/${REV}/system/URI/decode_uri_component-c.ri
 share/ri/${REV}/system/URI/decode_www_form-c.ri
 share/ri/${REV}/system/URI/decode_www_form_component-c.ri
