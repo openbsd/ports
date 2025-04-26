@@ -5,6 +5,7 @@ share/doc/furnace/doc/
 share/doc/furnace/doc/1-intro/
 share/doc/furnace/doc/1-intro/README.md
 share/doc/furnace/doc/1-intro/concepts.md
+share/doc/furnace/doc/1-intro/faq.md
 share/doc/furnace/doc/1-intro/glossary.md
 share/doc/furnace/doc/1-intro/hex.md
 share/doc/furnace/doc/1-intro/qs-insteditor.png
@@ -92,6 +93,7 @@ share/doc/furnace/doc/3-pattern/status-volume-tremolo.png
 share/doc/furnace/doc/3-pattern/status-volume-up.png
 share/doc/furnace/doc/4-instrument/
 share/doc/furnace/doc/4-instrument/FM-ADSRchart.png
+share/doc/furnace/doc/4-instrument/MPCM-ADSRchart.png
 share/doc/furnace/doc/4-instrument/README.md
 share/doc/furnace/doc/4-instrument/adpcm-a.md
 share/doc/furnace/doc/4-instrument/adpcm-b.md
@@ -133,6 +135,7 @@ share/doc/furnace/doc/4-instrument/macroview.png
 share/doc/furnace/doc/4-instrument/msm5232.md
 share/doc/furnace/doc/4-instrument/msm6258.md
 share/doc/furnace/doc/4-instrument/msm6295.md
+share/doc/furnace/doc/4-instrument/multipcm.md
 share/doc/furnace/doc/4-instrument/n163.md
 share/doc/furnace/doc/4-instrument/nds.md
 share/doc/furnace/doc/4-instrument/nes.md
@@ -151,6 +154,7 @@ share/doc/furnace/doc/4-instrument/sample.md
 share/doc/furnace/doc/4-instrument/scc.md
 share/doc/furnace/doc/4-instrument/segapcm.md
 share/doc/furnace/doc/4-instrument/sid2.md
+share/doc/furnace/doc/4-instrument/sid3.md
 share/doc/furnace/doc/4-instrument/sm8521.md
 share/doc/furnace/doc/4-instrument/snes.md
 share/doc/furnace/doc/4-instrument/su.md
@@ -161,6 +165,7 @@ share/doc/furnace/doc/4-instrument/vera.md
 share/doc/furnace/doc/4-instrument/vic.md
 share/doc/furnace/doc/4-instrument/virtual-boy.md
 share/doc/furnace/doc/4-instrument/vrc6.md
+share/doc/furnace/doc/4-instrument/watarasv.md
 share/doc/furnace/doc/4-instrument/wavesynth.md
 share/doc/furnace/doc/4-instrument/wavetable.png
 share/doc/furnace/doc/4-instrument/wonderswan.md
@@ -223,6 +228,7 @@ share/doc/furnace/doc/7-systems/saa1099.md
 share/doc/furnace/doc/7-systems/scc.md
 share/doc/furnace/doc/7-systems/segapcm.md
 share/doc/furnace/doc/7-systems/sid2.md
+share/doc/furnace/doc/7-systems/sid3.md
 share/doc/furnace/doc/7-systems/sm8521.md
 share/doc/furnace/doc/7-systems/sms.md
 share/doc/furnace/doc/7-systems/snes.md
@@ -256,6 +262,7 @@ share/doc/furnace/doc/7-systems/vera.md
 share/doc/furnace/doc/7-systems/vic20.md
 share/doc/furnace/doc/7-systems/virtual-boy.md
 share/doc/furnace/doc/7-systems/vrc6.md
+share/doc/furnace/doc/7-systems/watarasv.md
 share/doc/furnace/doc/7-systems/wonderswan.md
 share/doc/furnace/doc/7-systems/x1-010.md
 share/doc/furnace/doc/7-systems/ym2151.md
@@ -294,6 +301,7 @@ share/doc/furnace/doc/8-advanced/inputlatch.md
 share/doc/furnace/doc/8-advanced/inputlatch.png
 share/doc/furnace/doc/8-advanced/log-viewer.md
 share/doc/furnace/doc/8-advanced/log-viewer.png
+share/doc/furnace/doc/8-advanced/memcompo.png
 share/doc/furnace/doc/8-advanced/memory-composition.md
 share/doc/furnace/doc/8-advanced/mixer-mixer.png
 share/doc/furnace/doc/8-advanced/mixer-patchbay.png
@@ -313,6 +321,7 @@ share/doc/furnace/doc/8-advanced/stats.png
 share/doc/furnace/doc/8-advanced/user-systems.md
 share/doc/furnace/doc/8-advanced/user-systems.png
 share/doc/furnace/doc/8-advanced/xyosc.md
+share/doc/furnace/doc/8-advanced/xyosc.png
 share/doc/furnace/doc/9-guides/
 share/doc/furnace/doc/9-guides/README.md
 share/doc/furnace/doc/9-guides/emulation-cores.md
@@ -343,426 +352,6 @@ share/doc/furnace/other/papers/screenshot3.png
 share/doc/furnace/other/papers/unifont-license.txt
 share/doc/furnace/other/papers/zsm-format.md
 share/furnace/
-share/furnace/demos/
-share/furnace/demos/README.md
-share/furnace/demos/a2600/
-share/furnace/demos/a2600/Funky_Afternoon.fur
-share/furnace/demos/a2600/Slam_the_Door.fur
-share/furnace/demos/a2600/TIADeepIntoCode.fur
-share/furnace/demos/a2600/Watch My Tone.fur
-share/furnace/demos/a2600/atari_breakbeat.fur
-share/furnace/demos/a2600/morepain.fur
-share/furnace/demos/a2600/the_erfngjt.fur
-share/furnace/demos/a2600/twin.fur
-share/furnace/demos/amiga/
-share/furnace/demos/amiga/a_wave_powerhouse.fur
-share/furnace/demos/amiga/bruno_time.fur
-share/furnace/demos/amiga/furnace0.6crk.fur
-share/furnace/demos/amiga/m7 vibe.fur
-share/furnace/demos/amiga/serendipid.fur
-share/furnace/demos/arcade/
-share/furnace/demos/arcade/ComicPartytrack20.fur
-share/furnace/demos/arcade/Destiny_Islands_Irem_M92.fur
-share/furnace/demos/arcade/Eternal_Forest_TaitoArcade.fur
-share/furnace/demos/arcade/Grape_Jelly_Alpha5232.fur
-share/furnace/demos/arcade/Hexionology.fur
-share/furnace/demos/arcade/Ice_Wind_SegaPCM.fur
-share/furnace/demos/arcade/Mars_Bar_On_Mars_NamcoWSG.fur
-share/furnace/demos/arcade/Maximum_Overdrive_NamcoWSG.fur
-share/furnace/demos/arcade/Neo_Seaside_Volley_Court_NeoGeo.fur
-share/furnace/demos/arcade/Phoenix_cover_NamcoWSG.fur
-share/furnace/demos/arcade/Physics_Exam_TaitoArcade.fur
-share/furnace/demos/arcade/Point_of_No_Return_SegaPCM.fur
-share/furnace/demos/arcade/QSound_smile.fur
-share/furnace/demos/arcade/Salamander_Starfield.fur
-share/furnace/demos/arcade/Some_Creatures_SegaPCM.fur
-share/furnace/demos/arcade/The_Good_Times_SegaPCM.fur
-share/furnace/demos/arcade/ToHeart_QoH98_TPower_Asuka120Style.fur
-share/furnace/demos/arcade/Tubelectric_Fictional_Arcade.fur
-share/furnace/demos/arcade/U.N. Owen Was Her (NS2).fur
-share/furnace/demos/arcade/UT99_Run_TaitoArcade.fur
-share/furnace/demos/arcade/Utter_Determination_TaitoArcade.fur
-share/furnace/demos/arcade/WSG_Loop_Tune_NamcoWSG.fur
-share/furnace/demos/arcade/eek_qsound.fur
-share/furnace/demos/arcade/ice_cap_NamcoC30.fur
-share/furnace/demos/arcade/last_day_of_summer_NamcoC15.fur
-share/furnace/demos/arcade/sans_TaitoArcade.fur
-share/furnace/demos/arcade/the_machines_are_socialising_SegaPCM.fur
-share/furnace/demos/ay8910/
-share/furnace/demos/ay8910/AY-3-8910_Jam.fur
-share/furnace/demos/ay8910/AyMate.fur
-share/furnace/demos/ay8910/Drifting in Colour.fur
-share/furnace/demos/ay8910/Flat Wave Society.fur
-share/furnace/demos/ay8910/Second_Addition.fur
-share/furnace/demos/ay8910/cardboardmywater.fur
-share/furnace/demos/ay8910/demoscenetypebeat.fur
-share/furnace/demos/ay8910/remark_music.fur
-share/furnace/demos/ay8910/vibe_zone.fur
-share/furnace/demos/ay8930/
-share/furnace/demos/ay8930/AY8930Shuffle.fur
-share/furnace/demos/ay8930/Obscure_Temptation.fur
-share/furnace/demos/ay8930/One_Minute_Waltz.fur
-share/furnace/demos/ay8930/Playing_On_The_Stairs.fur
-share/furnace/demos/ay8930/Red_Planet.fur
-share/furnace/demos/ay8930/duty fun.fur
-share/furnace/demos/ay8930/joyful.fur
-share/furnace/demos/ay8930/powerful-sample-generator.fur
-share/furnace/demos/c64/
-share/furnace/demos/c64/C64 junk.fur
-share/furnace/demos/c64/ChaosTune.fur
-share/furnace/demos/c64/DOOM_E1M1.fur
-share/furnace/demos/c64/DOOM_E1M3.fur
-share/furnace/demos/c64/Hellcharger.fur
-share/furnace/demos/c64/The_Snippet.fur
-share/furnace/demos/c64/deadlock.fur
-share/furnace/demos/c64/yeah!.fur
-share/furnace/demos/esfm/
-share/furnace/demos/esfm/AAAA.fur
-share/furnace/demos/esfm/ALCATRAZ_ALWAYS.fur
-share/furnace/demos/esfm/CampingJourney.fur
-share/furnace/demos/esfm/Deadline.fur
-share/furnace/demos/esfm/Devil_Detective.fur
-share/furnace/demos/esfm/Drinkin_Coffee_Way_Too_Much.fur
-share/furnace/demos/esfm/EdgeRunning_2078.fur
-share/furnace/demos/esfm/Fighting_the_Dimensions_Big_Bad_Because_its_Fun.fur
-share/furnace/demos/esfm/I_Cant_Escape_Your_Memory.fur
-share/furnace/demos/esfm/Just_me_and_my_Brain.fur
-share/furnace/demos/esfm/Ken_Stage.fur
-share/furnace/demos/esfm/Magician_Lake_Cover.fur
-share/furnace/demos/esfm/Napalm-Loader.fur
-share/furnace/demos/esfm/Perilous059.fur
-share/furnace/demos/esfm/Poets_I.fur
-share/furnace/demos/esfm/Redial.fur
-share/furnace/demos/esfm/SearchPrincess.fur
-share/furnace/demos/esfm/Second_Start.fur
-share/furnace/demos/esfm/Strange_Sunset.fur
-share/furnace/demos/esfm/Tangent_to_a_Segue.fur
-share/furnace/demos/esfm/TheOneWayFuture.fur
-share/furnace/demos/esfm/Unconscious_Unravelling.fur
-share/furnace/demos/esfm/Unknown_Location.fur
-share/furnace/demos/esfm/WalkInThePark.fur
-share/furnace/demos/esfm/WindFjordsESFM.fur
-share/furnace/demos/esfm/act_of_fighter.fur
-share/furnace/demos/esfm/cielos_esfumados.fur
-share/furnace/demos/esfm/esfm_ins.fur
-share/furnace/demos/esfm/experiment.fur
-share/furnace/demos/esfm/flashback.fur
-share/furnace/demos/esfm/frosty_dusk.fur
-share/furnace/demos/esfm/haunted_castle.fur
-share/furnace/demos/esfm/her_wishes.fur
-share/furnace/demos/esfm/ledstorm.fur
-share/furnace/demos/esfm/loneguitarist.fur
-share/furnace/demos/esfm/moon_closedspace.fur
-share/furnace/demos/esfm/pcbend.fur
-share/furnace/demos/esfm/sticker1.fur
-share/furnace/demos/esfm/synthy.fur
-share/furnace/demos/esfm/wack.fur
-share/furnace/demos/esfm/x_evil_soul.fur
-share/furnace/demos/gameboy/
-share/furnace/demos/gameboy/GB_WaitForMe.fur
-share/furnace/demos/gameboy/On_Hold.fur
-share/furnace/demos/gameboy/Pleasure_of_Tension.fur
-share/furnace/demos/gameboy/You're_Doing_Well!.fur
-share/furnace/demos/gameboy/cheap.fur
-share/furnace/demos/gameboy/dancing_to_the_death.fur
-share/furnace/demos/gameboy/dtect.fur
-share/furnace/demos/gameboy/finger.fur
-share/furnace/demos/gameboy/freedom.fur
-share/furnace/demos/gameboy/ice_3_advert.fur
-share/furnace/demos/gameboy/lagtrain.fur
-share/furnace/demos/gameboy/minos.fur
-share/furnace/demos/gameboy/puggs_in_space.fur
-share/furnace/demos/gameboy/snowdin.fur
-share/furnace/demos/gameboy/spreadtro.fur
-share/furnace/demos/genesis/
-share/furnace/demos/genesis/All Good Times.fur
-share/furnace/demos/genesis/Another_winter.fur
-share/furnace/demos/genesis/Carnage.fur
-share/furnace/demos/genesis/CorridorsOfTimeRMX.fur
-share/furnace/demos/genesis/Equinox Intro.fur
-share/furnace/demos/genesis/Fancy_Promenard.fur
-share/furnace/demos/genesis/Kobito_of_the_Shining_Needle.fur
-share/furnace/demos/genesis/MegadriveOverdrive.fur
-share/furnace/demos/genesis/Plok_Beach.fur
-share/furnace/demos/genesis/Puyopuyo~n_DopplegangerArle-TsuuStyle.fur
-share/furnace/demos/genesis/Shovel_Knight_Title.fur
-share/furnace/demos/genesis/Solar_Man.fur
-share/furnace/demos/genesis/SpareHalloween2.fur
-share/furnace/demos/genesis/SparkmanMD.fur
-share/furnace/demos/genesis/Stereotactics_Rewritten.fur
-share/furnace/demos/genesis/darkstar.fur
-share/furnace/demos/genesis/forest_freeway_zone.fur
-share/furnace/demos/genesis/imaginarium.fur
-share/furnace/demos/genesis/inside_the_computer.fur
-share/furnace/demos/genesis/laidback.fur
-share/furnace/demos/genesis/last_chiptune.fur
-share/furnace/demos/genesis/louder.fur
-share/furnace/demos/genesis/mm5_boss.fur
-share/furnace/demos/genesis/mummy_in_the_pyramid.fur
-share/furnace/demos/genesis/my_problem.fur
-share/furnace/demos/genesis/newer_song_lol.fur
-share/furnace/demos/genesis/the_serenity_of_lonliness.fur
-share/furnace/demos/genesis/yky.fur
-share/furnace/demos/lynx/
-share/furnace/demos/lynx/LedStorm.fur
-share/furnace/demos/lynx/Road_Rash_Grass_Valley.fur
-share/furnace/demos/lynx/Tyrian-Camanis.fur
-share/furnace/demos/lynx/chippylotus.fur
-share/furnace/demos/lynx/insert_title_here.fur
-share/furnace/demos/misc/
-share/furnace/demos/misc/BlueBolt_VIC20.fur
-share/furnace/demos/misc/Dreamliner_FMTowns.fur
-share/furnace/demos/misc/FiveTwoThreeTwo_MSM5232.fur
-share/furnace/demos/misc/Galactic_Melody_PowerNoise.fur
-share/furnace/demos/misc/GreenIdeas_PET.fur
-share/furnace/demos/misc/Inner Machinations YM2610B.fur
-share/furnace/demos/misc/Miami_Ice_Sharp_X1.fur
-share/furnace/demos/misc/OHM_VRC6.fur
-share/furnace/demos/misc/Playground_2xT6W28.fur
-share/furnace/demos/misc/Someting_I_can_feel_MSM5232.fur
-share/furnace/demos/misc/Special Stage Sonic 3 (GBA).fur
-share/furnace/demos/misc/StrobesPowerNoise.fur
-share/furnace/demos/misc/T_Six_T6W28.fur
-share/furnace/demos/misc/TerminalZone_SM8521.fur
-share/furnace/demos/misc/Weightlessness_ES5506.fur
-share/furnace/demos/misc/ZetaForceLevel2.fur
-share/furnace/demos/misc/beeper_torture.fur
-share/furnace/demos/misc/biffy_bifurcator.fur
-share/furnace/demos/misc/brokenspace-msm5232.fur
-share/furnace/demos/misc/cavedotwave-msm5232.fur
-share/furnace/demos/misc/combat_vehicle_pokey.fur
-share/furnace/demos/misc/deepmist_dave.fur
-share/furnace/demos/misc/empty_PV-1000.fur
-share/furnace/demos/misc/fragments_turbosound.fur
-share/furnace/demos/misc/fursuits_for_the_suspiciously_rich_MSM5232.fur
-share/furnace/demos/misc/hope_for_the_dream_opm.fur
-share/furnace/demos/misc/lagrange_point_2023_opm.fur
-share/furnace/demos/misc/massive_x_opz.fur
-share/furnace/demos/misc/meaningful_connection_es5506.fur
-share/furnace/demos/misc/mushroomhill_SM8521.fur
-share/furnace/demos/misc/pseudogba_pwaa_godot.fur
-share/furnace/demos/misc/rf5wapianoroll.fur
-share/furnace/demos/misc/sparkling_aria_pokemini.fur
-share/furnace/demos/misc/sucked_something_zx.fur
-share/furnace/demos/misc/teddy_bear_midnight_jam_ted.fur
-share/furnace/demos/misc/the_king_of_crisp_opm.fur
-share/furnace/demos/misc/vortex_opm.fur
-share/furnace/demos/misc/walkontheroof_T6W28.fur
-share/furnace/demos/misc/waterworld_map_opm.fur
-share/furnace/demos/msx/
-share/furnace/demos/msx/21492413.fur
-share/furnace/demos/msx/BREEZE_SENSATION.fur
-share/furnace/demos/msx/Gyruss_Stage_2.fur
-share/furnace/demos/msx/Juice_Stand.fur
-share/furnace/demos/msx/Morning_Alarm.fur
-share/furnace/demos/msx/Nemesis2AirBattle.fur
-share/furnace/demos/msx/OPLL_High_and_Rising.fur
-share/furnace/demos/msx/OPLL_OperationPleaseLeaveLeave.fur
-share/furnace/demos/msx/Port Sun.fur
-share/furnace/demos/msx/Princess_of_the_Dead.fur
-share/furnace/demos/msx/Striking_Towards_Opposition.fur
-share/furnace/demos/msx/attack_the_barbarian.fur
-share/furnace/demos/msx/opll-fashioned_drums.fur
-share/furnace/demos/msx/ranburu_song.fur
-share/furnace/demos/multichip/
-share/furnace/demos/multichip/1_bit_bros.fur
-share/furnace/demos/multichip/AgentX.fur
-share/furnace/demos/multichip/Between_the_Circuits.fur
-share/furnace/demos/multichip/Chip_Duel_AY-3-8910+SN76489.fur
-share/furnace/demos/multichip/Cossack Stage Boss.fur
-share/furnace/demos/multichip/FamiMega Aliance.fur
-share/furnace/demos/multichip/Fantasy_Chip_Christmas.fur
-share/furnace/demos/multichip/Fight Against the Dark Matter.fur
-share/furnace/demos/multichip/Fiorella YM2610B+YM2203.fur
-share/furnace/demos/multichip/Fusion.fur
-share/furnace/demos/multichip/HoldOn.fur
-share/furnace/demos/multichip/Jet_Pack_Adventure_GBAesque.fur
-share/furnace/demos/multichip/MegaMari-Cirno.fur
-share/furnace/demos/multichip/MetalSlug_BaseCamp_SMS_TIA.fur
-share/furnace/demos/multichip/Namco_C30_C219_Loop.fur
-share/furnace/demos/multichip/OPL3_SegaPCM_Xeno_Crisis_-_Facility_Area_2.fur
-share/furnace/demos/multichip/PinBot-C30C140.fur
-share/furnace/demos/multichip/Sky Chaze Zone 32X.fur
-share/furnace/demos/multichip/Sunset Hill Zone Act 2.fur
-share/furnace/demos/multichip/TheOnlyWayIsForward.fur
-share/furnace/demos/multichip/collab.fur
-share/furnace/demos/multichip/cueball.fur
-share/furnace/demos/multichip/double-dragon-stage1.fur
-share/furnace/demos/multichip/government funding breakcore-ish remix.fur
-share/furnace/demos/multichip/invicibility_mmc5_n163_fds.fur
-share/furnace/demos/multichip/meteor_shower.fur
-share/furnace/demos/multichip/not genesis thing.fur
-share/furnace/demos/multichip/one.fur
-share/furnace/demos/multichip/overdrive.fur
-share/furnace/demos/multichip/pont of noreturn.fur
-share/furnace/demos/multichip/ridiculous_game.fur
-share/furnace/demos/multichip/satellite_interconnects.fur
-share/furnace/demos/multichip/second_dimension_demo.fur
-share/furnace/demos/multichip/silverlining.fur
-share/furnace/demos/multichip/skate_or_die.fur
-share/furnace/demos/multichip/splashingwater.fur
-share/furnace/demos/multichip/sunlight.fur
-share/furnace/demos/multichip/super_fantasy_zone_mango.fur
-share/furnace/demos/multichip/track8_n163_k053260.fur
-share/furnace/demos/multichip/urgency.fur
-share/furnace/demos/nes/
-share/furnace/demos/nes/Bridge Zone.fur
-share/furnace/demos/nes/Byte-Sized Bop.fur
-share/furnace/demos/nes/FDS TEST.fur
-share/furnace/demos/nes/Famitune1.fur
-share/furnace/demos/nes/Fur_Nes.fur
-share/furnace/demos/nes/Future_Re-ference.fur
-share/furnace/demos/nes/Rise_against_the_ashes_to_the_new_dawn.fur
-share/furnace/demos/nes/Samsung SGH-x830 - Ringtone 8.fur
-share/furnace/demos/nes/Sky Sanctuary Zone.fur
-share/furnace/demos/nes/Super cool and awesome samurai.fur
-share/furnace/demos/nes/Super_Space_Invaders_Title.fur
-share/furnace/demos/nes/The Cheetahmen.fur
-share/furnace/demos/nes/The East.fur
-share/furnace/demos/nes/carve_your_own_path.fur
-share/furnace/demos/nes/christmas-fever.fur
-share/furnace/demos/nes/going_up_a_step_at_time.fur
-share/furnace/demos/nes/infinity.fur
-share/furnace/demos/nes/oby1_ingame.fur
-share/furnace/demos/nes/one_sided_love.fur
-share/furnace/demos/nes/sweatsmile_bossfight.fur
-share/furnace/demos/nes/the_best-1990.fur
-share/furnace/demos/nes/turtle_byte.fur
-share/furnace/demos/opl/
-share/furnace/demos/opl/Contraduct Design OPL3 Cover.fur
-share/furnace/demos/opl/DASH.fur
-share/furnace/demos/opl/E1M4OPL2.fur
-share/furnace/demos/opl/Egyptian_Rule.fur
-share/furnace/demos/opl/Fly_to_the_Leaden_Sky_OPL3.fur
-share/furnace/demos/opl/Funky_Bubbles_OPL3.fur
-share/furnace/demos/opl/I_won_t_be_there_again.fur
-share/furnace/demos/opl/Memories_of_Triumph.fur
-share/furnace/demos/opl/Midnight_Dog_Orchestra.fur
-share/furnace/demos/opl/Moon.fur
-share/furnace/demos/opl/Oh no, more sine waves.fur
-share/furnace/demos/opl/Perpetual_Motion.fur
-share/furnace/demos/opl/PhantomBreakerBattleGrounds_ShinjukuStage-OPL3.fur
-share/furnace/demos/opl/Sliding_on_a_Rainbow.fur
-share/furnace/demos/opl/TeamInnocent-BGM4-OPL3Plus.fur
-share/furnace/demos/opl/Waterworld_-_Map.fur
-share/furnace/demos/opl/e3m2_opl3.fur
-share/furnace/demos/opl/fight and flight.fur
-share/furnace/demos/opl/green_biker_dude_opl.fur
-share/furnace/demos/opl/home_wfl_opl3.fur
-share/furnace/demos/opl/rain.cloud.sunset.fur
-share/furnace/demos/opl/the_foggy_cave_in_the_darkness.fur
-share/furnace/demos/pc98/
-share/furnace/demos/pc98/Blue_Nebula.fur
-share/furnace/demos/pc98/CT_maintheme.fur
-share/furnace/demos/pc98/Counterattack.fur
-share/furnace/demos/pc98/MMXStageClear.fur
-share/furnace/demos/pc98/atomic_failure.fur
-share/furnace/demos/pce/
-share/furnace/demos/pce/Bad_Dudes_Greased_Lightning.fur
-share/furnace/demos/pce/Fake Gameboy.fur
-share/furnace/demos/pce/Ma-Da-Ra.fur
-share/furnace/demos/pce/Warpdrive_Engage.fur
-share/furnace/demos/quickstart.fur
-share/furnace/demos/sn7/
-share/furnace/demos/sn7/456nm_TI994A.fur
-share/furnace/demos/sn7/FlowOfSN7.fur
-share/furnace/demos/sn7/Last Frecuency System.fur
-share/furnace/demos/sn7/Night_Market_TI994A.fur
-share/furnace/demos/sn7/Tidal_Tempest_Zone.fur
-share/furnace/demos/sn7/doorintosummer.fur
-share/furnace/demos/sn7/gg_silver_surfer_st1.fur
-share/furnace/demos/sn7/gg_soniccd_collision_chaos.fur
-share/furnace/demos/sn7/thunderblade-type-ii.fur
-share/furnace/demos/snes/
-share/furnace/demos/snes/Breezy.fur
-share/furnace/demos/snes/Cosmic_Warehouse.fur
-share/furnace/demos/snes/Dear Blue SNES.fur
-share/furnace/demos/snes/IMU Café.fur
-share/furnace/demos/snes/MM8_Frost_Man.fur
-share/furnace/demos/snes/ManbowSMW.fur
-share/furnace/demos/snes/Sadness.fur
-share/furnace/demos/snes/Sunken Lights.fur
-share/furnace/demos/snes/Unreal_Something_SNES.fur
-share/furnace/demos/snes/amalgam.fur
-share/furnace/demos/snes/analog.fur
-share/furnace/demos/snes/aurora.fur
-share/furnace/demos/snes/changeyourheart.fur
-share/furnace/demos/snes/encjslt.fur
-share/furnace/demos/snes/segacd.fur
-share/furnace/demos/snes/sound processing unit.fur
-share/furnace/demos/snes/spd10.fur
-share/furnace/demos/snes/spd12.fur
-share/furnace/demos/snes/tetristheme.fur
-share/furnace/demos/snes/very chill snes.fur
-share/furnace/demos/snes/wonders_of_synthia.fur
-share/furnace/demos/specs2/
-share/furnace/demos/specs2/KeygenTypeBeat.fur
-share/furnace/demos/specs2/Tim_Follin.fur
-share/furnace/demos/specs2/acidic_juice_of_hell.fur
-share/furnace/demos/specs2/atmosphere.fur
-share/furnace/demos/specs2/back_into_adventure.fur
-share/furnace/demos/specs2/object.fur
-share/furnace/demos/specs2/rastaline_dub.fur
-share/furnace/demos/specs2/spa.fur
-share/furnace/demos/specs2/thick bass test.fur
-share/furnace/demos/virtualboy/
-share/furnace/demos/virtualboy/4_dimensionnal_goddess_of_existance.fur
-share/furnace/demos/virtualboy/Cherry_Vertex.fur
-share/furnace/demos/virtualboy/Dimensional.fur
-share/furnace/demos/virtualboy/Double_Puzzle_Trouble.fur
-share/furnace/demos/virtualboy/DoublingDown.fur
-share/furnace/demos/virtualboy/Evil_Incarnate.fur
-share/furnace/demos/virtualboy/God_Rest_Ye_Deadly_Gentlemen.fur
-share/furnace/demos/virtualboy/Iridion_3D_Stage_3.fur
-share/furnace/demos/virtualboy/LN2StreetLoader-VB.fur
-share/furnace/demos/virtualboy/La_Folia_ground_bass.fur
-share/furnace/demos/virtualboy/No_Such_Thing.fur
-share/furnace/demos/virtualboy/Professional_Beat.fur
-share/furnace/demos/virtualboy/Rave_Dancetune.fur
-share/furnace/demos/virtualboy/Red_And_Black_Orchid.fur
-share/furnace/demos/virtualboy/Red_Revolver.fur
-share/furnace/demos/virtualboy/Redworld.fur
-share/furnace/demos/virtualboy/Scarlet_Horizons.fur
-share/furnace/demos/virtualboy/SeeingRed.fur
-share/furnace/demos/virtualboy/StuckTerminologyRealVB.fur
-share/furnace/demos/virtualboy/Virtual_Promises.fur
-share/furnace/demos/virtualboy/air_fight.fur
-share/furnace/demos/virtualboy/blueseed.fur
-share/furnace/demos/virtualboy/devil_crash.fur
-share/furnace/demos/virtualboy/eek.fur
-share/furnace/demos/virtualboy/ghx_melodic.fur
-share/furnace/demos/virtualboy/groove_in_the_virtual_realm.fur
-share/furnace/demos/virtualboy/honeydippedkiwis.fur
-share/furnace/demos/virtualboy/lastninja-sewersloader.fur
-share/furnace/demos/virtualboy/mission_breafing.fur
-share/furnace/demos/virtualboy/needforspeed2semainmenu.fur
-share/furnace/demos/virtualboy/red_joke.fur
-share/furnace/demos/virtualboy/redboas.fur
-share/furnace/demos/virtualboy/redshift.fur
-share/furnace/demos/virtualboy/virtual_namachuukei_pennant_race.fur
-share/furnace/demos/virtualboy/wavetablehell4-vb.fur
-share/furnace/demos/wonderswan/
-share/furnace/demos/wonderswan/Bullet_Hell.fur
-share/furnace/demos/wonderswan/Rusty_-_Queen_in_the_Dark_Night.fur
-share/furnace/demos/wonderswan/TimeTrial.fur
-share/furnace/demos/wonderswan/sijofsjfsoeife.fur
-share/furnace/demos/x16/
-share/furnace/demos/x16/Cafe - 010 Editor 2.0kg.fur
-share/furnace/demos/x16/Exerion_II_Tune.fur
-share/furnace/demos/x16/Identity_Believer.fur
-share/furnace/demos/x16/Melody of Certain Feelings.fur
-share/furnace/demos/x16/Shades of Blue.fur
-share/furnace/demos/x16/TFV_Rise.fur
-share/furnace/demos/x16/dance with me.fur
-share/furnace/demos/x16/her11.fur
-share/furnace/demos/x16/keygen19.fur
-share/furnace/demos/x16/lunacommdemo.fur
-share/furnace/demos/x16/richca.fur
-share/furnace/demos/x16/watching_paint_dry.fur
-share/furnace/demos/x68000/
-share/furnace/demos/x68000/Optimistic.fur
-share/furnace/demos/x68000/TimeMan.fur
-share/furnace/demos/x68000/Wicked_Express.fur
 share/furnace/instruments/
 share/furnace/instruments/AY/
 share/furnace/instruments/AY/Closed Hat.fui
@@ -785,8 +374,11 @@ share/furnace/instruments/C64/Side_Stick.fui
 share/furnace/instruments/C64/Snare.fui
 share/furnace/instruments/C64/string_c64.fui
 share/furnace/instruments/ESFM/
+share/furnace/instruments/ESFM/ESFM Guitar Power Chord (note cut for palm mute).fui
 share/furnace/instruments/ESFM/Hi-Hat_ESFM.fui
 share/furnace/instruments/ESFM/Synth Bass.fui
+share/furnace/instruments/ESFM/deep_bass.fui
+share/furnace/instruments/ESFM/delayed.fui
 share/furnace/instruments/ESFM/djtBMX_1chostinato.fui
 share/furnace/instruments/ESFM/djtBMX_4opBassESFM.fui
 share/furnace/instruments/ESFM/djtBMX_4opESFMStrings.fui
@@ -886,6 +478,17 @@ share/furnace/instruments/ESFM/djtBMX_tarnceseq.fui
 share/furnace/instruments/ESFM/djtBMX_vic20square.fui
 share/furnace/instruments/ESFM/djtBMX_vic20squaretest.fui
 share/furnace/instruments/ESFM/djtBMX_wurly.fui
+share/furnace/instruments/ESFM/fakebits.fui
+share/furnace/instruments/ESFM/maj_chord.fui
+share/furnace/instruments/ESFM/min_chord.fui
+share/furnace/instruments/ESFM/obligatory_supersaw.fui
+share/furnace/instruments/ESFM/phat_square.fui
+share/furnace/instruments/ESFM/sine_w_reverb.fui
+share/furnace/instruments/ESFM/squishsine_organ.fui
+share/furnace/instruments/ESFM/stereo_brass_or_strings.fui
+share/furnace/instruments/ESFM/sytnth_stringfui
+share/furnace/instruments/ESFM/weird_bass.fui
+share/furnace/instruments/ESFM/wood_block.fui
 share/furnace/instruments/GB/
 share/furnace/instruments/GB/GB_Kick.fui
 share/furnace/instruments/GB/GB_Lead.fui
@@ -968,6 +571,10 @@ share/furnace/instruments/OPL/grand piano.fui
 share/furnace/instruments/OPL/kalimba or plain sine i cant tell.fui
 share/furnace/instruments/OPL/key.fui
 share/furnace/instruments/OPL/marimba.fui
+share/furnace/instruments/OPL/opl1 square.fui
+share/furnace/instruments/OPL/opl1-hat.fui
+share/furnace/instruments/OPL/opl1-kick.fui
+share/furnace/instruments/OPL/opl1-snare.fui
 share/furnace/instruments/OPL/opl3_4op_bass_1.fui
 share/furnace/instruments/OPL/opl3_4op_bass_2.fui
 share/furnace/instruments/OPL/opl3_4op_bass_3.fui
@@ -984,6 +591,7 @@ share/furnace/instruments/OPL/opl3_4op_strings.fui
 share/furnace/instruments/OPL/sax.fui
 share/furnace/instruments/OPL/tuba trumpet thing.fui
 share/furnace/instruments/OPLL/
+share/furnace/instruments/OPLL/Acoustic Bass.fui
 share/furnace/instruments/OPLL/Almost_Sine.fui
 share/furnace/instruments/OPLL/Alt_Oboe.fui
 share/furnace/instruments/OPLL/Better_Electric_Guitar.fui
@@ -993,6 +601,9 @@ share/furnace/instruments/OPLL/Electric_Guitar_3.fui
 share/furnace/instruments/OPLL/Finger_Bass.fui
 share/furnace/instruments/OPLL/Glass_and_Wood.fui
 share/furnace/instruments/OPLL/Half_Sine.fui
+share/furnace/instruments/OPLL/HeeminYT_VRC7Hi-Hat.fui
+share/furnace/instruments/OPLL/HeeminYT_VRC7Kick.fui
+share/furnace/instruments/OPLL/HeeminYT_VRC7Snare.fui
 share/furnace/instruments/OPLL/Hihat_Plus_Brass.fui
 share/furnace/instruments/OPLL/Near Perfect Square Wave.dmp
 share/furnace/instruments/OPLL/OPLL_Clickik.fui
@@ -1004,10 +615,13 @@ share/furnace/instruments/OPLL/Soft_Clarinet.fui
 share/furnace/instruments/OPLL/Soft_EP.fui
 share/furnace/instruments/OPLL/Soft_Flute.fui
 share/furnace/instruments/OPLL/Steel_Guitar.fui
+share/furnace/instruments/OPLL/Synth_Marimba.fui
 share/furnace/instruments/OPLL/Triangle_Recorder.fui
 share/furnace/instruments/OPLL/Weeppiko-piano_guitar_idk.fui
 share/furnace/instruments/OPM/
 share/furnace/instruments/OPM/80's Organ.dmp
+share/furnace/instruments/OPM/Accordion.dmp
+share/furnace/instruments/OPM/Acid_Bass.fui
 share/furnace/instruments/OPM/Basses.opm
 share/furnace/instruments/OPM/Bowed Lead 1.dmp
 share/furnace/instruments/OPM/Brass 4.dmp
@@ -1016,6 +630,7 @@ share/furnace/instruments/OPM/Brass 6.dmp
 share/furnace/instruments/OPM/Brass 7.dmp
 share/furnace/instruments/OPM/Brass 8.dmp
 share/furnace/instruments/OPM/Chromatic Percussion.opm
+share/furnace/instruments/OPM/Church Organ.dmp
 share/furnace/instruments/OPM/Computer Shutdown [C-6 0213].dmp
 share/furnace/instruments/OPM/Deep Marimba.dmp
 share/furnace/instruments/OPM/Dist 2.dmp
@@ -1059,6 +674,7 @@ share/furnace/instruments/OPM/Piano 2.dmp
 share/furnace/instruments/OPM/Piano 3 (Electric Grand).dmp
 share/furnace/instruments/OPM/Piano Low.dmp
 share/furnace/instruments/OPM/Piano Test.opm
+share/furnace/instruments/OPM/Picked_Bass.fui
 share/furnace/instruments/OPM/Plucked 1.dmp
 share/furnace/instruments/OPM/Plucked 2.dmp
 share/furnace/instruments/OPM/Plucked 3.dmp
@@ -1081,8 +697,7 @@ share/furnace/instruments/OPM/Timpani (OPM).fui
 share/furnace/instruments/OPM/VariBrass 2.dmp
 share/furnace/instruments/OPM/ass overtone brass.dmp
 share/furnace/instruments/OPM/ass-loud lead.dmp
-share/furnace/instruments/OPM/brickblock369 Accordion.dmp
-share/furnace/instruments/OPM/brickblock369 Church Organ.dmp
+share/furnace/instruments/OPM/dx7tubularbell_opm.fui
 share/furnace/instruments/OPM/early 80s bs.dmp
 share/furnace/instruments/OPM/huh.dmp
 share/furnace/instruments/OPM/orchestal bullshit.dmp
@@ -1379,6 +994,7 @@ share/furnace/instruments/OPN/guitar/Tamboura (Bass Sitar).opni
 share/furnace/instruments/OPN/guitar/Ukulele.dmp
 share/furnace/instruments/OPN/guitar/YM2151_DistGuitar.fui
 share/furnace/instruments/OPN/guitar/distguitar_00.fui
+share/furnace/instruments/OPN/guitar/distortion2.fui
 share/furnace/instruments/OPN/guitar/high guitar.dmp
 share/furnace/instruments/OPN/guitar/powerchord.fui
 share/furnace/instruments/OPN/guitar/sine distorted guitar.dmp
@@ -1431,6 +1047,7 @@ share/furnace/instruments/OPN/keys/E. Piano 1 (Rhodes).dmp
 share/furnace/instruments/OPN/keys/E. Piano 2 (DX).dmp
 share/furnace/instruments/OPN/keys/E. Piano 3 (Glassy).dmp
 share/furnace/instruments/OPN/keys/ElisOrgan.fui
+share/furnace/instruments/OPN/keys/Harpsichord 2.dmp
 share/furnace/instruments/OPN/keys/Harpsichord.dmp
 share/furnace/instruments/OPN/keys/Less Soft E Piano.dmp
 share/furnace/instruments/OPN/keys/Low Piano.dmp
@@ -1454,7 +1071,6 @@ share/furnace/instruments/OPN/keys/Sparksichord.dmp
 share/furnace/instruments/OPN/keys/Spoopy Organ.dmp
 share/furnace/instruments/OPN/keys/VRC7 Reed Organ.dmp
 share/furnace/instruments/OPN/keys/YM2151_E-PIANO.fui
-share/furnace/instruments/OPN/keys/brickblock369 Harpsichord.dmp
 share/furnace/instruments/OPN/keys/fmpiano.fui
 share/furnace/instruments/OPN/keys/harpsisine.dmp
 share/furnace/instruments/OPN/percussion/
@@ -1471,6 +1087,7 @@ share/furnace/instruments/OPN/percussion/Cowbell.dmp
 share/furnace/instruments/OPN/percussion/Cowbell_F#5.dmp
 share/furnace/instruments/OPN/percussion/Dangerously Cheap Timpani.fui
 share/furnace/instruments/OPN/percussion/Dulcimer.dmp
+share/furnace/instruments/OPN/percussion/Glockenspiel 2.dmp
 share/furnace/instruments/OPN/percussion/Glockenspiel.dmp
 share/furnace/instruments/OPN/percussion/Kalimba.dmp
 share/furnace/instruments/OPN/percussion/Kalimba.fui
@@ -1489,8 +1106,10 @@ share/furnace/instruments/OPN/percussion/Short Bongo.dmp
 share/furnace/instruments/OPN/percussion/Space Chime.dmp
 share/furnace/instruments/OPN/percussion/Space Marimba.dmp
 share/furnace/instruments/OPN/percussion/Steel Drum (2).dmp
+share/furnace/instruments/OPN/percussion/Steel Drum (3).dmp
 share/furnace/instruments/OPN/percussion/Steel Drum.dmp
 share/furnace/instruments/OPN/percussion/Timpani (OPN).fui
+share/furnace/instruments/OPN/percussion/Timpani 2.dmp
 share/furnace/instruments/OPN/percussion/Timpani.dmp
 share/furnace/instruments/OPN/percussion/Tubular Bells.dmp
 share/furnace/instruments/OPN/percussion/VRC7 Chime.dmp
@@ -1508,9 +1127,7 @@ share/furnace/instruments/OPN/percussion/alg 7 bongoes.dmp
 share/furnace/instruments/OPN/percussion/bell_00_glockenspiel.fui
 share/furnace/instruments/OPN/percussion/bell_01_glockenspiel_echoing.fui
 share/furnace/instruments/OPN/percussion/bell_02_glockenspiel_wobbly.fui
-share/furnace/instruments/OPN/percussion/brickblock369 Glockenspiel.dmp
-share/furnace/instruments/OPN/percussion/brickblock369 Steel Drum.dmp
-share/furnace/instruments/OPN/percussion/brickblock369 Timpani.dmp
+share/furnace/instruments/OPN/percussion/dx7tubularbell_opn.fui
 share/furnace/instruments/OPN/percussion/fm_cowbell.fui
 share/furnace/instruments/OPN/percussion/octave_8_bell.fui
 share/furnace/instruments/OPN/strings/
@@ -1714,8 +1331,11 @@ share/furnace/instruments/OPN/wind/bassoon_clarinet.fui
 share/furnace/instruments/OPN/wind/fm_pipeflute.fui
 share/furnace/instruments/OPN/wind/woodwind_00.fui
 share/furnace/instruments/OPZ/
+share/furnace/instruments/OPZ/Another_Synth_Bass.fui
+share/furnace/instruments/OPZ/Banjo.fui
 share/furnace/instruments/OPZ/Fake SNES Bass_OPZ.fui
 share/furnace/instruments/OPZ/Fake_Famicom_Tri.fui
+share/furnace/instruments/OPZ/Funky_Bass.fui
 share/furnace/instruments/OPZ/Heavy_synth_bass.fui
 share/furnace/instruments/OPZ/Organ_OPZ.fui
 share/furnace/instruments/OPZ/Synth Bass.fui
