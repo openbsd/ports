@@ -77,6 +77,7 @@ MODCARGO_CRATES +=	handlebars	6.3.0	# MIT
 MODCARGO_CRATES +=	hashbrown	0.15.2	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	headers	0.3.9	# MIT
 MODCARGO_CRATES +=	headers-core	0.2.0	# MIT
+MODCARGO_CRATES +=	hex	0.4.3	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	html5ever	0.26.0	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	html5ever	0.27.0	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	http	0.2.12	# MIT OR Apache-2.0

@@ -77,6 +77,7 @@ SHA256 (cargo/handlebars-6.3.0.tar.gz) = PWsiS5XB5misAnAyWtVjsu7xRp+7uJWbx8aSyES
 SHA256 (cargo/hashbrown-0.15.2.tar.gz) = vxUUAP8Lr/VGUAfdLz5xfz/lAgdMpWMGnOOmYp0Hsok=
 SHA256 (cargo/headers-0.3.9.tar.gz) = Bmg7kwIKB+Pbz1+MD21ACA1yW+p5NvwBrTRcAbl9wnA=
 SHA256 (cargo/headers-core-0.2.0.tar.gz) = 5/Zkgb/uJzlXsfIEhaT/M2KYf4WywjZYDYG063oyZCk=
+SHA256 (cargo/hex-0.4.3.tar.gz) = fyQlSqmlS1yFjq7i9bzNtGqvDkhqWV7V/Y+GulUjKnA=
 SHA256 (cargo/html5ever-0.26.0.tar.gz) = vqaMq0i4RZ8XzxyUTGfdxXLSctnysnQUDyI+yx2ko7c=
 SHA256 (cargo/html5ever-0.27.0.tar.gz) = wTdxr+Dm6Ebx5n0DjUyymZimd5+TyAkhLk6cMu/SRNQ=
 SHA256 (cargo/http-0.2.12.tar.gz) = YBy7V+V34vXvW+jnuD8PY5lPJaqU1nPlSpLVxRbRAfE=
@@ -275,7 +276,7 @@ SHA256 (cargo/zerofrom-0.1.5.tar.gz) = z/PuCMmV3uGFnZmN6oL3N08oJgkd2c1H3vlTyuRGz
 SHA256 (cargo/zerofrom-derive-0.1.5.tar.gz) = WV7tmC99NVvrhYN/ZR+iLpCzwESELcfywoQsCG8pWAg=
 SHA256 (cargo/zerovec-0.10.4.tar.gz) = qiuJPXnfI7+xLVRhAY1AjqGd+v52wsfvbU66YU+P8Hk=
 SHA256 (cargo/zerovec-derive-0.10.3.tar.gz) = bq+m37F1hOo+K9bnbgzBWtevErCavdHKVZYb7ZsQY8Y=
-SHA256 (mdBook-0.4.45.tar.gz) = u6ZkRjFt4Xza6pGLGV7nQgvzJZdGsZbUpeDtpNlhISI=
+SHA256 (mdBook-0.4.48.tar.gz) = ZQIc7KKi9aHO2iQ5U852S/NMRmt6g9s44Weit9ETHc8=
 SIZE (cargo/addr2line-0.24.2.tar.gz) = 39015
 SIZE (cargo/adler2-2.0.0.tar.gz) = 13529
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
@@ -355,6 +356,7 @@ SIZE (cargo/handlebars-6.3.0.tar.gz) = 104433
 SIZE (cargo/hashbrown-0.15.2.tar.gz) = 138478
 SIZE (cargo/headers-0.3.9.tar.gz) = 68290
 SIZE (cargo/headers-core-0.2.0.tar.gz) = 2380
+SIZE (cargo/hex-0.4.3.tar.gz) = 13299
 SIZE (cargo/html5ever-0.26.0.tar.gz) = 72921
 SIZE (cargo/html5ever-0.27.0.tar.gz) = 72913
 SIZE (cargo/http-0.2.12.tar.gz) = 101964
@@ -553,4 +555,4 @@ SIZE (cargo/zerofrom-0.1.5.tar.gz) = 5091
 SIZE (cargo/zerofrom-derive-0.1.5.tar.gz) = 8285
 SIZE (cargo/zerovec-0.10.4.tar.gz) = 126398
 SIZE (cargo/zerovec-derive-0.10.3.tar.gz) = 19438
-SIZE (mdBook-0.4.45.tar.gz) = 1548067
+SIZE (mdBook-0.4.48.tar.gz) = 1556726
