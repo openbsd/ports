@@ -1,3 +1,4 @@
+BROKEN =		needs fixing for orthanc 1.12.7
 COMMENT =		web viewer plugin for Orthanc
 
 VERSION =		2.8

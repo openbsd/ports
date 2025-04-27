@@ -1,3 +1,4 @@
+BROKEN =		needs fixing for orthanc 1.12.7
 COMMENT =		PostgreSQL backend for Orthanc
 
 VERSION =		4.0
