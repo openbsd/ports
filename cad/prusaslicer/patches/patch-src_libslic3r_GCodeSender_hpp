@@ -1,0 +1,15 @@
+https://bugs.gentoo.org/946495
+https://github.com/prusa3d/PrusaSlicer/issues/13799
+
+Index: src/libslic3r/GCodeSender.hpp
+--- src/libslic3r/GCodeSender.hpp.orig
++++ src/libslic3r/GCodeSender.hpp
+@@ -40,7 +40,7 @@ class GCodeSender : private boost::noncopyable {
+     void reset();
+     
+     private:
+-    asio::io_service io;
++    asio::io_context io;
+     asio::serial_port serial;
+     boost::thread background_thread;
+     boost::asio::streambuf read_buffer, write_buffer;

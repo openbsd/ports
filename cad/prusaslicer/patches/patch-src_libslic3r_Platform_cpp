@@ -1,0 +1,16 @@
+Undo param.h pollution to fix build with boost >= 1.87
+
+Index: src/libslic3r/Platform.cpp
+--- src/libslic3r/Platform.cpp.orig
++++ src/libslic3r/Platform.cpp
+@@ -13,6 +13,10 @@
+ #include <mach/machine.h>
+ #endif
+ 
++#if defined(OpenBSD)
++#undef OpenBSD
++#endif
++
+ namespace Slic3r {
+ 
+ static auto s_platform 		  = Platform::Uninitialized;

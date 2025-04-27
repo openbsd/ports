@@ -1,0 +1,17 @@
+https://bugs.gentoo.org/946495
+https://github.com/prusa3d/PrusaSlicer/issues/13799
+
+Index: src/slic3r/Utils/Serial.hpp
+--- src/slic3r/Utils/Serial.hpp.orig
++++ src/slic3r/Utils/Serial.hpp
+@@ -43,8 +43,8 @@ extern std::vector<SerialPortInfo> 	scan_serial_ports_
+ class Serial : public boost::asio::serial_port
+ {
+ public:
+-	Serial(boost::asio::io_service &io_service);
+-	Serial(boost::asio::io_service &io_service, const std::string &name, unsigned baud_rate);
++	Serial(boost::asio::io_context &io_context);
++	Serial(boost::asio::io_context &io_context, const std::string &name, unsigned baud_rate);
+ 	Serial(const Serial &) = delete;
+ 	Serial &operator=(const Serial &) = delete;
+ 	~Serial();

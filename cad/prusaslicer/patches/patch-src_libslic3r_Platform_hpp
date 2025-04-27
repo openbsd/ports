@@ -1,0 +1,16 @@
+Undo param.h pollution to fix build with boost >= 1.87
+
+Index: src/libslic3r/Platform.hpp
+--- src/libslic3r/Platform.hpp.orig
++++ src/libslic3r/Platform.hpp
+@@ -7,6 +7,10 @@
+ 
+ #include <string>
+ 
++#if defined(OpenBSD)
++#undef OpenBSD
++#endif
++
+ namespace Slic3r {
+ 
+ enum class Platform
