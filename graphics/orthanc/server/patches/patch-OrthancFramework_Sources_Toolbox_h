@@ -3,7 +3,7 @@ Fix build with boost 1.84
 Index: OrthancFramework/Sources/Toolbox.h
 --- OrthancFramework/Sources/Toolbox.h.orig
 +++ OrthancFramework/Sources/Toolbox.h
-@@ -26,6 +26,7 @@
+@@ -27,6 +27,7 @@
  #include "Enumerations.h"
  #include "OrthancFramework.h"
  

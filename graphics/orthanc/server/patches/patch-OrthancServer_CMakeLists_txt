@@ -1,7 +1,7 @@
 Index: OrthancServer/CMakeLists.txt
 --- OrthancServer/CMakeLists.txt.orig
 +++ OrthancServer/CMakeLists.txt
-@@ -482,8 +482,7 @@ if (ENABLE_PLUGINS AND BUILD_SERVE_FOLDERS)
+@@ -580,14 +580,13 @@ if (ENABLE_PLUGINS AND BUILD_SERVE_FOLDERS)
  
    set_target_properties(
      ServeFolders PROPERTIES 
@@ -11,7 +11,14 @@ Index: OrthancServer/CMakeLists.txt
      )
  
    install(
-@@ -525,8 +524,7 @@ if (ENABLE_PLUGINS AND BUILD_MODALITY_WORKLISTS)
+     TARGETS ServeFolders
+     RUNTIME DESTINATION lib    # Destination for Windows
+-    LIBRARY DESTINATION share/orthanc/plugins    # Destination for Linux
++    LIBRARY DESTINATION libexec/orthanc/plugins    # Destination for Linux
+     )
+ endif()
+ 
+@@ -630,14 +629,13 @@ if (ENABLE_PLUGINS AND BUILD_MODALITY_WORKLISTS)
  
    set_target_properties(
      ModalityWorklists PROPERTIES 
@@ -21,7 +28,32 @@ Index: OrthancServer/CMakeLists.txt
      )
  
    install(
-@@ -715,8 +713,7 @@ if (ENABLE_PLUGINS AND BUILD_HOUSEKEEPER)
+     TARGETS ModalityWorklists
+     RUNTIME DESTINATION lib    # Destination for Windows
+-    LIBRARY DESTINATION share/orthanc/plugins    # Destination for Linux
++    LIBRARY DESTINATION libexec/orthanc/plugins    # Destination for Linux
+     )
+ endif()
+ 
+@@ -701,7 +699,7 @@ if (ENABLE_PLUGINS AND BUILD_CONNECTIVITY_CHECKS)
+   install(
+     TARGETS ConnectivityChecks
+     RUNTIME DESTINATION lib    # Destination for Windows
+-    LIBRARY DESTINATION share/orthanc/plugins    # Destination for Linux
++    LIBRARY DESTINATION libexec/orthanc/plugins    # Destination for Linux
+     )
+ endif()
+ 
+@@ -755,7 +753,7 @@ if (ENABLE_PLUGINS AND BUILD_DELAYED_DELETION)
+   install(
+     TARGETS DelayedDeletion
+     RUNTIME DESTINATION lib    # Destination for Windows
+-    LIBRARY DESTINATION share/orthanc/plugins    # Destination for Linux
++    LIBRARY DESTINATION libexec/orthanc/plugins    # Destination for Linux
+     )
+ endif()
+ 
+@@ -797,14 +795,13 @@ if (ENABLE_PLUGINS AND BUILD_HOUSEKEEPER)
    
    set_target_properties(
      Housekeeper PROPERTIES 
@@ -31,3 +63,19 @@ Index: OrthancServer/CMakeLists.txt
      )
    
    install(
+     TARGETS Housekeeper
+     RUNTIME DESTINATION lib    # Destination for Windows
+-    LIBRARY DESTINATION share/orthanc/plugins    # Destination for Linux
++    LIBRARY DESTINATION libexec/orthanc/plugins    # Destination for Linux
+     )
+ endif()
+ 
+@@ -872,7 +869,7 @@ if (ENABLE_PLUGINS AND BUILD_MULTITENANT_DICOM)
+   install(
+     TARGETS MultitenantDicom
+     RUNTIME DESTINATION lib    # Destination for Windows
+-    LIBRARY DESTINATION share/orthanc/plugins    # Destination for Linux
++    LIBRARY DESTINATION libexec/orthanc/plugins    # Destination for Linux
+     )
+ endif()
+ 

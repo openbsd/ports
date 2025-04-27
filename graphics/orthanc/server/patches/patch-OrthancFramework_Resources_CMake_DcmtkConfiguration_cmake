@@ -1,10 +1,10 @@
 Index: OrthancFramework/Resources/CMake/DcmtkConfiguration.cmake
 --- OrthancFramework/Resources/CMake/DcmtkConfiguration.cmake.orig
 +++ OrthancFramework/Resources/CMake/DcmtkConfiguration.cmake
-@@ -299,6 +299,7 @@ if (NOT DCMTK_USE_EMBEDDED_DICTIONARIES)
-       /usr/share/libdcmtk19
+@@ -309,6 +309,7 @@ if (NOT DCMTK_USE_EMBEDDED_DICTIONARIES)
        /usr/share/libdcmtk20
        /usr/local/share/dcmtk
+       /usr/local/share/dcmtk-3.6.8
 +      /usr/local/share/dcmtk-3.6.9
        )
  

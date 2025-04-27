@@ -5,10 +5,12 @@
 include/orthanc/
 include/orthanc/OrthancCDatabasePlugin.h
 include/orthanc/OrthancCPlugin.h
+include/orthanc/OrthancDatabasePlugin.proto
 libexec/orthanc/
 libexec/orthanc/plugins/
 @so libexec/orthanc/plugins/libHousekeeper.so
 @so libexec/orthanc/plugins/libModalityWorklists.so
+@lib libexec/orthanc/plugins/libMultitenantDicom.so.${LIBMultitenantDicom_VERSION}
 @so libexec/orthanc/plugins/libServeFolders.so
 @bin sbin/Orthanc
 share/doc/orthanc/
@@ -23,10 +25,10 @@ share/doc/orthanc/OrthancPlugin/classes.html
 share/doc/orthanc/OrthancPlugin/clipboard.js
 share/doc/orthanc/OrthancPlugin/closed.png
 share/doc/orthanc/OrthancPlugin/deprecated.html
-share/doc/orthanc/OrthancPlugin/dir_076e7eee9774f2b95d59a44fc7c5dc4b.html
 share/doc/orthanc/OrthancPlugin/dir_18f315041aaf5f48ef65a9b73e2a1470.html
 share/doc/orthanc/OrthancPlugin/dir_520ad0f1b6d3f851ab5c24f1548bcbe2.html
 share/doc/orthanc/OrthancPlugin/dir_bb38096ab39160dc20d44f3ea6b44507.html
+share/doc/orthanc/OrthancPlugin/dir_d7796c6dc8b9430f24e4b13a7b6e5105.html
 share/doc/orthanc/OrthancPlugin/dir_f4d72a64acd8929c0cc9ed96a7a336cc.html
 share/doc/orthanc/OrthancPlugin/doc.svg
 share/doc/orthanc/OrthancPlugin/docd.svg
@@ -59,10 +61,12 @@ share/doc/orthanc/OrthancPlugin/nav_fd.png
 share/doc/orthanc/OrthancPlugin/nav_g.png
 share/doc/orthanc/OrthancPlugin/nav_h.png
 share/doc/orthanc/OrthancPlugin/nav_hd.png
+share/doc/orthanc/OrthancPlugin/navtree.css
 share/doc/orthanc/OrthancPlugin/open.png
 share/doc/orthanc/OrthancPlugin/pages.html
 share/doc/orthanc/OrthancPlugin/plus.svg
 share/doc/orthanc/OrthancPlugin/plusd.svg
+share/doc/orthanc/OrthancPlugin/resize.js
 share/doc/orthanc/OrthancPlugin/splitbar.png
 share/doc/orthanc/OrthancPlugin/splitbard.png
 share/doc/orthanc/OrthancPlugin/structOrthancPluginDictionaryEntry-members.html

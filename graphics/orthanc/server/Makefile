@@ -1,12 +1,13 @@
 COMMENT =		RESTful DICOM server for healthcare and medical research
 
-DISTNAME =		Orthanc-1.11.1
+DISTNAME =		Orthanc-1.12.7
 PKGNAME =		${DISTNAME:L}
-REVISION =		9
 
 HOMEPAGE =		https://www.orthanc-server.com/
 
 SITES =			https://orthanc.uclouvain.be/downloads/sources/orthanc/
+
+SHARED_LIBS =		MultitenantDicom	0.0
 
 WANTLIB += ${COMPILER_LIBCXX} boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_date_time-mt boost_filesystem-mt boost_iostreams-mt
@@ -14,8 +15,8 @@ WANTLIB += boost_locale-mt boost_regex-mt boost_system-mt boost_thread-mt
 WANTLIB += c civetweb cmr crypto curl dcmdata dcmdsig dcmect dcmfg
 WANTLIB += dcmimage dcmimgle dcmiod dcmjpeg dcmjpls dcmnet dcmpmap
 WANTLIB += dcmpstat dcmqrdb dcmrt dcmseg dcmsr dcmtkcharls dcmtls
-WANTLIB += dcmtract dcmwlm i2d iconv ijg12 ijg16 ijg8 jpeg jsoncpp
-WANTLIB += lua5.1 m oflog ofstd png pugixml sqlite3 ssl uuid z
+WANTLIB += dcmtract dcmwlm dcmxml i2d iconv ijg12 ijg16 ijg8 jpeg jsoncpp
+WANTLIB += lua5.1 m oficonv oflog ofstd png protobuf pugixml sqlite3 ssl uuid z
 
 # c++11
 COMPILER =		base-clang ports-gcc
@@ -31,6 +32,7 @@ BUILD_DEPENDS =		devel/doxygen>=1.10.0 \
 
 LIB_DEPENDS =		databases/sqlite3 \
 			devel/boost \
+			devel/protobuf \
 			devel/jsoncpp \
 			graphics/dcmtk \
 			net/curl \

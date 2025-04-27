@@ -1,7 +1,7 @@
 Index: OrthancFramework/Resources/CMake/LibIconvConfiguration.cmake
 --- OrthancFramework/Resources/CMake/LibIconvConfiguration.cmake.orig
 +++ OrthancFramework/Resources/CMake/LibIconvConfiguration.cmake
-@@ -97,15 +97,10 @@ else() 
+@@ -98,15 +98,10 @@ else() 
  
    # Check whether the support for libiconv is bundled within the
    # standard C library

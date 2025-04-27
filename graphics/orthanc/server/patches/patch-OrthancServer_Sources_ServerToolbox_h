@@ -3,7 +3,7 @@ Fix build with boost 1.84
 Index: OrthancServer/Sources/ServerToolbox.h
 --- OrthancServer/Sources/ServerToolbox.h.orig
 +++ OrthancServer/Sources/ServerToolbox.h
-@@ -26,6 +26,7 @@
+@@ -27,6 +27,7 @@
  #include "ServerEnumerations.h"
  
  #include <boost/noncopyable.hpp>
