@@ -337,6 +337,7 @@
      SUBDIR += py-pipx
      SUBDIR += py-platformdirs
      SUBDIR += py-prometheus_client
+     SUBDIR += py-proxmoxer
      SUBDIR += py-psutil
      SUBDIR += py-pushover
      SUBDIR += py-pynetbox
