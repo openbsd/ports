@@ -1,7 +1,7 @@
 Index: common.pri
 --- common.pri.orig
 +++ common.pri
-@@ -58,7 +58,6 @@ win32 {
+@@ -62,7 +62,6 @@ win32 {
  unix|macx|win32-g++ {
  # no such option for MSVC
  QMAKE_CXXFLAGS_DEBUG += -g

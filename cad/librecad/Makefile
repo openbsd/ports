@@ -2,7 +2,7 @@ COMMENT =	2D CAD program
 
 GH_ACCOUNT =	LibreCAD
 GH_PROJECT =	LibreCAD
-GH_TAGNAME =	2.2.0.2
+GH_TAGNAME =	v2.2.1.1
 
 CATEGORIES =	cad graphics
 

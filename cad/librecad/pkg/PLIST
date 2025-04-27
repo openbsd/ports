@@ -1455,6 +1455,7 @@ share/librecad/plugins/
 @so share/librecad/plugins/liblist.so
 @so share/librecad/plugins/libpicfile.so
 @so share/librecad/plugins/libplotequation.so
+@so share/librecad/plugins/libpointstocsv.so
 @so share/librecad/plugins/libsameprop.so
 @so share/librecad/plugins/libsample.so
 share/librecad/qm/
@@ -1491,11 +1492,13 @@ share/librecad/qm/librecad_eu.qm
 share/librecad/qm/librecad_fi.qm
 share/librecad/qm/librecad_fr.qm
 share/librecad/qm/librecad_gl.qm
+share/librecad/qm/librecad_he.qm
 share/librecad/qm/librecad_hi.qm
 share/librecad/qm/librecad_hu.qm
 share/librecad/qm/librecad_id_ID.qm
 share/librecad/qm/librecad_it.qm
 share/librecad/qm/librecad_ja.qm
+share/librecad/qm/librecad_ka.qm
 share/librecad/qm/librecad_ko.qm
 share/librecad/qm/librecad_lv.qm
 share/librecad/qm/librecad_mk.qm
@@ -1510,8 +1513,10 @@ share/librecad/qm/librecad_ru.qm
 share/librecad/qm/librecad_sk.qm
 share/librecad/qm/librecad_sl.qm
 share/librecad/qm/librecad_sq_al.qm
+share/librecad/qm/librecad_sr.qm
 share/librecad/qm/librecad_sv.qm
 share/librecad/qm/librecad_ta.qm
+share/librecad/qm/librecad_th.qm
 share/librecad/qm/librecad_tr.qm
 share/librecad/qm/librecad_uk.qm
 share/librecad/qm/librecad_zh_cn.qm
