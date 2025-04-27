@@ -92,6 +92,8 @@ lib/qt6/qml/org/kde/kirigami/delegates/kde-qmlmodule.version
 lib/qt6/qml/org/kde/kirigami/delegates/qmldir
 lib/qt6/qml/org/kde/kirigami/dialogs/
 lib/qt6/qml/org/kde/kirigami/dialogs/Dialog.qml
+lib/qt6/qml/org/kde/kirigami/dialogs/DialogHeader.qml
+lib/qt6/qml/org/kde/kirigami/dialogs/DialogHeaderTopContent.qml
 lib/qt6/qml/org/kde/kirigami/dialogs/KirigamiDialogs.qmltypes
 lib/qt6/qml/org/kde/kirigami/dialogs/MenuDialog.qml
 lib/qt6/qml/org/kde/kirigami/dialogs/PromptDialog.qml
@@ -208,6 +210,7 @@ share/locale/ko/LC_MESSAGES/libkirigami6_qt.qm
 share/locale/lt/LC_MESSAGES/libkirigami6_qt.qm
 share/locale/lv/LC_MESSAGES/libkirigami6_qt.qm
 share/locale/ml/LC_MESSAGES/libkirigami6_qt.qm
+share/locale/nb/LC_MESSAGES/libkirigami6_qt.qm
 share/locale/nl/LC_MESSAGES/libkirigami6_qt.qm
 share/locale/nn/LC_MESSAGES/libkirigami6_qt.qm
 share/locale/pa/LC_MESSAGES/libkirigami6_qt.qm

@@ -3,7 +3,7 @@ DISTNAME =	karchive-${VERSION}
 
 SHARED_LIBS +=  KF6Archive                0.0 # 0.0
 
-WANTLIB += ${COMPILER_LIBCXX} Qt6Core bz2 lzma m z zstd
+WANTLIB += ${COMPILER_LIBCXX} Qt6Core bz2 crypto lzma m z zstd
 
 LIB_DEPENDS =	archivers/xz \
 		archivers/zstd \
