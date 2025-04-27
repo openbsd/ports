@@ -13,6 +13,7 @@ HOMEPAGE =		https://sfcgal.gitlab.io/SFCGAL/
 # LGPLv3+ and GPLv3+; see https://www.cgal.org/license.html
 PERMIT_PACKAGE =	Yes
 
+COMPILER =		base-clang ports-gcc
 SITES =			https://gitlab.com/sfcgal/SFCGAL/-/archive/${V}/
 
 MODULES =		devel/cmake
