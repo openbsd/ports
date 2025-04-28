@@ -1,0 +1,15 @@
+https://gitlab.gnome.org/GNOME/yelp/-/issues/221
+https://gitlab.gnome.org/GNOME/yelp/-/commit/7ecd58dc0ca7bf9d0acb00bf04194a0cb6e8b724.patch
+
+Index: libyelp/yelp-view.c
+--- libyelp/yelp-view.c.orig
++++ libyelp/yelp-view.c
+@@ -971,7 +971,7 @@ view_external_uri (YelpView *view,
+ 
+     if (app_info)
+       {
+-        if (!strstr (g_app_info_get_executable (app_info), "yelp"))
++        if (!strstr (g_app_info_get_executable (app_info), "yelp") && !strstr (struri, "%3C") && !strstr (struri, "%3E"))
+           {
+             GList l;
+ 

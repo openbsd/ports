@@ -1,0 +1,18 @@
+https://gitlab.gnome.org/GNOME/yelp/-/issues/221
+https://gitlab.gnome.org/GNOME/yelp/-/commit/7ecd58dc0ca7bf9d0acb00bf04194a0cb6e8b724.patch
+
+Index: data/xslt/mal2html.xsl.in
+--- data/xslt/mal2html.xsl.in.orig
++++ data/xslt/mal2html.xsl.in
+@@ -19,6 +19,11 @@
+ <xsl:param name="mal.link.prefix" select="'xref:'"/>
+ <xsl:param name="mal.link.extension" select="''"/>
+ 
++<xsl:template name="html.head.top.custom">
++  <xsl:param name="node" select="."/>
++  <meta http-equiv="Content-Security-Policy" content="default-src bogus-ghelp: bogus-gnome-help: bogus-help: bogus-help-list: bogus-info: bogus-man: ; script-src 'nonce-{$html.csp.nonce}'; style-src 'nonce-{$html.csp.nonce}'; "/>
++</xsl:template>
++
+ <xsl:template name="mal.link.target.custom">
+   <xsl:param name="node" select="."/>
+   <xsl:param name="action" select="$node/@action"/>

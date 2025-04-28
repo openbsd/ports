@@ -1,0 +1,44 @@
+https://gitlab.gnome.org/GNOME/yelp/-/issues/221
+https://gitlab.gnome.org/GNOME/yelp/-/commit/7ecd58dc0ca7bf9d0acb00bf04194a0cb6e8b724.patch
+
+Index: libyelp/yelp-transform.c
+--- libyelp/yelp-transform.c.orig
++++ libyelp/yelp-transform.c
+@@ -71,6 +71,8 @@ static void      xslt_yelp_cache            (xsltTrans
+                                              xsltStylePreCompPtr      comp);
+ static void      xslt_yelp_aux              (xmlXPathParserContextPtr ctxt,
+                                              int                      nargs);
++static void      xslt_yelp_generate_nonce   (xmlXPathParserContextPtr ctxt,
++                                             int                      nargs);
+ 
+ enum {
+     PROP_0,
+@@ -412,6 +414,10 @@ transform_run (YelpTransform *transform)
+                              BAD_CAST "input",
+                              BAD_CAST YELP_NAMESPACE,
+                              (xmlXPathFunction) xslt_yelp_aux);
++    xsltRegisterExtFunction (priv->context,
++                         BAD_CAST "generate_nonce",
++                         BAD_CAST YELP_NAMESPACE,
++                         (xmlXPathFunction) xslt_yelp_generate_nonce);
+ 
+     priv->output = xsltApplyStylesheetUser (priv->stylesheet,
+                                             priv->input,
+@@ -606,4 +612,17 @@ xslt_yelp_aux (xmlXPathParserContextPtr ctxt, int narg
+     ret = xmlXPathNewNodeSet (xmlDocGetRootElement (priv->aux));
+     xsltExtensionInstructionResultRegister (tctxt, ret);
+     valuePush (ctxt, ret);
++}
++
++static void
++xslt_yelp_generate_nonce (xmlXPathParserContextPtr ctxt, int nargs)
++{
++    GRand* rand;
++    gchar* nonce_str;
++
++    rand = g_rand_new ();
++    nonce_str = g_strdup_printf("%08x%08x", g_rand_int (rand), g_rand_int (rand));
++    xmlXPathReturnString (ctxt, xmlStrdup ((xmlChar *) nonce_str));
++    g_free(nonce_str);
++    g_rand_free(rand);
+ }

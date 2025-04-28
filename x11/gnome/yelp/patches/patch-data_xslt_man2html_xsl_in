@@ -1,0 +1,15 @@
+https://gitlab.gnome.org/GNOME/yelp/-/issues/221
+https://gitlab.gnome.org/GNOME/yelp/-/commit/7ecd58dc0ca7bf9d0acb00bf04194a0cb6e8b724.patch
+
+Index: data/xslt/man2html.xsl.in
+--- data/xslt/man2html.xsl.in.orig
++++ data/xslt/man2html.xsl.in
+@@ -131,7 +131,7 @@
+   the correct styling and a single character which we measure the
+   width of and update each sheet as required.
+ -->
+-<script type="text/javascript" language="javascript">
++<script type="text/javascript" language="javascript" nonce="{$html.csp.nonce}">
+ <xsl:text>
+ $(document).ready (function () {
+   var div = document.getElementById("invisible-char");
