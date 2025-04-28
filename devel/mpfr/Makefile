@@ -1,7 +1,7 @@
 COMMENT=	library for multiple-precision floating-point computations
 
-DISTNAME=	mpfr-4.2.1
-SHARED_LIBS=	mpfr		2.2	# 8.1
+DISTNAME=	mpfr-4.2.2
+SHARED_LIBS=	mpfr		2.2	# 8.2
 CATEGORIES=	devel math
 HOMEPAGE=	https://www.mpfr.org/
 
@@ -11,11 +11,6 @@ MAINTAINER=	Christian Weisgerber <naddy@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 SITES=		${HOMEPAGE}${DISTNAME}/
-DIST_SUBDIR=	${DISTNAME}
-.for i in
-PATCHFILES+=	patch$i
-.endfor
-PATCH_DIST_STRIP=-p1
 EXTRACT_SUFX=	.tar.xz
 
 LIB_DEPENDS=	devel/gmp,no_cxx,bootstrap
