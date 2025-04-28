@@ -30,7 +30,9 @@ LIB_DEPENDS=	devel/boost \
 BUILD_DEPENDS+=	devel/bison
 
 FLAVOR?=
-FLAVORS=	mysql postgresql
+# postgresql flavor doesn't build with boost >= 1.87
+# /usr/local/include/boost/lexical_cast/detail/inf_nan.hpp:115:21: error: no matching function for call to 'signbit'
+FLAVORS=	mysql# postgresql
 DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
 FAKE_FLAGS=	sysconfdir=${PREFIX}/share/examples

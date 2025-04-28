@@ -197,7 +197,6 @@
      SUBDIR += kdsoap-ws-discovery-client
      SUBDIR += kea
      SUBDIR += kea,mysql
-     SUBDIR += kea,postgresql
      SUBDIR += kismet
      SUBDIR += kissd
      SUBDIR += knot
