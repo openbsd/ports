@@ -1,5 +1,5 @@
 Index: CMakeLists.txt
---- CMakeLists.txt.orig
+--- CMakeLists.txt.orig.port
 +++ CMakeLists.txt
 @@ -510,7 +510,7 @@ endif()
  

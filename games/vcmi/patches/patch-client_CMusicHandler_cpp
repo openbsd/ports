@@ -1,7 +1,7 @@
 include SDL_mixer.h directly in CMusicHandler.h where it's used
 
 Index: client/CMusicHandler.cpp
---- client/CMusicHandler.cpp.orig
+--- client/CMusicHandler.cpp.orig.port
 +++ client/CMusicHandler.cpp
 @@ -8,7 +8,6 @@
   *

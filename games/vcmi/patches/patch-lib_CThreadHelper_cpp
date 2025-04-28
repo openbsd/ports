@@ -1,5 +1,5 @@
 Index: lib/CThreadHelper.cpp
---- lib/CThreadHelper.cpp.orig
+--- lib/CThreadHelper.cpp.orig.port
 +++ lib/CThreadHelper.cpp
 @@ -112,7 +112,6 @@ void setThreadName(const std::string &name)
  #elif defined(VCMI_HAIKU)
