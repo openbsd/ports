@@ -3,7 +3,7 @@ COMMENT=	library for reading, modifying and creating LAS LiDAR files
 MODPY_DISTV =	2.5.4
 DISTNAME=	laspy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	geo devel textproc
 
@@ -11,13 +11,12 @@ CATEGORIES=	geo devel textproc
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
 
 # bin/laspy needs typer and lazrs
-BUILD_DEPENDS=	math/py-numpy,${FLAVOR}
-RUN_DEPENDS=	math/py-numpy,${FLAVOR} \
-		graphics/py-opengl,${FLAVOR}
+BUILD_DEPENDS=	math/py-numpy
+RUN_DEPENDS=	math/py-numpy \
+		graphics/py-opengl
 
 .include <bsd.port.mk>
