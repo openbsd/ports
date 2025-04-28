@@ -5,17 +5,17 @@ DPB_PROPERTIES=	parallel
 COMMENT-main=	free peer-reviewed portable C++ source libraries
 COMMENT-md=	machine-dependent libraries for boost
 
-VERSION=	1.84.0
+VERSION=	1.87.0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME=	boost-${VERSION}
-REVISION=	8
 EPOCH=		0
 CATEGORIES=	devel
 SITES=		https://archives.boost.io/release/${VERSION}/source/
 EXTRACT_SUFX=	.tar.bz2
 
-SO_VERSION=	23.0
+SO_VERSION=	24.0
 BOOST_LIBS=	boost_atomic-mt \
+		boost_charconv-mt boost_charconv \
 		boost_chrono-mt boost_chrono \
 		boost_container-mt boost_container \
 		boost_contract-mt boost_contract \
@@ -56,7 +56,8 @@ BOOST_LIBS=	boost_atomic-mt \
 # MD
 BOOST_LIBS+=	boost_context-mt \
 		boost_coroutine-mt boost_coroutine \
-		boost_fiber-mt
+		boost_fiber-mt \
+		boost_process-mt boost_process
 
 .for _lib in ${BOOST_LIBS}
 SHARED_LIBS+=	${_lib} ${SO_VERSION}
@@ -69,8 +70,10 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 # Boost
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	${COMPILER_LIBCXX} bz2 c icudata icui18n icuuc m z
-WANTLIB-md=	${COMPILER_LIBCXX} boost_filesystem-mt m
+WANTLIB=	${COMPILER_LIBCXX} bz2 c iconv icudata icui18n icuuc m z
+WANTLIB-md+=	${COMPILER_LIBCXX} boost_date_time-mt boost_date_time
+WANTLIB-md+=	boost_filesystem-mt boost_filesystem boost_system-mt
+WANTLIB-md+=	boost_system kvm m
 
 COMPILER=	base-clang ports-gcc
 
@@ -82,6 +85,7 @@ MODPY_RUNDEP=	No
 BUILD_DEPENDS=	math/py-numpy
 
 LIB_DEPENDS=	archivers/bzip2 \
+		converters/libiconv \
 		textproc/icu4c
 
 LIB_DEPENDS-md=	devel/boost
@@ -108,7 +112,8 @@ BJAM_CONFIG=	-sICU_PATH=${LOCALBASE} \
 		variant=release \
 		link=static,shared \
 		threading=single,multi \
-		toolset=${TOOLSET}
+		toolset=${TOOLSET} \
+		boost.stacktrace.from_exception=off
 
 BOOTSTRAP=	--with-bjam=${WRKSRC}/b2 \
 		--with-toolset=${TOOLSET} \
@@ -128,9 +133,8 @@ NO_TEST=	Yes
 SUBST_VARS+=	VERSION SO_VERSION
 
 # Revert back to Boost::Context 1.80.0 ASM code for i386
-# and add new support for sparc64
 post-extract:
-	cp -f ${FILESDIR}/*_sysv_elf_gas.S ${WRKSRC}/libs/context/src/asm/
+	cp -f ${FILESDIR}/*_i386_sysv_elf_gas.S ${WRKSRC}/libs/context/src/asm/
 
 do-configure:
 	echo "using ${TOOLSET} : : ${CXX} ;" >>${WRKSRC}/tools/build/src/user-config.jam

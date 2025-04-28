@@ -1,7 +1,7 @@
 Index: tools/build/src/engine/build.sh
 --- tools/build/src/engine/build.sh.orig
 +++ tools/build/src/engine/build.sh
-@@ -323,7 +323,7 @@ case "${B2_TOOLSET}" in
+@@ -325,7 +325,7 @@ case "${B2_TOOLSET}" in
  
      gcc|gcc-*)
          CXX_VERSION_OPT=${CXX_VERSION_OPT:---version}
@@ -10,7 +10,7 @@ Index: tools/build/src/engine/build.sh
          B2_CXXFLAGS_DEBUG="-O0 -g"
      ;;
  
-@@ -389,7 +389,7 @@ case "${B2_TOOLSET}" in
+@@ -391,7 +391,7 @@ case "${B2_TOOLSET}" in
  
      clang|clang-*)
          CXX_VERSION_OPT=${CXX_VERSION_OPT:---version}

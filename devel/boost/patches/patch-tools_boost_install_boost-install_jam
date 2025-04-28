@@ -3,7 +3,7 @@ Fix relative path to ${LOCALBASE}/include in boost_*-config.cmake files.
 Index: tools/boost_install/boost-install.jam
 --- tools/boost_install/boost-install.jam.orig
 +++ tools/boost_install/boost-install.jam
-@@ -797,7 +797,7 @@ rule generate-cmake-config- ( target : sources * : pro
+@@ -816,7 +816,7 @@ rule make-cmake-config ( target : sources * : properti
              : true ;
      }
  

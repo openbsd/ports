@@ -23,3 +23,7 @@ lib/cmake/boost_fiber-${VERSION}/libboost_fiber-variant-mt-static.cmake
 @lib lib/libboost_coroutine.so.${LIBboost_coroutine_VERSION}
 @static-lib lib/libboost_fiber-mt.a
 @lib lib/libboost_fiber-mt.so.${LIBboost_fiber-mt_VERSION}
+@static-lib lib/libboost_process-mt.a
+@lib lib/libboost_process-mt.so.${LIBboost_process-mt_VERSION}
+@static-lib lib/libboost_process.a
+@lib lib/libboost_process.so.${LIBboost_process_VERSION}
