@@ -1067,6 +1067,7 @@ zabbix/include/classes/html/CTextArea.php
 zabbix/include/classes/html/CTextAreaFlexible.php
 zabbix/include/classes/html/CTextBox.php
 zabbix/include/classes/html/CVar.php
+zabbix/include/classes/html/CVertical.php
 zabbix/include/classes/html/CVisibilityBox.php
 zabbix/include/classes/html/CWarning.php
 zabbix/include/classes/html/interfaces/
@@ -1519,6 +1520,7 @@ zabbix/js/colorpicker.js
 zabbix/js/common.js
 zabbix/js/component.z-bar-gauge.js
 zabbix/js/component.z-select.js
+zabbix/js/component.z-vertical.js
 zabbix/js/defines.js
 zabbix/js/flickerfreescreen.js
 zabbix/js/functions.js
@@ -1720,6 +1722,10 @@ zabbix/locale/uk/LC_MESSAGES/
 zabbix/locale/uk/LC_MESSAGES/frontend.mo
 zabbix/locale/uk/LC_MESSAGES/frontend.po
 zabbix/locale/update_po.sh
+zabbix/locale/uz/
+zabbix/locale/uz/LC_MESSAGES/
+zabbix/locale/uz/LC_MESSAGES/frontend.mo 
+zabbix/locale/uz/LC_MESSAGES/frontend.po
 zabbix/locale/vi/
 zabbix/locale/vi/LC_MESSAGES/
 zabbix/locale/vi/LC_MESSAGES/frontend.mo
