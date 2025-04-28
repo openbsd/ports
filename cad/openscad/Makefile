@@ -1,3 +1,4 @@
+BROKEN =		update to git snapshot to build with 1.87
 COMMENT =		the programmer's solid 3D CAD modeller
 BROKEN-sparc64=	SIGILL on src/cgalutils.cc with CGAL-4.6.3
 
