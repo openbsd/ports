@@ -1,5 +1,5 @@
-@pkgpath math/py-pandas,python3
 @conflict py-pandas-*
+@pkgpath math/py-pandas,python3
 lib/python${MODPY_VERSION}/site-packages/pandas/
 lib/python${MODPY_VERSION}/site-packages/pandas-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/pandas-${MODPY_DISTV}.dist-info/LICENSE
