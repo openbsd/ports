@@ -1,7 +1,7 @@
 
 COMMENT =		fast JSON parser and serializer
 
-DISTNAME =		oj-3.16.0
+DISTNAME =		oj-3.16.10
 
 CATEGORIES =		converters
 
