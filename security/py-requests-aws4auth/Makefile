@@ -3,6 +3,7 @@ COMMENT =		AWS v4 authentication for py-requests
 MODPY_DISTV =		1.3.1
 DISTNAME =		requests_aws4auth-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/g}
+REVISION =		0
 
 CATEGORIES =		security
 

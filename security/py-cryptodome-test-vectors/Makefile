@@ -4,7 +4,7 @@ MODPY_DISTV=	1.0.20
 DISTNAME=	pycryptodome-test-vectors-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/py//}
 EXTRACT_SUFX=	.zip
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	security
 

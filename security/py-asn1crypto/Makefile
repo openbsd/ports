@@ -5,7 +5,7 @@ GH_TAGNAME =	${MODPY_DISTV}
 GH_ACCOUNT =	wbond
 GH_PROJECT =	asn1crypto
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	security
 

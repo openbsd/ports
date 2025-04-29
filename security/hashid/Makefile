@@ -2,7 +2,7 @@ COMMENT =	Identify the different types of cryptographic hashes
 
 MODPY_DISTV =	3.1.4
 DISTNAME =	hashid-${MODPY_DISTV}
-REVISION =	4
+REVISION =	5
 
 GH_ACCOUNT =    psypanda
 GH_PROJECT =    hashID

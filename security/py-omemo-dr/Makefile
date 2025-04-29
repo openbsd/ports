@@ -3,7 +3,7 @@ COMMENT =		Gajim's fork of py-axolotl
 MODPY_DISTV =	1.0.1
 DISTNAME =		omemo-dr-${MODPY_DISTV}
 PKGNAME =		py-omemo-dr-${MODPY_DISTV}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		security
 

@@ -3,7 +3,7 @@ COMMENT =	Digital Forensics Windows Registry (dfWinReg)
 MODPY_DISTV =	20200415
 DISTNAME =	dfwinreg-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	security
 

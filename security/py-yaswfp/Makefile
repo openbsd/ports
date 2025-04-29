@@ -3,7 +3,7 @@ COMMENT =	Yet Another SWF Parser
 MODPY_DISTV =	0.9.3
 DISTNAME =	yaswfp-${MODPY_DISTV}pl20220304
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	facundobatista
 GH_PROJECT =	yaswfp

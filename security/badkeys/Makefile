@@ -3,6 +3,7 @@ COMMENT=	check cryptographic keys for known weaknesses
 MODPY_DISTV=	0.0.13
 # standalone; no py- prefix/FLAVOR
 DISTNAME=	badkeys-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	security
 

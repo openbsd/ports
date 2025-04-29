@@ -5,7 +5,7 @@ COMMENT =		ROP chain builder based off of angr
 
 MODPY_DISTV =	9.2.8
 DISTNAME =		angrop-${MODPY_DISTV}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		security
 

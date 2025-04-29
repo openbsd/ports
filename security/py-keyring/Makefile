@@ -3,6 +3,7 @@ COMMENT=	store and access your passwords safely
 MODPY_DISTV=	25.6.0
 DISTNAME=	keyring-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	security
 

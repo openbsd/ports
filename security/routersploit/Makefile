@@ -4,7 +4,7 @@ MODPY_DISTV =	3.4.0
 GH_ACCOUNT =	threat9
 GH_PROJECT =	routersploit
 GH_TAGNAME =	v${MODPY_DISTV}
-REVISION =	7
+REVISION =	8
 
 CATEGORIES =	security net
 

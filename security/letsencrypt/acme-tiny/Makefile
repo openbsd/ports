@@ -4,7 +4,7 @@ MODPY_DISTV=	5.0.1
 DISTNAME=	acme-tiny-${MODPY_DISTV}
 EPOCH=		0
 
-REVISION=	3
+REVISION=	4
 
 HOMEPAGE=	https://github.com/diafygi/acme-tiny
 

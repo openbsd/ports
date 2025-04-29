@@ -7,7 +7,7 @@ GH_PROJECT =	oauthlib
 GH_TAGNAME =	v${MODPY_DISTV}
 
 PKGNAME =	py-oauthlib-${MODPY_DISTV}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	security
 MAINTAINER =	Johan Huldtgren <jhuldtgren@gmail.com>

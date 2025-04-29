@@ -3,7 +3,7 @@ COMMENT =		volatile memory extraction framework
 MODPY_DISTV =	2.7.0
 DISTNAME =		volatility3-${MODPY_DISTV}
 PKGNAME =		${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		security
 HOMEPAGE =		https://www.volatilityfoundation.org/

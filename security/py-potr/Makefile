@@ -8,7 +8,7 @@ MODPY_DISTV =	1.0.2
 DISTNAME =		python-potr-${MODPY_DISTV}
 PKGNAME =		py-potr-${MODPY_DISTV}
 CATEGORIES =		security net
-REVISION =		1
+REVISION =		2
 
 # LGPLv3
 PERMIT_PACKAGE =	Yes

@@ -4,7 +4,7 @@ MODPY_DISTV =	3.3.0
 
 DISTNAME =		ssh_audit-${MODPY_DISTV}
 PKGNAME =		ssh-audit-${MODPY_DISTV}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		security
 

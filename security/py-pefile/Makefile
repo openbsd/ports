@@ -3,6 +3,7 @@ COMMENT=	Python module to read and work with PE files
 MODPY_DISTV=	2024.8.26
 DISTNAME=	pefile-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	security
 

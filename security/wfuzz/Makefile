@@ -2,7 +2,7 @@ COMMENT =	web fuzzer
 
 MODPY_DISTV =	3.1.0
 DISTNAME =	wfuzz-${MODPY_DISTV}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	security www
 

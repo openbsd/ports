@@ -3,6 +3,7 @@ COMMENT=	realistic password strength estimator
 MODPY_DISTV=	4.5.0
 DISTNAME=	zxcvbn-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	security
 

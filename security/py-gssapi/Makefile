@@ -1,27 +1,27 @@
-COMMENT=		Python bindings to GSSAPI C libraries
+COMMENT=	Python bindings to GSSAPI C libraries
 
 MODPY_DISTV=	1.8.3
-DISTNAME=		python-gssapi-${MODPY_DISTV}
-PKGNAME=		py-gssapi-${MODPY_DISTV}
-REVISION=		1
+DISTNAME=	python-gssapi-${MODPY_DISTV}
+PKGNAME=	py-gssapi-${MODPY_DISTV}
+REVISION=	2
 
-CATEGORIES=		security
+SITES=		https://github.com/pythongssapi/python-gssapi/releases/download/v${MODPY_DISTV}/
+
+CATEGORIES=	security
 
 # ISC
-PERMIT_PACKAGE=	Yes
-
-SITES=			https://github.com/pythongssapi/python-gssapi/releases/download/v${MODPY_DISTV}/
+PERMIT_PACKAGE=Yes
 
 WANTLIB += heimdal/lib/gssapi
 
-MODULES=		lang/python \
-			security/heimdal
+MODULES=	lang/python \
+		security/heimdal
 
-MODPY_PYBUILD=		setuptools
+MODPY_PYBUILD=	setuptools
 
-BUILD_DEPENDS=		lang/cython
+BUILD_DEPENDS=	lang/cython
 
-RUN_DEPENDS=		devel/py-decorator
+RUN_DEPENDS=	devel/py-decorator
 
 # tests require devel/py-parameterized, k5test (not ported),
 # and a MIT Kerberos installation including KDC (they create

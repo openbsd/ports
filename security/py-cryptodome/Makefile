@@ -3,6 +3,7 @@ COMMENT=	self-contained cryptographic library for Python
 MODPY_DISTV=	3.22.0
 DISTNAME=	pycryptodome-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/py//}
+REVISION=	0
 
 CATEGORIES=	security
 

@@ -1,14 +1,15 @@
-@pkgpath security/py-miasm,python3
 @conflict py-elfesteem-*
 @conflict py-miasm-*
+@pkgpath security/py-miasm,python3
 @pkgpath security/py-elfesteem
 lib/python${MODPY_VERSION}/site-packages/miasm/
-lib/python${MODPY_VERSION}/site-packages/miasm-0.1.3.dist-info/
-lib/python${MODPY_VERSION}/site-packages/miasm-0.1.3.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/miasm-0.1.3.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/miasm-0.1.3.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/miasm-0.1.3.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/miasm-0.1.3.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/miasm-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/miasm-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/miasm-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/miasm-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/miasm-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/miasm-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/miasm-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/miasm/VERSION
 lib/python${MODPY_VERSION}/site-packages/miasm/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/miasm/${MODPY_PYCACHE}/

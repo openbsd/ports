@@ -1,5 +1,5 @@
-@pkgpath security/py-axolotl,python3
 @conflict py-axolotl-*
+@pkgpath security/py-axolotl,python3
 lib/python${MODPY_VERSION}/site-packages/axolotl/
 lib/python${MODPY_VERSION}/site-packages/axolotl/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/axolotl/${MODPY_PYCACHE}/

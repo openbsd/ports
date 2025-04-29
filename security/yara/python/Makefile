@@ -5,7 +5,7 @@ GH_PROJECT = 	yara-python
 MODPY_DISTV =	4.2.0
 PKGNAME =		py-yara-${MODPY_DISTV}
 GH_TAGNAME =		v${MODPY_DISTV}
-REVISION =		6
+REVISION =		7
 
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c

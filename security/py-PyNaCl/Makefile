@@ -3,7 +3,7 @@ COMMENT =		Python binding to the NaCl library
 MODPY_DISTV =	1.5.0
 DISTNAME =		PyNaCl-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		security
 

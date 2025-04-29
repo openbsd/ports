@@ -1,6 +1,7 @@
 COMMENT =		SSHv2 library built on asyncio
 
 MODPY_DISTV =		2.20.0
+REVISION =		0
 DISTNAME =		asyncssh-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 

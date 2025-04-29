@@ -4,6 +4,7 @@ MODPY_DISTV =	3.5.1
 DISTNAME =	paramiko-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	security
+REVISION =	0
 
 HOMEPAGE =	https://www.paramiko.org/
 

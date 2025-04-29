@@ -3,7 +3,7 @@ COMMENT =	SPAKE2 password-authenticated key exchange (pure Python)
 MODPY_DISTV =	0.9
 DISTNAME =		spake2-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		security
 

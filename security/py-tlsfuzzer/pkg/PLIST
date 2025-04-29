@@ -1,10 +1,11 @@
 @pkgpath security/py-tlsfuzzer,python3
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer-0.0.1.dist-info/
-lib/python${MODPY_VERSION}/site-packages/tlsfuzzer-0.0.1.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer-0.0.1.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer-0.0.1.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer-0.0.1.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/tlsfuzzer-0.0.1.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/tlsfuzzer-0.0.1.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer-0.0.1.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tlsfuzzer/${MODPY_PYCACHE}/

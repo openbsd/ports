@@ -1,7 +1,7 @@
 COMMENT =	passphrase generator using EFF's wordlists
 
 MODPY_DISTV=	0.1.5
-REVISION =		3
+REVISION =		4
 
 GH_ACCOUNT =	micahflee
 GH_PROJECT =	passphraseme

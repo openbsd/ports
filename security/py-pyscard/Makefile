@@ -3,6 +3,7 @@ COMMENT=	smartcard package for Python
 MODPY_DISTV=	2.2.1
 DISTNAME=	pyscard-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	1
 
 CATEGORIES=	security
 

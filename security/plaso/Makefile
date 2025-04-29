@@ -1,7 +1,7 @@
 COMMENT =		engine and tools to automate creation of super timeline
 
 MODPY_DISTV =	20200717
-REVISION =		5
+REVISION =		6
 DISTNAME =		plaso-${MODPY_DISTV}
 
 CATEGORIES =		security

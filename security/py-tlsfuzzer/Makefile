@@ -4,7 +4,7 @@ MODPY_DISTV =		20240906
 DISTNAME =		tlsfuzzer-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		security
-REVISION =		1
+REVISION =		2
 
 GH_ACCOUNT =		tlsfuzzer
 GH_PROJECT =		tlsfuzzer

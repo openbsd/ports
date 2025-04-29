@@ -3,7 +3,7 @@ COMMENT =	ForensicArtifacts.com Artifact Repository
 MODPY_DISTV =	20200118
 DISTNAME =	artifacts-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	security
 

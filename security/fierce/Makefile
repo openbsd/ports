@@ -4,7 +4,7 @@ MODPY_DISTV =	1.5.0
 GH_ACCOUNT =		mschwager
 GH_PROJECT =		fierce
 GH_TAGNAME =		${MODPY_DISTV}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		security
 

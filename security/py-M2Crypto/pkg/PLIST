@@ -1,11 +1,5 @@
 @pkgpath security/py-M2Crypto,python3
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/
-lib/python${MODPY_VERSION}/site-packages/M2Crypto-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/M2Crypto-${MODPY_DISTV}.dist-info/LICENCE
-lib/python${MODPY_VERSION}/site-packages/M2Crypto-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/M2Crypto-${MODPY_DISTV}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/M2Crypto-${MODPY_DISTV}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/M2Crypto-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/ASN1.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/AuthCookie.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/BIO.py
@@ -118,3 +112,10 @@ lib/python${MODPY_VERSION}/site-packages/M2Crypto/m2urllib2.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/m2xmlrpclib.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/threading.py
 lib/python${MODPY_VERSION}/site-packages/M2Crypto/util.py
+lib/python${MODPY_VERSION}/site-packages/m2crypto-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/m2crypto-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/m2crypto-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/m2crypto-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/m2crypto-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/m2crypto-${MODPY_DISTV}.dist-info/licenses/LICENCE
+lib/python${MODPY_VERSION}/site-packages/m2crypto-${MODPY_DISTV}.dist-info/top_level.txt

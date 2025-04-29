@@ -4,7 +4,7 @@ MODPY_DISTV =	0.23.0
 
 DISTNAME =	securesystemslib-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	security
 

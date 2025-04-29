@@ -3,7 +3,7 @@ COMMENT =	Digital Forensics date and time
 MODPY_DISTV =	20200824
 DISTNAME =	dfdatetime-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	security devel
 

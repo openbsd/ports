@@ -3,7 +3,7 @@ COMMENT =	subdomain scanner
 MODPY_DISTV =	7.0.2
 
 DISTNAME =	knockpy-${MODPY_DISTV}
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	guelfoweb
 GH_PROJECT =	knock

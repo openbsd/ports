@@ -3,6 +3,7 @@ COMMENT=	client for certificate authorities using ACME protocols
 HOMEPAGE=	https://certbot.eff.org/
 
 DISTNAME=	certbot-${MODPY_DISTV}
+REVISION=	0
 
 RUN_DEPENDS=	security/letsencrypt/py-acme=${MODPY_DISTV} \
 		devel/py-configargparse \

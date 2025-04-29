@@ -1,7 +1,7 @@
 COMMENT=	importer for pass (passwordstore)
 
 MODPY_DISTV=	3.5
-REVISION=	1
+REVISION=	2
 DISTNAME=	pass-import-${MODPY_DISTV}
 
 CATEGORIES=	security

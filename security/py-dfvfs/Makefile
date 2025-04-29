@@ -3,7 +3,7 @@ COMMENT =	Digital Forensics Virtual File System (dfVFS)
 MODPY_DISTV =	20200625
 DISTNAME =	dfvfs-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	security
 

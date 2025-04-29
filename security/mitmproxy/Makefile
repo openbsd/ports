@@ -3,6 +3,7 @@ COMMENT =		interactive intercepting HTTP proxy
 MODPY_DISTV =		11.1.3
 
 DISTNAME =		mitmproxy-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		security www net
 
