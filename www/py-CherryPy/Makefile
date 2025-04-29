@@ -4,6 +4,7 @@ MODPY_DISTV=	18.10.0
 DISTNAME=	cherrypy-${MODPY_DISTV}
 PKGNAME=	py-CherryPy-${MODPY_DISTV}
 CATEGORIES=	www
+REVISION=	0
 
 # https://github.com/cherrypy/cherrypy
 HOMEPAGE=	https://cherrypy.dev/

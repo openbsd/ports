@@ -3,7 +3,7 @@ COMMENT=	session and caching library with wsgi middleware
 MODPY_DISTV=	1.13.0
 DISTNAME=	Beaker-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:L}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www devel
 

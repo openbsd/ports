@@ -1,9 +1,9 @@
 COMMENT =		yet another URL library
 
-MODPY_DISTV =	1.18.0
+MODPY_DISTV =		1.18.0
 DISTNAME =		yarl-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www devel
 

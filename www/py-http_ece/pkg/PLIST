@@ -1,5 +1,5 @@
-@pkgpath www/py-http_ece,python3
 @conflict py-http_ece-*
+@pkgpath www/py-http_ece,python3
 lib/python${MODPY_VERSION}/site-packages/http_ece/
 lib/python${MODPY_VERSION}/site-packages/http_ece-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/http_ece-${MODPY_DISTV}.dist-info/METADATA

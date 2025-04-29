@@ -5,7 +5,7 @@ DISTNAME =	PyJWT-${MODPY_DISTV}
 PKGNAME =	py-jwt-${MODPY_DISTV}
 CATEGORIES =	www
 MAINTAINER =	Johan Huldtgren <jhuldtgren@gmail.com>
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	http://github.com/jpadilla/pyjwt
 

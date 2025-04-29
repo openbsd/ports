@@ -5,7 +5,7 @@ DISTNAME=	Flask-APScheduler-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:L}
 CATEGORIES=	www
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
-REVISION=	1
+REVISION=	2
 
 # Apache-2.0
 PERMIT_PACKAGE=	Yes

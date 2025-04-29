@@ -3,7 +3,7 @@ COMMENT =		jquery-like library for python
 MODPY_DISTV =	1.4.3
 DISTNAME =		pyquery-${MODPY_DISTV}
 PKGNAME =		py-query-${MODPY_DISTV}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		www
 

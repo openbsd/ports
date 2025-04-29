@@ -3,6 +3,7 @@ COMMENT=	OAuth library support for python-requests
 MODPY_DISTV=	2.0.0
 DISTNAME=	requests-oauthlib-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	www
 

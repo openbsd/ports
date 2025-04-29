@@ -3,7 +3,7 @@ COMMENT =		NTLM authentication support for HTTPX
 MODPY_DISTV =	1.4.0
 DISTNAME =		httpx_ntlm-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
 

@@ -3,6 +3,7 @@ COMMENT=	high-performance, pure-Python HTTP server used by CherryPy
 MODPY_DISTV=	10.0.1
 DISTNAME=	cheroot-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	www
 

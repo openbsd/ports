@@ -3,7 +3,7 @@ COMMENT =	wsgi request and response object
 MODPY_DISTV =	1.8.7
 DISTNAME =	WebOb-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME:L}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	www devel
 

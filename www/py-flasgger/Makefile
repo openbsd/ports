@@ -3,7 +3,7 @@ COMMENT =	extract swagger specs from your flask project
 MODPY_DISTV =	0.9.7.1
 DISTNAME =		flasgger-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		www
 

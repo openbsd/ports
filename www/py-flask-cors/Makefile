@@ -3,6 +3,7 @@ COMMENT =	CORS handling for flask
 MODPY_DISTV =	5.0.0
 DISTNAME =	flask_cors-${MODPY_DISTV}
 PKGNAME =	py-flask-cors-${MODPY_DISTV}
+REVISION =	0
 
 CATEGORIES =	www
 

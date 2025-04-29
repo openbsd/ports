@@ -3,7 +3,7 @@ COMMENT =		QUIC and HTTP/3 implementation in Python
 MODPY_DISTV =	1.2.0
 DISTNAME =		aioquic-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
 

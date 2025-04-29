@@ -3,7 +3,7 @@ COMMENT =		automatically mock HTTP interactions to speed testing
 MODPY_DISTV =	6.0.2
 DISTNAME =		vcrpy-${MODPY_DISTV}
 PKGNAME =		py-vcrpy-${MODPY_DISTV}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
 

@@ -3,6 +3,7 @@ COMMENT =		pure-Python HTTP/2 State-Machine based protocol
 MODPY_DISTV =		4.2.0
 DISTNAME =		h2-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www
 

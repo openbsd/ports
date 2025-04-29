@@ -3,7 +3,7 @@ MODPY_DISTV =	0.5.2
 DISTNAME =		requests-cache-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		www
-REVISION =		5
+REVISION =		6
 
 HOMEPAGE =		https://github.com/reclosedev/requests-cache
 MAINTAINER =		Johan Huldtgren <jhuldtgren@gmail.com>

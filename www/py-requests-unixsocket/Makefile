@@ -3,7 +3,7 @@ COMMENT =		use requests to talk HTTP via a UNIX domain socket
 MODPY_DISTV =	0.3.0
 DISTNAME =		requests-unixsocket-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		www
 

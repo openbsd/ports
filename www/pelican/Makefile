@@ -2,7 +2,7 @@ COMMENT =		static site generator written in Python
 
 MODPY_DISTV =	${GH_TAGNAME}
 DISTNAME =		pelican-${MODPY_DISTV}
-REVISION =		3
+REVISION =		4
 
 GH_ACCOUNT =		getpelican
 GH_PROJECT =		pelican

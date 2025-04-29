@@ -1,7 +1,7 @@
 COMMENT=	wiki and bug tracking system for software projects
 
-MODPY_DISTV=1.6
-REVISION=	3
+MODPY_DISTV=	1.6
+REVISION=	4
 PORTROACH=	limitw:1,even
 DISTNAME=	Trac-${MODPY_DISTV:S/post/.post/}
 PKGNAME=	trac-${MODPY_DISTV:S/post/pl/}
@@ -13,12 +13,11 @@ HOMEPAGE=	https://trac.edgewall.org/
 
 SITES=		https://download.edgewall.org/trac/
 
-MODPY_PYBUILD=	setuptools
-
 # BSD
 PERMIT_PACKAGE=   Yes
 
 MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
 
 COMMON_DEPS=	devel/py-babel \
 		textproc/py-MarkupSafe \

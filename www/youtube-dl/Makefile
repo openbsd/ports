@@ -5,7 +5,7 @@ MODPY_DISTV =	${VERSION:S/.0/./g}
 
 DISTNAME =	youtube-dl-${VERSION}
 CATEGORIES =	www
-REVISION =	4
+REVISION =	5
 
 HOMEPAGE =	https://yt-dl.org
 

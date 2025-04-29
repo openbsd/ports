@@ -4,7 +4,7 @@ MODPY_DISTV =	1.1.0
 DISTNAME =		python-metallum-${MODPY_DISTV}
 PKGNAME =		${DISTNAME:S/^python-/py-/}
 CATEGORIES =		www
-REVISION =		5
+REVISION =		6
 
 HOMEPAGE =		https://github.com/lcharlick/python-metallum
 MAINTAINER =		Johan Huldtgren <jhuldtgren@gmail.com>

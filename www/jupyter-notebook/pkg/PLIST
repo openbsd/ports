@@ -6,11 +6,12 @@ bin/jupyter-notebook
 bin/jupyter-serverextension
 lib/python${MODPY_VERSION}/site-packages/notebook/
 lib/python${MODPY_VERSION}/site-packages/notebook-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/notebook-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/notebook-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/notebook-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/notebook-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/notebook-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/notebook-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/notebook-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/notebook-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/notebook/__init__.py
 lib/python${MODPY_VERSION}/site-packages/notebook/__main__.py
@@ -2219,3 +2220,11 @@ lib/python${MODPY_VERSION}/site-packages/notebook/view/${MODPY_PYCACHE}__init__.
 lib/python${MODPY_VERSION}/site-packages/notebook/view/${MODPY_PYCACHE}handlers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/notebook/view/${MODPY_PYCACHE}handlers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/notebook/view/handlers.py
+@comment share/applications/jupyter-notebook.desktop
+@comment share/icons/
+@comment share/icons/hicolor/
+@comment share/icons/hicolor/scalable/
+@comment share/icons/hicolor/scalable/apps/
+@comment share/icons/hicolor/scalable/apps/notebook.svg
+@comment @tag update-desktop-database
+@comment @tag gtk-update-icon-cache %D/share/icons/hicolor

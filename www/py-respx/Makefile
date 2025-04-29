@@ -3,6 +3,7 @@ COMMENT=	mock out HTTPX and HTTP Core for tests
 MODPY_DISTV=	0.22.0
 DISTNAME=	respx-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	www
 

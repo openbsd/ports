@@ -3,6 +3,7 @@ COMMENT =	WebSocket client & server library, WAMP real-time framework
 MODPY_DISTV =	24.4.2
 DISTNAME =	autobahn-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	www
 

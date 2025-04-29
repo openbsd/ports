@@ -2,7 +2,7 @@ COMMENT =	web outside of browsers
 
 MODPY_DISTV =	3.7
 DISTNAME =	woob-${MODPY_DISTV}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	www
 HOMEPAGE =	https://woob.tech/

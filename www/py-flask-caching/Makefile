@@ -5,7 +5,7 @@ DISTNAME=	Flask-Caching-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:L}
 CATEGORIES=	www
 MAINTAINER=	Sebastian Reitenbach <sebastia@openbsd.org>
-REVISION=	1
+REVISION=	2
 
 # BSD
 PERMIT_PACKAGE=	Yes

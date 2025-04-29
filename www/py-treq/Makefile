@@ -3,7 +3,7 @@ COMMENT =		HTTP library inspired by requests on top of Twisted Agents
 MODPY_DISTV =	24.9.1
 DISTNAME =		treq-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
 

@@ -1,12 +1,13 @@
-@pkgpath www/py-flask-login,python3
 @conflict py-flask-login-*
-lib/python${MODPY_VERSION}/site-packages/Flask_Login-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/Flask_Login-${MODPY_DISTV}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/Flask_Login-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/Flask_Login-${MODPY_DISTV}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/Flask_Login-${MODPY_DISTV}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/Flask_Login-${MODPY_DISTV}.dist-info/top_level.txt
+@pkgpath www/py-flask-login,python3
 lib/python${MODPY_VERSION}/site-packages/flask_login/
+lib/python${MODPY_VERSION}/site-packages/flask_login-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/flask_login-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/flask_login-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/flask_login-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/flask_login-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/flask_login-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/flask_login-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/flask_login/__about__.py
 lib/python${MODPY_VERSION}/site-packages/flask_login/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/flask_login/${MODPY_PYCACHE}/

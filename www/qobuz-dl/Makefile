@@ -3,7 +3,7 @@ COMMENT =		music downloader for Qobuz
 MODPY_DISTV =	0.9.9.10
 
 DISTNAME =		qobuz-dl-${MODPY_DISTV}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www audio
 

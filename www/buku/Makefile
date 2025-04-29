@@ -2,7 +2,7 @@ COMMENT =		powerful command-line bookmark manager
 
 MODPY_DISTV =	4.9
 DISTNAME =		buku-${MODPY_DISTV}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		www
 

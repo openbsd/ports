@@ -2,7 +2,7 @@ COMMENT=	monitor webpages for updates
 
 MODPY_DISTV=	2.29
 DISTNAME=	urlwatch-${MODPY_DISTV}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www
 

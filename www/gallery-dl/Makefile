@@ -5,6 +5,7 @@ DISTNAME =		gallery_dl-${MODPY_DISTV}
 PKGNAME = 		${DISTNAME:S/_/-/}
 CATEGORIES =		www
 HOMEPAGE =		https://github.com/mikf/gallery-dl/
+REVISION =              0
 
 MAINTAINER =		Stefan Hagen <sh+ports@codevoid.de>
 

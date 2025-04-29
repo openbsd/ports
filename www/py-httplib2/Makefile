@@ -3,7 +3,7 @@ COMMENT=	Python HTTP client library
 MODPY_DISTV=	0.22.0
 DISTNAME=	httplib2-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	www net
 

@@ -3,7 +3,7 @@ COMMENT =		python wrapper for the Mastodon API
 MODPY_DISTV =	1.5.1
 DISTNAME =		Mastodon.py-${MODPY_DISTV}
 PKGNAME =		py-mastodon.py-${MODPY_DISTV}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		www
 

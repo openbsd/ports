@@ -2,7 +2,7 @@ COMMENT =		CLI for interacting with Mastodon/fediverse instances
 
 MODPY_DISTV =	0.3.8.1
 DISTNAME =		tootstream-${MODPY_DISTV}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		www
 

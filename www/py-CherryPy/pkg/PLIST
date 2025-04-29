@@ -2,14 +2,15 @@
 @conflict py-cherrypy2-*
 @pkgpath www/py-CherryPy,python3
 bin/cherryd
-lib/python${MODPY_VERSION}/site-packages/CherryPy-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/CherryPy-${MODPY_DISTV}.dist-info/LICENSE.md
-lib/python${MODPY_VERSION}/site-packages/CherryPy-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/CherryPy-${MODPY_DISTV}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/CherryPy-${MODPY_DISTV}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/CherryPy-${MODPY_DISTV}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/CherryPy-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/cherrypy/
+lib/python${MODPY_VERSION}/site-packages/cherrypy-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/cherrypy-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/cherrypy-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/cherrypy-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/cherrypy-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/cherrypy-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/cherrypy-${MODPY_DISTV}.dist-info/licenses/LICENSE.md
+lib/python${MODPY_VERSION}/site-packages/cherrypy-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/cherrypy/__init__.py
 lib/python${MODPY_VERSION}/site-packages/cherrypy/__main__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/cherrypy/${MODPY_PYCACHE}/

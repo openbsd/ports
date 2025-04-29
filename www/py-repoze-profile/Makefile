@@ -3,7 +3,7 @@ COMMENT =	aggregate profiling for wsgi requests
 MODPY_DISTV =	2.3
 DISTNAME =	repoze.profile-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME:S/./-/}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	www devel
 

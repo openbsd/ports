@@ -3,7 +3,7 @@ COMMENT =	RFC 6570 URI template processor
 MODPY_DISTV =	1.3.0
 DISTNAME =	uri-template-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	www
 

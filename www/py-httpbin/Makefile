@@ -3,7 +3,7 @@ COMMENT=	HTTP request and response service
 MODPY_DISTV=	0.10.2
 DISTNAME=	httpbin-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www
 

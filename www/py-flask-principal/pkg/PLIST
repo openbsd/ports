@@ -1,11 +1,11 @@
-@pkgpath www/py-flask-principal,python3
 @conflict py-flask-principal-*
-lib/python${MODPY_VERSION}/site-packages/Flask_Principal-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/Flask_Principal-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/Flask_Principal-${MODPY_DISTV}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/Flask_Principal-${MODPY_DISTV}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/Flask_Principal-${MODPY_DISTV}.dist-info/top_level.txt
+@pkgpath www/py-flask-principal,python3
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}flask_principal.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}flask_principal.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/flask_principal-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/flask_principal-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/flask_principal-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/flask_principal-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/flask_principal-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/flask_principal.py

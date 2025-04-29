@@ -1,7 +1,7 @@
 COMMENT =		HTML form validation, generation, and conversion
 
 MODPY_DISTV =	2.1.0
-REVISION =		2
+REVISION =		3
 DISTNAME =		FormEncode-${MODPY_DISTV}
 PKGNAME =		py-formencode-${MODPY_DISTV}
 

@@ -5,7 +5,7 @@ MODPY_DISTV=	2.32.2
 # XXX 2.32.3 has problems: https://github.com/psf/requests/issues/6730
 DISTNAME=	requests-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www
 

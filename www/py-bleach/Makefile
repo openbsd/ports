@@ -3,7 +3,7 @@ COMMENT =		easy whitelist-based HTML-sanitizing tool
 MODPY_DISTV =	5.0.1
 DISTNAME =		bleach-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		www
 

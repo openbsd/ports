@@ -3,7 +3,7 @@ COMMENT =		jinja2 extension for dates and times
 MODPY_DISTV =	0.2.0
 DISTNAME =		jinja2-time-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		www
 

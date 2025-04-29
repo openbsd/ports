@@ -4,6 +4,7 @@ DISTNAME =	apertium_apy-${MODPY_DISTV}
 PKGNAME =	apertium-apy-${MODPY_DISTV}
 
 MODPY_DISTV =	0.13.0
+REVISION =	0
 
 CATEGORIES =	www
 

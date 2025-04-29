@@ -3,7 +3,7 @@ COMMENT=	stateful programmatic web browsing module
 MODPY_DISTV=	0.4.10
 DISTNAME=	mechanize-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	www
 

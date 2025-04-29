@@ -5,7 +5,7 @@ MODPY_DISTV =	3.8.1
 DISTNAME =		asgiref-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		www
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://github.com/django/asgiref
 

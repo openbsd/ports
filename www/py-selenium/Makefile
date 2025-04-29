@@ -4,7 +4,7 @@ MODPY_DISTV =	3.141.0
 DISTNAME =	selenium-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME:L}
 CATEGORIES =	www devel
-REVISION =	3
+REVISION =	4
 
 HOMEPAGE =	https://www.selenium.dev/
 

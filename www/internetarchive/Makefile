@@ -2,6 +2,7 @@ COMMENT =	python and cli interface to archive.org
 
 MODPY_DISTV =	4.1.0
 DIST_TUPLE +=	github jjjake internetarchive v${MODPY_DISTV} .
+REVISION =	0
 
 CATEGORIES =	www
 

@@ -3,6 +3,7 @@ COMMENT=	pure-Python WSGI server
 MODPY_DISTV=	3.0.2
 DISTNAME=	waitress-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	www
 

@@ -3,7 +3,7 @@ COMMENT=	simple Python framework for web-based applications
 MODPY_DISTV=	3.6
 DISTNAME=	Quixote-${MODPY_DISTV}
 PKGNAME=	py-quixote-${MODPY_DISTV}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	www
 

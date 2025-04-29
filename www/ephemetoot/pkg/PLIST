@@ -2,11 +2,12 @@ bin/ephemetoot
 @comment lib/python${MODPY_VERSION}/site-packages/LICENSE
 lib/python${MODPY_VERSION}/site-packages/ephemetoot/
 lib/python${MODPY_VERSION}/site-packages/ephemetoot-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/ephemetoot-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/ephemetoot-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/ephemetoot-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/ephemetoot-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/ephemetoot-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/ephemetoot-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/ephemetoot-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/ephemetoot-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/ephemetoot/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ephemetoot/${MODPY_PYCACHE}/

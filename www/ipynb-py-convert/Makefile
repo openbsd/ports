@@ -2,6 +2,7 @@ COMMENT =	convert .py files to jupyter .ipynb notebooks and vice versa
 
 MODPY_DISTV =	0.4.6
 DISTNAME =	ipynb-py-convert-${MODPY_DISTV}
+REVISION =	0
 
 CATEGORIES =	www devel
 

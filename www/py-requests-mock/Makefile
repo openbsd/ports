@@ -3,7 +3,7 @@ COMMENT =	mock out responses from py-requests
 DISTNAME =	requests-mock-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	www
-REVISION =	8
+REVISION =	9
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 

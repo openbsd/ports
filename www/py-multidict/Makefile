@@ -1,6 +1,7 @@
 COMMENT=	multidict implementation
 
 MODPY_DISTV=	6.4.3
+REVISION=	0
 DISTNAME=	multidict-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	www devel
@@ -11,9 +12,8 @@ WANTLIB +=	pthread ${MODPY_WANTLIB}
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH} \
 		devel/py-test-cov \

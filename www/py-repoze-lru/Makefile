@@ -3,7 +3,7 @@ COMMENT =	tiny LRU cache implementation and decorator
 MODPY_DISTV =	0.7
 DISTNAME =	repoze.lru-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME:S/./-/}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	www devel
 

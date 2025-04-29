@@ -1,12 +1,12 @@
 @conflict py-webtest-*
 @pkgpath www/py-webtest,python3
-lib/python${MODPY_VERSION}/site-packages/WebTest-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/WebTest-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/WebTest-${MODPY_DISTV}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/WebTest-${MODPY_DISTV}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/WebTest-${MODPY_DISTV}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/WebTest-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/webtest/
+lib/python${MODPY_VERSION}/site-packages/webtest-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/webtest-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/webtest-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/webtest-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/webtest-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/webtest-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/webtest/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/webtest/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/webtest/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

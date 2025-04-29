@@ -3,7 +3,7 @@ COMMENT=	small addon for python-requests HTTP library
 MODPY_DISTV=	1.0.1
 DISTNAME=	requests-futures-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www
 

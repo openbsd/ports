@@ -3,6 +3,7 @@ COMMENT =		pure-Python HTTP/2 framing
 MODPY_DISTV =		6.1.0
 DISTNAME =		hyperframe-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		www
 
