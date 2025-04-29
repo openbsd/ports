@@ -3,7 +3,7 @@ COMMENT =		lib/cli for JSON/YAML schema validation
 MODPY_DISTV =	1.8.0
 DISTNAME =		pykwalify-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		textproc
 

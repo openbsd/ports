@@ -3,7 +3,7 @@ COMMENT=	extract data from xls spreadsheet files
 MODPY_DISTV=	2.0.1
 DISTNAME=	xlrd-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	textproc devel
 

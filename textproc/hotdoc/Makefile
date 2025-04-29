@@ -2,6 +2,7 @@ COMMENT=		documentation tool micro-framework
 
 MODPY_DISTV=		0.17.4
 DISTNAME=		hotdoc-${MODPY_DISTV}
+REVISION=		0
 
 CATEGORIES=		textproc
 

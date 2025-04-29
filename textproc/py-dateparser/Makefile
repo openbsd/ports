@@ -4,6 +4,7 @@ MODPY_DISTV=	1.2.1
 DISTNAME=	dateparser-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
+REVISION=	0
 
 HOMEPAGE=	https://github.com/scrapinghub/dateparser/
 

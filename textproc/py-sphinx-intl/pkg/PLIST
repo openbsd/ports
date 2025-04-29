@@ -1,14 +1,15 @@
-@pkgpath textproc/py-sphinx-intl,python3
 @conflict py-sphinx-intl-*
+@pkgpath textproc/py-sphinx-intl,python3
 bin/sphinx-intl
 lib/python${MODPY_VERSION}/site-packages/sphinx_intl/
 lib/python${MODPY_VERSION}/site-packages/sphinx_intl-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/sphinx_intl-${MODPY_DISTV}.dist-info/AUTHORS.rst
-lib/python${MODPY_VERSION}/site-packages/sphinx_intl-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/sphinx_intl-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/sphinx_intl-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/sphinx_intl-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/sphinx_intl-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/sphinx_intl-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/sphinx_intl-${MODPY_DISTV}.dist-info/licenses/AUTHORS.rst
+lib/python${MODPY_VERSION}/site-packages/sphinx_intl-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/sphinx_intl-${MODPY_DISTV}.dist-info/namespace_packages.txt
 lib/python${MODPY_VERSION}/site-packages/sphinx_intl-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/sphinx_intl/__init__.py

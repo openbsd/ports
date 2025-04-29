@@ -3,7 +3,7 @@ COMMENT =	apertium stream format parser
 DISTNAME =	apertium-streamparser-${MODPY_DISTV}
 
 MODPY_DISTV =	5.0.2
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =	textproc
 

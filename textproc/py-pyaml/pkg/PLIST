@@ -2,11 +2,12 @@
 bin/pyaml
 lib/python${MODPY_VERSION}/site-packages/pyaml/
 lib/python${MODPY_VERSION}/site-packages/pyaml-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pyaml-${MODPY_DISTV}.dist-info/COPYING
 lib/python${MODPY_VERSION}/site-packages/pyaml-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/pyaml-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/pyaml-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/pyaml-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/pyaml-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/pyaml-${MODPY_DISTV}.dist-info/licenses/COPYING
 lib/python${MODPY_VERSION}/site-packages/pyaml-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pyaml/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pyaml/__main__.py

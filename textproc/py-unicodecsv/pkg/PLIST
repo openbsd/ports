@@ -1,5 +1,4 @@
 @pkgpath textproc/py-unicodecsv,python3
-@conflict unicodecsv-*
 lib/python${MODPY_VERSION}/site-packages/unicodecsv/
 lib/python${MODPY_VERSION}/site-packages/unicodecsv-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/unicodecsv-${MODPY_DISTV}.dist-info/METADATA

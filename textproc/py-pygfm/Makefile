@@ -3,7 +3,7 @@ COMMENT =		GitHub Flavored Markdown extension
 MODPY_DISTV =	1.0.2
 DISTNAME =		py-gfm-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/py-/py/}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		textproc
 

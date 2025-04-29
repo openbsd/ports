@@ -5,7 +5,7 @@ DISTNAME =		langdetect-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES =		textproc
 HOMEPAGE =		https://github.com/Mimino666/langdetect
-REVISION=		0
+REVISION=		1
 
 MAINTAINER =		Kirill A. Korinsky <kirill@korins.ky>
 

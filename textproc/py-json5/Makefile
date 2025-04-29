@@ -3,6 +3,7 @@ COMMENT=	Python implementation of json5
 MODPY_DISTV=	0.10.0
 DISTNAME=	json5-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	textproc
 

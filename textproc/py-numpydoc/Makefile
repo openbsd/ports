@@ -4,6 +4,7 @@ MODPY_DISTV=	1.8.0
 DISTNAME=	numpydoc-${MODPY_DISTV}
 PKGNAME=	py-numpydoc-${MODPY_DISTV}
 CATEGORIES=	textproc
+REVISION=	0
 
 HOMEPAGE=	https://github.com/numpy/numpydoc
 

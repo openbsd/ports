@@ -5,7 +5,7 @@ GH_ACCOUNT=	leohemsted
 GH_PROJECT=	smartypants.py
 GH_TAGNAME=	v${MODPY_DISTV}
 PKGNAME=	py-smartypants-${MODPY_DISTV}
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	textproc
 

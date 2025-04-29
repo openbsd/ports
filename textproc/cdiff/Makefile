@@ -3,7 +3,7 @@ COMMENT=	inline and side-by-side colored and incremental diff
 # was renamed cdiff->ydiff
 MODPY_DISTV=	1.4.2
 DISTNAME=	ydiff-${MODPY_DISTV}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc
 

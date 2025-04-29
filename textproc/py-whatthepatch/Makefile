@@ -3,7 +3,7 @@ COMMENT =		high-performance diff and patch library
 MODPY_DISTV =	1.0.6
 DISTNAME =		whatthepatch-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc
 

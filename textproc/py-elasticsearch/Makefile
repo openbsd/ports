@@ -3,7 +3,7 @@ COMMENT=	Python client for Elasticsearch
 MODPY_DISTV=7.17.0
 DISTNAME=	elasticsearch-${MODPY_DISTV}
 PKGNAME=	py-elasticsearch-${MODPY_DISTV}
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	textproc
 

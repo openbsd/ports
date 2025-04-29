@@ -4,7 +4,7 @@ MODPY_DISTV =	1.4.2
 DISTNAME =		pandocfilters-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		textproc
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://github.com/jgm/pandocfilters
 

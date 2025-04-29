@@ -1,10 +1,11 @@
 @pkgpath textproc/py-openpyxl,python3
 lib/python${MODPY_VERSION}/site-packages/openpyxl/
 lib/python${MODPY_VERSION}/site-packages/openpyxl-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/openpyxl-${MODPY_DISTV}.dist-info/LICENCE.rst
 lib/python${MODPY_VERSION}/site-packages/openpyxl-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/openpyxl-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/openpyxl-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/openpyxl-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/openpyxl-${MODPY_DISTV}.dist-info/licenses/LICENCE.rst
 lib/python${MODPY_VERSION}/site-packages/openpyxl-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/openpyxl/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/openpyxl/${MODPY_PYCACHE}/

@@ -4,7 +4,7 @@ MODPY_DISTV=	1.1.2
 DISTNAME=		python_docx-${MODPY_DISTV}
 PKGNAME=		py-docx-${MODPY_DISTV}
 CATEGORIES=		textproc
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		https://github.com/python-openxml/python-docx
 

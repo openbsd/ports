@@ -4,7 +4,7 @@ MODPY_DISTV =	0.7.2
 DISTNAME =		prettytable-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		textproc devel
-REVISION =		10
+REVISION =		11
 
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 

@@ -1,14 +1,15 @@
-@pkgpath textproc/py-markdown,python3
 @conflict py-markdown-<2.6.11p4
+@pkgpath textproc/py-markdown,python3
 bin/markdown_py
-lib/python${MODPY_VERSION}/site-packages/Markdown-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/Markdown-${MODPY_DISTV}.dist-info/LICENSE.md
-lib/python${MODPY_VERSION}/site-packages/Markdown-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/Markdown-${MODPY_DISTV}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/Markdown-${MODPY_DISTV}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/Markdown-${MODPY_DISTV}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/Markdown-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/markdown/
+lib/python${MODPY_VERSION}/site-packages/markdown-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/markdown-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/markdown-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/markdown-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/markdown-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/markdown-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/markdown-${MODPY_DISTV}.dist-info/licenses/LICENSE.md
+lib/python${MODPY_VERSION}/site-packages/markdown-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/markdown/__init__.py
 lib/python${MODPY_VERSION}/site-packages/markdown/__main__.py
 lib/python${MODPY_VERSION}/site-packages/markdown/__meta__.py

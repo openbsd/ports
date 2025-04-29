@@ -3,7 +3,7 @@ COMMENT=	implements an XML/HTML/XHTML markup safe string
 MODPY_DISTV=	2.1.5
 DISTNAME=	MarkupSafe-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc
 

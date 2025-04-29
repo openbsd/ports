@@ -2,6 +2,7 @@ COMMENT=	build manual page from python's ArgumentParser object
 
 MODPY_DISTV=	4.6
 DISTNAME=	argparse-manpage-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	textproc
 

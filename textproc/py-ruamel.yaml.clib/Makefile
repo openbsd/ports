@@ -3,6 +3,7 @@ COMMENT=	C based reader/scanner and emitter for ruamel.yaml
 MODPY_DISTV=	0.2.12
 DISTNAME=	ruamel.yaml.clib-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 HOMEPAGE=	https://yaml.readthedocs.io
 

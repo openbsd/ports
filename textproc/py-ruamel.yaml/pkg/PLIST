@@ -1,11 +1,5 @@
 @pkgpath textproc/py-ruamel.yaml,python3
 lib/python${MODPY_VERSION}/site-packages/ruamel/
-lib/python${MODPY_VERSION}/site-packages/ruamel.yaml-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/ruamel.yaml-${MODPY_DISTV}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/ruamel.yaml-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/ruamel.yaml-${MODPY_DISTV}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/ruamel.yaml-${MODPY_DISTV}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/ruamel.yaml-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/${MODPY_PYCACHE}/
@@ -99,3 +93,10 @@ lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/tag.py
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/timestamp.py
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/tokens.py
 lib/python${MODPY_VERSION}/site-packages/ruamel/yaml/util.py
+lib/python${MODPY_VERSION}/site-packages/ruamel_yaml-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/ruamel_yaml-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/ruamel_yaml-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/ruamel_yaml-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/ruamel_yaml-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/ruamel_yaml-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/ruamel_yaml-${MODPY_DISTV}.dist-info/top_level.txt

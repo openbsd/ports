@@ -2,11 +2,12 @@
 bin/natsort
 lib/python${MODPY_VERSION}/site-packages/natsort/
 lib/python${MODPY_VERSION}/site-packages/natsort-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/natsort-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/natsort-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/natsort-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/natsort-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/natsort-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/natsort-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/natsort-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/natsort-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/natsort/__init__.py
 lib/python${MODPY_VERSION}/site-packages/natsort/__main__.py
@@ -41,6 +42,7 @@ lib/python${MODPY_VERSION}/site-packages/natsort/compat/fastnumbers.py
 lib/python${MODPY_VERSION}/site-packages/natsort/compat/locale.py
 lib/python${MODPY_VERSION}/site-packages/natsort/natsort.py
 lib/python${MODPY_VERSION}/site-packages/natsort/ns_enum.py
+lib/python${MODPY_VERSION}/site-packages/natsort/py.typed
 lib/python${MODPY_VERSION}/site-packages/natsort/unicode_numbers.py
 lib/python${MODPY_VERSION}/site-packages/natsort/unicode_numeric_hex.py
 lib/python${MODPY_VERSION}/site-packages/natsort/utils.py

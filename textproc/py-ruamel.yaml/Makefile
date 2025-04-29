@@ -3,6 +3,7 @@ COMMENT=	YAML 1.2 loader/dumper package for Python
 MODPY_DISTV=	0.18.10
 DISTNAME=	ruamel.yaml-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	textproc
 

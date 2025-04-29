@@ -3,7 +3,7 @@ COMMENT =		snowball stemming algorithms, for information retrieval
 MODPY_DISTV =		2.2.0.1
 DISTNAME =		PyStemmer-${MODPY_DISTV}
 PKGNAME =		py-stemmer-${MODPY_DISTV}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		textproc
 

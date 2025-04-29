@@ -4,6 +4,7 @@ MODPY_DISTV =		3.9.1
 DISTNAME=		nltk-${MODPY_DISTV}
 PKGNAME=		py-nltk-${MODPY_DISTV}
 CATEGORIES=		textproc
+REVISION=		0
 
 EPOCH =			0
 

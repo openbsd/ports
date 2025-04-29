@@ -3,7 +3,7 @@ COMMENT=	convert .ini/.cfg files to TOML equivalents
 MODPY_DISTV=	0.15
 DISTNAME=	ini2toml-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc
 

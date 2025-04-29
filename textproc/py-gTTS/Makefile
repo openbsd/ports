@@ -3,7 +3,7 @@ MODPY_DISTV =	2.5.4
 DISTNAME =		gtts-${MODPY_DISTV}
 PKGNAME =		py-gTTS-${MODPY_DISTV}
 CATEGORIES =		textproc audio
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 

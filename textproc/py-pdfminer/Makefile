@@ -3,6 +3,7 @@ COMMENT=	PDF parser and analyzer
 MODPY_DISTV=	20250324
 DISTNAME=	pdfminer.six-${MODPY_DISTV}
 PKGNAME=	py-pdfminer-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	textproc
 

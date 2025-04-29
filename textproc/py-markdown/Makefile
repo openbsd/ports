@@ -3,7 +3,7 @@ COMMENT=	text-to-HTML conversion tool
 MODPY_DISTV=	3.7
 DISTNAME=	markdown-${MODPY_DISTV}
 PKGNAME=	py-markdown-${MODPY_DISTV}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc
 

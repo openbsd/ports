@@ -4,7 +4,7 @@ MODPY_DISTV=	0.18
 DISTNAME=	bashlex-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc sysutils
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://github.com/idank/bashlex
 

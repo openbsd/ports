@@ -3,6 +3,7 @@ COMMENT=	module/tool to produce pretty and readable YAML
 MODPY_DISTV=	25.1.0
 DISTNAME=	pyaml-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	textproc
 

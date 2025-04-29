@@ -1,7 +1,7 @@
 COMMENT=	auto-generate API documentation for entire modules in Sphinx
 
 MODPY_DISTV=	0.17.0
-REVISION=	1
+REVISION=	2
 DISTNAME=	sphinx-automodapi-${MODPY_DISTV}
 PKGNAME=	py-sphinx-automodapi-${MODPY_DISTV}
 

@@ -1,22 +1,21 @@
-COMMENT =		snowball stemming library collection for Python
+COMMENT=	snowball stemming library collection for Python
 
-MODPY_DISTV =	2.2.0
-DISTNAME =		snowballstemmer-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-REVISION =		3
+MODPY_DISTV=	2.2.0
+DISTNAME=	snowballstemmer-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
+REVISION=	4
 
-CATEGORIES =		textproc
+CATEGORIES=	textproc
 
 # BSD
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+RUN_DEPENDS=	textproc/py-stemmer
 
-RUN_DEPENDS =		textproc/py-stemmer
-
-NO_TEST =		Yes
+NO_TEST=	Yes
 
 .include <bsd.port.mk>

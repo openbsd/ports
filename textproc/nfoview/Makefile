@@ -2,7 +2,7 @@ COMMENT =	simple viewer for NFO files
 MODPY_DISTV =	1.28.1
 DISTNAME =	nfoview-${MODPY_DISTV}
 CATEGORIES =	textproc x11
-REVISION =	5
+REVISION =	6
 
 GH_ACCOUNT =	otsaloma
 GH_PROJECT =	nfoview

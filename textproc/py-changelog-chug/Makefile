@@ -3,6 +3,7 @@ COMMENT=	parse project changelog documents
 MODPY_DISTV=	0.0.3
 DISTNAME=	changelog_chug-${MODPY_DISTV}
 PKGNAME=	py-changelog-chug-${MODPY_DISTV}
+REVISION=	0
 CATEGORIES=	textproc
 
 HOMEPAGE=	https://git.sr.ht/~bignose/changelog-chug

@@ -3,6 +3,7 @@ COMMENT=	correctly generate plurals, singular nouns, ordinals, etc
 MODPY_DISTV=	7.5.0
 DISTNAME=	inflect-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	textproc
 

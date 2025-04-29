@@ -1,10 +1,4 @@
 @pkgpath textproc/py-jaraco-text,python3
-lib/python${MODPY_VERSION}/site-packages/jaraco.text-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/jaraco.text-${MODPY_DISTV}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/jaraco.text-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/jaraco.text-${MODPY_DISTV}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/jaraco.text-${MODPY_DISTV}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/jaraco.text-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/jaraco/text/
 lib/python${MODPY_VERSION}/site-packages/jaraco/text/Lorem ipsum.txt
 lib/python${MODPY_VERSION}/site-packages/jaraco/text/__init__.py
@@ -26,3 +20,10 @@ lib/python${MODPY_VERSION}/site-packages/jaraco/text/show-newlines.py
 lib/python${MODPY_VERSION}/site-packages/jaraco/text/strip-prefix.py
 lib/python${MODPY_VERSION}/site-packages/jaraco/text/to-dvorak.py
 lib/python${MODPY_VERSION}/site-packages/jaraco/text/to-qwerty.py
+lib/python${MODPY_VERSION}/site-packages/jaraco_text-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/jaraco_text-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/jaraco_text-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/jaraco_text-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/jaraco_text-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/jaraco_text-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/jaraco_text-${MODPY_DISTV}.dist-info/top_level.txt

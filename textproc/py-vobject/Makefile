@@ -3,7 +3,7 @@ COMMENT=	iCalendar library for Python
 MODPY_DISTV=	0.9.9
 DISTNAME=	vobject-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc devel
 

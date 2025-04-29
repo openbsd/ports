@@ -3,6 +3,7 @@ COMMENT=	parsing toolkit for Python
 MODPY_DISTV=	1.2.2
 DISTNAME=	lark-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	textproc devel
 

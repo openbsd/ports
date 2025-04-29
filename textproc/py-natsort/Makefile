@@ -3,7 +3,7 @@ COMMENT=	simple yet flexible natural sorting
 MODPY_DISTV=	8.4.0
 DISTNAME=	natsort-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	textproc devel
 

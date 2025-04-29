@@ -1,10 +1,11 @@
 lib/python${MODPY_VERSION}/site-packages/pyuca/
 lib/python${MODPY_VERSION}/site-packages/pyuca-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pyuca-${MODPY_DISTV}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/pyuca-${MODPY_DISTV}.dist-info/LICENSE-allkeys
 lib/python${MODPY_VERSION}/site-packages/pyuca-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/pyuca-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/pyuca-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pyuca-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/pyuca-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/pyuca-${MODPY_DISTV}.dist-info/licenses/LICENSE-allkeys
 lib/python${MODPY_VERSION}/site-packages/pyuca-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pyuca/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pyuca/${MODPY_PYCACHE}/

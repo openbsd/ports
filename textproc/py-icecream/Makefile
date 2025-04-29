@@ -3,6 +3,7 @@ COMMENT=	print() replacement that can handle data structures
 MODPY_DISTV=	2.1.4
 DISTNAME=	icecream-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	textproc
 

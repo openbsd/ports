@@ -1,13 +1,14 @@
 @pkgpath textproc/py-ICU,python3
-lib/python${MODPY_VERSION}/site-packages/PyICU-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/PyICU-${MODPY_DISTV}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/PyICU-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/PyICU-${MODPY_DISTV}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/PyICU-${MODPY_DISTV}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/PyICU-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/icu/
 lib/python${MODPY_VERSION}/site-packages/icu/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/icu/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/icu/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/icu/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/icu/_icu_.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/pyicu-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pyicu-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/pyicu-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/pyicu-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pyicu-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/pyicu-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/pyicu-${MODPY_DISTV}.dist-info/top_level.txt

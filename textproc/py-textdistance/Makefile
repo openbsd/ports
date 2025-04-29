@@ -3,7 +3,7 @@ COMMENT=	compute distance between texts
 MODPY_DISTV=	4.6.3
 DISTNAME=	textdistance-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	textproc
 

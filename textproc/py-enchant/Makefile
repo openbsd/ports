@@ -3,7 +3,7 @@ COMMENT=		spellchecking library for Python
 MODPY_DISTV=	3.2.2
 DISTNAME=		pyenchant-${MODPY_DISTV}
 PKGNAME=		py-enchant-${MODPY_DISTV}
-REVISION=		5
+REVISION=		6
 
 CATEGORIES=		textproc
 

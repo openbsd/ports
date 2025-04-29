@@ -1,6 +1,7 @@
 COMMENT=	Python helper for Semantic Versioning
 
 MODPY_DISTV=	3.0.4
+REVISION=	1
 DISTNAME=	semver-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 

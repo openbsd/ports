@@ -4,7 +4,7 @@ MODPY_DISTV=	6.0.11
 DISTNAME=	feedparser-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://github.com/kurtmckee/feedparser
 

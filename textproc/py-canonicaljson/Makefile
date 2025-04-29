@@ -3,7 +3,7 @@ COMMENT =		canonical JSON
 MODPY_DISTV =	2.0.0
 DISTNAME =		canonicaljson-${MODPY_DISTV}
 PKGNAME =		py-canonicaljson-${MODPY_DISTV}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		textproc
 

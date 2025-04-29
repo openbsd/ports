@@ -3,6 +3,7 @@ COMMENT=	internationalized usernames and passwords
 MODPY_DISTV=	1.1.1
 DISTNAME=	precis_i18n-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	textproc security
 

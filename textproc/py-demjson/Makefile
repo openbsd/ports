@@ -3,7 +3,7 @@ COMMENT=	encoder, decoder, and lint/validator for JSON
 MODPY_DISTV=	3.0.6
 DISTNAME=	demjson3-${MODPY_DISTV}
 PKGNAME=	py-demjson-${MODPY_DISTV}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	textproc devel
 

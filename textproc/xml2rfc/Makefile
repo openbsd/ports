@@ -6,6 +6,7 @@ GH_ACCOUNT=	ietf-tools
 GH_PROJECT=	xml2rfc
 GH_TAGNAME=	v3.26.0
 #${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	textproc
 

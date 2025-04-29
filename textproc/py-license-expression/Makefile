@@ -3,6 +3,7 @@ COMMENT=	parse, normalize and compare License expressions
 MODPY_DISTV=	30.3.0
 DISTNAME=	license-expression-${MODPY_DISTV}
 PKGNAME=	py-license-expression-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	textproc
 

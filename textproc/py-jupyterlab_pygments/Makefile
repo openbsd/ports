@@ -4,7 +4,7 @@ COMMENT =		pygments theme using jupyterlab CSS variables
 MODPY_DISTV =	0.1.2
 DISTNAME =		jupyterlab_pygments-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		textproc
 

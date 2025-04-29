@@ -4,7 +4,7 @@ V =			0.0.1.8
 MODPY_DISTV =	${V}
 DISTNAME =		syrics-${V}
 CATEGORIES =		textproc audio
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		https://github.com/akashrchandran/syrics
 

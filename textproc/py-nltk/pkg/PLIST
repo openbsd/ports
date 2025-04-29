@@ -3,13 +3,14 @@
 bin/nltk
 lib/python${MODPY_VERSION}/site-packages/nltk/
 lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_DISTV}.dist-info/AUTHORS.md
-lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_DISTV}.dist-info/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_DISTV}.dist-info/README.md
 lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_DISTV}.dist-info/licenses/AUTHORS.md
+lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_DISTV}.dist-info/licenses/README.md
 lib/python${MODPY_VERSION}/site-packages/nltk-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/nltk/VERSION
 lib/python${MODPY_VERSION}/site-packages/nltk/__init__.py

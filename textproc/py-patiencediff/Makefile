@@ -3,7 +3,7 @@ COMMENT=	Python implementation of the patiencediff algorithm
 MODPY_DISTV =	0.2.15
 DISTNAME=	patiencediff-${MODPY_DISTV}
 PKGNAME=	py-patiencediff-${MODPY_DISTV}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc
 

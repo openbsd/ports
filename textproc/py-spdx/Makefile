@@ -3,7 +3,7 @@ COMMENT =		SPDX license list database
 MODPY_DISTV =	2.5.1
 DISTNAME =		spdx-${MODPY_DISTV}
 PKGNAME =		py-spdx-${MODPY_DISTV}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		textproc
 

@@ -3,7 +3,7 @@ COMMENT =		Python library adding a json log formatter
 MODPY_DISTV =	2.0.7
 DISTNAME =		python-json-logger-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		textproc
 

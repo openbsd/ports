@@ -5,7 +5,7 @@ MODPY_DISTV=	0.4.2
 DISTNAME=	yamlordereddictloader-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://github.com/fmenabe/python-yamlordereddictloader
 

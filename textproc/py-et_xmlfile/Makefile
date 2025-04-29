@@ -3,6 +3,7 @@ COMMENT=	low memory library for creating large XML files
 MODPY_DISTV=	2.0.0
 DISTNAME=	et_xmlfile-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	textproc
 

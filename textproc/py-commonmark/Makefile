@@ -4,7 +4,7 @@ MODPY_DISTV=	0.9.1
 DISTNAME=		commonmark-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		textproc
-REVISION=		5
+REVISION=		6
 
 MAINTAINER=		Sebastian Reitenbach <sebastia@openbsd.org>
 

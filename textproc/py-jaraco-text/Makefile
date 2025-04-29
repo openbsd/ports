@@ -3,7 +3,7 @@ COMMENT=	handy routines for dealing with text
 MODPY_DISTV=	4.0.0
 DISTNAME=	jaraco_text-${MODPY_DISTV}
 PKGNAME=	py-jaraco.text-${MODPY_DISTV}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	textproc
 

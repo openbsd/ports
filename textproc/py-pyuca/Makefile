@@ -3,6 +3,7 @@ COMMENT =		unicode collation algorithm
 MODPY_DISTV =		1.2
 DISTNAME =		pyuca-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		textproc
 

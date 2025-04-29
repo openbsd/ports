@@ -1,12 +1,13 @@
 @pkgpath textproc/py-et_xmlfile,python3
 lib/python${MODPY_VERSION}/site-packages/et_xmlfile/
 lib/python${MODPY_VERSION}/site-packages/et_xmlfile-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/et_xmlfile-${MODPY_DISTV}.dist-info/AUTHORS.txt
-lib/python${MODPY_VERSION}/site-packages/et_xmlfile-${MODPY_DISTV}.dist-info/LICENCE.python
-lib/python${MODPY_VERSION}/site-packages/et_xmlfile-${MODPY_DISTV}.dist-info/LICENCE.rst
 lib/python${MODPY_VERSION}/site-packages/et_xmlfile-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/et_xmlfile-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/et_xmlfile-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/et_xmlfile-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/et_xmlfile-${MODPY_DISTV}.dist-info/licenses/AUTHORS.txt
+lib/python${MODPY_VERSION}/site-packages/et_xmlfile-${MODPY_DISTV}.dist-info/licenses/LICENCE.python
+lib/python${MODPY_VERSION}/site-packages/et_xmlfile-${MODPY_DISTV}.dist-info/licenses/LICENCE.rst
 lib/python${MODPY_VERSION}/site-packages/et_xmlfile-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/et_xmlfile/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/et_xmlfile/${MODPY_PYCACHE}/

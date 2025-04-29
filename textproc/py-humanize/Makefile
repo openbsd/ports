@@ -3,7 +3,7 @@ COMMENT =		python number humanization utilities
 MODPY_DISTV =	4.3.0
 DISTNAME =		humanize-${MODPY_DISTV}
 PKGNAME =		py-humanize-${MODPY_DISTV}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		textproc
 

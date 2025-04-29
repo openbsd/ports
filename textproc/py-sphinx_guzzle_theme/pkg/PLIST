@@ -1,11 +1,12 @@
-@pkgpath textproc/py-sphinx_guzzle_theme,python3
 @conflict py-sphinx_guzzle_theme-*
+@pkgpath textproc/py-sphinx_guzzle_theme,python3
 lib/python${MODPY_VERSION}/site-packages/guzzle_sphinx_theme/
 lib/python${MODPY_VERSION}/site-packages/guzzle_sphinx_theme-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/guzzle_sphinx_theme-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/guzzle_sphinx_theme-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/guzzle_sphinx_theme-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/guzzle_sphinx_theme-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/guzzle_sphinx_theme-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/guzzle_sphinx_theme-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/guzzle_sphinx_theme-${MODPY_DISTV}.dist-info/pbr.json
 lib/python${MODPY_VERSION}/site-packages/guzzle_sphinx_theme-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/guzzle_sphinx_theme/__init__.py

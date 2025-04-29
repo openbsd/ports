@@ -3,7 +3,7 @@ COMMENT =		fast Python implementation of JSON schema
 MODPY_DISTV =	2.19.0
 DISTNAME =		fastjsonschema-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		textproc
 

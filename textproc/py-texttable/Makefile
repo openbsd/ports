@@ -3,7 +3,7 @@ COMMENT =	module to create simple ASCII tables
 MODPY_DISTV =	1.7.0
 DISTNAME =	texttable-${MODPY_DISTV}
 PKGNAME =	py-texttable-${MODPY_DISTV}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	textproc
 

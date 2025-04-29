@@ -4,7 +4,7 @@ MODPY_DISTV=	0.6.10
 DISTNAME=	podcastparser-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	textproc
-REVISION=	2
+REVISION=	3
 
 MAINTAINER=	Tim Meunier <trondd@kagu-tsuchi.com>
 

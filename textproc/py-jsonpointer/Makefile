@@ -4,7 +4,7 @@ MODPY_DISTV =	2.4
 
 DISTNAME =	jsonpointer-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	textproc
 
