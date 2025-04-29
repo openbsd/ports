@@ -1,5 +1,5 @@
-@pkgpath devel/py-coveralls,python3
 @conflict py-coveralls-<1.6.0p5
+@pkgpath devel/py-coveralls,python3
 bin/coveralls
 bin/python-coveralls
 lib/python${MODPY_VERSION}/site-packages/coveralls/
