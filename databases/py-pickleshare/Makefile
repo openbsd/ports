@@ -3,7 +3,7 @@ COMMENT =		tiny 'shelve'-like database with concurrency support
 MODPY_DISTV =	0.7.5
 DISTNAME =		pickleshare-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		databases devel
 

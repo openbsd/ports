@@ -3,7 +3,7 @@ COMMENT=	LDAP client API for Python
 MODPY_DISTV =	3.4.4
 DISTNAME=	python-ldap-${MODPY_DISTV}
 PKGNAME=	py-ldap-${MODPY_DISTV}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	databases
 

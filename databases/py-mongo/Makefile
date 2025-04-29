@@ -3,7 +3,7 @@ COMMENT=	Python driver for mongodb
 MODPY_DISTV=	4.7.3
 DISTNAME=	pymongo-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/py//}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	databases devel
 

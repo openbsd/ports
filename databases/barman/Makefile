@@ -5,6 +5,7 @@ GH_ACCOUNT =	EnterpriseDB
 GH_PROJECT =	barman
 GH_TAGNAME =	release/${MODPY_DISTV}
 DISTNAME =	barman-${MODPY_DISTV}
+REVISION =	0
 
 CATEGORIES =	databases
 HOMEPAGE =	https://www.pgbarman.org/

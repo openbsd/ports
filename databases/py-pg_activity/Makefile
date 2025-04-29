@@ -3,6 +3,7 @@ COMMENT=	command line tool for PostgreSQL server activity monitoring
 # intentionally no py- prefix in PKGNAME
 MODPY_DISTV=	3.6.0
 DISTNAME=	pg_activity-${MODPY_DISTV}
+REVISION=	0
 
 # https://github.com/dalibo/pg_activity/blob/master/CHANGELOG.md
 HOMEPAGE=	https://github.com/dalibo/pg_activity

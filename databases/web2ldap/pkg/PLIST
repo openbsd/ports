@@ -4,11 +4,12 @@
 bin/web2ldap
 lib/python${MODPY_VERSION}/site-packages/web2ldap/
 lib/python${MODPY_VERSION}/site-packages/web2ldap-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/web2ldap-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/web2ldap-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/web2ldap-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/web2ldap-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/web2ldap-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/web2ldap-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/web2ldap-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/web2ldap-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/web2ldap/__about__.py
 lib/python${MODPY_VERSION}/site-packages/web2ldap/__init__.py
@@ -625,5 +626,6 @@ share/examples/web2ldap/web2ldapcnf/__init__.py
 @sample ${SYSCONFDIR}/web2ldap/web2ldapcnf/__init__.py
 share/examples/web2ldap/web2ldapcnf/hosts.py
 @sample ${SYSCONFDIR}/web2ldap/web2ldapcnf/hosts.py
+share/examples/web2ldap/web2ldapcnf/local.py
 share/examples/web2ldap/web2ldapcnf/plugins.py
 @sample ${SYSCONFDIR}/web2ldap/web2ldapcnf/plugins.py

@@ -3,6 +3,7 @@ COMMENT=	small expressive ORM
 MODPY_DISTV=	3.17.9
 DISTNAME=	peewee-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 GH_ACCOUNT=	coleifer
 GH_PROJECT=	peewee

@@ -3,7 +3,7 @@ COMMENT=	simple SQLite3 store for Python objects
 MODPY_DISTV=	2.0.8
 DISTNAME=	minidb-${MODPY_DISTV}
 PKGNAME=	py-minidb-${MODPY_DISTV}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	databases
 

@@ -6,7 +6,7 @@ MODPY_DISTV =	1.4.10
 
 DISTNAME =	ldap0-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	databases devel
 

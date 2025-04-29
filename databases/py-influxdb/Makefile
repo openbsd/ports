@@ -3,6 +3,7 @@ COMMENT=	Python client library for InfluxDB 1.x
 MODPY_DISTV=	5.3.2
 DISTNAME=	influxdb-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	databases
 

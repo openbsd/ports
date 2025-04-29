@@ -3,7 +3,7 @@ COMMENT=	async I/O extension for pyserial
 MODPY_DISTV=	0.6
 DISTNAME=	pyserial-asyncio-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/py/py-/}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	comms
 

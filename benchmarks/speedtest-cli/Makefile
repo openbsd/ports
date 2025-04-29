@@ -4,7 +4,7 @@ MODPY_DISTV=	2.1.4b2
 DIST_TUPLE=	github Kowa92 speedtest-cli c611787bfa98d4870558906e89b0ab430649cb25 .
 PKGNAME=	speedtest-cli-${MODPY_DISTV:S/b/beta/}
 CATEGORIES=	benchmarks net
-REVISION=	0
+REVISION=	1
 
 # Apache 2
 PERMIT_PACKAGE=	Yes

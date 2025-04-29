@@ -3,6 +3,7 @@ COMMENT=	Python interface to MySQL
 MODPY_DISTV=	2.2.7
 DISTNAME=	mysqlclient-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	databases
 

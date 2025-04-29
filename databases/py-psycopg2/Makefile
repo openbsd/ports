@@ -4,7 +4,7 @@ MODPY_DISTV=	2.9.10
 DISTNAME=	psycopg2-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	databases
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://www.psycopg.org/
 

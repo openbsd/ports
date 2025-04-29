@@ -1,11 +1,5 @@
-@pkgpath databases/py-pygresql,python3
 @conflict py-pygresql-*
-lib/python${MODPY_VERSION}/site-packages/PyGreSQL-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/PyGreSQL-${MODPY_DISTV}.dist-info/LICENSE.txt
-lib/python${MODPY_VERSION}/site-packages/PyGreSQL-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/PyGreSQL-${MODPY_DISTV}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/PyGreSQL-${MODPY_DISTV}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/PyGreSQL-${MODPY_DISTV}.dist-info/top_level.txt
+@pkgpath databases/py-pygresql,python3
 lib/python${MODPY_VERSION}/site-packages/pg/
 lib/python${MODPY_VERSION}/site-packages/pg/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pg/${MODPY_PYCACHE}/
@@ -68,6 +62,13 @@ lib/python${MODPY_VERSION}/site-packages/pgdb/constants.py
 lib/python${MODPY_VERSION}/site-packages/pgdb/cursor.py
 lib/python${MODPY_VERSION}/site-packages/pgdb/py.typed
 lib/python${MODPY_VERSION}/site-packages/pgdb/typecode.py
+lib/python${MODPY_VERSION}/site-packages/pygresql-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pygresql-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/pygresql-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/pygresql-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pygresql-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/pygresql-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/pygresql-${MODPY_DISTV}.dist-info/top_level.txt
 share/doc/${MODPY_PY_PREFIX}pygresql/
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/
 share/doc/${MODPY_PY_PREFIX}pygresql/docs/Makefile

@@ -3,7 +3,7 @@ COMMENT=	HTML to markdown-formatted text converter
 MODPY_DISTV=	2024.2.26
 DISTNAME=	html2text-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	converters
 HOMEPAGE=	http://alir3z4.github.io/html2text/

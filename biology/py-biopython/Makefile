@@ -4,6 +4,7 @@ MODPY_DISTV =		1.85
 DISTNAME =		biopython-${MODPY_DISTV}
 CATEGORIES =		biology
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 HOMEPAGE =		http://www.biopython.org/
 

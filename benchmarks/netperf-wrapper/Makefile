@@ -1,7 +1,7 @@
 COMMENT-main=	test network latency under load via netperf
 COMMENT-gui=	GUI for flent (test network latency under load via netperf)
 REVISION-gui=	1
-REVISION-main=	1
+REVISION-main=	2
 
 MODPY_DISTV=	2.1.1
 DISTNAME=	flent-${MODPY_DISTV}

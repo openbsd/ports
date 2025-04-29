@@ -3,6 +3,7 @@ COMMENT=	database toolkit for Python
 MODPY_DISTV=	2.0.40
 DISTNAME=	sqlalchemy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 # doc/build/changelog
 FIX_EXTRACT_PERMISSIONS= Yes

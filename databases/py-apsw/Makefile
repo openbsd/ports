@@ -5,6 +5,7 @@ MODPY_DISTV =	3.49.1.0
 DISTNAME =	apsw-${MODPY_DISTV}
 PKGNAME =	py-apsw-${MODPY_DISTV}
 CATEGORIES =	databases
+REVISION =	0
 
 HOMEPAGE =	https://rogerbinns.github.io/apsw/
 

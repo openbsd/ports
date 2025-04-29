@@ -5,7 +5,7 @@ DIST_TUPLE =		github redis redis-py v${MODPY_DISTV} .
 
 PKGNAME =		py-${DISTNAME:S/-py//}
 CATEGORIES =		databases
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://github.com/redis/redis-py
 

@@ -3,6 +3,7 @@ COMMENT=	database migration tool for sqlalchemy
 MODPY_DISTV=	1.15.2
 DISTNAME=	alembic-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	databases
 

@@ -2,7 +2,7 @@ COMMENT =	full-featured LDAP client running as web application
 
 MODPY_DISTV =	1.8.1
 DISTNAME =	web2ldap-${MODPY_DISTV}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	databases www sysutils
 

@@ -2,7 +2,7 @@ COMMENT=	tool to programme a wide range of amateur radios
 
 MODPY_DISTV=	20240224
 DISTNAME=	chirp-${MODPY_DISTV}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	comms hamradio
 

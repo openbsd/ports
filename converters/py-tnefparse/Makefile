@@ -1,7 +1,7 @@
 COMMENT=	TNEF decoding and attachment extraction
 
 MODPY_DISTV=	1.4.0
-REVISION=	2
+REVISION=	3
 DISTNAME=	tnefparse-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
