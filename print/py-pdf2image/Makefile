@@ -3,7 +3,7 @@ COMMENT =		convert PDF to a PIL Image list
 MODPY_DISTV =	1.17.0
 DISTNAME =		pdf2image-${MODPY_DISTV}
 PKGNAME =		py-pdf2image-${MODPY_DISTV}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		print
 

@@ -3,7 +3,7 @@ COMMENT=		templating library able to output odt and pdf files
 MODPY_DISTV=	0.11.1
 DISTNAME=		relatorio-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		print textproc
 

@@ -4,7 +4,7 @@ MODPY_DISTV =	2.1.12
 DISTNAME =	Radicale-${MODPY_DISTV}
 PKGNAME =	${DISTNAME:L}
 CATEGORIES =	productivity net
-REVISION =	8
+REVISION =	9
 
 HOMEPAGE =	https://radicale.org/
 

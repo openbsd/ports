@@ -4,7 +4,7 @@ CATEGORIES =	productivity
 
 MODPY_DISTV =	1.3.0
 DISTNAME =	yokadi-${MODPY_DISTV}
-REVISION =	2
+REVISION =	3
 
 HOMEPAGE =	https://yokadi.github.io/
 SITES =		${HOMEPAGE}/download/

@@ -5,7 +5,7 @@ GH_ACCOUNT=	topydo
 GH_PROJECT=	topydo
 GH_TAGNAME=	${MODPY_DISTV}
 CATEGORIES=	productivity
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://topydo.org/
 

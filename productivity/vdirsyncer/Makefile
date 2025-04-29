@@ -2,6 +2,7 @@ COMMENT =		synchronize calendars and contacts
 
 MODPY_DISTV =		0.19.3
 DISTNAME =		vdirsyncer-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		productivity
 

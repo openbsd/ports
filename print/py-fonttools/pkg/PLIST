@@ -942,10 +942,11 @@ lib/python${MODPY_VERSION}/site-packages/fontTools/voltLib/error.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/voltLib/lexer.py
 lib/python${MODPY_VERSION}/site-packages/fontTools/voltLib/parser.py
 lib/python${MODPY_VERSION}/site-packages/fonttools-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/fonttools-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/fonttools-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/fonttools-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/fonttools-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/fonttools-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/fonttools-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/fonttools-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/fonttools-${MODPY_DISTV}.dist-info/top_level.txt
 @man man/man1/ttx.1

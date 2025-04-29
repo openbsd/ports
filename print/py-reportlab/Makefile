@@ -5,7 +5,7 @@ MODPY_DISTV=	3.6.13
 DISTNAME=	reportlab-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 EPOCH=		0
-REVISION=	1
+REVISION=	2
 
 # see patches/patch-setup_py
 # grep 'zipdata =' `make show=WRKSRC`/setup.py

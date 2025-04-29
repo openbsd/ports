@@ -4,7 +4,7 @@ MODPY_DISTV =	4.39.3
 DISTNAME =		fonttools-${MODPY_DISTV}
 PKGNAME =		py-fonttools-${MODPY_DISTV}
 EXTRACT_SUFX =		.zip
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		print
 

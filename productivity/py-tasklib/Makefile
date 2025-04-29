@@ -4,7 +4,7 @@ MODPY_DISTV =	2.5.1
 
 DISTNAME =		tasklib-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		productivity
 

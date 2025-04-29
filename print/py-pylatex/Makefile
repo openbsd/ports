@@ -3,7 +3,7 @@ COMMENT=		Python interface for LaTeX
 MODPY_DISTV=	1.4.2
 DISTNAME=		PyLaTeX-${MODPY_DISTV}
 PKGNAME=		py-pylatex-${MODPY_DISTV}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		print
 

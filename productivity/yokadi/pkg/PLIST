@@ -2,10 +2,11 @@ bin/yokadi
 bin/yokadid
 lib/python${MODPY_VERSION}/site-packages/yokadi/
 lib/python${MODPY_VERSION}/site-packages/yokadi-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/yokadi-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/yokadi-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/yokadi-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/yokadi-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/yokadi-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/yokadi-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/yokadi-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/yokadi/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/yokadi/${MODPY_PYCACHE}/
@@ -239,27 +240,12 @@ lib/python${MODPY_VERSION}/site-packages/yokadi/yical/yical.py
 lib/python${MODPY_VERSION}/site-packages/yokadi/yokadid.py
 @man man/man1/yokadi.1
 @man man/man1/yokadid.1
-share/applications/
 share/applications/yokadi.desktop
-share/icons/
-share/icons/hicolor/
-share/icons/hicolor/128x128/
-share/icons/hicolor/128x128/apps/
 share/icons/hicolor/128x128/apps/yokadi.png
-share/icons/hicolor/16x16/
-share/icons/hicolor/16x16/apps/
 share/icons/hicolor/16x16/apps/yokadi.png
-share/icons/hicolor/22x22/
-share/icons/hicolor/22x22/apps/
 share/icons/hicolor/22x22/apps/yokadi.png
-share/icons/hicolor/32x32/
-share/icons/hicolor/32x32/apps/
 share/icons/hicolor/32x32/apps/yokadi.png
-share/icons/hicolor/48x48/
-share/icons/hicolor/48x48/apps/
 share/icons/hicolor/48x48/apps/yokadi.png
-share/icons/hicolor/64x64/
-share/icons/hicolor/64x64/apps/
 share/icons/hicolor/64x64/apps/yokadi.png
 share/yokadi/
 share/yokadi/CHANGELOG.md
