@@ -3,7 +3,7 @@ COMMENT=		video DVDs and CDs creation tool
 MODPY_DISTV=	4.17.0
 DISTNAME=		devedeng-${MODPY_DISTV}
 PKGNAME=		devede-${MODPY_DISTV}
-REVISION=		5
+REVISION=		6
 
 CATEGORIES=		multimedia x11
 

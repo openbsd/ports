@@ -4,7 +4,7 @@ MODPY_DISTV =	1.4.7
 DISTNAME =		snuggs-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		6
+REVISION =		7
 
 MAINTAINER =		Martin Reindl <martin@catai.org>
 

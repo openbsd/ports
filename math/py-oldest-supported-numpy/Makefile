@@ -3,7 +3,7 @@ COMMENT=	pypi meta-package to depend on numpy
 MODPY_DISTV=	2022.8.16
 DISTNAME=	oldest-supported-numpy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	math
 

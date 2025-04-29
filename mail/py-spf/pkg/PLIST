@@ -1,5 +1,4 @@
 @pkgpath mail/py-spf,python3
-@conflict py-spf-*
 bin/spfquery.py
 bin/type99.py
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/

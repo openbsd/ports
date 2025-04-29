@@ -3,7 +3,7 @@ COMMENT=	time and date handling utility functions from netcdf4-python
 MODPY_DISTV=		1.6.4
 DISTNAME=		cftime-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		math
 

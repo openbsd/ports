@@ -2,7 +2,7 @@ MODPY_DISTV =	6.5.1
 COMMENT =	pipe video streams into a video player
 DISTNAME =	streamlink-${MODPY_DISTV}
 CATEGORIES =	multimedia net
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://streamlink.github.io/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

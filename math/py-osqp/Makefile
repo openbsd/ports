@@ -4,7 +4,7 @@ MODPY_DISTV =	0.6.1
 DISTNAME =		osqp-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		9
+REVISION =		10
 
 WANTLIB =  pthread
 MAINTAINER =		Paul Irofti <paul@irofti.net>

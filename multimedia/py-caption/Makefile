@@ -3,6 +3,7 @@ COMMENT=	closed caption converter
 MODPY_DISTV=	2.2.16
 DISTNAME=	pycaption-${MODPY_DISTV}
 PKGNAME=	py-caption-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	multimedia
 

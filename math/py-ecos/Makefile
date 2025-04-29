@@ -5,7 +5,7 @@ DISTNAME =		ecos-${MODPY_DISTV}
 V =			${MODPY_DISTV:S/post//}
 PKGNAME =		py-ecos-${V}
 CATEGORIES =		math
-REVISION =		1
+REVISION =		2
 
 WANTLIB =  pthread
 MAINTAINER =		Paul Irofti <paul@irofti.net>

@@ -1,12 +1,13 @@
-@pkgpath math/py-ecos,python3
 @conflict py-ecos-*
+@pkgpath math/py-ecos,python3
 @so lib/python${MODPY_VERSION}/site-packages/_ecos.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/ecos/
 lib/python${MODPY_VERSION}/site-packages/ecos-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/ecos-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/ecos-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/ecos-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/ecos-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/ecos-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/ecos-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/ecos-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/ecos/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ecos/${MODPY_PYCACHE}/

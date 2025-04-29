@@ -4,7 +4,7 @@ MODPY_DISTV=	1.7.2
 DISTNAME=		netcdf4-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME:L}
 CATEGORIES=		math
-REVISION=		0
+REVISION=		1
 
 HOMEPAGE=		http://unidata.github.io/netcdf4-python/
 

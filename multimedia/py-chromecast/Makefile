@@ -3,7 +3,7 @@ COMMENT=		Python module to talk to Google Chromecast
 MODPY_DISTV=	14.0.5
 DISTNAME=		PyChromecast-${MODPY_DISTV}
 PKGNAME=		py-chromecast-${MODPY_DISTV}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		multimedia
 

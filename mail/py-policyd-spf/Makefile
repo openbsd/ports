@@ -5,7 +5,7 @@ MODPY_DISTV=	2.0.2
 DISTNAME=	pypolicyd-spf-${MODPY_DISTV}
 PKGNAME=	py-policyd-spf-${MODPY_DISTV}
 CATEGORIES=	mail
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://launchpad.net/pypolicyd-spf
 

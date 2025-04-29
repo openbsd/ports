@@ -2,7 +2,7 @@ COMMENT =		powerful curses interface python file manager
 
 MODPY_DISTV =	3.1
 DISTNAME =		lfm-${MODPY_DISTV}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		misc
 

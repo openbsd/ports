@@ -3,7 +3,7 @@ COMMENT =		module for creating and manipulating graphs and networks
 MODPY_DISTV =	2.7.1
 DISTNAME =		networkx-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		math
 

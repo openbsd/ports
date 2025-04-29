@@ -2,7 +2,7 @@ COMMENT =		remove metadata from media files
 
 MODPY_DISTV =	0.13.4
 DISTNAME =		mat2-${MODPY_DISTV}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		multimedia
 

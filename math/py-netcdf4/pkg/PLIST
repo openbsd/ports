@@ -3,13 +3,6 @@ bin/nc3tonc4
 bin/nc4tonc3
 bin/ncinfo
 lib/python${MODPY_VERSION}/site-packages/netCDF4/
-lib/python${MODPY_VERSION}/site-packages/netCDF4-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/netCDF4-${MODPY_DISTV}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/netCDF4-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/netCDF4-${MODPY_DISTV}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/netCDF4-${MODPY_DISTV}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/netCDF4-${MODPY_DISTV}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/netCDF4-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/netCDF4/__init__.py
 lib/python${MODPY_VERSION}/site-packages/netCDF4/__init__.pyi
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/netCDF4/${MODPY_PYCACHE}/
@@ -24,3 +17,11 @@ lib/python${MODPY_VERSION}/site-packages/netCDF4/plugins/
 lib/python${MODPY_VERSION}/site-packages/netCDF4/plugins/empty.txt
 lib/python${MODPY_VERSION}/site-packages/netCDF4/py.typed
 lib/python${MODPY_VERSION}/site-packages/netCDF4/utils.py
+lib/python${MODPY_VERSION}/site-packages/netcdf4-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/netcdf4-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/netcdf4-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/netcdf4-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/netcdf4-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/netcdf4-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/netcdf4-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/netcdf4-${MODPY_DISTV}.dist-info/top_level.txt

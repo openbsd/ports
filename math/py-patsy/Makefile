@@ -4,6 +4,7 @@ MODPY_DISTV=	1.0.1
 DISTNAME=	patsy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	math
+REVISION=	0
 
 HOMEPAGE=	https://github.com/pydata/patsy
 

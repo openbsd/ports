@@ -1,5 +1,5 @@
-@pkgpath mail/py-policyd-spf,python3
 @conflict py-policyd-spf-*
+@pkgpath mail/py-policyd-spf,python3
 bin/policyd-spf
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}policydspfsupp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}policydspfsupp.${MODPY_PYC_MAGIC_TAG}pyc
@@ -8,10 +8,11 @@ lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}policydspfuser.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/policydspfsupp.py
 lib/python${MODPY_VERSION}/site-packages/policydspfuser.py
 lib/python${MODPY_VERSION}/site-packages/pypolicyd_spf-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pypolicyd_spf-${MODPY_DISTV}.dist-info/COPYING
 lib/python${MODPY_VERSION}/site-packages/pypolicyd_spf-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/pypolicyd_spf-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/pypolicyd_spf-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pypolicyd_spf-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/pypolicyd_spf-${MODPY_DISTV}.dist-info/licenses/COPYING
 lib/python${MODPY_VERSION}/site-packages/pypolicyd_spf-${MODPY_DISTV}.dist-info/top_level.txt
 @man man/man1/policyd-spf.1
 @man man/man5/policyd-spf.conf.5

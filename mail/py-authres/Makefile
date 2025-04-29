@@ -4,7 +4,7 @@ MODPY_DISTV =	1.2.0
 DISTNAME =	authres-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	mail
-REVISION =	1
+REVISION =	2
 
 HOMEPAGE =	https://launchpad.net/authentication-results-python
 

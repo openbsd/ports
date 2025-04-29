@@ -2,7 +2,7 @@ COMMENT =	scientific plotting and graphing package
 MODPY_DISTV =	3.6.2
 DISTNAME =	veusz-${MODPY_DISTV}
 CATEGORIES =	math graphics
-REVISION =	3
+REVISION =	4
 
 HOMEPAGE =	https://veusz.github.io/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

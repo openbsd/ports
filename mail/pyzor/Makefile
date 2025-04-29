@@ -5,7 +5,7 @@ GH_ACCOUNT =		SpamExperts
 GH_PROJECT =		pyzor
 GH_TAGNAME =		release-${MODPY_DISTV:S/./-/g}
 PKGNAME =		pyzor-${MODPY_DISTV}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		mail net
 

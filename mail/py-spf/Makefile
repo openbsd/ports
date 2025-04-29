@@ -4,7 +4,7 @@ MODPY_DISTV=	2.0.14
 DISTNAME=	pyspf-${MODPY_DISTV}
 PKGNAME=	py-spf-${MODPY_DISTV}
 CATEGORIES=	mail
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://github.com/sdgathman/pyspf/
 

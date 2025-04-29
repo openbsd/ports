@@ -3,6 +3,7 @@ COMMENT=	Python FFmpeg progress wrapper
 MODPY_DISTV=	0.10.0
 DISTNAME=	ffmpeg-progress-yield-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	multimedia
 

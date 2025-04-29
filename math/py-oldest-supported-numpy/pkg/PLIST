@@ -1,7 +1,8 @@
 @pkgpath math/py-oldest-supported-numpy,python3
 lib/python${MODPY_VERSION}/site-packages/oldest_supported_numpy-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/oldest_supported_numpy-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/oldest_supported_numpy-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/oldest_supported_numpy-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/oldest_supported_numpy-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/oldest_supported_numpy-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/oldest_supported_numpy-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/oldest_supported_numpy-${MODPY_DISTV}.dist-info/top_level.txt

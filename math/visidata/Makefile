@@ -2,7 +2,7 @@ COMMENT=	console-based multitool to explore and arrange tabular data
 
 MODPY_DISTV=	3.1.1
 DISTNAME=	visidata-${MODPY_DISTV}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	math textproc
 

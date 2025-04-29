@@ -3,7 +3,7 @@ COMMENT=		interact with Youtube Chromecast api
 MODPY_DISTV=	0.2.1
 DISTNAME=		casttube-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
-REVISION=		5
+REVISION=		6
 
 CATEGORIES=		multimedia net
 

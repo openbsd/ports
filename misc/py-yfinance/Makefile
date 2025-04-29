@@ -3,7 +3,7 @@ COMMENT=		fetching finanical market data with Python
 MODPY_DISTV=	0.1.72
 DISTNAME=		yfinance-${MODPY_DISTV}
 PKGNAME=		py-yfinance-${MODPY_DISTV}
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		misc
 

@@ -5,7 +5,7 @@ DISTNAME =		dkimpy-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		mail
 HOMEPAGE =		https://launchpad.net/dkimpy
-REVISION =		0
+REVISION =		1
 
 MAINTAINER =		Kirill A. Korinsky <kirill@korins.ky>
 

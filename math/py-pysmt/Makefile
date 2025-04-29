@@ -3,7 +3,7 @@ COMMENT =		library for SMT formulae manipulation and solving
 MODPY_DISTV =	0.9.5
 DISTNAME =		PySMT-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		math
 
