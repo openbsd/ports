@@ -3,9 +3,9 @@ https://rt.cpan.org/Public/Bug/Display.html?id=117929
 Index: libpatricia/Makefile.PL
 --- libpatricia/Makefile.PL.orig
 +++ libpatricia/Makefile.PL
-@@ -12,6 +12,8 @@ all :: static
+@@ -16,6 +16,8 @@ test_dynamic ::
  
- test ::
+ test_static ::
  
 +test_dynamic ::
 +
