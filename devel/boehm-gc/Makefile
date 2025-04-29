@@ -27,7 +27,7 @@ SHARED_LIBS +=	cord                 3.0      # 6.1
 CATEGORIES=	devel
 
 SITES=		https://github.com/ivmai/bdwgc/releases/download/v${VERSION}/
-SITES.lib=	https://github.com/ivmai/libatomic_ops/releases/download/v${LIBAO_VERSION}/
+SITES.lib=	https://github.com/bdwgc/libatomic_ops/releases/download/v${LIBAO_VERSION}/
 
 HOMEPAGE=	https://hboehm.info/gc/
 
