@@ -3,7 +3,7 @@ MODPY_DISTV =	0.1.11
 DISTNAME =		arandr-${MODPY_DISTV}
 CATEGORIES =		x11 sysutils
 HOMEPAGE =		https://christian.amsuess.com/tools/arandr/
-REVISION =		2
+REVISION =		3
 
 MAINTAINER =		Edd Barrett <edd@openbsd.org>
 

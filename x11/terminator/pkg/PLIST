@@ -2,11 +2,12 @@ bin/remotinator
 bin/terminator
 bin/terminator.wrapper
 lib/python${MODPY_VERSION}/site-packages/terminator-1.92.dist-info/
-lib/python${MODPY_VERSION}/site-packages/terminator-1.92.dist-info/AUTHORS
-lib/python${MODPY_VERSION}/site-packages/terminator-1.92.dist-info/COPYING
 lib/python${MODPY_VERSION}/site-packages/terminator-1.92.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/terminator-1.92.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/terminator-1.92.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/terminator-1.92.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/terminator-1.92.dist-info/licenses/AUTHORS
+lib/python${MODPY_VERSION}/site-packages/terminator-1.92.dist-info/licenses/COPYING
 lib/python${MODPY_VERSION}/site-packages/terminator-1.92.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/terminatorlib/
 lib/python${MODPY_VERSION}/site-packages/terminatorlib/__init__.py

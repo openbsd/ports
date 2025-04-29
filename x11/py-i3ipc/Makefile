@@ -4,7 +4,7 @@ MODPY_DISTV=	2.2.1
 DISTNAME=	i3ipc-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	x11
-REVISION=	3
+REVISION=	4
 
 HOMEPAGE=	https://github.com/altdesktop/i3ipc-python/
 

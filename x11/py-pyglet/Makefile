@@ -4,7 +4,7 @@ MODPY_DISTV =	1.4.11
 DISTNAME =		pyglet-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 EXTRACT_SUFX =		.zip
-REVISION =		7
+REVISION =		8
 
 CATEGORIES =		x11 multimedia
 

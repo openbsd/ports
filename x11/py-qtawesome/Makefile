@@ -3,7 +3,7 @@ COMMENT =		FontAwesome icons in PyQt and PySide applications
 MODPY_DISTV =	1.3.1
 DISTNAME =		QtAwesome-${MODPY_DISTV}
 PKGNAME =		py-qtawesome-${MODPY_DISTV}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		x11
 

@@ -1,8 +1,8 @@
 COMMENT =		display keypresses on screen
 
-MODPY_DISTV =	1.5
+MODPY_DISTV =		1.5
 DISTNAME =		screenkey-${MODPY_DISTV}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		x11
 
