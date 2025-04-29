@@ -1,5 +1,4 @@
 @pkgpath math/py-scipy,python3
-@conflict py-scipy-*
 lib/python${MODPY_VERSION}/site-packages/scipy/
 lib/python${MODPY_VERSION}/site-packages/scipy-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/scipy-${MODPY_DISTV}.dist-info/LICENSE.txt
