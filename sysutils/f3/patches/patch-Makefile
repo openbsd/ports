@@ -1,7 +1,7 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -23,9 +23,9 @@ extra: $(EXTRA_TARGETS)
+@@ -31,9 +31,9 @@ docker:
  install: all
  	$(INSTALL) -d $(DESTDIR)$(PREFIX)/bin
  	$(INSTALL) -m755 $(TARGETS) $(DESTDIR)$(PREFIX)/bin

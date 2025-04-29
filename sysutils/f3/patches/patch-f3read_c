@@ -7,12 +7,10 @@ Index: f3read.c
  #define _POSIX_C_SOURCE 200112L
  #define _XOPEN_SOURCE 600
  
-@@ -433,6 +435,14 @@ int main(int argc, char **argv)
- 	/* Read parameters. */
- 	argp_parse(&argp, argc, argv, 0, NULL, &args);
+@@ -447,6 +449,12 @@ int main(int argc, char **argv)
  	print_header(stdout, "read");
-+
-+	adjust_dev_path(&args.dev_path);
+ 
+ 	adjust_dev_path(&args.dev_path);
 +
 +	if (unveil(args.dev_path, "r") == -1)
 +		err(1, "unveil");

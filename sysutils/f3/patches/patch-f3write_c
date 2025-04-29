@@ -7,12 +7,10 @@ Index: f3write.c
  #define _POSIX_C_SOURCE 200112L
  #define _XOPEN_SOURCE 600
  
-@@ -367,6 +369,14 @@ int main(int argc, char **argv)
- 	/* Read parameters. */
- 	argp_parse(&argp, argc, argv, 0, NULL, &args);
+@@ -373,6 +375,12 @@ int main(int argc, char **argv)
  	print_header(stdout, "write");
-+
-+	adjust_dev_path(&args.dev_path);
+ 
+ 	adjust_dev_path(&args.dev_path);
 +
 +	if (unveil(args.dev_path, "rwc") == -1)
 +		err(1, "unveil");

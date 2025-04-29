@@ -2,7 +2,7 @@ COMMENT=	test flash cards capacity and performance
 
 GH_ACCOUNT=	AltraMayor
 GH_PROJECT=	f3
-GH_TAGNAME=	v8.0
+GH_TAGNAME=	v9.0
 
 CATEGORIES=	sysutils
 
