@@ -1,10 +1,11 @@
 @pkgpath devel/capstone/python,python3
 lib/python${MODPY_VERSION}/site-packages/capstone/
 lib/python${MODPY_VERSION}/site-packages/capstone-5.0.0.dist-info/
-lib/python${MODPY_VERSION}/site-packages/capstone-5.0.0.dist-info/LICENSE.TXT
 lib/python${MODPY_VERSION}/site-packages/capstone-5.0.0.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/capstone-5.0.0.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/capstone-5.0.0.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/capstone-5.0.0.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/capstone-5.0.0.dist-info/licenses/LICENSE.TXT
 lib/python${MODPY_VERSION}/site-packages/capstone-5.0.0.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/capstone-5.0.0.dist-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/capstone/__init__.py

@@ -1,5 +1,5 @@
-@pkgpath devel/py-xdis,python3
 @conflict py-xdis-<3.6.11p3
+@pkgpath devel/py-xdis,python3
 bin/pydisasm
 lib/python${MODPY_VERSION}/site-packages/test_unit/
 lib/python${MODPY_VERSION}/site-packages/test_unit/__init__.py
@@ -32,11 +32,12 @@ lib/python${MODPY_VERSION}/site-packages/test_unit/test_magic.py
 lib/python${MODPY_VERSION}/site-packages/test_unit/test_marsh.py
 lib/python${MODPY_VERSION}/site-packages/xdis/
 lib/python${MODPY_VERSION}/site-packages/xdis-6.1.0.dev0.dist-info/
-lib/python${MODPY_VERSION}/site-packages/xdis-6.1.0.dev0.dist-info/COPYING
 lib/python${MODPY_VERSION}/site-packages/xdis-6.1.0.dev0.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/xdis-6.1.0.dev0.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/xdis-6.1.0.dev0.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/xdis-6.1.0.dev0.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/xdis-6.1.0.dev0.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/xdis-6.1.0.dev0.dist-info/licenses/COPYING
 lib/python${MODPY_VERSION}/site-packages/xdis-6.1.0.dev0.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/xdis-6.1.0.dev0.dist-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/xdis/__init__.py

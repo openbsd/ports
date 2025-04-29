@@ -3,7 +3,7 @@ COMMENT=	McCabe complexity checker for Python
 MODPY_DISTV=	0.7.0
 DISTNAME=	mccabe-${MODPY_DISTV}
 PKGNAME=	py-mccabe-${MODPY_DISTV}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	devel
 

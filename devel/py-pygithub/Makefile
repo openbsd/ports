@@ -3,6 +3,7 @@ COMMENT =		Python library for managing github repos
 MODPY_DISTV =		2.6.1
 DISTNAME =		pygithub-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

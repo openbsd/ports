@@ -4,7 +4,7 @@ MODPY_DISTV =	0.0.24
 
 DISTNAME =		minidump-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 

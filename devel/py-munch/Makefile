@@ -3,7 +3,7 @@ COMMENT=	dot-accessible dictionary (a la JavaScript objects)
 MODPY_DISTV=	4.0.0
 DISTNAME=	munch-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

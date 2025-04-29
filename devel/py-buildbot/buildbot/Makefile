@@ -2,6 +2,7 @@ COMMENT =	continuous integration framework
 
 DISTNAME =	buildbot-${MODPY_DISTV}
 PKGNAME =	${DISTNAME}
+REVISION =	0
 
 RUN_DEPENDS =	databases/py-sqlalchemy>=1.4.0 \
 		databases/py-alembic \

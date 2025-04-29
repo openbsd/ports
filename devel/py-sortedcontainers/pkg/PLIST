@@ -1,10 +1,11 @@
 @pkgpath devel/py-sortedcontainers,python3
 lib/python${MODPY_VERSION}/site-packages/sortedcontainers/
 lib/python${MODPY_VERSION}/site-packages/sortedcontainers-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/sortedcontainers-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/sortedcontainers-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/sortedcontainers-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/sortedcontainers-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/sortedcontainers-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/sortedcontainers-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/sortedcontainers-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/sortedcontainers/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sortedcontainers/${MODPY_PYCACHE}/

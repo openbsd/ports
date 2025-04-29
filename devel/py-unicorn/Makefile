@@ -6,7 +6,7 @@ COMMENT =	Unicorn CPU emulator engine
 MODPY_DISTV =	2.0.1.post1
 DISTNAME =	unicorn-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	devel
 

@@ -2,7 +2,7 @@ COMMENT=	passive checker of Python programs
 
 MODPY_DISTV=	3.2.0
 DISTNAME=	pyflakes-${MODPY_DISTV}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	devel
 

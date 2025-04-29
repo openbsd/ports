@@ -3,6 +3,7 @@ COMMENT=	catch certain exceptions and provide an indication
 MODPY_DISTV=	5.3.0
 DISTNAME=	jaraco.context-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

@@ -1,7 +1,7 @@
 COMMENT =		network library for easy and scalable concurrency
 
 MODPY_DISTV =	24.11.1
-REVISION =		1
+REVISION =		2
 DISTNAME =		gevent-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 

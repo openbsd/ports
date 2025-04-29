@@ -3,6 +3,7 @@ COMMENT=	optional static type checker for Python
 # check textproc/py-charset-normalizer, it often has excessively tight
 # version checks for mypy
 MODPY_DISTV=	1.15.0
+REVISION=	0
 DISTNAME=	mypy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 

@@ -2,6 +2,7 @@ COMMENT=	format Python code to comply with PEP 8
 
 MODPY_DISTV=	2.3.2
 DISTNAME=	autopep8-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	devel
 

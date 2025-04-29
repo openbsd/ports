@@ -5,7 +5,7 @@ DISTNAME=	SCons-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	devel
 
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://www.scons.org/
 

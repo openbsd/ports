@@ -3,7 +3,7 @@ COMMENT=	extract elements from a JSON document
 MODPY_DISTV=	1.0.1
 DISTNAME=	jmespath-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	devel
 

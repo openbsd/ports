@@ -1,7 +1,7 @@
 COMMENT =		automation tool
 
 MODPY_DISTV =	0.36.0
-REVISION =		2
+REVISION =		3
 DISTNAME =		doit-${MODPY_DISTV}
 CATEGORIES =		devel
 

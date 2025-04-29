@@ -3,6 +3,7 @@ COMMENT =		basic inter-process locks
 MODPY_DISTV =		3.0.post1
 DISTNAME =		zc.lockfile-${MODPY_DISTV}
 PKGNAME =		py-zc-lockfile-${MODPY_DISTV:S/.post/pl/}
+REVISION =		0
 
 CATEGORIES =		devel
 

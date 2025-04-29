@@ -3,7 +3,7 @@ COMMENT=	backport of pathlib-compatible object wrapper for zip files
 MODPY_DISTV=	3.21.0
 DISTNAME=	zipp-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

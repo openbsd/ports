@@ -3,7 +3,7 @@ COMMENT =	sniff out which async library is being used
 MODPY_DISTV =	1.3.1
 DISTNAME=	sniffio-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

@@ -3,7 +3,7 @@ COMMENT =		pure python RFC3986 validator
 MODPY_DISTV =	0.1.1
 DISTNAME =		rfc3986_validator-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 

@@ -4,6 +4,7 @@ COMMENT =	Python module for creating Excel XLSX files
 MODPY_DISTV =	3.0.9
 DISTNAME =	XlsxWriter-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME:L}
+REVISION =	0
 
 CATEGORIES =	devel
 

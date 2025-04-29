@@ -4,7 +4,7 @@ MODPY_DISTV=	4.9.0
 DISTNAME=	pexpect-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://pexpect.readthedocs.io/
 

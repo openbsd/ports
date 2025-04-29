@@ -3,7 +3,7 @@ COMMENT =		py.test plugin to validate Jupyter notebooks
 MODPY_DISTV =	0.9.6
 DISTNAME =		nbval-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		devel
 

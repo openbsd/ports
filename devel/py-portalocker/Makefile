@@ -1,7 +1,7 @@
 COMMENT =	easy Python API to file locking
 
 MODPY_DISTV =	2.6.0
-REVISION =	2
+REVISION =	3
 
 DISTNAME =	portalocker-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}

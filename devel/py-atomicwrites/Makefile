@@ -3,7 +3,7 @@ COMMENT =	atomic file writes
 MODPY_DISTV =	1.4.1
 DISTNAME =	atomicwrites-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	devel
 

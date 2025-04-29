@@ -3,7 +3,7 @@ COMMENT=	Python module dependency analysis tool
 MODPY_DISTV =	0.19.6
 DISTNAME=	modulegraph-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

@@ -3,7 +3,7 @@ COMMENT=	implements a topological sort algorithm
 MODPY_DISTV=	1.10
 DISTNAME=	toposort-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	devel
 

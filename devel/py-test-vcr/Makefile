@@ -3,7 +3,7 @@ COMMENT =		plugin for managing VCR.py cassettes
 MODPY_DISTV =	1.0.2
 DISTNAME =		pytest-vcr-${MODPY_DISTV}
 PKGNAME =		py-test-vcr-${MODPY_DISTV}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		devel
 

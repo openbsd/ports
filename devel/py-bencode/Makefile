@@ -3,7 +3,7 @@ COMMENT =	bencoding and bdecoding implementation
 MODPY_DISTV =	2.1.0
 DISTNAME =	bencode.py-${MODPY_DISTV}
 PKGNAME =	py-bencode-${MODPY_DISTV}
-REVISION =	5
+REVISION =	6
 
 CATEGORIES =	devel
 

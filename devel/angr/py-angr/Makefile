@@ -1,5 +1,5 @@
 COMMENT =	multi-architecture binary analysis platform
-REVISION =	1
+REVISION =	2
 
 ANGR_PYTHON_MODULE =	angr
 

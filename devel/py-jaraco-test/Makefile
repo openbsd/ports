@@ -3,6 +3,7 @@ COMMENT=	functions and fixtures for facilitating tests
 MODPY_DISTV=	5.5.1
 DISTNAME=	jaraco_test-${MODPY_DISTV}
 PKGNAME=	py-jaraco-test-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	devel
 

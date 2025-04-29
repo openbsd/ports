@@ -4,7 +4,7 @@ COMMENT =		console-based visual debugger for Python
 MODPY_DISTV =	2021.1
 DISTNAME =		pudb-${MODPY_DISTV}
 PKGNAME =		py-pudb-${MODPY_DISTV}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 

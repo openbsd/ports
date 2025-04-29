@@ -1,12 +1,13 @@
-@pkgpath devel/py-algorithm-munkres,python3
 @conflict py-algorithm-munkres-*
+@pkgpath devel/py-algorithm-munkres,python3
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}munkres.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}munkres.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/munkres-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/munkres-${MODPY_DISTV}.dist-info/LICENSE.md
 lib/python${MODPY_VERSION}/site-packages/munkres-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/munkres-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/munkres-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/munkres-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/munkres-${MODPY_DISTV}.dist-info/licenses/LICENSE.md
 lib/python${MODPY_VERSION}/site-packages/munkres-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/munkres.py

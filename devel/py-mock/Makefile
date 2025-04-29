@@ -4,6 +4,7 @@ MODPY_DISTV=		5.1.0
 DISTNAME=		mock-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
 CATEGORIES=		devel
+REVISION=		0
 
 HOMEPAGE=		https://mock.readthedocs.io/en/latest/
 

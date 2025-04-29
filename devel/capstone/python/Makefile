@@ -1,7 +1,7 @@
 COMMENT =	Python bindings for capstone
 
 MODPY_DISTV =	${GH_TAGNAME}
-REVISION =	2
+REVISION =	3
 
 PKGNAME =	py-${DISTNAME}
 

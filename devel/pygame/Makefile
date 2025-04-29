@@ -1,10 +1,12 @@
 COMMENT=	set of Python modules designed for writing games
 
+# XXX check "Skipping Cython compilation"?
+
 MODPY_DISTV=	2.6.1
 DISTNAME=	pygame-${MODPY_DISTV}
 PKGNAME=	py-game-${MODPY_DISTV}
 CATEGORIES=	devel games
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://www.pygame.org/
 

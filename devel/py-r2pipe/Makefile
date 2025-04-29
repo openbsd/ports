@@ -3,7 +3,7 @@ COMMENT =	pipe interface for radare2
 MODPY_DISTV =	1.8.8
 DISTNAME =	r2pipe-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	devel
 

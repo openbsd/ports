@@ -3,6 +3,7 @@ COMMENT=	construction, analysis and modification of binary data
 MODPY_DISTV=	4.3.1
 DISTNAME=	bitstring-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

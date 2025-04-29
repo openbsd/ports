@@ -1,13 +1,14 @@
-@pkgpath devel/py-modulegraph,python3
 @conflict py-modulegraph-*
+@pkgpath devel/py-modulegraph,python3
 bin/modulegraph
 lib/python${MODPY_VERSION}/site-packages/modulegraph/
 lib/python${MODPY_VERSION}/site-packages/modulegraph-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/modulegraph-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/modulegraph-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/modulegraph-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/modulegraph-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/modulegraph-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/modulegraph-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/modulegraph-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/modulegraph-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/modulegraph-${MODPY_DISTV}.dist-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/modulegraph/__init__.py

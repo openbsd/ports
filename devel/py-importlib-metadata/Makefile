@@ -3,7 +3,7 @@ COMMENT =		library providing an API for accessing packages metadata
 MODPY_DISTV =	8.5.0
 DISTNAME =		importlib_metadata-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://importlib-metadata.readthedocs.io/
 

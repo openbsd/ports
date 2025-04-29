@@ -4,7 +4,7 @@ MODPY_DISTV =	0.4.0
 
 DISTNAME =		crayons-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		devel
 

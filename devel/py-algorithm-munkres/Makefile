@@ -3,7 +3,7 @@ COMMENT =	munkres algorithm for the Assignment Problem
 MODPY_DISTV =	1.1.4
 DISTNAME =		munkres-${MODPY_DISTV}
 PKGNAME =		py-algorithm-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		devel
 

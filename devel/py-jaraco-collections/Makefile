@@ -3,7 +3,7 @@ COMMENT=	models and classes to supplement stdlib 'collections' module
 MODPY_DISTV=	5.1.0
 DISTNAME=	jaraco_collections-${MODPY_DISTV}
 PKGNAME=	py-jaraco.collections-${MODPY_DISTV}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

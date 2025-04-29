@@ -4,7 +4,7 @@ MODPY_DISTV =	1.6
 DISTNAME =		progress-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		3
+REVISION =		4
 
 HOMEPAGE =		https://github.com/verigak/progress/
 

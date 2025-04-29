@@ -3,7 +3,7 @@ COMMENT=		Python-powered template engine and code generator
 MODPY_DISTV=	3.2.6
 DISTNAME=		Cheetah3-${MODPY_DISTV}
 PKGNAME=		py-cheetah-${MODPY_DISTV}
-REVISION=		5
+REVISION=		6
 CATEGORIES=		devel textproc
 
 HOMEPAGE=		https://cheetahtemplate.org/

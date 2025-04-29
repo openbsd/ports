@@ -3,7 +3,7 @@ COMMENT =		6502-series cross-assembler
 MODPY_DISTV =	2.1
 DISTNAME =		Ophis-${MODPY_DISTV}.20190413
 PKGNAME =		${DISTNAME:L}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		devel
 

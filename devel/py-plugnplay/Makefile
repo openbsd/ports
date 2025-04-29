@@ -3,7 +3,7 @@ COMMENT=	a generic plug-in system for Python
 MODPY_DISTV=	0.5.4
 DISTNAME=	plugnplay-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	devel
 

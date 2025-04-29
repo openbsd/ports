@@ -3,7 +3,7 @@ MODPY_DISTV =	1.5.0
 DISTNAME =	cloudpickle-${MODPY_DISTV}
 PKGNAME =	py-cloudpickle-${MODPY_DISTV}
 CATEGORIES =	devel
-REVISION =	5
+REVISION =	6
 
 HOMEPAGE =	https://github.com/cloudpipe/cloudpickle
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

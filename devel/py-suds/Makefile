@@ -3,6 +3,7 @@ COMMENT =		lightweight python SOAP client
 MODPY_DISTV =		1.2.0
 DISTNAME =		suds-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 HOMEPAGE =		https://github.com/suds-community/suds
 

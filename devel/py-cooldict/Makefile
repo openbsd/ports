@@ -3,7 +3,7 @@ COMMENT =	some useful dict-like structures
 MODPY_DISTV =	1.4
 DISTNAME =	cooldict-1.04
 PKGNAME =	py-${DISTNAME}
-REVISION =	6
+REVISION =	7
 
 CATEGORIES =	devel
 

@@ -3,6 +3,7 @@ COMMENT=	multiply test cases
 MODPY_DISTV=	1.7.2
 DISTNAME=	ddt-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

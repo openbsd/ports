@@ -3,7 +3,7 @@ COMMENT =		intel hex file format is used in microprocessors
 MODPY_DISTV =	2.3.0
 DISTNAME =		intelhex-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		devel
 

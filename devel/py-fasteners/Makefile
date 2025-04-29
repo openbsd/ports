@@ -3,6 +3,7 @@ COMMENT =	Python package that provides useful locks
 MODPY_DISTV =	0.19
 DISTNAME =	fasteners-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 

@@ -3,7 +3,7 @@ COMMENT=		complementary command-line interface for Git
 MODPY_DISTV=	1.2.0
 DISTNAME=		legit-${MODPY_DISTV}
 CATEGORIES=		devel
-REVISION=		4
+REVISION=		5
 
 HOMEPAGE=		https://frostming.github.io/legit/
 

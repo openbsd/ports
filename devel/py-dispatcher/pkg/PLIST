@@ -1,9 +1,4 @@
 @pkgpath devel/py-dispatcher,python3
-lib/python${MODPY_VERSION}/site-packages/PyDispatcher-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/PyDispatcher-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/PyDispatcher-${MODPY_DISTV}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/PyDispatcher-${MODPY_DISTV}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/PyDispatcher-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pydispatch/
 lib/python${MODPY_VERSION}/site-packages/pydispatch/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pydispatch/${MODPY_PYCACHE}/
@@ -24,3 +19,8 @@ lib/python${MODPY_VERSION}/site-packages/pydispatch/errors.py
 lib/python${MODPY_VERSION}/site-packages/pydispatch/robust.py
 lib/python${MODPY_VERSION}/site-packages/pydispatch/robustapply.py
 lib/python${MODPY_VERSION}/site-packages/pydispatch/saferef.py
+lib/python${MODPY_VERSION}/site-packages/pydispatcher-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pydispatcher-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/pydispatcher-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/pydispatcher-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pydispatcher-${MODPY_DISTV}.dist-info/top_level.txt

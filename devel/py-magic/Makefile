@@ -4,7 +4,7 @@ DISTNAME =		python-magic-${MODPY_DISTV}
 PKGNAME =		py-magic-${MODPY_DISTV}
 EPOCH =			0
 CATEGORIES =		devel
-REVISION =		8
+REVISION =		9
 
 MAINTAINER =		Brian Callahan <bcallah@openbsd.org>
 

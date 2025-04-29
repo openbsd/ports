@@ -1,6 +1,7 @@
 COMMENT=	manage callbacks in asyncio projects
 
 MODPY_DISTV=	1.3.2
+REVISION=	0
 DISTNAME=	aiosignal-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 

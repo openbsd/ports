@@ -3,7 +3,7 @@ COMMENT=		non-blocking Python methods using decorators
 MODPY_DISTV=	0.0.11
 DISTNAME=		multitasking-${MODPY_DISTV}
 PKGNAME=		py-multitasking-${MODPY_DISTV}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		devel
 

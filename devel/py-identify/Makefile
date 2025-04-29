@@ -3,6 +3,7 @@ COMMENT =		file identification library
 MODPY_DISTV =		2.6.9
 DISTNAME =		identify-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

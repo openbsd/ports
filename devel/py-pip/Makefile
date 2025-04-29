@@ -4,6 +4,7 @@ MODPY_DISTV=	25.0.1
 DISTNAME=	pip-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
+REVISION=	0
 
 HOMEPAGE=	https://pip.pypa.io/en/stable/
 

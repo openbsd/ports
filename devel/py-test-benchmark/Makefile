@@ -4,6 +4,7 @@ MODPY_DISTV=	5.1.0
 DISTNAME=	pytest-benchmark-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/py/py-/}
 CATEGORIES=	devel
+REVISION=	0
 
 HOMEPAGE=	https://pytest-benchmark.readthedocs.io/en/stable/
 

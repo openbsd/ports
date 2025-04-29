@@ -1,15 +1,16 @@
-@pkgpath devel/py-fastimport,python3
 @conflict py-fastimport-*
+@pkgpath devel/py-fastimport,python3
 bin/fast-import-filter
 bin/fast-import-info
 bin/fast-import-query
 lib/python${MODPY_VERSION}/site-packages/fastimport/
 lib/python${MODPY_VERSION}/site-packages/fastimport-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/fastimport-${MODPY_DISTV}.dist-info/AUTHORS
-lib/python${MODPY_VERSION}/site-packages/fastimport-${MODPY_DISTV}.dist-info/COPYING
 lib/python${MODPY_VERSION}/site-packages/fastimport-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/fastimport-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/fastimport-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/fastimport-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/fastimport-${MODPY_DISTV}.dist-info/licenses/AUTHORS
+lib/python${MODPY_VERSION}/site-packages/fastimport-${MODPY_DISTV}.dist-info/licenses/COPYING
 lib/python${MODPY_VERSION}/site-packages/fastimport-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/fastimport/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/fastimport/${MODPY_PYCACHE}/
@@ -49,6 +50,7 @@ lib/python${MODPY_VERSION}/site-packages/fastimport/processors/${MODPY_PYCACHE}q
 lib/python${MODPY_VERSION}/site-packages/fastimport/processors/filter_processor.py
 lib/python${MODPY_VERSION}/site-packages/fastimport/processors/info_processor.py
 lib/python${MODPY_VERSION}/site-packages/fastimport/processors/query_processor.py
+lib/python${MODPY_VERSION}/site-packages/fastimport/py.typed
 lib/python${MODPY_VERSION}/site-packages/fastimport/reftracker.py
 lib/python${MODPY_VERSION}/site-packages/fastimport/tests/
 lib/python${MODPY_VERSION}/site-packages/fastimport/tests/__init__.py

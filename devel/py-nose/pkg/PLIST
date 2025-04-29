@@ -147,11 +147,12 @@ lib/python${MODPY_VERSION}/site-packages/nose/twistedtools.py
 lib/python${MODPY_VERSION}/site-packages/nose/usage.txt
 lib/python${MODPY_VERSION}/site-packages/nose/util.py
 lib/python${MODPY_VERSION}/site-packages/pynose-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pynose-${MODPY_DISTV}.dist-info/AUTHORS
-lib/python${MODPY_VERSION}/site-packages/pynose-${MODPY_DISTV}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/pynose-${MODPY_DISTV}.dist-info/LICENSE.cpython
 lib/python${MODPY_VERSION}/site-packages/pynose-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/pynose-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/pynose-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/pynose-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/pynose-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/pynose-${MODPY_DISTV}.dist-info/licenses/AUTHORS
+lib/python${MODPY_VERSION}/site-packages/pynose-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/pynose-${MODPY_DISTV}.dist-info/licenses/LICENSE.cpython
 lib/python${MODPY_VERSION}/site-packages/pynose-${MODPY_DISTV}.dist-info/top_level.txt

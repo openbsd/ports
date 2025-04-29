@@ -3,13 +3,6 @@ bin/scons
 bin/scons-configure-cache
 bin/sconsign
 lib/python${MODPY_VERSION}/site-packages/SCons/
-lib/python${MODPY_VERSION}/site-packages/SCons-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/SCons-${MODPY_DISTV}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/SCons-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/SCons-${MODPY_DISTV}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/SCons-${MODPY_DISTV}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/SCons-${MODPY_DISTV}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/SCons-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/SCons/Action.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Builder.py
 lib/python${MODPY_VERSION}/site-packages/SCons/CacheDir.py
@@ -467,6 +460,7 @@ lib/python${MODPY_VERSION}/site-packages/SCons/Tool/dmd.py
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/${MODPY_PYCACHE}__init__.cpython-311.pyc
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/SCons/Tool/docbook/docbook-xsl-1.76.1/
@@ -2114,6 +2108,14 @@ lib/python${MODPY_VERSION}/site-packages/SCons/compat/win32.py
 lib/python${MODPY_VERSION}/site-packages/SCons/cpp.py
 lib/python${MODPY_VERSION}/site-packages/SCons/dblite.py
 lib/python${MODPY_VERSION}/site-packages/SCons/exitfuncs.py
+lib/python${MODPY_VERSION}/site-packages/scons-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/scons-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/scons-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/scons-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/scons-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/scons-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/scons-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/scons-${MODPY_DISTV}.dist-info/top_level.txt
 @man man/man1/scons-time.1
 @man man/man1/scons.1
 @man man/man1/sconsign.1

@@ -4,6 +4,7 @@ MODPY_DISTV=	1.18.0
 
 DISTNAME=	pyqt_builder-${MODPY_DISTV}
 PKGNAME=	py-qt-builder-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	devel
 

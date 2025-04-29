@@ -3,6 +3,7 @@ COMMENT=	fast implementation of the Cassowary constraint solver
 MODPY_DISTV=	1.4.8
 DISTNAME=	kiwisolver-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

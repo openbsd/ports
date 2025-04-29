@@ -4,7 +4,7 @@ MODPY_DISTV =	0.70.13
 DISTNAME =		multiprocess-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		2
+REVISION =		3
 
 HOMEPAGE =		https://github.com/uqfoundation/multiprocess
 

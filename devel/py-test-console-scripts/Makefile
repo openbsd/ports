@@ -3,7 +3,7 @@ COMMENT =		test console scripts with pytest
 MODPY_DISTV =	1.4.1
 DISTNAME =		pytest-console-scripts-${MODPY_DISTV}
 PKGNAME =		${DISTNAME:S/py/py-/}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 

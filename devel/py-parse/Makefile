@@ -3,7 +3,7 @@ COMMENT=	strings parser for the Python format() syntax
 MODPY_DISTV=	1.20.2
 DISTNAME=	parse-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

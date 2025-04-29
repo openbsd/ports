@@ -3,7 +3,7 @@ COMMENT=	autogenerate argparse parsers from function signatures
 MODPY_DISTV=	2.2.2
 DISTNAME=	autocommand-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	devel
 

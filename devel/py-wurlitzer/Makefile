@@ -3,7 +3,7 @@ COMMENT=	capture c-level output in context managers
 MODPY_DISTV =	3.1.1
 DISTNAME=	wurlitzer-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

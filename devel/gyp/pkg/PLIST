@@ -1,12 +1,13 @@
 bin/gyp
 lib/python${MODPY_VERSION}/site-packages/gyp/
 lib/python${MODPY_VERSION}/site-packages/gyp-0.1.dist-info/
-lib/python${MODPY_VERSION}/site-packages/gyp-0.1.dist-info/AUTHORS
-lib/python${MODPY_VERSION}/site-packages/gyp-0.1.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/gyp-0.1.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/gyp-0.1.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/gyp-0.1.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/gyp-0.1.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/gyp-0.1.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/gyp-0.1.dist-info/licenses/AUTHORS
+lib/python${MODPY_VERSION}/site-packages/gyp-0.1.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/gyp-0.1.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/gyp/MSVSNew.py
 lib/python${MODPY_VERSION}/site-packages/gyp/MSVSProject.py

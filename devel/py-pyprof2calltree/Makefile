@@ -3,7 +3,7 @@ COMMENT =	help visualize profiling data collected with the cProfile
 MODPY_DISTV =	1.4.5
 DISTNAME =	pyprof2calltree-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	8
+REVISION =	9
 
 CATEGORIES =	devel
 

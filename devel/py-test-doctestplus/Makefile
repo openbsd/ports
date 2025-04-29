@@ -4,7 +4,7 @@ MODPY_DISTV=	1.2.1
 
 DISTNAME=	pytest-doctestplus-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/py/py-/}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

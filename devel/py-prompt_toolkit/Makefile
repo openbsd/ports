@@ -4,6 +4,7 @@ COMMENT=	Python library for building powerful interactive CLI
 MODPY_DISTV=	3.0.50
 DISTNAME=	prompt_toolkit-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

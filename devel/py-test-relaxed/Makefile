@@ -3,7 +3,7 @@ COMMENT=	relaxed test discovery/organization for pytest
 MODPY_DISTV=	2.0.2
 DISTNAME=	pytest-relaxed-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/py/py-/}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

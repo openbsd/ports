@@ -3,6 +3,7 @@ COMMENT =	annotate Python ASTs with source text and token information
 MODPY_DISTV =	3.0.0
 DISTNAME =	asttokens-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	devel
 

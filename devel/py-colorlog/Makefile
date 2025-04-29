@@ -1,9 +1,9 @@
 COMMENT =		log formatting with colors
 
-MODPY_DISTV =	6.8.2
+MODPY_DISTV =		6.8.2
 DISTNAME =		colorlog-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 

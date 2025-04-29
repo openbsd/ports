@@ -1,10 +1,11 @@
 @pkgpath devel/py-intervaltree,python3
 lib/python${MODPY_VERSION}/site-packages/intervaltree/
 lib/python${MODPY_VERSION}/site-packages/intervaltree-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/intervaltree-${MODPY_DISTV}.dist-info/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/intervaltree-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/intervaltree-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/intervaltree-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/intervaltree-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/intervaltree-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/intervaltree-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/intervaltree-${MODPY_DISTV}.dist-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/intervaltree/__init__.py

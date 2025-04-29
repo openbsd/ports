@@ -1,6 +1,7 @@
 COMMENT=	pure Python implementation of Git file formats and protocols
 
 MODPY_DISTV=	0.22.8
+REVISION=	0
 DISTNAME=	dulwich-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 

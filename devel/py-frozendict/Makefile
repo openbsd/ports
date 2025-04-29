@@ -3,7 +3,7 @@ COMMENT=	immutable dictionary
 MODPY_DISTV=	2.4.6
 DISTNAME=	frozendict-${MODPY_DISTV}
 PKGNAME=	py-frozendict-${MODPY_DISTV}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

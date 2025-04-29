@@ -1,12 +1,13 @@
-@pkgpath devel/py-dtfabric,python3
 @conflict py-dtfabric-*
+@pkgpath devel/py-dtfabric,python3
 bin/validate-definitions
 lib/python${MODPY_VERSION}/site-packages/dtfabric/
 lib/python${MODPY_VERSION}/site-packages/dtfabric-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/dtfabric-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/dtfabric-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/dtfabric-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/dtfabric-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/dtfabric-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/dtfabric-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/dtfabric-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/dtfabric/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/dtfabric/${MODPY_PYCACHE}/

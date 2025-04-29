@@ -2,11 +2,12 @@
 bin/minidump
 lib/python${MODPY_VERSION}/site-packages/minidump/
 lib/python${MODPY_VERSION}/site-packages/minidump-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/minidump-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/minidump-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/minidump-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/minidump-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/minidump-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/minidump-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/minidump-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/minidump-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/minidump/__amain__.py
 lib/python${MODPY_VERSION}/site-packages/minidump/__init__.py

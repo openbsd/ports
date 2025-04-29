@@ -3,6 +3,7 @@ COMMENT =		node.js virtual environment builder
 MODPY_DISTV =		1.9.1
 DISTNAME =		nodeenv-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

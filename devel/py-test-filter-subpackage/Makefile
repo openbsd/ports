@@ -4,7 +4,7 @@ MODPY_DISTV=	0.2.0
 
 DISTNAME=	pytest-filter-subpackage-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/py//}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

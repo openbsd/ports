@@ -3,6 +3,7 @@ COMMENT=	Pythonic task execution
 MODPY_DISTV =	2.2.0
 DISTNAME =	invoke-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES=	devel
 

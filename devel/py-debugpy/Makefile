@@ -3,6 +3,7 @@ COMMENT =	Python implementation of the debug adapter protocol
 MODPY_DISTV=	1.8.14
 DISTNAME=	debugpy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

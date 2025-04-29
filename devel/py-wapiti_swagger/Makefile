@@ -4,6 +4,7 @@ MODPY_DISTV =		0.1.9
 
 DISTNAME =		wapiti_swagger-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

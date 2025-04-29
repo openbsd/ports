@@ -5,7 +5,7 @@ MODPY_DISTV =	2.5
 DISTNAME =		progressbar-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		8
+REVISION =		9
 
 HOMEPAGE =		https://github.com/niltonvolpato/python-progressbar
 

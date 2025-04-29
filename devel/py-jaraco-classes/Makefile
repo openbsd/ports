@@ -3,7 +3,7 @@ COMMENT=	obtain class names of an object and its parent classes
 MODPY_DISTV=	3.4.0
 DISTNAME=	jaraco.classes-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

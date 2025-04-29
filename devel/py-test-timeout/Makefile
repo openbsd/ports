@@ -4,7 +4,7 @@ MODPY_DISTV =	1.4.2
 
 DISTNAME =		pytest-timeout-${MODPY_DISTV}
 PKGNAME =		${DISTNAME:S/py/py-/}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		devel
 

@@ -3,6 +3,7 @@ COMMENT=	concrete syntax tree with AST-like properties for Python
 MODPY_DISTV=	1.6.0
 DISTNAME=	libcst-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 HOMEPAGE=	https://github.com/Instagram/LibCST
 

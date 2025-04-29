@@ -5,7 +5,7 @@ GH_ACCOUNT=	getting-things-gnome
 GH_PROJECT=	liblarch
 GH_TAGNAME=	v${MODPY_DISTV}
 PKGNAME=	py-liblarch-${MODPY_DISTV}
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	devel
 

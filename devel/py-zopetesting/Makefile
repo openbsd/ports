@@ -3,6 +3,7 @@ COMMENT=	testing frameworks from Zope 3
 MODPY_DISTV=	5.0.1
 DISTNAME=	zope.testing-${MODPY_DISTV}
 PKGNAME=	py-zopetesting-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	devel
 

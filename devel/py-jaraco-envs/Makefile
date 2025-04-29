@@ -3,7 +3,7 @@ COMMENT=	classes for orchestrating Python (virtual) environments
 MODPY_DISTV=	2.6.0
 DISTNAME=	jaraco.envs-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

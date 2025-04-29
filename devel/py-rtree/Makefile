@@ -3,7 +3,7 @@ COMMENT =		python wrapper for spatial index
 MODPY_DISTV =	1.2.0
 DISTNAME =		Rtree-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:L}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 

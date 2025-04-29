@@ -4,6 +4,7 @@ MODPY_DISTV=	2025.1.31
 DISTNAME=	certifi-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel security
+REVISION=	0
 
 HOMEPAGE=	https://certifi.io/
 

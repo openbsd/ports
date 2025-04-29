@@ -4,6 +4,7 @@ COMMENT=	common base representation of Python source code
 MODPY_DISTV=	3.3.9
 DISTNAME=	astroid-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

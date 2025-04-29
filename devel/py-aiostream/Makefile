@@ -3,6 +3,7 @@ COMMENT=	generator-based operators for asynchronous iteration
 MODPY_DISTV=	0.6.4
 DISTNAME=	aiostream-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 # https://github.com/vxgmichel/aiostream
 HOMEPAGE=	https://aiostream.readthedocs.io/en/stable/

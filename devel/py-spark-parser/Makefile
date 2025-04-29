@@ -4,7 +4,7 @@ MODPY_DISTV =	1.8.9
 DISTNAME =		spark_parser-${MODPY_DISTV}
 PKGNAME =		py-spark-parser-${MODPY_DISTV}
 CATEGORIES =		devel
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		https://github.com/rocky/python-spark/
 

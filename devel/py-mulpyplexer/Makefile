@@ -3,7 +3,7 @@ COMMENT =	module that multiplexes interactions with lists of objects
 MODPY_DISTV =	0.9
 DISTNAME =	mulpyplexer-0.09
 PKGNAME =	py-${DISTNAME}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	devel
 

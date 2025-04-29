@@ -2,12 +2,13 @@
 bin/dbus-interface-diff
 bin/dbus-interface-vcs-helper
 lib/python${MODPY_VERSION}/site-packages/dbus_deviation-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/dbus_deviation-${MODPY_DISTV}.dist-info/AUTHORS
-lib/python${MODPY_VERSION}/site-packages/dbus_deviation-${MODPY_DISTV}.dist-info/COPYING
 lib/python${MODPY_VERSION}/site-packages/dbus_deviation-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/dbus_deviation-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/dbus_deviation-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/dbus_deviation-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/dbus_deviation-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/dbus_deviation-${MODPY_DISTV}.dist-info/licenses/AUTHORS
+lib/python${MODPY_VERSION}/site-packages/dbus_deviation-${MODPY_DISTV}.dist-info/licenses/COPYING
 lib/python${MODPY_VERSION}/site-packages/dbus_deviation-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/dbus_deviation-${MODPY_DISTV}.dist-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/dbusapi/

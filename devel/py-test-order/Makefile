@@ -4,6 +4,7 @@ MODPY_DISTV=	1.3.0
 DISTNAME=	pytest_order-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/py/py-/:S/_/-/g}
 CATEGORIES=	devel
+REVISION=	0
 
 # MIT
 PERMIT_PACKAGE=	Yes

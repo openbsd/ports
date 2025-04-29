@@ -3,7 +3,7 @@ COMMENT=	formatter for Python code
 MODPY_DISTV=	0.43.0
 DISTNAME=	yapf-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

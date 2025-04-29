@@ -3,7 +3,7 @@ COMMENT =		hack to explicitly set up and tear down fixtures
 MODPY_DISTV =	0.2.0
 DISTNAME =		pytest-subtesthack-${MODPY_DISTV}
 PKGNAME =		py-test-subtesthack-${MODPY_DISTV}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		devel
 

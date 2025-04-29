@@ -3,7 +3,7 @@ COMMENT=	Python Data Validation for Humans
 MODPY_DISTV=	0.34.0
 DISTNAME=	validators-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

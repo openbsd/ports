@@ -3,7 +3,7 @@ COMMENT =		timeout context manager for asyncio programs
 MODPY_DISTV =	4.0.2
 DISTNAME =		async-timeout-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 

@@ -3,6 +3,7 @@ COMMENT=	send files to the trash natively
 MODPY_DISTV=	1.8.3
 DISTNAME=	Send2Trash-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:L}
+REVISION=	0
 
 CATEGORIES=	devel
 

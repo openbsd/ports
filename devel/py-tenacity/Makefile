@@ -3,6 +3,7 @@ COMMENT =		Python module to retry code until it succeeds
 MODPY_DISTV =		9.0.0
 DISTNAME =		tenacity-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 MAINTAINER =		Mikolaj Kucharski <mikolaj@kucharski.name>
 

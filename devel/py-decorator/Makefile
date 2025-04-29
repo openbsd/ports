@@ -3,6 +3,7 @@ COMMENT=	simplify usage of decorators
 MODPY_DISTV=	5.2.1
 DISTNAME=	decorator-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 HOMEPAGE=	https://github.com/micheles/decorator
 

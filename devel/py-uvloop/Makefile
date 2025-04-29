@@ -1,7 +1,7 @@
 COMMENT =		fast, drop-in replacement for asyncio event loop
 
-MODPY_DISTV =	0.20.0
-REVISION =		1
+MODPY_DISTV =		0.20.0
+REVISION =		2
 DISTNAME =		uvloop-${MODPY_DISTV}
 PKGNAME =		py-uvloop-${MODPY_DISTV}
 

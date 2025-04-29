@@ -3,6 +3,7 @@ COMMENT=	mock out requests made by ClientSession from aiohttp
 MODPY_DISTV=	0.7.8
 DISTNAME=	aioresponses-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

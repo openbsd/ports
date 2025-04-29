@@ -1,28 +1,28 @@
-COMMENT =	python powered git gui
+COMMENT=	python powered git gui
 
-MODPY_DISTV =	4.8.2
-REVISION =		1
-DISTNAME =		git-cola-${MODPY_DISTV}
+MODPY_DISTV=	4.8.2
+REVISION=	2
+DISTNAME=	git-cola-${MODPY_DISTV}
 
-CATEGORIES =	devel x11
+CATEGORIES=	devel x11
 
-HOMEPAGE =	https://git-cola.github.io/
+HOMEPAGE=	https://git-cola.github.io/
 
 # GPLv2 only
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools_scm
+MODULES=	lang/python
+MODPY_PYBUILD=	setuptools_scm
+MODPY_PI=	Yes
 
-BUILD_DEPENDS =	devel/gettext,-tools \
+BUILD_DEPENDS=	devel/gettext,-tools \
 		devel/git \
 		devel/git,-x11 \
 		textproc/xxdiff \
 		x11/py-qt5 \
 		x11/py-qtpy
 
-RUN_DEPENDS =	devel/desktop-file-utils \
+RUN_DEPENDS=	devel/desktop-file-utils \
 		devel/git \
 		devel/git,-x11 \
 		textproc/xxdiff \
@@ -30,7 +30,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		x11/py-qt5 \
 		x11/py-qtpy
 
-TEST_DEPENDS =	devel/py-mock
+TEST_DEPENDS=	devel/py-mock
 
 pre-configure:
 	${SUBST_CMD} ${WRKSRC}/cola/app.py

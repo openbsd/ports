@@ -4,6 +4,7 @@ MODPY_DISTV=	0.25.3
 DISTNAME=	pytest_asyncio-${MODPY_DISTV}
 PKGNAME=	py-test-asyncio-${MODPY_DISTV}
 CATEGORIES=	devel
+REVISION=	0
 
 # Apache 2.0
 PERMIT_PACKAGE=	Yes

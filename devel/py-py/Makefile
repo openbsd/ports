@@ -1,7 +1,7 @@
 COMMENT=		cross-python path, ini-parsing, io, code, log facilities
 
 MODPY_DISTV =	1.11.0
-REVISION=		4
+REVISION=		5
 DISTNAME=		py-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
 

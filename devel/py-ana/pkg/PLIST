@@ -1,10 +1,11 @@
 @pkgpath devel/py-ana,python3
 lib/python${MODPY_VERSION}/site-packages/ana/
 lib/python${MODPY_VERSION}/site-packages/ana-0.6.dist-info/
-lib/python${MODPY_VERSION}/site-packages/ana-0.6.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/ana-0.6.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/ana-0.6.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/ana-0.6.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/ana-0.6.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/ana-0.6.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/ana-0.6.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/ana/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ana/${MODPY_PYCACHE}/

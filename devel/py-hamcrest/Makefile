@@ -3,7 +3,7 @@ COMMENT =	Hamcrest matchers for Python
 MODPY_DISTV =	2.0.3
 DISTNAME =	PyHamcrest-${MODPY_DISTV}
 PKGNAME =	py-hamcrest-${MODPY_DISTV}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	devel
 

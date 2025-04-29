@@ -2,7 +2,7 @@ COMMENT=	automatically upgrade syntax for newer versions of Python
 
 MODPY_DISTV=	3.19.1
 DISTNAME=	pyupgrade-${MODPY_DISTV}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

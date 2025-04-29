@@ -1,5 +1,5 @@
-@pkgpath devel/spyder/spyder,python3
 @conflict spyder-*
+@pkgpath devel/spyder/spyder,python3
 bin/spyder
 lib/python${MODPY_VERSION}/site-packages/spyder/
 lib/python${MODPY_VERSION}/site-packages/spyder-${MODPY_DISTV}-py${MODPY_VERSION}.egg-info/

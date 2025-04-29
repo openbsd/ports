@@ -3,7 +3,7 @@ COMMENT=		simple data validation library
 MODPY_DISTV=	0.7.7
 DISTNAME=		schema-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		devel
 

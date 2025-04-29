@@ -3,6 +3,7 @@ COMMENT=	buildworker for the buildbot CI system
 MODPY_DISTV=	4.2.1
 DISTNAME=	buildbot_worker-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/_/-/}
+REVISION=	0
 
 CATEGORIES=	devel
 

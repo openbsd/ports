@@ -3,7 +3,7 @@ COMMENT=	library used to interact with Git repositories
 MODPY_DISTV=	3.1.43
 DISTNAME=	GitPython-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

@@ -3,7 +3,7 @@ COMMENT=	lightweight template library
 MODPY_DISTV=	3.2.2
 DISTNAME=	wheezy.template-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

@@ -3,7 +3,7 @@ COMMENT=	editable interval tree data structure for Python 2 and 3
 MODPY_DISTV=	3.1.0
 DISTNAME=	intervaltree-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	devel
 

@@ -3,7 +3,7 @@ COMMENT =		IPython vestigial utilities
 MODPY_DISTV =	0.2.0
 DISTNAME =		ipython_genutils-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		9
+REVISION =		10
 
 CATEGORIES =		devel
 

@@ -2,7 +2,7 @@ COMMENT=	use git repo data to build a version number
 
 # zigpy wants <2
 MODPY_DISTV=	1.13.6
-REVISION=	1
+REVISION=	2
 DISTNAME=	setuptools-git-versioning-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 

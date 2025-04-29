@@ -5,11 +5,12 @@ bin/coverage-${MODPY_VERSION}
 bin/coverage3
 lib/python${MODPY_VERSION}/site-packages/coverage/
 lib/python${MODPY_VERSION}/site-packages/coverage-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/coverage-${MODPY_DISTV}.dist-info/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/coverage-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/coverage-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/coverage-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/coverage-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/coverage-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/coverage-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/coverage-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/coverage/__init__.py
 lib/python${MODPY_VERSION}/site-packages/coverage/__main__.py

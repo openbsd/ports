@@ -3,7 +3,7 @@ COMMENT =	Python3 interface to the Bitcoin data structure and protocol
 MODPY_DISTV =	0.11.0
 DISTNAME =	python-bitcoinlib-${MODPY_DISTV}
 PKGNAME =	${DISTNAME:S/^python-/py-/}
-REVISION =	7
+REVISION =	8
 
 CATEGORIES =	devel
 

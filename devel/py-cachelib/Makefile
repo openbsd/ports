@@ -5,7 +5,7 @@ DISTNAME =		cachelib-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
 MAINTAINER =		Sebastian Reitenbach <sebastia@openbsd.org>
-REVISION =		1
+REVISION =		2
 
 # BSD
 PERMIT_PACKAGE =	Yes

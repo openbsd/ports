@@ -1,7 +1,7 @@
 COMMENT=	list-like structure implementing MutableSequence
 
 MODPY_DISTV=	1.5.0
-
+REVISION=	0
 DISTNAME=	frozenlist-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
@@ -14,9 +14,9 @@ HOMEPAGE=	https://frozenlist.readthedocs.io/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
+
 BUILD_DEPENDS=	lang/cython \
 		sysutils/py-expandvars
 

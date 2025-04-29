@@ -1,24 +1,24 @@
-COMMENT=		D-Bus introspection XML parser and processor
+COMMENT=	D-Bus introspection XML parser and processor
 
 MODPY_DISTV=	0.6.1
-DISTNAME=		dbus-deviation-${MODPY_DISTV}
-PKGNAME=		py-${DISTNAME}
-REVISION=		5
+DISTNAME=	dbus-deviation-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
+REVISION=	6
 
-CATEGORIES=		devel
+CATEGORIES=	devel
 
-HOMEPAGE=		https://tecnocode.co.uk/dbus-deviation/
+HOMEPAGE=	https://tecnocode.co.uk/dbus-deviation/
 
 # LGPLv2.1+
-PERMIT_PACKAGE=		Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES=		lang/python
+MODULES=	lang/python
 
-MODPY_PI=		Yes
-MODPY_PYBUILD=		setuptools
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
-BUILD_DEPENDS=		textproc/py-sphinx
+BUILD_DEPENDS=	textproc/py-sphinx
 
-RUN_DEPENDS=		textproc/py-lxml
+RUN_DEPENDS=	textproc/py-lxml
 
 .include <bsd.port.mk>

@@ -4,7 +4,7 @@ MODPY_DISTV=	1.0.5
 DISTNAME=	pytest-aiohttp-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/py/py-/}
 CATEGORIES=	devel
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://github.com/aio-libs/pytest-aiohttp
 

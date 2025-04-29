@@ -3,7 +3,7 @@ COMMENT=	compatibility layer between Python 2 and Python 3
 MODPY_DISTV=	1.0.0
 DISTNAME=	future-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

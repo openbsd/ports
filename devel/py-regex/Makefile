@@ -4,7 +4,7 @@ MODPY_DISTV=	2024.11.6
 DISTNAME=	regex-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://github.com/mrabarnett/mrab-regex
 

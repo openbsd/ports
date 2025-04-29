@@ -3,7 +3,7 @@ COMMENT =		decorator to detect mismatches when overriding methods
 MODPY_DISTV =	7.7.0
 DISTNAME =		overrides-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 

@@ -4,6 +4,7 @@ MODPY_DISTV=	2.17.0
 DISTNAME=	babel-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
+REVISION=	0
 
 HOMEPAGE=	https://babel.pocoo.org/
 

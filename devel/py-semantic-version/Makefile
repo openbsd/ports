@@ -4,7 +4,7 @@ MODPY_DISTV=	2.10.0
 
 DISTNAME=		semantic_version-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
-REVISION=		3
+REVISION=		4
 
 CATEGORIES=		devel
 

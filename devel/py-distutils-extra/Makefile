@@ -3,7 +3,7 @@ COMMENT=	add support for i18n, documentation and icons to distutils
 MODPY_DISTV=	2.39
 DISTNAME=	python-distutils-extra-${MODPY_DISTV}
 PKGNAME=	py-distutils-extra-${MODPY_DISTV}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	devel
 

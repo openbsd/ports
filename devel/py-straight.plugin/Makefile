@@ -3,7 +3,7 @@ COMMENT =		simple namespaced plugin facility
 MODPY_DISTV =	1.5.0
 DISTNAME =		straight.plugin-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		7
+REVISION =		8
 
 CATEGORIES =		devel
 

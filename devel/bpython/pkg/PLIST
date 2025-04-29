@@ -17,11 +17,12 @@ lib/python${MODPY_VERSION}/site-packages/bpdb/${MODPY_PYCACHE}debugger.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/bpdb/debugger.py
 lib/python${MODPY_VERSION}/site-packages/bpython/
 lib/python${MODPY_VERSION}/site-packages/bpython-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/bpython-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/bpython-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/bpython-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/bpython-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/bpython-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/bpython-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/bpython-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/bpython-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/bpython/__init__.py
 lib/python${MODPY_VERSION}/site-packages/bpython/__main__.py

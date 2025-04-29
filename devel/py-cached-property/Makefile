@@ -3,6 +3,7 @@ COMMENT =	decorator for caching properties in classes
 MODPY_DISTV =	2.0.1
 DISTNAME =	cached_property-${MODPY_DISTV}
 PKGNAME =	py-cached-property-${MODPY_DISTV}
+REVISION =	0
 
 CATEGORIES =	devel
 

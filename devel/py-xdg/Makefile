@@ -3,7 +3,7 @@ COMMENT=		python library to access freedesktop.org standards
 MODPY_DISTV=	0.28
 DISTNAME=		pyxdg-${MODPY_DISTV}
 PKGNAME=		py-xdg-${MODPY_DISTV}
-REVISION=		4
+REVISION=		5
 
 CATEGORIES=		devel
 

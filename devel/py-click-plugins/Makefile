@@ -3,7 +3,7 @@ COMMENT =		register CLI commands via setuptools entry-points
 MODPY_DISTV =	1.1.1
 DISTNAME =		click-plugins-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		devel
 

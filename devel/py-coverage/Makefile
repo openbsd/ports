@@ -3,6 +3,7 @@ COMMENT=	code coverage measurement for Python
 MODPY_DISTV=	7.7.0
 DISTNAME=	coverage-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

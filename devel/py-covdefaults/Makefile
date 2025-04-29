@@ -3,7 +3,7 @@ COMMENT=	plugin for 'coverage' to provide sensible defaults
 MODPY_DISTV=	2.3.0
 DISTNAME=	covdefaults-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

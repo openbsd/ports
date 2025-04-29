@@ -4,7 +4,7 @@ MODPY_DISTV=	0.3.9
 DISTNAME=	dill-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	0
+REVISION=	1
 
 # https://github.com/uqfoundation/dill
 HOMEPAGE=	https://dill.readthedocs.io/

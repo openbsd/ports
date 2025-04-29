@@ -3,6 +3,7 @@ COMMENT=	py.test plugin to check FLAKE8 requirements
 DISTNAME=	pytest_flake8-${MODPY_DISTV}
 PKGNAME=	py-test-flake8-${MODPY_DISTV}
 MODPY_DISTV=	1.3.0
+REVISION=	0
 
 CATEGORIES=	devel
 

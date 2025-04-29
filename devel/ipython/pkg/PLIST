@@ -883,12 +883,13 @@ lib/python${MODPY_VERSION}/site-packages/IPython/utils/ulinecache.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/version.py
 lib/python${MODPY_VERSION}/site-packages/IPython/utils/wildcard.py
 lib/python${MODPY_VERSION}/site-packages/ipython-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/ipython-${MODPY_DISTV}.dist-info/COPYING.rst
-lib/python${MODPY_VERSION}/site-packages/ipython-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/ipython-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/ipython-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/ipython-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/ipython-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/ipython-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/ipython-${MODPY_DISTV}.dist-info/licenses/COPYING.rst
+lib/python${MODPY_VERSION}/site-packages/ipython-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/ipython-${MODPY_DISTV}.dist-info/top_level.txt
 @man man/man1/ipython.1
 share/applications/ipython.desktop

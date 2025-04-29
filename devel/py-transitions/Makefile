@@ -4,7 +4,7 @@ MODPY_DISTV =	0.9.2
 DISTNAME=	transitions-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://github.com/pytransitions/transitions
 

@@ -3,7 +3,7 @@ COMMENT =		draw Python object reference graphs
 MODPY_DISTV =	3.6.2
 DISTNAME =		objgraph-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 

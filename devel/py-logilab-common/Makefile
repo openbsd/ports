@@ -4,7 +4,7 @@ MODPY_DISTV=	1.9.8
 DISTNAME=	logilab-common-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://www.logilab.org/project/logilab-common
 

@@ -4,7 +4,7 @@ MODPY_DISTV =	0.4.1
 
 DISTNAME =	pytest-remotedata-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME:S/py//}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 

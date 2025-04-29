@@ -3,7 +3,7 @@ COMMENT =		pure-Python Kaitai Struct declarative parser generator
 MODPY_DISTV =	0.10
 DISTNAME =		kaitaistruct-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 

@@ -3,7 +3,7 @@ COMMENT =		filesystem events monitoring
 MODPY_DISTV =	0.9.6
 DISTNAME =		pyinotify-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		10
+REVISION =		11
 
 CATEGORIES =		devel
 

@@ -1,11 +1,5 @@
 @pkgpath devel/py-jaraco-classes,python3
 lib/python${MODPY_VERSION}/site-packages/jaraco/
-lib/python${MODPY_VERSION}/site-packages/jaraco.classes-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/jaraco.classes-${MODPY_DISTV}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/jaraco.classes-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/jaraco.classes-${MODPY_DISTV}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/jaraco.classes-${MODPY_DISTV}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/jaraco.classes-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/jaraco/classes/
 lib/python${MODPY_VERSION}/site-packages/jaraco/classes/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/jaraco/classes/${MODPY_PYCACHE}/
@@ -21,3 +15,10 @@ lib/python${MODPY_VERSION}/site-packages/jaraco/classes/ancestry.py
 lib/python${MODPY_VERSION}/site-packages/jaraco/classes/meta.py
 lib/python${MODPY_VERSION}/site-packages/jaraco/classes/properties.py
 lib/python${MODPY_VERSION}/site-packages/jaraco/classes/py.typed
+lib/python${MODPY_VERSION}/site-packages/jaraco_classes-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/jaraco_classes-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/jaraco_classes-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/jaraco_classes-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/jaraco_classes-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/jaraco_classes-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/jaraco_classes-${MODPY_DISTV}.dist-info/top_level.txt

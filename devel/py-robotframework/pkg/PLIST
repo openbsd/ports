@@ -1,5 +1,5 @@
-@pkgpath devel/py-robotframework,python3
 @conflict py-robotframework-<3.1.2p1
+@pkgpath devel/py-robotframework,python3
 bin/libdoc
 bin/rebot
 bin/robot
@@ -756,10 +756,11 @@ lib/python${MODPY_VERSION}/site-packages/robot/variables/tablesetter.py
 lib/python${MODPY_VERSION}/site-packages/robot/variables/variables.py
 lib/python${MODPY_VERSION}/site-packages/robot/version.py
 lib/python${MODPY_VERSION}/site-packages/robotframework-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/robotframework-${MODPY_DISTV}.dist-info/AUTHORS.rst
-lib/python${MODPY_VERSION}/site-packages/robotframework-${MODPY_DISTV}.dist-info/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/robotframework-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/robotframework-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/robotframework-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/robotframework-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/robotframework-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/robotframework-${MODPY_DISTV}.dist-info/licenses/AUTHORS.rst
+lib/python${MODPY_VERSION}/site-packages/robotframework-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/robotframework-${MODPY_DISTV}.dist-info/top_level.txt

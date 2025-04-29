@@ -3,7 +3,7 @@ COMMENT =		multithreading in Python click
 MODPY_DISTV =	0.5.0
 DISTNAME =		click-threading-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		devel
 

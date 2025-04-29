@@ -3,7 +3,7 @@ COMMENT =	python module to read and write ELF, PE, MachO or OAT
 MODPY_DISTV =	0.9.21
 DISTNAME =	filebytes-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	7
+REVISION =	8
 
 CATEGORIES =	devel security
 

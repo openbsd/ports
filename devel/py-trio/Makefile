@@ -3,6 +3,7 @@ COMMENT=	library for async concurrency and I/O
 MODPY_DISTV=	0.29.0
 DISTNAME=	trio-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

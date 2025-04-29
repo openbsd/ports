@@ -1,5 +1,5 @@
 @conflict py-buildbot-www-*
-@conflict py3-buildbot-www-react-*
+@conflict ${MODPY_PY_PREFIX}buildbot-www-react-*
 @pkgpath devel/py-buildbot/www-react
 lib/python${MODPY_VERSION}/site-packages/buildbot_www/
 lib/python${MODPY_VERSION}/site-packages/buildbot_www-${MODPY_DISTV}.dist-info/

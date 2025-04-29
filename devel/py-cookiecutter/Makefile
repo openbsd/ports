@@ -3,7 +3,7 @@ COMMENT =		utility to create projects from templates
 MODPY_DISTV =	2.6.0
 DISTNAME =		cookiecutter-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		devel
 

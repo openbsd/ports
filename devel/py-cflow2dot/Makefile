@@ -3,7 +3,7 @@ COMMENT=	C call graphs using Cflow producing linked PDF
 MODPY_DISTV=	0.2.3
 DISTNAME=	pycflow2dot-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/py/py-/}
-REVISION=	4
+REVISION=	5
 
 CATEGORIES=	devel
 

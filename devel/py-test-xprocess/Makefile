@@ -4,7 +4,7 @@ MODPY_DISTV=	1.0.2
 
 DISTNAME=	pytest-xprocess-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/py//}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

@@ -7,7 +7,7 @@ MODPY_DISTV =	1.0.1
 
 DISTNAME =		py-radix-${MODPY_DISTV}pre20220302
 CATEGORIES=		devel net
-REVISION =		2
+REVISION =		3
 
 # fork from https://github.com/mjschultz/py-radix/
 HOMEPAGE =		https://github.com/SEKOIA-IO/py-radix/

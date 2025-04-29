@@ -3,6 +3,7 @@ COMMENT=	efficiently handle arrays of Booleans
 MODPY_DISTV=	3.3.1
 DISTNAME=	bitarray-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

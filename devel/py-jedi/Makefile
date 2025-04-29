@@ -3,6 +3,7 @@ COMMENT =		autocompletion tool for Python
 MODPY_DISTV =		0.19.2
 DISTNAME =		jedi-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		devel
 

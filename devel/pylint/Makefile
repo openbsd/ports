@@ -4,6 +4,7 @@ COMMENT=		lint-like code checker for Python code
 MODPY_DISTV=	3.3.5
 DISTNAME=	pylint-${MODPY_DISTV}
 PKGNAME=	pylint3-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	devel
 

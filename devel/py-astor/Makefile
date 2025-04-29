@@ -3,7 +3,7 @@ COMMENT =	manipulate Python source via the AST
 MODPY_DISTV=	0.8.1
 DISTNAME=	astor-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	devel
 

@@ -3,7 +3,7 @@ COMMENT =	simple VTXXX-compatible terminal emulator
 MODPY_DISTV =	0.8.2
 DISTNAME =	pyte-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	devel
 

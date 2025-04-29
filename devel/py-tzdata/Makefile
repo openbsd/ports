@@ -4,6 +4,7 @@ MODPY_DISTV=	2025.2
 DISTNAME=	tzdata-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
+REVISION=	0
 
 HOMEPAGE=	https://github.com/python/tzdata
 

@@ -4,7 +4,7 @@ COMMENT=		AST unparser for Python
 MODPY_DISTV=	1.6.3
 DISTNAME=		astunparse-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
-REVISION=		5
+REVISION=		6
 
 CATEGORIES=		devel
 

@@ -3,7 +3,7 @@ COMMENT=		create a 'tmp_path' with predefined files/directories
 MODPY_DISTV=	3.0.0
 DISTNAME=		pytest-datafiles-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME:S/py//}
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=		devel
 

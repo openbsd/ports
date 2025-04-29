@@ -3,7 +3,7 @@ COMMENT=	Python AST that abstracts the underlying Python version
 MODPY_DISTV=	0.6.0
 DISTNAME=	gast-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

@@ -3,6 +3,7 @@ COMMENT =	on the fly conversion of docstrings to markdown
 MODPY_DISTV=	0.15
 DISTNAME=	docstring-to-markdown-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

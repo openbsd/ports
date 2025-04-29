@@ -4,7 +4,7 @@ MODPY_DISTV =	1.0.1
 DISTNAME =		resolvelib-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		devel
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		https://github.com/sarugaku/resolvelib
 

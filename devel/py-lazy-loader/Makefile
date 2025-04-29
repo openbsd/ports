@@ -3,7 +3,7 @@ COMMENT =		load subpackages and functions on demand
 MODPY_DISTV =	0.4
 DISTNAME =		lazy_loader-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 

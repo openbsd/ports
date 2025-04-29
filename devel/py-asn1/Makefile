@@ -5,6 +5,7 @@ DISTNAME =		pyasn1-${MODPY_DISTV}
 PKGNAME =		${DISTNAME:S/py/py-/}
 CATEGORIES =		devel
 EPOCH =			0
+REVISION =		0
 
 HOMEPAGE =		https://github.com/pyasn1/pyasn1
 

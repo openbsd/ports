@@ -1,10 +1,5 @@
 bin/ophis
 lib/python${MODPY_VERSION}/site-packages/Ophis/
-lib/python${MODPY_VERSION}/site-packages/Ophis-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/Ophis-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/Ophis-${MODPY_DISTV}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/Ophis-${MODPY_DISTV}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/Ophis-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/Ophis/CmdLine.py
 lib/python${MODPY_VERSION}/site-packages/Ophis/CorePragmas.py
 lib/python${MODPY_VERSION}/site-packages/Ophis/Environment.py
@@ -42,5 +37,10 @@ lib/python${MODPY_VERSION}/site-packages/Ophis/${MODPY_PYCACHE}Passes.${MODPY_PY
 lib/python${MODPY_VERSION}/site-packages/Ophis/${MODPY_PYCACHE}Passes.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Ophis/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Ophis/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/ophis-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/ophis-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/ophis-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/ophis-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/ophis-${MODPY_DISTV}.dist-info/top_level.txt
 share/doc/ophis/
 share/doc/ophis/ophismanual.pdf

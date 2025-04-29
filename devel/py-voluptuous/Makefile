@@ -3,6 +3,7 @@ COMMENT=	data validation library
 MODPY_DISTV=	0.15.2
 DISTNAME=	voluptuous-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	devel
 

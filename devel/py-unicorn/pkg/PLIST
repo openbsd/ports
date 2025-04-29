@@ -1,5 +1,5 @@
-@pkgpath devel/py-unicorn,python3
 @conflict py-unicorn-*
+@pkgpath devel/py-unicorn,python3
 lib/python${MODPY_VERSION}/site-packages/unicorn/
 lib/python${MODPY_VERSION}/site-packages/unicorn-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/unicorn-${MODPY_DISTV}.dist-info/METADATA

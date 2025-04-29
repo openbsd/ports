@@ -1,13 +1,6 @@
 @pkgpath devel/py-zopetesting,python3
 lib/python${MODPY_VERSION}/site-packages/zope/
 lib/python${MODPY_VERSION}/site-packages/zope.testing-${MODPY_DISTV}-py${MODPY_VERSION}-nspkg.pth
-lib/python${MODPY_VERSION}/site-packages/zope.testing-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/zope.testing-${MODPY_DISTV}.dist-info/LICENSE.txt
-lib/python${MODPY_VERSION}/site-packages/zope.testing-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/zope.testing-${MODPY_DISTV}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/zope.testing-${MODPY_DISTV}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/zope.testing-${MODPY_DISTV}.dist-info/namespace_packages.txt
-lib/python${MODPY_VERSION}/site-packages/zope.testing-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/zope/testing/
 lib/python${MODPY_VERSION}/site-packages/zope/testing/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/zope/testing/${MODPY_PYCACHE}/
@@ -58,3 +51,11 @@ lib/python${MODPY_VERSION}/site-packages/zope/testing/testrunner.py
 lib/python${MODPY_VERSION}/site-packages/zope/testing/tests.py
 lib/python${MODPY_VERSION}/site-packages/zope/testing/wait.py
 lib/python${MODPY_VERSION}/site-packages/zope/testing/wait.txt
+lib/python${MODPY_VERSION}/site-packages/zope_testing-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/zope_testing-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/zope_testing-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/zope_testing-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/zope_testing-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/zope_testing-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/zope_testing-${MODPY_DISTV}.dist-info/namespace_packages.txt
+lib/python${MODPY_VERSION}/site-packages/zope_testing-${MODPY_DISTV}.dist-info/top_level.txt

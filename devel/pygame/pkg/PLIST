@@ -1,5 +1,4 @@
 @pkgpath devel/pygame,python3
-@conflict pygame-*
 include/python${MODPY_VERSION}/pygame/
 include/python${MODPY_VERSION}/pygame/_blit_info.h
 include/python${MODPY_VERSION}/pygame/_camera.h

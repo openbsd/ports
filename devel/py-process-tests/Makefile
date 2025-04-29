@@ -3,7 +3,7 @@ COMMENT =		tools for testing processes
 MODPY_DISTV =	2.0.2
 DISTNAME =		process-tests-${MODPY_DISTV}
 PKGNAME =		py-process-tests-${MODPY_DISTV}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		devel
 

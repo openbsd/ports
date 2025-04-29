@@ -6,10 +6,11 @@ lib/python${MODPY_VERSION}/site-packages/_pyrsistent_version.py
 @so lib/python${MODPY_VERSION}/site-packages/pvectorc.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/pyrsistent/
 lib/python${MODPY_VERSION}/site-packages/pyrsistent-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pyrsistent-${MODPY_DISTV}.dist-info/LICENSE.mit
 lib/python${MODPY_VERSION}/site-packages/pyrsistent-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/pyrsistent-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/pyrsistent-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pyrsistent-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/pyrsistent-${MODPY_DISTV}.dist-info/licenses/LICENSE.mit
 lib/python${MODPY_VERSION}/site-packages/pyrsistent-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pyrsistent/__init__.py
 lib/python${MODPY_VERSION}/site-packages/pyrsistent/__init__.pyi

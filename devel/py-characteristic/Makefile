@@ -3,7 +3,7 @@ COMMENT =		python attributes without boilerplate
 MODPY_DISTV =	14.3.0
 DISTNAME =		characteristic-${MODPY_DISTV}
 PKGNAME =		py-characteristic-${MODPY_DISTV}
-REVISION =		8
+REVISION =		9
 
 CATEGORIES =		devel
 

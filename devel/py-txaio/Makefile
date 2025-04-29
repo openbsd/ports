@@ -3,7 +3,7 @@ COMMENT=	compatibility API between asyncio/Twisted/Trollius
 MODPY_DISTV=	23.1.1
 DISTNAME=	txaio-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	devel
 

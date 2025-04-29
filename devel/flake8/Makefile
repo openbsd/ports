@@ -2,7 +2,7 @@ COMMENT=	modular python code checker wrapping pep8 and pyflakes
 
 MODPY_DISTV=	7.1.1
 DISTNAME=	flake8-${MODPY_DISTV}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	devel
 

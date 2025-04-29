@@ -3,7 +3,7 @@ COMMENT =		logging integration for Python click
 MODPY_DISTV =	0.3.2
 DISTNAME =		click-log-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		8
+REVISION =		9
 
 CATEGORIES =		devel
 

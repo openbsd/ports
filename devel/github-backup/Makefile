@@ -2,7 +2,7 @@ COMMENT =	 backup a github user or organization
 
 MODPY_DISTV =	0.45.1
 PKGNAME =	github-backup-${MODPY_DISTV}
-REVISION =	0
+REVISION =	1
 
 GH_ACCOUNT =	josegonzalez
 GH_PROJECT =	python-github-backup

@@ -3,7 +3,7 @@ COMMENT =		parser for and generator of the Git fastimport format
 MODPY_DISTV =	0.9.14
 DISTNAME =		fastimport-${MODPY_DISTV}
 PKGNAME =		py-fastimport-${MODPY_DISTV}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		devel
 

@@ -4,6 +4,7 @@ MODPY_DISTV=	0.8.0
 DISTNAME=	pytest-trio-${MODPY_DISTV}
 PKGNAME=	py-test-trio-${MODPY_DISTV}
 CATEGORIES=	devel
+REVISION=	0
 
 # either MIT or Apache 2
 PERMIT_PACKAGE=	Yes

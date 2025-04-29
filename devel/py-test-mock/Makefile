@@ -4,7 +4,7 @@ MODPY_DISTV=	3.14.0
 DISTNAME=	pytest-mock-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/py/py-/}
 CATEGORIES=	devel
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://github.com/pytest-dev/pytest-mock/
 

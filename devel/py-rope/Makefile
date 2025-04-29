@@ -3,7 +3,7 @@ COMMENT =		refactoring library
 MODPY_DISTV =	1.13.0
 DISTNAME =		rope-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		devel
 

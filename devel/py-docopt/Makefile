@@ -4,7 +4,7 @@ MODPY_DISTV =	0.6.2
 DISTNAME =	docopt-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
 CATEGORIES =	devel
-REVISION =	11
+REVISION =	12
 
 HOMEPAGE =	http://docopt.org
 

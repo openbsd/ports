@@ -3,7 +3,7 @@ COMMENT=	pretty-print tabular data
 MODPY_DISTV=	0.9.0
 DISTNAME=	tabulate-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	devel
 

@@ -4,7 +4,7 @@ MODPY_DISTV =	0.5.0
 
 DISTNAME =	pytest-openfiles-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME:S/py//}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	devel
 

@@ -1,7 +1,7 @@
 COMMENT =		kitchen contains a cornucopia of useful code
 
 MODPY_DISTV =	1.2.6
-REVISION =		5
+REVISION =		6
 
 DISTNAME =		kitchen-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}

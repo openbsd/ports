@@ -1,6 +1,7 @@
 COMMENT=	config file reader and writer
 
 MODPY_DISTV=	5.0.9
+REVISION=	0
 DISTNAME=	configobj-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 

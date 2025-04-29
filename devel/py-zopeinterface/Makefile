@@ -4,6 +4,7 @@ MODPY_DISTV=	7.2
 DISTNAME=	zope.interface-${MODPY_DISTV}
 PKGNAME=	py-zopeinterface-${MODPY_DISTV}
 CATEGORIES=	devel
+REVISION=	0
 
 HOMEPAGE=	https://github.com/zopefoundation/zope.interface
 

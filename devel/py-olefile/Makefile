@@ -3,7 +3,7 @@ COMMENT =	parse, read and write Microsoft OLE2 files
 MODPY_DISTV =	0.46
 DISTNAME =	olefile-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	8
+REVISION =	9
 
 GH_ACCOUNT =	decalage2
 GH_PROJECT =	olefile

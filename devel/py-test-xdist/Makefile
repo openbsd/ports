@@ -3,7 +3,7 @@ COMMENT=	py.test xdist plugin for distributed testing
 DISTNAME=	pytest-xdist-${MODPY_DISTV}
 PKGNAME=	py-test-xdist-${MODPY_DISTV}
 MODPY_DISTV=	3.5.0
-REVISION=		1
+REVISION=		2
 
 CATEGORIES=	devel
 
