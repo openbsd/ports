@@ -3,7 +3,7 @@ COMMENT=	ctypes-based simple MagickWand API binding for Python
 MODPY_DISTV=	0.6.13
 DISTNAME=	Wand-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:L}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	graphics
 

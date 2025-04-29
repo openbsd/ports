@@ -4,6 +4,7 @@ GH_ACCOUNT=	jrfonseca
 GH_PROJECT=	gprof2dot
 GH_TAGNAME=	2024.06.06
 MODPY_DISTV=	${GH_TAGNAME:C/\.0/./g}
+REVISION=	0
 
 CATEGORIES=	graphics
 

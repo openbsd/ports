@@ -4,9 +4,10 @@ lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}sane.${MODPY_PYC_MAGIC_
 lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}sane.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/_sane.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/python_sane-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/python_sane-${MODPY_DISTV}.dist-info/COPYING
 lib/python${MODPY_VERSION}/site-packages/python_sane-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/python_sane-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/python_sane-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/python_sane-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/python_sane-${MODPY_DISTV}.dist-info/licenses/COPYING
 lib/python${MODPY_VERSION}/site-packages/python_sane-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/sane.py

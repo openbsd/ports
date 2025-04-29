@@ -4,7 +4,7 @@ MODPY_DISTV=	2.2.0
 DISTNAME=	bdfparser-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	graphics sysutils
-REVISION=	1
+REVISION=	2
 
 HOMEPAGE=	https://font.tomchen.org/bdfparser_py/
 

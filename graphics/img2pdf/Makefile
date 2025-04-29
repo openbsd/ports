@@ -2,6 +2,7 @@ COMMENT=	losslessly convert images to PDF
 
 MODPY_DISTV=	0.6.0
 DISTNAME=	img2pdf-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	graphics
 

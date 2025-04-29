@@ -4,6 +4,7 @@ MODPY_DISTV=	11.2.1
 DISTNAME=	pillow-${MODPY_DISTV}
 PKGNAME=	py-Pillow-${MODPY_DISTV}
 CATEGORIES=	graphics
+REVISION=	0
 
 HOMEPAGE=	https://python-pillow.github.io/
 

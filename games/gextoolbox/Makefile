@@ -4,7 +4,7 @@ MODPY_DISTV =	0.1.7
 
 DISTNAME =		game-extraction-toolbox-${MODPY_DISTV}
 PKGNAME =		gextoolbox-${MODPY_DISTV}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		games sysutils
 

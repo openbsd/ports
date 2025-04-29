@@ -4,7 +4,7 @@ MODPY_DISTV =	0.9.5
 DISTNAME =		steamctl-${MODPY_DISTV}
 CATEGORIES =		games
 HOMEPAGE =		https://github.com/ValvePython/steamctl
-REVISION =		3
+REVISION =		4
 
 # MIT
 PERMIT_PACKAGE =	Yes

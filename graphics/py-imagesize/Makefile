@@ -4,7 +4,7 @@ MODPY_DISTV =	1.4.1
 DISTNAME =		imagesize-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		graphics
-REVISION =		3
+REVISION =		4
 
 HOMEPAGE =		https://github.com/shibukawa/imagesize_py
 

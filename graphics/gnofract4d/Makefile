@@ -4,7 +4,7 @@ MODPY_DISTV =	4.3
 
 SITES =			https://github.com/fract4d/gnofract4d/releases/download/v${MODPY_DISTV}/
 DISTNAME =		gnofract4d-${MODPY_DISTV}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		graphics
 

@@ -2,6 +2,7 @@ COMMENT =		Python bindings for OpenGL
 MODPY_DISTV =		3.1.9
 DISTNAME =		pyopengl-${MODPY_DISTV}
 PKGNAME =		py-opengl-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		graphics
 HOMEPAGE =		https://pyopengl.sourceforge.net/

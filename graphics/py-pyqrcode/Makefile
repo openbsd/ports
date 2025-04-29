@@ -5,7 +5,7 @@ DISTNAME =		PyQRCode-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:L}
 CATEGORIES =		graphics
 HOMEPAGE =		https://github.com/mnooner256/pyqrcode
-REVISION =		3
+REVISION =		4
 
 # BSD
 PERMIT_PACKAGE =	Yes

@@ -9078,8 +9078,8 @@ lib/python${MODPY_VERSION}/site-packages/OpenGL/raw/osmesa/_types.py
 lib/python${MODPY_VERSION}/site-packages/OpenGL/raw/osmesa/mesa.py
 lib/python${MODPY_VERSION}/site-packages/OpenGL/version.py
 lib/python${MODPY_VERSION}/site-packages/OpenGL/wrapper.py
-lib/python${MODPY_VERSION}/site-packages/PyOpenGL-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/PyOpenGL-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/PyOpenGL-${MODPY_DISTV}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/PyOpenGL-${MODPY_DISTV}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/PyOpenGL-${MODPY_DISTV}.dist-info/top_level.txt
+lib/python${MODPY_VERSION}/site-packages/pyopengl-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/pyopengl-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/pyopengl-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/pyopengl-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pyopengl-${MODPY_DISTV}.dist-info/top_level.txt

@@ -1,7 +1,8 @@
 COMMENT =	GIS WMTS/TMS tile caching server
 
 MODPY_DISTV =	4.0.2
-DISTNAME =		mapproxy-${MODPY_DISTV}
+DISTNAME =	mapproxy-${MODPY_DISTV}
+REVISION =	1
 
 CATEGORIES =	geo www
 
@@ -12,8 +13,8 @@ PERMIT_PACKAGE =	Yes
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
 MODULES =	lang/python
-MODPY_PI =		yes
-MODPY_PYBUILD =		setuptools
+MODPY_PI =	yes
+MODPY_PYBUILD =	setuptools
 
 RUN_DEPENDS =	geo/py-proj \
 		devel/py-jsonschema \

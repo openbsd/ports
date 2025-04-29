@@ -1,11 +1,12 @@
 @pkgpath games/pysol-cards,python3
 lib/python${MODPY_VERSION}/site-packages/pysol_cards/
 lib/python${MODPY_VERSION}/site-packages/pysol_cards-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pysol_cards-${MODPY_DISTV}.dist-info/AUTHORS
-lib/python${MODPY_VERSION}/site-packages/pysol_cards-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pysol_cards-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/pysol_cards-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/pysol_cards-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pysol_cards-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/pysol_cards-${MODPY_DISTV}.dist-info/licenses/AUTHORS
+lib/python${MODPY_VERSION}/site-packages/pysol_cards-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/pysol_cards-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pysol_cards/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pysol_cards/${MODPY_PYCACHE}/

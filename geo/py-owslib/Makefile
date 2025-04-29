@@ -3,6 +3,7 @@ COMMENT =		library for accessing OGC Web Services
 MODPY_DISTV =	0.33.0
 DISTNAME =		owslib-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		geo devel
 

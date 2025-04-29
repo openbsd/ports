@@ -3,7 +3,7 @@ COMMENT =	mercantile additional commands
 MODPY_DISTV =	0.2.0
 DISTNAME =	supermercado-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	geo
 MAINTAINER =    Martin Reindl <martin@catai.org>

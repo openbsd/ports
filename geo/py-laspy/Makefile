@@ -3,7 +3,7 @@ COMMENT=	library for reading, modifying and creating LAS LiDAR files
 MODPY_DISTV =	2.5.4
 DISTNAME=	laspy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	geo devel textproc
 

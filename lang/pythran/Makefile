@@ -4,7 +4,7 @@ COMMENT =	ahead of time compiler for numeric kernels
 MODPY_DISTV =	0.15.0
 
 DISTNAME =	pythran-${MODPY_DISTV}
-REVISION =	3
+REVISION =	4
 
 CATEGORIES =	lang
 

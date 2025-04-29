@@ -1,10 +1,11 @@
 @pkgpath graphics/py-imagesize,python3
 lib/python${MODPY_VERSION}/site-packages/imagesize/
 lib/python${MODPY_VERSION}/site-packages/imagesize-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/imagesize-${MODPY_DISTV}.dist-info/LICENSE.rst
 lib/python${MODPY_VERSION}/site-packages/imagesize-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/imagesize-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/imagesize-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/imagesize-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/imagesize-${MODPY_DISTV}.dist-info/licenses/LICENSE.rst
 lib/python${MODPY_VERSION}/site-packages/imagesize-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/imagesize/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/imagesize/${MODPY_PYCACHE}/

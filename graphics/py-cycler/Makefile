@@ -4,6 +4,7 @@ MODPY_DISTV=	0.12.1
 DISTNAME=	cycler-${MODPY_DISTV}
 PKGNAME=	py-cycler-${MODPY_DISTV}
 CATEGORIES=	graphics
+REVISION=	0
 
 HOMEPAGE=	https://github.com/matplotlib/cycler
 

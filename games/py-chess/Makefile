@@ -3,7 +3,7 @@ COMMENT =		pure Python chess library
 MODPY_DISTV =	1.10.0
 DISTNAME =		chess-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		games
 

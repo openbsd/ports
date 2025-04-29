@@ -3,7 +3,7 @@ COMMENT=	Python as a hardware description and verification language
 MODPY_DISTV =	0.11.49
 DISTNAME=	myhdl-${MODPY_DISTV}
 CATEGORIES=	lang
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://www.myhdl.org/
 

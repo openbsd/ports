@@ -619,10 +619,11 @@ share/fs-uae-launcher/python${MODPY_VERSION}/arcade/ui/arcade_window.py
 share/fs-uae-launcher/python${MODPY_VERSION}/arcade/ui/event.py
 share/fs-uae-launcher/python${MODPY_VERSION}/arcade/ui/gl_widget.py
 share/fs-uae-launcher/python${MODPY_VERSION}/fs_uae_launcher-${MODPY_DISTV}.dist-info/
-share/fs-uae-launcher/python${MODPY_VERSION}/fs_uae_launcher-${MODPY_DISTV}.dist-info/COPYING
 share/fs-uae-launcher/python${MODPY_VERSION}/fs_uae_launcher-${MODPY_DISTV}.dist-info/METADATA
 share/fs-uae-launcher/python${MODPY_VERSION}/fs_uae_launcher-${MODPY_DISTV}.dist-info/RECORD
 share/fs-uae-launcher/python${MODPY_VERSION}/fs_uae_launcher-${MODPY_DISTV}.dist-info/WHEEL
+share/fs-uae-launcher/python${MODPY_VERSION}/fs_uae_launcher-${MODPY_DISTV}.dist-info/licenses/
+share/fs-uae-launcher/python${MODPY_VERSION}/fs_uae_launcher-${MODPY_DISTV}.dist-info/licenses/COPYING
 share/fs-uae-launcher/python${MODPY_VERSION}/fs_uae_launcher-${MODPY_DISTV}.dist-info/top_level.txt
 share/fs-uae-launcher/python${MODPY_VERSION}/fsbc/
 share/fs-uae-launcher/python${MODPY_VERSION}/fsbc/__init__.py

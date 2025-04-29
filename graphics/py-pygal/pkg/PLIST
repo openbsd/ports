@@ -1,12 +1,13 @@
-@pkgpath graphics/py-pygal,python3
 @conflict py-pygal-*
+@pkgpath graphics/py-pygal,python3
 @comment bin/pygal_gen.py
 lib/python${MODPY_VERSION}/site-packages/pygal/
 lib/python${MODPY_VERSION}/site-packages/pygal-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pygal-${MODPY_DISTV}.dist-info/COPYING
 lib/python${MODPY_VERSION}/site-packages/pygal-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/pygal-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/pygal-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pygal-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/pygal-${MODPY_DISTV}.dist-info/licenses/COPYING
 lib/python${MODPY_VERSION}/site-packages/pygal-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pygal/__about__.py
 lib/python${MODPY_VERSION}/site-packages/pygal/__init__.py

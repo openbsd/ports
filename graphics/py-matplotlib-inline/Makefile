@@ -3,7 +3,7 @@ COMMENT =		inline matplotlib backend for jupyter
 MODPY_DISTV =	0.1.6
 DISTNAME =		matplotlib-inline-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		graphics math
 

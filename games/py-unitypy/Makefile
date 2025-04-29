@@ -3,7 +3,7 @@ COMMENT =	python module to manage Unity assets
 MODPY_DISTV =	1.20.12
 DISTNAME =	unitypy-${MODPY_DISTV}
 PKGNAME =	py-unitypy-${MODPY_DISTV}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	games
 

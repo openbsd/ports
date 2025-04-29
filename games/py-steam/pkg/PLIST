@@ -1,10 +1,11 @@
 @pkgpath games/py-steam,python3
 lib/python${MODPY_VERSION}/site-packages/steam/
 lib/python${MODPY_VERSION}/site-packages/steam-1.4.4.dist-info/
-lib/python${MODPY_VERSION}/site-packages/steam-1.4.4.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/steam-1.4.4.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/steam-1.4.4.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/steam-1.4.4.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/steam-1.4.4.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/steam-1.4.4.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/steam-1.4.4.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/steam-1.4.4.dist-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/steam/__init__.py

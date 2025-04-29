@@ -3,7 +3,7 @@ COMMENT =		click params for command line interfaces to GeoJSON
 MODPY_DISTV =	0.7.2
 DISTNAME =		cligj-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		geo
 

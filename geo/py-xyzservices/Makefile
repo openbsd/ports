@@ -4,7 +4,7 @@ MODPY_DISTV =	2024.9.0
 
 DISTNAME =	xyzservices-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	geo devel
 

@@ -4,7 +4,7 @@ MODPY_DISTV =	0.0.1.post7
 DISTNAME =	secularize-${MODPY_DISTV}
 PKGNAME =	${DISTNAME:S/post//}
 EPOCH =		0
-REVISION =	6
+REVISION =	7
 
 CATEGORIES =	lang
 

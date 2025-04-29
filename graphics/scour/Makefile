@@ -1,6 +1,6 @@
 COMMENT =		SVG scrubber
 MODPY_DISTV =	0.35
-REVISION =		9
+REVISION =		10
 CATEGORIES =		graphics
 HOMEPAGE =		http://www.codedread.com/scour/
 

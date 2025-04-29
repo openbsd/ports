@@ -2,7 +2,7 @@ COMMENT =	record terminal sessions as SVG animations
 
 MODPY_DISTV =	1.1.0
 DISTNAME =	termtosvg-${MODPY_DISTV}
-REVISION =	7
+REVISION =	8
 
 CATEGORIES =	graphics
 

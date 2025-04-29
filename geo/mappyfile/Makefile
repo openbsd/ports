@@ -2,7 +2,7 @@ COMMENT =	mapfile parser
 
 MODPY_DISTV =	1.0.2
 DISTNAME =	mappyfile-${MODPY_DISTV}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	geo
 

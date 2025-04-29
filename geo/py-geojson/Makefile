@@ -3,6 +3,7 @@ COMMENT =	encoder/decoder for simple GIS features
 MODPY_DISTV =	3.2.0
 DISTNAME =	geojson-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	geo devel
 

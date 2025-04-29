@@ -4,7 +4,7 @@ MODPY_DISTV =	2.6.1
 DISTNAME =		imageio-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		graphics
-REVISION =		7
+REVISION =		8
 
 MAINTAINER =		Paul Irofti <paul@irofti.net>
 
