@@ -3,7 +3,7 @@ COMMENT=	twitter python module
 MODPY_DISTV=	1.18.0
 DISTNAME=	twitter-${MODPY_DISTV}
 PKGNAME=	py-twitter-${MODPY_DISTV}
-REVISION=	5
+REVISION=	6
 
 CATEGORIES=	net www
 

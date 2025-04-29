@@ -1,13 +1,6 @@
 @pkgpath net/py-ripe.atlas.sagan,python3
 lib/python${MODPY_VERSION}/site-packages/ripe/
 lib/python${MODPY_VERSION}/site-packages/ripe.atlas.sagan-${MODPY_DISTV}-py${MODPY_VERSION}-nspkg.pth
-lib/python${MODPY_VERSION}/site-packages/ripe.atlas.sagan-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/ripe.atlas.sagan-${MODPY_DISTV}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/ripe.atlas.sagan-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/ripe.atlas.sagan-${MODPY_DISTV}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/ripe.atlas.sagan-${MODPY_DISTV}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/ripe.atlas.sagan-${MODPY_DISTV}.dist-info/namespace_packages.txt
-lib/python${MODPY_VERSION}/site-packages/ripe.atlas.sagan-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/sagan/
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/sagan/__init__.py
@@ -52,3 +45,11 @@ lib/python${MODPY_VERSION}/site-packages/ripe/atlas/sagan/ssl.py
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/sagan/traceroute.py
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/sagan/version.py
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/sagan/wifi.py
+lib/python${MODPY_VERSION}/site-packages/ripe_atlas_sagan-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/ripe_atlas_sagan-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/ripe_atlas_sagan-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/ripe_atlas_sagan-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/ripe_atlas_sagan-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/ripe_atlas_sagan-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/ripe_atlas_sagan-${MODPY_DISTV}.dist-info/namespace_packages.txt
+lib/python${MODPY_VERSION}/site-packages/ripe_atlas_sagan-${MODPY_DISTV}.dist-info/top_level.txt

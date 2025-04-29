@@ -3,7 +3,7 @@ COMMENT =		command line gopher client
 MODPY_DISTV =	0.0.11
 DISTNAME =		VF-1-${MODPY_DISTV}
 PKGNAME =		vf1-${MODPY_DISTV}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		net
 

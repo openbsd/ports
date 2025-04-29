@@ -7,7 +7,7 @@ DISTNAME =		impacket-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 EPOCH =			0
 CATEGORIES =		net security
-REVISION =		4
+REVISION =		5
 
 HOMEPAGE =		https://github.com/fortra/impacket
 

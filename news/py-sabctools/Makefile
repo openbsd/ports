@@ -6,7 +6,7 @@ MODPY_DISTV =	8.2.5
 EPOCH =			0
 DISTNAME =		sabctools-${MODPY_DISTV}
 PKGNAME =		py-sabctools-${MODPY_DISTV}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		news
 

@@ -1,5 +1,5 @@
-@pkgpath net/napalm/py-napalm,python3
 @conflict py-napalm-*
+@pkgpath net/napalm/py-napalm,python3
 bin/cl_napalm_configure
 bin/cl_napalm_test
 bin/cl_napalm_validate

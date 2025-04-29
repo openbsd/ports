@@ -1,13 +1,6 @@
 @pkgpath net/py-ripe.atlas.cousteau,python3
 lib/python${MODPY_VERSION}/site-packages/ripe/
 lib/python${MODPY_VERSION}/site-packages/ripe.atlas.cousteau-${MODPY_DISTV}-py${MODPY_VERSION}-nspkg.pth
-lib/python${MODPY_VERSION}/site-packages/ripe.atlas.cousteau-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/ripe.atlas.cousteau-${MODPY_DISTV}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/ripe.atlas.cousteau-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/ripe.atlas.cousteau-${MODPY_DISTV}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/ripe.atlas.cousteau-${MODPY_DISTV}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/ripe.atlas.cousteau-${MODPY_DISTV}.dist-info/namespace_packages.txt
-lib/python${MODPY_VERSION}/site-packages/ripe.atlas.cousteau-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/__init__.py
@@ -41,3 +34,11 @@ lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/request.py
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/source.py
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/stream.py
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/cousteau/version.py
+lib/python${MODPY_VERSION}/site-packages/ripe_atlas_cousteau-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/ripe_atlas_cousteau-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/ripe_atlas_cousteau-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/ripe_atlas_cousteau-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/ripe_atlas_cousteau-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/ripe_atlas_cousteau-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/ripe_atlas_cousteau-${MODPY_DISTV}.dist-info/namespace_packages.txt
+lib/python${MODPY_VERSION}/site-packages/ripe_atlas_cousteau-${MODPY_DISTV}.dist-info/top_level.txt

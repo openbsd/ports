@@ -1,10 +1,11 @@
 bin/onionshare
 lib/python${MODPY_VERSION}/site-packages/onionshare/
 lib/python${MODPY_VERSION}/site-packages/onionshare-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/onionshare-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/onionshare-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/onionshare-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/onionshare-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/onionshare-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/onionshare-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/onionshare-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/onionshare/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/onionshare/${MODPY_PYCACHE}/
@@ -75,6 +76,7 @@ lib/python${MODPY_VERSION}/site-packages/onionshare_gui/mode/share_mode/file_sel
 lib/python${MODPY_VERSION}/site-packages/onionshare_gui/mode/share_mode/threads.py
 lib/python${MODPY_VERSION}/site-packages/onionshare_gui/threads.py
 lib/python${MODPY_VERSION}/site-packages/onionshare_gui/widgets.py
+share/applications/
 share/onionshare/
 share/onionshare/images/
 share/onionshare/images/file_delete.png

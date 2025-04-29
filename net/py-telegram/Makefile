@@ -4,6 +4,7 @@ MODPY_DISTV =	0.19.0
 
 DISTNAME =	python_telegram-${MODPY_DISTV}
 PKGNAME =	py-telegram-${MODPY_DISTV}
+REVISION =	0
 
 CATEGORIES =	net
 

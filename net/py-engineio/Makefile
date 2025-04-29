@@ -4,7 +4,7 @@ COMMENT=	client/server implementation of Engine.IO
 MODPY_DISTV=	3.14.2
 DISTNAME=	python-engineio-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/python-/py-/}
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	net
 

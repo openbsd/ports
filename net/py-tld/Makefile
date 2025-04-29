@@ -3,7 +3,7 @@ COMMENT =	extracts the top level domain (TLD) from the URL given
 MODPY_DISTV =	0.13
 DISTNAME =	tld-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	net
 

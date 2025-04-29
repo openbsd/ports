@@ -3,7 +3,7 @@ COMMENT =	collect data from SolarEdge inverters over Modbus
 MODPY_DISTV =	0.8.0
 DISTNAME =	solaredge_modbus-${MODPY_DISTV}
 PKGNAME =	py-solaredge-modbus-${MODPY_DISTV}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	net
 

@@ -6,13 +6,6 @@ bin/asslcert
 bin/atraceroute
 bin/ripe-atlas
 lib/python${MODPY_VERSION}/site-packages/ripe.atlas.tools-${MODPY_DISTV}-py${MODPY_VERSION}-nspkg.pth
-lib/python${MODPY_VERSION}/site-packages/ripe.atlas.tools-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/ripe.atlas.tools-${MODPY_DISTV}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/ripe.atlas.tools-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/ripe.atlas.tools-${MODPY_DISTV}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/ripe.atlas.tools-${MODPY_DISTV}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/ripe.atlas.tools-${MODPY_DISTV}.dist-info/namespace_packages.txt
-lib/python${MODPY_VERSION}/site-packages/ripe.atlas.tools-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/tools/
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/tools/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/ripe/atlas/tools/${MODPY_PYCACHE}/
@@ -188,4 +181,12 @@ lib/python${MODPY_VERSION}/site-packages/ripe/atlas/tools/settings/templates/
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/tools/settings/templates/base.yaml
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/tools/streaming.py
 lib/python${MODPY_VERSION}/site-packages/ripe/atlas/tools/version.py
+lib/python${MODPY_VERSION}/site-packages/ripe_atlas_tools-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/ripe_atlas_tools-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/ripe_atlas_tools-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/ripe_atlas_tools-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/ripe_atlas_tools-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/ripe_atlas_tools-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/ripe_atlas_tools-${MODPY_DISTV}.dist-info/namespace_packages.txt
+lib/python${MODPY_VERSION}/site-packages/ripe_atlas_tools-${MODPY_DISTV}.dist-info/top_level.txt
 share/doc/pkg-readmes/${PKGSTEM}

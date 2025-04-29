@@ -3,7 +3,7 @@ COMMENT =	implementation of the port 0 trick
 MODPY_DISTV =	1.1.4
 DISTNAME =	ephemeral_port_reserve-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	net www
 

@@ -3,7 +3,7 @@ COMMENT =		Python module for working with SOCKS proxies
 MODPY_DISTV =		1.7.1
 DISTNAME =		PySocks-${MODPY_DISTV}
 PKGNAME =		py-socks-${MODPY_DISTV}
-REVISION =		8
+REVISION =		9
 
 CATEGORIES =		net
 

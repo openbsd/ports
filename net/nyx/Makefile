@@ -2,7 +2,7 @@ COMMENT =		terminal status monitor for Tor
 
 MODPY_DISTV =	2.1.0
 DISTNAME =		nyx-${MODPY_DISTV}
-REVISION =		7
+REVISION =		8
 
 CATEGORIES =		net
 

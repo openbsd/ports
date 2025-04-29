@@ -6,7 +6,7 @@ GH_PROJECT =		ripe-atlas-tools
 GH_TAGNAME =		v${MODPY_DISTV}
 
 PKGNAME =		ripe.atlas.tools-${MODPY_DISTV}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		net
 

@@ -4,7 +4,7 @@ MODPY_DISTV =	1.3.1
 GH_ACCOUNT =	RIPE-NCC
 GH_PROJECT =	ripe-atlas-sagan
 GH_TAGNAME =	v${MODPY_DISTV}
-REVISION =	3
+REVISION =	4
 
 PKGNAME =	py-ripe.atlas.sagan-${MODPY_DISTV}
 

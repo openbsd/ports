@@ -1,6 +1,7 @@
 COMMENT=		media aggregator and podcast client
 
 MODPY_DISTV=		3.11.5
+REVISION=		0
 
 GH_ACCOUNT=		gpodder
 GH_PROJECT=		gpodder

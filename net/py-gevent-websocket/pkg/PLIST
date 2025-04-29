@@ -1,10 +1,11 @@
 @pkgpath net/py-gevent-websocket,python3
 lib/python${MODPY_VERSION}/site-packages/gevent_websocket-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/gevent_websocket-${MODPY_DISTV}.dist-info/AUTHORS
-lib/python${MODPY_VERSION}/site-packages/gevent_websocket-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/gevent_websocket-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/gevent_websocket-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/gevent_websocket-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/gevent_websocket-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/gevent_websocket-${MODPY_DISTV}.dist-info/licenses/AUTHORS
+lib/python${MODPY_VERSION}/site-packages/gevent_websocket-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/gevent_websocket-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/geventwebsocket/
 lib/python${MODPY_VERSION}/site-packages/geventwebsocket/__init__.py

@@ -1,5 +1,5 @@
-@pkgpath net/py-websocket-client,python3
 @conflict py-websocket-client-*
+@pkgpath net/py-websocket-client,python3
 bin/wsdump
 lib/python${MODPY_VERSION}/site-packages/websocket/
 lib/python${MODPY_VERSION}/site-packages/websocket/__init__.py
@@ -45,6 +45,7 @@ lib/python${MODPY_VERSION}/site-packages/websocket/_ssl_compat.py
 lib/python${MODPY_VERSION}/site-packages/websocket/_url.py
 lib/python${MODPY_VERSION}/site-packages/websocket/_utils.py
 lib/python${MODPY_VERSION}/site-packages/websocket/_wsdump.py
+lib/python${MODPY_VERSION}/site-packages/websocket/py.typed
 lib/python${MODPY_VERSION}/site-packages/websocket/tests/
 lib/python${MODPY_VERSION}/site-packages/websocket/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/websocket/tests/${MODPY_PYCACHE}/
@@ -76,9 +77,10 @@ lib/python${MODPY_VERSION}/site-packages/websocket/tests/test_http.py
 lib/python${MODPY_VERSION}/site-packages/websocket/tests/test_url.py
 lib/python${MODPY_VERSION}/site-packages/websocket/tests/test_websocket.py
 lib/python${MODPY_VERSION}/site-packages/websocket_client-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/websocket_client-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/websocket_client-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/websocket_client-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/websocket_client-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/websocket_client-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/websocket_client-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/websocket_client-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/websocket_client-${MODPY_DISTV}.dist-info/top_level.txt

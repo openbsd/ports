@@ -3,7 +3,7 @@ COMMENT =		json rpc server library
 MODPY_DISTV =	1.1.2
 DISTNAME =		python-lsp-jsonrpc-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 

@@ -1,11 +1,11 @@
 @pkgpath net/py-smbc,python3
-@conflict py-smbc-*
 @so lib/python${MODPY_VERSION}/site-packages/_smbc.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/pysmbc-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pysmbc-${MODPY_DISTV}.dist-info/COPYING
 lib/python${MODPY_VERSION}/site-packages/pysmbc-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/pysmbc-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/pysmbc-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pysmbc-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/pysmbc-${MODPY_DISTV}.dist-info/licenses/COPYING
 lib/python${MODPY_VERSION}/site-packages/pysmbc-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/smbc/
 lib/python${MODPY_VERSION}/site-packages/smbc/__init__.py

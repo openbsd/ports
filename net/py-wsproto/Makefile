@@ -3,7 +3,7 @@ COMMENT=	state-machine based WebSocket protocol implementation
 MODPY_DISTV=	1.2.0
 DISTNAME=	wsproto-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	net
 

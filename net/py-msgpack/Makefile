@@ -4,7 +4,7 @@ MODPY_DISTV =	1.1.0
 EPOCH =			0
 DISTNAME =		msgpack-${MODPY_DISTV}
 PKGNAME =		py-msgpack-${MODPY_DISTV}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net textproc
 

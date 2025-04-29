@@ -3,6 +3,7 @@ COMMENT=	portable, lightweight MessagePack (de)serializer
 MODPY_DISTV=	2.8.0
 DISTNAME=	u-msgpack-python-${MODPY_DISTV}
 PKGNAME=	py-u-msgpack-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	net textproc
 

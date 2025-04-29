@@ -1,10 +1,10 @@
 COMMENT =		simple DNS resolver for asyncio
 
-MODPY_DISTV =	3.2.0
+MODPY_DISTV =		3.2.0
 DISTNAME =		aiodns-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		net
-REVISION =		0
+REVISION =		1
 
 HOMEPAGE =		https://github.com/aio-libs/aiodns
 

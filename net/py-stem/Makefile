@@ -1,9 +1,9 @@
 COMMENT =		Tor controller library
 
-MODPY_DISTV =	1.8.2
+MODPY_DISTV =		1.8.2
 DISTNAME =		stem-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		net
 

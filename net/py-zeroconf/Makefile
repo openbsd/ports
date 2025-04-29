@@ -3,7 +3,7 @@ COMMENT =		pure Python Multicast DNS Service Discovery Library
 MODPY_DISTV =	0.28.8
 DISTNAME =		zeroconf-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		4
+REVISION =		5
 
 CATEGORIES =		net
 

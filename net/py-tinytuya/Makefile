@@ -7,6 +7,7 @@ GH_TAGNAME =		v${MODPY_DISTV}
 
 DISTNAME =		tinytuya-${MODPY_DISTV}
 PKGNAME =		py-tinytuya-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		net
 

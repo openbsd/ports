@@ -3,7 +3,7 @@ COMMENT =		async library on top of asyncio or trio
 MODPY_DISTV =		3.7.1
 DISTNAME =		anyio-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		net
 

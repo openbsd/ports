@@ -4,7 +4,7 @@ MODPY_DISTV=	0.10.0
 DISTNAME=	siphon-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	net
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://unidata.github.io/siphon/
 

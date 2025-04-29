@@ -4,7 +4,7 @@ MODPY_DISTV=	1.0.14
 
 DISTNAME=	aggregate6-${MODPY_DISTV}
 CATEGORIES=	net
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://github.com/job/aggregate6/
 

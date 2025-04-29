@@ -1,5 +1,5 @@
-@pkgpath net/py-twitter,python3
 @conflict py-twitter-*
+@pkgpath net/py-twitter,python3
 bin/twitter
 bin/twitter-archiver
 bin/twitter-follow
@@ -8,12 +8,13 @@ bin/twitter-stream-example
 bin/twitterbot
 lib/python${MODPY_VERSION}/site-packages/twitter/
 lib/python${MODPY_VERSION}/site-packages/twitter-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/twitter-${MODPY_DISTV}.dist-info/AUTHORS
-lib/python${MODPY_VERSION}/site-packages/twitter-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/twitter-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/twitter-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/twitter-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/twitter-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/twitter-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/twitter-${MODPY_DISTV}.dist-info/licenses/AUTHORS
+lib/python${MODPY_VERSION}/site-packages/twitter-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/twitter-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/twitter-${MODPY_DISTV}.dist-info/zip-safe
 lib/python${MODPY_VERSION}/site-packages/twitter/__init__.py

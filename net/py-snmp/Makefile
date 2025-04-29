@@ -4,7 +4,7 @@ MODPY_DISTV =	4.4.12
 DISTNAME =	pysnmp-${MODPY_DISTV}
 PKGNAME =	${DISTNAME:S/py/py-/}
 CATEGORIES =	net
-REVISION =	7
+REVISION =	8
 
 HOMEPAGE =	http://snmplabs.com/
 

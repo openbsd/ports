@@ -3,7 +3,7 @@ COMMENT =	collect data from SolarEdge API
 MODPY_DISTV =	0.3.2
 DISTNAME =	solaredge-interface-${MODPY_DISTV}
 PKGNAME =	py-solaredge-interface-${MODPY_DISTV}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	net
 

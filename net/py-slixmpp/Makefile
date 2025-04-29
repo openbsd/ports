@@ -4,7 +4,7 @@ MODPY_DISTV =	1.8.3
 DISTNAME =		slixmpp-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		net
-REVISION =		1
+REVISION =		2
 
 MAINTAINER =		Kurt Mosiejczuk <kmos@openbsd.org>
 

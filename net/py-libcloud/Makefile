@@ -3,7 +3,7 @@ COMMENT=		unified interface for interacting with cloud services
 MODPY_DISTV=	3.8.0
 DISTNAME=		apache-libcloud-${MODPY_DISTV}
 PKGNAME=		py-libcloud-${MODPY_DISTV}
-REVISION=		2
+REVISION=		3
 
 CATEGORIES=		net
 

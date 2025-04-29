@@ -3,7 +3,7 @@ COMMENT =	full modbus protocol written in python
 MODPY_DISTV =	3.7.4
 DISTNAME =	pymodbus-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	net
 

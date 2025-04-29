@@ -6,7 +6,7 @@ GH_PROJECT =	ripe-atlas-cousteau
 GH_TAGNAME =	v${MODPY_DISTV}
 
 PKGNAME =	py-ripe.atlas.cousteau-${MODPY_DISTV}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	net
 

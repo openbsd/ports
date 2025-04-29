@@ -2,6 +2,7 @@ COMMENT=	fully-featured XMPP client written in Python
 MODPY_DISTV=	2.0.3
 DISTNAME=	gajim-${MODPY_DISTV}
 CATEGORIES=	net x11
+REVISION=	0
 
 HOMEPAGE=	https://www.gajim.org
 

@@ -2,6 +2,7 @@ COMMENT =	powerful interactive packet manipulation in python
 
 MODPY_DISTV =	2.6.1
 DISTNAME =	scapy-${MODPY_DISTV}
+REVISION =	0
 
 CATEGORIES =	net
 

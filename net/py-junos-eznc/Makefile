@@ -3,6 +3,7 @@ COMMENT=	library for Junos automation
 MODPY_DISTV=	2.7.3
 DISTNAME=	junos-eznc-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	net
 

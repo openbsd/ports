@@ -4,7 +4,7 @@ COMMENT=	client/server implementation of Socket.IO
 MODPY_DISTV=	4.6.1
 DISTNAME=	python-socketio-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/python-/py-/}
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	net
 

@@ -3,7 +3,7 @@ COMMENT =		FTP server library for Python
 MODPY_DISTV =	1.5.7
 DISTNAME =		pyftpdlib-${MODPY_DISTV}
 PKGNAME =		py-ftpdlib-${MODPY_DISTV}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		net devel
 

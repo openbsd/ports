@@ -3,7 +3,7 @@ COMMENT=	network address representation and manipulation library
 MODPY_DISTV=	0.10.1
 DISTNAME=	netaddr-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
+REVISION=	2
 
 # 1.0.0 removes is_private() which is used by at least Ansible
 EPOCH=		0

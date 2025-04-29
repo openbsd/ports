@@ -3,6 +3,7 @@ COMMENT =	create measurements on RIPE Atlas probes
 MODPY_DISTV =	2.2
 DISTNAME =	blaeu-${MODPY_DISTV}
 CATEGORIES =	net
+REVISION =	0
 
 MAINTAINER =	Denis Fondras <denis@openbsd.org>
 

@@ -3,7 +3,7 @@ COMMENT=	websocket library for Trio
 MODPY_DISTV=	0.11.1
 DISTNAME=	trio-websocket-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	net
 

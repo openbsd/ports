@@ -3,7 +3,7 @@ COMMENT =		Python network packet manipulation library
 MODPY_DISTV =	1.9.8
 DISTNAME =		dpkt-${MODPY_DISTV}
 PKGNAME =		py-dpkt-${MODPY_DISTV}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		net
 

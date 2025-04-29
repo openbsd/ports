@@ -4,7 +4,7 @@ MODPY_DISTV =	13.1
 
 DISTNAME =		websockets-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		net
 

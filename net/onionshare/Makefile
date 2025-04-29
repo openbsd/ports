@@ -4,8 +4,8 @@ COMMENT-gui =		graphical user interface for onionshare based on Qt
 GH_ACCOUNT =		micahflee
 GH_PROJECT =		onionshare
 GH_TAGNAME =		v${MODPY_DISTV}
-MODPY_DISTV =	2.0
-REVISION-main =		8
+MODPY_DISTV =		2.0
+REVISION-main =		9
 REVISION-gui =		8
 
 PKGNAME-main =		onionshare-${MODPY_DISTV}

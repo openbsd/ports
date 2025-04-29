@@ -1,7 +1,7 @@
 COMMENT =	Python module to handle IPv4 and IPv6 address
 
 MODPY_DISTV =	1.1
-REVISION =		5
+REVISION =		6
 DISTNAME =		IPy-1.01
 PKGNAME =		py-IP-1.01
 CATEGORIES =		net

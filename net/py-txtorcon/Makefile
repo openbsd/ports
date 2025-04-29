@@ -3,6 +3,7 @@ COMMENT=	control-spec implementation for Tor
 MODPY_DISTV=	24.8.0
 DISTNAME=	txtorcon-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 HOMEPAGE=	https://txtorcon.readthedocs.org
 

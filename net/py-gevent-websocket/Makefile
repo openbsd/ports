@@ -4,7 +4,7 @@ MODPY_DISTV =	0.10.1
 
 DISTNAME =	gevent-websocket-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	net
 

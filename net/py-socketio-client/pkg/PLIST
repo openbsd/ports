@@ -1,11 +1,5 @@
 @pkgpath net/py-socketio-client,python3
 lib/python${MODPY_VERSION}/site-packages/socketIO_client/
-lib/python${MODPY_VERSION}/site-packages/socketIO_client-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/socketIO_client-${MODPY_DISTV}.dist-info/LICENSE
-lib/python${MODPY_VERSION}/site-packages/socketIO_client-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/socketIO_client-${MODPY_DISTV}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/socketIO_client-${MODPY_DISTV}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/socketIO_client-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/socketIO_client/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/socketIO_client/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/socketIO_client/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -42,3 +36,10 @@ lib/python${MODPY_VERSION}/site-packages/socketIO_client/tests/serve.js
 lib/python${MODPY_VERSION}/site-packages/socketIO_client/tests/ssl.crt
 lib/python${MODPY_VERSION}/site-packages/socketIO_client/tests/ssl.key
 lib/python${MODPY_VERSION}/site-packages/socketIO_client/transports.py
+lib/python${MODPY_VERSION}/site-packages/socketio_client-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/socketio_client-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/socketio_client-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/socketio_client-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/socketio_client-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/socketio_client-${MODPY_DISTV}.dist-info/licenses/LICENSE
+lib/python${MODPY_VERSION}/site-packages/socketio_client-${MODPY_DISTV}.dist-info/top_level.txt

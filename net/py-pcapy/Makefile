@@ -9,7 +9,7 @@ GH_ACCOUNT =		helpsystems
 GH_PROJECT =		pcapy
 GH_TAGNAME =		${MODPY_DISTV:S/.dev0//}
 PKGNAME =		py-${DISTNAME}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		net devel
 

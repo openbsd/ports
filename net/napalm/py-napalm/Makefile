@@ -1,7 +1,7 @@
 COMMENT =		network automation abstraction layer
 
 MODPY_DISTV =	2.3.3
-REVISION =		8
+REVISION =		9
 DISTNAME =		napalm-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
