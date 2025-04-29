@@ -1,6 +1,7 @@
 COMMENT =		library to implement a Unix daemon process
 
 MODPY_DISTV =		3.1.2
+REVISION =		0
 DISTNAME =		python_daemon-${MODPY_DISTV}
 PKGNAME =		py-daemon-${MODPY_DISTV}
 CATEGORIES =		sysutils

@@ -2,6 +2,7 @@ COMMENT =	minimalistic console file manager
 
 MODPY_DISTV =	1.9.4
 DISTNAME =	ranger-${MODPY_DISTV}
+REVISION =	0
 
 CATEGORIES =	sysutils misc
 

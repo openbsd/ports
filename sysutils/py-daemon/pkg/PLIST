@@ -12,11 +12,12 @@ lib/python${MODPY_VERSION}/site-packages/daemon/${MODPY_PYCACHE}pidfile.${MODPY_
 lib/python${MODPY_VERSION}/site-packages/daemon/daemon.py
 lib/python${MODPY_VERSION}/site-packages/daemon/pidfile.py
 lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_DISTV}.dist-info/LICENSE.ASF-2
-lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_DISTV}.dist-info/LICENSE.GPL-3
 lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_DISTV}.dist-info/licenses/LICENSE.ASF-2
+lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_DISTV}.dist-info/licenses/LICENSE.GPL-3
 lib/python${MODPY_VERSION}/site-packages/python_daemon-${MODPY_DISTV}.dist-info/top_level.txt
 share/doc/${MODPY_PY_PREFIX}daemon/
 share/doc/${MODPY_PY_PREFIX}daemon/FAQ

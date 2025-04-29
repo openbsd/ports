@@ -5,7 +5,7 @@ EPOCH =			0
 
 DISTNAME =		Glances-${MODPY_DISTV}
 PKGNAME =		${DISTNAME:L}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		sysutils
 

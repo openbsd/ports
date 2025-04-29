@@ -1,15 +1,14 @@
 bin/rdiff-backup
 bin/rdiff-backup-delete
 bin/rdiff-backup-statistics
-lib/python${MODPY_VERSION}/
-lib/python${MODPY_VERSION}/site-packages/
 lib/python${MODPY_VERSION}/site-packages/rdiff_backup/
 lib/python${MODPY_VERSION}/site-packages/rdiff_backup-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/rdiff_backup-${MODPY_DISTV}.dist-info/COPYING
 lib/python${MODPY_VERSION}/site-packages/rdiff_backup-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/rdiff_backup-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/rdiff_backup-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/rdiff_backup-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/rdiff_backup-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/rdiff_backup-${MODPY_DISTV}.dist-info/licenses/COPYING
 lib/python${MODPY_VERSION}/site-packages/rdiff_backup-${MODPY_DISTV}.dist-info/top_level.txt
 @so lib/python${MODPY_VERSION}/site-packages/rdiff_backup/C.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/rdiff_backup/FilenameMapping.py

@@ -3,6 +3,7 @@ COMMENT=	asynchronous parallel SSH client library
 MODPY_DISTV=	2.14.0
 DISTNAME=	parallel_ssh-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/}
+REVISION=	0
 
 CATEGORIES=	sysutils
 

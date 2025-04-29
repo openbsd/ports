@@ -4,7 +4,7 @@ MODPY_DISTV =	1.8.2
 
 DISTNAME =		pyperclip-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		sysutils
 HOMEPAGE =		https://github.com/asweigart/pyperclip

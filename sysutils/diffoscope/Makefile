@@ -2,7 +2,7 @@ MODPY_DISTV =	272
 COMMENT =	in-depth comparison of files, archives, and directories
 DISTNAME =	diffoscope-${MODPY_DISTV}
 CATEGORIES =	sysutils devel
-REVISION =	0
+REVISION =	1
 
 HOMEPAGE =	https://diffoscope.org/
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>

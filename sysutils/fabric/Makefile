@@ -2,7 +2,7 @@ COMMENT =		simple, pythonic tool for remote execution and deployment
 
 MODPY_DISTV =		2.6.0
 DISTNAME =		fabric-${MODPY_DISTV}
-REVISION =		5
+REVISION =		6
 
 CATEGORIES =		sysutils
 

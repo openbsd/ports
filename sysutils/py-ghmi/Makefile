@@ -3,7 +3,7 @@ COMMENT =		pure python IPMI protocol library
 MODPY_DISTV =	1.5.65
 DISTNAME =		pyghmi-${MODPY_DISTV}
 PKGNAME =		${DISTNAME:S/py/${MODPY_PY_PREFIX}/}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		sysutils
 

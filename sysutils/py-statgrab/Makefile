@@ -4,7 +4,7 @@ MODPY_DISTV=	0.7.3
 DISTNAME=	pystatgrab-${MODPY_DISTV}
 PKGNAME=	py-statgrab-${MODPY_DISTV}
 CATEGORIES=	sysutils
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	http://www.i-scream.org/pystatgrab/
 

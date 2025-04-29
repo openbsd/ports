@@ -3,7 +3,7 @@ COMMENT =		NetBox API client library
 MODPY_DISTV =	7.4.1
 DISTNAME =		pynetbox-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		sysutils net
 

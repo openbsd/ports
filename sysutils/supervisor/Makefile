@@ -2,7 +2,7 @@ COMMENT=	system to monitor and control processes
 
 MODPY_DISTV =	4.2.5
 DISTNAME=	supervisor-${MODPY_DISTV}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	sysutils
 

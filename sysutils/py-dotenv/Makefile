@@ -4,7 +4,7 @@ MODPY_DISTV=	1.0.1
 
 DISTNAME=	python-dotenv-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/python-/py-/}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	sysutils
 

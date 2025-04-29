@@ -3,7 +3,7 @@ COMMENT =		Python client for the Prometheus monitoring system
 MODPY_DISTV =	0.19.0
 DISTNAME =		prometheus_client-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		sysutils
 

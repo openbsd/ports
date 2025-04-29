@@ -3,7 +3,7 @@ COMMENT=	record the CPU and memory activity of a process
 MODPY_DISTV=	1.4
 
 DISTNAME=	psrecord-${MODPY_DISTV}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	sysutils
 

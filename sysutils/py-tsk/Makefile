@@ -3,7 +3,7 @@ COMMENT =	Python bindings for The Sleuth Kit (libtsk)
 MODPY_DISTV =	20200117
 DISTNAME =	pytsk3-${MODPY_DISTV}
 PKGNAME =	py-tsk-${MODPY_DISTV}
-REVISION =	9
+REVISION =	10
 
 CATEGORIES =	sysutils
 

@@ -4,7 +4,7 @@ MODPY_DISTV =	8.0.2.0.1
 
 DISTNAME =		pyvmomi-${MODPY_DISTV}
 PKGNAME =		${DISTNAME:S/py/py-/}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		sysutils
 

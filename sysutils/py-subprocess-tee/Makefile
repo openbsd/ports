@@ -3,6 +3,7 @@ COMMENT=	subprocess.run replacement that captures and displays output
 MODPY_DISTV=	0.4.2
 DISTNAME=	subprocess_tee-${MODPY_DISTV}
 PKGNAME=	py-subprocess-tee-${MODPY_DISTV}
+REVISION=	0
 
 HOMEPAGE=	https://github.com/pycontribs/subprocess-tee
 

@@ -141,10 +141,11 @@ lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/utils/${MODPY_PYCACHE}u
 lib/python${MODPY_VERSION}/site-packages/ansible_mitogen/utils/unsafe.py
 lib/python${MODPY_VERSION}/site-packages/mitogen/
 lib/python${MODPY_VERSION}/site-packages/mitogen-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/mitogen-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/mitogen-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/mitogen-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/mitogen-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/mitogen-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/mitogen-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/mitogen-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/mitogen/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/mitogen/${MODPY_PYCACHE}/

@@ -1,6 +1,7 @@
 COMMENT =	wrapper around proxmox API
 
 MODPY_DISTV =	2.2.0
+REVISION =	0
 
 DISTNAME =	proxmoxer-${MODPY_DISTV}
 PKGNAME =	py-proxmoxer-${MODPY_DISTV}

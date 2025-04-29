@@ -1,9 +1,10 @@
 @pkgpath sysutils/py-ansible-libssh,python3
 lib/python${MODPY_VERSION}/site-packages/ansible_pylibssh-${MODPY_DISTV}.dev167+gbaa2ab830.dist-info/
-lib/python${MODPY_VERSION}/site-packages/ansible_pylibssh-${MODPY_DISTV}.dev167+gbaa2ab830.dist-info/LICENSE.rst
 lib/python${MODPY_VERSION}/site-packages/ansible_pylibssh-${MODPY_DISTV}.dev167+gbaa2ab830.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/ansible_pylibssh-${MODPY_DISTV}.dev167+gbaa2ab830.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/ansible_pylibssh-${MODPY_DISTV}.dev167+gbaa2ab830.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/ansible_pylibssh-${MODPY_DISTV}.dev167+gbaa2ab830.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/ansible_pylibssh-${MODPY_DISTV}.dev167+gbaa2ab830.dist-info/licenses/LICENSE.rst
 lib/python${MODPY_VERSION}/site-packages/ansible_pylibssh-${MODPY_DISTV}.dev167+gbaa2ab830.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/
 lib/python${MODPY_VERSION}/site-packages/pylibsshext/.gitignore

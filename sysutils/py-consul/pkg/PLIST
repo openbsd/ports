@@ -83,10 +83,11 @@ lib/python${MODPY_VERSION}/site-packages/docs/${MODPY_PYCACHE}conf.${MODPY_PYC_M
 lib/python${MODPY_VERSION}/site-packages/docs/${MODPY_PYCACHE}conf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/docs/conf.py
 lib/python${MODPY_VERSION}/site-packages/py_consul-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/py_consul-${MODPY_DISTV}.dist-info/LICENSE
 lib/python${MODPY_VERSION}/site-packages/py_consul-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/py_consul-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/py_consul-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/py_consul-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/py_consul-${MODPY_DISTV}.dist-info/licenses/LICENSE
 lib/python${MODPY_VERSION}/site-packages/py_consul-${MODPY_DISTV}.dist-info/top_level.txt
 @comment requirements.txt
 @comment tests-requirements.txt

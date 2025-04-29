@@ -3,7 +3,7 @@ COMMENT =		library to enable your code run as a daemon process
 MODPY_DISTV =	2.5.0
 DISTNAME =		daemonize-${MODPY_DISTV}
 PKGNAME =		py-daemonize-${MODPY_DISTV}
-REVISION =		8
+REVISION =		9
 
 CATEGORIES =		sysutils devel
 

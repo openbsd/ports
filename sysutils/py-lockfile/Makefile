@@ -3,7 +3,7 @@ COMMENT=	platform-independent file locking for Python
 MODPY_DISTV=	0.12.2
 DISTNAME=	lockfile-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	10
+REVISION=	11
 
 CATEGORIES=	sysutils
 

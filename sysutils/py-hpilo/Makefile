@@ -4,7 +4,7 @@ MODPY_DISTV =	4.4.3
 
 DISTNAME =	python-hpilo-${MODPY_DISTV}
 PKGNAME =	${DISTNAME:S/^python-/py-/}
-REVISION =	4
+REVISION =	5
 
 CATEGORIES =	sysutils
 

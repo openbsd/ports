@@ -3,6 +3,7 @@ COMMENT=	datetime-iterator for cron-like formats
 MODPY_DISTV=	6.0.0
 DISTNAME=	croniter-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	sysutils
 

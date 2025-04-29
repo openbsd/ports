@@ -5,6 +5,7 @@ MODPY_DISTV=	7.0.0
 DISTNAME=	psutil-${MODPY_DISTV}
 PKGNAME=	py-psutil-${MODPY_DISTV}
 CATEGORIES=	sysutils
+REVISION=	0
 
 HOMEPAGE=	https://github.com/giampaolo/psutil
 

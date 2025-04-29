@@ -3,6 +3,7 @@ COMMENT =		best practices checker for ansible
 MODPY_DISTV =		25.1.3
 DISTNAME =		ansible_lint-${MODPY_DISTV}
 PKGNAME =		ansible-lint-${MODPY_DISTV}
+REVISION =		0
 
 CATEGORIES =		sysutils
 

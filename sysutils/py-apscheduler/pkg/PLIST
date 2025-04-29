@@ -1,12 +1,13 @@
 @pkgpath sysutils/py-apscheduler,python3
-lib/python${MODPY_VERSION}/site-packages/APScheduler-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/APScheduler-${MODPY_DISTV}.dist-info/LICENSE.txt
-lib/python${MODPY_VERSION}/site-packages/APScheduler-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/APScheduler-${MODPY_DISTV}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/APScheduler-${MODPY_DISTV}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/APScheduler-${MODPY_DISTV}.dist-info/entry_points.txt
-lib/python${MODPY_VERSION}/site-packages/APScheduler-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/apscheduler/
+lib/python${MODPY_VERSION}/site-packages/apscheduler-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/apscheduler-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/apscheduler-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/apscheduler-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/apscheduler-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/apscheduler-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/apscheduler-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/apscheduler-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/apscheduler/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/apscheduler/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/apscheduler/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

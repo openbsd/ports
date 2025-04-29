@@ -8,7 +8,7 @@ GH_TAGNAME =	v${MODPY_DISTV}
 
 DISTNAME =	command_runner-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	2
+REVISION =	3
 
 CATEGORIES =	sysutils
 

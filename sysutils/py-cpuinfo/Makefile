@@ -3,7 +3,7 @@ COMMENT =	get CPU info with pure Python
 MODPY_DISTV =	9.0.0
 
 DISTNAME =	py-cpuinfo-${MODPY_DISTV}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	sysutils
 

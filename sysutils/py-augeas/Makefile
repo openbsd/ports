@@ -3,7 +3,7 @@ COMMENT =		Python bindings for Augeas
 MODPY_DISTV =	1.1.0
 DISTNAME =		python-augeas-${MODPY_DISTV}
 PKGNAME =		${DISTNAME:S/python-/py-/}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		sysutils
 

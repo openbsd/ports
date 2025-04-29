@@ -137,10 +137,11 @@ lib/python${MODPY_VERSION}/site-packages/curator/validators/filters.py
 lib/python${MODPY_VERSION}/site-packages/curator/validators/options.py
 lib/python${MODPY_VERSION}/site-packages/curator/validators/schemacheck.py
 lib/python${MODPY_VERSION}/site-packages/elasticsearch_curator-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/elasticsearch_curator-${MODPY_DISTV}.dist-info/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/elasticsearch_curator-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/elasticsearch_curator-${MODPY_DISTV}.dist-info/NOTICE
 lib/python${MODPY_VERSION}/site-packages/elasticsearch_curator-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/elasticsearch_curator-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/elasticsearch_curator-${MODPY_DISTV}.dist-info/entry_points.txt
+lib/python${MODPY_VERSION}/site-packages/elasticsearch_curator-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/elasticsearch_curator-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/elasticsearch_curator-${MODPY_DISTV}.dist-info/licenses/NOTICE
 lib/python${MODPY_VERSION}/site-packages/elasticsearch_curator-${MODPY_DISTV}.dist-info/top_level.txt

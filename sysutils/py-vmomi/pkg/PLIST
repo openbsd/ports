@@ -221,10 +221,11 @@ lib/python${MODPY_VERSION}/site-packages/pyVmomi/vslm/fault/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/pyVmomi/vslm/vso/
 lib/python${MODPY_VERSION}/site-packages/pyVmomi/vslm/vso/__init__.pyi
 lib/python${MODPY_VERSION}/site-packages/pyvmomi-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pyvmomi-${MODPY_DISTV}.dist-info/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/pyvmomi-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/pyvmomi-${MODPY_DISTV}.dist-info/NOTICE.txt
 lib/python${MODPY_VERSION}/site-packages/pyvmomi-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/pyvmomi-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pyvmomi-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/pyvmomi-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/pyvmomi-${MODPY_DISTV}.dist-info/licenses/NOTICE.txt
 lib/python${MODPY_VERSION}/site-packages/pyvmomi-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/pyvmomi-${MODPY_DISTV}.dist-info/zip-safe

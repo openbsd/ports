@@ -3,6 +3,7 @@ COMMENT =		Python bindings for libssh specific to Ansible use case
 DIST_TUPLE =		github ansible pylibssh baa2ab830d44760c95348081603fbde3e23507a4 .
 PKGNAME =		py-ansible-libssh-${MODPY_DISTV}pre20250327
 CATEGORIES =		sysutils
+REVISION =		0
 
 MAINTAINER =		Denis Fondras <denis@openbsd.org>
 

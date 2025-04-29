@@ -1,13 +1,14 @@
-@pkgpath sysutils/py-analyzemft,python3
 @conflict py-analyzemft-*
+@pkgpath sysutils/py-analyzemft,python3
 bin/analyzeMFT.py
-lib/python${MODPY_VERSION}/site-packages/analyzeMFT-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/analyzeMFT-${MODPY_DISTV}.dist-info/LICENSE.txt
-lib/python${MODPY_VERSION}/site-packages/analyzeMFT-${MODPY_DISTV}.dist-info/METADATA
-lib/python${MODPY_VERSION}/site-packages/analyzeMFT-${MODPY_DISTV}.dist-info/RECORD
-lib/python${MODPY_VERSION}/site-packages/analyzeMFT-${MODPY_DISTV}.dist-info/WHEEL
-lib/python${MODPY_VERSION}/site-packages/analyzeMFT-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/analyzemft/
+lib/python${MODPY_VERSION}/site-packages/analyzemft-${MODPY_DISTV}.dist-info/
+lib/python${MODPY_VERSION}/site-packages/analyzemft-${MODPY_DISTV}.dist-info/METADATA
+lib/python${MODPY_VERSION}/site-packages/analyzemft-${MODPY_DISTV}.dist-info/RECORD
+lib/python${MODPY_VERSION}/site-packages/analyzemft-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/analyzemft-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/analyzemft-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
+lib/python${MODPY_VERSION}/site-packages/analyzemft-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/analyzemft/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/analyzemft/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/analyzemft/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}

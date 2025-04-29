@@ -3,7 +3,7 @@ COMMENT=	provide information about the OS platform
 MODPY_DISTV=	1.9.0
 DISTNAME=	distro-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	sysutils
 

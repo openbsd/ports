@@ -2,7 +2,7 @@ COMMENT=	GUI for Borg Backup
 
 MODPY_DISTV=	0.8.12
 DISTNAME=	vorta-${MODPY_DISTV}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	sysutils
 

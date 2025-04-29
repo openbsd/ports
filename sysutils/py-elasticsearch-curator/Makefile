@@ -1,9 +1,9 @@
 COMMENT=	manage Elasticsearch indices
 
-MODPY_DISTV=5.8.4
+MODPY_DISTV=	5.8.4
 DISTNAME=	elasticsearch-curator-${MODPY_DISTV}
 PKGNAME=	${MODPY_PY_PREFIX}elasticsearch-curator-${MODPY_DISTV}
-REVISION=	3
+REVISION=	4
 
 CATEGORIES=	sysutils
 

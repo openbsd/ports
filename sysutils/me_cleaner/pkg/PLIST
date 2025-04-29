@@ -1,9 +1,10 @@
 bin/me_cleaner
 lib/python${MODPY_VERSION}/site-packages/me_cleaner-1.2.dist-info/
-lib/python${MODPY_VERSION}/site-packages/me_cleaner-1.2.dist-info/COPYING
 lib/python${MODPY_VERSION}/site-packages/me_cleaner-1.2.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/me_cleaner-1.2.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/me_cleaner-1.2.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/me_cleaner-1.2.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/me_cleaner-1.2.dist-info/licenses/COPYING
 lib/python${MODPY_VERSION}/site-packages/me_cleaner-1.2.dist-info/top_level.txt
 @man man/man1/me_cleaner.1
 share/doc/me_cleaner/

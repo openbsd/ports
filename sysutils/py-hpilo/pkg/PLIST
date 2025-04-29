@@ -8,8 +8,9 @@ lib/python${MODPY_VERSION}/site-packages/${MODPY_PYCACHE}hpilo_fw.${MODPY_PYC_MA
 lib/python${MODPY_VERSION}/site-packages/hpilo.py
 lib/python${MODPY_VERSION}/site-packages/hpilo_fw.py
 lib/python${MODPY_VERSION}/site-packages/python_hpilo-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/python_hpilo-${MODPY_DISTV}.dist-info/COPYING
 lib/python${MODPY_VERSION}/site-packages/python_hpilo-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/python_hpilo-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/python_hpilo-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/python_hpilo-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/python_hpilo-${MODPY_DISTV}.dist-info/licenses/COPYING
 lib/python${MODPY_VERSION}/site-packages/python_hpilo-${MODPY_DISTV}.dist-info/top_level.txt
