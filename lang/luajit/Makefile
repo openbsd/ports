@@ -14,11 +14,12 @@ SHARED_LIBS +=	luajit-5.1 1.0 # 2.0.5
 # changes look (because they often are not)."
 GH_ACCOUNT =	LuaJIT
 GH_PROJECT =	LuaJIT
-GH_COMMIT =	5790d253972c9d78a0c2aece527eda5b134bbbf7
+GH_COMMIT =	eec7a8016c3381b949b5d84583800d05897fa960
 
 COMMENT =	just-in-time compiler for Lua
-# see ${WRKSRC}/.relver
-V =		2.1.1713773202
+# epoch time of the commit; easiest found in ${WRKSRC}/.relver of the
+# git-archive tar
+V =		2.1.1744318430
 DISTNAME =	LuaJIT-${V}
 PKGNAME =	${DISTNAME:L}
 
@@ -42,7 +43,7 @@ MAKE_FLAGS += \
 	CC="${CC}" \
 	CCOPT="${CFLAGS}" \
 	CCOPT_x86="" \
-	INSTALL_LJLIBD="${DESTDIR}${MODLUA_DATADIR}" \
+	INSTALL_LJLIBD="${MODLUA_DATADIR}" \
 	INSTALL_MAN="${DESTDIR}${PREFIX}/man/man1" \
 	INSTALL_SONAME=libluajit-5.1.so.${LIBluajit-5.1_VERSION} \
 	PREFIX="${PREFIX}" \
@@ -56,6 +57,8 @@ pre-configure:
 	${SUBST_CMD} ${WRKDIST}/Makefile \
 		${WRKDIST}/etc/luajit.pc \
 		${WRKDIST}/src/luaconf.h
+	@if [[ `cat ${WRKSRC}/.relver` != ${V:E} ]]; then \
+		echo update V in Makefile - ${WRKSRC}/.relver does not match ${V:E}; exit 1; fi
 
 post-install:
 	rm ${PREFIX}/lib/libluajit-${MODLUA_VERSION}.so{,.?}
