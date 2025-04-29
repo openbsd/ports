@@ -3,7 +3,7 @@
 Index: os_dep.c
 --- os_dep.c.orig
 +++ os_dep.c
-@@ -887,7 +887,7 @@ GC_INNER size_t GC_page_size = 0;
+@@ -889,7 +889,7 @@ GC_INNER size_t GC_page_size = 0;
  
  #   if defined(SUNOS5SIGS) || defined(IRIX5) || defined(OSF1) \
         || defined(HAIKU) || defined(HURD) || defined(FREEBSD) \
