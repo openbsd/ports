@@ -1,0 +1,33 @@
+gcc8: error: expression '<throw-expression>' is not a constant expression
+
+Index: al/buffer.cpp
+--- al/buffer.cpp.orig
++++ al/buffer.cpp
+@@ -87,9 +87,10 @@ constexpr auto EnumFromAmbiLayout(AmbiLayout layout) -
+     {
+     case AmbiLayout::FuMa: return AL_FUMA_SOFT;
+     case AmbiLayout::ACN: return AL_ACN_SOFT;
++    default:
++        throw std::runtime_error{fmt::format("Invalid AmbiLayout: {}",
++            int{al::to_underlying(layout)})};
+     }
+-    throw std::runtime_error{fmt::format("Invalid AmbiLayout: {}",
+-        int{al::to_underlying(layout)})};
+ }
+ 
+ constexpr auto AmbiScalingFromEnum(ALenum scale) noexcept -> std::optional<AmbiScaling>
+@@ -109,10 +110,11 @@ constexpr auto EnumFromAmbiScaling(AmbiScaling scale) 
+     case AmbiScaling::FuMa: return AL_FUMA_SOFT;
+     case AmbiScaling::SN3D: return AL_SN3D_SOFT;
+     case AmbiScaling::N3D: return AL_N3D_SOFT;
+-    case AmbiScaling::UHJ: break;
++    case AmbiScaling::UHJ:
++    default:
++        throw std::runtime_error{fmt::format("Invalid AmbiScaling: {}",
++            int{al::to_underlying(scale)})};
+     }
+-    throw std::runtime_error{fmt::format("Invalid AmbiScaling: {}",
+-        int{al::to_underlying(scale)})};
+ }
+ 
+ #if ALSOFT_EAX

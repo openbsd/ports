@@ -1,0 +1,18 @@
+gcc8: error: expression '<throw-expression>' is not a constant expression
+
+Index: al/effects/modulator.cpp
+--- al/effects/modulator.cpp.orig
++++ al/effects/modulator.cpp
+@@ -39,9 +39,10 @@ constexpr ALenum EnumFromWaveform(ModulatorWaveform ty
+     case ModulatorWaveform::Sinusoid: return AL_RING_MODULATOR_SINUSOID;
+     case ModulatorWaveform::Sawtooth: return AL_RING_MODULATOR_SAWTOOTH;
+     case ModulatorWaveform::Square: return AL_RING_MODULATOR_SQUARE;
++    default:
++        throw std::runtime_error{fmt::format("Invalid modulator waveform: {}",
++            int{al::to_underlying(type)})};
+     }
+-    throw std::runtime_error{fmt::format("Invalid modulator waveform: {}",
+-        int{al::to_underlying(type)})};
+ }
+ 
+ constexpr EffectProps genDefaultProps() noexcept

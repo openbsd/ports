@@ -1,0 +1,16 @@
+gcc8 is too old for std::reduce
+
+Index: alc/effects/reverb.cpp
+--- alc/effects/reverb.cpp.orig
++++ alc/effects/reverb.cpp
+@@ -931,8 +931,8 @@ void EarlyReflections::updateLines(const float density
+     /* Calculate the gain (coefficient) for the secondary reflections based on
+      * the average delay and decay time.
+      */
+-    const auto length = std::reduce(EARLY_LINE_LENGTHS.begin(), EARLY_LINE_LENGTHS.end(), 0.0f)
+-        / float{EARLY_LINE_LENGTHS.size()} * density_mult;
++    const auto length = std::accumulate(EARLY_LINE_LENGTHS.begin(), EARLY_LINE_LENGTHS.end(), 0.0f)
++        / static_cast<float>(EARLY_LINE_LENGTHS.size()) * density_mult;
+     Coeff = CalcDecayCoeff(length, decayTime);
+ 
+ }

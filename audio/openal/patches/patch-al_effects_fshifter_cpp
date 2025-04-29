@@ -1,0 +1,16 @@
+gcc8: error: expression '<throw-expression>' is not a constant expression
+
+Index: al/effects/fshifter.cpp
+--- al/effects/fshifter.cpp.orig
++++ al/effects/fshifter.cpp
+@@ -39,8 +39,9 @@ constexpr ALenum EnumFromDirection(FShifterDirection d
+     case FShifterDirection::Down: return AL_FREQUENCY_SHIFTER_DIRECTION_DOWN;
+     case FShifterDirection::Up: return AL_FREQUENCY_SHIFTER_DIRECTION_UP;
+     case FShifterDirection::Off: return AL_FREQUENCY_SHIFTER_DIRECTION_OFF;
++    default:
++        throw std::runtime_error{fmt::format("Invalid direction: {}", int{al::to_underlying(dir)})};
+     }
+-    throw std::runtime_error{fmt::format("Invalid direction: {}", int{al::to_underlying(dir)})};
+ }
+ 
+ constexpr EffectProps genDefaultProps() noexcept

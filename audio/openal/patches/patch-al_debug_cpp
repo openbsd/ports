@@ -1,0 +1,44 @@
+gcc8: error: expression '<throw-expression>' is not a constant expression
+
+Index: al/debug.cpp
+--- al/debug.cpp.orig
++++ al/debug.cpp
+@@ -109,9 +109,10 @@ constexpr auto GetDebugSourceEnum(DebugSource source) 
+     case DebugSource::ThirdParty: return AL_DEBUG_SOURCE_THIRD_PARTY_EXT;
+     case DebugSource::Application: return AL_DEBUG_SOURCE_APPLICATION_EXT;
+     case DebugSource::Other: return AL_DEBUG_SOURCE_OTHER_EXT;
++    default:
++        throw std::runtime_error{fmt::format("Unexpected debug source value: {}",
++            int{al::to_underlying(source)})};
+     }
+-    throw std::runtime_error{fmt::format("Unexpected debug source value: {}",
+-        int{al::to_underlying(source)})};
+ }
+ 
+ constexpr auto GetDebugTypeEnum(DebugType type) -> ALenum
+@@ -127,9 +128,10 @@ constexpr auto GetDebugTypeEnum(DebugType type) -> ALe
+     case DebugType::PushGroup: return AL_DEBUG_TYPE_PUSH_GROUP_EXT;
+     case DebugType::PopGroup: return AL_DEBUG_TYPE_POP_GROUP_EXT;
+     case DebugType::Other: return AL_DEBUG_TYPE_OTHER_EXT;
++    default:
++        throw std::runtime_error{fmt::format("Unexpected debug type value: {}",
++            int{al::to_underlying(type)})};
+     }
+-    throw std::runtime_error{fmt::format("Unexpected debug type value: {}",
+-        int{al::to_underlying(type)})};
+ }
+ 
+ constexpr auto GetDebugSeverityEnum(DebugSeverity severity) -> ALenum
+@@ -140,9 +142,10 @@ constexpr auto GetDebugSeverityEnum(DebugSeverity seve
+     case DebugSeverity::Medium: return AL_DEBUG_SEVERITY_MEDIUM_EXT;
+     case DebugSeverity::Low: return AL_DEBUG_SEVERITY_LOW_EXT;
+     case DebugSeverity::Notification: return AL_DEBUG_SEVERITY_NOTIFICATION_EXT;
++    default:
++        throw std::runtime_error{fmt::format("Unexpected debug severity value: {}",
++            int{al::to_underlying(severity)})};
+     }
+-    throw std::runtime_error{fmt::format("Unexpected debug severity value: {}",
+-        int{al::to_underlying(severity)})};
+ }
+ 
+ 

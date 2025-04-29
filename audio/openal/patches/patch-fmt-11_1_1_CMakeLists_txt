@@ -1,0 +1,14 @@
+gcc8: undefined reference to `std::filesystem::__cxx11::path::_M_split_cmpts()'
+
+Index: fmt-11.1.1/CMakeLists.txt
+--- fmt-11.1.1/CMakeLists.txt.orig
++++ fmt-11.1.1/CMakeLists.txt
+@@ -61,6 +61,8 @@ set(FMT_SOURCES src/format.cc src/os.cc)
+ add_library(alsoft.fmt OBJECT ${FMT_SOURCES} ${FMT_HEADERS} README.md ChangeLog.md)
+ add_library(alsoft::fmt ALIAS alsoft.fmt)
+ 
++target_link_libraries(alsoft.fmt PRIVATE $<$<AND:$<CXX_COMPILER_ID:GNU>,$<VERSION_LESS:$<CXX_COMPILER_VERSION>,9.0>>:stdc++fs>)
++
+ if (cxx_std_11 IN_LIST CMAKE_CXX_COMPILE_FEATURES)
+   target_compile_features(alsoft.fmt PUBLIC cxx_std_11)
+ else ()
