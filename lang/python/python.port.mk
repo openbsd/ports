@@ -125,7 +125,7 @@ ERRORS += "Fatal: both MODPY_PYBUILD and MODPY_SETUPTOOLS are set. Just use MODP
 MODPY_SETUPUTILS_DEPEND ?= devel/py2-setuptools
 MODPY_RUN_DEPENDS +=	${MODPY_SETUPUTILS_DEPEND}
 .  else
-MODPY_SETUPUTILS_DEPEND ?= devel/py-setuptools
+MODPY_SETUPUTILS_DEPEND ?= py3-setuptools->=79v0:devel/py-setuptools
 .  endif
 
 BUILD_DEPENDS +=	${MODPY_SETUPUTILS_DEPEND}
@@ -161,7 +161,7 @@ _MODPY_USE_CARGO =	Yes
 BUILD_DEPENDS +=	devel/meson-python
 .  elif ${MODPY_PYBUILD} == pbr
 BUILD_DEPENDS +=	devel/py-pbr \
-			devel/py-setuptools \
+			py3-setuptools->=79v0:devel/py-setuptools \
 			devel/py-wheel
 .  elif ${MODPY_PYBUILD} == pdm
 BUILD_DEPENDS +=	devel/py-pdm-backend
@@ -171,7 +171,7 @@ _MODPY_EXPECTED_BACKEND = poetry.core
 .  elif ${MODPY_PYBUILD} == setuptools || \
 	${MODPY_PYBUILD} == setuptools_scm || \
 	${MODPY_PYBUILD} == setuptools-rust
-BUILD_DEPENDS +=	devel/py-setuptools \
+BUILD_DEPENDS +=	py3-setuptools->=79v0:devel/py-setuptools \
 			devel/py-wheel
 _MODPY_EXPECTED_BACKEND = setuptools
 .    if ${MODPY_PYBUILD} == setuptools_scm
