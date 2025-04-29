@@ -1,9 +1,8 @@
 COMMENT =		emoji for Python
 
-MODPY_DISTV =	2.14.0
+MODPY_DISTV =		2.14.1
 DISTNAME =		emoji-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		textproc
 
