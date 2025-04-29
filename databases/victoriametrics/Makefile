@@ -1,6 +1,7 @@
 COMMENT =		fast, cost-effective and scalable time series database
 
-V =			1.109.1
+# 1.115.0 requires Go 1.24.2
+V =			1.114.0
 
 DIST_TUPLE +=		github VictoriaMetrics VictoriaMetrics v${V} . # Apache License 2.0
 
