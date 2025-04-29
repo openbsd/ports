@@ -1,15 +1,15 @@
 COMMENT=	simplified packaging system for Python modules
 
 # py-types-setuptools should have a matching version
-MODPY_DISTV=		75.6.0
+MODPY_DISTV=		79.0.1
 DISTNAME=		setuptools-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
 
 EPOCH=			0
 
 CATEGORIES=		devel
 
+# https://github.com/pypa/setuptools
 HOMEPAGE=		https://setuptools.readthedocs.io/en/latest/
 
 MAINTAINER=		Kurt Mosiejczuk <kmos@openbsd.org>
