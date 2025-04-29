@@ -3,6 +3,7 @@ COMMENT=	Python implementation of SGP4 satellite tracking algorithm
 MODPY_DISTV=	2.24
 DISTNAME=	sgp4-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	astro
 

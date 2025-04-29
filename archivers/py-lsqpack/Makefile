@@ -3,7 +3,7 @@ COMMENT =		Python bindings for ls-qpack
 MODPY_DISTV =	0.3.18
 DISTNAME =		pylsqpack-${MODPY_DISTV}
 PKGNAME =		py-lsqpack-${MODPY_DISTV}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		archivers devel www
 

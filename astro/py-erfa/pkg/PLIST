@@ -32,8 +32,9 @@ lib/python${MODPY_VERSION}/site-packages/erfa/tests/test_ufunc.py
 @so lib/python${MODPY_VERSION}/site-packages/erfa/ufunc${MODPY_ABI3SO}.so
 lib/python${MODPY_VERSION}/site-packages/erfa/version.py
 lib/python${MODPY_VERSION}/site-packages/pyerfa-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/pyerfa-${MODPY_DISTV}.dist-info/LICENSE.rst
 lib/python${MODPY_VERSION}/site-packages/pyerfa-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/pyerfa-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/pyerfa-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/pyerfa-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/pyerfa-${MODPY_DISTV}.dist-info/licenses/LICENSE.rst
 lib/python${MODPY_VERSION}/site-packages/pyerfa-${MODPY_DISTV}.dist-info/top_level.txt

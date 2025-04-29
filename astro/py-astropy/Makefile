@@ -2,6 +2,7 @@ COMMENT=	community-developed python astronomy tools
 
 # 6.1 requires numpy>=2
 MODPY_DISTV=	6.0.1
+REVISION=	0
 DISTNAME=	astropy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 

@@ -1,8 +1,9 @@
 @pkgpath archivers/py-lzo,python3
 @so lib/python${MODPY_VERSION}/site-packages/lzo.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/python_lzo-${MODPY_DISTV}.dist-info/
-lib/python${MODPY_VERSION}/site-packages/python_lzo-${MODPY_DISTV}.dist-info/COPYING
 lib/python${MODPY_VERSION}/site-packages/python_lzo-${MODPY_DISTV}.dist-info/METADATA
 lib/python${MODPY_VERSION}/site-packages/python_lzo-${MODPY_DISTV}.dist-info/RECORD
 lib/python${MODPY_VERSION}/site-packages/python_lzo-${MODPY_DISTV}.dist-info/WHEEL
+lib/python${MODPY_VERSION}/site-packages/python_lzo-${MODPY_DISTV}.dist-info/licenses/
+lib/python${MODPY_VERSION}/site-packages/python_lzo-${MODPY_DISTV}.dist-info/licenses/COPYING
 lib/python${MODPY_VERSION}/site-packages/python_lzo-${MODPY_DISTV}.dist-info/top_level.txt

@@ -3,7 +3,7 @@ COMMENT =		Python bindings for the Brotli compression library
 MODPY_DISTV =	1.1.0
 DISTNAME =		Brotli-${MODPY_DISTV}
 PKGNAME =		py-brotli-${MODPY_DISTV}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		archivers
 

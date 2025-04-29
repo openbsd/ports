@@ -2,6 +2,7 @@ MODPY_DISTV =	0.3
 COMMENT =	curses interface for browsing and playing radio streams
 DISTNAME =	curseradio-${MODPY_DISTV}pre20241222
 CATEGORIES =	audio
+REVISION =	0
 
 GH_ACCOUNT =	elewarr
 GH_PROJECT =	curseradio

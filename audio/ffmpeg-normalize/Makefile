@@ -2,7 +2,7 @@ COMMENT =		audio normalization
 
 MODPY_DISTV =	1.27.7
 DISTNAME =		ffmpeg-normalize-${MODPY_DISTV}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		audio multimedia
 

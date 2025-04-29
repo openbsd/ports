@@ -5,7 +5,7 @@ MODPY_DISTV =	${V}
 DISTNAME =		tinytag-${V}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		audio textproc
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		https://github.com/devsnd/tinytag
 

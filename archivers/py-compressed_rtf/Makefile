@@ -3,6 +3,7 @@ COMMENT=	handle Compressed Rich Text Format (RTF) attachments
 MODPY_DISTV=	1.0.7
 DISTNAME=	compressed_rtf-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	archivers
 HOMEPAGE=	https://github.com/delimitry/compressed_rtf

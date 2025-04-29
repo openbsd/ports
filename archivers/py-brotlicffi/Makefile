@@ -4,7 +4,7 @@ MODPY_DISTV =	1.1.0.0
 DISTNAME =		brotlicffi-${MODPY_DISTV}
 PKGNAME =		py-brotlicffi-${MODPY_DISTV}
 CATEGORIES =		archivers
-REVISION =		0
+REVISION =		1
 
 # MIT
 PERMIT_PACKAGE =	Yes

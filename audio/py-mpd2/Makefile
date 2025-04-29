@@ -3,7 +3,7 @@ COMMENT =		Python client interface for MPD
 MODPY_DISTV =	3.0.5
 DISTNAME =		python-mpd2-${MODPY_DISTV}
 PKGNAME =		py-mpd2-${MODPY_DISTV}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		audio
 

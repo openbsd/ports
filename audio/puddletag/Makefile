@@ -2,7 +2,7 @@ COMMENT =		spreadsheet-like audio file tagger
 
 MODPY_DISTV =	2.4.0
 DISTNAME =		puddletag-${MODPY_DISTV}
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		audio
 

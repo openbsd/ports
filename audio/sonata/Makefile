@@ -6,7 +6,7 @@ GH_ACCOUNT=	multani
 GH_PROJECT=	sonata
 DISTNAME=	sonata-${MODPY_DISTV}
 EPOCH=		1
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	audio
 

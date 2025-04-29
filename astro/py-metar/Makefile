@@ -4,7 +4,7 @@ MODPY_DISTV =	1.4
 DISTNAME =		pymetar-${MODPY_DISTV}
 PKGNAME =		py-metar-${MODPY_DISTV}
 CATEGORIES =		astro
-REVISION =		5
+REVISION =		6
 
 HOMEPAGE =		https://www.schwarzvogel.de/software/pymetar/
 

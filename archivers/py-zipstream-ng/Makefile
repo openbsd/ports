@@ -3,7 +3,7 @@ MODPY_DISTV =	1.8.0
 DISTNAME =		zipstream_ng-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/}
 CATEGORIES =		archivers
-REVISION =		0
+REVISION =		1
 
 # LGPLv3
 PERMIT_PACKAGE =	Yes

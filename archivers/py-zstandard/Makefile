@@ -4,7 +4,7 @@ MODPY_DISTV =	0.23.0
 DISTNAME =		zstandard-${MODPY_DISTV}
 PKGNAME =		py-zstandard-${MODPY_DISTV}
 CATEGORIES =		archivers
-REVISION =		0
+REVISION =		1
 
 # BSD
 PERMIT_PACKAGE =	Yes
