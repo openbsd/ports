@@ -847,7 +847,6 @@ share/kea/api/version-get.json
 share/kea/scripts/
 share/kea/scripts/admin-utils.sh
 %%mysql%%
-%%postgresql%%
 @sample ${LOCALSTATEDIR}/lib/
 @mode 0770
 @group _kea
