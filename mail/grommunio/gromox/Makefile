@@ -14,6 +14,8 @@ DISTNAME=	gromox-${V}
 PKGNAME-main=	gromox-core-${V}
 PKGNAME-mapi=	gromox-mapi-${V}
 
+REVISION-main=	0
+
 GH_ACCOUNT=	grommunio
 GH_PROJECT=	gromox
 GH_COMMIT=	b785b87fa40863ff4e2b540207941b1ca022ff2d
@@ -83,6 +85,7 @@ RUN_DEPENDS-main=	textproc/catdoc \
 LIB_DEPENDS-main=	archivers/zstd \
 			databases/mariadb \
 			databases/openldap \
+			databases/sqlite3 \
 			devel/fmt \
 			devel/jsoncpp \
 			devel/libHX>=4.27 \
