@@ -1,10 +1,11 @@
 COMMENT=	typing stubs for setuptools
 
-# this version is for setuptools 69.*
+# this version is for setuptools 79.0.*
 # https://pypi.org/project/types-setuptools/#history
-MODPY_DISTV=	75.6.0.20241223
+MODPY_DISTV=	79.0.0.20250422
 DISTNAME=	types_setuptools-${MODPY_DISTV}
 PKGNAME=	py-types-setuptools-${MODPY_DISTV}
+REVISION=	0
 
 CATEGORIES=	devel
 
