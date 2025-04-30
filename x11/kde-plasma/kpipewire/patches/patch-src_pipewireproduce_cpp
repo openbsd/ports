@@ -1,0 +1,31 @@
+Index: src/pipewireproduce.cpp
+--- src/pipewireproduce.cpp.orig
++++ src/pipewireproduce.cpp
+@@ -15,6 +15,9 @@
+ #include <memory>
+ #include <qstringliteral.h>
+ 
++#include <pthread.h>
++#include <pthread_np.h>
++
+ #include "gifencoder_p.h"
+ #include "h264vaapiencoder_p.h"
+ #include "libopenh264encoder_p.h"
+@@ -161,7 +164,7 @@ void PipeWireProduce::setupStream()
+             m_outputCondition.notify_all();
+         }
+     });
+-    pthread_setname_np(m_passthroughThread.native_handle(), "PipeWireProduce::passthrough");
++    pthread_set_name_np(m_passthroughThread.native_handle(), "PipeWireProduce::passthrough");
+ 
+     m_outputThread = std::thread([this]() {
+         m_outputRunning = true;
+@@ -182,7 +185,7 @@ void PipeWireProduce::setupStream()
+             QMetaObject::invokeMethod(this, &PipeWireProduce::handleEncodedFramesChanged, Qt::QueuedConnection);
+         }
+     });
+-    pthread_setname_np(m_outputThread.native_handle(), "PipeWireProduce::output");
++    pthread_set_name_np(m_outputThread.native_handle(), "PipeWireProduce::output");
+ }
+ 
+ void PipeWireProduce::deactivate()

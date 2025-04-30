@@ -1,5 +1,6 @@
 COMMENT =	various components needed to run a Plasma-based environment
 DISTNAME =	plasma-workspace-${VERSION}
+REVISION =	0
 
 SHARED_LIBS +=  colorcorrect              1.0 # 0.0
 SHARED_LIBS +=  kfontinst                 1.0 # 0.0
@@ -55,6 +56,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		multimedia/phonon-backend/vlc,qt6 \
 		sysutils/coreutils \
 		x11/dbus,-suid \
+		x11/kde-plasma/kpipewire>=${VERSION} \
 		x11/kde-plasma/kwin>=${VERSION}
 
 LIB_DEPENDS =	audio/libcanberra \
@@ -125,11 +127,6 @@ LIB_DEPENDS =	audio/libcanberra \
 		x11/qt6/qtsvg \
 		x11/qt6/qtwayland \
 		x11/xkbcommon
-
-# XXX x11/kde-plasma/kpipewire>=${VERSION}
-
-CONFIGURE_ARGS = \
-	-DCMAKE_DISABLE_FIND_PACKAGE_KF5NetworkManagerQt=Yes
 
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 

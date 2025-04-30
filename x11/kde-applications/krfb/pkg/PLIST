@@ -2,14 +2,13 @@
 @bin bin/krfb
 @bin bin/krfb-virtualmonitor
 @lib lib/libkrfbprivate.so.${LIBkrfbprivate_VERSION}
-lib/qt5/plugins/krfb/
-lib/qt5/plugins/krfb/events/
-@so lib/qt5/plugins/krfb/events/x11.so
-@so lib/qt5/plugins/krfb/events/xdp.so
-lib/qt5/plugins/krfb/framebuffer/
-@so lib/qt5/plugins/krfb/framebuffer/pw.so
-@so lib/qt5/plugins/krfb/framebuffer/qt.so
-@so lib/qt5/plugins/krfb/framebuffer/xcb.so
+lib/qt6/plugins/krfb/
+lib/qt6/plugins/krfb/events/
+@so lib/qt6/plugins/krfb/events/x11.so
+@so lib/qt6/plugins/krfb/events/xdp.so
+lib/qt6/plugins/krfb/framebuffer/
+@so lib/qt6/plugins/krfb/framebuffer/pw.so
+@so lib/qt6/plugins/krfb/framebuffer/xcb.so
 share/applications/org.kde.krfb.desktop
 share/applications/org.kde.krfb.virtualmonitor.desktop
 share/doc/HTML/ca/krfb/
@@ -65,6 +64,9 @@ share/doc/HTML/pt_BR/krfb/index.docbook
 share/doc/HTML/ru/krfb/
 share/doc/HTML/ru/krfb/index.cache.bz2
 share/doc/HTML/ru/krfb/index.docbook
+share/doc/HTML/sl/krfb/
+share/doc/HTML/sl/krfb/index.cache.bz2
+share/doc/HTML/sl/krfb/index.docbook
 share/doc/HTML/sr/krfb/
 share/doc/HTML/sr/krfb/index.cache.bz2
 share/doc/HTML/sr/krfb/index.docbook
@@ -92,6 +94,7 @@ share/krfb/
 share/krfb/krfb.notifyrc
 share/locale/af/LC_MESSAGES/krfb.mo
 share/locale/ar/LC_MESSAGES/krfb.mo
+share/locale/ast/LC_MESSAGES/krfb.mo
 share/locale/be/LC_MESSAGES/krfb.mo
 share/locale/bg/LC_MESSAGES/krfb.mo
 share/locale/br/LC_MESSAGES/krfb.mo
@@ -169,4 +172,4 @@ share/locale/zh_TW/LC_MESSAGES/krfb.mo
 share/metainfo/
 share/metainfo/org.kde.krfb.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-share/qlogging-categories5/krfb.categories
+share/qlogging-categories6/krfb.categories
