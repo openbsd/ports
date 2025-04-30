@@ -1,10 +1,10 @@
 COMMENT=		error codes for GnuPG related software
 
-DISTNAME=		libgpg-error-1.51
+DISTNAME=		libgpg-error-1.55
 CATEGORIES=		security devel
 EXTRACT_SUFX=		.tar.bz2
 
-SHARED_LIBS +=  gpg-error            3.29     # 38.0
+SHARED_LIBS +=  gpg-error            3.29     # 39.3
 
 HOMEPAGE=		https://www.gnupg.org/software/libgpg-error/index.html
 
@@ -13,7 +13,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2 - LGPLv2
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c iconv intl
+WANTLIB += c iconv intl pthread
 
 SITES=			${SITE_GNUPG:=libgpg-error/}
 
