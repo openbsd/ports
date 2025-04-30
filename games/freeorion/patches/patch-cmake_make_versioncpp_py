@@ -1,0 +1,48 @@
+Patch out using git to determine the branch, commit, timestamp and
+build_no. I git clone'd the source, and gathered the values needed
+from the 'release-v0.5.1' branch so git is not needed at all.
+
+The source tarball does not contain any .git directories so using
+git is useless here.
+Index: cmake/make_versioncpp.py
+--- cmake/make_versioncpp.py.orig
++++ cmake/make_versioncpp.py
+@@ -132,29 +132,17 @@ if system() == "Darwin":
+     generators.append(Generator("packaging/Info.plist.in", "packaging/Info.plist"))
+ 
+ version = "0.5.1"
+-branch = ""
+-build_no = INVALID_BUILD_NO
++branch = "release-v0.5.1 "
++commit = "031b0e3"
++timestamp = float(1744600723)
++build_no = ""
+ version_file_name = version
+ 
+-try:
+-    branch = check_output(["git", "rev-parse", "--abbrev-ref", "HEAD"], text=True).strip()
+-    if (branch == "master") or (branch == "weekly-test-builds") or (branch[:7] == "release"):
+-        branch = ""
+-    else:
+-        branch += " "
+-    commit = check_output(
+-        ["git", "show", "--no-show-signature", "-s", "--format=%h", "--abbrev=7", "HEAD"], text=True
+-    ).strip()
+-    timestamp = float(
+-        check_output(["git", "show", "--no-show-signature", "-s", "--format=%ct", "HEAD"], text=True).strip()
+-    )
+-    build_no = ".".join([datetime.fromtimestamp(timestamp, tz=timezone.utc).strftime("%Y-%m-%d"), commit])
+-    if branch[:7] == "release":
+-        version_file_name = "v" + version
+-    else:
+-        version_file_name = build_no + "_Test"
+-except (OSError, CalledProcessError):
+-    print("WARNING: git not installed or not setup correctly")
++build_no = ".".join([datetime.fromtimestamp(timestamp, tz=timezone.utc).strftime("%Y-%m-%d"), commit])
++if branch[:7] == "release":
++    version_file_name = "v" + version
++else:
++    version_file_name = build_no + "_Test"
+ 
+ for generator in generators:
+     generator.execute(version, branch, build_no, build_sys, version_file_name)
