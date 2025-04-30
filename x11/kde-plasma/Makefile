@@ -48,6 +48,7 @@
 
      # libva
      SUBDIR += kpipewire
+     SUBDIR += spectacle
 
     # Not ported yet
     # SUBDIR +=bluedevil

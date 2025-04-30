@@ -1,13 +1,19 @@
+@conflict spectacle-<=23.08.4
 @pkgpath x11/kde4/ksnapshot
+@pkgpath x11/kde-applications/spectacle
 @bin bin/spectacle
 lib/kconf_update_bin/
-@bin lib/kconf_update_bin/spectacle-migrate-rememberregion
-@bin lib/kconf_update_bin/spectacle-migrate-shortcuts
+@bin lib/kconf_update_bin/spectacle-24.02.0-change_placeholder_format
+@bin lib/kconf_update_bin/spectacle-24.02.0-keep_old_filename_templates
+@bin lib/kconf_update_bin/spectacle-24.02.0-keep_old_save_location
+@bin lib/kconf_update_bin/spectacle-24.02.0-rename_settings
+@bin lib/kconf_update_bin/spectacle-24.02.0-video_format
 lib/systemd/user/app-org.kde.spectacle.service
 @man man/man1/spectacle.1
 share/applications/org.kde.spectacle.desktop
 share/dbus-1/interfaces/org.kde.Spectacle.xml
 share/dbus-1/services/org.kde.Spectacle.service
+share/dbus-1/services/org.kde.spectacle.service
 share/doc/HTML/ca/spectacle/
 share/doc/HTML/ca/spectacle/Annotate.png
 share/doc/HTML/ca/spectacle/ApplicationPreferences.png
@@ -46,9 +52,15 @@ share/doc/HTML/pt_BR/spectacle/index.docbook
 share/doc/HTML/ru/spectacle/
 share/doc/HTML/ru/spectacle/index.cache.bz2
 share/doc/HTML/ru/spectacle/index.docbook
+share/doc/HTML/sl/spectacle/
+share/doc/HTML/sl/spectacle/index.cache.bz2
+share/doc/HTML/sl/spectacle/index.docbook
 share/doc/HTML/sv/spectacle/
 share/doc/HTML/sv/spectacle/index.cache.bz2
 share/doc/HTML/sv/spectacle/index.docbook
+share/doc/HTML/tr/spectacle/
+share/doc/HTML/tr/spectacle/index.cache.bz2
+share/doc/HTML/tr/spectacle/index.docbook
 share/doc/HTML/uk/spectacle/
 share/doc/HTML/uk/spectacle/Annotate.png
 share/doc/HTML/uk/spectacle/ApplicationPreferences.png
@@ -57,18 +69,13 @@ share/doc/HTML/uk/spectacle/SaveOptions.png
 share/doc/HTML/uk/spectacle/index.cache.bz2
 share/doc/HTML/uk/spectacle/index.docbook
 share/icons/hicolor/scalable/apps/spectacle.svg
-share/kconf_update/50-clipboard_settings_change.py
-share/kconf_update/${MODPY_PYCACHE}/
-share/kconf_update/${MODPY_PYCACHE}50-clipboard_settings_change.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-share/kconf_update/${MODPY_PYCACHE}50-clipboard_settings_change.${MODPY_PYC_MAGIC_TAG}pyc
-share/kconf_update/spectacle_clipboard.upd
-share/kconf_update/spectacle_newConfig.upd
-share/kconf_update/spectacle_rememberregion.upd
-share/kconf_update/spectacle_shortcuts.upd
+share/kconf_update/
+share/kconf_update/spectacle.upd
 share/kglobalaccel/
 share/kglobalaccel/org.kde.spectacle.desktop
-share/knotifications5/spectacle.notifyrc
+share/knotifications6/spectacle.notifyrc
 share/locale/ar/LC_MESSAGES/spectacle.mo
+share/locale/ast/LC_MESSAGES/spectacle.mo
 share/locale/az/LC_MESSAGES/spectacle.mo
 share/locale/bg/LC_MESSAGES/spectacle.mo
 share/locale/ca/LC_MESSAGES/spectacle.mo
@@ -86,6 +93,7 @@ share/locale/fi/LC_MESSAGES/spectacle.mo
 share/locale/fr/LC_MESSAGES/spectacle.mo
 share/locale/gl/LC_MESSAGES/spectacle.mo
 share/locale/he/LC_MESSAGES/spectacle.mo
+share/locale/hi/LC_MESSAGES/spectacle.mo
 share/locale/hsb/LC_MESSAGES/spectacle.mo
 share/locale/hu/LC_MESSAGES/spectacle.mo
 share/locale/ia/LC_MESSAGES/spectacle.mo
@@ -97,6 +105,7 @@ share/locale/ja/LC_MESSAGES/spectacle.mo
 share/locale/ka/LC_MESSAGES/spectacle.mo
 share/locale/ko/LC_MESSAGES/spectacle.mo
 share/locale/lt/LC_MESSAGES/spectacle.mo
+share/locale/lv/LC_MESSAGES/spectacle.mo
 share/locale/ml/LC_MESSAGES/spectacle.mo
 share/locale/nl/LC_MESSAGES/spectacle.mo
 share/locale/nn/LC_MESSAGES/spectacle.mo
@@ -106,6 +115,7 @@ share/locale/pt/LC_MESSAGES/spectacle.mo
 share/locale/pt_BR/LC_MESSAGES/spectacle.mo
 share/locale/ro/LC_MESSAGES/spectacle.mo
 share/locale/ru/LC_MESSAGES/spectacle.mo
+share/locale/sa/LC_MESSAGES/spectacle.mo
 share/locale/sk/LC_MESSAGES/spectacle.mo
 share/locale/sl/LC_MESSAGES/spectacle.mo
 share/locale/sr/LC_MESSAGES/spectacle.mo
@@ -122,4 +132,4 @@ share/metainfo/
 share/metainfo/org.kde.spectacle.appdata.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
-share/qlogging-categories5/spectacle.categories
+share/qlogging-categories6/spectacle.categories

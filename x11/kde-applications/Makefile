@@ -133,7 +133,6 @@
      SUBDIR += kontrast
      SUBDIR += kruler
      SUBDIR += okular
-     SUBDIR += spectacle
      SUBDIR += svgpart
 
      # multimedia
