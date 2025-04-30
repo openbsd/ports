@@ -1,11 +1,10 @@
 COMMENT=		Apple Filing Protocol file server over TCP/IP
 
-V=			4.1.2
+V=			4.2.2
 DISTNAME=		netatalk-${V}
 EXTRACT_SUFX=		.tar.xz
 PKGSPEC=		netatalk->=3,<4
 EPOCH=			0
-REVISION=		0
 
 SHARED_LIBS += atalk                     17.0 # 19.0.0
 
@@ -19,7 +18,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += avahi-client avahi-common c crack db event_core gcrypt
-WANTLIB += gio-2.0 glib-2.0 gobject-2.0 iconv rpcsvc
+WANTLIB += gio-2.0 glib-2.0 gobject-2.0 iconv iniparser rpcsvc
 
 SITES=			https://github.com/Netatalk/Netatalk/releases/download/netatalk-${V:S/./-/g}/
 
@@ -35,6 +34,7 @@ BUILD_DEPENDS +=	textproc/unicode/ucd
 
 LIB_DEPENDS=		databases/db/v4 \
 			devel/glib2 \
+			devel/iniparser \
 			devel/libevent2 \
 			net/avahi,-libs \
 			security/cracklib \
@@ -54,12 +54,11 @@ CONFIGURE_ARGS=		-Dwith-acls=false \
 			-Dwith-ldap=false \
 			-Dwith-pam=false \
 			-Dwith-pkgconfdir-path=${SYSCONFDIR}/netatalk \
-			-Dwith-shadow=false \
 			-Dwith-tcp-wrappers=false \
 			-Dwith-dbus-daemon-path=${LOCALBASE}/bin/dbus-daemon \
 			-Dwith-unicode-data-path=${LOCALBASE}/share/unicode/ucd \
 			-Dwith-init-hooks=false \
-			-Dwith-manual=man_only
+			-Dwith-docs=man
 
 # needs x11/gnome/tracker3
 CONFIGURE_ARGS +=	-Dwith-spotlight=false
