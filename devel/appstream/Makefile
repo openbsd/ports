@@ -9,15 +9,15 @@ ONLY_FOR_ARCHS=		${RUST_ARCHS}
 COMMENT-main=		access to machine-readable software metadata
 COMMENT-qt6=		Qt5 interface for AppStream
 
-V=			1.0.4
+V=			1.0.5
 DISTNAME=		AppStream-${V}
 EXTRACT_SUFX=		.tar.xz
 PKGNAME-main=		${DISTNAME:L}
 PKGNAME-qt6=		appstream-qt6-${V}
 
-SHARED_LIBS += appstream                 1.1 # 1.0.4
-SHARED_LIBS += appstream-compose         1.1 # 1.0.4
-SHARED_LIBS += AppStreamQt               1.1 # 1.0.4
+SHARED_LIBS += appstream                 1.1 # 1.0.5
+SHARED_LIBS += appstream-compose         1.1 # 1.0.5
+SHARED_LIBS += AppStreamQt               1.1 # 1.0.5
 
 CATEGORIES=		devel
 

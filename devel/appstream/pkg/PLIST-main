@@ -98,8 +98,8 @@ share/doc/appstream/html/api/RedHatText-Regular.woff2
 share/doc/appstream/html/api/SourceCodePro-It.ttf.woff
 share/doc/appstream/html/api/SourceCodePro-Regular.ttf.woff
 share/doc/appstream/html/api/SourceCodePro-Semibold.ttf.woff
-share/doc/appstream/html/api/api.devhelp2
 share/doc/appstream/html/api/appstream-logo.svg
+share/doc/appstream/html/api/appstream.devhelp2
 share/doc/appstream/html/api/class.Agreement.html
 share/doc/appstream/html/api/class.AgreementSection.html
 share/doc/appstream/html/api/class.Artifact.html
@@ -989,6 +989,7 @@ share/doc/appstream/html/compose-api/RedHatText-Regular.woff2
 share/doc/appstream/html/compose-api/SourceCodePro-It.ttf.woff
 share/doc/appstream/html/compose-api/SourceCodePro-Regular.ttf.woff
 share/doc/appstream/html/compose-api/SourceCodePro-Semibold.ttf.woff
+share/doc/appstream/html/compose-api/appstream-compose.devhelp2
 share/doc/appstream/html/compose-api/appstream-logo.svg
 share/doc/appstream/html/compose-api/callback.CheckMetadataEarlyFn.html
 share/doc/appstream/html/compose-api/callback.TranslateDesktopTextFn.html
@@ -1001,7 +1002,6 @@ share/doc/appstream/html/compose-api/class.Image.html
 share/doc/appstream/html/compose-api/class.Result.html
 share/doc/appstream/html/compose-api/class.Unit.html
 share/doc/appstream/html/compose-api/classes_hierarchy.html
-share/doc/appstream/html/compose-api/compose-api.devhelp2
 share/doc/appstream/html/compose-api/ctor.Canvas.new.html
 share/doc/appstream/html/compose-api/ctor.Compose.new.html
 share/doc/appstream/html/compose-api/ctor.DirectoryUnit.new.html
