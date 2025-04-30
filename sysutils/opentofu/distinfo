@@ -1035,7 +1035,8 @@ SHA256 (go_modules/github.com/hashicorp/go-secure-stdlib/strutil/@v/v0.1.1.mod) 
 SHA256 (go_modules/github.com/hashicorp/go-secure-stdlib/strutil/@v/v0.1.2.mod) = 2RfHjiYZIWGhecfqTx/EB2AlhsZgpne0oNJWdGspRpg=
 SHA256 (go_modules/github.com/hashicorp/go-secure-stdlib/strutil/@v/v0.1.2.zip) = gHDGe8l+FUiLmbFy3bZjFBLcoPy4zqkON/5V2V4a8Ao=
 SHA256 (go_modules/github.com/hashicorp/go-slug/@v/v0.12.2.mod) = gQ5clU3aOwiXEcgqz2oYdqy2icU5Fvwv1XXERqX0+eg=
-SHA256 (go_modules/github.com/hashicorp/go-slug/@v/v0.12.2.zip) = zdV9H9fdcm6t7a+gF7MSkNu5ZLRBiix8KGDyY08GDww=
+SHA256 (go_modules/github.com/hashicorp/go-slug/@v/v0.16.3.mod) = kbI/v79p4ONhg+7eQFOUNy4gj7IC1CnbOG9s2a8+P/0=
+SHA256 (go_modules/github.com/hashicorp/go-slug/@v/v0.16.3.zip) = t99BwPxSGYQekkvDdadCekh4Pr0Gwes3HEb05TJSio0=
 SHA256 (go_modules/github.com/hashicorp/go-sockaddr/@v/v1.0.0.mod) = 8IH+Tpe45d46gWtFZ2zumPjyOHQMS8i/Z3VaitUH2x4=
 SHA256 (go_modules/github.com/hashicorp/go-sockaddr/@v/v1.0.2.mod) = 62nPCHjOf9Xn5HE8ekRxEMoPveelLb8TqoTDZhh5KXI=
 SHA256 (go_modules/github.com/hashicorp/go-sockaddr/@v/v1.0.2.zip) = UMG2CGOwzTHQOybTl192yrVUZmZsBnzRgjSBph8ZrzM=
@@ -1701,7 +1702,6 @@ SHA256 (go_modules/golang.org/x/net/@v/v0.21.0.mod) = Du8+n+f2aL5bTSTI8SUcbFAtEW
 SHA256 (go_modules/golang.org/x/net/@v/v0.25.0.mod) = E37lK1TBC0eevmuIegIG+09UWB9Uuik7f0u2gs9Sn2c=
 SHA256 (go_modules/golang.org/x/net/@v/v0.33.0.mod) = RiKZCCjFV/NMHmS5Z/3vXOC6bEOixGakrbsLyqyo5cE=
 SHA256 (go_modules/golang.org/x/net/@v/v0.33.0.zip) = qFAU53Np+Zw/nuvhKJtNB1fVgkjKEjN2QpI4GK4iyhk=
-SHA256 (go_modules/golang.org/x/net/@v/v0.5.0.mod) = XDe+Zi2TeArML0PMnG6heErvFMEaDyJ971zm23u4pwQ=
 SHA256 (go_modules/golang.org/x/net/@v/v0.6.0.mod) = Qex26iFy8+4wMeOPmlNZOaWE1rs170gIVP3LjCAmcBs=
 SHA256 (go_modules/golang.org/x/net/@v/v0.8.0.mod) = 6275vWQFrOPZnkOB0CVs5B+Dxm0aILTigwpMd2JF9xo=
 SHA256 (go_modules/golang.org/x/oauth2/@v/v0.0.0-20180821212333-d2e6202438be.mod) = y7thjah9T5Q7VL/U9NOi//NhApjwT77rPbOIywdfNRo=
@@ -1905,7 +1905,6 @@ SHA256 (go_modules/golang.org/x/text/@v/v0.3.6.mod) = +7eojtFAUV55Dsp6EP/TGcl4ax
 SHA256 (go_modules/golang.org/x/text/@v/v0.3.7.mod) = xF1mkIlCe8RjXQexhfm5aAMy0cSMdbPEnLcVuBoEpbA=
 SHA256 (go_modules/golang.org/x/text/@v/v0.3.8.mod) = DAbo1LwMTt3OD5ygGth92f90ytf6i6Fm/pfZfR3rJ64=
 SHA256 (go_modules/golang.org/x/text/@v/v0.4.0.mod) = FZKedvzgSupMkqNUQmu0M3BoRkWk7gPy510MLrFGYwQ=
-SHA256 (go_modules/golang.org/x/text/@v/v0.6.0.mod) = FZKedvzgSupMkqNUQmu0M3BoRkWk7gPy510MLrFGYwQ=
 SHA256 (go_modules/golang.org/x/text/@v/v0.7.0.mod) = FZKedvzgSupMkqNUQmu0M3BoRkWk7gPy510MLrFGYwQ=
 SHA256 (go_modules/golang.org/x/text/@v/v0.8.0.mod) = Q29ZLne1k7AvvqN04jrTNpyGI/8NKckd594eZnLbmkE=
 SHA256 (go_modules/golang.org/x/text/@v/v0.9.0.mod) = Q29ZLne1k7AvvqN04jrTNpyGI/8NKckd594eZnLbmkE=
@@ -2334,7 +2333,7 @@ SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.2.1.mod) = MZI3y2a
 SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.2.1.zip) = 9L7QuayfT9ekxDVbSACgzs8kQ0ISmRJM7oZtb4J54Lc=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 8ikTVRI4fWZj4fCZmkkiq3CN7UvcgExxzpPj1gK6ld0=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = Ve0Ixd9EigM79+LCkS1NqoW4VqBchUsMh8zIXH8/v8c=
-SHA256 (opentofu-v1.9.0.zip) = hSasWcw3BcK8yYtMc1ncc8ePR6yQv95UdPwLl3M8qEA=
+SHA256 (opentofu-v1.9.1.zip) = jdT6NSbMwlbOcLJkst4Q/J7zR95dPNjYRJEPXpwoa6Q=
 SIZE (go_modules/cloud.google.com/go/@v/v0.100.2.mod) = 531
 SIZE (go_modules/cloud.google.com/go/@v/v0.102.0.mod) = 568
 SIZE (go_modules/cloud.google.com/go/@v/v0.102.1.mod) = 568
@@ -3372,7 +3371,8 @@ SIZE (go_modules/github.com/hashicorp/go-secure-stdlib/strutil/@v/v0.1.1.mod) = 
 SIZE (go_modules/github.com/hashicorp/go-secure-stdlib/strutil/@v/v0.1.2.mod) = 106
 SIZE (go_modules/github.com/hashicorp/go-secure-stdlib/strutil/@v/v0.1.2.zip) = 13822
 SIZE (go_modules/github.com/hashicorp/go-slug/@v/v0.12.2.mod) = 398
-SIZE (go_modules/github.com/hashicorp/go-slug/@v/v0.12.2.zip) = 89689
+SIZE (go_modules/github.com/hashicorp/go-slug/@v/v0.16.3.mod) = 426
+SIZE (go_modules/github.com/hashicorp/go-slug/@v/v0.16.3.zip) = 109146
 SIZE (go_modules/github.com/hashicorp/go-sockaddr/@v/v1.0.0.mod) = 40
 SIZE (go_modules/github.com/hashicorp/go-sockaddr/@v/v1.0.2.mod) = 215
 SIZE (go_modules/github.com/hashicorp/go-sockaddr/@v/v1.0.2.zip) = 132950
@@ -4038,7 +4038,6 @@ SIZE (go_modules/golang.org/x/net/@v/v0.21.0.mod) = 155
 SIZE (go_modules/golang.org/x/net/@v/v0.25.0.mod) = 155
 SIZE (go_modules/golang.org/x/net/@v/v0.33.0.mod) = 155
 SIZE (go_modules/golang.org/x/net/@v/v0.33.0.zip) = 1852131
-SIZE (go_modules/golang.org/x/net/@v/v0.5.0.mod) = 123
 SIZE (go_modules/golang.org/x/net/@v/v0.6.0.mod) = 123
 SIZE (go_modules/golang.org/x/net/@v/v0.8.0.mod) = 123
 SIZE (go_modules/golang.org/x/oauth2/@v/v0.0.0-20180821212333-d2e6202438be.mod) = 27
@@ -4242,7 +4241,6 @@ SIZE (go_modules/golang.org/x/text/@v/v0.3.6.mod) = 97
 SIZE (go_modules/golang.org/x/text/@v/v0.3.7.mod) = 97
 SIZE (go_modules/golang.org/x/text/@v/v0.3.8.mod) = 234
 SIZE (go_modules/golang.org/x/text/@v/v0.4.0.mod) = 258
-SIZE (go_modules/golang.org/x/text/@v/v0.6.0.mod) = 258
 SIZE (go_modules/golang.org/x/text/@v/v0.7.0.mod) = 258
 SIZE (go_modules/golang.org/x/text/@v/v0.8.0.mod) = 215
 SIZE (go_modules/golang.org/x/text/@v/v0.9.0.mod) = 215
@@ -4671,4 +4669,4 @@ SIZE (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.2.1.mod) = 346
 SIZE (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.2.1.zip) = 239376
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.2.0.zip) = 20937
-SIZE (opentofu-v1.9.0.zip) = 6228908
+SIZE (opentofu-v1.9.1.zip) = 6234556

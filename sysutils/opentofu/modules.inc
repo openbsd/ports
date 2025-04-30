@@ -319,7 +319,7 @@ MODGO_MODULES =	\
 	github.com/hashicorp/go-safetemp							 v1.0.0 \
 	github.com/hashicorp/go-secure-stdlib/parseutil						 v0.1.6 \
 	github.com/hashicorp/go-secure-stdlib/strutil						 v0.1.2 \
-	github.com/hashicorp/go-slug								 v0.12.2 \
+	github.com/hashicorp/go-slug								 v0.16.3 \
 	github.com/hashicorp/go-sockaddr							 v1.0.2 \
 	github.com/hashicorp/go-syslog								 v1.0.0 \
 	github.com/hashicorp/go-tfe								 v1.36.0 \
@@ -955,6 +955,7 @@ MODGO_MODFILES =	\
 	github.com/hashicorp/go-retryablehttp					 v0.7.4 \
 	github.com/hashicorp/go-rootcerts					 v1.0.1 \
 	github.com/hashicorp/go-secure-stdlib/strutil				 v0.1.1 \
+	github.com/hashicorp/go-slug						 v0.12.2 \
 	github.com/hashicorp/go-sockaddr					 v1.0.0 \
 	github.com/hashicorp/go-uuid						 v1.0.0 \
 	github.com/hashicorp/go-uuid						 v1.0.1 \
@@ -1236,7 +1237,6 @@ MODGO_MODFILES =	\
 	golang.org/x/net							 v0.20.0 \
 	golang.org/x/net							 v0.21.0 \
 	golang.org/x/net							 v0.25.0 \
-	golang.org/x/net							 v0.5.0 \
 	golang.org/x/net							 v0.6.0 \
 	golang.org/x/net							 v0.8.0 \
 	golang.org/x/oauth2							 v0.0.0-20180821212333-d2e6202438be \
@@ -1428,7 +1428,6 @@ MODGO_MODFILES =	\
 	golang.org/x/text							 v0.3.7 \
 	golang.org/x/text							 v0.3.8 \
 	golang.org/x/text							 v0.4.0 \
-	golang.org/x/text							 v0.6.0 \
 	golang.org/x/text							 v0.7.0 \
 	golang.org/x/text							 v0.8.0 \
 	golang.org/x/text							 v0.9.0 \
