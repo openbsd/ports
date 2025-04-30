@@ -4,9 +4,9 @@ NOT_FOR_ARCHS=	i386
 COMMENT=	distributed, versioned backups solution
 
 MODGO_MODNAME=	github.com/PlakarKorp/plakar
-MODGO_VERSION=	v1.0.1-beta.13
+MODGO_VERSION=	v1.0.1-beta.15
 DISTNAME=	plakar-${MODGO_VERSION}
-PKGNAME=	plakar-1.0.1beta13
+PKGNAME=	plakar-1.0.1beta15
 
 # for patches
 WRKDIST=	${WRKDIR}/github.com/PlakarKorp/plakar@${MODGO_VERSION}
