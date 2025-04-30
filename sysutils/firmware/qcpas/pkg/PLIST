@@ -14,4 +14,12 @@ firmware/qcom/x1e80100/LENOVO/21N1/cdsp_dtbs.elf
 firmware/qcom/x1e80100/LENOVO/21N1/qcadsp8380.mbn
 firmware/qcom/x1e80100/LENOVO/21N1/qccdsp8380.mbn
 firmware/qcom/x1e80100/LENOVO/21N1/qcdxkmsuc8380.mbn
+firmware/qcom/x1e80100/LENOVO/21N1/qcvss8380.mbn
+firmware/qcom/x1e80100/LENOVO/83ED/
+firmware/qcom/x1e80100/LENOVO/83ED/adsp_dtbs.elf
+firmware/qcom/x1e80100/LENOVO/83ED/qcadsp8380.mbn
+firmware/qcom/x1e80100/LENOVO/83ED/qcav1e8380.mbn
+firmware/qcom/x1e80100/LENOVO/83ED/qccdsp8380.mbn
+firmware/qcom/x1e80100/LENOVO/83ED/qcdxkmsuc8380.mbn
+firmware/qcom/x1e80100/LENOVO/83ED/qcvss8380.mbn
 firmware/qcpas-license
