@@ -5,15 +5,14 @@ COMMENT-gtk4 =		IBus IM module for GTK4
 
 GH_PROJECT =		ibus
 GH_ACCOUNT =		ibus
-GH_TAGNAME =		1.5.31
-REVISION =		0
+GH_TAGNAME =		1.5.32
 
 PKGNAME-main =		ibus-${GH_TAGNAME:S/-//}
 PKGNAME-gtk2 =		ibus-gtk2-${GH_TAGNAME:S/-//}
 PKGNAME-gtk3 =		ibus-gtk3-${GH_TAGNAME:S/-//}
 PKGNAME-gtk4 =		ibus-gtk4-${GH_TAGNAME:S/-//}
 
-SHARED_LIBS +=  ibus-1.0             4.5      # 5.531
+SHARED_LIBS +=  ibus-1.0             4.5      # 5.532
 
 CATEGORIES =		inputmethods chinese japanese korean
 
@@ -31,7 +30,7 @@ WANTLIB += Xfixes Xi Xinerama Xrandr Xrender cairo expat ffi fontconfig
 WANTLIB += freetype fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 graphite2 harfbuzz iconv intl m pango-1.0
 WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png xcb xcb-render
-WANTLIB += xcb-shm z execinfo jpeg
+WANTLIB += xcb-shm z jpeg
 
 WANTLIB-main += ${WANTLIB}
 WANTLIB-main += atk-1.0 atk-bridge-2.0 c cairo-gobject dconf epoxy
