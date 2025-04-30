@@ -80,7 +80,6 @@ include/libadwaita-1/adw-window-title.h
 include/libadwaita-1/adw-window.h
 include/libadwaita-1/adwaita.h
 lib/girepository-1.0/Adw-1.typelib
-@lib lib/libadwaita-1-internal.so.${LIBadwaita-1-internal_VERSION}
 @lib lib/libadwaita-1.so.${LIBadwaita-1_VERSION}
 lib/pkgconfig/libadwaita-1.pc
 share/applications/org.gnome.Adwaita1.Demo.desktop
