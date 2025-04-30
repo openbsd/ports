@@ -1,7 +1,7 @@
 COMMENT=	proof-of-work proxy to protect web resources from scrapers
 
 MODGO_MODNAME=	github.com/TecharoHQ/anubis
-MODGO_VERSION=	v1.15.2
+MODGO_VERSION=	v1.17.0
 
 DISTNAME=	anubis-${MODGO_VERSION}
 
@@ -22,7 +22,7 @@ post-install:
 	rm ${PREFIX}/bin/containerbuild
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/anubis
 	(sed -E 's,^([^#].*=),export \1,'; echo) \
-		< ${WRKSRC}/run/anubis.env.default \
+		< ${WRKSRC}/run/default.env \
 		> ${PREFIX}/share/examples/anubis/anubis.env.default
 
 .include "modules.inc"
