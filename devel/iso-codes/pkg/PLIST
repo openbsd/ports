@@ -228,6 +228,7 @@ share/locale/chr/LC_MESSAGES/iso_3166-1.mo
 share/locale/chr/LC_MESSAGES/iso_3166.mo
 share/locale/ckb/
 share/locale/ckb/LC_MESSAGES/
+share/locale/ckb/LC_MESSAGES/iso_15924.mo
 share/locale/ckb/LC_MESSAGES/iso_3166-1.mo
 share/locale/ckb/LC_MESSAGES/iso_3166.mo
 share/locale/ckb/LC_MESSAGES/iso_639-3.mo
@@ -1133,8 +1134,10 @@ share/locale/sk/LC_MESSAGES/iso_3166_2.mo
 share/locale/sk/LC_MESSAGES/iso_4217.mo
 share/locale/sk/LC_MESSAGES/iso_639-2.mo
 share/locale/sk/LC_MESSAGES/iso_639-3.mo
+share/locale/sk/LC_MESSAGES/iso_639-5.mo
 share/locale/sk/LC_MESSAGES/iso_639.mo
 share/locale/sk/LC_MESSAGES/iso_639_3.mo
+share/locale/sk/LC_MESSAGES/iso_639_5.mo
 share/locale/sl/
 share/locale/sl/LC_MESSAGES/
 share/locale/sl/LC_MESSAGES/iso_15924.mo
@@ -1435,8 +1438,10 @@ share/locale/zh_CN/LC_MESSAGES/iso_3166_2.mo
 share/locale/zh_CN/LC_MESSAGES/iso_4217.mo
 share/locale/zh_CN/LC_MESSAGES/iso_639-2.mo
 share/locale/zh_CN/LC_MESSAGES/iso_639-3.mo
+share/locale/zh_CN/LC_MESSAGES/iso_639-5.mo
 share/locale/zh_CN/LC_MESSAGES/iso_639.mo
 share/locale/zh_CN/LC_MESSAGES/iso_639_3.mo
+share/locale/zh_CN/LC_MESSAGES/iso_639_5.mo
 share/locale/zh_HK/
 share/locale/zh_HK/LC_MESSAGES/
 share/locale/zh_HK/LC_MESSAGES/iso_15924.mo
@@ -1446,14 +1451,6 @@ share/locale/zh_HK/LC_MESSAGES/iso_3166.mo
 share/locale/zh_HK/LC_MESSAGES/iso_4217.mo
 share/locale/zh_HK/LC_MESSAGES/iso_639-2.mo
 share/locale/zh_HK/LC_MESSAGES/iso_639.mo
-share/locale/zh_Hans/
-share/locale/zh_Hans/LC_MESSAGES/
-share/locale/zh_Hans/LC_MESSAGES/iso_639-5.mo
-share/locale/zh_Hans/LC_MESSAGES/iso_639_5.mo
-share/locale/zh_Hant/
-share/locale/zh_Hant/LC_MESSAGES/
-share/locale/zh_Hant/LC_MESSAGES/iso_639-5.mo
-share/locale/zh_Hant/LC_MESSAGES/iso_639_5.mo
 share/locale/zh_TW/
 share/locale/zh_TW/LC_MESSAGES/
 share/locale/zh_TW/LC_MESSAGES/iso_15924.mo
@@ -1465,8 +1462,10 @@ share/locale/zh_TW/LC_MESSAGES/iso_3166_2.mo
 share/locale/zh_TW/LC_MESSAGES/iso_4217.mo
 share/locale/zh_TW/LC_MESSAGES/iso_639-2.mo
 share/locale/zh_TW/LC_MESSAGES/iso_639-3.mo
+share/locale/zh_TW/LC_MESSAGES/iso_639-5.mo
 share/locale/zh_TW/LC_MESSAGES/iso_639.mo
 share/locale/zh_TW/LC_MESSAGES/iso_639_3.mo
+share/locale/zh_TW/LC_MESSAGES/iso_639_5.mo
 share/locale/zu/
 share/locale/zu/LC_MESSAGES/
 share/locale/zu/LC_MESSAGES/iso_3166-1.mo
