@@ -1,6 +1,6 @@
 COMMENT=	chess program
 
-DISTNAME=	gnuchess-6.2.9
+DISTNAME=	gnuchess-6.2.11
 DISTFILES=	${DISTNAME}.tar.gz book_1.02.pgn.gz
 
 CATEGORIES=	games
