@@ -84,6 +84,7 @@ share/doc/clazy/manuallevel/README-heap-allocated-small-trivial-type.md
 share/doc/clazy/manuallevel/README-ifndef-define-typo.md
 share/doc/clazy/manuallevel/README-isempty-vs-count.md
 share/doc/clazy/manuallevel/README-jni-signatures.md
+share/doc/clazy/manuallevel/README-qbytearray-conversion-to-c-style.md
 share/doc/clazy/manuallevel/README-qhash-with-char-pointer-key.md
 share/doc/clazy/manuallevel/README-qproperty-type-mismatch.md
 share/doc/clazy/manuallevel/README-qrequiredresult-candidates.md

@@ -2,9 +2,8 @@ BROKEN-sparc64 = Uses clang-cpp libraries and fails to link with either ports-gc
 
 COMMENT =	static source code analyzer for Qt-based C++
 
-V =		1.13
+V =		1.14
 DISTNAME =	clazy-${V}
-REVISION =	0
 
 CATEGORIES =	lang devel
 
@@ -13,7 +12,10 @@ MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 # LGPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c llvm${MODCLANG_VERSION}/lib/clang-cpp m
+WANTLIB += ${COMPILER_LIBCXX} c m
+
+WANTLIB += llvm${MODCLANG_VERSION}/lib/clang-cpp
+WANTLIB += llvm${MODCLANG_VERSION}/lib/LLVM
 
 SITES =			${SITE_KDE:=stable/clazy/${V}/src/}
 EXTRACT_SUFX =		.tar.xz
