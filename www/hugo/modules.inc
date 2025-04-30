@@ -145,7 +145,7 @@ MODGO_MODULES =	\
 	github.com/!google!cloud!platform/cloudsql-proxy				 v1.36.0 \
 	github.com/!google!cloud!platform/opentelemetry-operations-go/detectors/gcp	 v1.25.0 \
 	github.com/alecthomas/assert/v2							 v2.11.0 \
-	github.com/alecthomas/chroma/v2							 v2.16.0 \
+	github.com/alecthomas/chroma/v2							 v2.17.0 \
 	github.com/alecthomas/repr							 v0.4.0 \
 	github.com/armon/go-radix							 v1.0.1-0.20221118154546-54df44f2176c \
 	github.com/aws/aws-sdk-go							 v1.55.5 \
@@ -183,7 +183,7 @@ MODGO_MODULES =	\
 	github.com/bep/goportabletext							 v0.1.0 \
 	github.com/bep/gowebp								 v0.3.0 \
 	github.com/bep/helpers								 v0.5.0 \
-	github.com/bep/imagemeta							 v0.11.0 \
+	github.com/bep/imagemeta							 v0.12.0 \
 	github.com/bep/lazycache							 v0.8.0 \
 	github.com/bep/logg								 v0.4.0 \
 	github.com/bep/mclib								 v1.20400.20402 \
@@ -211,7 +211,7 @@ MODGO_MODULES =	\
 	github.com/dustin/go-humanize							 v1.0.1 \
 	github.com/envoyproxy/go-control-plane						 v0.13.1 \
 	github.com/envoyproxy/protoc-gen-validate					 v1.1.0 \
-	github.com/evanw/esbuild							 v0.25.2 \
+	github.com/evanw/esbuild							 v0.25.3 \
 	github.com/fatih/color								 v1.18.0 \
 	github.com/felixge/httpsnoop							 v1.0.4 \
 	github.com/fortytw2/leaktest							 v1.3.0 \
@@ -332,8 +332,8 @@ MODGO_MODULES =	\
 	github.com/tdewolff/test							 v1.0.11-0.20240106005702-7de5f7df4739 \
 	github.com/tetratelabs/wazero							 v1.9.0 \
 	github.com/ugorji/go/codec							 v1.2.7 \
-	github.com/yuin/goldmark							 v1.7.9 \
-	github.com/yuin/goldmark-emoji							 v1.0.5 \
+	github.com/yuin/goldmark							 v1.7.10 \
+	github.com/yuin/goldmark-emoji							 v1.0.6 \
 	go.opencensus.io								 v0.24.0 \
 	go.opentelemetry.io/auto/sdk							 v1.1.0 \
 	go.opentelemetry.io/contrib/detectors/gcp					 v1.32.0 \
@@ -596,7 +596,6 @@ MODGO_MODFILES =	\
 	github.com/yuin/goldmark							 v1.2.1 \
 	github.com/yuin/goldmark							 v1.3.5 \
 	github.com/yuin/goldmark							 v1.4.13 \
-	github.com/yuin/goldmark							 v1.7.1 \
 	github.com/yuin/goldmark							 v1.7.8 \
 	go.opencensus.io								 v0.21.0 \
 	go.opencensus.io								 v0.22.0 \
