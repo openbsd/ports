@@ -27,7 +27,7 @@ MODULES=		devel/meson
 COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c
 
-BUILD_DEPENDS=		textproc/docbook-xsl
+BUILD_DEPENDS=		textproc/pandoc
 
 # don't pick up UnicodeData.txt from texlive_texmf-buildset
 BUILD_DEPENDS +=	textproc/unicode/ucd
