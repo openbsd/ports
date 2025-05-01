@@ -8,7 +8,7 @@ COMMENT-main=	Python bindings for wxWidgets C++ class library
 COMMENT-media=	wxMedia support for wxPython
 COMMENT-webview=wxWebView support for wxPython
 
-V=		4.2.2
+V=		4.2.3
 DISTNAME=	wxPython-${V}
 PKGNAME=	py-${DISTNAME}
 
@@ -19,9 +19,6 @@ FULLPKGNAME-webview=	py3-wxPython-webview-${V}
 FULLPKGPATH-main=	${BUILD_PKGPATH}
 FULLPKGPATH-media=	${BUILD_PKGPATH},-media
 FULLPKGPATH-webview=	${BUILD_PKGPATH},-webview
-REVISION-main=		0
-REVISION-media=		0
-REVISION-webview=	0
 
 CATEGORIES=	x11 devel
 
