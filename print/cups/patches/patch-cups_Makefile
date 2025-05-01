@@ -1,7 +1,7 @@
 Index: cups/Makefile
 --- cups/Makefile.orig
 +++ cups/Makefile
-@@ -354,11 +354,9 @@ uninstall:
+@@ -355,11 +355,9 @@ uninstall:
  # libcups.so.2
  #
  
@@ -14,7 +14,7 @@ Index: cups/Makefile
  
  
  #
-@@ -420,11 +418,9 @@ libcups2.def: $(LIBOBJS) $(IMAGEOBJS) Makefile
+@@ -421,11 +419,9 @@ libcups2.def: $(LIBOBJS) $(IMAGEOBJS) Makefile
  # libcupsimage.so.2
  #
  
