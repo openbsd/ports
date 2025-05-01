@@ -2,7 +2,7 @@ PKG_ARCH=	*
 
 COMMENT=	SPICE protocol headers
 
-DISTNAME=	spice-protocol-0.14.4
+DISTNAME=	spice-protocol-0.14.5
 
 CATEGORIES=	devel net
 
