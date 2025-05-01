@@ -2,7 +2,7 @@ COMMENT-main =		C++ cross-platform GUI toolkit
 COMMENT-media =		wxMediaCtrl class for wxWidgets
 COMMENT-webview =	wxWebView class for wxWidgets
 
-V =			3.2.7
+V =			3.2.8
 DISTNAME =		wxWidgets-${V}
 PKGNAME-main =		wxWidgets-gtk3-${V}
 PKGNAME-media =		wxWidgets-media-${V}
@@ -14,7 +14,7 @@ EXTRACT_SUFX =		.tar.bz2
 
 MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-SO_VERSION =		0.1
+SO_VERSION =		0.2
 .for _lib in \
 wx_baseu-3.2 wx_baseu_net-3.2 wx_baseu_xml-3.2 wx_gtk3u_adv-3.2 wx_gtk3u_aui-3.2 wx_gtk3u_core-3.2 wx_gtk3u_gl-3.2 wx_gtk3u_html-3.2 wx_gtk3u_media-3.2 wx_gtk3u_propgrid-3.2 wx_gtk3u_qa-3.2 wx_gtk3u_ribbon-3.2 wx_gtk3u_richtext-3.2 wx_gtk3u_stc-3.2 wx_gtk3u_xrc-3.2 wx_gtk3u_webview-3.2
 SHARED_LIBS +=		${_lib} ${SO_VERSION}
