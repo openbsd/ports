@@ -20,7 +20,7 @@ Index: js/misc/loginManager.js
          let version = result.deepUnpack()[0].deepUnpack();
 -        return haveSystemd() && versionCompare('3.5.91', version);
 +        return versionCompare('3.5.91', version);
-     } catch (e) {
+     } catch {
          return false;
      }
 @@ -82,7 +88,7 @@ export function getLoginManager() {
