@@ -4,8 +4,7 @@ USE_WXNEEDED=		Yes
 COMMENT=		GObject based library for rendering epub docs
 
 GNOME_PROJECT=		libgepub
-GNOME_VERSION=		0.7.1
-REVISION=		0
+GNOME_VERSION=		0.7.3
 
 CATEGORIES=		graphics
 
