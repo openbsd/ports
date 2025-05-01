@@ -9,12 +9,12 @@ COMPILER_LANGS=		c c++
 
 WANTLIB += ${COMPILER_LIBCXX} FLAC X11 Xdamage Xext Xfixes Xtst
 WANTLIB += bz2 cairo cairo-gobject gdk-3 gdk_pixbuf-2.0 gio-2.0
-WANTLIB += glib-2.0 gobject-2.0 gstallocators-1.0 gstaudio-1.0
-WANTLIB += gstbase-1.0 gstfft-1.0 gstgl-1.0 gstnet-1.0 gstpbutils-1.0
-WANTLIB += gstreamer-1.0 gstriff-1.0 gstrtp-1.0 gstrtsp-1.0 gstsdp-1.0
-WANTLIB += gsttag-1.0 gstvideo-1.0 gtk-3 intl jpeg m mp3lame nettle
-WANTLIB += opencore-amrnb opencore-amrwb orc-0.4 png shout speex
-WANTLIB += tag twolame v4l2 vpx wavpack xml2 z
+WANTLIB += glib-2.0 gobject-2.0 gstaudio-1.0 gstbase-1.0 gstfft-1.0
+WANTLIB += gstgl-1.0 gstnet-1.0 gstpbutils-1.0 gstreamer-1.0 gstriff-1.0
+WANTLIB += gstrtp-1.0 gstrtsp-1.0 gstsdp-1.0 gsttag-1.0 gstvideo-1.0
+WANTLIB += gtk-3 intl jpeg m mp3lame nettle opencore-amrnb opencore-amrwb
+WANTLIB += orc-0.4 png shout speex tag twolame vpx wavpack xml2
+WANTLIB += z
 
 LIB_DEPENDS=		multimedia/gstreamer1/plugins-base=${V} \
 			archivers/bzip2 \
@@ -25,7 +25,6 @@ LIB_DEPENDS=		multimedia/gstreamer1/plugins-base=${V} \
 			audio/taglib \
 			audio/twolame \
 			audio/wavpack \
-			multimedia/libv4l \
 			multimedia/libvpx \
 			net/libshout \
 			x11/gtk+3
@@ -53,6 +52,10 @@ CONFIGURE_ARGS=		-Daalib=disabled \
 			-Dwaveform=disabled \
 			-Dv4l2-gudev=disabled \
 			-Drpicamsrc=disabled
+
+# XXX
+# ../gst-plugins-good-1.26.1/sys/v4l2/gstv4l2object.c:601:25: error: use of undeclared identifier 'v4l2_ioctl_wrapper'
+CONFIGURE_ARGS +=	-Dv4l2=disabled
 
 .if ${MACHINE_ARCH} == "amd64"
 BUILD_DEPENDS +=	devel/nasm

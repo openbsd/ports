@@ -63,6 +63,7 @@ share/gtk-doc/html/GStreamer-${API}/additional/design/interlaced-video.html
 share/gtk-doc/html/GStreamer-${API}/additional/design/keyframe-force.html
 share/gtk-doc/html/GStreamer-${API}/additional/design/latency.html
 share/gtk-doc/html/GStreamer-${API}/additional/design/live-source.html
+share/gtk-doc/html/GStreamer-${API}/additional/design/machine-learning-analytics.html
 share/gtk-doc/html/GStreamer-${API}/additional/design/mediatype-audio-raw.html
 share/gtk-doc/html/GStreamer-${API}/additional/design/mediatype-text-raw.html
 share/gtk-doc/html/GStreamer-${API}/additional/design/mediatype-video-raw.html
@@ -2513,6 +2514,8 @@ share/gtk-doc/html/GStreamer-${API}/ogg/oggparse.html
 share/gtk-doc/html/GStreamer-${API}/ogg/ogmaudioparse.html
 share/gtk-doc/html/GStreamer-${API}/ogg/ogmtextparse.html
 share/gtk-doc/html/GStreamer-${API}/ogg/ogmvideoparse.html
+share/gtk-doc/html/GStreamer-${API}/onnx/
+share/gtk-doc/html/GStreamer-${API}/onnx/index.html
 share/gtk-doc/html/GStreamer-${API}/openal/
 share/gtk-doc/html/GStreamer-${API}/openal/index.html
 share/gtk-doc/html/GStreamer-${API}/openal/openalsink.html
@@ -3290,6 +3293,7 @@ share/gtk-doc/html/GStreamer-${API}/va/
 share/gtk-doc/html/GStreamer-${API}/va/GstJpegDecoder.html
 share/gtk-doc/html/GStreamer-${API}/va/GstVaBaseEnc.html
 share/gtk-doc/html/GStreamer-${API}/va/GstVaBaseTransform.html
+share/gtk-doc/html/GStreamer-${API}/va/GstVaCodecAlphaDecodeBin.html
 share/gtk-doc/html/GStreamer-${API}/va/GstVaCompositorPad.html
 share/gtk-doc/html/GStreamer-${API}/va/index.html
 share/gtk-doc/html/GStreamer-${API}/va/vaav1dec.html
@@ -3298,12 +3302,17 @@ share/gtk-doc/html/GStreamer-${API}/va/vacompositor.html
 share/gtk-doc/html/GStreamer-${API}/va/vadeinterlace.html
 share/gtk-doc/html/GStreamer-${API}/va/vah264dec.html
 share/gtk-doc/html/GStreamer-${API}/va/vah264enc.html
+share/gtk-doc/html/GStreamer-${API}/va/vah264lpenc.html
 share/gtk-doc/html/GStreamer-${API}/va/vah265dec.html
 share/gtk-doc/html/GStreamer-${API}/va/vah265enc.html
+share/gtk-doc/html/GStreamer-${API}/va/vah265lpenc.html
 share/gtk-doc/html/GStreamer-${API}/va/vajpegdec.html
+share/gtk-doc/html/GStreamer-${API}/va/vajpegenc.html
 share/gtk-doc/html/GStreamer-${API}/va/vampeg2dec.html
 share/gtk-doc/html/GStreamer-${API}/va/vapostproc.html
+share/gtk-doc/html/GStreamer-${API}/va/vavp8alphadecodebin.html
 share/gtk-doc/html/GStreamer-${API}/va/vavp8dec.html
+share/gtk-doc/html/GStreamer-${API}/va/vavp9alphadecodebin.html
 share/gtk-doc/html/GStreamer-${API}/va/vavp9dec.html
 share/gtk-doc/html/GStreamer-${API}/vaapi/
 share/gtk-doc/html/GStreamer-${API}/vaapi/GstVaapiEncode.html
@@ -3529,6 +3538,7 @@ share/gtk-doc/html/GStreamer-${API}/webrtcdsp/index.html
 share/gtk-doc/html/GStreamer-${API}/webrtcdsp/webrtcdsp.html
 share/gtk-doc/html/GStreamer-${API}/webrtcdsp/webrtcechoprobe.html
 share/gtk-doc/html/GStreamer-${API}/webrtclib/
+share/gtk-doc/html/GStreamer-${API}/webrtclib/GstWebRTCICEStream.html
 share/gtk-doc/html/GStreamer-${API}/webrtclib/gstwebrtc-datachannel.html
 share/gtk-doc/html/GStreamer-${API}/webrtclib/gstwebrtc-dtlstransport.html
 share/gtk-doc/html/GStreamer-${API}/webrtclib/gstwebrtc-icetransport.html
@@ -3537,7 +3547,6 @@ share/gtk-doc/html/GStreamer-${API}/webrtclib/gstwebrtc-sender.html
 share/gtk-doc/html/GStreamer-${API}/webrtclib/gstwebrtc-sessiondescription.html
 share/gtk-doc/html/GStreamer-${API}/webrtclib/gstwebrtc-transceiver.html
 share/gtk-doc/html/GStreamer-${API}/webrtclib/gstwebrtcice.html
-share/gtk-doc/html/GStreamer-${API}/webrtclib/icestream.html
 share/gtk-doc/html/GStreamer-${API}/webrtclib/index.html
 share/gtk-doc/html/GStreamer-${API}/webrtclib/webrtc.html
 share/gtk-doc/html/GStreamer-${API}/webrtclib/webrtc_fwd.html

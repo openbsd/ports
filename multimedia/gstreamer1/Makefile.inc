@@ -13,7 +13,7 @@
 
 PORTROACH=		limitw:1,even
 
-V ?=			1.26.0
+V ?=			1.26.1
 API=			1.0
 SUBST_VARS +=		API
 

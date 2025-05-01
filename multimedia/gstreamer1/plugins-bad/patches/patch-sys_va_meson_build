@@ -1,7 +1,7 @@
 Index: sys/va/meson.build
 --- sys/va/meson.build.orig
 +++ sys/va/meson.build
-@@ -88,7 +88,7 @@ plugin_sources += {
+@@ -89,7 +89,7 @@ plugin_sources += {
    'va': pathsep.join(doc_sources)
  }
  
@@ -10,7 +10,7 @@ Index: sys/va/meson.build
    subdir_done()
  endif
  
-@@ -109,7 +109,7 @@ extra_args = [
+@@ -110,7 +110,7 @@ extra_args = [
  extra_dep = []
  c_std_arg = ['c_std=c99']
  
