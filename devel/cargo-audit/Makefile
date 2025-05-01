@@ -1,8 +1,6 @@
 COMMENT =		audit Cargo.lock files for security vulnerabilities
 
-# https://github.com/rustsec/rustsec/issues/429
-V =			0.13.1
-REVISION =		3
+V =			0.21.2
 CRATE =			cargo-audit
 PKGNAME =		${CRATE}-${V}
 
