@@ -1,7 +1,7 @@
 Index: src/check-symbols.py
 --- src/check-symbols.py.orig
 +++ src/check-symbols.py
-@@ -31,7 +31,7 @@ tested = False
+@@ -32,7 +32,7 @@ tested = False
  stat = 0
  
  for soname in ['harfbuzz', 'harfbuzz-subset', 'harfbuzz-icu', 'harfbuzz-gobject', 'harfbuzz-cairo']:

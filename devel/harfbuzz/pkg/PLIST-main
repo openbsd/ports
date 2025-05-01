@@ -1,6 +1,5 @@
 @pkgpath devel/harfbuzz
 @bin bin/hb-info
-@bin bin/hb-ot-shape-closure
 @bin bin/hb-shape
 @bin bin/hb-subset
 @bin bin/hb-view
@@ -36,6 +35,7 @@ include/harfbuzz/hb-ot-shape.h
 include/harfbuzz/hb-ot-var.h
 include/harfbuzz/hb-ot.h
 include/harfbuzz/hb-paint.h
+include/harfbuzz/hb-script-list.h
 include/harfbuzz/hb-set.h
 include/harfbuzz/hb-shape-plan.h
 include/harfbuzz/hb-shape.h
