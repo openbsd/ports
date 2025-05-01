@@ -4,7 +4,7 @@ MODPY_DISTV =	2.9
 DISTNAME=	Mnemosyne-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:L}
 CATEGORIES=	games education
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	https://www.mnemosyne-proj.org/
 
