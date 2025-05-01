@@ -1,9 +1,8 @@
 COMMENT =		friendly interactive shell
 
-V =			4.0.1
+V =			4.0.2
 
 DISTNAME =		fish-${V}
-REVISION =		0
 
 SITES =			https://github.com/fish-shell/fish-shell/releases/download/${V}/
 DIST_TUPLE +=		github fish-shell rust-pcre2 0.2.9-utf32 .

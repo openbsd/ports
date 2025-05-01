@@ -540,6 +540,7 @@ share/fish/completions/gimp.fish
 share/fish/completions/gio.fish
 share/fish/completions/git-lfs.fish
 share/fish/completions/git-sizer.fish
+share/fish/completions/git-subtree.fish
 share/fish/completions/git.fish
 share/fish/completions/gitk.fish
 share/fish/completions/gnome-extensions.fish
@@ -1126,6 +1127,7 @@ share/fish/completions/winemaker.fish
 share/fish/completions/winetricks.fish
 share/fish/completions/wireshark.fish
 share/fish/completions/wish.fish
+share/fish/completions/wlr-randr.fish
 share/fish/completions/wpa_cli.fish
 share/fish/completions/wpctl.fish
 share/fish/completions/wslpath.fish
