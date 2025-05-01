@@ -1,7 +1,7 @@
 COMMENT =		personal and small-business financial-accounting software
 
 GNOME_PROJECT =		gnucash
-GNOME_VERSION =		5.10
+GNOME_VERSION =		5.11
 EXTRACT_SUFX =		.tar.bz2
 
 SHARED_LIBS +=  gnc-core-utils       1.2      # unknown
@@ -19,14 +19,15 @@ MAINTAINER =		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} aqbanking atk-1.0 boost_date_time-mt
-WANTLIB += boost_filesystem-mt boost_locale-mt boost_program_options-mt
-WANTLIB += boost_regex-mt boost_system-mt c cairo cairo-gobject
+WANTLIB += ${COMPILER_LIBCXX} aqbanking atk-1.0 boost_atomic-mt
+WANTLIB += boost_chrono-mt boost_date_time-mt boost_filesystem-mt
+WANTLIB += boost_locale-mt boost_program_options-mt boost_regex-mt
+WANTLIB += boost_system-mt boost_thread-mt c cairo cairo-gobject
 WANTLIB += dbi gc gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
 WANTLIB += gobject-2.0 gtk-3 guile-3.0 gwengui-gtk3 gwenhywfar
-WANTLIB += harfbuzz icudata icui18n icuuc intl javascriptcoregtk-4.1
-WANTLIB += m ofx pango-1.0 pangocairo-1.0 secret-1 soup-3.0
-WANTLIB += webkit2gtk-4.1 xml2 xslt z
+WANTLIB += harfbuzz icui18n icuuc intl javascriptcoregtk-4.1 m
+WANTLIB += ofx pango-1.0 pangocairo-1.0 secret-1 soup-3.0 webkit2gtk-4.1
+WANTLIB += xml2 xslt z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -50,6 +51,7 @@ RUN_DEPENDS +=		converters/p5-DateManip \
 			misc/p5-Finance-Quote
 
 LIB_DEPENDS =		databases/libdbi \
+			devel/boehm-gc \
 			devel/boost \
 			devel/gwenhywfar \
 			devel/libofx \
