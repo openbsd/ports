@@ -179,6 +179,8 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}s
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}sessionmanager.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}sms_voice.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}sms_voice.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}socialmessaging.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}socialmessaging.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}streamingoutputarg.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}streamingoutputarg.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/${MODPY_PYCACHE}toplevelbool.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -684,6 +686,7 @@ lib/python${MODPY_VERSION}/site-packages/awscli/customizations/servicecatalog/ut
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/sessendemail.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/sessionmanager.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/sms_voice.py
+lib/python${MODPY_VERSION}/site-packages/awscli/customizations/socialmessaging.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/streamingoutputarg.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/toplevelbool.py
 lib/python${MODPY_VERSION}/site-packages/awscli/customizations/translate.py
