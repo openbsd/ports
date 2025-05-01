@@ -62,7 +62,8 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 			lang/vala \
 			textproc/unicode/cldr,-annotations \
 			textproc/unicode/emoji \
-			textproc/unicode/ucd
+			textproc/unicode/ucd \
+			wayland/wayland-protocols
 
 RUN_DEPENDS-main =	${RUN_DEPENDS} \
 			devel/desktop-file-utils \
