@@ -1,10 +1,10 @@
 COMMENT=		generic spell checking library
 
-V=			2.8.2
+V=			2.8.4
 DISTNAME=		enchant-${V}
 PKGNAME=		enchant2-${V}
 
-SHARED_LIBS +=  enchant-2            1.2      # 10.2
+SHARED_LIBS +=  enchant-2            1.2      # 10.4
 
 CATEGORIES=		textproc
 
@@ -25,6 +25,8 @@ SITES=			https://github.com/AbiWord/enchant/releases/download/v${V}/
 COMPILER=		base-clang ports-gcc
 
 USE_GMAKE=		Yes
+
+BUILD_DEPENDS=		lang/vala
 
 LIB_DEPENDS=		devel/glib2 \
 			textproc/aspell/core \

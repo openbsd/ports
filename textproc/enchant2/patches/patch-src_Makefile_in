@@ -1,8 +1,8 @@
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -858,7 +858,7 @@ uninstall-man: uninstall-man1
- 
+@@ -1238,7 +1238,7 @@ dummy.vala: $(BUILT_VAPIS) $(VAPIS)
+ util.h util.vapi: libutil.la
  
  .1.html:
 -	groff -mandoc -Thtml $< > $@
