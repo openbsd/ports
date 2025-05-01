@@ -1,9 +1,11 @@
 COMMENT=		AWS SDK for Python
 
-MODPY_DISTV=		1.37.18
+MODPY_DISTV=		1.38.6
 DISTNAME=		boto3-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
-REVISION=		0
+
+# XXX 1.38.6 is not fetchable on pythonhosted.org; see MODPY_PI
+DIST_TUPLE=		github boto boto3 ${MODPY_DISTV} .
 
 CATEGORIES=		net devel
 
@@ -16,11 +18,11 @@ PERMIT_PACKAGE=		Yes
 
 MODULES=		lang/python
 
-MODPY_PI=		Yes
+#MODPY_PI=		Yes
 MODPY_PYBUILD=		setuptools
 
 RUN_DEPENDS=		devel/py-jmespath \
 			net/py-botocore=${MODPY_DISTV} \
-			net/py-s3transfer>=0.11.0,<0.12.0
+			net/py-s3transfer>=0.12.0,<0.13.0
 
 .include <bsd.port.mk>
