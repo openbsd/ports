@@ -1,6 +1,6 @@
 COMMENT=		tool/library for managing platform virtualization
 
-DISTNAME=		libvirt-11.1.0
+DISTNAME=		libvirt-11.2.0
 
 CATEGORIES=		sysutils devel emulators
 
@@ -82,7 +82,8 @@ DISABLED_FEATURES +=	storage_disk storage_fs storage_gluster storage_iscsi \
 			storage_iscsi_direct storage_lvm storage_mpath \
 			storage_rbd storage_vstorage storage_zfs
 
-CONFIGURE_ARGS=		-Dinit_script=none
+CONFIGURE_ARGS=		-Dinit_script=none \
+			-Drunstatedir=/var/run
 
 # XXX use a dedicated unpriv user/group? (e.g. _libvirt)
 CONFIGURE_ARGS +=	-Dqemu_user=root \
