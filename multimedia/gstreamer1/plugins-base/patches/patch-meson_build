@@ -1,0 +1,19 @@
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -399,6 +399,7 @@ else
+ endif
+ 
+ base_platform_dep = []
++if host_machine.system() != 'openbsd'
+ # Check for libatomic for use of C11 atomics: some architectures need
+ # to link explicitly to this library.
+ # TODO: Once meson 1.7 is in use, this can be updated to
+@@ -406,6 +407,7 @@ base_platform_dep = []
+ atomic_dep = cc.find_library('atomic', required: false)
+ 
+ base_platform_dep += [atomic_dep]
++endif
+ 
+ # Used to build SSE* things in audio-resampler
+ sse_args = '-msse'
