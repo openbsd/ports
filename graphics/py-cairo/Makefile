@@ -3,8 +3,7 @@ NOT_FOR_ARCHS=		m88k
 
 COMMENT=		cairo bindings for Python
 
-MODPY_DISTV=	1.27.0
-REVISION=		1
+MODPY_DISTV=		1.28.0
 GH_ACCOUNT=		pygobject
 GH_PROJECT=		pycairo
 GH_TAGNAME=		v${MODPY_DISTV}
