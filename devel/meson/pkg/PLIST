@@ -590,6 +590,8 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}cove
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}coverage.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}delwithsuffix.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}delwithsuffix.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}depaccumulate.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}depaccumulate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}depfixer.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}depfixer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}depscan.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -622,6 +624,8 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}repr
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}reprotest.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}run_tool.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}run_tool.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}rustdoc.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}rustdoc.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}scanbuild.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}scanbuild.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/${MODPY_PYCACHE}symbolextractor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -645,6 +649,7 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/cmd_or_ps.ps1
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/copy.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/coverage.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/delwithsuffix.py
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/depaccumulate.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/depfixer.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/depscan.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/dirchanger.py
@@ -661,6 +666,7 @@ lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/python_info.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/regen_checker.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/reprotest.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/run_tool.py
+lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/rustdoc.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/scanbuild.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/symbolextractor.py
 lib/python${MODPY_VERSION}/site-packages/mesonbuild/scripts/tags.py
