@@ -1,10 +1,9 @@
 COMMENT =		enhanced interactive Python shell
 
 # spyder does not support ipython 9.x yet
-MODPY_DISTV =		8.35.0
+MODPY_DISTV =		8.36.0
 DISTNAME =		ipython-${MODPY_DISTV}
 PKGNAME =		ipython${MODPY_MAJOR_VERSION}-${MODPY_DISTV}
-REVISION =		0
 
 CATEGORIES =		devel
 
