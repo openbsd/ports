@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1710 2025/04/24 09:52:40 landry Exp $
+# $OpenBSD: Quirks.pm,v 1.1711 2025/05/02 06:19:42 rsadowski Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1248,6 +1248,7 @@ setup_obsolete_reason(
 	10 => 'gotosocial',
 	5 => 'xsd',
 	29 => 'fastnetmon',
+	3 => 'kross-interpreters-kf5',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
