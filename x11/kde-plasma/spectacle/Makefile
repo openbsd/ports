@@ -1,6 +1,7 @@
 COMMENT =	KDE screen capture and screenshot program
 DISTNAME =	spectacle-${VERSION}
 CATEGORIES =	x11
+REVISION =	0
 
 # From KDE Gear to KDE Plasma 6.0
 EPOCH =		0
@@ -25,15 +26,16 @@ WANTLIB += KirigamiPlatform LayerShellQtInterface Qt6Concurrent
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Multimedia Qt6Network Qt6OpenGL
 WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
 WANTLIB += Qt6Quick Qt6QuickControls2 Qt6QuickTemplates2 Qt6WaylandClient
-WANTLIB += Qt6Widgets Qt6Xml X11 c m wayland-client wayland-cursor
-WANTLIB += xcb xcb-cursor xcb-image xcb-randr xcb-render xcb-shape
-WANTLIB += xcb-shm xcb-util xcb-xfixes xkbcommon
+WANTLIB += Qt6Widgets Qt6Xml X11 c m opencv_core opencv_imgproc
+WANTLIB += wayland-client wayland-cursor xcb xcb-cursor xcb-image
+WANTLIB += xcb-randr xcb-render xcb-shape xcb-shm xcb-util xcb-xfixes
+WANTLIB += xkbcommon
 
 BUILD_DEPENDS =	wayland/libinput-openbsd \
 		wayland/wayland-protocols \
 		wayland/plasma-wayland-protocols
 
-LIB_DEPENDS +=	devel/kf6/kcolorscheme \
+LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kcompletion \
 		devel/kf6/kconfig \
 		devel/kf6/kconfigwidgets \
@@ -56,6 +58,7 @@ LIB_DEPENDS +=	devel/kf6/kcolorscheme \
 		devel/kf6/purpose \
 		devel/kf6/solid \
 		wayland/wayland \
+		graphics/opencv \
 		x11/kde-plasma/kpipewire>=${VERSION} \
 		x11/kde-plasma/layer-shell-qt>=${VERSION} \
 		x11/qt6/qtdeclarative \
