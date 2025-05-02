@@ -1,7 +1,6 @@
 COMMENT =	calendar and scheduling component of kontact
 DISTNAME =	korganizer-${VERSION}
 CATEGORIES =	net www
-REVISION =	0
 
 SHARED_LIBS +=  korganizer_core         3.1 # 5.13.2
 SHARED_LIBS +=  korganizer_interfaces   1.1 # 5.13.2
@@ -23,9 +22,9 @@ WANTLIB += KPim6AkonadiWidgets KPim6CalendarSupport KPim6CalendarUtils
 WANTLIB += KPim6EventViews KPim6GrantleeTheme KPim6IMAP KPim6IdentityManagementCore
 WANTLIB += KPim6IncidenceEditor KPim6KontactInterface KPim6LdapCore
 WANTLIB += KPim6LdapWidgets KPim6Libkdepim KPim6MailTransport
-WANTLIB += KPim6Mime KPim6PimCommon KPim6PimCommonAkonadi Qt6Core
-WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6PrintSupport Qt6Qml Qt6Widgets
-WANTLIB += Qt6Xml X11 c m
+WANTLIB += KPim6Mime KPim6PimCommon KPim6PimCommonActivities KPim6PimCommonAkonadi
+WANTLIB += PlasmaActivities Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6PrintSupport Qt6Qml Qt6Widgets Qt6Xml X11 c m
 
 MODKDE_ICON_CACHE = yes
 MODKDE_TRANSLATIONS = yes
@@ -67,6 +66,7 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/kxmlgui \
 		devel/kf6/solid \
 		textproc/ktextaddons \
+		x11/kde-plasma/plasma-activities \
 		x11/kde-applications/akonadi-calendar>=${VERSION} \
 		x11/kde-applications/akonadi-contacts>=${VERSION} \
 		x11/kde-applications/akonadi-mime>=${VERSION} \

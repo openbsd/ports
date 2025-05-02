@@ -88,6 +88,7 @@ share/locale/fr/LC_MESSAGES/lokalize.mo
 share/locale/ga/LC_MESSAGES/lokalize.mo
 share/locale/gl/LC_MESSAGES/lokalize.mo
 share/locale/he/LC_MESSAGES/lokalize.mo
+share/locale/hi/LC_MESSAGES/lokalize.mo
 share/locale/hr/LC_MESSAGES/lokalize.mo
 share/locale/hu/LC_MESSAGES/lokalize.mo
 share/locale/ia/LC_MESSAGES/lokalize.mo
@@ -97,6 +98,7 @@ share/locale/is/LC_MESSAGES/lokalize.mo
 share/locale/it/LC_MESSAGES/lokalize.mo
 share/locale/ja/LC_MESSAGES/lokalize.mo
 share/locale/ka/LC_MESSAGES/lokalize.mo
+share/locale/kab/LC_MESSAGES/lokalize.mo
 share/locale/kk/LC_MESSAGES/lokalize.mo
 share/locale/km/LC_MESSAGES/lokalize.mo
 share/locale/ko/LC_MESSAGES/lokalize.mo
@@ -117,6 +119,7 @@ share/locale/pt/LC_MESSAGES/lokalize.mo
 share/locale/pt_BR/LC_MESSAGES/lokalize.mo
 share/locale/ro/LC_MESSAGES/lokalize.mo
 share/locale/ru/LC_MESSAGES/lokalize.mo
+share/locale/sa/LC_MESSAGES/lokalize.mo
 share/locale/sk/LC_MESSAGES/lokalize.mo
 share/locale/sl/LC_MESSAGES/lokalize.mo
 share/locale/sq/LC_MESSAGES/lokalize.mo

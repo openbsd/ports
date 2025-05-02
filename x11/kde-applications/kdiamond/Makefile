@@ -1,13 +1,12 @@
 COMMENT =	three-in-a-row game
 DISTNAME =	kdiamond-${VERSION}
 CATEGORIES =	games
-REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/kdiamond
 
 WANTLIB += ${COMPILER_LIBCXX} GL KDEGames6 KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
-WANTLIB += KF6DBusAddons KF6GuiAddons KF6I18n KF6Notifications
+WANTLIB += KF6DBusAddons KF6GuiAddons KF6I18n KF6IconThemes KF6Notifications
 WANTLIB += KF6NotifyConfig KF6WidgetsAddons KF6XmlGui Qt6Core
 WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6Qml Qt6Widgets Qt6Xml
 WANTLIB += c m
@@ -30,6 +29,7 @@ LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/knotifyconfig \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
+		devel/kf6/kiconthemes \
 		x11/kde-applications/libkdegames>=${VERSION} \
 		x11/qt6/qtdeclarative
 

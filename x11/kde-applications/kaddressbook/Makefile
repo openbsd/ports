@@ -1,7 +1,6 @@
 COMMENT =	addressbook viewer/frontend for KDE
 DISTNAME =	kaddressbook-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 SHARED_LIBS +=	KPim6AddressbookImportExport 0.0 # 0.0
 SHARED_LIBS +=  kaddressbookprivate          5.0 # 5.13.2
@@ -17,9 +16,10 @@ WANTLIB += KF6UserFeedbackCore KF6UserFeedbackWidgets KF6WidgetsAddons
 WANTLIB += KF6XmlGui KPim6AkonadiContactCore KPim6AkonadiContactWidgets
 WANTLIB += KPim6AkonadiCore KPim6AkonadiSearchDebug KPim6AkonadiWidgets
 WANTLIB += KPim6GrantleeTheme KPim6IMAP KPim6KontactInterface
-WANTLIB += KPim6Libkdepim KPim6Mime KPim6PimCommon KPim6PimCommonAkonadi
-WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6PrintSupport Qt6Qml
-WANTLIB += Qt6Widgets Qt6Xml c m
+WANTLIB += KPim6LdapCore KPim6LdapWidgets KPim6Libkdepim KPim6Mime
+WANTLIB += KPim6PimCommon KPim6PimCommonActivities KPim6PimCommonAkonadi
+WANTLIB += PlasmaActivities Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6PrintSupport Qt6Qml Qt6Widgets Qt6Xml c m
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes
@@ -60,10 +60,12 @@ LIB_DEPENDS =	devel/kf6/kcmutils \
 		x11/kde-applications/akonadi>=${VERSION} \
 		x11/kde-applications/grantleetheme>=${VERSION} \
 		x11/kde-applications/kimap>=${VERSION} \
+		x11/kde-applications/kldap>=${VERSION} \
 		x11/kde-applications/kmime>=${VERSION} \
 		x11/kde-applications/kontactinterface>=${VERSION} \
 		x11/kde-applications/libkdepim>=${VERSION} \
 		x11/kde-applications/pimcommon>=${VERSION} \
+		x11/kde-plasma/plasma-activities \
 		x11/qt6/qtdeclarative
 
 TEST_IS_INTERACTIVE =	X11

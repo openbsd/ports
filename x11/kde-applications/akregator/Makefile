@@ -3,7 +3,6 @@ USE_WXNEEDED =	Yes
 COMMENT =	news feed reader
 DISTNAME =	akregator-${VERSION}
 CATEGORIES =	net www
-REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/akregator
 

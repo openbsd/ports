@@ -1,7 +1,6 @@
 COMMENT =	world domination strategy game
 DISTNAME =	ksirk-${VERSION}
 CATEGORIES =	games
-REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/ksirk
 

@@ -41,6 +41,11 @@ lib/cmake/KWeatherCore/KWeatherCoreConfigVersion.cmake
 lib/cmake/KWeatherCore/KWeatherCoreTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KWeatherCore/KWeatherCoreTargets.cmake
 @lib lib/libKWeatherCore.so.${LIBKWeatherCore_VERSION}
+lib/qt6/qml/org/kde/weathercore/
+lib/qt6/qml/org/kde/weathercore/kde-qmlmodule.version
+lib/qt6/qml/org/kde/weathercore/kweathercoreqmlplugin.qmltypes
+@so lib/qt6/qml/org/kde/weathercore/libkweathercoreqmlplugin.so
+lib/qt6/qml/org/kde/weathercore/qmldir
 share/kf6/
 share/kf6/mkspecs/
 share/kf6/mkspecs/qt_KWeatherCore.pri
@@ -71,6 +76,7 @@ share/locale/ka/LC_MESSAGES/kweathercore6.mo
 share/locale/ko/LC_MESSAGES/kweathercore6.mo
 share/locale/lt/LC_MESSAGES/kweathercore6.mo
 share/locale/lv/LC_MESSAGES/kweathercore6.mo
+share/locale/nb/LC_MESSAGES/kweathercore6.mo
 share/locale/nl/LC_MESSAGES/kweathercore6.mo
 share/locale/nn/LC_MESSAGES/kweathercore6.mo
 share/locale/pa/LC_MESSAGES/kweathercore6.mo
@@ -78,6 +84,7 @@ share/locale/pl/LC_MESSAGES/kweathercore6.mo
 share/locale/pt/LC_MESSAGES/kweathercore6.mo
 share/locale/pt_BR/LC_MESSAGES/kweathercore6.mo
 share/locale/ru/LC_MESSAGES/kweathercore6.mo
+share/locale/sa/LC_MESSAGES/kweathercore6.mo
 share/locale/sk/LC_MESSAGES/kweathercore6.mo
 share/locale/sl/LC_MESSAGES/kweathercore6.mo
 share/locale/sv/LC_MESSAGES/kweathercore6.mo

@@ -1,7 +1,6 @@
 COMMENT =	KDE interface to GnuPG
 DISTNAME =	kgpg-${VERSION}
 CATEGORIES =	x11
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6Bookmarks KF6Codecs
 WANTLIB += KF6ColorScheme KF6Completion KF6ConfigCore KF6ConfigGui

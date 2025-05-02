@@ -10,4 +10,4 @@ Index: CMakeLists.txt
 +#check_include_file("linux/input.h" HAVE_LINUX_INPUT_H)
  
  find_package(Qt6 ${QT_MIN_VERSION} REQUIRED COMPONENTS Core DBus Widgets)
- 
+ if (Qt6Gui_VERSION VERSION_GREATER_EQUAL "6.10.0")

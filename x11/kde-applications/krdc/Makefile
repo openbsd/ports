@@ -1,7 +1,8 @@
+BROKEN = Depends on FreeRDP3
+
 COMMENT =	VNC and RDP  desktop client
 DISTNAME =	krdc-${VERSION}
 CATEGORIES =	net x11
-REVISION =	0
 
 SHARED_LIBS +=  krdccore               3.1 # 5.0
 

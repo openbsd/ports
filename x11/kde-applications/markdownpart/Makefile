@@ -1,7 +1,6 @@
 COMMENT =	KPart for viewing Markdown files
 DISTNAME =	markdownpart-${VERSION}
 CATEGORIES =	textproc
-REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/markdownpart/
 

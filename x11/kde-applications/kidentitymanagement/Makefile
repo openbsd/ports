@@ -1,7 +1,6 @@
 COMMENT =	KDE pim identities
 DISTNAME =	kidentitymanagement-${VERSION}
 CATEGORIES =	devel mail
-REVISION =	0
 
 SHARED_LIBS +=	KPim6IdentityManagementCore    0.1 # 0.0
 SHARED_LIBS +=	KPim6IdentityManagementQuick   0.0 # 0.0

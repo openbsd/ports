@@ -5,7 +5,7 @@ CATEGORIES =	devel geo
 SHARED_LIBS +=  KOpeningHours       0.1 # 21.8.1
 
 WANTLIB += ${COMPILER_LIBCXX} KF6Holidays KF6I18n Qt6Core Qt6Network
-WANTLIB += Qt6Qml boost_python${MODPY_VERSION:C/\.//g}-mt m ${MODPY_WANTLIB}
+WANTLIB += Qt6Qml intl m ${MODPY_WANTLIB}  util
 
 MODKDE_TRANSLATIONS = yes
 
@@ -13,10 +13,12 @@ MODULES +=	lang/python
 
 BUILD_DEPENDS =	devel/bison
 
-LIB_DEPENDS =	devel/boost \
+LIB_DEPENDS =	devel/gettext,-runtime \
 		devel/kf6/kholidays \
 		devel/kf6/ki18n \
 		x11/qt6/qtdeclarative
+
+MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
 post-install:
 	${MODPY_COMPILEALL} \

@@ -27,7 +27,7 @@ WANTLIB += KPim6AkonadiCore KPim6AkonadiMime KPim6AkonadiWidgets
 WANTLIB += KPim6CalendarUtils KPim6GrantleeTheme KPim6IdentityManagementCore
 WANTLIB += KPim6IdentityManagementWidgets KPim6MailTransport KPim6Mime
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets Qt6Xml
-WANTLIB += X11 c m vlc
+WANTLIB += X11 c m mpv vlc
 
 BUILD_DEPENDS =	devel/boost \
 		x11/kde-applications/mailcommon>=${VERSION}
@@ -70,6 +70,7 @@ LIB_DEPENDS =	devel/kf6/kauth \
 		textproc/ktextaddons \
 		devel/kf6/kiconthemes \
 		x11/vlc \
+		multimedia/mpv \
 		x11/kde-applications/akonadi-contacts>=${VERSION} \
 		x11/kde-applications/akonadi-mime>=${VERSION} \
 		x11/kde-applications/akonadi>=${VERSION} \

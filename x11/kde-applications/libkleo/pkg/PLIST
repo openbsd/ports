@@ -1,7 +1,6 @@
 include/KPim6/
 include/KPim6/Libkleo/
 include/KPim6/Libkleo/Libkleo/
-include/KPim6/Libkleo/Libkleo/AdjustingScrollArea
 include/KPim6/Libkleo/Libkleo/Algorithm
 include/KPim6/Libkleo/Libkleo/Assuan
 include/KPim6/Libkleo/Libkleo/AuditLogEntry
@@ -80,7 +79,6 @@ include/KPim6/Libkleo/Libkleo/UserIDProxyModel
 include/KPim6/Libkleo/Libkleo/UserIDSelectionCombo
 include/KPim6/Libkleo/Libkleo/Validation
 include/KPim6/Libkleo/libkleo/
-include/KPim6/Libkleo/libkleo/adjustingscrollarea.h
 include/KPim6/Libkleo/libkleo/algorithm.h
 include/KPim6/Libkleo/libkleo/assuan.h
 include/KPim6/Libkleo/libkleo/auditlogentry.h
@@ -233,6 +231,7 @@ share/locale/pt/LC_MESSAGES/libkleopatra6.mo
 share/locale/pt_BR/LC_MESSAGES/libkleopatra6.mo
 share/locale/ro/LC_MESSAGES/libkleopatra6.mo
 share/locale/ru/LC_MESSAGES/libkleopatra6.mo
+share/locale/sa/LC_MESSAGES/libkleopatra6.mo
 share/locale/se/LC_MESSAGES/libkleopatra6.mo
 share/locale/sk/LC_MESSAGES/libkleopatra6.mo
 share/locale/sl/LC_MESSAGES/libkleopatra6.mo

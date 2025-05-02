@@ -1,7 +1,6 @@
 COMMENT =	Akonadi management and debugging console
 DISTNAME =	akonadiconsole-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 SHARED_LIBS +=  akonadiconsole            2.0 # 5.13.2
 

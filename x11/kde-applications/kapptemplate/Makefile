@@ -4,10 +4,11 @@ CATEGORIES =	devel
 
 HOMEPAGE =	https://kde.org/applications/development/org.kde.kapptemplate
 
-WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6ConfigCore KF6ConfigGui
-WANTLIB += KF6CoreAddons KF6I18n Qt6Core Qt6Gui Qt6Network Qt6OpenGL
-WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
-WANTLIB += Qt6Widgets c m
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6ColorScheme KF6ConfigCore
+WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6I18n
+WANTLIB += KF6IconThemes KF6WidgetsAddons Qt6Core Qt6Gui Qt6Network
+WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
+WANTLIB += Qt6Quick Qt6QuickControls2 Qt6Widgets c m
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes
@@ -25,6 +26,10 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		devel/kf6/kconfig \
 		devel/kf6/kcoreaddons \
 		devel/kf6/ki18n \
+		devel/kf6/kcolorscheme \
+		devel/kf6/kiconthemes \
+		devel/kf6/kconfigwidgets \
+		devel/kf6/kwidgetsaddons \
 		x11/qt6/qtdeclarative
 
 post-extract:

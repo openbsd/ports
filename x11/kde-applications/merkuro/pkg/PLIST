@@ -7,6 +7,7 @@
 @lib lib/libmerkuro_contact.so.${LIBmerkuro_contact_VERSION}
 lib/qt6/qml/org/kde/akonadi/
 lib/qt6/qml/org/kde/akonadi/AgentConfigurationForm.qml
+lib/qt6/qml/org/kde/akonadi/CollectionChooserPage.qml
 lib/qt6/qml/org/kde/akonadi/CollectionComboBox.qml
 lib/qt6/qml/org/kde/akonadi/MobileCollectionComboBox.qml
 lib/qt6/qml/org/kde/akonadi/ProgressStatusBar.qml
@@ -16,16 +17,6 @@ lib/qt6/qml/org/kde/akonadi/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/akonadi/libakonadi_quick_plugin.so
 lib/qt6/qml/org/kde/akonadi/qmldir
 lib/qt6/qml/org/kde/merkuro/
-lib/qt6/qml/org/kde/merkuro/calendar/
-lib/qt6/qml/org/kde/merkuro/calendar/BottomToolBar.qml
-lib/qt6/qml/org/kde/merkuro/calendar/DatePopupSingleton.qml
-lib/qt6/qml/org/kde/merkuro/calendar/MenuBar.qml
-lib/qt6/qml/org/kde/merkuro/calendar/PriorityComboBox.qml
-lib/qt6/qml/org/kde/merkuro/calendar/ReminderDelegate.qml
-lib/qt6/qml/org/kde/merkuro/calendar/kde-qmlmodule.version
-@so lib/qt6/qml/org/kde/merkuro/calendar/libmerkuro_calendar_plugin.so
-lib/qt6/qml/org/kde/merkuro/calendar/merkuro_calendar_plugin.qmltypes
-lib/qt6/qml/org/kde/merkuro/calendar/qmldir
 lib/qt6/qml/org/kde/merkuro/components/
 lib/qt6/qml/org/kde/merkuro/components/BaseApplication.qml
 lib/qt6/qml/org/kde/merkuro/components/ColoredCheckbox.qml
@@ -53,14 +44,14 @@ lib/qt6/qml/org/kde/merkuro/contact/MenuBar.qml
 lib/qt6/qml/org/kde/merkuro/contact/Settings.qml
 lib/qt6/qml/org/kde/merkuro/contact/Sidebar.qml
 lib/qt6/qml/org/kde/merkuro/contact/kde-qmlmodule.version
-@so lib/qt6/qml/org/kde/merkuro/contact/libmerkuro_contact_plugin.so
-lib/qt6/qml/org/kde/merkuro/contact/merkuro_contact_plugin.qmltypes
+@so lib/qt6/qml/org/kde/merkuro/contact/libmerkuro_contactplugin.so
+lib/qt6/qml/org/kde/merkuro/contact/merkuro_contact.qmltypes
 lib/qt6/qml/org/kde/merkuro/contact/private/
 lib/qt6/qml/org/kde/merkuro/contact/private/AddressBookMenu.qml
 lib/qt6/qml/org/kde/merkuro/contact/private/ContactGroupPage.qml
 lib/qt6/qml/org/kde/merkuro/contact/private/ContactPage.qml
 lib/qt6/qml/org/kde/merkuro/contact/private/ContactsPage.qml
-lib/qt6/qml/org/kde/merkuro/contact/private/DeleteContactAction.qml
+lib/qt6/qml/org/kde/merkuro/contact/private/DeleteContactDialog.qml
 lib/qt6/qml/org/kde/merkuro/contact/private/Header.qml
 lib/qt6/qml/org/kde/merkuro/contact/private/PhoneNumberDialog.qml
 lib/qt6/qml/org/kde/merkuro/contact/private/QrCodePage.qml
@@ -114,6 +105,7 @@ share/locale/ca@valencia/LC_MESSAGES/merkuro.mo
 share/locale/ca@valencia/LC_MESSAGES/merkurolauncher.mo
 share/locale/ca@valencia/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
 share/locale/cs/LC_MESSAGES/merkuro.mo
+share/locale/cs/LC_MESSAGES/merkurolauncher.mo
 share/locale/cs/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
 share/locale/da/LC_MESSAGES/merkuro.mo
 share/locale/da/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
@@ -142,8 +134,10 @@ share/locale/gl/LC_MESSAGES/merkuro.mo
 share/locale/gl/LC_MESSAGES/merkurolauncher.mo
 share/locale/gl/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
 share/locale/he/LC_MESSAGES/merkuro.mo
+share/locale/he/LC_MESSAGES/merkurolauncher.mo
 share/locale/he/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
 share/locale/hi/LC_MESSAGES/merkuro.mo
+share/locale/hi/LC_MESSAGES/merkurolauncher.mo
 share/locale/hi/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
 share/locale/hu/LC_MESSAGES/merkuro.mo
 share/locale/hu/LC_MESSAGES/merkurolauncher.mo
@@ -167,6 +161,8 @@ share/locale/ko/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
 share/locale/lt/LC_MESSAGES/merkuro.mo
 share/locale/lt/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
 share/locale/lv/LC_MESSAGES/merkuro.mo
+share/locale/lv/LC_MESSAGES/merkurolauncher.mo
+share/locale/lv/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
 share/locale/nl/LC_MESSAGES/merkuro.mo
 share/locale/nl/LC_MESSAGES/merkurolauncher.mo
 share/locale/nl/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
@@ -177,11 +173,13 @@ share/locale/pl/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
 share/locale/pt/LC_MESSAGES/merkuro.mo
 share/locale/pt/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
 share/locale/pt_BR/LC_MESSAGES/merkuro.mo
-share/locale/pt_BR/LC_MESSAGES/merkurolauncher.mo
 share/locale/pt_BR/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
 share/locale/ru/LC_MESSAGES/merkuro.mo
 share/locale/ru/LC_MESSAGES/merkurolauncher.mo
 share/locale/ru/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
+share/locale/sa/LC_MESSAGES/merkuro.mo
+share/locale/sa/LC_MESSAGES/merkurolauncher.mo
+share/locale/sa/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo
 share/locale/sk/LC_MESSAGES/merkuro.mo
 share/locale/sk/LC_MESSAGES/merkurolauncher.mo
 share/locale/sk/LC_MESSAGES/plasma_applet_org.kde.merkuro.contact.mo

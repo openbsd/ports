@@ -1,7 +1,6 @@
 COMMENT =	KDE bookmarks editor
 DISTNAME =	keditbookmarks-${VERSION}
 CATEGORIES =	x11
-REVISION =	0
 
 SHARED_LIBS +=  kbookmarkmodel_private    2.0 # 5.97
 

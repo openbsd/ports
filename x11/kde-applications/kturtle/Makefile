@@ -1,7 +1,6 @@
 COMMENT =	KDE educational Logo programming environment
 DISTNAME =	kturtle-${VERSION}
 CATEGORIES =	games
-REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/kturtle
 

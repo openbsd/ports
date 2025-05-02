@@ -29,3 +29,4 @@ lib/qt6/plugins/plasma/kcms/systemsettings_qwidgets/
 share/kf6/mkspecs/
 share/kf6/mkspecs/qt_KCddb.pri
 share/qlogging-categories6/libkcddb.categories
+@tag update-desktop-database

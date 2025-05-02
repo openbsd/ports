@@ -1,7 +1,6 @@
 COMMENT =	Japanese reference tool for KDE
 DISTNAME =	kiten-${VERSION}
 CATEGORIES =	education
-REVISION =	0
 
 HOMEPAGE =	https://apps.kde.org/kiten
 

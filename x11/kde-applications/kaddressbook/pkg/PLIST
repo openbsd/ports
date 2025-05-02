@@ -32,6 +32,8 @@ lib/cmake/KPim6AddressbookImportExport/KPim6AddressbookImportExportTargets.cmake
 @lib lib/libKPim6AddressbookImportExport.so.${LIBKPim6AddressbookImportExport_VERSION}
 @lib lib/libkaddressbookprivate.so.${LIBkaddressbookprivate_VERSION}
 @so lib/qt6/plugins/kaddressbookpart.so
+@so lib/qt6/plugins/pim6/kcms/kaddressbook/kaddressbook_config_activities.so
+@so lib/qt6/plugins/pim6/kcms/kaddressbook/kaddressbook_config_ldap.so
 @so lib/qt6/plugins/pim6/kcms/kaddressbook/kaddressbook_config_plugins.so
 @so lib/qt6/plugins/pim6/kcms/kaddressbook/kaddressbook_config_userfeedback.so
 lib/qt6/plugins/pim6/kontact/
@@ -319,6 +321,7 @@ share/locale/fy/LC_MESSAGES/kaddressbook.mo
 share/locale/ga/LC_MESSAGES/kaddressbook.mo
 share/locale/gl/LC_MESSAGES/kaddressbook.mo
 share/locale/he/LC_MESSAGES/kaddressbook.mo
+share/locale/hi/LC_MESSAGES/kaddressbook.mo
 share/locale/hr/LC_MESSAGES/kaddressbook.mo
 share/locale/hu/LC_MESSAGES/kaddressbook.mo
 share/locale/ia/LC_MESSAGES/kaddressbook.mo
@@ -346,6 +349,7 @@ share/locale/pt/LC_MESSAGES/kaddressbook.mo
 share/locale/pt_BR/LC_MESSAGES/kaddressbook.mo
 share/locale/ro/LC_MESSAGES/kaddressbook.mo
 share/locale/ru/LC_MESSAGES/kaddressbook.mo
+share/locale/sa/LC_MESSAGES/kaddressbook.mo
 share/locale/se/LC_MESSAGES/kaddressbook.mo
 share/locale/sk/LC_MESSAGES/kaddressbook.mo
 share/locale/sl/LC_MESSAGES/kaddressbook.mo

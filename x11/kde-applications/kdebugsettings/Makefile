@@ -1,7 +1,6 @@
 COMMENT =	application to edit QLoggingCategory
 DISTNAME =	kdebugsettings-${VERSION}
 CATEGORIES =	x11 sysutils
-REVISION =	0
 
 SHARED_LIBS +=  kdebugsettings         6.1 # 5.0
 SHARED_LIBS +=  kdebugsettingscore     2.0 # 5.0

@@ -1,7 +1,6 @@
 COMMENT =	KDE PIM data exporter
 DISTNAME =	pim-data-exporter-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 SHARED_LIBS +=  pimdataexporterprivate    1.0 # 0.0
 

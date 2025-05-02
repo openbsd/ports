@@ -1,7 +1,6 @@
 COMMENT =	textedit with PIM-specific features
 DISTNAME =	kpimtextedit-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 SHARED_LIBS +=	KPim6TextEdit             0.0 # 0.0
 

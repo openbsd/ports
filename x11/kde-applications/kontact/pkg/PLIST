@@ -44,6 +44,9 @@ share/doc/HTML/nl/kontact/index.docbook
 share/doc/HTML/pt_BR/kontact/
 share/doc/HTML/pt_BR/kontact/index.cache.bz2
 share/doc/HTML/pt_BR/kontact/index.docbook
+share/doc/HTML/ru/kontact/
+share/doc/HTML/ru/kontact/index.cache.bz2
+share/doc/HTML/ru/kontact/index.docbook
 share/doc/HTML/sl/kontact/
 share/doc/HTML/sl/kontact/index.cache.bz2
 share/doc/HTML/sl/kontact/index.docbook
@@ -54,9 +57,15 @@ share/doc/HTML/uk/kontact/
 share/doc/HTML/uk/kontact/index.cache.bz2
 share/doc/HTML/uk/kontact/index.docbook
 share/icons/hicolor/128x128/apps/kontact.png
+share/icons/hicolor/144x144/
+share/icons/hicolor/144x144/apps/
+share/icons/hicolor/144x144/apps/kontact.png
 share/icons/hicolor/16x16/apps/kontact.png
 share/icons/hicolor/22x22/apps/kontact.png
 share/icons/hicolor/32x32/apps/kontact.png
+share/icons/hicolor/44x44/
+share/icons/hicolor/44x44/apps/
+share/icons/hicolor/44x44/apps/kontact.png
 share/icons/hicolor/48x48/apps/kontact.png
 share/icons/hicolor/64x64/apps/kontact.png
 share/icons/hicolor/scalable/apps/kontact.svg
@@ -116,6 +125,7 @@ share/locale/pt/LC_MESSAGES/kontact.mo
 share/locale/pt_BR/LC_MESSAGES/kontact.mo
 share/locale/ro/LC_MESSAGES/kontact.mo
 share/locale/ru/LC_MESSAGES/kontact.mo
+share/locale/sa/LC_MESSAGES/kontact.mo
 share/locale/se/LC_MESSAGES/kontact.mo
 share/locale/si/LC_MESSAGES/kontact.mo
 share/locale/sk/LC_MESSAGES/kontact.mo

@@ -1,7 +1,6 @@
 COMMENT =	KDE PIM kontact plugin interface library
 DISTNAME =	kontactinterface-${VERSION}
 CATEGORIES =	devel mail
-REVISION =	0
 
 SHARED_LIBS +=	KPim6KontactInterface     0.0 # 0.0
 

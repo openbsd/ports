@@ -3,7 +3,6 @@ USE_WXNEEDED =	Yes
 COMMENT =	KDE-based HTML image map editor
 DISTNAME =	kimagemapeditor-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6GuiAddons

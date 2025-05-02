@@ -1,7 +1,6 @@
 COMMENT =	KDE mouse clicker for accessibility users
 DISTNAME =	kmousetool-${VERSION}
 CATEGORIES =	x11 inputmethods
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL ICE KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6DBusAddons

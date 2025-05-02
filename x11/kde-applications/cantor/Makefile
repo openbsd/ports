@@ -12,17 +12,17 @@ SHARED_LIBS +=  cantorlibs                55.0 # 17.08
 WANTLIB += ${COMPILER_LIBCXX} Analitza AnalitzaGui GL KF6Archive
 WANTLIB += KF6Attica KF6Bookmarks KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
-WANTLIB += KF6Crash KF6I18n KF6IconThemes KF6IconWidgets KF6ItemViews
-WANTLIB += KF6JobWidgets KF6KIOCore KF6KIOFileWidgets KF6KIOGui
-WANTLIB += KF6KIOWidgets KF6NewStuffCore KF6NewStuffWidgets KF6Parts
-WANTLIB += KF6Service KF6Solid KF6SonnetUi KF6SyntaxHighlighting
+WANTLIB += KF6Crash KF6GuiAddons KF6I18n KF6IconThemes KF6IconWidgets
+WANTLIB += KF6ItemViews KF6JobWidgets KF6KIOCore KF6KIOFileWidgets
+WANTLIB += KF6KIOGui KF6KIOWidgets KF6NewStuffCore KF6NewStuffWidgets
+WANTLIB += KF6Parts KF6Service KF6Solid KF6SonnetUi KF6SyntaxHighlighting
 WANTLIB += KF6TextEditor KF6TextWidgets KF6WidgetsAddons KF6XmlGui
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Help Qt6Network Qt6OpenGL
-WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlModels
-WANTLIB += Qt6Quick Qt6Sql Qt6Svg Qt6WebChannel Qt6WebEngineCore
-WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml c intl luajit-${MODLUA_VERSION}
-WANTLIB += m poppler poppler-qt6 ${MODPY_WANTLIB} qalculate spectre
-WANTLIB += util xml2 xslt
+WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels
+WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6Sql Qt6Svg Qt6WebChannel
+WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets Qt6Xml
+WANTLIB += c intl luajit-5.1 m poppler poppler-qt6 python3.12
+WANTLIB += qalculate spectre util xml2 xslt
 
 WANTLIB += lib/R/lib/R lib/R/lib/Rblas lib/R/lib/Rlapack
 
@@ -46,11 +46,13 @@ LIB_DEPENDS =	devel/gettext,-runtime \
 		devel/kf6/attica \
 		devel/kf6/karchive \
 		devel/kf6/kbookmarks \
+		devel/kf6/kcolorscheme \
 		devel/kf6/kcompletion \
 		devel/kf6/kconfig \
 		devel/kf6/kconfigwidgets \
 		devel/kf6/kcoreaddons \
 		devel/kf6/kcrash \
+		devel/kf6/kguiaddons \
 		devel/kf6/ki18n \
 		devel/kf6/kiconthemes \
 		devel/kf6/kio \
@@ -71,12 +73,15 @@ LIB_DEPENDS =	devel/gettext,-runtime \
 		math/libqalculate \
 		print/libspectre \
 		print/poppler,-qt6 \
+		textproc/libxml \
+		textproc/libxslt \
+		x11/kde-applications/analitza>=${VERSION} \
 		x11/qt6/qtdeclarative \
+		x11/qt6/qtpositioning \
 		x11/qt6/qtsvg \
 		x11/qt6/qttools \
 		x11/qt6/qtwebchannel \
-		x11/qt6/qtwebengine \
-		x11/kde-applications/analitza>=${VERSION}
+		x11/qt6/qtwebengine
 
 LIB_DEPENDS +=	math/R
 

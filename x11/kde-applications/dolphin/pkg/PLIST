@@ -13,6 +13,7 @@ lib/cmake/DolphinVcs/DolphinVcsConfig.cmake
 lib/cmake/DolphinVcs/DolphinVcsConfigVersion.cmake
 lib/cmake/DolphinVcs/DolphinVcsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/DolphinVcs/DolphinVcsTargets.cmake
+@bin lib/kconf_update_bin/dolphin_25.04_update_statusandlocationbarssettings
 @lib lib/libdolphinprivate.so.${LIBdolphinprivate_VERSION}
 @lib lib/libdolphinvcs.so.${LIBdolphinvcs_VERSION}
 lib/qt6/plugins/dolphin/
@@ -233,6 +234,7 @@ share/icons/hicolor/scalable/apps/org.kde.dolphin.svg
 share/kconf_update/dolphin_detailsmodesettings.upd
 share/kconf_update/dolphin_directorysizemode.py
 share/kconf_update/dolphin_directorysizemode.upd
+share/kconf_update/dolphin_statusandlocationbarssettings.upd
 share/kglobalaccel/org.kde.dolphin.desktop
 share/knsrcfiles/
 share/knsrcfiles/servicemenu.knsrc
@@ -346,6 +348,8 @@ share/locale/ro/LC_MESSAGES/dolphin.mo
 share/locale/ro/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/ru/LC_MESSAGES/dolphin.mo
 share/locale/ru/LC_MESSAGES/dolphin_servicemenuinstaller.mo
+share/locale/sa/LC_MESSAGES/dolphin.mo
+share/locale/sa/LC_MESSAGES/dolphin_servicemenuinstaller.mo
 share/locale/se/LC_MESSAGES/dolphin.mo
 share/locale/si/LC_MESSAGES/dolphin.mo
 share/locale/sk/LC_MESSAGES/dolphin.mo

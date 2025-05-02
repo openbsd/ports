@@ -7,12 +7,6 @@ share/blinken/fonts/
 share/blinken/fonts/steve.ttf
 share/blinken/images/
 share/blinken/images/blinken.svg
-share/blinken/sounds/
-share/blinken/sounds/1.wav
-share/blinken/sounds/2.wav
-share/blinken/sounds/3.wav
-share/blinken/sounds/4.wav
-share/blinken/sounds/lose.wav
 share/config.kcfg/
 share/config.kcfg/blinken.kcfg
 share/doc/HTML/ca/blinken/
@@ -151,6 +145,7 @@ share/locale/pt/LC_MESSAGES/blinken.mo
 share/locale/pt_BR/LC_MESSAGES/blinken.mo
 share/locale/ro/LC_MESSAGES/blinken.mo
 share/locale/ru/LC_MESSAGES/blinken.mo
+share/locale/sa/LC_MESSAGES/blinken.mo
 share/locale/se/LC_MESSAGES/blinken.mo
 share/locale/si/LC_MESSAGES/blinken.mo
 share/locale/sk/LC_MESSAGES/blinken.mo

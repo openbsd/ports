@@ -1,13 +1,12 @@
 COMMENT =	simple ball dodging game
 DISTNAME =	kollision-${VERSION}
 CATEGORIES =	games
-REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/kollision
 
 WANTLIB += ${COMPILER_LIBCXX} GL KDEGames6 KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
-WANTLIB += KF6DBusAddons KF6GuiAddons KF6I18n KF6WidgetsAddons
+WANTLIB += KF6DBusAddons KF6GuiAddons KF6I18n KF6IconThemes KF6WidgetsAddons
 WANTLIB += KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Qml
 WANTLIB += Qt6Widgets Qt6Xml c m
 
@@ -23,6 +22,7 @@ LIB_DEPENDS =	devel/kf6/kcolorscheme \
 		devel/kf6/kcoreaddons \
 		devel/kf6/kcrash \
 		devel/kf6/kdbusaddons \
+		devel/kf6/kiconthemes \
 		devel/kf6/kguiaddons \
 		devel/kf6/ki18n \
 		devel/kf6/kwidgetsaddons \

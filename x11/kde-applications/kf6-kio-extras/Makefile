@@ -18,7 +18,7 @@ WANTLIB += OpenEXR-3_3 OpenEXRCore-3_3 PlasmaActivities PlasmaActivitiesStats
 WANTLIB += QCoro6Core Qt6Core Qt6Core5Compat Qt6DBus Qt6Gui Qt6Network
 WANTLIB += Qt6Qml Qt6Sql Qt6Svg Qt6Widgets Qt6Xml Xcursor c kdsoap-qt6
 WANTLIB += m mtp phonon4qt6 phonon4qt6experimental smbclient ssh
-WANTLIB += tag util
+WANTLIB += tag util xkbcommon
 
 MODKDE_TRANSLATIONS = yes
 MODKDE_DOCS = yes
@@ -68,7 +68,8 @@ LIB_DEPENDS =	audio/taglib \
 		x11/kde-plasma/plasma-activities-stats \
 		x11/qt6/qt5compat \
 		x11/qt6/qtdeclarative \
-		x11/qt6/qtsvg
+		x11/qt6/qtsvg \
+		x11/xkbcommon
 
 TEST_IS_INTERACTIVE =	X11
 PORTHOME =		${WRKDIR}

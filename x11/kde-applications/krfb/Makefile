@@ -43,6 +43,7 @@ LIB_DEPENDS +=	devel/kf6/kcolorscheme \
 		devel/kf6/kxmlgui \
 		net/libvncserver \
 		wayland/wayland \
+		multimedia/pipewire/pipewire,-libs \
 		x11/kde-plasma/kpipewire \
 		x11/kde-plasma/kwayland \
 		x11/xkbcommon

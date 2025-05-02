@@ -1,7 +1,6 @@
 COMMENT =	KDE digital camera support
 
 DISTNAME =	kamera-${VERSION}
-REVISION =	0
 
 CATEGORIES =	x11 graphics
 

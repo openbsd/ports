@@ -1,7 +1,6 @@
 COMMENT =	connect the dots to create squares game
 DISTNAME =	ksquares-${VERSION}
 CATEGORIES =	games
-REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/ksquares
 

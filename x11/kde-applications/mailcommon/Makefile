@@ -19,8 +19,8 @@ WANTLIB += KPim6MailImporter KPim6MailTransport KPim6MessageComposer
 WANTLIB += KPim6MessageCore KPim6MessageList KPim6MessageViewer
 WANTLIB += KPim6Mime KPim6MimeTreeParser KPim6PimCommon KPim6PimCommonActivities
 WANTLIB += KPim6PimCommonAkonadi KPim6TemplateParser KPim6TextEdit
-WANTLIB += PlasmaActivities Qt6Core Qt6DBus Qt6Gui Qt6Network
-WANTLIB += Qt6Widgets Qt6Xml assuan gpgme gpgmepp m phonon4qt6
+WANTLIB += PlasmaActivities Qt6Core Qt6DBus Qt6Gui Qt6Multimedia
+WANTLIB += Qt6Network Qt6Widgets Qt6Xml assuan gpgme gpgmepp m
 WANTLIB += qgpgmeqt6
 
 MODKDE_TRANSLATIONS = yes
@@ -68,7 +68,7 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		x11/kde-applications/mailimporter>=${VERSION} \
 		x11/kde-applications/messagelib>=${VERSION} \
 		x11/kde-applications/pimcommon>=${VERSION} \
-		multimedia/phonon,qt6
+		x11/qt6/qtmultimedia
 
 TEST_IS_INTERACTIVE =	X11
 

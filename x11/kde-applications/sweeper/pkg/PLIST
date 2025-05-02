@@ -57,6 +57,7 @@ share/doc/HTML/uk/sweeper/
 share/doc/HTML/uk/sweeper/index.cache.bz2
 share/doc/HTML/uk/sweeper/index.docbook
 share/doc/HTML/uk/sweeper/sweeper.png
+share/icons/hicolor/scalable/apps/sweeper.svg
 share/locale/af/LC_MESSAGES/sweeper.mo
 share/locale/ar/LC_MESSAGES/sweeper.mo
 share/locale/ast/LC_MESSAGES/sweeper.mo
@@ -116,6 +117,7 @@ share/locale/pt/LC_MESSAGES/sweeper.mo
 share/locale/pt_BR/LC_MESSAGES/sweeper.mo
 share/locale/ro/LC_MESSAGES/sweeper.mo
 share/locale/ru/LC_MESSAGES/sweeper.mo
+share/locale/sa/LC_MESSAGES/sweeper.mo
 share/locale/se/LC_MESSAGES/sweeper.mo
 share/locale/sk/LC_MESSAGES/sweeper.mo
 share/locale/sl/LC_MESSAGES/sweeper.mo
@@ -140,3 +142,4 @@ share/metainfo/
 share/metainfo/org.kde.sweeper.appdata.xml
 @tag update-desktop-database
 share/qlogging-categories6/sweeper.categories
+@tag gtk-update-icon-cache %D/share/icons/hicolor

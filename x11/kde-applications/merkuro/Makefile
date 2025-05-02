@@ -1,6 +1,5 @@
 USE_NOBTCFI =	Yes
 USE_WXNEEDED =	Yes
-REVISION =	0
 
 COMMENT =	calendar email todo and task application
 
@@ -21,11 +20,12 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} GL KF6CalendarCore KF6Codecs KF6ColorScheme
 WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
 WANTLIB += KF6Contacts KF6CoreAddons KF6Crash KF6DBusAddons KF6GuiAddons
-WANTLIB += KF6I18n KF6I18nQml KF6ItemModels KF6KIOCore KF6Notifications
-WANTLIB += KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
-WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6WidgetsAddons
-WANTLIB += KF6WindowSystem KF6XmlGui KPim6AkonadiCalendar KPim6AkonadiContactCore
-WANTLIB += KPim6AkonadiContactWidgets KPim6AkonadiCore KPim6AkonadiMime
+WANTLIB += KF6Holidays KF6I18n KF6I18nQml KF6IconThemes KF6ItemModels
+WANTLIB += KF6KIOCore KF6Notifications KF6TextAutoCorrectionCore
+WANTLIB += KF6TextAutoCorrectionWidgets KF6TextCustomEditor KF6TextTemplate
+WANTLIB += KF6WidgetsAddons KF6WindowSystem KF6XmlGui KPim6AkonadiCalendar
+WANTLIB += KPim6AkonadiContactCore KPim6AkonadiContactWidgets
+WANTLIB += KPim6AkonadiCore KPim6AkonadiMime KPim6AkonadiSearchPIM
 WANTLIB += KPim6AkonadiWidgets KPim6CalendarUtils KPim6GrantleeTheme
 WANTLIB += KPim6IMAP KPim6IdentityManagementCore KPim6IdentityManagementQuick
 WANTLIB += KPim6IdentityManagementWidgets KPim6Libkdepim KPim6Libkleo
@@ -39,10 +39,8 @@ WANTLIB += c gpgme gpgmepp m qgpgmeqt6
 
 BUILD_DEPENDS =	devel/boost \
 		devel/gettext,-tools \
-		devel/kf6/kiconthemes \
 		devel/kf6/kirigami \
 		devel/kf6/kitemviews \
-		devel/kf6/knotifications \
 		devel/kf6/kservice \
 		devel/kf6/ktextwidgets \
 		x11/kde-plasma/libplasma \
@@ -71,6 +69,8 @@ LIB_DEPENDS =	devel/kf6/kcalendarcore \
 		devel/kf6/kitemmodels \
 		devel/kf6/ktexttemplate \
 		devel/kf6/kguiaddons \
+		devel/kf6/kiconthemes \
+		devel/kf6/kholidays \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/knotifications \
 		graphics/kirigami-addons \
@@ -81,6 +81,7 @@ LIB_DEPENDS =	devel/kf6/kcalendarcore \
 		textproc/ktextaddons \
 		devel/kf6/kcrash \
 		security/gpgme,-qt \
+		x11/kde-applications/akonadi-search>=${VERSION} \
 		x11/kde-applications/akonadi-calendar>=${VERSION} \
 		x11/kde-applications/akonadi-contacts>=${VERSION} \
 		x11/kde-applications/akonadi-mime>=${VERSION} \
@@ -99,6 +100,6 @@ LIB_DEPENDS =	devel/kf6/kcalendarcore \
 		x11/kde-applications/messagelib>=${VERSION} \
 		x11/kde-applications/mimetreeparser>=${VERSION} \
 		x11/kde-applications/pimcommon>=${VERSION} \
-		x11/qt6/qtdeclarative \
+		x11/qt6/qtdeclarative
 
 .include <bsd.port.mk>

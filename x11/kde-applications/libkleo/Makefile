@@ -2,7 +2,7 @@ COMMENT =	certificate manager for KDE
 DISTNAME =	libkleo-${VERSION}
 CATEGORIES =	security devel
 
-SHARED_LIBS +=	KPim6Libkleo              1.0 # 0.0
+SHARED_LIBS +=	KPim6Libkleo              2.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Codecs KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6CoreAddons KF6I18n KF6ItemModels

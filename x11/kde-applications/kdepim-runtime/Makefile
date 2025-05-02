@@ -3,7 +3,6 @@ USE_WXNEEDED =	Yes
 COMMENT =	KDE PIM mail related libraries
 DISTNAME =	kdepim-runtime-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 SHARED_LIBS +=  akonadi-filestore           2.0 # 5.13.2
 SHARED_LIBS +=  akonadi-singlefileresource  3.0 # 5.13.2
@@ -19,6 +18,7 @@ WANTLIB += KF6DAV KF6GuiAddons KF6I18n KF6ItemModels KF6ItemViews
 WANTLIB += KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick
 WANTLIB += KF6KIOCore KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets
 WANTLIB += KF6Notifications KF6NotifyConfig KF6Service KF6Solid
+WANTLIB += KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
 WANTLIB += KF6TextCustomEditor KF6TextTemplate KF6Wallet KF6WidgetsAddons
 WANTLIB += KF6WindowSystem KF6XmlGui KPim6AkonadiAgentBase KPim6AkonadiCalendar
 WANTLIB += KPim6AkonadiContactCore KPim6AkonadiContactWidgets
@@ -26,12 +26,14 @@ WANTLIB += KPim6AkonadiCore KPim6AkonadiMime KPim6AkonadiWidgets
 WANTLIB += KPim6GAPICalendar KPim6GAPICore KPim6GAPIPeople KPim6GAPITasks
 WANTLIB += KPim6GrantleeTheme KPim6IMAP KPim6IdentityManagementCore
 WANTLIB += KPim6IdentityManagementWidgets KPim6LdapCore KPim6LdapWidgets
-WANTLIB += KPim6MailTransport KPim6Mbox KPim6Mime Qt6Core Qt6DBus
-WANTLIB += Qt6Gui Qt6Multimedia Qt6Network Qt6NetworkAuth Qt6OpenGL
-WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels
-WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6TextToSpeech Qt6WebChannel
-WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets Qt6Xml
-WANTLIB += X11 c m qca-qt6 qt6keychain sasl2
+WANTLIB += KPim6Libkdepim KPim6MailTransport KPim6Mbox KPim6Mime
+WANTLIB += KPim6PimCommon KPim6PimCommonActivities KPim6PimCommonAkonadi
+WANTLIB += PlasmaActivities Qt6Core Qt6DBus Qt6Gui Qt6Multimedia
+WANTLIB += Qt6Network Qt6NetworkAuth Qt6OpenGL Qt6Positioning
+WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
+WANTLIB += Qt6Quick Qt6TextToSpeech Qt6WebChannel Qt6WebEngineCore
+WANTLIB += Qt6WebEngineWidgets Qt6Widgets Qt6Xml X11 c m qca-qt6
+WANTLIB += qt6keychain sasl2
 
 MODKDE_TRANSLATIONS = yes
 MODKDE_DESKTOP_FILE = yes
@@ -74,6 +76,9 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		security/qca-qt6 \
 		security/qtkeychain,qt6 \
 		textproc/ktextaddons \
+		x11/kde-plasma/plasma-activities  \
+		x11/kde-applications/libkdepim>=${VERSION} \
+		x11/kde-applications/pimcommon>=${VERSION} \
 		x11/kde-applications/akonadi-calendar>=${VERSION} \
 		x11/kde-applications/akonadi-contacts>=${VERSION} \
 		x11/kde-applications/akonadi-mime>=${VERSION} \

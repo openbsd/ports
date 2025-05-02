@@ -144,6 +144,7 @@ share/khangman/nn.txt
 share/khangman/pl.txt
 share/khangman/pt.txt
 share/khangman/pt_BR.txt
+share/khangman/ru.txt
 share/khangman/sk.txt
 share/khangman/sl.txt
 share/khangman/sr@ijekavianlatin.txt
@@ -158,6 +159,7 @@ share/khangman/themes/khangman_sea.svg
 share/khangman/themes/khangman_winter.svg
 share/khangman/themes/standardthemes.xml
 share/khangman/tr.txt
+share/khangman/uk.txt
 share/knsrcfiles/
 share/knsrcfiles/khangman.knsrc
 share/locale/af/LC_MESSAGES/khangman.mo
@@ -217,6 +219,7 @@ share/locale/pt/LC_MESSAGES/khangman.mo
 share/locale/pt_BR/LC_MESSAGES/khangman.mo
 share/locale/ro/LC_MESSAGES/khangman.mo
 share/locale/ru/LC_MESSAGES/khangman.mo
+share/locale/sa/LC_MESSAGES/khangman.mo
 share/locale/se/LC_MESSAGES/khangman.mo
 share/locale/si/LC_MESSAGES/khangman.mo
 share/locale/sk/LC_MESSAGES/khangman.mo

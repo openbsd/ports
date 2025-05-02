@@ -201,12 +201,7 @@ share/doc/HTML/uk/kget/metalink0.png
 share/doc/HTML/uk/kget/metalink1.png
 share/doc/HTML/uk/kget/metalink2.png
 share/doc/HTML/uk/kget/metalink3.png
-share/icons/hicolor/128x128/apps/kget.png
-share/icons/hicolor/16x16/apps/kget.png
-share/icons/hicolor/22x22/apps/kget.png
-share/icons/hicolor/32x32/apps/kget.png
-share/icons/hicolor/48x48/apps/kget.png
-share/icons/hicolor/64x64/apps/kget.png
+share/icons/hicolor/scalable/apps/org.kde.kget.svg
 share/kget/
 share/kget/pics/
 share/kget/pics/kget_splash.png
@@ -271,6 +266,7 @@ share/locale/pt/LC_MESSAGES/kget.mo
 share/locale/pt_BR/LC_MESSAGES/kget.mo
 share/locale/ro/LC_MESSAGES/kget.mo
 share/locale/ru/LC_MESSAGES/kget.mo
+share/locale/sa/LC_MESSAGES/kget.mo
 share/locale/se/LC_MESSAGES/kget.mo
 share/locale/si/LC_MESSAGES/kget.mo
 share/locale/sk/LC_MESSAGES/kget.mo

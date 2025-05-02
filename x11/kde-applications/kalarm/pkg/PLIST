@@ -6,6 +6,8 @@ lib/kconf_update_bin/
 @lib lib/libkalarmplugin.so.${LIBkalarmplugin_VERSION}
 lib/qt6/plugins/pim6/kalarm/
 @so lib/qt6/plugins/pim6/kalarm/akonadiplugin.so
+@so lib/qt6/plugins/pim6/kalarm/audioplugin_mpv.so
+@so lib/qt6/plugins/pim6/kalarm/audioplugin_vlc.so
 @bin libexec/kf6/kauth/kalarm_helper
 share/applications/org.kde.kalarm.desktop
 share/config.kcfg/kalarmconfig.kcfg
@@ -143,6 +145,7 @@ share/locale/pt/LC_MESSAGES/kalarm.mo
 share/locale/pt_BR/LC_MESSAGES/kalarm.mo
 share/locale/ro/LC_MESSAGES/kalarm.mo
 share/locale/ru/LC_MESSAGES/kalarm.mo
+share/locale/sa/LC_MESSAGES/kalarm.mo
 share/locale/se/LC_MESSAGES/kalarm.mo
 share/locale/si/LC_MESSAGES/kalarm.mo
 share/locale/sk/LC_MESSAGES/kalarm.mo

@@ -1,7 +1,6 @@
 COMMENT =	speech tool for mute persons for KDE
 DISTNAME =	kmouth-${VERSION}
 CATEGORIES =	x11
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons

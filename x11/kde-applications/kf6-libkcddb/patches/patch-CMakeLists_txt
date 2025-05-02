@@ -1,14 +1,12 @@
-conflicts with libkcddb
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -74,7 +74,7 @@ if(BUILD_TESTING)
+@@ -83,7 +83,7 @@ if(BUILD_TESTING)
      add_subdirectory(tests)
  endif()
  
 -ki18n_install(po)
--kdoctools_install(po)
 +#ki18n_install(po)
-+#kdoctools_install(po)
  
- feature_summary(WHAT ALL FATAL_ON_MISSING_REQUIRED_PACKAGES)
+ if(BUILD_DOC)
+     kdoctools_install(po)

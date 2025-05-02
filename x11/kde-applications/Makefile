@@ -246,7 +246,7 @@
      #SUBDIR += kpat
      SUBDIR += kpkpass
      SUBDIR += kqtquickcharts
-     SUBDIR += kross-interpreters
+     #SUBDIR += kross-interpreters
      SUBDIR += ksmtp
      SUBDIR += ktnef
      SUBDIR += libgravatar

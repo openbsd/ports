@@ -1,7 +1,6 @@
 COMMENT =	KDE tool for sweeping unwanted traces from system
 DISTNAME =	sweeper-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Bookmarks KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash

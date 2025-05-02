@@ -5,11 +5,11 @@ COMMENT =	non-linear video editor for KDE
 DISTNAME =	kdenlive-${VERSION}
 CATEGORIES =	multimedia
 
-WANTLIB += ${COMPILER_LIBCXX} GL GLU KF6Archive KF6Attica KF6Bookmarks
-WANTLIB += KF6Codecs KF6ColorScheme KF6Completion KF6ConfigCore
-WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
-WANTLIB += KF6DBusAddons KF6FileMetaData KF6GuiAddons KF6I18n
-WANTLIB += KF6IconThemes KF6ItemViews KF6JobWidgets KF6KIOCore
+WANTLIB += ${COMPILER_LIBCXX} GL GLU Imath-3_1 KF6Archive KF6Attica
+WANTLIB += KF6Bookmarks KF6Codecs KF6ColorScheme KF6Completion
+WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
+WANTLIB += KF6Crash KF6DBusAddons KF6FileMetaData KF6GuiAddons
+WANTLIB += KF6I18n KF6IconThemes KF6ItemViews KF6JobWidgets KF6KIOCore
 WANTLIB += KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets KF6NewStuffCore
 WANTLIB += KF6NewStuffWidgets KF6Notifications KF6NotifyConfig
 WANTLIB += KF6Purpose KF6PurposeWidgets KF6Service KF6Solid KF6SonnetUi
@@ -17,7 +17,8 @@ WANTLIB += KF6TextWidgets KF6WidgetsAddons KF6XmlGui Qt6Concurrent
 WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Multimedia Qt6Network Qt6NetworkAuth
 WANTLIB += Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
 WANTLIB += Qt6Quick Qt6QuickControls2 Qt6QuickWidgets Qt6Svg Qt6SvgWidgets
-WANTLIB += Qt6Widgets Qt6Xml c m mlt++-7 mlt-7
+WANTLIB += Qt6Widgets Qt6Xml avcodec avformat avutil c m mlt++-7
+WANTLIB += mlt-7 opentime opentimelineio swresample
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes
@@ -66,12 +67,16 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/solid \
 		devel/kf6/sonnet \
 		multimedia/mlt7>=7.28.0 \
+		multimedia/opentimelineio \
+		graphics/ffmpeg \
+		math/imath \
 		x11/qt6/qtdeclarative \
 		x11/qt6/qtmultimedia \
 		x11/qt6/qtnetworkauth \
 		x11/qt6/qtsvg
 
-CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_LibV4L2=Yes
+CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PACKAGE_LibV4L2=Yes \
+			-DFETCH_OTIO=OFF
 
 TEST_IS_INTERACTIVE =	X11
 

@@ -4,9 +4,9 @@ DISTNAME =	khangman-${VERSION}
 CATEGORIES =	games education
 
 WANTLIB += ${COMPILER_LIBCXX} GL KEduVocDocument KF6Attica KF6ConfigCore
-WANTLIB += KF6CoreAddons KF6Crash KF6I18n KF6NewStuffCore KF6WidgetsAddons
-WANTLIB += Qt6Core Qt6Gui Qt6Network Qt6Qml Qt6Widgets Qt6Xml
-WANTLIB += c m
+WANTLIB += KF6CoreAddons KF6Crash KF6I18n KF6I18nQml KF6NewStuffCore
+WANTLIB += KF6WidgetsAddons Qt6Core Qt6Gui Qt6Network Qt6Qml Qt6Widgets
+WANTLIB += Qt6Xml c m
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes

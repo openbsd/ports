@@ -1,16 +1,15 @@
 COMMENT =	Sokoban-like logic game
 DISTNAME =	katomic-${VERSION}
 CATEGORIES =	games
-REVISION =	0
 
 HOMEPAGE =	https://www.kde.org/applications/games/katomic
 
 WANTLIB += ${COMPILER_LIBCXX} GL KDEGames6 KF6Attica KF6ColorScheme
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
-WANTLIB += KF6Crash KF6DBusAddons KF6GuiAddons KF6I18n KF6NewStuffCore
-WANTLIB += KF6NewStuffWidgets KF6WidgetsAddons KF6XmlGui Qt6Core
-WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6Qml Qt6Widgets Qt6Xml
-WANTLIB += c m
+WANTLIB += KF6Crash KF6DBusAddons KF6GuiAddons KF6I18n KF6IconThemes
+WANTLIB += KF6NewStuffCore KF6NewStuffWidgets KF6WidgetsAddons
+WANTLIB += KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Qml
+WANTLIB += Qt6Widgets Qt6Xml c m
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_ICON_CACHE = yes
@@ -28,6 +27,7 @@ LIB_DEPENDS =	devel/kf6/attica \
 		devel/kf6/kguiaddons \
 		devel/kf6/ki18n \
 		devel/kf6/knewstuff \
+		devel/kf6/kiconthemes \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
 		x11/kde-applications/libkdegames>=${VERSION} \

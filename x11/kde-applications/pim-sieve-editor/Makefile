@@ -1,7 +1,6 @@
 COMMENT =	mail sieve editor
 DISTNAME =	pim-sieve-editor-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 SHARED_LIBS +=  sieveeditor       5.0 # 5.13.2
 
@@ -10,10 +9,11 @@ WANTLIB += KF6ColorScheme KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
 WANTLIB += KF6CoreAddons KF6Crash KF6DBusAddons KF6GuiAddons KF6I18n
 WANTLIB += KF6IconThemes KF6KIOCore KF6TextAutoCorrectionCore
 WANTLIB += KF6TextAutoCorrectionWidgets KF6TextCustomEditor KF6UserFeedbackCore
-WANTLIB += KF6UserFeedbackWidgets KF6WidgetsAddons KF6XmlGui KPim6KManageSieve
-WANTLIB += KPim6KSieve KPim6KSieveCore KPim6KSieveUi KPim6MailTransport
-WANTLIB += KPim6PimCommon Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Widgets
-WANTLIB += Qt6Xml c m qt6keychain
+WANTLIB += KF6UserFeedbackWidgets KF6WidgetsAddons KF6WindowSystem
+WANTLIB += KF6XmlGui KPim6KManageSieve KPim6KSieve KPim6KSieveCore
+WANTLIB += KPim6KSieveUi KPim6MailTransport KPim6PimCommon Qt6Core
+WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6Widgets Qt6Xml X11 c m
+WANTLIB += qt6keychain
 
 MODKDE_TRANSLATIONS = yes
 MODKDE_DESKTOP_FILE = yes
@@ -37,6 +37,7 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
 		devel/kf6/kiconthemes \
+		devel/kf6/kwindowsystem \
 		security/qtkeychain,qt6 \
 		textproc/ktextaddons \
 		x11/kde-applications/kmailtransport>=${VERSION} \

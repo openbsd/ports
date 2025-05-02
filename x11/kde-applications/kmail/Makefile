@@ -30,9 +30,10 @@ WANTLIB += KPim6KSieveCore KPim6KSieveUi KPim6KontactInterface
 WANTLIB += KPim6LdapCore KPim6LdapWidgets KPim6Libkdepim KPim6Libkleo
 WANTLIB += KPim6MailCommon KPim6MailTransport KPim6MessageComposer
 WANTLIB += KPim6MessageCore KPim6MessageList KPim6MessageViewer
-WANTLIB += KPim6Mime KPim6MimeTreeParser KPim6PimCommon KPim6PimCommonAkonadi
-WANTLIB += KPim6TemplateParser KPim6TextEdit KPim6Tnef KPim6WebEngineViewer
-WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning
+WANTLIB += KPim6Mime KPim6MimeTreeParser KPim6PimCommon KPim6PimCommonActivities
+WANTLIB += KPim6PimCommonAkonadi KPim6TemplateParser KPim6TextEdit
+WANTLIB += KPim6Tnef KPim6WebEngineViewer PlasmaActivities Qt6Core
+WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning
 WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
 WANTLIB += Qt6Quick Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
 WANTLIB += Qt6Widgets Qt6Xml X11 assuan c gpg-error gpgme gpgmepp
@@ -96,6 +97,7 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		security/qtkeychain,qt6 \
 		textproc/ktextaddons \
 		security/libgpg-error \
+		x11/kde-plasma/plasma-activities \
 		x11/kde-applications/akonadi-contacts>=${VERSION} \
 		x11/kde-applications/akonadi-mime>=${VERSION} \
 		x11/kde-applications/akonadi-search>=${VERSION} \

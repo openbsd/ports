@@ -1,7 +1,6 @@
 COMMENT =	geography learning tool for KDE
 DISTNAME =	kgeography-${VERSION}
 CATEGORIES =	geo
-REVISION =	0
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash

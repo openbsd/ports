@@ -6,7 +6,7 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6CoreAddons KF6Crash
 WANTLIB += KF6GuiAddons KF6I18n KF6Notifications KF6WidgetsAddons
 WANTLIB += KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Widgets Qt6Xml
-WANTLIB += c gmp m mpfr
+WANTLIB += c gmp m mpc mpfr
 
 MODKDE_DESKTOP_FILE = yes
 MODKDE_TRANSLATIONS = yes
@@ -24,6 +24,7 @@ LIB_DEPENDS =	devel/gmp \
 		devel/kf6/knotifications \
 		devel/kf6/kwidgetsaddons \
 		devel/kf6/kxmlgui \
-		devel/mpfr
+		devel/mpfr \
+		devel/libmpc
 
 .include <bsd.port.mk>

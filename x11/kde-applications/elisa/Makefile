@@ -1,20 +1,19 @@
 COMMENT =	audio player with QML and KDE Plasma integration
 DISTNAME =	elisa-${VERSION}
 CATEGORIES =	audio
-REVISION =	0
 
 HOMEPAGE =	https://elisa.kde.org/
 
 SHARED_LIBS +=  elisaLib                  3.0 # 0.1
 
-WANTLIB += ${COMPILER_LIBCXX} GL KF6Bookmarks KF6ColorScheme KF6Completion
-WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
-WANTLIB += KF6Crash KF6DBusAddons KF6FileMetaData KF6GuiAddons
-WANTLIB += KF6I18n KF6IconThemes KF6ItemViews KF6JobWidgets KF6KIOCore
-WANTLIB += KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets KF6Service
-WANTLIB += KF6Solid KF6WidgetsAddons KF6XmlGui Qt6Concurrent Qt6Core
-WANTLIB += Qt6DBus Qt6Gui Qt6Multimedia Qt6Network Qt6OpenGL Qt6Qml
-WANTLIB += Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
+WANTLIB += ${COMPILER_LIBCXX} GL KF6Bookmarks KF6Codecs KF6ColorScheme
+WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
+WANTLIB += KF6CoreAddons KF6Crash KF6DBusAddons KF6FileMetaData
+WANTLIB += KF6GuiAddons KF6I18n KF6IconThemes KF6ItemViews KF6JobWidgets
+WANTLIB += KF6KIOCore KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets
+WANTLIB += KF6Service KF6Solid KF6WidgetsAddons KF6XmlGui Qt6Concurrent
+WANTLIB += Qt6Core Qt6DBus Qt6Gui Qt6Multimedia Qt6Network Qt6OpenGL
+WANTLIB += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
 WANTLIB += Qt6QuickControls2 Qt6Sql Qt6Widgets Qt6Xml c m vlc
 
 MODKDE_DESKTOP_FILE = yes
@@ -43,6 +42,7 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/kiconthemes \
 		devel/kf6/kio \
 		devel/kf6/kguiaddons \
+		devel/kf6/kcodecs \
 		devel/kf6/kitemviews \
 		devel/kf6/kjobwidgets \
 		devel/kf6/kservice \

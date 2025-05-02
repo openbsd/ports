@@ -33,4 +33,7 @@ LIB_DEPENDS =	audio/libmusicbrainz5 \
 		devel/kf6/solid \
 		x11/qt6/qtdeclarative
 
+# conflicts with kf5-libkcddb
+CONFIGURE_ARGS =	-DBUILD_DOC=OFF
+
 .include <bsd.port.mk>

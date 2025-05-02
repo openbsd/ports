@@ -24,8 +24,9 @@ WANTLIB += ${COMPILER_LIBCXX} GL KF6Archive KF6CalendarCore KF6CalendarEvents
 WANTLIB += KF6Codecs KF6ColorScheme KF6Completion KF6ConfigCore
 WANTLIB += KF6ConfigGui KF6ConfigWidgets KF6Contacts KF6CoreAddons
 WANTLIB += KF6GuiAddons KF6I18n KF6IconThemes KF6ItemModels KF6ItemViews
-WANTLIB += KF6JobWidgets KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Prison
-WANTLIB += KF6Service KF6Solid KF6SyntaxHighlighting KF6TextAddonsWidgets
+WANTLIB += KF6JobWidgets KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick
+WANTLIB += KF6KIOCore KF6KIOGui KF6KIOWidgets KF6Prison KF6Service
+WANTLIB += KF6Solid KF6SyntaxHighlighting KF6TextAddonsWidgets
 WANTLIB += KF6TextAutoCorrectionCore KF6TextAutoCorrectionWidgets
 WANTLIB += KF6TextCustomEditor KF6TextGrammarCheck KF6TextTemplate
 WANTLIB += KF6TextTranslator KF6TextUtils KF6WidgetsAddons KF6XmlGui
@@ -36,15 +37,17 @@ WANTLIB += KPim6EventViews KPim6GrantleeTheme KPim6Gravatar KPim6IMAP
 WANTLIB += KPim6IdentityManagementCore KPim6IdentityManagementWidgets
 WANTLIB += KPim6ImportWizard KPim6IncidenceEditor KPim6Itinerary
 WANTLIB += KPim6KManageSieve KPim6KSieve KPim6KSieveCore KPim6KSieveUi
-WANTLIB += KPim6Libkdepim KPim6Libkleo KPim6MailCommon KPim6MailImporter
-WANTLIB += KPim6MailImporterAkonadi KPim6MailTransport KPim6MessageComposer
-WANTLIB += KPim6MessageCore KPim6MessageViewer KPim6Mime KPim6MimeTreeParser
-WANTLIB += KPim6PimCommon KPim6PimCommonAkonadi KPim6PkPass KPim6TemplateParser
-WANTLIB += KPim6TextEdit KPim6Tnef KPim6WebEngineViewer Qt6Core
-WANTLIB += Qt6DBus Qt6Gui Qt6Network Qt6OpenGL Qt6Positioning
-WANTLIB += Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript
-WANTLIB += Qt6Quick Qt6WebChannel Qt6WebEngineCore Qt6WebEngineWidgets
-WANTLIB += Qt6Widgets Qt6Xml assuan gpgme gpgmepp m markdown qgpgmeqt6
+WANTLIB += KPim6LdapCore KPim6LdapWidgets KPim6Libkdepim KPim6Libkleo
+WANTLIB += KPim6MailCommon KPim6MailImporter KPim6MailImporterAkonadi
+WANTLIB += KPim6MailTransport KPim6MessageComposer KPim6MessageCore
+WANTLIB += KPim6MessageViewer KPim6Mime KPim6MimeTreeParser KPim6PimCommon
+WANTLIB += KPim6PimCommonActivities KPim6PimCommonAkonadi KPim6PkPass
+WANTLIB += KPim6TemplateParser KPim6TextEdit KPim6Tnef KPim6WebEngineViewer
+WANTLIB += PlasmaActivities Qt6Core Qt6DBus Qt6Gui Qt6Network
+WANTLIB += Qt6OpenGL Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlMeta
+WANTLIB += Qt6QmlModels Qt6QmlWorkerScript Qt6Quick Qt6WebChannel
+WANTLIB += Qt6WebEngineCore Qt6WebEngineWidgets Qt6Widgets Qt6Xml
+WANTLIB += assuan gpgme gpgmepp m markdown qgpgmeqt6
 
 
 MODKDE_TRANSLATIONS = yes
@@ -84,6 +87,9 @@ LIB_DEPENDS =	devel/kf6/karchive \
 		security/libassuan \
 		textproc/discount \
 		textproc/ktextaddons \
+		devel/kf6/kcmutils \
+		x11/kde-plasma/plasma-activities \
+		x11/kde-applications/kldap>=${VERSION} \
 		x11/kde-applications/akonadi-calendar>=${VERSION} \
 		x11/kde-applications/akonadi-contacts>=${VERSION} \
 		x11/kde-applications/akonadi-import-wizard>=${VERSION} \

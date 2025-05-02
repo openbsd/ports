@@ -1,26 +1,34 @@
 Index: rdp/rdpsession.cpp
 --- rdp/rdpsession.cpp.orig
 +++ rdp/rdpsession.cpp
-@@ -35,6 +35,10 @@
- #include <freerdp/locale/keyboard.h>
- #endif
+@@ -12,6 +12,10 @@
+ #include <algorithm>
+ #include <memory>
  
 +#ifdef __OpenBSD__
 +#include <pthread_np.h> /* pthread_set_name_np */
 +#endif
 +
- #include "rdpview.h"
- 
- #include "krdc_debug.h"
-@@ -509,7 +513,11 @@ bool RdpSession::start()
+ #include <QApplication>
+ #include <QKeyEvent>
+ #include <QMouseEvent>
+@@ -715,7 +719,12 @@ int RdpSession::clientContextStart(rdpContext *context
      }
  
-     m_thread = std::thread(std::bind(&RdpSession::run, this));
+     session->m_thread = std::thread(std::bind(&RdpSession::run, session));
++
 +#ifdef __OpenBSD__
 +    pthread_set_name_np(m_thread.native_handle(), "rdp_session");
 +#else
-     pthread_setname_np(m_thread.native_handle(), "rdp_session");
-+#endif
+     pthread_setname_np(session->m_thread.native_handle(), "rdp_session");
++#else
  
-     return true;
+     return 0;
  }
+@@ -1228,4 +1237,4 @@ bool RdpSession::sendResizeEvent(const QSize newSize)
+ void RdpSession::setRemoteCursor(const QCursor &cursor)
+ {
+     Q_EMIT cursorChanged(cursor);
+-}
+\ No newline at end of file
++}

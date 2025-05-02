@@ -1,7 +1,6 @@
 COMMENT =	PIM Akonadi import wizard
 DISTNAME =	akonadi-import-wizard-${VERSION}
 CATEGORIES =	devel
-REVISION =	0
 
 SHARED_LIBS +=	KPim6ImportWizard         0.0 # 0.0
 

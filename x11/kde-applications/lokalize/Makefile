@@ -1,7 +1,6 @@
 COMMENT =	KDE app localization tools
 DISTNAME =	lokalize-${VERSION}
 CATEGORIES =	x11 devel
-REVISION =	0
 
 HOMEPAGE =	https://kde.org/applications/office/org.kde.lokalize
 
@@ -14,10 +13,10 @@ MODKDE_DOCS = yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6Bookmarks KF6ColorScheme KF6Completion
 WANTLIB += KF6ConfigCore KF6ConfigGui KF6ConfigWidgets KF6CoreAddons
-WANTLIB += KF6Crash KF6DBusAddons KF6GuiAddons KF6I18n KF6ItemViews
-WANTLIB += KF6JobWidgets KF6KIOCore KF6KIOFileWidgets KF6KIOGui
-WANTLIB += KF6KIOWidgets KF6Notifications KF6Service KF6Solid
-WANTLIB += KF6SonnetCore KF6SonnetUi KF6TextWidgets KF6WidgetsAddons
+WANTLIB += KF6Crash KF6DBusAddons KF6GuiAddons KF6I18n KF6IconThemes
+WANTLIB += KF6ItemViews KF6JobWidgets KF6KIOCore KF6KIOFileWidgets
+WANTLIB += KF6KIOGui KF6KIOWidgets KF6Notifications KF6Service
+WANTLIB += KF6Solid KF6SonnetCore KF6SonnetUi KF6TextWidgets KF6WidgetsAddons
 WANTLIB += KF6XmlGui Qt6Core Qt6DBus Qt6Gui Qt6Network Qt6Sql
 WANTLIB += Qt6Widgets Qt6Xml c hunspell-1.7 m
 
@@ -27,6 +26,7 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		devel/kf6/kcolorscheme \
 		devel/kf6/kcompletion \
 		devel/kf6/kconfig \
+		devel/kf6/kiconthemes \
 		devel/kf6/kconfigwidgets \
 		devel/kf6/kcoreaddons \
 		devel/kf6/kcrash \
