@@ -5,9 +5,11 @@ COMMENT =		tunnel all your traffic over Websocket or HTTP2
 
 GH_ACCOUNT =		erebe
 GH_PROJECT =		wstunnel
-GH_TAGNAME =		v10.1.10
+GH_TAGNAME =		v10.1.11
 
 CATEGORIES =		net
+
+MAINTAINER =		Christoph Liebender <christoph@liebender.dev>
 
 HOMEPAGE =		https://github.com/erebe/wstunnel
 
