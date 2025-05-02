@@ -37,7 +37,7 @@ SHA256 (mozilla/firefox-i18n-138.0.1/gu-IN.xpi) = HZ4IlzY5D5XJs/0a7iBmNR6U6X1IvN
 SHA256 (mozilla/firefox-i18n-138.0.1/he.xpi) = A51GXOSTkzW4pFaI2IzAdX5WUg4pEQNy9UMR9a5LQ2Q=
 SHA256 (mozilla/firefox-i18n-138.0.1/hi-IN.xpi) = x7oZdN7fNwYV7kirc0+qPWlcSDUmktXcplmtn6iNBVA=
 SHA256 (mozilla/firefox-i18n-138.0.1/hr.xpi) = fm9nbDhSpknIDK3o4UsxiBjkaLing6opoaX81r52dT8=
-SHA256 (mozilla/firefox-i18n-138.0.1/hsb.xpi) = DFmE5lZ4CuxMbiAUrQLdWx2aog4eRGMOorzflOiC9oI=
+SHA256 (mozilla/firefox-i18n-138.0.1/hsb.xpi) = Md/6zti6Kn8j+mlaKswM+3OxbObOjuR73WCiDfQ+u+o=
 SHA256 (mozilla/firefox-i18n-138.0.1/hu.xpi) = Fp3OLeprhhVLGm8KxCr+XbGT3ecnS/8EQkl852bnsD4=
 SHA256 (mozilla/firefox-i18n-138.0.1/hy-AM.xpi) = 2c8N5sZ5wTFyqkh/QsYOKZroG4NTExNNn31fPL0IFrE=
 SHA256 (mozilla/firefox-i18n-138.0.1/id.xpi) = Rc+TJiFHV2RezvlHWJGZcibnnnsAbuVtc0Z+nI/0mXs=
@@ -119,7 +119,7 @@ SIZE (mozilla/firefox-i18n-138.0.1/gu-IN.xpi) = 359740
 SIZE (mozilla/firefox-i18n-138.0.1/he.xpi) = 443175
 SIZE (mozilla/firefox-i18n-138.0.1/hi-IN.xpi) = 378243
 SIZE (mozilla/firefox-i18n-138.0.1/hr.xpi) = 429593
-SIZE (mozilla/firefox-i18n-138.0.1/hsb.xpi) = 78172
+SIZE (mozilla/firefox-i18n-138.0.1/hsb.xpi) = 462124
 SIZE (mozilla/firefox-i18n-138.0.1/hu.xpi) = 465929
 SIZE (mozilla/firefox-i18n-138.0.1/hy-AM.xpi) = 453834
 SIZE (mozilla/firefox-i18n-138.0.1/id.xpi) = 424273
