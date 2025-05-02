@@ -53,7 +53,8 @@ MODULES=		lang/python
 
 BUILD_DEPENDS=		devel/py-setuptools \
 			devel/py-sip \
-			devel/py-six
+			devel/py-six \
+			www/py-requests
 
 LIB_DEPENDS-main=	x11/wxWidgets
 
