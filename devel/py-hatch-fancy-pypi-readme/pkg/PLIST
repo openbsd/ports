@@ -7,7 +7,6 @@ lib/python${MODPY_VERSION}/site-packages/hatch_fancy_pypi_readme-${MODPY_DISTV}.
 lib/python${MODPY_VERSION}/site-packages/hatch_fancy_pypi_readme-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/hatch_fancy_pypi_readme-${MODPY_DISTV}.dist-info/entry_points.txt
 lib/python${MODPY_VERSION}/site-packages/hatch_fancy_pypi_readme-${MODPY_DISTV}.dist-info/licenses/
-lib/python${MODPY_VERSION}/site-packages/hatch_fancy_pypi_readme-${MODPY_DISTV}.dist-info/licenses/AUTHORS.md
 lib/python${MODPY_VERSION}/site-packages/hatch_fancy_pypi_readme-${MODPY_DISTV}.dist-info/licenses/LICENSE.txt
 lib/python${MODPY_VERSION}/site-packages/hatch_fancy_pypi_readme/__init__.py
 lib/python${MODPY_VERSION}/site-packages/hatch_fancy_pypi_readme/__main__.py
