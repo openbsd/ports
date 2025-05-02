@@ -1,0 +1,14 @@
+Index: src/opentime/CMakeLists.txt
+--- src/opentime/CMakeLists.txt.orig
++++ src/opentime/CMakeLists.txt
+@@ -22,7 +22,9 @@ set_target_properties(opentime PROPERTIES 
+     DEBUG_POSTFIX "${OTIO_DEBUG_POSTFIX}"
+     LIBRARY_OUTPUT_NAME "opentime"
+     POSITION_INDEPENDENT_CODE TRUE
+-    WINDOWS_EXPORT_ALL_SYMBOLS true)
++    WINDOWS_EXPORT_ALL_SYMBOLS true
++    VERSION ${OTIO_VERSION_MAJOR}.${OTIO_VERSION_MINOR}
++    SOVERSION ${OTIO_VERSION_MAJOR})
+ 
+ if(APPLE)
+     set_target_properties(opentime PROPERTIES 

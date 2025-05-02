@@ -1,0 +1,14 @@
+Index: src/opentimelineio/CMakeLists.txt
+--- src/opentimelineio/CMakeLists.txt.orig
++++ src/opentimelineio/CMakeLists.txt
+@@ -91,7 +91,9 @@ set_target_properties(opentimelineio PROPERTIES
+     DEBUG_POSTFIX "${OTIO_DEBUG_POSTFIX}"
+     LIBRARY_OUTPUT_NAME "opentimelineio"
+     POSITION_INDEPENDENT_CODE TRUE
+-    WINDOWS_EXPORT_ALL_SYMBOLS true)
++    WINDOWS_EXPORT_ALL_SYMBOLS true
++    VERSION ${OTIO_VERSION_MAJOR}.${OTIO_VERSION_MINOR}
++    SOVERSION ${OTIO_VERSION_MAJOR})
+ 
+ if(APPLE)
+     set_target_properties(opentimelineio PROPERTIES 

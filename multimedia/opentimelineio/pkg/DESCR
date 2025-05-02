@@ -1,0 +1,3 @@
+OpenTimelineIO is an interchange format and API for editorial cut information.
+OTIO contains information about the order and length of cuts and references to
+external media. It is not however, a container format for media.
