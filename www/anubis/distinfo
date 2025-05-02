@@ -1,4 +1,4 @@
-SHA256 (anubis-v1.17.0.zip) = 4FFQPP00LBn/9ps6woTUrbGVIP/TJsgR8gzparLahlA=
+SHA256 (anubis-v1.17.1.zip) = WV4kXqYnSNoWbEtNLqCR38FDY21YcPZibcgWkg4j7Fw=
 SHA256 (go_modules/github.com/!burnt!sushi/toml/@v/v1.4.1-0.20240526193622-a339e1f7089c.mod) = RdeLgFcZmbaiWNoPIWc9o55rUBNJwDOkrNFpQ3QR1zM=
 SHA256 (go_modules/github.com/!burnt!sushi/toml/@v/v1.4.1-0.20240526193622-a339e1f7089c.zip) = 8V8Mp6PFpCddPVYCNvF46dc1oIRTS/O2hexfZ2gGIwo=
 SHA256 (go_modules/github.com/a-h/htmlformat/@v/v0.0.0-20250209131833-673be874c677.mod) = 4hCmNckY4iRhPrRZUTfxS/DlElcNBssp8VG4GmA22EI=
@@ -296,7 +296,7 @@ SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.4.2.mod) = O1bdGEw
 SHA256 (go_modules/sigs.k8s.io/structured-merge-diff/v4/@v/v4.4.2.zip) = GIWNlp+dDOCaXOZeRiFU9/y85ijc78xxjLutrCAsRZ0=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = CZ2G+OBNET1A9KFSzf4AFxFtfv6mjkF6nGRthgJj174=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 7wMf94/5twNuF07vSd+9d0aNxPCvtzpjm2H4qzocxCU=
-SIZE (anubis-v1.17.0.zip) = 820156
+SIZE (anubis-v1.17.1.zip) = 830455
 SIZE (go_modules/github.com/!burnt!sushi/toml/@v/v1.4.1-0.20240526193622-a339e1f7089c.mod) = 43
 SIZE (go_modules/github.com/!burnt!sushi/toml/@v/v1.4.1-0.20240526193622-a339e1f7089c.zip) = 397057
 SIZE (go_modules/github.com/a-h/htmlformat/@v/v0.0.0-20250209131833-673be874c677.mod) = 117

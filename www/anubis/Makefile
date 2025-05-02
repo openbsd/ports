@@ -1,7 +1,7 @@
 COMMENT=	proof-of-work proxy to protect web resources from scrapers
 
 MODGO_MODNAME=	github.com/TecharoHQ/anubis
-MODGO_VERSION=	v1.17.0
+MODGO_VERSION=	v1.17.1
 
 DISTNAME=	anubis-${MODGO_VERSION}
 
