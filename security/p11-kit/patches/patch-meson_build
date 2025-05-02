@@ -1,0 +1,20 @@
+XXX workaround for:
+ld: error: undefined symbol: pthread_mutexattr_init
+ld: error: undefined symbol: pthread_mutexattr_settype
+ld: error: undefined symbol: pthread_mutexattr_destroy
+>>> referenced by compat.c:232 (../p11-kit-0.25.5/common/compat.c:232)
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -150,6 +150,10 @@ if host_system != 'windows'
+     endif
+   endif
+ 
++  if host_system == 'openbsd'
++      dlopen_deps += thread_deps
++  endif
++
+   # for Solaris we need -lsocket -lnsl for socket stuff, gethostbyname
+   # is just a dummy to find -lnsl
+   libnsl = cc.find_library('nsl', required: false)

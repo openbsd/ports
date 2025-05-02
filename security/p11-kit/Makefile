@@ -21,8 +21,6 @@ WANTLIB += c ffi intl pthread tasn1
 
 MODULES=		devel/meson
 
-CFLAGS +=		-pthread
-
 BUILD_DEPENDS=		devel/gettext,-tools \
 			shells/bash-completion
 
