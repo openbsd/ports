@@ -1,7 +1,7 @@
 Index: src/blocker/blocker.c
 --- src/blocker/blocker.c.orig
 +++ src/blocker/blocker.c
-@@ -117,7 +117,8 @@ int main(int argc, char *argv[]) {
+@@ -99,7 +99,8 @@ int main(int argc, char *argv[]) {
  
      /* termination signals */
      signal(SIGTERM, sigfin_handler);

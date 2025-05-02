@@ -1,7 +1,7 @@
 Index: doc/sshguard.8
 --- doc/sshguard.8.orig
 +++ doc/sshguard.8
-@@ -124,8 +124,8 @@ Set to enable verbose output from \fBsshg\-blocker\fP\
+@@ -134,8 +134,8 @@ and override this environment variable.
  .SH FILES
  .INDENT 0.0
  .TP

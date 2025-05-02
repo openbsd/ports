@@ -1,7 +1,7 @@
 Index: src/parser/tests.txt
 --- src/parser/tests.txt.orig
 +++ src/parser/tests.txt
-@@ -231,6 +231,9 @@ M
+@@ -264,6 +264,9 @@ M
  imap-login: Aborted login (auth failed, 6 attempts): XYZ rip=2001:db8::a11:beef:7ac0, lip=127.0.0.1
  210 2001:db8::a11:beef:7ac0 6 10
  M

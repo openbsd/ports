@@ -1,7 +1,7 @@
 Index: src/parser/attack_scanner.l
 --- src/parser/attack_scanner.l.orig
 +++ src/parser/attack_scanner.l
-@@ -249,7 +249,7 @@ HTTP_LOGIN_200OK_BAD       .*({WORDPRESS_LOGIN}|{TYPO3
+@@ -221,7 +221,7 @@ HTTP_LOGIN_200OK_BAD       .*({WORDPRESS_LOGIN}|{TYPO3
  <sendmail_authfailure>"]".*                                     { BEGIN(INITIAL); return SENDMAIL_AUTHFAILURE_SUFF; }
  
   /* dovecot */

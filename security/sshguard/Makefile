@@ -1,6 +1,6 @@
 COMMENT=	protect against brute force attacks on sshd and others
 
-DISTNAME=	sshguard-2.4.3
+DISTNAME=	sshguard-2.5.1
 CATEGORIES=	security
 
 HOMEPAGE=	https://www.sshguard.net/
