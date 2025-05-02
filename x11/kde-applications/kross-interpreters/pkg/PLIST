@@ -1,3 +1,0 @@
-@conflict kross-interpreters-<=4
-@pkgpath x11/kde4/kross-interpreters
-@so lib/qt5/plugins/krossruby.so
