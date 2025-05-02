@@ -1,9 +1,8 @@
 COMMENT=	implementation of JSON Schema validation for Python
 
-MODPY_DISTV=	2025.4.11.15
+MODPY_DISTV=	2025.5.1.12
 DISTNAME=	trove_classifiers-${MODPY_DISTV}
 PKGNAME=	py-trove-classifiers-${MODPY_DISTV}
-REVISION=	0
 
 CATEGORIES=	devel
 
@@ -17,5 +16,6 @@ MODPY_PYBUILD=	setuptools_scm
 MODPY_PI=	Yes
 
 BUILD_DEPENDS=	devel/py-calver
+TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH}
 
 .include <bsd.port.mk>
