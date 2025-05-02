@@ -27,6 +27,9 @@ PKGNAME-pim =		kde-pim-${MODKDE_GEAR_VERSION}
 PKGNAME-development =	kde-development-${MODKDE_GEAR_VERSION}
 PKGNAME-utils =		kde-utils-${MODKDE_GEAR_VERSION}
 
+REVISION-development =	0
+REVISION-main =		0
+
 PKGNAME-plasma =	kde-plasma-${MODKDE_PLASMA_VERSION}
 PKGNAME-plasma-extras =	kde-plasma-extras-${MODKDE_PLASMA_VERSION}
 
@@ -285,7 +288,6 @@ RUN_DEPENDS-development = \
 	x11/kde-applications/kopeninghours \
 	x11/kde-applications/kpkpass \
 	x11/kde-applications/kqtquickcharts \
-	x11/kde-applications/kross-interpreters \
 	x11/kde-applications/ksmtp \
 	x11/kde-applications/ktnef \
 	x11/kde-applications/libgravatar \
