@@ -1,5 +1,7 @@
 COMMENT =		package compiler and linker metadata toolkit
 
+UNLINKED =		pkgconf
+
 DISTNAME =		pkgconf-2.3.0
 EXTRACT_SUFX =		.tar.xz
 
