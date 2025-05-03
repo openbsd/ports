@@ -1,7 +1,12 @@
 COMMENT=		lightweight DLNA/UPnP-AV media server (aka ReadyMedia)
 
+# two patches on top of latest upstreamr release:
+# 'Rewrite dangerous system(3) "rm -rf ..." in standard library code'
+# 'OpenBSD: use pledge(2) and unveil(2)'
+COMMIT=			edebefe5725138402e43412c7bb10c3eb54a1b25
+DIST_TUPLE=		github	klemensn	minidlna ${COMMIT}	.
 DISTNAME=		minidlna-1.3.3
-REVISION=		0
+REVISION=		1
 
 CATEGORIES=		multimedia
 
@@ -10,6 +15,7 @@ HOMEPAGE=		https://sourceforge.net/projects/minidlna/
 # GPLv2 only
 PERMIT_PACKAGE=	Yes
 
+# uses pledge() and unveil()
 WANTLIB += FLAC avcodec avformat avutil c exif iconv id3tag intl jpeg
 WANTLIB += ogg pthread sqlite3 vorbis z
 
@@ -25,7 +31,8 @@ LIB_DEPENDS=		audio/flac \
 			graphics/jpeg \
 			graphics/libexif
 
-CONFIGURE_STYLE=	gnu
+CONFIGURE_STYLE=	autoconf
+AUTOCONF_VERSION=	2.71
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
