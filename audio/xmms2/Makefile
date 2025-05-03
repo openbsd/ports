@@ -1,3 +1,7 @@
+# ld: error: undefined symbol: vorbis_info_init
+# maybe an update to 0.9.5 fixes this...
+BROKEN =		does not build with pkgconf
+
 COMMENT =		audio player daemon with library management
 
 V =			0.8
