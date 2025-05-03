@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1711 2025/05/02 06:19:42 rsadowski Exp $
+# $OpenBSD: Quirks.pm,v 1.1712 2025/05/03 15:22:30 tb Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -63,6 +63,7 @@ my $base_exceptions = {
 # 7.7
 	'p5-Test2-Suite' => '/usr/libdata/perl5/Test2/Suite.pm',
 	'p5-Term-Table' => '/usr/libdata/perl5/Term/Table.pm',
+	'pkgconf' => '/usr/bin/pkg-config'
 };
 
 my $stem_extensions = {
