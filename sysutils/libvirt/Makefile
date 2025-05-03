@@ -1,13 +1,13 @@
 COMMENT=		tool/library for managing platform virtualization
 
-DISTNAME=		libvirt-11.2.0
+DISTNAME=		libvirt-11.3.0
 
 CATEGORIES=		sysutils devel emulators
 
-SHARED_LIBS += virt                      2.5 # 0.11001.0
-SHARED_LIBS += virt-qemu                 2.3 # 0.11001.0
-SHARED_LIBS += virt-lxc                  2.2 # 0.11001.0
-SHARED_LIBS += virt-admin                2.2 # 0.11001.0
+SHARED_LIBS += virt                      2.5 # 0.11003.0
+SHARED_LIBS += virt-qemu                 2.3 # 0.11003.0
+SHARED_LIBS += virt-lxc                  2.2 # 0.11003.0
+SHARED_LIBS += virt-admin                2.2 # 0.11003.0
 
 HOMEPAGE=		https://libvirt.org/
 

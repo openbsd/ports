@@ -474,6 +474,8 @@ share/libvirt/api/libvirt-api.xml
 share/libvirt/api/libvirt-lxc-api.xml
 share/libvirt/api/libvirt-qemu-api.xml
 share/libvirt/cpu_map/
+share/libvirt/cpu_map/arm_Ampere-1.xml
+share/libvirt/cpu_map/arm_Ampere-1a.xml
 share/libvirt/cpu_map/arm_FT-2000plus.xml
 share/libvirt/cpu_map/arm_Falkor.xml
 share/libvirt/cpu_map/arm_Kunpeng-920.xml
