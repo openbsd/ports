@@ -1,7 +1,7 @@
 COMMENT =	perl interface to GMP floating point functions
 
 MODULES =	cpan
-DISTNAME =	Math-GMPf-0.52
+DISTNAME =	Math-GMPf-0.53
 CATEGORIES =	math
 
 # Perl
