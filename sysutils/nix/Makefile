@@ -1,3 +1,5 @@
+BROKEN-sparc64= /usr/bin/ld: unrecognized option --no-copy-dt-needed-entries
+
 COMMENT =		purely functional package manager for Unix
 DISTNAME =		nix-2.3.16
 EXTRACT_SUFX =		.tar.xz
