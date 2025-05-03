@@ -1,11 +1,8 @@
 COMMENT=		AWS SDK for Python
 
-MODPY_DISTV=		1.38.6
+MODPY_DISTV=		1.38.8
 DISTNAME=		boto3-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
-
-# XXX 1.38.6 is not fetchable on pythonhosted.org; see MODPY_PI
-DIST_TUPLE=		github boto boto3 ${MODPY_DISTV} .
 
 CATEGORIES=		net devel
 
@@ -18,7 +15,7 @@ PERMIT_PACKAGE=		Yes
 
 MODULES=		lang/python
 
-#MODPY_PI=		Yes
+MODPY_PI=		Yes
 MODPY_PYBUILD=		setuptools
 
 RUN_DEPENDS=		devel/py-jmespath \
