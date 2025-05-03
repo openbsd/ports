@@ -1328,7 +1328,6 @@
      SUBDIR += pecl-xdebug,php84
      SUBDIR += perltidy
      SUBDIR += physfs
-     SUBDIR += pkgconf
      SUBDIR += pkgconfig
      SUBDIR += plib
      SUBDIR += poedit
