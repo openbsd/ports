@@ -61,9 +61,6 @@ WRKDIST =		${WRKDIR}/Bear-${V}
 CONFIGURE_ARGS =	-DENABLE_FUNC_TESTS=OFF \
 			-DENABLE_UNIT_TESTS=OFF
 
-BUILD_DEPENDS +=	devel/pkgconf
-CONFIGURE_ARGS +=	-DPKG_CONFIG_EXECUTABLE="${LOCALBASE}/bin/pkgconf"
-
 # From FreeBSD
 # After src commit 8ccd0b876e, bear can no longer intercept compile commands
 # using the dynamic linker preload method.
