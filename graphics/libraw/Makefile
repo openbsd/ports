@@ -1,9 +1,8 @@
 COMMENT =		library for reading RAW files
 
-DISTNAME =		LibRaw-0.21.3
+DISTNAME =		LibRaw-0.21.4
 PKGNAME =		${DISTNAME:L}
 CATEGORIES =		graphics
-REVISION =		1
 
 SHARED_LIBS +=  raw                  5.0 # 23.0
 SHARED_LIBS +=  raw_r                5.0 # 23.0
