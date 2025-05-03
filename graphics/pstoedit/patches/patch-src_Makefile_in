@@ -1,7 +1,7 @@
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -578,7 +578,7 @@ libpstoedit_la_SOURCES = \
+@@ -609,7 +609,7 @@ libpstoedit_la_SOURCES = \
  	psfront.h				\
  	genericints.h
  

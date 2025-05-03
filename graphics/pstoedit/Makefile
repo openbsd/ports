@@ -1,6 +1,6 @@
 COMMENT=	translate PostScript/PDF graphics to other vector formats
 
-DISTNAME=	pstoedit-4.00
+DISTNAME=	pstoedit-4.02
 SHARED_LIBS=	pstoedit 4.0
 CATEGORIES=	graphics
 
@@ -24,6 +24,7 @@ CONFIGURE_ARGS=	--without-libplot	\
 		--without-swf		\
 		--without-magick	\
 		--without-pptx		\
+		--without-gui		\
 		--disable-docs
 
 WANTLIB=	c ${COMPILER_LIBCXX} m
