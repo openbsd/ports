@@ -11,12 +11,14 @@ MODKDE_TRANSLATIONS = yes
 
 MODULES +=	lang/python
 
-BUILD_DEPENDS =	devel/bison
+BUILD_DEPENDS =	devel/bison \
+		devel/boost
 
 LIB_DEPENDS =	devel/gettext,-runtime \
 		devel/kf6/kholidays \
 		devel/kf6/ki18n \
-		x11/qt6/qtdeclarative
+		x11/qt6/qtdeclarative \
+		${MODPY_LIB_DEPENDS}
 
 MODCMAKE_LDFLAGS =	-L${LOCALBASE}/lib
 
