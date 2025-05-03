@@ -15,7 +15,7 @@ SHA256 (cargo/memoffset-0.9.1.tar.gz) = SIAWv65FewNtmWCS9stEhndhHOREnpcM6vQmlSA/
 SHA256 (cargo/once_cell-1.20.2.tar.gz) = EmH+fjPHOzVOq0OxJzpXyPln0DkegDU+UfdkrALPZ3U=
 SHA256 (cargo/openssl-0.10.68.tar.gz) = YXS8SPEC0gh4PCyEv5Mbt1knpheGaHDeik6oVZf4cfU=
 SHA256 (cargo/openssl-macros-0.1.1.tar.gz) = qUhma2N6D0ZehWTHPonU3eANctTUc8yXLzkPw9zufZw=
-SHA256 (cargo/openssl-sys-0.9.104.tar.gz) = RavzBsv5nevIGVtmtzRkmNexDCEN5QQYtczXzroIx0E=
+SHA256 (cargo/openssl-sys-0.9.108.tar.gz) = 4UXhZR6FjoIOSGD3ucXhabwdjOHIYEO+efp7djSCGEc=
 SHA256 (cargo/pem-3.0.4.tar.gz) = jkWTZeWQc2pUw/pWGUfISDdTS46a9vxb94EwfoJlj64=
 SHA256 (cargo/pkg-config-0.3.31.tar.gz) = lT7IYTmNzM4QxnDf6vPsSRHKR56cAhVLOiFReMX1ZvI=
 SHA256 (cargo/portable-atomic-1.10.0.tar.gz) = KA3CRFMHHxtjlUFxmFoLDTAFjSh5YJaLmyrKJkyNTuY=
@@ -33,7 +33,7 @@ SHA256 (cargo/target-lexicon-0.12.16.tar.gz) = YcQa8n3W0eJ7Gxa0idt5hENHjO8fBqZgy
 SHA256 (cargo/unicode-ident-1.0.14.tar.gz) = rbnmyk+GnhGAcot5UONZIqf8Y5f3tkFJno8+8G5Q3IM=
 SHA256 (cargo/unindent-0.2.3.tar.gz) = x959c+F1RIfLWDZO6QakmZN6Dfq9hry5gPqZ7IyPos4=
 SHA256 (cargo/vcpkg-0.2.15.tar.gz) = rM1Opi97t6gv4jBm+wlX1I72d/buuCFfNy9S5IuzJCY=
-SHA256 (cryptography-44.0.2.tar.gz) = xjRUqiYaDPDFtHGDSWKXk+nmNJk1ONuEEWWz33TzfsA=
+SHA256 (cryptography-44.0.3.tar.gz) = /hnYvFU2qRokqBMzKIgKQYMbbF31RZmoQXti/gFdMFM=
 SIZE (cargo/asn1-0.20.0.tar.gz) = 39382
 SIZE (cargo/asn1_derive-0.20.0.tar.gz) = 6998
 SIZE (cargo/autocfg-1.4.0.tar.gz) = 17712
@@ -51,7 +51,7 @@ SIZE (cargo/memoffset-0.9.1.tar.gz) = 9032
 SIZE (cargo/once_cell-1.20.2.tar.gz) = 33394
 SIZE (cargo/openssl-0.10.68.tar.gz) = 276578
 SIZE (cargo/openssl-macros-0.1.1.tar.gz) = 5601
-SIZE (cargo/openssl-sys-0.9.104.tar.gz) = 72287
+SIZE (cargo/openssl-sys-0.9.108.tar.gz) = 78190
 SIZE (cargo/pem-3.0.4.tar.gz) = 13040
 SIZE (cargo/pkg-config-0.3.31.tar.gz) = 20880
 SIZE (cargo/portable-atomic-1.10.0.tar.gz) = 174760
@@ -69,4 +69,4 @@ SIZE (cargo/target-lexicon-0.12.16.tar.gz) = 26488
 SIZE (cargo/unicode-ident-1.0.14.tar.gz) = 47547
 SIZE (cargo/unindent-0.2.3.tar.gz) = 7306
 SIZE (cargo/vcpkg-0.2.15.tar.gz) = 228735
-SIZE (cryptography-44.0.2.tar.gz) = 710807
+SIZE (cryptography-44.0.3.tar.gz) = 711096
