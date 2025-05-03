@@ -189,6 +189,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/appconfig/2019-10-09/endp
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appconfig/2019-10-09/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appconfig/2019-10-09/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appconfig/2019-10-09/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/appconfig/2019-10-09/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appconfigdata/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appconfigdata/2021-11-11/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/appconfigdata/2021-11-11/endpoint-rule-set-1.json
