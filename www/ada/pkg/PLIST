@@ -46,3 +46,4 @@ lib/cmake/ada/ada-config.cmake
 lib/cmake/ada/ada_targets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/ada/ada_targets.cmake
 @lib lib/libada.so.${LIBada_VERSION}
+lib/pkgconfig/ada.pc
