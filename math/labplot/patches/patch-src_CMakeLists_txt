@@ -1,0 +1,20 @@
+Index: src/CMakeLists.txt
+--- src/CMakeLists.txt.orig
++++ src/CMakeLists.txt
+@@ -566,7 +566,7 @@ endif()
+ if(NOT ICONV_LIBRARIES)
+     set(ICONV_LIBRARIES "")
+ endif()
+-if(NOT APPLE)
++if(NOT APPLE AND NOT CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
+     set(TURN_OFF_AS_NEEDED "-Wl,--no-as-needed")
+     set(TURN_ON_AS_NEEDED "-Wl,--as-needed")
+ endif()
+@@ -688,6 +688,7 @@ if(ENABLE_XLSX)
+     if(QXLSX_FOUND)
+         target_include_directories(labplotbackendlib PUBLIC ${QXLSX_INCLUDE_DIR})
+         target_include_directories(labplotlib PUBLIC ${QXLSX_INCLUDE_DIR})
++        target_compile_definitions(labplotlib PRIVATE QXLSX_VERSION_STRING=\"${QXLSX_VERSION}\")
+     endif()
+ 
+     if(QXLSX_FOUND OR BUILD_QXLSX)

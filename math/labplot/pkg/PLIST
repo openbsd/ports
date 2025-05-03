@@ -1,168 +1,173 @@
-@bin bin/labplot2
+@bin bin/labplot
 include/labplot/
 include/labplot/backend/
-include/labplot/backend/core/
-include/labplot/backend/core/AbstractAspect.h
-include/labplot/backend/core/AbstractColumn.h
-include/labplot/backend/core/AbstractPart.h
-include/labplot/backend/core/column/
-include/labplot/backend/core/column/Column.h
-include/labplot/backend/core/column/ColumnPrivate.h
+include/labplot/backend/datasources/
+include/labplot/backend/datasources/filters/
+include/labplot/backend/datasources/filters/filters.h
 include/labplot/backend/gsl/
-include/labplot/backend/gsl/parser.h
+include/labplot/backend/gsl/Parser.h
+include/labplot/backend/gsl/ParserDeclarations.h
+include/labplot/backend/gsl/constants.h
+include/labplot/backend/gsl/functions.h
+include/labplot/backend/gsl/parserFunctionTypes.h
 include/labplot/backend/lib/
-include/labplot/backend/lib/Interval.h
-include/labplot/backend/lib/IntervalAttribute.h
-include/labplot/backend/lib/Range.h
-include/labplot/backend/lib/commandtemplates.h
+include/labplot/backend/lib/Debug.h
 include/labplot/backend/lib/macros.h
-include/labplot/backend/lib/macrosCurve.h
+include/labplot/backend/lib/macrosWarningStyle.h
 include/labplot/backend/nsl/
+include/labplot/backend/nsl/nsl_conv.h
+include/labplot/backend/nsl/nsl_corr.h
+include/labplot/backend/nsl/nsl_dft.h
+include/labplot/backend/nsl/nsl_diff.h
+include/labplot/backend/nsl/nsl_filter.h
 include/labplot/backend/nsl/nsl_fit.h
+include/labplot/backend/nsl/nsl_geom_linesim.h
+include/labplot/backend/nsl/nsl_hilbert.h
+include/labplot/backend/nsl/nsl_int.h
+include/labplot/backend/nsl/nsl_interp.h
+include/labplot/backend/nsl/nsl_kde.h
 include/labplot/backend/nsl/nsl_math.h
+include/labplot/backend/nsl/nsl_sf_kernel.h
+include/labplot/backend/nsl/nsl_sf_stats.h
+include/labplot/backend/nsl/nsl_sf_window.h
+include/labplot/backend/nsl/nsl_smooth.h
 include/labplot/backend/worksheet/
-include/labplot/backend/worksheet/Worksheet.h
-include/labplot/backend/worksheet/WorksheetElement.h
-include/labplot/backend/worksheet/WorksheetElementContainer.h
 include/labplot/backend/worksheet/plots/
-include/labplot/backend/worksheet/plots/AbstractPlot.h
-include/labplot/backend/worksheet/plots/PlotArea.h
 include/labplot/backend/worksheet/plots/cartesian/
-include/labplot/backend/worksheet/plots/cartesian/Axis.h
-include/labplot/backend/worksheet/plots/cartesian/BoxPlot.h
-include/labplot/backend/worksheet/plots/cartesian/CartesianPlot.h
-include/labplot/backend/worksheet/plots/cartesian/CartesianPlotLegend.h
-include/labplot/backend/worksheet/plots/cartesian/Histogram.h
-include/labplot/backend/worksheet/plots/cartesian/XYAnalysisCurve.h
-include/labplot/backend/worksheet/plots/cartesian/XYCurve.h
-include/labplot/backend/worksheet/plots/cartesian/XYEquationCurve.h
-include/labplot/backend/worksheet/plots/cartesian/XYFitCurve.h
+include/labplot/backend/worksheet/plots/cartesian/plots.h
 include/labplot/labplot.h
 include/labplot/labplot_export.h
-@so lib/liblabplot.so
-@man man/man1/labplot2.1
-share/applications/org.kde.labplot2.desktop
-share/doc/HTML/ca/labplot2/
-share/doc/HTML/ca/labplot2/index.cache.bz2
-share/doc/HTML/ca/labplot2/index.docbook
-share/doc/HTML/en/labplot2/
-share/doc/HTML/en/labplot2/datapicker_active_curve_data_spreadsheet.png
-share/doc/HTML/en/labplot2/datapicker_original_transformed_segments.png
-share/doc/HTML/en/labplot2/datapicker_segments.png
-share/doc/HTML/en/labplot2/example-FFT_python-1024x532.png
-share/doc/HTML/en/labplot2/example-fourier_filter-1024x532.png
-share/doc/HTML/en/labplot2/example-maxima_2-1024x532.png
-share/doc/HTML/en/labplot2/export_spreadsheet_dialog.png
-share/doc/HTML/en/labplot2/export_worksheet_dialog.png
-share/doc/HTML/en/labplot2/file_data_source.png
-share/doc/HTML/en/labplot2/import-dialog.png
-share/doc/HTML/en/labplot2/index.cache.bz2
-share/doc/HTML/en/labplot2/index.docbook
-share/doc/HTML/en/labplot2/labplot.png
-share/doc/HTML/en/labplot2/matrix.png
-share/doc/HTML/en/labplot2/matrix_function_values.png
-share/doc/HTML/en/labplot2/pe-context-menu.png
-share/doc/HTML/en/labplot2/project-explorer.png
-share/doc/HTML/en/labplot2/properties.png
-share/doc/HTML/en/labplot2/spreadsheet.png
-share/doc/HTML/en/labplot2/spreadsheet_generate_equidistant_values.png
-share/doc/HTML/en/labplot2/spreadsheet_generate_function_values.png
-share/doc/HTML/en/labplot2/spreadsheet_generate_multivariant_function_values.png
-share/doc/HTML/en/labplot2/spreadsheet_generate_random_values.png
-share/doc/HTML/en/labplot2/sub_window_tabbed_view_interfaces.png
-share/doc/HTML/en/labplot2/tutorial-spreadsheet1.png
-share/doc/HTML/en/labplot2/tutorial-spreadsheet2.png
-share/doc/HTML/en/labplot2/tutorial-spreadsheet3.png
-share/doc/HTML/en/labplot2/tutorial-spreadsheet4.png
-share/doc/HTML/en/labplot2/tutorial-spreadsheet5.png
-share/doc/HTML/en/labplot2/tutorial-spreadsheet6.png
-share/doc/HTML/en/labplot2/tutorial-spreadsheet7.png
-share/doc/HTML/en/labplot2/tutorial-spreadsheet8.png
-share/doc/HTML/en/labplot2/tutorial-spreadsheet9.png
-share/doc/HTML/en/labplot2/tutorial-xy-function1.png
-share/doc/HTML/en/labplot2/tutorial-xy-function10.png
-share/doc/HTML/en/labplot2/tutorial-xy-function2.png
-share/doc/HTML/en/labplot2/tutorial-xy-function3.png
-share/doc/HTML/en/labplot2/tutorial-xy-function4.png
-share/doc/HTML/en/labplot2/tutorial-xy-function5.png
-share/doc/HTML/en/labplot2/tutorial-xy-function6.png
-share/doc/HTML/en/labplot2/tutorial-xy-function7.png
-share/doc/HTML/en/labplot2/tutorial-xy-function8.png
-share/doc/HTML/en/labplot2/tutorial-xy-function9.png
-share/doc/HTML/en/labplot2/workbook.png
-share/doc/HTML/en/labplot2/worksheet.png
-share/doc/HTML/es/labplot2/
-share/doc/HTML/es/labplot2/index.cache.bz2
-share/doc/HTML/es/labplot2/index.docbook
-share/doc/HTML/it/labplot2/
-share/doc/HTML/it/labplot2/index.cache.bz2
-share/doc/HTML/it/labplot2/index.docbook
-share/doc/HTML/nl/labplot2/
-share/doc/HTML/nl/labplot2/index.cache.bz2
-share/doc/HTML/nl/labplot2/index.docbook
-share/doc/HTML/pt_BR/labplot2/
-share/doc/HTML/pt_BR/labplot2/index.cache.bz2
-share/doc/HTML/pt_BR/labplot2/index.docbook
-share/doc/HTML/ru/labplot2/
-share/doc/HTML/ru/labplot2/index.cache.bz2
-share/doc/HTML/ru/labplot2/index.docbook
-share/doc/HTML/sv/labplot2/
-share/doc/HTML/sv/labplot2/index.cache.bz2
-share/doc/HTML/sv/labplot2/index.docbook
-share/doc/HTML/uk/labplot2/
-share/doc/HTML/uk/labplot2/export_spreadsheet_dialog.png
-share/doc/HTML/uk/labplot2/export_worksheet_dialog.png
-share/doc/HTML/uk/labplot2/import-dialog.png
-share/doc/HTML/uk/labplot2/index.cache.bz2
-share/doc/HTML/uk/labplot2/index.docbook
-share/doc/HTML/uk/labplot2/labplot.png
-share/doc/HTML/uk/labplot2/matrix.png
-share/doc/HTML/uk/labplot2/matrix_function_values.png
-share/doc/HTML/uk/labplot2/pe-context-menu.png
-share/doc/HTML/uk/labplot2/project-explorer.png
-share/doc/HTML/uk/labplot2/properties.png
-share/doc/HTML/uk/labplot2/spreadsheet.png
-share/doc/HTML/uk/labplot2/spreadsheet_generate_equidistant_values.png
-share/doc/HTML/uk/labplot2/spreadsheet_generate_function_values.png
-share/doc/HTML/uk/labplot2/spreadsheet_generate_random_values.png
-share/doc/HTML/uk/labplot2/tutorial-spreadsheet1.png
-share/doc/HTML/uk/labplot2/tutorial-spreadsheet2.png
-share/doc/HTML/uk/labplot2/tutorial-spreadsheet3.png
-share/doc/HTML/uk/labplot2/tutorial-spreadsheet4.png
-share/doc/HTML/uk/labplot2/tutorial-spreadsheet5.png
-share/doc/HTML/uk/labplot2/tutorial-spreadsheet6.png
-share/doc/HTML/uk/labplot2/tutorial-spreadsheet7.png
-share/doc/HTML/uk/labplot2/tutorial-spreadsheet8.png
-share/doc/HTML/uk/labplot2/tutorial-spreadsheet9.png
-share/doc/HTML/uk/labplot2/tutorial-xy-function1.png
-share/doc/HTML/uk/labplot2/tutorial-xy-function10.png
-share/doc/HTML/uk/labplot2/tutorial-xy-function2.png
-share/doc/HTML/uk/labplot2/tutorial-xy-function3.png
-share/doc/HTML/uk/labplot2/tutorial-xy-function4.png
-share/doc/HTML/uk/labplot2/tutorial-xy-function5.png
-share/doc/HTML/uk/labplot2/tutorial-xy-function6.png
-share/doc/HTML/uk/labplot2/tutorial-xy-function7.png
-share/doc/HTML/uk/labplot2/tutorial-xy-function8.png
-share/doc/HTML/uk/labplot2/tutorial-xy-function9.png
-share/doc/HTML/uk/labplot2/workbook.png
-share/doc/HTML/uk/labplot2/worksheet.png
-share/icons/hicolor/128x128/apps/labplot2.png
+include/labplot/tools/
+include/labplot/tools/TeXRenderer.h
+lib/cmake/labplot/
+lib/cmake/labplot/LabPlotConfig.cmake
+lib/cmake/labplot/LabPlotConfigVersion.cmake
+lib/cmake/labplot/LabPlotTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/labplot/LabPlotTargets.cmake
+@lib lib/liblabplot.so.${LIBlabplot_VERSION}
+@man man/man1/labplot.1
+share/applications/org.kde.labplot.desktop
+share/doc/HTML/ca/labplot/
+share/doc/HTML/ca/labplot/index.cache.bz2
+share/doc/HTML/ca/labplot/index.docbook
+share/doc/HTML/en/labplot/
+share/doc/HTML/en/labplot/datapicker_active_curve_data_spreadsheet.png
+share/doc/HTML/en/labplot/datapicker_original_transformed_segments.png
+share/doc/HTML/en/labplot/datapicker_segments.png
+share/doc/HTML/en/labplot/example-FFT_python-1024x532.png
+share/doc/HTML/en/labplot/example-fourier_filter-1024x532.png
+share/doc/HTML/en/labplot/example-maxima_2-1024x532.png
+share/doc/HTML/en/labplot/export_spreadsheet_dialog.png
+share/doc/HTML/en/labplot/export_worksheet_dialog.png
+share/doc/HTML/en/labplot/file_data_source.png
+share/doc/HTML/en/labplot/import-dialog.png
+share/doc/HTML/en/labplot/index.cache.bz2
+share/doc/HTML/en/labplot/index.docbook
+share/doc/HTML/en/labplot/labplot.png
+share/doc/HTML/en/labplot/matrix.png
+share/doc/HTML/en/labplot/matrix_function_values.png
+share/doc/HTML/en/labplot/pe-context-menu.png
+share/doc/HTML/en/labplot/project-explorer.png
+share/doc/HTML/en/labplot/properties.png
+share/doc/HTML/en/labplot/spreadsheet.png
+share/doc/HTML/en/labplot/spreadsheet_generate_equidistant_values.png
+share/doc/HTML/en/labplot/spreadsheet_generate_function_values.png
+share/doc/HTML/en/labplot/spreadsheet_generate_multivariant_function_values.png
+share/doc/HTML/en/labplot/spreadsheet_generate_random_values.png
+share/doc/HTML/en/labplot/sub_window_tabbed_view_interfaces.png
+share/doc/HTML/en/labplot/tutorial-spreadsheet1.png
+share/doc/HTML/en/labplot/tutorial-spreadsheet2.png
+share/doc/HTML/en/labplot/tutorial-spreadsheet3.png
+share/doc/HTML/en/labplot/tutorial-spreadsheet4.png
+share/doc/HTML/en/labplot/tutorial-spreadsheet5.png
+share/doc/HTML/en/labplot/tutorial-spreadsheet6.png
+share/doc/HTML/en/labplot/tutorial-spreadsheet7.png
+share/doc/HTML/en/labplot/tutorial-spreadsheet8.png
+share/doc/HTML/en/labplot/tutorial-spreadsheet9.png
+share/doc/HTML/en/labplot/tutorial-xy-function1.png
+share/doc/HTML/en/labplot/tutorial-xy-function10.png
+share/doc/HTML/en/labplot/tutorial-xy-function2.png
+share/doc/HTML/en/labplot/tutorial-xy-function3.png
+share/doc/HTML/en/labplot/tutorial-xy-function4.png
+share/doc/HTML/en/labplot/tutorial-xy-function5.png
+share/doc/HTML/en/labplot/tutorial-xy-function6.png
+share/doc/HTML/en/labplot/tutorial-xy-function7.png
+share/doc/HTML/en/labplot/tutorial-xy-function8.png
+share/doc/HTML/en/labplot/tutorial-xy-function9.png
+share/doc/HTML/en/labplot/workbook.png
+share/doc/HTML/en/labplot/worksheet.png
+share/doc/HTML/es/labplot/
+share/doc/HTML/es/labplot/index.cache.bz2
+share/doc/HTML/es/labplot/index.docbook
+share/doc/HTML/it/labplot/
+share/doc/HTML/it/labplot/index.cache.bz2
+share/doc/HTML/it/labplot/index.docbook
+share/doc/HTML/nl/labplot/
+share/doc/HTML/nl/labplot/index.cache.bz2
+share/doc/HTML/nl/labplot/index.docbook
+share/doc/HTML/pt_BR/labplot/
+share/doc/HTML/pt_BR/labplot/index.cache.bz2
+share/doc/HTML/pt_BR/labplot/index.docbook
+share/doc/HTML/ru/labplot/
+share/doc/HTML/ru/labplot/index.cache.bz2
+share/doc/HTML/ru/labplot/index.docbook
+share/doc/HTML/sv/labplot/
+share/doc/HTML/sv/labplot/index.cache.bz2
+share/doc/HTML/sv/labplot/index.docbook
+share/doc/HTML/uk/labplot/
+share/doc/HTML/uk/labplot/export_spreadsheet_dialog.png
+share/doc/HTML/uk/labplot/export_worksheet_dialog.png
+share/doc/HTML/uk/labplot/import-dialog.png
+share/doc/HTML/uk/labplot/index.cache.bz2
+share/doc/HTML/uk/labplot/index.docbook
+share/doc/HTML/uk/labplot/labplot.png
+share/doc/HTML/uk/labplot/matrix.png
+share/doc/HTML/uk/labplot/matrix_function_values.png
+share/doc/HTML/uk/labplot/pe-context-menu.png
+share/doc/HTML/uk/labplot/project-explorer.png
+share/doc/HTML/uk/labplot/properties.png
+share/doc/HTML/uk/labplot/spreadsheet.png
+share/doc/HTML/uk/labplot/spreadsheet_generate_equidistant_values.png
+share/doc/HTML/uk/labplot/spreadsheet_generate_function_values.png
+share/doc/HTML/uk/labplot/spreadsheet_generate_random_values.png
+share/doc/HTML/uk/labplot/tutorial-spreadsheet1.png
+share/doc/HTML/uk/labplot/tutorial-spreadsheet2.png
+share/doc/HTML/uk/labplot/tutorial-spreadsheet3.png
+share/doc/HTML/uk/labplot/tutorial-spreadsheet4.png
+share/doc/HTML/uk/labplot/tutorial-spreadsheet5.png
+share/doc/HTML/uk/labplot/tutorial-spreadsheet6.png
+share/doc/HTML/uk/labplot/tutorial-spreadsheet7.png
+share/doc/HTML/uk/labplot/tutorial-spreadsheet8.png
+share/doc/HTML/uk/labplot/tutorial-spreadsheet9.png
+share/doc/HTML/uk/labplot/tutorial-xy-function1.png
+share/doc/HTML/uk/labplot/tutorial-xy-function10.png
+share/doc/HTML/uk/labplot/tutorial-xy-function2.png
+share/doc/HTML/uk/labplot/tutorial-xy-function3.png
+share/doc/HTML/uk/labplot/tutorial-xy-function4.png
+share/doc/HTML/uk/labplot/tutorial-xy-function5.png
+share/doc/HTML/uk/labplot/tutorial-xy-function6.png
+share/doc/HTML/uk/labplot/tutorial-xy-function7.png
+share/doc/HTML/uk/labplot/tutorial-xy-function8.png
+share/doc/HTML/uk/labplot/tutorial-xy-function9.png
+share/doc/HTML/uk/labplot/workbook.png
+share/doc/HTML/uk/labplot/worksheet.png
+share/icons/hicolor/128x128/apps/labplot.png
 share/icons/hicolor/150x150/
 share/icons/hicolor/150x150/apps/
-share/icons/hicolor/150x150/apps/labplot2.png
-share/icons/hicolor/16x16/apps/labplot2.png
-share/icons/hicolor/22x22/apps/labplot2.png
-share/icons/hicolor/256x256/apps/labplot2.png
+share/icons/hicolor/150x150/apps/labplot.png
+share/icons/hicolor/16x16/apps/labplot.png
+share/icons/hicolor/22x22/apps/labplot.png
+share/icons/hicolor/256x256/apps/labplot.png
 share/icons/hicolor/310x310/
 share/icons/hicolor/310x310/apps/
-share/icons/hicolor/310x310/apps/labplot2.png
-share/icons/hicolor/32x32/apps/labplot2.png
+share/icons/hicolor/310x310/apps/labplot.png
+share/icons/hicolor/32x32/apps/labplot.png
 share/icons/hicolor/44x44/
 share/icons/hicolor/44x44/apps/
-share/icons/hicolor/44x44/apps/labplot2.png
-share/icons/hicolor/48x48/apps/labplot2.png
-share/icons/hicolor/512x512/apps/labplot2.png
-share/icons/hicolor/64x64/apps/labplot2.png
+share/icons/hicolor/44x44/apps/labplot.png
+share/icons/hicolor/48x48/apps/labplot.png
+share/icons/hicolor/512x512/apps/labplot.png
+share/icons/hicolor/64x64/apps/labplot.png
 share/icons/hicolor/scalable/apps/labplot-1x-zoom.svg
 share/icons/hicolor/scalable/apps/labplot-2x-zoom.svg
 share/icons/hicolor/scalable/apps/labplot-3x-zoom.svg
@@ -185,6 +190,7 @@ share/icons/hicolor/scalable/apps/labplot-format-text-symbol.svg
 share/icons/hicolor/scalable/apps/labplot-forward.svg
 share/icons/hicolor/scalable/apps/labplot-json-array.svg
 share/icons/hicolor/scalable/apps/labplot-json-object.svg
+share/icons/hicolor/scalable/apps/labplot-kaggle.svg
 share/icons/hicolor/scalable/apps/labplot-matrix-new.svg
 share/icons/hicolor/scalable/apps/labplot-matrix.svg
 share/icons/hicolor/scalable/apps/labplot-maximize.svg
@@ -218,258 +224,264 @@ share/icons/hicolor/scalable/apps/labplot-zoom-select-x.svg
 share/icons/hicolor/scalable/apps/labplot-zoom-select-y.svg
 share/icons/hicolor/scalable/apps/labplot-zoom-select.svg
 share/icons/hicolor/scalable/apps/labplot-zoom.svg
-share/icons/hicolor/scalable/apps/labplot2.svgz
-share/labplot2/
-share/labplot2/application-x-labplot2.ico
-share/labplot2/color-schemes/
-share/labplot2/color-schemes/Breeze.colors
-share/labplot2/color-schemes/BreezeDark.colors
-share/labplot2/color-schemes/BreezeHighContrast.colors
-share/labplot2/color-schemes/Dracula.colors
-share/labplot2/color-schemes/Honeycomb.colors
-share/labplot2/color-schemes/Norway.colors
-share/labplot2/color-schemes/ObsidianCoast.colors
-share/labplot2/color-schemes/Oxygen.colors
-share/labplot2/color-schemes/OxygenCold.colors
-share/labplot2/color-schemes/Steel.colors
-share/labplot2/color-schemes/WontonSoup.colors
-share/labplot2/color-schemes/Zion.colors
-share/labplot2/color-schemes/ZionReversed.colors
-share/labplot2/colormaps/
-share/labplot2/colormaps/ColorBrewer (Diverging).json
-share/labplot2/colormaps/ColorBrewer (Qualitative).json
-share/labplot2/colormaps/ColorBrewer (Sequential).json
-share/labplot2/colormaps/ColorCET (Colour Blind).json
-share/labplot2/colormaps/ColorCET (Cyclic).json
-share/labplot2/colormaps/ColorCET (Diverging).json
-share/labplot2/colormaps/ColorCET (Isoluminant).json
-share/labplot2/colormaps/ColorCET (Linear).json
-share/labplot2/colormaps/ColorCET (Rainbow).json
-share/labplot2/colormaps/ColormapCollections.json
-share/labplot2/colormaps/Diverging Color Maps for Scientific Visualization.json
-share/labplot2/colormaps/Dracula (Categorical).json
-share/labplot2/colormaps/Scientific Colour Maps (Cyclic).json
-share/labplot2/colormaps/Scientific Colour Maps (Diverging).json
-share/labplot2/colormaps/Scientific Colour Maps (Multi-sequential).json
-share/labplot2/colormaps/Scientific Colour Maps (Sequential).json
-share/labplot2/colormaps/cmocean (Circular).json
-share/labplot2/colormaps/cmocean (Diverging).json
-share/labplot2/colormaps/cmocean (Multi-sequential).json
-share/labplot2/colormaps/cmocean (Sequential).json
-share/labplot2/colormaps/viridis (Sequential).json
-share/labplot2/datasets/
-share/labplot2/datasets/DASL.json
-share/labplot2/datasets/DatasetCategories.json
-share/labplot2/datasets/DatasetCollections.json
-share/labplot2/datasets/JSEDataArchive.json
-share/labplot2/datasets/OzDASL.json
-share/labplot2/datasets/README.md
-share/labplot2/datasets/Rdatasets.json
-share/labplot2/datasets/StatLib.json
-share/labplot2/datasets/seaborn.json
-share/labplot2/examples/
-share/labplot2/examples/Analysis/
-share/labplot2/examples/Analysis/Fit/
-share/labplot2/examples/Analysis/Fit/ENSO.lml
-share/labplot2/examples/Analysis/Fourier Filter/
-share/labplot2/examples/Analysis/Fourier Filter/SOS Morse Signal.lml
-share/labplot2/examples/Analysis/Hilbert Transformation/
-share/labplot2/examples/Analysis/Hilbert Transformation/Time response of a super regenerative receiver.lml
-share/labplot2/examples/Analysis/Smooth/
-share/labplot2/examples/Analysis/Smooth/Data = Smooth + Rough.lml
-share/labplot2/examples/Computing/
-share/labplot2/examples/Computing/Maxima/
-share/labplot2/examples/Computing/Maxima/Duffing Oscillator in Maxima.lml
-share/labplot2/examples/Computing/Maxima/Maxima Tutorial for Beginners.lml
-share/labplot2/examples/ExampleCollections.json
-share/labplot2/examples/General/
-share/labplot2/examples/General/Anatomy of a Box Plot.lml
-share/labplot2/examples/General/Basic Plots.lml
-share/labplot2/examples/General/Helium Rydberg Spectrum.lml
-share/labplot2/examples/General/Hertzsprung-Russel Diagram.lml
-share/labplot2/examples/General/Logarithmic Scales.lml
-share/labplot2/examples/General/Mathematical Functions.lml
-share/labplot2/examples/General/Multi-Ranges.lml
-share/labplot2/examples/General/Multicopter.lml
-share/labplot2/examples/General/SLOC History.lml
-share/labplot2/examples/General/Space Debris.lml
-share/labplot2/examples/General/Tufte's Minimal Ink Design.lml
-share/labplot2/examples/Statistics/
-share/labplot2/examples/Statistics/Same Data, Different Boxplots.lml
-share/labplot2/examples/Statistics/SameStats.lml
-share/labplot2/labplot2.ico
-share/labplot2/latex/
-share/labplot2/latex/preview.sty
-share/labplot2/pics/
-share/labplot2/pics/colorchooser/
-share/labplot2/pics/colorchooser/colorchooser_hue.xpm
-share/labplot2/pics/colorchooser/colorchooser_saturation.xpm
-share/labplot2/pics/colorchooser/colorchooser_value.xpm
-share/labplot2/pics/fit_models/
-share/labplot2/pics/fit_models/alg_sigmoid.pdf
-share/labplot2/pics/fit_models/atan.pdf
-share/labplot2/pics/fit_models/cauchy_lorentz1.pdf
-share/labplot2/pics/fit_models/cauchy_lorentz2.pdf
-share/labplot2/pics/fit_models/cauchy_lorentz3.pdf
-share/labplot2/pics/fit_models/cauchy_lorentz4.pdf
-share/labplot2/pics/fit_models/erf.pdf
-share/labplot2/pics/fit_models/exponential1.pdf
-share/labplot2/pics/fit_models/exponential2.pdf
-share/labplot2/pics/fit_models/exponential3.pdf
-share/labplot2/pics/fit_models/exponential4.pdf
-share/labplot2/pics/fit_models/fourier1.pdf
-share/labplot2/pics/fit_models/fourier2.pdf
-share/labplot2/pics/fit_models/fourier3.pdf
-share/labplot2/pics/fit_models/fourier4.pdf
-share/labplot2/pics/fit_models/gaussian1.pdf
-share/labplot2/pics/fit_models/gaussian2.pdf
-share/labplot2/pics/fit_models/gaussian3.pdf
-share/labplot2/pics/fit_models/gaussian4.pdf
-share/labplot2/pics/fit_models/gd.pdf
-share/labplot2/pics/fit_models/gompertz.pdf
-share/labplot2/pics/fit_models/hill.pdf
-share/labplot2/pics/fit_models/inv_exponential1.pdf
-share/labplot2/pics/fit_models/logistic1.pdf
-share/labplot2/pics/fit_models/logistic2.pdf
-share/labplot2/pics/fit_models/logistic3.pdf
-share/labplot2/pics/fit_models/logistic4.pdf
-share/labplot2/pics/fit_models/logistic_function.pdf
-share/labplot2/pics/fit_models/polynom1.pdf
-share/labplot2/pics/fit_models/polynom2.pdf
-share/labplot2/pics/fit_models/polynom3.pdf
-share/labplot2/pics/fit_models/polynom4.pdf
-share/labplot2/pics/fit_models/power1.pdf
-share/labplot2/pics/fit_models/power2.pdf
-share/labplot2/pics/fit_models/pseudovoigt11.pdf
-share/labplot2/pics/fit_models/pseudovoigt12.pdf
-share/labplot2/pics/fit_models/pseudovoigt13.pdf
-share/labplot2/pics/fit_models/pseudovoigt14.pdf
-share/labplot2/pics/fit_models/sech1.pdf
-share/labplot2/pics/fit_models/sech2.pdf
-share/labplot2/pics/fit_models/sech3.pdf
-share/labplot2/pics/fit_models/sech4.pdf
-share/labplot2/pics/fit_models/tanh.pdf
-share/labplot2/pics/fit_models/voigt1.pdf
-share/labplot2/pics/fit_models/voigt2.pdf
-share/labplot2/pics/fit_models/voigt3.pdf
-share/labplot2/pics/fit_models/voigt4.pdf
-share/labplot2/pics/gsl_distributions/
-share/labplot2/pics/gsl_distributions/bernoulli.pdf
-share/labplot2/pics/gsl_distributions/beta.pdf
-share/labplot2/pics/gsl_distributions/binomial.pdf
-share/labplot2/pics/gsl_distributions/cauchy_lorentz.pdf
-share/labplot2/pics/gsl_distributions/chi_squared.pdf
-share/labplot2/pics/gsl_distributions/exponential.pdf
-share/labplot2/pics/gsl_distributions/exponential_power.pdf
-share/labplot2/pics/gsl_distributions/fdist.pdf
-share/labplot2/pics/gsl_distributions/flat.pdf
-share/labplot2/pics/gsl_distributions/frechet.pdf
-share/labplot2/pics/gsl_distributions/gamma.pdf
-share/labplot2/pics/gsl_distributions/gaussian.pdf
-share/labplot2/pics/gsl_distributions/gaussian_tail.pdf
-share/labplot2/pics/gsl_distributions/geometric.pdf
-share/labplot2/pics/gsl_distributions/gumbel1.pdf
-share/labplot2/pics/gsl_distributions/gumbel2.pdf
-share/labplot2/pics/gsl_distributions/hypergeometric.pdf
-share/labplot2/pics/gsl_distributions/landau.pdf
-share/labplot2/pics/gsl_distributions/laplace.pdf
-share/labplot2/pics/gsl_distributions/levy.pdf
-share/labplot2/pics/gsl_distributions/levy_alpha_stable.pdf
-share/labplot2/pics/gsl_distributions/levy_skew_alpha_stable.pdf
-share/labplot2/pics/gsl_distributions/logarithmic.pdf
-share/labplot2/pics/gsl_distributions/logistic.pdf
-share/labplot2/pics/gsl_distributions/lognormal.pdf
-share/labplot2/pics/gsl_distributions/maxwell_boltzmann.pdf
-share/labplot2/pics/gsl_distributions/negative_binomial.pdf
-share/labplot2/pics/gsl_distributions/pareto.pdf
-share/labplot2/pics/gsl_distributions/pascal.pdf
-share/labplot2/pics/gsl_distributions/poisson.pdf
-share/labplot2/pics/gsl_distributions/rayleigh.pdf
-share/labplot2/pics/gsl_distributions/rayleigh_tail.pdf
-share/labplot2/pics/gsl_distributions/sech.pdf
-share/labplot2/pics/gsl_distributions/students_t.pdf
-share/labplot2/pics/gsl_distributions/weibull.pdf
-share/labplot2/splash.png
-share/labplot2/themes/
-share/labplot2/themes/BlackOnLightYellow
-share/labplot2/themes/BlackOnWhite
-share/labplot2/themes/BlueOnBlack
-share/labplot2/themes/Bright
-share/labplot2/themes/Creme
-share/labplot2/themes/Dark
-share/labplot2/themes/DarkPastels
-share/labplot2/themes/Default
-share/labplot2/themes/Dracula
-share/labplot2/themes/GgplotDark
-share/labplot2/themes/GgplotGrey
-share/labplot2/themes/GreenOnBlack
-share/labplot2/themes/GreyOnBlack
-share/labplot2/themes/GreySlate
-share/labplot2/themes/Monokai
-share/labplot2/themes/RedOnBlack
-share/labplot2/themes/Solarized
-share/labplot2/themes/SolarizedLight
-share/labplot2/themes/Sparkline
-share/labplot2/themes/Tufte
-share/labplot2/themes/screenshots/
-share/labplot2/themes/screenshots/BlackOnLightYellow.png
-share/labplot2/themes/screenshots/BlackOnWhite.png
-share/labplot2/themes/screenshots/BlueOnBlack.png
-share/labplot2/themes/screenshots/Bright.png
-share/labplot2/themes/screenshots/Creme.png
-share/labplot2/themes/screenshots/Dark.png
-share/labplot2/themes/screenshots/DarkPastels.png
-share/labplot2/themes/screenshots/Default.png
-share/labplot2/themes/screenshots/Dracula.png
-share/labplot2/themes/screenshots/GgplotDark.png
-share/labplot2/themes/screenshots/GgplotGrey.png
-share/labplot2/themes/screenshots/GreenOnBlack.png
-share/labplot2/themes/screenshots/GreyOnBlack.png
-share/labplot2/themes/screenshots/GreySlate.png
-share/labplot2/themes/screenshots/Monokai.png
-share/labplot2/themes/screenshots/RedOnBlack.png
-share/labplot2/themes/screenshots/Solarized.png
-share/labplot2/themes/screenshots/SolarizedLight.png
-share/labplot2/themes/screenshots/Sparkline.png
-share/labplot2/themes/screenshots/Tufte.png
-share/labplot2/themes/screenshots/Unavailable.png
-share/locale/ar/LC_MESSAGES/labplot2.mo
-share/locale/bs/LC_MESSAGES/labplot2.mo
-share/locale/ca/LC_MESSAGES/labplot2.mo
-share/locale/ca@valencia/LC_MESSAGES/labplot2.mo
-share/locale/cs/LC_MESSAGES/labplot2.mo
-share/locale/da/LC_MESSAGES/labplot2.mo
-share/locale/de/LC_MESSAGES/labplot2.mo
-share/locale/el/LC_MESSAGES/labplot2.mo
-share/locale/en_GB/LC_MESSAGES/labplot2.mo
-share/locale/eo/LC_MESSAGES/labplot2.mo
-share/locale/es/LC_MESSAGES/labplot2.mo
-share/locale/eu/LC_MESSAGES/labplot2.mo
-share/locale/fi/LC_MESSAGES/labplot2.mo
-share/locale/fr/LC_MESSAGES/labplot2.mo
-share/locale/gl/LC_MESSAGES/labplot2.mo
-share/locale/hu/LC_MESSAGES/labplot2.mo
-share/locale/ia/LC_MESSAGES/labplot2.mo
-share/locale/it/LC_MESSAGES/labplot2.mo
-share/locale/ja/LC_MESSAGES/labplot2.mo
-share/locale/ka/LC_MESSAGES/labplot2.mo
-share/locale/lt/LC_MESSAGES/labplot2.mo
-share/locale/nds/LC_MESSAGES/labplot2.mo
-share/locale/nl/LC_MESSAGES/labplot2.mo
-share/locale/pl/LC_MESSAGES/labplot2.mo
-share/locale/pt/LC_MESSAGES/labplot2.mo
-share/locale/pt_BR/LC_MESSAGES/labplot2.mo
-share/locale/ru/LC_MESSAGES/labplot2.mo
-share/locale/sk/LC_MESSAGES/labplot2.mo
-share/locale/sl/LC_MESSAGES/labplot2.mo
-share/locale/sv/LC_MESSAGES/labplot2.mo
-share/locale/tr/LC_MESSAGES/labplot2.mo
-share/locale/uk/LC_MESSAGES/labplot2.mo
-share/locale/zh_CN/LC_MESSAGES/labplot2.mo
-share/locale/zh_TW/LC_MESSAGES/labplot2.mo
-share/metainfo/
-share/metainfo/org.kde.labplot2.appdata.xml
-share/mime/packages/labplot2.xml
+share/icons/hicolor/scalable/apps/labplot.svgz
+share/icons/hicolor/scalable/apps/org.kde.labplot.svg
+share/labplot/
+share/labplot/application-x-labplot.ico
+share/labplot/color-schemes/
+share/labplot/color-schemes/Breeze.colors
+share/labplot/color-schemes/BreezeDark.colors
+share/labplot/color-schemes/BreezeHighContrast.colors
+share/labplot/color-schemes/Dracula.colors
+share/labplot/color-schemes/Honeycomb.colors
+share/labplot/color-schemes/Norway.colors
+share/labplot/color-schemes/ObsidianCoast.colors
+share/labplot/color-schemes/Oxygen.colors
+share/labplot/color-schemes/OxygenCold.colors
+share/labplot/color-schemes/Steel.colors
+share/labplot/color-schemes/WontonSoup.colors
+share/labplot/color-schemes/Zion.colors
+share/labplot/color-schemes/ZionReversed.colors
+share/labplot/colormaps/
+share/labplot/colormaps/ColorBrewer (Diverging).json
+share/labplot/colormaps/ColorBrewer (Qualitative).json
+share/labplot/colormaps/ColorBrewer (Sequential).json
+share/labplot/colormaps/ColorCET (Colour Blind).json
+share/labplot/colormaps/ColorCET (Cyclic).json
+share/labplot/colormaps/ColorCET (Diverging).json
+share/labplot/colormaps/ColorCET (Isoluminant).json
+share/labplot/colormaps/ColorCET (Linear).json
+share/labplot/colormaps/ColorCET (Rainbow).json
+share/labplot/colormaps/ColormapCollections.json
+share/labplot/colormaps/Diverging Color Maps for Scientific Visualization.json
+share/labplot/colormaps/Dracula (Categorical).json
+share/labplot/colormaps/Scientific Colour Maps (Cyclic).json
+share/labplot/colormaps/Scientific Colour Maps (Diverging).json
+share/labplot/colormaps/Scientific Colour Maps (Multi-sequential).json
+share/labplot/colormaps/Scientific Colour Maps (Sequential).json
+share/labplot/colormaps/cmocean (Circular).json
+share/labplot/colormaps/cmocean (Diverging).json
+share/labplot/colormaps/cmocean (Multi-sequential).json
+share/labplot/colormaps/cmocean (Sequential).json
+share/labplot/colormaps/viridis (Sequential).json
+share/labplot/datasets/
+share/labplot/datasets/DASL.json
+share/labplot/datasets/DatasetCategories.json
+share/labplot/datasets/DatasetCollections.json
+share/labplot/datasets/JSEDataArchive.json
+share/labplot/datasets/OzDASL.json
+share/labplot/datasets/README.md
+share/labplot/datasets/Rdatasets.json
+share/labplot/datasets/StatLib.json
+share/labplot/datasets/seaborn.json
+share/labplot/examples/
+share/labplot/examples/Analysis/
+share/labplot/examples/Analysis/Fit/
+share/labplot/examples/Analysis/Fit/ENSO.lml
+share/labplot/examples/Analysis/Fit/NIST - Linear Regression.lml
+share/labplot/examples/Analysis/Fit/NIST - Nonlinear Regression.lml
+share/labplot/examples/Analysis/Fourier Filter/
+share/labplot/examples/Analysis/Fourier Filter/SOS Morse Signal.lml
+share/labplot/examples/Analysis/Hilbert Transformation/
+share/labplot/examples/Analysis/Hilbert Transformation/Time response of a super regenerative receiver.lml
+share/labplot/examples/Analysis/Smooth/
+share/labplot/examples/Analysis/Smooth/Data = Smooth + Rough.lml
+share/labplot/examples/Computing/
+share/labplot/examples/Computing/Maxima/
+share/labplot/examples/Computing/Maxima/Duffing Oscillator in Maxima.lml
+share/labplot/examples/Computing/Maxima/Maxima Tutorial for Beginners.lml
+share/labplot/examples/ExampleCollections.json
+share/labplot/examples/General/
+share/labplot/examples/General/Anatomy of a Box Plot.lml
+share/labplot/examples/General/Basic Plots.lml
+share/labplot/examples/General/Helium Rydberg Spectrum.lml
+share/labplot/examples/General/Hertzsprung-Russel Diagram.lml
+share/labplot/examples/General/Logarithmic Scales.lml
+share/labplot/examples/General/Mathematical Functions.lml
+share/labplot/examples/General/Multi-Ranges.lml
+share/labplot/examples/General/Multicopter.lml
+share/labplot/examples/General/SLOC History.lml
+share/labplot/examples/General/Space Debris.lml
+share/labplot/examples/General/Tufte's Minimal Ink Design.lml
+share/labplot/examples/Statistics/
+share/labplot/examples/Statistics/Language Learning - Percent Correct PBC.lml
+share/labplot/examples/Statistics/PBC Examples (Wheeler and Montgomery).lml
+share/labplot/examples/Statistics/Same Data, Different Boxplots.lml
+share/labplot/examples/Statistics/SameStats.lml
+share/labplot/labplot.ico
+share/labplot/latex/
+share/labplot/latex/preview.sty
+share/labplot/pics/
+share/labplot/pics/colorchooser/
+share/labplot/pics/colorchooser/colorchooser_hue.xpm
+share/labplot/pics/colorchooser/colorchooser_saturation.xpm
+share/labplot/pics/colorchooser/colorchooser_value.xpm
+share/labplot/pics/fit_models/
+share/labplot/pics/fit_models/alg_sigmoid.pdf
+share/labplot/pics/fit_models/atan.pdf
+share/labplot/pics/fit_models/cauchy_lorentz1.pdf
+share/labplot/pics/fit_models/cauchy_lorentz2.pdf
+share/labplot/pics/fit_models/cauchy_lorentz3.pdf
+share/labplot/pics/fit_models/cauchy_lorentz4.pdf
+share/labplot/pics/fit_models/erf.pdf
+share/labplot/pics/fit_models/exponential1.pdf
+share/labplot/pics/fit_models/exponential2.pdf
+share/labplot/pics/fit_models/exponential3.pdf
+share/labplot/pics/fit_models/exponential4.pdf
+share/labplot/pics/fit_models/fourier1.pdf
+share/labplot/pics/fit_models/fourier2.pdf
+share/labplot/pics/fit_models/fourier3.pdf
+share/labplot/pics/fit_models/fourier4.pdf
+share/labplot/pics/fit_models/gaussian1.pdf
+share/labplot/pics/fit_models/gaussian2.pdf
+share/labplot/pics/fit_models/gaussian3.pdf
+share/labplot/pics/fit_models/gaussian4.pdf
+share/labplot/pics/fit_models/gd.pdf
+share/labplot/pics/fit_models/gompertz.pdf
+share/labplot/pics/fit_models/hill.pdf
+share/labplot/pics/fit_models/inv_exponential1.pdf
+share/labplot/pics/fit_models/logistic1.pdf
+share/labplot/pics/fit_models/logistic2.pdf
+share/labplot/pics/fit_models/logistic3.pdf
+share/labplot/pics/fit_models/logistic4.pdf
+share/labplot/pics/fit_models/logistic_function.pdf
+share/labplot/pics/fit_models/polynom1.pdf
+share/labplot/pics/fit_models/polynom2.pdf
+share/labplot/pics/fit_models/polynom3.pdf
+share/labplot/pics/fit_models/polynom4.pdf
+share/labplot/pics/fit_models/power1.pdf
+share/labplot/pics/fit_models/power2.pdf
+share/labplot/pics/fit_models/pseudovoigt11.pdf
+share/labplot/pics/fit_models/pseudovoigt12.pdf
+share/labplot/pics/fit_models/pseudovoigt13.pdf
+share/labplot/pics/fit_models/pseudovoigt14.pdf
+share/labplot/pics/fit_models/sech1.pdf
+share/labplot/pics/fit_models/sech2.pdf
+share/labplot/pics/fit_models/sech3.pdf
+share/labplot/pics/fit_models/sech4.pdf
+share/labplot/pics/fit_models/tanh.pdf
+share/labplot/pics/fit_models/voigt1.pdf
+share/labplot/pics/fit_models/voigt2.pdf
+share/labplot/pics/fit_models/voigt3.pdf
+share/labplot/pics/fit_models/voigt4.pdf
+share/labplot/pics/gsl_distributions/
+share/labplot/pics/gsl_distributions/bernoulli.pdf
+share/labplot/pics/gsl_distributions/beta.pdf
+share/labplot/pics/gsl_distributions/binomial.pdf
+share/labplot/pics/gsl_distributions/cauchy_lorentz.pdf
+share/labplot/pics/gsl_distributions/chi_squared.pdf
+share/labplot/pics/gsl_distributions/exponential.pdf
+share/labplot/pics/gsl_distributions/exponential_power.pdf
+share/labplot/pics/gsl_distributions/fdist.pdf
+share/labplot/pics/gsl_distributions/flat.pdf
+share/labplot/pics/gsl_distributions/frechet.pdf
+share/labplot/pics/gsl_distributions/gamma.pdf
+share/labplot/pics/gsl_distributions/gaussian.pdf
+share/labplot/pics/gsl_distributions/gaussian_tail.pdf
+share/labplot/pics/gsl_distributions/geometric.pdf
+share/labplot/pics/gsl_distributions/gumbel1.pdf
+share/labplot/pics/gsl_distributions/gumbel2.pdf
+share/labplot/pics/gsl_distributions/hypergeometric.pdf
+share/labplot/pics/gsl_distributions/landau.pdf
+share/labplot/pics/gsl_distributions/laplace.pdf
+share/labplot/pics/gsl_distributions/levy.pdf
+share/labplot/pics/gsl_distributions/levy_alpha_stable.pdf
+share/labplot/pics/gsl_distributions/levy_skew_alpha_stable.pdf
+share/labplot/pics/gsl_distributions/logarithmic.pdf
+share/labplot/pics/gsl_distributions/logistic.pdf
+share/labplot/pics/gsl_distributions/lognormal.pdf
+share/labplot/pics/gsl_distributions/maxwell_boltzmann.pdf
+share/labplot/pics/gsl_distributions/negative_binomial.pdf
+share/labplot/pics/gsl_distributions/pareto.pdf
+share/labplot/pics/gsl_distributions/pascal.pdf
+share/labplot/pics/gsl_distributions/poisson.pdf
+share/labplot/pics/gsl_distributions/rayleigh.pdf
+share/labplot/pics/gsl_distributions/rayleigh_tail.pdf
+share/labplot/pics/gsl_distributions/sech.pdf
+share/labplot/pics/gsl_distributions/students_t.pdf
+share/labplot/pics/gsl_distributions/weibull.pdf
+share/labplot/splash.png
+share/labplot/themes/
+share/labplot/themes/BlackOnLightYellow
+share/labplot/themes/BlackOnWhite
+share/labplot/themes/BlueOnBlack
+share/labplot/themes/Bright
+share/labplot/themes/Creme
+share/labplot/themes/Dark
+share/labplot/themes/DarkPastels
+share/labplot/themes/Default
+share/labplot/themes/Dracula
+share/labplot/themes/GgplotDark
+share/labplot/themes/GgplotGrey
+share/labplot/themes/GreenOnBlack
+share/labplot/themes/GreyOnBlack
+share/labplot/themes/GreySlate
+share/labplot/themes/Monokai
+share/labplot/themes/RedOnBlack
+share/labplot/themes/Solarized
+share/labplot/themes/SolarizedLight
+share/labplot/themes/Sparkline
+share/labplot/themes/Tufte
+share/labplot/themes/screenshots/
+share/labplot/themes/screenshots/BlackOnLightYellow.png
+share/labplot/themes/screenshots/BlackOnWhite.png
+share/labplot/themes/screenshots/BlueOnBlack.png
+share/labplot/themes/screenshots/Bright.png
+share/labplot/themes/screenshots/Creme.png
+share/labplot/themes/screenshots/Dark.png
+share/labplot/themes/screenshots/DarkPastels.png
+share/labplot/themes/screenshots/Default.png
+share/labplot/themes/screenshots/Dracula.png
+share/labplot/themes/screenshots/GgplotDark.png
+share/labplot/themes/screenshots/GgplotGrey.png
+share/labplot/themes/screenshots/GreenOnBlack.png
+share/labplot/themes/screenshots/GreyOnBlack.png
+share/labplot/themes/screenshots/GreySlate.png
+share/labplot/themes/screenshots/Monokai.png
+share/labplot/themes/screenshots/RedOnBlack.png
+share/labplot/themes/screenshots/Solarized.png
+share/labplot/themes/screenshots/SolarizedLight.png
+share/labplot/themes/screenshots/Sparkline.png
+share/labplot/themes/screenshots/Tufte.png
+share/labplot/themes/screenshots/Unavailable.png
+share/locale/ar/LC_MESSAGES/labplot.mo
+share/locale/bs/LC_MESSAGES/labplot.mo
+share/locale/ca/LC_MESSAGES/labplot.mo
+share/locale/ca@valencia/LC_MESSAGES/labplot.mo
+share/locale/cs/LC_MESSAGES/labplot.mo
+share/locale/da/LC_MESSAGES/labplot.mo
+share/locale/de/LC_MESSAGES/labplot.mo
+share/locale/el/LC_MESSAGES/labplot.mo
+share/locale/en_GB/LC_MESSAGES/labplot.mo
+share/locale/eo/LC_MESSAGES/labplot.mo
+share/locale/es/LC_MESSAGES/labplot.mo
+share/locale/eu/LC_MESSAGES/labplot.mo
+share/locale/fi/LC_MESSAGES/labplot.mo
+share/locale/fr/LC_MESSAGES/labplot.mo
+share/locale/gl/LC_MESSAGES/labplot.mo
+share/locale/hi/LC_MESSAGES/labplot.mo
+share/locale/hu/LC_MESSAGES/labplot.mo
+share/locale/ia/LC_MESSAGES/labplot.mo
+share/locale/it/LC_MESSAGES/labplot.mo
+share/locale/ja/LC_MESSAGES/labplot.mo
+share/locale/ka/LC_MESSAGES/labplot.mo
+share/locale/lt/LC_MESSAGES/labplot.mo
+share/locale/nds/LC_MESSAGES/labplot.mo
+share/locale/nl/LC_MESSAGES/labplot.mo
+share/locale/pl/LC_MESSAGES/labplot.mo
+share/locale/pt/LC_MESSAGES/labplot.mo
+share/locale/pt_BR/LC_MESSAGES/labplot.mo
+share/locale/ru/LC_MESSAGES/labplot.mo
+share/locale/sa/LC_MESSAGES/labplot.mo
+share/locale/sk/LC_MESSAGES/labplot.mo
+share/locale/sl/LC_MESSAGES/labplot.mo
+share/locale/sv/LC_MESSAGES/labplot.mo
+share/locale/tr/LC_MESSAGES/labplot.mo
+share/locale/uk/LC_MESSAGES/labplot.mo
+share/locale/zh_CN/LC_MESSAGES/labplot.mo
+share/locale/zh_TW/LC_MESSAGES/labplot.mo
 @tag update-desktop-database
 @tag update-mime-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
+share/metainfo/org.kde.labplot.appdata.xml
+share/mime/packages/labplot.xml
