@@ -1,10 +1,10 @@
 COMMENT =	pure-ruby code highlighter compatible with pygments
 
-DISTNAME =	rouge-4.5.1
+DISTNAME =	rouge-4.5.2
 
 CATEGORIES =	textproc
 
-HOMEPAGE =	http://rouge.jneen.net/
+HOMEPAGE =	https://rouge.jneen.net/
 
 # MIT, BSD
 PERMIT_PACKAGE = Yes
