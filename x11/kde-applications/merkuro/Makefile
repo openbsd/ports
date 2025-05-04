@@ -4,6 +4,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	calendar email todo and task application
 
 DISTNAME =	merkuro-${VERSION}
+REVISION =	0
 
 CATEGORIES =	productivity x11
 
@@ -43,17 +44,19 @@ BUILD_DEPENDS =	devel/boost \
 		devel/kf6/kitemviews \
 		devel/kf6/kservice \
 		devel/kf6/ktextwidgets \
-		x11/kde-plasma/libplasma \
 		devel/kf6/qqc2-desktop-style \
 		devel/kf6/solid \
 		devel/kf6/sonnet \
-		misc/shared-mime-info
+		misc/shared-mime-info \
+		x11/kde-plasma/libplasma \
+		x11/qt6/qtlocation
 
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/kf6/kirigami \
-		x11/kde-plasma/libplasma \
 		devel/kf6/qqc2-desktop-style \
-		x11/gtk+4,-guic
+		x11/gtk+4,-guic \
+		x11/kde-plasma/libplasma \
+		x11/qt6/qtlocation
 
 LIB_DEPENDS =	devel/kf6/kcalendarcore \
 		devel/kf6/kcodecs \
