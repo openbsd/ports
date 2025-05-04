@@ -1,3 +1,5 @@
+BROKEN-sparc64= error:union MMX_reg has no member named uwa
+
 COMMENT=	x86 with DOS emulator targeted at playing games
 
 VERSION=	2024.03.01
