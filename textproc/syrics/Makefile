@@ -1,14 +1,11 @@
 COMMENT =		fetch lyrics from spotify
 
-V =			0.0.1.8
+V =			0.1.1.9
 MODPY_DISTV =	${V}
 DISTNAME =		syrics-${V}
 CATEGORIES =		textproc audio
-REVISION =		2
 
 HOMEPAGE =		https://github.com/akashrchandran/syrics
-
-MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
