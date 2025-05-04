@@ -1,7 +1,7 @@
 COMMENT =		prometheus exporter for hardware and OS metrics
 
 MODGO_MODNAME =		github.com/prometheus/node_exporter
-MODGO_VERSION =		v1.9.0
+MODGO_VERSION =		v1.9.1
 
 DISTNAME =		node_exporter-${MODGO_VERSION}
 
@@ -9,7 +9,7 @@ CATEGORIES =		sysutils
 
 HOMEPAGE =		https://prometheus.io/
 
-MAINTAINER =		Claudio Jeker <claudio@openbsd.org>
+MAINTAINER =		Daniel Jakots <obsd@chown.me>
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 

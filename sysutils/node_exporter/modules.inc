@@ -56,15 +56,15 @@ MODGO_MODULES =	\
 	github.com/xhit/go-str2duration/v2		 v2.1.0 \
 	go.uber.org/atomic				 v1.7.0 \
 	go.uber.org/multierr				 v1.6.0 \
-	golang.org/x/crypto				 v0.32.0 \
+	golang.org/x/crypto				 v0.36.0 \
 	golang.org/x/exp				 v0.0.0-20240909161429-701f63a606c0 \
 	golang.org/x/mod				 v0.21.0 \
-	golang.org/x/net				 v0.33.0 \
-	golang.org/x/oauth2				 v0.24.0 \
-	golang.org/x/sync				 v0.10.0 \
-	golang.org/x/sys				 v0.30.0 \
-	golang.org/x/term				 v0.28.0 \
-	golang.org/x/text				 v0.21.0 \
+	golang.org/x/net				 v0.37.0 \
+	golang.org/x/oauth2				 v0.28.0 \
+	golang.org/x/sync				 v0.12.0 \
+	golang.org/x/sys				 v0.31.0 \
+	golang.org/x/term				 v0.30.0 \
+	golang.org/x/text				 v0.23.0 \
 	golang.org/x/tools				 v0.25.0 \
 	golang.org/x/xerrors				 v0.0.0-20191204190536-9bdfabe68543 \
 	google.golang.org/protobuf			 v1.36.1 \
@@ -90,6 +90,7 @@ MODGO_MODFILES =	\
 	github.com/stretchr/testify		 v1.8.2 \
 	github.com/stretchr/testify		 v1.9.0 \
 	golang.org/x/crypto			 v0.31.0 \
+	golang.org/x/crypto			 v0.32.0 \
 	golang.org/x/exp			 v0.0.0-20230224173230-c95f2b4c22f2 \
 	golang.org/x/mod			 v0.17.0 \
 	golang.org/x/net			 v0.2.0 \
@@ -97,9 +98,12 @@ MODGO_MODFILES =	\
 	golang.org/x/net			 v0.23.0 \
 	golang.org/x/net			 v0.25.0 \
 	golang.org/x/net			 v0.26.0 \
+	golang.org/x/net			 v0.33.0 \
 	golang.org/x/net			 v0.9.0 \
 	golang.org/x/oauth2			 v0.21.0 \
+	golang.org/x/oauth2			 v0.24.0 \
 	golang.org/x/sync			 v0.1.0 \
+	golang.org/x/sync			 v0.10.0 \
 	golang.org/x/sync			 v0.7.0 \
 	golang.org/x/sync			 v0.8.0 \
 	golang.org/x/sys			 v0.0.0-20201204225414-ed752295db88 \
@@ -111,8 +115,8 @@ MODGO_MODFILES =	\
 	golang.org/x/sys			 v0.28.0 \
 	golang.org/x/sys			 v0.29.0 \
 	golang.org/x/sys			 v0.7.0 \
-	golang.org/x/term			 v0.27.0 \
 	golang.org/x/text			 v0.16.0 \
+	golang.org/x/text			 v0.21.0 \
 	golang.org/x/tools			 v0.21.1-0.20240508182429-e35e4ccd0d2d \
 	google.golang.org/protobuf		 v1.33.0 \
 	google.golang.org/protobuf		 v1.34.2 \
