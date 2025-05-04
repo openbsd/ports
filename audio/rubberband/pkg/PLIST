@@ -1,6 +1,7 @@
 @bin bin/rubberband
 @bin bin/rubberband-r3
 include/rubberband/
+include/rubberband/RubberBandLiveShifter.h
 include/rubberband/RubberBandStretcher.h
 include/rubberband/rubberband-c.h
 lib/ladspa/

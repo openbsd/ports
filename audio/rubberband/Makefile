@@ -1,9 +1,9 @@
 COMMENT =		audio time-stretching and pitch-shifting library
 
-DISTNAME =		rubberband-3.2.1
+DISTNAME =		rubberband-4.0.0
 EXTRACT_SUFX =		.tar.bz2
 
-SHARED_LIBS =		rubberband 1.0
+SHARED_LIBS =		rubberband 2.0
 
 CATEGORIES =		audio
 HOMEPAGE =		https://breakfastquay.com/rubberband
