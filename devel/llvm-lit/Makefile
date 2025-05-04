@@ -24,7 +24,7 @@ SITES =		https://github.com/llvm/llvm-project/releases/download/llvmorg-${LLVM_V
 
 EXTRACT_SUFX =		.tar.xz
 
-COMPILER =		base-clang
+COMPILER =		base-clang ports-clang
 
 MODULES =		devel/cmake \
 			lang/python
