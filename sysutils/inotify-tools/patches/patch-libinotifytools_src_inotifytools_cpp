@@ -1,0 +1,12 @@
+Index: libinotifytools/src/inotifytools.cpp
+--- libinotifytools/src/inotifytools.cpp.orig
++++ libinotifytools/src/inotifytools.cpp
+@@ -36,7 +36,7 @@
+ 
+ #include "inotifytools/inotify.h"
+ 
+-#ifdef __FreeBSD__
++#ifdef __OpenBSD__
+ struct fanotify_event_fid;
+ 
+ #define FAN_EVENT_INFO_TYPE_FID 1

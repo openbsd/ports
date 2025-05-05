@@ -1,11 +1,10 @@
 COMMENT =	programs providing a simple interface to inotify
-DISTNAME =	inotify-tools-3.14pl0
 CATEGORIES =	sysutils
 
-GH_ACCOUNT =	rvoicilas
+GH_ACCOUNT =	inotify-tools
 GH_PROJECT =	inotify-tools
-GH_COMMIT =	1df9af4d6cd0f4af4b1b19254bcf056aed4ae395
-SHARED_LIBS =	inotifytools 0.0 # 4.1
+GH_TAGNAME =	4.23.9.0
+SHARED_LIBS =	inotifytools 1.0 # 4.1
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
@@ -20,12 +19,17 @@ LIB_DEPENDS =		devel/libinotify
 BUILD_DEPENDS +=	${MODGNU_AUTOCONF_DEPENDS} \
 			${MODGNU_AUTOMAKE_DEPENDS} \
 			devel/libtool
-WANTLIB +=		lib/inotify/inotify c pthread
+
+WANTLIB += ${COMPILER_LIBCXX} c m lib/inotify/inotify
 
 pre-configure:
 	cd ${WRKSRC} && \
 		libtoolize && \
 		env AUTOMAKE_VERSION=${AUTOMAKE_VERSION} AUTOCONF_VERSION=${AUTOCONF_VERSION} \
 		autoreconf -fi
+
+post-install:
+	# Both are linux-only and not actually installed
+	rm ${PREFIX}/man/man1/fsnotify{wait.1,watch.1}
 
 .include <bsd.port.mk>
