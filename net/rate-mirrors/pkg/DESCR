@@ -1,0 +1,7 @@
+This is a tool, which tests mirror speed for some Linux distributives,
+OpenBSD and any http/https mirrors via stdin.
+
+It uses info about submarine cables and internet exchanges (kudos to
+TeleGeography for data) to jump between countries and find fast mirrors.
+And it's fast enough to run it before each system update (~30 seconds
+with default options).
