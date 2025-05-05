@@ -647,6 +647,7 @@
      SUBDIR += rabbitmq
      SUBDIR += rabbitmq-c
      SUBDIR += radcli
+     SUBDIR += rate-mirrors
      SUBDIR += rbldnsd
      SUBDIR += rdapper
      SUBDIR += routinator
