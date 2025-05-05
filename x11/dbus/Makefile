@@ -9,6 +9,8 @@ DISTNAME=		dbus-${V}
 EXTRACT_SUFX=		.tar.xz
 EPOCH-main=		0
 
+REVISION-main=		0
+
 PKGNAME-main=		${DISTNAME}
 PKGNAME-suid=		dbus-daemon-launch-helper-${V}
 
@@ -52,9 +54,6 @@ CONFIGURE_ARGS=		-Ddbus_user="_dbus" \
 			-Dlaunchd=disabled \
 			-Dsystemd=disabled \
 			-Dlibaudit=disabled
-
-# our pkg-config(1) does not support relocatable prefix
-CONFIGURE_ARGS +=	-Drelocation=disabled
 
 post-install:
 	rm -r ${WRKINST}/var/{lib,run/dbus}
