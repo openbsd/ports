@@ -1,3 +1,6 @@
+# WARNING: symbol(_ZTINSt3__19allocatorIvEE) size mismatch, relink your program
+BROKEN =	issues with 'std::__1::allocator<void>' (mixing C++ dialects?)
+
 V =		0.5.1
 COMMENT =	turn-based space empire and galactic conquest computer game
 DISTNAME =	FreeOrion_v${V}_Source
