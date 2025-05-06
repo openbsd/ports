@@ -186,7 +186,6 @@
      SUBDIR += perdition
      SUBDIR += pflogsumm
      SUBDIR += pine-pgp-filters
-     SUBDIR += pop3d
      SUBDIR += popa3d
      SUBDIR += popclient
      SUBDIR += poppy
