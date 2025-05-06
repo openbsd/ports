@@ -1,9 +1,8 @@
 COMMENT=	library to write SQL queries
 
-MODPY_DISTV=	1.5.2
+MODPY_DISTV=	1.6.0
 DISTNAME=	python_sql-${MODPY_DISTV}
 PKGNAME=	py-sql-${MODPY_DISTV}
-REVISION=	0
 
 CATEGORIES=	databases
 
