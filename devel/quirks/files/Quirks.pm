@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1713 2025/05/03 19:40:20 tb Exp $
+# $OpenBSD: Quirks.pm,v 1.1714 2025/05/06 19:27:22 bket Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1250,6 +1250,7 @@ setup_obsolete_reason(
 	5 => 'xsd',
 	29 => 'fastnetmon',
 	3 => 'kross-interpreters-kf5',
+	3 => 'py3-notmuch',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
