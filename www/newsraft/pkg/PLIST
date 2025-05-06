@@ -4,3 +4,9 @@ share/doc/pkg-readmes/${PKGSTEM}
 share/examples/newsraft/
 share/examples/newsraft/config
 share/examples/newsraft/feeds
+@comment @tag gtk-update-icon-cache %D/share/icons/hicolor
+@comment share/icons/
+@comment share/icons/hicolor/
+@comment share/icons/hicolor/scalable/
+@comment share/icons/hicolor/scalable/apps/
+@comment share/icons/hicolor/scalable/apps/newsraft.svg
