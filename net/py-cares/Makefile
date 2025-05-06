@@ -1,7 +1,6 @@
 COMMENT=	Python interface to c-ares
 
-MODPY_DISTV=	4.6.0
-REVISION=	0
+MODPY_DISTV=	4.8.0
 DISTNAME=	pycares-${MODPY_DISTV}
 PKGNAME=	py-cares-${MODPY_DISTV}
 CATEGORIES=	net
