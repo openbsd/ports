@@ -1,7 +1,6 @@
 COMMENT =		SSHv2 library built on asyncio
 
-MODPY_DISTV =		2.20.0
-REVISION =		0
+MODPY_DISTV =		2.21.0
 DISTNAME =		asyncssh-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
@@ -25,5 +24,9 @@ TEST_DEPENDS =		security/py-bcrypt \
 			security/py-gssapi \
 			security/py-libnacl \
 			security/py-openssl
+# creates fairly large files for some tests; in particular,
+# test_sparse_copy wants ~4GB so disable that one
+TEST_ENV =		TMPDIR=${WRKDIR}
+MODPY_PYTEST_ARGS =	-k 'not test_sparse_copy'
 
 .include <bsd.port.mk>
