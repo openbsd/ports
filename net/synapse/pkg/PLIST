@@ -2129,6 +2129,16 @@ lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/88/05
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/88/05_drop_old_otks.sql.sqlite
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/88/05_sliding_sync_room_config_index.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/88/06_events_received_ts_index.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/89/
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/89/01_sliding_sync_membership_snapshot_index.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/90/
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/90/01_add_column_participant_room_memberships_table.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/91/
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/91/01_media_hash.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/92/
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/92/01_remove_trigger.sql.postgres
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/92/01_remove_trigger.sql.sqlite
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/delta/92/02_remove_populate_participant_bg_update.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/full_schemas/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/full_schemas/72/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/main/full_schemas/72/full.sql.postgres
@@ -2156,6 +2166,9 @@ lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/state/delta/70/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/state/delta/70/08_state_group_edges_unique.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/state/delta/89/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/state/delta/89/01_state_groups_deletion.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/state/delta/90/
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/state/delta/90/02_delete_unreferenced_state_groups.sql
+lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/state/delta/90/03_remove_old_deletion_bg_update.sql
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/state/full_schemas/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/state/full_schemas/72/
 lib/python${MODPY_VERSION}/site-packages/synapse/storage/schema/state/full_schemas/72/full.sql.postgres
