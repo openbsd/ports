@@ -8,7 +8,7 @@ MODGO_VERSION =	v0.0.0-20250127210717-2ecb8770224a
 
 V =		0.20.1
 DISTNAME =	aerc-$V
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	mail
 
@@ -35,7 +35,7 @@ FLAVOR ?=
 
 .if ${FLAVOR:Mnotmuch}
 MODGO_FLAGS +=	-tags=notmuch
-LIB_DEPENDS =	mail/notmuch/notmuch
+LIB_DEPENDS =	mail/notmuch,-main
 WANTLIB += notmuch
 .endif
 
