@@ -53,11 +53,20 @@ Index: Makefile
  .openssl.is.fresh: opensslpull
  	true
  opensslpull:
-@@ -145,6 +152,7 @@ opensslpull:
+@@ -145,9 +152,15 @@ opensslpull:
  	else \
  	git clone --depth 1 -b `git ls-remote https://github.com/openssl/openssl | grep -Eo '(openssl-3\.0\.[0-9]+)' | sort -V | tail -n 1` https://github.com/openssl/openssl ./openssl && cd ./openssl && touch ../.openssl.is.fresh ; \
  	fi
 +endif
  
++CONF_FLAGS=
++ifeq ($(ARCH), sparc64)
++	CONF_FLAGS += no-asm
++endif
++
  openssl/Makefile: .openssl.is.fresh
- 	cd ./openssl; ./Configure -v -fstack-protector-all -D_FORTIFY_SOURCE=2 -fPIC no-shared enable-weak-ssl-ciphers zlib
+-	cd ./openssl; ./Configure -v -fstack-protector-all -D_FORTIFY_SOURCE=2 -fPIC no-shared enable-weak-ssl-ciphers zlib
++	cd ./openssl; ./Configure -v -fstack-protector-all -D_FORTIFY_SOURCE=2 -fPIC no-shared enable-weak-ssl-ciphers zlib $(CONF_FLAGS)
+ 
+ openssl/libcrypto.a: openssl/Makefile
+ 	$(MAKE) -j $(NUM_PROCS) -C openssl depend
