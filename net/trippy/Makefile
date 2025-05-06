@@ -2,7 +2,7 @@ COMMENT=	network diagnostics with curses ui (like mtr)
 
 GH_ACCOUNT=	fujiapple852
 GH_PROJECT=	trippy
-GH_TAGNAME=	0.12.2
+GH_TAGNAME=	0.13.0
 
 CATEGORIES=	net
 
