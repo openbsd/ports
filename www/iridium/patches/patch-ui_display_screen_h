@@ -10,7 +10,7 @@ Index: ui/display/screen.h
    // Object which suspends the platform-specific screensaver for the duration of
    // its existence.
    class ScreenSaverSuspender {
-@@ -243,7 +243,7 @@ class DISPLAY_EXPORT Screen {
+@@ -246,7 +246,7 @@ class DISPLAY_EXPORT Screen {
    int64_t display_id_for_new_windows_;
    int64_t scoped_display_id_for_new_windows_ = display::kInvalidDisplayId;
  

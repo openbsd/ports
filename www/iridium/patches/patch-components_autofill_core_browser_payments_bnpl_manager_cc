@@ -1,7 +1,7 @@
 Index: components/autofill/core/browser/payments/bnpl_manager.cc
 --- components/autofill/core/browser/payments/bnpl_manager.cc.orig
 +++ components/autofill/core/browser/payments/bnpl_manager.cc
-@@ -109,7 +109,7 @@ void BnplManager::OnAmountExtractionReturned(
+@@ -114,7 +114,7 @@ void BnplManager::OnAmountExtractionReturned(
  
  bool BnplManager::ShouldShowBnplSettings() const {
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \
@@ -10,7 +10,7 @@ Index: components/autofill/core/browser/payments/bnpl_manager.cc
    const PaymentsDataManager& payments_data_manager =
        payments_autofill_client().GetPaymentsDataManager();
  
-@@ -223,7 +223,7 @@ void BnplManager::MaybeUpdateSuggestionsWithBnpl(
+@@ -431,7 +431,7 @@ void BnplManager::MaybeUpdateSuggestionsWithBnpl(
        .Run(update_suggestions_result.suggestions, trigger_source);
  
  #if BUILDFLAG(IS_WIN) || BUILDFLAG(IS_MAC) || BUILDFLAG(IS_LINUX) || \

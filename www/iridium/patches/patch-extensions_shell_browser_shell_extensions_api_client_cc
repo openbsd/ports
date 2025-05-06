@@ -10,7 +10,7 @@ Index: extensions/shell/browser/shell_extensions_api_client.cc
  #include "extensions/shell/browser/api/file_system/shell_file_system_delegate.h"
  #endif
  
-@@ -54,7 +54,7 @@ ShellExtensionsAPIClient::CreateDisplayInfoProvider() 
+@@ -56,7 +56,7 @@ ShellExtensionsAPIClient::CreateDisplayInfoProvider() 
    return std::make_unique<ShellDisplayInfoProvider>();
  }
  
