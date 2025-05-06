@@ -1,3 +1,4 @@
+@pkgpath mail/notmuch/notmuch,-main
 @bin bin/notmuch
 include/notmuch.h
 @info info/nmbug.info

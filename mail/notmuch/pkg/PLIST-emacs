@@ -1,3 +1,4 @@
+@pkgpath mail/notmuch/notmuch,-emacs
 bin/notmuch-emacs-mua
 @info info/notmuch-emacs-mua.info
 @info info/notmuch-emacs.info
