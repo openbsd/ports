@@ -130,7 +130,7 @@ Index: chrome/app/chrome_main_delegate.cc
    // Zygote needs to call InitCrashReporter() in RunZygote().
    if (process_type != switches::kZygoteProcess &&
        !command_line.HasSwitch(switches::kDisableCrashpadForTesting)) {
-@@ -1532,13 +1532,13 @@ absl::variant<int, content::MainFunctionParams> Chrome
+@@ -1532,13 +1532,13 @@ std::variant<int, content::MainFunctionParams> ChromeM
  #else
  
  #if BUILDFLAG(IS_MAC) || (BUILDFLAG(ENABLE_NACL) && !BUILDFLAG(IS_LINUX) && \

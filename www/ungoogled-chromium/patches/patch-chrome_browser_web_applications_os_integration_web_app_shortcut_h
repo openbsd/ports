@@ -10,7 +10,7 @@ Index: chrome/browser/web_applications/os_integration/web_app_shortcut.h
  #include "chrome/browser/web_applications/os_integration/web_app_shortcut_linux.h"
  #endif  // BUILDFLAG(IS_LINUX)
  
-@@ -75,7 +75,7 @@ struct ShortcutInfo {
+@@ -77,7 +77,7 @@ struct ShortcutInfo {
    // the installed PWA experience and thus the icons are not designed to be
    // displayed on an OS dock.
    bool is_diy_app = false;

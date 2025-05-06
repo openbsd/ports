@@ -1,15 +1,15 @@
 Index: third_party/webrtc/rtc_base/network.cc
 --- third_party/webrtc/rtc_base/network.cc.orig
 +++ third_party/webrtc/rtc_base/network.cc
-@@ -290,7 +290,12 @@ AdapterType GetAdapterTypeFromName(absl::string_view n
+@@ -314,7 +314,12 @@ webrtc::AdapterType GetAdapterTypeFromName(absl::strin
    }
  #endif
  
 +#if defined(WEBRTC_BSD)
 +  // Treat all other network interface names as ethernet on BSD
-+  return ADAPTER_TYPE_ETHERNET;
++  return webrtc::ADAPTER_TYPE_ETHERNET;
 +#else
-   return ADAPTER_TYPE_UNKNOWN;
+   return webrtc::ADAPTER_TYPE_UNKNOWN;
 +#endif
  }
  

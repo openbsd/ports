@@ -1,7 +1,7 @@
 Index: build/config/clang/BUILD.gn
 --- build/config/clang/BUILD.gn.orig
 +++ build/config/clang/BUILD.gn
-@@ -251,7 +251,12 @@ template("clang_lib") {
+@@ -252,7 +252,12 @@ template("clang_lib") {
  
  # Adds a dependency on the Clang runtime library clang_rt.builtins.
  clang_lib("compiler_builtins") {
@@ -14,4 +14,4 @@ Index: build/config/clang/BUILD.gn
 +  } else if (is_mac) {
      libname = "osx"
    } else if (is_ios) {
-     if (target_environment == "simulator") {
+     if (target_platform == "iphoneos") {

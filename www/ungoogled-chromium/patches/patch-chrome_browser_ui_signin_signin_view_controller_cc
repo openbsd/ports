@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/signin/signin_view_controller.cc
 --- chrome/browser/ui/signin/signin_view_controller.cc.orig
 +++ chrome/browser/ui/signin/signin_view_controller.cc
-@@ -418,7 +418,7 @@ void SigninViewController::ShowModalSyncConfirmationDi
+@@ -433,7 +433,7 @@ void SigninViewController::ShowModalSyncConfirmationDi
  void SigninViewController::ShowModalManagedUserNoticeDialog(
      std::unique_ptr<signin::EnterpriseProfileCreationDialogParams>
          create_param) {

@@ -1,7 +1,7 @@
 Index: chrome/browser/ui/startup/bad_flags_prompt.cc
 --- chrome/browser/ui/startup/bad_flags_prompt.cc.orig
 +++ chrome/browser/ui/startup/bad_flags_prompt.cc
-@@ -93,7 +93,7 @@ const char* const kBadFlags[] = {
+@@ -94,7 +94,7 @@ const char* const kBadFlags[] = {
      extensions::switches::kExtensionsOnChromeURLs,
  #endif
  
