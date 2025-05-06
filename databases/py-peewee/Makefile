@@ -1,9 +1,8 @@
 COMMENT=	small expressive ORM
 
-MODPY_DISTV=	3.17.9
+MODPY_DISTV=	3.18.1
 DISTNAME=	peewee-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 GH_ACCOUNT=	coleifer
 GH_PROJECT=	peewee
@@ -20,7 +19,8 @@ WANTLIB += sqlite3
 
 BUILD_DEPENDS=	lang/cython
 LIB_DEPENDS=	databases/sqlite3
-TEST_DEPENDS=	databases/py-psycopg2
+TEST_DEPENDS=	databases/py-psycopg2 \
+		databases/postgresql,-contrib
 
 MODULES=	databases/postgresql \
 		lang/python
@@ -29,7 +29,9 @@ MODPY_PYBUILD=	setuptools
 
 # required to run tests with postgresql support
 MODPOSTGRESQL_TEST_DBNAME=	peewee_test
-MODPOSTGRESQL_TEST_CMD=		cd ${WRKSRC} && ${MODPY_BIN} runtests.py
+MODPOSTGRESQL_TEST_CMD = cd ${WRKSRC}; \
+	${LOCALBASE}/bin/psql -c 'CREATE EXTENSION hstore'; \
+        ${MODPY_BIN} runtests.py
 
 MAKE_ENV=	PYTHONPATH=${WRKSRC} \
 		CPPFLAGS="-I${LOCALBASE}/include" \
