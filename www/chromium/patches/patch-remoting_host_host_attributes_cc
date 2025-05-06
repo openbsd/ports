@@ -1,7 +1,7 @@
 Index: remoting/host/host_attributes.cc
 --- remoting/host/host_attributes.cc.orig
 +++ remoting/host/host_attributes.cc
-@@ -105,7 +105,7 @@ std::string GetHostAttributes() {
+@@ -103,7 +103,7 @@ std::string GetHostAttributes() {
    if (media::InitializeMediaFoundation()) {
      result.push_back("HWEncoder");
    }

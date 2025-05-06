@@ -10,7 +10,7 @@ Index: v8/src/api/api.cc
  #include <signal.h>
  #include <unistd.h>
  
-@@ -6476,7 +6476,7 @@ bool v8::V8::Initialize(const int build_config) {
+@@ -6483,7 +6483,7 @@ bool v8::V8::Initialize(const int build_config) {
    return true;
  }
  

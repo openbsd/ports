@@ -1,7 +1,7 @@
 Index: ui/views/BUILD.gn
 --- ui/views/BUILD.gn.orig
 +++ ui/views/BUILD.gn
-@@ -836,7 +836,6 @@ component("views") {
+@@ -839,7 +839,6 @@ component("views") {
        sources += [ "accessibility/widget_ax_tree_id_map.cc" ]
      }
      deps += [
