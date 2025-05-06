@@ -1,12 +1,12 @@
 Index: auto.def
 --- auto.def.orig
 +++ auto.def
-@@ -312,7 +312,7 @@ if {[opt-bool with-th1-hooks]} {
+@@ -329,7 +329,7 @@ if {[opt-bool with-th1-hooks]} {
  
  if {[opt-bool static]} {
-     # XXX: This will not work on all systems.
--    define-append EXTRA_LDFLAGS -static
-+    define-append EXTRA_LDFLAGS ${STATIC}
-     msg-result "Trying to link statically"
+   # XXX: This will not work on all systems.
+-  define-append EXTRA_LDFLAGS -static
++  define-append EXTRA_LDFLAGS ${STATIC}
+   msg-result "Trying to link statically"
  } else {
-     define-append EXTRA_CFLAGS -DFOSSIL_DYNAMIC_BUILD=1
+   define-append EXTRA_CFLAGS -DFOSSIL_DYNAMIC_BUILD=1
