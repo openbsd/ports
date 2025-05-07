@@ -1,7 +1,6 @@
 COMMENT =	KDE screen capture and screenshot program
 DISTNAME =	spectacle-${VERSION}
 CATEGORIES =	x11
-REVISION =	0
 
 # From KDE Gear to KDE Plasma 6.0
 EPOCH =		0

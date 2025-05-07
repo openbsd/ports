@@ -46,7 +46,6 @@
      SUBDIR += systemsettings
      SUBDIR += plasma-desktop
 
-     # libva
      SUBDIR += kpipewire
      SUBDIR += spectacle
 
