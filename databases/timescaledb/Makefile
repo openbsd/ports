@@ -2,10 +2,10 @@ COMMENT =	database designed to make SQL scalable for time-series data
 
 GH_ACCOUNT =	timescale
 GH_PROJECT =	timescaledb
-GH_TAGNAME =	2.18.2
+GH_TAGNAME =	2.19.3
 
 # -extras is only used for 2.15.X-fix_hypertable_foreign_keys.sql
-EXTRAS_COMMIT =	a423f98afdf9f665e54378499ac1158188a18767
+EXTRAS_COMMIT =	1390a6977adad09e6e1528405b4717c44f04070c
 DIST_TUPLE +=	github timescale timescaledb-extras ${EXTRAS_COMMIT} _extras
 
 CATEGORIES =	databases
