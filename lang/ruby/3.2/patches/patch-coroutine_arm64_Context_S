@@ -1,0 +1,13 @@
+Add BTI support to arm64 coroutine.
+
+Index: coroutine/arm64/Context.S
+--- coroutine/arm64/Context.S.orig
++++ coroutine/arm64/Context.S
+@@ -20,6 +20,7 @@
+ 
+ .global PREFIXED_SYMBOL(SYMBOL_PREFIX,coroutine_transfer)
+ PREFIXED_SYMBOL(SYMBOL_PREFIX,coroutine_transfer):
++	bti c
+ 
+ 	# Make space on the stack for caller registers
+ 	sub sp, sp, 0xb0
