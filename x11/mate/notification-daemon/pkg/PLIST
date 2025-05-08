@@ -19,6 +19,13 @@ lib/mate-notification-daemon/engines/
 share/applications/mate-notification-properties.desktop
 share/dbus-1/services/org.freedesktop.mate.Notifications.service
 share/dbus-1/services/org.mate.panel.applet.MateNotificationAppletFactory.service
+share/examples/mate-notification-daemon/
+share/examples/mate-notification-daemon/xdg/
+@sample ${SYSCONFDIR}/xdg/
+share/examples/mate-notification-daemon/xdg/autostart/
+@sample ${SYSCONFDIR}/xdg/autostart/
+share/examples/mate-notification-daemon/xdg/autostart/mate-notification-daemon.desktop
+@sample ${SYSCONFDIR}/xdg/autostart/mate-notification-daemon.desktop
 share/glib-2.0/schemas/org.mate.NotificationDaemon.gschema.xml
 share/icons/hicolor/16x16/apps/mate-notification-properties.png
 share/icons/hicolor/22x22/apps/mate-notification-properties.png

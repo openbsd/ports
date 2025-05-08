@@ -1,8 +1,7 @@
 COMMENT=		MATE notification daemon
 
-REVISION=		0
-
 MATE_PROJECT=		mate-notification-daemon
+MATE_VERSION=		1.28.3
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
@@ -33,5 +32,7 @@ LIB_DEPENDS=		audio/libcanberra,-gtk3 \
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
 CONFIGURE_STYLE=	gnu
+
+FAKE_FLAGS=		autostartdir=${PREFIX}/share/examples/mate-notification-daemon/xdg/autostart
 
 .include <bsd.port.mk>
