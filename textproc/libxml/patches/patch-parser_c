@@ -1,0 +1,22 @@
+From ae299377feff868272693ec4322b9dbfef2f571b Mon Sep 17 00:00:00 2001
+From: Nick Wellnhofer <wellnhofer@aevum.de>
+Date: Fri, 25 Apr 2025 11:41:50 +0200
+Subject: [PATCH] parser: Make undeclared entities in XML content fatal
+
+Index: parser.c
+--- parser.c.orig
++++ parser.c
+@@ -12369,13 +12369,6 @@ xmlCtxtParseContent(xmlParserCtxtPtr ctxt, xmlParserIn
+         xmlCtxtInitializeLate(ctxt);
+ 
+         /*
+-         * This hack lowers the error level of undeclared entities
+-         * from XML_ERR_FATAL (well-formedness error) to XML_ERR_ERROR
+-         * or XML_ERR_WARNING.
+-         */
+-        ctxt->hasExternalSubset = 1;
+-
+-        /*
+          * initialize the SAX2 namespaces stack
+          */
+         cur = node;

@@ -1,66 +1,48 @@
 COMMENT-main=		XML parsing library
 COMMENT-python=		Python bindings for libxml
 
-GNOME_VERSION=		2.13.8
+GNOME_VERSION=		2.14.2
 GNOME_PROJECT=		libxml2
 
 PKGNAME-main=		libxml-${GNOME_VERSION}
 PKGNAME-python=		py3-libxml-${GNOME_VERSION}
 
-SHARED_LIBS +=  xml2                 21.0     # 15.8
+SHARED_LIBS += xml2                      22.0 # 16.0.2
 
 CATEGORIES=		textproc
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 # BSD-like
-PERMIT_PACKAGE=	Yes
+PERMIT_PACKAGE=		Yes
 
 COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c
 
-WANTLIB=		iconv lzma m z
-
-MODULES=		x11/gnome
-
-LIB_DEPENDS=		archivers/xz \
-			converters/libiconv
-
-CONFIGURE_STYLE=	autoreconf
-AUTOCONF_VERSION=	2.72
-AUTOMAKE_VERSION=	1.16
-CONFIGURE_ARGS=		--enable-static \
-			--with-legacy \
-			--with-iconv="${LOCALBASE}"
-
-# only used to fetch data during regression test
-CONFIGURE_ENV=		WGET=/usr/bin/ftp
-
-DEBUG_PACKAGES =	${BUILD_PACKAGES}
-
-PSEUDO_FLAVORS=		no_python
-FLAVOR?=
+MODULES=		devel/meson \
+			lang/python \
+			x11/gnome
 
 MULTI_PACKAGES=		-main -python
 
-WANTLIB-main=		${WANTLIB} c pthread
+LIB_DEPENDS-main=	archivers/xz \
+			converters/libiconv
+
+WANTLIB-main += c iconv lzma m z
+
 RUN_DEPENDS-main=
 
-.include <bsd.port.arch.mk>
+LIB_DEPENDS-python=	${BASE_PKGPATH},-main=${GNOME_VERSION}
 
-.if ${BUILD_PACKAGES:M-python}
-MODULES+=		lang/python
-LIB_DEPENDS-python=	textproc/libxml,-main=${GNOME_VERSION} \
-			converters/libiconv
-WANTLIB-python=		${WANTLIB} pthread xml2
-FAKE_FLAGS=		exampledir=${PREFIX}/share/examples/libxml2
-CONFIGURE_ARGS+=	--with-python
-.else
-CONFIGURE_ARGS+=	--without-python
-.endif
+WANTLIB-python += xml2
 
-# needs network access
-TEST_IS_INTERACTIVE=	Yes
+CONFIGURE_ARGS=		-Dlegacy=enabled
+
+# XXX needs libhistory
+CONFIGURE_ARGS +=	-Dhistory=disabled
+CONFIGURE_ARGS +=	-Dreadline=disabled
+
+DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
 post-configure:
 	sed -e 's,@PREFIX@,${PREFIX},' <${FILESDIR}/rebuild >${WRKBUILD}/rebuild
@@ -68,9 +50,5 @@ post-configure:
 post-install:
 	${INSTALL_SCRIPT_DIR} ${PREFIX}/share/libxml2
 	${INSTALL_SCRIPT} ${WRKBUILD}/rebuild ${PREFIX}/share/libxml2/
-
-do-test:
-	@cd ${WRKBUILD} && exec ${SETENV} ${MAKE_ENV} ${MAKE_PROGRAM} \
-		${ALL_TEST_FLAGS} -f ${MAKE_FILE} ${TEST_TARGET}
 
 .include <bsd.port.mk>

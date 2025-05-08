@@ -1,0 +1,15 @@
+From f34529641978c47ebd778d0e744acd12b3d9a906 Mon Sep 17 00:00:00 2001
+From: Nick Wellnhofer <wellnhofer@aevum.de>
+Date: Fri, 18 Apr 2025 17:22:36 +0200
+Subject: [PATCH] Revert "valid: Remove duplicate error messages when streaming"
+
+Index: result/VC/ElementValid4.rdr
+--- result/VC/ElementValid4.rdr.orig
++++ result/VC/ElementValid4.rdr
+@@ -1,3 +1,6 @@
+ ./test/VC/ElementValid4:7: element doc: validity error : Element c is not declared in doc list of possible children
+ <doc> This <b>seems</b> Ok <a/> but this <c>was not declared</c></doc>
+                                                                       ^
++./test/VC/ElementValid4:8: element doc: validity error : Element c is not declared in doc list of possible children
++
++^

@@ -1,0 +1,15 @@
+From f34529641978c47ebd778d0e744acd12b3d9a906 Mon Sep 17 00:00:00 2001
+From: Nick Wellnhofer <wellnhofer@aevum.de>
+Date: Fri, 18 Apr 2025 17:22:36 +0200
+Subject: [PATCH] Revert "valid: Remove duplicate error messages when streaming"
+
+Index: result/VC/ElementValid3.rdr
+--- result/VC/ElementValid3.rdr.orig
++++ result/VC/ElementValid3.rdr
+@@ -1,3 +1,6 @@
+ ./test/VC/ElementValid3:4: element doc: validity error : Element doc was declared EMPTY this one has content
+ <doc>Oops, this element was declared EMPTY</doc>
+                                                 ^
++./test/VC/ElementValid3:5: element doc: validity error : Element doc was declared EMPTY this one has content
++
++^

@@ -1,17 +1,12 @@
-From 208a4d026cf7c90aad4957f5d8523d29480cddfc Mon Sep 17 00:00:00 2001
-From: Nick Wellnhofer <wellnhofer@aevum.de>
-Date: Mon, 19 Aug 2024 20:02:47 +0200
-Subject: [PATCH] xmlcatalog: Improved fix for #699
-
 Index: xmlcatalog.c
 --- xmlcatalog.c.orig
 +++ xmlcatalog.c
-@@ -39,7 +39,7 @@ static char *filename = NULL;
+@@ -50,7 +50,7 @@ static char *filename = NULL;
  
  
  #ifndef XML_SGML_DEFAULT_CATALOG
--#define XML_SGML_DEFAULT_CATALOG SYSCONFDIR "/sgml/catalog"
-+#define XML_SGML_DEFAULT_CATALOG "/var/db/sgmlcatalog"
+-#define XML_SGML_DEFAULT_CATALOG XML_SYSCONFDIR "/sgml/catalog"
++#define XML_SGML_DEFAULT_CATALOG "file:///var/db/sgmlcatalog"
  #endif
  
  /************************************************************************

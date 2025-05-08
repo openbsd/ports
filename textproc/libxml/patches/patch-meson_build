@@ -1,0 +1,26 @@
+1. Don't depend on git(1), we only package release tarballs.
+
+2. Needed to prevent hidin ESHUTDOWN.
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -17,10 +17,6 @@ v_min = v_array[1].to_int()
+ v_mic = v_array[2].to_int()
+ v_nbr = v_maj * 10000 + v_min * 100 + v_mic
+ v_extra = ''
+-r = run_command('git', 'describe', check: false)
+-if (r.returncode() == 0)
+-    v_extra = '-GIT' + r.stdout().strip()
+-endif
+ 
+ # install paths
+ dir_prefix = get_option('prefix')
+@@ -59,7 +55,6 @@ cc = meson.get_compiler('c')
+ # global compiler flags
+ 
+ global_args = [
+-    '-D_XOPEN_SOURCE=600',
+ 
+     # Enabled by warning_level=3
+     # '-pedantic',

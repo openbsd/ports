@@ -55,15 +55,11 @@ include/libxml2/libxml/xpointer.h
 lib/cmake/
 lib/cmake/libxml2/
 lib/cmake/libxml2/libxml2-config.cmake
-@static-lib lib/libxml2.a
-lib/libxml2.la
 @lib lib/libxml2.so.${LIBxml2_VERSION}
 lib/pkgconfig/libxml-2.0.pc
 @man man/man1/xml2-config.1
 @man man/man1/xmlcatalog.1
 @man man/man1/xmllint.1
-share/aclocal/
-share/aclocal/libxml.m4
 share/doc/libxml2/
 share/doc/libxml2/xmlcatalog.html
 share/doc/libxml2/xmllint.html
