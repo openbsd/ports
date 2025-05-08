@@ -1,0 +1,63 @@
+# For bsd-auth support
+
+Index: src/smmain.c
+--- src/smmain.c.orig
++++ src/smmain.c
+@@ -60,6 +60,9 @@
+ #if defined(__linux__) || defined(__svr4__)
+ #include <crypt.h>
+ #include <shadow.h>
++#elif defined(__OpenBSD__)
++#include <bsd_auth.h>
++#include <login_cap.h>
+ #endif
+ #include "smglobal.h"
+ #include "smconf.h"
+@@ -419,6 +422,11 @@ static void lock_screen(void)
+ 		app_res.enable_locking = False;
+ 		return;
+ 	}
++
++#ifdef __OpenBSD__
++	/* BSD-auth handles authentication, no password hash check needed */
++	can_auth = True;
++#else
+ 	
+ 	if(set_privileges(True)) {
+ 
+@@ -441,7 +449,8 @@ static void lock_screen(void)
+ 
+ 		set_privileges(False);
+ 	}
+-
++#endif /* __OpenBSD__ */
++	
+ 	if(!can_auth){
+ 		if(!app_res.silent) XBell(XtDisplay(wshell), 100);
+ 		log_msg("Cannot authenticate. Screen locking disabled!\n");
+@@ -861,6 +870,17 @@ static void passwd_enter_cb(Widget w,
+ 	char *upw = NULL;
+ 	
+ 	login = get_login();
++
++#ifdef __OpenBSD__
++	int auth_result = auth_userokay(login, NULL, "auth-xmsm", pwb);
++	if (auth_result) {
++         	unlock_screen();
++         	set_unlock_message(NULL);
++	} else {
++         	if(!app_res.silent) XBell(XtDisplay(w), 100);
++         	set_unlock_message(MSG_NOACCESS);
++	}
++#else
+ 	
+ 	set_privileges(True);
+ 	
+@@ -896,6 +916,7 @@ static void passwd_enter_cb(Widget w,
+ 		if(!app_res.silent) XBell(XtDisplay(w),100);
+ 		set_unlock_message(MSG_NOACCESS);
+ 	}
++#endif /* __OpenBSD__ */
+ 
+ 	memset(pwb,0,strlen(pwb));
+ 	XmTextFieldSetString(wpasswd,"");
