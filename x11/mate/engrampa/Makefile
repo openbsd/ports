@@ -1,13 +1,11 @@
 USE_WXNEEDED=		Yes
 
-REVISION=		0
-
 COMMENT=		file archiver for the MATE desktop
 
 CATEGORIES=		archivers
 
 MATE_PROJECT=		engrampa
-MATE_VERSION=		1.28.1
+MATE_VERSION=		1.28.2
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
