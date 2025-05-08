@@ -37,7 +37,7 @@ AUTOMAKE_VERSION=	1.16
 CONFIGURE_STYLE=	autoreconf
 CONFIGURE_ARGS =	--enable-ipv6 \
 			--enable-tls
-CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include -fcommon" \
+CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib"
 
 FAKE_FLAGS =		sysconfdir=${PREFIX}/share/examples/dillo/
