@@ -17,8 +17,9 @@ Index: config/afp.conf.in
  [Homes]
  basedir regex = @homedir@
  
-@@ -14,3 +23,4 @@ basedir regex = @homedir@
- ; [My Time Machine Volume]
+@@ -15,4 +24,5 @@ basedir regex = @homedir@
+ ; [my backup]
  ; path = /path/to/backup
  ; time machine = yes
 +; valid users = @users
+ ; volume name = My Backup Volume
