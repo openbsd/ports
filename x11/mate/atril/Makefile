@@ -1,7 +1,5 @@
 USE_WXNEEDED=		Yes
 
-REVISION=		3
-
 COMMENT=		document viewer for the MATE desktop
 
 CATEGORIES=		graphics
@@ -10,6 +8,7 @@ SHARED_LIBS +=  atrildocument             3.0 # 3.0
 SHARED_LIBS +=  atrilview                 3.0 # 3.0
 
 MATE_PROJECT=		atril
+MATE_VERSION=		1.28.1
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
