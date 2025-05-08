@@ -3,7 +3,7 @@ BROKEN-arm =		Makefile.defs:1397: Unsupported compiler (cc:clang), try gcc
 COMMENT-main =		mature and flexible open source SIP server
 
 VERSION =		5.5.4
-REVISION =		2
+REVISION =		3
 
 DISTNAME =		kamailio-${VERSION}_src
 
@@ -45,7 +45,7 @@ LIB_DEPENDS-main =	converters/libiconv \
 			devel/libevent2 \
 			devel/pcre \
 			net/curl \
-			textproc/libxml,-main,no_python
+			textproc/libxml
 
 KAMAILIO_GROUPS =	kstandard kcpl khttp_async koutbound ktls kutils kwebsocket kxmpp
 
