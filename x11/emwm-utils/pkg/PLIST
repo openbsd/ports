@@ -1,5 +1,9 @@
 bin/xmsession
+@mode g+s
+@group auth
 @bin bin/xmsm
+@mode
+@group
 @bin bin/xmtoolbox
 lib/X11/app-defaults/XmSm
 lib/X11/app-defaults/XmToolbox

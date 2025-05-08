@@ -1,6 +1,6 @@
 COMMENT =	session manager and a toolchest-like application launcher
 
-V =		1.2
+V =		1.3
 DISTNAME =	emwm-utils-src-${V}
 PKGNAME =	emwm-utils-${V}
 
