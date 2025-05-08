@@ -1,14 +1,33 @@
-Unbreak build with libxml >=2.12.0
+Fix with libxml >=2.14
 
 Index: src/utils/dumplibs.cpp
 --- src/utils/dumplibs.cpp.orig
 +++ src/utils/dumplibs.cpp
-@@ -140,7 +140,7 @@ void dumpLibs()
+@@ -140,9 +140,8 @@ void dumpLibs()
      LIBXML_TEST_VERSION
  #endif  // LIBXML_TEST_VERSION
  #ifdef ENABLE_LIBXML
 -    const char **xmlVersion = __xmlParserVersion();
-+    const char *const *xmlVersion = __xmlParserVersion();
-     if (xmlVersion != nullptr)
-         logger->log(" libxml2: %s", *xmlVersion);
+-    if (xmlVersion != nullptr)
+-        logger->log(" libxml2: %s", *xmlVersion);
++    const char *const xmlVersion = xmlParserVersion;
++    logger->log(" libxml2: %s", xmlVersion);
  #endif  // ENABLE_LIBXML
+ #ifdef USE_SDL2
+     SDL_version sdlVersion;
+@@ -161,12 +160,9 @@ void dumpLibs()
+ 
+     compareVersions("zLib", ZLIB_VERSION, zlibVersion());
+ #ifdef ENABLE_LIBXML
+-    if (xmlVersion != nullptr)
+-    {
+-        compareVersions("libxml2",
+-            LIBXML_VERSION_STRING LIBXML_VERSION_EXTRA,
+-            *xmlVersion);
+-    }
++    compareVersions("libxml2",
++        LIBXML_VERSION_STRING LIBXML_VERSION_EXTRA,
++        xmlVersion);
+ #endif  // ENABLE_LIBXML
+ #ifdef USE_SDL2
+     compareSDLVersions("SDL", sdlVersionJoin(SDL), &sdlVersion);

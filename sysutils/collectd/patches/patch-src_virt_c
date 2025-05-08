@@ -1,0 +1,14 @@
+Fix with libxml >=2.14
+
+Index: src/virt.c
+--- src/virt.c.orig
++++ src/virt.c
+@@ -2205,7 +2205,7 @@ static int domain_lifecycle_event_cb(__attribute__((un
+   return 0;
+ }
+ 
+-static void virt_eventloop_timeout_cb(int timer ATTRIBUTE_UNUSED,
++static void virt_eventloop_timeout_cb(int timer __attribute__((unused)),
+                                       void *timer_info) {}
+ 
+ static int register_event_impl(void) {
