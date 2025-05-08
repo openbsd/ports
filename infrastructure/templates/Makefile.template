@@ -45,7 +45,7 @@ DISTNAME =	???
 # /releases/ -> preferred. Use SITES and DISTNAME.
 # /archive/ -> use DIST_TUPLE (use only if there is no release version).
 #
-# platform: codeberg, github, gitlab, kde, srht, gnome
+# platform: codeberg, github, gitlab, kde, srht, gnome, fdo
 # account: usually the account or organisation name
 # project: the project or repository name
 # id: either a tag name or commit hash.

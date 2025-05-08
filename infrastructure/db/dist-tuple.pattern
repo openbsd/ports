@@ -1,5 +1,6 @@
 # known SITES.x
 SITES.codeberg ?= https://codeberg.org/
+SITES.fdo ?=	https://gitlab.freedesktop.org/
 SITES.github ?=	https://github.com/
 SITES.gitlab ?=	https://gitlab.com/
 SITES.kde ?=	https://invent.kde.org/
@@ -16,6 +17,9 @@ TEMPLATE_EXTRACT_SUFX ?=	.tar.gz
 # - <subdir> - used automatically if <id> is in tag format
 TEMPLATE_DISTFILES.codeberg ?= \
 	<account>-<project>-{<account>/<project>/archive/}<id>${EXTRACT_SUFX.codeberg}
+
+TEMPLATE_DISTFILES.fdo ?= \
+	<account>-<project>-{<account>/<project>/-/archive/<id>/}<id>${EXTRACT_SUFX.fdo}
 
 TEMPLATE_DISTFILES.github ?= \
 	<account>-<project>-{<account>/<project>/archive/<subdir>}<id>${EXTRACT_SUFX.github}
