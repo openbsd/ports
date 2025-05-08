@@ -3,14 +3,16 @@ COMMENT =		fast and light graphical web browser
 CATEGORIES =		www
 
 DIST_TUPLE +=		github dillo-browser dillo v3.2.0 .
+REVISION =		0
 
 HOMEPAGE =		https://dillo-browser.github.io/
 
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += X11 Xau Xcursor Xdmcp Xext Xfixes Xft Xinerama c crypto
-WANTLIB += fltk fontconfig iconv jpeg m png pthread ssl ${COMPILER_LIBCXX} z
+WANTLIB += ${COMPILER_LIBCXX} X11 Xau Xcursor Xdmcp Xext Xfixes
+WANTLIB += Xft Xinerama Xrender c crypto fltk fontconfig iconv
+WANTLIB += jpeg m png ssl webp z
 
 COMPILER =		base-clang ports-gcc base-gcc
 
@@ -21,6 +23,7 @@ EXTRACT_SUFX =	.tar.bz2
 LIB_DEPENDS =	converters/libiconv \
 		graphics/jpeg \
 		graphics/png \
+		graphics/libwebp \
 		x11/fltk
 
 # XXX dillo should be patched to use ftp(1)
