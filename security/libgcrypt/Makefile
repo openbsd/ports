@@ -5,12 +5,11 @@ USE_NOEXECONLY=		Yes
 
 COMMENT=		crypto library based on code used in GnuPG
 
-DISTNAME=		libgcrypt-1.11.0
-REVISION=		0
+DISTNAME=		libgcrypt-1.11.1
 
 CATEGORIES=		security
 
-SHARED_LIBS +=  gcrypt               21.2     # 25.0
+SHARED_LIBS +=  gcrypt               21.2     # 25.1
 
 HOMEPAGE=		https://www.gnupg.org/software/libgcrypt/index.html
 
@@ -19,7 +18,7 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2/LGPLv2.1
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c gpg-error iconv intl
+WANTLIB += c gpg-error iconv intl pthread
 
 SITES=			${SITE_GNUPG:=libgcrypt/}
 

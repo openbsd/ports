@@ -4,12 +4,12 @@
 Index: cipher/Makefile.in
 --- cipher/Makefile.in.orig
 +++ cipher/Makefile.in
-@@ -655,7 +655,7 @@ EXTRA_libcipher_la_SOURCES = \
+@@ -666,7 +666,7 @@ EXTRA_libcipher_la_SOURCES = \
  @ENABLE_INSTRUMENTATION_MUNGING_TRUE@	-e 's/-fcoverage[=,\-][=,a-z,A-Z,0-9,\,,\-]*//g'
  
  @ENABLE_PPC_VCRYPTO_EXTRA_CFLAGS_FALSE@ppc_vcrypto_cflags = 
 -@ENABLE_PPC_VCRYPTO_EXTRA_CFLAGS_TRUE@ppc_vcrypto_cflags = -O2 -maltivec -mvsx -mcrypto
 +@ENABLE_PPC_VCRYPTO_EXTRA_CFLAGS_TRUE@ppc_vcrypto_cflags = -O2 -maltivec -mvsx -mcrypto -mpower8-vector
- @ENABLE_AARCH64_NEON_INTRINSICS_EXTRA_CFLAGS_FALSE@aarch64_neon_cflags = 
- @ENABLE_AARCH64_NEON_INTRINSICS_EXTRA_CFLAGS_TRUE@aarch64_neon_cflags = -O2 -march=armv8-a+crypto
- @ENABLE_X86_AVX512_INTRINSICS_EXTRA_CFLAGS_FALSE@avx512f_cflags = 
+ @ENABLE_AARCH64_NEON_INTRINSICS_EXTRA_CFLAGS_FALSE@aarch64_crypto_cflags = 
+ @ENABLE_AARCH64_NEON_INTRINSICS_EXTRA_CFLAGS_TRUE@aarch64_crypto_cflags = -O2 -march=armv8-a+simd+crypto
+ @ENABLE_AARCH64_NEON_INTRINSICS_EXTRA_CFLAGS_FALSE@aarch64_simd_cflags = 

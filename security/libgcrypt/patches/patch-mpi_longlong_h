@@ -3,7 +3,7 @@ Fix build on alpha.
 Index: mpi/longlong.h
 --- mpi/longlong.h.orig
 +++ mpi/longlong.h
-@@ -184,6 +184,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
+@@ -186,6 +186,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
      (pl) = __m0 * __m1; 						\
    } while (0)
  # define UMUL_TIME 46
@@ -11,7 +11,7 @@ Index: mpi/longlong.h
  # ifndef LONGLONG_STANDALONE
  #  define udiv_qrnnd(q, r, n1, n0, d) \
    do { UDItype __r;							\
-@@ -193,6 +194,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
+@@ -195,6 +196,7 @@ SPDX-License-Identifier: LGPL-2.1-or-later
  extern UDItype __udiv_qrnnd ();
  #  define UDIV_TIME 220
  # endif /* !LONGLONG_STANDALONE */

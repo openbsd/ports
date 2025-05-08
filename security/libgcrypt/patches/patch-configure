@@ -5,7 +5,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -19906,7 +19906,7 @@ printf "%s\n" "#define HAVE_COMPATIBLE_CC_PPC_ALTIVEC 
+@@ -19916,7 +19916,7 @@ printf "%s\n" "#define HAVE_COMPATIBLE_CC_PPC_ALTIVEC 
  fi
  
  _gcc_cflags_save=$CFLAGS
@@ -14,7 +14,7 @@ Index: configure
  
  if test "$gcry_cv_cc_ppc_altivec" = "no" &&
     test "$mpi_cpu_arch" = "ppc" &&
-@@ -20019,6 +20019,12 @@ printf "%s\n" "$gcry_cv_gcc_inline_asm_ppc_altivec" >&
+@@ -20029,6 +20029,12 @@ printf "%s\n" "$gcry_cv_gcc_inline_asm_ppc_altivec" >&
  if test "$gcry_cv_gcc_inline_asm_ppc_altivec" = "yes" ; then
  
  printf "%s\n" "#define HAVE_GCC_INLINE_ASM_PPC_ALTIVEC 1" >>confdefs.h
