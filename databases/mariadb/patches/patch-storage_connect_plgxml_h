@@ -1,0 +1,26 @@
+From b02ad4a6f8ea09c5cdf0a44a9ee57a60f2989f48 Mon Sep 17 00:00:00 2001
+From: Sergey Vojtovich <svojtovich@gmail.com>
+Date: Sat, 5 Apr 2025 21:06:41 +0400
+Subject: [PATCH] MDEV-36427 - FTBFS with libxml2 2.14.0
+
+Index: storage/connect/plgxml.h
+--- storage/connect/plgxml.h.orig
++++ storage/connect/plgxml.h
+@@ -5,7 +5,7 @@
+ /******************************************************************/
+ /*  Dual XML implementation base classes defines.                 */
+ /******************************************************************/
+-#if !defined(BASE_BUFFER_SIZE)
++#ifndef LIBXML2_SUPPORT
+ enum ElementType {               // libxml2
+      XML_ELEMENT_NODE       =  1,
+      XML_ATTRIBUTE_NODE     =  2,
+@@ -28,7 +28,7 @@ enum ElementType {               // libxml2
+      XML_XINCLUDE_START     = 19,
+      XML_XINCLUDE_END       = 20,
+      XML_DOCB_DOCUMENT_NODE = 21};
+-#endif   // !BASE_BUFFER_SIZE
++#endif
+ 
+ //#if !defined(NODE_TYPE_LIST)
+ #ifdef NOT_USED
