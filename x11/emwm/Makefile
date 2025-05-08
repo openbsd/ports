@@ -1,6 +1,6 @@
 COMMENT =	enhanced motif window manager (MWM fork)
 
-V =		1.2
+V =		1.3
 DISTNAME =	emwm-src-${V}
 PKGNAME =	emwm-${V}
 
