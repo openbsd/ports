@@ -1,0 +1,14 @@
+Fix build with libxml >=2.14.
+
+Index: src/tools.c
+--- src/tools.c.orig
++++ src/tools.c
+@@ -293,7 +293,7 @@ validate_xml(GtkWindow *parent, char *text) {
+ 		g_string_free(xml_error_context_hack, TRUE);
+ 		return FALSE;
+ 	}
+-	initGenericErrorDefaultFunc(NULL);
++	xmlSetGenericErrorFunc(NULL, NULL);
+ 	xmlFreeParserCtxt(ctxt);
+ 	g_string_free(xml_error_context_hack, TRUE);
+ 	return TRUE;
