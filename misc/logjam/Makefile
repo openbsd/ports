@@ -1,3 +1,5 @@
+BROKEN =		does not build with libxml-2.14.2
+
 COMMENT =	GTK client for LiveJournal
 
 DISTNAME =	logjam-4.6.2

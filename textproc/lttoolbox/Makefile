@@ -1,3 +1,5 @@
+BROKEN =		does not build with libxml-2.14.2
+
 COMMENT =		finite-state lexical processing toolkit
 
 V =			3.7.6

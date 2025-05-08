@@ -1,3 +1,5 @@
+BROKEN =	does not build with libxml-2.14.2
+
 COMMENT =	SIP library supporting voice/video calls and text messaging
 
 MODULE =	liblinphone
