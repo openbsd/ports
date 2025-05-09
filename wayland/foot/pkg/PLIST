@@ -25,6 +25,7 @@ share/fish/vendor_completions.d/footclient.fish
 share/foot/
 share/foot/themes/
 share/foot/themes/aeroroot
+share/foot/themes/alacritty
 share/foot/themes/apprentice
 share/foot/themes/ayu-mirage
 share/foot/themes/catppuccin-frappe
@@ -47,9 +48,11 @@ share/foot/themes/material-amber
 share/foot/themes/material-design
 share/foot/themes/modus-operandi
 share/foot/themes/modus-vivendi
+share/foot/themes/molokai
 share/foot/themes/monokai-pro
 share/foot/themes/moonfly
 share/foot/themes/neon
+share/foot/themes/night-owl
 share/foot/themes/nightfly
 share/foot/themes/noirblaze
 share/foot/themes/nord

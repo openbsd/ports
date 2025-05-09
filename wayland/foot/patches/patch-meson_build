@@ -30,7 +30,7 @@ Index: meson.build
    link_with: [common]
  )
  
-@@ -282,7 +284,7 @@ if get_option('b_pgo') == 'generate'
+@@ -283,7 +285,7 @@ if get_option('b_pgo') == 'generate'
      'pgo',
      'pgo/pgo.c',
      wl_proto_src + wl_proto_headers,
@@ -39,10 +39,10 @@ Index: meson.build
      link_with: pgolib,
    )
  endif
-@@ -315,7 +317,7 @@ executable(
+@@ -316,7 +318,7 @@ executable(
    'user-notification.c', 'user-notification.h',
    'wayland.c', 'wayland.h', 'shm-formats.h',
-   wl_proto_src + wl_proto_headers, version,
+   srgb_funcs, wl_proto_src + wl_proto_headers, version,
 -  dependencies: [math, threads, libepoll, pixman, wayland_client, wayland_cursor, xkb, fontconfig, utf8proc,
 +  dependencies: [math, stdthreads, libepoll, pixman, wayland_client, wayland_cursor, xkb, fontconfig, utf8proc,
                   tllist, fcft],
