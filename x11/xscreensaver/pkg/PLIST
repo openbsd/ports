@@ -74,6 +74,8 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/distort
 @bin libexec/xscreensaver/drift
 @comment SEGV at startup @bin libexec/xscreensaver/droste
+@bin libexec/xscreensaver/droste
+@bin libexec/xscreensaver/dumpsterfire
 @bin libexec/xscreensaver/dymaxionmap
 @bin libexec/xscreensaver/endgame
 @bin libexec/xscreensaver/energystream
@@ -131,6 +133,7 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/highvoltage
 @bin libexec/xscreensaver/hilbert
 @bin libexec/xscreensaver/hopalong
+@bin libexec/xscreensaver/hopffibration
 @bin libexec/xscreensaver/hydrostat
 @bin libexec/xscreensaver/hypertorus
 @bin libexec/xscreensaver/hypnowheel
@@ -147,6 +150,7 @@ libexec/xscreensaver/
 @bin libexec/xscreensaver/kaleidocycle
 @bin libexec/xscreensaver/kallisti
 @bin libexec/xscreensaver/klein
+@bin libexec/xscreensaver/klondike
 @bin libexec/xscreensaver/kumppa
 @bin libexec/xscreensaver/lament
 @bin libexec/xscreensaver/lavalite
@@ -187,6 +191,7 @@ libexec/xscreensaver/mapscroller.pl
 @bin libexec/xscreensaver/piecewise
 @bin libexec/xscreensaver/pinion
 @bin libexec/xscreensaver/pipes
+@bin libexec/xscreensaver/platonicfolding
 @bin libexec/xscreensaver/polyhedra
 @bin libexec/xscreensaver/polyominoes
 @bin libexec/xscreensaver/polytopes
@@ -340,6 +345,7 @@ libexec/xscreensaver/xscreensaver-text
 @man man/man6/distort.6
 @man man/man6/drift.6
 @comment SEGV at startup @man man/man6/droste.6
+@man man/man6/droste.6
 @man man/man6/dymaxionmap.6
 @man man/man6/endgame.6
 @man man/man6/energystream.6
@@ -397,6 +403,7 @@ libexec/xscreensaver/xscreensaver-text
 @man man/man6/highvoltage.6
 @man man/man6/hilbert.6
 @man man/man6/hopalong.6
+@man man/man6/hopffibration.6
 @man man/man6/hydrostat.6
 @man man/man6/hypertorus.6
 @man man/man6/hypnowheel.6
@@ -452,6 +459,7 @@ libexec/xscreensaver/xscreensaver-text
 @man man/man6/piecewise.6
 @man man/man6/pinion.6
 @man man/man6/pipes.6
+@man man/man6/platonicfolding.6
 @man man/man6/polyhedra.6
 @man man/man6/polyominoes.6
 @man man/man6/polytopes.6
@@ -609,6 +617,8 @@ share/applications/screensavers/distort.desktop
 share/applications/screensavers/dnalogo.desktop
 share/applications/screensavers/drift.desktop
 @comment SEGV at startup share/applications/screensavers/droste.desktop
+share/applications/screensavers/droste.desktop
+share/applications/screensavers/dumpsterfire.desktop
 share/applications/screensavers/dymaxionmap.desktop
 share/applications/screensavers/endgame.desktop
 share/applications/screensavers/energystream.desktop
@@ -669,6 +679,7 @@ share/applications/screensavers/hextrail.desktop
 share/applications/screensavers/highvoltage.desktop
 share/applications/screensavers/hilbert.desktop
 share/applications/screensavers/hopalong.desktop
+share/applications/screensavers/hopffibration.desktop
 share/applications/screensavers/hydrostat.desktop
 share/applications/screensavers/hyperball.desktop
 share/applications/screensavers/hypercube.desktop
@@ -688,6 +699,7 @@ share/applications/screensavers/kaleidescope.desktop
 share/applications/screensavers/kaleidocycle.desktop
 share/applications/screensavers/kallisti.desktop
 share/applications/screensavers/klein.desktop
+share/applications/screensavers/klondike.desktop
 share/applications/screensavers/kumppa.desktop
 share/applications/screensavers/lament.desktop
 share/applications/screensavers/laser.desktop
@@ -733,6 +745,7 @@ share/applications/screensavers/photopile.desktop
 share/applications/screensavers/piecewise.desktop
 share/applications/screensavers/pinion.desktop
 share/applications/screensavers/pipes.desktop
+share/applications/screensavers/platonicfolding.desktop
 share/applications/screensavers/polyhedra.desktop
 share/applications/screensavers/polyominoes.desktop
 share/applications/screensavers/polytopes.desktop
@@ -897,6 +910,8 @@ share/xscreensaver/config/discrete.xml
 share/xscreensaver/config/distort.xml
 share/xscreensaver/config/drift.xml
 @comment SEGV at startup share/xscreensaver/config/droste.xml
+share/xscreensaver/config/droste.xml
+share/xscreensaver/config/dumpsterfire.xml
 share/xscreensaver/config/dymaxionmap.xml
 share/xscreensaver/config/endgame.xml
 share/xscreensaver/config/energystream.xml
@@ -954,6 +969,7 @@ share/xscreensaver/config/hextrail.xml
 share/xscreensaver/config/highvoltage.xml
 share/xscreensaver/config/hilbert.xml
 share/xscreensaver/config/hopalong.xml
+share/xscreensaver/config/hopffibration.xml
 share/xscreensaver/config/hydrostat.xml
 share/xscreensaver/config/hypertorus.xml
 share/xscreensaver/config/hypnowheel.xml
@@ -970,6 +986,7 @@ share/xscreensaver/config/kaleidescope.xml
 share/xscreensaver/config/kaleidocycle.xml
 share/xscreensaver/config/kallisti.xml
 share/xscreensaver/config/klein.xml
+share/xscreensaver/config/klondike.xml
 share/xscreensaver/config/kumppa.xml
 share/xscreensaver/config/lament.xml
 share/xscreensaver/config/lavalite.xml
@@ -1009,6 +1026,7 @@ share/xscreensaver/config/photopile.xml
 share/xscreensaver/config/piecewise.xml
 share/xscreensaver/config/pinion.xml
 share/xscreensaver/config/pipes.xml
+share/xscreensaver/config/platonicfolding.xml
 share/xscreensaver/config/polyhedra.xml
 share/xscreensaver/config/polyominoes.xml
 share/xscreensaver/config/polytopes.xml
