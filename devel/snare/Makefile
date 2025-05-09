@@ -1,8 +1,7 @@
 COMMENT =		GitHub webhooks runner daemon
 
-V =			0.4.11
+V =			0.4.12
 DISTNAME =		snare-$V
-REVISION =		0
 
 CATEGORIES =		devel
 
@@ -19,11 +18,6 @@ WANTLIB +=		${MODCARGO_WANTLIB} m
 
 DISTFILES +=		${DISTNAME}${EXTRACT_SUFX}
 MODULES =		devel/cargo
-
-MODCARGO_CRATES_UPDATE +=	time
-MODCARGO_CRATES +=	time		0.3.36
-MODCARGO_CRATES +=	time-macros	0.2.18
-MODCARGO_CRATES +=	num-conv	0.1.0
 
 CONFIGURE_STYLE =	cargo
 
