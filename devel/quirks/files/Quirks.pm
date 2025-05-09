@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1714 2025/05/06 19:27:22 bket Exp $
+# $OpenBSD: Quirks.pm,v 1.1715 2025/05/09 01:33:33 daniel Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -624,6 +624,8 @@ my $stem_extensions = {
 	'libkcompactdisc-kf5' => 'kf6-libkcompactdisc',
 	'c-icap-clamav' => 'c-icap-modules',
 	'c-icap-urlcheck' => 'c-icap-modules',
+# 7.8
+	'coq' => 'rocq',
 };
 
 my $obsolete_reason = {};

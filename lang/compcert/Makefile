@@ -10,7 +10,7 @@ GH_PROJECT =		CompCert
 GH_TAGNAME =		v${V}
 DISTNAME =		${GH_PROJECT}-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		1
+REVISION =		2
 
 HOMEPAGE =		https://compcert.org/
 
@@ -35,7 +35,7 @@ CONFIGURE_ARGS  = -mandir ${PREFIX}/man \
 		  ${MACHINE_ARCH}-bsd
 
 BUILD_DEPENDS =	lang/ocaml>=4.05 \
-		math/coq>=8.12.0 \
+		math/rocq>=8.12.0 \
 		sysutils/findlib \
 		devel/ocaml-menhir>=20190626
 

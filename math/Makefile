@@ -14,7 +14,6 @@
      SUBDIR += cgal
      SUBDIR += cglm
      SUBDIR += cgns
-     SUBDIR += coq
      SUBDIR += datamash
      SUBDIR += dieharder
      SUBDIR += double-conversion
@@ -160,6 +159,7 @@
      SUBDIR += py2-numpy
      SUBDIR += qhull
      SUBDIR += qrupdate
+     SUBDIR += rocq
      SUBDIR += rstudio
      SUBDIR += sc
      SUBDIR += spread-sheet-widget
