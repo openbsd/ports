@@ -1,0 +1,18 @@
+Index: gst-libs/gst/cuda/meson.build
+--- gst-libs/gst/cuda/meson.build.orig
++++ gst-libs/gst/cuda/meson.build
+@@ -48,12 +48,14 @@ if host_system not in ['windows', 'linux']
+   subdir_done()
+ endif
+ 
++if host_machine.system() != 'openbsd'
+ # Check for libatomic for use of C11 atomics: some architectures need
+ # to link explicitly to this library.
+ # TODO: Once meson 1.7 is in use, this can be updated to
+ # dependency('atomic')
+ atomic_dep = cxx.find_library('atomic', required: false)
+ gstcuda_platform_dep += [atomic_dep]
++endif
+ 
+ cuda_win32_headers = [
+   'initguid.h',
