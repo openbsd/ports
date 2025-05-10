@@ -2529,6 +2529,7 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/sso-admin/2020-07-20/endp
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sso-admin/2020-07-20/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sso-admin/2020-07-20/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sso-admin/2020-07-20/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/sso-admin/2020-07-20/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sso-oidc/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sso-oidc/2019-06-10/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/sso-oidc/2019-06-10/endpoint-rule-set-1.json
