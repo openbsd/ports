@@ -1,10 +1,10 @@
 COMMENT =	multi-protocol browser for the small internet
-V =		0.10.1
+V =		0.11
 DISTNAME =	telescope-${V}
 
 CATEGORIES =	net
 
-HOMEPAGE =	https://telescope.omarpolo.com
+HOMEPAGE =	https://telescope-browser.org
 
 MAINTAINER =	Omar Polo <op@openbsd.org>
 
@@ -17,8 +17,8 @@ WANTLIB += c crypto curses grapheme ssl tls util
 
 LIB_DEPENDS =	textproc/libgrapheme
 
-SITES = 	https://ftp.omarpolo.com/ \
-		https://github.com/omar-polo/telescope/releases/download/${V}/
+SITES = 	https://ftp.telescope-browser.org/ \
+		https://github.com/telescope-browser/telescope/releases/download/${V}/
 
 CONFIGURE_STYLE =	gnu
 
