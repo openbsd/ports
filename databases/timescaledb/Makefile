@@ -1,5 +1,7 @@
 COMMENT =	database designed to make SQL scalable for time-series data
 
+ONLY_FOR_ARCHS = ${LP64_ARCHS}
+
 GH_ACCOUNT =	timescale
 GH_PROJECT =	timescaledb
 GH_TAGNAME =	2.19.3
