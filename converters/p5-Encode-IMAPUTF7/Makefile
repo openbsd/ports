@@ -1,10 +1,9 @@
 COMMENT =	modification of UTF-7 encoding for IMAP
 
-DISTNAME =	Encode-IMAPUTF7-1.05
+DISTNAME =	Encode-IMAPUTF7-1.06
 CATEGORIES =	converters
 MODULES =	cpan
 PKG_ARCH =	*
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE =		Yes
