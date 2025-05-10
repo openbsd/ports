@@ -20,11 +20,9 @@ COMMENT-securelink=	nginx HMAC secure link module
 COMMENT-stream=		nginx TCP/UDP proxy module
 COMMENT-xslt=		nginx XSLT filter module
 
-VERSION=	1.26.3
+VERSION=	1.28.0
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
-
-REVISION-njs=	0
 
 PKGNAME-main=		${DISTNAME}
 PKGNAME-cache_purge=	nginx-cache_purge-${VERSION}
