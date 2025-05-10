@@ -1,7 +1,7 @@
 
 COMMENT =	packages that provide templated software licenses
 
-DISTNAME =	Software-License-0.104006
+DISTNAME =	Software-License-0.104007
 CPAN_AUTHOR =	LEONT
 
 CATEGORIES =	devel
