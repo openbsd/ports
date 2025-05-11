@@ -32,6 +32,7 @@ lib/cmake/KF6KirigamiPlatform/KF6KirigamiPlatformTargets.cmake
 @lib lib/libKirigamiDelegates.so.${LIBKirigamiDelegates_VERSION}
 @lib lib/libKirigamiDialogs.so.${LIBKirigamiDialogs_VERSION}
 @lib lib/libKirigamiLayouts.so.${LIBKirigamiLayouts_VERSION}
+@lib lib/libKirigamiLayoutsPrivate.so.${LIBKirigamiLayoutsPrivate_VERSION}
 @lib lib/libKirigamiPlatform.so.${LIBKirigamiPlatform_VERSION}
 @lib lib/libKirigamiPrimitives.so.${LIBKirigamiPrimitives_VERSION}
 @lib lib/libKirigamiPrivate.so.${LIBKirigamiPrivate_VERSION}
@@ -107,6 +108,12 @@ lib/qt6/qml/org/kde/kirigami/layouts/FormLayout.qml
 lib/qt6/qml/org/kde/kirigami/layouts/KirigamiLayouts.qmltypes
 lib/qt6/qml/org/kde/kirigami/layouts/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/kirigami/layouts/libKirigamiLayoutsplugin.so
+lib/qt6/qml/org/kde/kirigami/layouts/private/
+lib/qt6/qml/org/kde/kirigami/layouts/private/ColumnViewSeparator.qml
+lib/qt6/qml/org/kde/kirigami/layouts/private/KirigamiLayoutsPrivate.qmltypes
+lib/qt6/qml/org/kde/kirigami/layouts/private/kde-qmlmodule.version
+@so lib/qt6/qml/org/kde/kirigami/layouts/private/libKirigamiLayoutsPrivateplugin.so
+lib/qt6/qml/org/kde/kirigami/layouts/private/qmldir
 lib/qt6/qml/org/kde/kirigami/layouts/qmldir
 @so lib/qt6/qml/org/kde/kirigami/libKirigamiplugin.so
 lib/qt6/qml/org/kde/kirigami/platform/
@@ -173,6 +180,7 @@ lib/qt6/qml/org/kde/kirigami/templates/private/ForwardButton.qml
 lib/qt6/qml/org/kde/kirigami/templates/private/GenericDrawerIcon.qml
 lib/qt6/qml/org/kde/kirigami/templates/private/IconPropertiesGroup.qml
 lib/qt6/qml/org/kde/kirigami/templates/private/MenuIcon.qml
+lib/qt6/qml/org/kde/kirigami/templates/private/NavigationButton.qml
 lib/qt6/qml/org/kde/kirigami/templates/private/PassiveNotificationsManager.qml
 lib/qt6/qml/org/kde/kirigami/templates/private/qmldir
 lib/qt6/qml/org/kde/kirigami/templates/qmldir

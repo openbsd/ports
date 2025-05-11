@@ -1,7 +1,5 @@
 @conflict kuserfeedback-*
 @pkgpath productivity/kuserfeedback
-@bin bin/UserFeedbackConsole
-@bin bin/userfeedbackctl
 include/KF6/
 include/KF6/KUserFeedback/
 include/KF6/KUserFeedback/kuserfeedback_version.h
@@ -67,7 +65,6 @@ lib/qt6/qml/org/kde/userfeedback/KF6UserFeedbackQml.qmltypes
 lib/qt6/qml/org/kde/userfeedback/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/userfeedback/libKF6UserFeedbackQml.so
 lib/qt6/qml/org/kde/userfeedback/qmldir
-share/applications/org.kde.kuserfeedback-console.desktop
 share/kf6/
 share/kf6/mkspecs/
 share/kf6/mkspecs/qt_KF6UserFeedbackCore.pri
@@ -159,8 +156,6 @@ share/locale/zh_CN/LC_MESSAGES/userfeedbackconsole6_qt.qm
 share/locale/zh_CN/LC_MESSAGES/userfeedbackprovider6_qt.qm
 share/locale/zh_TW/LC_MESSAGES/userfeedbackconsole6_qt.qm
 share/locale/zh_TW/LC_MESSAGES/userfeedbackprovider6_qt.qm
-share/metainfo/
-share/metainfo/org.kde.kuserfeedback-console.appdata.xml
 @tag update-desktop-database
 share/qlogging-categories6/
 share/qlogging-categories6/org_kde_UserFeedback.categories

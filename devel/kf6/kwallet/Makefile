@@ -7,7 +7,8 @@ SHARED_LIBS +=  KF6WalletBackend          0.0 # 0.0
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ColorScheme KF6ConfigCore
 WANTLIB += KF6CoreAddons KF6Crash KF6DBusAddons KF6I18n KF6Notifications
 WANTLIB += KF6WidgetsAddons KF6WindowSystem Qt6Core Qt6DBus Qt6Gui
-WANTLIB += Qt6Widgets X11 c gcrypt m qca-qt6
+WANTLIB += Qt6Widgets X11 c gcrypt gio-2.0 glib-2.0 gobject-2.0
+WANTLIB += intl m qca-qt6 secret-1
 
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/kf6/kdoctools>=${MODKF6_VERSION}
@@ -24,6 +25,8 @@ LIB_DEPENDS =	devel/kf6/kconfig>=${MODKF6_VERSION} \
 		devel/kf6/knotifications>=${MODKF6_VERSION} \
 		devel/kf6/kwidgetsaddons>=${MODKF6_VERSION} \
 		devel/kf6/kwindowsystem>=${MODKF6_VERSION} \
+		x11/gnome/libsecret \
+		devel/glib2 \
 		security/libgcrypt \
 		security/qca-qt6
 

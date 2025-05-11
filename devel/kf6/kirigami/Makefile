@@ -7,7 +7,8 @@ SHARED_LIBS +=  KirigamiPlatform          0.0 # 0.0
 SHARED_LIBS +=  KirigamiDialogs           0.0 # 0.0
 SHARED_LIBS +=  KirigamiLayouts           0.0 # 0.0
 SHARED_LIBS +=  KirigamiPrimitives        0.0 # 0.0
-SHARED_LIBS +=	KirigamiPrivate           0.0 # 0.0
+SHARED_LIBS +=  KirigamiPrivate           0.0 # 0.0
+SHARED_LIBS +=  KirigamiLayoutsPrivate    0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Concurrent Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels

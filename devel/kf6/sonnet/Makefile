@@ -12,6 +12,7 @@ WANTLIB-main += Qt6Qml Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
 WANTLIB-main += Qt6Widgets c m
 
 WANTLIB-aspell += ${COMPILER_LIBCXX} KF6SonnetCore aspell m
+
 WANTLIB-hunspell += ${COMPILER_LIBCXX} KF6SonnetCore hunspell-1.7 m
 
 MULTI_PACKAGES =	-main -aspell -hunspell

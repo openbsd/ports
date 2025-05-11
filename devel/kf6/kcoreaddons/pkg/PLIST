@@ -80,6 +80,7 @@ lib/cmake/KF6CoreAddons/KF6CoreAddonsMacros.cmake
 lib/cmake/KF6CoreAddons/KF6CoreAddonsTargets${MODCMAKE_BUILD_SUFFIX}
 lib/cmake/KF6CoreAddons/KF6CoreAddonsTargets.cmake
 @lib lib/libKF6CoreAddons.so.${LIBKF6CoreAddons_VERSION}
+lib/pkgconfig/KF6CoreAddons.pc
 lib/qt6/qml/org/
 lib/qt6/qml/org/kde/
 lib/qt6/qml/org/kde/coreaddons/
