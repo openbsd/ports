@@ -45,7 +45,7 @@ WANTLIB += gobject-2.0 m pango-1.0 pangocairo-1.0 xml2
 CONFIGURE_ARGS +=	-Davif=disabled
 .else
 ### old ########################################################################
-REVISION=		8
+REVISION=		9
 SHARED_LIBS +=  rsvg-2               38.2     # 42.20
 GNOME_VERSION=		${OLD_VERSION}
 PATCH_LIST=		old-patch-*

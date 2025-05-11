@@ -1,0 +1,13 @@
+Unbreak with libxml >=2.14
+
+Index: rsvg-private.h
+--- rsvg-private.h.orig
++++ rsvg-private.h
+@@ -31,6 +31,7 @@
+ 
+ #include "rsvg.h"
+ 
++#include <libxml/HTMLparser.h>
+ #include <libxml/SAX.h>
+ #include <libxml/xmlmemory.h>
+ #include <pango/pango.h>
