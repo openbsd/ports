@@ -620,9 +620,11 @@ share/remind/lang/no.rem
 share/remind/lang/pl.rem
 share/remind/lang/pt.rem
 share/remind/lang/ro.rem
+share/remind/lunar-eclipses.rem
 share/remind/moonphases.rem
 share/remind/seasons.rem
 share/remind/site/
 share/remind/site/README
 @tag update-desktop-database
+share/remind/solar-eclipses.rem
 share/remind/sun.rem
