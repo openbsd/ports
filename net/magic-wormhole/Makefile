@@ -1,5 +1,5 @@
 COMMENT =		securely transfer data between computers
-REVISION =		0
+REVISION =		1
 
 DIST_TUPLE =		github	magic-wormhole	magic-wormhole	0.18.0	.
 
@@ -26,6 +26,7 @@ RUN_DEPENDS =		archivers/py-zipstream-ng \
 			devel/py-tqdm \
 			devel/py-twisted \
 			devel/py-txaio \
+			graphics/py-qrcode \
 			net/py-txtorcon \
 			security/py-PyNaCl \
 			security/py-cryptography \
