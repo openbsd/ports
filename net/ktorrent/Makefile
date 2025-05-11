@@ -3,7 +3,6 @@ USE_WXNEEDED =	Yes
 COMMENT =	BitTorrent Client
 
 DISTNAME =	ktorrent-${MODKDE_GEAR_VERSION}
-REVISION =	0
 
 SHARED_LIBS +=  ktcore                    4.0 # 0.0
 

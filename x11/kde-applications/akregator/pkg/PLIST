@@ -193,6 +193,7 @@ share/locale/uz@cyrillic/LC_MESSAGES/akregator.mo
 share/locale/vi/LC_MESSAGES/akregator.mo
 share/locale/zh_CN/LC_MESSAGES/akregator.mo
 share/locale/zh_TW/LC_MESSAGES/akregator.mo
+share/metainfo/
 share/metainfo/org.kde.akregator.appdata.xml
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor

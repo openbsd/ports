@@ -83,8 +83,6 @@ LIB_DEPENDS =	devel/gettext,-runtime \
 		x11/qt6/qtwebchannel \
 		x11/qt6/qtwebengine
 
-LIB_DEPENDS +=	math/R
-
 TEST_IS_INTERACTIVE =	X11
 
 PORTHOME =		${WRKDIR}

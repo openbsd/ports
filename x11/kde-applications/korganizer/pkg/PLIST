@@ -301,6 +301,7 @@ share/locale/zh_CN/LC_MESSAGES/korganizer.mo
 share/locale/zh_CN/LC_MESSAGES/korganizer_calendarplugins.mo
 share/locale/zh_TW/LC_MESSAGES/korganizer.mo
 share/locale/zh_TW/LC_MESSAGES/korganizer_calendarplugins.mo
+share/metainfo/
 share/metainfo/org.kde.korganizer.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database

@@ -3,7 +3,6 @@ COMMENT =	IRC client for KDE
 DISTNAME =	konversation-${MODKDE_GEAR_VERSION}
 
 CATEGORIES =	net
-REVISION =	0
 
 HOMEPAGE =	https://konversation.kde.org/
 

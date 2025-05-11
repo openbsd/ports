@@ -583,8 +583,14 @@ share/kdenlive/scripts/${MODPY_PYCACHE}otiointerface.${MODPY_PYC_MAGIC_TAG}${MOD
 share/kdenlive/scripts/${MODPY_PYCACHE}otiointerface.${MODPY_PYC_MAGIC_TAG}pyc
 share/kdenlive/scripts/automask/
 ${MODPY_COMMENT}share/kdenlive/scripts/automask/${MODPY_PYCACHE}/
+share/kdenlive/scripts/automask/${MODPY_PYCACHE}kdenlive_build_sam.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/kdenlive/scripts/automask/${MODPY_PYCACHE}kdenlive_build_sam.${MODPY_PYC_MAGIC_TAG}pyc
+share/kdenlive/scripts/automask/${MODPY_PYCACHE}kdenlive_sam2_video_predictor.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+share/kdenlive/scripts/automask/${MODPY_PYCACHE}kdenlive_sam2_video_predictor.${MODPY_PYC_MAGIC_TAG}pyc
 share/kdenlive/scripts/automask/${MODPY_PYCACHE}sam-objectmask.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 share/kdenlive/scripts/automask/${MODPY_PYCACHE}sam-objectmask.${MODPY_PYC_MAGIC_TAG}pyc
+share/kdenlive/scripts/automask/kdenlive_build_sam.py
+share/kdenlive/scripts/automask/kdenlive_sam2_video_predictor.py
 share/kdenlive/scripts/automask/requirements-cuda118.txt
 share/kdenlive/scripts/automask/requirements-cuda124.txt
 share/kdenlive/scripts/automask/requirements-cuda126.txt
