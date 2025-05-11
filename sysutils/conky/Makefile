@@ -1,83 +1,58 @@
-ONLY_FOR_ARCHS= ${APM_ARCHS}
+ONLY_FOR_ARCHS = ${APM_ARCHS}
 
-COMMENT=	light-weight system monitor
+COMMENT =	light-weight system monitor
 
-# there's a start of an attempt to update to a recent version in openbsd-wip
-GH_ACCOUNT=	brndnmtthws
-GH_PROJECT=	conky
-GH_TAGNAME=	1.9.0
-REVISION=	24
+GH_ACCOUNT =	brndnmtthws
+GH_PROJECT =	conky
+GH_TAGNAME =	v1.22.1
 
-# remove after updating:
-DISTFILES=	conky_0-{}${GH_TAGNAME}.tar.gz
-
-CATEGORIES=	sysutils
+CATEGORIES =	sysutils
 
 # mostly GPLv3; see COPYING
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${MODLUA_WANTLIB} X11-xcb c crypto curl curses glib-2.0 iconv
-WANTLIB += intl kvm lzma m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls
-WANTLIB += ossaudio pcre2-8 pthread ssl xcb-shm xml2 z
+WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB} c curses intl kvm m ossaudio
+WANTLIB += curl xml2
 
-MODULES=	lang/lua
-MODLUA_SA=	Yes
+MODULES =	devel/cmake \
+		lang/lua \
+		lang/python
 
-LIB_DEPENDS=	devel/glib2 \
-		net/curl \
+# dependency to build docs
+MODPY_RUNDEP = No
+
+MODLUA_VERSION =	5.3
+
+BUILD_DEPENDS =	textproc/lowdown \
+		devel/gperf
+
+LIB_DEPENDS =	net/curl \
 		textproc/libxml \
 		${MODLUA_LIB_DEPENDS}
 
-FLAVORS=	no_x11 xmms2
+FLAVORS =	no_x11
 FLAVOR?=
 
-CONFIGURE_STYLE= autoreconf
-AUTOCONF_VERSION= 2.69
-AUTOMAKE_VERSION= 1.16
-BUILD_DEPENDS=	textproc/docbook2x \
-		textproc/docbook-xsl
-AUTORECONF=	${WRKSRC}/autogen.sh
+CONFIGURE_ARGS =	-DBUILD_AUDACIOUS=OFF \
+			-DBUILD_HDDTEMP=OFF \
+			-DBUILD_IBM=OFF \
+			-DBUILD_MOC=OFF \
+			-DBUILD_IOSTATS=OFF \
+			-DBUILD_PORT_MONITORS=OFF
 
-CONFIGURE_ARGS=	--enable-mpd \
-		--enable-rss \
-		--disable-config-output \
-		--disable-moc \
-		--disable-portmon \
-		--enable-lua \
-		--enable-curl \
-		--with-libiconv-prefix="${LOCALBASE}"
-CONFIGURE_ENV=	CPPFLAGS="-I${LOCALBASE}/include" LDFLAGS="-L${LOCALBASE}/lib" \
-		LUA_CFLAGS="`pkg-config --cflags ${MODLUA_DEP}`" \
-		LUA_LIBS="`pkg-config --libs ${MODLUA_DEP}`"
+CONFIGURE_ARGS +=	-DBUILD_RSS=ON \
+			-DBUILD_CURL=ON
+
+CONFIGURE_ARGS +=	-DBUILD_DOCS=ON \
+			-DUSE_LOWDOWN=ON \
+			-DUSE_PANDOC=OFF
 
 .if ${FLAVOR:Mno_x11}
-.  if ${FLAVOR:Mxmms2}
-ERRORS+="Fatal: nonsense combination of flavors"
-.  else
-CONFIGURE_ARGS+=--disable-double-buffer \
-		--disable-own-window \
-		--disable-xdamage \
-		--disable-xft \
-		--disable-x11
-.  endif
+CONFIGURE_ARGS +=	-DBUILD_X11=OFF
 .else
-CONFIGURE_ARGS+=--enable-imlib2
-LIB_DEPENDS+=	graphics/imlib2
-WANTLIB += Imlib2 X11 Xdamage Xext Xfixes Xft
-WANTLIB += Xrender expat fontconfig freetype xcb
+CONFIGURE_ARGS +=	-DBUILD_X11=ON
+LIB_DEPENDS +=		graphics/imlib2
+WANTLIB += ICE Imlib2 SM X11 Xdamage Xext Xfixes Xft Xinerama fontconfig xcb
 .endif
-
-.if ${FLAVOR:Mxmms2}
-CONFIGURE_ARGS+=--enable-xmms2
-LIB_DEPENDS+=	audio/xmms2
-WANTLIB+=	xmmsclient
-.endif
-
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/conky
-	${INSTALL_DATA} ${WRKSRC}/doc/*.html ${PREFIX}/share/doc/conky
-	${INSTALL_DATA} ${WRKSRC}/README ${PREFIX}/share/doc/conky
-
-FAKE_FLAGS=	configdir=${PREFIX}/share/examples/conky
 
 .include <bsd.port.mk>
