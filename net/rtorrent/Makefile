@@ -1,7 +1,7 @@
 COMMENT=		ncurses BitTorrent client based on libTorrent
 
 DISTNAME=		rtorrent-0.10.0
-REVISION=		0
+REVISION=		1
 EPOCH=			0
 CATEGORIES=		net
 
@@ -10,7 +10,7 @@ HOMEPAGE=		https://rakshasa.github.io/rtorrent/
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c cppunit curl curses m
+WANTLIB += ${COMPILER_LIBCXX} c cppunit curl curses execinfo m
 WANTLIB += torrent
 
 COMPILER =		base-clang ports-gcc
@@ -23,8 +23,7 @@ LIB_DEPENDS =		devel/cppunit \
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ENV +=	LDFLAGS=-pthread
-CONFIGURE_ARGS =	--disable-debug \
-			--disable-execinfo
+CONFIGURE_ARGS =	--disable-debug
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
