@@ -1,11 +1,13 @@
 COMMENT =	Z3 theorem prover
 
-DIST_TUPLE =	github	Z3Prover	z3	z3-4.14.1	.
+DIST_TUPLE =	github Z3Prover z3 z3-4.15.0 .
 PKGNAME =	${DISTNAME:S/z3-//}
 
-SHARED_LIBS =	z3	4.14
+SHARED_LIBS =	z3	4.15
 
 CATEGORIES =	math
+
+DPB_PROPERTIES =	parallel
 
 WANTLIB +=	c m pthread ${COMPILER_LIBCXX}
 
