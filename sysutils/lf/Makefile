@@ -1,16 +1,14 @@
 COMMENT =	terminal file manager inspired by ranger written in Go
 
 MODGO_MODNAME =	github.com/gokcehan/lf
-MODGO_VERSION =	v0.0.0-20250209115006-c25647d364e7
+MODGO_VERSION =	v0.0.0-20250425012345-3d205f05e3ce
 
-R =		34
+R =		35
 DISTNAME =	lf-${R}
 
 CATEGORIES =	sysutils
 
 HOMEPAGE =	https://github.com/gokcehan/lf
-
-MAINTAINER =	Chang, Chu-Kuan <cckuan@changchukuan.name>
 
 # MIT
 PERMIT_PACKAGE =	Yes

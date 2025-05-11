@@ -1,7 +1,7 @@
 MODGO_MODULES =	\
-	github.com/!xuanwo/go-locale		 v1.1.2 \
+	github.com/!xuanwo/go-locale		 v1.1.3 \
 	github.com/djherbis/times		 v1.6.0 \
-	github.com/fsnotify/fsnotify		 v1.8.0 \
+	github.com/fsnotify/fsnotify		 v1.9.0 \
 	github.com/gdamore/encoding		 v1.0.1 \
 	github.com/gdamore/tcell/v2		 v2.8.1 \
 	github.com/google/go-cmp		 v0.6.0 \
@@ -12,11 +12,11 @@ MODGO_MODULES =	\
 	golang.org/x/crypto			 v0.23.0 \
 	golang.org/x/mod			 v0.17.0 \
 	golang.org/x/net			 v0.25.0 \
-	golang.org/x/sync			 v0.10.0 \
-	golang.org/x/sys			 v0.29.0 \
+	golang.org/x/sync			 v0.13.0 \
+	golang.org/x/sys			 v0.32.0 \
 	golang.org/x/telemetry			 v0.0.0-20240228155512-f48c80bd79b2 \
-	golang.org/x/term			 v0.28.0 \
-	golang.org/x/text			 v0.21.0 \
+	golang.org/x/term			 v0.31.0 \
+	golang.org/x/text			 v0.24.0 \
 	golang.org/x/tools			 v0.21.1-0.20240508182429-e35e4ccd0d2d \
 	golang.org/x/xerrors			 v0.0.0-20190717185122-a985d3407aa7
 
@@ -41,6 +41,7 @@ MODGO_MODFILES =	\
 	golang.org/x/sync	 v0.0.0-20190423024810-112230192c58 \
 	golang.org/x/sync	 v0.0.0-20220722155255-886fb9371eb4 \
 	golang.org/x/sync	 v0.1.0 \
+	golang.org/x/sync	 v0.10.0 \
 	golang.org/x/sync	 v0.3.0 \
 	golang.org/x/sync	 v0.6.0 \
 	golang.org/x/sync	 v0.7.0 \
@@ -54,7 +55,8 @@ MODGO_MODFILES =	\
 	golang.org/x/sys	 v0.13.0 \
 	golang.org/x/sys	 v0.17.0 \
 	golang.org/x/sys	 v0.20.0 \
-	golang.org/x/sys	 v0.25.0 \
+	golang.org/x/sys	 v0.28.0 \
+	golang.org/x/sys	 v0.29.0 \
 	golang.org/x/sys	 v0.5.0 \
 	golang.org/x/sys	 v0.8.0 \
 	golang.org/x/term	 v0.0.0-20201126162022-7de9c90e9dd1 \
@@ -62,12 +64,13 @@ MODGO_MODFILES =	\
 	golang.org/x/term	 v0.12.0 \
 	golang.org/x/term	 v0.17.0 \
 	golang.org/x/term	 v0.20.0 \
+	golang.org/x/term	 v0.28.0 \
 	golang.org/x/term	 v0.5.0 \
 	golang.org/x/term	 v0.8.0 \
 	golang.org/x/text	 v0.13.0 \
 	golang.org/x/text	 v0.14.0 \
 	golang.org/x/text	 v0.15.0 \
-	golang.org/x/text	 v0.18.0 \
+	golang.org/x/text	 v0.21.0 \
 	golang.org/x/text	 v0.3.0 \
 	golang.org/x/text	 v0.3.3 \
 	golang.org/x/text	 v0.3.7 \
