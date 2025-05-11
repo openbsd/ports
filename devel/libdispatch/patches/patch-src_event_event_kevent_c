@@ -97,8 +97,8 @@ Index: src/event/event_kevent.c
  		const struct timespec timeout_immediately = {}, *timeout = NULL;
  		if (flags & KEVENT_FLAG_IMMEDIATE) timeout = &timeout_immediately;
 +#ifdef EVFILT_USER
-+		const struct timespec timeout_1ms = {.tv_sec = 0, .tv_nsec = 1000000}
-+		if (ke.ident == DISPATCH_KEVENT_ERSATZ_EVFILT_USER_MASK) timeout = &timeout_1ms;
++		const struct timespec timeout_1ms = {.tv_sec = 0, .tv_nsec = 1000000};
++		if (ke->ident == DISPATCH_KEVENT_ERSATZ_EVFILT_USER_MASK) timeout = &timeout_1ms;
 +#endif
  		r = kevent(kqfd, ke, n, ke_out, n_out, timeout);
  #endif
