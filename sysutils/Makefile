@@ -54,7 +54,6 @@
      SUBDIR += colortree
      SUBDIR += conky
      SUBDIR += conky,no_x11
-     SUBDIR += conky,xmms2
      SUBDIR += consolekit
      SUBDIR += consul
      SUBDIR += consul-template
