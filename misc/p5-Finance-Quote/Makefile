@@ -2,7 +2,7 @@ COMMENT=	module to obtain financial quotes from exchanges
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	Finance-Quote-1.62
+DISTNAME =	Finance-Quote-1.65
 CATEGORIES=	misc
 
 HOMEPAGE=	https://finance-quote.sourceforge.net
@@ -22,7 +22,8 @@ RUN_DEPENDS=	converters/p5-DateManip \
 		www/p5-HTTP-CookieJar \
 		www/p5-LWP-Protocol-https \
 		www/p5-Web-Scraper \
-		www/p5-libwww
+		www/p5-libwww \
+		textproc/p5-XML-LibXML
 TEST_DEPENDS=	devel/p5-Date-Range \
 		devel/p5-Date-Simple \
 		devel/p5-DateTime-Format-ISO8601 \

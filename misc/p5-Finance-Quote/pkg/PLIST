@@ -18,22 +18,21 @@ ${P5SITE}/Finance/Quote/CurrencyRates/
 ${P5SITE}/Finance/Quote/CurrencyRates/AlphaVantage.pm
 ${P5SITE}/Finance/Quote/CurrencyRates/CurrencyFreaks.pm
 ${P5SITE}/Finance/Quote/CurrencyRates/ECB.pm
+${P5SITE}/Finance/Quote/CurrencyRates/FinanceAPI.pm
 ${P5SITE}/Finance/Quote/CurrencyRates/Fixer.pm
 ${P5SITE}/Finance/Quote/CurrencyRates/OpenExchange.pm
 ${P5SITE}/Finance/Quote/CurrencyRates/YahooJSON.pm
-${P5SITE}/Finance/Quote/DWS.pm
 ${P5SITE}/Finance/Quote/Deka.pm
 ${P5SITE}/Finance/Quote/FTfunds.pm
+${P5SITE}/Finance/Quote/FinanceAPI.pm
 ${P5SITE}/Finance/Quote/Finanzpartner.pm
 ${P5SITE}/Finance/Quote/Fondsweb.pm
 ${P5SITE}/Finance/Quote/Fool.pm
 ${P5SITE}/Finance/Quote/GoldMoney.pm
 ${P5SITE}/Finance/Quote/GoogleWeb.pm
 ${P5SITE}/Finance/Quote/HU.pm
-${P5SITE}/Finance/Quote/IEXCloud.pm
 ${P5SITE}/Finance/Quote/IndiaMutual.pm
 ${P5SITE}/Finance/Quote/MarketWatch.pm
-${P5SITE}/Finance/Quote/MorningstarAU.pm
 ${P5SITE}/Finance/Quote/MorningstarCH.pm
 ${P5SITE}/Finance/Quote/MorningstarJP.pm
 ${P5SITE}/Finance/Quote/MorningstarUK.pm
@@ -77,22 +76,21 @@ ${P5SITE}/Finance/Quote/ZA.pm
 @man man/man3p/Finance::Quote::CurrencyRates::AlphaVantage.3p
 @man man/man3p/Finance::Quote::CurrencyRates::CurrencyFreaks.3p
 @man man/man3p/Finance::Quote::CurrencyRates::ECB.3p
+@man man/man3p/Finance::Quote::CurrencyRates::FinanceAPI.3p
 @man man/man3p/Finance::Quote::CurrencyRates::Fixer.3p
 @man man/man3p/Finance::Quote::CurrencyRates::OpenExchange.3p
 @man man/man3p/Finance::Quote::CurrencyRates::YahooJSON.3p
-@man man/man3p/Finance::Quote::DWS.3p
 @man man/man3p/Finance::Quote::Deka.3p
 @man man/man3p/Finance::Quote::FTfunds.3p
+@man man/man3p/Finance::Quote::FinanceAPI.3p
 @man man/man3p/Finance::Quote::Finanzpartner.3p
 @man man/man3p/Finance::Quote::Fondsweb.3p
 @man man/man3p/Finance::Quote::Fool.3p
 @man man/man3p/Finance::Quote::GoldMoney.3p
 @man man/man3p/Finance::Quote::GoogleWeb.3p
 @man man/man3p/Finance::Quote::HU.3p
-@man man/man3p/Finance::Quote::IEXCloud.3p
 @man man/man3p/Finance::Quote::IndiaMutual.3p
 @man man/man3p/Finance::Quote::MarketWatch.3p
-@man man/man3p/Finance::Quote::MorningstarAU.3p
 @man man/man3p/Finance::Quote::MorningstarCH.3p
 @man man/man3p/Finance::Quote::MorningstarJP.3p
 @man man/man3p/Finance::Quote::MorningstarUK.3p
