@@ -1,5 +1,6 @@
 @conflict gdal-<=1.8.0
 @pkgpath geo/gdal
+@bin bin/gdal
 bin/gdal-config
 bin/gdal2tiles
 bin/gdal2xyz
@@ -55,6 +56,7 @@ include/cpl_config_extras.h
 include/cpl_conv.h
 include/cpl_csv.h
 include/cpl_error.h
+include/cpl_float.h
 include/cpl_hash_set.h
 include/cpl_http.h
 include/cpl_json.h
@@ -73,19 +75,25 @@ include/cpl_vsi_error.h
 include/cpl_vsi_virtual.h
 include/cplkeywordparser.h
 include/gdal.h
+include/gdal_adbc.h
 include/gdal_alg.h
 include/gdal_alg_priv.h
 include/gdal_csv.h
 include/gdal_frmts.h
+include/gdal_fwd.h
 include/gdal_mdreader.h
+include/gdal_minmax_element.hpp
 include/gdal_pam.h
 include/gdal_priv.h
+include/gdal_priv_templates.hpp
 include/gdal_proxy.h
 include/gdal_rat.h
 include/gdal_simplesurf.h
+include/gdal_typetraits.h
 include/gdal_utils.h
 include/gdal_version.h
 include/gdal_vrt.h
+include/gdalalgorithm.h
 include/gdalcachedpixelaccessor.h
 include/gdalgeorefpamdataset.h
 include/gdalgrid.h
@@ -95,6 +103,7 @@ include/gdaljp2metadata.h
 include/gdalpansharpen.h
 include/gdalsubdatasetinfo.h
 include/gdalwarper.h
+include/geoheif.h
 include/gnm.h
 include/gnm_api.h
 include/gnmgraph.h
@@ -124,6 +133,74 @@ lib/gdalplugins/drivers.ini
 @lib lib/libgdal.so.${LIBgdal_VERSION}
 lib/pkgconfig/gdal.pc
 @man man/man1/gdal-config.1
+@man man/man1/gdal-convert.1
+@man man/man1/gdal-info.1
+@man man/man1/gdal-mdim-convert.1
+@man man/man1/gdal-mdim-info.1
+@man man/man1/gdal-mdim.1
+@man man/man1/gdal-raster-calc.1
+@man man/man1/gdal-raster-clean-collar.1
+@man man/man1/gdal-raster-clip.1
+@man man/man1/gdal-raster-color-map.1
+@man man/man1/gdal-raster-contour.1
+@man man/man1/gdal-raster-convert.1
+@man man/man1/gdal-raster-create.1
+@man man/man1/gdal-raster-edit.1
+@man man/man1/gdal-raster-fill-nodata.1
+@man man/man1/gdal-raster-footprint.1
+@man man/man1/gdal-raster-hillshade.1
+@man man/man1/gdal-raster-index.1
+@man man/man1/gdal-raster-info.1
+@man man/man1/gdal-raster-mosaic.1
+@man man/man1/gdal-raster-overview-add.1
+@man man/man1/gdal-raster-overview-delete.1
+@man man/man1/gdal-raster-pipeline.1
+@man man/man1/gdal-raster-pixel-info.1
+@man man/man1/gdal-raster-polygonize.1
+@man man/man1/gdal-raster-reclassify.1
+@man man/man1/gdal-raster-reproject.1
+@man man/man1/gdal-raster-resize.1
+@man man/man1/gdal-raster-roughness.1
+@man man/man1/gdal-raster-scale.1
+@man man/man1/gdal-raster-select.1
+@man man/man1/gdal-raster-set-type.1
+@man man/man1/gdal-raster-sieve.1
+@man man/man1/gdal-raster-slope.1
+@man man/man1/gdal-raster-stack.1
+@man man/man1/gdal-raster-tile.1
+@man man/man1/gdal-raster-tpi.1
+@man man/man1/gdal-raster-tri.1
+@man man/man1/gdal-raster-unscale.1
+@man man/man1/gdal-raster-viewshed.1
+@man man/man1/gdal-raster.1
+@man man/man1/gdal-vector-clip.1
+@man man/man1/gdal-vector-convert.1
+@man man/man1/gdal-vector-edit.1
+@man man/man1/gdal-vector-filter.1
+@man man/man1/gdal-vector-geom-buffer.1
+@man man/man1/gdal-vector-geom-explode-collections.1
+@man man/man1/gdal-vector-geom-make-valid.1
+@man man/man1/gdal-vector-geom-segmentize.1
+@man man/man1/gdal-vector-geom-set-type.1
+@man man/man1/gdal-vector-geom-simplify.1
+@man man/man1/gdal-vector-geom-swap-xy.1
+@man man/man1/gdal-vector-geom.1
+@man man/man1/gdal-vector-grid.1
+@man man/man1/gdal-vector-info.1
+@man man/man1/gdal-vector-pipeline.1
+@man man/man1/gdal-vector-rasterize.1
+@man man/man1/gdal-vector-select.1
+@man man/man1/gdal-vector-sql.1
+@man man/man1/gdal-vector.1
+@man man/man1/gdal-vector_concat.1
+@man man/man1/gdal-vsi-copy.1
+@man man/man1/gdal-vsi-delete.1
+@man man/man1/gdal-vsi-list.1
+@man man/man1/gdal-vsi-move.1
+@man man/man1/gdal-vsi-sozip.1
+@man man/man1/gdal-vsi-sync.1
+@man man/man1/gdal-vsi.1
+@man man/man1/gdal.1
 @man man/man1/gdal_contour.1
 @man man/man1/gdal_create.1
 @man man/man1/gdal_footprint.1
@@ -152,6 +229,7 @@ lib/pkgconfig/gdal.pc
 @man man/man1/ogrlineref.1
 @man man/man1/ogrtindex.1
 @man man/man1/sozip.1
+share/bash-completion/completions/gdal
 share/bash-completion/completions/gdal-config
 share/bash-completion/completions/gdal2tiles.py
 share/bash-completion/completions/gdal2xyz.py
@@ -202,6 +280,8 @@ share/gdal/ecw_cs.wkt
 share/gdal/eedaconf.json
 share/gdal/epsg.wkt
 share/gdal/esri_StatePlane_extra.wkt
+share/gdal/gdal_algorithm.schema.json
+share/gdal/gdalg.schema.json
 share/gdal/gdalicon.png
 share/gdal/gdalinfo_output.schema.json
 share/gdal/gdalmdiminfo_output.schema.json
@@ -309,9 +389,11 @@ share/gdal/jpfgdgml_WA.gfs
 share/gdal/jpfgdgml_WL.gfs
 share/gdal/jpfgdgml_WStrA.gfs
 share/gdal/jpfgdgml_WStrL.gfs
+share/gdal/leaflet_template.html
 share/gdal/netcdf_config.xsd
 share/gdal/nitf_spec.xml
 share/gdal/nitf_spec.xsd
+share/gdal/ogr_fields_override.schema.json
 share/gdal/ogrinfo_output.schema.json
 share/gdal/ogrvrt.xsd
 share/gdal/osmconf.ini

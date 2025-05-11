@@ -32,6 +32,7 @@ ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/osgeo/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/osgeo/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo/${MODPY_PYCACHE}gdal.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo/${MODPY_PYCACHE}gdal_array.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/osgeo/${MODPY_PYCACHE}gdal_fsspec.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo/${MODPY_PYCACHE}gdalconst.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo/${MODPY_PYCACHE}gdalnumeric.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo/${MODPY_PYCACHE}gnm.${MODPY_PYC_MAGIC_TAG}pyc
@@ -45,6 +46,7 @@ lib/python${MODPY_VERSION}/site-packages/osgeo/${MODPY_PYCACHE}osr.${MODPY_PYC_M
 @so lib/python${MODPY_VERSION}/site-packages/osgeo/_osr.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/osgeo/gdal.py
 lib/python${MODPY_VERSION}/site-packages/osgeo/gdal_array.py
+lib/python${MODPY_VERSION}/site-packages/osgeo/gdal_fsspec.py
 lib/python${MODPY_VERSION}/site-packages/osgeo/gdalconst.py
 lib/python${MODPY_VERSION}/site-packages/osgeo/gdalnumeric.py
 lib/python${MODPY_VERSION}/site-packages/osgeo/gnm.py
@@ -143,6 +145,7 @@ lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}gda
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}gdal_create_pdf.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}gdal_ls.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}gdal_lut.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}gdal_minmax_location.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}gdal_mkdir.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}gdal_remove_towgs84.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/${MODPY_PYCACHE}gdal_rm.${MODPY_PYC_MAGIC_TAG}pyc
@@ -201,6 +204,7 @@ lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/gdal_cp.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/gdal_create_pdf.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/gdal_ls.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/gdal_lut.py
+lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/gdal_minmax_location.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/gdal_mkdir.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/gdal_remove_towgs84.py
 lib/python${MODPY_VERSION}/site-packages/osgeo_utils/samples/gdal_rm.py
