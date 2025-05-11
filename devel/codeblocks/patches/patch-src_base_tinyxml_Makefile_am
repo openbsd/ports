@@ -11,5 +11,5 @@ Index: src/base/tinyxml/Makefile.am
 +				-I$(top_srcdir)/src/include/tinyxml \
 +				$(WX_CXXFLAGS)
  
- noinst_LTLIBRARIES = libtinyxml.la
- 
+ if CODEBLOCKS_NT
+ AM_CPPFLAGS += -DEXPORT_LIB

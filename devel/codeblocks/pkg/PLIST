@@ -353,6 +353,7 @@ lib/codeblocks/plugins/
 @so lib/codeblocks/plugins/libautosave.so
 @so lib/codeblocks/plugins/libbyogames.so
 @so lib/codeblocks/plugins/libcb_koders.so
+@so lib/codeblocks/plugins/libclangd_client.so
 @so lib/codeblocks/plugins/libclasswizard.so
 @so lib/codeblocks/plugins/libcodecompletion.so
 @so lib/codeblocks/plugins/libcodesnippets.so
@@ -571,6 +572,19 @@ share/codeblocks/SpellChecker/64x64/es_ES.png
 share/codeblocks/SpellChecker/64x64/fr_FR.png
 share/codeblocks/SpellChecker/64x64/ru_RU.png
 share/codeblocks/SpellChecker/OnlineSpellChecking.xml
+share/codeblocks/SpellChecker/svg/
+share/codeblocks/SpellChecker/svg/de_AT.svg
+share/codeblocks/SpellChecker/svg/de_CH.svg
+share/codeblocks/SpellChecker/svg/de_DE.svg
+share/codeblocks/SpellChecker/svg/disabled.svg
+share/codeblocks/SpellChecker/svg/en_AU.svg
+share/codeblocks/SpellChecker/svg/en_CA.svg
+share/codeblocks/SpellChecker/svg/en_GB.svg
+share/codeblocks/SpellChecker/svg/en_NZ.svg
+share/codeblocks/SpellChecker/svg/en_US.svg
+share/codeblocks/SpellChecker/svg/es_ES.svg
+share/codeblocks/SpellChecker/svg/fr_FR.svg
+share/codeblocks/SpellChecker/svg/ru_RU.svg
 share/codeblocks/SymTab.zip
 share/codeblocks/ThreadSearch.zip
 share/codeblocks/ToolsPlus.zip
@@ -579,6 +593,7 @@ share/codeblocks/abbreviations.zip
 share/codeblocks/autosave.zip
 share/codeblocks/byogames.zip
 share/codeblocks/cb_koders.zip
+share/codeblocks/clangd_client.zip
 share/codeblocks/classwizard.zip
 share/codeblocks/codecompletion.zip
 share/codeblocks/codesnippets.zip
@@ -592,6 +607,7 @@ share/codeblocks/compilers/compiler_bfin-elf-gcc.xml
 share/codeblocks/compilers/compiler_clang.xml
 share/codeblocks/compilers/compiler_dmc.xml
 share/codeblocks/compilers/compiler_dmd.xml
+share/codeblocks/compilers/compiler_gcc-mingw32.xml
 share/codeblocks/compilers/compiler_gcc-mingw64.xml
 share/codeblocks/compilers/compiler_gcc-msys2-mingw32.xml
 share/codeblocks/compilers/compiler_gcc-msys2-mingw64.xml
@@ -633,6 +649,7 @@ share/codeblocks/compilers/options_cygwin.xml
 share/codeblocks/compilers/options_dmc.xml
 share/codeblocks/compilers/options_dmd.xml
 share/codeblocks/compilers/options_g95.xml
+share/codeblocks/compilers/options_gcc-mingw32.xml
 share/codeblocks/compilers/options_gcc-mingw64.xml
 share/codeblocks/compilers/options_gcc-msys2-mingw32.xml
 share/codeblocks/compilers/options_gcc-msys2-mingw64.xml
@@ -652,6 +669,7 @@ share/codeblocks/compilers/options_lm32-gcc.xml
 share/codeblocks/compilers/options_lm8-gcc.xml
 share/codeblocks/compilers/options_msp430-gcc.xml
 share/codeblocks/compilers/options_msvc10.xml
+share/codeblocks/compilers/options_msvc17.xml
 share/codeblocks/compilers/options_msvc8.xml
 share/codeblocks/compilers/options_msvctk.xml
 share/codeblocks/compilers/options_mw.xml
@@ -693,16 +711,6 @@ share/codeblocks/icons/rc64.xpm
 share/codeblocks/images/
 share/codeblocks/images/closebutton.png
 share/codeblocks/images/codeblocks.png
-share/codeblocks/images/codesnippets/
-share/codeblocks/images/codesnippets/allsnippets.png
-share/codeblocks/images/codesnippets/category.png
-share/codeblocks/images/codesnippets/findf.png
-share/codeblocks/images/codesnippets/findfdisabled.png
-share/codeblocks/images/codesnippets/options.png
-share/codeblocks/images/codesnippets/optionsdisabled.png
-share/codeblocks/images/codesnippets/snippet.png
-share/codeblocks/images/codesnippets/stop.png
-share/codeblocks/images/codesnippets/stopdisabled.png
 share/codeblocks/images/compile.png
 share/codeblocks/images/compilerun.png
 share/codeblocks/images/folder.png
@@ -787,28 +795,42 @@ share/codeblocks/images/splash_0802.png
 share/codeblocks/images/splash_1005.png
 share/codeblocks/images/splash_1211.png
 share/codeblocks/images/splash_1312.png
+share/codeblocks/images/splash_2003.png
+share/codeblocks/images/splash_2503.png
 share/codeblocks/images/stop.png
 share/codeblocks/images/wxsmith/
 share/codeblocks/images/wxsmith/Custom16.png
 share/codeblocks/images/wxsmith/Custom32.png
 share/codeblocks/images/wxsmith/Spacer16.png
 share/codeblocks/images/wxsmith/Spacer32.png
+share/codeblocks/images/wxsmith/deletewidget.svg
 share/codeblocks/images/wxsmith/deletewidget16.png
 share/codeblocks/images/wxsmith/deletewidget32.png
+share/codeblocks/images/wxsmith/insertafter.svg
 share/codeblocks/images/wxsmith/insertafter16.png
 share/codeblocks/images/wxsmith/insertafter32.png
+share/codeblocks/images/wxsmith/insertafter_selected.svg
+share/codeblocks/images/wxsmith/insertbefore.svg
 share/codeblocks/images/wxsmith/insertbefore16.png
 share/codeblocks/images/wxsmith/insertbefore32.png
+share/codeblocks/images/wxsmith/insertbefore_selected.svg
+share/codeblocks/images/wxsmith/insertinto.svg
 share/codeblocks/images/wxsmith/insertinto16.png
 share/codeblocks/images/wxsmith/insertinto32.png
+share/codeblocks/images/wxsmith/insertinto_selected.svg
+share/codeblocks/images/wxsmith/insertpoint.svg
 share/codeblocks/images/wxsmith/insertpoint16.png
 share/codeblocks/images/wxsmith/insertpoint32.png
+share/codeblocks/images/wxsmith/insertpoint_selected.svg
+share/codeblocks/images/wxsmith/quickpropsclose.svg
 share/codeblocks/images/wxsmith/quickpropsclose16.png
 share/codeblocks/images/wxsmith/quickpropsclose32.png
+share/codeblocks/images/wxsmith/quickpropsopen.svg
 share/codeblocks/images/wxsmith/quickpropsopen16.png
 share/codeblocks/images/wxsmith/quickpropsopen32.png
 share/codeblocks/images/wxsmith/selected16.png
 share/codeblocks/images/wxsmith/selected32.png
+share/codeblocks/images/wxsmith/showpreview.svg
 share/codeblocks/images/wxsmith/showpreview16.png
 share/codeblocks/images/wxsmith/showpreview32.png
 share/codeblocks/images/wxsmith/tools16.png
@@ -856,6 +878,8 @@ share/codeblocks/images/wxsmith/wxDirDialog16.png
 share/codeblocks/images/wxsmith/wxDirDialog32.png
 share/codeblocks/images/wxsmith/wxDirPickerCtrl16.png
 share/codeblocks/images/wxsmith/wxDirPickerCtrl32.png
+share/codeblocks/images/wxsmith/wxEditableListBox16.png
+share/codeblocks/images/wxsmith/wxEditableListBox32.png
 share/codeblocks/images/wxsmith/wxFileDialog16.png
 share/codeblocks/images/wxsmith/wxFileDialog32.png
 share/codeblocks/images/wxsmith/wxFilePickerCtrl16.png
@@ -1087,6 +1111,8 @@ share/codeblocks/lexers/lexer_pascal.xml
 share/codeblocks/lexers/lexer_perl.sample
 share/codeblocks/lexers/lexer_perl.xml
 share/codeblocks/lexers/lexer_plain.xml
+share/codeblocks/lexers/lexer_po.sample
+share/codeblocks/lexers/lexer_po.xml
 share/codeblocks/lexers/lexer_postscript.sample
 share/codeblocks/lexers/lexer_postscript.xml
 share/codeblocks/lexers/lexer_powershell.sample
@@ -1149,6 +1175,7 @@ share/codeblocks/scripts/tests/sdk_test.script
 share/codeblocks/scripts/tests/test_base.script
 share/codeblocks/scripts/tests/user_dialog_test_plugin.script
 share/codeblocks/scripts/tests/wx_test.script
+share/codeblocks/scripts/tests/xml_test.script
 share/codeblocks/scripts/wx_help.script
 share/codeblocks/start_here.zip
 share/codeblocks/templates/

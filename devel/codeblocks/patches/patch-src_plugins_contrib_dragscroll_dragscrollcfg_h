@@ -3,7 +3,7 @@ Guard the trap with LOGGING
 Index: src/plugins/contrib/dragscroll/dragscrollcfg.h
 --- src/plugins/contrib/dragscroll/dragscrollcfg.h.orig
 +++ src/plugins/contrib/dragscroll/dragscrollcfg.h
-@@ -35,7 +35,9 @@ class cbDragScrollCfg: public cbConfigurationPanel
+@@ -32,7 +32,9 @@ class cbDragScrollCfg: public cbConfigurationPanel
          wxString GetBitmapBaseName() const;
          void OnApply();
          void OnCancel(){}
