@@ -4,7 +4,7 @@ COMMENT-omapi=	ISC DHCP OMAPI
 
 VERSION=	4.4.3-P1
 REVISION=	1
-REVISION-main=	2
+REVISION-main=	3
 
 DISTNAME=	isc-dhcp-${VERSION}
 PKGNAME-main=	isc-dhcp-server-${VERSION:S/-P/pl/}

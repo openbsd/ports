@@ -6,7 +6,7 @@ Index: contrib/dhcp-lease-list.pl
  use POSIX qw(strftime);
  
 -my @LEASES = ('/var/db/dhcpd.leases', '/var/lib/dhcp/dhcpd.leases', '/var/lib/dhcp3/dhcpd.leases');
-+my @LEASES = ('/var/db/isc-dhcpd/dhcpd.leases');
++my @LEASES = ('/var/db/isc-dhcp/dhcpd.leases');
  my @all_leases;
  my @leases;
  
