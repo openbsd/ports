@@ -246,7 +246,6 @@
      #SUBDIR += kpat
      SUBDIR += kpkpass
      SUBDIR += kqtquickcharts
-     #SUBDIR += kross-interpreters
      SUBDIR += ksmtp
      SUBDIR += ktnef
      SUBDIR += libgravatar
@@ -285,7 +284,6 @@
 
      SUBDIR += kf6-kio-extras
 
-     # audiocd-kio
      # kio-zeroconf
      #kio-gdrive
      SUBDIR += kf6-libkcompactdisc
