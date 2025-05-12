@@ -3,7 +3,7 @@ COMMENT =		friendly interactive shell
 V =			3.7.1
 
 DISTNAME =		fish-$V
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		shells
 
@@ -34,8 +34,7 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 LIB_DEPENDS =		devel/pcre2 \
 			devel/gettext,-runtime
 
-RUN_DEPENDS =		devel/desktop-file-utils \
-			misc/gnugetopt
+RUN_DEPENDS =		devel/desktop-file-utils
 
 MODPY_ADJ_FILES =	share/tools/create_manpage_completions.py \
 			share/tools/deroff.py \

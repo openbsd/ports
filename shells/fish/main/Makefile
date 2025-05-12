@@ -3,6 +3,7 @@ COMMENT =		friendly interactive shell
 V =			4.0.2
 
 DISTNAME =		fish-${V}
+REVISION =		0
 
 SITES =			https://github.com/fish-shell/fish-shell/releases/download/${V}/
 DIST_TUPLE +=		github fish-shell rust-pcre2 0.2.9-utf32 .
@@ -24,7 +25,7 @@ WANTLIB += ${MODCARGO_WANTLIB} intl m pcre2-32 pcre2-8
 COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
-SUBST_VARS +=           RUST_COMMENT
+SUBST_VARS +=		RUST_COMMENT
 
 # order matters: use default cmake targets.
 MODULES =		devel/cmake \
@@ -37,8 +38,7 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 LIB_DEPENDS =		devel/pcre2 \
 			devel/gettext,-runtime
 
-RUN_DEPENDS =		devel/desktop-file-utils \
-			misc/gnugetopt
+RUN_DEPENDS =		devel/desktop-file-utils
 
 MODPY_ADJ_FILES =	share/tools/create_manpage_completions.py \
 			share/tools/deroff.py \
@@ -83,7 +83,7 @@ do-test:
 .if ${PROPERTIES:Mrust}
 RUST_COMMENT =
 .else
-RUST_COMMENT =          "@comment "
+RUST_COMMENT =		"@comment "
 .endif
 
 .include "crates.inc"
