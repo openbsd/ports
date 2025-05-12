@@ -1,6 +1,6 @@
 COMMENT =		backend for Jupyter web applications
 
-MODPY_DISTV =		2.15.0
+MODPY_DISTV =		2.16.0
 DISTNAME =		jupyter_server-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
