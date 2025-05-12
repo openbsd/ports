@@ -1,0 +1,21 @@
+Index: ext/net/io.rs
+--- ext/net/io.rs.orig
++++ ext/net/io.rs
+@@ -190,14 +190,14 @@ impl Resource for UnixStreamResource {
+   }
+ }
+ 
+-#[cfg(unix)]
++#[cfg(target_os = "linux")]
+ pub type VsockStreamResource =
+   FullDuplexResource<tokio_vsock::OwnedReadHalf, tokio_vsock::OwnedWriteHalf>;
+ 
+-#[cfg(not(unix))]
++#[cfg(not(target_os = "linux"))]
+ pub struct VsockStreamResource;
+ 
+-#[cfg(not(unix))]
++#[cfg(not(target_os = "linux"))]
+ impl VsockStreamResource {
+   fn read(self: Rc<Self>, _data: &mut [u8]) -> AsyncResult<usize> {
+     unreachable!()

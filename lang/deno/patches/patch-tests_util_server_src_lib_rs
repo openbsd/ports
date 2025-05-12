@@ -3,7 +3,7 @@ Fixes some tests by referencing the test binary.
 Index: tests/util/server/src/lib.rs
 --- tests/util/server/src/lib.rs.orig
 +++ tests/util/server/src/lib.rs
-@@ -228,7 +228,7 @@ pub fn std_file_url() -> String {
+@@ -229,7 +229,7 @@ pub fn std_file_url() -> String {
  }
  
  pub fn target_dir() -> PathRef {

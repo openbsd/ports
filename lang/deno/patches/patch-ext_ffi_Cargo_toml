@@ -2,8 +2,8 @@ Use devel/libffi from ports
 Index: ext/ffi/Cargo.toml
 --- ext/ffi/Cargo.toml.orig
 +++ ext/ffi/Cargo.toml
-@@ -21,7 +21,7 @@ deno_error.workspace = true
- deno_permissions.workspace = true
+@@ -22,7 +22,7 @@ deno_permissions.workspace = true
+ denort_helper.workspace = true
  dlopen2.workspace = true
  libffi.workspace = true
 -libffi-sys.workspace = true
