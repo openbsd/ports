@@ -10,6 +10,8 @@ DIST_TUPLE =		github wkhtmltopdf wkhtmltopdf 024b2b2bb459dd904d15b911d04c6df4ff2
 			github wkhtmltopdf qt aa2e3129f8ef05dfa72c4b183feb8b7e1927ac8a qt
 PKGNAME =		wkhtmltopdf-0.12.6.1
 
+REVISION =		0
+
 SHARED_LIBS =		wkhtmltox 2.0 # 0.12
 
 CATEGORIES =		textproc
@@ -76,6 +78,7 @@ do-configure:
 		-no-sql-psql \
 		-no-sql-sqlite \
 		-no-sql-sqlite2 \
+		-no-sql-tds \
 		-no-mmx \
 		-no-3dnow \
 		-no-sse \
