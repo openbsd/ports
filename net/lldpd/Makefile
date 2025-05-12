@@ -50,4 +50,7 @@ WANTLIB += netsnmp netsnmpagent netsnmpmibs
 WANTLIB += crypto kvm m perl
 .endif
 
+post-extract:
+	rm -rf ${WRKSRC}/libevent
+
 .include <bsd.port.mk>
