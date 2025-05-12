@@ -1,0 +1,22 @@
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -102,16 +102,8 @@ wifi = ["wifi"]
+ glances = "glances:main"
+ 
+ [tool.setuptools.data-files]
+-"share/doc/glances" = [
+-  "AUTHORS",
+-  "COPYING",
+-  "NEWS.rst",
+-  "README.rst",
+-  "SECURITY.md",
+-  "CONTRIBUTING.md",
+-  "conf/glances.conf",
+-]
+-"share/man/man1" = ["docs/man/glances.1"]
++"share/examples/glances" = [ "conf/glances.conf" ]
++"man/man1" = ["docs/man/glances.1"]
+ 
+ [tool.setuptools.dynamic]
+ version = {attr = "glances.__version__"}

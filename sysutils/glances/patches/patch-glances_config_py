@@ -1,7 +1,7 @@
 Index: glances/config.py
 --- glances/config.py.orig
 +++ glances/config.py
-@@ -65,9 +65,9 @@ def system_config_dir():
+@@ -61,9 +61,9 @@ def system_config_dir():
      - *BSD, macOS: /usr/local/etc/glances
      - Windows: %APPDATA%\glances
      """
