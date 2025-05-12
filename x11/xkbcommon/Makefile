@@ -33,7 +33,8 @@ BUILD_DEPENDS=		devel/bison \
 			wayland/wayland-protocols
 
 # used by some tests
-BUILD_DEPENDS +=	textproc/icu4c
+BUILD_DEPENDS +=	textproc/icu4c \
+			www/py-jinja2
 
 LIB_DEPENDS=		textproc/libxml \
 			wayland/wayland
