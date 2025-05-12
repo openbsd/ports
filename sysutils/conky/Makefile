@@ -23,8 +23,10 @@ MODPY_RUNDEP = No
 
 MODLUA_VERSION =	5.3
 
-BUILD_DEPENDS =	textproc/lowdown \
-		devel/gperf
+BUILD_DEPENDS =	devel/gperf \
+		textproc/lowdown \
+		textproc/py-yaml \
+		www/py-jinja2
 
 LIB_DEPENDS =	net/curl \
 		textproc/libxml \
