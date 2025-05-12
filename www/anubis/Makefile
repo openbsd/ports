@@ -1,13 +1,13 @@
 COMMENT=	proof-of-work proxy to protect web resources from scrapers
 
-MODGO_MODNAME=	github.com/TecharoHQ/anubis
-MODGO_VERSION=	v1.15.2
-
-DISTNAME=	anubis-${MODGO_VERSION}
+V=		1.18.0
+DISTNAME=	anubis-src-vendor-npm-$V
+PKGNAME=	anubis-$V
 
 CATEGORIES=	www
 
 HOMEPAGE=	https://anubis.techaro.lol/
+SITES=		https://github.com/TecharoHQ/anubis/releases/download/v$V/
 
 EPOCH=		0
 
@@ -18,17 +18,18 @@ WANTLIB=	c pthread
 
 MODULES=	lang/go
 
-MODGO_LDFLAGS=	-X github.com/TecharoHQ/anubis.Version=${MODGO_VERSION:S/v//}
+MODGO_LDFLAGS=	-X github.com/TecharoHQ/anubis.Version=$V
+MODGO_GO111MODULE= on
 
-# for patches; remove when no longer needed
-WRKDIST=	${WRKSRC}
+do-build:
+	cd ${WRKSRC} && ${MODGO_CMD} build ${MODGO_FLAGS} \
+		-o ./var/anubis ./cmd/anubis
 
-post-install:
-	rm ${PREFIX}/bin/containerbuild
+do-install:
+	${INSTALL_PROGRAM} ${WRKSRC}/var/anubis ${PREFIX}/sbin/
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/anubis
 	(sed -E 's,^([^#].*=),export \1,'; echo) \
-		< ${WRKSRC}/run/anubis.env.default \
+		< ${WRKSRC}/run/default.env \
 		> ${PREFIX}/share/examples/anubis/anubis.env.default
 
-.include "modules.inc"
 .include <bsd.port.mk>

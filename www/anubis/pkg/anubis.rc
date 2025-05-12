@@ -1,12 +1,12 @@
 #!/bin/ksh
 
-daemon="sh -c '. ${SYSCONFDIR}/anubis.env; ${TRUEPREFIX}/bin/anubis'"
+daemon="sh -c '. ${SYSCONFDIR}/anubis.env; ${TRUEPREFIX}/sbin/anubis'"
 daemon_user="www"
 daemon_logger=daemon.info
 
 . /etc/rc.d/rc.subr
 
-pexp="${TRUEPREFIX}/bin/anubis${daemon_flags:+ ${daemon_flags}}"
+pexp="${TRUEPREFIX}/sbin/anubis${daemon_flags:+ ${daemon_flags}}"
 
 rc_bg=YES
 rc_reload=NO

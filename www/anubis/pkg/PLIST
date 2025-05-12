@@ -1,5 +1,5 @@
 @rcscript ${RCDIR}/anubis
-@bin bin/anubis
+@bin sbin/anubis
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/anubis/
 share/examples/anubis/anubis.env.default
