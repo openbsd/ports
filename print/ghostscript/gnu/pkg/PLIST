@@ -12,6 +12,7 @@ bin/gslj
 bin/gslp
 bin/gsnd
 bin/lprsetup.sh
+bin/pdf2dsc
 bin/pdf2ps
 bin/pf2afm
 bin/pfbtopfa
@@ -156,6 +157,7 @@ share/ghostscript/${VERSION}/lib/lines.ps
 share/ghostscript/${VERSION}/lib/mkcidfm.ps
 share/ghostscript/${VERSION}/lib/necp2x.upp
 share/ghostscript/${VERSION}/lib/necp2x6.upp
+share/ghostscript/${VERSION}/lib/pdf2dsc.ps
 share/ghostscript/${VERSION}/lib/pdf_info.ps
 share/ghostscript/${VERSION}/lib/pf2afm.ps
 share/ghostscript/${VERSION}/lib/pfbtopfa.ps
