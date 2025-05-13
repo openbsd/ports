@@ -2,11 +2,12 @@ COMMENT =	fast bundler for the web
 
 MODGO_MODNAME =	github.com/evanw/esbuild
 MODGO_VERSION =	v0.25.4
+REVISION =	0
 
 DISTNAME =	esbuild-${MODGO_VERSION}
 CATEGORIES =	devel
 
-MAINTAINER =	Volker Schlecht <openbsd-ports@schlecht.dev>
+MAINTAINER =	Igor Zornik <mocheryl@mocheryl.org>
 
 HOMEPAGE =	https://esbuild.github.io/
 
