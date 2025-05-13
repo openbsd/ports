@@ -1,6 +1,6 @@
 COMMENT =	optimized library for DEFLATE/zlib/gzip (de)compression
 
-DIST_TUPLE =	github ebiggers libdeflate v1.23 .
+DIST_TUPLE =	github ebiggers libdeflate v1.24 .
 
 SHARED_LIBS =	deflate	0.1
 
@@ -11,7 +11,7 @@ MAINTAINER =	Bjorn Ketelaars <bket@openbsd.org>
 # MIT
 PERMIT_PACKAGE =	Yes
 
-COMPILER =	base-clang ports-gcc
+COMPILER =		base-clang ports-gcc
 COMPILER_LANGS =	c
 
 WANTLIB =		c
