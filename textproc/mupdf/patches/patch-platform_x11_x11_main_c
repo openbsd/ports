@@ -14,7 +14,7 @@ Index: platform/x11/x11_main.c
  #include <string.h>
  #include <stdlib.h>
  #include <stdio.h>
-@@ -756,7 +757,6 @@ static void onselreq(Window requestor, Atom selection,
+@@ -771,7 +772,6 @@ static void onselreq(Window requestor, Atom selection,
  void winreloadpage(pdfapp_t *app)
  {
  	XEvent xev;
@@ -22,7 +22,7 @@ Index: platform/x11/x11_main.c
  
  	xev.xclient.type = ClientMessage;
  	xev.xclient.serial = 0;
-@@ -767,8 +767,7 @@ void winreloadpage(pdfapp_t *app)
+@@ -782,8 +782,7 @@ void winreloadpage(pdfapp_t *app)
  	xev.xclient.data.l[0] = 0;
  	xev.xclient.data.l[1] = 0;
  	xev.xclient.data.l[2] = 0;
@@ -32,7 +32,7 @@ Index: platform/x11/x11_main.c
  }
  
  void winopenuri(pdfapp_t *app, char *buf)
-@@ -962,6 +961,16 @@ int main(int argc, char **argv)
+@@ -977,6 +976,16 @@ int main(int argc, char **argv)
  	tmo_at.tv_sec = 0;
  	tmo_at.tv_usec = 0;
  	timeout = NULL;

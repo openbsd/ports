@@ -1,7 +1,7 @@
 Index: Makerules
 --- Makerules.orig
 +++ Makerules
-@@ -114,7 +114,7 @@ ifeq ($(build),debug)
+@@ -131,7 +131,7 @@ ifeq ($(build),debug)
    CFLAGS += -pipe -g
    LDFLAGS += -g
  else ifeq ($(build),release)

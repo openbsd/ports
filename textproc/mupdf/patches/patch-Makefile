@@ -1,12 +1,12 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -81,7 +81,7 @@ endif
- LINK_CMD = $(QUIET_LINK) $(MKTGTDIR) ; $(CC) $(LDFLAGS) -o $@ $^ $(LIBS)
+@@ -83,7 +83,7 @@ ifdef RANLIB
+ endif
+ LINK_CMD = $(QUIET_LINK) $(MKTGTDIR) ; $(CC) $(EXE_LDFLAGS) $(LDFLAGS) -o $@ $^ $(LIBS)
  TAGS_CMD = $(QUIET_TAGS) ctags
- WINDRES_CMD = $(QUIET_WINDRES) $(MKTGTDIR) ; $(WINDRES) $< $@
 -OBJCOPY_CMD = $(QUIET_OBJCOPY) $(MKTGTDIR) ; $(LD) -r -b binary -z noexecstack -o $@ $<
 +OBJCOPY_CMD = $(QUIET_OBJCOPY) $(MKTGTDIR) ; $(LD) $(LLD_EMUL) -r -b binary -z noexecstack -o $@ $<
- GENDEF_CMD = $(QUIET_GENDEF) gendef - $< > $@
- DLLTOOL_CMD = $(QUIET_DLLTOOL) dlltool -d $< -D $(notdir $(^:%.def=%.dll)) -l $@
+ SYMLINK_CMD = $(QUIET_SYMLINK) $(MKTGTDIR) ; ln -sf
  
+ ifeq ($(shared),yes)

@@ -28,7 +28,7 @@ Index: platform/x11/pdfapp.c
  static int zoom_in(int oldres)
  {
  	int i;
-@@ -1679,6 +1689,7 @@ key_rewritten:
+@@ -1684,6 +1694,7 @@ key_rewritten:
  			app->pageno++;
  		break;
  
@@ -36,7 +36,7 @@ Index: platform/x11/pdfapp.c
  	case 'b':
  		{
  			int number = 1;
-@@ -1725,7 +1736,7 @@ key_rewritten:
+@@ -1730,7 +1741,7 @@ key_rewritten:
  				{
  					if (app->imgw + app->panx <= app->winw + app->imgw/20)
  					{
@@ -45,7 +45,7 @@ Index: platform/x11/pdfapp.c
  						{
  							app->panx = 0;
  							app->pany = 0;
-@@ -1837,9 +1848,9 @@ static void handlescroll(pdfapp_t *app, int modifiers,
+@@ -1842,9 +1853,9 @@ static void handlescroll(pdfapp_t *app, int modifiers,
  	{
  		/* zoom in/out if ctrl is pressed */
  		if (dir > 0)

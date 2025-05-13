@@ -1,4 +1,4 @@
-MuPDF is a lightweight PDF, XPS, and E-book viewer.
+MuPDF is a relatively lightweight PDF, XPS, and E-book viewer.
 
 Support includes PDF 1.7 (with transparency, encryption, hyperlinks,
 annotations, searching and more), epub, xps, cbz, mobi, fb2, various
@@ -19,5 +19,4 @@ page into many tiles, and "draw" to render documents to image files
 (pbm/pgm/ppm/pam/png/pcl and others).
 
 Flavours:
-	js - build with JavaScript support (using the MuJS interpreter;
-		this includes the OpenGL-based renderer "mupdf-gl")
+	js - build with JavaScript support (using the MuJS interpreter)

@@ -1,8 +1,8 @@
 COMMENT =	graphic library, pdf parser, viewer and utilities
 
-SHARED_LIBS +=  mupdf                 12.1
+SHARED_LIBS +=  mupdf                 13.0
 
-V =		1.25.6
+V =		1.26.0
 DISTNAME =	mupdf-$V-source
 PKGNAME =	mupdf-${V:S/-rc/rc/}
 
@@ -17,29 +17,29 @@ MAINTAINER =	Stuart Henderson <stu.ports@spacehopper.org>
 # fonts -
 #   Droid: Apache
 #   Charis SIL, Noto, Source Han Serif, URW Dingbats/Nimbus: OFL
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE = Yes
 
 # uses pledge(2)
-WANTLIB += X11 Xext c curl freetype gumbo harfbuzz jbig2dec jpeg
-WANTLIB += m openjp2 pthread z crypto
+WANTLIB += GL X11 Xext Xrandr brotlidec brotlienc c crypto freetype
+WANTLIB += glut gumbo harfbuzz jbig2dec jpeg m openjp2 pthread z
 
 FLAVORS =	js
 FLAVOR ?=
 
-# http://git.ghostscript.com/?p=mupdf.git;a=summary
+# https://git.ghostscript.com/?p=mupdf.git;a=summary
 SITES =		https://mupdf.com/downloads/archive/
 
-# tessocr.cpp
+# c++ used for tessocr.cpp; standard library not linked
 COMPILER =	base-clang ports-gcc
 
-BUILD_DEPENDS =	shells/bash
 RUN_DEPENDS =	devel/desktop-file-utils \
 		devel/xdg-utils
-LIB_DEPENDS =	devel/harfbuzz \
+LIB_DEPENDS =	archivers/brotli \
+		devel/harfbuzz \
+		graphics/freeglut \
 		graphics/jbig2dec \
 		graphics/jpeg \
-		graphics/openjp2>=2.0.1 \
-		net/curl \
+		graphics/openjp2 \
 		www/gumbo
 
 USE_GMAKE =	Yes
@@ -47,8 +47,8 @@ NO_TEST =	Yes
 
 LDFLAGS =	-L${WRKSRC}/build/shared-release \
 		-L${LOCALBASE}/lib \
-		-L${X11BASE}/lib \
-		-lgumbo
+		-L${X11BASE}/lib
+#		-lgumbo
 
 CPPFLAGS =	-I$(WRKSRC)/include \
 		-I${X11BASE}/include \
@@ -61,37 +61,27 @@ MAKE_FLAGS =	CC="${CC}" CXX="${CXX}" \
 		LDFLAGS="${LDFLAGS}" LLD_EMUL="${LLD_EMUL}" \
 		USE_SYSTEM_LIBS=yes \
 		SYS_FREETYPE_LIBS=-lfreetype \
-		HAVE_TESSERACT=no HAVE_LEPTONICA=no \
+		HAVE_LEPTONICA=no \
+		HAVE_TESSERACT=no \
 		SO_VERSION=.${LIBmupdf_VERSION:R}.${LIBmupdf_VERSION:E} \
 		build=release shared=yes verbose=yes
 
 FAKE_FLAGS =	prefix=${PREFIX} mandir=${PREFIX}/man
 
-# build=release shared=yes verbose=yes
-
 DEBUG_PACKAGES = ${BUILD_PACKAGES}
 
-pre-configure:
-	cd ${WRKSRC}; sed -i 's,/usr/X11R6/include,${X11BASE}/include,g' Makerules Makethird
-# keeping internal copy of lcms2 which is a fork with API changes
-# http://git.ghostscript.com/?p=thirdparty-lcms2.git;a=blob_plain;f=doc/WhyThisFork.txt;hb=lcms2mt
-	rm -r ${WRKSRC}/thirdparty/{curl,freeglut,freetype,harfbuzz,jbig2dec,libjpeg,openjpeg,zlib} # use from ports
-.if !${FLAVOR:Mjs}
-	rm -r ${WRKSRC}/thirdparty/mujs # not building with javascript support
-CFLAGS +=	-DFZ_ENABLE_JS=0
-# disable mupdf-gl; it uses some parts of mujs internally so
-# js support can't be knocked out completely
-MAKE_FLAGS +=	HAVE_GLUT=No
-.else
-MAKE_FLAGS +=	ENABLE_MUJS=yes
-WANTLIB +=	GL glut
-LIB_DEPENDS +=	graphics/freeglut
+.if ${FLAVOR:Mjs}
+MAKE_FLAGS +=	mujs=yes
 .endif
 
 # ld.bfd -r -b binary does not produce correct type of object.
 .if ${MACHINE_ARCH:Mmips64*}
 MAKE_FLAGS +=	HAVE_OBJCOPY=no
 .endif
+
+pre-configure:
+	cd ${WRKSRC}; sed -i 's,/usr/X11R6/include,${X11BASE}/include,g' Makerules Makethird
+	ln -s /bin/ksh ${WRKDIR}/bin/bash
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/{applications,pixmaps}
