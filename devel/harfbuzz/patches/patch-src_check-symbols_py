@@ -1,12 +1,12 @@
 Index: src/check-symbols.py
 --- src/check-symbols.py.orig
 +++ src/check-symbols.py
-@@ -32,7 +32,7 @@ tested = False
- stat = 0
- 
- for soname in ['harfbuzz', 'harfbuzz-subset', 'harfbuzz-icu', 'harfbuzz-gobject', 'harfbuzz-cairo']:
--	for suffix in ['so', 'dylib']:
-+	for suffix in ['so.${LIBharfbuzz_VERSION}', 'dylib']:
- 		so = os.path.join (builddir, libs, 'lib%s.%s' % (soname, suffix))
- 		if not os.path.exists (so): continue
- 
+@@ -62,7 +62,7 @@ for soname in [
+     "harfbuzz-gobject",
+     "harfbuzz-cairo",
+ ]:
+-    for suffix in ["so", "dylib"]:
++    for suffix in ["so.${LIBharfbuzz_VERSION}", "dylib"]:
+         so = os.path.join(builddir, "lib%s.%s" % (soname, suffix))
+         if not os.path.exists(so):
+             continue
