@@ -1,20 +1,18 @@
 COMMENT=	pure-Python, bring-your-own-I/O implementation of HTTP/1.1
 
-MODPY_DISTV=	0.14.0
+MODPY_DISTV=	0.16.0
 DISTNAME=	h11-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	2
 
 CATEGORIES=	www
 
 # MIT
 PERMIT_PACKAGE=	Yes
 
-MODULES=	lang/python
-
 HOMEPAGE=	https://github.com/python-hyper/h11
 
-MODPY_PI=	Yes
+MODULES=	lang/python
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 .include <bsd.port.mk>
