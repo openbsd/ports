@@ -11,6 +11,9 @@ CATEGORIES =	sysutils
 # mostly GPLv3; see COPYING
 PERMIT_PACKAGE=	Yes
 
+# C++
+COMPILER =	base-clang ports-gcc
+
 WANTLIB += ${COMPILER_LIBCXX} ${MODLUA_WANTLIB} c curses intl kvm m ossaudio
 WANTLIB += curl xml2
 
