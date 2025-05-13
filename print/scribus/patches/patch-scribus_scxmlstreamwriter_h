@@ -1,17 +1,47 @@
-https://github.com/scribusproject/scribus/issues/196
+https://bugs.scribus.net/view.php?id=17508
+https://github.com/scribusproject/scribus/commit/d54ec09f5599693dae5bbd6a5213703f7b8ad7b9
 
-revert https://github.com/scribusproject/scribus/commit/8ace404c3e88ea470e4a1d9ebbbcc5f81f40a877
-and https://github.com/scribusproject/scribus/commit/949d8d9c53a35302ce3a245080aaa6b084699375
 Index: scribus/scxmlstreamwriter.h
 --- scribus/scxmlstreamwriter.h.orig
 +++ scribus/scxmlstreamwriter.h
-@@ -26,9 +26,7 @@ class SCRIBUS_API ScXmlStreamWriter : public QXmlStrea
- 	void writeAttribute(const QString & name, qint64 value)    { QXmlStreamWriter::writeAttribute(name, QString::number(value)); }
- 	void writeAttribute(const QString & name, uint value)   { QXmlStreamWriter::writeAttribute(name, QString::number(value)); }
- 	void writeAttribute(const QString & name, quint64 value)   { QXmlStreamWriter::writeAttribute(name, QString::number(value)); }
+@@ -7,12 +7,15 @@ for which a new license (GPL+exception) is in place.
+ #ifndef SCXMLSTREAMWRITER_H
+ #define SCXMLSTREAMWRITER_H
+ 
+-#include "scribusapi.h"
++#include <type_traits>
+ 
+ #include <QByteArray>
+ #include <QString>
+ #include <QXmlStreamWriter>
+ 
++#include "pdfversion.h"
++#include "scribusapi.h"
++
+ class SCRIBUS_API ScXmlStreamWriter : public QXmlStreamWriter
+ {
+ public:
+@@ -21,15 +24,14 @@ class SCRIBUS_API ScXmlStreamWriter : public QXmlStrea
+ 	ScXmlStreamWriter(QIODevice* device) : QXmlStreamWriter(device) {}
+ 	ScXmlStreamWriter(QString*   string) : QXmlStreamWriter(string) {}
+ 
+-	void writeAttribute(const QString & name, const QString & value) { QXmlStreamWriter::writeAttribute(name, value); }
+-	void writeAttribute(const QString & name, int value)    { QXmlStreamWriter::writeAttribute(name, QString::number(value)); }
+-	void writeAttribute(const QString & name, qint64 value)    { QXmlStreamWriter::writeAttribute(name, QString::number(value)); }
+-	void writeAttribute(const QString & name, uint value)   { QXmlStreamWriter::writeAttribute(name, QString::number(value)); }
+-	void writeAttribute(const QString & name, quint64 value)   { QXmlStreamWriter::writeAttribute(name, QString::number(value)); }
 -#if !defined(Q_OS_WIN) && (Q_PROCESSOR_WORDSIZE != 4)
- 	void writeAttribute(const QString & name, size_t value)   { QXmlStreamWriter::writeAttribute(name, QString::number(value)); }
+-	void writeAttribute(const QString & name, size_t value)   { QXmlStreamWriter::writeAttribute(name, QString::number(value)); }
 -#endif
- 	void writeAttribute(const QString & name, double value) { QXmlStreamWriter::writeAttribute(name, QString::number(value, 'g', 15)); }
+-	void writeAttribute(const QString & name, double value) { QXmlStreamWriter::writeAttribute(name, QString::number(value, 'g', 15)); }
++	void writeAttribute(const QString& name, const QString& value) { QXmlStreamWriter::writeAttribute(name, value); }
++	void writeAttribute(const QString& name, const PDFVersion& value) { QXmlStreamWriter::writeAttribute(name, QString::number(value)); }
++
++	template<typename T, std::enable_if_t<std::is_integral_v<T> || std::is_enum_v<T>, bool> = true>
++	void writeAttribute(const QString & name, T value)    { QXmlStreamWriter::writeAttribute(name, QString::number(value)); }
++
++	template<typename T, std::enable_if_t< std::is_floating_point_v<T>, bool> = true>
++	void writeAttribute(const QString & name, T value) { QXmlStreamWriter::writeAttribute(name, QString::number(value, 'g', 15)); }
  };
  
+ #endif

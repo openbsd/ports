@@ -1,20 +1,55 @@
-https://github.com/scribusproject/scribus/issues/196
+https://bugs.scribus.net/view.php?id=17508
+https://github.com/scribusproject/scribus/commit/d54ec09f5599693dae5bbd6a5213703f7b8ad7b9
 
-revert https://github.com/scribusproject/scribus/commit/8ace404c3e88ea470e4a1d9ebbbcc5f81f40a877
-and https://github.com/scribusproject/scribus/commit/949d8d9c53a35302ce3a245080aaa6b084699375
 Index: scribus/pdfwriter.cpp
 --- scribus/pdfwriter.cpp.orig
 +++ scribus/pdfwriter.cpp
-@@ -329,12 +329,10 @@ namespace Pdf
- 		return QByteArray::number(v);
+@@ -304,48 +304,10 @@ namespace Pdf
+ 		return result;
  	}
- 
+ 	
+-	QByteArray toPdf(bool v)
+-	{
+-		return v? "true" : "false";
+-	}
+-	
+-	QByteArray toPdf(int v)
+-	{
+-		return QByteArray::number(v);
+-	}
+-	
+-	QByteArray toPdf(uint v)
+-	{
+-		return QByteArray::number(v);
+-	}
+-	
+-	QByteArray toPdf(qlonglong v)
+-	{
+-		return QByteArray::number(v);
+-	}
+-	
+-	QByteArray toPdf(qulonglong v)
+-	{
+-		return QByteArray::number(v);
+-	}
+-
 -#if !defined(Q_OS_WIN) && (Q_PROCESSOR_WORDSIZE != 4)
- 	QByteArray toPdf(size_t v)
- 	{
- 		return QByteArray::number(v);
- 	}
+-	QByteArray toPdf(size_t v)
+-	{
+-		return QByteArray::number(v);
+-	}
 -#endif
- 
- 	QByteArray toPdf(double v)
+-
+-	QByteArray toPdf(double v)
+-	{
+-		return QByteArray::number(v, 'f');
+-	}
+-	
+ 	QByteArray toObjRef(PdfId id)
+ 	{
+ 		return toPdf(id) + " 0 R";
+ 	}
+-	
+ 	
+ 	QByteArray toLiteralString(const QString& s)
  	{
