@@ -1,28 +1,7 @@
-1st chunk:
-From ae299377feff868272693ec4322b9dbfef2f571b Mon Sep 17 00:00:00 2001
-From: Nick Wellnhofer <wellnhofer@aevum.de>
-Date: Fri, 25 Apr 2025 11:41:50 +0200
-Subject: [PATCH] parser: Make undeclared entities in XML content fatal
-
 Index: runtest.c
 --- runtest.c.orig
 +++ runtest.c
-@@ -2355,6 +2355,14 @@ testParseContent(xmlParserCtxtPtr ctxt, xmlDocPtr doc,
-     char *content, *roundTrip;
-     int ret = 0;
- 
-+    /*
-+     * Undeclared entities aren't a fatal error if there's an
-+     * external DTD. When parsing content, we assume there's no
-+     * DTD, so the undeclared entity test would fail.
-+     */
-+    if (strcmp(filename, "./test/undeclared-entity.xml") == 0)
-+        return 0;
-+
-     if (ctxt->html) {
-         xmlNodePtr cur;
- 
-@@ -3402,7 +3410,7 @@ static int
+@@ -3410,7 +3410,7 @@ static int
  uripMatch(const char * URI) {
  #ifdef LIBXML_CATALOG_ENABLED
      if ((URI == NULL) ||
@@ -31,7 +10,7 @@ Index: runtest.c
          return(0);
  #endif
      /* Verify we received the escaped URL */
-@@ -3424,7 +3432,7 @@ static void *
+@@ -3432,7 +3432,7 @@ static void *
  uripOpen(const char * URI) {
  #ifdef LIBXML_CATALOG_ENABLED
      if ((URI == NULL) ||
