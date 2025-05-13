@@ -5,6 +5,7 @@ COMMENT =	light-weight system monitor
 GH_ACCOUNT =	brndnmtthws
 GH_PROJECT =	conky
 GH_TAGNAME =	v1.22.1
+REVISION =	0
 
 CATEGORIES =	sysutils
 
@@ -31,7 +32,8 @@ BUILD_DEPENDS =	devel/gperf \
 		textproc/py-yaml \
 		www/py-jinja2
 
-LIB_DEPENDS =	net/curl \
+LIB_DEPENDS =	devel/gettext,-runtime \
+		net/curl \
 		textproc/libxml \
 		${MODLUA_LIB_DEPENDS}
 
@@ -48,9 +50,7 @@ CONFIGURE_ARGS =	-DBUILD_AUDACIOUS=OFF \
 CONFIGURE_ARGS +=	-DBUILD_RSS=ON \
 			-DBUILD_CURL=ON
 
-CONFIGURE_ARGS +=	-DBUILD_DOCS=ON \
-			-DUSE_LOWDOWN=ON \
-			-DUSE_PANDOC=OFF
+CONFIGURE_ARGS +=	-DBUILD_DOCS=ON
 
 .if ${FLAVOR:Mno_x11}
 CONFIGURE_ARGS +=	-DBUILD_X11=OFF

@@ -1,34 +1,16 @@
 Index: cmake/ConkyPlatformChecks.cmake
 --- cmake/ConkyPlatformChecks.cmake.orig
 +++ cmake/ConkyPlatformChecks.cmake
-@@ -669,14 +669,24 @@ endif(WANT_LIBXML2)
- 
+@@ -670,10 +670,10 @@ endif(WANT_LIBXML2)
  # Look for doc generation programs
  if(BUILD_DOCS)
--  # Used for doc generation
+   # Used for doc generation
 -  find_program(APP_PANDOC pandoc)
-+  if(USE_PANDOC)
-+    # Used for doc generation
-+    find_program(APP_PANDOC pandoc)
++  find_program(APP_PANDOC lowdown)
  
--  if(NOT APP_PANDOC)
+   if(NOT APP_PANDOC)
 -    message(FATAL_ERROR "Unable to find program 'pandoc'")
--  endif(NOT APP_PANDOC)
-+    if(NOT APP_PANDOC)
-+      message(FATAL_ERROR "Unable to find program 'pandoc'")
-+    endif(NOT APP_PANDOC)
++    message(FATAL_ERROR "Unable to find program 'lowdown'")
+   endif(NOT APP_PANDOC)
  
--  mark_as_advanced(APP_PANDOC)
-+    mark_as_advanced(APP_PANDOC)
-+  elseif(USE_LOWDOWN)
-+    find_program(APP_LOWDOWN lowdown)
-+
-+    if(NOT APP_LOWDOWN)
-+      message(FATAL_ERROR "Unable to find program 'lowdown'")
-+    endif(NOT APP_LOWDOWN)
-+
-+    mark_as_advanced(APP_LOWDOWN)
-+  endif(USE_PANDOC)
- endif(BUILD_DOCS)
- 
- if(BUILD_DOCS OR BUILD_EXTRAS)
+   mark_as_advanced(APP_PANDOC)
