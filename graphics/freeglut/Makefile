@@ -1,23 +1,22 @@
-COMMENT =		open source alternative to glut
+COMMENT =	open source alternative to glut
 
-DISTNAME =		freeglut-3.2.2
-REVISION =		0
+V =		3.6.0
+DISTNAME =	freeglut-$V
 
-SHARED_LIBS +=  glut                      7.0
+SHARED_LIBS +=  glut                      8.0
 
-CATEGORIES =		graphics
+CATEGORIES =	graphics
 
-HOMEPAGE =		https://freeglut.sourceforge.net/
+HOMEPAGE =	https://freeglut.sourceforge.net/
+SITES =		https://github.com/freeglut/freeglut/releases/download/v$V/
 
 # X11
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE = Yes
 
 WANTLIB += GL X11 Xi Xrandr Xxf86vm m
 
-SITES =			${SITE_SOURCEFORGE:=freeglut/}
+MODULES =	devel/cmake
 
-MODULES =		devel/cmake
-
-NO_TEST =		Yes
+NO_TEST =	Yes
 
 .include <bsd.port.mk>
