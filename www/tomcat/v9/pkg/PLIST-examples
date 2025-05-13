@@ -2352,8 +2352,14 @@ webapps/docs/architecture/index.html
 webapps/docs/architecture/overview.html
 webapps/docs/architecture/requestProcess/
 webapps/docs/architecture/requestProcess.html
-webapps/docs/architecture/requestProcess/authentication-process.png
-webapps/docs/architecture/requestProcess/request-process.png
+webapps/docs/architecture/requestProcess/11_nio.plantuml
+webapps/docs/architecture/requestProcess/11_nio.png
+webapps/docs/architecture/requestProcess/21_http11.plantuml
+webapps/docs/architecture/requestProcess/21_http11.png
+webapps/docs/architecture/requestProcess/31_synchronous.plantuml
+webapps/docs/architecture/requestProcess/31_synchronous.png
+webapps/docs/architecture/requestProcess/41_basic.plantuml
+webapps/docs/architecture/requestProcess/41_basic.png
 webapps/docs/architecture/startup/
 webapps/docs/architecture/startup.html
 webapps/docs/architecture/startup/1_overview.plantuml
