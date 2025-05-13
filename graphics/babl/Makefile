@@ -1,6 +1,6 @@
 COMMENT=		dynamic pixel format conversion library
 
-V=			0.1.112
+V=			0.1.114
 DISTNAME=		babl-${V}
 EXTRACT_SUFX=		.tar.xz
 
