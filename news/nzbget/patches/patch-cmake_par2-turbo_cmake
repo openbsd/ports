@@ -1,7 +1,7 @@
 Index: cmake/par2-turbo.cmake
 --- cmake/par2-turbo.cmake.orig
 +++ cmake/par2-turbo.cmake
-@@ -42,8 +42,7 @@ endif()
+@@ -51,8 +51,7 @@ endif()
  ExternalProject_add(
  	par2-turbo
  	PREFIX			par2-turbo
@@ -11,7 +11,7 @@ Index: cmake/par2-turbo.cmake
  	TLS_VERIFY		TRUE
  	GIT_SHALLOW		TRUE
  	GIT_PROGRESS	TRUE
-@@ -54,4 +53,4 @@ ExternalProject_add(
+@@ -63,4 +62,4 @@ ExternalProject_add(
  )
  
  set(LIBS ${LIBS} ${PAR2_LIBS})

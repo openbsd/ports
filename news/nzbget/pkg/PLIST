@@ -29,6 +29,7 @@ share/nzbget/nzbget.conf
 share/nzbget/webui/
 share/nzbget/webui/config.js
 share/nzbget/webui/dark-theme.css
+share/nzbget/webui/datetime.js
 share/nzbget/webui/downloads.js
 share/nzbget/webui/edit.js
 share/nzbget/webui/fasttable.js
@@ -61,6 +62,7 @@ share/nzbget/webui/lib/raphael.js
 share/nzbget/webui/lib/raphael.min.js
 share/nzbget/webui/light-theme.css
 share/nzbget/webui/messages.js
+share/nzbget/webui/statistics.js
 share/nzbget/webui/status.js
 share/nzbget/webui/style.css
 share/nzbget/webui/system-info.js
