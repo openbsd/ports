@@ -1,7 +1,7 @@
 BROKEN-hppa =	ICE on moc_qtsingleapplication.cxx
 
 V =		3.6.2
-REVISION =	0
+REVISION =	1
 COMMENT =	WYSIWYG music notation software (MuseScore)
 GH_ACCOUNT =	musescore
 GH_PROJECT =	MuseScore
@@ -20,6 +20,7 @@ WANTLIB += Qt5Network Qt5OpenGL Qt5PrintSupport Qt5Qml Qt5Quick
 WANTLIB += Qt5QuickControls2 Qt5QuickWidgets Qt5Sql Qt5Svg Qt5Test
 WANTLIB += Qt5Widgets Qt5Xml Qt5XmlPatterns c freetype m ogg portaudio
 WANTLIB += sndfile vorbis vorbisfile z Qt5QmlModels Qt5QuickTemplates2
+WANTLIB += portmidi
 
 MODULES =	devel/cmake \
 		x11/qt5
