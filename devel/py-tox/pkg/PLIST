@@ -236,6 +236,8 @@ lib/python${MODPY_VERSION}/site-packages/tox/session/cmd/${MODPY_PYCACHE}list_en
 lib/python${MODPY_VERSION}/site-packages/tox/session/cmd/${MODPY_PYCACHE}list_env.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tox/session/cmd/${MODPY_PYCACHE}quickstart.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tox/session/cmd/${MODPY_PYCACHE}quickstart.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/tox/session/cmd/${MODPY_PYCACHE}schema.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/tox/session/cmd/${MODPY_PYCACHE}schema.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tox/session/cmd/${MODPY_PYCACHE}show_config.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/tox/session/cmd/${MODPY_PYCACHE}show_config.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/tox/session/cmd/${MODPY_PYCACHE}version_flag.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -263,10 +265,12 @@ lib/python${MODPY_VERSION}/site-packages/tox/session/cmd/run/common.py
 lib/python${MODPY_VERSION}/site-packages/tox/session/cmd/run/parallel.py
 lib/python${MODPY_VERSION}/site-packages/tox/session/cmd/run/sequential.py
 lib/python${MODPY_VERSION}/site-packages/tox/session/cmd/run/single.py
+lib/python${MODPY_VERSION}/site-packages/tox/session/cmd/schema.py
 lib/python${MODPY_VERSION}/site-packages/tox/session/cmd/show_config.py
 lib/python${MODPY_VERSION}/site-packages/tox/session/cmd/version_flag.py
 lib/python${MODPY_VERSION}/site-packages/tox/session/env_select.py
 lib/python${MODPY_VERSION}/site-packages/tox/session/state.py
+lib/python${MODPY_VERSION}/site-packages/tox/tox.schema.json
 lib/python${MODPY_VERSION}/site-packages/tox/tox_env/
 lib/python${MODPY_VERSION}/site-packages/tox/tox_env/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/tox/tox_env/${MODPY_PYCACHE}/

@@ -1,6 +1,6 @@
 COMMENT=	virtualenv-based automation of test activities
 
-MODPY_DISTV=	4.23.2
+MODPY_DISTV=	4.26.0
 DISTNAME=	tox-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
