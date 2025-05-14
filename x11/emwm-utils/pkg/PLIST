@@ -10,3 +10,4 @@ lib/X11/app-defaults/XmToolbox
 lib/X11/toolboxrc
 @man man/man1/xmsm.1
 @man man/man1/xmtoolbox.1
+share/doc/pkg-readmes/${PKGSTEM}

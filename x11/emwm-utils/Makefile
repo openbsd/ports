@@ -3,6 +3,7 @@ COMMENT =	session manager and a toolchest-like application launcher
 V =		1.3
 DISTNAME =	emwm-utils-src-${V}
 PKGNAME =	emwm-utils-${V}
+REVISION =	0
 
 CATEGORIES =	x11
 HOMEPAGE =	https://fastestcode.org/emwm.html
@@ -20,7 +21,8 @@ WANTLIB += X11 Xinerama Xm Xrandr Xss Xt c
 LIB_DEPENDS =	x11/motif
 
 MAKE_FLAGS =	RCDIR=${PREFIX}/lib/X11 \
-		CFLAGS="${CFLAGS} -I./Xm -I${X11BASE}/include -I${LOCALBASE}/include"
+		CFLAGS="${CFLAGS} -DUNPRIVILEGED_SHUTDOWN \
+			-I./Xm -I${X11BASE}/include -I${LOCALBASE}/include"
 
 FAKE_FLAGS =	PREFIX=${WRKINST}${PREFIX} \
 		APPLRESDIR=${WRKINST}${PREFIX}/lib/X11/app-defaults \

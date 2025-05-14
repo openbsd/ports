@@ -1,0 +1,15 @@
++-------------------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-------------------------------------------------------------------------------
+
+To enable shutdown and reboot, the user should be in _shutdown group:
+
+	# usermod -G _shutdown <username>
+
+To enable suspend, the user needs to be able to run zzz(8).
+In order to do that, the user must be in group "wheel", and apmd(8)
+must be running:
+
+	# rcctl enable apmd
+	# rcctl start apmd
+	# usermod -G wheel <username>
