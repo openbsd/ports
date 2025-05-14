@@ -1,0 +1,12 @@
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -32,7 +32,7 @@ dependencies = [
+ ]
+ 
+ [tool.hatch.build.targets.wheel.shared-data]
+-"jupyter_server_config.d/notebook_shim.json" = "etc/jupyter/jupyter_server_config.d/notebook_shim.json"
++"jupyter_server_config.d/notebook_shim.json" = "share/examples/jupyter/jupyter_server_config.d/notebook_shim.json"
+ 
+ [project.optional-dependencies]
+ test = [
