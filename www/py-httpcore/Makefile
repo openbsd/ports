@@ -1,9 +1,9 @@
 COMMENT =		minimal low-level HTTP client
 
-MODPY_DISTV =	1.0.5
+MODPY_DISTV =		1.0.5
 DISTNAME =		httpcore-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		www
 
