@@ -1,7 +1,7 @@
 Index: src/window.cc
 --- src/window.cc.orig
 +++ src/window.cc
-@@ -59,19 +59,11 @@ struct HtmlBrowser {
+@@ -58,19 +58,11 @@ struct HtmlBrowser {
  constexpr std::array<HtmlBrowser, 10> html_browsers{{
  	/* Our specific script */
  	{GQ_APPNAME_LC "_html_browser", nullptr},

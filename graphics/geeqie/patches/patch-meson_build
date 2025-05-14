@@ -1,7 +1,7 @@
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -130,7 +130,7 @@ desktopdir = join_paths(datadir, meson.project_name(),
+@@ -126,7 +126,7 @@ desktopdir = join_paths(datadir, meson.project_name(),
  helpdir = join_paths(prefix, gq_helpdir)
  htmldir = join_paths(prefix, gq_htmldir)
  icondir = join_paths(datadir, 'pixmaps')

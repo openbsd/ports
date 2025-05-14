@@ -1,11 +1,10 @@
 COMMENT=		lightweight Gtk+3 based image viewer
 
-V=			2.5
+V=			2.6
 DISTNAME=		geeqie-${V}
 EXTRACT_SUFX=		.tar.xz
 CATEGORIES=		graphics
 EPOCH=			0
-REVISION=		0
 
 HOMEPAGE=		https://www.geeqie.org/
 
@@ -44,6 +43,8 @@ LIB_DEPENDS=		graphics/exiv2 \
 CONFIGURE_ARGS+=	-Darchive=disabled \
 			-Ddjvu=disabled \
 			-Dexecinfo=disabled \
+			-Dexr=disabled \
+			-Dfits=disabled \
 			-Dgps-map=disabled \
 			-Djpegxl=disabled \
 			-Dlua=disabled \
