@@ -1,0 +1,3 @@
+httptools is a Python binding for the HTTP parser from nodejs. It contains
+classes httptools.HttpRequestParser and httptools.HttpResponseParser
+and a function for parsing URLs httptools.parse_url.
