@@ -1,0 +1,12 @@
+Index: setup.cfg
+--- setup.cfg.orig
++++ setup.cfg
+@@ -33,7 +33,7 @@ install_requires = 
+ 	importlib_metadata >=4.8.3 ; python_version<"3.10"
+ 
+ [options.data_files]
+-etc/jupyter/jupyter_server_config.d = jupyter_lsp/etc/jupyter-lsp-jupyter-server.json
++share/examples/jupyter/jupyter_server_config.d = jupyter_lsp/etc/jupyter-lsp-jupyter-server.json
+ 
+ [options.entry_points]
+ jupyter_lsp_spec_v1 = 
