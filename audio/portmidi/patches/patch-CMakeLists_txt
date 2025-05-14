@@ -1,16 +1,24 @@
+-Option USE_SNDIO
+-Install static lib as well
+
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -73,5 +73,11 @@ add_subdirectory(pm_test)
- add_subdirectory(pm_dylib)
+@@ -26,6 +26,8 @@ option(PM_USE_STATIC_RUNTIME 
+        "Use MSVC static runtime. Only applies when BUILD_SHARED_LIBS is OFF"
+        ON)
  
- # Cannot figure out how to make an xcode Java application with CMake
--add_subdirectory(pm_java)
-+#add_subdirectory(pm_java)
++option(USE_SNDIO "Use sndio backend" OFF)
++
+ # MSVCRT_DLL is used to construct the MSVC_RUNTIME_LIBRARY property
+ #  (see pm_common/CMakeLists.txt and pm_test/CMakeLists.txt)
+ if(PM_USE_STATIC_RUNTIME AND NOT BUILD_SHARED_LIBS)
+@@ -117,7 +119,7 @@ if(BUILD_JAVA_NATIVE_INTERFACE)
+ endif(BUILD_JAVA_NATIVE_INTERFACE)
  
-+set(DEST_DIR "${CMAKE_INSTALL_PREFIX}")
-+CONFIGURE_FILE("portmidi.pc.in" "portmidi.pc" @ONLY)
-+install(FILES
-+  "${CMAKE_CURRENT_BINARY_DIR}/portmidi.pc"
-+  DESTINATION "${CMAKE_INSTALL_PREFIX}/lib/pkgconfig"
-+)
+ # Install the libraries and headers (Linux and Mac OS X command line)
+-INSTALL(TARGETS portmidi ${PMJNI_IF_EXISTS}
++INSTALL(TARGETS portmidi portmidi_s ${PMJNI_IF_EXISTS}
+   EXPORT PortMidiTargets
+   LIBRARY DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+   ARCHIVE DESTINATION "${CMAKE_INSTALL_LIBDIR}"

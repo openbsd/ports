@@ -1,5 +1,12 @@
+include/pmutil.h
 include/portmidi.h
 include/porttime.h
+lib/cmake/
+lib/cmake/PortMidi/
+lib/cmake/PortMidi/PortMidiConfig.cmake
+lib/cmake/PortMidi/PortMidiConfigVersion.cmake
+lib/cmake/PortMidi/PortMidiTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/PortMidi/PortMidiTargets.cmake
+@static-lib lib/libportmidi.a
 @lib lib/libportmidi.so.${LIBportmidi_VERSION}
-lib/libportmidi_s.a
 lib/pkgconfig/portmidi.pc

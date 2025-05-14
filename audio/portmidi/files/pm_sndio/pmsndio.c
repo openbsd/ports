@@ -12,8 +12,8 @@
 #include "pminternal.h"
 #include "porttime.h"
 
-#define NDEVS 9 
-#define SYSEX_MAXLEN 1024 
+#define NDEVS 9
+#define SYSEX_MAXLEN 1024
 
 #define SYSEX_START     0xf0
 #define SYSEX_END       0xf7
@@ -45,18 +45,18 @@ void pm_init()
 
     /* default */
     strcpy(devs[0].name, MIO_PORTANY);
-    pm_add_device("SNDIO", devs[k].name, TRUE, (void *) &devs[k],
+    pm_add_device("SNDIO", devs[k].name, TRUE, FALSE, (void *) &devs[k],
         &pm_sndio_in_dictionary);
-    pm_add_device("SNDIO", devs[k].name, FALSE, (void *) &devs[k],
+    pm_add_device("SNDIO", devs[k].name, FALSE, FALSE, (void *) &devs[k],
         &pm_sndio_out_dictionary);
     k++;
 
     for (i = 0; i < 4; i++) {
         for (j = 0; j < 2; j++) {
             sprintf(devs[k].name, "%s/%d", devices[i], j);
-            pm_add_device("SNDIO", devs[k].name, TRUE, (void *) &devs[k],
+            pm_add_device("SNDIO", devs[k].name, TRUE, FALSE, (void *) &devs[k],
               &pm_sndio_in_dictionary);
-            pm_add_device("SNDIO", devs[k].name, FALSE, (void *) &devs[k],
+            pm_add_device("SNDIO", devs[k].name, FALSE, FALSE, (void *) &devs[k],
               &pm_sndio_out_dictionary);
             k++;
         }
@@ -85,7 +85,7 @@ void pm_term(void)
 
 PmDeviceID Pm_GetDefaultInputDeviceID() {
     Pm_Initialize();
-    return pm_default_input_device_id; 
+    return pm_default_input_device_id;
 }
 
 PmDeviceID Pm_GetDefaultOutputDeviceID() {
@@ -107,14 +107,14 @@ static int midi_message_length(PmMessage message)
         return common_len[st & 7];
     else if (st >= 0x80)
         return voice_len[(st >> 4) & 7];
-    else 
+    else
         return 0;
 }
 
 void* input_thread(void *param)
 {
     PmInternal *midi = (PmInternal*)param;
-    struct mio_dev *dev = (struct mio_dev *) midi->descriptor;
+    struct mio_dev *dev = pm_descriptors[midi->device_id].descriptor;
     struct pollfd pfd[1];
     nfds_t nfds;
     unsigned char st = 0, c = 0;
@@ -206,8 +206,7 @@ static void set_mode(struct mio_dev *dev, unsigned int mode) {
 
 static PmError sndio_out_open(PmInternal *midi, void *driverInfo)
 {
-    descriptor_type desc = &descriptors[midi->device_id];
-    struct mio_dev *dev = (struct mio_dev *) desc->descriptor;
+    struct mio_dev *dev = pm_descriptors[midi->device_id].descriptor;
 
     if (dev->mode & MIO_OUT)
         return pmNoError;
@@ -219,14 +218,12 @@ static PmError sndio_out_open(PmInternal *midi, void *driverInfo)
         return pmHostError;
     }
 
-    midi->descriptor = (void *)dev;
     return pmNoError;
 }
 
 static PmError sndio_in_open(PmInternal *midi, void *driverInfo)
 {
-    descriptor_type desc = &descriptors[midi->device_id];
-    struct mio_dev *dev = (struct mio_dev *) desc->descriptor;
+    struct mio_dev *dev = pm_descriptors[midi->device_id].descriptor;
 
     if (dev->mode & MIO_IN)
         return pmNoError;
@@ -237,7 +234,6 @@ static PmError sndio_in_open(PmInternal *midi, void *driverInfo)
           "mio_open (input) failed: %s\n", dev->name);
         return pmHostError;
     }
-    midi->descriptor = (void *)dev;
     pthread_attr_t attr;
     pthread_attr_init(&attr);
     pthread_create(&dev->thread, &attr, input_thread, ( void* )midi);
@@ -246,7 +242,7 @@ static PmError sndio_in_open(PmInternal *midi, void *driverInfo)
 
 static PmError sndio_out_close(PmInternal *midi)
 {
-    struct mio_dev *dev = (struct mio_dev *) midi->descriptor;
+    struct mio_dev *dev = pm_descriptors[midi->device_id].descriptor;
 
     if (dev->mode & MIO_OUT)
         set_mode(dev, dev->mode & ~MIO_OUT);
@@ -255,7 +251,7 @@ static PmError sndio_out_close(PmInternal *midi)
 
 static PmError sndio_in_close(PmInternal *midi)
 {
-    struct mio_dev *dev = (struct mio_dev *) midi->descriptor;
+    struct mio_dev *dev = pm_descriptors[midi->device_id].descriptor;
 
     if (dev->mode & MIO_IN) {
         set_mode(dev, dev->mode & ~MIO_IN);
@@ -280,7 +276,7 @@ static PmError do_write(struct mio_dev *dev, const void *addr, size_t nbytes)
     size_t w = mio_write(dev->hdl, addr, nbytes);
 
     if (w != nbytes) {
-        snprintf(dev->errmsg, PM_HOST_ERROR_MSG_LEN, 
+        snprintf(dev->errmsg, PM_HOST_ERROR_MSG_LEN,
           "mio_write failed, bytes written:%zu\n", w);
         return pmHostError;
     }
@@ -290,14 +286,19 @@ static PmError do_write(struct mio_dev *dev, const void *addr, size_t nbytes)
 static PmError sndio_write_byte(PmInternal *midi, unsigned char byte,
                         PmTimestamp timestamp)
 {
-    struct mio_dev *dev = (struct mio_dev *) midi->descriptor;
+    struct mio_dev *dev = pm_descriptors[midi->device_id].descriptor;
 
-    return do_write(dev, &byte, 1);
+    if (midi->latency > 0) {
+        /* XXX the byte should be queued for later playback */
+        return do_write(dev, &byte, 1);
+    } else {
+        return do_write(dev, &byte, 1);
+    }
 }
 
 static PmError sndio_write_short(PmInternal *midi, PmEvent *event)
 {
-    struct mio_dev *dev = (struct mio_dev *) midi->descriptor;
+    struct mio_dev *dev = pm_descriptors[midi->device_id].descriptor;
     int nbytes = midi_message_length(event->message);
 
     if (midi->latency > 0) {
@@ -321,14 +322,14 @@ PmError sndio_sysex(PmInternal *midi, PmTimestamp timestamp)
 
 static unsigned int sndio_has_host_error(PmInternal *midi)
 {
-    struct mio_dev *dev = (struct mio_dev *) midi->descriptor;
+    struct mio_dev *dev = pm_descriptors[midi->device_id].descriptor;
 
     return (dev->errmsg[0] != '\0');
 }
 
 static void sndio_get_host_error(PmInternal *midi, char *msg, unsigned int len)
 {
-    struct mio_dev *dev = (struct mio_dev *) midi->descriptor;
+    struct mio_dev *dev = pm_descriptors[midi->device_id].descriptor;
 
     strlcpy(msg, dev->errmsg, len);
     dev->errmsg[0] = '\0';
@@ -347,7 +348,6 @@ pm_fns_node pm_sndio_in_dictionary = {
     sndio_in_close,
     success_poll,
     sndio_has_host_error,
-    sndio_get_host_error
 };
 
 pm_fns_node pm_sndio_out_dictionary = {
@@ -363,6 +363,5 @@ pm_fns_node pm_sndio_out_dictionary = {
     sndio_out_close,
     none_poll,
     sndio_has_host_error,
-    sndio_get_host_error
 };
 

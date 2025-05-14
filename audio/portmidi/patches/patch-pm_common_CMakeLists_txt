@@ -1,55 +1,42 @@
+-Build static library as well
+-Use sndio backend
+
 Index: pm_common/CMakeLists.txt
 --- pm_common/CMakeLists.txt.orig
 +++ pm_common/CMakeLists.txt
-@@ -66,21 +66,12 @@ if(UNIX)
-     set(JAVA_INCLUDE_PATHS ${JAVAVM_LIB}/Headers)
-     message(STATUS "SYSROOT: " ${CMAKE_OSX_SYSROOT})
-   else(APPLE)
--    # LINUX settings...
--    include(FindJNI)
--    message(STATUS "JAVA_JVM_LIB_PATH is " ${JAVA_JVM_LIB_PATH})
--    message(STATUS "JAVA_INCLUDE_PATH is " ${JAVA_INCLUDE_PATH})
--    message(STATUS "JAVA_INCLUDE_PATH2 is " ${JAVA_INCLUDE_PATH2})
--    message(STATUS "JAVA_JVM_LIBRARY is " ${JAVA_JVM_LIBRARY})
--    set(JAVA_INCLUDE_PATHS ${JAVA_INCLUDE_PATH} ${JAVA_INCLUDE_PATH2})
--    # libjvm.so is found relative to JAVA_INCLUDE_PATH:
--    set(JAVAVM_LIB ${JAVA_JVM_LIBRARY}/libjvm.so)
+@@ -37,9 +37,10 @@ set(PM_LIB_PUBLIC_SRC ${PMDIR}/pm_common/portmidi.c
+                       ${PMDIR}/pm_common/pmutil.c
+                       ${PMDIR}/porttime/porttime.c)
+ add_library(portmidi ${PM_LIB_PUBLIC_SRC})
++add_library(portmidi_s STATIC ${PM_LIB_PUBLIC_SRC})
  
--    set(LINUXSRC pmlinuxalsa pmlinux finddefault)
--    prepend_path(LIBSRC ../pm_linux/ ${LINUXSRC})
-+    set(LINUXSRC pmsndio)
-+    prepend_path(LIBSRC ../pm_sndio/ ${LINUXSRC})
-     list(APPEND LIBSRC ../porttime/ptlinux)
+ # MSVCRT_DLL is "DLL" for shared runtime library, and "" for static:
+-set_target_properties(portmidi PROPERTIES
++set_target_properties(portmidi portmidi_s PROPERTIES
+                       VERSION ${LIBRARY_VERSION}
+                       SOVERSION ${LIBRARY_SOVERSION}
+                       OUTPUT_NAME "${PM_ACTUAL_LIB_NAME}"
+@@ -78,8 +79,22 @@ if(NOT WIN32)
+   find_package(Threads REQUIRED)
+ endif()
  
--    set(PM_NEEDED_LIBS pthread asound)
-+    set(PM_NEEDED_LIBS pthread sndio)
-   endif(APPLE)
- else(UNIX)
-   if(WIN32)
-@@ -99,7 +90,6 @@ else(UNIX)
-     set(PM_NEEDED_LIBS winmm.lib)
-   endif(WIN32)
- endif(UNIX)
--set(JNI_EXTRA_LIBS ${PM_NEEDED_LIBS} ${JAVA_JVM_LIBRARY})
- 
- # this completes the list of library sources by adding shared code
- list(APPEND LIBSRC pmutil portmidi)
-@@ -109,17 +99,10 @@ add_library(portmidi-static ${LIBSRC})
- set_target_properties(portmidi-static PROPERTIES OUTPUT_NAME "portmidi_s")
- target_link_libraries(portmidi-static ${PM_NEEDED_LIBS})
- 
--# define the jni library
--include_directories(${JAVA_INCLUDE_PATHS})
- 
--set(JNISRC ${LIBSRC} ../pm_java/pmjni/pmjni.c)
--add_library(pmjni SHARED ${JNISRC})
--target_link_libraries(pmjni ${JNI_EXTRA_LIBS})
--set_target_properties(pmjni PROPERTIES EXECUTABLE_EXTENSION "jnilib")
--
- # install the libraries (Linux and Mac OS X command line)
- if(UNIX)
--  INSTALL(TARGETS portmidi-static pmjni
-+  INSTALL(TARGETS portmidi-static
-     LIBRARY DESTINATION /usr/local/lib
-     ARCHIVE DESTINATION /usr/local/lib)
- # .h files installed by pm_dylib/CMakeLists.txt, so don't need them here
++# Check for sndio
++include (FindPackageHandleStandardArgs)
++find_path(SNDIO_INCLUDE_DIRS NAMES sndio.h)
++find_library(SNDIO_LIBRARY sndio)
++find_package_handle_standard_args(Sndio
++    REQUIRED_VARS SNDIO_LIBRARY SNDIO_INCLUDE_DIRS)
++
+ # first include the appropriate system-dependent file:
+-if(UNIX AND APPLE)
++if(SNDIO_FOUND AND USE_SNDIO)
++  set(PM_LIB_PRIVATE_SRC
++      ${PMDIR}/porttime/ptlinux.c
++      ${PMDIR}/pm_sndio/pmsndio.c)
++  set(PM_NEEDED_LIBS Threads::Threads ${SNDIO_LIBRARY} PARENT_SCOPE)
++  target_link_libraries(portmidi PRIVATE Threads::Threads ${SNDIO_LIBRARY})
++  target_include_directories(portmidi PRIVATE ${SNDIO_INCLUDE_DIRS})
++elseif(UNIX AND APPLE)
+   set(Threads::Threads "" PARENT_SCOPE)
+   find_library(COREAUDIO_LIBRARY CoreAudio REQUIRED)
+   find_library(COREFOUNDATION_LIBRARY CoreFoundation REQUIRED)

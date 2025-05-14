@@ -1,9 +1,0 @@
-Index: pm_test/CMakeLists.txt
---- pm_test/CMakeLists.txt.orig
-+++ pm_test/CMakeLists.txt
-@@ -1,4 +1,5 @@
- # pm_test
-+cmake_policy(SET CMP0037 OLD)
- 
- # set the build directory to be in portmidi, not in portmidi/pm_test
- # this is required for Xcode:
