@@ -1,6 +1,6 @@
 COMMENT =		fully featured HTTP client library
 
-MODPY_DISTV =	0.27.0
+MODPY_DISTV =		0.27.0
 DISTNAME =		httpx-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 REVISION =		1
@@ -26,7 +26,9 @@ RUN_DEPENDS =		devel/py-certifi \
 			net/py-anyio \
 			net/py-idna \
 			www/py-httpcore
-# needs uvicorn
-TEST_DEPENDS =		security/py-trustme
+
+TEST_DEPENDS =		security/py-trustme \
+			textproc/py-chardet \
+			www/py-uvicorn
 
 .include <bsd.port.mk>
