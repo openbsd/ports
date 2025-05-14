@@ -3,7 +3,7 @@ COMMENT =		minimal low-level HTTP client
 MODPY_DISTV =		1.0.5
 DISTNAME =		httpcore-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
+REVISION =		4
 
 CATEGORIES =		www
 
@@ -22,7 +22,7 @@ MODPY_PYBUILD =		hatchling
 BUILD_DEPENDS =		devel/py-hatch-fancy-pypi-readme
 
 RUN_DEPENDS =		devel/py-certifi \
-			www/py-h11>=0.13,<0.15
+			www/py-h11>=0.16
 
 TEST_DEPENDS =		devel/py-trio \
 			net/py-anyio \
