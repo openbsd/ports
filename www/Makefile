@@ -74,6 +74,7 @@
      SUBDIR += japana
      SUBDIR += jesred
      SUBDIR += jupyter-notebook
+     SUBDIR += jupyterlab
      SUBDIR += kcaldav
      SUBDIR += kcgi
      SUBDIR += kiwix
