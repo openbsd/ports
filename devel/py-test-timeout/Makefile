@@ -1,9 +1,8 @@
 COMMENT =		pytest plugin to abort hanging tests
 
-MODPY_DISTV =		2.1.0
-
-DISTNAME =		pytest-timeout-${MODPY_DISTV}
-PKGNAME =		${DISTNAME:S/py/py-/}
+MODPY_DISTV =		2.4.0
+DISTNAME =		pytest_timeout-${MODPY_DISTV}
+PKGNAME =		py-test-timeout-${MODPY_DISTV}
 
 CATEGORIES =		devel
 
