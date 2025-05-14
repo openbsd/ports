@@ -1,0 +1,19 @@
+Fix build with poppler-25.05.0.
+
+Index: sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.cxx
+--- sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.cxx.orig
++++ sdext/source/pdfimport/xpdfwrapper/pdfioutdev_gpl.cxx
+@@ -1318,10 +1318,10 @@ poppler_bool PDFOutDev::tilingPatternFill(GfxState *st
+     }
+ 
+     std::unique_ptr<MemStream> pRgbStr(new MemStream(pBitmapData, 0,
+-        nBitmapWidth * nBitmapHeight * 3, Object(objNull)));
++        nBitmapWidth * nBitmapHeight * 3, Object::null()));
+     std::unique_ptr<MemStream> pAlphaStr(new MemStream(reinterpret_cast<char *>(pSplashBitmap->getAlphaPtr()),
+-        0, nBitmapWidth * nBitmapHeight, Object(objNull)));
+-    auto aDecode = Object(objNull);
++        0, nBitmapWidth * nBitmapHeight, Object::null()));
++    auto aDecode = Object::null();
+ #if POPPLER_CHECK_VERSION(24, 10, 0)
+     std::unique_ptr<GfxImageColorMap> pRgbIdentityColorMap(new GfxImageColorMap(8, &aDecode,
+         std::make_unique<GfxDeviceRGBColorSpace>()));
