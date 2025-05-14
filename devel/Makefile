@@ -1527,9 +1527,11 @@
      SUBDIR += py-jupyter_client
      SUBDIR += py-jupyter_core
      SUBDIR += py-jupyter_events
+     SUBDIR += py-jupyter_lsp
      SUBDIR += py-jupyter_packaging
      SUBDIR += py-jupyter_server
      SUBDIR += py-jupyter_server_terminals
+     SUBDIR += py-jupyterlab_server
      SUBDIR += py-kaitaistruct
      SUBDIR += py-kitchen
      SUBDIR += py-kiwisolver
@@ -1569,6 +1571,7 @@
      SUBDIR += py-nose
      SUBDIR += py-nose-warnings-filters
      SUBDIR += py-nosexcover
+     SUBDIR += py-notebook-shim
      SUBDIR += py-objgraph
      SUBDIR += py-olefile
      SUBDIR += py-openapi-schema-validator
@@ -1675,6 +1678,7 @@
      SUBDIR += py-stack_data
      SUBDIR += py-stdnum
      SUBDIR += py-straight.plugin
+     SUBDIR += py-strict_rfc3339
      SUBDIR += py-structlog
      SUBDIR += py-suds
      SUBDIR += py-sure
