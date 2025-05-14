@@ -3,7 +3,7 @@ account for OpenBSD
 Index: tests/util/CMakeLists.txt
 --- tests/util/CMakeLists.txt.orig
 +++ tests/util/CMakeLists.txt
-@@ -124,7 +124,7 @@ else()
+@@ -129,7 +129,7 @@ else()
  	)
  endif()
  
@@ -12,7 +12,7 @@ Index: tests/util/CMakeLists.txt
  	# One needs to have at least one hardware driver present, otherwise
  	# there is no point compiling just the dispatcher.
  	if(PIGLIT_BUILD_DMA_BUF_TESTS)
-@@ -163,7 +163,7 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
+@@ -160,7 +160,7 @@ if(${CMAKE_SYSTEM_NAME} MATCHES "Linux")
  		list(APPEND UTIL_GL_LIBS ${WAYLAND_LDFLAGS})
          endif()
  

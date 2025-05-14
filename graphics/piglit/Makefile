@@ -1,12 +1,9 @@
 COMMENT =	automated OpenGL and OpenCL testsuite
 ONLY_FOR_ARCHS =	amd64 i386
 
-DISTNAME =	piglit-20210128
+DISTNAME =	piglit-20250507
 
-GH_ACCOUNT =	mesa3d
-GH_PROJECT =	piglit
-GH_COMMIT =	83173d9536c9f5e1571efe5933d210466ec255b8
-REVISION =	9
+DIST_TUPLE =	fdo mesa piglit 1767af745ed96f77b16c0c205015366d1fbbdb22 ${WRKDIST}/
 
 CATEGORIES =	graphics
 
@@ -15,8 +12,8 @@ CATEGORIES =	graphics
 # MIT GPLv2+ GPLv3 LGPL20
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} EGL GL X11 Xrender c drm drm_intel gbm
-WANTLIB += m xcb xcb-dri2 z
+WANTLIB += ${COMPILER_LIBCXX} EGL GL X11 Xrender c drm gbm
+WANTLIB += m wayland-client wayland-egl xcb xcb-dri2 xkbcommon z
 WANTLIB += png waffle-1 vulkan
 
 COMPILER =		base-clang ports-gcc base-gcc
@@ -37,16 +34,19 @@ RUN_DEPENDS =		devel/py-six \
 			www/py-mako
 BUILD_DEPENDS =		${RUN_DEPENDS} \
 			graphics/glslang \
-			graphics/vulkan-headers
+			graphics/vulkan-headers \
+			wayland/wayland-protocols
 
 LIB_DEPENDS =		graphics/waffle \
 			graphics/png \
-			graphics/vulkan-loader
+			graphics/vulkan-loader \
+			x11/xkbcommon \
+			wayland/wayland
 
 CONFIGURE_ARGS =	-DPIGLIT_BUILD_CL_TESTS:BOOL=OFF \
 			-DHAVE_LIBCACA:BOOL=FALSE
-CONFIGURE_ENV =		CPPFLAGS="-I${X11BASE}/include" \
-			LDFLAGS="-L${X11BASE}/lib"
+CONFIGURE_ENV =		CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
+			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 NO_TEST =		Yes
 
