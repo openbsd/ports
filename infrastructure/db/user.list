@@ -1,4 +1,4 @@
-$OpenBSD: user.list,v 1.466 2025/05/02 10:09:00 sthen Exp $
+$OpenBSD: user.list,v 1.467 2025/05/14 01:41:19 danj Exp $
 
 This file lists all users and groups that are created by ports. All
 ports' users/groups have to start with an underscore and have to use
@@ -241,7 +241,7 @@ id  user		group		port
 #730 _kdm		_kdm		x11/kde4/workspace
 731 _geoclue		_geoclue	geo/geoclue2
 732 _unifi		_unifi		net/unifi
-733 _pop3d		_pop3d		mail/pop3d
+733 #_pop3d		_pop3d		mail/pop3d
 734 _taskd		_taskd		productivity/taskd
 735 			_wireshark	net/wireshark
 736 _conserver		_conserver	comms/conserver
