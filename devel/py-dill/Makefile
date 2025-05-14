@@ -1,10 +1,9 @@
 COMMENT=	serialize/deserialize most Python types
 
-MODPY_DISTV=	0.3.9
+MODPY_DISTV=	0.4.0
 DISTNAME=	dill-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	1
 
 # https://github.com/uqfoundation/dill
 HOMEPAGE=	https://dill.readthedocs.io/
@@ -16,7 +15,7 @@ MODULES=	lang/python
 
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-# dosable tests with collection errors to get others to run
+# disable tests with collection errors (missing deps) to get others to run
 MODPY_PYTEST_ARGS= --ignore dill/tests/test_diff.py \
 		--ignore dill/tests/test_module.py \
 		--ignore dill/tests/test_objects.py \
