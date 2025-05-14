@@ -2,7 +2,7 @@ COMMENT =	utility and library for computing hash sums
 
 GH_ACCOUNT =	rhash
 GH_PROJECT =	RHash
-GH_TAGNAME =	v1.4.5
+GH_TAGNAME =	v1.4.6
 PKGNAME =	${DISTNAME:L}
 
 SHARED_LIBS =	rhash 1.1

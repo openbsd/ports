@@ -19,7 +19,7 @@ Index: common_func.h
  # endif /* LOCALEDIR */
  #else
  # define _(str) (str)
-@@ -143,9 +143,8 @@ wchar_t* rhash_wcsdup(const wchar_t* str, const char* 
+@@ -147,9 +147,8 @@ wchar_t* rhash_wcsdup(const wchar_t* str, const char* 
  #endif
  
  /* get_ctz - count traling zero bits */
@@ -29,5 +29,5 @@ Index: common_func.h
 +#if (defined(__GNUC__) && (__GNUC__ > 3 || (__GNUC__ == 3 && __GNUC_MINOR__ >= 4)))
 +/* macro if GCC >= 3.4 (includes clang) */
  # define get_ctz(x) __builtin_ctz(x)
+ # define get_ctz64(x) __builtin_ctzll(x)
  #else
- unsigned get_ctz(unsigned); /* define as function */

@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -691,8 +691,8 @@ log_finish
+@@ -700,8 +700,8 @@ log_finish
  SHARED_PREFIX="lib"
  STATIC_PREFIX="lib"
  STATIC_EXT=".a"
@@ -12,9 +12,9 @@ Index: configure
  SOLINK_EXT=".so"
  EXEC_EXT=
  NEED_IMPLIB=no
-@@ -718,7 +718,7 @@ elif darwin; then
+@@ -727,7 +727,7 @@ elif darwin; then
    SOLINK_EXT=".dylib"
- elif linux || bsd; then
+ elif linux || bsd || gnu; then
    # use the full library version for the library file extension
 -  SHARED_EXT=".so.${RHASH_VERSION}"
 +  SHARED_EXT=".so.${LIBrhash_VERSION}"
