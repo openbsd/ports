@@ -1,9 +1,8 @@
-COMMENT =		C++ wrapper around CGAL
+COMMENT =		CGAL wrapper implementing 2D/3D operations on OGC features
 
-V =			v2.0.0
+V =			v2.1.0
 DISTNAME =		SFCGAL-${V}
 PKGNAME =		${DISTNAME:L:S/v//}
-REVISION =		0
 SHARED_LIBS +=	SFCGAL	0.0 # 0.0
 
 CATEGORIES =		geo math
@@ -24,6 +23,8 @@ LIB_DEPENDS +=		devel/boost>=1.84.0p8 \
 			devel/gmp,-cxx \
 			devel/gmp,-main \
 			devel/mpfr
+
+TEST_DEPENDS =		${FULLPKGNAME}:${BUILD_PKGPATH}
 
 WANTLIB += ${COMPILER_LIBCXX} boost_atomic-mt boost_chrono-mt
 WANTLIB += boost_filesystem-mt boost_program_options-mt boost_serialization-mt

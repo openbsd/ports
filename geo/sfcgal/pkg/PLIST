@@ -1,4 +1,9 @@
 bin/sfcgal-config
+@comment @bin bin/standalone-regress-test-SFCGAL
+@comment @bin bin/test-regress-capi
+@comment @bin bin/test-regress-convex_hull
+@comment @bin bin/test-regress-polygon_triangulator
+@comment @bin bin/unit-test-SFCGAL
 include/SFCGAL/
 include/SFCGAL/Coordinate.h
 include/SFCGAL/Cylinder.h
@@ -17,6 +22,8 @@ include/SFCGAL/Point.h
 include/SFCGAL/Polygon.h
 include/SFCGAL/PolyhedralSurface.h
 include/SFCGAL/PreparedGeometry.h
+include/SFCGAL/Segment.h
+include/SFCGAL/Simplicity.h
 include/SFCGAL/Solid.h
 include/SFCGAL/Sphere.h
 include/SFCGAL/Surface.h
@@ -28,8 +35,10 @@ include/SFCGAL/algorithm/
 include/SFCGAL/algorithm/BoundaryVisitor.h
 include/SFCGAL/algorithm/ConsistentOrientationBuilder.h
 include/SFCGAL/algorithm/alphaShapes.h
+include/SFCGAL/algorithm/alphaWrapping3D.h
 include/SFCGAL/algorithm/area.h
 include/SFCGAL/algorithm/buffer3D.h
+include/SFCGAL/algorithm/centroid.h
 include/SFCGAL/algorithm/collect.h
 include/SFCGAL/algorithm/collectionExtract.h
 include/SFCGAL/algorithm/collectionHomogenize.h
@@ -44,8 +53,10 @@ include/SFCGAL/algorithm/distance3d.h
 include/SFCGAL/algorithm/extrude.h
 include/SFCGAL/algorithm/force2D.h
 include/SFCGAL/algorithm/force3D.h
+include/SFCGAL/algorithm/forceMeasured.h
 include/SFCGAL/algorithm/intersection.h
 include/SFCGAL/algorithm/intersects.h
+include/SFCGAL/algorithm/isSimple.h
 include/SFCGAL/algorithm/isValid.h
 include/SFCGAL/algorithm/length.h
 include/SFCGAL/algorithm/lineSubstring.h
@@ -58,6 +69,7 @@ include/SFCGAL/algorithm/partition_2.h
 include/SFCGAL/algorithm/plane.h
 include/SFCGAL/algorithm/rotate.h
 include/SFCGAL/algorithm/scale.h
+include/SFCGAL/algorithm/simplification.h
 include/SFCGAL/algorithm/straightSkeleton.h
 include/SFCGAL/algorithm/tesselate.h
 include/SFCGAL/algorithm/translate.h
@@ -69,15 +81,18 @@ include/SFCGAL/capi/sfcgal_c.h
 include/SFCGAL/config.h
 include/SFCGAL/detail/
 include/SFCGAL/detail/ComplexComparator.h
+include/SFCGAL/detail/ConstraintInfo.h
 include/SFCGAL/detail/EnvelopeVisitor.h
 include/SFCGAL/detail/ForceValidityVisitor.h
 include/SFCGAL/detail/GeometrySet.h
 include/SFCGAL/detail/GetPointsVisitor.h
 include/SFCGAL/detail/Interval.h
+include/SFCGAL/detail/SegmentStore.h
 include/SFCGAL/detail/TestGeometry.h
 include/SFCGAL/detail/TypeForDimension.h
 include/SFCGAL/detail/algorithm/
 include/SFCGAL/detail/algorithm/coversPoints.h
+include/SFCGAL/detail/algorithm/simplification.h
 include/SFCGAL/detail/generator/
 include/SFCGAL/detail/generator/building.h
 include/SFCGAL/detail/generator/disc.h
@@ -108,6 +123,7 @@ include/SFCGAL/detail/transform/
 include/SFCGAL/detail/transform/AffineTransform2.h
 include/SFCGAL/detail/transform/AffineTransform3.h
 include/SFCGAL/detail/transform/Force2D.h
+include/SFCGAL/detail/transform/ForceM.h
 include/SFCGAL/detail/transform/ForceOrderPoints.h
 include/SFCGAL/detail/transform/ForceZ.h
 include/SFCGAL/detail/transform/ForceZOrderPoints.h
@@ -126,10 +142,16 @@ include/SFCGAL/io/osg.h
 include/SFCGAL/io/vtk.h
 include/SFCGAL/io/wkb.h
 include/SFCGAL/io/wkt.h
+include/SFCGAL/namespace.h
 include/SFCGAL/numeric.h
 include/SFCGAL/triangulate/
 include/SFCGAL/triangulate/triangulate2DZ.h
 include/SFCGAL/triangulate/triangulatePolygon.h
 include/SFCGAL/version.h
+lib/cmake/SFCGAL/
+lib/cmake/SFCGAL/SFCGALConfig.cmake
+lib/cmake/SFCGAL/SFCGALConfigVersion.cmake
+lib/cmake/SFCGAL/SFCGALTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/SFCGAL/SFCGALTargets.cmake
 @lib lib/libSFCGAL.so.${LIBSFCGAL_VERSION}
 lib/pkgconfig/sfcgal.pc
