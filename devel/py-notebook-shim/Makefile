@@ -3,8 +3,9 @@ COMMENT =		shim layer for notebook traits and config
 MODPY_DISTV =		0.2.4
 DISTNAME =		notebook_shim-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/}
+REVISION =		0
 
-CATEGORIES =		www
+CATEGORIES =		devel
 
 HOMEPAGE =		https://jupyter.org/
 
