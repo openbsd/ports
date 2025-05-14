@@ -1,0 +1,12 @@
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -139,7 +139,7 @@ source = "code"
+ "jupyterlab/static" = "share/jupyter/lab/static"
+ "jupyterlab/schemas" = "share/jupyter/lab/schemas"
+ "jupyterlab/themes" = "share/jupyter/lab/themes"
+-"jupyter-config" = "etc/jupyter"
++"jupyter-config" = "share/examples/jupyter"
+ "jupyterlab.svg" = "share/icons/hicolor/scalable/apps/jupyterlab.svg"
+ "jupyterlab.desktop" = "share/applications/jupyterlab.desktop"
+ 
