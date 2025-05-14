@@ -4,7 +4,7 @@ COMMENT-webd =		game of trees repository fast-cgi server
 COMMENT-gitwrapper =	invoke an appropriate Git repository server
 COMMENT-sysd =		game of trees system management daemon
 
-V =			0.111
+V =			0.112
 DISTNAME =		got-${V}
 PKGNAME-server =	gotd-${V}
 PKGNAME-webd =		gotwebd-${V}
@@ -51,5 +51,6 @@ FAKE_FLAGS =		MANDIR=${PREFIX}/man/man CHROOT_DIR=${VARBASE}/www
 post-install:
 	@ln -s gitwrapper ${PREFIX}/bin/git-upload-pack
 	@ln -s gitwrapper ${PREFIX}/bin/git-receive-pack
+	@mkdir -p ${DESTDIR}/${VARBASE}/www/got/public
 
 .include <bsd.port.mk>
