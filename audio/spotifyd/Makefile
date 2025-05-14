@@ -23,7 +23,8 @@ WANTLIB =		${MODCARGO_WANTLIB} dbus-1 m portaudio
 
 MODULES =		devel/cargo
 
-BUILD_DEPENDS =		devel/llvm/18
+BUILD_DEPENDS =		devel/llvm/18 \
+			devel/cmake
 LIB_DEPENDS =		audio/portaudio-svn \
 			x11/dbus,-main
 
