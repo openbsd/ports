@@ -3,6 +3,7 @@ COMMENT =	GTK and VTE based terminal emulator
 DISTNAME =	sakura-${V}
 EXTRACT_SUFX =	.tar.bz2
 CATEGORIES =	x11
+REVISION =	0
 
 HOMEPAGE =	http://www.pleyades.net/david/projects/sakura/
 MAINTAINER =	Victor Kukshiev <andrey0bolkonsky@gmail.com>
@@ -23,7 +24,8 @@ BUILD_DEPENDS =	devel/gettext,-tools
 LIB_DEPENDS =	devel/gettext,-runtime \
 		devel/vte3
 
-RUN_DEPENDS =	devel/desktop-file-utils
+RUN_DEPENDS =	devel/desktop-file-utils \
+		devel/xdg-utils
 
 CFLAGS +=	-std=gnu99
 
