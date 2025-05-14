@@ -455,6 +455,7 @@
      SUBDIR += py-httpie
      SUBDIR += py-httplib2
      SUBDIR += py-httpretty
+     SUBDIR += py-httptools
      SUBDIR += py-httpx
      SUBDIR += py-httpx-ntlm
      SUBDIR += py-hyperframe
@@ -502,6 +503,7 @@
      SUBDIR += py-uritemplate
      SUBDIR += py-urlgrabber
      SUBDIR += py-urllib3
+     SUBDIR += py-uvicorn
      SUBDIR += py-vcrpy
      SUBDIR += py-waitress
      SUBDIR += py-wapiti_arsenic
