@@ -1,9 +1,9 @@
 COMMENT =		easy whitelist-based HTML-sanitizing tool
 
-MODPY_DISTV =	5.0.1
+# bleach is deprecated upstream
+MODPY_DISTV =		6.2.0
 DISTNAME =		bleach-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		4
 
 CATEGORIES =		www
 
@@ -19,9 +19,9 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		devel/py-six \
-			sysutils/py-packaging \
+RUN_DEPENDS =		textproc/py-tinycss2<1.5 \
 			textproc/py-webencodings
+
 BUILD_DEPENDS =		devel/py-test-runner
 
 .include <bsd.port.mk>
