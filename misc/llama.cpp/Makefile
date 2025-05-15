@@ -8,15 +8,15 @@ COMMENT =		LLM inference system
 
 GH_ACCOUNT =		ggerganov
 GH_PROJECT =		llama.cpp
-GH_TAGNAME =		b4706
+GH_TAGNAME =		b5372
 PKGNAME =		llama-cpp-0.0.${GH_TAGNAME:S/b//}
 
-SHARED_LIBS +=		ggml-base 0.0
-SHARED_LIBS +=		ggml-cpu 0.0
-SHARED_LIBS +=		ggml 0.0
-SHARED_LIBS +=		llama 1.0
-SHARED_LIBS +=		llava_shared 0.1
-SHARED_LIBS +=		ggml-vulkan 1.0
+SHARED_LIBS +=		ggml-base 1.0
+SHARED_LIBS +=		ggml-cpu 1.0
+SHARED_LIBS +=		ggml 1.0
+SHARED_LIBS +=		llama 2.0
+SHARED_LIBS +=		mtmd_shared 0.0
+SHARED_LIBS +=		ggml-vulkan 2.0
 
 CATEGORIES =		misc
 
@@ -25,11 +25,12 @@ HOMEPAGE =		https://github.com/ggerganov/llama.cpp
 # MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		c m pthread vulkan ${COMPILER_LIBCXX}
+WANTLIB +=		c curl m pthread vulkan ${COMPILER_LIBCXX}
 
 MODULES =		devel/cmake
 
-LIB_DEPENDS =		graphics/vulkan-loader
+LIB_DEPENDS =		graphics/vulkan-loader \
+			net/curl
 
 BUILD_DEPENDS =		graphics/shaderc
 

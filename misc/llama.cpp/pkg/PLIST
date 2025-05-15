@@ -8,28 +8,23 @@ bin/convert_hf_to_gguf.py
 @bin bin/llama-embedding
 @bin bin/llama-eval-callback
 @bin bin/llama-export-lora
-@bin bin/llama-gbnf-validator
+@bin bin/llama-finetune
 @bin bin/llama-gen-docs
 @bin bin/llama-gguf
 @bin bin/llama-gguf-hash
 @bin bin/llama-gguf-split
 @bin bin/llama-gritlm
 @bin bin/llama-imatrix
-@bin bin/llama-infill
-@bin bin/llama-llava-cli
-@bin bin/llama-llava-clip-quantize-cli
 @bin bin/llama-lookahead
 @bin bin/llama-lookup
 @bin bin/llama-lookup-create
 @bin bin/llama-lookup-merge
 @bin bin/llama-lookup-stats
-@bin bin/llama-minicpmv-cli
+@bin bin/llama-mtmd-cli
 @bin bin/llama-parallel
 @bin bin/llama-passkey
 @bin bin/llama-perplexity
 @bin bin/llama-quantize
-@bin bin/llama-quantize-stats
-@bin bin/llama-qwen2vl-cli
 @bin bin/llama-retrieval
 @bin bin/llama-run
 @bin bin/llama-save-load-state
@@ -45,6 +40,7 @@ include/ggml-alloc.h
 include/ggml-backend.h
 include/ggml-blas.h
 include/ggml-cann.h
+include/ggml-cpp.h
 include/ggml-cpu.h
 include/ggml-cuda.h
 include/ggml-kompute.h
@@ -68,5 +64,5 @@ lib/cmake/llama/llama-version.cmake
 @lib lib/libggml-vulkan.so.${LIBggml-vulkan_VERSION}
 @lib lib/libggml.so.${LIBggml_VERSION}
 @lib lib/libllama.so.${LIBllama_VERSION}
-@lib lib/libllava_shared.so.${LIBllava_shared_VERSION}
+@lib lib/libmtmd_shared.so.${LIBmtmd_shared_VERSION}
 lib/pkgconfig/llama.pc
