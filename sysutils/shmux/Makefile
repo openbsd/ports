@@ -4,7 +4,7 @@ DISTNAME=		shmux-1.0.3
 REVISION=		0
 CATEGORIES=		sysutils
 HOMEPAGE=		https://web.taranis.org/shmux/dist/
-SITES=			${HOMEPAGE}/dist/
+SITES=			${HOMEPAGE}dist/
 EXTRACT_SUFX=		.tgz
 
 # BSD
