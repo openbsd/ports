@@ -61,7 +61,7 @@ Index: doc/screen.1
  Login records
  .IP $LOCKPRG
  Program that locks a terminal.
-@@ -5333,9 +5333,9 @@ does not make use of hardware tabs.
+@@ -5338,9 +5338,9 @@ does not make use of hardware tabs.
  must be installed as set-uid with owner root on most systems in order
  to be able to correctly change the owner of the tty device file for
  each window.
