@@ -268,7 +268,7 @@ SHA256 (cargo/winnow-0.6.18.tar.gz) = aKm9pGkfCZ1DWtGBAAck2o5YmdqhBxPC1DJVK5zNOm
 SHA256 (cargo/xdg-2.5.2.tar.gz) = ITtzJDNrU9JBSy24U35WVE2YGAMTkVWvqE927uu3pUY=
 SHA256 (cargo/zerocopy-0.7.35.tar.gz) = G5tP0Yq8grgTaDjaXVC6573qU3xXTY3Bo07QmNbBZvA=
 SHA256 (cargo/zerocopy-derive-0.7.35.tar.gz) = +k+AgDRNRnH7ToMaE60eaAknSDh9/E9V41YkL64Szj4=
-SHA256 (meli-0.8.10.tar.gz) = WYR5+wUZbdefZcmWtkny+lZo7HmWPVPXdsefuE9D0XI=
+SHA256 (meli-0.8.11.tar.gz) = /zlO5jIfb2ILmNrUKLeRHQ+uscwQWWSUFJG+8Y61r4A=
 SIZE (cargo/abnf-core-0.6.0.tar.gz) = 9528
 SIZE (cargo/adler2-2.0.0.tar.gz) = 13529
 SIZE (cargo/ahash-0.8.11.tar.gz) = 43607
@@ -539,4 +539,4 @@ SIZE (cargo/winnow-0.6.18.tar.gz) = 163357
 SIZE (cargo/xdg-2.5.2.tar.gz) = 14394
 SIZE (cargo/zerocopy-0.7.35.tar.gz) = 152645
 SIZE (cargo/zerocopy-derive-0.7.35.tar.gz) = 37829
-SIZE (meli-0.8.10.tar.gz) = 1522185
+SIZE (meli-0.8.11.tar.gz) = 1594271
