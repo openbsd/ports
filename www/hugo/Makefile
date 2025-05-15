@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS =	${GO_ARCHS}
 COMMENT =	fast and flexible static site generator
 
 MODGO_MODNAME =	github.com/gohugoio/hugo
-MODGO_VERSION =	v0.147.0
+MODGO_VERSION =	v0.147.3
 
 DISTNAME =	hugo-${MODGO_VERSION}
 
@@ -13,7 +13,7 @@ HOMEPAGE =	https://gohugo.io/
 
 MAINTAINER =	Kirill A. Korinsky <kirill@korins.ky>
 
-#Apache License 2.0
+# Apache License 2.0
 PERMIT_PACKAGE =	Yes
 
 WANTLIB +=	${COMPILER_LIBCXX} c m pthread sass
