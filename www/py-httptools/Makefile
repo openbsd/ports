@@ -17,8 +17,6 @@ MODPY_PI=	Yes
 
 BUILD_DEPENDS=	lang/cython
 
-# I have had this run once, but not reliably, even with MODPY_TEST_LINK_SO
-# and a self-TDEP
-NO_TEST=	Yes
+MODPY_TEST_LINK_SO=	Yes
 
 .include <bsd.port.mk>
