@@ -1,8 +1,7 @@
 COMMENT=	perl module that provides geographic constants
-MODULES=	cpan	
+MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME=	Geo-Constants-0.06
-REVISION=	1
+DISTNAME=	Geo-Constants-0.07
 CATEGORIES=	geo
 
 # Perl
