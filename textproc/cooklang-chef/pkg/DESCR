@@ -1,0 +1,18 @@
+chef is a CLI to manage, read and convert cooklang recipes.
+
+Cooklang is a markup language for cooking recipes. An in depth
+explanation can be found in cooklang.org.
+
+Key features:
+
+* Web UI. The CLI comes with an embedded web UI.
+* Ingredient references. You can now refer to ingredients you
+  already used before.
+* Good error reporting. Error reports are a top priority.
+* Units. An ingredient quantity means nothing without a unit.
+  This is why the units are parsed and checked. With units come:
+  o Unit conversion. You can read your recipe in your prefered
+    unit system.
+  o Configurable units. You can add, remove and rename units.
+
+
