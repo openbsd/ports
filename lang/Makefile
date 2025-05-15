@@ -79,7 +79,6 @@
      SUBDIR += mruby
      SUBDIR += mujs
      SUBDIR += myhdl
-     SUBDIR += myrddin
      SUBDIR += nbfc
      SUBDIR += nekovm
      SUBDIR += newlisp
