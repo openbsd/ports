@@ -1742,6 +1742,7 @@
      SUBDIR += py-typeguard
      SUBDIR += py-typer
      SUBDIR += py-types-psutil
+     SUBDIR += py-types-python-dateutil
      SUBDIR += py-types-setuptools
      SUBDIR += py-typing-extensions
      SUBDIR += py-typing-inspection
