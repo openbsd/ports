@@ -4,12 +4,10 @@ NOT_FOR_ARCHS=	i386
 COMMENT=	distributed, versioned backups solution
 
 MODGO_MODNAME=	github.com/PlakarKorp/plakar
-MODGO_VERSION=	v1.0.1-beta.16
+MODGO_VERSION=	v1.0.1
 DISTNAME=	plakar-${MODGO_VERSION}
-PKGNAME=	plakar-1.0.1beta16
 
-# for patches
-WRKDIST=	${WRKDIR}/github.com/PlakarKorp/plakar@${MODGO_VERSION}
+HOMEPAGE=	https://plakar.io/
 
 CATEGORIES=	sysutils
 
