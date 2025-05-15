@@ -297,7 +297,6 @@
      SUBDIR += rawtherapee
      SUBDIR += recoil
      SUBDIR += ruby-chunky_png
-     SUBDIR += ruby-rmagick,ruby32
      SUBDIR += ruby-rmagick,ruby33
      SUBDIR += ruby-rmagick,ruby34
      SUBDIR += ruby-rqrcode

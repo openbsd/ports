@@ -1831,7 +1831,6 @@
      SUBDIR += ruby-deep_merge
      SUBDIR += ruby-diff-lcs
      SUBDIR += ruby-fast_gettext
-     SUBDIR += ruby-ffi,ruby32
      SUBDIR += ruby-ffi,ruby33
      SUBDIR += ruby-ffi,ruby34
      SUBDIR += ruby-ffi-compiler
@@ -1842,13 +1841,11 @@
      SUBDIR += ruby-hitimes
      SUBDIR += ruby-hocon
      SUBDIR += ruby-i18n
-     SUBDIR += ruby-idn,ruby32
      SUBDIR += ruby-idn,ruby33
      SUBDIR += ruby-idn,ruby34
      SUBDIR += ruby-isolate
      SUBDIR += ruby-json-schema
      SUBDIR += ruby-json_pure
-     SUBDIR += ruby-kgio,ruby32
      SUBDIR += ruby-kgio,ruby33
      SUBDIR += ruby-kgio,ruby34
      SUBDIR += ruby-locale
@@ -1856,13 +1853,10 @@
      SUBDIR += ruby-metaclass
      SUBDIR += ruby-mini_portile2
      SUBDIR += ruby-mocha
-     SUBDIR += ruby-narray,ruby32
      SUBDIR += ruby-narray,ruby33
      SUBDIR += ruby-narray,ruby34
-     SUBDIR += ruby-ncurses,ruby32
      SUBDIR += ruby-ncurses,ruby33
      SUBDIR += ruby-ncurses,ruby34
-     SUBDIR += ruby-nio4r,ruby32
      SUBDIR += ruby-nio4r,ruby33
      SUBDIR += ruby-nio4r,ruby34
      SUBDIR += ruby-opt_parse_validator
@@ -1870,7 +1864,6 @@
      SUBDIR += ruby-pastel
      SUBDIR += ruby-pathspec
      SUBDIR += ruby-pkg-config
-     SUBDIR += ruby-prof,ruby32
      SUBDIR += ruby-prof,ruby33
      SUBDIR += ruby-prof,ruby34
      SUBDIR += ruby-puppet-modulebuilder
@@ -1878,7 +1871,6 @@
      SUBDIR += ruby-puppet_forge
      SUBDIR += ruby-rake-compiler
      SUBDIR += ruby-rb_sys
-     SUBDIR += ruby-rbtree,ruby32
      SUBDIR += ruby-rbtree,ruby33
      SUBDIR += ruby-rbtree,ruby34
      SUBDIR += ruby-ref
@@ -1891,7 +1883,6 @@
      SUBDIR += ruby-semantic_puppet
      SUBDIR += ruby-shims
      SUBDIR += ruby-sorted_set
-     SUBDIR += ruby-subset_sum,ruby32
      SUBDIR += ruby-subset_sum,ruby33
      SUBDIR += ruby-subset_sum,ruby34
      SUBDIR += ruby-test-unit-ruby-core
@@ -1899,7 +1890,6 @@
      SUBDIR += ruby-tilt
      SUBDIR += ruby-wisper
      SUBDIR += ruby-xdg
-     SUBDIR += ruby-yajl,ruby32
      SUBDIR += ruby-yajl,ruby33
      SUBDIR += ruby-yajl,ruby34
      SUBDIR += ruby-zeitwerk
