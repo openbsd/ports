@@ -1,5 +1,6 @@
 COMMENT=	tiny CSS parser
 
+# www/py-bleach wants tinycss2<1.5
 MODPY_DISTV=	1.4.0
 DISTNAME=	tinycss2-${MODPY_DISTV}
 PKGNAME=	py-tinycss2-${MODPY_DISTV}
