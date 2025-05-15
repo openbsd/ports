@@ -139,6 +139,7 @@
      SUBDIR += py-gmpy2
      SUBDIR += py-graphviz
      SUBDIR += py-h5py
+     SUBDIR += py-lap
      SUBDIR += py-mpmath
      SUBDIR += py-netcdf4
      SUBDIR += py-networkx
