@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1716 2025/05/13 22:22:02 jturner Exp $
+# $OpenBSD: Quirks.pm,v 1.1717 2025/05/15 17:10:31 jturner Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1254,6 +1254,7 @@ setup_obsolete_reason(
 	3 => 'kross-interpreters-kf5',
 	3 => 'py3-notmuch',
 	3 => 'pop3d',
+	3 => 'myrddin',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
