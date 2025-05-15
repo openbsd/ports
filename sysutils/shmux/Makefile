@@ -3,7 +3,7 @@ COMMENT=		execute a command on many hosts in parallel
 DISTNAME=		shmux-1.0.3
 REVISION=		0
 CATEGORIES=		sysutils
-HOMEPAGE=		https://web.taranis.org/shmux/dist/
+HOMEPAGE=		https://web.taranis.org/shmux/
 SITES=			${HOMEPAGE}dist/
 EXTRACT_SUFX=		.tgz
 
