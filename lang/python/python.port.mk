@@ -316,9 +316,12 @@ MODPY_TEST_LINK_SO ?=	No
 MODPY_TEST_LINK_SRC ?=	${WRKSRC}
 MODPY_TEST_SO_CMD = for _dir in ${MODPY_TEST_LIBDIR:S,:, ,g}; do \
 	if [ -d $${_dir} ]; then \
-		cd $${_dir} && \
-		find . -name '*.so' -type f \
-			-exec ln -sf $${_dir}/{} ${MODPY_TEST_LINK_SRC}/{} \; ;\
+		if [ $${_dir} != ${MODPY_TEST_LINK_SRC} ]; then \
+			cd $${_dir} && \
+			find . -name '*.so' -type f \
+				-exec ln -sf $${_dir}/{} \
+					${MODPY_TEST_LINK_SRC}/{} \; ;\
+		fi; \
 	fi; done
 MODPY_TEST_TARGET +=	${MODPY_TEST_SO_CMD};
 .endif
