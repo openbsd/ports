@@ -26,7 +26,7 @@ Index: tools/v8_gypfiles/v8.gyp
                      'sources': [
                        '<(V8_ROOT)/src/trap-handler/handler-inside-posix.h',
                      ],
-@@ -1113,7 +1116,7 @@
+@@ -1166,7 +1169,7 @@
              }],
              ['v8_enable_webassembly==1', {
                'conditions': [
@@ -35,7 +35,7 @@ Index: tools/v8_gypfiles/v8.gyp
                    'sources': [
                      '<(V8_ROOT)/src/trap-handler/handler-inside-posix.cc',
                      '<(V8_ROOT)/src/trap-handler/handler-outside-posix.cc',
-@@ -1290,7 +1293,7 @@
+@@ -1343,7 +1346,7 @@
          }],
          # Platforms that don't have Compare-And-Swap (CAS) support need to link atomic library
          # to implement atomic memory access
@@ -44,7 +44,7 @@ Index: tools/v8_gypfiles/v8.gyp
            'link_settings': {
              'libraries': ['-latomic', ],
            },
-@@ -1756,6 +1759,9 @@
+@@ -1809,6 +1812,9 @@
          '<!@pymod_do_main(GN-scraper "<(V8_ROOT)/BUILD.gn"  "\\"mksnapshot.*?sources = ")',
        ],
        'conditions': [

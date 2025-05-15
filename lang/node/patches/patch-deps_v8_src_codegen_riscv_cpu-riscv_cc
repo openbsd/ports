@@ -27,12 +27,12 @@ Index: deps/v8/src/codegen/riscv/cpu-riscv.cc
 +	sysarch(RISCV_SYNC_ICACHE, &args);
 +# else
    char* end = reinterpret_cast<char*>(start) + size;
-   // The definition of this syscall is equal to
-   // SYSCALL_DEFINE3(riscv_flush_icache, uintptr_t, start,
-@@ -25,6 +35,7 @@ void CpuFeatures::FlushICache(void* start, size_t size
-   // corresponding system call number used in the kernel to dispatch the system
+   // SYS_riscv_flush_icache is a symbolic constant used in user-space code to
+   // identify the flush_icache system call, while __NR_riscv_flush_icache is the
+@@ -21,6 +31,7 @@ void CpuFeatures::FlushICache(void* start, size_t size
    // call.
-   syscall(__NR_riscv_flush_icache, start, end, 1);
+   // The flag set to zero will flush all cpu cores.
+   syscall(__NR_riscv_flush_icache, start, end, 0);
 +# endif // __OpenBSD__
  #endif  // !USE_SIMULATOR.
  }
