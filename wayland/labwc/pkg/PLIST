@@ -24,6 +24,7 @@ share/doc/labwc/themerc
 share/icons/hicolor/scalable/apps/labwc-symbolic.svg
 share/icons/hicolor/scalable/apps/labwc.svg
 share/locale/ar/LC_MESSAGES/labwc.mo
+share/locale/ca/LC_MESSAGES/labwc.mo
 share/locale/cs/LC_MESSAGES/labwc.mo
 share/locale/da/LC_MESSAGES/labwc.mo
 share/locale/de/LC_MESSAGES/labwc.mo
@@ -42,6 +43,7 @@ share/locale/ja/LC_MESSAGES/labwc.mo
 share/locale/ka/LC_MESSAGES/labwc.mo
 share/locale/ko/LC_MESSAGES/labwc.mo
 share/locale/lt/LC_MESSAGES/labwc.mo
+share/locale/ms/LC_MESSAGES/labwc.mo
 share/locale/nl/LC_MESSAGES/labwc.mo
 share/locale/pa/LC_MESSAGES/labwc.mo
 share/locale/pl/LC_MESSAGES/labwc.mo
