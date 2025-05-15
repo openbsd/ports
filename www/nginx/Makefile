@@ -21,6 +21,7 @@ COMMENT-stream=		nginx TCP/UDP proxy module
 COMMENT-xslt=		nginx XSLT filter module
 
 VERSION=	1.28.0
+REVISION=	0
 DISTNAME=	nginx-${VERSION}
 CATEGORIES=	www
 

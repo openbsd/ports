@@ -4,6 +4,7 @@ COMMENT =	Grand Central Dispatch
 
 PKGNAME =	libdispatch-$V
 V =		6.0.3
+REVISION =	0
 
 GH_ACCOUNT =	apple
 GH_PROJECT =	swift-corelibs-libdispatch
