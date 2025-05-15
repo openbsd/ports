@@ -16,7 +16,6 @@
      SUBDIR += jxplorer
      SUBDIR += kdb
      SUBDIR += kexi
-     SUBDIR += ksql
      SUBDIR += kyotocabinet
      SUBDIR += lbdb
      SUBDIR += leveldb
