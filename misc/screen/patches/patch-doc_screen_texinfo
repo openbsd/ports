@@ -85,12 +85,3 @@ Index: doc/screen.texinfo
  @section Backtick
  @deffn Command backtick @var{id} @var{lifespan} @var{autorefresh} @var{command} [@var{args}]
  @deffnx Command backtick @var{id}
-@@ -5940,7 +5940,7 @@ of @code{Screen} which you are using.  Also include in
- hardware and operating system, the compiler used to compile, a
- description of the bug behavior, and the conditions that triggered the
- bug. In case of security issue please send an mail to
--@w{@samp{alexander_naumov@opensuse.org}}.
-+@w{@samp{alexander_naumov@@opensuse.org}}.
- 
- @node Availability,  , Reporting Bugs, Bugs
- @section Availability
