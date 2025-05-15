@@ -3,7 +3,7 @@ COMMENT =		Python charting and plotting API
 MODPY_DISTV =		3.8.3
 DISTNAME =		matplotlib-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		graphics devel math
 
@@ -29,7 +29,7 @@ MODPY_TEST_LINK_SRC =	${WRKSRC}/lib
 BUILD_DEPENDS =	devel/py-certifi>=2020.06.20 \
 		devel/py-pybind11>=2.6 \
 		math/qhull \
-		math/py-numpy>=1.25,<2 \
+		math/py-numpy>=1.25 \
 		textproc/py-sphinx
 
 RUN_DEPENDS=	devel/py-tz \
@@ -38,7 +38,7 @@ RUN_DEPENDS=	devel/py-tz \
 		devel/py-parsing>=2.3.1 \
 		devel/py-gobject3 \
 		math/py-contourpy>=1.0.1 \
-		math/py-numpy>=1.25,<2 \
+		math/py-numpy>=1.25 \
 		graphics/py-Pillow>=8.0.0 \
 		graphics/py-cairo \
 		graphics/py-cycler>=0.10 \
