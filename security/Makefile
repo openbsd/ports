@@ -342,7 +342,6 @@
      SUBDIR += reaver
      SUBDIR += recon-ng
      SUBDIR += regripper
-     SUBDIR += reop
      SUBDIR += rhash
      SUBDIR += rnp
      SUBDIR += routersploit
