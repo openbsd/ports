@@ -1,0 +1,8 @@
+Index: platform/gsutil/third_party/google-auth-library-python/google/__init__.py
+--- platform/gsutil/third_party/google-auth-library-python/google/__init__.py.orig
++++ platform/gsutil/third_party/google-auth-library-python/google/__init__.py
+@@ -0,0 +1,4 @@
++# fix import when py3-protobuf is installed (conflict with site-packages/google)
++# File "/usr/local/google-cloud-sdk/platform/gsutil/gslib/__main__.py", line 39, in <module>
++#   from google.auth import exceptions as google_auth_exceptions
++# ModuleNotFoundError: No module named 'google.auth'
