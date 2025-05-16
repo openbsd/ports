@@ -1,10 +1,9 @@
 COMMENT=	plugin and hook calling mechanisms for Python
 
-MODPY_DISTV=	1.5.0
+MODPY_DISTV=	1.6.0
 DISTNAME=	pluggy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	devel
-REVISION=	1
 
 # MIT
 PERMIT_PACKAGE=	Yes
