@@ -4,7 +4,7 @@ aarch64: make -Z branch-protection=bti,pac-ret the default
 Index: compiler/rustc_session/src/options.rs
 --- compiler/rustc_session/src/options.rs.orig
 +++ compiler/rustc_session/src/options.rs
-@@ -1922,6 +1922,25 @@ pub mod parse {
+@@ -1924,6 +1924,25 @@ pub mod parse {
      }
  }
  
