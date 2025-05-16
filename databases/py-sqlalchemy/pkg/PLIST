@@ -163,12 +163,15 @@ lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/oracle/${MODPY_PYCA
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/oracle/${MODPY_PYCACHE}provision.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/oracle/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/oracle/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/oracle/${MODPY_PYCACHE}vector.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/oracle/${MODPY_PYCACHE}vector.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/oracle/base.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/oracle/cx_oracle.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/oracle/dictionary.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/oracle/oracledb.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/oracle/provision.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/oracle/types.py
+lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/oracle/vector.py
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/postgresql/
 lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/postgresql/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/sqlalchemy/dialects/postgresql/${MODPY_PYCACHE}/
