@@ -12,6 +12,10 @@ CATEGORIES =	security
 # BSD
 PERMIT_PACKAGE =	Yes
 
+# base-gcc "size of array 'type name' is negative"
+COMPILER =		base-clang ports-gcc
+COMPILER_LANGS =	c
+
 WANTLIB =	c
 
 CONFIGURE_STYLE =	simple
