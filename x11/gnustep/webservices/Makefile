@@ -17,8 +17,7 @@ LIB_DEPENDS =		x11/gnustep/performance
 MODGNUSTEP_IS_FRAMEWORK = Yes
 
 CONFIGURE_STYLE =	gnu
-MAKE_FLAGS +=	WebServices_INTERFACE_VERSION=${LIBWebServices_VERSION} \
-		AUTOGSDOC=echo
+MAKE_FLAGS +=	WebServices_INTERFACE_VERSION=${LIBWebServices_VERSION}
 
 NO_TEST =	No
 do-test:

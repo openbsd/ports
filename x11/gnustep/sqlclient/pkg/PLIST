@@ -43,9 +43,3 @@ lib/GNUstep/Bundles/SQLClient${SHLIB_VERSION}/SQLite_libs.bundle/Resources/Info-
 @bin lib/GNUstep/Bundles/SQLClient${SHLIB_VERSION}/SQLite_libs.bundle/SQLite_libs
 lib/GNUstep/Bundles/SQLClient${SHLIB_VERSION}/SQLite_libs.bundle/stamp.make
 @lib lib/libSQLClient.so.${LIBSQLClient_VERSION}
-share/doc/GNUstep/SQLClient/
-share/doc/GNUstep/SQLClient/OrderedSymbolDeclarations.plist
-share/doc/GNUstep/SQLClient/SQLClient.gsdoc
-share/doc/GNUstep/SQLClient/SQLClient.html
-share/doc/GNUstep/SQLClient/SQLClient.igsdoc
-share/doc/GNUstep/SQLClient/dependencies

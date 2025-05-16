@@ -15,7 +15,6 @@ WANTLIB =		pthread
 MODGNUSTEP_NEEDS_GUI = No
 MODGNUSTEP_NEEDS_BACK = No
 
-MAKE_FLAGS +=	Performance_INTERFACE_VERSION=${LIBPerformance_VERSION} \
-		AUTOGSDOC=echo
+MAKE_FLAGS +=	Performance_INTERFACE_VERSION=${LIBPerformance_VERSION}
 
 .include <bsd.port.mk>

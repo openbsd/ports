@@ -3,7 +3,7 @@ COMMENT =	GNUstep webserver framework
 VERSION =	1.6.0
 DISTNAME =	WebServer-${VERSION}
 PKGNAME =	gnustep-webserver-${VERSION}
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  WebServer	2.2
 

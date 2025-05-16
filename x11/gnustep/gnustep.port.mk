@@ -67,6 +67,8 @@ LIB_DEPENDS += ${MODGNUSTEP_LIB_DEPENDS}
 RUN_DEPENDS += ${MODGNUSTEP_RUN_DEPENDS}
 
 MAKE_ENV +=	messages=yes
+# XXX autogsdoc tends to crash, disable it when building ports
+MAKE_ENV +=	documentation=no
 
 .ifdef DEBUG
 CONFIGURE_ARGS +=       --enable-debug --disable-strip
