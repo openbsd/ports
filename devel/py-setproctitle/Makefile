@@ -1,6 +1,6 @@
 COMMENT=	library for getting/setting process names
 
-MODPY_DISTV=	1.3.5
+MODPY_DISTV=	1.3.6
 DISTNAME=	setproctitle-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
