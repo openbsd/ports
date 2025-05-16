@@ -93,10 +93,13 @@ lib/python${MODPY_VERSION}/site-packages/validators/i18n/${MODPY_PYCACHE}fr.${MO
 lib/python${MODPY_VERSION}/site-packages/validators/i18n/${MODPY_PYCACHE}fr.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/validators/i18n/${MODPY_PYCACHE}ind.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/validators/i18n/${MODPY_PYCACHE}ind.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/validators/i18n/${MODPY_PYCACHE}ru.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/validators/i18n/${MODPY_PYCACHE}ru.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/validators/i18n/es.py
 lib/python${MODPY_VERSION}/site-packages/validators/i18n/fi.py
 lib/python${MODPY_VERSION}/site-packages/validators/i18n/fr.py
 lib/python${MODPY_VERSION}/site-packages/validators/i18n/ind.py
+lib/python${MODPY_VERSION}/site-packages/validators/i18n/ru.py
 lib/python${MODPY_VERSION}/site-packages/validators/iban.py
 lib/python${MODPY_VERSION}/site-packages/validators/ip_address.py
 lib/python${MODPY_VERSION}/site-packages/validators/length.py
