@@ -1,8 +1,8 @@
 COMMENT=	multi-screen window manager
 
 DISTNAME=	screen-5.0.1
-DISTFILES=	${DISTNAME}-1{${DISTNAME}}.tar.gz
-REVISION=	0
+PKGNAME=	screen-5.0.1.2
+DISTFILES=	${DISTNAME}-2{${DISTNAME}}.tar.gz
 CATEGORIES=	misc
 SITES=		${SITE_GNU:=screen/}
 
