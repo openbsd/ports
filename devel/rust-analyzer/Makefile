@@ -3,7 +3,7 @@ CATEGORIES =	devel
 
 GH_ACCOUNT =	rust-lang
 GH_PROJECT =	rust-analyzer
-GH_TAGNAME =	2024-03-18
+GH_TAGNAME =	2025-05-12
 
 DISTNAME =	${GH_PROJECT}-${GH_TAGNAME:S/-//g}
 
@@ -14,8 +14,7 @@ PERMIT_PACKAGE =	Yes
 
 RUN_DEPENDS =	lang/rust,-src \
 		lang/rust,-rustfmt
-BUILD_DEPENDS =	textproc/ruby-rouge \
-		textproc/asciidoctor
+BUILD_DEPENDS =	textproc/mdbook
 TEST_DEPENDS =	lang/rust,-rustfmt
 
 WANTLIB += ${MODCARGO_WANTLIB} m
@@ -34,14 +33,13 @@ MAKE_ENV += CFG_RELEASE=${GH_TAGNAME}
 
 # generate manual.html
 post-build:
-	cd ${WRKSRC} && ${SETENV} ${MAKE_ENV} \
-		${LOCALBASE}/bin/asciidoctor --safe docs/user/manual.adoc
+	cd ${WRKSRC}/docs/book && ${SETENV} ${MAKE_ENV} \
+		${LOCALBASE}/bin/mdbook build
 
 DOCDIR =	${PREFIX}/share/doc/rust-analyzer
 post-install:
 	${INSTALL_DATA_DIR} ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/user/manual.html ${DOCDIR}
-	${INSTALL_DATA} ${WRKSRC}/docs/user/manual.adoc ${DOCDIR}
+	cd ${WRKSRC}/docs/book && pax -rw book ${DOCDIR}
 
 .include "crates.inc"
 
