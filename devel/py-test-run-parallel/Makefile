@@ -1,10 +1,9 @@
 COMMENT=	pytest plugin to run tests concurrently
 
-MODPY_DISTV=	0.4.0
+MODPY_DISTV=	0.4.2
 DISTNAME=	pytest_run_parallel-${MODPY_DISTV}
 PKGNAME=	${DISTNAME:S/py/py-/:S/_/-/g}
 CATEGORIES=	devel
-REVISION=	0
 
 # MIT
 PERMIT_PACKAGE=	Yes
