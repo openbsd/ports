@@ -239,6 +239,7 @@ share/locale/ie/LC_MESSAGES/thunar.mo
 share/locale/is/LC_MESSAGES/thunar.mo
 share/locale/it/LC_MESSAGES/thunar.mo
 share/locale/ja/LC_MESSAGES/thunar.mo
+share/locale/ka/LC_MESSAGES/thunar.mo
 share/locale/kk/LC_MESSAGES/thunar.mo
 share/locale/ko/LC_MESSAGES/thunar.mo
 share/locale/lt/LC_MESSAGES/thunar.mo
@@ -267,6 +268,7 @@ share/locale/ug/LC_MESSAGES/thunar.mo
 share/locale/uk/LC_MESSAGES/thunar.mo
 share/locale/ur/LC_MESSAGES/thunar.mo
 share/locale/ur_PK/LC_MESSAGES/thunar.mo
+share/locale/vec/LC_MESSAGES/thunar.mo
 share/locale/vi/LC_MESSAGES/thunar.mo
 share/locale/zh_CN/LC_MESSAGES/thunar.mo
 share/locale/zh_HK/LC_MESSAGES/thunar.mo
