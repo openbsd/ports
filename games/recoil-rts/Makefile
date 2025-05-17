@@ -8,10 +8,10 @@ COMMENT =		real-time strategy game engine for Beyond All Reason
 # under setups->package->id: "manual-linux", see downloads->resources or
 # launch->engine
 
-V =			2025.04.01
+V =			2025.04.04
 PKGNAME =		recoil-rts-${V}
 
-DIST_TUPLE +=		github beyond-all-reason spring ${V} .
+DIST_TUPLE +=		github beyond-all-reason RecoilEngine ${V} .
 DIST_TUPLE +=		github mikke89 RmlUi \
 			7a06f27db04fe5d13a5dacc19b2b4544673a4eca \
 			rts/lib/RmlUi # MIT
@@ -77,7 +77,7 @@ LIB_DEPENDS =		archivers/minizip \
 			net/curl
 
 # use fmt::format while clang doesn't support std::format yet
-BUILD_DEPENDS +=		devel/fmt
+BUILD_DEPENDS +=	devel/fmt
 
 # per upstream, build type RELWITHDEBINFO is preferred because of crashhandler
 CONFIGURE_ARGS =	-DAI_TYPES="NATIVE" \
