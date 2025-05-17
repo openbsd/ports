@@ -1,5 +1,6 @@
 COMMENT =		Python binding generator for C++ libraries
 PKGNAME =		shiboken6-${VERSION}
+REVISION =		0
 
 SHARED_LIBS +=		shiboken6.abi3	1.0 # 0.0
 
@@ -19,7 +20,7 @@ LIB_DEPENDS =		${MODCLANG_LIB_DEPENDS} \
 			textproc/libxml \
 			textproc/libxslt
 
-CONFIGURE_ARGS +=	-DNUMPY_INCLUDE_DIR:PATH="${MODPY_SITEPKG}/numpy/core/include/" \
+CONFIGURE_ARGS +=	-DNUMPY_INCLUDE_DIR:PATH="${MODPY_SITEPKG}/numpy/_core/include/" \
 			-DBUILD_TESTS=OFF \
 			-DCMAKE_DISABLE_FIND_PACKAGE_Git=ON
 
