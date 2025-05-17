@@ -1,9 +1,9 @@
 COMMENT =	simple, lightweight XMPP C library
 
-V =		0.13.1
+V =		0.14.0
 DISTNAME =	libstrophe-${V}
 
-SHARED_LIBS =	strophe                 4.0 # 13.1
+SHARED_LIBS =	strophe                 4.1
 
 CATEGORIES =	net devel
 
