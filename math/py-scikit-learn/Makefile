@@ -1,10 +1,8 @@
 COMMENT =	set of python modules for machine learning and data mining
 
-# 1.4.2+ requires numpy 2.x
-MODPY_DISTV =	1.4.1.post1
-DISTNAME =		scikit-learn-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-REVISION =		1
+MODPY_DISTV =		1.5.2
+DISTNAME =		scikit_learn-${MODPY_DISTV}
+PKGNAME =		py-${DISTNAME:S/_/-/}
 
 CATEGORIES =		math
 
@@ -23,7 +21,7 @@ WANTLIB += ${COMPILER_LIBCXX} m
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PYBUILD =		mesonpy
 
 MODPY_PYTEST_ARGS =	-v
 MODPY_TEST_DIR = ${WRKSRC}/build/lib.openbsd-${OSREV}-${ARCH}-cpython-${MODPY_MAJORMINOR}
@@ -35,7 +33,7 @@ BUILD_DEPENDS =		lang/cython \
 RUN_DEPENDS =		math/py-numpy>=1.19.5 \
 			math/py-scipy>=1.6.0 \
 			sysutils/py-joblib>=1.2.0 \
-			sysutils/py-threadpoolctl>=2.0.0
+			sysutils/py-threadpoolctl>=3.1.0
 
 TEST_DEPENDS =		math/py-pandas
 
