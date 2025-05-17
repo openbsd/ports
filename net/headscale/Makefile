@@ -4,8 +4,7 @@ ONLY_FOR_ARCHS =	amd64 arm64
 COMMENT =	open source implementation of the Tailscale control server
 
 MODGO_MODNAME =	github.com/juanfont/headscale
-MODGO_VERSION =	v0.22.3
-REVISION =	0
+MODGO_VERSION =	v0.26.0
 
 DISTNAME =	headscale-${MODGO_VERSION}
 
@@ -22,12 +21,8 @@ WANTLIB +=	c pthread
 
 MODULES =		lang/go
 
-MODGO_LDFLAGS +=	-X ${MODGO_MODNAME}/cmd/headscale/cli.Version=$\
+MODGO_LDFLAGS +=	-X ${MODGO_MODNAME}/hscontrol/types.Version=$\
 			${MODGO_VERSION:S/v//}
-
-# disable https://go.dev/doc/go1.23#linker to unbreak with go-1.23.
-# XXX check if this is still needed in future updates
-MODGO_LDFLAGS += -checklinkname=0
 
 # for patches to apply
 WRKDIST =	${WRKSRC}

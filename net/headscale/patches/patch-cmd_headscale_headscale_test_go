@@ -12,16 +12,7 @@ Index: cmd/headscale/headscale_test.go
  		cfgFile,
  	)
  	if err != nil {
-@@ -85,7 +85,7 @@ func (*Suite) TestConfigLoading(c *check.C) {
- 
- 	// Symlink the example config file
- 	err = os.Symlink(
--		filepath.Clean(path+"/../../config-example.yaml"),
-+		filepath.Clean(path+"/../../config-example-test.yaml"),
- 		filepath.Join(tmpDir, "config.yaml"),
- 	)
- 	if err != nil {
-@@ -129,7 +129,7 @@ func (*Suite) TestDNSConfigLoading(c *check.C) {
+@@ -84,7 +84,7 @@ func (*Suite) TestConfigLoading(c *check.C) {
  
  	// Symlink the example config file
  	err = os.Symlink(

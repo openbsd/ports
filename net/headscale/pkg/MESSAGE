@@ -6,3 +6,8 @@ See ${PREFIX}/share/examples/headscale for examples of the new format.
 
 Command line flags previously taking --namespace or -n will now require
 --user or -u
+
+- The structure of database configuration has changed in version 0.23.0.
+
+Old structure has been removed and the configuration must be converted. See
+${PREFIX}/share/examples/headscale/config-example.yaml for the new structure.
