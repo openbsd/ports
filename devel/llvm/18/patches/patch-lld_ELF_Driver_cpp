@@ -78,6 +78,19 @@ Index: lld/ELF/Driver.cpp
    config->zNodefaultlib = hasZOption(args, "nodefaultlib");
    config->zNodelete = hasZOption(args, "nodelete");
    config->zNodlopen = hasZOption(args, "nodlopen");
+@@ -1587,9 +1609,9 @@ static void readConfigs(opt::InputArgList &args) {
+             arg->getValue() + "'");
+     parallel::strategy = hardware_concurrency(threads);
+     config->thinLTOJobs = v;
+-  } else if (parallel::strategy.compute_thread_count() > 16) {
+-    log("set maximum concurrency to 16, specify --threads= to change");
+-    parallel::strategy = hardware_concurrency(16);
++  } else if (parallel::strategy.compute_thread_count() > 4) {
++    log("set maximum concurrency to 4, specify --threads= to change");
++    parallel::strategy = hardware_concurrency(4);
+   }
+   if (auto *arg = args.getLastArg(OPT_thinlto_jobs_eq))
+     config->thinLTOJobs = arg->getValue();
 @@ -1776,6 +1798,23 @@ static void setConfigs(opt::InputArgList &args) {
        args.hasFlag(OPT_toc_optimize, OPT_no_toc_optimize, m == EM_PPC64);
    config->pcRelOptimize =

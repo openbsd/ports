@@ -86,7 +86,35 @@ Index: lld/ELF/Driver.cpp
    config->zNodefaultlib = hasZOption(args, "nodefaultlib");
    config->zNodelete = hasZOption(args, "nodelete");
    config->zNodlopen = hasZOption(args, "nodlopen");
-@@ -1582,6 +1605,23 @@ static void setConfigs(opt::InputArgList &args) {
+@@ -1382,8 +1405,12 @@ static void readConfigs(opt::InputArgList &args) {
+     config->mllvmOpts.emplace_back(arg->getValue());
+   }
+ 
++  config->threadCount = parallel::strategy.compute_thread_count();
++
+   // --threads= takes a positive integer and provides the default value for
+-  // --thinlto-jobs=.
++  // --thinlto-jobs=. If unspecified, cap the number of threads since
++  // overhead outweighs optimization for used parallel algorithms for the
++  // non-LTO parts.
+   if (auto *arg = args.getLastArg(OPT_threads)) {
+     StringRef v(arg->getValue());
+     unsigned threads = 0;
+@@ -1392,10 +1419,12 @@ static void readConfigs(opt::InputArgList &args) {
+             arg->getValue() + "'");
+     parallel::strategy = hardware_concurrency(threads);
+     config->thinLTOJobs = v;
++  } else if (config->threadCount > 4) {
++    log("set maximum concurrency to 4, specify --threads= to change");
++    parallel::strategy = hardware_concurrency(4);
+   }
+   if (auto *arg = args.getLastArg(OPT_thinlto_jobs_eq))
+     config->thinLTOJobs = arg->getValue();
+-  config->threadCount = parallel::strategy.compute_thread_count();
+ 
+   if (config->ltoo > 3)
+     error("invalid optimization level for LTO: " + Twine(config->ltoo));
+@@ -1582,6 +1611,23 @@ static void setConfigs(opt::InputArgList &args) {
        args.hasFlag(OPT_toc_optimize, OPT_no_toc_optimize, m == EM_PPC64);
    config->pcRelOptimize =
        args.hasFlag(OPT_pcrel_optimize, OPT_no_pcrel_optimize, m == EM_PPC64);
@@ -110,7 +138,7 @@ Index: lld/ELF/Driver.cpp
  }
  
  static bool isFormatBinary(StringRef s) {
-@@ -1721,7 +1761,7 @@ void LinkerDriver::inferMachineType() {
+@@ -1721,7 +1767,7 @@ void LinkerDriver::inferMachineType() {
  }
  
  // Parse -z max-page-size=<value>. The default value is defined by
@@ -119,7 +147,7 @@ Index: lld/ELF/Driver.cpp
  static uint64_t getMaxPageSize(opt::InputArgList &args) {
    uint64_t val = args::getZOptionValue(args, OPT_z, "max-page-size",
                                         target->defaultMaxPageSize);
-@@ -1738,7 +1778,7 @@ static uint64_t getMaxPageSize(opt::InputArgList &args
+@@ -1738,7 +1784,7 @@ static uint64_t getMaxPageSize(opt::InputArgList &args
  }
  
  // Parse -z common-page-size=<value>. The default value is defined by
@@ -128,7 +156,7 @@ Index: lld/ELF/Driver.cpp
  static uint64_t getCommonPageSize(opt::InputArgList &args) {
    uint64_t val = args::getZOptionValue(args, OPT_z, "common-page-size",
                                         target->defaultCommonPageSize);
-@@ -1757,6 +1797,16 @@ static uint64_t getCommonPageSize(opt::InputArgList &a
+@@ -1757,6 +1803,16 @@ static uint64_t getCommonPageSize(opt::InputArgList &a
    return val;
  }
  
@@ -145,7 +173,7 @@ Index: lld/ELF/Driver.cpp
  // Parses --image-base option.
  static std::optional<uint64_t> getImageBase(opt::InputArgList &args) {
    // Because we are using "Config->maxPageSize" here, this function has to be
-@@ -2784,6 +2834,11 @@ void LinkerDriver::link(opt::InputArgList &args) {
+@@ -2784,6 +2840,11 @@ void LinkerDriver::link(opt::InputArgList &args) {
    // optimizations such as DATA_SEGMENT_ALIGN in linker scripts. LLD's use of it
    // is limited to writing trap instructions on the last executable segment.
    config->commonPageSize = getCommonPageSize(args);
