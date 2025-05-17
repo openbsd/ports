@@ -1,0 +1,27 @@
+include/keyfinder/
+include/keyfinder/audiodata.h
+include/keyfinder/binode.h
+include/keyfinder/chromagram.h
+include/keyfinder/chromatransform.h
+include/keyfinder/chromatransformfactory.h
+include/keyfinder/constants.h
+include/keyfinder/exception.h
+include/keyfinder/fftadapter.h
+include/keyfinder/keyclassifier.h
+include/keyfinder/keyfinder.h
+include/keyfinder/lowpassfilter.h
+include/keyfinder/lowpassfilterfactory.h
+include/keyfinder/spectrumanalyser.h
+include/keyfinder/temporalwindowfactory.h
+include/keyfinder/toneprofiles.h
+include/keyfinder/windowfunctions.h
+include/keyfinder/workspace.h
+lib/cmake/KeyFinder/
+lib/cmake/KeyFinder/KeyFinderConfig.cmake
+lib/cmake/KeyFinder/KeyFinderConfigVersion.cmake
+lib/cmake/KeyFinder/KeyFinderTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/KeyFinder/KeyFinderTargets.cmake
+lib/cmake/KeyFinder/modules/
+lib/cmake/KeyFinder/modules/FindFFTW3.cmake
+@lib lib/libkeyfinder.so.${LIBkeyfinder_VERSION}
+lib/pkgconfig/libkeyfinder.pc

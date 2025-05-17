@@ -1,0 +1,2 @@
+libkeyfinder is a small C++11 library for estimating the musical key of digital
+audio. It is published under the GNU General Public License version 3 or later.
