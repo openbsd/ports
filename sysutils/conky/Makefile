@@ -5,7 +5,7 @@ COMMENT =	light-weight system monitor
 GH_ACCOUNT =	brndnmtthws
 GH_PROJECT =	conky
 GH_TAGNAME =	v1.22.1
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	sysutils
 
@@ -56,8 +56,10 @@ CONFIGURE_ARGS +=	-DBUILD_DOCS=ON
 CONFIGURE_ARGS +=	-DBUILD_X11=OFF
 .else
 CONFIGURE_ARGS +=	-DBUILD_X11=ON
-LIB_DEPENDS +=		graphics/imlib2
+LIB_DEPENDS +=		graphics/imlib2 \
+			x11/xcb-util-errors
 WANTLIB += ICE Imlib2 SM X11 Xdamage Xext Xfixes Xft Xinerama fontconfig xcb
+WANTLIB += xcb-errors
 .endif
 
 .include <bsd.port.mk>
