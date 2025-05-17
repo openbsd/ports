@@ -1,9 +1,9 @@
 COMMENT =		Google Translate text-to-speech API library and CLI tool
-MODPY_DISTV =	2.5.4
+MODPY_DISTV =		2.5.4
 DISTNAME =		gtts-${MODPY_DISTV}
 PKGNAME =		py-gTTS-${MODPY_DISTV}
 CATEGORIES =		textproc audio
-REVISION =		1
+REVISION =		2
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
@@ -17,7 +17,7 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		www/py-requests>=2.27,<3 \
-			devel/py-click>=7.1,<8.2
+			devel/py-click>=7.1,<9
 
 # XXX wants unported "testfixtures"
 TEST_DEPENDS =		devel/py-test \
