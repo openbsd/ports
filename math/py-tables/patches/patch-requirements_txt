@@ -31,7 +31,7 @@ Index: requirements.txt
      #   -r requirements.in
      #   blosc2
 -numpy==2.2.1 \
-+numpy==1.26.4 \
++numpy==2.0.2 \
      --hash=sha256:059e6a747ae84fce488c3ee397cee7e5f905fd1bda5fb18c66bc41807ff119b2 \
      --hash=sha256:08ef779aed40dbc52729d6ffe7dd51df85796a702afbf68a4f4e41fafdc8bda5 \
      --hash=sha256:164a829b6aacf79ca47ba4814b130c4020b202522a93d7bff2202bfb33b61c60 \
