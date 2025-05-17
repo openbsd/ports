@@ -1,10 +1,9 @@
 COMMENT=	fast numerical expression evaluator for NumPy
 
-MODPY_DISTV=	2.8.4
+MODPY_DISTV=	2.10.2
 DISTNAME=	numexpr-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 CATEGORIES=	math
-REVISION=	2
 
 # MIT
 PERMIT_PACKAGE=	Yes

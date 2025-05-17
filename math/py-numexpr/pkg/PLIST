@@ -23,10 +23,24 @@ lib/python${MODPY_VERSION}/site-packages/numexpr/${MODPY_PYCACHE}utils.${MODPY_P
 lib/python${MODPY_VERSION}/site-packages/numexpr/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/numexpr/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/numexpr/${MODPY_PYCACHE}version.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/numexpr/complex_functions.hpp
 lib/python${MODPY_VERSION}/site-packages/numexpr/cpuinfo.py
 lib/python${MODPY_VERSION}/site-packages/numexpr/expressions.py
+lib/python${MODPY_VERSION}/site-packages/numexpr/functions.hpp
+lib/python${MODPY_VERSION}/site-packages/numexpr/interp_body.cpp
+lib/python${MODPY_VERSION}/site-packages/numexpr/interpreter.cpp
 @so lib/python${MODPY_VERSION}/site-packages/numexpr/interpreter.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/numexpr/interpreter.hpp
+lib/python${MODPY_VERSION}/site-packages/numexpr/missing_posix_functions.hpp
+lib/python${MODPY_VERSION}/site-packages/numexpr/module.cpp
+lib/python${MODPY_VERSION}/site-packages/numexpr/module.hpp
+lib/python${MODPY_VERSION}/site-packages/numexpr/msvc_function_stubs.hpp
 lib/python${MODPY_VERSION}/site-packages/numexpr/necompiler.py
+lib/python${MODPY_VERSION}/site-packages/numexpr/numexpr_config.hpp
+lib/python${MODPY_VERSION}/site-packages/numexpr/numexpr_object.cpp
+lib/python${MODPY_VERSION}/site-packages/numexpr/numexpr_object.hpp
+lib/python${MODPY_VERSION}/site-packages/numexpr/opcodes.hpp
+lib/python${MODPY_VERSION}/site-packages/numexpr/str-two-way.hpp
 lib/python${MODPY_VERSION}/site-packages/numexpr/tests/
 lib/python${MODPY_VERSION}/site-packages/numexpr/tests/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/numexpr/tests/${MODPY_PYCACHE}/
@@ -37,3 +51,7 @@ lib/python${MODPY_VERSION}/site-packages/numexpr/tests/${MODPY_PYCACHE}test_nume
 lib/python${MODPY_VERSION}/site-packages/numexpr/tests/test_numexpr.py
 lib/python${MODPY_VERSION}/site-packages/numexpr/utils.py
 lib/python${MODPY_VERSION}/site-packages/numexpr/version.py
+lib/python${MODPY_VERSION}/site-packages/numexpr/win32/
+lib/python${MODPY_VERSION}/site-packages/numexpr/win32/pthread.c
+lib/python${MODPY_VERSION}/site-packages/numexpr/win32/pthread.h
+lib/python${MODPY_VERSION}/site-packages/numexpr/win32/stdint.h
