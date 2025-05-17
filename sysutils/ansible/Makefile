@@ -1,8 +1,7 @@
 COMMENT =		radically simple IT automation
 
-MODPY_DISTV =		11.4.0
+MODPY_DISTV =		11.5.0
 DISTNAME =		ansible-${MODPY_DISTV}
-REVISION =		0
 
 CATEGORIES =		sysutils
 
@@ -18,7 +17,7 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		setuptools
 
-RUN_DEPENDS =		sysutils/ansible-core>=2.18.0
+RUN_DEPENDS =		sysutils/ansible-core>=2.18.5
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/ansible
