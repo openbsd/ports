@@ -5,7 +5,7 @@ COMMENT =		tunnel all your traffic over Websocket or HTTP2
 
 GH_ACCOUNT =		erebe
 GH_PROJECT =		wstunnel
-GH_TAGNAME =		v10.1.11
+GH_TAGNAME =		v10.3.0
 
 CATEGORIES =		net
 
