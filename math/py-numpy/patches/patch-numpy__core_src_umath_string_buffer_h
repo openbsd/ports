@@ -1,0 +1,22 @@
+Fix build with ports-gcc: stdio.h defines getchar as a macro which confuses
+the g++ templating.
+
+../numpy/_core/src/umath/string_buffer.h:40:45: error: macro "getchar" passed 2 arguments, but takes just 0
+ getchar(const unsigned char *buf, int *bytes);
+                                             ^
+../numpy/_core/src/umath/string_buffer.h:40:1: error: 'template<ENCODING enc> npy_ucs4 getchar' redeclared as different kind of symbol
+ getchar(const unsigned char *buf, int *bytes);
+ ^~~~~~~
+
+Index: numpy/_core/src/umath/string_buffer.h
+--- numpy/_core/src/umath/string_buffer.h.orig
++++ numpy/_core/src/umath/string_buffer.h
+@@ -5,6 +5,8 @@
+ #include <cstddef>
+ #include <wchar.h>
+ 
++#undef getchar
++
+ #define NPY_NO_DEPRECATED_API NPY_API_VERSION
+ #define _MULTIARRAYMODULE
+ #define _UMATHMODULE

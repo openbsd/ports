@@ -1,0 +1,15 @@
+disable backtrace for now. maybe possible to enable now that we have
+libexecinfo in base, but needs checking to make sure we don't end up
+with unresolved symbols.
+
+Index: numpy/_core/meson.build
+--- numpy/_core/meson.build.orig
++++ numpy/_core/meson.build
+@@ -282,7 +282,6 @@ endforeach
+ 
+ # Other optional functions
+ optional_misc_funcs = [
+-  'backtrace',
+   'madvise',
+ ]
+ foreach func: optional_misc_funcs

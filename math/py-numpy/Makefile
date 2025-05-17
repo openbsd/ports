@@ -1,9 +1,8 @@
 COMMENT=	fast array and numeric programming library for Python
 
-MODPY_DISTV=	1.26.4
+MODPY_DISTV=	2.0.2
 DISTNAME=	numpy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	6
 
 CATEGORIES=	math devel
 
@@ -15,7 +14,7 @@ PERMIT_PACKAGE=	Yes
 # configure checks for C++17 (though doesn't seem to actually use it)
 COMPILER=	base-clang ports-gcc
 
-WANTLIB += ${MODPY_WANTLIB} m pthread
+WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB} m
 
 # Disable dwz: it fails on DWARF 5 symbols due to 128-bit arithmetic in _pcg64.
 # Alternative is CFLAGS += -D PCG_FORCE_EMULATED_128BIT_MATH

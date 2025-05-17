@@ -1,0 +1,21 @@
+Fix build on aarch64 by avoiding an ICE
+
+https://github.com/numpy/numpy/issues/27699#issuecomment-2692261936
+
+Index: numpy/_core/src/umath/loops_autovec.dispatch.c.src
+--- numpy/_core/src/umath/loops_autovec.dispatch.c.src.orig
++++ numpy/_core/src/umath/loops_autovec.dispatch.c.src
+@@ -104,11 +104,13 @@ NPY_NO_EXPORT void NPY_CPU_DISPATCH_CURFX(@TYPE@_right
+ #endif
+ }
+ 
++#pragma GCC optimize ("0")  // Deactivate optimisations
+ NPY_NO_EXPORT void NPY_CPU_DISPATCH_CURFX(@TYPE@_bitwise_count)
+ (char **args, npy_intp const *dimensions, npy_intp const *steps, void *NPY_UNUSED(func))
+ {
+     UNARY_LOOP_FAST(@type@, npy_ubyte, *out = npy_popcount@c@(in));
+ }
++#pragma GCC reset_options  // Re-activate optimisations
+ 
+ 
+ /**end repeat**/
