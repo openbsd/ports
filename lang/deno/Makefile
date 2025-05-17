@@ -6,7 +6,7 @@ DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
 
-VERSION =		2.3.1
+VERSION =		2.3.3
 HOMEPAGE =		https://deno.com/runtime
 
 DISTNAME =		deno-${VERSION}
@@ -31,12 +31,16 @@ MODCARGO_ENV +=		V8_FROM_SOURCE=1 \
 			HOME=${PORTHOME} \
 			LIBCLANG_PATH=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib \
 			GN_ARGS="clang_use_chrome_plugins=false \
-	                fatal_linker_warnings=false \
-	                is_clang=true \
-	                use_custom_libcxx=false \
-	                use_sysroot=false \
-	                use_udev=false \
-	                use_glib=false"
+			extra_cppflags=\"-idirafter ${LOCALBASE}/include -idirafter ${X11BASE}/include\" \
+			extra_ldflags=\"-L${LOCALBASE}/lib -L${X11BASE}/lib\" \
+			fatal_linker_warnings=false \
+			is_clang=true \
+			use_custom_libcxx=true \
+			use_custom_libunwind=true \
+			use_udev=true \
+			use_sysroot=false \
+			use_glib=false \
+			v8_enable_cet_ibt=true"
 
 # Makes the build look more alive while compiling v8
 MODCARGO_BUILD_ARGS +=	-vv
@@ -45,8 +49,9 @@ MODCARGO_RUSTFLAGS +=	-L${LOCALBASE}/lib
 
 MAKE_ENV =		${MODCARGO_ENV}
 
-COMPILER =		base-clang
-WANTLIB +=		${MODCARGO_WANTLIB} ${COMPILER_LIBCXX} m execinfo ffi onig zstd
+MODCLANG_VERSION = 19
+COMPILER =		ports-clang
+WANTLIB +=		${MODCARGO_WANTLIB} m execinfo ffi zstd
 
 BUILD_DEPENDS =		databases/sqlite3 \
 			devel/cmake/core \
@@ -54,11 +59,13 @@ BUILD_DEPENDS =		databases/sqlite3 \
 			devel/gn \
 			devel/ninja \
 			devel/protobuf-c \
-			lang/rust,-rustfmt
+			lang/rust,-rustfmt \
+			${RUN_DEPENDS}
 
 LIB_DEPENDS =		archivers/zstd \
-			devel/libffi \
-			textproc/oniguruma
+			devel/libffi
+
+RUN_DEPENDS =		sysutils/libudev-openbsd
 
 .include "crates.inc"
 
@@ -70,7 +77,7 @@ PORTHOME =		${WRKSRC}
 
 DENO_CORE_ICUDATA_V =	0.74.0
 DENO_TS_V =		0.20.2
-V8_CARGO_V =		135.1.0
+V8_CARGO_V =		137.1.0
 
 V8_DISTDIR =		${MODCARGO_VENDOR_DIR}/v8-${V8_CARGO_V}
 V8_BPGO_DIR =		${V8_DISTDIR}/v8/tools/builtins-pgo

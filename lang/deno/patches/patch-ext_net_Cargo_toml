@@ -1,10 +1,10 @@
 Index: ext/net/Cargo.toml
 --- ext/net/Cargo.toml.orig
 +++ ext/net/Cargo.toml
-@@ -31,6 +31,3 @@ thiserror.workspace = true
- tokio.workspace = true
+@@ -32,5 +32,5 @@ tokio.workspace = true
  url.workspace = true
  web-transport-proto.workspace = true
--
+ 
 -[target.'cfg(unix)'.dependencies]
--tokio-vsock.workspace = true
++[target.'cfg(any(target_os = "linux", target_os = "macos"))'.dependencies]
+ tokio-vsock.workspace = true

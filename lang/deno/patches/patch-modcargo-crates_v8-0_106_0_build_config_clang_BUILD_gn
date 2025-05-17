@@ -1,8 +1,8 @@
-Index: modcargo-crates/v8-135.1.0/build/config/clang/BUILD.gn
---- modcargo-crates/v8-135.1.0/build/config/clang/BUILD.gn.orig
-+++ modcargo-crates/v8-135.1.0/build/config/clang/BUILD.gn
-@@ -224,7 +224,7 @@ clang_lib("compiler_builtins") {
-       libname = "ios"
+Index: modcargo-crates/v8-137.1.0/build/config/clang/BUILD.gn
+--- modcargo-crates/v8-137.1.0/build/config/clang/BUILD.gn.orig
++++ modcargo-crates/v8-137.1.0/build/config/clang/BUILD.gn
+@@ -277,7 +277,7 @@ clang_lib("compiler_builtins") {
+       assert(false, "unsupported target_platform=$target_platform")
      }
    } else {
 -    libname = "builtins"

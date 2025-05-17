@@ -1,7 +1,7 @@
 Index: ext/http/http_next.rs
 --- ext/http/http_next.rs.orig
 +++ ext/http/http_next.rs
-@@ -1046,7 +1046,7 @@ where
+@@ -1054,7 +1054,7 @@ where
      NetworkStream::Unix(conn) => {
        serve_http(conn, connection_properties, lifetime, tx, options)
      }

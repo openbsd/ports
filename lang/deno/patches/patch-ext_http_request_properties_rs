@@ -15,10 +15,10 @@ Index: ext/http/request_properties.rs
        NetworkStreamAddress::Unix(_) => Rc::from("unix"),
 -      #[cfg(unix)]
 +      #[cfg(target_os = "linux")]
-       NetworkStreamAddress::Vsock(addr) => Rc::from(addr.cid().to_string()),
-     };
-     let local_port = listen_properties.local_port;
-@@ -212,7 +212,7 @@ fn listener_properties(
+       NetworkStreamAddress::Vsock(addr) => {
+         Rc::from(format!("vsock:{}", addr.cid()))
+       }
+@@ -214,7 +214,7 @@ fn listener_properties(
      NetworkStreamAddress::Ip(ip) => Some(ip.port() as _),
      #[cfg(unix)]
      NetworkStreamAddress::Unix(_) => None,
@@ -27,7 +27,7 @@ Index: ext/http/request_properties.rs
      NetworkStreamAddress::Vsock(vsock) => Some(vsock.port()),
    };
    Ok(HttpListenProperties {
-@@ -258,7 +258,7 @@ fn req_host_from_addr(
+@@ -260,7 +260,7 @@ fn req_host_from_addr(
        percent_encoding::NON_ALPHANUMERIC,
      )
      .to_string(),
@@ -36,7 +36,7 @@ Index: ext/http/request_properties.rs
      NetworkStreamAddress::Vsock(vsock) => {
        format!("{}:{}", vsock.cid(), vsock.port())
      }
-@@ -271,7 +271,7 @@ fn req_scheme_from_stream_type(stream_type: NetworkStr
+@@ -273,7 +273,7 @@ fn req_scheme_from_stream_type(stream_type: NetworkStr
      NetworkStreamType::Tls => "https://",
      #[cfg(unix)]
      NetworkStreamType::Unix => "http+unix://",
@@ -45,7 +45,7 @@ Index: ext/http/request_properties.rs
      NetworkStreamType::Vsock => "http+vsock://",
    }
  }
-@@ -297,7 +297,7 @@ fn req_host<'a>(
+@@ -299,7 +299,7 @@ fn req_host<'a>(
        }
        #[cfg(unix)]
        NetworkStreamType::Unix => {}

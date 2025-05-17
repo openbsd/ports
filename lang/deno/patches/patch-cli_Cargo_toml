@@ -1,5 +1,6 @@
 * deno's upgrade feature cannot work on OpenBSD, directly disable it
 * disable deno_panic
+* disable vsock
 
 Index: cli/Cargo.toml
 --- cli/Cargo.toml.orig
@@ -22,12 +23,11 @@ Index: cli/Cargo.toml
  
  [build-dependencies]
  deno_runtime = { workspace = true, features = ["include_js_files_for_snapshotting", "only_snapshotted_js_sources"] }
-@@ -83,7 +83,7 @@ deno_media_type = { workspace = true, features = ["dat
- deno_npm.workspace = true
- deno_npm_cache.workspace = true
- deno_package_json = { workspace = true, features = ["sync"] }
--deno_panic = { version = "0.1.0", optional = true }
-+#deno_panic = { version = "0.1.0", optional = true }
- deno_path_util.workspace = true
- deno_resolver = { workspace = true, features = ["sync"] }
- deno_runtime = { workspace = true, features = ["include_js_files_for_snapshotting"] }
+@@ -192,6 +192,7 @@ winapi = { workspace = true, features = ["knownfolders
+ [target.'cfg(unix)'.dependencies]
+ nix.workspace = true
+ shell-escape = "=0.1.5"
++[target.'cfg(any(target_os = "linux", target_os = "macos"))'.dependencies]
+ tokio-vsock.workspace = true
+ 
+ [dev-dependencies]

@@ -4,7 +4,7 @@ In addition, disable the generation of a stacktrace URL
 Index: cli/main.rs
 --- cli/main.rs.orig
 +++ cli/main.rs
-@@ -438,7 +438,7 @@ pub fn main() {
+@@ -452,7 +452,7 @@ pub fn main() {
    #[cfg(feature = "dhat-heap")]
    let profiler = dhat::Profiler::new_heap();
  
@@ -13,3 +13,30 @@ Index: cli/main.rs
  
    util::unix::raise_fd_limit();
    util::windows::ensure_stdio_open();
+@@ -626,7 +626,15 @@ fn wait_for_start(
+     use tokio::io::BufReader;
+     use tokio::net::TcpListener;
+     use tokio::net::UnixSocket;
++    #[cfg(any(
++      target_os = "linux",
++      target_os = "macos"
++    ))]
+     use tokio_vsock::VsockAddr;
++    #[cfg(any(
++      target_os = "linux",
++      target_os = "macos"
++    ))]
+     use tokio_vsock::VsockListener;
+ 
+     init_v8(&Flags::default());
+@@ -663,6 +671,10 @@ fn wait_for_start(
+         let (rx, tx) = stream.into_split();
+         (Box::new(rx), Box::new(tx))
+       }
++      #[cfg(any(
++        target_os = "linux",
++        target_os = "macos"
++      ))]
+       Some(("vsock", addr)) => {
+         let Some((cid, port)) = addr.split_once(':') else {
+           deno_core::anyhow::bail!("invalid vsock addr");
