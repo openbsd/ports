@@ -1,0 +1,4 @@
+This small utility is the automation-oriented DJs best friend.
+By making use of Ibrahim Sha'ath's high quality libkeyfinder library
+(now maintained by Mixxx DJ), this utility can be used to estimate the
+musical key of many different audio file formats.

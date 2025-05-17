@@ -1,0 +1,2 @@
+@bin bin/keyfinder-cli
+@man man/man1/keyfinder-cli.1
