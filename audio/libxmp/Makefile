@@ -1,6 +1,6 @@
 COMMENT =	module player library
 
-DISTNAME =	libxmp-4.6.2
+DISTNAME =	libxmp-4.6.3
 CATEGORIES =	audio
 
 SHARED_LIBS +=	xmp		1.1	# 4.6
