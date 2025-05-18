@@ -480,7 +480,7 @@ Index: src/rttable.c
 +                    my_log(LOG_DEBUG, 0, "Setting TTL for DOWNSTREAM Vif %d to %d", Dp->index, Dp->threshold);
 +                    mrDesc.TtlVc[ Dp->index ] = Dp->threshold;
 +                }
-+                } else {
++            } else {
 +                if(Dp->state == IF_STATE_UPSTREAM) {
 +                    my_log(LOG_DEBUG, 0, "Identified VIF #%d as upstream.", Dp->index);
 +                    mrDesc.InVif = Dp->index;
