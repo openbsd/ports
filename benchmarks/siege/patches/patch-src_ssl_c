@@ -1,0 +1,14 @@
+Remove last use of CRYPTO_thread_id()
+
+Index: src/ssl.c
+--- src/ssl.c.orig
++++ src/ssl.c
+@@ -237,7 +237,7 @@ SSL_pthreads_locking_callback(int mode, int type, char
+ {
+   if( my.debug == 4 ){
+     fprintf(
+-      stderr,"thread=%4d mode=%s lock=%s %s:%d\n", (int)CRYPTO_thread_id(),
++      stderr,"thread=%4d mode=%s lock=%s %s:%d\n", (int)pthread_self(),
+       (mode&CRYPTO_LOCK)?"l":"u", (type&CRYPTO_READ)?"r":"w",file,line
+     );
+   }
