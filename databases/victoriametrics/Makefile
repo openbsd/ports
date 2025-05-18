@@ -1,7 +1,6 @@
 COMMENT =		fast, cost-effective and scalable time series database
 
-# 1.115.0 requires Go 1.24.2
-V =			1.114.0
+V =			1.117.1
 
 DIST_TUPLE +=		github VictoriaMetrics VictoriaMetrics v${V} . # Apache License 2.0
 
@@ -51,13 +50,13 @@ do-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/doc/vmetrics/
 	${INSTALL_DATA} ${WRKSRC}/README.md ${PREFIX}/share/doc/vmetrics/
 	${INSTALL_DATA} ${WRKSRC}/LICENSE ${PREFIX}/share/doc/vmetrics/
-	(cd ${WRKSRC}/docs && pax -w vm*) | \
-	    (cd ${PREFIX}/share/doc/vmetrics/ && pax -r -c '*.excalidraw')
+	(cd ${WRKSRC}/docs/victoriametrics/ && pax -dw *) | \
+	    (cd ${PREFIX}/share/doc/vmetrics/ && pax -r)
 	${INSTALL_DATA} ${WRKSRC}/app/vmauth/example_config.yml \
 	    ${PREFIX}/share/doc/vmetrics/vmauth_example_config.yml
 	${INSTALL_DATA} ${WRKSRC}/deployment/docker/rules/alerts.yml \
 	    ${PREFIX}/share/doc/vmetrics/vmetricsalert_example_config.yml
-	${INSTALL_DATA} ${WRKSRC}/deployment/docker/prometheus.yml \
+	${INSTALL_DATA} ${WRKSRC}/deployment/docker/prometheus-vm-single.yml \
 	    ${PREFIX}/share/doc/vmetrics/vmetrics_example_config.yml
 
 .include <bsd.port.mk>
