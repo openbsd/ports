@@ -1,0 +1,28 @@
+Index: code/graphics/opengl/gropenglopenxr.cpp
+--- code/graphics/opengl/gropenglopenxr.cpp.orig
++++ code/graphics/opengl/gropenglopenxr.cpp
+@@ -21,7 +21,7 @@
+ #include "graphics/opengl/ShaderProgram.h"
+ #include "osapi/osapi.h"
+ 
+-#if defined __APPLE_CC__
++#if defined __APPLE_CC__ || defined __OpenBSD__
+ 
+ //Not supported
+ 
+@@ -38,7 +38,7 @@
+ 
+ #include <SDL_syswm.h>
+ 
+-#ifndef __APPLE_CC__
++#if !defined __APPLE_CC__ && !defined __OpenBSD__
+ 
+ //SETUP FUNCTIONS OGL
+ SCP_vector<const char*> gr_opengl_openxr_get_extensions() {
+@@ -473,4 +473,4 @@ bool gr_opengl_openxr_acquire_swapchain_buffers() { re
+ 
+ bool gr_opengl_openxr_flip() { return false; }
+ 
+-#endif
+\ No newline at end of file
++#endif

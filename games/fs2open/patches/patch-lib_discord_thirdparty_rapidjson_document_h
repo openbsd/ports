@@ -1,7 +1,7 @@
 Index: lib/discord/thirdparty/rapidjson/document.h
 --- lib/discord/thirdparty/rapidjson/document.h.orig
 +++ lib/discord/thirdparty/rapidjson/document.h
-@@ -322,7 +322,7 @@ struct GenericStringRef {
+@@ -323,7 +323,7 @@ struct GenericStringRef {
      operator const Ch *() const { return s; }
  
      const Ch* const s; //!< plain CharType pointer

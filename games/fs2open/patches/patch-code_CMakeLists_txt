@@ -1,9 +1,10 @@
 correct capitalization for libSDL2
+skip OpenXR
 
 Index: code/CMakeLists.txt
 --- code/CMakeLists.txt.orig
 +++ code/CMakeLists.txt
-@@ -31,7 +31,7 @@ TARGET_LINK_LIBRARIES(code PUBLIC ${PNG_LIBS})
+@@ -35,7 +35,7 @@ TARGET_LINK_LIBRARIES(code PUBLIC ${PNG_LIBS})
  TARGET_LINK_LIBRARIES(code PUBLIC ${JPEG_LIBS})
  TARGET_LINK_LIBRARIES(code PUBLIC lz4)
  
@@ -12,3 +13,19 @@ Index: code/CMakeLists.txt
  
  if (FSO_BUILD_WITH_FFMPEG)
  	TARGET_LINK_LIBRARIES(code PUBLIC ffmpeg)
+@@ -79,7 +79,7 @@ target_link_libraries(code PUBLIC hidapi::hidapi)
+ 
+ target_link_libraries(code PUBLIC imgui)
+ 
+-IF(NOT APPLE)
++IF(NOT APPLE AND NOT CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
+ 	target_link_libraries(code PUBLIC OpenXR::openxr_loader)
+ 	target_include_directories(code PUBLIC OpenXR::Headers)
+ ENDIF()
+@@ -139,4 +139,4 @@ set_target_properties(code PROPERTIES XCODE_ATTRIBUTE_
+ set_target_properties(code PROPERTIES XCODE_ATTRIBUTE_GCC_SYMBOLS_PRIVATE_EXTERN[variant=Debug] "NO")
+ 
+ # Prevent GCC warnings in third-party BitOp... see GitHub #4366
+-suppress_file_warnings(scripting/lua/bitop/bit.c)
+\ No newline at end of file
++suppress_file_warnings(scripting/lua/bitop/bit.c)

@@ -3,9 +3,8 @@ ONLY_FOR_ARCHS =	aarch64 amd64 i386
 
 COMMENT =	open source game engine based on FreeSpace 2
 
-V =		23.2.1
+V =		24.2.0
 PKGNAME =	fs2open-${V}
-REVISION =	1
 
 CATEGORIES =	games
 
@@ -43,23 +42,17 @@ CXXFLAGS +=		-I${X11BASE}/include -I${LOCALBASE}/include
 MODCMAKE_LDFLAGS =	-L${X11BASE}/lib -L${LOCALBASE}/lib
 
 CONFIGURE_ARGS =	-DCMAKE_INSTALL_PREFIX=${LOCALBASE}/share/fs2open \
-			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=On
+			-DCMAKE_DISABLE_FIND_PACKAGE_Doxygen=ON
 
-# XXX: disable vulkan until upstream supports vulkan 1.4 API:
-#	error: assigning to 'vk::PFN_DebugReportCallbackEXT' (...) from
-#		incompatible type VkBool32 ...
-#	error: no template named 'ObjectDestroy' in namespace 'vk';
-#		did you mean 'vk::detail::ObjectDestroy'?
-CONFIGURE_ARGS +=	-DFSO_BUILD_WITH_VULKAN=Off
+CONFIGURE_ENV +=	C_OPT_FLAG_DEBUG="${CFLAGS}" \
+			C_OPT_FLAG_RELEASE="${CFLAGS}" \
+			CXX_OPT_FLAG_DEBUG="${CXXFLAGS}" \
+			CXX_OPT_FLAG_RELEASE="${CXXFLAGS}"
 
 # currently not building; would be ${WRKBUILD}/bin/unittests
 NO_TEST =		Yes
 
 WRKDIST =		${WRKDIR}/fs2open.github.com-release_${V:S/./_/g}
-
-# remove bundled SDL
-post-extract:
-	rm -rf	${WRKSRC}/lib/libsdl
 
 do-gen:
 	${SUBST_CMD} ${WRKSRC}/CMakeLists.txt

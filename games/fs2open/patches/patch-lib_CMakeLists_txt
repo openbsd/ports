@@ -1,14 +1,13 @@
-disable bundled SDL
-
 Index: lib/CMakeLists.txt
 --- lib/CMakeLists.txt.orig
 +++ lib/CMakeLists.txt
-@@ -15,8 +15,6 @@ if (FSO_BUILD_WITH_OPENGL)
- 	add_subdirectory(opengl)
- endif()
+@@ -61,6 +61,6 @@ add_subdirectory(hidapi)
  
--ADD_SUBDIRECTORY(libsdl)
--
- ADD_SUBDIRECTORY(jansson)
- # These are only required for the web-ui which is non-Windows
- IF(UNIX)
+ ADD_SUBDIRECTORY(imgui)
+ 
+-if(NOT APPLE)
++if(NOT APPLE AND NOT CMAKE_SYSTEM_NAME MATCHES "OpenBSD")
+ 	add_subdirectory(openxr)
+-endif()
+\ No newline at end of file
++endif()
