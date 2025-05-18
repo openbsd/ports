@@ -63,6 +63,7 @@
      SUBDIR += id3ed
      SUBDIR += id3lib
      SUBDIR += jack
+     SUBDIR += keyfinder-cli
      SUBDIR += ladspa
      SUBDIR += lame
      SUBDIR += liba52
@@ -79,6 +80,7 @@
      SUBDIR += libebur128
      SUBDIR += libgpod
      SUBDIR += libid3tag
+     SUBDIR += libkeyfinder
      SUBDIR += liblastfm
      SUBDIR += liblo
      SUBDIR += libmad
