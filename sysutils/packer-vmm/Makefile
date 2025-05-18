@@ -3,7 +3,7 @@ ONLY_FOR_ARCHS =	amd64
 
 COMMENT =	vmm(4) builder engine for HashiCorp Packer
 
-V =		1.7.3
+V =		1.7.4
 MODGO_MODNAME =	github.com/double-p/packer-builder-openbsd-vmm
 MODGO_VERSION =	v${V}
 DISTNAME =	packer-vmm-${V}
