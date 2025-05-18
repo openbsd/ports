@@ -1,14 +1,14 @@
 COMMENT =      Scientific Programming Language
 
-VERSION =	9.3.0
+VERSION =	10.1.0
 DISTNAME =	octave-${VERSION}
 EXTRACT_SUFX =	.tar.xz
 CATEGORIES =	math
-REVISION =	0
 
-SHARED_LIBS +=	octave		18.0
-SHARED_LIBS +=	octgui		12.0
-SHARED_LIBS +=	octinterp	17.0
+SHARED_LIBS +=	octave		19.0
+SHARED_LIBS +=	octgui		13.0
+SHARED_LIBS +=	octinterp	18.0
+SHARED_LIBS +=	octmex		0.0
 
 HOMEPAGE =	https://www.octave.org
 
@@ -109,7 +109,7 @@ GNU_HOST =	${GCC_ARCH:S/amd64/x86_64/}
 SUBST_VARS +=	GNU_HOST VERSION
 
 post-extract:
-.for i in makeinfo texi2dvi texi2pdf
+.for i in makeinfo texi2dvi texi2pdf texindex
 	ln -s ${LOCALBASE}/bin/g$i ${WRKDIR}/bin/$i
 .endfor
 

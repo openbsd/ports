@@ -3,7 +3,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -82150,21 +82150,21 @@ fi
+@@ -82716,21 +82716,21 @@ fi
              case "$found_dir" in
                */$acl_libdirstem | */$acl_libdirstem/)
                  basedir=`echo "X$found_dir" | sed -e 's,^X,,' -e "s,/$acl_libdirstem/"'*$,,'`
@@ -28,7 +28,7 @@ Index: configure
                    LIBREADLINE_PREFIX="$basedir"
                  fi
                  additional_includedir="$basedir/include"
-@@ -82384,8 +82384,8 @@ fi
+@@ -82950,8 +82950,8 @@ fi
    done
  
  
@@ -39,7 +39,7 @@ Index: configure
  if test ${gl_cv_lib_readline+y}
  then :
    printf %s "(cached) " >&6
-@@ -82448,8 +82448,8 @@ printf "%s\n" "#define HAVE_READLINE 1" >>confdefs.h
+@@ -83014,8 +83014,8 @@ printf "%s\n" "#define HAVE_READLINE 1" >>confdefs.h
        LIBREADLINE="$LIBREADLINE $extra_lib"
        LTLIBREADLINE="$LTLIBREADLINE $extra_lib"
      fi
@@ -50,7 +50,7 @@ Index: configure
      { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: $LIBREADLINE" >&5
  printf "%s\n" "$LIBREADLINE" >&6; }
    else
-@@ -92439,7 +92439,7 @@ printf "%s\n" "$as_me: WARNING: $warn_rapidjson" >&2;}
+@@ -93230,7 +93230,7 @@ printf "%s\n" "$as_me: WARNING: $warn_rapidjson" >&2;}
  
  fi
  
@@ -59,7 +59,7 @@ Index: configure
  
  
    USE_READLINE=yes
-@@ -92525,7 +92525,7 @@ fi
+@@ -93316,7 +93316,7 @@ fi
    rpathdirs=
    ltrpathdirs=
    names_already_handled=
