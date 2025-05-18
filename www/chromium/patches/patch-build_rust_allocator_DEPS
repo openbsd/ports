@@ -1,0 +1,13 @@
+Index: build/rust/allocator/DEPS
+--- build/rust/allocator/DEPS.orig
++++ build/rust/allocator/DEPS
+@@ -0,0 +1,9 @@
++include_rules = [
++  "-base",
++]
++
++specific_include_rules = {
++  "allocator_impls.cc" : [
++    "+partition_alloc"
++  ]
++}
