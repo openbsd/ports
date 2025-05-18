@@ -21,16 +21,20 @@ share/yash/completion/basename
 share/yash/completion/bash
 share/yash/completion/bg
 share/yash/completion/bindkey
+share/yash/completion/bmake
 share/yash/completion/break
 share/yash/completion/bsdtar
 share/yash/completion/carthage
 share/yash/completion/cat
+share/yash/completion/catgirl
 share/yash/completion/cd
 share/yash/completion/chgrp
 share/yash/completion/chmod
 share/yash/completion/chown
 share/yash/completion/chsh
 share/yash/completion/cmp
+share/yash/completion/cmus
+share/yash/completion/cmus-remote
 share/yash/completion/comm
 share/yash/completion/command
 share/yash/completion/complete
@@ -66,6 +70,7 @@ share/yash/completion/fg
 share/yash/completion/fgrep
 share/yash/completion/file
 share/yash/completion/find
+share/yash/completion/fnf
 share/yash/completion/fold
 share/yash/completion/fzy
 share/yash/completion/gawk
@@ -97,6 +102,7 @@ share/yash/completion/git-init
 share/yash/completion/git-log
 share/yash/completion/git-ls-remote
 share/yash/completion/git-merge
+share/yash/completion/git-mv
 share/yash/completion/git-name-rev
 share/yash/completion/git-notes
 share/yash/completion/git-pull
@@ -124,6 +130,7 @@ share/yash/completion/git-worktree
 share/yash/completion/gitg
 share/yash/completion/gitk
 share/yash/completion/gitx
+share/yash/completion/gmake
 share/yash/completion/gnutar
 share/yash/completion/grep
 share/yash/completion/gtar

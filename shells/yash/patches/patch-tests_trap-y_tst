@@ -1,0 +1,14 @@
+Index: tests/trap-y.tst
+--- tests/trap-y.tst.orig
++++ tests/trap-y.tst
+@@ -119,8 +119,8 @@ __OUT__
+ test_oE -e 0 'printing all traps (with -p)'
+ trap 'echo "a"'"'b'"'\c' USR1
+ trap 'echo USR2' USR2
+-trap -p | grep 'INT\|QUIT\|KILL\|STOP\|USR'
+-trap --print | grep 'INT\|QUIT\|KILL\|STOP\|USR'
++trap -p | grep -E 'INT|QUIT|KILL|STOP|USR'
++trap --print | grep -E 'INT|QUIT|KILL|STOP|USR'
+ __IN__
+ trap -- - INT
+ trap -- - QUIT
