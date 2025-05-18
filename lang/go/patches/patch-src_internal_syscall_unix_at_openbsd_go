@@ -1,0 +1,12 @@
+Index: src/internal/syscall/unix/at_openbsd.go
+--- src/internal/syscall/unix/at_openbsd.go.orig
++++ src/internal/syscall/unix/at_openbsd.go
+@@ -43,7 +43,7 @@ func Mkdirat(dirfd int, path string, mode uint32) erro
+ 	if err != nil {
+ 		return err
+ 	}
+-	_, _, errno := syscall_syscall6(abi.FuncPCABI0(libc_mkdirat_trampoline), uintptr(dirfd), uintptr(unsafe.Pointer(p)), 0, 0, 0, 0)
++	_, _, errno := syscall_syscall6(abi.FuncPCABI0(libc_mkdirat_trampoline), uintptr(dirfd), uintptr(unsafe.Pointer(p)), uintptr(mode), 0, 0, 0)
+ 	if errno != 0 {
+ 		return errno
+ 	}

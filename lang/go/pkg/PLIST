@@ -4000,6 +4000,7 @@ go/src/cmd/link/testdata/linkname/ok.go
 go/src/cmd/link/testdata/linkname/p/
 go/src/cmd/link/testdata/linkname/p/p.go
 go/src/cmd/link/testdata/linkname/push.go
+go/src/cmd/link/testdata/linkname/sched.go
 go/src/cmd/link/testdata/pe-binutils/
 go/src/cmd/link/testdata/pe-binutils/main.go
 go/src/cmd/link/testdata/pe-binutils/rsrc_386.syso
@@ -11016,6 +11017,7 @@ go/src/runtime/testdata/testprogcgo/bigstack_windows.go
 go/src/runtime/testdata/testprogcgo/bindm.c
 go/src/runtime/testdata/testprogcgo/bindm.go
 go/src/runtime/testdata/testprogcgo/callback.go
+go/src/runtime/testdata/testprogcgo/callback_pprof.go
 go/src/runtime/testdata/testprogcgo/catchpanic.go
 go/src/runtime/testdata/testprogcgo/cgo.go
 go/src/runtime/testdata/testprogcgo/cgonocallback.c
@@ -14682,6 +14684,8 @@ go/test/fixedbugs/issue71680.go
 go/test/fixedbugs/issue71852.go
 go/test/fixedbugs/issue71857.go
 go/test/fixedbugs/issue71932.go
+go/test/fixedbugs/issue72063.go
+go/test/fixedbugs/issue72090.go
 go/test/fixedbugs/issue7214.go
 go/test/fixedbugs/issue7223.go
 go/test/fixedbugs/issue7272.go
