@@ -3,6 +3,7 @@ COMMENT =		unix to RFC3339 conversion functions
 MODPY_DISTV =		0.7
 DISTNAME =		strict-rfc3339-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/-/_/}
+REVISION =		0
 
 CATEGORIES =		devel
 
