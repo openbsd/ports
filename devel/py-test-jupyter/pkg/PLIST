@@ -29,5 +29,6 @@ lib/python${MODPY_VERSION}/site-packages/pytest_jupyter/echo_kernel.py
 lib/python${MODPY_VERSION}/site-packages/pytest_jupyter/jupyter_client.py
 lib/python${MODPY_VERSION}/site-packages/pytest_jupyter/jupyter_core.py
 lib/python${MODPY_VERSION}/site-packages/pytest_jupyter/jupyter_server.py
+lib/python${MODPY_VERSION}/site-packages/pytest_jupyter/py.typed
 lib/python${MODPY_VERSION}/site-packages/pytest_jupyter/pytest_tornasync.py
 lib/python${MODPY_VERSION}/site-packages/pytest_jupyter/utils.py

@@ -1,6 +1,6 @@
 COMMENT =		pytest plugin for Jupyter libraries and extensions
 
-MODPY_DISTV =		0.6.2
+MODPY_DISTV =		0.10.1
 DISTNAME =		pytest_jupyter-${MODPY_DISTV}
 PKGNAME =		${DISTNAME:S/pytest_/py-test-/}
 
