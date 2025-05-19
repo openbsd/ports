@@ -1,6 +1,6 @@
 COMMENT =	mikmod sound library
 
-DISTNAME =	libmikmod-3.3.12
+DISTNAME =	libmikmod-3.3.13
 SHARED_LIBS +=	mikmod               4.0      # 6.0
 CATEGORIES =	audio devel
 
