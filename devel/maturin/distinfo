@@ -30,7 +30,7 @@ SHA256 (cargo/cargo-config2-0.1.26.tar.gz) = 2DzgvovRR55d5iAt72YObH4n5OBZm/+k/tB
 SHA256 (cargo/cargo-options-0.7.4.tar.gz) = 81QCR8CjenbrMkrMI43GF3huoixDuV2lYMgqjycUMh8=
 SHA256 (cargo/cargo-platform-0.1.8.tar.gz) = JLHwNlpsa7QCDNBYBv0NM8RNOARri9fw5AgUuXY8q/w=
 SHA256 (cargo/cargo-xwin-0.18.4.tar.gz) = YPGVTk/6D0xHs99ebpUIcG2NyqVhUs1nLc7gKTC6AyY=
-SHA256 (cargo/cargo-zigbuild-0.19.7.tar.gz) = BMxkkyjzm78e+S73U0BuF4X/EHSUHDmOUhS2x00xip4=
+SHA256 (cargo/cargo-zigbuild-0.20.0.tar.gz) = P26ehWOQ1bCoWayu2hZSj4phyWS9uJTDIWwlSQjxwuo=
 SHA256 (cargo/cargo_metadata-0.19.0.tar.gz) = r8MJ7YlHbIlXxQ+4GPVv6JTbhXhmw+FjM1+qkdw064U=
 SHA256 (cargo/cbindgen-0.28.0.tar.gz) = 6t2Giizpyjjefur9zsnHBl74m0KzLwg5J41V81xU0f8=
 SHA256 (cargo/cc-1.2.16.tar.gz) = vnFMFUvmCex/Xa0iOjO/FIL/+QRy3ij3NigG5tSDK4w=
@@ -56,7 +56,7 @@ SHA256 (cargo/cpufeatures-0.2.12.tar.gz) = U/5eJv8beu+LypxggFIM+42TM8dWjhgpzvGRq
 SHA256 (cargo/crc-3.2.1.tar.gz) = aebk17M6lPCZHCZymXaxDr3h00w+6CQI+1NhZPoQ1jY=
 SHA256 (cargo/crc-catalog-2.4.0.tar.gz) = GdN0J2tA+4u97pWu98f6a1MW7HZFEOtkuN0OLtDX5/U=
 SHA256 (cargo/crc32fast-1.4.2.tar.gz) = qXdp2U3auUPkUQ0TgVAWmidYte8+sZGp7miN4+I+97M=
-SHA256 (cargo/crossbeam-channel-0.5.13.tar.gz) = M0gNaUYZOqgDORASSJbKOVMzyufi0RE9H+9sMnIhffI=
+SHA256 (cargo/crossbeam-channel-0.5.15.tar.gz) = grj4+GizaWf5YGeQ0ZA1cN6c6vhwp7+fu9MBbWNqLLI=
 SHA256 (cargo/crossbeam-deque-0.8.5.tar.gz) = YT+MwB/pzxo+s9f0iP0vqDiEA+lwOeL3NpKTLikadw0=
 SHA256 (cargo/crossbeam-epoch-0.9.18.tar.gz) = W4KsSjwsqcNGCWTwIOFALt1XU0EddzeqOcNxStG1Qg4=
 SHA256 (cargo/crossbeam-utils-0.8.20.tar.gz) = IuyZVFuw7Q6nu5uOHpEi6jhv+KSMCSLkPzbUWrCeDoA=
@@ -165,10 +165,10 @@ SHA256 (cargo/nu-ansi-term-0.46.0.tar.gz) = d6gWVyboI2Bk27RUWSQmADBLQqXqJO4pSOGO
 SHA256 (cargo/num-conv-0.1.0.tar.gz) = UdUV0y+xgu43zaLM3LkpUNajwok6ooDlQGccLNDzsdk=
 SHA256 (cargo/number_prefix-0.4.0.tar.gz) = gwskag5fIK+HFBslwXPNG2Cb13eaRhfW7FgquvkIcPM=
 SHA256 (cargo/once_cell-1.20.2.tar.gz) = EmH+fjPHOzVOq0OxJzpXyPln0DkegDU+UfdkrALPZ3U=
-SHA256 (cargo/openssl-0.10.70.tar.gz) = Yc+04Waou4ybVcUAvCMIVQFI7OiJvpD2CTd+WBQPQsY=
+SHA256 (cargo/openssl-0.10.72.tar.gz) = /t/qfVih9zEYQwpV2moobnsESWFzbOlqFqFwaOol5do=
 SHA256 (cargo/openssl-macros-0.1.1.tar.gz) = qUhma2N6D0ZehWTHPonU3eANctTUc8yXLzkPw9zufZw=
 SHA256 (cargo/openssl-probe-0.1.5.tar.gz) = /wEaMCw5alGXaSQx/BlIAZFUr8F4uvfY43NnRCpGAc8=
-SHA256 (cargo/openssl-sys-0.9.105.tar.gz) = iyLVuEvgWo1pR8fLcffISaoPESrNS/UcKnwcmIrAqdw=
+SHA256 (cargo/openssl-sys-0.9.107.tar.gz) = goiXms2EdJx0SpAUtDgtQrj3slkoR7Wvsu0p5dFu3gc=
 SHA256 (cargo/option-ext-0.2.0.tar.gz) = BHRPSerpmreODVwLYDqyGPUV6oz+WkVtdimtiDo7bn0=
 SHA256 (cargo/os_pipe-1.2.0.tar.gz) = Kdc7qNr4+sE7BQHRq+3c/iG6dAGtphqBkUS2wqTzIgk=
 SHA256 (cargo/overload-0.1.1.tar.gz) = sVgTFjwdgxv0oTw2EMBcDQOzn+sH9+CfojTaybFarzk=
@@ -358,9 +358,9 @@ SHA256 (cargo/zerofrom-derive-0.1.5.tar.gz) = WV7tmC99NVvrhYN/ZR+iLpCzwESELcfywo
 SHA256 (cargo/zeroize-1.8.1.tar.gz) = ztNniih5swMG0yP0VCYmaXpGSpfAoHya6/frymXNTd4=
 SHA256 (cargo/zerovec-0.10.4.tar.gz) = qiuJPXnfI7+xLVRhAY1AjqGd+v52wsfvbU66YU+P8Hk=
 SHA256 (cargo/zerovec-derive-0.10.3.tar.gz) = bq+m37F1hOo+K9bnbgzBWtevErCavdHKVZYb7ZsQY8Y=
-SHA256 (cargo/zip-2.2.3.tar.gz) = soBITEVOdOX/9li799+P2+egfGst5KU97yMsFe8Tjzo=
+SHA256 (cargo/zip-2.3.0.tar.gz) = hOmncqVLVCNrm3RKqvjXvgG01umXJVI8uCyzLRyBsdc=
 SHA256 (cargo/zopfli-0.8.1.tar.gz) = 5QGfORusXPJS6Tu8xT0Dn/1ix7+3wVBBTWE2mv5X6UY=
-SHA256 (maturin-1.8.3.tar.gz) = xn/1lFcCcMdbaxI6Byiu5e+IceNKJ3fM+ZzvEEV2ScA=
+SHA256 (maturin-1.8.6.tar.gz) = qwkoEyZjVeCLL+6wsTjIpHvnysRKDtRcngRyKulLi/U=
 SIZE (cargo/adler2-2.0.0.tar.gz) = 13529
 SIZE (cargo/ahash-0.8.11.tar.gz) = 43607
 SIZE (cargo/aho-corasick-1.1.3.tar.gz) = 183311
@@ -393,7 +393,7 @@ SIZE (cargo/cargo-config2-0.1.26.tar.gz) = 63535
 SIZE (cargo/cargo-options-0.7.4.tar.gz) = 18149
 SIZE (cargo/cargo-platform-0.1.8.tar.gz) = 11813
 SIZE (cargo/cargo-xwin-0.18.4.tar.gz) = 35854
-SIZE (cargo/cargo-zigbuild-0.19.7.tar.gz) = 43219
+SIZE (cargo/cargo-zigbuild-0.20.0.tar.gz) = 43470
 SIZE (cargo/cargo_metadata-0.19.0.tar.gz) = 25876
 SIZE (cargo/cbindgen-0.28.0.tar.gz) = 223401
 SIZE (cargo/cc-1.2.16.tar.gz) = 103847
@@ -419,7 +419,7 @@ SIZE (cargo/cpufeatures-0.2.12.tar.gz) = 12837
 SIZE (cargo/crc-3.2.1.tar.gz) = 15070
 SIZE (cargo/crc-catalog-2.4.0.tar.gz) = 10155
 SIZE (cargo/crc32fast-1.4.2.tar.gz) = 38491
-SIZE (cargo/crossbeam-channel-0.5.13.tar.gz) = 91174
+SIZE (cargo/crossbeam-channel-0.5.15.tar.gz) = 92716
 SIZE (cargo/crossbeam-deque-0.8.5.tar.gz) = 21726
 SIZE (cargo/crossbeam-epoch-0.9.18.tar.gz) = 46875
 SIZE (cargo/crossbeam-utils-0.8.20.tar.gz) = 42487
@@ -528,10 +528,10 @@ SIZE (cargo/nu-ansi-term-0.46.0.tar.gz) = 24311
 SIZE (cargo/num-conv-0.1.0.tar.gz) = 7444
 SIZE (cargo/number_prefix-0.4.0.tar.gz) = 6922
 SIZE (cargo/once_cell-1.20.2.tar.gz) = 33394
-SIZE (cargo/openssl-0.10.70.tar.gz) = 277545
+SIZE (cargo/openssl-0.10.72.tar.gz) = 283852
 SIZE (cargo/openssl-macros-0.1.1.tar.gz) = 5601
 SIZE (cargo/openssl-probe-0.1.5.tar.gz) = 7227
-SIZE (cargo/openssl-sys-0.9.105.tar.gz) = 72287
+SIZE (cargo/openssl-sys-0.9.107.tar.gz) = 78156
 SIZE (cargo/option-ext-0.2.0.tar.gz) = 7345
 SIZE (cargo/os_pipe-1.2.0.tar.gz) = 10615
 SIZE (cargo/overload-0.1.1.tar.gz) = 24439
@@ -721,6 +721,6 @@ SIZE (cargo/zerofrom-derive-0.1.5.tar.gz) = 8285
 SIZE (cargo/zeroize-1.8.1.tar.gz) = 20029
 SIZE (cargo/zerovec-0.10.4.tar.gz) = 126398
 SIZE (cargo/zerovec-derive-0.10.3.tar.gz) = 19438
-SIZE (cargo/zip-2.2.3.tar.gz) = 106439
+SIZE (cargo/zip-2.3.0.tar.gz) = 107864
 SIZE (cargo/zopfli-0.8.1.tar.gz) = 50972
-SIZE (maturin-1.8.3.tar.gz) = 544455
+SIZE (maturin-1.8.6.tar.gz) = 551946
