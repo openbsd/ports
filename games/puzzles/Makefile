@@ -1,14 +1,14 @@
 COMMENT =	collection of puzzles games
 
-DISTNAME =	puzzles-20240329
+DISTNAME =	puzzles-20250518
 CATEGORIES =	games
 
 SITES =		https://rhaalovely.net/stuff/
 HOMEPAGE =	https://www.chiark.greenend.org.uk/~sgtatham/puzzles/
 
 #gitweb generates tarballs on the fly with varying timestamps
-GIT_COMMIT =	fd304c53cc45dc05b3f95c20a466e20a7e1c9194
-GIT_COMMIT_SHORT = fd304c5
+GIT_COMMIT =	520b5871aed32c8b751183311b9131c046eab2c7
+GIT_COMMIT_SHORT = 520b587
 GITWEB_URL =	https://git.tartarus.org/
 
 # MIT
