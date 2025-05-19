@@ -5,6 +5,6 @@ SHLIB_V=	0.0
 OLD_SAMPLECONF=	Yes
 VERSION_SPEC=	>=18.0,<19.0
 
-REVISION-kqueue=0
+REVISION-kqueue=1
 
 .include <bsd.port.mk>

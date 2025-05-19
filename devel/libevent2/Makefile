@@ -5,7 +5,7 @@ DISTNAME=	libevent-$V-stable
 PKGNAME=	libevent-$V
 CATEGORIES=	devel
 HOMEPAGE=	https://libevent.org/
-REVISION=	2
+REVISION=	3
 
 SHARED_LIBS+=	event_core	2.1	# 7.1
 SHARED_LIBS+=	event_extra	1.0	# 7.1

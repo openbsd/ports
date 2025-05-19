@@ -3,7 +3,7 @@ COMMENT-gtk=	BitTorrent client with GTK+ interface
 COMMENT-qt=	BitTorrent client with Qt interface
 
 VER=		4.0.6
-REVISION=	0
+REVISION=	1
 DISTNAME=	transmission-${VER}
 PKGNAME-main=	transmission-${VER}
 PKGNAME-gtk=	transmission-gtk-${VER}
