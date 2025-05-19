@@ -1,0 +1,21 @@
+Index: pyproject.toml
+--- pyproject.toml.orig
++++ pyproject.toml
+@@ -73,7 +73,7 @@ dev = [
+ build-backend = "mesonpy"
+ # Also keep in sync with optional dependencies above.
+ requires = [
+-    "meson-python>=0.13.1,<0.17.0",
++    "meson-python>=0.13.1,<0.19.0",
+     "pybind11>=2.6,!=2.13.3",
+     "setuptools_scm>=7",
+ 
+@@ -91,7 +91,7 @@ requires = [
+ ]
+ 
+ [tool.meson-python.args]
+-install = ['--tags=data,python-runtime,runtime']
++install = ['--tags=data,python-runtime,runtime,tests']
+ 
+ [tool.setuptools_scm]
+ version_scheme = "release-branch-semver"

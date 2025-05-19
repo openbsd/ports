@@ -1,9 +1,8 @@
 COMMENT =		Python charting and plotting API
 
-MODPY_DISTV =		3.8.3
+MODPY_DISTV =		3.9.4
 DISTNAME =		matplotlib-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		3
 
 CATEGORIES =		graphics devel math
 
@@ -21,13 +20,14 @@ COMPILER =		base-clang ports-gcc base-gcc
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools_scm
+MODPY_PYBUILD =		mesonpy
 
 MODPY_TEST_LINK_SO =	Yes
 MODPY_TEST_LINK_SRC =	${WRKSRC}/lib
 
 BUILD_DEPENDS =	devel/py-certifi>=2020.06.20 \
 		devel/py-pybind11>=2.6 \
+		devel/py-setuptools_scm \
 		math/qhull \
 		math/py-numpy>=1.25 \
 		textproc/py-sphinx
@@ -56,12 +56,8 @@ MAKE_ENV+=	LDSHARED="${CC} -shared -fPIC"
 
 EXAMPLESDIR=	${PREFIX}/share/examples/${MODPY_PY_PREFIX}matplotlib
 
-post-patch:
-	cp ${WRKSRC}/mplsetup.cfg{.template,}
-
 pre-configure:
 	find ${WRKSRC}/galleries/examples -name \*.py -exec ${MODPY_BIN_ADJ} {} +
-	${SUBST_CMD} ${WRKSRC}/setupext.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}

@@ -1,0 +1,15 @@
+Index: meson.options
+--- meson.options.orig
++++ meson.options
+@@ -5,9 +5,9 @@
+ # Qhull. You may use the following options to instead link against a system
+ # FreeType/Qhull. As an exception, Matplotlib defaults to the system version of
+ # FreeType on AIX.
+-option('system-freetype', type: 'boolean', value: false,
++option('system-freetype', type: 'boolean', value: true,
+        description: 'Build against system version of FreeType')
+-option('system-qhull', type: 'boolean', value: false,
++option('system-qhull', type: 'boolean', value: true,
+        description: 'Build against system version of Qhull')
+ 
+ # Some of Matplotlib's components are optional: the MacOSX backend (installed
