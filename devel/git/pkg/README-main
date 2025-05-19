@@ -10,3 +10,17 @@ the following additional packages.
 
 	p5-Net-SMTP-SSL
 	p5-Authen-SASL
+
+CPU count detection
+===================
+To improve performance on OpenBSD systems with many CPUs, this package
+is patched to cap the number of detected CPUs at a maximum of 4, to avoid
+the kernel spending significant time in spin locks. This can be overridden
+to increase or decrease if wanted in ${SYSCONFDIR}/gitconfig, e.g.
+
+[grep]
+	threads = 8
+[index]
+	threads = 8
+[pack]
+	threads = 8
