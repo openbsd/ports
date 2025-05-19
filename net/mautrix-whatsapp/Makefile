@@ -1,7 +1,7 @@
 COMMENT =	matrix-WhatsApp puppeting bridge
 
-MODGO_VERSION =	v0.10.9
-MODGO_MODNAME =	maunium.net/go/mautrix-whatsapp
+MODGO_VERSION =	v0.12.1
+MODGO_MODNAME =	go.mau.fi/mautrix-whatsapp
 
 DISTNAME =	mautrix-whatsapp-${MODGO_VERSION}
 
@@ -9,7 +9,7 @@ EPOCH =		0
 
 CATEGORIES =	net
 
-HOMEPAGE =	https://github.com/tulir/mautrix-whatsapp
+HOMEPAGE =	https://github.com/mautrix/whatsapp
 
 MAINTAINER =	Renaud Allard <renaud@allard.it>
 
@@ -33,7 +33,7 @@ do-install:
 	${PREFIX}/bin
 	${INSTALL_DATA_DIR} \
 	${PREFIX}/share/examples/mautrix-whatsapp
-	${INSTALL_DATA} ${WRKSRC}/example-config.yaml \
+	${INSTALL_DATA} ${WRKSRC}/pkg/connector/example-config.yaml \
 	${PREFIX}/share/examples/mautrix-whatsapp
 
 .include "modules.inc"
