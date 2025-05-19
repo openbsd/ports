@@ -12,7 +12,7 @@ HOMEPAGE=	https://github.com/MagicStack/httptools
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PYBUILD=	hatchling
+MODPY_PYBUILD=	setuptools
 MODPY_PI=	Yes
 
 BUILD_DEPENDS=	lang/cython
