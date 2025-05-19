@@ -50,6 +50,7 @@ CONFIGURE_ARGS+=	-Darchive=disabled \
 			-Dlua=disabled \
 			-Dpdf=disabled \
 			-Dspell=disabled \
+			-Dyelp-build=disabled \
 			-Dvideothumbnailer=disabled \
 			-Dgq_htmldir=${PREFIX}/share/doc/geeqie \
 			-Dgq_helpdir=${PREFIX}/share/doc/geeqie
