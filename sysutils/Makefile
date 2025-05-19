@@ -321,7 +321,6 @@
      SUBDIR += py-distlib
      SUBDIR += py-distro
      SUBDIR += py-dotenv
-     SUBDIR += py-elasticsearch-curator
      SUBDIR += py-expandvars
      SUBDIR += py-filelock
      SUBDIR += py-find
