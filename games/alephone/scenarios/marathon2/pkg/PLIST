@@ -8,7 +8,6 @@ share/alephone/
 share/alephone/Marathon2/
 share/alephone/Marathon2/Images.imgA
 share/alephone/Marathon2/Map.sceA
-share/alephone/Marathon2/Marathon_2_Manual.pdf
 share/alephone/Marathon2/Music.ogg
 share/alephone/Marathon2/Physics Models/
 share/alephone/Marathon2/Physics Models/Standard.phyA
@@ -3589,3 +3588,5 @@ share/alephone/Marathon2/Scripts/Marathon 2.mml
 share/alephone/Marathon2/Scripts/Transparent_Liquids.mml
 share/alephone/Marathon2/Shapes.shpA
 share/alephone/Marathon2/Sounds.sndA
+share/doc/alephone/
+share/doc/alephone/Marathon_2_Manual.pdf

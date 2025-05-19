@@ -3,7 +3,6 @@ share/alephone/
 share/alephone/Marathon/
 share/alephone/Marathon/Map.scen
 share/alephone/Marathon/Marathon.appl
-share/alephone/Marathon/Marathon_Manual.pdf
 share/alephone/Marathon/Music/
 share/alephone/Marathon/Music/00.ogg
 share/alephone/Marathon/Music/01.ogg
@@ -289,3 +288,5 @@ share/alephone/Marathon/Scripts/Default Preferences.xml
 share/alephone/Marathon/Scripts/Marathon.mml
 share/alephone/Marathon/Shapes.shps
 share/alephone/Marathon/Sounds.sndz
+share/doc/alephone/
+share/doc/alephone/Marathon_Manual.pdf
