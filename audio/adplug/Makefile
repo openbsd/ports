@@ -1,9 +1,8 @@
 COMMENT =	AdLib sound player library
 
-V =		2.3.3
+V =		2.4
 DISTNAME =	adplug-${V}
-SHARED_LIBS +=	adplug	2.0
-REVISION =	0
+SHARED_LIBS +=	adplug	2.1
 
 CATEGORIES =	audio
 

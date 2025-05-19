@@ -3,12 +3,12 @@ Do not hardcode library version number.
 Index: Makefile.in
 --- Makefile.in.orig
 +++ Makefile.in
-@@ -858,7 +858,7 @@ src_libadplug_la_SOURCES = \
+@@ -1143,7 +1143,7 @@ src_libadplug_la_SOURCES = \
  	src/xad.cpp \
  	src/xsm.cpp
  
--src_libadplug_la_LDFLAGS = -release $(PACKAGE_VERSION) -version-info 0
-+src_libadplug_la_LDFLAGS = -version-info 0
+-src_libadplug_la_LDFLAGS = -release $(PACKAGE_VERSION) -version-info 0 \
++src_libadplug_la_LDFLAGS = -version-info 0 \
+ 	-no-undefined # mingw requires this when making shared DLL \
+ 	files
  src_libadplug_la_LIBADD = $(libbinio_LIBS)
- 
- # -Dstricmp=strcasecmp is a hack. Throughout AdPlug, stricmp() is used to do

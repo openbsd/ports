@@ -1,8 +1,8 @@
 @bin bin/adplugdb
 include/adplug/
+include/adplug/a2m-v2.h
 include/adplug/a2m.h
 include/adplug/adl.h
-include/adplug/adlib.h
 include/adplug/adlibemu.h
 include/adplug/adplug.h
 include/adplug/adtrack.h
@@ -13,8 +13,11 @@ include/adplug/bmf.h
 include/adplug/cff.h
 include/adplug/cmf.h
 include/adplug/cmfmcsop.h
+include/adplug/coktel.h
+include/adplug/composer.h
 include/adplug/d00.h
 include/adplug/database.h
+include/adplug/depack.h
 include/adplug/dfm.h
 include/adplug/diskopl.h
 include/adplug/dmo.h
@@ -44,12 +47,15 @@ include/adplug/mid.h
 include/adplug/mkj.h
 include/adplug/msc.h
 include/adplug/mtk.h
+include/adplug/mtr.h
 include/adplug/mus.h
 include/adplug/nemuopl.h
 include/adplug/nukedopl.h
 include/adplug/opl.h
+include/adplug/pis.h
 include/adplug/player.h
 include/adplug/players.h
+include/adplug/plx.h
 include/adplug/protrack.h
 include/adplug/psi.h
 include/adplug/rad2.h
@@ -61,11 +67,16 @@ include/adplug/rol.h
 include/adplug/s3m.h
 include/adplug/sa2.h
 include/adplug/silentopl.h
+include/adplug/sixdepack.h
 include/adplug/sng.h
 include/adplug/sop.h
+include/adplug/strnlen.h
 include/adplug/surroundopl.h
 include/adplug/temuopl.h
 include/adplug/u6m.h
+include/adplug/unlzh.h
+include/adplug/unlzss.h
+include/adplug/unlzw.h
 include/adplug/version.h
 include/adplug/vgm.h
 include/adplug/wemuopl.h
