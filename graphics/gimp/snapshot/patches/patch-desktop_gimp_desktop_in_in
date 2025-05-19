@@ -1,7 +1,7 @@
 Index: desktop/gimp.desktop.in.in
 --- desktop/gimp.desktop.in.in.orig
 +++ desktop/gimp.desktop.in.in
-@@ -8,7 +8,7 @@ Comment=Create images and edit photographs
+@@ -13,7 +13,7 @@ Comment=Create images and edit photographs
  Keywords=GIMP;graphic;design;illustration;painting;
  Exec=@GIMP_COMMAND@ %U
  TryExec=gimp-@GIMP_APP_VERSION@
