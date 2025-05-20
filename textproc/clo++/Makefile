@@ -9,9 +9,9 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += c iconv m pthread lzma ${COMPILER_LIBCXX} xml2>=6 z
 
-COMPILER =		base-clang ports-gcc base-gcc
+COMPILER=	base-clang ports-gcc base-gcc
 
-SITES=		${HOMEPAGE}/download/
+SITES=		https://spacehopper.org/mirrors/
 
 LIB_DEPENDS=	converters/libiconv \
 		textproc/libxml
