@@ -30,4 +30,13 @@ web: The web plugin lets your browse and listen to your library through
 an HTML5 compatible browser. Install the py3-flask package and add 'web'
 to the plugins: line.
 
+keyfinder: The keyfinder plugin detects the musical key of a track and
+stores it in the initial_key field of your database. It requires dependencies:
+"pkg_add keyfinder-cli".
+Edit ~/.config/beets/config.yaml - add 'keyfinder' to the plugins:
+line, and add the following:
+
+keyfinder:
+    bin: keyfinder-cli
+
 See https://beets.readthedocs.io/en/latest/plugins/ for a complete list.
