@@ -144,6 +144,9 @@ share/shotcut/qml/filters/audiolevelgraph/icon.webp
 share/shotcut/qml/filters/audiolevelgraph/meta.qml
 share/shotcut/qml/filters/audiolevelgraph/ui.qml
 share/shotcut/qml/filters/audiolevelgraph/vui.qml
+share/shotcut/qml/filters/bigsh0t_eq_cap/
+share/shotcut/qml/filters/bigsh0t_eq_cap/meta.qml
+share/shotcut/qml/filters/bigsh0t_eq_cap/ui.qml
 share/shotcut/qml/filters/bigsh0t_eq_mask/
 share/shotcut/qml/filters/bigsh0t_eq_mask/icon.webp
 share/shotcut/qml/filters/bigsh0t_eq_mask/meta.qml
@@ -158,6 +161,9 @@ share/shotcut/qml/filters/bigsh0t_eq_to_stereo/icon.webp
 share/shotcut/qml/filters/bigsh0t_eq_to_stereo/meta.qml
 share/shotcut/qml/filters/bigsh0t_eq_to_stereo/ui.qml
 share/shotcut/qml/filters/bigsh0t_eq_to_stereo/vui.qml
+share/shotcut/qml/filters/bigsh0t_eq_wrap/
+share/shotcut/qml/filters/bigsh0t_eq_wrap/meta.qml
+share/shotcut/qml/filters/bigsh0t_eq_wrap/ui.qml
 share/shotcut/qml/filters/bigsh0t_hemi_to_eq/
 share/shotcut/qml/filters/bigsh0t_hemi_to_eq/icon.webp
 share/shotcut/qml/filters/bigsh0t_hemi_to_eq/meta.qml
@@ -550,6 +556,9 @@ share/shotcut/qml/filters/stabilize/
 share/shotcut/qml/filters/stabilize/icon.webp
 share/shotcut/qml/filters/stabilize/meta.qml
 share/shotcut/qml/filters/stabilize/ui.qml
+share/shotcut/qml/filters/strobe/
+share/shotcut/qml/filters/strobe/meta.qml
+share/shotcut/qml/filters/strobe/ui.qml
 share/shotcut/qml/filters/subtitle/
 share/shotcut/qml/filters/subtitle/icon.webp
 share/shotcut/qml/filters/subtitle/meta.qml

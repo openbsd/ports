@@ -4,7 +4,7 @@ COMMENT =	video editor
 
 GH_ACCOUNT =	mltframework
 GH_PROJECT =	shotcut
-GH_TAGNAME =	v25.01.25
+GH_TAGNAME =	v25.05.11
 
 CATEGORIES =	multimedia
 
@@ -31,12 +31,12 @@ RUN_DEPENDS =		audio/jack \
 			devel/desktop-file-utils \
 			devel/sdl2 \
 			misc/shared-mime-info \
-			multimedia/mlt7,-gpl2 \
+			multimedia/mlt7,-gpl2>=7.32 \
 			x11/gtk+4,-guic \
 			x11/qt6/qtwebsockets
 
 LIB_DEPENDS =		math/fftw3 \
-			multimedia/mlt7 \
+			multimedia/mlt7>=7.32 \
 			x11/qt6/qtdeclarative \
 			x11/qt6/qtcharts \
 			x11/qt6/qtmultimedia

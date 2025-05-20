@@ -1,7 +1,7 @@
 Index: src/util.cpp
 --- src/util.cpp.orig
 +++ src/util.cpp
-@@ -541,6 +541,8 @@ bool Util::isMemoryLow()
+@@ -540,6 +540,8 @@ bool Util::isMemoryLow()
      meminfo.close();
      LOG_INFO() << "available RAM = " << availableKB << "KB";
      return availableKB < kLowMemoryThresholdKB;
