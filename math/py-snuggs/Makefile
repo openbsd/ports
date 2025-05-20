@@ -1,10 +1,10 @@
 COMMENT =		snuggs are s-expressions for numpy
 
-MODPY_DISTV =	1.4.7
+MODPY_DISTV =		1.4.7
 DISTNAME =		snuggs-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
-REVISION =		7
+REVISION =		8
 
 MAINTAINER =		Martin Reindl <martin@catai.org>
 
@@ -14,7 +14,7 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/python
 
 MODPY_PI =		Yes
-MODPY_PYBUILD =	setuptools
+MODPY_PYBUILD =		setuptools
 
 RUN_DEPENDS =		devel/py-parsing \
 			devel/py-click \

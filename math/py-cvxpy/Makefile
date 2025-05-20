@@ -4,6 +4,7 @@ MODPY_DISTV =		1.6.2
 DISTNAME =		cvxpy-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		math
+REVISION =		0
 
 # Apache v2
 PERMIT_PACKAGE =	Yes

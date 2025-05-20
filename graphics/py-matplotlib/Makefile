@@ -3,6 +3,7 @@ COMMENT =		Python charting and plotting API
 MODPY_DISTV =		3.9.4
 DISTNAME =		matplotlib-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		graphics devel math
 

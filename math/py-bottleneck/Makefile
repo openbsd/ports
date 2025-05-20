@@ -4,7 +4,7 @@ MODPY_DISTV =		1.4.2
 DISTNAME =		bottleneck-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:L}
 CATEGORIES =		math
-REVISION =		1
+REVISION =		2
 
 MAINTAINER =		Martin Reindl <martin@catai.org>
 

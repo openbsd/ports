@@ -5,6 +5,7 @@ GH_TAGNAME =	${MODPY_DISTV}
 GH_ACCOUNT =	shapely
 GH_PROJECT =	shapely
 PKGNAME =	py-shapely-${MODPY_DISTV:S/.post/pl/}
+REVISION =	0
 
 CATEGORIES =	geo
 

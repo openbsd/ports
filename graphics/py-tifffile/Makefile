@@ -3,6 +3,7 @@ COMMENT=	read images/metadiff and store numpy arrays in TIFF files
 MODPY_DISTV=	2025.3.30
 DISTNAME=	tifffile-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	graphics
 

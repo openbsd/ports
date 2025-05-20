@@ -2,6 +2,7 @@ COMMENT=		intuitive and featureful movie editor
 
 GNOME_PROJECT=		pitivi
 GNOME_VERSION=		2023.03
+REVISION=		0
 
 CATEGORIES=		multimedia
 

@@ -3,7 +3,7 @@ COMMENT=	data analysis and manipulation library
 MODPY_DISTV=	2.2.3
 DISTNAME=	pandas-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	math
 

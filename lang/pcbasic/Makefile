@@ -1,11 +1,11 @@
 COMMENT =	free, cross-platform emulator for GW-BASIC family (PC-BASIC)
 
 MODPY_DISTV =	2.0.7
-GH_ACCOUNT =		robhagemans
-GH_PROJECT =		pcbasic
-GH_TAGNAME =		v${MODPY_DISTV}
-DISTNAME =		pcbasic-${MODPY_DISTV}
-REVISION =		1
+GH_ACCOUNT =	robhagemans
+GH_PROJECT =	pcbasic
+GH_TAGNAME =	v${MODPY_DISTV}
+DISTNAME =	pcbasic-${MODPY_DISTV}
+REVISION =	2
 
 CATEGORIES =	lang
 

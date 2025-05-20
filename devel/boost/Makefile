@@ -6,6 +6,7 @@ COMMENT-main=	free peer-reviewed portable C++ source libraries
 COMMENT-md=	machine-dependent libraries for boost
 
 VERSION=	1.87.0
+REVISION=	0
 DISTNAME=	boost_${VERSION:S/./_/g}
 PKGNAME=	boost-${VERSION}
 EPOCH=		0

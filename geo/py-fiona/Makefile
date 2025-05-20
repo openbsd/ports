@@ -3,7 +3,7 @@ COMMENT =	high-level API and CLI on top of OGR
 MODPY_DISTV =	1.10.1
 DISTNAME =	fiona-${MODPY_DISTV}
 PKGNAME =	${MODPY_PY_PREFIX}${DISTNAME:L:S/.post/pl/}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	geo
 

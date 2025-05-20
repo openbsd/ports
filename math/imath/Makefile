@@ -4,7 +4,7 @@ V=			3.1.12
 GH_ACCOUNT=		AcademySoftwareFoundation
 GH_PROJECT=		Imath
 GH_TAGNAME=		v${V}
-REVISION=		1
+REVISION=		2
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 

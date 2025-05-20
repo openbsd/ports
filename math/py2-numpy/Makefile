@@ -5,7 +5,7 @@ COMMENT=		fast array and numeric programming library for Python 2
 PORTROACH=		limit:^1\.16
 
 MODPY_DISTV=		1.16.6
-REVISION=		1
+REVISION=		2
 DISTNAME=		numpy-${MODPY_DISTV}
 PKGNAME=		py-${DISTNAME}
 EXTRACT_SUFX=		.zip

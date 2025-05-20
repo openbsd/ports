@@ -3,7 +3,7 @@ COMMENT =	signal-processing toolkit for SDR (software-defined radio)
 GH_TAGNAME =	v3.10.11.0
 GH_ACCOUNT =	gnuradio
 GH_PROJECT =	gnuradio
-REVISION =	0
+REVISION =	1
 
 SHARED_LIBS +=  gnuradio-analog           1.0 # 3.7
 SHARED_LIBS +=  gnuradio-atsc             1.0 # 3.7

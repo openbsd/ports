@@ -2,7 +2,7 @@ COMMENT=	3D printing host suite
 
 MODPY_DISTV=	2.0.1
 DISTNAME=	printrun-${MODPY_DISTV}
-REVISION=	2
+REVISION=	3
 
 GH_ACCOUNT=	kliment
 GH_PROJECT=	Printrun

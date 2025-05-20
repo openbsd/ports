@@ -1,24 +1,24 @@
-COMMENT =		io for scientific data formats
+COMMENT =	io for scientific data formats
 
 MODPY_DISTV =	2.6.1
-DISTNAME =		imageio-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-CATEGORIES =		graphics
-REVISION =		8
+DISTNAME =	imageio-${MODPY_DISTV}
+PKGNAME =	py-${DISTNAME}
+CATEGORIES =	graphics
+REVISION =	9
 
-MAINTAINER =		Paul Irofti <paul@irofti.net>
+MAINTAINER =	Paul Irofti <paul@irofti.net>
 
 # BSD
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE = Yes
 
-MODULES =		lang/python
+MODULES =	lang/python
 
-RUN_DEPENDS =		math/py-numpy \
-			graphics/py-Pillow
+RUN_DEPENDS =	math/py-numpy \
+		graphics/py-Pillow
 
-TEST_DEPENDS =		sysutils/py-psutil
+TEST_DEPENDS =	sysutils/py-psutil
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODPY_PI =	Yes
+MODPY_PYBUILD =	setuptools
 
 .include <bsd.port.mk>

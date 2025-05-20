@@ -1,15 +1,15 @@
 COMMENT =	raster graphics editor for digital painters
 
 MODPY_DISTV =	2.0.1
-DISTNAME =		mypaint-${MODPY_DISTV}
-EXTRACT_SUFX =		.tar.xz
-REVISION =		9
+DISTNAME =	mypaint-${MODPY_DISTV}
+EXTRACT_SUFX =	.tar.xz
+REVISION =	10
 
-CATEGORIES =		graphics
+CATEGORIES =	graphics
 
-HOMEPAGE =		https://mypaint.org
+HOMEPAGE =	https://mypaint.org
 
-MAINTAINER =		Pamela Mosiejczuk <pamela@openbsd.org>
+MAINTAINER =	Pamela Mosiejczuk <pamela@openbsd.org>
 
 # GPL-2.0
 PERMIT_PACKAGE =	Yes

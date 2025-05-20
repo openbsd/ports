@@ -5,6 +5,7 @@ COMMENT =		Python interface to SCS
 MODPY_DISTV =		3.2.7
 DISTNAME =		scs-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
+REVISION =		0
 
 CATEGORIES =		math
 

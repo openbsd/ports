@@ -4,7 +4,7 @@ MODPY_DISTV=	0.6.1
 
 DISTNAME=	pytest-arraydiff-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/py//}
-REVISION=	2
+REVISION=	3
 
 CATEGORIES=	devel
 

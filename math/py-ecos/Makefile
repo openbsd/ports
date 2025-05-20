@@ -1,27 +1,28 @@
-COMMENT =		Python interface to ECOS
+COMMENT=	Python interface to ECOS
 
-MODPY_DISTV =	2.0.10
-DISTNAME =		ecos-${MODPY_DISTV}
-V =			${MODPY_DISTV:S/post//}
-PKGNAME =		py-ecos-${V}
-CATEGORIES =		math
-REVISION =		2
+MODPY_DISTV=	2.0.10
+DISTNAME=	ecos-${MODPY_DISTV}
+V=		${MODPY_DISTV:S/post//}
+PKGNAME=	py-ecos-${V}
+CATEGORIES=	math
+REVISION=	3
 
-WANTLIB =  pthread
-MAINTAINER =		Paul Irofti <paul@irofti.net>
+MAINTAINER=	Paul Irofti <paul@irofti.net>
 
 # GPLv3
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+WANTLIB=	pthread
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =		setuptools
+MODULES=	lang/python
 
-BUILD_DEPENDS =		math/py-numpy \
-			math/py-oldest-supported-numpy
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
-RUN_DEPENDS =		math/py-numpy>=1.6 \
-			math/py-scipy>=0.9
+BUILD_DEPENDS=	math/py-numpy \
+		math/py-oldest-supported-numpy
+
+RUN_DEPENDS=	math/py-numpy>=1.6 \
+		math/py-scipy>=0.9
 
 .include <bsd.port.mk>

@@ -3,7 +3,7 @@ COMMENT =	library for calculating contours of 2D quadrilateral grids
 MODPY_DISTV =	1.2.1
 DISTNAME =	contourpy-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	math
 

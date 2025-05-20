@@ -1,27 +1,28 @@
-COMMENT =		Python interface to OSQP
+COMMENT=	Python interface to OSQP
 
-MODPY_DISTV =	0.6.1
-DISTNAME =		osqp-${MODPY_DISTV}
-PKGNAME =		py-${DISTNAME}
-CATEGORIES =		math
-REVISION =		10
+MODPY_DISTV=	0.6.1
+DISTNAME=	osqp-${MODPY_DISTV}
+PKGNAME=	py-${DISTNAME}
+CATEGORIES=	math
+REVISION=	11
 
-WANTLIB =  pthread
-MAINTAINER =		Paul Irofti <paul@irofti.net>
+MAINTAINER=	Paul Irofti <paul@irofti.net>
 
 # Apache v2
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-MODULES =		lang/python
+WANTLIB=	pthread
 
-BUILD_DEPENDS =		${RUN_DEPENDS} \
-			devel/cmake/core
+MODULES=	lang/python
 
-RUN_DEPENDS =		math/py-numpy	\
-			math/py-scipy	\
-			devel/py-future
+BUILD_DEPENDS=	${RUN_DEPENDS} \
+		devel/cmake/core
 
-MODPY_PI =		Yes
-MODPY_PYBUILD =	setuptools
+RUN_DEPENDS=	math/py-numpy	\
+		math/py-scipy	\
+		devel/py-future
+
+MODPY_PI=	Yes
+MODPY_PYBUILD=	setuptools
 
 .include <bsd.port.mk>

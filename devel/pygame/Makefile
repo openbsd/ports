@@ -6,7 +6,7 @@ MODPY_DISTV=	2.6.1
 DISTNAME=	pygame-${MODPY_DISTV}
 PKGNAME=	py-game-${MODPY_DISTV}
 CATEGORIES=	devel games
-REVISION=	2
+REVISION=	3
 
 HOMEPAGE=	https://www.pygame.org/
 

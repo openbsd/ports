@@ -5,7 +5,7 @@ MUSIC_V=	007
 V=		1.00
 DISTNAME=	singularity-${V}
 PKGNAME=	singularity-${V}
-REVISION=	6
+REVISION=	7
 
 CATEGORIES=	games
 

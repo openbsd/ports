@@ -4,7 +4,7 @@ COMMENT=	statistical and novel interactive HTML plots for Python
 MODPY_DISTV=	3.6.3
 DISTNAME=	bokeh-${MODPY_DISTV}
 PKGNAME=	py-bokeh-${MODPY_DISTV}
-REVISION=	0
+REVISION=	1
 
 CATEGORIES=	www graphics
 

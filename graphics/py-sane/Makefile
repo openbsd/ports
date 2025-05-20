@@ -5,7 +5,7 @@ DISTNAME=	Sane-${MODPY_DISTV}
 DISTFILES=	${DISTNAME}{v${MODPY_DISTV}}.tar.gz
 PKGNAME=	py-${DISTNAME:L}
 CATEGORIES=	graphics
-REVISION=	5
+REVISION=	6
 
 HOMEPAGE=	http://python-pillow.github.io/
 

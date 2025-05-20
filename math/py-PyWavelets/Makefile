@@ -3,7 +3,7 @@ COMMENT =		wavelet transform module
 MODPY_DISTV =		1.5.0
 DISTNAME =		pywavelets-${MODPY_DISTV}
 PKGNAME =		py-PyWavelets-${MODPY_DISTV}
-REVISION =		2
+REVISION =		3
 
 CATEGORIES =		math
 
