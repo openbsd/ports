@@ -1,6 +1,6 @@
 COMMENT=	Xfce4 cpu/memory/swap/uptime monitor panel plugin
 
-XFCE_VERSION=	1.3.3
+XFCE_VERSION=	1.4.0
 XFCE_PLUGIN=	systemload
 
 # BSD
@@ -9,23 +9,12 @@ PERMIT_PACKAGE=	Yes
 # C++
 COMPILER=	base-clang ports-gcc
 
-MODULES=	x11/xfce4
+MODULES=	x11/xfce4 devel/meson
 MODXFCE_ICON_CACHE=	Yes
 
-CONFIGURE_ARGS=	--disable-upower
+CONFIGURE_ARGS=	-Dupower-glib=disabled
 
-WANTLIB += ICE SM X11 X11-xcb Xcomposite Xcursor Xdamage
-WANTLIB += Xext Xfixes Xi Xinerama Xrandr Xrender fribidi
-WANTLIB += atk-1.0 atspi cairo dbus-1 expat ffi fontconfig freetype
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += kvm m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png
-WANTLIB += startup-notification-1 xcb xcb-util xcb-render xcb-shm
-WANTLIB += xfce4util xfce4ui-2 gthread-2.0 gtop-2.0 xfconf-0 z
-WANTLIB += harfbuzz pthread graphite2 iconv intl
-WANTLIB += atk-bridge-2.0 cairo-gobject epoxy gdk-3 gtk-3
-WANTLIB += Xau Xdmcp jpeg
-WANTLIB += epoll-shim gtk-layer-shell wayland-client wayland-cursor
-WANTLIB += wayland-egl xkbcommon ${COMPILER_LIBCXX}
+WANTLIB += gdk-3 glib-2.0 gobject-2.0 gtk-3 gtop-2.0 intl m xfce4ui-2
+WANTLIB += xfce4util xfconf-0
 
 .include <bsd.port.mk>
