@@ -2,7 +2,7 @@ PORTROACH =	limitw:1,even
 
 COMMENT =	GNU privacy guard - a free PGP replacement
 
-DISTNAME =	gnupg-2.4.7
+DISTNAME =	gnupg-2.4.8
 
 CATEGORIES =	security
 
@@ -53,10 +53,5 @@ CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib ${LDFLAGS}"
 CONFIGURE_ARGS +=	--enable-gpgtar \
 			--enable-wks-tools
-
-post-install:
-	rm -rf ${PREFIX}/share/doc/gnupg/examples/systemd-user
-	mv ${PREFIX}/man/manh/gnupg.7.html ${PREFIX}/share/doc/gnupg
-	rmdir ${PREFIX}/man/manh/
 
 .include <bsd.port.mk>

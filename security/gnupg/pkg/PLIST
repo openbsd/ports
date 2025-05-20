@@ -69,7 +69,6 @@ share/doc/gnupg/examples/pwpattern.list
 share/doc/gnupg/examples/qualified.txt
 share/doc/gnupg/examples/scd-event
 share/doc/gnupg/examples/trustlist.txt
-share/doc/gnupg/gnupg.7.html
 share/doc/pkg-readmes/${PKGSTEM}
 share/gnupg/
 share/gnupg/distsigkey.gpg
