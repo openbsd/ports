@@ -7,8 +7,8 @@ COMMENT =	cross-platform library for building Telegram clients
 # track "unofficial minor versions" which are only present as commit hashes.
 GH_ACCOUNT =	tdlib
 GH_PROJECT =	td
-GH_COMMIT =	28c6f2e9c045372d50217919bf5768b7fbbe0294
-DISTNAME =	tdlib-1.8.44
+GH_COMMIT =	51743dfd01dff6179e2d8f7095729caa4e2222e9
+DISTNAME =	tdlib-1.8.49
 
 SHARED_LIBS +=	tdjson	0.1
 CATEGORIES =	net
@@ -24,7 +24,7 @@ MODULES =	devel/cmake
 
 BUILD_DEPENDS =	devel/gperf
 
-# C++14
+# C++17
 COMPILER =	base-clang ports-gcc
 
 WANTLIB +=	${COMPILER_LIBCXX} crypto m ssl z
@@ -32,6 +32,9 @@ WANTLIB +=	${COMPILER_LIBCXX} crypto m ssl z
 # if moving from GH_COMMIT to GH_TAGNAME, include the actual commit hash here
 COMMIT =	${GH_COMMIT}
 SUBST_VARS +=	COMMIT
+
+CONFIGURE_ARGS =	-DCMAKE_DISABLE_FIND_PROGRAM_ccache=ON \
+			-DCMAKE_DISABLE_FIND_PROGRAM_php=ON
 
 post-patch:
 	${SUBST_CMD} ${WRKSRC}/CMake/GetGitRevisionDescription.cmake

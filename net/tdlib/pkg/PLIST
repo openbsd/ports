@@ -22,6 +22,7 @@ lib/cmake/Td/TdTargets.cmake
 @static-lib lib/libtdclient.a
 @static-lib lib/libtdcore.a
 @static-lib lib/libtddb.a
+@static-lib lib/libtde2e.a
 @lib lib/libtdjson.so.${LIBtdjson_VERSION}
 @static-lib lib/libtdjson_private.a
 @static-lib lib/libtdjson_static.a
@@ -34,6 +35,7 @@ lib/pkgconfig/tdapi.pc
 lib/pkgconfig/tdclient.pc
 lib/pkgconfig/tdcore.pc
 lib/pkgconfig/tddb.pc
+lib/pkgconfig/tde2e.pc
 lib/pkgconfig/tdjson.pc
 lib/pkgconfig/tdjson_private.pc
 lib/pkgconfig/tdjson_static.pc
