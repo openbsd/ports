@@ -1918,6 +1918,7 @@ include/tg_owt/third_party/libyuv/include/libyuv/rotate.h
 include/tg_owt/third_party/libyuv/include/libyuv/rotate_argb.h
 include/tg_owt/third_party/libyuv/include/libyuv/rotate_row.h
 include/tg_owt/third_party/libyuv/include/libyuv/row.h
+include/tg_owt/third_party/libyuv/include/libyuv/row_sve.h
 include/tg_owt/third_party/libyuv/include/libyuv/scale.h
 include/tg_owt/third_party/libyuv/include/libyuv/scale_argb.h
 include/tg_owt/third_party/libyuv/include/libyuv/scale_rgb.h

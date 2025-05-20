@@ -11,15 +11,14 @@ COMMENT =		WebRTC build for Telegram
 # No releases or tags, use commit from tdesktop's snap/snapcraft.yaml
 # 04.08.2024 HEAD to include merged PRs
 DIST_TUPLE =		github	desktop-app	tg_owt	\
-			8198c4d8b91e22d68eb5c7327fd408e3b6abcc79	.
-PKGNAME =		tg_owt-0.0.0.20241028
-REVISION =		0
+			c4192e8e2e10ccb72704daa79fa108becfa57b01	.
+PKGNAME =		tg_owt-0.0.0.20250501
 
 CATEGORIES =		net
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
-SHARED_LIBS =		tg_owt	11.0	# upstream is static only
+SHARED_LIBS =		tg_owt	12.0	# upstream is static only
 
 DIST_SUBDIR =		tg_owt
 # Fetch bundles/submodules missing from the tarball, see ${WRKSRC}/.gitmodules
@@ -28,15 +27,8 @@ DIST_SUBDIR =		tg_owt
 # main/master/stable/<commit> tarballs are *not reproducible*
 # use a mirror to get stable tarballs for latest master
 DIST_TUPLE +=		github	klemensn	libyuv \
-			f00c43f4d6e812b581f64edc53a655f8e2413938 \
+			951e43439c3125bc55df43c01f13041a253a59dc \
 			src/third_party/libyuv
-
-SITES.tg_owt =		https://github.com/desktop-app/tg_owt/commit/
-# Pending "Unbundle libSRTP"
-# https://github.com/desktop-app/tg_owt/pull/137
-PATCHFILES.tg_owt =	use-system-libsrtp-{}b582f89d.patch \
-			use-system-libsrtp-{}b080adb5.patch
-PATCH_DIST_STRIP =	-p1
 
 MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 			Klemens Nanni <kn@openbsd.org>
@@ -45,10 +37,9 @@ MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} X11 Xcomposite Xdamage Xext Xfixes
-WANTLIB += Xrandr Xrender Xtst absl_bad_optional_access absl_bad_variant_access
-WANTLIB += absl_base absl_city absl_civil_time absl_cord absl_cord_internal
-WANTLIB += absl_cordz_functions absl_cordz_handle absl_cordz_info
-WANTLIB += absl_crc32c absl_crc_cord_state absl_crc_cpu_detect
+WANTLIB += Xrandr Xrender Xtst absl_base absl_city absl_civil_time
+WANTLIB += absl_cord absl_cord_internal absl_cordz_functions absl_cordz_handle
+WANTLIB += absl_cordz_info absl_crc32c absl_crc_cord_state absl_crc_cpu_detect
 WANTLIB += absl_crc_internal absl_debugging_internal absl_decode_rust_punycode
 WANTLIB += absl_demangle_internal absl_demangle_rust absl_exponential_biased
 WANTLIB += absl_flags_commandlineflag absl_flags_commandlineflag_internal
