@@ -4,7 +4,7 @@ USE_NOBTCFI =		Yes
 
 DPB_PROPERTIES =	parallel
 
-V =			9.0.1
+V =			9.0.2
 COMMENT =		schematic and PCB editing software
 DISTNAME =		kicad-${V}
 EPOCH =			0
@@ -55,15 +55,15 @@ WANTLIB += absl_stacktrace absl_status absl_statusor absl_str_format_internal
 WANTLIB += absl_strerror absl_string_view absl_strings absl_strings_internal
 WANTLIB += absl_symbolize absl_synchronization absl_throw_delegate
 WANTLIB += absl_time absl_time_zone absl_tracing_internal absl_utf8_for_code_point
-WANTLIB += absl_vlog_config_internal atk-1.0 boost_locale-mt c
-WANTLIB += cairo cairo-gobject curl fontconfig freetype gdk-3
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 git2 glib-2.0 gobject-2.0 gtk-3
-WANTLIB += harfbuzz intl iodbc m ngspice nng pango-1.0 pangocairo-1.0
-WANTLIB += pixman-1 protobuf python3.12 secret-1 wx_baseu-3.2
-WANTLIB += wx_baseu_net-3.2 wx_baseu_xml-3.2 wx_gtk3u_aui-3.2
-WANTLIB += wx_gtk3u_core-3.2 wx_gtk3u_gl-3.2 wx_gtk3u_html-3.2
-WANTLIB += wx_gtk3u_propgrid-3.2 wx_gtk3u_richtext-3.2 wx_gtk3u_stc-3.2
-WANTLIB += z zstd
+WANTLIB += absl_vlog_config_internal atk-1.0 boost_chrono-mt boost_locale-mt
+WANTLIB += boost_system-mt boost_thread-mt c cairo cairo-gobject
+WANTLIB += curl fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0
+WANTLIB += git2 glib-2.0 gobject-2.0 gtk-3 harfbuzz intl iodbc
+WANTLIB += m ngspice nng pango-1.0 pangocairo-1.0 pixman-1 protobuf
+WANTLIB += python3.12 secret-1 wx_baseu-3.2 wx_baseu_net-3.2 wx_baseu_xml-3.2
+WANTLIB += wx_gtk3u_aui-3.2 wx_gtk3u_core-3.2 wx_gtk3u_gl-3.2
+WANTLIB += wx_gtk3u_html-3.2 wx_gtk3u_propgrid-3.2 wx_gtk3u_richtext-3.2
+WANTLIB += wx_gtk3u_stc-3.2 z zstd
 
 SITES =			https://gitlab.com/kicad/code/kicad/-/archive/${V}/
 
@@ -88,7 +88,8 @@ RUN_DEPENDS =		cad/kicad-share/footprints>=${V} \
 			misc/shared-mime-info \
 			x11/gtk+4,-guic
 
-LIB_DEPENDS =		cad/ngspice/libngspice \
+LIB_DEPENDS =		archivers/zstd \
+			cad/ngspice/libngspice \
 			cad/opencascade \
 			databases/iodbc \
 			devel/boost \
