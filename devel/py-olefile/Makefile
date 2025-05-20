@@ -1,13 +1,9 @@
 COMMENT =	parse, read and write Microsoft OLE2 files
 
-MODPY_DISTV =	0.46
+MODPY_DISTV =	0.47
 DISTNAME =	olefile-${MODPY_DISTV}
+EXTRACT_SUFX =	.zip
 PKGNAME =	py-${DISTNAME}
-REVISION =	9
-
-GH_ACCOUNT =	decalage2
-GH_PROJECT =	olefile
-GH_TAGNAME =	v${MODPY_DISTV}
 
 CATEGORIES =	devel
 
@@ -19,8 +15,7 @@ MAINTAINER =	Remi Pointel <rpointel@openbsd.org>
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
-MODPY_PYBUILD =		setuptools
-
-NO_TEST = 	Yes
+MODPY_PYBUILD =	setuptools
+MODPY_PI =	Yes
 
 .include <bsd.port.mk>
