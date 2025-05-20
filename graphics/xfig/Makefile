@@ -33,6 +33,7 @@ CONFIGURE_ARGS=	--with-applicationsdir=${PREFIX}/share/applications \
 		--with-appdefaultdir=${PREFIX}/lib/X11/app-defaults \
 		--datarootdir=${PREFIX}/lib/X11
 
+# uses roff(7) diversions (.di)
 USE_GROFF=	Yes
 
 pre-build:
