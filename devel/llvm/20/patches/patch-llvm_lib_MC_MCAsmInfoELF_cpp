@@ -1,0 +1,12 @@
+Index: llvm/lib/MC/MCAsmInfoELF.cpp
+--- llvm/lib/MC/MCAsmInfoELF.cpp.orig
++++ llvm/lib/MC/MCAsmInfoELF.cpp
+@@ -29,7 +29,7 @@ MCSection *MCAsmInfoELF::getNonexecutableStackSection(
+ }
+ 
+ MCAsmInfoELF::MCAsmInfoELF() {
+-  HasIdentDirective = true;
++  HasIdentDirective = false;
+   WeakRefDirective = "\t.weak\t";
+   PrivateGlobalPrefix = ".L";
+   PrivateLabelPrefix = ".L";
