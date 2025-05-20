@@ -1,0 +1,26 @@
+https://gitlab.xfce.org/panel-plugins/xfce4-weather-plugin/-/merge_requests/37
+
+Index: meson.build
+--- meson.build.orig
++++ meson.build
+@@ -42,6 +42,12 @@ json = dependency('json-c', version: dependency_versio
+ upower_glib = dependency('upower-glib', version: dependency_versions['upower-glib'], required: get_option('upower-glib'))
+ libm = cc.find_library('m')
+ 
++feature_cflags = []
++
++if upower_glib.found()
++  feature_cflags += '-DHAVE_UPOWER_GLIB=1'
++endif
++
+ extra_cflags = []
+ extra_cflags_check = [
+   '-Wmissing-declarations',
+@@ -125,6 +131,7 @@ extra_cflags += [
+ 
+ add_project_arguments(cc.get_supported_arguments(extra_cflags_check), language: 'c')
+ add_project_arguments(extra_cflags, language: 'c')
++add_project_arguments(feature_cflags, language: 'c')
+ 
+ xfce_revision_h = vcs_tag(
+   command: ['git', 'rev-parse', '--short', 'HEAD'],
