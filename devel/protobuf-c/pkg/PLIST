@@ -1,5 +1,6 @@
 bin/protoc-c
 @bin bin/protoc-gen-c
+include/google/
 include/google/protobuf-c/
 include/google/protobuf-c/protobuf-c.h
 include/protobuf-c/
