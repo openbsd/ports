@@ -3,9 +3,10 @@ COMMENT =	terminal based presentation tool
 MODGO_MODNAME =	github.com/maaslalani/slides
 MODGO_VERSION = v0.9.0
 DISTNAME =	slides-${MODGO_VERSION}
+REVISION =	0
 
 CATEGORIES =	textproc productivity
-HOMEPAGE =	github.com/maaslalani/slides
+HOMEPAGE =	https://github.com/maaslalani/slides
 
 MAINTAINER =	Edd Barrett <edd@openbsd.org>
 
