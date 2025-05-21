@@ -1,0 +1,35 @@
+From 768003148015376f1715a2d4cc0b3d6d800876c4 Mon Sep 17 00:00:00 2001
+From: Hugo Osvaldo Barrera <hugo@whynothugo.nl>
+Date: Thu, 11 Jan 2024 16:28:28 +0100
+Subject: [PATCH] Update deprecated syntax
+
+Index: khal/ui/calendarwidget.py
+--- khal/ui/calendarwidget.py.orig
++++ khal/ui/calendarwidget.py
+@@ -148,7 +148,7 @@ class DateCColumns(urwid.Columns):
+ 
+     @urwid.Columns.focus_position.setter
+     def focus_position(self, position: int) -> None:
+-        """calls on_date_change before calling super()._set_focus_position"""
++        """calls on_date_change before setting super().focus_position"""
+         # do not call when building up the interface, lots of potentially
+         # expensive calls made here
+         if self._init:
+@@ -163,7 +163,7 @@ class DateCColumns(urwid.Columns):
+     def set_focus_date(self, a_date):
+         for num, day in enumerate(self.contents[1:8], 1):
+             if day[0].date == a_date:
+-                self._set_focus_position(num)
++                self.focus_position = num
+                 return None
+         raise ValueError('%s not found in this week' % a_date)
+ 
+@@ -381,7 +381,7 @@ class CalendarWalker(urwid.SimpleFocusListWalker):
+         """
+         row, column = self.get_date_pos(a_day)
+         self.set_focus(row)
+-        self[self.focus]._set_focus_position(column)
++        self[self.focus].focus_position = (column)
+ 
+     @property
+     def earliest_date(self):

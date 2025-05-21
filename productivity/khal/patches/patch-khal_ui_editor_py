@@ -1,0 +1,17 @@
+From 768003148015376f1715a2d4cc0b3d6d800876c4 Mon Sep 17 00:00:00 2001
+From: Hugo Osvaldo Barrera <hugo@whynothugo.nl>
+Date: Thu, 11 Jan 2024 16:28:28 +0100
+Subject: [PATCH] Update deprecated syntax
+
+Index: khal/ui/editor.py
+--- khal/ui/editor.py.orig
++++ khal/ui/editor.py
+@@ -58,7 +58,7 @@ class CalendarPopUp(urwid.PopUpLauncher):
+         self._monthdisplay = monthdisplay
+         self._firstweekday = firstweekday
+         self._keybindings = {} if keybindings is None else keybindings
+-        self.__super.__init__(widget)
++        super().__init__(widget)
+ 
+     def keypress(self, size, key):
+         if key == 'enter':
