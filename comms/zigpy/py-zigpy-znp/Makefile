@@ -1,6 +1,6 @@
 COMMENT=	zigpy module and tools for TI CC2652/similar
 
-MODPY_DISTV=	0.13.1
+MODPY_DISTV=	0.14.0
 
 GH_ACCOUNT=	zigpy
 GH_PROJECT=	zigpy-znp
