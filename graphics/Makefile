@@ -15,6 +15,7 @@
      SUBDIR += azpainter
      SUBDIR += babl
      SUBDIR += barcode
+     SUBDIR += blend2d
      SUBDIR += blender
      SUBDIR += bonzomatic
      SUBDIR += cadubi
