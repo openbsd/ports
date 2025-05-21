@@ -1,0 +1,2 @@
+lib/qt6/plugins/phonon4qt6_backend/
+@so lib/qt6/plugins/phonon4qt6_backend/phonon_mpv_qt6.so

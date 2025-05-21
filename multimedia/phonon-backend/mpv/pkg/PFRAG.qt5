@@ -1,0 +1,4 @@
+lib/qt5/
+lib/qt5/plugins/
+lib/qt5/plugins/phonon4qt5_backend/
+@so lib/qt5/plugins/phonon4qt5_backend/phonon_mpv_qt5.so
