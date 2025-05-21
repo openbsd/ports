@@ -3,7 +3,7 @@ BROKEN-sparc64 = is not a constant expression
 COMMENT =	abseil common libraries (C++)
 CATEGORIES =	devel
 
-V =		20250127.1
+V =		20250512.0
 DISTNAME =	abseil-cpp-${V}
 
 HOMEPAGE =	https://abseil.io/
@@ -36,8 +36,8 @@ ABSL_LIBS = \
     log_internal_test_helpers log_internal_test_matchers log_severity log_sink \
     low_level_hash malloc_internal per_thread_sem_test_common periodic_sampler \
     poison pow10_helper random_distributions \
-    random_internal_distribution_test_util random_internal_platform \
-    random_internal_pool_urbg random_internal_randen \
+    random_internal_distribution_test_util random_internal_entropy_pool \
+    random_internal_platform random_internal_pool_urbg random_internal_randen \
     random_internal_randen_hwaes random_internal_randen_hwaes_impl \
     random_internal_randen_slow random_internal_seed_material \
     random_seed_gen_exception random_seed_sequences raw_hash_set \
@@ -48,7 +48,7 @@ ABSL_LIBS = \
     time_internal_test_util time_zone tracing_internal utf8_for_code_point \
     vlog_config_internal
 .for _lib in ${ABSL_LIBS}
-SHARED_LIBS +=		absl_${_lib}	6.0
+SHARED_LIBS +=		absl_${_lib}	7.0
 .endfor
 
 WANTLIB += ${COMPILER_LIBCXX} execinfo gmock gtest m
