@@ -10,7 +10,7 @@ Authentication via OAuth must be set up using
 $ spotifyd authenticate -c .
 
 This will redirect you to a web browser to complete the OAuth process, then
-place a credentials.json file in the current directory.
+place a credentials.json file in the ./oauth directory.
 
 Copy this file to ${HOME_DIR}/cache/oauth for use by the systemwide instance.
 

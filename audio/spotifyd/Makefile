@@ -6,6 +6,7 @@ COMMENT =		Spotify client running as UNIX daemon
 GH_ACCOUNT =		Spotifyd
 GH_PROJECT =		spotifyd
 GH_TAGNAME =		v0.4.1
+REVISION =		0
 CATEGORIES =		audio net
 
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
