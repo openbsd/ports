@@ -1,0 +1,7 @@
+Kongress provides practical information about conferences. It supports
+conferences that offer their schedule in iCalendar format. In Kongress, the
+data of the talks are shown in various ways, e.g. in daily views, by talk
+category, etc. The users can also create a list of favorite conference
+talks/events as well as they can navigate to the web page of each talk. A map
+of the conference venue, location information and link to OpenStreetMap can
+also be added.
