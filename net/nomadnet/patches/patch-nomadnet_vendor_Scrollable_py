@@ -1,0 +1,26 @@
+From b9ac735308f697ff0d98f572fc94c3e8202095cc Mon Sep 17 00:00:00 2001
+From: Ivan <Sudo-Ivan@users.noreply.github.com>
+Date: Thu, 8 May 2025 18:40:04 -0500
+Subject: [PATCH] update to use super().__init__(widget)
+
+Index: nomadnet/vendor/Scrollable.py
+--- nomadnet/vendor/Scrollable.py.orig
++++ nomadnet/vendor/Scrollable.py
+@@ -50,7 +50,7 @@ class Scrollable(urwid.WidgetDecoration):
+         self._old_cursor_coords = None
+         self._rows_max_cached = 0
+         self.force_forward_keypress = force_forward_keypress
+-        self.__super.__init__(widget)
++        super().__init__(widget)
+ 
+     def render(self, size, focus=False):
+         maxcol, maxrow = size
+@@ -340,7 +340,7 @@ class ScrollBar(urwid.WidgetDecoration):
+         """
+         if BOX not in widget.sizing():
+             raise ValueError('Not a box widget: %r' % widget)
+-        self.__super.__init__(widget)
++        super().__init__(widget)
+         self._thumb_char = thumb_char
+         self._trough_char = trough_char
+         self.scrollbar_side = side
