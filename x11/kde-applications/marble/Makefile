@@ -3,6 +3,7 @@ USE_WXNEEDED =	Yes
 COMMENT =	virtual globe and world atlas
 DISTNAME =	marble-${VERSION}
 CATEGORIES =	geo
+REVISION =	0
 
 HOMEPAGE =	https://marble.kde.org/
 
@@ -25,23 +26,22 @@ WANTLIB += Qt6Positioning Qt6PrintSupport Qt6Qml Qt6QmlMeta Qt6QmlModels
 WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6SerialPort Qt6Sql Qt6Svg
 WANTLIB += Qt6SvgWidgets Qt6WebChannel Qt6WebChannelQuick Qt6WebEngineCore
 WANTLIB += Qt6WebEngineQuick Qt6WebEngineWidgets Qt6Widgets Qt6Xml
-WANTLIB += absl_bad_optional_access absl_bad_variant_access absl_base
-WANTLIB += absl_city absl_civil_time absl_debugging_internal absl_decode_rust_punycode
-WANTLIB += absl_demangle_internal absl_demangle_rust absl_examine_stack
-WANTLIB += absl_graphcycles_internal absl_hash absl_int128 absl_kernel_timeout_internal
-WANTLIB += absl_leak_check absl_log_entry absl_log_globals absl_log_internal_check_op
-WANTLIB += absl_log_internal_fnmatch absl_log_internal_format
-WANTLIB += absl_log_internal_globals absl_log_internal_log_sink_set
-WANTLIB += absl_log_internal_message absl_log_internal_nullguard
-WANTLIB += absl_log_internal_proto absl_log_internal_structured_proto
-WANTLIB += absl_log_severity absl_log_sink absl_low_level_hash
-WANTLIB += absl_malloc_internal absl_raw_logging_internal absl_spinlock_wait
-WANTLIB += absl_stacktrace absl_str_format_internal absl_strerror
-WANTLIB += absl_string_view absl_strings absl_strings_internal
-WANTLIB += absl_symbolize absl_synchronization absl_throw_delegate
-WANTLIB += absl_time absl_time_zone absl_tracing_internal absl_utf8_for_code_point
-WANTLIB += absl_vlog_config_internal c gps m phonon4qt6 protobuf
-WANTLIB += protoc shp z
+WANTLIB += absl_base absl_city absl_civil_time absl_debugging_internal
+WANTLIB += absl_decode_rust_punycode absl_demangle_internal absl_demangle_rust
+WANTLIB += absl_examine_stack absl_graphcycles_internal absl_hash
+WANTLIB += absl_int128 absl_kernel_timeout_internal absl_leak_check
+WANTLIB += absl_log_globals absl_log_internal_check_op absl_log_internal_fnmatch
+WANTLIB += absl_log_internal_format absl_log_internal_globals
+WANTLIB += absl_log_internal_log_sink_set absl_log_internal_message
+WANTLIB += absl_log_internal_nullguard absl_log_internal_proto
+WANTLIB += absl_log_internal_structured_proto absl_log_severity
+WANTLIB += absl_log_sink absl_low_level_hash absl_malloc_internal
+WANTLIB += absl_raw_logging_internal absl_spinlock_wait absl_stacktrace
+WANTLIB += absl_str_format_internal absl_strerror absl_string_view
+WANTLIB += absl_strings absl_strings_internal absl_symbolize absl_synchronization
+WANTLIB += absl_throw_delegate absl_time absl_time_zone absl_tracing_internal
+WANTLIB += absl_utf8_for_code_point absl_vlog_config_internal
+WANTLIB += c gps m phonon4qt6 protobuf protoc shp z
 
 BUILD_DEPENDS =	devel/kf6/kwallet \
 		x11/kde-plasma/libplasma
