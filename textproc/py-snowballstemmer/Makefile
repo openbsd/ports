@@ -1,9 +1,11 @@
 COMMENT=	snowball stemming library collection for Python
 
-MODPY_DISTV=	2.2.0
+MODPY_DISTV=	3.0.1
 DISTNAME=	snowballstemmer-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	4
+
+# https://github.com/snowballstem/snowball
+HOMEPAGE=	https://snowballstem.org/
 
 CATEGORIES=	textproc
 
