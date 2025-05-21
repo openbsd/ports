@@ -1753,6 +1753,7 @@
      SUBDIR += py-unique-log-filter
      SUBDIR += py-untangle
      SUBDIR += py-urwid
+     SUBDIR += py-urwid_readline
      SUBDIR += py-uvloop
      SUBDIR += py-validators
      SUBDIR += py-vcversioner
