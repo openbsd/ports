@@ -1,10 +1,8 @@
 COMMENT =	versatile file searching tool
 
 XFCE_GOODIE =	catfish
-XFCE_VERSION =	4.20.0
+XFCE_VERSION =	4.20.1
 CATEGORIES =	textproc
-EXTRACT_SUFX=	.tar.bz2
-REVISION =	0
 
 MAINTAINER =	Landry Breuil <landry@openbsd.org>
 
