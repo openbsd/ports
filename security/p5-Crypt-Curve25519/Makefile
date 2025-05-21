@@ -1,5 +1,5 @@
 COMMENT =	generate shared secret using ECDH function
-DISTNAME =	Crypt-Curve25519-0.07
+DISTNAME =	Crypt-Curve25519-0.08
 CATEGORIES =	security
 
 # Perl, BSD
