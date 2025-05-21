@@ -1,7 +1,6 @@
 COMMENT=	US-ASCII transliterations of Unicode text
 
-MODPY_DISTV=	1.3.8
-REVISION=	2
+MODPY_DISTV=	1.4.0
 DISTNAME=	Unidecode-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:L}
 
@@ -13,8 +12,7 @@ HOMEPAGE=	https://pypi.python.org/pypi/Unidecode
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 .include <bsd.port.mk>
