@@ -1,0 +1,23 @@
+our libcxx isnt built with _LIBCPP_HAS_PARALLEL_ALGORITHMS
+
+Index: Pdf4QtLibCore/sources/pdfexecutionpolicy.h
+--- Pdf4QtLibCore/sources/pdfexecutionpolicy.h.orig
++++ Pdf4QtLibCore/sources/pdfexecutionpolicy.h
+@@ -138,7 +138,7 @@ class PDF4QTLIBCORESHARED_EXPORT PDFExecutionPolicy (p
+         }
+         else
+         {
+-            std::for_each(std::execution::seq, first, last, f);
++            std::for_each(first, last, f);
+         }
+     }
+ 
+@@ -148,7 +148,7 @@ class PDF4QTLIBCORESHARED_EXPORT PDFExecutionPolicy (p
+         Q_UNUSED(scope);
+ 
+         // We always sort by single thread
+-        std::sort(std::execution::seq, first, last, f);
++        std::sort(first, last, f);
+     }
+ 
+     /// Returns number of active threads for given scope

@@ -1,0 +1,14 @@
+fix translation path at runtime
+
+Index: Pdf4QtLibCore/sources/pdfapplicationtranslator.cpp
+--- Pdf4QtLibCore/sources/pdfapplicationtranslator.cpp.orig
++++ Pdf4QtLibCore/sources/pdfapplicationtranslator.cpp
+@@ -48,7 +48,7 @@ PDFApplicationTranslator::ELanguage PDFApplicationTran
+ void PDFApplicationTranslator::installTranslator()
+ {
+     QDir applicationDirectory(QCoreApplication::applicationDirPath());
+-    applicationDirectory.cd("translations");
++    applicationDirectory.cd("../share/pdf4qt/translations");
+     QString translationPath = applicationDirectory.absolutePath();
+ 
+     Q_ASSERT(!m_translator);

@@ -1,0 +1,15 @@
+headers removed in libressl
+
+Index: Pdf4QtLibCore/sources/pdfcertificatestore.cpp
+--- Pdf4QtLibCore/sources/pdfcertificatestore.cpp.orig
++++ Pdf4QtLibCore/sources/pdfcertificatestore.cpp
+@@ -36,9 +36,7 @@
+ #include <openssl/err.h>
+ #include <openssl/sha.h>
+ #include <openssl/rsa.h>
+-#include <openssl/rsaerr.h>
+ #include <openssl/ts.h>
+-#include <openssl/tserr.h>
+ #include <openssl/pem.h>
+ 
+ #include <QDir>

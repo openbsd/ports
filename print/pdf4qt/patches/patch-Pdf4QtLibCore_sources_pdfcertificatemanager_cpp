@@ -1,0 +1,13 @@
+header removed in libressl
+
+Index: Pdf4QtLibCore/sources/pdfcertificatemanager.cpp
+--- Pdf4QtLibCore/sources/pdfcertificatemanager.cpp.orig
++++ Pdf4QtLibCore/sources/pdfcertificatemanager.cpp
+@@ -40,7 +40,6 @@
+ 
+ #include <openssl/bio.h>
+ #include <openssl/rsa.h>
+-#include <openssl/rsaerr.h>
+ #include <openssl/x509.h>
+ #include <openssl/evp.h>
+ #include <openssl/pem.h>

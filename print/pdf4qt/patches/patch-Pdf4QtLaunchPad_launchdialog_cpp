@@ -1,0 +1,14 @@
+dont prepend ./ to the binary being lauched, it should be in $PATH
+
+Index: Pdf4QtLaunchPad/launchdialog.cpp
+--- Pdf4QtLaunchPad/launchdialog.cpp.orig
++++ Pdf4QtLaunchPad/launchdialog.cpp
+@@ -107,7 +107,7 @@ void LaunchDialog::startProgram(const QString& program
+ {
+ #ifndef Q_OS_WIN
+     QString appDir = qgetenv("APPDIR");
+-    QString internalToolPath = appDir.isEmpty() ? QString("./%1").arg(program)
++    QString internalToolPath = appDir.isEmpty() ? QString("%1").arg(program)
+                                                 : QString("%1/usr/bin/%2").arg(appDir, program);
+ 
+     qint64 pid = 0;

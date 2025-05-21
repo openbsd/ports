@@ -1,0 +1,14 @@
+conflict with the major() macro from sys/types.h
+
+Index: Pdf4QtLibCore/sources/pdfdocument.cpp
+--- Pdf4QtLibCore/sources/pdfdocument.cpp.orig
++++ Pdf4QtLibCore/sources/pdfdocument.cpp
+@@ -98,7 +98,7 @@ QByteArray PDFDocument::getVersion() const
+ 
+     if (result.isEmpty() && m_info.version.isValid())
+     {
+-        result = QString("%1.%2").arg(m_info.version.major).arg(m_info.version.minor).toLatin1();
++        result = QString("%1.%2").arg(m_info.version.vmajor).arg(m_info.version.vminor).toLatin1();
+     }
+ 
+     return result;

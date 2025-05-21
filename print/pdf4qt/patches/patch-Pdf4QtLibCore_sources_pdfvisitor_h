@@ -1,0 +1,32 @@
+our libcxx isnt built with _LIBCPP_HAS_PARALLEL_ALGORITHMS
+
+Index: Pdf4QtLibCore/sources/pdfvisitor.h
+--- Pdf4QtLibCore/sources/pdfvisitor.h.orig
++++ Pdf4QtLibCore/sources/pdfvisitor.h
+@@ -167,7 +167,7 @@ struct PDFApplyVisitorImpl<Visitor, PDFAbstractVisitor
+         const PDFObjectStorage::PDFObjects& objects = storage.getObjects();
+         const PDFObject& trailerDictionary = storage.getTrailerDictionary();
+ 
+-        std::for_each(std::execution::par, objects.cbegin(), objects.cend(), [visitor](const PDFObjectStorage::Entry& entry) { entry.object.accept(visitor); });
++        std::for_each(objects.cbegin(), objects.cend(), [visitor](const PDFObjectStorage::Entry& entry) { entry.object.accept(visitor); });
+         trailerDictionary.accept(visitor);
+     }
+ };
+@@ -192,7 +192,7 @@ struct PDFApplyVisitorImpl<Visitor, PDFAbstractVisitor
+             visitor->merge(&localVisitor);
+         };
+ 
+-        std::for_each(std::execution::par, objects.cbegin(), objects.cend(), process);
++        std::for_each(objects.cbegin(), objects.cend(), process);
+         trailerDictionary.accept(visitor);
+     }
+ };
+@@ -206,7 +206,7 @@ struct PDFApplyVisitorImpl<Visitor, PDFAbstractVisitor
+         const PDFObjectStorage::PDFObjects& objects = storage.getObjects();
+         const PDFObject& trailerDictionary = storage.getTrailerDictionary();
+ 
+-        std::for_each(std::execution::seq, objects.cbegin(), objects.cend(), [visitor](const PDFObjectStorage::Entry& entry) { entry.object.accept(visitor); });
++        std::for_each(objects.cbegin(), objects.cend(), [visitor](const PDFObjectStorage::Entry& entry) { entry.object.accept(visitor); });
+         trailerDictionary.accept(visitor);
+     }
+ };

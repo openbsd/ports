@@ -1,0 +1,14 @@
+conflict with the major() macro from sys/types.h
+
+Index: Pdf4QtLibCore/sources/pdfdocumentwriter.cpp
+--- Pdf4QtLibCore/sources/pdfdocumentwriter.cpp.orig
++++ Pdf4QtLibCore/sources/pdfdocumentwriter.cpp
+@@ -257,7 +257,7 @@ PDFOperationResult PDFDocumentWriter::write(QIODevice*
+ 
+     // Write header
+     PDFVersion version = document->getInfo()->version;
+-    device->write(QString("%PDF-%1.%2").arg(version.major).arg(version.minor).toLatin1());
++    device->write(QString("%PDF-%1.%2").arg(version.vmajor).arg(version.vminor).toLatin1());
+     writeCRLF(device);
+     device->write("% PDF producer: ");
+     device->write(PDF_LIBRARY_NAME);

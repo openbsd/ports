@@ -1,0 +1,125 @@
+@bin bin/Pdf4QtDiff
+@bin bin/Pdf4QtEditor
+@bin bin/Pdf4QtLaunchPad
+@bin bin/Pdf4QtPageMaster
+@bin bin/Pdf4QtViewer
+@bin bin/PdfTool
+include/Pdf4QtLibCore/
+include/Pdf4QtLibCore/pdf4qtlibcore_export.h
+include/Pdf4QtLibCore/pdfaction.h
+include/Pdf4QtLibCore/pdfalgorithmlcs.h
+include/Pdf4QtLibCore/pdfannotation.h
+include/Pdf4QtLibCore/pdfapplicationtranslator.h
+include/Pdf4QtLibCore/pdfblendfunction.h
+include/Pdf4QtLibCore/pdfblpainter.h
+include/Pdf4QtLibCore/pdfcatalog.h
+include/Pdf4QtLibCore/pdfccittfaxdecoder.h
+include/Pdf4QtLibCore/pdfcertificatemanager.h
+include/Pdf4QtLibCore/pdfcertificatestore.h
+include/Pdf4QtLibCore/pdfcms.h
+include/Pdf4QtLibCore/pdfcolorconvertor.h
+include/Pdf4QtLibCore/pdfcolorspaces.h
+include/Pdf4QtLibCore/pdfconstants.h
+include/Pdf4QtLibCore/pdfdbgheap.h
+include/Pdf4QtLibCore/pdfdiff.h
+include/Pdf4QtLibCore/pdfdocument.h
+include/Pdf4QtLibCore/pdfdocumentbuilder.h
+include/Pdf4QtLibCore/pdfdocumentmanipulator.h
+include/Pdf4QtLibCore/pdfdocumentreader.h
+include/Pdf4QtLibCore/pdfdocumentsanitizer.h
+include/Pdf4QtLibCore/pdfdocumenttextflow.h
+include/Pdf4QtLibCore/pdfdocumenttextfloweditormodel.h
+include/Pdf4QtLibCore/pdfdocumentwriter.h
+include/Pdf4QtLibCore/pdfencoding.h
+include/Pdf4QtLibCore/pdfexception.h
+include/Pdf4QtLibCore/pdfexecutionpolicy.h
+include/Pdf4QtLibCore/pdffile.h
+include/Pdf4QtLibCore/pdfflatarray.h
+include/Pdf4QtLibCore/pdfflatmap.h
+include/Pdf4QtLibCore/pdffont.h
+include/Pdf4QtLibCore/pdfform.h
+include/Pdf4QtLibCore/pdffunction.h
+include/Pdf4QtLibCore/pdfglobal.h
+include/Pdf4QtLibCore/pdficontheme.h
+include/Pdf4QtLibCore/pdfimage.h
+include/Pdf4QtLibCore/pdfimageconversion.h
+include/Pdf4QtLibCore/pdfjavascriptscanner.h
+include/Pdf4QtLibCore/pdfjbig2decoder.h
+include/Pdf4QtLibCore/pdfmeshqualitysettings.h
+include/Pdf4QtLibCore/pdfmultimedia.h
+include/Pdf4QtLibCore/pdfnametounicode.h
+include/Pdf4QtLibCore/pdfnametreeloader.h
+include/Pdf4QtLibCore/pdfnumbertreeloader.h
+include/Pdf4QtLibCore/pdfobject.h
+include/Pdf4QtLibCore/pdfobjecteditormodel.h
+include/Pdf4QtLibCore/pdfobjectutils.h
+include/Pdf4QtLibCore/pdfoperationcontrol.h
+include/Pdf4QtLibCore/pdfoptimizer.h
+include/Pdf4QtLibCore/pdfoptionalcontent.h
+include/Pdf4QtLibCore/pdfoutline.h
+include/Pdf4QtLibCore/pdfpage.h
+include/Pdf4QtLibCore/pdfpagecontenteditorcontentstreambuilder.h
+include/Pdf4QtLibCore/pdfpagecontenteditorprocessor.h
+include/Pdf4QtLibCore/pdfpagecontentprocessor.h
+include/Pdf4QtLibCore/pdfpagenavigation.h
+include/Pdf4QtLibCore/pdfpagetransition.h
+include/Pdf4QtLibCore/pdfpainter.h
+include/Pdf4QtLibCore/pdfpainterutils.h
+include/Pdf4QtLibCore/pdfparser.h
+include/Pdf4QtLibCore/pdfpattern.h
+include/Pdf4QtLibCore/pdfplugin.h
+include/Pdf4QtLibCore/pdfprogress.h
+include/Pdf4QtLibCore/pdfredact.h
+include/Pdf4QtLibCore/pdfrenderer.h
+include/Pdf4QtLibCore/pdfsecurityhandler.h
+include/Pdf4QtLibCore/pdfsignaturehandler.h
+include/Pdf4QtLibCore/pdfsignaturehandler_impl.h
+include/Pdf4QtLibCore/pdfsnapper.h
+include/Pdf4QtLibCore/pdfstreamfilters.h
+include/Pdf4QtLibCore/pdfstructuretree.h
+include/Pdf4QtLibCore/pdftextlayout.h
+include/Pdf4QtLibCore/pdftextlayoutgenerator.h
+include/Pdf4QtLibCore/pdftransparencyrenderer.h
+include/Pdf4QtLibCore/pdfutils.h
+include/Pdf4QtLibCore/pdfvisitor.h
+include/Pdf4QtLibCore/pdfwidgetsnapshot.h
+include/Pdf4QtLibCore/pdfxfaengine.h
+include/Pdf4QtLibCore/pdfxreftable.h
+@lib lib/libPdf4QtLibCore.so.${LIBPdf4QtLibCore_VERSION}
+@lib lib/libPdf4QtLibGui.so.${LIBPdf4QtLibGui_VERSION}
+@lib lib/libPdf4QtLibWidgets.so.${LIBPdf4QtLibWidgets_VERSION}
+lib/pdf4qt/
+@lib lib/pdf4qt/libAudioBookPlugin.so.${LIBAudioBookPlugin_VERSION}
+@lib lib/pdf4qt/libDimensionsPlugin.so.${LIBDimensionsPlugin_VERSION}
+@lib lib/pdf4qt/libEditorPlugin.so.${LIBEditorPlugin_VERSION}
+@lib lib/pdf4qt/libObjectInspectorPlugin.so.${LIBObjectInspectorPlugin_VERSION}
+@lib lib/pdf4qt/libOutputPreviewPlugin.so.${LIBOutputPreviewPlugin_VERSION}
+@lib lib/pdf4qt/libRedactPlugin.so.${LIBRedactPlugin_VERSION}
+@lib lib/pdf4qt/libSignaturePlugin.so.${LIBSignaturePlugin_VERSION}
+@lib lib/pdf4qt/libSoftProofingPlugin.so.${LIBSoftProofingPlugin_VERSION}
+share/applications/io.github.JakubMelka.Pdf4qt.Pdf4QtDiff.desktop
+share/applications/io.github.JakubMelka.Pdf4qt.Pdf4QtEditor.desktop
+share/applications/io.github.JakubMelka.Pdf4qt.Pdf4QtPageMaster.desktop
+share/applications/io.github.JakubMelka.Pdf4qt.Pdf4QtViewer.desktop
+share/applications/io.github.JakubMelka.Pdf4qt.desktop
+share/icons/hicolor/128x128/apps/io.github.JakubMelka.Pdf4qt.Pdf4QtDiff.png
+share/icons/hicolor/128x128/apps/io.github.JakubMelka.Pdf4qt.Pdf4QtEditor.png
+share/icons/hicolor/128x128/apps/io.github.JakubMelka.Pdf4qt.Pdf4QtPageMaster.png
+share/icons/hicolor/128x128/apps/io.github.JakubMelka.Pdf4qt.Pdf4QtViewer.png
+share/icons/hicolor/128x128/apps/io.github.JakubMelka.Pdf4qt.png
+share/icons/hicolor/scalable/apps/io.github.JakubMelka.Pdf4qt.Pdf4QtDiff.svg
+share/icons/hicolor/scalable/apps/io.github.JakubMelka.Pdf4qt.Pdf4QtEditor.svg
+share/icons/hicolor/scalable/apps/io.github.JakubMelka.Pdf4qt.Pdf4QtPageMaster.svg
+share/icons/hicolor/scalable/apps/io.github.JakubMelka.Pdf4qt.Pdf4QtViewer.svg
+share/icons/hicolor/scalable/apps/io.github.JakubMelka.Pdf4qt.svg
+share/metainfo/
+share/metainfo/io.github.JakubMelka.Pdf4qt.appdata.xml
+share/pdf4qt/
+share/pdf4qt/translations/
+share/pdf4qt/translations/PDF4QT_cs.qm
+share/pdf4qt/translations/PDF4QT_de.qm
+share/pdf4qt/translations/PDF4QT_en.qm
+share/pdf4qt/translations/PDF4QT_es.qm
+share/pdf4qt/translations/PDF4QT_ko.qm
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor

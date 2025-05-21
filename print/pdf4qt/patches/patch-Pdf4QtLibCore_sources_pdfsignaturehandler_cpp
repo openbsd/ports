@@ -1,0 +1,23 @@
+drop method/includes removed from libressl
+
+Index: Pdf4QtLibCore/sources/pdfsignaturehandler.cpp
+--- Pdf4QtLibCore/sources/pdfsignaturehandler.cpp.orig
++++ Pdf4QtLibCore/sources/pdfsignaturehandler.cpp
+@@ -40,9 +40,7 @@
+ #include <openssl/err.h>
+ #include <openssl/sha.h>
+ #include <openssl/rsa.h>
+-#include <openssl/rsaerr.h>
+ #include <openssl/ts.h>
+-#include <openssl/tserr.h>
+ 
+ #include <QDir>
+ #include <QMutex>
+@@ -920,7 +918,6 @@ void PDFSignatureHandler_ETSI_RFC3161::verifySignature
+ 
+             // Initialization of verification context
+             TS_VERIFY_CTX* ts_context = TS_VERIFY_CTX_new();
+-            TS_VERIFY_CTX_init(ts_context);
+             TS_VERIFY_CTX_set_data(ts_context, inputBuffer);
+             TS_VERIFY_CTX_set_flags(ts_context, TS_VFY_ALL_DATA & ~TS_VFY_POLICY & ~TS_VFY_NONCE & ~TS_VFY_TSA_NAME);
+             TS_VERIFY_CTX_set_store(ts_context, store);

@@ -1,0 +1,21 @@
+PDF4QT consists of a PDF rendering library and several applications,
+such as an advanced document viewer, an editor, a diff viewer, a CLI,
+and a document page manipulator application.
+It implements the PDF reference 2.0.
+
+features:
+- color management
+- optional content handling
+- text layout analysis
+- signature validation
+- annotations
+- form filling
+- text to speech capability
+- edition
+- command line tool
+- audio book conversion
+- internal structure inspector
+- compare documents
+- static XFA support (readonly, simple XFA only)
+- electronically/digitally sign documents
+- public key security encryption

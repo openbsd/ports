@@ -1,0 +1,27 @@
+conflict with the major() macro from sys/types.h
+
+Index: Pdf4QtLibCore/sources/pdfglobal.h
+--- Pdf4QtLibCore/sources/pdfglobal.h.orig
++++ Pdf4QtLibCore/sources/pdfglobal.h
+@@ -135,16 +135,16 @@ struct PDFVersion
+ {
+     constexpr explicit PDFVersion() = default;
+     constexpr explicit PDFVersion(uint16_t major, uint16_t minor) :
+-        major(major),
+-        minor(minor)
++        vmajor(major),
++        vminor(minor)
+     {
+ 
+     }
+ 
+-    uint16_t major = 0;
+-    uint16_t minor = 0;
++    uint16_t vmajor = 0;
++    uint16_t vminor = 0;
+ 
+-    bool isValid() const { return major > 0; }
++    bool isValid() const { return vmajor > 0; }
+ };
+ 
+ struct PDFTranslationContext
