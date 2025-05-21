@@ -1,6 +1,5 @@
 COMMENT =	Pure-Perl OpenPGP implementation
-DISTNAME =	Crypt-OpenPGP-1.12
-REVISION =	0
+DISTNAME =	Crypt-OpenPGP-1.19
 CATEGORIES =	security
 PKG_ARCH =	*
 

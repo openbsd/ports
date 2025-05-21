@@ -4,16 +4,16 @@ and fortunately someone gave us a way to get to arc4random_buf from perl.
 Index: lib/Crypt/OpenPGP/Util.pm
 --- lib/Crypt/OpenPGP/Util.pm.orig
 +++ lib/Crypt/OpenPGP/Util.pm
-@@ -4,6 +4,8 @@ use strict;
+@@ -7,6 +7,8 @@ our $VERSION = '1.19'; # VERSION
  # For some reason, FastCalc causes problems. Restrict to one of these 3 backends
  use Math::BigInt only => 'Pari,GMP,Calc';
  
 +use Unix::OpenBSD::Random qw( arc4random_buf );
 +
- use vars qw( @EXPORT_OK @ISA );
  use Exporter;
- @EXPORT_OK = qw( bitsize bin2bigint bin2mp bigint2bin mp2bin mod_exp mod_inverse
-@@ -101,6 +103,8 @@ sub _ensure_bigint {
+ our @EXPORT_OK = qw( bitsize bin2bigint bin2mp bigint2bin mp2bin mod_exp mod_inverse
+                      dash_escape dash_unescape canonical_text );
+@@ -103,6 +105,8 @@ sub _ensure_bigint {
  
  sub get_random_bytes {
  	my $length = shift;
@@ -22,7 +22,7 @@ Index: lib/Crypt/OpenPGP/Util.pm
  	if (eval 'require Crypt::Random; 1;') {
  		return Crypt::Random::makerandom_octet( Length => $length);
  	}
-@@ -114,6 +118,15 @@ sub get_random_bytes {
+@@ -116,6 +120,15 @@ sub get_random_bytes {
  
  sub get_random_bigint {
  	my $bits = shift;

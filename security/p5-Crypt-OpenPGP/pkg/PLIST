@@ -40,6 +40,7 @@ ${P5SITE}/Crypt/OpenPGP/Signature/
 ${P5SITE}/Crypt/OpenPGP/Signature.pm
 ${P5SITE}/Crypt/OpenPGP/Signature/SubPacket.pm
 ${P5SITE}/Crypt/OpenPGP/Trust.pm
+${P5SITE}/Crypt/OpenPGP/UserAttribute.pm
 ${P5SITE}/Crypt/OpenPGP/UserID.pm
 ${P5SITE}/Crypt/OpenPGP/Util.pm
 ${P5SITE}/Crypt/OpenPGP/Words.pm
