@@ -4,6 +4,7 @@ ONLY_FOR_ARCHS ?=	${LLVM_ARCHS}
 DPB_PROPERTIES =	parallel parallel2
 
 COMMENT-main =		modular, fast C/C++/ObjC compiler, static analyzer and tools
+COMMENT-libcxx =	C++ standard library
 COMMENT-lldb =		LLDB debugger
 COMMENT-python =	Python bindings for Clang
 
@@ -13,10 +14,12 @@ PKGSTEM =		llvm-${LLVM_MAJOR}
 PKGSTEM-main =		llvm-${LLVM_MAJOR}
 
 PKGNAME =		llvm-${LLVM_VERSION}
+PKGNAME-libcxx =	libcxx-${LLVM_VERSION}
 PKGNAME-lldb =		lldb-${LLVM_VERSION}
 PKGNAME-python =	${MODPY_PY_PREFIX}llvm-${LLVM_VERSION}
 
 PKGSPEC-main =		llvm-${LLVM_PKGSPEC}
+PKGSPEC-libcxx =	libcxx-${LLVM_PKGSPEC}
 PKGSPEC-lldb =		lldb-${LLVM_PKGSPEC}
 PKGSPEC-python =	${MODPY_PY_PREFIX}llvm-${LLVM_PKGSPEC}
 
@@ -30,17 +33,55 @@ SUBST_VARS +=	LLVM_BASE LLVM_MAJOR LLVM_VERSION LLVM_PKGSPEC
 
 HOMEPAGE =	https://www.llvm.org/
 
-WANTLIB +=	${COMPILER_LIBCXX} c edit execinfo m z
+WANTLIB-main +=	${COMPILER_LIBCXX} c edit execinfo m z
+WANTLIB-libcxx += c m pthread
+WANTLIB-lldb += ${COMPILER_LIBCXX} c curses edit form kvm
+WANTLIB-lldb += m panel ${MODPY_WANTLIB} z
+.if ${LLVM_MAJOR} > 16
+WANTLIB-lldb += llvm${LLVM_MAJOR}/lib/LLVM
+.endif
+WANTLIB-lldb += llvm${LLVM_MAJOR}/lib/clang-cpp
+WANTLIB-python =
+
+LIB_DEPENDS-lldb += devel/llvm/${LLVM_MAJOR},-main
 
 SITES =		https://github.com/llvm/llvm-project/releases/download/llvmorg-${LLVM_VERSION}/
 EXTRACT_SUFX =	.tar.xz
 
+.if ${LLVM_MAJOR} >= 19
+LIBCPP_PACKAGE=		-libcxx
+
+# mimic the way base libc++ is built except for the namespace which
+# is set to __E${LLVM_MAJOR} to avoid conflicts with base libc++
+CONFIGURE_ARGS +=	\
+	-DLLVM_ENABLE_RUNTIMES="libcxx;libcxxabi;libunwind" \
+	-DLIBCXX_ABI_NAMESPACE="__E${LLVM_MAJOR}" \
+	-DLIBCXX_ENABLE_STATIC=OFF \
+	-DLIBCXX_INSTALL_LIBRARY_DIR="lib" \
+	-DLIBCXX_INSTALL_INCLUDE_TARGET_DIR="include/c++/v1" \
+	-DLIBCXX_SHARED_OUTPUT_NAME="ec++" \
+	-DLIBCXX_STATICALLY_LINK_ABI_IN_SHARED_LIBRARY=OFF \
+	-DLIBCXXABI_ENABLE_STATIC=OFF \
+	-DLIBCXXABI_INSTALL_LIBRARY_DIR="lib" \
+	-DLIBCXXABI_SHARED_OUTPUT_NAME="ec++abi" \
+	-DLIBCXXABI_STATICALLY_LINK_UNWINDER_IN_SHARED_LIBRARY=ON \
+	-DLIBCXXABI_USE_LLVM_UNWINDER=ON
+
+# we statically link libunwind in libc++abi
+CONFIGURE_ARGS +=	\
+	-DLIBUNWIND_ENABLE_SHARED=OFF \
+	-DLIBUNWIND_INSTALL_HEADERS=OFF \
+	-DLIBUNWIND_INSTALL_LIBRARY=OFF \
+	-DLIBUNWIND_INSTALL_SHARED_LIBRARY=OFF \
+	-DLIBUNWIND_INSTALL_STATIC_LIBRARY=OFF
+.endif
+
 # BUILD_LLDB is defined by /usr/share/mk/bsd.own.mk
 .if ${BUILD_LLDB:L} == yes
-MULTI_PACKAGES ?=	-main -python -lldb
+MULTI_PACKAGES ?=	-main -python -lldb ${LIBCPP_PACKAGE}
 PROJECTS ?=		clang;lld;lldb
 .else
-MULTI_PACKAGES ?=	-main -python
+MULTI_PACKAGES ?=	-main -python ${LIBCPP_PACKAGE}
 PROJECTS ?=		clang;lld
 .endif
 

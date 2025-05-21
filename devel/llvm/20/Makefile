@@ -7,6 +7,8 @@ SHARED_LIBS +=	LLVM		0.0 \
 		Remarks		0.0 \
 		clang-cpp	0.0 \
 		clang		0.0 \
+		ec++		0.0 \
+		ec++abi		0.0 \
 		lldb		0.0
 
 # Apache License v2.0 with LLVM Exceptions
