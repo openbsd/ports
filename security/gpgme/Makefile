@@ -1,7 +1,7 @@
 COMMENT-main =	GnuPG Made Easy
 COMMENT-qt =	Qt bindings for GPGme
 
-VERSION =	1.24.2
+VERSION =	1.24.3
 DISTNAME =	gpgme-${VERSION}
 PKGNAME-main =	gpgme-${VERSION}
 PKGNAME-qt =	gpgme-qt-${VERSION}
