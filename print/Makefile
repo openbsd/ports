@@ -47,6 +47,7 @@
      SUBDIR += openclipart
      SUBDIR += p5-Poppler
      SUBDIR += p5-PostScript-MailLabels
+     SUBDIR += pdf4qt
      SUBDIR += pdfarranger
      SUBDIR += poppler,
      SUBDIR += poppler-data
