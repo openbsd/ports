@@ -2,8 +2,6 @@ bin/protoc
 @bin bin/protoc-${PROTOC_VERSION}
 bin/protoc-gen-upb
 @bin bin/protoc-gen-upb-${PROTOC_VERSION}
-bin/protoc-gen-upb_minitable
-@bin bin/protoc-gen-upb_minitable-${PROTOC_VERSION}
 bin/protoc-gen-upbdefs
 @bin bin/protoc-gen-upbdefs-${PROTOC_VERSION}
 include/google/
@@ -24,10 +22,12 @@ include/google/protobuf/compiler/code_generator.h
 include/google/protobuf/compiler/code_generator_lite.h
 include/google/protobuf/compiler/command_line_interface.h
 include/google/protobuf/compiler/cpp/
+include/google/protobuf/compiler/cpp/generator.h
 include/google/protobuf/compiler/cpp/helpers.h
 include/google/protobuf/compiler/cpp/names.h
 include/google/protobuf/compiler/cpp/options.h
 include/google/protobuf/compiler/csharp/
+include/google/protobuf/compiler/csharp/csharp_generator.h
 include/google/protobuf/compiler/csharp/names.h
 include/google/protobuf/compiler/importer.h
 include/google/protobuf/compiler/java/
@@ -39,8 +39,11 @@ include/google/protobuf/compiler/java/java_features.pb.h
 include/google/protobuf/compiler/java/name_resolver.h
 include/google/protobuf/compiler/java/names.h
 include/google/protobuf/compiler/java/options.h
+include/google/protobuf/compiler/kotlin/
+include/google/protobuf/compiler/kotlin/generator.h
 include/google/protobuf/compiler/notices.h
 include/google/protobuf/compiler/objectivec/
+include/google/protobuf/compiler/objectivec/generator.h
 include/google/protobuf/compiler/objectivec/line_consumer.h
 include/google/protobuf/compiler/objectivec/names.h
 include/google/protobuf/compiler/objectivec/nsobject_methods.h
@@ -51,7 +54,12 @@ include/google/protobuf/compiler/php/php_generator.h
 include/google/protobuf/compiler/plugin.h
 include/google/protobuf/compiler/plugin.pb.h
 include/google/protobuf/compiler/plugin.proto
+include/google/protobuf/compiler/python/
+include/google/protobuf/compiler/python/generator.h
+include/google/protobuf/compiler/python/pyi_generator.h
 include/google/protobuf/compiler/retention.h
+include/google/protobuf/compiler/ruby/
+include/google/protobuf/compiler/ruby/ruby_generator.h
 include/google/protobuf/compiler/scc.h
 include/google/protobuf/compiler/subprocess.h
 include/google/protobuf/compiler/versions.h
@@ -122,13 +130,13 @@ include/google/protobuf/json/json.h
 include/google/protobuf/map.h
 include/google/protobuf/map_entry.h
 include/google/protobuf/map_field.h
-include/google/protobuf/map_field_inl.h
 include/google/protobuf/map_field_lite.h
 include/google/protobuf/map_type_handler.h
 include/google/protobuf/message.h
 include/google/protobuf/message_lite.h
 include/google/protobuf/metadata.h
 include/google/protobuf/metadata_lite.h
+include/google/protobuf/micro_string.h
 include/google/protobuf/parse_context.h
 include/google/protobuf/port.h
 include/google/protobuf/port_def.inc
