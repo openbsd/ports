@@ -16,7 +16,7 @@ SHA256 (cargo/equivalent-1.0.1.tar.gz) = VEOAfW3/aTc9Qzq571N4rY31DKYpjK8V3m5S4kq
 SHA256 (cargo/errno-0.3.9.tar.gz) = U0xc9hlN+rPbMkJ2XAO74lfPkvIrOPa8DFjVkQioILo=
 SHA256 (cargo/fastrand-2.1.0.tar.gz) = n8BRBQTwPFGtoXBnKsgG8fEFqIqpelKBEX4d3DNo5Ro=
 SHA256 (cargo/hashbrown-0.14.5.tar.gz) = 5SdEI+F7fJ/CC25+IIUy+bGYJdgt/WFXCLcO3YPfQfE=
-SHA256 (cargo/heck-0.4.1.tar.gz) = lVBcOLRXKy2RDOywKBVg9UtEChkzbLvLJ79s5q3G9ag=
+SHA256 (cargo/heck-0.5.0.tar.gz) = IwTgCYP4f/s4tVtES147YKiEtdMMD8p9gv4zRJu+Veo=
 SHA256 (cargo/indexmap-2.3.0.tar.gz) = 3j/C4wuoLdGzkRyN4f/BQ8dKkUoU6ZUU12N+MJnfXqA=
 SHA256 (cargo/is_terminal_polyfill-1.70.1.tar.gz) = eUPIZsxc1ky8JbLgFiHQf6jrKhojFg7oHOOHBOl7js8=
 SHA256 (cargo/itoa-1.0.11.tar.gz) = SfHxSHMzVFRQDVlhHxz0pLD3hvmsEfQxKnjkzyVmaVs=
@@ -64,7 +64,7 @@ SHA256 (cargo/windows_x86_64_gnullvm-0.52.6.tar.gz) = JNWyPcQXQSZ5aBOW8rSfPejBRz
 SHA256 (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = WJ9tqExkYgR0fRJwoqVmHqZu0cztJjHVRv37FVlZ+ew=
 SHA256 (cargo/winnow-0.6.18.tar.gz) = aKm9pGkfCZ1DWtGBAAck2o5YmdqhBxPC1DJVK5zNOm8=
 SHA256 (cargo/yansi-0.5.1.tar.gz) = CQQc2Qz4X3+LLfYMZG+FO39TXOaPhSROtnMc+J+kmOw=
-SHA256 (cbindgen-0.28.0.tar.gz) = sO053aCJyvulg+QHGD5D3hUdKunZRddPtIcNt+TKhY4=
+SHA256 (cbindgen-0.29.0.tar.gz) = Zpf0SdShXYFNmRJJphGvlhyX422TRMfO1t81xcJbQMw=
 SIZE (cargo/anstream-0.6.15.tar.gz) = 29231
 SIZE (cargo/anstyle-1.0.8.tar.gz) = 15771
 SIZE (cargo/anstyle-parse-0.2.5.tar.gz) = 22680
@@ -83,7 +83,7 @@ SIZE (cargo/equivalent-1.0.1.tar.gz) = 6615
 SIZE (cargo/errno-0.3.9.tar.gz) = 10690
 SIZE (cargo/fastrand-2.1.0.tar.gz) = 14907
 SIZE (cargo/hashbrown-0.14.5.tar.gz) = 141498
-SIZE (cargo/heck-0.4.1.tar.gz) = 11567
+SIZE (cargo/heck-0.5.0.tar.gz) = 11517
 SIZE (cargo/indexmap-2.3.0.tar.gz) = 83027
 SIZE (cargo/is_terminal_polyfill-1.70.1.tar.gz) = 7492
 SIZE (cargo/itoa-1.0.11.tar.gz) = 10563
@@ -131,4 +131,4 @@ SIZE (cargo/windows_x86_64_gnullvm-0.52.6.tar.gz) = 435707
 SIZE (cargo/windows_x86_64_msvc-0.52.6.tar.gz) = 832564
 SIZE (cargo/winnow-0.6.18.tar.gz) = 163357
 SIZE (cargo/yansi-0.5.1.tar.gz) = 16525
-SIZE (cbindgen-0.28.0.tar.gz) = 237495
+SIZE (cbindgen-0.29.0.tar.gz) = 241396
