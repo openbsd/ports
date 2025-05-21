@@ -1,0 +1,20 @@
+Index: CMakeLists.txt
+--- CMakeLists.txt.orig
++++ CMakeLists.txt
+@@ -14,6 +14,7 @@ project(woff2)
+ include(GNUInstallDirs)
+ 
+ # Build options
++option(INSTALL_TOOLS "Install tools" ON)
+ option(BUILD_SHARED_LIBS "Build shared libraries" ON)
+ option(CANONICAL_PREFIXES "Canonical prefixes" OFF)
+ option(NOISY_LOGGING "Noisy logging" ON)
+@@ -260,7 +261,7 @@ generate_pkg_config ("${CMAKE_CURRENT_BINARY_DIR}/libw
+   LIBRARIES woff2enc)
+ 
+ # Installation
+-if (NOT BUILD_SHARED_LIBS)
++if (INSTALL_TOOLS)
+   install(
+     TARGETS woff2_decompress woff2_compress woff2_info
+     RUNTIME DESTINATION "${CMAKE_INSTALL_BINDIR}"
