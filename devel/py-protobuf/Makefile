@@ -1,19 +1,18 @@
 COMMENT=		Google data interchange format (protocol buffers)
 
 PYMAJOR=		6
-PROTOBUF_VERSION=	30.2
+PROTOBUF_VERSION=	31.0
 
 V=			${PYMAJOR}.${PROTOBUF_VERSION}
 MODPY_DISTV=		${V:S/-//g}
 TAG=			v${PROTOBUF_VERSION:S/rc-/rc/}
 
+DISTNAME=		protobuf-${MODPY_DISTV}
+PKGNAME=		py-protobuf-${MODPY_DISTV}
+
 # C11
 COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c
-
-DISTNAME=		protobuf-${MODPY_DISTV}
-PKGNAME=		py-protobuf-${MODPY_DISTV}
-REVISION=		0
 
 FIX_EXTRACT_PERMISSIONS= Yes
 
