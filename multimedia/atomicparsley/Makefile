@@ -3,6 +3,7 @@ COMMENT=	read and set MPEG-4/3GPP metadata tags
 GH_ACCOUNT=	wez
 GH_PROJECT=	atomicparsley
 GH_TAGNAME=	20240608.083822.1ed9031
+PORTROACH=	skipv:${GH_TAGNAME}
 
 DISTNAME=	atomicparsley-${GH_TAGNAME:R:R}
 
