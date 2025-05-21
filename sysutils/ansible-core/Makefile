@@ -1,6 +1,6 @@
 COMMENT =		radically simple IT automation
 
-MODPY_DISTV =		2.18.5
+MODPY_DISTV =		2.18.6
 DISTNAME =		ansible_core-${MODPY_DISTV}
 PKGNAME =		ansible-core-${MODPY_DISTV}
 
