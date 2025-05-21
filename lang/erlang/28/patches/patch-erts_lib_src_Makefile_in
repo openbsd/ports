@@ -1,0 +1,12 @@
+Index: erts/lib_src/Makefile.in
+--- erts/lib_src/Makefile.in.orig
++++ erts/lib_src/Makefile.in
+@@ -47,7 +47,7 @@ ERLANG_OSTYPE=@ERLANG_OSTYPE@
+ OMIT_FP=false
+ empty:=
+ space:=$(empty) $(empty)
+-CFLAGS:=$(subst $(space)-O2$(space), -O3 , @CFLAGS@)
++CFLAGS:=@CFLAGS@
+ LDFLAGS=@LDFLAGS@
+ 
+ ifeq ($(TYPE),debug)
