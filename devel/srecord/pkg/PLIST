@@ -153,7 +153,7 @@ include/srecord/quit/prefix.h
 include/srecord/record.h
 include/srecord/srecord.h
 include/srecord/string.h
-lib/libsrecord.a
+@static-lib lib/libsrecord.a
 lib/libsrecord.la
 @lib lib/libsrecord.so.${LIBsrecord_VERSION}
 lib/pkgconfig/srecord.pc
