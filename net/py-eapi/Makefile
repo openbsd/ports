@@ -1,9 +1,8 @@
 COMMENT=	Python client for Arista eAPI
 
-MODPY_DISTV=	1.0.2
+MODPY_DISTV=	1.0.4
 DISTNAME=	pyeapi-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/py//}
-REVISION=	1
 
 CATEGORIES=	net
 
