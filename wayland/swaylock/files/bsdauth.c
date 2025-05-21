@@ -1,3 +1,5 @@
+/* cf https://github.com/swaywm/swaylock/pull/402 */
+#undef _POSIX_C_SOURCE
 #include <pwd.h>
 #include <stdlib.h>
 #include <stdbool.h>
