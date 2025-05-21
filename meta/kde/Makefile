@@ -30,6 +30,8 @@ PKGNAME-utils =		kde-utils-${MODKDE_GEAR_VERSION}
 PKGNAME-plasma =	kde-plasma-${MODKDE_PLASMA_VERSION}
 PKGNAME-plasma-extras =	kde-plasma-extras-${MODKDE_PLASMA_VERSION}
 
+REVISION-network =	0
+
 MULTI_PACKAGES +=	-main \
 			-games \
 			-admin \
@@ -189,10 +191,10 @@ RUN_DEPENDS-network = \
 	x11/kde-applications/kdenetwork-filesharing \
 	x11/kde-applications/kget \
 	x11/kde-applications/kmailtransport \
-	x11/kde-applications/krdc \
 	x11/kde-applications/tokodon
 
 # XXX x11/kde-applications/krfb
+# XXX x11/kde-applications/krdc
 
 # Not yet ported
 #x11/kde-applications/kopete
