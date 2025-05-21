@@ -5,7 +5,7 @@ COMMENT-main =		library for computer vision real-time processing
 COMMENT-java =		Java bindings for OpenCV
 
 V =			4.11.0
-REVISION-main =		0
+REVISION-main =		1
 GH_ACCOUNT =		opencv
 GH_PROJECT =		opencv
 GH_TAGNAME =		${V}
@@ -25,11 +25,11 @@ SHARED_LIBS += $i 14.0
 .endfor
 
 WANTLIB-main += ${COMPILER_LIBCXX} OpenEXR-3_3 absl_hash absl_log_internal_message
-WANTLIB-main += absl_log_internal_nullguard avcodec avformat avif avutil
-WANTLIB-main += c cairo gdk-3 gdk_pixbuf-2.0 glib-2.0 gobject-2.0 gstapp-1.0
-WANTLIB-main += gstaudio-1.0 gstbase-1.0 gstpbutils-1.0 gstreamer-1.0
-WANTLIB-main += gstriff-1.0 gstvideo-1.0 gtk-3 jpeg lapack m openjp2
-WANTLIB-main += png protobuf swscale tiff webp webpdemux webpmux z
+WANTLIB-main += avcodec avformat avif avutil c cairo gdk-3 gdk_pixbuf-2.0
+WANTLIB-main += glib-2.0 gobject-2.0 gstapp-1.0 gstaudio-1.0 gstbase-1.0
+WANTLIB-main += gstpbutils-1.0 gstreamer-1.0 gstriff-1.0 gstvideo-1.0
+WANTLIB-main += gtk-3 jpeg lapack m openjp2 png protobuf swscale tiff
+WANTLIB-main += webp webpdemux webpmux
 
 WANTLIB-java += ${COMPILER_LIBCXX} opencv_calib3d opencv_core opencv_dnn
 WANTLIB-java += opencv_features2d opencv_flann opencv_imgcodecs opencv_imgproc
