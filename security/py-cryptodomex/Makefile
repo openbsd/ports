@@ -1,9 +1,8 @@
 COMMENT=	self-contained cryptographic library for Python
 
-MODPY_DISTV=	3.22.0
+MODPY_DISTV=	3.23.0
 DISTNAME=	pycryptodomex-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/py//}
-REVISION=	0
 
 CATEGORIES=	security
 
