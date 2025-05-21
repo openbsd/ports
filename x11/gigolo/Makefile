@@ -1,6 +1,6 @@
 COMMENT =	GVfs mountpoint manager
 
-XFCE_VERSION =	0.5.4
+XFCE_VERSION =	0.6.0
 XFCE_GOODIE =	gigolo
 
 CATEGORIES =	x11
@@ -12,15 +12,12 @@ HOMEPAGE =	https://www.uvena.de/gigolo/
 # GPLv2
 PERMIT_PACKAGE =	Yes
 
-MODULES =	x11/xfce4
+MODULES =	x11/xfce4 devel/meson
 MODXFCE_DESKTOP_FILE =	Yes
 MODXFCE_ICON_CACHE=	Yes
-CONFIGURE_STYLE =	gnu
 RUN_DEPENDS +=	x11/gnome/gvfs
 LIB_DEPENDS =	x11/gtk+3
 
-WANTLIB += atk-1.0 c cairo cairo-gobject iconv gdk-3
-WANTLIB += gdk_pixbuf-2.0 gio-2.0 glib-2.0 gobject-2.0 gtk-3
-WANTLIB += harfbuzz intl pango-1.0 pangocairo-1.0 pthread
+WANTLIB += c gdk-3 gio-2.0 glib-2.0 gobject-2.0 gtk-3 intl
 
 .include <bsd.port.mk>
