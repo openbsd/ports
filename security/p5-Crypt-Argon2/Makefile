@@ -1,5 +1,6 @@
 COMMENT =	interface to the Argon2 key derivation functions
 
+# newer versions need Dist::Build (unported)
 DISTNAME =	Crypt-Argon2-0.022
 
 CATEGORIES =	security
