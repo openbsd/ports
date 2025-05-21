@@ -75,6 +75,10 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/${MODPY_PYCACHE}_mode_ecb
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/${MODPY_PYCACHE}_mode_ecb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/${MODPY_PYCACHE}_mode_gcm.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/${MODPY_PYCACHE}_mode_gcm.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/${MODPY_PYCACHE}_mode_kw.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/${MODPY_PYCACHE}_mode_kw.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/${MODPY_PYCACHE}_mode_kwp.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/${MODPY_PYCACHE}_mode_kwp.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/${MODPY_PYCACHE}_mode_ocb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/${MODPY_PYCACHE}_mode_ocb.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/${MODPY_PYCACHE}_mode_ofb.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -100,6 +104,8 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_ecb.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_ecb.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_gcm.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_gcm.pyi
+lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_kw.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_kwp.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_ocb.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_ocb.pyi
 lib/python${MODPY_VERSION}/site-packages/Crypto/Cipher/_mode_ofb.py
@@ -435,6 +441,8 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/${MODPY_PYCACHE}
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/${MODPY_PYCACHE}test_EAX.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/${MODPY_PYCACHE}test_GCM.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/${MODPY_PYCACHE}test_GCM.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/${MODPY_PYCACHE}test_KW.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/${MODPY_PYCACHE}test_KW.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/${MODPY_PYCACHE}test_OCB.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/${MODPY_PYCACHE}test_OCB.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/${MODPY_PYCACHE}test_OFB.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -465,6 +473,7 @@ lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/test_DES.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/test_DES3.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/test_EAX.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/test_GCM.py
+lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/test_KW.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/test_OCB.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/test_OFB.py
 lib/python${MODPY_VERSION}/site-packages/Crypto/SelfTest/Cipher/test_OpenPGP.py
