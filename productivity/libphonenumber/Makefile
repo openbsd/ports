@@ -3,9 +3,10 @@ COMMENT =	C++ library to parse/format/validate phone numbers
 GH_ACCOUNT =	google
 GH_PROJECT =	libphonenumber
 GH_TAGNAME =	v9.0.5
+REVISION =	0
 
 SHARED_LIBS +=  geocoding                 0.1 # 8.12
-SHARED_LIBS +=  phonenumber               0.1 # 8.12
+SHARED_LIBS +=  phonenumber               1.0 # 8.12
 
 CATEGORIES =	productivity devel
 
@@ -14,10 +15,9 @@ MAINTAINER =	Antoine Jacoutot <ajacoutot@openbsd.org>
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} absl_bad_optional_access absl_bad_variant_access
-WANTLIB += absl_base absl_city absl_civil_time absl_cord absl_cord_internal
-WANTLIB += absl_cordz_functions absl_cordz_handle absl_cordz_info
-WANTLIB += absl_crc32c absl_crc_cord_state absl_crc_cpu_detect
+WANTLIB += ${COMPILER_LIBCXX} absl_base absl_city absl_civil_time
+WANTLIB += absl_cord absl_cord_internal absl_cordz_functions absl_cordz_handle
+WANTLIB += absl_cordz_info absl_crc32c absl_crc_cord_state absl_crc_cpu_detect
 WANTLIB += absl_crc_internal absl_debugging_internal absl_decode_rust_punycode
 WANTLIB += absl_demangle_internal absl_demangle_rust absl_exponential_biased
 WANTLIB += absl_graphcycles_internal absl_hash absl_hashtablez_sampler
