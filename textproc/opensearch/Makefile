@@ -1,6 +1,6 @@
 COMMENT =	distributed and RESTful search engine
 
-V =		2.19.1
+V =		3.0.0
 DISTNAME =	opensearch-$V-linux-x64
 PKGNAME =	opensearch-$V
 
@@ -19,7 +19,7 @@ FIX_EXTRACT_PERMISSIONS = Yes
 PERMIT_PACKAGE =	Yes
 
 MODULES =	java
-MODJAVA_VER =	11
+MODJAVA_VER =	21
 
 RUN_DEPENDS =	java/javaPathHelper \
 		java/jna \
@@ -39,9 +39,9 @@ do-build:
 	find ${WRKSRC} -name '*.bat' -delete
 	${SUBST_CMD} ${SUBST_TARGETS}
 	rm -f ${WRKSRC}/{bin,config,plugins/opensearch-security/tools}/*{.beforesubst,${PATCHORIG}}
-	find ${WRKSRC}/{bin,performance-analyzer-rca/bin,plugins/opensearch-security/tools} \
+	find ${WRKSRC}/{bin,plugins/opensearch-security/tools} \
 		 -type f -exec sed -i 's,#!/bin/bash,#!/usr/bin/env bash,' {} +
-	find ${WRKSRC}/{bin,performance-analyzer-rca/bin,plugins/opensearch-security/tools} \
+	find ${WRKSRC}/{bin,plugins/opensearch-security/tools} \
 		 -type f -exec chmod 755 {} +
 
 do-install:
@@ -49,7 +49,7 @@ do-install:
 		${PREFIX}/opensearch/extensions \
 		${PREFIX}/share/{doc,examples}/opensearch/
 	cp -R ${WRKSRC}/config/* ${PREFIX}/share/examples/opensearch/
-	cp -R ${WRKSRC}/{bin,lib,modules,performance-analyzer-rca,plugins} \
+	cp -R ${WRKSRC}/{agent,bin,lib,manifest.yml,modules,plugins} \
 		${PREFIX}/opensearch/
 	${INSTALL_DATA} ${WRKSRC}/{LICENSE,NOTICE}.txt ${WRKSRC}/README.md \
 		${PREFIX}/share/doc/opensearch/

@@ -23,5 +23,5 @@ Index: config/jvm.options
 -9-:-Xlog:gc*,gc+age=trace,safepoint:file=logs/gc.log:utctime,pid,tags:filecount=32,filesize=64m
 +9-:-Xlog:gc*,gc+age=trace,safepoint:file=${VARBASE}/log/opensearch/gc.log:utctime,pid,tags:filecount=32,filesize=64m
  
- # Explicitly allow security manager (https://bugs.openjdk.java.net/browse/JDK-8270380)
- 18-:-Djava.security.manager=allow
+ # JDK 20+ Incubating Vector Module for SIMD optimizations;
+ # disabling may reduce performance on vector optimized lucene
