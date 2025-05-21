@@ -1,0 +1,9 @@
+Blend2D is a high performance 2D vector graphics engine written in C++
+and released under the Zlib license. The engine utilizes a built-in JIT
+compiler to generate optimized pipelines at runtime that take the
+advantage of host CPU features and is capable of using multiple threads
+to boost the performance beyond the possibilities of single-threaded
+rendering. Blend2D can render rectangles, simple shapes, geometries
+composed of lines and Bézier curves, and text. The 2D pipeline supports
+pixel composition, opacity control, and styles such as solid colors,
+gradients, and images.
