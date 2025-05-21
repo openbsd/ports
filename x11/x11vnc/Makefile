@@ -2,8 +2,7 @@ COMMENT =		VNC server for real X displays
 
 GH_ACCOUNT =		LibVNC
 GH_PROJECT =		x11vnc
-GH_TAGNAME =		0.9.16
-REVISION =		2
+GH_TAGNAME =		0.9.17
 
 CATEGORIES =		x11
 

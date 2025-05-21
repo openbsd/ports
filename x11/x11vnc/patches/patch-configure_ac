@@ -1,7 +1,7 @@
 Index: configure.ac
 --- configure.ac.orig
 +++ configure.ac
-@@ -482,7 +482,7 @@ if test "x$uname_s" = "xHP-UX"; then
+@@ -510,7 +510,7 @@ if test "x$uname_s" = "xHP-UX"; then
  fi
  
  AC_CHECK_FUNCS([ftime gethostbyname gethostname gettimeofday inet_ntoa memmove memset mmap mkfifo select socket strchr strcspn strdup strerror strstr])

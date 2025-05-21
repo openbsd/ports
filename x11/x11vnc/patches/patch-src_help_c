@@ -1,7 +1,7 @@
 Index: src/help.c
 --- src/help.c.orig
 +++ src/help.c
-@@ -5956,7 +5956,7 @@ void xopen_display_fail_message(char *disp) {
+@@ -5961,7 +5961,7 @@ void xopen_display_fail_message(char *disp) {
  	fprintf(stderr, "              -auth /var/lib/gdm/:0.Xauth\n");
  	fprintf(stderr, "     kdm:     -auth /var/lib/kdm/A:0-crWk72\n");
  	fprintf(stderr, "              -auth /var/run/xauth/A:0-crWk72\n");
