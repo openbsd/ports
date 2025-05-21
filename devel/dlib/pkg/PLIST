@@ -1188,6 +1188,8 @@ include/dlib/timer/timer_heavy.h
 include/dlib/timing.h
 include/dlib/tokenizer/
 include/dlib/tokenizer.h
+include/dlib/tokenizer/bpe_tokenizer.h
+include/dlib/tokenizer/bpe_tokenizer_abstract.h
 include/dlib/tokenizer/tokenizer_kernel_1.h
 include/dlib/tokenizer/tokenizer_kernel_abstract.h
 include/dlib/tokenizer/tokenizer_kernel_c.h
