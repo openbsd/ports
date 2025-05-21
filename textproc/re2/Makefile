@@ -8,7 +8,10 @@ SHARED_LIBS =		re2	1.0	# 10.0.0
 
 CATEGORIES =		textproc devel
 
+HOMEPAGE =		https://github.com/google/re2
 SITES =			https://github.com/google/re2/releases/download/${V}/
+
+MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE =	Yes
@@ -44,6 +47,17 @@ MODULES =		devel/cmake
 
 LIB_DEPENDS =		devel/abseil-cpp
 
-CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=ON
+BUILD_DEPENDS =		devel/benchmark
+TEST_DEPENDS =		devel/benchmark
+
+CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=ON \
+			-DRE2_BUILD_TESTING=ON
+
+# everything except tests
+ALL_TARGET =		re2
+
+# build whatever is left (51 C++ test files)
+pre-test:
+	@${MODCMAKE_BUILD_TARGET}
 
 .include <bsd.port.mk>
