@@ -236,8 +236,6 @@ lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/${MODPY_PYCACHE}spe
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/${MODPY_PYCACHE}spectral_coordinate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/${MODPY_PYCACHE}spectral_quantity.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/${MODPY_PYCACHE}spectral_quantity.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/${MODPY_PYCACHE}transformations.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/${MODPY_PYCACHE}transformations.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/angles/
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/angles/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/angles/${MODPY_PYCACHE}/
@@ -423,6 +421,8 @@ lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/${MODPY_PYCACHE}test_earth_orientation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/${MODPY_PYCACHE}test_erfa_astrom.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/${MODPY_PYCACHE}test_erfa_astrom.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/${MODPY_PYCACHE}test_exceptions.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/${MODPY_PYCACHE}test_exceptions.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/${MODPY_PYCACHE}test_finite_difference_velocities.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/${MODPY_PYCACHE}test_finite_difference_velocities.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/${MODPY_PYCACHE}test_formatting.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -459,6 +459,8 @@ lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/${MODPY_PYCAC
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/${MODPY_PYCACHE}test_representation_arithmetic.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/${MODPY_PYCACHE}test_representation_methods.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/${MODPY_PYCACHE}test_representation_methods.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/${MODPY_PYCACHE}test_separation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/${MODPY_PYCACHE}test_separation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/${MODPY_PYCACHE}test_shape_manipulation.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/${MODPY_PYCACHE}test_shape_manipulation.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/${MODPY_PYCACHE}test_sites.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -534,6 +536,7 @@ lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/test_distance
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/test_earth.py
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/test_earth_orientation.py
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/test_erfa_astrom.py
+lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/test_exceptions.py
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/test_finite_difference_velocities.py
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/test_formatting.py
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/test_frames.py
@@ -552,6 +555,7 @@ lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/test_regressi
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/test_representation.py
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/test_representation_arithmetic.py
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/test_representation_methods.py
+lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/test_separation.py
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/test_shape_manipulation.py
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/test_sites.py
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/test_sky_coord.py
@@ -564,7 +568,26 @@ lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/test_transfor
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/test_unit_representation.py
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/test_utils.py
 lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/tests/test_velocity_corrs.py
-lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/transformations.py
+lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/transformations/
+lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/transformations/__init__.py
+${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/transformations/${MODPY_PYCACHE}/
+lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/transformations/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/transformations/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/transformations/${MODPY_PYCACHE}affine.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/transformations/${MODPY_PYCACHE}affine.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/transformations/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/transformations/${MODPY_PYCACHE}base.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/transformations/${MODPY_PYCACHE}composite.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/transformations/${MODPY_PYCACHE}composite.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/transformations/${MODPY_PYCACHE}function.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/transformations/${MODPY_PYCACHE}function.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/transformations/${MODPY_PYCACHE}graph.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/transformations/${MODPY_PYCACHE}graph.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/transformations/affine.py
+lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/transformations/base.py
+lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/transformations/composite.py
+lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/transformations/function.py
+lib/python${MODPY_VERSION}/site-packages/astropy/coordinates/transformations/graph.py
 lib/python${MODPY_VERSION}/site-packages/astropy/cosmology/
 lib/python${MODPY_VERSION}/site-packages/astropy/cosmology/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/astropy/cosmology/${MODPY_PYCACHE}/
@@ -880,6 +903,8 @@ lib/python${MODPY_VERSION}/site-packages/astropy/io/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/astropy/io/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/astropy/io/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astropy/io/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/astropy/io/${MODPY_PYCACHE}typing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/astropy/io/${MODPY_PYCACHE}typing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astropy/io/ascii/
 lib/python${MODPY_VERSION}/site-packages/astropy/io/ascii/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/astropy/io/ascii/${MODPY_PYCACHE}/
@@ -1430,6 +1455,7 @@ lib/python${MODPY_VERSION}/site-packages/astropy/io/tests/${MODPY_PYCACHE}safeio
 lib/python${MODPY_VERSION}/site-packages/astropy/io/tests/${MODPY_PYCACHE}safeio.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astropy/io/tests/mixin_columns.py
 lib/python${MODPY_VERSION}/site-packages/astropy/io/tests/safeio.py
+lib/python${MODPY_VERSION}/site-packages/astropy/io/typing.py
 lib/python${MODPY_VERSION}/site-packages/astropy/io/votable/
 lib/python${MODPY_VERSION}/site-packages/astropy/io/votable/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/astropy/io/votable/${MODPY_PYCACHE}/
@@ -2173,8 +2199,8 @@ lib/python${MODPY_VERSION}/site-packages/astropy/tests/figures/${MODPY_PYCACHE}_
 lib/python${MODPY_VERSION}/site-packages/astropy/tests/figures/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astropy/tests/figures/${MODPY_PYCACHE}helpers.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astropy/tests/figures/helpers.py
-lib/python${MODPY_VERSION}/site-packages/astropy/tests/figures/py39-test-image-mpl334-cov.json
-lib/python${MODPY_VERSION}/site-packages/astropy/tests/figures/py39-test-image-mpldev-cov.json
+lib/python${MODPY_VERSION}/site-packages/astropy/tests/figures/py310-test-image-mpl334-cov.json
+lib/python${MODPY_VERSION}/site-packages/astropy/tests/figures/py310-test-image-mpldev-cov.json
 lib/python${MODPY_VERSION}/site-packages/astropy/tests/helper.py
 lib/python${MODPY_VERSION}/site-packages/astropy/tests/runner.py
 lib/python${MODPY_VERSION}/site-packages/astropy/tests/test_logger.py
@@ -2531,6 +2557,8 @@ lib/python${MODPY_VERSION}/site-packages/astropy/units/${MODPY_PYCACHE}si.${MODP
 lib/python${MODPY_VERSION}/site-packages/astropy/units/${MODPY_PYCACHE}si.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astropy/units/${MODPY_PYCACHE}structured.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astropy/units/${MODPY_PYCACHE}structured.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/astropy/units/${MODPY_PYCACHE}typing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/astropy/units/${MODPY_PYCACHE}typing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astropy/units/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astropy/units/${MODPY_PYCACHE}utils.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astropy/units/astrophys.py
@@ -2703,14 +2731,13 @@ lib/python${MODPY_VERSION}/site-packages/astropy/units/tests/test_quantity_ufunc
 lib/python${MODPY_VERSION}/site-packages/astropy/units/tests/test_structured.py
 lib/python${MODPY_VERSION}/site-packages/astropy/units/tests/test_units.py
 lib/python${MODPY_VERSION}/site-packages/astropy/units/tests/test_utils.py
+lib/python${MODPY_VERSION}/site-packages/astropy/units/typing.py
 lib/python${MODPY_VERSION}/site-packages/astropy/units/utils.py
 lib/python${MODPY_VERSION}/site-packages/astropy/utils/
 lib/python${MODPY_VERSION}/site-packages/astropy/utils/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/astropy/utils/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/astropy/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astropy/utils/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/astropy/utils/${MODPY_PYCACHE}argparse.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/astropy/utils/${MODPY_PYCACHE}argparse.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astropy/utils/${MODPY_PYCACHE}codegen.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astropy/utils/${MODPY_PYCACHE}codegen.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/astropy/utils/${MODPY_PYCACHE}collections.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -2740,7 +2767,6 @@ lib/python${MODPY_VERSION}/site-packages/astropy/utils/${MODPY_PYCACHE}shapes.${
 lib/python${MODPY_VERSION}/site-packages/astropy/utils/${MODPY_PYCACHE}state.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/astropy/utils/${MODPY_PYCACHE}state.${MODPY_PYC_MAGIC_TAG}pyc
 @so lib/python${MODPY_VERSION}/site-packages/astropy/utils/_compiler.${MODPY_PYC_MAGIC_TAG}so
-lib/python${MODPY_VERSION}/site-packages/astropy/utils/argparse.py
 lib/python${MODPY_VERSION}/site-packages/astropy/utils/codegen.py
 lib/python${MODPY_VERSION}/site-packages/astropy/utils/collections.py
 lib/python${MODPY_VERSION}/site-packages/astropy/utils/compat/
