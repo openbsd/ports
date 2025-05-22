@@ -8,6 +8,7 @@ V =			9.0.2
 COMMENT =		schematic and PCB editing software
 DISTNAME =		kicad-${V}
 EPOCH =			0
+REVISION =		0
 
 SHARED_LIBS +=  kicad_3dsg                2.0 # 2.0
 SHARED_LIBS +=  kicommon                  0.0 # 0.0
@@ -27,10 +28,10 @@ WANTLIB += TKDEPLY TKDESTEP TKDESTL TKDEVRML TKFeat TKFillet TKG2d
 WANTLIB += TKG3d TKGeomAlgo TKGeomBase TKHLR TKLCAF TKMath TKMesh
 WANTLIB += TKMeshVS TKOffset TKOpenGl TKPrim TKRWMesh TKService
 WANTLIB += TKShHealing TKTObj TKTopAlgo TKV3d TKXCAF TKXMesh TKXSBase
-WANTLIB += TKXml TKXmlL TKXmlTObj TKXmlXCAF TKernel absl_bad_optional_access
-WANTLIB += absl_bad_variant_access absl_base absl_city absl_civil_time
-WANTLIB += absl_cord absl_cord_internal absl_cordz_functions absl_cordz_handle
-WANTLIB += absl_cordz_info absl_crc32c absl_crc_cord_state absl_crc_cpu_detect
+WANTLIB += TKXml TKXmlL TKXmlTObj TKXmlXCAF TKernel absl_base
+WANTLIB += absl_city absl_civil_time absl_cord absl_cord_internal
+WANTLIB += absl_cordz_functions absl_cordz_handle absl_cordz_info
+WANTLIB += absl_crc32c absl_crc_cord_state absl_crc_cpu_detect
 WANTLIB += absl_crc_internal absl_debugging_internal absl_decode_rust_punycode
 WANTLIB += absl_demangle_internal absl_demangle_rust absl_die_if_null
 WANTLIB += absl_examine_stack absl_exponential_biased absl_flags_commandlineflag
@@ -38,15 +39,15 @@ WANTLIB += absl_flags_commandlineflag_internal absl_flags_config
 WANTLIB += absl_flags_internal absl_flags_marshalling absl_flags_private_handle_accessor
 WANTLIB += absl_flags_program_name absl_flags_reflection absl_graphcycles_internal
 WANTLIB += absl_hash absl_hashtablez_sampler absl_int128 absl_kernel_timeout_internal
-WANTLIB += absl_leak_check absl_log_entry absl_log_globals absl_log_initialize
+WANTLIB += absl_leak_check absl_log_globals absl_log_initialize
 WANTLIB += absl_log_internal_check_op absl_log_internal_conditions
 WANTLIB += absl_log_internal_fnmatch absl_log_internal_format
 WANTLIB += absl_log_internal_globals absl_log_internal_log_sink_set
 WANTLIB += absl_log_internal_message absl_log_internal_nullguard
 WANTLIB += absl_log_internal_proto absl_log_internal_structured_proto
 WANTLIB += absl_log_severity absl_log_sink absl_low_level_hash
-WANTLIB += absl_malloc_internal absl_random_distributions absl_random_internal_platform
-WANTLIB += absl_random_internal_pool_urbg absl_random_internal_randen
+WANTLIB += absl_malloc_internal absl_random_distributions absl_random_internal_entropy_pool
+WANTLIB += absl_random_internal_platform absl_random_internal_randen
 WANTLIB += absl_random_internal_randen_hwaes absl_random_internal_randen_hwaes_impl
 WANTLIB += absl_random_internal_randen_slow absl_random_internal_seed_material
 WANTLIB += absl_random_seed_gen_exception absl_random_seed_sequences
@@ -59,8 +60,8 @@ WANTLIB += absl_vlog_config_internal atk-1.0 boost_chrono-mt boost_locale-mt
 WANTLIB += boost_system-mt boost_thread-mt c cairo cairo-gobject
 WANTLIB += curl fontconfig freetype gdk-3 gdk_pixbuf-2.0 gio-2.0
 WANTLIB += git2 glib-2.0 gobject-2.0 gtk-3 harfbuzz intl iodbc
-WANTLIB += m ngspice nng pango-1.0 pangocairo-1.0 pixman-1 protobuf
-WANTLIB += python3.12 secret-1 wx_baseu-3.2 wx_baseu_net-3.2 wx_baseu_xml-3.2
+WANTLIB += m ngspice nng pango-1.0 pangocairo-1.0 pixman-1 ${MODPY_WANTLIB}
+WANTLIB += secret-1 wx_baseu-3.2 wx_baseu_net-3.2 wx_baseu_xml-3.2
 WANTLIB += wx_gtk3u_aui-3.2 wx_gtk3u_core-3.2 wx_gtk3u_gl-3.2
 WANTLIB += wx_gtk3u_html-3.2 wx_gtk3u_propgrid-3.2 wx_gtk3u_richtext-3.2
 WANTLIB += wx_gtk3u_stc-3.2 z zstd
@@ -92,14 +93,14 @@ LIB_DEPENDS =		archivers/zstd \
 			cad/ngspice/libngspice \
 			cad/opencascade \
 			databases/iodbc \
-			devel/boost \
 			devel/abseil-cpp \
+			devel/boost \
 			devel/gettext,-runtime \
 			devel/glib2 \
 			devel/harfbuzz \
 			devel/libgit2/libgit2 \
-			devel/protobuf \
 			devel/pango \
+			devel/protobuf \
 			graphics/cairo \
 			graphics/gdk-pixbuf2 \
 			net/curl \
@@ -107,7 +108,8 @@ LIB_DEPENDS =		archivers/zstd \
 			x11/gnome/at-spi2-core \
 			x11/gnome/libsecret \
 			x11/gtk+3 \
-			x11/wxWidgets
+			x11/wxWidgets \
+			${MODPY_LIB_DEPENDS}
 
 CONFIGURE_ARGS +=	-DNANODBC_ENABLE_BOOST=ON \
 			-DNANODBC_ENABLE_UNICODE=OFF \
