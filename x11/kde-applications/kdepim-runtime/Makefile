@@ -100,6 +100,7 @@ LIB_DEPENDS =	devel/kf6/kbookmarks \
 		x11/qt6/qtwebengine
 
 TEST_IS_INTERACTIVE =	X11
+TEST_ENV=		LC_ALL=en_US.UTF-8
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
