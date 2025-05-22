@@ -45,11 +45,31 @@ proper function, it requires messagebus and upowerd running. If using
 consolekit2 and polkit-kde-agent, it will also allow you to suspend the
 laptop from the logout dialog.
 
+Resource limits
+===============
+
+The "default" login-class resource limits are too conservative for KDE Plasma
+users. It is recommended to use the login-class "kde" for all KDE Plasma
+users.
+
+Depending on the application and if KDE widgets or plasmashell (you will find a
+plasmashell.core in your $HOME) constantly crash, the value must be set
+correspondingly higher.
+
+You can easily change the login class with the following command:
+
+# usermod -L kde your-user-name
+
+Touch screen calibration
+========================
+xtsscale(1) can be used for touch screen calibration, however it will not
+work under kwin, as a workaround, you can kill kwin first, calibrate your
+screen, then launch kwin_x11 again.
+
 Screen compositor
 =================
-The KDE compositor may not run properly by default. You can deactivate it
-under: "System Setting" -> "Display Configuration" -> "Compositor" or
-in `~/.config/kwinrc":
+You can deactivate the screen compositor under: "System Setting" -> "Display
+Configuration" -> "Compositor" or in `~/.config/kwinrc":
 
 [Compositing]
 Enabled=false
@@ -87,14 +107,26 @@ fi
 ${LOCALBASE}/bin/ck-launch-session dbus-run-session \
  ${LOCALBASE}/bin/startplasma-wayland
 
+KDE PIM and Akonadi
+===================
+KDE PIM applications like Akonadi, KMail, and Kontact use large messages on the
+local machine. The default size on OpenBSD is too small, which causes local
+connection issues, and Akonadi-based applications will be flaky (e.g. mailboxes
+do not display, messages cannot be found).
+
+Increasing the buffer size is recommended:
+
+# sysctl net.unix.stream.recvspace=65536
+# sysctl net.unix.stream.sendspace=65536
+
 Known issues
 ============
 - The first start may take a little longer.
+- Touchscreen configuration does not work
 
 Not yet ported Plasma applications/plugins
 ==========================================
  - aura-browser
- - kpipewire
  - bluedevil
  - breeze-plymouth
  - discover
