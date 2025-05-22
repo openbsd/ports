@@ -1,0 +1,6 @@
+# Please run piknik -genkeys and replace this file with the server section in
+# its output. i.e.
+#
+# Listen = "0.0.0.0:8075"	# Edit appropriately
+# Psk    = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+# SignPk = "yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy"

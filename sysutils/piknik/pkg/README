@@ -1,0 +1,18 @@
++-----------------------------------------------------------------------
+| Running ${PKGSTEM} on OpenBSD
++-----------------------------------------------------------------------
+
+If you wish to run a piknik server, you need to generate a configuration file
+first:
+
+	$ piknik -genkeys | doas tee ${SYSCONFDIR}/piknik.toml
+
+Then edit ${SYSCONFDIR}/piknik.toml and remove the sections you do not need.
+
+You can then enable the piknik server to be started at boot with
+
+	$ doas rcctl enable piknik
+
+or start it once with
+
+	$ doas rcctl start piknik

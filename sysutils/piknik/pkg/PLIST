@@ -1,0 +1,12 @@
+@newgroup _piknik:581
+@newuser _piknik:581:_piknik::piknik account:${LOCALSTATEDIR}/empty:/sbin/nologin
+@rcscript ${RCDIR}/piknik
+@bin bin/piknik
+share/doc/piknik/
+share/doc/piknik/README.md
+share/doc/pkg-readmes/${PKGSTEM}
+share/examples/piknik/
+share/examples/piknik/piknik.toml
+@mode 640
+@group _piknik
+@sample ${SYSCONFDIR}/piknik.toml
