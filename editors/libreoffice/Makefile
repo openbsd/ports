@@ -23,7 +23,7 @@ SHARED_LIBS +=  wpg-0.3-lo                3.4 # 3.4
 SHARED_LIBS +=  wps-0.4-lo                4.14 # 4.14
 
 BV=		25.2
-VERSION=	${BV}.2.2
+VERSION=	${BV}.3.2
 DISTNAME=	libreoffice-${VERSION}
 WRKDIST=	${WRKDIR}/libreoffice-${VERSION}
 CATEGORIES=	editors productivity
@@ -71,7 +71,7 @@ DISTFILES.a += 5ade6ae2a99bc1e9e57031ca88d36dad-hyphen-2.8.8.tar.gz
 DISTFILES.a += 798b2ffdc8bcfe7bca2cf92b62caf685-rhino1_5R5.zip
 DISTFILES.a += 8ce2fcd72becf06c41f7201d15373ed9-librepository-1.1.6.zip
 DISTFILES.a += 97b2d4dba862397f446b217e2b623e71-libloader-1.1.6.zip
-DISTFILES.a += Amiri-1.000.zip
+DISTFILES.a += Amiri-1.001.zip
 DISTFILES.a += Java-WebSocket-1.6.0.tar.gz
 DISTFILES.a += NotoSans-v2.015.zip
 DISTFILES.a += NotoKufiArabic-v2.109.zip
