@@ -36,6 +36,7 @@
      SUBDIR += bubblemon-dockapp
      SUBDIR += bupstash
      SUBDIR += burp
+     SUBDIR += cdist
      SUBDIR += cdrtools
      SUBDIR += cfengine
      SUBDIR += checkbashisms
