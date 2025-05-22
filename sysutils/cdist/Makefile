@@ -8,6 +8,7 @@ DISTNAME=		cdist-${VERSION}
 CATEGORIES=		sysutils
 
 HOMEPAGE=	https://www.cdi.st/
+SITES=		https://nerd.hu/distfiles/
 
 # GPLv3
 PERMIT_PACKAGE=	Yes
