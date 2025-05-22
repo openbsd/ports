@@ -1,4 +1,5 @@
 COMMENT =	KDE safe desktop-wide storage for passwords
+VERSION =	6.14.1
 DISTNAME =	kwallet-${VERSION}
 
 SHARED_LIBS +=  KF6Wallet                 0.0 # 0.0
@@ -33,3 +34,4 @@ LIB_DEPENDS =	devel/kf6/kconfig>=${MODKF6_VERSION} \
 CONFIGURE_ARGS +=	-DCMAKE_DISABLE_FIND_PACKAGE_Gpgmepp=ON
 
 .include <bsd.port.mk>
+LIB_DEPENDS += devel/gettext,-runtime 
