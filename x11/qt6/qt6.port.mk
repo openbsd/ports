@@ -1,5 +1,5 @@
-# This fragment defines MODQT_* variables to make it easier to substitute
-# qt4/qt5 in a port.
+# This fragment defines MODQT_* variables to make it easier to substitute qt5
+# in a port.
 MODQT_OVERRIDE_UIC ?=	Yes
 MODQT6_OVERRIDE_UIC ?=	${MODQT_OVERRIDE_UIC}
 
