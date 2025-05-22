@@ -294,6 +294,7 @@
      SUBDIR += perp
      SUBDIR += pftop
      SUBDIR += pick
+     SUBDIR += piknik
      SUBDIR += pkg_mgr
      SUBDIR += plakar
      SUBDIR += planor
