@@ -1,6 +1,6 @@
 COMMENT =	add-ons for the kirigami frameworks
 
-VERSION =	1.7.0
+VERSION =	1.8.1
 DISTNAME =	kirigami-addons-${VERSION}
 
 SHARED_LIBS +=	KirigamiAddonsStatefulApp 0.0 # 0.0
@@ -16,8 +16,9 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL KF6ConfigCore KF6ConfigGui KF6CoreAddons
 WANTLIB += KF6GlobalAccel KF6GuiAddons KF6I18n Qt6Core Qt6DBus
-WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlModels Qt6Quick
-WANTLIB += Qt6QuickControls2 Qt6Widgets m
+WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels
+WANTLIB += Qt6QmlWorkerScript Qt6Quick Qt6QuickControls2 Qt6Widgets
+WANTLIB += m
 
 SITES =			${SITE_KDE:=stable/kirigami-addons/}
 EXTRACT_SUFX =		.tar.xz
