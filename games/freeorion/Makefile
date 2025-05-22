@@ -1,10 +1,7 @@
-# WARNING: symbol(_ZTINSt3__19allocatorIvEE) size mismatch, relink your program
-BROKEN =	issues with 'std::__1::allocator<void>' (mixing C++ dialects?)
-
-V =		0.5.1
+V =		0.5.1pl0
 COMMENT =	turn-based space empire and galactic conquest computer game
-DISTNAME =	FreeOrion_v${V}_Source
 PKGNAME =	freeorion-${V}
+DIST_TUPLE +=	github freeorion freeorion 116c16aa21102330bb2c688bf4c0bdf10a64d833 .
 CATEGORIES =	games
 
 HOMEPAGE =	https://www.freeorion.org/
@@ -16,12 +13,11 @@ PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} GL GLEW SDL2 boost_atomic-mt
 WANTLIB += boost_chrono-mt boost_filesystem-mt
+WANTLIB += boost_container-mt boost_graph-mt boost_random-mt boost_system-mt
 WANTLIB += boost_iostreams-mt boost_locale-mt boost_log-mt boost_log_setup-mt
 WANTLIB += boost_python${MODPY_VERSION:C/\.//g}-mt boost_regex-mt
 WANTLIB += boost_serialization-mt boost_thread-mt c freetype m ogg openal
 WANTLIB += png ${MODPY_WANTLIB} vorbis vorbisenc vorbisfile z
-
-SITES =		https://github.com/freeorion/freeorion/releases/download/v${V}/
 
 COMPILER =	base-clang ports-gcc
 
@@ -45,8 +41,6 @@ LIB_DEPENDS =	${MODPY_LIB_DEPENDS} \
 		graphics/png
 
 NO_TEST =	Yes
-
-WRKDIST =	${WRKDIR}/src-tarball
 
 .if ${MACHINE_ARCH:Mpowerpc}
 DPB_PROPERTIES =	lonesome

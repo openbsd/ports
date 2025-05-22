@@ -3,7 +3,7 @@ Remove hardcoded optimisation option.
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -514,7 +514,6 @@ target_compile_options(freeorionparseobj
+@@ -512,7 +512,6 @@ target_compile_options(freeorionparseobj
      PRIVATE
          $<$<CXX_COMPILER_ID:Clang>:-ftemplate-depth=512>
          $<$<CXX_COMPILER_ID:AppleClang>:-ftemplate-depth=512>
