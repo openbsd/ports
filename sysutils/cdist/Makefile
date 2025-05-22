@@ -1,7 +1,7 @@
 COMMENT=	usable configuration management
 
 VERSION=	20250225
-REVISION=	0
+REVISION=	1
 
 DISTNAME=		cdist-${VERSION}
 
@@ -15,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
 
-MODPY_SETUPTOOLS=	Yes
+MODPY_PYBUILD=	setuptools
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples
