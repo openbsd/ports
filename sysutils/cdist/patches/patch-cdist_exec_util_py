@@ -1,0 +1,17 @@
+Index: cdist/exec/util.py
+--- cdist/exec/util.py.orig
++++ cdist/exec/util.py
+@@ -175,8 +175,12 @@ def get_std_fd(base_path, name):
+ def log_std_fd(log, command, stdfd, prefix):
+     if stdfd is not None and stdfd != subprocess.DEVNULL:
+         stdfd.seek(0, 0)
++        _stdfd = stdfd.read().decode()
+         log.trace("Command: {}; {}: {}".format(
+-            command, prefix, stdfd.read().decode()))
++            command, prefix, _stdfd))
++        if len(_stdfd):
++            for _l in _stdfd.splitlines():
++                log.info("\t{}".format(_l))
+ 
+ 
+ def dist_conf_dir():
