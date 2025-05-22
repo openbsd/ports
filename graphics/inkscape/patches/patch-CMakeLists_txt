@@ -3,7 +3,7 @@
 Index: CMakeLists.txt
 --- CMakeLists.txt.orig
 +++ CMakeLists.txt
-@@ -66,7 +66,8 @@ if(APPLE)
+@@ -62,7 +62,8 @@ if(APPLE)
      SET(CMAKE_MACOSX_RPATH TRUE)
      SET(CMAKE_INSTALL_RPATH "@loader_path/${INKSCAPE_INSTALL_LIBDIR_RELATIVE_TO_BINDIR}")
  else()
@@ -12,4 +12,4 @@ Index: CMakeLists.txt
 +    "${CMAKE_INSTALL_PREFIX}/${CMAKE_INSTALL_LIBDIR}/inkscape")
  endif()
  
- # this can be removed if/when cmake 3.1 is made the minimum required version
+ # console output is slow as hell on Windows and as a result status messages of the "install" target slow down

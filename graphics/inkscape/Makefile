@@ -1,8 +1,7 @@
 COMMENT =	SVG vector drawing application
 
-VERSION =	1.4.1
+VERSION =	1.4.2
 DISTNAME =	inkscape-${VERSION}
-REVISION =	0
 
 CATEGORIES =	graphics
 
@@ -10,20 +9,21 @@ HOMEPAGE =	https://www.inkscape.org/
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
-SHARED_LIBS +=  inkscape_base             1.0 # 0.0
+SHARED_LIBS +=  inkscape_base             2.0 # 0.0
 
 # GPLv2 and LGPLv2.1
 PERMIT_PACKAGE =	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} 2geom ICE Magick++-6.Q16 MagickCore-6.Q16
 WANTLIB += MagickWand-6.Q16 SM X11 Xext atk-1.0 atkmm-1.6 boost_atomic-mt
-WANTLIB += boost_filesystem-mt c cairo cairo-gobject cairomm-1.0
-WANTLIB += enchant-2 epoxy fontconfig freetype gc gdk-3 gdk_pixbuf-2.0
-WANTLIB += gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0 glibmm-2.4 gmodule-2.0
-WANTLIB += gobject-2.0 gsl gslcblas gspell-1 gtk-3 gtkmm-3.0 gtksourceview-4
-WANTLIB += harfbuzz iconv intl jpeg lcms2 m pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pangomm-1.4 png poppler poppler-glib potrace
-WANTLIB += sigc-2.0 xml2 xslt z
+WANTLIB += boost_filesystem-mt boost_system-mt c cairo cairo-gobject
+WANTLIB += cairomm-1.0 enchant-2 epoxy fontconfig freetype gc
+WANTLIB += gdk-3 gdk_pixbuf-2.0 gdkmm-3.0 gio-2.0 giomm-2.4 glib-2.0
+WANTLIB += glibmm-2.4 gmodule-2.0 gobject-2.0 gsl gslcblas gspell-1
+WANTLIB += gtk-3 gtkmm-3.0 gtksourceview-4 harfbuzz iconv intl
+WANTLIB += jpeg lcms2 m pango-1.0 pangocairo-1.0 pangoft2-1.0
+WANTLIB += pangomm-1.4 png poppler poppler-glib potrace sigc-2.0
+WANTLIB += xml2 xslt z
 
 SITES =		https://media.inkscape.org/dl/resources/file/
 EXTRACT_SUFX =	.tar.xz
@@ -45,24 +45,38 @@ MODRUBY_RUNDEP =	No
 BUILD_DEPENDS =	devel/gettext,-tools \
 		devel/gtest
 
-LIB_DEPENDS =	devel/boost \
+LIB_DEPENDS =	converters/libiconv \
+		devel/atk2mm \
 		devel/boehm-gc \
+		devel/boost \
+		devel/gettext,-runtime \
+		devel/glib2 \
+		devel/glib2mm \
 		devel/gsl \
+		devel/harfbuzz \
+		devel/libsigc++-2 \
 		devel/pango \
+		devel/pangomm \
 		geo/lib2geom>=1.4 \
 		graphics/ImageMagick \
+		graphics/cairo \
+		graphics/cairomm \
+		graphics/gdk-pixbuf2 \
+		graphics/jpeg \
 		graphics/lcms2 \
 		graphics/png \
 		graphics/potrace \
 		print/poppler \
+		textproc/enchant2 \
 		textproc/gspell \
+		textproc/libxml \
 		textproc/libxslt \
+		x11/gnome/at-spi2-core \
 		x11/gtk+3 \
 		x11/gtk3mm \
 		x11/gtksourceview4
 
 RUN_DEPENDS =	devel/desktop-file-utils \
-		devel/gettext,-runtime \
 		fonts/liberation-fonts \
 		math/py-numpy \
 		print/transfig \
@@ -71,7 +85,7 @@ RUN_DEPENDS =	devel/desktop-file-utils \
 		www/py-requests \
 		x11/gtk+4,-guic
 
-WRKDIST =	${WRKDIR}/inkscape-${VERSION}_2025-03-30_93de688d07
+WRKDIST =	${WRKDIR}/inkscape-${VERSION}_2025-05-08_ebf0e940d0
 
 SUBST_VARS +=	RUBY MODRUBY_REV
 
