@@ -2,7 +2,7 @@ COMMENT =	small and fast Qt image viewer
 
 GH_ACCOUNT =	nomacs
 GH_PROJECT =	nomacs
-GH_TAGNAME =	3.21.0
+GH_TAGNAME =	3.21.1
 
 CATEGORIES =	graphics
 
@@ -10,7 +10,7 @@ HOMEPAGE =	https://nomacs.org
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
-SHARED_LIBS +=  nomacsCore                8.0
+SHARED_LIBS +=  nomacsCore                8.1
 
 # GPLv3
 PERMIT_PACKAGE =	Yes
