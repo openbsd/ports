@@ -47,17 +47,6 @@ MODULES =		devel/cmake
 
 LIB_DEPENDS =		devel/abseil-cpp
 
-BUILD_DEPENDS =		devel/benchmark
-TEST_DEPENDS =		devel/benchmark
-
-CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=ON \
-			-DRE2_BUILD_TESTING=ON
-
-# everything except tests
-ALL_TARGET =		re2
-
-# build whatever is left (51 C++ test files)
-pre-test:
-	@${MODCMAKE_BUILD_TARGET}
+CONFIGURE_ARGS =	-DBUILD_SHARED_LIBS=ON
 
 .include <bsd.port.mk>
