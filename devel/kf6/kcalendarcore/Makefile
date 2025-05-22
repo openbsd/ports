@@ -15,4 +15,7 @@ RUN_DEPENDS =	devel/bison
 LIB_DEPENDS =	textproc/libical \
 		x11/qt6/qtdeclarative
 
+TEST_IS_INTERACTIVE =	X11
+TEST_ENV =		LC_ALL=en_US.UTF-8
+
 .include <bsd.port.mk>

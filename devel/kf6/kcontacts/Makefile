@@ -16,4 +16,7 @@ LIB_DEPENDS =	devel/kf6/kcodecs>=${MODKF6_VERSION} \
 		devel/kf6/ki18n>=${MODKF6_VERSION} \
 		x11/qt6/qtdeclarative
 
+TEST_IS_INTERACTIVE =	X11
+TEST_ENV =		LC_ALL=en_US.UTF-8
+
 .include <bsd.port.mk>
