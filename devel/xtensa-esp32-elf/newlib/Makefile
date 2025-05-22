@@ -12,8 +12,6 @@ BUILD_DEPENDS =	devel/${CONFIG}/binutils \
 		devel/${CONFIG}/gcc-bootstrap
 RUN_DEPENDS =	devel/${CONFIG}/binutils
 
-USE_GROFF =	No
-
 CONFIGURE_ENV =	CC_FOR_TARGET="${INSTALLDIR}/bootstrap/bin/${CONFIG}-gcc" \
 		AR_FOR_TARGET="${INSTALLDIR}/bin/${CONFIG}-ar" \
 		RANLIB_FOR_TARGET="${INSTALLDIR}/bin/${CONFIG}-ranlib"
