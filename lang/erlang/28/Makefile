@@ -13,6 +13,7 @@ PKGNAME=	erlang-${V}
 PKGNAME-main=	erlang-${V}
 PKGNAME-wx=	erlang-wx-${V}
 EPOCH=		0
+REVISION=	0
 
 VERSION_SPEC=	>=28v0,<29v0
 PKGSPEC-main=	erlang-${VERSION_SPEC}
@@ -36,14 +37,13 @@ MODGNU_CONFIG_GUESS_DIRS =	${WRKSRC}/erts/autoconf
 
 MULTI_PACKAGES = -main -wx
 
-WANTLIB =	m pthread ${COMPILER_LIBCXX}
-WANTLIB-main =	${WANTLIB} c crypto kvm curses util z
+WANTLIB =	m ${COMPILER_LIBCXX}
+WANTLIB-main += ${WANTLIB} c crypto curses util z
 
-WANTLIB-wx += ${WANTLIB} GL GLU
-WANTLIB-wx += wx_baseu-3.2 wx_baseu_xml-3.2 wx_gtk3u_aui-3.2
-WANTLIB-wx += wx_gtk3u_core-3.2 wx_gtk3u_gl-3.2 wx_gtk3u_html-3.2
-WANTLIB-wx += wx_gtk3u_stc-3.2 wx_gtk3u_xrc-3.2
-WANTLIB-wx += glib-2.0 intl
+WANTLIB-wx += ${WANTLIB}
+WANTLIB-wx += GLU glib-2.0 wx_baseu-3.2 wx_gtk3u_aui-3.2 wx_gtk3u_core-3.2
+WANTLIB-wx += wx_gtk3u_gl-3.2 wx_gtk3u_html-3.2 wx_gtk3u_stc-3.2
+WANTLIB-wx += wx_gtk3u_xrc-3.2
 
 LIB_DEPENDS-wx +=x11/wxWidgets>=2.8.12p10
 LIB_DEPENDS-wx +=devel/glib2
@@ -83,6 +83,7 @@ KERNEL_VSN      10.3 \
 MEGACO_VSN      4.8 \
 MNESIA_VSN      4.24 \
 OBSERVER_VSN    2.18 \
+ODBC_VSN	2.16 \
 OS_MON_VSN      2.11 \
 PARSETOOLS_VSN  2.7 \
 PUBLIC_KEY_VSN  1.18 \
