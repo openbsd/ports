@@ -1,8 +1,8 @@
 COMMENT=	usable configuration management
 
 VERSION=	20250225
+REVISION=	0
 
-MODPY_SETUPTOOLS=	Yes
 DISTNAME=		cdist-${VERSION}
 
 CATEGORIES=		sysutils
@@ -13,6 +13,8 @@ HOMEPAGE=	https://www.cdi.st/
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
+
+MODPY_SETUPTOOLS=	Yes
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples

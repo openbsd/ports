@@ -1,0 +1,21 @@
+Index: cdist/conf/type/__package_pkg_openbsd/gencode-remote
+--- cdist/conf/type/__package_pkg_openbsd/gencode-remote.orig
++++ cdist/conf/type/__package_pkg_openbsd/gencode-remote
+@@ -77,7 +77,7 @@ case "${state_should}" in
+ 		cat <<EOF
+ status=\$(pkg_add ${pkgopts} '${pkgid}' 2>&1 || true)
+ 
+-if ! pkg_info -q -I 'inst:${pkgid}' | grep -q '^${name}-${version}.*${flavor}$' 2>/dev/null
++if ! pkg_info -q -I 'inst:${pkgid}' 2>/dev/null | grep -q '^${name}-${version}.*${flavor}$' 2>/dev/null
+ then
+ 	# We didn't find the package in the list of 'installed packages', so it failed.
+ 	# This is necessary because pkg_add doesn't return properly
+@@ -97,7 +97,7 @@ EOF
+ 		cat <<EOF
+ status=\$(pkg_delete ${pkgopts} '${pkgid}' 2>&1 || true)
+ 
+-if pkg_info -q -I 'inst:${pkgid}' | grep -q '^${name}-${version}.*${flavor}' 2>/dev/null
++if pkg_info -q -I 'inst:${pkgid}' 2>/dev/null | grep -q '^${name}-${version}.*${flavor}' 2>/dev/null
+ then
+ 	# We found the package in the list of 'installed packages'.
+ 	# This would indicate that pkg_delete failed, send the output of pkg_delete
