@@ -1,4 +1,5 @@
 COMMENT =	QtQuick based components set
+VERSION =	6.14.1
 DISTNAME =	kirigami-${VERSION}
 
 SHARED_LIBS +=  Kirigami                  0.0 # 0.0
