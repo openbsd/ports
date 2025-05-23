@@ -1,6 +1,6 @@
 COMMENT=	monitoring and managing daemons utility
 
-DISTNAME=	monit-5.35.1
+DISTNAME=	monit-5.35.2
 
 CATEGORIES=	sysutils
 
