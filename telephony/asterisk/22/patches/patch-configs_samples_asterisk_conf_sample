@@ -12,8 +12,8 @@ Index: configs/samples/asterisk.conf.sample
  ;lightbackground = yes		; If your terminal is set for a light-colored
  				; background.
  ;forceblackbackground = yes     ; Force the background of the terminal to be
-@@ -132,8 +132,8 @@ documentation_language = en_US	; Set the language you 
-                 ; normal directories like AST_DATA_DIR/sounds/<lang>.
+@@ -135,8 +135,8 @@ documentation_language = en_US	; Set the language you 
+                 ; Default: no
  
  ; Changing the following lines may compromise your security.
 -;[files]
