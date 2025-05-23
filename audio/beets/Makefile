@@ -1,9 +1,8 @@
 COMMENT=	CLI tools to manage music collections
 
-MODPY_DISTV=	2.2.0
+MODPY_DISTV=	2.3.1
 DISTNAME=	beets-${MODPY_DISTV}
 CATEGORIES=	audio
-REVISION=	2
 
 HOMEPAGE=	https://beets.io/
 
@@ -18,9 +17,10 @@ MODPY_PI=	Yes
 
 RUN_DEPENDS+=	textproc/py-confuse \
 		textproc/py-jellyfish \
+		math/py-lap \
 		audio/py-mediafile \
-		devel/py-algorithm-munkres \
 		audio/py-musicbrainzngs \
+		math/py-numpy \
 		sysutils/py-platformdirs \
 		textproc/py-yaml \
 		textproc/py-unidecode \
@@ -36,9 +36,6 @@ RUN_DEPENDS+=	textproc/py-confuse \
 		www/py-requests \
 		www/py-requests-oauthlib
 
-# Some tests are failed:
-#  - https://github.com/beetbox/beets/issues/5526
-#  - https://github.com/beetbox/beets/issues/5527
 TEST_DEPENDS=	archivers/py-rarfile \
 		audio/py-mpd2 \
 		devel/py-mock \

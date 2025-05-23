@@ -116,10 +116,9 @@ lib/python${MODPY_VERSION}/site-packages/beets/util/m3u.py
 lib/python${MODPY_VERSION}/site-packages/beets/util/pipeline.py
 lib/python${MODPY_VERSION}/site-packages/beets/vfs.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/
-lib/python${MODPY_VERSION}/site-packages/beetsplug/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}/
-lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
-lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}_typing.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}_typing.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}absubmit.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}absubmit.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}acousticbrainz.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -260,6 +259,7 @@ lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}unimported.${
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}unimported.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}zero.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/beetsplug/${MODPY_PYCACHE}zero.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/beetsplug/_typing.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/absubmit.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/acousticbrainz.py
 lib/python${MODPY_VERSION}/site-packages/beetsplug/advancedrewrite.py
