@@ -4,7 +4,7 @@ COMMENT=	multi-screen window manager, with shm support for brltty
 PORTROACH=	ignore:1
 
 DISTNAME=	screen-4.0.3
-REVISION=	9
+REVISION=	10
 CATEGORIES=	misc
 SITES=		${SITE_GNU:=screen/}
 
@@ -18,7 +18,6 @@ WANTLIB=	c curses util
 AUTOCONF_VERSION=2.57
 CONFIGURE_STYLE= autoconf no-autoheader
 CONFIGURE_ARGS=	--with-sys-screenrc="${SYSCONFDIR}/screenrc"
-USE_GROFF=	Yes
 
 FLAVORS=	shm
 FLAVOR?=	shm

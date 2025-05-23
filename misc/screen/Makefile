@@ -2,6 +2,7 @@ COMMENT=	multi-screen window manager
 
 DISTNAME=	screen-5.0.1
 PKGNAME=	screen-5.0.1.2
+REVISION=	0
 DISTFILES=	${DISTNAME}-2{${DISTNAME}}.tar.gz
 CATEGORIES=	misc
 SITES=		${SITE_GNU:=screen/}
@@ -19,7 +20,6 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS=	--with-sys-screenrc="${SYSCONFDIR}/screenrc" --disable-pam
 
 USE_GMAKE=	Yes
-USE_GROFF=	Yes
 
 FLAVORS=	static
 FLAVOR?=
