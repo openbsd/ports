@@ -5,7 +5,7 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			5.13.1
+V =			5.14.3
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
@@ -26,7 +26,6 @@ MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
 # GSL:			MIT
 # cld3:			Apache 2.0
 # libprisma:		MIT
-# libtgvoip:		unlicense/public domain
 # minizip:		zlib
 # rlottie:		LGPL 2.1 with freetype, LGPL, MIT, BSD dependencies
 # tgcalls:		LGPL 3
@@ -38,7 +37,7 @@ WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Qml Qt6Quick Qt6QuickWidgets
 WANTLIB += Qt6Svg Qt6WaylandCompositor Qt6Widgets absl_strings
 WANTLIB += ada avcodec avfilter avformat avutil c crypto dispatch
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 hunspell-1.7 jpeg lz4
-WANTLIB += m openal opus protobuf-lite qrcodegencpp rnnoise swresample
+WANTLIB += m openal protobuf-lite qrcodegencpp rnnoise swresample
 WANTLIB += swscale tg_owt xcb xcb-keysyms xcb-record xcb-screensaver
 WANTLIB += xxhash z
 
@@ -58,18 +57,15 @@ BUILD_DEPENDS =		devel/boost,-main \
 			devel/fmt \
 			devel/gobject-introspection \
 			devel/range-v3>=0.11.0p0 \
-			devel/tl-expected
+			devel/tl-expected \
+			net/tdlib/tde2e
 
-# libtgvoip expects either ALSA or PulseAudio to be present, we build against
-# PulseAudio, but nothing in tdesktop then actually links against it.
-#
-# This should probably be patched out upstream so that libtgvoip builds with
-# OpenAL alone...
-BUILD_DEPENDS +=	audio/pulseaudio
+# libtgvoip got disabled in 5.14.0, so Opus is no longer linked, but configure
+# still picks it up.
+BUILD_DEPENDS +=	audio/opus
 
 LIB_DEPENDS =		archivers/lz4 \
 			audio/openal \
-			audio/opus \
 			audio/rnnoise \
 			devel/abseil-cpp \
 			devel/glib2>=2.78.0 \
@@ -79,7 +75,7 @@ LIB_DEPENDS =		archivers/lz4 \
 			graphics/ffmpeg>=6 \
 			graphics/jpeg \
 			graphics/qr-code-generator>=1.7.0p1 \
-			net/tg_owt>=0.0.0.20241028p0 \
+			net/tg_owt>=0.0.0.20250501 \
 			sysutils/xxhash \
 			textproc/hunspell \
 			www/ada \
@@ -103,8 +99,7 @@ CONFIGURE_ARGS +=	-DTDESKTOP_API_ID=611335 \
 
 # disable unported/unwanted components
 CONFIGURE_ARGS +=	-DDESKTOP_APP_DISABLE_JEMALLOC=ON \
-			-DDESKTOP_APP_DISABLE_WAYLAND_INTEGRATION=ON \
-			-DLIBTGVOIP_DISABLE_ALSA=ON
+			-DDESKTOP_APP_DISABLE_WAYLAND_INTEGRATION=ON
 
 # Since cmake 3.25.1, BSDs are no longer recognised as Linux (in this port).
 # Upstream should probably become BSD aware, but until that happens,
@@ -114,7 +109,7 @@ CONFIGURE_ARGS +=	-DLINUX=true
 NO_TEST =		Yes
 
 # unported and required
-NEEDED_BUNDLES =	cld3 libprisma libtgvoip rlottie tgcalls
+NEEDED_BUNDLES =	cld3 libprisma rlottie tgcalls
 
 # archivers/minizip is minizip-ng, telegram requires incompatible original zlib
 NEEDED_BUNDLES +=	minizip
