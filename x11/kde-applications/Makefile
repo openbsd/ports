@@ -1,5 +1,10 @@
      SUBDIR =
 
+     # KDE Plasma Mobile stuff
+     #SUBDIR +=  qmlkonsole
+     #SUBDIR +=  angelfish
+     #SUBDIR +=  calindori
+
      # New in KDE Gear/24.12
      #SUBDIR += kunifiedpush
 
@@ -21,9 +26,7 @@
 
      # New in KDE Gear/23.04
      #SUBDIR +=  alligator
-     #SUBDIR +=  angelfish
      #SUBDIR +=  audiotube
-     #SUBDIR +=  calindori
      #SUBDIR +=  kalk
      #SUBDIR +=  kasts
      #SUBDIR +=  kclock
@@ -36,7 +39,6 @@
      #SUBDIR +=  krecorder
      #SUBDIR +=  ktrip
      SUBDIR +=  kweather
-     #SUBDIR +=  qmlkonsole
      #SUBDIR +=  telly-skout
 
      # accessibility
@@ -108,6 +110,7 @@
      SUBDIR += knavalbattle
      SUBDIR += knetwalk
      #SUBDIR += knights
+     #SUBDIR += kpat
      SUBDIR += kolf
      SUBDIR += kollision
      SUBDIR += konquest
@@ -205,20 +208,6 @@
      # webdev
      SUBDIR += kimagemapeditor
 
-     # KDE-Telepathy
-     #SUBDIR += ktp-accounts-kcm
-     #SUBDIR += ktp-approver
-     #SUBDIR += ktp-auth-handler
-     #SUBDIR += ktp-call-ui
-     #SUBDIR += ktp-common-internals
-     #SUBDIR += ktp-contact-list
-     #SUBDIR += ktp-contact-runner
-     #SUBDIR += ktp-desktop-applets
-     #SUBDIR += ktp-filetransfer-handler
-     #SUBDIR += ktp-kded-module
-     #SUBDIR += ktp-send-file
-     #SUBDIR += ktp-text-ui
-
      # development environment
      SUBDIR += akonadi
      SUBDIR += akonadi-calendar
@@ -243,7 +232,6 @@
      SUBDIR += kopeninghours
      SUBDIR += kmime
      SUBDIR += kontactinterface
-     #SUBDIR += kpat
      SUBDIR += kpkpass
      SUBDIR += kqtquickcharts
      SUBDIR += ksmtp
