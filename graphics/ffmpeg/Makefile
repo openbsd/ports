@@ -2,7 +2,7 @@ COMMENT=	audio/video converter and streamer
 
 V=		6.1.2
 DISTNAME=	ffmpeg-${V}
-REVISION=	1
+REVISION=	2
 EPOCH=		1
 CATEGORIES=	graphics multimedia
 SITES=		https://ffmpeg.org/releases/
@@ -27,11 +27,11 @@ MAINTAINER=	Brad Smith <brad@comstyle.com>
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += SDL2 X11 Xext Xv aom ass bz2 c crypto dav1d fontconfig
-WANTLIB += freetype fribidi gsm iconv lzma m mp3lame opus pthread
-WANTLIB += sndio speex ssl theoradec theoraenc v4l2 va va-drm
-WANTLIB += va-x11 vidstab vorbis vorbisenc vpx webp webpmux x264
-WANTLIB += x265 xcb xcb-shape xcb-shm xcb-xfixes xml2 xvidcore z
-WANTLIB += zimg
+WANTLIB += freetype fribidi gsm harfbuzz iconv lzma m mp3lame opus
+WANTLIB += pthread sndio speex ssl theoradec theoraenc v4l2 va
+WANTLIB += va-drm va-x11 vidstab vorbis vorbisenc vpx webp webpmux
+WANTLIB += x264 x265 xcb xcb-shape xcb-shm xcb-xfixes xml2 xvidcore
+WANTLIB += z zimg
 
 COMPILER=	base-clang ports-gcc
 COMPILER_LANGS=	c
@@ -52,6 +52,8 @@ LIB_DEPENDS=	archivers/bzip2 \
 		audio/speex \
 		audio/gsm \
 		converters/libiconv \
+		devel/fribidi \
+		devel/harfbuzz \
 		devel/sdl2 \
 		graphics/libwebp \
 		graphics/zimg \
@@ -120,6 +122,7 @@ CONFIGURE_ARGS+=--enable-shared \
 		--enable-libfreetype \
 		--enable-libfribidi \
 		--enable-libgsm \
+		--enable-libharfbuzz \
 		--enable-libmp3lame \
 		--enable-libopus \
 		--enable-libspeex \
