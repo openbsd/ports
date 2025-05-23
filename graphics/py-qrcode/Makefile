@@ -1,6 +1,6 @@
 COMMENT=	QR Code image generator
 
-MODPY_DISTV=	8.1
+MODPY_DISTV=	8.2
 DISTNAME=	qrcode-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
