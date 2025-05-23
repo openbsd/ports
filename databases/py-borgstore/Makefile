@@ -1,9 +1,8 @@
 COMMENT =		key/value store implementation in Python
 
-MODPY_DISTV =		0.2.0
+MODPY_DISTV =		0.3.0
 DISTNAME =		borgstore-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		0
 
 CATEGORIES =		databases
 
