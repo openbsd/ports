@@ -18,7 +18,9 @@ fi
 export QT_FORCE_STDERR_LOGGING=1
 export XDG_CURRENT_DESKTOP=KDE
 export DESKTOP_SESSION=plasma
-${LOCALBASE}/bin/startplasma-x11 > ~/.startplasma-x11.log 2>&1
+
+${LOCALBASE}/libexec/plasma-dbus-run-session-if-needed \
+ ${LOCALBASE}/bin/startplasma-x11 > ~/.xerror-startplasma-x11.log 2>&1
 
 Logging out and shutting down the computer
 ==========================================
@@ -30,7 +32,9 @@ polkit-kde-agent: you'll need to run a systemwide D-BUS service (# rcctl enable
 messagebus) and start with 'startplasma-x11' with
 '${LOCALBASE}/bin/ck-launch-session':
 
-${LOCALBASE}/bin/ck-launch-session ${LOCALBASE}/bin/startplasma-x11
+${LOCALBASE}/libexec/plasma-dbus-run-session-if-needed \
+ ${LOCALBASE}/bin/ck-launch-session \
+ ${LOCALBASE}/bin/startplasma-x11
 
 If you don't want to use messagebus/polkit-kde-agent, you can still configure
 doas(1) to allow your user to run shutdown/halt -p without having to enter a
