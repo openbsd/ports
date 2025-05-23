@@ -1,0 +1,13 @@
+include/td/e2e/
+include/td/e2e/e2e_api.h
+include/td/e2e/e2e_errors.h
+lib/cmake/tde2e/
+lib/cmake/tde2e/tde2eConfig.cmake
+lib/cmake/tde2e/tde2eConfigVersion.cmake
+lib/cmake/tde2e/tde2eStaticTargets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/tde2e/tde2eStaticTargets.cmake
+@comment shipped in tdlib
+@comment @static-lib lib/libtde2e.a
+@comment @static-lib lib/libtdutils.a
+@comment lib/pkgconfig/tde2e.pc
+@comment lib/pkgconfig/tdutils.pc
