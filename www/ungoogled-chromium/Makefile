@@ -13,6 +13,7 @@ COMMENT=		Chromium browser sans integration with Google
 
 V=			136.0.7103.113
 UGV=			${V}-1
+REVISION=		0
 
 DISTNAME=		ungoogled-chromium-${V}
 
@@ -44,10 +45,11 @@ PERMIT_PACKAGE =	Yes
 SITES=		https://commondatastorage.googleapis.com/chromium-browser-official/
 SITES.a=	http://nerd.hu/distfiles/
 
-MODULES=	lang/clang lang/python x11/qt5
+MODULES=	lang/clang lang/python x11/qt5 x11/qt6
 
 MODCLANG_VERSION=	19
 MODQT5_DEPS=		No
+MODQT6_DEPS=		No
 MODPY_RUNDEP=		No
 
 COMPILER=		ports-clang
@@ -86,7 +88,8 @@ BUILD_DEPENDS=	archivers/bzip2 \
 		sysutils/pciutils \
 		devel/ninja \
 		x11/py-xcbgen \
-		x11/qt5/qtbase,-main \
+		${MODQT5_LIB_DEPENDS} \
+		${MODQT6_LIB_DEPENDS} \
 		${MODGCC4_CPPDEP} \
 		${RUN_DEPENDS}
 LIB_DEPENDS=	audio/opus \
@@ -178,6 +181,10 @@ GN_ARGS=	is_official_build=true \
 		use_custom_libcxx=true \
 		use_custom_libunwind=true \
 		use_udev=true \
+		use_qt5=true \
+		use_qt6=true \
+		moc_qt5_path=\"${MODQT5_MOC}\" \
+		moc_qt6_path=\"${MODQT6_MOC}\" \
 		v8_enable_cet_ibt=true
 
 # rust
@@ -273,7 +280,6 @@ pre-patch:
 
 post-patch:
 	@ln -sf ${MODPY_BIN} ${WRKDIR}/bin/python
-	@ln -sf ${MODQT5_MOC} ${WRKDIR}/bin/moc
 	@ln -sf ${LOCALBASE}/bin/llvm-ar-${MODCLANG_VERSION} ${WRKDIR}/bin/ar
 	@mkdir -p ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin
 	@ln -sf ${TRUEPREFIX}/bin/node ${WRKSRC}/third_party/node/openbsd/node-openbsd/bin/node
