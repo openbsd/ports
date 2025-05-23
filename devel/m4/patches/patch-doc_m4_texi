@@ -1,3 +1,7 @@
+Redirect stderr to /dev/null, since our /bin/sh prints "Killed" when a
+subprocess has died by a KILL signal.  Delete that message since that is
+out of the scope of the test.
+
 Index: doc/m4.texi
 --- doc/m4.texi.orig
 +++ doc/m4.texi
@@ -10,3 +14,12 @@ Index: doc/m4.texi
  @end direntry
  
  @titlepage
+@@ -6756,7 +6756,7 @@ ifdef(`__unix__', ,
+ ')m4exit(`77')')dnl
+ changequote(`[', `]')
+ @result{}
+-syscmd([/bin/sh -c 'kill -9 $$'; st=$?; test $st = 137 || test $st = 265])
++syscmd([/bin/sh -c 'kill -9 $$'2>/dev/null; st=$?; test $st = 137 || test $st = 265])
+ @result{}
+ ifelse(sysval, [0], , [errprint([ skipping: shell does not send signal 9
+ ])m4exit([77])])dnl
