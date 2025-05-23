@@ -31,7 +31,7 @@ PKGNAME-plasma =	kde-plasma-${MODKDE_PLASMA_VERSION}
 PKGNAME-plasma-extras =	kde-plasma-extras-${MODKDE_PLASMA_VERSION}
 
 REVISION-network =	0
-REVISION-plasma =	2
+REVISION-plasma =	3
 
 MULTI_PACKAGES +=	-main \
 			-games \

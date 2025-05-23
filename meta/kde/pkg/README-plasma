@@ -107,14 +107,25 @@ if [ ! -d $XDG_RUNTIME_DIR ]; then
     mkdir -m 700 -p $XDG_RUNTIME_DIR
 fi
 
+GROUP=`id -g $USER`
+
+doas chown $USER:$GROUP /dev/console
+if [ -c /dev/dri/card0 ]; then
+    doas chown $USER:$GROUP /dev/dri/card0
+fi
+if [ -c /dev/dri/renderD128 ]; then
+    doas chown $USER:$GROUP /dev/dri/renderD128
+fi
+
 # You can try and play with this options:
-#export WLR_DRM_DEVICES=/dev/dri/card0
-#export LIBSEAT_BACKEND=noop
-#export XCURSOR_THEME=redglass
+export KWIN_DRM_DEVICES=/dev/dri/card0:/dev/dri/renderD128
+export WAYLAND_DISPLAY=wayland-0
+export LIBSEAT_BACKEND=consolekit2
 #export QT_QPA_PLATFORM=wayland
 #export XDG_SESSION_TYPE=wayland
 
-${LOCALBASE}/bin/ck-launch-session dbus-run-session \
+${LOCALBASE}/libexec/plasma-dbus-run-session-if-needed \
+ ${LOCALBASE}/bin/ck-launch-session \
  ${LOCALBASE}/bin/startplasma-wayland
 
 KDE PIM and Akonadi
