@@ -633,6 +633,7 @@ share/asterisk/static-http/prototype.js
 share/asterisk/third-party/
 share/doc/asterisk/
 share/doc/asterisk/BUGS
+share/doc/asterisk/CHANGES.html
 share/doc/asterisk/CHANGES.md
 share/doc/asterisk/COPYING
 share/doc/asterisk/CREDITS
@@ -641,6 +642,7 @@ share/doc/asterisk/IAX2-security.txt
 share/doc/asterisk/LICENSE
 share/doc/asterisk/README-SERIOUSLY.bestpractices.md
 share/doc/asterisk/README-addons.txt
+share/doc/asterisk/README.html
 share/doc/asterisk/README.md
 share/doc/asterisk/README.txt
 share/doc/pkg-readmes/${PKGSTEM}
