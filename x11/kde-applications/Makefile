@@ -1,9 +1,12 @@
      SUBDIR =
 
      # KDE Plasma Mobile stuff
+     #SUBDIR +=  alligator
      #SUBDIR +=  qmlkonsole
      #SUBDIR +=  angelfish
      #SUBDIR +=  calindori
+     #SUBDIR +=  ktrip
+     #SUBDIR +=  keysmith
 
      # New in KDE Gear/24.12
      #SUBDIR += kunifiedpush
@@ -25,19 +28,16 @@
      #SUBDIR += khealthcertificate
 
      # New in KDE Gear/23.04
-     #SUBDIR +=  alligator
      #SUBDIR +=  audiotube
      #SUBDIR +=  kalk
      #SUBDIR +=  kasts
      #SUBDIR +=  kclock
      #SUBDIR +=  kde-inotify-survey
-     #SUBDIR +=  keysmith
      #SUBDIR +=  kio-admin
      #SUBDIR +=  kjournald
      #SUBDIR +=  koko
      #SUBDIR +=  kongress
      #SUBDIR +=  krecorder
-     #SUBDIR +=  ktrip
      SUBDIR +=  kweather
      #SUBDIR +=  telly-skout
 
@@ -297,8 +297,9 @@
 
      # TODO
      # kosmindoormap
-     # kpmcore
      # kpublictransport
+
      # partitionmanager
+     # kpmcore
 
 .include <bsd.port.subdir.mk>
