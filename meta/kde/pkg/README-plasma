@@ -60,6 +60,12 @@ You can easily change the login class with the following command:
 
 # usermod -L kde your-user-name
 
+You might want to consider increasing the kern.maxfiles tunable. Many services
+and applications need to monitor activity of a lot of files.
+
+# sysctl kern.maxfiles=65535
+# echo "kern.maxfiles=65535" >> /etc/sysctl.conf
+
 Touch screen calibration
 ========================
 xtsscale(1) can be used for touch screen calibration, however it will not
@@ -117,7 +123,10 @@ do not display, messages cannot be found).
 Increasing the buffer size is recommended:
 
 # sysctl net.unix.stream.recvspace=65536
+# echo "net.unix.stream.recvspace=65536" >> /etc/sysctl.conf
+
 # sysctl net.unix.stream.sendspace=65536
+# echo "net.unix.stream.sendspace=65536" >> /etc/sysctl.conf
 
 Known issues
 ============
