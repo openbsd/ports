@@ -1,2 +1,4 @@
-This is Sushi, a quick previewer for Nautilus, the GNOME desktop file
-manager.
+Sushi is a quick previewer for the file manager.
+
+* Support for Office type documents requires the "libreoffice" package
+* Support for HTML documents requires the "webkitgtk41" package

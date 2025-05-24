@@ -1,0 +1,47 @@
+From: =?UTF-8?q?Ball=C3=B3=20Gy=C3=B6rgy?= <ballogyor@gmail.com>
+Date: Wed, 3 Jul 2024 18:51:06 +0000
+Subject: [PATCH] sushi-media-bin: Fix position update for audio mode
+
+From: =?UTF-8?q?Ball=C3=B3=20Gy=C3=B6rgy?= <ballogyor@gmail.com>
+Date: Fri, 8 Mar 2024 18:43:38 +0100
+Subject: [PATCH] sushi-media-bin: Limit timeout for gst_element_get_state
+
+Index: src/libsushi/sushi-media-bin.c
+--- src/libsushi/sushi-media-bin.c.orig
++++ src/libsushi/sushi-media-bin.c
+@@ -45,6 +45,8 @@
+ 
+ #define FPS_WINDOW_SIZE          2  /* Window size in seconds to calculate fps */
+ 
++#define GET_STATE_TIMEOUT        GST_SECOND / G_GINT64_CONSTANT (10)
++
+ #define SMB_ICON_SIZE            GTK_ICON_SIZE_BUTTON
+ 
+ #define SMB_ICON_NAME_PLAY       "media-playback-start-symbolic"
+@@ -773,7 +775,7 @@ sushi_media_bin_fullscreen_apply (SushiMediaBin *self,
+ 
+       /* Init new pipeline */
+       gst_element_set_state (priv->play, GST_STATE_PAUSED);
+-      gst_element_get_state (priv->play, NULL, NULL, GST_CLOCK_TIME_NONE);
++      gst_element_get_state (priv->play, NULL, NULL, GET_STATE_TIMEOUT);
+ 
+       /* Seek to position */
+       gst_element_seek_simple (priv->play, GST_FORMAT_TIME,
+@@ -785,7 +787,7 @@ sushi_media_bin_fullscreen_apply (SushiMediaBin *self,
+       if (priv->state == GST_STATE_PLAYING)
+         {
+           gst_element_set_state (priv->play, GST_STATE_PLAYING);
+-          gst_element_get_state (priv->play, NULL, NULL, GST_CLOCK_TIME_NONE);
++          gst_element_get_state (priv->play, NULL, NULL, GET_STATE_TIMEOUT);
+         }
+     }
+ 
+@@ -1577,7 +1579,7 @@ sushi_media_bin_set_tick_enabled (SushiMediaBin *self,
+     }
+ 
+   if (enabled)
+-    priv->tick_id = gtk_widget_add_tick_callback (priv->overlay,
++    priv->tick_id = gtk_widget_add_tick_callback (priv->audio_mode ? priv->audio_box : priv->overlay,
+                                                   sushi_media_bin_tick_callback,
+                                                   self, NULL);
+ }

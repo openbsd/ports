@@ -1,0 +1,17 @@
+From: Kan-Ru Chen <kanru@kanru.info>
+Date: Sat, 27 Apr 2024 22:34:24 +0900
+Subject: [PATCH] Fix a crash caused by missing gvariant parameter.
+
+Index: src/libsushi/sushi-utils.c
+--- src/libsushi/sushi-utils.c.orig
++++ src/libsushi/sushi-utils.c
+@@ -172,7 +172,8 @@ libreoffice_missing (GTask *task)
+                           g_variant_new ("(^asssa{sv})",
+                                          libreoffice_path,
+                                          "hide-confirm-deps",
+-                                         "org.gnome.NautilusPreviewer"),
++                                         "org.gnome.NautilusPreviewer",
++                                         NULL),
+                           NULL, G_DBUS_CALL_FLAGS_NONE,
+                           G_MAXINT, NULL,
+                           libreoffice_missing_ready_cb,
