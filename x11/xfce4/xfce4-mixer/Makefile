@@ -1,6 +1,7 @@
 COMMENT=	Xfce4 volume mixer
 
 XFCE_GOODIE=	xfce4-mixer
+REVISION=	0
 
 # GPLv2
 PERMIT_PACKAGE=	Yes
