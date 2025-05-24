@@ -252,6 +252,7 @@
      SUBDIR += py-qtpy
      SUBDIR += py-sip-qt5
      SUBDIR += py-sip-qt6
+     SUBDIR += py-superqt
      SUBDIR += py-virtualdisplay
      SUBDIR += py-wxPython
      SUBDIR += py-xcbgen
