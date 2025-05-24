@@ -55,12 +55,6 @@ To make use of it, rc.conf.local(8) needs to contain the following line:
     multicast=YES
 and "avahi_daemon" must be added to "pkg_scripts" _after_ "messagebus".
 
-LibreOffice integration
-=======================
-The gnome-documents manager does not support Office type documents by default
-(e.g. docx, .odt, .ods) but relies on unoconv to display them. If such support
-is needed, `doas pkg_add unoconv` will take care of it.
-
 Cheat sheet
 ===========
 # rcctl disable xenodm
