@@ -4,6 +4,7 @@
 bin/rt
 bin/rt-crontool
 bin/rt-mailgate
+bin/rt-run-scheduled-processes
 libdata/perl5/site_perl/RT/
 libdata/perl5/site_perl/RT.pm
 libdata/perl5/site_perl/RT/ACE.pm
@@ -18,6 +19,7 @@ libdata/perl5/site_perl/RT/Action/ClearCustomFieldValues.pm
 libdata/perl5/site_perl/RT/Action/CreateTickets.pm
 libdata/perl5/site_perl/RT/Action/EscalatePriority.pm
 libdata/perl5/site_perl/RT/Action/ExtractSubjectTag.pm
+libdata/perl5/site_perl/RT/Action/Forward.pm
 libdata/perl5/site_perl/RT/Action/LinearEscalate.pm
 libdata/perl5/site_perl/RT/Action/Notify.pm
 libdata/perl5/site_perl/RT/Action/NotifyAsComment.pm
@@ -179,6 +181,7 @@ libdata/perl5/site_perl/RT/Interface/Web/Request.pm
 libdata/perl5/site_perl/RT/Interface/Web/Scrubber/
 libdata/perl5/site_perl/RT/Interface/Web/Scrubber.pm
 libdata/perl5/site_perl/RT/Interface/Web/Scrubber/Permissive.pm
+libdata/perl5/site_perl/RT/Interface/Web/Scrubber/Restrictive.pm
 libdata/perl5/site_perl/RT/Interface/Web/Session.pm
 libdata/perl5/site_perl/RT/LDAPImport.pm
 libdata/perl5/site_perl/RT/Lifecycle/
@@ -343,16 +346,20 @@ libdata/perl5/site_perl/RT/Shredder/Exceptions.pm
 libdata/perl5/site_perl/RT/Shredder/POD.pm
 libdata/perl5/site_perl/RT/Shredder/Plugin/
 libdata/perl5/site_perl/RT/Shredder/Plugin.pm
+libdata/perl5/site_perl/RT/Shredder/Plugin/Assets.pm
 libdata/perl5/site_perl/RT/Shredder/Plugin/Attachments.pm
 libdata/perl5/site_perl/RT/Shredder/Plugin/Base/
 libdata/perl5/site_perl/RT/Shredder/Plugin/Base.pm
 libdata/perl5/site_perl/RT/Shredder/Plugin/Base/Dump.pm
 libdata/perl5/site_perl/RT/Shredder/Plugin/Base/Search.pm
+libdata/perl5/site_perl/RT/Shredder/Plugin/ExternalStorageDump.pm
 libdata/perl5/site_perl/RT/Shredder/Plugin/Objects.pm
 libdata/perl5/site_perl/RT/Shredder/Plugin/SQLDump.pm
 libdata/perl5/site_perl/RT/Shredder/Plugin/Summary.pm
 libdata/perl5/site_perl/RT/Shredder/Plugin/Tickets.pm
+libdata/perl5/site_perl/RT/Shredder/Plugin/Transactions.pm
 libdata/perl5/site_perl/RT/Shredder/Plugin/Users.pm
+libdata/perl5/site_perl/RT/Shredder/RawRecord.pm
 libdata/perl5/site_perl/RT/Squish/
 libdata/perl5/site_perl/RT/Squish.pm
 libdata/perl5/site_perl/RT/Squish/CSS.pm
@@ -369,6 +376,7 @@ libdata/perl5/site_perl/RT/Test/Assets.pm
 libdata/perl5/site_perl/RT/Test/Crypt.pm
 libdata/perl5/site_perl/RT/Test/Email.pm
 libdata/perl5/site_perl/RT/Test/ExternalStorage.pm
+libdata/perl5/site_perl/RT/Test/FTS.pm
 libdata/perl5/site_perl/RT/Test/GnuPG.pm
 libdata/perl5/site_perl/RT/Test/REST2.pm
 libdata/perl5/site_perl/RT/Test/SMIME.pm
@@ -472,6 +480,7 @@ share/doc/rt/images/
 share/doc/rt/images/action-decline.png
 share/doc/rt/images/added-terms.png
 share/doc/rt/images/advanced-search.png
+share/doc/rt/images/approvals.png
 share/doc/rt/images/asset-cfs.png
 share/doc/rt/images/asset-date-details.png
 share/doc/rt/images/asset-search.png
@@ -515,6 +524,9 @@ share/doc/rt/images/queue-created-started-chart.png
 share/doc/rt/images/quote-selection-highlighted.png
 share/doc/rt/images/quote-selection-ticket-update.png
 share/doc/rt/images/saved-dashboard.png
+share/doc/rt/images/scheduled-process-create.png
+share/doc/rt/images/scheduled-process-schedule.png
+share/doc/rt/images/scheduled-processes.png
 share/doc/rt/images/screenshot.png
 share/doc/rt/images/search-arrows.png
 share/doc/rt/images/search-criteria.png
@@ -524,6 +536,8 @@ share/doc/rt/images/status-change-condition.png
 share/doc/rt/images/subscriptions.png
 share/doc/rt/images/support-dashboard.png
 share/doc/rt/images/theme_editor_defaults.png
+share/doc/rt/images/unread-messages-column.png
+share/doc/rt/images/unread-notification.png
 share/doc/rt/images/user-time-worked-report.png
 share/doc/rt/images/with-created-before.png
 share/doc/rt/images/with-newline.png
@@ -547,6 +561,7 @@ share/doc/rt/system_administration/
 share/doc/rt/system_administration/database.pod
 share/doc/rt/ticket_metadata.pod
 share/doc/rt/tracking-rt-configuration.pod
+share/doc/rt/unread_messages.pod
 share/doc/rt/web_deployment.pod
 share/doc/rt/working_with_rt.pod
 share/doc/rt/writing_extensions.pod
@@ -1300,7 +1315,19 @@ share/examples/rt/upgrade/5.0.5/schema.SQLite
 share/examples/rt/upgrade/5.0.5/schema.mysql
 @sample ${SYSCONFDIR}/rt/upgrade/5.0.5/schema.mysql
 share/examples/rt/upgrade/5.0.6/
+@sample ${SYSCONFDIR}/rt/upgrade/5.0.6/
 share/examples/rt/upgrade/5.0.6/indexes
+@sample ${SYSCONFDIR}/rt/upgrade/5.0.6/indexes
+share/examples/rt/upgrade/5.0.8/
+@sample ${SYSCONFDIR}/rt/upgrade/5.0.8/
+share/examples/rt/upgrade/5.0.8/indexes
+@sample ${SYSCONFDIR}/rt/upgrade/5.0.8/indexes
+share/examples/rt/upgrade/5.0.8/schema.Oracle
+@sample ${SYSCONFDIR}/rt/upgrade/5.0.8/schema.Oracle
+share/examples/rt/upgrade/5.0.8/schema.Pg
+@sample ${SYSCONFDIR}/rt/upgrade/5.0.8/schema.Pg
+share/examples/rt/upgrade/5.0.8/schema.mysql
+@sample ${SYSCONFDIR}/rt/upgrade/5.0.8/schema.mysql
 share/examples/rt/upgrade/generate-rtaddressregexp
 @sample ${SYSCONFDIR}/rt/upgrade/generate-rtaddressregexp
 share/examples/rt/upgrade/reset-sequences
@@ -1360,6 +1387,7 @@ share/rt/html/Admin/Assets/
 share/rt/html/Admin/Assets/Catalogs/
 share/rt/html/Admin/Assets/Catalogs/Create.html
 share/rt/html/Admin/Assets/Catalogs/CustomFields.html
+share/rt/html/Admin/Assets/Catalogs/CustomRoles.html
 share/rt/html/Admin/Assets/Catalogs/DefaultValues.html
 share/rt/html/Admin/Assets/Catalogs/Elements/
 share/rt/html/Admin/Assets/Catalogs/Elements/EditBasics
@@ -1444,6 +1472,7 @@ share/rt/html/Admin/Global/CustomFields/index.html
 share/rt/html/Admin/Global/DashboardsInMenu.html
 share/rt/html/Admin/Global/GroupRights.html
 share/rt/html/Admin/Global/MyRT.html
+share/rt/html/Admin/Global/RightsHistory.html
 share/rt/html/Admin/Global/Scrips.html
 share/rt/html/Admin/Global/SelfServiceHomePage.html
 share/rt/html/Admin/Global/Template.html
@@ -1509,6 +1538,12 @@ share/rt/html/Admin/Tools/EditConfig.html
 share/rt/html/Admin/Tools/GnuPG.html
 share/rt/html/Admin/Tools/Queries.html
 share/rt/html/Admin/Tools/RightsInspector.html
+share/rt/html/Admin/Tools/ScheduledProcesses/
+share/rt/html/Admin/Tools/ScheduledProcesses/Create.html
+share/rt/html/Admin/Tools/ScheduledProcesses/Elements/
+share/rt/html/Admin/Tools/ScheduledProcesses/Elements/ScheduledProcess
+share/rt/html/Admin/Tools/ScheduledProcesses/Modify.html
+share/rt/html/Admin/Tools/ScheduledProcesses/index.html
 share/rt/html/Admin/Tools/Shortener.html
 share/rt/html/Admin/Tools/Shredder/
 share/rt/html/Admin/Tools/Shredder/Dumps/
@@ -1573,7 +1608,6 @@ share/rt/html/Articles/Article/ExtractFromTicket.html
 share/rt/html/Articles/Article/ExtractIntoClass.html
 share/rt/html/Articles/Article/ExtractIntoTopic.html
 share/rt/html/Articles/Article/History.html
-share/rt/html/Articles/Article/PreCreate.html
 share/rt/html/Articles/Article/Search.html
 share/rt/html/Articles/Elements/
 share/rt/html/Articles/Elements/BeforeMessageBox
@@ -1592,8 +1626,6 @@ share/rt/html/Articles/Elements/ShowTopic
 share/rt/html/Articles/Elements/ShowTopicLink
 share/rt/html/Articles/Elements/SubjectOverride
 share/rt/html/Articles/Elements/UpdatedArticles
-share/rt/html/Articles/Helpers/
-share/rt/html/Articles/Helpers/CreateInClass
 share/rt/html/Articles/Topics.html
 share/rt/html/Articles/index.html
 share/rt/html/Asset/
@@ -1673,6 +1705,10 @@ share/rt/html/Elements/AuthToken/List
 share/rt/html/Elements/BulkCustomFields
 share/rt/html/Elements/BulkLinks
 share/rt/html/Elements/CSRF
+share/rt/html/Elements/CatalogList
+share/rt/html/Elements/CatalogListAllStatuses
+share/rt/html/Elements/CatalogSummaryByLifecycle
+share/rt/html/Elements/CatalogSummaryByStatus
 share/rt/html/Elements/Checkbox
 share/rt/html/Elements/CollectionAsTable/
 share/rt/html/Elements/CollectionAsTable/Header
@@ -1978,6 +2014,7 @@ share/rt/html/NoAuth/rss/dhandler
 share/rt/html/Prefs/
 share/rt/html/Prefs/AboutMe.html
 share/rt/html/Prefs/AuthTokens.html
+share/rt/html/Prefs/CatalogList.html
 share/rt/html/Prefs/CustomDateRanges.html
 share/rt/html/Prefs/DashboardsInMenu.html
 share/rt/html/Prefs/Elements/
@@ -2231,6 +2268,7 @@ share/rt/html/Widgets/Form/CustomDateRanges
 share/rt/html/Widgets/Form/Integer
 share/rt/html/Widgets/Form/JSON
 share/rt/html/Widgets/Form/MultilineString
+share/rt/html/Widgets/Form/SearchFormat
 share/rt/html/Widgets/Form/Select
 share/rt/html/Widgets/Form/String
 share/rt/html/Widgets/SavedSearch

@@ -1,6 +1,6 @@
 COMMENT=		industrial-grade ticketing system
 
-DISTNAME=		rt-5.0.7
+DISTNAME=		rt-5.0.8
 CATEGORIES=		www
 
 MAINTAINER=		Robert Nagy <robert@openbsd.org>
@@ -69,6 +69,7 @@ RUN_DEPENDS=		converters/p5-Convert-ASN1 \
 			security/p5-Crypt-SSLeay \
 			security/p5-Crypt-X509 \
 			security/p5-GnuPG-Interface>=1.00 \
+			security/p5-Mozilla-CA-Fake \
 			security/p5-Text-Password-Pronounceable \
 			sysutils/p5-File-Which \
 			textproc/p5-Encode-Detect \
