@@ -8,6 +8,7 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=	x11/xfce4 devel/meson
 LIB_DEPENDS +=	x11/gtksourceview4
+BUILD_DEPENDS+=	lang/vala
 MODXFCE_DESKTOP_FILE =	Yes
 MODXFCE_ICON_CACHE=	Yes
 
