@@ -26,7 +26,8 @@ BUILD_DEPENDS=	${RUN_DEPENDS} \
 		devel/py-setuptools
 
 PORTHOME=	${WRKDIR}
-TEST_DEPENDS=	devel/py-certifi \
+TEST_DEPENDS=	${FULLPKGNAME}:${BUILD_PKGPATH} \
+		devel/py-certifi \
 		devel/py-coverage \
 		devel/py-hypothesis \
 		devel/py-pretend \
