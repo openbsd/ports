@@ -2,6 +2,7 @@
      SUBDIR += 0xProto
      SUBDIR += abyssinica
      SUBDIR += adobe-fonts
+     SUBDIR += adwaita-fonts
      SUBDIR += alkalami
      SUBDIR += amigafonts
      SUBDIR += andika
