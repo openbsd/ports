@@ -2,7 +2,7 @@ COMMENT=		color-able replacement for tail(1)
 
 GH_ACCOUNT=		joakim666
 GH_PROJECT=		colortail
-GH_TAGNAME=		0.3.3
+GH_TAGNAME=		0.3.5
 
 CATEGORIES=		sysutils
 

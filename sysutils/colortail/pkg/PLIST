@@ -1,4 +1,4 @@
-bin/colortail
+@bin bin/colortail
 @man man/man1/colortail.1
 share/examples/colortail/
 share/examples/colortail/conf.daemon
