@@ -1,8 +1,7 @@
 COMMENT=		graphical diff and merge tool
 
-GNOME_VERSION=		3.22.2
+GNOME_VERSION=		3.23.0
 GNOME_PROJECT=		meld
-REVISION=		2
 
 CATEGORIES=		textproc
 
