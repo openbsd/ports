@@ -8,7 +8,7 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
-REVISION-main=		0
+REVISION-main=		1
 REVISION-extras=	1
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -42,6 +42,10 @@ RUN_DEPENDS-main +=	inputmethods/ibus,-gtk4
 RUN_DEPENDS-main +=	sysutils/flatpak/xdg-desktop-portal \
 			sysutils/flatpak/xdg-desktop-portal-gnome \
 			sysutils/flatpak/xdg-desktop-portal-gtk
+
+# defaults set in gsettings-desktop-schema (not in the dep chain already):
+# org.gnome.desktop.interface.gschema.xml
+RUN_DEPENDS-main +=	fonts/adwaita-fonts # elements/sdk-platform.bst
 
 ################################################################################
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core.bst
