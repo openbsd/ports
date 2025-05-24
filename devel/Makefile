@@ -1502,7 +1502,6 @@
      SUBDIR += py-intervaltree
      SUBDIR += py-invoke
      SUBDIR += py-ipykernel
-     SUBDIR += py-ipython_genutils
      SUBDIR += py-iso3166
      SUBDIR += py-iso639
      SUBDIR += py-isodate

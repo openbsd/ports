@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1720 2025/05/19 10:37:16 pvk Exp $
+# $OpenBSD: Quirks.pm,v 1.1721 2025/05/24 16:26:10 daniel Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1258,6 +1258,7 @@ setup_obsolete_reason(
 	3 => 'ksql',
 	3 => 'reop',
 	6 => 'py-elasticsearch-curator',
+	6 => 'py-ipython_genutils',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
