@@ -2,7 +2,7 @@ COMMENT=	audio/video converter and streamer
 
 V=		6.1.2
 DISTNAME=	ffmpeg-${V}
-REVISION=	2
+REVISION=	3
 EPOCH=		1
 CATEGORIES=	graphics multimedia
 SITES=		https://ffmpeg.org/releases/
@@ -79,7 +79,8 @@ LIBavdevice_EXTRALIBS=-L${LOCALBASE}/lib -L${X11BASE}/lib -lX11 -lXext -lXv
 LIBavdevice_EXTRALIBS+=-lxcb-shape -lxcb-shm -lxcb-xfixes -lxcb -lsndio -lv4l2 -lm
 
 LIBavfilter_EXTRALIBS=-L${LOCALBASE}/lib -L${X11BASE}/lib -lass -lfontconfig
-LIBavfilter_EXTRALIBS+=-lfreetype -lfribidi -lvidstab -lm -lz -lzimg -lva -pthread
+LIBavfilter_EXTRALIBS+=-lfreetype -lfribidi -lharfbuzz -lvidstab
+LIBavfilter_EXTRALIBS+=-lm -lz -lzimg -lva -pthread
 
 LIBavformat_EXTRALIBS=-L${LOCALBASE}/lib -lbz2 -lxml2 -lssl -lcrypto -lm -lz
 
