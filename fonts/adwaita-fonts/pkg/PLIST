@@ -1,0 +1,8 @@
+share/fonts/
+@fontdir share/fonts/Adwaita/
+share/fonts/Adwaita/AdwaitaMono-Bold.ttf
+share/fonts/Adwaita/AdwaitaMono-BoldItalic.ttf
+share/fonts/Adwaita/AdwaitaMono-Italic.ttf
+share/fonts/Adwaita/AdwaitaMono-Regular.ttf
+share/fonts/Adwaita/AdwaitaSans-Italic.ttf
+share/fonts/Adwaita/AdwaitaSans-Regular.ttf
