@@ -2,7 +2,7 @@ COMMENT =		CPU, RAM memory, and load monitor for use with tmux(1)
 
 GH_ACCOUNT =		thewtex
 GH_PROJECT =		tmux-mem-cpu-load
-GH_TAGNAME =		v3.8.0
+GH_TAGNAME =		v3.8.2
 
 CATEGORIES =		sysutils
 
