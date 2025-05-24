@@ -3,7 +3,7 @@ COMMENT =	session manager and a toolchest-like application launcher
 V =		1.3
 DISTNAME =	emwm-utils-src-${V}
 PKGNAME =	emwm-utils-${V}
-REVISION =	0
+REVISION =	1
 
 CATEGORIES =	x11
 HOMEPAGE =	https://fastestcode.org/emwm.html

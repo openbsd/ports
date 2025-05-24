@@ -61,21 +61,16 @@ Index: src/smmain.c
  
  	memset(pwb,0,strlen(pwb));
  	XmTextFieldSetString(wpasswd,"");
-@@ -988,7 +1009,8 @@ static Boolean set_privileges(Boolean elevate)
- 	if(!initialized){
- 		orig_uid = geteuid();
+@@ -990,8 +1011,12 @@ static Boolean set_privileges(Boolean elevate)
  		orig_gid = getegid();
--
-+		/* BSD-auth handles authentication, no SUID needed.  */
-+#ifndef __OpenBSD__
+ 
  		if(orig_uid != 0){
++			/* BSD-auth handles authentication, no SUID needed.  */
++#ifndef __OpenBSD__
  			log_msg("%s must be setuid root to enable "
  				"screen locking capabilities.\n",bin_name);
-@@ -996,6 +1018,7 @@ static Boolean set_privileges(Boolean elevate)
++#endif /* __OpenBSD__ */
++
+ 			initialized = True;
  			can_elevate = False;
  			return False;
- 		}
-+#endif /* __OpenBSD__ */
- 		initialized = True;
- 		can_elevate = True;
- 	}
