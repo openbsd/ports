@@ -4,7 +4,6 @@ MODPY_DISTV =	0.19.0
 
 DISTNAME =	python_telegram-${MODPY_DISTV}
 PKGNAME =	py-telegram-${MODPY_DISTV}
-REVISION =	0
 
 CATEGORIES =	net
 
@@ -18,7 +17,7 @@ MODULES =	lang/python
 MODPY_PI =	Yes
 MODPY_PYBUILD =	setuptools_scm
 
-RUN_DEPENDS =	net/tdlib \
+RUN_DEPENDS =	net/tdlib/tdlib>=1.8.49p0 \
 		textproc/py-telegram-text
 
 # remove bundled binaries
