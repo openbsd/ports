@@ -36,6 +36,8 @@ LIB_DEPENDS=		devel/glib2 \
 			devel/fribidi \
 			devel/harfbuzz
 
+# XXX check if still needed at next release;
+# (or replaced by adwaita-fonts?)
 TEST_DEPENDS=		fonts/cantarell-fonts
 
 CONFIGURE_ARGS=		-Dlibthai=disabled
