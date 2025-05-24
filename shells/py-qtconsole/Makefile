@@ -1,7 +1,6 @@
 COMMENT =		Jupyter Qt console
 
-MODPY_DISTV =	5.5.2
-REVISION =		2
+MODPY_DISTV =		5.6.1
 DISTNAME =		qtconsole-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
@@ -22,7 +21,6 @@ RUN_DEPENDS =		devel/py-ipykernel>=4.1 \
 			devel/py-jupyter_core \
 			devel/py-pexpect \
 			devel/py-traitlets>=5.2.2 \
-			net/py-zmq>=17.1 \
 			sysutils/py-packaging \
 			textproc/py-pygments \
 			x11/py-qt5 \

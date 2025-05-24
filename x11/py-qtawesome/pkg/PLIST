@@ -1,5 +1,6 @@
 @pkgpath x11/py-qtawesome,python3
 bin/qta-browser
+bin/qta-install-fonts-all-users
 lib/python${MODPY_VERSION}/site-packages/qtawesome/
 lib/python${MODPY_VERSION}/site-packages/qtawesome-${MODPY_DISTV}.dist-info/
 lib/python${MODPY_VERSION}/site-packages/qtawesome-${MODPY_DISTV}.dist-info/METADATA
@@ -26,18 +27,22 @@ lib/python${MODPY_VERSION}/site-packages/qtawesome/${MODPY_PYCACHE}styles.${MODP
 lib/python${MODPY_VERSION}/site-packages/qtawesome/_version.py
 lib/python${MODPY_VERSION}/site-packages/qtawesome/animation.py
 lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/
-lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/codicon-0.0.35.ttf
-lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/codicon-charmap-0.0.35.json
+lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/codicon-0.0.36.ttf
+lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/codicon-charmap-0.0.36.json
 lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/elusiveicons-webfont-2.0.ttf
 lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/elusiveicons-webfont-charmap-2.0.json
-lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/fontawesome4-webfont-4.7.ttf
-lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/fontawesome4-webfont-charmap-4.7.json
 lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/fontawesome5-brands-webfont-5.15.4.ttf
 lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/fontawesome5-brands-webfont-charmap-5.15.4.json
 lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/fontawesome5-regular-webfont-5.15.4.ttf
 lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/fontawesome5-regular-webfont-charmap-5.15.4.json
 lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/fontawesome5-solid-webfont-5.15.4.ttf
 lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/fontawesome5-solid-webfont-charmap-5.15.4.json
+lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/fontawesome6-brands-webfont-6.7.2.ttf
+lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/fontawesome6-brands-webfont-charmap-6.7.2.json
+lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/fontawesome6-regular-webfont-6.7.2.ttf
+lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/fontawesome6-regular-webfont-charmap-6.7.2.json
+lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/fontawesome6-solid-webfont-6.7.2.ttf
+lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/fontawesome6-solid-webfont-charmap-6.7.2.json
 lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/materialdesignicons5-webfont-5.9.55.ttf
 lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/materialdesignicons5-webfont-charmap-5.9.55.json
 lib/python${MODPY_VERSION}/site-packages/qtawesome/fonts/materialdesignicons6-webfont-6.9.96.ttf

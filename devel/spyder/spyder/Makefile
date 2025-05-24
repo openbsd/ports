@@ -1,9 +1,8 @@
 COMMENT =	Scientific PYthon Development EnviRonment
 
-MODPY_DISTV =	5.5.6
+MODPY_DISTV =	6.0.7
 DISTNAME =	spyder-${MODPY_DISTV}
 PKGNAME =	spyder3-${MODPY_DISTV}
-REVISION =	3
 
 HOMEPAGE =	https://github.com/spyder-ide/spyder
 
@@ -13,6 +12,7 @@ RUN_DEPENDS +=	databases/py-pickleshare>=0.4 \
 		devel/py-atomicwrites>=1.2.0 \
 		devel/py-cloudpickle>=0.5.0 \
 		devel/py-cookiecutter>=1.6.0 \
+		devel/py-pygithub>=2.3.0 \
 		devel/py-intervaltree>=3.0.2 \
 		devel/py-jedi>=0.17.2,<0.20.0 \
 		devel/py-jsonschema>=3.2.0 \
@@ -29,8 +29,11 @@ RUN_DEPENDS +=	databases/py-pickleshare>=0.4 \
 		devel/py-three-merge>=0.1.1 \
 		devel/pylint>=3.1,<4 \
 		net/py-zmq>=24.0.0 \
-		shells/py-qtconsole>=5.5.1,<5.6.0 \
+		shells/py-qtconsole>=5.6.1,<5.7.0 \
+		security/py-asyncssh>=2.14.0,<3.0.0 \
+		security/py-bcrypt>=4.3.0 \
 		security/py-keyring>=17.0.0 \
+		sysutils/py-packaging>=20.0 \
 		sysutils/py-psutil>=5.3 \
 		sysutils/py-watchdog>=0.10.3 \
 		textproc/py-chardet>=2.0.0 \
@@ -38,13 +41,17 @@ RUN_DEPENDS +=	databases/py-pickleshare>=0.4 \
 		textproc/py-jellyfish>=0.7 \
 		textproc/py-numpydoc>=0.6.0 \
 		textproc/py-pygments>=2.0 \
+		textproc/py-pyuca>=1.2 \
 		textproc/py-sphinx \
 		textproc/py-textdistance>=4.2.0 \
-		x11/py-qt5>=5.10,<5.16 \
-		www/py-qtwebengine>=5.10,<5.16 \
-		x11/py-qtpy>=2.1.0 \
-		x11/py-qtawesome>=1.3.1,<1.4.0 \
-		devel/spyder/py-spyder-kernels>=2.5.2,<2.6.0
+		x11/py-qt5>=5.15,<5.16 \
+		x11/py-superqt>=0.6.2,<1.0.0 \
+		www/py-aiohttp>=3.9.3 \
+		www/py-qtwebengine>=5.15,<5.16 \
+		www/py-yarl>=1.9.4 \
+		x11/py-qtpy>=2.4.0 \
+		x11/py-qtawesome>=1.4.0,<1.5.0 \
+		devel/spyder/py-spyder-kernels>=3.0.5,<3.1.0
 
 TEST_DEPENDS +=	${RUN_DEPENDS} \
 		devel/py-importlib-metadata
