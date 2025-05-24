@@ -1,0 +1,25 @@
+COMMENT =		widgets and components for PyQt/PySide
+
+MODPY_DISTV =		0.7.3
+DISTNAME =		superqt-${MODPY_DISTV}
+PKGNAME =		py-${DISTNAME}
+
+CATEGORIES =		x11
+
+HOMEPAGE =		https://pyapp-kit.github.io/superqt/
+
+# BSD
+PERMIT_PACKAGE =	Yes
+
+MODULES =		lang/python
+
+MODPY_PI =		Yes
+MODPY_PYBUILD =		hatch-vcs
+
+RUN_DEPENDS =		devel/py-typing-extensions \
+			textproc/py-pygments \
+			x11/py-qtpy
+
+NO_TEST =		Yes
+
+.include <bsd.port.mk>
