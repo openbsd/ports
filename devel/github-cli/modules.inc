@@ -83,13 +83,17 @@ MODGO_MODULES =	\
 	github.com/charmbracelet/colorprofile							 v0.2.3-0.20250311203215-f60798e515dc \
 	github.com/charmbracelet/glamour							 v0.9.2-0.20250319212134-549f544650e3 \
 	github.com/charmbracelet/harmonica							 v0.2.0 \
-	github.com/charmbracelet/huh								 v0.6.1-0.20250409210615-c5906631cbb5 \
+	github.com/charmbracelet/huh								 v0.7.0 \
 	github.com/charmbracelet/lipgloss							 v1.1.1-0.20250319133953-166f707985bc \
 	github.com/charmbracelet/x/ansi								 v0.8.0 \
 	github.com/charmbracelet/x/cellbuf							 v0.0.13 \
+	github.com/charmbracelet/x/conpty							 v0.1.0 \
+	github.com/charmbracelet/x/errors							 v0.0.0-20240508181413-e8d8b6e2de86 \
 	github.com/charmbracelet/x/exp/golden							 v0.0.0-20241011142426-46044092ad91 \
 	github.com/charmbracelet/x/exp/strings							 v0.0.0-20240722160745-212f7b056ed0 \
 	github.com/charmbracelet/x/term								 v0.2.1 \
+	github.com/charmbracelet/x/termios							 v0.1.1 \
+	github.com/charmbracelet/x/xpty								 v0.1.2 \
 	github.com/cli/browser									 v1.3.0 \
 	github.com/cli/go-gh/v2									 v2.12.0 \
 	github.com/cli/go-internal								 v0.0.0-20241025142207-6c48bcd5ce24 \
@@ -104,7 +108,7 @@ MODGO_MODULES =	\
 	github.com/coreos/go-oidc/v3								 v3.12.0 \
 	github.com/coreos/go-semver								 v0.3.1 \
 	github.com/coreos/go-systemd/v22							 v22.5.0 \
-	github.com/cpuguy83/go-md2man/v2							 v2.0.6 \
+	github.com/cpuguy83/go-md2man/v2							 v2.0.7 \
 	github.com/creack/pty									 v1.1.24 \
 	github.com/cyberphone/json-canonicalization						 v0.0.0-20220623050100-57a0ce2678a7 \
 	github.com/danieljoos/wincred								 v1.2.1 \
@@ -509,6 +513,7 @@ MODGO_MODFILES =	\
 	github.com/cpuguy83/go-md2man/v2						 v2.0.2 \
 	github.com/cpuguy83/go-md2man/v2						 v2.0.4 \
 	github.com/cpuguy83/go-md2man/v2						 v2.0.5 \
+	github.com/cpuguy83/go-md2man/v2						 v2.0.6 \
 	github.com/creack/pty								 v1.1.17 \
 	github.com/danieljoos/wincred							 v1.2.0 \
 	github.com/davecgh/go-spew							 v1.1.0 \
@@ -671,6 +676,7 @@ MODGO_MODFILES =	\
 	golang.org/x/crypto								 v0.36.0 \
 	golang.org/x/crypto								 v0.8.0 \
 	golang.org/x/exp								 v0.0.0-20220909182711-5c715a9e8561 \
+	golang.org/x/exp								 v0.0.0-20231006140011-7918f672742d \
 	golang.org/x/exp								 v0.0.0-20240112132812-db7319d0e0e3 \
 	golang.org/x/mod								 v0.14.0 \
 	golang.org/x/mod								 v0.16.0 \
