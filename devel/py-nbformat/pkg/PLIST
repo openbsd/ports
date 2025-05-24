@@ -1,5 +1,5 @@
-@pkgpath devel/py-nbformat,python3
 @conflict py-nbformat-*
+@pkgpath devel/py-nbformat,python3
 bin/jupyter-trust
 lib/python${MODPY_VERSION}/site-packages/nbformat/
 lib/python${MODPY_VERSION}/site-packages/nbformat-${MODPY_DISTV}.dist-info/
