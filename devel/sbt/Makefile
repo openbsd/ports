@@ -1,6 +1,6 @@
 COMMENT=	interactive build tool, primarily for Scala/Java
 
-V=		1.10.11
+V=		1.11.0
 DISTNAME=	sbt-$V
 CATEGORIES=	devel
 
@@ -14,7 +14,8 @@ MAINTAINER=	Kirill A. Korinsky <kirill@korins.ky>
 PERMIT_PACKAGE=	Yes
 
 MODULES=	java
-MODJAVA_VER=	1.8+
+# keep it synchronized with lang/scala
+MODJAVA_VER=	17+
 RUN_DEPENDS=	java/javaPathHelper \
 		shells/bash
 
