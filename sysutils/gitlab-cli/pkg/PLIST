@@ -6,6 +6,7 @@
 @man man/man1/glab-api.1
 @man man/man1/glab-auth-dpop-gen.1
 @man man/man1/glab-auth-login.1
+@man man/man1/glab-auth-logout.1
 @man man/man1/glab-auth-status.1
 @man man/man1/glab-auth.1
 @man man/man1/glab-changelog-generate.1
@@ -117,6 +118,11 @@
 @man man/man1/glab-schedule-run.1
 @man man/man1/glab-schedule-update.1
 @man man/man1/glab-schedule.1
+@man man/man1/glab-securefile-create.1
+@man man/man1/glab-securefile-download.1
+@man man/man1/glab-securefile-list.1
+@man man/man1/glab-securefile-remove.1
+@man man/man1/glab-securefile.1
 @man man/man1/glab-snippet-create.1
 @man man/man1/glab-snippet.1
 @man man/man1/glab-ssh-key-add.1

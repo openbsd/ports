@@ -1,6 +1,6 @@
 COMMENT =		GitLab CLI tool
 
-V =			1.55.0
+V =			1.57.0
 MODGO_MODNAME =		gitlab.com/gitlab-org/cli
 MODGO_VERSION =		v${V}
 
@@ -18,6 +18,7 @@ PERMIT_PACKAGE =	Yes
 WANTLIB =		c pthread
 
 MODULES =		lang/go
+BUILD_DEPENDS =		lang/go>=1.24.2
 MODGO_LDFLAGS =		-X main.version=${V}
 
 do-test:
