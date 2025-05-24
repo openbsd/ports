@@ -1,9 +1,8 @@
 COMMENT =		Python Language Server
 
-MODPY_DISTV =	1.12.0
+MODPY_DISTV =		1.12.2
 DISTNAME =		python_lsp_server-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/g}
-REVISION =		1
 
 CATEGORIES =		devel
 
@@ -33,12 +32,14 @@ RUN_DEPENDS =		devel/autopep8 \
 			textproc/py-ujson>=3.0.0 \
 			textproc/py-whatthepatch>=1.0.2,<2.0.0
 
-TEST_DEPENDS =		devel/py-mock \
+TEST_DEPENDS =		devel/py-coverage \
+			devel/py-mock \
 			devel/py-flaky \
 			devel/py-test-cov \
-			devel/pylint
-
-MODPY_PYTEST_ARGS=  --ignore test/plugins/test_pyflakes_lint.py
+			devel/pylint \
+			graphics/py-matplotlib \
+			math/py-numpy \
+			math/py-pandas
 
 PORTHOME =	${WRKDIR}
 
