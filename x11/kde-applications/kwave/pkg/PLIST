@@ -1,0 +1,333 @@
+@bin bin/kwave
+@lib lib/libkwave.so.${LIBkwave_VERSION}
+@lib lib/libkwavegui.so.${LIBkwavegui_VERSION}
+lib/qt6/plugins/kwave/
+@so lib/qt6/plugins/kwave/about.so
+@so lib/qt6/plugins/kwave/amplifyfree.so
+@so lib/qt6/plugins/kwave/band_pass.so
+@so lib/qt6/plugins/kwave/codec_ascii.so
+@so lib/qt6/plugins/kwave/codec_audiofile.so
+@so lib/qt6/plugins/kwave/codec_flac.so
+@so lib/qt6/plugins/kwave/codec_mp3.so
+@so lib/qt6/plugins/kwave/codec_ogg.so
+@so lib/qt6/plugins/kwave/codec_wav.so
+@so lib/qt6/plugins/kwave/debug.so
+@so lib/qt6/plugins/kwave/export_k3b.so
+@so lib/qt6/plugins/kwave/fileinfo.so
+@so lib/qt6/plugins/kwave/goto.so
+@so lib/qt6/plugins/kwave/insert_at.so
+@so lib/qt6/plugins/kwave/lowpass.so
+@so lib/qt6/plugins/kwave/newsignal.so
+@so lib/qt6/plugins/kwave/noise.so
+@so lib/qt6/plugins/kwave/normalize.so
+@so lib/qt6/plugins/kwave/notch_filter.so
+@so lib/qt6/plugins/kwave/pitch_shift.so
+@so lib/qt6/plugins/kwave/playback.so
+@so lib/qt6/plugins/kwave/record.so
+@so lib/qt6/plugins/kwave/reverse.so
+@so lib/qt6/plugins/kwave/samplerate.so
+@so lib/qt6/plugins/kwave/saveblocks.so
+@so lib/qt6/plugins/kwave/selectrange.so
+@so lib/qt6/plugins/kwave/sonagram.so
+@so lib/qt6/plugins/kwave/stringenter.so
+@so lib/qt6/plugins/kwave/volume.so
+@so lib/qt6/plugins/kwave/zero.so
+share/applications/org.kde.kwave.desktop
+share/doc/HTML/ca/kwave/
+share/doc/HTML/ca/kwave/index.cache.bz2
+share/doc/HTML/ca/kwave/index.docbook
+share/doc/HTML/ca/kwave/kwave-edit-label.png
+share/doc/HTML/ca/kwave/kwave-gui-mdi.png
+share/doc/HTML/ca/kwave/kwave-gui-sdi.png
+share/doc/HTML/ca/kwave/kwave-gui-tab.png
+share/doc/HTML/ca/kwave/kwave-main.png
+share/doc/HTML/ca/kwave/kwave-plugin-about.png
+share/doc/HTML/ca/kwave/kwave-plugin-amplifyfree.png
+share/doc/HTML/ca/kwave/kwave-plugin-band_pass.png
+share/doc/HTML/ca/kwave/kwave-plugin-codec_mp3.png
+share/doc/HTML/ca/kwave/kwave-plugin-export_k3b.png
+share/doc/HTML/ca/kwave/kwave-plugin-fileinfo.png
+share/doc/HTML/ca/kwave/kwave-plugin-goto.png
+share/doc/HTML/ca/kwave/kwave-plugin-lowpass.png
+share/doc/HTML/ca/kwave/kwave-plugin-memory.png
+share/doc/HTML/ca/kwave/kwave-plugin-newsignal.png
+share/doc/HTML/ca/kwave/kwave-plugin-noise.png
+share/doc/HTML/ca/kwave/kwave-plugin-notch_filter.png
+share/doc/HTML/ca/kwave/kwave-plugin-pitch_shift.png
+share/doc/HTML/ca/kwave/kwave-plugin-playback.png
+share/doc/HTML/ca/kwave/kwave-plugin-record.png
+share/doc/HTML/ca/kwave/kwave-plugin-saveblocks.png
+share/doc/HTML/ca/kwave/kwave-plugin-selectrange.png
+share/doc/HTML/ca/kwave/kwave-plugin-sonagram-setup.png
+share/doc/HTML/ca/kwave/kwave-plugin-sonagram-window.png
+share/doc/HTML/ca/kwave/kwave-plugin-stringenter.png
+share/doc/HTML/ca/kwave/kwave-plugin-volume.png
+share/doc/HTML/de/kwave/
+share/doc/HTML/de/kwave/index.cache.bz2
+share/doc/HTML/de/kwave/index.docbook
+share/doc/HTML/de/kwave/kwave-edit-label.png
+share/doc/HTML/de/kwave/kwave-gui-mdi.png
+share/doc/HTML/de/kwave/kwave-gui-sdi.png
+share/doc/HTML/de/kwave/kwave-gui-tab.png
+share/doc/HTML/de/kwave/kwave-main.png
+share/doc/HTML/de/kwave/kwave-plugin-about.png
+share/doc/HTML/de/kwave/kwave-plugin-amplifyfree.png
+share/doc/HTML/de/kwave/kwave-plugin-band_pass.png
+share/doc/HTML/de/kwave/kwave-plugin-codec_mp3.png
+share/doc/HTML/de/kwave/kwave-plugin-fileinfo.png
+share/doc/HTML/de/kwave/kwave-plugin-goto.png
+share/doc/HTML/de/kwave/kwave-plugin-insert_at.png
+share/doc/HTML/de/kwave/kwave-plugin-lowpass.png
+share/doc/HTML/de/kwave/kwave-plugin-memory.png
+share/doc/HTML/de/kwave/kwave-plugin-newsignal.png
+share/doc/HTML/de/kwave/kwave-plugin-noise.png
+share/doc/HTML/de/kwave/kwave-plugin-notch_filter.png
+share/doc/HTML/de/kwave/kwave-plugin-pitch_shift.png
+share/doc/HTML/de/kwave/kwave-plugin-playback.png
+share/doc/HTML/de/kwave/kwave-plugin-record.png
+share/doc/HTML/de/kwave/kwave-plugin-saveblocks.png
+share/doc/HTML/de/kwave/kwave-plugin-selectrange.png
+share/doc/HTML/de/kwave/kwave-plugin-sonagram-setup.png
+share/doc/HTML/de/kwave/kwave-plugin-sonagram-window.png
+share/doc/HTML/de/kwave/kwave-plugin-stringenter.png
+share/doc/HTML/de/kwave/kwave-plugin-volume.png
+share/doc/HTML/en/kwave/
+share/doc/HTML/en/kwave/audio-1.png
+share/doc/HTML/en/kwave/audio2signal.png
+share/doc/HTML/en/kwave/index.cache.bz2
+share/doc/HTML/en/kwave/index.docbook
+share/doc/HTML/en/kwave/krec_record.png
+share/doc/HTML/en/kwave/kwave-edit-label.png
+share/doc/HTML/en/kwave/kwave-gui-mdi.png
+share/doc/HTML/en/kwave/kwave-gui-sdi.png
+share/doc/HTML/en/kwave/kwave-gui-tab.png
+share/doc/HTML/en/kwave/kwave-main.png
+share/doc/HTML/en/kwave/kwave-plugin-about.png
+share/doc/HTML/en/kwave/kwave-plugin-amplifyfree.png
+share/doc/HTML/en/kwave/kwave-plugin-band_pass.png
+share/doc/HTML/en/kwave/kwave-plugin-codec_mp3.png
+share/doc/HTML/en/kwave/kwave-plugin-export_k3b.png
+share/doc/HTML/en/kwave/kwave-plugin-fileinfo.png
+share/doc/HTML/en/kwave/kwave-plugin-goto.png
+share/doc/HTML/en/kwave/kwave-plugin-insert_at.png
+share/doc/HTML/en/kwave/kwave-plugin-lowpass.png
+share/doc/HTML/en/kwave/kwave-plugin-memory.png
+share/doc/HTML/en/kwave/kwave-plugin-newsignal.png
+share/doc/HTML/en/kwave/kwave-plugin-noise.png
+share/doc/HTML/en/kwave/kwave-plugin-notch_filter.png
+share/doc/HTML/en/kwave/kwave-plugin-pitch_shift.png
+share/doc/HTML/en/kwave/kwave-plugin-playback.png
+share/doc/HTML/en/kwave/kwave-plugin-record.png
+share/doc/HTML/en/kwave/kwave-plugin-saveblocks.png
+share/doc/HTML/en/kwave/kwave-plugin-selectrange.png
+share/doc/HTML/en/kwave/kwave-plugin-sonagram-setup.png
+share/doc/HTML/en/kwave/kwave-plugin-sonagram-window.png
+share/doc/HTML/en/kwave/kwave-plugin-stringenter.png
+share/doc/HTML/en/kwave/kwave-plugin-volume.png
+share/doc/HTML/en/kwave/light_off.png
+share/doc/HTML/en/kwave/light_on.png
+share/doc/HTML/en/kwave/nonlinear.png
+share/doc/HTML/en/kwave/record_new.png
+share/doc/HTML/en/kwave/record_pause.png
+share/doc/HTML/en/kwave/record_stop.png
+share/doc/HTML/en/kwave/signal2digital.png
+share/doc/HTML/en/kwave/signed.png
+share/doc/HTML/en/kwave/sinus2samples.png
+share/doc/HTML/en/kwave/under-construction.png
+share/doc/HTML/en/kwave/unsigned.png
+share/doc/HTML/es/kwave/
+share/doc/HTML/es/kwave/index.cache.bz2
+share/doc/HTML/es/kwave/index.docbook
+share/doc/HTML/es/kwave/kwave-edit-label.png
+share/doc/HTML/es/kwave/kwave-gui-mdi.png
+share/doc/HTML/es/kwave/kwave-gui-sdi.png
+share/doc/HTML/es/kwave/kwave-gui-tab.png
+share/doc/HTML/es/kwave/kwave-main.png
+share/doc/HTML/es/kwave/kwave-plugin-about.png
+share/doc/HTML/es/kwave/kwave-plugin-amplifyfree.png
+share/doc/HTML/es/kwave/kwave-plugin-band_pass.png
+share/doc/HTML/es/kwave/kwave-plugin-codec_mp3.png
+share/doc/HTML/es/kwave/kwave-plugin-fileinfo.png
+share/doc/HTML/es/kwave/kwave-plugin-goto.png
+share/doc/HTML/es/kwave/kwave-plugin-insert_at.png
+share/doc/HTML/es/kwave/kwave-plugin-lowpass.png
+share/doc/HTML/es/kwave/kwave-plugin-memory.png
+share/doc/HTML/es/kwave/kwave-plugin-newsignal.png
+share/doc/HTML/es/kwave/kwave-plugin-noise.png
+share/doc/HTML/es/kwave/kwave-plugin-notch_filter.png
+share/doc/HTML/es/kwave/kwave-plugin-pitch_shift.png
+share/doc/HTML/es/kwave/kwave-plugin-playback.png
+share/doc/HTML/es/kwave/kwave-plugin-record.png
+share/doc/HTML/es/kwave/kwave-plugin-saveblocks.png
+share/doc/HTML/es/kwave/kwave-plugin-selectrange.png
+share/doc/HTML/es/kwave/kwave-plugin-sonagram-setup.png
+share/doc/HTML/es/kwave/kwave-plugin-sonagram-window.png
+share/doc/HTML/es/kwave/kwave-plugin-stringenter.png
+share/doc/HTML/es/kwave/kwave-plugin-volume.png
+share/doc/HTML/it/kwave/
+share/doc/HTML/it/kwave/index.cache.bz2
+share/doc/HTML/it/kwave/index.docbook
+share/doc/HTML/it/kwave/kwave-edit-label.png
+share/doc/HTML/it/kwave/kwave-gui-mdi.png
+share/doc/HTML/it/kwave/kwave-gui-sdi.png
+share/doc/HTML/it/kwave/kwave-gui-tab.png
+share/doc/HTML/it/kwave/kwave-main.png
+share/doc/HTML/it/kwave/kwave-plugin-about.png
+share/doc/HTML/it/kwave/kwave-plugin-fileinfo.png
+share/doc/HTML/it/kwave/kwave-plugin-newsignal.png
+share/doc/HTML/it/kwave/kwave-plugin-playback.png
+share/doc/HTML/it/kwave/kwave-plugin-record.png
+share/doc/HTML/nl/kwave/
+share/doc/HTML/nl/kwave/index.cache.bz2
+share/doc/HTML/nl/kwave/index.docbook
+share/doc/HTML/nl/kwave/kwave-edit-label.png
+share/doc/HTML/nl/kwave/kwave-gui-mdi.png
+share/doc/HTML/nl/kwave/kwave-gui-sdi.png
+share/doc/HTML/nl/kwave/kwave-gui-tab.png
+share/doc/HTML/nl/kwave/kwave-main.png
+share/doc/HTML/nl/kwave/kwave-plugin-about.png
+share/doc/HTML/nl/kwave/kwave-plugin-amplifyfree.png
+share/doc/HTML/nl/kwave/kwave-plugin-band_pass.png
+share/doc/HTML/nl/kwave/kwave-plugin-codec_mp3.png
+share/doc/HTML/nl/kwave/kwave-plugin-fileinfo.png
+share/doc/HTML/nl/kwave/kwave-plugin-goto.png
+share/doc/HTML/nl/kwave/kwave-plugin-insert_at.png
+share/doc/HTML/nl/kwave/kwave-plugin-lowpass.png
+share/doc/HTML/nl/kwave/kwave-plugin-memory.png
+share/doc/HTML/nl/kwave/kwave-plugin-newsignal.png
+share/doc/HTML/nl/kwave/kwave-plugin-noise.png
+share/doc/HTML/nl/kwave/kwave-plugin-notch_filter.png
+share/doc/HTML/nl/kwave/kwave-plugin-pitch_shift.png
+share/doc/HTML/nl/kwave/kwave-plugin-playback.png
+share/doc/HTML/nl/kwave/kwave-plugin-record.png
+share/doc/HTML/nl/kwave/kwave-plugin-saveblocks.png
+share/doc/HTML/nl/kwave/kwave-plugin-selectrange.png
+share/doc/HTML/nl/kwave/kwave-plugin-sonagram-setup.png
+share/doc/HTML/nl/kwave/kwave-plugin-sonagram-window.png
+share/doc/HTML/nl/kwave/kwave-plugin-stringenter.png
+share/doc/HTML/nl/kwave/kwave-plugin-volume.png
+share/doc/HTML/pt/kwave/
+share/doc/HTML/pt/kwave/index.cache.bz2
+share/doc/HTML/pt/kwave/index.docbook
+share/doc/HTML/pt/kwave/kwave-edit-label.png
+share/doc/HTML/pt/kwave/kwave-gui-mdi.png
+share/doc/HTML/pt/kwave/kwave-gui-sdi.png
+share/doc/HTML/pt/kwave/kwave-gui-tab.png
+share/doc/HTML/pt/kwave/kwave-main.png
+share/doc/HTML/pt/kwave/kwave-plugin-about.png
+share/doc/HTML/pt/kwave/kwave-plugin-amplifyfree.png
+share/doc/HTML/pt/kwave/kwave-plugin-band_pass.png
+share/doc/HTML/pt/kwave/kwave-plugin-codec_mp3.png
+share/doc/HTML/pt/kwave/kwave-plugin-fileinfo.png
+share/doc/HTML/pt/kwave/kwave-plugin-goto.png
+share/doc/HTML/pt/kwave/kwave-plugin-insert_at.png
+share/doc/HTML/pt/kwave/kwave-plugin-lowpass.png
+share/doc/HTML/pt/kwave/kwave-plugin-memory.png
+share/doc/HTML/pt/kwave/kwave-plugin-newsignal.png
+share/doc/HTML/pt/kwave/kwave-plugin-noise.png
+share/doc/HTML/pt/kwave/kwave-plugin-notch_filter.png
+share/doc/HTML/pt/kwave/kwave-plugin-pitch_shift.png
+share/doc/HTML/pt/kwave/kwave-plugin-playback.png
+share/doc/HTML/pt/kwave/kwave-plugin-record.png
+share/doc/HTML/pt/kwave/kwave-plugin-saveblocks.png
+share/doc/HTML/pt/kwave/kwave-plugin-selectrange.png
+share/doc/HTML/pt/kwave/kwave-plugin-sonagram-setup.png
+share/doc/HTML/pt/kwave/kwave-plugin-sonagram-window.png
+share/doc/HTML/pt/kwave/kwave-plugin-stringenter.png
+share/doc/HTML/pt/kwave/kwave-plugin-volume.png
+share/doc/HTML/ru/kwave/
+share/doc/HTML/ru/kwave/index.cache.bz2
+share/doc/HTML/ru/kwave/index.docbook
+share/doc/HTML/sl/kwave/
+share/doc/HTML/sl/kwave/index.cache.bz2
+share/doc/HTML/sl/kwave/index.docbook
+share/doc/HTML/sv/kwave/
+share/doc/HTML/sv/kwave/index.cache.bz2
+share/doc/HTML/sv/kwave/index.docbook
+share/doc/HTML/uk/kwave/
+share/doc/HTML/uk/kwave/index.cache.bz2
+share/doc/HTML/uk/kwave/index.docbook
+share/doc/HTML/uk/kwave/kwave-edit-label.png
+share/doc/HTML/uk/kwave/kwave-gui-mdi.png
+share/doc/HTML/uk/kwave/kwave-gui-sdi.png
+share/doc/HTML/uk/kwave/kwave-gui-tab.png
+share/doc/HTML/uk/kwave/kwave-main.png
+share/doc/HTML/uk/kwave/kwave-plugin-about.png
+share/doc/HTML/uk/kwave/kwave-plugin-amplifyfree.png
+share/doc/HTML/uk/kwave/kwave-plugin-band_pass.png
+share/doc/HTML/uk/kwave/kwave-plugin-codec_mp3.png
+share/doc/HTML/uk/kwave/kwave-plugin-fileinfo.png
+share/doc/HTML/uk/kwave/kwave-plugin-goto.png
+share/doc/HTML/uk/kwave/kwave-plugin-insert_at.png
+share/doc/HTML/uk/kwave/kwave-plugin-lowpass.png
+share/doc/HTML/uk/kwave/kwave-plugin-memory.png
+share/doc/HTML/uk/kwave/kwave-plugin-newsignal.png
+share/doc/HTML/uk/kwave/kwave-plugin-noise.png
+share/doc/HTML/uk/kwave/kwave-plugin-notch_filter.png
+share/doc/HTML/uk/kwave/kwave-plugin-pitch_shift.png
+share/doc/HTML/uk/kwave/kwave-plugin-playback.png
+share/doc/HTML/uk/kwave/kwave-plugin-record.png
+share/doc/HTML/uk/kwave/kwave-plugin-saveblocks.png
+share/doc/HTML/uk/kwave/kwave-plugin-selectrange.png
+share/doc/HTML/uk/kwave/kwave-plugin-sonagram-setup.png
+share/doc/HTML/uk/kwave/kwave-plugin-sonagram-window.png
+share/doc/HTML/uk/kwave/kwave-plugin-stringenter.png
+share/doc/HTML/uk/kwave/kwave-plugin-volume.png
+share/icons/hicolor/scalable/apps/org.kde.kwave.svg
+share/kwave/
+share/kwave/menus.config
+share/kwave/pics/
+share/kwave/pics/amplify_free.png
+share/kwave/pics/fade_in.png
+share/kwave/pics/fade_out.png
+share/kwave/pics/knob.xpm
+share/kwave/pics/kwave-splash.png
+share/kwave/pics/light_off.xpm
+share/kwave/pics/light_on.xpm
+share/kwave/pics/logo.xpm
+share/kwave/pics/noise.png
+share/kwave/pics/selectedknob.xpm
+share/kwave/pics/sound_card.png
+share/kwave/pics/sound_device.png
+share/kwave/pics/sound_note.png
+share/kwave/pics/sound_subdevice.png
+share/locale/ar/LC_MESSAGES/kwave.mo
+share/locale/bs/LC_MESSAGES/kwave.mo
+share/locale/ca/LC_MESSAGES/kwave.mo
+share/locale/ca@valencia/LC_MESSAGES/kwave.mo
+share/locale/cs/LC_MESSAGES/kwave.mo
+share/locale/da/LC_MESSAGES/kwave.mo
+share/locale/de/LC_MESSAGES/kwave.mo
+share/locale/el/LC_MESSAGES/kwave.mo
+share/locale/en_GB/LC_MESSAGES/kwave.mo
+share/locale/eo/LC_MESSAGES/kwave.mo
+share/locale/es/LC_MESSAGES/kwave.mo
+share/locale/et/LC_MESSAGES/kwave.mo
+share/locale/eu/LC_MESSAGES/kwave.mo
+share/locale/fi/LC_MESSAGES/kwave.mo
+share/locale/fr/LC_MESSAGES/kwave.mo
+share/locale/gl/LC_MESSAGES/kwave.mo
+share/locale/hi/LC_MESSAGES/kwave.mo
+share/locale/ia/LC_MESSAGES/kwave.mo
+share/locale/it/LC_MESSAGES/kwave.mo
+share/locale/ja/LC_MESSAGES/kwave.mo
+share/locale/ka/LC_MESSAGES/kwave.mo
+share/locale/ko/LC_MESSAGES/kwave.mo
+share/locale/lt/LC_MESSAGES/kwave.mo
+share/locale/nl/LC_MESSAGES/kwave.mo
+share/locale/pl/LC_MESSAGES/kwave.mo
+share/locale/pt/LC_MESSAGES/kwave.mo
+share/locale/pt_BR/LC_MESSAGES/kwave.mo
+share/locale/ru/LC_MESSAGES/kwave.mo
+share/locale/sa/LC_MESSAGES/kwave.mo
+share/locale/sk/LC_MESSAGES/kwave.mo
+share/locale/sl/LC_MESSAGES/kwave.mo
+share/locale/sv/LC_MESSAGES/kwave.mo
+share/locale/tr/LC_MESSAGES/kwave.mo
+share/locale/uk/LC_MESSAGES/kwave.mo
+share/locale/zh_CN/LC_MESSAGES/kwave.mo
+share/locale/zh_TW/LC_MESSAGES/kwave.mo
+share/metainfo/
+share/metainfo/org.kde.kwave.appdata.xml
+@tag gtk-update-icon-cache %D/share/icons/hicolor
+@tag update-desktop-database
