@@ -1,0 +1,12 @@
+Index: setup.py
+--- setup.py.orig
++++ setup.py
+@@ -12,7 +12,7 @@ version_file = os.path.join('cdist', 'version.py')
+ # If we have build-helper we could be a git repo.
+ if os.path.exists(build_helper):
+     # Try to generate version.py.
+-    rv = subprocess.run([build_helper, 'version', ])
++    rv = subprocess.run([build_helper, 'target-version', ])
+     if rv.returncode != 0:
+         raise DistutilsError("Failed to generate {}".format(version_file))
+ else:

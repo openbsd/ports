@@ -1,7 +1,7 @@
 COMMENT=	usable configuration management
 
 VERSION=	20250225
-REVISION=	1
+REVISION=	2
 
 DISTNAME=		cdist-${VERSION}
 
