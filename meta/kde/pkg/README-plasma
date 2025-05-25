@@ -119,9 +119,11 @@ export LIBSEAT_BACKEND=consolekit2
 #export QT_QPA_PLATFORM=wayland
 #export XDG_SESSION_TYPE=wayland
 
-${LOCALBASE}/libexec/plasma-dbus-run-session-if-needed \
- ${LOCALBASE}/bin/ck-launch-session \
- ${LOCALBASE}/bin/startplasma-wayland
+if [ -x /usr/local/bin/dbus-launch -a -z "${DBUS_SESSION_BUS_ADDRESS}" ]; then
+	eval $(dbus-launch --sh-syntax )
+fi
+
+${LOCALBASE}/bin/ck-launch-session ${LOCALBASE}/bin/startplasma-wayland
 
 KDE PIM and Akonadi
 ===================
