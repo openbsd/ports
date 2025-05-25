@@ -1,21 +1,48 @@
-@bin lib/ocaml/coq/plugins/btauto/btauto_plugin.cmxs
-@bin lib/ocaml/coq/plugins/cc/cc_plugin.cmxs
-@bin lib/ocaml/coq/plugins/derive/derive_plugin.cmxs
-@bin lib/ocaml/coq/plugins/extraction/extraction_plugin.cmxs
-@bin lib/ocaml/coq/plugins/firstorder/ground_plugin.cmxs
-@bin lib/ocaml/coq/plugins/funind/recdef_plugin.cmxs
-@bin lib/ocaml/coq/plugins/ltac/ltac_plugin.cmxs
-@bin lib/ocaml/coq/plugins/ltac/tauto_plugin.cmxs
-@bin lib/ocaml/coq/plugins/micromega/micromega_plugin.cmxs
-@bin lib/ocaml/coq/plugins/micromega/zify_plugin.cmxs
-@bin lib/ocaml/coq/plugins/nsatz/nsatz_plugin.cmxs
-@bin lib/ocaml/coq/plugins/omega/omega_plugin.cmxs
-@bin lib/ocaml/coq/plugins/ring/ring_plugin.cmxs
-@bin lib/ocaml/coq/plugins/rtauto/rtauto_plugin.cmxs
-@bin lib/ocaml/coq/plugins/ssr/ssreflect_plugin.cmxs
-@bin lib/ocaml/coq/plugins/ssrmatching/ssrmatching_plugin.cmxs
-@bin lib/ocaml/coq/plugins/ssrsearch/ssrsearch_plugin.cmxs
-@bin lib/ocaml/coq/plugins/syntax/float_syntax_plugin.cmxs
-@bin lib/ocaml/coq/plugins/syntax/int63_syntax_plugin.cmxs
-@bin lib/ocaml/coq/plugins/syntax/number_string_notation_plugin.cmxs
-@bin lib/ocaml/coq/user-contrib/Ltac2/ltac2_plugin.cmxs
+lib/ocaml/coq-core/boot/boot.cmxs
+lib/ocaml/coq-core/checklib/coq_checklib.cmxs
+lib/ocaml/coq-core/clib/clib.cmxs
+lib/ocaml/coq-core/config/config.cmxs
+lib/ocaml/coq-core/coqworkmgrapi/coqworkmgrlib.cmxs
+lib/ocaml/coq-core/debugger_support/debugger_support.cmxs
+lib/ocaml/coq-core/dev/dev.cmxs
+lib/ocaml/coq-core/engine/engine.cmxs
+lib/ocaml/coq-core/gramlib/gramlib.cmxs
+lib/ocaml/coq-core/interp/interp.cmxs
+lib/ocaml/coq-core/kernel/kernel.cmxs
+lib/ocaml/coq-core/lib/lib.cmxs
+lib/ocaml/coq-core/library/library.cmxs
+lib/ocaml/coq-core/parsing/parsing.cmxs
+lib/ocaml/coq-core/plugins/btauto/btauto_plugin.cmxs
+lib/ocaml/coq-core/plugins/cc/cc_plugin.cmxs
+lib/ocaml/coq-core/plugins/derive/derive_plugin.cmxs
+lib/ocaml/coq-core/plugins/extraction/extraction_plugin.cmxs
+lib/ocaml/coq-core/plugins/firstorder/firstorder_plugin.cmxs
+lib/ocaml/coq-core/plugins/funind/funind_plugin.cmxs
+lib/ocaml/coq-core/plugins/ltac/ltac_plugin.cmxs
+lib/ocaml/coq-core/plugins/ltac2/ltac2_plugin.cmxs
+lib/ocaml/coq-core/plugins/ltac2_ltac1/ltac2_ltac1_plugin.cmxs
+lib/ocaml/coq-core/plugins/micromega/micromega_plugin.cmxs
+lib/ocaml/coq-core/plugins/micromega_core/micromega_core_plugin.cmxs
+lib/ocaml/coq-core/plugins/nsatz/nsatz_plugin.cmxs
+lib/ocaml/coq-core/plugins/number_string_notation/number_string_notation_plugin.cmxs
+lib/ocaml/coq-core/plugins/ring/ring_plugin.cmxs
+lib/ocaml/coq-core/plugins/rtauto/rtauto_plugin.cmxs
+lib/ocaml/coq-core/plugins/ssreflect/ssreflect_plugin.cmxs
+lib/ocaml/coq-core/plugins/ssrmatching/ssrmatching_plugin.cmxs
+lib/ocaml/coq-core/plugins/tauto/tauto_plugin.cmxs
+lib/ocaml/coq-core/plugins/tutorial/p0/tuto0_plugin.cmxs
+lib/ocaml/coq-core/plugins/tutorial/p1/tuto1_plugin.cmxs
+lib/ocaml/coq-core/plugins/tutorial/p2/tuto2_plugin.cmxs
+lib/ocaml/coq-core/plugins/tutorial/p3/tuto3_plugin.cmxs
+lib/ocaml/coq-core/plugins/zify/zify_plugin.cmxs
+lib/ocaml/coq-core/pretyping/pretyping.cmxs
+lib/ocaml/coq-core/printing/printing.cmxs
+lib/ocaml/coq-core/proofs/proofs.cmxs
+lib/ocaml/coq-core/stm/stm.cmxs
+lib/ocaml/coq-core/sysinit/sysinit.cmxs
+lib/ocaml/coq-core/tactics/tactics.cmxs
+lib/ocaml/coq-core/toplevel/toplevel.cmxs
+lib/ocaml/coq-core/vernac/vernac.cmxs
+lib/ocaml/coq-core/vm/coqrun.cmxs
+lib/ocaml/coqide-server/core/core.cmxs
+lib/ocaml/coqide-server/protocol/protocol.cmxs
