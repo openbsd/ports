@@ -1,9 +1,7 @@
 COMMENT =		CrowdSec bouncer written in golang for firewalls
 
 MODGO_MODNAME =		github.com/crowdsecurity/cs-firewall-bouncer
-MODGO_VERSION =		v0.0.31
-
-REVISION =		0
+MODGO_VERSION =		v0.0.33
 
 DISTNAME =		crowdsec-firewall-bouncer-${MODGO_VERSION}
 CATEGORIES =		security
