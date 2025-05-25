@@ -36,7 +36,8 @@
      #SUBDIR +=  kio-admin
      #SUBDIR +=  kjournald
      #SUBDIR +=  koko
-     #SUBDIR +=  kongress
+     SUBDIR +=  kongress
+     SUBDIR +=  arianna
      #SUBDIR +=  krecorder
      SUBDIR +=  kweather
      #SUBDIR +=  telly-skout
@@ -146,7 +147,7 @@
      #SUBDIR += k3b
      SUBDIR += kdenlive
      SUBDIR += kmix
-     #SUBDIR += kwave
+     SUBDIR += kwave
      SUBDIR += elisa
      SUBDIR += plasmatube
 
@@ -231,6 +232,8 @@
      SUBDIR += kmbox
      SUBDIR += kopeninghours
      SUBDIR += kmime
+     SUBDIR += kpublictransport
+     SUBDIR += kosmindoormap
      SUBDIR += kontactinterface
      SUBDIR += kpkpass
      SUBDIR += kqtquickcharts
