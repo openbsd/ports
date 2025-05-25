@@ -10,3 +10,5 @@ It comes with toadd(8), a small daemon that will detect the insertion of
 a medium in the optical drives of the machine by periodically reading
 their disklabel(8) (every 8 seconds) and call toad(8) with the attach or
 detach argument respectively.
+
+If installed, the ntfs_3g package is used to improve NTFS support.
