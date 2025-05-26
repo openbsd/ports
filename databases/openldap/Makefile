@@ -1,8 +1,7 @@
 COMMENT-main =	  LDAP client library and tools
 COMMENT-server =  LDAP directory server
 
-DISTNAME =	  openldap-2.6.9
-REVISION =	0
+DISTNAME =	  openldap-2.6.10
 
 MULTI_PACKAGES =  -main -server
 PKGNAME-main =	  ${DISTNAME:S/-/-client-/}
