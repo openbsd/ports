@@ -1,8 +1,7 @@
 COMMENT=		official media player for GNOME
 
 GNOME_PROJECT=		totem
-GNOME_VERSION=		43.1
-REVISION=		3
+GNOME_VERSION=		43.2
 
 SHARED_LIBS += totem                     0.0 # 0.0.0
 
@@ -13,7 +12,7 @@ HOMEPAGE=		https://apps.gnome.org/Totem/
 # GPLv2 with exception clause - LGPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += atk-1.0 c cairo cairo-gobject gdk-3 gdk_pixbuf-2.0
+WANTLIB += atk-1.0 c cairo cairo-gobject epoxy gdk-3 gdk_pixbuf-2.0
 WANTLIB += gio-2.0 girepository-1.0 glib-2.0 gmodule-2.0 gnome-desktop-3
 WANTLIB += gobject-2.0 grilo-0.3 grlpls-0.3 gstaudio-1.0 gstpbutils-1.0
 WANTLIB += gstreamer-1.0 gsttag-1.0 gstvideo-1.0 gtk-3 handy-1
