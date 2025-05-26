@@ -23,7 +23,7 @@ Index: src/curses/window.h
  #include "config.h"
  
  #include "curses.h"
-@@ -40,6 +38,9 @@
+@@ -39,6 +37,9 @@
  #if NCURSES_MOUSE_VERSION == 1
  # define BUTTON5_PRESSED (1U << 27)
  #endif // NCURSES_MOUSE_VERSION == 1

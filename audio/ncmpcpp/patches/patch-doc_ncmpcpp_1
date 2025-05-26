@@ -7,7 +7,7 @@ Index: doc/ncmpcpp.1
  .SH "NAME"
  ncmpcpp \- An ncurses Music Player Daemon (MPD) client.
  .SH "SYNOPSIS"
-@@ -325,7 +325,7 @@ Slave screen that has to be displayed at start (nothin
+@@ -335,7 +335,7 @@ Slave screen that has to be displayed at start (nothin
  .TP
  .B startup_slave_screen_focus = yes/no
  If set to yes, slave screen will be the active one after startup. Otherwise master screen will be.
@@ -16,7 +16,7 @@ Index: doc/ncmpcpp.1
  .B locked_screen_width_part = 20-80
  If you want to lock a screen, ncmpcpp asks for % of locked screen's width to be reserved before that and provides a default value, which is the one you can set here.
  .TP
-@@ -445,7 +445,6 @@ Border color of pop-up windows. If set to 'none', no b
+@@ -464,7 +464,6 @@ Border color of pop-up windows. If set to 'none', no b
  .TP
  .B active_window_border = COLOR
  Color of active window's border.

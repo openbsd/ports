@@ -3,10 +3,9 @@ BROKEN-hppa =		bindings.h:85:4: error: type 'Binding' is not a direct base of 'B
 
 COMMENT =		ncurses mpd client inspired by ncmpc
 
-DISTNAME =		ncmpcpp-0.9.2
-REVISION =		1
-
-EXTRACT_SUFX =		.tar.bz2
+GH_ACCOUNT =		ncmpcpp
+GH_PROJECT =		ncmpcpp
+GH_TAGNAME =		0.10.1
 
 CATEGORIES =		audio
 
@@ -20,8 +19,7 @@ WANTLIB += boost_filesystem-mt boost_locale-mt boost_program_options-mt
 WANTLIB += boost_regex-mt boost_system-mt boost_thread-mt c crypto
 WANTLIB += curl curses ereadline icudata icui18n icuuc m mpdclient
 WANTLIB += nghttp2 ssl tag z boost_atomic-mt
-
-SITES =			${HOMEPAGE}stable/
+WANTLIB += iconv nghttp3 ngtcp2 ngtcp2_crypto_quictls
 
 LIB_DEPENDS =		audio/libmpdclient>=2.4 \
 			audio/taglib \
@@ -33,7 +31,10 @@ COMPILER =		base-clang ports-gcc
 
 FAKE_FLAGS =		docdir="${PREFIX}/share/examples/ncmpcpp/"
 
-CONFIGURE_STYLE =	gnu
+CONFIGURE_STYLE =	autoreconf
+AUTOCONF_VERSION =	2.71
+AUTOMAKE_VERSION =	1.16
+
 
 CONFIGURE_ARGS =	--enable-clock \
 			--enable-outputs \
