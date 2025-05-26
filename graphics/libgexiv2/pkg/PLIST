@@ -12,6 +12,7 @@ lib/girepository-1.0/GExiv2-0.10.typelib
 @lib lib/libgexiv2.so.${LIBgexiv2_VERSION}
 lib/pkgconfig/gexiv2.pc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/GExiv2.py
+lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}GExiv2.${MODPY_PYC_MAGIC_TAG}pyc
 share/gir-1.0/GExiv2-0.10.gir
 share/vala/
 share/vala/vapi/
