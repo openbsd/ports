@@ -85,6 +85,32 @@ include/Pdf4QtLibCore/pdfvisitor.h
 include/Pdf4QtLibCore/pdfwidgetsnapshot.h
 include/Pdf4QtLibCore/pdfxfaengine.h
 include/Pdf4QtLibCore/pdfxreftable.h
+include/Pdf4QtLibWidgets/
+include/Pdf4QtLibWidgets/pdf4qtlibwidgets_export.h
+include/Pdf4QtLibWidgets/pdfadvancedtools.h
+include/Pdf4QtLibWidgets/pdfcertificatelisthelper.h
+include/Pdf4QtLibWidgets/pdfcertificatemanagerdialog.h
+include/Pdf4QtLibWidgets/pdfcompiler.h
+include/Pdf4QtLibWidgets/pdfcreatecertificatedialog.h
+include/Pdf4QtLibWidgets/pdfdocumentdrawinterface.h
+include/Pdf4QtLibWidgets/pdfdrawspacecontroller.h
+include/Pdf4QtLibWidgets/pdfdrawwidget.h
+include/Pdf4QtLibWidgets/pdfitemmodels.h
+include/Pdf4QtLibWidgets/pdfobjecteditorwidget.h
+include/Pdf4QtLibWidgets/pdfobjecteditorwidget_impl.h
+include/Pdf4QtLibWidgets/pdfpagecontenteditorediteditemsettings.h
+include/Pdf4QtLibWidgets/pdfpagecontenteditorstylesettings.h
+include/Pdf4QtLibWidgets/pdfpagecontenteditortools.h
+include/Pdf4QtLibWidgets/pdfpagecontenteditorwidget.h
+include/Pdf4QtLibWidgets/pdfpagecontentelements.h
+include/Pdf4QtLibWidgets/pdfrenderingerrorswidget.h
+include/Pdf4QtLibWidgets/pdfselectpagesdialog.h
+include/Pdf4QtLibWidgets/pdftexteditpseudowidget.h
+include/Pdf4QtLibWidgets/pdfwidgetannotation.h
+include/Pdf4QtLibWidgets/pdfwidgetformmanager.h
+include/Pdf4QtLibWidgets/pdfwidgetsglobal.h
+include/Pdf4QtLibWidgets/pdfwidgettool.h
+include/Pdf4QtLibWidgets/pdfwidgetutils.h
 @lib lib/libPdf4QtLibCore.so.${LIBPdf4QtLibCore_VERSION}
 @lib lib/libPdf4QtLibGui.so.${LIBPdf4QtLibGui_VERSION}
 @lib lib/libPdf4QtLibWidgets.so.${LIBPdf4QtLibWidgets_VERSION}

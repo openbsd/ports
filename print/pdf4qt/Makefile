@@ -4,6 +4,7 @@ GH_ACCOUNT =	JakubMelka
 GH_PROJECT =	PDF4QT
 GH_TAGNAME =	v1.5.1.0
 PKGNAME =	${DISTNAME:L}
+REVISION =	0
 
 HOMEPAGE =	https://jakubmelka.github.io/
 
@@ -41,11 +42,5 @@ LIB_DEPENDS +=	graphics/blend2d \
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Core Qt6Gui Qt6Multimedia
 WANTLIB += Qt6Network Qt6PrintSupport Qt6Svg Qt6TextToSpeech Qt6Widgets
 WANTLIB += Qt6Xml blend2d c crypto freetype jpeg lcms2 m openjp2 ssl z
-
-# manually install LibCore headers
-post-install:
-	${INSTALL_DATA_DIR} ${PREFIX}/include/Pdf4QtLibCore/
-	${INSTALL_DATA} ${WRKSRC}/Pdf4QtLibCore/sources/*.h ${WRKBUILD}/pdf4qtlibcore_export.h \
-		${PREFIX}/include/Pdf4QtLibCore/
 
 .include <bsd.port.mk>

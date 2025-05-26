@@ -1,5 +1,6 @@
 most bits from https://github.com/JakubMelka/PDF4QT/pull/220
 
+last-1 chunk: https://github.com/JakubMelka/PDF4QT/commit/a124bd5f6df61899507dc5b5f16985fdc6ee7f66
 last chunk: MERGE_QT_TRANSLATIONS only in 6.9 ?
 https://doc.qt.io/qt-6/qtlinguist-cmake-qt-add-translations.html#merging-qt-provided-translations
 simplify translation handling (only cs is done anyway...)
@@ -63,7 +64,7 @@ Index: CMakeLists.txt
  else()
      set(PDF4QT_INSTALL_LIB_DIR_IMPL bin)
      set(PDF4QT_INSTALL_BIN_DIR_IMPL bin)
-@@ -121,11 +110,11 @@ endif()
+@@ -121,15 +110,30 @@ endif()
  if(PDF4QT_INSTALL_TO_USR)
      set(PDF4QT_INSTALL_LIB_DIR usr/${PDF4QT_INSTALL_LIB_DIR_IMPL})
      set(PDF4QT_INSTALL_BIN_DIR usr/${PDF4QT_INSTALL_BIN_DIR_IMPL})
@@ -77,7 +78,26 @@ Index: CMakeLists.txt
  endif()
  
  add_subdirectory(Pdf4QtLibCore)
-@@ -147,32 +136,18 @@ if(NOT PDF4QT_BUILD_ONLY_CORE_LIBRARY)
+ 
++# Install public headers from Pdf4QtLibCore/include
++install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/Pdf4QtLibCore/sources/
++        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/Pdf4QtLibCore
++        FILES_MATCHING PATTERN "*.h")
++# Install generated export header
++install(FILES ${CMAKE_CURRENT_BINARY_DIR}/pdf4qtlibcore_export.h
++        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/Pdf4QtLibCore)
++# Install public headers from Pdf4QtLibWidgets/include
++install(DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/Pdf4QtLibWidgets/sources/
++        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/Pdf4QtLibWidgets
++        FILES_MATCHING PATTERN "*.h")
++# Install generated export header
++install(FILES ${CMAKE_CURRENT_BINARY_DIR}/pdf4qtlibwidgets_export.h
++        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}/Pdf4QtLibWidgets)
++
+ if(NOT PDF4QT_BUILD_ONLY_CORE_LIBRARY)
+     add_subdirectory(Pdf4QtLibWidgets)
+     add_subdirectory(CodeGenerator)
+@@ -147,32 +151,18 @@ if(NOT PDF4QT_BUILD_ONLY_CORE_LIBRARY)
      add_subdirectory(WixInstaller)
  endif()
  
