@@ -2,7 +2,7 @@ COMMENT=	tool for manipulating IPv6 addresses
 
 GH_ACCOUNT=	pbiering
 GH_PROJECT=	ipv6calc
-GH_TAGNAME=	4.3.0
+GH_TAGNAME=	4.3.1
 
 CATEGORIES=	net
 
