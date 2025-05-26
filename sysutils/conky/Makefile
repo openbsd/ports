@@ -5,7 +5,7 @@ COMMENT =	light-weight system monitor
 GH_ACCOUNT =	brndnmtthws
 GH_PROJECT =	conky
 GH_TAGNAME =	v1.22.1
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	sysutils
 
@@ -26,6 +26,7 @@ MODULES =	devel/cmake \
 MODPY_RUNDEP = No
 
 MODLUA_VERSION =	5.3
+MODLUA_SA =		Yes
 
 BUILD_DEPENDS =	devel/gperf \
 		textproc/lowdown \
