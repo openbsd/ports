@@ -12,6 +12,7 @@ MODULES=	x11/xfce4 devel/meson
 
 LIB_DEPENDS=	x11/xfce4/xfce4-panel
 BUILD_DEPENDS=	wayland/wayland \
+		wayland/wayland-protocols \
 		devel/help2man
 # if help2man isnt found the shipped manpage isnt installed ?
 
