@@ -2,10 +2,10 @@ COMMENT =		kevent based inotify
 
 GH_ACCOUNT =		libinotify-kqueue
 GH_PROJECT =		libinotify-kqueue
-GH_TAGNAME =		20211018
+GH_TAGNAME =		20240724
 PKGNAME =		libinotify-${GH_TAGNAME}
 
-SHARED_LIBS =		inotify 3.0
+SHARED_LIBS =		inotify 4.0
 
 CATEGORIES =		devel
 
