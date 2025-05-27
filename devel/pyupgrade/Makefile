@@ -1,8 +1,7 @@
 COMMENT=	automatically upgrade syntax for newer versions of Python
 
-MODPY_DISTV=	3.19.1
+MODPY_DISTV=	3.20.0
 DISTNAME=	pyupgrade-${MODPY_DISTV}
-REVISION=	1
 
 CATEGORIES=	devel
 
@@ -12,10 +11,11 @@ HOMEPAGE=	https://github.com/asottile/pyupgrade
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
-NO_TEST=	Yes
+MODPY_PI=	Yes
 
 RUN_DEPENDS=	devel/py-tokenize-rt
+
+NO_TEST=	Yes
 
 .include <bsd.port.mk>
