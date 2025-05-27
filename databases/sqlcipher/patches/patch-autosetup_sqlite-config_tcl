@@ -1,0 +1,12 @@
+Index: autosetup/sqlite-config.tcl
+--- autosetup/sqlite-config.tcl.orig
++++ autosetup/sqlite-config.tcl
+@@ -792,7 +792,7 @@ proc sqlite-handle-soname {} {
+         # use it as-is
+       } else {
+         # Assume it's a suffix
+-        set soname "libsqlite3.so.${soname}"
++        set soname "libsqlcipher.so.${soname}"
+       }
+     }
+   }

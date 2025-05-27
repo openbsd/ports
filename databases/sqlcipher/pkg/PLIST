@@ -3,6 +3,6 @@ include/sqlcipher/
 include/sqlcipher/sqlite3.h
 include/sqlcipher/sqlite3ext.h
 @static-lib lib/libsqlcipher.a
-lib/libsqlcipher.la
 @lib lib/libsqlcipher.so.${LIBsqlcipher_VERSION}
 lib/pkgconfig/sqlcipher.pc
+@man man/man1/sqlcipher.1
