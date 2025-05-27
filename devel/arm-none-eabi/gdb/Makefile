@@ -2,7 +2,7 @@ COMMENT=	gdb for arm-none-eabi cross-development
 
 DISTNAME=	gdb-7.12.1
 EXTRACT_SUFX=	.tar.xz
-REVISION=	0
+REVISION=	1
 
 HOMEPAGE=	https://www.gnu.org/software/gdb/
 
@@ -24,7 +24,6 @@ CONFIGURE_ARGS+=	--enable-multilib \
 			--without-guile
 
 MODULES=	lang/python
-MODPY_VERSION =	${MODPY_DEFAULT_VERSION_2}
 
 TEST_DEPENDS=devel/dejagnu
 
