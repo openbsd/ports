@@ -315,6 +315,7 @@ share/i2p/eepsite/docroot/help/
 share/i2p/eepsite/docroot/help/index.html
 share/i2p/eepsite/docroot/help/index_ar.html
 share/i2p/eepsite/docroot/help/index_az.html
+share/i2p/eepsite/docroot/help/index_cs.html
 share/i2p/eepsite/docroot/help/index_de.html
 share/i2p/eepsite/docroot/help/index_el.html
 share/i2p/eepsite/docroot/help/index_es.html
@@ -328,16 +329,20 @@ share/i2p/eepsite/docroot/help/index_ja.html
 share/i2p/eepsite/docroot/help/index_nl.html
 share/i2p/eepsite/docroot/help/index_pl.html
 share/i2p/eepsite/docroot/help/index_pt.html
+share/i2p/eepsite/docroot/help/index_pt_BR.html
 share/i2p/eepsite/docroot/help/index_ro.html
 share/i2p/eepsite/docroot/help/index_ru.html
 share/i2p/eepsite/docroot/help/index_sv.html
 share/i2p/eepsite/docroot/help/index_tr.html
 share/i2p/eepsite/docroot/help/index_uk.html
 share/i2p/eepsite/docroot/help/index_zh.html
+share/i2p/eepsite/docroot/help/index_zh_TW.html
 share/i2p/eepsite/docroot/help/lib/
 share/i2p/eepsite/docroot/help/lib/az.png
+share/i2p/eepsite/docroot/help/lib/br.png
 share/i2p/eepsite/docroot/help/lib/brown.png
 share/i2p/eepsite/docroot/help/lib/cn.png
+share/i2p/eepsite/docroot/help/lib/cs.png
 share/i2p/eepsite/docroot/help/lib/de.png
 share/i2p/eepsite/docroot/help/lib/eepsite.css
 share/i2p/eepsite/docroot/help/lib/eepsite_zh.css
@@ -376,6 +381,7 @@ share/i2p/eepsite/docroot/help/lib/ro.png
 share/i2p/eepsite/docroot/help/lib/ru.png
 share/i2p/eepsite/docroot/help/lib/se.png
 share/i2p/eepsite/docroot/help/lib/tr.png
+share/i2p/eepsite/docroot/help/lib/tw.png
 share/i2p/eepsite/docroot/help/lib/ua.png
 share/i2p/eepsite/docroot/help/lib/us.png
 share/i2p/eepsite/docroot/help/pagetemplate.html
