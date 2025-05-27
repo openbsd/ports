@@ -6,7 +6,7 @@ ONLY_FOR_ARCHS = aarch64 amd64 mips64 riscv64
 
 COMMENT =	scan your project's dependencies for vulnerabilities
 
-V =		2.0.1
+V =		2.0.2
 MODGO_MODNAME =	github.com/google/osv-scanner/v2
 MODGO_VERSION =	v${V}
 
@@ -22,6 +22,10 @@ PERMIT_PACKAGE =	Yes
 MODULES =		lang/go
 
 WANTLIB += c pthread
+
+# Tests fail => try to request infos via network
+do-test:
+	cd ${WRKSRC} && ${MODGO_TEST_CMD} ./...
 
 .include "modules.inc"
 
