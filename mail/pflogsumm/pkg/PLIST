@@ -1,2 +1,6 @@
+bin/pffrombyto
 bin/pflogsumm
+bin/pftobyfrom
+@man man/man1/pffrombyto.1
 @man man/man1/pflogsumm.1
+@man man/man1/pftobyfrom.1
