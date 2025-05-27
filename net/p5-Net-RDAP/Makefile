@@ -1,7 +1,7 @@
 COMMENT=	Perl interface to the Registration Data Access Protocol
 
 MODULES=	cpan
-DISTNAME=	Net-RDAP-0.37
+DISTNAME=	Net-RDAP-0.38
 CATEGORIES=	net
 PKG_ARCH=	*
 
@@ -24,6 +24,7 @@ RUN_DEPENDS=	devel/p5-DateTime-Tiny \
 		www/p5-URI \
 		textproc/p5-XML-LibXML
 
-TEST_DEPENDS=	net/p5-LWP-Online
+TEST_DEPENDS=	devel/p5-Carp-Always \
+		net/p5-LWP-Online
 
 .include <bsd.port.mk>
