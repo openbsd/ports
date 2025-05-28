@@ -3,7 +3,7 @@ NOT_FOR_ARCHS =	i386
 
 COMMENT =	monitoring and metric analytics dashboards
 
-V =		11.6.0
+V =		11.6.2
 DISTNAME =	grafana+vendor-$V
 WRKDIST =	${WRKDIR}/grafana-$V
 EXTRACT_SUFX =	.tar.zst
