@@ -1,6 +1,6 @@
 COMMENT =	markdown note taking program with nextcloud integration
 
-V =		25.3.5
+V =		25.5.10
 DISTNAME =	qownnotes-${V}
 
 CATEGORIES =	editors
