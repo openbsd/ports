@@ -1,16 +1,16 @@
 COMMENT =	atom/rss feed reader web application
 
-V =		2.2.8
+V =		2.2.9
 
 MODGO_MODNAME =	miniflux.app/v2
-MODGO_VERSION =	v${V}
+MODGO_VERSION =	v2.2.9-0.20250527011305-325c505b8802
 
 DISTNAME =	${MODGO_MODNAME}-${MODGO_VERSION}
 PKGNAME =	miniflux-${V}
 
 CATEGORIES =	net www
 
-MAINTAINER =	Paco Esteban <paco@openbsd.org>
+MAINTAINER =	Igor Zornik <mocheryl@mocheryl.org>
 
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
