@@ -1,5 +1,5 @@
-@pkgpath devel/py-jupyter_core,python3
 @conflict py-jupyter_core-*
+@pkgpath devel/py-jupyter_core,python3
 bin/jupyter
 bin/jupyter-migrate
 bin/jupyter-troubleshoot

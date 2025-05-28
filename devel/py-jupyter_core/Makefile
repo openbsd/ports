@@ -1,9 +1,8 @@
 COMMENT =		Jupyter core package
 
-MODPY_DISTV =	5.7.2
+MODPY_DISTV =		5.8.1
 DISTNAME =		jupyter_core-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		2
 
 CATEGORIES =		devel
 
