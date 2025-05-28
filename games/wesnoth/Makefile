@@ -3,7 +3,7 @@ PORTROACH = 	limitw:1,even
 BROKEN-hppa =	missing atomic ops
 COMMENT=	fantasy turn-based strategy game
 
-DISTNAME=	wesnoth-1.18.4
+DISTNAME=	wesnoth-1.18.5
 
 CATEGORIES=	games x11
 
@@ -18,6 +18,7 @@ EXTRACT_SUFX=	.tar.bz2
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += SDL2 SDL2_image SDL2_mixer boost_context-mt
+WANTLIB += boost_atomic-mt boost_chrono-mt boost_thread-mt
 WANTLIB += boost_coroutine-mt boost_filesystem-mt
 WANTLIB += boost_iostreams-mt boost_locale-mt
 WANTLIB += boost_program_options-mt boost_random-mt boost_regex-mt
