@@ -5,7 +5,7 @@ Index: src/bin/keactrl/kea-netconf.conf.pre
                  // - syslog (logs to syslog)
                  // - syslog:name (logs to syslog using specified name)
                  // Any other value is considered a name of a time
--                "output": "@localstatedir@/log/kea-netconf.log"
+-                "output": "kea-netconf.log"
 +                "output": "syslog:daemon"
  
                  // Shorter log pattern suitable for use with systemd,

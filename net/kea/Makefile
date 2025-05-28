@@ -1,8 +1,7 @@
 COMMENT=	high-performance and extensible DHCP server engine from ISC
 
-VERSION=	2.4.1
+VERSION=	2.4.2
 PORTROACH=	limitw:1,even
-REVISION=	2
 
 DISTNAME=	kea-${VERSION}
 PKGNAME-main=	kea-${VERSION:S/-P/pl/}
@@ -11,7 +10,7 @@ PKGNAME-main=	kea-${VERSION:S/-P/pl/}
     kea-d2srv kea-database kea-dhcp++ kea-dhcp_ddns kea-dhcpsrv kea-dns++ \
     kea-eval kea-exceptions kea-hooks kea-http kea-log kea-mysql kea-pgsql \
     kea-process kea-stats kea-tcp kea-threads kea-util kea-util-io
-SHARED_LIBS +=  $i 11.0
+SHARED_LIBS +=  $i 12.0
 .endfor
 
 CATEGORIES=	net

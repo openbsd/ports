@@ -68,6 +68,7 @@ include/kea/config/config_log.h
 include/kea/config/config_messages.h
 include/kea/config/hooked_command_mgr.h
 include/kea/config/timeouts.h
+include/kea/config/unix_command_config.h
 include/kea/config_backend/
 include/kea/config_backend/base_config_backend.h
 include/kea/config_backend/base_config_backend_mgr.h
@@ -426,8 +427,8 @@ include/kea/util/encode/binary_from_base16.h
 include/kea/util/encode/binary_from_base32hex.h
 include/kea/util/encode/hex.h
 include/kea/util/encode/utf8.h
-include/kea/util/file_utilities.h
 include/kea/util/filename.h
+include/kea/util/filesystem.h
 include/kea/util/hash.h
 include/kea/util/io/
 include/kea/util/io/fd.h
