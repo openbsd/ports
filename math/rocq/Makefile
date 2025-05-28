@@ -6,6 +6,7 @@ COMMENT=		proof assistant based on a typed lambda calculus
 V =			8.20.1
 DISTNAME =		coq-${V}
 PKGNAME =		rocq-${V}
+REVISION =		0
 
 SITES =			https://github.com/rocq-prover/rocq/releases/download/V${V}/
 
@@ -13,8 +14,6 @@ CATEGORIES=		math
 HOMEPAGE=		https://rocq-prover.org/
 
 MAINTAINER=		Yozo Toda <yozo@v007.vaio.ne.jp>
-
-USE_NOEXECONLY =	Yes
 
 # LGPLv2.1
 PERMIT_PACKAGE=	Yes
