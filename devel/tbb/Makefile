@@ -1,15 +1,15 @@
 COMMENT =		threading building blocks
 
-V =			2021.13.0
+V =			2022.1.0
 GH_ACCOUNT =		oneapi-src
 GH_PROJECT =		oneTBB
 GH_TAGNAME =		v${V}
-PKGNAME =		tbb-${V}
-REVISION =		1
 
-SHARED_LIBS +=		tbb		2.0	# 2021.13
-SHARED_LIBS +=		tbbmalloc	2.0	# 2021.13
-SHARED_LIBS +=		tbbmalloc_proxy	0.0	# 2021.13
+PKGNAME =		tbb-${V}
+
+SHARED_LIBS +=		tbb		2.1	# 2022.1
+SHARED_LIBS +=		tbbmalloc	3.0	# 2022.1
+SHARED_LIBS +=		tbbmalloc_proxy	0.0	# 2022.1
 
 CATEGORIES =		devel
 

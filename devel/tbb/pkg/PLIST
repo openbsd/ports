@@ -1,6 +1,7 @@
 include/oneapi/
 include/oneapi/tbb/
 include/oneapi/tbb.h
+include/oneapi/tbb/blocked_nd_range.h
 include/oneapi/tbb/blocked_range.h
 include/oneapi/tbb/blocked_range2d.h
 include/oneapi/tbb/blocked_range3d.h
@@ -95,6 +96,7 @@ include/oneapi/tbb/tbbmalloc_proxy.h
 include/oneapi/tbb/tick_count.h
 include/oneapi/tbb/version.h
 include/tbb/
+include/tbb/blocked_nd_range.h
 include/tbb/blocked_range.h
 include/tbb/blocked_range2d.h
 include/tbb/blocked_range3d.h
