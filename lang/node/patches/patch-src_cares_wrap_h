@@ -1,7 +1,7 @@
 Index: src/cares_wrap.h
 --- src/cares_wrap.h.orig
 +++ src/cares_wrap.h
-@@ -535,4 +535,109 @@ using GetHostByAddrWrap = QueryWrap<ReverseTraits>;
+@@ -443,4 +443,109 @@ QUERY_TYPES(V)
  
  #endif  // defined(NODE_WANT_INTERNALS) && NODE_WANT_INTERNALS
  
