@@ -57,6 +57,7 @@ share/gtk-doc/html/libgedit-amtk-5/right.png
 share/gtk-doc/html/libgedit-amtk-5/style.css
 share/gtk-doc/html/libgedit-amtk-5/up-insensitive.png
 share/gtk-doc/html/libgedit-amtk-5/up.png
+share/locale/be/LC_MESSAGES/libgedit-amtk-5.mo
 share/locale/ca/LC_MESSAGES/libgedit-amtk-5.mo
 share/locale/cs/LC_MESSAGES/libgedit-amtk-5.mo
 share/locale/da/LC_MESSAGES/libgedit-amtk-5.mo

@@ -1,7 +1,6 @@
 COMMENT=		Actions, Menus and Toolbars Kit
 
-GNOME_PROJECT=		libgedit-amtk
-GNOME_VERSION=		5.9.0
+DIST_TUPLE=		gnome World/gedit libgedit-amtk 5.9.1 .
 
 SHARED_LIBS += gedit-amtk-5              0.0 # 0
 
