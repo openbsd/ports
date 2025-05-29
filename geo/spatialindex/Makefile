@@ -1,3 +1,5 @@
+BROKEN-sparc64 = error: 'raise' was not declared in this scope
+
 COMMENT =	library for spatial indexing and querying
 V =		2.1.0
 DISTNAME =	spatialindex-src-${V}
