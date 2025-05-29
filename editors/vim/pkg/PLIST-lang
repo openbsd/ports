@@ -329,9 +329,6 @@ man/tr/man1/
 share/vim/${P}/lang/af/
 share/vim/${P}/lang/af/LC_MESSAGES/
 share/vim/${P}/lang/af/LC_MESSAGES/vim.mo
-share/vim/${P}/lang/am/
-share/vim/${P}/lang/am/LC_MESSAGES/
-share/vim/${P}/lang/am/LC_MESSAGES/vim.mo
 share/vim/${P}/lang/ca/
 share/vim/${P}/lang/ca/LC_MESSAGES/
 share/vim/${P}/lang/ca/LC_MESSAGES/vim.mo
@@ -634,6 +631,8 @@ share/vim/${P}/tutor/tutor1.es
 share/vim/${P}/tutor/tutor1.es.utf-8
 share/vim/${P}/tutor/tutor1.fr
 share/vim/${P}/tutor/tutor1.fr.utf-8
+share/vim/${P}/tutor/tutor1.gl
+share/vim/${P}/tutor/tutor1.gl.utf-8
 share/vim/${P}/tutor/tutor1.hr
 share/vim/${P}/tutor/tutor1.hr.cp1250
 share/vim/${P}/tutor/tutor1.hr.utf-8
@@ -681,6 +680,8 @@ share/vim/${P}/tutor/tutor1.zh.euc
 share/vim/${P}/tutor/tutor1.zh.utf-8
 share/vim/${P}/tutor/tutor1.zh_cn.utf-8
 share/vim/${P}/tutor/tutor1.zh_tw.utf-8
+share/vim/${P}/tutor/tutor2.gl
+share/vim/${P}/tutor/tutor2.gl.utf-8
 share/vim/${P}/tutor/tutor2.it
 share/vim/${P}/tutor/tutor2.it.utf-8
 share/vim/${P}/tutor/tutor2.ru.utf-8

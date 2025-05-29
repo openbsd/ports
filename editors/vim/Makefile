@@ -3,13 +3,13 @@ COMMENT-lang=	vi clone, NLS subpackage
 
 # careful with PLISTs if updating; it usually works best if you
 # use a gui flavour rather than no_x11
-V=		9.1.1265
+V=		9.1.1418
 VS=		${V:C/\.0+/./}
 
 GH_PROJECT=	vim
 GH_ACCOUNT=	vim
 GH_TAGNAME=	v$V
-DIST_TUPLE+=	github vim colorschemes	661b1a62a4ebe4a65de79f1bb1c40571fe6a1b58 .
+DIST_TUPLE+=	github vim colorschemes	7506b51cb70b74338d55850e62be0608a9e12cd1 .
 
 PKGNAME=	vim-${VS}
 FULLPKGNAME-lang= vim-lang-${VS}
@@ -160,7 +160,7 @@ post-install:
 	${INSTALL_DATA} ${WRKDIR}/colorschemes-*/legacy_colors/* \
 		${PREFIX}/share/vim/${P}/colors/legacy
 
-.if ! ${FLAVOR:Mno_x11}
+.if !${FLAVOR:Mno_x11}
 	${INSTALL_DATA_DIR} ${PREFIX}/share/applications
 	${SUBST_DATA} ${WRKDIST}/runtime/gvim.desktop \
 		${PREFIX}/share/applications/gvim.desktop
