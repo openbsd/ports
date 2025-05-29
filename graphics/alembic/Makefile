@@ -2,7 +2,7 @@ COMMENT=	open framework for storing and sharing scene data
 
 GH_ACCOUNT=	alembic
 GH_PROJECT=	alembic
-GH_TAGNAME=	1.8.5
+GH_TAGNAME=	1.8.8
 
 SHARED_LIBS +=  Alembic                   1.0 # 1.8
 
