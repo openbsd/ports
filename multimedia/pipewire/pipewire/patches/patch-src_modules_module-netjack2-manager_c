@@ -1,7 +1,7 @@
 Index: src/modules/module-netjack2-manager.c
 --- src/modules/module-netjack2-manager.c.orig
 +++ src/modules/module-netjack2-manager.c
-@@ -803,8 +803,13 @@ static int make_announce_socket(struct sockaddr_storag
+@@ -882,8 +882,13 @@ static int make_announce_socket(struct sockaddr_storag
  	}
  	spa_zero(req);
  	if (ifname) {
