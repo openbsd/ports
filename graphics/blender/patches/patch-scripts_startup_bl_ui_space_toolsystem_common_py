@@ -1,0 +1,15 @@
+Fix path to icons (XXX)
+Index: scripts/startup/bl_ui/space_toolsystem_common.py
+--- scripts/startup/bl_ui/space_toolsystem_common.py.orig
++++ scripts/startup/bl_ui/space_toolsystem_common.py
+@@ -244,8 +244,8 @@ class ToolSelectPanelHelper:
+             assert type(icon_name) is str
+             icon_value = _icon_cache.get(icon_name)
+             if icon_value is None:
+-                dirname = bpy.utils.system_resource('DATAFILES', path="icons")
+-                filepath = os.path.join(dirname, icon_name + ".dat")
++                dirname = bpy.utils.system_resource('BLENDER_SYSTEM_DATAFILES', path="icons")
++                filename = os.path.join(dirname, "icons", icon_name + ".dat")
+                 try:
+                     icon_value = bpy.app.icons.new_triangles_from_file(filepath)
+                 except Exception as ex:

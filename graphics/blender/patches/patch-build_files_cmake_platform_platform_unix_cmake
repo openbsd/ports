@@ -1,0 +1,12 @@
+Index: build_files/cmake/platform/platform_unix.cmake
+--- build_files/cmake/platform/platform_unix.cmake.orig
++++ build_files/cmake/platform/platform_unix.cmake
+@@ -666,7 +666,7 @@ if(WITH_SYSTEM_FREETYPE)
+   if(NOT FREETYPE_FOUND)
+     message(FATAL_ERROR "Failed finding system FreeType version!")
+   endif()
+-  check_freetype_for_brotli()
++  #check_freetype_for_brotli()
+   # Quiet warning as this variable will be used after `FREETYPE_LIBRARIES`.
+   set(BROTLI_LIBRARIES "")
+ endif()

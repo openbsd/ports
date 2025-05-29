@@ -1,0 +1,15 @@
+Index: intern/ghost/intern/GHOST_SystemWayland.cc
+--- intern/ghost/intern/GHOST_SystemWayland.cc.orig
++++ intern/ghost/intern/GHOST_SystemWayland.cc
+@@ -2599,7 +2599,11 @@ static wl_buffer *ghost_wl_buffer_create_for_image(wl_
+   if (fd >= 0) {
+     const int32_t buffer_stride = size_xy[0] * ghost_wl_shm_format_as_size(format);
+     const int32_t buffer_size = buffer_stride * size_xy[1];
++#ifdef __OpenBSD__
++    if (ftruncate(fd, buffer_size) == 0) {
++#else
+     if (posix_fallocate(fd, 0, buffer_size) == 0) {
++#endif
+       void *buffer_data = mmap(nullptr, buffer_size, PROT_READ | PROT_WRITE, MAP_SHARED, fd, 0);
+       if (buffer_data != MAP_FAILED) {
+         wl_shm_pool *pool = wl_shm_create_pool(shm, fd, buffer_size);

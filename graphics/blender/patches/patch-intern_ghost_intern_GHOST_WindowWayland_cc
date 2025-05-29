@@ -1,0 +1,12 @@
+Index: intern/ghost/intern/GHOST_WindowWayland.cc
+--- intern/ghost/intern/GHOST_WindowWayland.cc.orig
++++ intern/ghost/intern/GHOST_WindowWayland.cc
+@@ -54,7 +54,7 @@
+ #include <atomic>
+ 
+ #include <cstring>  /* For `memcpy`. */
+-#include <malloc.h> /* For `malloc_usable_size`. */
++#include <stdlib.h> /* For `malloc_usable_size`. */
+ 
+ /* Logging, use `ghost.wl.*` prefix. */
+ #include "CLG_log.h"

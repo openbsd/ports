@@ -1,0 +1,14 @@
+Index: source/blender/gpu/CMakeLists.txt
+--- source/blender/gpu/CMakeLists.txt.orig
++++ source/blender/gpu/CMakeLists.txt
+@@ -751,8 +751,9 @@ target_link_libraries(bf_gpu PUBLIC
+   bf_gpu_shaders
+ )
+ 
++#if(WITH_OPENGL_BACKEND AND UNIX AND NOT ${CMAKE_SYSTEM_NAME} MATCHES "OpenBSD")
+ if(WITH_OPENGL_BACKEND AND UNIX)
+-  target_link_libraries(bf_gpu PUBLIC rt)
++  target_link_libraries(bf_gpu PUBLIC execinfo)
+ endif()
+ 
+ if(WITH_OPENCOLORIO)

@@ -1,0 +1,16 @@
+Index: source/blender/blenfont/BLF_api.hh
+--- source/blender/blenfont/BLF_api.hh.orig
++++ source/blender/blenfont/BLF_api.hh
+@@ -20,10 +20,10 @@
+ #define BLF_DATAFILES_FONTS_DIR "fonts"
+ 
+ /* File name of the default variable-width font. */
+-#define BLF_DEFAULT_PROPORTIONAL_FONT "Inter.woff2"
++#define BLF_DEFAULT_PROPORTIONAL_FONT "Inter.ttf"
+ 
+ /* File name of the default fixed-pitch font. */
+-#define BLF_DEFAULT_MONOSPACED_FONT "DejaVuSansMono.woff2"
++#define BLF_DEFAULT_MONOSPACED_FONT "DejaVuSansMono.ttf"
+ 
+ struct ColorManagedDisplay;
+ struct ListBase;
