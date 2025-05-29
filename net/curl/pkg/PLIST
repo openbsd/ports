@@ -1,6 +1,7 @@
 @bin bin/curl
 bin/curl-config
 bin/mk-ca-bundle
+bin/wcurl
 include/curl/
 include/curl/curl.h
 include/curl/curlver.h
@@ -21,6 +22,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man1/curl-config.1
 @man man/man1/curl.1
 @man man/man1/mk-ca-bundle.1
+@man man/man1/wcurl.1
 @man man/man3/CURLINFO_ACTIVESOCKET.3
 @man man/man3/CURLINFO_APPCONNECT_TIME.3
 @man man/man3/CURLINFO_APPCONNECT_TIME_T.3
@@ -373,6 +375,7 @@ lib/pkgconfig/libcurl.pc
 @man man/man3/CURLOPT_SSL_FALSESTART.3
 @man man/man3/CURLOPT_SSL_OPTIONS.3
 @man man/man3/CURLOPT_SSL_SESSIONID_CACHE.3
+@man man/man3/CURLOPT_SSL_SIGNATURE_ALGORITHMS.3
 @man man/man3/CURLOPT_SSL_VERIFYHOST.3
 @man man/man3/CURLOPT_SSL_VERIFYPEER.3
 @man man/man3/CURLOPT_SSL_VERIFYSTATUS.3
