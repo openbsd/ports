@@ -1,8 +1,7 @@
 COMMENT=	collection of shared GSettings schemas
 
 GNOME_PROJECT=	gsettings-desktop-schemas
-GNOME_VERSION=	47.1
-REVISION=	0
+GNOME_VERSION=	48.0
 
 CATEGORIES=	devel
 

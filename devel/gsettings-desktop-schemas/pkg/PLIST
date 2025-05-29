@@ -29,6 +29,7 @@ share/glib-2.0/schemas/org.gnome.desktop.media-handling.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.notifications.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.peripherals.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.privacy.gschema.xml
+share/glib-2.0/schemas/org.gnome.desktop.screen-time-limits.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.screensaver.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.search-providers.gschema.xml
 share/glib-2.0/schemas/org.gnome.desktop.session.gschema.xml
