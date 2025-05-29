@@ -28,6 +28,7 @@ include/wireplumber-0.5/wp/object-manager.h
 include/wireplumber-0.5/wp/object.h
 include/wireplumber-0.5/wp/plugin.h
 include/wireplumber-0.5/wp/port.h
+include/wireplumber-0.5/wp/proc-utils.h
 include/wireplumber-0.5/wp/properties.h
 include/wireplumber-0.5/wp/proxy-interfaces.h
 include/wireplumber-0.5/wp/proxy.h
@@ -160,6 +161,7 @@ share/wireplumber/scripts/device/state-profile.lua
 share/wireplumber/scripts/device/state-routes.lua
 share/wireplumber/scripts/fallback-sink.lua
 share/wireplumber/scripts/lib/
+share/wireplumber/scripts/lib/audio-group-utils.lua
 share/wireplumber/scripts/lib/common-utils.lua
 share/wireplumber/scripts/lib/device-info-cache.lua
 share/wireplumber/scripts/lib/filter-utils.lua
@@ -167,6 +169,7 @@ share/wireplumber/scripts/lib/linking-utils.lua
 share/wireplumber/scripts/lib/monitor-utils.lua
 share/wireplumber/scripts/lib/node-utils.lua
 share/wireplumber/scripts/linking/
+share/wireplumber/scripts/linking/find-audio-group-target.lua
 share/wireplumber/scripts/linking/find-best-target.lua
 share/wireplumber/scripts/linking/find-default-target.lua
 share/wireplumber/scripts/linking/find-defined-target.lua
@@ -197,6 +200,7 @@ share/wireplumber/scripts/monitors/v4l2/enumerate-device.lua
 share/wireplumber/scripts/monitors/v4l2/name-device.lua
 share/wireplumber/scripts/monitors/v4l2/name-node.lua
 share/wireplumber/scripts/node/
+share/wireplumber/scripts/node/audio-group.lua
 share/wireplumber/scripts/node/create-item.lua
 share/wireplumber/scripts/node/filter-forward-format.lua
 share/wireplumber/scripts/node/software-dsp.lua
