@@ -1,3 +1,5 @@
+BROKEN-sparc64 = error: expected primary-expression before else
+
 V =		1.0.3
 REVISION =	0
 COMMENT =	open source retro-style 2D scrolling platform shooter game
