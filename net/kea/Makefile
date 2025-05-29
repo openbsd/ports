@@ -4,6 +4,10 @@ VERSION=	2.4.2
 REVISION=	0
 PORTROACH=	limitw:1,even
 
+# 2.6 update notes so far;
+# cvs rm -rf patches/patch-src_lib_asiolink_{io_address_cc,io_service_cc,tcp_endpoint_h,udp_endpoint_h,unix_domain_socket_cc} patches/patch-src_lib_dhcp_iface_mgr_cc
+# addPktEvent doesn't cope with openbsd nonstandard bpf_timeval
+
 DISTNAME=	kea-${VERSION}
 PKGNAME-main=	kea-${VERSION:S/-P/pl/}
 
