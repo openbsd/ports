@@ -1,3 +1,5 @@
+BROKEN-sparc64= attempted static link of dynamic object libglib-2.0.so.4201.13
+
 COMMENT=		tool/library for managing platform virtualization
 
 DISTNAME=		libvirt-11.3.0
