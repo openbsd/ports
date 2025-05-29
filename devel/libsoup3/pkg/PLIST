@@ -422,7 +422,6 @@ share/doc/libsoup-${API_VERSION}/method.MessageHeaders.set_expectations.html
 share/doc/libsoup-${API_VERSION}/method.MessageHeaders.set_range.html
 share/doc/libsoup-${API_VERSION}/method.MessageHeaders.set_ranges.html
 share/doc/libsoup-${API_VERSION}/method.MessageHeaders.unref.html
-share/doc/libsoup-${API_VERSION}/method.MessageHeadersIter.next.html
 share/doc/libsoup-${API_VERSION}/method.MessageMetrics.copy.html
 share/doc/libsoup-${API_VERSION}/method.MessageMetrics.free.html
 share/doc/libsoup-${API_VERSION}/method.MessageMetrics.get_connect_end.html
@@ -699,6 +698,7 @@ share/doc/libsoup-${API_VERSION}/type_func.AuthDomainDigest.encode_password.html
 share/doc/libsoup-${API_VERSION}/type_func.AuthNegotiate.supported.html
 share/doc/libsoup-${API_VERSION}/type_func.Cookie.parse.html
 share/doc/libsoup-${API_VERSION}/type_func.MessageHeadersIter.init.html
+share/doc/libsoup-${API_VERSION}/type_func.MessageHeadersIter.next.html
 share/doc/libsoup-${API_VERSION}/type_func.SessionError.quark.html
 share/doc/libsoup-${API_VERSION}/type_func.Status.get_phrase.html
 share/doc/libsoup-${API_VERSION}/type_func.TLDError.quark.html
