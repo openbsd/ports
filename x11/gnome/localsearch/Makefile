@@ -17,6 +17,8 @@ MODULES=		devel/dconf \
 			devel/meson \
 			x11/gnome
 
+MODGNOME_TOOLS=		gobject-introspection
+
 BUILD_DEPENDS=		textproc/asciidoc
 
 # sha256sum; cf. patch-meson_build
