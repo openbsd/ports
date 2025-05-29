@@ -1,0 +1,12 @@
+https://github.com/lunarmodules/luasec/pull/203
+Index: src/ssl.h
+--- src/ssl.h.orig
++++ src/ssl.h
+@@ -32,6 +32,7 @@ typedef struct t_ssl_ {
+   t_timeout tm;
+   SSL *ssl;
+   int state;
++  int shutdown;
+   int error;
+ } t_ssl;
+ typedef t_ssl* p_ssl;

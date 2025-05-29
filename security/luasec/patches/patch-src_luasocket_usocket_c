@@ -1,0 +1,12 @@
+https://github.com/lunarmodules/luasec/pull/203
+Index: src/luasocket/usocket.c
+--- src/luasocket/usocket.c.orig
++++ src/luasocket/usocket.c
+@@ -82,7 +82,6 @@ int socket_close(void) {
+ \*-------------------------------------------------------------------------*/
+ void socket_destroy(p_socket ps) {
+     if (*ps != SOCKET_INVALID) {
+-        socket_setblocking(ps);
+         close(*ps);
+         *ps = SOCKET_INVALID;
+     }
