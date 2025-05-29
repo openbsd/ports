@@ -5,7 +5,7 @@ DISTNAME=	Sane-${MODPY_DISTV}
 DISTFILES=	${DISTNAME}{v${MODPY_DISTV}}.tar.gz
 PKGNAME=	py-${DISTNAME:L}
 CATEGORIES=	graphics
-REVISION=	6
+REVISION=	7
 
 HOMEPAGE=	http://python-pillow.github.io/
 
@@ -13,7 +13,7 @@ HOMEPAGE=	http://python-pillow.github.io/
 # Permission to use, copy, modify and distribute freely.
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += pthread sane
+WANTLIB += sane
 
 SITES=          	https://github.com/python-pillow/Sane/archive/
 
