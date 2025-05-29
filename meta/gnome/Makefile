@@ -8,7 +8,7 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
-REVISION-main=		2
+REVISION-main=		3
 REVISION-extras=	1
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
@@ -106,6 +106,7 @@ RUN_DEPENDS-main +=	x11/gnome/calculator \
 			x11/gnome/clocks \
 			x11/gnome/console \
 			x11/gnome/contacts \
+			x11/gnome/decibels \
 			evince-*-!light:graphics/evince \
 			x11/gnome/font-viewer \
 			x11/gnome/maps \
