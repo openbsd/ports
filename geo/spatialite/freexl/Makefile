@@ -1,3 +1,5 @@
+BROKEN-sparc64= configure: error: cannot find minizip/unzip.h, bailing out
+
 COMMENT=	extract valid data from within an Excel spreadsheet
 PROJECT =	freexl
 DISTNAME=	${PROJECT}-2.0.0
