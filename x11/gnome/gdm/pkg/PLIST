@@ -73,6 +73,7 @@ share/examples/gdm/etc/pam.d/gdm-password
 @mode
 share/examples/login.conf.d/gdm
 @sample ${SYSCONFDIR}/login.conf.d/gdm
+share/gdm/
 share/gdm/gdb-cmd
 share/gdm/gdm.schemas
 share/gdm/greeter/
