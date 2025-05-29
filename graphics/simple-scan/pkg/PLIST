@@ -727,6 +727,7 @@ share/locale/ast/LC_MESSAGES/simple-scan.mo
 share/locale/az/LC_MESSAGES/simple-scan.mo
 share/locale/be/LC_MESSAGES/simple-scan.mo
 share/locale/bg/LC_MESSAGES/simple-scan.mo
+share/locale/bn/LC_MESSAGES/simple-scan.mo
 share/locale/bo/
 share/locale/bo/LC_MESSAGES/
 share/locale/bo/LC_MESSAGES/simple-scan.mo
@@ -748,6 +749,7 @@ share/locale/fur/LC_MESSAGES/simple-scan.mo
 share/locale/gd/LC_MESSAGES/simple-scan.mo
 share/locale/gl/LC_MESSAGES/simple-scan.mo
 share/locale/he/LC_MESSAGES/simple-scan.mo
+share/locale/hi/LC_MESSAGES/simple-scan.mo
 share/locale/hr/LC_MESSAGES/simple-scan.mo
 share/locale/hu/LC_MESSAGES/simple-scan.mo
 share/locale/hy/LC_MESSAGES/simple-scan.mo
@@ -766,8 +768,6 @@ share/locale/ky/LC_MESSAGES/simple-scan.mo
 share/locale/lt/LC_MESSAGES/simple-scan.mo
 share/locale/lv/LC_MESSAGES/simple-scan.mo
 share/locale/mhr/LC_MESSAGES/simple-scan.mo
-share/locale/mjw/
-share/locale/mjw/LC_MESSAGES/
 share/locale/mjw/LC_MESSAGES/simple-scan.mo
 share/locale/ml/LC_MESSAGES/simple-scan.mo
 share/locale/ms/LC_MESSAGES/simple-scan.mo

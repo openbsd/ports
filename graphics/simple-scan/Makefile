@@ -1,8 +1,6 @@
 COMMENT=		simple scanning utility
 
-GNOME_PROJECT=		simple-scan
-GNOME_VERSION=		46.0
-REVISION=		1
+DIST_TUPLE=		gnome GNOME simple-scan 48.1 .
 
 CATEGORIES=		graphics
 
