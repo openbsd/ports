@@ -1,3 +1,5 @@
+BROKEN-sparc64=	snappy.h: No such file or directory
+
 GH_ACCOUNT=		google
 GH_PROJECT=		leveldb
 GH_TAGNAME=		1.23
