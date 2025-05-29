@@ -1,7 +1,7 @@
 # unconditionally uses machine/apmvar.h and related structures/defines
 ONLY_FOR_ARCHS=	${APM_ARCHS}
 
-V=		3.7.3
+V=		3.7.5
 COMMENT=	small and fast window manager
 DISTNAME=	icewm-${V}
 EXTRACT_SUFX=	.tar.lz
@@ -13,14 +13,14 @@ HOMEPAGE=	https://ice-wm.org/
 PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX}
-WANTLIB += FLAC ICE Imlib2 SM X11 X11-xcb Xau Xcomposite Xdamage
-WANTLIB += Xdmcp Xext Xfixes Xft Xinerama Xpm Xrandr Xrender ao
-WANTLIB += c cairo cairo-gobject expat ffi fontconfig freetype
-WANTLIB += fribidi gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB += gobject-2.0 graphite2 harfbuzz iconv intl jpeg lzma
-WANTLIB += m mp3lame mpg123 ogg opus pango-1.0 pangocairo-1.0
-WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png rsvg-2 sndfile vorbis
-WANTLIB += vorbisenc xcb xcb-render xcb-shm xml2 z
+WANTLIB += FLAC ICE Imlib2 SM X11 X11-xcb XRes Xau Xcomposite
+WANTLIB += Xdamage Xdmcp Xext Xfixes Xft Xinerama Xpm Xrandr Xrender
+WANTLIB += ao c cairo expat ffi fontconfig freetype fribidi gdk_pixbuf-2.0
+WANTLIB += gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 graphite2
+WANTLIB += harfbuzz iconv intl jpeg lzma m mp3lame mpg123 ogg
+WANTLIB += opus pango-1.0 pangocairo-1.0 pangoft2-1.0 pcre2-8
+WANTLIB += pixman-1 png rsvg-2 sndfile vorbis vorbisenc xcb xcb-render
+WANTLIB += xcb-shm xml2 z
 
 COMPILER=	base-clang ports-gcc base-gcc
 
