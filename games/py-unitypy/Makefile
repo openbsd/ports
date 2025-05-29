@@ -1,3 +1,5 @@
+BROKEN-sparc64 = error: read_typetree_value was not declared in this scope
+
 COMMENT =	python module to manage Unity assets
 
 MODPY_DISTV =	1.20.12
