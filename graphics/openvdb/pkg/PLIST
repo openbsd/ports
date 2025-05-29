@@ -152,6 +152,7 @@ include/openvdb/tree/Tree.h
 include/openvdb/tree/TreeIterator.h
 include/openvdb/tree/ValueAccessor.h
 include/openvdb/util/
+include/openvdb/util/Assert.h
 include/openvdb/util/CpuTimer.h
 include/openvdb/util/ExplicitInstantiation.h
 include/openvdb/util/Formats.h
