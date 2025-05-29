@@ -1,13 +1,12 @@
 COMMENT=		text editor
 
-GNOME_PROJECT=		gedit
-GNOME_VERSION=		48.1
-REVISION=		0
+DIST_TUPLE=		gnome World/gedit gedit 48.2 .
+DIST_TUPLE +=		gnome GNOME libgd c7c7ff4e05d3fe82854219091cf116cce6b19de0 subprojects/libgd
 
 WANTLIB += c cairo gdk-3 gdk_pixbuf-2.0 gedit-amtk-5 gedit-gfls-1
-WANTLIB += gedit-gtksourceview-300 gedit-tepl-6 gio-2.0 girepository-1.0
-WANTLIB += glib-2.0 gobject-2.0 gspell-1 gtk-3 intl m pango-1.0
-WANTLIB += peas-1.0 peas-gtk-1.0
+WANTLIB += gedit-gtksourceview-300 gedit-tepl-6 gio-2.0 glib-2.0
+WANTLIB += gobject-2.0 gspell-1 gtk-3 intl m pango-1.0 peas-1.0
+WANTLIB += peas-gtk-1.0
 
 COMPILER=		base-clang ports-gcc
 COMPILER_LANGS=		c
