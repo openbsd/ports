@@ -2,10 +2,9 @@ COMMENT =		color management library
 
 GH_ACCOUNT =		AcademySoftwareFoundation
 GH_PROJECT =		OpenColorIO
-GH_TAGNAME =		v2.4.0
+GH_TAGNAME =		v2.4.2
 PKGNAME =		${DISTNAME:L}
 EPOCH =			2
-REVISION =		0
 
 SHARED_LIBS +=  OpenColorIO               5.0 # 1.1.1
 
