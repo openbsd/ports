@@ -1,3 +1,5 @@
+BROKEN-sparc64 = error: stdalign.h: No such file or directory
+
 COMMENT-main =		C++ library for MARISA matching algorithm
 COMMENT-perl =		marisa-trie bindings for Perl (SWIG)
 COMMENT-python =	marisa-trie bindings for Python (SWIG)
