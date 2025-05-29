@@ -1,3 +1,5 @@
+BROKEN-sparc64 = iteria.h:18: undefined reference to operator delete
+
 COMMENT =		OCaml source-based package manager
 
 CATEGORIES =		sysutils devel
