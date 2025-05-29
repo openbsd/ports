@@ -2,6 +2,7 @@ include/libgedit-gfls-1/
 include/libgedit-gfls-1/gfls/
 include/libgedit-gfls-1/gfls/gfls-attribute-keys.h
 include/libgedit-gfls-1/gfls/gfls-enum-types.h
+include/libgedit-gfls-1/gfls/gfls-error.h
 include/libgedit-gfls-1/gfls/gfls-init.h
 include/libgedit-gfls-1/gfls/gfls-input-stream.h
 include/libgedit-gfls-1/gfls/gfls-loader-basic.h
@@ -25,6 +26,7 @@ share/gtk-doc/html/libgedit-gfls-1/annexes.html
 share/gtk-doc/html/libgedit-gfls-1/annotation-glossary.html
 share/gtk-doc/html/libgedit-gfls-1/api-index-0-1.html
 share/gtk-doc/html/libgedit-gfls-1/api-index-0-2.html
+share/gtk-doc/html/libgedit-gfls-1/api-index-0-3.html
 share/gtk-doc/html/libgedit-gfls-1/api-index-full.html
 share/gtk-doc/html/libgedit-gfls-1/api-reference.html
 share/gtk-doc/html/libgedit-gfls-1/home.png
@@ -45,10 +47,13 @@ share/gtk-doc/html/libgedit-gfls-1/up.png
 share/locale/be/LC_MESSAGES/libgedit-gfls-1.mo
 share/locale/da/LC_MESSAGES/libgedit-gfls-1.mo
 share/locale/de/LC_MESSAGES/libgedit-gfls-1.mo
+share/locale/hu/LC_MESSAGES/libgedit-gfls-1.mo
 share/locale/ka/LC_MESSAGES/libgedit-gfls-1.mo
+share/locale/pl/LC_MESSAGES/libgedit-gfls-1.mo
 share/locale/pt_BR/LC_MESSAGES/libgedit-gfls-1.mo
 share/locale/ru/LC_MESSAGES/libgedit-gfls-1.mo
 share/locale/sl/LC_MESSAGES/libgedit-gfls-1.mo
+share/locale/sr/LC_MESSAGES/libgedit-gfls-1.mo
 share/locale/sv/LC_MESSAGES/libgedit-gfls-1.mo
 share/locale/tr/LC_MESSAGES/libgedit-gfls-1.mo
 share/locale/uk/LC_MESSAGES/libgedit-gfls-1.mo
