@@ -1,3 +1,5 @@
+BROKEN-sparc64 = libfst.so.4.0: undefined reference to pthread_rwlock_rdlock
+
 COMMENT =		weighted finite-state transducers library
 
 DISTNAME =		openfst-1.8.4
