@@ -2,7 +2,7 @@
 | Running NetBSD on ${PKGSTEM}
 +-----------------------------------------------------------------------
 
-From ${PKGSTEM}'s manual to run NetBSD you need to create a directory
+From ${PKGSTEM}'s manual to run NetBSD, you need to create a directory
 with your disk and config:
 
 $ mkdir ~/nono
@@ -20,7 +20,7 @@ Now run nono specifying ~/nono:
 
 $ nono -c ~/nono
 
-Now inside the console you should follow these instructions:
+Now inside the console, you should follow these instructions:
 
 k
 [Enter]
@@ -37,9 +37,9 @@ For more options you should read the manual.
 +-----------------------------------------------------------------------
 
 Currently nono's luna88k emulation is under construction, but aoyama@
-build a custom image for ${PKGSTEM}.
+buildis a custom image for ${PKGSTEM}.
 
-You can follow the README file in:
+You should refer to the README file in:
 
 http://www.nk-home.net/~aoyama/liveimage/
 
@@ -65,7 +65,7 @@ Updated
 N>b
 
 You can connect to the vm with a serial console by
-adding the follow to your nono.cfg:
+adding the following to your nono.cfg:
 
 hostcom-driver = tcp
 hostcom-tcp-port = 9999
