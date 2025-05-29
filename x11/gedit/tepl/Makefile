@@ -1,10 +1,8 @@
 COMMENT=		Text Editor Product Line
 
-GNOME_PROJECT=		libgedit-tepl
-GNOME_VERSION=		6.12.0
-REVISION=		0
+DIST_TUPLE=		gnome World/gedit libgedit-tepl 6.13.0 .
 
-SHARED_LIBS += gedit-tepl-6              0.1 # 2
+SHARED_LIBS += gedit-tepl-6              0.1 # 3
 
 CATEGORIES=		devel
 
