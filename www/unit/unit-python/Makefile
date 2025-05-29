@@ -1,3 +1,5 @@
+BROKEN-sparc64= ./configure: error: no Python found.
+
 UNIT_MODNAME=   python${MODPY_VERSION}
 UNIT_SHORTNAME=	python
 
