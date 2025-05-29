@@ -6,9 +6,10 @@ XFCE_GOODIE=	xfmpc
 # GPLv2
 PERMIT_PACKAGE=	Yes
 
-
 MODXFCE_DESKTOP_FILE=	Yes
 MODULES=	x11/xfce4 devel/meson
+
+BUILD_DEPENDS=	lang/vala
 
 LIB_DEPENDS=	audio/libmpd \
 		x11/xfce4/libxfce4ui
