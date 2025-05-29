@@ -19,6 +19,7 @@
      SUBDIR += contacts
      SUBDIR += control-center
      SUBDIR += dconf-editor
+     SUBDIR += decibels
      SUBDIR += desktop
      SUBDIR += devel-docs
      SUBDIR += devhelp
