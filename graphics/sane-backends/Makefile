@@ -2,11 +2,11 @@ BROKEN-alpha=		ICE hp5590.c:1141: error: unrecognizable insn
 
 COMMENT=		API for accessing scanners, backends
 
-V=			1.3.1
+V=			1.4.0
 DISTNAME=		backends-${V}
 PKGNAME=		sane-${DISTNAME}
 
-SHARED_LIBS +=  sane                 2.3      # unknown
+SHARED_LIBS +=  sane                 2.4      # unknown
 
 CATEGORIES=		graphics
 
@@ -17,8 +17,8 @@ MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 # GPLv2
 PERMIT_PACKAGE=		Yes
 
-WANTLIB += ${COMPILER_LIBCXX} c execinfo iconv jpeg lzma m png
-WANTLIB += tiff usb-1.0 v4l1 v4l2 v4lconvert xml2 z zstd
+WANTLIB += ${COMPILER_LIBCXX} Lerc c execinfo iconv jpeg lzma
+WANTLIB += m png tiff usb-1.0 v4l1 v4l2 v4lconvert xml2 z zstd
 
 SITES=			https://gitlab.com/sane-project/backends/-/archive/${V}/
 

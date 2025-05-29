@@ -535,6 +535,9 @@ share/locale/ru/LC_MESSAGES/sane-backends.mo
 share/locale/sv/
 share/locale/sv/LC_MESSAGES/
 share/locale/sv/LC_MESSAGES/sane-backends.mo
+share/locale/tr/
+share/locale/tr/LC_MESSAGES/
+share/locale/tr/LC_MESSAGES/sane-backends.mo
 share/locale/uk/
 share/locale/uk/LC_MESSAGES/
 share/locale/uk/LC_MESSAGES/sane-backends.mo
