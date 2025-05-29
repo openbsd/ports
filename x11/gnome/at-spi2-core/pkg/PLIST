@@ -10,6 +10,7 @@ include/at-spi-2.0/atspi/atspi-application.h
 include/at-spi-2.0/atspi/atspi-collection.h
 include/at-spi-2.0/atspi/atspi-component.h
 include/at-spi-2.0/atspi/atspi-constants.h
+include/at-spi-2.0/atspi/atspi-device-a11y-manager.h
 include/at-spi-2.0/atspi/atspi-device-legacy.h
 include/at-spi-2.0/atspi/atspi-device-listener.h
 include/at-spi-2.0/atspi/atspi-device-x11.h
