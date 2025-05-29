@@ -18,6 +18,8 @@ PKGNAME-hpcups=		hpcups-${V}
 PKGNAME-hpijs=		hpijs-${V}
 PKGNAME-gui=		hplip-gui-${V}
 
+REVISION-hpaio=		0
+
 SHARED_LIBS +=  hpdiscovery          0.0      # 0.1
 SHARED_LIBS +=  hpmud                2.0      # 0.6
 SHARED_LIBS +=  hpipp                0.0      # 0.1
@@ -89,7 +91,7 @@ RUN_DEPENDS-common=	# empty
 WANTLIB-hpaio += ${cWANTLIB}
 WANTLIB-hpaio += avahi-client avahi-common cups dbus-1 hpip hpipp ssl
 WANTLIB-hpaio += hpmud netsnmp sane usb-1.0 z hpdiscovery iconv intl
-WANTLIB-hpaio += lzma xml2 avahi-core
+WANTLIB-hpaio += xml2 avahi-core
 
 LIB_DEPENDS-hpaio=	print/hplip,-common \
 			print/cups,-libs \
