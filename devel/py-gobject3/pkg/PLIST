@@ -12,12 +12,14 @@ lib/python${MODPY_VERSION}/site-packages/gi/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_constants.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_enum.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_error.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_gtktemplate.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_option.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_ossighelper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_propertyhelper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_signalhelper.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}_signature.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}docstring.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}events.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}importer.${MODPY_PYC_MAGIC_TAG}pyc
@@ -25,6 +27,7 @@ lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}module.${MODPY_PYC_M
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}pygtkcompat.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/${MODPY_PYCACHE}types.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/_constants.py
+lib/python${MODPY_VERSION}/site-packages/gi/_enum.py
 lib/python${MODPY_VERSION}/site-packages/gi/_error.py
 @so lib/python${MODPY_VERSION}/site-packages/gi/_gi.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/gi/_gi_cairo.${MODPY_PYC_MAGIC_TAG}so
@@ -33,6 +36,7 @@ lib/python${MODPY_VERSION}/site-packages/gi/_option.py
 lib/python${MODPY_VERSION}/site-packages/gi/_ossighelper.py
 lib/python${MODPY_VERSION}/site-packages/gi/_propertyhelper.py
 lib/python${MODPY_VERSION}/site-packages/gi/_signalhelper.py
+lib/python${MODPY_VERSION}/site-packages/gi/_signature.py
 lib/python${MODPY_VERSION}/site-packages/gi/docstring.py
 lib/python${MODPY_VERSION}/site-packages/gi/events.py
 lib/python${MODPY_VERSION}/site-packages/gi/importer.py
@@ -57,8 +61,6 @@ lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}Gio.${MODP
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}Gtk.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}Pango.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gi/overrides/${MODPY_PYCACHE}keysyms.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gi/overrides/keysyms.py
 lib/python${MODPY_VERSION}/site-packages/gi/pygtkcompat.py
 lib/python${MODPY_VERSION}/site-packages/gi/repository/
 lib/python${MODPY_VERSION}/site-packages/gi/repository/__init__.py
@@ -69,7 +71,5 @@ lib/python${MODPY_VERSION}/site-packages/pygtkcompat/
 lib/python${MODPY_VERSION}/site-packages/pygtkcompat/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/pygtkcompat/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/pygtkcompat/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pygtkcompat/${MODPY_PYCACHE}generictreemodel.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pygtkcompat/${MODPY_PYCACHE}pygtkcompat.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/pygtkcompat/generictreemodel.py
 lib/python${MODPY_VERSION}/site-packages/pygtkcompat/pygtkcompat.py
