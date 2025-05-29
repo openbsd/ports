@@ -531,6 +531,7 @@ sbin/kea-admin
 @bin sbin/kea-dhcp6
 @bin sbin/kea-lfc
 sbin/keactrl
+@bin sbin/perfdhcp
 share/doc/kea/
 share/doc/kea/AUTHORS
 share/doc/kea/CONTRIBUTING.md
@@ -852,3 +853,4 @@ share/kea/scripts/admin-utils.sh
 @mode 0770
 @group _kea
 @sample ${LOCALSTATEDIR}/lib/kea/
+@sample /var/log/kea/

@@ -1,6 +1,7 @@
 COMMENT=	high-performance and extensible DHCP server engine from ISC
 
 VERSION=	2.4.2
+REVISION=	0
 PORTROACH=	limitw:1,even
 
 DISTNAME=	kea-${VERSION}
@@ -40,7 +41,8 @@ CONFIGURE_STYLE= gnu
 CONFIGURE_ARGS+= --with-openssl=/usr \
                  --with-boost-libs=-lboost_system \
                  --with-boost-lib-dir=${LOCALBASE}/lib \
-		 --enable-generate-parser
+		 --enable-generate-parser \
+		 --enable-perfdhcp
 
 USE_GMAKE=	Yes
 LIBTOOL_FLAGS=	--tag=disable-static
