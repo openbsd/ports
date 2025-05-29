@@ -1,25 +1,25 @@
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -67,7 +67,7 @@ else
-             GPERF:=/@unixroot/usr/bin/gperf.exe
-           else
-             OS:=linux
--            GPERF:=/usr/bin/gperf
-+            GPERF:=${LOCALBASE}/bin/gperf
+@@ -71,7 +71,7 @@ else
+               GPERF:=/usr/bin/gperf
+             else
+               OS:=linux
+-              GPERF:=/usr/bin/gperf
++              GPERF:=${LOCALBASE}/bin/gperf
+             endif
            endif
          endif
-       endif
-@@ -188,7 +188,7 @@ os2_ARCH_CFLAGS:=
+@@ -198,7 +198,7 @@ os2_ARCH_CFLAGS:=
  macos_ARCH_CFLAGS:=-isysroot $(SDKROOT) -I$(SDKROOT)/usr/include -I$(HOSTROOT)/include -mmacosx-version-min=$(MINVER) -arch $(subst $() $(), -arch ,$(ARCHS)) -w -headerpad_max_install_names -DHAVE_STRCASESTR
  ios_ARCH_CFLAGS:=-isysroot $(SDKROOT) -I$(SDKROOT)/usr/include -I$(HOSTROOT)/include $(MINVEROPT) -arch $(subst $() $(), -arch ,$(ARCHS)) -w -fPIC -DHAVE_STRCASESTR -DUNLINK_ONLY
  beos_ARCH_CFLAGS:=
 -linux_ARCH_CFLAGS:=
 +#linux_ARCH_CFLAGS:=
+ netbsd_ARCH_CFLAGS:=-DHAVE_STRCASESTR
  ARCH_CFLAGS:=$($(OS)_ARCH_CFLAGS)
  
- windows_ARCH_LDFLAGS:=
-@@ -203,10 +203,9 @@ LDFLAGS:=$(ARCH_LDFLAGS)
+@@ -216,10 +216,9 @@ LDFLAGS:=$(ARCH_LDFLAGS)
  ifeq ($(OS), os2)
    PAPER_LIB:=$(call linktest,,-lpaper_dll,)
  else
@@ -32,16 +32,16 @@ Index: Makefile
  
  FRIBIDI_LIB:=$(shell $(PKG_CONFIG) --libs fribidi)
  FRIBIDI_CFLAGS:=$(shell $(PKG_CONFIG) --cflags fribidi)
-@@ -233,7 +232,7 @@ os2_PREFIX:=c:/extras/tuxpaint
- macos_PREFIX:=Resources
+@@ -252,7 +251,7 @@ macos_PREFIX:=Resources
  ios_PREFIX:=.
  linux_PREFIX:=/usr/local
+ netbsd_PREFIX:=/usr/local
 -PREFIX:=$($(OS)_PREFIX)
 +PREFIX:=${TRUEPREFIX}
  
  # Root directory to place files when creating packages.
  # PKG_ROOT is the old name for this, and should be undefined.
-@@ -269,18 +268,18 @@ INCLUDE_PREFIX:=$(DESTDIR)$(PREFIX)/include
+@@ -288,18 +287,18 @@ INCLUDE_PREFIX:=$(DESTDIR)$(PREFIX)/include
  MAGIC_PREFIX:=$(DESTDIR)$(LIBDIR)/lib$(LIBDIRSUFFIX)/tuxpaint/plugins
  
  # Docs and man page:
@@ -65,7 +65,7 @@ Index: Makefile
  endif
  
  ifeq ($(SYSNAME),Haiku)
-@@ -813,9 +812,8 @@ uninstall:	uninstall-i18n
+@@ -836,9 +835,8 @@ uninstall:	uninstall-i18n
  install-default-config:
  	@echo
  	@echo "...Installing default config file..."
@@ -77,7 +77,7 @@ Index: Makefile
  
  # Install BASH completion file:
  # (Per https://sourceforge.net/p/tuxpaint/bugs/290/ naming
-@@ -827,9 +825,8 @@ install-default-config:
+@@ -850,9 +848,8 @@ install-default-config:
  install-bash-completion:
  	@echo
  	@echo "...Installing BASH completion file..."
@@ -89,7 +89,7 @@ Index: Makefile
  
  
  # Install example stamps
-@@ -837,7 +834,7 @@ install-bash-completion:
+@@ -860,7 +857,7 @@ install-bash-completion:
  install-example-stamps:
  	@echo
  	@echo "...Installing example stamps..."
@@ -98,7 +98,7 @@ Index: Makefile
  	@cp -R stamps/* $(DATA_PREFIX)/stamps
  	@chmod -R a+rX,g-w,o-w $(DATA_PREFIX)/stamps
  
-@@ -887,7 +884,10 @@ $(THUMB_STARTERS):
+@@ -910,7 +907,10 @@ $(THUMB_STARTERS):
  	fi
  
  $(INSTALLED_THUMB_STARTERS): $(DATA_PREFIX)/%: % install-example-starters-dirs
@@ -110,7 +110,7 @@ Index: Makefile
  
  .PHONY: echo-thumb-starters
  echo-thumb-starters:
-@@ -1010,36 +1010,23 @@ install-pkgxdg: src/tuxpaint.desktop src/tuxpaint-full
+@@ -1034,38 +1034,23 @@ install-pkgxdg: src/tuxpaint.desktop src/tuxpaint-full
  install-xdg: src/tuxpaint.desktop src/tuxpaint-fullscreen.desktop src/org.tuxpaint.Tuxpaint.appdata.xml
  	@echo ""
  	@echo "...Installing launcher icon into desktop environment..."
@@ -143,7 +143,9 @@ Index: Makefile
 -	@if [ "x$(shell which update-desktop-database)" != "x" ]; then \
 -	  update-desktop-database ; \
 -	fi
--	install --mode=0644 -Dt $(METAINFO_PREFIX) src/org.tuxpaint.Tuxpaint.appdata.xml
+-	mkdir -p $(METAINFO_PREFIX)
+-	cp -a src/org.tuxpaint.Tuxpaint.appdata.xml $(METAINFO_PREFIX)
+-	# ^ Instead of: install --mode=0644 -Dt $(METAINFO_PREFIX) src/org.tuxpaint.Tuxpaint.appdata.xml
 +	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(PREFIX)/share/icons/hicolor/192x192/apps
 +	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(PREFIX)/share/icons/hicolor/128x128/apps
 +	${BSD_INSTALL_DATA_DIR} $(DESTDIR)$(PREFIX)/share/icons/hicolor/96x96/apps
@@ -164,7 +166,7 @@ Index: Makefile
  #do package path related stuff, ie use destdir
  
  # Install the PNG icon (for KDE desktop, etc.)
-@@ -1050,12 +1037,9 @@ install-icon:
+@@ -1076,12 +1061,9 @@ install-icon:
  	@if [ "x$(PACKAGE_ONLY)" != "xyes" ]; then \
  	  echo; \
  	  echo "...Installing launcher icon graphics..."; \
@@ -180,7 +182,7 @@ Index: Makefile
  	fi
  
  
-@@ -1064,9 +1048,8 @@ install-icon:
+@@ -1090,9 +1072,8 @@ install-icon:
  install-bin:
  	@echo
  	@echo "...Installing program itself..."
@@ -192,7 +194,7 @@ Index: Makefile
  
  # Install tuxpaint-config and required Windows DLLs into the 'bdist' directory
  .PHONY: install-dlls
-@@ -1098,8 +1081,7 @@ install-haiku:
+@@ -1124,8 +1105,7 @@ install-haiku:
  install-importscript: install-bin
  	@echo
  	@echo "...Installing 'tuxpaint-import' script..."
@@ -202,7 +204,7 @@ Index: Makefile
  
  
  # Install the data (sound, graphics, fonts):
-@@ -1107,12 +1089,14 @@ install-importscript: install-bin
+@@ -1133,12 +1113,14 @@ install-importscript: install-bin
  install-data:
  	@echo
  	@echo "...Installing data files..."
@@ -219,7 +221,7 @@ Index: Makefile
  	@cp -R fonts/locale/* $(DATA_PREFIX)/fonts/locale
  	@chmod -R a+rX,g-w,o-w $(DATA_PREFIX)/fonts/locale
  
-@@ -1132,7 +1116,7 @@ install-osk:
+@@ -1158,7 +1140,7 @@ install-osk:
  install-doc:
  	@echo
  	@echo "...Installing documentation..."
@@ -228,7 +230,7 @@ Index: Makefile
  	@cp -R docs/* $(DOC_PREFIX)
  	@rm $(DOC_PREFIX)/Makefile # Used to generate TXT from HTML
  	@rm $(DOC_PREFIX)/RELEASE.txt # Not useful to end users
-@@ -1157,27 +1141,19 @@ install-man:
+@@ -1183,27 +1165,19 @@ install-man:
  	@echo
  	@echo "...Installing English man pages..."
  	@# man1 directory...

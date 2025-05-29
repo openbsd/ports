@@ -1,8 +1,7 @@
 COMMENT=		drawing program for children
 
-V=			0.9.34
+V=			0.9.35
 DISTNAME=		tuxpaint-${V}
-REVISION=		0
 
 CATEGORIES=		games graphics
 
@@ -16,7 +15,7 @@ PERMIT_PACKAGE=	Yes
 WANTLIB += SDL2 SDL2_Pango SDL2_gfx-1.0 SDL2_image SDL2_mixer
 WANTLIB += SDL2_ttf c cairo fontconfig freetype fribidi gdk_pixbuf-2.0
 WANTLIB += gio-2.0 glib-2.0 gobject-2.0 harfbuzz imagequant intl
-WANTLIB += m pango-1.0 pangoft2-1.0 paper png pthread rsvg-2 z
+WANTLIB += m pango-1.0 pangoft2-1.0 paper png pthread rsvg-2 z xml2
 
 SITES=			${SITE_SOURCEFORGE:=tuxpaint/}
 
