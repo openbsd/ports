@@ -5,12 +5,11 @@ COMMENT =		library for reading and writing images
 
 GH_ACCOUNT =		AcademySoftwareFoundation
 GH_PROJECT =		OpenImageIO
-GH_TAGNAME =		v2.5.17.0
+GH_TAGNAME =		v3.0.6.1
 PKGNAME =		${DISTNAME:L}
-REVISION =		0
 
-SHARED_LIBS +=		OpenImageIO		16.0 # 2.4.10
-SHARED_LIBS +=		OpenImageIO_Util	10.1 # 2.4.10
+SHARED_LIBS +=		OpenImageIO		17.0
+SHARED_LIBS +=		OpenImageIO_Util	11.0
 
 CATEGORIES =		graphics devel
 
@@ -22,9 +21,9 @@ PERMIT_PACKAGE =	Yes
 WANTLIB += ${COMPILER_LIBCXX} GL GLU Iex-3_3 IlmThread-3_3 Imath-3_1
 WANTLIB += OpenColorIO OpenEXR-3_3 OpenEXRCore-3_3 Qt6Core Qt6Gui
 WANTLIB += Qt6OpenGL Qt6OpenGLWidgets Qt6Widgets avcodec avformat
-WANTLIB += avutil boost_atomic-mt boost_filesystem-mt boost_thread-mt
-WANTLIB += bz2 c freetype gif heif jpeg m openjp2 png pugixml raw_r
-WANTLIB += swscale tbb tiff webp webpdemux z
+WANTLIB += avutil bz2 c freetype gif heif jpeg jxl jxl_threads
+WANTLIB += m openjp2 png pugixml raw_r sharpyuv swscale tbb tiff
+WANTLIB += webp webpdemux z
 
 MODULES =		devel/cmake \
 			lang/python \
@@ -37,18 +36,20 @@ BUILD_DEPENDS =		devel/fmt>=10.2.1 \
 			devel/robin-map \
 			textproc/txt2man
 
-LIB_DEPENDS =		devel/boost \
+LIB_DEPENDS =		archivers/bzip2 \
 			devel/tbb \
 			graphics/ffmpeg \
 			graphics/giflib \
 			graphics/jpeg \
+			graphics/libjxl \
 			graphics/libraw \
-			graphics/libwebp \
+			graphics/libwebp>=1.5.0 \
 			graphics/opencolorio \
 			graphics/openexr \
 			graphics/openjp2 \
 			graphics/png \
 			graphics/tiff \
+			math/imath \
 			multimedia/libheif \
 			textproc/pugixml
 
@@ -56,12 +57,10 @@ CONFIGURE_ARGS +=	-DCMAKE_INSTALL_MANDIR="man/man1" \
 			-DCMAKE_INSTALL_PREFIX="${PREFIX}" \
 			-DCMAKE_LIBRARY_PATH="${WRKBUILD}/lib:${CMAKE_LIBRARY_PATH}" \
 			-DSTOP_ON_WARNING=OFF \
-			-DUSE_CCACHE=OFF \
-			-DCMAKE_DISABLE_FIND_PACKAGE_DCMTK=TRUE \
+			-DCMAKE_DISABLE_FIND_PACKAGE_DCMTK=ON \
 			-DUSE_EXTERNAL_PUGIXML=ON \
 			-DUSE_OPENCV=OFF \
 			-DUSE_OPENVDB=OFF \
-			-DUSE_HDF5=OFF \
 			-Dpybind11_DIR=${MODPY_SITEPKG}/pybind11/share/cmake/pybind11/
 
 # Fix undefined reference to __atomic_*
@@ -71,3 +70,8 @@ WANTLIB +=		atomic
 .endif
 
 .include <bsd.port.mk>
+
+# fix build when ccache is installed but not enabled
+.if ${USE_CCACHE:L} != "yes"
+CONFIGURE_ARGS +=	-DWITH_CCACHE=OFF
+.endif

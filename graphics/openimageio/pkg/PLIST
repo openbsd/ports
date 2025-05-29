@@ -10,10 +10,10 @@
 include/OpenImageIO/
 include/OpenImageIO/Imath.h
 include/OpenImageIO/argparse.h
-include/OpenImageIO/array_view.h
 include/OpenImageIO/atomic.h
 include/OpenImageIO/attrdelegate.h
 include/OpenImageIO/benchmark.h
+include/OpenImageIO/bit.h
 include/OpenImageIO/color.h
 include/OpenImageIO/dassert.h
 include/OpenImageIO/deepdata.h
@@ -40,10 +40,11 @@ include/OpenImageIO/hash.h
 include/OpenImageIO/image_view.h
 include/OpenImageIO/imagebuf.h
 include/OpenImageIO/imagebufalgo.h
+include/OpenImageIO/imagebufalgo_opencv.h
 include/OpenImageIO/imagebufalgo_util.h
 include/OpenImageIO/imagecache.h
 include/OpenImageIO/imageio.h
-include/OpenImageIO/missing_math.h
+include/OpenImageIO/memory.h
 include/OpenImageIO/oiioversion.h
 include/OpenImageIO/optparser.h
 include/OpenImageIO/parallel.h
@@ -53,6 +54,7 @@ include/OpenImageIO/plugin.h
 include/OpenImageIO/refcnt.h
 include/OpenImageIO/simd.h
 include/OpenImageIO/span.h
+include/OpenImageIO/span_util.h
 include/OpenImageIO/strided_ptr.h
 include/OpenImageIO/string_view.h
 include/OpenImageIO/strongparam.h
@@ -67,7 +69,6 @@ include/OpenImageIO/typedesc.h
 include/OpenImageIO/unittest.h
 include/OpenImageIO/unordered_map_concurrent.h
 include/OpenImageIO/ustring.h
-include/OpenImageIO/varyingref.h
 include/OpenImageIO/vecparam.h
 include/OpenImageIO/version.h
 lib/cmake/OpenImageIO/
@@ -91,6 +92,7 @@ lib/python${MODPY_VERSION}/site-packages/OpenImageIO/__init__.py
 share/doc/OpenImageIO/
 share/doc/OpenImageIO/CHANGES-0.x.md
 share/doc/OpenImageIO/CHANGES-1.x.md
+share/doc/OpenImageIO/CHANGES-2.x.md
 share/doc/OpenImageIO/CHANGES.md
 share/doc/OpenImageIO/LICENSE.md
 share/doc/OpenImageIO/THIRD-PARTY.md
