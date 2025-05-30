@@ -326,10 +326,10 @@ MODGO_MODULES =	\
 	github.com/spf13/pflag								 v1.0.6 \
 	github.com/stretchr/objx							 v0.5.0 \
 	github.com/stretchr/testify							 v1.10.0 \
-	github.com/tdewolff/argp							 v0.0.0-20240307141015-960de61a6aa8 \
-	github.com/tdewolff/minify/v2							 v2.20.37 \
-	github.com/tdewolff/parse/v2							 v2.7.15 \
-	github.com/tdewolff/test							 v1.0.11-0.20240106005702-7de5f7df4739 \
+	github.com/tdewolff/argp							 v0.0.0-20250209172303-079abae893fb \
+	github.com/tdewolff/minify/v2							 v2.23.5 \
+	github.com/tdewolff/parse/v2							 v2.8.0 \
+	github.com/tdewolff/test							 v1.0.11 \
 	github.com/tetratelabs/wazero							 v1.9.0 \
 	github.com/ugorji/go/codec							 v1.2.7 \
 	github.com/yuin/goldmark							 v1.7.11 \
@@ -483,6 +483,7 @@ MODGO_MODFILES =	\
 	github.com/frankban/quicktest							 v1.4.1 \
 	github.com/frankban/quicktest							 v1.7.2 \
 	github.com/fsnotify/fsnotify							 v1.7.0 \
+	github.com/fsnotify/fsnotify							 v1.8.0 \
 	github.com/go-gl/glfw/v3.3/glfw							 v0.0.0-20191125211704-12ad95a8df72 \
 	github.com/go-logr/logr								 v1.2.2 \
 	github.com/go-logr/logr								 v1.4.1 \
@@ -589,7 +590,6 @@ MODGO_MODFILES =	\
 	github.com/stretchr/testify							 v1.8.1 \
 	github.com/stretchr/testify							 v1.8.4 \
 	github.com/stretchr/testify							 v1.9.0 \
-	github.com/tdewolff/test							 v1.0.11-0.20231101010635-f1265d231d52 \
 	github.com/yuin/goldmark							 v1.1.25 \
 	github.com/yuin/goldmark							 v1.1.27 \
 	github.com/yuin/goldmark							 v1.1.32 \
