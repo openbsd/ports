@@ -98,7 +98,6 @@
      SUBDIR += tweaks
      SUBDIR += usage
      SUBDIR += user-docs
-     SUBDIR += video-effects
      SUBDIR += weather
      SUBDIR += yelp
      SUBDIR += yelp-tools
