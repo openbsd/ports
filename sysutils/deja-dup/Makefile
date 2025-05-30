@@ -1,7 +1,6 @@
 COMMENT=		simple encrypted backup tool for GNOME
 
-DIST_TUPLE=		gnome World deja-dup 47.0 .
-REVISION=		2
+DIST_TUPLE=		gnome World deja-dup 48.2 .
 
 CATEGORIES=		sysutils
 
@@ -30,6 +29,8 @@ LIB_DEPENDS=		devel/json-glib \
 			devel/libsoup3 \
 			x11/gnome/libsecret \
 			x11/gnome/libadwaita
+
+CONFIGURE_ARGS +=	-Denable_restic=true
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
