@@ -25,7 +25,6 @@ share/gnome-maps/icons/hicolor/16x16/apps/baseball-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/bed-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/bench-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/bicycle-parking-symbolic.svg
-share/gnome-maps/icons/hicolor/16x16/apps/bookmarks-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/bread-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/briefcase-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/brush-symbolic.svg
@@ -118,6 +117,7 @@ share/gnome-maps/icons/hicolor/16x16/apps/share-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/shop-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/shopping-cart-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/smartphone-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/starred-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/steam-train-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/steps-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/subway-symbolic.svg
@@ -133,6 +133,7 @@ share/gnome-maps/icons/hicolor/16x16/apps/train-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/tram-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/tree-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/trolley-bus-symbolic.svg
+share/gnome-maps/icons/hicolor/16x16/apps/unstarred-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/user-trash-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/video-camera-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/walking-symbolic.svg
@@ -141,10 +142,6 @@ share/gnome-maps/icons/hicolor/16x16/apps/wheelchair-limited-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/wheelchair-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/wine-glass-symbolic.svg
 share/gnome-maps/icons/hicolor/16x16/apps/wrench-wide-symbolic.svg
-share/gnome-maps/icons/hicolor/24x24/
-share/gnome-maps/icons/hicolor/24x24/apps/
-share/gnome-maps/icons/hicolor/24x24/apps/user-location-compass.png
-share/gnome-maps/icons/hicolor/24x24/apps/user-location.png
 share/gnome-maps/icons/hicolor/32x32/
 share/gnome-maps/icons/hicolor/32x32/apps/
 share/gnome-maps/icons/hicolor/32x32/apps/maps-direction-continue-symbolic.svg
@@ -247,6 +244,7 @@ share/locale/te/LC_MESSAGES/gnome-maps.mo
 share/locale/tg/LC_MESSAGES/gnome-maps.mo
 share/locale/tr/LC_MESSAGES/gnome-maps.mo
 share/locale/uk/LC_MESSAGES/gnome-maps.mo
+share/locale/uz/LC_MESSAGES/gnome-maps.mo
 share/locale/vi/LC_MESSAGES/gnome-maps.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-maps.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-maps.mo
