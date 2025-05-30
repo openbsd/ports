@@ -1,20 +1,19 @@
 COMMENT =		c++ protocol buffers
 
 CPPMAJOR =		6
-PROTOBUF_VERSION =	31.0
+PROTOBUF_VERSION =	31.1
 
 V =			${CPPMAJOR}.${PROTOBUF_VERSION}
 TAG =			v${PROTOBUF_VERSION:S/rc-/rc/}
 DISTNAME =		protobuf-${PROTOBUF_VERSION}
 PKGNAME =		protobuf-${V:S/-//g}
 DISTFILES =		protobuf-${PROTOBUF_VERSION}.tar.gz
-REVISION =		0
 
 PROTOC_VERSION =	${PROTOBUF_VERSION}.0
 SUBST_VARS +=		PROTOC_VERSION
 
 SHARED_LIBS +=		protobuf-lite	28.0
-SHARED_LIBS +=		protobuf	30.0
+SHARED_LIBS +=		protobuf	31.0
 SHARED_LIBS +=		protoc		32.0
 SHARED_LIBS +=		utf8_range	1.0
 SHARED_LIBS +=		utf8_validity	2.0

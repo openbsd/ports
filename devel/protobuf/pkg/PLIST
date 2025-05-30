@@ -101,6 +101,7 @@ include/google/protobuf/go_features.proto
 include/google/protobuf/has_bits.h
 include/google/protobuf/implicit_weak_message.h
 include/google/protobuf/inlined_string_field.h
+include/google/protobuf/internal_feature_helper.h
 include/google/protobuf/internal_visibility.h
 include/google/protobuf/io/
 include/google/protobuf/io/coded_stream.h
