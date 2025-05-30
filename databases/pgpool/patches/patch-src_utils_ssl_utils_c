@@ -1,21 +1,19 @@
-Fix build with opaque HMAC_CTX in LibreSSL 3.5.
-
-Index: src/watchdog/wd_utils.c
---- src/watchdog/wd_utils.c.orig
-+++ src/watchdog/wd_utils.c
-@@ -154,7 +154,7 @@ static void calculate_hmac_sha256(const char *data, in
+Index: src/utils/ssl_utils.c
+--- src/utils/ssl_utils.c.orig
++++ src/utils/ssl_utils.c
+@@ -221,7 +221,7 @@ calculate_hmac_sha256(const char *data, int len, char 
  	unsigned int res_len = WD_AUTH_HASH_LEN;
- 	HMAC_CTX *ctx = NULL;
+ 	HMAC_CTX   *ctx = NULL;
  
 -#if (OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined (LIBRESSL_VERSION_NUMBER))
 +#if (OPENSSL_VERSION_NUMBER >= 0x10100000L)
  	ctx = HMAC_CTX_new();
  	HMAC_CTX_reset(ctx);
  #else
-@@ -165,7 +165,7 @@ static void calculate_hmac_sha256(const char *data, in
+@@ -233,7 +233,7 @@ calculate_hmac_sha256(const char *data, int len, char 
  	HMAC_Init_ex(ctx, key, strlen(key), EVP_sha256(), NULL);
- 	HMAC_Update(ctx, (unsigned char*)data, len);
- 	HMAC_Final(ctx, (unsigned char*)str, &res_len);
+ 	HMAC_Update(ctx, (unsigned char *) data, len);
+ 	HMAC_Final(ctx, (unsigned char *) str, &res_len);
 -#if (OPENSSL_VERSION_NUMBER >= 0x10100000L && !defined (LIBRESSL_VERSION_NUMBER))
 +#if (OPENSSL_VERSION_NUMBER >= 0x10100000L)
  	HMAC_CTX_reset(ctx);

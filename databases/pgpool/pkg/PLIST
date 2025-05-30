@@ -3,6 +3,9 @@
 @rcscript ${RCDIR}/pgpool
 @bin bin/pcp_attach_node
 @bin bin/pcp_detach_node
+@bin bin/pcp_health_check_stats
+@bin bin/pcp_invalidate_query_cache
+@bin bin/pcp_log_rotate
 @bin bin/pcp_node_count
 @bin bin/pcp_node_info
 @bin bin/pcp_pool_status
@@ -10,12 +13,16 @@
 @bin bin/pcp_proc_info
 @bin bin/pcp_promote_node
 @bin bin/pcp_recovery_node
+@bin bin/pcp_reload_config
 @bin bin/pcp_stop_pgpool
 @bin bin/pcp_watchdog_info
+@bin bin/pg_enc
 @bin bin/pg_md5
 @bin bin/pgpool
 bin/pgpool_setup
+@bin bin/pgproto
 bin/watchdog_setup
+@bin bin/wd_cli
 include/libpcp_ext.h
 include/pcp.h
 include/pool_process_reporting.h
@@ -26,16 +33,21 @@ lib/libpcp.la
 @so lib/postgresql/pgpool-regclass.so
 @man man/man8/pgpool.8
 share/examples/pgpool-II/
+share/examples/pgpool-II/aws_eip_if_cmd.sh.sample
+share/examples/pgpool-II/aws_rtb_if_cmd.sh.sample
+share/examples/pgpool-II/escalation.sh.sample
+share/examples/pgpool-II/failover.sh.sample
+share/examples/pgpool-II/follow_primary.sh.sample
 share/examples/pgpool-II/pcp.conf.sample
 @sample ${SYSCONFDIR}/pcp.conf
 share/examples/pgpool-II/pgpool.conf.sample
 @sample ${SYSCONFDIR}/pgpool.conf
-share/examples/pgpool-II/pgpool.conf.sample-logical
-share/examples/pgpool-II/pgpool.conf.sample-master-slave
-share/examples/pgpool-II/pgpool.conf.sample-replication
-share/examples/pgpool-II/pgpool.conf.sample-stream
+share/examples/pgpool-II/pgpool_remote_start.sample
 share/examples/pgpool-II/pool_hba.conf.sample
 @sample ${SYSCONFDIR}/pool_hba.conf
+share/examples/pgpool-II/recovery_1st_stage.sample
+share/examples/pgpool-II/replication_mode_recovery_1st_stage.sample
+share/examples/pgpool-II/replication_mode_recovery_2nd_stage.sample
 share/pgpool-II/
 share/pgpool-II/insert_lock.sql
 share/pgpool-II/pgpool.pam

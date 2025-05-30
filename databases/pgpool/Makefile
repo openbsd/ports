@@ -1,7 +1,6 @@
 COMMENT= 	connection pool server for PostgreSQL
 
-DISTNAME= 	pgpool-II-3.7.18
-REVISION=	1
+DISTNAME= 	pgpool-II-4.6.0
 
 CATEGORIES= 	databases
 

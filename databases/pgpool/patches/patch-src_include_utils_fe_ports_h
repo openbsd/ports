@@ -1,0 +1,11 @@
+Index: src/include/utils/fe_ports.h
+--- src/include/utils/fe_ports.h.orig
++++ src/include/utils/fe_ports.h
+@@ -28,6 +28,7 @@
+ #error "This file is not expected to be compiled for pgpool utilities only"
+ #endif
+ 
++#include <stdarg.h>
+ #include <stdlib.h>
+ #ifndef FE_PORTS
+ #define FE_PORTS
