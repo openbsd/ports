@@ -90,7 +90,7 @@ share/locale/vi/LC_MESSAGES/gnome-contacts.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-contacts.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-contacts.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-contacts.mo
-share/metainfo/org.gnome.Contacts.appdata.xml
+share/metainfo/org.gnome.Contacts.metainfo.xml
 @tag glib-compile-schemas
 @tag update-desktop-database
 @tag gtk-update-icon-cache %D/share/icons/hicolor
