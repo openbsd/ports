@@ -1533,6 +1533,7 @@ share/locale/et/LC_MESSAGES/gnome-calculator.mo
 share/locale/eu/LC_MESSAGES/gnome-calculator.mo
 share/locale/fa/LC_MESSAGES/gnome-calculator.mo
 share/locale/fi/LC_MESSAGES/gnome-calculator.mo
+share/locale/fil/LC_MESSAGES/gnome-calculator.mo
 share/locale/fo/LC_MESSAGES/gnome-calculator.mo
 share/locale/fr/LC_MESSAGES/gnome-calculator.mo
 share/locale/fur/LC_MESSAGES/gnome-calculator.mo
@@ -1599,11 +1600,11 @@ share/locale/xh/LC_MESSAGES/gnome-calculator.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-calculator.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-calculator.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-calculator.mo
-share/metainfo/org.gnome.Calculator.appdata.xml
-@tag glib-compile-schemas
-@tag update-desktop-database
-@tag gtk-update-icon-cache %D/share/icons/hicolor
+share/metainfo/org.gnome.Calculator.metainfo.xml
 share/vala/vapi/gcalc-2.deps
 share/vala/vapi/gcalc-2.vapi
 share/vala/vapi/gci-1.deps
 share/vala/vapi/gci-1.vapi
+@tag glib-compile-schemas
+@tag update-desktop-database
+@tag gtk-update-icon-cache %D/share/icons/hicolor
