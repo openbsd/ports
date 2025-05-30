@@ -821,11 +821,12 @@ share/locale/th/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/tr/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/ug/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/uk/LC_MESSAGES/gnome-system-monitor.mo
+share/locale/uz/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/vi/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/zh_HK/LC_MESSAGES/gnome-system-monitor.mo
 share/locale/zh_TW/LC_MESSAGES/gnome-system-monitor.mo
-share/metainfo/org.gnome.SystemMonitor.appdata.xml
+share/metainfo/org.gnome.SystemMonitor.metainfo.xml
 share/polkit-1/actions/org.gnome.gnome-system-monitor.policy
 @tag update-desktop-database
 @tag glib-compile-schemas

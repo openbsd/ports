@@ -1,7 +1,7 @@
 COMMENT=		view current processes and monitor system state
 
 GNOME_PROJECT=		gnome-system-monitor
-GNOME_VERSION=		47.1
+GNOME_VERSION=		48.1
 
 CATEGORIES=		sysutils
 
@@ -21,6 +21,8 @@ MODULES=		devel/dconf \
 
 # c++11
 COMPILER =		base-clang ports-gcc
+
+BUILD_DEPENDS=		devel/catch2
 
 LIB_DEPENDS=		devel/libgtop2 \
 			x11/gnome/libadwaita \
