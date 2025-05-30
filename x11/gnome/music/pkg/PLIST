@@ -7,7 +7,7 @@ lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}about.${MODP
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}albumart.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}application.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}artistart.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}asyncqueue.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}asynciolimiter.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}corealbum.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}coreartist.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}coredisc.${MODPY_PYC_MAGIC_TAG}pyc
@@ -16,8 +16,6 @@ lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}coremodel.${
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}coresong.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}coverpaintable.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}embeddedart.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}fileexistsasync.${MODPY_PYC_MAGIC_TAG}pyc
-lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}griloartqueue.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}gstplayer.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}inhibitsuspend.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/${MODPY_PYCACHE}mediaartloader.${MODPY_PYC_MAGIC_TAG}pyc
@@ -40,7 +38,7 @@ lib/python${MODPY_VERSION}/site-packages/gnomemusic/about.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/albumart.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/application.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/artistart.py
-lib/python${MODPY_VERSION}/site-packages/gnomemusic/asyncqueue.py
+lib/python${MODPY_VERSION}/site-packages/gnomemusic/asynciolimiter.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/corealbum.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/coreartist.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/coredisc.py
@@ -49,8 +47,6 @@ lib/python${MODPY_VERSION}/site-packages/gnomemusic/coremodel.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/coresong.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/coverpaintable.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/embeddedart.py
-lib/python${MODPY_VERSION}/site-packages/gnomemusic/fileexistsasync.py
-lib/python${MODPY_VERSION}/site-packages/gnomemusic/griloartqueue.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/grilowrappers/
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/grilowrappers/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/gnomemusic/grilowrappers/${MODPY_PYCACHE}/
@@ -58,9 +54,13 @@ lib/python${MODPY_VERSION}/site-packages/gnomemusic/grilowrappers/${MODPY_PYCACH
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/grilowrappers/${MODPY_PYCACHE}grlsearchwrapper.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/grilowrappers/${MODPY_PYCACHE}grltrackerplaylists.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/grilowrappers/${MODPY_PYCACHE}grltrackerwrapper.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gnomemusic/grilowrappers/${MODPY_PYCACHE}playlist.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gnomemusic/grilowrappers/${MODPY_PYCACHE}smartplaylist.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/grilowrappers/grlsearchwrapper.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/grilowrappers/grltrackerplaylists.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/grilowrappers/grltrackerwrapper.py
+lib/python${MODPY_VERSION}/site-packages/gnomemusic/grilowrappers/playlist.py
+lib/python${MODPY_VERSION}/site-packages/gnomemusic/grilowrappers/smartplaylist.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/gstplayer.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/inhibitsuspend.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/mediaartloader.py
@@ -96,6 +96,7 @@ lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/${MODPY_PYCACHE}__in
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/${MODPY_PYCACHE}albumcover.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/${MODPY_PYCACHE}albumnavigationpage.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/${MODPY_PYCACHE}albumssearchnavigationpage.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/${MODPY_PYCACHE}albumtile.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/${MODPY_PYCACHE}albumwidget.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/${MODPY_PYCACHE}artistalbumswidget.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/${MODPY_PYCACHE}artistnavigationpage.${MODPY_PYC_MAGIC_TAG}pyc
@@ -121,6 +122,7 @@ lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/${MODPY_PYCACHE}twol
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/albumcover.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/albumnavigationpage.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/albumssearchnavigationpage.py
+lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/albumtile.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/albumwidget.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/artistalbumswidget.py
 lib/python${MODPY_VERSION}/site-packages/gnomemusic/widgets/artistnavigationpage.py
@@ -550,6 +552,7 @@ share/locale/he/LC_MESSAGES/org.gnome.Music.mo
 share/locale/hi/LC_MESSAGES/org.gnome.Music.mo
 share/locale/hr/LC_MESSAGES/org.gnome.Music.mo
 share/locale/hu/LC_MESSAGES/org.gnome.Music.mo
+share/locale/ia/LC_MESSAGES/org.gnome.Music.mo
 share/locale/id/LC_MESSAGES/org.gnome.Music.mo
 share/locale/is/LC_MESSAGES/org.gnome.Music.mo
 share/locale/it/LC_MESSAGES/org.gnome.Music.mo
@@ -585,11 +588,12 @@ share/locale/tg/LC_MESSAGES/org.gnome.Music.mo
 share/locale/th/LC_MESSAGES/org.gnome.Music.mo
 share/locale/tr/LC_MESSAGES/org.gnome.Music.mo
 share/locale/uk/LC_MESSAGES/org.gnome.Music.mo
+share/locale/uz/LC_MESSAGES/org.gnome.Music.mo
 share/locale/vi/LC_MESSAGES/org.gnome.Music.mo
 share/locale/zh_CN/LC_MESSAGES/org.gnome.Music.mo
 share/locale/zh_HK/LC_MESSAGES/org.gnome.Music.mo
 share/locale/zh_TW/LC_MESSAGES/org.gnome.Music.mo
-share/metainfo/org.gnome.Music.appdata.xml
+share/metainfo/org.gnome.Music.metainfo.xml
 share/org.gnome.Music/
 share/org.gnome.Music/org.gnome.Music.gresource
 @tag gtk-update-icon-cache %D/share/icons/hicolor
