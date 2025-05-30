@@ -5,6 +5,7 @@ COMMENT-gitwrapper =	invoke an appropriate Git repository server
 COMMENT-sysd =		game of trees system management daemon
 
 V =			0.112
+REVISION-webd =		0
 DISTNAME =		got-${V}
 PKGNAME-server =	gotd-${V}
 PKGNAME-webd =		gotwebd-${V}
