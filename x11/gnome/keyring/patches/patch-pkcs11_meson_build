@@ -1,0 +1,13 @@
+Should match b_lundef in meson(1).
+
+Index: pkcs11/meson.build
+--- pkcs11/meson.build.orig
++++ pkcs11/meson.build
+@@ -1,7 +1,6 @@
+ # We want to make sure our PKCS#11 modules only export C_GetFunctionList and some GModule symbols
+ pkcs11_module_symbolmap = meson.current_source_dir() / 'pkcs11-module.map'
+ pkcs11_module_linkflags = cc.get_supported_link_arguments(
+-  '-Wl,--no-undefined',
+   '-Wl,--version-script,@0@'.format(pkcs11_module_symbolmap),
+ )
+ 
