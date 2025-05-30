@@ -1,10 +1,8 @@
 COMMENT=	Hatch plugin for versioning with your preferred VCS
 
-MODPY_DISTV=	0.4.0
-
+MODPY_DISTV=	0.5.0
 DISTNAME=	hatch_vcs-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	devel
 
