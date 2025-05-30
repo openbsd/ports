@@ -20,7 +20,9 @@ WANTLIB += GL GLU Xi Xmu c gif glut jpeg m png pthread tiff z
 
 MODULES =	devel/cmake
 
-LIB_DEPENDS=	graphics/freeglut \
+BUILD_DEPENDS =	devel/sdl
+
+LIB_DEPENDS =	graphics/freeglut \
 		graphics/giflib \
 		graphics/jpeg \
 		graphics/png \
