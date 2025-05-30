@@ -32,7 +32,8 @@ CONFIGURE_ENV=	ac_cv_header_sys_ucred_h=yes \
 
 FAKE_FLAGS=	defaultsdir=${PREFIX}/share/examples/Thunar
 
-BUILD_DEPENDS =	textproc/gtk-doc
+BUILD_DEPENDS =	devel/gobject-introspection \
+		textproc/gtk-doc
 
 LIB_DEPENDS=	x11/xfce4/exo>=4.19.0 \
 		x11/xfce4/libxfce4ui>=4.17.6 \
