@@ -12,6 +12,8 @@ CATEGORIES=	emulators
 SITES=		https://download.qemu.org/
 EXTRACT_SUFX=	.tar.xz
 
+REVISION-main=	0
+
 HOMEPAGE=	https://www.qemu.org/
 
 MAINTAINER=	Brad Smith <brad@comstyle.com>
@@ -21,7 +23,7 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB=	c glib-2.0 pthread
 WANTLIB-main=	${WANTLIB} SDL2 X11 bz2 cairo capstone curl curses epoxy fdt \
-		gbm gdk-3 gdk_pixbuf-2.0 gio-2.0 gmodule-2.0 gnutls gobject-2.0 \
+		gbm gdk-3 gdk_pixbuf-2.0 gio-2.0 gnutls gobject-2.0 \
 		gtk-3 iconv intl iscsi jpeg lzo2 m nfs pixman-1 png slirp sndio \
 		ssh usb-1.0 util vte-2.91 xkbcommon z zstd
 WANTLIB-ga=	${WANTLIB}
