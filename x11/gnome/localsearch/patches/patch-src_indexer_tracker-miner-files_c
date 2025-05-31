@@ -1,9 +1,9 @@
 XXX Add a gudev option to meson(1)
 
-Index: src/miners/fs/tracker-miner-files.c
---- src/miners/fs/tracker-miner-files.c.orig
-+++ src/miners/fs/tracker-miner-files.c
-@@ -71,7 +71,9 @@ struct TrackerMinerFilesPrivate {
+Index: src/indexer/tracker-miner-files.c
+--- src/indexer/tracker-miner-files.c.orig
++++ src/indexer/tracker-miner-files.c
+@@ -79,7 +79,9 @@ struct _TrackerMinerFilesPrivate {
  	gboolean low_battery_pause;
  	gboolean initial_index;
  
@@ -13,7 +13,7 @@ Index: src/miners/fs/tracker-miner-files.c
  #ifdef HAVE_POWER
  	TrackerPower *power;
  #endif /* HAVE_POWER) */
-@@ -297,7 +299,9 @@ tracker_miner_files_init (TrackerMinerFiles *mf)
+@@ -309,7 +311,9 @@ tracker_miner_files_init (TrackerMinerFiles *mf)
  	priv->finished_handler = g_signal_connect_after (mf, "finished",
  	                                                 G_CALLBACK (miner_finished_cb),
  	                                                 NULL);
@@ -23,7 +23,7 @@ Index: src/miners/fs/tracker-miner-files.c
  }
  
  static void
-@@ -417,7 +421,9 @@ miner_files_finalize (GObject *object)
+@@ -429,7 +433,9 @@ miner_files_finalize (GObject *object)
  #endif /* HAVE_POWER */
  
  	tracker_domain_ontology_unref (priv->domain_ontology);
@@ -33,7 +33,7 @@ Index: src/miners/fs/tracker-miner-files.c
  
  	if (priv->storage) {
  		g_object_unref (priv->storage);
-@@ -1200,8 +1206,10 @@ tracker_miner_files_check_allowed_text_file (TrackerMi
+@@ -1221,8 +1227,10 @@ tracker_miner_files_check_allowed_text_file (TrackerMi
  	return FALSE;
  }
  

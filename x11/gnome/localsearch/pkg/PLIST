@@ -10,11 +10,11 @@ lib/localsearch-3.0/extract-modules/
 @so lib/localsearch-3.0/extract-modules/libextract-dummy.so
 @so lib/localsearch-3.0/extract-modules/libextract-epub.so
 @so lib/localsearch-3.0/extract-modules/libextract-gif.so
-@so lib/localsearch-3.0/extract-modules/libextract-gstreamer.so
 @so lib/localsearch-3.0/extract-modules/libextract-html.so
 @so lib/localsearch-3.0/extract-modules/libextract-icon.so
 @so lib/localsearch-3.0/extract-modules/libextract-iso.so
 @so lib/localsearch-3.0/extract-modules/libextract-jpeg.so
+@so lib/localsearch-3.0/extract-modules/libextract-libav.so
 @so lib/localsearch-3.0/extract-modules/libextract-mp3.so
 @so lib/localsearch-3.0/extract-modules/libextract-msoffice-xml.so
 @so lib/localsearch-3.0/extract-modules/libextract-msoffice.so
@@ -167,12 +167,12 @@ share/localsearch3/extract-rules/11-iso.rule
 share/localsearch3/extract-rules/11-msoffice-xml.rule
 share/localsearch3/extract-rules/15-executable.rule
 share/localsearch3/extract-rules/15-games.rule
-share/localsearch3/extract-rules/15-gstreamer-guess.rule
+share/localsearch3/extract-rules/15-libav-guess.rule
 share/localsearch3/extract-rules/15-playlist.rule
 share/localsearch3/extract-rules/15-text.rule
 share/localsearch3/extract-rules/90-disc-generic.rule
-share/localsearch3/extract-rules/90-gstreamer-audio-generic.rule
-share/localsearch3/extract-rules/90-gstreamer-video-generic.rule
+share/localsearch3/extract-rules/90-libav-audio-generic.rule
+share/localsearch3/extract-rules/90-libav-video-generic.rule
 share/localsearch3/miners/
 share/localsearch3/miners/org.freedesktop.Tracker3.Miner.Files.service
 @tag glib-compile-schemas

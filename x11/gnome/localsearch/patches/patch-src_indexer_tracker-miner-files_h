@@ -1,8 +1,8 @@
 XXX Add a gudev option to meson(1)
 
-Index: src/miners/fs/tracker-miner-files.h
---- src/miners/fs/tracker-miner-files.h.orig
-+++ src/miners/fs/tracker-miner-files.h
+Index: src/indexer/tracker-miner-files.h
+--- src/indexer/tracker-miner-files.h.orig
++++ src/indexer/tracker-miner-files.h
 @@ -21,7 +21,9 @@
  #define __TRACKER_MINER_FS_FILES_H__
  
@@ -13,7 +13,7 @@ Index: src/miners/fs/tracker-miner-files.h
  
  #include "tracker-config.h"
  
-@@ -64,7 +66,9 @@ TrackerStorage * tracker_miner_files_get_storage (Trac
+@@ -45,7 +47,9 @@ TrackerStorage * tracker_miner_files_get_storage (Trac
  gboolean tracker_miner_files_check_allowed_text_file (TrackerMinerFiles *mf,
                                                        GFile             *file);
  
