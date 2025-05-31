@@ -23,7 +23,6 @@
      SUBDIR += desktop
      SUBDIR += devel-docs
      SUBDIR += devhelp
-     SUBDIR += dictionary
      SUBDIR += endeavour
      SUBDIR += eog
      SUBDIR += eog-plugins
@@ -73,7 +72,6 @@
      SUBDIR += notes
      SUBDIR += online-accounts
      SUBDIR += orca
-     SUBDIR += photos
      SUBDIR += polari
      SUBDIR += power-manager
      SUBDIR += py-atspi

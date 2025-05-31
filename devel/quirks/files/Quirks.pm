@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1722 2025/05/30 08:35:20 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1723 2025/05/31 13:46:49 ajacoutot Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1261,6 +1261,8 @@ setup_obsolete_reason(
 	6 => 'py-ipython_genutils',
 # 7.8
 	6 => 'gnome-video-effects',
+	3 => 'gnome-dictionary',
+	3 => 'gnome-photos',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
