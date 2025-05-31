@@ -91,7 +91,6 @@
      SUBDIR += text-editor
      SUBDIR += themes-extra
      SUBDIR += tinysparql
-     SUBDIR += totem
      SUBDIR += totem-pl-parser
      SUBDIR += tour
      SUBDIR += tweaks
