@@ -1,7 +1,6 @@
 COMMENT =		securely transfer data between computers
-REVISION =		1
 
-DIST_TUPLE =		github	magic-wormhole	magic-wormhole	0.18.0	.
+DIST_TUPLE =		github	magic-wormhole	magic-wormhole	0.19.2	.
 
 HOMEPAGE =		https://magic-wormhole.readthedocs.io
 
