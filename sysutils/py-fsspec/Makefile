@@ -1,6 +1,6 @@
 COMMENT=	specification for pythonic filesystems
 
-MODPY_DISTV=	2025.5.0
+MODPY_DISTV=	2025.5.1
 DISTNAME=	fsspec-${MODPY_DISTV}
 PKGNAME=	py-fsspec-${MODPY_DISTV}
 CATEGORIES=	sysutils
