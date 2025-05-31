@@ -3,7 +3,7 @@ libuuid from e2fsprogs does not define UUID_STR_LEN
 Index: src/libedataserver/e-ms-oapxbc.c
 --- src/libedataserver/e-ms-oapxbc.c.orig
 +++ src/libedataserver/e-ms-oapxbc.c
-@@ -42,6 +42,8 @@
+@@ -41,6 +41,8 @@
  #define DBUS_BROKER_PATH "/com/microsoft/identity/broker1"
  #define AUTH_TYPE_OAUTH2 8
  
