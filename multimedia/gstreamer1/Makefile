@@ -9,6 +9,7 @@
     SUBDIR += plugins-good
     SUBDIR += plugins-ugly
     SUBDIR += plugins-bad
+    SUBDIR += plugins-rs
     SUBDIR += py-gstreamer
     SUBDIR += rtsp-server
 
