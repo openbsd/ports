@@ -4,8 +4,8 @@ XXX check for the wordexp function instead of using G_OS_UNIX + push upstream
 Index: src/editor-path.c
 --- src/editor-path.c.orig
 +++ src/editor-path.c
-@@ -25,7 +25,7 @@
- #include <glib.h>
+@@ -26,7 +26,7 @@
+ #include <glib/gi18n.h>
  #include <string.h>
  
 -#ifdef G_OS_UNIX
@@ -13,7 +13,7 @@ Index: src/editor-path.c
  # include <unistd.h>
  # include <wordexp.h>
  #endif
-@@ -35,7 +35,7 @@
+@@ -38,7 +38,7 @@
  char *
  _editor_path_expand (const gchar *path)
  {
