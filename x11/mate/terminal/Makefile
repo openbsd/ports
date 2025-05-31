@@ -2,7 +2,7 @@ COMMENT=		MATE terminal
 
 MATE_PROJECT=		mate-terminal
 MATE_VERSION=		1.28.1
-REVISION=		1
+REVISION=		2
 
 # GPLv3+
 PERMIT_PACKAGE=	Yes
@@ -15,7 +15,7 @@ WANTLIB += gobject-2.0 graphite2 gthread-2.0 gtk-3 harfbuzz hogweed
 WANTLIB += iconv idn2 intl m nettle p11-kit pango-1.0 pangocairo-1.0
 WANTLIB += pangoft2-1.0 pcre2-8 pixman-1 png pthread tasn1
 WANTLIB += unistring vte-2.91 xcb xcb-render xcb-shm z
-WANTLIB += ${COMPILER_LIBCXX} execinfo icudata icuuc jpeg Xau Xdmcp
+WANTLIB += ${COMPILER_LIBCXX} icudata icuuc jpeg Xau Xdmcp
 WANTLIB += atspi dbus-1 lz4 xkbcommon
 WANTLIB += epoll-shim wayland-client wayland-cursor wayland-egl
 
