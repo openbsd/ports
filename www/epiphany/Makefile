@@ -1,7 +1,7 @@
 COMMENT=	GNOME web browser based on webkit
 
 GNOME_PROJECT=	epiphany
-GNOME_VERSION=	47.7
+GNOME_VERSION=	48.3
 
 CATEGORIES=	www
 
@@ -34,9 +34,9 @@ LIB_DEPENDS=	archivers/libarchive \
 RUN_DEPENDS +=	multimedia/gstreamer1/libav
 
 # prevent WebKitWebProcess from crashing due to:
-# WebKit wasn't able to find a WebVTT encoder. Subtitles handling will be
-# degraded unless gst-plugins-bad is installed
-# (can be trigger on https://www.washingtonpost.com/)
+# "WebKit wasn't able to find a WebVTT encoder. Subtitles handling will be
+# degraded unless gst-plugins-bad is installed."
+# (can be triggered on https://www.washingtonpost.com/)
 RUN_DEPENDS +=	multimedia/gstreamer1/plugins-bad
 
 MODULES=	devel/dconf \
