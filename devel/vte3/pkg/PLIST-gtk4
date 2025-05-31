@@ -17,6 +17,9 @@ include/vte-2.91-gtk4/vte/vteversion.h
 lib/girepository-1.0/Vte-3.91.typelib
 @lib lib/libvte-2.91-gtk4.so.${LIBvte-2.91-gtk4_VERSION}
 lib/pkgconfig/vte-2.91-gtk4.pc
+share/applications/org.gnome.Vte.App.Gtk4.desktop
 share/gir-1.0/Vte-3.91.gir
 share/vala/vapi/vte-2.91-gtk4.deps
 share/vala/vapi/vte-2.91-gtk4.vapi
+share/xdg-terminals/org.gnome.Vte.App.Gtk4.desktop
+@tag update-desktop-database

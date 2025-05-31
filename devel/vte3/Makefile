@@ -3,14 +3,14 @@ COMMENT-gtk4=		GTK4 terminal emulation library
 COMMENT-common=		shared files for vte3
 
 GNOME_PROJECT=		vte
-GNOME_VERSION=		0.78.5
+GNOME_VERSION=		0.80.2
 
 PKGNAME-main=		vte3-${GNOME_VERSION}
 PKGNAME-gtk4=		vte3-gtk4-${GNOME_VERSION}
 PKGNAME-common=		vte3-common-${GNOME_VERSION}
 
-SHARED_LIBS += vte-2.91                  2.11 # 0.7800.4
-SHARED_LIBS += vte-2.91-gtk4             0.3 # 0
+SHARED_LIBS += vte-2.91                  2.12 # 0.7800.4
+SHARED_LIBS += vte-2.91-gtk4             0.4 # 0
 
 CATEGORIES=		devel
 
@@ -54,19 +54,21 @@ LIB_DEPENDS-main=	archivers/lz4 \
 			textproc/icu4c \
 			x11/gtk+3
 
-RUN_DEPENDS-main=	${BASE_PKGPATH},-common
+RUN_DEPENDS-main=	${BASE_PKGPATH},-common \
+			${MODGNOME_RUN_DEPENDS}
 
 LIB_DEPENDS-gtk4=	archivers/lz4 \
 			security/gnutls \
 			textproc/icu4c \
 			x11/gtk+4
 
-RUN_DEPENDS-gtk4=	${BASE_PKGPATH},-common
+RUN_DEPENDS-gtk4=	${BASE_PKGPATH},-common \
+			${MODGNOME_RUN_DEPENDS}
 
 LIB_DEPENDS-common=	# empty
 RUN_DEPENDS-common=	# empty
 
-MODGNOME_TOOLS=		gobject-introspection vala
+MODGNOME_TOOLS=		desktop-file-utils gobject-introspection vala
 
 TEST_DEPENDS=		shells/bash
 
