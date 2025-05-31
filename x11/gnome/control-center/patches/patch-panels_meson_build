@@ -3,11 +3,11 @@ wwan needs network-manager
 Index: panels/meson.build
 --- panels/meson.build.orig
 +++ panels/meson.build
-@@ -18,11 +18,11 @@ panels = [
-   'sound',
+@@ -22,11 +22,11 @@ panels = [
    'system',
    'universal-access',
-- 'wwan',
+   'wellbeing',
+-  'wwan',
  ]
  
  if host_is_linux

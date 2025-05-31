@@ -5,6 +5,7 @@
 @pkgpath x11/gnome/controlcenter2
 @pkgpath x11/gnome/controlcenter
 @bin bin/gnome-control-center
+@bin libexec/gnome-control-center-global-shortcuts-provider
 @bin libexec/gnome-control-center-print-renderer
 @bin libexec/gnome-control-center-search-provider
 share/applications/gnome-about-panel.desktop
@@ -28,8 +29,11 @@ share/applications/gnome-sound-panel.desktop
 share/applications/gnome-system-panel.desktop
 share/applications/gnome-universal-access-panel.desktop
 share/applications/gnome-users-panel.desktop
+share/applications/gnome-wellbeing-panel.desktop
 share/applications/org.gnome.Settings.desktop
 share/bash-completion/completions/gnome-control-center
+share/dbus-1/interfaces/org.gnome.GlobalShortcutsRebind.xml
+share/dbus-1/services/org.gnome.Settings.GlobalShortcutsProvider.service
 share/dbus-1/services/org.gnome.Settings.SearchProvider.service
 share/dbus-1/services/org.gnome.Settings.service
 share/gettext/its/gnome-keybindings.its
@@ -79,6 +83,7 @@ share/icons/hicolor/scalable/apps/org.gnome.Settings-privacy-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-region-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-remote-desktop-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-screen-lock-symbolic.svg
+share/icons/hicolor/scalable/apps/org.gnome.Settings-screen-time-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-search-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-secure-shell-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-sharing-symbolic.svg
@@ -88,6 +93,7 @@ share/icons/hicolor/scalable/apps/org.gnome.Settings-thunderbolt-access-symbolic
 share/icons/hicolor/scalable/apps/org.gnome.Settings-time-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-trash-file-history-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings-users-symbolic.svg
+share/icons/hicolor/scalable/apps/org.gnome.Settings-wellbeing-symbolic.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings.Devel.svg
 share/icons/hicolor/scalable/apps/org.gnome.Settings.svg
 share/icons/hicolor/symbolic/apps/org.gnome.Settings-symbolic.svg
@@ -164,6 +170,7 @@ share/locale/hr/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/hu/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/hu/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/hy/LC_MESSAGES/gnome-control-center-2.0.mo
+share/locale/ia/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/id/LC_MESSAGES/gnome-control-center-2.0-timezones.mo
 share/locale/id/LC_MESSAGES/gnome-control-center-2.0.mo
 share/locale/ie/LC_MESSAGES/gnome-control-center-2.0.mo
@@ -274,70 +281,21 @@ share/locale/zu/LC_MESSAGES/gnome-control-center-2.0.mo
 share/metainfo/org.gnome.Settings.appdata.xml
 share/pixmaps/
 share/pixmaps/faces/
-share/pixmaps/faces/astronaut.jpg
-share/pixmaps/faces/baseball.png
 share/pixmaps/faces/bicycle.jpg
 share/pixmaps/faces/book.jpg
-share/pixmaps/faces/butterfly.png
 share/pixmaps/faces/calculator.jpg
-share/pixmaps/faces/cat-eye.jpg
 share/pixmaps/faces/cat.jpg
-share/pixmaps/faces/chess.jpg
-share/pixmaps/faces/coffee.jpg
 share/pixmaps/faces/coffee2.jpg
-share/pixmaps/faces/dice.jpg
-share/pixmaps/faces/energy-arc.jpg
-share/pixmaps/faces/fish.jpg
-share/pixmaps/faces/flake.jpg
-share/pixmaps/faces/flower.jpg
 share/pixmaps/faces/flower2.jpg
 share/pixmaps/faces/gamepad.jpg
-share/pixmaps/faces/grapes.jpg
-share/pixmaps/faces/guitar.jpg
 share/pixmaps/faces/guitar2.jpg
 share/pixmaps/faces/headphones.jpg
 share/pixmaps/faces/hummingbird.jpg
-share/pixmaps/faces/launch.jpg
-share/pixmaps/faces/leaf.jpg
-share/pixmaps/faces/legacy/
-share/pixmaps/faces/legacy/astronaut.jpg
-share/pixmaps/faces/legacy/baseball.png
-share/pixmaps/faces/legacy/butterfly.png
-share/pixmaps/faces/legacy/cat-eye.jpg
-share/pixmaps/faces/legacy/chess.jpg
-share/pixmaps/faces/legacy/coffee.jpg
-share/pixmaps/faces/legacy/dice.jpg
-share/pixmaps/faces/legacy/energy-arc.jpg
-share/pixmaps/faces/legacy/fish.jpg
-share/pixmaps/faces/legacy/flake.jpg
-share/pixmaps/faces/legacy/flower.jpg
-share/pixmaps/faces/legacy/grapes.jpg
-share/pixmaps/faces/legacy/guitar.jpg
-share/pixmaps/faces/legacy/launch.jpg
-share/pixmaps/faces/legacy/leaf.jpg
-share/pixmaps/faces/legacy/lightning.jpg
-share/pixmaps/faces/legacy/penguin.jpg
-share/pixmaps/faces/legacy/puppy.jpg
-share/pixmaps/faces/legacy/sky.jpg
-share/pixmaps/faces/legacy/soccerball.png
-share/pixmaps/faces/legacy/sunflower.jpg
-share/pixmaps/faces/legacy/sunset.jpg
-share/pixmaps/faces/legacy/tennis-ball.png
-share/pixmaps/faces/legacy/yellow-rose.jpg
-share/pixmaps/faces/lightning.jpg
 share/pixmaps/faces/mountain.jpg
-share/pixmaps/faces/penguin.jpg
 share/pixmaps/faces/plane.jpg
-share/pixmaps/faces/puppy.jpg
-share/pixmaps/faces/sky.jpg
-share/pixmaps/faces/soccerball.png
-share/pixmaps/faces/sunflower.jpg
-share/pixmaps/faces/sunset.jpg
 share/pixmaps/faces/surfer.jpg
-share/pixmaps/faces/tennis-ball.png
 share/pixmaps/faces/tomatoes.jpg
 share/pixmaps/faces/tree.jpg
-share/pixmaps/faces/yellow-rose.jpg
 share/pkgconfig/gnome-keybindings.pc
 share/polkit-1/actions/org.gnome.controlcenter.remote-login-helper.policy
 share/polkit-1/actions/org.gnome.controlcenter.remote-session-helper.policy
