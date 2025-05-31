@@ -82,6 +82,7 @@
      SUBDIR += settings-daemon
      SUBDIR += shell
      SUBDIR += shell-extensions
+     SUBDIR += showtime
      SUBDIR += sushi
      SUBDIR += system-monitor
      SUBDIR += tecla
