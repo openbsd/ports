@@ -1,0 +1,55 @@
+Index: Cargo.toml
+--- Cargo.toml.orig
++++ Cargo.toml
+@@ -157,3 +157,51 @@ gst-tag = { package = "gstreamer-tag", git = "https://
+ gst-utils = { package = "gstreamer-utils", git = "https://gitlab.freedesktop.org/gstreamer/gstreamer-rs", branch = "0.23", version = "0.23" }
+ gst-video = { package = "gstreamer-video", git = "https://gitlab.freedesktop.org/gstreamer/gstreamer-rs", branch = "0.23", version = "0.23" }
+ gst-webrtc = { package = "gstreamer-webrtc", git = "https://gitlab.freedesktop.org/gstreamer/gstreamer-rs", branch = "0.23", version = "0.23" }
++
++[patch."https://gitlab.freedesktop.org/gstreamer/gstreamer-rs"]
++gstreamer = {path = "../gstreamer-rs/gstreamer" }
++gstreamer-base = {path = "../gstreamer-rs/gstreamer-base" }
++gstreamer-audio = {path = "../gstreamer-rs/gstreamer-audio" }
++gstreamer-video = {path = "../gstreamer-rs/gstreamer-video" }
++gstreamer-app = {path = "../gstreamer-rs/gstreamer-app" }
++gstreamer-check = {path = "../gstreamer-rs/gstreamer-check" }
++gstreamer-net = {path = "../gstreamer-rs/gstreamer-net" }
++gstreamer-rtp = {path = "../gstreamer-rs/gstreamer-rtp" }
++gstreamer-utils= {path = "../gstreamer-rs/gstreamer-utils" }
++gstreamer-pbutils = {path = "../gstreamer-rs/gstreamer-pbutils" }
++gstreamer-tag = {path = "../gstreamer-rs/gstreamer-tag" }
++gstreamer-sdp = {path = "../gstreamer-rs/gstreamer-sdp" }
++gstreamer-webrtc = {path = "../gstreamer-rs/gstreamer-webrtc" }
++gstreamer-allocators = {path = "../gstreamer-rs/gstreamer-allocators" }
++gstreamer-gl = {path = "../gstreamer-rs/gstreamer-gl" }
++gstreamer-gl-egl = {path = "../gstreamer-rs/gstreamer-gl/egl" }
++gstreamer-gl-wayland = {path = "../gstreamer-rs/gstreamer-gl/wayland" }
++gstreamer-gl-x11 = {path = "../gstreamer-rs/gstreamer-gl/x11" }
++
++[patch."https://github.com/gtk-rs/gtk-rs-core"]
++glib = {path = "../gtk-rs-core/glib" }
++gio = {path = "../gtk-rs-core/gio" }
++cairo-rs = {path = "../gtk-rs-core/cairo" }
++pango = {path = "../gtk-rs-core/pango" }
++pangocairo = {path = "../gtk-rs-core/pangocairo" }
++gdk-pixbuf = {path = "../gtk-rs-core/gdk-pixbuf" }
++graphene-rs = {path = "../gtk-rs-core/graphene" }
++glib-sys = {path = "../gtk-rs-core/glib/sys" }
++gobject-sys = {path = "../gtk-rs-core/glib/gobject-sys" }
++gio-sys = {path = "../gtk-rs-core/gio/sys" }
++cairo-sys-rs = {path = "../gtk-rs-core/cairo/sys" }
++gdk-pixbuf-sys = {path = "../gtk-rs-core/gdk-pixbuf/sys" }
++graphene-sys = {path = "../gtk-rs-core/graphene/sys" }
++pango-sys = {path = "../gtk-rs-core/pango/sys" }
++
++[patch."https://github.com/rust-av/flavors"]
++flavors = {path = "../flavors" }
++
++[patch."https://github.com/gtk-rs/gtk4-rs"]
++gtk4 = {path = "../gtk4-rs/gtk4" }
++gdk4-wayland = {path = "../gtk4-rs/gdk4-wayland" }
++gdk4-x11 = {path = "../gtk4-rs/gdk4-x11" }
++gdk4-win32 = {path = "../gtk4-rs/gdk4-win32" }
++
++[patch."https://github.com/rust-av/ffv1"]
++ffv1 = {path = "../ffv1" }

@@ -1,0 +1,2 @@
+These bindings are providing a safe API that can be used to interface with
+GStreamer, e.g. for writing GStreamer-based applications and GStreamer plugins.
