@@ -2,14 +2,11 @@ COMMENT-main=		GNOME desktop meta-package (core installation)
 COMMENT-extras=		GNOME desktop meta-package (world installation)
 
 # sync with x11/gnome/control-center MAJOR_VERSION
-V=			47
+V=			48
 PKGNAME=		gnome-${V}
 
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
-
-REVISION-main=		3
-REVISION-extras=	1
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -100,14 +97,17 @@ RUN_DEPENDS-main +=	devel/gsettings-desktop-schemas \
 #RUN_DEPENDS-main +=	x11/gnome/initial-setup
 
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core/meta-gnome-core-apps.bst
-RUN_DEPENDS-main +=	x11/gnome/calculator \
+RUN_DEPENDS-main +=	evince-*-!light:graphics/evince \
+			graphics/simple-scan \
+			x11/gnome/baobab \
+			x11/gnome/calculator \
 			x11/gnome/calendar \
 			x11/gnome/characters \
 			x11/gnome/clocks \
+			x11/gnome/connections \
 			x11/gnome/console \
 			x11/gnome/contacts \
 			x11/gnome/decibels \
-			evince-*-!light:graphics/evince \
 			x11/gnome/font-viewer \
 			x11/gnome/maps \
 			x11/gnome/music \
@@ -120,18 +120,15 @@ RUN_DEPENDS-main +=	x11/gnome/calculator \
 
 # should be "loupe"
 RUN_DEPENDS-main +=	x11/gnome/eog
+RUN_DEPENDS-extras +=	x11/gnome/eog-plugins
 
 # in -extras to give users an alternative choice
-RUN_DEPENDS-extras +=	graphics/simple-scan \
-			www/epiphany \
-			x11/gnome/baobab \
-			x11/gnome/connections
+RUN_DEPENDS-extras +=	www/epiphany
 
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core/meta-gnome-core-developer-tools.bst
 RUN_DEPENDS-extras +=	sysutils/dspy \
 			x11/gnome/builder \
-			x11/gnome/dconf-editor \
-			x11/gnome/devhelp
+			x11/gnome/dconf-editor
 
 # https://gitlab.gnome.org/GNOME/gnome-build-meta/blob/master/elements/core/meta-gnome-core-mobile.bst
 #RUN_DEPENDS-extras +=
@@ -144,16 +141,14 @@ RUN_DEPENDS-extras +=	sysutils/dspy \
 ################################################################################
 
 RUN_DEPENDS-extras +=	mail/evolution \
-			x11/gnome/dictionary \
+			x11/gnome/devhelp \
 			x11/gnome/endeavour \
 			x11/gnome/file-roller,-nautilus \
 			x11/gnome/ghex \
 			x11/gnome/gitg \
 			x11/gnome/notes \
-			x11/gnome/photos \
 			x11/gnome/polari \
 			x11/gnome/seahorse \
-			x11/gnome/terminal,-nautilus \
 			x11/gnome/tweaks
 
 # depends on -main
