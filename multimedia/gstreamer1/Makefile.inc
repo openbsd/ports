@@ -23,7 +23,7 @@ HOMEPAGE ?=		http://gstreamer.freedesktop.org/
 
 MAINTAINER ?=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
-# GPLv2 - GPLv2+ - LGPLv2
+# GPLv2 - GPLv2+ - LGPLv2 - Apache
 # docs: BSD - CC-BY-SA-4.0 - LGPLv2.1 - MIT - OPL
 PERMIT_PACKAGE ?=	Yes
 
@@ -42,7 +42,7 @@ CONFIGURE_ENV +=	CPPFLAGS="-I${X11BASE}/include -I${LOCALBASE}/include" \
 			LDFLAGS="-L${X11BASE}/lib -L${LOCALBASE}/lib"
 
 .if ! ${.CURDIR:M*py-gstreamer} && ! ${.CURDIR:M*editing-services} && \
-    ! ${.CURDIR:M*devtools}
+    ! ${.CURDIR:M*devtools} && ! ${.CURDIR:M*plugins-rs}
 CONFIGURE_ARGS +=	-Dpackage-name="OpenBSD ${DISTNAME} package"
 CONFIGURE_ARGS +=	-Dpackage-origin="https://www.openbsd.org/"
 .endif
