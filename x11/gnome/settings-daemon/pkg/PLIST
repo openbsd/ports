@@ -1,8 +1,8 @@
-include/gnome-settings-daemon-47/
-include/gnome-settings-daemon-47/gnome-settings-daemon/
-include/gnome-settings-daemon-47/gnome-settings-daemon/gsd-enums.h
-lib/gnome-settings-daemon-47/
-@so lib/gnome-settings-daemon-47/libgsd.so
+include/gnome-settings-daemon-48/
+include/gnome-settings-daemon-48/gnome-settings-daemon/
+include/gnome-settings-daemon-48/gnome-settings-daemon/gsd-enums.h
+lib/gnome-settings-daemon-48/
+@so lib/gnome-settings-daemon-48/libgsd.so
 lib/pkgconfig/gnome-settings-daemon.pc
 @bin libexec/gsd-a11y-settings
 @bin libexec/gsd-color
@@ -63,6 +63,7 @@ share/examples/gnome-settings-daemon/xdg/autostart/org.gnome.SettingsDaemon.Wwan
 share/examples/gnome-settings-daemon/xdg/autostart/org.gnome.SettingsDaemon.XSettings.desktop
 @sample ${SYSCONFDIR}/xdg/autostart/org.gnome.SettingsDaemon.XSettings.desktop
 share/glib-2.0/schemas/org.gnome.settings-daemon.enums.xml
+share/glib-2.0/schemas/org.gnome.settings-daemon.global-shortcuts.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.peripherals.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.peripherals.wacom.gschema.xml
 share/glib-2.0/schemas/org.gnome.settings-daemon.plugins.color.gschema.xml
@@ -167,6 +168,7 @@ share/locale/th/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/tr/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/ug/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/uk/LC_MESSAGES/gnome-settings-daemon.mo
+share/locale/uz/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/vi/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/wa/LC_MESSAGES/gnome-settings-daemon.mo
 share/locale/xh/LC_MESSAGES/gnome-settings-daemon.mo
