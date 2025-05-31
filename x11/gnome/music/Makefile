@@ -13,7 +13,8 @@ MODULES=		devel/dconf \
 			lang/python \
 			x11/gnome
 
-MODGNOME_TOOLS=		desktop-file-utils yelp gtk-update-icon-cache
+MODGNOME_TOOLS=		desktop-file-utils yelp gtk-update-icon-cache \
+			gobject-introspection
 
 MODGNOME_LDFLAGS=	-L${X11BASE}/lib
 
