@@ -1,4 +1,3 @@
-@conflict totem-<3.32.0
 @bin bin/nautilus
 @bin bin/nautilus-autorun-software
 include/nautilus/
