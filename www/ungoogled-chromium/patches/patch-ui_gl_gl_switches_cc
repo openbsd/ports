@@ -19,7 +19,7 @@ Index: ui/gl/gl_switches.cc
    angle::SystemInfo system_info;
    {
      GPU_STARTUP_TRACE_EVENT("angle::GetSystemInfoVulkan");
-@@ -372,7 +372,7 @@ bool IsDefaultANGLEVulkan() {
+@@ -388,7 +388,7 @@ bool IsDefaultANGLEVulkan() {
    }
  #endif  // BUILDFLAG(IS_ANDROID)
  

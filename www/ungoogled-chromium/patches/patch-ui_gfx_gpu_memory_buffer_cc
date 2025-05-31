@@ -1,7 +1,7 @@
 Index: ui/gfx/gpu_memory_buffer.cc
 --- ui/gfx/gpu_memory_buffer.cc.orig
 +++ ui/gfx/gpu_memory_buffer.cc
-@@ -108,7 +108,7 @@ GpuMemoryBufferHandle GpuMemoryBufferHandle::Clone() c
+@@ -131,7 +131,7 @@ GpuMemoryBufferHandle GpuMemoryBufferHandle::Clone() c
    handle.id = id;
    handle.offset = offset;
    handle.stride = stride;

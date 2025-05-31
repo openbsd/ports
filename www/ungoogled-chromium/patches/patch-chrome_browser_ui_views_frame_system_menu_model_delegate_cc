@@ -19,7 +19,7 @@ Index: chrome/browser/ui/views/frame/system_menu_model_delegate.cc
    if (command_id == IDC_USE_SYSTEM_TITLE_BAR) {
      PrefService* prefs = browser_->profile()->GetPrefs();
      return !prefs->GetBoolean(prefs::kUseCustomChromeFrame);
-@@ -59,7 +59,7 @@ bool SystemMenuModelDelegate::IsCommandIdEnabled(int c
+@@ -65,7 +65,7 @@ bool SystemMenuModelDelegate::IsCommandIdEnabled(int c
  }
  
  bool SystemMenuModelDelegate::IsCommandIdVisible(int command_id) const {
