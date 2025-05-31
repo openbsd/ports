@@ -14,6 +14,6 @@ Index: remoting/host/base/switches.h
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- // Used to record client sessions to utmp/wtmp.
- extern const char kEnableUtempter[];
+ // Used to record client sessions to wtmpd.
+ extern const char kEnableWtmpdb[];
  #endif

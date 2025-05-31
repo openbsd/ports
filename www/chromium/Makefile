@@ -10,8 +10,7 @@ DPB_PROPERTIES+=	lonesome
 
 COMMENT=		Chromium browser
 
-V=			136.0.7103.113
-REVISION=		0
+V=			137.0.7151.55
 
 DISTNAME=		chromium-${V}
 
@@ -50,16 +49,14 @@ MODPY_RUNDEP=		No
 COMPILER=		ports-clang
 
 # uses pledge()
-WANTLIB+=	GL X11 Xau Xcomposite Xdamage Xdmcp Xext Xfixes Xft Xi Xrandr
-WANTLIB+=	Xrender Xtst aom atk-1.0 atk-bridge-2.0 atspi c cairo
-WANTLIB+=	cbor crypto cups dav1d dbus-1 drm event execinfo expat ffi fido2
-WANTLIB+=	fontconfig freetype fribidi gbm gio-2.0 glib-2.0 gmodule-2.0
-WANTLIB+=	gobject-2.0 graphite2 gthread-2.0 harfbuzz harfbuzz-gobject
-WANTLIB+=	harfbuzz-subset iconv icudata icui18n icuuc intl jpeg kvm m
-WANTLIB+=	nspr4 nss3 nssutil3 openh264 opus pango-1.0 pangocairo-1.0
-WANTLIB+=	pangoft2-1.0 pcre2-8 pixman-1 plc4 plds4 png pthread pthread smime3
-WANTLIB+=	sndio usbhid util vpx xcb xcb-render xcb-shm xkbcommon xml2
-WANTLIB+=	xshmfence xslt z
+WANTLIB+=	GL X11 Xcomposite Xdamage Xext Xfixes Xi Xrandr Xrender Xtst
+WANTLIB+=	aom atk-1.0 atk-bridge-2.0 atspi c cairo cbor crypto cups
+WANTLIB+=	dav1d dbus-1 drm epoll-shim execinfo expat fido2 fontconfig
+WANTLIB+=	gbm gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0 gthread-2.0
+WANTLIB+=	harfbuzz harfbuzz-subset icudata icui18n icuuc intl jpeg kvm
+WANTLIB+=	m nspr4 nss3 nssutil3 openh264 opus pango-1.0 pangocairo-1.0
+WANTLIB+=	plc4 plds4 png pthread pthread smime3 sndio udev usbhid util
+WANTLIB+=	vpx xcb xkbcommon xml2 xshmfence xslt z
 
 RUN_DEPENDS=	devel/xdg-utils \
 		devel/desktop-file-utils \
@@ -181,11 +178,11 @@ GN_ARGS=	enable_nacl=false \
 		use_custom_libcxx=true \
 		use_custom_libunwind=true \
 		use_udev=true \
+		v8_enable_cet_ibt=true \
 		use_qt5=true \
 		use_qt6=true \
 		moc_qt5_path=\"${MODQT5_MOC}\" \
-		moc_qt6_path=\"${MODQT6_MOC}\" \
-		v8_enable_cet_ibt=true
+		moc_qt6_path=\"${MODQT6_MOC}\"
 
 # rust
 RUSTC_VERSION!!=rustc -V

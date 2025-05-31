@@ -1,7 +1,7 @@
 Index: components/media_router/common/media_source.cc
 --- components/media_router/common/media_source.cc.orig
 +++ components/media_router/common/media_source.cc
-@@ -62,7 +62,7 @@ bool IsSystemAudioCaptureSupported() {
+@@ -58,7 +58,7 @@ bool IsSystemAudioCaptureSupported() {
    if (!media::IsSystemLoopbackCaptureSupported()) {
      return false;
    }
