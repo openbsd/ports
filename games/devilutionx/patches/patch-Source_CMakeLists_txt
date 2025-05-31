@@ -5,7 +5,7 @@ asio is a header-only library...
 Index: Source/CMakeLists.txt
 --- Source/CMakeLists.txt.orig
 +++ Source/CMakeLists.txt
-@@ -166,7 +166,6 @@ set(libdevilutionx_SRCS
+@@ -168,7 +168,6 @@ set(libdevilutionx_SRCS
    utils/utf8.cpp)
  
  if(SUPPORTS_MPQ)
@@ -13,7 +13,7 @@ Index: Source/CMakeLists.txt
    list(APPEND libdevilutionx_SRCS
      mpq/mpq_reader.cpp
      mpq/mpq_sdl_rwops.cpp
-@@ -260,21 +259,13 @@ target_link_libraries(libdevilutionx PUBLIC
+@@ -266,21 +265,13 @@ target_link_libraries(libdevilutionx PUBLIC
    Threads::Threads
    DevilutionX::SDL
    fmt::fmt

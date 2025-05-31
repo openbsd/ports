@@ -4,7 +4,7 @@ CATEGORIES =	games x11
 
 GH_ACCOUNT =	diasurgical
 GH_PROJECT =	devilutionX
-GH_TAGNAME =	1.5.3
+GH_TAGNAME =	1.5.4
 
 MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 
@@ -60,6 +60,9 @@ FIX_CRLF_FILES =	3rdParty/libsmackerdec/CMakeLists.txt \
 			CMake/Dependencies.cmake \
 			Source/CMakeLists.txt \
 			Source/storm/storm_svid.cpp
+
+post-extract:
+	mv ${WRKDIR}/DevilutionX-${GH_TAGNAME} ${WRKDIR}/${DISTNAME}
 
 # No install target
 do-install:
