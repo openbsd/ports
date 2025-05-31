@@ -10,7 +10,7 @@ MODULES=		devel/meson \
 			lang/python \
 			x11/gnome
 
-MODGNOME_TOOLS= 	gtk-update-icon-cache yelp
+MODGNOME_TOOLS= 	gtk-update-icon-cache gobject-introspection yelp
 
 BUILD_DEPENDS=		devel/py-gobject3 \
 			x11/gnome/py-atspi \
