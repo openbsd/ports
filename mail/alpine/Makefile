@@ -7,30 +7,29 @@ COMMENT-pilot=		UW file system navigator
 FIX_EXTRACT_PERMISSIONS =	Yes
 
 V=			2.26
-DISTNAME=		alpine-${V}
-EXTRACT_SUFX=		.tar.xz
-
-SHARED_LIBS=		c-client 10.0
-
-# grep "PICO version" ${WRKSRC}/pico/pico.h
-PICO_V=			5.09
-# grep PILOT_VERSION ${WRKSRC}/pico/pilot.c
-PILOT_V=		2.99
-
-REVISION-main=		1
-REVISION-c-client=	0
-REVISION-imap=		0
-REVISION-mailutil=	0
-
-REVISION-pico=		26
-REVISION-pilot=		26
-
 PKGNAME-main=		alpine-${V}
 PKGNAME-c-client=	c-client-${V}
 PKGNAME-imap=		imap-uw-${V}
 PKGNAME-mailutil=	mailutil-uw-${V}
+REVISION-main=		2
+REVISION-c-client=	0
+REVISION-imap=		0
+REVISION-mailutil=	0
+
+# grep "PICO version" ${WRKSRC}/pico/pico.h
+PICO_V=			5.09
 PKGNAME-pico=		pico-${PICO_V}
+REVISION-pico=		26
+
+# grep PILOT_VERSION ${WRKSRC}/pico/pilot.c
+PILOT_V=		2.99
 PKGNAME-pilot=		pilot-${PILOT_V}
+REVISION-pilot=		26
+
+DISTNAME=		alpine-${V}
+EXTRACT_SUFX=		.tar.xz
+
+SHARED_LIBS=		c-client 10.0
 
 EPOCH-c-client=		0
 EPOCH-imap=		0
@@ -99,8 +98,13 @@ post-install:
 		${WRKSRC}/doc/mailcap.unx \
 		${WRKSRC}/doc/mime.types \
 		${PREFIX}/share/doc/alpine
-	${WRKBUILD}/alpine/alpine -conf > \
+	# change default to use smtp rather than sendmail (smtpd incompatibility)
+	${WRKBUILD}/alpine/alpine -conf | sed \
+		's/^smtp-server=$$/smtp-server=localhost/' > \
 		${PREFIX}/share/examples/alpine/pine.conf
+	grep -q 'smtp-server=localhost' \
+		${PREFIX}/share/examples/alpine/pine.conf \
+		|| exit 1 # verify that sed was successful
 	# c-client
 	# the relevant os_*.h is copied to osdep.h in build; others not needed
 	# XXX unsure if linkage.c actually needed
