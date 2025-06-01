@@ -1,9 +1,8 @@
 COMMENT=		play audio files
 
 DIST_TUPLE=		gnome GNOME decibels 48.0 .
-DIST_TUPLE +=		gnome BrainBlasted gi-typescript-definitions fdab5faa8f92b65407744a302bb8e1fab979bd94 gi-types
-# XXX GNOME 48
-#DIST_TUPLE +=		gnome BrainBlasted gi-typescript-definitions 689f364e13cd52e7f603c6eb464f553b98d6393f gi-types
+DIST_TUPLE +=		gnome BrainBlasted gi-typescript-definitions dbbaa0527556cd3ce5434c4a5072cd99348eff7a gi-types
+REVISION=		0
 
 CATEGORIES=		audio multimedia
 
@@ -28,13 +27,5 @@ RUN_DEPENDS=		devel/py-gobject3 \
 			multimedia/gstreamer1/plugins-good \
 			x11/gnome/gjs \
 			x11/gnome/libadwaita
-
-# XXX enforced in meson.build:
-# gnome.post_install(
-#   gtk_update_icon_cache: true,
-#   update_desktop_database: true,
-# )
-BUILD_DEPENDS +=		devel/desktop-file-utils \
-				x11/gtk+4,-guic
 
 .include <bsd.port.mk>
