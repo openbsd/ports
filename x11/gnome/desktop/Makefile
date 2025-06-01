@@ -8,9 +8,9 @@ GNOME_VERSION=		44.3
 PKGNAME-gtk4=		gnome-desktop4-${GNOME_VERSION}
 PKGNAME-common=		gnome-desktop-common-${GNOME_VERSION}
 
-SHARED_LIBS += gnome-desktop-4           0.0 # 2.1.1
-SHARED_LIBS += gnome-bg-4                0.0 # 2.1.1
-SHARED_LIBS += gnome-rr-4                0.0 # 2.1.1
+SHARED_LIBS += gnome-desktop-4           0.0 # 2.1.3
+SHARED_LIBS += gnome-bg-4                0.0 # 2.1.3
+SHARED_LIBS += gnome-rr-4                0.0 # 2.1.3
 SHARED_LIBS += gnome-desktop-3           2.3 # 20.0.0
 
 CATEGORIES=		x11
