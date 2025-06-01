@@ -1,7 +1,7 @@
 COMMENT=	high-performance and extensible DHCP server engine from ISC
 
 VERSION=	2.4.2
-REVISION=	0
+REVISION=	1
 PORTROACH=	limitw:1,even
 
 # 2.6 update notes so far;
