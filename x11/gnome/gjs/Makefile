@@ -7,9 +7,9 @@ USE_NOBTCFI=		Yes
 COMMENT=		Javascript bindings for GNOME
 
 GNOME_PROJECT=		gjs
-GNOME_VERSION=		1.82.3
+GNOME_VERSION=		1.84.2
 
-SHARED_LIBS += gjs                       6.3 # 0.0.0
+SHARED_LIBS += gjs                       6.4 # 0.0.0
 
 CATEGORIES=		devel
 
@@ -33,10 +33,13 @@ LIB_DEPENDS=		devel/gobject-introspection \
 			devel/spidermonkey128 \
 			graphics/cairo
 
-# --with-dbus-tests
+# needed for tests: skip_dbus_tests is set to false by default
 BUILD_DEPENDS +=	x11/dbus
 
-CONFIGURE_ARGS =	-Dprofiler=disabled \
+TEST_DEPENDS=		x11/gtk+3 \
+			x11/gtk+4
+
+CONFIGURE_ARGS=		-Dprofiler=disabled \
 			-Dinstalled_tests=false
 
 post-install:

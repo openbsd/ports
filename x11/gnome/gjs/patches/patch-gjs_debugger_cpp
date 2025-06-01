@@ -6,7 +6,7 @@ which unhides it?
 Index: gjs/debugger.cpp
 --- gjs/debugger.cpp.orig
 +++ gjs/debugger.cpp
-@@ -7,10 +7,6 @@
+@@ -7,11 +7,6 @@
  #include <stdint.h>
  #include <stdio.h>  // for feof, fflush, fgets, stdin, stdout
  
@@ -14,16 +14,16 @@ Index: gjs/debugger.cpp
 -#    include <readline/history.h>
 -#    include <readline/readline.h>
 -#endif
- 
+-
  #include <glib.h>
  
-@@ -32,6 +28,12 @@
- #include "gjs/jsapi-util-args.h"
+ #include <js/CallArgs.h>
+@@ -34,6 +29,11 @@
  #include "gjs/jsapi-util.h"
  #include "gjs/macros.h"
+ #include "gjs/module.h"
 +
 +#ifdef HAVE_READLINE_READLINE_H
-+#    include <wchar.h>
 +#    include <readline/history.h>
 +#    include <readline/readline.h>
 +#endif
