@@ -9,7 +9,7 @@ Index: ext/os/lib.rs
  use std::sync::atomic::AtomicI32;
  use std::sync::atomic::Ordering;
  use std::sync::Arc;
-@@ -115,7 +116,8 @@ pub enum OsError {
+@@ -116,7 +117,8 @@ pub enum OsError {
  #[op2(stack_trace)]
  #[string]
  fn op_exec_path(state: &mut OpState) -> Result<String, OsError> {

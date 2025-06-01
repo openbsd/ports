@@ -6,7 +6,7 @@ DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
 
-VERSION =		2.3.3
+VERSION =		2.3.5
 HOMEPAGE =		https://deno.com/runtime
 
 DISTNAME =		deno-${VERSION}
@@ -76,7 +76,7 @@ WRKDIST =		${WRKDIR}/deno
 PORTHOME =		${WRKSRC}
 
 DENO_CORE_ICUDATA_V =	0.74.0
-DENO_TS_V =		0.20.2
+DENO_TS_V =		0.24.0
 V8_CARGO_V =		137.1.0
 
 V8_DISTDIR =		${MODCARGO_VENDOR_DIR}/v8-${V8_CARGO_V}
