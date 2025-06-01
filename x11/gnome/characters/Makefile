@@ -1,3 +1,5 @@
+BROKEN =		undefined symbol: gc_search_error_get_type
+
 COMMENT =		GNOME utility to insert unusual characters
 
 GNOME_PROJECT =		gnome-characters
