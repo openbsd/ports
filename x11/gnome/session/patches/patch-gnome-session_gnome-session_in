@@ -1,0 +1,14 @@
+XXX push upstream
+
+Index: gnome-session/gnome-session.in
+--- gnome-session/gnome-session.in.orig
++++ gnome-session/gnome-session.in
+@@ -7,7 +7,7 @@ if [ "x$XDG_SESSION_TYPE" = "xwayland" ] &&
+    ! (echo "$SHELL" | grep -q "false") &&
+    ! (echo "$SHELL" | grep -q "nologin"); then
+   if [ "$1" != '-l' ]; then
+-    exec bash -c "exec -l '$SHELL' -c 'exec $0 -l $*'"
++    exec sh -c "exec -l '$SHELL' -c 'exec $0 -l $*'"
+   else
+     shift
+   fi

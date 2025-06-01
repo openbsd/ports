@@ -50,7 +50,7 @@ Index: gnome-session/main.c
                  { "autostart", 'a', 0, G_OPTION_ARG_STRING_ARRAY, &override_autostart_dirs, N_("Override standard autostart directories"), N_("AUTOSTART_DIR") },
                  { "session", 0, 0, G_OPTION_ARG_STRING, &opt_session_name, N_("Session to use"), N_("SESSION_NAME") },
                  { "debug", 0, 0, G_OPTION_ARG_NONE, &debug, N_("Enable debugging code"), NULL },
-@@ -553,6 +562,7 @@ main (int argc, char **argv)
+@@ -558,6 +567,7 @@ main (int argc, char **argv)
           * journald picks ups the nicer "gnome-session" as the program
           * name instead of whatever shell script GDM happened to use.
           */
@@ -58,7 +58,7 @@ Index: gnome-session/main.c
          if (!debug) {
                  int journalfd;
  
-@@ -562,6 +572,7 @@ main (int argc, char **argv)
+@@ -567,6 +577,7 @@ main (int argc, char **argv)
                          dup2(journalfd, 2);
                  }
          }
