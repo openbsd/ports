@@ -1,7 +1,7 @@
 Index: src/Application.cpp
 --- src/Application.cpp.orig
 +++ src/Application.cpp
-@@ -241,8 +241,8 @@ namespace {
+@@ -235,8 +235,8 @@ namespace {
           path += "../data/";
        } else {
  
