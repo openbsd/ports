@@ -1,6 +1,6 @@
 COMMENT =		interactive intercepting HTTP proxy
 
-MODPY_DISTV =		12.0.1
+MODPY_DISTV =		12.1.1
 
 DISTNAME =		mitmproxy-${MODPY_DISTV}
 
@@ -40,6 +40,7 @@ RUN_DEPENDS =		www/py-aioquic \
 			textproc/py-ruamel.yaml \
 			devel/py-sortedcontainers \
 			www/py-tornado \
+			devel/py-typing-extensions \
 			devel/py-urwid \
 			net/py-wsproto \
 			net/py-publicsuffix2 \
