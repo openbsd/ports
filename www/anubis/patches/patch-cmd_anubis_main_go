@@ -1,0 +1,68 @@
+Index: cmd/anubis/main.go
+--- cmd/anubis/main.go.orig
++++ cmd/anubis/main.go
+@@ -37,6 +37,31 @@ import (
+ 	"github.com/prometheus/client_golang/prometheus/promhttp"
+ )
+ 
++// #include <unistd.h>
++// #include <stdlib.h>
++import "C"
++import "unsafe"
++
++func unveil(path string, permissions string) {
++	if path == "" && permissions == "" {
++		ret, err := C.unveil(nil, nil)
++		if ret == -1 {
++			log.Fatalf("unveil(NULL, NULL) failed: %s", err)
++		}
++		return
++	}
++
++	cpath := C.CString(path)
++	cpermissions := C.CString(permissions)
++	defer C.free(unsafe.Pointer(cpath))
++	defer C.free(unsafe.Pointer(cpermissions))
++
++	ret, err := C.unveil(cpath, cpermissions)
++	if ret == -1 {
++		log.Fatalf("unveil(%s, %s) failed: %s", path, permissions, err)
++	}
++}
++
+ var (
+ 	basePrefix               = flag.String("base-prefix", "", "base prefix (root URL) the application is served under e.g. /myapp")
+ 	bind                     = flag.String("bind", ":8923", "network address to bind HTTP to")
+@@ -335,6 +360,32 @@ func main() {
+ 			log.Printf("cannot shut down: %v", err)
+ 		}
+ 	}()
++
++	bindUnix := *bindNetwork == "unix"
++	metricsBindUnix := *metricsBindNetwork == "unix"
++	targetUnix := strings.HasPrefix(*target, "unix://")
++	targetIP := net.ParseIP(*target) != nil
++	if bindUnix {
++		unveil(*bind, "c")
++	}
++	if metricsBindUnix {
++		unveil(*metricsBind, "c")
++	}
++	if targetUnix {
++		unveil(strings.TrimPrefix(*target, "unix://"), "rw")
++	}
++	if !targetUnix && !targetIP {
++		rpaths := []string{
++			"/etc/resolv.conf",
++			"/etc/hosts",
++			"/etc/ssl/openssl.cnf",
++			"/etc/ssl/cert.pem",
++		}
++		for _, rpath := range rpaths {
++			unveil(rpath, "r")
++		}
++	}
++	unveil("", "")
+ 
+ 	if err := srv.Serve(listener); !errors.Is(err, http.ErrServerClosed) {
+ 		log.Fatal(err)
