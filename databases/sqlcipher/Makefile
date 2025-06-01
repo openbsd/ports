@@ -1,41 +1,46 @@
-COMMENT =	encrypted SQLite database
+COMMENT=	encrypted SQLite database
 
-GH_ACCOUNT =	sqlcipher
-GH_PROJECT =	sqlcipher
-GH_TAGNAME =	v4.9.0
+GH_ACCOUNT=	sqlcipher
+GH_PROJECT=	sqlcipher
+GH_TAGNAME=	v4.9.0
 
 SHARED_LIBS +=  sqlcipher                 3.0 # 8.6
 
-CATEGORIES =	databases
+CATEGORIES=	databases
 
-HOMEPAGE =	https://www.zetetic.net/sqlcipher/
+HOMEPAGE=	https://www.zetetic.net/sqlcipher/
 
 # PD and BSD
-PERMIT_PACKAGE =	Yes
+PERMIT_PACKAGE=	Yes
 
-WANTLIB +=		c crypto curses m pthread readline z
+WANTLIB += c crypto curses m pthread readline z
 
-CONFIGURE_STYLE =	simple
+DEBUG_PACKAGES=	${BUILD_PACKAGES}
 
-CONFIGURE_ARGS +=	--disable-tcl \
-			--includedir=${PREFIX}/include/sqlcipher \
-			--mandir=${PREFIX}/man \
-			--soname=${LIBsqlcipher_VERSION} \
-			--with-tempstore=yes
-CONFIGURE_ENV +=	LDFLAGS='${LDFLAGS}' 
+MODULES=	lang/tcl
+MODTCL_VERSION=	8.6
 
-NO_TEST =		Yes
+BUILD_DEPENDS=	${MODTCL_BUILD_DEPENDS}
 
-CFLAGS +=		-DOMIT_MEMLOCK \
-			-DSQLITE_EXTRA_INIT=sqlcipher_extra_init \
-			-DSQLITE_EXTRA_SHUTDOWN=sqlcipher_extra_shutdown \
-			-DSQLITE_HAS_CODEC
+CONFIGURE_STYLE= simple
 
-LDFLAGS +=		-lcrypto
+CONFIGURE_ARGS=	--soname=${LIBsqlcipher_VERSION} \
+		--disable-tcl \
+		--includedir=${PREFIX}/include/sqlcipher \
+		--mandir=${PREFIX}/man \
+		--with-tempstore=yes
 
-MODULES =		lang/tcl
-MODTCL_VERSION =	8.6
-BUILD_DEPENDS =		${MODTCL_BUILD_DEPENDS}
+CONFIGURE_ENV=	CCACHE=None \
+		CFLAGS='${CFLAGS}' \
+		LDFLAGS='${LDFLAGS}' \
+		autosetup_tclsh=${MODTCL_BIN}
+
+CFLAGS+=	-DOMIT_MEMLOCK \
+		-DSQLITE_EXTRA_INIT=sqlcipher_extra_init \
+		-DSQLITE_EXTRA_SHUTDOWN=sqlcipher_extra_shutdown \
+		-DSQLITE_HAS_CODEC
+
+LDFLAGS+=	-lcrypto
 
 post-install:
 	mv ${PREFIX}/bin/{sqlite3,sqlcipher}
@@ -46,5 +51,7 @@ post-install:
 	mv ${PREFIX}/lib/pkgconfig/{sqlite3,sqlcipher}.pc
 	mv ${PREFIX}/man/man1/{sqlite3,sqlcipher}.1
 	sed -i s/-lsqlite3/-lsqlcipher/ ${PREFIX}/lib/pkgconfig/sqlcipher.pc
+
+NO_TEST=	Yes
 
 .include <bsd.port.mk>
