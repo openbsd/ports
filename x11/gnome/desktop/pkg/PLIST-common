@@ -276,6 +276,9 @@ share/locale/fa/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/fi/
 share/locale/fi/LC_MESSAGES/
 share/locale/fi/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/fil/
+share/locale/fil/LC_MESSAGES/
+share/locale/fil/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/fr/
 share/locale/fr/LC_MESSAGES/
 share/locale/fr/LC_MESSAGES/gnome-desktop-3.0.mo
@@ -315,6 +318,9 @@ share/locale/hu/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/hy/
 share/locale/hy/LC_MESSAGES/
 share/locale/hy/LC_MESSAGES/gnome-desktop-3.0.mo
+share/locale/ia/
+share/locale/ia/LC_MESSAGES/
+share/locale/ia/LC_MESSAGES/gnome-desktop-3.0.mo
 share/locale/id/
 share/locale/id/LC_MESSAGES/
 share/locale/id/LC_MESSAGES/gnome-desktop-3.0.mo

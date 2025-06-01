@@ -3,14 +3,10 @@ COMMENT-gtk4=		common API for various GNOME modules (GTK4)
 COMMENT-common=		common API for various GNOME modules (common files)
 
 GNOME_PROJECT=		gnome-desktop
-GNOME_VERSION=		44.1
+GNOME_VERSION=		44.3
 
 PKGNAME-gtk4=		gnome-desktop4-${GNOME_VERSION}
 PKGNAME-common=		gnome-desktop-common-${GNOME_VERSION}
-
-REVISION-common=	1
-REVISION-gtk4=		2
-REVISION-main=		2
 
 SHARED_LIBS += gnome-desktop-4           0.0 # 2.1.1
 SHARED_LIBS += gnome-bg-4                0.0 # 2.1.1
