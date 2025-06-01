@@ -19,4 +19,7 @@ MODULES=	devel/meson
 CONFIGURE_ARGS=	-Dpcap-tests=disabled \
 		-Ddoc=disabled
 
+pre-test:
+	sed -i 's/ps -e | grep -q /ps -p /' ${WRKSRC}/test/rtpw_test{,_gcm}.sh
+
 .include <bsd.port.mk>
