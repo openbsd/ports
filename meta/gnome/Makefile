@@ -8,6 +8,8 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
+REVISION-main=		0
+
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
 HOMEPAGE=		https://www.gnome.org/
@@ -112,9 +114,9 @@ RUN_DEPENDS-main +=	evince-*-!light:graphics/evince \
 			x11/gnome/maps \
 			x11/gnome/music \
 			x11/gnome/nautilus \
+			x11/gnome/showtime \
 			x11/gnome/system-monitor \
 			x11/gnome/text-editor \
-			x11/gnome/totem \
 			x11/gnome/weather \
 			x11/gnome/yelp
 
