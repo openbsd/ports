@@ -8,7 +8,7 @@ PKGNAME=		gnome-${V}
 PKGNAME-main=		gnome-${V}
 PKGNAME-extras=		gnome-extras-${V}
 
-REVISION-main=		0
+REVISION-main=		1
 
 MAINTAINER=		Antoine Jacoutot <ajacoutot@openbsd.org>
 
@@ -155,5 +155,10 @@ RUN_DEPENDS-extras +=	mail/evolution \
 
 # depends on -main
 RUN_DEPENDS-extras +=	STEM-=${V}:${BASE_PKGPATH},-main
+
+do-install:
+	${INSTALL_DATA_DIR} ${PREFIX}/share/applications/
+	${INSTALL_DATA} ${FILESDIR}/gnome-mimeapps.list.in \
+		${PREFIX}/share/applications/gnome-mimeapps.list
 
 .include <bsd.port.mk>

@@ -1,0 +1,4 @@
+[Default Applications]
+# prevent Baobab from being picked up as a file browser; see:
+# https://gitlab.gnome.org/GNOME/gnome-build-meta/-/blob/master/files/gnome-mimeapps/quirks.toml
+inode/directory=org.gnome.Nautilus.desktop
