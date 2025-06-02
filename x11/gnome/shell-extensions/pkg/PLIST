@@ -70,6 +70,7 @@ share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.c
 share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com/stylesheet-workspace-switcher-dark.css
 share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com/stylesheet-workspace-switcher-light.css
 share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com/workspaceIndicator.js
+share/gnome-shell/extensions/window-list@gnome-shell-extensions.gcampax.github.com/workspacePrefs.js
 share/gnome-shell/extensions/windowsNavigator@gnome-shell-extensions.gcampax.github.com/
 share/gnome-shell/extensions/windowsNavigator@gnome-shell-extensions.gcampax.github.com/extension.js
 share/gnome-shell/extensions/windowsNavigator@gnome-shell-extensions.gcampax.github.com/metadata.json
@@ -81,6 +82,7 @@ share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.
 share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/stylesheet-dark.css
 share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/stylesheet-light.css
 share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/workspaceIndicator.js
+share/gnome-shell/extensions/workspace-indicator@gnome-shell-extensions.gcampax.github.com/workspacePrefs.js
 share/gnome-shell/modes/
 share/gnome-shell/modes/classic.json
 share/locale/ab/LC_MESSAGES/gnome-shell-extensions.mo
@@ -114,6 +116,7 @@ share/locale/he/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/hi/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/hr/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/hu/LC_MESSAGES/gnome-shell-extensions.mo
+share/locale/ia/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/id/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/is/LC_MESSAGES/gnome-shell-extensions.mo
 share/locale/it/LC_MESSAGES/gnome-shell-extensions.mo
