@@ -1,16 +1,10 @@
 BROKEN-sparc64 = ring-core/target.h:64:2: error: #error Unknown target CPU
 
-# missing landing pads and xonly violations in aws-lc-{rs,sys}
-# Remove as soon as librespot switches back to ring as rustls backend
-USE_NOBTCFI =		Yes
-USE_NOEXECONLY =	Yes
-
 COMMENT =		Spotify TUI client
 
 GH_ACCOUNT =		aome510
 GH_PROJECT =		spotify-player
-GH_TAGNAME =		v0.20.4
-REVISION =		0
+GH_TAGNAME =		v0.20.5
 
 CATEGORIES =		audio
 
@@ -43,9 +37,6 @@ MODCARGO_FEATURES =	portaudio-backend media-control fzf
 MODCARGO_INSTALL_TARGET_PATHS =	./spotify_player
 
 .include "crates.inc"
-
-post-patch:
-	cp ${FILESDIR}/cpu_aarch64_openbsd.c ${MODCARGO_VENDOR_DIR}/aws-lc-sys-0.23.1/aws-lc/crypto/fipsmodule/cpucap/
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/spotify-player
