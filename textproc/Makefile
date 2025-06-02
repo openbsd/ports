@@ -371,6 +371,7 @@
      SUBDIR += p5-XML-XSLT
      SUBDIR += p5-XML-XSPF
      SUBDIR += p5-XString
+     SUBDIR += p5-YAML-PP
      SUBDIR += p5-ack
      SUBDIR += p5-sdf
      SUBDIR += p5-tkispell
