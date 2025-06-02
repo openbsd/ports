@@ -11,15 +11,15 @@ bin/gnome-shell-extension-tool
 bin/gnome-shell-test-tool
 lib/gnome-shell/
 lib/gnome-shell/Gvc-1.0.typelib
-lib/gnome-shell/Shell-15.typelib
-lib/gnome-shell/St-15.typelib
+lib/gnome-shell/Shell-16.typelib
+lib/gnome-shell/St-16.typelib
 lib/gnome-shell/girepository-1.0/
 lib/gnome-shell/girepository-1.0/Shew-0.typelib
 @so lib/gnome-shell/libgnome-shell-menu.so
 @so lib/gnome-shell/libgvc.so
-@so lib/gnome-shell/libshell-15.so
+@so lib/gnome-shell/libshell-16.so
 @so lib/gnome-shell/libshew-0.so
-@so lib/gnome-shell/libst-15.so
+@so lib/gnome-shell/libst-16.so
 @bin libexec/gnome-shell-calendar-server
 @bin libexec/gnome-shell-hotplug-sniffer
 @bin libexec/gnome-shell-perf-helper
@@ -32,6 +32,7 @@ share/bash-completion/completions/gnome-extensions
 share/dbus-1/interfaces/org.gnome.Shell.Extensions.xml
 share/dbus-1/interfaces/org.gnome.Shell.Introspect.xml
 share/dbus-1/interfaces/org.gnome.Shell.PadOsd.xml
+share/dbus-1/interfaces/org.gnome.Shell.ScreenTime.xml
 share/dbus-1/interfaces/org.gnome.Shell.Screencast.xml
 share/dbus-1/interfaces/org.gnome.Shell.Screenshot.xml
 share/dbus-1/interfaces/org.gnome.ShellSearchProvider.xml
@@ -43,6 +44,9 @@ share/dbus-1/services/org.gnome.Shell.Extensions.service
 share/dbus-1/services/org.gnome.Shell.HotplugSniffer.service
 share/dbus-1/services/org.gnome.Shell.Notifications.service
 share/dbus-1/services/org.gnome.Shell.Screencast.service
+share/desktop-directories/
+share/desktop-directories/X-GNOME-Shell-System.directory
+share/desktop-directories/X-GNOME-Shell-Utilities.directory
 share/glib-2.0/schemas/00_org.gnome.shell.gschema.override
 share/glib-2.0/schemas/org.gnome.Extensions.gschema.xml
 share/glib-2.0/schemas/org.gnome.shell.gschema.xml
@@ -50,8 +54,8 @@ share/gnome-control-center/keybindings/50-gnome-shell-launchers.xml
 share/gnome-control-center/keybindings/50-gnome-shell-screenshots.xml
 share/gnome-control-center/keybindings/50-gnome-shell-system.xml
 share/gnome-shell/Gvc-1.0.gir
-share/gnome-shell/Shell-15.gir
-share/gnome-shell/St-15.gir
+share/gnome-shell/Shell-16.gir
+share/gnome-shell/St-16.gir
 share/gnome-shell/gir-1.0/
 share/gnome-shell/gir-1.0/Shew-0.gir
 share/gnome-shell/gnome-shell-dbus-interfaces.gresource
@@ -82,6 +86,7 @@ share/locale/ar/LC_MESSAGES/gnome-shell.mo
 share/locale/as/LC_MESSAGES/gnome-shell.mo
 share/locale/ast/LC_MESSAGES/gnome-shell.mo
 share/locale/be/LC_MESSAGES/gnome-shell.mo
+share/locale/be@latin/LC_MESSAGES/gnome-shell.mo
 share/locale/bg/LC_MESSAGES/gnome-shell.mo
 share/locale/bn/LC_MESSAGES/gnome-shell.mo
 share/locale/bn_IN/LC_MESSAGES/gnome-shell.mo
@@ -100,6 +105,7 @@ share/locale/et/LC_MESSAGES/gnome-shell.mo
 share/locale/eu/LC_MESSAGES/gnome-shell.mo
 share/locale/fa/LC_MESSAGES/gnome-shell.mo
 share/locale/fi/LC_MESSAGES/gnome-shell.mo
+share/locale/fo/LC_MESSAGES/gnome-shell.mo
 share/locale/fr/LC_MESSAGES/gnome-shell.mo
 share/locale/fur/LC_MESSAGES/gnome-shell.mo
 share/locale/fy/LC_MESSAGES/gnome-shell.mo
@@ -160,6 +166,7 @@ share/locale/th/LC_MESSAGES/gnome-shell.mo
 share/locale/tr/LC_MESSAGES/gnome-shell.mo
 share/locale/ug/LC_MESSAGES/gnome-shell.mo
 share/locale/uk/LC_MESSAGES/gnome-shell.mo
+share/locale/uz/LC_MESSAGES/gnome-shell.mo
 share/locale/uz@cyrillic/LC_MESSAGES/gnome-shell.mo
 share/locale/vi/LC_MESSAGES/gnome-shell.mo
 share/locale/zh_CN/LC_MESSAGES/gnome-shell.mo

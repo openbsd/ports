@@ -1,7 +1,7 @@
 Index: js/misc/loginManager.js
 --- js/misc/loginManager.js.orig
 +++ js/misc/loginManager.js
-@@ -13,6 +13,12 @@ const SystemdLoginManager = Gio.DBusProxy.makeProxyWra
+@@ -14,6 +14,12 @@ const SystemdLoginManager = Gio.DBusProxy.makeProxyWra
  const SystemdLoginSession = Gio.DBusProxy.makeProxyWrapper(SystemdLoginSessionIface);
  const SystemdLoginUser = Gio.DBusProxy.makeProxyWrapper(SystemdLoginUserIface);
  
@@ -14,7 +14,7 @@ Index: js/misc/loginManager.js
  function haveSystemd() {
      return GLib.access('/run/systemd/seats', 0) >= 0;
  }
-@@ -46,7 +52,7 @@ export function canLock() {
+@@ -47,7 +53,7 @@ export function canLock() {
              -1, null);
  
          let version = result.deepUnpack()[0].deepUnpack();
@@ -23,7 +23,7 @@ Index: js/misc/loginManager.js
      } catch {
          return false;
      }
-@@ -82,7 +88,7 @@ export function getLoginManager() {
+@@ -83,7 +89,7 @@ export function getLoginManager() {
          if (haveSystemd())
              _loginManager = new LoginManagerSystemd();
          else
@@ -32,7 +32,7 @@ Index: js/misc/loginManager.js
      }
  
      return _loginManager;
-@@ -217,6 +223,82 @@ class LoginManagerSystemd extends Signals.EventEmitter
+@@ -246,6 +252,82 @@ class LoginManagerSystemd extends Signals.EventEmitter
      }
  }
  
@@ -113,9 +113,9 @@ Index: js/misc/loginManager.js
 +};
 +
  class LoginManagerDummy extends Signals.EventEmitter  {
-     getCurrentSessionProxy() {
-         // we could return a DummySession object that fakes whatever callers
-@@ -230,16 +312,6 @@ class LoginManagerDummy extends Signals.EventEmitter  
+     constructor() {
+         super();
+@@ -271,16 +353,6 @@ class LoginManagerDummy extends Signals.EventEmitter  
              canSuspend: false,
              needsAuth: false,
          }));
