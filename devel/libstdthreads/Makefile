@@ -2,12 +2,16 @@ COMMENT = C11 standard threads library
 
 DISTNAME =	libstdthreads-${V}
 V =		0.3.2
+REVISION =	0
 
 CATEGORIES =	devel
 
-SITES =	https://gitlab.tetaneutral.net/mherrb/libstdthreads/-/archive/${V}/
+SITES =	https://code.tetaneutral.net/mherrb/libstdthreads//archive/
+DISTFILES =     ${DISTNAME}-1{${DISTNAME}}.tar.gz
 
 SHARED_LIBS +=  stdthreads                0.0 # 0.0
+
+WRKDIST =	${WRKDIR}/libstdthreads
 
 # BSD 2-Clause
 PERMIT_PACKAGE =	Yes
