@@ -3,7 +3,7 @@ XXX push upstream
 Index: meson.build
 --- meson.build.orig
 +++ meson.build
-@@ -596,6 +596,8 @@ if have_xwayland
+@@ -626,6 +626,8 @@ if have_xwayland
      cdata.set('HAVE_SYS_RANDOM', 1)
    elif cc.has_header_symbol('linux/random.h', 'getrandom')
      cdata.set('HAVE_LINUX_RANDOM', 1)

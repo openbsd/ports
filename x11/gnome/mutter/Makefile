@@ -1,13 +1,12 @@
 COMMENT=		window and compositing manager based on Clutter
 
 GNOME_PROJECT=		mutter
-GNOME_VERSION=		47.8
+GNOME_VERSION=		48.3
 
-SHARED_LIBS += mutter-mtk-15             0.0 # 0.0.0
-SHARED_LIBS += mutter-cogl-15            0.0 # 0.0.0
-SHARED_LIBS += mutter-cogl-pango-15      0.0 # 0.0.0
-SHARED_LIBS += mutter-clutter-15         0.0 # 0.0.0
-SHARED_LIBS += mutter-15                 0.0 # 0.0.0
+SHARED_LIBS += mutter-mtk-16             0.0 # 0.0.0
+SHARED_LIBS += mutter-cogl-16            0.0 # 0.0.0
+SHARED_LIBS += mutter-clutter-16         0.0 # 0.0.0
+SHARED_LIBS += mutter-16                 0.0 # 0.0.0
 
 # GPLv2
 PERMIT_PACKAGE=		Yes
@@ -32,6 +31,7 @@ DEBUG_PACKAGES =	${BUILD_PACKAGES}
 MODGNOME_TOOLS=		desktop-file-utils gobject-introspection
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
+			devel/py-argcomplete \
 			sysutils/consolekit \
 			wayland/libevdev-openbsd \
 			wayland/libinput-openbsd \
@@ -59,7 +59,7 @@ CONFIGURE_ARGS +=	-Dopengl_libname=libGL.so \
 			-Dlibwacom=false \
 			-Dtests=disabled \
 			-Dprofiler=false \
-			-Dsystemd=false
+			-Dlogind=false
 
 # XXX needs libsystemd or libelogind
 CONFIGURE_ARGS +=	-Dnative_backend=false
