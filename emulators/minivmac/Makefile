@@ -3,14 +3,13 @@ ONLY_FOR_ARCHS =	i386 amd64 powerpc
 COMMENT =		early macintosh emulator
 
 V =			36.04
-REVISION =		3
+REVISION =		4
 
 DISTNAME =		minivmac-${V}
 
 CATEGORIES =		emulators
 
-HOMEPAGE = 		https://gryphel.com/c/minivmac/
-MAINTAINER =		Jag Talon <jag@aangat.lahat.computer>
+HOMEPAGE =		https://gryphel.com/c/minivmac/
 
 WANTLIB =		X11 c sndio
 

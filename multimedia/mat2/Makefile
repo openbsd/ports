@@ -1,14 +1,12 @@
 COMMENT =		remove metadata from media files
 
-MODPY_DISTV =	0.13.4
+MODPY_DISTV =		0.13.4
 DISTNAME =		mat2-${MODPY_DISTV}
-REVISION =		1
+REVISION =		2
 
 CATEGORIES =		multimedia
 
 HOMEPAGE =		https://0xacab.org/jvoisin/mat2
-
-MAINTAINER =		Jag Talon <jag@aangat.lahat.computer>
 
 # GPLv3
 PERMIT_PACKAGE =	Yes

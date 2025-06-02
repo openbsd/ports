@@ -1,13 +1,12 @@
 COMMENT =		multimedia platform inspired by HyperCard
 
 DIST_TUPLE =		github JohnEarnest Decker v1.53 .
+REVISION =		0
 PKGNAME =		${DISTNAME:L}
 
 CATEGORIES =		graphics
 
 HOMEPAGE =		https://beyondloom.com/decker/
-
-MAINTAINER =		Jag Talon <jag@aangat.lahat.computer>
 
 # MIT
 PERMIT_PACKAGE =	Yes

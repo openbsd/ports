@@ -1,15 +1,15 @@
 COMMENT =	interpreter for BBC Basic (Basic VI)
 
 V =		1.23.4
+REVISION =	0
 DISTNAME =	MatrixBrandy-${V}
 PKGNAME =	brandy-${V}
 EXTRACT_SUFX =	.tar.xz
-SITES =	http://brandy.matrixnetwork.co.uk/releases/
+SITES =		http://brandy.matrixnetwork.co.uk/releases/
 
 CATEGORIES =	lang
 
 HOMEPAGE =	http://brandy.matrixnetwork.co.uk/
-MAINTAINER =	Jag Talon <jag@aangat.lahat.computer>
 
 # GPLv2+
 PERMIT_PACKAGE =	Yes
