@@ -1,7 +1,7 @@
 Index: configure
 --- configure.orig
 +++ configure
-@@ -20792,7 +20792,7 @@ printf %s "checking for thread-local storage... " >&6;
+@@ -20933,7 +20933,7 @@ printf %s "checking for thread-local storage... " >&6;
  cat confdefs.h - <<_ACEOF >conftest.$ac_ext
  /* end confdefs.h.  */
  

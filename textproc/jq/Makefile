@@ -1,13 +1,13 @@
 COMMENT =		lightweight and flexible command-line JSON processor
 
-V =			1.7.1
+V =			1.8.0
 DISTNAME =		jq-$V
 
-SHARED_LIBS +=	jq                        2.1 # 1.4
+SHARED_LIBS +=	jq                        2.2 # 1.4
 
 CATEGORIES =		textproc
 
-HOMEPAGE =		https://jqlang.github.io/jq/
+HOMEPAGE =		https://jqlang.org
 
 # MIT (code), CC-BY-3.0 (docs)
 PERMIT_PACKAGE =	Yes
@@ -30,6 +30,10 @@ CONFIGURE_ARGS +=	--disable-docs
 # makes all tests fail with SIGILL
 CONFIGURE_ARGS +=	--disable-valgrind
 
+BUILD_DEPENDS =		textproc/gsed
 TEST_DEPENDS =		shells/bash
+
+pre-configure:
+	ln -s ${LOCALBASE}/bin/gsed ${WRKDIR}/bin/sed
 
 .include <bsd.port.mk>

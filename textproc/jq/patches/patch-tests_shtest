@@ -7,11 +7,11 @@ Index: tests/shtest
  
  . "${0%/*}/setup" "$@"
  
-@@ -506,6 +506,7 @@ cmp $d/warning $d/expect_warning
+@@ -613,6 +613,7 @@ done
  test_no_color=true
  $msys  && test_no_color=false
  $mingw && test_no_color=false
 +[ "$(uname -s)" = OpenBSD ] && test_no_color=false
  if $test_no_color && command -v script >/dev/null 2>&1; then
-   unset NO_COLOR
    if script -qc echo /dev/null >/dev/null 2>&1; then
+     faketty() { script -qec "$*" /dev/null; }
