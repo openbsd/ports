@@ -2,7 +2,7 @@ COMMENT=	grep like tool, aimed at programmers
 
 MODULES=	cpan
 PKG_ARCH=	*
-V=		3.8.1
+V=		3.9.0
 DISTNAME=	ack-v$V
 PKGNAME=	p5-ack-$V
 CPAN_AUTHOR=	PETDANCE
@@ -20,7 +20,8 @@ TAR=		gtar
 RUN_DEPENDS=	devel/p5-File-Next
 
 TEST_DEPENDS=	devel/p5-IO-Tty \
-		shells/bash
+		shells/bash \
+		textproc/p5-YAML-PP
 
 PORTHOME=	${WRKDIR}
 
