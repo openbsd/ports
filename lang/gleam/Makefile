@@ -5,7 +5,7 @@ NOT_FOR_ARCHS =		sparc64
 
 GH_ACCOUNT =		gleam-lang
 GH_PROJECT =		gleam
-GH_TAGNAME =		v1.10.0
+GH_TAGNAME =		v1.11.0
 
 HOMEPAGE =		https://gleam.run
 
@@ -22,6 +22,8 @@ COMPILER =		base-clang ports-gcc
 WANTLIB += 		${MODCARGO_WANTLIB} m
 
 CONFIGURE_STYLE =	cargo
+
+TEST_DEPENDS =		devel/git
 
 post-patch:
 	${SUBST_CMD} \
