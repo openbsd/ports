@@ -23,6 +23,8 @@ MODCARGO_BUILD=		No
 MODCARGO_INSTALL=	No
 MODCARGO_TEST=		No
 
+BUILD_DEPENDS=		devel/cargo-c
+
 LIB_DEPENDS=		multimedia/gstreamer1/plugins-base \
 			x11/gtk+4
 
