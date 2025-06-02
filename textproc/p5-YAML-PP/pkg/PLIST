@@ -1,0 +1,61 @@
+bin/yamlpp-events
+bin/yamlpp-highlight
+bin/yamlpp-load
+bin/yamlpp-load-dump
+bin/yamlpp-parse-emit
+${P5SITE}/YAML/
+${P5SITE}/YAML/PP/
+${P5SITE}/YAML/PP.pm
+${P5SITE}/YAML/PP/Common.pm
+${P5SITE}/YAML/PP/Constructor.pm
+${P5SITE}/YAML/PP/Dumper.pm
+${P5SITE}/YAML/PP/Emitter.pm
+${P5SITE}/YAML/PP/Exception.pm
+${P5SITE}/YAML/PP/Grammar.pm
+${P5SITE}/YAML/PP/Highlight.pm
+${P5SITE}/YAML/PP/Lexer.pm
+${P5SITE}/YAML/PP/Loader.pm
+${P5SITE}/YAML/PP/Parser.pm
+${P5SITE}/YAML/PP/Perl.pm
+${P5SITE}/YAML/PP/Reader.pm
+${P5SITE}/YAML/PP/Render.pm
+${P5SITE}/YAML/PP/Representer.pm
+${P5SITE}/YAML/PP/Schema/
+${P5SITE}/YAML/PP/Schema.pm
+${P5SITE}/YAML/PP/Schema/Binary.pm
+${P5SITE}/YAML/PP/Schema/Catchall.pm
+${P5SITE}/YAML/PP/Schema/Core.pm
+${P5SITE}/YAML/PP/Schema/Failsafe.pm
+${P5SITE}/YAML/PP/Schema/Include.pm
+${P5SITE}/YAML/PP/Schema/JSON.pm
+${P5SITE}/YAML/PP/Schema/Merge.pm
+${P5SITE}/YAML/PP/Schema/Perl.pm
+${P5SITE}/YAML/PP/Schema/Tie/
+${P5SITE}/YAML/PP/Schema/Tie/IxHash.pm
+${P5SITE}/YAML/PP/Schema/YAML1_1.pm
+${P5SITE}/YAML/PP/Type/
+${P5SITE}/YAML/PP/Type/MergeKey.pm
+${P5SITE}/YAML/PP/Writer/
+${P5SITE}/YAML/PP/Writer.pm
+${P5SITE}/YAML/PP/Writer/File.pm
+@man man/man3p/YAML::PP.3p
+@man man/man3p/YAML::PP::Common.3p
+@man man/man3p/YAML::PP::Constructor.3p
+@man man/man3p/YAML::PP::Emitter.3p
+@man man/man3p/YAML::PP::Grammar.3p
+@man man/man3p/YAML::PP::Highlight.3p
+@man man/man3p/YAML::PP::Perl.3p
+@man man/man3p/YAML::PP::Schema.3p
+@man man/man3p/YAML::PP::Schema::Binary.3p
+@man man/man3p/YAML::PP::Schema::Catchall.3p
+@man man/man3p/YAML::PP::Schema::Core.3p
+@man man/man3p/YAML::PP::Schema::Failsafe.3p
+@man man/man3p/YAML::PP::Schema::Include.3p
+@man man/man3p/YAML::PP::Schema::JSON.3p
+@man man/man3p/YAML::PP::Schema::Merge.3p
+@man man/man3p/YAML::PP::Schema::Perl.3p
+@man man/man3p/YAML::PP::Schema::Tie::IxHash.3p
+@man man/man3p/YAML::PP::Schema::YAML1_1.3p
+@man man/man3p/YAML::PP::Type::MergeKey.3p
+@man man/man3p/YAML::PP::Writer.3p
+@man man/man3p/YAML::PP::Writer::File.3p
