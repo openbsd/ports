@@ -344,6 +344,7 @@ share/metainfo/
 share/metainfo/com.rawtherapee.RawTherapee.appdata.xml
 share/rawtherapee/
 share/rawtherapee/camconst.json
+share/rawtherapee/cammatrices.json
 share/rawtherapee/dcpprofiles/
 share/rawtherapee/dcpprofiles/CANON EOS 250D.dcp
 share/rawtherapee/dcpprofiles/CANON EOS 800D.dcp
@@ -374,6 +375,7 @@ share/rawtherapee/dcpprofiles/Canon EOS M6 Mark II.dcp
 share/rawtherapee/dcpprofiles/Canon EOS R.dcp
 share/rawtherapee/dcpprofiles/Canon EOS R5.dcp
 share/rawtherapee/dcpprofiles/Canon EOS R6.dcp
+share/rawtherapee/dcpprofiles/Canon EOS R8.dcp
 share/rawtherapee/dcpprofiles/Canon EOS RP.dcp
 share/rawtherapee/dcpprofiles/Canon EOS-1D Mark III.dcp
 share/rawtherapee/dcpprofiles/Canon EOS-1D X Mark III.dcp
@@ -455,6 +457,7 @@ share/rawtherapee/dcpprofiles/Olympus E-520.dcp
 share/rawtherapee/dcpprofiles/Olympus E-M5.dcp
 share/rawtherapee/dcpprofiles/Olympus E-P2.dcp
 share/rawtherapee/dcpprofiles/Olympus XZ-1.dcp
+share/rawtherapee/dcpprofiles/PANASONIC DC-S5M2.dcp
 share/rawtherapee/dcpprofiles/PANASONIC DMC-LX100.dcp
 share/rawtherapee/dcpprofiles/PENTAX K-5 II.dcp
 share/rawtherapee/dcpprofiles/PENTAX K-5.dcp
@@ -505,6 +508,7 @@ share/rawtherapee/dcpprofiles/Sony SLT-A55V.dcp
 share/rawtherapee/dcpprofiles/YI TECHNOLOGY M1.dcp
 share/rawtherapee/dcpprofiles/camera_model_aliases.json
 share/rawtherapee/dcpprofiles/samsung SM-G930V.dcp
+share/rawtherapee/dcraw.json
 share/rawtherapee/iccprofiles/
 share/rawtherapee/iccprofiles/input/
 share/rawtherapee/iccprofiles/input/Canon EOS 20D.icc
@@ -596,6 +600,7 @@ share/rawtherapee/languages/Russian
 share/rawtherapee/languages/Serbian (Cyrilic Characters)
 share/rawtherapee/languages/Slovenian
 share/rawtherapee/languages/Swedish
+share/rawtherapee/languages/Ukrainian
 share/rawtherapee/languages/default
 share/rawtherapee/options
 share/rawtherapee/profiles/
@@ -620,6 +625,7 @@ share/rawtherapee/profiles/Standard Film Curve - ISO High.pp3
 share/rawtherapee/profiles/Standard Film Curve - ISO Low.pp3
 share/rawtherapee/profiles/Standard Film Curve - ISO Medium.pp3
 share/rawtherapee/profiles/Unclipped.pp3
+share/rawtherapee/rt.json
 share/rawtherapee/sounds/
 share/rawtherapee/sounds/BatchComplete.wav
 share/rawtherapee/sounds/Empty.wav

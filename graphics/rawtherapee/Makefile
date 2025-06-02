@@ -3,8 +3,8 @@ ONLY_FOR_ARCHS =	amd64
 
 COMMENT =		RAW image processing application
 
-DISTNAME =		rawtherapee-5.11
-REVISION =		0
+V = 			5.12
+DISTNAME =		rawtherapee-${V}
 
 CATEGORIES =		graphics
 
@@ -25,7 +25,8 @@ WANTLIB += png pthread raw_r rsvg-2 sigc-2.0 tiff z ${COMPILER_LIBCXX}
 # c++11
 COMPILER =		base-clang ports-gcc
 
-SITES =			https://www.rawtherapee.com/shared/source/
+SITES =			https://www.rawtherapee.com/shared/source/ \
+			https://github.com/RawTherapee/RawTherapee/releases/download/${V}/
 EXTRACT_SUFX = 		.tar.xz
 
 MODULES =		devel/cmake
