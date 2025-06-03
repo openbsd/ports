@@ -1,3 +1,5 @@
+BROKEN-i386 =		hangs in make fake in a tight loop using all of 1 core
+
 ONLY_FOR_ARCHS =	amd64 aarch64 i386 powerpc64 riscv64
 DPB_PROPERTIES =	parallel
 
