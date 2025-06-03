@@ -5,7 +5,7 @@ COMMENT =		produce RRDP notification, snapshot and delta files
 
 GH_ACCOUNT =		NLNetLabs
 GH_PROJECT =		rrdpit
-GH_TAGNAME =		v0.0.4
+GH_TAGNAME =		v0.1.0
 
 CATEGORIES =		net
 
@@ -21,9 +21,6 @@ CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
 RELEASE_DIR =		${MODCARGO_TARGET_DIR}/release
-
-post-patch:
-	cp ${FILESDIR}/Cargo.lock ${WRKSRC}/
 
 do-install:
 	${INSTALL_PROGRAM} ${RELEASE_DIR}/rrdpit ${PREFIX}/bin/
