@@ -383,6 +383,7 @@ share/nvim/runtime/doc/vim_diff.txt
 share/nvim/runtime/doc/visual.txt
 share/nvim/runtime/doc/vvars.txt
 share/nvim/runtime/doc/windows.txt
+share/nvim/runtime/example_init.lua
 share/nvim/runtime/filetype.lua
 share/nvim/runtime/ftoff.vim
 share/nvim/runtime/ftplugin/
