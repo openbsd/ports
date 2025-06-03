@@ -492,6 +492,7 @@ share/libvirt/cpu_map/arm_features.xml
 share/libvirt/cpu_map/arm_vendors.xml
 share/libvirt/cpu_map/index.xml
 share/libvirt/cpu_map/ppc64_POWER10.xml
+share/libvirt/cpu_map/ppc64_POWER11.xml
 share/libvirt/cpu_map/ppc64_POWER6.xml
 share/libvirt/cpu_map/ppc64_POWER7.xml
 share/libvirt/cpu_map/ppc64_POWER8.xml
