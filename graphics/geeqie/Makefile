@@ -1,6 +1,6 @@
 COMMENT=		lightweight Gtk+3 based image viewer
 
-V=			2.6
+V=			2.6.1
 DISTNAME=		geeqie-${V}
 EXTRACT_SUFX=		.tar.xz
 CATEGORIES=		graphics
