@@ -622,7 +622,7 @@ SHA256 (go_modules/modernc.org/strutil/@v/v1.2.1.mod) = hXcXRceFHU6hakG/ae6hVRzs
 SHA256 (go_modules/modernc.org/strutil/@v/v1.2.1.zip) = W4+mHKQUHF/YIYP61Lx6Ra+CN7b7HfymXOeWCgPEg8Q=
 SHA256 (go_modules/modernc.org/token/@v/v1.1.0.mod) = evOzXO1S6tSw7Q4iEB2VvABh0g4T3Q2aoHFhZKj12xw=
 SHA256 (go_modules/modernc.org/token/@v/v1.1.0.zip) = Pvqknp+xBWnangnnhfojDNXA9Q/PYF87VDnfzWFXfFg=
-SHA256 (plakar-v1.0.1.zip) = ASbn1O8YEKT/pCpYVsqxWq/m8tU9djJrx41l209Schk=
+SHA256 (plakar-v1.0.2.zip) = F9WwvJYSH0cXHxuBnPRmaDa2aClY1CGTgdc+E7Eutsw=
 SIZE (go_modules/cloud.google.com/go/compute/metadata/@v/v0.3.0.mod) = 53
 SIZE (go_modules/cloud.google.com/go/compute/metadata/@v/v0.3.0.zip) = 19692
 SIZE (go_modules/codeberg.org/mhofmann/fastcdc/@v/v1.0.0.mod) = 46
@@ -1247,4 +1247,4 @@ SIZE (go_modules/modernc.org/strutil/@v/v1.2.1.mod) = 162
 SIZE (go_modules/modernc.org/strutil/@v/v1.2.1.zip) = 11900
 SIZE (go_modules/modernc.org/token/@v/v1.1.0.mod) = 25
 SIZE (go_modules/modernc.org/token/@v/v1.1.0.zip) = 6860
-SIZE (plakar-v1.0.1.zip) = 914390
+SIZE (plakar-v1.0.2.zip) = 914654
