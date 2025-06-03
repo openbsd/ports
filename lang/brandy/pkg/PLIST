@@ -6,6 +6,7 @@ share/doc/brandy/ChangeLog
 share/doc/brandy/Config.txt
 share/doc/brandy/Mode7.txt
 share/doc/brandy/README
+share/doc/brandy/RISC-OS.txt
 share/doc/brandy/ScreenModes.txt
 share/doc/brandy/banana-bugs.txt
 share/doc/brandy/basic.txt
