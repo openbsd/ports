@@ -5,7 +5,7 @@ Index: src/libredirect.c
 +++ src/libredirect.c
 @@ -127,8 +127,6 @@ static void log_line(const char *fmt, ...)
  
- static LONG load_lib(void)
+ static void load_lib(void)
  {
 -#define LIBPCSC "libpcsclite_real.so.1"
 -

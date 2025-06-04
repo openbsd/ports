@@ -3,7 +3,7 @@ Disable colors by default.
 Index: src/debuglog.c
 --- src/debuglog.c.orig
 +++ src/debuglog.c
-@@ -348,6 +348,9 @@ void DebugLogSetLogType(const int dbgtype)
+@@ -352,6 +352,9 @@ void DebugLogSetLogType(const int dbgtype)
  			LogMsgType = DEBUGLOG_STDOUT_DEBUG;
  	}
  
@@ -11,9 +11,9 @@ Index: src/debuglog.c
 +		LogDoColor = 1;
 +#if 0
  	/* log to stdout and stdout is a tty? */
- 	if ((DEBUGLOG_STDOUT_DEBUG == LogMsgType && isatty(fileno(stdout)))
- 		|| (DEBUGLOG_STDOUT_COLOR_DEBUG == LogMsgType))
-@@ -372,6 +375,7 @@ void DebugLogSetLogType(const int dbgtype)
+ 	if (DEBUGLOG_STDOUT_DEBUG == LogMsgType && isatty(fileno(stdout)))
+ 	{
+@@ -375,6 +378,7 @@ void DebugLogSetLogType(const int dbgtype)
  			}
  		}
  	}
