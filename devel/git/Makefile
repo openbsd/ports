@@ -3,7 +3,7 @@ COMMENT-svn =	subversion interoperability tools
 COMMENT-x11 =	graphical tools
 
 V =		2.49.0
-REVISION =	1
+REVISION =	2
 DISTNAME =	git-${V}
 CATEGORIES =	devel
 

@@ -1,0 +1,12 @@
+Index: preload-index.c
+--- preload-index.c.orig
++++ preload-index.c
+@@ -124,6 +124,8 @@ void preload_index(struct index_state *index,
+ 	trace2_region_enter("index", "preload", NULL);
+ 
+ 	trace_performance_enter();
++	if (threads > online_cpus())
++		threads = online_cpus();
+ 	if (threads > MAX_PARALLEL)
+ 		threads = MAX_PARALLEL;
+ 	offset = 0;
