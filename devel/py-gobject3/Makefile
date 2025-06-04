@@ -6,6 +6,8 @@ MODPY_DISTV=		${GNOME_VERSION}
 EXTRACT_SUFX=		.tar.gz
 PKGNAME=		py3-gobject3-${GNOME_VERSION}
 
+REVISION=		0
+
 CATEGORIES=		devel
 
 HOMEPAGE=		https://pygobject.readthedocs.io/en/latest/
@@ -34,7 +36,8 @@ BUILD_DEPENDS=		graphics/py-cairo
 LIB_DEPENDS=		devel/glib2 \
 			graphics/cairo
 
-RUN_DEPENDS=		graphics/py-cairo
+RUN_DEPENDS=		devel/gobject-introspection \
+			graphics/py-cairo
 
 TEST_DEPENDS=		devel/py-test
 
