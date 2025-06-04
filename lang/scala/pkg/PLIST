@@ -232,9 +232,9 @@ scala/maven2/org/nibor/autolink/autolink/0.6.0/autolink-0.6.0.pom
 scala/maven2/org/scala-lang/
 scala/maven2/org/scala-lang/modules/
 scala/maven2/org/scala-lang/modules/scala-asm/
-scala/maven2/org/scala-lang/modules/scala-asm/9.7.1-scala-1/
-scala/maven2/org/scala-lang/modules/scala-asm/9.7.1-scala-1/scala-asm-9.7.1-scala-1.jar
-scala/maven2/org/scala-lang/modules/scala-asm/9.7.1-scala-1/scala-asm-9.7.1-scala-1.pom
+scala/maven2/org/scala-lang/modules/scala-asm/9.8.0-scala-1/
+scala/maven2/org/scala-lang/modules/scala-asm/9.8.0-scala-1/scala-asm-9.8.0-scala-1.jar
+scala/maven2/org/scala-lang/modules/scala-asm/9.8.0-scala-1/scala-asm-9.8.0-scala-1.pom
 scala/maven2/org/scala-lang/scala-library/
 scala/maven2/org/scala-lang/scala-library/2.13.16/
 scala/maven2/org/scala-lang/scala-library/2.13.16/scala-library-2.13.16.jar

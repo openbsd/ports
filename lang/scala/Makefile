@@ -1,12 +1,14 @@
 COMMENT=	general purpose multi-paradigm programming language
 
-VERSION=	3.7.0
+VERSION=	3.7.1
 
 DISTNAME=	scala3-${VERSION}
 PKGNAME=	${DISTNAME:S/scala3-/scala-/:S/-RC/rc/}
 CATEGORIES=	lang
 
 HOMEPAGE=	http://www.scala-lang.org/
+
+MAINTAINER=	Kirill A. Korinsky <kirill@korins.ky>
 
 # Apache2
 PERMIT_PACKAGE=	Yes
