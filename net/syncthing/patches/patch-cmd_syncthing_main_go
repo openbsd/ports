@@ -12,8 +12,8 @@ Index: cmd/syncthing/main.go
 +	"golang.org/x/sys/unix"
 +
  	"github.com/alecthomas/kong"
- 	_ "github.com/syncthing/syncthing/lib/automaxprocs"
  	"github.com/thejerf/suture/v4"
+ 	"github.com/willabides/kongplete"
 @@ -206,6 +208,19 @@ func defaultVars() kong.Vars {
  }
  

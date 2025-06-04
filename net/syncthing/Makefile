@@ -1,13 +1,15 @@
 COMMENT =	open decentralized synchronization utility
 
-V =		1.28.0
+V =		1.29.6
 DISTNAME =	syncthing-${V}
 DISTFILES =	syncthing-source-v${V}${EXTRACT_SUFX}
 
 CATEGORIES =	net
 HOMEPAGE =	https://syncthing.net/
 
-MAINTAINER =	Edd Barrett <edd@openbsd.org>
+MAINTAINER =	Edd Barrett <edd@openbsd.org>, \
+		Klemens Nanni <kn@openbsd.org>
+
 # MPL 2.0
 PERMIT_PACKAGE = Yes
 
