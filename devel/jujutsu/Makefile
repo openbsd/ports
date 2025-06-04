@@ -1,6 +1,6 @@
 COMMENT =		version control system with git compatibility backend
 
-V =			0.29.0
+V =			0.30.0
 PKGNAME =		jujutsu-$V
 
 DIST_TUPLE =		github jj-vcs jj v$V .
@@ -12,7 +12,7 @@ MAINTAINER =		Theo Buehler <tb@openbsd.org>
 # Apache 2.0
 PERMIT_PACKAGE =	Yes
 
-WANTLIB +=		${MODCARGO_WANTLIB} crypto git2 m ssh2 ssl
+WANTLIB +=		${MODCARGO_WANTLIB} m
 
 MODULES =		devel/cargo
 
@@ -20,11 +20,7 @@ CONFIGURE_STYLE =	cargo
 
 SEPARATE_BUILD =	Yes
 
-LIB_DEPENDS =		devel/libgit2/libgit2 \
-			security/libssh2
 RUN_DEPENDS =		devel/git
-
-MAKE_ENV =		LIBGIT2_NO_VENDOR=1
 
 MODCARGO_INSTALL_TARGET_PATHS = cli
 
