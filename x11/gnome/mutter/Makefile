@@ -2,6 +2,7 @@ COMMENT=		window and compositing manager based on Clutter
 
 GNOME_PROJECT=		mutter
 GNOME_VERSION=		48.3.1
+REVISION=		0
 
 SHARED_LIBS += mutter-mtk-16             0.0 # 0.0.0
 SHARED_LIBS += mutter-cogl-16            0.0 # 0.0.0
@@ -38,6 +39,8 @@ BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			wayland/wayland-protocols \
 			wayland/xwayland \
 			x11/gnome/settings-daemon
+
+BUILD_DEPENDS +=	textproc/py-docutils
 
 LIB_DEPENDS=		audio/libcanberra \
 			devel/startup-notification \

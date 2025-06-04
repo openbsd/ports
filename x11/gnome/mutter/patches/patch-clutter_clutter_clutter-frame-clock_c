@@ -1,0 +1,25 @@
+warning: format specifies type 'long' but the argument has type 'int64_t' (aka 'long long')
+
+Index: clutter/clutter/clutter-frame-clock.c
+--- clutter/clutter/clutter-frame-clock.c.orig
++++ clutter/clutter/clutter-frame-clock.c
+@@ -1610,16 +1610,16 @@ clutter_frame_clock_get_max_render_time_debug_info (Cl
+       return string;
+     }
+ 
+-  g_string_append_printf (string, "%ld µs", max_update_time_estimate_us);
++  g_string_append_printf (string, "%lld µs", max_update_time_estimate_us);
+ 
+   if (last_presentation && last_presentation->got_measurements)
+     g_string_append_printf (string, " =");
+   else
+     g_string_append_printf (string, " (no measurements last frame)");
+ 
+-  g_string_append_printf (string, "\nVblank duration: %ld µs +",
++  g_string_append_printf (string, "\nVblank duration: %lld µs +",
+                           frame_clock->vblank_duration_us);
+-  g_string_append_printf (string, "\nUpdate duration: %ld µs +",
++  g_string_append_printf (string, "\nUpdate duration: %lld µs +",
+                           get_max_update_duration_us (frame_clock));
+   g_string_append_printf (string, "\nConstant: %d µs",
+                           clutter_max_render_time_constant_us);
