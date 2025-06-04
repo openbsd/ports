@@ -1,6 +1,6 @@
 COMMENT =	argon2 password hashing for Python
 
-MODPY_DISTV =	23.1.0
+MODPY_DISTV =	25.1.0
 DISTNAME =	argon2_cffi-${MODPY_DISTV}
 PKGNAME =	py-argon2-cffi-${MODPY_DISTV}
 
