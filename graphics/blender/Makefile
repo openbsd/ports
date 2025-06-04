@@ -57,6 +57,7 @@ CONFIGURE_ARGS+=	-DWITH_CPU_SIMD=OFF
 
 BUILD_DEPENDS =	math/py-numpy \
 		devel/boost \
+		devel/py-six \
 		lang/cython \
 		devel/sdl2 \
 		graphics/tiff \
