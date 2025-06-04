@@ -1,3 +1,5 @@
+BROKEN=		profil changes
+
 # crashes & hangs on anything but i386
 ONLY_FOR_ARCHS=	i386
 
