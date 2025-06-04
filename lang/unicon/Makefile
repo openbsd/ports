@@ -5,7 +5,7 @@ COMMENT=	programming language with generators, X11 graphics and more
 
 CATEGORIES=	lang
 DISTNAME=	unicon-10.0beta
-REVISION=	3
+REVISION=	4
 DISTFILES=	uni.zip
 
 FIX_EXTRACT_PERMISSIONS= Yes

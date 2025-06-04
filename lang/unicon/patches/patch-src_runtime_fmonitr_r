@@ -1,0 +1,12 @@
+Index: src/runtime/fmonitr.r
+--- src/runtime/fmonitr.r.orig
++++ src/runtime/fmonitr.r
+@@ -278,7 +278,7 @@ void EVInit()
+     *    in the string region: E_String = string
+     */
+ 
+-#if UNIX
++#if UNIX && !defined(__OpenBSD__)
+    /*
+     * Call profil(2) to enable program counter profiling.  We use the smallest
+     *  allowable scale factor in order to minimize the number of counters;
