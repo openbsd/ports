@@ -26,6 +26,10 @@ MODQMAKE_ARGS += 	CONFIG+='disable-libvdpau disable-libdrm'
 RUN_DEPENDS =		x11/gtk+4,-guic \
 			devel/desktop-file-utils
 
+# avoid build breakage due to dpb junking: moc creates dependencies on mbedtls
+# headers but does not actually use them because USE_MBEDTLS isn't defined.
+BUILD_DEPENDS =		security/polarssl
+
 LIB_DEPENDS =		graphics/ffmpeg \
 			devel/sdl2 \
 			devel/sdl2-ttf \
