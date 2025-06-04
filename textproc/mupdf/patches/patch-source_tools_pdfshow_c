@@ -15,7 +15,7 @@ Index: source/tools/pdfshow.c
  #include <stdlib.h>
  #include <stdio.h>
  #include <string.h>
-@@ -641,11 +644,24 @@ int pdfshow_main(int argc, char **argv)
+@@ -642,11 +645,24 @@ int pdfshow_main(int argc, char **argv)
  	else
  		out = fz_stdout(ctx);
  
