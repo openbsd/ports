@@ -8,7 +8,7 @@ PKGNAME=	p5-ack-$V
 CPAN_AUTHOR=	PETDANCE
 CATEGORIES=	textproc
 
-PORTROACH=	skipv:2.999_08
+PORTROACH=	limit:v[3-9]
 
 HOMEPAGE=	https://beyondgrep.com/
 
