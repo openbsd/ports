@@ -3,7 +3,7 @@ V =			2.5.0
 DIST_TUPLE =		github	dialect-app	dialect	${V}	. \
 			github	dialect-app	po	${V}	po
 CATEGORIES =		textproc x11
-REVISION =		1
+REVISION =		2
 
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
@@ -28,7 +28,6 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 
 RUN_DEPENDS =		devel/desktop-file-utils \
 			devel/glib2 \
-			devel/gobject-introspection \
 			devel/libsoup3 \
 			devel/py-gobject3 \
 			multimedia/gstreamer1/core \
