@@ -1,6 +1,6 @@
 COMMENT=	typing stubs for Python dateutil
 
-MODPY_DISTV=	2.9.0.20241206
+MODPY_DISTV=	2.9.0.20250516
 DISTNAME=	types_python_dateutil-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME:S/_/-/g}
 
@@ -12,9 +12,8 @@ HOMEPAGE=	https://github.com/python/typeshed
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-
-MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools
+MODPY_PI=	Yes
 
 NO_TEST=	Yes
 
