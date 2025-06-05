@@ -33,6 +33,7 @@ MODGNOME_TOOLS=		desktop-file-utils gobject-introspection
 
 BUILD_DEPENDS=		devel/gsettings-desktop-schemas \
 			devel/py-argcomplete \
+			shells/bash-completion \
 			sysutils/consolekit \
 			wayland/libevdev-openbsd \
 			wayland/libinput-openbsd \
