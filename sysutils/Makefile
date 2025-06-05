@@ -107,6 +107,7 @@
      SUBDIR += f3
      SUBDIR += fabric
      SUBDIR += facette
+     SUBDIR += fastfetch
      SUBDIR += faubackup
      SUBDIR += fclones
      SUBDIR += fd
