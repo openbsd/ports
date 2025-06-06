@@ -30,15 +30,6 @@ Index: configure
    ppc64-               PowerPC 64 bits
    e5500-               Freescale e5500 core (PowerPC 64 bit, EREF extensions)
  
-@@ -231,7 +233,7 @@ clinker_options=""
- clinker_needs_no_pie=true
- cprepro="${toolprefix}gcc"
- cprepro_options="-E"
--archiver="${toolprefix}ar rcs"
-+archiver="ar rcs"
- libmath="-lm"
- responsefile="gnu"
- 
 @@ -264,7 +266,7 @@ fi
  if test "$arch" = "powerpc"; then
  
@@ -53,14 +44,14 @@ Index: configure
          responsefile="diab"
          ;;
 +    bsd)
-+        casmruntime="${toolprefix}gcc -c -Wa,-mregnames"
++        casmruntime="${toolprefix}cc -c -Wa,-mregnames"
 +        cprepro_options="-std=c99 -U__GNUC__ -E"
 +        system="bsd"
 +        ;;
      *)
          casmruntime="${toolprefix}gcc -c -Wa,-mregnames"
          cprepro_options="-U__GNUC__ -E"
-@@ -408,6 +415,11 @@ if test "$arch" = "aarch64"; then
+@@ -416,6 +423,11 @@ if test "$arch" = "aarch64"; then
          abi="standard"
          cprepro_options="-U__GNUC__ -E"
          system="linux";;
@@ -72,7 +63,7 @@ Index: configure
      macos|macosx)
          abi="apple"
          casm="${toolprefix}cc"
-@@ -469,6 +481,7 @@ testfun:
+@@ -477,6 +489,7 @@ testfun:
    .file 1 "testfun.c"
    .loc 1 1
    .cfi_startproc
