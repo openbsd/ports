@@ -1,10 +1,10 @@
 COMMENT=	managing meta-data of audio formats
-DISTNAME=	taglib-1.13.1
+DISTNAME=	taglib-2.0.2
 
 CATEGORIES=	audio devel
 
-SHARED_LIBS +=	tag	13.1
-SHARED_LIBS +=	tag_c	3.1
+SHARED_LIBS +=	tag	14.0
+SHARED_LIBS +=	tag_c	4.0
 
 HOMEPAGE=	https://taglib.github.io/
 
@@ -18,7 +18,8 @@ COMPILER =	base-clang ports-gcc
 SITES=		https://taglib.github.io/releases/
 
 MODULES=	devel/cmake
-BUILD_DEPENDS=	devel/cppunit
+BUILD_DEPENDS=	devel/cppunit \
+		devel/utfcpp
 
 CONFIGURE_ARGS=	-DBUILD_SHARED_LIBS=ON \
 		-DBUILD_TESTING=ON

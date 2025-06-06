@@ -16,6 +16,11 @@ include/taglib/attachedpictureframe.h
 include/taglib/audioproperties.h
 include/taglib/chapterframe.h
 include/taglib/commentsframe.h
+include/taglib/dsdiffdiintag.h
+include/taglib/dsdifffile.h
+include/taglib/dsdiffproperties.h
+include/taglib/dsffile.h
+include/taglib/dsfproperties.h
 include/taglib/eventtimingcodesframe.h
 include/taglib/fileref.h
 include/taglib/flacfile.h
@@ -44,6 +49,7 @@ include/taglib/mp4atom.h
 include/taglib/mp4coverart.h
 include/taglib/mp4file.h
 include/taglib/mp4item.h
+include/taglib/mp4itemfactory.h
 include/taglib/mp4properties.h
 include/taglib/mp4tag.h
 include/taglib/mpcfile.h
@@ -72,7 +78,6 @@ include/taglib/tableofcontentsframe.h
 include/taglib/tag.h
 include/taglib/tag_c.h
 include/taglib/taglib.h
-include/taglib/taglib_config.h
 include/taglib/taglib_export.h
 include/taglib/tbytevector.h
 include/taglib/tbytevectorlist.h
@@ -86,12 +91,14 @@ include/taglib/tlist.h
 include/taglib/tlist.tcc
 include/taglib/tmap.h
 include/taglib/tmap.tcc
+include/taglib/tpicturetype.h
 include/taglib/tpropertymap.h
-include/taglib/trefcounter.h
 include/taglib/trueaudiofile.h
 include/taglib/trueaudioproperties.h
 include/taglib/tstring.h
 include/taglib/tstringlist.h
+include/taglib/tvariant.h
+include/taglib/tversionnumber.h
 include/taglib/uniquefileidentifierframe.h
 include/taglib/unknownframe.h
 include/taglib/unsynchronizedlyricsframe.h
@@ -106,6 +113,12 @@ include/taglib/xingheader.h
 include/taglib/xiphcomment.h
 include/taglib/xmfile.h
 include/taglib/xmproperties.h
+lib/cmake/
+lib/cmake/taglib/
+lib/cmake/taglib/taglib-config-version.cmake
+lib/cmake/taglib/taglib-config.cmake
+lib/cmake/taglib/taglib-targets${MODCMAKE_BUILD_SUFFIX}
+lib/cmake/taglib/taglib-targets.cmake
 @lib lib/libtag.so.${LIBtag_VERSION}
 @lib lib/libtag_c.so.${LIBtag_c_VERSION}
 lib/pkgconfig/taglib.pc
