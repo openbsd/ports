@@ -293,10 +293,10 @@ include/${FOX}/fxkeys.h
 include/${FOX}/fxunicode.h
 include/${FOX}/fxver.h
 include/${FOX}/xincs.h
-lib/libCHART-1.6.a
+@static-lib lib/libCHART-1.6.a
 lib/libCHART-1.6.la
 @lib lib/libCHART-1.6.so.${LIBCHART-1.6_VERSION}
-lib/libFOX-1.6.a
+@static-lib lib/libFOX-1.6.a
 lib/libFOX-1.6.la
 @lib lib/libFOX-1.6.so.${LIBFOX-1.6_VERSION}
 lib/pkgconfig/fox.pc

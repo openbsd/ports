@@ -1,12 +1,12 @@
 COMMENT =	C++ toolkit for GUI
 CATEGORIES =	devel
 
-DISTNAME =	fox-1.6.50
-REVISION =	3
+DISTNAME =	fox-1.6.59
 
-SHARED_LIBS +=	FOX-1.6              2.1      # .0.50
-SHARED_LIBS +=	CHART-1.6            1.1      # .0.50
-SITES =		http://ftp.fox-toolkit.org/pub/
+SHARED_LIBS +=	FOX-1.6              3.0      # .0.50
+SHARED_LIBS +=	CHART-1.6            2.0      # .0.50
+
+SITES =		http://fox-toolkit.org/ftp/
 HOMEPAGE =	http://www.fox-toolkit.org/
 
 MAINTAINER =	Marc Espie <espie@openbsd.org>
@@ -20,7 +20,7 @@ LIB_DEPENDS =	archivers/bzip2 \
 
 CONFIGURE_ENV += \
 	CPPFLAGS="-I${LOCALBASE}/include" \
-	LDFLAGS="-L${LOCALBASE}/lib" 
+	LDFLAGS="-L${LOCALBASE}/lib"
 CONFIGURE_ARGS += \
 	--x-includes="${X11BASE}/include -I${X11BASE}/include/freetype2" \
 	--x-libraries=${X11BASE}/lib \
@@ -32,12 +32,11 @@ PERMIT_PACKAGE = Yes
 FOX =		fox-1.6
 SUBST_VARS =	FOX
 
-WANTLIB += GL GLU X11 X11-xcb Xcursor Xdamage Xext Xfixes Xft
-WANTLIB += Xrandr Xrender Xxf86vm bz2 c drm expat fontconfig freetype
-WANTLIB += glapi jpeg m png pthread ${COMPILER_LIBCXX} tiff
-WANTLIB += xcb xcb-dri2 xcb-glx z Xau Xdmcp lzma xcb-dri3
-WANTLIB += xcb-present xcb-shm xcb-sync xcb-xfixes xshmfence zstd
-
+WANTLIB += ${COMPILER_LIBCXX} GL GLU Lerc X11 X11-xcb Xau Xcursor
+WANTLIB += Xdmcp Xext Xfixes Xft Xrandr Xrender Xxf86vm bz2 c
+WANTLIB += drm expat fontconfig freetype glapi jpeg lzma m png
+WANTLIB += tiff xcb xcb-dri2 xcb-dri3 xcb-glx xcb-present xcb-randr
+WANTLIB += xcb-shm xcb-sync xcb-xfixes xshmfence z zstd
 
 COMPILER =		base-clang ports-gcc base-gcc
 
