@@ -1,9 +1,8 @@
 COMMENT=	Python code formatter
 
-MODPY_DISTV=	24.4.2
+MODPY_DISTV=	25.1.0
 DISTNAME=	black-${MODPY_DISTV}
-PKGNAME=	py-black-${MODPY_DISTV:S/b/beta/}
-REVISION=	0
+PKGNAME=	py-black-${MODPY_DISTV}
 
 CATEGORIES=	textproc devel
 
