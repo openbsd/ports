@@ -5,7 +5,7 @@ DISTNAME=	libcdio-${V}
 
 CATEGORIES=	audio devel
 
-SITES=		https://github.com/libcdio/libcdio/releases/download/${V}0/
+SITES=		https://github.com/libcdio/libcdio/releases/download/${V}/
 EXTRACT_SUFX=	.tar.bz2
 
 SHARED_LIBS=	cdio		1.0 \
