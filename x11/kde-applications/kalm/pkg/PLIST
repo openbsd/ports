@@ -1,6 +1,7 @@
 @bin bin/kalm
 share/applications/org.kde.kalm.desktop
 share/icons/hicolor/scalable/apps/org.kde.kalm.svg
+share/locale/ar/LC_MESSAGES/kalm.mo
 share/locale/ast/LC_MESSAGES/kalm.mo
 share/locale/ca/LC_MESSAGES/kalm.mo
 share/locale/ca@valencia/LC_MESSAGES/kalm.mo

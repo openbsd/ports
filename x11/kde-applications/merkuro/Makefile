@@ -4,7 +4,6 @@ USE_WXNEEDED =	Yes
 COMMENT =	calendar email todo and task application
 
 DISTNAME =	merkuro-${VERSION}
-REVISION =	0
 
 CATEGORIES =	productivity x11
 

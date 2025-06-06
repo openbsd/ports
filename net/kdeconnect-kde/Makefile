@@ -15,10 +15,10 @@ PERMIT_PACKAGE = Yes
 WANTLIB += ${COMPILER_LIBCXX} GL ICE KF6Bookmarks KF6ColorScheme
 WANTLIB += KF6Completion KF6ConfigCore KF6ConfigGui KF6ConfigWidgets
 WANTLIB += KF6CoreAddons KF6Crash KF6DBusAddons KF6GuiAddons KF6I18n
-WANTLIB += KF6IconThemes KF6ItemViews KF6JobWidgets KF6KCMUtils
-WANTLIB += KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore KF6KIOFileWidgets
-WANTLIB += KF6KIOGui KF6KIOWidgets KF6Notifications KF6People
-WANTLIB += KF6PulseAudioQt KF6Service KF6Solid KF6StatusNotifierItem
+WANTLIB += KF6IconThemes KF6ItemModels KF6ItemViews KF6JobWidgets
+WANTLIB += KF6KCMUtils KF6KCMUtilsCore KF6KCMUtilsQuick KF6KIOCore
+WANTLIB += KF6KIOFileWidgets KF6KIOGui KF6KIOWidgets KF6Notifications
+WANTLIB += KF6People KF6PulseAudioQt KF6Service KF6Solid KF6StatusNotifierItem
 WANTLIB += KF6WidgetsAddons KF6WindowSystem Qt6Bluetooth Qt6Core
 WANTLIB += Qt6DBus Qt6Gui Qt6Multimedia Qt6Network Qt6OpenGL Qt6Qml
 WANTLIB += Qt6QmlMeta Qt6QmlModels Qt6QmlWorkerScript Qt6Quick
@@ -67,6 +67,7 @@ LIB_DEPENDS =	audio/pulseaudio-qt \
 		devel/kf6/kio \
 		devel/kf6/kitemviews \
 		devel/kf6/kcrash \
+		devel/kf6/kitemmodels \
 		devel/kf6/kjobwidgets \
 		devel/kf6/knotifications \
 		devel/kf6/kpeople \

@@ -41,7 +41,6 @@ lib/qt6/plugins/pim6/kmail/mainview/
 @so lib/qt6/plugins/pim6/kmail/mainview/kmail_akonadidatabasetoolplugin.so
 @so lib/qt6/plugins/pim6/kmail/mainview/kmail_antispamplugin.so
 @so lib/qt6/plugins/pim6/kmail/mainview/kmail_antivirusplugin.so
-@so lib/qt6/plugins/pim6/kmail/mainview/kmail_checkfoldersizeaccount.so
 @so lib/qt6/plugins/pim6/kmail/mainview/kmail_expertplugin.so
 lib/qt6/plugins/pim6/kmail/plugincheckbeforesend/
 @so lib/qt6/plugins/pim6/kmail/plugincheckbeforesend/kmail_automaticaddcontactseditorplugin.so

@@ -269,6 +269,7 @@ share/kdenlive/effects/avfilter_removegrain.xml
 share/kdenlive/effects/avfilter_rgbashift.xml
 share/kdenlive/effects/avfilter_roberts.xml
 share/kdenlive/effects/avfilter_sab.xml
+share/kdenlive/effects/avfilter_scharr.xml
 share/kdenlive/effects/avfilter_scroll.xml
 share/kdenlive/effects/avfilter_selectivecolor.xml
 share/kdenlive/effects/avfilter_separatefields.xml
@@ -329,9 +330,11 @@ share/kdenlive/effects/frei0r_balanc0r.xml
 share/kdenlive/effects/frei0r_baltan.xml
 share/kdenlive/effects/frei0r_bezier_curves.xml
 share/kdenlive/effects/frei0r_bgsubtract0r.xml
+share/kdenlive/effects/frei0r_bigsh0t_eq_cap.xml
 share/kdenlive/effects/frei0r_bigsh0t_eq_mask.xml
 share/kdenlive/effects/frei0r_bigsh0t_eq_to_rect.xml
 share/kdenlive/effects/frei0r_bigsh0t_eq_to_stereo.xml
+share/kdenlive/effects/frei0r_bigsh0t_eq_wrap.xml
 share/kdenlive/effects/frei0r_bigsh0t_hemi_to_eq.xml
 share/kdenlive/effects/frei0r_bigsh0t_rect_to_eq.xml
 share/kdenlive/effects/frei0r_bigsh0t_stabilize_360.xml
@@ -360,6 +363,7 @@ share/kdenlive/effects/frei0r_emboss.xml
 share/kdenlive/effects/frei0r_equaliz0r.xml
 share/kdenlive/effects/frei0r_facebl0r.xml
 share/kdenlive/effects/frei0r_facedetect.xml
+share/kdenlive/effects/frei0r_filmgrain.xml
 share/kdenlive/effects/frei0r_flippo.xml
 share/kdenlive/effects/frei0r_glitch0r.xml
 share/kdenlive/effects/frei0r_glow.xml
@@ -376,6 +380,7 @@ share/kdenlive/effects/frei0r_luminance.xml
 share/kdenlive/effects/frei0r_mask0mate.xml
 share/kdenlive/effects/frei0r_medians.xml
 share/kdenlive/effects/frei0r_nervous.xml
+share/kdenlive/effects/frei0r_normaliz0r.xml
 share/kdenlive/effects/frei0r_nosync0r.xml
 share/kdenlive/effects/frei0r_pixeliz0r.xml
 share/kdenlive/effects/frei0r_pixs0r.xml
@@ -413,6 +418,8 @@ share/kdenlive/effects/gpsgraphic.xml
 share/kdenlive/effects/gpstext.xml
 share/kdenlive/effects/grain.xml
 share/kdenlive/effects/greyscale.xml
+share/kdenlive/effects/hsl_primaries.xml
+share/kdenlive/effects/hsl_range.xml
 share/kdenlive/effects/invert.xml
 share/kdenlive/effects/ladspa_declipper.xml
 share/kdenlive/effects/ladspa_equalizer.xml
