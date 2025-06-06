@@ -2,9 +2,8 @@ COMMENT=	alternative interface to File::Find
 
 MODULES=	cpan
 PKG_ARCH=	*
-DISTNAME =	File-Find-Rule-0.34
+DISTNAME =	File-Find-Rule-0.35
 CATEGORIES=	devel
-REVISION =	0
 
 # Perl
 PERMIT_PACKAGE=	Yes
