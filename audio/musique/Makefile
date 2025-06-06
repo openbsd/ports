@@ -2,6 +2,7 @@ COMMENT =	graphical music player focused on a clean ui
 V =		1.12
 DISTNAME =	musique-${V}
 CATEGORIES =	audio
+REVISION =	0
 
 HOMEPAGE =	https://flavio.tordini.org/musique/
 

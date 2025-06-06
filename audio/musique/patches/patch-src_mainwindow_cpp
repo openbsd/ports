@@ -1,0 +1,23 @@
+Fix build with Taglib 2.x
+https://github.com/flaviotordini/musique/commit/7277d40defe9cde40f947a81d624195ddf683f44
+Index: src/mainwindow.cpp
+--- src/mainwindow.cpp.orig
++++ src/mainwindow.cpp
+@@ -46,6 +46,8 @@ $END_LICENSE */
+ #include "view.h"
+ #include "zoomableui.h"
+ 
++#include <iostream>
++
+ #if defined(APP_MAC_SEARCHFIELD) && !defined(APP_MAC_QMACTOOLBAR)
+ #include "searchlineedit_mac.h"
+ #else
+@@ -567,6 +569,8 @@ void MainWindow::createToolBar() {
+         volumeSlider->setPalette(p);
+     }
+     volumeSlider->setValue(volumeSlider->maximum());
++
++
+ 
+ #if defined(APP_MAC_SEARCHFIELD) && !defined(APP_MAC_QMACTOOLBAR)
+     SearchWrapper *searchWrapper = new SearchWrapper(this);
