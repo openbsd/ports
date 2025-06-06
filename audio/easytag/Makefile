@@ -2,7 +2,7 @@ COMMENT=		tag editor for various audio file formats
 
 GNOME_PROJECT=		easytag
 GNOME_VERSION=		2.4.3
-REVISION=		12
+REVISION=		13
 
 CATEGORIES=		audio
 
@@ -11,13 +11,14 @@ PERMIT_PACKAGE=	Yes
 
 WANTLIB += ${COMPILER_LIBCXX} FLAC X11 Xau Xcomposite Xcursor
 WANTLIB += Xdamage Xdmcp Xext Xfixes Xi Xinerama Xrandr Xrender
-WANTLIB += atk-1.0 atk-bridge-2.0 c cairo cairo-gobject crypto
-WANTLIB += epoxy execinfo expat ffi fontconfig freetype fribidi
-WANTLIB += gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0 gmodule-2.0 gobject-2.0
-WANTLIB += graphite2 gtk-3 harfbuzz iconv id3 id3tag intl jpeg
-WANTLIB += m ogg opus opusfile pango-1.0 pangocairo-1.0 pangoft2-1.0
-WANTLIB += pcre2-8 pixman-1 png speex tag vorbis vorbisfile wavpack
-WANTLIB += xcb xcb-render xcb-shm z
+WANTLIB += atk-1.0 atk-bridge-2.0 atspi c cairo cairo-gobject
+WANTLIB += crypto dbus-1 epoll-shim epoxy expat ffi fontconfig
+WANTLIB += freetype fribidi gdk-3 gdk_pixbuf-2.0 gio-2.0 glib-2.0
+WANTLIB += gmodule-2.0 gobject-2.0 graphite2 gtk-3 harfbuzz iconv
+WANTLIB += id3 id3tag intl jpeg m ogg opus opusfile pango-1.0
+WANTLIB += pangocairo-1.0 pangoft2-1.0 pcre2-8 pixman-1 png speex
+WANTLIB += tag vorbis vorbisfile wavpack wayland-client wayland-cursor
+WANTLIB += wayland-egl xcb xcb-render xcb-shm xkbcommon z
 
 COMPILER =		base-clang ports-gcc base-gcc
 

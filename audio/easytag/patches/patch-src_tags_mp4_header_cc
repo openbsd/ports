@@ -1,0 +1,17 @@
+Fix build with Taglib 2.x
+
+Based on patch from Arch Linux:
+https://gitlab.archlinux.org/archlinux/packaging/packages/easytag/-/blob/main/taglib-2.patch?ref_type=heads
+
+Index: src/tags/mp4_header.cc
+--- src/tags/mp4_header.cc.orig
++++ src/tags/mp4_header.cc
+@@ -105,7 +105,7 @@ et_mp4_header_read_file_info (GFile *file,
+     ETFileInfo->bitrate = properties->bitrate ();
+     ETFileInfo->samplerate = properties->sampleRate ();
+     ETFileInfo->mode = properties->channels ();
+-    ETFileInfo->duration = properties->length ();
++    ETFileInfo->duration = properties->lengthInSeconds ();
+ 
+     return TRUE;
+ }
