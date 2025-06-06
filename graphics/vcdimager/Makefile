@@ -2,6 +2,7 @@ COMMENT=		(S)VCD authoring software
 
 DISTNAME=		vcdimager-2.0.1
 CATEGORIES=		graphics multimedia
+REVISION=		0
 
 SHARED_LIBS +=  vcdinfo              0.0      # 2.0
 

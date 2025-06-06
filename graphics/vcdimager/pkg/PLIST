@@ -15,9 +15,9 @@ include/libvcd/sector.h
 include/libvcd/types.h
 include/libvcd/version.h
 @info info/vcd-info.info
-@info info/vcdimager.info
+info/vcdimager.info
 @info info/vcdxrip.info
-lib/libvcdinfo.a
+@static-lib lib/libvcdinfo.a
 lib/libvcdinfo.la
 @lib lib/libvcdinfo.so.${LIBvcdinfo_VERSION}
 lib/pkgconfig/libvcdinfo.pc
