@@ -1,43 +1,45 @@
 @bin bin/cantata
-lib/cantata/
-@bin lib/cantata/cantata-replaygain
-@bin lib/cantata/cantata-tags
-share/applications/cantata.desktop
-share/cantata/
-share/cantata/icons/
-share/cantata/icons/podcasts.png
-share/cantata/icons/soundcloud.png
-share/cantata/icons/stream.png
-share/cantata/scripts/
-share/cantata/scripts/cantata-dynamic
-share/cantata/scripts/cantata-remote
-share/cantata/translations/
-share/cantata/translations/cantata_cs.qm
-share/cantata/translations/cantata_da.qm
-share/cantata/translations/cantata_de.qm
-share/cantata/translations/cantata_en_GB.qm
-share/cantata/translations/cantata_es.qm
-share/cantata/translations/cantata_fi.qm
-share/cantata/translations/cantata_fr.qm
-share/cantata/translations/cantata_hu.qm
-share/cantata/translations/cantata_it.qm
-share/cantata/translations/cantata_ja.qm
-share/cantata/translations/cantata_ko.qm
-share/cantata/translations/cantata_nl.qm
-share/cantata/translations/cantata_pl.qm
-share/cantata/translations/cantata_pt_BR.qm
-share/cantata/translations/cantata_ru.qm
-share/cantata/translations/cantata_zh_CN.qm
-share/icons/hicolor/128x128/apps/cantata.png
-share/icons/hicolor/16x16/apps/cantata.png
-share/icons/hicolor/22x22/apps/cantata.png
-share/icons/hicolor/24x24/apps/cantata.png
-share/icons/hicolor/256x256/apps/cantata.png
-share/icons/hicolor/32x32/apps/cantata.png
-share/icons/hicolor/48x48/apps/cantata.png
-share/icons/hicolor/512x512/apps/cantata.png
-share/icons/hicolor/64x64/apps/cantata.png
-share/icons/hicolor/scalable/apps/cantata.svg
-share/icons/hicolor/symbolic/apps/cantata-symbolic.svg
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
+libexec/Cantata/
+@bin libexec/Cantata/cantata-replaygain
+@bin libexec/Cantata/cantata-tags
+share/Cantata/
+share/Cantata/icons/
+share/Cantata/icons/podcasts.png
+share/Cantata/icons/soundcloud.png
+share/Cantata/icons/stream.png
+share/Cantata/scripts/
+share/Cantata/scripts/cantata-dynamic
+share/Cantata/scripts/cantata-remote
+share/Cantata/translations/
+share/Cantata/translations/cantata_cs.qm
+share/Cantata/translations/cantata_da.qm
+share/Cantata/translations/cantata_de.qm
+share/Cantata/translations/cantata_en_GB.qm
+share/Cantata/translations/cantata_es.qm
+share/Cantata/translations/cantata_fi.qm
+share/Cantata/translations/cantata_fr.qm
+share/Cantata/translations/cantata_hu.qm
+share/Cantata/translations/cantata_it.qm
+share/Cantata/translations/cantata_ja.qm
+share/Cantata/translations/cantata_ko.qm
+share/Cantata/translations/cantata_nl.qm
+share/Cantata/translations/cantata_pl.qm
+share/Cantata/translations/cantata_pt_BR.qm
+share/Cantata/translations/cantata_ru.qm
+share/Cantata/translations/cantata_zh_CN.qm
+share/applications/dog.unix.cantata.Cantata.desktop
+share/icons/hicolor/128x128/apps/dog.unix.cantata.Cantata.png
+share/icons/hicolor/16x16/apps/dog.unix.cantata.Cantata.png
+share/icons/hicolor/22x22/apps/dog.unix.cantata.Cantata.png
+share/icons/hicolor/24x24/apps/dog.unix.cantata.Cantata.png
+share/icons/hicolor/256x256/apps/dog.unix.cantata.Cantata.png
+share/icons/hicolor/32x32/apps/dog.unix.cantata.Cantata.png
+share/icons/hicolor/48x48/apps/dog.unix.cantata.Cantata.png
+share/icons/hicolor/512x512/apps/dog.unix.cantata.Cantata.png
+share/icons/hicolor/64x64/apps/dog.unix.cantata.Cantata.png
+share/icons/hicolor/scalable/apps/dog.unix.cantata.Cantata.svg
+share/icons/hicolor/symbolic/apps/dog.unix.cantata.Cantata-symbolic.svg
+share/metainfo/
+share/metainfo/dog.unix.cantata.Cantata.metainfo.xml

@@ -1,44 +1,39 @@
 COMMENT =	Qt-based MPD client
 
-V =		2.5.0
-DISTNAME =	cantata-${V}
-HOMEPAGE =	https://github.com/CDrummond/cantata
-REVISION =	0
-
-SITES =		https://github.com/CDrummond/cantata/releases/download/v${V}/
-EXTRACT_SUFX =	.tar.bz2
+GH_ACCOUNT=     nullobsi
+GH_PROJECT=     cantata
+GH_TAGNAME=     v3.3.0
 
 CATEGORIES =	audio
 
 # GPLv2 only
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${COMPILER_LIBCXX} Qt5Concurrent Qt5Core Qt5DBus Qt5Gui
-WANTLIB += Qt5Multimedia Qt5Network Qt5Sql Qt5Svg Qt5Widgets Qt5Xml
-WANTLIB += avahi-client avahi-common avcodec avformat avutil c
-WANTLIB += cddb cdio cdio_cdda cdio_paranoia ebur128 iconv m mpg123
-WANTLIB += mtp musicbrainz5 tag z
+WANTLIB += ${COMPILER_LIBCXX} GL Qt6Concurrent Qt6Core Qt6DBus
+WANTLIB += Qt6Gui Qt6Multimedia Qt6Network Qt6Sql Qt6Svg Qt6Widgets
+WANTLIB += Qt6Xml avahi-client avahi-common avcodec avformat avutil
+WANTLIB += c cddb cdio_cdda cdio_paranoia ebur128 m mpg123 mtp
+WANTLIB += musicbrainz5 tag z
 
 MODULES =	devel/cmake \
-		x11/qt5
+		x11/qt6
 
-RUN_DEPENDS +=	devel/desktop-file-utils
-RUN_DEPENDS +=	x11/gtk+4,-guic
-LIB_DEPENDS +=	audio/mpg123 \
-		audio/libcdio \
+RUN_DEPENDS =	devel/desktop-file-utils \
+		x11/gtk+4,-guic
+
+LIB_DEPENDS =	audio/libcddb \
 		audio/libcdio-paranoia \
-		audio/libcddb \
 		audio/libebur128 \
 		audio/libmusicbrainz5 \
-		audio/taglib \
-		x11/qt5/qtmultimedia \
-		x11/qt5/qtsvg \
+		audio/mpg123 \
+		audio/taglib>=2.0 \
 		devel/libmtp \
-		graphics/ffmpeg
+		graphics/ffmpeg \
+		net/avahi,-libs \
+		x11/qt6/qtmultimedia \
+		x11/qt6/qtsvg
 
 CONFIGURE_ARGS +=	-DCMAKE_INSTALL_PREFIX:Path=${PREFIX} \
-			-DENABLE_LIBVLC=OFF \
-			-DLRELEASE_EXECUTABLE:String=${MODQT_LRELEASE} \
-			-DLCONVERT_EXECUTABLE:String=${LOCALBASE}/lib/qt5/bin/lconvert
+			-DENABLE_LIBVLC=OFF
 
 .include <bsd.port.mk>
