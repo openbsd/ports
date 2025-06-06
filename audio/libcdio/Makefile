@@ -1,14 +1,16 @@
 COMMENT=	compact disk input and control library
 
-DISTNAME=	libcdio-2.1.0
-EXTRACT_SUFX=	.tar.bz2
+V=		2.2.0
+DISTNAME=	libcdio-${V}
 
 CATEGORIES=	audio devel
-SITES=		${SITE_GNU:=libcdio/}
+
+SITES=		https://github.com/libcdio/libcdio/releases/download/${V}0/
+EXTRACT_SUFX=	.tar.bz2
 
 SHARED_LIBS=	cdio		1.0 \
 		cdio++		1.0 \
-		iso9660		1.0 \
+		iso9660		2.0 \
 		iso9660++	1.0 \
 		udf		1.0
 

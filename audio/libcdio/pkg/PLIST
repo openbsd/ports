@@ -51,19 +51,19 @@ include/cdio/util.h
 include/cdio/version.h
 include/cdio/xa.h
 @info info/libcdio.info
-lib/libcdio++.a
+@static-lib lib/libcdio++.a
 lib/libcdio++.la
 @lib lib/libcdio++.so.${LIBcdio++_VERSION}
-lib/libcdio.a
+@static-lib lib/libcdio.a
 lib/libcdio.la
 @lib lib/libcdio.so.${LIBcdio_VERSION}
-lib/libiso9660++.a
+@static-lib lib/libiso9660++.a
 lib/libiso9660++.la
 @lib lib/libiso9660++.so.${LIBiso9660++_VERSION}
-lib/libiso9660.a
+@static-lib lib/libiso9660.a
 lib/libiso9660.la
 @lib lib/libiso9660.so.${LIBiso9660_VERSION}
-lib/libudf.a
+@static-lib lib/libudf.a
 lib/libudf.la
 @lib lib/libudf.so.${LIBudf_VERSION}
 lib/pkgconfig/libcdio++.pc
