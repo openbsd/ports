@@ -12,7 +12,7 @@ lib/libcdio_paranoia.la
 @lib lib/libcdio_paranoia.so.${LIBcdio_paranoia_VERSION}
 lib/pkgconfig/libcdio_cdda.pc
 lib/pkgconfig/libcdio_paranoia.pc
-man/jp/
-man/jp/man1/
-@man man/jp/man1/cd-paranoia.1
+man/ja/
+man/ja/man1/
+@man man/ja/man1/cd-paranoia.1
 @man man/man1/cd-paranoia.1
