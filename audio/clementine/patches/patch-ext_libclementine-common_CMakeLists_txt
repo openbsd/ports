@@ -1,30 +1,17 @@
-1. Respect CXXFLAGS
-2. Switch Clementine to FindBacktrace.cmake
-
+Switch Clementine to FindBacktrace.cmake
 Index: ext/libclementine-common/CMakeLists.txt
 --- ext/libclementine-common/CMakeLists.txt.orig
 +++ ext/libclementine-common/CMakeLists.txt
-@@ -2,7 +2,7 @@ include_directories(${PROTOBUF_INCLUDE_DIRS})
- include_directories(${CMAKE_CURRENT_BINARY_DIR})
- include_directories(${CMAKE_CURRENT_SOURCE_DIR})
- 
--set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} --std=c++0x")
-+set(CMAKE_CXX_FLAGS "--std=c++0x ${CMAKE_CXX_FLAGS}")
- 
- set(SOURCES
-   core/closure.cpp
-@@ -39,6 +39,14 @@ target_link_libraries(libclementine-common
-   ${TAGLIB_LIBRARIES}
-   ${CMAKE_THREAD_LIBS_INIT}
+@@ -39,4 +39,11 @@ target_link_libraries(libclementine-common
  )
-+
-+find_package(Backtrace)
+ 
+ find_package(Backtrace)
+-configure_file(core/conf_backtrace.h.in conf_backtrace.h)
 +configure_file(${CMAKE_CURRENT_SOURCE_DIR}/config.h.in
 +               ${CMAKE_CURRENT_BINARY_DIR}/config.h)
 +if(Backtrace_FOUND)
 +  include_directories(${Backtrace_INCLUDE_DIRS})
 +  target_link_libraries(libclementine-common ${Backtrace_LIBRARIES})
++  configure_file(core/conf_backtrace.h.in conf_backtrace.h)
 +endif(Backtrace_FOUND)
- 
- find_package(Backtrace)
- configure_file(core/conf_backtrace.h.in conf_backtrace.h)
++

@@ -1,7 +1,15 @@
 Index: 3rdparty/libprojectm/CMakeLists.txt
 --- 3rdparty/libprojectm/CMakeLists.txt.orig
 +++ 3rdparty/libprojectm/CMakeLists.txt
-@@ -17,7 +17,7 @@ set(USE_FBO ON)
+@@ -11,13 +11,15 @@ if (CMAKE_VERSION VERSION_GREATER "2.8.3")
+   cmake_policy(SET CMP0017 OLD)
+ endif (CMAKE_VERSION VERSION_GREATER "2.8.3")
+ 
++set(CMAKE_CXX_STANDARD 14)
+ 
++
+ set(USE_DEVIL OFF)
+ set(USE_FBO ON)
  set(USE_FTGL OFF)
  set(USE_GLES1 OFF)
  set(USE_THREADS OFF)
@@ -10,7 +18,7 @@ Index: 3rdparty/libprojectm/CMakeLists.txt
  set(USE_NATIVE_GLEW OFF)
  set(USE_CG OFF)
  set(BUILD_PROJECTM_STATIC ON)
-@@ -168,7 +168,7 @@ CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/libproject
+@@ -166,7 +168,7 @@ CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/libproject
  CONFIGURE_FILE("${CMAKE_CURRENT_SOURCE_DIR}/config.inp.in" "${CMAKE_CURRENT_SOURCE_DIR}/config.inp" @ONLY)
  
  if(BUNDLE_PROJECTM_PRESETS)
