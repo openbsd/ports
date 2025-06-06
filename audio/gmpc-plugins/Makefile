@@ -2,7 +2,7 @@ COMMENT =		bundle of plugins for gmpc
 
 VERSION =		11.8.16
 DISTNAME =		gmpc-plugins-${VERSION}
-REVISION =		15
+REVISION =		16
 
 CATEGORIES =		audio
 
