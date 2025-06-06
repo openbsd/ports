@@ -9,7 +9,7 @@ CATEGORIES=	x11
 SITES=		https://download.videolan.org/pub/videolan/vlc/${V}/
 EXTRACT_SUFX=	.tar.xz
 REVISION-jack=	0
-REVISION-main=	3
+REVISION-main=	4
 
 USE_NOBTCFI=	Yes
 
@@ -110,7 +110,7 @@ LIB_DEPENDS-main= ${MODQT5_LIB_DEPENDS} \
 		audio/libvorbis \
 		audio/opus \
 		audio/speex \
-		audio/taglib \
+		audio/taglib>=2.0.2 \
 		devel/fribidi \
 		devel/gettext,-runtime \
 		devel/harfbuzz \
@@ -229,6 +229,8 @@ CONFIGURE_ENV+=	BUILDCC="${CC}" \
 		PKG_CONFIG_PATH="${LOCALBASE}/lib/qt5/pkgconfig" \
 		RCC="${LOCALBASE}/bin/rcc-qt5" \
 		LUAC="${LOCALBASE}/bin/luac${MODLUA_DEP_VERSION}"
+
+CFLAGS+=	-Wno-unreachable-code-generic-assoc
 
 PSEUDO_FLAVORS=	no_jack
 FLAVOR?=
