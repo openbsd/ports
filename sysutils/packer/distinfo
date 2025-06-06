@@ -1205,7 +1205,7 @@ SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.mod)
 SHA256 (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.zip) = 7qqCcA6WrF6APXqcMjYzMlBL7/j7sSAkkrTUPVpec2A=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = CZ2G+OBNET1A9KFSzf4AFxFtfv6mjkF6nGRthgJj174=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 7wMf94/5twNuF07vSd+9d0aNxPCvtzpjm2H4qzocxCU=
-SHA256 (packer-v1.13.0.zip) = RpC+EcDISDbzLVOEj2Y3Rpx1NgsNO5kTCgM4fy+IO38=
+SHA256 (packer-v1.13.1.zip) = 3n+sTJkLqb9s8qJtSTKpIjq0EzT8O9xn32O5gu+4BOw=
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.2.mod) = 1150
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.8.mod) = 1308
 SIZE (go_modules/cloud.google.com/go/@v/v0.110.8.zip) = 304879
@@ -2413,4 +2413,4 @@ SIZE (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.mod) =
 SIZE (go_modules/honnef.co/go/tools/@v/v0.0.0-20190523083050-ea95bdfd59fc.zip) = 449180
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = 133
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 222726
-SIZE (packer-v1.13.0.zip) = 2959893
+SIZE (packer-v1.13.1.zip) = 2963212
