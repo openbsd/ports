@@ -37,8 +37,10 @@
 @man man/man7/coredns-metadata.7
 @man man/man7/coredns-metrics.7
 @man man/man7/coredns-minimal.7
+@man man/man7/coredns-multisocket.7
 @man man/man7/coredns-nsid.7
 @man man/man7/coredns-pprof.7
+@man man/man7/coredns-quic.7
 @man man/man7/coredns-ready.7
 @man man/man7/coredns-reload.7
 @man man/man7/coredns-rewrite.7
