@@ -1,6 +1,7 @@
 include/wayland-protocols/
 include/wayland-protocols/alpha-modifier-v1-enum.h
 include/wayland-protocols/color-management-v1-enum.h
+include/wayland-protocols/color-representation-v1-enum.h
 include/wayland-protocols/commit-timing-v1-enum.h
 include/wayland-protocols/content-type-v1-enum.h
 include/wayland-protocols/cursor-shape-v1-enum.h
@@ -50,6 +51,7 @@ include/wayland-protocols/xdg-shell-unstable-v6-enum.h
 include/wayland-protocols/xdg-system-bell-v1-enum.h
 include/wayland-protocols/xdg-toplevel-drag-v1-enum.h
 include/wayland-protocols/xdg-toplevel-icon-v1-enum.h
+include/wayland-protocols/xdg-toplevel-tag-v1-enum.h
 include/wayland-protocols/xwayland-keyboard-grab-unstable-v1-enum.h
 include/wayland-protocols/xwayland-shell-v1-enum.h
 share/pkgconfig/wayland-protocols.pc
@@ -70,6 +72,8 @@ share/wayland-protocols/staging/alpha-modifier/
 share/wayland-protocols/staging/alpha-modifier/alpha-modifier-v1.xml
 share/wayland-protocols/staging/color-management/
 share/wayland-protocols/staging/color-management/color-management-v1.xml
+share/wayland-protocols/staging/color-representation/
+share/wayland-protocols/staging/color-representation/color-representation-v1.xml
 share/wayland-protocols/staging/commit-timing/
 share/wayland-protocols/staging/commit-timing/commit-timing-v1.xml
 share/wayland-protocols/staging/content-type/
@@ -116,6 +120,8 @@ share/wayland-protocols/staging/xdg-toplevel-drag/
 share/wayland-protocols/staging/xdg-toplevel-drag/xdg-toplevel-drag-v1.xml
 share/wayland-protocols/staging/xdg-toplevel-icon/
 share/wayland-protocols/staging/xdg-toplevel-icon/xdg-toplevel-icon-v1.xml
+share/wayland-protocols/staging/xdg-toplevel-tag/
+share/wayland-protocols/staging/xdg-toplevel-tag/xdg-toplevel-tag-v1.xml
 share/wayland-protocols/staging/xwayland-shell/
 share/wayland-protocols/staging/xwayland-shell/xwayland-shell-v1.xml
 share/wayland-protocols/unstable/
