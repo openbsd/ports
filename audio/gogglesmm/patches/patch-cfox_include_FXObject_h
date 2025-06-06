@@ -1,0 +1,14 @@
+Index: cfox/include/FXObject.h
+--- cfox/include/FXObject.h.orig
++++ cfox/include/FXObject.h
+@@ -25,6 +25,10 @@
+ #include "FXMetaClass.h"
+ #endif
+ 
++#ifndef FXMETACLASS_H
++#include "FXMetaClass.h"
++#endif
++
+ namespace FX {
+ 
+ 

@@ -1,0 +1,48 @@
+Index: cfox/include/fxendian.h
+--- cfox/include/fxendian.h.orig
++++ cfox/include/fxendian.h
+@@ -62,44 +62,6 @@ static inline FXulong reverse64(FXulong x){
+   }
+ 
+ 
+-// Byte swap unsigned short
+-static inline FXushort swap16(FXushort x){
+-#if ((__GNUC__ >= 5) || ((__GNUC__ == 4) && (__GNUC_MINOR__ >= 8)))
+-  return __builtin_bswap16(x);
+-#elif (_MSC_VER >= 1500)
+-  return _byteswap_ushort(x);
+-#else
+-  return (x>>8) | (x<<8);
+-#endif
+-  }
+-
+-
+-// Byte swap unsiged int
+-static inline FXuint swap32(FXuint x){
+-#if ((__GNUC__ >= 5) || ((__GNUC__ == 4) && (__GNUC_MINOR__ >= 8)))
+-  return __builtin_bswap32(x);
+-#elif (_MSC_VER >= 1500)
+-  return _byteswap_ulong(x);
+-#else
+-  x=((x<<8)&0xFF00FF00)|((x>>8)&0x00FF00FF);
+-  return (x>>16)|(x<<16);
+-#endif
+-  }
+-
+-
+-// Byte swap unsigned long
+-static inline FXulong swap64(FXulong x){
+-#if ((__GNUC__ >= 5) || ((__GNUC__ == 4) && (__GNUC_MINOR__ >= 8)))
+-  return __builtin_bswap64(x);
+-#elif (_MSC_VER >= 1500)
+-  return _byteswap_uint64(x);
+-#else
+-  x=((x<< 8)&FXULONG(0xFF00FF00FF00FF00))|((x>> 8)&FXULONG(0x00FF00FF00FF00FF));
+-  x=((x<<16)&FXULONG(0xFFFF0000FFFF0000))|((x>>16)&FXULONG(0x0000FFFF0000FFFF));
+-  return (x>>32)|(x<<32);
+-#endif
+-  }
+-
+ 
+ // Isolate least significant bit set
+ static inline FXuint lsb32(FXuint x){

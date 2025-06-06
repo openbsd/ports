@@ -1,0 +1,21 @@
+Index: cfox/include/fxmath.h
+--- cfox/include/fxmath.h.orig
++++ cfox/include/fxmath.h
+@@ -1002,7 +1002,7 @@ static inline FXdouble exp2(FXdouble x){
+ 
+ /// Single precision base 10 exponential
+ static inline FXfloat exp10(FXfloat x){
+-#if defined(NO_EXP10F)
++#if defined(NO_EXP10F) || defined(__OpenBSD__)
+   return Math::pow(10.0f,x);
+ #else
+   return ::exp10f(x);
+@@ -1012,7 +1012,7 @@ static inline FXfloat exp10(FXfloat x){
+ 
+ /// Double precision base 10 exponential
+ static inline FXdouble exp10(FXdouble x){
+-#if defined(NO_EXP10)
++#if defined(NO_EXP10) || defined(__OpenBSD__)
+   return Math::pow(10.0,x);
+ #else
+   return ::exp10(x);

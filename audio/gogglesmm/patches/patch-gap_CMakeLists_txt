@@ -1,0 +1,12 @@
+Index: gap/CMakeLists.txt
+--- gap/CMakeLists.txt.orig
++++ gap/CMakeLists.txt
+@@ -242,7 +242,7 @@ else()
+   endif()
+ 
+   if(WITH_OPENSSL)
+-    pkg_check_modules(OPENSSL openssl>=1.0.1)
++    find_package(OpenSSL 1.0.1)
+   elseif(WITH_GNUTLS)
+     pkg_check_modules(GNUTLS gnutls>=3.4.0)
+   elseif(WITH_GCRYPT)

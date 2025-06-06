@@ -1,0 +1,28 @@
+Index: cfox/lib/FXSystemTime.cpp
+--- cfox/lib/FXSystemTime.cpp.orig
++++ cfox/lib/FXSystemTime.cpp
+@@ -264,8 +264,11 @@ FXTime FXSystem::localTimeZoneOffset(){
+   setuplocaltimezone();
+ #if defined(WIN32)
+   return minutes*tzi.Bias;              // +minutes*tzi.StandardBias;
+-#elif defined(__FreeBSD__) || defined(__OpenBSD__)
+-  return 0;     // FIXME
++#elif defined(__FreeBSD__) && __FreeBSD_version < 1500015 || defined (__OpenBSD__)
++  struct tm tmresult;
++  time_t tmp=time(&tmp);
++  struct tm* ptm=localtime_r(&tmp,&tmresult);
++  return seconds*(-ptm->tm_gmtoff + ptm->tm_isdst*3600);
+ #else
+   return seconds*timezone;
+ #endif
+@@ -277,8 +280,8 @@ FXTime FXSystem::daylightSavingsOffset(){
+   setuplocaltimezone();
+ #if defined(WIN32)
+   return minutes*tzi.DaylightBias;      // Or difference between standard and daylight bias.
+-#elif defined(__FreeBSD__) || defined(__OpenBSD__)
+-  return 0;     // FIXME
++#elif defined(__FreeBSD__) && __FreeBSD_version < 1500015 || defined (__OpenBSD__)
++  return -hours*((tzname[1][0] == ' ') ? 0 : 1);
+ #else
+   return -hours*daylight;
+ #endif

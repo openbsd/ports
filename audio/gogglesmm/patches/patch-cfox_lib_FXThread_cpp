@@ -1,0 +1,47 @@
+Index: cfox/lib/FXThread.cpp
+--- cfox/lib/FXThread.cpp.orig
++++ cfox/lib/FXThread.cpp
+@@ -29,6 +29,12 @@
+ #include "FXAutoThreadStorageKey.h"
+ #include "FXThread.h"
+ 
++#if defined(__OpenBSD__)
++#include <pthread.h>
++#include <pthread_np.h>
++#endif
++
++
+ /*
+   Notes:
+ 
+@@ -994,9 +1000,12 @@ FXbool FXThread::description(const FXString& desc){
+     return 0<=fxSetThreadDescription((HANDLE)tid,udesc);
+ #elif defined(__APPLE__)
+     return pthread_setname_np(desc.text())==0;
+-#elif defined(__NetBSD__) || defined(__FreeBSD__) || defined(__OpenBSD__)
++#elif defined(__NetBSD__) || defined(__FreeBSD__)
+     pthread_setname_np((pthread_t)tid,desc.text());
+     return true;
++#elif defined(__OpenBSD__)
++    pthread_set_name_np((pthread_t)tid,desc.text());
++    return true;
+ #elif defined(HAVE_PTHREAD_SETNAME_NP)
+     return pthread_setname_np((pthread_t)tid,desc.text())==0;
+ #endif
+@@ -1021,11 +1030,15 @@ FXString FXThread::description() const {
+     if(pthread_getname_np(*((pthread_t*)&tid),desc,ARRAYNUMBER(desc))==0){
+       return desc;
+       }
+-#elif defined(__NetBSD__) || defined(__FreeBSD__) || defined(__OpenBSD__)
++#elif defined(__NetBSD__) || defined(__FreeBSD__)
+     FXchar desc[256];
+     if(pthread_getname_np((pthread_t)tid,desc,ARRAYNUMBER(desc))==0){
+       return desc;
+       }
++#elif defined(__OpenBSD__)
++    FXchar desc[256];
++    pthread_get_name_np((pthread_t)tid,desc,ARRAYNUMBER(desc));
++    return desc;
+ #elif defined(HAVE_PTHREAD_GETNAME_NP)
+     FXchar desc[256];
+     if(pthread_getname_np((pthread_t)tid,desc,ARRAYNUMBER(desc))==0){

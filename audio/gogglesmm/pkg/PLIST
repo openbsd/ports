@@ -1,4 +1,9 @@
 @bin bin/gogglesmm
+lib/gogglesmm/
+@so lib/gogglesmm/libgap_oss.so
+@so lib/gogglesmm/libgap_pulse.so
+@so lib/gogglesmm/libgap_sndio.so
+@so lib/gogglesmm/libgap_wav.so
 @man man/man1/gogglesmm.1
 share/applications/gogglesmm.desktop
 share/icons/hicolor/16x16/apps/gogglesmm.png
@@ -6,13 +11,16 @@ share/icons/hicolor/22x22/apps/gogglesmm.png
 share/icons/hicolor/24x24/apps/gogglesmm.png
 share/icons/hicolor/32x32/apps/gogglesmm.png
 share/icons/hicolor/48x48/apps/gogglesmm.png
+share/icons/hicolor/64x64/apps/gogglesmm.png
 share/icons/hicolor/scalable/apps/gogglesmm.svg
-share/locale/cs/LC_MESSAGES/gogglesmm.mo
 share/locale/de/LC_MESSAGES/gogglesmm.mo
 share/locale/es/LC_MESSAGES/gogglesmm.mo
 share/locale/fr/LC_MESSAGES/gogglesmm.mo
 share/locale/hu/LC_MESSAGES/gogglesmm.mo
+share/locale/ko/LC_MESSAGES/gogglesmm.mo
 share/locale/pt/LC_MESSAGES/gogglesmm.mo
 share/locale/ru/LC_MESSAGES/gogglesmm.mo
+share/metainfo/
+share/metainfo/gogglesmm.appdata.xml
 @tag gtk-update-icon-cache %D/share/icons/hicolor
 @tag update-desktop-database
