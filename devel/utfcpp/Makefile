@@ -2,7 +2,7 @@ COMMENT =		simple, portable library for handling UTF-8 strings
 
 GH_ACCOUNT =		nemtrif
 GH_PROJECT =		utfcpp
-GH_TAGNAME =		v4.0.5
+GH_TAGNAME =		v4.0.6
 CATEGORIES =		devel
 
 MAINTAINER =		Sergey Bronnikov <estetus@gmail.com>
