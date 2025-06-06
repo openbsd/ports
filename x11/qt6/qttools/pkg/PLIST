@@ -1,12 +1,17 @@
 bin/assistant-qt6
 bin/designer-qt6
+bin/lconvert-qt6
 bin/linguist-qt6
 bin/lrelease-qt6
 bin/lupdate-qt6
 bin/pixeltool-qt6
 bin/qdbus-qt6
+bin/qdbusviewer-qt6
+bin/qdistancefieldgenerator-qt6
 bin/qdoc-qt6
 bin/qtdiag-qt6
+bin/qtdiag6-qt6
+bin/qtplugininfo-qt6
 include/X11/qt6/QtDesigner/
 include/X11/qt6/QtDesigner/${VERSION}/
 include/X11/qt6/QtDesigner/${VERSION}/QtDesigner/

@@ -4,7 +4,7 @@ COMMENT-main =		C++ general-purpose toolkit
 COMMENT-global =	global Qt6 documentation internals
 COMMENT-mysql =		MySQL plugin for Qt6
 COMMENT-psql =		PostgresSQL plugin for Qt6
-REVISION-main =		0
+REVISION-main =		1
 
 PKGSPEC-main =		qt6-qtbase-${QT6_PKGSPEC}
 
@@ -146,6 +146,13 @@ MODPY_ADJ_FILES =	util/testrunner/qt-testrunner.py \
 			util/testrunner/sanitizer-testrunner.py \
 			mkspecs/features/uikit/devices.py
 
+PROGRAMS6 =		qmake cmake_automoc_parser moc qlalr \
+			qt-cmake-standalone-test qvkgen rcc syncqt tracegen \
+			tracepointgen uic
+
+MODCMAKE_LDFLAGS +=	-L${X11BASE}/lib -L${LOCALBASE}/lib
+CXXFLAGS +=		-I${X11BASE}/include -I${LOCALBASE}/include
+
 post-extract:
 	mkdir -p ${WRKDIST}/mkspecs/openbsd-clang
 	cp ${FILESDIR}/clang-qmake.conf \
@@ -154,11 +161,14 @@ post-extract:
 		${WRKDIST}/mkspecs/openbsd-clang/
 
 post-install:
+.for p in ${PROGRAMS6}
+	! test -e ${PREFIX}/lib/qt6/bin/$p || \
+	    ln -sf ../lib/qt6/bin/$p ${PREFIX}/bin/$p-qt6
+	! test -e ${PREFIX}/lib/qt6/libexec/$p || \
+	    ln -sf ../lib/qt6/libexec/$p ${PREFIX}/bin/$p-qt6
+.endfor
 	${MODPY_COMPILEALL} \
 		${PREFIX}/lib/qt6/libexec/ \
 		${PREFIX}/lib/qt6/mkspecs/features/uikit/
-
-MODCMAKE_LDFLAGS +=	-L${X11BASE}/lib -L${LOCALBASE}/lib
-CXXFLAGS +=	-I${X11BASE}/include -I${LOCALBASE}/include
 
 .include <bsd.port.mk>

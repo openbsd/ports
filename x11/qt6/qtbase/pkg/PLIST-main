@@ -1,6 +1,13 @@
+bin/cmake_automoc_parser-qt6
 bin/moc-qt6
+bin/qlalr-qt6
 bin/qmake-qt6
+bin/qt-cmake-standalone-test-qt6
+bin/qvkgen-qt6
 bin/rcc-qt6
+bin/syncqt-qt6
+bin/tracegen-qt6
+bin/tracepointgen-qt6
 bin/uic-qt6
 include/X11/qt6/
 include/X11/qt6/QtConcurrent/

@@ -1,6 +1,7 @@
 QT6NAME =	QtTools
 COMMENT =	Qt6 development tools
 PKGSPEC =	qt6-qttools-${QT6_PKGSPEC}
+REVISION =	0
 
 SHARED_LIBS +=  Qt6Designer             3.1 # 6.7
 SHARED_LIBS +=  Qt6DesignerComponents   2.0 # 6.7
@@ -35,6 +36,10 @@ LIB_DEPENDS =	${MODCLANG_LIB_DEPENDS} \
 		x11/qt6/qtbase \
 		x11/qt6/qtdeclarative \
 		x11/xkbcommon
+
+PROGRAMS6 =	assistant designer lconvert linguist lrelease lupdate \
+		pixeltool qdbus qdbusviewer qdistancefieldgenerator qdoc \
+		qtdiag qtdiag6 qtplugininfo
 
 CONFIGURE_ENV =	LLVM_INSTALL_DIR=${LOCALBASE}/llvm${MODCLANG_VERSION}
 MODCMAKE_LDFLAGS = -L${LOCALBASE}/llvm${MODCLANG_VERSION}/lib -Wl,-rpath=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib

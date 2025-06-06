@@ -1,4 +1,17 @@
 bin/qml-qt6
+bin/qmldom-qt6
+bin/qmleasing-qt6
+bin/qmlformat-qt6
+bin/qmllint-qt6
+bin/qmlls-qt6
+bin/qmlplugindump-qt6
+bin/qmlpreview-qt6
+bin/qmlprofiler-qt6
+bin/qmlscene-qt6
+bin/qmltc-qt6
+bin/qmltestrunner-qt6
+bin/qmltime-qt6
+bin/svgtoqml-qt6
 include/X11/qt6/QtLabsAnimation/
 include/X11/qt6/QtLabsAnimation/${VERSION}/
 include/X11/qt6/QtLabsAnimation/${VERSION}/QtLabsAnimation/

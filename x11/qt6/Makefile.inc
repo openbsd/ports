@@ -51,8 +51,7 @@ SUBST_VARS +=	VERSION
 
 DEBUG_PACKAGES ?=	${BUILD_PACKAGES}
 
-PROGRAMS6 =	assistant designer linguist lrelease lupdate moc pixeltool \
-		qdbus qdoc qmake qml qtdiag rcc uic \
+PROGRAMS6 ?=
 
 .PHONY: qt6-post-install
 post-install: qt6-post-install
