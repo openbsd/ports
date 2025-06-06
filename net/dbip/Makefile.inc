@@ -1,4 +1,4 @@
-V =		2025-05
+V =		2025-06
 
 CATEGORIES =	net
 
