@@ -1,4 +1,17 @@
 ${GEM_LIB}/cache/${DISTNAME}.gem
+${GEM_EXTENSIONS_DIR}/gem_make.out
+${GEM_EXTENSIONS_DIR}/mkmf.log
+@so ${GEM_EXTENSIONS_DIR}/taglib_aiff.so
+@so ${GEM_EXTENSIONS_DIR}/taglib_base.so
+@so ${GEM_EXTENSIONS_DIR}/taglib_flac.so
+@so ${GEM_EXTENSIONS_DIR}/taglib_flac_picture.so
+@so ${GEM_EXTENSIONS_DIR}/taglib_id3v1.so
+@so ${GEM_EXTENSIONS_DIR}/taglib_id3v2.so
+@so ${GEM_EXTENSIONS_DIR}/taglib_mp4.so
+@so ${GEM_EXTENSIONS_DIR}/taglib_mpeg.so
+@so ${GEM_EXTENSIONS_DIR}/taglib_ogg.so
+@so ${GEM_EXTENSIONS_DIR}/taglib_vorbis.so
+@so ${GEM_EXTENSIONS_DIR}/taglib_wav.so
 ${GEM_LIB}/gems/${DISTNAME}/
 ${GEM_LIB}/gems/${DISTNAME}/.github/
 ${GEM_LIB}/gems/${DISTNAME}/.github/FUNDING.yml
@@ -28,6 +41,101 @@ ${GEM_LIB}/gems/${DISTNAME}/docs/taglib/ogg.rb
 ${GEM_LIB}/gems/${DISTNAME}/docs/taglib/riff.rb
 ${GEM_LIB}/gems/${DISTNAME}/docs/taglib/vorbis.rb
 ${GEM_LIB}/gems/${DISTNAME}/docs/taglib/wav.rb
+${GEM_LIB}/gems/${DISTNAME}/ext/
+${GEM_LIB}/gems/${DISTNAME}/ext/extconf_common.rb
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_aiff/
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_aiff/.sitearchdir.time
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_aiff/Makefile
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_aiff/extconf.rb
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_aiff/taglib_aiff.i
+@so ${GEM_LIB}/gems/${DISTNAME}/ext/taglib_aiff/taglib_aiff.so
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_aiff/taglib_aiff_wrap.cxx
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_aiff/taglib_aiff_wrap.o
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_base/
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_base/.sitearchdir.time
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_base/Makefile
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_base/extconf.rb
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_base/includes.i
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_base/taglib_base.i
+@so ${GEM_LIB}/gems/${DISTNAME}/ext/taglib_base/taglib_base.so
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_base/taglib_base_wrap.cxx
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_base/taglib_base_wrap.o
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_flac/
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_flac/.sitearchdir.time
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_flac/Makefile
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_flac/extconf.rb
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_flac/taglib_flac.i
+@so ${GEM_LIB}/gems/${DISTNAME}/ext/taglib_flac/taglib_flac.so
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_flac/taglib_flac_wrap.cxx
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_flac/taglib_flac_wrap.o
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_flac_picture/
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_flac_picture/.sitearchdir.time
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_flac_picture/Makefile
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_flac_picture/extconf.rb
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_flac_picture/includes.i
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_flac_picture/taglib_flac_picture.i
+@so ${GEM_LIB}/gems/${DISTNAME}/ext/taglib_flac_picture/taglib_flac_picture.so
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_flac_picture/taglib_flac_picture_wrap.cxx
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_flac_picture/taglib_flac_picture_wrap.o
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v1/
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v1/.sitearchdir.time
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v1/Makefile
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v1/extconf.rb
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v1/taglib_id3v1.i
+@so ${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v1/taglib_id3v1.so
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v1/taglib_id3v1_wrap.cxx
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v1/taglib_id3v1_wrap.o
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v2/
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v2/.sitearchdir.time
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v2/Makefile
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v2/extconf.rb
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v2/relativevolumeframe.i
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v2/taglib_id3v2.i
+@so ${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v2/taglib_id3v2.so
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v2/taglib_id3v2_wrap.cxx
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_id3v2/taglib_id3v2_wrap.o
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_mp4/
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_mp4/.sitearchdir.time
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_mp4/Makefile
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_mp4/extconf.rb
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_mp4/taglib_mp4.i
+@so ${GEM_LIB}/gems/${DISTNAME}/ext/taglib_mp4/taglib_mp4.so
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_mp4/taglib_mp4_wrap.cxx
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_mp4/taglib_mp4_wrap.o
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_mpeg/
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_mpeg/.sitearchdir.time
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_mpeg/Makefile
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_mpeg/extconf.rb
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_mpeg/taglib_mpeg.i
+@so ${GEM_LIB}/gems/${DISTNAME}/ext/taglib_mpeg/taglib_mpeg.so
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_mpeg/taglib_mpeg_wrap.cxx
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_mpeg/taglib_mpeg_wrap.o
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_ogg/
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_ogg/.sitearchdir.time
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_ogg/Makefile
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_ogg/extconf.rb
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_ogg/taglib_ogg.i
+@so ${GEM_LIB}/gems/${DISTNAME}/ext/taglib_ogg/taglib_ogg.so
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_ogg/taglib_ogg_wrap.cxx
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_ogg/taglib_ogg_wrap.o
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_vorbis/
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_vorbis/.sitearchdir.time
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_vorbis/Makefile
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_vorbis/extconf.rb
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_vorbis/taglib_vorbis.i
+@so ${GEM_LIB}/gems/${DISTNAME}/ext/taglib_vorbis/taglib_vorbis.so
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_vorbis/taglib_vorbis_wrap.cxx
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_vorbis/taglib_vorbis_wrap.o
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_wav/
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_wav/.sitearchdir.time
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_wav/Makefile
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_wav/extconf.rb
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_wav/taglib_wav.i
+@so ${GEM_LIB}/gems/${DISTNAME}/ext/taglib_wav/taglib_wav.so
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_wav/taglib_wav_wrap.cxx
+${GEM_LIB}/gems/${DISTNAME}/ext/taglib_wav/taglib_wav_wrap.o
+${GEM_LIB}/gems/${DISTNAME}/ext/valgrind-suppressions.txt
+${GEM_LIB}/gems/${DISTNAME}/ext/win.cmake
 ${GEM_LIB}/gems/${DISTNAME}/lib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/taglib/
 ${GEM_LIB}/gems/${DISTNAME}/lib/taglib.rb

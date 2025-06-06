@@ -1,6 +1,6 @@
 COMMENT =	reads and writes metadata/tags for many audio formats
 
-VERSION =	1.1.3
+VERSION =	2.0.0
 DISTNAME =	taglib-ruby-${VERSION}
 PKGNAME =	taglib-${VERSION}
 CATEGORIES =	audio
@@ -18,7 +18,7 @@ MODULES =		lang/ruby
 
 CONFIGURE_STYLE =	ruby gem ext
 
-LIB_DEPENDS =		audio/taglib
+LIB_DEPENDS =		audio/taglib>=2.0.2
 
 # Tests depend on unported ruby library (shoulda-context)
 
