@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Engine.pm,v 1.151 2023/07/07 14:43:56 espie Exp $
+# $OpenBSD: Engine.pm,v 1.152 2025/06/07 04:08:00 tb Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -771,7 +771,7 @@ sub log($self, $ts, $line)
 	    DPB::Util->ts2string($ts-$self->{delta}), $line), "\n";
 }
 
-sub stopped_clock($self, $gap)
+sub stopped_clock($self, $gap, $)
 {
 	$self->{delta} += $gap;
 }
