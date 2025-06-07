@@ -3,6 +3,7 @@ COMMENT =		audit Cargo.lock files for security vulnerabilities
 V =			0.21.2
 CRATE =			cargo-audit
 PKGNAME =		${CRATE}-${V}
+REVISION =		0
 
 DISTFILES =		${PKGNAME}${EXTRACT_SUFX}{${CRATE}/${V}/download}
 
@@ -15,10 +16,7 @@ HOMEPAGE =		https://github.com/RustSec/rustsec/tree/main/cargo-audit
 # Apache 2/MIT
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += ${MODCARGO_WANTLIB} crypto git2 m ssh2 ssl
-
-LIB_DEPENDS =		devel/libgit2/libgit2 \
-			security/libssh2
+WANTLIB += ${MODCARGO_WANTLIB} m
 
 MODULES =		devel/cargo
 # for riscv64 and powerpc64, please keep: cc >= 1.0.73 and libc >= 0.2.113
