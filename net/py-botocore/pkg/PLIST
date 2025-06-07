@@ -1154,6 +1154,12 @@ lib/python${MODPY_VERSION}/site-packages/botocore/data/evidently/2021-02-01/endp
 lib/python${MODPY_VERSION}/site-packages/botocore/data/evidently/2021-02-01/examples-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/evidently/2021-02-01/paginators-1.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/evidently/2021-02-01/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/evs/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/evs/2023-07-27/
+lib/python${MODPY_VERSION}/site-packages/botocore/data/evs/2023-07-27/endpoint-rule-set-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/evs/2023-07-27/paginators-1.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/evs/2023-07-27/service-2.json
+lib/python${MODPY_VERSION}/site-packages/botocore/data/evs/2023-07-27/waiters-2.json
 lib/python${MODPY_VERSION}/site-packages/botocore/data/finspace/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/finspace-data/
 lib/python${MODPY_VERSION}/site-packages/botocore/data/finspace-data/2020-07-13/
