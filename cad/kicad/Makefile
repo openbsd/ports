@@ -8,7 +8,7 @@ V =			9.0.2
 COMMENT =		schematic and PCB editing software
 DISTNAME =		kicad-${V}
 EPOCH =			0
-REVISION =		0
+REVISION =		1
 
 SHARED_LIBS +=  kicad_3dsg                2.0 # 2.0
 SHARED_LIBS +=  kicommon                  0.0 # 0.0
@@ -64,7 +64,7 @@ WANTLIB += m ngspice nng pango-1.0 pangocairo-1.0 pixman-1 ${MODPY_WANTLIB}
 WANTLIB += secret-1 wx_baseu-3.2 wx_baseu_net-3.2 wx_baseu_xml-3.2
 WANTLIB += wx_gtk3u_aui-3.2 wx_gtk3u_core-3.2 wx_gtk3u_gl-3.2
 WANTLIB += wx_gtk3u_html-3.2 wx_gtk3u_propgrid-3.2 wx_gtk3u_richtext-3.2
-WANTLIB += wx_gtk3u_stc-3.2 z zstd
+WANTLIB += wx_gtk3u_stc-3.2 z zstd protobuf
 
 SITES =			https://gitlab.com/kicad/code/kicad/-/archive/${V}/
 
