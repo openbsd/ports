@@ -3,7 +3,7 @@ COMMENT =	pretty ls alternative with support for icons and colors
 GH_ACCOUNT =	lsd-rs
 GH_PROJECT =	lsd
 GH_TAGNAME =	v1.1.5
-REVISION =	1
+REVISION =	2
 
 CATEGORIES =	sysutils
 
@@ -13,7 +13,7 @@ MAINTAINER =	Laurent Cheylus <foxy@free.fr>
 PERMIT_PACKAGE =	Yes
 
 COMPILER =	base-clang ports-gcc
-WANTLIB +=	${MODCARGO_WANTLIB} git2 m
+WANTLIB +=	${MODCARGO_WANTLIB} git2
 
 MODULES =	devel/cargo
 

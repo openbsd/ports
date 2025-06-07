@@ -3,7 +3,7 @@ USE_NOBTCFI-aarch64 =	Yes# fortran
 COMMENT =	GNU Astronomy Utilities
 DISTNAME =	gnuastro-0.18
 CATEGORIES =	astro
-REVISION =	4
+REVISION =	5
 
 SHARED_LIBS +=	gnuastro                  3.1 # 16.0
 
@@ -13,10 +13,9 @@ MAINTAINER =	Brian Callahan <bcallah@openbsd.org>
 # GPLv3+
 PERMIT_PACKAGE =	Yes
 
-WANTLIB += bz2 c cfitsio crypto curl git2 gsl gslcblas jpeg lzma
-WANTLIB += m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls pcre
-WANTLIB += pthread ssh2 ssl tiff wcs z zstd
-WANTLIB += ${COMPILER_LIBCXX} Lerc
+WANTLIB += ${COMPILER_LIBCXX} Lerc bz2 c cfitsio crypto curl git2
+WANTLIB += gsl gslcblas jpeg lzma m nghttp2 nghttp3 ngtcp2 ngtcp2_crypto_quictls
+WANTLIB += pcre2-8 ssh2 ssl tiff wcs z zstd
 
 SITES =		${SITE_GNU:=gnuastro/}
 
