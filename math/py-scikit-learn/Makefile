@@ -1,9 +1,8 @@
 COMMENT =	set of python modules for machine learning and data mining
 
-MODPY_DISTV =		1.5.2
+MODPY_DISTV =		1.7.0
 DISTNAME =		scikit_learn-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/}
-REVISION =		0
 
 CATEGORIES =		math
 
@@ -25,17 +24,21 @@ MODPY_PI =		Yes
 MODPY_PYBUILD =		mesonpy
 
 MODPY_PYTEST_ARGS =	-v
-MODPY_TEST_DIR = ${WRKSRC}/build/lib.openbsd-${OSREV}-${ARCH}-cpython-${MODPY_MAJORMINOR}
+MODPY_TEST_DIR =	${WRKINST}${MODPY_SITEPKG}
 
 BUILD_DEPENDS =		lang/cython \
 			math/py-numpy \
 			math/py-scipy
 
-RUN_DEPENDS =		math/py-numpy>=1.19.5 \
-			math/py-scipy>=1.6.0 \
+RUN_DEPENDS =		math/py-numpy>=1.22.0 \
+			math/py-scipy>=1.8.0 \
 			sysutils/py-joblib>=1.2.0 \
 			sysutils/py-threadpoolctl>=3.1.0
 
-TEST_DEPENDS =		math/py-pandas
+TEST_DEPENDS =		${FULLPKGNAME}:${FULLPKGPATH} \
+			devel/py-test-cov \
+			graphics/py-matplotlib \
+			math/py-pandas \
+			math/py-scikit-image
 
 .include <bsd.port.mk>
