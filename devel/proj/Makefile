@@ -1,6 +1,6 @@
 COMMENT=	cartographic projection utilities
 
-DISTNAME=	proj-9.6.1
+DISTNAME=	proj-9.6.2
 CATEGORIES=	devel geo
 SHARED_LIBS=	proj 20.1
 
