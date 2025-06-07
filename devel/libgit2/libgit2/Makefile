@@ -2,11 +2,11 @@ COMMENT=		Git linkable library
 
 GH_ACCOUNT=		libgit2
 GH_PROJECT=		libgit2
-GH_TAGNAME=		v1.9.0
+GH_TAGNAME=		v1.9.1
 
-SHARED_LIBS +=  git2                      16.0 # 0.28
+SHARED_LIBS +=  git2                      16.1 # 0.28
 
-WANTLIB += c crypto pcre pthread ssh2 ssl z
+WANTLIB += c crypto pcre2-8 pthread ssh2 ssl z
 
 MODULES=		devel/cmake \
 			lang/python
@@ -20,10 +20,11 @@ MODGCC4_ARCHS=		hppa
 
 DEBUG_PACKAGES=		${BUILD_PACKAGES}
 
-LIB_DEPENDS=		devel/pcre \
+LIB_DEPENDS=		devel/pcre2 \
 			security/libssh2
 
-CONFIGURE_ARGS=		-DUSE_SSH=ON
+CONFIGURE_ARGS=		-DREGEX_BACKEND=pcre2 \
+			-DUSE_SSH=ON
 
 CFLAGS +=		-I${LOCALBASE}/include
 MODCMAKE_LDFLAGS=	-L${LOCALBASE}/lib
