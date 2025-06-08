@@ -564,6 +564,7 @@
      SUBDIR += py-IOSXR
      SUBDIR += py-IP
      SUBDIR += py-aiodns
+     SUBDIR += py-amqp
      SUBDIR += py-anyio
      SUBDIR += py-apprise
      SUBDIR += py-b2sdk
@@ -589,11 +590,13 @@
      SUBDIR += py-impacket
      SUBDIR += py-irclib
      SUBDIR += py-junos-eznc
+     SUBDIR += py-kombu
      SUBDIR += py-libcloud
      SUBDIR += py-libknot
      SUBDIR += py-lxmf
      SUBDIR += py-minimalmodbus
      SUBDIR += py-modbus
+     SUBDIR += py-moto
      SUBDIR += py-msgpack
      SUBDIR += py-nbxmpp
      SUBDIR += py-ncclient
