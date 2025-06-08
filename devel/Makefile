@@ -1375,6 +1375,7 @@
      SUBDIR += py-backcall
      SUBDIR += py-bencode
      SUBDIR += py-beniget
+     SUBDIR += py-billiard
      SUBDIR += py-binaryornot
      SUBDIR += py-biplist
      SUBDIR += py-bitarray
@@ -1442,6 +1443,7 @@
      SUBDIR += py-dirty-equals
      SUBDIR += py-dispatcher
      SUBDIR += py-distutils-extra
+     SUBDIR += py-docker
      SUBDIR += py-docopt
      SUBDIR += py-docstring-to-markdown
      SUBDIR += py-doit
@@ -1691,11 +1693,13 @@
      SUBDIR += py-test-astropy-header
      SUBDIR += py-test-asyncio
      SUBDIR += py-test-benchmark
+     SUBDIR += py-test-celery
      SUBDIR += py-test-check
      SUBDIR += py-test-codspeed
      SUBDIR += py-test-console-scripts
      SUBDIR += py-test-cov
      SUBDIR += py-test-datafiles
+     SUBDIR += py-test-docker-tools
      SUBDIR += py-test-doctestplus
      SUBDIR += py-test-expect
      SUBDIR += py-test-filter-subpackage
@@ -1757,6 +1761,7 @@
      SUBDIR += py-validators
      SUBDIR += py-vcversioner
      SUBDIR += py-versioneer
+     SUBDIR += py-vine
      SUBDIR += py-virtualenv
      SUBDIR += py-voluptuous
      SUBDIR += py-vulture
