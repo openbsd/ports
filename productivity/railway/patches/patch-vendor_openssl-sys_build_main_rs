@@ -1,0 +1,11 @@
+Index: vendor/openssl-sys/build/main.rs
+--- vendor/openssl-sys/build/main.rs.orig
++++ vendor/openssl-sys/build/main.rs
+@@ -449,6 +449,7 @@ See rust-openssl documentation for more information:
+             (3, 9, _) => ('3', '9', 'x'),
+             (4, 0, 0) => ('4', '0', '0'),
+             (4, 0, _) => ('4', '0', 'x'),
++            (4, _, _) => ('4', '1', 'x'),
+             _ => version_error(),
+         };
+ 
