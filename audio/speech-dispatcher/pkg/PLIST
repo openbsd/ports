@@ -158,7 +158,7 @@ share/speech-dispatcher/locale/base/
 share/speech-dispatcher/locale/base/font-variants.dic
 share/speech-dispatcher/locale/base/orca-chars.dic
 share/speech-dispatcher/locale/base/orca.dic
-share/speech-dispatcher/locale/base/symbols-fallback.dic
+share/speech-dispatcher/locale/base/symbols.dic
 share/speech-dispatcher/locale/be/
 share/speech-dispatcher/locale/be/emojis.dic
 share/speech-dispatcher/locale/be/orca-chars.dic
