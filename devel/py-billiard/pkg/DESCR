@@ -1,0 +1,5 @@
+billiard is a fork of the Python 2.7 multiprocessing package. The
+multiprocessing package itself is a renamed and updated version of
+R Oudkerk's pyprocessing package. This standalone variant draws its
+fixes/improvements from python-trunk and provides additional bug
+fixes and improvements.
