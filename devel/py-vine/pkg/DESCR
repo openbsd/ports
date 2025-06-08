@@ -1,0 +1,4 @@
+This is a special implementation of promises in that it can be used
+both for promise of a value and lazy evaluation. The biggest upside
+for this is that everything in a promise can also be a promise,
+e.g. filters, callbacks and errbacks can all be promises.
