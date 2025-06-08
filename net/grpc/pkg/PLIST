@@ -96,6 +96,7 @@ include/grpc/event_engine/extensible.h
 include/grpc/event_engine/internal/
 include/grpc/event_engine/internal/memory_allocator_impl.h
 include/grpc/event_engine/internal/slice_cast.h
+include/grpc/event_engine/internal/write_event.h
 include/grpc/event_engine/memory_allocator.h
 include/grpc/event_engine/memory_request.h
 include/grpc/event_engine/port.h
@@ -339,10 +340,14 @@ lib/cmake/grpc/modules/Findsystemd.cmake
 @lib lib/libgrpc_unsecure.so.${LIBgrpc_unsecure_VERSION}
 @lib lib/libgrpcpp_channelz.so.${LIBgrpcpp_channelz_VERSION}
 @lib lib/libupb_base_lib.so.${LIBupb_base_lib_VERSION}
+@lib lib/libupb_hash_lib.so.${LIBupb_hash_lib_VERSION}
 @lib lib/libupb_json_lib.so.${LIBupb_json_lib_VERSION}
+@lib lib/libupb_lex_lib.so.${LIBupb_lex_lib_VERSION}
 @lib lib/libupb_mem_lib.so.${LIBupb_mem_lib_VERSION}
 @lib lib/libupb_message_lib.so.${LIBupb_message_lib_VERSION}
 @lib lib/libupb_mini_descriptor_lib.so.${LIBupb_mini_descriptor_lib_VERSION}
+@lib lib/libupb_mini_table_lib.so.${LIBupb_mini_table_lib_VERSION}
+@lib lib/libupb_reflection_lib.so.${LIBupb_reflection_lib_VERSION}
 @lib lib/libupb_textformat_lib.so.${LIBupb_textformat_lib_VERSION}
 @lib lib/libupb_wire_lib.so.${LIBupb_wire_lib_VERSION}
 @lib lib/libutf8_range_lib.so.${LIButf8_range_lib_VERSION}
