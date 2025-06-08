@@ -5,7 +5,7 @@ BROKEN-alpha=	.got subsegment exceeds 64K
 
 COMMENT=	GUI front-end for doxygen
 
-VERSION=	1.13.2
+VERSION=	1.14.0
 DISTNAME=	doxygen-${VERSION}.src
 PKGNAME=	doxygen-gui-${VERSION}
 
