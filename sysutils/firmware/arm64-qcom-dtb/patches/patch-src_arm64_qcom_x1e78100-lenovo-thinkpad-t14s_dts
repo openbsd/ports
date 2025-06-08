@@ -1,18 +1,7 @@
 Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
 --- src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts.orig
 +++ src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
-@@ -19,6 +19,10 @@
- 	compatible = "lenovo,thinkpad-t14s", "qcom,x1e78100", "qcom,x1e80100";
- 	chassis-type = "laptop";
- 
-+	aliases {
-+		serial1 = &uart14;
-+	};
-+
- 	gpio-keys {
- 		compatible = "gpio-keys";
- 
-@@ -66,9 +70,17 @@
+@@ -92,9 +92,17 @@
  					reg = <1>;
  
  					pmic_glink_ss0_ss_in: endpoint {
@@ -31,7 +20,7 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
  			};
  		};
  
-@@ -95,9 +107,17 @@
+@@ -121,9 +129,17 @@
  					reg = <1>;
  
  					pmic_glink_ss1_ss_in: endpoint {
@@ -50,7 +39,7 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
  			};
  		};
  	};
-@@ -143,6 +163,102 @@
+@@ -169,6 +185,102 @@
  		regulator-boot-on;
  	};
  
@@ -153,115 +142,7 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
  	vph_pwr: regulator-vph-pwr {
  		compatible = "regulator-fixed";
  
-@@ -153,6 +269,107 @@
- 		regulator-always-on;
- 		regulator-boot-on;
- 	};
-+
-+	vreg_wcn_3p3: regulator-wcn-3p3 {
-+		compatible = "regulator-fixed";
-+
-+		regulator-name = "VREG_WCN_3P3";
-+		regulator-min-microvolt = <3300000>;
-+		regulator-max-microvolt = <3300000>;
-+
-+		gpio = <&tlmm 214 GPIO_ACTIVE_HIGH>;
-+		enable-active-high;
-+
-+		pinctrl-0 = <&wcn_sw_en>;
-+		pinctrl-names = "default";
-+
-+		regulator-boot-on;
-+	};
-+
-+	/*
-+	 * TODO: These two regulators are actually part of the removable M.2
-+	 * card and not the CRD mainboard. Need to describe this differently.
-+	 * Functionally it works correctly, because all we need to do is to
-+	 * turn on the actual 3.3V supply above.
-+	 */
-+	vreg_wcn_0p95: regulator-wcn-0p95 {
-+		compatible = "regulator-fixed";
-+
-+		regulator-name = "VREG_WCN_0P95";
-+		regulator-min-microvolt = <950000>;
-+		regulator-max-microvolt = <950000>;
-+
-+		vin-supply = <&vreg_wcn_3p3>;
-+	};
-+
-+	vreg_wcn_1p9: regulator-wcn-1p9 {
-+		compatible = "regulator-fixed";
-+
-+		regulator-name = "VREG_WCN_1P9";
-+		regulator-min-microvolt = <1900000>;
-+		regulator-max-microvolt = <1900000>;
-+
-+		vin-supply = <&vreg_wcn_3p3>;
-+	};
-+
-+	wcn7850-pmu {
-+		compatible = "qcom,wcn7850-pmu";
-+
-+		vdd-supply = <&vreg_wcn_0p95>;
-+		vddio-supply = <&vreg_l15b_1p8>;
-+		vddaon-supply = <&vreg_wcn_0p95>;
-+		vdddig-supply = <&vreg_wcn_0p95>;
-+		vddrfa1p2-supply = <&vreg_wcn_1p9>;
-+		vddrfa1p8-supply = <&vreg_wcn_1p9>;
-+
-+		wlan-enable-gpios = <&tlmm 117 GPIO_ACTIVE_HIGH>;
-+		bt-enable-gpios = <&tlmm 116 GPIO_ACTIVE_HIGH>;
-+
-+		pinctrl-0 = <&wcn_wlan_bt_en>;
-+		pinctrl-names = "default";
-+
-+		regulators {
-+			vreg_pmu_rfa_cmn: ldo0 {
-+				regulator-name = "vreg_pmu_rfa_cmn";
-+			};
-+
-+			vreg_pmu_aon_0p59: ldo1 {
-+				regulator-name = "vreg_pmu_aon_0p59";
-+			};
-+
-+			vreg_pmu_wlcx_0p8: ldo2 {
-+				regulator-name = "vreg_pmu_wlcx_0p8";
-+			};
-+
-+			vreg_pmu_wlmx_0p85: ldo3 {
-+				regulator-name = "vreg_pmu_wlmx_0p85";
-+			};
-+
-+			vreg_pmu_btcmx_0p85: ldo4 {
-+				regulator-name = "vreg_pmu_btcmx_0p85";
-+			};
-+
-+			vreg_pmu_rfa_0p8: ldo5 {
-+				regulator-name = "vreg_pmu_rfa_0p8";
-+			};
-+
-+			vreg_pmu_rfa_1p2: ldo6 {
-+				regulator-name = "vreg_pmu_rfa_1p2";
-+			};
-+
-+			vreg_pmu_rfa_1p8: ldo7 {
-+				regulator-name = "vreg_pmu_rfa_1p8";
-+			};
-+
-+			vreg_pmu_pcie_0p9: ldo8 {
-+				regulator-name = "vreg_pmu_pcie_0p9";
-+			};
-+
-+			vreg_pmu_pcie_1p8: ldo9 {
-+				regulator-name = "vreg_pmu_pcie_1p8";
-+			};
-+		};
-+	};
- };
- 
- &apps_rsc {
-@@ -495,6 +712,169 @@
+@@ -655,6 +767,169 @@
  	};
  };
  
@@ -431,7 +312,7 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
  &i2c8 {
  	clock-frequency = <400000>;
  
-@@ -519,6 +899,22 @@
+@@ -697,6 +972,22 @@
  	status = "okay";
  };
  
@@ -454,31 +335,7 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
  &mdss_dp3 {
  	compatible = "qcom,x1e80100-dp";
  	/delete-property/ #sound-dai-cells;
-@@ -580,6 +976,23 @@
- 	status = "okay";
- };
- 
-+&pcie4_port0 {
-+	wifi@0 {
-+		compatible = "pci17cb,1107";
-+		reg = <0x10000 0x0 0x0 0x0 0x0>;
-+
-+		vddaon-supply = <&vreg_pmu_aon_0p59>;
-+		vddwlcx-supply = <&vreg_pmu_wlcx_0p8>;
-+		vddwlmx-supply = <&vreg_pmu_wlmx_0p85>;
-+		vddrfacmn-supply = <&vreg_pmu_rfa_cmn>;
-+		vddrfa0p8-supply = <&vreg_pmu_rfa_0p8>;
-+		vddrfa1p2-supply = <&vreg_pmu_rfa_1p2>;
-+		vddrfa1p8-supply = <&vreg_pmu_rfa_1p8>;
-+		vddpcie0p9-supply = <&vreg_pmu_pcie_0p9>;
-+		vddpcie1p8-supply = <&vreg_pmu_pcie_1p8>;
-+	};
-+};
-+
- &pcie6a {
- 	perst-gpios = <&tlmm 152 GPIO_ACTIVE_LOW>;
- 	wake-gpios = <&tlmm 154 GPIO_ACTIVE_LOW>;
-@@ -599,6 +1012,37 @@
+@@ -777,6 +1068,37 @@
  	status = "okay";
  };
  
@@ -516,7 +373,7 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
  &pmc8380_3_gpios {
  	edp_bl_en: edp-bl-en-state {
  		pins = "gpio4";
-@@ -609,6 +1053,17 @@
+@@ -787,6 +1109,17 @@
  	};
  };
  
@@ -534,9 +391,9 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
  &qupv3_0 {
  	status = "okay";
  };
-@@ -651,6 +1106,30 @@
- 			       <72 2>, /* Secure EC I2C connection (?) */
- 			       <238 1>; /* UFS Reset */
+@@ -914,6 +1247,30 @@
+ 		output-low;
+ 	};
  
 +	eusb3_reset_n: eusb3-reset-n-state {
 +		pins = "gpio6";
@@ -565,7 +422,7 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
  	tpad_default: tpad-default-state {
  		pins = "gpio3";
  		function = "gpio";
-@@ -744,6 +1223,34 @@
+@@ -1007,6 +1364,34 @@
  		};
  	};
  
@@ -600,56 +457,7 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
  	wcd_default: wcd-reset-n-active-state {
  		pins = "gpio191";
  		function = "gpio";
-@@ -751,8 +1258,39 @@
- 		bias-disable;
- 		output-low;
- 	};
-+
-+        wcn_sw_en: wcn-sw-en-state {
-+                pins = "gpio214";
-+                function = "gpio";
-+                drive-strength = <2>;
-+                bias-disable;
-+        };
-+
-+        wcn_wlan_bt_en: wcn-wlan-bt-en-state {
-+                pins = "gpio116", "gpio117";
-+                function = "gpio";
-+                drive-strength = <2>;
-+                bias-disable;
-+        };
- };
- 
-+&uart14 {
-+	status = "okay";
-+
-+	bluetooth {
-+		compatible = "qcom,wcn7850-bt";
-+		max-speed = <3200000>;
-+
-+		vddaon-supply = <&vreg_pmu_aon_0p59>;
-+		vddwlcx-supply = <&vreg_pmu_wlcx_0p8>;
-+		vddwlmx-supply = <&vreg_pmu_wlmx_0p85>;
-+		vddrfacmn-supply = <&vreg_pmu_rfa_cmn>;
-+		vddrfa0p8-supply = <&vreg_pmu_rfa_0p8>;
-+		vddrfa1p2-supply = <&vreg_pmu_rfa_1p2>;
-+		vddrfa1p8-supply = <&vreg_pmu_rfa_1p8>;
-+	};
-+};
-+
- &usb_1_ss0_hsphy {
- 	vdd-supply = <&vreg_l3j_0p8>;
- 	vdda12-supply = <&vreg_l2j_1p2>;
-@@ -763,7 +1301,7 @@
- };
- 
- &usb_1_ss0_qmpphy {
--	vdda-phy-supply = <&vreg_l3e_1p2>;
-+	vdda-phy-supply = <&vreg_l2j_1p2>;
- 	vdda-pll-supply = <&vreg_l1j_0p8>;
- 
- 	status = "okay";
-@@ -782,7 +1320,7 @@
+@@ -1045,7 +1430,7 @@
  };
  
  &usb_1_ss0_qmpphy_out {
@@ -658,16 +466,7 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
  };
  
  &usb_1_ss1_hsphy {
-@@ -795,7 +1333,7 @@
- };
- 
- &usb_1_ss1_qmpphy {
--	vdda-phy-supply = <&vreg_l3e_1p2>;
-+	vdda-phy-supply = <&vreg_l2j_1p2>;
- 	vdda-pll-supply = <&vreg_l2d_0p9>;
- 
- 	status = "okay";
-@@ -814,5 +1352,58 @@
+@@ -1077,7 +1462,60 @@
  };
  
  &usb_1_ss1_qmpphy_out {
@@ -727,3 +526,5 @@ Index: src/arm64/qcom/x1e78100-lenovo-thinkpad-t14s.dts
 +
 +	status = "okay";
  };
+ 
+ &usb_2 {
