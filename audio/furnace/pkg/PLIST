@@ -498,6 +498,8 @@ share/furnace/instruments/GB/kick.fui
 share/furnace/instruments/GB/open hihat.fui
 share/furnace/instruments/GB/snare.fui
 share/furnace/instruments/GB/square fade-in.fui
+share/furnace/instruments/Lynx/
+share/furnace/instruments/Lynx/harmonica.fui
 share/furnace/instruments/NES/
 share/furnace/instruments/NES/0-2-5_arp_lead.fui
 share/furnace/instruments/NES/0-3-5_arp_lead.fui
