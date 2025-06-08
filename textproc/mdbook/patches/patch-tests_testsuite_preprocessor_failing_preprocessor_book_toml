@@ -1,0 +1,11 @@
+Fix path for Cargo.toml
+
+Index: tests/testsuite/preprocessor/failing_preprocessor/book.toml
+--- tests/testsuite/preprocessor/failing_preprocessor/book.toml.orig
++++ tests/testsuite/preprocessor/failing_preprocessor/book.toml
+@@ -1,4 +1,4 @@
+ [preprocessor.nop-preprocessor]
+-command = "cargo run --quiet --example nop-preprocessor --"
++command = "cargo run --quiet --example nop-preprocessor --manifest-path ${WRKDIST}/Cargo.toml"
+ blow-up = true
+ 

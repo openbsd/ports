@@ -2,7 +2,7 @@ COMMENT =		create books from markdown files
 
 GH_ACCOUNT =            rust-lang
 GH_PROJECT =            mdBook
-GH_TAGNAME =            v0.4.48
+GH_TAGNAME =            v0.4.51
 PKGNAME =               ${DISTNAME:L}
 
 CATEGORIES =		textproc www
@@ -24,6 +24,13 @@ SEPARATE_BUILD =	Yes
 MODCARGO_RUSTFLAGS =	-C debuginfo=0
 
 RELEASE_DIR =		${MODCARGO_TARGET_DIR}/release
+
+SUBST_VARS =	WRKDIST
+
+# Replace paths in book.toml for tests
+post-configure:
+	${SUBST_CMD} ${WRKDIST}/tests/testsuite/preprocessor/failing_preprocessor/book.toml
+	${SUBST_CMD} ${WRKDIST}/tests/testsuite/preprocessor/nop_preprocessor/book.toml
 
 # Build the docs.
 pre-fake:
