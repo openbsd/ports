@@ -1,6 +1,6 @@
 COMMENT=		GTK+-based electronic waveform viewer
 
-DISTNAME=		gtkwave-3.3.121
+DISTNAME=		gtkwave-3.3.124
 
 CATEGORIES=		cad
 
