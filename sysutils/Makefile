@@ -315,6 +315,7 @@
      SUBDIR += py-apscheduler
      SUBDIR += py-augeas
      SUBDIR += py-blessed
+     SUBDIR += py-celery
      SUBDIR += py-command_runner
      SUBDIR += py-consul
      SUBDIR += py-cpuinfo
