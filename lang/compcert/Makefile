@@ -14,7 +14,7 @@ GH_PROJECT =		CompCert
 GH_COMMIT =		b2122a670373a8d3d9ef2dddbcffdcf65b2a9f59
 DISTNAME =		${GH_PROJECT}-${V}
 PKGNAME =		${DISTNAME:L}
-REVISION =		4
+REVISION =		5
 
 HOMEPAGE =		https://compcert.org/
 

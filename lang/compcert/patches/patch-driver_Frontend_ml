@@ -1,0 +1,22 @@
+Add support for -MD
+
+Index: driver/Frontend.ml
+--- driver/Frontend.ml.orig
++++ driver/Frontend.ml
+@@ -154,6 +154,7 @@ let gnu_prepro_opt_e s =
+ let gnu_prepro_actions = [
+   Exact "-M", Self gnu_prepro_opt_e;
+   Exact "-MM", Self gnu_prepro_opt_e;
++  Exact "-MD", Self gnu_prepro_opt;
+   Exact "-MF", String (gnu_prepro_opt_key "-MF");
+   Exact "-MG", Self gnu_prepro_opt;
+   Exact "-MP", Self gnu_prepro_opt;
+@@ -190,6 +191,8 @@ let gnu_prepro_help =
+ {|  -M            Output a rule suitable for make describing the
+                  dependencies of the main source file
+   -MM            Like -M but do not mention system header files
++  -MD            Like -M but writes output to a .d file as a side-
++                 effect of compilation
+   -MF <file>     Specifies file <file> as output file for -M or -MM
+   -MG            Assumes missing header files are generated for -M
+   -MP            Add a phony target for each dependency other than
