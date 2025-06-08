@@ -8,7 +8,7 @@ V =		VERSION_8.61
 DIST_TUPLE =	gitlab nicolasfella signond \
 		c8ad98249af541514ff7a81634d3295e712f1a39 .
 DISTNAME =	signond-${V:S/VERSION_//}pl0
-REVISION =	0
+REVISION =	1
 
 MAINTAINER =	Rafael Sadowski <rsadowski@openbsd.org>
 
