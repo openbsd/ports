@@ -102,6 +102,7 @@
      SUBDIR += links+
      SUBDIR += links+,no_x11
      SUBDIR += llgal
+     SUBDIR += llhttp
      SUBDIR += logswan
      SUBDIR += luakit
      SUBDIR += lynx
