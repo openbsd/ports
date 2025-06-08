@@ -20,7 +20,8 @@ MODULES=		devel/meson \
 MODGNOME_TOOLS=		desktop-file-utils \
 			gtk-update-icon-cache
 
-BUILD_DEPENDS=		x11/blueprint-compiler
+BUILD_DEPENDS=		devel/appstream \
+			x11/blueprint-compiler
 LIB_DEPENDS=		x11/gnome/libadwaita
 
 WANTLIB += ${MODRUST_WANTLIB} adwaita-1 crypto gio-2.0 glib-2.0 gobject-2.0
