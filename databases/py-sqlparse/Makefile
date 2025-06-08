@@ -3,8 +3,11 @@ COMMENT=	non-validating SQL parser
 MODPY_DISTV=	0.5.3
 DISTNAME=	sqlparse-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
+REVISION=	0
 
 CATEGORIES=	databases
+
+MAINTAINER =	Daniel Dickman <daniel@openbsd.org>
 
 # BSD
 PERMIT_PACKAGE=	Yes

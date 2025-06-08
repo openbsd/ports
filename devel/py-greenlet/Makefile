@@ -3,9 +3,11 @@ COMMENT=	lightweight in-process concurrent programming
 MODPY_DISTV=	3.1.1
 DISTNAME=	greenlet-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	devel
+
+MAINTAINER =	Daniel Dickman <daniel@openbsd.org>
 
 # BSD-like
 PERMIT_PACKAGE=	Yes

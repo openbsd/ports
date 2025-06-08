@@ -4,11 +4,13 @@ MODPY_DISTV =		2.1.0
 
 DISTNAME =		deprecation-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
-REVISION =		6
+REVISION =		7
 
 CATEGORIES =		devel
 
 HOMEPAGE =		https://deprecation.readthedocs.io/
+
+MAINTAINER =		Daniel Dickman <daniel@openbsd.org>
 
 # Apache2
 PERMIT_PACKAGE =	Yes
