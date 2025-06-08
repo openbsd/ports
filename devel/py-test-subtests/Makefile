@@ -4,7 +4,7 @@ MODPY_DISTV=	0.12.1
 
 DISTNAME=	pytest-subtests-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
+REVISION=	2
 
 CATEGORIES=	devel
 
@@ -18,6 +18,9 @@ MODULES=	lang/python
 MODPY_PI=	Yes
 MODPY_PYBUILD=	setuptools_scm
 
-RUN_DEPENDS=	devel/py-test
+RUN_DEPENDS=	devel/py-attrs \
+		devel/py-test
+
+TEST_DEPENDS=	devel/py-test-xdist
 
 .include <bsd.port.mk>
