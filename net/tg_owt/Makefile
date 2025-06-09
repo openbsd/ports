@@ -11,8 +11,8 @@ COMMENT =		WebRTC build for Telegram
 # No releases or tags, use commit from tdesktop's snap/snapcraft.yaml
 # 04.08.2024 HEAD to include merged PRs
 DIST_TUPLE =		github	desktop-app	tg_owt	\
-			c4192e8e2e10ccb72704daa79fa108becfa57b01	.
-PKGNAME =		tg_owt-0.0.0.20250501
+			62321fd7128ab2650b459d4195781af8185e46b5	.
+PKGNAME =		tg_owt-0.0.0.20250601
 
 CATEGORIES =		net
 
@@ -27,7 +27,7 @@ DIST_SUBDIR =		tg_owt
 # main/master/stable/<commit> tarballs are *not reproducible*
 # use a mirror to get stable tarballs for latest master
 DIST_TUPLE +=		github	klemensn	libyuv \
-			951e43439c3125bc55df43c01f13041a253a59dc \
+			20b1d84ec843d2494d47640e607325aaba810548 \
 			src/third_party/libyuv
 
 MAINTAINER =		Andrew Krasavin <noiseless-ak@yandex.ru>, \
