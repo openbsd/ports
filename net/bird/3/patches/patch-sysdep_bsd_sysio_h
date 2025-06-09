@@ -1,7 +1,7 @@
 Index: sysdep/bsd/sysio.h
 --- sysdep/bsd/sysio.h.orig
 +++ sysdep/bsd/sysio.h
-@@ -299,7 +299,7 @@ sk_dump_ao_keys(sock *s, struct dump_request *dreq)
+@@ -299,7 +299,7 @@ sk_dump_ao_keys(sock *s UNUSED, struct dump_request *d
  #define TCP_SIG_SPI 0x1000
  #endif
  
