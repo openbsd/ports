@@ -166,21 +166,24 @@ MODGNOME_RUN_DEPENDS +=	x11/gnome/yelp
 .   endif
 .endif
 
-# ld.bfd needs to be pointed at the X11 libs
-.if !${PROPERTIES:Mlld}
-MODGNOME_LDFLAGS += -L${X11BASE}/lib
+.if !(defined(MODGNOME_CPPFLAGS) && ${MODGNOME_CPPFLAGS:L} == "no")
+MODGNOME_CPPFLAGS +=	-I${LOCALBASE}/include
+CONFIGURE_ENV +=	CPPFLAGS="${MODGNOME_CPPFLAGS}"
 .endif
 
-# If a port needs extra CPPFLAGS, they can just set MODGNOME_CPPFLAGS
-# to the desired value, like -I${X11BASE}/include
-_MODGNOME_cppflags ?= CPPFLAGS="${MODGNOME_CPPFLAGS} -I${LOCALBASE}/include"
-_MODGNOME_ldflags ?= LDFLAGS="${MODGNOME_LDFLAGS} -L${LOCALBASE}/lib"
+.if !(defined(MODGNOME_LDFLAGS) && ${MODGNOME_LDFLAGS:L} == "no")
+# ld.bfd needs to be pointed at the X11 libs
+.   if !${PROPERTIES:Mlld}
+MODGNOME_LDFLAGS +=	-L${X11BASE}/lib
+.   endif
+MODGNOME_LDFLAGS +=	-L${LOCALBASE}/lib
+CONFIGURE_ENV +=	LDFLAGS="${MODGNOME_LDFLAGS}"
+.endif
 
 .if ${CONFIGURE_STYLE:Mgnu} || ${CONFIGURE_STYLE:Msimple} || \
     ${CONFIGURE_STYLE:Mcmake} || ${CONFIGURE_STYLE:Mmeson}
 CONFIGURE_ARGS +=	${MODGNOME_CONFIGURE_ARGS_gi} \
 			${MODGNOME_CONFIGURE_ARGS_vala}
-CONFIGURE_ENV +=	${_MODGNOME_cppflags} ${_MODGNOME_ldflags}
 .endif
 
 .if defined(MODGNOME_BUILD_DEPENDS)
