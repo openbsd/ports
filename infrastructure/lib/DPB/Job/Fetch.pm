@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Fetch.pm,v 1.31 2023/09/07 12:34:57 espie Exp $
+# $OpenBSD: Fetch.pm,v 1.32 2025/06/09 04:33:53 tb Exp $
 #
 # Copyright (c) 2010-2013 Marc Espie <espie@openbsd.org>
 #
@@ -81,11 +81,11 @@ sub finalize($self, $core)
 package DPB::Task::Fetch;
 our @ISA = qw(DPB::Task::Clocked);
 
-sub stopped_clock($self, $gap)
+sub stopped_clock($self, $gap, $origin)
 {
 	# note that we're missing time
 	$self->{got_suspended}++;
-	$self->SUPER::stopped_clock($gap);
+	$self->SUPER::stopped_clock($gap, $origin);
 }
 
 sub backup_class($)

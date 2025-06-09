@@ -1,5 +1,5 @@
 # ex:ts=8 sw=4:
-# $OpenBSD: Clock.pm,v 1.21 2023/07/07 11:34:16 espie Exp $
+# $OpenBSD: Clock.pm,v 1.22 2025/06/09 04:33:52 tb Exp $
 #
 # Copyright (c) 2011-2013 Marc Espie <espie@openbsd.org>
 #
@@ -76,7 +76,7 @@ sub elapsed($self)
 	return $self->{ended} - $self->{started};
 }
 
-sub stopped_clock($self, $gap)
+sub stopped_clock($self, $gap, $)
 {
 	$self->{started} += $gap;
 }
