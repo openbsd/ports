@@ -6,6 +6,7 @@ GNOME_PROJECT=		gnome-shell
 # check/fix CONFIGURE_ARGS (-Dgnome_shell_version=XX) in x11/arc-theme on
 # major upgrade;
 GNOME_VERSION=		48.2
+REVISION=		0
 
 # GPLv2+
 PERMIT_PACKAGE=		Yes
@@ -93,7 +94,9 @@ CONFIGURE_ARGS +=	-Dcamera_monitor=false
 # needs libgstpipewire.so for screencast recorder
 #RUN_DEPENDS +=		multimedia/pipewire/pipewire
 
-MODGNOME_LDFLAGS +=	-L${X11BASE}/lib
+# don't add -L/usr/local/lib to LDFLAGS: libgvc.so will conflict (undefined
+# symbols) with /usr/local/lib/libgvc.so from graphviz if it's installed
+MODGNOME_LDFLAGS=	No
 
 # /gnome-shell-3.18.4_writes_to_HOME
 PORTHOME=		${WRKDIR}

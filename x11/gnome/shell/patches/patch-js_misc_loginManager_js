@@ -32,7 +32,7 @@ Index: js/misc/loginManager.js
      }
  
      return _loginManager;
-@@ -246,6 +252,82 @@ class LoginManagerSystemd extends Signals.EventEmitter
+@@ -246,6 +252,87 @@ class LoginManagerSystemd extends Signals.EventEmitter
      }
  }
  
@@ -45,6 +45,11 @@ Index: js/misc/loginManager.js
 +                                              '/org/freedesktop/ConsoleKit/Manager');
 +        this._proxy.connectSignal('PrepareForSleep',
 +                                  this._prepareForSleep.bind(this));
++    }
++
++    getCurrentUserProxy() {
++        // XXX not implemented in ConsoleKit
++        return null;
 +    }
 +
 +    // Having this function is a bit of a hack since the Systemd and ConsoleKit
@@ -104,7 +109,7 @@ Index: js/misc/loginManager.js
 +            await this._proxy.call_with_unix_fd_list('Inhibit',
 +                inVariant, 0, -1, null, cancellable);
 +        const [fd] = fdList.steal_fds();
-+        return new Gio.UnixInputStream({ fd });
++        return new GioUnix.InputStream({fd});
 +    }
 +
 +    _prepareForSleep(proxy, sender, [aboutToSuspend]) {
@@ -115,7 +120,7 @@ Index: js/misc/loginManager.js
  class LoginManagerDummy extends Signals.EventEmitter  {
      constructor() {
          super();
-@@ -271,16 +353,6 @@ class LoginManagerDummy extends Signals.EventEmitter  
+@@ -271,16 +358,6 @@ class LoginManagerDummy extends Signals.EventEmitter  
              canSuspend: false,
              needsAuth: false,
          }));
