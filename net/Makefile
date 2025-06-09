@@ -79,6 +79,7 @@
      SUBDIR += dnsreflector
      SUBDIR += dnstop
      SUBDIR += dnstracer
+     SUBDIR += dnsviz
      SUBDIR += doc
      SUBDIR += dog
      SUBDIR += doh

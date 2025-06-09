@@ -149,6 +149,7 @@
      SUBDIR += py-osqp
      SUBDIR += py-pandas
      SUBDIR += py-patsy
+     SUBDIR += py-pygraphviz
      SUBDIR += py-pysmt
      SUBDIR += py-scikit-image
      SUBDIR += py-scikit-learn
