@@ -26,10 +26,9 @@ RUN_DEPENDS =		fonts/noto/emoji \
 
 MODGNOME_TOOLS =	desktop-file-utils gtk-update-icon-cache
 
-# prevent passing -L/usr/local/lib to LDFLAGS (default behavior of the gnome
-# MODULE); otherwise if boehm-gc is installed we will run into undefined symbols
-# due to the bundled libgc.so versus /usr/local/lib/libgc.so
-_MODGNOME_ldflags =	# empty
+# don't add -L/usr/local/lib to LDFLAGS: libgc.so will conflict (undefined
+# symbols) with /usr/local/lib/libgc.so from boehm-gc if it's installed
+MODGNOME_LDFLAGS =	No
 
 # Requires unported 'dogtail'
 NO_TEST =		Yes
