@@ -20,6 +20,8 @@ CONFIGURE_STYLE =	autoreconf
 
 TAR =			${LOCALBASE}/bin/gtar
 
+# C++ + C11
+COMPILER ?=		base-clang ports-gcc
 BUILD_DEPENDS +=	archivers/gtar
 
 CONFIGURE_ARGS +=	--enable-cider \

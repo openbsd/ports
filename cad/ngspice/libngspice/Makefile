@@ -1,13 +1,11 @@
 COMMENT =	ngspice shared library, based on Berkeley SPICE
 
 PKGNAME =	libngspice-${V}
+REVISION =	0
 
 SHARED_LIBS +=  ngspice                0.0 # 0.0
 
-WANTLIB += m pthread
-
-# C++
-COMPILER =		base-clang ports-gcc
+WANTLIB += ${COMPILER_LIBCXX} m pthread
 
 CONFIGURE_ARGS +=	--with-ngshared \
 			--enable-shared
