@@ -21,7 +21,8 @@ MODULES =	lang/erlang \
 USE_GMAKE =	Yes
 CONFIGURE_STYLE = none
 
-BUILD_DEPENDS =	archivers/unzip \
+BUILD_DEPENDS =	archivers/p7zip \
+		archivers/unzip \
 		archivers/zip \
 		devel/gmake \
 		lang/elixir \
