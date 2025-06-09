@@ -1,6 +1,6 @@
 COMMENT=	lightweight feed reader for text terminals
 
-DISTNAME=	newsraft-0.30
+DISTNAME=	newsraft-0.31
 WRKDIST=	${WRKDIR}/newsraft
 
 CATEGORIES=	www
@@ -10,7 +10,7 @@ HOMEPAGE=	https://codeberg.org/grisha/newsraft
 # MIT
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += c curl curses expat gumbo pthread sqlite3
+WANTLIB += c curl expat gumbo pthread sqlite3
 
 SITES=		https://codeberg.org/grisha/newsraft/archive/
 
