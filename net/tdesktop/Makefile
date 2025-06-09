@@ -5,7 +5,7 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			5.14.3
+V =			5.15.2
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
@@ -75,7 +75,7 @@ LIB_DEPENDS =		archivers/lz4 \
 			graphics/ffmpeg>=6 \
 			graphics/jpeg \
 			graphics/qr-code-generator>=1.7.0p1 \
-			net/tg_owt>=0.0.0.20250501 \
+			net/tg_owt>=0.0.0.20250601 \
 			sysutils/xxhash \
 			textproc/hunspell \
 			www/ada \
@@ -119,6 +119,11 @@ NEEDED_BUNDLES +=	GSL
 
 # ported but CMake code hardcodes bundled file paths
 NEEDED_BUNDLES +=	xdg-desktop-portal
+
+# XXX 5.15.2
+#BUILD_DEPENDS +=	devel/kf5/kimageformats
+#NEEDED_BUNDLES +=	fcitx5-qt hime
+CONFIGURE_ARGS +=	-DDESKTOP_APP_DISABLE_QT_PLUGINS=ON
 
 post-extract:
 	# All bundles:
