@@ -5,12 +5,14 @@ COMMENT=		lightweight DLNA/UPnP-AV media server (aka ReadyMedia)
 # 'OpenBSD: use pledge(2) and unveil(2)'
 COMMIT=			edebefe5725138402e43412c7bb10c3eb54a1b25
 DIST_TUPLE=		github	klemensn	minidlna ${COMMIT}	.
-DISTNAME=		minidlna-1.3.3
-REVISION=		1
+PKGNAME=		minidlna-1.3.3
+REVISION=		2
 
 CATEGORIES=		multimedia
 
 HOMEPAGE=		https://sourceforge.net/projects/minidlna/
+
+MAINTAINER=		Klemens Nanni <kn@openbsd.org>
 
 # GPLv2 only
 PERMIT_PACKAGE=	Yes
@@ -20,7 +22,7 @@ WANTLIB += FLAC avcodec avformat avutil c exif iconv id3tag intl jpeg
 WANTLIB += ogg pthread sqlite3 vorbis z
 
 # sometimes https://github.com/glebius/minidlna has useful things
-SITES=			${SITE_SOURCEFORGE:=minidlna/}
+#SITES=			${SITE_SOURCEFORGE:=minidlna/}
 
 BUILD_DEPENDS=		devel/gettext,-tools
 
@@ -31,8 +33,9 @@ LIB_DEPENDS=		audio/flac \
 			graphics/jpeg \
 			graphics/libexif
 
-CONFIGURE_STYLE=	autoconf
+CONFIGURE_STYLE=	autoreconf
 AUTOCONF_VERSION=	2.71
+AUTOMAKE_VERSION=	1.17
 
 CONFIGURE_ENV=		CPPFLAGS="-I${LOCALBASE}/include" \
 			LDFLAGS="-L${LOCALBASE}/lib -L${X11BASE}/lib"
