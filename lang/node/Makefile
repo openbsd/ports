@@ -1,5 +1,3 @@
-BROKEN-i386 =		hangs in make fake in a tight loop using all of 1 core
-
 ONLY_FOR_ARCHS =	amd64 aarch64 i386 powerpc64 riscv64
 DPB_PROPERTIES =	parallel
 
@@ -8,16 +6,14 @@ USE_WXNEEDED =		Yes
 COMMENT = JavaScript runtime built on Chrome's V8 JavaScript engine
 
 NODE_VERSION =		v22.16.0
-PLEDGE_VER =		1.1.3
 DISTFILES =		${DISTNAME}-headers.tar.gz \
 			${DISTNAME}.tar.xz
-DISTFILES.pledge =	node-pledge-{}${PLEDGE_VER}.tar.gz
-
+DIST_TUPLE =		github qbit node-pledge 1.1.3 \
+			deps/npm/node_modules/node-pledge
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
 EPOCH =			0
-
-SITES.pledge =		https://github.com/qbit/node-pledge/archive/
+REVISION =		0
 
 CATEGORIES =		lang devel
 
@@ -83,10 +79,6 @@ EOPENSSL_LIB =		${LOCALBASE}/lib/${EOPENSSL_VSN}
 EOPENSSL_INC =		${LOCALBASE}/include/${EOPENSSL_VSN}
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
-
-post-extract:
-	mv ${WRKDIR}/node-pledge-${PLEDGE_VER} \
-		${WRKSRC}/deps/npm/node_modules/node-pledge
 
 pre-configure:
 	${SUBST_CMD} ${WRKDIST}/common.gypi \
