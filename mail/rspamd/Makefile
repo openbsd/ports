@@ -2,7 +2,7 @@ COMMENT=	event-driven spam filtering system in C/Lua
 
 GH_ACCOUNT=	vstakhov
 GH_PROJECT=	rspamd
-GH_TAGNAME=	3.11.1
+GH_TAGNAME=	3.12.0
 
 CATEGORIES=	mail
 
@@ -56,11 +56,6 @@ CONFIGURE_ARGS+= \
 		-DMANDIR="${PREFIX}/man" \
 		-DRUNDIR="${LOCALSTATEDIR}/run/rspamd" \
 		-DRSPAMD_USER="_rspamd"
-
-# fmt in ports is not new enough yet; requires 11+
-#BUILD_DEPENDS+=	devel/fmt>=11
-#CONFIGURE_ARGS+= -DSYSTEM_FMT=ON
-CONFIGURE_ARGS+= -DSYSTEM_FMT=OFF
 
 CONFIGURE_ARGS+= \
 		-DSYSTEM_XXHASH=ON \

@@ -80,6 +80,8 @@ share/examples/rspamd/modules.d/chartable.conf
 @sample ${ETC}/rspamd/modules.d/chartable.conf
 share/examples/rspamd/modules.d/clickhouse.conf
 @sample ${ETC}/rspamd/modules.d/clickhouse.conf
+share/examples/rspamd/modules.d/contextal.conf
+@sample ${ETC}/rspamd/modules.d/contextal.conf
 share/examples/rspamd/modules.d/dcc.conf
 @sample ${ETC}/rspamd/modules.d/dcc.conf
 share/examples/rspamd/modules.d/dkim.conf
@@ -393,6 +395,7 @@ share/rspamd/plugins/bayes_expiry.lua
 share/rspamd/plugins/bimi.lua
 share/rspamd/plugins/clickhouse.lua
 share/rspamd/plugins/clustering.lua
+share/rspamd/plugins/contextal.lua
 share/rspamd/plugins/dcc.lua
 share/rspamd/plugins/dkim_signing.lua
 share/rspamd/plugins/dmarc.lua
