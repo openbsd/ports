@@ -8,7 +8,7 @@ HOMEPAGE =	https://dnsviz.net/
 
 MAINTAINER =	Lucas Gabriel Vuotto <lucas@sexy.is>
 
-# GPLv2
+# GPLv2+
 PERMIT_PACKAGE =	Yes
 
 MODULES =	lang/python
