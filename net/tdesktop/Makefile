@@ -5,7 +5,7 @@ NOT_FOR_ARCHS =		${BE_ARCHS} i386
 
 COMMENT =		Telegram Desktop messenger
 PORTROACH =		limit:-full$$
-V =			5.15.2
+V =			5.15.3
 DISTNAME =		tdesktop-${V}-full
 PKGNAME =		${DISTNAME:-full=}
 CATEGORIES =		net
@@ -84,12 +84,11 @@ LIB_DEPENDS =		archivers/lz4 \
 			x11/qt6/qtwayland
 
 RUN_DEPENDS =		devel/desktop-file-utils \
-			x11/gtk+4,-guic \
-			x11/qt6/qtimageformats
+			devel/kf5/kimageformats \
+			x11/gtk+4,-guic
 
-# look for system libraries and link them dynamically, despite upstream
-# treating it as "community effort" with less support
-CONFIGURE_ARGS +=	-DDESKTOP_APP_USE_PACKAGED=ON
+# opt-out since 5.15, requires more bundled stuff like fcitx5-qt, hime, nimf
+CONFIGURE_ARGS +=	-DDESKTOP_APP_DISABLE_QT_PLUGINS=ON
 
 # Follow suit with most other distribution packages, i.e. use the token from
 # Telegram's official Snap package
@@ -119,11 +118,6 @@ NEEDED_BUNDLES +=	GSL
 
 # ported but CMake code hardcodes bundled file paths
 NEEDED_BUNDLES +=	xdg-desktop-portal
-
-# XXX 5.15.2
-#BUILD_DEPENDS +=	devel/kf5/kimageformats
-#NEEDED_BUNDLES +=	fcitx5-qt hime
-CONFIGURE_ARGS +=	-DDESKTOP_APP_DISABLE_QT_PLUGINS=ON
 
 post-extract:
 	# All bundles:
