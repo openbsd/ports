@@ -1,11 +1,9 @@
 COMMENT=	elegant and simple HTTP library for Python
 
 # 2.33 expected to move to hatchling
-MODPY_DISTV=	2.32.2
-# XXX 2.32.3 has problems: https://github.com/psf/requests/issues/6730
+MODPY_DISTV=	2.32.4
 DISTNAME=	requests-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	1
 
 CATEGORIES=	www
 
