@@ -1,8 +1,6 @@
-https://github.com/tlsfuzzer/tlsfuzzer/pull/916
-
-Index: scripts/test-renegotiation-changed-clienthello.py
---- scripts/test-renegotiation-changed-clienthello.py.orig
-+++ scripts/test-renegotiation-changed-clienthello.py
+Index: tlsfuzzer/_apps/test_renegotiation_changed_clienthello.py
+--- tlsfuzzer/_apps/test_renegotiation_changed_clienthello.py.orig
++++ tlsfuzzer/_apps/test_renegotiation_changed_clienthello.py
 @@ -346,6 +346,8 @@ def main():
          node = node.add_child(ResetHandshakeHashes())
          renego_exts = OrderedDict(ext)
