@@ -1,7 +1,7 @@
 Index: media/video/fake_gpu_memory_buffer.h
 --- media/video/fake_gpu_memory_buffer.h.orig
 +++ media/video/fake_gpu_memory_buffer.h
-@@ -13,7 +13,7 @@
+@@ -12,7 +12,7 @@
  
  namespace media {
  

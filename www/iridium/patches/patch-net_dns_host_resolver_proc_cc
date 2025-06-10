@@ -1,7 +1,7 @@
 Index: net/dns/host_resolver_proc.cc
 --- net/dns/host_resolver_proc.cc.orig
 +++ net/dns/host_resolver_proc.cc
-@@ -15,10 +15,6 @@
+@@ -16,10 +16,6 @@
  #include "net/base/net_errors.h"
  #include "net/dns/host_resolver_system_task.h"
  

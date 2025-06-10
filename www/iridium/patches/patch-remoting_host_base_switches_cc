@@ -14,6 +14,6 @@ Index: remoting/host/base/switches.cc
  
 -#if BUILDFLAG(IS_LINUX)
 +#if BUILDFLAG(IS_LINUX) || BUILDFLAG(IS_BSD)
- const char kEnableUtempter[] = "enable-utempter";
+ const char kEnableWtmpdb[] = "enable-wtmpdb";
  #endif
  
