@@ -1,6 +1,6 @@
 COMMENT=	ASGI web server for Python
 
-MODPY_DISTV=	0.34.2
+MODPY_DISTV=	0.34.3
 DISTNAME=	uvicorn-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
 
