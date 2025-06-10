@@ -1273,6 +1273,8 @@ SHA256 (go_modules/github.com/aymanbagabas/go-udiff/@v/v0.2.0.mod) = 8HbrxTvRjka
 SHA256 (go_modules/github.com/aymanbagabas/go-udiff/@v/v0.2.0.zip) = +uBoPHOD2ZuJgnmD3ykxtgzOWzoSdLtJjOA9PKfkWkM=
 SHA256 (go_modules/github.com/aymerick/douceur/@v/v0.2.0.mod) = XgRUJBwle0xPnb3chOeOmeKcUnWzz67or9K7R25ySJc=
 SHA256 (go_modules/github.com/aymerick/douceur/@v/v0.2.0.zip) = 3L9pdgzBqLMjhElUOOEIbkw9ZpsuvA3r2S4YZf/WvmA=
+SHA256 (go_modules/github.com/bahlo/generic-list-go/@v/v0.2.0.mod) = ljIVVg1AuLa2Njs0PgQqhDibduxspv9LEyIDj0Luld4=
+SHA256 (go_modules/github.com/bahlo/generic-list-go/@v/v0.2.0.zip) = 53P6gSF2pi8dJ9eh51iWg/Xlry02Yo+mpaUi5ZR0xQQ=
 SHA256 (go_modules/github.com/baiyubin/aliyun-sts-go-sdk/@v/v0.0.0-20180326062324-cfa1a18b161f.mod) = EUHNOLiCZVlrFnzQU3DBJJRs55a4gZy1YdnjF3WsvcI=
 SHA256 (go_modules/github.com/baiyubin/aliyun-sts-go-sdk/@v/v0.0.0-20180326062324-cfa1a18b161f.zip) = CWXaAnNV2bOFNYMx7DWc9ynsRXHsTKhjOdqSU2TBNVk=
 SHA256 (go_modules/github.com/beorn7/perks/@v/v0.0.0-20180321164747-3a771d992973.mod) = zE0fqtdZZfpp6xMSC/lWgncZAF/z7NxwSzb7WPsf0W4=
@@ -1296,6 +1298,8 @@ SHA256 (go_modules/github.com/bradleyfalzon/ghinstallation/@v/v1.1.1.mod) = WKOu
 SHA256 (go_modules/github.com/bradleyfalzon/ghinstallation/@v/v1.1.1.zip) = dkxw1Ueu+OnLh4syjoDZF31jNIHSu7pZfJhrEeYdWFs=
 SHA256 (go_modules/github.com/bufbuild/protocompile/@v/v0.4.0.mod) = rqUaYHcfdhjF5z8cdYttrGZ5RK5o+Pq8be0GD+K8+eo=
 SHA256 (go_modules/github.com/bufbuild/protocompile/@v/v0.4.0.zip) = U6BxXb0aoASvaZeg5o6qy/K9SmF/vb5W+igtBuiJhBg=
+SHA256 (go_modules/github.com/buger/jsonparser/@v/v1.1.1.mod) = WHwYs/Mvi33NP8zIKl9VIOpiTAN8hdWXsutdlYBjobU=
+SHA256 (go_modules/github.com/buger/jsonparser/@v/v1.1.1.zip) = vhfvG0TCLqxkXurIDw4mzfxw13Ji5jE1jgDCqoF+q4w=
 SHA256 (go_modules/github.com/bwesterb/go-ristretto/@v/v1.2.3.mod) = NorKF1e+h0XM47kN60Aee+V0CWPKU1nEqVTMA1AtjwM=
 SHA256 (go_modules/github.com/bwesterb/go-ristretto/@v/v1.2.3.zip) = ToAJtAKuZJbmazogNwAtwS8abq0JAOchM5D7er/AOUw=
 SHA256 (go_modules/github.com/cenkalti/backoff/v4/@v/v4.3.0.mod) = g9QSLUkSfxPNqV+3k5fP5RbCPN1/wHoohq12TdFCK+M=
@@ -1959,6 +1963,8 @@ SHA256 (go_modules/github.com/imdario/mergo/@v/v0.3.11.mod) = MbvTydizkAk78fEJlC
 SHA256 (go_modules/github.com/imdario/mergo/@v/v0.3.11.zip) = RzMutVnpk3ScwxKSgHs6Y5pHADLsYD/TwV++RvghkvY=
 SHA256 (go_modules/github.com/inancgumus/screen/@v/v0.0.0-20190314163918-06e984b86ed3.mod) = z5FklCh6EBNGBREsK3XVanEdb1Aw+McGypxi+8HhGTQ=
 SHA256 (go_modules/github.com/inancgumus/screen/@v/v0.0.0-20190314163918-06e984b86ed3.zip) = Onaj0Njt6WS887RmV01ffsydt/rjsO6rns2K/vhMsyc=
+SHA256 (go_modules/github.com/invopop/jsonschema/@v/v0.13.0.mod) = XEwWrbtGKB+/4K0DLmnHFgr2u6ZDb6nb+uV478p7NOo=
+SHA256 (go_modules/github.com/invopop/jsonschema/@v/v0.13.0.zip) = Q+uLl2Nuf3wXRB2xZenGJMOAM8n8pExX20ayAuiEGHU=
 SHA256 (go_modules/github.com/jackc/pgpassfile/@v/v1.0.0.mod) = jqlfokmfTGAPf9Hwr+dF7MCuJRIaPII0CPSilhoF7kg=
 SHA256 (go_modules/github.com/jackc/pgpassfile/@v/v1.0.0.zip) = HMefsLgPVLVor9P0ZI3Rw0n3Rq18N5341/ng6xysk4s=
 SHA256 (go_modules/github.com/jackc/pgservicefile/@v/v0.0.0-20240606120523-5a60cdf6a761.mod) = X3ARG4ksF+7Oxvl+DNlhzDkitdrs5ZwJnIVeEGLtAnc=
@@ -2463,6 +2469,8 @@ SHA256 (go_modules/github.com/vmihailenco/tagparser/@v/v0.1.1.mod) = gdxu7Zwizo4
 SHA256 (go_modules/github.com/vmihailenco/tagparser/@v/v0.1.1.zip) = idpD2iVTVj4kdxXLJp6zmPNdvbIJ1SjDeH0fpkEFt+k=
 SHA256 (go_modules/github.com/vmihailenco/tagparser/v2/@v/v2.0.0.mod) = QhAGBAt8DG5OQlfsn2moX7DWEg9aUmte8XTWzTTOTzQ=
 SHA256 (go_modules/github.com/vmihailenco/tagparser/v2/@v/v2.0.0.zip) = cAlurTMbSsTvwL90BnTL5Vdyvu5urOOVB6YQxWUqqLU=
+SHA256 (go_modules/github.com/wk8/go-ordered-map/v2/@v/v2.1.8.mod) = lsTEFZhlJzC6m8n6Qn1w0zjVrOoYZ8k+WWm7apW8PzE=
+SHA256 (go_modules/github.com/wk8/go-ordered-map/v2/@v/v2.1.8.zip) = wXgUNcZOTNkt08pYXVB17aEsC7cZoMX55u0nK2UoLjg=
 SHA256 (go_modules/github.com/xanzy/ssh-agent/@v/v0.2.1.mod) = JYmubWjsZ80O9lEOnS+UiC3THKHdCRKNIJwFOOzDRiA=
 SHA256 (go_modules/github.com/xanzy/ssh-agent/@v/v0.2.1.zip) = cBHBdx+K2bZXlfioURPkUYyaLHSTApxMmIvIArY9nig=
 SHA256 (go_modules/github.com/xeipuuv/gojsonpointer/@v/v0.0.0-20180127040702-4e3ac2762d5f.mod) = qX3td9ICncrdH2lroJou2hXxKaG+pRlCdLy2Gu51tdk=
@@ -3681,7 +3689,7 @@ SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRe
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = L8eybun2ctl7QvpvJfWxWlWYK7usaZYdduux0DbRUAE=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = CZ2G+OBNET1A9KFSzf4AFxFtfv6mjkF6nGRthgJj174=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 7wMf94/5twNuF07vSd+9d0aNxPCvtzpjm2H4qzocxCU=
-SHA256 (terragrunt-v0.81.0.zip) = W/JAxRsPup87koT5I0/yGVSinUb+vjkgMhPqmNLhjvQ=
+SHA256 (terragrunt-v0.81.3.zip) = u5VfkQWSta5pbOItBTgKF0/T/p0P3k6uG9eM4AQjFXU=
 SIZE (go_modules/atomicgo.dev/assert/@v/v0.0.2.mod) = 36
 SIZE (go_modules/atomicgo.dev/assert/@v/v0.0.2.zip) = 11231
 SIZE (go_modules/atomicgo.dev/cursor/@v/v0.2.0.mod) = 36
@@ -4957,6 +4965,8 @@ SIZE (go_modules/github.com/aymanbagabas/go-udiff/@v/v0.2.0.mod) = 49
 SIZE (go_modules/github.com/aymanbagabas/go-udiff/@v/v0.2.0.zip) = 41930
 SIZE (go_modules/github.com/aymerick/douceur/@v/v0.2.0.mod) = 35
 SIZE (go_modules/github.com/aymerick/douceur/@v/v0.2.0.zip) = 25606
+SIZE (go_modules/github.com/bahlo/generic-list-go/@v/v0.2.0.mod) = 49
+SIZE (go_modules/github.com/bahlo/generic-list-go/@v/v0.2.0.zip) = 6607
 SIZE (go_modules/github.com/baiyubin/aliyun-sts-go-sdk/@v/v0.0.0-20180326062324-cfa1a18b161f.mod) = 45
 SIZE (go_modules/github.com/baiyubin/aliyun-sts-go-sdk/@v/v0.0.0-20180326062324-cfa1a18b161f.zip) = 7657
 SIZE (go_modules/github.com/beorn7/perks/@v/v0.0.0-20180321164747-3a771d992973.mod) = 31
@@ -4980,6 +4990,8 @@ SIZE (go_modules/github.com/bradleyfalzon/ghinstallation/@v/v1.1.1.mod) = 192
 SIZE (go_modules/github.com/bradleyfalzon/ghinstallation/@v/v1.1.1.zip) = 15691
 SIZE (go_modules/github.com/bufbuild/protocompile/@v/v0.4.0.mod) = 398
 SIZE (go_modules/github.com/bufbuild/protocompile/@v/v0.4.0.zip) = 394185
+SIZE (go_modules/github.com/buger/jsonparser/@v/v1.1.1.mod) = 45
+SIZE (go_modules/github.com/buger/jsonparser/@v/v1.1.1.zip) = 35992
 SIZE (go_modules/github.com/bwesterb/go-ristretto/@v/v1.2.3.mod) = 49
 SIZE (go_modules/github.com/bwesterb/go-ristretto/@v/v1.2.3.zip) = 167051
 SIZE (go_modules/github.com/cenkalti/backoff/v4/@v/v4.3.0.mod) = 47
@@ -5643,6 +5655,8 @@ SIZE (go_modules/github.com/imdario/mergo/@v/v0.3.11.mod) = 74
 SIZE (go_modules/github.com/imdario/mergo/@v/v0.3.11.zip) = 38997
 SIZE (go_modules/github.com/inancgumus/screen/@v/v0.0.0-20190314163918-06e984b86ed3.mod) = 36
 SIZE (go_modules/github.com/inancgumus/screen/@v/v0.0.0-20190314163918-06e984b86ed3.zip) = 4841
+SIZE (go_modules/github.com/invopop/jsonschema/@v/v0.13.0.mod) = 431
+SIZE (go_modules/github.com/invopop/jsonschema/@v/v0.13.0.zip) = 66222
 SIZE (go_modules/github.com/jackc/pgpassfile/@v/v1.0.0.mod) = 88
 SIZE (go_modules/github.com/jackc/pgpassfile/@v/v1.0.0.zip) = 4375
 SIZE (go_modules/github.com/jackc/pgservicefile/@v/v0.0.0-20240606120523-5a60cdf6a761.mod) = 91
@@ -6147,6 +6161,8 @@ SIZE (go_modules/github.com/vmihailenco/tagparser/@v/v0.1.1.mod) = 49
 SIZE (go_modules/github.com/vmihailenco/tagparser/@v/v0.1.1.zip) = 6025
 SIZE (go_modules/github.com/vmihailenco/tagparser/v2/@v/v2.0.0.mod) = 52
 SIZE (go_modules/github.com/vmihailenco/tagparser/v2/@v/v2.0.0.zip) = 6151
+SIZE (go_modules/github.com/wk8/go-ordered-map/v2/@v/v2.1.8.mod) = 345
+SIZE (go_modules/github.com/wk8/go-ordered-map/v2/@v/v2.1.8.zip) = 27742
 SIZE (go_modules/github.com/xanzy/ssh-agent/@v/v0.2.1.mod) = 168
 SIZE (go_modules/github.com/xanzy/ssh-agent/@v/v0.2.1.zip) = 10353
 SIZE (go_modules/github.com/xeipuuv/gojsonpointer/@v/v0.0.0-20180127040702-4e3ac2762d5f.mod) = 40
@@ -7365,4 +7381,4 @@ SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = 24
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = 133
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 222726
-SIZE (terragrunt-v0.81.0.zip) = 9280119
+SIZE (terragrunt-v0.81.3.zip) = 9320551

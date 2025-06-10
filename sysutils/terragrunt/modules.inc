@@ -268,6 +268,7 @@ MODGO_MODULES =	\
 	github.com/aymanbagabas/go-osc52/v2								 v2.0.1 \
 	github.com/aymanbagabas/go-udiff								 v0.2.0 \
 	github.com/aymerick/douceur									 v0.2.0 \
+	github.com/bahlo/generic-list-go								 v0.2.0 \
 	github.com/baiyubin/aliyun-sts-go-sdk								 v0.0.0-20180326062324-cfa1a18b161f \
 	github.com/beorn7/perks										 v0.0.0-20180321164747-3a771d992973 \
 	github.com/bgentry/go-netrc									 v0.0.0-20140422174119-9fd32a8b3d3d \
@@ -278,6 +279,7 @@ MODGO_MODULES =	\
 	github.com/boombuler/barcode									 v1.0.1 \
 	github.com/bradleyfalzon/ghinstallation								 v1.1.1 \
 	github.com/bufbuild/protocompile								 v0.4.0 \
+	github.com/buger/jsonparser									 v1.1.1 \
 	github.com/bwesterb/go-ristretto								 v1.2.3 \
 	github.com/cenkalti/backoff/v4									 v4.3.0 \
 	github.com/cenkalti/backoff/v5									 v5.0.2 \
@@ -479,6 +481,7 @@ MODGO_MODULES =	\
 	github.com/ianlancetaylor/demangle								 v0.0.0-20200824232613-28f6c0f3b639 \
 	github.com/imdario/mergo									 v0.3.11 \
 	github.com/inancgumus/screen									 v0.0.0-20190314163918-06e984b86ed3 \
+	github.com/invopop/jsonschema									 v0.13.0 \
 	github.com/jackc/pgpassfile									 v1.0.0 \
 	github.com/jackc/pgservicefile									 v0.0.0-20240606120523-5a60cdf6a761 \
 	github.com/jackc/pgx/v5										 v5.7.1 \
@@ -650,6 +653,7 @@ MODGO_MODULES =	\
 	github.com/vmihailenco/msgpack/v5								 v5.4.1 \
 	github.com/vmihailenco/tagparser								 v0.1.1 \
 	github.com/vmihailenco/tagparser/v2								 v2.0.0 \
+	github.com/wk8/go-ordered-map/v2								 v2.1.8 \
 	github.com/xanzy/ssh-agent									 v0.2.1 \
 	github.com/xeipuuv/gojsonpointer								 v0.0.0-20190905194746-02993c407bfb \
 	github.com/xeipuuv/gojsonreference								 v0.0.0-20180127040603-bd5ef7bd5415 \
