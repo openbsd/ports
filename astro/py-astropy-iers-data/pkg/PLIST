@@ -5,7 +5,6 @@ lib/python${MODPY_VERSION}/site-packages/astropy_iers_data-${MODPY_DISTV}.dist-i
 lib/python${MODPY_VERSION}/site-packages/astropy_iers_data-${MODPY_DISTV}.dist-info/WHEEL
 lib/python${MODPY_VERSION}/site-packages/astropy_iers_data-${MODPY_DISTV}.dist-info/licenses/
 lib/python${MODPY_VERSION}/site-packages/astropy_iers_data-${MODPY_DISTV}.dist-info/licenses/LICENSE.rst
-lib/python${MODPY_VERSION}/site-packages/astropy_iers_data-${MODPY_DISTV}.dist-info/top_level.txt
 lib/python${MODPY_VERSION}/site-packages/astropy_iers_data/__init__.py
 ${MODPY_COMMENT}lib/python${MODPY_VERSION}/site-packages/astropy_iers_data/${MODPY_PYCACHE}/
 lib/python${MODPY_VERSION}/site-packages/astropy_iers_data/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
