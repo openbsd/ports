@@ -63,10 +63,14 @@ MAILTO=root
 Over time, blob.db can grow larger than strictly necessary. Run VACUUM to shrink
 honk$ sqlite3 blob.db vacuum
 
+Note: By default, honk will store attachments in a file system directory
+      structure, attachments/. Previous versions stored files in a database,
+      blob.db
+
 Database Upgrade
 ================
 
-If you are upgrading from a version before 1.3.1, you will need to upgrade
+If you are upgrading from a version before 1.4.2, you will need to upgrade
 the database format:
 
 Stop the old honk process.

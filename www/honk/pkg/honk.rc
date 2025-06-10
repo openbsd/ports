@@ -7,7 +7,7 @@ daemon_user="_honk"
 
 . /etc/rc.d/rc.subr
 
-pexp="${TRUEPREFIX}/bin/honk .*"
+pexp="honk: .*"
 rc_bg=YES
 rc_reload=NO
 

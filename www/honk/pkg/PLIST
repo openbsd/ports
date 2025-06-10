@@ -64,6 +64,9 @@ share/doc/honk/vim.3.html
 @sample ${LOCALSTATEDIR}/honk/docs/vim.3.html
 share/doc/pkg-readmes/${PKGSTEM}
 share/examples/honk/
+share/examples/honk/emus/
+share/examples/honk/emus/disputed.png
+@sample ${LOCALSTATEDIR}/honk/emus/disputed.png
 share/examples/honk/memes/
 share/examples/honk/memes/twowires.jpg
 @sample ${LOCALSTATEDIR}/honk/memes/twowires.jpg

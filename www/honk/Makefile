@@ -1,6 +1,6 @@
 COMMENT =		federated status conveyance
 
-DISTNAME =		honk-1.4.2
+DISTNAME =		honk-1.5.1
 CATEGORIES =		www
 
 HOMEPAGE =		https://humungus.tedunangst.com/r/honk
@@ -42,6 +42,9 @@ post-install:
 		${DOCDIR}/toys
 	${INSTALL_DATA} ${MODGO_WORKSPACE}/src/${ALL_TARGET}/{LICENSE,README,TODO,docs/*.{css,html,jpg,png,txt}} \
 		${DOCDIR}/
+	${INSTALL_DATA_DIR} ${EXAMPLESDIR}/emus
+	${INSTALL_DATA} ${MODGO_WORKSPACE}/src/${ALL_TARGET}/emus/* \
+		${EXAMPLESDIR}/emus/
 	${INSTALL_DATA_DIR} ${EXAMPLESDIR}/memes
 	${INSTALL_DATA} ${MODGO_WORKSPACE}/src/${ALL_TARGET}/memes/* \
 		${EXAMPLESDIR}/memes/
