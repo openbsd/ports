@@ -4,7 +4,7 @@ ONLY_FOR_ARCHS =	amd64 arm64
 COMMENT =	open source implementation of the Tailscale control server
 
 MODGO_MODNAME =	github.com/juanfont/headscale
-MODGO_VERSION =	v0.26.0
+MODGO_VERSION =	v0.26.1
 
 DISTNAME =	headscale-${MODGO_VERSION}
 
