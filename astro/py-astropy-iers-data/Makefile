@@ -12,7 +12,7 @@ HOMEPAGE=	https://docs.astropy.org/en/latest/utils/iers.html
 PERMIT_PACKAGE=	Yes
 
 MODULES=	lang/python
-MODPY_PYBUILD=	setuptools_scm
+MODPY_PYBUILD=	hatch-vcs
 MODPY_PI=	Yes
 NO_TEST=	Yes
 
