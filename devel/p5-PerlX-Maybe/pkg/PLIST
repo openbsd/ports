@@ -1,0 +1,7 @@
+${P5SITE}/PerlX/
+${P5SITE}/PerlX/Maybe.pm
+${P5SITE}/Syntax/
+${P5SITE}/Syntax/Feature/
+${P5SITE}/Syntax/Feature/Maybe.pm
+@man man/man3p/PerlX::Maybe.3p
+@man man/man3p/Syntax::Feature::Maybe.3p

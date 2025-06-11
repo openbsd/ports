@@ -1,0 +1,4 @@
+PerlX::Maybe provides a convenient way to include or exclude key-value
+pairs or list items based on definedness or other conditions. It is
+commonly used to cleanly construct argument lists for object constructors
+or function calls, without the need for verbose conditionals.

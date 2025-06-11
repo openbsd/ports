@@ -1,0 +1,16 @@
+bin/cpanfile-dump
+bin/mymeta-cpanfile
+${P5SITE}/Module/
+${P5SITE}/Module/CPANfile/
+${P5SITE}/Module/CPANfile.pm
+${P5SITE}/Module/CPANfile/Environment.pm
+${P5SITE}/Module/CPANfile/Prereq.pm
+${P5SITE}/Module/CPANfile/Prereqs.pm
+${P5SITE}/Module/CPANfile/Requirement.pm
+${P5SITE}/cpanfile-faq.pod
+${P5SITE}/cpanfile.pod
+@man man/man1/cpanfile-dump.1
+@man man/man1/mymeta-cpanfile.1
+@man man/man3p/Module::CPANfile.3p
+@man man/man3p/cpanfile-faq.3p
+@man man/man3p/cpanfile.3p

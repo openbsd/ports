@@ -1,0 +1,7 @@
+${P5SITE}/AnyEvent/WebSocket/
+${P5SITE}/AnyEvent/WebSocket/Client.pm
+${P5SITE}/AnyEvent/WebSocket/Connection.pm
+${P5SITE}/AnyEvent/WebSocket/Message.pm
+@man man/man3p/AnyEvent::WebSocket::Client.3p
+@man man/man3p/AnyEvent::WebSocket::Connection.3p
+@man man/man3p/AnyEvent::WebSocket::Message.3p

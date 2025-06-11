@@ -1,0 +1,4 @@
+${P5SITE}/Module/Build/
+${P5SITE}/Module/Build/Prereqs/
+${P5SITE}/Module/Build/Prereqs/FromCPANfile.pm
+@man man/man3p/Module::Build::Prereqs::FromCPANfile.3p

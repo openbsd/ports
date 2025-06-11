@@ -1,0 +1,6 @@
+Interface for interacting with a web server that offers services via
+the WebSocket protocol in an AnyEvent context. It uses
+Protocol::WebSocket rather than reimplementing the protocol. While it
+is possible to use AnyEvent and Protocol::WebSocket directly for
+finer-grained control, this class offers a convenient abstraction
+when such control is not required.

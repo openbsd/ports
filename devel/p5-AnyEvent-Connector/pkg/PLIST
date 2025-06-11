@@ -1,0 +1,7 @@
+${P5SITE}/AnyEvent/
+${P5SITE}/AnyEvent/Connector/
+${P5SITE}/AnyEvent/Connector.pm
+${P5SITE}/AnyEvent/Connector/Proxy/
+${P5SITE}/AnyEvent/Connector/Proxy/http.pm
+@man man/man3p/AnyEvent::Connector.3p
+@man man/man3p/AnyEvent::Connector::Proxy::http.3p
