@@ -4,6 +4,7 @@
 
 COMMENT =		modified version of Firefox ESR for browsing over Tor
 
+REVISION =		0
 MOZILLA_VERSION =	${TB_VERSION}
 MOZILLA_PROJECT =	${BROWSER_NAME}
 MOZILLA_CODENAME =	browser
@@ -36,6 +37,8 @@ MODULES =		www/mozilla lang/python
 MODPY_RUNDEP =		No
 
 COMPILER =		ports-clang
+USE_LLD =		ports
+MODCLANG_VERSION =	19
 
 # tor-browser needs built-in nss
 MOZILLA_USE_BUNDLED_NSS =	Yes
@@ -45,7 +48,6 @@ BUILD_DEPENDS +=	lang/node
 BUILD_DEPENDS +=	devel/cbindgen>=0.23.0
 # wasi
 BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt \
-			lang/wasi-sdk/libcxxabi \
 			lang/wasi-sdk/libcxx \
 			lang/wasi-libc
 # mach uses pkg_resources
