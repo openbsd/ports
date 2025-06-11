@@ -2,10 +2,8 @@ COMMENT =	C standard library for WebAssembly System Interface
 
 GH_ACCOUNT =	WebAssembly
 GH_PROJECT =	wasi-libc
-GH_COMMIT =	9c17f5235c7977cb2a000990eb8c605a25a80adf
-DISTNAME =	wasi-libc-0.20231121
-
-REVISION =	0
+GH_COMMIT =	e9524a0980b9bb6bb92e87a41ed1055bdda5bb86
+DISTNAME =	wasi-libc-0.20250204
 
 DISTFILES =	${GH_DISTFILE}
 DISTFILES.h = 	wasi-libc-llvm13-std-headers.tar.gz
@@ -18,6 +16,7 @@ PERMIT_PACKAGE =	Yes
 
 COMPILER =	ports-clang
 COMPILER_LANGS =c
+MODCLANG_VERSION =	19
 USE_GMAKE =	yes
 ALL_TARGET =	finish
 
@@ -32,6 +31,6 @@ post-configure:
 
 post-install:
 	${INSTALL_DATA} ${WRKDIR}/sysroot/include/* \
-		${PREFIX}/share/wasi-sysroot/include
+		${PREFIX}/share/wasi-sysroot/include/wasm32-wasi
 	
 .include <bsd.port.mk>

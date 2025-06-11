@@ -1,4 +1,4 @@
-SHA256 (wasi-libc-0.20231121-9c17f523.tar.gz) = dRUaojjr1lnbuJytlZFIC+oM2mfWoEeo5Qd3SoJ4mOk=
+SHA256 (wasi-libc-0.20250204-e9524a09.tar.gz) = m66HZQvmbRBmIFXsE4xlULEn8c7trweSZvibfH37fzQ=
 SHA256 (wasi-libc-llvm13-std-headers.tar.gz) = YTble8uIDTmeki+GTWKcGnO5JHK6p/educ3h/T+tIE4=
-SIZE (wasi-libc-0.20231121-9c17f523.tar.gz) = 1313030
+SIZE (wasi-libc-0.20250204-e9524a09.tar.gz) = 1444350
 SIZE (wasi-libc-llvm13-std-headers.tar.gz) = 1795

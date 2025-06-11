@@ -8,7 +8,7 @@ chunk 2: adapt regex for our grep
 Index: Makefile
 --- Makefile.orig
 +++ Makefile
-@@ -346,7 +346,7 @@ endif
+@@ -466,7 +466,7 @@ endif
  #    should come earlier in the search path, so they can "override"
  #    and/or `#include_next` the public headers. `-isystem` (like
  #    `-idirafter`) comes later in the search path than `-I`.
@@ -17,7 +17,16 @@ Index: Makefile
  
  # These variables describe the locations of various files and directories in
  # the build tree.
-@@ -789,8 +789,9 @@ check-symbols: startup_files libc
+@@ -814,7 +814,7 @@ finish: check-symbols
+ endif
+ endif
+ 
+-install: finish
++install:
+ 	mkdir -p "$(INSTALL_DIR)"
+ 	cp -r "$(SYSROOT)/lib" "$(SYSROOT)/share" "$(SYSROOT)/include" "$(INSTALL_DIR)"
+ 
+@@ -929,14 +929,15 @@ check-symbols: $(STARTUP_FILES) libc
  	    -U__FLT_EVAL_METHOD__ -Wno-builtin-macro-redefined \
  	    | sed -e 's/__[[:upper:][:digit:]]*_ATOMIC_\([[:upper:][:digit:]_]*\)_LOCK_FREE/__compiler_ATOMIC_\1_LOCK_FREE/' \
  	    | sed -e 's/__GNUC_VA_LIST $$/__GNUC_VA_LIST 1/' \
@@ -28,13 +37,12 @@ Index: Makefile
 +	    | egrep -v '^#define __GCC_HAVE_SYNC_COMPARE_AND_SWAP_(1|2|4|8)' \
  	    | grep -v '^#define __FPCLASS_' \
  	    | grep -v '^#define __FLT128_' \
+ 	    | grep -v '^#define __MEMORY_SCOPE_' \
+-	    | grep -v '^#define __GCC_\(CON\|DE\)STRUCTIVE_SIZE' \
++	    | egrep -v '^#define __GCC_(CON|DE)STRUCTIVE_SIZE' \
+ 	    | grep -v '^#define __STDC_EMBED_' \
+-	    | grep -v '^#define __\(DBL\|FLT\|LDBL\)_NORM_MAX__' \
++	    | egrep -v '^#define __(DBL|FLT|LDBL)_NORM_MAX__' \
  	    | grep -v '^#define NDEBUG' \
-@@ -803,7 +804,7 @@ check-symbols: startup_files libc
- 	# This ignores whitespace because on Windows the output has CRLF line endings.
- 	diff -wur "expected/$(TARGET_TRIPLE)" "$(SYSROOT_SHARE)"
- 
--install: finish
-+install:
- 	mkdir -p "$(INSTALL_DIR)"
- 	cp -r "$(SYSROOT)/lib" "$(SYSROOT)/share" "$(SYSROOT)/include" "$(INSTALL_DIR)"
- 
+ 	    | grep -v '^#define __OPTIMIZE__' \
+ 	    | grep -v '^#define assert' \
