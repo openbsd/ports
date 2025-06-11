@@ -367,6 +367,7 @@
      SUBDIR += owamp
      SUBDIR += owncloudclient
      SUBDIR += p5-AnyEvent-IRC
+     SUBDIR += p5-AnyEvent-WebSocket-Client
      SUBDIR += p5-BSD-Socket-Splice
      SUBDIR += p5-Bot-BasicBot
      SUBDIR += p5-Business-PayPal
