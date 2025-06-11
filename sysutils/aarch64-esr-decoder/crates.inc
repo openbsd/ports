@@ -1,5 +1,3 @@
-===>  Generating configure for aarch64-esr-decoder-0.2.3pl20250306
-===>  Configuring for aarch64-esr-decoder-0.2.3pl20250306
 MODCARGO_CRATES +=	bit_field	0.10.2	# Apache-2.0/MIT
 MODCARGO_CRATES +=	proc-macro2	1.0.89	# MIT OR Apache-2.0
 MODCARGO_CRATES +=	quote	1.0.35	# MIT OR Apache-2.0
