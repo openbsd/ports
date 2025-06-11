@@ -3,6 +3,7 @@ COMMENT =		Mozilla e-mail, calendar, rss and usenet client
 
 # Don't forget to bump mail/thunderbird-i18n after updates.
 
+REVISION =		0
 MOZILLA_VERSION =	128.11.1esr
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	thunderbird
@@ -31,6 +32,8 @@ MODULES =	www/mozilla lang/python
 MODPY_RUNDEP =	No
 
 COMPILER =	ports-clang
+USE_LLD =		ports
+MODCLANG_VERSION =	19
 MODCLANG_ARCHS =	amd64 aarch64 riscv64
 
 # 63 requires node because why not #1483595
@@ -43,7 +46,6 @@ BUILD_DEPENDS +=	devel/nasm
 .endif
 # wasi
 BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt \
-			lang/wasi-sdk/libcxxabi \
 			lang/wasi-sdk/libcxx \
 			lang/wasi-libc
 # mach uses pkg_resources
