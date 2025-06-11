@@ -157,6 +157,7 @@
      SUBDIR += lablgtk3
      SUBDIR += lemonbar
      SUBDIR += lemonbar-xft
+     SUBDIR += libappindicator
      SUBDIR += libdbus-c++
      SUBDIR += libdbusmenu
      SUBDIR += libdnd
@@ -165,7 +166,6 @@
      SUBDIR += libgdiplus
      SUBDIR += libhandy
      SUBDIR += libindicator
-     SUBDIR += libappindicator
      SUBDIR += libqaccessibilityclient
      SUBDIR += libqtolm
      SUBDIR += libquotient
@@ -280,8 +280,8 @@
      SUBDIR += ruby-tk,ruby33
      SUBDIR += ruby-tk,ruby34
      SUBDIR += rxvt-unicode
-     SUBDIR += rxvt-unicode,small
      SUBDIR += rxvt-unicode,everything
+     SUBDIR += rxvt-unicode,small
      SUBDIR += sakura
      SUBDIR += sawfish
      SUBDIR += sclock

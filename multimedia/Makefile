@@ -60,11 +60,11 @@
      SUBDIR += p5-Data-AMF
      SUBDIR += p5-Mac-iTunes-Library
      SUBDIR += p5-Storable-AMF
-     SUBDIR += playerctl
      SUBDIR += phonon
      SUBDIR += phonon-backend
      SUBDIR += pipewire
      SUBDIR += pitivi
+     SUBDIR += playerctl
      SUBDIR += py-caption
      SUBDIR += py-casttube
      SUBDIR += py-chromecast

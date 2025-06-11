@@ -36,5 +36,5 @@
      SUBDIR += uim-chewing
      SUBDIR += uim-tomoe-gtk
      SUBDIR += xcb-imdkit
-     
+
 .include <bsd.port.subdir.mk>

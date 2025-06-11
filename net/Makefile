@@ -312,7 +312,6 @@
      SUBDIR += neon
      SUBDIR += nepim
      SUBDIR += net-snmp
-     SUBDIR += nheko
      SUBDIR += netatalk3
      SUBDIR += netbsd-iscsi-target
      SUBDIR += netfwd
@@ -327,6 +326,7 @@
      SUBDIR += ngircd,ident
      SUBDIR += ngrep
      SUBDIR += ngtcp2
+     SUBDIR += nheko
      SUBDIR += nicotine-plus
      SUBDIR += nload
      SUBDIR += nmap
@@ -354,9 +354,9 @@
      SUBDIR += onionshare
      SUBDIR += openconnect
      SUBDIR += openconnect,light
-     SUBDIR += openrdap
      SUBDIR += openfire
      SUBDIR += openmdns
+     SUBDIR += openrdap
      SUBDIR += openvmps
      SUBDIR += openvpn
      SUBDIR += openvpn,mbedtls
@@ -576,7 +576,6 @@
      SUBDIR += py-cymruwhois
      SUBDIR += py-dns			# py2
      SUBDIR += py-dnslib
-     SUBDIR += py2-dnspython
      SUBDIR += py-dnspython
      SUBDIR += py-dpkt
      SUBDIR += py-eapi
@@ -643,6 +642,7 @@
      SUBDIR += py-wsproto
      SUBDIR += py-zeroconf
      SUBDIR += py-zmq
+     SUBDIR += py2-dnspython
      SUBDIR += qbittorrent
      SUBDIR += quagga
      SUBDIR += queryperf

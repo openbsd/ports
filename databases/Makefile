@@ -10,8 +10,8 @@
      SUBDIR += futuresql
      SUBDIR += galera
      SUBDIR += gdbm
-     SUBDIR += influxdb
      SUBDIR += influx-cli
+     SUBDIR += influxdb
      SUBDIR += iodbc
      SUBDIR += jxplorer
      SUBDIR += kdb

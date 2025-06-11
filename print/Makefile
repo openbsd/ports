@@ -61,8 +61,8 @@
      SUBDIR += py-fonttools
      SUBDIR += py-pdf2image
      SUBDIR += py-pikepdf
-     SUBDIR += py-pylatex
      SUBDIR += py-pydyf
+     SUBDIR += py-pylatex
      SUBDIR += py-pypdf
      SUBDIR += py-relatorio
      SUBDIR += py-reportlab

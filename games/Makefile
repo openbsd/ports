@@ -281,8 +281,8 @@
      SUBDIR += renpy
      SUBDIR += returntotheroots
      SUBDIR += rftg
-     SUBDIR += rigg
      SUBDIR += ri-li
+     SUBDIR += rigg
      SUBDIR += roadfighter
      SUBDIR += rocksndiamonds
      SUBDIR += sauerbraten

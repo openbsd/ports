@@ -355,8 +355,8 @@
      SUBDIR += libusb1,debug
      SUBDIR += libuv
      SUBDIR += libvirt-glib
-     SUBDIR += libvolk
      SUBDIR += libvmime
+     SUBDIR += libvolk
      SUBDIR += libvterm
      SUBDIR += libwnck3
      SUBDIR += libxsvf
@@ -1712,12 +1712,12 @@
      SUBDIR += py-test-lazy-fixture
      SUBDIR += py-test-localserver
      SUBDIR += py-test-mock
-     SUBDIR += py-test-order
      SUBDIR += py-test-openfiles
+     SUBDIR += py-test-order
      SUBDIR += py-test-relaxed
      SUBDIR += py-test-remotedata
-     SUBDIR += py-test-runner
      SUBDIR += py-test-run-parallel
+     SUBDIR += py-test-runner
      SUBDIR += py-test-subtesthack
      SUBDIR += py-test-subtests
      SUBDIR += py-test-timeout
@@ -1794,8 +1794,8 @@
      SUBDIR += pygame
      SUBDIR += pylint
      SUBDIR += pystring			# not python ;)
-     SUBDIR += pyusb
      SUBDIR += pyupgrade
+     SUBDIR += pyusb
      SUBDIR += qbs
      SUBDIR += qcoro
      SUBDIR += qgit

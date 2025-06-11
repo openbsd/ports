@@ -13,8 +13,8 @@
      SUBDIR += slurp
      SUBDIR += sway
      SUBDIR += swaybg
-     SUBDIR += swayimg
      SUBDIR += swayidle
+     SUBDIR += swayimg
      SUBDIR += swaylock
      SUBDIR += wayfire
      SUBDIR += wayland
@@ -26,8 +26,8 @@
      SUBDIR += wf-recorder
      SUBDIR += wf-shell
      SUBDIR += wlopm
-     SUBDIR += wlroots
      SUBDIR += wlr-randr
+     SUBDIR += wlroots
      SUBDIR += wmenu
      SUBDIR += wofi
      SUBDIR += xwayland

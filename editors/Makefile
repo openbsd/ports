@@ -32,9 +32,9 @@
      SUBDIR += hyx
      SUBDIR += jed
      SUBDIR += jed,no_x11
+     SUBDIR += jmigpin-editor
      SUBDIR += joe
      SUBDIR += jove
-     SUBDIR += jmigpin-editor
      SUBDIR += kakoune
      SUBDIR += kile
      SUBDIR += ktikz

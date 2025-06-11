@@ -90,8 +90,8 @@
      SUBDIR += ruby-multi_json
      SUBDIR += ruby-oj,ruby33
      SUBDIR += ruby-oj,ruby34
-     SUBDIR += sqlite2mdoc
      SUBDIR += schema2ldif
+     SUBDIR += sqlite2mdoc
      SUBDIR += trans
      SUBDIR += unoconv
      SUBDIR += unsf
