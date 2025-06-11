@@ -1,0 +1,18 @@
+@bin bin/pebble
+@bin bin/pebble-challtestsrv
+@bin bin/pebble-client
+share/doc/pebble/
+share/doc/pebble/README.md
+share/examples/pebble/
+share/examples/pebble/test/
+share/examples/pebble/test/certs/
+share/examples/pebble/test/certs/README.md
+share/examples/pebble/test/certs/localhost/
+share/examples/pebble/test/certs/localhost/README.md
+share/examples/pebble/test/certs/localhost/cert.pem
+share/examples/pebble/test/certs/localhost/key.pem
+share/examples/pebble/test/certs/pebble.minica.key.pem
+share/examples/pebble/test/certs/pebble.minica.pem
+share/examples/pebble/test/chisel2.py
+share/examples/pebble/test/config/
+share/examples/pebble/test/config/pebble-config.json

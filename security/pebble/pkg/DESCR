@@ -1,0 +1,21 @@
+Pebble is a small RFC 8555 ACME test server - it is not suited for a
+production certificate authority, it is provided for testing operation
+of other software. It has several top level goals:
+
+- Provide a simplified ACME testing front end
+- Provide a test-bed for new and compatibility breaking ACME features
+- Encourage ACME client best-practices
+- Aggressively build in guardrails against non-testing usage
+
+Compared to Boulder (the much larger production CA software used by
+Let's Encrypt), Pebble aims to make different choices in places where
+the ACME specification allows customization/CA choice. For instance,
+Pebble changes the path structures for its resources and directory
+endpoints to differ from Boulder.
+
+Where possible Pebble will make decisions that force clients to
+implement ACME correctly (e.g. randomizing /directory endpoint URLs to
+ensure clients are not hardcoding URLs.)
+
+The goal is to emphasize client specification compatibility and to avoid
+"over-fitting" on Boulder and the Let's Encrypt production service.
