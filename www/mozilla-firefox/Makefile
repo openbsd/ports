@@ -3,6 +3,7 @@ ONLY_FOR_ARCHS =	amd64 aarch64 riscv64
 
 # Don't forget to bump www/firefox-i18n after updates.
 
+REVISION =		0
 MOZILLA_VERSION =	139.0.4
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox
@@ -26,6 +27,8 @@ MODULES =	www/mozilla lang/python
 MODPY_RUNDEP =	No
 
 COMPILER =	ports-clang
+USE_LLD =	ports
+MODCLANG_VERSION =	19
 
 # 63 requires node because why not #1483595
 BUILD_DEPENDS +=	lang/node
@@ -33,7 +36,6 @@ BUILD_DEPENDS +=	lang/node
 BUILD_DEPENDS +=	devel/cbindgen>=0.23.0
 # wasi
 BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt \
-			lang/wasi-sdk/libcxxabi \
 			lang/wasi-sdk/libcxx \
 			lang/wasi-libc
 # mach uses pkg_resources
