@@ -508,6 +508,7 @@
      SUBDIR += p5-Alien-wxWidgets
      SUBDIR += p5-Any-Moose
      SUBDIR += p5-AnyEvent
+     SUBDIR += p5-AnyEvent-Connector
      SUBDIR += p5-AnyEvent-HTTP
      SUBDIR += p5-App-CLI
      SUBDIR += p5-App-Cmd
@@ -913,8 +914,10 @@
      SUBDIR += p5-Module-Build
      SUBDIR += p5-Module-Build-Pluggable
      SUBDIR += p5-Module-Build-Pluggable-PPPort
+     SUBDIR += p5-Module-Build-Prereqs-FromCPANfile
      SUBDIR += p5-Module-Build-Tiny
      SUBDIR += p5-Module-Build-XSUtil
+     SUBDIR += p5-Module-CPANfile
      SUBDIR += p5-Module-Find
      SUBDIR += p5-Module-Implementation
      SUBDIR += p5-Module-Install
@@ -1041,6 +1044,7 @@
      SUBDIR += p5-PerlIO-via-Timeout
      SUBDIR += p5-PerlIO-via-dynamic
      SUBDIR += p5-PerlIO-via-symlink
+     SUBDIR += p5-PerlX-Maybe
      SUBDIR += p5-Pod-Constant
      SUBDIR += p5-Pod-Coverage
      SUBDIR += p5-Pod-ToDemo
