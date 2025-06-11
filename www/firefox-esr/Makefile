@@ -1,6 +1,7 @@
 COMMENT =	Firefox web browser, Extended Support Release
 ONLY_FOR_ARCHS =	amd64 aarch64 riscv64
 
+REVISION =		0
 MOZILLA_VERSION =	128.11.0esr
 MOZILLA_BRANCH =	release
 MOZILLA_PROJECT =	firefox-esr
@@ -24,6 +25,8 @@ MODULES =	www/mozilla lang/python
 MODPY_RUNDEP =	No
 
 COMPILER =	ports-clang
+USE_LLD =		ports
+MODCLANG_VERSION=	19
 
 # 63 requires node because why not #1483595
 BUILD_DEPENDS +=	lang/node
@@ -31,7 +34,6 @@ BUILD_DEPENDS +=	lang/node
 BUILD_DEPENDS +=	devel/cbindgen>=0.23.0
 # wasi
 BUILD_DEPENDS +=	lang/wasi-sdk/compiler-rt \
-			lang/wasi-sdk/libcxxabi \
 			lang/wasi-sdk/libcxx \
 			lang/wasi-libc
 # mach uses pkg_resources
@@ -48,7 +50,12 @@ CONFIGURE_SCRIPT =	${MODPY_BIN} ${WRKSRC}/configure.py
 CONFIGURE_ARGS +=	--prefix=${PREFIX}
 MAKE_ENV +=		BUILD_VERBOSE_LOG="1" CARGOFLAGS="-j${MAKE_JOBS}"
 CONFIGURE_ENV +=	CPPFLAGS=-Wno-backend-plugin
+NCPU !!=		sysctl -n hw.ncpuonline
+.if ${NCPU} > 4
+CONFIGURE_ENV +=	LDFLAGS="-Wl,--threads=5 --ld-path=${WRKDIR}/bin/ld"
+.else
 CONFIGURE_ENV +=	LDFLAGS="-Wl,--threads=${MAKE_JOBS} --ld-path=${WRKDIR}/bin/ld"
+.endif
 
 # avoid conflict with mainline firefox
 CONFIGURE_ARGS +=	--with-app-name=${MOZILLA_PROJECT}
