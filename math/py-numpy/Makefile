@@ -1,9 +1,9 @@
 COMMENT=	fast array and numeric programming library for Python
 
-MODPY_DISTV=	2.0.2
+# numpy 2.3.x needs gcc 9.3 or newer
+MODPY_DISTV=	2.2.6
 DISTNAME=	numpy-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	math devel
 
@@ -12,7 +12,6 @@ HOMEPAGE=	https://numpy.org/
 # BSD
 PERMIT_PACKAGE=	Yes
 
-# configure checks for C++17 (though doesn't seem to actually use it)
 COMPILER=	base-clang ports-gcc
 
 WANTLIB += ${COMPILER_LIBCXX} ${MODPY_WANTLIB} m
@@ -85,7 +84,7 @@ pre-build:
 # 1.19.5) but at least some normal runtime seems ok (makehuman builds).
 # https://github.com/numpy/numpy/issues/20799
 .if ${MACHINE_ARCH} == i386
-	sed -i '/^option.*disable-optim/ s/false/true/' ${WRKSRC}/meson_options.txt
+	sed -i '/^option.*disable-optim/ s/false/true/' ${WRKSRC}/meson.options
 .endif
 
 do-test:
