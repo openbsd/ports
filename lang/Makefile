@@ -93,6 +93,7 @@
      SUBDIR += pcc
      SUBDIR += pfe
      SUBDIR += php
+     SUBDIR += polyml
      SUBDIR += processing
      SUBDIR += pypy
      SUBDIR += python
