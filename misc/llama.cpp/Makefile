@@ -36,6 +36,7 @@ BUILD_DEPENDS =		graphics/shaderc
 
 CONFIGURE_ARGS =	-DGGML_CCACHE=Off \
 			-DGGML_NATIVE=Off \
+			-DGGML_RVV=Off \
 			-DGGML_VULKAN=On
 
 # avoid requiring git during build
