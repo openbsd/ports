@@ -1,0 +1,9 @@
+Contains pure Python implementations of:
+
+* ML-KEM, the Module-Lattice-Based Key-Encapsulation Mechanism
+  following FIPS 203 from the NIST post-quantum cryptography project.
+
+* CRYSTALS-Kyber following its specification v3.02.
+
+Being pure Python, this code is not constant time, nor written to be
+performant. No cryptographic guarantees are made. 
