@@ -5,13 +5,6 @@ share/yelp-xsl/js/highlight.pack.js
 share/yelp-xsl/xslt/
 share/yelp-xsl/xslt/common/
 share/yelp-xsl/xslt/common/color.xsl
-share/yelp-xsl/xslt/common/css/
-share/yelp-xsl/xslt/common/css/core.css.tmpl
-share/yelp-xsl/xslt/common/css/docbook.css.tmpl
-share/yelp-xsl/xslt/common/css/elements.css.tmpl
-share/yelp-xsl/xslt/common/css/mallard-editor.css.tmpl
-share/yelp-xsl/xslt/common/css/mallard.css.tmpl
-share/yelp-xsl/xslt/common/css/syntax.css.tmpl
 share/yelp-xsl/xslt/common/domains/
 share/yelp-xsl/xslt/common/domains/yelp-xsl.xml
 share/yelp-xsl/xslt/common/html.xsl

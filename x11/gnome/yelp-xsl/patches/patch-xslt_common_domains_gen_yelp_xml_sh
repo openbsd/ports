@@ -1,0 +1,11 @@
+XXX push upstream
+
+Index: xslt/common/domains/gen_yelp_xml.sh
+--- xslt/common/domains/gen_yelp_xml.sh.orig
++++ xslt/common/domains/gen_yelp_xml.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ set -e
+ 
