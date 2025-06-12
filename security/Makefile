@@ -303,6 +303,7 @@
      SUBDIR += py-josepy
      SUBDIR += py-keyring
      SUBDIR += py-krb5
+     SUBDIR += py-kyber
      SUBDIR += py-libnacl
      SUBDIR += py-miasm
      SUBDIR += py-mitmproxy_rs
