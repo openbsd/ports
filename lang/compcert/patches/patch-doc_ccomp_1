@@ -1,4 +1,4 @@
-Add support for -MD
+Add docs for -MD and -MMD
 
 Index: doc/ccomp.1
 --- doc/ccomp.1.orig
@@ -8,7 +8,7 @@ Index: doc/ccomp.1
  .
  .TP
 -.BR \-C ", " \-CC ", " \-finput-charset ", " \-idirafter ", " \-imacros ", " \-iquote ", " \-isystem ", " \-M ", " \-MF ", " \-MG ", " \-MM ", " \-MP ", " \-MQ ", " \-MT  ", " \-nostdinc ", " \-P
-+.BR \-C ", " \-CC ", " \-finput-charset ", " \-idirafter ", " \-imacros ", " \-iquote ", " \-isystem ", " \-M ", " \-MD ", " \-MF ", " \-MG ", " \-MM ", " \-MP ", " \-MQ ", " \-MT  ", " \-nostdinc ", " \-P
++.BR \-C ", " \-CC ", " \-finput-charset ", " \-idirafter ", " \-imacros ", " \-iquote ", " \-isystem ", " \-M ", " \-MD ", " \-MF ", " \-MG ", " \-MM ", " \-MMD" , " \-MP ", " \-MQ ", " \-MT  ", " \-nostdinc ", " \-P
  For GNU backends these options are recognized by CompCert and passed through to the preprocessor.
  .
  .SS
