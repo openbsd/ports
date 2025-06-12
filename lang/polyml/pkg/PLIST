@@ -1,0 +1,15 @@
+@bin bin/poly
+bin/polyc
+@bin bin/polyimport
+@static-lib lib/libpolymain.a
+lib/libpolymain.la
+@static-lib lib/libpolyml.a
+lib/libpolyml.la
+@lib lib/libpolyml.so.${LIBpolyml_VERSION}
+lib/pkgconfig/polyml.pc
+lib/polyml/
+lib/polyml/modules/
+lib/polyml/modules/IntInfAsInt
+@man man/man1/poly.1
+@man man/man1/polyc.1
+@man man/man1/polyimport.1

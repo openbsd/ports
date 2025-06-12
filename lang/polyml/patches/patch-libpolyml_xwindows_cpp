@@ -1,0 +1,12 @@
+Index: libpolyml/xwindows.cpp
+--- libpolyml/xwindows.cpp.orig
++++ libpolyml/xwindows.cpp
+@@ -7274,7 +7274,7 @@ static void DebugPrintWord(PolyWord P /* was X_Object 
+                              : printf("Old Display <%p>",P.AsAddress()));
+             return;
+             
+-        default:         printf("Pointer "ZERO_X"%p",P.AsAddress());
++        default:         printf("Pointer " ZERO_X "%p",P.AsAddress());
+             return;
+         }
+     }
