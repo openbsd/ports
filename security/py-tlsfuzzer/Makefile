@@ -4,6 +4,7 @@ MODPY_DISTV =		20250516
 DISTNAME =		tlsfuzzer-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 CATEGORIES =		security
+REVISION =		0
 
 GH_ACCOUNT =		tlsfuzzer
 GH_PROJECT =		tlsfuzzer
@@ -15,7 +16,8 @@ MODPY_PYTEST =		Yes
 
 WANTLIB +=		${MODPY_WANTLIB}
 
-RUN_DEPENDS +=		net/py-tlslite-ng
+RUN_DEPENDS +=		net/py-tlslite-ng \
+			security/py-kyber
 
 # GPLv2
 PERMIT_PACKAGE =	Yes
