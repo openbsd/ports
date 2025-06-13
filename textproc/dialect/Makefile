@@ -20,7 +20,6 @@ BUILD_DEPENDS =		devel/gettext,-tools \
 			devel/glib2 \
 			devel/gobject-introspection \
 			devel/libsoup3 \
-			devel/py-gobject3 \
 			multimedia/gstreamer1/core \
 			x11/blueprint-compiler \
 			x11/gnome/libadwaita>=1.6.0 \

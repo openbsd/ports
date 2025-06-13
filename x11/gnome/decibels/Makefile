@@ -17,7 +17,6 @@ MODULES=		devel/meson \
 MODGNOME_TOOLS=		desktop-file-utils gtk-update-icon-cache
 
 BUILD_DEPENDS=		devel/appstream \
-			devel/py-gobject3 \
 			lang/typescript \
 			x11/blueprint-compiler \
 			x11/gnome/gjs \
