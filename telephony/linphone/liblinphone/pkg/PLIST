@@ -1,8 +1,6 @@
 @bin bin/liblinphone-auto-answer
-@bin bin/liblinphone-lpc2xml-test
 @bin bin/liblinphone-sendmsg
 @bin bin/liblinphone-test-ecc
-@bin bin/liblinphone-xml2lpc-test
 @bin bin/linphone-daemon
 @bin bin/linphone-daemon-pipetest
 @bin bin/linphonec
@@ -237,8 +235,6 @@ share/belr/grammars/identity_grammar
 share/doc/liblinphone/
 share/doc/liblinphone/c/
 share/doc/liblinphone/c/annotated.html
-share/doc/liblinphone/c/bc_s.png
-share/doc/liblinphone/c/bc_sd.png
 share/doc/liblinphone/c/classEnumMask.html
 share/doc/liblinphone/c/classFlexiAPIClient.html
 share/doc/liblinphone/c/classFlexiAPIClient_1_1Callbacks.html
@@ -247,7 +243,6 @@ share/doc/liblinphone/c/classFlexiAPIClient_1_1Response.html
 share/doc/liblinphone/c/classUtils_1_1Version.html
 share/doc/liblinphone/c/classes.html
 share/doc/liblinphone/c/clipboard.js
-share/doc/liblinphone/c/closed.png
 share/doc/liblinphone/c/deprecated.html
 share/doc/liblinphone/c/dir_0d61f8370cad1d412f80b84d143e1257.html
 share/doc/liblinphone/c/dir_2b3583e6e17721c54496bd04e57a0c15.html
@@ -259,16 +254,10 @@ share/doc/liblinphone/c/dir_704935b5921e6f33fda5822c4f70610d.html
 share/doc/liblinphone/c/dir_8a5da52ed126447d359e70c05721a8aa.html
 share/doc/liblinphone/c/dir_bfebe34154a0dfd9fc7b447fc9ed74e9.html
 share/doc/liblinphone/c/dir_d436eb0fd9de10b54a828ce6435f7e81.html
-share/doc/liblinphone/c/doc.svg
-share/doc/liblinphone/c/docd.svg
 share/doc/liblinphone/c/doxygen.css
 share/doc/liblinphone/c/doxygen.svg
 share/doc/liblinphone/c/doxygen_crawl.html
 share/doc/liblinphone/c/dynsections.js
-share/doc/liblinphone/c/folderclosed.svg
-share/doc/liblinphone/c/folderclosedd.svg
-share/doc/liblinphone/c/folderopen.svg
-share/doc/liblinphone/c/folderopend.svg
 share/doc/liblinphone/c/functions.html
 share/doc/liblinphone/c/functions_vars.html
 share/doc/liblinphone/c/group__IOS.html
@@ -313,19 +302,8 @@ share/doc/liblinphone/c/index.html
 share/doc/liblinphone/c/jquery.js
 share/doc/liblinphone/c/menu.js
 share/doc/liblinphone/c/menudata.js
-share/doc/liblinphone/c/minus.svg
-share/doc/liblinphone/c/minusd.svg
-share/doc/liblinphone/c/nav_f.png
-share/doc/liblinphone/c/nav_fd.png
-share/doc/liblinphone/c/nav_g.png
-share/doc/liblinphone/c/nav_h.png
-share/doc/liblinphone/c/nav_hd.png
-share/doc/liblinphone/c/open.png
+share/doc/liblinphone/c/navtree.css
 share/doc/liblinphone/c/pages.html
-share/doc/liblinphone/c/plus.svg
-share/doc/liblinphone/c/plusd.svg
-share/doc/liblinphone/c/splitbar.png
-share/doc/liblinphone/c/splitbard.png
 share/doc/liblinphone/c/structIsMapContainer.html
 share/doc/liblinphone/c/structIsMapContainer.png
 share/doc/liblinphone/c/structLinphoneVideoSizeDef.html
@@ -346,22 +324,10 @@ share/doc/liblinphone/c/struct__LinphoneVideoPolicy.html
 share/doc/liblinphone/c/struct__SipSetup.html
 share/doc/liblinphone/c/struct__SipSetupContext.html
 share/doc/liblinphone/c/struct__zrtpCacheAccess.html
-share/doc/liblinphone/c/sync_off.png
-share/doc/liblinphone/c/sync_on.png
-share/doc/liblinphone/c/tab_a.png
-share/doc/liblinphone/c/tab_ad.png
-share/doc/liblinphone/c/tab_b.png
-share/doc/liblinphone/c/tab_bd.png
-share/doc/liblinphone/c/tab_h.png
-share/doc/liblinphone/c/tab_hd.png
-share/doc/liblinphone/c/tab_s.png
-share/doc/liblinphone/c/tab_sd.png
 share/doc/liblinphone/c/tabs.css
 share/doc/liblinphone/c/topics.html
 share/doc/liblinphone/cpp/
 share/doc/liblinphone/cpp/annotated.html
-share/doc/liblinphone/cpp/bc_s.png
-share/doc/liblinphone/cpp/bc_sd.png
 share/doc/liblinphone/cpp/classes.html
 share/doc/liblinphone/cpp/classlinphone_1_1Account-members.html
 share/doc/liblinphone/cpp/classlinphone_1_1Account.html
@@ -625,20 +591,13 @@ share/doc/liblinphone/cpp/classlinphone_1_1XmlRpcSession-members.html
 share/doc/liblinphone/cpp/classlinphone_1_1XmlRpcSession.html
 share/doc/liblinphone/cpp/classlinphone_1_1XmlRpcSession.png
 share/doc/liblinphone/cpp/clipboard.js
-share/doc/liblinphone/cpp/closed.png
 share/doc/liblinphone/cpp/deprecated.html
 share/doc/liblinphone/cpp/dir_cb1164c73628cd7ee2f858ea986189bf.html
 share/doc/liblinphone/cpp/dir_d436eb0fd9de10b54a828ce6435f7e81.html
-share/doc/liblinphone/cpp/doc.svg
-share/doc/liblinphone/cpp/docd.svg
 share/doc/liblinphone/cpp/doxygen.css
 share/doc/liblinphone/cpp/doxygen.svg
 share/doc/liblinphone/cpp/doxygen_crawl.html
 share/doc/liblinphone/cpp/dynsections.js
-share/doc/liblinphone/cpp/folderclosed.svg
-share/doc/liblinphone/cpp/folderclosedd.svg
-share/doc/liblinphone/cpp/folderopen.svg
-share/doc/liblinphone/cpp/folderopend.svg
 share/doc/liblinphone/cpp/functions.html
 share/doc/liblinphone/cpp/functions_b.html
 share/doc/liblinphone/cpp/functions_c.html
@@ -692,33 +651,12 @@ share/doc/liblinphone/cpp/index.html
 share/doc/liblinphone/cpp/jquery.js
 share/doc/liblinphone/cpp/menu.js
 share/doc/liblinphone/cpp/menudata.js
-share/doc/liblinphone/cpp/minus.svg
-share/doc/liblinphone/cpp/minusd.svg
 share/doc/liblinphone/cpp/namespacelinphone.html
 share/doc/liblinphone/cpp/namespacemembers.html
 share/doc/liblinphone/cpp/namespacemembers_enum.html
 share/doc/liblinphone/cpp/namespaces.html
-share/doc/liblinphone/cpp/nav_f.png
-share/doc/liblinphone/cpp/nav_fd.png
-share/doc/liblinphone/cpp/nav_g.png
-share/doc/liblinphone/cpp/nav_h.png
-share/doc/liblinphone/cpp/nav_hd.png
-share/doc/liblinphone/cpp/open.png
+share/doc/liblinphone/cpp/navtree.css
 share/doc/liblinphone/cpp/pages.html
-share/doc/liblinphone/cpp/plus.svg
-share/doc/liblinphone/cpp/plusd.svg
-share/doc/liblinphone/cpp/splitbar.png
-share/doc/liblinphone/cpp/splitbard.png
-share/doc/liblinphone/cpp/sync_off.png
-share/doc/liblinphone/cpp/sync_on.png
-share/doc/liblinphone/cpp/tab_a.png
-share/doc/liblinphone/cpp/tab_ad.png
-share/doc/liblinphone/cpp/tab_b.png
-share/doc/liblinphone/cpp/tab_bd.png
-share/doc/liblinphone/cpp/tab_h.png
-share/doc/liblinphone/cpp/tab_hd.png
-share/doc/liblinphone/cpp/tab_s.png
-share/doc/liblinphone/cpp/tab_sd.png
 share/doc/liblinphone/cpp/tabs.css
 share/linphone/
 share/linphone/rootca.pem
