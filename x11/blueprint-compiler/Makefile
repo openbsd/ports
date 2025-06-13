@@ -4,6 +4,8 @@ DIST_TUPLE =		gnome	jwestman	blueprint-compiler	v${V}	.
 WRKDIST =		${WRKDIR}/blueprint-compiler-v${V}
 CATEGORIES =		x11 lang
 
+REVISION =		0
+
 MAINTAINER =		Klemens Nanni <kn@openbsd.org>
 
 # GLPLv3
@@ -11,6 +13,8 @@ PERMIT_PACKAGE =	Yes
 
 MODULES =		devel/meson \
 			lang/python
+
+RUN_DEPENDS =		devel/py-gobject3
 
 PORTHOME =		${WRKDIR}
 
