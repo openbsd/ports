@@ -1,5 +1,4 @@
 COMMENT =		cross-platform library for building Telegram clients
-REVISION =		0
 
 SHARED_LIBS =		tdjson	0.1
 
