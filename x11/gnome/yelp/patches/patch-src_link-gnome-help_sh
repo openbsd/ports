@@ -1,0 +1,11 @@
+XXX push upstream
+
+Index: src/link-gnome-help.sh
+--- src/link-gnome-help.sh.orig
++++ src/link-gnome-help.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ set -e
+ 

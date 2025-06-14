@@ -1,0 +1,11 @@
+XXX push upstream
+
+Index: data/domains/gen_yelp_xml.sh
+--- data/domains/gen_yelp_xml.sh.orig
++++ data/domains/gen_yelp_xml.sh
+@@ -1,4 +1,4 @@
+-#!/bin/bash
++#!/bin/sh
+ 
+ set -e
+ 
