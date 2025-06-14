@@ -1,10 +1,9 @@
 COMMENT=	common base representation of Python source code
 
 # py-astroid and pylint usually need keeping in-sync
-MODPY_DISTV=	3.3.9
+MODPY_DISTV=	3.3.10
 DISTNAME=	astroid-${MODPY_DISTV}
 PKGNAME=	py-${DISTNAME}
-REVISION=	0
 
 CATEGORIES=	devel
 
