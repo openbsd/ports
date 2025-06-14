@@ -1,5 +1,4 @@
 COMMENT =	QtQuick based components set
-VERSION =	6.14.1
 DISTNAME =	kirigami-${VERSION}
 
 SHARED_LIBS +=  Kirigami                  0.0 # 0.0
@@ -10,6 +9,7 @@ SHARED_LIBS +=  KirigamiLayouts           0.0 # 0.0
 SHARED_LIBS +=  KirigamiPrimitives        0.0 # 0.0
 SHARED_LIBS +=  KirigamiPrivate           0.0 # 0.0
 SHARED_LIBS +=  KirigamiLayoutsPrivate    0.0 # 0.0
+SHARED_LIBS +=	KirigamiPolyfill          0.0 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} GL Qt6Concurrent Qt6Core Qt6DBus
 WANTLIB += Qt6Gui Qt6Network Qt6OpenGL Qt6Qml Qt6QmlMeta Qt6QmlModels

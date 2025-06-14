@@ -11,6 +11,8 @@ WANTLIB += lmdb m
 
 WANTLIB += lib/inotify/inotify
 
+
+
 BUILD_DEPENDS =	devel/gettext,-tools \
 		x11/qt6/qtquick3d
 

@@ -34,6 +34,7 @@ lib/cmake/KF6KirigamiPlatform/KF6KirigamiPlatformTargets.cmake
 @lib lib/libKirigamiLayouts.so.${LIBKirigamiLayouts_VERSION}
 @lib lib/libKirigamiLayoutsPrivate.so.${LIBKirigamiLayoutsPrivate_VERSION}
 @lib lib/libKirigamiPlatform.so.${LIBKirigamiPlatform_VERSION}
+@lib lib/libKirigamiPolyfill.so.${LIBKirigamiPolyfill_VERSION}
 @lib lib/libKirigamiPrimitives.so.${LIBKirigamiPrimitives_VERSION}
 @lib lib/libKirigamiPrivate.so.${LIBKirigamiPrivate_VERSION}
 lib/qt6/qml/org/
@@ -154,6 +155,11 @@ lib/qt6/qml/org/kde/kirigami/private/globaltoolbar/ToolBarPageFooter.qml
 lib/qt6/qml/org/kde/kirigami/private/globaltoolbar/ToolBarPageHeader.qml
 lib/qt6/qml/org/kde/kirigami/private/kde-qmlmodule.version
 @so lib/qt6/qml/org/kde/kirigami/private/libKirigamiPrivateplugin.so
+lib/qt6/qml/org/kde/kirigami/private/polyfill/
+lib/qt6/qml/org/kde/kirigami/private/polyfill/KirigamiPolyfill.qmltypes
+lib/qt6/qml/org/kde/kirigami/private/polyfill/kde-qmlmodule.version
+@so lib/qt6/qml/org/kde/kirigami/private/polyfill/libKirigamiPolyfillplugin.so
+lib/qt6/qml/org/kde/kirigami/private/polyfill/qmldir
 lib/qt6/qml/org/kde/kirigami/private/qmldir
 lib/qt6/qml/org/kde/kirigami/qmldir
 lib/qt6/qml/org/kde/kirigami/styles/

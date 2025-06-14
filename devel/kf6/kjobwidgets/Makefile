@@ -12,6 +12,8 @@ LIB_DEPENDS =	devel/kf6/kcoreaddons>=${MODKF6_VERSION} \
 		devel/kf6/kwidgetsaddons>=${MODKF6_VERSION} \
 		x11/xkbcommon
 
+CONFIGURE_ARGS =	-DBUILD_PYTHON_BINDINGS=OFF
+
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
 .include <bsd.port.mk>

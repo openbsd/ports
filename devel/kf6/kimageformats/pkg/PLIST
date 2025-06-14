@@ -1,3 +1,6 @@
+lib/cmake/KF6ImageFormats/
+lib/cmake/KF6ImageFormats/KF6ImageFormatsConfig.cmake
+lib/cmake/KF6ImageFormats/KF6ImageFormatsConfigVersion.cmake
 @so lib/qt6/plugins/imageformats/kimg_ani.so
 @so lib/qt6/plugins/imageformats/kimg_avif.so
 @so lib/qt6/plugins/imageformats/kimg_dds.so

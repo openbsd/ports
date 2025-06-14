@@ -1,7 +1,7 @@
 COMMENT =	holiday calculation library
 DISTNAME =	kholidays-${VERSION}
 
-SHARED_LIBS +=  KF6Holidays               0.0 # 0.0
+SHARED_LIBS +=  KF6Holidays               0.1 # 0.0
 
 WANTLIB += ${COMPILER_LIBCXX} Qt6Core Qt6Network Qt6Qml m
 
