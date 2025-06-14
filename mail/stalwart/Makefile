@@ -15,6 +15,7 @@ CATEGORIES =		mail
 PERMIT_PACKAGE =	Yes
 GH_TAGNAME =		v0.11.8
 PKGNAME =		stalwart-mail-${GH_TAGNAME:S/v//}
+REVISION =		0
 
 HOMEPAGE =	https://stalw.art/
 # as devel/cargo MODULES adds DISTFILES, GH_* didn't
@@ -34,11 +35,10 @@ MODCARGO_CRATES_KEEP +=	libsqlite3-sys
 MODCARGO_CRATES_KEEP +=	foundationdb-sys
 
 # for rocksdb bindings
+MODCLANG_VERSION = 19
 MODCARGO_ENV=	LIBCLANG_PATH=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
 MAKE_ENV +=	DEP_BZIP2_INCLUDE=${LOCALBASE}/include
 
-#librocksdb-sys looks for libclang.so
-BUILD_DEPENDS=	devel/llvm/16
 BUILD_DEPENDS+=	security/rust-ring
 BUILD_DEPENDS+=	devel/protobuf #opentelemetry-proto calls protoc
 LIB_DEPENDS +=	archivers/zstd \
