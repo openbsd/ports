@@ -3,17 +3,18 @@ COMMENT =	ruby wrapper for comrak rust crate
 DISTNAME =	commonmarker-2.0.2.1
 CATEGORIES =	textproc
 HOMEPAGE =	https://github.com/gjtorikian/commonmarker
+REVISION =	0
 
 # MIT License
 PERMIT_PACKAGE =	Yes
 
 MODULES =	devel/cargo \
+		lang/clang \
 		lang/ruby
 
 WANTLIB +=	${MODCARGO_WANTLIB} onig
 
-BUILD_DEPENDS =	devel/ruby-rb_sys,${MODRUBY_FLAVOR}>=0.9 \
-		devel/llvm/16,-main
+BUILD_DEPENDS =	devel/ruby-rb_sys,${MODRUBY_FLAVOR}>=0.9
 LIB_DEPENDS =	textproc/oniguruma
 RUN_DEPENDS =	devel/ruby-rb_sys,${MODRUBY_FLAVOR}>=0.9
 
@@ -31,12 +32,14 @@ MODCARGO_VENDOR_DIR = ${WRKDIR}/modcargo-crates
 MODCARGO_BUILD = No
 MODCARGO_INSTALL = No
 
+MODCLANG_VERSION = 19
+
 USE_GMAKE = Yes
 CONFIGURE_ENV =	MAKE=gmake
 MAKE_ENV =	MAKE=gmake \
 		RUBY=${RUBY} \
 		HOME=${WRKSRC} \
-		LIBCLANG_PATH=${PREFIX}/llvm16/lib \
+		LIBCLANG_PATH=${PREFIX}/llvm${MODCLANG_VERSION}/lib \
 		RB_SYS_EXTRA_CARGO_ARGS=--verbose \
 		RB_SYS_VERBOSE=true \
 		CARGO_TERM_VERBOSE=true \
