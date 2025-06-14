@@ -51,6 +51,15 @@ Index: configure
      *)
          casmruntime="${toolprefix}gcc -c -Wa,-mregnames"
          cprepro_options="-U__GNUC__ -E"
+@@ -351,7 +358,7 @@ if test "$arch" = "x86" -a "$bitsize" = "64"; then
+         casm="${toolprefix}cc"
+         casm_options="-m64 -c"
+         clinker="${toolprefix}cc"
+-        clinker_options="-m64"
++        clinker_options="-m64 -z nobtcfi"
+         cprepro="${toolprefix}cc"
+         cprepro_options="-m64 -U__GNUC__ -U__SIZEOF_INT128__ -E"
+         system="bsd"
 @@ -416,6 +423,11 @@ if test "$arch" = "aarch64"; then
          abi="standard"
          cprepro_options="-U__GNUC__ -E"
