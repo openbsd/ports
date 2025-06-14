@@ -1,6 +1,6 @@
 COMMENT=	distributed task queue
 
-MODPY_DISTV =		5.5.2
+MODPY_DISTV =		5.5.3
 DISTNAME =		celery-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME}
 
