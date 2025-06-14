@@ -3,6 +3,7 @@ COMMENT =	io for scientific data formats
 MODPY_DISTV =	2.37.0
 DISTNAME =	imageio-${MODPY_DISTV}
 PKGNAME =	py-${DISTNAME}
+REVISION =	0
 
 CATEGORIES =	graphics
 
