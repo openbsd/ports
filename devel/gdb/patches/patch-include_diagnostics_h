@@ -7,9 +7,9 @@ Subject: [PATCH] gdbsupport: ignore -Wenum-constexpr-conversion in
 Index: include/diagnostics.h
 --- include/diagnostics.h.orig
 +++ include/diagnostics.h
-@@ -81,6 +81,11 @@
-    DIAGNOSTIC_IGNORE ("-Wenum-constexpr-conversion")
- # endif
+@@ -76,6 +76,11 @@
+ # define DIAGNOSTIC_ERROR_SWITCH \
+   DIAGNOSTIC_ERROR ("-Wswitch")
  
 +# if __has_warning ("-Wenum-constexpr-conversion")
 +#  define DIAGNOSTIC_IGNORE_ENUM_CONSTEXPR_CONVERSION \
@@ -19,7 +19,7 @@ Index: include/diagnostics.h
  #elif defined (__GNUC__) /* GCC */
  
  # define DIAGNOSTIC_IGNORE_DEPRECATED_DECLARATIONS \
-@@ -145,6 +150,10 @@
+@@ -140,6 +145,10 @@
  
  #ifndef DIAGNOSTIC_IGNORE_FORMAT_NONLITERAL
  # define DIAGNOSTIC_IGNORE_FORMAT_NONLITERAL

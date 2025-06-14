@@ -1,7 +1,7 @@
 COMMENT=	GNU debugger
 CATEGORIES=	devel
 
-DISTNAME=	gdb-15.2
+DISTNAME=	gdb-16.3
 
 HOMEPAGE=	https://www.gnu.org/software/gdb/
 
@@ -58,5 +58,8 @@ TEST_DEPENDS +=	devel/dejagnu
 
 post-install:
 	${MODPY_COMPILEALL} ${PREFIX}/share/gdb/python
+	# The gstack script relies on finding the executable path from
+	# a running process, something we do not support.
+	rm -f ${PREFIX}/bin/egstack ${PREFIX}/man/man1/egstack.1
 
 .include <bsd.port.mk>

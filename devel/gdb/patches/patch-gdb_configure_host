@@ -1,4 +1,3 @@
-
 Add support for aarch64, powerpc64 and riscv64.
 Use OpenBSD-specific files for arm (TBD).
 
@@ -22,7 +21,7 @@ Index: gdb/configure.host
  
  hppa*-*-linux*)		gdb_host=linux ;;
  hppa*-*-netbsd*)	gdb_host=nbsd ;;
-@@ -141,12 +142,14 @@ powerpc*-*-freebsd*)	gdb_host=fbsd ;;
+@@ -140,12 +141,14 @@ powerpc*-*-freebsd*)	gdb_host=fbsd ;;
  powerpc-*-netbsdaout* | powerpc-*-knetbsd*-gnu)
  			gdb_host=nbsd ;;
  powerpc-*-openbsd*)	gdb_host=obsd ;;
