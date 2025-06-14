@@ -64,6 +64,7 @@ go/lib/fips140/
 go/lib/fips140/Makefile
 go/lib/fips140/README.md
 go/lib/fips140/fips140.sum
+go/lib/fips140/inprocess.txt
 go/lib/fips140/v1.0.0.zip
 go/lib/time/
 go/lib/time/README
@@ -4001,6 +4002,9 @@ go/src/cmd/link/testdata/linkname/p/
 go/src/cmd/link/testdata/linkname/p/p.go
 go/src/cmd/link/testdata/linkname/push.go
 go/src/cmd/link/testdata/linkname/sched.go
+go/src/cmd/link/testdata/linkname/textvar/
+go/src/cmd/link/testdata/linkname/textvar/asm.s
+go/src/cmd/link/testdata/linkname/textvar/main.go
 go/src/cmd/link/testdata/pe-binutils/
 go/src/cmd/link/testdata/pe-binutils/main.go
 go/src/cmd/link/testdata/pe-binutils/rsrc_386.syso
