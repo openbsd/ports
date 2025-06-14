@@ -1356,7 +1356,8 @@ SHA256 (go_modules/github.com/client9/misspell/@v/v0.3.4.zip) = o68gY3LhMd0QporE
 SHA256 (go_modules/github.com/cloudflare/circl/@v/v1.3.3.mod) = aLEuRmK7BjlyhJAVP/xS2L3WO+VYvdQbyw2PHu6wPkE=
 SHA256 (go_modules/github.com/cloudflare/circl/@v/v1.3.7.mod) = muCoSwYWZOyFibpqYcGMg8iQISByoY5Iybawup5o2ow=
 SHA256 (go_modules/github.com/cloudflare/circl/@v/v1.6.0.mod) = CuIws6qKPaIumIl5I9ZAFUF8H8lrVLufutd7FQoQ3QY=
-SHA256 (go_modules/github.com/cloudflare/circl/@v/v1.6.0.zip) = eDbIs7DZP3Ofs1DTCz9hnZHOaPJQNZ85HAXXDaw6F6o=
+SHA256 (go_modules/github.com/cloudflare/circl/@v/v1.6.1.mod) = CuIws6qKPaIumIl5I9ZAFUF8H8lrVLufutd7FQoQ3QY=
+SHA256 (go_modules/github.com/cloudflare/circl/@v/v1.6.1.zip) = pjkWH4gWA6BAcA2YfSwW7IFTAkGAWM2ym8w7NJ7VbBA=
 SHA256 (go_modules/github.com/cncf/udpa/go/@v/v0.0.0-20191209042840-269d4d468f6f.mod) = BfXUp3qEvkXe3IDrrFo47y/Rxv8/rtrZwA6zEjEYEhg=
 SHA256 (go_modules/github.com/cncf/udpa/go/@v/v0.0.0-20200629203442-efcf912fb354.mod) = YbL2EgHaZMqrCx/aeOVuy5Zr9aQAUA8pK37mf2DEy5g=
 SHA256 (go_modules/github.com/cncf/udpa/go/@v/v0.0.0-20201120205902-5459f2c99403.mod) = YbL2EgHaZMqrCx/aeOVuy5Zr9aQAUA8pK37mf2DEy5g=
@@ -1812,8 +1813,8 @@ SHA256 (go_modules/github.com/gruntwork-io/boilerplate/@v/v0.6.1.zip) = slVlHOlr
 SHA256 (go_modules/github.com/gruntwork-io/go-commons/@v/v0.17.2.mod) = eDRmsv0nib9jiF+WelhjwS2ayrzLMjrnAXZ104BPzUY=
 SHA256 (go_modules/github.com/gruntwork-io/go-commons/@v/v0.17.2.zip) = Z2VlY99JdoeYVGgPmE032Y1T6TskwWRKLKDW0bxs9xY=
 SHA256 (go_modules/github.com/gruntwork-io/go-commons/@v/v0.8.0.mod) = fYjph2vP8nkhVOW+0l1zgxlK6YOAl6ZIKGByf9g4qUY=
-SHA256 (go_modules/github.com/gruntwork-io/terragrunt-engine-go/@v/v0.0.14.mod) = 8SQ1a3PKMaosowaMXPqHoDkRI+mfVyQxwgS7TpvPa/E=
-SHA256 (go_modules/github.com/gruntwork-io/terragrunt-engine-go/@v/v0.0.14.zip) = nHgyjWiQ1cFzyhzcJz+xhFUv04C0VjSCJOq1koM2iPw=
+SHA256 (go_modules/github.com/gruntwork-io/terragrunt-engine-go/@v/v0.0.15.mod) = OZtrb0S+o2EvVO2L+C6VnFVQysHV1zmAMIbzHzizuHk=
+SHA256 (go_modules/github.com/gruntwork-io/terragrunt-engine-go/@v/v0.0.15.zip) = llSXHUfEoRWO66iEtk+xysqIE4OAi3urfSXftz79X6s=
 SHA256 (go_modules/github.com/gruntwork-io/terratest/@v/v0.46.16.mod) = AzyWVIfqU3LsgjZ+j63irQRkCHKLyePBriikc5NmG1U=
 SHA256 (go_modules/github.com/gruntwork-io/terratest/@v/v0.47.2.mod) = ehFFmg2Sz0RsZjgm0dfh0ET7kV7Bj9eJN+oyq3xp3h4=
 SHA256 (go_modules/github.com/gruntwork-io/terratest/@v/v0.49.0.mod) = sR+382blI26NGlULhaf1aXuqukwaeBxdJ2lUxRHpP7w=
@@ -2583,7 +2584,8 @@ SHA256 (go_modules/go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegr
 SHA256 (go_modules/go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp/@v/v1.36.0.mod) = H5Br8xYtDo/qIz8XahQuVfJrR6cWkYuAaeKEgAGnsKE=
 SHA256 (go_modules/go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp/@v/v1.36.0.zip) = y2b2kx1hkASR2anlYEg2MXHJwLkM+f0vPkjTj5OYzzw=
 SHA256 (go_modules/go.opentelemetry.io/otel/exporters/stdout/stdoutmetric/@v/v1.35.0.mod) = v7bSZ+WFTXkZRAIy0L3xPK02AnSPgnLm9Czs1eC0we4=
-SHA256 (go_modules/go.opentelemetry.io/otel/exporters/stdout/stdoutmetric/@v/v1.35.0.zip) = SP889QV9R7nOfhf0kwA3JYKJAfs2f5nAsloNxJ4Jrjo=
+SHA256 (go_modules/go.opentelemetry.io/otel/exporters/stdout/stdoutmetric/@v/v1.36.0.mod) = iroosaDDEOhGioH9zC/dbtJPgrG+tZndAIsTHCTmOt4=
+SHA256 (go_modules/go.opentelemetry.io/otel/exporters/stdout/stdoutmetric/@v/v1.36.0.zip) = RrElrcV0Hj0feWsPv/08d3boSmnjEcuhjsdYIvZDd6Y=
 SHA256 (go_modules/go.opentelemetry.io/otel/exporters/stdout/stdouttrace/@v/v1.35.0.mod) = 5TYtqERs/xO6SUrFZCZeS3eA7NOBzKu0hq24CbS2BmM=
 SHA256 (go_modules/go.opentelemetry.io/otel/exporters/stdout/stdouttrace/@v/v1.35.0.zip) = mpWM9eipmAttlLPzBl1iSCxzNGmhxmv5tcy3mlevtSM=
 SHA256 (go_modules/go.opentelemetry.io/otel/metric/@v/v1.22.0.mod) = PoauyuVdwrFtCPebd1FbniR2x7MvEwHzsfIPtIjc/Mc=
@@ -2604,7 +2606,8 @@ SHA256 (go_modules/go.opentelemetry.io/otel/sdk/metric/@v/v1.29.0.mod) = c2PvbW0
 SHA256 (go_modules/go.opentelemetry.io/otel/sdk/metric/@v/v1.31.0.mod) = qyR1fN39ikcqL8tilkBta18z0/MZJtTPNyRHiag4vLw=
 SHA256 (go_modules/go.opentelemetry.io/otel/sdk/metric/@v/v1.34.0.mod) = rH8JHQFZ1OQcXmFIQJ7LtQhCH7APC+P8Pn5QaydiQgw=
 SHA256 (go_modules/go.opentelemetry.io/otel/sdk/metric/@v/v1.35.0.mod) = fe+mC+78ggkxIuhh7l90eS3ePUC56/6v35UC1FVqQxs=
-SHA256 (go_modules/go.opentelemetry.io/otel/sdk/metric/@v/v1.35.0.zip) = CwBhYu9wcokBlFH5Qcs02wzB6FAUwbgy9258qQE9LJ0=
+SHA256 (go_modules/go.opentelemetry.io/otel/sdk/metric/@v/v1.36.0.mod) = C0oFyboAJGXvdNE6v1a31qJ+e3pAtatQcqaVgwZOGbg=
+SHA256 (go_modules/go.opentelemetry.io/otel/sdk/metric/@v/v1.36.0.zip) = lGoNDStas2NqhIowQfi3vZHlBc1WPcmQejg2B2yeIU8=
 SHA256 (go_modules/go.opentelemetry.io/otel/trace/@v/v1.22.0.mod) = lkbZnMjhOTE3v4i8gAw6yZEUWtdfDSA36oJYGjHJs9I=
 SHA256 (go_modules/go.opentelemetry.io/otel/trace/@v/v1.24.0.mod) = IhVj0boUIXwEpK8nLcuSjM4xAxY+b0JfeJ1x8CCBwRQ=
 SHA256 (go_modules/go.opentelemetry.io/otel/trace/@v/v1.29.0.mod) = KsxD6WcssyunEMFi0fgTI1ThEdFGeoh1NB6GIi7eOog=
@@ -3444,7 +3447,6 @@ SHA256 (go_modules/google.golang.org/genproto/googleapis/rpc/@v/v0.0.0-202501061
 SHA256 (go_modules/google.golang.org/genproto/googleapis/rpc/@v/v0.0.0-20250218202821-56aae31c358a.mod) = lCOnq2YeJHeI9Pc8FkAERgdCoUmuNzcUqe3DFNRnEvM=
 SHA256 (go_modules/google.golang.org/genproto/googleapis/rpc/@v/v0.0.0-20250227231956-55c901821b1e.mod) = sodfj1gMncwuydjzlkbDxINBc/v8iu1DlNI140eupow=
 SHA256 (go_modules/google.golang.org/genproto/googleapis/rpc/@v/v0.0.0-20250303144028-a0af3efb3deb.mod) = sodfj1gMncwuydjzlkbDxINBc/v8iu1DlNI140eupow=
-SHA256 (go_modules/google.golang.org/genproto/googleapis/rpc/@v/v0.0.0-20250313205543-e70fdf4c4cb4.mod) = sodfj1gMncwuydjzlkbDxINBc/v8iu1DlNI140eupow=
 SHA256 (go_modules/google.golang.org/genproto/googleapis/rpc/@v/v0.0.0-20250324211829-b45e905df463.mod) = a7NyCEOVukxlqx6lELp65i26ui821RIBOHmgUaRwOSo=
 SHA256 (go_modules/google.golang.org/genproto/googleapis/rpc/@v/v0.0.0-20250414145226-207652e42e2e.mod) = a7NyCEOVukxlqx6lELp65i26ui821RIBOHmgUaRwOSo=
 SHA256 (go_modules/google.golang.org/genproto/googleapis/rpc/@v/v0.0.0-20250425173222-7b384671a197.mod) = a7NyCEOVukxlqx6lELp65i26ui821RIBOHmgUaRwOSo=
@@ -3689,7 +3691,7 @@ SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRe
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = L8eybun2ctl7QvpvJfWxWlWYK7usaZYdduux0DbRUAE=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = CZ2G+OBNET1A9KFSzf4AFxFtfv6mjkF6nGRthgJj174=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 7wMf94/5twNuF07vSd+9d0aNxPCvtzpjm2H4qzocxCU=
-SHA256 (terragrunt-v0.81.5.zip) = WjsJfi2OS7DpHmwOAb0lEw6Ufsa5hAVH0Igo3KOuELg=
+SHA256 (terragrunt-v0.81.6.zip) = oRfyEebE6pWlUioJIutLgbIVDM53Iz59kvsevVSgmSg=
 SIZE (go_modules/atomicgo.dev/assert/@v/v0.0.2.mod) = 36
 SIZE (go_modules/atomicgo.dev/assert/@v/v0.0.2.zip) = 11231
 SIZE (go_modules/atomicgo.dev/cursor/@v/v0.2.0.mod) = 36
@@ -5048,7 +5050,8 @@ SIZE (go_modules/github.com/client9/misspell/@v/v0.3.4.zip) = 246908
 SIZE (go_modules/github.com/cloudflare/circl/@v/v1.3.3.mod) = 181
 SIZE (go_modules/github.com/cloudflare/circl/@v/v1.3.7.mod) = 153
 SIZE (go_modules/github.com/cloudflare/circl/@v/v1.6.0.mod) = 185
-SIZE (go_modules/github.com/cloudflare/circl/@v/v1.6.0.zip) = 7094339
+SIZE (go_modules/github.com/cloudflare/circl/@v/v1.6.1.mod) = 185
+SIZE (go_modules/github.com/cloudflare/circl/@v/v1.6.1.zip) = 7096784
 SIZE (go_modules/github.com/cncf/udpa/go/@v/v0.0.0-20191209042840-269d4d468f6f.mod) = 170
 SIZE (go_modules/github.com/cncf/udpa/go/@v/v0.0.0-20200629203442-efcf912fb354.mod) = 170
 SIZE (go_modules/github.com/cncf/udpa/go/@v/v0.0.0-20201120205902-5459f2c99403.mod) = 170
@@ -5504,8 +5507,8 @@ SIZE (go_modules/github.com/gruntwork-io/boilerplate/@v/v0.6.1.zip) = 1449944
 SIZE (go_modules/github.com/gruntwork-io/go-commons/@v/v0.17.2.mod) = 6294
 SIZE (go_modules/github.com/gruntwork-io/go-commons/@v/v0.17.2.zip) = 126304
 SIZE (go_modules/github.com/gruntwork-io/go-commons/@v/v0.8.0.mod) = 304
-SIZE (go_modules/github.com/gruntwork-io/terragrunt-engine-go/@v/v0.0.14.mod) = 900
-SIZE (go_modules/github.com/gruntwork-io/terragrunt-engine-go/@v/v0.0.14.zip) = 28722
+SIZE (go_modules/github.com/gruntwork-io/terragrunt-engine-go/@v/v0.0.15.mod) = 898
+SIZE (go_modules/github.com/gruntwork-io/terragrunt-engine-go/@v/v0.0.15.zip) = 29231
 SIZE (go_modules/github.com/gruntwork-io/terratest/@v/v0.46.16.mod) = 6850
 SIZE (go_modules/github.com/gruntwork-io/terratest/@v/v0.47.2.mod) = 6838
 SIZE (go_modules/github.com/gruntwork-io/terratest/@v/v0.49.0.mod) = 11739
@@ -6275,7 +6278,8 @@ SIZE (go_modules/go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc
 SIZE (go_modules/go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp/@v/v1.36.0.mod) = 1483
 SIZE (go_modules/go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp/@v/v1.36.0.zip) = 49730
 SIZE (go_modules/go.opentelemetry.io/otel/exporters/stdout/stdoutmetric/@v/v1.35.0.mod) = 996
-SIZE (go_modules/go.opentelemetry.io/otel/exporters/stdout/stdoutmetric/@v/v1.35.0.zip) = 14457
+SIZE (go_modules/go.opentelemetry.io/otel/exporters/stdout/stdoutmetric/@v/v1.36.0.mod) = 996
+SIZE (go_modules/go.opentelemetry.io/otel/exporters/stdout/stdoutmetric/@v/v1.36.0.zip) = 14467
 SIZE (go_modules/go.opentelemetry.io/otel/exporters/stdout/stdouttrace/@v/v1.35.0.mod) = 867
 SIZE (go_modules/go.opentelemetry.io/otel/exporters/stdout/stdouttrace/@v/v1.35.0.zip) = 12289
 SIZE (go_modules/go.opentelemetry.io/otel/metric/@v/v1.22.0.mod) = 511
@@ -6296,7 +6300,8 @@ SIZE (go_modules/go.opentelemetry.io/otel/sdk/metric/@v/v1.29.0.mod) = 746
 SIZE (go_modules/go.opentelemetry.io/otel/sdk/metric/@v/v1.31.0.mod) = 779
 SIZE (go_modules/go.opentelemetry.io/otel/sdk/metric/@v/v1.34.0.mod) = 831
 SIZE (go_modules/go.opentelemetry.io/otel/sdk/metric/@v/v1.35.0.mod) = 831
-SIZE (go_modules/go.opentelemetry.io/otel/sdk/metric/@v/v1.35.0.zip) = 150531
+SIZE (go_modules/go.opentelemetry.io/otel/sdk/metric/@v/v1.36.0.mod) = 831
+SIZE (go_modules/go.opentelemetry.io/otel/sdk/metric/@v/v1.36.0.zip) = 150526
 SIZE (go_modules/go.opentelemetry.io/otel/trace/@v/v1.22.0.mod) = 405
 SIZE (go_modules/go.opentelemetry.io/otel/trace/@v/v1.24.0.mod) = 405
 SIZE (go_modules/go.opentelemetry.io/otel/trace/@v/v1.29.0.mod) = 405
@@ -7136,7 +7141,6 @@ SIZE (go_modules/google.golang.org/genproto/googleapis/rpc/@v/v0.0.0-20250106144
 SIZE (go_modules/google.golang.org/genproto/googleapis/rpc/@v/v0.0.0-20250218202821-56aae31c358a.mod) = 155
 SIZE (go_modules/google.golang.org/genproto/googleapis/rpc/@v/v0.0.0-20250227231956-55c901821b1e.mod) = 157
 SIZE (go_modules/google.golang.org/genproto/googleapis/rpc/@v/v0.0.0-20250303144028-a0af3efb3deb.mod) = 157
-SIZE (go_modules/google.golang.org/genproto/googleapis/rpc/@v/v0.0.0-20250313205543-e70fdf4c4cb4.mod) = 157
 SIZE (go_modules/google.golang.org/genproto/googleapis/rpc/@v/v0.0.0-20250324211829-b45e905df463.mod) = 157
 SIZE (go_modules/google.golang.org/genproto/googleapis/rpc/@v/v0.0.0-20250414145226-207652e42e2e.mod) = 157
 SIZE (go_modules/google.golang.org/genproto/googleapis/rpc/@v/v0.0.0-20250425173222-7b384671a197.mod) = 157
@@ -7381,4 +7385,4 @@ SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = 24
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = 133
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 222726
-SIZE (terragrunt-v0.81.5.zip) = 9325931
+SIZE (terragrunt-v0.81.6.zip) = 9331811

@@ -301,7 +301,7 @@ MODGO_MODULES =	\
 	github.com/chzyer/readline									 v0.0.0-20180603132655-2972be24d48e \
 	github.com/chzyer/test										 v0.0.0-20180213035817-a1ea475d72b1 \
 	github.com/client9/misspell									 v0.3.4 \
-	github.com/cloudflare/circl									 v1.6.0 \
+	github.com/cloudflare/circl									 v1.6.1 \
 	github.com/cncf/udpa/go										 v0.0.0-20220112060539-c52dc94e7fbe \
 	github.com/cncf/xds/go										 v0.0.0-20250326154945-ae57f3c0d45f \
 	github.com/containerd/console									 v1.0.4 \
@@ -431,7 +431,7 @@ MODGO_MODULES =	\
 	github.com/grpc-ecosystem/grpc-gateway/v2							 v2.26.3 \
 	github.com/gruntwork-io/boilerplate								 v0.6.1 \
 	github.com/gruntwork-io/go-commons								 v0.17.2 \
-	github.com/gruntwork-io/terragrunt-engine-go							 v0.0.14 \
+	github.com/gruntwork-io/terragrunt-engine-go							 v0.0.15 \
 	github.com/gruntwork-io/terratest								 v0.49.0 \
 	github.com/hashicorp/aws-sdk-go-base								 v0.6.0 \
 	github.com/hashicorp/consul									 v0.0.0-20171026175957-610f3c86a089 \
@@ -681,11 +681,11 @@ MODGO_MODULES =	\
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace						 v1.36.0 \
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracegrpc					 v1.35.0 \
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace/otlptracehttp					 v1.36.0 \
-	go.opentelemetry.io/otel/exporters/stdout/stdoutmetric						 v1.35.0 \
+	go.opentelemetry.io/otel/exporters/stdout/stdoutmetric						 v1.36.0 \
 	go.opentelemetry.io/otel/exporters/stdout/stdouttrace						 v1.35.0 \
 	go.opentelemetry.io/otel/metric									 v1.36.0 \
 	go.opentelemetry.io/otel/sdk									 v1.36.0 \
-	go.opentelemetry.io/otel/sdk/metric								 v1.35.0 \
+	go.opentelemetry.io/otel/sdk/metric								 v1.36.0 \
 	go.opentelemetry.io/otel/trace									 v1.36.0 \
 	go.opentelemetry.io/proto/otlp									 v1.7.0 \
 	go.uber.org/atomic										 v1.3.2 \
@@ -1521,6 +1521,7 @@ MODGO_MODFILES =	\
 	github.com/charmbracelet/x/exp/golden							 v0.0.0-20240806155701-69247e0abc2a \
 	github.com/cloudflare/circl								 v1.3.3 \
 	github.com/cloudflare/circl								 v1.3.7 \
+	github.com/cloudflare/circl								 v1.6.0 \
 	github.com/cncf/udpa/go									 v0.0.0-20191209042840-269d4d468f6f \
 	github.com/cncf/udpa/go									 v0.0.0-20200629203442-efcf912fb354 \
 	github.com/cncf/udpa/go									 v0.0.0-20201120205902-5459f2c99403 \
@@ -1988,6 +1989,7 @@ MODGO_MODFILES =	\
 	go.opentelemetry.io/otel								 v1.34.0 \
 	go.opentelemetry.io/otel								 v1.35.0 \
 	go.opentelemetry.io/otel/exporters/otlp/otlptrace					 v1.35.0 \
+	go.opentelemetry.io/otel/exporters/stdout/stdoutmetric					 v1.35.0 \
 	go.opentelemetry.io/otel/metric								 v1.22.0 \
 	go.opentelemetry.io/otel/metric								 v1.24.0 \
 	go.opentelemetry.io/otel/metric								 v1.29.0 \
@@ -2001,6 +2003,7 @@ MODGO_MODFILES =	\
 	go.opentelemetry.io/otel/sdk/metric							 v1.29.0 \
 	go.opentelemetry.io/otel/sdk/metric							 v1.31.0 \
 	go.opentelemetry.io/otel/sdk/metric							 v1.34.0 \
+	go.opentelemetry.io/otel/sdk/metric							 v1.35.0 \
 	go.opentelemetry.io/otel/trace								 v1.22.0 \
 	go.opentelemetry.io/otel/trace								 v1.24.0 \
 	go.opentelemetry.io/otel/trace								 v1.29.0 \
@@ -2778,7 +2781,6 @@ MODGO_MODFILES =	\
 	google.golang.org/genproto/googleapis/rpc						 v0.0.0-20250218202821-56aae31c358a \
 	google.golang.org/genproto/googleapis/rpc						 v0.0.0-20250227231956-55c901821b1e \
 	google.golang.org/genproto/googleapis/rpc						 v0.0.0-20250303144028-a0af3efb3deb \
-	google.golang.org/genproto/googleapis/rpc						 v0.0.0-20250313205543-e70fdf4c4cb4 \
 	google.golang.org/genproto/googleapis/rpc						 v0.0.0-20250324211829-b45e905df463 \
 	google.golang.org/genproto/googleapis/rpc						 v0.0.0-20250414145226-207652e42e2e \
 	google.golang.org/genproto/googleapis/rpc						 v0.0.0-20250425173222-7b384671a197 \
