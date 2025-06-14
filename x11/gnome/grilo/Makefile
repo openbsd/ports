@@ -1,17 +1,16 @@
 # XXX PORTROACH overriden at end of this file.
 
-COMMENT=	framework for making media discovery and browsing easy
+COMMENT=	framework to access various sources of multimedia content
 
 GNOME_PROJECT=	grilo
-GNOME_VERSION=	0.3.16
+GNOME_VERSION=	0.3.19
 API=		0.3
-REVISION=	0
 
 SUBST_VARS=	API
 
-SHARED_LIBS += grilo-0.3                 0.2 # 0.316.1
-SHARED_LIBS += grlnet-0.3                0.0 # 0.316.0
-SHARED_LIBS += grlpls-0.3                0.0 # 0.316.0
+SHARED_LIBS += grilo-0.3                 0.2 # 0.319.1
+SHARED_LIBS += grlnet-0.3                0.0 # 0.319.0
+SHARED_LIBS += grlpls-0.3                0.0 # 0.319.0
 
 CATEGORIES+=	multimedia
 
