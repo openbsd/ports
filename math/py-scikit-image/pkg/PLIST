@@ -870,6 +870,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/morphology/_flood_fill.py
 @so lib/python${MODPY_VERSION}/site-packages/skimage/morphology/_flood_fill_cy.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/skimage/morphology/_grayreconstruct.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/skimage/morphology/_max_tree.${MODPY_PYC_MAGIC_TAG}so
+@so lib/python${MODPY_VERSION}/site-packages/skimage/morphology/_misc_cy.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/morphology/_skeletonize.py
 @so lib/python${MODPY_VERSION}/site-packages/skimage/morphology/_skeletonize_3d_cy.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/skimage/morphology/_skeletonize_cy.${MODPY_PYC_MAGIC_TAG}so
@@ -1122,6 +1123,8 @@ lib/python${MODPY_VERSION}/site-packages/skimage/transform/${MODPY_PYCACHE}__ini
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/${MODPY_PYCACHE}_geometric.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/${MODPY_PYCACHE}_geometric.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/skimage/transform/${MODPY_PYCACHE}_thin_plate_splines.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/skimage/transform/${MODPY_PYCACHE}_thin_plate_splines.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/${MODPY_PYCACHE}_warps.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/${MODPY_PYCACHE}_warps.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/${MODPY_PYCACHE}finite_radon_transform.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
@@ -1137,6 +1140,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/transform/${MODPY_PYCACHE}radon
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/_geometric.py
 @so lib/python${MODPY_VERSION}/site-packages/skimage/transform/_hough_transform.${MODPY_PYC_MAGIC_TAG}so
 @so lib/python${MODPY_VERSION}/site-packages/skimage/transform/_radon_transform.${MODPY_PYC_MAGIC_TAG}so
+lib/python${MODPY_VERSION}/site-packages/skimage/transform/_thin_plate_splines.py
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/_warps.py
 @so lib/python${MODPY_VERSION}/site-packages/skimage/transform/_warps_cy.${MODPY_PYC_MAGIC_TAG}so
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/finite_radon_transform.py
@@ -1161,6 +1165,8 @@ lib/python${MODPY_VERSION}/site-packages/skimage/transform/tests/${MODPY_PYCACHE
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/tests/${MODPY_PYCACHE}test_pyramids.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/tests/${MODPY_PYCACHE}test_radon_transform.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/tests/${MODPY_PYCACHE}test_radon_transform.${MODPY_PYC_MAGIC_TAG}pyc
+lib/python${MODPY_VERSION}/site-packages/skimage/transform/tests/${MODPY_PYCACHE}test_thin_plate_splines.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
+lib/python${MODPY_VERSION}/site-packages/skimage/transform/tests/${MODPY_PYCACHE}test_thin_plate_splines.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/tests/${MODPY_PYCACHE}test_warps.${MODPY_PYC_MAGIC_TAG}${MODPY_PYOEXTENSION}
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/tests/${MODPY_PYCACHE}test_warps.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/tests/test_finite_radon_transform.py
@@ -1169,6 +1175,7 @@ lib/python${MODPY_VERSION}/site-packages/skimage/transform/tests/test_hough_tran
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/tests/test_integral.py
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/tests/test_pyramids.py
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/tests/test_radon_transform.py
+lib/python${MODPY_VERSION}/site-packages/skimage/transform/tests/test_thin_plate_splines.py
 lib/python${MODPY_VERSION}/site-packages/skimage/transform/tests/test_warps.py
 lib/python${MODPY_VERSION}/site-packages/skimage/util/
 lib/python${MODPY_VERSION}/site-packages/skimage/util/__init__.py

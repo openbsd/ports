@@ -1,9 +1,10 @@
 COMMENT =		image processing routines for SciPy
 
-MODPY_DISTV =		0.23.2
+# Newer versions need an update of pythran, but scipy is
+# a blocker due to lack of gcc 9+
+MODPY_DISTV =		0.24.0
 DISTNAME =		scikit_image-${MODPY_DISTV}
 PKGNAME =		py-${DISTNAME:S/_/-/}
-REVISION =		1
 
 CATEGORIES =		math
 
@@ -22,23 +23,25 @@ MODULES =		lang/python
 MODPY_PI =		Yes
 MODPY_PYBUILD =		mesonpy
 MODPY_ADJ_FILES =	skimage/_build_utils/*.py
+MODPY_TEST_DIR =	${WRKINST}/${MODPY_SITEPKG}
 
 BUILD_DEPENDS =		lang/cython \
 			lang/pythran \
+			devel/py-lazy-loader \
 			devel/py-setuptools \
 			devel/py-wheel \
 			math/py-numpy
 
 RUN_DEPENDS =		math/py-numpy \
 			math/py-scipy \
-			graphics/py-matplotlib \
 			math/py-networkx \
 			graphics/py-Pillow \
 			graphics/py-imageio \
 			graphics/py-tifffile \
-			sysutils/py-packaging
+			sysutils/py-packaging \
+			devel/py-lazy-loader
 
-# needs a bunch of new dependencies
-NO_TEST =		Yes
+TEST_DEPENDS =		deve/py-test-cov \
+			devel/py-test-localserver
 
 .include <bsd.port.mk>
