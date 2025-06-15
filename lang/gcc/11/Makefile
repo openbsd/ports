@@ -135,7 +135,7 @@ MAKE_ENV += ${EXTRA_ENV}
 USE_LLD = No
 CONFIGURE_ENV += LDFLAGS="-Wl,--relax"
 .elif ${MACHINE_ARCH:Mi386}
-# ld.lld: error: symbol 'file_location::file_location()' cannot be preempted; recompile with -fPIE
+# ld.lld: error: relocation R_386_PC32 cannot be used against symbol 'hash_set<nofree_string_hash, false, default_hash_traits<nofree_string_hash>>::hash_set(unsigned long, bool)'; recompile with -fPIC, etc.
 MODULES +=			lang/clang
 MODCLANG_VERSION =		13
 MODCLANG_COMPILER_LINKS =	No

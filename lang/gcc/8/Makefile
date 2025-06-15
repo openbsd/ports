@@ -12,7 +12,7 @@ ONLY_FOR_ARCHS-ada = amd64 hppa i386 mips64 powerpc
 .if ${MACHINE_ARCH:Mpowerpc}
 USE_LLD = No
 .elif ${MACHINE_ARCH:Mi386}
-# ld.lld: error: symbol 'file_location::file_location()' cannot be preempted; recompile with -fPIE
+# ld.lld: error: relocation R_386_PC32 cannot be used against symbol 'hash_set<nofree_string_hash, false, default_hash_traits<nofree_string_hash>>::hash_set(unsigned long, bool)'; recompile with -fPIC, etc.
 MODULES +=			lang/clang
 MODCLANG_VERSION =		13
 MODCLANG_COMPILER_LINKS =	No
