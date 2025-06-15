@@ -22,6 +22,9 @@ lib/libchafa.la
 @lib lib/libchafa.so.${LIBchafa_VERSION}
 lib/pkgconfig/chafa.pc
 @man man/man1/chafa.1
+share/fish/
+share/fish/vendor_completions.d/
+share/fish/vendor_completions.d/chafa.fish
 share/gtk-doc/html/chafa/
 share/gtk-doc/html/chafa/api-index-deprecated.html
 share/gtk-doc/html/chafa/api-index-full.html
@@ -47,6 +50,7 @@ share/gtk-doc/html/chafa/left.png
 share/gtk-doc/html/chafa/new-api-index-1.10.html
 share/gtk-doc/html/chafa/new-api-index-1.12.html
 share/gtk-doc/html/chafa/new-api-index-1.14.html
+share/gtk-doc/html/chafa/new-api-index-1.16.html
 share/gtk-doc/html/chafa/new-api-index-1.2.html
 share/gtk-doc/html/chafa/new-api-index-1.4.html
 share/gtk-doc/html/chafa/new-api-index-1.6.html
@@ -56,3 +60,6 @@ share/gtk-doc/html/chafa/right.png
 share/gtk-doc/html/chafa/style.css
 share/gtk-doc/html/chafa/up-insensitive.png
 share/gtk-doc/html/chafa/up.png
+share/zsh/
+share/zsh/site-functions/
+share/zsh/site-functions/_chafa
