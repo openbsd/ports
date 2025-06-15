@@ -12,11 +12,8 @@ ONLY_FOR_ARCHS-ada = amd64 hppa i386 mips64 powerpc
 .if ${MACHINE_ARCH:Mpowerpc}
 USE_LLD = No
 .elif ${MACHINE_ARCH:Mi386}
+USE_LLD = No
 # ld.lld: error: relocation R_386_PC32 cannot be used against symbol 'hash_set<nofree_string_hash, false, default_hash_traits<nofree_string_hash>>::hash_set(unsigned long, bool)'; recompile with -fPIC, etc.
-MODULES +=			lang/clang
-MODCLANG_VERSION =		13
-MODCLANG_COMPILER_LINKS =	No
-USE_LLD =			ports
 .endif
 
 DPB_PROPERTIES = parallel
@@ -26,7 +23,7 @@ USE_NOEXECONLY = Yes
 V = 8.4.0
 FULL_VERSION = $V
 FULL_PKGVERSION = $V
-REVISION = 26
+REVISION = 27
 
 ADASTRAP-amd64 = adastrap-amd64-$V-3.tar.xz
 ADASTRAP-arm = adastrap-arm-4.9.4-0.tar.xz
