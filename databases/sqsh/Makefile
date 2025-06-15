@@ -1,22 +1,21 @@
 COMMENT=	SQL shell for FreeTDS
 
-DISTNAME=	sqsh-2.5.16.1
-REVISION=	5
-WRKDIST=	${WRKDIR}/sqsh-2.5
-EXTRACT_SUFX=	.tgz
+GH_ACCOUNT=	vonloxley
+GH_PROJECT=	sqsh
+GH_COMMIT=	c71e518895059ae172bfc53434f8b654dd104b7f
+DISTNAME=	sqsh-3.0pre20231205
 
 CATEGORIES=	databases shells
 
-HOMEPAGE=	https://sourceforge.net/projects/sqsh/
+# original at https://sourceforge.net/projects/sqsh/
+HOMEPAGE=	https://vonloxley.github.io/sqsh/
 
 MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
 
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB +=	c ct>=2 iconv curses m pthread readline
-
-SITES=		${SITE_SOURCEFORGE:=sqsh/}
+WANTLIB +=	c ct>=2 iconv curses m readline
 
 LIB_DEPENDS=	converters/libiconv \
 		databases/freetds

@@ -1,6 +1,7 @@
---- aclocal.m4.orig	Sat Jun  7 11:03:08 2014
-+++ aclocal.m4	Sat Jun  7 11:04:37 2014
-@@ -274,10 +274,6 @@ AC_DEFUN([AC_SYBASE_ASE], [
+Index: aclocal.m4
+--- aclocal.m4.orig
++++ aclocal.m4
+@@ -279,10 +279,6 @@ AC_DEFUN([AC_SYBASE_ASE], [
  			else
  				SYBASE_LIBDIR="$SYBASE_OCOS/lib"
  			fi
@@ -11,7 +12,7 @@
  			case "${host_os}" in
  	                        *cygwin)
  					SYBASE_LIBS="-lct"
-@@ -364,6 +360,8 @@ AC_DEFUN([AC_SYBASE_ASE], [
+@@ -369,6 +365,8 @@ AC_DEFUN([AC_SYBASE_ASE], [
  		case "${host_os}" in
  			linux*)
  				SYBASE_OS="-ldl -lm";;
