@@ -1,0 +1,12 @@
+Index: src/tsung/ts_bosh.erl
+--- src/tsung/ts_bosh.erl.orig
++++ src/tsung/ts_bosh.erl
+@@ -563,7 +563,7 @@ socket_connect(ssl, Host, Port, Options, Timeout) ->
+ %    {ok, S} = gen_tcp:connect(Host, Port, [{active, false}|ForConnection], Timeout),
+ %    ssl:connect(S, ForSSL, Timeout).
+ %   ?LOGF("Connect ~p", [ForSSL], ?ERR),
+-     ssl:connect(Host, Port, [{ssl_imp, new}|Options], Timeout).
++     ssl:connect(Host, Port, [{ssl_imp, new}|Options] ++ [{verify, verify_none}], Timeout).
+ 
+ 
+ socket_send(tcp, Socket, Data) ->

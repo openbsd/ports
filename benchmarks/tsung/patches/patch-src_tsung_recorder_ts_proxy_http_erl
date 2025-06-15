@@ -1,0 +1,12 @@
+Index: src/tsung_recorder/ts_proxy_http.erl
+--- src/tsung_recorder/ts_proxy_http.erl.orig
++++ src/tsung_recorder/ts_proxy_http.erl
+@@ -260,7 +260,7 @@ connect(Scheme, Host, Port)->
+     case Scheme of
+         https ->
+             {ok, _} = ssl:connect(Host,Port,
+-                                 [{active, once}]);
++                                 [{active, once}] ++ [{verify, verify_none}]);
+         _  ->
+             {ok, _} = gen_tcp:connect(Host,Port,
+                                       [{active, once},

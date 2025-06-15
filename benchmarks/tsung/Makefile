@@ -3,8 +3,8 @@ COMMENT=	multi-protocol distributed load testing tool
 V=		1.8.0
 GH_ACCOUNT=	processone
 GH_PROJECT=	tsung
-GH_TAGNAME=	v${V}
-REVISION=	2
+GH_COMMIT=	4b4e1e86f33d4a17641a60b26c0d1cab1f1953b0
+DISTNAME=	${GH_PROJECT}-${V}.20241119
 
 CATEGORIES=	benchmarks net
 
@@ -13,7 +13,6 @@ PERMIT_PACKAGE=	Yes
 
 MODULES=		lang/erlang \
 			lang/python
-MODERL_VERSION=		25
 MODPY_BUILDDEP= 	No
 
 RUN_DEPENDS=		graphics/py-matplotlib \
