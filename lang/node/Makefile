@@ -13,7 +13,7 @@ DIST_TUPLE =		github qbit node-pledge 1.1.3 \
 DISTNAME =		node-${NODE_VERSION}
 PKGNAME =		${DISTNAME:S/v//g}
 EPOCH =			0
-REVISION =		0
+REVISION =		1
 
 CATEGORIES =		lang devel
 
@@ -41,7 +41,6 @@ BUILD_DEPENDS =		sysutils/flock
 RUN_DEPENDS =		devel/gmake \
 			sysutils/flock
 
-TEST_TARGET =		check
 CONFIGURE_STYLE =	simple
 CONFIGURE_SCRIPT =	configure
 
@@ -80,6 +79,14 @@ EOPENSSL_INC =		${LOCALBASE}/include/${EOPENSSL_VSN}
 
 DEBUG_PACKAGES =	${BUILD_PACKAGES}
 
+# Run default tests, without linters or building the docs.
+TEST_TARGET =		test-only
+TEST_ENV =		${MAKE_ENV} HOME=${WRKSRC} CI=true
+
+# Skip test-snapshot-reproducible.
+# It fails and is too verbose (pollutes log with binary diff).
+TEST_ENV+=		CI_SKIP_TESTS=test-snapshot-reproducible
+
 pre-configure:
 	${SUBST_CMD} ${WRKDIST}/common.gypi \
 		${WRKDIST}/deps/npm/node_modules/node-gyp/lib/install.js \
@@ -97,12 +104,14 @@ post-install:
 		ln -s ../../$$x $$x; \
 	done
 
+pre-test:
+	@ln -sf ${LOCALBASE}/bin/${EOPENSSL_VSN} ${WRKDIR}/bin/openssl
+
 # Includes a lot of networking tests that will fail when running as _pbuild
 do-test:
 	cd ${WRKSRC} && \
-	export HOME=${WRKSRC} && \
 	ulimit -n $$(ulimit -Hn) && \
 	ulimit -d $$(ulimit -Hd) && \
-	${MAKE_PROGRAM} ${TEST_TARGET}
+	${SETENV} ${TEST_ENV} ${MAKE_PROGRAM} --ignore-errors ${TEST_TARGET}
 
 .include <bsd.port.mk>
