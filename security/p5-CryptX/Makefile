@@ -1,9 +1,11 @@
 COMMENT =	cryptographic toolkit for Perl
 
-DISTNAME =	CryptX-0.085
+DISTNAME =	CryptX-0.087
 CPAN_AUTHOR =	MIK
 
 CATEGORIES =	security
+
+MAINTAINER =		Alexander Bluhm <bluhm@openbsd.org>
 
 # Perl
 PERMIT_PACKAGE =	Yes
