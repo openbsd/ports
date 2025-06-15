@@ -23,7 +23,6 @@
      SUBDIR += sysbench,mysql
      SUBDIR += sysbench,pgsql
      SUBDIR += tcpblast
-     SUBDIR += tsung
      SUBDIR += ubench
      SUBDIR += udpbench
      SUBDIR += vegeta
