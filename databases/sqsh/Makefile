@@ -1,7 +1,7 @@
 COMMENT=	SQL shell for FreeTDS
 
 DISTNAME=	sqsh-2.5.16.1
-REVISION=	4
+REVISION=	5
 WRKDIST=	${WRKDIR}/sqsh-2.5
 EXTRACT_SUFX=	.tgz
 

@@ -1,10 +1,9 @@
-Sqsh (pronounced skwish) is short for SQshelL (pronounced
-s-q-shell), it is intended as a replacement for the
-venerable 'isql' program supplied by Sybase.
+Sqsh (pronounced skwish) is short for SQshelL (pronounced s-q-shell), it is
+intended as a replacement for the venerable 'isql' program supplied by Sybase.
+Using FreeTDS as a backend, it supports Sybase and Microsoft SQL Server.
 
-Sqsh is much more than a nice prompt, it is intended to
-provide much of the functionality provided by a good shell,
-such as variables, redirection, pipes, back-grounding, job
-control, history, command completion, and dynamic
-configuration.  Also, as a by-product of the design, it is
-remarkably easy to extend and add functionality. 
+Sqsh is much more than a nice prompt, it is intended to provide much of
+the functionality provided by a good shell, such as variables, redirection,
+pipes, back-grounding, job control, history, command completion, and
+dynamic configuration. Also, as a by-product of the design, it is
+remarkably easy to extend and add functionality.
