@@ -1,4 +1,4 @@
-BROKEN=		needs new bootstrap
+BROKEN=		needs new bootstrap and an update for more recent llvm
 
 # You must create a bootstrap for each supported arch.
 # Can use GDC to create said bootstrap compiler.
@@ -32,7 +32,8 @@ MODULES =	lang/clang devel/cmake
 
 MODCLANG_COMPILER_LINKS =	No
 MODCLANG_RUNDEP =		No
-MODCLANG_VERSION =		16
+# XXX - do not let this broken port pull in llvm/16
+#MODCLANG_VERSION =		16
 
 # COMPILE_D_MODULES_SEPARATELY=ON lets ldc compile with sane memory limits.
 CONFIGURE_ARGS =	-DCOMPILE_D_MODULES_SEPARATELY=ON \
