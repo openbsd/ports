@@ -41,6 +41,11 @@
 @man man/man1/glab-config-get.1
 @man man/man1/glab-config-set.1
 @man man/man1/glab-config.1
+@man man/man1/glab-deploy-key-add.1
+@man man/man1/glab-deploy-key-delete.1
+@man man/man1/glab-deploy-key-get.1
+@man man/man1/glab-deploy-key-list.1
+@man man/man1/glab-deploy-key.1
 @man man/man1/glab-duo-ask.1
 @man man/man1/glab-duo.1
 @man man/man1/glab-incident-close.1
@@ -65,6 +70,8 @@
 @man man/man1/glab-issue-update.1
 @man man/man1/glab-issue-view.1
 @man man/man1/glab-issue.1
+@man man/man1/glab-iteration-list.1
+@man man/man1/glab-iteration.1
 @man man/man1/glab-job-artifact.1
 @man man/man1/glab-job.1
 @man man/man1/glab-label-create.1
@@ -120,6 +127,7 @@
 @man man/man1/glab-schedule.1
 @man man/man1/glab-securefile-create.1
 @man man/man1/glab-securefile-download.1
+@man man/man1/glab-securefile-get.1
 @man man/man1/glab-securefile-list.1
 @man man/man1/glab-securefile-remove.1
 @man man/man1/glab-securefile.1
