@@ -41,7 +41,7 @@ RUN_DEPENDS =		math/py-numpy \
 			sysutils/py-packaging \
 			devel/py-lazy-loader
 
-TEST_DEPENDS =		deve/py-test-cov \
+TEST_DEPENDS =		devel/py-test-cov \
 			devel/py-test-localserver
 
 .include <bsd.port.mk>
