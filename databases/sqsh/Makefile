@@ -1,7 +1,7 @@
 COMMENT=	SQL shell for FreeTDS
 
 DISTNAME=	sqsh-2.5.16.1
-REVISION=	3
+REVISION=	4
 WRKDIST=	${WRKDIR}/sqsh-2.5
 EXTRACT_SUFX=	.tgz
 
@@ -9,10 +9,12 @@ CATEGORIES=	databases shells
 
 HOMEPAGE=	https://sourceforge.net/projects/sqsh/
 
+MAINTAINER=	Stuart Henderson <stu.ports@spacehopper.org>
+
 # GPLv2+
 PERMIT_PACKAGE=	Yes
 
-WANTLIB += 	c ct>=2 iconv curses m pthread readline
+WANTLIB +=	c ct>=2 iconv curses m pthread readline
 
 SITES=		${SITE_SOURCEFORGE:=sqsh/}
 
