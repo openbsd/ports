@@ -61,7 +61,7 @@ MAINTAINER =	Pascal Stumpf <pascal@stumpf.co>
 
 .include <bsd.port.arch.mk>
 
-DISTNAME =   	gcc-${FULL_VERSION}
+DISTNAME =	gcc-${FULL_VERSION}
 DISTFILES =	${DISTNAME}.tar.xz
 SUPDISTFILES.boot =	${ADASTRAP-amd64} ${ADASTRAP-arm} ${ADASTRAP-hppa} \
 		${ADASTRAP-i386} ${ADASTRAP-mips64} ${ADASTRAP-powerpc} \
@@ -135,6 +135,7 @@ MAKE_ENV += ${EXTRA_ENV}
 USE_LLD = No
 CONFIGURE_ENV += LDFLAGS="-Wl,--relax"
 .elif ${MACHINE_ARCH:Mi386}
+# ld.lld: error: symbol 'file_location::file_location()' cannot be preempted; recompile with -fPIE
 MODULES +=			lang/clang
 MODCLANG_VERSION =		13
 MODCLANG_COMPILER_LINKS =	No

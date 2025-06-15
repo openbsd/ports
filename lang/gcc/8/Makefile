@@ -12,6 +12,7 @@ ONLY_FOR_ARCHS-ada = amd64 hppa i386 mips64 powerpc
 .if ${MACHINE_ARCH:Mpowerpc}
 USE_LLD = No
 .elif ${MACHINE_ARCH:Mi386}
+# ld.lld: error: symbol 'file_location::file_location()' cannot be preempted; recompile with -fPIE
 MODULES +=			lang/clang
 MODCLANG_VERSION =		13
 MODCLANG_COMPILER_LINKS =	No
@@ -63,7 +64,7 @@ MAINTAINER =	Pascal Stumpf <pascal@stumpf.co>
 
 .include <bsd.port.arch.mk>
 
-DISTNAME =   	gcc-${FULL_VERSION}
+DISTNAME =	gcc-${FULL_VERSION}
 DISTFILES =	${DISTNAME}.tar.xz
 SUPDISTFILES.strap =	${ADASTRAP-amd64} ${ADASTRAP-arm} ${ADASTRAP-hppa} \
 		${ADASTRAP-i386} ${ADASTRAP-mips64} ${ADASTRAP-powerpc} \
