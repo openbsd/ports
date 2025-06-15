@@ -1,6 +1,6 @@
 COMMENT =	module signature file manipulation
 
-DISTNAME =	Module-Signature-0.89
+DISTNAME =	Module-Signature-0.90
 
 CATEGORIES =	security
 
