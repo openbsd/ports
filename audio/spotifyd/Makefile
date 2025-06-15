@@ -6,7 +6,7 @@ COMMENT =		Spotify client running as UNIX daemon
 GH_ACCOUNT =		Spotifyd
 GH_PROJECT =		spotifyd
 GH_TAGNAME =		v0.4.1
-REVISION =		0
+REVISION =		1
 CATEGORIES =		audio net
 
 MAINTAINER =		Pascal Stumpf <pascal@stumpf.co>
@@ -22,15 +22,16 @@ COMPILER =		base-clang ports-gcc
 # uses pledge()
 WANTLIB =		${MODCARGO_WANTLIB} dbus-1 m portaudio
 
-MODULES =		devel/cargo
+MODULES =		devel/cargo \
+			lang/clang
 
-BUILD_DEPENDS =		devel/llvm/18 \
-			devel/cmake/core
+BUILD_DEPENDS =		devel/cmake/core
 LIB_DEPENDS =		audio/portaudio-svn \
 			x11/dbus,-main
 
-# same branch as MODCLANG_VERSION used by lang/rust
-MAKE_ENV =		LIBCLANG_PATH=${LOCALBASE}/llvm18/lib
+# libclang needed for bindgen used from aws-lc-sys
+MAKE_ENV =		LIBCLANG_PATH=${LOCALBASE}/llvm${MODCLANG_VERSION}/lib
+MODCLANG_COMPILER_LINKS = no
 
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
