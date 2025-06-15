@@ -1,15 +1,14 @@
 COMMENT=	Administrative Management Domain scrubber for OpenSMTPD
-V=		0.1
+V=		0.2
 FILTER_NAME =	admdscrub
 DISTNAME =	filter-admdscrub-${V}
 
 CATEGORIES=	mail
-HOMEPAGE=	http://imperialat.at/dev/filter-admdscrub
+HOMEPAGE=	https://src.imperialat.at/?action=summary&path=filter-admdscrub.git
 
 MAINTAINER=	Martijn van Duren <martijn@openbsd.org>
 
-#SITES=		https://distfiles.sigtrap.nl/
-SITES=		https://imperialat.at/releases/
+SITES=		https://src.imperialat.at/releases/
 INSTALL_TARGET=	bindir install
 
 LIB_DEPENDS=	mail/opensmtpd-filters/libopensmtpd

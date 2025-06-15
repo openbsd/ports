@@ -1,15 +1,15 @@
 COMMENT=	dnsbl integration to the OpenSMTPD daemon
 
-V=		0.3
+V=		0.4
 FILTER_NAME =	dnsbl
 DISTNAME =	filter-dnsbl-${V}
 
 CATEGORIES=	mail
-HOMEPAGE=	http://imperialat.at/dev/filter-dnsbl
+HOMEPAGE=	https://src.imperialat.at/?action=summary&path=filter-dnsbl.git
 
 MAINTAINER=	Martijn van Duren <martijn@openbsd.org>
 
-SITES=		https://distfiles.sigtrap.nl/
+SITES=		https://src.imperialat.at/releases/
 INSTALL_TARGET=	bindir install
 
 LIB_DEPENDS=	mail/opensmtpd-filters/libopensmtpd
