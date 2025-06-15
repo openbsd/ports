@@ -106,6 +106,8 @@
 @man man/man1/gh-pr-update-branch.1
 @man man/man1/gh-pr-view.1
 @man man/man1/gh-pr.1
+@man man/man1/gh-preview-prompter.1
+@man man/man1/gh-preview.1
 @man man/man1/gh-project-close.1
 @man man/man1/gh-project-copy.1
 @man man/man1/gh-project-create.1
