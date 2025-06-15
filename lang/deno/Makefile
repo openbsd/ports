@@ -6,7 +6,7 @@ DPB_PROPERTIES =	parallel
 
 USE_WXNEEDED =		Yes
 
-VERSION =		2.3.5
+VERSION =		2.3.6
 HOMEPAGE =		https://deno.com/runtime
 
 DISTNAME =		deno-${VERSION}

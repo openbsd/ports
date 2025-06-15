@@ -4,7 +4,7 @@ In addition, disable the generation of a stacktrace URL
 Index: cli/main.rs
 --- cli/main.rs.orig
 +++ cli/main.rs
-@@ -451,7 +451,7 @@ pub fn main() {
+@@ -462,7 +462,7 @@ pub fn main() {
    #[cfg(feature = "dhat-heap")]
    let profiler = dhat::Profiler::new_heap();
  
