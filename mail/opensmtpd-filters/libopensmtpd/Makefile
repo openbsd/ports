@@ -1,10 +1,10 @@
 COMMENT=	library for writing opensmtpd filters
 
-V=		0.8
+V=		1.0
 PKGNAME=	libopensmtpd-${V}
 DISTNAME=	libopensmtpd-${V}
 
-SHARED_LIBS=	opensmtpd 1.0
+SHARED_LIBS=	opensmtpd 2.0
 
 CATEGORIES=	mail
 HOMEPAGE=	https://src.imperialat.at/?action=summary&path=libopensmtpd.git
@@ -17,7 +17,7 @@ INSTALL_TARGET=	includes install
 # ISC
 PERMIT_PACKAGE=	Yes
 
-WANTLIB=	c event
+WANTLIB=	event
 NO_TEST=	Yes
 MAKE_FLAGS=	CC="${CC}"
 MAKE_FLAGS+=	LIBopensmtpd_VERSION="${LIBopensmtpd_VERSION}"
