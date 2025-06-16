@@ -32,7 +32,6 @@ MODULES =	devel/cmake \
 		lang/python
 
 COMPILER = base-clang ports-gcc
-MODCLANG_VERSION =	19
 
 MULTI_PACKAGES =	-main -python
 
