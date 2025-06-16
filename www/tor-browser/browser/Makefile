@@ -37,8 +37,6 @@ MODULES =		www/mozilla lang/python
 MODPY_RUNDEP =		No
 
 COMPILER =		ports-clang
-USE_LLD =		ports
-MODCLANG_VERSION =	19
 
 # tor-browser needs built-in nss
 MOZILLA_USE_BUNDLED_NSS =	Yes

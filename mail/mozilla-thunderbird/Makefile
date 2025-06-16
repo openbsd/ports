@@ -32,8 +32,6 @@ MODULES =	www/mozilla lang/python
 MODPY_RUNDEP =	No
 
 COMPILER =	ports-clang
-USE_LLD =		ports
-MODCLANG_VERSION =	19
 MODCLANG_ARCHS =	amd64 aarch64 riscv64
 
 # 63 requires node because why not #1483595
