@@ -1,0 +1,54 @@
+Index: wstunnel-cli/src/main.rs
+--- wstunnel-cli/src/main.rs.orig
++++ wstunnel-cli/src/main.rs
+@@ -9,6 +9,8 @@ use wstunnel::config::{Client, Server};
+ use wstunnel::executor::DefaultTokioExecutor;
+ use wstunnel::{run_client, run_server};
+ 
++use unveil::unveil;
++
+ #[cfg(feature = "jemalloc")]
+ use tikv_jemallocator::Jemalloc;
+ 
+@@ -94,6 +96,9 @@ async fn main() -> anyhow::Result<()> {
+ 
+     match args.commands {
+         Commands::Client(args) => {
++            if args.tls_ech_enable {
++                panic!("no ECH on OpenBSD, sorry!");
++            }
+             run_client(*args, DefaultTokioExecutor::default())
+                 .await
+                 .unwrap_or_else(|err| {
+@@ -101,6 +106,31 @@ async fn main() -> anyhow::Result<()> {
+                 });
+         }
+         Commands::Server(args) => {
++            [
++                args.restrict_config.as_ref(),
++                args.tls_certificate.as_ref(),
++                args.tls_private_key.as_ref(),
++                args.tls_client_ca_certs.as_ref(),
++            ]
++            .iter()
++            .flatten()
++            .filter_map(|path| path.as_os_str().to_str())
++            .chain(["/etc/resolv.conf", "/etc/hosts"])
++            .map(|rpath| {
++                (
++                    rpath,
++                    unveil(rpath, "r").map_err(|err| -> anyhow::Error {
++                        match err {
++                            unveil::Error::Os(errno) => io::Error::from_raw_os_error(errno).into(),
++                            _ => err.into(),
++                        }
++                    }),
++                )
++            })
++            .for_each(|(rpath, result)| result.unwrap_or_else(|err| panic!("unveil {}: {}", rpath, err)));
++
++            unveil::unveil("", "").expect("unveil(NULL, NULL) failed");
++
+             run_server(*args, DefaultTokioExecutor::default())
+                 .await
+                 .unwrap_or_else(|err| {

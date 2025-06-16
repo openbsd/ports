@@ -5,21 +5,23 @@ COMMENT =		tunnel all your traffic over Websocket or HTTP2
 
 GH_ACCOUNT =		erebe
 GH_PROJECT =		wstunnel
-GH_TAGNAME =		v10.3.0
+GH_TAGNAME =		v10.4.2
 
 CATEGORIES =		net
 
 MAINTAINER =		Christoph Liebender <christoph@liebender.dev>
 
-HOMEPAGE =		https://github.com/erebe/wstunnel
-
 # BSD-3
 PERMIT_PACKAGE =	Yes
 
+# uses unveil(2)
 WANTLIB =		${MODCARGO_WANTLIB} m
 
 MODULES =		devel/cargo
+
 MODCARGO_RUSTFLAGS =	-C debuginfo=0
+MODCARGO_NO_DEFAULT_FEATURES = Yes
+MODCARGO_FEATURES =	ring
 MODCARGO_BUILD_ARGS +=	--package wstunnel-cli
 
 CONFIGURE_STYLE =	cargo
