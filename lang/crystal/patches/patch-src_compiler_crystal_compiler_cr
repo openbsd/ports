@@ -8,7 +8,7 @@ Index: src/compiler/crystal/compiler.cr
          end
  
 +        if program.has_flag?("openbsd")
-+          link_flags += " -L/usr/local/llvm18/lib"
++          link_flags += " -L/usr/local/llvm19/lib"
 +        end
 +
          {DEFAULT_LINKER, %(#{DEFAULT_LINKER} "${@}" -o #{Process.quote_posix(output_filename)} #{link_flags} #{program.lib_flags(@cross_compile)}), object_names}
