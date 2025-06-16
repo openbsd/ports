@@ -1,5 +1,5 @@
 COMMENT =		ncurses file manager with Vim-like everything
-V =			0.13
+V =			0.14.3
 DISTNAME =		vifm-${V}
 CATEGORIES =		sysutils
 HOMEPAGE =		https://vifm.info/
@@ -21,7 +21,7 @@ USE_GMAKE =		Yes
 
 CONFIGURE_STYLE =	gnu
 CONFIGURE_ARGS =	--without-libmagic \
-			--without-gtk \
+			--without-glib \
 			--without-X11 \
 			--without-dyn-X11
 CONFIGURE_ENV =		CPPFLAGS="-I${LOCALBASE}/include" \
