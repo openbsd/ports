@@ -1,6 +1,7 @@
 COMMENT =	extract FFI definitions from C, C++, and Objective C
 
 DISTNAME =	c2ffi-18.1.0.0
+REVISION =	0
 
 GH_ACCOUNT =	rpav
 GH_PROJECT =	c2ffi
@@ -28,7 +29,8 @@ MODULES =	devel/cmake \
 		lang/clang
 
 # c2ffi has branches for each llvm version, so stick to the targeted one
-MODCLANG_VERSION =	18
+# (the 18 version has been locally patched for support llvm19)
+MODCLANG_VERSION =	19
 
 BUILD_DEPENDS +=	devel/llvm/${MODCLANG_VERSION}
 LIB_DEPENDS +=		${MODCLANG_LIB_DEPENDS}
