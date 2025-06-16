@@ -3,7 +3,6 @@ COMMENT=	client for certificate authorities using ACME protocols
 HOMEPAGE=	https://certbot.eff.org/
 
 DISTNAME=	certbot-${MODPY_DISTV}
-REVISION=	0
 
 RUN_DEPENDS=	security/letsencrypt/py-acme=${MODPY_DISTV} \
 		devel/py-configargparse \
@@ -19,7 +18,7 @@ RUN_DEPENDS=	security/letsencrypt/py-acme=${MODPY_DISTV} \
 do-configure:
 	sed -i -e 's,/etc,${SYSCONFDIR},' \
 		-e 's,/var/lib,${LOCALSTATEDIR}/db,' \
-		${WRKSRC}/certbot/compat/misc.py
+		${WRKSRC}/src/certbot/compat/misc.py
 
 post-install:
 	${INSTALL_DATA_DIR} ${PREFIX}/share/examples/certbot
