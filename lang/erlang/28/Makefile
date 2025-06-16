@@ -6,14 +6,13 @@ USE_WXNEEDED=	Yes
 COMMENT-main=	${COMMENT}
 COMMENT-wx=	WxWidgets bindings for Erlang
 
-V=		28.0
+V=		28.0.1
 DISTNAME=	otp_src_${V}
 PORTROACH=	limit:^OTP-${MAJ_V}\.
 PKGNAME=	erlang-${V}
 PKGNAME-main=	erlang-${V}
 PKGNAME-wx=	erlang-wx-${V}
 EPOCH=		0
-REVISION=	0
 
 VERSION_SPEC=	>=28v0,<29v0
 PKGSPEC-main=	erlang-${VERSION_SPEC}
@@ -65,40 +64,40 @@ UPDATE_PLIST_ARGS = -i V
 
 # Use the target 'gen-versions' to update this list
 ERL_VERSIONS=	\
-ASN1_VSN        5.4 \
+ASN1_VSN        5.4.1 \
 COMMON_TEST_VSN 1.28 \
 COMPILER_VSN    9.0 \
 CRYPTO_VSN      5.6 \
-DEBUGGER_VSN    6.0 \
+DEBUGGER_VSN    6.0.1 \
 DIALYZER_VSN    5.4 \
 DIAMETER_VSN    2.5 \
 EDOC_VSN        1.4 \
 EI_VSN          5.6 \
-ELDAP_VSN       1.2.15 \
+ELDAP_VSN       1.2.16 \
 ET_VSN          1.7.2 \
 EUNIT_VSN       2.10 \
 FTP_VSN         1.2.4 \
 INETS_VSN       9.4 \
-KERNEL_VSN      10.3 \
+KERNEL_VSN      10.3.1 \
 MEGACO_VSN      4.8 \
 MNESIA_VSN      4.24 \
 OBSERVER_VSN    2.18 \
 ODBC_VSN	2.16 \
 OS_MON_VSN      2.11 \
 PARSETOOLS_VSN  2.7 \
-PUBLIC_KEY_VSN  1.18 \
+PUBLIC_KEY_VSN  1.18.1 \
 RELTOOL_VSN     1.0.2 \
 RUNTIME_TOOLS_VSN       2.2 \
 SASL_VSN        4.3 \
 SNMP_VSN        5.19 \
-SSH_VSN         5.3 \
-SSL_VSN         11.3 \
-STDLIB_VSN      7.0 \
+SSH_VSN         5.3.1 \
+SSL_VSN         11.3.1 \
+STDLIB_VSN      7.0.1 \
 SYNTAX_TOOLS_VSN        4.0 \
 TFTP_VSN        1.2.3 \
 TOOLS_VSN       4.1.2 \
 WX_VSN          2.5 \
-XMERL_VSN       2.1.4 \
-ERTS_VSN        16.0
+XMERL_VSN       2.1.5 \
+ERTS_VSN        16.0.1
 
 .include <bsd.port.mk>
