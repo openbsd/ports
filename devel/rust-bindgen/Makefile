@@ -2,8 +2,7 @@ COMMENT =	automatically generates Rust FFI bindings (C and C++)
 
 GH_ACCOUNT =	rust-lang
 GH_PROJECT =	rust-bindgen
-GH_TAGNAME =	v0.69.4
-REVISION =	0
+GH_TAGNAME =	v0.72.0
 
 CATEGORIES =	devel
 
@@ -21,10 +20,10 @@ MODCARGO_INSTALL_TARGET_PATHS =	bindgen-cli
 CONFIGURE_STYLE =	cargo
 SEPARATE_BUILD =	Yes
 
-TEST_DEPENDS +=	devel/llvm/18
+TEST_DEPENDS +=	devel/llvm/19
 
 # for tests
-MAKE_ENV +=	LIBCLANG_PATH=${LOCALBASE}/llvm18/lib
+MAKE_ENV +=	LIBCLANG_PATH=${LOCALBASE}/llvm19/lib
 
 post-install:
 	mv ${PREFIX}/bin/bindgen ${PREFIX}/libexec/rust-bindgen
