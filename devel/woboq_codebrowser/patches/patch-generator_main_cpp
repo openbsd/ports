@@ -3,16 +3,16 @@ add pledge(2) and unveil(2) to codebrowser_generator
 Index: generator/main.cpp
 --- generator/main.cpp.orig
 +++ generator/main.cpp
-@@ -43,6 +43,8 @@
- #include <limits>
- #include <stdexcept>
+@@ -41,6 +41,8 @@
+ #include <fstream>
+ #include <iostream>
  
 +#include <unistd.h>
 +
  #include "embedded_includes.h"
  
  namespace cl = llvm::cl;
-@@ -371,6 +373,16 @@ int main(int argc, const char **argv)
+@@ -334,6 +336,16 @@ int main(int argc, const char **argv)
      }
  
      llvm::cl::ParseCommandLineOptions(argc, argv);

@@ -1,11 +1,11 @@
 COMMENT =	generator for the woboq code browser
 
-DISTNAME =	woboq_codebrowser-2.1pl20241209
+DISTNAME =	woboq_codebrowser-2.1pl20250221
 
 GH_ACCOUNT =	KDAB
 GH_PROJECT =	codebrowser
 # support LLVM version we have in ports
-GH_COMMIT =	6f78f5ffa6439dae4e5a26ca09841df07d93ab57
+GH_COMMIT =	9c819d5072dba9ba8eb07646d712b46229f7ecb5
 
 CATEGORIES =	devel
 
@@ -30,7 +30,7 @@ MODULES =		devel/cmake \
 			lang/clang
 LIB_DEPENDS =		${MODCLANG_LIB_DEPENDS}
 MODCLANG_RUNDEP =	Yes
-MODCLANG_VERSION =	18
+MODCLANG_VERSION =	19
 
 NO_TEST =		Yes
 
