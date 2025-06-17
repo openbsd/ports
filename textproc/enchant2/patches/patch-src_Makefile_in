@@ -1,7 +1,7 @@
 Index: src/Makefile.in
 --- src/Makefile.in.orig
 +++ src/Makefile.in
-@@ -1297,7 +1297,7 @@ dummy.vala: $(BUILT_VAPIS) $(VAPIS)
+@@ -1298,7 +1298,7 @@ dummy.vala: $(BUILT_VAPIS) $(VAPIS)
  util.h util.vapi: libutil.la
  
  .1.html:

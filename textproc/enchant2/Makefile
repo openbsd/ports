@@ -1,10 +1,10 @@
 COMMENT=		generic spell checking library
 
-V=			2.8.6
+V=			2.8.8
 DISTNAME=		enchant-${V}
 PKGNAME=		enchant2-${V}
 
-SHARED_LIBS +=  enchant-2            1.2      # 10.6
+SHARED_LIBS +=  enchant-2            1.2      # 10.8
 
 CATEGORIES=		textproc
 
@@ -48,8 +48,5 @@ DEBUG_PACKAGES=		${BUILD_PACKAGES}
 # prevent conflict with textproc/enchant
 MAKE_FLAGS=		pkgdatadir=${TRUEPREFIX}/share/enchant-2
 FAKE_FLAGS=		pkgdatadir=${PREFIX}/share/enchant-2
-
-post-install:
-	rm ${PREFIX}/lib/enchant-2/*.{a,la}
 
 .include <bsd.port.mk>
