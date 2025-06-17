@@ -64,6 +64,7 @@ lib/python${MODPY_VERSION}/site-packages/pgactivity/queries/${MODPY_PYCACHE}__in
 lib/python${MODPY_VERSION}/site-packages/pgactivity/queries/${MODPY_PYCACHE}__init__.${MODPY_PYC_MAGIC_TAG}pyc
 lib/python${MODPY_VERSION}/site-packages/pgactivity/queries/disable_log_min_duration_sample.sql
 lib/python${MODPY_VERSION}/site-packages/pgactivity/queries/disable_log_min_duration_statement.sql
+lib/python${MODPY_VERSION}/site-packages/pgactivity/queries/disable_log_statement.sql
 lib/python${MODPY_VERSION}/site-packages/pgactivity/queries/do_pg_cancel_backend.sql
 lib/python${MODPY_VERSION}/site-packages/pgactivity/queries/do_pg_terminate_backend.sql
 lib/python${MODPY_VERSION}/site-packages/pgactivity/queries/get_blocking_oldest.sql
