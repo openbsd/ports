@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1724 2025/05/31 18:50:20 ajacoutot Exp $
+# $OpenBSD: Quirks.pm,v 1.1725 2025/06/17 18:42:30 volker Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1264,6 +1264,7 @@ setup_obsolete_reason(
 	6 => 'gnome-video-effects',
 	3 => 'gnome-dictionary',
 	3 => 'gnome-photos',
+	3 => 'tsung',
 );
 
 # though it's not yet used, these should be pkgnames, so that eventually
