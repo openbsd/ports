@@ -1,5 +1,8 @@
 MODGO_MODULES =	\
 	github.com/!burnt!sushi/toml	 v1.4.1-0.20240526193622-a339e1f7089c \
+	github.com/fatih/camelcase	 v1.0.0 \
+	github.com/fatih/gomodifytags	 v1.17.1-0.20250423142747-f3939df9aa3c \
+	github.com/fatih/structtag	 v1.2.0 \
 	github.com/go-quicktest/qt	 v1.101.0 \
 	github.com/google/go-cmdtest	 v0.4.1-0.20220921163831-55ab3332a786 \
 	github.com/google/go-cmp	 v0.6.0 \
@@ -8,49 +11,108 @@ MODGO_MODULES =	\
 	github.com/jba/templatecheck	 v0.7.1 \
 	github.com/kr/pretty		 v0.3.1 \
 	github.com/kr/text		 v0.2.0 \
-	github.com/rogpeppe/go-internal	 v1.12.0 \
+	github.com/rogpeppe/go-internal	 v1.13.2-0.20241226121412-a5dc8ff20d0a \
 	github.com/yuin/goldmark	 v1.4.13 \
+	golang.org/x/crypto		 v0.25.0 \
 	golang.org/x/exp		 v0.0.0-20231110203233-9a3e6036ecaa \
-	golang.org/x/exp/typeparams	 v0.0.0-20241210194714-1829a127f884 \
-	golang.org/x/mod		 v0.23.0 \
-	golang.org/x/net		 v0.35.0 \
-	golang.org/x/sync		 v0.11.0 \
-	golang.org/x/sys		 v0.30.0 \
-	golang.org/x/telemetry		 v0.0.0-20241220003058-cc96b6e0d3d9 \
-	golang.org/x/text		 v0.22.0 \
-	golang.org/x/tools		 v0.30.1-0.20250221230316-5055f70f240c \
-	golang.org/x/vuln		 v1.1.3 \
+	golang.org/x/exp/typeparams	 v0.0.0-20250218142911-aa4b98e5adaa \
+	golang.org/x/mod		 v0.25.0 \
+	golang.org/x/net		 v0.41.0 \
+	golang.org/x/sync		 v0.15.0 \
+	golang.org/x/sys		 v0.33.0 \
+	golang.org/x/telemetry		 v0.0.0-20250417124945-06ef541f3fa3 \
+	golang.org/x/term		 v0.22.0 \
+	golang.org/x/text		 v0.26.0 \
+	golang.org/x/tools		 v0.34.1-0.20250610180157-87f68886ec5f \
+	golang.org/x/vuln		 v1.1.4 \
+	golang.org/x/xerrors		 v0.0.0-20190717185122-a985d3407aa7 \
 	gopkg.in/check.v1		 v1.0.0-20190902080502-41f04d3bba15 \
 	gopkg.in/yaml.v3		 v3.0.1 \
-	honnef.co/go/tools		 v0.5.1 \
+	honnef.co/go/tools		 v0.7.0-0.dev.0.20250523013057-bbc2f4dd71ea \
 	mvdan.cc/gofumpt		 v0.7.0 \
-	mvdan.cc/xurls/v2		 v2.5.0
+	mvdan.cc/xurls/v2		 v2.6.0
 
 MODGO_MODFILES =	\
 	github.com/google/safehtml	 v0.0.2 \
-	github.com/rogpeppe/go-internal	 v1.10.0 \
+	github.com/rogpeppe/go-internal	 v1.12.0 \
+	golang.org/x/crypto		 v0.0.0-20190308221718-c2843e01d9a2 \
+	golang.org/x/crypto		 v0.0.0-20210921155107-089bfa567519 \
+	golang.org/x/crypto		 v0.13.0 \
+	golang.org/x/crypto		 v0.19.0 \
+	golang.org/x/crypto		 v0.23.0 \
 	golang.org/x/exp/typeparams	 v0.0.0-20231108232855-2478ac86f678 \
-	golang.org/x/mod		 v0.10.0 \
+	golang.org/x/mod		 v0.12.0 \
 	golang.org/x/mod		 v0.14.0 \
+	golang.org/x/mod		 v0.15.0 \
 	golang.org/x/mod		 v0.17.0 \
 	golang.org/x/mod		 v0.19.0 \
 	golang.org/x/mod		 v0.22.0 \
+	golang.org/x/mod		 v0.24.0 \
+	golang.org/x/mod		 v0.6.0-dev.0.20220419223038-86c51ed26bb4 \
+	golang.org/x/mod		 v0.8.0 \
+	golang.org/x/net		 v0.0.0-20190620200207-3b0461eec859 \
+	golang.org/x/net		 v0.0.0-20210226172049-e18ecbb05110 \
+	golang.org/x/net		 v0.0.0-20220722155237-a158d28d115b \
+	golang.org/x/net		 v0.10.0 \
+	golang.org/x/net		 v0.15.0 \
+	golang.org/x/net		 v0.21.0 \
+	golang.org/x/net		 v0.25.0 \
+	golang.org/x/net		 v0.27.0 \
+	golang.org/x/net		 v0.6.0 \
+	golang.org/x/sync		 v0.0.0-20190423024810-112230192c58 \
+	golang.org/x/sync		 v0.0.0-20220722155255-886fb9371eb4 \
 	golang.org/x/sync		 v0.1.0 \
 	golang.org/x/sync		 v0.10.0 \
+	golang.org/x/sync		 v0.13.0 \
+	golang.org/x/sync		 v0.14.0 \
+	golang.org/x/sync		 v0.3.0 \
 	golang.org/x/sync		 v0.6.0 \
 	golang.org/x/sync		 v0.7.0 \
+	golang.org/x/sys		 v0.0.0-20190215142949-d0b11bdaac8a \
+	golang.org/x/sys		 v0.0.0-20201119102817-f84b799fce68 \
+	golang.org/x/sys		 v0.0.0-20210615035016-665e8c7367d1 \
+	golang.org/x/sys		 v0.0.0-20220520151302-bc2c85ada10a \
+	golang.org/x/sys		 v0.0.0-20220722155257-8c9f86f7a55f \
+	golang.org/x/sys		 v0.12.0 \
 	golang.org/x/sys		 v0.16.0 \
+	golang.org/x/sys		 v0.17.0 \
 	golang.org/x/sys		 v0.20.0 \
 	golang.org/x/sys		 v0.22.0 \
 	golang.org/x/sys		 v0.28.0 \
+	golang.org/x/sys		 v0.29.0 \
+	golang.org/x/sys		 v0.32.0 \
+	golang.org/x/sys		 v0.5.0 \
+	golang.org/x/sys		 v0.8.0 \
+	golang.org/x/telemetry		 v0.0.0-20240228155512-f48c80bd79b2 \
 	golang.org/x/telemetry		 v0.0.0-20240521205824-bda55230c457 \
 	golang.org/x/telemetry		 v0.0.0-20240522233618-39ace7a40ae7 \
+	golang.org/x/term		 v0.0.0-20201126162022-7de9c90e9dd1 \
+	golang.org/x/term		 v0.0.0-20210927222741-03fcf44c2211 \
+	golang.org/x/term		 v0.12.0 \
+	golang.org/x/term		 v0.17.0 \
+	golang.org/x/term		 v0.20.0 \
+	golang.org/x/term		 v0.5.0 \
+	golang.org/x/term		 v0.8.0 \
+	golang.org/x/text		 v0.13.0 \
+	golang.org/x/text		 v0.14.0 \
+	golang.org/x/text		 v0.15.0 \
+	golang.org/x/text		 v0.16.0 \
+	golang.org/x/text		 v0.3.0 \
 	golang.org/x/text		 v0.3.3 \
+	golang.org/x/text		 v0.3.7 \
+	golang.org/x/text		 v0.7.0 \
+	golang.org/x/text		 v0.9.0 \
 	golang.org/x/tools		 v0.0.0-20180917221912-90fa682c2a6e \
+	golang.org/x/tools		 v0.0.0-20191119224855-298f0cb1881e \
+	golang.org/x/tools		 v0.1.12 \
 	golang.org/x/tools		 v0.13.0 \
 	golang.org/x/tools		 v0.17.0 \
 	golang.org/x/tools		 v0.21.1-0.20240508182429-e35e4ccd0d2d \
-	golang.org/x/tools		 v0.21.1-0.20240531212143-b6235391adb3 \
 	golang.org/x/tools		 v0.23.0 \
+	golang.org/x/tools		 v0.28.0 \
+	golang.org/x/tools		 v0.29.0 \
+	golang.org/x/tools		 v0.33.0 \
+	golang.org/x/tools		 v0.33.1-0.20250521210010-423c5afcceff \
+	golang.org/x/tools		 v0.6.0 \
 	gopkg.in/check.v1		 v0.0.0-20161208181325-20d25e280405
 

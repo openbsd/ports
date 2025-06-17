@@ -16,6 +16,7 @@ share/doc/gopls/doc/design/integrating.md
 share/doc/gopls/doc/emacs.md
 share/doc/gopls/doc/features/
 share/doc/gopls/doc/features/README.md
+share/doc/gopls/doc/features/assembly.md
 share/doc/gopls/doc/features/completion.md
 share/doc/gopls/doc/features/diagnostics.md
 share/doc/gopls/doc/features/modfiles.md
