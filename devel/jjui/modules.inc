@@ -4,14 +4,15 @@ MODGO_MODULES =	\
 	github.com/atotto/clipboard		 v0.1.4 \
 	github.com/aymanbagabas/go-osc52/v2	 v2.0.1 \
 	github.com/aymanbagabas/go-udiff	 v0.2.0 \
-	github.com/charmbracelet/bubbles	 v0.20.0 \
-	github.com/charmbracelet/bubbletea	 v1.3.4 \
-	github.com/charmbracelet/colorprofile	 v0.3.0 \
+	github.com/bits-and-blooms/bitset	 v1.22.0 \
+	github.com/charmbracelet/bubbles	 v0.21.0 \
+	github.com/charmbracelet/bubbletea	 v1.3.5 \
+	github.com/charmbracelet/colorprofile	 v0.3.1 \
 	github.com/charmbracelet/harmonica	 v0.2.0 \
 	github.com/charmbracelet/lipgloss	 v1.1.0 \
-	github.com/charmbracelet/x/ansi		 v0.8.0 \
+	github.com/charmbracelet/x/ansi		 v0.9.2 \
 	github.com/charmbracelet/x/cellbuf	 v0.0.13 \
-	github.com/charmbracelet/x/exp/golden	 v0.0.0-20240815200342-61de596daa2b \
+	github.com/charmbracelet/x/exp/golden	 v0.0.0-20241011142426-46044092ad91 \
 	github.com/charmbracelet/x/exp/teatest	 v0.0.0-20250131172436-6251e772efa1 \
 	github.com/charmbracelet/x/term		 v0.2.1 \
 	github.com/davecgh/go-spew		 v1.1.1 \
@@ -32,22 +33,21 @@ MODGO_MODULES =	\
 	github.com/stretchr/testify		 v1.10.0 \
 	github.com/xo/terminfo			 v0.0.0-20220910002029-abceb7e1c41e \
 	golang.org/x/exp			 v0.0.0-20220909182711-5c715a9e8561 \
-	golang.org/x/mod			 v0.17.0 \
-	golang.org/x/sync			 v0.12.0 \
-	golang.org/x/sys			 v0.31.0 \
-	golang.org/x/text			 v0.23.0 \
-	golang.org/x/tools			 v0.21.1-0.20240508182429-e35e4ccd0d2d \
+	golang.org/x/mod			 v0.25.0 \
+	golang.org/x/sync			 v0.15.0 \
+	golang.org/x/sys			 v0.33.0 \
+	golang.org/x/text			 v0.26.0 \
+	golang.org/x/tools			 v0.33.0 \
 	gopkg.in/check.v1			 v0.0.0-20161208181325-20d25e280405 \
 	gopkg.in/yaml.v3			 v3.0.1
 
 MODGO_MODFILES =	\
-	github.com/charmbracelet/bubbletea	 v1.1.0 \
 	github.com/charmbracelet/bubbletea	 v1.1.2 \
+	github.com/charmbracelet/bubbletea	 v1.3.4 \
 	github.com/charmbracelet/colorprofile	 v0.2.3-0.20250311203215-f60798e515dc \
 	github.com/charmbracelet/lipgloss	 v0.13.0 \
-	github.com/charmbracelet/lipgloss	 v1.0.0 \
-	github.com/charmbracelet/x/ansi		 v0.2.3 \
 	github.com/charmbracelet/x/ansi		 v0.4.0 \
+	github.com/charmbracelet/x/ansi		 v0.8.0 \
 	github.com/charmbracelet/x/cellbuf	 v0.0.13-0.20250311204145-2c3ea96c31dd \
 	github.com/charmbracelet/x/exp/golden	 v0.0.0-20240806155701-69247e0abc2a \
 	github.com/charmbracelet/x/term		 v0.2.0 \
@@ -55,12 +55,13 @@ MODGO_MODFILES =	\
 	github.com/muesli/termenv		 v0.15.2 \
 	github.com/rivo/uniseg			 v0.2.0 \
 	golang.org/x/sync			 v0.11.0 \
+	golang.org/x/sync			 v0.13.0 \
 	golang.org/x/sync			 v0.8.0 \
 	golang.org/x/sys			 v0.0.0-20210809222454-d867a43fc93e \
 	golang.org/x/sys			 v0.0.0-20220204135822-1c1b9b1eba6a \
-	golang.org/x/sys			 v0.24.0 \
 	golang.org/x/sys			 v0.26.0 \
 	golang.org/x/sys			 v0.30.0 \
+	golang.org/x/sys			 v0.32.0 \
 	golang.org/x/sys			 v0.6.0 \
 	golang.org/x/text			 v0.19.0 \
 	golang.org/x/text			 v0.3.8
