@@ -1,4 +1,4 @@
-# $OpenBSD: mk.conf.template,v 1.37 2024/12/23 12:44:23 sthen Exp $
+# $OpenBSD: mk.conf.template,v 1.38 2025/06/17 16:38:29 sthen Exp $
 
 # This file contains some mk.conf entries suitable for ports work.
 #
@@ -25,9 +25,8 @@
 .poison GH_COMMENT
 .poison GH_TAG
 .poison LIB_DEPEDNS
-.poison LIB_DEPEND
 .poison LIB_DEPEMDS
-.poison SITE_SOURCEFORGET
+.poison LIB_DEPEND
 .poison MODGCC3_ARCHES
 .poison MODGCC4_ARCHES
 .poison MODGNOME_DESKTOP_FILE
@@ -38,19 +37,21 @@
 .poison MODPY_BUILDEP
 .poison MODPY_BUILD_DEP
 .poison MODPY_PYPI
+.poison MODPY_PYTEST_LINK_SO
 .poison MODPY_RUN_DEP
 .poison MODPY_TEST
-.poison NO_TESTS
 .poison NOT_FOR_ARCH
 .poison NOT_FOR_ARCHES
+.poison NO_TESTS
 .poison ONLY_FOR_ARCH
 .poison ONLY_FOR_ARCHES
 .poison REVISON
 .poison REVSION
-.poison RUN_DEPEND
-.poison RUN_DEPEMDS
 .poison RUN_DEPEDNS
+.poison RUN_DEPEMDS
+.poison RUN_DEPEND
 .poison SEPERATE_BUILD
+.poison SITE_SOURCEFORGET
 .poison SUBIDR
 .poison WABTLIB
 .poison WATNLIB
@@ -62,15 +63,15 @@
 
 # used to exist, but now retired
 .poison CONFIGURE_SHARED
-.poison SHARED_ONLY
-.poison VMEM_WARNING
-.poison NO_SYSTRACE
-.poison _SYSTRACE_CMD
-.poison USE_SYSTRACE
-.poison WANT_CXX
+.poison MASTER_SITES
 .poison MODGETTEXT_LIB_DEPENDS
 .poison MODGETTEXT_RUN_DEPENDS
 .poison MODGETTEXT_WANTLIB
-.poison MASTER_SITES
 .poison MODPY_EGG_VERSION
 .poison MODPY_FLAVOR
+.poison NO_SYSTRACE
+.poison SHARED_ONLY
+.poison USE_SYSTRACE
+.poison VMEM_WARNING
+.poison WANT_CXX
+.poison _SYSTRACE_CMD
