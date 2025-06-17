@@ -66,13 +66,6 @@ TEST_DEPENDS =	archivers/gtar
 
 # special cases
 ERL_EI=			erl_interface-${EI_VSN}
-ERL_COSEVENT=		cosEvent-${COSEVENT_VSN}
-ERL_COSEVENTDOMAIN=	cosEventDomain-${COSEVENTDOMAIN_VSN}
-ERL_COSFILETRANSFER=	cosFileTransfer-${COSFILETRANSFER_VSN}
-ERL_COSNOTIFICATION=	cosNotification-${COSNOTIFICATION_VSN}
-ERL_COSPROPERTY=	cosProperty-${COSPROPERTY_VSN}
-ERL_COSTIME=		cosTime-${COSTIME_VSN}
-ERL_COSTRANSACTIONS=	cosTransactions-${COSTRANSACTIONS_VSN}
 
 # Special maintainer target, scan through vsn.mk files and build 'ERL_VERSIONS'
 # list
