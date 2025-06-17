@@ -11,6 +11,8 @@ PKGNAME-mysql =	icinga2-ido-mysql-$V
 PKGNAME-pgsql =	icinga2-ido-pgsql-$V
 DPB_PROPERTIES =parallel
 
+REVISION =	0
+
 EPOCH =		0
 
 SHARED_LIBS +=	base                      0.0 # 2.6
