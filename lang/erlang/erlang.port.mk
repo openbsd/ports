@@ -23,7 +23,7 @@ MODERL_HANDLE_FLAVORS ?=	No
 # If erlang.port.mk should handle FLAVORS, define a separate FLAVOR
 # for each erlang runtime
 .    if !defined(FLAVORS)
-FLAVORS =	erlang25 erlang26 erlang27 erlang28
+FLAVORS =	erlang26 erlang27 erlang28
 .    endif
 
 FULLPKGNAME ?=	${MODERL_PKG_PREFIX}-${PKGNAME}
@@ -38,9 +38,7 @@ FLAVOR =	${_MODERL_DEFAULT_FLAVOR}
 MODERL_PKG_PREFIX =	erl${MODERL_VERSION}
 
 .if defined(MODERL_VERSION)
-.  if ${MODERL_VERSION} == 25
-_MODERL_FLAVOR =	erlang25
-.  elif ${MODERL_VERSION} == 26
+.  if ${MODERL_VERSION} == 26
 _MODERL_FLAVOR =	erlang26
 .  elif ${MODERL_VERSION} == 27
 _MODERL_FLAVOR =	erlang27
@@ -52,10 +50,7 @@ ERRORS +=		"Invalid MODERL_VERSION set: ${MODERL_VERSION}."
 .else
 # When only flavour is set, derive version
 .  if !empty(FLAVOR)
-.    if ${FLAVOR} == erlang25
-MODERL_VERSION ?=	25
-_MODERL_FLAVOR ?=	erlang25
-.    elif ${FLAVOR} == erlang26
+.    if ${FLAVOR} == erlang26
 MODERL_VERSION ?=	26
 _MODERL_FLAVOR ?=	erlang26
 .    elif ${FLAVOR} == erlang27
@@ -86,7 +81,7 @@ MODERL_USE_REBAR3 =	Yes
 MODERL_BUILD_DEPENDS +=	devel/rebar3,${_MODERL_FLAVOR}
 REBAR_BIN ?=		${LOCALBASE}/bin/rebar3-${MODERL_VERSION}
 # Make sure rebar gets called as 'rebar3', otherwise escript tries to call the
-# binary name (e.g. rebar3-25) as the script entrypoint.
+# binary name (e.g. rebar3-27) as the script entrypoint.
 _MODERL_LINKS +=	rebar3-${MODERL_VERSION} rebar3
 .endif
 
