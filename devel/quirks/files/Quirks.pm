@@ -1,7 +1,7 @@
 #! /usr/bin/perl
 
 # ex:ts=8 sw=4:
-# $OpenBSD: Quirks.pm,v 1.1725 2025/06/17 18:42:30 volker Exp $
+# $OpenBSD: Quirks.pm,v 1.1726 2025/06/17 19:13:24 jturner Exp $
 #
 # Copyright (c) 2009 Marc Espie <espie@openbsd.org>
 #
@@ -1257,7 +1257,6 @@ setup_obsolete_reason(
 	3 => 'pop3d',
 	3 => 'myrddin',
 	3 => 'ksql',
-	3 => 'reop',
 	6 => 'py-elasticsearch-curator',
 	6 => 'py-ipython_genutils',
 # 7.8
