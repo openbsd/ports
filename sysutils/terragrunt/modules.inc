@@ -295,6 +295,7 @@ MODGO_MODULES =	\
 	github.com/charmbracelet/x/ansi									 v0.8.0 \
 	github.com/charmbracelet/x/cellbuf								 v0.0.13 \
 	github.com/charmbracelet/x/exp/golden								 v0.0.0-20241011142426-46044092ad91 \
+	github.com/charmbracelet/x/exp/teatest								 v0.0.0-20250611152503-f53cdd7e01ef \
 	github.com/charmbracelet/x/term									 v0.2.1 \
 	github.com/cheggaaa/pb										 v1.0.27 \
 	github.com/chzyer/logex										 v1.1.10 \
@@ -2417,6 +2418,7 @@ MODGO_MODFILES =	\
 	golang.org/x/text									 v0.15.0 \
 	golang.org/x/text									 v0.16.0 \
 	golang.org/x/text									 v0.18.0 \
+	golang.org/x/text									 v0.19.0 \
 	golang.org/x/text									 v0.20.0 \
 	golang.org/x/text									 v0.21.0 \
 	golang.org/x/text									 v0.22.0 \

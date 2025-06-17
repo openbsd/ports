@@ -1341,6 +1341,8 @@ SHA256 (go_modules/github.com/charmbracelet/x/exp/golden/@v/v0.0.0-2024071515370
 SHA256 (go_modules/github.com/charmbracelet/x/exp/golden/@v/v0.0.0-20240806155701-69247e0abc2a.mod) = qOQi7fNKC26E5mkaeXSSaknqW54R3uh7Auc32goAc0s=
 SHA256 (go_modules/github.com/charmbracelet/x/exp/golden/@v/v0.0.0-20241011142426-46044092ad91.mod) = qOQi7fNKC26E5mkaeXSSaknqW54R3uh7Auc32goAc0s=
 SHA256 (go_modules/github.com/charmbracelet/x/exp/golden/@v/v0.0.0-20241011142426-46044092ad91.zip) = qIC4l2q8/KR4L8N/IKcEICn8vrp+CkpuxxOBvgoPRdo=
+SHA256 (go_modules/github.com/charmbracelet/x/exp/teatest/@v/v0.0.0-20250611152503-f53cdd7e01ef.mod) = cN2aZzRXRjT2PS4IAY9vkEDhD5SX4YxGkTcvwQMj0yE=
+SHA256 (go_modules/github.com/charmbracelet/x/exp/teatest/@v/v0.0.0-20250611152503-f53cdd7e01ef.zip) = DCgyEHT3MjbCBw3GMehd/UmyccX/dEyXq51Y3RJ0A2M=
 SHA256 (go_modules/github.com/charmbracelet/x/term/@v/v0.2.1.mod) = zHVivfwDIfnxmEsBTQpcnn49fQKFPeS0Ur3cq9FGJjA=
 SHA256 (go_modules/github.com/charmbracelet/x/term/@v/v0.2.1.zip) = lD6mFayrhGR40V/Jsh615H33hld5FfhFZbbUsx1AFKA=
 SHA256 (go_modules/github.com/cheggaaa/pb/@v/v1.0.27.mod) = ehzNehkvEajmsoTCNK3PhZoMNjLwn4suQjdIH/IYEVg=
@@ -3059,6 +3061,7 @@ SHA256 (go_modules/golang.org/x/text/@v/v0.14.0.mod) = lxV58X6avFkmq3YhT1M71RfPS
 SHA256 (go_modules/golang.org/x/text/@v/v0.15.0.mod) = lxV58X6avFkmq3YhT1M71RfPSSXIhSQ6xHVaGgp8ae8=
 SHA256 (go_modules/golang.org/x/text/@v/v0.16.0.mod) = ChicdviH/nAsHxkZtDLcIejiMbXDI6N6Cz9yMB6QZsU=
 SHA256 (go_modules/golang.org/x/text/@v/v0.18.0.mod) = zxBz/hi9Z2W66GYHIktxo1hHUYiOBkpTigs+Orfixdg=
+SHA256 (go_modules/golang.org/x/text/@v/v0.19.0.mod) = zxBz/hi9Z2W66GYHIktxo1hHUYiOBkpTigs+Orfixdg=
 SHA256 (go_modules/golang.org/x/text/@v/v0.20.0.mod) = /h8aDoozwfXSEYUM7kmxppiBY+4VhU5ywdEFAuTCICs=
 SHA256 (go_modules/golang.org/x/text/@v/v0.21.0.mod) = wBWvdGl7kVrUGQvifPb1u+AqFYrM7w281KQqEAAt9JY=
 SHA256 (go_modules/golang.org/x/text/@v/v0.22.0.mod) = smofcdxBuZkrr+w4hnmHZS0Sk9BGxlLfVJ7taHFJ2GI=
@@ -3691,7 +3694,7 @@ SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = JC1yDRxq7+SjBcM0GoBXXhmlRRe
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = L8eybun2ctl7QvpvJfWxWlWYK7usaZYdduux0DbRUAE=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = CZ2G+OBNET1A9KFSzf4AFxFtfv6mjkF6nGRthgJj174=
 SHA256 (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 7wMf94/5twNuF07vSd+9d0aNxPCvtzpjm2H4qzocxCU=
-SHA256 (terragrunt-v0.81.6.zip) = oRfyEebE6pWlUioJIutLgbIVDM53Iz59kvsevVSgmSg=
+SHA256 (terragrunt-v0.81.7.zip) = q1mNuHoVpLxGrdJZaDSWSeLCgui9JLmzaC+P+5c1tcI=
 SIZE (go_modules/atomicgo.dev/assert/@v/v0.0.2.mod) = 36
 SIZE (go_modules/atomicgo.dev/assert/@v/v0.0.2.zip) = 11231
 SIZE (go_modules/atomicgo.dev/cursor/@v/v0.2.0.mod) = 36
@@ -5035,6 +5038,8 @@ SIZE (go_modules/github.com/charmbracelet/x/exp/golden/@v/v0.0.0-20240715153702-
 SIZE (go_modules/github.com/charmbracelet/x/exp/golden/@v/v0.0.0-20240806155701-69247e0abc2a.mod) = 103
 SIZE (go_modules/github.com/charmbracelet/x/exp/golden/@v/v0.0.0-20241011142426-46044092ad91.mod) = 103
 SIZE (go_modules/github.com/charmbracelet/x/exp/golden/@v/v0.0.0-20241011142426-46044092ad91.zip) = 3799
+SIZE (go_modules/github.com/charmbracelet/x/exp/teatest/@v/v0.0.0-20250611152503-f53cdd7e01ef.mod) = 1081
+SIZE (go_modules/github.com/charmbracelet/x/exp/teatest/@v/v0.0.0-20250611152503-f53cdd7e01ef.zip) = 11434
 SIZE (go_modules/github.com/charmbracelet/x/term/@v/v0.2.1.mod) = 82
 SIZE (go_modules/github.com/charmbracelet/x/term/@v/v0.2.1.zip) = 6903
 SIZE (go_modules/github.com/cheggaaa/pb/@v/v1.0.27.mod) = 30
@@ -6753,6 +6758,7 @@ SIZE (go_modules/golang.org/x/text/@v/v0.14.0.mod) = 197
 SIZE (go_modules/golang.org/x/text/@v/v0.15.0.mod) = 197
 SIZE (go_modules/golang.org/x/text/@v/v0.16.0.mod) = 220
 SIZE (go_modules/golang.org/x/text/@v/v0.18.0.mod) = 220
+SIZE (go_modules/golang.org/x/text/@v/v0.19.0.mod) = 220
 SIZE (go_modules/golang.org/x/text/@v/v0.20.0.mod) = 220
 SIZE (go_modules/golang.org/x/text/@v/v0.21.0.mod) = 221
 SIZE (go_modules/golang.org/x/text/@v/v0.22.0.mod) = 221
@@ -7385,4 +7391,4 @@ SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.1.0.mod) = 24
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.3.0.mod) = 106
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.mod) = 133
 SIZE (go_modules/sigs.k8s.io/yaml/@v/v1.4.0.zip) = 222726
-SIZE (terragrunt-v0.81.6.zip) = 9331811
+SIZE (terragrunt-v0.81.7.zip) = 9341763
